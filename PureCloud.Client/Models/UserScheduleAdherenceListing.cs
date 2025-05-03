@@ -1,12 +1,12 @@
-using System.Runtime.Serialization;
 using System.Text;
+using System.Text.Json.Serialization;
 
 namespace PureCloud.Client.Models;
 
 /// <summary>
 /// UserScheduleAdherenceListing
 /// </summary>
-[DataContract]
+
 public partial class UserScheduleAdherenceListing : IEquatable<UserScheduleAdherenceListing>
 {
     /// <summary>
@@ -24,7 +24,7 @@ public partial class UserScheduleAdherenceListing : IEquatable<UserScheduleAdher
     /// <summary>
     /// Gets or Sets Entities
     /// </summary>
-    [DataMember(Name = "entities", EmitDefaultValue = false)]
+    [JsonPropertyName("entities")]
     public List<UserScheduleAdherence> Entities { get; set; }
 
 
@@ -33,7 +33,7 @@ public partial class UserScheduleAdherenceListing : IEquatable<UserScheduleAdher
     /// The downloadUrl if the response is too large to send directly via http response
     /// </summary>
     /// <value>The downloadUrl if the response is too large to send directly via http response</value>
-    [DataMember(Name = "downloadUrl", EmitDefaultValue = false)]
+    [JsonPropertyName("downloadUrl")]
     public string DownloadUrl { get; private set; }
 
 

@@ -7,14 +7,14 @@ namespace PureCloud.Client.Models;
 /// <summary>
 /// ManualEscalationResponse
 /// </summary>
-[DataContract]
+
 public partial class ManualEscalationResponse : IEquatable<ManualEscalationResponse>
 {
     /// <summary>
     /// Escalation Status of the message.
     /// </summary>
     /// <value>Escalation Status of the message.</value>
-    [JsonConverter(typeof(JsonStringEnumConverter))]
+    
     public enum EscalationStatusEnum
     {
         /// <summary>
@@ -65,7 +65,7 @@ public partial class ManualEscalationResponse : IEquatable<ManualEscalationRespo
     /// Escalation Status of the message.
     /// </summary>
     /// <value>Escalation Status of the message.</value>
-    [DataMember(Name = "escalationStatus", EmitDefaultValue = false)]
+    [JsonPropertyName("escalationStatus")]
     public EscalationStatusEnum? EscalationStatus { get; set; }
     /// <summary>
     /// Initializes a new instance of the <see cref="ManualEscalationResponse" /> class.
@@ -89,7 +89,7 @@ public partial class ManualEscalationResponse : IEquatable<ManualEscalationRespo
     /// The Id of the message that got escalated.
     /// </summary>
     /// <value>The Id of the message that got escalated.</value>
-    [DataMember(Name = "socialMediaNormalizedMessageId", EmitDefaultValue = false)]
+    [JsonPropertyName("socialMediaNormalizedMessageId")]
     public string SocialMediaNormalizedMessageId { get; set; }
 
 
@@ -98,7 +98,7 @@ public partial class ManualEscalationResponse : IEquatable<ManualEscalationRespo
     /// The ID of the message in the conversation.
     /// </summary>
     /// <value>The ID of the message in the conversation.</value>
-    [DataMember(Name = "conversationNormalizedMessageId", EmitDefaultValue = false)]
+    [JsonPropertyName("conversationNormalizedMessageId")]
     public string ConversationNormalizedMessageId { get; set; }
 
 
@@ -107,7 +107,7 @@ public partial class ManualEscalationResponse : IEquatable<ManualEscalationRespo
     /// The target integration configuration used for an social media message.
     /// </summary>
     /// <value>The target integration configuration used for an social media message.</value>
-    [DataMember(Name = "escalationTarget", EmitDefaultValue = false)]
+    [JsonPropertyName("escalationTarget")]
     public EscalationTarget EscalationTarget { get; set; }
 
 

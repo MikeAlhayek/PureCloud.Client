@@ -1,12 +1,12 @@
-using System.Runtime.Serialization;
 using System.Text;
+using System.Text.Json.Serialization;
 
 namespace PureCloud.Client.Models;
 
 /// <summary>
 /// InsightsTrendMetricItem
 /// </summary>
-[DataContract]
+
 public partial class InsightsTrendMetricItem : IEquatable<InsightsTrendMetricItem>
 {
     /// <summary>
@@ -27,7 +27,7 @@ public partial class InsightsTrendMetricItem : IEquatable<InsightsTrendMetricIte
     /// The gamification metric for the trend
     /// </summary>
     /// <value>The gamification metric for the trend</value>
-    [DataMember(Name = "metric", EmitDefaultValue = false)]
+    [JsonPropertyName("metric")]
     public AddressableEntityRef Metric { get; set; }
 
 
@@ -36,7 +36,7 @@ public partial class InsightsTrendMetricItem : IEquatable<InsightsTrendMetricIte
     /// Trends for the metric
     /// </summary>
     /// <value>Trends for the metric</value>
-    [DataMember(Name = "trends", EmitDefaultValue = false)]
+    [JsonPropertyName("trends")]
     public InsightsTrends Trends { get; set; }
 
 

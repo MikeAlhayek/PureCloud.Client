@@ -7,14 +7,14 @@ namespace PureCloud.Client.Models;
 /// <summary>
 /// TrusteeBillingOverview
 /// </summary>
-[DataContract]
+
 public partial class TrusteeBillingOverview : IEquatable<TrusteeBillingOverview>
 {
     /// <summary>
     /// The subscription type.
     /// </summary>
     /// <value>The subscription type.</value>
-    [JsonConverter(typeof(JsonStringEnumConverter))]
+    
     public enum SubscriptionTypeEnum
     {
         /// <summary>
@@ -77,7 +77,7 @@ public partial class TrusteeBillingOverview : IEquatable<TrusteeBillingOverview>
     /// The subscription type.
     /// </summary>
     /// <value>The subscription type.</value>
-    [DataMember(Name = "subscriptionType", EmitDefaultValue = false)]
+    [JsonPropertyName("subscriptionType")]
     public SubscriptionTypeEnum? SubscriptionType { get; set; }
 
     /// <summary>
@@ -129,7 +129,7 @@ public partial class TrusteeBillingOverview : IEquatable<TrusteeBillingOverview>
     /// The globally unique identifier for the object.
     /// </summary>
     /// <value>The globally unique identifier for the object.</value>
-    [DataMember(Name = "id", EmitDefaultValue = false)]
+    [JsonPropertyName("id")]
     public string Id { get; private set; }
 
 
@@ -137,7 +137,7 @@ public partial class TrusteeBillingOverview : IEquatable<TrusteeBillingOverview>
     /// <summary>
     /// Gets or Sets Name
     /// </summary>
-    [DataMember(Name = "name", EmitDefaultValue = false)]
+    [JsonPropertyName("name")]
     public string Name { get; set; }
 
 
@@ -146,7 +146,7 @@ public partial class TrusteeBillingOverview : IEquatable<TrusteeBillingOverview>
     /// Organization
     /// </summary>
     /// <value>Organization</value>
-    [DataMember(Name = "organization", EmitDefaultValue = false)]
+    [JsonPropertyName("organization")]
     public NamedEntity Organization { get; set; }
 
 
@@ -155,7 +155,7 @@ public partial class TrusteeBillingOverview : IEquatable<TrusteeBillingOverview>
     /// The currency type.
     /// </summary>
     /// <value>The currency type.</value>
-    [DataMember(Name = "currency", EmitDefaultValue = false)]
+    [JsonPropertyName("currency")]
     public string Currency { get; set; }
 
 
@@ -164,7 +164,7 @@ public partial class TrusteeBillingOverview : IEquatable<TrusteeBillingOverview>
     /// The charge short names for products enabled during the specified period.
     /// </summary>
     /// <value>The charge short names for products enabled during the specified period.</value>
-    [DataMember(Name = "enabledProducts", EmitDefaultValue = false)]
+    [JsonPropertyName("enabledProducts")]
     public List<string> EnabledProducts { get; set; }
 
 
@@ -175,7 +175,7 @@ public partial class TrusteeBillingOverview : IEquatable<TrusteeBillingOverview>
     /// Date-time the ramp period starts. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z
     /// </summary>
     /// <value>Date-time the ramp period starts. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z</value>
-    [DataMember(Name = "rampPeriodStartDate", EmitDefaultValue = false)]
+    [JsonPropertyName("rampPeriodStartDate")]
     public DateTime? RampPeriodStartDate { get; set; }
 
 
@@ -184,7 +184,7 @@ public partial class TrusteeBillingOverview : IEquatable<TrusteeBillingOverview>
     /// Date-time the ramp period ends. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z
     /// </summary>
     /// <value>Date-time the ramp period ends. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z</value>
-    [DataMember(Name = "rampPeriodEndDate", EmitDefaultValue = false)]
+    [JsonPropertyName("rampPeriodEndDate")]
     public DateTime? RampPeriodEndDate { get; set; }
 
 
@@ -193,7 +193,7 @@ public partial class TrusteeBillingOverview : IEquatable<TrusteeBillingOverview>
     /// Date-time the billing period started. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z
     /// </summary>
     /// <value>Date-time the billing period started. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z</value>
-    [DataMember(Name = "billingPeriodStartDate", EmitDefaultValue = false)]
+    [JsonPropertyName("billingPeriodStartDate")]
     public DateTime? BillingPeriodStartDate { get; set; }
 
 
@@ -202,7 +202,7 @@ public partial class TrusteeBillingOverview : IEquatable<TrusteeBillingOverview>
     /// Date-time the billing period ended. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z
     /// </summary>
     /// <value>Date-time the billing period ended. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z</value>
-    [DataMember(Name = "billingPeriodEndDate", EmitDefaultValue = false)]
+    [JsonPropertyName("billingPeriodEndDate")]
     public DateTime? BillingPeriodEndDate { get; set; }
 
 
@@ -211,7 +211,7 @@ public partial class TrusteeBillingOverview : IEquatable<TrusteeBillingOverview>
     /// Usages for the specified period.
     /// </summary>
     /// <value>Usages for the specified period.</value>
-    [DataMember(Name = "usages", EmitDefaultValue = false)]
+    [JsonPropertyName("usages")]
     public List<SubscriptionOverviewUsage> Usages { get; set; }
 
 
@@ -220,7 +220,7 @@ public partial class TrusteeBillingOverview : IEquatable<TrusteeBillingOverview>
     /// Date-time the contract was last amended. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z
     /// </summary>
     /// <value>Date-time the contract was last amended. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z</value>
-    [DataMember(Name = "contractAmendmentDate", EmitDefaultValue = false)]
+    [JsonPropertyName("contractAmendmentDate")]
     public DateTime? ContractAmendmentDate { get; set; }
 
 
@@ -229,7 +229,7 @@ public partial class TrusteeBillingOverview : IEquatable<TrusteeBillingOverview>
     /// Date-time the contract became effective. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z
     /// </summary>
     /// <value>Date-time the contract became effective. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z</value>
-    [DataMember(Name = "contractEffectiveDate", EmitDefaultValue = false)]
+    [JsonPropertyName("contractEffectiveDate")]
     public DateTime? ContractEffectiveDate { get; set; }
 
 
@@ -238,7 +238,7 @@ public partial class TrusteeBillingOverview : IEquatable<TrusteeBillingOverview>
     /// Date-time the contract ends. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z
     /// </summary>
     /// <value>Date-time the contract ends. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z</value>
-    [DataMember(Name = "contractEndDate", EmitDefaultValue = false)]
+    [JsonPropertyName("contractEndDate")]
     public DateTime? ContractEndDate { get; set; }
 
 
@@ -247,7 +247,7 @@ public partial class TrusteeBillingOverview : IEquatable<TrusteeBillingOverview>
     /// Minimum amount that will be charged for the month
     /// </summary>
     /// <value>Minimum amount that will be charged for the month</value>
-    [DataMember(Name = "minimumMonthlyAmount", EmitDefaultValue = false)]
+    [JsonPropertyName("minimumMonthlyAmount")]
     public string MinimumMonthlyAmount { get; set; }
 
 
@@ -255,7 +255,7 @@ public partial class TrusteeBillingOverview : IEquatable<TrusteeBillingOverview>
     /// <summary>
     /// Gets or Sets InRampPeriod
     /// </summary>
-    [DataMember(Name = "inRampPeriod", EmitDefaultValue = false)]
+    [JsonPropertyName("inRampPeriod")]
     public bool? InRampPeriod { get; set; }
 
 
@@ -264,7 +264,7 @@ public partial class TrusteeBillingOverview : IEquatable<TrusteeBillingOverview>
     /// The URI for this object
     /// </summary>
     /// <value>The URI for this object</value>
-    [DataMember(Name = "selfUri", EmitDefaultValue = false)]
+    [JsonPropertyName("selfUri")]
     public string SelfUri { get; private set; }
 
 

@@ -1,12 +1,12 @@
-using System.Runtime.Serialization;
 using System.Text;
+using System.Text.Json.Serialization;
 
 namespace PureCloud.Client.Models;
 
 /// <summary>
 /// DetectedNamedEntityValue
 /// </summary>
-[DataContract]
+
 public partial class DetectedNamedEntityValue : IEquatable<DetectedNamedEntityValue>
 {
     /// <summary>
@@ -23,7 +23,7 @@ public partial class DetectedNamedEntityValue : IEquatable<DetectedNamedEntityVa
     /// The raw value of the detected named entity.
     /// </summary>
     /// <value>The raw value of the detected named entity.</value>
-    [DataMember(Name = "raw", EmitDefaultValue = false)]
+    [JsonPropertyName("raw")]
     public string Raw { get; private set; }
 
 
@@ -32,7 +32,7 @@ public partial class DetectedNamedEntityValue : IEquatable<DetectedNamedEntityVa
     /// The resolved value of the detected named entity.
     /// </summary>
     /// <value>The resolved value of the detected named entity.</value>
-    [DataMember(Name = "resolved", EmitDefaultValue = false)]
+    [JsonPropertyName("resolved")]
     public string Resolved { get; private set; }
 
 
@@ -41,7 +41,7 @@ public partial class DetectedNamedEntityValue : IEquatable<DetectedNamedEntityVa
     /// The unit of the detected amount of money entity, e.g. EUR, USD.
     /// </summary>
     /// <value>The unit of the detected amount of money entity, e.g. EUR, USD.</value>
-    [DataMember(Name = "unit", EmitDefaultValue = false)]
+    [JsonPropertyName("unit")]
     public string Unit { get; private set; }
 
 

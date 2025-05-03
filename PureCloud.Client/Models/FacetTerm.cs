@@ -1,12 +1,12 @@
-using System.Runtime.Serialization;
 using System.Text;
+using System.Text.Json.Serialization;
 
 namespace PureCloud.Client.Models;
 
 /// <summary>
 /// FacetTerm
 /// </summary>
-[DataContract]
+
 public partial class FacetTerm : IEquatable<FacetTerm>
 {
     /// <summary>
@@ -34,7 +34,7 @@ public partial class FacetTerm : IEquatable<FacetTerm>
     /// <summary>
     /// Gets or Sets Term
     /// </summary>
-    [DataMember(Name = "term", EmitDefaultValue = false)]
+    [JsonPropertyName("term")]
     public string Term { get; set; }
 
 
@@ -42,7 +42,7 @@ public partial class FacetTerm : IEquatable<FacetTerm>
     /// <summary>
     /// Gets or Sets Key
     /// </summary>
-    [DataMember(Name = "key", EmitDefaultValue = false)]
+    [JsonPropertyName("key")]
     public long? Key { get; set; }
 
 
@@ -50,7 +50,7 @@ public partial class FacetTerm : IEquatable<FacetTerm>
     /// <summary>
     /// Gets or Sets Id
     /// </summary>
-    [DataMember(Name = "id", EmitDefaultValue = false)]
+    [JsonPropertyName("id")]
     public string Id { get; set; }
 
 
@@ -58,7 +58,7 @@ public partial class FacetTerm : IEquatable<FacetTerm>
     /// <summary>
     /// Gets or Sets Name
     /// </summary>
-    [DataMember(Name = "name", EmitDefaultValue = false)]
+    [JsonPropertyName("name")]
     public string Name { get; set; }
 
 
@@ -66,7 +66,7 @@ public partial class FacetTerm : IEquatable<FacetTerm>
     /// <summary>
     /// Gets or Sets Count
     /// </summary>
-    [DataMember(Name = "count", EmitDefaultValue = false)]
+    [JsonPropertyName("count")]
     public long? Count { get; set; }
 
 
@@ -75,7 +75,7 @@ public partial class FacetTerm : IEquatable<FacetTerm>
     /// Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z
     /// </summary>
     /// <value>Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z</value>
-    [DataMember(Name = "time", EmitDefaultValue = false)]
+    [JsonPropertyName("time")]
     public DateTime? Time { get; set; }
 
 

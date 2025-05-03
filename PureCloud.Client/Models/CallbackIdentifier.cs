@@ -7,14 +7,14 @@ namespace PureCloud.Client.Models;
 /// <summary>
 /// CallbackIdentifier
 /// </summary>
-[DataContract]
+
 public partial class CallbackIdentifier : IEquatable<CallbackIdentifier>
 {
     /// <summary>
     /// The type of the associated callback participant
     /// </summary>
     /// <value>The type of the associated callback participant</value>
-    [JsonConverter(typeof(JsonStringEnumConverter))]
+    
     public enum TypeEnum
     {
         /// <summary>
@@ -41,7 +41,7 @@ public partial class CallbackIdentifier : IEquatable<CallbackIdentifier>
     /// The type of the associated callback participant
     /// </summary>
     /// <value>The type of the associated callback participant</value>
-    [DataMember(Name = "type", EmitDefaultValue = false)]
+    [JsonPropertyName("type")]
     public TypeEnum? Type { get; set; }
 
     /// <summary>
@@ -69,7 +69,7 @@ public partial class CallbackIdentifier : IEquatable<CallbackIdentifier>
     /// The identifier of the callback
     /// </summary>
     /// <value>The identifier of the callback</value>
-    [DataMember(Name = "id", EmitDefaultValue = false)]
+    [JsonPropertyName("id")]
     public string Id { get; set; }
 
 

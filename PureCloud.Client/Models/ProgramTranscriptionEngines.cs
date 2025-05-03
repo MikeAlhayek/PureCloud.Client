@@ -1,12 +1,12 @@
-using System.Runtime.Serialization;
 using System.Text;
+using System.Text.Json.Serialization;
 
 namespace PureCloud.Client.Models;
 
 /// <summary>
 /// ProgramTranscriptionEngines
 /// </summary>
-[DataContract]
+
 public partial class ProgramTranscriptionEngines : IEquatable<ProgramTranscriptionEngines>
 {
     /// <summary>
@@ -31,7 +31,7 @@ public partial class ProgramTranscriptionEngines : IEquatable<ProgramTranscripti
     /// The globally unique identifier for the object.
     /// </summary>
     /// <value>The globally unique identifier for the object.</value>
-    [DataMember(Name = "id", EmitDefaultValue = false)]
+    [JsonPropertyName("id")]
     public string Id { get; private set; }
 
 
@@ -40,7 +40,7 @@ public partial class ProgramTranscriptionEngines : IEquatable<ProgramTranscripti
     /// The ID of the program
     /// </summary>
     /// <value>The ID of the program</value>
-    [DataMember(Name = "program", EmitDefaultValue = false)]
+    [JsonPropertyName("program")]
     public BaseProgramEntity Program { get; set; }
 
 
@@ -49,7 +49,7 @@ public partial class ProgramTranscriptionEngines : IEquatable<ProgramTranscripti
     /// The program transcription engine settings
     /// </summary>
     /// <value>The program transcription engine settings</value>
-    [DataMember(Name = "transcriptionEngines", EmitDefaultValue = false)]
+    [JsonPropertyName("transcriptionEngines")]
     public List<ProgramTranscriptionEngine> TranscriptionEngines { get; set; }
 
 
@@ -58,7 +58,7 @@ public partial class ProgramTranscriptionEngines : IEquatable<ProgramTranscripti
     /// The user last modified the record
     /// </summary>
     /// <value>The user last modified the record</value>
-    [DataMember(Name = "modifiedBy", EmitDefaultValue = false)]
+    [JsonPropertyName("modifiedBy")]
     public AddressableEntityRef ModifiedBy { get; set; }
 
 
@@ -67,7 +67,7 @@ public partial class ProgramTranscriptionEngines : IEquatable<ProgramTranscripti
     /// The last modified date of the record. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z
     /// </summary>
     /// <value>The last modified date of the record. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z</value>
-    [DataMember(Name = "dateModified", EmitDefaultValue = false)]
+    [JsonPropertyName("dateModified")]
     public DateTime? DateModified { get; set; }
 
 
@@ -76,7 +76,7 @@ public partial class ProgramTranscriptionEngines : IEquatable<ProgramTranscripti
     /// The URI for this object
     /// </summary>
     /// <value>The URI for this object</value>
-    [DataMember(Name = "selfUri", EmitDefaultValue = false)]
+    [JsonPropertyName("selfUri")]
     public string SelfUri { get; private set; }
 
 

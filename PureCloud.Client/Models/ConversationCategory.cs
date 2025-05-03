@@ -7,14 +7,14 @@ namespace PureCloud.Client.Models;
 /// <summary>
 /// ConversationCategory
 /// </summary>
-[DataContract]
+
 public partial class ConversationCategory : IEquatable<ConversationCategory>
 {
     /// <summary>
     /// The type of interaction the category will apply to
     /// </summary>
     /// <value>The type of interaction the category will apply to</value>
-    [JsonConverter(typeof(JsonStringEnumConverter))]
+    
     public enum InteractionTypeEnum
     {
         /// <summary>
@@ -47,7 +47,7 @@ public partial class ConversationCategory : IEquatable<ConversationCategory>
     /// The type of interaction the category will apply to
     /// </summary>
     /// <value>The type of interaction the category will apply to</value>
-    [DataMember(Name = "interactionType", EmitDefaultValue = false)]
+    [JsonPropertyName("interactionType")]
     public InteractionTypeEnum? InteractionType { get; set; }
     /// <summary>
     /// Initializes a new instance of the <see cref="ConversationCategory" /> class.
@@ -73,7 +73,7 @@ public partial class ConversationCategory : IEquatable<ConversationCategory>
     /// The id of the category
     /// </summary>
     /// <value>The id of the category</value>
-    [DataMember(Name = "id", EmitDefaultValue = false)]
+    [JsonPropertyName("id")]
     public string Id { get; set; }
 
 
@@ -82,7 +82,7 @@ public partial class ConversationCategory : IEquatable<ConversationCategory>
     /// The name of the category
     /// </summary>
     /// <value>The name of the category</value>
-    [DataMember(Name = "name", EmitDefaultValue = false)]
+    [JsonPropertyName("name")]
     public string Name { get; set; }
 
 
@@ -91,7 +91,7 @@ public partial class ConversationCategory : IEquatable<ConversationCategory>
     /// The description of the category
     /// </summary>
     /// <value>The description of the category</value>
-    [DataMember(Name = "description", EmitDefaultValue = false)]
+    [JsonPropertyName("description")]
     public string Description { get; set; }
 
 
@@ -102,7 +102,7 @@ public partial class ConversationCategory : IEquatable<ConversationCategory>
     /// A collection of conditions joined together by logical operation to provide more refined filtering of conversations
     /// </summary>
     /// <value>A collection of conditions joined together by logical operation to provide more refined filtering of conversations</value>
-    [DataMember(Name = "criteria", EmitDefaultValue = false)]
+    [JsonPropertyName("criteria")]
     public Operand Criteria { get; set; }
 
 

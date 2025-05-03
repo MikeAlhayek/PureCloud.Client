@@ -7,14 +7,14 @@ namespace PureCloud.Client.Models;
 /// <summary>
 /// ManagementUnit
 /// </summary>
-[DataContract]
+
 public partial class ManagementUnit : IEquatable<ManagementUnit>
 {
     /// <summary>
     /// Start day of week for scheduling and forecasting purposes. Moving to Business Unit
     /// </summary>
     /// <value>Start day of week for scheduling and forecasting purposes. Moving to Business Unit</value>
-    [JsonConverter(typeof(JsonStringEnumConverter))]
+    
     public enum StartDayOfWeekEnum
     {
         /// <summary>
@@ -71,7 +71,7 @@ public partial class ManagementUnit : IEquatable<ManagementUnit>
     /// Start day of week for scheduling and forecasting purposes. Moving to Business Unit
     /// </summary>
     /// <value>Start day of week for scheduling and forecasting purposes. Moving to Business Unit</value>
-    [DataMember(Name = "startDayOfWeek", EmitDefaultValue = false)]
+    [JsonPropertyName("startDayOfWeek")]
     public StartDayOfWeekEnum? StartDayOfWeek { get; set; }
     /// <summary>
     /// Initializes a new instance of the <see cref="ManagementUnit" /> class.
@@ -101,7 +101,7 @@ public partial class ManagementUnit : IEquatable<ManagementUnit>
     /// The globally unique identifier for the object.
     /// </summary>
     /// <value>The globally unique identifier for the object.</value>
-    [DataMember(Name = "id", EmitDefaultValue = false)]
+    [JsonPropertyName("id")]
     public string Id { get; private set; }
 
 
@@ -109,7 +109,7 @@ public partial class ManagementUnit : IEquatable<ManagementUnit>
     /// <summary>
     /// Gets or Sets Name
     /// </summary>
-    [DataMember(Name = "name", EmitDefaultValue = false)]
+    [JsonPropertyName("name")]
     public string Name { get; set; }
 
 
@@ -118,7 +118,7 @@ public partial class ManagementUnit : IEquatable<ManagementUnit>
     /// The business unit to which this management unit belongs
     /// </summary>
     /// <value>The business unit to which this management unit belongs</value>
-    [DataMember(Name = "businessUnit", EmitDefaultValue = false)]
+    [JsonPropertyName("businessUnit")]
     public BusinessUnitReference BusinessUnit { get; set; }
 
 
@@ -129,7 +129,7 @@ public partial class ManagementUnit : IEquatable<ManagementUnit>
     /// The time zone for the management unit in standard Olson format.  Moving to Business Unit
     /// </summary>
     /// <value>The time zone for the management unit in standard Olson format.  Moving to Business Unit</value>
-    [DataMember(Name = "timeZone", EmitDefaultValue = false)]
+    [JsonPropertyName("timeZone")]
     public string TimeZone { get; set; }
 
 
@@ -138,7 +138,7 @@ public partial class ManagementUnit : IEquatable<ManagementUnit>
     /// The configuration settings for this management unit
     /// </summary>
     /// <value>The configuration settings for this management unit</value>
-    [DataMember(Name = "settings", EmitDefaultValue = false)]
+    [JsonPropertyName("settings")]
     public ManagementUnitSettingsResponse Settings { get; set; }
 
 
@@ -147,7 +147,7 @@ public partial class ManagementUnit : IEquatable<ManagementUnit>
     /// Version info metadata for this management unit. Deprecated, use settings.metadata
     /// </summary>
     /// <value>Version info metadata for this management unit. Deprecated, use settings.metadata</value>
-    [DataMember(Name = "metadata", EmitDefaultValue = false)]
+    [JsonPropertyName("metadata")]
     public WfmVersionedEntityMetadata Metadata { get; set; }
 
 
@@ -156,7 +156,7 @@ public partial class ManagementUnit : IEquatable<ManagementUnit>
     /// The division to which this entity belongs.
     /// </summary>
     /// <value>The division to which this entity belongs.</value>
-    [DataMember(Name = "division", EmitDefaultValue = false)]
+    [JsonPropertyName("division")]
     public DivisionReference Division { get; set; }
 
 
@@ -165,7 +165,7 @@ public partial class ManagementUnit : IEquatable<ManagementUnit>
     /// The version of the underlying entity.  Deprecated, use field from settings.metadata instead
     /// </summary>
     /// <value>The version of the underlying entity.  Deprecated, use field from settings.metadata instead</value>
-    [DataMember(Name = "version", EmitDefaultValue = false)]
+    [JsonPropertyName("version")]
     public int? Version { get; private set; }
 
 
@@ -174,7 +174,7 @@ public partial class ManagementUnit : IEquatable<ManagementUnit>
     /// The date and time at which this entity was last modified.  Deprecated, use field from settings.metadata instead. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z
     /// </summary>
     /// <value>The date and time at which this entity was last modified.  Deprecated, use field from settings.metadata instead. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z</value>
-    [DataMember(Name = "dateModified", EmitDefaultValue = false)]
+    [JsonPropertyName("dateModified")]
     public DateTime? DateModified { get; private set; }
 
 
@@ -183,7 +183,7 @@ public partial class ManagementUnit : IEquatable<ManagementUnit>
     /// The user who last modified this entity.  Deprecated, use field from settings.metadata instead
     /// </summary>
     /// <value>The user who last modified this entity.  Deprecated, use field from settings.metadata instead</value>
-    [DataMember(Name = "modifiedBy", EmitDefaultValue = false)]
+    [JsonPropertyName("modifiedBy")]
     public UserReference ModifiedBy { get; private set; }
 
 
@@ -192,7 +192,7 @@ public partial class ManagementUnit : IEquatable<ManagementUnit>
     /// The URI for this object
     /// </summary>
     /// <value>The URI for this object</value>
-    [DataMember(Name = "selfUri", EmitDefaultValue = false)]
+    [JsonPropertyName("selfUri")]
     public string SelfUri { get; private set; }
 
 

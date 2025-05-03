@@ -1,12 +1,12 @@
-using System.Runtime.Serialization;
 using System.Text;
+using System.Text.Json.Serialization;
 
 namespace PureCloud.Client.Models;
 
 /// <summary>
 /// BulkJobEntity
 /// </summary>
-[DataContract]
+
 public partial class BulkJobEntity : IEquatable<BulkJobEntity>
 {
     /// <summary>
@@ -25,7 +25,7 @@ public partial class BulkJobEntity : IEquatable<BulkJobEntity>
     /// The id of the bulk job entity.
     /// </summary>
     /// <value>The id of the bulk job entity.</value>
-    [DataMember(Name = "id", EmitDefaultValue = false)]
+    [JsonPropertyName("id")]
     public string Id { get; set; }
 
 

@@ -1,12 +1,12 @@
-using System.Runtime.Serialization;
 using System.Text;
+using System.Text.Json.Serialization;
 
 namespace PureCloud.Client.Models;
 
 /// <summary>
 /// IgnoredActivityCodeIds
 /// </summary>
-[DataContract]
+
 public partial class IgnoredActivityCodeIds : IEquatable<IgnoredActivityCodeIds>
 {
     /// <summary>
@@ -25,7 +25,7 @@ public partial class IgnoredActivityCodeIds : IEquatable<IgnoredActivityCodeIds>
     /// List of activity code IDs
     /// </summary>
     /// <value>List of activity code IDs</value>
-    [DataMember(Name = "values", EmitDefaultValue = false)]
+    [JsonPropertyName("values")]
     public List<string> Values { get; set; }
 
 

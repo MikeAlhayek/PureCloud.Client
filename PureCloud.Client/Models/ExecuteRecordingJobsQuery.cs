@@ -7,14 +7,14 @@ namespace PureCloud.Client.Models;
 /// <summary>
 /// ExecuteRecordingJobsQuery
 /// </summary>
-[DataContract]
+
 public partial class ExecuteRecordingJobsQuery : IEquatable<ExecuteRecordingJobsQuery>
 {
     /// <summary>
     /// The desired state for the job to be set to.
     /// </summary>
     /// <value>The desired state for the job to be set to.</value>
-    [JsonConverter(typeof(JsonStringEnumConverter))]
+    
     public enum StateEnum
     {
         /// <summary>
@@ -35,7 +35,7 @@ public partial class ExecuteRecordingJobsQuery : IEquatable<ExecuteRecordingJobs
     /// The desired state for the job to be set to.
     /// </summary>
     /// <value>The desired state for the job to be set to.</value>
-    [DataMember(Name = "state", EmitDefaultValue = false)]
+    [JsonPropertyName("state")]
     public StateEnum? State { get; set; }
 
     /// <summary>

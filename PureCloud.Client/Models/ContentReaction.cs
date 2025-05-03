@@ -7,14 +7,14 @@ namespace PureCloud.Client.Models;
 /// <summary>
 /// User reaction to public message.
 /// </summary>
-[DataContract]
+
 public partial class ContentReaction : IEquatable<ContentReaction>
 {
     /// <summary>
     /// Type of reaction.
     /// </summary>
     /// <value>Type of reaction.</value>
-    [JsonConverter(typeof(JsonStringEnumConverter))]
+    
     public enum ReactionTypeEnum
     {
         /// <summary>
@@ -107,7 +107,7 @@ public partial class ContentReaction : IEquatable<ContentReaction>
     /// Type of reaction.
     /// </summary>
     /// <value>Type of reaction.</value>
-    [DataMember(Name = "reactionType", EmitDefaultValue = false)]
+    [JsonPropertyName("reactionType")]
     public ReactionTypeEnum? ReactionType { get; set; }
 
     /// <summary>
@@ -135,7 +135,7 @@ public partial class ContentReaction : IEquatable<ContentReaction>
     /// Number of users that reacted this way to the message.
     /// </summary>
     /// <value>Number of users that reacted this way to the message.</value>
-    [DataMember(Name = "count", EmitDefaultValue = false)]
+    [JsonPropertyName("count")]
     public int? Count { get; set; }
 
 

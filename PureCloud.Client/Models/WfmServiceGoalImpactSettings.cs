@@ -1,4 +1,3 @@
-using System.Runtime.Serialization;
 using System.Text;
 using System.Text.Json.Serialization;
 
@@ -7,7 +6,7 @@ namespace PureCloud.Client.Models;
 /// <summary>
 /// WfmServiceGoalImpactSettings
 /// </summary>
-[DataContract]
+
 public partial class WfmServiceGoalImpactSettings : IEquatable<WfmServiceGoalImpactSettings>
 {
 
@@ -36,7 +35,7 @@ public partial class WfmServiceGoalImpactSettings : IEquatable<WfmServiceGoalImp
     /// Allowed service level percent increase and decrease
     /// </summary>
     /// <value>Allowed service level percent increase and decrease</value>
-    [DataMember(Name = "serviceLevel", EmitDefaultValue = false)]
+    [JsonPropertyName("serviceLevel")]
     public WfmServiceGoalImpact ServiceLevel { get; set; }
 
 
@@ -45,7 +44,7 @@ public partial class WfmServiceGoalImpactSettings : IEquatable<WfmServiceGoalImp
     /// Allowed average speed of answer percent increase and decrease
     /// </summary>
     /// <value>Allowed average speed of answer percent increase and decrease</value>
-    [DataMember(Name = "averageSpeedOfAnswer", EmitDefaultValue = false)]
+    [JsonPropertyName("averageSpeedOfAnswer")]
     public WfmServiceGoalImpact AverageSpeedOfAnswer { get; set; }
 
 
@@ -54,7 +53,7 @@ public partial class WfmServiceGoalImpactSettings : IEquatable<WfmServiceGoalImp
     /// Allowed abandon rate percent increase and decrease
     /// </summary>
     /// <value>Allowed abandon rate percent increase and decrease</value>
-    [DataMember(Name = "abandonRate", EmitDefaultValue = false)]
+    [JsonPropertyName("abandonRate")]
     public WfmServiceGoalImpact AbandonRate { get; set; }
 
 

@@ -7,14 +7,14 @@ namespace PureCloud.Client.Models;
 /// <summary>
 /// CoachingNotification
 /// </summary>
-[DataContract]
+
 public partial class CoachingNotification : IEquatable<CoachingNotification>
 {
     /// <summary>
     /// Action causing the notification.
     /// </summary>
     /// <value>Action causing the notification.</value>
-    [JsonConverter(typeof(JsonStringEnumConverter))]
+    
     public enum ActionTypeEnum
     {
         /// <summary>
@@ -53,7 +53,7 @@ public partial class CoachingNotification : IEquatable<CoachingNotification>
     /// The relationship of this user to this notification's appointment
     /// </summary>
     /// <value>The relationship of this user to this notification's appointment</value>
-    [JsonConverter(typeof(JsonStringEnumConverter))]
+    
     public enum RelationshipEnum
     {
         /// <summary>
@@ -86,7 +86,7 @@ public partial class CoachingNotification : IEquatable<CoachingNotification>
     /// The status of the appointment for this notification
     /// </summary>
     /// <value>The status of the appointment for this notification</value>
-    [JsonConverter(typeof(JsonStringEnumConverter))]
+    
     public enum StatusEnum
     {
         /// <summary>
@@ -125,19 +125,19 @@ public partial class CoachingNotification : IEquatable<CoachingNotification>
     /// Action causing the notification.
     /// </summary>
     /// <value>Action causing the notification.</value>
-    [DataMember(Name = "actionType", EmitDefaultValue = false)]
+    [JsonPropertyName("actionType")]
     public ActionTypeEnum? ActionType { get; private set; }
     /// <summary>
     /// The relationship of this user to this notification's appointment
     /// </summary>
     /// <value>The relationship of this user to this notification's appointment</value>
-    [DataMember(Name = "relationship", EmitDefaultValue = false)]
+    [JsonPropertyName("relationship")]
     public RelationshipEnum? Relationship { get; private set; }
     /// <summary>
     /// The status of the appointment for this notification
     /// </summary>
     /// <value>The status of the appointment for this notification</value>
-    [DataMember(Name = "status", EmitDefaultValue = false)]
+    [JsonPropertyName("status")]
     public StatusEnum? Status { get; private set; }
     /// <summary>
     /// Initializes a new instance of the <see cref="CoachingNotification" /> class.
@@ -155,7 +155,7 @@ public partial class CoachingNotification : IEquatable<CoachingNotification>
     /// The globally unique identifier for the object.
     /// </summary>
     /// <value>The globally unique identifier for the object.</value>
-    [DataMember(Name = "id", EmitDefaultValue = false)]
+    [JsonPropertyName("id")]
     public string Id { get; private set; }
 
 
@@ -164,7 +164,7 @@ public partial class CoachingNotification : IEquatable<CoachingNotification>
     /// The name of the appointment for this notification.
     /// </summary>
     /// <value>The name of the appointment for this notification.</value>
-    [DataMember(Name = "name", EmitDefaultValue = false)]
+    [JsonPropertyName("name")]
     public string Name { get; private set; }
 
 
@@ -173,7 +173,7 @@ public partial class CoachingNotification : IEquatable<CoachingNotification>
     /// Indicates if notification is read or unread
     /// </summary>
     /// <value>Indicates if notification is read or unread</value>
-    [DataMember(Name = "markedAsRead", EmitDefaultValue = false)]
+    [JsonPropertyName("markedAsRead")]
     public bool? MarkedAsRead { get; set; }
 
 
@@ -186,7 +186,7 @@ public partial class CoachingNotification : IEquatable<CoachingNotification>
     /// The start time of the appointment relating to this notification. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z
     /// </summary>
     /// <value>The start time of the appointment relating to this notification. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z</value>
-    [DataMember(Name = "dateStart", EmitDefaultValue = false)]
+    [JsonPropertyName("dateStart")]
     public DateTime? DateStart { get; private set; }
 
 
@@ -195,7 +195,7 @@ public partial class CoachingNotification : IEquatable<CoachingNotification>
     /// The duration of the appointment on this notification
     /// </summary>
     /// <value>The duration of the appointment on this notification</value>
-    [DataMember(Name = "lengthInMinutes", EmitDefaultValue = false)]
+    [JsonPropertyName("lengthInMinutes")]
     public int? LengthInMinutes { get; private set; }
 
 
@@ -206,7 +206,7 @@ public partial class CoachingNotification : IEquatable<CoachingNotification>
     /// The user of this notification
     /// </summary>
     /// <value>The user of this notification</value>
-    [DataMember(Name = "user", EmitDefaultValue = false)]
+    [JsonPropertyName("user")]
     public UserReference User { get; private set; }
 
 
@@ -215,7 +215,7 @@ public partial class CoachingNotification : IEquatable<CoachingNotification>
     /// The appointment
     /// </summary>
     /// <value>The appointment</value>
-    [DataMember(Name = "appointment", EmitDefaultValue = false)]
+    [JsonPropertyName("appointment")]
     public CoachingAppointmentResponse Appointment { get; private set; }
 
 
@@ -224,7 +224,7 @@ public partial class CoachingNotification : IEquatable<CoachingNotification>
     /// The URI for this object
     /// </summary>
     /// <value>The URI for this object</value>
-    [DataMember(Name = "selfUri", EmitDefaultValue = false)]
+    [JsonPropertyName("selfUri")]
     public string SelfUri { get; private set; }
 
 

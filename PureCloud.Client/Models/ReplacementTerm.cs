@@ -7,14 +7,14 @@ namespace PureCloud.Client.Models;
 /// <summary>
 /// ReplacementTerm
 /// </summary>
-[DataContract]
+
 public partial class ReplacementTerm : IEquatable<ReplacementTerm>
 {
     /// <summary>
     /// Social Handle Type
     /// </summary>
     /// <value>Social Handle Type</value>
-    [JsonConverter(typeof(JsonStringEnumConverter))]
+    
     public enum TypeEnum
     {
         /// <summary>
@@ -71,7 +71,7 @@ public partial class ReplacementTerm : IEquatable<ReplacementTerm>
     /// Social Handle Type
     /// </summary>
     /// <value>Social Handle Type</value>
-    [DataMember(Name = "type", EmitDefaultValue = false)]
+    [JsonPropertyName("type")]
     public TypeEnum? Type { get; set; }
     /// <summary>
     /// Initializes a new instance of the <see cref="ReplacementTerm" /> class.
@@ -94,7 +94,7 @@ public partial class ReplacementTerm : IEquatable<ReplacementTerm>
     /// <summary>
     /// Gets or Sets ExistingValue
     /// </summary>
-    [DataMember(Name = "existingValue", EmitDefaultValue = false)]
+    [JsonPropertyName("existingValue")]
     public string ExistingValue { get; set; }
 
 
@@ -102,7 +102,7 @@ public partial class ReplacementTerm : IEquatable<ReplacementTerm>
     /// <summary>
     /// Gets or Sets UpdatedValue
     /// </summary>
-    [DataMember(Name = "updatedValue", EmitDefaultValue = false)]
+    [JsonPropertyName("updatedValue")]
     public string UpdatedValue { get; set; }
 
 

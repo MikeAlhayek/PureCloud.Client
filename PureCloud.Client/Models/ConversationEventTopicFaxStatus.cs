@@ -1,12 +1,12 @@
-using System.Runtime.Serialization;
 using System.Text;
+using System.Text.Json.Serialization;
 
 namespace PureCloud.Client.Models;
 
 /// <summary>
 /// Extra information on fax transmission.
 /// </summary>
-[DataContract]
+
 public partial class ConversationEventTopicFaxStatus : IEquatable<ConversationEventTopicFaxStatus>
 {
     /// <summary>
@@ -39,7 +39,7 @@ public partial class ConversationEventTopicFaxStatus : IEquatable<ConversationEv
     /// The fax direction, either \&quot;send\&quot; or \&quot;receive\&quot;.
     /// </summary>
     /// <value>The fax direction, either \&quot;send\&quot; or \&quot;receive\&quot;.</value>
-    [DataMember(Name = "direction", EmitDefaultValue = false)]
+    [JsonPropertyName("direction")]
     public string Direction { get; set; }
 
 
@@ -48,7 +48,7 @@ public partial class ConversationEventTopicFaxStatus : IEquatable<ConversationEv
     /// Total number of expected pages, if known.
     /// </summary>
     /// <value>Total number of expected pages, if known.</value>
-    [DataMember(Name = "expectedPages", EmitDefaultValue = false)]
+    [JsonPropertyName("expectedPages")]
     public long? ExpectedPages { get; set; }
 
 
@@ -57,7 +57,7 @@ public partial class ConversationEventTopicFaxStatus : IEquatable<ConversationEv
     /// Active page of the transmission.
     /// </summary>
     /// <value>Active page of the transmission.</value>
-    [DataMember(Name = "activePage", EmitDefaultValue = false)]
+    [JsonPropertyName("activePage")]
     public long? ActivePage { get; set; }
 
 
@@ -66,7 +66,7 @@ public partial class ConversationEventTopicFaxStatus : IEquatable<ConversationEv
     /// Number of lines that have completed transmission.
     /// </summary>
     /// <value>Number of lines that have completed transmission.</value>
-    [DataMember(Name = "linesTransmitted", EmitDefaultValue = false)]
+    [JsonPropertyName("linesTransmitted")]
     public long? LinesTransmitted { get; set; }
 
 
@@ -75,7 +75,7 @@ public partial class ConversationEventTopicFaxStatus : IEquatable<ConversationEv
     /// Number of bytes that have competed transmission.
     /// </summary>
     /// <value>Number of bytes that have competed transmission.</value>
-    [DataMember(Name = "bytesTransmitted", EmitDefaultValue = false)]
+    [JsonPropertyName("bytesTransmitted")]
     public long? BytesTransmitted { get; set; }
 
 
@@ -84,7 +84,7 @@ public partial class ConversationEventTopicFaxStatus : IEquatable<ConversationEv
     /// Current signaling rate of transmission, baud rate.
     /// </summary>
     /// <value>Current signaling rate of transmission, baud rate.</value>
-    [DataMember(Name = "baudRate", EmitDefaultValue = false)]
+    [JsonPropertyName("baudRate")]
     public long? BaudRate { get; set; }
 
 
@@ -93,7 +93,7 @@ public partial class ConversationEventTopicFaxStatus : IEquatable<ConversationEv
     /// Number of page errors.
     /// </summary>
     /// <value>Number of page errors.</value>
-    [DataMember(Name = "pageErrors", EmitDefaultValue = false)]
+    [JsonPropertyName("pageErrors")]
     public long? PageErrors { get; set; }
 
 
@@ -102,7 +102,7 @@ public partial class ConversationEventTopicFaxStatus : IEquatable<ConversationEv
     /// Number of line errors.
     /// </summary>
     /// <value>Number of line errors.</value>
-    [DataMember(Name = "lineErrors", EmitDefaultValue = false)]
+    [JsonPropertyName("lineErrors")]
     public long? LineErrors { get; set; }
 
 

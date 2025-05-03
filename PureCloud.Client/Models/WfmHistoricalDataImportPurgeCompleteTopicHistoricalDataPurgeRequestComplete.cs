@@ -7,13 +7,13 @@ namespace PureCloud.Client.Models;
 /// <summary>
 /// WfmHistoricalDataImportPurgeCompleteTopicHistoricalDataPurgeRequestComplete
 /// </summary>
-[DataContract]
+
 public partial class WfmHistoricalDataImportPurgeCompleteTopicHistoricalDataPurgeRequestComplete : IEquatable<WfmHistoricalDataImportPurgeCompleteTopicHistoricalDataPurgeRequestComplete>
 {
     /// <summary>
     /// Gets or Sets State
     /// </summary>
-    [JsonConverter(typeof(JsonStringEnumConverter))]
+    
     public enum StateEnum
     {
         /// <summary>
@@ -51,7 +51,7 @@ public partial class WfmHistoricalDataImportPurgeCompleteTopicHistoricalDataPurg
     /// <summary>
     /// Gets or Sets State
     /// </summary>
-    [DataMember(Name = "state", EmitDefaultValue = false)]
+    [JsonPropertyName("state")]
     public StateEnum? State { get; set; }
     /// <summary>
     /// Initializes a new instance of the <see cref="WfmHistoricalDataImportPurgeCompleteTopicHistoricalDataPurgeRequestComplete" /> class.
@@ -74,7 +74,7 @@ public partial class WfmHistoricalDataImportPurgeCompleteTopicHistoricalDataPurg
     /// <summary>
     /// Gets or Sets Id
     /// </summary>
-    [DataMember(Name = "id", EmitDefaultValue = false)]
+    [JsonPropertyName("id")]
     public string Id { get; set; }
 
 
@@ -84,7 +84,7 @@ public partial class WfmHistoricalDataImportPurgeCompleteTopicHistoricalDataPurg
     /// <summary>
     /// Gets or Sets Entities
     /// </summary>
-    [DataMember(Name = "entities", EmitDefaultValue = false)]
+    [JsonPropertyName("entities")]
     public List<WfmHistoricalDataImportPurgeCompleteTopicHistoricalDataDeleteEntity> Entities { get; set; }
 
 
@@ -92,7 +92,7 @@ public partial class WfmHistoricalDataImportPurgeCompleteTopicHistoricalDataPurg
     /// <summary>
     /// Gets or Sets DisallowedEntities
     /// </summary>
-    [DataMember(Name = "disallowedEntities", EmitDefaultValue = false)]
+    [JsonPropertyName("disallowedEntities")]
     public List<WfmHistoricalDataImportPurgeCompleteTopicHistoricalDataDisallowedDeleteEntity> DisallowedEntities { get; set; }
 
 

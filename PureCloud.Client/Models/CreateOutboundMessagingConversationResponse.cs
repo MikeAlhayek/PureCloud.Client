@@ -1,12 +1,12 @@
-using System.Runtime.Serialization;
 using System.Text;
+using System.Text.Json.Serialization;
 
 namespace PureCloud.Client.Models;
 
 /// <summary>
 /// CreateOutboundMessagingConversationResponse
 /// </summary>
-[DataContract]
+
 public partial class CreateOutboundMessagingConversationResponse : IEquatable<CreateOutboundMessagingConversationResponse>
 {
     /// <summary>
@@ -23,7 +23,7 @@ public partial class CreateOutboundMessagingConversationResponse : IEquatable<Cr
     /// The created outbound messaging conversation ID.
     /// </summary>
     /// <value>The created outbound messaging conversation ID.</value>
-    [DataMember(Name = "id", EmitDefaultValue = false)]
+    [JsonPropertyName("id")]
     public string Id { get; private set; }
 
 
@@ -32,7 +32,7 @@ public partial class CreateOutboundMessagingConversationResponse : IEquatable<Cr
     /// The URI for this object
     /// </summary>
     /// <value>The URI for this object</value>
-    [DataMember(Name = "selfUri", EmitDefaultValue = false)]
+    [JsonPropertyName("selfUri")]
     public string SelfUri { get; private set; }
 
 

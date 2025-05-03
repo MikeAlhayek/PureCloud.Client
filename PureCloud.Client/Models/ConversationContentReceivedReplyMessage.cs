@@ -1,12 +1,12 @@
-using System.Runtime.Serialization;
 using System.Text;
+using System.Text.Json.Serialization;
 
 namespace PureCloud.Client.Models;
 
 /// <summary>
 /// ReceivedReplyMessage content object.
 /// </summary>
-[DataContract]
+
 public partial class ConversationContentReceivedReplyMessage : IEquatable<ConversationContentReceivedReplyMessage>
 {
     /// <summary>
@@ -29,7 +29,7 @@ public partial class ConversationContentReceivedReplyMessage : IEquatable<Conver
     /// Text to show in the title.
     /// </summary>
     /// <value>Text to show in the title.</value>
-    [DataMember(Name = "title", EmitDefaultValue = false)]
+    [JsonPropertyName("title")]
     public string Title { get; set; }
 
 
@@ -38,7 +38,7 @@ public partial class ConversationContentReceivedReplyMessage : IEquatable<Conver
     /// Text to show in the subtitle.
     /// </summary>
     /// <value>Text to show in the subtitle.</value>
-    [DataMember(Name = "subtitle", EmitDefaultValue = false)]
+    [JsonPropertyName("subtitle")]
     public string Subtitle { get; set; }
 
 
@@ -47,7 +47,7 @@ public partial class ConversationContentReceivedReplyMessage : IEquatable<Conver
     /// URL of an image.
     /// </summary>
     /// <value>URL of an image.</value>
-    [DataMember(Name = "imageUrl", EmitDefaultValue = false)]
+    [JsonPropertyName("imageUrl")]
     public string ImageUrl { get; set; }
 
 

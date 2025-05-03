@@ -7,14 +7,14 @@ namespace PureCloud.Client.Models;
 /// <summary>
 /// DocumentationSearchRequest
 /// </summary>
-[DataContract]
+
 public partial class DocumentationSearchRequest : IEquatable<DocumentationSearchRequest>
 {
     /// <summary>
     /// The sort order for results
     /// </summary>
     /// <value>The sort order for results</value>
-    [JsonConverter(typeof(JsonStringEnumConverter))]
+    
     public enum SortOrderEnum
     {
         /// <summary>
@@ -47,7 +47,7 @@ public partial class DocumentationSearchRequest : IEquatable<DocumentationSearch
     /// The sort order for results
     /// </summary>
     /// <value>The sort order for results</value>
-    [DataMember(Name = "sortOrder", EmitDefaultValue = false)]
+    [JsonPropertyName("sortOrder")]
     public SortOrderEnum? SortOrder { get; set; }
     /// <summary>
     /// Initializes a new instance of the <see cref="DocumentationSearchRequest" /> class.
@@ -77,7 +77,7 @@ public partial class DocumentationSearchRequest : IEquatable<DocumentationSearch
     /// The field in the resource that you want to sort the results by
     /// </summary>
     /// <value>The field in the resource that you want to sort the results by</value>
-    [DataMember(Name = "sortBy", EmitDefaultValue = false)]
+    [JsonPropertyName("sortBy")]
     public string SortBy { get; set; }
 
 
@@ -86,7 +86,7 @@ public partial class DocumentationSearchRequest : IEquatable<DocumentationSearch
     /// The number of results per page
     /// </summary>
     /// <value>The number of results per page</value>
-    [DataMember(Name = "pageSize", EmitDefaultValue = false)]
+    [JsonPropertyName("pageSize")]
     public int? PageSize { get; set; }
 
 
@@ -95,7 +95,7 @@ public partial class DocumentationSearchRequest : IEquatable<DocumentationSearch
     /// The page of resources you want to retrieve
     /// </summary>
     /// <value>The page of resources you want to retrieve</value>
-    [DataMember(Name = "pageNumber", EmitDefaultValue = false)]
+    [JsonPropertyName("pageNumber")]
     public int? PageNumber { get; set; }
 
 
@@ -104,7 +104,7 @@ public partial class DocumentationSearchRequest : IEquatable<DocumentationSearch
     /// Multi-value sort order, list of multiple sort values
     /// </summary>
     /// <value>Multi-value sort order, list of multiple sort values</value>
-    [DataMember(Name = "sort", EmitDefaultValue = false)]
+    [JsonPropertyName("sort")]
     public List<SearchSort> Sort { get; set; }
 
 
@@ -112,7 +112,7 @@ public partial class DocumentationSearchRequest : IEquatable<DocumentationSearch
     /// <summary>
     /// Gets or Sets Query
     /// </summary>
-    [DataMember(Name = "query", EmitDefaultValue = false)]
+    [JsonPropertyName("query")]
     public List<DocumentationSearchCriteria> Query { get; set; }
 
 

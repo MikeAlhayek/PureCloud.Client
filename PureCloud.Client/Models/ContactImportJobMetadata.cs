@@ -1,12 +1,12 @@
-using System.Runtime.Serialization;
 using System.Text;
+using System.Text.Json.Serialization;
 
 namespace PureCloud.Client.Models;
 
 /// <summary>
 /// ContactImportJobMetadata
 /// </summary>
-[DataContract]
+
 public partial class ContactImportJobMetadata : IEquatable<ContactImportJobMetadata>
 {
     /// <summary>
@@ -36,7 +36,7 @@ public partial class ContactImportJobMetadata : IEquatable<ContactImportJobMetad
     /// <summary>
     /// Gets or Sets FileName
     /// </summary>
-    [DataMember(Name = "fileName", EmitDefaultValue = false)]
+    [JsonPropertyName("fileName")]
     public string FileName { get; set; }
 
 
@@ -44,7 +44,7 @@ public partial class ContactImportJobMetadata : IEquatable<ContactImportJobMetad
     /// <summary>
     /// Gets or Sets DryRunFailedCount
     /// </summary>
-    [DataMember(Name = "dryRunFailedCount", EmitDefaultValue = false)]
+    [JsonPropertyName("dryRunFailedCount")]
     public int? DryRunFailedCount { get; set; }
 
 
@@ -52,7 +52,7 @@ public partial class ContactImportJobMetadata : IEquatable<ContactImportJobMetad
     /// <summary>
     /// Gets or Sets DryRunSuccessCount
     /// </summary>
-    [DataMember(Name = "dryRunSuccessCount", EmitDefaultValue = false)]
+    [JsonPropertyName("dryRunSuccessCount")]
     public int? DryRunSuccessCount { get; set; }
 
 
@@ -60,7 +60,7 @@ public partial class ContactImportJobMetadata : IEquatable<ContactImportJobMetad
     /// <summary>
     /// Gets or Sets DryRunReportDownloadUrl
     /// </summary>
-    [DataMember(Name = "dryRunReportDownloadUrl", EmitDefaultValue = false)]
+    [JsonPropertyName("dryRunReportDownloadUrl")]
     public string DryRunReportDownloadUrl { get; set; }
 
 
@@ -68,7 +68,7 @@ public partial class ContactImportJobMetadata : IEquatable<ContactImportJobMetad
     /// <summary>
     /// Gets or Sets ImportFailedCount
     /// </summary>
-    [DataMember(Name = "importFailedCount", EmitDefaultValue = false)]
+    [JsonPropertyName("importFailedCount")]
     public int? ImportFailedCount { get; set; }
 
 
@@ -76,7 +76,7 @@ public partial class ContactImportJobMetadata : IEquatable<ContactImportJobMetad
     /// <summary>
     /// Gets or Sets ImportSuccessCount
     /// </summary>
-    [DataMember(Name = "importSuccessCount", EmitDefaultValue = false)]
+    [JsonPropertyName("importSuccessCount")]
     public int? ImportSuccessCount { get; set; }
 
 
@@ -84,7 +84,7 @@ public partial class ContactImportJobMetadata : IEquatable<ContactImportJobMetad
     /// <summary>
     /// Gets or Sets ImportReportDownloadUrl
     /// </summary>
-    [DataMember(Name = "importReportDownloadUrl", EmitDefaultValue = false)]
+    [JsonPropertyName("importReportDownloadUrl")]
     public string ImportReportDownloadUrl { get; set; }
 
 

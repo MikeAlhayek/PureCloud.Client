@@ -1,12 +1,12 @@
-using System.Runtime.Serialization;
 using System.Text;
+using System.Text.Json.Serialization;
 
 namespace PureCloud.Client.Models;
 
 /// <summary>
 /// OutcomeScore
 /// </summary>
-[DataContract]
+
 public partial class OutcomeScore : IEquatable<OutcomeScore>
 {
     /// <summary>
@@ -37,7 +37,7 @@ public partial class OutcomeScore : IEquatable<OutcomeScore>
     /// The outcome that the score was calculated for.
     /// </summary>
     /// <value>The outcome that the score was calculated for.</value>
-    [DataMember(Name = "outcome", EmitDefaultValue = false)]
+    [JsonPropertyName("outcome")]
     public AddressableEntityRef Outcome { get; set; }
 
 
@@ -46,7 +46,7 @@ public partial class OutcomeScore : IEquatable<OutcomeScore>
     /// Represents the max probability reached in the session.
     /// </summary>
     /// <value>Represents the max probability reached in the session.</value>
-    [DataMember(Name = "sessionMaxProbability", EmitDefaultValue = false)]
+    [JsonPropertyName("sessionMaxProbability")]
     public float? SessionMaxProbability { get; set; }
 
 
@@ -55,7 +55,7 @@ public partial class OutcomeScore : IEquatable<OutcomeScore>
     /// Represents the likelihood of a customer reaching or achieving a given outcome.
     /// </summary>
     /// <value>Represents the likelihood of a customer reaching or achieving a given outcome.</value>
-    [DataMember(Name = "probability", EmitDefaultValue = false)]
+    [JsonPropertyName("probability")]
     public float? Probability { get; set; }
 
 
@@ -64,7 +64,7 @@ public partial class OutcomeScore : IEquatable<OutcomeScore>
     /// (Deprecated: use the &#39;quantile&#39; field instead) Represents the predicted probability&#39;s percentile score when compared with all other generated probabilities for a given outcome.
     /// </summary>
     /// <value>(Deprecated: use the &#39;quantile&#39; field instead) Represents the predicted probability&#39;s percentile score when compared with all other generated probabilities for a given outcome.</value>
-    [DataMember(Name = "percentile", EmitDefaultValue = false)]
+    [JsonPropertyName("percentile")]
     public int? Percentile { get; set; }
 
 
@@ -73,7 +73,7 @@ public partial class OutcomeScore : IEquatable<OutcomeScore>
     /// (Deprecated: use the &#39;quantile&#39; field instead) Represents the maximum likelihood percentile score reached for a given outcome by the current session.
     /// </summary>
     /// <value>(Deprecated: use the &#39;quantile&#39; field instead) Represents the maximum likelihood percentile score reached for a given outcome by the current session.</value>
-    [DataMember(Name = "sessionMaxPercentile", EmitDefaultValue = false)]
+    [JsonPropertyName("sessionMaxPercentile")]
     public int? SessionMaxPercentile { get; set; }
 
 
@@ -82,7 +82,7 @@ public partial class OutcomeScore : IEquatable<OutcomeScore>
     /// Represents the quantity of sessions that have a maximum probability less than the predicted probability.
     /// </summary>
     /// <value>Represents the quantity of sessions that have a maximum probability less than the predicted probability.</value>
-    [DataMember(Name = "quantile", EmitDefaultValue = false)]
+    [JsonPropertyName("quantile")]
     public float? Quantile { get; set; }
 
 
@@ -91,7 +91,7 @@ public partial class OutcomeScore : IEquatable<OutcomeScore>
     /// Represents the quantity of sessions that have a maximum probability less than the predicted session max probability.
     /// </summary>
     /// <value>Represents the quantity of sessions that have a maximum probability less than the predicted session max probability.</value>
-    [DataMember(Name = "sessionMaxQuantile", EmitDefaultValue = false)]
+    [JsonPropertyName("sessionMaxQuantile")]
     public float? SessionMaxQuantile { get; set; }
 
 

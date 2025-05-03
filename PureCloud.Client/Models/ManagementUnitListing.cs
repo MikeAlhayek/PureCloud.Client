@@ -1,12 +1,12 @@
-using System.Runtime.Serialization;
 using System.Text;
+using System.Text.Json.Serialization;
 
 namespace PureCloud.Client.Models;
 
 /// <summary>
 /// ManagementUnitListing
 /// </summary>
-[DataContract]
+
 public partial class ManagementUnitListing : IEquatable<ManagementUnitListing>, IPagedResource<ManagementUnit>
 {
     /// <summary>
@@ -42,7 +42,7 @@ public partial class ManagementUnitListing : IEquatable<ManagementUnitListing>, 
     /// <summary>
     /// Gets or Sets Entities
     /// </summary>
-    [DataMember(Name = "entities", EmitDefaultValue = false)]
+    [JsonPropertyName("entities")]
     public List<ManagementUnit> Entities { get; set; }
 
 
@@ -51,7 +51,7 @@ public partial class ManagementUnitListing : IEquatable<ManagementUnitListing>, 
     /// Deprecated, paging is not supported
     /// </summary>
     /// <value>Deprecated, paging is not supported</value>
-    [DataMember(Name = "pageSize", EmitDefaultValue = false)]
+    [JsonPropertyName("pageSize")]
     public int? PageSize { get; set; }
 
 
@@ -60,7 +60,7 @@ public partial class ManagementUnitListing : IEquatable<ManagementUnitListing>, 
     /// Deprecated, paging is not supported
     /// </summary>
     /// <value>Deprecated, paging is not supported</value>
-    [DataMember(Name = "pageNumber", EmitDefaultValue = false)]
+    [JsonPropertyName("pageNumber")]
     public int? PageNumber { get; set; }
 
 
@@ -69,7 +69,7 @@ public partial class ManagementUnitListing : IEquatable<ManagementUnitListing>, 
     /// Deprecated, paging is not supported
     /// </summary>
     /// <value>Deprecated, paging is not supported</value>
-    [DataMember(Name = "total", EmitDefaultValue = false)]
+    [JsonPropertyName("total")]
     public long? Total { get; set; }
 
 
@@ -78,7 +78,7 @@ public partial class ManagementUnitListing : IEquatable<ManagementUnitListing>, 
     /// Deprecated, paging is not supported
     /// </summary>
     /// <value>Deprecated, paging is not supported</value>
-    [DataMember(Name = "firstUri", EmitDefaultValue = false)]
+    [JsonPropertyName("firstUri")]
     public string FirstUri { get; set; }
 
 
@@ -87,7 +87,7 @@ public partial class ManagementUnitListing : IEquatable<ManagementUnitListing>, 
     /// Deprecated, paging is not supported
     /// </summary>
     /// <value>Deprecated, paging is not supported</value>
-    [DataMember(Name = "lastUri", EmitDefaultValue = false)]
+    [JsonPropertyName("lastUri")]
     public string LastUri { get; set; }
 
 
@@ -96,7 +96,7 @@ public partial class ManagementUnitListing : IEquatable<ManagementUnitListing>, 
     /// Deprecated, paging is not supported
     /// </summary>
     /// <value>Deprecated, paging is not supported</value>
-    [DataMember(Name = "pageCount", EmitDefaultValue = false)]
+    [JsonPropertyName("pageCount")]
     public int? PageCount { get; set; }
 
 
@@ -105,7 +105,7 @@ public partial class ManagementUnitListing : IEquatable<ManagementUnitListing>, 
     /// Deprecated, paging is not supported
     /// </summary>
     /// <value>Deprecated, paging is not supported</value>
-    [DataMember(Name = "nextUri", EmitDefaultValue = false)]
+    [JsonPropertyName("nextUri")]
     public string NextUri { get; set; }
 
 
@@ -114,7 +114,7 @@ public partial class ManagementUnitListing : IEquatable<ManagementUnitListing>, 
     /// Deprecated, paging is not supported
     /// </summary>
     /// <value>Deprecated, paging is not supported</value>
-    [DataMember(Name = "previousUri", EmitDefaultValue = false)]
+    [JsonPropertyName("previousUri")]
     public string PreviousUri { get; set; }
 
 
@@ -122,7 +122,7 @@ public partial class ManagementUnitListing : IEquatable<ManagementUnitListing>, 
     /// <summary>
     /// Gets or Sets SelfUri
     /// </summary>
-    [DataMember(Name = "selfUri", EmitDefaultValue = false)]
+    [JsonPropertyName("selfUri")]
     public string SelfUri { get; set; }
 
 

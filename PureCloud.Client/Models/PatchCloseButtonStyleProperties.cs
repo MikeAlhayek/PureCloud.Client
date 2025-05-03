@@ -1,12 +1,12 @@
-using System.Runtime.Serialization;
 using System.Text;
+using System.Text.Json.Serialization;
 
 namespace PureCloud.Client.Models;
 
 /// <summary>
 /// PatchCloseButtonStyleProperties
 /// </summary>
-[DataContract]
+
 public partial class PatchCloseButtonStyleProperties : IEquatable<PatchCloseButtonStyleProperties>
 {
     /// <summary>
@@ -27,7 +27,7 @@ public partial class PatchCloseButtonStyleProperties : IEquatable<PatchCloseButt
     /// Color of button. (eg. #FF0000)
     /// </summary>
     /// <value>Color of button. (eg. #FF0000)</value>
-    [DataMember(Name = "color", EmitDefaultValue = false)]
+    [JsonPropertyName("color")]
     public string Color { get; set; }
 
 
@@ -36,7 +36,7 @@ public partial class PatchCloseButtonStyleProperties : IEquatable<PatchCloseButt
     /// Opacity of button.
     /// </summary>
     /// <value>Opacity of button.</value>
-    [DataMember(Name = "opacity", EmitDefaultValue = false)]
+    [JsonPropertyName("opacity")]
     public float? Opacity { get; set; }
 
 

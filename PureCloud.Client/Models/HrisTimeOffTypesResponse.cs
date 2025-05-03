@@ -1,12 +1,12 @@
-using System.Runtime.Serialization;
 using System.Text;
+using System.Text.Json.Serialization;
 
 namespace PureCloud.Client.Models;
 
 /// <summary>
 /// HrisTimeOffTypesResponse
 /// </summary>
-[DataContract]
+
 public partial class HrisTimeOffTypesResponse : IEquatable<HrisTimeOffTypesResponse>
 {
     /// <summary>
@@ -27,7 +27,7 @@ public partial class HrisTimeOffTypesResponse : IEquatable<HrisTimeOffTypesRespo
     /// The asynchronous job handling the query
     /// </summary>
     /// <value>The asynchronous job handling the query</value>
-    [DataMember(Name = "job", EmitDefaultValue = false)]
+    [JsonPropertyName("job")]
     public HrisTimeOffTypesJobReference Job { get; set; }
 
 
@@ -36,7 +36,7 @@ public partial class HrisTimeOffTypesResponse : IEquatable<HrisTimeOffTypesRespo
     /// List of time off types. It is available only via notification
     /// </summary>
     /// <value>List of time off types. It is available only via notification</value>
-    [DataMember(Name = "entities", EmitDefaultValue = false)]
+    [JsonPropertyName("entities")]
     public List<HrisTimeOffTypeResponse> Entities { get; set; }
 
 

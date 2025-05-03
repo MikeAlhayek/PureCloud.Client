@@ -7,13 +7,13 @@ namespace PureCloud.Client.Models;
 /// <summary>
 /// ScorableSurvey
 /// </summary>
-[DataContract]
+
 public partial class ScorableSurvey : IEquatable<ScorableSurvey>
 {
     /// <summary>
     /// Gets or Sets Status
     /// </summary>
-    [JsonConverter(typeof(JsonStringEnumConverter))]
+    
     public enum StatusEnum
     {
         /// <summary>
@@ -69,7 +69,7 @@ public partial class ScorableSurvey : IEquatable<ScorableSurvey>
     /// <summary>
     /// Gets or Sets Status
     /// </summary>
-    [DataMember(Name = "status", EmitDefaultValue = false)]
+    [JsonPropertyName("status")]
     public StatusEnum? Status { get; set; }
     /// <summary>
     /// Initializes a new instance of the <see cref="ScorableSurvey" /> class.
@@ -93,7 +93,7 @@ public partial class ScorableSurvey : IEquatable<ScorableSurvey>
     /// The globally unique identifier for the object.
     /// </summary>
     /// <value>The globally unique identifier for the object.</value>
-    [DataMember(Name = "id", EmitDefaultValue = false)]
+    [JsonPropertyName("id")]
     public string Id { get; private set; }
 
 
@@ -101,7 +101,7 @@ public partial class ScorableSurvey : IEquatable<ScorableSurvey>
     /// <summary>
     /// Gets or Sets Name
     /// </summary>
-    [DataMember(Name = "name", EmitDefaultValue = false)]
+    [JsonPropertyName("name")]
     public string Name { get; set; }
 
 
@@ -110,7 +110,7 @@ public partial class ScorableSurvey : IEquatable<ScorableSurvey>
     /// Survey form used for this survey.
     /// </summary>
     /// <value>Survey form used for this survey.</value>
-    [DataMember(Name = "surveyForm", EmitDefaultValue = false)]
+    [JsonPropertyName("surveyForm")]
     public SurveyForm SurveyForm { get; set; }
 
 
@@ -120,7 +120,7 @@ public partial class ScorableSurvey : IEquatable<ScorableSurvey>
     /// <summary>
     /// Gets or Sets Answers
     /// </summary>
-    [DataMember(Name = "answers", EmitDefaultValue = false)]
+    [JsonPropertyName("answers")]
     public SurveyScoringSet Answers { get; set; }
 
 
@@ -129,7 +129,7 @@ public partial class ScorableSurvey : IEquatable<ScorableSurvey>
     /// The URI for this object
     /// </summary>
     /// <value>The URI for this object</value>
-    [DataMember(Name = "selfUri", EmitDefaultValue = false)]
+    [JsonPropertyName("selfUri")]
     public string SelfUri { get; private set; }
 
 

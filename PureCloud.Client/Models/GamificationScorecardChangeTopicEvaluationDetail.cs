@@ -1,12 +1,12 @@
-using System.Runtime.Serialization;
 using System.Text;
+using System.Text.Json.Serialization;
 
 namespace PureCloud.Client.Models;
 
 /// <summary>
 /// GamificationScorecardChangeTopicEvaluationDetail
 /// </summary>
-[DataContract]
+
 public partial class GamificationScorecardChangeTopicEvaluationDetail : IEquatable<GamificationScorecardChangeTopicEvaluationDetail>
 {
     /// <summary>
@@ -40,7 +40,7 @@ public partial class GamificationScorecardChangeTopicEvaluationDetail : IEquatab
     /// <summary>
     /// Gets or Sets EvaluationId
     /// </summary>
-    [DataMember(Name = "evaluationId", EmitDefaultValue = false)]
+    [JsonPropertyName("evaluationId")]
     public Guid? EvaluationId { get; set; }
 
 
@@ -48,7 +48,7 @@ public partial class GamificationScorecardChangeTopicEvaluationDetail : IEquatab
     /// <summary>
     /// Gets or Sets ConversationId
     /// </summary>
-    [DataMember(Name = "conversationId", EmitDefaultValue = false)]
+    [JsonPropertyName("conversationId")]
     public Guid? ConversationId { get; set; }
 
 
@@ -56,7 +56,7 @@ public partial class GamificationScorecardChangeTopicEvaluationDetail : IEquatab
     /// <summary>
     /// Gets or Sets ConversationDate
     /// </summary>
-    [DataMember(Name = "conversationDate", EmitDefaultValue = false)]
+    [JsonPropertyName("conversationDate")]
     public string ConversationDate { get; set; }
 
 
@@ -64,7 +64,7 @@ public partial class GamificationScorecardChangeTopicEvaluationDetail : IEquatab
     /// <summary>
     /// Gets or Sets FormName
     /// </summary>
-    [DataMember(Name = "formName", EmitDefaultValue = false)]
+    [JsonPropertyName("formName")]
     public string FormName { get; set; }
 
 
@@ -72,7 +72,7 @@ public partial class GamificationScorecardChangeTopicEvaluationDetail : IEquatab
     /// <summary>
     /// Gets or Sets Points
     /// </summary>
-    [DataMember(Name = "points", EmitDefaultValue = false)]
+    [JsonPropertyName("points")]
     public long? Points { get; set; }
 
 
@@ -80,7 +80,7 @@ public partial class GamificationScorecardChangeTopicEvaluationDetail : IEquatab
     /// <summary>
     /// Gets or Sets MaxPoints
     /// </summary>
-    [DataMember(Name = "maxPoints", EmitDefaultValue = false)]
+    [JsonPropertyName("maxPoints")]
     public long? MaxPoints { get; set; }
 
 
@@ -88,7 +88,7 @@ public partial class GamificationScorecardChangeTopicEvaluationDetail : IEquatab
     /// <summary>
     /// Gets or Sets EvaluationScore
     /// </summary>
-    [DataMember(Name = "evaluationScore", EmitDefaultValue = false)]
+    [JsonPropertyName("evaluationScore")]
     public long? EvaluationScore { get; set; }
 
 
@@ -96,7 +96,7 @@ public partial class GamificationScorecardChangeTopicEvaluationDetail : IEquatab
     /// <summary>
     /// Gets or Sets EvaluationScoreDouble
     /// </summary>
-    [DataMember(Name = "evaluationScoreDouble", EmitDefaultValue = false)]
+    [JsonPropertyName("evaluationScoreDouble")]
     public double? EvaluationScoreDouble { get; set; }
 
 
@@ -104,7 +104,7 @@ public partial class GamificationScorecardChangeTopicEvaluationDetail : IEquatab
     /// <summary>
     /// Gets or Sets MediaTypes
     /// </summary>
-    [DataMember(Name = "mediaTypes", EmitDefaultValue = false)]
+    [JsonPropertyName("mediaTypes")]
     public List<string> MediaTypes { get; set; }
 
 

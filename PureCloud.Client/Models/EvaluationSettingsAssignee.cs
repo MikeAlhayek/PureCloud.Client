@@ -7,14 +7,14 @@ namespace PureCloud.Client.Models;
 /// <summary>
 /// EvaluationSettingsAssignee
 /// </summary>
-[DataContract]
+
 public partial class EvaluationSettingsAssignee : IEquatable<EvaluationSettingsAssignee>
 {
     /// <summary>
     /// The assignee type. Valid values: Original, Individual, None
     /// </summary>
     /// <value>The assignee type. Valid values: Original, Individual, None</value>
-    [JsonConverter(typeof(JsonStringEnumConverter))]
+    
     public enum TypeEnum
     {
         /// <summary>
@@ -47,7 +47,7 @@ public partial class EvaluationSettingsAssignee : IEquatable<EvaluationSettingsA
     /// The assignee type. Valid values: Original, Individual, None
     /// </summary>
     /// <value>The assignee type. Valid values: Original, Individual, None</value>
-    [DataMember(Name = "type", EmitDefaultValue = false)]
+    [JsonPropertyName("type")]
     public TypeEnum? Type { get; set; }
     /// <summary>
     /// Initializes a new instance of the <see cref="EvaluationSettingsAssignee" /> class.
@@ -67,7 +67,7 @@ public partial class EvaluationSettingsAssignee : IEquatable<EvaluationSettingsA
     /// The user the dispute should be assigned to
     /// </summary>
     /// <value>The user the dispute should be assigned to</value>
-    [DataMember(Name = "user", EmitDefaultValue = false)]
+    [JsonPropertyName("user")]
     public UserReferenceWithName User { get; set; }
 
 

@@ -7,14 +7,14 @@ namespace PureCloud.Client.Models;
 /// <summary>
 /// UserBestPointsItem
 /// </summary>
-[DataContract]
+
 public partial class UserBestPointsItem : IEquatable<UserBestPointsItem>
 {
     /// <summary>
     /// Best points aggregation interval granularity
     /// </summary>
     /// <value>Best points aggregation interval granularity</value>
-    [JsonConverter(typeof(JsonStringEnumConverter))]
+    
     public enum GranularityTypeEnum
     {
         /// <summary>
@@ -47,7 +47,7 @@ public partial class UserBestPointsItem : IEquatable<UserBestPointsItem>
     /// Best points aggregation interval granularity
     /// </summary>
     /// <value>Best points aggregation interval granularity</value>
-    [DataMember(Name = "granularityType", EmitDefaultValue = false)]
+    [JsonPropertyName("granularityType")]
     public GranularityTypeEnum? GranularityType { get; private set; }
     /// <summary>
     /// Initializes a new instance of the <see cref="UserBestPointsItem" /> class.
@@ -65,7 +65,7 @@ public partial class UserBestPointsItem : IEquatable<UserBestPointsItem>
     /// Gamification points
     /// </summary>
     /// <value>Gamification points</value>
-    [DataMember(Name = "points", EmitDefaultValue = false)]
+    [JsonPropertyName("points")]
     public int? Points { get; private set; }
 
 
@@ -74,7 +74,7 @@ public partial class UserBestPointsItem : IEquatable<UserBestPointsItem>
     /// Start workday of the best points aggregation interval. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd
     /// </summary>
     /// <value>Start workday of the best points aggregation interval. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd</value>
-    [DataMember(Name = "dateStartWorkday", EmitDefaultValue = false)]
+    [JsonPropertyName("dateStartWorkday")]
     public string DateStartWorkday { get; private set; }
 
 
@@ -83,7 +83,7 @@ public partial class UserBestPointsItem : IEquatable<UserBestPointsItem>
     /// End workday of the best points aggregation interval. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd
     /// </summary>
     /// <value>End workday of the best points aggregation interval. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd</value>
-    [DataMember(Name = "dateEndWorkday", EmitDefaultValue = false)]
+    [JsonPropertyName("dateEndWorkday")]
     public string DateEndWorkday { get; private set; }
 
 
@@ -92,7 +92,7 @@ public partial class UserBestPointsItem : IEquatable<UserBestPointsItem>
     /// The rank of this user
     /// </summary>
     /// <value>The rank of this user</value>
-    [DataMember(Name = "rank", EmitDefaultValue = false)]
+    [JsonPropertyName("rank")]
     public int? Rank { get; private set; }
 
 

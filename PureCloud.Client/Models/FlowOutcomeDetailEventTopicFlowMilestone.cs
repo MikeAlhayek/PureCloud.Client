@@ -1,12 +1,12 @@
-using System.Runtime.Serialization;
 using System.Text;
+using System.Text.Json.Serialization;
 
 namespace PureCloud.Client.Models;
 
 /// <summary>
 /// FlowOutcomeDetailEventTopicFlowMilestone
 /// </summary>
-[DataContract]
+
 public partial class FlowOutcomeDetailEventTopicFlowMilestone : IEquatable<FlowOutcomeDetailEventTopicFlowMilestone>
 {
     /// <summary>
@@ -26,7 +26,7 @@ public partial class FlowOutcomeDetailEventTopicFlowMilestone : IEquatable<FlowO
     /// <summary>
     /// Gets or Sets MilestoneId
     /// </summary>
-    [DataMember(Name = "milestoneId", EmitDefaultValue = false)]
+    [JsonPropertyName("milestoneId")]
     public Guid? MilestoneId { get; set; }
 
 
@@ -34,7 +34,7 @@ public partial class FlowOutcomeDetailEventTopicFlowMilestone : IEquatable<FlowO
     /// <summary>
     /// Gets or Sets MilestoneTime
     /// </summary>
-    [DataMember(Name = "milestoneTime", EmitDefaultValue = false)]
+    [JsonPropertyName("milestoneTime")]
     public long? MilestoneTime { get; set; }
 
 

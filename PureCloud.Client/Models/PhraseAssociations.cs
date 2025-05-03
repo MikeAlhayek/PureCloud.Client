@@ -1,4 +1,3 @@
-using System.Runtime.Serialization;
 using System.Text;
 using System.Text.Json.Serialization;
 
@@ -7,7 +6,7 @@ namespace PureCloud.Client.Models;
 /// <summary>
 /// PhraseAssociations
 /// </summary>
-[DataContract]
+
 public partial class PhraseAssociations : IEquatable<PhraseAssociations>
 {
 
@@ -34,7 +33,7 @@ public partial class PhraseAssociations : IEquatable<PhraseAssociations>
     /// Id of the phrase to be linked
     /// </summary>
     /// <value>Id of the phrase to be linked</value>
-    [DataMember(Name = "phraseId", EmitDefaultValue = false)]
+    [JsonPropertyName("phraseId")]
     public string PhraseId { get; set; }
 
 
@@ -43,7 +42,7 @@ public partial class PhraseAssociations : IEquatable<PhraseAssociations>
     /// Id of the document to be linked
     /// </summary>
     /// <value>Id of the document to be linked</value>
-    [DataMember(Name = "documentId", EmitDefaultValue = false)]
+    [JsonPropertyName("documentId")]
     public string DocumentId { get; set; }
 
 

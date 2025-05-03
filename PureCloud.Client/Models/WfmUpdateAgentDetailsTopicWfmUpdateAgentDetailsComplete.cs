@@ -7,13 +7,13 @@ namespace PureCloud.Client.Models;
 /// <summary>
 /// WfmUpdateAgentDetailsTopicWfmUpdateAgentDetailsComplete
 /// </summary>
-[DataContract]
+
 public partial class WfmUpdateAgentDetailsTopicWfmUpdateAgentDetailsComplete : IEquatable<WfmUpdateAgentDetailsTopicWfmUpdateAgentDetailsComplete>
 {
     /// <summary>
     /// Gets or Sets Status
     /// </summary>
-    [JsonConverter(typeof(JsonStringEnumConverter))]
+    
     public enum StatusEnum
     {
         /// <summary>
@@ -51,7 +51,7 @@ public partial class WfmUpdateAgentDetailsTopicWfmUpdateAgentDetailsComplete : I
     /// <summary>
     /// Gets or Sets Status
     /// </summary>
-    [DataMember(Name = "status", EmitDefaultValue = false)]
+    [JsonPropertyName("status")]
     public StatusEnum? Status { get; set; }
     /// <summary>
     /// Initializes a new instance of the <see cref="WfmUpdateAgentDetailsTopicWfmUpdateAgentDetailsComplete" /> class.

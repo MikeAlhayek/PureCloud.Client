@@ -7,14 +7,14 @@ namespace PureCloud.Client.Models;
 /// <summary>
 /// AuditQueryFilter
 /// </summary>
-[DataContract]
+
 public partial class AuditQueryFilter : IEquatable<AuditQueryFilter>
 {
     /// <summary>
     /// Name of the property to filter.
     /// </summary>
     /// <value>Name of the property to filter.</value>
-    [JsonConverter(typeof(JsonStringEnumConverter))]
+    
     public enum PropertyEnum
     {
         /// <summary>
@@ -65,7 +65,7 @@ public partial class AuditQueryFilter : IEquatable<AuditQueryFilter>
     /// Name of the property to filter.
     /// </summary>
     /// <value>Name of the property to filter.</value>
-    [DataMember(Name = "property", EmitDefaultValue = false)]
+    [JsonPropertyName("property")]
     public PropertyEnum? Property { get; set; }
 
     /// <summary>
@@ -93,7 +93,7 @@ public partial class AuditQueryFilter : IEquatable<AuditQueryFilter>
     /// Value of the property to filter.
     /// </summary>
     /// <value>Value of the property to filter.</value>
-    [DataMember(Name = "value", EmitDefaultValue = false)]
+    [JsonPropertyName("value")]
     public string Value { get; set; }
 
 

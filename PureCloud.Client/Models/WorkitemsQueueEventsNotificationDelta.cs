@@ -7,13 +7,13 @@ namespace PureCloud.Client.Models;
 /// <summary>
 /// WorkitemsQueueEventsNotificationDelta
 /// </summary>
-[DataContract]
+
 public partial class WorkitemsQueueEventsNotificationDelta : IEquatable<WorkitemsQueueEventsNotificationDelta>
 {
     /// <summary>
     /// Gets or Sets Op
     /// </summary>
-    [JsonConverter(typeof(JsonStringEnumConverter))]
+    
     public enum OpEnum
     {
         /// <summary>
@@ -51,7 +51,7 @@ public partial class WorkitemsQueueEventsNotificationDelta : IEquatable<Workitem
     /// <summary>
     /// Gets or Sets Op
     /// </summary>
-    [DataMember(Name = "op", EmitDefaultValue = false)]
+    [JsonPropertyName("op")]
     public OpEnum? Op { get; set; }
     /// <summary>
     /// Initializes a new instance of the <see cref="WorkitemsQueueEventsNotificationDelta" /> class.
@@ -76,7 +76,7 @@ public partial class WorkitemsQueueEventsNotificationDelta : IEquatable<Workitem
     /// <summary>
     /// Gets or Sets Field
     /// </summary>
-    [DataMember(Name = "field", EmitDefaultValue = false)]
+    [JsonPropertyName("field")]
     public string Field { get; set; }
 
 
@@ -84,7 +84,7 @@ public partial class WorkitemsQueueEventsNotificationDelta : IEquatable<Workitem
     /// <summary>
     /// Gets or Sets OldValue
     /// </summary>
-    [DataMember(Name = "oldValue", EmitDefaultValue = false)]
+    [JsonPropertyName("oldValue")]
     public string OldValue { get; set; }
 
 
@@ -92,7 +92,7 @@ public partial class WorkitemsQueueEventsNotificationDelta : IEquatable<Workitem
     /// <summary>
     /// Gets or Sets NewValue
     /// </summary>
-    [DataMember(Name = "newValue", EmitDefaultValue = false)]
+    [JsonPropertyName("newValue")]
     public string NewValue { get; set; }
 
 

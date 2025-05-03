@@ -1,12 +1,12 @@
-using System.Runtime.Serialization;
 using System.Text;
+using System.Text.Json.Serialization;
 
 namespace PureCloud.Client.Models;
 
 /// <summary>
 /// Subscription
 /// </summary>
-[DataContract]
+
 public partial class Subscription : IEquatable<Subscription>
 {
     /// <summary>
@@ -27,7 +27,7 @@ public partial class Subscription : IEquatable<Subscription>
     /// The subscription id
     /// </summary>
     /// <value>The subscription id</value>
-    [DataMember(Name = "id", EmitDefaultValue = false)]
+    [JsonPropertyName("id")]
     public string Id { get; set; }
 
 
@@ -36,7 +36,7 @@ public partial class Subscription : IEquatable<Subscription>
     /// Notification topic
     /// </summary>
     /// <value>Notification topic</value>
-    [DataMember(Name = "topic", EmitDefaultValue = false)]
+    [JsonPropertyName("topic")]
     public string Topic { get; set; }
 
 

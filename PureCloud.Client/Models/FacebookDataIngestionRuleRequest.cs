@@ -1,4 +1,3 @@
-using System.Runtime.Serialization;
 using System.Text;
 using System.Text.Json.Serialization;
 
@@ -7,7 +6,7 @@ namespace PureCloud.Client.Models;
 /// <summary>
 /// FacebookDataIngestionRuleRequest
 /// </summary>
-[DataContract]
+
 public partial class FacebookDataIngestionRuleRequest : IEquatable<FacebookDataIngestionRuleRequest>
 {
 
@@ -36,7 +35,7 @@ public partial class FacebookDataIngestionRuleRequest : IEquatable<FacebookDataI
     /// The name of the data ingestion rule.
     /// </summary>
     /// <value>The name of the data ingestion rule.</value>
-    [DataMember(Name = "name", EmitDefaultValue = false)]
+    [JsonPropertyName("name")]
     public string Name { get; set; }
 
 
@@ -45,7 +44,7 @@ public partial class FacebookDataIngestionRuleRequest : IEquatable<FacebookDataI
     /// A description of the data ingestion rule.
     /// </summary>
     /// <value>A description of the data ingestion rule.</value>
-    [DataMember(Name = "description", EmitDefaultValue = false)]
+    [JsonPropertyName("description")]
     public string Description { get; set; }
 
 
@@ -54,7 +53,7 @@ public partial class FacebookDataIngestionRuleRequest : IEquatable<FacebookDataI
     /// The Integration Id from which to ingest public social posts. This entity is created using the /conversations/messaging/integrations/facebook resource
     /// </summary>
     /// <value>The Integration Id from which to ingest public social posts. This entity is created using the /conversations/messaging/integrations/facebook resource</value>
-    [DataMember(Name = "integrationId", EmitDefaultValue = false)]
+    [JsonPropertyName("integrationId")]
     public string IntegrationId { get; set; }
 
 

@@ -1,12 +1,12 @@
-using System.Runtime.Serialization;
 using System.Text;
+using System.Text.Json.Serialization;
 
 namespace PureCloud.Client.Models;
 
 /// <summary>
 /// WfmBuIntradayDataUpdateTopicIntradayPerformancePredictionData
 /// </summary>
-[DataContract]
+
 public partial class WfmBuIntradayDataUpdateTopicIntradayPerformancePredictionData : IEquatable<WfmBuIntradayDataUpdateTopicIntradayPerformancePredictionData>
 {
     /// <summary>
@@ -28,7 +28,7 @@ public partial class WfmBuIntradayDataUpdateTopicIntradayPerformancePredictionDa
     /// <summary>
     /// Gets or Sets ServiceLevelPercent
     /// </summary>
-    [DataMember(Name = "serviceLevelPercent", EmitDefaultValue = false)]
+    [JsonPropertyName("serviceLevelPercent")]
     public double? ServiceLevelPercent { get; set; }
 
 
@@ -36,7 +36,7 @@ public partial class WfmBuIntradayDataUpdateTopicIntradayPerformancePredictionDa
     /// <summary>
     /// Gets or Sets AverageSpeedOfAnswerSeconds
     /// </summary>
-    [DataMember(Name = "averageSpeedOfAnswerSeconds", EmitDefaultValue = false)]
+    [JsonPropertyName("averageSpeedOfAnswerSeconds")]
     public double? AverageSpeedOfAnswerSeconds { get; set; }
 
 
@@ -44,7 +44,7 @@ public partial class WfmBuIntradayDataUpdateTopicIntradayPerformancePredictionDa
     /// <summary>
     /// Gets or Sets OccupancyPercent
     /// </summary>
-    [DataMember(Name = "occupancyPercent", EmitDefaultValue = false)]
+    [JsonPropertyName("occupancyPercent")]
     public double? OccupancyPercent { get; set; }
 
 

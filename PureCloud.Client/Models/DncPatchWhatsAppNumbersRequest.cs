@@ -7,14 +7,14 @@ namespace PureCloud.Client.Models;
 /// <summary>
 /// DncPatchWhatsAppNumbersRequest
 /// </summary>
-[DataContract]
+
 public partial class DncPatchWhatsAppNumbersRequest : IEquatable<DncPatchWhatsAppNumbersRequest>
 {
     /// <summary>
     /// The action to perform
     /// </summary>
     /// <value>The action to perform</value>
-    [JsonConverter(typeof(JsonStringEnumConverter))]
+    
     public enum ActionEnum
     {
         /// <summary>
@@ -41,7 +41,7 @@ public partial class DncPatchWhatsAppNumbersRequest : IEquatable<DncPatchWhatsAp
     /// The action to perform
     /// </summary>
     /// <value>The action to perform</value>
-    [DataMember(Name = "action", EmitDefaultValue = false)]
+    [JsonPropertyName("action")]
     public ActionEnum? Action { get; set; }
     /// <summary>
     /// Initializes a new instance of the <see cref="DncPatchWhatsAppNumbersRequest" /> class.
@@ -65,7 +65,7 @@ public partial class DncPatchWhatsAppNumbersRequest : IEquatable<DncPatchWhatsAp
     /// The list of whatsApp numbers to Add to / Remove from the DNC list 
     /// </summary>
     /// <value>The list of whatsApp numbers to Add to / Remove from the DNC list </value>
-    [DataMember(Name = "whatsAppNumbers", EmitDefaultValue = false)]
+    [JsonPropertyName("whatsAppNumbers")]
     public List<string> WhatsAppNumbers { get; set; }
 
 
@@ -74,7 +74,7 @@ public partial class DncPatchWhatsAppNumbersRequest : IEquatable<DncPatchWhatsAp
     /// Expiration date for DNC whatsApp numbers in yyyy-MM-ddTHH:mmZ format
     /// </summary>
     /// <value>Expiration date for DNC whatsApp numbers in yyyy-MM-ddTHH:mmZ format</value>
-    [DataMember(Name = "expirationDateTime", EmitDefaultValue = false)]
+    [JsonPropertyName("expirationDateTime")]
     public string ExpirationDateTime { get; set; }
 
 

@@ -1,12 +1,12 @@
-using System.Runtime.Serialization;
 using System.Text;
+using System.Text.Json.Serialization;
 
 namespace PureCloud.Client.Models;
 
 /// <summary>
 /// UserRoutingStatusUserParam
 /// </summary>
-[DataContract]
+
 public partial class UserRoutingStatusUserParam : IEquatable<UserRoutingStatusUserParam>
 {
     /// <summary>
@@ -28,7 +28,7 @@ public partial class UserRoutingStatusUserParam : IEquatable<UserRoutingStatusUs
     /// <summary>
     /// Gets or Sets Key
     /// </summary>
-    [DataMember(Name = "key", EmitDefaultValue = false)]
+    [JsonPropertyName("key")]
     public string Key { get; set; }
 
 
@@ -36,7 +36,7 @@ public partial class UserRoutingStatusUserParam : IEquatable<UserRoutingStatusUs
     /// <summary>
     /// Gets or Sets Value
     /// </summary>
-    [DataMember(Name = "value", EmitDefaultValue = false)]
+    [JsonPropertyName("value")]
     public string Value { get; set; }
 
 
@@ -44,7 +44,7 @@ public partial class UserRoutingStatusUserParam : IEquatable<UserRoutingStatusUs
     /// <summary>
     /// Gets or Sets AdditionalProperties
     /// </summary>
-    [DataMember(Name = "additionalProperties", EmitDefaultValue = false)]
+    [JsonPropertyName("additionalProperties")]
     public Dictionary<string, object> AdditionalProperties { get; set; }
 
 

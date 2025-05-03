@@ -1,4 +1,3 @@
-using System.Runtime.Serialization;
 using System.Text;
 using System.Text.Json.Serialization;
 
@@ -7,7 +6,7 @@ namespace PureCloud.Client.Models;
 /// <summary>
 /// ValidationResult
 /// </summary>
-[DataContract]
+
 public partial class ValidationResult : IEquatable<ValidationResult>
 {
 
@@ -36,7 +35,7 @@ public partial class ValidationResult : IEquatable<ValidationResult>
     /// Separator valid in the upload
     /// </summary>
     /// <value>Separator valid in the upload</value>
-    [DataMember(Name = "separatorValid", EmitDefaultValue = false)]
+    [JsonPropertyName("separatorValid")]
     public bool? SeparatorValid { get; set; }
 
 
@@ -45,7 +44,7 @@ public partial class ValidationResult : IEquatable<ValidationResult>
     /// File encoding valid for the upload
     /// </summary>
     /// <value>File encoding valid for the upload</value>
-    [DataMember(Name = "fileEncodingValid", EmitDefaultValue = false)]
+    [JsonPropertyName("fileEncodingValid")]
     public bool? FileEncodingValid { get; set; }
 
 
@@ -54,7 +53,7 @@ public partial class ValidationResult : IEquatable<ValidationResult>
     /// List of errors for the upload
     /// </summary>
     /// <value>List of errors for the upload</value>
-    [DataMember(Name = "errors", EmitDefaultValue = false)]
+    [JsonPropertyName("errors")]
     public List<ValidationError> Errors { get; set; }
 
 

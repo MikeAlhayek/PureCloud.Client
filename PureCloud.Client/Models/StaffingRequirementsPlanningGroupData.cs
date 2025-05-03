@@ -1,4 +1,3 @@
-using System.Runtime.Serialization;
 using System.Text;
 using System.Text.Json.Serialization;
 
@@ -7,7 +6,7 @@ namespace PureCloud.Client.Models;
 /// <summary>
 /// StaffingRequirementsPlanningGroupData
 /// </summary>
-[DataContract]
+
 public partial class StaffingRequirementsPlanningGroupData : IEquatable<StaffingRequirementsPlanningGroupData>
 {
 
@@ -34,7 +33,7 @@ public partial class StaffingRequirementsPlanningGroupData : IEquatable<Staffing
     /// The ID of the planning group to which this data applies
     /// </summary>
     /// <value>The ID of the planning group to which this data applies</value>
-    [DataMember(Name = "planningGroupId", EmitDefaultValue = false)]
+    [JsonPropertyName("planningGroupId")]
     public string PlanningGroupId { get; set; }
 
 
@@ -43,7 +42,7 @@ public partial class StaffingRequirementsPlanningGroupData : IEquatable<Staffing
     /// Staffing requirements per interval for this week forecast
     /// </summary>
     /// <value>Staffing requirements per interval for this week forecast</value>
-    [DataMember(Name = "staffingRequirementsPerInterval", EmitDefaultValue = false)]
+    [JsonPropertyName("staffingRequirementsPerInterval")]
     public List<double?> StaffingRequirementsPerInterval { get; set; }
 
 

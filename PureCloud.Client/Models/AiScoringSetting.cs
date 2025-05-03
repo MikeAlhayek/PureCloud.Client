@@ -1,12 +1,12 @@
-using System.Runtime.Serialization;
 using System.Text;
+using System.Text.Json.Serialization;
 
 namespace PureCloud.Client.Models;
 
 /// <summary>
 /// AiScoringSetting
 /// </summary>
-[DataContract]
+
 public partial class AiScoringSetting : IEquatable<AiScoringSetting>
 {
     /// <summary>
@@ -25,7 +25,7 @@ public partial class AiScoringSetting : IEquatable<AiScoringSetting>
     /// True if AI Scoring feature is configured.
     /// </summary>
     /// <value>True if AI Scoring feature is configured.</value>
-    [DataMember(Name = "enabled", EmitDefaultValue = false)]
+    [JsonPropertyName("enabled")]
     public bool? Enabled { get; set; }
 
 

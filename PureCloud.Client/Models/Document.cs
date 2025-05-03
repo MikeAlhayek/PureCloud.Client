@@ -7,13 +7,13 @@ namespace PureCloud.Client.Models;
 /// <summary>
 /// Document
 /// </summary>
-[DataContract]
+
 public partial class Document : IEquatable<Document>
 {
     /// <summary>
     /// Gets or Sets SystemType
     /// </summary>
-    [JsonConverter(typeof(JsonStringEnumConverter))]
+    
     public enum SystemTypeEnum
     {
         /// <summary>
@@ -45,7 +45,7 @@ public partial class Document : IEquatable<Document>
     /// <summary>
     /// Gets or Sets UploadMethod
     /// </summary>
-    [JsonConverter(typeof(JsonStringEnumConverter))]
+    
     public enum UploadMethodEnum
     {
         /// <summary>
@@ -71,7 +71,7 @@ public partial class Document : IEquatable<Document>
     /// <summary>
     /// Gets or Sets SharingStatus
     /// </summary>
-    [JsonConverter(typeof(JsonStringEnumConverter))]
+    
     public enum SharingStatusEnum
     {
         /// <summary>
@@ -103,17 +103,17 @@ public partial class Document : IEquatable<Document>
     /// <summary>
     /// Gets or Sets SystemType
     /// </summary>
-    [DataMember(Name = "systemType", EmitDefaultValue = false)]
+    [JsonPropertyName("systemType")]
     public SystemTypeEnum? SystemType { get; set; }
     /// <summary>
     /// Gets or Sets UploadMethod
     /// </summary>
-    [DataMember(Name = "uploadMethod", EmitDefaultValue = false)]
+    [JsonPropertyName("uploadMethod")]
     public UploadMethodEnum? UploadMethod { get; set; }
     /// <summary>
     /// Gets or Sets SharingStatus
     /// </summary>
-    [DataMember(Name = "sharingStatus", EmitDefaultValue = false)]
+    [JsonPropertyName("sharingStatus")]
     public SharingStatusEnum? SharingStatus { get; set; }
     /// <summary>
     /// Initializes a new instance of the <see cref="Document" /> class.
@@ -187,7 +187,7 @@ public partial class Document : IEquatable<Document>
     /// The globally unique identifier for the object.
     /// </summary>
     /// <value>The globally unique identifier for the object.</value>
-    [DataMember(Name = "id", EmitDefaultValue = false)]
+    [JsonPropertyName("id")]
     public string Id { get; private set; }
 
 
@@ -195,7 +195,7 @@ public partial class Document : IEquatable<Document>
     /// <summary>
     /// Gets or Sets Name
     /// </summary>
-    [DataMember(Name = "name", EmitDefaultValue = false)]
+    [JsonPropertyName("name")]
     public string Name { get; set; }
 
 
@@ -203,7 +203,7 @@ public partial class Document : IEquatable<Document>
     /// <summary>
     /// Gets or Sets ChangeNumber
     /// </summary>
-    [DataMember(Name = "changeNumber", EmitDefaultValue = false)]
+    [JsonPropertyName("changeNumber")]
     public int? ChangeNumber { get; set; }
 
 
@@ -212,7 +212,7 @@ public partial class Document : IEquatable<Document>
     /// Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z
     /// </summary>
     /// <value>Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z</value>
-    [DataMember(Name = "dateCreated", EmitDefaultValue = false)]
+    [JsonPropertyName("dateCreated")]
     public DateTime? DateCreated { get; set; }
 
 
@@ -221,7 +221,7 @@ public partial class Document : IEquatable<Document>
     /// Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z
     /// </summary>
     /// <value>Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z</value>
-    [DataMember(Name = "dateModified", EmitDefaultValue = false)]
+    [JsonPropertyName("dateModified")]
     public DateTime? DateModified { get; set; }
 
 
@@ -230,7 +230,7 @@ public partial class Document : IEquatable<Document>
     /// Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z
     /// </summary>
     /// <value>Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z</value>
-    [DataMember(Name = "dateUploaded", EmitDefaultValue = false)]
+    [JsonPropertyName("dateUploaded")]
     public DateTime? DateUploaded { get; set; }
 
 
@@ -238,7 +238,7 @@ public partial class Document : IEquatable<Document>
     /// <summary>
     /// Gets or Sets ContentUri
     /// </summary>
-    [DataMember(Name = "contentUri", EmitDefaultValue = false)]
+    [JsonPropertyName("contentUri")]
     public string ContentUri { get; set; }
 
 
@@ -246,7 +246,7 @@ public partial class Document : IEquatable<Document>
     /// <summary>
     /// Gets or Sets Workspace
     /// </summary>
-    [DataMember(Name = "workspace", EmitDefaultValue = false)]
+    [JsonPropertyName("workspace")]
     public DomainEntityRef Workspace { get; set; }
 
 
@@ -254,7 +254,7 @@ public partial class Document : IEquatable<Document>
     /// <summary>
     /// Gets or Sets CreatedBy
     /// </summary>
-    [DataMember(Name = "createdBy", EmitDefaultValue = false)]
+    [JsonPropertyName("createdBy")]
     public DomainEntityRef CreatedBy { get; set; }
 
 
@@ -262,7 +262,7 @@ public partial class Document : IEquatable<Document>
     /// <summary>
     /// Gets or Sets UploadedBy
     /// </summary>
-    [DataMember(Name = "uploadedBy", EmitDefaultValue = false)]
+    [JsonPropertyName("uploadedBy")]
     public DomainEntityRef UploadedBy { get; set; }
 
 
@@ -270,7 +270,7 @@ public partial class Document : IEquatable<Document>
     /// <summary>
     /// Gets or Sets SharingUri
     /// </summary>
-    [DataMember(Name = "sharingUri", EmitDefaultValue = false)]
+    [JsonPropertyName("sharingUri")]
     public string SharingUri { get; set; }
 
 
@@ -278,7 +278,7 @@ public partial class Document : IEquatable<Document>
     /// <summary>
     /// Gets or Sets ContentType
     /// </summary>
-    [DataMember(Name = "contentType", EmitDefaultValue = false)]
+    [JsonPropertyName("contentType")]
     public string ContentType { get; set; }
 
 
@@ -286,7 +286,7 @@ public partial class Document : IEquatable<Document>
     /// <summary>
     /// Gets or Sets ContentLength
     /// </summary>
-    [DataMember(Name = "contentLength", EmitDefaultValue = false)]
+    [JsonPropertyName("contentLength")]
     public long? ContentLength { get; set; }
 
 
@@ -296,7 +296,7 @@ public partial class Document : IEquatable<Document>
     /// <summary>
     /// Gets or Sets Filename
     /// </summary>
-    [DataMember(Name = "filename", EmitDefaultValue = false)]
+    [JsonPropertyName("filename")]
     public string Filename { get; set; }
 
 
@@ -304,7 +304,7 @@ public partial class Document : IEquatable<Document>
     /// <summary>
     /// Gets or Sets PageCount
     /// </summary>
-    [DataMember(Name = "pageCount", EmitDefaultValue = false)]
+    [JsonPropertyName("pageCount")]
     public long? PageCount { get; set; }
 
 
@@ -312,7 +312,7 @@ public partial class Document : IEquatable<Document>
     /// <summary>
     /// Gets or Sets Read
     /// </summary>
-    [DataMember(Name = "read", EmitDefaultValue = false)]
+    [JsonPropertyName("read")]
     public bool? Read { get; set; }
 
 
@@ -320,7 +320,7 @@ public partial class Document : IEquatable<Document>
     /// <summary>
     /// Gets or Sets CallerAddress
     /// </summary>
-    [DataMember(Name = "callerAddress", EmitDefaultValue = false)]
+    [JsonPropertyName("callerAddress")]
     public string CallerAddress { get; set; }
 
 
@@ -328,7 +328,7 @@ public partial class Document : IEquatable<Document>
     /// <summary>
     /// Gets or Sets ReceiverAddress
     /// </summary>
-    [DataMember(Name = "receiverAddress", EmitDefaultValue = false)]
+    [JsonPropertyName("receiverAddress")]
     public string ReceiverAddress { get; set; }
 
 
@@ -336,7 +336,7 @@ public partial class Document : IEquatable<Document>
     /// <summary>
     /// Gets or Sets Tags
     /// </summary>
-    [DataMember(Name = "tags", EmitDefaultValue = false)]
+    [JsonPropertyName("tags")]
     public List<string> Tags { get; set; }
 
 
@@ -344,7 +344,7 @@ public partial class Document : IEquatable<Document>
     /// <summary>
     /// Gets or Sets TagValues
     /// </summary>
-    [DataMember(Name = "tagValues", EmitDefaultValue = false)]
+    [JsonPropertyName("tagValues")]
     public List<TagValue> TagValues { get; set; }
 
 
@@ -352,7 +352,7 @@ public partial class Document : IEquatable<Document>
     /// <summary>
     /// Gets or Sets Attributes
     /// </summary>
-    [DataMember(Name = "attributes", EmitDefaultValue = false)]
+    [JsonPropertyName("attributes")]
     public List<DocumentAttribute> Attributes { get; set; }
 
 
@@ -360,7 +360,7 @@ public partial class Document : IEquatable<Document>
     /// <summary>
     /// Gets or Sets Thumbnails
     /// </summary>
-    [DataMember(Name = "thumbnails", EmitDefaultValue = false)]
+    [JsonPropertyName("thumbnails")]
     public List<DocumentThumbnail> Thumbnails { get; set; }
 
 
@@ -368,7 +368,7 @@ public partial class Document : IEquatable<Document>
     /// <summary>
     /// Gets or Sets UploadStatus
     /// </summary>
-    [DataMember(Name = "uploadStatus", EmitDefaultValue = false)]
+    [JsonPropertyName("uploadStatus")]
     public DomainEntityRef UploadStatus { get; set; }
 
 
@@ -376,7 +376,7 @@ public partial class Document : IEquatable<Document>
     /// <summary>
     /// Gets or Sets UploadDestinationUri
     /// </summary>
-    [DataMember(Name = "uploadDestinationUri", EmitDefaultValue = false)]
+    [JsonPropertyName("uploadDestinationUri")]
     public string UploadDestinationUri { get; set; }
 
 
@@ -386,7 +386,7 @@ public partial class Document : IEquatable<Document>
     /// <summary>
     /// Gets or Sets LockInfo
     /// </summary>
-    [DataMember(Name = "lockInfo", EmitDefaultValue = false)]
+    [JsonPropertyName("lockInfo")]
     public LockInfo LockInfo { get; set; }
 
 
@@ -395,7 +395,7 @@ public partial class Document : IEquatable<Document>
     /// A list of permitted action rights for the user making the request
     /// </summary>
     /// <value>A list of permitted action rights for the user making the request</value>
-    [DataMember(Name = "acl", EmitDefaultValue = false)]
+    [JsonPropertyName("acl")]
     public List<string> Acl { get; set; }
 
 
@@ -405,7 +405,7 @@ public partial class Document : IEquatable<Document>
     /// <summary>
     /// Gets or Sets DownloadSharingUri
     /// </summary>
-    [DataMember(Name = "downloadSharingUri", EmitDefaultValue = false)]
+    [JsonPropertyName("downloadSharingUri")]
     public string DownloadSharingUri { get; set; }
 
 
@@ -414,7 +414,7 @@ public partial class Document : IEquatable<Document>
     /// The URI for this object
     /// </summary>
     /// <value>The URI for this object</value>
-    [DataMember(Name = "selfUri", EmitDefaultValue = false)]
+    [JsonPropertyName("selfUri")]
     public string SelfUri { get; private set; }
 
 

@@ -7,14 +7,14 @@ namespace PureCloud.Client.Models;
 /// <summary>
 /// AuditQuerySort
 /// </summary>
-[DataContract]
+
 public partial class AuditQuerySort : IEquatable<AuditQuerySort>
 {
     /// <summary>
     /// Name of the property to sort.
     /// </summary>
     /// <value>Name of the property to sort.</value>
-    [JsonConverter(typeof(JsonStringEnumConverter))]
+    
     public enum NameEnum
     {
         /// <summary>
@@ -35,7 +35,7 @@ public partial class AuditQuerySort : IEquatable<AuditQuerySort>
     /// Sort Order
     /// </summary>
     /// <value>Sort Order</value>
-    [JsonConverter(typeof(JsonStringEnumConverter))]
+    
     public enum SortOrderEnum
     {
         /// <summary>
@@ -62,13 +62,13 @@ public partial class AuditQuerySort : IEquatable<AuditQuerySort>
     /// Name of the property to sort.
     /// </summary>
     /// <value>Name of the property to sort.</value>
-    [DataMember(Name = "name", EmitDefaultValue = false)]
+    [JsonPropertyName("name")]
     public NameEnum? Name { get; set; }
     /// <summary>
     /// Sort Order
     /// </summary>
     /// <value>Sort Order</value>
-    [DataMember(Name = "sortOrder", EmitDefaultValue = false)]
+    [JsonPropertyName("sortOrder")]
     public SortOrderEnum? SortOrder { get; set; }
 
     /// <summary>

@@ -7,14 +7,14 @@ namespace PureCloud.Client.Models;
 /// <summary>
 /// Represents an unassigned or assigned DID in a DID Pool.
 /// </summary>
-[DataContract]
+
 public partial class DIDNumber : IEquatable<DIDNumber>
 {
     /// <summary>
     /// The type of the entity that owns this DID.  If the DID is unassigned, this will be NULL.
     /// </summary>
     /// <value>The type of the entity that owns this DID.  If the DID is unassigned, this will be NULL.</value>
-    [JsonConverter(typeof(JsonStringEnumConverter))]
+    
     public enum OwnerTypeEnum
     {
         /// <summary>
@@ -53,7 +53,7 @@ public partial class DIDNumber : IEquatable<DIDNumber>
     /// The type of the entity that owns this DID.  If the DID is unassigned, this will be NULL.
     /// </summary>
     /// <value>The type of the entity that owns this DID.  If the DID is unassigned, this will be NULL.</value>
-    [DataMember(Name = "ownerType", EmitDefaultValue = false)]
+    [JsonPropertyName("ownerType")]
     public OwnerTypeEnum? OwnerType { get; set; }
     /// <summary>
     /// Initializes a new instance of the <see cref="DIDNumber" /> class.
@@ -81,7 +81,7 @@ public partial class DIDNumber : IEquatable<DIDNumber>
     /// The globally unique identifier for the object.
     /// </summary>
     /// <value>The globally unique identifier for the object.</value>
-    [DataMember(Name = "id", EmitDefaultValue = false)]
+    [JsonPropertyName("id")]
     public string Id { get; private set; }
 
 
@@ -89,7 +89,7 @@ public partial class DIDNumber : IEquatable<DIDNumber>
     /// <summary>
     /// Gets or Sets Name
     /// </summary>
-    [DataMember(Name = "name", EmitDefaultValue = false)]
+    [JsonPropertyName("name")]
     public string Name { get; set; }
 
 
@@ -98,7 +98,7 @@ public partial class DIDNumber : IEquatable<DIDNumber>
     /// The number of the DID formatted as E164.
     /// </summary>
     /// <value>The number of the DID formatted as E164.</value>
-    [DataMember(Name = "number", EmitDefaultValue = false)]
+    [JsonPropertyName("number")]
     public string Number { get; set; }
 
 
@@ -107,7 +107,7 @@ public partial class DIDNumber : IEquatable<DIDNumber>
     /// True if this DID is assigned to an entity.  False otherwise.
     /// </summary>
     /// <value>True if this DID is assigned to an entity.  False otherwise.</value>
-    [DataMember(Name = "assigned", EmitDefaultValue = false)]
+    [JsonPropertyName("assigned")]
     public bool? Assigned { get; set; }
 
 
@@ -116,7 +116,7 @@ public partial class DIDNumber : IEquatable<DIDNumber>
     /// A Uri reference to the DID Pool this DID is a part of.
     /// </summary>
     /// <value>A Uri reference to the DID Pool this DID is a part of.</value>
-    [DataMember(Name = "didPool", EmitDefaultValue = false)]
+    [JsonPropertyName("didPool")]
     public AddressableEntityRef DidPool { get; set; }
 
 
@@ -125,7 +125,7 @@ public partial class DIDNumber : IEquatable<DIDNumber>
     /// A Uri reference to the owner of this DID.  The owner&#39;s type can be found in ownerType.  If the DID is unassigned, this will be NULL.
     /// </summary>
     /// <value>A Uri reference to the owner of this DID.  The owner&#39;s type can be found in ownerType.  If the DID is unassigned, this will be NULL.</value>
-    [DataMember(Name = "owner", EmitDefaultValue = false)]
+    [JsonPropertyName("owner")]
     public DomainEntityRef Owner { get; set; }
 
 
@@ -136,7 +136,7 @@ public partial class DIDNumber : IEquatable<DIDNumber>
     /// The URI for this object
     /// </summary>
     /// <value>The URI for this object</value>
-    [DataMember(Name = "selfUri", EmitDefaultValue = false)]
+    [JsonPropertyName("selfUri")]
     public string SelfUri { get; private set; }
 
 

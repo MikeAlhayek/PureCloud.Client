@@ -7,14 +7,14 @@ namespace PureCloud.Client.Models;
 /// <summary>
 /// Describes a link to a record in an external system that contributed data to a Relate record
 /// </summary>
-[DataContract]
+
 public partial class ExternalDataSource : IEquatable<ExternalDataSource>
 {
     /// <summary>
     /// The platform that was the source of the data.  Example: a CRM like SALESFORCE.
     /// </summary>
     /// <value>The platform that was the source of the data.  Example: a CRM like SALESFORCE.</value>
-    [JsonConverter(typeof(JsonStringEnumConverter))]
+    
     public enum PlatformEnum
     {
         /// <summary>
@@ -35,7 +35,7 @@ public partial class ExternalDataSource : IEquatable<ExternalDataSource>
     /// The platform that was the source of the data.  Example: a CRM like SALESFORCE.
     /// </summary>
     /// <value>The platform that was the source of the data.  Example: a CRM like SALESFORCE.</value>
-    [DataMember(Name = "platform", EmitDefaultValue = false)]
+    [JsonPropertyName("platform")]
     public PlatformEnum? Platform { get; set; }
     /// <summary>
     /// Initializes a new instance of the <see cref="ExternalDataSource" /> class.
@@ -57,7 +57,7 @@ public partial class ExternalDataSource : IEquatable<ExternalDataSource>
     /// An URL that links to the source record that contributed data to the associated entity.
     /// </summary>
     /// <value>An URL that links to the source record that contributed data to the associated entity.</value>
-    [DataMember(Name = "url", EmitDefaultValue = false)]
+    [JsonPropertyName("url")]
     public string Url { get; set; }
 
 

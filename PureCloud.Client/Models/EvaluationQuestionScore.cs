@@ -1,12 +1,12 @@
-using System.Runtime.Serialization;
 using System.Text;
+using System.Text.Json.Serialization;
 
 namespace PureCloud.Client.Models;
 
 /// <summary>
 /// EvaluationQuestionScore
 /// </summary>
-[DataContract]
+
 public partial class EvaluationQuestionScore : IEquatable<EvaluationQuestionScore>
 {
     /// <summary>
@@ -38,7 +38,7 @@ public partial class EvaluationQuestionScore : IEquatable<EvaluationQuestionScor
     /// <summary>
     /// Gets or Sets QuestionId
     /// </summary>
-    [DataMember(Name = "questionId", EmitDefaultValue = false)]
+    [JsonPropertyName("questionId")]
     public string QuestionId { get; set; }
 
 
@@ -46,7 +46,7 @@ public partial class EvaluationQuestionScore : IEquatable<EvaluationQuestionScor
     /// <summary>
     /// Gets or Sets AnswerId
     /// </summary>
-    [DataMember(Name = "answerId", EmitDefaultValue = false)]
+    [JsonPropertyName("answerId")]
     public string AnswerId { get; set; }
 
 
@@ -55,7 +55,7 @@ public partial class EvaluationQuestionScore : IEquatable<EvaluationQuestionScor
     /// Unweighted score of the question
     /// </summary>
     /// <value>Unweighted score of the question</value>
-    [DataMember(Name = "score", EmitDefaultValue = false)]
+    [JsonPropertyName("score")]
     public int? Score { get; set; }
 
 
@@ -64,7 +64,7 @@ public partial class EvaluationQuestionScore : IEquatable<EvaluationQuestionScor
     /// True when the evaluation is submitted with a question that does not have an answer. Only allowed when naEnabled is true or if set by the system
     /// </summary>
     /// <value>True when the evaluation is submitted with a question that does not have an answer. Only allowed when naEnabled is true or if set by the system</value>
-    [DataMember(Name = "markedNA", EmitDefaultValue = false)]
+    [JsonPropertyName("markedNA")]
     public bool? MarkedNA { get; set; }
 
 
@@ -73,7 +73,7 @@ public partial class EvaluationQuestionScore : IEquatable<EvaluationQuestionScor
     /// If markedNA is true, systemMarkedNA indicates whether it was marked by a user or by the system due to visibility conditions. Always false if markedNA is false.
     /// </summary>
     /// <value>If markedNA is true, systemMarkedNA indicates whether it was marked by a user or by the system due to visibility conditions. Always false if markedNA is false.</value>
-    [DataMember(Name = "systemMarkedNA", EmitDefaultValue = false)]
+    [JsonPropertyName("systemMarkedNA")]
     public bool? SystemMarkedNA { get; set; }
 
 
@@ -82,7 +82,7 @@ public partial class EvaluationQuestionScore : IEquatable<EvaluationQuestionScor
     /// AnswerId found with evaluation assistance conditions
     /// </summary>
     /// <value>AnswerId found with evaluation assistance conditions</value>
-    [DataMember(Name = "assistedAnswerId", EmitDefaultValue = false)]
+    [JsonPropertyName("assistedAnswerId")]
     public string AssistedAnswerId { get; set; }
 
 
@@ -91,7 +91,7 @@ public partial class EvaluationQuestionScore : IEquatable<EvaluationQuestionScor
     /// Applicable only on fatal questions. Indicates that the answer selected was not the highest score available for the question
     /// </summary>
     /// <value>Applicable only on fatal questions. Indicates that the answer selected was not the highest score available for the question</value>
-    [DataMember(Name = "failedKillQuestion", EmitDefaultValue = false)]
+    [JsonPropertyName("failedKillQuestion")]
     public bool? FailedKillQuestion { get; set; }
 
 
@@ -100,7 +100,7 @@ public partial class EvaluationQuestionScore : IEquatable<EvaluationQuestionScor
     /// Comments from the evaluator specific to this question
     /// </summary>
     /// <value>Comments from the evaluator specific to this question</value>
-    [DataMember(Name = "comments", EmitDefaultValue = false)]
+    [JsonPropertyName("comments")]
     public string Comments { get; set; }
 
 
@@ -109,7 +109,7 @@ public partial class EvaluationQuestionScore : IEquatable<EvaluationQuestionScor
     /// Suggested AI answer
     /// </summary>
     /// <value>Suggested AI answer</value>
-    [DataMember(Name = "aiAnswer", EmitDefaultValue = false)]
+    [JsonPropertyName("aiAnswer")]
     public AiAnswer AiAnswer { get; private set; }
 
 

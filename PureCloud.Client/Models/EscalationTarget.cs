@@ -7,14 +7,14 @@ namespace PureCloud.Client.Models;
 /// <summary>
 /// EscalationTarget
 /// </summary>
-[DataContract]
+
 public partial class EscalationTarget : IEquatable<EscalationTarget>
 {
     /// <summary>
     /// Defines the target that the message will be escalated to.
     /// </summary>
     /// <value>Defines the target that the message will be escalated to.</value>
-    [JsonConverter(typeof(JsonStringEnumConverter))]
+    
     public enum TargetTypeEnum
     {
         /// <summary>
@@ -35,7 +35,7 @@ public partial class EscalationTarget : IEquatable<EscalationTarget>
     /// Defines the destination of the escalation.SourceIntegration means use the SocialMedia Source Integration as the destination.OverrideIntegration means the set integration will be used regardless of the source.
     /// </summary>
     /// <value>Defines the destination of the escalation.SourceIntegration means use the SocialMedia Source Integration as the destination.OverrideIntegration means the set integration will be used regardless of the source.</value>
-    [JsonConverter(typeof(JsonStringEnumConverter))]
+    
     public enum DestinationEnum
     {
         /// <summary>
@@ -62,13 +62,13 @@ public partial class EscalationTarget : IEquatable<EscalationTarget>
     /// Defines the target that the message will be escalated to.
     /// </summary>
     /// <value>Defines the target that the message will be escalated to.</value>
-    [DataMember(Name = "targetType", EmitDefaultValue = false)]
+    [JsonPropertyName("targetType")]
     public TargetTypeEnum? TargetType { get; set; }
     /// <summary>
     /// Defines the destination of the escalation.SourceIntegration means use the SocialMedia Source Integration as the destination.OverrideIntegration means the set integration will be used regardless of the source.
     /// </summary>
     /// <value>Defines the destination of the escalation.SourceIntegration means use the SocialMedia Source Integration as the destination.OverrideIntegration means the set integration will be used regardless of the source.</value>
-    [DataMember(Name = "destination", EmitDefaultValue = false)]
+    [JsonPropertyName("destination")]
     public DestinationEnum? Destination { get; set; }
 
     /// <summary>
@@ -100,7 +100,7 @@ public partial class EscalationTarget : IEquatable<EscalationTarget>
     /// Set the integration ID.Only valid when type is OverrideIntegration.
     /// </summary>
     /// <value>Set the integration ID.Only valid when type is OverrideIntegration.</value>
-    [DataMember(Name = "override", EmitDefaultValue = false)]
+    [JsonPropertyName("override")]
     public OverrideEscalationTarget Override { get; set; }
 
 

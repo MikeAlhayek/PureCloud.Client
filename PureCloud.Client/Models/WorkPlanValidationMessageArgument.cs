@@ -7,14 +7,14 @@ namespace PureCloud.Client.Models;
 /// <summary>
 /// WorkPlanValidationMessageArgument
 /// </summary>
-[DataContract]
+
 public partial class WorkPlanValidationMessageArgument : IEquatable<WorkPlanValidationMessageArgument>
 {
     /// <summary>
     /// The type of the argument associated with violation messages
     /// </summary>
     /// <value>The type of the argument associated with violation messages</value>
-    [JsonConverter(typeof(JsonStringEnumConverter))]
+    
     public enum TypeEnum
     {
         /// <summary>
@@ -161,7 +161,7 @@ public partial class WorkPlanValidationMessageArgument : IEquatable<WorkPlanVali
     /// The type of the argument associated with violation messages
     /// </summary>
     /// <value>The type of the argument associated with violation messages</value>
-    [DataMember(Name = "type", EmitDefaultValue = false)]
+    [JsonPropertyName("type")]
     public TypeEnum? Type { get; set; }
     /// <summary>
     /// Initializes a new instance of the <see cref="WorkPlanValidationMessageArgument" /> class.
@@ -183,7 +183,7 @@ public partial class WorkPlanValidationMessageArgument : IEquatable<WorkPlanVali
     /// The value of the argument
     /// </summary>
     /// <value>The value of the argument</value>
-    [DataMember(Name = "value", EmitDefaultValue = false)]
+    [JsonPropertyName("value")]
     public string Value { get; set; }
 
 

@@ -1,12 +1,12 @@
-using System.Runtime.Serialization;
 using System.Text;
+using System.Text.Json.Serialization;
 
 namespace PureCloud.Client.Models;
 
 /// <summary>
 /// JourneyWebEventsNotificationWebMessage
 /// </summary>
-[DataContract]
+
 public partial class JourneyWebEventsNotificationWebMessage : IEquatable<JourneyWebEventsNotificationWebMessage>
 {
     /// <summary>
@@ -54,7 +54,7 @@ public partial class JourneyWebEventsNotificationWebMessage : IEquatable<Journey
     /// <summary>
     /// Gets or Sets EventName
     /// </summary>
-    [DataMember(Name = "eventName", EmitDefaultValue = false)]
+    [JsonPropertyName("eventName")]
     public string EventName { get; set; }
 
 
@@ -62,7 +62,7 @@ public partial class JourneyWebEventsNotificationWebMessage : IEquatable<Journey
     /// <summary>
     /// Gets or Sets TotalEventCount
     /// </summary>
-    [DataMember(Name = "totalEventCount", EmitDefaultValue = false)]
+    [JsonPropertyName("totalEventCount")]
     public long? TotalEventCount { get; set; }
 
 
@@ -70,7 +70,7 @@ public partial class JourneyWebEventsNotificationWebMessage : IEquatable<Journey
     /// <summary>
     /// Gets or Sets TotalPageviewCount
     /// </summary>
-    [DataMember(Name = "totalPageviewCount", EmitDefaultValue = false)]
+    [JsonPropertyName("totalPageviewCount")]
     public long? TotalPageviewCount { get; set; }
 
 
@@ -78,7 +78,7 @@ public partial class JourneyWebEventsNotificationWebMessage : IEquatable<Journey
     /// <summary>
     /// Gets or Sets UserAgentString
     /// </summary>
-    [DataMember(Name = "userAgentString", EmitDefaultValue = false)]
+    [JsonPropertyName("userAgentString")]
     public string UserAgentString { get; set; }
 
 
@@ -86,7 +86,7 @@ public partial class JourneyWebEventsNotificationWebMessage : IEquatable<Journey
     /// <summary>
     /// Gets or Sets IpAddress
     /// </summary>
-    [DataMember(Name = "ipAddress", EmitDefaultValue = false)]
+    [JsonPropertyName("ipAddress")]
     public string IpAddress { get; set; }
 
 
@@ -94,7 +94,7 @@ public partial class JourneyWebEventsNotificationWebMessage : IEquatable<Journey
     /// <summary>
     /// Gets or Sets IpOrganization
     /// </summary>
-    [DataMember(Name = "ipOrganization", EmitDefaultValue = false)]
+    [JsonPropertyName("ipOrganization")]
     public string IpOrganization { get; set; }
 
 
@@ -102,7 +102,7 @@ public partial class JourneyWebEventsNotificationWebMessage : IEquatable<Journey
     /// <summary>
     /// Gets or Sets SearchQuery
     /// </summary>
-    [DataMember(Name = "searchQuery", EmitDefaultValue = false)]
+    [JsonPropertyName("searchQuery")]
     public string SearchQuery { get; set; }
 
 
@@ -110,7 +110,7 @@ public partial class JourneyWebEventsNotificationWebMessage : IEquatable<Journey
     /// <summary>
     /// Gets or Sets Authenticated
     /// </summary>
-    [DataMember(Name = "authenticated", EmitDefaultValue = false)]
+    [JsonPropertyName("authenticated")]
     public bool? Authenticated { get; set; }
 
 
@@ -118,7 +118,7 @@ public partial class JourneyWebEventsNotificationWebMessage : IEquatable<Journey
     /// <summary>
     /// Gets or Sets Browser
     /// </summary>
-    [DataMember(Name = "browser", EmitDefaultValue = false)]
+    [JsonPropertyName("browser")]
     public JourneyWebEventsNotificationBrowser Browser { get; set; }
 
 
@@ -126,7 +126,7 @@ public partial class JourneyWebEventsNotificationWebMessage : IEquatable<Journey
     /// <summary>
     /// Gets or Sets Device
     /// </summary>
-    [DataMember(Name = "device", EmitDefaultValue = false)]
+    [JsonPropertyName("device")]
     public JourneyWebEventsNotificationDevice Device { get; set; }
 
 
@@ -134,7 +134,7 @@ public partial class JourneyWebEventsNotificationWebMessage : IEquatable<Journey
     /// <summary>
     /// Gets or Sets Geolocation
     /// </summary>
-    [DataMember(Name = "geolocation", EmitDefaultValue = false)]
+    [JsonPropertyName("geolocation")]
     public JourneyWebEventsNotificationGeoLocation Geolocation { get; set; }
 
 
@@ -142,7 +142,7 @@ public partial class JourneyWebEventsNotificationWebMessage : IEquatable<Journey
     /// <summary>
     /// Gets or Sets MktCampaign
     /// </summary>
-    [DataMember(Name = "mktCampaign", EmitDefaultValue = false)]
+    [JsonPropertyName("mktCampaign")]
     public JourneyWebEventsNotificationMktCampaign MktCampaign { get; set; }
 
 
@@ -150,7 +150,7 @@ public partial class JourneyWebEventsNotificationWebMessage : IEquatable<Journey
     /// <summary>
     /// Gets or Sets Page
     /// </summary>
-    [DataMember(Name = "page", EmitDefaultValue = false)]
+    [JsonPropertyName("page")]
     public JourneyWebEventsNotificationPage Page { get; set; }
 
 
@@ -158,7 +158,7 @@ public partial class JourneyWebEventsNotificationWebMessage : IEquatable<Journey
     /// <summary>
     /// Gets or Sets Referrer
     /// </summary>
-    [DataMember(Name = "referrer", EmitDefaultValue = false)]
+    [JsonPropertyName("referrer")]
     public JourneyWebEventsNotificationReferrer Referrer { get; set; }
 
 
@@ -166,7 +166,7 @@ public partial class JourneyWebEventsNotificationWebMessage : IEquatable<Journey
     /// <summary>
     /// Gets or Sets Attributes
     /// </summary>
-    [DataMember(Name = "attributes", EmitDefaultValue = false)]
+    [JsonPropertyName("attributes")]
     public Dictionary<string, JourneyWebEventsNotificationCustomEventAttribute> Attributes { get; set; }
 
 
@@ -174,7 +174,7 @@ public partial class JourneyWebEventsNotificationWebMessage : IEquatable<Journey
     /// <summary>
     /// Gets or Sets Traits
     /// </summary>
-    [DataMember(Name = "traits", EmitDefaultValue = false)]
+    [JsonPropertyName("traits")]
     public Dictionary<string, JourneyWebEventsNotificationCustomEventAttribute> Traits { get; set; }
 
 

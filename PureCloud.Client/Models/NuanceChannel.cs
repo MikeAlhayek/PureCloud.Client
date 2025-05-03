@@ -1,4 +1,3 @@
-using System.Runtime.Serialization;
 using System.Text;
 using System.Text.Json.Serialization;
 
@@ -7,7 +6,7 @@ namespace PureCloud.Client.Models;
 /// <summary>
 /// Model for a Nuance channel
 /// </summary>
-[DataContract]
+
 public partial class NuanceChannel : IEquatable<NuanceChannel>
 {
 
@@ -38,7 +37,7 @@ public partial class NuanceChannel : IEquatable<NuanceChannel>
     /// The channel ID
     /// </summary>
     /// <value>The channel ID</value>
-    [DataMember(Name = "id", EmitDefaultValue = false)]
+    [JsonPropertyName("id")]
     public string Id { get; set; }
 
 
@@ -47,7 +46,7 @@ public partial class NuanceChannel : IEquatable<NuanceChannel>
     /// The channel name
     /// </summary>
     /// <value>The channel name</value>
-    [DataMember(Name = "name", EmitDefaultValue = false)]
+    [JsonPropertyName("name")]
     public string Name { get; set; }
 
 
@@ -56,7 +55,7 @@ public partial class NuanceChannel : IEquatable<NuanceChannel>
     /// Supported Channel Modes
     /// </summary>
     /// <value>Supported Channel Modes</value>
-    [DataMember(Name = "modes", EmitDefaultValue = false)]
+    [JsonPropertyName("modes")]
     public List<string> Modes { get; set; }
 
 
@@ -65,7 +64,7 @@ public partial class NuanceChannel : IEquatable<NuanceChannel>
     /// The Channel Color
     /// </summary>
     /// <value>The Channel Color</value>
-    [DataMember(Name = "color", EmitDefaultValue = false)]
+    [JsonPropertyName("color")]
     public string Color { get; set; }
 
 

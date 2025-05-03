@@ -7,14 +7,14 @@ namespace PureCloud.Client.Models;
 /// <summary>
 /// CreateManagementUnitApiRequest
 /// </summary>
-[DataContract]
+
 public partial class CreateManagementUnitApiRequest : IEquatable<CreateManagementUnitApiRequest>
 {
     /// <summary>
     /// The configured first day of the week for scheduling and forecasting purposes. Moving to Business Unit
     /// </summary>
     /// <value>The configured first day of the week for scheduling and forecasting purposes. Moving to Business Unit</value>
-    [JsonConverter(typeof(JsonStringEnumConverter))]
+    
     public enum StartDayOfWeekEnum
     {
         /// <summary>
@@ -71,7 +71,7 @@ public partial class CreateManagementUnitApiRequest : IEquatable<CreateManagemen
     /// The configured first day of the week for scheduling and forecasting purposes. Moving to Business Unit
     /// </summary>
     /// <value>The configured first day of the week for scheduling and forecasting purposes. Moving to Business Unit</value>
-    [DataMember(Name = "startDayOfWeek", EmitDefaultValue = false)]
+    [JsonPropertyName("startDayOfWeek")]
     public StartDayOfWeekEnum? StartDayOfWeek { get; set; }
 
     /// <summary>
@@ -105,7 +105,7 @@ public partial class CreateManagementUnitApiRequest : IEquatable<CreateManagemen
     /// The name of the management unit
     /// </summary>
     /// <value>The name of the management unit</value>
-    [DataMember(Name = "name", EmitDefaultValue = false)]
+    [JsonPropertyName("name")]
     public string Name { get; set; }
 
 
@@ -114,7 +114,7 @@ public partial class CreateManagementUnitApiRequest : IEquatable<CreateManagemen
     /// The default time zone to use for this management unit.  Moving to Business Unit
     /// </summary>
     /// <value>The default time zone to use for this management unit.  Moving to Business Unit</value>
-    [DataMember(Name = "timeZone", EmitDefaultValue = false)]
+    [JsonPropertyName("timeZone")]
     public string TimeZone { get; set; }
 
 
@@ -125,7 +125,7 @@ public partial class CreateManagementUnitApiRequest : IEquatable<CreateManagemen
     /// The configuration for the management unit.  If omitted, reasonable defaults will be assigned
     /// </summary>
     /// <value>The configuration for the management unit.  If omitted, reasonable defaults will be assigned</value>
-    [DataMember(Name = "settings", EmitDefaultValue = false)]
+    [JsonPropertyName("settings")]
     public CreateManagementUnitSettingsRequest Settings { get; set; }
 
 
@@ -134,7 +134,7 @@ public partial class CreateManagementUnitApiRequest : IEquatable<CreateManagemen
     /// The id of the division to which this management unit belongs.  Defaults to home division ID
     /// </summary>
     /// <value>The id of the division to which this management unit belongs.  Defaults to home division ID</value>
-    [DataMember(Name = "divisionId", EmitDefaultValue = false)]
+    [JsonPropertyName("divisionId")]
     public string DivisionId { get; set; }
 
 
@@ -143,7 +143,7 @@ public partial class CreateManagementUnitApiRequest : IEquatable<CreateManagemen
     /// The id of the business unit to which this management unit belongs
     /// </summary>
     /// <value>The id of the business unit to which this management unit belongs</value>
-    [DataMember(Name = "businessUnitId", EmitDefaultValue = false)]
+    [JsonPropertyName("businessUnitId")]
     public string BusinessUnitId { get; set; }
 
 

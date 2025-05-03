@@ -1,12 +1,12 @@
-using System.Runtime.Serialization;
 using System.Text;
+using System.Text.Json.Serialization;
 
 namespace PureCloud.Client.Models;
 
 /// <summary>
 /// QueryFacetInfo
 /// </summary>
-[DataContract]
+
 public partial class QueryFacetInfo : IEquatable<QueryFacetInfo>
 {
     /// <summary>
@@ -26,7 +26,7 @@ public partial class QueryFacetInfo : IEquatable<QueryFacetInfo>
     /// <summary>
     /// Gets or Sets Attributes
     /// </summary>
-    [DataMember(Name = "attributes", EmitDefaultValue = false)]
+    [JsonPropertyName("attributes")]
     public List<FacetKeyAttribute> Attributes { get; set; }
 
 
@@ -34,7 +34,7 @@ public partial class QueryFacetInfo : IEquatable<QueryFacetInfo>
     /// <summary>
     /// Gets or Sets Facets
     /// </summary>
-    [DataMember(Name = "facets", EmitDefaultValue = false)]
+    [JsonPropertyName("facets")]
     public List<FacetEntry> Facets { get; set; }
 
 

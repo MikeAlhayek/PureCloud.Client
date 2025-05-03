@@ -1,12 +1,12 @@
-using System.Runtime.Serialization;
 using System.Text;
+using System.Text.Json.Serialization;
 
 namespace PureCloud.Client.Models;
 
 /// <summary>
 /// Defines a SCIM enterprise user.
 /// </summary>
-[DataContract]
+
 public partial class ScimV2EnterpriseUser : IEquatable<ScimV2EnterpriseUser>
 {
     /// <summary>
@@ -33,7 +33,7 @@ public partial class ScimV2EnterpriseUser : IEquatable<ScimV2EnterpriseUser>
     /// The division that the user belongs to.
     /// </summary>
     /// <value>The division that the user belongs to.</value>
-    [DataMember(Name = "division", EmitDefaultValue = false)]
+    [JsonPropertyName("division")]
     public string Division { get; set; }
 
 
@@ -42,7 +42,7 @@ public partial class ScimV2EnterpriseUser : IEquatable<ScimV2EnterpriseUser>
     /// The department that the user belongs to.
     /// </summary>
     /// <value>The department that the user belongs to.</value>
-    [DataMember(Name = "department", EmitDefaultValue = false)]
+    [JsonPropertyName("department")]
     public string Department { get; set; }
 
 
@@ -51,7 +51,7 @@ public partial class ScimV2EnterpriseUser : IEquatable<ScimV2EnterpriseUser>
     /// The user&#39;s manager.
     /// </summary>
     /// <value>The user&#39;s manager.</value>
-    [DataMember(Name = "manager", EmitDefaultValue = false)]
+    [JsonPropertyName("manager")]
     public Manager Manager { get; set; }
 
 
@@ -60,7 +60,7 @@ public partial class ScimV2EnterpriseUser : IEquatable<ScimV2EnterpriseUser>
     /// The user&#39;s employee number.
     /// </summary>
     /// <value>The user&#39;s employee number.</value>
-    [DataMember(Name = "employeeNumber", EmitDefaultValue = false)]
+    [JsonPropertyName("employeeNumber")]
     public string EmployeeNumber { get; set; }
 
 
@@ -69,7 +69,7 @@ public partial class ScimV2EnterpriseUser : IEquatable<ScimV2EnterpriseUser>
     /// The user&#39;s hire date. Format in JSON will be YYYY-MM-DD.
     /// </summary>
     /// <value>The user&#39;s hire date. Format in JSON will be YYYY-MM-DD.</value>
-    [DataMember(Name = "dateHire", EmitDefaultValue = false)]
+    [JsonPropertyName("dateHire")]
     public string DateHire { get; set; }
 
 

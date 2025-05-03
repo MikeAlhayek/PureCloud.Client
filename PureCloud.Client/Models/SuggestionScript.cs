@@ -1,12 +1,12 @@
-using System.Runtime.Serialization;
 using System.Text;
+using System.Text.Json.Serialization;
 
 namespace PureCloud.Client.Models;
 
 /// <summary>
 /// SuggestionScript
 /// </summary>
-[DataContract]
+
 public partial class SuggestionScript : IEquatable<SuggestionScript>
 {
     /// <summary>
@@ -23,7 +23,7 @@ public partial class SuggestionScript : IEquatable<SuggestionScript>
     /// The suggested script.
     /// </summary>
     /// <value>The suggested script.</value>
-    [DataMember(Name = "script", EmitDefaultValue = false)]
+    [JsonPropertyName("script")]
     public AddressableEntityRef Script { get; private set; }
 
 
@@ -32,7 +32,7 @@ public partial class SuggestionScript : IEquatable<SuggestionScript>
     /// The page of the script.
     /// </summary>
     /// <value>The page of the script.</value>
-    [DataMember(Name = "page", EmitDefaultValue = false)]
+    [JsonPropertyName("page")]
     public AddressableEntityRef Page { get; private set; }
 
 
@@ -41,7 +41,7 @@ public partial class SuggestionScript : IEquatable<SuggestionScript>
     /// The payload for the script.
     /// </summary>
     /// <value>The payload for the script.</value>
-    [DataMember(Name = "data", EmitDefaultValue = false)]
+    [JsonPropertyName("data")]
     public Dictionary<string, string> Data { get; private set; }
 
 

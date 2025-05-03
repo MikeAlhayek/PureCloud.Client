@@ -7,14 +7,14 @@ namespace PureCloud.Client.Models;
 /// <summary>
 /// Operation
 /// </summary>
-[DataContract]
+
 public partial class Operation : IEquatable<Operation>
 {
     /// <summary>
     /// Action name
     /// </summary>
     /// <value>Action name</value>
-    [JsonConverter(typeof(JsonStringEnumConverter))]
+    
     public enum ActionNameEnum
     {
         /// <summary>
@@ -101,7 +101,7 @@ public partial class Operation : IEquatable<Operation>
     /// Action status
     /// </summary>
     /// <value>Action status</value>
-    [JsonConverter(typeof(JsonStringEnumConverter))]
+    
     public enum ActionStatusEnum
     {
         /// <summary>
@@ -158,13 +158,13 @@ public partial class Operation : IEquatable<Operation>
     /// Action name
     /// </summary>
     /// <value>Action name</value>
-    [DataMember(Name = "actionName", EmitDefaultValue = false)]
+    [JsonPropertyName("actionName")]
     public ActionNameEnum? ActionName { get; set; }
     /// <summary>
     /// Action status
     /// </summary>
     /// <value>Action status</value>
-    [DataMember(Name = "actionStatus", EmitDefaultValue = false)]
+    [JsonPropertyName("actionStatus")]
     public ActionStatusEnum? ActionStatus { get; set; }
     /// <summary>
     /// Initializes a new instance of the <see cref="Operation" /> class.
@@ -199,7 +199,7 @@ public partial class Operation : IEquatable<Operation>
     /// <summary>
     /// Gets or Sets Id
     /// </summary>
-    [DataMember(Name = "id", EmitDefaultValue = false)]
+    [JsonPropertyName("id")]
     public string Id { get; set; }
 
 
@@ -207,7 +207,7 @@ public partial class Operation : IEquatable<Operation>
     /// <summary>
     /// Gets or Sets Complete
     /// </summary>
-    [DataMember(Name = "complete", EmitDefaultValue = false)]
+    [JsonPropertyName("complete")]
     public bool? Complete { get; set; }
 
 
@@ -215,7 +215,7 @@ public partial class Operation : IEquatable<Operation>
     /// <summary>
     /// Gets or Sets User
     /// </summary>
-    [DataMember(Name = "user", EmitDefaultValue = false)]
+    [JsonPropertyName("user")]
     public User User { get; set; }
 
 
@@ -223,7 +223,7 @@ public partial class Operation : IEquatable<Operation>
     /// <summary>
     /// Gets or Sets Client
     /// </summary>
-    [DataMember(Name = "client", EmitDefaultValue = false)]
+    [JsonPropertyName("client")]
     public DomainEntityRef Client { get; set; }
 
 
@@ -231,7 +231,7 @@ public partial class Operation : IEquatable<Operation>
     /// <summary>
     /// Gets or Sets ErrorMessage
     /// </summary>
-    [DataMember(Name = "errorMessage", EmitDefaultValue = false)]
+    [JsonPropertyName("errorMessage")]
     public string ErrorMessage { get; set; }
 
 
@@ -239,7 +239,7 @@ public partial class Operation : IEquatable<Operation>
     /// <summary>
     /// Gets or Sets ErrorCode
     /// </summary>
-    [DataMember(Name = "errorCode", EmitDefaultValue = false)]
+    [JsonPropertyName("errorCode")]
     public string ErrorCode { get; set; }
 
 
@@ -247,7 +247,7 @@ public partial class Operation : IEquatable<Operation>
     /// <summary>
     /// Gets or Sets ErrorDetails
     /// </summary>
-    [DataMember(Name = "errorDetails", EmitDefaultValue = false)]
+    [JsonPropertyName("errorDetails")]
     public List<Detail> ErrorDetails { get; set; }
 
 
@@ -255,7 +255,7 @@ public partial class Operation : IEquatable<Operation>
     /// <summary>
     /// Gets or Sets ErrorMessageParams
     /// </summary>
-    [DataMember(Name = "errorMessageParams", EmitDefaultValue = false)]
+    [JsonPropertyName("errorMessageParams")]
     public Dictionary<string, string> ErrorMessageParams { get; set; }
 
 

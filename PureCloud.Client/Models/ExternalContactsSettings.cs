@@ -1,12 +1,12 @@
-using System.Runtime.Serialization;
 using System.Text;
+using System.Text.Json.Serialization;
 
 namespace PureCloud.Client.Models;
 
 /// <summary>
 /// ExternalContactsSettings
 /// </summary>
-[DataContract]
+
 public partial class ExternalContactsSettings : IEquatable<ExternalContactsSettings>
 {
     /// <summary>
@@ -26,7 +26,7 @@ public partial class ExternalContactsSettings : IEquatable<ExternalContactsSetti
     /// <summary>
     /// Gets or Sets ManuallyAssignDivisionsToInteractions
     /// </summary>
-    [DataMember(Name = "manuallyAssignDivisionsToInteractions", EmitDefaultValue = false)]
+    [JsonPropertyName("manuallyAssignDivisionsToInteractions")]
     public bool? ManuallyAssignDivisionsToInteractions { get; set; }
 
 
@@ -34,7 +34,7 @@ public partial class ExternalContactsSettings : IEquatable<ExternalContactsSetti
     /// <summary>
     /// Gets or Sets ManuallyAssignDivisionsToContacts
     /// </summary>
-    [DataMember(Name = "manuallyAssignDivisionsToContacts", EmitDefaultValue = false)]
+    [JsonPropertyName("manuallyAssignDivisionsToContacts")]
     public bool? ManuallyAssignDivisionsToContacts { get; set; }
 
 

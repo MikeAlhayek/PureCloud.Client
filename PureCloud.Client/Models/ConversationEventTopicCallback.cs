@@ -7,13 +7,13 @@ namespace PureCloud.Client.Models;
 /// <summary>
 /// ConversationEventTopicCallback
 /// </summary>
-[DataContract]
+
 public partial class ConversationEventTopicCallback : IEquatable<ConversationEventTopicCallback>
 {
     /// <summary>
     /// Gets or Sets State
     /// </summary>
-    [JsonConverter(typeof(JsonStringEnumConverter))]
+    
     public enum StateEnum
     {
         /// <summary>
@@ -87,7 +87,7 @@ public partial class ConversationEventTopicCallback : IEquatable<ConversationEve
     /// <summary>
     /// Gets or Sets InitialState
     /// </summary>
-    [JsonConverter(typeof(JsonStringEnumConverter))]
+    
     public enum InitialStateEnum
     {
         /// <summary>
@@ -162,7 +162,7 @@ public partial class ConversationEventTopicCallback : IEquatable<ConversationEve
     /// The direction of the call
     /// </summary>
     /// <value>The direction of the call</value>
-    [JsonConverter(typeof(JsonStringEnumConverter))]
+    
     public enum DirectionEnum
     {
         /// <summary>
@@ -189,7 +189,7 @@ public partial class ConversationEventTopicCallback : IEquatable<ConversationEve
     /// System defined string indicating what caused the communication to disconnect. Will be null until the communication disconnects.
     /// </summary>
     /// <value>System defined string indicating what caused the communication to disconnect. Will be null until the communication disconnects.</value>
-    [JsonConverter(typeof(JsonStringEnumConverter))]
+    
     public enum DisconnectTypeEnum
     {
         /// <summary>
@@ -311,24 +311,24 @@ public partial class ConversationEventTopicCallback : IEquatable<ConversationEve
     /// <summary>
     /// Gets or Sets State
     /// </summary>
-    [DataMember(Name = "state", EmitDefaultValue = false)]
+    [JsonPropertyName("state")]
     public StateEnum? State { get; set; }
     /// <summary>
     /// Gets or Sets InitialState
     /// </summary>
-    [DataMember(Name = "initialState", EmitDefaultValue = false)]
+    [JsonPropertyName("initialState")]
     public InitialStateEnum? InitialState { get; set; }
     /// <summary>
     /// The direction of the call
     /// </summary>
     /// <value>The direction of the call</value>
-    [DataMember(Name = "direction", EmitDefaultValue = false)]
+    [JsonPropertyName("direction")]
     public DirectionEnum? Direction { get; set; }
     /// <summary>
     /// System defined string indicating what caused the communication to disconnect. Will be null until the communication disconnects.
     /// </summary>
     /// <value>System defined string indicating what caused the communication to disconnect. Will be null until the communication disconnects.</value>
-    [DataMember(Name = "disconnectType", EmitDefaultValue = false)]
+    [JsonPropertyName("disconnectType")]
     public DisconnectTypeEnum? DisconnectType { get; set; }
     /// <summary>
     /// Initializes a new instance of the <see cref="ConversationEventTopicCallback" /> class.
@@ -402,7 +402,7 @@ public partial class ConversationEventTopicCallback : IEquatable<ConversationEve
     /// A globally unique identifier for this communication.
     /// </summary>
     /// <value>A globally unique identifier for this communication.</value>
-    [DataMember(Name = "id", EmitDefaultValue = false)]
+    [JsonPropertyName("id")]
     public string Id { get; set; }
 
 
@@ -413,7 +413,7 @@ public partial class ConversationEventTopicCallback : IEquatable<ConversationEve
     /// True if this call is held and the person on this side hears silence.
     /// </summary>
     /// <value>True if this call is held and the person on this side hears silence.</value>
-    [DataMember(Name = "held", EmitDefaultValue = false)]
+    [JsonPropertyName("held")]
     public bool? Held { get; set; }
 
 
@@ -424,7 +424,7 @@ public partial class ConversationEventTopicCallback : IEquatable<ConversationEve
     /// The timestamp the callback was placed on hold in the cloud clock if the callback is currently on hold.
     /// </summary>
     /// <value>The timestamp the callback was placed on hold in the cloud clock if the callback is currently on hold.</value>
-    [DataMember(Name = "startHoldTime", EmitDefaultValue = false)]
+    [JsonPropertyName("startHoldTime")]
     public DateTime? StartHoldTime { get; set; }
 
 
@@ -432,7 +432,7 @@ public partial class ConversationEventTopicCallback : IEquatable<ConversationEve
     /// <summary>
     /// Gets or Sets DialerPreview
     /// </summary>
-    [DataMember(Name = "dialerPreview", EmitDefaultValue = false)]
+    [JsonPropertyName("dialerPreview")]
     public ConversationEventTopicDialerPreview DialerPreview { get; set; }
 
 
@@ -440,7 +440,7 @@ public partial class ConversationEventTopicCallback : IEquatable<ConversationEve
     /// <summary>
     /// Gets or Sets Voicemail
     /// </summary>
-    [DataMember(Name = "voicemail", EmitDefaultValue = false)]
+    [JsonPropertyName("voicemail")]
     public ConversationEventTopicVoicemail Voicemail { get; set; }
 
 
@@ -449,7 +449,7 @@ public partial class ConversationEventTopicCallback : IEquatable<ConversationEve
     /// The phone number(s) to use to place the callback.
     /// </summary>
     /// <value>The phone number(s) to use to place the callback.</value>
-    [DataMember(Name = "callbackNumbers", EmitDefaultValue = false)]
+    [JsonPropertyName("callbackNumbers")]
     public List<string> CallbackNumbers { get; set; }
 
 
@@ -458,7 +458,7 @@ public partial class ConversationEventTopicCallback : IEquatable<ConversationEve
     /// The name of the user requesting a callback.
     /// </summary>
     /// <value>The name of the user requesting a callback.</value>
-    [DataMember(Name = "callbackUserName", EmitDefaultValue = false)]
+    [JsonPropertyName("callbackUserName")]
     public string CallbackUserName { get; set; }
 
 
@@ -467,7 +467,7 @@ public partial class ConversationEventTopicCallback : IEquatable<ConversationEve
     /// The UUID of the script to use.
     /// </summary>
     /// <value>The UUID of the script to use.</value>
-    [DataMember(Name = "scriptId", EmitDefaultValue = false)]
+    [JsonPropertyName("scriptId")]
     public string ScriptId { get; set; }
 
 
@@ -476,7 +476,7 @@ public partial class ConversationEventTopicCallback : IEquatable<ConversationEve
     /// The id of the peer communication corresponding to a matching leg for this communication.
     /// </summary>
     /// <value>The id of the peer communication corresponding to a matching leg for this communication.</value>
-    [DataMember(Name = "peerId", EmitDefaultValue = false)]
+    [JsonPropertyName("peerId")]
     public string PeerId { get; set; }
 
 
@@ -485,7 +485,7 @@ public partial class ConversationEventTopicCallback : IEquatable<ConversationEve
     /// True if the call for the callback uses external dialing.
     /// </summary>
     /// <value>True if the call for the callback uses external dialing.</value>
-    [DataMember(Name = "externalCampaign", EmitDefaultValue = false)]
+    [JsonPropertyName("externalCampaign")]
     public bool? ExternalCampaign { get; set; }
 
 
@@ -494,7 +494,7 @@ public partial class ConversationEventTopicCallback : IEquatable<ConversationEve
     /// True if the ability to skip a callback should be enabled.
     /// </summary>
     /// <value>True if the ability to skip a callback should be enabled.</value>
-    [DataMember(Name = "skipEnabled", EmitDefaultValue = false)]
+    [JsonPropertyName("skipEnabled")]
     public bool? SkipEnabled { get; set; }
 
 
@@ -503,7 +503,7 @@ public partial class ConversationEventTopicCallback : IEquatable<ConversationEve
     /// The source provider of the callback.
     /// </summary>
     /// <value>The source provider of the callback.</value>
-    [DataMember(Name = "provider", EmitDefaultValue = false)]
+    [JsonPropertyName("provider")]
     public string Provider { get; set; }
 
 
@@ -512,7 +512,7 @@ public partial class ConversationEventTopicCallback : IEquatable<ConversationEve
     /// The number of seconds before the system automatically places a call for a callback.  0 means the automatic placement is disabled.
     /// </summary>
     /// <value>The number of seconds before the system automatically places a call for a callback.  0 means the automatic placement is disabled.</value>
-    [DataMember(Name = "timeoutSeconds", EmitDefaultValue = false)]
+    [JsonPropertyName("timeoutSeconds")]
     public long? TimeoutSeconds { get; set; }
 
 
@@ -521,7 +521,7 @@ public partial class ConversationEventTopicCallback : IEquatable<ConversationEve
     /// The timestamp when this communication was connected in the cloud clock.
     /// </summary>
     /// <value>The timestamp when this communication was connected in the cloud clock.</value>
-    [DataMember(Name = "connectedTime", EmitDefaultValue = false)]
+    [JsonPropertyName("connectedTime")]
     public DateTime? ConnectedTime { get; set; }
 
 
@@ -530,7 +530,7 @@ public partial class ConversationEventTopicCallback : IEquatable<ConversationEve
     /// The timestamp when this communication disconnected from the conversation in the provider clock.
     /// </summary>
     /// <value>The timestamp when this communication disconnected from the conversation in the provider clock.</value>
-    [DataMember(Name = "disconnectedTime", EmitDefaultValue = false)]
+    [JsonPropertyName("disconnectedTime")]
     public DateTime? DisconnectedTime { get; set; }
 
 
@@ -539,7 +539,7 @@ public partial class ConversationEventTopicCallback : IEquatable<ConversationEve
     /// The timestamp when this communication is scheduled in the provider clock. If this value is missing it indicates the callback will be placed immediately.
     /// </summary>
     /// <value>The timestamp when this communication is scheduled in the provider clock. If this value is missing it indicates the callback will be placed immediately.</value>
-    [DataMember(Name = "callbackScheduledTime", EmitDefaultValue = false)]
+    [JsonPropertyName("callbackScheduledTime")]
     public DateTime? CallbackScheduledTime { get; set; }
 
 
@@ -548,7 +548,7 @@ public partial class ConversationEventTopicCallback : IEquatable<ConversationEve
     /// The id of the config for automatically placing the callback (and handling the disposition). If null, the callback will not be placed automatically but routed to an agent as per normal.
     /// </summary>
     /// <value>The id of the config for automatically placing the callback (and handling the disposition). If null, the callback will not be placed automatically but routed to an agent as per normal.</value>
-    [DataMember(Name = "automatedCallbackConfigId", EmitDefaultValue = false)]
+    [JsonPropertyName("automatedCallbackConfigId")]
     public string AutomatedCallbackConfigId { get; set; }
 
 
@@ -557,7 +557,7 @@ public partial class ConversationEventTopicCallback : IEquatable<ConversationEve
     /// Call wrap up or disposition data.
     /// </summary>
     /// <value>Call wrap up or disposition data.</value>
-    [DataMember(Name = "wrapup", EmitDefaultValue = false)]
+    [JsonPropertyName("wrapup")]
     public ConversationEventTopicWrapup Wrapup { get; set; }
 
 
@@ -566,7 +566,7 @@ public partial class ConversationEventTopicCallback : IEquatable<ConversationEve
     /// A communication&#39;s after-call work data.
     /// </summary>
     /// <value>A communication&#39;s after-call work data.</value>
-    [DataMember(Name = "afterCallWork", EmitDefaultValue = false)]
+    [JsonPropertyName("afterCallWork")]
     public ConversationEventTopicAfterCallWork AfterCallWork { get; set; }
 
 
@@ -575,7 +575,7 @@ public partial class ConversationEventTopicCallback : IEquatable<ConversationEve
     /// Indicates if after-call is required for a communication. Only used when the ACW Setting is Agent Requested.
     /// </summary>
     /// <value>Indicates if after-call is required for a communication. Only used when the ACW Setting is Agent Requested.</value>
-    [DataMember(Name = "afterCallWorkRequired", EmitDefaultValue = false)]
+    [JsonPropertyName("afterCallWorkRequired")]
     public bool? AfterCallWorkRequired { get; set; }
 
 
@@ -584,7 +584,7 @@ public partial class ConversationEventTopicCallback : IEquatable<ConversationEve
     /// The phone number displayed to recipients of the phone call. The value should conform to the E164 format.
     /// </summary>
     /// <value>The phone number displayed to recipients of the phone call. The value should conform to the E164 format.</value>
-    [DataMember(Name = "callerId", EmitDefaultValue = false)]
+    [JsonPropertyName("callerId")]
     public string CallerId { get; set; }
 
 
@@ -593,7 +593,7 @@ public partial class ConversationEventTopicCallback : IEquatable<ConversationEve
     /// The name displayed to recipients of the phone call.
     /// </summary>
     /// <value>The name displayed to recipients of the phone call.</value>
-    [DataMember(Name = "callerIdName", EmitDefaultValue = false)]
+    [JsonPropertyName("callerIdName")]
     public string CallerIdName { get; set; }
 
 
@@ -602,7 +602,7 @@ public partial class ConversationEventTopicCallback : IEquatable<ConversationEve
     /// Represents the queue setting for this media.
     /// </summary>
     /// <value>Represents the queue setting for this media.</value>
-    [DataMember(Name = "queueMediaSettings", EmitDefaultValue = false)]
+    [JsonPropertyName("queueMediaSettings")]
     public ConversationEventTopicQueueMediaSettings QueueMediaSettings { get; set; }
 
 

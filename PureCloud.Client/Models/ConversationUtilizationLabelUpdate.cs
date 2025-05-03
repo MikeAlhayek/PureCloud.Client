@@ -1,12 +1,12 @@
-using System.Runtime.Serialization;
 using System.Text;
+using System.Text.Json.Serialization;
 
 namespace PureCloud.Client.Models;
 
 /// <summary>
 /// ConversationUtilizationLabelUpdate
 /// </summary>
-[DataContract]
+
 public partial class ConversationUtilizationLabelUpdate : IEquatable<ConversationUtilizationLabelUpdate>
 {
     /// <summary>
@@ -25,7 +25,7 @@ public partial class ConversationUtilizationLabelUpdate : IEquatable<Conversatio
     /// The utilization label associated with the conversation.
     /// </summary>
     /// <value>The utilization label associated with the conversation.</value>
-    [DataMember(Name = "utilizationLabelId", EmitDefaultValue = false)]
+    [JsonPropertyName("utilizationLabelId")]
     public string UtilizationLabelId { get; set; }
 
 

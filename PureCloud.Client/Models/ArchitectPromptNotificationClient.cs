@@ -1,12 +1,12 @@
-using System.Runtime.Serialization;
 using System.Text;
+using System.Text.Json.Serialization;
 
 namespace PureCloud.Client.Models;
 
 /// <summary>
 /// The client who initiated the change.
 /// </summary>
-[DataContract]
+
 public partial class ArchitectPromptNotificationClient : IEquatable<ArchitectPromptNotificationClient>
 {
     /// <summary>
@@ -27,7 +27,7 @@ public partial class ArchitectPromptNotificationClient : IEquatable<ArchitectPro
     /// The ID of the client.
     /// </summary>
     /// <value>The ID of the client.</value>
-    [DataMember(Name = "id", EmitDefaultValue = false)]
+    [JsonPropertyName("id")]
     public string Id { get; set; }
 
 
@@ -36,7 +36,7 @@ public partial class ArchitectPromptNotificationClient : IEquatable<ArchitectPro
     /// The name of the client, if available.
     /// </summary>
     /// <value>The name of the client, if available.</value>
-    [DataMember(Name = "name", EmitDefaultValue = false)]
+    [JsonPropertyName("name")]
     public string Name { get; set; }
 
 

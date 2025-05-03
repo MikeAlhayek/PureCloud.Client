@@ -7,13 +7,13 @@ namespace PureCloud.Client.Models;
 /// <summary>
 /// WorkPlanBiddingAdminNotificationTopicWorkPlanBiddingNotification
 /// </summary>
-[DataContract]
+
 public partial class WorkPlanBiddingAdminNotificationTopicWorkPlanBiddingNotification : IEquatable<WorkPlanBiddingAdminNotificationTopicWorkPlanBiddingNotification>
 {
     /// <summary>
     /// Gets or Sets Status
     /// </summary>
-    [JsonConverter(typeof(JsonStringEnumConverter))]
+    
     public enum StatusEnum
     {
         /// <summary>
@@ -81,7 +81,7 @@ public partial class WorkPlanBiddingAdminNotificationTopicWorkPlanBiddingNotific
     /// <summary>
     /// Gets or Sets AgentRankingType
     /// </summary>
-    [JsonConverter(typeof(JsonStringEnumConverter))]
+    
     public enum AgentRankingTypeEnum
     {
         /// <summary>
@@ -113,7 +113,7 @@ public partial class WorkPlanBiddingAdminNotificationTopicWorkPlanBiddingNotific
     /// <summary>
     /// Gets or Sets RankingTiebreakerType
     /// </summary>
-    [JsonConverter(typeof(JsonStringEnumConverter))]
+    
     public enum RankingTiebreakerTypeEnum
     {
         /// <summary>
@@ -157,7 +157,7 @@ public partial class WorkPlanBiddingAdminNotificationTopicWorkPlanBiddingNotific
     /// <summary>
     /// Gets or Sets WorkPlanFieldsVisibleToAgents
     /// </summary>
-    [JsonConverter(typeof(JsonStringEnumConverter))]
+    
     public enum WorkPlanFieldsVisibleToAgentsEnum
     {
         /// <summary>
@@ -189,17 +189,17 @@ public partial class WorkPlanBiddingAdminNotificationTopicWorkPlanBiddingNotific
     /// <summary>
     /// Gets or Sets Status
     /// </summary>
-    [DataMember(Name = "status", EmitDefaultValue = false)]
+    [JsonPropertyName("status")]
     public StatusEnum? Status { get; set; }
     /// <summary>
     /// Gets or Sets AgentRankingType
     /// </summary>
-    [DataMember(Name = "agentRankingType", EmitDefaultValue = false)]
+    [JsonPropertyName("agentRankingType")]
     public AgentRankingTypeEnum? AgentRankingType { get; set; }
     /// <summary>
     /// Gets or Sets RankingTiebreakerType
     /// </summary>
-    [DataMember(Name = "rankingTiebreakerType", EmitDefaultValue = false)]
+    [JsonPropertyName("rankingTiebreakerType")]
     public RankingTiebreakerTypeEnum? RankingTiebreakerType { get; set; }
     /// <summary>
     /// Initializes a new instance of the <see cref="WorkPlanBiddingAdminNotificationTopicWorkPlanBiddingNotification" /> class.
@@ -232,7 +232,7 @@ public partial class WorkPlanBiddingAdminNotificationTopicWorkPlanBiddingNotific
     /// <summary>
     /// Gets or Sets Id
     /// </summary>
-    [DataMember(Name = "id", EmitDefaultValue = false)]
+    [JsonPropertyName("id")]
     public string Id { get; set; }
 
 
@@ -240,7 +240,7 @@ public partial class WorkPlanBiddingAdminNotificationTopicWorkPlanBiddingNotific
     /// <summary>
     /// Gets or Sets BuId
     /// </summary>
-    [DataMember(Name = "buId", EmitDefaultValue = false)]
+    [JsonPropertyName("buId")]
     public string BuId { get; set; }
 
 
@@ -250,7 +250,7 @@ public partial class WorkPlanBiddingAdminNotificationTopicWorkPlanBiddingNotific
     /// <summary>
     /// Gets or Sets BidWindowStartDate
     /// </summary>
-    [DataMember(Name = "bidWindowStartDate", EmitDefaultValue = false)]
+    [JsonPropertyName("bidWindowStartDate")]
     public string BidWindowStartDate { get; set; }
 
 
@@ -258,7 +258,7 @@ public partial class WorkPlanBiddingAdminNotificationTopicWorkPlanBiddingNotific
     /// <summary>
     /// Gets or Sets BidWindowEndDate
     /// </summary>
-    [DataMember(Name = "bidWindowEndDate", EmitDefaultValue = false)]
+    [JsonPropertyName("bidWindowEndDate")]
     public string BidWindowEndDate { get; set; }
 
 
@@ -266,7 +266,7 @@ public partial class WorkPlanBiddingAdminNotificationTopicWorkPlanBiddingNotific
     /// <summary>
     /// Gets or Sets EffectiveDate
     /// </summary>
-    [DataMember(Name = "effectiveDate", EmitDefaultValue = false)]
+    [JsonPropertyName("effectiveDate")]
     public string EffectiveDate { get; set; }
 
 
@@ -278,7 +278,7 @@ public partial class WorkPlanBiddingAdminNotificationTopicWorkPlanBiddingNotific
     /// <summary>
     /// Gets or Sets WorkPlanFieldsVisibleToAgents
     /// </summary>
-    [DataMember(Name = "workPlanFieldsVisibleToAgents", EmitDefaultValue = false)]
+    [JsonPropertyName("workPlanFieldsVisibleToAgents")]
     public List<WorkPlanFieldsVisibleToAgentsEnum> WorkPlanFieldsVisibleToAgents { get; set; }
 
 

@@ -1,12 +1,12 @@
-using System.Runtime.Serialization;
 using System.Text;
+using System.Text.Json.Serialization;
 
 namespace PureCloud.Client.Models;
 
 /// <summary>
 /// AutoStatusTransitionDetail
 /// </summary>
-[DataContract]
+
 public partial class AutoStatusTransitionDetail : IEquatable<AutoStatusTransitionDetail>
 {
     /// <summary>
@@ -29,7 +29,7 @@ public partial class AutoStatusTransitionDetail : IEquatable<AutoStatusTransitio
     /// Next status of auto status transition.
     /// </summary>
     /// <value>Next status of auto status transition.</value>
-    [DataMember(Name = "nextStatus", EmitDefaultValue = false)]
+    [JsonPropertyName("nextStatus")]
     public WorkitemStatusReference NextStatus { get; set; }
 
 
@@ -38,7 +38,7 @@ public partial class AutoStatusTransitionDetail : IEquatable<AutoStatusTransitio
     /// Date at which auto status transition occurs. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z
     /// </summary>
     /// <value>Date at which auto status transition occurs. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z</value>
-    [DataMember(Name = "dateOfTransition", EmitDefaultValue = false)]
+    [JsonPropertyName("dateOfTransition")]
     public DateTime? DateOfTransition { get; set; }
 
 
@@ -47,7 +47,7 @@ public partial class AutoStatusTransitionDetail : IEquatable<AutoStatusTransitio
     /// This property will be set if auto status transition is failed.
     /// </summary>
     /// <value>This property will be set if auto status transition is failed.</value>
-    [DataMember(Name = "errorDetails", EmitDefaultValue = false)]
+    [JsonPropertyName("errorDetails")]
     public TaskManagementErrorDetails ErrorDetails { get; set; }
 
 

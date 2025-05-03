@@ -1,4 +1,3 @@
-using System.Runtime.Serialization;
 using System.Text;
 using System.Text.Json.Serialization;
 
@@ -7,7 +6,7 @@ namespace PureCloud.Client.Models;
 /// <summary>
 /// DynamicGroupQuery
 /// </summary>
-[DataContract]
+
 public partial class DynamicGroupQuery : IEquatable<DynamicGroupQuery>
 {
 
@@ -32,7 +31,7 @@ public partial class DynamicGroupQuery : IEquatable<DynamicGroupQuery>
     /// The skill conditions that need to be used for this dynamic group
     /// </summary>
     /// <value>The skill conditions that need to be used for this dynamic group</value>
-    [DataMember(Name = "skillConditions", EmitDefaultValue = false)]
+    [JsonPropertyName("skillConditions")]
     public List<DynamicGroupSkillCondition> SkillConditions { get; set; }
 
 

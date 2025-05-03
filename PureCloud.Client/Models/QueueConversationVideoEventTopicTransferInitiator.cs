@@ -1,12 +1,12 @@
-using System.Runtime.Serialization;
 using System.Text;
+using System.Text.Json.Serialization;
 
 namespace PureCloud.Client.Models;
 
 /// <summary>
 /// Fields identifying the initiator of a given conversation command.
 /// </summary>
-[DataContract]
+
 public partial class QueueConversationVideoEventTopicTransferInitiator : IEquatable<QueueConversationVideoEventTopicTransferInitiator>
 {
     /// <summary>
@@ -25,7 +25,7 @@ public partial class QueueConversationVideoEventTopicTransferInitiator : IEquata
     /// The id of the user who initiated the command if it was initiated by a user.
     /// </summary>
     /// <value>The id of the user who initiated the command if it was initiated by a user.</value>
-    [DataMember(Name = "userId", EmitDefaultValue = false)]
+    [JsonPropertyName("userId")]
     public string UserId { get; set; }
 
 

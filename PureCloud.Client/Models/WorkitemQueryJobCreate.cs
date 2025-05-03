@@ -7,13 +7,13 @@ namespace PureCloud.Client.Models;
 /// <summary>
 /// WorkitemQueryJobCreate
 /// </summary>
-[DataContract]
+
 public partial class WorkitemQueryJobCreate : IEquatable<WorkitemQueryJobCreate>
 {
     /// <summary>
     /// Gets or Sets Expands
     /// </summary>
-    [JsonConverter(typeof(JsonStringEnumConverter))]
+    
     public enum ExpandsEnum
     {
         /// <summary>
@@ -98,7 +98,7 @@ public partial class WorkitemQueryJobCreate : IEquatable<WorkitemQueryJobCreate>
     /// The total page size requested. Default 25
     /// </summary>
     /// <value>The total page size requested. Default 25</value>
-    [DataMember(Name = "pageSize", EmitDefaultValue = false)]
+    [JsonPropertyName("pageSize")]
     public int? PageSize { get; set; }
 
 
@@ -107,7 +107,7 @@ public partial class WorkitemQueryJobCreate : IEquatable<WorkitemQueryJobCreate>
     /// The page number requested
     /// </summary>
     /// <value>The page number requested</value>
-    [DataMember(Name = "pageNumber", EmitDefaultValue = false)]
+    [JsonPropertyName("pageNumber")]
     public int? PageNumber { get; set; }
 
 
@@ -116,7 +116,7 @@ public partial class WorkitemQueryJobCreate : IEquatable<WorkitemQueryJobCreate>
     /// List of filter objects to be used in the search.
     /// </summary>
     /// <value>List of filter objects to be used in the search.</value>
-    [DataMember(Name = "filters", EmitDefaultValue = false)]
+    [JsonPropertyName("filters")]
     public List<WorkitemQueryJobFilter> Filters { get; set; }
 
 
@@ -125,7 +125,7 @@ public partial class WorkitemQueryJobCreate : IEquatable<WorkitemQueryJobCreate>
     /// Query filters for nested attributes.
     /// </summary>
     /// <value>Query filters for nested attributes.</value>
-    [DataMember(Name = "queryFilters", EmitDefaultValue = false)]
+    [JsonPropertyName("queryFilters")]
     public List<WorkitemQueryJobQueryFilters> QueryFilters { get; set; }
 
 
@@ -134,7 +134,7 @@ public partial class WorkitemQueryJobCreate : IEquatable<WorkitemQueryJobCreate>
     /// List of entity attributes to be expanded in the result.
     /// </summary>
     /// <value>List of entity attributes to be expanded in the result.</value>
-    [DataMember(Name = "expands", EmitDefaultValue = false)]
+    [JsonPropertyName("expands")]
     public List<ExpandsEnum> Expands { get; set; }
 
 
@@ -143,7 +143,7 @@ public partial class WorkitemQueryJobCreate : IEquatable<WorkitemQueryJobCreate>
     /// List of entity attributes to be retrieved in the result.
     /// </summary>
     /// <value>List of entity attributes to be retrieved in the result.</value>
-    [DataMember(Name = "attributes", EmitDefaultValue = false)]
+    [JsonPropertyName("attributes")]
     public List<string> Attributes { get; set; }
 
 
@@ -152,7 +152,7 @@ public partial class WorkitemQueryJobCreate : IEquatable<WorkitemQueryJobCreate>
     /// Sort
     /// </summary>
     /// <value>Sort</value>
-    [DataMember(Name = "sort", EmitDefaultValue = false)]
+    [JsonPropertyName("sort")]
     public WorkitemQueryJobSort Sort { get; set; }
 
 
@@ -161,7 +161,7 @@ public partial class WorkitemQueryJobCreate : IEquatable<WorkitemQueryJobCreate>
     /// Interval start date to use to filter results based on create date. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z
     /// </summary>
     /// <value>Interval start date to use to filter results based on create date. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z</value>
-    [DataMember(Name = "dateIntervalStart", EmitDefaultValue = false)]
+    [JsonPropertyName("dateIntervalStart")]
     public DateTime? DateIntervalStart { get; set; }
 
 
@@ -170,7 +170,7 @@ public partial class WorkitemQueryJobCreate : IEquatable<WorkitemQueryJobCreate>
     /// Interval end date to use to filter results based on create date. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z
     /// </summary>
     /// <value>Interval end date to use to filter results based on create date. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z</value>
-    [DataMember(Name = "dateIntervalEnd", EmitDefaultValue = false)]
+    [JsonPropertyName("dateIntervalEnd")]
     public DateTime? DateIntervalEnd { get; set; }
 
 

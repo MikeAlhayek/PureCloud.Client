@@ -7,14 +7,14 @@ namespace PureCloud.Client.Models;
 /// <summary>
 /// AnalyticsConversationSegment
 /// </summary>
-[DataContract]
+
 public partial class AnalyticsConversationSegment : IEquatable<AnalyticsConversationSegment>
 {
     /// <summary>
     /// The session disconnect type
     /// </summary>
     /// <value>The session disconnect type</value>
-    [JsonConverter(typeof(JsonStringEnumConverter))]
+    
     public enum DisconnectTypeEnum
     {
         /// <summary>
@@ -137,7 +137,7 @@ public partial class AnalyticsConversationSegment : IEquatable<AnalyticsConversa
     /// The activity that takes place in the segment, such as hold or interact
     /// </summary>
     /// <value>The activity that takes place in the segment, such as hold or interact</value>
-    [JsonConverter(typeof(JsonStringEnumConverter))]
+    
     public enum SegmentTypeEnum
     {
         /// <summary>
@@ -278,13 +278,13 @@ public partial class AnalyticsConversationSegment : IEquatable<AnalyticsConversa
     /// The session disconnect type
     /// </summary>
     /// <value>The session disconnect type</value>
-    [DataMember(Name = "disconnectType", EmitDefaultValue = false)]
+    [JsonPropertyName("disconnectType")]
     public DisconnectTypeEnum? DisconnectType { get; set; }
     /// <summary>
     /// The activity that takes place in the segment, such as hold or interact
     /// </summary>
     /// <value>The activity that takes place in the segment, such as hold or interact</value>
-    [DataMember(Name = "segmentType", EmitDefaultValue = false)]
+    [JsonPropertyName("segmentType")]
     public SegmentTypeEnum? SegmentType { get; set; }
     /// <summary>
     /// Initializes a new instance of the <see cref="AnalyticsConversationSegment" /> class.
@@ -350,7 +350,7 @@ public partial class AnalyticsConversationSegment : IEquatable<AnalyticsConversa
     /// Flag indicating if audio is muted or not (true/false)
     /// </summary>
     /// <value>Flag indicating if audio is muted or not (true/false)</value>
-    [DataMember(Name = "audioMuted", EmitDefaultValue = false)]
+    [JsonPropertyName("audioMuted")]
     public bool? AudioMuted { get; set; }
 
 
@@ -359,7 +359,7 @@ public partial class AnalyticsConversationSegment : IEquatable<AnalyticsConversa
     /// Indicates whether the segment was a conference
     /// </summary>
     /// <value>Indicates whether the segment was a conference</value>
-    [DataMember(Name = "conference", EmitDefaultValue = false)]
+    [JsonPropertyName("conference")]
     public bool? Conference { get; set; }
 
 
@@ -368,7 +368,7 @@ public partial class AnalyticsConversationSegment : IEquatable<AnalyticsConversa
     /// The unique identifier of a new conversation when a conversation is ended for a conference
     /// </summary>
     /// <value>The unique identifier of a new conversation when a conversation is ended for a conference</value>
-    [DataMember(Name = "destinationConversationId", EmitDefaultValue = false)]
+    [JsonPropertyName("destinationConversationId")]
     public string DestinationConversationId { get; set; }
 
 
@@ -377,7 +377,7 @@ public partial class AnalyticsConversationSegment : IEquatable<AnalyticsConversa
     /// The unique identifier of a new session when a session is ended for a conference
     /// </summary>
     /// <value>The unique identifier of a new session when a session is ended for a conference</value>
-    [DataMember(Name = "destinationSessionId", EmitDefaultValue = false)]
+    [JsonPropertyName("destinationSessionId")]
     public string DestinationSessionId { get; set; }
 
 
@@ -388,7 +388,7 @@ public partial class AnalyticsConversationSegment : IEquatable<AnalyticsConversa
     /// A code corresponding to the error that occurred
     /// </summary>
     /// <value>A code corresponding to the error that occurred</value>
-    [DataMember(Name = "errorCode", EmitDefaultValue = false)]
+    [JsonPropertyName("errorCode")]
     public string ErrorCode { get; set; }
 
 
@@ -397,7 +397,7 @@ public partial class AnalyticsConversationSegment : IEquatable<AnalyticsConversa
     /// Unique identifier for a Genesys Cloud group
     /// </summary>
     /// <value>Unique identifier for a Genesys Cloud group</value>
-    [DataMember(Name = "groupId", EmitDefaultValue = false)]
+    [JsonPropertyName("groupId")]
     public string GroupId { get; set; }
 
 
@@ -406,7 +406,7 @@ public partial class AnalyticsConversationSegment : IEquatable<AnalyticsConversa
     /// Q.850 response code(s)
     /// </summary>
     /// <value>Q.850 response code(s)</value>
-    [DataMember(Name = "q850ResponseCodes", EmitDefaultValue = false)]
+    [JsonPropertyName("q850ResponseCodes")]
     public List<long?> Q850ResponseCodes { get; set; }
 
 
@@ -415,7 +415,7 @@ public partial class AnalyticsConversationSegment : IEquatable<AnalyticsConversa
     /// Queue identifier
     /// </summary>
     /// <value>Queue identifier</value>
-    [DataMember(Name = "queueId", EmitDefaultValue = false)]
+    [JsonPropertyName("queueId")]
     public string QueueId { get; set; }
 
 
@@ -424,7 +424,7 @@ public partial class AnalyticsConversationSegment : IEquatable<AnalyticsConversa
     /// Unique identifier for the language requested for an interaction
     /// </summary>
     /// <value>Unique identifier for the language requested for an interaction</value>
-    [DataMember(Name = "requestedLanguageId", EmitDefaultValue = false)]
+    [JsonPropertyName("requestedLanguageId")]
     public string RequestedLanguageId { get; set; }
 
 
@@ -433,7 +433,7 @@ public partial class AnalyticsConversationSegment : IEquatable<AnalyticsConversa
     /// Unique identifier(s) for skill(s) requested for an interaction
     /// </summary>
     /// <value>Unique identifier(s) for skill(s) requested for an interaction</value>
-    [DataMember(Name = "requestedRoutingSkillIds", EmitDefaultValue = false)]
+    [JsonPropertyName("requestedRoutingSkillIds")]
     public List<string> RequestedRoutingSkillIds { get; set; }
 
 
@@ -442,7 +442,7 @@ public partial class AnalyticsConversationSegment : IEquatable<AnalyticsConversa
     /// Unique identifier(s) for agent(s) requested for an interaction
     /// </summary>
     /// <value>Unique identifier(s) for agent(s) requested for an interaction</value>
-    [DataMember(Name = "requestedRoutingUserIds", EmitDefaultValue = false)]
+    [JsonPropertyName("requestedRoutingUserIds")]
     public List<string> RequestedRoutingUserIds { get; set; }
 
 
@@ -451,7 +451,7 @@ public partial class AnalyticsConversationSegment : IEquatable<AnalyticsConversa
     /// The end time of a segment. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z
     /// </summary>
     /// <value>The end time of a segment. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z</value>
-    [DataMember(Name = "segmentEnd", EmitDefaultValue = false)]
+    [JsonPropertyName("segmentEnd")]
     public DateTime? SegmentEnd { get; set; }
 
 
@@ -460,7 +460,7 @@ public partial class AnalyticsConversationSegment : IEquatable<AnalyticsConversa
     /// The start time of a segment. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z
     /// </summary>
     /// <value>The start time of a segment. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z</value>
-    [DataMember(Name = "segmentStart", EmitDefaultValue = false)]
+    [JsonPropertyName("segmentStart")]
     public DateTime? SegmentStart { get; set; }
 
 
@@ -471,7 +471,7 @@ public partial class AnalyticsConversationSegment : IEquatable<AnalyticsConversa
     /// SIP response code(s)
     /// </summary>
     /// <value>SIP response code(s)</value>
-    [DataMember(Name = "sipResponseCodes", EmitDefaultValue = false)]
+    [JsonPropertyName("sipResponseCodes")]
     public List<long?> SipResponseCodes { get; set; }
 
 
@@ -480,7 +480,7 @@ public partial class AnalyticsConversationSegment : IEquatable<AnalyticsConversa
     /// The unique identifier of the previous conversation when a new conversation is created for a conference
     /// </summary>
     /// <value>The unique identifier of the previous conversation when a new conversation is created for a conference</value>
-    [DataMember(Name = "sourceConversationId", EmitDefaultValue = false)]
+    [JsonPropertyName("sourceConversationId")]
     public string SourceConversationId { get; set; }
 
 
@@ -489,7 +489,7 @@ public partial class AnalyticsConversationSegment : IEquatable<AnalyticsConversa
     /// The unique identifier of the previous session when a new session is created for a conference
     /// </summary>
     /// <value>The unique identifier of the previous session when a new session is created for a conference</value>
-    [DataMember(Name = "sourceSessionId", EmitDefaultValue = false)]
+    [JsonPropertyName("sourceSessionId")]
     public string SourceSessionId { get; set; }
 
 
@@ -498,7 +498,7 @@ public partial class AnalyticsConversationSegment : IEquatable<AnalyticsConversa
     /// The subject for the initial email that started this conversation
     /// </summary>
     /// <value>The subject for the initial email that started this conversation</value>
-    [DataMember(Name = "subject", EmitDefaultValue = false)]
+    [JsonPropertyName("subject")]
     public string Subject { get; set; }
 
 
@@ -507,7 +507,7 @@ public partial class AnalyticsConversationSegment : IEquatable<AnalyticsConversa
     /// Flag indicating if video is muted/paused or not (true/false)
     /// </summary>
     /// <value>Flag indicating if video is muted/paused or not (true/false)</value>
-    [DataMember(Name = "videoMuted", EmitDefaultValue = false)]
+    [JsonPropertyName("videoMuted")]
     public bool? VideoMuted { get; set; }
 
 
@@ -516,7 +516,7 @@ public partial class AnalyticsConversationSegment : IEquatable<AnalyticsConversa
     /// Wrap up code
     /// </summary>
     /// <value>Wrap up code</value>
-    [DataMember(Name = "wrapUpCode", EmitDefaultValue = false)]
+    [JsonPropertyName("wrapUpCode")]
     public string WrapUpCode { get; set; }
 
 
@@ -525,7 +525,7 @@ public partial class AnalyticsConversationSegment : IEquatable<AnalyticsConversa
     /// Note entered by an agent during after-call work
     /// </summary>
     /// <value>Note entered by an agent during after-call work</value>
-    [DataMember(Name = "wrapUpNote", EmitDefaultValue = false)]
+    [JsonPropertyName("wrapUpNote")]
     public string WrapUpNote { get; set; }
 
 
@@ -534,7 +534,7 @@ public partial class AnalyticsConversationSegment : IEquatable<AnalyticsConversa
     /// Tag(s) assigned during after-call work
     /// </summary>
     /// <value>Tag(s) assigned during after-call work</value>
-    [DataMember(Name = "wrapUpTags", EmitDefaultValue = false)]
+    [JsonPropertyName("wrapUpTags")]
     public List<string> WrapUpTags { get; set; }
 
 
@@ -543,7 +543,7 @@ public partial class AnalyticsConversationSegment : IEquatable<AnalyticsConversa
     /// Scored agents
     /// </summary>
     /// <value>Scored agents</value>
-    [DataMember(Name = "scoredAgents", EmitDefaultValue = false)]
+    [JsonPropertyName("scoredAgents")]
     public List<AnalyticsScoredAgent> ScoredAgents { get; set; }
 
 
@@ -552,7 +552,7 @@ public partial class AnalyticsConversationSegment : IEquatable<AnalyticsConversa
     /// Additional segment properties
     /// </summary>
     /// <value>Additional segment properties</value>
-    [DataMember(Name = "properties", EmitDefaultValue = false)]
+    [JsonPropertyName("properties")]
     public List<AnalyticsProperty> Properties { get; set; }
 
 

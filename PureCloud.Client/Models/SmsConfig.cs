@@ -1,4 +1,3 @@
-using System.Runtime.Serialization;
 using System.Text;
 using System.Text.Json.Serialization;
 
@@ -7,7 +6,7 @@ namespace PureCloud.Client.Models;
 /// <summary>
 /// SmsConfig
 /// </summary>
-[DataContract]
+
 public partial class SmsConfig : IEquatable<SmsConfig>
 {
 
@@ -38,7 +37,7 @@ public partial class SmsConfig : IEquatable<SmsConfig>
     /// The Contact List column specifying the message to send to the contact.
     /// </summary>
     /// <value>The Contact List column specifying the message to send to the contact.</value>
-    [DataMember(Name = "messageColumn", EmitDefaultValue = false)]
+    [JsonPropertyName("messageColumn")]
     public string MessageColumn { get; set; }
 
 
@@ -47,7 +46,7 @@ public partial class SmsConfig : IEquatable<SmsConfig>
     /// The Contact List column specifying the phone number to send a message to.
     /// </summary>
     /// <value>The Contact List column specifying the phone number to send a message to.</value>
-    [DataMember(Name = "phoneColumn", EmitDefaultValue = false)]
+    [JsonPropertyName("phoneColumn")]
     public string PhoneColumn { get; set; }
 
 
@@ -56,7 +55,7 @@ public partial class SmsConfig : IEquatable<SmsConfig>
     /// A reference to the SMS Phone Number that will be used as the sender of a message.
     /// </summary>
     /// <value>A reference to the SMS Phone Number that will be used as the sender of a message.</value>
-    [DataMember(Name = "senderSmsPhoneNumber", EmitDefaultValue = false)]
+    [JsonPropertyName("senderSmsPhoneNumber")]
     public SmsPhoneNumberRef SenderSmsPhoneNumber { get; set; }
 
 
@@ -65,7 +64,7 @@ public partial class SmsConfig : IEquatable<SmsConfig>
     /// The content template used to formulate the message to send to the contact.
     /// </summary>
     /// <value>The content template used to formulate the message to send to the contact.</value>
-    [DataMember(Name = "contentTemplate", EmitDefaultValue = false)]
+    [JsonPropertyName("contentTemplate")]
     public DomainEntityRef ContentTemplate { get; set; }
 
 

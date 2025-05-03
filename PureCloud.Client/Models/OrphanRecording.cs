@@ -7,13 +7,13 @@ namespace PureCloud.Client.Models;
 /// <summary>
 /// OrphanRecording
 /// </summary>
-[DataContract]
+
 public partial class OrphanRecording : IEquatable<OrphanRecording>
 {
     /// <summary>
     /// Gets or Sets ProviderType
     /// </summary>
-    [JsonConverter(typeof(JsonStringEnumConverter))]
+    
     public enum ProviderTypeEnum
     {
         /// <summary>
@@ -63,7 +63,7 @@ public partial class OrphanRecording : IEquatable<OrphanRecording>
     /// <summary>
     /// Gets or Sets MediaType
     /// </summary>
-    [JsonConverter(typeof(JsonStringEnumConverter))]
+    
     public enum MediaTypeEnum
     {
         /// <summary>
@@ -101,7 +101,7 @@ public partial class OrphanRecording : IEquatable<OrphanRecording>
     /// <summary>
     /// Gets or Sets MediaSubtype
     /// </summary>
-    [JsonConverter(typeof(JsonStringEnumConverter))]
+    
     public enum MediaSubtypeEnum
     {
         /// <summary>
@@ -139,7 +139,7 @@ public partial class OrphanRecording : IEquatable<OrphanRecording>
     /// <summary>
     /// Gets or Sets FileState
     /// </summary>
-    [JsonConverter(typeof(JsonStringEnumConverter))]
+    
     public enum FileStateEnum
     {
         /// <summary>
@@ -190,7 +190,7 @@ public partial class OrphanRecording : IEquatable<OrphanRecording>
     /// The status of the orphaned recording's conversation.
     /// </summary>
     /// <value>The status of the orphaned recording's conversation.</value>
-    [JsonConverter(typeof(JsonStringEnumConverter))]
+    
     public enum OrphanStatusEnum
     {
         /// <summary>
@@ -234,7 +234,7 @@ public partial class OrphanRecording : IEquatable<OrphanRecording>
     /// <summary>
     /// Gets or Sets Region
     /// </summary>
-    [JsonConverter(typeof(JsonStringEnumConverter))]
+    
     public enum RegionEnum
     {
         /// <summary>
@@ -362,33 +362,33 @@ public partial class OrphanRecording : IEquatable<OrphanRecording>
     /// <summary>
     /// Gets or Sets ProviderType
     /// </summary>
-    [DataMember(Name = "providerType", EmitDefaultValue = false)]
+    [JsonPropertyName("providerType")]
     public ProviderTypeEnum? ProviderType { get; set; }
     /// <summary>
     /// Gets or Sets MediaType
     /// </summary>
-    [DataMember(Name = "mediaType", EmitDefaultValue = false)]
+    [JsonPropertyName("mediaType")]
     public MediaTypeEnum? MediaType { get; set; }
     /// <summary>
     /// Gets or Sets MediaSubtype
     /// </summary>
-    [DataMember(Name = "mediaSubtype", EmitDefaultValue = false)]
+    [JsonPropertyName("mediaSubtype")]
     public MediaSubtypeEnum? MediaSubtype { get; set; }
     /// <summary>
     /// Gets or Sets FileState
     /// </summary>
-    [DataMember(Name = "fileState", EmitDefaultValue = false)]
+    [JsonPropertyName("fileState")]
     public FileStateEnum? FileState { get; set; }
     /// <summary>
     /// The status of the orphaned recording's conversation.
     /// </summary>
     /// <value>The status of the orphaned recording's conversation.</value>
-    [DataMember(Name = "orphanStatus", EmitDefaultValue = false)]
+    [JsonPropertyName("orphanStatus")]
     public OrphanStatusEnum? OrphanStatus { get; set; }
     /// <summary>
     /// Gets or Sets Region
     /// </summary>
-    [DataMember(Name = "region", EmitDefaultValue = false)]
+    [JsonPropertyName("region")]
     public RegionEnum? Region { get; set; }
     /// <summary>
     /// Initializes a new instance of the <see cref="OrphanRecording" /> class.
@@ -432,7 +432,7 @@ public partial class OrphanRecording : IEquatable<OrphanRecording>
     /// The globally unique identifier for the object.
     /// </summary>
     /// <value>The globally unique identifier for the object.</value>
-    [DataMember(Name = "id", EmitDefaultValue = false)]
+    [JsonPropertyName("id")]
     public string Id { get; private set; }
 
 
@@ -440,7 +440,7 @@ public partial class OrphanRecording : IEquatable<OrphanRecording>
     /// <summary>
     /// Gets or Sets Name
     /// </summary>
-    [DataMember(Name = "name", EmitDefaultValue = false)]
+    [JsonPropertyName("name")]
     public string Name { get; set; }
 
 
@@ -449,7 +449,7 @@ public partial class OrphanRecording : IEquatable<OrphanRecording>
     /// Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z
     /// </summary>
     /// <value>Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z</value>
-    [DataMember(Name = "createdTime", EmitDefaultValue = false)]
+    [JsonPropertyName("createdTime")]
     public DateTime? CreatedTime { get; set; }
 
 
@@ -458,7 +458,7 @@ public partial class OrphanRecording : IEquatable<OrphanRecording>
     /// Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z
     /// </summary>
     /// <value>Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z</value>
-    [DataMember(Name = "recoveredTime", EmitDefaultValue = false)]
+    [JsonPropertyName("recoveredTime")]
     public DateTime? RecoveredTime { get; set; }
 
 
@@ -468,7 +468,7 @@ public partial class OrphanRecording : IEquatable<OrphanRecording>
     /// <summary>
     /// Gets or Sets MediaSizeBytes
     /// </summary>
-    [DataMember(Name = "mediaSizeBytes", EmitDefaultValue = false)]
+    [JsonPropertyName("mediaSizeBytes")]
     public long? MediaSizeBytes { get; set; }
 
 
@@ -480,7 +480,7 @@ public partial class OrphanRecording : IEquatable<OrphanRecording>
     /// <summary>
     /// Gets or Sets MediaSubject
     /// </summary>
-    [DataMember(Name = "mediaSubject", EmitDefaultValue = false)]
+    [JsonPropertyName("mediaSubject")]
     public string MediaSubject { get; set; }
 
 
@@ -490,7 +490,7 @@ public partial class OrphanRecording : IEquatable<OrphanRecording>
     /// <summary>
     /// Gets or Sets ProviderEndpoint
     /// </summary>
-    [DataMember(Name = "providerEndpoint", EmitDefaultValue = false)]
+    [JsonPropertyName("providerEndpoint")]
     public Endpoint ProviderEndpoint { get; set; }
 
 
@@ -498,7 +498,7 @@ public partial class OrphanRecording : IEquatable<OrphanRecording>
     /// <summary>
     /// Gets or Sets Recording
     /// </summary>
-    [DataMember(Name = "recording", EmitDefaultValue = false)]
+    [JsonPropertyName("recording")]
     public Recording Recording { get; set; }
 
 
@@ -509,7 +509,7 @@ public partial class OrphanRecording : IEquatable<OrphanRecording>
     /// An identifier used during recovery operations by the supplying hybrid platform to track back and determine which interaction this recording is associated with
     /// </summary>
     /// <value>An identifier used during recovery operations by the supplying hybrid platform to track back and determine which interaction this recording is associated with</value>
-    [DataMember(Name = "sourceOrphaningId", EmitDefaultValue = false)]
+    [JsonPropertyName("sourceOrphaningId")]
     public string SourceOrphaningId { get; set; }
 
 
@@ -520,7 +520,7 @@ public partial class OrphanRecording : IEquatable<OrphanRecording>
     /// The URI for this object
     /// </summary>
     /// <value>The URI for this object</value>
-    [DataMember(Name = "selfUri", EmitDefaultValue = false)]
+    [JsonPropertyName("selfUri")]
     public string SelfUri { get; private set; }
 
 

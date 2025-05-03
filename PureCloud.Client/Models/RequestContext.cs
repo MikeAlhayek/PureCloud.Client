@@ -1,12 +1,12 @@
-using System.Runtime.Serialization;
 using System.Text;
+using System.Text.Json.Serialization;
 
 namespace PureCloud.Client.Models;
 
 /// <summary>
 /// RequestContext
 /// </summary>
-[DataContract]
+
 public partial class RequestContext : IEquatable<RequestContext>
 {
     /// <summary>
@@ -25,7 +25,7 @@ public partial class RequestContext : IEquatable<RequestContext>
     /// A list of one or more patterns to match.
     /// </summary>
     /// <value>A list of one or more patterns to match.</value>
-    [DataMember(Name = "patterns", EmitDefaultValue = false)]
+    [JsonPropertyName("patterns")]
     public List<RequestContextPattern> Patterns { get; set; }
 
 

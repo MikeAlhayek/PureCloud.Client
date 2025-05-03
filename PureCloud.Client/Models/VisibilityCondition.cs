@@ -7,13 +7,13 @@ namespace PureCloud.Client.Models;
 /// <summary>
 /// VisibilityCondition
 /// </summary>
-[DataContract]
+
 public partial class VisibilityCondition : IEquatable<VisibilityCondition>
 {
     /// <summary>
     /// Gets or Sets CombiningOperation
     /// </summary>
-    [JsonConverter(typeof(JsonStringEnumConverter))]
+    
     public enum CombiningOperationEnum
     {
         /// <summary>
@@ -39,7 +39,7 @@ public partial class VisibilityCondition : IEquatable<VisibilityCondition>
     /// <summary>
     /// Gets or Sets CombiningOperation
     /// </summary>
-    [DataMember(Name = "combiningOperation", EmitDefaultValue = false)]
+    [JsonPropertyName("combiningOperation")]
     public CombiningOperationEnum? CombiningOperation { get; set; }
     /// <summary>
     /// Initializes a new instance of the <see cref="VisibilityCondition" /> class.
@@ -61,7 +61,7 @@ public partial class VisibilityCondition : IEquatable<VisibilityCondition>
     /// A list of strings, each representing the location in the form of the Answer Option to depend on. In the format of \&quot;/form/questionGroup/{questionGroupIndex}/question/{questionIndex}/answer/{answerIndex}\&quot; or, to assume the current question group, \&quot;../question/{questionIndex}/answer/{answerIndex}\&quot;. Note: Indexes are zero-based
     /// </summary>
     /// <value>A list of strings, each representing the location in the form of the Answer Option to depend on. In the format of \&quot;/form/questionGroup/{questionGroupIndex}/question/{questionIndex}/answer/{answerIndex}\&quot; or, to assume the current question group, \&quot;../question/{questionIndex}/answer/{answerIndex}\&quot;. Note: Indexes are zero-based</value>
-    [DataMember(Name = "predicates", EmitDefaultValue = false)]
+    [JsonPropertyName("predicates")]
     public List<object> Predicates { get; set; }
 
 

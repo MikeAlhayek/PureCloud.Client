@@ -1,12 +1,12 @@
-using System.Runtime.Serialization;
 using System.Text;
+using System.Text.Json.Serialization;
 
 namespace PureCloud.Client.Models;
 
 /// <summary>
 /// WfmBuScheduleTopicBuManagementUnitScheduleSummary
 /// </summary>
-[DataContract]
+
 public partial class WfmBuScheduleTopicBuManagementUnitScheduleSummary : IEquatable<WfmBuScheduleTopicBuManagementUnitScheduleSummary>
 {
     /// <summary>
@@ -32,7 +32,7 @@ public partial class WfmBuScheduleTopicBuManagementUnitScheduleSummary : IEquata
     /// <summary>
     /// Gets or Sets ManagementUnit
     /// </summary>
-    [DataMember(Name = "managementUnit", EmitDefaultValue = false)]
+    [JsonPropertyName("managementUnit")]
     public WfmBuScheduleTopicManagementUnit ManagementUnit { get; set; }
 
 
@@ -40,7 +40,7 @@ public partial class WfmBuScheduleTopicBuManagementUnitScheduleSummary : IEquata
     /// <summary>
     /// Gets or Sets StartDate
     /// </summary>
-    [DataMember(Name = "startDate", EmitDefaultValue = false)]
+    [JsonPropertyName("startDate")]
     public DateTime? StartDate { get; set; }
 
 
@@ -48,7 +48,7 @@ public partial class WfmBuScheduleTopicBuManagementUnitScheduleSummary : IEquata
     /// <summary>
     /// Gets or Sets EndDate
     /// </summary>
-    [DataMember(Name = "endDate", EmitDefaultValue = false)]
+    [JsonPropertyName("endDate")]
     public DateTime? EndDate { get; set; }
 
 
@@ -56,7 +56,7 @@ public partial class WfmBuScheduleTopicBuManagementUnitScheduleSummary : IEquata
     /// <summary>
     /// Gets or Sets Agents
     /// </summary>
-    [DataMember(Name = "agents", EmitDefaultValue = false)]
+    [JsonPropertyName("agents")]
     public List<WfmBuScheduleTopicUserReference> Agents { get; set; }
 
 
@@ -64,7 +64,7 @@ public partial class WfmBuScheduleTopicBuManagementUnitScheduleSummary : IEquata
     /// <summary>
     /// Gets or Sets AgentCount
     /// </summary>
-    [DataMember(Name = "agentCount", EmitDefaultValue = false)]
+    [JsonPropertyName("agentCount")]
     public long? AgentCount { get; set; }
 
 

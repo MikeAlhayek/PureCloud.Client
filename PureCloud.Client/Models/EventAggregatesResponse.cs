@@ -1,12 +1,12 @@
-using System.Runtime.Serialization;
 using System.Text;
+using System.Text.Json.Serialization;
 
 namespace PureCloud.Client.Models;
 
 /// <summary>
 /// EventAggregatesResponse
 /// </summary>
-[DataContract]
+
 public partial class EventAggregatesResponse : IEquatable<EventAggregatesResponse>
 {
     /// <summary>
@@ -27,7 +27,7 @@ public partial class EventAggregatesResponse : IEquatable<EventAggregatesRespons
     /// Interval for returned aggregates. Intervals are represented as an ISO-8601 string. For example: YYYY-MM-DDThh:mm:ss/YYYY-MM-DDThh:mm:ss
     /// </summary>
     /// <value>Interval for returned aggregates. Intervals are represented as an ISO-8601 string. For example: YYYY-MM-DDThh:mm:ss/YYYY-MM-DDThh:mm:ss</value>
-    [DataMember(Name = "interval", EmitDefaultValue = false)]
+    [JsonPropertyName("interval")]
     public string Interval { get; set; }
 
 
@@ -36,7 +36,7 @@ public partial class EventAggregatesResponse : IEquatable<EventAggregatesRespons
     /// Aggregates by event definition
     /// </summary>
     /// <value>Aggregates by event definition</value>
-    [DataMember(Name = "eventDefinitionAggregates", EmitDefaultValue = false)]
+    [JsonPropertyName("eventDefinitionAggregates")]
     public List<EventDefinitionAggregates> EventDefinitionAggregates { get; set; }
 
 

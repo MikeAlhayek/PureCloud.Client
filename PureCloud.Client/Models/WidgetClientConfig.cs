@@ -1,12 +1,12 @@
-using System.Runtime.Serialization;
 using System.Text;
+using System.Text.Json.Serialization;
 
 namespace PureCloud.Client.Models;
 
 /// <summary>
 /// WidgetClientConfig
 /// </summary>
-[DataContract]
+
 public partial class WidgetClientConfig : IEquatable<WidgetClientConfig>
 {
     /// <summary>
@@ -30,7 +30,7 @@ public partial class WidgetClientConfig : IEquatable<WidgetClientConfig>
     /// <summary>
     /// Gets or Sets V1
     /// </summary>
-    [DataMember(Name = "v1", EmitDefaultValue = false)]
+    [JsonPropertyName("v1")]
     public WidgetClientConfigV1 V1 { get; set; }
 
 
@@ -38,7 +38,7 @@ public partial class WidgetClientConfig : IEquatable<WidgetClientConfig>
     /// <summary>
     /// Gets or Sets V2
     /// </summary>
-    [DataMember(Name = "v2", EmitDefaultValue = false)]
+    [JsonPropertyName("v2")]
     public object V2 { get; set; }
 
 
@@ -46,7 +46,7 @@ public partial class WidgetClientConfig : IEquatable<WidgetClientConfig>
     /// <summary>
     /// Gets or Sets V1Http
     /// </summary>
-    [DataMember(Name = "v1-http", EmitDefaultValue = false)]
+    [JsonPropertyName("v1-http")]
     public WidgetClientConfigV1Http V1Http { get; set; }
 
 
@@ -54,7 +54,7 @@ public partial class WidgetClientConfig : IEquatable<WidgetClientConfig>
     /// <summary>
     /// Gets or Sets ThirdParty
     /// </summary>
-    [DataMember(Name = "third-party", EmitDefaultValue = false)]
+    [JsonPropertyName("third-party")]
     public object ThirdParty { get; set; }
 
 

@@ -1,12 +1,12 @@
-using System.Runtime.Serialization;
 using System.Text;
+using System.Text.Json.Serialization;
 
 namespace PureCloud.Client.Models;
 
 /// <summary>
 /// DialerAttemptLimitsConfigChangeRecallEntry
 /// </summary>
-[DataContract]
+
 public partial class DialerAttemptLimitsConfigChangeRecallEntry : IEquatable<DialerAttemptLimitsConfigChangeRecallEntry>
 {
     /// <summary>
@@ -29,7 +29,7 @@ public partial class DialerAttemptLimitsConfigChangeRecallEntry : IEquatable<Dia
     /// The number of recall attempts to make
     /// </summary>
     /// <value>The number of recall attempts to make</value>
-    [DataMember(Name = "nbrAttempts", EmitDefaultValue = false)]
+    [JsonPropertyName("nbrAttempts")]
     public long? NbrAttempts { get; set; }
 
 
@@ -38,7 +38,7 @@ public partial class DialerAttemptLimitsConfigChangeRecallEntry : IEquatable<Dia
     /// How long to wait between recall attempts
     /// </summary>
     /// <value>How long to wait between recall attempts</value>
-    [DataMember(Name = "minutesBetweenAttempts", EmitDefaultValue = false)]
+    [JsonPropertyName("minutesBetweenAttempts")]
     public long? MinutesBetweenAttempts { get; set; }
 
 
@@ -46,7 +46,7 @@ public partial class DialerAttemptLimitsConfigChangeRecallEntry : IEquatable<Dia
     /// <summary>
     /// Gets or Sets AdditionalProperties
     /// </summary>
-    [DataMember(Name = "additionalProperties", EmitDefaultValue = false)]
+    [JsonPropertyName("additionalProperties")]
     public Dictionary<string, object> AdditionalProperties { get; set; }
 
 

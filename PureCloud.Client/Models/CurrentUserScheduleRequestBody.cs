@@ -1,4 +1,3 @@
-using System.Runtime.Serialization;
 using System.Text;
 using System.Text.Json.Serialization;
 
@@ -7,7 +6,7 @@ namespace PureCloud.Client.Models;
 /// <summary>
 /// CurrentUserScheduleRequestBody
 /// </summary>
-[DataContract]
+
 public partial class CurrentUserScheduleRequestBody : IEquatable<CurrentUserScheduleRequestBody>
 {
 
@@ -36,7 +35,7 @@ public partial class CurrentUserScheduleRequestBody : IEquatable<CurrentUserSche
     /// Beginning of the range of schedules to fetch, in ISO-8601 format
     /// </summary>
     /// <value>Beginning of the range of schedules to fetch, in ISO-8601 format</value>
-    [DataMember(Name = "startDate", EmitDefaultValue = false)]
+    [JsonPropertyName("startDate")]
     public DateTime? StartDate { get; set; }
 
 
@@ -45,7 +44,7 @@ public partial class CurrentUserScheduleRequestBody : IEquatable<CurrentUserSche
     /// End of the range of schedules to fetch, in ISO-8601 format
     /// </summary>
     /// <value>End of the range of schedules to fetch, in ISO-8601 format</value>
-    [DataMember(Name = "endDate", EmitDefaultValue = false)]
+    [JsonPropertyName("endDate")]
     public DateTime? EndDate { get; set; }
 
 
@@ -54,7 +53,7 @@ public partial class CurrentUserScheduleRequestBody : IEquatable<CurrentUserSche
     /// Whether to load the full week&#39;s schedule (for the current user) of any week overlapping the start/end date query parameters, defaults to false
     /// </summary>
     /// <value>Whether to load the full week&#39;s schedule (for the current user) of any week overlapping the start/end date query parameters, defaults to false</value>
-    [DataMember(Name = "loadFullWeeks", EmitDefaultValue = false)]
+    [JsonPropertyName("loadFullWeeks")]
     public bool? LoadFullWeeks { get; set; }
 
 

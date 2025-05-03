@@ -1,12 +1,12 @@
-using System.Runtime.Serialization;
 using System.Text;
+using System.Text.Json.Serialization;
 
 namespace PureCloud.Client.Models;
 
 /// <summary>
 /// WorkdayPointsTrendItem
 /// </summary>
-[DataContract]
+
 public partial class WorkdayPointsTrendItem : IEquatable<WorkdayPointsTrendItem>
 {
     /// <summary>
@@ -23,7 +23,7 @@ public partial class WorkdayPointsTrendItem : IEquatable<WorkdayPointsTrendItem>
     /// workday date for the points trend. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd
     /// </summary>
     /// <value>workday date for the points trend. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd</value>
-    [DataMember(Name = "dateWorkday", EmitDefaultValue = false)]
+    [JsonPropertyName("dateWorkday")]
     public string DateWorkday { get; private set; }
 
 
@@ -32,7 +32,7 @@ public partial class WorkdayPointsTrendItem : IEquatable<WorkdayPointsTrendItem>
     /// workday points for the date
     /// </summary>
     /// <value>workday points for the date</value>
-    [DataMember(Name = "points", EmitDefaultValue = false)]
+    [JsonPropertyName("points")]
     public double? Points { get; private set; }
 
 

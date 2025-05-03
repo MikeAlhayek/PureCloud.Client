@@ -1,4 +1,3 @@
-using System.Runtime.Serialization;
 using System.Text;
 using System.Text.Json.Serialization;
 
@@ -7,7 +6,7 @@ namespace PureCloud.Client.Models;
 /// <summary>
 /// EstimateAvailableFullDayTimeOffResponse
 /// </summary>
-[DataContract]
+
 public partial class EstimateAvailableFullDayTimeOffResponse : IEquatable<EstimateAvailableFullDayTimeOffResponse>
 {
 
@@ -38,7 +37,7 @@ public partial class EstimateAvailableFullDayTimeOffResponse : IEquatable<Estima
     /// Date in yyyy-MM-dd format for full day request. Should be interpreted in the business unit&#39;s configured time zone. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd
     /// </summary>
     /// <value>Date in yyyy-MM-dd format for full day request. Should be interpreted in the business unit&#39;s configured time zone. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd</value>
-    [DataMember(Name = "date", EmitDefaultValue = false)]
+    [JsonPropertyName("date")]
     public string Date { get; set; }
 
 
@@ -47,7 +46,7 @@ public partial class EstimateAvailableFullDayTimeOffResponse : IEquatable<Estima
     /// An estimation of time off request length in minutes
     /// </summary>
     /// <value>An estimation of time off request length in minutes</value>
-    [DataMember(Name = "durationMinutes", EmitDefaultValue = false)]
+    [JsonPropertyName("durationMinutes")]
     public int? DurationMinutes { get; set; }
 
 
@@ -56,7 +55,7 @@ public partial class EstimateAvailableFullDayTimeOffResponse : IEquatable<Estima
     /// An estimation of payable part of time off request in minutes
     /// </summary>
     /// <value>An estimation of payable part of time off request in minutes</value>
-    [DataMember(Name = "payableMinutes", EmitDefaultValue = false)]
+    [JsonPropertyName("payableMinutes")]
     public int? PayableMinutes { get; set; }
 
 
@@ -65,7 +64,7 @@ public partial class EstimateAvailableFullDayTimeOffResponse : IEquatable<Estima
     /// Whether there is flexibility for a user to choose different hours than the system estimated
     /// </summary>
     /// <value>Whether there is flexibility for a user to choose different hours than the system estimated</value>
-    [DataMember(Name = "flexible", EmitDefaultValue = false)]
+    [JsonPropertyName("flexible")]
     public bool? Flexible { get; set; }
 
 

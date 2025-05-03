@@ -1,12 +1,12 @@
-using System.Runtime.Serialization;
 using System.Text;
+using System.Text.Json.Serialization;
 
 namespace PureCloud.Client.Models;
 
 /// <summary>
 /// An outbound-messaging messaging campaign email address
 /// </summary>
-[DataContract]
+
 public partial class OutboundMessagingWhatsappCampaignConfigChangeReplyToEmailAddress : IEquatable<OutboundMessagingWhatsappCampaignConfigChangeReplyToEmailAddress>
 {
     /// <summary>
@@ -27,7 +27,7 @@ public partial class OutboundMessagingWhatsappCampaignConfigChangeReplyToEmailAd
     /// A UriReference for a resource
     /// </summary>
     /// <value>A UriReference for a resource</value>
-    [DataMember(Name = "domain", EmitDefaultValue = false)]
+    [JsonPropertyName("domain")]
     public OutboundMessagingWhatsappCampaignConfigChangeUriReference Domain { get; set; }
 
 
@@ -36,7 +36,7 @@ public partial class OutboundMessagingWhatsappCampaignConfigChangeReplyToEmailAd
     /// A UriReference for a resource
     /// </summary>
     /// <value>A UriReference for a resource</value>
-    [DataMember(Name = "route", EmitDefaultValue = false)]
+    [JsonPropertyName("route")]
     public OutboundMessagingWhatsappCampaignConfigChangeUriReference Route { get; set; }
 
 

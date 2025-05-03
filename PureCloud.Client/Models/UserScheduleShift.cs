@@ -1,12 +1,12 @@
-using System.Runtime.Serialization;
 using System.Text;
+using System.Text.Json.Serialization;
 
 namespace PureCloud.Client.Models;
 
 /// <summary>
 /// UserScheduleShift
 /// </summary>
-[DataContract]
+
 public partial class UserScheduleShift : IEquatable<UserScheduleShift>
 {
     /// <summary>
@@ -31,7 +31,7 @@ public partial class UserScheduleShift : IEquatable<UserScheduleShift>
     /// The schedule to which this shift belongs
     /// </summary>
     /// <value>The schedule to which this shift belongs</value>
-    [DataMember(Name = "weekSchedule", EmitDefaultValue = false)]
+    [JsonPropertyName("weekSchedule")]
     public WeekScheduleReference WeekSchedule { get; private set; }
 
 
@@ -40,7 +40,7 @@ public partial class UserScheduleShift : IEquatable<UserScheduleShift>
     /// ID of the schedule shift. This is only for the case of updating and deleting an existing shift
     /// </summary>
     /// <value>ID of the schedule shift. This is only for the case of updating and deleting an existing shift</value>
-    [DataMember(Name = "id", EmitDefaultValue = false)]
+    [JsonPropertyName("id")]
     public string Id { get; set; }
 
 
@@ -49,7 +49,7 @@ public partial class UserScheduleShift : IEquatable<UserScheduleShift>
     /// Start time in UTC for this shift. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z
     /// </summary>
     /// <value>Start time in UTC for this shift. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z</value>
-    [DataMember(Name = "startDate", EmitDefaultValue = false)]
+    [JsonPropertyName("startDate")]
     public DateTime? StartDate { get; private set; }
 
 
@@ -58,7 +58,7 @@ public partial class UserScheduleShift : IEquatable<UserScheduleShift>
     /// Length of this shift in minutes
     /// </summary>
     /// <value>Length of this shift in minutes</value>
-    [DataMember(Name = "lengthInMinutes", EmitDefaultValue = false)]
+    [JsonPropertyName("lengthInMinutes")]
     public int? LengthInMinutes { get; private set; }
 
 
@@ -67,7 +67,7 @@ public partial class UserScheduleShift : IEquatable<UserScheduleShift>
     /// List of activities in this shift
     /// </summary>
     /// <value>List of activities in this shift</value>
-    [DataMember(Name = "activities", EmitDefaultValue = false)]
+    [JsonPropertyName("activities")]
     public List<UserScheduleActivity> Activities { get; set; }
 
 
@@ -76,7 +76,7 @@ public partial class UserScheduleShift : IEquatable<UserScheduleShift>
     /// If marked true for updating this schedule shift, it will be deleted
     /// </summary>
     /// <value>If marked true for updating this schedule shift, it will be deleted</value>
-    [DataMember(Name = "delete", EmitDefaultValue = false)]
+    [JsonPropertyName("delete")]
     public bool? Delete { get; set; }
 
 
@@ -85,7 +85,7 @@ public partial class UserScheduleShift : IEquatable<UserScheduleShift>
     /// Whether the shift was set as manually edited
     /// </summary>
     /// <value>Whether the shift was set as manually edited</value>
-    [DataMember(Name = "manuallyEdited", EmitDefaultValue = false)]
+    [JsonPropertyName("manuallyEdited")]
     public bool? ManuallyEdited { get; set; }
 
 

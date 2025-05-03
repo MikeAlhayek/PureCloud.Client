@@ -7,14 +7,14 @@ namespace PureCloud.Client.Models;
 /// <summary>
 /// JourneyViewSchedule
 /// </summary>
-[DataContract]
+
 public partial class JourneyViewSchedule : IEquatable<JourneyViewSchedule>
 {
     /// <summary>
     /// Frequency of execution
     /// </summary>
     /// <value>Frequency of execution</value>
-    [JsonConverter(typeof(JsonStringEnumConverter))]
+    
     public enum FrequencyEnum
     {
         /// <summary>
@@ -47,7 +47,7 @@ public partial class JourneyViewSchedule : IEquatable<JourneyViewSchedule>
     /// Frequency of execution
     /// </summary>
     /// <value>Frequency of execution</value>
-    [DataMember(Name = "frequency", EmitDefaultValue = false)]
+    [JsonPropertyName("frequency")]
     public FrequencyEnum? Frequency { get; set; }
 
     /// <summary>
@@ -71,7 +71,7 @@ public partial class JourneyViewSchedule : IEquatable<JourneyViewSchedule>
     /// The globally unique identifier for the object.
     /// </summary>
     /// <value>The globally unique identifier for the object.</value>
-    [DataMember(Name = "id", EmitDefaultValue = false)]
+    [JsonPropertyName("id")]
     public string Id { get; private set; }
 
 
@@ -82,7 +82,7 @@ public partial class JourneyViewSchedule : IEquatable<JourneyViewSchedule>
     /// Timestamp of last update. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z
     /// </summary>
     /// <value>Timestamp of last update. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z</value>
-    [DataMember(Name = "dateModified", EmitDefaultValue = false)]
+    [JsonPropertyName("dateModified")]
     public DateTime? DateModified { get; private set; }
 
 
@@ -91,7 +91,7 @@ public partial class JourneyViewSchedule : IEquatable<JourneyViewSchedule>
     /// Last modified user
     /// </summary>
     /// <value>Last modified user</value>
-    [DataMember(Name = "user", EmitDefaultValue = false)]
+    [JsonPropertyName("user")]
     public AddressableEntityRef User { get; private set; }
 
 
@@ -100,7 +100,7 @@ public partial class JourneyViewSchedule : IEquatable<JourneyViewSchedule>
     /// The URI for this object
     /// </summary>
     /// <value>The URI for this object</value>
-    [DataMember(Name = "selfUri", EmitDefaultValue = false)]
+    [JsonPropertyName("selfUri")]
     public string SelfUri { get; private set; }
 
 

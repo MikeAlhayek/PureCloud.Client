@@ -1,4 +1,3 @@
-using System.Runtime.Serialization;
 using System.Text;
 using System.Text.Json.Serialization;
 
@@ -7,7 +6,7 @@ namespace PureCloud.Client.Models;
 /// <summary>
 /// FlowPathsFlowFilter
 /// </summary>
-[DataContract]
+
 public partial class FlowPathsFlowFilter : IEquatable<FlowPathsFlowFilter>
 {
 
@@ -32,7 +31,7 @@ public partial class FlowPathsFlowFilter : IEquatable<FlowPathsFlowFilter>
     /// The identifier of the flow.
     /// </summary>
     /// <value>The identifier of the flow.</value>
-    [DataMember(Name = "id", EmitDefaultValue = false)]
+    [JsonPropertyName("id")]
     public string Id { get; set; }
 
 

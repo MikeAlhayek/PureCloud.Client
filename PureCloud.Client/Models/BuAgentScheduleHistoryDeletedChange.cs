@@ -1,12 +1,12 @@
-using System.Runtime.Serialization;
 using System.Text;
+using System.Text.Json.Serialization;
 
 namespace PureCloud.Client.Models;
 
 /// <summary>
 /// BuAgentScheduleHistoryDeletedChange
 /// </summary>
-[DataContract]
+
 public partial class BuAgentScheduleHistoryDeletedChange : IEquatable<BuAgentScheduleHistoryDeletedChange>
 {
     /// <summary>
@@ -29,7 +29,7 @@ public partial class BuAgentScheduleHistoryDeletedChange : IEquatable<BuAgentSch
     /// The IDs of deleted shifts
     /// </summary>
     /// <value>The IDs of deleted shifts</value>
-    [DataMember(Name = "shiftIds", EmitDefaultValue = false)]
+    [JsonPropertyName("shiftIds")]
     public List<string> ShiftIds { get; set; }
 
 
@@ -38,7 +38,7 @@ public partial class BuAgentScheduleHistoryDeletedChange : IEquatable<BuAgentSch
     /// The dates of any deleted full day time off markers
     /// </summary>
     /// <value>The dates of any deleted full day time off markers</value>
-    [DataMember(Name = "fullDayTimeOffMarkerDates", EmitDefaultValue = false)]
+    [JsonPropertyName("fullDayTimeOffMarkerDates")]
     public List<string> FullDayTimeOffMarkerDates { get; set; }
 
 
@@ -47,7 +47,7 @@ public partial class BuAgentScheduleHistoryDeletedChange : IEquatable<BuAgentSch
     /// Whether the entire agent schedule was deleted
     /// </summary>
     /// <value>Whether the entire agent schedule was deleted</value>
-    [DataMember(Name = "agentSchedule", EmitDefaultValue = false)]
+    [JsonPropertyName("agentSchedule")]
     public bool? AgentSchedule { get; set; }
 
 

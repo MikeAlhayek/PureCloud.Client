@@ -7,14 +7,14 @@ namespace PureCloud.Client.Models;
 /// <summary>
 /// AssistanceCondition
 /// </summary>
-[DataContract]
+
 public partial class AssistanceCondition : IEquatable<AssistanceCondition>
 {
     /// <summary>
     /// The operator for the assistance condition. The operator defines whether the listed topicIds should EXIST or NOTEXIST for the condition to be evaluated as true.
     /// </summary>
     /// <value>The operator for the assistance condition. The operator defines whether the listed topicIds should EXIST or NOTEXIST for the condition to be evaluated as true.</value>
-    [JsonConverter(typeof(JsonStringEnumConverter))]
+    
     public enum OperatorEnum
     {
         /// <summary>
@@ -41,7 +41,7 @@ public partial class AssistanceCondition : IEquatable<AssistanceCondition>
     /// The operator for the assistance condition. The operator defines whether the listed topicIds should EXIST or NOTEXIST for the condition to be evaluated as true.
     /// </summary>
     /// <value>The operator for the assistance condition. The operator defines whether the listed topicIds should EXIST or NOTEXIST for the condition to be evaluated as true.</value>
-    [DataMember(Name = "operator", EmitDefaultValue = false)]
+    [JsonPropertyName("operator")]
     public OperatorEnum? Operator { get; set; }
     /// <summary>
     /// Initializes a new instance of the <see cref="AssistanceCondition" /> class.
@@ -63,7 +63,7 @@ public partial class AssistanceCondition : IEquatable<AssistanceCondition>
     /// List of topicIds within the assistance condition which would be combined together using logical OR operator. Eg ( topicId_1 || topicId_2 ) .
     /// </summary>
     /// <value>List of topicIds within the assistance condition which would be combined together using logical OR operator. Eg ( topicId_1 || topicId_2 ) .</value>
-    [DataMember(Name = "topicIds", EmitDefaultValue = false)]
+    [JsonPropertyName("topicIds")]
     public List<string> TopicIds { get; set; }
 
 

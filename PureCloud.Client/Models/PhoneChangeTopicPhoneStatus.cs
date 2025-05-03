@@ -7,13 +7,13 @@ namespace PureCloud.Client.Models;
 /// <summary>
 /// PhoneChangeTopicPhoneStatus
 /// </summary>
-[DataContract]
+
 public partial class PhoneChangeTopicPhoneStatus : IEquatable<PhoneChangeTopicPhoneStatus>
 {
     /// <summary>
     /// Gets or Sets OperationalStatus
     /// </summary>
-    [JsonConverter(typeof(JsonStringEnumConverter))]
+    
     public enum OperationalStatusEnum
     {
         /// <summary>
@@ -45,7 +45,7 @@ public partial class PhoneChangeTopicPhoneStatus : IEquatable<PhoneChangeTopicPh
     /// <summary>
     /// Gets or Sets OperationalStatus
     /// </summary>
-    [DataMember(Name = "operationalStatus", EmitDefaultValue = false)]
+    [JsonPropertyName("operationalStatus")]
     public OperationalStatusEnum? OperationalStatus { get; set; }
     /// <summary>
     /// Initializes a new instance of the <see cref="PhoneChangeTopicPhoneStatus" /> class.
@@ -72,7 +72,7 @@ public partial class PhoneChangeTopicPhoneStatus : IEquatable<PhoneChangeTopicPh
     /// <summary>
     /// Gets or Sets Id
     /// </summary>
-    [DataMember(Name = "id", EmitDefaultValue = false)]
+    [JsonPropertyName("id")]
     public string Id { get; set; }
 
 
@@ -82,7 +82,7 @@ public partial class PhoneChangeTopicPhoneStatus : IEquatable<PhoneChangeTopicPh
     /// <summary>
     /// Gets or Sets Edge
     /// </summary>
-    [DataMember(Name = "edge", EmitDefaultValue = false)]
+    [JsonPropertyName("edge")]
     public PhoneChangeTopicEdgeReference Edge { get; set; }
 
 
@@ -90,7 +90,7 @@ public partial class PhoneChangeTopicPhoneStatus : IEquatable<PhoneChangeTopicPh
     /// <summary>
     /// Gets or Sets Provision
     /// </summary>
-    [DataMember(Name = "provision", EmitDefaultValue = false)]
+    [JsonPropertyName("provision")]
     public PhoneChangeTopicProvisionInfo Provision { get; set; }
 
 
@@ -98,7 +98,7 @@ public partial class PhoneChangeTopicPhoneStatus : IEquatable<PhoneChangeTopicPh
     /// <summary>
     /// Gets or Sets LineStatuses
     /// </summary>
-    [DataMember(Name = "lineStatuses", EmitDefaultValue = false)]
+    [JsonPropertyName("lineStatuses")]
     public List<PhoneChangeTopicLineStatus> LineStatuses { get; set; }
 
 
@@ -106,7 +106,7 @@ public partial class PhoneChangeTopicPhoneStatus : IEquatable<PhoneChangeTopicPh
     /// <summary>
     /// Gets or Sets EventCreationTime
     /// </summary>
-    [DataMember(Name = "eventCreationTime", EmitDefaultValue = false)]
+    [JsonPropertyName("eventCreationTime")]
     public DateTime? EventCreationTime { get; set; }
 
 

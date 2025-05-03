@@ -1,12 +1,12 @@
-using System.Runtime.Serialization;
 using System.Text;
+using System.Text.Json.Serialization;
 
 namespace PureCloud.Client.Models;
 
 /// <summary>
 /// Action
 /// </summary>
-[DataContract]
+
 public partial class Action : IEquatable<Action>
 {
     /// <summary>
@@ -37,7 +37,7 @@ public partial class Action : IEquatable<Action>
     /// The globally unique identifier for the object.
     /// </summary>
     /// <value>The globally unique identifier for the object.</value>
-    [DataMember(Name = "id", EmitDefaultValue = false)]
+    [JsonPropertyName("id")]
     public string Id { get; private set; }
 
 
@@ -45,7 +45,7 @@ public partial class Action : IEquatable<Action>
     /// <summary>
     /// Gets or Sets Name
     /// </summary>
-    [DataMember(Name = "name", EmitDefaultValue = false)]
+    [JsonPropertyName("name")]
     public string Name { get; set; }
 
 
@@ -54,7 +54,7 @@ public partial class Action : IEquatable<Action>
     /// The ID of the integration for which this action is associated
     /// </summary>
     /// <value>The ID of the integration for which this action is associated</value>
-    [DataMember(Name = "integrationId", EmitDefaultValue = false)]
+    [JsonPropertyName("integrationId")]
     public string IntegrationId { get; set; }
 
 
@@ -63,7 +63,7 @@ public partial class Action : IEquatable<Action>
     /// Category of Action
     /// </summary>
     /// <value>Category of Action</value>
-    [DataMember(Name = "category", EmitDefaultValue = false)]
+    [JsonPropertyName("category")]
     public string Category { get; set; }
 
 
@@ -72,7 +72,7 @@ public partial class Action : IEquatable<Action>
     /// Action contract
     /// </summary>
     /// <value>Action contract</value>
-    [DataMember(Name = "contract", EmitDefaultValue = false)]
+    [JsonPropertyName("contract")]
     public ActionContract Contract { get; set; }
 
 
@@ -81,7 +81,7 @@ public partial class Action : IEquatable<Action>
     /// Version of this action
     /// </summary>
     /// <value>Version of this action</value>
-    [DataMember(Name = "version", EmitDefaultValue = false)]
+    [JsonPropertyName("version")]
     public int? Version { get; set; }
 
 
@@ -90,7 +90,7 @@ public partial class Action : IEquatable<Action>
     /// Indication of whether or not the action is designed to accept sensitive data
     /// </summary>
     /// <value>Indication of whether or not the action is designed to accept sensitive data</value>
-    [DataMember(Name = "secure", EmitDefaultValue = false)]
+    [JsonPropertyName("secure")]
     public bool? Secure { get; set; }
 
 
@@ -99,7 +99,7 @@ public partial class Action : IEquatable<Action>
     /// Configuration to support request and response processing
     /// </summary>
     /// <value>Configuration to support request and response processing</value>
-    [DataMember(Name = "config", EmitDefaultValue = false)]
+    [JsonPropertyName("config")]
     public ActionConfig Config { get; set; }
 
 
@@ -108,7 +108,7 @@ public partial class Action : IEquatable<Action>
     /// The URI for this object
     /// </summary>
     /// <value>The URI for this object</value>
-    [DataMember(Name = "selfUri", EmitDefaultValue = false)]
+    [JsonPropertyName("selfUri")]
     public string SelfUri { get; private set; }
 
 

@@ -1,4 +1,3 @@
-using System.Runtime.Serialization;
 using System.Text;
 using System.Text.Json.Serialization;
 
@@ -7,7 +6,7 @@ namespace PureCloud.Client.Models;
 /// <summary>
 /// DatePicker
 /// </summary>
-[DataContract]
+
 public partial class DatePicker : IEquatable<DatePicker>
 {
 
@@ -36,7 +35,7 @@ public partial class DatePicker : IEquatable<DatePicker>
     /// Text to show in the title.
     /// </summary>
     /// <value>Text to show in the title.</value>
-    [DataMember(Name = "title", EmitDefaultValue = false)]
+    [JsonPropertyName("title")]
     public string Title { get; set; }
 
 
@@ -45,7 +44,7 @@ public partial class DatePicker : IEquatable<DatePicker>
     /// Text to show in the description.
     /// </summary>
     /// <value>Text to show in the description.</value>
-    [DataMember(Name = "subtitle", EmitDefaultValue = false)]
+    [JsonPropertyName("subtitle")]
     public string Subtitle { get; set; }
 
 
@@ -54,7 +53,7 @@ public partial class DatePicker : IEquatable<DatePicker>
     /// An array of available times objects.
     /// </summary>
     /// <value>An array of available times objects.</value>
-    [DataMember(Name = "datePickerAvailableDateTimes", EmitDefaultValue = false)]
+    [JsonPropertyName("datePickerAvailableDateTimes")]
     public List<DatePickerAvailableDateTime> DatePickerAvailableDateTimes { get; set; }
 
 

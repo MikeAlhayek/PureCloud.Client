@@ -1,12 +1,12 @@
-using System.Runtime.Serialization;
 using System.Text;
+using System.Text.Json.Serialization;
 
 namespace PureCloud.Client.Models;
 
 /// <summary>
 /// AdherenceExplanationListing
 /// </summary>
-[DataContract]
+
 public partial class AdherenceExplanationListing : IEquatable<AdherenceExplanationListing>
 {
     /// <summary>
@@ -21,7 +21,7 @@ public partial class AdherenceExplanationListing : IEquatable<AdherenceExplanati
     /// <summary>
     /// Gets or Sets Entities
     /// </summary>
-    [DataMember(Name = "entities", EmitDefaultValue = false)]
+    [JsonPropertyName("entities")]
     public List<AdherenceExplanationResponse> Entities { get; set; }
 
 

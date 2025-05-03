@@ -1,12 +1,12 @@
-using System.Runtime.Serialization;
 using System.Text;
+using System.Text.Json.Serialization;
 
 namespace PureCloud.Client.Models;
 
 /// <summary>
 /// KnowledgeGuestAnswerDocumentsResponse
 /// </summary>
-[DataContract]
+
 public partial class KnowledgeGuestAnswerDocumentsResponse : IEquatable<KnowledgeGuestAnswerDocumentsResponse>
 {
     /// <summary>
@@ -25,7 +25,7 @@ public partial class KnowledgeGuestAnswerDocumentsResponse : IEquatable<Knowledg
     /// The results with answers.
     /// </summary>
     /// <value>The results with answers.</value>
-    [DataMember(Name = "results", EmitDefaultValue = false)]
+    [JsonPropertyName("results")]
     public List<KnowledgeGuestAnswerDocumentResponse> Results { get; set; }
 
 

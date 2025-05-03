@@ -7,14 +7,14 @@ namespace PureCloud.Client.Models;
 /// <summary>
 /// DataIngestionRuleStatusPatchRequest
 /// </summary>
-[DataContract]
+
 public partial class DataIngestionRuleStatusPatchRequest : IEquatable<DataIngestionRuleStatusPatchRequest>
 {
     /// <summary>
     /// The status of the data ingestion rule.
     /// </summary>
     /// <value>The status of the data ingestion rule.</value>
-    [JsonConverter(typeof(JsonStringEnumConverter))]
+    
     public enum StatusEnum
     {
         /// <summary>
@@ -41,7 +41,7 @@ public partial class DataIngestionRuleStatusPatchRequest : IEquatable<DataIngest
     /// The status of the data ingestion rule.
     /// </summary>
     /// <value>The status of the data ingestion rule.</value>
-    [DataMember(Name = "status", EmitDefaultValue = false)]
+    [JsonPropertyName("status")]
     public StatusEnum? Status { get; set; }
 
     /// <summary>

@@ -1,12 +1,12 @@
-using System.Runtime.Serialization;
 using System.Text;
+using System.Text.Json.Serialization;
 
 namespace PureCloud.Client.Models;
 
 /// <summary>
 /// A reference for an WhatsApp integration
 /// </summary>
-[DataContract]
+
 public partial class OutboundMessagingWhatsappCampaignConfigChangeIntegrationRef : IEquatable<OutboundMessagingWhatsappCampaignConfigChangeIntegrationRef>
 {
     /// <summary>
@@ -25,7 +25,7 @@ public partial class OutboundMessagingWhatsappCampaignConfigChangeIntegrationRef
     /// The unique integration id
     /// </summary>
     /// <value>The unique integration id</value>
-    [DataMember(Name = "id", EmitDefaultValue = false)]
+    [JsonPropertyName("id")]
     public string Id { get; set; }
 
 

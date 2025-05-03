@@ -1,4 +1,3 @@
-using System.Runtime.Serialization;
 using System.Text;
 using System.Text.Json.Serialization;
 
@@ -7,7 +6,7 @@ namespace PureCloud.Client.Models;
 /// <summary>
 /// CreateUtilizationLabelRequest
 /// </summary>
-[DataContract]
+
 public partial class CreateUtilizationLabelRequest : IEquatable<CreateUtilizationLabelRequest>
 {
 
@@ -34,7 +33,7 @@ public partial class CreateUtilizationLabelRequest : IEquatable<CreateUtilizatio
     /// The utilization label name.
     /// </summary>
     /// <value>The utilization label name.</value>
-    [DataMember(Name = "name", EmitDefaultValue = false)]
+    [JsonPropertyName("name")]
     public string Name { get; set; }
 
 
@@ -43,7 +42,7 @@ public partial class CreateUtilizationLabelRequest : IEquatable<CreateUtilizatio
     /// Org level utilization settings for the new label. If not specified, default utilization settings will be applied.
     /// </summary>
     /// <value>Org level utilization settings for the new label. If not specified, default utilization settings will be applied.</value>
-    [DataMember(Name = "utilization", EmitDefaultValue = false)]
+    [JsonPropertyName("utilization")]
     public LabelUtilizationRequest Utilization { get; set; }
 
 

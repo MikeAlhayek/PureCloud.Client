@@ -7,14 +7,14 @@ namespace PureCloud.Client.Models;
 /// <summary>
 /// AvailableTimeOffRange
 /// </summary>
-[DataContract]
+
 public partial class AvailableTimeOffRange : IEquatable<AvailableTimeOffRange>
 {
     /// <summary>
     /// Granularity choice for time off limit
     /// </summary>
     /// <value>Granularity choice for time off limit</value>
-    [JsonConverter(typeof(JsonStringEnumConverter))]
+    
     public enum GranularityEnum
     {
         /// <summary>
@@ -35,7 +35,7 @@ public partial class AvailableTimeOffRange : IEquatable<AvailableTimeOffRange>
     /// Granularity choice for time off limit
     /// </summary>
     /// <value>Granularity choice for time off limit</value>
-    [DataMember(Name = "granularity", EmitDefaultValue = false)]
+    [JsonPropertyName("granularity")]
     public GranularityEnum? Granularity { get; set; }
     /// <summary>
     /// Initializes a new instance of the <see cref="AvailableTimeOffRange" /> class.
@@ -63,7 +63,7 @@ public partial class AvailableTimeOffRange : IEquatable<AvailableTimeOffRange>
     /// The time off limit
     /// </summary>
     /// <value>The time off limit</value>
-    [DataMember(Name = "timeOffLimit", EmitDefaultValue = false)]
+    [JsonPropertyName("timeOffLimit")]
     public TimeOffLimitReference TimeOffLimit { get; set; }
 
 
@@ -72,7 +72,7 @@ public partial class AvailableTimeOffRange : IEquatable<AvailableTimeOffRange>
     /// Start date of the requested date range. The end date is determined by the size of interval list. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd
     /// </summary>
     /// <value>Start date of the requested date range. The end date is determined by the size of interval list. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd</value>
-    [DataMember(Name = "startDate", EmitDefaultValue = false)]
+    [JsonPropertyName("startDate")]
     public string StartDate { get; set; }
 
 
@@ -83,7 +83,7 @@ public partial class AvailableTimeOffRange : IEquatable<AvailableTimeOffRange>
     /// The list of available time off values in minutes per granularity interval
     /// </summary>
     /// <value>The list of available time off values in minutes per granularity interval</value>
-    [DataMember(Name = "availableMinutesPerInterval", EmitDefaultValue = false)]
+    [JsonPropertyName("availableMinutesPerInterval")]
     public List<int?> AvailableMinutesPerInterval { get; set; }
 
 
@@ -92,7 +92,7 @@ public partial class AvailableTimeOffRange : IEquatable<AvailableTimeOffRange>
     /// The current number of waitlisted time off requests for every interval per granularity
     /// </summary>
     /// <value>The current number of waitlisted time off requests for every interval per granularity</value>
-    [DataMember(Name = "waitlistedRequestsPerInterval", EmitDefaultValue = false)]
+    [JsonPropertyName("waitlistedRequestsPerInterval")]
     public List<int?> WaitlistedRequestsPerInterval { get; set; }
 
 
@@ -101,7 +101,7 @@ public partial class AvailableTimeOffRange : IEquatable<AvailableTimeOffRange>
     /// Whether the time off request can be waitlisted
     /// </summary>
     /// <value>Whether the time off request can be waitlisted</value>
-    [DataMember(Name = "waitlistEnabled", EmitDefaultValue = false)]
+    [JsonPropertyName("waitlistEnabled")]
     public bool? WaitlistEnabled { get; set; }
 
 

@@ -1,12 +1,12 @@
-using System.Runtime.Serialization;
 using System.Text;
+using System.Text.Json.Serialization;
 
 namespace PureCloud.Client.Models;
 
 /// <summary>
 /// ContentOfferStylingConfiguration
 /// </summary>
-[DataContract]
+
 public partial class ContentOfferStylingConfiguration : IEquatable<ContentOfferStylingConfiguration>
 {
     /// <summary>
@@ -37,7 +37,7 @@ public partial class ContentOfferStylingConfiguration : IEquatable<ContentOfferS
     /// Properties for customizing the positioning of the content offer.
     /// </summary>
     /// <value>Properties for customizing the positioning of the content offer.</value>
-    [DataMember(Name = "position", EmitDefaultValue = false)]
+    [JsonPropertyName("position")]
     public ContentPositionProperties Position { get; set; }
 
 
@@ -46,7 +46,7 @@ public partial class ContentOfferStylingConfiguration : IEquatable<ContentOfferS
     /// Properties for customizing the appearance of the content offer.
     /// </summary>
     /// <value>Properties for customizing the appearance of the content offer.</value>
-    [DataMember(Name = "offer", EmitDefaultValue = false)]
+    [JsonPropertyName("offer")]
     public ContentOfferStyleProperties Offer { get; set; }
 
 
@@ -55,7 +55,7 @@ public partial class ContentOfferStylingConfiguration : IEquatable<ContentOfferS
     /// Properties for customizing the appearance of the close button.
     /// </summary>
     /// <value>Properties for customizing the appearance of the close button.</value>
-    [DataMember(Name = "closeButton", EmitDefaultValue = false)]
+    [JsonPropertyName("closeButton")]
     public CloseButtonStyleProperties CloseButton { get; set; }
 
 
@@ -64,7 +64,7 @@ public partial class ContentOfferStylingConfiguration : IEquatable<ContentOfferS
     /// Properties for customizing the appearance of the CTA button.
     /// </summary>
     /// <value>Properties for customizing the appearance of the CTA button.</value>
-    [DataMember(Name = "ctaButton", EmitDefaultValue = false)]
+    [JsonPropertyName("ctaButton")]
     public CtaButtonStyleProperties CtaButton { get; set; }
 
 
@@ -73,7 +73,7 @@ public partial class ContentOfferStylingConfiguration : IEquatable<ContentOfferS
     /// Properties for customizing the appearance of the title text.
     /// </summary>
     /// <value>Properties for customizing the appearance of the title text.</value>
-    [DataMember(Name = "title", EmitDefaultValue = false)]
+    [JsonPropertyName("title")]
     public TextStyleProperties Title { get; set; }
 
 
@@ -82,7 +82,7 @@ public partial class ContentOfferStylingConfiguration : IEquatable<ContentOfferS
     /// Properties for customizing the appearance of the headline text.
     /// </summary>
     /// <value>Properties for customizing the appearance of the headline text.</value>
-    [DataMember(Name = "headline", EmitDefaultValue = false)]
+    [JsonPropertyName("headline")]
     public TextStyleProperties Headline { get; set; }
 
 
@@ -91,7 +91,7 @@ public partial class ContentOfferStylingConfiguration : IEquatable<ContentOfferS
     /// Properties for customizing the appearance of the body text.
     /// </summary>
     /// <value>Properties for customizing the appearance of the body text.</value>
-    [DataMember(Name = "body", EmitDefaultValue = false)]
+    [JsonPropertyName("body")]
     public TextStyleProperties Body { get; set; }
 
 

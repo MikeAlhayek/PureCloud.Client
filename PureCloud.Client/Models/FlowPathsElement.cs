@@ -7,14 +7,14 @@ namespace PureCloud.Client.Models;
 /// <summary>
 /// FlowPathsElement
 /// </summary>
-[DataContract]
+
 public partial class FlowPathsElement : IEquatable<FlowPathsElement>
 {
     /// <summary>
     /// Type of the element.
     /// </summary>
     /// <value>Type of the element.</value>
-    [JsonConverter(typeof(JsonStringEnumConverter))]
+    
     public enum TypeEnum
     {
         /// <summary>
@@ -143,7 +143,7 @@ public partial class FlowPathsElement : IEquatable<FlowPathsElement>
     /// The value of the flow outcome, if the element type is Outcome.
     /// </summary>
     /// <value>The value of the flow outcome, if the element type is Outcome.</value>
-    [JsonConverter(typeof(JsonStringEnumConverter))]
+    
     public enum FlowOutcomeValueEnum
     {
         /// <summary>
@@ -176,13 +176,13 @@ public partial class FlowPathsElement : IEquatable<FlowPathsElement>
     /// Type of the element.
     /// </summary>
     /// <value>Type of the element.</value>
-    [DataMember(Name = "type", EmitDefaultValue = false)]
+    [JsonPropertyName("type")]
     public TypeEnum? Type { get; set; }
     /// <summary>
     /// The value of the flow outcome, if the element type is Outcome.
     /// </summary>
     /// <value>The value of the flow outcome, if the element type is Outcome.</value>
-    [DataMember(Name = "flowOutcomeValue", EmitDefaultValue = false)]
+    [JsonPropertyName("flowOutcomeValue")]
     public FlowOutcomeValueEnum? FlowOutcomeValue { get; set; }
 
     /// <summary>
@@ -214,7 +214,7 @@ public partial class FlowPathsElement : IEquatable<FlowPathsElement>
     /// Unique identifier of the parent element. Will be null for the root element.
     /// </summary>
     /// <value>Unique identifier of the parent element. Will be null for the root element.</value>
-    [DataMember(Name = "parentId", EmitDefaultValue = false)]
+    [JsonPropertyName("parentId")]
     public string ParentId { get; set; }
 
 
@@ -225,7 +225,7 @@ public partial class FlowPathsElement : IEquatable<FlowPathsElement>
     /// Count of all journeys that include this element.
     /// </summary>
     /// <value>Count of all journeys that include this element.</value>
-    [DataMember(Name = "count", EmitDefaultValue = false)]
+    [JsonPropertyName("count")]
     public int? Count { get; set; }
 
 
@@ -234,7 +234,7 @@ public partial class FlowPathsElement : IEquatable<FlowPathsElement>
     /// Details of flows involved in journeys that include this element.
     /// </summary>
     /// <value>Details of flows involved in journeys that include this element.</value>
-    [DataMember(Name = "flows", EmitDefaultValue = false)]
+    [JsonPropertyName("flows")]
     public List<FlowPathsFlowDetails> Flows { get; set; }
 
 
@@ -245,7 +245,7 @@ public partial class FlowPathsElement : IEquatable<FlowPathsElement>
     /// The flow milestone, set if the element type is Milestone.
     /// </summary>
     /// <value>The flow milestone, set if the element type is Milestone.</value>
-    [DataMember(Name = "flowMilestone", EmitDefaultValue = false)]
+    [JsonPropertyName("flowMilestone")]
     public AddressableEntityRef FlowMilestone { get; private set; }
 
 
@@ -254,7 +254,7 @@ public partial class FlowPathsElement : IEquatable<FlowPathsElement>
     /// The flow outcome, set if the element type is Outcome or Milestone.
     /// </summary>
     /// <value>The flow outcome, set if the element type is Outcome or Milestone.</value>
-    [DataMember(Name = "flowOutcome", EmitDefaultValue = false)]
+    [JsonPropertyName("flowOutcome")]
     public AddressableEntityRef FlowOutcome { get; private set; }
 
 

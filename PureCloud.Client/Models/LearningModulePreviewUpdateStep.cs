@@ -7,14 +7,14 @@ namespace PureCloud.Client.Models;
 /// <summary>
 /// Learning module preview update assignment step
 /// </summary>
-[DataContract]
+
 public partial class LearningModulePreviewUpdateStep : IEquatable<LearningModulePreviewUpdateStep>
 {
     /// <summary>
     /// The success status of the step
     /// </summary>
     /// <value>The success status of the step</value>
-    [JsonConverter(typeof(JsonStringEnumConverter))]
+    
     public enum SuccessStatusEnum
     {
         /// <summary>
@@ -47,7 +47,7 @@ public partial class LearningModulePreviewUpdateStep : IEquatable<LearningModule
     /// The completion status of the step
     /// </summary>
     /// <value>The completion status of the step</value>
-    [JsonConverter(typeof(JsonStringEnumConverter))]
+    
     public enum CompletionStatusEnum
     {
         /// <summary>
@@ -86,13 +86,13 @@ public partial class LearningModulePreviewUpdateStep : IEquatable<LearningModule
     /// The success status of the step
     /// </summary>
     /// <value>The success status of the step</value>
-    [DataMember(Name = "successStatus", EmitDefaultValue = false)]
+    [JsonPropertyName("successStatus")]
     public SuccessStatusEnum? SuccessStatus { get; set; }
     /// <summary>
     /// The completion status of the step
     /// </summary>
     /// <value>The completion status of the step</value>
-    [DataMember(Name = "completionStatus", EmitDefaultValue = false)]
+    [JsonPropertyName("completionStatus")]
     public CompletionStatusEnum? CompletionStatus { get; set; }
     /// <summary>
     /// Initializes a new instance of the <see cref="LearningModulePreviewUpdateStep" /> class.
@@ -120,7 +120,7 @@ public partial class LearningModulePreviewUpdateStep : IEquatable<LearningModule
     /// The id of the step
     /// </summary>
     /// <value>The id of the step</value>
-    [DataMember(Name = "id", EmitDefaultValue = false)]
+    [JsonPropertyName("id")]
     public string Id { get; set; }
 
 
@@ -133,7 +133,7 @@ public partial class LearningModulePreviewUpdateStep : IEquatable<LearningModule
     /// The completion percentage of the step
     /// </summary>
     /// <value>The completion percentage of the step</value>
-    [DataMember(Name = "completionPercentage", EmitDefaultValue = false)]
+    [JsonPropertyName("completionPercentage")]
     public float? CompletionPercentage { get; set; }
 
 
@@ -142,7 +142,7 @@ public partial class LearningModulePreviewUpdateStep : IEquatable<LearningModule
     /// Percentage Score
     /// </summary>
     /// <value>Percentage Score</value>
-    [DataMember(Name = "percentageScore", EmitDefaultValue = false)]
+    [JsonPropertyName("percentageScore")]
     public float? PercentageScore { get; set; }
 
 
@@ -151,7 +151,7 @@ public partial class LearningModulePreviewUpdateStep : IEquatable<LearningModule
     /// The structure for any SCO associated with this step
     /// </summary>
     /// <value>The structure for any SCO associated with this step</value>
-    [DataMember(Name = "structure", EmitDefaultValue = false)]
+    [JsonPropertyName("structure")]
     public List<LearningModulePreviewUpdateScoStructure> Structure { get; set; }
 
 

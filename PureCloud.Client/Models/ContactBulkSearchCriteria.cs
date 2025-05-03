@@ -7,14 +7,14 @@ namespace PureCloud.Client.Models;
 /// <summary>
 /// ContactBulkSearchCriteria
 /// </summary>
-[DataContract]
+
 public partial class ContactBulkSearchCriteria : IEquatable<ContactBulkSearchCriteria>
 {
     /// <summary>
     /// How to join clauses together.
     /// </summary>
     /// <value>How to join clauses together.</value>
-    [JsonConverter(typeof(JsonStringEnumConverter))]
+    
     public enum FilterTypeEnum
     {
         /// <summary>
@@ -41,7 +41,7 @@ public partial class ContactBulkSearchCriteria : IEquatable<ContactBulkSearchCri
     /// How to join clauses together.
     /// </summary>
     /// <value>How to join clauses together.</value>
-    [DataMember(Name = "filterType", EmitDefaultValue = false)]
+    [JsonPropertyName("filterType")]
     public FilterTypeEnum? FilterType { get; set; }
     /// <summary>
     /// Initializes a new instance of the <see cref="ContactBulkSearchCriteria" /> class.
@@ -61,7 +61,7 @@ public partial class ContactBulkSearchCriteria : IEquatable<ContactBulkSearchCri
     /// Groups of conditions to filter the contacts by.
     /// </summary>
     /// <value>Groups of conditions to filter the contacts by.</value>
-    [DataMember(Name = "clauses", EmitDefaultValue = false)]
+    [JsonPropertyName("clauses")]
     public List<ContactListFilterClause> Clauses { get; set; }
 
 

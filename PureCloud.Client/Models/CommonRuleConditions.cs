@@ -7,14 +7,14 @@ namespace PureCloud.Client.Models;
 /// <summary>
 /// CommonRuleConditions
 /// </summary>
-[DataContract]
+
 public partial class CommonRuleConditions : IEquatable<CommonRuleConditions>
 {
     /// <summary>
     /// the logic operator performed.
     /// </summary>
     /// <value>the logic operator performed.</value>
-    [JsonConverter(typeof(JsonStringEnumConverter))]
+    
     public enum TypeEnum
     {
         /// <summary>
@@ -47,7 +47,7 @@ public partial class CommonRuleConditions : IEquatable<CommonRuleConditions>
     /// the logic operator performed.
     /// </summary>
     /// <value>the logic operator performed.</value>
-    [DataMember(Name = "type", EmitDefaultValue = false)]
+    [JsonPropertyName("type")]
     public TypeEnum? Type { get; set; }
 
     /// <summary>
@@ -77,7 +77,7 @@ public partial class CommonRuleConditions : IEquatable<CommonRuleConditions>
     /// The list of predicates groups to be evaluated
     /// </summary>
     /// <value>The list of predicates groups to be evaluated</value>
-    [DataMember(Name = "clauses", EmitDefaultValue = false)]
+    [JsonPropertyName("clauses")]
     public List<CommonRuleConditions> Clauses { get; set; }
 
 
@@ -86,7 +86,7 @@ public partial class CommonRuleConditions : IEquatable<CommonRuleConditions>
     /// The list of rule metric predicates to be evaluated.
     /// </summary>
     /// <value>The list of rule metric predicates to be evaluated.</value>
-    [DataMember(Name = "predicates", EmitDefaultValue = false)]
+    [JsonPropertyName("predicates")]
     public List<CommonRulePredicate> Predicates { get; set; }
 
 
@@ -97,7 +97,7 @@ public partial class CommonRuleConditions : IEquatable<CommonRuleConditions>
     /// The id.
     /// </summary>
     /// <value>The id.</value>
-    [DataMember(Name = "id", EmitDefaultValue = false)]
+    [JsonPropertyName("id")]
     public string Id { get; set; }
 
 

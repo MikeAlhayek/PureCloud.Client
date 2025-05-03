@@ -7,14 +7,14 @@ namespace PureCloud.Client.Models;
 /// <summary>
 /// PerformancePredictionResponse
 /// </summary>
-[DataContract]
+
 public partial class PerformancePredictionResponse : IEquatable<PerformancePredictionResponse>
 {
     /// <summary>
     /// The state of the performance prediction
     /// </summary>
     /// <value>The state of the performance prediction</value>
-    [JsonConverter(typeof(JsonStringEnumConverter))]
+    
     public enum StateEnum
     {
         /// <summary>
@@ -47,7 +47,7 @@ public partial class PerformancePredictionResponse : IEquatable<PerformancePredi
     /// The state of the performance prediction
     /// </summary>
     /// <value>The state of the performance prediction</value>
-    [DataMember(Name = "state", EmitDefaultValue = false)]
+    [JsonPropertyName("state")]
     public StateEnum? State { get; set; }
 
     /// <summary>
@@ -79,7 +79,7 @@ public partial class PerformancePredictionResponse : IEquatable<PerformancePredi
     /// The globally unique identifier for the object.
     /// </summary>
     /// <value>The globally unique identifier for the object.</value>
-    [DataMember(Name = "id", EmitDefaultValue = false)]
+    [JsonPropertyName("id")]
     public string Id { get; private set; }
 
 
@@ -88,7 +88,7 @@ public partial class PerformancePredictionResponse : IEquatable<PerformancePredi
     /// The weekDate of the short term forecast in yyyy-MM-dd format. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd
     /// </summary>
     /// <value>The weekDate of the short term forecast in yyyy-MM-dd format. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd</value>
-    [DataMember(Name = "weekDate", EmitDefaultValue = false)]
+    [JsonPropertyName("weekDate")]
     public string WeekDate { get; set; }
 
 
@@ -97,7 +97,7 @@ public partial class PerformancePredictionResponse : IEquatable<PerformancePredi
     /// The ID of the schedule this performance prediction is associated with
     /// </summary>
     /// <value>The ID of the schedule this performance prediction is associated with</value>
-    [DataMember(Name = "scheduleId", EmitDefaultValue = false)]
+    [JsonPropertyName("scheduleId")]
     public string ScheduleId { get; set; }
 
 
@@ -106,7 +106,7 @@ public partial class PerformancePredictionResponse : IEquatable<PerformancePredi
     /// The url to GET the results of the performance prediction. This field is populated only if query state is &#39;Complete&#39;
     /// </summary>
     /// <value>The url to GET the results of the performance prediction. This field is populated only if query state is &#39;Complete&#39;</value>
-    [DataMember(Name = "downloadUrl", EmitDefaultValue = false)]
+    [JsonPropertyName("downloadUrl")]
     public string DownloadUrl { get; set; }
 
 
@@ -115,7 +115,7 @@ public partial class PerformancePredictionResponse : IEquatable<PerformancePredi
     /// Result will always come via downloadUrls; however the schema is included for documentation
     /// </summary>
     /// <value>Result will always come via downloadUrls; however the schema is included for documentation</value>
-    [DataMember(Name = "downloadResult", EmitDefaultValue = false)]
+    [JsonPropertyName("downloadResult")]
     public PerformancePredictionOutputs DownloadResult { get; set; }
 
 
@@ -126,7 +126,7 @@ public partial class PerformancePredictionResponse : IEquatable<PerformancePredi
     /// The URI for this object
     /// </summary>
     /// <value>The URI for this object</value>
-    [DataMember(Name = "selfUri", EmitDefaultValue = false)]
+    [JsonPropertyName("selfUri")]
     public string SelfUri { get; private set; }
 
 

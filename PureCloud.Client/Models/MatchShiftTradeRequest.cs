@@ -1,4 +1,3 @@
-using System.Runtime.Serialization;
 using System.Text;
 using System.Text.Json.Serialization;
 
@@ -7,7 +6,7 @@ namespace PureCloud.Client.Models;
 /// <summary>
 /// MatchShiftTradeRequest
 /// </summary>
-[DataContract]
+
 public partial class MatchShiftTradeRequest : IEquatable<MatchShiftTradeRequest>
 {
 
@@ -36,7 +35,7 @@ public partial class MatchShiftTradeRequest : IEquatable<MatchShiftTradeRequest>
     /// The ID of the schedule with which the shift trade is associated
     /// </summary>
     /// <value>The ID of the schedule with which the shift trade is associated</value>
-    [DataMember(Name = "receivingScheduleId", EmitDefaultValue = false)]
+    [JsonPropertyName("receivingScheduleId")]
     public string ReceivingScheduleId { get; set; }
 
 
@@ -45,7 +44,7 @@ public partial class MatchShiftTradeRequest : IEquatable<MatchShiftTradeRequest>
     /// The ID of the shift the receiving user is giving up in trade, if applicable
     /// </summary>
     /// <value>The ID of the shift the receiving user is giving up in trade, if applicable</value>
-    [DataMember(Name = "receivingShiftId", EmitDefaultValue = false)]
+    [JsonPropertyName("receivingShiftId")]
     public string ReceivingShiftId { get; set; }
 
 
@@ -54,7 +53,7 @@ public partial class MatchShiftTradeRequest : IEquatable<MatchShiftTradeRequest>
     /// Version metadata for the shift trade
     /// </summary>
     /// <value>Version metadata for the shift trade</value>
-    [DataMember(Name = "metadata", EmitDefaultValue = false)]
+    [JsonPropertyName("metadata")]
     public WfmVersionedEntityMetadata Metadata { get; set; }
 
 

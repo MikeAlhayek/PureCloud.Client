@@ -7,14 +7,14 @@ namespace PureCloud.Client.Models;
 /// <summary>
 /// BusinessUnitActivityCode
 /// </summary>
-[DataContract]
+
 public partial class BusinessUnitActivityCode : IEquatable<BusinessUnitActivityCode>
 {
     /// <summary>
     /// The category of the activity code
     /// </summary>
     /// <value>The category of the activity code</value>
-    [JsonConverter(typeof(JsonStringEnumConverter))]
+    
     public enum CategoryEnum
     {
         /// <summary>
@@ -83,7 +83,7 @@ public partial class BusinessUnitActivityCode : IEquatable<BusinessUnitActivityC
     /// The category of the activity code
     /// </summary>
     /// <value>The category of the activity code</value>
-    [DataMember(Name = "category", EmitDefaultValue = false)]
+    [JsonPropertyName("category")]
     public CategoryEnum? Category { get; set; }
     /// <summary>
     /// Initializes a new instance of the <see cref="BusinessUnitActivityCode" /> class.
@@ -125,7 +125,7 @@ public partial class BusinessUnitActivityCode : IEquatable<BusinessUnitActivityC
     /// The globally unique identifier for the object.
     /// </summary>
     /// <value>The globally unique identifier for the object.</value>
-    [DataMember(Name = "id", EmitDefaultValue = false)]
+    [JsonPropertyName("id")]
     public string Id { get; private set; }
 
 
@@ -133,7 +133,7 @@ public partial class BusinessUnitActivityCode : IEquatable<BusinessUnitActivityC
     /// <summary>
     /// Gets or Sets Name
     /// </summary>
-    [DataMember(Name = "name", EmitDefaultValue = false)]
+    [JsonPropertyName("name")]
     public string Name { get; set; }
 
 
@@ -142,7 +142,7 @@ public partial class BusinessUnitActivityCode : IEquatable<BusinessUnitActivityC
     /// Whether this activity code is active or has been deleted
     /// </summary>
     /// <value>Whether this activity code is active or has been deleted</value>
-    [DataMember(Name = "active", EmitDefaultValue = false)]
+    [JsonPropertyName("active")]
     public bool? Active { get; set; }
 
 
@@ -151,7 +151,7 @@ public partial class BusinessUnitActivityCode : IEquatable<BusinessUnitActivityC
     /// Whether this is a default activity code
     /// </summary>
     /// <value>Whether this is a default activity code</value>
-    [DataMember(Name = "defaultCode", EmitDefaultValue = false)]
+    [JsonPropertyName("defaultCode")]
     public bool? DefaultCode { get; set; }
 
 
@@ -162,7 +162,7 @@ public partial class BusinessUnitActivityCode : IEquatable<BusinessUnitActivityC
     /// The default length of the activity in minutes
     /// </summary>
     /// <value>The default length of the activity in minutes</value>
-    [DataMember(Name = "lengthInMinutes", EmitDefaultValue = false)]
+    [JsonPropertyName("lengthInMinutes")]
     public int? LengthInMinutes { get; set; }
 
 
@@ -171,7 +171,7 @@ public partial class BusinessUnitActivityCode : IEquatable<BusinessUnitActivityC
     /// Whether an agent is paid while performing this activity
     /// </summary>
     /// <value>Whether an agent is paid while performing this activity</value>
-    [DataMember(Name = "countsAsPaidTime", EmitDefaultValue = false)]
+    [JsonPropertyName("countsAsPaidTime")]
     public bool? CountsAsPaidTime { get; set; }
 
 
@@ -180,7 +180,7 @@ public partial class BusinessUnitActivityCode : IEquatable<BusinessUnitActivityC
     /// Indicates whether or not the activity should be counted as contiguous work time for calculating daily constraints
     /// </summary>
     /// <value>Indicates whether or not the activity should be counted as contiguous work time for calculating daily constraints</value>
-    [DataMember(Name = "countsAsWorkTime", EmitDefaultValue = false)]
+    [JsonPropertyName("countsAsWorkTime")]
     public bool? CountsAsWorkTime { get; set; }
 
 
@@ -189,7 +189,7 @@ public partial class BusinessUnitActivityCode : IEquatable<BusinessUnitActivityC
     /// Whether an agent can select this activity code when creating or editing a time off request. Null if the activity&#39;s category is not time off.
     /// </summary>
     /// <value>Whether an agent can select this activity code when creating or editing a time off request. Null if the activity&#39;s category is not time off.</value>
-    [DataMember(Name = "agentTimeOffSelectable", EmitDefaultValue = false)]
+    [JsonPropertyName("agentTimeOffSelectable")]
     public bool? AgentTimeOffSelectable { get; set; }
 
 
@@ -198,7 +198,7 @@ public partial class BusinessUnitActivityCode : IEquatable<BusinessUnitActivityC
     /// Whether or not this activity code counts toward shrinkage calculations
     /// </summary>
     /// <value>Whether or not this activity code counts toward shrinkage calculations</value>
-    [DataMember(Name = "countsTowardShrinkage", EmitDefaultValue = false)]
+    [JsonPropertyName("countsTowardShrinkage")]
     public bool? CountsTowardShrinkage { get; set; }
 
 
@@ -207,7 +207,7 @@ public partial class BusinessUnitActivityCode : IEquatable<BusinessUnitActivityC
     /// Whether this activity code is considered planned or unplanned shrinkage
     /// </summary>
     /// <value>Whether this activity code is considered planned or unplanned shrinkage</value>
-    [DataMember(Name = "plannedShrinkage", EmitDefaultValue = false)]
+    [JsonPropertyName("plannedShrinkage")]
     public bool? PlannedShrinkage { get; set; }
 
 
@@ -216,7 +216,7 @@ public partial class BusinessUnitActivityCode : IEquatable<BusinessUnitActivityC
     /// Whether this activity code is considered interruptible
     /// </summary>
     /// <value>Whether this activity code is considered interruptible</value>
-    [DataMember(Name = "interruptible", EmitDefaultValue = false)]
+    [JsonPropertyName("interruptible")]
     public bool? Interruptible { get; set; }
 
 
@@ -225,7 +225,7 @@ public partial class BusinessUnitActivityCode : IEquatable<BusinessUnitActivityC
     /// The secondary presences of this activity code
     /// </summary>
     /// <value>The secondary presences of this activity code</value>
-    [DataMember(Name = "secondaryPresences", EmitDefaultValue = false)]
+    [JsonPropertyName("secondaryPresences")]
     public List<SecondaryPresence> SecondaryPresences { get; set; }
 
 
@@ -234,7 +234,7 @@ public partial class BusinessUnitActivityCode : IEquatable<BusinessUnitActivityC
     /// Version metadata of this activity code
     /// </summary>
     /// <value>Version metadata of this activity code</value>
-    [DataMember(Name = "metadata", EmitDefaultValue = false)]
+    [JsonPropertyName("metadata")]
     public WfmVersionedEntityMetadata Metadata { get; set; }
 
 
@@ -243,7 +243,7 @@ public partial class BusinessUnitActivityCode : IEquatable<BusinessUnitActivityC
     /// The URI for this object
     /// </summary>
     /// <value>The URI for this object</value>
-    [DataMember(Name = "selfUri", EmitDefaultValue = false)]
+    [JsonPropertyName("selfUri")]
     public string SelfUri { get; private set; }
 
 

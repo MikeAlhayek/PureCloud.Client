@@ -1,12 +1,12 @@
-using System.Runtime.Serialization;
 using System.Text;
+using System.Text.Json.Serialization;
 
 namespace PureCloud.Client.Models;
 
 /// <summary>
 /// WorkbinDelta
 /// </summary>
-[DataContract]
+
 public partial class WorkbinDelta : IEquatable<WorkbinDelta>
 {
     /// <summary>
@@ -30,7 +30,7 @@ public partial class WorkbinDelta : IEquatable<WorkbinDelta>
     /// <summary>
     /// Gets or Sets Name
     /// </summary>
-    [DataMember(Name = "name", EmitDefaultValue = false)]
+    [JsonPropertyName("name")]
     public WorkitemsAttributeChangeString Name { get; set; }
 
 
@@ -38,7 +38,7 @@ public partial class WorkbinDelta : IEquatable<WorkbinDelta>
     /// <summary>
     /// Gets or Sets Description
     /// </summary>
-    [DataMember(Name = "description", EmitDefaultValue = false)]
+    [JsonPropertyName("description")]
     public WorkitemsAttributeChangeString Description { get; set; }
 
 
@@ -46,7 +46,7 @@ public partial class WorkbinDelta : IEquatable<WorkbinDelta>
     /// <summary>
     /// Gets or Sets DateModified
     /// </summary>
-    [DataMember(Name = "dateModified", EmitDefaultValue = false)]
+    [JsonPropertyName("dateModified")]
     public WorkitemsAttributeChangeInstant DateModified { get; set; }
 
 
@@ -54,7 +54,7 @@ public partial class WorkbinDelta : IEquatable<WorkbinDelta>
     /// <summary>
     /// Gets or Sets ModifiedBy
     /// </summary>
-    [DataMember(Name = "modifiedBy", EmitDefaultValue = false)]
+    [JsonPropertyName("modifiedBy")]
     public WorkitemsAttributeChangeString ModifiedBy { get; set; }
 
 

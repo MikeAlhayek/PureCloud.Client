@@ -1,7 +1,9 @@
+using System.Collections.Concurrent;
 using System.Net.WebSockets;
 using System.Text;
-using PureCloud.Client.Apis;
+using Microsoft.Extensions.Logging;
 using PureCloud.Client.Models;
+using PureCloud.Client.Repositories;
 
 namespace PureCloud.Client.Extensions.Notifications;
 
@@ -10,25 +12,27 @@ namespace PureCloud.Client.Extensions.Notifications;
 /// </summary>
 public class NotificationHandler : INotificationHandler
 {
-    private readonly Dictionary<string, Type> _typeMap = new(StringComparer.OrdinalIgnoreCase);
+    private readonly ConcurrentDictionary<string, Type> _typeMap = new(StringComparer.OrdinalIgnoreCase);
 
     private readonly int _reconnectDelaySeconds = 5;
     private readonly int _maxReconnectAttempts = 10;
 
     private int _reconnectAttempts;
 
+    private readonly IChannelRepository _channelRepository;
+    private readonly ILogger _logger;
+
     /// <summary>
     /// The WebSocket object used to receive notifications
     /// </summary>
     private ClientWebSocket _webSocket;
 
-    private NotificationsApi _notificationsApi;
-
     /// <summary>
     /// The notification channel object
     /// </summary>
     private Channel _channel;
-    private readonly CancellationToken _cancellationToken;
+
+    private CancellationToken _cancellationToken;
 
     /// <summary>
     /// The handler for a notification event
@@ -44,23 +48,24 @@ public class NotificationHandler : INotificationHandler
     /// <summary>
     /// Creates a new instance of NotificationHandler
     /// </summary>
-    public NotificationHandler(CancellationToken cancellationToken = default)
+    public NotificationHandler(
+        IChannelRepository channelRepository,
+        ILogger<NotificationHandler> logger)
     {
-        _cancellationToken = cancellationToken;
+        _channelRepository = channelRepository;
+        _logger = logger;
     }
 
-    public Task StartAsync(Configuration configuration)
+    public async Task StartAsync(CancellationToken cancellationToken = default)
     {
-        ArgumentNullException.ThrowIfNull(configuration);
-
         _webSocket?.Dispose();
+        _cancellationToken = cancellationToken;
 
-        _notificationsApi = new NotificationsApi(configuration);
         _webSocket = new ClientWebSocket();
 
-        _channel = _notificationsApi.PostNotificationsChannels();
+        _channel = await _channelRepository.CreateAsync(_cancellationToken);
 
-        return ConnectAsync();
+        await ConnectAsync();
     }
 
     private async Task ConnectAsync()
@@ -76,6 +81,7 @@ public class NotificationHandler : INotificationHandler
             }
             catch (Exception)
             {
+                _logger.LogDebug("Unable to connect to the WebSocket on attempt number '{AttemptNumber}'.", _reconnectAttempts);
                 _reconnectAttempts++;
 
                 if (_reconnectAttempts >= _maxReconnectAttempts)
@@ -104,15 +110,16 @@ public class NotificationHandler : INotificationHandler
                     break;
                 }
 
-                // handle events
+                // Handle Events.
 
                 var socketClosingTopic = "v2.system.socket_closing";
-                AddHandlerNoSubscribe(socketClosingTopic, typeof(SystemMessageSystemMessage));
-                AddHandlerNoSubscribe("channel.metadata", typeof(ChannelMetadataNotification));
+
+                _typeMap.TryAdd(socketClosingTopic, typeof(SystemMessage));
+                _typeMap.TryAdd("channel.metadata", typeof(ChannelMetadataNotification));
+
                 NotificationReceived += (data) =>
                 {
-                    if (data is NotificationData<SystemMessageSystemMessage> &&
-                        string.Compare(data.TopicName, socketClosingTopic) == 0)
+                    if (data is NotificationData<SystemMessage> && string.Equals(data.TopicName, socketClosingTopic, StringComparison.Ordinal))
                     {
                         Task.Run(async () =>
                         {
@@ -149,76 +156,58 @@ public class NotificationHandler : INotificationHandler
     }
 
     /// <summary>
-    /// Adds a subscription to the specified topic. Events received on this topic will be cast to the given type.
-    /// </summary>
-    /// <param name="topic">The notification topic to add</param>
-    /// <param name="type">The <see cref="Type"/> to cast notifications on this topic to</param>
-    public void AddSubscription(string topic, Type type)
-    {
-        AddSubscriptions([new Tuple<string, Type>(topic, type)]);
-    }
-
-    /// <summary>
     /// Adds a list of subscriptions to the specified topic. Events received on this topic will be cast to the given type.
     /// </summary>
     /// <param name="subscriptions">A List of Tuples where the first value is the notification topic to add and the second is the Type that should be used when deserializing the notification</param>
-    public void AddSubscriptions(List<Tuple<string, Type>> subscriptions)
+    public async Task AddSubscriptionsAsync(Dictionary<string, Type> subscriptions)
     {
-        var topicList = subscriptions.Select(s => new ChannelTopic(s.Item1))
-            .Where(t => (!t.Id.Equals("channel.metadata", StringComparison.InvariantCultureIgnoreCase)) &&
-            (!t.Id.StartsWith("v2.system", StringComparison.InvariantCultureIgnoreCase)))
-            .ToList();
+        ArgumentNullException.ThrowIfNull(subscriptions);
 
-        _notificationsApi.PostNotificationsChannelSubscriptions(_channel.Id, topicList);
+        var entries = subscriptions
+            .Where(entry => !entry.Key.Equals("channel.metadata", StringComparison.InvariantCultureIgnoreCase) &&
+            !entry.Key.StartsWith("v2.system", StringComparison.InvariantCultureIgnoreCase));
 
-        subscriptions.ForEach(s => _typeMap.Add(s.Item1, s.Item2));
-    }
 
-    /// <summary>
-    /// Adds a handler to the specified topic without subscribing. Events received on this topic will be cast to the given type.
-    /// </summary>
-    /// <param name="topic">The notification topic to add</param>
-    /// <param name="type">The <see cref="Type"/> to cast notifications on this topic to</param>
-    public void AddHandlerNoSubscribe(string topic, Type type)
-    {
-        AddHandlersNoSubscribe([new Tuple<string, Type>(topic, type)]);
-    }
+        await _channelRepository.AddSubscriptionTopicsAsync(_channel.Id, entries.Select(entry => new ChannelTopic() { Id = entry.Key }));
 
-    /// <summary>
-    /// Adds a list of handlers to the specified topic without subscribing. Events received on this topic will be cast to the given type.
-    /// </summary>
-    /// <param name="subscriptions">A List of Tuples where the first value is the notification topic to add and the second is the Type that should be used when deserializing the notification</param>
-    public void AddHandlersNoSubscribe(List<Tuple<string, Type>> subscriptions)
-    {
-        subscriptions.ForEach(s => _typeMap.Add(s.Item1.ToLowerInvariant(), s.Item2));
+        lock (_typeMap)
+        {
+            foreach (var topic in entries)
+            {
+                _typeMap.TryAdd(topic.Key, topic.Value);
+            }
+        }
     }
 
     /// <summary>
     /// Removes the subscribed topic
     /// </summary>
     /// <param name="topic">The notification topic to remove</param>
-    public void RemoveSubscription(string topic)
+    public async Task RemoveSubscriptionAsync(string topic)
     {
-        var subscriptions = _notificationsApi.GetNotificationsChannelSubscriptions(_channel.Id);
-        var match =
-            subscriptions.Entities.FirstOrDefault(
-                e => e.Id.Equals(topic, StringComparison.InvariantCultureIgnoreCase));
-        if (match == null)
+        var subscriptions = await _channelRepository.GetSubscriptionsAsync(_channel.Id);
+
+        var entry = subscriptions.Entities.FirstOrDefault(e => e.Id.Equals(topic, StringComparison.InvariantCultureIgnoreCase));
+
+        if (entry is null)
         {
             return;
         }
 
-        subscriptions.Entities.Remove(match);
-        _notificationsApi.PutNotificationsChannelSubscriptions(_channel.Id, subscriptions.Entities);
-        _typeMap.Remove(topic.ToLowerInvariant());
+        subscriptions.Entities.Remove(entry);
+
+        await _channelRepository.UpdateSubscriptionTopicsAsync(_channel.Id, subscriptions.Entities);
+
+        _typeMap.TryRemove(topic, out _);
     }
 
     /// <summary>
     /// Removes all subscriptions from the channel
     /// </summary>
-    public void RemoveAllSubscriptions()
+    public async Task RemoveAllSubscriptionsAsync()
     {
-        _notificationsApi.DeleteNotificationsChannelSubscriptions(_channel.Id);
+        await _channelRepository.DeleteAsync(_channel.Id);
+
         _typeMap.Clear();
     }
 
@@ -251,7 +240,7 @@ public class NotificationHandler : INotificationHandler
         {
             _disposed = true;
 
-            RemoveAllSubscriptions();
+            await RemoveAllSubscriptionsAsync();
             if (_webSocket != null && _webSocket.State == WebSocketState.Open)
             {
                 await _webSocket.CloseAsync(WebSocketCloseStatus.NormalClosure, "disposing", _cancellationToken);

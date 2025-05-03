@@ -1,12 +1,12 @@
-using System.Runtime.Serialization;
 using System.Text;
+using System.Text.Json.Serialization;
 
 namespace PureCloud.Client.Models;
 
 /// <summary>
 /// UCIcon
 /// </summary>
-[DataContract]
+
 public partial class UCIcon : IEquatable<UCIcon>
 {
     /// <summary>
@@ -23,7 +23,7 @@ public partial class UCIcon : IEquatable<UCIcon>
     /// vector
     /// </summary>
     /// <value>vector</value>
-    [DataMember(Name = "vector", EmitDefaultValue = false)]
+    [JsonPropertyName("vector")]
     public string Vector { get; private set; }
 
 

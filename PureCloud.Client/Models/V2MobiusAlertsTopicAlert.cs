@@ -7,13 +7,13 @@ namespace PureCloud.Client.Models;
 /// <summary>
 /// V2MobiusAlertsTopicAlert
 /// </summary>
-[DataContract]
+
 public partial class V2MobiusAlertsTopicAlert : IEquatable<V2MobiusAlertsTopicAlert>
 {
     /// <summary>
     /// Gets or Sets Action
     /// </summary>
-    [JsonConverter(typeof(JsonStringEnumConverter))]
+    
     public enum ActionEnum
     {
         /// <summary>
@@ -81,7 +81,7 @@ public partial class V2MobiusAlertsTopicAlert : IEquatable<V2MobiusAlertsTopicAl
     /// <summary>
     /// Gets or Sets Action
     /// </summary>
-    [DataMember(Name = "action", EmitDefaultValue = false)]
+    [JsonPropertyName("action")]
     public ActionEnum? Action { get; set; }
     /// <summary>
     /// Initializes a new instance of the <see cref="V2MobiusAlertsTopicAlert" /> class.
@@ -130,7 +130,7 @@ public partial class V2MobiusAlertsTopicAlert : IEquatable<V2MobiusAlertsTopicAl
     /// <summary>
     /// Gets or Sets Rule
     /// </summary>
-    [DataMember(Name = "rule", EmitDefaultValue = false)]
+    [JsonPropertyName("rule")]
     public V2MobiusAlertsTopicAlertRuleProperties Rule { get; set; }
 
 
@@ -138,7 +138,7 @@ public partial class V2MobiusAlertsTopicAlert : IEquatable<V2MobiusAlertsTopicAl
     /// <summary>
     /// Gets or Sets Id
     /// </summary>
-    [DataMember(Name = "id", EmitDefaultValue = false)]
+    [JsonPropertyName("id")]
     public Guid? Id { get; set; }
 
 
@@ -146,7 +146,7 @@ public partial class V2MobiusAlertsTopicAlert : IEquatable<V2MobiusAlertsTopicAl
     /// <summary>
     /// Gets or Sets UserId
     /// </summary>
-    [DataMember(Name = "userId", EmitDefaultValue = false)]
+    [JsonPropertyName("userId")]
     public Guid? UserId { get; set; }
 
 
@@ -154,7 +154,7 @@ public partial class V2MobiusAlertsTopicAlert : IEquatable<V2MobiusAlertsTopicAl
     /// <summary>
     /// Gets or Sets Notifications
     /// </summary>
-    [DataMember(Name = "notifications", EmitDefaultValue = false)]
+    [JsonPropertyName("notifications")]
     public List<V2MobiusAlertsTopicAlertNotification> Notifications { get; set; }
 
 
@@ -162,7 +162,7 @@ public partial class V2MobiusAlertsTopicAlert : IEquatable<V2MobiusAlertsTopicAl
     /// <summary>
     /// Gets or Sets DateStart
     /// </summary>
-    [DataMember(Name = "dateStart", EmitDefaultValue = false)]
+    [JsonPropertyName("dateStart")]
     public DateTime? DateStart { get; set; }
 
 
@@ -170,7 +170,7 @@ public partial class V2MobiusAlertsTopicAlert : IEquatable<V2MobiusAlertsTopicAl
     /// <summary>
     /// Gets or Sets DateEnd
     /// </summary>
-    [DataMember(Name = "dateEnd", EmitDefaultValue = false)]
+    [JsonPropertyName("dateEnd")]
     public DateTime? DateEnd { get; set; }
 
 
@@ -178,7 +178,7 @@ public partial class V2MobiusAlertsTopicAlert : IEquatable<V2MobiusAlertsTopicAl
     /// <summary>
     /// Gets or Sets Conditions
     /// </summary>
-    [DataMember(Name = "conditions", EmitDefaultValue = false)]
+    [JsonPropertyName("conditions")]
     public V2MobiusAlertsTopicCondition Conditions { get; set; }
 
 
@@ -186,7 +186,7 @@ public partial class V2MobiusAlertsTopicAlert : IEquatable<V2MobiusAlertsTopicAl
     /// <summary>
     /// Gets or Sets AdditionalProperties
     /// </summary>
-    [DataMember(Name = "additionalProperties", EmitDefaultValue = false)]
+    [JsonPropertyName("additionalProperties")]
     public Dictionary<string, string> AdditionalProperties { get; set; }
 
 
@@ -194,7 +194,7 @@ public partial class V2MobiusAlertsTopicAlert : IEquatable<V2MobiusAlertsTopicAl
     /// <summary>
     /// Gets or Sets Active
     /// </summary>
-    [DataMember(Name = "active", EmitDefaultValue = false)]
+    [JsonPropertyName("active")]
     public bool? Active { get; set; }
 
 
@@ -202,7 +202,7 @@ public partial class V2MobiusAlertsTopicAlert : IEquatable<V2MobiusAlertsTopicAl
     /// <summary>
     /// Gets or Sets Unread
     /// </summary>
-    [DataMember(Name = "unread", EmitDefaultValue = false)]
+    [JsonPropertyName("unread")]
     public bool? Unread { get; set; }
 
 
@@ -210,7 +210,7 @@ public partial class V2MobiusAlertsTopicAlert : IEquatable<V2MobiusAlertsTopicAl
     /// <summary>
     /// Gets or Sets Muted
     /// </summary>
-    [DataMember(Name = "muted", EmitDefaultValue = false)]
+    [JsonPropertyName("muted")]
     public bool? Muted { get; set; }
 
 
@@ -218,7 +218,7 @@ public partial class V2MobiusAlertsTopicAlert : IEquatable<V2MobiusAlertsTopicAl
     /// <summary>
     /// Gets or Sets Snoozed
     /// </summary>
-    [DataMember(Name = "snoozed", EmitDefaultValue = false)]
+    [JsonPropertyName("snoozed")]
     public bool? Snoozed { get; set; }
 
 
@@ -226,7 +226,7 @@ public partial class V2MobiusAlertsTopicAlert : IEquatable<V2MobiusAlertsTopicAl
     /// <summary>
     /// Gets or Sets DateMutedUntil
     /// </summary>
-    [DataMember(Name = "dateMutedUntil", EmitDefaultValue = false)]
+    [JsonPropertyName("dateMutedUntil")]
     public DateTime? DateMutedUntil { get; set; }
 
 
@@ -234,7 +234,7 @@ public partial class V2MobiusAlertsTopicAlert : IEquatable<V2MobiusAlertsTopicAl
     /// <summary>
     /// Gets or Sets DateSnoozedUntil
     /// </summary>
-    [DataMember(Name = "dateSnoozedUntil", EmitDefaultValue = false)]
+    [JsonPropertyName("dateSnoozedUntil")]
     public DateTime? DateSnoozedUntil { get; set; }
 
 
@@ -244,7 +244,7 @@ public partial class V2MobiusAlertsTopicAlert : IEquatable<V2MobiusAlertsTopicAl
     /// <summary>
     /// Gets or Sets AlertSummary
     /// </summary>
-    [DataMember(Name = "alertSummary", EmitDefaultValue = false)]
+    [JsonPropertyName("alertSummary")]
     public V2MobiusAlertsTopicAlertSummary AlertSummary { get; set; }
 
 
@@ -252,7 +252,7 @@ public partial class V2MobiusAlertsTopicAlert : IEquatable<V2MobiusAlertsTopicAl
     /// <summary>
     /// Gets or Sets SendExitingAlarmNotification
     /// </summary>
-    [DataMember(Name = "sendExitingAlarmNotification", EmitDefaultValue = false)]
+    [JsonPropertyName("sendExitingAlarmNotification")]
     public bool? SendExitingAlarmNotification { get; set; }
 
 

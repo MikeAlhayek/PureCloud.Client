@@ -1,12 +1,12 @@
-using System.Runtime.Serialization;
 using System.Text;
+using System.Text.Json.Serialization;
 
 namespace PureCloud.Client.Models;
 
 /// <summary>
 /// ProvisionInfo
 /// </summary>
-[DataContract]
+
 public partial class ProvisionInfo : IEquatable<ProvisionInfo>
 {
     /// <summary>
@@ -29,7 +29,7 @@ public partial class ProvisionInfo : IEquatable<ProvisionInfo>
     /// The time at which this phone was provisioned. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z
     /// </summary>
     /// <value>The time at which this phone was provisioned. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z</value>
-    [DataMember(Name = "time", EmitDefaultValue = false)]
+    [JsonPropertyName("time")]
     public DateTime? Time { get; set; }
 
 
@@ -38,7 +38,7 @@ public partial class ProvisionInfo : IEquatable<ProvisionInfo>
     /// The source of the provisioning
     /// </summary>
     /// <value>The source of the provisioning</value>
-    [DataMember(Name = "source", EmitDefaultValue = false)]
+    [JsonPropertyName("source")]
     public string Source { get; set; }
 
 
@@ -47,7 +47,7 @@ public partial class ProvisionInfo : IEquatable<ProvisionInfo>
     /// The error information from the provision process, if any
     /// </summary>
     /// <value>The error information from the provision process, if any</value>
-    [DataMember(Name = "errorInfo", EmitDefaultValue = false)]
+    [JsonPropertyName("errorInfo")]
     public string ErrorInfo { get; set; }
 
 

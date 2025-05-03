@@ -1,12 +1,12 @@
-using System.Runtime.Serialization;
 using System.Text;
+using System.Text.Json.Serialization;
 
 namespace PureCloud.Client.Models;
 
 /// <summary>
 /// WorkbinVersion
 /// </summary>
-[DataContract]
+
 public partial class WorkbinVersion : IEquatable<WorkbinVersion>
 {
     /// <summary>
@@ -37,7 +37,7 @@ public partial class WorkbinVersion : IEquatable<WorkbinVersion>
     /// The globally unique identifier for the object.
     /// </summary>
     /// <value>The globally unique identifier for the object.</value>
-    [DataMember(Name = "id", EmitDefaultValue = false)]
+    [JsonPropertyName("id")]
     public string Id { get; private set; }
 
 
@@ -46,7 +46,7 @@ public partial class WorkbinVersion : IEquatable<WorkbinVersion>
     /// Workbin name
     /// </summary>
     /// <value>Workbin name</value>
-    [DataMember(Name = "name", EmitDefaultValue = false)]
+    [JsonPropertyName("name")]
     public string Name { get; set; }
 
 
@@ -55,7 +55,7 @@ public partial class WorkbinVersion : IEquatable<WorkbinVersion>
     /// The division to which this entity belongs.
     /// </summary>
     /// <value>The division to which this entity belongs.</value>
-    [DataMember(Name = "division", EmitDefaultValue = false)]
+    [JsonPropertyName("division")]
     public Division Division { get; set; }
 
 
@@ -64,7 +64,7 @@ public partial class WorkbinVersion : IEquatable<WorkbinVersion>
     /// Workbin description
     /// </summary>
     /// <value>Workbin description</value>
-    [DataMember(Name = "description", EmitDefaultValue = false)]
+    [JsonPropertyName("description")]
     public string Description { get; set; }
 
 
@@ -73,7 +73,7 @@ public partial class WorkbinVersion : IEquatable<WorkbinVersion>
     /// The creation date of the Workbin. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z
     /// </summary>
     /// <value>The creation date of the Workbin. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z</value>
-    [DataMember(Name = "dateCreated", EmitDefaultValue = false)]
+    [JsonPropertyName("dateCreated")]
     public DateTime? DateCreated { get; set; }
 
 
@@ -82,7 +82,7 @@ public partial class WorkbinVersion : IEquatable<WorkbinVersion>
     /// The modified date of the Workbin. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z
     /// </summary>
     /// <value>The modified date of the Workbin. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z</value>
-    [DataMember(Name = "dateModified", EmitDefaultValue = false)]
+    [JsonPropertyName("dateModified")]
     public DateTime? DateModified { get; set; }
 
 
@@ -91,7 +91,7 @@ public partial class WorkbinVersion : IEquatable<WorkbinVersion>
     /// The id of the User who modified the Workbin.
     /// </summary>
     /// <value>The id of the User who modified the Workbin.</value>
-    [DataMember(Name = "modifiedBy", EmitDefaultValue = false)]
+    [JsonPropertyName("modifiedBy")]
     public UserReference ModifiedBy { get; set; }
 
 
@@ -100,7 +100,7 @@ public partial class WorkbinVersion : IEquatable<WorkbinVersion>
     /// Version
     /// </summary>
     /// <value>Version</value>
-    [DataMember(Name = "version", EmitDefaultValue = false)]
+    [JsonPropertyName("version")]
     public int? Version { get; set; }
 
 
@@ -109,7 +109,7 @@ public partial class WorkbinVersion : IEquatable<WorkbinVersion>
     /// The URI for this object
     /// </summary>
     /// <value>The URI for this object</value>
-    [DataMember(Name = "selfUri", EmitDefaultValue = false)]
+    [JsonPropertyName("selfUri")]
     public string SelfUri { get; private set; }
 
 

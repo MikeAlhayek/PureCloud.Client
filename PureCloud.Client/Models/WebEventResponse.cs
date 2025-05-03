@@ -1,4 +1,3 @@
-using System.Runtime.Serialization;
 using System.Text;
 using System.Text.Json.Serialization;
 
@@ -7,7 +6,7 @@ namespace PureCloud.Client.Models;
 /// <summary>
 /// WebEventResponse
 /// </summary>
-[DataContract]
+
 public partial class WebEventResponse : IEquatable<WebEventResponse>
 {
 
@@ -64,7 +63,7 @@ public partial class WebEventResponse : IEquatable<WebEventResponse>
     /// Identifier of the customer in the source of the event.
     /// </summary>
     /// <value>Identifier of the customer in the source of the event.</value>
-    [DataMember(Name = "customerId", EmitDefaultValue = false)]
+    [JsonPropertyName("customerId")]
     public string CustomerId { get; set; }
 
 
@@ -73,7 +72,7 @@ public partial class WebEventResponse : IEquatable<WebEventResponse>
     /// Represents the action the customer performed. Event types are created for each unique event name and can be faceted on in segment and outcome conditions. A valid event name must only contain alphanumeric characters and underscores. A good event name is typically an object followed by the action performed in past tense, e.g. page_viewed, order_completed, user_registered.
     /// </summary>
     /// <value>Represents the action the customer performed. Event types are created for each unique event name and can be faceted on in segment and outcome conditions. A valid event name must only contain alphanumeric characters and underscores. A good event name is typically an object followed by the action performed in past tense, e.g. page_viewed, order_completed, user_registered.</value>
-    [DataMember(Name = "eventName", EmitDefaultValue = false)]
+    [JsonPropertyName("eventName")]
     public string EventName { get; set; }
 
 
@@ -82,7 +81,7 @@ public partial class WebEventResponse : IEquatable<WebEventResponse>
     /// Type of identifier for the customer ID (e.g., cookie).
     /// </summary>
     /// <value>Type of identifier for the customer ID (e.g., cookie).</value>
-    [DataMember(Name = "customerIdType", EmitDefaultValue = false)]
+    [JsonPropertyName("customerIdType")]
     public string CustomerIdType { get; set; }
 
 
@@ -91,7 +90,7 @@ public partial class WebEventResponse : IEquatable<WebEventResponse>
     /// The webpage where the user interaction occurred.
     /// </summary>
     /// <value>The webpage where the user interaction occurred.</value>
-    [DataMember(Name = "page", EmitDefaultValue = false)]
+    [JsonPropertyName("page")]
     public ResponsePage Page { get; set; }
 
 
@@ -100,7 +99,7 @@ public partial class WebEventResponse : IEquatable<WebEventResponse>
     /// HTTP User-Agent string (see https://tools.ietf.org/html/rfc1945#section-10.15).
     /// </summary>
     /// <value>HTTP User-Agent string (see https://tools.ietf.org/html/rfc1945#section-10.15).</value>
-    [DataMember(Name = "userAgentString", EmitDefaultValue = false)]
+    [JsonPropertyName("userAgentString")]
     public string UserAgentString { get; set; }
 
 
@@ -109,7 +108,7 @@ public partial class WebEventResponse : IEquatable<WebEventResponse>
     /// Customer&#39;s browser.
     /// </summary>
     /// <value>Customer&#39;s browser.</value>
-    [DataMember(Name = "browser", EmitDefaultValue = false)]
+    [JsonPropertyName("browser")]
     public WebEventBrowser Browser { get; set; }
 
 
@@ -118,7 +117,7 @@ public partial class WebEventResponse : IEquatable<WebEventResponse>
     /// Customer&#39;s device.
     /// </summary>
     /// <value>Customer&#39;s device.</value>
-    [DataMember(Name = "device", EmitDefaultValue = false)]
+    [JsonPropertyName("device")]
     public WebEventDevice Device { get; set; }
 
 
@@ -127,7 +126,7 @@ public partial class WebEventResponse : IEquatable<WebEventResponse>
     /// Represents the keywords in a customer search query.
     /// </summary>
     /// <value>Represents the keywords in a customer search query.</value>
-    [DataMember(Name = "searchQuery", EmitDefaultValue = false)]
+    [JsonPropertyName("searchQuery")]
     public string SearchQuery { get; set; }
 
 
@@ -136,7 +135,7 @@ public partial class WebEventResponse : IEquatable<WebEventResponse>
     /// Customer&#39;s IP-based organization or ISP name.
     /// </summary>
     /// <value>Customer&#39;s IP-based organization or ISP name.</value>
-    [DataMember(Name = "ipOrganization", EmitDefaultValue = false)]
+    [JsonPropertyName("ipOrganization")]
     public string IpOrganization { get; set; }
 
 
@@ -145,7 +144,7 @@ public partial class WebEventResponse : IEquatable<WebEventResponse>
     /// Customer&#39;s geolocation.
     /// </summary>
     /// <value>Customer&#39;s geolocation.</value>
-    [DataMember(Name = "geolocation", EmitDefaultValue = false)]
+    [JsonPropertyName("geolocation")]
     public JourneyGeolocation Geolocation { get; set; }
 
 
@@ -154,7 +153,7 @@ public partial class WebEventResponse : IEquatable<WebEventResponse>
     /// Urchin Tracking Module (UTM) parameters used to track the effectiveness of online marketing campaigns.
     /// </summary>
     /// <value>Urchin Tracking Module (UTM) parameters used to track the effectiveness of online marketing campaigns.</value>
-    [DataMember(Name = "mktCampaign", EmitDefaultValue = false)]
+    [JsonPropertyName("mktCampaign")]
     public JourneyCampaign MktCampaign { get; set; }
 
 
@@ -163,7 +162,7 @@ public partial class WebEventResponse : IEquatable<WebEventResponse>
     /// The session that the event belongs to.
     /// </summary>
     /// <value>The session that the event belongs to.</value>
-    [DataMember(Name = "session", EmitDefaultValue = false)]
+    [JsonPropertyName("session")]
     public WebEventResponseSession Session { get; set; }
 
 
@@ -172,7 +171,7 @@ public partial class WebEventResponse : IEquatable<WebEventResponse>
     /// Identifies the web page that originally generated the request for the current page being viewed.
     /// </summary>
     /// <value>Identifies the web page that originally generated the request for the current page being viewed.</value>
-    [DataMember(Name = "referrer", EmitDefaultValue = false)]
+    [JsonPropertyName("referrer")]
     public Referrer Referrer { get; set; }
 
 
@@ -181,7 +180,7 @@ public partial class WebEventResponse : IEquatable<WebEventResponse>
     /// User-defined attributes associated with a particular event. These attributes provide additional context about the event. For example, items_in_cart or subscription_level.
     /// </summary>
     /// <value>User-defined attributes associated with a particular event. These attributes provide additional context about the event. For example, items_in_cart or subscription_level.</value>
-    [DataMember(Name = "attributes", EmitDefaultValue = false)]
+    [JsonPropertyName("attributes")]
     public Dictionary<string, CustomEventAttribute> Attributes { get; set; }
 
 
@@ -190,7 +189,7 @@ public partial class WebEventResponse : IEquatable<WebEventResponse>
     /// Traits are attributes intrinsic to the customer that may be sent in selected events, (e.g. email, lastName, cellPhone). Traits are used to collect information for identity resolution. For example, the same person might be using an application on different devices which might create two sessions with different customerIds. Additional information can be provided as traits to help link those two sessions and customers to a single external contact through common identifiers that were submitted via a form fill, message, or other input in both sessions.
     /// </summary>
     /// <value>Traits are attributes intrinsic to the customer that may be sent in selected events, (e.g. email, lastName, cellPhone). Traits are used to collect information for identity resolution. For example, the same person might be using an application on different devices which might create two sessions with different customerIds. Additional information can be provided as traits to help link those two sessions and customers to a single external contact through common identifiers that were submitted via a form fill, message, or other input in both sessions.</value>
-    [DataMember(Name = "traits", EmitDefaultValue = false)]
+    [JsonPropertyName("traits")]
     public Dictionary<string, CustomEventAttribute> Traits { get; set; }
 
 
@@ -199,7 +198,7 @@ public partial class WebEventResponse : IEquatable<WebEventResponse>
     /// Indicates whether the event was produced during an authenticated session.
     /// </summary>
     /// <value>Indicates whether the event was produced during an authenticated session.</value>
-    [DataMember(Name = "authenticated", EmitDefaultValue = false)]
+    [JsonPropertyName("authenticated")]
     public bool? Authenticated { get; set; }
 
 
@@ -208,7 +207,7 @@ public partial class WebEventResponse : IEquatable<WebEventResponse>
     /// UTC timestamp indicating when the event actually took place, events older than an hour will be rejected. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z
     /// </summary>
     /// <value>UTC timestamp indicating when the event actually took place, events older than an hour will be rejected. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z</value>
-    [DataMember(Name = "createdDate", EmitDefaultValue = false)]
+    [JsonPropertyName("createdDate")]
     public DateTime? CreatedDate { get; set; }
 
 

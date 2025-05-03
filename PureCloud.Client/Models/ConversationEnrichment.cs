@@ -1,12 +1,12 @@
-using System.Runtime.Serialization;
 using System.Text;
+using System.Text.Json.Serialization;
 
 namespace PureCloud.Client.Models;
 
 /// <summary>
 /// Metadata enrichments provided by the platform.
 /// </summary>
-[DataContract]
+
 public partial class ConversationEnrichment : IEquatable<ConversationEnrichment>
 {
     /// <summary>
@@ -27,7 +27,7 @@ public partial class ConversationEnrichment : IEquatable<ConversationEnrichment>
     /// Detected language of this message.
     /// </summary>
     /// <value>Detected language of this message.</value>
-    [DataMember(Name = "language", EmitDefaultValue = false)]
+    [JsonPropertyName("language")]
     public ConversationEnrichmentLanguage Language { get; set; }
 
 
@@ -36,7 +36,7 @@ public partial class ConversationEnrichment : IEquatable<ConversationEnrichment>
     /// Detected sentiment of this message.
     /// </summary>
     /// <value>Detected sentiment of this message.</value>
-    [DataMember(Name = "sentimentV2", EmitDefaultValue = false)]
+    [JsonPropertyName("sentimentV2")]
     public ConversationEnrichmentSentimentV2 SentimentV2 { get; set; }
 
 

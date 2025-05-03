@@ -1,12 +1,12 @@
-using System.Runtime.Serialization;
 using System.Text;
+using System.Text.Json.Serialization;
 
 namespace PureCloud.Client.Models;
 
 /// <summary>
 /// ExternalContactsOrganizationChangedTopicContactAddress
 /// </summary>
-[DataContract]
+
 public partial class ExternalContactsOrganizationChangedTopicContactAddress : IEquatable<ExternalContactsOrganizationChangedTopicContactAddress>
 {
     /// <summary>
@@ -34,7 +34,7 @@ public partial class ExternalContactsOrganizationChangedTopicContactAddress : IE
     /// <summary>
     /// Gets or Sets Address1
     /// </summary>
-    [DataMember(Name = "address1", EmitDefaultValue = false)]
+    [JsonPropertyName("address1")]
     public string Address1 { get; set; }
 
 
@@ -42,7 +42,7 @@ public partial class ExternalContactsOrganizationChangedTopicContactAddress : IE
     /// <summary>
     /// Gets or Sets Address2
     /// </summary>
-    [DataMember(Name = "address2", EmitDefaultValue = false)]
+    [JsonPropertyName("address2")]
     public string Address2 { get; set; }
 
 
@@ -50,7 +50,7 @@ public partial class ExternalContactsOrganizationChangedTopicContactAddress : IE
     /// <summary>
     /// Gets or Sets City
     /// </summary>
-    [DataMember(Name = "city", EmitDefaultValue = false)]
+    [JsonPropertyName("city")]
     public string City { get; set; }
 
 
@@ -58,7 +58,7 @@ public partial class ExternalContactsOrganizationChangedTopicContactAddress : IE
     /// <summary>
     /// Gets or Sets State
     /// </summary>
-    [DataMember(Name = "state", EmitDefaultValue = false)]
+    [JsonPropertyName("state")]
     public string State { get; set; }
 
 
@@ -66,7 +66,7 @@ public partial class ExternalContactsOrganizationChangedTopicContactAddress : IE
     /// <summary>
     /// Gets or Sets PostalCode
     /// </summary>
-    [DataMember(Name = "postalCode", EmitDefaultValue = false)]
+    [JsonPropertyName("postalCode")]
     public string PostalCode { get; set; }
 
 
@@ -74,7 +74,7 @@ public partial class ExternalContactsOrganizationChangedTopicContactAddress : IE
     /// <summary>
     /// Gets or Sets CountryCode
     /// </summary>
-    [DataMember(Name = "countryCode", EmitDefaultValue = false)]
+    [JsonPropertyName("countryCode")]
     public string CountryCode { get; set; }
 
 

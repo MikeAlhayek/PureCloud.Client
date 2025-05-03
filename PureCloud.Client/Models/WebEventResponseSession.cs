@@ -1,4 +1,3 @@
-using System.Runtime.Serialization;
 using System.Text;
 using System.Text.Json.Serialization;
 
@@ -7,7 +6,7 @@ namespace PureCloud.Client.Models;
 /// <summary>
 /// WebEventResponseSession
 /// </summary>
-[DataContract]
+
 public partial class WebEventResponseSession : IEquatable<WebEventResponseSession>
 {
 
@@ -40,7 +39,7 @@ public partial class WebEventResponseSession : IEquatable<WebEventResponseSessio
     /// The globally unique identifier for the object.
     /// </summary>
     /// <value>The globally unique identifier for the object.</value>
-    [DataMember(Name = "id", EmitDefaultValue = false)]
+    [JsonPropertyName("id")]
     public string Id { get; private set; }
 
 
@@ -49,7 +48,7 @@ public partial class WebEventResponseSession : IEquatable<WebEventResponseSessio
     /// Indicates how long the customer has been on the site within this session.
     /// </summary>
     /// <value>Indicates how long the customer has been on the site within this session.</value>
-    [DataMember(Name = "durationInSeconds", EmitDefaultValue = false)]
+    [JsonPropertyName("durationInSeconds")]
     public int? DurationInSeconds { get; set; }
 
 
@@ -58,7 +57,7 @@ public partial class WebEventResponseSession : IEquatable<WebEventResponseSessio
     /// The count of all events recorded during this session.
     /// </summary>
     /// <value>The count of all events recorded during this session.</value>
-    [DataMember(Name = "eventCount", EmitDefaultValue = false)]
+    [JsonPropertyName("eventCount")]
     public int? EventCount { get; set; }
 
 
@@ -67,7 +66,7 @@ public partial class WebEventResponseSession : IEquatable<WebEventResponseSessio
     /// The count of all pageviews performed during this session.
     /// </summary>
     /// <value>The count of all pageviews performed during this session.</value>
-    [DataMember(Name = "pageviewCount", EmitDefaultValue = false)]
+    [JsonPropertyName("pageviewCount")]
     public int? PageviewCount { get; set; }
 
 
@@ -76,7 +75,7 @@ public partial class WebEventResponseSession : IEquatable<WebEventResponseSessio
     /// The referrer of the first event in the web session.
     /// </summary>
     /// <value>The referrer of the first event in the web session.</value>
-    [DataMember(Name = "referrer", EmitDefaultValue = false)]
+    [JsonPropertyName("referrer")]
     public Referrer Referrer { get; set; }
 
 
@@ -85,7 +84,7 @@ public partial class WebEventResponseSession : IEquatable<WebEventResponseSessio
     /// The URI for this object
     /// </summary>
     /// <value>The URI for this object</value>
-    [DataMember(Name = "selfUri", EmitDefaultValue = false)]
+    [JsonPropertyName("selfUri")]
     public string SelfUri { get; private set; }
 
 
@@ -94,7 +93,7 @@ public partial class WebEventResponseSession : IEquatable<WebEventResponseSessio
     /// Date of the session&#39;s first event, that is when the session starts. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z
     /// </summary>
     /// <value>Date of the session&#39;s first event, that is when the session starts. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z</value>
-    [DataMember(Name = "createdDate", EmitDefaultValue = false)]
+    [JsonPropertyName("createdDate")]
     public DateTime? CreatedDate { get; set; }
 
 

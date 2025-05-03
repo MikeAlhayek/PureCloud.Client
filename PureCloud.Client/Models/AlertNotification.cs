@@ -7,13 +7,13 @@ namespace PureCloud.Client.Models;
 /// <summary>
 /// AlertNotification
 /// </summary>
-[DataContract]
+
 public partial class AlertNotification : IEquatable<AlertNotification>
 {
     /// <summary>
     /// Gets or Sets NotificationTypes
     /// </summary>
-    [JsonConverter(typeof(JsonStringEnumConverter))]
+    
     public enum NotificationTypesEnum
     {
         /// <summary>
@@ -74,7 +74,7 @@ public partial class AlertNotification : IEquatable<AlertNotification>
     /// The entity to receive the notification.
     /// </summary>
     /// <value>The entity to receive the notification.</value>
-    [DataMember(Name = "recipient", EmitDefaultValue = false)]
+    [JsonPropertyName("recipient")]
     public string Recipient { get; set; }
 
 
@@ -83,7 +83,7 @@ public partial class AlertNotification : IEquatable<AlertNotification>
     /// The notification types the user will receive.
     /// </summary>
     /// <value>The notification types the user will receive.</value>
-    [DataMember(Name = "notificationTypes", EmitDefaultValue = false)]
+    [JsonPropertyName("notificationTypes")]
     public List<NotificationTypesEnum> NotificationTypes { get; set; }
 
 
@@ -92,7 +92,7 @@ public partial class AlertNotification : IEquatable<AlertNotification>
     /// The locale whose language will be used when sending alerts.  Locale should be in theformat language_COUNTRY where language is always lower case and country is always upper case.
     /// </summary>
     /// <value>The locale whose language will be used when sending alerts.  Locale should be in theformat language_COUNTRY where language is always lower case and country is always upper case.</value>
-    [DataMember(Name = "locale", EmitDefaultValue = false)]
+    [JsonPropertyName("locale")]
     public string Locale { get; set; }
 
 

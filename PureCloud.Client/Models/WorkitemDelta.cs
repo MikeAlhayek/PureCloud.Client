@@ -1,12 +1,12 @@
-using System.Runtime.Serialization;
 using System.Text;
+using System.Text.Json.Serialization;
 
 namespace PureCloud.Client.Models;
 
 /// <summary>
 /// WorkitemDelta
 /// </summary>
-[DataContract]
+
 public partial class WorkitemDelta : IEquatable<WorkitemDelta>
 {
     /// <summary>
@@ -78,7 +78,7 @@ public partial class WorkitemDelta : IEquatable<WorkitemDelta>
     /// <summary>
     /// Gets or Sets Name
     /// </summary>
-    [DataMember(Name = "name", EmitDefaultValue = false)]
+    [JsonPropertyName("name")]
     public WorkitemsAttributeChangeString Name { get; set; }
 
 
@@ -86,7 +86,7 @@ public partial class WorkitemDelta : IEquatable<WorkitemDelta>
     /// <summary>
     /// Gets or Sets Description
     /// </summary>
-    [DataMember(Name = "description", EmitDefaultValue = false)]
+    [JsonPropertyName("description")]
     public WorkitemsAttributeChangeString Description { get; set; }
 
 
@@ -94,7 +94,7 @@ public partial class WorkitemDelta : IEquatable<WorkitemDelta>
     /// <summary>
     /// Gets or Sets LanguageId
     /// </summary>
-    [DataMember(Name = "languageId", EmitDefaultValue = false)]
+    [JsonPropertyName("languageId")]
     public WorkitemsAttributeChangeString LanguageId { get; set; }
 
 
@@ -102,7 +102,7 @@ public partial class WorkitemDelta : IEquatable<WorkitemDelta>
     /// <summary>
     /// Gets or Sets UtilizationLabelId
     /// </summary>
-    [DataMember(Name = "utilizationLabelId", EmitDefaultValue = false)]
+    [JsonPropertyName("utilizationLabelId")]
     public WorkitemsAttributeChangeString UtilizationLabelId { get; set; }
 
 
@@ -110,7 +110,7 @@ public partial class WorkitemDelta : IEquatable<WorkitemDelta>
     /// <summary>
     /// Gets or Sets Priority
     /// </summary>
-    [DataMember(Name = "priority", EmitDefaultValue = false)]
+    [JsonPropertyName("priority")]
     public WorkitemsAttributeChangeInteger Priority { get; set; }
 
 
@@ -118,7 +118,7 @@ public partial class WorkitemDelta : IEquatable<WorkitemDelta>
     /// <summary>
     /// Gets or Sets SkillIds
     /// </summary>
-    [DataMember(Name = "skillIds", EmitDefaultValue = false)]
+    [JsonPropertyName("skillIds")]
     public WorkitemsAttributeChangeList SkillIds { get; set; }
 
 
@@ -126,7 +126,7 @@ public partial class WorkitemDelta : IEquatable<WorkitemDelta>
     /// <summary>
     /// Gets or Sets PreferredAgentIds
     /// </summary>
-    [DataMember(Name = "preferredAgentIds", EmitDefaultValue = false)]
+    [JsonPropertyName("preferredAgentIds")]
     public WorkitemsAttributeChangeList PreferredAgentIds { get; set; }
 
 
@@ -134,7 +134,7 @@ public partial class WorkitemDelta : IEquatable<WorkitemDelta>
     /// <summary>
     /// Gets or Sets DateDue
     /// </summary>
-    [DataMember(Name = "dateDue", EmitDefaultValue = false)]
+    [JsonPropertyName("dateDue")]
     public WorkitemsAttributeChangeInstant DateDue { get; set; }
 
 
@@ -142,7 +142,7 @@ public partial class WorkitemDelta : IEquatable<WorkitemDelta>
     /// <summary>
     /// Gets or Sets DateExpires
     /// </summary>
-    [DataMember(Name = "dateExpires", EmitDefaultValue = false)]
+    [JsonPropertyName("dateExpires")]
     public WorkitemsAttributeChangeInstant DateExpires { get; set; }
 
 
@@ -150,7 +150,7 @@ public partial class WorkitemDelta : IEquatable<WorkitemDelta>
     /// <summary>
     /// Gets or Sets DurationSeconds
     /// </summary>
-    [DataMember(Name = "durationSeconds", EmitDefaultValue = false)]
+    [JsonPropertyName("durationSeconds")]
     public WorkitemsAttributeChangeInteger DurationSeconds { get; set; }
 
 
@@ -158,7 +158,7 @@ public partial class WorkitemDelta : IEquatable<WorkitemDelta>
     /// <summary>
     /// Gets or Sets StatusId
     /// </summary>
-    [DataMember(Name = "statusId", EmitDefaultValue = false)]
+    [JsonPropertyName("statusId")]
     public WorkitemsAttributeChangeString StatusId { get; set; }
 
 
@@ -166,7 +166,7 @@ public partial class WorkitemDelta : IEquatable<WorkitemDelta>
     /// <summary>
     /// Gets or Sets ReporterId
     /// </summary>
-    [DataMember(Name = "reporterId", EmitDefaultValue = false)]
+    [JsonPropertyName("reporterId")]
     public WorkitemsAttributeChangeString ReporterId { get; set; }
 
 
@@ -174,7 +174,7 @@ public partial class WorkitemDelta : IEquatable<WorkitemDelta>
     /// <summary>
     /// Gets or Sets ExternalContactId
     /// </summary>
-    [DataMember(Name = "externalContactId", EmitDefaultValue = false)]
+    [JsonPropertyName("externalContactId")]
     public WorkitemsAttributeChangeString ExternalContactId { get; set; }
 
 
@@ -182,7 +182,7 @@ public partial class WorkitemDelta : IEquatable<WorkitemDelta>
     /// <summary>
     /// Gets or Sets AssigneeId
     /// </summary>
-    [DataMember(Name = "assigneeId", EmitDefaultValue = false)]
+    [JsonPropertyName("assigneeId")]
     public WorkitemsAttributeChangeString AssigneeId { get; set; }
 
 
@@ -190,7 +190,7 @@ public partial class WorkitemDelta : IEquatable<WorkitemDelta>
     /// <summary>
     /// Gets or Sets WorkbinId
     /// </summary>
-    [DataMember(Name = "workbinId", EmitDefaultValue = false)]
+    [JsonPropertyName("workbinId")]
     public WorkitemsAttributeChangeString WorkbinId { get; set; }
 
 
@@ -198,7 +198,7 @@ public partial class WorkitemDelta : IEquatable<WorkitemDelta>
     /// <summary>
     /// Gets or Sets QueueId
     /// </summary>
-    [DataMember(Name = "queueId", EmitDefaultValue = false)]
+    [JsonPropertyName("queueId")]
     public WorkitemsAttributeChangeString QueueId { get; set; }
 
 
@@ -206,7 +206,7 @@ public partial class WorkitemDelta : IEquatable<WorkitemDelta>
     /// <summary>
     /// Gets or Sets ExternalTag
     /// </summary>
-    [DataMember(Name = "externalTag", EmitDefaultValue = false)]
+    [JsonPropertyName("externalTag")]
     public WorkitemsAttributeChangeString ExternalTag { get; set; }
 
 
@@ -214,7 +214,7 @@ public partial class WorkitemDelta : IEquatable<WorkitemDelta>
     /// <summary>
     /// Gets or Sets WrapupId
     /// </summary>
-    [DataMember(Name = "wrapupId", EmitDefaultValue = false)]
+    [JsonPropertyName("wrapupId")]
     public WorkitemsAttributeChangeString WrapupId { get; set; }
 
 
@@ -222,7 +222,7 @@ public partial class WorkitemDelta : IEquatable<WorkitemDelta>
     /// <summary>
     /// Gets or Sets Wrapup
     /// </summary>
-    [DataMember(Name = "wrapup", EmitDefaultValue = false)]
+    [JsonPropertyName("wrapup")]
     public WorkitemsAttributeChangeWrapupDelta Wrapup { get; set; }
 
 
@@ -230,7 +230,7 @@ public partial class WorkitemDelta : IEquatable<WorkitemDelta>
     /// <summary>
     /// Gets or Sets Ttl
     /// </summary>
-    [DataMember(Name = "ttl", EmitDefaultValue = false)]
+    [JsonPropertyName("ttl")]
     public WorkitemsAttributeChangeInteger Ttl { get; set; }
 
 
@@ -238,7 +238,7 @@ public partial class WorkitemDelta : IEquatable<WorkitemDelta>
     /// <summary>
     /// Gets or Sets DateClosed
     /// </summary>
-    [DataMember(Name = "dateClosed", EmitDefaultValue = false)]
+    [JsonPropertyName("dateClosed")]
     public WorkitemsAttributeChangeInstant DateClosed { get; set; }
 
 
@@ -246,7 +246,7 @@ public partial class WorkitemDelta : IEquatable<WorkitemDelta>
     /// <summary>
     /// Gets or Sets AssignmentState
     /// </summary>
-    [DataMember(Name = "assignmentState", EmitDefaultValue = false)]
+    [JsonPropertyName("assignmentState")]
     public WorkitemsAttributeChangeString AssignmentState { get; set; }
 
 
@@ -254,7 +254,7 @@ public partial class WorkitemDelta : IEquatable<WorkitemDelta>
     /// <summary>
     /// Gets or Sets AutoStatusTransition
     /// </summary>
-    [DataMember(Name = "autoStatusTransition", EmitDefaultValue = false)]
+    [JsonPropertyName("autoStatusTransition")]
     public WorkitemsAttributeChangeBoolean AutoStatusTransition { get; set; }
 
 
@@ -262,7 +262,7 @@ public partial class WorkitemDelta : IEquatable<WorkitemDelta>
     /// <summary>
     /// Gets or Sets CustomFields
     /// </summary>
-    [DataMember(Name = "customFields", EmitDefaultValue = false)]
+    [JsonPropertyName("customFields")]
     public WorkitemsAttributeChangeMap CustomFields { get; set; }
 
 
@@ -270,7 +270,7 @@ public partial class WorkitemDelta : IEquatable<WorkitemDelta>
     /// <summary>
     /// Gets or Sets DateModified
     /// </summary>
-    [DataMember(Name = "dateModified", EmitDefaultValue = false)]
+    [JsonPropertyName("dateModified")]
     public WorkitemsAttributeChangeInstant DateModified { get; set; }
 
 
@@ -278,7 +278,7 @@ public partial class WorkitemDelta : IEquatable<WorkitemDelta>
     /// <summary>
     /// Gets or Sets ModifiedBy
     /// </summary>
-    [DataMember(Name = "modifiedBy", EmitDefaultValue = false)]
+    [JsonPropertyName("modifiedBy")]
     public WorkitemsAttributeChangeString ModifiedBy { get; set; }
 
 
@@ -286,7 +286,7 @@ public partial class WorkitemDelta : IEquatable<WorkitemDelta>
     /// <summary>
     /// Gets or Sets StatusCategory
     /// </summary>
-    [DataMember(Name = "statusCategory", EmitDefaultValue = false)]
+    [JsonPropertyName("statusCategory")]
     public WorkitemsAttributeChangeWorkitemStatusCategory StatusCategory { get; set; }
 
 
@@ -294,7 +294,7 @@ public partial class WorkitemDelta : IEquatable<WorkitemDelta>
     /// <summary>
     /// Gets or Sets ScriptId
     /// </summary>
-    [DataMember(Name = "scriptId", EmitDefaultValue = false)]
+    [JsonPropertyName("scriptId")]
     public WorkitemsAttributeChangeString ScriptId { get; set; }
 
 

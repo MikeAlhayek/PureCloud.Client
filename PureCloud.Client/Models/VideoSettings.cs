@@ -1,12 +1,12 @@
-using System.Runtime.Serialization;
 using System.Text;
+using System.Text.Json.Serialization;
 
 namespace PureCloud.Client.Models;
 
 /// <summary>
 /// The settings to enable video chat
 /// </summary>
-[DataContract]
+
 public partial class VideoSettings : IEquatable<VideoSettings>
 {
     /// <summary>
@@ -29,7 +29,7 @@ public partial class VideoSettings : IEquatable<VideoSettings>
     /// whether or not video is enabled
     /// </summary>
     /// <value>whether or not video is enabled</value>
-    [DataMember(Name = "enabled", EmitDefaultValue = false)]
+    [JsonPropertyName("enabled")]
     public bool? Enabled { get; set; }
 
 
@@ -38,7 +38,7 @@ public partial class VideoSettings : IEquatable<VideoSettings>
     /// Video Settings for agent
     /// </summary>
     /// <value>Video Settings for agent</value>
-    [DataMember(Name = "agent", EmitDefaultValue = false)]
+    [JsonPropertyName("agent")]
     public AgentVideoSettings Agent { get; set; }
 
 
@@ -47,7 +47,7 @@ public partial class VideoSettings : IEquatable<VideoSettings>
     /// Video Settings for user
     /// </summary>
     /// <value>Video Settings for user</value>
-    [DataMember(Name = "user", EmitDefaultValue = false)]
+    [JsonPropertyName("user")]
     public UserVideoSettings User { get; set; }
 
 

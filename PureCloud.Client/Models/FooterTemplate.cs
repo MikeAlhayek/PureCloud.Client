@@ -7,14 +7,14 @@ namespace PureCloud.Client.Models;
 /// <summary>
 /// The Footer template identifies the Footer type and its footerUsage
 /// </summary>
-[DataContract]
+
 public partial class FooterTemplate : IEquatable<FooterTemplate>
 {
     /// <summary>
     /// Specifies the type represented by Footer.
     /// </summary>
     /// <value>Specifies the type represented by Footer.</value>
-    [JsonConverter(typeof(JsonStringEnumConverter))]
+    
     public enum TypeEnum
     {
         /// <summary>
@@ -34,7 +34,7 @@ public partial class FooterTemplate : IEquatable<FooterTemplate>
     /// <summary>
     /// Gets or Sets ApplicableResources
     /// </summary>
-    [JsonConverter(typeof(JsonStringEnumConverter))]
+    
     public enum ApplicableResourcesEnum
     {
         /// <summary>
@@ -55,7 +55,7 @@ public partial class FooterTemplate : IEquatable<FooterTemplate>
     /// Specifies the type represented by Footer.
     /// </summary>
     /// <value>Specifies the type represented by Footer.</value>
-    [DataMember(Name = "type", EmitDefaultValue = false)]
+    [JsonPropertyName("type")]
     public TypeEnum? Type { get; set; }
     /// <summary>
     /// Initializes a new instance of the <see cref="FooterTemplate" /> class.
@@ -77,7 +77,7 @@ public partial class FooterTemplate : IEquatable<FooterTemplate>
     /// Specifies the canned response template where the footer can be used.
     /// </summary>
     /// <value>Specifies the canned response template where the footer can be used.</value>
-    [DataMember(Name = "applicableResources", EmitDefaultValue = false)]
+    [JsonPropertyName("applicableResources")]
     public List<ApplicableResourcesEnum> ApplicableResources { get; set; }
 
 

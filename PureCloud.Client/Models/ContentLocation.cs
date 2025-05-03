@@ -1,12 +1,12 @@
-using System.Runtime.Serialization;
 using System.Text;
+using System.Text.Json.Serialization;
 
 namespace PureCloud.Client.Models;
 
 /// <summary>
 /// Location object.
 /// </summary>
-[DataContract]
+
 public partial class ContentLocation : IEquatable<ContentLocation>
 {
     /// <summary>
@@ -33,7 +33,7 @@ public partial class ContentLocation : IEquatable<ContentLocation>
     /// URL of the Location.
     /// </summary>
     /// <value>URL of the Location.</value>
-    [DataMember(Name = "url", EmitDefaultValue = false)]
+    [JsonPropertyName("url")]
     public string Url { get; set; }
 
 
@@ -42,7 +42,7 @@ public partial class ContentLocation : IEquatable<ContentLocation>
     /// Location postal address.
     /// </summary>
     /// <value>Location postal address.</value>
-    [DataMember(Name = "address", EmitDefaultValue = false)]
+    [JsonPropertyName("address")]
     public string Address { get; set; }
 
 
@@ -51,7 +51,7 @@ public partial class ContentLocation : IEquatable<ContentLocation>
     /// Location name.
     /// </summary>
     /// <value>Location name.</value>
-    [DataMember(Name = "text", EmitDefaultValue = false)]
+    [JsonPropertyName("text")]
     public string Text { get; set; }
 
 
@@ -60,7 +60,7 @@ public partial class ContentLocation : IEquatable<ContentLocation>
     /// Latitude of the location.
     /// </summary>
     /// <value>Latitude of the location.</value>
-    [DataMember(Name = "latitude", EmitDefaultValue = false)]
+    [JsonPropertyName("latitude")]
     public double? Latitude { get; set; }
 
 
@@ -69,7 +69,7 @@ public partial class ContentLocation : IEquatable<ContentLocation>
     /// Longitude of the location.
     /// </summary>
     /// <value>Longitude of the location.</value>
-    [DataMember(Name = "longitude", EmitDefaultValue = false)]
+    [JsonPropertyName("longitude")]
     public double? Longitude { get; set; }
 
 

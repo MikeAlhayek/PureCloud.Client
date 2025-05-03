@@ -7,14 +7,14 @@ namespace PureCloud.Client.Models;
 /// <summary>
 /// Defines an authentication scheme in the SCIM service provider&#39;s configuration.
 /// </summary>
-[DataContract]
+
 public partial class ScimServiceProviderConfigAuthenticationScheme : IEquatable<ScimServiceProviderConfigAuthenticationScheme>
 {
     /// <summary>
     /// The type of authentication scheme.
     /// </summary>
     /// <value>The type of authentication scheme.</value>
-    [JsonConverter(typeof(JsonStringEnumConverter))]
+    
     public enum TypeEnum
     {
         /// <summary>
@@ -59,7 +59,7 @@ public partial class ScimServiceProviderConfigAuthenticationScheme : IEquatable<
     /// The type of authentication scheme.
     /// </summary>
     /// <value>The type of authentication scheme.</value>
-    [DataMember(Name = "type", EmitDefaultValue = false)]
+    [JsonPropertyName("type")]
     public TypeEnum? Type { get; private set; }
     /// <summary>
     /// Initializes a new instance of the <see cref="ScimServiceProviderConfigAuthenticationScheme" /> class.
@@ -75,7 +75,7 @@ public partial class ScimServiceProviderConfigAuthenticationScheme : IEquatable<
     /// The name of the authentication scheme, for example, HTTP Basic.
     /// </summary>
     /// <value>The name of the authentication scheme, for example, HTTP Basic.</value>
-    [DataMember(Name = "name", EmitDefaultValue = false)]
+    [JsonPropertyName("name")]
     public string Name { get; private set; }
 
 
@@ -84,7 +84,7 @@ public partial class ScimServiceProviderConfigAuthenticationScheme : IEquatable<
     /// The description of the authentication scheme.
     /// </summary>
     /// <value>The description of the authentication scheme.</value>
-    [DataMember(Name = "description", EmitDefaultValue = false)]
+    [JsonPropertyName("description")]
     public string Description { get; private set; }
 
 
@@ -93,7 +93,7 @@ public partial class ScimServiceProviderConfigAuthenticationScheme : IEquatable<
     /// The HTTP-addressable URL that points to the authentication scheme&#39;s specification.
     /// </summary>
     /// <value>The HTTP-addressable URL that points to the authentication scheme&#39;s specification.</value>
-    [DataMember(Name = "specUri", EmitDefaultValue = false)]
+    [JsonPropertyName("specUri")]
     public string SpecUri { get; private set; }
 
 
@@ -102,7 +102,7 @@ public partial class ScimServiceProviderConfigAuthenticationScheme : IEquatable<
     /// The HTTP-addressable URL that points to the authentication scheme&#39;s usage documentation.
     /// </summary>
     /// <value>The HTTP-addressable URL that points to the authentication scheme&#39;s usage documentation.</value>
-    [DataMember(Name = "documentationUri", EmitDefaultValue = false)]
+    [JsonPropertyName("documentationUri")]
     public string DocumentationUri { get; private set; }
 
 
@@ -113,7 +113,7 @@ public partial class ScimServiceProviderConfigAuthenticationScheme : IEquatable<
     /// Indicates whether this authentication scheme is the primary method of authentication.
     /// </summary>
     /// <value>Indicates whether this authentication scheme is the primary method of authentication.</value>
-    [DataMember(Name = "primary", EmitDefaultValue = false)]
+    [JsonPropertyName("primary")]
     public bool? Primary { get; private set; }
 
 

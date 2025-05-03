@@ -1,4 +1,3 @@
-using System.Runtime.Serialization;
 using System.Text;
 using System.Text.Json.Serialization;
 
@@ -7,7 +6,7 @@ namespace PureCloud.Client.Models;
 /// <summary>
 /// WfmHistoricalAdherenceBulkItem
 /// </summary>
-[DataContract]
+
 public partial class WfmHistoricalAdherenceBulkItem : IEquatable<WfmHistoricalAdherenceBulkItem>
 {
 
@@ -42,7 +41,7 @@ public partial class WfmHistoricalAdherenceBulkItem : IEquatable<WfmHistoricalAd
     /// The ID of the management unit to query
     /// </summary>
     /// <value>The ID of the management unit to query</value>
-    [DataMember(Name = "managementUnitId", EmitDefaultValue = false)]
+    [JsonPropertyName("managementUnitId")]
     public string ManagementUnitId { get; set; }
 
 
@@ -51,7 +50,7 @@ public partial class WfmHistoricalAdherenceBulkItem : IEquatable<WfmHistoricalAd
     /// Beginning of the date range to query in ISO-8601 format
     /// </summary>
     /// <value>Beginning of the date range to query in ISO-8601 format</value>
-    [DataMember(Name = "startDate", EmitDefaultValue = false)]
+    [JsonPropertyName("startDate")]
     public DateTime? StartDate { get; set; }
 
 
@@ -60,7 +59,7 @@ public partial class WfmHistoricalAdherenceBulkItem : IEquatable<WfmHistoricalAd
     /// End of the date range to query in ISO-8601 format
     /// </summary>
     /// <value>End of the date range to query in ISO-8601 format</value>
-    [DataMember(Name = "endDate", EmitDefaultValue = false)]
+    [JsonPropertyName("endDate")]
     public DateTime? EndDate { get; set; }
 
 
@@ -69,7 +68,7 @@ public partial class WfmHistoricalAdherenceBulkItem : IEquatable<WfmHistoricalAd
     /// The IDs of the users to query. If not included, will query every user in the management unit
     /// </summary>
     /// <value>The IDs of the users to query. If not included, will query every user in the management unit</value>
-    [DataMember(Name = "userIds", EmitDefaultValue = false)]
+    [JsonPropertyName("userIds")]
     public List<string> UserIds { get; set; }
 
 
@@ -78,7 +77,7 @@ public partial class WfmHistoricalAdherenceBulkItem : IEquatable<WfmHistoricalAd
     /// Whether user exceptions should be returned as part of the results. Defaults to false if not specified.
     /// </summary>
     /// <value>Whether user exceptions should be returned as part of the results. Defaults to false if not specified.</value>
-    [DataMember(Name = "includeExceptions", EmitDefaultValue = false)]
+    [JsonPropertyName("includeExceptions")]
     public bool? IncludeExceptions { get; set; }
 
 
@@ -87,7 +86,7 @@ public partial class WfmHistoricalAdherenceBulkItem : IEquatable<WfmHistoricalAd
     /// Whether user actual activities should be returned as part of the results. Defaults to false if not specified.
     /// </summary>
     /// <value>Whether user actual activities should be returned as part of the results. Defaults to false if not specified.</value>
-    [DataMember(Name = "includeActuals", EmitDefaultValue = false)]
+    [JsonPropertyName("includeActuals")]
     public bool? IncludeActuals { get; set; }
 
 

@@ -1,4 +1,3 @@
-using System.Runtime.Serialization;
 using System.Text;
 using System.Text.Json.Serialization;
 
@@ -7,7 +6,7 @@ namespace PureCloud.Client.Models;
 /// <summary>
 /// OutcomeAttributionRequest
 /// </summary>
-[DataContract]
+
 public partial class OutcomeAttributionRequest : IEquatable<OutcomeAttributionRequest>
 {
 
@@ -40,7 +39,7 @@ public partial class OutcomeAttributionRequest : IEquatable<OutcomeAttributionRe
     /// ID of Outcome.
     /// </summary>
     /// <value>ID of Outcome.</value>
-    [DataMember(Name = "outcomeId", EmitDefaultValue = false)]
+    [JsonPropertyName("outcomeId")]
     public string OutcomeId { get; set; }
 
 
@@ -49,7 +48,7 @@ public partial class OutcomeAttributionRequest : IEquatable<OutcomeAttributionRe
     /// The external contact ID of the customer who achieved the outcome.
     /// </summary>
     /// <value>The external contact ID of the customer who achieved the outcome.</value>
-    [DataMember(Name = "externalContactId", EmitDefaultValue = false)]
+    [JsonPropertyName("externalContactId")]
     public string ExternalContactId { get; set; }
 
 
@@ -58,7 +57,7 @@ public partial class OutcomeAttributionRequest : IEquatable<OutcomeAttributionRe
     /// The total value associated with the customer&#39;s outcome.
     /// </summary>
     /// <value>The total value associated with the customer&#39;s outcome.</value>
-    [DataMember(Name = "associatedValue", EmitDefaultValue = false)]
+    [JsonPropertyName("associatedValue")]
     public double? AssociatedValue { get; set; }
 
 
@@ -67,7 +66,7 @@ public partial class OutcomeAttributionRequest : IEquatable<OutcomeAttributionRe
     /// List of interactions that led to this outcome being achieved.
     /// </summary>
     /// <value>List of interactions that led to this outcome being achieved.</value>
-    [DataMember(Name = "touchpoints", EmitDefaultValue = false)]
+    [JsonPropertyName("touchpoints")]
     public List<Touchpoint> Touchpoints { get; set; }
 
 
@@ -76,7 +75,7 @@ public partial class OutcomeAttributionRequest : IEquatable<OutcomeAttributionRe
     /// Date outcome was achieved. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z
     /// </summary>
     /// <value>Date outcome was achieved. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z</value>
-    [DataMember(Name = "createdDate", EmitDefaultValue = false)]
+    [JsonPropertyName("createdDate")]
     public DateTime? CreatedDate { get; set; }
 
 

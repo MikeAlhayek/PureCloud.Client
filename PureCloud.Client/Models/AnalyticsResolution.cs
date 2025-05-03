@@ -1,12 +1,12 @@
-using System.Runtime.Serialization;
 using System.Text;
+using System.Text.Json.Serialization;
 
 namespace PureCloud.Client.Models;
 
 /// <summary>
 /// AnalyticsResolution
 /// </summary>
-[DataContract]
+
 public partial class AnalyticsResolution : IEquatable<AnalyticsResolution>
 {
     /// <summary>
@@ -31,7 +31,7 @@ public partial class AnalyticsResolution : IEquatable<AnalyticsResolution>
     /// Specifies when an event occurred. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z
     /// </summary>
     /// <value>Specifies when an event occurred. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z</value>
-    [DataMember(Name = "eventTime", EmitDefaultValue = false)]
+    [JsonPropertyName("eventTime")]
     public DateTime? EventTime { get; set; }
 
 
@@ -40,7 +40,7 @@ public partial class AnalyticsResolution : IEquatable<AnalyticsResolution>
     /// The ID of the last queue on which the conversation was handled.
     /// </summary>
     /// <value>The ID of the last queue on which the conversation was handled.</value>
-    [DataMember(Name = "queueId", EmitDefaultValue = false)]
+    [JsonPropertyName("queueId")]
     public string QueueId { get; set; }
 
 
@@ -49,7 +49,7 @@ public partial class AnalyticsResolution : IEquatable<AnalyticsResolution>
     /// The ID of the last user who handled the conversation.
     /// </summary>
     /// <value>The ID of the last user who handled the conversation.</value>
-    [DataMember(Name = "userId", EmitDefaultValue = false)]
+    [JsonPropertyName("userId")]
     public string UserId { get; set; }
 
 
@@ -57,7 +57,7 @@ public partial class AnalyticsResolution : IEquatable<AnalyticsResolution>
     /// <summary>
     /// Gets or Sets NNextContactAvoided
     /// </summary>
-    [DataMember(Name = "nNextContactAvoided", EmitDefaultValue = false)]
+    [JsonPropertyName("nNextContactAvoided")]
     public long? NNextContactAvoided { get; set; }
 
 

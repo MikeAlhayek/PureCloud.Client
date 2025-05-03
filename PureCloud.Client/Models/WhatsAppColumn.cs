@@ -1,4 +1,3 @@
-using System.Runtime.Serialization;
 using System.Text;
 using System.Text.Json.Serialization;
 
@@ -7,7 +6,7 @@ namespace PureCloud.Client.Models;
 /// <summary>
 /// WhatsAppColumn
 /// </summary>
-[DataContract]
+
 public partial class WhatsAppColumn : IEquatable<WhatsAppColumn>
 {
 
@@ -34,7 +33,7 @@ public partial class WhatsAppColumn : IEquatable<WhatsAppColumn>
     /// The name of the whatsApp column.
     /// </summary>
     /// <value>The name of the whatsApp column.</value>
-    [DataMember(Name = "columnName", EmitDefaultValue = false)]
+    [JsonPropertyName("columnName")]
     public string ColumnName { get; set; }
 
 
@@ -43,7 +42,7 @@ public partial class WhatsAppColumn : IEquatable<WhatsAppColumn>
     /// Indicates the type of the whatsApp column. For example, &#39;work&#39; or &#39;personal&#39;.
     /// </summary>
     /// <value>Indicates the type of the whatsApp column. For example, &#39;work&#39; or &#39;personal&#39;.</value>
-    [DataMember(Name = "type", EmitDefaultValue = false)]
+    [JsonPropertyName("type")]
     public string Type { get; set; }
 
 

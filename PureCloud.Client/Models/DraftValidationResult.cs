@@ -1,12 +1,12 @@
-using System.Runtime.Serialization;
 using System.Text;
+using System.Text.Json.Serialization;
 
 namespace PureCloud.Client.Models;
 
 /// <summary>
 /// Validation results
 /// </summary>
-[DataContract]
+
 public partial class DraftValidationResult : IEquatable<DraftValidationResult>
 {
     /// <summary>
@@ -27,7 +27,7 @@ public partial class DraftValidationResult : IEquatable<DraftValidationResult>
     /// Indicates if configuration is valid
     /// </summary>
     /// <value>Indicates if configuration is valid</value>
-    [DataMember(Name = "valid", EmitDefaultValue = false)]
+    [JsonPropertyName("valid")]
     public bool? Valid { get; set; }
 
 
@@ -36,7 +36,7 @@ public partial class DraftValidationResult : IEquatable<DraftValidationResult>
     /// List of errors causing validation failure
     /// </summary>
     /// <value>List of errors causing validation failure</value>
-    [DataMember(Name = "errors", EmitDefaultValue = false)]
+    [JsonPropertyName("errors")]
     public List<ErrorBody> Errors { get; set; }
 
 

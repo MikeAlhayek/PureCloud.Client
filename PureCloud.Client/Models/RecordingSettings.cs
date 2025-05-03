@@ -1,12 +1,12 @@
-using System.Runtime.Serialization;
 using System.Text;
+using System.Text.Json.Serialization;
 
 namespace PureCloud.Client.Models;
 
 /// <summary>
 /// RecordingSettings
 /// </summary>
-[DataContract]
+
 public partial class RecordingSettings : IEquatable<RecordingSettings>
 {
     /// <summary>
@@ -33,7 +33,7 @@ public partial class RecordingSettings : IEquatable<RecordingSettings>
     /// Maximum number of simultaneous screen recording streams
     /// </summary>
     /// <value>Maximum number of simultaneous screen recording streams</value>
-    [DataMember(Name = "maxSimultaneousStreams", EmitDefaultValue = false)]
+    [JsonPropertyName("maxSimultaneousStreams")]
     public int? MaxSimultaneousStreams { get; set; }
 
 
@@ -42,7 +42,7 @@ public partial class RecordingSettings : IEquatable<RecordingSettings>
     /// Upper limit that maxSimultaneousStreams can be configured
     /// </summary>
     /// <value>Upper limit that maxSimultaneousStreams can be configured</value>
-    [DataMember(Name = "maxConfigurableScreenRecordingStreams", EmitDefaultValue = false)]
+    [JsonPropertyName("maxConfigurableScreenRecordingStreams")]
     public int? MaxConfigurableScreenRecordingStreams { get; set; }
 
 
@@ -51,7 +51,7 @@ public partial class RecordingSettings : IEquatable<RecordingSettings>
     /// Store call recordings in the region where they are intended to be recorded, otherwise in the organization&#39;s home region
     /// </summary>
     /// <value>Store call recordings in the region where they are intended to be recorded, otherwise in the organization&#39;s home region</value>
-    [DataMember(Name = "regionalRecordingStorageEnabled", EmitDefaultValue = false)]
+    [JsonPropertyName("regionalRecordingStorageEnabled")]
     public bool? RegionalRecordingStorageEnabled { get; set; }
 
 
@@ -60,7 +60,7 @@ public partial class RecordingSettings : IEquatable<RecordingSettings>
     /// The duration in minutes for which the generated URL for recording playback remains valid.The default duration is set to 60 minutes, with a minimum allowable duration of 2 minutes and a maximum of 60 minutes.
     /// </summary>
     /// <value>The duration in minutes for which the generated URL for recording playback remains valid.The default duration is set to 60 minutes, with a minimum allowable duration of 2 minutes and a maximum of 60 minutes.</value>
-    [DataMember(Name = "recordingPlaybackUrlTtl", EmitDefaultValue = false)]
+    [JsonPropertyName("recordingPlaybackUrlTtl")]
     public int? RecordingPlaybackUrlTtl { get; set; }
 
 
@@ -69,7 +69,7 @@ public partial class RecordingSettings : IEquatable<RecordingSettings>
     /// The duration in minutes for which the generated URL for recording batch download remains valid.The default duration is set to 60 minutes, with a minimum allowable duration of 2 minutes and a maximum of 60 minutes.
     /// </summary>
     /// <value>The duration in minutes for which the generated URL for recording batch download remains valid.The default duration is set to 60 minutes, with a minimum allowable duration of 2 minutes and a maximum of 60 minutes.</value>
-    [DataMember(Name = "recordingBatchDownloadUrlTtl", EmitDefaultValue = false)]
+    [JsonPropertyName("recordingBatchDownloadUrlTtl")]
     public int? RecordingBatchDownloadUrlTtl { get; set; }
 
 

@@ -1,12 +1,12 @@
-using System.Runtime.Serialization;
 using System.Text;
+using System.Text.Json.Serialization;
 
 namespace PureCloud.Client.Models;
 
 /// <summary>
 /// ModelMetaDataResult
 /// </summary>
-[DataContract]
+
 public partial class ModelMetaDataResult : IEquatable<ModelMetaDataResult>
 {
     /// <summary>
@@ -27,7 +27,7 @@ public partial class ModelMetaDataResult : IEquatable<ModelMetaDataResult>
     /// Information about the continuous forecast session
     /// </summary>
     /// <value>Information about the continuous forecast session</value>
-    [DataMember(Name = "sessionInfo", EmitDefaultValue = false)]
+    [JsonPropertyName("sessionInfo")]
     public SessionInfo SessionInfo { get; set; }
 
 
@@ -36,7 +36,7 @@ public partial class ModelMetaDataResult : IEquatable<ModelMetaDataResult>
     /// List of planning groups
     /// </summary>
     /// <value>List of planning groups</value>
-    [DataMember(Name = "planningGroups", EmitDefaultValue = false)]
+    [JsonPropertyName("planningGroups")]
     public List<PlanningGroupModel> PlanningGroups { get; set; }
 
 

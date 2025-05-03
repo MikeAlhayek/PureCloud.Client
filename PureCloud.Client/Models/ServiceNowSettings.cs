@@ -1,12 +1,12 @@
-using System.Runtime.Serialization;
 using System.Text;
+using System.Text.Json.Serialization;
 
 namespace PureCloud.Client.Models;
 
 /// <summary>
 /// ServiceNowSettings
 /// </summary>
-[DataContract]
+
 public partial class ServiceNowSettings : IEquatable<ServiceNowSettings>
 {
     /// <summary>
@@ -31,7 +31,7 @@ public partial class ServiceNowSettings : IEquatable<ServiceNowSettings>
     /// Filter source by knowledge base ids.
     /// </summary>
     /// <value>Filter source by knowledge base ids.</value>
-    [DataMember(Name = "knowledgeBaseIds", EmitDefaultValue = false)]
+    [JsonPropertyName("knowledgeBaseIds")]
     public List<string> KnowledgeBaseIds { get; set; }
 
 
@@ -40,7 +40,7 @@ public partial class ServiceNowSettings : IEquatable<ServiceNowSettings>
     /// Filter source by language.
     /// </summary>
     /// <value>Filter source by language.</value>
-    [DataMember(Name = "language", EmitDefaultValue = false)]
+    [JsonPropertyName("language")]
     public string Language { get; set; }
 
 
@@ -49,7 +49,7 @@ public partial class ServiceNowSettings : IEquatable<ServiceNowSettings>
     /// Filter source by categories.
     /// </summary>
     /// <value>Filter source by categories.</value>
-    [DataMember(Name = "categories", EmitDefaultValue = false)]
+    [JsonPropertyName("categories")]
     public List<string> Categories { get; set; }
 
 
@@ -58,7 +58,7 @@ public partial class ServiceNowSettings : IEquatable<ServiceNowSettings>
     /// The base URL to resources.
     /// </summary>
     /// <value>The base URL to resources.</value>
-    [DataMember(Name = "baseUrl", EmitDefaultValue = false)]
+    [JsonPropertyName("baseUrl")]
     public string BaseUrl { get; set; }
 
 

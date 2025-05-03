@@ -1,12 +1,12 @@
-using System.Runtime.Serialization;
 using System.Text;
+using System.Text.Json.Serialization;
 
 namespace PureCloud.Client.Models;
 
 /// <summary>
 /// Messaging setting for messaging platform integrations
 /// </summary>
-[DataContract]
+
 public partial class MessagingSetting : IEquatable<MessagingSetting>
 {
     /// <summary>
@@ -29,7 +29,7 @@ public partial class MessagingSetting : IEquatable<MessagingSetting>
     /// The messaging Setting unique identifier associated with this integration
     /// </summary>
     /// <value>The messaging Setting unique identifier associated with this integration</value>
-    [DataMember(Name = "id", EmitDefaultValue = false)]
+    [JsonPropertyName("id")]
     public string Id { get; private set; }
 
 
@@ -38,7 +38,7 @@ public partial class MessagingSetting : IEquatable<MessagingSetting>
     /// The messaging Setting profile name
     /// </summary>
     /// <value>The messaging Setting profile name</value>
-    [DataMember(Name = "name", EmitDefaultValue = false)]
+    [JsonPropertyName("name")]
     public string Name { get; set; }
 
 
@@ -47,7 +47,7 @@ public partial class MessagingSetting : IEquatable<MessagingSetting>
     /// Date this messaging setting was created. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z
     /// </summary>
     /// <value>Date this messaging setting was created. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z</value>
-    [DataMember(Name = "dateCreated", EmitDefaultValue = false)]
+    [JsonPropertyName("dateCreated")]
     public DateTime? DateCreated { get; private set; }
 
 
@@ -56,7 +56,7 @@ public partial class MessagingSetting : IEquatable<MessagingSetting>
     /// Date this messaging setting was modified. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z
     /// </summary>
     /// <value>Date this messaging setting was modified. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z</value>
-    [DataMember(Name = "dateModified", EmitDefaultValue = false)]
+    [JsonPropertyName("dateModified")]
     public DateTime? DateModified { get; private set; }
 
 
@@ -65,7 +65,7 @@ public partial class MessagingSetting : IEquatable<MessagingSetting>
     /// Version number
     /// </summary>
     /// <value>Version number</value>
-    [DataMember(Name = "version", EmitDefaultValue = false)]
+    [JsonPropertyName("version")]
     public string Version { get; private set; }
 
 
@@ -74,7 +74,7 @@ public partial class MessagingSetting : IEquatable<MessagingSetting>
     /// User reference that created this Setting
     /// </summary>
     /// <value>User reference that created this Setting</value>
-    [DataMember(Name = "createdBy", EmitDefaultValue = false)]
+    [JsonPropertyName("createdBy")]
     public DomainEntityRef CreatedBy { get; private set; }
 
 
@@ -83,7 +83,7 @@ public partial class MessagingSetting : IEquatable<MessagingSetting>
     /// User reference that modified this Setting
     /// </summary>
     /// <value>User reference that modified this Setting</value>
-    [DataMember(Name = "updatedBy", EmitDefaultValue = false)]
+    [JsonPropertyName("updatedBy")]
     public DomainEntityRef UpdatedBy { get; private set; }
 
 
@@ -92,7 +92,7 @@ public partial class MessagingSetting : IEquatable<MessagingSetting>
     /// Configuration relating to message contents
     /// </summary>
     /// <value>Configuration relating to message contents</value>
-    [DataMember(Name = "content", EmitDefaultValue = false)]
+    [JsonPropertyName("content")]
     public ContentSetting Content { get; set; }
 
 
@@ -101,7 +101,7 @@ public partial class MessagingSetting : IEquatable<MessagingSetting>
     /// Configuration relating to events which may occur
     /// </summary>
     /// <value>Configuration relating to events which may occur</value>
-    [DataMember(Name = "event", EmitDefaultValue = false)]
+    [JsonPropertyName("event")]
     public EventSetting Event { get; set; }
 
 
@@ -110,7 +110,7 @@ public partial class MessagingSetting : IEquatable<MessagingSetting>
     /// The URI for this object
     /// </summary>
     /// <value>The URI for this object</value>
-    [DataMember(Name = "selfUri", EmitDefaultValue = false)]
+    [JsonPropertyName("selfUri")]
     public string SelfUri { get; private set; }
 
 

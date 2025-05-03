@@ -1,4 +1,3 @@
-using System.Runtime.Serialization;
 using System.Text;
 using System.Text.Json.Serialization;
 
@@ -7,7 +6,7 @@ namespace PureCloud.Client.Models;
 /// <summary>
 /// LabelsFilter
 /// </summary>
-[DataContract]
+
 public partial class LabelsFilter : IEquatable<LabelsFilter>
 {
 
@@ -32,7 +31,7 @@ public partial class LabelsFilter : IEquatable<LabelsFilter>
     /// A list of labels to filter by. Articles matching any of the specified labels can be accessed.
     /// </summary>
     /// <value>A list of labels to filter by. Articles matching any of the specified labels can be accessed.</value>
-    [DataMember(Name = "entities", EmitDefaultValue = false)]
+    [JsonPropertyName("entities")]
     public List<LabelEntity> Entities { get; set; }
 
 

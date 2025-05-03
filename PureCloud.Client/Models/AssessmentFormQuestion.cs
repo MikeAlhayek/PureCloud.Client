@@ -7,13 +7,13 @@ namespace PureCloud.Client.Models;
 /// <summary>
 /// AssessmentFormQuestion
 /// </summary>
-[DataContract]
+
 public partial class AssessmentFormQuestion : IEquatable<AssessmentFormQuestion>
 {
     /// <summary>
     /// Gets or Sets Type
     /// </summary>
-    [JsonConverter(typeof(JsonStringEnumConverter))]
+    
     public enum TypeEnum
     {
         /// <summary>
@@ -51,7 +51,7 @@ public partial class AssessmentFormQuestion : IEquatable<AssessmentFormQuestion>
     /// <summary>
     /// Gets or Sets Type
     /// </summary>
-    [DataMember(Name = "type", EmitDefaultValue = false)]
+    [JsonPropertyName("type")]
     public TypeEnum? Type { get; set; }
 
     /// <summary>
@@ -94,7 +94,7 @@ public partial class AssessmentFormQuestion : IEquatable<AssessmentFormQuestion>
     /// <summary>
     /// Gets or Sets Id
     /// </summary>
-    [DataMember(Name = "id", EmitDefaultValue = false)]
+    [JsonPropertyName("id")]
     public string Id { get; set; }
 
 
@@ -105,7 +105,7 @@ public partial class AssessmentFormQuestion : IEquatable<AssessmentFormQuestion>
     /// The question text
     /// </summary>
     /// <value>The question text</value>
-    [DataMember(Name = "text", EmitDefaultValue = false)]
+    [JsonPropertyName("text")]
     public string Text { get; set; }
 
 
@@ -113,7 +113,7 @@ public partial class AssessmentFormQuestion : IEquatable<AssessmentFormQuestion>
     /// <summary>
     /// Gets or Sets HelpText
     /// </summary>
-    [DataMember(Name = "helpText", EmitDefaultValue = false)]
+    [JsonPropertyName("helpText")]
     public string HelpText { get; set; }
 
 
@@ -121,7 +121,7 @@ public partial class AssessmentFormQuestion : IEquatable<AssessmentFormQuestion>
     /// <summary>
     /// Gets or Sets NaEnabled
     /// </summary>
-    [DataMember(Name = "naEnabled", EmitDefaultValue = false)]
+    [JsonPropertyName("naEnabled")]
     public bool? NaEnabled { get; set; }
 
 
@@ -129,7 +129,7 @@ public partial class AssessmentFormQuestion : IEquatable<AssessmentFormQuestion>
     /// <summary>
     /// Gets or Sets CommentsRequired
     /// </summary>
-    [DataMember(Name = "commentsRequired", EmitDefaultValue = false)]
+    [JsonPropertyName("commentsRequired")]
     public bool? CommentsRequired { get; set; }
 
 
@@ -137,7 +137,7 @@ public partial class AssessmentFormQuestion : IEquatable<AssessmentFormQuestion>
     /// <summary>
     /// Gets or Sets VisibilityCondition
     /// </summary>
-    [DataMember(Name = "visibilityCondition", EmitDefaultValue = false)]
+    [JsonPropertyName("visibilityCondition")]
     public VisibilityCondition VisibilityCondition { get; set; }
 
 
@@ -146,7 +146,7 @@ public partial class AssessmentFormQuestion : IEquatable<AssessmentFormQuestion>
     /// Options from which to choose an answer for this question. Only used by Multiple Choice type questions.
     /// </summary>
     /// <value>Options from which to choose an answer for this question. Only used by Multiple Choice type questions.</value>
-    [DataMember(Name = "answerOptions", EmitDefaultValue = false)]
+    [JsonPropertyName("answerOptions")]
     public List<AnswerOption> AnswerOptions { get; set; }
 
 
@@ -155,7 +155,7 @@ public partial class AssessmentFormQuestion : IEquatable<AssessmentFormQuestion>
     /// How many characters are allowed in the text response to this question. Used by Free Text question types.
     /// </summary>
     /// <value>How many characters are allowed in the text response to this question. Used by Free Text question types.</value>
-    [DataMember(Name = "maxResponseCharacters", EmitDefaultValue = false)]
+    [JsonPropertyName("maxResponseCharacters")]
     public int? MaxResponseCharacters { get; set; }
 
 
@@ -164,7 +164,7 @@ public partial class AssessmentFormQuestion : IEquatable<AssessmentFormQuestion>
     /// Does an incorrect answer to this question mark the form as having a failed kill question. Only used by Multiple Choice type questions.
     /// </summary>
     /// <value>Does an incorrect answer to this question mark the form as having a failed kill question. Only used by Multiple Choice type questions.</value>
-    [DataMember(Name = "isKill", EmitDefaultValue = false)]
+    [JsonPropertyName("isKill")]
     public bool? IsKill { get; set; }
 
 
@@ -173,7 +173,7 @@ public partial class AssessmentFormQuestion : IEquatable<AssessmentFormQuestion>
     /// Does this question contribute to the critical score. Only used by Multiple Choice type questions.
     /// </summary>
     /// <value>Does this question contribute to the critical score. Only used by Multiple Choice type questions.</value>
-    [DataMember(Name = "isCritical", EmitDefaultValue = false)]
+    [JsonPropertyName("isCritical")]
     public bool? IsCritical { get; set; }
 
 

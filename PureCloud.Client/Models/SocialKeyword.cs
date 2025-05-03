@@ -1,12 +1,12 @@
-using System.Runtime.Serialization;
 using System.Text;
+using System.Text.Json.Serialization;
 
 namespace PureCloud.Client.Models;
 
 /// <summary>
 /// SocialKeyword
 /// </summary>
-[DataContract]
+
 public partial class SocialKeyword : IEquatable<SocialKeyword>
 {
     /// <summary>
@@ -27,7 +27,7 @@ public partial class SocialKeyword : IEquatable<SocialKeyword>
     /// List of keywords that must be included
     /// </summary>
     /// <value>List of keywords that must be included</value>
-    [DataMember(Name = "includes", EmitDefaultValue = false)]
+    [JsonPropertyName("includes")]
     public List<string> Includes { get; set; }
 
 
@@ -36,7 +36,7 @@ public partial class SocialKeyword : IEquatable<SocialKeyword>
     /// List of keywords that must be excluded
     /// </summary>
     /// <value>List of keywords that must be excluded</value>
-    [DataMember(Name = "excludes", EmitDefaultValue = false)]
+    [JsonPropertyName("excludes")]
     public List<string> Excludes { get; set; }
 
 

@@ -1,4 +1,3 @@
-using System.Runtime.Serialization;
 using System.Text;
 using System.Text.Json.Serialization;
 
@@ -7,7 +6,7 @@ namespace PureCloud.Client.Models;
 /// <summary>
 /// CsvJobResponse
 /// </summary>
-[DataContract]
+
 public partial class CsvJobResponse : IEquatable<CsvJobResponse>
 {
 
@@ -32,7 +31,7 @@ public partial class CsvJobResponse : IEquatable<CsvJobResponse>
     /// Job for the import
     /// </summary>
     /// <value>Job for the import</value>
-    [DataMember(Name = "job", EmitDefaultValue = false)]
+    [JsonPropertyName("job")]
     public AddressableEntityRef Job { get; set; }
 
 

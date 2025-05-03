@@ -7,14 +7,14 @@ namespace PureCloud.Client.Models;
 /// <summary>
 /// SupportedLanguagesInfoDefinition
 /// </summary>
-[DataContract]
+
 public partial class SupportedLanguagesInfoDefinition : IEquatable<SupportedLanguagesInfoDefinition>
 {
     /// <summary>
     /// The language release status
     /// </summary>
     /// <value>The language release status</value>
-    [JsonConverter(typeof(JsonStringEnumConverter))]
+    
     public enum StatusEnum
     {
         /// <summary>
@@ -47,7 +47,7 @@ public partial class SupportedLanguagesInfoDefinition : IEquatable<SupportedLang
     /// The language release status
     /// </summary>
     /// <value>The language release status</value>
-    [DataMember(Name = "status", EmitDefaultValue = false)]
+    [JsonPropertyName("status")]
     public StatusEnum? Status { get; set; }
     /// <summary>
     /// Initializes a new instance of the <see cref="SupportedLanguagesInfoDefinition" /> class.
@@ -73,7 +73,7 @@ public partial class SupportedLanguagesInfoDefinition : IEquatable<SupportedLang
     /// The given supported Language
     /// </summary>
     /// <value>The given supported Language</value>
-    [DataMember(Name = "language", EmitDefaultValue = false)]
+    [JsonPropertyName("language")]
     public string Language { get; set; }
 
 
@@ -82,7 +82,7 @@ public partial class SupportedLanguagesInfoDefinition : IEquatable<SupportedLang
     /// The boolean status of if intent classification is supported in this language
     /// </summary>
     /// <value>The boolean status of if intent classification is supported in this language</value>
-    [DataMember(Name = "intentClassification", EmitDefaultValue = false)]
+    [JsonPropertyName("intentClassification")]
     public bool? IntentClassification { get; set; }
 
 
@@ -93,7 +93,7 @@ public partial class SupportedLanguagesInfoDefinition : IEquatable<SupportedLang
     /// The supported entity types for this language
     /// </summary>
     /// <value>The supported entity types for this language</value>
-    [DataMember(Name = "supportedEntityTypes", EmitDefaultValue = false)]
+    [JsonPropertyName("supportedEntityTypes")]
     public List<string> SupportedEntityTypes { get; set; }
 
 
@@ -102,7 +102,7 @@ public partial class SupportedLanguagesInfoDefinition : IEquatable<SupportedLang
     /// The configuration for the supported entity types
     /// </summary>
     /// <value>The configuration for the supported entity types</value>
-    [DataMember(Name = "supportedEntityTypeConfiguration", EmitDefaultValue = false)]
+    [JsonPropertyName("supportedEntityTypeConfiguration")]
     public SupportedEntityTypeStatus SupportedEntityTypeConfiguration { get; set; }
 
 

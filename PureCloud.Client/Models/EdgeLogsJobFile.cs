@@ -7,14 +7,14 @@ namespace PureCloud.Client.Models;
 /// <summary>
 /// EdgeLogsJobFile
 /// </summary>
-[DataContract]
+
 public partial class EdgeLogsJobFile : IEquatable<EdgeLogsJobFile>
 {
     /// <summary>
     /// Indicates if the resource is active, inactive, or deleted.
     /// </summary>
     /// <value>Indicates if the resource is active, inactive, or deleted.</value>
-    [JsonConverter(typeof(JsonStringEnumConverter))]
+    
     public enum StateEnum
     {
         /// <summary>
@@ -47,7 +47,7 @@ public partial class EdgeLogsJobFile : IEquatable<EdgeLogsJobFile>
     /// The status of the upload of this file from the Edge to the cloud.  Use /upload to start an upload.
     /// </summary>
     /// <value>The status of the upload of this file from the Edge to the cloud.  Use /upload to start an upload.</value>
-    [JsonConverter(typeof(JsonStringEnumConverter))]
+    
     public enum UploadStatusEnum
     {
         /// <summary>
@@ -86,13 +86,13 @@ public partial class EdgeLogsJobFile : IEquatable<EdgeLogsJobFile>
     /// Indicates if the resource is active, inactive, or deleted.
     /// </summary>
     /// <value>Indicates if the resource is active, inactive, or deleted.</value>
-    [DataMember(Name = "state", EmitDefaultValue = false)]
+    [JsonPropertyName("state")]
     public StateEnum? State { get; private set; }
     /// <summary>
     /// The status of the upload of this file from the Edge to the cloud.  Use /upload to start an upload.
     /// </summary>
     /// <value>The status of the upload of this file from the Edge to the cloud.  Use /upload to start an upload.</value>
-    [DataMember(Name = "uploadStatus", EmitDefaultValue = false)]
+    [JsonPropertyName("uploadStatus")]
     public UploadStatusEnum? UploadStatus { get; set; }
 
     /// <summary>
@@ -134,7 +134,7 @@ public partial class EdgeLogsJobFile : IEquatable<EdgeLogsJobFile>
     /// The globally unique identifier for the object.
     /// </summary>
     /// <value>The globally unique identifier for the object.</value>
-    [DataMember(Name = "id", EmitDefaultValue = false)]
+    [JsonPropertyName("id")]
     public string Id { get; private set; }
 
 
@@ -143,7 +143,7 @@ public partial class EdgeLogsJobFile : IEquatable<EdgeLogsJobFile>
     /// The name of the entity.
     /// </summary>
     /// <value>The name of the entity.</value>
-    [DataMember(Name = "name", EmitDefaultValue = false)]
+    [JsonPropertyName("name")]
     public string Name { get; set; }
 
 
@@ -152,7 +152,7 @@ public partial class EdgeLogsJobFile : IEquatable<EdgeLogsJobFile>
     /// The division to which this entity belongs.
     /// </summary>
     /// <value>The division to which this entity belongs.</value>
-    [DataMember(Name = "division", EmitDefaultValue = false)]
+    [JsonPropertyName("division")]
     public Division Division { get; set; }
 
 
@@ -161,7 +161,7 @@ public partial class EdgeLogsJobFile : IEquatable<EdgeLogsJobFile>
     /// The resource&#39;s description.
     /// </summary>
     /// <value>The resource&#39;s description.</value>
-    [DataMember(Name = "description", EmitDefaultValue = false)]
+    [JsonPropertyName("description")]
     public string Description { get; set; }
 
 
@@ -170,7 +170,7 @@ public partial class EdgeLogsJobFile : IEquatable<EdgeLogsJobFile>
     /// The current version of the resource.
     /// </summary>
     /// <value>The current version of the resource.</value>
-    [DataMember(Name = "version", EmitDefaultValue = false)]
+    [JsonPropertyName("version")]
     public int? Version { get; set; }
 
 
@@ -179,7 +179,7 @@ public partial class EdgeLogsJobFile : IEquatable<EdgeLogsJobFile>
     /// The date the resource was created. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z
     /// </summary>
     /// <value>The date the resource was created. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z</value>
-    [DataMember(Name = "dateCreated", EmitDefaultValue = false)]
+    [JsonPropertyName("dateCreated")]
     public DateTime? DateCreated { get; private set; }
 
 
@@ -188,7 +188,7 @@ public partial class EdgeLogsJobFile : IEquatable<EdgeLogsJobFile>
     /// The date of the last modification to the resource. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z
     /// </summary>
     /// <value>The date of the last modification to the resource. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z</value>
-    [DataMember(Name = "dateModified", EmitDefaultValue = false)]
+    [JsonPropertyName("dateModified")]
     public DateTime? DateModified { get; private set; }
 
 
@@ -197,7 +197,7 @@ public partial class EdgeLogsJobFile : IEquatable<EdgeLogsJobFile>
     /// The ID of the user that last modified the resource.
     /// </summary>
     /// <value>The ID of the user that last modified the resource.</value>
-    [DataMember(Name = "modifiedBy", EmitDefaultValue = false)]
+    [JsonPropertyName("modifiedBy")]
     public string ModifiedBy { get; private set; }
 
 
@@ -206,7 +206,7 @@ public partial class EdgeLogsJobFile : IEquatable<EdgeLogsJobFile>
     /// The ID of the user that created the resource.
     /// </summary>
     /// <value>The ID of the user that created the resource.</value>
-    [DataMember(Name = "createdBy", EmitDefaultValue = false)]
+    [JsonPropertyName("createdBy")]
     public string CreatedBy { get; private set; }
 
 
@@ -217,7 +217,7 @@ public partial class EdgeLogsJobFile : IEquatable<EdgeLogsJobFile>
     /// The application that last modified the resource.
     /// </summary>
     /// <value>The application that last modified the resource.</value>
-    [DataMember(Name = "modifiedByApp", EmitDefaultValue = false)]
+    [JsonPropertyName("modifiedByApp")]
     public string ModifiedByApp { get; private set; }
 
 
@@ -226,7 +226,7 @@ public partial class EdgeLogsJobFile : IEquatable<EdgeLogsJobFile>
     /// The application that created the resource.
     /// </summary>
     /// <value>The application that created the resource.</value>
-    [DataMember(Name = "createdByApp", EmitDefaultValue = false)]
+    [JsonPropertyName("createdByApp")]
     public string CreatedByApp { get; private set; }
 
 
@@ -235,7 +235,7 @@ public partial class EdgeLogsJobFile : IEquatable<EdgeLogsJobFile>
     /// Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z
     /// </summary>
     /// <value>Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z</value>
-    [DataMember(Name = "timeCreated", EmitDefaultValue = false)]
+    [JsonPropertyName("timeCreated")]
     public DateTime? TimeCreated { get; set; }
 
 
@@ -244,7 +244,7 @@ public partial class EdgeLogsJobFile : IEquatable<EdgeLogsJobFile>
     /// The time this log file was last modified on the Edge. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z
     /// </summary>
     /// <value>The time this log file was last modified on the Edge. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z</value>
-    [DataMember(Name = "timeModified", EmitDefaultValue = false)]
+    [JsonPropertyName("timeModified")]
     public DateTime? TimeModified { get; set; }
 
 
@@ -253,7 +253,7 @@ public partial class EdgeLogsJobFile : IEquatable<EdgeLogsJobFile>
     /// The size of this file in bytes.
     /// </summary>
     /// <value>The size of this file in bytes.</value>
-    [DataMember(Name = "sizeBytes", EmitDefaultValue = false)]
+    [JsonPropertyName("sizeBytes")]
     public double? SizeBytes { get; set; }
 
 
@@ -264,7 +264,7 @@ public partial class EdgeLogsJobFile : IEquatable<EdgeLogsJobFile>
     /// The path of this file on the Edge.
     /// </summary>
     /// <value>The path of this file on the Edge.</value>
-    [DataMember(Name = "edgePath", EmitDefaultValue = false)]
+    [JsonPropertyName("edgePath")]
     public string EdgePath { get; set; }
 
 
@@ -273,7 +273,7 @@ public partial class EdgeLogsJobFile : IEquatable<EdgeLogsJobFile>
     /// The download ID to use with the downloads API.
     /// </summary>
     /// <value>The download ID to use with the downloads API.</value>
-    [DataMember(Name = "downloadId", EmitDefaultValue = false)]
+    [JsonPropertyName("downloadId")]
     public string DownloadId { get; set; }
 
 
@@ -282,7 +282,7 @@ public partial class EdgeLogsJobFile : IEquatable<EdgeLogsJobFile>
     /// The URI for this object
     /// </summary>
     /// <value>The URI for this object</value>
-    [DataMember(Name = "selfUri", EmitDefaultValue = false)]
+    [JsonPropertyName("selfUri")]
     public string SelfUri { get; private set; }
 
 

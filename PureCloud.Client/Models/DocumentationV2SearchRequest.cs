@@ -7,14 +7,14 @@ namespace PureCloud.Client.Models;
 /// <summary>
 /// DocumentationV2SearchRequest
 /// </summary>
-[DataContract]
+
 public partial class DocumentationV2SearchRequest : IEquatable<DocumentationV2SearchRequest>
 {
     /// <summary>
     /// The sort order for results
     /// </summary>
     /// <value>The sort order for results</value>
-    [JsonConverter(typeof(JsonStringEnumConverter))]
+    
     public enum SortOrderEnum
     {
         /// <summary>
@@ -47,7 +47,7 @@ public partial class DocumentationV2SearchRequest : IEquatable<DocumentationV2Se
     /// The sort order for results
     /// </summary>
     /// <value>The sort order for results</value>
-    [DataMember(Name = "sortOrder", EmitDefaultValue = false)]
+    [JsonPropertyName("sortOrder")]
     public SortOrderEnum? SortOrder { get; set; }
 
     /// <summary>
@@ -87,7 +87,7 @@ public partial class DocumentationV2SearchRequest : IEquatable<DocumentationV2Se
     /// The field in the resource that you want to sort the results by
     /// </summary>
     /// <value>The field in the resource that you want to sort the results by</value>
-    [DataMember(Name = "sortBy", EmitDefaultValue = false)]
+    [JsonPropertyName("sortBy")]
     public string SortBy { get; set; }
 
 
@@ -96,7 +96,7 @@ public partial class DocumentationV2SearchRequest : IEquatable<DocumentationV2Se
     /// The number of results per page
     /// </summary>
     /// <value>The number of results per page</value>
-    [DataMember(Name = "pageSize", EmitDefaultValue = false)]
+    [JsonPropertyName("pageSize")]
     public int? PageSize { get; set; }
 
 
@@ -105,7 +105,7 @@ public partial class DocumentationV2SearchRequest : IEquatable<DocumentationV2Se
     /// The page of resources you want to retrieve
     /// </summary>
     /// <value>The page of resources you want to retrieve</value>
-    [DataMember(Name = "pageNumber", EmitDefaultValue = false)]
+    [JsonPropertyName("pageNumber")]
     public int? PageNumber { get; set; }
 
 
@@ -114,7 +114,7 @@ public partial class DocumentationV2SearchRequest : IEquatable<DocumentationV2Se
     /// Multi-value sort order, list of multiple sort values
     /// </summary>
     /// <value>Multi-value sort order, list of multiple sort values</value>
-    [DataMember(Name = "sort", EmitDefaultValue = false)]
+    [JsonPropertyName("sort")]
     public List<SearchSort> Sort { get; set; }
 
 
@@ -123,7 +123,7 @@ public partial class DocumentationV2SearchRequest : IEquatable<DocumentationV2Se
     /// Resource domain type to search
     /// </summary>
     /// <value>Resource domain type to search</value>
-    [DataMember(Name = "types", EmitDefaultValue = false)]
+    [JsonPropertyName("types")]
     public List<string> Types { get; set; }
 
 
@@ -132,7 +132,7 @@ public partial class DocumentationV2SearchRequest : IEquatable<DocumentationV2Se
     /// The search criteria
     /// </summary>
     /// <value>The search criteria</value>
-    [DataMember(Name = "query", EmitDefaultValue = false)]
+    [JsonPropertyName("query")]
     public List<DocumentationV2SearchCriteria> Query { get; set; }
 
 
@@ -141,7 +141,7 @@ public partial class DocumentationV2SearchRequest : IEquatable<DocumentationV2Se
     /// Aggregation criteria
     /// </summary>
     /// <value>Aggregation criteria</value>
-    [DataMember(Name = "aggregations", EmitDefaultValue = false)]
+    [JsonPropertyName("aggregations")]
     public List<DocumentationV2SearchAggregation> Aggregations { get; set; }
 
 

@@ -1,12 +1,12 @@
-using System.Runtime.Serialization;
 using System.Text;
+using System.Text.Json.Serialization;
 
 namespace PureCloud.Client.Models;
 
 /// <summary>
 /// RoomUpdateRequest
 /// </summary>
-[DataContract]
+
 public partial class RoomUpdateRequest : IEquatable<RoomUpdateRequest>
 {
     /// <summary>
@@ -31,7 +31,7 @@ public partial class RoomUpdateRequest : IEquatable<RoomUpdateRequest>
     /// Room&#39;s description
     /// </summary>
     /// <value>Room&#39;s description</value>
-    [DataMember(Name = "description", EmitDefaultValue = false)]
+    [JsonPropertyName("description")]
     public string Description { get; set; }
 
 
@@ -40,7 +40,7 @@ public partial class RoomUpdateRequest : IEquatable<RoomUpdateRequest>
     /// Room&#39;s subject
     /// </summary>
     /// <value>Room&#39;s subject</value>
-    [DataMember(Name = "subject", EmitDefaultValue = false)]
+    [JsonPropertyName("subject")]
     public string Subject { get; set; }
 
 
@@ -49,7 +49,7 @@ public partial class RoomUpdateRequest : IEquatable<RoomUpdateRequest>
     /// Room&#39;s pinned messages
     /// </summary>
     /// <value>Room&#39;s pinned messages</value>
-    [DataMember(Name = "pinnedMessageIds", EmitDefaultValue = false)]
+    [JsonPropertyName("pinnedMessageIds")]
     public List<string> PinnedMessageIds { get; set; }
 
 
@@ -58,7 +58,7 @@ public partial class RoomUpdateRequest : IEquatable<RoomUpdateRequest>
     /// Room&#39;s owners
     /// </summary>
     /// <value>Room&#39;s owners</value>
-    [DataMember(Name = "ownerIds", EmitDefaultValue = false)]
+    [JsonPropertyName("ownerIds")]
     public List<string> OwnerIds { get; set; }
 
 

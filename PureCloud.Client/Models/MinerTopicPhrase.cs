@@ -1,12 +1,12 @@
-using System.Runtime.Serialization;
 using System.Text;
+using System.Text.Json.Serialization;
 
 namespace PureCloud.Client.Models;
 
 /// <summary>
 /// MinerTopicPhrase
 /// </summary>
-[DataContract]
+
 public partial class MinerTopicPhrase : IEquatable<MinerTopicPhrase>
 {
     /// <summary>
@@ -31,7 +31,7 @@ public partial class MinerTopicPhrase : IEquatable<MinerTopicPhrase>
     /// The globally unique identifier for the object.
     /// </summary>
     /// <value>The globally unique identifier for the object.</value>
-    [DataMember(Name = "id", EmitDefaultValue = false)]
+    [JsonPropertyName("id")]
     public string Id { get; private set; }
 
 
@@ -40,7 +40,7 @@ public partial class MinerTopicPhrase : IEquatable<MinerTopicPhrase>
     /// Phrase name.
     /// </summary>
     /// <value>Phrase name.</value>
-    [DataMember(Name = "name", EmitDefaultValue = false)]
+    [JsonPropertyName("name")]
     public string Name { get; set; }
 
 
@@ -49,7 +49,7 @@ public partial class MinerTopicPhrase : IEquatable<MinerTopicPhrase>
     /// Topic associated with a phrase.
     /// </summary>
     /// <value>Topic associated with a phrase.</value>
-    [DataMember(Name = "topic", EmitDefaultValue = false)]
+    [JsonPropertyName("topic")]
     public MinerTopic Topic { get; set; }
 
 
@@ -58,7 +58,7 @@ public partial class MinerTopicPhrase : IEquatable<MinerTopicPhrase>
     /// List of utterances related to a phrase.
     /// </summary>
     /// <value>List of utterances related to a phrase.</value>
-    [DataMember(Name = "utterances", EmitDefaultValue = false)]
+    [JsonPropertyName("utterances")]
     public List<Utterance> Utterances { get; set; }
 
 
@@ -67,7 +67,7 @@ public partial class MinerTopicPhrase : IEquatable<MinerTopicPhrase>
     /// Number of utterances belonging to a phrase
     /// </summary>
     /// <value>Number of utterances belonging to a phrase</value>
-    [DataMember(Name = "utteranceCount", EmitDefaultValue = false)]
+    [JsonPropertyName("utteranceCount")]
     public int? UtteranceCount { get; set; }
 
 
@@ -76,7 +76,7 @@ public partial class MinerTopicPhrase : IEquatable<MinerTopicPhrase>
     /// The URI for this object
     /// </summary>
     /// <value>The URI for this object</value>
-    [DataMember(Name = "selfUri", EmitDefaultValue = false)]
+    [JsonPropertyName("selfUri")]
     public string SelfUri { get; private set; }
 
 

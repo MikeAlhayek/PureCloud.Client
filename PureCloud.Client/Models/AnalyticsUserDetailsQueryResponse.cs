@@ -1,12 +1,12 @@
-using System.Runtime.Serialization;
 using System.Text;
+using System.Text.Json.Serialization;
 
 namespace PureCloud.Client.Models;
 
 /// <summary>
 /// AnalyticsUserDetailsQueryResponse
 /// </summary>
-[DataContract]
+
 public partial class AnalyticsUserDetailsQueryResponse : IEquatable<AnalyticsUserDetailsQueryResponse>
 {
     /// <summary>
@@ -28,7 +28,7 @@ public partial class AnalyticsUserDetailsQueryResponse : IEquatable<AnalyticsUse
     /// <summary>
     /// Gets or Sets UserDetails
     /// </summary>
-    [DataMember(Name = "userDetails", EmitDefaultValue = false)]
+    [JsonPropertyName("userDetails")]
     public List<AnalyticsUserDetail> UserDetails { get; set; }
 
 
@@ -36,7 +36,7 @@ public partial class AnalyticsUserDetailsQueryResponse : IEquatable<AnalyticsUse
     /// <summary>
     /// Gets or Sets Aggregations
     /// </summary>
-    [DataMember(Name = "aggregations", EmitDefaultValue = false)]
+    [JsonPropertyName("aggregations")]
     public List<AggregationResult> Aggregations { get; set; }
 
 
@@ -44,7 +44,7 @@ public partial class AnalyticsUserDetailsQueryResponse : IEquatable<AnalyticsUse
     /// <summary>
     /// Gets or Sets TotalHits
     /// </summary>
-    [DataMember(Name = "totalHits", EmitDefaultValue = false)]
+    [JsonPropertyName("totalHits")]
     public int? TotalHits { get; set; }
 
 

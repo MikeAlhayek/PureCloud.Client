@@ -1,4 +1,3 @@
-using System.Runtime.Serialization;
 using System.Text;
 using System.Text.Json.Serialization;
 
@@ -7,7 +6,7 @@ namespace PureCloud.Client.Models;
 /// <summary>
 /// SdkLibrary
 /// </summary>
-[DataContract]
+
 public partial class SdkLibrary : IEquatable<SdkLibrary>
 {
 
@@ -34,7 +33,7 @@ public partial class SdkLibrary : IEquatable<SdkLibrary>
     /// The name of the SDK.
     /// </summary>
     /// <value>The name of the SDK.</value>
-    [DataMember(Name = "name", EmitDefaultValue = false)]
+    [JsonPropertyName("name")]
     public string Name { get; set; }
 
 
@@ -43,7 +42,7 @@ public partial class SdkLibrary : IEquatable<SdkLibrary>
     /// The version of the SDK.
     /// </summary>
     /// <value>The version of the SDK.</value>
-    [DataMember(Name = "version", EmitDefaultValue = false)]
+    [JsonPropertyName("version")]
     public string Version { get; set; }
 
 

@@ -1,12 +1,12 @@
-using System.Runtime.Serialization;
 using System.Text;
+using System.Text.Json.Serialization;
 
 namespace PureCloud.Client.Models;
 
 /// <summary>
 /// KnowledgeDocumentBulkUpdateEntity
 /// </summary>
-[DataContract]
+
 public partial class KnowledgeDocumentBulkUpdateEntity : IEquatable<KnowledgeDocumentBulkUpdateEntity>
 {
     /// <summary>
@@ -29,7 +29,7 @@ public partial class KnowledgeDocumentBulkUpdateEntity : IEquatable<KnowledgeDoc
     /// The globally unique identifier for the object.
     /// </summary>
     /// <value>The globally unique identifier for the object.</value>
-    [DataMember(Name = "id", EmitDefaultValue = false)]
+    [JsonPropertyName("id")]
     public string Id { get; set; }
 
 
@@ -38,7 +38,7 @@ public partial class KnowledgeDocumentBulkUpdateEntity : IEquatable<KnowledgeDoc
     /// The category associated with the document.
     /// </summary>
     /// <value>The category associated with the document.</value>
-    [DataMember(Name = "categoryId", EmitDefaultValue = false)]
+    [JsonPropertyName("categoryId")]
     public string CategoryId { get; set; }
 
 
@@ -47,7 +47,7 @@ public partial class KnowledgeDocumentBulkUpdateEntity : IEquatable<KnowledgeDoc
     /// The ids of labels associated with the document.
     /// </summary>
     /// <value>The ids of labels associated with the document.</value>
-    [DataMember(Name = "labelIds", EmitDefaultValue = false)]
+    [JsonPropertyName("labelIds")]
     public List<string> LabelIds { get; set; }
 
 

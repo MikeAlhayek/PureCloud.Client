@@ -1,4 +1,3 @@
-using System.Runtime.Serialization;
 using System.Text;
 using System.Text.Json.Serialization;
 
@@ -7,7 +6,7 @@ namespace PureCloud.Client.Models;
 /// <summary>
 /// JourneyContext
 /// </summary>
-[DataContract]
+
 public partial class JourneyContext : IEquatable<JourneyContext>
 {
 
@@ -36,7 +35,7 @@ public partial class JourneyContext : IEquatable<JourneyContext>
     /// A subset of the Journey System&#39;s customer data at a point-in-time (for external linkage and internal usage/context)
     /// </summary>
     /// <value>A subset of the Journey System&#39;s customer data at a point-in-time (for external linkage and internal usage/context)</value>
-    [DataMember(Name = "customer", EmitDefaultValue = false)]
+    [JsonPropertyName("customer")]
     public JourneyCustomer Customer { get; set; }
 
 
@@ -45,7 +44,7 @@ public partial class JourneyContext : IEquatable<JourneyContext>
     /// A subset of the Journey System&#39;s tracked customer session data at a point-in-time (for external linkage and internal usage/context)
     /// </summary>
     /// <value>A subset of the Journey System&#39;s tracked customer session data at a point-in-time (for external linkage and internal usage/context)</value>
-    [DataMember(Name = "customerSession", EmitDefaultValue = false)]
+    [JsonPropertyName("customerSession")]
     public JourneyCustomerSession CustomerSession { get; set; }
 
 
@@ -54,7 +53,7 @@ public partial class JourneyContext : IEquatable<JourneyContext>
     /// A subset of the Journey System&#39;s action data relevant to a part of a conversation (for external linkage and internal usage/context)
     /// </summary>
     /// <value>A subset of the Journey System&#39;s action data relevant to a part of a conversation (for external linkage and internal usage/context)</value>
-    [DataMember(Name = "triggeringAction", EmitDefaultValue = false)]
+    [JsonPropertyName("triggeringAction")]
     public JourneyAction TriggeringAction { get; set; }
 
 

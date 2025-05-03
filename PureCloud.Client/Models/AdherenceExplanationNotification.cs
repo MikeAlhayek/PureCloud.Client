@@ -7,14 +7,14 @@ namespace PureCloud.Client.Models;
 /// <summary>
 /// AdherenceExplanationNotification
 /// </summary>
-[DataContract]
+
 public partial class AdherenceExplanationNotification : IEquatable<AdherenceExplanationNotification>
 {
     /// <summary>
     /// The status of the adherence explanation
     /// </summary>
     /// <value>The status of the adherence explanation</value>
-    [JsonConverter(typeof(JsonStringEnumConverter))]
+    
     public enum StatusEnum
     {
         /// <summary>
@@ -47,7 +47,7 @@ public partial class AdherenceExplanationNotification : IEquatable<AdherenceExpl
     /// The type of the adherence explanation
     /// </summary>
     /// <value>The type of the adherence explanation</value>
-    [JsonConverter(typeof(JsonStringEnumConverter))]
+    
     public enum TypeEnum
     {
         /// <summary>
@@ -68,13 +68,13 @@ public partial class AdherenceExplanationNotification : IEquatable<AdherenceExpl
     /// The status of the adherence explanation
     /// </summary>
     /// <value>The status of the adherence explanation</value>
-    [DataMember(Name = "status", EmitDefaultValue = false)]
+    [JsonPropertyName("status")]
     public StatusEnum? Status { get; set; }
     /// <summary>
     /// The type of the adherence explanation
     /// </summary>
     /// <value>The type of the adherence explanation</value>
-    [DataMember(Name = "type", EmitDefaultValue = false)]
+    [JsonPropertyName("type")]
     public TypeEnum? Type { get; set; }
     /// <summary>
     /// Initializes a new instance of the <see cref="AdherenceExplanationNotification" /> class.
@@ -106,7 +106,7 @@ public partial class AdherenceExplanationNotification : IEquatable<AdherenceExpl
     /// The globally unique identifier for the object.
     /// </summary>
     /// <value>The globally unique identifier for the object.</value>
-    [DataMember(Name = "id", EmitDefaultValue = false)]
+    [JsonPropertyName("id")]
     public string Id { get; private set; }
 
 
@@ -115,7 +115,7 @@ public partial class AdherenceExplanationNotification : IEquatable<AdherenceExpl
     /// The agent for whom the adherence explanation applies
     /// </summary>
     /// <value>The agent for whom the adherence explanation applies</value>
-    [DataMember(Name = "agent", EmitDefaultValue = false)]
+    [JsonPropertyName("agent")]
     public UserReference Agent { get; set; }
 
 
@@ -124,7 +124,7 @@ public partial class AdherenceExplanationNotification : IEquatable<AdherenceExpl
     /// The management unit to which the agent belonged at the time the adherence explanation was submitted
     /// </summary>
     /// <value>The management unit to which the agent belonged at the time the adherence explanation was submitted</value>
-    [DataMember(Name = "managementUnit", EmitDefaultValue = false)]
+    [JsonPropertyName("managementUnit")]
     public ManagementUnitReference ManagementUnit { get; set; }
 
 
@@ -133,7 +133,7 @@ public partial class AdherenceExplanationNotification : IEquatable<AdherenceExpl
     /// The business unit to which the agent belonged at the time the adherence explanation was submitted
     /// </summary>
     /// <value>The business unit to which the agent belonged at the time the adherence explanation was submitted</value>
-    [DataMember(Name = "businessUnit", EmitDefaultValue = false)]
+    [JsonPropertyName("businessUnit")]
     public BusinessUnitReference BusinessUnit { get; set; }
 
 
@@ -142,7 +142,7 @@ public partial class AdherenceExplanationNotification : IEquatable<AdherenceExpl
     /// The start date of the adherence explanation. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z
     /// </summary>
     /// <value>The start date of the adherence explanation. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z</value>
-    [DataMember(Name = "startDate", EmitDefaultValue = false)]
+    [JsonPropertyName("startDate")]
     public DateTime? StartDate { get; set; }
 
 
@@ -151,7 +151,7 @@ public partial class AdherenceExplanationNotification : IEquatable<AdherenceExpl
     /// The length of the adherence explanation in minutes
     /// </summary>
     /// <value>The length of the adherence explanation in minutes</value>
-    [DataMember(Name = "lengthMinutes", EmitDefaultValue = false)]
+    [JsonPropertyName("lengthMinutes")]
     public int? LengthMinutes { get; set; }
 
 
@@ -164,7 +164,7 @@ public partial class AdherenceExplanationNotification : IEquatable<AdherenceExpl
     /// Notes about the adherence explanation
     /// </summary>
     /// <value>Notes about the adherence explanation</value>
-    [DataMember(Name = "notes", EmitDefaultValue = false)]
+    [JsonPropertyName("notes")]
     public string Notes { get; set; }
 
 
@@ -173,7 +173,7 @@ public partial class AdherenceExplanationNotification : IEquatable<AdherenceExpl
     /// The URI for this object
     /// </summary>
     /// <value>The URI for this object</value>
-    [DataMember(Name = "selfUri", EmitDefaultValue = false)]
+    [JsonPropertyName("selfUri")]
     public string SelfUri { get; private set; }
 
 

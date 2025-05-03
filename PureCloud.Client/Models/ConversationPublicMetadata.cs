@@ -1,12 +1,12 @@
-using System.Runtime.Serialization;
 using System.Text;
+using System.Text.Json.Serialization;
 
 namespace PureCloud.Client.Models;
 
 /// <summary>
 /// Information about a public message.
 /// </summary>
-[DataContract]
+
 public partial class ConversationPublicMetadata : IEquatable<ConversationPublicMetadata>
 {
     /// <summary>
@@ -27,7 +27,7 @@ public partial class ConversationPublicMetadata : IEquatable<ConversationPublicM
     /// The id of the root public message.
     /// </summary>
     /// <value>The id of the root public message.</value>
-    [DataMember(Name = "rootId", EmitDefaultValue = false)]
+    [JsonPropertyName("rootId")]
     public string RootId { get; set; }
 
 
@@ -36,7 +36,7 @@ public partial class ConversationPublicMetadata : IEquatable<ConversationPublicM
     /// The id of the message this public message is replying to.
     /// </summary>
     /// <value>The id of the message this public message is replying to.</value>
-    [DataMember(Name = "replyToId", EmitDefaultValue = false)]
+    [JsonPropertyName("replyToId")]
     public string ReplyToId { get; set; }
 
 

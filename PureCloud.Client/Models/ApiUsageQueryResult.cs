@@ -7,14 +7,14 @@ namespace PureCloud.Client.Models;
 /// <summary>
 /// ApiUsageQueryResult
 /// </summary>
-[DataContract]
+
 public partial class ApiUsageQueryResult : IEquatable<ApiUsageQueryResult>
 {
     /// <summary>
     /// Query status
     /// </summary>
     /// <value>Query status</value>
-    [JsonConverter(typeof(JsonStringEnumConverter))]
+    
     public enum QueryStatusEnum
     {
         /// <summary>
@@ -47,7 +47,7 @@ public partial class ApiUsageQueryResult : IEquatable<ApiUsageQueryResult>
     /// Query status
     /// </summary>
     /// <value>Query status</value>
-    [DataMember(Name = "queryStatus", EmitDefaultValue = false)]
+    [JsonPropertyName("queryStatus")]
     public QueryStatusEnum? QueryStatus { get; set; }
     /// <summary>
     /// Initializes a new instance of the <see cref="ApiUsageQueryResult" /> class.
@@ -69,7 +69,7 @@ public partial class ApiUsageQueryResult : IEquatable<ApiUsageQueryResult>
     /// Query results
     /// </summary>
     /// <value>Query results</value>
-    [DataMember(Name = "results", EmitDefaultValue = false)]
+    [JsonPropertyName("results")]
     public List<ApiUsageRow> Results { get; set; }
 
 
@@ -80,7 +80,7 @@ public partial class ApiUsageQueryResult : IEquatable<ApiUsageQueryResult>
     /// Cursor tokens to be used for navigating paginated results
     /// </summary>
     /// <value>Cursor tokens to be used for navigating paginated results</value>
-    [DataMember(Name = "cursors", EmitDefaultValue = false)]
+    [JsonPropertyName("cursors")]
     public Cursors Cursors { get; set; }
 
 

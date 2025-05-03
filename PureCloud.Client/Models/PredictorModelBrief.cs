@@ -7,14 +7,14 @@ namespace PureCloud.Client.Models;
 /// <summary>
 /// PredictorModelBrief
 /// </summary>
-[DataContract]
+
 public partial class PredictorModelBrief : IEquatable<PredictorModelBrief>
 {
     /// <summary>
     /// The media type of the model.
     /// </summary>
     /// <value>The media type of the model.</value>
-    [JsonConverter(typeof(JsonStringEnumConverter))]
+    
     public enum MediaTypeEnum
     {
         /// <summary>
@@ -47,7 +47,7 @@ public partial class PredictorModelBrief : IEquatable<PredictorModelBrief>
     /// The state of the model
     /// </summary>
     /// <value>The state of the model</value>
-    [JsonConverter(typeof(JsonStringEnumConverter))]
+    
     public enum StateEnum
     {
         /// <summary>
@@ -86,13 +86,13 @@ public partial class PredictorModelBrief : IEquatable<PredictorModelBrief>
     /// The media type of the model.
     /// </summary>
     /// <value>The media type of the model.</value>
-    [DataMember(Name = "mediaType", EmitDefaultValue = false)]
+    [JsonPropertyName("mediaType")]
     public MediaTypeEnum? MediaType { get; private set; }
     /// <summary>
     /// The state of the model
     /// </summary>
     /// <value>The state of the model</value>
-    [DataMember(Name = "state", EmitDefaultValue = false)]
+    [JsonPropertyName("state")]
     public StateEnum? State { get; private set; }
     /// <summary>
     /// Initializes a new instance of the <see cref="PredictorModelBrief" /> class.
@@ -110,7 +110,7 @@ public partial class PredictorModelBrief : IEquatable<PredictorModelBrief>
     /// The date the model was modified. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z
     /// </summary>
     /// <value>The date the model was modified. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z</value>
-    [DataMember(Name = "dateModified", EmitDefaultValue = false)]
+    [JsonPropertyName("dateModified")]
     public DateTime? DateModified { get; private set; }
 
 
@@ -119,7 +119,7 @@ public partial class PredictorModelBrief : IEquatable<PredictorModelBrief>
     /// The model&#39;s retraining errors.
     /// </summary>
     /// <value>The model&#39;s retraining errors.</value>
-    [DataMember(Name = "retrainingErrors", EmitDefaultValue = false)]
+    [JsonPropertyName("retrainingErrors")]
     public List<PredictorModelRetrainingError> RetrainingErrors { get; private set; }
 
 

@@ -1,12 +1,12 @@
-using System.Runtime.Serialization;
 using System.Text;
+using System.Text.Json.Serialization;
 
 namespace PureCloud.Client.Models;
 
 /// <summary>
 /// AgentStateCountsRequest
 /// </summary>
-[DataContract]
+
 public partial class AgentStateCountsRequest : IEquatable<AgentStateCountsRequest>
 {
     /// <summary>
@@ -27,7 +27,7 @@ public partial class AgentStateCountsRequest : IEquatable<AgentStateCountsReques
     /// Filters that target user-level data
     /// </summary>
     /// <value>Filters that target user-level data</value>
-    [DataMember(Name = "userFilter", EmitDefaultValue = false)]
+    [JsonPropertyName("userFilter")]
     public AgentStateUserFilter UserFilter { get; set; }
 
 
@@ -36,7 +36,7 @@ public partial class AgentStateCountsRequest : IEquatable<AgentStateCountsReques
     /// Filters that target session-level data
     /// </summary>
     /// <value>Filters that target session-level data</value>
-    [DataMember(Name = "sessionFilter", EmitDefaultValue = false)]
+    [JsonPropertyName("sessionFilter")]
     public AgentStateSessionFilter SessionFilter { get; set; }
 
 

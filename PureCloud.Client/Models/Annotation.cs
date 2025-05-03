@@ -7,14 +7,14 @@ namespace PureCloud.Client.Models;
 /// <summary>
 /// Annotation
 /// </summary>
-[DataContract]
+
 public partial class Annotation : IEquatable<Annotation>
 {
     /// <summary>
     /// Reason for a pause annotation. Valid values: Hold,SecurePause,FlowOrQueue,Pause
     /// </summary>
     /// <value>Reason for a pause annotation. Valid values: Hold,SecurePause,FlowOrQueue,Pause</value>
-    [JsonConverter(typeof(JsonStringEnumConverter))]
+    
     public enum ReasonEnum
     {
         /// <summary>
@@ -53,7 +53,7 @@ public partial class Annotation : IEquatable<Annotation>
     /// Reason for a pause annotation. Valid values: Hold,SecurePause,FlowOrQueue,Pause
     /// </summary>
     /// <value>Reason for a pause annotation. Valid values: Hold,SecurePause,FlowOrQueue,Pause</value>
-    [DataMember(Name = "reason", EmitDefaultValue = false)]
+    [JsonPropertyName("reason")]
     public ReasonEnum? Reason { get; private set; }
     /// <summary>
     /// Initializes a new instance of the <see cref="Annotation" /> class.
@@ -91,7 +91,7 @@ public partial class Annotation : IEquatable<Annotation>
     /// Annotation id. All pause annotations on a recording will share an ID value, bookmark annotations will have unique IDs, and hold annotations will have randomly generated UUIDs (i.e. the ID will change at each request).
     /// </summary>
     /// <value>Annotation id. All pause annotations on a recording will share an ID value, bookmark annotations will have unique IDs, and hold annotations will have randomly generated UUIDs (i.e. the ID will change at each request).</value>
-    [DataMember(Name = "id", EmitDefaultValue = false)]
+    [JsonPropertyName("id")]
     public string Id { get; set; }
 
 
@@ -99,7 +99,7 @@ public partial class Annotation : IEquatable<Annotation>
     /// <summary>
     /// Gets or Sets Name
     /// </summary>
-    [DataMember(Name = "name", EmitDefaultValue = false)]
+    [JsonPropertyName("name")]
     public string Name { get; set; }
 
 
@@ -107,7 +107,7 @@ public partial class Annotation : IEquatable<Annotation>
     /// <summary>
     /// Gets or Sets Type
     /// </summary>
-    [DataMember(Name = "type", EmitDefaultValue = false)]
+    [JsonPropertyName("type")]
     public string Type { get; set; }
 
 
@@ -116,7 +116,7 @@ public partial class Annotation : IEquatable<Annotation>
     /// Offset of annotation in milliseconds.
     /// </summary>
     /// <value>Offset of annotation in milliseconds.</value>
-    [DataMember(Name = "location", EmitDefaultValue = false)]
+    [JsonPropertyName("location")]
     public long? Location { get; set; }
 
 
@@ -125,7 +125,7 @@ public partial class Annotation : IEquatable<Annotation>
     /// Duration of annotation in milliseconds.
     /// </summary>
     /// <value>Duration of annotation in milliseconds.</value>
-    [DataMember(Name = "durationMs", EmitDefaultValue = false)]
+    [JsonPropertyName("durationMs")]
     public long? DurationMs { get; set; }
 
 
@@ -134,7 +134,7 @@ public partial class Annotation : IEquatable<Annotation>
     /// Offset of annotation (milliseconds) from start of recording (after removing the cumulative duration of all pauses).
     /// </summary>
     /// <value>Offset of annotation (milliseconds) from start of recording (after removing the cumulative duration of all pauses).</value>
-    [DataMember(Name = "absoluteLocation", EmitDefaultValue = false)]
+    [JsonPropertyName("absoluteLocation")]
     public long? AbsoluteLocation { get; set; }
 
 
@@ -143,7 +143,7 @@ public partial class Annotation : IEquatable<Annotation>
     /// Duration of annotation (milliseconds).
     /// </summary>
     /// <value>Duration of annotation (milliseconds).</value>
-    [DataMember(Name = "absoluteDurationMs", EmitDefaultValue = false)]
+    [JsonPropertyName("absoluteDurationMs")]
     public long? AbsoluteDurationMs { get; set; }
 
 
@@ -152,7 +152,7 @@ public partial class Annotation : IEquatable<Annotation>
     /// Offset of annotation (milliseconds) from start of recording, adjusted for any recording cuts
     /// </summary>
     /// <value>Offset of annotation (milliseconds) from start of recording, adjusted for any recording cuts</value>
-    [DataMember(Name = "recordingLocation", EmitDefaultValue = false)]
+    [JsonPropertyName("recordingLocation")]
     public long? RecordingLocation { get; set; }
 
 
@@ -161,7 +161,7 @@ public partial class Annotation : IEquatable<Annotation>
     /// Duration of annotation (milliseconds), adjusted for any recording cuts.
     /// </summary>
     /// <value>Duration of annotation (milliseconds), adjusted for any recording cuts.</value>
-    [DataMember(Name = "recordingDurationMs", EmitDefaultValue = false)]
+    [JsonPropertyName("recordingDurationMs")]
     public long? RecordingDurationMs { get; set; }
 
 
@@ -170,7 +170,7 @@ public partial class Annotation : IEquatable<Annotation>
     /// User that created this annotation (if any).
     /// </summary>
     /// <value>User that created this annotation (if any).</value>
-    [DataMember(Name = "user", EmitDefaultValue = false)]
+    [JsonPropertyName("user")]
     public User User { get; set; }
 
 
@@ -179,7 +179,7 @@ public partial class Annotation : IEquatable<Annotation>
     /// Text of annotation. Maximum character limit is 500.
     /// </summary>
     /// <value>Text of annotation. Maximum character limit is 500.</value>
-    [DataMember(Name = "description", EmitDefaultValue = false)]
+    [JsonPropertyName("description")]
     public string Description { get; set; }
 
 
@@ -190,7 +190,7 @@ public partial class Annotation : IEquatable<Annotation>
     /// List of annotations
     /// </summary>
     /// <value>List of annotations</value>
-    [DataMember(Name = "annotations", EmitDefaultValue = false)]
+    [JsonPropertyName("annotations")]
     public List<Annotation> Annotations { get; private set; }
 
 
@@ -199,7 +199,7 @@ public partial class Annotation : IEquatable<Annotation>
     /// Offset of annotation (milliseconds) from start of the recording before removing the cumulative duration of all pauses before this annotation
     /// </summary>
     /// <value>Offset of annotation (milliseconds) from start of the recording before removing the cumulative duration of all pauses before this annotation</value>
-    [DataMember(Name = "realtimeLocation", EmitDefaultValue = false)]
+    [JsonPropertyName("realtimeLocation")]
     public long? RealtimeLocation { get; private set; }
 
 
@@ -208,7 +208,7 @@ public partial class Annotation : IEquatable<Annotation>
     /// The URI for this object
     /// </summary>
     /// <value>The URI for this object</value>
-    [DataMember(Name = "selfUri", EmitDefaultValue = false)]
+    [JsonPropertyName("selfUri")]
     public string SelfUri { get; private set; }
 
 

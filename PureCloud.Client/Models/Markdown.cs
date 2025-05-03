@@ -1,12 +1,12 @@
-using System.Runtime.Serialization;
 using System.Text;
+using System.Text.Json.Serialization;
 
 namespace PureCloud.Client.Models;
 
 /// <summary>
 /// Markdown
 /// </summary>
-[DataContract]
+
 public partial class Markdown : IEquatable<Markdown>
 {
     /// <summary>
@@ -25,7 +25,7 @@ public partial class Markdown : IEquatable<Markdown>
     /// whether or not markdown is enabled
     /// </summary>
     /// <value>whether or not markdown is enabled</value>
-    [DataMember(Name = "enabled", EmitDefaultValue = false)]
+    [JsonPropertyName("enabled")]
     public bool? Enabled { get; set; }
 
 

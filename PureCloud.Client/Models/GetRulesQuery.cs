@@ -7,14 +7,14 @@ namespace PureCloud.Client.Models;
 /// <summary>
 /// GetRulesQuery
 /// </summary>
-[DataContract]
+
 public partial class GetRulesQuery : IEquatable<GetRulesQuery>
 {
     /// <summary>
     /// The rule type of the alerts the query will return
     /// </summary>
     /// <value>The rule type of the alerts the query will return</value>
-    [JsonConverter(typeof(JsonStringEnumConverter))]
+    
     public enum RuleTypeEnum
     {
         /// <summary>
@@ -47,7 +47,7 @@ public partial class GetRulesQuery : IEquatable<GetRulesQuery>
     /// The type of query being performed.
     /// </summary>
     /// <value>The type of query being performed.</value>
-    [JsonConverter(typeof(JsonStringEnumConverter))]
+    
     public enum QueryTypeEnum
     {
         /// <summary>
@@ -74,7 +74,7 @@ public partial class GetRulesQuery : IEquatable<GetRulesQuery>
     /// The state of the rule the query will return.  The accepted choices are Enabled, Disabled, or All
     /// </summary>
     /// <value>The state of the rule the query will return.  The accepted choices are Enabled, Disabled, or All</value>
-    [JsonConverter(typeof(JsonStringEnumConverter))]
+    
     public enum EnabledTypeEnum
     {
         /// <summary>
@@ -107,7 +107,7 @@ public partial class GetRulesQuery : IEquatable<GetRulesQuery>
     /// The field to sort responses by.  The accepted choices are Name and DateStart
     /// </summary>
     /// <value>The field to sort responses by.  The accepted choices are Name and DateStart</value>
-    [JsonConverter(typeof(JsonStringEnumConverter))]
+    
     public enum SortByEnum
     {
         /// <summary>
@@ -134,7 +134,7 @@ public partial class GetRulesQuery : IEquatable<GetRulesQuery>
     /// The order in which response will be sorted.  The accepted choices are Asc and Desc
     /// </summary>
     /// <value>The order in which response will be sorted.  The accepted choices are Asc and Desc</value>
-    [JsonConverter(typeof(JsonStringEnumConverter))]
+    
     public enum SortOrderEnum
     {
         /// <summary>
@@ -161,7 +161,7 @@ public partial class GetRulesQuery : IEquatable<GetRulesQuery>
     /// Specifies how strict the name search needs to be. Expected values are Exact and Contains if querying by name.
     /// </summary>
     /// <value>Specifies how strict the name search needs to be. Expected values are Exact and Contains if querying by name.</value>
-    [JsonConverter(typeof(JsonStringEnumConverter))]
+    
     public enum NameSearchTypeEnum
     {
         /// <summary>
@@ -194,37 +194,37 @@ public partial class GetRulesQuery : IEquatable<GetRulesQuery>
     /// The rule type of the alerts the query will return
     /// </summary>
     /// <value>The rule type of the alerts the query will return</value>
-    [DataMember(Name = "ruleType", EmitDefaultValue = false)]
+    [JsonPropertyName("ruleType")]
     public RuleTypeEnum? RuleType { get; set; }
     /// <summary>
     /// The type of query being performed.
     /// </summary>
     /// <value>The type of query being performed.</value>
-    [DataMember(Name = "queryType", EmitDefaultValue = false)]
+    [JsonPropertyName("queryType")]
     public QueryTypeEnum? QueryType { get; set; }
     /// <summary>
     /// The state of the rule the query will return.  The accepted choices are Enabled, Disabled, or All
     /// </summary>
     /// <value>The state of the rule the query will return.  The accepted choices are Enabled, Disabled, or All</value>
-    [DataMember(Name = "enabledType", EmitDefaultValue = false)]
+    [JsonPropertyName("enabledType")]
     public EnabledTypeEnum? EnabledType { get; set; }
     /// <summary>
     /// The field to sort responses by.  The accepted choices are Name and DateStart
     /// </summary>
     /// <value>The field to sort responses by.  The accepted choices are Name and DateStart</value>
-    [DataMember(Name = "sortBy", EmitDefaultValue = false)]
+    [JsonPropertyName("sortBy")]
     public SortByEnum? SortBy { get; set; }
     /// <summary>
     /// The order in which response will be sorted.  The accepted choices are Asc and Desc
     /// </summary>
     /// <value>The order in which response will be sorted.  The accepted choices are Asc and Desc</value>
-    [DataMember(Name = "sortOrder", EmitDefaultValue = false)]
+    [JsonPropertyName("sortOrder")]
     public SortOrderEnum? SortOrder { get; set; }
     /// <summary>
     /// Specifies how strict the name search needs to be. Expected values are Exact and Contains if querying by name.
     /// </summary>
     /// <value>Specifies how strict the name search needs to be. Expected values are Exact and Contains if querying by name.</value>
-    [DataMember(Name = "nameSearchType", EmitDefaultValue = false)]
+    [JsonPropertyName("nameSearchType")]
     public NameSearchTypeEnum? NameSearchType { get; set; }
 
     /// <summary>
@@ -270,7 +270,7 @@ public partial class GetRulesQuery : IEquatable<GetRulesQuery>
     /// The page number of the queried response
     /// </summary>
     /// <value>The page number of the queried response</value>
-    [DataMember(Name = "pageNumber", EmitDefaultValue = false)]
+    [JsonPropertyName("pageNumber")]
     public int? PageNumber { get; set; }
 
 
@@ -279,7 +279,7 @@ public partial class GetRulesQuery : IEquatable<GetRulesQuery>
     /// The number of entities to return of the queried response.  The max is 25
     /// </summary>
     /// <value>The number of entities to return of the queried response.  The max is 25</value>
-    [DataMember(Name = "pageSize", EmitDefaultValue = false)]
+    [JsonPropertyName("pageSize")]
     public int? PageSize { get; set; }
 
 
@@ -292,7 +292,7 @@ public partial class GetRulesQuery : IEquatable<GetRulesQuery>
     /// The name of the rule being queries.
     /// </summary>
     /// <value>The name of the rule being queries.</value>
-    [DataMember(Name = "ruleName", EmitDefaultValue = false)]
+    [JsonPropertyName("ruleName")]
     public string RuleName { get; set; }
 
 

@@ -1,4 +1,3 @@
-using System.Runtime.Serialization;
 using System.Text;
 using System.Text.Json.Serialization;
 
@@ -7,7 +6,7 @@ namespace PureCloud.Client.Models;
 /// <summary>
 /// WebhookInvocationResponse
 /// </summary>
-[DataContract]
+
 public partial class WebhookInvocationResponse : IEquatable<WebhookInvocationResponse>
 {
 
@@ -32,7 +31,7 @@ public partial class WebhookInvocationResponse : IEquatable<WebhookInvocationRes
     /// The id of the Webhook Invocation
     /// </summary>
     /// <value>The id of the Webhook Invocation</value>
-    [DataMember(Name = "invocationId", EmitDefaultValue = false)]
+    [JsonPropertyName("invocationId")]
     public string InvocationId { get; set; }
 
 

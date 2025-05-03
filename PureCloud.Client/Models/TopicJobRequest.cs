@@ -1,4 +1,3 @@
-using System.Runtime.Serialization;
 using System.Text;
 using System.Text.Json.Serialization;
 
@@ -7,7 +6,7 @@ namespace PureCloud.Client.Models;
 /// <summary>
 /// TopicJobRequest
 /// </summary>
-[DataContract]
+
 public partial class TopicJobRequest : IEquatable<TopicJobRequest>
 {
 
@@ -32,7 +31,7 @@ public partial class TopicJobRequest : IEquatable<TopicJobRequest>
     /// The ids of the topics used for this job
     /// </summary>
     /// <value>The ids of the topics used for this job</value>
-    [DataMember(Name = "topicIds", EmitDefaultValue = false)]
+    [JsonPropertyName("topicIds")]
     public List<string> TopicIds { get; set; }
 
 

@@ -1,12 +1,12 @@
-using System.Runtime.Serialization;
 using System.Text;
+using System.Text.Json.Serialization;
 
 namespace PureCloud.Client.Models;
 
 /// <summary>
 /// An element within a journey view result
 /// </summary>
-[DataContract]
+
 public partial class JourneyViewResultElement : IEquatable<JourneyViewResultElement>
 {
     /// <summary>
@@ -23,7 +23,7 @@ public partial class JourneyViewResultElement : IEquatable<JourneyViewResultElem
     /// The globally unique identifier for the object.
     /// </summary>
     /// <value>The globally unique identifier for the object.</value>
-    [DataMember(Name = "id", EmitDefaultValue = false)]
+    [JsonPropertyName("id")]
     public string Id { get; private set; }
 
 
@@ -32,7 +32,7 @@ public partial class JourneyViewResultElement : IEquatable<JourneyViewResultElem
     /// the metrics of the current element
     /// </summary>
     /// <value>the metrics of the current element</value>
-    [DataMember(Name = "metrics", EmitDefaultValue = false)]
+    [JsonPropertyName("metrics")]
     public JourneyViewResultMetrics Metrics { get; private set; }
 
 
@@ -41,7 +41,7 @@ public partial class JourneyViewResultElement : IEquatable<JourneyViewResultElem
     /// the list of links following the current element in the journey
     /// </summary>
     /// <value>the list of links following the current element in the journey</value>
-    [DataMember(Name = "followedBy", EmitDefaultValue = false)]
+    [JsonPropertyName("followedBy")]
     public List<JourneyViewResultLink> FollowedBy { get; private set; }
 
 
@@ -50,7 +50,7 @@ public partial class JourneyViewResultElement : IEquatable<JourneyViewResultElem
     /// The URI for this object
     /// </summary>
     /// <value>The URI for this object</value>
-    [DataMember(Name = "selfUri", EmitDefaultValue = false)]
+    [JsonPropertyName("selfUri")]
     public string SelfUri { get; private set; }
 
 

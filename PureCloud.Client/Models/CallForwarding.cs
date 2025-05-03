@@ -7,14 +7,14 @@ namespace PureCloud.Client.Models;
 /// <summary>
 /// CallForwarding
 /// </summary>
-[DataContract]
+
 public partial class CallForwarding : IEquatable<CallForwarding>
 {
     /// <summary>
     /// The type of voicemail to use with the callForwarding configuration
     /// </summary>
     /// <value>The type of voicemail to use with the callForwarding configuration</value>
-    [JsonConverter(typeof(JsonStringEnumConverter))]
+    
     public enum VoicemailEnum
     {
         /// <summary>
@@ -47,7 +47,7 @@ public partial class CallForwarding : IEquatable<CallForwarding>
     /// The type of voicemail to use with the callForwarding configuration
     /// </summary>
     /// <value>The type of voicemail to use with the callForwarding configuration</value>
-    [DataMember(Name = "voicemail", EmitDefaultValue = false)]
+    [JsonPropertyName("voicemail")]
     public VoicemailEnum? Voicemail { get; set; }
     /// <summary>
     /// Initializes a new instance of the <see cref="CallForwarding" /> class.
@@ -77,7 +77,7 @@ public partial class CallForwarding : IEquatable<CallForwarding>
     /// The globally unique identifier for the object.
     /// </summary>
     /// <value>The globally unique identifier for the object.</value>
-    [DataMember(Name = "id", EmitDefaultValue = false)]
+    [JsonPropertyName("id")]
     public string Id { get; private set; }
 
 
@@ -85,7 +85,7 @@ public partial class CallForwarding : IEquatable<CallForwarding>
     /// <summary>
     /// Gets or Sets Name
     /// </summary>
-    [DataMember(Name = "name", EmitDefaultValue = false)]
+    [JsonPropertyName("name")]
     public string Name { get; set; }
 
 
@@ -93,7 +93,7 @@ public partial class CallForwarding : IEquatable<CallForwarding>
     /// <summary>
     /// Gets or Sets User
     /// </summary>
-    [DataMember(Name = "user", EmitDefaultValue = false)]
+    [JsonPropertyName("user")]
     public User User { get; set; }
 
 
@@ -102,7 +102,7 @@ public partial class CallForwarding : IEquatable<CallForwarding>
     /// Whether or not CallForwarding is enabled
     /// </summary>
     /// <value>Whether or not CallForwarding is enabled</value>
-    [DataMember(Name = "enabled", EmitDefaultValue = false)]
+    [JsonPropertyName("enabled")]
     public bool? Enabled { get; set; }
 
 
@@ -111,7 +111,7 @@ public partial class CallForwarding : IEquatable<CallForwarding>
     /// This property is deprecated. Please use the calls property
     /// </summary>
     /// <value>This property is deprecated. Please use the calls property</value>
-    [DataMember(Name = "phoneNumber", EmitDefaultValue = false)]
+    [JsonPropertyName("phoneNumber")]
     public string PhoneNumber { get; set; }
 
 
@@ -120,7 +120,7 @@ public partial class CallForwarding : IEquatable<CallForwarding>
     /// An ordered list of CallRoutes to be executed when CallForwarding is enabled
     /// </summary>
     /// <value>An ordered list of CallRoutes to be executed when CallForwarding is enabled</value>
-    [DataMember(Name = "calls", EmitDefaultValue = false)]
+    [JsonPropertyName("calls")]
     public List<CallRoute> Calls { get; set; }
 
 
@@ -131,7 +131,7 @@ public partial class CallForwarding : IEquatable<CallForwarding>
     /// Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z
     /// </summary>
     /// <value>Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z</value>
-    [DataMember(Name = "modifiedDate", EmitDefaultValue = false)]
+    [JsonPropertyName("modifiedDate")]
     public DateTime? ModifiedDate { get; set; }
 
 
@@ -140,7 +140,7 @@ public partial class CallForwarding : IEquatable<CallForwarding>
     /// The URI for this object
     /// </summary>
     /// <value>The URI for this object</value>
-    [DataMember(Name = "selfUri", EmitDefaultValue = false)]
+    [JsonPropertyName("selfUri")]
     public string SelfUri { get; private set; }
 
 

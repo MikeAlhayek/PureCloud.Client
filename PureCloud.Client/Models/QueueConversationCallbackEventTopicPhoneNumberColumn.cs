@@ -1,12 +1,12 @@
-using System.Runtime.Serialization;
 using System.Text;
+using System.Text.Json.Serialization;
 
 namespace PureCloud.Client.Models;
 
 /// <summary>
 /// QueueConversationCallbackEventTopicPhoneNumberColumn
 /// </summary>
-[DataContract]
+
 public partial class QueueConversationCallbackEventTopicPhoneNumberColumn : IEquatable<QueueConversationCallbackEventTopicPhoneNumberColumn>
 {
     /// <summary>
@@ -26,7 +26,7 @@ public partial class QueueConversationCallbackEventTopicPhoneNumberColumn : IEqu
     /// <summary>
     /// Gets or Sets ColumnName
     /// </summary>
-    [DataMember(Name = "columnName", EmitDefaultValue = false)]
+    [JsonPropertyName("columnName")]
     public string ColumnName { get; set; }
 
 
@@ -34,7 +34,7 @@ public partial class QueueConversationCallbackEventTopicPhoneNumberColumn : IEqu
     /// <summary>
     /// Gets or Sets Type
     /// </summary>
-    [DataMember(Name = "type", EmitDefaultValue = false)]
+    [JsonPropertyName("type")]
     public string Type { get; set; }
 
 

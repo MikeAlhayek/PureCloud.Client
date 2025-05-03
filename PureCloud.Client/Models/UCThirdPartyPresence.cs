@@ -1,4 +1,3 @@
-using System.Runtime.Serialization;
 using System.Text;
 using System.Text.Json.Serialization;
 
@@ -7,7 +6,7 @@ namespace PureCloud.Client.Models;
 /// <summary>
 /// Update a Genesys Cloud user&#39;s presence from a given 3rd-party integration
 /// </summary>
-[DataContract]
+
 public partial class UCThirdPartyPresence : IEquatable<UCThirdPartyPresence>
 {
 
@@ -38,7 +37,7 @@ public partial class UCThirdPartyPresence : IEquatable<UCThirdPartyPresence>
     /// Primary Email address of the associated Genesys Cloud user.
     /// </summary>
     /// <value>Primary Email address of the associated Genesys Cloud user.</value>
-    [DataMember(Name = "email", EmitDefaultValue = false)]
+    [JsonPropertyName("email")]
     public string Email { get; set; }
 
 
@@ -47,7 +46,7 @@ public partial class UCThirdPartyPresence : IEquatable<UCThirdPartyPresence>
     /// Integration presence value.
     /// </summary>
     /// <value>Integration presence value.</value>
-    [DataMember(Name = "presence", EmitDefaultValue = false)]
+    [JsonPropertyName("presence")]
     public string Presence { get; set; }
 
 
@@ -56,7 +55,7 @@ public partial class UCThirdPartyPresence : IEquatable<UCThirdPartyPresence>
     /// Integration presence message.
     /// </summary>
     /// <value>Integration presence message.</value>
-    [DataMember(Name = "message", EmitDefaultValue = false)]
+    [JsonPropertyName("message")]
     public string Message { get; set; }
 
 
@@ -65,7 +64,7 @@ public partial class UCThirdPartyPresence : IEquatable<UCThirdPartyPresence>
     /// ISO 8601 timestamp of presence value change.
     /// </summary>
     /// <value>ISO 8601 timestamp of presence value change.</value>
-    [DataMember(Name = "dateModified", EmitDefaultValue = false)]
+    [JsonPropertyName("dateModified")]
     public DateTime? DateModified { get; set; }
 
 

@@ -7,14 +7,14 @@ namespace PureCloud.Client.Models;
 /// <summary>
 /// A numeric filter on an element within a journey view
 /// </summary>
-[DataContract]
+
 public partial class JourneyViewElementFilterNumberPredicate : IEquatable<JourneyViewElementFilterNumberPredicate>
 {
     /// <summary>
     /// Optional operator, default is Matches. Valid values: Matches
     /// </summary>
     /// <value>Optional operator, default is Matches. Valid values: Matches</value>
-    [JsonConverter(typeof(JsonStringEnumConverter))]
+    
     public enum OperatorEnum
     {
         /// <summary>
@@ -41,7 +41,7 @@ public partial class JourneyViewElementFilterNumberPredicate : IEquatable<Journe
     /// Optional operator, default is Matches. Valid values: Matches
     /// </summary>
     /// <value>Optional operator, default is Matches. Valid values: Matches</value>
-    [DataMember(Name = "operator", EmitDefaultValue = false)]
+    [JsonPropertyName("operator")]
     public OperatorEnum? Operator { get; set; }
 
     /// <summary>
@@ -71,7 +71,7 @@ public partial class JourneyViewElementFilterNumberPredicate : IEquatable<Journe
     /// the element&#39;s attribute being filtered on
     /// </summary>
     /// <value>the element&#39;s attribute being filtered on</value>
-    [DataMember(Name = "dimension", EmitDefaultValue = false)]
+    [JsonPropertyName("dimension")]
     public string Dimension { get; set; }
 
 
@@ -82,7 +82,7 @@ public partial class JourneyViewElementFilterNumberPredicate : IEquatable<Journe
     /// set this to true if no specific value to be considered
     /// </summary>
     /// <value>set this to true if no specific value to be considered</value>
-    [DataMember(Name = "noValue", EmitDefaultValue = false)]
+    [JsonPropertyName("noValue")]
     public bool? NoValue { get; set; }
 
 
@@ -91,7 +91,7 @@ public partial class JourneyViewElementFilterNumberPredicate : IEquatable<Journe
     /// the range of comparators to filter on
     /// </summary>
     /// <value>the range of comparators to filter on</value>
-    [DataMember(Name = "range", EmitDefaultValue = false)]
+    [JsonPropertyName("range")]
     public JourneyViewElementFilterRange Range { get; set; }
 
 

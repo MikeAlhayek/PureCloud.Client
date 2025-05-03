@@ -1,4 +1,3 @@
-using System.Runtime.Serialization;
 using System.Text;
 
 namespace PureCloud.Client.Models;
@@ -6,7 +5,7 @@ namespace PureCloud.Client.Models;
 /// <summary>
 /// WritableStarrableDivision
 /// </summary>
-[DataContract]
+
 public partial class WritableStarrableDivision : IEquatable<WritableStarrableDivision>
 {
     /// <summary>
@@ -27,7 +26,6 @@ public partial class WritableStarrableDivision : IEquatable<WritableStarrableDiv
     /// The globally unique identifier for the object.
     /// </summary>
     /// <value>The globally unique identifier for the object.</value>
-    [DataMember(Name = "id", EmitDefaultValue = false)]
     public string Id { get; set; }
 
 
@@ -35,7 +33,6 @@ public partial class WritableStarrableDivision : IEquatable<WritableStarrableDiv
     /// <summary>
     /// Gets or Sets Name
     /// </summary>
-    [DataMember(Name = "name", EmitDefaultValue = false)]
     public string Name { get; set; }
 
 
@@ -44,7 +41,6 @@ public partial class WritableStarrableDivision : IEquatable<WritableStarrableDiv
     /// The URI for this object
     /// </summary>
     /// <value>The URI for this object</value>
-    [DataMember(Name = "selfUri", EmitDefaultValue = false)]
     public string SelfUri { get; private set; }
 
 

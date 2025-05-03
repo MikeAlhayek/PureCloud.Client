@@ -1,12 +1,12 @@
-using System.Runtime.Serialization;
 using System.Text;
+using System.Text.Json.Serialization;
 
 namespace PureCloud.Client.Models;
 
 /// <summary>
 /// ForecastPlanningGroupResponse
 /// </summary>
-[DataContract]
+
 public partial class ForecastPlanningGroupResponse : IEquatable<ForecastPlanningGroupResponse>
 {
     /// <summary>
@@ -31,7 +31,7 @@ public partial class ForecastPlanningGroupResponse : IEquatable<ForecastPlanning
     /// The ID of the planning group
     /// </summary>
     /// <value>The ID of the planning group</value>
-    [DataMember(Name = "id", EmitDefaultValue = false)]
+    [JsonPropertyName("id")]
     public string Id { get; set; }
 
 
@@ -40,7 +40,7 @@ public partial class ForecastPlanningGroupResponse : IEquatable<ForecastPlanning
     /// The name of the planning group
     /// </summary>
     /// <value>The name of the planning group</value>
-    [DataMember(Name = "name", EmitDefaultValue = false)]
+    [JsonPropertyName("name")]
     public string Name { get; set; }
 
 
@@ -49,7 +49,7 @@ public partial class ForecastPlanningGroupResponse : IEquatable<ForecastPlanning
     /// Route path configuration for this planning group
     /// </summary>
     /// <value>Route path configuration for this planning group</value>
-    [DataMember(Name = "routePaths", EmitDefaultValue = false)]
+    [JsonPropertyName("routePaths")]
     public List<RoutePathResponse> RoutePaths { get; set; }
 
 
@@ -58,7 +58,7 @@ public partial class ForecastPlanningGroupResponse : IEquatable<ForecastPlanning
     /// Service goals for this planning group
     /// </summary>
     /// <value>Service goals for this planning group</value>
-    [DataMember(Name = "serviceGoalTemplate", EmitDefaultValue = false)]
+    [JsonPropertyName("serviceGoalTemplate")]
     public ForecastServiceGoalTemplateResponse ServiceGoalTemplate { get; set; }
 
 

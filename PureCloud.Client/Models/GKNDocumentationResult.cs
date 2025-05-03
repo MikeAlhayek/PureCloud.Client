@@ -1,4 +1,3 @@
-using System.Runtime.Serialization;
 using System.Text;
 using System.Text.Json.Serialization;
 
@@ -7,7 +6,7 @@ namespace PureCloud.Client.Models;
 /// <summary>
 /// GKNDocumentationResult
 /// </summary>
-[DataContract]
+
 public partial class GKNDocumentationResult : IEquatable<GKNDocumentationResult>
 {
 
@@ -38,7 +37,7 @@ public partial class GKNDocumentationResult : IEquatable<GKNDocumentationResult>
     /// The text or html content for the documentation entity. Will be returned in responses for certain entities.
     /// </summary>
     /// <value>The text or html content for the documentation entity. Will be returned in responses for certain entities.</value>
-    [DataMember(Name = "content", EmitDefaultValue = false)]
+    [JsonPropertyName("content")]
     public string Content { get; set; }
 
 
@@ -47,7 +46,7 @@ public partial class GKNDocumentationResult : IEquatable<GKNDocumentationResult>
     /// URL link for the documentation entity. Will be returned in responses for certain entities.
     /// </summary>
     /// <value>URL link for the documentation entity. Will be returned in responses for certain entities.</value>
-    [DataMember(Name = "link", EmitDefaultValue = false)]
+    [JsonPropertyName("link")]
     public string Link { get; set; }
 
 
@@ -56,7 +55,7 @@ public partial class GKNDocumentationResult : IEquatable<GKNDocumentationResult>
     /// The title of the documentation entity. Will be returned in responses for certain entities.
     /// </summary>
     /// <value>The title of the documentation entity. Will be returned in responses for certain entities.</value>
-    [DataMember(Name = "title", EmitDefaultValue = false)]
+    [JsonPropertyName("title")]
     public string Title { get; set; }
 
 
@@ -65,7 +64,7 @@ public partial class GKNDocumentationResult : IEquatable<GKNDocumentationResult>
     /// The search type. Will be returned in responses for certain entities.
     /// </summary>
     /// <value>The search type. Will be returned in responses for certain entities.</value>
-    [DataMember(Name = "_type", EmitDefaultValue = false)]
+    [JsonPropertyName("_type")]
     public string Type { get; set; }
 
 

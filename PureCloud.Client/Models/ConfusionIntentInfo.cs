@@ -1,12 +1,12 @@
-using System.Runtime.Serialization;
 using System.Text;
+using System.Text.Json.Serialization;
 
 namespace PureCloud.Client.Models;
 
 /// <summary>
 /// ConfusionIntentInfo
 /// </summary>
-[DataContract]
+
 public partial class ConfusionIntentInfo : IEquatable<ConfusionIntentInfo>
 {
     /// <summary>
@@ -25,7 +25,7 @@ public partial class ConfusionIntentInfo : IEquatable<ConfusionIntentInfo>
     /// The globally unique identifier for the object.
     /// </summary>
     /// <value>The globally unique identifier for the object.</value>
-    [DataMember(Name = "id", EmitDefaultValue = false)]
+    [JsonPropertyName("id")]
     public string Id { get; private set; }
 
 
@@ -34,7 +34,7 @@ public partial class ConfusionIntentInfo : IEquatable<ConfusionIntentInfo>
     /// The name of the object.
     /// </summary>
     /// <value>The name of the object.</value>
-    [DataMember(Name = "name", EmitDefaultValue = false)]
+    [JsonPropertyName("name")]
     public string Name { get; private set; }
 
 
@@ -43,7 +43,7 @@ public partial class ConfusionIntentInfo : IEquatable<ConfusionIntentInfo>
     /// Number of utterances in this intent which are similar to parent utterance.
     /// </summary>
     /// <value>Number of utterances in this intent which are similar to parent utterance.</value>
-    [DataMember(Name = "utteranceCount", EmitDefaultValue = false)]
+    [JsonPropertyName("utteranceCount")]
     public int? UtteranceCount { get; set; }
 
 

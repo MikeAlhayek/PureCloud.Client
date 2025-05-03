@@ -7,14 +7,14 @@ namespace PureCloud.Client.Models;
 /// <summary>
 /// A Genesys Cloud resource created or modified as a result of running an accelerator
 /// </summary>
-[DataContract]
+
 public partial class MetadataResultEntity : IEquatable<MetadataResultEntity>
 {
     /// <summary>
     /// whether the modified resource is visible or hidden
     /// </summary>
     /// <value>whether the modified resource is visible or hidden</value>
-    [JsonConverter(typeof(JsonStringEnumConverter))]
+    
     public enum VisibilityEnum
     {
         /// <summary>
@@ -41,7 +41,7 @@ public partial class MetadataResultEntity : IEquatable<MetadataResultEntity>
     /// whether the modified resource is visible or hidden
     /// </summary>
     /// <value>whether the modified resource is visible or hidden</value>
-    [DataMember(Name = "visibility", EmitDefaultValue = false)]
+    [JsonPropertyName("visibility")]
     public VisibilityEnum? Visibility { get; private set; }
     /// <summary>
     /// Initializes a new instance of the <see cref="MetadataResultEntity" /> class.
@@ -57,7 +57,7 @@ public partial class MetadataResultEntity : IEquatable<MetadataResultEntity>
     /// object type of the modified resource
     /// </summary>
     /// <value>object type of the modified resource</value>
-    [DataMember(Name = "type", EmitDefaultValue = false)]
+    [JsonPropertyName("type")]
     public string Type { get; private set; }
 
 
@@ -66,7 +66,7 @@ public partial class MetadataResultEntity : IEquatable<MetadataResultEntity>
     /// description of the modified resource
     /// </summary>
     /// <value>description of the modified resource</value>
-    [DataMember(Name = "description", EmitDefaultValue = false)]
+    [JsonPropertyName("description")]
     public string Description { get; private set; }
 
 

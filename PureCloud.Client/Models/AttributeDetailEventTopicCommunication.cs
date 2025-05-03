@@ -7,13 +7,13 @@ namespace PureCloud.Client.Models;
 /// <summary>
 /// AttributeDetailEventTopicCommunication
 /// </summary>
-[DataContract]
+
 public partial class AttributeDetailEventTopicCommunication : IEquatable<AttributeDetailEventTopicCommunication>
 {
     /// <summary>
     /// Gets or Sets MediaType
     /// </summary>
-    [JsonConverter(typeof(JsonStringEnumConverter))]
+    
     public enum MediaTypeEnum
     {
         /// <summary>
@@ -87,7 +87,7 @@ public partial class AttributeDetailEventTopicCommunication : IEquatable<Attribu
     /// <summary>
     /// Gets or Sets MediaType
     /// </summary>
-    [DataMember(Name = "mediaType", EmitDefaultValue = false)]
+    [JsonPropertyName("mediaType")]
     public MediaTypeEnum? MediaType { get; set; }
     /// <summary>
     /// Initializes a new instance of the <see cref="AttributeDetailEventTopicCommunication" /> class.
@@ -106,7 +106,7 @@ public partial class AttributeDetailEventTopicCommunication : IEquatable<Attribu
     /// <summary>
     /// Gets or Sets Id
     /// </summary>
-    [DataMember(Name = "id", EmitDefaultValue = false)]
+    [JsonPropertyName("id")]
     public string Id { get; set; }
 
 

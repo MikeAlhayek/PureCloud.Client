@@ -7,14 +7,14 @@ namespace PureCloud.Client.Models;
 /// <summary>
 /// A criteria type that can be used in tandem with other criteria type to create queries of executionData
 /// </summary>
-[DataContract]
+
 public partial class QueryCriteria : IEquatable<QueryCriteria>
 {
     /// <summary>
     /// The is the name of the criteria that can be queried.
     /// </summary>
     /// <value>The is the name of the criteria that can be queried.</value>
-    [JsonConverter(typeof(JsonStringEnumConverter))]
+    
     public enum CriteriaKeyEnum
     {
         /// <summary>
@@ -160,7 +160,7 @@ public partial class QueryCriteria : IEquatable<QueryCriteria>
     /// <summary>
     /// Gets or Sets CriteriaGroups
     /// </summary>
-    [JsonConverter(typeof(JsonStringEnumConverter))]
+    
     public enum CriteriaGroupsEnum
     {
         /// <summary>
@@ -187,7 +187,7 @@ public partial class QueryCriteria : IEquatable<QueryCriteria>
     /// The type of data for the criteria (string, int, etc).
     /// </summary>
     /// <value>The type of data for the criteria (string, int, etc).</value>
-    [JsonConverter(typeof(JsonStringEnumConverter))]
+    
     public enum DataTypeEnum
     {
         /// <summary>
@@ -220,13 +220,13 @@ public partial class QueryCriteria : IEquatable<QueryCriteria>
     /// The is the name of the criteria that can be queried.
     /// </summary>
     /// <value>The is the name of the criteria that can be queried.</value>
-    [DataMember(Name = "criteriaKey", EmitDefaultValue = false)]
+    [JsonPropertyName("criteriaKey")]
     public CriteriaKeyEnum? CriteriaKey { get; set; }
     /// <summary>
     /// The type of data for the criteria (string, int, etc).
     /// </summary>
     /// <value>The type of data for the criteria (string, int, etc).</value>
-    [DataMember(Name = "dataType", EmitDefaultValue = false)]
+    [JsonPropertyName("dataType")]
     public DataTypeEnum? DataType { get; set; }
     /// <summary>
     /// Initializes a new instance of the <see cref="QueryCriteria" /> class.
@@ -256,7 +256,7 @@ public partial class QueryCriteria : IEquatable<QueryCriteria>
     /// The executionData type that this criteria item can be used on.
     /// </summary>
     /// <value>The executionData type that this criteria item can be used on.</value>
-    [DataMember(Name = "criteriaGroups", EmitDefaultValue = false)]
+    [JsonPropertyName("criteriaGroups")]
     public List<CriteriaGroupsEnum> CriteriaGroups { get; set; }
 
 
@@ -265,7 +265,7 @@ public partial class QueryCriteria : IEquatable<QueryCriteria>
     /// The is the description of the criteria.
     /// </summary>
     /// <value>The is the description of the criteria.</value>
-    [DataMember(Name = "description", EmitDefaultValue = false)]
+    [JsonPropertyName("description")]
     public string Description { get; set; }
 
 
@@ -274,7 +274,7 @@ public partial class QueryCriteria : IEquatable<QueryCriteria>
     /// A list of operators that can be used on this criteria.
     /// </summary>
     /// <value>A list of operators that can be used on this criteria.</value>
-    [DataMember(Name = "operators", EmitDefaultValue = false)]
+    [JsonPropertyName("operators")]
     public List<string> Operators { get; set; }
 
 
@@ -285,7 +285,7 @@ public partial class QueryCriteria : IEquatable<QueryCriteria>
     /// A logical grouping and display order for this item.
     /// </summary>
     /// <value>A logical grouping and display order for this item.</value>
-    [DataMember(Name = "categoryInfo", EmitDefaultValue = false)]
+    [JsonPropertyName("categoryInfo")]
     public CriteriaCategoryInfo CategoryInfo { get; set; }
 
 

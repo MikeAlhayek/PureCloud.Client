@@ -1,12 +1,12 @@
-using System.Runtime.Serialization;
 using System.Text;
+using System.Text.Json.Serialization;
 
 namespace PureCloud.Client.Models;
 
 /// <summary>
 /// V2MobiusRulesTopicAlertingAddressableEntityRef
 /// </summary>
-[DataContract]
+
 public partial class V2MobiusRulesTopicAlertingAddressableEntityRef : IEquatable<V2MobiusRulesTopicAlertingAddressableEntityRef>
 {
     /// <summary>
@@ -27,7 +27,7 @@ public partial class V2MobiusRulesTopicAlertingAddressableEntityRef : IEquatable
     /// The ID of the resource
     /// </summary>
     /// <value>The ID of the resource</value>
-    [DataMember(Name = "id", EmitDefaultValue = false)]
+    [JsonPropertyName("id")]
     public string Id { get; set; }
 
 
@@ -35,7 +35,7 @@ public partial class V2MobiusRulesTopicAlertingAddressableEntityRef : IEquatable
     /// <summary>
     /// Gets or Sets DisplayName
     /// </summary>
-    [DataMember(Name = "displayName", EmitDefaultValue = false)]
+    [JsonPropertyName("displayName")]
     public string DisplayName { get; set; }
 
 

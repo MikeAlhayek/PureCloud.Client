@@ -1,12 +1,12 @@
-using System.Runtime.Serialization;
 using System.Text;
+using System.Text.Json.Serialization;
 
 namespace PureCloud.Client.Models;
 
 /// <summary>
 /// DialerContactlistConfigChangeContactPhoneNumberColumn
 /// </summary>
-[DataContract]
+
 public partial class DialerContactlistConfigChangeContactPhoneNumberColumn : IEquatable<DialerContactlistConfigChangeContactPhoneNumberColumn>
 {
     /// <summary>
@@ -31,7 +31,7 @@ public partial class DialerContactlistConfigChangeContactPhoneNumberColumn : IEq
     /// name of the phone column
     /// </summary>
     /// <value>name of the phone column</value>
-    [DataMember(Name = "columnName", EmitDefaultValue = false)]
+    [JsonPropertyName("columnName")]
     public string ColumnName { get; set; }
 
 
@@ -40,7 +40,7 @@ public partial class DialerContactlistConfigChangeContactPhoneNumberColumn : IEq
     /// type of the phone column, for example, &#39;cell&#39; or &#39;home&#39;
     /// </summary>
     /// <value>type of the phone column, for example, &#39;cell&#39; or &#39;home&#39;</value>
-    [DataMember(Name = "type", EmitDefaultValue = false)]
+    [JsonPropertyName("type")]
     public string Type { get; set; }
 
 
@@ -49,7 +49,7 @@ public partial class DialerContactlistConfigChangeContactPhoneNumberColumn : IEq
     /// name of the column indicating the timezone to be considered for determining callable times
     /// </summary>
     /// <value>name of the column indicating the timezone to be considered for determining callable times</value>
-    [DataMember(Name = "callableTimeColumn", EmitDefaultValue = false)]
+    [JsonPropertyName("callableTimeColumn")]
     public string CallableTimeColumn { get; set; }
 
 
@@ -57,7 +57,7 @@ public partial class DialerContactlistConfigChangeContactPhoneNumberColumn : IEq
     /// <summary>
     /// Gets or Sets AdditionalProperties
     /// </summary>
-    [DataMember(Name = "additionalProperties", EmitDefaultValue = false)]
+    [JsonPropertyName("additionalProperties")]
     public Dictionary<string, object> AdditionalProperties { get; set; }
 
 

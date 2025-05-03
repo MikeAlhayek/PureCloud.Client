@@ -7,13 +7,13 @@ namespace PureCloud.Client.Models;
 /// <summary>
 /// KlaxonHeartBeatAlertsTopicHeartBeatAlert
 /// </summary>
-[DataContract]
+
 public partial class KlaxonHeartBeatAlertsTopicHeartBeatAlert : IEquatable<KlaxonHeartBeatAlertsTopicHeartBeatAlert>
 {
     /// <summary>
     /// Gets or Sets AlertTypes
     /// </summary>
-    [JsonConverter(typeof(JsonStringEnumConverter))]
+    
     public enum AlertTypesEnum
     {
         /// <summary>
@@ -45,7 +45,7 @@ public partial class KlaxonHeartBeatAlertsTopicHeartBeatAlert : IEquatable<Klaxo
     /// <summary>
     /// Gets or Sets RuleType
     /// </summary>
-    [JsonConverter(typeof(JsonStringEnumConverter))]
+    
     public enum RuleTypeEnum
     {
         /// <summary>
@@ -65,7 +65,7 @@ public partial class KlaxonHeartBeatAlertsTopicHeartBeatAlert : IEquatable<Klaxo
     /// <summary>
     /// Gets or Sets RuleType
     /// </summary>
-    [DataMember(Name = "ruleType", EmitDefaultValue = false)]
+    [JsonPropertyName("ruleType")]
     public RuleTypeEnum? RuleType { get; set; }
     /// <summary>
     /// Initializes a new instance of the <see cref="KlaxonHeartBeatAlertsTopicHeartBeatAlert" /> class.
@@ -100,7 +100,7 @@ public partial class KlaxonHeartBeatAlertsTopicHeartBeatAlert : IEquatable<Klaxo
     /// <summary>
     /// Gets or Sets Id
     /// </summary>
-    [DataMember(Name = "id", EmitDefaultValue = false)]
+    [JsonPropertyName("id")]
     public string Id { get; set; }
 
 
@@ -108,7 +108,7 @@ public partial class KlaxonHeartBeatAlertsTopicHeartBeatAlert : IEquatable<Klaxo
     /// <summary>
     /// Gets or Sets Name
     /// </summary>
-    [DataMember(Name = "name", EmitDefaultValue = false)]
+    [JsonPropertyName("name")]
     public string Name { get; set; }
 
 
@@ -116,7 +116,7 @@ public partial class KlaxonHeartBeatAlertsTopicHeartBeatAlert : IEquatable<Klaxo
     /// <summary>
     /// Gets or Sets SenderId
     /// </summary>
-    [DataMember(Name = "senderId", EmitDefaultValue = false)]
+    [JsonPropertyName("senderId")]
     public string SenderId { get; set; }
 
 
@@ -124,7 +124,7 @@ public partial class KlaxonHeartBeatAlertsTopicHeartBeatAlert : IEquatable<Klaxo
     /// <summary>
     /// Gets or Sets HeartBeatTimeoutInMinutes
     /// </summary>
-    [DataMember(Name = "heartBeatTimeoutInMinutes", EmitDefaultValue = false)]
+    [JsonPropertyName("heartBeatTimeoutInMinutes")]
     public double? HeartBeatTimeoutInMinutes { get; set; }
 
 
@@ -132,7 +132,7 @@ public partial class KlaxonHeartBeatAlertsTopicHeartBeatAlert : IEquatable<Klaxo
     /// <summary>
     /// Gets or Sets RuleId
     /// </summary>
-    [DataMember(Name = "ruleId", EmitDefaultValue = false)]
+    [JsonPropertyName("ruleId")]
     public string RuleId { get; set; }
 
 
@@ -140,7 +140,7 @@ public partial class KlaxonHeartBeatAlertsTopicHeartBeatAlert : IEquatable<Klaxo
     /// <summary>
     /// Gets or Sets StartDate
     /// </summary>
-    [DataMember(Name = "startDate", EmitDefaultValue = false)]
+    [JsonPropertyName("startDate")]
     public DateTime? StartDate { get; set; }
 
 
@@ -148,7 +148,7 @@ public partial class KlaxonHeartBeatAlertsTopicHeartBeatAlert : IEquatable<Klaxo
     /// <summary>
     /// Gets or Sets EndDate
     /// </summary>
-    [DataMember(Name = "endDate", EmitDefaultValue = false)]
+    [JsonPropertyName("endDate")]
     public DateTime? EndDate { get; set; }
 
 
@@ -156,7 +156,7 @@ public partial class KlaxonHeartBeatAlertsTopicHeartBeatAlert : IEquatable<Klaxo
     /// <summary>
     /// Gets or Sets NotificationUsers
     /// </summary>
-    [DataMember(Name = "notificationUsers", EmitDefaultValue = false)]
+    [JsonPropertyName("notificationUsers")]
     public List<KlaxonHeartBeatAlertsTopicNotificationUser> NotificationUsers { get; set; }
 
 
@@ -164,7 +164,7 @@ public partial class KlaxonHeartBeatAlertsTopicHeartBeatAlert : IEquatable<Klaxo
     /// <summary>
     /// Gets or Sets AlertTypes
     /// </summary>
-    [DataMember(Name = "alertTypes", EmitDefaultValue = false)]
+    [JsonPropertyName("alertTypes")]
     public List<AlertTypesEnum> AlertTypes { get; set; }
 
 

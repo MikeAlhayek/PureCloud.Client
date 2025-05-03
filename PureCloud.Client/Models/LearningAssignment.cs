@@ -7,14 +7,14 @@ namespace PureCloud.Client.Models;
 /// <summary>
 /// Learning module assignment with user information
 /// </summary>
-[DataContract]
+
 public partial class LearningAssignment : IEquatable<LearningAssignment>
 {
     /// <summary>
     /// The Learning Assignment state
     /// </summary>
     /// <value>The Learning Assignment state</value>
-    [JsonConverter(typeof(JsonStringEnumConverter))]
+    
     public enum StateEnum
     {
         /// <summary>
@@ -65,7 +65,7 @@ public partial class LearningAssignment : IEquatable<LearningAssignment>
     /// The Learning Assignment state
     /// </summary>
     /// <value>The Learning Assignment state</value>
-    [DataMember(Name = "state", EmitDefaultValue = false)]
+    [JsonPropertyName("state")]
     public StateEnum? State { get; set; }
     /// <summary>
     /// Initializes a new instance of the <see cref="LearningAssignment" /> class.
@@ -97,7 +97,7 @@ public partial class LearningAssignment : IEquatable<LearningAssignment>
     /// The globally unique identifier for the object.
     /// </summary>
     /// <value>The globally unique identifier for the object.</value>
-    [DataMember(Name = "id", EmitDefaultValue = false)]
+    [JsonPropertyName("id")]
     public string Id { get; private set; }
 
 
@@ -106,7 +106,7 @@ public partial class LearningAssignment : IEquatable<LearningAssignment>
     /// The assessment associated with this assignment
     /// </summary>
     /// <value>The assessment associated with this assignment</value>
-    [DataMember(Name = "assessment", EmitDefaultValue = false)]
+    [JsonPropertyName("assessment")]
     public LearningAssessment Assessment { get; set; }
 
 
@@ -115,7 +115,7 @@ public partial class LearningAssignment : IEquatable<LearningAssignment>
     /// The user who created the assignment
     /// </summary>
     /// <value>The user who created the assignment</value>
-    [DataMember(Name = "createdBy", EmitDefaultValue = false)]
+    [JsonPropertyName("createdBy")]
     public UserReference CreatedBy { get; private set; }
 
 
@@ -124,7 +124,7 @@ public partial class LearningAssignment : IEquatable<LearningAssignment>
     /// The date when the assignment was created. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z
     /// </summary>
     /// <value>The date when the assignment was created. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z</value>
-    [DataMember(Name = "dateCreated", EmitDefaultValue = false)]
+    [JsonPropertyName("dateCreated")]
     public DateTime? DateCreated { get; private set; }
 
 
@@ -133,7 +133,7 @@ public partial class LearningAssignment : IEquatable<LearningAssignment>
     /// The user who modified the assignment
     /// </summary>
     /// <value>The user who modified the assignment</value>
-    [DataMember(Name = "modifiedBy", EmitDefaultValue = false)]
+    [JsonPropertyName("modifiedBy")]
     public UserReference ModifiedBy { get; private set; }
 
 
@@ -142,7 +142,7 @@ public partial class LearningAssignment : IEquatable<LearningAssignment>
     /// The date when the assignment was last modified. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z
     /// </summary>
     /// <value>The date when the assignment was last modified. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z</value>
-    [DataMember(Name = "dateModified", EmitDefaultValue = false)]
+    [JsonPropertyName("dateModified")]
     public DateTime? DateModified { get; private set; }
 
 
@@ -151,7 +151,7 @@ public partial class LearningAssignment : IEquatable<LearningAssignment>
     /// True if the assignment is overdue
     /// </summary>
     /// <value>True if the assignment is overdue</value>
-    [DataMember(Name = "isOverdue", EmitDefaultValue = false)]
+    [JsonPropertyName("isOverdue")]
     public bool? IsOverdue { get; private set; }
 
 
@@ -160,7 +160,7 @@ public partial class LearningAssignment : IEquatable<LearningAssignment>
     /// The user&#39;s percentage score for this assignment
     /// </summary>
     /// <value>The user&#39;s percentage score for this assignment</value>
-    [DataMember(Name = "percentageScore", EmitDefaultValue = false)]
+    [JsonPropertyName("percentageScore")]
     public float? PercentageScore { get; private set; }
 
 
@@ -169,7 +169,7 @@ public partial class LearningAssignment : IEquatable<LearningAssignment>
     /// The user&#39;s percentage score for this assignment&#39;s assessment
     /// </summary>
     /// <value>The user&#39;s percentage score for this assignment&#39;s assessment</value>
-    [DataMember(Name = "assessmentPercentageScore", EmitDefaultValue = false)]
+    [JsonPropertyName("assessmentPercentageScore")]
     public float? AssessmentPercentageScore { get; private set; }
 
 
@@ -178,7 +178,7 @@ public partial class LearningAssignment : IEquatable<LearningAssignment>
     /// True if this assignment was created by a Rule
     /// </summary>
     /// <value>True if this assignment was created by a Rule</value>
-    [DataMember(Name = "isRule", EmitDefaultValue = false)]
+    [JsonPropertyName("isRule")]
     public bool? IsRule { get; private set; }
 
 
@@ -187,7 +187,7 @@ public partial class LearningAssignment : IEquatable<LearningAssignment>
     /// True if this assignment was created manually
     /// </summary>
     /// <value>True if this assignment was created manually</value>
-    [DataMember(Name = "isManual", EmitDefaultValue = false)]
+    [JsonPropertyName("isManual")]
     public bool? IsManual { get; private set; }
 
 
@@ -196,7 +196,7 @@ public partial class LearningAssignment : IEquatable<LearningAssignment>
     /// True if the assessment was passed
     /// </summary>
     /// <value>True if the assessment was passed</value>
-    [DataMember(Name = "isPassed", EmitDefaultValue = false)]
+    [JsonPropertyName("isPassed")]
     public bool? IsPassed { get; private set; }
 
 
@@ -205,7 +205,7 @@ public partial class LearningAssignment : IEquatable<LearningAssignment>
     /// True if the assignment is based on latest module
     /// </summary>
     /// <value>True if the assignment is based on latest module</value>
-    [DataMember(Name = "isLatest", EmitDefaultValue = false)]
+    [JsonPropertyName("isLatest")]
     public bool? IsLatest { get; private set; }
 
 
@@ -214,7 +214,7 @@ public partial class LearningAssignment : IEquatable<LearningAssignment>
     /// The assessment completion percentage of assignment
     /// </summary>
     /// <value>The assessment completion percentage of assignment</value>
-    [DataMember(Name = "assessmentCompletionPercentage", EmitDefaultValue = false)]
+    [JsonPropertyName("assessmentCompletionPercentage")]
     public float? AssessmentCompletionPercentage { get; private set; }
 
 
@@ -223,7 +223,7 @@ public partial class LearningAssignment : IEquatable<LearningAssignment>
     /// The overall completion percentage of assignment
     /// </summary>
     /// <value>The overall completion percentage of assignment</value>
-    [DataMember(Name = "completionPercentage", EmitDefaultValue = false)]
+    [JsonPropertyName("completionPercentage")]
     public float? CompletionPercentage { get; private set; }
 
 
@@ -232,7 +232,7 @@ public partial class LearningAssignment : IEquatable<LearningAssignment>
     /// List of assignment steps
     /// </summary>
     /// <value>List of assignment steps</value>
-    [DataMember(Name = "steps", EmitDefaultValue = false)]
+    [JsonPropertyName("steps")]
     public List<LearningAssignmentStep> Steps { get; private set; }
 
 
@@ -241,7 +241,7 @@ public partial class LearningAssignment : IEquatable<LearningAssignment>
     /// The next assignment step
     /// </summary>
     /// <value>The next assignment step</value>
-    [DataMember(Name = "nextStep", EmitDefaultValue = false)]
+    [JsonPropertyName("nextStep")]
     public LearningAssignmentStep NextStep { get; private set; }
 
 
@@ -250,7 +250,7 @@ public partial class LearningAssignment : IEquatable<LearningAssignment>
     /// The URI for this object
     /// </summary>
     /// <value>The URI for this object</value>
-    [DataMember(Name = "selfUri", EmitDefaultValue = false)]
+    [JsonPropertyName("selfUri")]
     public string SelfUri { get; private set; }
 
 
@@ -261,7 +261,7 @@ public partial class LearningAssignment : IEquatable<LearningAssignment>
     /// The recommended completion date of the assignment. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z
     /// </summary>
     /// <value>The recommended completion date of the assignment. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z</value>
-    [DataMember(Name = "dateRecommendedForCompletion", EmitDefaultValue = false)]
+    [JsonPropertyName("dateRecommendedForCompletion")]
     public DateTime? DateRecommendedForCompletion { get; set; }
 
 
@@ -270,7 +270,7 @@ public partial class LearningAssignment : IEquatable<LearningAssignment>
     /// The version of Learning module assigned
     /// </summary>
     /// <value>The version of Learning module assigned</value>
-    [DataMember(Name = "version", EmitDefaultValue = false)]
+    [JsonPropertyName("version")]
     public int? Version { get; set; }
 
 
@@ -279,7 +279,7 @@ public partial class LearningAssignment : IEquatable<LearningAssignment>
     /// The Learning module object associated with this assignment
     /// </summary>
     /// <value>The Learning module object associated with this assignment</value>
-    [DataMember(Name = "module", EmitDefaultValue = false)]
+    [JsonPropertyName("module")]
     public LearningModule Module { get; set; }
 
 
@@ -288,7 +288,7 @@ public partial class LearningAssignment : IEquatable<LearningAssignment>
     /// The user to whom the assignment is assigned
     /// </summary>
     /// <value>The user to whom the assignment is assigned</value>
-    [DataMember(Name = "user", EmitDefaultValue = false)]
+    [JsonPropertyName("user")]
     public UserReference User { get; set; }
 
 
@@ -297,7 +297,7 @@ public partial class LearningAssignment : IEquatable<LearningAssignment>
     /// The assessment form associated with this assignment
     /// </summary>
     /// <value>The assessment form associated with this assignment</value>
-    [DataMember(Name = "assessmentForm", EmitDefaultValue = false)]
+    [JsonPropertyName("assessmentForm")]
     public AssessmentForm AssessmentForm { get; set; }
 
 
@@ -306,7 +306,7 @@ public partial class LearningAssignment : IEquatable<LearningAssignment>
     /// The length in minutes of the assignment
     /// </summary>
     /// <value>The length in minutes of the assignment</value>
-    [DataMember(Name = "lengthInMinutes", EmitDefaultValue = false)]
+    [JsonPropertyName("lengthInMinutes")]
     public int? LengthInMinutes { get; set; }
 
 

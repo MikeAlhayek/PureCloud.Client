@@ -1,4 +1,3 @@
-using System.Runtime.Serialization;
 using System.Text;
 using System.Text.Json.Serialization;
 
@@ -7,7 +6,7 @@ namespace PureCloud.Client.Models;
 /// <summary>
 /// DocumentBodyTableCellBlock
 /// </summary>
-[DataContract]
+
 public partial class DocumentBodyTableCellBlock : IEquatable<DocumentBodyTableCellBlock>
 {
 
@@ -34,7 +33,7 @@ public partial class DocumentBodyTableCellBlock : IEquatable<DocumentBodyTableCe
     /// The properties for the table cell.
     /// </summary>
     /// <value>The properties for the table cell.</value>
-    [DataMember(Name = "properties", EmitDefaultValue = false)]
+    [JsonPropertyName("properties")]
     public DocumentBodyTableCellBlockProperties Properties { get; set; }
 
 
@@ -43,7 +42,7 @@ public partial class DocumentBodyTableCellBlock : IEquatable<DocumentBodyTableCe
     /// The list of content blocks for the table.
     /// </summary>
     /// <value>The list of content blocks for the table.</value>
-    [DataMember(Name = "blocks", EmitDefaultValue = false)]
+    [JsonPropertyName("blocks")]
     public List<DocumentTableContentBlock> Blocks { get; set; }
 
 

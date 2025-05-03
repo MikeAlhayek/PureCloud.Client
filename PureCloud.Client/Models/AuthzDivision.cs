@@ -1,4 +1,3 @@
-using System.Runtime.Serialization;
 using System.Text;
 using System.Text.Json.Serialization;
 
@@ -7,7 +6,7 @@ namespace PureCloud.Client.Models;
 /// <summary>
 /// AuthzDivision
 /// </summary>
-[DataContract]
+
 public partial class AuthzDivision : IEquatable<AuthzDivision>
 {
 
@@ -34,7 +33,7 @@ public partial class AuthzDivision : IEquatable<AuthzDivision>
     /// The globally unique identifier for the object.
     /// </summary>
     /// <value>The globally unique identifier for the object.</value>
-    [DataMember(Name = "id", EmitDefaultValue = false)]
+    [JsonPropertyName("id")]
     public string Id { get; private set; }
 
 
@@ -42,7 +41,7 @@ public partial class AuthzDivision : IEquatable<AuthzDivision>
     /// <summary>
     /// Gets or Sets Name
     /// </summary>
-    [DataMember(Name = "name", EmitDefaultValue = false)]
+    [JsonPropertyName("name")]
     public string Name { get; set; }
 
 
@@ -51,7 +50,7 @@ public partial class AuthzDivision : IEquatable<AuthzDivision>
     /// A helpful description for the division.
     /// </summary>
     /// <value>A helpful description for the division.</value>
-    [DataMember(Name = "description", EmitDefaultValue = false)]
+    [JsonPropertyName("description")]
     public string Description { get; set; }
 
 
@@ -60,7 +59,7 @@ public partial class AuthzDivision : IEquatable<AuthzDivision>
     /// A flag indicating whether this division is the \&quot;Home\&quot; (default) division. Cannot be modified and any supplied value will be ignored on create or update.
     /// </summary>
     /// <value>A flag indicating whether this division is the \&quot;Home\&quot; (default) division. Cannot be modified and any supplied value will be ignored on create or update.</value>
-    [DataMember(Name = "homeDivision", EmitDefaultValue = false)]
+    [JsonPropertyName("homeDivision")]
     public bool? HomeDivision { get; private set; }
 
 
@@ -69,7 +68,7 @@ public partial class AuthzDivision : IEquatable<AuthzDivision>
     /// A count of objects in this division, grouped by type.
     /// </summary>
     /// <value>A count of objects in this division, grouped by type.</value>
-    [DataMember(Name = "objectCounts", EmitDefaultValue = false)]
+    [JsonPropertyName("objectCounts")]
     public Dictionary<string, long?> ObjectCounts { get; private set; }
 
 
@@ -78,7 +77,7 @@ public partial class AuthzDivision : IEquatable<AuthzDivision>
     /// The URI for this object
     /// </summary>
     /// <value>The URI for this object</value>
-    [DataMember(Name = "selfUri", EmitDefaultValue = false)]
+    [JsonPropertyName("selfUri")]
     public string SelfUri { get; private set; }
 
 

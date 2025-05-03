@@ -1,12 +1,12 @@
-using System.Runtime.Serialization;
 using System.Text;
+using System.Text.Json.Serialization;
 
 namespace PureCloud.Client.Models;
 
 /// <summary>
 /// ValidationErrorListing
 /// </summary>
-[DataContract]
+
 public partial class ValidationErrorListing : IEquatable<ValidationErrorListing>
 {
     /// <summary>
@@ -24,7 +24,7 @@ public partial class ValidationErrorListing : IEquatable<ValidationErrorListing>
     /// <summary>
     /// Gets or Sets Entities
     /// </summary>
-    [DataMember(Name = "entities", EmitDefaultValue = false)]
+    [JsonPropertyName("entities")]
     public List<ValidationErrorResponse> Entities { get; set; }
 
 

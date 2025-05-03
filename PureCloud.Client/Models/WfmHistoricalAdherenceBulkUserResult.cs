@@ -7,14 +7,14 @@ namespace PureCloud.Client.Models;
 /// <summary>
 /// WfmHistoricalAdherenceBulkUserResult
 /// </summary>
-[DataContract]
+
 public partial class WfmHistoricalAdherenceBulkUserResult : IEquatable<WfmHistoricalAdherenceBulkUserResult>
 {
     /// <summary>
     /// The impact of the current adherence state for this user
     /// </summary>
     /// <value>The impact of the current adherence state for this user</value>
-    [JsonConverter(typeof(JsonStringEnumConverter))]
+    
     public enum ImpactEnum
     {
         /// <summary>
@@ -53,7 +53,7 @@ public partial class WfmHistoricalAdherenceBulkUserResult : IEquatable<WfmHistor
     /// The impact of the current adherence state for this user
     /// </summary>
     /// <value>The impact of the current adherence state for this user</value>
-    [DataMember(Name = "impact", EmitDefaultValue = false)]
+    [JsonPropertyName("impact")]
     public ImpactEnum? Impact { get; set; }
     /// <summary>
     /// Initializes a new instance of the <see cref="WfmHistoricalAdherenceBulkUserResult" /> class.
@@ -83,7 +83,7 @@ public partial class WfmHistoricalAdherenceBulkUserResult : IEquatable<WfmHistor
     /// The ID of the user for whom the adherence is queried
     /// </summary>
     /// <value>The ID of the user for whom the adherence is queried</value>
-    [DataMember(Name = "userId", EmitDefaultValue = false)]
+    [JsonPropertyName("userId")]
     public string UserId { get; set; }
 
 
@@ -92,7 +92,7 @@ public partial class WfmHistoricalAdherenceBulkUserResult : IEquatable<WfmHistor
     /// Adherence percentage for this user, in the scale of 0 - 100
     /// </summary>
     /// <value>Adherence percentage for this user, in the scale of 0 - 100</value>
-    [DataMember(Name = "adherencePercentage", EmitDefaultValue = false)]
+    [JsonPropertyName("adherencePercentage")]
     public double? AdherencePercentage { get; set; }
 
 
@@ -101,7 +101,7 @@ public partial class WfmHistoricalAdherenceBulkUserResult : IEquatable<WfmHistor
     /// Conformance percentage for this user, in the scale of 0 - 100. Conformance percentage can be greater than 100 when the actual on queue time is greater than the scheduled on queue time for the same period.
     /// </summary>
     /// <value>Conformance percentage for this user, in the scale of 0 - 100. Conformance percentage can be greater than 100 when the actual on queue time is greater than the scheduled on queue time for the same period.</value>
-    [DataMember(Name = "conformancePercentage", EmitDefaultValue = false)]
+    [JsonPropertyName("conformancePercentage")]
     public double? ConformancePercentage { get; set; }
 
 
@@ -112,7 +112,7 @@ public partial class WfmHistoricalAdherenceBulkUserResult : IEquatable<WfmHistor
     /// List of adherence exceptions for this user
     /// </summary>
     /// <value>List of adherence exceptions for this user</value>
-    [DataMember(Name = "exceptionInfo", EmitDefaultValue = false)]
+    [JsonPropertyName("exceptionInfo")]
     public List<HistoricalAdherenceExceptionInfo> ExceptionInfo { get; set; }
 
 
@@ -121,7 +121,7 @@ public partial class WfmHistoricalAdherenceBulkUserResult : IEquatable<WfmHistor
     /// List of adherence actuals for this user
     /// </summary>
     /// <value>List of adherence actuals for this user</value>
-    [DataMember(Name = "actuals", EmitDefaultValue = false)]
+    [JsonPropertyName("actuals")]
     public List<HistoricalAdherenceActuals> Actuals { get; set; }
 
 
@@ -130,7 +130,7 @@ public partial class WfmHistoricalAdherenceBulkUserResult : IEquatable<WfmHistor
     /// Adherence and conformance metrics for days in query range
     /// </summary>
     /// <value>Adherence and conformance metrics for days in query range</value>
-    [DataMember(Name = "dayMetrics", EmitDefaultValue = false)]
+    [JsonPropertyName("dayMetrics")]
     public List<WfmHistoricalAdherenceBulkUserDayMetrics> DayMetrics { get; set; }
 
 

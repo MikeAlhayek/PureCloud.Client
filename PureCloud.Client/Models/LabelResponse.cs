@@ -1,12 +1,12 @@
-using System.Runtime.Serialization;
 using System.Text;
+using System.Text.Json.Serialization;
 
 namespace PureCloud.Client.Models;
 
 /// <summary>
 /// LabelResponse
 /// </summary>
-[DataContract]
+
 public partial class LabelResponse : IEquatable<LabelResponse>
 {
     /// <summary>
@@ -35,7 +35,7 @@ public partial class LabelResponse : IEquatable<LabelResponse>
     /// The globally unique identifier for the object.
     /// </summary>
     /// <value>The globally unique identifier for the object.</value>
-    [DataMember(Name = "id", EmitDefaultValue = false)]
+    [JsonPropertyName("id")]
     public string Id { get; private set; }
 
 
@@ -44,7 +44,7 @@ public partial class LabelResponse : IEquatable<LabelResponse>
     /// The name of the label.
     /// </summary>
     /// <value>The name of the label.</value>
-    [DataMember(Name = "name", EmitDefaultValue = false)]
+    [JsonPropertyName("name")]
     public string Name { get; set; }
 
 
@@ -53,7 +53,7 @@ public partial class LabelResponse : IEquatable<LabelResponse>
     /// The color of the label.
     /// </summary>
     /// <value>The color of the label.</value>
-    [DataMember(Name = "color", EmitDefaultValue = false)]
+    [JsonPropertyName("color")]
     public string Color { get; set; }
 
 
@@ -62,7 +62,7 @@ public partial class LabelResponse : IEquatable<LabelResponse>
     /// The creation date and time of the label. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z
     /// </summary>
     /// <value>The creation date and time of the label. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z</value>
-    [DataMember(Name = "dateCreated", EmitDefaultValue = false)]
+    [JsonPropertyName("dateCreated")]
     public DateTime? DateCreated { get; set; }
 
 
@@ -71,7 +71,7 @@ public partial class LabelResponse : IEquatable<LabelResponse>
     /// The last modification date and time of the label. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z
     /// </summary>
     /// <value>The last modification date and time of the label. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z</value>
-    [DataMember(Name = "dateModified", EmitDefaultValue = false)]
+    [JsonPropertyName("dateModified")]
     public DateTime? DateModified { get; set; }
 
 
@@ -80,7 +80,7 @@ public partial class LabelResponse : IEquatable<LabelResponse>
     /// Number of documents assigned to this label.
     /// </summary>
     /// <value>Number of documents assigned to this label.</value>
-    [DataMember(Name = "documentCount", EmitDefaultValue = false)]
+    [JsonPropertyName("documentCount")]
     public int? DocumentCount { get; set; }
 
 
@@ -89,7 +89,7 @@ public partial class LabelResponse : IEquatable<LabelResponse>
     /// The external id associated with the label.
     /// </summary>
     /// <value>The external id associated with the label.</value>
-    [DataMember(Name = "externalId", EmitDefaultValue = false)]
+    [JsonPropertyName("externalId")]
     public string ExternalId { get; set; }
 
 
@@ -98,7 +98,7 @@ public partial class LabelResponse : IEquatable<LabelResponse>
     /// The URI for this object
     /// </summary>
     /// <value>The URI for this object</value>
-    [DataMember(Name = "selfUri", EmitDefaultValue = false)]
+    [JsonPropertyName("selfUri")]
     public string SelfUri { get; private set; }
 
 

@@ -1,12 +1,12 @@
-using System.Runtime.Serialization;
 using System.Text;
+using System.Text.Json.Serialization;
 
 namespace PureCloud.Client.Models;
 
 /// <summary>
 /// ReschedulingOptionsRunResponse
 /// </summary>
-[DataContract]
+
 public partial class ReschedulingOptionsRunResponse : IEquatable<ReschedulingOptionsRunResponse>
 {
     /// <summary>
@@ -43,7 +43,7 @@ public partial class ReschedulingOptionsRunResponse : IEquatable<ReschedulingOpt
     /// The existing schedule to which this reschedule run applies
     /// </summary>
     /// <value>The existing schedule to which this reschedule run applies</value>
-    [DataMember(Name = "existingSchedule", EmitDefaultValue = false)]
+    [JsonPropertyName("existingSchedule")]
     public BuScheduleReference ExistingSchedule { get; set; }
 
 
@@ -52,7 +52,7 @@ public partial class ReschedulingOptionsRunResponse : IEquatable<ReschedulingOpt
     /// The start date of the period to reschedule. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z
     /// </summary>
     /// <value>The start date of the period to reschedule. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z</value>
-    [DataMember(Name = "startDate", EmitDefaultValue = false)]
+    [JsonPropertyName("startDate")]
     public DateTime? StartDate { get; set; }
 
 
@@ -61,7 +61,7 @@ public partial class ReschedulingOptionsRunResponse : IEquatable<ReschedulingOpt
     /// The end date of the period to reschedule. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z
     /// </summary>
     /// <value>The end date of the period to reschedule. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z</value>
-    [DataMember(Name = "endDate", EmitDefaultValue = false)]
+    [JsonPropertyName("endDate")]
     public DateTime? EndDate { get; set; }
 
 
@@ -70,7 +70,7 @@ public partial class ReschedulingOptionsRunResponse : IEquatable<ReschedulingOpt
     /// Per-management unit rescheduling options
     /// </summary>
     /// <value>Per-management unit rescheduling options</value>
-    [DataMember(Name = "managementUnits", EmitDefaultValue = false)]
+    [JsonPropertyName("managementUnits")]
     public List<ReschedulingManagementUnitResponse> ManagementUnits { get; set; }
 
 
@@ -79,7 +79,7 @@ public partial class ReschedulingOptionsRunResponse : IEquatable<ReschedulingOpt
     /// The number of agents to be considered in the reschedule
     /// </summary>
     /// <value>The number of agents to be considered in the reschedule</value>
-    [DataMember(Name = "agentCount", EmitDefaultValue = false)]
+    [JsonPropertyName("agentCount")]
     public int? AgentCount { get; set; }
 
 
@@ -88,7 +88,7 @@ public partial class ReschedulingOptionsRunResponse : IEquatable<ReschedulingOpt
     /// The IDs of the activity codes being considered for reschedule
     /// </summary>
     /// <value>The IDs of the activity codes being considered for reschedule</value>
-    [DataMember(Name = "activityCodeIds", EmitDefaultValue = false)]
+    [JsonPropertyName("activityCodeIds")]
     public List<string> ActivityCodeIds { get; set; }
 
 
@@ -97,7 +97,7 @@ public partial class ReschedulingOptionsRunResponse : IEquatable<ReschedulingOpt
     /// Whether weekly paid time is allowed to be changed
     /// </summary>
     /// <value>Whether weekly paid time is allowed to be changed</value>
-    [DataMember(Name = "doNotChangeWeeklyPaidTime", EmitDefaultValue = false)]
+    [JsonPropertyName("doNotChangeWeeklyPaidTime")]
     public bool? DoNotChangeWeeklyPaidTime { get; set; }
 
 
@@ -106,7 +106,7 @@ public partial class ReschedulingOptionsRunResponse : IEquatable<ReschedulingOpt
     /// Whether daily paid time is allowed to be changed
     /// </summary>
     /// <value>Whether daily paid time is allowed to be changed</value>
-    [DataMember(Name = "doNotChangeDailyPaidTime", EmitDefaultValue = false)]
+    [JsonPropertyName("doNotChangeDailyPaidTime")]
     public bool? DoNotChangeDailyPaidTime { get; set; }
 
 
@@ -115,7 +115,7 @@ public partial class ReschedulingOptionsRunResponse : IEquatable<ReschedulingOpt
     /// Whether shift start times are allowed to be changed
     /// </summary>
     /// <value>Whether shift start times are allowed to be changed</value>
-    [DataMember(Name = "doNotChangeShiftStartTimes", EmitDefaultValue = false)]
+    [JsonPropertyName("doNotChangeShiftStartTimes")]
     public bool? DoNotChangeShiftStartTimes { get; set; }
 
 
@@ -124,7 +124,7 @@ public partial class ReschedulingOptionsRunResponse : IEquatable<ReschedulingOpt
     /// Whether manually edited shifts are allowed to be changed
     /// </summary>
     /// <value>Whether manually edited shifts are allowed to be changed</value>
-    [DataMember(Name = "doNotChangeManuallyEditedShifts", EmitDefaultValue = false)]
+    [JsonPropertyName("doNotChangeManuallyEditedShifts")]
     public bool? DoNotChangeManuallyEditedShifts { get; set; }
 
 

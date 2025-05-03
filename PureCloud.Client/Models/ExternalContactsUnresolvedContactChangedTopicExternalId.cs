@@ -1,12 +1,12 @@
-using System.Runtime.Serialization;
 using System.Text;
+using System.Text.Json.Serialization;
 
 namespace PureCloud.Client.Models;
 
 /// <summary>
 /// ExternalContactsUnresolvedContactChangedTopicExternalId
 /// </summary>
-[DataContract]
+
 public partial class ExternalContactsUnresolvedContactChangedTopicExternalId : IEquatable<ExternalContactsUnresolvedContactChangedTopicExternalId>
 {
     /// <summary>
@@ -26,7 +26,7 @@ public partial class ExternalContactsUnresolvedContactChangedTopicExternalId : I
     /// <summary>
     /// Gets or Sets ExternalSource
     /// </summary>
-    [DataMember(Name = "externalSource", EmitDefaultValue = false)]
+    [JsonPropertyName("externalSource")]
     public ExternalContactsUnresolvedContactChangedTopicExternalSource ExternalSource { get; set; }
 
 
@@ -34,7 +34,7 @@ public partial class ExternalContactsUnresolvedContactChangedTopicExternalId : I
     /// <summary>
     /// Gets or Sets Value
     /// </summary>
-    [DataMember(Name = "value", EmitDefaultValue = false)]
+    [JsonPropertyName("value")]
     public string Value { get; set; }
 
 

@@ -1,12 +1,12 @@
-using System.Runtime.Serialization;
 using System.Text;
+using System.Text.Json.Serialization;
 
 namespace PureCloud.Client.Models;
 
 /// <summary>
 /// OrgWhitelistSettings
 /// </summary>
-[DataContract]
+
 public partial class OrgWhitelistSettings : IEquatable<OrgWhitelistSettings>
 {
     /// <summary>
@@ -26,7 +26,7 @@ public partial class OrgWhitelistSettings : IEquatable<OrgWhitelistSettings>
     /// <summary>
     /// Gets or Sets EnableWhitelist
     /// </summary>
-    [DataMember(Name = "enableWhitelist", EmitDefaultValue = false)]
+    [JsonPropertyName("enableWhitelist")]
     public bool? EnableWhitelist { get; set; }
 
 
@@ -34,7 +34,7 @@ public partial class OrgWhitelistSettings : IEquatable<OrgWhitelistSettings>
     /// <summary>
     /// Gets or Sets DomainWhitelist
     /// </summary>
-    [DataMember(Name = "domainWhitelist", EmitDefaultValue = false)]
+    [JsonPropertyName("domainWhitelist")]
     public List<string> DomainWhitelist { get; set; }
 
 

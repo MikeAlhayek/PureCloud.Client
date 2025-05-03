@@ -1,12 +1,12 @@
-using System.Runtime.Serialization;
 using System.Text;
+using System.Text.Json.Serialization;
 
 namespace PureCloud.Client.Models;
 
 /// <summary>
 /// AggregationRange
 /// </summary>
-[DataContract]
+
 public partial class AggregationRange : IEquatable<AggregationRange>
 {
     /// <summary>
@@ -27,7 +27,7 @@ public partial class AggregationRange : IEquatable<AggregationRange>
     /// Greater than or equal to
     /// </summary>
     /// <value>Greater than or equal to</value>
-    [DataMember(Name = "gte", EmitDefaultValue = false)]
+    [JsonPropertyName("gte")]
     public double? Gte { get; set; }
 
 
@@ -36,7 +36,7 @@ public partial class AggregationRange : IEquatable<AggregationRange>
     /// Less than
     /// </summary>
     /// <value>Less than</value>
-    [DataMember(Name = "lt", EmitDefaultValue = false)]
+    [JsonPropertyName("lt")]
     public double? Lt { get; set; }
 
 

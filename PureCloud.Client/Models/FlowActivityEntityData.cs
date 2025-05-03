@@ -7,14 +7,14 @@ namespace PureCloud.Client.Models;
 /// <summary>
 /// FlowActivityEntityData
 /// </summary>
-[DataContract]
+
 public partial class FlowActivityEntityData : IEquatable<FlowActivityEntityData>
 {
     /// <summary>
     /// Activity metric
     /// </summary>
     /// <value>Activity metric</value>
-    [JsonConverter(typeof(JsonStringEnumConverter))]
+    
     public enum MetricEnum
     {
         /// <summary>
@@ -35,7 +35,7 @@ public partial class FlowActivityEntityData : IEquatable<FlowActivityEntityData>
     /// Active routing method
     /// </summary>
     /// <value>Active routing method</value>
-    [JsonConverter(typeof(JsonStringEnumConverter))]
+    
     public enum ActiveRoutingEnum
     {
         /// <summary>
@@ -104,7 +104,7 @@ public partial class FlowActivityEntityData : IEquatable<FlowActivityEntityData>
     /// The direction of the communication
     /// </summary>
     /// <value>The direction of the communication</value>
-    [JsonConverter(typeof(JsonStringEnumConverter))]
+    
     public enum DirectionEnum
     {
         /// <summary>
@@ -131,7 +131,7 @@ public partial class FlowActivityEntityData : IEquatable<FlowActivityEntityData>
     /// The type of this flow
     /// </summary>
     /// <value>The type of this flow</value>
-    [JsonConverter(typeof(JsonStringEnumConverter))]
+    
     public enum FlowTypeEnum
     {
         /// <summary>
@@ -260,7 +260,7 @@ public partial class FlowActivityEntityData : IEquatable<FlowActivityEntityData>
     /// The session media type
     /// </summary>
     /// <value>The session media type</value>
-    [JsonConverter(typeof(JsonStringEnumConverter))]
+    
     public enum MediaTypeEnum
     {
         /// <summary>
@@ -334,7 +334,7 @@ public partial class FlowActivityEntityData : IEquatable<FlowActivityEntityData>
     /// <summary>
     /// Gets or Sets RequestedRoutings
     /// </summary>
-    [JsonConverter(typeof(JsonStringEnumConverter))]
+    
     public enum RequestedRoutingsEnum
     {
         /// <summary>
@@ -403,7 +403,7 @@ public partial class FlowActivityEntityData : IEquatable<FlowActivityEntityData>
     /// Complete routing method
     /// </summary>
     /// <value>Complete routing method</value>
-    [JsonConverter(typeof(JsonStringEnumConverter))]
+    
     public enum UsedRoutingEnum
     {
         /// <summary>
@@ -472,37 +472,37 @@ public partial class FlowActivityEntityData : IEquatable<FlowActivityEntityData>
     /// Activity metric
     /// </summary>
     /// <value>Activity metric</value>
-    [DataMember(Name = "metric", EmitDefaultValue = false)]
+    [JsonPropertyName("metric")]
     public MetricEnum? Metric { get; set; }
     /// <summary>
     /// Active routing method
     /// </summary>
     /// <value>Active routing method</value>
-    [DataMember(Name = "activeRouting", EmitDefaultValue = false)]
+    [JsonPropertyName("activeRouting")]
     public ActiveRoutingEnum? ActiveRouting { get; set; }
     /// <summary>
     /// The direction of the communication
     /// </summary>
     /// <value>The direction of the communication</value>
-    [DataMember(Name = "direction", EmitDefaultValue = false)]
+    [JsonPropertyName("direction")]
     public DirectionEnum? Direction { get; set; }
     /// <summary>
     /// The type of this flow
     /// </summary>
     /// <value>The type of this flow</value>
-    [DataMember(Name = "flowType", EmitDefaultValue = false)]
+    [JsonPropertyName("flowType")]
     public FlowTypeEnum? FlowType { get; set; }
     /// <summary>
     /// The session media type
     /// </summary>
     /// <value>The session media type</value>
-    [DataMember(Name = "mediaType", EmitDefaultValue = false)]
+    [JsonPropertyName("mediaType")]
     public MediaTypeEnum? MediaType { get; set; }
     /// <summary>
     /// Complete routing method
     /// </summary>
     /// <value>Complete routing method</value>
-    [DataMember(Name = "usedRouting", EmitDefaultValue = false)]
+    [JsonPropertyName("usedRouting")]
     public UsedRoutingEnum? UsedRouting { get; set; }
 
     /// <summary>
@@ -574,7 +574,7 @@ public partial class FlowActivityEntityData : IEquatable<FlowActivityEntityData>
     /// The time at which the activity was observed. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z
     /// </summary>
     /// <value>The time at which the activity was observed. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z</value>
-    [DataMember(Name = "activityDate", EmitDefaultValue = false)]
+    [JsonPropertyName("activityDate")]
     public DateTime? ActivityDate { get; set; }
 
 
@@ -587,7 +587,7 @@ public partial class FlowActivityEntityData : IEquatable<FlowActivityEntityData>
     /// The address that initiated an action
     /// </summary>
     /// <value>The address that initiated an action</value>
-    [DataMember(Name = "addressFrom", EmitDefaultValue = false)]
+    [JsonPropertyName("addressFrom")]
     public string AddressFrom { get; set; }
 
 
@@ -596,7 +596,7 @@ public partial class FlowActivityEntityData : IEquatable<FlowActivityEntityData>
     /// The address receiving an action
     /// </summary>
     /// <value>The address receiving an action</value>
-    [DataMember(Name = "addressTo", EmitDefaultValue = false)]
+    [JsonPropertyName("addressTo")]
     public string AddressTo { get; set; }
 
 
@@ -605,7 +605,7 @@ public partial class FlowActivityEntityData : IEquatable<FlowActivityEntityData>
     /// Automatic Number Identification (caller&#39;s number)
     /// </summary>
     /// <value>Automatic Number Identification (caller&#39;s number)</value>
-    [DataMember(Name = "ani", EmitDefaultValue = false)]
+    [JsonPropertyName("ani")]
     public string Ani { get; set; }
 
 
@@ -614,7 +614,7 @@ public partial class FlowActivityEntityData : IEquatable<FlowActivityEntityData>
     /// Unique identifier for the conversation
     /// </summary>
     /// <value>Unique identifier for the conversation</value>
-    [DataMember(Name = "conversationId", EmitDefaultValue = false)]
+    [JsonPropertyName("conversationId")]
     public string ConversationId { get; set; }
 
 
@@ -623,7 +623,7 @@ public partial class FlowActivityEntityData : IEquatable<FlowActivityEntityData>
     /// Session media type that was converted from in case of a media type conversion
     /// </summary>
     /// <value>Session media type that was converted from in case of a media type conversion</value>
-    [DataMember(Name = "convertedFrom", EmitDefaultValue = false)]
+    [JsonPropertyName("convertedFrom")]
     public string ConvertedFrom { get; set; }
 
 
@@ -632,7 +632,7 @@ public partial class FlowActivityEntityData : IEquatable<FlowActivityEntityData>
     /// Session media type that was converted to in case of a media type conversion
     /// </summary>
     /// <value>Session media type that was converted to in case of a media type conversion</value>
-    [DataMember(Name = "convertedTo", EmitDefaultValue = false)]
+    [JsonPropertyName("convertedTo")]
     public string ConvertedTo { get; set; }
 
 
@@ -643,7 +643,7 @@ public partial class FlowActivityEntityData : IEquatable<FlowActivityEntityData>
     /// Dialed number identification service (number dialed by the calling party)
     /// </summary>
     /// <value>Dialed number identification service (number dialed by the calling party)</value>
-    [DataMember(Name = "dnis", EmitDefaultValue = false)]
+    [JsonPropertyName("dnis")]
     public string Dnis { get; set; }
 
 
@@ -652,7 +652,7 @@ public partial class FlowActivityEntityData : IEquatable<FlowActivityEntityData>
     /// The unique identifier of this flow
     /// </summary>
     /// <value>The unique identifier of this flow</value>
-    [DataMember(Name = "flowId", EmitDefaultValue = false)]
+    [JsonPropertyName("flowId")]
     public string FlowId { get; set; }
 
 
@@ -665,7 +665,7 @@ public partial class FlowActivityEntityData : IEquatable<FlowActivityEntityData>
     /// A human readable name identifying the participant
     /// </summary>
     /// <value>A human readable name identifying the participant</value>
-    [DataMember(Name = "participantName", EmitDefaultValue = false)]
+    [JsonPropertyName("participantName")]
     public string ParticipantName { get; set; }
 
 
@@ -674,7 +674,7 @@ public partial class FlowActivityEntityData : IEquatable<FlowActivityEntityData>
     /// Queue identifier
     /// </summary>
     /// <value>Queue identifier</value>
-    [DataMember(Name = "queueId", EmitDefaultValue = false)]
+    [JsonPropertyName("queueId")]
     public string QueueId { get; set; }
 
 
@@ -683,7 +683,7 @@ public partial class FlowActivityEntityData : IEquatable<FlowActivityEntityData>
     /// Unique identifier for the language requested for an interaction
     /// </summary>
     /// <value>Unique identifier for the language requested for an interaction</value>
-    [DataMember(Name = "requestedLanguageId", EmitDefaultValue = false)]
+    [JsonPropertyName("requestedLanguageId")]
     public string RequestedLanguageId { get; set; }
 
 
@@ -692,7 +692,7 @@ public partial class FlowActivityEntityData : IEquatable<FlowActivityEntityData>
     /// Unique identifier(s) for skill(s) requested for an interaction
     /// </summary>
     /// <value>Unique identifier(s) for skill(s) requested for an interaction</value>
-    [DataMember(Name = "requestedRoutingSkillIds", EmitDefaultValue = false)]
+    [JsonPropertyName("requestedRoutingSkillIds")]
     public List<string> RequestedRoutingSkillIds { get; set; }
 
 
@@ -701,7 +701,7 @@ public partial class FlowActivityEntityData : IEquatable<FlowActivityEntityData>
     /// Routing type(s) for requested/attempted routing methods.
     /// </summary>
     /// <value>Routing type(s) for requested/attempted routing methods.</value>
-    [DataMember(Name = "requestedRoutings", EmitDefaultValue = false)]
+    [JsonPropertyName("requestedRoutings")]
     public List<RequestedRoutingsEnum> RequestedRoutings { get; set; }
 
 
@@ -710,7 +710,7 @@ public partial class FlowActivityEntityData : IEquatable<FlowActivityEntityData>
     /// Routing priority for the current interaction
     /// </summary>
     /// <value>Routing priority for the current interaction</value>
-    [DataMember(Name = "routingPriority", EmitDefaultValue = false)]
+    [JsonPropertyName("routingPriority")]
     public long? RoutingPriority { get; set; }
 
 
@@ -719,7 +719,7 @@ public partial class FlowActivityEntityData : IEquatable<FlowActivityEntityData>
     /// The unique identifier of this session
     /// </summary>
     /// <value>The unique identifier of this session</value>
-    [DataMember(Name = "sessionId", EmitDefaultValue = false)]
+    [JsonPropertyName("sessionId")]
     public string SessionId { get; set; }
 
 
@@ -728,7 +728,7 @@ public partial class FlowActivityEntityData : IEquatable<FlowActivityEntityData>
     /// The team ID the user is a member of
     /// </summary>
     /// <value>The team ID the user is a member of</value>
-    [DataMember(Name = "teamId", EmitDefaultValue = false)]
+    [JsonPropertyName("teamId")]
     public string TeamId { get; set; }
 
 
@@ -739,7 +739,7 @@ public partial class FlowActivityEntityData : IEquatable<FlowActivityEntityData>
     /// Unique identifier for the user
     /// </summary>
     /// <value>Unique identifier for the user</value>
-    [DataMember(Name = "userId", EmitDefaultValue = false)]
+    [JsonPropertyName("userId")]
     public string UserId { get; set; }
 
 
@@ -748,7 +748,7 @@ public partial class FlowActivityEntityData : IEquatable<FlowActivityEntityData>
     /// Scored agents
     /// </summary>
     /// <value>Scored agents</value>
-    [DataMember(Name = "scoredAgents", EmitDefaultValue = false)]
+    [JsonPropertyName("scoredAgents")]
     public List<FlowActivityScoredAgent> ScoredAgents { get; set; }
 
 

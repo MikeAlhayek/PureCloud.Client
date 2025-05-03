@@ -1,12 +1,12 @@
-using System.Runtime.Serialization;
 using System.Text;
+using System.Text.Json.Serialization;
 
 namespace PureCloud.Client.Models;
 
 /// <summary>
 /// SignedData
 /// </summary>
-[DataContract]
+
 public partial class SignedData : IEquatable<SignedData>
 {
     /// <summary>
@@ -24,7 +24,7 @@ public partial class SignedData : IEquatable<SignedData>
     /// <summary>
     /// Gets or Sets Jwt
     /// </summary>
-    [DataMember(Name = "jwt", EmitDefaultValue = false)]
+    [JsonPropertyName("jwt")]
     public string Jwt { get; set; }
 
 

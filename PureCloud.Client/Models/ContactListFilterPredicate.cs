@@ -7,14 +7,14 @@ namespace PureCloud.Client.Models;
 /// <summary>
 /// ContactListFilterPredicate
 /// </summary>
-[DataContract]
+
 public partial class ContactListFilterPredicate : IEquatable<ContactListFilterPredicate>
 {
     /// <summary>
     /// The type of data in the contact column.
     /// </summary>
     /// <value>The type of data in the contact column.</value>
-    [JsonConverter(typeof(JsonStringEnumConverter))]
+    
     public enum ColumnTypeEnum
     {
         /// <summary>
@@ -41,7 +41,7 @@ public partial class ContactListFilterPredicate : IEquatable<ContactListFilterPr
     /// The operator for this ContactListFilterPredicate.
     /// </summary>
     /// <value>The operator for this ContactListFilterPredicate.</value>
-    [JsonConverter(typeof(JsonStringEnumConverter))]
+    
     public enum OperatorEnum
     {
         /// <summary>
@@ -128,13 +128,13 @@ public partial class ContactListFilterPredicate : IEquatable<ContactListFilterPr
     /// The type of data in the contact column.
     /// </summary>
     /// <value>The type of data in the contact column.</value>
-    [DataMember(Name = "columnType", EmitDefaultValue = false)]
+    [JsonPropertyName("columnType")]
     public ColumnTypeEnum? ColumnType { get; set; }
     /// <summary>
     /// The operator for this ContactListFilterPredicate.
     /// </summary>
     /// <value>The operator for this ContactListFilterPredicate.</value>
-    [DataMember(Name = "operator", EmitDefaultValue = false)]
+    [JsonPropertyName("operator")]
     public OperatorEnum? Operator { get; set; }
     /// <summary>
     /// Initializes a new instance of the <see cref="ContactListFilterPredicate" /> class.
@@ -162,7 +162,7 @@ public partial class ContactListFilterPredicate : IEquatable<ContactListFilterPr
     /// Contact list column from the ContactListFilter&#39;s contactList.
     /// </summary>
     /// <value>Contact list column from the ContactListFilter&#39;s contactList.</value>
-    [DataMember(Name = "column", EmitDefaultValue = false)]
+    [JsonPropertyName("column")]
     public string Column { get; set; }
 
 
@@ -175,7 +175,7 @@ public partial class ContactListFilterPredicate : IEquatable<ContactListFilterPr
     /// Value with which to compare the contact&#39;s data. This could be text, a number, or a relative time. A value for relative time should follow the format PxxDTyyHzzM, where xx, yy, and zz specify the days, hours and minutes. For example, a value of P01DT08H30M corresponds to 1 day, 8 hours, and 30 minutes from now. To specify a time in the past, include a negative sign before each numeric value. For example, a value of P-01DT-08H-30M corresponds to 1 day, 8 hours, and 30 minutes in the past. You can also do things like P01DT00H-30M, which would correspond to 23 hours and 30 minutes from now (1 day - 30 minutes).
     /// </summary>
     /// <value>Value with which to compare the contact&#39;s data. This could be text, a number, or a relative time. A value for relative time should follow the format PxxDTyyHzzM, where xx, yy, and zz specify the days, hours and minutes. For example, a value of P01DT08H30M corresponds to 1 day, 8 hours, and 30 minutes from now. To specify a time in the past, include a negative sign before each numeric value. For example, a value of P-01DT-08H-30M corresponds to 1 day, 8 hours, and 30 minutes in the past. You can also do things like P01DT00H-30M, which would correspond to 23 hours and 30 minutes from now (1 day - 30 minutes).</value>
-    [DataMember(Name = "value", EmitDefaultValue = false)]
+    [JsonPropertyName("value")]
     public string Value { get; set; }
 
 
@@ -184,7 +184,7 @@ public partial class ContactListFilterPredicate : IEquatable<ContactListFilterPr
     /// A range of values. Required for operators BETWEEN and IN.
     /// </summary>
     /// <value>A range of values. Required for operators BETWEEN and IN.</value>
-    [DataMember(Name = "range", EmitDefaultValue = false)]
+    [JsonPropertyName("range")]
     public ContactListFilterRange Range { get; set; }
 
 
@@ -193,7 +193,7 @@ public partial class ContactListFilterPredicate : IEquatable<ContactListFilterPr
     /// Inverts the result of the predicate (i.e., if the predicate returns true, inverting it will return false).
     /// </summary>
     /// <value>Inverts the result of the predicate (i.e., if the predicate returns true, inverting it will return false).</value>
-    [DataMember(Name = "inverted", EmitDefaultValue = false)]
+    [JsonPropertyName("inverted")]
     public bool? Inverted { get; set; }
 
 

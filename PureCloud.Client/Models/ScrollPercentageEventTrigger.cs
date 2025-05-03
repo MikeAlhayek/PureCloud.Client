@@ -1,4 +1,3 @@
-using System.Runtime.Serialization;
 using System.Text;
 using System.Text.Json.Serialization;
 
@@ -7,7 +6,7 @@ namespace PureCloud.Client.Models;
 /// <summary>
 /// Details about a scroll percentage event trigger
 /// </summary>
-[DataContract]
+
 public partial class ScrollPercentageEventTrigger : IEquatable<ScrollPercentageEventTrigger>
 {
 
@@ -34,7 +33,7 @@ public partial class ScrollPercentageEventTrigger : IEquatable<ScrollPercentageE
     /// Percentage of a webpage at which an event is triggered.
     /// </summary>
     /// <value>Percentage of a webpage at which an event is triggered.</value>
-    [DataMember(Name = "percentage", EmitDefaultValue = false)]
+    [JsonPropertyName("percentage")]
     public int? Percentage { get; set; }
 
 
@@ -43,7 +42,7 @@ public partial class ScrollPercentageEventTrigger : IEquatable<ScrollPercentageE
     /// Name of event triggered after scrolling to the specified percentage.
     /// </summary>
     /// <value>Name of event triggered after scrolling to the specified percentage.</value>
-    [DataMember(Name = "eventName", EmitDefaultValue = false)]
+    [JsonPropertyName("eventName")]
     public string EventName { get; set; }
 
 

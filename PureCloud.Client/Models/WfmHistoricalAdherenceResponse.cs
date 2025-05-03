@@ -7,14 +7,14 @@ namespace PureCloud.Client.Models;
 /// <summary>
 /// WfmHistoricalAdherenceResponse
 /// </summary>
-[DataContract]
+
 public partial class WfmHistoricalAdherenceResponse : IEquatable<WfmHistoricalAdherenceResponse>
 {
     /// <summary>
     /// The state of the adherence query
     /// </summary>
     /// <value>The state of the adherence query</value>
-    [JsonConverter(typeof(JsonStringEnumConverter))]
+    
     public enum QueryStateEnum
     {
         /// <summary>
@@ -47,7 +47,7 @@ public partial class WfmHistoricalAdherenceResponse : IEquatable<WfmHistoricalAd
     /// The state of the adherence query
     /// </summary>
     /// <value>The state of the adherence query</value>
-    [DataMember(Name = "queryState", EmitDefaultValue = false)]
+    [JsonPropertyName("queryState")]
     public QueryStateEnum? QueryState { get; set; }
     /// <summary>
     /// Initializes a new instance of the <see cref="WfmHistoricalAdherenceResponse" /> class.
@@ -73,7 +73,7 @@ public partial class WfmHistoricalAdherenceResponse : IEquatable<WfmHistoricalAd
     /// The query ID to listen for
     /// </summary>
     /// <value>The query ID to listen for</value>
-    [DataMember(Name = "id", EmitDefaultValue = false)]
+    [JsonPropertyName("id")]
     public string Id { get; set; }
 
 
@@ -82,7 +82,7 @@ public partial class WfmHistoricalAdherenceResponse : IEquatable<WfmHistoricalAd
     /// Deprecated. Use downloadUrls instead.
     /// </summary>
     /// <value>Deprecated. Use downloadUrls instead.</value>
-    [DataMember(Name = "downloadUrl", EmitDefaultValue = false)]
+    [JsonPropertyName("downloadUrl")]
     public string DownloadUrl { get; set; }
 
 
@@ -91,7 +91,7 @@ public partial class WfmHistoricalAdherenceResponse : IEquatable<WfmHistoricalAd
     /// Result will always come via downloadUrls; however the schema is included for documentation
     /// </summary>
     /// <value>Result will always come via downloadUrls; however the schema is included for documentation</value>
-    [DataMember(Name = "downloadResult", EmitDefaultValue = false)]
+    [JsonPropertyName("downloadResult")]
     public WfmHistoricalAdherenceResultWrapper DownloadResult { get; set; }
 
 
@@ -100,7 +100,7 @@ public partial class WfmHistoricalAdherenceResponse : IEquatable<WfmHistoricalAd
     /// The uri list to GET the results of the Historical Adherence query. For notification purposes only
     /// </summary>
     /// <value>The uri list to GET the results of the Historical Adherence query. For notification purposes only</value>
-    [DataMember(Name = "downloadUrls", EmitDefaultValue = false)]
+    [JsonPropertyName("downloadUrls")]
     public List<string> DownloadUrls { get; set; }
 
 

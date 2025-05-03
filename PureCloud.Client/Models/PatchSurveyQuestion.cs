@@ -7,14 +7,14 @@ namespace PureCloud.Client.Models;
 /// <summary>
 /// PatchSurveyQuestion
 /// </summary>
-[DataContract]
+
 public partial class PatchSurveyQuestion : IEquatable<PatchSurveyQuestion>
 {
     /// <summary>
     /// Type of survey question.
     /// </summary>
     /// <value>Type of survey question.</value>
-    [JsonConverter(typeof(JsonStringEnumConverter))]
+    
     public enum TypeEnum
     {
         /// <summary>
@@ -59,7 +59,7 @@ public partial class PatchSurveyQuestion : IEquatable<PatchSurveyQuestion>
     /// The customer property that the answer maps to.
     /// </summary>
     /// <value>The customer property that the answer maps to.</value>
-    [JsonConverter(typeof(JsonStringEnumConverter))]
+    
     public enum CustomerPropertyEnum
     {
         /// <summary>
@@ -110,13 +110,13 @@ public partial class PatchSurveyQuestion : IEquatable<PatchSurveyQuestion>
     /// Type of survey question.
     /// </summary>
     /// <value>Type of survey question.</value>
-    [DataMember(Name = "type", EmitDefaultValue = false)]
+    [JsonPropertyName("type")]
     public TypeEnum? Type { get; set; }
     /// <summary>
     /// The customer property that the answer maps to.
     /// </summary>
     /// <value>The customer property that the answer maps to.</value>
-    [DataMember(Name = "customerProperty", EmitDefaultValue = false)]
+    [JsonPropertyName("customerProperty")]
     public CustomerPropertyEnum? CustomerProperty { get; set; }
 
     /// <summary>
@@ -150,7 +150,7 @@ public partial class PatchSurveyQuestion : IEquatable<PatchSurveyQuestion>
     /// Label of question.
     /// </summary>
     /// <value>Label of question.</value>
-    [DataMember(Name = "label", EmitDefaultValue = false)]
+    [JsonPropertyName("label")]
     public string Label { get; set; }
 
 
@@ -161,7 +161,7 @@ public partial class PatchSurveyQuestion : IEquatable<PatchSurveyQuestion>
     /// Choices available to user.
     /// </summary>
     /// <value>Choices available to user.</value>
-    [DataMember(Name = "choices", EmitDefaultValue = false)]
+    [JsonPropertyName("choices")]
     public List<string> Choices { get; set; }
 
 
@@ -170,7 +170,7 @@ public partial class PatchSurveyQuestion : IEquatable<PatchSurveyQuestion>
     /// Whether answering this question is mandatory.
     /// </summary>
     /// <value>Whether answering this question is mandatory.</value>
-    [DataMember(Name = "isMandatory", EmitDefaultValue = false)]
+    [JsonPropertyName("isMandatory")]
     public bool? IsMandatory { get; set; }
 
 

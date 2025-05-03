@@ -7,14 +7,14 @@ namespace PureCloud.Client.Models;
 /// <summary>
 /// KnowledgeDocumentGuestSearchRequest
 /// </summary>
-[DataContract]
+
 public partial class KnowledgeDocumentGuestSearchRequest : IEquatable<KnowledgeDocumentGuestSearchRequest>
 {
     /// <summary>
     /// The type of the query that initiates the search.
     /// </summary>
     /// <value>The type of the query that initiates the search.</value>
-    [JsonConverter(typeof(JsonStringEnumConverter))]
+    
     public enum QueryTypeEnum
     {
         /// <summary>
@@ -47,7 +47,7 @@ public partial class KnowledgeDocumentGuestSearchRequest : IEquatable<KnowledgeD
     /// The type of the query that initiates the search.
     /// </summary>
     /// <value>The type of the query that initiates the search.</value>
-    [DataMember(Name = "queryType", EmitDefaultValue = false)]
+    [JsonPropertyName("queryType")]
     public QueryTypeEnum? QueryType { get; set; }
 
     /// <summary>
@@ -81,7 +81,7 @@ public partial class KnowledgeDocumentGuestSearchRequest : IEquatable<KnowledgeD
     /// Query to search content in the knowledge base. Maximum of 30 records per query can be fetched.
     /// </summary>
     /// <value>Query to search content in the knowledge base. Maximum of 30 records per query can be fetched.</value>
-    [DataMember(Name = "query", EmitDefaultValue = false)]
+    [JsonPropertyName("query")]
     public string Query { get; set; }
 
 
@@ -90,7 +90,7 @@ public partial class KnowledgeDocumentGuestSearchRequest : IEquatable<KnowledgeD
     /// Page size of the returned results.
     /// </summary>
     /// <value>Page size of the returned results.</value>
-    [DataMember(Name = "pageSize", EmitDefaultValue = false)]
+    [JsonPropertyName("pageSize")]
     public int? PageSize { get; set; }
 
 
@@ -99,7 +99,7 @@ public partial class KnowledgeDocumentGuestSearchRequest : IEquatable<KnowledgeD
     /// Page number of the returned results.
     /// </summary>
     /// <value>Page number of the returned results.</value>
-    [DataMember(Name = "pageNumber", EmitDefaultValue = false)]
+    [JsonPropertyName("pageNumber")]
     public int? PageNumber { get; set; }
 
 
@@ -108,7 +108,7 @@ public partial class KnowledgeDocumentGuestSearchRequest : IEquatable<KnowledgeD
     /// The globally unique identifier for the search.
     /// </summary>
     /// <value>The globally unique identifier for the search.</value>
-    [DataMember(Name = "searchId", EmitDefaultValue = false)]
+    [JsonPropertyName("searchId")]
     public string SearchId { get; private set; }
 
 
@@ -117,7 +117,7 @@ public partial class KnowledgeDocumentGuestSearchRequest : IEquatable<KnowledgeD
     /// The total number of documents matching the query.
     /// </summary>
     /// <value>The total number of documents matching the query.</value>
-    [DataMember(Name = "total", EmitDefaultValue = false)]
+    [JsonPropertyName("total")]
     public int? Total { get; private set; }
 
 
@@ -126,7 +126,7 @@ public partial class KnowledgeDocumentGuestSearchRequest : IEquatable<KnowledgeD
     /// Number of pages returned in the result calculated according to the pageSize and the total
     /// </summary>
     /// <value>Number of pages returned in the result calculated according to the pageSize and the total</value>
-    [DataMember(Name = "pageCount", EmitDefaultValue = false)]
+    [JsonPropertyName("pageCount")]
     public int? PageCount { get; private set; }
 
 
@@ -137,7 +137,7 @@ public partial class KnowledgeDocumentGuestSearchRequest : IEquatable<KnowledgeD
     /// Session ID of the search.
     /// </summary>
     /// <value>Session ID of the search.</value>
-    [DataMember(Name = "sessionId", EmitDefaultValue = false)]
+    [JsonPropertyName("sessionId")]
     public string SessionId { get; private set; }
 
 
@@ -146,7 +146,7 @@ public partial class KnowledgeDocumentGuestSearchRequest : IEquatable<KnowledgeD
     /// The number of articles to be sent for answer-highlighting. Can range from 1-5.
     /// </summary>
     /// <value>The number of articles to be sent for answer-highlighting. Can range from 1-5.</value>
-    [DataMember(Name = "answerHighlightTopResults", EmitDefaultValue = false)]
+    [JsonPropertyName("answerHighlightTopResults")]
     public int? AnswerHighlightTopResults { get; set; }
 
 
@@ -155,7 +155,7 @@ public partial class KnowledgeDocumentGuestSearchRequest : IEquatable<KnowledgeD
     /// Indicates whether the search results would also include draft documents.
     /// </summary>
     /// <value>Indicates whether the search results would also include draft documents.</value>
-    [DataMember(Name = "includeDraftDocuments", EmitDefaultValue = false)]
+    [JsonPropertyName("includeDraftDocuments")]
     public bool? IncludeDraftDocuments { get; set; }
 
 

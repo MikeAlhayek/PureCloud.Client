@@ -7,14 +7,14 @@ namespace PureCloud.Client.Models;
 /// <summary>
 /// Defines a period of time to perform a specific action.  Each schedule must be associated with one or more schedule groups to be used.
 /// </summary>
-[DataContract]
+
 public partial class Schedule : IEquatable<Schedule>
 {
     /// <summary>
     /// Indicates if the resource is active, inactive, or deleted.
     /// </summary>
     /// <value>Indicates if the resource is active, inactive, or deleted.</value>
-    [JsonConverter(typeof(JsonStringEnumConverter))]
+    
     public enum StateEnum
     {
         /// <summary>
@@ -47,7 +47,7 @@ public partial class Schedule : IEquatable<Schedule>
     /// Indicates if the resource is active, inactive, or deleted.
     /// </summary>
     /// <value>Indicates if the resource is active, inactive, or deleted.</value>
-    [DataMember(Name = "state", EmitDefaultValue = false)]
+    [JsonPropertyName("state")]
     public StateEnum? State { get; private set; }
 
     /// <summary>
@@ -83,7 +83,7 @@ public partial class Schedule : IEquatable<Schedule>
     /// The globally unique identifier for the object.
     /// </summary>
     /// <value>The globally unique identifier for the object.</value>
-    [DataMember(Name = "id", EmitDefaultValue = false)]
+    [JsonPropertyName("id")]
     public string Id { get; private set; }
 
 
@@ -92,7 +92,7 @@ public partial class Schedule : IEquatable<Schedule>
     /// The name of the entity.
     /// </summary>
     /// <value>The name of the entity.</value>
-    [DataMember(Name = "name", EmitDefaultValue = false)]
+    [JsonPropertyName("name")]
     public string Name { get; set; }
 
 
@@ -101,7 +101,7 @@ public partial class Schedule : IEquatable<Schedule>
     /// The division to which this entity belongs.
     /// </summary>
     /// <value>The division to which this entity belongs.</value>
-    [DataMember(Name = "division", EmitDefaultValue = false)]
+    [JsonPropertyName("division")]
     public WritableDivision Division { get; set; }
 
 
@@ -110,7 +110,7 @@ public partial class Schedule : IEquatable<Schedule>
     /// The resource&#39;s description.
     /// </summary>
     /// <value>The resource&#39;s description.</value>
-    [DataMember(Name = "description", EmitDefaultValue = false)]
+    [JsonPropertyName("description")]
     public string Description { get; set; }
 
 
@@ -119,7 +119,7 @@ public partial class Schedule : IEquatable<Schedule>
     /// The current version of the resource.
     /// </summary>
     /// <value>The current version of the resource.</value>
-    [DataMember(Name = "version", EmitDefaultValue = false)]
+    [JsonPropertyName("version")]
     public int? Version { get; set; }
 
 
@@ -128,7 +128,7 @@ public partial class Schedule : IEquatable<Schedule>
     /// The date the resource was created. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z
     /// </summary>
     /// <value>The date the resource was created. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z</value>
-    [DataMember(Name = "dateCreated", EmitDefaultValue = false)]
+    [JsonPropertyName("dateCreated")]
     public DateTime? DateCreated { get; private set; }
 
 
@@ -137,7 +137,7 @@ public partial class Schedule : IEquatable<Schedule>
     /// The date of the last modification to the resource. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z
     /// </summary>
     /// <value>The date of the last modification to the resource. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z</value>
-    [DataMember(Name = "dateModified", EmitDefaultValue = false)]
+    [JsonPropertyName("dateModified")]
     public DateTime? DateModified { get; private set; }
 
 
@@ -146,7 +146,7 @@ public partial class Schedule : IEquatable<Schedule>
     /// The ID of the user that last modified the resource.
     /// </summary>
     /// <value>The ID of the user that last modified the resource.</value>
-    [DataMember(Name = "modifiedBy", EmitDefaultValue = false)]
+    [JsonPropertyName("modifiedBy")]
     public string ModifiedBy { get; private set; }
 
 
@@ -155,7 +155,7 @@ public partial class Schedule : IEquatable<Schedule>
     /// The ID of the user that created the resource.
     /// </summary>
     /// <value>The ID of the user that created the resource.</value>
-    [DataMember(Name = "createdBy", EmitDefaultValue = false)]
+    [JsonPropertyName("createdBy")]
     public string CreatedBy { get; private set; }
 
 
@@ -166,7 +166,7 @@ public partial class Schedule : IEquatable<Schedule>
     /// The application that last modified the resource.
     /// </summary>
     /// <value>The application that last modified the resource.</value>
-    [DataMember(Name = "modifiedByApp", EmitDefaultValue = false)]
+    [JsonPropertyName("modifiedByApp")]
     public string ModifiedByApp { get; private set; }
 
 
@@ -175,7 +175,7 @@ public partial class Schedule : IEquatable<Schedule>
     /// The application that created the resource.
     /// </summary>
     /// <value>The application that created the resource.</value>
-    [DataMember(Name = "createdByApp", EmitDefaultValue = false)]
+    [JsonPropertyName("createdByApp")]
     public string CreatedByApp { get; private set; }
 
 
@@ -184,7 +184,7 @@ public partial class Schedule : IEquatable<Schedule>
     /// Date time is represented as an ISO-8601 string without a timezone. For example: yyyy-MM-ddTHH:mm:ss.SSS
     /// </summary>
     /// <value>Date time is represented as an ISO-8601 string without a timezone. For example: yyyy-MM-ddTHH:mm:ss.SSS</value>
-    [DataMember(Name = "start", EmitDefaultValue = false)]
+    [JsonPropertyName("start")]
     public DateTime? Start { get; set; }
 
 
@@ -193,7 +193,7 @@ public partial class Schedule : IEquatable<Schedule>
     /// Date time is represented as an ISO-8601 string without a timezone. For example: yyyy-MM-ddTHH:mm:ss.SSS
     /// </summary>
     /// <value>Date time is represented as an ISO-8601 string without a timezone. For example: yyyy-MM-ddTHH:mm:ss.SSS</value>
-    [DataMember(Name = "end", EmitDefaultValue = false)]
+    [JsonPropertyName("end")]
     public DateTime? End { get; set; }
 
 
@@ -202,7 +202,7 @@ public partial class Schedule : IEquatable<Schedule>
     /// An iCal Recurrence Rule (RRULE) string. It is required to be set for schedules determining when upgrades to the Edge software can be applied.
     /// </summary>
     /// <value>An iCal Recurrence Rule (RRULE) string. It is required to be set for schedules determining when upgrades to the Edge software can be applied.</value>
-    [DataMember(Name = "rrule", EmitDefaultValue = false)]
+    [JsonPropertyName("rrule")]
     public string Rrule { get; set; }
 
 
@@ -211,7 +211,7 @@ public partial class Schedule : IEquatable<Schedule>
     /// The URI for this object
     /// </summary>
     /// <value>The URI for this object</value>
-    [DataMember(Name = "selfUri", EmitDefaultValue = false)]
+    [JsonPropertyName("selfUri")]
     public string SelfUri { get; private set; }
 
 

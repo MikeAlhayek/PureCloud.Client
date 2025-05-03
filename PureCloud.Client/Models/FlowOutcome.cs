@@ -1,4 +1,3 @@
-using System.Runtime.Serialization;
 using System.Text;
 using System.Text.Json.Serialization;
 
@@ -7,7 +6,7 @@ namespace PureCloud.Client.Models;
 /// <summary>
 /// FlowOutcome
 /// </summary>
-[DataContract]
+
 public partial class FlowOutcome : IEquatable<FlowOutcome>
 {
 
@@ -40,7 +39,7 @@ public partial class FlowOutcome : IEquatable<FlowOutcome>
     /// The flow outcome identifier
     /// </summary>
     /// <value>The flow outcome identifier</value>
-    [DataMember(Name = "id", EmitDefaultValue = false)]
+    [JsonPropertyName("id")]
     public string Id { get; set; }
 
 
@@ -49,7 +48,7 @@ public partial class FlowOutcome : IEquatable<FlowOutcome>
     /// The flow outcome name.
     /// </summary>
     /// <value>The flow outcome name.</value>
-    [DataMember(Name = "name", EmitDefaultValue = false)]
+    [JsonPropertyName("name")]
     public string Name { get; set; }
 
 
@@ -58,7 +57,7 @@ public partial class FlowOutcome : IEquatable<FlowOutcome>
     /// The division to which this entity belongs.
     /// </summary>
     /// <value>The division to which this entity belongs.</value>
-    [DataMember(Name = "division", EmitDefaultValue = false)]
+    [JsonPropertyName("division")]
     public WritableDivision Division { get; set; }
 
 
@@ -66,7 +65,7 @@ public partial class FlowOutcome : IEquatable<FlowOutcome>
     /// <summary>
     /// Gets or Sets Description
     /// </summary>
-    [DataMember(Name = "description", EmitDefaultValue = false)]
+    [JsonPropertyName("description")]
     public string Description { get; set; }
 
 
@@ -74,7 +73,7 @@ public partial class FlowOutcome : IEquatable<FlowOutcome>
     /// <summary>
     /// Gets or Sets CurrentOperation
     /// </summary>
-    [DataMember(Name = "currentOperation", EmitDefaultValue = false)]
+    [JsonPropertyName("currentOperation")]
     public Operation CurrentOperation { get; set; }
 
 
@@ -83,7 +82,7 @@ public partial class FlowOutcome : IEquatable<FlowOutcome>
     /// The URI for this object
     /// </summary>
     /// <value>The URI for this object</value>
-    [DataMember(Name = "selfUri", EmitDefaultValue = false)]
+    [JsonPropertyName("selfUri")]
     public string SelfUri { get; private set; }
 
 

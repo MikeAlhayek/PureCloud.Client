@@ -7,14 +7,14 @@ namespace PureCloud.Client.Models;
 /// <summary>
 /// UrlCondition
 /// </summary>
-[DataContract]
+
 public partial class UrlCondition : IEquatable<UrlCondition>
 {
     /// <summary>
     /// The comparison operator.
     /// </summary>
     /// <value>The comparison operator.</value>
-    [JsonConverter(typeof(JsonStringEnumConverter))]
+    
     public enum OperatorEnum
     {
         /// <summary>
@@ -101,7 +101,7 @@ public partial class UrlCondition : IEquatable<UrlCondition>
     /// The comparison operator.
     /// </summary>
     /// <value>The comparison operator.</value>
-    [DataMember(Name = "operator", EmitDefaultValue = false)]
+    [JsonPropertyName("operator")]
     public OperatorEnum? Operator { get; set; }
 
     /// <summary>
@@ -127,7 +127,7 @@ public partial class UrlCondition : IEquatable<UrlCondition>
     /// The URL condition value.
     /// </summary>
     /// <value>The URL condition value.</value>
-    [DataMember(Name = "values", EmitDefaultValue = false)]
+    [JsonPropertyName("values")]
     public List<string> Values { get; set; }
 
 

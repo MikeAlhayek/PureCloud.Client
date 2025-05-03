@@ -1,12 +1,12 @@
-using System.Runtime.Serialization;
 using System.Text;
+using System.Text.Json.Serialization;
 
 namespace PureCloud.Client.Models;
 
 /// <summary>
 /// ForecastServiceGoalTemplateResponse
 /// </summary>
-[DataContract]
+
 public partial class ForecastServiceGoalTemplateResponse : IEquatable<ForecastServiceGoalTemplateResponse>
 {
     /// <summary>
@@ -31,7 +31,7 @@ public partial class ForecastServiceGoalTemplateResponse : IEquatable<ForecastSe
     /// The service level goal for this forecast
     /// </summary>
     /// <value>The service level goal for this forecast</value>
-    [DataMember(Name = "serviceLevel", EmitDefaultValue = false)]
+    [JsonPropertyName("serviceLevel")]
     public ForecastServiceLevelResponse ServiceLevel { get; set; }
 
 
@@ -40,7 +40,7 @@ public partial class ForecastServiceGoalTemplateResponse : IEquatable<ForecastSe
     /// The average speed of answer goal for this forecast
     /// </summary>
     /// <value>The average speed of answer goal for this forecast</value>
-    [DataMember(Name = "averageSpeedOfAnswer", EmitDefaultValue = false)]
+    [JsonPropertyName("averageSpeedOfAnswer")]
     public ForecastAverageSpeedOfAnswerResponse AverageSpeedOfAnswer { get; set; }
 
 
@@ -49,7 +49,7 @@ public partial class ForecastServiceGoalTemplateResponse : IEquatable<ForecastSe
     /// The abandon rate goal for this forecast
     /// </summary>
     /// <value>The abandon rate goal for this forecast</value>
-    [DataMember(Name = "abandonRate", EmitDefaultValue = false)]
+    [JsonPropertyName("abandonRate")]
     public ForecastAbandonRateResponse AbandonRate { get; set; }
 
 
@@ -58,7 +58,7 @@ public partial class ForecastServiceGoalTemplateResponse : IEquatable<ForecastSe
     /// The service goal impact overrides for this forecast
     /// </summary>
     /// <value>The service goal impact overrides for this forecast</value>
-    [DataMember(Name = "impactOverride", EmitDefaultValue = false)]
+    [JsonPropertyName("impactOverride")]
     public ForecastServiceGoalTemplateImpactOverrideResponse ImpactOverride { get; set; }
 
 

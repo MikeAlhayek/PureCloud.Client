@@ -1,12 +1,12 @@
-using System.Runtime.Serialization;
 using System.Text;
+using System.Text.Json.Serialization;
 
 namespace PureCloud.Client.Models;
 
 /// <summary>
 /// FieldConfigs
 /// </summary>
-[DataContract]
+
 public partial class FieldConfigs : IEquatable<FieldConfigs>
 {
     /// <summary>
@@ -28,7 +28,7 @@ public partial class FieldConfigs : IEquatable<FieldConfigs>
     /// <summary>
     /// Gets or Sets Org
     /// </summary>
-    [DataMember(Name = "org", EmitDefaultValue = false)]
+    [JsonPropertyName("org")]
     public FieldConfig Org { get; set; }
 
 
@@ -36,7 +36,7 @@ public partial class FieldConfigs : IEquatable<FieldConfigs>
     /// <summary>
     /// Gets or Sets Person
     /// </summary>
-    [DataMember(Name = "person", EmitDefaultValue = false)]
+    [JsonPropertyName("person")]
     public FieldConfig Person { get; set; }
 
 
@@ -44,7 +44,7 @@ public partial class FieldConfigs : IEquatable<FieldConfigs>
     /// <summary>
     /// Gets or Sets Group
     /// </summary>
-    [DataMember(Name = "group", EmitDefaultValue = false)]
+    [JsonPropertyName("group")]
     public FieldConfig Group { get; set; }
 
 

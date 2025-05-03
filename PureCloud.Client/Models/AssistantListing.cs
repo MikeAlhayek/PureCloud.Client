@@ -1,12 +1,12 @@
-using System.Runtime.Serialization;
 using System.Text;
+using System.Text.Json.Serialization;
 
 namespace PureCloud.Client.Models;
 
 /// <summary>
 /// AssistantListing
 /// </summary>
-[DataContract]
+
 public partial class AssistantListing : IEquatable<AssistantListing>
 {
     /// <summary>
@@ -30,7 +30,7 @@ public partial class AssistantListing : IEquatable<AssistantListing>
     /// <summary>
     /// Gets or Sets Entities
     /// </summary>
-    [DataMember(Name = "entities", EmitDefaultValue = false)]
+    [JsonPropertyName("entities")]
     public List<Assistant> Entities { get; set; }
 
 
@@ -38,7 +38,7 @@ public partial class AssistantListing : IEquatable<AssistantListing>
     /// <summary>
     /// Gets or Sets NextUri
     /// </summary>
-    [DataMember(Name = "nextUri", EmitDefaultValue = false)]
+    [JsonPropertyName("nextUri")]
     public string NextUri { get; set; }
 
 
@@ -46,7 +46,7 @@ public partial class AssistantListing : IEquatable<AssistantListing>
     /// <summary>
     /// Gets or Sets SelfUri
     /// </summary>
-    [DataMember(Name = "selfUri", EmitDefaultValue = false)]
+    [JsonPropertyName("selfUri")]
     public string SelfUri { get; set; }
 
 
@@ -54,7 +54,7 @@ public partial class AssistantListing : IEquatable<AssistantListing>
     /// <summary>
     /// Gets or Sets PreviousUri
     /// </summary>
-    [DataMember(Name = "previousUri", EmitDefaultValue = false)]
+    [JsonPropertyName("previousUri")]
     public string PreviousUri { get; set; }
 
 

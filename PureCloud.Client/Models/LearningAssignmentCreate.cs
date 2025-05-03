@@ -1,4 +1,3 @@
-using System.Runtime.Serialization;
 using System.Text;
 using System.Text.Json.Serialization;
 
@@ -7,7 +6,7 @@ namespace PureCloud.Client.Models;
 /// <summary>
 /// LearningAssignmentCreate
 /// </summary>
-[DataContract]
+
 public partial class LearningAssignmentCreate : IEquatable<LearningAssignmentCreate>
 {
 
@@ -38,7 +37,7 @@ public partial class LearningAssignmentCreate : IEquatable<LearningAssignmentCre
     /// The Learning module Id associated with this assignment
     /// </summary>
     /// <value>The Learning module Id associated with this assignment</value>
-    [DataMember(Name = "moduleId", EmitDefaultValue = false)]
+    [JsonPropertyName("moduleId")]
     public string ModuleId { get; set; }
 
 
@@ -47,7 +46,7 @@ public partial class LearningAssignmentCreate : IEquatable<LearningAssignmentCre
     /// The User for whom the assignment is assigned
     /// </summary>
     /// <value>The User for whom the assignment is assigned</value>
-    [DataMember(Name = "userId", EmitDefaultValue = false)]
+    [JsonPropertyName("userId")]
     public string UserId { get; set; }
 
 
@@ -56,7 +55,7 @@ public partial class LearningAssignmentCreate : IEquatable<LearningAssignmentCre
     /// The recommended completion date of assignment. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z
     /// </summary>
     /// <value>The recommended completion date of assignment. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z</value>
-    [DataMember(Name = "recommendedCompletionDate", EmitDefaultValue = false)]
+    [JsonPropertyName("recommendedCompletionDate")]
     public DateTime? RecommendedCompletionDate { get; set; }
 
 
@@ -65,7 +64,7 @@ public partial class LearningAssignmentCreate : IEquatable<LearningAssignmentCre
     /// The length in minutes of assignment
     /// </summary>
     /// <value>The length in minutes of assignment</value>
-    [DataMember(Name = "lengthInMinutes", EmitDefaultValue = false)]
+    [JsonPropertyName("lengthInMinutes")]
     public int? LengthInMinutes { get; set; }
 
 

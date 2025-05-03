@@ -7,14 +7,14 @@ namespace PureCloud.Client.Models;
 /// <summary>
 /// Information about a CX infrastructure as code job
 /// </summary>
-[DataContract]
+
 public partial class InfrastructureascodeJob : IEquatable<InfrastructureascodeJob>
 {
     /// <summary>
     /// Job status
     /// </summary>
     /// <value>Job status</value>
-    [JsonConverter(typeof(JsonStringEnumConverter))]
+    
     public enum StatusEnum
     {
         /// <summary>
@@ -83,7 +83,7 @@ public partial class InfrastructureascodeJob : IEquatable<InfrastructureascodeJo
     /// Job status
     /// </summary>
     /// <value>Job status</value>
-    [DataMember(Name = "status", EmitDefaultValue = false)]
+    [JsonPropertyName("status")]
     public StatusEnum? Status { get; private set; }
 
     /// <summary>
@@ -107,7 +107,7 @@ public partial class InfrastructureascodeJob : IEquatable<InfrastructureascodeJo
     /// The globally unique identifier for the object.
     /// </summary>
     /// <value>The globally unique identifier for the object.</value>
-    [DataMember(Name = "id", EmitDefaultValue = false)]
+    [JsonPropertyName("id")]
     public string Id { get; private set; }
 
 
@@ -116,7 +116,7 @@ public partial class InfrastructureascodeJob : IEquatable<InfrastructureascodeJo
     /// Whether or not the job was a dry run
     /// </summary>
     /// <value>Whether or not the job was a dry run</value>
-    [DataMember(Name = "dryRun", EmitDefaultValue = false)]
+    [JsonPropertyName("dryRun")]
     public bool? DryRun { get; set; }
 
 
@@ -125,7 +125,7 @@ public partial class InfrastructureascodeJob : IEquatable<InfrastructureascodeJo
     /// Accelerator associated with the job
     /// </summary>
     /// <value>Accelerator associated with the job</value>
-    [DataMember(Name = "acceleratorId", EmitDefaultValue = false)]
+    [JsonPropertyName("acceleratorId")]
     public string AcceleratorId { get; private set; }
 
 
@@ -134,7 +134,7 @@ public partial class InfrastructureascodeJob : IEquatable<InfrastructureascodeJo
     /// Date and time on which job was submitted. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z
     /// </summary>
     /// <value>Date and time on which job was submitted. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z</value>
-    [DataMember(Name = "dateSubmitted", EmitDefaultValue = false)]
+    [JsonPropertyName("dateSubmitted")]
     public DateTime? DateSubmitted { get; private set; }
 
 
@@ -143,7 +143,7 @@ public partial class InfrastructureascodeJob : IEquatable<InfrastructureascodeJo
     /// User who submitted the job
     /// </summary>
     /// <value>User who submitted the job</value>
-    [DataMember(Name = "submittedBy", EmitDefaultValue = false)]
+    [JsonPropertyName("submittedBy")]
     public UserReference SubmittedBy { get; private set; }
 
 
@@ -154,7 +154,7 @@ public partial class InfrastructureascodeJob : IEquatable<InfrastructureascodeJo
     /// Information about errors, if any
     /// </summary>
     /// <value>Information about errors, if any</value>
-    [DataMember(Name = "errorInfo", EmitDefaultValue = false)]
+    [JsonPropertyName("errorInfo")]
     public ErrorInfo ErrorInfo { get; private set; }
 
 
@@ -163,7 +163,7 @@ public partial class InfrastructureascodeJob : IEquatable<InfrastructureascodeJo
     /// The output results of the terraform job
     /// </summary>
     /// <value>The output results of the terraform job</value>
-    [DataMember(Name = "results", EmitDefaultValue = false)]
+    [JsonPropertyName("results")]
     public string Results { get; private set; }
 
 
@@ -172,7 +172,7 @@ public partial class InfrastructureascodeJob : IEquatable<InfrastructureascodeJo
     /// The results of rolling back the job if there were errors.  Not returned if job was successful.
     /// </summary>
     /// <value>The results of rolling back the job if there were errors.  Not returned if job was successful.</value>
-    [DataMember(Name = "rollbackResults", EmitDefaultValue = false)]
+    [JsonPropertyName("rollbackResults")]
     public string RollbackResults { get; private set; }
 
 
@@ -181,7 +181,7 @@ public partial class InfrastructureascodeJob : IEquatable<InfrastructureascodeJo
     /// The URI for this object
     /// </summary>
     /// <value>The URI for this object</value>
-    [DataMember(Name = "selfUri", EmitDefaultValue = false)]
+    [JsonPropertyName("selfUri")]
     public string SelfUri { get; private set; }
 
 

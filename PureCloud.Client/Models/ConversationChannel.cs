@@ -7,14 +7,14 @@ namespace PureCloud.Client.Models;
 /// <summary>
 /// ConversationChannel
 /// </summary>
-[DataContract]
+
 public partial class ConversationChannel : IEquatable<ConversationChannel>
 {
     /// <summary>
     /// The type or category of this channel.
     /// </summary>
     /// <value>The type or category of this channel.</value>
-    [JsonConverter(typeof(JsonStringEnumConverter))]
+    
     public enum TypeEnum
     {
         /// <summary>
@@ -119,7 +119,7 @@ public partial class ConversationChannel : IEquatable<ConversationChannel>
     /// Message type for messaging conversations.
     /// </summary>
     /// <value>Message type for messaging conversations.</value>
-    [JsonConverter(typeof(JsonStringEnumConverter))]
+    
     public enum MessageTypeEnum
     {
         /// <summary>
@@ -188,13 +188,13 @@ public partial class ConversationChannel : IEquatable<ConversationChannel>
     /// The type or category of this channel.
     /// </summary>
     /// <value>The type or category of this channel.</value>
-    [DataMember(Name = "type", EmitDefaultValue = false)]
+    [JsonPropertyName("type")]
     public TypeEnum? Type { get; set; }
     /// <summary>
     /// Message type for messaging conversations.
     /// </summary>
     /// <value>Message type for messaging conversations.</value>
-    [DataMember(Name = "messageType", EmitDefaultValue = false)]
+    [JsonPropertyName("messageType")]
     public MessageTypeEnum? MessageType { get; set; }
 
     /// <summary>
@@ -226,7 +226,7 @@ public partial class ConversationChannel : IEquatable<ConversationChannel>
     /// The source provider for the conversation (e.g. Edge, PureCloudEnvironment Messaging, PureCloudEnvironment Email).
     /// </summary>
     /// <value>The source provider for the conversation (e.g. Edge, PureCloudEnvironment Messaging, PureCloudEnvironment Email).</value>
-    [DataMember(Name = "platform", EmitDefaultValue = false)]
+    [JsonPropertyName("platform")]
     public string Platform { get; set; }
 
 

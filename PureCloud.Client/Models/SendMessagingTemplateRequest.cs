@@ -1,12 +1,12 @@
-using System.Runtime.Serialization;
 using System.Text;
+using System.Text.Json.Serialization;
 
 namespace PureCloud.Client.Models;
 
 /// <summary>
 /// SendMessagingTemplateRequest
 /// </summary>
-[DataContract]
+
 public partial class SendMessagingTemplateRequest : IEquatable<SendMessagingTemplateRequest>
 {
     /// <summary>
@@ -33,7 +33,7 @@ public partial class SendMessagingTemplateRequest : IEquatable<SendMessagingTemp
     /// A Response Management response identifier for a messaging template defined response
     /// </summary>
     /// <value>A Response Management response identifier for a messaging template defined response</value>
-    [DataMember(Name = "responseId", EmitDefaultValue = false)]
+    [JsonPropertyName("responseId")]
     public string ResponseId { get; set; }
 
 
@@ -42,7 +42,7 @@ public partial class SendMessagingTemplateRequest : IEquatable<SendMessagingTemp
     /// A list of Response Management response substitutions for the response&#39;s messaging template. (Deprecated) use bodyParameters instead.
     /// </summary>
     /// <value>A list of Response Management response substitutions for the response&#39;s messaging template. (Deprecated) use bodyParameters instead.</value>
-    [DataMember(Name = "parameters", EmitDefaultValue = false)]
+    [JsonPropertyName("parameters")]
     public List<TemplateParameter> Parameters { get; set; }
 
 
@@ -51,7 +51,7 @@ public partial class SendMessagingTemplateRequest : IEquatable<SendMessagingTemp
     /// A list of Response Management header parameter substitutions for the response&#39;s messaging template
     /// </summary>
     /// <value>A list of Response Management header parameter substitutions for the response&#39;s messaging template</value>
-    [DataMember(Name = "headerParameters", EmitDefaultValue = false)]
+    [JsonPropertyName("headerParameters")]
     public List<TemplateParameter> HeaderParameters { get; set; }
 
 
@@ -60,7 +60,7 @@ public partial class SendMessagingTemplateRequest : IEquatable<SendMessagingTemp
     /// A list of Response Management body parameter substitutions for the response&#39;s messaging template
     /// </summary>
     /// <value>A list of Response Management body parameter substitutions for the response&#39;s messaging template</value>
-    [DataMember(Name = "bodyParameters", EmitDefaultValue = false)]
+    [JsonPropertyName("bodyParameters")]
     public List<TemplateParameter> BodyParameters { get; set; }
 
 
@@ -69,7 +69,7 @@ public partial class SendMessagingTemplateRequest : IEquatable<SendMessagingTemp
     /// A list of Response Management button url parameter substitutions for the response&#39;s messaging template
     /// </summary>
     /// <value>A list of Response Management button url parameter substitutions for the response&#39;s messaging template</value>
-    [DataMember(Name = "buttonUrlParameters", EmitDefaultValue = false)]
+    [JsonPropertyName("buttonUrlParameters")]
     public List<TemplateParameter> ButtonUrlParameters { get; set; }
 
 

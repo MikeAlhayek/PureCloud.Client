@@ -7,14 +7,14 @@ namespace PureCloud.Client.Models;
 /// <summary>
 /// EventAction
 /// </summary>
-[DataContract]
+
 public partial class EventAction : IEquatable<EventAction>
 {
     /// <summary>
     /// Current state of the action (e.g. qualified, succeeded, errored).
     /// </summary>
     /// <value>Current state of the action (e.g. qualified, succeeded, errored).</value>
-    [JsonConverter(typeof(JsonStringEnumConverter))]
+    
     public enum StateEnum
     {
         /// <summary>
@@ -113,7 +113,7 @@ public partial class EventAction : IEquatable<EventAction>
     /// The media type used to deliver the action (e.g. email, webhook).
     /// </summary>
     /// <value>The media type used to deliver the action (e.g. email, webhook).</value>
-    [JsonConverter(typeof(JsonStringEnumConverter))]
+    
     public enum MediaTypeEnum
     {
         /// <summary>
@@ -164,13 +164,13 @@ public partial class EventAction : IEquatable<EventAction>
     /// Current state of the action (e.g. qualified, succeeded, errored).
     /// </summary>
     /// <value>Current state of the action (e.g. qualified, succeeded, errored).</value>
-    [DataMember(Name = "state", EmitDefaultValue = false)]
+    [JsonPropertyName("state")]
     public StateEnum? State { get; set; }
     /// <summary>
     /// The media type used to deliver the action (e.g. email, webhook).
     /// </summary>
     /// <value>The media type used to deliver the action (e.g. email, webhook).</value>
-    [DataMember(Name = "mediaType", EmitDefaultValue = false)]
+    [JsonPropertyName("mediaType")]
     public MediaTypeEnum? MediaType { get; set; }
 
     /// <summary>
@@ -202,7 +202,7 @@ public partial class EventAction : IEquatable<EventAction>
     /// ID of the action.
     /// </summary>
     /// <value>ID of the action.</value>
-    [DataMember(Name = "id", EmitDefaultValue = false)]
+    [JsonPropertyName("id")]
     public string Id { get; set; }
 
 
@@ -215,7 +215,7 @@ public partial class EventAction : IEquatable<EventAction>
     /// Prompt of the action to be displayed/sent to the visitor.
     /// </summary>
     /// <value>Prompt of the action to be displayed/sent to the visitor.</value>
-    [DataMember(Name = "prompt", EmitDefaultValue = false)]
+    [JsonPropertyName("prompt")]
     public string Prompt { get; set; }
 
 
@@ -224,7 +224,7 @@ public partial class EventAction : IEquatable<EventAction>
     /// Timestamp indicating when the action was created. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z
     /// </summary>
     /// <value>Timestamp indicating when the action was created. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z</value>
-    [DataMember(Name = "createdDate", EmitDefaultValue = false)]
+    [JsonPropertyName("createdDate")]
     public DateTime? CreatedDate { get; set; }
 
 

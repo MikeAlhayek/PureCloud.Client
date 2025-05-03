@@ -1,4 +1,3 @@
-using System.Runtime.Serialization;
 using System.Text;
 using System.Text.Json.Serialization;
 
@@ -7,7 +6,7 @@ namespace PureCloud.Client.Models;
 /// <summary>
 /// ScheduleInterval
 /// </summary>
-[DataContract]
+
 public partial class ScheduleInterval : IEquatable<ScheduleInterval>
 {
 
@@ -34,7 +33,7 @@ public partial class ScheduleInterval : IEquatable<ScheduleInterval>
     /// The scheduled start time as an ISO-8601 string, i.e yyyy-MM-ddTHH:mm:ss.SSSZ
     /// </summary>
     /// <value>The scheduled start time as an ISO-8601 string, i.e yyyy-MM-ddTHH:mm:ss.SSSZ</value>
-    [DataMember(Name = "start", EmitDefaultValue = false)]
+    [JsonPropertyName("start")]
     public string Start { get; set; }
 
 
@@ -43,7 +42,7 @@ public partial class ScheduleInterval : IEquatable<ScheduleInterval>
     /// The scheduled end time as an ISO-8601 string, i.e. yyyy-MM-ddTHH:mm:ss.SSSZ
     /// </summary>
     /// <value>The scheduled end time as an ISO-8601 string, i.e. yyyy-MM-ddTHH:mm:ss.SSSZ</value>
-    [DataMember(Name = "end", EmitDefaultValue = false)]
+    [JsonPropertyName("end")]
     public string End { get; set; }
 
 

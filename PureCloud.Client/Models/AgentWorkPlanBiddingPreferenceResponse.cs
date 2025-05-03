@@ -7,14 +7,14 @@ namespace PureCloud.Client.Models;
 /// <summary>
 /// AgentWorkPlanBiddingPreferenceResponse
 /// </summary>
-[DataContract]
+
 public partial class AgentWorkPlanBiddingPreferenceResponse : IEquatable<AgentWorkPlanBiddingPreferenceResponse>
 {
     /// <summary>
     /// The reason why the assigned work plan has been overridden. This must be null without an override work plan
     /// </summary>
     /// <value>The reason why the assigned work plan has been overridden. This must be null without an override work plan</value>
-    [JsonConverter(typeof(JsonStringEnumConverter))]
+    
     public enum OverrideReasonEnum
     {
         /// <summary>
@@ -53,7 +53,7 @@ public partial class AgentWorkPlanBiddingPreferenceResponse : IEquatable<AgentWo
     /// The reason why the assigned work plan has been overridden. This must be null without an override work plan
     /// </summary>
     /// <value>The reason why the assigned work plan has been overridden. This must be null without an override work plan</value>
-    [DataMember(Name = "overrideReason", EmitDefaultValue = false)]
+    [JsonPropertyName("overrideReason")]
     public OverrideReasonEnum? OverrideReason { get; set; }
 
     /// <summary>
@@ -85,7 +85,7 @@ public partial class AgentWorkPlanBiddingPreferenceResponse : IEquatable<AgentWo
     /// The globally unique identifier for the object.
     /// </summary>
     /// <value>The globally unique identifier for the object.</value>
-    [DataMember(Name = "id", EmitDefaultValue = false)]
+    [JsonPropertyName("id")]
     public string Id { get; private set; }
 
 
@@ -94,7 +94,7 @@ public partial class AgentWorkPlanBiddingPreferenceResponse : IEquatable<AgentWo
     /// Whether the preference is submitted
     /// </summary>
     /// <value>Whether the preference is submitted</value>
-    [DataMember(Name = "submitted", EmitDefaultValue = false)]
+    [JsonPropertyName("submitted")]
     public bool? Submitted { get; set; }
 
 
@@ -103,7 +103,7 @@ public partial class AgentWorkPlanBiddingPreferenceResponse : IEquatable<AgentWo
     /// The work plan assigned to the agent by the bid process
     /// </summary>
     /// <value>The work plan assigned to the agent by the bid process</value>
-    [DataMember(Name = "assignedWorkPlan", EmitDefaultValue = false)]
+    [JsonPropertyName("assignedWorkPlan")]
     public WorkPlanReference AssignedWorkPlan { get; set; }
 
 
@@ -112,7 +112,7 @@ public partial class AgentWorkPlanBiddingPreferenceResponse : IEquatable<AgentWo
     /// The work plan that overrides the assigned work plan for the agent
     /// </summary>
     /// <value>The work plan that overrides the assigned work plan for the agent</value>
-    [DataMember(Name = "overriddenWorkPlan", EmitDefaultValue = false)]
+    [JsonPropertyName("overriddenWorkPlan")]
     public WorkPlanReference OverriddenWorkPlan { get; set; }
 
 
@@ -123,7 +123,7 @@ public partial class AgentWorkPlanBiddingPreferenceResponse : IEquatable<AgentWo
     /// The list of work plan bidding preferences
     /// </summary>
     /// <value>The list of work plan bidding preferences</value>
-    [DataMember(Name = "agentWorkPlanBidPreferences", EmitDefaultValue = false)]
+    [JsonPropertyName("agentWorkPlanBidPreferences")]
     public List<AgentWorkPlanBiddingPreference> AgentWorkPlanBidPreferences { get; set; }
 
 
@@ -132,7 +132,7 @@ public partial class AgentWorkPlanBiddingPreferenceResponse : IEquatable<AgentWo
     /// The URI for this object
     /// </summary>
     /// <value>The URI for this object</value>
-    [DataMember(Name = "selfUri", EmitDefaultValue = false)]
+    [JsonPropertyName("selfUri")]
     public string SelfUri { get; private set; }
 
 

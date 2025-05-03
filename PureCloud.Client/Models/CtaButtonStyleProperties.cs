@@ -7,14 +7,14 @@ namespace PureCloud.Client.Models;
 /// <summary>
 /// CtaButtonStyleProperties
 /// </summary>
-[DataContract]
+
 public partial class CtaButtonStyleProperties : IEquatable<CtaButtonStyleProperties>
 {
     /// <summary>
     /// Text alignment.
     /// </summary>
     /// <value>Text alignment.</value>
-    [JsonConverter(typeof(JsonStringEnumConverter))]
+    
     public enum TextAlignEnum
     {
         /// <summary>
@@ -47,7 +47,7 @@ public partial class CtaButtonStyleProperties : IEquatable<CtaButtonStylePropert
     /// Text alignment.
     /// </summary>
     /// <value>Text alignment.</value>
-    [DataMember(Name = "textAlign", EmitDefaultValue = false)]
+    [JsonPropertyName("textAlign")]
     public TextAlignEnum? TextAlign { get; set; }
     /// <summary>
     /// Initializes a new instance of the <see cref="CtaButtonStyleProperties" /> class.
@@ -73,7 +73,7 @@ public partial class CtaButtonStyleProperties : IEquatable<CtaButtonStylePropert
     /// Color of the text. (eg. #FFFFFF)
     /// </summary>
     /// <value>Color of the text. (eg. #FFFFFF)</value>
-    [DataMember(Name = "color", EmitDefaultValue = false)]
+    [JsonPropertyName("color")]
     public string Color { get; set; }
 
 
@@ -82,7 +82,7 @@ public partial class CtaButtonStyleProperties : IEquatable<CtaButtonStylePropert
     /// Font of the text. (eg. Helvetica)
     /// </summary>
     /// <value>Font of the text. (eg. Helvetica)</value>
-    [DataMember(Name = "font", EmitDefaultValue = false)]
+    [JsonPropertyName("font")]
     public string Font { get; set; }
 
 
@@ -91,7 +91,7 @@ public partial class CtaButtonStyleProperties : IEquatable<CtaButtonStylePropert
     /// Font size of the text. (eg. &#39;12&#39;)
     /// </summary>
     /// <value>Font size of the text. (eg. &#39;12&#39;)</value>
-    [DataMember(Name = "fontSize", EmitDefaultValue = false)]
+    [JsonPropertyName("fontSize")]
     public string FontSize { get; set; }
 
 
@@ -102,7 +102,7 @@ public partial class CtaButtonStyleProperties : IEquatable<CtaButtonStylePropert
     /// Background color of the CTA button. (eg. #FF0000)
     /// </summary>
     /// <value>Background color of the CTA button. (eg. #FF0000)</value>
-    [DataMember(Name = "backgroundColor", EmitDefaultValue = false)]
+    [JsonPropertyName("backgroundColor")]
     public string BackgroundColor { get; set; }
 
 

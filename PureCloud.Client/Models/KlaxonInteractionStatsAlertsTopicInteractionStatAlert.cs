@@ -7,13 +7,13 @@ namespace PureCloud.Client.Models;
 /// <summary>
 /// KlaxonInteractionStatsAlertsTopicInteractionStatAlert
 /// </summary>
-[DataContract]
+
 public partial class KlaxonInteractionStatsAlertsTopicInteractionStatAlert : IEquatable<KlaxonInteractionStatsAlertsTopicInteractionStatAlert>
 {
     /// <summary>
     /// Gets or Sets Dimension
     /// </summary>
-    [JsonConverter(typeof(JsonStringEnumConverter))]
+    
     public enum DimensionEnum
     {
         /// <summary>
@@ -39,7 +39,7 @@ public partial class KlaxonInteractionStatsAlertsTopicInteractionStatAlert : IEq
     /// <summary>
     /// Gets or Sets Metric
     /// </summary>
-    [JsonConverter(typeof(JsonStringEnumConverter))]
+    
     public enum MetricEnum
     {
         /// <summary>
@@ -113,7 +113,7 @@ public partial class KlaxonInteractionStatsAlertsTopicInteractionStatAlert : IEq
     /// <summary>
     /// Gets or Sets MediaType
     /// </summary>
-    [JsonConverter(typeof(JsonStringEnumConverter))]
+    
     public enum MediaTypeEnum
     {
         /// <summary>
@@ -157,7 +157,7 @@ public partial class KlaxonInteractionStatsAlertsTopicInteractionStatAlert : IEq
     /// <summary>
     /// Gets or Sets NumericRange
     /// </summary>
-    [JsonConverter(typeof(JsonStringEnumConverter))]
+    
     public enum NumericRangeEnum
     {
         /// <summary>
@@ -207,7 +207,7 @@ public partial class KlaxonInteractionStatsAlertsTopicInteractionStatAlert : IEq
     /// <summary>
     /// Gets or Sets Statistic
     /// </summary>
-    [JsonConverter(typeof(JsonStringEnumConverter))]
+    
     public enum StatisticEnum
     {
         /// <summary>
@@ -245,7 +245,7 @@ public partial class KlaxonInteractionStatsAlertsTopicInteractionStatAlert : IEq
     /// <summary>
     /// Gets or Sets AlertTypes
     /// </summary>
-    [JsonConverter(typeof(JsonStringEnumConverter))]
+    
     public enum AlertTypesEnum
     {
         /// <summary>
@@ -277,27 +277,27 @@ public partial class KlaxonInteractionStatsAlertsTopicInteractionStatAlert : IEq
     /// <summary>
     /// Gets or Sets Dimension
     /// </summary>
-    [DataMember(Name = "dimension", EmitDefaultValue = false)]
+    [JsonPropertyName("dimension")]
     public DimensionEnum? Dimension { get; set; }
     /// <summary>
     /// Gets or Sets Metric
     /// </summary>
-    [DataMember(Name = "metric", EmitDefaultValue = false)]
+    [JsonPropertyName("metric")]
     public MetricEnum? Metric { get; set; }
     /// <summary>
     /// Gets or Sets MediaType
     /// </summary>
-    [DataMember(Name = "mediaType", EmitDefaultValue = false)]
+    [JsonPropertyName("mediaType")]
     public MediaTypeEnum? MediaType { get; set; }
     /// <summary>
     /// Gets or Sets NumericRange
     /// </summary>
-    [DataMember(Name = "numericRange", EmitDefaultValue = false)]
+    [JsonPropertyName("numericRange")]
     public NumericRangeEnum? NumericRange { get; set; }
     /// <summary>
     /// Gets or Sets Statistic
     /// </summary>
-    [DataMember(Name = "statistic", EmitDefaultValue = false)]
+    [JsonPropertyName("statistic")]
     public StatisticEnum? Statistic { get; set; }
     /// <summary>
     /// Initializes a new instance of the <see cref="KlaxonInteractionStatsAlertsTopicInteractionStatAlert" /> class.
@@ -344,7 +344,7 @@ public partial class KlaxonInteractionStatsAlertsTopicInteractionStatAlert : IEq
     /// <summary>
     /// Gets or Sets Id
     /// </summary>
-    [DataMember(Name = "id", EmitDefaultValue = false)]
+    [JsonPropertyName("id")]
     public string Id { get; set; }
 
 
@@ -352,7 +352,7 @@ public partial class KlaxonInteractionStatsAlertsTopicInteractionStatAlert : IEq
     /// <summary>
     /// Gets or Sets Name
     /// </summary>
-    [DataMember(Name = "name", EmitDefaultValue = false)]
+    [JsonPropertyName("name")]
     public string Name { get; set; }
 
 
@@ -360,7 +360,7 @@ public partial class KlaxonInteractionStatsAlertsTopicInteractionStatAlert : IEq
     /// <summary>
     /// Gets or Sets RuleId
     /// </summary>
-    [DataMember(Name = "ruleId", EmitDefaultValue = false)]
+    [JsonPropertyName("ruleId")]
     public string RuleId { get; set; }
 
 
@@ -370,7 +370,7 @@ public partial class KlaxonInteractionStatsAlertsTopicInteractionStatAlert : IEq
     /// <summary>
     /// Gets or Sets DimensionValue
     /// </summary>
-    [DataMember(Name = "dimensionValue", EmitDefaultValue = false)]
+    [JsonPropertyName("dimensionValue")]
     public string DimensionValue { get; set; }
 
 
@@ -378,7 +378,7 @@ public partial class KlaxonInteractionStatsAlertsTopicInteractionStatAlert : IEq
     /// <summary>
     /// Gets or Sets DimensionValueName
     /// </summary>
-    [DataMember(Name = "dimensionValueName", EmitDefaultValue = false)]
+    [JsonPropertyName("dimensionValueName")]
     public string DimensionValueName { get; set; }
 
 
@@ -394,7 +394,7 @@ public partial class KlaxonInteractionStatsAlertsTopicInteractionStatAlert : IEq
     /// <summary>
     /// Gets or Sets Value
     /// </summary>
-    [DataMember(Name = "value", EmitDefaultValue = false)]
+    [JsonPropertyName("value")]
     public double? Value { get; set; }
 
 
@@ -402,7 +402,7 @@ public partial class KlaxonInteractionStatsAlertsTopicInteractionStatAlert : IEq
     /// <summary>
     /// Gets or Sets Unread
     /// </summary>
-    [DataMember(Name = "unread", EmitDefaultValue = false)]
+    [JsonPropertyName("unread")]
     public bool? Unread { get; set; }
 
 
@@ -410,7 +410,7 @@ public partial class KlaxonInteractionStatsAlertsTopicInteractionStatAlert : IEq
     /// <summary>
     /// Gets or Sets StartDate
     /// </summary>
-    [DataMember(Name = "startDate", EmitDefaultValue = false)]
+    [JsonPropertyName("startDate")]
     public DateTime? StartDate { get; set; }
 
 
@@ -418,7 +418,7 @@ public partial class KlaxonInteractionStatsAlertsTopicInteractionStatAlert : IEq
     /// <summary>
     /// Gets or Sets EndDate
     /// </summary>
-    [DataMember(Name = "endDate", EmitDefaultValue = false)]
+    [JsonPropertyName("endDate")]
     public DateTime? EndDate { get; set; }
 
 
@@ -426,7 +426,7 @@ public partial class KlaxonInteractionStatsAlertsTopicInteractionStatAlert : IEq
     /// <summary>
     /// Gets or Sets NotificationUsers
     /// </summary>
-    [DataMember(Name = "notificationUsers", EmitDefaultValue = false)]
+    [JsonPropertyName("notificationUsers")]
     public List<KlaxonInteractionStatsAlertsTopicNotificationUser> NotificationUsers { get; set; }
 
 
@@ -434,7 +434,7 @@ public partial class KlaxonInteractionStatsAlertsTopicInteractionStatAlert : IEq
     /// <summary>
     /// Gets or Sets AlertTypes
     /// </summary>
-    [DataMember(Name = "alertTypes", EmitDefaultValue = false)]
+    [JsonPropertyName("alertTypes")]
     public List<AlertTypesEnum> AlertTypes { get; set; }
 
 

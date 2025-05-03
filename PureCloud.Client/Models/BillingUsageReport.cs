@@ -7,14 +7,14 @@ namespace PureCloud.Client.Models;
 /// <summary>
 /// BillingUsageReport
 /// </summary>
-[DataContract]
+
 public partial class BillingUsageReport : IEquatable<BillingUsageReport>
 {
     /// <summary>
     /// Generation status of report
     /// </summary>
     /// <value>Generation status of report</value>
-    [JsonConverter(typeof(JsonStringEnumConverter))]
+    
     public enum StatusEnum
     {
         /// <summary>
@@ -41,7 +41,7 @@ public partial class BillingUsageReport : IEquatable<BillingUsageReport>
     /// Generation status of report
     /// </summary>
     /// <value>Generation status of report</value>
-    [DataMember(Name = "status", EmitDefaultValue = false)]
+    [JsonPropertyName("status")]
     public StatusEnum? Status { get; set; }
 
     /// <summary>
@@ -73,7 +73,7 @@ public partial class BillingUsageReport : IEquatable<BillingUsageReport>
     /// The globally unique identifier for the object.
     /// </summary>
     /// <value>The globally unique identifier for the object.</value>
-    [DataMember(Name = "id", EmitDefaultValue = false)]
+    [JsonPropertyName("id")]
     public string Id { get; private set; }
 
 
@@ -81,7 +81,7 @@ public partial class BillingUsageReport : IEquatable<BillingUsageReport>
     /// <summary>
     /// Gets or Sets Name
     /// </summary>
-    [DataMember(Name = "name", EmitDefaultValue = false)]
+    [JsonPropertyName("name")]
     public string Name { get; set; }
 
 
@@ -90,7 +90,7 @@ public partial class BillingUsageReport : IEquatable<BillingUsageReport>
     /// The period start date. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z
     /// </summary>
     /// <value>The period start date. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z</value>
-    [DataMember(Name = "startDate", EmitDefaultValue = false)]
+    [JsonPropertyName("startDate")]
     public DateTime? StartDate { get; set; }
 
 
@@ -99,7 +99,7 @@ public partial class BillingUsageReport : IEquatable<BillingUsageReport>
     /// The period end date. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z
     /// </summary>
     /// <value>The period end date. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z</value>
-    [DataMember(Name = "endDate", EmitDefaultValue = false)]
+    [JsonPropertyName("endDate")]
     public DateTime? EndDate { get; set; }
 
 
@@ -110,7 +110,7 @@ public partial class BillingUsageReport : IEquatable<BillingUsageReport>
     /// The usages for the given period.
     /// </summary>
     /// <value>The usages for the given period.</value>
-    [DataMember(Name = "usages", EmitDefaultValue = false)]
+    [JsonPropertyName("usages")]
     public List<BillingUsage> Usages { get; set; }
 
 
@@ -119,7 +119,7 @@ public partial class BillingUsageReport : IEquatable<BillingUsageReport>
     /// The URI for this object
     /// </summary>
     /// <value>The URI for this object</value>
-    [DataMember(Name = "selfUri", EmitDefaultValue = false)]
+    [JsonPropertyName("selfUri")]
     public string SelfUri { get; private set; }
 
 

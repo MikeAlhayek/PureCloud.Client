@@ -1,4 +1,3 @@
-using System.Runtime.Serialization;
 using System.Text;
 using System.Text.Json.Serialization;
 
@@ -7,7 +6,7 @@ namespace PureCloud.Client.Models;
 /// <summary>
 /// TranscriptionEnginesRequest
 /// </summary>
-[DataContract]
+
 public partial class TranscriptionEnginesRequest : IEquatable<TranscriptionEnginesRequest>
 {
 
@@ -32,7 +31,7 @@ public partial class TranscriptionEnginesRequest : IEquatable<TranscriptionEngin
     /// The transcription engine setting
     /// </summary>
     /// <value>The transcription engine setting</value>
-    [DataMember(Name = "transcriptionEngines", EmitDefaultValue = false)]
+    [JsonPropertyName("transcriptionEngines")]
     public List<ProgramTranscriptionEngine> TranscriptionEngines { get; set; }
 
 

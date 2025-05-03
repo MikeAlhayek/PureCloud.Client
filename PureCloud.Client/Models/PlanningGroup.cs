@@ -1,12 +1,12 @@
-using System.Runtime.Serialization;
 using System.Text;
+using System.Text.Json.Serialization;
 
 namespace PureCloud.Client.Models;
 
 /// <summary>
 /// PlanningGroup
 /// </summary>
-[DataContract]
+
 public partial class PlanningGroup : IEquatable<PlanningGroup>
 {
     /// <summary>
@@ -31,7 +31,7 @@ public partial class PlanningGroup : IEquatable<PlanningGroup>
     /// The globally unique identifier for the object.
     /// </summary>
     /// <value>The globally unique identifier for the object.</value>
-    [DataMember(Name = "id", EmitDefaultValue = false)]
+    [JsonPropertyName("id")]
     public string Id { get; private set; }
 
 
@@ -39,7 +39,7 @@ public partial class PlanningGroup : IEquatable<PlanningGroup>
     /// <summary>
     /// Gets or Sets Name
     /// </summary>
-    [DataMember(Name = "name", EmitDefaultValue = false)]
+    [JsonPropertyName("name")]
     public string Name { get; set; }
 
 
@@ -48,7 +48,7 @@ public partial class PlanningGroup : IEquatable<PlanningGroup>
     /// The ID of the service goal template associated with this planning group
     /// </summary>
     /// <value>The ID of the service goal template associated with this planning group</value>
-    [DataMember(Name = "serviceGoalTemplate", EmitDefaultValue = false)]
+    [JsonPropertyName("serviceGoalTemplate")]
     public ServiceGoalTemplateReference ServiceGoalTemplate { get; set; }
 
 
@@ -57,7 +57,7 @@ public partial class PlanningGroup : IEquatable<PlanningGroup>
     /// Set of route paths associated with the planning group
     /// </summary>
     /// <value>Set of route paths associated with the planning group</value>
-    [DataMember(Name = "routePaths", EmitDefaultValue = false)]
+    [JsonPropertyName("routePaths")]
     public List<RoutePathResponse> RoutePaths { get; set; }
 
 
@@ -66,7 +66,7 @@ public partial class PlanningGroup : IEquatable<PlanningGroup>
     /// Version metadata for the planning group
     /// </summary>
     /// <value>Version metadata for the planning group</value>
-    [DataMember(Name = "metadata", EmitDefaultValue = false)]
+    [JsonPropertyName("metadata")]
     public WfmVersionedEntityMetadata Metadata { get; set; }
 
 
@@ -75,7 +75,7 @@ public partial class PlanningGroup : IEquatable<PlanningGroup>
     /// The URI for this object
     /// </summary>
     /// <value>The URI for this object</value>
-    [DataMember(Name = "selfUri", EmitDefaultValue = false)]
+    [JsonPropertyName("selfUri")]
     public string SelfUri { get; private set; }
 
 

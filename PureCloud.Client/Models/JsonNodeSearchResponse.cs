@@ -1,4 +1,3 @@
-using System.Runtime.Serialization;
 using System.Text;
 using System.Text.Json.Serialization;
 
@@ -7,7 +6,7 @@ namespace PureCloud.Client.Models;
 /// <summary>
 /// JsonNodeSearchResponse
 /// </summary>
-[DataContract]
+
 public partial class JsonNodeSearchResponse : IEquatable<JsonNodeSearchResponse>
 {
 
@@ -50,7 +49,7 @@ public partial class JsonNodeSearchResponse : IEquatable<JsonNodeSearchResponse>
     /// The total number of results found
     /// </summary>
     /// <value>The total number of results found</value>
-    [DataMember(Name = "total", EmitDefaultValue = false)]
+    [JsonPropertyName("total")]
     public long? Total { get; set; }
 
 
@@ -59,7 +58,7 @@ public partial class JsonNodeSearchResponse : IEquatable<JsonNodeSearchResponse>
     /// The total number of pages
     /// </summary>
     /// <value>The total number of pages</value>
-    [DataMember(Name = "pageCount", EmitDefaultValue = false)]
+    [JsonPropertyName("pageCount")]
     public int? PageCount { get; set; }
 
 
@@ -68,7 +67,7 @@ public partial class JsonNodeSearchResponse : IEquatable<JsonNodeSearchResponse>
     /// The current page size
     /// </summary>
     /// <value>The current page size</value>
-    [DataMember(Name = "pageSize", EmitDefaultValue = false)]
+    [JsonPropertyName("pageSize")]
     public int? PageSize { get; set; }
 
 
@@ -77,7 +76,7 @@ public partial class JsonNodeSearchResponse : IEquatable<JsonNodeSearchResponse>
     /// The current page number
     /// </summary>
     /// <value>The current page number</value>
-    [DataMember(Name = "pageNumber", EmitDefaultValue = false)]
+    [JsonPropertyName("pageNumber")]
     public int? PageNumber { get; set; }
 
 
@@ -86,7 +85,7 @@ public partial class JsonNodeSearchResponse : IEquatable<JsonNodeSearchResponse>
     /// Q64 value for the previous page of results
     /// </summary>
     /// <value>Q64 value for the previous page of results</value>
-    [DataMember(Name = "previousPage", EmitDefaultValue = false)]
+    [JsonPropertyName("previousPage")]
     public string PreviousPage { get; set; }
 
 
@@ -95,7 +94,7 @@ public partial class JsonNodeSearchResponse : IEquatable<JsonNodeSearchResponse>
     /// Q64 value for the current page of results
     /// </summary>
     /// <value>Q64 value for the current page of results</value>
-    [DataMember(Name = "currentPage", EmitDefaultValue = false)]
+    [JsonPropertyName("currentPage")]
     public string CurrentPage { get; set; }
 
 
@@ -104,7 +103,7 @@ public partial class JsonNodeSearchResponse : IEquatable<JsonNodeSearchResponse>
     /// Q64 value for the next page of results
     /// </summary>
     /// <value>Q64 value for the next page of results</value>
-    [DataMember(Name = "nextPage", EmitDefaultValue = false)]
+    [JsonPropertyName("nextPage")]
     public string NextPage { get; set; }
 
 
@@ -113,7 +112,7 @@ public partial class JsonNodeSearchResponse : IEquatable<JsonNodeSearchResponse>
     /// Resource types the search was performed against
     /// </summary>
     /// <value>Resource types the search was performed against</value>
-    [DataMember(Name = "types", EmitDefaultValue = false)]
+    [JsonPropertyName("types")]
     public List<string> Types { get; set; }
 
 
@@ -122,7 +121,7 @@ public partial class JsonNodeSearchResponse : IEquatable<JsonNodeSearchResponse>
     /// Search results
     /// </summary>
     /// <value>Search results</value>
-    [DataMember(Name = "results", EmitDefaultValue = false)]
+    [JsonPropertyName("results")]
     public object Results { get; set; }
 
 
@@ -130,7 +129,7 @@ public partial class JsonNodeSearchResponse : IEquatable<JsonNodeSearchResponse>
     /// <summary>
     /// Gets or Sets Aggregations
     /// </summary>
-    [DataMember(Name = "aggregations", EmitDefaultValue = false)]
+    [JsonPropertyName("aggregations")]
     public object Aggregations { get; set; }
 
 

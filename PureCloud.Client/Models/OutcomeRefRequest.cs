@@ -1,4 +1,3 @@
-using System.Runtime.Serialization;
 using System.Text;
 using System.Text.Json.Serialization;
 
@@ -7,7 +6,7 @@ namespace PureCloud.Client.Models;
 /// <summary>
 /// OutcomeRefRequest
 /// </summary>
-[DataContract]
+
 public partial class OutcomeRefRequest : IEquatable<OutcomeRefRequest>
 {
 
@@ -32,7 +31,7 @@ public partial class OutcomeRefRequest : IEquatable<OutcomeRefRequest>
     /// ID of outcome.
     /// </summary>
     /// <value>ID of outcome.</value>
-    [DataMember(Name = "id", EmitDefaultValue = false)]
+    [JsonPropertyName("id")]
     public string Id { get; set; }
 
 

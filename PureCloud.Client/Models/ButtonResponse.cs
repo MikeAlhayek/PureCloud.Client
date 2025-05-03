@@ -7,14 +7,14 @@ namespace PureCloud.Client.Models;
 /// <summary>
 /// ButtonResponse
 /// </summary>
-[DataContract]
+
 public partial class ButtonResponse : IEquatable<ButtonResponse>
 {
     /// <summary>
     /// Button response type that captures Button and QuickReply type responses
     /// </summary>
     /// <value>Button response type that captures Button and QuickReply type responses</value>
-    [JsonConverter(typeof(JsonStringEnumConverter))]
+    
     public enum TypeEnum
     {
         /// <summary>
@@ -47,7 +47,7 @@ public partial class ButtonResponse : IEquatable<ButtonResponse>
     /// Button response message type that captures QuickReply , Cards and Carousel .This is used  as label for Card selection
     /// </summary>
     /// <value>Button response message type that captures QuickReply , Cards and Carousel .This is used  as label for Card selection</value>
-    [JsonConverter(typeof(JsonStringEnumConverter))]
+    
     public enum MessageTypeEnum
     {
         /// <summary>
@@ -80,13 +80,13 @@ public partial class ButtonResponse : IEquatable<ButtonResponse>
     /// Button response type that captures Button and QuickReply type responses
     /// </summary>
     /// <value>Button response type that captures Button and QuickReply type responses</value>
-    [DataMember(Name = "type", EmitDefaultValue = false)]
+    [JsonPropertyName("type")]
     public TypeEnum? Type { get; set; }
     /// <summary>
     /// Button response message type that captures QuickReply , Cards and Carousel .This is used  as label for Card selection
     /// </summary>
     /// <value>Button response message type that captures QuickReply , Cards and Carousel .This is used  as label for Card selection</value>
-    [DataMember(Name = "messageType", EmitDefaultValue = false)]
+    [JsonPropertyName("messageType")]
     public MessageTypeEnum? MessageType { get; set; }
     /// <summary>
     /// Initializes a new instance of the <see cref="ButtonResponse" /> class.
@@ -112,7 +112,7 @@ public partial class ButtonResponse : IEquatable<ButtonResponse>
     /// Text to show inside the Button reply. This is also used as the response text after clicking on the Button.
     /// </summary>
     /// <value>Text to show inside the Button reply. This is also used as the response text after clicking on the Button.</value>
-    [DataMember(Name = "text", EmitDefaultValue = false)]
+    [JsonPropertyName("text")]
     public string Text { get; set; }
 
 
@@ -121,7 +121,7 @@ public partial class ButtonResponse : IEquatable<ButtonResponse>
     /// Content of the textback payload after clicking a button
     /// </summary>
     /// <value>Content of the textback payload after clicking a button</value>
-    [DataMember(Name = "payload", EmitDefaultValue = false)]
+    [JsonPropertyName("payload")]
     public string Payload { get; set; }
 
 

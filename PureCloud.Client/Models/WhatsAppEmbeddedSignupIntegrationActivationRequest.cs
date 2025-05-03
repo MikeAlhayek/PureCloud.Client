@@ -1,4 +1,3 @@
-using System.Runtime.Serialization;
 using System.Text;
 using System.Text.Json.Serialization;
 
@@ -7,7 +6,7 @@ namespace PureCloud.Client.Models;
 /// <summary>
 /// WhatsAppEmbeddedSignupIntegrationActivationRequest
 /// </summary>
-[DataContract]
+
 public partial class WhatsAppEmbeddedSignupIntegrationActivationRequest : IEquatable<WhatsAppEmbeddedSignupIntegrationActivationRequest>
 {
 
@@ -34,7 +33,7 @@ public partial class WhatsAppEmbeddedSignupIntegrationActivationRequest : IEquat
     /// The globally unique identifier for the object.
     /// </summary>
     /// <value>The globally unique identifier for the object.</value>
-    [DataMember(Name = "id", EmitDefaultValue = false)]
+    [JsonPropertyName("id")]
     public string Id { get; private set; }
 
 
@@ -43,7 +42,7 @@ public partial class WhatsAppEmbeddedSignupIntegrationActivationRequest : IEquat
     /// WhatsApp Integration name
     /// </summary>
     /// <value>WhatsApp Integration name</value>
-    [DataMember(Name = "name", EmitDefaultValue = false)]
+    [JsonPropertyName("name")]
     public string Name { get; private set; }
 
 
@@ -52,7 +51,7 @@ public partial class WhatsAppEmbeddedSignupIntegrationActivationRequest : IEquat
     /// Phone number to associate with the WhatsApp integration
     /// </summary>
     /// <value>Phone number to associate with the WhatsApp integration</value>
-    [DataMember(Name = "phoneNumber", EmitDefaultValue = false)]
+    [JsonPropertyName("phoneNumber")]
     public string PhoneNumber { get; set; }
 
 
@@ -61,7 +60,7 @@ public partial class WhatsAppEmbeddedSignupIntegrationActivationRequest : IEquat
     /// Specify the two-step verification PIN for that phone number
     /// </summary>
     /// <value>Specify the two-step verification PIN for that phone number</value>
-    [DataMember(Name = "pin", EmitDefaultValue = false)]
+    [JsonPropertyName("pin")]
     public string Pin { get; set; }
 
 
@@ -70,7 +69,7 @@ public partial class WhatsAppEmbeddedSignupIntegrationActivationRequest : IEquat
     /// The URI for this object
     /// </summary>
     /// <value>The URI for this object</value>
-    [DataMember(Name = "selfUri", EmitDefaultValue = false)]
+    [JsonPropertyName("selfUri")]
     public string SelfUri { get; private set; }
 
 

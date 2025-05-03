@@ -7,14 +7,14 @@ namespace PureCloud.Client.Models;
 /// <summary>
 /// Action function zip file upload settings and state.
 /// </summary>
-[DataContract]
+
 public partial class FunctionZipConfig : IEquatable<FunctionZipConfig>
 {
     /// <summary>
     /// Status of zip upload.
     /// </summary>
     /// <value>Status of zip upload.</value>
-    [JsonConverter(typeof(JsonStringEnumConverter))]
+    
     public enum StatusEnum
     {
         /// <summary>
@@ -71,7 +71,7 @@ public partial class FunctionZipConfig : IEquatable<FunctionZipConfig>
     /// Status of zip upload.
     /// </summary>
     /// <value>Status of zip upload.</value>
-    [DataMember(Name = "status", EmitDefaultValue = false)]
+    [JsonPropertyName("status")]
     public StatusEnum? Status { get; private set; }
     /// <summary>
     /// Initializes a new instance of the <see cref="FunctionZipConfig" /> class.
@@ -89,7 +89,7 @@ public partial class FunctionZipConfig : IEquatable<FunctionZipConfig>
     /// Zip file Identifier
     /// </summary>
     /// <value>Zip file Identifier</value>
-    [DataMember(Name = "id", EmitDefaultValue = false)]
+    [JsonPropertyName("id")]
     public string Id { get; private set; }
 
 
@@ -98,7 +98,7 @@ public partial class FunctionZipConfig : IEquatable<FunctionZipConfig>
     /// Zip file name
     /// </summary>
     /// <value>Zip file name</value>
-    [DataMember(Name = "name", EmitDefaultValue = false)]
+    [JsonPropertyName("name")]
     public string Name { get; private set; }
 
 
@@ -107,7 +107,7 @@ public partial class FunctionZipConfig : IEquatable<FunctionZipConfig>
     /// Date and time zip record was created. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z
     /// </summary>
     /// <value>Date and time zip record was created. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z</value>
-    [DataMember(Name = "dateCreated", EmitDefaultValue = false)]
+    [JsonPropertyName("dateCreated")]
     public DateTime? DateCreated { get; private set; }
 
 
@@ -116,7 +116,7 @@ public partial class FunctionZipConfig : IEquatable<FunctionZipConfig>
     /// Error message if upload failed.
     /// </summary>
     /// <value>Error message if upload failed.</value>
-    [DataMember(Name = "errorMessage", EmitDefaultValue = false)]
+    [JsonPropertyName("errorMessage")]
     public string ErrorMessage { get; private set; }
 
 
@@ -125,7 +125,7 @@ public partial class FunctionZipConfig : IEquatable<FunctionZipConfig>
     /// Upload request id used for zip upload
     /// </summary>
     /// <value>Upload request id used for zip upload</value>
-    [DataMember(Name = "requestId", EmitDefaultValue = false)]
+    [JsonPropertyName("requestId")]
     public string RequestId { get; private set; }
 
 

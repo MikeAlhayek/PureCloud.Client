@@ -1,12 +1,12 @@
-using System.Runtime.Serialization;
 using System.Text;
+using System.Text.Json.Serialization;
 
 namespace PureCloud.Client.Models;
 
 /// <summary>
 /// FlowHealthIntentVersionInfo
 /// </summary>
-[DataContract]
+
 public partial class FlowHealthIntentVersionInfo : IEquatable<FlowHealthIntentVersionInfo>
 {
     /// <summary>
@@ -23,7 +23,7 @@ public partial class FlowHealthIntentVersionInfo : IEquatable<FlowHealthIntentVe
     /// NLU Version Info for this flow version.
     /// </summary>
     /// <value>NLU Version Info for this flow version.</value>
-    [DataMember(Name = "nluVersion", EmitDefaultValue = false)]
+    [JsonPropertyName("nluVersion")]
     public AddressableEntityRef NluVersion { get; private set; }
 
 
@@ -32,7 +32,7 @@ public partial class FlowHealthIntentVersionInfo : IEquatable<FlowHealthIntentVe
     /// Given flow&#39;s Version Info.
     /// </summary>
     /// <value>Given flow&#39;s Version Info.</value>
-    [DataMember(Name = "flowVersion", EmitDefaultValue = false)]
+    [JsonPropertyName("flowVersion")]
     public AddressableEntityRef FlowVersion { get; private set; }
 
 
@@ -41,7 +41,7 @@ public partial class FlowHealthIntentVersionInfo : IEquatable<FlowHealthIntentVe
     /// NLU Domain Info for this flow version.
     /// </summary>
     /// <value>NLU Domain Info for this flow version.</value>
-    [DataMember(Name = "nluDomain", EmitDefaultValue = false)]
+    [JsonPropertyName("nluDomain")]
     public AddressableEntityRef NluDomain { get; private set; }
 
 

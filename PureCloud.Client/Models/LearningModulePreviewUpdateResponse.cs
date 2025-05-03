@@ -1,12 +1,12 @@
-using System.Runtime.Serialization;
 using System.Text;
+using System.Text.Json.Serialization;
 
 namespace PureCloud.Client.Models;
 
 /// <summary>
 /// Learning module preview update response
 /// </summary>
-[DataContract]
+
 public partial class LearningModulePreviewUpdateResponse : IEquatable<LearningModulePreviewUpdateResponse>
 {
     /// <summary>
@@ -27,7 +27,7 @@ public partial class LearningModulePreviewUpdateResponse : IEquatable<LearningMo
     /// The Learning Module id
     /// </summary>
     /// <value>The Learning Module id</value>
-    [DataMember(Name = "id", EmitDefaultValue = false)]
+    [JsonPropertyName("id")]
     public string Id { get; set; }
 
 
@@ -36,7 +36,7 @@ public partial class LearningModulePreviewUpdateResponse : IEquatable<LearningMo
     /// The Assignment Preview
     /// </summary>
     /// <value>The Assignment Preview</value>
-    [DataMember(Name = "assignment", EmitDefaultValue = false)]
+    [JsonPropertyName("assignment")]
     public LearningModulePreviewUpdateResponseAssignment Assignment { get; set; }
 
 

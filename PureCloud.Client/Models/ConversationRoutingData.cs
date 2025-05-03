@@ -1,12 +1,12 @@
-using System.Runtime.Serialization;
 using System.Text;
+using System.Text.Json.Serialization;
 
 namespace PureCloud.Client.Models;
 
 /// <summary>
 /// ConversationRoutingData
 /// </summary>
-[DataContract]
+
 public partial class ConversationRoutingData : IEquatable<ConversationRoutingData>
 {
     /// <summary>
@@ -35,7 +35,7 @@ public partial class ConversationRoutingData : IEquatable<ConversationRoutingDat
     /// The queue to use for routing decisions
     /// </summary>
     /// <value>The queue to use for routing decisions</value>
-    [DataMember(Name = "queue", EmitDefaultValue = false)]
+    [JsonPropertyName("queue")]
     public AddressableEntityRef Queue { get; set; }
 
 
@@ -44,7 +44,7 @@ public partial class ConversationRoutingData : IEquatable<ConversationRoutingDat
     /// The language to use for routing decisions
     /// </summary>
     /// <value>The language to use for routing decisions</value>
-    [DataMember(Name = "language", EmitDefaultValue = false)]
+    [JsonPropertyName("language")]
     public AddressableEntityRef Language { get; set; }
 
 
@@ -53,7 +53,7 @@ public partial class ConversationRoutingData : IEquatable<ConversationRoutingDat
     /// The priority of the conversation to use for routing decisions
     /// </summary>
     /// <value>The priority of the conversation to use for routing decisions</value>
-    [DataMember(Name = "priority", EmitDefaultValue = false)]
+    [JsonPropertyName("priority")]
     public int? Priority { get; set; }
 
 
@@ -62,7 +62,7 @@ public partial class ConversationRoutingData : IEquatable<ConversationRoutingDat
     /// The skills to use for routing decisions
     /// </summary>
     /// <value>The skills to use for routing decisions</value>
-    [DataMember(Name = "skills", EmitDefaultValue = false)]
+    [JsonPropertyName("skills")]
     public List<AddressableEntityRef> Skills { get; set; }
 
 
@@ -71,7 +71,7 @@ public partial class ConversationRoutingData : IEquatable<ConversationRoutingDat
     /// A collection of agents and their assigned scores for this conversation (0 - 100, higher being better), for use in routing to preferred agents
     /// </summary>
     /// <value>A collection of agents and their assigned scores for this conversation (0 - 100, higher being better), for use in routing to preferred agents</value>
-    [DataMember(Name = "scoredAgents", EmitDefaultValue = false)]
+    [JsonPropertyName("scoredAgents")]
     public List<ScoredAgent> ScoredAgents { get; set; }
 
 
@@ -80,7 +80,7 @@ public partial class ConversationRoutingData : IEquatable<ConversationRoutingDat
     /// An optional label that categorizes the conversation.  Max-utilization settings can be configured at a per-label level
     /// </summary>
     /// <value>An optional label that categorizes the conversation.  Max-utilization settings can be configured at a per-label level</value>
-    [DataMember(Name = "label", EmitDefaultValue = false)]
+    [JsonPropertyName("label")]
     public string Label { get; set; }
 
 

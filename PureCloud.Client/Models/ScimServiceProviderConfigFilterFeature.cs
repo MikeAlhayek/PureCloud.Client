@@ -1,12 +1,12 @@
-using System.Runtime.Serialization;
 using System.Text;
+using System.Text.Json.Serialization;
 
 namespace PureCloud.Client.Models;
 
 /// <summary>
 /// Defines a \&quot;filter\&quot; request in the SCIM service provider&#39;s configuration.
 /// </summary>
-[DataContract]
+
 public partial class ScimServiceProviderConfigFilterFeature : IEquatable<ScimServiceProviderConfigFilterFeature>
 {
     /// <summary>
@@ -23,7 +23,7 @@ public partial class ScimServiceProviderConfigFilterFeature : IEquatable<ScimSer
     /// Indicates whether configuration options are supported.
     /// </summary>
     /// <value>Indicates whether configuration options are supported.</value>
-    [DataMember(Name = "supported", EmitDefaultValue = false)]
+    [JsonPropertyName("supported")]
     public bool? Supported { get; private set; }
 
 
@@ -32,7 +32,7 @@ public partial class ScimServiceProviderConfigFilterFeature : IEquatable<ScimSer
     /// The maximum number of results returned from a filtered query.
     /// </summary>
     /// <value>The maximum number of results returned from a filtered query.</value>
-    [DataMember(Name = "maxResults", EmitDefaultValue = false)]
+    [JsonPropertyName("maxResults")]
     public int? MaxResults { get; private set; }
 
 

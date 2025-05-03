@@ -1,12 +1,12 @@
-using System.Runtime.Serialization;
 using System.Text;
+using System.Text.Json.Serialization;
 
 namespace PureCloud.Client.Models;
 
 /// <summary>
 /// AssignmentError
 /// </summary>
-[DataContract]
+
 public partial class AssignmentError : IEquatable<AssignmentError>
 {
     /// <summary>
@@ -27,7 +27,7 @@ public partial class AssignmentError : IEquatable<AssignmentError>
     /// A user that is failed to be removed from the performance profile
     /// </summary>
     /// <value>A user that is failed to be removed from the performance profile</value>
-    [DataMember(Name = "user", EmitDefaultValue = false)]
+    [JsonPropertyName("user")]
     public UserReference User { get; set; }
 
 
@@ -36,7 +36,7 @@ public partial class AssignmentError : IEquatable<AssignmentError>
     /// Error message from membership assignment
     /// </summary>
     /// <value>Error message from membership assignment</value>
-    [DataMember(Name = "message", EmitDefaultValue = false)]
+    [JsonPropertyName("message")]
     public string Message { get; set; }
 
 

@@ -1,12 +1,12 @@
-using System.Runtime.Serialization;
 using System.Text;
+using System.Text.Json.Serialization;
 
 namespace PureCloud.Client.Models;
 
 /// <summary>
 /// EventDefinitionListing
 /// </summary>
-[DataContract]
+
 public partial class EventDefinitionListing : IEquatable<EventDefinitionListing>
 {
     /// <summary>
@@ -24,7 +24,7 @@ public partial class EventDefinitionListing : IEquatable<EventDefinitionListing>
     /// <summary>
     /// Gets or Sets Entities
     /// </summary>
-    [DataMember(Name = "entities", EmitDefaultValue = false)]
+    [JsonPropertyName("entities")]
     public List<EventDefinition> Entities { get; set; }
 
 

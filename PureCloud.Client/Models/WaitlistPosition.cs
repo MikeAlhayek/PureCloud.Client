@@ -1,12 +1,12 @@
-using System.Runtime.Serialization;
 using System.Text;
+using System.Text.Json.Serialization;
 
 namespace PureCloud.Client.Models;
 
 /// <summary>
 /// WaitlistPosition
 /// </summary>
-[DataContract]
+
 public partial class WaitlistPosition : IEquatable<WaitlistPosition>
 {
     /// <summary>
@@ -31,7 +31,7 @@ public partial class WaitlistPosition : IEquatable<WaitlistPosition>
     /// The time off request for this wait list position
     /// </summary>
     /// <value>The time off request for this wait list position</value>
-    [DataMember(Name = "timeOffRequest", EmitDefaultValue = false)]
+    [JsonPropertyName("timeOffRequest")]
     public TimeOffRequestReference TimeOffRequest { get; set; }
 
 
@@ -40,7 +40,7 @@ public partial class WaitlistPosition : IEquatable<WaitlistPosition>
     /// The time off limit for which time off request is waitlisted
     /// </summary>
     /// <value>The time off limit for which time off request is waitlisted</value>
-    [DataMember(Name = "timeOffLimit", EmitDefaultValue = false)]
+    [JsonPropertyName("timeOffLimit")]
     public TimeOffLimitReference TimeOffLimit { get; set; }
 
 
@@ -49,7 +49,7 @@ public partial class WaitlistPosition : IEquatable<WaitlistPosition>
     /// The date to which this wait list position applies, as defined by the time zone of the business unit. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd
     /// </summary>
     /// <value>The date to which this wait list position applies, as defined by the time zone of the business unit. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd</value>
-    [DataMember(Name = "date", EmitDefaultValue = false)]
+    [JsonPropertyName("date")]
     public string Date { get; set; }
 
 
@@ -58,7 +58,7 @@ public partial class WaitlistPosition : IEquatable<WaitlistPosition>
     /// The time off request&#39;s position in the waitlist on the date. 1 means time off is the first in the waitlist
     /// </summary>
     /// <value>The time off request&#39;s position in the waitlist on the date. 1 means time off is the first in the waitlist</value>
-    [DataMember(Name = "waitlistPosition", EmitDefaultValue = false)]
+    [JsonPropertyName("waitlistPosition")]
     public int? _WaitlistPosition { get; set; }
 
 

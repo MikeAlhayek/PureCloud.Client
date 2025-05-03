@@ -7,14 +7,14 @@ namespace PureCloud.Client.Models;
 /// <summary>
 /// Defines a SCIM email address.
 /// </summary>
-[DataContract]
+
 public partial class ScimEmail : IEquatable<ScimEmail>
 {
     /// <summary>
     /// The type of email address. \"value\" is immutable if \"type\" is set to \"other\".
     /// </summary>
     /// <value>The type of email address. \"value\" is immutable if \"type\" is set to \"other\".</value>
-    [JsonConverter(typeof(JsonStringEnumConverter))]
+    
     public enum TypeEnum
     {
         /// <summary>
@@ -41,7 +41,7 @@ public partial class ScimEmail : IEquatable<ScimEmail>
     /// The type of email address. \"value\" is immutable if \"type\" is set to \"other\".
     /// </summary>
     /// <value>The type of email address. \"value\" is immutable if \"type\" is set to \"other\".</value>
-    [DataMember(Name = "type", EmitDefaultValue = false)]
+    [JsonPropertyName("type")]
     public TypeEnum? Type { get; set; }
     /// <summary>
     /// Initializes a new instance of the <see cref="ScimEmail" /> class.
@@ -63,7 +63,7 @@ public partial class ScimEmail : IEquatable<ScimEmail>
     /// The email address. Is immutable if \&quot;type\&quot; is set to \&quot;other\&quot;.
     /// </summary>
     /// <value>The email address. Is immutable if \&quot;type\&quot; is set to \&quot;other\&quot;.</value>
-    [DataMember(Name = "value", EmitDefaultValue = false)]
+    [JsonPropertyName("value")]
     public string Value { get; set; }
 
 
@@ -74,7 +74,7 @@ public partial class ScimEmail : IEquatable<ScimEmail>
     /// Indicates whether the email address is the primary email address.
     /// </summary>
     /// <value>Indicates whether the email address is the primary email address.</value>
-    [DataMember(Name = "primary", EmitDefaultValue = false)]
+    [JsonPropertyName("primary")]
     public bool? Primary { get; set; }
 
 

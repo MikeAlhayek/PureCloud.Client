@@ -7,14 +7,14 @@ namespace PureCloud.Client.Models;
 /// <summary>
 /// MessagingCampaign
 /// </summary>
-[DataContract]
+
 public partial class MessagingCampaign : IEquatable<MessagingCampaign>
 {
     /// <summary>
     /// The current status of the messaging campaign. A messaging campaign may be turned 'on' or 'off'.
     /// </summary>
     /// <value>The current status of the messaging campaign. A messaging campaign may be turned 'on' or 'off'.</value>
-    [JsonConverter(typeof(JsonStringEnumConverter))]
+    
     public enum CampaignStatusEnum
     {
         /// <summary>
@@ -71,7 +71,7 @@ public partial class MessagingCampaign : IEquatable<MessagingCampaign>
     /// The current status of the messaging campaign. A messaging campaign may be turned 'on' or 'off'.
     /// </summary>
     /// <value>The current status of the messaging campaign. A messaging campaign may be turned 'on' or 'off'.</value>
-    [DataMember(Name = "campaignStatus", EmitDefaultValue = false)]
+    [JsonPropertyName("campaignStatus")]
     public CampaignStatusEnum? CampaignStatus { get; set; }
 
     /// <summary>
@@ -127,7 +127,7 @@ public partial class MessagingCampaign : IEquatable<MessagingCampaign>
     /// The globally unique identifier for the object.
     /// </summary>
     /// <value>The globally unique identifier for the object.</value>
-    [DataMember(Name = "id", EmitDefaultValue = false)]
+    [JsonPropertyName("id")]
     public string Id { get; private set; }
 
 
@@ -135,7 +135,7 @@ public partial class MessagingCampaign : IEquatable<MessagingCampaign>
     /// <summary>
     /// Gets or Sets Name
     /// </summary>
-    [DataMember(Name = "name", EmitDefaultValue = false)]
+    [JsonPropertyName("name")]
     public string Name { get; set; }
 
 
@@ -144,7 +144,7 @@ public partial class MessagingCampaign : IEquatable<MessagingCampaign>
     /// Creation time of the entity. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z
     /// </summary>
     /// <value>Creation time of the entity. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z</value>
-    [DataMember(Name = "dateCreated", EmitDefaultValue = false)]
+    [JsonPropertyName("dateCreated")]
     public DateTime? DateCreated { get; private set; }
 
 
@@ -153,7 +153,7 @@ public partial class MessagingCampaign : IEquatable<MessagingCampaign>
     /// Last modified time of the entity. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z
     /// </summary>
     /// <value>Last modified time of the entity. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z</value>
-    [DataMember(Name = "dateModified", EmitDefaultValue = false)]
+    [JsonPropertyName("dateModified")]
     public DateTime? DateModified { get; private set; }
 
 
@@ -162,7 +162,7 @@ public partial class MessagingCampaign : IEquatable<MessagingCampaign>
     /// Required for updates, must match the version number of the most recent update
     /// </summary>
     /// <value>Required for updates, must match the version number of the most recent update</value>
-    [DataMember(Name = "version", EmitDefaultValue = false)]
+    [JsonPropertyName("version")]
     public int? Version { get; set; }
 
 
@@ -171,7 +171,7 @@ public partial class MessagingCampaign : IEquatable<MessagingCampaign>
     /// The division this entity belongs to.
     /// </summary>
     /// <value>The division this entity belongs to.</value>
-    [DataMember(Name = "division", EmitDefaultValue = false)]
+    [JsonPropertyName("division")]
     public DomainEntityRef Division { get; set; }
 
 
@@ -182,7 +182,7 @@ public partial class MessagingCampaign : IEquatable<MessagingCampaign>
     /// The callable time set for this messaging campaign.
     /// </summary>
     /// <value>The callable time set for this messaging campaign.</value>
-    [DataMember(Name = "callableTimeSet", EmitDefaultValue = false)]
+    [JsonPropertyName("callableTimeSet")]
     public DomainEntityRef CallableTimeSet { get; set; }
 
 
@@ -191,7 +191,7 @@ public partial class MessagingCampaign : IEquatable<MessagingCampaign>
     /// The contact list that this messaging campaign will send messages for.
     /// </summary>
     /// <value>The contact list that this messaging campaign will send messages for.</value>
-    [DataMember(Name = "contactList", EmitDefaultValue = false)]
+    [JsonPropertyName("contactList")]
     public DomainEntityRef ContactList { get; set; }
 
 
@@ -200,7 +200,7 @@ public partial class MessagingCampaign : IEquatable<MessagingCampaign>
     /// The dnc lists to check before sending a message for this messaging campaign.
     /// </summary>
     /// <value>The dnc lists to check before sending a message for this messaging campaign.</value>
-    [DataMember(Name = "dncLists", EmitDefaultValue = false)]
+    [JsonPropertyName("dncLists")]
     public List<DomainEntityRef> DncLists { get; set; }
 
 
@@ -209,7 +209,7 @@ public partial class MessagingCampaign : IEquatable<MessagingCampaign>
     /// Whether this messaging campaign is always running
     /// </summary>
     /// <value>Whether this messaging campaign is always running</value>
-    [DataMember(Name = "alwaysRunning", EmitDefaultValue = false)]
+    [JsonPropertyName("alwaysRunning")]
     public bool? AlwaysRunning { get; set; }
 
 
@@ -218,7 +218,7 @@ public partial class MessagingCampaign : IEquatable<MessagingCampaign>
     /// The order in which to sort contacts for dialing, based on up to four columns.
     /// </summary>
     /// <value>The order in which to sort contacts for dialing, based on up to four columns.</value>
-    [DataMember(Name = "contactSorts", EmitDefaultValue = false)]
+    [JsonPropertyName("contactSorts")]
     public List<ContactSort> ContactSorts { get; set; }
 
 
@@ -227,7 +227,7 @@ public partial class MessagingCampaign : IEquatable<MessagingCampaign>
     /// How many messages this messaging campaign will send per minute.
     /// </summary>
     /// <value>How many messages this messaging campaign will send per minute.</value>
-    [DataMember(Name = "messagesPerMinute", EmitDefaultValue = false)]
+    [JsonPropertyName("messagesPerMinute")]
     public int? MessagesPerMinute { get; set; }
 
 
@@ -236,7 +236,7 @@ public partial class MessagingCampaign : IEquatable<MessagingCampaign>
     /// Rule Sets to be applied while this campaign is sending messages
     /// </summary>
     /// <value>Rule Sets to be applied while this campaign is sending messages</value>
-    [DataMember(Name = "ruleSets", EmitDefaultValue = false)]
+    [JsonPropertyName("ruleSets")]
     public List<DomainEntityRef> RuleSets { get; set; }
 
 
@@ -245,7 +245,7 @@ public partial class MessagingCampaign : IEquatable<MessagingCampaign>
     /// The contact list filter to check before sending a message for this messaging campaign.
     /// </summary>
     /// <value>The contact list filter to check before sending a message for this messaging campaign.</value>
-    [DataMember(Name = "contactListFilters", EmitDefaultValue = false)]
+    [JsonPropertyName("contactListFilters")]
     public List<DomainEntityRef> ContactListFilters { get; set; }
 
 
@@ -254,7 +254,7 @@ public partial class MessagingCampaign : IEquatable<MessagingCampaign>
     /// A list of current error conditions associated with this messaging campaign.
     /// </summary>
     /// <value>A list of current error conditions associated with this messaging campaign.</value>
-    [DataMember(Name = "errors", EmitDefaultValue = false)]
+    [JsonPropertyName("errors")]
     public List<RestErrorDetail> Errors { get; set; }
 
 
@@ -263,7 +263,7 @@ public partial class MessagingCampaign : IEquatable<MessagingCampaign>
     /// Indicates (when true) that the campaign supports dynamic queueing of the contact list at the time of a request for contacts.
     /// </summary>
     /// <value>Indicates (when true) that the campaign supports dynamic queueing of the contact list at the time of a request for contacts.</value>
-    [DataMember(Name = "dynamicContactQueueingSettings", EmitDefaultValue = false)]
+    [JsonPropertyName("dynamicContactQueueingSettings")]
     public DynamicContactQueueingSettings DynamicContactQueueingSettings { get; set; }
 
 
@@ -272,7 +272,7 @@ public partial class MessagingCampaign : IEquatable<MessagingCampaign>
     /// Configuration for this messaging campaign to send Email messages.
     /// </summary>
     /// <value>Configuration for this messaging campaign to send Email messages.</value>
-    [DataMember(Name = "emailConfig", EmitDefaultValue = false)]
+    [JsonPropertyName("emailConfig")]
     public EmailConfig EmailConfig { get; set; }
 
 
@@ -281,7 +281,7 @@ public partial class MessagingCampaign : IEquatable<MessagingCampaign>
     /// Configuration for this messaging campaign to send SMS messages.
     /// </summary>
     /// <value>Configuration for this messaging campaign to send SMS messages.</value>
-    [DataMember(Name = "smsConfig", EmitDefaultValue = false)]
+    [JsonPropertyName("smsConfig")]
     public SmsConfig SmsConfig { get; set; }
 
 
@@ -290,7 +290,7 @@ public partial class MessagingCampaign : IEquatable<MessagingCampaign>
     /// Configuration for this messaging campaign to send WhatsApp messages.
     /// </summary>
     /// <value>Configuration for this messaging campaign to send WhatsApp messages.</value>
-    [DataMember(Name = "whatsAppConfig", EmitDefaultValue = false)]
+    [JsonPropertyName("whatsAppConfig")]
     public WhatsAppConfig WhatsAppConfig { get; set; }
 
 
@@ -299,7 +299,7 @@ public partial class MessagingCampaign : IEquatable<MessagingCampaign>
     /// The URI for this object
     /// </summary>
     /// <value>The URI for this object</value>
-    [DataMember(Name = "selfUri", EmitDefaultValue = false)]
+    [JsonPropertyName("selfUri")]
     public string SelfUri { get; private set; }
 
 

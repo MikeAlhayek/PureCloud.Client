@@ -7,14 +7,14 @@ namespace PureCloud.Client.Models;
 /// <summary>
 /// WorkPlanConfigurationViolationMessage
 /// </summary>
-[DataContract]
+
 public partial class WorkPlanConfigurationViolationMessage : IEquatable<WorkPlanConfigurationViolationMessage>
 {
     /// <summary>
     /// Type of configuration violation message for this work plan
     /// </summary>
     /// <value>Type of configuration violation message for this work plan</value>
-    [JsonConverter(typeof(JsonStringEnumConverter))]
+    
     public enum TypeEnum
     {
         /// <summary>
@@ -263,7 +263,7 @@ public partial class WorkPlanConfigurationViolationMessage : IEquatable<WorkPlan
     /// Severity of the message. A message with Error severity indicates the scheduler won't be able to produce schedules and thus the work plan is invalid.
     /// </summary>
     /// <value>Severity of the message. A message with Error severity indicates the scheduler won't be able to produce schedules and thus the work plan is invalid.</value>
-    [JsonConverter(typeof(JsonStringEnumConverter))]
+    
     public enum SeverityEnum
     {
         /// <summary>
@@ -296,13 +296,13 @@ public partial class WorkPlanConfigurationViolationMessage : IEquatable<WorkPlan
     /// Type of configuration violation message for this work plan
     /// </summary>
     /// <value>Type of configuration violation message for this work plan</value>
-    [DataMember(Name = "type", EmitDefaultValue = false)]
+    [JsonPropertyName("type")]
     public TypeEnum? Type { get; set; }
     /// <summary>
     /// Severity of the message. A message with Error severity indicates the scheduler won't be able to produce schedules and thus the work plan is invalid.
     /// </summary>
     /// <value>Severity of the message. A message with Error severity indicates the scheduler won't be able to produce schedules and thus the work plan is invalid.</value>
-    [DataMember(Name = "severity", EmitDefaultValue = false)]
+    [JsonPropertyName("severity")]
     public SeverityEnum? Severity { get; set; }
     /// <summary>
     /// Initializes a new instance of the <see cref="WorkPlanConfigurationViolationMessage" /> class.
@@ -326,7 +326,7 @@ public partial class WorkPlanConfigurationViolationMessage : IEquatable<WorkPlan
     /// Arguments of the message that provide information about the misconfigured value or the threshold that is exceeded by the misconfigured value
     /// </summary>
     /// <value>Arguments of the message that provide information about the misconfigured value or the threshold that is exceeded by the misconfigured value</value>
-    [DataMember(Name = "arguments", EmitDefaultValue = false)]
+    [JsonPropertyName("arguments")]
     public List<WorkPlanValidationMessageArgument> Arguments { get; set; }
 
 

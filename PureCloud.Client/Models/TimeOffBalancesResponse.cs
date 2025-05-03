@@ -1,12 +1,12 @@
-using System.Runtime.Serialization;
 using System.Text;
+using System.Text.Json.Serialization;
 
 namespace PureCloud.Client.Models;
 
 /// <summary>
 /// TimeOffBalancesResponse
 /// </summary>
-[DataContract]
+
 public partial class TimeOffBalancesResponse : IEquatable<TimeOffBalancesResponse>
 {
     /// <summary>
@@ -27,7 +27,7 @@ public partial class TimeOffBalancesResponse : IEquatable<TimeOffBalancesRespons
     /// The asynchronous job handling the query
     /// </summary>
     /// <value>The asynchronous job handling the query</value>
-    [DataMember(Name = "job", EmitDefaultValue = false)]
+    [JsonPropertyName("job")]
     public TimeOffBalanceJobReference Job { get; set; }
 
 
@@ -36,7 +36,7 @@ public partial class TimeOffBalancesResponse : IEquatable<TimeOffBalancesRespons
     /// The list of time off balances. May come via notification
     /// </summary>
     /// <value>The list of time off balances. May come via notification</value>
-    [DataMember(Name = "entities", EmitDefaultValue = false)]
+    [JsonPropertyName("entities")]
     public List<TimeOffBalanceResponse> Entities { get; set; }
 
 

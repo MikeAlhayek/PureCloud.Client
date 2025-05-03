@@ -7,14 +7,14 @@ namespace PureCloud.Client.Models;
 /// <summary>
 /// AsyncConversationQuery
 /// </summary>
-[DataContract]
+
 public partial class AsyncConversationQuery : IEquatable<AsyncConversationQuery>
 {
     /// <summary>
     /// Sort the result set in ascending/descending order. Default is ascending
     /// </summary>
     /// <value>Sort the result set in ascending/descending order. Default is ascending</value>
-    [JsonConverter(typeof(JsonStringEnumConverter))]
+    
     public enum OrderEnum
     {
         /// <summary>
@@ -47,7 +47,7 @@ public partial class AsyncConversationQuery : IEquatable<AsyncConversationQuery>
     /// Specify which data element within the result set to use for sorting. The options  to use as a basis for sorting the results: conversationStart, segmentStart, and segmentEnd. If not specified, the default is conversationStart
     /// </summary>
     /// <value>Specify which data element within the result set to use for sorting. The options  to use as a basis for sorting the results: conversationStart, segmentStart, and segmentEnd. If not specified, the default is conversationStart</value>
-    [JsonConverter(typeof(JsonStringEnumConverter))]
+    
     public enum OrderByEnum
     {
         /// <summary>
@@ -86,13 +86,13 @@ public partial class AsyncConversationQuery : IEquatable<AsyncConversationQuery>
     /// Sort the result set in ascending/descending order. Default is ascending
     /// </summary>
     /// <value>Sort the result set in ascending/descending order. Default is ascending</value>
-    [DataMember(Name = "order", EmitDefaultValue = false)]
+    [JsonPropertyName("order")]
     public OrderEnum? Order { get; set; }
     /// <summary>
     /// Specify which data element within the result set to use for sorting. The options  to use as a basis for sorting the results: conversationStart, segmentStart, and segmentEnd. If not specified, the default is conversationStart
     /// </summary>
     /// <value>Specify which data element within the result set to use for sorting. The options  to use as a basis for sorting the results: conversationStart, segmentStart, and segmentEnd. If not specified, the default is conversationStart</value>
-    [DataMember(Name = "orderBy", EmitDefaultValue = false)]
+    [JsonPropertyName("orderBy")]
     public OrderByEnum? OrderBy { get; set; }
 
     /// <summary>
@@ -134,7 +134,7 @@ public partial class AsyncConversationQuery : IEquatable<AsyncConversationQuery>
     /// Filters that target conversation-level data
     /// </summary>
     /// <value>Filters that target conversation-level data</value>
-    [DataMember(Name = "conversationFilters", EmitDefaultValue = false)]
+    [JsonPropertyName("conversationFilters")]
     public List<ConversationDetailQueryFilter> ConversationFilters { get; set; }
 
 
@@ -143,7 +143,7 @@ public partial class AsyncConversationQuery : IEquatable<AsyncConversationQuery>
     /// Filters that target individual segments within a conversation
     /// </summary>
     /// <value>Filters that target individual segments within a conversation</value>
-    [DataMember(Name = "segmentFilters", EmitDefaultValue = false)]
+    [JsonPropertyName("segmentFilters")]
     public List<SegmentDetailQueryFilter> SegmentFilters { get; set; }
 
 
@@ -152,7 +152,7 @@ public partial class AsyncConversationQuery : IEquatable<AsyncConversationQuery>
     /// Filters that target evaluations
     /// </summary>
     /// <value>Filters that target evaluations</value>
-    [DataMember(Name = "evaluationFilters", EmitDefaultValue = false)]
+    [JsonPropertyName("evaluationFilters")]
     public List<EvaluationDetailQueryFilter> EvaluationFilters { get; set; }
 
 
@@ -161,7 +161,7 @@ public partial class AsyncConversationQuery : IEquatable<AsyncConversationQuery>
     /// Filters that target surveys
     /// </summary>
     /// <value>Filters that target surveys</value>
-    [DataMember(Name = "surveyFilters", EmitDefaultValue = false)]
+    [JsonPropertyName("surveyFilters")]
     public List<SurveyDetailQueryFilter> SurveyFilters { get; set; }
 
 
@@ -170,7 +170,7 @@ public partial class AsyncConversationQuery : IEquatable<AsyncConversationQuery>
     /// Filters that target resolutions
     /// </summary>
     /// <value>Filters that target resolutions</value>
-    [DataMember(Name = "resolutionFilters", EmitDefaultValue = false)]
+    [JsonPropertyName("resolutionFilters")]
     public List<ResolutionDetailQueryFilter> ResolutionFilters { get; set; }
 
 
@@ -183,7 +183,7 @@ public partial class AsyncConversationQuery : IEquatable<AsyncConversationQuery>
     /// Specifies the date and time range of data being queried. Results will include all conversations that had activity during the interval. Intervals are represented as an ISO-8601 string. For example: YYYY-MM-DDThh:mm:ss/YYYY-MM-DDThh:mm:ss
     /// </summary>
     /// <value>Specifies the date and time range of data being queried. Results will include all conversations that had activity during the interval. Intervals are represented as an ISO-8601 string. For example: YYYY-MM-DDThh:mm:ss/YYYY-MM-DDThh:mm:ss</value>
-    [DataMember(Name = "interval", EmitDefaultValue = false)]
+    [JsonPropertyName("interval")]
     public string Interval { get; set; }
 
 
@@ -192,7 +192,7 @@ public partial class AsyncConversationQuery : IEquatable<AsyncConversationQuery>
     /// Specify number of results to be returned
     /// </summary>
     /// <value>Specify number of results to be returned</value>
-    [DataMember(Name = "limit", EmitDefaultValue = false)]
+    [JsonPropertyName("limit")]
     public int? Limit { get; set; }
 
 
@@ -201,7 +201,7 @@ public partial class AsyncConversationQuery : IEquatable<AsyncConversationQuery>
     /// Add a filter to only include conversations that started after the beginning of the interval start date (UTC)
     /// </summary>
     /// <value>Add a filter to only include conversations that started after the beginning of the interval start date (UTC)</value>
-    [DataMember(Name = "startOfDayIntervalMatching", EmitDefaultValue = false)]
+    [JsonPropertyName("startOfDayIntervalMatching")]
     public bool? StartOfDayIntervalMatching { get; set; }
 
 

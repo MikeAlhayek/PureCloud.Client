@@ -1,4 +1,3 @@
-using System.Runtime.Serialization;
 using System.Text;
 using System.Text.Json.Serialization;
 
@@ -7,7 +6,7 @@ namespace PureCloud.Client.Models;
 /// <summary>
 /// PerformancePredictionUploadSchema
 /// </summary>
-[DataContract]
+
 public partial class PerformancePredictionUploadSchema : IEquatable<PerformancePredictionUploadSchema>
 {
 
@@ -34,7 +33,7 @@ public partial class PerformancePredictionUploadSchema : IEquatable<PerformanceP
     /// Date as an ISO-8601 string, corresponding to the beginning of the performance prediction results
     /// </summary>
     /// <value>Date as an ISO-8601 string, corresponding to the beginning of the performance prediction results</value>
-    [DataMember(Name = "calculationStartDate", EmitDefaultValue = false)]
+    [JsonPropertyName("calculationStartDate")]
     public DateTime? CalculationStartDate { get; set; }
 
 
@@ -43,7 +42,7 @@ public partial class PerformancePredictionUploadSchema : IEquatable<PerformanceP
     /// List of agent on queue times by management unit
     /// </summary>
     /// <value>List of agent on queue times by management unit</value>
-    [DataMember(Name = "onQueueTimes", EmitDefaultValue = false)]
+    [JsonPropertyName("onQueueTimes")]
     public List<MuAgentQueueTimeRequest> OnQueueTimes { get; set; }
 
 

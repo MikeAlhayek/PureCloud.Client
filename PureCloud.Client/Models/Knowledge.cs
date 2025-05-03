@@ -1,12 +1,12 @@
-using System.Runtime.Serialization;
 using System.Text;
+using System.Text.Json.Serialization;
 
 namespace PureCloud.Client.Models;
 
 /// <summary>
 /// Knowledge
 /// </summary>
-[DataContract]
+
 public partial class Knowledge : IEquatable<Knowledge>
 {
     /// <summary>
@@ -27,7 +27,7 @@ public partial class Knowledge : IEquatable<Knowledge>
     /// whether or not knowledge base is enabled
     /// </summary>
     /// <value>whether or not knowledge base is enabled</value>
-    [DataMember(Name = "enabled", EmitDefaultValue = false)]
+    [JsonPropertyName("enabled")]
     public bool? Enabled { get; set; }
 
 
@@ -36,7 +36,7 @@ public partial class Knowledge : IEquatable<Knowledge>
     /// The knowledge base for messenger
     /// </summary>
     /// <value>The knowledge base for messenger</value>
-    [DataMember(Name = "knowledgeBase", EmitDefaultValue = false)]
+    [JsonPropertyName("knowledgeBase")]
     public AddressableEntityRef KnowledgeBase { get; set; }
 
 

@@ -1,12 +1,12 @@
-using System.Runtime.Serialization;
 using System.Text;
+using System.Text.Json.Serialization;
 
 namespace PureCloud.Client.Models;
 
 /// <summary>
 /// TrunkInstanceTopicTrunkMetricsRegisters
 /// </summary>
-[DataContract]
+
 public partial class TrunkInstanceTopicTrunkMetricsRegisters : IEquatable<TrunkInstanceTopicTrunkMetricsRegisters>
 {
     /// <summary>
@@ -30,7 +30,7 @@ public partial class TrunkInstanceTopicTrunkMetricsRegisters : IEquatable<TrunkI
     /// <summary>
     /// Gets or Sets ProxyAddress
     /// </summary>
-    [DataMember(Name = "proxyAddress", EmitDefaultValue = false)]
+    [JsonPropertyName("proxyAddress")]
     public string ProxyAddress { get; set; }
 
 
@@ -38,7 +38,7 @@ public partial class TrunkInstanceTopicTrunkMetricsRegisters : IEquatable<TrunkI
     /// <summary>
     /// Gets or Sets RegisterState
     /// </summary>
-    [DataMember(Name = "registerState", EmitDefaultValue = false)]
+    [JsonPropertyName("registerState")]
     public bool? RegisterState { get; set; }
 
 
@@ -46,7 +46,7 @@ public partial class TrunkInstanceTopicTrunkMetricsRegisters : IEquatable<TrunkI
     /// <summary>
     /// Gets or Sets RegisterStateTime
     /// </summary>
-    [DataMember(Name = "registerStateTime", EmitDefaultValue = false)]
+    [JsonPropertyName("registerStateTime")]
     public DateTime? RegisterStateTime { get; set; }
 
 
@@ -54,7 +54,7 @@ public partial class TrunkInstanceTopicTrunkMetricsRegisters : IEquatable<TrunkI
     /// <summary>
     /// Gets or Sets ErrorInfo
     /// </summary>
-    [DataMember(Name = "errorInfo", EmitDefaultValue = false)]
+    [JsonPropertyName("errorInfo")]
     public TrunkInstanceTopicTrunkErrorInfo ErrorInfo { get; set; }
 
 

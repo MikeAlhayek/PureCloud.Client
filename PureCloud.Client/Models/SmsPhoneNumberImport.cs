@@ -7,14 +7,14 @@ namespace PureCloud.Client.Models;
 /// <summary>
 /// SmsPhoneNumberImport
 /// </summary>
-[DataContract]
+
 public partial class SmsPhoneNumberImport : IEquatable<SmsPhoneNumberImport>
 {
     /// <summary>
     /// Type of the phone number provisioned.
     /// </summary>
     /// <value>Type of the phone number provisioned.</value>
-    [JsonConverter(typeof(JsonStringEnumConverter))]
+    
     public enum PhoneNumberTypeEnum
     {
         /// <summary>
@@ -53,7 +53,7 @@ public partial class SmsPhoneNumberImport : IEquatable<SmsPhoneNumberImport>
     /// Type of the phone number provisioned.
     /// </summary>
     /// <value>Type of the phone number provisioned.</value>
-    [DataMember(Name = "phoneNumberType", EmitDefaultValue = false)]
+    [JsonPropertyName("phoneNumberType")]
     public PhoneNumberTypeEnum? PhoneNumberType { get; set; }
 
     /// <summary>
@@ -85,7 +85,7 @@ public partial class SmsPhoneNumberImport : IEquatable<SmsPhoneNumberImport>
     /// The globally unique identifier for the object.
     /// </summary>
     /// <value>The globally unique identifier for the object.</value>
-    [DataMember(Name = "id", EmitDefaultValue = false)]
+    [JsonPropertyName("id")]
     public string Id { get; private set; }
 
 
@@ -94,7 +94,7 @@ public partial class SmsPhoneNumberImport : IEquatable<SmsPhoneNumberImport>
     /// A phone number to be used for SMS communications. E.g. +13175555555 or +34234234234
     /// </summary>
     /// <value>A phone number to be used for SMS communications. E.g. +13175555555 or +34234234234</value>
-    [DataMember(Name = "phoneNumber", EmitDefaultValue = false)]
+    [JsonPropertyName("phoneNumber")]
     public string PhoneNumber { get; set; }
 
 
@@ -105,7 +105,7 @@ public partial class SmsPhoneNumberImport : IEquatable<SmsPhoneNumberImport>
     /// The ISO 3166-1 alpha-2 country code of the country this phone number is associated with.
     /// </summary>
     /// <value>The ISO 3166-1 alpha-2 country code of the country this phone number is associated with.</value>
-    [DataMember(Name = "countryCode", EmitDefaultValue = false)]
+    [JsonPropertyName("countryCode")]
     public string CountryCode { get; set; }
 
 
@@ -114,7 +114,7 @@ public partial class SmsPhoneNumberImport : IEquatable<SmsPhoneNumberImport>
     /// The id of the Genesys Cloud integration this phone number belongs to.
     /// </summary>
     /// <value>The id of the Genesys Cloud integration this phone number belongs to.</value>
-    [DataMember(Name = "integrationId", EmitDefaultValue = false)]
+    [JsonPropertyName("integrationId")]
     public string IntegrationId { get; set; }
 
 
@@ -123,7 +123,7 @@ public partial class SmsPhoneNumberImport : IEquatable<SmsPhoneNumberImport>
     /// Compliance configuration for short codes, including help, stop and opt in.
     /// </summary>
     /// <value>Compliance configuration for short codes, including help, stop and opt in.</value>
-    [DataMember(Name = "compliance", EmitDefaultValue = false)]
+    [JsonPropertyName("compliance")]
     public Compliance Compliance { get; set; }
 
 
@@ -132,7 +132,7 @@ public partial class SmsPhoneNumberImport : IEquatable<SmsPhoneNumberImport>
     /// The URI for this object
     /// </summary>
     /// <value>The URI for this object</value>
-    [DataMember(Name = "selfUri", EmitDefaultValue = false)]
+    [JsonPropertyName("selfUri")]
     public string SelfUri { get; private set; }
 
 

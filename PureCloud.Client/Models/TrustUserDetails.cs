@@ -1,12 +1,12 @@
-using System.Runtime.Serialization;
 using System.Text;
+using System.Text.Json.Serialization;
 
 namespace PureCloud.Client.Models;
 
 /// <summary>
 /// TrustUserDetails
 /// </summary>
-[DataContract]
+
 public partial class TrustUserDetails : IEquatable<TrustUserDetails>
 {
     /// <summary>
@@ -23,7 +23,7 @@ public partial class TrustUserDetails : IEquatable<TrustUserDetails>
     /// Date Trust User was added. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z
     /// </summary>
     /// <value>Date Trust User was added. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z</value>
-    [DataMember(Name = "dateCreated", EmitDefaultValue = false)]
+    [JsonPropertyName("dateCreated")]
     public DateTime? DateCreated { get; private set; }
 
 
@@ -32,7 +32,7 @@ public partial class TrustUserDetails : IEquatable<TrustUserDetails>
     /// User that added trusted user.
     /// </summary>
     /// <value>User that added trusted user.</value>
-    [DataMember(Name = "createdBy", EmitDefaultValue = false)]
+    [JsonPropertyName("createdBy")]
     public OrgUser CreatedBy { get; private set; }
 
 

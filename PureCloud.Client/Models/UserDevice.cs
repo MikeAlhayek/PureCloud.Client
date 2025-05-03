@@ -7,14 +7,14 @@ namespace PureCloud.Client.Models;
 /// <summary>
 /// UserDevice
 /// </summary>
-[DataContract]
+
 public partial class UserDevice : IEquatable<UserDevice>
 {
     /// <summary>
     /// type of the device; ios or android
     /// </summary>
     /// <value>type of the device; ios or android</value>
-    [JsonConverter(typeof(JsonStringEnumConverter))]
+    
     public enum TypeEnum
     {
         /// <summary>
@@ -41,7 +41,7 @@ public partial class UserDevice : IEquatable<UserDevice>
     /// type of the device; ios or android
     /// </summary>
     /// <value>type of the device; ios or android</value>
-    [DataMember(Name = "type", EmitDefaultValue = false)]
+    [JsonPropertyName("type")]
     public TypeEnum? Type { get; set; }
 
     /// <summary>
@@ -79,7 +79,7 @@ public partial class UserDevice : IEquatable<UserDevice>
     /// The globally unique identifier for the object.
     /// </summary>
     /// <value>The globally unique identifier for the object.</value>
-    [DataMember(Name = "id", EmitDefaultValue = false)]
+    [JsonPropertyName("id")]
     public string Id { get; private set; }
 
 
@@ -87,7 +87,7 @@ public partial class UserDevice : IEquatable<UserDevice>
     /// <summary>
     /// Gets or Sets Name
     /// </summary>
-    [DataMember(Name = "name", EmitDefaultValue = false)]
+    [JsonPropertyName("name")]
     public string Name { get; set; }
 
 
@@ -96,7 +96,7 @@ public partial class UserDevice : IEquatable<UserDevice>
     /// device token sent by mobile clients.
     /// </summary>
     /// <value>device token sent by mobile clients.</value>
-    [DataMember(Name = "deviceToken", EmitDefaultValue = false)]
+    [JsonPropertyName("deviceToken")]
     public string DeviceToken { get; set; }
 
 
@@ -105,7 +105,7 @@ public partial class UserDevice : IEquatable<UserDevice>
     /// notification id of the device.
     /// </summary>
     /// <value>notification id of the device.</value>
-    [DataMember(Name = "notificationId", EmitDefaultValue = false)]
+    [JsonPropertyName("notificationId")]
     public string NotificationId { get; set; }
 
 
@@ -114,7 +114,7 @@ public partial class UserDevice : IEquatable<UserDevice>
     /// make of the device.
     /// </summary>
     /// <value>make of the device.</value>
-    [DataMember(Name = "make", EmitDefaultValue = false)]
+    [JsonPropertyName("make")]
     public string Make { get; set; }
 
 
@@ -123,7 +123,7 @@ public partial class UserDevice : IEquatable<UserDevice>
     /// Device model
     /// </summary>
     /// <value>Device model</value>
-    [DataMember(Name = "model", EmitDefaultValue = false)]
+    [JsonPropertyName("model")]
     public string Model { get; set; }
 
 
@@ -132,7 +132,7 @@ public partial class UserDevice : IEquatable<UserDevice>
     /// if the device accepts notifications
     /// </summary>
     /// <value>if the device accepts notifications</value>
-    [DataMember(Name = "acceptNotifications", EmitDefaultValue = false)]
+    [JsonPropertyName("acceptNotifications")]
     public bool? AcceptNotifications { get; set; }
 
 
@@ -142,7 +142,7 @@ public partial class UserDevice : IEquatable<UserDevice>
     /// <summary>
     /// Gets or Sets SessionHash
     /// </summary>
-    [DataMember(Name = "sessionHash", EmitDefaultValue = false)]
+    [JsonPropertyName("sessionHash")]
     public string SessionHash { get; set; }
 
 
@@ -151,7 +151,7 @@ public partial class UserDevice : IEquatable<UserDevice>
     /// The URI for this object
     /// </summary>
     /// <value>The URI for this object</value>
-    [DataMember(Name = "selfUri", EmitDefaultValue = false)]
+    [JsonPropertyName("selfUri")]
     public string SelfUri { get; private set; }
 
 

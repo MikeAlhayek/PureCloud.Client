@@ -7,13 +7,13 @@ namespace PureCloud.Client.Models;
 /// <summary>
 /// Workspace
 /// </summary>
-[DataContract]
+
 public partial class Workspace : IEquatable<Workspace>
 {
     /// <summary>
     /// Gets or Sets Type
     /// </summary>
-    [JsonConverter(typeof(JsonStringEnumConverter))]
+    
     public enum TypeEnum
     {
         /// <summary>
@@ -39,7 +39,7 @@ public partial class Workspace : IEquatable<Workspace>
     /// <summary>
     /// Gets or Sets Type
     /// </summary>
-    [DataMember(Name = "type", EmitDefaultValue = false)]
+    [JsonPropertyName("type")]
     public TypeEnum? Type { get; set; }
 
     /// <summary>
@@ -81,7 +81,7 @@ public partial class Workspace : IEquatable<Workspace>
     /// The globally unique identifier for the object.
     /// </summary>
     /// <value>The globally unique identifier for the object.</value>
-    [DataMember(Name = "id", EmitDefaultValue = false)]
+    [JsonPropertyName("id")]
     public string Id { get; private set; }
 
 
@@ -90,7 +90,7 @@ public partial class Workspace : IEquatable<Workspace>
     /// The current name of the workspace.
     /// </summary>
     /// <value>The current name of the workspace.</value>
-    [DataMember(Name = "name", EmitDefaultValue = false)]
+    [JsonPropertyName("name")]
     public string Name { get; set; }
 
 
@@ -100,7 +100,7 @@ public partial class Workspace : IEquatable<Workspace>
     /// <summary>
     /// Gets or Sets IsCurrentUserWorkspace
     /// </summary>
-    [DataMember(Name = "isCurrentUserWorkspace", EmitDefaultValue = false)]
+    [JsonPropertyName("isCurrentUserWorkspace")]
     public bool? IsCurrentUserWorkspace { get; set; }
 
 
@@ -108,7 +108,7 @@ public partial class Workspace : IEquatable<Workspace>
     /// <summary>
     /// Gets or Sets User
     /// </summary>
-    [DataMember(Name = "user", EmitDefaultValue = false)]
+    [JsonPropertyName("user")]
     public DomainEntityRef User { get; set; }
 
 
@@ -116,7 +116,7 @@ public partial class Workspace : IEquatable<Workspace>
     /// <summary>
     /// Gets or Sets Bucket
     /// </summary>
-    [DataMember(Name = "bucket", EmitDefaultValue = false)]
+    [JsonPropertyName("bucket")]
     public string Bucket { get; set; }
 
 
@@ -125,7 +125,7 @@ public partial class Workspace : IEquatable<Workspace>
     /// Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z
     /// </summary>
     /// <value>Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z</value>
-    [DataMember(Name = "dateCreated", EmitDefaultValue = false)]
+    [JsonPropertyName("dateCreated")]
     public DateTime? DateCreated { get; set; }
 
 
@@ -134,7 +134,7 @@ public partial class Workspace : IEquatable<Workspace>
     /// Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z
     /// </summary>
     /// <value>Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z</value>
-    [DataMember(Name = "dateModified", EmitDefaultValue = false)]
+    [JsonPropertyName("dateModified")]
     public DateTime? DateModified { get; set; }
 
 
@@ -142,7 +142,7 @@ public partial class Workspace : IEquatable<Workspace>
     /// <summary>
     /// Gets or Sets Summary
     /// </summary>
-    [DataMember(Name = "summary", EmitDefaultValue = false)]
+    [JsonPropertyName("summary")]
     public WorkspaceSummary Summary { get; set; }
 
 
@@ -150,7 +150,7 @@ public partial class Workspace : IEquatable<Workspace>
     /// <summary>
     /// Gets or Sets Acl
     /// </summary>
-    [DataMember(Name = "acl", EmitDefaultValue = false)]
+    [JsonPropertyName("acl")]
     public List<string> Acl { get; set; }
 
 
@@ -158,7 +158,7 @@ public partial class Workspace : IEquatable<Workspace>
     /// <summary>
     /// Gets or Sets Description
     /// </summary>
-    [DataMember(Name = "description", EmitDefaultValue = false)]
+    [JsonPropertyName("description")]
     public string Description { get; set; }
 
 
@@ -167,7 +167,7 @@ public partial class Workspace : IEquatable<Workspace>
     /// The URI for this object
     /// </summary>
     /// <value>The URI for this object</value>
-    [DataMember(Name = "selfUri", EmitDefaultValue = false)]
+    [JsonPropertyName("selfUri")]
     public string SelfUri { get; private set; }
 
 

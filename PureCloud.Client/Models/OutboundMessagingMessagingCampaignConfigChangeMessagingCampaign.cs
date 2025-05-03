@@ -7,13 +7,13 @@ namespace PureCloud.Client.Models;
 /// <summary>
 /// OutboundMessagingMessagingCampaignConfigChangeMessagingCampaign
 /// </summary>
-[DataContract]
+
 public partial class OutboundMessagingMessagingCampaignConfigChangeMessagingCampaign : IEquatable<OutboundMessagingMessagingCampaignConfigChangeMessagingCampaign>
 {
     /// <summary>
     /// Gets or Sets CampaignStatus
     /// </summary>
-    [JsonConverter(typeof(JsonStringEnumConverter))]
+    
     public enum CampaignStatusEnum
     {
         /// <summary>
@@ -57,7 +57,7 @@ public partial class OutboundMessagingMessagingCampaignConfigChangeMessagingCamp
     /// <summary>
     /// Gets or Sets CampaignStatus
     /// </summary>
-    [DataMember(Name = "campaignStatus", EmitDefaultValue = false)]
+    [JsonPropertyName("campaignStatus")]
     public CampaignStatusEnum? CampaignStatus { get; set; }
     /// <summary>
     /// Initializes a new instance of the <see cref="OutboundMessagingMessagingCampaignConfigChangeMessagingCampaign" /> class.
@@ -112,7 +112,7 @@ public partial class OutboundMessagingMessagingCampaignConfigChangeMessagingCamp
     /// <summary>
     /// Gets or Sets CallableTimeSet
     /// </summary>
-    [DataMember(Name = "callableTimeSet", EmitDefaultValue = false)]
+    [JsonPropertyName("callableTimeSet")]
     public OutboundMessagingMessagingCampaignConfigChangeUriReference CallableTimeSet { get; set; }
 
 
@@ -121,7 +121,7 @@ public partial class OutboundMessagingMessagingCampaignConfigChangeMessagingCamp
     /// A UriReference for a resource
     /// </summary>
     /// <value>A UriReference for a resource</value>
-    [DataMember(Name = "contactList", EmitDefaultValue = false)]
+    [JsonPropertyName("contactList")]
     public OutboundMessagingMessagingCampaignConfigChangeUriReference ContactList { get; set; }
 
 
@@ -130,7 +130,7 @@ public partial class OutboundMessagingMessagingCampaignConfigChangeMessagingCamp
     /// The dnc lists to check before sending a message for this messaging campaign.
     /// </summary>
     /// <value>The dnc lists to check before sending a message for this messaging campaign.</value>
-    [DataMember(Name = "dncLists", EmitDefaultValue = false)]
+    [JsonPropertyName("dncLists")]
     public List<OutboundMessagingMessagingCampaignConfigChangeUriReference> DncLists { get; set; }
 
 
@@ -139,7 +139,7 @@ public partial class OutboundMessagingMessagingCampaignConfigChangeMessagingCamp
     /// The contact list filters to check before sending a message for this messaging campaign.
     /// </summary>
     /// <value>The contact list filters to check before sending a message for this messaging campaign.</value>
-    [DataMember(Name = "contactListFilters", EmitDefaultValue = false)]
+    [JsonPropertyName("contactListFilters")]
     public List<OutboundMessagingMessagingCampaignConfigChangeUriReference> ContactListFilters { get; set; }
 
 
@@ -148,7 +148,7 @@ public partial class OutboundMessagingMessagingCampaignConfigChangeMessagingCamp
     /// Whether this messaging campaign is always running.
     /// </summary>
     /// <value>Whether this messaging campaign is always running.</value>
-    [DataMember(Name = "alwaysRunning", EmitDefaultValue = false)]
+    [JsonPropertyName("alwaysRunning")]
     public bool? AlwaysRunning { get; set; }
 
 
@@ -157,7 +157,7 @@ public partial class OutboundMessagingMessagingCampaignConfigChangeMessagingCamp
     /// The order in which to sort contacts for dialing, based on up to four columns.
     /// </summary>
     /// <value>The order in which to sort contacts for dialing, based on up to four columns.</value>
-    [DataMember(Name = "contactSorts", EmitDefaultValue = false)]
+    [JsonPropertyName("contactSorts")]
     public List<OutboundMessagingMessagingCampaignConfigChangeContactSort> ContactSorts { get; set; }
 
 
@@ -166,7 +166,7 @@ public partial class OutboundMessagingMessagingCampaignConfigChangeMessagingCamp
     /// How many messages this messaging campaign will send per minute.
     /// </summary>
     /// <value>How many messages this messaging campaign will send per minute.</value>
-    [DataMember(Name = "messagesPerMinute", EmitDefaultValue = false)]
+    [JsonPropertyName("messagesPerMinute")]
     public long? MessagesPerMinute { get; set; }
 
 
@@ -174,7 +174,7 @@ public partial class OutboundMessagingMessagingCampaignConfigChangeMessagingCamp
     /// <summary>
     /// Gets or Sets RuleSets
     /// </summary>
-    [DataMember(Name = "ruleSets", EmitDefaultValue = false)]
+    [JsonPropertyName("ruleSets")]
     public List<OutboundMessagingMessagingCampaignConfigChangeUriReference> RuleSets { get; set; }
 
 
@@ -182,7 +182,7 @@ public partial class OutboundMessagingMessagingCampaignConfigChangeMessagingCamp
     /// <summary>
     /// Gets or Sets SmsConfig
     /// </summary>
-    [DataMember(Name = "smsConfig", EmitDefaultValue = false)]
+    [JsonPropertyName("smsConfig")]
     public OutboundMessagingMessagingCampaignConfigChangeSmsConfig SmsConfig { get; set; }
 
 
@@ -190,7 +190,7 @@ public partial class OutboundMessagingMessagingCampaignConfigChangeMessagingCamp
     /// <summary>
     /// Gets or Sets EmailConfig
     /// </summary>
-    [DataMember(Name = "emailConfig", EmitDefaultValue = false)]
+    [JsonPropertyName("emailConfig")]
     public OutboundMessagingMessagingCampaignConfigChangeEmailConfig EmailConfig { get; set; }
 
 
@@ -198,7 +198,7 @@ public partial class OutboundMessagingMessagingCampaignConfigChangeMessagingCamp
     /// <summary>
     /// Gets or Sets WhatsAppConfig
     /// </summary>
-    [DataMember(Name = "whatsAppConfig", EmitDefaultValue = false)]
+    [JsonPropertyName("whatsAppConfig")]
     public OutboundMessagingMessagingCampaignConfigChangeWhatsAppConfig WhatsAppConfig { get; set; }
 
 
@@ -207,7 +207,7 @@ public partial class OutboundMessagingMessagingCampaignConfigChangeMessagingCamp
     /// A list of current error conditions associated with this messaging campaign
     /// </summary>
     /// <value>A list of current error conditions associated with this messaging campaign</value>
-    [DataMember(Name = "errors", EmitDefaultValue = false)]
+    [JsonPropertyName("errors")]
     public List<OutboundMessagingMessagingCampaignConfigChangeErrorDetail> Errors { get; set; }
 
 
@@ -216,7 +216,7 @@ public partial class OutboundMessagingMessagingCampaignConfigChangeMessagingCamp
     /// The globally unique identifier for the object.
     /// </summary>
     /// <value>The globally unique identifier for the object.</value>
-    [DataMember(Name = "id", EmitDefaultValue = false)]
+    [JsonPropertyName("id")]
     public string Id { get; set; }
 
 
@@ -225,7 +225,7 @@ public partial class OutboundMessagingMessagingCampaignConfigChangeMessagingCamp
     /// The UI-visible name of the object
     /// </summary>
     /// <value>The UI-visible name of the object</value>
-    [DataMember(Name = "name", EmitDefaultValue = false)]
+    [JsonPropertyName("name")]
     public string Name { get; set; }
 
 
@@ -234,7 +234,7 @@ public partial class OutboundMessagingMessagingCampaignConfigChangeMessagingCamp
     /// Creation time of the entity
     /// </summary>
     /// <value>Creation time of the entity</value>
-    [DataMember(Name = "dateCreated", EmitDefaultValue = false)]
+    [JsonPropertyName("dateCreated")]
     public DateTime? DateCreated { get; set; }
 
 
@@ -243,7 +243,7 @@ public partial class OutboundMessagingMessagingCampaignConfigChangeMessagingCamp
     /// Last modified time of the entity
     /// </summary>
     /// <value>Last modified time of the entity</value>
-    [DataMember(Name = "dateModified", EmitDefaultValue = false)]
+    [JsonPropertyName("dateModified")]
     public DateTime? DateModified { get; set; }
 
 
@@ -252,7 +252,7 @@ public partial class OutboundMessagingMessagingCampaignConfigChangeMessagingCamp
     /// Required for updates, must match the version number of the most recent update
     /// </summary>
     /// <value>Required for updates, must match the version number of the most recent update</value>
-    [DataMember(Name = "version", EmitDefaultValue = false)]
+    [JsonPropertyName("version")]
     public long? Version { get; set; }
 
 
@@ -261,7 +261,7 @@ public partial class OutboundMessagingMessagingCampaignConfigChangeMessagingCamp
     /// A UriReference for a resource
     /// </summary>
     /// <value>A UriReference for a resource</value>
-    [DataMember(Name = "division", EmitDefaultValue = false)]
+    [JsonPropertyName("division")]
     public OutboundMessagingMessagingCampaignConfigChangeUriReference Division { get; set; }
 
 

@@ -1,12 +1,12 @@
-using System.Runtime.Serialization;
 using System.Text;
+using System.Text.Json.Serialization;
 
 namespace PureCloud.Client.Models;
 
 /// <summary>
 /// A reference for a Response
 /// </summary>
-[DataContract]
+
 public partial class OutboundMessagingEmailCampaignConfigChangeResponseRef : IEquatable<OutboundMessagingEmailCampaignConfigChangeResponseRef>
 {
     /// <summary>
@@ -25,7 +25,7 @@ public partial class OutboundMessagingEmailCampaignConfigChangeResponseRef : IEq
     /// The unique response id
     /// </summary>
     /// <value>The unique response id</value>
-    [DataMember(Name = "id", EmitDefaultValue = false)]
+    [JsonPropertyName("id")]
     public string Id { get; set; }
 
 

@@ -1,12 +1,12 @@
-using System.Runtime.Serialization;
 using System.Text;
+using System.Text.Json.Serialization;
 
 namespace PureCloud.Client.Models;
 
 /// <summary>
 /// AttributeDetailEventTopicAttributeUpdateEvent
 /// </summary>
-[DataContract]
+
 public partial class AttributeDetailEventTopicAttributeUpdateEvent : IEquatable<AttributeDetailEventTopicAttributeUpdateEvent>
 {
     /// <summary>
@@ -36,7 +36,7 @@ public partial class AttributeDetailEventTopicAttributeUpdateEvent : IEquatable<
     /// <summary>
     /// Gets or Sets EventTime
     /// </summary>
-    [DataMember(Name = "eventTime", EmitDefaultValue = false)]
+    [JsonPropertyName("eventTime")]
     public long? EventTime { get; set; }
 
 
@@ -44,7 +44,7 @@ public partial class AttributeDetailEventTopicAttributeUpdateEvent : IEquatable<
     /// <summary>
     /// Gets or Sets ConversationId
     /// </summary>
-    [DataMember(Name = "conversationId", EmitDefaultValue = false)]
+    [JsonPropertyName("conversationId")]
     public string ConversationId { get; set; }
 
 
@@ -52,7 +52,7 @@ public partial class AttributeDetailEventTopicAttributeUpdateEvent : IEquatable<
     /// <summary>
     /// Gets or Sets ParticipantId
     /// </summary>
-    [DataMember(Name = "participantId", EmitDefaultValue = false)]
+    [JsonPropertyName("participantId")]
     public string ParticipantId { get; set; }
 
 
@@ -60,7 +60,7 @@ public partial class AttributeDetailEventTopicAttributeUpdateEvent : IEquatable<
     /// <summary>
     /// Gets or Sets Attributes
     /// </summary>
-    [DataMember(Name = "attributes", EmitDefaultValue = false)]
+    [JsonPropertyName("attributes")]
     public Dictionary<string, string> Attributes { get; set; }
 
 
@@ -68,7 +68,7 @@ public partial class AttributeDetailEventTopicAttributeUpdateEvent : IEquatable<
     /// <summary>
     /// Gets or Sets ConversationExternalContactIds
     /// </summary>
-    [DataMember(Name = "conversationExternalContactIds", EmitDefaultValue = false)]
+    [JsonPropertyName("conversationExternalContactIds")]
     public List<string> ConversationExternalContactIds { get; set; }
 
 
@@ -76,7 +76,7 @@ public partial class AttributeDetailEventTopicAttributeUpdateEvent : IEquatable<
     /// <summary>
     /// Gets or Sets ConversationExternalOrganizationIds
     /// </summary>
-    [DataMember(Name = "conversationExternalOrganizationIds", EmitDefaultValue = false)]
+    [JsonPropertyName("conversationExternalOrganizationIds")]
     public List<string> ConversationExternalOrganizationIds { get; set; }
 
 
@@ -84,7 +84,7 @@ public partial class AttributeDetailEventTopicAttributeUpdateEvent : IEquatable<
     /// <summary>
     /// Gets or Sets Communications
     /// </summary>
-    [DataMember(Name = "communications", EmitDefaultValue = false)]
+    [JsonPropertyName("communications")]
     public List<AttributeDetailEventTopicCommunication> Communications { get; set; }
 
 

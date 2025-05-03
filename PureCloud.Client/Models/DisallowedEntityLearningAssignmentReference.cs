@@ -1,12 +1,12 @@
-using System.Runtime.Serialization;
 using System.Text;
+using System.Text.Json.Serialization;
 
 namespace PureCloud.Client.Models;
 
 /// <summary>
 /// DisallowedEntityLearningAssignmentReference
 /// </summary>
-[DataContract]
+
 public partial class DisallowedEntityLearningAssignmentReference : IEquatable<DisallowedEntityLearningAssignmentReference>
 {
     /// <summary>
@@ -27,7 +27,7 @@ public partial class DisallowedEntityLearningAssignmentReference : IEquatable<Di
     /// The error code associated with this disallowed entity
     /// </summary>
     /// <value>The error code associated with this disallowed entity</value>
-    [DataMember(Name = "errorCode", EmitDefaultValue = false)]
+    [JsonPropertyName("errorCode")]
     public string ErrorCode { get; set; }
 
 
@@ -36,7 +36,7 @@ public partial class DisallowedEntityLearningAssignmentReference : IEquatable<Di
     /// The entity that was disallowed
     /// </summary>
     /// <value>The entity that was disallowed</value>
-    [DataMember(Name = "entity", EmitDefaultValue = false)]
+    [JsonPropertyName("entity")]
     public LearningAssignmentReference Entity { get; set; }
 
 

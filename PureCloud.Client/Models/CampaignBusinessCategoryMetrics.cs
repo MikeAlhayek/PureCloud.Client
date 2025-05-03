@@ -1,12 +1,12 @@
-using System.Runtime.Serialization;
 using System.Text;
+using System.Text.Json.Serialization;
 
 namespace PureCloud.Client.Models;
 
 /// <summary>
 /// CampaignBusinessCategoryMetrics
 /// </summary>
-[DataContract]
+
 public partial class CampaignBusinessCategoryMetrics : IEquatable<CampaignBusinessCategoryMetrics>
 {
     /// <summary>
@@ -29,7 +29,7 @@ public partial class CampaignBusinessCategoryMetrics : IEquatable<CampaignBusine
     /// Number of calls categorized as business success
     /// </summary>
     /// <value>Number of calls categorized as business success</value>
-    [DataMember(Name = "successCount", EmitDefaultValue = false)]
+    [JsonPropertyName("successCount")]
     public int? SuccessCount { get; set; }
 
 
@@ -38,7 +38,7 @@ public partial class CampaignBusinessCategoryMetrics : IEquatable<CampaignBusine
     /// Number of calls categorized as business neutral
     /// </summary>
     /// <value>Number of calls categorized as business neutral</value>
-    [DataMember(Name = "neutralCount", EmitDefaultValue = false)]
+    [JsonPropertyName("neutralCount")]
     public int? NeutralCount { get; set; }
 
 
@@ -47,7 +47,7 @@ public partial class CampaignBusinessCategoryMetrics : IEquatable<CampaignBusine
     /// Number of calls categorized as business failure
     /// </summary>
     /// <value>Number of calls categorized as business failure</value>
-    [DataMember(Name = "failureCount", EmitDefaultValue = false)]
+    [JsonPropertyName("failureCount")]
     public int? FailureCount { get; set; }
 
 

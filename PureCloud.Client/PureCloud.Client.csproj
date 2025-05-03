@@ -6,8 +6,195 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <Compile Remove="Apis\**" />
+    <Compile Remove="Extensions\Notifications\**" />
+    <Compile Remove="Models\**" />
+    <EmbeddedResource Remove="Apis\**" />
+    <EmbeddedResource Remove="Extensions\Notifications\**" />
+    <EmbeddedResource Remove="Models\**" />
+    <None Remove="Apis\**" />
+    <None Remove="Extensions\Notifications\**" />
+    <None Remove="Models\**" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Compile Remove="ApiClient.cs" />
+    <Compile Remove="ApiException.cs" />
+    <Compile Remove="ApiResponse.cs" />
+    <Compile Remove="Configuration.cs" />
+    <Compile Remove="Extensions\AuthExtensions.cs" />
+    <Compile Remove="IApiAccessor.cs" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Compile Include="Extensions\Notifications\ChannelMetadataNotification.cs" />
+    <Compile Include="Extensions\Notifications\INotificationData.cs" />
+    <Compile Include="Extensions\Notifications\INotificationHandler.cs" />
+    <Compile Include="Extensions\Notifications\Metadata.cs" />
+    <Compile Include="Extensions\Notifications\NotificationData.cs" />
+    <Compile Include="Extensions\Notifications\NotificationHandler.cs" />
+    <Compile Include="Models\Actions.cs" />
+    <Compile Include="Models\AcwSettings.cs" />
+    <Compile Include="Models\AgentOwnedRouting.cs" />
+    <Compile Include="Models\AnsweringMachineReactionType.cs" />
+    <Compile Include="Models\AutoAnswerSetting.cs" />
+    <Compile Include="Models\AutoAnswerSettings.cs" />
+    <Compile Include="Models\BaseMediaSettings.cs" />
+    <Compile Include="Models\Bullseye.cs" />
+    <Compile Include="Models\CallbackMediaMode.cs" />
+    <Compile Include="Models\CallbackMediaSettings.cs" />
+    <Compile Include="Models\CannedResponseLibraries.cs" />
+    <Compile Include="Models\CannedResponseLibrariesMode.cs" />
+    <Compile Include="Models\Channels\AvailableTopic.cs" />
+    <Compile Include="Models\Channels\AvailableTopicEntityListing.cs" />
+    <Compile Include="Models\Channels\AvailableTopicTransports.cs" />
+    <Compile Include="Models\Channels\AvailableTopicVisibility.cs" />
+    <Compile Include="Models\Channels\Channel.cs" />
+    <Compile Include="Models\Channels\ChannelEntityListing.cs" />
+    <Compile Include="Models\Channels\ChannelTopic.cs" />
+    <Compile Include="Models\Channels\ChannelTopicEntityListing.cs" />
+    <Compile Include="Models\Channels\ChannelTopicState.cs" />
+    <Compile Include="Models\ConditionalGroupRouting.cs" />
+    <Compile Include="Models\ConditionalGroupRoutingRule.cs" />
+    <Compile Include="Models\ConditionalGroupRoutingRuleMetric.cs" />
+    <Compile Include="Models\ConditionalGroupRoutingRuleOperator.cs" />
+    <Compile Include="Models\DirectRouting.cs" />
+    <Compile Include="Models\DirectRoutingMediaSettings.cs" />
+    <Compile Include="Models\DomainEntityRef.cs" />
+    <Compile Include="Models\DomainPermissionPolicy.cs" />
+    <Compile Include="Models\DomainResourceConditionNode.cs" />
+    <Compile Include="Models\DomainResourceConditionNodeOperator.cs" />
+    <Compile Include="Models\DomainResourceConditionValue.cs" />
+    <Compile Include="Models\DomainResourceConditionValueType.cs" />
+    <Compile Include="Models\EmailMediaSettings.cs" />
+    <Compile Include="Models\ExpansionCriterium.cs" />
+    <Compile Include="Models\ExpansionCriteriumType.cs" />
+    <Compile Include="Models\GeolocationSettings.cs" />
+    <Compile Include="Models\HistoryInclusionEnum.cs" />
+    <Compile Include="Models\InboundRoute.cs" />
+    <Compile Include="Models\LiveVoiceReactionType.cs" />
+    <Compile Include="Models\MediaSettings.cs" />
+    <Compile Include="Models\MemberGroup.cs" />
+    <Compile Include="Models\MemberGroupType.cs" />
+    <Compile Include="Models\MessageMediaSettings.cs" />
+    <Compile Include="Models\Organizations\DomainOrganizationRole.cs" />
+    <Compile Include="Models\Organizations\Organization.cs" />
+    <Compile Include="Models\Organizations\OrganizationPresence.cs" />
+    <Compile Include="Models\Organizations\OrganizationPresenceDefinition.cs" />
+    <Compile Include="Models\Organizations\OrganizationPresenceDefinitionType.cs" />
+    <Compile Include="Models\Organizations\OrganizationState.cs" />
+    <Compile Include="Models\Organizations\ProductPlatform.cs" />
+    <Compile Include="Models\Organizations\SystemPresence.cs" />
+    <Compile Include="Models\Page.cs" />
+    <Compile Include="Models\PermissionDetails.cs" />
+    <Compile Include="Models\PermissionDetailsType.cs" />
+    <Compile Include="Models\Queues\LastAgentRoutingModeEnum.cs" />
+    <Compile Include="Models\Queues\Queue.cs" />
+    <Compile Include="Models\Queues\QueueEmailAddress.cs" />
+    <Compile Include="Models\Queues\QueueMediaSettings.cs" />
+    <Compile Include="Models\Queues\QueueMessagingAddresses.cs" />
+    <Compile Include="Models\Queues\ScoringMethodEnum.cs" />
+    <Compile Include="Models\Queues\SkillEvaluationMethodEnum.cs" />
+    <Compile Include="Models\Queues\UserQueue.cs" />
+    <Compile Include="Models\Queues\UserQueueEntityListing.cs" />
+    <Compile Include="Models\Ring.cs" />
+    <Compile Include="Models\RoutingRule.cs" />
+    <Compile Include="Models\RoutingRuleOperator.cs" />
+    <Compile Include="Models\Script.cs" />
+    <Compile Include="Models\ServerDate.cs" />
+    <Compile Include="Models\ServiceLevel.cs" />
+    <Compile Include="Models\SkillsToRemove.cs" />
+    <Compile Include="Models\SystemMessage.cs" />
+    <Compile Include="Models\SystemTopicType.cs" />
+    <Compile Include="Models\Topics\ConversationMetricsTopicConversationMetricRecord.cs" />
+    <Compile Include="Models\Locations\LocationAddress.cs" />
+    <Compile Include="Models\Locations\LocationAddressVerificationDetails.cs" />
+    <Compile Include="Models\Locations\LocationAddressVerificationDetailsStatus.cs" />
+    <Compile Include="Models\Locations\LocationImage.cs" />
+    <Compile Include="Models\Settings\PureCloudOptions.cs" />
+    <Compile Include="Models\AddressableEntityRef.cs" />
+    <Compile Include="Models\ConjunctionEnum.cs" />
+    <Compile Include="Models\DomainRole.cs" />
+    <Compile Include="Models\Geolocation.cs" />
+    <Compile Include="Models\Groups\Group.cs" />
+    <Compile Include="Models\Groups\GroupContact.cs" />
+    <Compile Include="Models\Groups\GroupContactMediaType.cs" />
+    <Compile Include="Models\Groups\GroupContactType.cs" />
+    <Compile Include="Models\Groups\GroupState.cs" />
+    <Compile Include="Models\Groups\GroupType.cs" />
+    <Compile Include="Models\Groups\GroupVisibility.cs" />
+    <Compile Include="Models\Locations\Location.cs" />
+    <Compile Include="Models\Locations\LocationDefinition.cs" />
+    <Compile Include="Models\Locations\LocationDefinitionStateEnum.cs" />
+    <Compile Include="Models\Locations\LocationEmergencyNumber.cs" />
+    <Compile Include="Models\Locations\LocationEmergencyNumberType.cs" />
+    <Compile Include="Models\MediaSummary.cs" />
+    <Compile Include="Models\MediaSummaryDetail.cs" />
+    <Compile Include="Models\OAuthLastTokenIssued.cs" />
+    <Compile Include="Models\OutOfOffice.cs" />
+    <Compile Include="Models\ResourceConditionNode.cs" />
+    <Compile Include="Models\ResourceConditionOperator.cs" />
+    <Compile Include="Models\ResourceConditionType.cs" />
+    <Compile Include="Models\ResourceConditionValue.cs" />
+    <Compile Include="Models\ResourcePermissionPolicy.cs" />
+    <Compile Include="Models\RoutingStatus.cs" />
+    <Compile Include="Models\RoutingStatusEnum.cs" />
+    <Compile Include="Models\SearchSort.cs" />
+    <Compile Include="Models\Teams\Team.cs" />
+    <Compile Include="Models\Topics\ConversationMetricsTopicConversationProposedAgent.cs" />
+    <Compile Include="Models\Topics\ConversationMetricsTopicConversationScoredAgent.cs" />
+    <Compile Include="Models\UserRoutingLanguage.cs" />
+    <Compile Include="Models\UserRoutingLanguageState.cs" />
+    <Compile Include="Models\UserRoutingSkill.cs" />
+    <Compile Include="Models\UserRoutingSkillState.cs" />
+    <Compile Include="Models\Users\Address.cs" />
+    <Compile Include="Models\Users\Biography.cs" />
+    <Compile Include="Models\Users\Chat.cs" />
+    <Compile Include="Models\Users\Contact.cs" />
+    <Compile Include="Models\Users\ContactTypeEnum.cs" />
+    <Compile Include="Models\Users\CreateUser.cs" />
+    <Compile Include="Models\Users\Division.cs" />
+    <Compile Include="Models\Users\Education.cs" />
+    <Compile Include="Models\Users\EmployerInfo.cs" />
+    <Compile Include="Models\Users\Image.cs" />
+    <Compile Include="Models\Users\IntegrationPresenceSource.cs" />
+    <Compile Include="Models\Users\LookupType.cs" />
+    <Compile Include="Models\Users\MediaTypeEnum.cs" />
+    <Compile Include="Models\Users\SearchOperatorEnum.cs" />
+    <Compile Include="Models\Users\PresenceDefinition.cs" />
+    <Compile Include="Models\Users\SearchCriteria.cs" />
+    <Compile Include="Models\Users\SearchRequest.cs" />
+    <Compile Include="Models\Users\SearchResult.cs" />
+    <Compile Include="Models\SortOrderType.cs" />
+    <Compile Include="Models\Users\UserState.cs" />
+    <Compile Include="Models\Users\UpdateUser.cs" />
+    <Compile Include="Models\Users\User.cs" />
+    <Compile Include="Models\Users\UserAuthorization.cs" />
+    <Compile Include="Models\Users\UserConversationSummary.cs" />
+    <Compile Include="Models\Users\UserMe.cs" />
+    <Compile Include="Models\Users\UserPresence.cs" />
+    <Compile Include="Models\Users\UserSearchContext.cs" />
+    <Compile Include="Models\Users\UserSearchRequest.cs" />
+    <Compile Include="Models\Users\UserStation.cs" />
+    <Compile Include="Models\Users\UserStationChangeTopicUser.cs" />
+    <Compile Include="Models\Users\UserStationChangeTopicUserStation.cs" />
+    <Compile Include="Models\Users\UserStationChangeTopicUserStations.cs" />
+    <Compile Include="Models\Users\UserStations.cs" />
+    <Compile Include="Models\WorkPlanBidRanks.cs" />
+    <Compile Include="Models\WrapupPromptEnum.cs" />
+    <Compile Include="Models\WritableDivision.cs" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Microsoft.AspNetCore.WebUtilities" Version="8.0.15" />
+    <PackageReference Include="Microsoft.Extensions.Http" Version="9.0.4" />
     <PackageReference Include="Microsoft.Extensions.Logging.Abstractions" Version="9.0.4" />
+    <PackageReference Include="Microsoft.Extensions.Options" Version="9.0.4" />
     <PackageReference Include="RestSharp" Version="112.1.0" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Folder Include="Apis\" />
   </ItemGroup>
 
 </Project>

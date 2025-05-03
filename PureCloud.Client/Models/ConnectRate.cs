@@ -1,12 +1,12 @@
-using System.Runtime.Serialization;
 using System.Text;
+using System.Text.Json.Serialization;
 
 namespace PureCloud.Client.Models;
 
 /// <summary>
 /// ConnectRate
 /// </summary>
-[DataContract]
+
 public partial class ConnectRate : IEquatable<ConnectRate>
 {
     /// <summary>
@@ -23,7 +23,7 @@ public partial class ConnectRate : IEquatable<ConnectRate>
     /// Number of call attempts made
     /// </summary>
     /// <value>Number of call attempts made</value>
-    [DataMember(Name = "attempts", EmitDefaultValue = false)]
+    [JsonPropertyName("attempts")]
     public long? Attempts { get; private set; }
 
 
@@ -32,7 +32,7 @@ public partial class ConnectRate : IEquatable<ConnectRate>
     /// Number of calls with a live voice detected
     /// </summary>
     /// <value>Number of calls with a live voice detected</value>
-    [DataMember(Name = "connects", EmitDefaultValue = false)]
+    [JsonPropertyName("connects")]
     public long? Connects { get; private set; }
 
 
@@ -41,7 +41,7 @@ public partial class ConnectRate : IEquatable<ConnectRate>
     /// Ratio of connects to attempts
     /// </summary>
     /// <value>Ratio of connects to attempts</value>
-    [DataMember(Name = "connectRatio", EmitDefaultValue = false)]
+    [JsonPropertyName("connectRatio")]
     public double? ConnectRatio { get; private set; }
 
 

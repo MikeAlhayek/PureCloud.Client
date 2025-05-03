@@ -1,12 +1,12 @@
-using System.Runtime.Serialization;
 using System.Text;
+using System.Text.Json.Serialization;
 
 namespace PureCloud.Client.Models;
 
 /// <summary>
 /// PatchExternalSegment
 /// </summary>
-[DataContract]
+
 public partial class PatchExternalSegment : IEquatable<PatchExternalSegment>
 {
     /// <summary>
@@ -25,7 +25,7 @@ public partial class PatchExternalSegment : IEquatable<PatchExternalSegment>
     /// Name for the external segment in the system where it originates from.
     /// </summary>
     /// <value>Name for the external segment in the system where it originates from.</value>
-    [DataMember(Name = "name", EmitDefaultValue = false)]
+    [JsonPropertyName("name")]
     public string Name { get; set; }
 
 

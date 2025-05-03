@@ -7,14 +7,14 @@ namespace PureCloud.Client.Models;
 /// <summary>
 /// AnalyticsSession
 /// </summary>
-[DataContract]
+
 public partial class AnalyticsSession : IEquatable<AnalyticsSession>
 {
     /// <summary>
     /// The email or SMS delivery status
     /// </summary>
     /// <value>The email or SMS delivery status</value>
-    [JsonConverter(typeof(JsonStringEnumConverter))]
+    
     public enum DeliveryStatusEnum
     {
         /// <summary>
@@ -83,7 +83,7 @@ public partial class AnalyticsSession : IEquatable<AnalyticsSession>
     /// The direction of the communication
     /// </summary>
     /// <value>The direction of the communication</value>
-    [JsonConverter(typeof(JsonStringEnumConverter))]
+    
     public enum DirectionEnum
     {
         /// <summary>
@@ -110,7 +110,7 @@ public partial class AnalyticsSession : IEquatable<AnalyticsSession>
     /// The session media type
     /// </summary>
     /// <value>The session media type</value>
-    [JsonConverter(typeof(JsonStringEnumConverter))]
+    
     public enum MediaTypeEnum
     {
         /// <summary>
@@ -184,7 +184,7 @@ public partial class AnalyticsSession : IEquatable<AnalyticsSession>
     /// <summary>
     /// Gets or Sets RequestedRoutings
     /// </summary>
-    [JsonConverter(typeof(JsonStringEnumConverter))]
+    
     public enum RequestedRoutingsEnum
     {
         /// <summary>
@@ -253,7 +253,7 @@ public partial class AnalyticsSession : IEquatable<AnalyticsSession>
     /// Routing rule type
     /// </summary>
     /// <value>Routing rule type</value>
-    [JsonConverter(typeof(JsonStringEnumConverter))]
+    
     public enum RoutingRuleTypeEnum
     {
         /// <summary>
@@ -292,7 +292,7 @@ public partial class AnalyticsSession : IEquatable<AnalyticsSession>
     /// Complete routing method
     /// </summary>
     /// <value>Complete routing method</value>
-    [JsonConverter(typeof(JsonStringEnumConverter))]
+    
     public enum UsedRoutingEnum
     {
         /// <summary>
@@ -361,31 +361,31 @@ public partial class AnalyticsSession : IEquatable<AnalyticsSession>
     /// The email or SMS delivery status
     /// </summary>
     /// <value>The email or SMS delivery status</value>
-    [DataMember(Name = "deliveryStatus", EmitDefaultValue = false)]
+    [JsonPropertyName("deliveryStatus")]
     public DeliveryStatusEnum? DeliveryStatus { get; set; }
     /// <summary>
     /// The direction of the communication
     /// </summary>
     /// <value>The direction of the communication</value>
-    [DataMember(Name = "direction", EmitDefaultValue = false)]
+    [JsonPropertyName("direction")]
     public DirectionEnum? Direction { get; set; }
     /// <summary>
     /// The session media type
     /// </summary>
     /// <value>The session media type</value>
-    [DataMember(Name = "mediaType", EmitDefaultValue = false)]
+    [JsonPropertyName("mediaType")]
     public MediaTypeEnum? MediaType { get; set; }
     /// <summary>
     /// Routing rule type
     /// </summary>
     /// <value>Routing rule type</value>
-    [DataMember(Name = "routingRuleType", EmitDefaultValue = false)]
+    [JsonPropertyName("routingRuleType")]
     public RoutingRuleTypeEnum? RoutingRuleType { get; set; }
     /// <summary>
     /// Complete routing method
     /// </summary>
     /// <value>Complete routing method</value>
-    [DataMember(Name = "usedRouting", EmitDefaultValue = false)]
+    [JsonPropertyName("usedRouting")]
     public UsedRoutingEnum? UsedRouting { get; set; }
     /// <summary>
     /// Initializes a new instance of the <see cref="AnalyticsSession" /> class.
@@ -569,7 +569,7 @@ public partial class AnalyticsSession : IEquatable<AnalyticsSession>
     /// ID(s) of Skill(s) that are active on the conversation
     /// </summary>
     /// <value>ID(s) of Skill(s) that are active on the conversation</value>
-    [DataMember(Name = "activeSkillIds", EmitDefaultValue = false)]
+    [JsonPropertyName("activeSkillIds")]
     public List<string> ActiveSkillIds { get; set; }
 
 
@@ -578,7 +578,7 @@ public partial class AnalyticsSession : IEquatable<AnalyticsSession>
     /// Marker for an agent that skipped after call work
     /// </summary>
     /// <value>Marker for an agent that skipped after call work</value>
-    [DataMember(Name = "acwSkipped", EmitDefaultValue = false)]
+    [JsonPropertyName("acwSkipped")]
     public bool? AcwSkipped { get; set; }
 
 
@@ -587,7 +587,7 @@ public partial class AnalyticsSession : IEquatable<AnalyticsSession>
     /// The address that initiated an action
     /// </summary>
     /// <value>The address that initiated an action</value>
-    [DataMember(Name = "addressFrom", EmitDefaultValue = false)]
+    [JsonPropertyName("addressFrom")]
     public string AddressFrom { get; set; }
 
 
@@ -596,7 +596,7 @@ public partial class AnalyticsSession : IEquatable<AnalyticsSession>
     /// The email address for the participant on the other side of the email conversation
     /// </summary>
     /// <value>The email address for the participant on the other side of the email conversation</value>
-    [DataMember(Name = "addressOther", EmitDefaultValue = false)]
+    [JsonPropertyName("addressOther")]
     public string AddressOther { get; set; }
 
 
@@ -605,7 +605,7 @@ public partial class AnalyticsSession : IEquatable<AnalyticsSession>
     /// The email address for the participant on this side of the email conversation
     /// </summary>
     /// <value>The email address for the participant on this side of the email conversation</value>
-    [DataMember(Name = "addressSelf", EmitDefaultValue = false)]
+    [JsonPropertyName("addressSelf")]
     public string AddressSelf { get; set; }
 
 
@@ -614,7 +614,7 @@ public partial class AnalyticsSession : IEquatable<AnalyticsSession>
     /// The address receiving an action
     /// </summary>
     /// <value>The address receiving an action</value>
-    [DataMember(Name = "addressTo", EmitDefaultValue = false)]
+    [JsonPropertyName("addressTo")]
     public string AddressTo { get; set; }
 
 
@@ -623,7 +623,7 @@ public partial class AnalyticsSession : IEquatable<AnalyticsSession>
     /// Unique identifier of the active virtual agent assistant
     /// </summary>
     /// <value>Unique identifier of the active virtual agent assistant</value>
-    [DataMember(Name = "agentAssistantId", EmitDefaultValue = false)]
+    [JsonPropertyName("agentAssistantId")]
     public string AgentAssistantId { get; set; }
 
 
@@ -632,7 +632,7 @@ public partial class AnalyticsSession : IEquatable<AnalyticsSession>
     /// Bullseye ring of the targeted agent
     /// </summary>
     /// <value>Bullseye ring of the targeted agent</value>
-    [DataMember(Name = "agentBullseyeRing", EmitDefaultValue = false)]
+    [JsonPropertyName("agentBullseyeRing")]
     public int? AgentBullseyeRing { get; set; }
 
 
@@ -641,7 +641,7 @@ public partial class AnalyticsSession : IEquatable<AnalyticsSession>
     /// Flag indicating an agent-owned callback
     /// </summary>
     /// <value>Flag indicating an agent-owned callback</value>
-    [DataMember(Name = "agentOwned", EmitDefaultValue = false)]
+    [JsonPropertyName("agentOwned")]
     public bool? AgentOwned { get; set; }
 
 
@@ -650,7 +650,7 @@ public partial class AnalyticsSession : IEquatable<AnalyticsSession>
     /// Automatic Number Identification (caller&#39;s number)
     /// </summary>
     /// <value>Automatic Number Identification (caller&#39;s number)</value>
-    [DataMember(Name = "ani", EmitDefaultValue = false)]
+    [JsonPropertyName("ani")]
     public string Ani { get; set; }
 
 
@@ -659,7 +659,7 @@ public partial class AnalyticsSession : IEquatable<AnalyticsSession>
     /// ID of the user that manually assigned a conversation
     /// </summary>
     /// <value>ID of the user that manually assigned a conversation</value>
-    [DataMember(Name = "assignerId", EmitDefaultValue = false)]
+    [JsonPropertyName("assignerId")]
     public string AssignerId { get; set; }
 
 
@@ -668,7 +668,7 @@ public partial class AnalyticsSession : IEquatable<AnalyticsSession>
     /// Flag that indicates that the identity of the customer has been asserted as verified by the provider.
     /// </summary>
     /// <value>Flag that indicates that the identity of the customer has been asserted as verified by the provider.</value>
-    [DataMember(Name = "authenticated", EmitDefaultValue = false)]
+    [JsonPropertyName("authenticated")]
     public bool? Authenticated { get; set; }
 
 
@@ -677,7 +677,7 @@ public partial class AnalyticsSession : IEquatable<AnalyticsSession>
     /// The participantId being barged in on (if someone (e.g. an agent) is being barged in on, this would correspond to one of the other participantIds present in the conversation)
     /// </summary>
     /// <value>The participantId being barged in on (if someone (e.g. an agent) is being barged in on, this would correspond to one of the other participantIds present in the conversation)</value>
-    [DataMember(Name = "bargedParticipantId", EmitDefaultValue = false)]
+    [JsonPropertyName("bargedParticipantId")]
     public string BargedParticipantId { get; set; }
 
 
@@ -686,7 +686,7 @@ public partial class AnalyticsSession : IEquatable<AnalyticsSession>
     /// Blind carbon copy email address(es)
     /// </summary>
     /// <value>Blind carbon copy email address(es)</value>
-    [DataMember(Name = "bcc", EmitDefaultValue = false)]
+    [JsonPropertyName("bcc")]
     public List<string> Bcc { get; set; }
 
 
@@ -695,7 +695,7 @@ public partial class AnalyticsSession : IEquatable<AnalyticsSession>
     /// Callback phone number(s)
     /// </summary>
     /// <value>Callback phone number(s)</value>
-    [DataMember(Name = "callbackNumbers", EmitDefaultValue = false)]
+    [JsonPropertyName("callbackNumbers")]
     public List<string> CallbackNumbers { get; set; }
 
 
@@ -704,7 +704,7 @@ public partial class AnalyticsSession : IEquatable<AnalyticsSession>
     /// Scheduled callback date/time. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z
     /// </summary>
     /// <value>Scheduled callback date/time. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z</value>
-    [DataMember(Name = "callbackScheduledTime", EmitDefaultValue = false)]
+    [JsonPropertyName("callbackScheduledTime")]
     public DateTime? CallbackScheduledTime { get; set; }
 
 
@@ -713,7 +713,7 @@ public partial class AnalyticsSession : IEquatable<AnalyticsSession>
     /// The name of the user requesting a call back
     /// </summary>
     /// <value>The name of the user requesting a call back</value>
-    [DataMember(Name = "callbackUserName", EmitDefaultValue = false)]
+    [JsonPropertyName("callbackUserName")]
     public string CallbackUserName { get; set; }
 
 
@@ -722,7 +722,7 @@ public partial class AnalyticsSession : IEquatable<AnalyticsSession>
     /// Carbon copy email address(es)
     /// </summary>
     /// <value>Carbon copy email address(es)</value>
-    [DataMember(Name = "cc", EmitDefaultValue = false)]
+    [JsonPropertyName("cc")]
     public List<string> Cc { get; set; }
 
 
@@ -731,7 +731,7 @@ public partial class AnalyticsSession : IEquatable<AnalyticsSession>
     /// Flag that indicates that the conversation has been cleared by the customer
     /// </summary>
     /// <value>Flag that indicates that the conversation has been cleared by the customer</value>
-    [DataMember(Name = "cleared", EmitDefaultValue = false)]
+    [JsonPropertyName("cleared")]
     public bool? Cleared { get; set; }
 
 
@@ -740,7 +740,7 @@ public partial class AnalyticsSession : IEquatable<AnalyticsSession>
     /// The participantId being coached (if someone (e.g. an agent) is being coached, this would correspond to one of the other participantIds present in the conversation)
     /// </summary>
     /// <value>The participantId being coached (if someone (e.g. an agent) is being coached, this would correspond to one of the other participantIds present in the conversation)</value>
-    [DataMember(Name = "coachedParticipantId", EmitDefaultValue = false)]
+    [JsonPropertyName("coachedParticipantId")]
     public string CoachedParticipantId { get; set; }
 
 
@@ -749,7 +749,7 @@ public partial class AnalyticsSession : IEquatable<AnalyticsSession>
     /// Describes side of the cobrowse (sharer or viewer)
     /// </summary>
     /// <value>Describes side of the cobrowse (sharer or viewer)</value>
-    [DataMember(Name = "cobrowseRole", EmitDefaultValue = false)]
+    [JsonPropertyName("cobrowseRole")]
     public string CobrowseRole { get; set; }
 
 
@@ -758,7 +758,7 @@ public partial class AnalyticsSession : IEquatable<AnalyticsSession>
     /// A unique identifier for a Genesys Cloud cobrowse room
     /// </summary>
     /// <value>A unique identifier for a Genesys Cloud cobrowse room</value>
-    [DataMember(Name = "cobrowseRoomId", EmitDefaultValue = false)]
+    [JsonPropertyName("cobrowseRoomId")]
     public string CobrowseRoomId { get; set; }
 
 
@@ -767,7 +767,7 @@ public partial class AnalyticsSession : IEquatable<AnalyticsSession>
     /// Flag that indicates that the push delivery mechanism was used
     /// </summary>
     /// <value>Flag that indicates that the push delivery mechanism was used</value>
-    [DataMember(Name = "deliveryPushed", EmitDefaultValue = false)]
+    [JsonPropertyName("deliveryPushed")]
     public bool? DeliveryPushed { get; set; }
 
 
@@ -778,7 +778,7 @@ public partial class AnalyticsSession : IEquatable<AnalyticsSession>
     /// Date and time of the most recent delivery status change. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z
     /// </summary>
     /// <value>Date and time of the most recent delivery status change. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z</value>
-    [DataMember(Name = "deliveryStatusChangeDate", EmitDefaultValue = false)]
+    [JsonPropertyName("deliveryStatusChangeDate")]
     public DateTime? DeliveryStatusChangeDate { get; set; }
 
 
@@ -787,7 +787,7 @@ public partial class AnalyticsSession : IEquatable<AnalyticsSession>
     /// Destination address(es) of transfers or consults
     /// </summary>
     /// <value>Destination address(es) of transfers or consults</value>
-    [DataMember(Name = "destinationAddresses", EmitDefaultValue = false)]
+    [JsonPropertyName("destinationAddresses")]
     public List<string> DestinationAddresses { get; set; }
 
 
@@ -796,7 +796,7 @@ public partial class AnalyticsSession : IEquatable<AnalyticsSession>
     /// Absolute time when the speech ended. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z
     /// </summary>
     /// <value>Absolute time when the speech ended. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z</value>
-    [DataMember(Name = "detectedSpeechEnd", EmitDefaultValue = false)]
+    [JsonPropertyName("detectedSpeechEnd")]
     public DateTime? DetectedSpeechEnd { get; set; }
 
 
@@ -805,7 +805,7 @@ public partial class AnalyticsSession : IEquatable<AnalyticsSession>
     /// Absolute time when the speech started. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z
     /// </summary>
     /// <value>Absolute time when the speech started. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z</value>
-    [DataMember(Name = "detectedSpeechStart", EmitDefaultValue = false)]
+    [JsonPropertyName("detectedSpeechStart")]
     public DateTime? DetectedSpeechStart { get; set; }
 
 
@@ -816,7 +816,7 @@ public partial class AnalyticsSession : IEquatable<AnalyticsSession>
     /// (Dialer) Analyzer (for example speech.person)
     /// </summary>
     /// <value>(Dialer) Analyzer (for example speech.person)</value>
-    [DataMember(Name = "dispositionAnalyzer", EmitDefaultValue = false)]
+    [JsonPropertyName("dispositionAnalyzer")]
     public string DispositionAnalyzer { get; set; }
 
 
@@ -825,7 +825,7 @@ public partial class AnalyticsSession : IEquatable<AnalyticsSession>
     /// (Dialer) Result of the analysis (for example disposition.classification.callable.machine)
     /// </summary>
     /// <value>(Dialer) Result of the analysis (for example disposition.classification.callable.machine)</value>
-    [DataMember(Name = "dispositionName", EmitDefaultValue = false)]
+    [JsonPropertyName("dispositionName")]
     public string DispositionName { get; set; }
 
 
@@ -834,7 +834,7 @@ public partial class AnalyticsSession : IEquatable<AnalyticsSession>
     /// Dialed number identification service (number dialed by the calling party)
     /// </summary>
     /// <value>Dialed number identification service (number dialed by the calling party)</value>
-    [DataMember(Name = "dnis", EmitDefaultValue = false)]
+    [JsonPropertyName("dnis")]
     public string Dnis { get; set; }
 
 
@@ -843,7 +843,7 @@ public partial class AnalyticsSession : IEquatable<AnalyticsSession>
     /// Unique identifier of the edge device
     /// </summary>
     /// <value>Unique identifier of the edge device</value>
-    [DataMember(Name = "edgeId", EmitDefaultValue = false)]
+    [JsonPropertyName("edgeId")]
     public string EdgeId { get; set; }
 
 
@@ -852,7 +852,7 @@ public partial class AnalyticsSession : IEquatable<AnalyticsSession>
     /// Number of eligible agents for each predictive routing attempt
     /// </summary>
     /// <value>Number of eligible agents for each predictive routing attempt</value>
-    [DataMember(Name = "eligibleAgentCounts", EmitDefaultValue = false)]
+    [JsonPropertyName("eligibleAgentCounts")]
     public List<int?> EligibleAgentCounts { get; set; }
 
 
@@ -861,7 +861,7 @@ public partial class AnalyticsSession : IEquatable<AnalyticsSession>
     /// Extended delivery status
     /// </summary>
     /// <value>Extended delivery status</value>
-    [DataMember(Name = "extendedDeliveryStatus", EmitDefaultValue = false)]
+    [JsonPropertyName("extendedDeliveryStatus")]
     public string ExtendedDeliveryStatus { get; set; }
 
 
@@ -870,7 +870,7 @@ public partial class AnalyticsSession : IEquatable<AnalyticsSession>
     /// Type of flow in that occurred when entering ACD.
     /// </summary>
     /// <value>Type of flow in that occurred when entering ACD.</value>
-    [DataMember(Name = "flowInType", EmitDefaultValue = false)]
+    [JsonPropertyName("flowInType")]
     public string FlowInType { get; set; }
 
 
@@ -879,7 +879,7 @@ public partial class AnalyticsSession : IEquatable<AnalyticsSession>
     /// Type of flow out that occurred when emitting tFlowOut.
     /// </summary>
     /// <value>Type of flow out that occurred when emitting tFlowOut.</value>
-    [DataMember(Name = "flowOutType", EmitDefaultValue = false)]
+    [JsonPropertyName("flowOutType")]
     public string FlowOutType { get; set; }
 
 
@@ -888,7 +888,7 @@ public partial class AnalyticsSession : IEquatable<AnalyticsSession>
     /// Identifier of the journey action.
     /// </summary>
     /// <value>Identifier of the journey action.</value>
-    [DataMember(Name = "journeyActionId", EmitDefaultValue = false)]
+    [JsonPropertyName("journeyActionId")]
     public string JourneyActionId { get; set; }
 
 
@@ -897,7 +897,7 @@ public partial class AnalyticsSession : IEquatable<AnalyticsSession>
     /// Identifier of the journey action map that triggered the action.
     /// </summary>
     /// <value>Identifier of the journey action map that triggered the action.</value>
-    [DataMember(Name = "journeyActionMapId", EmitDefaultValue = false)]
+    [JsonPropertyName("journeyActionMapId")]
     public string JourneyActionMapId { get; set; }
 
 
@@ -906,7 +906,7 @@ public partial class AnalyticsSession : IEquatable<AnalyticsSession>
     /// Version of the journey action map that triggered the action.
     /// </summary>
     /// <value>Version of the journey action map that triggered the action.</value>
-    [DataMember(Name = "journeyActionMapVersion", EmitDefaultValue = false)]
+    [JsonPropertyName("journeyActionMapVersion")]
     public int? JourneyActionMapVersion { get; set; }
 
 
@@ -915,7 +915,7 @@ public partial class AnalyticsSession : IEquatable<AnalyticsSession>
     /// Primary identifier of the journey customer in the source where the activities originate from.
     /// </summary>
     /// <value>Primary identifier of the journey customer in the source where the activities originate from.</value>
-    [DataMember(Name = "journeyCustomerId", EmitDefaultValue = false)]
+    [JsonPropertyName("journeyCustomerId")]
     public string JourneyCustomerId { get; set; }
 
 
@@ -924,7 +924,7 @@ public partial class AnalyticsSession : IEquatable<AnalyticsSession>
     /// Type of primary identifier of the journey customer (e.g. cookie).
     /// </summary>
     /// <value>Type of primary identifier of the journey customer (e.g. cookie).</value>
-    [DataMember(Name = "journeyCustomerIdType", EmitDefaultValue = false)]
+    [JsonPropertyName("journeyCustomerIdType")]
     public string JourneyCustomerIdType { get; set; }
 
 
@@ -933,7 +933,7 @@ public partial class AnalyticsSession : IEquatable<AnalyticsSession>
     /// Unique identifier of the journey session.
     /// </summary>
     /// <value>Unique identifier of the journey session.</value>
-    [DataMember(Name = "journeyCustomerSessionId", EmitDefaultValue = false)]
+    [JsonPropertyName("journeyCustomerSessionId")]
     public string JourneyCustomerSessionId { get; set; }
 
 
@@ -942,7 +942,7 @@ public partial class AnalyticsSession : IEquatable<AnalyticsSession>
     /// Type or category of journey sessions (e.g. web, ticket, delivery, atm).
     /// </summary>
     /// <value>Type or category of journey sessions (e.g. web, ticket, delivery, atm).</value>
-    [DataMember(Name = "journeyCustomerSessionIdType", EmitDefaultValue = false)]
+    [JsonPropertyName("journeyCustomerSessionIdType")]
     public string JourneyCustomerSessionIdType { get; set; }
 
 
@@ -951,7 +951,7 @@ public partial class AnalyticsSession : IEquatable<AnalyticsSession>
     /// Media bridge ID for the conference session consistent across all participants
     /// </summary>
     /// <value>Media bridge ID for the conference session consistent across all participants</value>
-    [DataMember(Name = "mediaBridgeId", EmitDefaultValue = false)]
+    [JsonPropertyName("mediaBridgeId")]
     public string MediaBridgeId { get; set; }
 
 
@@ -960,7 +960,7 @@ public partial class AnalyticsSession : IEquatable<AnalyticsSession>
     /// Count of any media (images, files, etc) included in this session
     /// </summary>
     /// <value>Count of any media (images, files, etc) included in this session</value>
-    [DataMember(Name = "mediaCount", EmitDefaultValue = false)]
+    [JsonPropertyName("mediaCount")]
     public int? MediaCount { get; set; }
 
 
@@ -971,7 +971,7 @@ public partial class AnalyticsSession : IEquatable<AnalyticsSession>
     /// Message type for messaging services. E.g.: sms, facebook, twitter, line
     /// </summary>
     /// <value>Message type for messaging services. E.g.: sms, facebook, twitter, line</value>
-    [DataMember(Name = "messageType", EmitDefaultValue = false)]
+    [JsonPropertyName("messageType")]
     public string MessageType { get; set; }
 
 
@@ -980,7 +980,7 @@ public partial class AnalyticsSession : IEquatable<AnalyticsSession>
     /// The participantId being monitored (if someone (e.g. an agent) is being monitored, this would correspond to one of the other participantIds present in the conversation)
     /// </summary>
     /// <value>The participantId being monitored (if someone (e.g. an agent) is being monitored, this would correspond to one of the other participantIds present in the conversation)</value>
-    [DataMember(Name = "monitoredParticipantId", EmitDefaultValue = false)]
+    [JsonPropertyName("monitoredParticipantId")]
     public string MonitoredParticipantId { get; set; }
 
 
@@ -989,7 +989,7 @@ public partial class AnalyticsSession : IEquatable<AnalyticsSession>
     /// (Dialer) Unique identifier of the outbound campaign
     /// </summary>
     /// <value>(Dialer) Unique identifier of the outbound campaign</value>
-    [DataMember(Name = "outboundCampaignId", EmitDefaultValue = false)]
+    [JsonPropertyName("outboundCampaignId")]
     public string OutboundCampaignId { get; set; }
 
 
@@ -998,7 +998,7 @@ public partial class AnalyticsSession : IEquatable<AnalyticsSession>
     /// (Dialer) Unique identifier of the contact
     /// </summary>
     /// <value>(Dialer) Unique identifier of the contact</value>
-    [DataMember(Name = "outboundContactId", EmitDefaultValue = false)]
+    [JsonPropertyName("outboundContactId")]
     public string OutboundContactId { get; set; }
 
 
@@ -1007,7 +1007,7 @@ public partial class AnalyticsSession : IEquatable<AnalyticsSession>
     /// (Dialer) Unique identifier of the contact list that this contact belongs to
     /// </summary>
     /// <value>(Dialer) Unique identifier of the contact list that this contact belongs to</value>
-    [DataMember(Name = "outboundContactListId", EmitDefaultValue = false)]
+    [JsonPropertyName("outboundContactListId")]
     public string OutboundContactListId { get; set; }
 
 
@@ -1016,7 +1016,7 @@ public partial class AnalyticsSession : IEquatable<AnalyticsSession>
     /// This identifies pairs of related sessions on a conversation. E.g. an external session’s peerId will be the session that the call originally connected to, e.g. if an IVR was dialed, the IVR session, which will also have the external session’s ID as its peer. After that point, any transfers of that session to other internal components (acd, agent, etc.) will all spawn new sessions whose peerIds point back to that original external session.
     /// </summary>
     /// <value>This identifies pairs of related sessions on a conversation. E.g. an external session’s peerId will be the session that the call originally connected to, e.g. if an IVR was dialed, the IVR session, which will also have the external session’s ID as its peer. After that point, any transfers of that session to other internal components (acd, agent, etc.) will all spawn new sessions whose peerIds point back to that original external session.</value>
-    [DataMember(Name = "peerId", EmitDefaultValue = false)]
+    [JsonPropertyName("peerId")]
     public string PeerId { get; set; }
 
 
@@ -1025,7 +1025,7 @@ public partial class AnalyticsSession : IEquatable<AnalyticsSession>
     /// The original voice protocol call ID, e.g. a SIP call ID
     /// </summary>
     /// <value>The original voice protocol call ID, e.g. a SIP call ID</value>
-    [DataMember(Name = "protocolCallId", EmitDefaultValue = false)]
+    [JsonPropertyName("protocolCallId")]
     public string ProtocolCallId { get; set; }
 
 
@@ -1034,7 +1034,7 @@ public partial class AnalyticsSession : IEquatable<AnalyticsSession>
     /// The source provider for the communication.
     /// </summary>
     /// <value>The source provider for the communication.</value>
-    [DataMember(Name = "provider", EmitDefaultValue = false)]
+    [JsonPropertyName("provider")]
     public string Provider { get; set; }
 
 
@@ -1043,7 +1043,7 @@ public partial class AnalyticsSession : IEquatable<AnalyticsSession>
     /// Flag determining if an audio recording was started or not
     /// </summary>
     /// <value>Flag determining if an audio recording was started or not</value>
-    [DataMember(Name = "recording", EmitDefaultValue = false)]
+    [JsonPropertyName("recording")]
     public bool? Recording { get; set; }
 
 
@@ -1052,7 +1052,7 @@ public partial class AnalyticsSession : IEquatable<AnalyticsSession>
     /// Name, phone number, or email address of the remote party.
     /// </summary>
     /// <value>Name, phone number, or email address of the remote party.</value>
-    [DataMember(Name = "remote", EmitDefaultValue = false)]
+    [JsonPropertyName("remote")]
     public string Remote { get; set; }
 
 
@@ -1061,7 +1061,7 @@ public partial class AnalyticsSession : IEquatable<AnalyticsSession>
     /// Unique identifier for the remote party
     /// </summary>
     /// <value>Unique identifier for the remote party</value>
-    [DataMember(Name = "remoteNameDisplayable", EmitDefaultValue = false)]
+    [JsonPropertyName("remoteNameDisplayable")]
     public string RemoteNameDisplayable { get; set; }
 
 
@@ -1070,7 +1070,7 @@ public partial class AnalyticsSession : IEquatable<AnalyticsSession>
     /// ID(s) of Skill(s) that have been removed by bullseye routing
     /// </summary>
     /// <value>ID(s) of Skill(s) that have been removed by bullseye routing</value>
-    [DataMember(Name = "removedSkillIds", EmitDefaultValue = false)]
+    [JsonPropertyName("removedSkillIds")]
     public List<string> RemovedSkillIds { get; set; }
 
 
@@ -1079,7 +1079,7 @@ public partial class AnalyticsSession : IEquatable<AnalyticsSession>
     /// Routing type(s) for requested/attempted routing methods.
     /// </summary>
     /// <value>Routing type(s) for requested/attempted routing methods.</value>
-    [DataMember(Name = "requestedRoutings", EmitDefaultValue = false)]
+    [JsonPropertyName("requestedRoutings")]
     public List<RequestedRoutingsEnum> RequestedRoutings { get; set; }
 
 
@@ -1088,7 +1088,7 @@ public partial class AnalyticsSession : IEquatable<AnalyticsSession>
     /// Unique identifier for the room
     /// </summary>
     /// <value>Unique identifier for the room</value>
-    [DataMember(Name = "roomId", EmitDefaultValue = false)]
+    [JsonPropertyName("roomId")]
     public string RoomId { get; set; }
 
 
@@ -1097,7 +1097,7 @@ public partial class AnalyticsSession : IEquatable<AnalyticsSession>
     /// Routing ring for bullseye or preferred agent routing
     /// </summary>
     /// <value>Routing ring for bullseye or preferred agent routing</value>
-    [DataMember(Name = "routingRing", EmitDefaultValue = false)]
+    [JsonPropertyName("routingRing")]
     public int? RoutingRing { get; set; }
 
 
@@ -1106,7 +1106,7 @@ public partial class AnalyticsSession : IEquatable<AnalyticsSession>
     /// Routing rule for preferred, conditional and predictive routing type
     /// </summary>
     /// <value>Routing rule for preferred, conditional and predictive routing type</value>
-    [DataMember(Name = "routingRule", EmitDefaultValue = false)]
+    [JsonPropertyName("routingRule")]
     public string RoutingRule { get; set; }
 
 
@@ -1117,7 +1117,7 @@ public partial class AnalyticsSession : IEquatable<AnalyticsSession>
     /// Direct screen share address
     /// </summary>
     /// <value>Direct screen share address</value>
-    [DataMember(Name = "screenShareAddressSelf", EmitDefaultValue = false)]
+    [JsonPropertyName("screenShareAddressSelf")]
     public string ScreenShareAddressSelf { get; set; }
 
 
@@ -1126,7 +1126,7 @@ public partial class AnalyticsSession : IEquatable<AnalyticsSession>
     /// A unique identifier for a Genesys Cloud screen share room
     /// </summary>
     /// <value>A unique identifier for a Genesys Cloud screen share room</value>
-    [DataMember(Name = "screenShareRoomId", EmitDefaultValue = false)]
+    [JsonPropertyName("screenShareRoomId")]
     public string ScreenShareRoomId { get; set; }
 
 
@@ -1135,7 +1135,7 @@ public partial class AnalyticsSession : IEquatable<AnalyticsSession>
     /// A unique identifier for a script
     /// </summary>
     /// <value>A unique identifier for a script</value>
-    [DataMember(Name = "scriptId", EmitDefaultValue = false)]
+    [JsonPropertyName("scriptId")]
     public string ScriptId { get; set; }
 
 
@@ -1144,7 +1144,7 @@ public partial class AnalyticsSession : IEquatable<AnalyticsSession>
     /// Selected agent ID
     /// </summary>
     /// <value>Selected agent ID</value>
-    [DataMember(Name = "selectedAgentId", EmitDefaultValue = false)]
+    [JsonPropertyName("selectedAgentId")]
     public string SelectedAgentId { get; set; }
 
 
@@ -1153,7 +1153,7 @@ public partial class AnalyticsSession : IEquatable<AnalyticsSession>
     /// Selected agent GPR rank
     /// </summary>
     /// <value>Selected agent GPR rank</value>
-    [DataMember(Name = "selectedAgentRank", EmitDefaultValue = false)]
+    [JsonPropertyName("selectedAgentRank")]
     public int? SelectedAgentRank { get; set; }
 
 
@@ -1162,7 +1162,7 @@ public partial class AnalyticsSession : IEquatable<AnalyticsSession>
     /// Dialed number for the current session; this can be different from dnis, e.g. if the call was transferred
     /// </summary>
     /// <value>Dialed number for the current session; this can be different from dnis, e.g. if the call was transferred</value>
-    [DataMember(Name = "sessionDnis", EmitDefaultValue = false)]
+    [JsonPropertyName("sessionDnis")]
     public string SessionDnis { get; set; }
 
 
@@ -1171,7 +1171,7 @@ public partial class AnalyticsSession : IEquatable<AnalyticsSession>
     /// The unique identifier of this session
     /// </summary>
     /// <value>The unique identifier of this session</value>
-    [DataMember(Name = "sessionId", EmitDefaultValue = false)]
+    [JsonPropertyName("sessionId")]
     public string SessionId { get; set; }
 
 
@@ -1180,7 +1180,7 @@ public partial class AnalyticsSession : IEquatable<AnalyticsSession>
     /// Flag determining if screen share is started or not (true/false)
     /// </summary>
     /// <value>Flag determining if screen share is started or not (true/false)</value>
-    [DataMember(Name = "sharingScreen", EmitDefaultValue = false)]
+    [JsonPropertyName("sharingScreen")]
     public bool? SharingScreen { get; set; }
 
 
@@ -1189,7 +1189,7 @@ public partial class AnalyticsSession : IEquatable<AnalyticsSession>
     /// (Dialer) Whether the agent can skip the dialer contact
     /// </summary>
     /// <value>(Dialer) Whether the agent can skip the dialer contact</value>
-    [DataMember(Name = "skipEnabled", EmitDefaultValue = false)]
+    [JsonPropertyName("skipEnabled")]
     public bool? SkipEnabled { get; set; }
 
 
@@ -1198,7 +1198,7 @@ public partial class AnalyticsSession : IEquatable<AnalyticsSession>
     /// The number of seconds before Genesys Cloud begins the call for a call back (0 disables automatic calling)
     /// </summary>
     /// <value>The number of seconds before Genesys Cloud begins the call for a call back (0 disables automatic calling)</value>
-    [DataMember(Name = "timeoutSeconds", EmitDefaultValue = false)]
+    [JsonPropertyName("timeoutSeconds")]
     public int? TimeoutSeconds { get; set; }
 
 
@@ -1209,7 +1209,7 @@ public partial class AnalyticsSession : IEquatable<AnalyticsSession>
     /// Direct Video address
     /// </summary>
     /// <value>Direct Video address</value>
-    [DataMember(Name = "videoAddressSelf", EmitDefaultValue = false)]
+    [JsonPropertyName("videoAddressSelf")]
     public string VideoAddressSelf { get; set; }
 
 
@@ -1218,7 +1218,7 @@ public partial class AnalyticsSession : IEquatable<AnalyticsSession>
     /// A unique identifier for a Genesys Cloud video room
     /// </summary>
     /// <value>A unique identifier for a Genesys Cloud video room</value>
-    [DataMember(Name = "videoRoomId", EmitDefaultValue = false)]
+    [JsonPropertyName("videoRoomId")]
     public string VideoRoomId { get; set; }
 
 
@@ -1227,7 +1227,7 @@ public partial class AnalyticsSession : IEquatable<AnalyticsSession>
     /// Number of waiting interactions for each predictive routing attempt
     /// </summary>
     /// <value>Number of waiting interactions for each predictive routing attempt</value>
-    [DataMember(Name = "waitingInteractionCounts", EmitDefaultValue = false)]
+    [JsonPropertyName("waitingInteractionCounts")]
     public List<int?> WaitingInteractionCounts { get; set; }
 
 
@@ -1236,7 +1236,7 @@ public partial class AnalyticsSession : IEquatable<AnalyticsSession>
     /// Conditional group routing agent groups
     /// </summary>
     /// <value>Conditional group routing agent groups</value>
-    [DataMember(Name = "agentGroups", EmitDefaultValue = false)]
+    [JsonPropertyName("agentGroups")]
     public List<AnalyticsAgentGroup> AgentGroups { get; set; }
 
 
@@ -1245,7 +1245,7 @@ public partial class AnalyticsSession : IEquatable<AnalyticsSession>
     /// Proposed agents
     /// </summary>
     /// <value>Proposed agents</value>
-    [DataMember(Name = "proposedAgents", EmitDefaultValue = false)]
+    [JsonPropertyName("proposedAgents")]
     public List<AnalyticsProposedAgent> ProposedAgents { get; set; }
 
 
@@ -1254,7 +1254,7 @@ public partial class AnalyticsSession : IEquatable<AnalyticsSession>
     /// MediaEndpointStats associated with this session
     /// </summary>
     /// <value>MediaEndpointStats associated with this session</value>
-    [DataMember(Name = "mediaEndpointStats", EmitDefaultValue = false)]
+    [JsonPropertyName("mediaEndpointStats")]
     public List<AnalyticsMediaEndpointStat> MediaEndpointStats { get; set; }
 
 
@@ -1263,7 +1263,7 @@ public partial class AnalyticsSession : IEquatable<AnalyticsSession>
     /// IVR flow execution associated with this session
     /// </summary>
     /// <value>IVR flow execution associated with this session</value>
-    [DataMember(Name = "flow", EmitDefaultValue = false)]
+    [JsonPropertyName("flow")]
     public AnalyticsFlow Flow { get; set; }
 
 
@@ -1272,7 +1272,7 @@ public partial class AnalyticsSession : IEquatable<AnalyticsSession>
     /// List of metrics for this session
     /// </summary>
     /// <value>List of metrics for this session</value>
-    [DataMember(Name = "metrics", EmitDefaultValue = false)]
+    [JsonPropertyName("metrics")]
     public List<AnalyticsSessionMetric> Metrics { get; set; }
 
 
@@ -1281,7 +1281,7 @@ public partial class AnalyticsSession : IEquatable<AnalyticsSession>
     /// List of segments for this session
     /// </summary>
     /// <value>List of segments for this session</value>
-    [DataMember(Name = "segments", EmitDefaultValue = false)]
+    [JsonPropertyName("segments")]
     public List<AnalyticsConversationSegment> Segments { get; set; }
 
 

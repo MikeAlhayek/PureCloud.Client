@@ -1,12 +1,12 @@
-using System.Runtime.Serialization;
 using System.Text;
+using System.Text.Json.Serialization;
 
 namespace PureCloud.Client.Models;
 
 /// <summary>
 /// Action function create upload URL response.
 /// </summary>
-[DataContract]
+
 public partial class FunctionUploadResponse : IEquatable<FunctionUploadResponse>
 {
     /// <summary>
@@ -25,7 +25,7 @@ public partial class FunctionUploadResponse : IEquatable<FunctionUploadResponse>
     /// Presigned URL to PUT the file to
     /// </summary>
     /// <value>Presigned URL to PUT the file to</value>
-    [DataMember(Name = "url", EmitDefaultValue = false)]
+    [JsonPropertyName("url")]
     public string Url { get; private set; }
 
 
@@ -34,7 +34,7 @@ public partial class FunctionUploadResponse : IEquatable<FunctionUploadResponse>
     /// Required headers when uploading a file through PUT request to the URL
     /// </summary>
     /// <value>Required headers when uploading a file through PUT request to the URL</value>
-    [DataMember(Name = "headers", EmitDefaultValue = false)]
+    [JsonPropertyName("headers")]
     public Dictionary<string, string> Headers { get; private set; }
 
 
@@ -43,7 +43,7 @@ public partial class FunctionUploadResponse : IEquatable<FunctionUploadResponse>
     /// Upload time to live in seconds.
     /// </summary>
     /// <value>Upload time to live in seconds.</value>
-    [DataMember(Name = "signedUrlTimeoutSeconds", EmitDefaultValue = false)]
+    [JsonPropertyName("signedUrlTimeoutSeconds")]
     public int? SignedUrlTimeoutSeconds { get; set; }
 
 

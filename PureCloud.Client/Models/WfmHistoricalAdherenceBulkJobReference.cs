@@ -7,14 +7,14 @@ namespace PureCloud.Client.Models;
 /// <summary>
 /// WfmHistoricalAdherenceBulkJobReference
 /// </summary>
-[DataContract]
+
 public partial class WfmHistoricalAdherenceBulkJobReference : IEquatable<WfmHistoricalAdherenceBulkJobReference>
 {
     /// <summary>
     /// The status of the historical adherence bulk job
     /// </summary>
     /// <value>The status of the historical adherence bulk job</value>
-    [JsonConverter(typeof(JsonStringEnumConverter))]
+    
     public enum StatusEnum
     {
         /// <summary>
@@ -47,7 +47,7 @@ public partial class WfmHistoricalAdherenceBulkJobReference : IEquatable<WfmHist
     /// The status of the historical adherence bulk job
     /// </summary>
     /// <value>The status of the historical adherence bulk job</value>
-    [DataMember(Name = "status", EmitDefaultValue = false)]
+    [JsonPropertyName("status")]
     public StatusEnum? Status { get; set; }
     /// <summary>
     /// Initializes a new instance of the <see cref="WfmHistoricalAdherenceBulkJobReference" /> class.
@@ -67,7 +67,7 @@ public partial class WfmHistoricalAdherenceBulkJobReference : IEquatable<WfmHist
     /// The ID of the historical adherence bulk job to listen for via notification or query using the jobs route
     /// </summary>
     /// <value>The ID of the historical adherence bulk job to listen for via notification or query using the jobs route</value>
-    [DataMember(Name = "id", EmitDefaultValue = false)]
+    [JsonPropertyName("id")]
     public string Id { get; set; }
 
 
@@ -78,7 +78,7 @@ public partial class WfmHistoricalAdherenceBulkJobReference : IEquatable<WfmHist
     /// The URI for this object
     /// </summary>
     /// <value>The URI for this object</value>
-    [DataMember(Name = "selfUri", EmitDefaultValue = false)]
+    [JsonPropertyName("selfUri")]
     public string SelfUri { get; private set; }
 
 

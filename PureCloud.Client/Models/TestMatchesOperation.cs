@@ -1,12 +1,12 @@
-using System.Runtime.Serialization;
 using System.Text;
+using System.Text.Json.Serialization;
 
 namespace PureCloud.Client.Models;
 
 /// <summary>
 /// Information about the Trigger test mode processing step
 /// </summary>
-[DataContract]
+
 public partial class TestMatchesOperation : IEquatable<TestMatchesOperation>
 {
     /// <summary>
@@ -31,7 +31,7 @@ public partial class TestMatchesOperation : IEquatable<TestMatchesOperation>
     /// The name of the processing step
     /// </summary>
     /// <value>The name of the processing step</value>
-    [DataMember(Name = "name", EmitDefaultValue = false)]
+    [JsonPropertyName("name")]
     public string Name { get; set; }
 
 
@@ -40,7 +40,7 @@ public partial class TestMatchesOperation : IEquatable<TestMatchesOperation>
     /// The number of the processing step
     /// </summary>
     /// <value>The number of the processing step</value>
-    [DataMember(Name = "step", EmitDefaultValue = false)]
+    [JsonPropertyName("step")]
     public int? Step { get; set; }
 
 
@@ -49,7 +49,7 @@ public partial class TestMatchesOperation : IEquatable<TestMatchesOperation>
     /// Whether or not the operation matches expectations
     /// </summary>
     /// <value>Whether or not the operation matches expectations</value>
-    [DataMember(Name = "matches", EmitDefaultValue = false)]
+    [JsonPropertyName("matches")]
     public bool? Matches { get; set; }
 
 
@@ -58,7 +58,7 @@ public partial class TestMatchesOperation : IEquatable<TestMatchesOperation>
     /// Details about why the operation did or did not succeed
     /// </summary>
     /// <value>Details about why the operation did or did not succeed</value>
-    [DataMember(Name = "details", EmitDefaultValue = false)]
+    [JsonPropertyName("details")]
     public List<MatchCriteriaTestResult> Details { get; set; }
 
 

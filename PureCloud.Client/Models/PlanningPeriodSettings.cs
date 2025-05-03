@@ -1,4 +1,3 @@
-using System.Runtime.Serialization;
 using System.Text;
 using System.Text.Json.Serialization;
 
@@ -7,7 +6,7 @@ namespace PureCloud.Client.Models;
 /// <summary>
 /// PlanningPeriodSettings
 /// </summary>
-[DataContract]
+
 public partial class PlanningPeriodSettings : IEquatable<PlanningPeriodSettings>
 {
 
@@ -34,7 +33,7 @@ public partial class PlanningPeriodSettings : IEquatable<PlanningPeriodSettings>
     /// Planning period length in weeks
     /// </summary>
     /// <value>Planning period length in weeks</value>
-    [DataMember(Name = "weekCount", EmitDefaultValue = false)]
+    [JsonPropertyName("weekCount")]
     public int? WeekCount { get; set; }
 
 
@@ -43,7 +42,7 @@ public partial class PlanningPeriodSettings : IEquatable<PlanningPeriodSettings>
     /// Start date of the planning period in yyyy-MM-dd format. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd
     /// </summary>
     /// <value>Start date of the planning period in yyyy-MM-dd format. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd</value>
-    [DataMember(Name = "startDate", EmitDefaultValue = false)]
+    [JsonPropertyName("startDate")]
     public string StartDate { get; set; }
 
 

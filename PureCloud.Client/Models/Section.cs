@@ -1,12 +1,12 @@
-using System.Runtime.Serialization;
 using System.Text;
+using System.Text.Json.Serialization;
 
 namespace PureCloud.Client.Models;
 
 /// <summary>
 /// Section
 /// </summary>
-[DataContract]
+
 public partial class Section : IEquatable<Section>
 {
     /// <summary>
@@ -30,7 +30,7 @@ public partial class Section : IEquatable<Section>
     /// <summary>
     /// Gets or Sets FieldList
     /// </summary>
-    [DataMember(Name = "fieldList", EmitDefaultValue = false)]
+    [JsonPropertyName("fieldList")]
     public List<FieldList> FieldList { get; set; }
 
 
@@ -38,7 +38,7 @@ public partial class Section : IEquatable<Section>
     /// <summary>
     /// Gets or Sets InstructionText
     /// </summary>
-    [DataMember(Name = "instructionText", EmitDefaultValue = false)]
+    [JsonPropertyName("instructionText")]
     public string InstructionText { get; set; }
 
 
@@ -46,7 +46,7 @@ public partial class Section : IEquatable<Section>
     /// <summary>
     /// Gets or Sets Key
     /// </summary>
-    [DataMember(Name = "key", EmitDefaultValue = false)]
+    [JsonPropertyName("key")]
     public string Key { get; set; }
 
 
@@ -54,7 +54,7 @@ public partial class Section : IEquatable<Section>
     /// <summary>
     /// Gets or Sets State
     /// </summary>
-    [DataMember(Name = "state", EmitDefaultValue = false)]
+    [JsonPropertyName("state")]
     public string State { get; set; }
 
 

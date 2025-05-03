@@ -7,14 +7,14 @@ namespace PureCloud.Client.Models;
 /// <summary>
 /// KnowledgeExtendedCategory
 /// </summary>
-[DataContract]
+
 public partial class KnowledgeExtendedCategory : IEquatable<KnowledgeExtendedCategory>
 {
     /// <summary>
     /// Actual language of the category
     /// </summary>
     /// <value>Actual language of the category</value>
-    [JsonConverter(typeof(JsonStringEnumConverter))]
+    
     public enum LanguageCodeEnum
     {
         /// <summary>
@@ -305,7 +305,7 @@ public partial class KnowledgeExtendedCategory : IEquatable<KnowledgeExtendedCat
     /// Actual language of the category
     /// </summary>
     /// <value>Actual language of the category</value>
-    [DataMember(Name = "languageCode", EmitDefaultValue = false)]
+    [JsonPropertyName("languageCode")]
     public LanguageCodeEnum? LanguageCode { get; private set; }
 
     /// <summary>
@@ -331,7 +331,7 @@ public partial class KnowledgeExtendedCategory : IEquatable<KnowledgeExtendedCat
     /// The globally unique identifier for the object.
     /// </summary>
     /// <value>The globally unique identifier for the object.</value>
-    [DataMember(Name = "id", EmitDefaultValue = false)]
+    [JsonPropertyName("id")]
     public string Id { get; private set; }
 
 
@@ -340,7 +340,7 @@ public partial class KnowledgeExtendedCategory : IEquatable<KnowledgeExtendedCat
     /// Category name
     /// </summary>
     /// <value>Category name</value>
-    [DataMember(Name = "name", EmitDefaultValue = false)]
+    [JsonPropertyName("name")]
     public string Name { get; set; }
 
 
@@ -349,7 +349,7 @@ public partial class KnowledgeExtendedCategory : IEquatable<KnowledgeExtendedCat
     /// Category description
     /// </summary>
     /// <value>Category description</value>
-    [DataMember(Name = "description", EmitDefaultValue = false)]
+    [JsonPropertyName("description")]
     public string Description { get; set; }
 
 
@@ -358,7 +358,7 @@ public partial class KnowledgeExtendedCategory : IEquatable<KnowledgeExtendedCat
     /// Knowledge base which category does belong to
     /// </summary>
     /// <value>Knowledge base which category does belong to</value>
-    [DataMember(Name = "knowledgeBase", EmitDefaultValue = false)]
+    [JsonPropertyName("knowledgeBase")]
     public KnowledgeBase KnowledgeBase { get; private set; }
 
 
@@ -369,7 +369,7 @@ public partial class KnowledgeExtendedCategory : IEquatable<KnowledgeExtendedCat
     /// Category creation date-time. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z
     /// </summary>
     /// <value>Category creation date-time. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z</value>
-    [DataMember(Name = "dateCreated", EmitDefaultValue = false)]
+    [JsonPropertyName("dateCreated")]
     public DateTime? DateCreated { get; private set; }
 
 
@@ -378,7 +378,7 @@ public partial class KnowledgeExtendedCategory : IEquatable<KnowledgeExtendedCat
     /// Category last modification date-time. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z
     /// </summary>
     /// <value>Category last modification date-time. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z</value>
-    [DataMember(Name = "dateModified", EmitDefaultValue = false)]
+    [JsonPropertyName("dateModified")]
     public DateTime? DateModified { get; private set; }
 
 
@@ -387,7 +387,7 @@ public partial class KnowledgeExtendedCategory : IEquatable<KnowledgeExtendedCat
     /// Category parent
     /// </summary>
     /// <value>Category parent</value>
-    [DataMember(Name = "parent", EmitDefaultValue = false)]
+    [JsonPropertyName("parent")]
     public KnowledgeCategory Parent { get; private set; }
 
 
@@ -396,7 +396,7 @@ public partial class KnowledgeExtendedCategory : IEquatable<KnowledgeExtendedCat
     /// Category children
     /// </summary>
     /// <value>Category children</value>
-    [DataMember(Name = "children", EmitDefaultValue = false)]
+    [JsonPropertyName("children")]
     public List<KnowledgeCategory> Children { get; private set; }
 
 
@@ -405,7 +405,7 @@ public partial class KnowledgeExtendedCategory : IEquatable<KnowledgeExtendedCat
     /// The URI for this object
     /// </summary>
     /// <value>The URI for this object</value>
-    [DataMember(Name = "selfUri", EmitDefaultValue = false)]
+    [JsonPropertyName("selfUri")]
     public string SelfUri { get; private set; }
 
 

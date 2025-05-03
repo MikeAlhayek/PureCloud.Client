@@ -1,4 +1,3 @@
-using System.Runtime.Serialization;
 using System.Text;
 using System.Text.Json.Serialization;
 
@@ -7,7 +6,7 @@ namespace PureCloud.Client.Models;
 /// <summary>
 /// ChatReaction
 /// </summary>
-[DataContract]
+
 public partial class ChatReaction : IEquatable<ChatReaction>
 {
 
@@ -34,7 +33,7 @@ public partial class ChatReaction : IEquatable<ChatReaction>
     /// The emoji string for the reaction
     /// </summary>
     /// <value>The emoji string for the reaction</value>
-    [DataMember(Name = "emoji", EmitDefaultValue = false)]
+    [JsonPropertyName("emoji")]
     public string Emoji { get; set; }
 
 
@@ -43,7 +42,7 @@ public partial class ChatReaction : IEquatable<ChatReaction>
     /// The users that reacted with an emoji
     /// </summary>
     /// <value>The users that reacted with an emoji</value>
-    [DataMember(Name = "users", EmitDefaultValue = false)]
+    [JsonPropertyName("users")]
     public List<AddressableEntityRef> Users { get; set; }
 
 

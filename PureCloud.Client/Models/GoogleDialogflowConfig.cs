@@ -1,4 +1,3 @@
-using System.Runtime.Serialization;
 using System.Text;
 using System.Text.Json.Serialization;
 
@@ -7,7 +6,7 @@ namespace PureCloud.Client.Models;
 /// <summary>
 /// GoogleDialogflowConfig
 /// </summary>
-[DataContract]
+
 public partial class GoogleDialogflowConfig : IEquatable<GoogleDialogflowConfig>
 {
 
@@ -34,7 +33,7 @@ public partial class GoogleDialogflowConfig : IEquatable<GoogleDialogflowConfig>
     /// The integration identifier with which the assistant will fetch transcriptions and knowledge suggestions.
     /// </summary>
     /// <value>The integration identifier with which the assistant will fetch transcriptions and knowledge suggestions.</value>
-    [DataMember(Name = "integrationId", EmitDefaultValue = false)]
+    [JsonPropertyName("integrationId")]
     public string IntegrationId { get; set; }
 
 
@@ -43,7 +42,7 @@ public partial class GoogleDialogflowConfig : IEquatable<GoogleDialogflowConfig>
     /// The conversation profiles for which the assistant will fetch transcription and knowledge suggestions.
     /// </summary>
     /// <value>The conversation profiles for which the assistant will fetch transcription and knowledge suggestions.</value>
-    [DataMember(Name = "conversationProfiles", EmitDefaultValue = false)]
+    [JsonPropertyName("conversationProfiles")]
     public List<ConversationProfile> ConversationProfiles { get; set; }
 
 

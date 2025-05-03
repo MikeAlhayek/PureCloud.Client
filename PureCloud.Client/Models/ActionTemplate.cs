@@ -7,14 +7,14 @@ namespace PureCloud.Client.Models;
 /// <summary>
 /// ActionTemplate
 /// </summary>
-[DataContract]
+
 public partial class ActionTemplate : IEquatable<ActionTemplate>
 {
     /// <summary>
     /// Media type of action described by the action template.
     /// </summary>
     /// <value>Media type of action described by the action template.</value>
-    [JsonConverter(typeof(JsonStringEnumConverter))]
+    
     public enum MediaTypeEnum
     {
         /// <summary>
@@ -65,7 +65,7 @@ public partial class ActionTemplate : IEquatable<ActionTemplate>
     /// Whether the action template is currently active, inactive or deleted.
     /// </summary>
     /// <value>Whether the action template is currently active, inactive or deleted.</value>
-    [JsonConverter(typeof(JsonStringEnumConverter))]
+    
     public enum StateEnum
     {
         /// <summary>
@@ -98,13 +98,13 @@ public partial class ActionTemplate : IEquatable<ActionTemplate>
     /// Media type of action described by the action template.
     /// </summary>
     /// <value>Media type of action described by the action template.</value>
-    [DataMember(Name = "mediaType", EmitDefaultValue = false)]
+    [JsonPropertyName("mediaType")]
     public MediaTypeEnum? MediaType { get; set; }
     /// <summary>
     /// Whether the action template is currently active, inactive or deleted.
     /// </summary>
     /// <value>Whether the action template is currently active, inactive or deleted.</value>
-    [DataMember(Name = "state", EmitDefaultValue = false)]
+    [JsonPropertyName("state")]
     public StateEnum? State { get; set; }
 
     /// <summary>
@@ -136,7 +136,7 @@ public partial class ActionTemplate : IEquatable<ActionTemplate>
     /// The globally unique identifier for the object.
     /// </summary>
     /// <value>The globally unique identifier for the object.</value>
-    [DataMember(Name = "id", EmitDefaultValue = false)]
+    [JsonPropertyName("id")]
     public string Id { get; private set; }
 
 
@@ -145,7 +145,7 @@ public partial class ActionTemplate : IEquatable<ActionTemplate>
     /// Name of the action template.
     /// </summary>
     /// <value>Name of the action template.</value>
-    [DataMember(Name = "name", EmitDefaultValue = false)]
+    [JsonPropertyName("name")]
     public string Name { get; set; }
 
 
@@ -154,7 +154,7 @@ public partial class ActionTemplate : IEquatable<ActionTemplate>
     /// Description of the action template&#39;s functionality.
     /// </summary>
     /// <value>Description of the action template&#39;s functionality.</value>
-    [DataMember(Name = "description", EmitDefaultValue = false)]
+    [JsonPropertyName("description")]
     public string Description { get; set; }
 
 
@@ -163,7 +163,7 @@ public partial class ActionTemplate : IEquatable<ActionTemplate>
     /// The version of the action template.
     /// </summary>
     /// <value>The version of the action template.</value>
-    [DataMember(Name = "version", EmitDefaultValue = false)]
+    [JsonPropertyName("version")]
     public int? Version { get; private set; }
 
 
@@ -176,7 +176,7 @@ public partial class ActionTemplate : IEquatable<ActionTemplate>
     /// Properties used to configure an action of type content offer
     /// </summary>
     /// <value>Properties used to configure an action of type content offer</value>
-    [DataMember(Name = "contentOffer", EmitDefaultValue = false)]
+    [JsonPropertyName("contentOffer")]
     public ContentOffer ContentOffer { get; set; }
 
 
@@ -185,7 +185,7 @@ public partial class ActionTemplate : IEquatable<ActionTemplate>
     /// The URI for this object
     /// </summary>
     /// <value>The URI for this object</value>
-    [DataMember(Name = "selfUri", EmitDefaultValue = false)]
+    [JsonPropertyName("selfUri")]
     public string SelfUri { get; private set; }
 
 
@@ -194,7 +194,7 @@ public partial class ActionTemplate : IEquatable<ActionTemplate>
     /// Date when action template was created in ISO-8601 format.
     /// </summary>
     /// <value>Date when action template was created in ISO-8601 format.</value>
-    [DataMember(Name = "createdDate", EmitDefaultValue = false)]
+    [JsonPropertyName("createdDate")]
     public DateTime? CreatedDate { get; private set; }
 
 
@@ -203,7 +203,7 @@ public partial class ActionTemplate : IEquatable<ActionTemplate>
     /// Date when action template was last modified in ISO-8601 format.
     /// </summary>
     /// <value>Date when action template was last modified in ISO-8601 format.</value>
-    [DataMember(Name = "modifiedDate", EmitDefaultValue = false)]
+    [JsonPropertyName("modifiedDate")]
     public DateTime? ModifiedDate { get; private set; }
 
 

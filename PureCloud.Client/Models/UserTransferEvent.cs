@@ -7,14 +7,14 @@ namespace PureCloud.Client.Models;
 /// <summary>
 /// UserTransferEvent
 /// </summary>
-[DataContract]
+
 public partial class UserTransferEvent : IEquatable<UserTransferEvent>
 {
     /// <summary>
     /// Indicates the desired type of transfer.
     /// </summary>
     /// <value>Indicates the desired type of transfer.</value>
-    [JsonConverter(typeof(JsonStringEnumConverter))]
+    
     public enum TransferTypeEnum
     {
         /// <summary>
@@ -41,7 +41,7 @@ public partial class UserTransferEvent : IEquatable<UserTransferEvent>
     /// Indicates the desired type of transfer.
     /// </summary>
     /// <value>Indicates the desired type of transfer.</value>
-    [DataMember(Name = "transferType", EmitDefaultValue = false)]
+    [JsonPropertyName("transferType")]
     public TransferTypeEnum? TransferType { get; set; }
 
     /// <summary>
@@ -81,7 +81,7 @@ public partial class UserTransferEvent : IEquatable<UserTransferEvent>
     /// A unique (V4 UUID) eventId for this event
     /// </summary>
     /// <value>A unique (V4 UUID) eventId for this event</value>
-    [DataMember(Name = "eventId", EmitDefaultValue = false)]
+    [JsonPropertyName("eventId")]
     public string EventId { get; set; }
 
 
@@ -90,7 +90,7 @@ public partial class UserTransferEvent : IEquatable<UserTransferEvent>
     /// A Date Time representing the time this event occurred. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z
     /// </summary>
     /// <value>A Date Time representing the time this event occurred. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z</value>
-    [DataMember(Name = "eventDateTime", EmitDefaultValue = false)]
+    [JsonPropertyName("eventDateTime")]
     public DateTime? EventDateTime { get; set; }
 
 
@@ -99,7 +99,7 @@ public partial class UserTransferEvent : IEquatable<UserTransferEvent>
     /// A unique Id (V4 UUID) identifying this conversation
     /// </summary>
     /// <value>A unique Id (V4 UUID) identifying this conversation</value>
-    [DataMember(Name = "conversationId", EmitDefaultValue = false)]
+    [JsonPropertyName("conversationId")]
     public string ConversationId { get; set; }
 
 
@@ -110,7 +110,7 @@ public partial class UserTransferEvent : IEquatable<UserTransferEvent>
     /// The id (V4 UUID) used by the external platform to refer to the transfer in subsequent Transfer events.
     /// </summary>
     /// <value>The id (V4 UUID) used by the external platform to refer to the transfer in subsequent Transfer events.</value>
-    [DataMember(Name = "commandId", EmitDefaultValue = false)]
+    [JsonPropertyName("commandId")]
     public string CommandId { get; set; }
 
 
@@ -119,7 +119,7 @@ public partial class UserTransferEvent : IEquatable<UserTransferEvent>
     /// The id (V4 UUID) of the communication representing the participant that is initiating the transfer.
     /// </summary>
     /// <value>The id (V4 UUID) of the communication representing the participant that is initiating the transfer.</value>
-    [DataMember(Name = "initiatingCommunicationId", EmitDefaultValue = false)]
+    [JsonPropertyName("initiatingCommunicationId")]
     public string InitiatingCommunicationId { get; set; }
 
 
@@ -128,7 +128,7 @@ public partial class UserTransferEvent : IEquatable<UserTransferEvent>
     /// The id (V4 UUID) of the communication that is being transferred away from. In many cases this will be the same as the &#x60;initiatingCommunicationId&#x60;.
     /// </summary>
     /// <value>The id (V4 UUID) of the communication that is being transferred away from. In many cases this will be the same as the &#x60;initiatingCommunicationId&#x60;.</value>
-    [DataMember(Name = "targetCommunicationId", EmitDefaultValue = false)]
+    [JsonPropertyName("targetCommunicationId")]
     public string TargetCommunicationId { get; set; }
 
 
@@ -137,7 +137,7 @@ public partial class UserTransferEvent : IEquatable<UserTransferEvent>
     /// The id (V4 UUID) of the communication that is being transferred.
     /// </summary>
     /// <value>The id (V4 UUID) of the communication that is being transferred.</value>
-    [DataMember(Name = "objectCommunicationId", EmitDefaultValue = false)]
+    [JsonPropertyName("objectCommunicationId")]
     public string ObjectCommunicationId { get; set; }
 
 
@@ -146,7 +146,7 @@ public partial class UserTransferEvent : IEquatable<UserTransferEvent>
     /// The id (V4 UUID) of the desired destination user that the object communication should be transferred to.
     /// </summary>
     /// <value>The id (V4 UUID) of the desired destination user that the object communication should be transferred to.</value>
-    [DataMember(Name = "destinationUserId", EmitDefaultValue = false)]
+    [JsonPropertyName("destinationUserId")]
     public string DestinationUserId { get; set; }
 
 

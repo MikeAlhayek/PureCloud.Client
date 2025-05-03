@@ -1,12 +1,12 @@
-using System.Runtime.Serialization;
 using System.Text;
+using System.Text.Json.Serialization;
 
 namespace PureCloud.Client.Models;
 
 /// <summary>
 /// UserGreetingEventGreeting
 /// </summary>
-[DataContract]
+
 public partial class UserGreetingEventGreeting : IEquatable<UserGreetingEventGreeting>
 {
     /// <summary>
@@ -36,7 +36,7 @@ public partial class UserGreetingEventGreeting : IEquatable<UserGreetingEventGre
     /// <summary>
     /// Gets or Sets Id
     /// </summary>
-    [DataMember(Name = "id", EmitDefaultValue = false)]
+    [JsonPropertyName("id")]
     public string Id { get; set; }
 
 
@@ -44,7 +44,7 @@ public partial class UserGreetingEventGreeting : IEquatable<UserGreetingEventGre
     /// <summary>
     /// Gets or Sets Name
     /// </summary>
-    [DataMember(Name = "name", EmitDefaultValue = false)]
+    [JsonPropertyName("name")]
     public string Name { get; set; }
 
 
@@ -52,7 +52,7 @@ public partial class UserGreetingEventGreeting : IEquatable<UserGreetingEventGre
     /// <summary>
     /// Gets or Sets Type
     /// </summary>
-    [DataMember(Name = "type", EmitDefaultValue = false)]
+    [JsonPropertyName("type")]
     public string Type { get; set; }
 
 
@@ -60,7 +60,7 @@ public partial class UserGreetingEventGreeting : IEquatable<UserGreetingEventGre
     /// <summary>
     /// Gets or Sets OwnerType
     /// </summary>
-    [DataMember(Name = "ownerType", EmitDefaultValue = false)]
+    [JsonPropertyName("ownerType")]
     public string OwnerType { get; set; }
 
 
@@ -68,7 +68,7 @@ public partial class UserGreetingEventGreeting : IEquatable<UserGreetingEventGre
     /// <summary>
     /// Gets or Sets Owner
     /// </summary>
-    [DataMember(Name = "owner", EmitDefaultValue = false)]
+    [JsonPropertyName("owner")]
     public UserGreetingEventGreetingOwner Owner { get; set; }
 
 
@@ -76,7 +76,7 @@ public partial class UserGreetingEventGreeting : IEquatable<UserGreetingEventGre
     /// <summary>
     /// Gets or Sets GreetingAudioFile
     /// </summary>
-    [DataMember(Name = "greetingAudioFile", EmitDefaultValue = false)]
+    [JsonPropertyName("greetingAudioFile")]
     public UserGreetingEventGreetingAudioFile GreetingAudioFile { get; set; }
 
 
@@ -84,7 +84,7 @@ public partial class UserGreetingEventGreeting : IEquatable<UserGreetingEventGre
     /// <summary>
     /// Gets or Sets AudioTTS
     /// </summary>
-    [DataMember(Name = "audioTTS", EmitDefaultValue = false)]
+    [JsonPropertyName("audioTTS")]
     public string AudioTTS { get; set; }
 
 

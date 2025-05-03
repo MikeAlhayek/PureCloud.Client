@@ -1,12 +1,12 @@
-using System.Runtime.Serialization;
 using System.Text;
+using System.Text.Json.Serialization;
 
 namespace PureCloud.Client.Models;
 
 /// <summary>
 /// Learning module cover art response
 /// </summary>
-[DataContract]
+
 public partial class LearningModuleCoverArtResponse : IEquatable<LearningModuleCoverArtResponse>
 {
     /// <summary>
@@ -27,7 +27,7 @@ public partial class LearningModuleCoverArtResponse : IEquatable<LearningModuleC
     /// The globally unique identifier for the object.
     /// </summary>
     /// <value>The globally unique identifier for the object.</value>
-    [DataMember(Name = "id", EmitDefaultValue = false)]
+    [JsonPropertyName("id")]
     public string Id { get; private set; }
 
 
@@ -36,7 +36,7 @@ public partial class LearningModuleCoverArtResponse : IEquatable<LearningModuleC
     /// The URI for this object
     /// </summary>
     /// <value>The URI for this object</value>
-    [DataMember(Name = "selfUri", EmitDefaultValue = false)]
+    [JsonPropertyName("selfUri")]
     public string SelfUri { get; private set; }
 
 
@@ -45,7 +45,7 @@ public partial class LearningModuleCoverArtResponse : IEquatable<LearningModuleC
     /// The URL for the cover art
     /// </summary>
     /// <value>The URL for the cover art</value>
-    [DataMember(Name = "url", EmitDefaultValue = false)]
+    [JsonPropertyName("url")]
     public string Url { get; set; }
 
 
@@ -54,7 +54,7 @@ public partial class LearningModuleCoverArtResponse : IEquatable<LearningModuleC
     /// Thumbnails for the cover art
     /// </summary>
     /// <value>Thumbnails for the cover art</value>
-    [DataMember(Name = "thumbnails", EmitDefaultValue = false)]
+    [JsonPropertyName("thumbnails")]
     public List<LearningCoverArtThumbnail> Thumbnails { get; set; }
 
 

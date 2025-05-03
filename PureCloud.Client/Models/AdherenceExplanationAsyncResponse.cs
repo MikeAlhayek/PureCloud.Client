@@ -1,12 +1,12 @@
-using System.Runtime.Serialization;
 using System.Text;
+using System.Text.Json.Serialization;
 
 namespace PureCloud.Client.Models;
 
 /// <summary>
 /// AdherenceExplanationAsyncResponse
 /// </summary>
-[DataContract]
+
 public partial class AdherenceExplanationAsyncResponse : IEquatable<AdherenceExplanationAsyncResponse>
 {
     /// <summary>
@@ -25,7 +25,7 @@ public partial class AdherenceExplanationAsyncResponse : IEquatable<AdherenceExp
     /// A reference to the job that was started by the request
     /// </summary>
     /// <value>A reference to the job that was started by the request</value>
-    [DataMember(Name = "job", EmitDefaultValue = false)]
+    [JsonPropertyName("job")]
     public AdherenceExplanationJobReference Job { get; set; }
 
 

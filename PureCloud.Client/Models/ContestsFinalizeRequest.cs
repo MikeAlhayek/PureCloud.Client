@@ -7,14 +7,14 @@ namespace PureCloud.Client.Models;
 /// <summary>
 /// ContestsFinalizeRequest
 /// </summary>
-[DataContract]
+
 public partial class ContestsFinalizeRequest : IEquatable<ContestsFinalizeRequest>
 {
     /// <summary>
     /// The Contest finalization status
     /// </summary>
     /// <value>The Contest finalization status</value>
-    [JsonConverter(typeof(JsonStringEnumConverter))]
+    
     public enum StatusEnum
     {
         /// <summary>
@@ -41,7 +41,7 @@ public partial class ContestsFinalizeRequest : IEquatable<ContestsFinalizeReques
     /// The Contest finalization status
     /// </summary>
     /// <value>The Contest finalization status</value>
-    [DataMember(Name = "status", EmitDefaultValue = false)]
+    [JsonPropertyName("status")]
     public StatusEnum? Status { get; set; }
 
     /// <summary>
@@ -71,7 +71,7 @@ public partial class ContestsFinalizeRequest : IEquatable<ContestsFinalizeReques
     /// The Contest finalization winners
     /// </summary>
     /// <value>The Contest finalization winners</value>
-    [DataMember(Name = "winners", EmitDefaultValue = false)]
+    [JsonPropertyName("winners")]
     public List<ContestWinnersRequest> Winners { get; set; }
 
 
@@ -80,7 +80,7 @@ public partial class ContestsFinalizeRequest : IEquatable<ContestsFinalizeReques
     /// The Contest finalization disqualified agents
     /// </summary>
     /// <value>The Contest finalization disqualified agents</value>
-    [DataMember(Name = "disqualifiedAgents", EmitDefaultValue = false)]
+    [JsonPropertyName("disqualifiedAgents")]
     public List<ContestDisqualifiedAgents> DisqualifiedAgents { get; set; }
 
 

@@ -1,12 +1,12 @@
-using System.Runtime.Serialization;
 using System.Text;
+using System.Text.Json.Serialization;
 
 namespace PureCloud.Client.Models;
 
 /// <summary>
 /// BulkResponseResultRelationshipEntityBulkEntityErrorEntity
 /// </summary>
-[DataContract]
+
 public partial class BulkResponseResultRelationshipEntityBulkEntityErrorEntity : IEquatable<BulkResponseResultRelationshipEntityBulkEntityErrorEntity>
 {
     /// <summary>
@@ -31,7 +31,7 @@ public partial class BulkResponseResultRelationshipEntityBulkEntityErrorEntity :
     /// The id associated with this operation. For Bulk Enrich, this id is specified in the request; for all other Bulk endpoints, this id is the id of the affected entity.
     /// </summary>
     /// <value>The id associated with this operation. For Bulk Enrich, this id is specified in the request; for all other Bulk endpoints, this id is the id of the affected entity.</value>
-    [DataMember(Name = "id", EmitDefaultValue = false)]
+    [JsonPropertyName("id")]
     public string Id { get; set; }
 
 
@@ -40,7 +40,7 @@ public partial class BulkResponseResultRelationshipEntityBulkEntityErrorEntity :
     /// Whether the requested operation completed successfully.
     /// </summary>
     /// <value>Whether the requested operation completed successfully.</value>
-    [DataMember(Name = "success", EmitDefaultValue = false)]
+    [JsonPropertyName("success")]
     public bool? Success { get; set; }
 
 
@@ -49,7 +49,7 @@ public partial class BulkResponseResultRelationshipEntityBulkEntityErrorEntity :
     /// The entity which was affected by this Bulk operation. Only returned on success.
     /// </summary>
     /// <value>The entity which was affected by this Bulk operation. Only returned on success.</value>
-    [DataMember(Name = "entity", EmitDefaultValue = false)]
+    [JsonPropertyName("entity")]
     public Relationship Entity { get; set; }
 
 
@@ -58,7 +58,7 @@ public partial class BulkResponseResultRelationshipEntityBulkEntityErrorEntity :
     /// An error describing why this Bulk operation failed. Only returned on failure.
     /// </summary>
     /// <value>An error describing why this Bulk operation failed. Only returned on failure.</value>
-    [DataMember(Name = "error", EmitDefaultValue = false)]
+    [JsonPropertyName("error")]
     public BulkEntityErrorEntity Error { get; set; }
 
 

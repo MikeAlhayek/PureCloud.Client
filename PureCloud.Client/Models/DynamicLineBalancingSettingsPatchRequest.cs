@@ -1,12 +1,12 @@
-using System.Runtime.Serialization;
 using System.Text;
+using System.Text.Json.Serialization;
 
 namespace PureCloud.Client.Models;
 
 /// <summary>
 /// DynamicLineBalancingSettingsPatchRequest
 /// </summary>
-[DataContract]
+
 public partial class DynamicLineBalancingSettingsPatchRequest : IEquatable<DynamicLineBalancingSettingsPatchRequest>
 {
     /// <summary>
@@ -27,7 +27,7 @@ public partial class DynamicLineBalancingSettingsPatchRequest : IEquatable<Dynam
     /// Indicates that this campaign is subject of dynamic line balancing
     /// </summary>
     /// <value>Indicates that this campaign is subject of dynamic line balancing</value>
-    [DataMember(Name = "enabled", EmitDefaultValue = false)]
+    [JsonPropertyName("enabled")]
     public bool? Enabled { get; set; }
 
 
@@ -36,7 +36,7 @@ public partial class DynamicLineBalancingSettingsPatchRequest : IEquatable<Dynam
     /// Relative weight of this campaign in dynamic line balancing
     /// </summary>
     /// <value>Relative weight of this campaign in dynamic line balancing</value>
-    [DataMember(Name = "relativeWeight", EmitDefaultValue = false)]
+    [JsonPropertyName("relativeWeight")]
     public int? RelativeWeight { get; set; }
 
 

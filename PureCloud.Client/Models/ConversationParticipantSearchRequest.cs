@@ -7,14 +7,14 @@ namespace PureCloud.Client.Models;
 /// <summary>
 /// ConversationParticipantSearchRequest
 /// </summary>
-[DataContract]
+
 public partial class ConversationParticipantSearchRequest : IEquatable<ConversationParticipantSearchRequest>
 {
     /// <summary>
     /// The sort order for results
     /// </summary>
     /// <value>The sort order for results</value>
-    [JsonConverter(typeof(JsonStringEnumConverter))]
+    
     public enum SortOrderEnum
     {
         /// <summary>
@@ -47,7 +47,7 @@ public partial class ConversationParticipantSearchRequest : IEquatable<Conversat
     /// The sort order for results
     /// </summary>
     /// <value>The sort order for results</value>
-    [DataMember(Name = "sortOrder", EmitDefaultValue = false)]
+    [JsonPropertyName("sortOrder")]
     public SortOrderEnum? SortOrder { get; set; }
     /// <summary>
     /// Initializes a new instance of the <see cref="ConversationParticipantSearchRequest" /> class.
@@ -77,7 +77,7 @@ public partial class ConversationParticipantSearchRequest : IEquatable<Conversat
     /// The field in the resource that you want to sort the results by
     /// </summary>
     /// <value>The field in the resource that you want to sort the results by</value>
-    [DataMember(Name = "sortBy", EmitDefaultValue = false)]
+    [JsonPropertyName("sortBy")]
     public string SortBy { get; set; }
 
 
@@ -86,7 +86,7 @@ public partial class ConversationParticipantSearchRequest : IEquatable<Conversat
     /// Multi-value sort order, list of multiple sort values
     /// </summary>
     /// <value>Multi-value sort order, list of multiple sort values</value>
-    [DataMember(Name = "sort", EmitDefaultValue = false)]
+    [JsonPropertyName("sort")]
     public List<SearchSort> Sort { get; set; }
 
 
@@ -94,7 +94,7 @@ public partial class ConversationParticipantSearchRequest : IEquatable<Conversat
     /// <summary>
     /// Gets or Sets ReturnFields
     /// </summary>
-    [DataMember(Name = "returnFields", EmitDefaultValue = false)]
+    [JsonPropertyName("returnFields")]
     public List<string> ReturnFields { get; set; }
 
 
@@ -102,7 +102,7 @@ public partial class ConversationParticipantSearchRequest : IEquatable<Conversat
     /// <summary>
     /// Gets or Sets Query
     /// </summary>
-    [DataMember(Name = "query", EmitDefaultValue = false)]
+    [JsonPropertyName("query")]
     public List<ConversationParticipantSearchCriteria> Query { get; set; }
 
 
@@ -110,7 +110,7 @@ public partial class ConversationParticipantSearchRequest : IEquatable<Conversat
     /// <summary>
     /// Gets or Sets Cursor
     /// </summary>
-    [DataMember(Name = "cursor", EmitDefaultValue = false)]
+    [JsonPropertyName("cursor")]
     public string Cursor { get; set; }
 
 

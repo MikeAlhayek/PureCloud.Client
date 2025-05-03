@@ -1,4 +1,3 @@
-using System.Runtime.Serialization;
 using System.Text;
 using System.Text.Json.Serialization;
 
@@ -7,7 +6,7 @@ namespace PureCloud.Client.Models;
 /// <summary>
 /// Supported content profile for inbound and outbound messages
 /// </summary>
-[DataContract]
+
 public partial class SupportedContent : IEquatable<SupportedContent>
 {
 
@@ -34,7 +33,7 @@ public partial class SupportedContent : IEquatable<SupportedContent>
     /// A unique supported content Id.
     /// </summary>
     /// <value>A unique supported content Id.</value>
-    [DataMember(Name = "id", EmitDefaultValue = false)]
+    [JsonPropertyName("id")]
     public string Id { get; private set; }
 
 
@@ -43,7 +42,7 @@ public partial class SupportedContent : IEquatable<SupportedContent>
     /// The name of the supported content profile
     /// </summary>
     /// <value>The name of the supported content profile</value>
-    [DataMember(Name = "name", EmitDefaultValue = false)]
+    [JsonPropertyName("name")]
     public string Name { get; set; }
 
 
@@ -52,7 +51,7 @@ public partial class SupportedContent : IEquatable<SupportedContent>
     /// Date this supported content profile was created. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z
     /// </summary>
     /// <value>Date this supported content profile was created. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z</value>
-    [DataMember(Name = "dateCreated", EmitDefaultValue = false)]
+    [JsonPropertyName("dateCreated")]
     public DateTime? DateCreated { get; private set; }
 
 
@@ -61,7 +60,7 @@ public partial class SupportedContent : IEquatable<SupportedContent>
     /// Date this supported content profile was modified. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z
     /// </summary>
     /// <value>Date this supported content profile was modified. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z</value>
-    [DataMember(Name = "dateModified", EmitDefaultValue = false)]
+    [JsonPropertyName("dateModified")]
     public DateTime? DateModified { get; private set; }
 
 
@@ -70,7 +69,7 @@ public partial class SupportedContent : IEquatable<SupportedContent>
     /// User reference that created this supported content profile
     /// </summary>
     /// <value>User reference that created this supported content profile</value>
-    [DataMember(Name = "createdBy", EmitDefaultValue = false)]
+    [JsonPropertyName("createdBy")]
     public DomainEntityRef CreatedBy { get; private set; }
 
 
@@ -79,7 +78,7 @@ public partial class SupportedContent : IEquatable<SupportedContent>
     /// User reference that modified this supported content profile
     /// </summary>
     /// <value>User reference that modified this supported content profile</value>
-    [DataMember(Name = "modifiedBy", EmitDefaultValue = false)]
+    [JsonPropertyName("modifiedBy")]
     public DomainEntityRef ModifiedBy { get; private set; }
 
 
@@ -88,7 +87,7 @@ public partial class SupportedContent : IEquatable<SupportedContent>
     /// Version number
     /// </summary>
     /// <value>Version number</value>
-    [DataMember(Name = "version", EmitDefaultValue = false)]
+    [JsonPropertyName("version")]
     public int? Version { get; private set; }
 
 
@@ -97,7 +96,7 @@ public partial class SupportedContent : IEquatable<SupportedContent>
     /// Defines the allowable media that may be accepted for an inbound message or to be sent in an outbound message. The following is an example of allowing all inbound media, and for outbound all images and only mpeg video: {   \&quot;mediaTypes\&quot;: {     \&quot;allow\&quot;: {       \&quot;inbound\&quot;: [{\&quot;type\&quot;: \&quot;*_/_*\&quot;}],       \&quot;outbound\&quot;: [{\&quot;type\&quot;: \&quot;image/_*\&quot;}, {\&quot;type\&quot;: \&quot;video/mpeg\&quot;}]     }   } }
     /// </summary>
     /// <value>Defines the allowable media that may be accepted for an inbound message or to be sent in an outbound message. The following is an example of allowing all inbound media, and for outbound all images and only mpeg video: {   \&quot;mediaTypes\&quot;: {     \&quot;allow\&quot;: {       \&quot;inbound\&quot;: [{\&quot;type\&quot;: \&quot;*_/_*\&quot;}],       \&quot;outbound\&quot;: [{\&quot;type\&quot;: \&quot;image/_*\&quot;}, {\&quot;type\&quot;: \&quot;video/mpeg\&quot;}]     }   } }</value>
-    [DataMember(Name = "mediaTypes", EmitDefaultValue = false)]
+    [JsonPropertyName("mediaTypes")]
     public MediaTypes MediaTypes { get; set; }
 
 
@@ -106,7 +105,7 @@ public partial class SupportedContent : IEquatable<SupportedContent>
     /// The URI for this object
     /// </summary>
     /// <value>The URI for this object</value>
-    [DataMember(Name = "selfUri", EmitDefaultValue = false)]
+    [JsonPropertyName("selfUri")]
     public string SelfUri { get; private set; }
 
 

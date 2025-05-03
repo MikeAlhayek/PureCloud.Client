@@ -7,13 +7,13 @@ namespace PureCloud.Client.Models;
 /// <summary>
 /// ReportingTurnAction
 /// </summary>
-[DataContract]
+
 public partial class ReportingTurnAction : IEquatable<ReportingTurnAction>
 {
     /// <summary>
     /// Gets or Sets ActionType
     /// </summary>
-    [JsonConverter(typeof(JsonStringEnumConverter))]
+    
     public enum ActionTypeEnum
     {
         /// <summary>
@@ -411,7 +411,7 @@ public partial class ReportingTurnAction : IEquatable<ReportingTurnAction>
     /// <summary>
     /// Gets or Sets ActionType
     /// </summary>
-    [DataMember(Name = "actionType", EmitDefaultValue = false)]
+    [JsonPropertyName("actionType")]
     public ActionTypeEnum? ActionType { get; set; }
     /// <summary>
     /// Initializes a new instance of the <see cref="ReportingTurnAction" /> class.
@@ -435,7 +435,7 @@ public partial class ReportingTurnAction : IEquatable<ReportingTurnAction>
     /// The ID of the action in the bot flow.
     /// </summary>
     /// <value>The ID of the action in the bot flow.</value>
-    [DataMember(Name = "actionId", EmitDefaultValue = false)]
+    [JsonPropertyName("actionId")]
     public string ActionId { get; set; }
 
 
@@ -444,7 +444,7 @@ public partial class ReportingTurnAction : IEquatable<ReportingTurnAction>
     /// The name of the action in the bot flow.
     /// </summary>
     /// <value>The name of the action in the bot flow.</value>
-    [DataMember(Name = "actionName", EmitDefaultValue = false)]
+    [JsonPropertyName("actionName")]
     public string ActionName { get; set; }
 
 
@@ -453,7 +453,7 @@ public partial class ReportingTurnAction : IEquatable<ReportingTurnAction>
     /// The number of the action in the bot flow.
     /// </summary>
     /// <value>The number of the action in the bot flow.</value>
-    [DataMember(Name = "actionNumber", EmitDefaultValue = false)]
+    [JsonPropertyName("actionNumber")]
     public int? ActionNumber { get; set; }
 
 

@@ -7,14 +7,14 @@ namespace PureCloud.Client.Models;
 /// <summary>
 /// BuAsyncAgentSchedulesSearchResponse
 /// </summary>
-[DataContract]
+
 public partial class BuAsyncAgentSchedulesSearchResponse : IEquatable<BuAsyncAgentSchedulesSearchResponse>
 {
     /// <summary>
     /// The status of the operation
     /// </summary>
     /// <value>The status of the operation</value>
-    [JsonConverter(typeof(JsonStringEnumConverter))]
+    
     public enum StatusEnum
     {
         /// <summary>
@@ -53,7 +53,7 @@ public partial class BuAsyncAgentSchedulesSearchResponse : IEquatable<BuAsyncAge
     /// The status of the operation
     /// </summary>
     /// <value>The status of the operation</value>
-    [DataMember(Name = "status", EmitDefaultValue = false)]
+    [JsonPropertyName("status")]
     public StatusEnum? Status { get; set; }
     /// <summary>
     /// Initializes a new instance of the <see cref="BuAsyncAgentSchedulesSearchResponse" /> class.
@@ -81,7 +81,7 @@ public partial class BuAsyncAgentSchedulesSearchResponse : IEquatable<BuAsyncAge
     /// The ID for the operation
     /// </summary>
     /// <value>The ID for the operation</value>
-    [DataMember(Name = "operationId", EmitDefaultValue = false)]
+    [JsonPropertyName("operationId")]
     public string OperationId { get; set; }
 
 
@@ -90,7 +90,7 @@ public partial class BuAsyncAgentSchedulesSearchResponse : IEquatable<BuAsyncAge
     /// The result of the operation.  Null unless status &#x3D;&#x3D; Complete
     /// </summary>
     /// <value>The result of the operation.  Null unless status &#x3D;&#x3D; Complete</value>
-    [DataMember(Name = "result", EmitDefaultValue = false)]
+    [JsonPropertyName("result")]
     public BuAgentSchedulesSearchResponse Result { get; set; }
 
 
@@ -99,7 +99,7 @@ public partial class BuAsyncAgentSchedulesSearchResponse : IEquatable<BuAsyncAge
     /// Percent progress for the operation
     /// </summary>
     /// <value>Percent progress for the operation</value>
-    [DataMember(Name = "progress", EmitDefaultValue = false)]
+    [JsonPropertyName("progress")]
     public int? Progress { get; set; }
 
 
@@ -108,7 +108,7 @@ public partial class BuAsyncAgentSchedulesSearchResponse : IEquatable<BuAsyncAge
     /// The URL from which to download the result if it is too large to pass directly
     /// </summary>
     /// <value>The URL from which to download the result if it is too large to pass directly</value>
-    [DataMember(Name = "downloadUrl", EmitDefaultValue = false)]
+    [JsonPropertyName("downloadUrl")]
     public string DownloadUrl { get; set; }
 
 

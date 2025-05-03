@@ -7,14 +7,14 @@ namespace PureCloud.Client.Models;
 /// <summary>
 /// RoutingSkill
 /// </summary>
-[DataContract]
+
 public partial class RoutingSkill : IEquatable<RoutingSkill>
 {
     /// <summary>
     /// The current state for this skill.
     /// </summary>
     /// <value>The current state for this skill.</value>
-    [JsonConverter(typeof(JsonStringEnumConverter))]
+    
     public enum StateEnum
     {
         /// <summary>
@@ -47,7 +47,7 @@ public partial class RoutingSkill : IEquatable<RoutingSkill>
     /// The current state for this skill.
     /// </summary>
     /// <value>The current state for this skill.</value>
-    [DataMember(Name = "state", EmitDefaultValue = false)]
+    [JsonPropertyName("state")]
     public StateEnum? State { get; private set; }
 
     /// <summary>
@@ -71,7 +71,7 @@ public partial class RoutingSkill : IEquatable<RoutingSkill>
     /// The globally unique identifier for the object.
     /// </summary>
     /// <value>The globally unique identifier for the object.</value>
-    [DataMember(Name = "id", EmitDefaultValue = false)]
+    [JsonPropertyName("id")]
     public string Id { get; private set; }
 
 
@@ -80,7 +80,7 @@ public partial class RoutingSkill : IEquatable<RoutingSkill>
     /// The name of the skill.
     /// </summary>
     /// <value>The name of the skill.</value>
-    [DataMember(Name = "name", EmitDefaultValue = false)]
+    [JsonPropertyName("name")]
     public string Name { get; set; }
 
 
@@ -89,7 +89,7 @@ public partial class RoutingSkill : IEquatable<RoutingSkill>
     /// Date last modified. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z
     /// </summary>
     /// <value>Date last modified. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z</value>
-    [DataMember(Name = "dateModified", EmitDefaultValue = false)]
+    [JsonPropertyName("dateModified")]
     public DateTime? DateModified { get; private set; }
 
 
@@ -100,7 +100,7 @@ public partial class RoutingSkill : IEquatable<RoutingSkill>
     /// Required when updating. Version must be the current version. Only the system can assign version.
     /// </summary>
     /// <value>Required when updating. Version must be the current version. Only the system can assign version.</value>
-    [DataMember(Name = "version", EmitDefaultValue = false)]
+    [JsonPropertyName("version")]
     public string Version { get; private set; }
 
 
@@ -109,7 +109,7 @@ public partial class RoutingSkill : IEquatable<RoutingSkill>
     /// The URI for this object
     /// </summary>
     /// <value>The URI for this object</value>
-    [DataMember(Name = "selfUri", EmitDefaultValue = false)]
+    [JsonPropertyName("selfUri")]
     public string SelfUri { get; private set; }
 
 

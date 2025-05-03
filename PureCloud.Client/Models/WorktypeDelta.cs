@@ -1,12 +1,12 @@
-using System.Runtime.Serialization;
 using System.Text;
+using System.Text.Json.Serialization;
 
 namespace PureCloud.Client.Models;
 
 /// <summary>
 /// WorktypeDelta
 /// </summary>
-[DataContract]
+
 public partial class WorktypeDelta : IEquatable<WorktypeDelta>
 {
     /// <summary>
@@ -62,7 +62,7 @@ public partial class WorktypeDelta : IEquatable<WorktypeDelta>
     /// <summary>
     /// Gets or Sets Name
     /// </summary>
-    [DataMember(Name = "name", EmitDefaultValue = false)]
+    [JsonPropertyName("name")]
     public WorkitemsAttributeChangeString Name { get; set; }
 
 
@@ -70,7 +70,7 @@ public partial class WorktypeDelta : IEquatable<WorktypeDelta>
     /// <summary>
     /// Gets or Sets Description
     /// </summary>
-    [DataMember(Name = "description", EmitDefaultValue = false)]
+    [JsonPropertyName("description")]
     public WorkitemsAttributeChangeString Description { get; set; }
 
 
@@ -78,7 +78,7 @@ public partial class WorktypeDelta : IEquatable<WorktypeDelta>
     /// <summary>
     /// Gets or Sets Statuses
     /// </summary>
-    [DataMember(Name = "statuses", EmitDefaultValue = false)]
+    [JsonPropertyName("statuses")]
     public WorkitemsAttributeChangeList Statuses { get; set; }
 
 
@@ -86,7 +86,7 @@ public partial class WorktypeDelta : IEquatable<WorktypeDelta>
     /// <summary>
     /// Gets or Sets DefaultWorkbinId
     /// </summary>
-    [DataMember(Name = "defaultWorkbinId", EmitDefaultValue = false)]
+    [JsonPropertyName("defaultWorkbinId")]
     public WorkitemsAttributeChangeString DefaultWorkbinId { get; set; }
 
 
@@ -94,7 +94,7 @@ public partial class WorktypeDelta : IEquatable<WorktypeDelta>
     /// <summary>
     /// Gets or Sets DefaultDurationSeconds
     /// </summary>
-    [DataMember(Name = "defaultDurationSeconds", EmitDefaultValue = false)]
+    [JsonPropertyName("defaultDurationSeconds")]
     public WorkitemsAttributeChangeInteger DefaultDurationSeconds { get; set; }
 
 
@@ -102,7 +102,7 @@ public partial class WorktypeDelta : IEquatable<WorktypeDelta>
     /// <summary>
     /// Gets or Sets DefaultExpirationSeconds
     /// </summary>
-    [DataMember(Name = "defaultExpirationSeconds", EmitDefaultValue = false)]
+    [JsonPropertyName("defaultExpirationSeconds")]
     public WorkitemsAttributeChangeInteger DefaultExpirationSeconds { get; set; }
 
 
@@ -110,7 +110,7 @@ public partial class WorktypeDelta : IEquatable<WorktypeDelta>
     /// <summary>
     /// Gets or Sets DefaultDueDurationSeconds
     /// </summary>
-    [DataMember(Name = "defaultDueDurationSeconds", EmitDefaultValue = false)]
+    [JsonPropertyName("defaultDueDurationSeconds")]
     public WorkitemsAttributeChangeInteger DefaultDueDurationSeconds { get; set; }
 
 
@@ -118,7 +118,7 @@ public partial class WorktypeDelta : IEquatable<WorktypeDelta>
     /// <summary>
     /// Gets or Sets DefaultPriority
     /// </summary>
-    [DataMember(Name = "defaultPriority", EmitDefaultValue = false)]
+    [JsonPropertyName("defaultPriority")]
     public WorkitemsAttributeChangeInteger DefaultPriority { get; set; }
 
 
@@ -126,7 +126,7 @@ public partial class WorktypeDelta : IEquatable<WorktypeDelta>
     /// <summary>
     /// Gets or Sets DefaultSkillIds
     /// </summary>
-    [DataMember(Name = "defaultSkillIds", EmitDefaultValue = false)]
+    [JsonPropertyName("defaultSkillIds")]
     public WorkitemsAttributeChangeList DefaultSkillIds { get; set; }
 
 
@@ -134,7 +134,7 @@ public partial class WorktypeDelta : IEquatable<WorktypeDelta>
     /// <summary>
     /// Gets or Sets DefaultStatusId
     /// </summary>
-    [DataMember(Name = "defaultStatusId", EmitDefaultValue = false)]
+    [JsonPropertyName("defaultStatusId")]
     public WorkitemsAttributeChangeString DefaultStatusId { get; set; }
 
 
@@ -142,7 +142,7 @@ public partial class WorktypeDelta : IEquatable<WorktypeDelta>
     /// <summary>
     /// Gets or Sets DefaultLanguageId
     /// </summary>
-    [DataMember(Name = "defaultLanguageId", EmitDefaultValue = false)]
+    [JsonPropertyName("defaultLanguageId")]
     public WorkitemsAttributeChangeString DefaultLanguageId { get; set; }
 
 
@@ -150,7 +150,7 @@ public partial class WorktypeDelta : IEquatable<WorktypeDelta>
     /// <summary>
     /// Gets or Sets DefaultTtlSeconds
     /// </summary>
-    [DataMember(Name = "defaultTtlSeconds", EmitDefaultValue = false)]
+    [JsonPropertyName("defaultTtlSeconds")]
     public WorkitemsAttributeChangeInteger DefaultTtlSeconds { get; set; }
 
 
@@ -158,7 +158,7 @@ public partial class WorktypeDelta : IEquatable<WorktypeDelta>
     /// <summary>
     /// Gets or Sets AssignmentEnabled
     /// </summary>
-    [DataMember(Name = "assignmentEnabled", EmitDefaultValue = false)]
+    [JsonPropertyName("assignmentEnabled")]
     public WorkitemsAttributeChangeBoolean AssignmentEnabled { get; set; }
 
 
@@ -166,7 +166,7 @@ public partial class WorktypeDelta : IEquatable<WorktypeDelta>
     /// <summary>
     /// Gets or Sets DefaultQueueId
     /// </summary>
-    [DataMember(Name = "defaultQueueId", EmitDefaultValue = false)]
+    [JsonPropertyName("defaultQueueId")]
     public WorkitemsAttributeChangeString DefaultQueueId { get; set; }
 
 
@@ -174,7 +174,7 @@ public partial class WorktypeDelta : IEquatable<WorktypeDelta>
     /// <summary>
     /// Gets or Sets SchemaId
     /// </summary>
-    [DataMember(Name = "schemaId", EmitDefaultValue = false)]
+    [JsonPropertyName("schemaId")]
     public WorkitemsAttributeChangeString SchemaId { get; set; }
 
 
@@ -182,7 +182,7 @@ public partial class WorktypeDelta : IEquatable<WorktypeDelta>
     /// <summary>
     /// Gets or Sets SchemaVersion
     /// </summary>
-    [DataMember(Name = "schemaVersion", EmitDefaultValue = false)]
+    [JsonPropertyName("schemaVersion")]
     public WorkitemsAttributeChangeString SchemaVersion { get; set; }
 
 
@@ -190,7 +190,7 @@ public partial class WorktypeDelta : IEquatable<WorktypeDelta>
     /// <summary>
     /// Gets or Sets ServiceLevelTarget
     /// </summary>
-    [DataMember(Name = "serviceLevelTarget", EmitDefaultValue = false)]
+    [JsonPropertyName("serviceLevelTarget")]
     public WorkitemsAttributeChangeInteger ServiceLevelTarget { get; set; }
 
 
@@ -198,7 +198,7 @@ public partial class WorktypeDelta : IEquatable<WorktypeDelta>
     /// <summary>
     /// Gets or Sets DateModified
     /// </summary>
-    [DataMember(Name = "dateModified", EmitDefaultValue = false)]
+    [JsonPropertyName("dateModified")]
     public WorkitemsAttributeChangeInstant DateModified { get; set; }
 
 
@@ -206,7 +206,7 @@ public partial class WorktypeDelta : IEquatable<WorktypeDelta>
     /// <summary>
     /// Gets or Sets ModifiedBy
     /// </summary>
-    [DataMember(Name = "modifiedBy", EmitDefaultValue = false)]
+    [JsonPropertyName("modifiedBy")]
     public WorkitemsAttributeChangeString ModifiedBy { get; set; }
 
 
@@ -214,7 +214,7 @@ public partial class WorktypeDelta : IEquatable<WorktypeDelta>
     /// <summary>
     /// Gets or Sets DefaultScriptId
     /// </summary>
-    [DataMember(Name = "defaultScriptId", EmitDefaultValue = false)]
+    [JsonPropertyName("defaultScriptId")]
     public WorkitemsAttributeChangeString DefaultScriptId { get; set; }
 
 

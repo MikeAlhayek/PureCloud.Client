@@ -7,14 +7,14 @@ namespace PureCloud.Client.Models;
 /// <summary>
 /// StaCategory
 /// </summary>
-[DataContract]
+
 public partial class StaCategory : IEquatable<StaCategory>
 {
     /// <summary>
     /// The type of interaction the category will apply to
     /// </summary>
     /// <value>The type of interaction the category will apply to</value>
-    [JsonConverter(typeof(JsonStringEnumConverter))]
+    
     public enum InteractionTypeEnum
     {
         /// <summary>
@@ -47,7 +47,7 @@ public partial class StaCategory : IEquatable<StaCategory>
     /// The type of interaction the category will apply to
     /// </summary>
     /// <value>The type of interaction the category will apply to</value>
-    [DataMember(Name = "interactionType", EmitDefaultValue = false)]
+    [JsonPropertyName("interactionType")]
     public InteractionTypeEnum? InteractionType { get; set; }
 
     /// <summary>
@@ -85,7 +85,7 @@ public partial class StaCategory : IEquatable<StaCategory>
     /// The globally unique identifier for the object.
     /// </summary>
     /// <value>The globally unique identifier for the object.</value>
-    [DataMember(Name = "id", EmitDefaultValue = false)]
+    [JsonPropertyName("id")]
     public string Id { get; private set; }
 
 
@@ -93,7 +93,7 @@ public partial class StaCategory : IEquatable<StaCategory>
     /// <summary>
     /// Gets or Sets Name
     /// </summary>
-    [DataMember(Name = "name", EmitDefaultValue = false)]
+    [JsonPropertyName("name")]
     public string Name { get; set; }
 
 
@@ -102,7 +102,7 @@ public partial class StaCategory : IEquatable<StaCategory>
     /// The description of the category
     /// </summary>
     /// <value>The description of the category</value>
-    [DataMember(Name = "description", EmitDefaultValue = false)]
+    [JsonPropertyName("description")]
     public string Description { get; set; }
 
 
@@ -113,7 +113,7 @@ public partial class StaCategory : IEquatable<StaCategory>
     /// A collection of conditions joined together by logical operation to provide more refined filtering of conversations
     /// </summary>
     /// <value>A collection of conditions joined together by logical operation to provide more refined filtering of conversations</value>
-    [DataMember(Name = "criteria", EmitDefaultValue = false)]
+    [JsonPropertyName("criteria")]
     public Operand Criteria { get; set; }
 
 
@@ -122,7 +122,7 @@ public partial class StaCategory : IEquatable<StaCategory>
     /// The user who created the record
     /// </summary>
     /// <value>The user who created the record</value>
-    [DataMember(Name = "createdBy", EmitDefaultValue = false)]
+    [JsonPropertyName("createdBy")]
     public AddressableEntityRef CreatedBy { get; set; }
 
 
@@ -131,7 +131,7 @@ public partial class StaCategory : IEquatable<StaCategory>
     /// The creation date of the record. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z
     /// </summary>
     /// <value>The creation date of the record. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z</value>
-    [DataMember(Name = "dateCreated", EmitDefaultValue = false)]
+    [JsonPropertyName("dateCreated")]
     public DateTime? DateCreated { get; set; }
 
 
@@ -140,7 +140,7 @@ public partial class StaCategory : IEquatable<StaCategory>
     /// The user who last modified the record
     /// </summary>
     /// <value>The user who last modified the record</value>
-    [DataMember(Name = "modifiedBy", EmitDefaultValue = false)]
+    [JsonPropertyName("modifiedBy")]
     public AddressableEntityRef ModifiedBy { get; set; }
 
 
@@ -149,7 +149,7 @@ public partial class StaCategory : IEquatable<StaCategory>
     /// The last modified date of the record. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z
     /// </summary>
     /// <value>The last modified date of the record. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z</value>
-    [DataMember(Name = "dateModified", EmitDefaultValue = false)]
+    [JsonPropertyName("dateModified")]
     public DateTime? DateModified { get; set; }
 
 
@@ -158,7 +158,7 @@ public partial class StaCategory : IEquatable<StaCategory>
     /// The URI for this object
     /// </summary>
     /// <value>The URI for this object</value>
-    [DataMember(Name = "selfUri", EmitDefaultValue = false)]
+    [JsonPropertyName("selfUri")]
     public string SelfUri { get; private set; }
 
 

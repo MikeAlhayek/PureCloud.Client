@@ -1,12 +1,12 @@
-using System.Runtime.Serialization;
 using System.Text;
+using System.Text.Json.Serialization;
 
 namespace PureCloud.Client.Models;
 
 /// <summary>
 /// SegmentEstimateCount
 /// </summary>
-[DataContract]
+
 public partial class SegmentEstimateCount : IEquatable<SegmentEstimateCount>
 {
     /// <summary>
@@ -27,7 +27,7 @@ public partial class SegmentEstimateCount : IEquatable<SegmentEstimateCount>
     /// ID of Segment.
     /// </summary>
     /// <value>ID of Segment.</value>
-    [DataMember(Name = "segmentId", EmitDefaultValue = false)]
+    [JsonPropertyName("segmentId")]
     public string SegmentId { get; set; }
 
 
@@ -36,7 +36,7 @@ public partial class SegmentEstimateCount : IEquatable<SegmentEstimateCount>
     /// Estimate count per segment.
     /// </summary>
     /// <value>Estimate count per segment.</value>
-    [DataMember(Name = "count", EmitDefaultValue = false)]
+    [JsonPropertyName("count")]
     public int? Count { get; set; }
 
 

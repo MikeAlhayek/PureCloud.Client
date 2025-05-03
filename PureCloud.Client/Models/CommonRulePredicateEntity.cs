@@ -7,14 +7,14 @@ namespace PureCloud.Client.Models;
 /// <summary>
 /// CommonRulePredicateEntity
 /// </summary>
-[DataContract]
+
 public partial class CommonRulePredicateEntity : IEquatable<CommonRulePredicateEntity>
 {
     /// <summary>
     /// Specifies the type of entity being evaluated
     /// </summary>
     /// <value>Specifies the type of entity being evaluated</value>
-    [JsonConverter(typeof(JsonStringEnumConverter))]
+    
     public enum EntityTypeEnum
     {
         /// <summary>
@@ -59,7 +59,7 @@ public partial class CommonRulePredicateEntity : IEquatable<CommonRulePredicateE
     /// Specifies the type of entity being evaluated
     /// </summary>
     /// <value>Specifies the type of entity being evaluated</value>
-    [DataMember(Name = "entityType", EmitDefaultValue = false)]
+    [JsonPropertyName("entityType")]
     public EntityTypeEnum? EntityType { get; set; }
 
     /// <summary>
@@ -93,7 +93,7 @@ public partial class CommonRulePredicateEntity : IEquatable<CommonRulePredicateE
     /// User id of the entity being monitored
     /// </summary>
     /// <value>User id of the entity being monitored</value>
-    [DataMember(Name = "user", EmitDefaultValue = false)]
+    [JsonPropertyName("user")]
     public AddressableEntityRef User { get; set; }
 
 
@@ -102,7 +102,7 @@ public partial class CommonRulePredicateEntity : IEquatable<CommonRulePredicateE
     /// Group id of the entity being monitored
     /// </summary>
     /// <value>Group id of the entity being monitored</value>
-    [DataMember(Name = "group", EmitDefaultValue = false)]
+    [JsonPropertyName("group")]
     public AddressableEntityRef Group { get; set; }
 
 
@@ -111,7 +111,7 @@ public partial class CommonRulePredicateEntity : IEquatable<CommonRulePredicateE
     /// Queue id of the entity being monitored
     /// </summary>
     /// <value>Queue id of the entity being monitored</value>
-    [DataMember(Name = "queue", EmitDefaultValue = false)]
+    [JsonPropertyName("queue")]
     public AddressableEntityRef Queue { get; set; }
 
 
@@ -120,7 +120,7 @@ public partial class CommonRulePredicateEntity : IEquatable<CommonRulePredicateE
     /// Team id of the entity being monitored
     /// </summary>
     /// <value>Team id of the entity being monitored</value>
-    [DataMember(Name = "team", EmitDefaultValue = false)]
+    [JsonPropertyName("team")]
     public AddressableEntityRef Team { get; set; }
 
 

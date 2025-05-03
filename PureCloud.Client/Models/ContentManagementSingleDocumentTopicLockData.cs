@@ -1,12 +1,12 @@
-using System.Runtime.Serialization;
 using System.Text;
+using System.Text.Json.Serialization;
 
 namespace PureCloud.Client.Models;
 
 /// <summary>
 /// ContentManagementSingleDocumentTopicLockData
 /// </summary>
-[DataContract]
+
 public partial class ContentManagementSingleDocumentTopicLockData : IEquatable<ContentManagementSingleDocumentTopicLockData>
 {
     /// <summary>
@@ -28,7 +28,7 @@ public partial class ContentManagementSingleDocumentTopicLockData : IEquatable<C
     /// <summary>
     /// Gets or Sets LockedBy
     /// </summary>
-    [DataMember(Name = "lockedBy", EmitDefaultValue = false)]
+    [JsonPropertyName("lockedBy")]
     public ContentManagementSingleDocumentTopicUserData LockedBy { get; set; }
 
 
@@ -36,7 +36,7 @@ public partial class ContentManagementSingleDocumentTopicLockData : IEquatable<C
     /// <summary>
     /// Gets or Sets DateCreated
     /// </summary>
-    [DataMember(Name = "dateCreated", EmitDefaultValue = false)]
+    [JsonPropertyName("dateCreated")]
     public DateTime? DateCreated { get; set; }
 
 
@@ -44,7 +44,7 @@ public partial class ContentManagementSingleDocumentTopicLockData : IEquatable<C
     /// <summary>
     /// Gets or Sets DateExpires
     /// </summary>
-    [DataMember(Name = "dateExpires", EmitDefaultValue = false)]
+    [JsonPropertyName("dateExpires")]
     public DateTime? DateExpires { get; set; }
 
 

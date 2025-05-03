@@ -1,4 +1,3 @@
-using System.Runtime.Serialization;
 using System.Text;
 using System.Text.Json.Serialization;
 
@@ -7,7 +6,7 @@ namespace PureCloud.Client.Models;
 /// <summary>
 /// BuImportAgentScheduleUploadSchema
 /// </summary>
-[DataContract]
+
 public partial class BuImportAgentScheduleUploadSchema : IEquatable<BuImportAgentScheduleUploadSchema>
 {
 
@@ -40,7 +39,7 @@ public partial class BuImportAgentScheduleUploadSchema : IEquatable<BuImportAgen
     /// The ID of the user to whom this agent schedule applies
     /// </summary>
     /// <value>The ID of the user to whom this agent schedule applies</value>
-    [DataMember(Name = "userId", EmitDefaultValue = false)]
+    [JsonPropertyName("userId")]
     public string UserId { get; set; }
 
 
@@ -49,7 +48,7 @@ public partial class BuImportAgentScheduleUploadSchema : IEquatable<BuImportAgen
     /// The ID of the work plan for this user.  Mutually exclusive with workPlanIdsPerWeek
     /// </summary>
     /// <value>The ID of the work plan for this user.  Mutually exclusive with workPlanIdsPerWeek</value>
-    [DataMember(Name = "workPlanId", EmitDefaultValue = false)]
+    [JsonPropertyName("workPlanId")]
     public ValueWrapperString WorkPlanId { get; set; }
 
 
@@ -58,7 +57,7 @@ public partial class BuImportAgentScheduleUploadSchema : IEquatable<BuImportAgen
     /// The IDs of the work plans per week for this user.  Mutually exclusive with workPlanId
     /// </summary>
     /// <value>The IDs of the work plans per week for this user.  Mutually exclusive with workPlanId</value>
-    [DataMember(Name = "workPlanIdsPerWeek", EmitDefaultValue = false)]
+    [JsonPropertyName("workPlanIdsPerWeek")]
     public ListWrapperString WorkPlanIdsPerWeek { get; set; }
 
 
@@ -67,7 +66,7 @@ public partial class BuImportAgentScheduleUploadSchema : IEquatable<BuImportAgen
     /// The shift definitions for this agent schedule
     /// </summary>
     /// <value>The shift definitions for this agent schedule</value>
-    [DataMember(Name = "shifts", EmitDefaultValue = false)]
+    [JsonPropertyName("shifts")]
     public List<BuAgentScheduleShiftRequest> Shifts { get; set; }
 
 
@@ -76,7 +75,7 @@ public partial class BuImportAgentScheduleUploadSchema : IEquatable<BuImportAgen
     /// Any full day time off markers that apply to this agent schedule
     /// </summary>
     /// <value>Any full day time off markers that apply to this agent schedule</value>
-    [DataMember(Name = "fullDayTimeOffMarkers", EmitDefaultValue = false)]
+    [JsonPropertyName("fullDayTimeOffMarkers")]
     public List<BuFullDayTimeOffMarker> FullDayTimeOffMarkers { get; set; }
 
 

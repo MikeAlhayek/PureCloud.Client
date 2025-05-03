@@ -7,14 +7,14 @@ namespace PureCloud.Client.Models;
 /// <summary>
 /// Information about the caller executing a bot flow.
 /// </summary>
-[DataContract]
+
 public partial class TextBotUserAgent : IEquatable<TextBotUserAgent>
 {
     /// <summary>
     /// The name of the user agent.
     /// </summary>
     /// <value>The name of the user agent.</value>
-    [JsonConverter(typeof(JsonStringEnumConverter))]
+    
     public enum NameEnum
     {
         /// <summary>
@@ -137,7 +137,7 @@ public partial class TextBotUserAgent : IEquatable<TextBotUserAgent>
     /// The name of the user agent.
     /// </summary>
     /// <value>The name of the user agent.</value>
-    [DataMember(Name = "name", EmitDefaultValue = false)]
+    [JsonPropertyName("name")]
     public NameEnum? Name { get; set; }
 
     /// <summary>

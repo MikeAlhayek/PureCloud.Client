@@ -7,13 +7,13 @@ namespace PureCloud.Client.Models;
 /// <summary>
 /// WfmScheduleTopicWfmScheduleNotification
 /// </summary>
-[DataContract]
+
 public partial class WfmScheduleTopicWfmScheduleNotification : IEquatable<WfmScheduleTopicWfmScheduleNotification>
 {
     /// <summary>
     /// Gets or Sets Status
     /// </summary>
-    [JsonConverter(typeof(JsonStringEnumConverter))]
+    
     public enum StatusEnum
     {
         /// <summary>
@@ -51,7 +51,7 @@ public partial class WfmScheduleTopicWfmScheduleNotification : IEquatable<WfmSch
     /// <summary>
     /// Gets or Sets EventType
     /// </summary>
-    [JsonConverter(typeof(JsonStringEnumConverter))]
+    
     public enum EventTypeEnum
     {
         /// <summary>
@@ -95,12 +95,12 @@ public partial class WfmScheduleTopicWfmScheduleNotification : IEquatable<WfmSch
     /// <summary>
     /// Gets or Sets Status
     /// </summary>
-    [DataMember(Name = "status", EmitDefaultValue = false)]
+    [JsonPropertyName("status")]
     public StatusEnum? Status { get; set; }
     /// <summary>
     /// Gets or Sets EventType
     /// </summary>
-    [DataMember(Name = "eventType", EmitDefaultValue = false)]
+    [JsonPropertyName("eventType")]
     public EventTypeEnum? EventType { get; set; }
     /// <summary>
     /// Initializes a new instance of the <see cref="WfmScheduleTopicWfmScheduleNotification" /> class.
@@ -127,7 +127,7 @@ public partial class WfmScheduleTopicWfmScheduleNotification : IEquatable<WfmSch
     /// <summary>
     /// Gets or Sets OperationId
     /// </summary>
-    [DataMember(Name = "operationId", EmitDefaultValue = false)]
+    [JsonPropertyName("operationId")]
     public string OperationId { get; set; }
 
 
@@ -135,7 +135,7 @@ public partial class WfmScheduleTopicWfmScheduleNotification : IEquatable<WfmSch
     /// <summary>
     /// Gets or Sets DownloadUrl
     /// </summary>
-    [DataMember(Name = "downloadUrl", EmitDefaultValue = false)]
+    [JsonPropertyName("downloadUrl")]
     public string DownloadUrl { get; set; }
 
 
@@ -143,7 +143,7 @@ public partial class WfmScheduleTopicWfmScheduleNotification : IEquatable<WfmSch
     /// <summary>
     /// Gets or Sets PercentComplete
     /// </summary>
-    [DataMember(Name = "percentComplete", EmitDefaultValue = false)]
+    [JsonPropertyName("percentComplete")]
     public long? PercentComplete { get; set; }
 
 

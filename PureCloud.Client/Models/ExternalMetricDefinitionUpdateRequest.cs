@@ -7,14 +7,14 @@ namespace PureCloud.Client.Models;
 /// <summary>
 /// ExternalMetricDefinitionUpdateRequest
 /// </summary>
-[DataContract]
+
 public partial class ExternalMetricDefinitionUpdateRequest : IEquatable<ExternalMetricDefinitionUpdateRequest>
 {
     /// <summary>
     /// The default objective type of the External Metric Definition
     /// </summary>
     /// <value>The default objective type of the External Metric Definition</value>
-    [JsonConverter(typeof(JsonStringEnumConverter))]
+    
     public enum DefaultObjectiveTypeEnum
     {
         /// <summary>
@@ -47,7 +47,7 @@ public partial class ExternalMetricDefinitionUpdateRequest : IEquatable<External
     /// The default objective type of the External Metric Definition
     /// </summary>
     /// <value>The default objective type of the External Metric Definition</value>
-    [DataMember(Name = "defaultObjectiveType", EmitDefaultValue = false)]
+    [JsonPropertyName("defaultObjectiveType")]
     public DefaultObjectiveTypeEnum? DefaultObjectiveType { get; set; }
     /// <summary>
     /// Initializes a new instance of the <see cref="ExternalMetricDefinitionUpdateRequest" /> class.
@@ -71,7 +71,7 @@ public partial class ExternalMetricDefinitionUpdateRequest : IEquatable<External
     /// The name of the External Metric Definition
     /// </summary>
     /// <value>The name of the External Metric Definition</value>
-    [DataMember(Name = "name", EmitDefaultValue = false)]
+    [JsonPropertyName("name")]
     public string Name { get; set; }
 
 
@@ -80,7 +80,7 @@ public partial class ExternalMetricDefinitionUpdateRequest : IEquatable<External
     /// The decimal precision of the External Metric Definition. Must be at least 0 and at most 5
     /// </summary>
     /// <value>The decimal precision of the External Metric Definition. Must be at least 0 and at most 5</value>
-    [DataMember(Name = "precision", EmitDefaultValue = false)]
+    [JsonPropertyName("precision")]
     public int? Precision { get; set; }
 
 
@@ -91,7 +91,7 @@ public partial class ExternalMetricDefinitionUpdateRequest : IEquatable<External
     /// True if the External Metric Definition is enabled
     /// </summary>
     /// <value>True if the External Metric Definition is enabled</value>
-    [DataMember(Name = "enabled", EmitDefaultValue = false)]
+    [JsonPropertyName("enabled")]
     public bool? Enabled { get; set; }
 
 

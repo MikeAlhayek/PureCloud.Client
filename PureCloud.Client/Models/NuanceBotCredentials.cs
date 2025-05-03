@@ -1,4 +1,3 @@
-using System.Runtime.Serialization;
 using System.Text;
 using System.Text.Json.Serialization;
 
@@ -7,7 +6,7 @@ namespace PureCloud.Client.Models;
 /// <summary>
 /// Model for a Nuance bot credentials
 /// </summary>
-[DataContract]
+
 public partial class NuanceBotCredentials : IEquatable<NuanceBotCredentials>
 {
 
@@ -38,7 +37,7 @@ public partial class NuanceBotCredentials : IEquatable<NuanceBotCredentials>
     /// The application ID
     /// </summary>
     /// <value>The application ID</value>
-    [DataMember(Name = "appId", EmitDefaultValue = false)]
+    [JsonPropertyName("appId")]
     public string AppId { get; set; }
 
 
@@ -47,7 +46,7 @@ public partial class NuanceBotCredentials : IEquatable<NuanceBotCredentials>
     /// The credentials client ID
     /// </summary>
     /// <value>The credentials client ID</value>
-    [DataMember(Name = "clientId", EmitDefaultValue = false)]
+    [JsonPropertyName("clientId")]
     public string ClientId { get; set; }
 
 
@@ -56,7 +55,7 @@ public partial class NuanceBotCredentials : IEquatable<NuanceBotCredentials>
     /// The credentials client secret
     /// </summary>
     /// <value>The credentials client secret</value>
-    [DataMember(Name = "clientSecret", EmitDefaultValue = false)]
+    [JsonPropertyName("clientSecret")]
     public string ClientSecret { get; set; }
 
 
@@ -65,7 +64,7 @@ public partial class NuanceBotCredentials : IEquatable<NuanceBotCredentials>
     /// True if the credentials secret is set (but not returned due to security reasons)
     /// </summary>
     /// <value>True if the credentials secret is set (but not returned due to security reasons)</value>
-    [DataMember(Name = "clientSecretProvided", EmitDefaultValue = false)]
+    [JsonPropertyName("clientSecretProvided")]
     public bool? ClientSecretProvided { get; set; }
 
 

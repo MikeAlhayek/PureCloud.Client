@@ -7,13 +7,13 @@ namespace PureCloud.Client.Models;
 /// <summary>
 /// FlowDivisionView
 /// </summary>
-[DataContract]
+
 public partial class FlowDivisionView : IEquatable<FlowDivisionView>
 {
     /// <summary>
     /// Gets or Sets Type
     /// </summary>
-    [JsonConverter(typeof(JsonStringEnumConverter))]
+    
     public enum TypeEnum
     {
         /// <summary>
@@ -141,7 +141,7 @@ public partial class FlowDivisionView : IEquatable<FlowDivisionView>
     /// <summary>
     /// Gets or Sets Type
     /// </summary>
-    [DataMember(Name = "type", EmitDefaultValue = false)]
+    [JsonPropertyName("type")]
     public TypeEnum? Type { get; set; }
 
     /// <summary>
@@ -181,7 +181,7 @@ public partial class FlowDivisionView : IEquatable<FlowDivisionView>
     /// The flow identifier
     /// </summary>
     /// <value>The flow identifier</value>
-    [DataMember(Name = "id", EmitDefaultValue = false)]
+    [JsonPropertyName("id")]
     public string Id { get; set; }
 
 
@@ -190,7 +190,7 @@ public partial class FlowDivisionView : IEquatable<FlowDivisionView>
     /// The flow name
     /// </summary>
     /// <value>The flow name</value>
-    [DataMember(Name = "name", EmitDefaultValue = false)]
+    [JsonPropertyName("name")]
     public string Name { get; set; }
 
 
@@ -199,7 +199,7 @@ public partial class FlowDivisionView : IEquatable<FlowDivisionView>
     /// The division to which this entity belongs.
     /// </summary>
     /// <value>The division to which this entity belongs.</value>
-    [DataMember(Name = "division", EmitDefaultValue = false)]
+    [JsonPropertyName("division")]
     public WritableDivision Division { get; set; }
 
 
@@ -210,7 +210,7 @@ public partial class FlowDivisionView : IEquatable<FlowDivisionView>
     /// the flow description
     /// </summary>
     /// <value>the flow description</value>
-    [DataMember(Name = "description", EmitDefaultValue = false)]
+    [JsonPropertyName("description")]
     public string Description { get; set; }
 
 
@@ -219,7 +219,7 @@ public partial class FlowDivisionView : IEquatable<FlowDivisionView>
     /// json schema describing the inputs for the flow
     /// </summary>
     /// <value>json schema describing the inputs for the flow</value>
-    [DataMember(Name = "inputSchema", EmitDefaultValue = false)]
+    [JsonPropertyName("inputSchema")]
     public JsonSchemaDocument InputSchema { get; set; }
 
 
@@ -228,7 +228,7 @@ public partial class FlowDivisionView : IEquatable<FlowDivisionView>
     /// json schema describing the outputs for the flow
     /// </summary>
     /// <value>json schema describing the outputs for the flow</value>
-    [DataMember(Name = "outputSchema", EmitDefaultValue = false)]
+    [JsonPropertyName("outputSchema")]
     public JsonSchemaDocument OutputSchema { get; set; }
 
 
@@ -237,7 +237,7 @@ public partial class FlowDivisionView : IEquatable<FlowDivisionView>
     /// List of supported languages for the published version of the flow.
     /// </summary>
     /// <value>List of supported languages for the published version of the flow.</value>
-    [DataMember(Name = "supportedLanguages", EmitDefaultValue = false)]
+    [JsonPropertyName("supportedLanguages")]
     public List<SupportedLanguage> SupportedLanguages { get; private set; }
 
 
@@ -246,7 +246,7 @@ public partial class FlowDivisionView : IEquatable<FlowDivisionView>
     /// published version information if there is a published version
     /// </summary>
     /// <value>published version information if there is a published version</value>
-    [DataMember(Name = "publishedVersion", EmitDefaultValue = false)]
+    [JsonPropertyName("publishedVersion")]
     public FlowVersion PublishedVersion { get; set; }
 
 
@@ -255,7 +255,7 @@ public partial class FlowDivisionView : IEquatable<FlowDivisionView>
     /// debug version information if there is a debug version
     /// </summary>
     /// <value>debug version information if there is a debug version</value>
-    [DataMember(Name = "debugVersion", EmitDefaultValue = false)]
+    [JsonPropertyName("debugVersion")]
     public FlowVersion DebugVersion { get; set; }
 
 
@@ -264,7 +264,7 @@ public partial class FlowDivisionView : IEquatable<FlowDivisionView>
     /// The URI for this object
     /// </summary>
     /// <value>The URI for this object</value>
-    [DataMember(Name = "selfUri", EmitDefaultValue = false)]
+    [JsonPropertyName("selfUri")]
     public string SelfUri { get; private set; }
 
 

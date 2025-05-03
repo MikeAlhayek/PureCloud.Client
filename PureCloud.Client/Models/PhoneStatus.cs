@@ -7,14 +7,14 @@ namespace PureCloud.Client.Models;
 /// <summary>
 /// PhoneStatus
 /// </summary>
-[DataContract]
+
 public partial class PhoneStatus : IEquatable<PhoneStatus>
 {
     /// <summary>
     /// The Operational Status of this phone
     /// </summary>
     /// <value>The Operational Status of this phone</value>
-    [JsonConverter(typeof(JsonStringEnumConverter))]
+    
     public enum OperationalStatusEnum
     {
         /// <summary>
@@ -53,7 +53,7 @@ public partial class PhoneStatus : IEquatable<PhoneStatus>
     /// The status of the primary or secondary Edges assigned to the phone lines.
     /// </summary>
     /// <value>The status of the primary or secondary Edges assigned to the phone lines.</value>
-    [JsonConverter(typeof(JsonStringEnumConverter))]
+    
     public enum EdgesStatusEnum
     {
         /// <summary>
@@ -92,7 +92,7 @@ public partial class PhoneStatus : IEquatable<PhoneStatus>
     /// The phone status's edge assignment type.
     /// </summary>
     /// <value>The phone status's edge assignment type.</value>
-    [JsonConverter(typeof(JsonStringEnumConverter))]
+    
     public enum PhoneAssignmentToEdgeTypeEnum
     {
         /// <summary>
@@ -119,19 +119,19 @@ public partial class PhoneStatus : IEquatable<PhoneStatus>
     /// The Operational Status of this phone
     /// </summary>
     /// <value>The Operational Status of this phone</value>
-    [DataMember(Name = "operationalStatus", EmitDefaultValue = false)]
+    [JsonPropertyName("operationalStatus")]
     public OperationalStatusEnum? OperationalStatus { get; set; }
     /// <summary>
     /// The status of the primary or secondary Edges assigned to the phone lines.
     /// </summary>
     /// <value>The status of the primary or secondary Edges assigned to the phone lines.</value>
-    [DataMember(Name = "edgesStatus", EmitDefaultValue = false)]
+    [JsonPropertyName("edgesStatus")]
     public EdgesStatusEnum? EdgesStatus { get; set; }
     /// <summary>
     /// The phone status's edge assignment type.
     /// </summary>
     /// <value>The phone status's edge assignment type.</value>
-    [DataMember(Name = "phoneAssignmentToEdgeType", EmitDefaultValue = false)]
+    [JsonPropertyName("phoneAssignmentToEdgeType")]
     public PhoneAssignmentToEdgeTypeEnum? PhoneAssignmentToEdgeType { get; set; }
     /// <summary>
     /// Initializes a new instance of the <see cref="PhoneStatus" /> class.
@@ -164,7 +164,7 @@ public partial class PhoneStatus : IEquatable<PhoneStatus>
     /// <summary>
     /// Gets or Sets Id
     /// </summary>
-    [DataMember(Name = "id", EmitDefaultValue = false)]
+    [JsonPropertyName("id")]
     public string Id { get; set; }
 
 
@@ -177,7 +177,7 @@ public partial class PhoneStatus : IEquatable<PhoneStatus>
     /// Event Creation Time represents an ISO-8601 string. For example: UTC, UTC+01:00, or Europe/London
     /// </summary>
     /// <value>Event Creation Time represents an ISO-8601 string. For example: UTC, UTC+01:00, or Europe/London</value>
-    [DataMember(Name = "eventCreationTime", EmitDefaultValue = false)]
+    [JsonPropertyName("eventCreationTime")]
     public string EventCreationTime { get; set; }
 
 
@@ -186,7 +186,7 @@ public partial class PhoneStatus : IEquatable<PhoneStatus>
     /// Provision information for this phone
     /// </summary>
     /// <value>Provision information for this phone</value>
-    [DataMember(Name = "provision", EmitDefaultValue = false)]
+    [JsonPropertyName("provision")]
     public ProvisionInfo Provision { get; set; }
 
 
@@ -195,7 +195,7 @@ public partial class PhoneStatus : IEquatable<PhoneStatus>
     /// A list of LineStatus information for each of the lines of this phone
     /// </summary>
     /// <value>A list of LineStatus information for each of the lines of this phone</value>
-    [DataMember(Name = "lineStatuses", EmitDefaultValue = false)]
+    [JsonPropertyName("lineStatuses")]
     public List<LineStatus> LineStatuses { get; set; }
 
 
@@ -206,7 +206,7 @@ public partial class PhoneStatus : IEquatable<PhoneStatus>
     /// The URI of the edge that provided this status information.
     /// </summary>
     /// <value>The URI of the edge that provided this status information.</value>
-    [DataMember(Name = "edge", EmitDefaultValue = false)]
+    [JsonPropertyName("edge")]
     public DomainEntityRef Edge { get; set; }
 
 
@@ -215,7 +215,7 @@ public partial class PhoneStatus : IEquatable<PhoneStatus>
     /// The URI for this object. Deprecated. Do not use.
     /// </summary>
     /// <value>The URI for this object. Deprecated. Do not use.</value>
-    [DataMember(Name = "selfUri", EmitDefaultValue = false)]
+    [JsonPropertyName("selfUri")]
     public string SelfUri { get; set; }
 
 

@@ -7,14 +7,14 @@ namespace PureCloud.Client.Models;
 /// <summary>
 /// KnowledgeTraining
 /// </summary>
-[DataContract]
+
 public partial class KnowledgeTraining : IEquatable<KnowledgeTraining>
 {
     /// <summary>
     /// Training status.
     /// </summary>
     /// <value>Training status.</value>
-    [JsonConverter(typeof(JsonStringEnumConverter))]
+    
     public enum StatusEnum
     {
         /// <summary>
@@ -53,7 +53,7 @@ public partial class KnowledgeTraining : IEquatable<KnowledgeTraining>
     /// State of the Trained Documents, which can be one of these Draft, Active, Discarded, Archived.
     /// </summary>
     /// <value>State of the Trained Documents, which can be one of these Draft, Active, Discarded, Archived.</value>
-    [JsonConverter(typeof(JsonStringEnumConverter))]
+    
     public enum KnowledgeDocumentsStateEnum
     {
         /// <summary>
@@ -92,13 +92,13 @@ public partial class KnowledgeTraining : IEquatable<KnowledgeTraining>
     /// Training status.
     /// </summary>
     /// <value>Training status.</value>
-    [DataMember(Name = "status", EmitDefaultValue = false)]
+    [JsonPropertyName("status")]
     public StatusEnum? Status { get; private set; }
     /// <summary>
     /// State of the Trained Documents, which can be one of these Draft, Active, Discarded, Archived.
     /// </summary>
     /// <value>State of the Trained Documents, which can be one of these Draft, Active, Discarded, Archived.</value>
-    [DataMember(Name = "knowledgeDocumentsState", EmitDefaultValue = false)]
+    [JsonPropertyName("knowledgeDocumentsState")]
     public KnowledgeDocumentsStateEnum? KnowledgeDocumentsState { get; private set; }
     /// <summary>
     /// Initializes a new instance of the <see cref="KnowledgeTraining" /> class.
@@ -114,7 +114,7 @@ public partial class KnowledgeTraining : IEquatable<KnowledgeTraining>
     /// The globally unique identifier for the object.
     /// </summary>
     /// <value>The globally unique identifier for the object.</value>
-    [DataMember(Name = "id", EmitDefaultValue = false)]
+    [JsonPropertyName("id")]
     public string Id { get; private set; }
 
 
@@ -123,7 +123,7 @@ public partial class KnowledgeTraining : IEquatable<KnowledgeTraining>
     /// Trigger date-time. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z
     /// </summary>
     /// <value>Trigger date-time. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z</value>
-    [DataMember(Name = "dateTriggered", EmitDefaultValue = false)]
+    [JsonPropertyName("dateTriggered")]
     public DateTime? DateTriggered { get; private set; }
 
 
@@ -132,7 +132,7 @@ public partial class KnowledgeTraining : IEquatable<KnowledgeTraining>
     /// Training completed date-time. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z
     /// </summary>
     /// <value>Training completed date-time. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z</value>
-    [DataMember(Name = "dateCompleted", EmitDefaultValue = false)]
+    [JsonPropertyName("dateCompleted")]
     public DateTime? DateCompleted { get; private set; }
 
 
@@ -143,7 +143,7 @@ public partial class KnowledgeTraining : IEquatable<KnowledgeTraining>
     /// Language of the documents that are trained.
     /// </summary>
     /// <value>Language of the documents that are trained.</value>
-    [DataMember(Name = "languageCode", EmitDefaultValue = false)]
+    [JsonPropertyName("languageCode")]
     public string LanguageCode { get; private set; }
 
 
@@ -152,7 +152,7 @@ public partial class KnowledgeTraining : IEquatable<KnowledgeTraining>
     /// Knowledge Base that the training belongs to.
     /// </summary>
     /// <value>Knowledge Base that the training belongs to.</value>
-    [DataMember(Name = "knowledgeBase", EmitDefaultValue = false)]
+    [JsonPropertyName("knowledgeBase")]
     public KnowledgeBase KnowledgeBase { get; private set; }
 
 
@@ -161,7 +161,7 @@ public partial class KnowledgeTraining : IEquatable<KnowledgeTraining>
     /// Any error message during the Training or Promote action.
     /// </summary>
     /// <value>Any error message during the Training or Promote action.</value>
-    [DataMember(Name = "errorMessage", EmitDefaultValue = false)]
+    [JsonPropertyName("errorMessage")]
     public string ErrorMessage { get; private set; }
 
 
@@ -172,7 +172,7 @@ public partial class KnowledgeTraining : IEquatable<KnowledgeTraining>
     /// Trained Documents Promoted date-time. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z
     /// </summary>
     /// <value>Trained Documents Promoted date-time. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z</value>
-    [DataMember(Name = "datePromoted", EmitDefaultValue = false)]
+    [JsonPropertyName("datePromoted")]
     public DateTime? DatePromoted { get; private set; }
 
 
@@ -181,7 +181,7 @@ public partial class KnowledgeTraining : IEquatable<KnowledgeTraining>
     /// The URI for this object
     /// </summary>
     /// <value>The URI for this object</value>
-    [DataMember(Name = "selfUri", EmitDefaultValue = false)]
+    [JsonPropertyName("selfUri")]
     public string SelfUri { get; private set; }
 
 

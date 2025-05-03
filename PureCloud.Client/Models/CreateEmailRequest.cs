@@ -7,14 +7,14 @@ namespace PureCloud.Client.Models;
 /// <summary>
 /// CreateEmailRequest
 /// </summary>
-[DataContract]
+
 public partial class CreateEmailRequest : IEquatable<CreateEmailRequest>
 {
     /// <summary>
     /// Specify OUTBOUND to send an email on behalf of a queue, or INBOUND to create an external conversation. An external conversation is one where the provider is not PureCloudEnvironment based.
     /// </summary>
     /// <value>Specify OUTBOUND to send an email on behalf of a queue, or INBOUND to create an external conversation. An external conversation is one where the provider is not PureCloudEnvironment based.</value>
-    [JsonConverter(typeof(JsonStringEnumConverter))]
+    
     public enum DirectionEnum
     {
         /// <summary>
@@ -41,7 +41,7 @@ public partial class CreateEmailRequest : IEquatable<CreateEmailRequest>
     /// Specify OUTBOUND to send an email on behalf of a queue, or INBOUND to create an external conversation. An external conversation is one where the provider is not PureCloudEnvironment based.
     /// </summary>
     /// <value>Specify OUTBOUND to send an email on behalf of a queue, or INBOUND to create an external conversation. An external conversation is one where the provider is not PureCloudEnvironment based.</value>
-    [DataMember(Name = "direction", EmitDefaultValue = false)]
+    [JsonPropertyName("direction")]
     public DirectionEnum? Direction { get; set; }
 
     /// <summary>
@@ -97,7 +97,7 @@ public partial class CreateEmailRequest : IEquatable<CreateEmailRequest>
     /// The ID of the queue to use for routing the email conversation. This field is mutually exclusive with flowId
     /// </summary>
     /// <value>The ID of the queue to use for routing the email conversation. This field is mutually exclusive with flowId</value>
-    [DataMember(Name = "queueId", EmitDefaultValue = false)]
+    [JsonPropertyName("queueId")]
     public string QueueId { get; set; }
 
 
@@ -106,7 +106,7 @@ public partial class CreateEmailRequest : IEquatable<CreateEmailRequest>
     /// The ID of the flow to use for routing email conversation. This field is mutually exclusive with queueId
     /// </summary>
     /// <value>The ID of the flow to use for routing email conversation. This field is mutually exclusive with queueId</value>
-    [DataMember(Name = "flowId", EmitDefaultValue = false)]
+    [JsonPropertyName("flowId")]
     public string FlowId { get; set; }
 
 
@@ -115,7 +115,7 @@ public partial class CreateEmailRequest : IEquatable<CreateEmailRequest>
     /// The name of the provider that is sourcing the emails. The Provider \&quot;PureCloudEnvironment Email\&quot; is reserved for native emails.
     /// </summary>
     /// <value>The name of the provider that is sourcing the emails. The Provider \&quot;PureCloudEnvironment Email\&quot; is reserved for native emails.</value>
-    [DataMember(Name = "provider", EmitDefaultValue = false)]
+    [JsonPropertyName("provider")]
     public string Provider { get; set; }
 
 
@@ -124,7 +124,7 @@ public partial class CreateEmailRequest : IEquatable<CreateEmailRequest>
     /// The list of skill ID&#39;s to use for routing.
     /// </summary>
     /// <value>The list of skill ID&#39;s to use for routing.</value>
-    [DataMember(Name = "skillIds", EmitDefaultValue = false)]
+    [JsonPropertyName("skillIds")]
     public List<string> SkillIds { get; set; }
 
 
@@ -133,7 +133,7 @@ public partial class CreateEmailRequest : IEquatable<CreateEmailRequest>
     /// The ID of the language to use for routing.
     /// </summary>
     /// <value>The ID of the language to use for routing.</value>
-    [DataMember(Name = "languageId", EmitDefaultValue = false)]
+    [JsonPropertyName("languageId")]
     public string LanguageId { get; set; }
 
 
@@ -142,7 +142,7 @@ public partial class CreateEmailRequest : IEquatable<CreateEmailRequest>
     /// The priority to assign to the conversation for routing.
     /// </summary>
     /// <value>The priority to assign to the conversation for routing.</value>
-    [DataMember(Name = "priority", EmitDefaultValue = false)]
+    [JsonPropertyName("priority")]
     public long? Priority { get; set; }
 
 
@@ -151,7 +151,7 @@ public partial class CreateEmailRequest : IEquatable<CreateEmailRequest>
     /// The list of attributes to associate with the customer participant.
     /// </summary>
     /// <value>The list of attributes to associate with the customer participant.</value>
-    [DataMember(Name = "attributes", EmitDefaultValue = false)]
+    [JsonPropertyName("attributes")]
     public Dictionary<string, string> Attributes { get; set; }
 
 
@@ -160,7 +160,7 @@ public partial class CreateEmailRequest : IEquatable<CreateEmailRequest>
     /// The email address of the recipient of the email.
     /// </summary>
     /// <value>The email address of the recipient of the email.</value>
-    [DataMember(Name = "toAddress", EmitDefaultValue = false)]
+    [JsonPropertyName("toAddress")]
     public string ToAddress { get; set; }
 
 
@@ -169,7 +169,7 @@ public partial class CreateEmailRequest : IEquatable<CreateEmailRequest>
     /// The name of the recipient of the email.
     /// </summary>
     /// <value>The name of the recipient of the email.</value>
-    [DataMember(Name = "toName", EmitDefaultValue = false)]
+    [JsonPropertyName("toName")]
     public string ToName { get; set; }
 
 
@@ -178,7 +178,7 @@ public partial class CreateEmailRequest : IEquatable<CreateEmailRequest>
     /// The email address of the sender of the email.
     /// </summary>
     /// <value>The email address of the sender of the email.</value>
-    [DataMember(Name = "fromAddress", EmitDefaultValue = false)]
+    [JsonPropertyName("fromAddress")]
     public string FromAddress { get; set; }
 
 
@@ -187,7 +187,7 @@ public partial class CreateEmailRequest : IEquatable<CreateEmailRequest>
     /// The name of the sender of the email.
     /// </summary>
     /// <value>The name of the sender of the email.</value>
-    [DataMember(Name = "fromName", EmitDefaultValue = false)]
+    [JsonPropertyName("fromName")]
     public string FromName { get; set; }
 
 
@@ -196,7 +196,7 @@ public partial class CreateEmailRequest : IEquatable<CreateEmailRequest>
     /// The subject of the email
     /// </summary>
     /// <value>The subject of the email</value>
-    [DataMember(Name = "subject", EmitDefaultValue = false)]
+    [JsonPropertyName("subject")]
     public string Subject { get; set; }
 
 
@@ -207,7 +207,7 @@ public partial class CreateEmailRequest : IEquatable<CreateEmailRequest>
     /// An HTML body content of the email.
     /// </summary>
     /// <value>An HTML body content of the email.</value>
-    [DataMember(Name = "htmlBody", EmitDefaultValue = false)]
+    [JsonPropertyName("htmlBody")]
     public string HtmlBody { get; set; }
 
 
@@ -216,7 +216,7 @@ public partial class CreateEmailRequest : IEquatable<CreateEmailRequest>
     /// A text body content of the email.
     /// </summary>
     /// <value>A text body content of the email.</value>
-    [DataMember(Name = "textBody", EmitDefaultValue = false)]
+    [JsonPropertyName("textBody")]
     public string TextBody { get; set; }
 
 
@@ -225,7 +225,7 @@ public partial class CreateEmailRequest : IEquatable<CreateEmailRequest>
     /// The external contact with which the email should be associated. This field is only valid for OUTBOUND email.
     /// </summary>
     /// <value>The external contact with which the email should be associated. This field is only valid for OUTBOUND email.</value>
-    [DataMember(Name = "externalContactId", EmitDefaultValue = false)]
+    [JsonPropertyName("externalContactId")]
     public string ExternalContactId { get; set; }
 
 
@@ -234,7 +234,7 @@ public partial class CreateEmailRequest : IEquatable<CreateEmailRequest>
     /// Optional. The ID of the label to controls the number of agent interactions for INBOUND communications
     /// </summary>
     /// <value>Optional. The ID of the label to controls the number of agent interactions for INBOUND communications</value>
-    [DataMember(Name = "utilizationLabel", EmitDefaultValue = false)]
+    [JsonPropertyName("utilizationLabel")]
     public string UtilizationLabel { get; set; }
 
 

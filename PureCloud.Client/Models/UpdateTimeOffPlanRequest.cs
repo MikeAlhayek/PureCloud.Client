@@ -7,14 +7,14 @@ namespace PureCloud.Client.Models;
 /// <summary>
 /// UpdateTimeOffPlanRequest
 /// </summary>
-[DataContract]
+
 public partial class UpdateTimeOffPlanRequest : IEquatable<UpdateTimeOffPlanRequest>
 {
     /// <summary>
     /// Auto approval rule for the time off plan.
     /// </summary>
     /// <value>Auto approval rule for the time off plan.</value>
-    [JsonConverter(typeof(JsonStringEnumConverter))]
+    
     public enum AutoApprovalRuleEnum
     {
         /// <summary>
@@ -59,7 +59,7 @@ public partial class UpdateTimeOffPlanRequest : IEquatable<UpdateTimeOffPlanRequ
     /// Auto approval rule for the time off plan.
     /// </summary>
     /// <value>Auto approval rule for the time off plan.</value>
-    [DataMember(Name = "autoApprovalRule", EmitDefaultValue = false)]
+    [JsonPropertyName("autoApprovalRule")]
     public AutoApprovalRuleEnum? AutoApprovalRule { get; set; }
 
     /// <summary>
@@ -97,7 +97,7 @@ public partial class UpdateTimeOffPlanRequest : IEquatable<UpdateTimeOffPlanRequ
     /// The name of this time off plan.
     /// </summary>
     /// <value>The name of this time off plan.</value>
-    [DataMember(Name = "name", EmitDefaultValue = false)]
+    [JsonPropertyName("name")]
     public string Name { get; set; }
 
 
@@ -106,7 +106,7 @@ public partial class UpdateTimeOffPlanRequest : IEquatable<UpdateTimeOffPlanRequ
     /// The set of activity code IDs to associate with this time off plan.
     /// </summary>
     /// <value>The set of activity code IDs to associate with this time off plan.</value>
-    [DataMember(Name = "activityCodeIds", EmitDefaultValue = false)]
+    [JsonPropertyName("activityCodeIds")]
     public SetWrapperString ActivityCodeIds { get; set; }
 
 
@@ -115,7 +115,7 @@ public partial class UpdateTimeOffPlanRequest : IEquatable<UpdateTimeOffPlanRequ
     /// The set of time off limit IDs to associate with this time off plan.
     /// </summary>
     /// <value>The set of time off limit IDs to associate with this time off plan.</value>
-    [DataMember(Name = "timeOffLimitIds", EmitDefaultValue = false)]
+    [JsonPropertyName("timeOffLimitIds")]
     public SetWrapperString TimeOffLimitIds { get; set; }
 
 
@@ -126,7 +126,7 @@ public partial class UpdateTimeOffPlanRequest : IEquatable<UpdateTimeOffPlanRequ
     /// The number of days before the time off request start date for when the request will be expired from the waitlist.
     /// </summary>
     /// <value>The number of days before the time off request start date for when the request will be expired from the waitlist.</value>
-    [DataMember(Name = "daysBeforeStartToExpireFromWaitlist", EmitDefaultValue = false)]
+    [JsonPropertyName("daysBeforeStartToExpireFromWaitlist")]
     public int? DaysBeforeStartToExpireFromWaitlist { get; set; }
 
 
@@ -135,7 +135,7 @@ public partial class UpdateTimeOffPlanRequest : IEquatable<UpdateTimeOffPlanRequ
     /// Time off type, if this time off plan is associated with the integration.
     /// </summary>
     /// <value>Time off type, if this time off plan is associated with the integration.</value>
-    [DataMember(Name = "hrisTimeOffType", EmitDefaultValue = false)]
+    [JsonPropertyName("hrisTimeOffType")]
     public ValueWrapperHrisTimeOffType HrisTimeOffType { get; set; }
 
 
@@ -144,7 +144,7 @@ public partial class UpdateTimeOffPlanRequest : IEquatable<UpdateTimeOffPlanRequ
     /// Whether this time off plan should be used by agents.
     /// </summary>
     /// <value>Whether this time off plan should be used by agents.</value>
-    [DataMember(Name = "active", EmitDefaultValue = false)]
+    [JsonPropertyName("active")]
     public bool? Active { get; set; }
 
 
@@ -153,7 +153,7 @@ public partial class UpdateTimeOffPlanRequest : IEquatable<UpdateTimeOffPlanRequ
     /// Version metadata for the time off plan
     /// </summary>
     /// <value>Version metadata for the time off plan</value>
-    [DataMember(Name = "metadata", EmitDefaultValue = false)]
+    [JsonPropertyName("metadata")]
     public WfmVersionedEntityMetadata Metadata { get; set; }
 
 

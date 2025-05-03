@@ -1,4 +1,3 @@
-using System.Runtime.Serialization;
 using System.Text;
 using System.Text.Json.Serialization;
 
@@ -7,7 +6,7 @@ namespace PureCloud.Client.Models;
 /// <summary>
 /// SummaryGenerationConfig
 /// </summary>
-[DataContract]
+
 public partial class SummaryGenerationConfig : IEquatable<SummaryGenerationConfig>
 {
 
@@ -32,7 +31,7 @@ public partial class SummaryGenerationConfig : IEquatable<SummaryGenerationConfi
     /// Copilot generated summary is enabled.
     /// </summary>
     /// <value>Copilot generated summary is enabled.</value>
-    [DataMember(Name = "enabled", EmitDefaultValue = false)]
+    [JsonPropertyName("enabled")]
     public bool? Enabled { get; set; }
 
 

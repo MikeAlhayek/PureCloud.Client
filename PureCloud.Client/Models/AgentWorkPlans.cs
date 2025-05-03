@@ -1,4 +1,3 @@
-using System.Runtime.Serialization;
 using System.Text;
 using System.Text.Json.Serialization;
 
@@ -7,7 +6,7 @@ namespace PureCloud.Client.Models;
 /// <summary>
 /// AgentWorkPlans
 /// </summary>
-[DataContract]
+
 public partial class AgentWorkPlans : IEquatable<AgentWorkPlans>
 {
 
@@ -34,7 +33,7 @@ public partial class AgentWorkPlans : IEquatable<AgentWorkPlans>
     /// The user (agent) for whom the work plans were requested
     /// </summary>
     /// <value>The user (agent) for whom the work plans were requested</value>
-    [DataMember(Name = "user", EmitDefaultValue = false)]
+    [JsonPropertyName("user")]
     public UserReference User { get; set; }
 
 
@@ -43,7 +42,7 @@ public partial class AgentWorkPlans : IEquatable<AgentWorkPlans>
     /// The list of weekly work plan lookup keys. Keys to be searched under workPlanLookup property at top level of result
     /// </summary>
     /// <value>The list of weekly work plan lookup keys. Keys to be searched under workPlanLookup property at top level of result</value>
-    [DataMember(Name = "workPlanLookupKeysPerWeek", EmitDefaultValue = false)]
+    [JsonPropertyName("workPlanLookupKeysPerWeek")]
     public List<int?> WorkPlanLookupKeysPerWeek { get; set; }
 
 

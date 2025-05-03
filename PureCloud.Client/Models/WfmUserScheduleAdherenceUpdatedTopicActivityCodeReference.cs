@@ -1,12 +1,12 @@
-using System.Runtime.Serialization;
 using System.Text;
+using System.Text.Json.Serialization;
 
 namespace PureCloud.Client.Models;
 
 /// <summary>
 /// WfmUserScheduleAdherenceUpdatedTopicActivityCodeReference
 /// </summary>
-[DataContract]
+
 public partial class WfmUserScheduleAdherenceUpdatedTopicActivityCodeReference : IEquatable<WfmUserScheduleAdherenceUpdatedTopicActivityCodeReference>
 {
     /// <summary>
@@ -26,7 +26,7 @@ public partial class WfmUserScheduleAdherenceUpdatedTopicActivityCodeReference :
     /// <summary>
     /// Gets or Sets Id
     /// </summary>
-    [DataMember(Name = "id", EmitDefaultValue = false)]
+    [JsonPropertyName("id")]
     public string Id { get; set; }
 
 
@@ -34,7 +34,7 @@ public partial class WfmUserScheduleAdherenceUpdatedTopicActivityCodeReference :
     /// <summary>
     /// Gets or Sets SecondaryPresences
     /// </summary>
-    [DataMember(Name = "secondaryPresences", EmitDefaultValue = false)]
+    [JsonPropertyName("secondaryPresences")]
     public List<WfmUserScheduleAdherenceUpdatedTopicSecondaryPresenceReference> SecondaryPresences { get; set; }
 
 

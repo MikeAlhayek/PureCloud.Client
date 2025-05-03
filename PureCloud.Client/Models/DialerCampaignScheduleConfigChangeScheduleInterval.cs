@@ -1,12 +1,12 @@
-using System.Runtime.Serialization;
 using System.Text;
+using System.Text.Json.Serialization;
 
 namespace PureCloud.Client.Models;
 
 /// <summary>
 /// DialerCampaignScheduleConfigChangeScheduleInterval
 /// </summary>
-[DataContract]
+
 public partial class DialerCampaignScheduleConfigChangeScheduleInterval : IEquatable<DialerCampaignScheduleConfigChangeScheduleInterval>
 {
     /// <summary>
@@ -29,7 +29,7 @@ public partial class DialerCampaignScheduleConfigChangeScheduleInterval : IEquat
     /// scheduled start time represented as an ISO-8601 string; for example, yyyy-MM-ddTHH:mm:ss.SSSZ
     /// </summary>
     /// <value>scheduled start time represented as an ISO-8601 string; for example, yyyy-MM-ddTHH:mm:ss.SSSZ</value>
-    [DataMember(Name = "start", EmitDefaultValue = false)]
+    [JsonPropertyName("start")]
     public string Start { get; set; }
 
 
@@ -38,7 +38,7 @@ public partial class DialerCampaignScheduleConfigChangeScheduleInterval : IEquat
     /// scheduled end time represented as an ISO-8601 string; for example, yyyy-MM-ddTHH:mm:ss.SSSZ
     /// </summary>
     /// <value>scheduled end time represented as an ISO-8601 string; for example, yyyy-MM-ddTHH:mm:ss.SSSZ</value>
-    [DataMember(Name = "end", EmitDefaultValue = false)]
+    [JsonPropertyName("end")]
     public string End { get; set; }
 
 
@@ -46,7 +46,7 @@ public partial class DialerCampaignScheduleConfigChangeScheduleInterval : IEquat
     /// <summary>
     /// Gets or Sets AdditionalProperties
     /// </summary>
-    [DataMember(Name = "additionalProperties", EmitDefaultValue = false)]
+    [JsonPropertyName("additionalProperties")]
     public Dictionary<string, object> AdditionalProperties { get; set; }
 
 

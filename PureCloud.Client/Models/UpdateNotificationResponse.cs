@@ -1,12 +1,12 @@
-using System.Runtime.Serialization;
 using System.Text;
+using System.Text.Json.Serialization;
 
 namespace PureCloud.Client.Models;
 
 /// <summary>
 /// UpdateNotificationResponse
 /// </summary>
-[DataContract]
+
 public partial class UpdateNotificationResponse : IEquatable<UpdateNotificationResponse>
 {
     /// <summary>
@@ -27,7 +27,7 @@ public partial class UpdateNotificationResponse : IEquatable<UpdateNotificationR
     /// The mutableGroupId of the notification
     /// </summary>
     /// <value>The mutableGroupId of the notification</value>
-    [DataMember(Name = "mutableGroupId", EmitDefaultValue = false)]
+    [JsonPropertyName("mutableGroupId")]
     public string MutableGroupId { get; set; }
 
 
@@ -36,7 +36,7 @@ public partial class UpdateNotificationResponse : IEquatable<UpdateNotificationR
     /// The id of the notification for mapping the potentially new mutableGroupId
     /// </summary>
     /// <value>The id of the notification for mapping the potentially new mutableGroupId</value>
-    [DataMember(Name = "id", EmitDefaultValue = false)]
+    [JsonPropertyName("id")]
     public string Id { get; set; }
 
 

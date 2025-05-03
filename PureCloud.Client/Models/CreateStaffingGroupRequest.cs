@@ -1,4 +1,3 @@
-using System.Runtime.Serialization;
 using System.Text;
 using System.Text.Json.Serialization;
 
@@ -7,7 +6,7 @@ namespace PureCloud.Client.Models;
 /// <summary>
 /// CreateStaffingGroupRequest
 /// </summary>
-[DataContract]
+
 public partial class CreateStaffingGroupRequest : IEquatable<CreateStaffingGroupRequest>
 {
 
@@ -36,7 +35,7 @@ public partial class CreateStaffingGroupRequest : IEquatable<CreateStaffingGroup
     /// The name of the staffing group
     /// </summary>
     /// <value>The name of the staffing group</value>
-    [DataMember(Name = "name", EmitDefaultValue = false)]
+    [JsonPropertyName("name")]
     public string Name { get; set; }
 
 
@@ -45,7 +44,7 @@ public partial class CreateStaffingGroupRequest : IEquatable<CreateStaffingGroup
     /// The set of user IDs to associate with the staffing group
     /// </summary>
     /// <value>The set of user IDs to associate with the staffing group</value>
-    [DataMember(Name = "userIds", EmitDefaultValue = false)]
+    [JsonPropertyName("userIds")]
     public List<string> UserIds { get; set; }
 
 
@@ -54,7 +53,7 @@ public partial class CreateStaffingGroupRequest : IEquatable<CreateStaffingGroup
     /// The ID of the management unit to which the staffing group users belong. If undefined the staffing group can include users from the entire business unit
     /// </summary>
     /// <value>The ID of the management unit to which the staffing group users belong. If undefined the staffing group can include users from the entire business unit</value>
-    [DataMember(Name = "managementUnitId", EmitDefaultValue = false)]
+    [JsonPropertyName("managementUnitId")]
     public string ManagementUnitId { get; set; }
 
 

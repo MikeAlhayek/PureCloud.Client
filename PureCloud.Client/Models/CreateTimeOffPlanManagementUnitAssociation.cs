@@ -1,4 +1,3 @@
-using System.Runtime.Serialization;
 using System.Text;
 using System.Text.Json.Serialization;
 
@@ -7,7 +6,7 @@ namespace PureCloud.Client.Models;
 /// <summary>
 /// CreateTimeOffPlanManagementUnitAssociation
 /// </summary>
-[DataContract]
+
 public partial class CreateTimeOffPlanManagementUnitAssociation : IEquatable<CreateTimeOffPlanManagementUnitAssociation>
 {
 
@@ -34,7 +33,7 @@ public partial class CreateTimeOffPlanManagementUnitAssociation : IEquatable<Cre
     /// The ID of the management unit to which this time-off plan belongs
     /// </summary>
     /// <value>The ID of the management unit to which this time-off plan belongs</value>
-    [DataMember(Name = "managementUnitId", EmitDefaultValue = false)]
+    [JsonPropertyName("managementUnitId")]
     public string ManagementUnitId { get; set; }
 
 
@@ -43,7 +42,7 @@ public partial class CreateTimeOffPlanManagementUnitAssociation : IEquatable<Cre
     /// A IDs of staffing groups to which this time-off plan applies. If not defined, the plan is applied to the management unit
     /// </summary>
     /// <value>A IDs of staffing groups to which this time-off plan applies. If not defined, the plan is applied to the management unit</value>
-    [DataMember(Name = "staffingGroupIds", EmitDefaultValue = false)]
+    [JsonPropertyName("staffingGroupIds")]
     public List<string> StaffingGroupIds { get; set; }
 
 

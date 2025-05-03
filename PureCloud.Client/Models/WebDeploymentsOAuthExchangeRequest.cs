@@ -1,4 +1,3 @@
-using System.Runtime.Serialization;
 using System.Text;
 using System.Text.Json.Serialization;
 
@@ -7,7 +6,7 @@ namespace PureCloud.Client.Models;
 /// <summary>
 /// WebDeploymentsOAuthExchangeRequest
 /// </summary>
-[DataContract]
+
 public partial class WebDeploymentsOAuthExchangeRequest : IEquatable<WebDeploymentsOAuthExchangeRequest>
 {
 
@@ -36,7 +35,7 @@ public partial class WebDeploymentsOAuthExchangeRequest : IEquatable<WebDeployme
     /// The WebDeployment ID
     /// </summary>
     /// <value>The WebDeployment ID</value>
-    [DataMember(Name = "deploymentId", EmitDefaultValue = false)]
+    [JsonPropertyName("deploymentId")]
     public string DeploymentId { get; set; }
 
 
@@ -45,7 +44,7 @@ public partial class WebDeploymentsOAuthExchangeRequest : IEquatable<WebDeployme
     /// A Customer journey context.
     /// </summary>
     /// <value>A Customer journey context.</value>
-    [DataMember(Name = "journeyContext", EmitDefaultValue = false)]
+    [JsonPropertyName("journeyContext")]
     public WebDeploymentsJourneyContext JourneyContext { get; set; }
 
 
@@ -53,7 +52,7 @@ public partial class WebDeploymentsOAuthExchangeRequest : IEquatable<WebDeployme
     /// <summary>
     /// Gets or Sets Oauth
     /// </summary>
-    [DataMember(Name = "oauth", EmitDefaultValue = false)]
+    [JsonPropertyName("oauth")]
     public WebDeploymentsOAuthRequestParameters Oauth { get; set; }
 
 

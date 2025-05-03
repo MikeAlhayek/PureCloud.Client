@@ -7,14 +7,14 @@ namespace PureCloud.Client.Models;
 /// <summary>
 /// ConversationActivityResponse
 /// </summary>
-[DataContract]
+
 public partial class ConversationActivityResponse : IEquatable<ConversationActivityResponse>
 {
     /// <summary>
     /// Dimension that is used as an entityId
     /// </summary>
     /// <value>Dimension that is used as an entityId</value>
-    [JsonConverter(typeof(JsonStringEnumConverter))]
+    
     public enum EntityIdDimensionEnum
     {
         /// <summary>
@@ -161,7 +161,7 @@ public partial class ConversationActivityResponse : IEquatable<ConversationActiv
     /// Dimension that is used as an entityId
     /// </summary>
     /// <value>Dimension that is used as an entityId</value>
-    [DataMember(Name = "entityIdDimension", EmitDefaultValue = false)]
+    [JsonPropertyName("entityIdDimension")]
     public EntityIdDimensionEnum? EntityIdDimension { get; set; }
     /// <summary>
     /// Initializes a new instance of the <see cref="ConversationActivityResponse" /> class.
@@ -181,7 +181,7 @@ public partial class ConversationActivityResponse : IEquatable<ConversationActiv
     /// Query results
     /// </summary>
     /// <value>Query results</value>
-    [DataMember(Name = "results", EmitDefaultValue = false)]
+    [JsonPropertyName("results")]
     public List<ConversationActivityData> Results { get; set; }
 
 

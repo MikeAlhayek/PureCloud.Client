@@ -1,4 +1,3 @@
-using System.Runtime.Serialization;
 using System.Text;
 using System.Text.Json.Serialization;
 
@@ -7,7 +6,7 @@ namespace PureCloud.Client.Models;
 /// <summary>
 /// EstimateAvailableFullDayTimeOffRequest
 /// </summary>
-[DataContract]
+
 public partial class EstimateAvailableFullDayTimeOffRequest : IEquatable<EstimateAvailableFullDayTimeOffRequest>
 {
 
@@ -34,7 +33,7 @@ public partial class EstimateAvailableFullDayTimeOffRequest : IEquatable<Estimat
     /// Date in yyyy-MM-dd format for full day request. Should be interpreted in the business unit&#39;s configured time zone. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd
     /// </summary>
     /// <value>Date in yyyy-MM-dd format for full day request. Should be interpreted in the business unit&#39;s configured time zone. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd</value>
-    [DataMember(Name = "date", EmitDefaultValue = false)]
+    [JsonPropertyName("date")]
     public string Date { get; set; }
 
 
@@ -43,7 +42,7 @@ public partial class EstimateAvailableFullDayTimeOffRequest : IEquatable<Estimat
     /// A requested length of time off request in minutes. If the value is null, then the system will use activity code length setting
     /// </summary>
     /// <value>A requested length of time off request in minutes. If the value is null, then the system will use activity code length setting</value>
-    [DataMember(Name = "requestedDurationMinutes", EmitDefaultValue = false)]
+    [JsonPropertyName("requestedDurationMinutes")]
     public int? RequestedDurationMinutes { get; set; }
 
 

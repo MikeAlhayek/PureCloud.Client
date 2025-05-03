@@ -1,4 +1,3 @@
-using System.Runtime.Serialization;
 using System.Text;
 using System.Text.Json.Serialization;
 
@@ -7,7 +6,7 @@ namespace PureCloud.Client.Models;
 /// <summary>
 /// TrustUpdate
 /// </summary>
-[DataContract]
+
 public partial class TrustUpdate : IEquatable<TrustUpdate>
 {
 
@@ -34,7 +33,7 @@ public partial class TrustUpdate : IEquatable<TrustUpdate>
     /// If disabled no trustee user will have access, even if they were previously added.
     /// </summary>
     /// <value>If disabled no trustee user will have access, even if they were previously added.</value>
-    [DataMember(Name = "enabled", EmitDefaultValue = false)]
+    [JsonPropertyName("enabled")]
     public bool? Enabled { get; set; }
 
 
@@ -43,7 +42,7 @@ public partial class TrustUpdate : IEquatable<TrustUpdate>
     /// The expiration date of the trust. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z
     /// </summary>
     /// <value>The expiration date of the trust. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z</value>
-    [DataMember(Name = "dateExpired", EmitDefaultValue = false)]
+    [JsonPropertyName("dateExpired")]
     public DateTime? DateExpired { get; set; }
 
 

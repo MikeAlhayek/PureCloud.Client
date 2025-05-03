@@ -1,12 +1,12 @@
-using System.Runtime.Serialization;
 using System.Text;
+using System.Text.Json.Serialization;
 
 namespace PureCloud.Client.Models;
 
 /// <summary>
 /// FlowMetricsTopicFlowScoredAgent
 /// </summary>
-[DataContract]
+
 public partial class FlowMetricsTopicFlowScoredAgent : IEquatable<FlowMetricsTopicFlowScoredAgent>
 {
     /// <summary>
@@ -27,7 +27,7 @@ public partial class FlowMetricsTopicFlowScoredAgent : IEquatable<FlowMetricsTop
     /// Assigned agent score for this conversation (0 - 100, higher being better)
     /// </summary>
     /// <value>Assigned agent score for this conversation (0 - 100, higher being better)</value>
-    [DataMember(Name = "agentScore", EmitDefaultValue = false)]
+    [JsonPropertyName("agentScore")]
     public long? AgentScore { get; set; }
 
 
@@ -36,7 +36,7 @@ public partial class FlowMetricsTopicFlowScoredAgent : IEquatable<FlowMetricsTop
     /// Unique identifier for the agent that was scored for this conversation
     /// </summary>
     /// <value>Unique identifier for the agent that was scored for this conversation</value>
-    [DataMember(Name = "scoredAgentId", EmitDefaultValue = false)]
+    [JsonPropertyName("scoredAgentId")]
     public string ScoredAgentId { get; set; }
 
 

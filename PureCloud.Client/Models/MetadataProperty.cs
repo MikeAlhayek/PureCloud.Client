@@ -1,12 +1,12 @@
-using System.Runtime.Serialization;
 using System.Text;
+using System.Text.Json.Serialization;
 
 namespace PureCloud.Client.Models;
 
 /// <summary>
 /// Data property required as input for installing an accelerator
 /// </summary>
-[DataContract]
+
 public partial class MetadataProperty : IEquatable<MetadataProperty>
 {
     /// <summary>
@@ -23,7 +23,7 @@ public partial class MetadataProperty : IEquatable<MetadataProperty>
     /// the data type of the input property
     /// </summary>
     /// <value>the data type of the input property</value>
-    [DataMember(Name = "type", EmitDefaultValue = false)]
+    [JsonPropertyName("type")]
     public string Type { get; private set; }
 
 
@@ -32,7 +32,7 @@ public partial class MetadataProperty : IEquatable<MetadataProperty>
     /// user-friendly name of the input property
     /// </summary>
     /// <value>user-friendly name of the input property</value>
-    [DataMember(Name = "displayname", EmitDefaultValue = false)]
+    [JsonPropertyName("displayname")]
     public string Displayname { get; private set; }
 
 
@@ -41,7 +41,7 @@ public partial class MetadataProperty : IEquatable<MetadataProperty>
     /// brief description of the input property
     /// </summary>
     /// <value>brief description of the input property</value>
-    [DataMember(Name = "description", EmitDefaultValue = false)]
+    [JsonPropertyName("description")]
     public string Description { get; private set; }
 
 
@@ -50,7 +50,7 @@ public partial class MetadataProperty : IEquatable<MetadataProperty>
     /// whether the property&#39;s value should be hidden from display
     /// </summary>
     /// <value>whether the property&#39;s value should be hidden from display</value>
-    [DataMember(Name = "sensitive", EmitDefaultValue = false)]
+    [JsonPropertyName("sensitive")]
     public string Sensitive { get; private set; }
 
 
@@ -59,7 +59,7 @@ public partial class MetadataProperty : IEquatable<MetadataProperty>
     /// optional URL with addition information about the input property
     /// </summary>
     /// <value>optional URL with addition information about the input property</value>
-    [DataMember(Name = "help", EmitDefaultValue = false)]
+    [JsonPropertyName("help")]
     public string Help { get; private set; }
 
 
@@ -68,7 +68,7 @@ public partial class MetadataProperty : IEquatable<MetadataProperty>
     /// optional default value of the input property
     /// </summary>
     /// <value>optional default value of the input property</value>
-    [DataMember(Name = "default", EmitDefaultValue = false)]
+    [JsonPropertyName("default")]
     public string Default { get; private set; }
 
 
@@ -77,7 +77,7 @@ public partial class MetadataProperty : IEquatable<MetadataProperty>
     /// set of possible values if the input property is an enumeration
     /// </summary>
     /// <value>set of possible values if the input property is an enumeration</value>
-    [DataMember(Name = "enum", EmitDefaultValue = false)]
+    [JsonPropertyName("enum")]
     public List<string> Enum { get; private set; }
 
 

@@ -1,12 +1,12 @@
-using System.Runtime.Serialization;
 using System.Text;
+using System.Text.Json.Serialization;
 
 namespace PureCloud.Client.Models;
 
 /// <summary>
 /// WorkdayPeriod
 /// </summary>
-[DataContract]
+
 public partial class WorkdayPeriod : IEquatable<WorkdayPeriod>
 {
     /// <summary>
@@ -27,7 +27,7 @@ public partial class WorkdayPeriod : IEquatable<WorkdayPeriod>
     /// Start workday used as the date range. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd
     /// </summary>
     /// <value>Start workday used as the date range. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd</value>
-    [DataMember(Name = "dateStartWorkday", EmitDefaultValue = false)]
+    [JsonPropertyName("dateStartWorkday")]
     public string DateStartWorkday { get; set; }
 
 
@@ -36,7 +36,7 @@ public partial class WorkdayPeriod : IEquatable<WorkdayPeriod>
     /// End workday used as the date range. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd
     /// </summary>
     /// <value>End workday used as the date range. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd</value>
-    [DataMember(Name = "dateEndWorkday", EmitDefaultValue = false)]
+    [JsonPropertyName("dateEndWorkday")]
     public string DateEndWorkday { get; set; }
 
 

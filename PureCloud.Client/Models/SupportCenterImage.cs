@@ -1,4 +1,3 @@
-using System.Runtime.Serialization;
 using System.Text;
 using System.Text.Json.Serialization;
 
@@ -7,7 +6,7 @@ namespace PureCloud.Client.Models;
 /// <summary>
 /// SupportCenterImage
 /// </summary>
-[DataContract]
+
 public partial class SupportCenterImage : IEquatable<SupportCenterImage>
 {
 
@@ -32,7 +31,7 @@ public partial class SupportCenterImage : IEquatable<SupportCenterImage>
     /// Source URLs for image
     /// </summary>
     /// <value>Source URLs for image</value>
-    [DataMember(Name = "source", EmitDefaultValue = false)]
+    [JsonPropertyName("source")]
     public SupportCenterImageSource Source { get; set; }
 
 

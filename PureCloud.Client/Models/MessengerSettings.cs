@@ -7,14 +7,14 @@ namespace PureCloud.Client.Models;
 /// <summary>
 /// Settings concerning messenger
 /// </summary>
-[DataContract]
+
 public partial class MessengerSettings : IEquatable<MessengerSettings>
 {
     /// <summary>
     /// The session persistence type for messenger
     /// </summary>
     /// <value>The session persistence type for messenger</value>
-    [JsonConverter(typeof(JsonStringEnumConverter))]
+    
     public enum SessionPersistenceTypeEnum
     {
         /// <summary>
@@ -41,7 +41,7 @@ public partial class MessengerSettings : IEquatable<MessengerSettings>
     /// The session persistence type for messenger
     /// </summary>
     /// <value>The session persistence type for messenger</value>
-    [DataMember(Name = "sessionPersistenceType", EmitDefaultValue = false)]
+    [JsonPropertyName("sessionPersistenceType")]
     public SessionPersistenceTypeEnum? SessionPersistenceType { get; set; }
     /// <summary>
     /// Initializes a new instance of the <see cref="MessengerSettings" /> class.
@@ -71,7 +71,7 @@ public partial class MessengerSettings : IEquatable<MessengerSettings>
     /// Whether or not messenger is enabled
     /// </summary>
     /// <value>Whether or not messenger is enabled</value>
-    [DataMember(Name = "enabled", EmitDefaultValue = false)]
+    [JsonPropertyName("enabled")]
     public bool? Enabled { get; set; }
 
 
@@ -80,7 +80,7 @@ public partial class MessengerSettings : IEquatable<MessengerSettings>
     /// The style settings for messenger
     /// </summary>
     /// <value>The style settings for messenger</value>
-    [DataMember(Name = "styles", EmitDefaultValue = false)]
+    [JsonPropertyName("styles")]
     public MessengerStyles Styles { get; set; }
 
 
@@ -89,7 +89,7 @@ public partial class MessengerSettings : IEquatable<MessengerSettings>
     /// The launcher button settings for messenger
     /// </summary>
     /// <value>The launcher button settings for messenger</value>
-    [DataMember(Name = "launcherButton", EmitDefaultValue = false)]
+    [JsonPropertyName("launcherButton")]
     public LauncherButtonSettings LauncherButton { get; set; }
 
 
@@ -98,7 +98,7 @@ public partial class MessengerSettings : IEquatable<MessengerSettings>
     /// The file upload settings for messenger
     /// </summary>
     /// <value>The file upload settings for messenger</value>
-    [DataMember(Name = "fileUpload", EmitDefaultValue = false)]
+    [JsonPropertyName("fileUpload")]
     public FileUploadSettings FileUpload { get; set; }
 
 
@@ -107,7 +107,7 @@ public partial class MessengerSettings : IEquatable<MessengerSettings>
     /// The apps embedded in the messenger
     /// </summary>
     /// <value>The apps embedded in the messenger</value>
-    [DataMember(Name = "apps", EmitDefaultValue = false)]
+    [JsonPropertyName("apps")]
     public MessengerApps Apps { get; set; }
 
 
@@ -116,7 +116,7 @@ public partial class MessengerSettings : IEquatable<MessengerSettings>
     /// The homescreen settings for messenger
     /// </summary>
     /// <value>The homescreen settings for messenger</value>
-    [DataMember(Name = "homeScreen", EmitDefaultValue = false)]
+    [JsonPropertyName("homeScreen")]
     public MessengerHomeScreen HomeScreen { get; set; }
 
 

@@ -1,12 +1,12 @@
-using System.Runtime.Serialization;
 using System.Text;
+using System.Text.Json.Serialization;
 
 namespace PureCloud.Client.Models;
 
 /// <summary>
 /// WorkbinUpdate
 /// </summary>
-[DataContract]
+
 public partial class WorkbinUpdate : IEquatable<WorkbinUpdate>
 {
     /// <summary>
@@ -27,7 +27,7 @@ public partial class WorkbinUpdate : IEquatable<WorkbinUpdate>
     /// Workbin name. Valid length between 3 and 256 characters.
     /// </summary>
     /// <value>Workbin name. Valid length between 3 and 256 characters.</value>
-    [DataMember(Name = "name", EmitDefaultValue = false)]
+    [JsonPropertyName("name")]
     public string Name { get; set; }
 
 
@@ -36,7 +36,7 @@ public partial class WorkbinUpdate : IEquatable<WorkbinUpdate>
     /// Workbin description. Maximum length of 512 characters.
     /// </summary>
     /// <value>Workbin description. Maximum length of 512 characters.</value>
-    [DataMember(Name = "description", EmitDefaultValue = false)]
+    [JsonPropertyName("description")]
     public string Description { get; set; }
 
 

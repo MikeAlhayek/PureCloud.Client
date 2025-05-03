@@ -1,12 +1,12 @@
-using System.Runtime.Serialization;
 using System.Text;
+using System.Text.Json.Serialization;
 
 namespace PureCloud.Client.Models;
 
 /// <summary>
 /// ApiUsageRow
 /// </summary>
-[DataContract]
+
 public partial class ApiUsageRow : IEquatable<ApiUsageRow>
 {
     /// <summary>
@@ -49,7 +49,7 @@ public partial class ApiUsageRow : IEquatable<ApiUsageRow>
     /// Client Id associated with this query result
     /// </summary>
     /// <value>Client Id associated with this query result</value>
-    [DataMember(Name = "clientId", EmitDefaultValue = false)]
+    [JsonPropertyName("clientId")]
     public string ClientId { get; set; }
 
 
@@ -58,7 +58,7 @@ public partial class ApiUsageRow : IEquatable<ApiUsageRow>
     /// Client Name associated with this query result
     /// </summary>
     /// <value>Client Name associated with this query result</value>
-    [DataMember(Name = "clientName", EmitDefaultValue = false)]
+    [JsonPropertyName("clientName")]
     public string ClientName { get; set; }
 
 
@@ -67,7 +67,7 @@ public partial class ApiUsageRow : IEquatable<ApiUsageRow>
     /// Organization Id associated with this query result
     /// </summary>
     /// <value>Organization Id associated with this query result</value>
-    [DataMember(Name = "organizationId", EmitDefaultValue = false)]
+    [JsonPropertyName("organizationId")]
     public string OrganizationId { get; set; }
 
 
@@ -76,7 +76,7 @@ public partial class ApiUsageRow : IEquatable<ApiUsageRow>
     /// User Id associated with this query result
     /// </summary>
     /// <value>User Id associated with this query result</value>
-    [DataMember(Name = "userId", EmitDefaultValue = false)]
+    [JsonPropertyName("userId")]
     public string UserId { get; set; }
 
 
@@ -85,7 +85,7 @@ public partial class ApiUsageRow : IEquatable<ApiUsageRow>
     /// Template Uri associated with this query result
     /// </summary>
     /// <value>Template Uri associated with this query result</value>
-    [DataMember(Name = "templateUri", EmitDefaultValue = false)]
+    [JsonPropertyName("templateUri")]
     public string TemplateUri { get; set; }
 
 
@@ -94,7 +94,7 @@ public partial class ApiUsageRow : IEquatable<ApiUsageRow>
     /// HTTP Method associated with this query result
     /// </summary>
     /// <value>HTTP Method associated with this query result</value>
-    [DataMember(Name = "httpMethod", EmitDefaultValue = false)]
+    [JsonPropertyName("httpMethod")]
     public string HttpMethod { get; set; }
 
 
@@ -103,7 +103,7 @@ public partial class ApiUsageRow : IEquatable<ApiUsageRow>
     /// Number of requests resulting in a 2xx HTTP status code
     /// </summary>
     /// <value>Number of requests resulting in a 2xx HTTP status code</value>
-    [DataMember(Name = "status200", EmitDefaultValue = false)]
+    [JsonPropertyName("status200")]
     public long? Status200 { get; set; }
 
 
@@ -112,7 +112,7 @@ public partial class ApiUsageRow : IEquatable<ApiUsageRow>
     /// Number of requests resulting in a 3xx HTTP status code
     /// </summary>
     /// <value>Number of requests resulting in a 3xx HTTP status code</value>
-    [DataMember(Name = "status300", EmitDefaultValue = false)]
+    [JsonPropertyName("status300")]
     public long? Status300 { get; set; }
 
 
@@ -121,7 +121,7 @@ public partial class ApiUsageRow : IEquatable<ApiUsageRow>
     /// Number of requests resulting in a 4xx HTTP status code
     /// </summary>
     /// <value>Number of requests resulting in a 4xx HTTP status code</value>
-    [DataMember(Name = "status400", EmitDefaultValue = false)]
+    [JsonPropertyName("status400")]
     public long? Status400 { get; set; }
 
 
@@ -130,7 +130,7 @@ public partial class ApiUsageRow : IEquatable<ApiUsageRow>
     /// Number of requests resulting in a 5xx HTTP status code
     /// </summary>
     /// <value>Number of requests resulting in a 5xx HTTP status code</value>
-    [DataMember(Name = "status500", EmitDefaultValue = false)]
+    [JsonPropertyName("status500")]
     public long? Status500 { get; set; }
 
 
@@ -139,7 +139,7 @@ public partial class ApiUsageRow : IEquatable<ApiUsageRow>
     /// Number of requests resulting in a 429 HTTP status code, this is a subset of the count returned with status400
     /// </summary>
     /// <value>Number of requests resulting in a 429 HTTP status code, this is a subset of the count returned with status400</value>
-    [DataMember(Name = "status429", EmitDefaultValue = false)]
+    [JsonPropertyName("status429")]
     public long? Status429 { get; set; }
 
 
@@ -148,7 +148,7 @@ public partial class ApiUsageRow : IEquatable<ApiUsageRow>
     /// Total number of requests
     /// </summary>
     /// <value>Total number of requests</value>
-    [DataMember(Name = "requests", EmitDefaultValue = false)]
+    [JsonPropertyName("requests")]
     public long? Requests { get; set; }
 
 
@@ -157,7 +157,7 @@ public partial class ApiUsageRow : IEquatable<ApiUsageRow>
     /// Date of requests, based on granularity. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z
     /// </summary>
     /// <value>Date of requests, based on granularity. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z</value>
-    [DataMember(Name = "date", EmitDefaultValue = false)]
+    [JsonPropertyName("date")]
     public DateTime? Date { get; set; }
 
 

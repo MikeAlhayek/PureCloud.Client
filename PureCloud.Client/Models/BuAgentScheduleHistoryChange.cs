@@ -1,12 +1,12 @@
-using System.Runtime.Serialization;
 using System.Text;
+using System.Text.Json.Serialization;
 
 namespace PureCloud.Client.Models;
 
 /// <summary>
 /// BuAgentScheduleHistoryChange
 /// </summary>
-[DataContract]
+
 public partial class BuAgentScheduleHistoryChange : IEquatable<BuAgentScheduleHistoryChange>
 {
     /// <summary>
@@ -31,7 +31,7 @@ public partial class BuAgentScheduleHistoryChange : IEquatable<BuAgentScheduleHi
     /// The metadata of the change, including who and when the change was made
     /// </summary>
     /// <value>The metadata of the change, including who and when the change was made</value>
-    [DataMember(Name = "metadata", EmitDefaultValue = false)]
+    [JsonPropertyName("metadata")]
     public BuAgentScheduleHistoryChangeMetadata Metadata { get; set; }
 
 
@@ -40,7 +40,7 @@ public partial class BuAgentScheduleHistoryChange : IEquatable<BuAgentScheduleHi
     /// The list of changed shifts
     /// </summary>
     /// <value>The list of changed shifts</value>
-    [DataMember(Name = "shifts", EmitDefaultValue = false)]
+    [JsonPropertyName("shifts")]
     public List<BuAgentScheduleShift> Shifts { get; set; }
 
 
@@ -49,7 +49,7 @@ public partial class BuAgentScheduleHistoryChange : IEquatable<BuAgentScheduleHi
     /// The list of changed full day time off markers
     /// </summary>
     /// <value>The list of changed full day time off markers</value>
-    [DataMember(Name = "fullDayTimeOffMarkers", EmitDefaultValue = false)]
+    [JsonPropertyName("fullDayTimeOffMarkers")]
     public List<BuFullDayTimeOffMarker> FullDayTimeOffMarkers { get; set; }
 
 
@@ -58,7 +58,7 @@ public partial class BuAgentScheduleHistoryChange : IEquatable<BuAgentScheduleHi
     /// The deleted shifts, full day time off markers, or the entire agent schedule
     /// </summary>
     /// <value>The deleted shifts, full day time off markers, or the entire agent schedule</value>
-    [DataMember(Name = "deletes", EmitDefaultValue = false)]
+    [JsonPropertyName("deletes")]
     public BuAgentScheduleHistoryDeletedChange Deletes { get; set; }
 
 

@@ -1,4 +1,3 @@
-using System.Runtime.Serialization;
 using System.Text;
 using System.Text.Json.Serialization;
 
@@ -7,7 +6,7 @@ namespace PureCloud.Client.Models;
 /// <summary>
 /// EmailConfig
 /// </summary>
-[DataContract]
+
 public partial class EmailConfig : IEquatable<EmailConfig>
 {
 
@@ -38,7 +37,7 @@ public partial class EmailConfig : IEquatable<EmailConfig>
     /// The contact list columns specifying the email address(es) of the contact.
     /// </summary>
     /// <value>The contact list columns specifying the email address(es) of the contact.</value>
-    [DataMember(Name = "emailColumns", EmitDefaultValue = false)]
+    [JsonPropertyName("emailColumns")]
     public List<string> EmailColumns { get; set; }
 
 
@@ -47,7 +46,7 @@ public partial class EmailConfig : IEquatable<EmailConfig>
     /// The content template used to formulate the email to send to the contact.
     /// </summary>
     /// <value>The content template used to formulate the email to send to the contact.</value>
-    [DataMember(Name = "contentTemplate", EmitDefaultValue = false)]
+    [JsonPropertyName("contentTemplate")]
     public DomainEntityRef ContentTemplate { get; set; }
 
 
@@ -56,7 +55,7 @@ public partial class EmailConfig : IEquatable<EmailConfig>
     /// The email address that will be used as the sender of the email.
     /// </summary>
     /// <value>The email address that will be used as the sender of the email.</value>
-    [DataMember(Name = "fromAddress", EmitDefaultValue = false)]
+    [JsonPropertyName("fromAddress")]
     public FromEmailAddress FromAddress { get; set; }
 
 
@@ -65,7 +64,7 @@ public partial class EmailConfig : IEquatable<EmailConfig>
     /// The email address from which any reply will be sent.
     /// </summary>
     /// <value>The email address from which any reply will be sent.</value>
-    [DataMember(Name = "replyToAddress", EmitDefaultValue = false)]
+    [JsonPropertyName("replyToAddress")]
     public ReplyToEmailAddress ReplyToAddress { get; set; }
 
 

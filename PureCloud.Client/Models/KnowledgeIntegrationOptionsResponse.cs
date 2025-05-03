@@ -1,12 +1,12 @@
-using System.Runtime.Serialization;
 using System.Text;
+using System.Text.Json.Serialization;
 
 namespace PureCloud.Client.Models;
 
 /// <summary>
 /// KnowledgeIntegrationOptionsResponse
 /// </summary>
-[DataContract]
+
 public partial class KnowledgeIntegrationOptionsResponse : IEquatable<KnowledgeIntegrationOptionsResponse>
 {
     /// <summary>
@@ -25,7 +25,7 @@ public partial class KnowledgeIntegrationOptionsResponse : IEquatable<KnowledgeI
     /// Filter setting options available for a knowledge source.
     /// </summary>
     /// <value>Filter setting options available for a knowledge source.</value>
-    [DataMember(Name = "filters", EmitDefaultValue = false)]
+    [JsonPropertyName("filters")]
     public List<KnowledgeIntegrationFilter> Filters { get; set; }
 
 

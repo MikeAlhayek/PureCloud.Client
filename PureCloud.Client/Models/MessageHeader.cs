@@ -7,14 +7,14 @@ namespace PureCloud.Client.Models;
 /// <summary>
 /// MessageHeader
 /// </summary>
-[DataContract]
+
 public partial class MessageHeader : IEquatable<MessageHeader>
 {
     /// <summary>
     /// Defines the content type of the Header in message
     /// </summary>
     /// <value>Defines the content type of the Header in message</value>
-    [JsonConverter(typeof(JsonStringEnumConverter))]
+    
     public enum TypeEnum
     {
         /// <summary>
@@ -41,7 +41,7 @@ public partial class MessageHeader : IEquatable<MessageHeader>
     /// Defines the content type of the Header in message
     /// </summary>
     /// <value>Defines the content type of the Header in message</value>
-    [DataMember(Name = "type", EmitDefaultValue = false)]
+    [JsonPropertyName("type")]
     public TypeEnum? Type { get; set; }
     /// <summary>
     /// Initializes a new instance of the <see cref="MessageHeader" /> class.
@@ -63,7 +63,7 @@ public partial class MessageHeader : IEquatable<MessageHeader>
     /// Content associated with the header in the message
     /// </summary>
     /// <value>Content associated with the header in the message</value>
-    [DataMember(Name = "content", EmitDefaultValue = false)]
+    [JsonPropertyName("content")]
     public string Content { get; set; }
 
 

@@ -1,12 +1,12 @@
-using System.Runtime.Serialization;
 using System.Text;
+using System.Text.Json.Serialization;
 
 namespace PureCloud.Client.Models;
 
 /// <summary>
 /// WorkitemRuleSettings
 /// </summary>
-[DataContract]
+
 public partial class WorkitemRuleSettings : IEquatable<WorkitemRuleSettings>
 {
     /// <summary>
@@ -25,7 +25,7 @@ public partial class WorkitemRuleSettings : IEquatable<WorkitemRuleSettings>
     /// When set to true, the worktypes flow rules will be processed. Default value is false.
     /// </summary>
     /// <value>When set to true, the worktypes flow rules will be processed. Default value is false.</value>
-    [DataMember(Name = "flowRulesEnabled", EmitDefaultValue = false)]
+    [JsonPropertyName("flowRulesEnabled")]
     public bool? FlowRulesEnabled { get; set; }
 
 

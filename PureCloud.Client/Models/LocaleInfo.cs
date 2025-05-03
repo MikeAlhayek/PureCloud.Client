@@ -7,14 +7,14 @@ namespace PureCloud.Client.Models;
 /// <summary>
 /// LocaleInfo
 /// </summary>
-[DataContract]
+
 public partial class LocaleInfo : IEquatable<LocaleInfo>
 {
     /// <summary>
     /// Status of health computation for this flow version.
     /// </summary>
     /// <value>Status of health computation for this flow version.</value>
-    [JsonConverter(typeof(JsonStringEnumConverter))]
+    
     public enum StatusEnum
     {
         /// <summary>
@@ -47,7 +47,7 @@ public partial class LocaleInfo : IEquatable<LocaleInfo>
     /// Status of health computation for this flow version.
     /// </summary>
     /// <value>Status of health computation for this flow version.</value>
-    [DataMember(Name = "status", EmitDefaultValue = false)]
+    [JsonPropertyName("status")]
     public StatusEnum? Status { get; set; }
     /// <summary>
     /// Initializes a new instance of the <see cref="LocaleInfo" /> class.
@@ -71,7 +71,7 @@ public partial class LocaleInfo : IEquatable<LocaleInfo>
     /// Error details for the flow version, if any.
     /// </summary>
     /// <value>Error details for the flow version, if any.</value>
-    [DataMember(Name = "errorInfo", EmitDefaultValue = false)]
+    [JsonPropertyName("errorInfo")]
     public FlowHealthErrorInfo ErrorInfo { get; set; }
 
 
@@ -80,7 +80,7 @@ public partial class LocaleInfo : IEquatable<LocaleInfo>
     /// Info about given flow version.
     /// </summary>
     /// <value>Info about given flow version.</value>
-    [DataMember(Name = "flowVersionInfo", EmitDefaultValue = false)]
+    [JsonPropertyName("flowVersionInfo")]
     public LocaleFlowVersionInfo FlowVersionInfo { get; set; }
 
 

@@ -1,12 +1,12 @@
-using System.Runtime.Serialization;
 using System.Text;
+using System.Text.Json.Serialization;
 
 namespace PureCloud.Client.Models;
 
 /// <summary>
 /// WebMessagingOfferProperties
 /// </summary>
-[DataContract]
+
 public partial class WebMessagingOfferProperties : IEquatable<WebMessagingOfferProperties>
 {
     /// <summary>
@@ -25,7 +25,7 @@ public partial class WebMessagingOfferProperties : IEquatable<WebMessagingOfferP
     /// Text value to be used when inviting a visitor to engage with a web messaging offer.
     /// </summary>
     /// <value>Text value to be used when inviting a visitor to engage with a web messaging offer.</value>
-    [DataMember(Name = "offerText", EmitDefaultValue = false)]
+    [JsonPropertyName("offerText")]
     public string OfferText { get; set; }
 
 

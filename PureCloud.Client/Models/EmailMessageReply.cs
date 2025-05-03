@@ -1,4 +1,3 @@
-using System.Runtime.Serialization;
 using System.Text;
 using System.Text.Json.Serialization;
 
@@ -7,7 +6,7 @@ namespace PureCloud.Client.Models;
 /// <summary>
 /// EmailMessageReply
 /// </summary>
-[DataContract]
+
 public partial class EmailMessageReply : IEquatable<EmailMessageReply>
 {
 
@@ -52,7 +51,7 @@ public partial class EmailMessageReply : IEquatable<EmailMessageReply>
     /// The recipients of the email message.
     /// </summary>
     /// <value>The recipients of the email message.</value>
-    [DataMember(Name = "to", EmitDefaultValue = false)]
+    [JsonPropertyName("to")]
     public List<EmailAddress> To { get; set; }
 
 
@@ -61,7 +60,7 @@ public partial class EmailMessageReply : IEquatable<EmailMessageReply>
     /// The recipients that were copied on the email message.
     /// </summary>
     /// <value>The recipients that were copied on the email message.</value>
-    [DataMember(Name = "cc", EmitDefaultValue = false)]
+    [JsonPropertyName("cc")]
     public List<EmailAddress> Cc { get; set; }
 
 
@@ -70,7 +69,7 @@ public partial class EmailMessageReply : IEquatable<EmailMessageReply>
     /// The recipients that were blind copied on the email message.
     /// </summary>
     /// <value>The recipients that were blind copied on the email message.</value>
-    [DataMember(Name = "bcc", EmitDefaultValue = false)]
+    [JsonPropertyName("bcc")]
     public List<EmailAddress> Bcc { get; set; }
 
 
@@ -79,7 +78,7 @@ public partial class EmailMessageReply : IEquatable<EmailMessageReply>
     /// The sender of the email message.
     /// </summary>
     /// <value>The sender of the email message.</value>
-    [DataMember(Name = "from", EmitDefaultValue = false)]
+    [JsonPropertyName("from")]
     public EmailAddress From { get; set; }
 
 
@@ -88,7 +87,7 @@ public partial class EmailMessageReply : IEquatable<EmailMessageReply>
     /// The receiver of the reply email message.
     /// </summary>
     /// <value>The receiver of the reply email message.</value>
-    [DataMember(Name = "replyTo", EmitDefaultValue = false)]
+    [JsonPropertyName("replyTo")]
     public EmailAddress ReplyTo { get; set; }
 
 
@@ -97,7 +96,7 @@ public partial class EmailMessageReply : IEquatable<EmailMessageReply>
     /// The subject of the email message.
     /// </summary>
     /// <value>The subject of the email message.</value>
-    [DataMember(Name = "subject", EmitDefaultValue = false)]
+    [JsonPropertyName("subject")]
     public string Subject { get; set; }
 
 
@@ -106,7 +105,7 @@ public partial class EmailMessageReply : IEquatable<EmailMessageReply>
     /// The attachments of the email message.
     /// </summary>
     /// <value>The attachments of the email message.</value>
-    [DataMember(Name = "attachments", EmitDefaultValue = false)]
+    [JsonPropertyName("attachments")]
     public List<Attachment> Attachments { get; set; }
 
 
@@ -115,7 +114,7 @@ public partial class EmailMessageReply : IEquatable<EmailMessageReply>
     /// The text body of the email message.
     /// </summary>
     /// <value>The text body of the email message.</value>
-    [DataMember(Name = "textBody", EmitDefaultValue = false)]
+    [JsonPropertyName("textBody")]
     public string TextBody { get; set; }
 
 
@@ -124,7 +123,7 @@ public partial class EmailMessageReply : IEquatable<EmailMessageReply>
     /// The html body of the email message.
     /// </summary>
     /// <value>The html body of the email message.</value>
-    [DataMember(Name = "htmlBody", EmitDefaultValue = false)]
+    [JsonPropertyName("htmlBody")]
     public string HtmlBody { get; set; }
 
 
@@ -133,7 +132,7 @@ public partial class EmailMessageReply : IEquatable<EmailMessageReply>
     /// The time when the message was received or sent. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z
     /// </summary>
     /// <value>The time when the message was received or sent. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z</value>
-    [DataMember(Name = "time", EmitDefaultValue = false)]
+    [JsonPropertyName("time")]
     public DateTime? Time { get; set; }
 
 
@@ -142,7 +141,7 @@ public partial class EmailMessageReply : IEquatable<EmailMessageReply>
     /// Indicates whether the history of previous emails of the conversation is included within the email bodies of this message.
     /// </summary>
     /// <value>Indicates whether the history of previous emails of the conversation is included within the email bodies of this message.</value>
-    [DataMember(Name = "historyIncluded", EmitDefaultValue = false)]
+    [JsonPropertyName("historyIncluded")]
     public bool? HistoryIncluded { get; set; }
 
 
@@ -151,7 +150,7 @@ public partial class EmailMessageReply : IEquatable<EmailMessageReply>
     /// Indicates an estimation of the size of the current email as a whole, in its final, ready to be sent form.
     /// </summary>
     /// <value>Indicates an estimation of the size of the current email as a whole, in its final, ready to be sent form.</value>
-    [DataMember(Name = "emailSizeBytes", EmitDefaultValue = false)]
+    [JsonPropertyName("emailSizeBytes")]
     public int? EmailSizeBytes { get; private set; }
 
 
@@ -160,7 +159,7 @@ public partial class EmailMessageReply : IEquatable<EmailMessageReply>
     /// Indicates the maximum allowed size for an email to be send via SMTP server, based on the email domain configuration
     /// </summary>
     /// <value>Indicates the maximum allowed size for an email to be send via SMTP server, based on the email domain configuration</value>
-    [DataMember(Name = "maxEmailSizeBytes", EmitDefaultValue = false)]
+    [JsonPropertyName("maxEmailSizeBytes")]
     public int? MaxEmailSizeBytes { get; private set; }
 
 

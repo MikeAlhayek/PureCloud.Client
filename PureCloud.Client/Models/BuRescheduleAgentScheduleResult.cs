@@ -1,12 +1,12 @@
-using System.Runtime.Serialization;
 using System.Text;
+using System.Text.Json.Serialization;
 
 namespace PureCloud.Client.Models;
 
 /// <summary>
 /// BuRescheduleAgentScheduleResult
 /// </summary>
-[DataContract]
+
 public partial class BuRescheduleAgentScheduleResult : IEquatable<BuRescheduleAgentScheduleResult>
 {
     /// <summary>
@@ -29,7 +29,7 @@ public partial class BuRescheduleAgentScheduleResult : IEquatable<BuRescheduleAg
     /// The management unit to which this part of the result applies
     /// </summary>
     /// <value>The management unit to which this part of the result applies</value>
-    [DataMember(Name = "managementUnit", EmitDefaultValue = false)]
+    [JsonPropertyName("managementUnit")]
     public ManagementUnitReference ManagementUnit { get; set; }
 
 
@@ -38,7 +38,7 @@ public partial class BuRescheduleAgentScheduleResult : IEquatable<BuRescheduleAg
     /// The agent schedules.  Result will always come via the downloadUrl; however the schema is included for documentation
     /// </summary>
     /// <value>The agent schedules.  Result will always come via the downloadUrl; however the schema is included for documentation</value>
-    [DataMember(Name = "downloadResult", EmitDefaultValue = false)]
+    [JsonPropertyName("downloadResult")]
     public MuRescheduleResultWrapper DownloadResult { get; set; }
 
 
@@ -47,7 +47,7 @@ public partial class BuRescheduleAgentScheduleResult : IEquatable<BuRescheduleAg
     /// The download URL from which to fetch the result
     /// </summary>
     /// <value>The download URL from which to fetch the result</value>
-    [DataMember(Name = "downloadUrl", EmitDefaultValue = false)]
+    [JsonPropertyName("downloadUrl")]
     public string DownloadUrl { get; set; }
 
 

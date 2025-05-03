@@ -7,14 +7,14 @@ namespace PureCloud.Client.Models;
 /// <summary>
 /// HistoryListing
 /// </summary>
-[DataContract]
+
 public partial class HistoryListing : IEquatable<HistoryListing>
 {
     /// <summary>
     /// Action name
     /// </summary>
     /// <value>Action name</value>
-    [JsonConverter(typeof(JsonStringEnumConverter))]
+    
     public enum ActionNameEnum
     {
         /// <summary>
@@ -101,7 +101,7 @@ public partial class HistoryListing : IEquatable<HistoryListing>
     /// Action status
     /// </summary>
     /// <value>Action status</value>
-    [JsonConverter(typeof(JsonStringEnumConverter))]
+    
     public enum ActionStatusEnum
     {
         /// <summary>
@@ -158,13 +158,13 @@ public partial class HistoryListing : IEquatable<HistoryListing>
     /// Action name
     /// </summary>
     /// <value>Action name</value>
-    [DataMember(Name = "actionName", EmitDefaultValue = false)]
+    [JsonPropertyName("actionName")]
     public ActionNameEnum? ActionName { get; set; }
     /// <summary>
     /// Action status
     /// </summary>
     /// <value>Action status</value>
-    [DataMember(Name = "actionStatus", EmitDefaultValue = false)]
+    [JsonPropertyName("actionStatus")]
     public ActionStatusEnum? ActionStatus { get; set; }
     /// <summary>
     /// Initializes a new instance of the <see cref="HistoryListing" /> class.
@@ -219,7 +219,7 @@ public partial class HistoryListing : IEquatable<HistoryListing>
     /// <summary>
     /// Gets or Sets Id
     /// </summary>
-    [DataMember(Name = "id", EmitDefaultValue = false)]
+    [JsonPropertyName("id")]
     public string Id { get; set; }
 
 
@@ -227,7 +227,7 @@ public partial class HistoryListing : IEquatable<HistoryListing>
     /// <summary>
     /// Gets or Sets Complete
     /// </summary>
-    [DataMember(Name = "complete", EmitDefaultValue = false)]
+    [JsonPropertyName("complete")]
     public bool? Complete { get; set; }
 
 
@@ -235,7 +235,7 @@ public partial class HistoryListing : IEquatable<HistoryListing>
     /// <summary>
     /// Gets or Sets User
     /// </summary>
-    [DataMember(Name = "user", EmitDefaultValue = false)]
+    [JsonPropertyName("user")]
     public User User { get; set; }
 
 
@@ -243,7 +243,7 @@ public partial class HistoryListing : IEquatable<HistoryListing>
     /// <summary>
     /// Gets or Sets Client
     /// </summary>
-    [DataMember(Name = "client", EmitDefaultValue = false)]
+    [JsonPropertyName("client")]
     public DomainEntityRef Client { get; set; }
 
 
@@ -251,7 +251,7 @@ public partial class HistoryListing : IEquatable<HistoryListing>
     /// <summary>
     /// Gets or Sets ErrorMessage
     /// </summary>
-    [DataMember(Name = "errorMessage", EmitDefaultValue = false)]
+    [JsonPropertyName("errorMessage")]
     public string ErrorMessage { get; set; }
 
 
@@ -259,7 +259,7 @@ public partial class HistoryListing : IEquatable<HistoryListing>
     /// <summary>
     /// Gets or Sets ErrorCode
     /// </summary>
-    [DataMember(Name = "errorCode", EmitDefaultValue = false)]
+    [JsonPropertyName("errorCode")]
     public string ErrorCode { get; set; }
 
 
@@ -267,7 +267,7 @@ public partial class HistoryListing : IEquatable<HistoryListing>
     /// <summary>
     /// Gets or Sets ErrorDetails
     /// </summary>
-    [DataMember(Name = "errorDetails", EmitDefaultValue = false)]
+    [JsonPropertyName("errorDetails")]
     public List<Detail> ErrorDetails { get; set; }
 
 
@@ -275,7 +275,7 @@ public partial class HistoryListing : IEquatable<HistoryListing>
     /// <summary>
     /// Gets or Sets ErrorMessageParams
     /// </summary>
-    [DataMember(Name = "errorMessageParams", EmitDefaultValue = false)]
+    [JsonPropertyName("errorMessageParams")]
     public Dictionary<string, string> ErrorMessageParams { get; set; }
 
 
@@ -287,7 +287,7 @@ public partial class HistoryListing : IEquatable<HistoryListing>
     /// <summary>
     /// Gets or Sets Name
     /// </summary>
-    [DataMember(Name = "name", EmitDefaultValue = false)]
+    [JsonPropertyName("name")]
     public string Name { get; set; }
 
 
@@ -295,7 +295,7 @@ public partial class HistoryListing : IEquatable<HistoryListing>
     /// <summary>
     /// Gets or Sets Description
     /// </summary>
-    [DataMember(Name = "description", EmitDefaultValue = false)]
+    [JsonPropertyName("description")]
     public string Description { get; set; }
 
 
@@ -303,7 +303,7 @@ public partial class HistoryListing : IEquatable<HistoryListing>
     /// <summary>
     /// Gets or Sets System
     /// </summary>
-    [DataMember(Name = "system", EmitDefaultValue = false)]
+    [JsonPropertyName("system")]
     public bool? System { get; set; }
 
 
@@ -312,7 +312,7 @@ public partial class HistoryListing : IEquatable<HistoryListing>
     /// Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z
     /// </summary>
     /// <value>Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z</value>
-    [DataMember(Name = "started", EmitDefaultValue = false)]
+    [JsonPropertyName("started")]
     public DateTime? Started { get; set; }
 
 
@@ -321,7 +321,7 @@ public partial class HistoryListing : IEquatable<HistoryListing>
     /// Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z
     /// </summary>
     /// <value>Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z</value>
-    [DataMember(Name = "completed", EmitDefaultValue = false)]
+    [JsonPropertyName("completed")]
     public DateTime? Completed { get; set; }
 
 
@@ -329,7 +329,7 @@ public partial class HistoryListing : IEquatable<HistoryListing>
     /// <summary>
     /// Gets or Sets PageSize
     /// </summary>
-    [DataMember(Name = "pageSize", EmitDefaultValue = false)]
+    [JsonPropertyName("pageSize")]
     public int? PageSize { get; set; }
 
 
@@ -337,7 +337,7 @@ public partial class HistoryListing : IEquatable<HistoryListing>
     /// <summary>
     /// Gets or Sets PageNumber
     /// </summary>
-    [DataMember(Name = "pageNumber", EmitDefaultValue = false)]
+    [JsonPropertyName("pageNumber")]
     public int? PageNumber { get; set; }
 
 
@@ -345,7 +345,7 @@ public partial class HistoryListing : IEquatable<HistoryListing>
     /// <summary>
     /// Gets or Sets Total
     /// </summary>
-    [DataMember(Name = "total", EmitDefaultValue = false)]
+    [JsonPropertyName("total")]
     public long? Total { get; set; }
 
 
@@ -353,7 +353,7 @@ public partial class HistoryListing : IEquatable<HistoryListing>
     /// <summary>
     /// Gets or Sets Entities
     /// </summary>
-    [DataMember(Name = "entities", EmitDefaultValue = false)]
+    [JsonPropertyName("entities")]
     public List<HistoryEntry> Entities { get; set; }
 
 
@@ -361,7 +361,7 @@ public partial class HistoryListing : IEquatable<HistoryListing>
     /// <summary>
     /// Gets or Sets PageCount
     /// </summary>
-    [DataMember(Name = "pageCount", EmitDefaultValue = false)]
+    [JsonPropertyName("pageCount")]
     public int? PageCount { get; set; }
 
 

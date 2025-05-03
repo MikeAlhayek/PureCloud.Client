@@ -1,12 +1,12 @@
-using System.Runtime.Serialization;
 using System.Text;
+using System.Text.Json.Serialization;
 
 namespace PureCloud.Client.Models;
 
 /// <summary>
 /// Detailed information about an error response.
 /// </summary>
-[DataContract]
+
 public partial class QueueConversationSocialExpressionEventTopicErrorDetails : IEquatable<QueueConversationSocialExpressionEventTopicErrorDetails>
 {
     /// <summary>
@@ -37,7 +37,7 @@ public partial class QueueConversationSocialExpressionEventTopicErrorDetails : I
     /// The HTTP status code for this message (400, 401, 403, 404, 500, etc.
     /// </summary>
     /// <value>The HTTP status code for this message (400, 401, 403, 404, 500, etc.</value>
-    [DataMember(Name = "status", EmitDefaultValue = false)]
+    [JsonPropertyName("status")]
     public long? Status { get; set; }
 
 
@@ -46,7 +46,7 @@ public partial class QueueConversationSocialExpressionEventTopicErrorDetails : I
     /// A code unique to this error.
     /// </summary>
     /// <value>A code unique to this error.</value>
-    [DataMember(Name = "code", EmitDefaultValue = false)]
+    [JsonPropertyName("code")]
     public string Code { get; set; }
 
 
@@ -55,7 +55,7 @@ public partial class QueueConversationSocialExpressionEventTopicErrorDetails : I
     /// Friendly description of this error.
     /// </summary>
     /// <value>Friendly description of this error.</value>
-    [DataMember(Name = "message", EmitDefaultValue = false)]
+    [JsonPropertyName("message")]
     public string Message { get; set; }
 
 
@@ -64,7 +64,7 @@ public partial class QueueConversationSocialExpressionEventTopicErrorDetails : I
     /// This is the same as message except it uses template fields for variable replacement. For instance: &#39;User {username} was not found&#39;
     /// </summary>
     /// <value>This is the same as message except it uses template fields for variable replacement. For instance: &#39;User {username} was not found&#39;</value>
-    [DataMember(Name = "messageWithParams", EmitDefaultValue = false)]
+    [JsonPropertyName("messageWithParams")]
     public string MessageWithParams { get; set; }
 
 
@@ -73,7 +73,7 @@ public partial class QueueConversationSocialExpressionEventTopicErrorDetails : I
     /// Used in conjunction with messageWithParams. These are the template parameters. For instance: UserParam.key &#x3D; &#39;username&#39;, UserParam.value &#x3D; &#39;john.doe&#39;
     /// </summary>
     /// <value>Used in conjunction with messageWithParams. These are the template parameters. For instance: UserParam.key &#x3D; &#39;username&#39;, UserParam.value &#x3D; &#39;john.doe&#39;</value>
-    [DataMember(Name = "messageParams", EmitDefaultValue = false)]
+    [JsonPropertyName("messageParams")]
     public Dictionary<string, string> MessageParams { get; set; }
 
 
@@ -82,7 +82,7 @@ public partial class QueueConversationSocialExpressionEventTopicErrorDetails : I
     /// The correlation Id or context Id for this message. If left blank the Public API will look at the HTTP response header &#39;ININ-Correlation-Id&#39; instead.
     /// </summary>
     /// <value>The correlation Id or context Id for this message. If left blank the Public API will look at the HTTP response header &#39;ININ-Correlation-Id&#39; instead.</value>
-    [DataMember(Name = "contextId", EmitDefaultValue = false)]
+    [JsonPropertyName("contextId")]
     public string ContextId { get; set; }
 
 
@@ -90,7 +90,7 @@ public partial class QueueConversationSocialExpressionEventTopicErrorDetails : I
     /// <summary>
     /// Gets or Sets Uri
     /// </summary>
-    [DataMember(Name = "uri", EmitDefaultValue = false)]
+    [JsonPropertyName("uri")]
     public string Uri { get; set; }
 
 

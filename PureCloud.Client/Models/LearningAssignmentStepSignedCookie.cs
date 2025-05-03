@@ -1,12 +1,12 @@
-using System.Runtime.Serialization;
 using System.Text;
+using System.Text.Json.Serialization;
 
 namespace PureCloud.Client.Models;
 
 /// <summary>
 /// LearningAssignmentStepSignedCookie
 /// </summary>
-[DataContract]
+
 public partial class LearningAssignmentStepSignedCookie : IEquatable<LearningAssignmentStepSignedCookie>
 {
     /// <summary>
@@ -23,7 +23,7 @@ public partial class LearningAssignmentStepSignedCookie : IEquatable<LearningAss
     /// The base URL for the signed cookie
     /// </summary>
     /// <value>The base URL for the signed cookie</value>
-    [DataMember(Name = "url", EmitDefaultValue = false)]
+    [JsonPropertyName("url")]
     public string Url { get; private set; }
 
 
@@ -32,7 +32,7 @@ public partial class LearningAssignmentStepSignedCookie : IEquatable<LearningAss
     /// The cookie values required to access content from the base URL
     /// </summary>
     /// <value>The cookie values required to access content from the base URL</value>
-    [DataMember(Name = "cookieValues", EmitDefaultValue = false)]
+    [JsonPropertyName("cookieValues")]
     public Dictionary<string, string> CookieValues { get; private set; }
 
 

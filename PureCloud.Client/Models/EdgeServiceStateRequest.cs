@@ -1,4 +1,3 @@
-using System.Runtime.Serialization;
 using System.Text;
 using System.Text.Json.Serialization;
 
@@ -7,7 +6,7 @@ namespace PureCloud.Client.Models;
 /// <summary>
 /// EdgeServiceStateRequest
 /// </summary>
-[DataContract]
+
 public partial class EdgeServiceStateRequest : IEquatable<EdgeServiceStateRequest>
 {
 
@@ -34,7 +33,7 @@ public partial class EdgeServiceStateRequest : IEquatable<EdgeServiceStateReques
     /// A boolean that sets the Edge in-service or out-of-service.
     /// </summary>
     /// <value>A boolean that sets the Edge in-service or out-of-service.</value>
-    [DataMember(Name = "inService", EmitDefaultValue = false)]
+    [JsonPropertyName("inService")]
     public bool? InService { get; set; }
 
 
@@ -43,7 +42,7 @@ public partial class EdgeServiceStateRequest : IEquatable<EdgeServiceStateReques
     /// The number of seconds to wait for call draining to complete before initiating the reboot. A value of 0 will prevent call draining and all calls will disconnect immediately.
     /// </summary>
     /// <value>The number of seconds to wait for call draining to complete before initiating the reboot. A value of 0 will prevent call draining and all calls will disconnect immediately.</value>
-    [DataMember(Name = "callDrainingWaitTimeSeconds", EmitDefaultValue = false)]
+    [JsonPropertyName("callDrainingWaitTimeSeconds")]
     public int? CallDrainingWaitTimeSeconds { get; set; }
 
 

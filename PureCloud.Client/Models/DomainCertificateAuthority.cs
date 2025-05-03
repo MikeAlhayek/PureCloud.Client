@@ -7,14 +7,14 @@ namespace PureCloud.Client.Models;
 /// <summary>
 /// A certificate authority represents an organization that has issued a digital certificate for making secure connections with an edge device.
 /// </summary>
-[DataContract]
+
 public partial class DomainCertificateAuthority : IEquatable<DomainCertificateAuthority>
 {
     /// <summary>
     /// Indicates if the resource is active, inactive, or deleted.
     /// </summary>
     /// <value>Indicates if the resource is active, inactive, or deleted.</value>
-    [JsonConverter(typeof(JsonStringEnumConverter))]
+    
     public enum StateEnum
     {
         /// <summary>
@@ -47,7 +47,7 @@ public partial class DomainCertificateAuthority : IEquatable<DomainCertificateAu
     /// The certificate authorities type.  Managed certificate authorities are generated and maintained by Interactive Intelligence.  These are read-only and not modifiable by clients.  Remote authorities are customer managed.
     /// </summary>
     /// <value>The certificate authorities type.  Managed certificate authorities are generated and maintained by Interactive Intelligence.  These are read-only and not modifiable by clients.  Remote authorities are customer managed.</value>
-    [JsonConverter(typeof(JsonStringEnumConverter))]
+    
     public enum TypeEnum
     {
         /// <summary>
@@ -73,7 +73,7 @@ public partial class DomainCertificateAuthority : IEquatable<DomainCertificateAu
     /// <summary>
     /// Gets or Sets Services
     /// </summary>
-    [JsonConverter(typeof(JsonStringEnumConverter))]
+    
     public enum ServicesEnum
     {
         /// <summary>
@@ -106,13 +106,13 @@ public partial class DomainCertificateAuthority : IEquatable<DomainCertificateAu
     /// Indicates if the resource is active, inactive, or deleted.
     /// </summary>
     /// <value>Indicates if the resource is active, inactive, or deleted.</value>
-    [DataMember(Name = "state", EmitDefaultValue = false)]
+    [JsonPropertyName("state")]
     public StateEnum? State { get; private set; }
     /// <summary>
     /// The certificate authorities type.  Managed certificate authorities are generated and maintained by Interactive Intelligence.  These are read-only and not modifiable by clients.  Remote authorities are customer managed.
     /// </summary>
     /// <value>The certificate authorities type.  Managed certificate authorities are generated and maintained by Interactive Intelligence.  These are read-only and not modifiable by clients.  Remote authorities are customer managed.</value>
-    [DataMember(Name = "type", EmitDefaultValue = false)]
+    [JsonPropertyName("type")]
     public TypeEnum? Type { get; set; }
 
     /// <summary>
@@ -150,7 +150,7 @@ public partial class DomainCertificateAuthority : IEquatable<DomainCertificateAu
     /// The globally unique identifier for the object.
     /// </summary>
     /// <value>The globally unique identifier for the object.</value>
-    [DataMember(Name = "id", EmitDefaultValue = false)]
+    [JsonPropertyName("id")]
     public string Id { get; private set; }
 
 
@@ -159,7 +159,7 @@ public partial class DomainCertificateAuthority : IEquatable<DomainCertificateAu
     /// The name of the entity.
     /// </summary>
     /// <value>The name of the entity.</value>
-    [DataMember(Name = "name", EmitDefaultValue = false)]
+    [JsonPropertyName("name")]
     public string Name { get; set; }
 
 
@@ -168,7 +168,7 @@ public partial class DomainCertificateAuthority : IEquatable<DomainCertificateAu
     /// The division to which this entity belongs.
     /// </summary>
     /// <value>The division to which this entity belongs.</value>
-    [DataMember(Name = "division", EmitDefaultValue = false)]
+    [JsonPropertyName("division")]
     public Division Division { get; set; }
 
 
@@ -177,7 +177,7 @@ public partial class DomainCertificateAuthority : IEquatable<DomainCertificateAu
     /// The resource&#39;s description.
     /// </summary>
     /// <value>The resource&#39;s description.</value>
-    [DataMember(Name = "description", EmitDefaultValue = false)]
+    [JsonPropertyName("description")]
     public string Description { get; set; }
 
 
@@ -186,7 +186,7 @@ public partial class DomainCertificateAuthority : IEquatable<DomainCertificateAu
     /// The current version of the resource.
     /// </summary>
     /// <value>The current version of the resource.</value>
-    [DataMember(Name = "version", EmitDefaultValue = false)]
+    [JsonPropertyName("version")]
     public int? Version { get; set; }
 
 
@@ -195,7 +195,7 @@ public partial class DomainCertificateAuthority : IEquatable<DomainCertificateAu
     /// The date the resource was created. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z
     /// </summary>
     /// <value>The date the resource was created. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z</value>
-    [DataMember(Name = "dateCreated", EmitDefaultValue = false)]
+    [JsonPropertyName("dateCreated")]
     public DateTime? DateCreated { get; private set; }
 
 
@@ -204,7 +204,7 @@ public partial class DomainCertificateAuthority : IEquatable<DomainCertificateAu
     /// The date of the last modification to the resource. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z
     /// </summary>
     /// <value>The date of the last modification to the resource. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z</value>
-    [DataMember(Name = "dateModified", EmitDefaultValue = false)]
+    [JsonPropertyName("dateModified")]
     public DateTime? DateModified { get; private set; }
 
 
@@ -213,7 +213,7 @@ public partial class DomainCertificateAuthority : IEquatable<DomainCertificateAu
     /// The ID of the user that last modified the resource.
     /// </summary>
     /// <value>The ID of the user that last modified the resource.</value>
-    [DataMember(Name = "modifiedBy", EmitDefaultValue = false)]
+    [JsonPropertyName("modifiedBy")]
     public string ModifiedBy { get; private set; }
 
 
@@ -222,7 +222,7 @@ public partial class DomainCertificateAuthority : IEquatable<DomainCertificateAu
     /// The ID of the user that created the resource.
     /// </summary>
     /// <value>The ID of the user that created the resource.</value>
-    [DataMember(Name = "createdBy", EmitDefaultValue = false)]
+    [JsonPropertyName("createdBy")]
     public string CreatedBy { get; private set; }
 
 
@@ -233,7 +233,7 @@ public partial class DomainCertificateAuthority : IEquatable<DomainCertificateAu
     /// The application that last modified the resource.
     /// </summary>
     /// <value>The application that last modified the resource.</value>
-    [DataMember(Name = "modifiedByApp", EmitDefaultValue = false)]
+    [JsonPropertyName("modifiedByApp")]
     public string ModifiedByApp { get; private set; }
 
 
@@ -242,7 +242,7 @@ public partial class DomainCertificateAuthority : IEquatable<DomainCertificateAu
     /// The application that created the resource.
     /// </summary>
     /// <value>The application that created the resource.</value>
-    [DataMember(Name = "createdByApp", EmitDefaultValue = false)]
+    [JsonPropertyName("createdByApp")]
     public string CreatedByApp { get; private set; }
 
 
@@ -251,7 +251,7 @@ public partial class DomainCertificateAuthority : IEquatable<DomainCertificateAu
     /// The authorities signed X509 PEM encoded certificate.
     /// </summary>
     /// <value>The authorities signed X509 PEM encoded certificate.</value>
-    [DataMember(Name = "certificate", EmitDefaultValue = false)]
+    [JsonPropertyName("certificate")]
     public string Certificate { get; set; }
 
 
@@ -262,7 +262,7 @@ public partial class DomainCertificateAuthority : IEquatable<DomainCertificateAu
     /// The service(s) that the authority can be used to authenticate.
     /// </summary>
     /// <value>The service(s) that the authority can be used to authenticate.</value>
-    [DataMember(Name = "services", EmitDefaultValue = false)]
+    [JsonPropertyName("services")]
     public List<ServicesEnum> Services { get; set; }
 
 
@@ -271,7 +271,7 @@ public partial class DomainCertificateAuthority : IEquatable<DomainCertificateAu
     /// The details of the parsed certificate(s).
     /// </summary>
     /// <value>The details of the parsed certificate(s).</value>
-    [DataMember(Name = "certificateDetails", EmitDefaultValue = false)]
+    [JsonPropertyName("certificateDetails")]
     public List<CertificateDetails> CertificateDetails { get; set; }
 
 
@@ -280,7 +280,7 @@ public partial class DomainCertificateAuthority : IEquatable<DomainCertificateAu
     /// The URI for this object
     /// </summary>
     /// <value>The URI for this object</value>
-    [DataMember(Name = "selfUri", EmitDefaultValue = false)]
+    [JsonPropertyName("selfUri")]
     public string SelfUri { get; private set; }
 
 

@@ -7,13 +7,13 @@ namespace PureCloud.Client.Models;
 /// <summary>
 /// AuditTopicAuditLogMessage
 /// </summary>
-[DataContract]
+
 public partial class AuditTopicAuditLogMessage : IEquatable<AuditTopicAuditLogMessage>
 {
     /// <summary>
     /// Gets or Sets ServiceName
     /// </summary>
-    [JsonConverter(typeof(JsonStringEnumConverter))]
+    
     public enum ServiceNameEnum
     {
         /// <summary>
@@ -333,7 +333,7 @@ public partial class AuditTopicAuditLogMessage : IEquatable<AuditTopicAuditLogMe
     /// <summary>
     /// Gets or Sets Action
     /// </summary>
-    [JsonConverter(typeof(JsonStringEnumConverter))]
+    
     public enum ActionEnum
     {
         /// <summary>
@@ -1073,7 +1073,7 @@ public partial class AuditTopicAuditLogMessage : IEquatable<AuditTopicAuditLogMe
     /// <summary>
     /// Gets or Sets EntityType
     /// </summary>
-    [JsonConverter(typeof(JsonStringEnumConverter))]
+    
     public enum EntityTypeEnum
     {
         /// <summary>
@@ -2449,17 +2449,17 @@ public partial class AuditTopicAuditLogMessage : IEquatable<AuditTopicAuditLogMe
     /// <summary>
     /// Gets or Sets ServiceName
     /// </summary>
-    [DataMember(Name = "serviceName", EmitDefaultValue = false)]
+    [JsonPropertyName("serviceName")]
     public ServiceNameEnum? ServiceName { get; set; }
     /// <summary>
     /// Gets or Sets Action
     /// </summary>
-    [DataMember(Name = "action", EmitDefaultValue = false)]
+    [JsonPropertyName("action")]
     public ActionEnum? Action { get; set; }
     /// <summary>
     /// Gets or Sets EntityType
     /// </summary>
-    [DataMember(Name = "entityType", EmitDefaultValue = false)]
+    [JsonPropertyName("entityType")]
     public EntityTypeEnum? EntityType { get; set; }
     /// <summary>
     /// Initializes a new instance of the <see cref="AuditTopicAuditLogMessage" /> class.
@@ -2506,7 +2506,7 @@ public partial class AuditTopicAuditLogMessage : IEquatable<AuditTopicAuditLogMe
     /// <summary>
     /// Gets or Sets Id
     /// </summary>
-    [DataMember(Name = "id", EmitDefaultValue = false)]
+    [JsonPropertyName("id")]
     public string Id { get; set; }
 
 
@@ -2514,7 +2514,7 @@ public partial class AuditTopicAuditLogMessage : IEquatable<AuditTopicAuditLogMe
     /// <summary>
     /// Gets or Sets UserId
     /// </summary>
-    [DataMember(Name = "userId", EmitDefaultValue = false)]
+    [JsonPropertyName("userId")]
     public string UserId { get; set; }
 
 
@@ -2522,7 +2522,7 @@ public partial class AuditTopicAuditLogMessage : IEquatable<AuditTopicAuditLogMe
     /// <summary>
     /// Gets or Sets UserHomeOrgId
     /// </summary>
-    [DataMember(Name = "userHomeOrgId", EmitDefaultValue = false)]
+    [JsonPropertyName("userHomeOrgId")]
     public string UserHomeOrgId { get; set; }
 
 
@@ -2530,7 +2530,7 @@ public partial class AuditTopicAuditLogMessage : IEquatable<AuditTopicAuditLogMe
     /// <summary>
     /// Gets or Sets Username
     /// </summary>
-    [DataMember(Name = "username", EmitDefaultValue = false)]
+    [JsonPropertyName("username")]
     public AuditTopicDomainEntityRef Username { get; set; }
 
 
@@ -2538,7 +2538,7 @@ public partial class AuditTopicAuditLogMessage : IEquatable<AuditTopicAuditLogMe
     /// <summary>
     /// Gets or Sets UserDisplay
     /// </summary>
-    [DataMember(Name = "userDisplay", EmitDefaultValue = false)]
+    [JsonPropertyName("userDisplay")]
     public string UserDisplay { get; set; }
 
 
@@ -2546,7 +2546,7 @@ public partial class AuditTopicAuditLogMessage : IEquatable<AuditTopicAuditLogMe
     /// <summary>
     /// Gets or Sets ClientId
     /// </summary>
-    [DataMember(Name = "clientId", EmitDefaultValue = false)]
+    [JsonPropertyName("clientId")]
     public AuditTopicAddressableEntityRef ClientId { get; set; }
 
 
@@ -2554,7 +2554,7 @@ public partial class AuditTopicAuditLogMessage : IEquatable<AuditTopicAuditLogMe
     /// <summary>
     /// Gets or Sets RemoteIp
     /// </summary>
-    [DataMember(Name = "remoteIp", EmitDefaultValue = false)]
+    [JsonPropertyName("remoteIp")]
     public List<string> RemoteIp { get; set; }
 
 
@@ -2564,7 +2564,7 @@ public partial class AuditTopicAuditLogMessage : IEquatable<AuditTopicAuditLogMe
     /// <summary>
     /// Gets or Sets Level
     /// </summary>
-    [DataMember(Name = "level", EmitDefaultValue = false)]
+    [JsonPropertyName("level")]
     public string Level { get; set; }
 
 
@@ -2572,7 +2572,7 @@ public partial class AuditTopicAuditLogMessage : IEquatable<AuditTopicAuditLogMe
     /// <summary>
     /// Gets or Sets EventTime
     /// </summary>
-    [DataMember(Name = "eventTime", EmitDefaultValue = false)]
+    [JsonPropertyName("eventTime")]
     public DateTime? EventTime { get; set; }
 
 
@@ -2580,7 +2580,7 @@ public partial class AuditTopicAuditLogMessage : IEquatable<AuditTopicAuditLogMe
     /// <summary>
     /// Gets or Sets Message
     /// </summary>
-    [DataMember(Name = "message", EmitDefaultValue = false)]
+    [JsonPropertyName("message")]
     public AuditTopicMessageInfo Message { get; set; }
 
 
@@ -2592,7 +2592,7 @@ public partial class AuditTopicAuditLogMessage : IEquatable<AuditTopicAuditLogMe
     /// <summary>
     /// Gets or Sets Entity
     /// </summary>
-    [DataMember(Name = "entity", EmitDefaultValue = false)]
+    [JsonPropertyName("entity")]
     public AuditTopicDomainEntityRef Entity { get; set; }
 
 
@@ -2600,7 +2600,7 @@ public partial class AuditTopicAuditLogMessage : IEquatable<AuditTopicAuditLogMe
     /// <summary>
     /// Gets or Sets PropertyChanges
     /// </summary>
-    [DataMember(Name = "propertyChanges", EmitDefaultValue = false)]
+    [JsonPropertyName("propertyChanges")]
     public List<AuditTopicPropertyChange> PropertyChanges { get; set; }
 
 
@@ -2608,7 +2608,7 @@ public partial class AuditTopicAuditLogMessage : IEquatable<AuditTopicAuditLogMe
     /// <summary>
     /// Gets or Sets Context
     /// </summary>
-    [DataMember(Name = "context", EmitDefaultValue = false)]
+    [JsonPropertyName("context")]
     public Dictionary<string, string> Context { get; set; }
 
 

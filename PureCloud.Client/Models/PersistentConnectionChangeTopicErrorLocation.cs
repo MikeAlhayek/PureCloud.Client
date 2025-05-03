@@ -1,12 +1,12 @@
-using System.Runtime.Serialization;
 using System.Text;
+using System.Text.Json.Serialization;
 
 namespace PureCloud.Client.Models;
 
 /// <summary>
 /// PersistentConnectionChangeTopicErrorLocation
 /// </summary>
-[DataContract]
+
 public partial class PersistentConnectionChangeTopicErrorLocation : IEquatable<PersistentConnectionChangeTopicErrorLocation>
 {
     /// <summary>
@@ -28,7 +28,7 @@ public partial class PersistentConnectionChangeTopicErrorLocation : IEquatable<P
     /// <summary>
     /// Gets or Sets Function
     /// </summary>
-    [DataMember(Name = "function", EmitDefaultValue = false)]
+    [JsonPropertyName("function")]
     public string Function { get; set; }
 
 
@@ -36,7 +36,7 @@ public partial class PersistentConnectionChangeTopicErrorLocation : IEquatable<P
     /// <summary>
     /// Gets or Sets FileID
     /// </summary>
-    [DataMember(Name = "fileID", EmitDefaultValue = false)]
+    [JsonPropertyName("fileID")]
     public string FileID { get; set; }
 
 
@@ -44,7 +44,7 @@ public partial class PersistentConnectionChangeTopicErrorLocation : IEquatable<P
     /// <summary>
     /// Gets or Sets Line
     /// </summary>
-    [DataMember(Name = "line", EmitDefaultValue = false)]
+    [JsonPropertyName("line")]
     public long? Line { get; set; }
 
 

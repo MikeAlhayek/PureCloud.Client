@@ -1,12 +1,12 @@
-using System.Runtime.Serialization;
 using System.Text;
+using System.Text.Json.Serialization;
 
 namespace PureCloud.Client.Models;
 
 /// <summary>
 /// Information about trusted certificates
 /// </summary>
-[DataContract]
+
 public partial class TrustedCertificates : IEquatable<TrustedCertificates>
 {
     /// <summary>
@@ -27,7 +27,7 @@ public partial class TrustedCertificates : IEquatable<TrustedCertificates>
     /// The list of trusted certificates
     /// </summary>
     /// <value>The list of trusted certificates</value>
-    [DataMember(Name = "entities", EmitDefaultValue = false)]
+    [JsonPropertyName("entities")]
     public List<TrustedCertificateInfo> Entities { get; set; }
 
 
@@ -36,7 +36,7 @@ public partial class TrustedCertificates : IEquatable<TrustedCertificates>
     /// The total number of trusted certificates
     /// </summary>
     /// <value>The total number of trusted certificates</value>
-    [DataMember(Name = "total", EmitDefaultValue = false)]
+    [JsonPropertyName("total")]
     public int? Total { get; set; }
 
 

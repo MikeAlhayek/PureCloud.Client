@@ -1,12 +1,12 @@
-using System.Runtime.Serialization;
 using System.Text;
+using System.Text.Json.Serialization;
 
 namespace PureCloud.Client.Models;
 
 /// <summary>
 /// UserExpands
 /// </summary>
-[DataContract]
+
 public partial class UserExpands : IEquatable<UserExpands>
 {
     /// <summary>
@@ -23,7 +23,7 @@ public partial class UserExpands : IEquatable<UserExpands>
     /// ACD routing status
     /// </summary>
     /// <value>ACD routing status</value>
-    [DataMember(Name = "routingStatus", EmitDefaultValue = false)]
+    [JsonPropertyName("routingStatus")]
     public RoutingStatus RoutingStatus { get; private set; }
 
 
@@ -32,7 +32,7 @@ public partial class UserExpands : IEquatable<UserExpands>
     /// Active presence
     /// </summary>
     /// <value>Active presence</value>
-    [DataMember(Name = "presence", EmitDefaultValue = false)]
+    [JsonPropertyName("presence")]
     public UserPresence Presence { get; private set; }
 
 
@@ -41,7 +41,7 @@ public partial class UserExpands : IEquatable<UserExpands>
     /// Active 3rd party presence
     /// </summary>
     /// <value>Active 3rd party presence</value>
-    [DataMember(Name = "integrationPresence", EmitDefaultValue = false)]
+    [JsonPropertyName("integrationPresence")]
     public UserPresence IntegrationPresence { get; private set; }
 
 
@@ -50,7 +50,7 @@ public partial class UserExpands : IEquatable<UserExpands>
     /// Summary of conversion statistics for conversation types.
     /// </summary>
     /// <value>Summary of conversion statistics for conversation types.</value>
-    [DataMember(Name = "conversationSummary", EmitDefaultValue = false)]
+    [JsonPropertyName("conversationSummary")]
     public UserConversationSummary ConversationSummary { get; private set; }
 
 
@@ -59,7 +59,7 @@ public partial class UserExpands : IEquatable<UserExpands>
     /// Determine if out of office is enabled
     /// </summary>
     /// <value>Determine if out of office is enabled</value>
-    [DataMember(Name = "outOfOffice", EmitDefaultValue = false)]
+    [JsonPropertyName("outOfOffice")]
     public OutOfOffice OutOfOffice { get; private set; }
 
 
@@ -68,7 +68,7 @@ public partial class UserExpands : IEquatable<UserExpands>
     /// Current geolocation position
     /// </summary>
     /// <value>Current geolocation position</value>
-    [DataMember(Name = "geolocation", EmitDefaultValue = false)]
+    [JsonPropertyName("geolocation")]
     public Geolocation Geolocation { get; private set; }
 
 
@@ -77,7 +77,7 @@ public partial class UserExpands : IEquatable<UserExpands>
     /// Effective, default, and last station information
     /// </summary>
     /// <value>Effective, default, and last station information</value>
-    [DataMember(Name = "station", EmitDefaultValue = false)]
+    [JsonPropertyName("station")]
     public UserStations Station { get; private set; }
 
 
@@ -86,7 +86,7 @@ public partial class UserExpands : IEquatable<UserExpands>
     /// Roles and permissions assigned to the user
     /// </summary>
     /// <value>Roles and permissions assigned to the user</value>
-    [DataMember(Name = "authorization", EmitDefaultValue = false)]
+    [JsonPropertyName("authorization")]
     public UserAuthorization Authorization { get; private set; }
 
 

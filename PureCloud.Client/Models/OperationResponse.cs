@@ -7,14 +7,14 @@ namespace PureCloud.Client.Models;
 /// <summary>
 /// OperationResponse
 /// </summary>
-[DataContract]
+
 public partial class OperationResponse : IEquatable<OperationResponse>
 {
     /// <summary>
     /// Type of the operation.
     /// </summary>
     /// <value>Type of the operation.</value>
-    [JsonConverter(typeof(JsonStringEnumConverter))]
+    
     public enum TypeEnum
     {
         /// <summary>
@@ -53,7 +53,7 @@ public partial class OperationResponse : IEquatable<OperationResponse>
     /// Type of the operation.
     /// </summary>
     /// <value>Type of the operation.</value>
-    [DataMember(Name = "type", EmitDefaultValue = false)]
+    [JsonPropertyName("type")]
     public TypeEnum? Type { get; set; }
     /// <summary>
     /// Initializes a new instance of the <see cref="OperationResponse" /> class.
@@ -81,7 +81,7 @@ public partial class OperationResponse : IEquatable<OperationResponse>
     /// The globally unique identifier for the object.
     /// </summary>
     /// <value>The globally unique identifier for the object.</value>
-    [DataMember(Name = "id", EmitDefaultValue = false)]
+    [JsonPropertyName("id")]
     public string Id { get; private set; }
 
 
@@ -90,7 +90,7 @@ public partial class OperationResponse : IEquatable<OperationResponse>
     /// Status of the operation.
     /// </summary>
     /// <value>Status of the operation.</value>
-    [DataMember(Name = "status", EmitDefaultValue = false)]
+    [JsonPropertyName("status")]
     public string Status { get; set; }
 
 
@@ -101,7 +101,7 @@ public partial class OperationResponse : IEquatable<OperationResponse>
     /// The user who created the operation.
     /// </summary>
     /// <value>The user who created the operation.</value>
-    [DataMember(Name = "createdBy", EmitDefaultValue = false)]
+    [JsonPropertyName("createdBy")]
     public UserReference CreatedBy { get; set; }
 
 
@@ -110,7 +110,7 @@ public partial class OperationResponse : IEquatable<OperationResponse>
     /// Operation creation date-time. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z
     /// </summary>
     /// <value>Operation creation date-time. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z</value>
-    [DataMember(Name = "dateCreated", EmitDefaultValue = false)]
+    [JsonPropertyName("dateCreated")]
     public DateTime? DateCreated { get; set; }
 
 
@@ -119,7 +119,7 @@ public partial class OperationResponse : IEquatable<OperationResponse>
     /// Operation last modification date-time. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z
     /// </summary>
     /// <value>Operation last modification date-time. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z</value>
-    [DataMember(Name = "dateModified", EmitDefaultValue = false)]
+    [JsonPropertyName("dateModified")]
     public DateTime? DateModified { get; set; }
 
 
@@ -128,7 +128,7 @@ public partial class OperationResponse : IEquatable<OperationResponse>
     /// Source of the operation.
     /// </summary>
     /// <value>Source of the operation.</value>
-    [DataMember(Name = "source", EmitDefaultValue = false)]
+    [JsonPropertyName("source")]
     public KnowledgeOperationSource Source { get; set; }
 
 
@@ -137,7 +137,7 @@ public partial class OperationResponse : IEquatable<OperationResponse>
     /// The URI for this object
     /// </summary>
     /// <value>The URI for this object</value>
-    [DataMember(Name = "selfUri", EmitDefaultValue = false)]
+    [JsonPropertyName("selfUri")]
     public string SelfUri { get; private set; }
 
 

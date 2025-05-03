@@ -1,12 +1,12 @@
-using System.Runtime.Serialization;
 using System.Text;
+using System.Text.Json.Serialization;
 
 namespace PureCloud.Client.Models;
 
 /// <summary>
 /// SkillCombinationInfo
 /// </summary>
-[DataContract]
+
 public partial class SkillCombinationInfo : IEquatable<SkillCombinationInfo>
 {
     /// <summary>
@@ -25,7 +25,7 @@ public partial class SkillCombinationInfo : IEquatable<SkillCombinationInfo>
     /// A skill combination in the contact queue
     /// </summary>
     /// <value>A skill combination in the contact queue</value>
-    [DataMember(Name = "skillCombination", EmitDefaultValue = false)]
+    [JsonPropertyName("skillCombination")]
     public List<string> SkillCombination { get; set; }
 
 
@@ -34,7 +34,7 @@ public partial class SkillCombinationInfo : IEquatable<SkillCombinationInfo>
     /// Number of total contacts in the contact queue for this skill combination
     /// </summary>
     /// <value>Number of total contacts in the contact queue for this skill combination</value>
-    [DataMember(Name = "totalCount", EmitDefaultValue = false)]
+    [JsonPropertyName("totalCount")]
     public long? TotalCount { get; private set; }
 
 
@@ -43,7 +43,7 @@ public partial class SkillCombinationInfo : IEquatable<SkillCombinationInfo>
     /// Number of remaining contacts in the contact queue for this skill combination
     /// </summary>
     /// <value>Number of remaining contacts in the contact queue for this skill combination</value>
-    [DataMember(Name = "remainingCount", EmitDefaultValue = false)]
+    [JsonPropertyName("remainingCount")]
     public long? RemainingCount { get; private set; }
 
 

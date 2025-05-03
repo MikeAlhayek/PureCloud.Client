@@ -1,12 +1,12 @@
-using System.Runtime.Serialization;
 using System.Text;
+using System.Text.Json.Serialization;
 
 namespace PureCloud.Client.Models;
 
 /// <summary>
 /// ContestMetricScore
 /// </summary>
-[DataContract]
+
 public partial class ContestMetricScore : IEquatable<ContestMetricScore>
 {
     /// <summary>
@@ -31,7 +31,7 @@ public partial class ContestMetricScore : IEquatable<ContestMetricScore>
     /// The gamification metric for the data
     /// </summary>
     /// <value>The gamification metric for the data</value>
-    [DataMember(Name = "metric", EmitDefaultValue = false)]
+    [JsonPropertyName("metric")]
     public AddressableEntityRef Metric { get; set; }
 
 
@@ -40,7 +40,7 @@ public partial class ContestMetricScore : IEquatable<ContestMetricScore>
     /// The Contest Metric score
     /// </summary>
     /// <value>The Contest Metric score</value>
-    [DataMember(Name = "score", EmitDefaultValue = false)]
+    [JsonPropertyName("score")]
     public double? Score { get; set; }
 
 
@@ -49,7 +49,7 @@ public partial class ContestMetricScore : IEquatable<ContestMetricScore>
     /// The Contest Metric totalPoints
     /// </summary>
     /// <value>The Contest Metric totalPoints</value>
-    [DataMember(Name = "totalPoints", EmitDefaultValue = false)]
+    [JsonPropertyName("totalPoints")]
     public double? TotalPoints { get; set; }
 
 
@@ -58,7 +58,7 @@ public partial class ContestMetricScore : IEquatable<ContestMetricScore>
     /// The Contest Metric percentOfGoal
     /// </summary>
     /// <value>The Contest Metric percentOfGoal</value>
-    [DataMember(Name = "percentOfGoal", EmitDefaultValue = false)]
+    [JsonPropertyName("percentOfGoal")]
     public double? PercentOfGoal { get; set; }
 
 

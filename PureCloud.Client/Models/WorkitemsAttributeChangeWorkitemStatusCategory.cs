@@ -7,14 +7,14 @@ namespace PureCloud.Client.Models;
 /// <summary>
 /// WorkitemsAttributeChangeWorkitemStatusCategory
 /// </summary>
-[DataContract]
+
 public partial class WorkitemsAttributeChangeWorkitemStatusCategory : IEquatable<WorkitemsAttributeChangeWorkitemStatusCategory>
 {
     /// <summary>
     /// New property value
     /// </summary>
     /// <value>New property value</value>
-    [JsonConverter(typeof(JsonStringEnumConverter))]
+    
     public enum NewValueEnum
     {
         /// <summary>
@@ -59,7 +59,7 @@ public partial class WorkitemsAttributeChangeWorkitemStatusCategory : IEquatable
     /// Old property value
     /// </summary>
     /// <value>Old property value</value>
-    [JsonConverter(typeof(JsonStringEnumConverter))]
+    
     public enum OldValueEnum
     {
         /// <summary>
@@ -104,13 +104,13 @@ public partial class WorkitemsAttributeChangeWorkitemStatusCategory : IEquatable
     /// New property value
     /// </summary>
     /// <value>New property value</value>
-    [DataMember(Name = "newValue", EmitDefaultValue = false)]
+    [JsonPropertyName("newValue")]
     public NewValueEnum? NewValue { get; set; }
     /// <summary>
     /// Old property value
     /// </summary>
     /// <value>Old property value</value>
-    [DataMember(Name = "oldValue", EmitDefaultValue = false)]
+    [JsonPropertyName("oldValue")]
     public OldValueEnum? OldValue { get; set; }
     /// <summary>
     /// Initializes a new instance of the <see cref="WorkitemsAttributeChangeWorkitemStatusCategory" /> class.

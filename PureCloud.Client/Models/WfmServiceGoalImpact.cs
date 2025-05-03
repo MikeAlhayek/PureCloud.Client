@@ -1,4 +1,3 @@
-using System.Runtime.Serialization;
 using System.Text;
 using System.Text.Json.Serialization;
 
@@ -7,7 +6,7 @@ namespace PureCloud.Client.Models;
 /// <summary>
 /// WfmServiceGoalImpact
 /// </summary>
-[DataContract]
+
 public partial class WfmServiceGoalImpact : IEquatable<WfmServiceGoalImpact>
 {
 
@@ -34,7 +33,7 @@ public partial class WfmServiceGoalImpact : IEquatable<WfmServiceGoalImpact>
     /// The maximum allowed percent increase from the configured goal
     /// </summary>
     /// <value>The maximum allowed percent increase from the configured goal</value>
-    [DataMember(Name = "increaseByPercent", EmitDefaultValue = false)]
+    [JsonPropertyName("increaseByPercent")]
     public double? IncreaseByPercent { get; set; }
 
 
@@ -43,7 +42,7 @@ public partial class WfmServiceGoalImpact : IEquatable<WfmServiceGoalImpact>
     /// The maximum allowed percent decrease from the configured goal
     /// </summary>
     /// <value>The maximum allowed percent decrease from the configured goal</value>
-    [DataMember(Name = "decreaseByPercent", EmitDefaultValue = false)]
+    [JsonPropertyName("decreaseByPercent")]
     public double? DecreaseByPercent { get; set; }
 
 

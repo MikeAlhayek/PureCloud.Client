@@ -1,12 +1,12 @@
-using System.Runtime.Serialization;
 using System.Text;
+using System.Text.Json.Serialization;
 
 namespace PureCloud.Client.Models;
 
 /// <summary>
 /// Defines a \&quot;bulk\&quot; request in the SCIM service provider&#39;s configuration.
 /// </summary>
-[DataContract]
+
 public partial class ScimServiceProviderConfigBulkFeature : IEquatable<ScimServiceProviderConfigBulkFeature>
 {
     /// <summary>
@@ -23,7 +23,7 @@ public partial class ScimServiceProviderConfigBulkFeature : IEquatable<ScimServi
     /// Indicates whether configuration options are supported.
     /// </summary>
     /// <value>Indicates whether configuration options are supported.</value>
-    [DataMember(Name = "supported", EmitDefaultValue = false)]
+    [JsonPropertyName("supported")]
     public bool? Supported { get; private set; }
 
 
@@ -32,7 +32,7 @@ public partial class ScimServiceProviderConfigBulkFeature : IEquatable<ScimServi
     /// The maximum number of operations for each bulk request.
     /// </summary>
     /// <value>The maximum number of operations for each bulk request.</value>
-    [DataMember(Name = "maxOperations", EmitDefaultValue = false)]
+    [JsonPropertyName("maxOperations")]
     public int? MaxOperations { get; private set; }
 
 
@@ -41,7 +41,7 @@ public partial class ScimServiceProviderConfigBulkFeature : IEquatable<ScimServi
     /// The maximum payload size.
     /// </summary>
     /// <value>The maximum payload size.</value>
-    [DataMember(Name = "maxPayloadSize", EmitDefaultValue = false)]
+    [JsonPropertyName("maxPayloadSize")]
     public int? MaxPayloadSize { get; private set; }
 
 

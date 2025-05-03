@@ -1,4 +1,3 @@
-using System.Runtime.Serialization;
 using System.Text;
 using System.Text.Json.Serialization;
 
@@ -7,7 +6,7 @@ namespace PureCloud.Client.Models;
 /// <summary>
 /// ValidateAddressResponse
 /// </summary>
-[DataContract]
+
 public partial class ValidateAddressResponse : IEquatable<ValidateAddressResponse>
 {
 
@@ -34,7 +33,7 @@ public partial class ValidateAddressResponse : IEquatable<ValidateAddressRespons
     /// Was the passed in address valid
     /// </summary>
     /// <value>Was the passed in address valid</value>
-    [DataMember(Name = "valid", EmitDefaultValue = false)]
+    [JsonPropertyName("valid")]
     public bool? Valid { get; set; }
 
 
@@ -43,7 +42,7 @@ public partial class ValidateAddressResponse : IEquatable<ValidateAddressRespons
     /// Subscriber schema
     /// </summary>
     /// <value>Subscriber schema</value>
-    [DataMember(Name = "response", EmitDefaultValue = false)]
+    [JsonPropertyName("response")]
     public SubscriberResponse Response { get; set; }
 
 

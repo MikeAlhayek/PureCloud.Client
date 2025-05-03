@@ -7,13 +7,13 @@ namespace PureCloud.Client.Models;
 /// <summary>
 /// Object representing the guest model of a media request of a chat conversation.
 /// </summary>
-[DataContract]
+
 public partial class WebChatGuestMediaRequest : IEquatable<WebChatGuestMediaRequest>
 {
     /// <summary>
     /// Gets or Sets Types
     /// </summary>
-    [JsonConverter(typeof(JsonStringEnumConverter))]
+    
     public enum TypesEnum
     {
         /// <summary>
@@ -40,7 +40,7 @@ public partial class WebChatGuestMediaRequest : IEquatable<WebChatGuestMediaRequ
     /// The state of the media request, one of PENDING|ACCEPTED|DECLINED|TIMEDOUT|CANCELLED|ERRORED.
     /// </summary>
     /// <value>The state of the media request, one of PENDING|ACCEPTED|DECLINED|TIMEDOUT|CANCELLED|ERRORED.</value>
-    [JsonConverter(typeof(JsonStringEnumConverter))]
+    
     public enum StateEnum
     {
         /// <summary>
@@ -91,7 +91,7 @@ public partial class WebChatGuestMediaRequest : IEquatable<WebChatGuestMediaRequ
     /// The state of the media request, one of PENDING|ACCEPTED|DECLINED|TIMEDOUT|CANCELLED|ERRORED.
     /// </summary>
     /// <value>The state of the media request, one of PENDING|ACCEPTED|DECLINED|TIMEDOUT|CANCELLED|ERRORED.</value>
-    [DataMember(Name = "state", EmitDefaultValue = false)]
+    [JsonPropertyName("state")]
     public StateEnum? State { get; set; }
 
     /// <summary>
@@ -123,7 +123,7 @@ public partial class WebChatGuestMediaRequest : IEquatable<WebChatGuestMediaRequ
     /// The globally unique identifier for the object.
     /// </summary>
     /// <value>The globally unique identifier for the object.</value>
-    [DataMember(Name = "id", EmitDefaultValue = false)]
+    [JsonPropertyName("id")]
     public string Id { get; private set; }
 
 
@@ -131,7 +131,7 @@ public partial class WebChatGuestMediaRequest : IEquatable<WebChatGuestMediaRequ
     /// <summary>
     /// Gets or Sets Name
     /// </summary>
-    [DataMember(Name = "name", EmitDefaultValue = false)]
+    [JsonPropertyName("name")]
     public string Name { get; set; }
 
 
@@ -140,7 +140,7 @@ public partial class WebChatGuestMediaRequest : IEquatable<WebChatGuestMediaRequ
     /// The types of media being requested.
     /// </summary>
     /// <value>The types of media being requested.</value>
-    [DataMember(Name = "types", EmitDefaultValue = false)]
+    [JsonPropertyName("types")]
     public List<TypesEnum> Types { get; set; }
 
 
@@ -151,7 +151,7 @@ public partial class WebChatGuestMediaRequest : IEquatable<WebChatGuestMediaRequ
     /// The ID of the new media communication, if applicable.
     /// </summary>
     /// <value>The ID of the new media communication, if applicable.</value>
-    [DataMember(Name = "communicationId", EmitDefaultValue = false)]
+    [JsonPropertyName("communicationId")]
     public string CommunicationId { get; set; }
 
 
@@ -160,7 +160,7 @@ public partial class WebChatGuestMediaRequest : IEquatable<WebChatGuestMediaRequ
     /// The security information related to a media request.
     /// </summary>
     /// <value>The security information related to a media request.</value>
-    [DataMember(Name = "securityKey", EmitDefaultValue = false)]
+    [JsonPropertyName("securityKey")]
     public string SecurityKey { get; set; }
 
 
@@ -169,7 +169,7 @@ public partial class WebChatGuestMediaRequest : IEquatable<WebChatGuestMediaRequ
     /// The URI for this object
     /// </summary>
     /// <value>The URI for this object</value>
-    [DataMember(Name = "selfUri", EmitDefaultValue = false)]
+    [JsonPropertyName("selfUri")]
     public string SelfUri { get; private set; }
 
 

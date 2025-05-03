@@ -1,12 +1,12 @@
-using System.Runtime.Serialization;
 using System.Text;
+using System.Text.Json.Serialization;
 
 namespace PureCloud.Client.Models;
 
 /// <summary>
 /// EvaluationScoringSet
 /// </summary>
-[DataContract]
+
 public partial class EvaluationScoringSet : IEquatable<EvaluationScoringSet>
 {
     /// <summary>
@@ -41,7 +41,7 @@ public partial class EvaluationScoringSet : IEquatable<EvaluationScoringSet>
     /// Score of all questions
     /// </summary>
     /// <value>Score of all questions</value>
-    [DataMember(Name = "totalScore", EmitDefaultValue = false)]
+    [JsonPropertyName("totalScore")]
     public float? TotalScore { get; set; }
 
 
@@ -50,7 +50,7 @@ public partial class EvaluationScoringSet : IEquatable<EvaluationScoringSet>
     /// Score of only the critical questions
     /// </summary>
     /// <value>Score of only the critical questions</value>
-    [DataMember(Name = "totalCriticalScore", EmitDefaultValue = false)]
+    [JsonPropertyName("totalCriticalScore")]
     public float? TotalCriticalScore { get; set; }
 
 
@@ -59,7 +59,7 @@ public partial class EvaluationScoringSet : IEquatable<EvaluationScoringSet>
     /// Score of only the non-critical questions
     /// </summary>
     /// <value>Score of only the non-critical questions</value>
-    [DataMember(Name = "totalNonCriticalScore", EmitDefaultValue = false)]
+    [JsonPropertyName("totalNonCriticalScore")]
     public float? TotalNonCriticalScore { get; set; }
 
 
@@ -67,7 +67,7 @@ public partial class EvaluationScoringSet : IEquatable<EvaluationScoringSet>
     /// <summary>
     /// Gets or Sets QuestionGroupScores
     /// </summary>
-    [DataMember(Name = "questionGroupScores", EmitDefaultValue = false)]
+    [JsonPropertyName("questionGroupScores")]
     public List<EvaluationQuestionGroupScore> QuestionGroupScores { get; set; }
 
 
@@ -76,7 +76,7 @@ public partial class EvaluationScoringSet : IEquatable<EvaluationScoringSet>
     /// Indicates that at least one fatal question was answered without having the highest score available for the question
     /// </summary>
     /// <value>Indicates that at least one fatal question was answered without having the highest score available for the question</value>
-    [DataMember(Name = "anyFailedKillQuestions", EmitDefaultValue = false)]
+    [JsonPropertyName("anyFailedKillQuestions")]
     public bool? AnyFailedKillQuestions { get; set; }
 
 
@@ -85,7 +85,7 @@ public partial class EvaluationScoringSet : IEquatable<EvaluationScoringSet>
     /// Overall comments from the evaluator
     /// </summary>
     /// <value>Overall comments from the evaluator</value>
-    [DataMember(Name = "comments", EmitDefaultValue = false)]
+    [JsonPropertyName("comments")]
     public string Comments { get; set; }
 
 
@@ -94,7 +94,7 @@ public partial class EvaluationScoringSet : IEquatable<EvaluationScoringSet>
     /// Overall private comments from the evaluator
     /// </summary>
     /// <value>Overall private comments from the evaluator</value>
-    [DataMember(Name = "privateComments", EmitDefaultValue = false)]
+    [JsonPropertyName("privateComments")]
     public string PrivateComments { get; set; }
 
 
@@ -103,7 +103,7 @@ public partial class EvaluationScoringSet : IEquatable<EvaluationScoringSet>
     /// Comments from the agent while reviewing evaluation results
     /// </summary>
     /// <value>Comments from the agent while reviewing evaluation results</value>
-    [DataMember(Name = "agentComments", EmitDefaultValue = false)]
+    [JsonPropertyName("agentComments")]
     public string AgentComments { get; set; }
 
 
@@ -112,7 +112,7 @@ public partial class EvaluationScoringSet : IEquatable<EvaluationScoringSet>
     /// List of topics found within the conversation&#39;s transcripts
     /// </summary>
     /// <value>List of topics found within the conversation&#39;s transcripts</value>
-    [DataMember(Name = "transcriptTopics", EmitDefaultValue = false)]
+    [JsonPropertyName("transcriptTopics")]
     public List<TranscriptTopic> TranscriptTopics { get; set; }
 
 

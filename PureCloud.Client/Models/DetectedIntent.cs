@@ -1,12 +1,12 @@
-using System.Runtime.Serialization;
 using System.Text;
+using System.Text.Json.Serialization;
 
 namespace PureCloud.Client.Models;
 
 /// <summary>
 /// DetectedIntent
 /// </summary>
-[DataContract]
+
 public partial class DetectedIntent : IEquatable<DetectedIntent>
 {
     /// <summary>
@@ -23,7 +23,7 @@ public partial class DetectedIntent : IEquatable<DetectedIntent>
     /// The name of the detected intent.
     /// </summary>
     /// <value>The name of the detected intent.</value>
-    [DataMember(Name = "name", EmitDefaultValue = false)]
+    [JsonPropertyName("name")]
     public string Name { get; private set; }
 
 
@@ -32,7 +32,7 @@ public partial class DetectedIntent : IEquatable<DetectedIntent>
     /// The probability of the detected intent.
     /// </summary>
     /// <value>The probability of the detected intent.</value>
-    [DataMember(Name = "probability", EmitDefaultValue = false)]
+    [JsonPropertyName("probability")]
     public double? Probability { get; private set; }
 
 
@@ -41,7 +41,7 @@ public partial class DetectedIntent : IEquatable<DetectedIntent>
     /// The collection of named entities detected.
     /// </summary>
     /// <value>The collection of named entities detected.</value>
-    [DataMember(Name = "entities", EmitDefaultValue = false)]
+    [JsonPropertyName("entities")]
     public List<DetectedNamedEntity> Entities { get; private set; }
 
 

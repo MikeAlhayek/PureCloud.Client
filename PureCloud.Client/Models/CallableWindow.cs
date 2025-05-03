@@ -1,12 +1,12 @@
-using System.Runtime.Serialization;
 using System.Text;
+using System.Text.Json.Serialization;
 
 namespace PureCloud.Client.Models;
 
 /// <summary>
 /// CallableWindow
 /// </summary>
-[DataContract]
+
 public partial class CallableWindow : IEquatable<CallableWindow>
 {
     /// <summary>
@@ -27,7 +27,7 @@ public partial class CallableWindow : IEquatable<CallableWindow>
     /// The time interval to place outbound calls, for contacts that can be mapped to a time zone.
     /// </summary>
     /// <value>The time interval to place outbound calls, for contacts that can be mapped to a time zone.</value>
-    [DataMember(Name = "mapped", EmitDefaultValue = false)]
+    [JsonPropertyName("mapped")]
     public AtzmTimeSlot Mapped { get; set; }
 
 
@@ -36,7 +36,7 @@ public partial class CallableWindow : IEquatable<CallableWindow>
     /// The time interval and time zone to place outbound calls, for contacts that cannot be mapped to a time zone.
     /// </summary>
     /// <value>The time interval and time zone to place outbound calls, for contacts that cannot be mapped to a time zone.</value>
-    [DataMember(Name = "unmapped", EmitDefaultValue = false)]
+    [JsonPropertyName("unmapped")]
     public AtzmTimeSlotWithTimeZone Unmapped { get; set; }
 
 

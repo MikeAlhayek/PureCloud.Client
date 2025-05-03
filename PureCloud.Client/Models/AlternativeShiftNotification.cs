@@ -7,14 +7,14 @@ namespace PureCloud.Client.Models;
 /// <summary>
 /// AlternativeShiftNotification
 /// </summary>
-[DataContract]
+
 public partial class AlternativeShiftNotification : IEquatable<AlternativeShiftNotification>
 {
     /// <summary>
     /// The granularity of alternative shifts to be traded
     /// </summary>
     /// <value>The granularity of alternative shifts to be traded</value>
-    [JsonConverter(typeof(JsonStringEnumConverter))]
+    
     public enum GranularityEnum
     {
         /// <summary>
@@ -35,7 +35,7 @@ public partial class AlternativeShiftNotification : IEquatable<AlternativeShiftN
     /// The new state of the alternative shift trade, null if there was no change
     /// </summary>
     /// <value>The new state of the alternative shift trade, null if there was no change</value>
-    [JsonConverter(typeof(JsonStringEnumConverter))]
+    
     public enum NewStateEnum
     {
         /// <summary>
@@ -80,13 +80,13 @@ public partial class AlternativeShiftNotification : IEquatable<AlternativeShiftN
     /// The granularity of alternative shifts to be traded
     /// </summary>
     /// <value>The granularity of alternative shifts to be traded</value>
-    [DataMember(Name = "granularity", EmitDefaultValue = false)]
+    [JsonPropertyName("granularity")]
     public GranularityEnum? Granularity { get; set; }
     /// <summary>
     /// The new state of the alternative shift trade, null if there was no change
     /// </summary>
     /// <value>The new state of the alternative shift trade, null if there was no change</value>
-    [DataMember(Name = "newState", EmitDefaultValue = false)]
+    [JsonPropertyName("newState")]
     public NewStateEnum? NewState { get; set; }
 
     /// <summary>
@@ -122,7 +122,7 @@ public partial class AlternativeShiftNotification : IEquatable<AlternativeShiftN
     /// The globally unique identifier for the object.
     /// </summary>
     /// <value>The globally unique identifier for the object.</value>
-    [DataMember(Name = "id", EmitDefaultValue = false)]
+    [JsonPropertyName("id")]
     public string Id { get; private set; }
 
 
@@ -131,7 +131,7 @@ public partial class AlternativeShiftNotification : IEquatable<AlternativeShiftN
     /// The start date of the schedule with which this trade is associated. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd
     /// </summary>
     /// <value>The start date of the schedule with which this trade is associated. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd</value>
-    [DataMember(Name = "weekDate", EmitDefaultValue = false)]
+    [JsonPropertyName("weekDate")]
     public string WeekDate { get; set; }
 
 
@@ -144,7 +144,7 @@ public partial class AlternativeShiftNotification : IEquatable<AlternativeShiftN
     /// The user who initiated the alternative shift trade
     /// </summary>
     /// <value>The user who initiated the alternative shift trade</value>
-    [DataMember(Name = "initiatingUser", EmitDefaultValue = false)]
+    [JsonPropertyName("initiatingUser")]
     public UserReference InitiatingUser { get; set; }
 
 
@@ -153,7 +153,7 @@ public partial class AlternativeShiftNotification : IEquatable<AlternativeShiftN
     /// The start date and time of the initiating shift. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z
     /// </summary>
     /// <value>The start date and time of the initiating shift. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z</value>
-    [DataMember(Name = "initiatingShiftDate", EmitDefaultValue = false)]
+    [JsonPropertyName("initiatingShiftDate")]
     public DateTime? InitiatingShiftDate { get; set; }
 
 
@@ -162,7 +162,7 @@ public partial class AlternativeShiftNotification : IEquatable<AlternativeShiftN
     /// The user on the receiving side of this alternative shift trade
     /// </summary>
     /// <value>The user on the receiving side of this alternative shift trade</value>
-    [DataMember(Name = "receivingUser", EmitDefaultValue = false)]
+    [JsonPropertyName("receivingUser")]
     public UserReference ReceivingUser { get; set; }
 
 
@@ -171,7 +171,7 @@ public partial class AlternativeShiftNotification : IEquatable<AlternativeShiftN
     /// The start date and time of the receiving alternative shift. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z
     /// </summary>
     /// <value>The start date and time of the receiving alternative shift. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z</value>
-    [DataMember(Name = "receivingShiftDate", EmitDefaultValue = false)]
+    [JsonPropertyName("receivingShiftDate")]
     public DateTime? ReceivingShiftDate { get; set; }
 
 
@@ -180,7 +180,7 @@ public partial class AlternativeShiftNotification : IEquatable<AlternativeShiftN
     /// The URI for this object
     /// </summary>
     /// <value>The URI for this object</value>
-    [DataMember(Name = "selfUri", EmitDefaultValue = false)]
+    [JsonPropertyName("selfUri")]
     public string SelfUri { get; private set; }
 
 

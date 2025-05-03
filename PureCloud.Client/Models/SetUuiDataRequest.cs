@@ -1,12 +1,12 @@
-using System.Runtime.Serialization;
 using System.Text;
+using System.Text.Json.Serialization;
 
 namespace PureCloud.Client.Models;
 
 /// <summary>
 /// SetUuiDataRequest
 /// </summary>
-[DataContract]
+
 public partial class SetUuiDataRequest : IEquatable<SetUuiDataRequest>
 {
     /// <summary>
@@ -25,7 +25,7 @@ public partial class SetUuiDataRequest : IEquatable<SetUuiDataRequest>
     /// The value of the uuiData to set.
     /// </summary>
     /// <value>The value of the uuiData to set.</value>
-    [DataMember(Name = "uuiData", EmitDefaultValue = false)]
+    [JsonPropertyName("uuiData")]
     public string UuiData { get; set; }
 
 

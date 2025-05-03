@@ -7,14 +7,14 @@ namespace PureCloud.Client.Models;
 /// <summary>
 /// OpenDataIngestionRuleVersionResponse
 /// </summary>
-[DataContract]
+
 public partial class OpenDataIngestionRuleVersionResponse : IEquatable<OpenDataIngestionRuleVersionResponse>
 {
     /// <summary>
     /// The status of the data ingestion rule.
     /// </summary>
     /// <value>The status of the data ingestion rule.</value>
-    [JsonConverter(typeof(JsonStringEnumConverter))]
+    
     public enum StatusEnum
     {
         /// <summary>
@@ -65,7 +65,7 @@ public partial class OpenDataIngestionRuleVersionResponse : IEquatable<OpenDataI
     /// The status of the data ingestion rule.
     /// </summary>
     /// <value>The status of the data ingestion rule.</value>
-    [DataMember(Name = "status", EmitDefaultValue = false)]
+    [JsonPropertyName("status")]
     public StatusEnum? Status { get; set; }
     /// <summary>
     /// Initializes a new instance of the <see cref="OpenDataIngestionRuleVersionResponse" /> class.
@@ -93,7 +93,7 @@ public partial class OpenDataIngestionRuleVersionResponse : IEquatable<OpenDataI
     /// ID of the open data ingestion rule.
     /// </summary>
     /// <value>ID of the open data ingestion rule.</value>
-    [DataMember(Name = "id", EmitDefaultValue = false)]
+    [JsonPropertyName("id")]
     public string Id { get; set; }
 
 
@@ -102,7 +102,7 @@ public partial class OpenDataIngestionRuleVersionResponse : IEquatable<OpenDataI
     /// The name of the data ingestion rule.
     /// </summary>
     /// <value>The name of the data ingestion rule.</value>
-    [DataMember(Name = "name", EmitDefaultValue = false)]
+    [JsonPropertyName("name")]
     public string Name { get; set; }
 
 
@@ -111,7 +111,7 @@ public partial class OpenDataIngestionRuleVersionResponse : IEquatable<OpenDataI
     /// A description of the data ingestion rule.
     /// </summary>
     /// <value>A description of the data ingestion rule.</value>
-    [DataMember(Name = "description", EmitDefaultValue = false)]
+    [JsonPropertyName("description")]
     public string Description { get; set; }
 
 
@@ -122,7 +122,7 @@ public partial class OpenDataIngestionRuleVersionResponse : IEquatable<OpenDataI
     /// The version number of the data ingestion rule.
     /// </summary>
     /// <value>The version number of the data ingestion rule.</value>
-    [DataMember(Name = "version", EmitDefaultValue = false)]
+    [JsonPropertyName("version")]
     public int? Version { get; set; }
 
 
@@ -131,7 +131,7 @@ public partial class OpenDataIngestionRuleVersionResponse : IEquatable<OpenDataI
     /// Timestamp indicating when the data ingestion rule was created. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z
     /// </summary>
     /// <value>Timestamp indicating when the data ingestion rule was created. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z</value>
-    [DataMember(Name = "dateCreated", EmitDefaultValue = false)]
+    [JsonPropertyName("dateCreated")]
     public DateTime? DateCreated { get; private set; }
 
 
@@ -140,7 +140,7 @@ public partial class OpenDataIngestionRuleVersionResponse : IEquatable<OpenDataI
     /// Timestamp indicating when the data ingestion rule was last updated. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z
     /// </summary>
     /// <value>Timestamp indicating when the data ingestion rule was last updated. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z</value>
-    [DataMember(Name = "dateModified", EmitDefaultValue = false)]
+    [JsonPropertyName("dateModified")]
     public DateTime? DateModified { get; private set; }
 
 
@@ -149,7 +149,7 @@ public partial class OpenDataIngestionRuleVersionResponse : IEquatable<OpenDataI
     /// The platform of the data ingestion rule.
     /// </summary>
     /// <value>The platform of the data ingestion rule.</value>
-    [DataMember(Name = "platform", EmitDefaultValue = false)]
+    [JsonPropertyName("platform")]
     public string Platform { get; private set; }
 
 
@@ -158,7 +158,7 @@ public partial class OpenDataIngestionRuleVersionResponse : IEquatable<OpenDataI
     /// The external source associated with this open data ingestion rule, which is used when performing identity resolution
     /// </summary>
     /// <value>The external source associated with this open data ingestion rule, which is used when performing identity resolution</value>
-    [DataMember(Name = "externalSource", EmitDefaultValue = false)]
+    [JsonPropertyName("externalSource")]
     public DomainEntityRef ExternalSource { get; set; }
 
 
@@ -167,7 +167,7 @@ public partial class OpenDataIngestionRuleVersionResponse : IEquatable<OpenDataI
     /// The URI for this object
     /// </summary>
     /// <value>The URI for this object</value>
-    [DataMember(Name = "selfUri", EmitDefaultValue = false)]
+    [JsonPropertyName("selfUri")]
     public string SelfUri { get; private set; }
 
 

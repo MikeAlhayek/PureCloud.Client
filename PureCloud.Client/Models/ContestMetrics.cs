@@ -1,4 +1,3 @@
-using System.Runtime.Serialization;
 using System.Text;
 using System.Text.Json.Serialization;
 
@@ -7,7 +6,7 @@ namespace PureCloud.Client.Models;
 /// <summary>
 /// ContestMetrics
 /// </summary>
-[DataContract]
+
 public partial class ContestMetrics : IEquatable<ContestMetrics>
 {
 
@@ -38,7 +37,7 @@ public partial class ContestMetrics : IEquatable<ContestMetrics>
     /// The globally unique identifier for the object.
     /// </summary>
     /// <value>The globally unique identifier for the object.</value>
-    [DataMember(Name = "id", EmitDefaultValue = false)]
+    [JsonPropertyName("id")]
     public string Id { get; set; }
 
 
@@ -46,7 +45,7 @@ public partial class ContestMetrics : IEquatable<ContestMetrics>
     /// <summary>
     /// Gets or Sets Name
     /// </summary>
-    [DataMember(Name = "name", EmitDefaultValue = false)]
+    [JsonPropertyName("name")]
     public string Name { get; set; }
 
 
@@ -55,7 +54,7 @@ public partial class ContestMetrics : IEquatable<ContestMetrics>
     /// The Contest Metrics weight, allowed values are 1-100
     /// </summary>
     /// <value>The Contest Metrics weight, allowed values are 1-100</value>
-    [DataMember(Name = "weight", EmitDefaultValue = false)]
+    [JsonPropertyName("weight")]
     public int? Weight { get; set; }
 
 
@@ -64,7 +63,7 @@ public partial class ContestMetrics : IEquatable<ContestMetrics>
     /// The Contest Metrics minimum qualifier. Min value is 0, no Max value
     /// </summary>
     /// <value>The Contest Metrics minimum qualifier. Min value is 0, no Max value</value>
-    [DataMember(Name = "minimumQualifier", EmitDefaultValue = false)]
+    [JsonPropertyName("minimumQualifier")]
     public int? MinimumQualifier { get; set; }
 
 
@@ -73,7 +72,7 @@ public partial class ContestMetrics : IEquatable<ContestMetrics>
     /// The URI for this object
     /// </summary>
     /// <value>The URI for this object</value>
-    [DataMember(Name = "selfUri", EmitDefaultValue = false)]
+    [JsonPropertyName("selfUri")]
     public string SelfUri { get; private set; }
 
 

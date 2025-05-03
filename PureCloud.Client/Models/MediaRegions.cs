@@ -1,12 +1,12 @@
-using System.Runtime.Serialization;
 using System.Text;
+using System.Text.Json.Serialization;
 
 namespace PureCloud.Client.Models;
 
 /// <summary>
 /// MediaRegions
 /// </summary>
-[DataContract]
+
 public partial class MediaRegions : IEquatable<MediaRegions>
 {
     /// <summary>
@@ -23,7 +23,7 @@ public partial class MediaRegions : IEquatable<MediaRegions>
     /// The AWS region your organization is in.
     /// </summary>
     /// <value>The AWS region your organization is in.</value>
-    [DataMember(Name = "awsHomeRegion", EmitDefaultValue = false)]
+    [JsonPropertyName("awsHomeRegion")]
     public string AwsHomeRegion { get; private set; }
 
 
@@ -32,7 +32,7 @@ public partial class MediaRegions : IEquatable<MediaRegions>
     /// The list of AWS regions to which Genesys Cloud is deployed with full functionality including media streaming.
     /// </summary>
     /// <value>The list of AWS regions to which Genesys Cloud is deployed with full functionality including media streaming.</value>
-    [DataMember(Name = "awsCoreRegions", EmitDefaultValue = false)]
+    [JsonPropertyName("awsCoreRegions")]
     public List<string> AwsCoreRegions { get; private set; }
 
 
@@ -41,7 +41,7 @@ public partial class MediaRegions : IEquatable<MediaRegions>
     /// The list of AWS regions that Genesys Cloud uses only for media streaming.
     /// </summary>
     /// <value>The list of AWS regions that Genesys Cloud uses only for media streaming.</value>
-    [DataMember(Name = "awsSatelliteRegions", EmitDefaultValue = false)]
+    [JsonPropertyName("awsSatelliteRegions")]
     public List<string> AwsSatelliteRegions { get; private set; }
 
 

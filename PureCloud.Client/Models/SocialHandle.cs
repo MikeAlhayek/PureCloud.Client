@@ -7,14 +7,14 @@ namespace PureCloud.Client.Models;
 /// <summary>
 /// SocialHandle
 /// </summary>
-[DataContract]
+
 public partial class SocialHandle : IEquatable<SocialHandle>
 {
     /// <summary>
     /// Social Handle Type
     /// </summary>
     /// <value>Social Handle Type</value>
-    [JsonConverter(typeof(JsonStringEnumConverter))]
+    
     public enum TypeEnum
     {
         /// <summary>
@@ -47,7 +47,7 @@ public partial class SocialHandle : IEquatable<SocialHandle>
     /// Social Handle Type
     /// </summary>
     /// <value>Social Handle Type</value>
-    [DataMember(Name = "type", EmitDefaultValue = false)]
+    [JsonPropertyName("type")]
     public TypeEnum? Type { get; set; }
     /// <summary>
     /// Initializes a new instance of the <see cref="SocialHandle" /> class.
@@ -68,7 +68,7 @@ public partial class SocialHandle : IEquatable<SocialHandle>
     /// <summary>
     /// Gets or Sets Value
     /// </summary>
-    [DataMember(Name = "value", EmitDefaultValue = false)]
+    [JsonPropertyName("value")]
     public string Value { get; set; }
 
 

@@ -1,4 +1,3 @@
-using System.Runtime.Serialization;
 using System.Text;
 using System.Text.Json.Serialization;
 
@@ -7,7 +6,7 @@ namespace PureCloud.Client.Models;
 /// <summary>
 /// SocialTopicRequest
 /// </summary>
-[DataContract]
+
 public partial class SocialTopicRequest : IEquatable<SocialTopicRequest>
 {
 
@@ -36,7 +35,7 @@ public partial class SocialTopicRequest : IEquatable<SocialTopicRequest>
     /// Name of the social topic.
     /// </summary>
     /// <value>Name of the social topic.</value>
-    [DataMember(Name = "name", EmitDefaultValue = false)]
+    [JsonPropertyName("name")]
     public string Name { get; set; }
 
 
@@ -45,7 +44,7 @@ public partial class SocialTopicRequest : IEquatable<SocialTopicRequest>
     /// A description of the social topic.
     /// </summary>
     /// <value>A description of the social topic.</value>
-    [DataMember(Name = "description", EmitDefaultValue = false)]
+    [JsonPropertyName("description")]
     public string Description { get; set; }
 
 
@@ -54,7 +53,7 @@ public partial class SocialTopicRequest : IEquatable<SocialTopicRequest>
     /// The ID of the division the social topic belongs to.
     /// </summary>
     /// <value>The ID of the division the social topic belongs to.</value>
-    [DataMember(Name = "divisionId", EmitDefaultValue = false)]
+    [JsonPropertyName("divisionId")]
     public string DivisionId { get; set; }
 
 

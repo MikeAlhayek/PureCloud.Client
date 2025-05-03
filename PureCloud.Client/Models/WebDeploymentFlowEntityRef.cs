@@ -1,4 +1,3 @@
-using System.Runtime.Serialization;
 using System.Text;
 using System.Text.Json.Serialization;
 
@@ -7,7 +6,7 @@ namespace PureCloud.Client.Models;
 /// <summary>
 /// WebDeploymentFlowEntityRef
 /// </summary>
-[DataContract]
+
 public partial class WebDeploymentFlowEntityRef : IEquatable<WebDeploymentFlowEntityRef>
 {
 
@@ -40,7 +39,7 @@ public partial class WebDeploymentFlowEntityRef : IEquatable<WebDeploymentFlowEn
     /// The Flow ID
     /// </summary>
     /// <value>The Flow ID</value>
-    [DataMember(Name = "id", EmitDefaultValue = false)]
+    [JsonPropertyName("id")]
     public string Id { get; set; }
 
 
@@ -49,7 +48,7 @@ public partial class WebDeploymentFlowEntityRef : IEquatable<WebDeploymentFlowEn
     /// The Flow name
     /// </summary>
     /// <value>The Flow name</value>
-    [DataMember(Name = "name", EmitDefaultValue = false)]
+    [JsonPropertyName("name")]
     public string Name { get; set; }
 
 
@@ -57,7 +56,7 @@ public partial class WebDeploymentFlowEntityRef : IEquatable<WebDeploymentFlowEn
     /// <summary>
     /// Gets or Sets SelfUri
     /// </summary>
-    [DataMember(Name = "selfUri", EmitDefaultValue = false)]
+    [JsonPropertyName("selfUri")]
     public string SelfUri { get; set; }
 
 
@@ -66,7 +65,7 @@ public partial class WebDeploymentFlowEntityRef : IEquatable<WebDeploymentFlowEn
     /// The flow description for the webdeployment
     /// </summary>
     /// <value>The flow description for the webdeployment</value>
-    [DataMember(Name = "flowDescription", EmitDefaultValue = false)]
+    [JsonPropertyName("flowDescription")]
     public string FlowDescription { get; set; }
 
 
@@ -75,7 +74,7 @@ public partial class WebDeploymentFlowEntityRef : IEquatable<WebDeploymentFlowEn
     /// The published config version for the associated deployment
     /// </summary>
     /// <value>The published config version for the associated deployment</value>
-    [DataMember(Name = "publishVersion", EmitDefaultValue = false)]
+    [JsonPropertyName("publishVersion")]
     public FlowVersion PublishVersion { get; set; }
 
 

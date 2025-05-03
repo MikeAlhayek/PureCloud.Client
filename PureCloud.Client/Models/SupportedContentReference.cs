@@ -1,4 +1,3 @@
-using System.Runtime.Serialization;
 using System.Text;
 using System.Text.Json.Serialization;
 
@@ -7,7 +6,7 @@ namespace PureCloud.Client.Models;
 /// <summary>
 /// Reference to supported content profile associated with the integration
 /// </summary>
-[DataContract]
+
 public partial class SupportedContentReference : IEquatable<SupportedContentReference>
 {
 
@@ -32,7 +31,7 @@ public partial class SupportedContentReference : IEquatable<SupportedContentRefe
     /// The SupportedContent unique identifier associated with this integration
     /// </summary>
     /// <value>The SupportedContent unique identifier associated with this integration</value>
-    [DataMember(Name = "id", EmitDefaultValue = false)]
+    [JsonPropertyName("id")]
     public string Id { get; set; }
 
 
@@ -41,7 +40,7 @@ public partial class SupportedContentReference : IEquatable<SupportedContentRefe
     /// The SupportedContent profile name
     /// </summary>
     /// <value>The SupportedContent profile name</value>
-    [DataMember(Name = "name", EmitDefaultValue = false)]
+    [JsonPropertyName("name")]
     public string Name { get; private set; }
 
 
@@ -50,7 +49,7 @@ public partial class SupportedContentReference : IEquatable<SupportedContentRefe
     /// The SupportedContent profile URI
     /// </summary>
     /// <value>The SupportedContent profile URI</value>
-    [DataMember(Name = "selfUri", EmitDefaultValue = false)]
+    [JsonPropertyName("selfUri")]
     public string SelfUri { get; private set; }
 
 
@@ -59,7 +58,7 @@ public partial class SupportedContentReference : IEquatable<SupportedContentRefe
     /// Media types definition for the supported content
     /// </summary>
     /// <value>Media types definition for the supported content</value>
-    [DataMember(Name = "mediaTypes", EmitDefaultValue = false)]
+    [JsonPropertyName("mediaTypes")]
     public MediaTypes MediaTypes { get; private set; }
 
 

@@ -1,12 +1,12 @@
-using System.Runtime.Serialization;
 using System.Text;
+using System.Text.Json.Serialization;
 
 namespace PureCloud.Client.Models;
 
 /// <summary>
 /// TagQueryRequest
 /// </summary>
-[DataContract]
+
 public partial class TagQueryRequest : IEquatable<TagQueryRequest>
 {
     /// <summary>
@@ -28,7 +28,7 @@ public partial class TagQueryRequest : IEquatable<TagQueryRequest>
     /// <summary>
     /// Gets or Sets Query
     /// </summary>
-    [DataMember(Name = "query", EmitDefaultValue = false)]
+    [JsonPropertyName("query")]
     public string Query { get; set; }
 
 
@@ -36,7 +36,7 @@ public partial class TagQueryRequest : IEquatable<TagQueryRequest>
     /// <summary>
     /// Gets or Sets PageNumber
     /// </summary>
-    [DataMember(Name = "pageNumber", EmitDefaultValue = false)]
+    [JsonPropertyName("pageNumber")]
     public int? PageNumber { get; set; }
 
 
@@ -44,7 +44,7 @@ public partial class TagQueryRequest : IEquatable<TagQueryRequest>
     /// <summary>
     /// Gets or Sets PageSize
     /// </summary>
-    [DataMember(Name = "pageSize", EmitDefaultValue = false)]
+    [JsonPropertyName("pageSize")]
     public int? PageSize { get; set; }
 
 

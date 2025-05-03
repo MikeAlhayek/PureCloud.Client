@@ -1,4 +1,3 @@
-using System.Runtime.Serialization;
 using System.Text;
 using System.Text.Json.Serialization;
 
@@ -7,7 +6,7 @@ namespace PureCloud.Client.Models;
 /// <summary>
 /// TextBotFlowMilestone
 /// </summary>
-[DataContract]
+
 public partial class TextBotFlowMilestone : IEquatable<TextBotFlowMilestone>
 {
 
@@ -36,7 +35,7 @@ public partial class TextBotFlowMilestone : IEquatable<TextBotFlowMilestone>
     /// The Milestone&#39;s ID.
     /// </summary>
     /// <value>The Milestone&#39;s ID.</value>
-    [DataMember(Name = "id", EmitDefaultValue = false)]
+    [JsonPropertyName("id")]
     public string Id { get; set; }
 
 
@@ -45,7 +44,7 @@ public partial class TextBotFlowMilestone : IEquatable<TextBotFlowMilestone>
     /// The timestamp of when the milestone was reached. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z
     /// </summary>
     /// <value>The timestamp of when the milestone was reached. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z</value>
-    [DataMember(Name = "dateReached", EmitDefaultValue = false)]
+    [JsonPropertyName("dateReached")]
     public DateTime? DateReached { get; set; }
 
 
@@ -54,7 +53,7 @@ public partial class TextBotFlowMilestone : IEquatable<TextBotFlowMilestone>
     /// The sequence number of the milestone.
     /// </summary>
     /// <value>The sequence number of the milestone.</value>
-    [DataMember(Name = "sequence", EmitDefaultValue = false)]
+    [JsonPropertyName("sequence")]
     public long? Sequence { get; set; }
 
 

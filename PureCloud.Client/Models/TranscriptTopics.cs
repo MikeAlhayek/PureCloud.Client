@@ -1,12 +1,12 @@
-using System.Runtime.Serialization;
 using System.Text;
+using System.Text.Json.Serialization;
 
 namespace PureCloud.Client.Models;
 
 /// <summary>
 /// TranscriptTopics
 /// </summary>
-[DataContract]
+
 public partial class TranscriptTopics : IEquatable<TranscriptTopics>
 {
     /// <summary>
@@ -27,7 +27,7 @@ public partial class TranscriptTopics : IEquatable<TranscriptTopics>
     /// List of topics which need to be included in exact match criteria. This field is not mutually exclusive with excludes topic list.
     /// </summary>
     /// <value>List of topics which need to be included in exact match criteria. This field is not mutually exclusive with excludes topic list.</value>
-    [DataMember(Name = "includes", EmitDefaultValue = false)]
+    [JsonPropertyName("includes")]
     public List<string> Includes { get; set; }
 
 
@@ -36,7 +36,7 @@ public partial class TranscriptTopics : IEquatable<TranscriptTopics>
     /// List of topics which need to be excluded in exact match criteria. This field is not mutually exclusive with includes topic list.
     /// </summary>
     /// <value>List of topics which need to be excluded in exact match criteria. This field is not mutually exclusive with includes topic list.</value>
-    [DataMember(Name = "excludes", EmitDefaultValue = false)]
+    [JsonPropertyName("excludes")]
     public List<string> Excludes { get; set; }
 
 

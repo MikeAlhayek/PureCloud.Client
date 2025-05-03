@@ -1,12 +1,12 @@
-using System.Runtime.Serialization;
 using System.Text;
+using System.Text.Json.Serialization;
 
 namespace PureCloud.Client.Models;
 
 /// <summary>
 /// LineStatus
 /// </summary>
-[DataContract]
+
 public partial class LineStatus : IEquatable<LineStatus>
 {
     /// <summary>
@@ -33,7 +33,7 @@ public partial class LineStatus : IEquatable<LineStatus>
     /// The id of this line
     /// </summary>
     /// <value>The id of this line</value>
-    [DataMember(Name = "id", EmitDefaultValue = false)]
+    [JsonPropertyName("id")]
     public string Id { get; set; }
 
 
@@ -42,7 +42,7 @@ public partial class LineStatus : IEquatable<LineStatus>
     /// Indicates whether the edge can reach the line.
     /// </summary>
     /// <value>Indicates whether the edge can reach the line.</value>
-    [DataMember(Name = "reachable", EmitDefaultValue = false)]
+    [JsonPropertyName("reachable")]
     public bool? Reachable { get; set; }
 
 
@@ -51,7 +51,7 @@ public partial class LineStatus : IEquatable<LineStatus>
     /// The line&#39;s address of record.
     /// </summary>
     /// <value>The line&#39;s address of record.</value>
-    [DataMember(Name = "addressOfRecord", EmitDefaultValue = false)]
+    [JsonPropertyName("addressOfRecord")]
     public string AddressOfRecord { get; set; }
 
 
@@ -60,7 +60,7 @@ public partial class LineStatus : IEquatable<LineStatus>
     /// The addresses used to contact the line.
     /// </summary>
     /// <value>The addresses used to contact the line.</value>
-    [DataMember(Name = "contactAddresses", EmitDefaultValue = false)]
+    [JsonPropertyName("contactAddresses")]
     public List<string> ContactAddresses { get; set; }
 
 
@@ -69,7 +69,7 @@ public partial class LineStatus : IEquatable<LineStatus>
     /// The time the line entered its current reachable state. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z
     /// </summary>
     /// <value>The time the line entered its current reachable state. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z</value>
-    [DataMember(Name = "reachableStateTime", EmitDefaultValue = false)]
+    [JsonPropertyName("reachableStateTime")]
     public DateTime? ReachableStateTime { get; set; }
 
 

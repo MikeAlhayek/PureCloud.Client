@@ -1,4 +1,3 @@
-using System.Runtime.Serialization;
 using System.Text;
 using System.Text.Json.Serialization;
 
@@ -7,7 +6,7 @@ namespace PureCloud.Client.Models;
 /// <summary>
 /// CreatePredictorRequest
 /// </summary>
-[DataContract]
+
 public partial class CreatePredictorRequest : IEquatable<CreatePredictorRequest>
 {
 
@@ -40,7 +39,7 @@ public partial class CreatePredictorRequest : IEquatable<CreatePredictorRequest>
     /// The queue IDs associated with the predictor.
     /// </summary>
     /// <value>The queue IDs associated with the predictor.</value>
-    [DataMember(Name = "queueIds", EmitDefaultValue = false)]
+    [JsonPropertyName("queueIds")]
     public List<string> QueueIds { get; set; }
 
 
@@ -49,7 +48,7 @@ public partial class CreatePredictorRequest : IEquatable<CreatePredictorRequest>
     /// The KPI that the predictor attempts to maximize/minimize.
     /// </summary>
     /// <value>The KPI that the predictor attempts to maximize/minimize.</value>
-    [DataMember(Name = "kpi", EmitDefaultValue = false)]
+    [JsonPropertyName("kpi")]
     public string Kpi { get; set; }
 
 
@@ -58,7 +57,7 @@ public partial class CreatePredictorRequest : IEquatable<CreatePredictorRequest>
     /// Number of seconds allocated to predictive routing before attempting a different routing method. This is a value between 12 and 900 seconds.
     /// </summary>
     /// <value>Number of seconds allocated to predictive routing before attempting a different routing method. This is a value between 12 and 900 seconds.</value>
-    [DataMember(Name = "routingTimeoutSeconds", EmitDefaultValue = false)]
+    [JsonPropertyName("routingTimeoutSeconds")]
     public int? RoutingTimeoutSeconds { get; set; }
 
 
@@ -67,7 +66,7 @@ public partial class CreatePredictorRequest : IEquatable<CreatePredictorRequest>
     /// The predictor schedule that determines when the predictor is used for routing interactions.
     /// </summary>
     /// <value>The predictor schedule that determines when the predictor is used for routing interactions.</value>
-    [DataMember(Name = "schedule", EmitDefaultValue = false)]
+    [JsonPropertyName("schedule")]
     public PredictorSchedule Schedule { get; set; }
 
 
@@ -76,7 +75,7 @@ public partial class CreatePredictorRequest : IEquatable<CreatePredictorRequest>
     /// The predictor balancing configuration to enable workload balancing
     /// </summary>
     /// <value>The predictor balancing configuration to enable workload balancing</value>
-    [DataMember(Name = "workloadBalancingConfig", EmitDefaultValue = false)]
+    [JsonPropertyName("workloadBalancingConfig")]
     public PredictorWorkloadBalancing WorkloadBalancingConfig { get; set; }
 
 

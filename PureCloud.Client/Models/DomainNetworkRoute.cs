@@ -7,14 +7,14 @@ namespace PureCloud.Client.Models;
 /// <summary>
 /// DomainNetworkRoute
 /// </summary>
-[DataContract]
+
 public partial class DomainNetworkRoute : IEquatable<DomainNetworkRoute>
 {
     /// <summary>
     /// The address family for this route.
     /// </summary>
     /// <value>The address family for this route.</value>
-    [JsonConverter(typeof(JsonStringEnumConverter))]
+    
     public enum FamilyEnum
     {
         /// <summary>
@@ -41,7 +41,7 @@ public partial class DomainNetworkRoute : IEquatable<DomainNetworkRoute>
     /// The address family for this route.
     /// </summary>
     /// <value>The address family for this route.</value>
-    [DataMember(Name = "family", EmitDefaultValue = false)]
+    [JsonPropertyName("family")]
     public FamilyEnum? Family { get; set; }
     /// <summary>
     /// Initializes a new instance of the <see cref="DomainNetworkRoute" /> class.
@@ -67,7 +67,7 @@ public partial class DomainNetworkRoute : IEquatable<DomainNetworkRoute>
     /// The IPv4 or IPv6 route prefix in CIDR notation.
     /// </summary>
     /// <value>The IPv4 or IPv6 route prefix in CIDR notation.</value>
-    [DataMember(Name = "prefix", EmitDefaultValue = false)]
+    [JsonPropertyName("prefix")]
     public string Prefix { get; set; }
 
 
@@ -76,7 +76,7 @@ public partial class DomainNetworkRoute : IEquatable<DomainNetworkRoute>
     /// The IPv4 or IPv6 nexthop IP address.
     /// </summary>
     /// <value>The IPv4 or IPv6 nexthop IP address.</value>
-    [DataMember(Name = "nexthop", EmitDefaultValue = false)]
+    [JsonPropertyName("nexthop")]
     public string Nexthop { get; set; }
 
 
@@ -85,7 +85,7 @@ public partial class DomainNetworkRoute : IEquatable<DomainNetworkRoute>
     /// True if this route will persist on Edge restart.  Routes assigned by DHCP will be returned as false.
     /// </summary>
     /// <value>True if this route will persist on Edge restart.  Routes assigned by DHCP will be returned as false.</value>
-    [DataMember(Name = "persistent", EmitDefaultValue = false)]
+    [JsonPropertyName("persistent")]
     public bool? Persistent { get; set; }
 
 
@@ -94,7 +94,7 @@ public partial class DomainNetworkRoute : IEquatable<DomainNetworkRoute>
     /// The metric being used for route. Lower values will have a higher priority.
     /// </summary>
     /// <value>The metric being used for route. Lower values will have a higher priority.</value>
-    [DataMember(Name = "metric", EmitDefaultValue = false)]
+    [JsonPropertyName("metric")]
     public int? Metric { get; set; }
 
 

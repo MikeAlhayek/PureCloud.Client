@@ -7,14 +7,14 @@ namespace PureCloud.Client.Models;
 /// <summary>
 /// DialerDnclistConfigChangeDncList
 /// </summary>
-[DataContract]
+
 public partial class DialerDnclistConfigChangeDncList : IEquatable<DialerDnclistConfigChangeDncList>
 {
     /// <summary>
     /// the type of dnc list being created, rds (csv file), gryphon, or dnc.com
     /// </summary>
     /// <value>the type of dnc list being created, rds (csv file), gryphon, or dnc.com</value>
-    [JsonConverter(typeof(JsonStringEnumConverter))]
+    
     public enum DncSourceTypeEnum
     {
         /// <summary>
@@ -46,7 +46,7 @@ public partial class DialerDnclistConfigChangeDncList : IEquatable<DialerDnclist
     /// <summary>
     /// Gets or Sets ContactMethod
     /// </summary>
-    [JsonConverter(typeof(JsonStringEnumConverter))]
+    
     public enum ContactMethodEnum
     {
         /// <summary>
@@ -73,12 +73,12 @@ public partial class DialerDnclistConfigChangeDncList : IEquatable<DialerDnclist
     /// the type of dnc list being created, rds (csv file), gryphon, or dnc.com
     /// </summary>
     /// <value>the type of dnc list being created, rds (csv file), gryphon, or dnc.com</value>
-    [DataMember(Name = "dncSourceType", EmitDefaultValue = false)]
+    [JsonPropertyName("dncSourceType")]
     public DncSourceTypeEnum? DncSourceType { get; set; }
     /// <summary>
     /// Gets or Sets ContactMethod
     /// </summary>
-    [DataMember(Name = "contactMethod", EmitDefaultValue = false)]
+    [JsonPropertyName("contactMethod")]
     public ContactMethodEnum? ContactMethod { get; set; }
     /// <summary>
     /// Initializes a new instance of the <see cref="DialerDnclistConfigChangeDncList" /> class.
@@ -121,7 +121,7 @@ public partial class DialerDnclistConfigChangeDncList : IEquatable<DialerDnclist
     /// <summary>
     /// Gets or Sets ImportStatus
     /// </summary>
-    [DataMember(Name = "importStatus", EmitDefaultValue = false)]
+    [JsonPropertyName("importStatus")]
     public DialerDnclistConfigChangeImportStatus ImportStatus { get; set; }
 
 
@@ -130,7 +130,7 @@ public partial class DialerDnclistConfigChangeDncList : IEquatable<DialerDnclist
     /// the number of phone numbers in the do not call list
     /// </summary>
     /// <value>the number of phone numbers in the do not call list</value>
-    [DataMember(Name = "size", EmitDefaultValue = false)]
+    [JsonPropertyName("size")]
     public long? Size { get; set; }
 
 
@@ -141,7 +141,7 @@ public partial class DialerDnclistConfigChangeDncList : IEquatable<DialerDnclist
     /// the loginId if the dncSourceType is dnc.com
     /// </summary>
     /// <value>the loginId if the dncSourceType is dnc.com</value>
-    [DataMember(Name = "loginId", EmitDefaultValue = false)]
+    [JsonPropertyName("loginId")]
     public string LoginId { get; set; }
 
 
@@ -150,7 +150,7 @@ public partial class DialerDnclistConfigChangeDncList : IEquatable<DialerDnclist
     /// the list of dnc.com codes to be treated as DNC
     /// </summary>
     /// <value>the list of dnc.com codes to be treated as DNC</value>
-    [DataMember(Name = "dncCodes", EmitDefaultValue = false)]
+    [JsonPropertyName("dncCodes")]
     public List<string> DncCodes { get; set; }
 
 
@@ -159,7 +159,7 @@ public partial class DialerDnclistConfigChangeDncList : IEquatable<DialerDnclist
     /// the license number if the dncSourceType is gryphon
     /// </summary>
     /// <value>the license number if the dncSourceType is gryphon</value>
-    [DataMember(Name = "licenseId", EmitDefaultValue = false)]
+    [JsonPropertyName("licenseId")]
     public string LicenseId { get; set; }
 
 
@@ -169,7 +169,7 @@ public partial class DialerDnclistConfigChangeDncList : IEquatable<DialerDnclist
     /// <summary>
     /// Gets or Sets Division
     /// </summary>
-    [DataMember(Name = "division", EmitDefaultValue = false)]
+    [JsonPropertyName("division")]
     public DialerDnclistConfigChangeUriReference Division { get; set; }
 
 
@@ -177,7 +177,7 @@ public partial class DialerDnclistConfigChangeDncList : IEquatable<DialerDnclist
     /// <summary>
     /// Gets or Sets AdditionalProperties
     /// </summary>
-    [DataMember(Name = "additionalProperties", EmitDefaultValue = false)]
+    [JsonPropertyName("additionalProperties")]
     public Dictionary<string, object> AdditionalProperties { get; set; }
 
 
@@ -186,7 +186,7 @@ public partial class DialerDnclistConfigChangeDncList : IEquatable<DialerDnclist
     /// The globally unique identifier for the object.
     /// </summary>
     /// <value>The globally unique identifier for the object.</value>
-    [DataMember(Name = "id", EmitDefaultValue = false)]
+    [JsonPropertyName("id")]
     public string Id { get; set; }
 
 
@@ -195,7 +195,7 @@ public partial class DialerDnclistConfigChangeDncList : IEquatable<DialerDnclist
     /// The UI-visible name of the object
     /// </summary>
     /// <value>The UI-visible name of the object</value>
-    [DataMember(Name = "name", EmitDefaultValue = false)]
+    [JsonPropertyName("name")]
     public string Name { get; set; }
 
 
@@ -204,7 +204,7 @@ public partial class DialerDnclistConfigChangeDncList : IEquatable<DialerDnclist
     /// Creation time of the entity
     /// </summary>
     /// <value>Creation time of the entity</value>
-    [DataMember(Name = "dateCreated", EmitDefaultValue = false)]
+    [JsonPropertyName("dateCreated")]
     public DateTime? DateCreated { get; set; }
 
 
@@ -213,7 +213,7 @@ public partial class DialerDnclistConfigChangeDncList : IEquatable<DialerDnclist
     /// Last modified time of the entity
     /// </summary>
     /// <value>Last modified time of the entity</value>
-    [DataMember(Name = "dateModified", EmitDefaultValue = false)]
+    [JsonPropertyName("dateModified")]
     public DateTime? DateModified { get; set; }
 
 
@@ -222,7 +222,7 @@ public partial class DialerDnclistConfigChangeDncList : IEquatable<DialerDnclist
     /// Required for updates, must match the version number of the most recent update
     /// </summary>
     /// <value>Required for updates, must match the version number of the most recent update</value>
-    [DataMember(Name = "version", EmitDefaultValue = false)]
+    [JsonPropertyName("version")]
     public long? Version { get; set; }
 
 

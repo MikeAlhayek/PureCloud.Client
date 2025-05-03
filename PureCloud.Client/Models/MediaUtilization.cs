@@ -1,12 +1,12 @@
-using System.Runtime.Serialization;
 using System.Text;
+using System.Text.Json.Serialization;
 
 namespace PureCloud.Client.Models;
 
 /// <summary>
 /// MediaUtilization
 /// </summary>
-[DataContract]
+
 public partial class MediaUtilization : IEquatable<MediaUtilization>
 {
     /// <summary>
@@ -29,7 +29,7 @@ public partial class MediaUtilization : IEquatable<MediaUtilization>
     /// Defines the maximum number of conversations of this type that an agent can handle at one time.
     /// </summary>
     /// <value>Defines the maximum number of conversations of this type that an agent can handle at one time.</value>
-    [DataMember(Name = "maximumCapacity", EmitDefaultValue = false)]
+    [JsonPropertyName("maximumCapacity")]
     public int? MaximumCapacity { get; set; }
 
 
@@ -38,7 +38,7 @@ public partial class MediaUtilization : IEquatable<MediaUtilization>
     /// Defines the list of other media types that can interrupt a conversation of this media type.  Values include call, chat, email, callback, and message.
     /// </summary>
     /// <value>Defines the list of other media types that can interrupt a conversation of this media type.  Values include call, chat, email, callback, and message.</value>
-    [DataMember(Name = "interruptableMediaTypes", EmitDefaultValue = false)]
+    [JsonPropertyName("interruptableMediaTypes")]
     public List<string> InterruptableMediaTypes { get; set; }
 
 
@@ -47,7 +47,7 @@ public partial class MediaUtilization : IEquatable<MediaUtilization>
     /// If true, then track non-ACD conversations against utilization
     /// </summary>
     /// <value>If true, then track non-ACD conversations against utilization</value>
-    [DataMember(Name = "includeNonAcd", EmitDefaultValue = false)]
+    [JsonPropertyName("includeNonAcd")]
     public bool? IncludeNonAcd { get; set; }
 
 

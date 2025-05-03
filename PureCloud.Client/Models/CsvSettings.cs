@@ -1,4 +1,3 @@
-using System.Runtime.Serialization;
 using System.Text;
 using System.Text.Json.Serialization;
 
@@ -7,7 +6,7 @@ namespace PureCloud.Client.Models;
 /// <summary>
 /// CsvSettings
 /// </summary>
-[DataContract]
+
 public partial class CsvSettings : IEquatable<CsvSettings>
 {
 
@@ -34,7 +33,7 @@ public partial class CsvSettings : IEquatable<CsvSettings>
     /// The globally unique identifier for the object.
     /// </summary>
     /// <value>The globally unique identifier for the object.</value>
-    [DataMember(Name = "id", EmitDefaultValue = false)]
+    [JsonPropertyName("id")]
     public string Id { get; private set; }
 
 
@@ -43,7 +42,7 @@ public partial class CsvSettings : IEquatable<CsvSettings>
     /// Id of the external settings
     /// </summary>
     /// <value>Id of the external settings</value>
-    [DataMember(Name = "externalSettingsId", EmitDefaultValue = false)]
+    [JsonPropertyName("externalSettingsId")]
     public string ExternalSettingsId { get; set; }
 
 
@@ -52,7 +51,7 @@ public partial class CsvSettings : IEquatable<CsvSettings>
     /// Mappings for the transformation
     /// </summary>
     /// <value>Mappings for the transformation</value>
-    [DataMember(Name = "mappings", EmitDefaultValue = false)]
+    [JsonPropertyName("mappings")]
     public List<CsvMappingEntry> Mappings { get; set; }
 
 
@@ -61,7 +60,7 @@ public partial class CsvSettings : IEquatable<CsvSettings>
     /// The URI for this object
     /// </summary>
     /// <value>The URI for this object</value>
-    [DataMember(Name = "selfUri", EmitDefaultValue = false)]
+    [JsonPropertyName("selfUri")]
     public string SelfUri { get; private set; }
 
 

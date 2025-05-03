@@ -1,12 +1,12 @@
-using System.Runtime.Serialization;
 using System.Text;
+using System.Text.Json.Serialization;
 
 namespace PureCloud.Client.Models;
 
 /// <summary>
 /// ArticlesFilter
 /// </summary>
-[DataContract]
+
 public partial class ArticlesFilter : IEquatable<ArticlesFilter>
 {
     /// <summary>
@@ -27,7 +27,7 @@ public partial class ArticlesFilter : IEquatable<ArticlesFilter>
     /// The labels filter.
     /// </summary>
     /// <value>The labels filter.</value>
-    [DataMember(Name = "labels", EmitDefaultValue = false)]
+    [JsonPropertyName("labels")]
     public LabelsFilter Labels { get; set; }
 
 
@@ -36,7 +36,7 @@ public partial class ArticlesFilter : IEquatable<ArticlesFilter>
     /// The categories filter.
     /// </summary>
     /// <value>The categories filter.</value>
-    [DataMember(Name = "categories", EmitDefaultValue = false)]
+    [JsonPropertyName("categories")]
     public CategoriesFilter Categories { get; set; }
 
 

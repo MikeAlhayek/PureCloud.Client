@@ -1,12 +1,12 @@
-using System.Runtime.Serialization;
 using System.Text;
+using System.Text.Json.Serialization;
 
 namespace PureCloud.Client.Models;
 
 /// <summary>
 /// LearningScheduleSlotsQueryResponse
 /// </summary>
-[DataContract]
+
 public partial class LearningScheduleSlotsQueryResponse : IEquatable<LearningScheduleSlotsQueryResponse>
 {
     /// <summary>
@@ -27,7 +27,7 @@ public partial class LearningScheduleSlotsQueryResponse : IEquatable<LearningSch
     /// List of slots where Learning activity can be scheduled
     /// </summary>
     /// <value>List of slots where Learning activity can be scheduled</value>
-    [DataMember(Name = "suggestedSlots", EmitDefaultValue = false)]
+    [JsonPropertyName("suggestedSlots")]
     public List<LearningSlot> SuggestedSlots { get; set; }
 
 
@@ -36,7 +36,7 @@ public partial class LearningScheduleSlotsQueryResponse : IEquatable<LearningSch
     /// Detailed data for WFM scheduled activities
     /// </summary>
     /// <value>Detailed data for WFM scheduled activities</value>
-    [DataMember(Name = "wfmScheduleActivities", EmitDefaultValue = false)]
+    [JsonPropertyName("wfmScheduleActivities")]
     public List<LearningSlotWfmScheduleActivity> WfmScheduleActivities { get; set; }
 
 

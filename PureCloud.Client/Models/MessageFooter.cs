@@ -7,14 +7,14 @@ namespace PureCloud.Client.Models;
 /// <summary>
 /// MessageFooter
 /// </summary>
-[DataContract]
+
 public partial class MessageFooter : IEquatable<MessageFooter>
 {
     /// <summary>
     /// Defines the content type of the footer in message
     /// </summary>
     /// <value>Defines the content type of the footer in message</value>
-    [JsonConverter(typeof(JsonStringEnumConverter))]
+    
     public enum TypeEnum
     {
         /// <summary>
@@ -35,7 +35,7 @@ public partial class MessageFooter : IEquatable<MessageFooter>
     /// Defines the content type of the footer in message
     /// </summary>
     /// <value>Defines the content type of the footer in message</value>
-    [DataMember(Name = "type", EmitDefaultValue = false)]
+    [JsonPropertyName("type")]
     public TypeEnum? Type { get; set; }
     /// <summary>
     /// Initializes a new instance of the <see cref="MessageFooter" /> class.
@@ -57,7 +57,7 @@ public partial class MessageFooter : IEquatable<MessageFooter>
     /// Content associated with the footer in the message
     /// </summary>
     /// <value>Content associated with the footer in the message</value>
-    [DataMember(Name = "content", EmitDefaultValue = false)]
+    [JsonPropertyName("content")]
     public string Content { get; set; }
 
 

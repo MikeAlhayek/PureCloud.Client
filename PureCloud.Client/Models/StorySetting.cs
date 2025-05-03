@@ -1,12 +1,12 @@
-using System.Runtime.Serialization;
 using System.Text;
+using System.Text.Json.Serialization;
 
 namespace PureCloud.Client.Models;
 
 /// <summary>
 /// StorySetting
 /// </summary>
-[DataContract]
+
 public partial class StorySetting : IEquatable<StorySetting>
 {
     /// <summary>
@@ -27,7 +27,7 @@ public partial class StorySetting : IEquatable<StorySetting>
     /// Setting relating to Story Mentions
     /// </summary>
     /// <value>Setting relating to Story Mentions</value>
-    [DataMember(Name = "mention", EmitDefaultValue = false)]
+    [JsonPropertyName("mention")]
     public InboundOnlySetting Mention { get; set; }
 
 
@@ -36,7 +36,7 @@ public partial class StorySetting : IEquatable<StorySetting>
     /// Setting relating to Story Replies
     /// </summary>
     /// <value>Setting relating to Story Replies</value>
-    [DataMember(Name = "reply", EmitDefaultValue = false)]
+    [JsonPropertyName("reply")]
     public InboundOnlySetting Reply { get; set; }
 
 

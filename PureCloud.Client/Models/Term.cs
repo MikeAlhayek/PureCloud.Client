@@ -7,14 +7,14 @@ namespace PureCloud.Client.Models;
 /// <summary>
 /// Term
 /// </summary>
-[DataContract]
+
 public partial class Term : IEquatable<Term>
 {
     /// <summary>
     /// Dictates if term operand must come from the internal, external or both participants
     /// </summary>
     /// <value>Dictates if term operand must come from the internal, external or both participants</value>
-    [JsonConverter(typeof(JsonStringEnumConverter))]
+    
     public enum ParticipantTypeEnum
     {
         /// <summary>
@@ -47,7 +47,7 @@ public partial class Term : IEquatable<Term>
     /// Dictates if term operand must come from the internal, external or both participants
     /// </summary>
     /// <value>Dictates if term operand must come from the internal, external or both participants</value>
-    [DataMember(Name = "participantType", EmitDefaultValue = false)]
+    [JsonPropertyName("participantType")]
     public ParticipantTypeEnum? ParticipantType { get; set; }
 
     /// <summary>
@@ -73,7 +73,7 @@ public partial class Term : IEquatable<Term>
     /// Find term in interaction
     /// </summary>
     /// <value>Find term in interaction</value>
-    [DataMember(Name = "word", EmitDefaultValue = false)]
+    [JsonPropertyName("word")]
     public string Word { get; set; }
 
 

@@ -7,14 +7,14 @@ namespace PureCloud.Client.Models;
 /// <summary>
 /// BuSchedulingSettingsRequest
 /// </summary>
-[DataContract]
+
 public partial class BuSchedulingSettingsRequest : IEquatable<BuSchedulingSettingsRequest>
 {
     /// <summary>
     /// The activity smoothing type for schedule generation in this business unit
     /// </summary>
     /// <value>The activity smoothing type for schedule generation in this business unit</value>
-    [JsonConverter(typeof(JsonStringEnumConverter))]
+    
     public enum ActivitySmoothingTypeEnum
     {
         /// <summary>
@@ -47,7 +47,7 @@ public partial class BuSchedulingSettingsRequest : IEquatable<BuSchedulingSettin
     /// The activity smoothing type for schedule generation in this business unit
     /// </summary>
     /// <value>The activity smoothing type for schedule generation in this business unit</value>
-    [DataMember(Name = "activitySmoothingType", EmitDefaultValue = false)]
+    [JsonPropertyName("activitySmoothingType")]
     public ActivitySmoothingTypeEnum? ActivitySmoothingType { get; set; }
     /// <summary>
     /// Initializes a new instance of the <see cref="BuSchedulingSettingsRequest" /> class.
@@ -75,7 +75,7 @@ public partial class BuSchedulingSettingsRequest : IEquatable<BuSchedulingSettin
     /// Schedule generation message severity configuration
     /// </summary>
     /// <value>Schedule generation message severity configuration</value>
-    [DataMember(Name = "messageSeverities", EmitDefaultValue = false)]
+    [JsonPropertyName("messageSeverities")]
     public List<SchedulerMessageTypeSeverity> MessageSeverities { get; set; }
 
 
@@ -84,7 +84,7 @@ public partial class BuSchedulingSettingsRequest : IEquatable<BuSchedulingSettin
     /// Synchronize set of time off properties from scheduled activities to time off requests when the schedule is published.
     /// </summary>
     /// <value>Synchronize set of time off properties from scheduled activities to time off requests when the schedule is published.</value>
-    [DataMember(Name = "syncTimeOffProperties", EmitDefaultValue = false)]
+    [JsonPropertyName("syncTimeOffProperties")]
     public SetWrapperSyncTimeOffProperty SyncTimeOffProperties { get; set; }
 
 
@@ -93,7 +93,7 @@ public partial class BuSchedulingSettingsRequest : IEquatable<BuSchedulingSettin
     /// Configures the max percent increase and decrease of service goals for this business unit
     /// </summary>
     /// <value>Configures the max percent increase and decrease of service goals for this business unit</value>
-    [DataMember(Name = "serviceGoalImpact", EmitDefaultValue = false)]
+    [JsonPropertyName("serviceGoalImpact")]
     public WfmServiceGoalImpactSettings ServiceGoalImpact { get; set; }
 
 
@@ -102,7 +102,7 @@ public partial class BuSchedulingSettingsRequest : IEquatable<BuSchedulingSettin
     /// Indicates whether or not per minute granularity for scheduling will be enabled for this business unit. Defaults to false.
     /// </summary>
     /// <value>Indicates whether or not per minute granularity for scheduling will be enabled for this business unit. Defaults to false.</value>
-    [DataMember(Name = "allowWorkPlanPerMinuteGranularity", EmitDefaultValue = false)]
+    [JsonPropertyName("allowWorkPlanPerMinuteGranularity")]
     public bool? AllowWorkPlanPerMinuteGranularity { get; set; }
 
 
@@ -113,7 +113,7 @@ public partial class BuSchedulingSettingsRequest : IEquatable<BuSchedulingSettin
     /// Indicates whether to provide variability in schedule generation
     /// </summary>
     /// <value>Indicates whether to provide variability in schedule generation</value>
-    [DataMember(Name = "induceScheduleVariability", EmitDefaultValue = false)]
+    [JsonPropertyName("induceScheduleVariability")]
     public bool? InduceScheduleVariability { get; set; }
 
 

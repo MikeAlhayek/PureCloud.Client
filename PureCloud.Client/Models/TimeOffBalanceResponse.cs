@@ -1,4 +1,3 @@
-using System.Runtime.Serialization;
 using System.Text;
 using System.Text.Json.Serialization;
 
@@ -7,7 +6,7 @@ namespace PureCloud.Client.Models;
 /// <summary>
 /// TimeOffBalanceResponse
 /// </summary>
-[DataContract]
+
 public partial class TimeOffBalanceResponse : IEquatable<TimeOffBalanceResponse>
 {
 
@@ -40,7 +39,7 @@ public partial class TimeOffBalanceResponse : IEquatable<TimeOffBalanceResponse>
     /// The ID for activity code associated with time off balance
     /// </summary>
     /// <value>The ID for activity code associated with time off balance</value>
-    [DataMember(Name = "activityCodeId", EmitDefaultValue = false)]
+    [JsonPropertyName("activityCodeId")]
     public string ActivityCodeId { get; set; }
 
 
@@ -49,7 +48,7 @@ public partial class TimeOffBalanceResponse : IEquatable<TimeOffBalanceResponse>
     /// The ID of the time off type configured in HRIS integration
     /// </summary>
     /// <value>The ID of the time off type configured in HRIS integration</value>
-    [DataMember(Name = "hrisTimeOffTypeId", EmitDefaultValue = false)]
+    [JsonPropertyName("hrisTimeOffTypeId")]
     public string HrisTimeOffTypeId { get; set; }
 
 
@@ -58,7 +57,7 @@ public partial class TimeOffBalanceResponse : IEquatable<TimeOffBalanceResponse>
     /// The secondary ID of the time off type configured in HRIS integration
     /// </summary>
     /// <value>The secondary ID of the time off type configured in HRIS integration</value>
-    [DataMember(Name = "hrisTimeOffTypeSecondaryId", EmitDefaultValue = false)]
+    [JsonPropertyName("hrisTimeOffTypeSecondaryId")]
     public string HrisTimeOffTypeSecondaryId { get; set; }
 
 
@@ -67,7 +66,7 @@ public partial class TimeOffBalanceResponse : IEquatable<TimeOffBalanceResponse>
     /// The Start date of the requested date range. The end date is determined by the size of interval list. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd
     /// </summary>
     /// <value>The Start date of the requested date range. The end date is determined by the size of interval list. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd</value>
-    [DataMember(Name = "startDate", EmitDefaultValue = false)]
+    [JsonPropertyName("startDate")]
     public string StartDate { get; set; }
 
 
@@ -76,7 +75,7 @@ public partial class TimeOffBalanceResponse : IEquatable<TimeOffBalanceResponse>
     /// The list of available time off balance values in minutes for each day
     /// </summary>
     /// <value>The list of available time off balance values in minutes for each day</value>
-    [DataMember(Name = "balanceMinutesPerDay", EmitDefaultValue = false)]
+    [JsonPropertyName("balanceMinutesPerDay")]
     public List<int?> BalanceMinutesPerDay { get; set; }
 
 

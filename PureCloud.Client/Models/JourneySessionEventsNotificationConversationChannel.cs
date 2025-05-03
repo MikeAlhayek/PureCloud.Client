@@ -7,13 +7,13 @@ namespace PureCloud.Client.Models;
 /// <summary>
 /// JourneySessionEventsNotificationConversationChannel
 /// </summary>
-[DataContract]
+
 public partial class JourneySessionEventsNotificationConversationChannel : IEquatable<JourneySessionEventsNotificationConversationChannel>
 {
     /// <summary>
     /// Gets or Sets Type
     /// </summary>
-    [JsonConverter(typeof(JsonStringEnumConverter))]
+    
     public enum TypeEnum
     {
         /// <summary>
@@ -87,7 +87,7 @@ public partial class JourneySessionEventsNotificationConversationChannel : IEqua
     /// <summary>
     /// Gets or Sets MessageType
     /// </summary>
-    [JsonConverter(typeof(JsonStringEnumConverter))]
+    
     public enum MessageTypeEnum
     {
         /// <summary>
@@ -155,12 +155,12 @@ public partial class JourneySessionEventsNotificationConversationChannel : IEqua
     /// <summary>
     /// Gets or Sets Type
     /// </summary>
-    [DataMember(Name = "type", EmitDefaultValue = false)]
+    [JsonPropertyName("type")]
     public TypeEnum? Type { get; set; }
     /// <summary>
     /// Gets or Sets MessageType
     /// </summary>
-    [DataMember(Name = "messageType", EmitDefaultValue = false)]
+    [JsonPropertyName("messageType")]
     public MessageTypeEnum? MessageType { get; set; }
     /// <summary>
     /// Initializes a new instance of the <see cref="JourneySessionEventsNotificationConversationChannel" /> class.
@@ -185,7 +185,7 @@ public partial class JourneySessionEventsNotificationConversationChannel : IEqua
     /// <summary>
     /// Gets or Sets Platform
     /// </summary>
-    [DataMember(Name = "platform", EmitDefaultValue = false)]
+    [JsonPropertyName("platform")]
     public string Platform { get; set; }
 
 

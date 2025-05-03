@@ -1,12 +1,12 @@
-using System.Runtime.Serialization;
 using System.Text;
+using System.Text.Json.Serialization;
 
 namespace PureCloud.Client.Models;
 
 /// <summary>
 /// Faq
 /// </summary>
-[DataContract]
+
 public partial class Faq : IEquatable<Faq>
 {
     /// <summary>
@@ -23,7 +23,7 @@ public partial class Faq : IEquatable<Faq>
     /// Question from the knowledge base that was matched to user request.
     /// </summary>
     /// <value>Question from the knowledge base that was matched to user request.</value>
-    [DataMember(Name = "question", EmitDefaultValue = false)]
+    [JsonPropertyName("question")]
     public string Question { get; private set; }
 
 
@@ -32,7 +32,7 @@ public partial class Faq : IEquatable<Faq>
     /// Answer from the knowledge base corresponding to the identified question.
     /// </summary>
     /// <value>Answer from the knowledge base corresponding to the identified question.</value>
-    [DataMember(Name = "answer", EmitDefaultValue = false)]
+    [JsonPropertyName("answer")]
     public string Answer { get; private set; }
 
 
@@ -41,7 +41,7 @@ public partial class Faq : IEquatable<Faq>
     /// A URI uniquely identifying the document, e.g. projects/acme-inc/knowledgeBases/MTAyNjgxNDU1Nzc3NTM1NzU0MjQ/documents/MTI5ODc3NzQzOTQ5MTc5NzgxMTI.
     /// </summary>
     /// <value>A URI uniquely identifying the document, e.g. projects/acme-inc/knowledgeBases/MTAyNjgxNDU1Nzc3NTM1NzU0MjQ/documents/MTI5ODc3NzQzOTQ5MTc5NzgxMTI.</value>
-    [DataMember(Name = "sourceUri", EmitDefaultValue = false)]
+    [JsonPropertyName("sourceUri")]
     public string SourceUri { get; private set; }
 
 
@@ -50,7 +50,7 @@ public partial class Faq : IEquatable<Faq>
     /// URL pointing to a web page if document was sourced from a URL.
     /// </summary>
     /// <value>URL pointing to a web page if document was sourced from a URL.</value>
-    [DataMember(Name = "documentUrl", EmitDefaultValue = false)]
+    [JsonPropertyName("documentUrl")]
     public string DocumentUrl { get; private set; }
 
 
@@ -59,7 +59,7 @@ public partial class Faq : IEquatable<Faq>
     /// A human-readable description of the document, e.g. &#39;Sample store FAQ&#39;
     /// </summary>
     /// <value>A human-readable description of the document, e.g. &#39;Sample store FAQ&#39;</value>
-    [DataMember(Name = "documentDisplayName", EmitDefaultValue = false)]
+    [JsonPropertyName("documentDisplayName")]
     public string DocumentDisplayName { get; private set; }
 
 
@@ -68,7 +68,7 @@ public partial class Faq : IEquatable<Faq>
     /// Value between 0 and 1. 1 corresponds to very confident, 0 to not confident at all
     /// </summary>
     /// <value>Value between 0 and 1. 1 corresponds to very confident, 0 to not confident at all</value>
-    [DataMember(Name = "confidence", EmitDefaultValue = false)]
+    [JsonPropertyName("confidence")]
     public float? Confidence { get; private set; }
 
 

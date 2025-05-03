@@ -1,4 +1,3 @@
-using System.Runtime.Serialization;
 using System.Text;
 using System.Text.Json.Serialization;
 
@@ -7,7 +6,7 @@ namespace PureCloud.Client.Models;
 /// <summary>
 /// CategoryEntity
 /// </summary>
-[DataContract]
+
 public partial class CategoryEntity : IEquatable<CategoryEntity>
 {
 
@@ -32,7 +31,7 @@ public partial class CategoryEntity : IEquatable<CategoryEntity>
     /// The Id of the category.
     /// </summary>
     /// <value>The Id of the category.</value>
-    [DataMember(Name = "id", EmitDefaultValue = false)]
+    [JsonPropertyName("id")]
     public string Id { get; set; }
 
 
@@ -41,7 +40,7 @@ public partial class CategoryEntity : IEquatable<CategoryEntity>
     /// The selfUri of the category.
     /// </summary>
     /// <value>The selfUri of the category.</value>
-    [DataMember(Name = "selfUri", EmitDefaultValue = false)]
+    [JsonPropertyName("selfUri")]
     public string SelfUri { get; private set; }
 
 

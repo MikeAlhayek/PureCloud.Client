@@ -1,12 +1,12 @@
-using System.Runtime.Serialization;
 using System.Text;
+using System.Text.Json.Serialization;
 
 namespace PureCloud.Client.Models;
 
 /// <summary>
 /// CreateGeneralProgramTestPhraseDetectedPhrase
 /// </summary>
-[DataContract]
+
 public partial class CreateGeneralProgramTestPhraseDetectedPhrase : IEquatable<CreateGeneralProgramTestPhraseDetectedPhrase>
 {
     /// <summary>
@@ -28,7 +28,7 @@ public partial class CreateGeneralProgramTestPhraseDetectedPhrase : IEquatable<C
     /// <summary>
     /// Gets or Sets FoundPhrase
     /// </summary>
-    [DataMember(Name = "foundPhrase", EmitDefaultValue = false)]
+    [JsonPropertyName("foundPhrase")]
     public string FoundPhrase { get; set; }
 
 
@@ -36,7 +36,7 @@ public partial class CreateGeneralProgramTestPhraseDetectedPhrase : IEquatable<C
     /// <summary>
     /// Gets or Sets Snippet
     /// </summary>
-    [DataMember(Name = "snippet", EmitDefaultValue = false)]
+    [JsonPropertyName("snippet")]
     public string Snippet { get; set; }
 
 
@@ -44,7 +44,7 @@ public partial class CreateGeneralProgramTestPhraseDetectedPhrase : IEquatable<C
     /// <summary>
     /// Gets or Sets Confidence
     /// </summary>
-    [DataMember(Name = "confidence", EmitDefaultValue = false)]
+    [JsonPropertyName("confidence")]
     public long? Confidence { get; set; }
 
 

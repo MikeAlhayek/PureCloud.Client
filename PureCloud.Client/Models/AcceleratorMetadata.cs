@@ -7,14 +7,14 @@ namespace PureCloud.Client.Models;
 /// <summary>
 /// Metadata for a CX infrastructure as code accelerator
 /// </summary>
-[DataContract]
+
 public partial class AcceleratorMetadata : IEquatable<AcceleratorMetadata>
 {
     /// <summary>
     /// where the accelerator originated
     /// </summary>
     /// <value>where the accelerator originated</value>
-    [JsonConverter(typeof(JsonStringEnumConverter))]
+    
     public enum OriginEnum
     {
         /// <summary>
@@ -47,7 +47,7 @@ public partial class AcceleratorMetadata : IEquatable<AcceleratorMetadata>
     /// type of the artifact
     /// </summary>
     /// <value>type of the artifact</value>
-    [JsonConverter(typeof(JsonStringEnumConverter))]
+    
     public enum TypeEnum
     {
         /// <summary>
@@ -80,13 +80,13 @@ public partial class AcceleratorMetadata : IEquatable<AcceleratorMetadata>
     /// where the accelerator originated
     /// </summary>
     /// <value>where the accelerator originated</value>
-    [DataMember(Name = "origin", EmitDefaultValue = false)]
+    [JsonPropertyName("origin")]
     public OriginEnum? Origin { get; private set; }
     /// <summary>
     /// type of the artifact
     /// </summary>
     /// <value>type of the artifact</value>
-    [DataMember(Name = "type", EmitDefaultValue = false)]
+    [JsonPropertyName("type")]
     public TypeEnum? Type { get; private set; }
     /// <summary>
     /// Initializes a new instance of the <see cref="AcceleratorMetadata" /> class.
@@ -102,7 +102,7 @@ public partial class AcceleratorMetadata : IEquatable<AcceleratorMetadata>
     /// The globally unique identifier for the object.
     /// </summary>
     /// <value>The globally unique identifier for the object.</value>
-    [DataMember(Name = "id", EmitDefaultValue = false)]
+    [JsonPropertyName("id")]
     public string Id { get; private set; }
 
 
@@ -111,7 +111,7 @@ public partial class AcceleratorMetadata : IEquatable<AcceleratorMetadata>
     /// name of this accelerator
     /// </summary>
     /// <value>name of this accelerator</value>
-    [DataMember(Name = "name", EmitDefaultValue = false)]
+    [JsonPropertyName("name")]
     public string Name { get; private set; }
 
 
@@ -120,7 +120,7 @@ public partial class AcceleratorMetadata : IEquatable<AcceleratorMetadata>
     /// a description of the general purpose of this accelerator
     /// </summary>
     /// <value>a description of the general purpose of this accelerator</value>
-    [DataMember(Name = "description", EmitDefaultValue = false)]
+    [JsonPropertyName("description")]
     public string Description { get; private set; }
 
 
@@ -133,7 +133,7 @@ public partial class AcceleratorMetadata : IEquatable<AcceleratorMetadata>
     /// architectural classification into which the accelerator belongs
     /// </summary>
     /// <value>architectural classification into which the accelerator belongs</value>
-    [DataMember(Name = "classification", EmitDefaultValue = false)]
+    [JsonPropertyName("classification")]
     public string Classification { get; private set; }
 
 
@@ -142,7 +142,7 @@ public partial class AcceleratorMetadata : IEquatable<AcceleratorMetadata>
     /// tags
     /// </summary>
     /// <value>tags</value>
-    [DataMember(Name = "tags", EmitDefaultValue = false)]
+    [JsonPropertyName("tags")]
     public List<string> Tags { get; private set; }
 
 
@@ -151,7 +151,7 @@ public partial class AcceleratorMetadata : IEquatable<AcceleratorMetadata>
     /// The URI for this object
     /// </summary>
     /// <value>The URI for this object</value>
-    [DataMember(Name = "selfUri", EmitDefaultValue = false)]
+    [JsonPropertyName("selfUri")]
     public string SelfUri { get; private set; }
 
 

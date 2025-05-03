@@ -7,14 +7,14 @@ namespace PureCloud.Client.Models;
 /// <summary>
 /// CallBasic
 /// </summary>
-[DataContract]
+
 public partial class CallBasic : IEquatable<CallBasic>
 {
     /// <summary>
     /// The connection state of this communication.
     /// </summary>
     /// <value>The connection state of this communication.</value>
-    [JsonConverter(typeof(JsonStringEnumConverter))]
+    
     public enum StateEnum
     {
         /// <summary>
@@ -95,7 +95,7 @@ public partial class CallBasic : IEquatable<CallBasic>
     /// The initial connection state of this communication.
     /// </summary>
     /// <value>The initial connection state of this communication.</value>
-    [JsonConverter(typeof(JsonStringEnumConverter))]
+    
     public enum InitialStateEnum
     {
         /// <summary>
@@ -176,7 +176,7 @@ public partial class CallBasic : IEquatable<CallBasic>
     /// The direction of the call
     /// </summary>
     /// <value>The direction of the call</value>
-    [JsonConverter(typeof(JsonStringEnumConverter))]
+    
     public enum DirectionEnum
     {
         /// <summary>
@@ -203,7 +203,7 @@ public partial class CallBasic : IEquatable<CallBasic>
     /// State of recording on this call.
     /// </summary>
     /// <value>State of recording on this call.</value>
-    [JsonConverter(typeof(JsonStringEnumConverter))]
+    
     public enum RecordingStateEnum
     {
         /// <summary>
@@ -236,7 +236,7 @@ public partial class CallBasic : IEquatable<CallBasic>
     /// System defined string indicating what caused the communication to disconnect. Will be null until the communication disconnects.
     /// </summary>
     /// <value>System defined string indicating what caused the communication to disconnect. Will be null until the communication disconnects.</value>
-    [JsonConverter(typeof(JsonStringEnumConverter))]
+    
     public enum DisconnectTypeEnum
     {
         /// <summary>
@@ -359,31 +359,31 @@ public partial class CallBasic : IEquatable<CallBasic>
     /// The connection state of this communication.
     /// </summary>
     /// <value>The connection state of this communication.</value>
-    [DataMember(Name = "state", EmitDefaultValue = false)]
+    [JsonPropertyName("state")]
     public StateEnum? State { get; set; }
     /// <summary>
     /// The initial connection state of this communication.
     /// </summary>
     /// <value>The initial connection state of this communication.</value>
-    [DataMember(Name = "initialState", EmitDefaultValue = false)]
+    [JsonPropertyName("initialState")]
     public InitialStateEnum? InitialState { get; set; }
     /// <summary>
     /// The direction of the call
     /// </summary>
     /// <value>The direction of the call</value>
-    [DataMember(Name = "direction", EmitDefaultValue = false)]
+    [JsonPropertyName("direction")]
     public DirectionEnum? Direction { get; set; }
     /// <summary>
     /// State of recording on this call.
     /// </summary>
     /// <value>State of recording on this call.</value>
-    [DataMember(Name = "recordingState", EmitDefaultValue = false)]
+    [JsonPropertyName("recordingState")]
     public RecordingStateEnum? RecordingState { get; set; }
     /// <summary>
     /// System defined string indicating what caused the communication to disconnect. Will be null until the communication disconnects.
     /// </summary>
     /// <value>System defined string indicating what caused the communication to disconnect. Will be null until the communication disconnects.</value>
-    [DataMember(Name = "disconnectType", EmitDefaultValue = false)]
+    [JsonPropertyName("disconnectType")]
     public DisconnectTypeEnum? DisconnectType { get; set; }
     /// <summary>
     /// Initializes a new instance of the <see cref="CallBasic" /> class.
@@ -471,7 +471,7 @@ public partial class CallBasic : IEquatable<CallBasic>
     /// A globally unique identifier for this communication.
     /// </summary>
     /// <value>A globally unique identifier for this communication.</value>
-    [DataMember(Name = "id", EmitDefaultValue = false)]
+    [JsonPropertyName("id")]
     public string Id { get; set; }
 
 
@@ -482,7 +482,7 @@ public partial class CallBasic : IEquatable<CallBasic>
     /// True if this call is being recorded.
     /// </summary>
     /// <value>True if this call is being recorded.</value>
-    [DataMember(Name = "recording", EmitDefaultValue = false)]
+    [JsonPropertyName("recording")]
     public bool? Recording { get; set; }
 
 
@@ -493,7 +493,7 @@ public partial class CallBasic : IEquatable<CallBasic>
     /// Contains the states of different recorders.
     /// </summary>
     /// <value>Contains the states of different recorders.</value>
-    [DataMember(Name = "recordersState", EmitDefaultValue = false)]
+    [JsonPropertyName("recordersState")]
     public RecordersState RecordersState { get; set; }
 
 
@@ -502,7 +502,7 @@ public partial class CallBasic : IEquatable<CallBasic>
     /// True if this call is muted so that remote participants can&#39;t hear any audio from this end.
     /// </summary>
     /// <value>True if this call is muted so that remote participants can&#39;t hear any audio from this end.</value>
-    [DataMember(Name = "muted", EmitDefaultValue = false)]
+    [JsonPropertyName("muted")]
     public bool? Muted { get; set; }
 
 
@@ -511,7 +511,7 @@ public partial class CallBasic : IEquatable<CallBasic>
     /// True if this call is held and the person on this side hears hold music.
     /// </summary>
     /// <value>True if this call is held and the person on this side hears hold music.</value>
-    [DataMember(Name = "confined", EmitDefaultValue = false)]
+    [JsonPropertyName("confined")]
     public bool? Confined { get; set; }
 
 
@@ -520,7 +520,7 @@ public partial class CallBasic : IEquatable<CallBasic>
     /// True if this call is held and the person on this side hears silence.
     /// </summary>
     /// <value>True if this call is held and the person on this side hears silence.</value>
-    [DataMember(Name = "held", EmitDefaultValue = false)]
+    [JsonPropertyName("held")]
     public bool? Held { get; set; }
 
 
@@ -529,7 +529,7 @@ public partial class CallBasic : IEquatable<CallBasic>
     /// True when the recording of this call is in secure pause status.
     /// </summary>
     /// <value>True when the recording of this call is in secure pause status.</value>
-    [DataMember(Name = "securePause", EmitDefaultValue = false)]
+    [JsonPropertyName("securePause")]
     public bool? SecurePause { get; set; }
 
 
@@ -538,7 +538,7 @@ public partial class CallBasic : IEquatable<CallBasic>
     /// A globally unique identifier for the recording associated with this call.
     /// </summary>
     /// <value>A globally unique identifier for the recording associated with this call.</value>
-    [DataMember(Name = "recordingId", EmitDefaultValue = false)]
+    [JsonPropertyName("recordingId")]
     public string RecordingId { get; set; }
 
 
@@ -547,7 +547,7 @@ public partial class CallBasic : IEquatable<CallBasic>
     /// The time line of the participant&#39;s call, divided into activity segments.
     /// </summary>
     /// <value>The time line of the participant&#39;s call, divided into activity segments.</value>
-    [DataMember(Name = "segments", EmitDefaultValue = false)]
+    [JsonPropertyName("segments")]
     public List<Segment> Segments { get; set; }
 
 
@@ -555,7 +555,7 @@ public partial class CallBasic : IEquatable<CallBasic>
     /// <summary>
     /// Gets or Sets ErrorInfo
     /// </summary>
-    [DataMember(Name = "errorInfo", EmitDefaultValue = false)]
+    [JsonPropertyName("errorInfo")]
     public ErrorInfo ErrorInfo { get; set; }
 
 
@@ -566,7 +566,7 @@ public partial class CallBasic : IEquatable<CallBasic>
     /// The timestamp the call was placed on hold in the cloud clock if the call is currently on hold. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z
     /// </summary>
     /// <value>The timestamp the call was placed on hold in the cloud clock if the call is currently on hold. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z</value>
-    [DataMember(Name = "startHoldTime", EmitDefaultValue = false)]
+    [JsonPropertyName("startHoldTime")]
     public DateTime? StartHoldTime { get; set; }
 
 
@@ -575,7 +575,7 @@ public partial class CallBasic : IEquatable<CallBasic>
     /// If call is an outbound fax of a document from content management, then this is the id in content management.
     /// </summary>
     /// <value>If call is an outbound fax of a document from content management, then this is the id in content management.</value>
-    [DataMember(Name = "documentId", EmitDefaultValue = false)]
+    [JsonPropertyName("documentId")]
     public string DocumentId { get; set; }
 
 
@@ -584,7 +584,7 @@ public partial class CallBasic : IEquatable<CallBasic>
     /// The timestamp the communication has when it is first put into an alerting state. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z
     /// </summary>
     /// <value>The timestamp the communication has when it is first put into an alerting state. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z</value>
-    [DataMember(Name = "startAlertingTime", EmitDefaultValue = false)]
+    [JsonPropertyName("startAlertingTime")]
     public DateTime? StartAlertingTime { get; set; }
 
 
@@ -593,7 +593,7 @@ public partial class CallBasic : IEquatable<CallBasic>
     /// The timestamp when this communication was connected in the cloud clock. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z
     /// </summary>
     /// <value>The timestamp when this communication was connected in the cloud clock. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z</value>
-    [DataMember(Name = "connectedTime", EmitDefaultValue = false)]
+    [JsonPropertyName("connectedTime")]
     public DateTime? ConnectedTime { get; set; }
 
 
@@ -602,7 +602,7 @@ public partial class CallBasic : IEquatable<CallBasic>
     /// The timestamp when this communication disconnected from the conversation in the provider clock. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z
     /// </summary>
     /// <value>The timestamp when this communication disconnected from the conversation in the provider clock. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z</value>
-    [DataMember(Name = "disconnectedTime", EmitDefaultValue = false)]
+    [JsonPropertyName("disconnectedTime")]
     public DateTime? DisconnectedTime { get; set; }
 
 
@@ -611,7 +611,7 @@ public partial class CallBasic : IEquatable<CallBasic>
     /// List of reasons that this call was disconnected. This will be set once the call disconnects.
     /// </summary>
     /// <value>List of reasons that this call was disconnected. This will be set once the call disconnects.</value>
-    [DataMember(Name = "disconnectReasons", EmitDefaultValue = false)]
+    [JsonPropertyName("disconnectReasons")]
     public List<DisconnectReason> DisconnectReasons { get; set; }
 
 
@@ -620,7 +620,7 @@ public partial class CallBasic : IEquatable<CallBasic>
     /// Extra information on fax transmission.
     /// </summary>
     /// <value>Extra information on fax transmission.</value>
-    [DataMember(Name = "faxStatus", EmitDefaultValue = false)]
+    [JsonPropertyName("faxStatus")]
     public FaxStatus FaxStatus { get; set; }
 
 
@@ -629,7 +629,7 @@ public partial class CallBasic : IEquatable<CallBasic>
     /// The source provider for the call.
     /// </summary>
     /// <value>The source provider for the call.</value>
-    [DataMember(Name = "provider", EmitDefaultValue = false)]
+    [JsonPropertyName("provider")]
     public string Provider { get; set; }
 
 
@@ -638,7 +638,7 @@ public partial class CallBasic : IEquatable<CallBasic>
     /// The UUID of the script to use.
     /// </summary>
     /// <value>The UUID of the script to use.</value>
-    [DataMember(Name = "scriptId", EmitDefaultValue = false)]
+    [JsonPropertyName("scriptId")]
     public string ScriptId { get; set; }
 
 
@@ -647,7 +647,7 @@ public partial class CallBasic : IEquatable<CallBasic>
     /// The id of the peer communication corresponding to a matching leg for this communication.
     /// </summary>
     /// <value>The id of the peer communication corresponding to a matching leg for this communication.</value>
-    [DataMember(Name = "peerId", EmitDefaultValue = false)]
+    [JsonPropertyName("peerId")]
     public string PeerId { get; set; }
 
 
@@ -656,7 +656,7 @@ public partial class CallBasic : IEquatable<CallBasic>
     /// User to User Information (UUI) data managed by SIP session application.
     /// </summary>
     /// <value>User to User Information (UUI) data managed by SIP session application.</value>
-    [DataMember(Name = "uuiData", EmitDefaultValue = false)]
+    [JsonPropertyName("uuiData")]
     public string UuiData { get; set; }
 
 
@@ -665,7 +665,7 @@ public partial class CallBasic : IEquatable<CallBasic>
     /// Address and name data for a call endpoint.
     /// </summary>
     /// <value>Address and name data for a call endpoint.</value>
-    [DataMember(Name = "self", EmitDefaultValue = false)]
+    [JsonPropertyName("self")]
     public Address Self { get; set; }
 
 
@@ -674,7 +674,7 @@ public partial class CallBasic : IEquatable<CallBasic>
     /// Address and name data for a call endpoint.
     /// </summary>
     /// <value>Address and name data for a call endpoint.</value>
-    [DataMember(Name = "other", EmitDefaultValue = false)]
+    [JsonPropertyName("other")]
     public Address Other { get; set; }
 
 
@@ -683,7 +683,7 @@ public partial class CallBasic : IEquatable<CallBasic>
     /// Call wrap up or disposition data.
     /// </summary>
     /// <value>Call wrap up or disposition data.</value>
-    [DataMember(Name = "wrapup", EmitDefaultValue = false)]
+    [JsonPropertyName("wrapup")]
     public Wrapup Wrapup { get; set; }
 
 
@@ -692,7 +692,7 @@ public partial class CallBasic : IEquatable<CallBasic>
     /// After-call work for the communication.
     /// </summary>
     /// <value>After-call work for the communication.</value>
-    [DataMember(Name = "afterCallWork", EmitDefaultValue = false)]
+    [JsonPropertyName("afterCallWork")]
     public AfterCallWork AfterCallWork { get; set; }
 
 
@@ -701,7 +701,7 @@ public partial class CallBasic : IEquatable<CallBasic>
     /// Indicates if after-call work is required for a communication. Only used when the ACW Setting is Agent Requested.
     /// </summary>
     /// <value>Indicates if after-call work is required for a communication. Only used when the ACW Setting is Agent Requested.</value>
-    [DataMember(Name = "afterCallWorkRequired", EmitDefaultValue = false)]
+    [JsonPropertyName("afterCallWorkRequired")]
     public bool? AfterCallWorkRequired { get; set; }
 
 
@@ -710,7 +710,7 @@ public partial class CallBasic : IEquatable<CallBasic>
     /// UUID of virtual agent assistant that provide suggestions to the agent participant during the conversation.
     /// </summary>
     /// <value>UUID of virtual agent assistant that provide suggestions to the agent participant during the conversation.</value>
-    [DataMember(Name = "agentAssistantId", EmitDefaultValue = false)]
+    [JsonPropertyName("agentAssistantId")]
     public string AgentAssistantId { get; set; }
 
 
@@ -719,7 +719,7 @@ public partial class CallBasic : IEquatable<CallBasic>
     /// Represents the queue settings for this media type.
     /// </summary>
     /// <value>Represents the queue settings for this media type.</value>
-    [DataMember(Name = "queueMediaSettings", EmitDefaultValue = false)]
+    [JsonPropertyName("queueMediaSettings")]
     public ConversationQueueMediaSettings QueueMediaSettings { get; set; }
 
 
@@ -728,7 +728,7 @@ public partial class CallBasic : IEquatable<CallBasic>
     /// Call resolution data for Dialer bulk make calls commands.
     /// </summary>
     /// <value>Call resolution data for Dialer bulk make calls commands.</value>
-    [DataMember(Name = "disposition", EmitDefaultValue = false)]
+    [JsonPropertyName("disposition")]
     public Disposition Disposition { get; set; }
 
 

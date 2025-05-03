@@ -1,4 +1,3 @@
-using System.Runtime.Serialization;
 using System.Text;
 using System.Text.Json.Serialization;
 
@@ -7,7 +6,7 @@ namespace PureCloud.Client.Models;
 /// <summary>
 /// UserEstablishedEvent
 /// </summary>
-[DataContract]
+
 public partial class UserEstablishedEvent : IEquatable<UserEstablishedEvent>
 {
 
@@ -56,7 +55,7 @@ public partial class UserEstablishedEvent : IEquatable<UserEstablishedEvent>
     /// A unique (V4 UUID) eventId for this event
     /// </summary>
     /// <value>A unique (V4 UUID) eventId for this event</value>
-    [DataMember(Name = "eventId", EmitDefaultValue = false)]
+    [JsonPropertyName("eventId")]
     public string EventId { get; set; }
 
 
@@ -65,7 +64,7 @@ public partial class UserEstablishedEvent : IEquatable<UserEstablishedEvent>
     /// A Date Time representing the time this event occurred. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z
     /// </summary>
     /// <value>A Date Time representing the time this event occurred. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z</value>
-    [DataMember(Name = "eventDateTime", EmitDefaultValue = false)]
+    [JsonPropertyName("eventDateTime")]
     public DateTime? EventDateTime { get; set; }
 
 
@@ -74,7 +73,7 @@ public partial class UserEstablishedEvent : IEquatable<UserEstablishedEvent>
     /// A unique Id (V4 UUID) identifying this conversation
     /// </summary>
     /// <value>A unique Id (V4 UUID) identifying this conversation</value>
-    [DataMember(Name = "conversationId", EmitDefaultValue = false)]
+    [JsonPropertyName("conversationId")]
     public string ConversationId { get; set; }
 
 
@@ -83,7 +82,7 @@ public partial class UserEstablishedEvent : IEquatable<UserEstablishedEvent>
     /// A unique Id (V4 UUID) identifying this communication
     /// </summary>
     /// <value>A unique Id (V4 UUID) identifying this communication</value>
-    [DataMember(Name = "communicationId", EmitDefaultValue = false)]
+    [JsonPropertyName("communicationId")]
     public string CommunicationId { get; set; }
 
 
@@ -92,7 +91,7 @@ public partial class UserEstablishedEvent : IEquatable<UserEstablishedEvent>
     /// Identifies the phone number used to reach this user if it is different from the information that would be accessed by userId.
     /// </summary>
     /// <value>Identifies the phone number used to reach this user if it is different from the information that would be accessed by userId.</value>
-    [DataMember(Name = "phoneNumber", EmitDefaultValue = false)]
+    [JsonPropertyName("phoneNumber")]
     public string PhoneNumber { get; set; }
 
 
@@ -101,7 +100,7 @@ public partial class UserEstablishedEvent : IEquatable<UserEstablishedEvent>
     /// The userId (V4 UUID) for the user this communication belongs to.
     /// </summary>
     /// <value>The userId (V4 UUID) for the user this communication belongs to.</value>
-    [DataMember(Name = "userId", EmitDefaultValue = false)]
+    [JsonPropertyName("userId")]
     public string UserId { get; set; }
 
 
@@ -110,7 +109,7 @@ public partial class UserEstablishedEvent : IEquatable<UserEstablishedEvent>
     /// A Station ID (V4 UUID) that identifies the station being used if the user is using a station and the stationId is known.
     /// </summary>
     /// <value>A Station ID (V4 UUID) that identifies the station being used if the user is using a station and the stationId is known.</value>
-    [DataMember(Name = "stationId", EmitDefaultValue = false)]
+    [JsonPropertyName("stationId")]
     public string StationId { get; set; }
 
 
@@ -119,7 +118,7 @@ public partial class UserEstablishedEvent : IEquatable<UserEstablishedEvent>
     /// The automatic number identification if it is available for this conversation.
     /// </summary>
     /// <value>The automatic number identification if it is available for this conversation.</value>
-    [DataMember(Name = "ani", EmitDefaultValue = false)]
+    [JsonPropertyName("ani")]
     public string Ani { get; set; }
 
 
@@ -128,7 +127,7 @@ public partial class UserEstablishedEvent : IEquatable<UserEstablishedEvent>
     /// The dialed number identification if it is available for this conversation.
     /// </summary>
     /// <value>The dialed number identification if it is available for this conversation.</value>
-    [DataMember(Name = "dnis", EmitDefaultValue = false)]
+    [JsonPropertyName("dnis")]
     public string Dnis { get; set; }
 
 
@@ -137,7 +136,7 @@ public partial class UserEstablishedEvent : IEquatable<UserEstablishedEvent>
     /// Indicates whether or not this user will be required to complete after call work.
     /// </summary>
     /// <value>Indicates whether or not this user will be required to complete after call work.</value>
-    [DataMember(Name = "afterCallWorkRequired", EmitDefaultValue = false)]
+    [JsonPropertyName("afterCallWorkRequired")]
     public bool? AfterCallWorkRequired { get; set; }
 
 
@@ -146,7 +145,7 @@ public partial class UserEstablishedEvent : IEquatable<UserEstablishedEvent>
     /// The id (V4 UUID) of the queue that the user is calling on behalf of. Applies to outbound calls only.
     /// </summary>
     /// <value>The id (V4 UUID) of the queue that the user is calling on behalf of. Applies to outbound calls only.</value>
-    [DataMember(Name = "queueId", EmitDefaultValue = false)]
+    [JsonPropertyName("queueId")]
     public string QueueId { get; set; }
 
 
@@ -155,7 +154,7 @@ public partial class UserEstablishedEvent : IEquatable<UserEstablishedEvent>
     /// Metadata about this communication.
     /// </summary>
     /// <value>Metadata about this communication.</value>
-    [DataMember(Name = "initialConfiguration", EmitDefaultValue = false)]
+    [JsonPropertyName("initialConfiguration")]
     public InitialConfiguration InitialConfiguration { get; set; }
 
 
@@ -164,7 +163,7 @@ public partial class UserEstablishedEvent : IEquatable<UserEstablishedEvent>
     /// Metadata about the source of this communication&#39;s interaction.
     /// </summary>
     /// <value>Metadata about the source of this communication&#39;s interaction.</value>
-    [DataMember(Name = "sourceConfiguration", EmitDefaultValue = false)]
+    [JsonPropertyName("sourceConfiguration")]
     public SourceConfiguration SourceConfiguration { get; set; }
 
 

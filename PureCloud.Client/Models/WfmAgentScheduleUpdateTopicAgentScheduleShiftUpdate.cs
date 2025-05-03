@@ -7,13 +7,13 @@ namespace PureCloud.Client.Models;
 /// <summary>
 /// WfmAgentScheduleUpdateTopicAgentScheduleShiftUpdate
 /// </summary>
-[DataContract]
+
 public partial class WfmAgentScheduleUpdateTopicAgentScheduleShiftUpdate : IEquatable<WfmAgentScheduleUpdateTopicAgentScheduleShiftUpdate>
 {
     /// <summary>
     /// Gets or Sets Type
     /// </summary>
-    [JsonConverter(typeof(JsonStringEnumConverter))]
+    
     public enum TypeEnum
     {
         /// <summary>
@@ -45,7 +45,7 @@ public partial class WfmAgentScheduleUpdateTopicAgentScheduleShiftUpdate : IEqua
     /// <summary>
     /// Gets or Sets Type
     /// </summary>
-    [DataMember(Name = "type", EmitDefaultValue = false)]
+    [JsonPropertyName("type")]
     public TypeEnum? Type { get; set; }
     /// <summary>
     /// Initializes a new instance of the <see cref="WfmAgentScheduleUpdateTopicAgentScheduleShiftUpdate" /> class.
@@ -66,7 +66,7 @@ public partial class WfmAgentScheduleUpdateTopicAgentScheduleShiftUpdate : IEqua
     /// <summary>
     /// Gets or Sets ShiftStartDates
     /// </summary>
-    [DataMember(Name = "shiftStartDates", EmitDefaultValue = false)]
+    [JsonPropertyName("shiftStartDates")]
     public List<DateTime?> ShiftStartDates { get; set; }
 
 

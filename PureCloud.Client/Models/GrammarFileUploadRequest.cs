@@ -7,13 +7,13 @@ namespace PureCloud.Client.Models;
 /// <summary>
 /// GrammarFileUploadRequest
 /// </summary>
-[DataContract]
+
 public partial class GrammarFileUploadRequest : IEquatable<GrammarFileUploadRequest>
 {
     /// <summary>
     /// Gets or Sets FileType
     /// </summary>
-    [JsonConverter(typeof(JsonStringEnumConverter))]
+    
     public enum FileTypeEnum
     {
         /// <summary>
@@ -39,7 +39,7 @@ public partial class GrammarFileUploadRequest : IEquatable<GrammarFileUploadRequ
     /// <summary>
     /// Gets or Sets FileType
     /// </summary>
-    [DataMember(Name = "fileType", EmitDefaultValue = false)]
+    [JsonPropertyName("fileType")]
     public FileTypeEnum? FileType { get; set; }
     /// <summary>
     /// Initializes a new instance of the <see cref="GrammarFileUploadRequest" /> class.

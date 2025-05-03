@@ -1,12 +1,12 @@
-using System.Runtime.Serialization;
 using System.Text;
+using System.Text.Json.Serialization;
 
 namespace PureCloud.Client.Models;
 
 /// <summary>
 /// LearningSlotWfmScheduleActivity
 /// </summary>
-[DataContract]
+
 public partial class LearningSlotWfmScheduleActivity : IEquatable<LearningSlotWfmScheduleActivity>
 {
     /// <summary>
@@ -29,7 +29,7 @@ public partial class LearningSlotWfmScheduleActivity : IEquatable<LearningSlotWf
     /// User that the schedule is for
     /// </summary>
     /// <value>User that the schedule is for</value>
-    [DataMember(Name = "user", EmitDefaultValue = false)]
+    [JsonPropertyName("user")]
     public UserReference User { get; set; }
 
 
@@ -38,7 +38,7 @@ public partial class LearningSlotWfmScheduleActivity : IEquatable<LearningSlotWf
     /// List of user&#39;s scheduled activities
     /// </summary>
     /// <value>List of user&#39;s scheduled activities</value>
-    [DataMember(Name = "activities", EmitDefaultValue = false)]
+    [JsonPropertyName("activities")]
     public List<LearningSlotScheduleActivity> Activities { get; set; }
 
 
@@ -47,7 +47,7 @@ public partial class LearningSlotWfmScheduleActivity : IEquatable<LearningSlotWf
     /// List of user&#39;s days off
     /// </summary>
     /// <value>List of user&#39;s days off</value>
-    [DataMember(Name = "fullDayTimeOffMarkers", EmitDefaultValue = false)]
+    [JsonPropertyName("fullDayTimeOffMarkers")]
     public List<LearningSlotFullDayTimeOffMarker> FullDayTimeOffMarkers { get; set; }
 
 

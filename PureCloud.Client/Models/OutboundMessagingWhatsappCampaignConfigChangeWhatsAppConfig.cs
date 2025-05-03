@@ -1,12 +1,12 @@
-using System.Runtime.Serialization;
 using System.Text;
+using System.Text.Json.Serialization;
 
 namespace PureCloud.Client.Models;
 
 /// <summary>
 /// An outbound-messaging messaging campaign WhatsApp Config
 /// </summary>
-[DataContract]
+
 public partial class OutboundMessagingWhatsappCampaignConfigChangeWhatsAppConfig : IEquatable<OutboundMessagingWhatsappCampaignConfigChangeWhatsAppConfig>
 {
     /// <summary>
@@ -29,7 +29,7 @@ public partial class OutboundMessagingWhatsappCampaignConfigChangeWhatsAppConfig
     /// The Contact List columns specifying the phone number to send a message to.
     /// </summary>
     /// <value>The Contact List columns specifying the phone number to send a message to.</value>
-    [DataMember(Name = "whatsAppColumns", EmitDefaultValue = false)]
+    [JsonPropertyName("whatsAppColumns")]
     public List<string> WhatsAppColumns { get; set; }
 
 
@@ -37,7 +37,7 @@ public partial class OutboundMessagingWhatsappCampaignConfigChangeWhatsAppConfig
     /// <summary>
     /// Gets or Sets Integration
     /// </summary>
-    [DataMember(Name = "integration", EmitDefaultValue = false)]
+    [JsonPropertyName("integration")]
     public OutboundMessagingWhatsappCampaignConfigChangeIntegrationRef Integration { get; set; }
 
 
@@ -46,7 +46,7 @@ public partial class OutboundMessagingWhatsappCampaignConfigChangeWhatsAppConfig
     /// A reference for a Response
     /// </summary>
     /// <value>A reference for a Response</value>
-    [DataMember(Name = "contentTemplate", EmitDefaultValue = false)]
+    [JsonPropertyName("contentTemplate")]
     public OutboundMessagingWhatsappCampaignConfigChangeResponseRef ContentTemplate { get; set; }
 
 

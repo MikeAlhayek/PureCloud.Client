@@ -1,12 +1,12 @@
-using System.Runtime.Serialization;
 using System.Text;
+using System.Text.Json.Serialization;
 
 namespace PureCloud.Client.Models;
 
 /// <summary>
 /// ActionMapEstimateResult
 /// </summary>
-[DataContract]
+
 public partial class ActionMapEstimateResult : IEquatable<ActionMapEstimateResult>
 {
     /// <summary>
@@ -31,7 +31,7 @@ public partial class ActionMapEstimateResult : IEquatable<ActionMapEstimateResul
     /// Number of sessions qualified for Action map.
     /// </summary>
     /// <value>Number of sessions qualified for Action map.</value>
-    [DataMember(Name = "qualifiedSessionCount", EmitDefaultValue = false)]
+    [JsonPropertyName("qualifiedSessionCount")]
     public int? QualifiedSessionCount { get; set; }
 
 
@@ -40,7 +40,7 @@ public partial class ActionMapEstimateResult : IEquatable<ActionMapEstimateResul
     /// Total number of sessions.
     /// </summary>
     /// <value>Total number of sessions.</value>
-    [DataMember(Name = "totalSessionCount", EmitDefaultValue = false)]
+    [JsonPropertyName("totalSessionCount")]
     public int? TotalSessionCount { get; set; }
 
 
@@ -49,7 +49,7 @@ public partial class ActionMapEstimateResult : IEquatable<ActionMapEstimateResul
     /// Number of sessions qualified for Action map per segment.
     /// </summary>
     /// <value>Number of sessions qualified for Action map per segment.</value>
-    [DataMember(Name = "perSegmentCounts", EmitDefaultValue = false)]
+    [JsonPropertyName("perSegmentCounts")]
     public List<SegmentEstimateCount> PerSegmentCounts { get; set; }
 
 
@@ -58,7 +58,7 @@ public partial class ActionMapEstimateResult : IEquatable<ActionMapEstimateResul
     /// Difference made by outcome criteria to number of sessions qualified for Action map.
     /// </summary>
     /// <value>Difference made by outcome criteria to number of sessions qualified for Action map.</value>
-    [DataMember(Name = "outcomesScoresCount", EmitDefaultValue = false)]
+    [JsonPropertyName("outcomesScoresCount")]
     public int? OutcomesScoresCount { get; set; }
 
 

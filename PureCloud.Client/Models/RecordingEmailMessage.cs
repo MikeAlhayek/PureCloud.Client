@@ -1,12 +1,12 @@
-using System.Runtime.Serialization;
 using System.Text;
+using System.Text.Json.Serialization;
 
 namespace PureCloud.Client.Models;
 
 /// <summary>
 /// RecordingEmailMessage
 /// </summary>
-[DataContract]
+
 public partial class RecordingEmailMessage : IEquatable<RecordingEmailMessage>
 {
     /// <summary>
@@ -42,7 +42,7 @@ public partial class RecordingEmailMessage : IEquatable<RecordingEmailMessage>
     /// <summary>
     /// Gets or Sets HtmlBody
     /// </summary>
-    [DataMember(Name = "htmlBody", EmitDefaultValue = false)]
+    [JsonPropertyName("htmlBody")]
     public string HtmlBody { get; set; }
 
 
@@ -50,7 +50,7 @@ public partial class RecordingEmailMessage : IEquatable<RecordingEmailMessage>
     /// <summary>
     /// Gets or Sets TextBody
     /// </summary>
-    [DataMember(Name = "textBody", EmitDefaultValue = false)]
+    [JsonPropertyName("textBody")]
     public string TextBody { get; set; }
 
 
@@ -58,7 +58,7 @@ public partial class RecordingEmailMessage : IEquatable<RecordingEmailMessage>
     /// <summary>
     /// Gets or Sets Id
     /// </summary>
-    [DataMember(Name = "id", EmitDefaultValue = false)]
+    [JsonPropertyName("id")]
     public string Id { get; set; }
 
 
@@ -66,7 +66,7 @@ public partial class RecordingEmailMessage : IEquatable<RecordingEmailMessage>
     /// <summary>
     /// Gets or Sets To
     /// </summary>
-    [DataMember(Name = "to", EmitDefaultValue = false)]
+    [JsonPropertyName("to")]
     public List<EmailAddress> To { get; set; }
 
 
@@ -74,7 +74,7 @@ public partial class RecordingEmailMessage : IEquatable<RecordingEmailMessage>
     /// <summary>
     /// Gets or Sets Cc
     /// </summary>
-    [DataMember(Name = "cc", EmitDefaultValue = false)]
+    [JsonPropertyName("cc")]
     public List<EmailAddress> Cc { get; set; }
 
 
@@ -82,7 +82,7 @@ public partial class RecordingEmailMessage : IEquatable<RecordingEmailMessage>
     /// <summary>
     /// Gets or Sets Bcc
     /// </summary>
-    [DataMember(Name = "bcc", EmitDefaultValue = false)]
+    [JsonPropertyName("bcc")]
     public List<EmailAddress> Bcc { get; set; }
 
 
@@ -90,7 +90,7 @@ public partial class RecordingEmailMessage : IEquatable<RecordingEmailMessage>
     /// <summary>
     /// Gets or Sets From
     /// </summary>
-    [DataMember(Name = "from", EmitDefaultValue = false)]
+    [JsonPropertyName("from")]
     public EmailAddress From { get; set; }
 
 
@@ -98,7 +98,7 @@ public partial class RecordingEmailMessage : IEquatable<RecordingEmailMessage>
     /// <summary>
     /// Gets or Sets Subject
     /// </summary>
-    [DataMember(Name = "subject", EmitDefaultValue = false)]
+    [JsonPropertyName("subject")]
     public string Subject { get; set; }
 
 
@@ -106,7 +106,7 @@ public partial class RecordingEmailMessage : IEquatable<RecordingEmailMessage>
     /// <summary>
     /// Gets or Sets Attachments
     /// </summary>
-    [DataMember(Name = "attachments", EmitDefaultValue = false)]
+    [JsonPropertyName("attachments")]
     public List<EmailAttachment> Attachments { get; set; }
 
 
@@ -115,7 +115,7 @@ public partial class RecordingEmailMessage : IEquatable<RecordingEmailMessage>
     /// Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z
     /// </summary>
     /// <value>Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z</value>
-    [DataMember(Name = "time", EmitDefaultValue = false)]
+    [JsonPropertyName("time")]
     public DateTime? Time { get; set; }
 
 

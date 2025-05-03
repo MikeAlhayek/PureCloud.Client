@@ -1,12 +1,12 @@
-using System.Runtime.Serialization;
 using System.Text;
+using System.Text.Json.Serialization;
 
 namespace PureCloud.Client.Models;
 
 /// <summary>
 /// EvaluationQuestionGroupScore
 /// </summary>
-[DataContract]
+
 public partial class EvaluationQuestionGroupScore : IEquatable<EvaluationQuestionGroupScore>
 {
     /// <summary>
@@ -54,7 +54,7 @@ public partial class EvaluationQuestionGroupScore : IEquatable<EvaluationQuestio
     /// <summary>
     /// Gets or Sets QuestionGroupId
     /// </summary>
-    [DataMember(Name = "questionGroupId", EmitDefaultValue = false)]
+    [JsonPropertyName("questionGroupId")]
     public string QuestionGroupId { get; set; }
 
 
@@ -63,7 +63,7 @@ public partial class EvaluationQuestionGroupScore : IEquatable<EvaluationQuestio
     /// Score of all questions in the group
     /// </summary>
     /// <value>Score of all questions in the group</value>
-    [DataMember(Name = "totalScore", EmitDefaultValue = false)]
+    [JsonPropertyName("totalScore")]
     public float? TotalScore { get; set; }
 
 
@@ -72,7 +72,7 @@ public partial class EvaluationQuestionGroupScore : IEquatable<EvaluationQuestio
     /// Maximum possible score of all questions in the group
     /// </summary>
     /// <value>Maximum possible score of all questions in the group</value>
-    [DataMember(Name = "maxTotalScore", EmitDefaultValue = false)]
+    [JsonPropertyName("maxTotalScore")]
     public float? MaxTotalScore { get; set; }
 
 
@@ -81,7 +81,7 @@ public partial class EvaluationQuestionGroupScore : IEquatable<EvaluationQuestio
     /// True when the evaluation is submitted with a question group that does not have any answers. Only allowed when naEnabled is true or if set by the system
     /// </summary>
     /// <value>True when the evaluation is submitted with a question group that does not have any answers. Only allowed when naEnabled is true or if set by the system</value>
-    [DataMember(Name = "markedNA", EmitDefaultValue = false)]
+    [JsonPropertyName("markedNA")]
     public bool? MarkedNA { get; set; }
 
 
@@ -90,7 +90,7 @@ public partial class EvaluationQuestionGroupScore : IEquatable<EvaluationQuestio
     /// If markedNA is true, systemMarkedNA indicates whether it was marked by a user or by the system due to visibility conditions. Always false if markedNA is false.
     /// </summary>
     /// <value>If markedNA is true, systemMarkedNA indicates whether it was marked by a user or by the system due to visibility conditions. Always false if markedNA is false.</value>
-    [DataMember(Name = "systemMarkedNA", EmitDefaultValue = false)]
+    [JsonPropertyName("systemMarkedNA")]
     public bool? SystemMarkedNA { get; set; }
 
 
@@ -99,7 +99,7 @@ public partial class EvaluationQuestionGroupScore : IEquatable<EvaluationQuestio
     /// Score of only the critical questions in the group
     /// </summary>
     /// <value>Score of only the critical questions in the group</value>
-    [DataMember(Name = "totalCriticalScore", EmitDefaultValue = false)]
+    [JsonPropertyName("totalCriticalScore")]
     public float? TotalCriticalScore { get; set; }
 
 
@@ -108,7 +108,7 @@ public partial class EvaluationQuestionGroupScore : IEquatable<EvaluationQuestio
     /// Maximum possible score of only the critical questions in the group
     /// </summary>
     /// <value>Maximum possible score of only the critical questions in the group</value>
-    [DataMember(Name = "maxTotalCriticalScore", EmitDefaultValue = false)]
+    [JsonPropertyName("maxTotalCriticalScore")]
     public float? MaxTotalCriticalScore { get; set; }
 
 
@@ -117,7 +117,7 @@ public partial class EvaluationQuestionGroupScore : IEquatable<EvaluationQuestio
     /// Score of only the non critical questions in the group
     /// </summary>
     /// <value>Score of only the non critical questions in the group</value>
-    [DataMember(Name = "totalNonCriticalScore", EmitDefaultValue = false)]
+    [JsonPropertyName("totalNonCriticalScore")]
     public float? TotalNonCriticalScore { get; set; }
 
 
@@ -126,7 +126,7 @@ public partial class EvaluationQuestionGroupScore : IEquatable<EvaluationQuestio
     /// Maximum possible score of only the non critical questions in the group
     /// </summary>
     /// <value>Maximum possible score of only the non critical questions in the group</value>
-    [DataMember(Name = "maxTotalNonCriticalScore", EmitDefaultValue = false)]
+    [JsonPropertyName("maxTotalNonCriticalScore")]
     public float? MaxTotalNonCriticalScore { get; set; }
 
 
@@ -135,7 +135,7 @@ public partial class EvaluationQuestionGroupScore : IEquatable<EvaluationQuestio
     /// Unweighted score of all questions in the group
     /// </summary>
     /// <value>Unweighted score of all questions in the group</value>
-    [DataMember(Name = "totalScoreUnweighted", EmitDefaultValue = false)]
+    [JsonPropertyName("totalScoreUnweighted")]
     public float? TotalScoreUnweighted { get; set; }
 
 
@@ -144,7 +144,7 @@ public partial class EvaluationQuestionGroupScore : IEquatable<EvaluationQuestio
     /// Maximum possible unweighted score of all questions in the group
     /// </summary>
     /// <value>Maximum possible unweighted score of all questions in the group</value>
-    [DataMember(Name = "maxTotalScoreUnweighted", EmitDefaultValue = false)]
+    [JsonPropertyName("maxTotalScoreUnweighted")]
     public float? MaxTotalScoreUnweighted { get; set; }
 
 
@@ -153,7 +153,7 @@ public partial class EvaluationQuestionGroupScore : IEquatable<EvaluationQuestio
     /// Unweighted score of only the critical questions in the group
     /// </summary>
     /// <value>Unweighted score of only the critical questions in the group</value>
-    [DataMember(Name = "totalCriticalScoreUnweighted", EmitDefaultValue = false)]
+    [JsonPropertyName("totalCriticalScoreUnweighted")]
     public float? TotalCriticalScoreUnweighted { get; set; }
 
 
@@ -162,7 +162,7 @@ public partial class EvaluationQuestionGroupScore : IEquatable<EvaluationQuestio
     /// Maximum possible unweighted score of only the critical questions in the group
     /// </summary>
     /// <value>Maximum possible unweighted score of only the critical questions in the group</value>
-    [DataMember(Name = "maxTotalCriticalScoreUnweighted", EmitDefaultValue = false)]
+    [JsonPropertyName("maxTotalCriticalScoreUnweighted")]
     public float? MaxTotalCriticalScoreUnweighted { get; set; }
 
 
@@ -171,7 +171,7 @@ public partial class EvaluationQuestionGroupScore : IEquatable<EvaluationQuestio
     /// Unweighted score of only the non critical questions in the group
     /// </summary>
     /// <value>Unweighted score of only the non critical questions in the group</value>
-    [DataMember(Name = "totalNonCriticalScoreUnweighted", EmitDefaultValue = false)]
+    [JsonPropertyName("totalNonCriticalScoreUnweighted")]
     public float? TotalNonCriticalScoreUnweighted { get; set; }
 
 
@@ -180,7 +180,7 @@ public partial class EvaluationQuestionGroupScore : IEquatable<EvaluationQuestio
     /// Maximum possible unweighted score of only the non critical questions in the group
     /// </summary>
     /// <value>Maximum possible unweighted score of only the non critical questions in the group</value>
-    [DataMember(Name = "maxTotalNonCriticalScoreUnweighted", EmitDefaultValue = false)]
+    [JsonPropertyName("maxTotalNonCriticalScoreUnweighted")]
     public float? MaxTotalNonCriticalScoreUnweighted { get; set; }
 
 
@@ -188,7 +188,7 @@ public partial class EvaluationQuestionGroupScore : IEquatable<EvaluationQuestio
     /// <summary>
     /// Gets or Sets QuestionScores
     /// </summary>
-    [DataMember(Name = "questionScores", EmitDefaultValue = false)]
+    [JsonPropertyName("questionScores")]
     public List<EvaluationQuestionScore> QuestionScores { get; set; }
 
 

@@ -1,4 +1,3 @@
-using System.Runtime.Serialization;
 using System.Text;
 using System.Text.Json.Serialization;
 
@@ -7,7 +6,7 @@ namespace PureCloud.Client.Models;
 /// <summary>
 /// A list of BotConnectorBots
 /// </summary>
-[DataContract]
+
 public partial class BotList : IEquatable<BotList>
 {
 
@@ -32,7 +31,7 @@ public partial class BotList : IEquatable<BotList>
     /// A list of botConnector Bots. Max 50
     /// </summary>
     /// <value>A list of botConnector Bots. Max 50</value>
-    [DataMember(Name = "chatBots", EmitDefaultValue = false)]
+    [JsonPropertyName("chatBots")]
     public List<BotConnectorBot> ChatBots { get; set; }
 
 

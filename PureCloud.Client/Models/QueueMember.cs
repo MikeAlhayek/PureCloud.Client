@@ -1,12 +1,12 @@
-using System.Runtime.Serialization;
 using System.Text;
+using System.Text.Json.Serialization;
 
 namespace PureCloud.Client.Models;
 
 /// <summary>
 /// QueueMember
 /// </summary>
-[DataContract]
+
 public partial class QueueMember : IEquatable<QueueMember>
 {
     /// <summary>
@@ -37,7 +37,7 @@ public partial class QueueMember : IEquatable<QueueMember>
     /// The queue member&#39;s id.
     /// </summary>
     /// <value>The queue member&#39;s id.</value>
-    [DataMember(Name = "id", EmitDefaultValue = false)]
+    [JsonPropertyName("id")]
     public string Id { get; set; }
 
 
@@ -45,7 +45,7 @@ public partial class QueueMember : IEquatable<QueueMember>
     /// <summary>
     /// Gets or Sets Name
     /// </summary>
-    [DataMember(Name = "name", EmitDefaultValue = false)]
+    [JsonPropertyName("name")]
     public string Name { get; set; }
 
 
@@ -53,7 +53,7 @@ public partial class QueueMember : IEquatable<QueueMember>
     /// <summary>
     /// Gets or Sets User
     /// </summary>
-    [DataMember(Name = "user", EmitDefaultValue = false)]
+    [JsonPropertyName("user")]
     public User User { get; set; }
 
 
@@ -61,7 +61,7 @@ public partial class QueueMember : IEquatable<QueueMember>
     /// <summary>
     /// Gets or Sets RingNumber
     /// </summary>
-    [DataMember(Name = "ringNumber", EmitDefaultValue = false)]
+    [JsonPropertyName("ringNumber")]
     public int? RingNumber { get; set; }
 
 
@@ -69,7 +69,7 @@ public partial class QueueMember : IEquatable<QueueMember>
     /// <summary>
     /// Gets or Sets Joined
     /// </summary>
-    [DataMember(Name = "joined", EmitDefaultValue = false)]
+    [JsonPropertyName("joined")]
     public bool? Joined { get; set; }
 
 
@@ -77,7 +77,7 @@ public partial class QueueMember : IEquatable<QueueMember>
     /// <summary>
     /// Gets or Sets MemberBy
     /// </summary>
-    [DataMember(Name = "memberBy", EmitDefaultValue = false)]
+    [JsonPropertyName("memberBy")]
     public string MemberBy { get; set; }
 
 
@@ -85,7 +85,7 @@ public partial class QueueMember : IEquatable<QueueMember>
     /// <summary>
     /// Gets or Sets RoutingStatus
     /// </summary>
-    [DataMember(Name = "routingStatus", EmitDefaultValue = false)]
+    [JsonPropertyName("routingStatus")]
     public RoutingStatus RoutingStatus { get; set; }
 
 
@@ -94,7 +94,7 @@ public partial class QueueMember : IEquatable<QueueMember>
     /// The URI for this object
     /// </summary>
     /// <value>The URI for this object</value>
-    [DataMember(Name = "selfUri", EmitDefaultValue = false)]
+    [JsonPropertyName("selfUri")]
     public string SelfUri { get; private set; }
 
 

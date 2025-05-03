@@ -7,14 +7,14 @@ namespace PureCloud.Client.Models;
 /// <summary>
 /// GetAlertQuery
 /// </summary>
-[DataContract]
+
 public partial class GetAlertQuery : IEquatable<GetAlertQuery>
 {
     /// <summary>
     /// The rule type of the alerts the query will return
     /// </summary>
     /// <value>The rule type of the alerts the query will return</value>
-    [JsonConverter(typeof(JsonStringEnumConverter))]
+    
     public enum RuleTypeEnum
     {
         /// <summary>
@@ -47,7 +47,7 @@ public partial class GetAlertQuery : IEquatable<GetAlertQuery>
     /// The type of query being performed.
     /// </summary>
     /// <value>The type of query being performed.</value>
-    [JsonConverter(typeof(JsonStringEnumConverter))]
+    
     public enum QueryTypeEnum
     {
         /// <summary>
@@ -74,7 +74,7 @@ public partial class GetAlertQuery : IEquatable<GetAlertQuery>
     /// The status of the alerts the query will return.
     /// </summary>
     /// <value>The status of the alerts the query will return.</value>
-    [JsonConverter(typeof(JsonStringEnumConverter))]
+    
     public enum AlertStatusEnum
     {
         /// <summary>
@@ -107,7 +107,7 @@ public partial class GetAlertQuery : IEquatable<GetAlertQuery>
     /// The view status of the alerts the query will return.
     /// </summary>
     /// <value>The view status of the alerts the query will return.</value>
-    [JsonConverter(typeof(JsonStringEnumConverter))]
+    
     public enum ViewedStatusEnum
     {
         /// <summary>
@@ -140,7 +140,7 @@ public partial class GetAlertQuery : IEquatable<GetAlertQuery>
     /// The field to sort responses by.  The accepted choices are Name and DateStart
     /// </summary>
     /// <value>The field to sort responses by.  The accepted choices are Name and DateStart</value>
-    [JsonConverter(typeof(JsonStringEnumConverter))]
+    
     public enum SortByEnum
     {
         /// <summary>
@@ -167,7 +167,7 @@ public partial class GetAlertQuery : IEquatable<GetAlertQuery>
     /// The order in which response will be sorted.  The accepted choices are Asc and Desc
     /// </summary>
     /// <value>The order in which response will be sorted.  The accepted choices are Asc and Desc</value>
-    [JsonConverter(typeof(JsonStringEnumConverter))]
+    
     public enum SortOrderEnum
     {
         /// <summary>
@@ -194,37 +194,37 @@ public partial class GetAlertQuery : IEquatable<GetAlertQuery>
     /// The rule type of the alerts the query will return
     /// </summary>
     /// <value>The rule type of the alerts the query will return</value>
-    [DataMember(Name = "ruleType", EmitDefaultValue = false)]
+    [JsonPropertyName("ruleType")]
     public RuleTypeEnum? RuleType { get; set; }
     /// <summary>
     /// The type of query being performed.
     /// </summary>
     /// <value>The type of query being performed.</value>
-    [DataMember(Name = "queryType", EmitDefaultValue = false)]
+    [JsonPropertyName("queryType")]
     public QueryTypeEnum? QueryType { get; set; }
     /// <summary>
     /// The status of the alerts the query will return.
     /// </summary>
     /// <value>The status of the alerts the query will return.</value>
-    [DataMember(Name = "alertStatus", EmitDefaultValue = false)]
+    [JsonPropertyName("alertStatus")]
     public AlertStatusEnum? AlertStatus { get; set; }
     /// <summary>
     /// The view status of the alerts the query will return.
     /// </summary>
     /// <value>The view status of the alerts the query will return.</value>
-    [DataMember(Name = "viewedStatus", EmitDefaultValue = false)]
+    [JsonPropertyName("viewedStatus")]
     public ViewedStatusEnum? ViewedStatus { get; set; }
     /// <summary>
     /// The field to sort responses by.  The accepted choices are Name and DateStart
     /// </summary>
     /// <value>The field to sort responses by.  The accepted choices are Name and DateStart</value>
-    [DataMember(Name = "sortBy", EmitDefaultValue = false)]
+    [JsonPropertyName("sortBy")]
     public SortByEnum? SortBy { get; set; }
     /// <summary>
     /// The order in which response will be sorted.  The accepted choices are Asc and Desc
     /// </summary>
     /// <value>The order in which response will be sorted.  The accepted choices are Asc and Desc</value>
-    [DataMember(Name = "sortOrder", EmitDefaultValue = false)]
+    [JsonPropertyName("sortOrder")]
     public SortOrderEnum? SortOrder { get; set; }
 
     /// <summary>
@@ -270,7 +270,7 @@ public partial class GetAlertQuery : IEquatable<GetAlertQuery>
     /// The page number of the queried response
     /// </summary>
     /// <value>The page number of the queried response</value>
-    [DataMember(Name = "pageNumber", EmitDefaultValue = false)]
+    [JsonPropertyName("pageNumber")]
     public int? PageNumber { get; set; }
 
 
@@ -279,7 +279,7 @@ public partial class GetAlertQuery : IEquatable<GetAlertQuery>
     /// The number of entities to return of the queried response.  The max is 25
     /// </summary>
     /// <value>The number of entities to return of the queried response.  The max is 25</value>
-    [DataMember(Name = "pageSize", EmitDefaultValue = false)]
+    [JsonPropertyName("pageSize")]
     public int? PageSize { get; set; }
 
 

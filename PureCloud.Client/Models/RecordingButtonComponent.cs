@@ -1,12 +1,12 @@
-using System.Runtime.Serialization;
 using System.Text;
+using System.Text.Json.Serialization;
 
 namespace PureCloud.Client.Models;
 
 /// <summary>
 /// Structured template button object.
 /// </summary>
-[DataContract]
+
 public partial class RecordingButtonComponent : IEquatable<RecordingButtonComponent>
 {
     /// <summary>
@@ -28,7 +28,7 @@ public partial class RecordingButtonComponent : IEquatable<RecordingButtonCompon
     /// <summary>
     /// Gets or Sets Title
     /// </summary>
-    [DataMember(Name = "title", EmitDefaultValue = false)]
+    [JsonPropertyName("title")]
     public string Title { get; set; }
 
 
@@ -36,7 +36,7 @@ public partial class RecordingButtonComponent : IEquatable<RecordingButtonCompon
     /// <summary>
     /// Gets or Sets Actions
     /// </summary>
-    [DataMember(Name = "actions", EmitDefaultValue = false)]
+    [JsonPropertyName("actions")]
     public RecordingContentActions Actions { get; set; }
 
 
@@ -44,7 +44,7 @@ public partial class RecordingButtonComponent : IEquatable<RecordingButtonCompon
     /// <summary>
     /// Gets or Sets IsSelected
     /// </summary>
-    [DataMember(Name = "isSelected", EmitDefaultValue = false)]
+    [JsonPropertyName("isSelected")]
     public bool? IsSelected { get; set; }
 
 

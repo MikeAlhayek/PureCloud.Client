@@ -1,12 +1,12 @@
-using System.Runtime.Serialization;
 using System.Text;
+using System.Text.Json.Serialization;
 
 namespace PureCloud.Client.Models;
 
 /// <summary>
 /// OutboundMessagingCampaignPreContactEmailEventTopicEmailAttributes
 /// </summary>
-[DataContract]
+
 public partial class OutboundMessagingCampaignPreContactEmailEventTopicEmailAttributes : IEquatable<OutboundMessagingCampaignPreContactEmailEventTopicEmailAttributes>
 {
     /// <summary>
@@ -32,7 +32,7 @@ public partial class OutboundMessagingCampaignPreContactEmailEventTopicEmailAttr
     /// <summary>
     /// Gets or Sets EmailSubject
     /// </summary>
-    [DataMember(Name = "emailSubject", EmitDefaultValue = false)]
+    [JsonPropertyName("emailSubject")]
     public string EmailSubject { get; set; }
 
 
@@ -40,7 +40,7 @@ public partial class OutboundMessagingCampaignPreContactEmailEventTopicEmailAttr
     /// <summary>
     /// Gets or Sets ConfiguredEmailAddress
     /// </summary>
-    [DataMember(Name = "configuredEmailAddress", EmitDefaultValue = false)]
+    [JsonPropertyName("configuredEmailAddress")]
     public string ConfiguredEmailAddress { get; set; }
 
 
@@ -48,7 +48,7 @@ public partial class OutboundMessagingCampaignPreContactEmailEventTopicEmailAttr
     /// <summary>
     /// Gets or Sets ContactEmailAddress
     /// </summary>
-    [DataMember(Name = "contactEmailAddress", EmitDefaultValue = false)]
+    [JsonPropertyName("contactEmailAddress")]
     public string ContactEmailAddress { get; set; }
 
 
@@ -56,7 +56,7 @@ public partial class OutboundMessagingCampaignPreContactEmailEventTopicEmailAttr
     /// <summary>
     /// Gets or Sets ReplyToAddress
     /// </summary>
-    [DataMember(Name = "replyToAddress", EmitDefaultValue = false)]
+    [JsonPropertyName("replyToAddress")]
     public string ReplyToAddress { get; set; }
 
 
@@ -64,7 +64,7 @@ public partial class OutboundMessagingCampaignPreContactEmailEventTopicEmailAttr
     /// <summary>
     /// Gets or Sets ContactEmailColumnName
     /// </summary>
-    [DataMember(Name = "contactEmailColumnName", EmitDefaultValue = false)]
+    [JsonPropertyName("contactEmailColumnName")]
     public string ContactEmailColumnName { get; set; }
 
 

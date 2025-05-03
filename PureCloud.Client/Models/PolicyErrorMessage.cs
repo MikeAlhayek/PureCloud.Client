@@ -1,12 +1,12 @@
-using System.Runtime.Serialization;
 using System.Text;
+using System.Text.Json.Serialization;
 
 namespace PureCloud.Client.Models;
 
 /// <summary>
 /// PolicyErrorMessage
 /// </summary>
-[DataContract]
+
 public partial class PolicyErrorMessage : IEquatable<PolicyErrorMessage>
 {
     /// <summary>
@@ -36,7 +36,7 @@ public partial class PolicyErrorMessage : IEquatable<PolicyErrorMessage>
     /// <summary>
     /// Gets or Sets StatusCode
     /// </summary>
-    [DataMember(Name = "statusCode", EmitDefaultValue = false)]
+    [JsonPropertyName("statusCode")]
     public int? StatusCode { get; set; }
 
 
@@ -44,7 +44,7 @@ public partial class PolicyErrorMessage : IEquatable<PolicyErrorMessage>
     /// <summary>
     /// Gets or Sets UserMessage
     /// </summary>
-    [DataMember(Name = "userMessage", EmitDefaultValue = false)]
+    [JsonPropertyName("userMessage")]
     public object UserMessage { get; set; }
 
 
@@ -52,7 +52,7 @@ public partial class PolicyErrorMessage : IEquatable<PolicyErrorMessage>
     /// <summary>
     /// Gets or Sets UserParamsMessage
     /// </summary>
-    [DataMember(Name = "userParamsMessage", EmitDefaultValue = false)]
+    [JsonPropertyName("userParamsMessage")]
     public string UserParamsMessage { get; set; }
 
 
@@ -60,7 +60,7 @@ public partial class PolicyErrorMessage : IEquatable<PolicyErrorMessage>
     /// <summary>
     /// Gets or Sets ErrorCode
     /// </summary>
-    [DataMember(Name = "errorCode", EmitDefaultValue = false)]
+    [JsonPropertyName("errorCode")]
     public string ErrorCode { get; set; }
 
 
@@ -68,7 +68,7 @@ public partial class PolicyErrorMessage : IEquatable<PolicyErrorMessage>
     /// <summary>
     /// Gets or Sets CorrelationId
     /// </summary>
-    [DataMember(Name = "correlationId", EmitDefaultValue = false)]
+    [JsonPropertyName("correlationId")]
     public string CorrelationId { get; set; }
 
 
@@ -76,7 +76,7 @@ public partial class PolicyErrorMessage : IEquatable<PolicyErrorMessage>
     /// <summary>
     /// Gets or Sets UserParams
     /// </summary>
-    [DataMember(Name = "userParams", EmitDefaultValue = false)]
+    [JsonPropertyName("userParams")]
     public List<UserParam> UserParams { get; set; }
 
 
@@ -85,7 +85,7 @@ public partial class PolicyErrorMessage : IEquatable<PolicyErrorMessage>
     /// Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z
     /// </summary>
     /// <value>Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z</value>
-    [DataMember(Name = "insertDate", EmitDefaultValue = false)]
+    [JsonPropertyName("insertDate")]
     public DateTime? InsertDate { get; set; }
 
 

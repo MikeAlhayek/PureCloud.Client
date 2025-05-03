@@ -1,12 +1,12 @@
-using System.Runtime.Serialization;
 using System.Text;
+using System.Text.Json.Serialization;
 
 namespace PureCloud.Client.Models;
 
 /// <summary>
 /// ArchitectFlowNotificationFlowNotification
 /// </summary>
-[DataContract]
+
 public partial class ArchitectFlowNotificationFlowNotification : IEquatable<ArchitectFlowNotificationFlowNotification>
 {
     /// <summary>
@@ -39,7 +39,7 @@ public partial class ArchitectFlowNotificationFlowNotification : IEquatable<Arch
     /// The flow ID
     /// </summary>
     /// <value>The flow ID</value>
-    [DataMember(Name = "id", EmitDefaultValue = false)]
+    [JsonPropertyName("id")]
     public string Id { get; set; }
 
 
@@ -48,7 +48,7 @@ public partial class ArchitectFlowNotificationFlowNotification : IEquatable<Arch
     /// The flow name
     /// </summary>
     /// <value>The flow name</value>
-    [DataMember(Name = "name", EmitDefaultValue = false)]
+    [JsonPropertyName("name")]
     public string Name { get; set; }
 
 
@@ -57,7 +57,7 @@ public partial class ArchitectFlowNotificationFlowNotification : IEquatable<Arch
     /// The flow description
     /// </summary>
     /// <value>The flow description</value>
-    [DataMember(Name = "description", EmitDefaultValue = false)]
+    [JsonPropertyName("description")]
     public string Description { get; set; }
 
 
@@ -66,7 +66,7 @@ public partial class ArchitectFlowNotificationFlowNotification : IEquatable<Arch
     /// The flow deleted state
     /// </summary>
     /// <value>The flow deleted state</value>
-    [DataMember(Name = "deleted", EmitDefaultValue = false)]
+    [JsonPropertyName("deleted")]
     public bool? Deleted { get; set; }
 
 
@@ -74,7 +74,7 @@ public partial class ArchitectFlowNotificationFlowNotification : IEquatable<Arch
     /// <summary>
     /// Gets or Sets CheckedInVersion
     /// </summary>
-    [DataMember(Name = "checkedInVersion", EmitDefaultValue = false)]
+    [JsonPropertyName("checkedInVersion")]
     public ArchitectFlowNotificationFlowVersion CheckedInVersion { get; set; }
 
 
@@ -83,7 +83,7 @@ public partial class ArchitectFlowNotificationFlowNotification : IEquatable<Arch
     /// A bare-bones flow version object
     /// </summary>
     /// <value>A bare-bones flow version object</value>
-    [DataMember(Name = "savedVersion", EmitDefaultValue = false)]
+    [JsonPropertyName("savedVersion")]
     public ArchitectFlowNotificationFlowVersion SavedVersion { get; set; }
 
 
@@ -92,7 +92,7 @@ public partial class ArchitectFlowNotificationFlowNotification : IEquatable<Arch
     /// A bare-bones flow version object
     /// </summary>
     /// <value>A bare-bones flow version object</value>
-    [DataMember(Name = "publishedVersion", EmitDefaultValue = false)]
+    [JsonPropertyName("publishedVersion")]
     public ArchitectFlowNotificationFlowVersion PublishedVersion { get; set; }
 
 
@@ -100,7 +100,7 @@ public partial class ArchitectFlowNotificationFlowNotification : IEquatable<Arch
     /// <summary>
     /// Gets or Sets CurrentOperation
     /// </summary>
-    [DataMember(Name = "currentOperation", EmitDefaultValue = false)]
+    [JsonPropertyName("currentOperation")]
     public ArchitectFlowNotificationArchitectOperation CurrentOperation { get; set; }
 
 

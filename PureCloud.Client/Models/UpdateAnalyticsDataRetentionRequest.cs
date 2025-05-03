@@ -1,4 +1,3 @@
-using System.Runtime.Serialization;
 using System.Text;
 using System.Text.Json.Serialization;
 
@@ -7,7 +6,7 @@ namespace PureCloud.Client.Models;
 /// <summary>
 /// UpdateAnalyticsDataRetentionRequest
 /// </summary>
-[DataContract]
+
 public partial class UpdateAnalyticsDataRetentionRequest : IEquatable<UpdateAnalyticsDataRetentionRequest>
 {
 
@@ -32,7 +31,7 @@ public partial class UpdateAnalyticsDataRetentionRequest : IEquatable<UpdateAnal
     /// Analytics data retention period in days to set for the organization.
     /// </summary>
     /// <value>Analytics data retention period in days to set for the organization.</value>
-    [DataMember(Name = "retentionDays", EmitDefaultValue = false)]
+    [JsonPropertyName("retentionDays")]
     public int? RetentionDays { get; set; }
 
 

@@ -1,12 +1,12 @@
-using System.Runtime.Serialization;
 using System.Text;
+using System.Text.Json.Serialization;
 
 namespace PureCloud.Client.Models;
 
 /// <summary>
 /// DomainPermission
 /// </summary>
-[DataContract]
+
 public partial class DomainPermission : IEquatable<DomainPermission>
 {
     /// <summary>
@@ -34,7 +34,7 @@ public partial class DomainPermission : IEquatable<DomainPermission>
     /// <summary>
     /// Gets or Sets Domain
     /// </summary>
-    [DataMember(Name = "domain", EmitDefaultValue = false)]
+    [JsonPropertyName("domain")]
     public string Domain { get; set; }
 
 
@@ -42,7 +42,7 @@ public partial class DomainPermission : IEquatable<DomainPermission>
     /// <summary>
     /// Gets or Sets EntityType
     /// </summary>
-    [DataMember(Name = "entityType", EmitDefaultValue = false)]
+    [JsonPropertyName("entityType")]
     public string EntityType { get; set; }
 
 
@@ -50,7 +50,7 @@ public partial class DomainPermission : IEquatable<DomainPermission>
     /// <summary>
     /// Gets or Sets Action
     /// </summary>
-    [DataMember(Name = "action", EmitDefaultValue = false)]
+    [JsonPropertyName("action")]
     public string Action { get; set; }
 
 
@@ -58,7 +58,7 @@ public partial class DomainPermission : IEquatable<DomainPermission>
     /// <summary>
     /// Gets or Sets Label
     /// </summary>
-    [DataMember(Name = "label", EmitDefaultValue = false)]
+    [JsonPropertyName("label")]
     public string Label { get; set; }
 
 
@@ -66,7 +66,7 @@ public partial class DomainPermission : IEquatable<DomainPermission>
     /// <summary>
     /// Gets or Sets AllowsConditions
     /// </summary>
-    [DataMember(Name = "allowsConditions", EmitDefaultValue = false)]
+    [JsonPropertyName("allowsConditions")]
     public bool? AllowsConditions { get; set; }
 
 
@@ -74,7 +74,7 @@ public partial class DomainPermission : IEquatable<DomainPermission>
     /// <summary>
     /// Gets or Sets DivisionAware
     /// </summary>
-    [DataMember(Name = "divisionAware", EmitDefaultValue = false)]
+    [JsonPropertyName("divisionAware")]
     public bool? DivisionAware { get; set; }
 
 

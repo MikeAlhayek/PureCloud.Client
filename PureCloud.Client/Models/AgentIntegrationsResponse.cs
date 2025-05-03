@@ -1,4 +1,3 @@
-using System.Runtime.Serialization;
 using System.Text;
 using System.Text.Json.Serialization;
 
@@ -7,7 +6,7 @@ namespace PureCloud.Client.Models;
 /// <summary>
 /// AgentIntegrationsResponse
 /// </summary>
-[DataContract]
+
 public partial class AgentIntegrationsResponse : IEquatable<AgentIntegrationsResponse>
 {
 
@@ -38,7 +37,7 @@ public partial class AgentIntegrationsResponse : IEquatable<AgentIntegrationsRes
     /// The user associated with the integrations
     /// </summary>
     /// <value>The user associated with the integrations</value>
-    [DataMember(Name = "agent", EmitDefaultValue = false)]
+    [JsonPropertyName("agent")]
     public UserReference Agent { get; set; }
 
 
@@ -47,7 +46,7 @@ public partial class AgentIntegrationsResponse : IEquatable<AgentIntegrationsRes
     /// The integration selected for the agent. If not set, no integration will be used for the agent
     /// </summary>
     /// <value>The integration selected for the agent. If not set, no integration will be used for the agent</value>
-    [DataMember(Name = "selectedIntegration", EmitDefaultValue = false)]
+    [JsonPropertyName("selectedIntegration")]
     public WfmIntegrationReference SelectedIntegration { get; set; }
 
 
@@ -56,7 +55,7 @@ public partial class AgentIntegrationsResponse : IEquatable<AgentIntegrationsRes
     /// Whether the integration association has been manually selected
     /// </summary>
     /// <value>Whether the integration association has been manually selected</value>
-    [DataMember(Name = "userSelected", EmitDefaultValue = false)]
+    [JsonPropertyName("userSelected")]
     public bool? UserSelected { get; set; }
 
 
@@ -65,7 +64,7 @@ public partial class AgentIntegrationsResponse : IEquatable<AgentIntegrationsRes
     /// The list of integrations associated with the agent
     /// </summary>
     /// <value>The list of integrations associated with the agent</value>
-    [DataMember(Name = "associatedIntegrations", EmitDefaultValue = false)]
+    [JsonPropertyName("associatedIntegrations")]
     public List<AgentIntegrationAssociationResponse> AssociatedIntegrations { get; set; }
 
 

@@ -7,13 +7,13 @@ namespace PureCloud.Client.Models;
 /// <summary>
 /// WfmHistoricalAdherenceBulkCalculationsCompleteTopicWfmHistoricalAdherenceBulkCalculationsCompleteNotification
 /// </summary>
-[DataContract]
+
 public partial class WfmHistoricalAdherenceBulkCalculationsCompleteTopicWfmHistoricalAdherenceBulkCalculationsCompleteNotification : IEquatable<WfmHistoricalAdherenceBulkCalculationsCompleteTopicWfmHistoricalAdherenceBulkCalculationsCompleteNotification>
 {
     /// <summary>
     /// Gets or Sets QueryState
     /// </summary>
-    [JsonConverter(typeof(JsonStringEnumConverter))]
+    
     public enum QueryStateEnum
     {
         /// <summary>
@@ -51,7 +51,7 @@ public partial class WfmHistoricalAdherenceBulkCalculationsCompleteTopicWfmHisto
     /// <summary>
     /// Gets or Sets QueryState
     /// </summary>
-    [DataMember(Name = "queryState", EmitDefaultValue = false)]
+    [JsonPropertyName("queryState")]
     public QueryStateEnum? QueryState { get; set; }
     /// <summary>
     /// Initializes a new instance of the <see cref="WfmHistoricalAdherenceBulkCalculationsCompleteTopicWfmHistoricalAdherenceBulkCalculationsCompleteNotification" /> class.
@@ -72,7 +72,7 @@ public partial class WfmHistoricalAdherenceBulkCalculationsCompleteTopicWfmHisto
     /// <summary>
     /// Gets or Sets Id
     /// </summary>
-    [DataMember(Name = "id", EmitDefaultValue = false)]
+    [JsonPropertyName("id")]
     public string Id { get; set; }
 
 
@@ -80,7 +80,7 @@ public partial class WfmHistoricalAdherenceBulkCalculationsCompleteTopicWfmHisto
     /// <summary>
     /// Gets or Sets DownloadUrls
     /// </summary>
-    [DataMember(Name = "downloadUrls", EmitDefaultValue = false)]
+    [JsonPropertyName("downloadUrls")]
     public List<string> DownloadUrls { get; set; }
 
 

@@ -7,14 +7,14 @@ namespace PureCloud.Client.Models;
 /// <summary>
 /// A CoBrowse event.
 /// </summary>
-[DataContract]
+
 public partial class EventCoBrowse : IEquatable<EventCoBrowse>
 {
     /// <summary>
     /// Describes the type of CoBrowse event.
     /// </summary>
     /// <value>Describes the type of CoBrowse event.</value>
-    [JsonConverter(typeof(JsonStringEnumConverter))]
+    
     public enum TypeEnum
     {
         /// <summary>
@@ -53,7 +53,7 @@ public partial class EventCoBrowse : IEquatable<EventCoBrowse>
     /// Describes the type of CoBrowse event.
     /// </summary>
     /// <value>Describes the type of CoBrowse event.</value>
-    [DataMember(Name = "type", EmitDefaultValue = false)]
+    [JsonPropertyName("type")]
     public TypeEnum? Type { get; set; }
 
     /// <summary>
@@ -83,7 +83,7 @@ public partial class EventCoBrowse : IEquatable<EventCoBrowse>
     /// The CoBrowse session ID.
     /// </summary>
     /// <value>The CoBrowse session ID.</value>
-    [DataMember(Name = "sessionId", EmitDefaultValue = false)]
+    [JsonPropertyName("sessionId")]
     public string SessionId { get; set; }
 
 
@@ -92,7 +92,7 @@ public partial class EventCoBrowse : IEquatable<EventCoBrowse>
     /// The CoBrowse session join token.
     /// </summary>
     /// <value>The CoBrowse session join token.</value>
-    [DataMember(Name = "sessionJoinToken", EmitDefaultValue = false)]
+    [JsonPropertyName("sessionJoinToken")]
     public string SessionJoinToken { get; set; }
 
 

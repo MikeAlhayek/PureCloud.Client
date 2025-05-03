@@ -7,14 +7,14 @@ namespace PureCloud.Client.Models;
 /// <summary>
 /// AnalyticsParticipant
 /// </summary>
-[DataContract]
+
 public partial class AnalyticsParticipant : IEquatable<AnalyticsParticipant>
 {
     /// <summary>
     /// Reason for which participant flagged conversation
     /// </summary>
     /// <value>Reason for which participant flagged conversation</value>
-    [JsonConverter(typeof(JsonStringEnumConverter))]
+    
     public enum FlaggedReasonEnum
     {
         /// <summary>
@@ -35,7 +35,7 @@ public partial class AnalyticsParticipant : IEquatable<AnalyticsParticipant>
     /// The participant's purpose
     /// </summary>
     /// <value>The participant's purpose</value>
-    [JsonConverter(typeof(JsonStringEnumConverter))]
+    
     public enum PurposeEnum
     {
         /// <summary>
@@ -164,13 +164,13 @@ public partial class AnalyticsParticipant : IEquatable<AnalyticsParticipant>
     /// Reason for which participant flagged conversation
     /// </summary>
     /// <value>Reason for which participant flagged conversation</value>
-    [DataMember(Name = "flaggedReason", EmitDefaultValue = false)]
+    [JsonPropertyName("flaggedReason")]
     public FlaggedReasonEnum? FlaggedReason { get; set; }
     /// <summary>
     /// The participant's purpose
     /// </summary>
     /// <value>The participant's purpose</value>
-    [DataMember(Name = "purpose", EmitDefaultValue = false)]
+    [JsonPropertyName("purpose")]
     public PurposeEnum? Purpose { get; set; }
     /// <summary>
     /// Initializes a new instance of the <see cref="AnalyticsParticipant" /> class.
@@ -208,7 +208,7 @@ public partial class AnalyticsParticipant : IEquatable<AnalyticsParticipant>
     /// External contact identifier
     /// </summary>
     /// <value>External contact identifier</value>
-    [DataMember(Name = "externalContactId", EmitDefaultValue = false)]
+    [JsonPropertyName("externalContactId")]
     public string ExternalContactId { get; set; }
 
 
@@ -217,7 +217,7 @@ public partial class AnalyticsParticipant : IEquatable<AnalyticsParticipant>
     /// External organization identifier
     /// </summary>
     /// <value>External organization identifier</value>
-    [DataMember(Name = "externalOrganizationId", EmitDefaultValue = false)]
+    [JsonPropertyName("externalOrganizationId")]
     public string ExternalOrganizationId { get; set; }
 
 
@@ -228,7 +228,7 @@ public partial class AnalyticsParticipant : IEquatable<AnalyticsParticipant>
     /// Unique identifier for the participant
     /// </summary>
     /// <value>Unique identifier for the participant</value>
-    [DataMember(Name = "participantId", EmitDefaultValue = false)]
+    [JsonPropertyName("participantId")]
     public string ParticipantId { get; set; }
 
 
@@ -237,7 +237,7 @@ public partial class AnalyticsParticipant : IEquatable<AnalyticsParticipant>
     /// A human readable name identifying the participant
     /// </summary>
     /// <value>A human readable name identifying the participant</value>
-    [DataMember(Name = "participantName", EmitDefaultValue = false)]
+    [JsonPropertyName("participantName")]
     public string ParticipantName { get; set; }
 
 
@@ -248,7 +248,7 @@ public partial class AnalyticsParticipant : IEquatable<AnalyticsParticipant>
     /// Flag determining if a screen recording was started or not
     /// </summary>
     /// <value>Flag determining if a screen recording was started or not</value>
-    [DataMember(Name = "screenRecording", EmitDefaultValue = false)]
+    [JsonPropertyName("screenRecording")]
     public bool? ScreenRecording { get; set; }
 
 
@@ -257,7 +257,7 @@ public partial class AnalyticsParticipant : IEquatable<AnalyticsParticipant>
     /// The team ID the user is a member of
     /// </summary>
     /// <value>The team ID the user is a member of</value>
-    [DataMember(Name = "teamId", EmitDefaultValue = false)]
+    [JsonPropertyName("teamId")]
     public string TeamId { get; set; }
 
 
@@ -266,7 +266,7 @@ public partial class AnalyticsParticipant : IEquatable<AnalyticsParticipant>
     /// Unique identifier for the user
     /// </summary>
     /// <value>Unique identifier for the user</value>
-    [DataMember(Name = "userId", EmitDefaultValue = false)]
+    [JsonPropertyName("userId")]
     public string UserId { get; set; }
 
 
@@ -275,7 +275,7 @@ public partial class AnalyticsParticipant : IEquatable<AnalyticsParticipant>
     /// List of sessions associated to this participant
     /// </summary>
     /// <value>List of sessions associated to this participant</value>
-    [DataMember(Name = "sessions", EmitDefaultValue = false)]
+    [JsonPropertyName("sessions")]
     public List<AnalyticsSession> Sessions { get; set; }
 
 
@@ -284,7 +284,7 @@ public partial class AnalyticsParticipant : IEquatable<AnalyticsParticipant>
     /// List of attributes associated to this participant
     /// </summary>
     /// <value>List of attributes associated to this participant</value>
-    [DataMember(Name = "attributes", EmitDefaultValue = false)]
+    [JsonPropertyName("attributes")]
     public Dictionary<string, string> Attributes { get; set; }
 
 

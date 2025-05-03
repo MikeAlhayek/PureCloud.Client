@@ -7,14 +7,14 @@ namespace PureCloud.Client.Models;
 /// <summary>
 /// CallTarget
 /// </summary>
-[DataContract]
+
 public partial class CallTarget : IEquatable<CallTarget>
 {
     /// <summary>
     /// The type of call
     /// </summary>
     /// <value>The type of call</value>
-    [JsonConverter(typeof(JsonStringEnumConverter))]
+    
     public enum TypeEnum
     {
         /// <summary>
@@ -41,7 +41,7 @@ public partial class CallTarget : IEquatable<CallTarget>
     /// The type of call
     /// </summary>
     /// <value>The type of call</value>
-    [DataMember(Name = "type", EmitDefaultValue = false)]
+    [JsonPropertyName("type")]
     public TypeEnum? Type { get; set; }
     /// <summary>
     /// Initializes a new instance of the <see cref="CallTarget" /> class.
@@ -63,7 +63,7 @@ public partial class CallTarget : IEquatable<CallTarget>
     /// The id of the station or an E.164 formatted phone number
     /// </summary>
     /// <value>The id of the station or an E.164 formatted phone number</value>
-    [DataMember(Name = "value", EmitDefaultValue = false)]
+    [JsonPropertyName("value")]
     public string Value { get; set; }
 
 

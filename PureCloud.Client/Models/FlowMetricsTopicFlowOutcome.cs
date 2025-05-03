@@ -1,12 +1,12 @@
-using System.Runtime.Serialization;
 using System.Text;
+using System.Text.Json.Serialization;
 
 namespace PureCloud.Client.Models;
 
 /// <summary>
 /// FlowMetricsTopicFlowOutcome
 /// </summary>
-[DataContract]
+
 public partial class FlowMetricsTopicFlowOutcome : IEquatable<FlowMetricsTopicFlowOutcome>
 {
     /// <summary>
@@ -29,7 +29,7 @@ public partial class FlowMetricsTopicFlowOutcome : IEquatable<FlowMetricsTopicFl
     /// Combination of unique flow outcome identifier and its value separated by colon
     /// </summary>
     /// <value>Combination of unique flow outcome identifier and its value separated by colon</value>
-    [DataMember(Name = "flowOutcome", EmitDefaultValue = false)]
+    [JsonPropertyName("flowOutcome")]
     public string FlowOutcome { get; set; }
 
 
@@ -38,7 +38,7 @@ public partial class FlowMetricsTopicFlowOutcome : IEquatable<FlowMetricsTopicFl
     /// Unique identifier of a flow outcome
     /// </summary>
     /// <value>Unique identifier of a flow outcome</value>
-    [DataMember(Name = "flowOutcomeId", EmitDefaultValue = false)]
+    [JsonPropertyName("flowOutcomeId")]
     public string FlowOutcomeId { get; set; }
 
 
@@ -47,7 +47,7 @@ public partial class FlowMetricsTopicFlowOutcome : IEquatable<FlowMetricsTopicFl
     /// Flow outcome value, e.g. SUCCESS
     /// </summary>
     /// <value>Flow outcome value, e.g. SUCCESS</value>
-    [DataMember(Name = "flowOutcomeValue", EmitDefaultValue = false)]
+    [JsonPropertyName("flowOutcomeValue")]
     public string FlowOutcomeValue { get; set; }
 
 

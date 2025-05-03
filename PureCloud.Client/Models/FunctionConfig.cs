@@ -1,12 +1,12 @@
-using System.Runtime.Serialization;
 using System.Text;
+using System.Text.Json.Serialization;
 
 namespace PureCloud.Client.Models;
 
 /// <summary>
 /// Current action function configuration and zip upload configuration.
 /// </summary>
-[DataContract]
+
 public partial class FunctionConfig : IEquatable<FunctionConfig>
 {
     /// <summary>
@@ -23,7 +23,7 @@ public partial class FunctionConfig : IEquatable<FunctionConfig>
     /// Action identifier.
     /// </summary>
     /// <value>Action identifier.</value>
-    [DataMember(Name = "id", EmitDefaultValue = false)]
+    [JsonPropertyName("id")]
     public string Id { get; private set; }
 
 
@@ -32,7 +32,7 @@ public partial class FunctionConfig : IEquatable<FunctionConfig>
     /// Function configuration.
     /// </summary>
     /// <value>Function configuration.</value>
-    [DataMember(Name = "function", EmitDefaultValue = false)]
+    [JsonPropertyName("function")]
     public Function Function { get; private set; }
 
 
@@ -41,7 +41,7 @@ public partial class FunctionConfig : IEquatable<FunctionConfig>
     /// Zip file configuration and state.
     /// </summary>
     /// <value>Zip file configuration and state.</value>
-    [DataMember(Name = "zip", EmitDefaultValue = false)]
+    [JsonPropertyName("zip")]
     public FunctionZipConfig Zip { get; private set; }
 
 
@@ -50,7 +50,7 @@ public partial class FunctionConfig : IEquatable<FunctionConfig>
     /// History of failed zip upload file configuration including their state and error messages. Contains no more than last ten failures.
     /// </summary>
     /// <value>History of failed zip upload file configuration including their state and error messages. Contains no more than last ten failures.</value>
-    [DataMember(Name = "uploadExceptionHistory", EmitDefaultValue = false)]
+    [JsonPropertyName("uploadExceptionHistory")]
     public List<FunctionZipConfig> UploadExceptionHistory { get; private set; }
 
 
@@ -59,7 +59,7 @@ public partial class FunctionConfig : IEquatable<FunctionConfig>
     /// The URI for this object
     /// </summary>
     /// <value>The URI for this object</value>
-    [DataMember(Name = "selfUri", EmitDefaultValue = false)]
+    [JsonPropertyName("selfUri")]
     public string SelfUri { get; private set; }
 
 

@@ -7,14 +7,14 @@ namespace PureCloud.Client.Models;
 /// <summary>
 /// RecordingMessagingMessage
 /// </summary>
-[DataContract]
+
 public partial class RecordingMessagingMessage : IEquatable<RecordingMessagingMessage>
 {
     /// <summary>
     /// Indicates the content type for this message
     /// </summary>
     /// <value>Indicates the content type for this message</value>
-    [JsonConverter(typeof(JsonStringEnumConverter))]
+    
     public enum ContentTypeEnum
     {
         /// <summary>
@@ -113,7 +113,7 @@ public partial class RecordingMessagingMessage : IEquatable<RecordingMessagingMe
     /// Indicates the content type for this message
     /// </summary>
     /// <value>Indicates the content type for this message</value>
-    [DataMember(Name = "contentType", EmitDefaultValue = false)]
+    [JsonPropertyName("contentType")]
     public ContentTypeEnum? ContentType { get; set; }
     /// <summary>
     /// Initializes a new instance of the <see cref="RecordingMessagingMessage" /> class.
@@ -169,7 +169,7 @@ public partial class RecordingMessagingMessage : IEquatable<RecordingMessagingMe
     /// The message sender session id.
     /// </summary>
     /// <value>The message sender session id.</value>
-    [DataMember(Name = "from", EmitDefaultValue = false)]
+    [JsonPropertyName("from")]
     public string From { get; set; }
 
 
@@ -178,7 +178,7 @@ public partial class RecordingMessagingMessage : IEquatable<RecordingMessagingMe
     /// The user who sent this message.
     /// </summary>
     /// <value>The user who sent this message.</value>
-    [DataMember(Name = "fromUser", EmitDefaultValue = false)]
+    [JsonPropertyName("fromUser")]
     public User FromUser { get; set; }
 
 
@@ -187,7 +187,7 @@ public partial class RecordingMessagingMessage : IEquatable<RecordingMessagingMe
     /// The PureCloudEnvironment external contact sender details.
     /// </summary>
     /// <value>The PureCloudEnvironment external contact sender details.</value>
-    [DataMember(Name = "fromExternalContact", EmitDefaultValue = false)]
+    [JsonPropertyName("fromExternalContact")]
     public ExternalContact FromExternalContact { get; set; }
 
 
@@ -196,7 +196,7 @@ public partial class RecordingMessagingMessage : IEquatable<RecordingMessagingMe
     /// The message recipient.
     /// </summary>
     /// <value>The message recipient.</value>
-    [DataMember(Name = "to", EmitDefaultValue = false)]
+    [JsonPropertyName("to")]
     public string To { get; set; }
 
 
@@ -205,7 +205,7 @@ public partial class RecordingMessagingMessage : IEquatable<RecordingMessagingMe
     /// The time when the message was sent. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z
     /// </summary>
     /// <value>The time when the message was sent. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z</value>
-    [DataMember(Name = "timestamp", EmitDefaultValue = false)]
+    [JsonPropertyName("timestamp")]
     public DateTime? Timestamp { get; set; }
 
 
@@ -214,7 +214,7 @@ public partial class RecordingMessagingMessage : IEquatable<RecordingMessagingMe
     /// A globally unique identifier for this communication.
     /// </summary>
     /// <value>A globally unique identifier for this communication.</value>
-    [DataMember(Name = "id", EmitDefaultValue = false)]
+    [JsonPropertyName("id")]
     public string Id { get; set; }
 
 
@@ -223,7 +223,7 @@ public partial class RecordingMessagingMessage : IEquatable<RecordingMessagingMe
     /// A well known string that specifies the purpose or type of the participant on this communication.
     /// </summary>
     /// <value>A well known string that specifies the purpose or type of the participant on this communication.</value>
-    [DataMember(Name = "purpose", EmitDefaultValue = false)]
+    [JsonPropertyName("purpose")]
     public string Purpose { get; set; }
 
 
@@ -232,7 +232,7 @@ public partial class RecordingMessagingMessage : IEquatable<RecordingMessagingMe
     /// A globally unique identifier for the participant on this communication.
     /// </summary>
     /// <value>A globally unique identifier for the participant on this communication.</value>
-    [DataMember(Name = "participantId", EmitDefaultValue = false)]
+    [JsonPropertyName("participantId")]
     public string ParticipantId { get; set; }
 
 
@@ -241,7 +241,7 @@ public partial class RecordingMessagingMessage : IEquatable<RecordingMessagingMe
     /// A globally unique identifier for the queue involved in this communication.
     /// </summary>
     /// <value>A globally unique identifier for the queue involved in this communication.</value>
-    [DataMember(Name = "queue", EmitDefaultValue = false)]
+    [JsonPropertyName("queue")]
     public AddressableEntityRef Queue { get; set; }
 
 
@@ -250,7 +250,7 @@ public partial class RecordingMessagingMessage : IEquatable<RecordingMessagingMe
     /// A globally unique identifier for the workflow involved in this communication.
     /// </summary>
     /// <value>A globally unique identifier for the workflow involved in this communication.</value>
-    [DataMember(Name = "workflow", EmitDefaultValue = false)]
+    [JsonPropertyName("workflow")]
     public AddressableEntityRef Workflow { get; set; }
 
 
@@ -259,7 +259,7 @@ public partial class RecordingMessagingMessage : IEquatable<RecordingMessagingMe
     /// The content of this message.
     /// </summary>
     /// <value>The content of this message.</value>
-    [DataMember(Name = "messageText", EmitDefaultValue = false)]
+    [JsonPropertyName("messageText")]
     public string MessageText { get; set; }
 
 
@@ -268,7 +268,7 @@ public partial class RecordingMessagingMessage : IEquatable<RecordingMessagingMe
     /// List of media objects attached  with this message.
     /// </summary>
     /// <value>List of media objects attached  with this message.</value>
-    [DataMember(Name = "messageMediaAttachments", EmitDefaultValue = false)]
+    [JsonPropertyName("messageMediaAttachments")]
     public List<MessageMediaAttachment> MessageMediaAttachments { get; set; }
 
 
@@ -277,7 +277,7 @@ public partial class RecordingMessagingMessage : IEquatable<RecordingMessagingMe
     /// List of message stickers attached with this message.
     /// </summary>
     /// <value>List of message stickers attached with this message.</value>
-    [DataMember(Name = "messageStickerAttachments", EmitDefaultValue = false)]
+    [JsonPropertyName("messageStickerAttachments")]
     public List<MessageStickerAttachment> MessageStickerAttachments { get; set; }
 
 
@@ -286,7 +286,7 @@ public partial class RecordingMessagingMessage : IEquatable<RecordingMessagingMe
     /// List of quick reply options offered with this message.
     /// </summary>
     /// <value>List of quick reply options offered with this message.</value>
-    [DataMember(Name = "quickReplies", EmitDefaultValue = false)]
+    [JsonPropertyName("quickReplies")]
     public List<QuickReply> QuickReplies { get; set; }
 
 
@@ -295,7 +295,7 @@ public partial class RecordingMessagingMessage : IEquatable<RecordingMessagingMe
     /// Button Response selected by user for this message.
     /// </summary>
     /// <value>Button Response selected by user for this message.</value>
-    [DataMember(Name = "buttonResponse", EmitDefaultValue = false)]
+    [JsonPropertyName("buttonResponse")]
     public ButtonResponse ButtonResponse { get; set; }
 
 
@@ -304,7 +304,7 @@ public partial class RecordingMessagingMessage : IEquatable<RecordingMessagingMe
     /// Ephemeral story content.
     /// </summary>
     /// <value>Ephemeral story content.</value>
-    [DataMember(Name = "story", EmitDefaultValue = false)]
+    [JsonPropertyName("story")]
     public RecordingContentStory Story { get; set; }
 
 
@@ -313,7 +313,7 @@ public partial class RecordingMessagingMessage : IEquatable<RecordingMessagingMe
     /// List of cards offered for this message
     /// </summary>
     /// <value>List of cards offered for this message</value>
-    [DataMember(Name = "cards", EmitDefaultValue = false)]
+    [JsonPropertyName("cards")]
     public List<Card> Cards { get; set; }
 
 
@@ -322,7 +322,7 @@ public partial class RecordingMessagingMessage : IEquatable<RecordingMessagingMe
     /// Template notification content.
     /// </summary>
     /// <value>Template notification content.</value>
-    [DataMember(Name = "notificationTemplate", EmitDefaultValue = false)]
+    [JsonPropertyName("notificationTemplate")]
     public RecordingNotificationTemplate NotificationTemplate { get; set; }
 
 
@@ -333,7 +333,7 @@ public partial class RecordingMessagingMessage : IEquatable<RecordingMessagingMe
     /// List of event elements
     /// </summary>
     /// <value>List of event elements</value>
-    [DataMember(Name = "events", EmitDefaultValue = false)]
+    [JsonPropertyName("events")]
     public List<ConversationMessageEvent> Events { get; set; }
 
 

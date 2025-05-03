@@ -1,12 +1,12 @@
-using System.Runtime.Serialization;
 using System.Text;
+using System.Text.Json.Serialization;
 
 namespace PureCloud.Client.Models;
 
 /// <summary>
 /// EmailsSettings
 /// </summary>
-[DataContract]
+
 public partial class EmailsSettings : IEquatable<EmailsSettings>
 {
     /// <summary>
@@ -24,7 +24,7 @@ public partial class EmailsSettings : IEquatable<EmailsSettings>
     /// <summary>
     /// Gets or Sets SendingSizeLimit
     /// </summary>
-    [DataMember(Name = "sendingSizeLimit", EmitDefaultValue = false)]
+    [JsonPropertyName("sendingSizeLimit")]
     public int? SendingSizeLimit { get; set; }
 
 

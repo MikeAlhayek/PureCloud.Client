@@ -1,12 +1,12 @@
-using System.Runtime.Serialization;
 using System.Text;
+using System.Text.Json.Serialization;
 
 namespace PureCloud.Client.Models;
 
 /// <summary>
 /// BuScheduleMetadata
 /// </summary>
-[DataContract]
+
 public partial class BuScheduleMetadata : IEquatable<BuScheduleMetadata>
 {
     /// <summary>
@@ -39,7 +39,7 @@ public partial class BuScheduleMetadata : IEquatable<BuScheduleMetadata>
     /// The globally unique identifier for the object.
     /// </summary>
     /// <value>The globally unique identifier for the object.</value>
-    [DataMember(Name = "id", EmitDefaultValue = false)]
+    [JsonPropertyName("id")]
     public string Id { get; private set; }
 
 
@@ -48,7 +48,7 @@ public partial class BuScheduleMetadata : IEquatable<BuScheduleMetadata>
     /// The start week date for this schedule. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd
     /// </summary>
     /// <value>The start week date for this schedule. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd</value>
-    [DataMember(Name = "weekDate", EmitDefaultValue = false)]
+    [JsonPropertyName("weekDate")]
     public string WeekDate { get; set; }
 
 
@@ -57,7 +57,7 @@ public partial class BuScheduleMetadata : IEquatable<BuScheduleMetadata>
     /// The number of weeks spanned by this schedule
     /// </summary>
     /// <value>The number of weeks spanned by this schedule</value>
-    [DataMember(Name = "weekCount", EmitDefaultValue = false)]
+    [JsonPropertyName("weekCount")]
     public int? WeekCount { get; set; }
 
 
@@ -66,7 +66,7 @@ public partial class BuScheduleMetadata : IEquatable<BuScheduleMetadata>
     /// The description of this schedule
     /// </summary>
     /// <value>The description of this schedule</value>
-    [DataMember(Name = "description", EmitDefaultValue = false)]
+    [JsonPropertyName("description")]
     public string Description { get; set; }
 
 
@@ -75,7 +75,7 @@ public partial class BuScheduleMetadata : IEquatable<BuScheduleMetadata>
     /// Whether this schedule is published
     /// </summary>
     /// <value>Whether this schedule is published</value>
-    [DataMember(Name = "published", EmitDefaultValue = false)]
+    [JsonPropertyName("published")]
     public bool? Published { get; set; }
 
 
@@ -84,7 +84,7 @@ public partial class BuScheduleMetadata : IEquatable<BuScheduleMetadata>
     /// The forecast used for this schedule, if applicable
     /// </summary>
     /// <value>The forecast used for this schedule, if applicable</value>
-    [DataMember(Name = "shortTermForecast", EmitDefaultValue = false)]
+    [JsonPropertyName("shortTermForecast")]
     public BuShortTermForecastReference ShortTermForecast { get; set; }
 
 
@@ -93,7 +93,7 @@ public partial class BuScheduleMetadata : IEquatable<BuScheduleMetadata>
     /// Generation result summary for this schedule, if applicable
     /// </summary>
     /// <value>Generation result summary for this schedule, if applicable</value>
-    [DataMember(Name = "generationResults", EmitDefaultValue = false)]
+    [JsonPropertyName("generationResults")]
     public ScheduleGenerationResultSummary GenerationResults { get; set; }
 
 
@@ -102,7 +102,7 @@ public partial class BuScheduleMetadata : IEquatable<BuScheduleMetadata>
     /// Version metadata for this schedule
     /// </summary>
     /// <value>Version metadata for this schedule</value>
-    [DataMember(Name = "metadata", EmitDefaultValue = false)]
+    [JsonPropertyName("metadata")]
     public WfmVersionedEntityMetadata Metadata { get; set; }
 
 
@@ -111,7 +111,7 @@ public partial class BuScheduleMetadata : IEquatable<BuScheduleMetadata>
     /// High level per-management unit schedule metadata
     /// </summary>
     /// <value>High level per-management unit schedule metadata</value>
-    [DataMember(Name = "managementUnits", EmitDefaultValue = false)]
+    [JsonPropertyName("managementUnits")]
     public List<BuManagementUnitScheduleSummary> ManagementUnits { get; set; }
 
 
@@ -120,7 +120,7 @@ public partial class BuScheduleMetadata : IEquatable<BuScheduleMetadata>
     /// The URI for this object
     /// </summary>
     /// <value>The URI for this object</value>
-    [DataMember(Name = "selfUri", EmitDefaultValue = false)]
+    [JsonPropertyName("selfUri")]
     public string SelfUri { get; private set; }
 
 

@@ -7,14 +7,14 @@ namespace PureCloud.Client.Models;
 /// <summary>
 /// KnowledgeImportJobResponse
 /// </summary>
-[DataContract]
+
 public partial class KnowledgeImportJobResponse : IEquatable<KnowledgeImportJobResponse>
 {
     /// <summary>
     /// File type of the document
     /// </summary>
     /// <value>File type of the document</value>
-    [JsonConverter(typeof(JsonStringEnumConverter))]
+    
     public enum FileTypeEnum
     {
         /// <summary>
@@ -47,7 +47,7 @@ public partial class KnowledgeImportJobResponse : IEquatable<KnowledgeImportJobR
     /// Status of the import job
     /// </summary>
     /// <value>Status of the import job</value>
-    [JsonConverter(typeof(JsonStringEnumConverter))]
+    
     public enum StatusEnum
     {
         /// <summary>
@@ -128,13 +128,13 @@ public partial class KnowledgeImportJobResponse : IEquatable<KnowledgeImportJobR
     /// File type of the document
     /// </summary>
     /// <value>File type of the document</value>
-    [DataMember(Name = "fileType", EmitDefaultValue = false)]
+    [JsonPropertyName("fileType")]
     public FileTypeEnum? FileType { get; set; }
     /// <summary>
     /// Status of the import job
     /// </summary>
     /// <value>Status of the import job</value>
-    [DataMember(Name = "status", EmitDefaultValue = false)]
+    [JsonPropertyName("status")]
     public StatusEnum? Status { get; private set; }
 
     /// <summary>
@@ -168,7 +168,7 @@ public partial class KnowledgeImportJobResponse : IEquatable<KnowledgeImportJobR
     /// Id of the import job
     /// </summary>
     /// <value>Id of the import job</value>
-    [DataMember(Name = "id", EmitDefaultValue = false)]
+    [JsonPropertyName("id")]
     public string Id { get; private set; }
 
 
@@ -177,7 +177,7 @@ public partial class KnowledgeImportJobResponse : IEquatable<KnowledgeImportJobR
     /// The URL of the location at which the caller can download the imported file.
     /// </summary>
     /// <value>The URL of the location at which the caller can download the imported file.</value>
-    [DataMember(Name = "downloadURL", EmitDefaultValue = false)]
+    [JsonPropertyName("downloadURL")]
     public string DownloadURL { get; set; }
 
 
@@ -186,7 +186,7 @@ public partial class KnowledgeImportJobResponse : IEquatable<KnowledgeImportJobR
     /// The URL of the location at which the caller can download the entities in json format that failed during the import.
     /// </summary>
     /// <value>The URL of the location at which the caller can download the entities in json format that failed during the import.</value>
-    [DataMember(Name = "failedEntitiesURL", EmitDefaultValue = false)]
+    [JsonPropertyName("failedEntitiesURL")]
     public string FailedEntitiesURL { get; set; }
 
 
@@ -195,7 +195,7 @@ public partial class KnowledgeImportJobResponse : IEquatable<KnowledgeImportJobR
     /// Upload key
     /// </summary>
     /// <value>Upload key</value>
-    [DataMember(Name = "uploadKey", EmitDefaultValue = false)]
+    [JsonPropertyName("uploadKey")]
     public string UploadKey { get; set; }
 
 
@@ -206,7 +206,7 @@ public partial class KnowledgeImportJobResponse : IEquatable<KnowledgeImportJobR
     /// Additional optional settings
     /// </summary>
     /// <value>Additional optional settings</value>
-    [DataMember(Name = "settings", EmitDefaultValue = false)]
+    [JsonPropertyName("settings")]
     public KnowledgeImportJobSettings Settings { get; set; }
 
 
@@ -217,7 +217,7 @@ public partial class KnowledgeImportJobResponse : IEquatable<KnowledgeImportJobR
     /// Report of the import job
     /// </summary>
     /// <value>Report of the import job</value>
-    [DataMember(Name = "report", EmitDefaultValue = false)]
+    [JsonPropertyName("report")]
     public KnowledgeImportJobReport Report { get; private set; }
 
 
@@ -226,7 +226,7 @@ public partial class KnowledgeImportJobResponse : IEquatable<KnowledgeImportJobR
     /// Knowledge base which document import does belong to
     /// </summary>
     /// <value>Knowledge base which document import does belong to</value>
-    [DataMember(Name = "knowledgeBase", EmitDefaultValue = false)]
+    [JsonPropertyName("knowledgeBase")]
     public KnowledgeBase KnowledgeBase { get; private set; }
 
 
@@ -235,7 +235,7 @@ public partial class KnowledgeImportJobResponse : IEquatable<KnowledgeImportJobR
     /// The user who created the operation
     /// </summary>
     /// <value>The user who created the operation</value>
-    [DataMember(Name = "createdBy", EmitDefaultValue = false)]
+    [JsonPropertyName("createdBy")]
     public UserReference CreatedBy { get; private set; }
 
 
@@ -244,7 +244,7 @@ public partial class KnowledgeImportJobResponse : IEquatable<KnowledgeImportJobR
     /// Created date. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z
     /// </summary>
     /// <value>Created date. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z</value>
-    [DataMember(Name = "dateCreated", EmitDefaultValue = false)]
+    [JsonPropertyName("dateCreated")]
     public DateTime? DateCreated { get; private set; }
 
 
@@ -253,7 +253,7 @@ public partial class KnowledgeImportJobResponse : IEquatable<KnowledgeImportJobR
     /// Last modified date. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z
     /// </summary>
     /// <value>Last modified date. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z</value>
-    [DataMember(Name = "dateModified", EmitDefaultValue = false)]
+    [JsonPropertyName("dateModified")]
     public DateTime? DateModified { get; private set; }
 
 
@@ -262,7 +262,7 @@ public partial class KnowledgeImportJobResponse : IEquatable<KnowledgeImportJobR
     /// If enabled pre-validation step will be skipped.
     /// </summary>
     /// <value>If enabled pre-validation step will be skipped.</value>
-    [DataMember(Name = "skipConfirmationStep", EmitDefaultValue = false)]
+    [JsonPropertyName("skipConfirmationStep")]
     public bool? SkipConfirmationStep { get; set; }
 
 
@@ -271,7 +271,7 @@ public partial class KnowledgeImportJobResponse : IEquatable<KnowledgeImportJobR
     /// The URI for this object
     /// </summary>
     /// <value>The URI for this object</value>
-    [DataMember(Name = "selfUri", EmitDefaultValue = false)]
+    [JsonPropertyName("selfUri")]
     public string SelfUri { get; private set; }
 
 

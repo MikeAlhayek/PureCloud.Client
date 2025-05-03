@@ -1,12 +1,12 @@
-using System.Runtime.Serialization;
 using System.Text;
+using System.Text.Json.Serialization;
 
 namespace PureCloud.Client.Models;
 
 /// <summary>
 /// AlternativeShiftBulkUpdateTradesResponseTemplate
 /// </summary>
-[DataContract]
+
 public partial class AlternativeShiftBulkUpdateTradesResponseTemplate : IEquatable<AlternativeShiftBulkUpdateTradesResponseTemplate>
 {
     /// <summary>
@@ -24,7 +24,7 @@ public partial class AlternativeShiftBulkUpdateTradesResponseTemplate : IEquatab
     /// <summary>
     /// Gets or Sets Entities
     /// </summary>
-    [DataMember(Name = "entities", EmitDefaultValue = false)]
+    [JsonPropertyName("entities")]
     public List<AlternativeShiftTradeBulkUpdateTemplateItem> Entities { get; set; }
 
 

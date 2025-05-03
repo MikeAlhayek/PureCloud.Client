@@ -1,4 +1,3 @@
-using System.Runtime.Serialization;
 using System.Text;
 using System.Text.Json.Serialization;
 
@@ -7,7 +6,7 @@ namespace PureCloud.Client.Models;
 /// <summary>
 /// A botConnector&#39;s bot intention
 /// </summary>
-[DataContract]
+
 public partial class BotIntent : IEquatable<BotIntent>
 {
 
@@ -34,7 +33,7 @@ public partial class BotIntent : IEquatable<BotIntent>
     /// The name of this intent.  This can be up to 100 characters long and must be comprised of displayable characters without leading or trailing whitespace
     /// </summary>
     /// <value>The name of this intent.  This can be up to 100 characters long and must be comprised of displayable characters without leading or trailing whitespace</value>
-    [DataMember(Name = "name", EmitDefaultValue = false)]
+    [JsonPropertyName("name")]
     public string Name { get; set; }
 
 
@@ -43,7 +42,7 @@ public partial class BotIntent : IEquatable<BotIntent>
     /// Optional returned data values associated with this intent, limit of 50.
     /// </summary>
     /// <value>Optional returned data values associated with this intent, limit of 50.</value>
-    [DataMember(Name = "slots", EmitDefaultValue = false)]
+    [JsonPropertyName("slots")]
     public Dictionary<string, BotSlot> Slots { get; set; }
 
 

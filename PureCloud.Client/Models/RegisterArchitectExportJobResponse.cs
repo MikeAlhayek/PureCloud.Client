@@ -7,14 +7,14 @@ namespace PureCloud.Client.Models;
 /// <summary>
 /// RegisterArchitectExportJobResponse
 /// </summary>
-[DataContract]
+
 public partial class RegisterArchitectExportJobResponse : IEquatable<RegisterArchitectExportJobResponse>
 {
     /// <summary>
     /// The status of the export job.
     /// </summary>
     /// <value>The status of the export job.</value>
-    [JsonConverter(typeof(JsonStringEnumConverter))]
+    
     public enum StatusEnum
     {
         /// <summary>
@@ -53,7 +53,7 @@ public partial class RegisterArchitectExportJobResponse : IEquatable<RegisterArc
     /// The status of the export job.
     /// </summary>
     /// <value>The status of the export job.</value>
-    [DataMember(Name = "status", EmitDefaultValue = false)]
+    [JsonPropertyName("status")]
     public StatusEnum? Status { get; set; }
     /// <summary>
     /// Initializes a new instance of the <see cref="RegisterArchitectExportJobResponse" /> class.
@@ -73,7 +73,7 @@ public partial class RegisterArchitectExportJobResponse : IEquatable<RegisterArc
     /// The globally unique identifier for the object.
     /// </summary>
     /// <value>The globally unique identifier for the object.</value>
-    [DataMember(Name = "id", EmitDefaultValue = false)]
+    [JsonPropertyName("id")]
     public string Id { get; private set; }
 
 
@@ -84,7 +84,7 @@ public partial class RegisterArchitectExportJobResponse : IEquatable<RegisterArc
     /// The number of flows submitted for export.
     /// </summary>
     /// <value>The number of flows submitted for export.</value>
-    [DataMember(Name = "totalFlows", EmitDefaultValue = false)]
+    [JsonPropertyName("totalFlows")]
     public int? TotalFlows { get; set; }
 
 
@@ -93,7 +93,7 @@ public partial class RegisterArchitectExportJobResponse : IEquatable<RegisterArc
     /// The URI for this object
     /// </summary>
     /// <value>The URI for this object</value>
-    [DataMember(Name = "selfUri", EmitDefaultValue = false)]
+    [JsonPropertyName("selfUri")]
     public string SelfUri { get; private set; }
 
 

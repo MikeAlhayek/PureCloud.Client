@@ -1,12 +1,12 @@
-using System.Runtime.Serialization;
 using System.Text;
+using System.Text.Json.Serialization;
 
 namespace PureCloud.Client.Models;
 
 /// <summary>
 /// Scoped ID for an Instagram user interacting with a page or app
 /// </summary>
-[DataContract]
+
 public partial class InstagramScopedId : IEquatable<InstagramScopedId>
 {
     /// <summary>
@@ -25,7 +25,7 @@ public partial class InstagramScopedId : IEquatable<InstagramScopedId>
     /// The unique page/app-specific scopedId for the user
     /// </summary>
     /// <value>The unique page/app-specific scopedId for the user</value>
-    [DataMember(Name = "scopedId", EmitDefaultValue = false)]
+    [JsonPropertyName("scopedId")]
     public string ScopedId { get; set; }
 
 

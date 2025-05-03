@@ -7,14 +7,14 @@ namespace PureCloud.Client.Models;
 /// <summary>
 /// AuthorizationPolicy
 /// </summary>
-[DataContract]
+
 public partial class AuthorizationPolicy : IEquatable<AuthorizationPolicy>
 {
     /// <summary>
     /// The effect this policy should have when its conditions are met
     /// </summary>
     /// <value>The effect this policy should have when its conditions are met</value>
-    [JsonConverter(typeof(JsonStringEnumConverter))]
+    
     public enum EffectEnum
     {
         /// <summary>
@@ -41,7 +41,7 @@ public partial class AuthorizationPolicy : IEquatable<AuthorizationPolicy>
     /// The effect this policy should have when its conditions are met
     /// </summary>
     /// <value>The effect this policy should have when its conditions are met</value>
-    [DataMember(Name = "effect", EmitDefaultValue = false)]
+    [JsonPropertyName("effect")]
     public EffectEnum? Effect { get; set; }
 
     /// <summary>
@@ -77,7 +77,7 @@ public partial class AuthorizationPolicy : IEquatable<AuthorizationPolicy>
     /// The globally unique identifier for the object.
     /// </summary>
     /// <value>The globally unique identifier for the object.</value>
-    [DataMember(Name = "id", EmitDefaultValue = false)]
+    [JsonPropertyName("id")]
     public string Id { get; private set; }
 
 
@@ -85,7 +85,7 @@ public partial class AuthorizationPolicy : IEquatable<AuthorizationPolicy>
     /// <summary>
     /// Gets or Sets Name
     /// </summary>
-    [DataMember(Name = "name", EmitDefaultValue = false)]
+    [JsonPropertyName("name")]
     public string Name { get; set; }
 
 
@@ -94,7 +94,7 @@ public partial class AuthorizationPolicy : IEquatable<AuthorizationPolicy>
     /// The targeted resource to which the policy should apply, in the form of domain:entity:action
     /// </summary>
     /// <value>The targeted resource to which the policy should apply, in the form of domain:entity:action</value>
-    [DataMember(Name = "targetResource", EmitDefaultValue = false)]
+    [JsonPropertyName("targetResource")]
     public string TargetResource { get; private set; }
 
 
@@ -103,7 +103,7 @@ public partial class AuthorizationPolicy : IEquatable<AuthorizationPolicy>
     /// The subject to whom the policy will apply, including type and id
     /// </summary>
     /// <value>The subject to whom the policy will apply, including type and id</value>
-    [DataMember(Name = "subject", EmitDefaultValue = false)]
+    [JsonPropertyName("subject")]
     public Subject Subject { get; set; }
 
 
@@ -114,7 +114,7 @@ public partial class AuthorizationPolicy : IEquatable<AuthorizationPolicy>
     /// The condition tree the policy will evaluate
     /// </summary>
     /// <value>The condition tree the policy will evaluate</value>
-    [DataMember(Name = "condition", EmitDefaultValue = false)]
+    [JsonPropertyName("condition")]
     public object Condition { get; set; }
 
 
@@ -122,7 +122,7 @@ public partial class AuthorizationPolicy : IEquatable<AuthorizationPolicy>
     /// <summary>
     /// Gets or Sets Description
     /// </summary>
-    [DataMember(Name = "description", EmitDefaultValue = false)]
+    [JsonPropertyName("description")]
     public string Description { get; set; }
 
 
@@ -131,7 +131,7 @@ public partial class AuthorizationPolicy : IEquatable<AuthorizationPolicy>
     /// Date this policy was last modified. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z
     /// </summary>
     /// <value>Date this policy was last modified. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z</value>
-    [DataMember(Name = "dateModified", EmitDefaultValue = false)]
+    [JsonPropertyName("dateModified")]
     public DateTime? DateModified { get; private set; }
 
 
@@ -140,7 +140,7 @@ public partial class AuthorizationPolicy : IEquatable<AuthorizationPolicy>
     /// Map of names and values of preset attributes to use in policy evaluation
     /// </summary>
     /// <value>Map of names and values of preset attributes to use in policy evaluation</value>
-    [DataMember(Name = "presetAttributes", EmitDefaultValue = false)]
+    [JsonPropertyName("presetAttributes")]
     public Dictionary<string, TypedAttribute> PresetAttributes { get; set; }
 
 
@@ -149,7 +149,7 @@ public partial class AuthorizationPolicy : IEquatable<AuthorizationPolicy>
     /// Flag for active enforcement. If this value is false or null, the policy will be saved but will not be checked or enforced on users.
     /// </summary>
     /// <value>Flag for active enforcement. If this value is false or null, the policy will be saved but will not be checked or enforced on users.</value>
-    [DataMember(Name = "active", EmitDefaultValue = false)]
+    [JsonPropertyName("active")]
     public bool? Active { get; set; }
 
 
@@ -158,7 +158,7 @@ public partial class AuthorizationPolicy : IEquatable<AuthorizationPolicy>
     /// The URI for this object
     /// </summary>
     /// <value>The URI for this object</value>
-    [DataMember(Name = "selfUri", EmitDefaultValue = false)]
+    [JsonPropertyName("selfUri")]
     public string SelfUri { get; private set; }
 
 

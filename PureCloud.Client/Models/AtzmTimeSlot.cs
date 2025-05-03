@@ -1,12 +1,12 @@
-using System.Runtime.Serialization;
 using System.Text;
+using System.Text.Json.Serialization;
 
 namespace PureCloud.Client.Models;
 
 /// <summary>
 /// AtzmTimeSlot
 /// </summary>
-[DataContract]
+
 public partial class AtzmTimeSlot : IEquatable<AtzmTimeSlot>
 {
     /// <summary>
@@ -27,7 +27,7 @@ public partial class AtzmTimeSlot : IEquatable<AtzmTimeSlot>
     /// The earliest time to dial a contact. Valid format is HH:mm
     /// </summary>
     /// <value>The earliest time to dial a contact. Valid format is HH:mm</value>
-    [DataMember(Name = "earliestCallableTime", EmitDefaultValue = false)]
+    [JsonPropertyName("earliestCallableTime")]
     public string EarliestCallableTime { get; set; }
 
 
@@ -36,7 +36,7 @@ public partial class AtzmTimeSlot : IEquatable<AtzmTimeSlot>
     /// The latest time to dial a contact. Valid format is HH:mm
     /// </summary>
     /// <value>The latest time to dial a contact. Valid format is HH:mm</value>
-    [DataMember(Name = "latestCallableTime", EmitDefaultValue = false)]
+    [JsonPropertyName("latestCallableTime")]
     public string LatestCallableTime { get; set; }
 
 

@@ -1,4 +1,3 @@
-using System.Runtime.Serialization;
 using System.Text;
 using System.Text.Json.Serialization;
 
@@ -7,7 +6,7 @@ namespace PureCloud.Client.Models;
 /// <summary>
 /// UserProfilesInDateRangeRequest
 /// </summary>
-[DataContract]
+
 public partial class UserProfilesInDateRangeRequest : IEquatable<UserProfilesInDateRangeRequest>
 {
 
@@ -34,7 +33,7 @@ public partial class UserProfilesInDateRangeRequest : IEquatable<UserProfilesInD
     /// Start work day in ISO-8601 format used in the date range.
     /// </summary>
     /// <value>Start work day in ISO-8601 format used in the date range.</value>
-    [DataMember(Name = "startWorkday", EmitDefaultValue = false)]
+    [JsonPropertyName("startWorkday")]
     public string StartWorkday { get; set; }
 
 
@@ -43,7 +42,7 @@ public partial class UserProfilesInDateRangeRequest : IEquatable<UserProfilesInD
     /// End work day in ISO-8601 format used in the date range.
     /// </summary>
     /// <value>End work day in ISO-8601 format used in the date range.</value>
-    [DataMember(Name = "endWorkday", EmitDefaultValue = false)]
+    [JsonPropertyName("endWorkday")]
     public string EndWorkday { get; set; }
 
 

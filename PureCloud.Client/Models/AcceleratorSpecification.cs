@@ -7,14 +7,14 @@ namespace PureCloud.Client.Models;
 /// <summary>
 /// Metadata for a CX infrastructure as code accelerator
 /// </summary>
-[DataContract]
+
 public partial class AcceleratorSpecification : IEquatable<AcceleratorSpecification>
 {
     /// <summary>
     /// where the accelerator originated
     /// </summary>
     /// <value>where the accelerator originated</value>
-    [JsonConverter(typeof(JsonStringEnumConverter))]
+    
     public enum OriginEnum
     {
         /// <summary>
@@ -47,7 +47,7 @@ public partial class AcceleratorSpecification : IEquatable<AcceleratorSpecificat
     /// type of the artifact
     /// </summary>
     /// <value>type of the artifact</value>
-    [JsonConverter(typeof(JsonStringEnumConverter))]
+    
     public enum TypeEnum
     {
         /// <summary>
@@ -80,13 +80,13 @@ public partial class AcceleratorSpecification : IEquatable<AcceleratorSpecificat
     /// where the accelerator originated
     /// </summary>
     /// <value>where the accelerator originated</value>
-    [DataMember(Name = "origin", EmitDefaultValue = false)]
+    [JsonPropertyName("origin")]
     public OriginEnum? Origin { get; private set; }
     /// <summary>
     /// type of the artifact
     /// </summary>
     /// <value>type of the artifact</value>
-    [DataMember(Name = "type", EmitDefaultValue = false)]
+    [JsonPropertyName("type")]
     public TypeEnum? Type { get; private set; }
     /// <summary>
     /// Initializes a new instance of the <see cref="AcceleratorSpecification" /> class.
@@ -102,7 +102,7 @@ public partial class AcceleratorSpecification : IEquatable<AcceleratorSpecificat
     /// The globally unique identifier for the object.
     /// </summary>
     /// <value>The globally unique identifier for the object.</value>
-    [DataMember(Name = "id", EmitDefaultValue = false)]
+    [JsonPropertyName("id")]
     public string Id { get; private set; }
 
 
@@ -111,7 +111,7 @@ public partial class AcceleratorSpecification : IEquatable<AcceleratorSpecificat
     /// name of this accelerator
     /// </summary>
     /// <value>name of this accelerator</value>
-    [DataMember(Name = "name", EmitDefaultValue = false)]
+    [JsonPropertyName("name")]
     public string Name { get; private set; }
 
 
@@ -120,7 +120,7 @@ public partial class AcceleratorSpecification : IEquatable<AcceleratorSpecificat
     /// a description of the general purpose of this accelerator
     /// </summary>
     /// <value>a description of the general purpose of this accelerator</value>
-    [DataMember(Name = "description", EmitDefaultValue = false)]
+    [JsonPropertyName("description")]
     public string Description { get; private set; }
 
 
@@ -133,7 +133,7 @@ public partial class AcceleratorSpecification : IEquatable<AcceleratorSpecificat
     /// architectural classification into which the accelerator belongs
     /// </summary>
     /// <value>architectural classification into which the accelerator belongs</value>
-    [DataMember(Name = "classification", EmitDefaultValue = false)]
+    [JsonPropertyName("classification")]
     public string Classification { get; private set; }
 
 
@@ -142,7 +142,7 @@ public partial class AcceleratorSpecification : IEquatable<AcceleratorSpecificat
     /// tags
     /// </summary>
     /// <value>tags</value>
-    [DataMember(Name = "tags", EmitDefaultValue = false)]
+    [JsonPropertyName("tags")]
     public List<string> Tags { get; private set; }
 
 
@@ -151,7 +151,7 @@ public partial class AcceleratorSpecification : IEquatable<AcceleratorSpecificat
     /// Genesys Cloud permissions required to install the accelerator
     /// </summary>
     /// <value>Genesys Cloud permissions required to install the accelerator</value>
-    [DataMember(Name = "permissions", EmitDefaultValue = false)]
+    [JsonPropertyName("permissions")]
     public List<string> Permissions { get; private set; }
 
 
@@ -160,7 +160,7 @@ public partial class AcceleratorSpecification : IEquatable<AcceleratorSpecificat
     /// Genesys Cloud products required to install the accelerator
     /// </summary>
     /// <value>Genesys Cloud products required to install the accelerator</value>
-    [DataMember(Name = "products", EmitDefaultValue = false)]
+    [JsonPropertyName("products")]
     public List<string> Products { get; private set; }
 
 
@@ -169,7 +169,7 @@ public partial class AcceleratorSpecification : IEquatable<AcceleratorSpecificat
     /// additional documentation about the artifact
     /// </summary>
     /// <value>additional documentation about the artifact</value>
-    [DataMember(Name = "documentation", EmitDefaultValue = false)]
+    [JsonPropertyName("documentation")]
     public List<MetadataDocumentation> Documentation { get; private set; }
 
 
@@ -178,7 +178,7 @@ public partial class AcceleratorSpecification : IEquatable<AcceleratorSpecificat
     /// presentation of data fields to be gathered for the accelerator
     /// </summary>
     /// <value>presentation of data fields to be gathered for the accelerator</value>
-    [DataMember(Name = "presentation", EmitDefaultValue = false)]
+    [JsonPropertyName("presentation")]
     public List<MetadataPresentation> Presentation { get; private set; }
 
 
@@ -187,7 +187,7 @@ public partial class AcceleratorSpecification : IEquatable<AcceleratorSpecificat
     /// resources created or modified as a result of running the accelerator
     /// </summary>
     /// <value>resources created or modified as a result of running the accelerator</value>
-    [DataMember(Name = "results", EmitDefaultValue = false)]
+    [JsonPropertyName("results")]
     public MetadataResults Results { get; private set; }
 
 
@@ -196,7 +196,7 @@ public partial class AcceleratorSpecification : IEquatable<AcceleratorSpecificat
     /// The URI for this object
     /// </summary>
     /// <value>The URI for this object</value>
-    [DataMember(Name = "selfUri", EmitDefaultValue = false)]
+    [JsonPropertyName("selfUri")]
     public string SelfUri { get; private set; }
 
 

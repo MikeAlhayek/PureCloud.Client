@@ -1,4 +1,3 @@
-using System.Runtime.Serialization;
 using System.Text;
 using System.Text.Json.Serialization;
 
@@ -7,7 +6,7 @@ namespace PureCloud.Client.Models;
 /// <summary>
 /// Model for a Nuance bot geography
 /// </summary>
-[DataContract]
+
 public partial class NuanceGeography : IEquatable<NuanceGeography>
 {
 
@@ -34,7 +33,7 @@ public partial class NuanceGeography : IEquatable<NuanceGeography>
     /// The geography ID
     /// </summary>
     /// <value>The geography ID</value>
-    [DataMember(Name = "id", EmitDefaultValue = false)]
+    [JsonPropertyName("id")]
     public string Id { get; set; }
 
 
@@ -43,7 +42,7 @@ public partial class NuanceGeography : IEquatable<NuanceGeography>
     /// The geography name
     /// </summary>
     /// <value>The geography name</value>
-    [DataMember(Name = "name", EmitDefaultValue = false)]
+    [JsonPropertyName("name")]
     public string Name { get; set; }
 
 

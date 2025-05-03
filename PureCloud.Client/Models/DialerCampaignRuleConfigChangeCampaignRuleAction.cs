@@ -7,14 +7,14 @@ namespace PureCloud.Client.Models;
 /// <summary>
 /// DialerCampaignRuleConfigChangeCampaignRuleAction
 /// </summary>
-[DataContract]
+
 public partial class DialerCampaignRuleConfigChangeCampaignRuleAction : IEquatable<DialerCampaignRuleConfigChangeCampaignRuleAction>
 {
     /// <summary>
     /// The type of this action
     /// </summary>
     /// <value>The type of this action</value>
-    [JsonConverter(typeof(JsonStringEnumConverter))]
+    
     public enum ActionTypeEnum
     {
         /// <summary>
@@ -65,7 +65,7 @@ public partial class DialerCampaignRuleConfigChangeCampaignRuleAction : IEquatab
     /// The type of this action
     /// </summary>
     /// <value>The type of this action</value>
-    [DataMember(Name = "actionType", EmitDefaultValue = false)]
+    [JsonPropertyName("actionType")]
     public ActionTypeEnum? ActionType { get; set; }
     /// <summary>
     /// Initializes a new instance of the <see cref="DialerCampaignRuleConfigChangeCampaignRuleAction" /> class.
@@ -91,7 +91,7 @@ public partial class DialerCampaignRuleConfigChangeCampaignRuleAction : IEquatab
     /// The globally unique identifier for the action
     /// </summary>
     /// <value>The globally unique identifier for the action</value>
-    [DataMember(Name = "id", EmitDefaultValue = false)]
+    [JsonPropertyName("id")]
     public string Id { get; set; }
 
 
@@ -100,7 +100,7 @@ public partial class DialerCampaignRuleConfigChangeCampaignRuleAction : IEquatab
     /// The parameters to match this action
     /// </summary>
     /// <value>The parameters to match this action</value>
-    [DataMember(Name = "parameters", EmitDefaultValue = false)]
+    [JsonPropertyName("parameters")]
     public Dictionary<string, string> Parameters { get; set; }
 
 
@@ -110,7 +110,7 @@ public partial class DialerCampaignRuleConfigChangeCampaignRuleAction : IEquatab
     /// <summary>
     /// Gets or Sets CampaignRuleActionEntities
     /// </summary>
-    [DataMember(Name = "campaignRuleActionEntities", EmitDefaultValue = false)]
+    [JsonPropertyName("campaignRuleActionEntities")]
     public DialerCampaignRuleConfigChangeCampaignRuleActionEntities CampaignRuleActionEntities { get; set; }
 
 
@@ -118,7 +118,7 @@ public partial class DialerCampaignRuleConfigChangeCampaignRuleAction : IEquatab
     /// <summary>
     /// Gets or Sets AdditionalProperties
     /// </summary>
-    [DataMember(Name = "additionalProperties", EmitDefaultValue = false)]
+    [JsonPropertyName("additionalProperties")]
     public Dictionary<string, object> AdditionalProperties { get; set; }
 
 

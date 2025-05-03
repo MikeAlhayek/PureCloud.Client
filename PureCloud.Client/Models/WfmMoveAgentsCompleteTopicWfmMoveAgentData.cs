@@ -7,13 +7,13 @@ namespace PureCloud.Client.Models;
 /// <summary>
 /// WfmMoveAgentsCompleteTopicWfmMoveAgentData
 /// </summary>
-[DataContract]
+
 public partial class WfmMoveAgentsCompleteTopicWfmMoveAgentData : IEquatable<WfmMoveAgentsCompleteTopicWfmMoveAgentData>
 {
     /// <summary>
     /// Gets or Sets Result
     /// </summary>
-    [JsonConverter(typeof(JsonStringEnumConverter))]
+    
     public enum ResultEnum
     {
         /// <summary>
@@ -75,7 +75,7 @@ public partial class WfmMoveAgentsCompleteTopicWfmMoveAgentData : IEquatable<Wfm
     /// <summary>
     /// Gets or Sets Result
     /// </summary>
-    [DataMember(Name = "result", EmitDefaultValue = false)]
+    [JsonPropertyName("result")]
     public ResultEnum? Result { get; set; }
     /// <summary>
     /// Initializes a new instance of the <see cref="WfmMoveAgentsCompleteTopicWfmMoveAgentData" /> class.
@@ -94,7 +94,7 @@ public partial class WfmMoveAgentsCompleteTopicWfmMoveAgentData : IEquatable<Wfm
     /// <summary>
     /// Gets or Sets User
     /// </summary>
-    [DataMember(Name = "user", EmitDefaultValue = false)]
+    [JsonPropertyName("user")]
     public WfmMoveAgentsCompleteTopicUserReference User { get; set; }
 
 

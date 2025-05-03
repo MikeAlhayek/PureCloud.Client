@@ -1,12 +1,12 @@
-using System.Runtime.Serialization;
 using System.Text;
+using System.Text.Json.Serialization;
 
 namespace PureCloud.Client.Models;
 
 /// <summary>
 /// Lines distribution information or Campaign&#39;s Edge Group or Site
 /// </summary>
-[DataContract]
+
 public partial class CampaignOutboundLinesDistribution : IEquatable<CampaignOutboundLinesDistribution>
 {
     /// <summary>
@@ -37,7 +37,7 @@ public partial class CampaignOutboundLinesDistribution : IEquatable<CampaignOutb
     /// The Campaign for which dialing group distribution information was requested
     /// </summary>
     /// <value>The Campaign for which dialing group distribution information was requested</value>
-    [DataMember(Name = "campaign", EmitDefaultValue = false)]
+    [JsonPropertyName("campaign")]
     public AddressableEntityRef Campaign { get; set; }
 
 
@@ -46,7 +46,7 @@ public partial class CampaignOutboundLinesDistribution : IEquatable<CampaignOutb
     /// Maximum outbound calls that can be placed for Campaign&#39;s Edge Group or Site
     /// </summary>
     /// <value>Maximum outbound calls that can be placed for Campaign&#39;s Edge Group or Site</value>
-    [DataMember(Name = "maxOutboundLineCount", EmitDefaultValue = false)]
+    [JsonPropertyName("maxOutboundLineCount")]
     public int? MaxOutboundLineCount { get; set; }
 
 
@@ -55,7 +55,7 @@ public partial class CampaignOutboundLinesDistribution : IEquatable<CampaignOutb
     /// Maximum ratio of dialer calls to Campaign&#39;s Edge Group or Site capacity
     /// </summary>
     /// <value>Maximum ratio of dialer calls to Campaign&#39;s Edge Group or Site capacity</value>
-    [DataMember(Name = "maxLineUtilization", EmitDefaultValue = false)]
+    [JsonPropertyName("maxLineUtilization")]
     public double? MaxLineUtilization { get; set; }
 
 
@@ -64,7 +64,7 @@ public partial class CampaignOutboundLinesDistribution : IEquatable<CampaignOutb
     /// Number of available outbound lines in Campaign&#39;s Edge Group or Site
     /// </summary>
     /// <value>Number of available outbound lines in Campaign&#39;s Edge Group or Site</value>
-    [DataMember(Name = "availableOutboundLines", EmitDefaultValue = false)]
+    [JsonPropertyName("availableOutboundLines")]
     public int? AvailableOutboundLines { get; set; }
 
 
@@ -73,7 +73,7 @@ public partial class CampaignOutboundLinesDistribution : IEquatable<CampaignOutb
     /// Number of reserved outbound lines in Campaign&#39;s Edge Group or Site
     /// </summary>
     /// <value>Number of reserved outbound lines in Campaign&#39;s Edge Group or Site</value>
-    [DataMember(Name = "reservedLines", EmitDefaultValue = false)]
+    [JsonPropertyName("reservedLines")]
     public int? ReservedLines { get; set; }
 
 
@@ -82,7 +82,7 @@ public partial class CampaignOutboundLinesDistribution : IEquatable<CampaignOutb
     /// Information about campaigns with reserving lines in Campaign&#39;s Edge Group or Site
     /// </summary>
     /// <value>Information about campaigns with reserving lines in Campaign&#39;s Edge Group or Site</value>
-    [DataMember(Name = "campaignsWithReservedLines", EmitDefaultValue = false)]
+    [JsonPropertyName("campaignsWithReservedLines")]
     public List<CampaignOutboundLinesReservation> CampaignsWithReservedLines { get; set; }
 
 
@@ -91,7 +91,7 @@ public partial class CampaignOutboundLinesDistribution : IEquatable<CampaignOutb
     /// Information about campaigns using dynamic lines allocation in Campaign&#39;s Edge Group or Site
     /// </summary>
     /// <value>Information about campaigns using dynamic lines allocation in Campaign&#39;s Edge Group or Site</value>
-    [DataMember(Name = "campaignsWithDynamicallyAllocatedLines", EmitDefaultValue = false)]
+    [JsonPropertyName("campaignsWithDynamicallyAllocatedLines")]
     public List<CampaignOutboundLinesAllocation> CampaignsWithDynamicallyAllocatedLines { get; set; }
 
 

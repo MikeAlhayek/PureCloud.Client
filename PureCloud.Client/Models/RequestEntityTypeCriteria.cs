@@ -7,14 +7,14 @@ namespace PureCloud.Client.Models;
 /// <summary>
 /// RequestEntityTypeCriteria
 /// </summary>
-[DataContract]
+
 public partial class RequestEntityTypeCriteria : IEquatable<RequestEntityTypeCriteria>
 {
     /// <summary>
     /// The comparison operator.
     /// </summary>
     /// <value>The comparison operator.</value>
-    [JsonConverter(typeof(JsonStringEnumConverter))]
+    
     public enum OperatorEnum
     {
         /// <summary>
@@ -101,7 +101,7 @@ public partial class RequestEntityTypeCriteria : IEquatable<RequestEntityTypeCri
     /// The entity to match the pattern against.
     /// </summary>
     /// <value>The entity to match the pattern against.</value>
-    [JsonConverter(typeof(JsonStringEnumConverter))]
+    
     public enum EntityTypeEnum
     {
         /// <summary>
@@ -122,13 +122,13 @@ public partial class RequestEntityTypeCriteria : IEquatable<RequestEntityTypeCri
     /// The comparison operator.
     /// </summary>
     /// <value>The comparison operator.</value>
-    [DataMember(Name = "operator", EmitDefaultValue = false)]
+    [JsonPropertyName("operator")]
     public OperatorEnum? Operator { get; set; }
     /// <summary>
     /// The entity to match the pattern against.
     /// </summary>
     /// <value>The entity to match the pattern against.</value>
-    [DataMember(Name = "entityType", EmitDefaultValue = false)]
+    [JsonPropertyName("entityType")]
     public EntityTypeEnum? EntityType { get; set; }
 
     /// <summary>
@@ -160,7 +160,7 @@ public partial class RequestEntityTypeCriteria : IEquatable<RequestEntityTypeCri
     /// The criteria key.
     /// </summary>
     /// <value>The criteria key.</value>
-    [DataMember(Name = "key", EmitDefaultValue = false)]
+    [JsonPropertyName("key")]
     public string Key { get; set; }
 
 
@@ -169,7 +169,7 @@ public partial class RequestEntityTypeCriteria : IEquatable<RequestEntityTypeCri
     /// The criteria values.
     /// </summary>
     /// <value>The criteria values.</value>
-    [DataMember(Name = "values", EmitDefaultValue = false)]
+    [JsonPropertyName("values")]
     public List<string> Values { get; set; }
 
 
@@ -178,7 +178,7 @@ public partial class RequestEntityTypeCriteria : IEquatable<RequestEntityTypeCri
     /// Should criteria be case insensitive.
     /// </summary>
     /// <value>Should criteria be case insensitive.</value>
-    [DataMember(Name = "shouldIgnoreCase", EmitDefaultValue = false)]
+    [JsonPropertyName("shouldIgnoreCase")]
     public bool? ShouldIgnoreCase { get; set; }
 
 

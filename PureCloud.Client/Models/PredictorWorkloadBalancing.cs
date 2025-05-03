@@ -1,4 +1,3 @@
-using System.Runtime.Serialization;
 using System.Text;
 using System.Text.Json.Serialization;
 
@@ -7,7 +6,7 @@ namespace PureCloud.Client.Models;
 /// <summary>
 /// PredictorWorkloadBalancing
 /// </summary>
-[DataContract]
+
 public partial class PredictorWorkloadBalancing : IEquatable<PredictorWorkloadBalancing>
 {
 
@@ -36,7 +35,7 @@ public partial class PredictorWorkloadBalancing : IEquatable<PredictorWorkloadBa
     /// Flag to activate and deactivate workload balancing.
     /// </summary>
     /// <value>Flag to activate and deactivate workload balancing.</value>
-    [DataMember(Name = "enabled", EmitDefaultValue = false)]
+    [JsonPropertyName("enabled")]
     public bool? Enabled { get; set; }
 
 
@@ -45,7 +44,7 @@ public partial class PredictorWorkloadBalancing : IEquatable<PredictorWorkloadBa
     /// Desired minimum occupancy threshold of agents. Must be between 0 and 100.
     /// </summary>
     /// <value>Desired minimum occupancy threshold of agents. Must be between 0 and 100.</value>
-    [DataMember(Name = "minimumOccupancy", EmitDefaultValue = false)]
+    [JsonPropertyName("minimumOccupancy")]
     public int? MinimumOccupancy { get; set; }
 
 
@@ -54,7 +53,7 @@ public partial class PredictorWorkloadBalancing : IEquatable<PredictorWorkloadBa
     /// Desired maximum occupancy threshold of agents. Must be between 0 and 100.
     /// </summary>
     /// <value>Desired maximum occupancy threshold of agents. Must be between 0 and 100.</value>
-    [DataMember(Name = "maximumOccupancy", EmitDefaultValue = false)]
+    [JsonPropertyName("maximumOccupancy")]
     public int? MaximumOccupancy { get; set; }
 
 

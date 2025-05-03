@@ -1,4 +1,3 @@
-using System.Runtime.Serialization;
 using System.Text;
 using System.Text.Json.Serialization;
 
@@ -7,7 +6,7 @@ namespace PureCloud.Client.Models;
 /// <summary>
 /// AvailableTimeOffRequest
 /// </summary>
-[DataContract]
+
 public partial class AvailableTimeOffRequest : IEquatable<AvailableTimeOffRequest>
 {
 
@@ -34,7 +33,7 @@ public partial class AvailableTimeOffRequest : IEquatable<AvailableTimeOffReques
     /// The ID for activity code to query available time off minutes
     /// </summary>
     /// <value>The ID for activity code to query available time off minutes</value>
-    [DataMember(Name = "activityCodeId", EmitDefaultValue = false)]
+    [JsonPropertyName("activityCodeId")]
     public string ActivityCodeId { get; set; }
 
 
@@ -43,7 +42,7 @@ public partial class AvailableTimeOffRequest : IEquatable<AvailableTimeOffReques
     /// A list of date ranges of available time off minutes. A maximum number of date ranges is 30. The maximum total number of days in all ranges is 366. If no ranges are specified, then only the presence of the associated time off limit object will be checked. In such case, if the association exists, then the response will contain a list with of a single element filled with timeOffLimitId only.
     /// </summary>
     /// <value>A list of date ranges of available time off minutes. A maximum number of date ranges is 30. The maximum total number of days in all ranges is 366. If no ranges are specified, then only the presence of the associated time off limit object will be checked. In such case, if the association exists, then the response will contain a list with of a single element filled with timeOffLimitId only.</value>
-    [DataMember(Name = "dateRanges", EmitDefaultValue = false)]
+    [JsonPropertyName("dateRanges")]
     public List<LocalDateRange> DateRanges { get; set; }
 
 

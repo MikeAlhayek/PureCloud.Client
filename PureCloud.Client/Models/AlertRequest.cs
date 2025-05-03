@@ -7,14 +7,14 @@ namespace PureCloud.Client.Models;
 /// <summary>
 /// AlertRequest
 /// </summary>
-[DataContract]
+
 public partial class AlertRequest : IEquatable<AlertRequest>
 {
     /// <summary>
     /// The action being taken on the alert.
     /// </summary>
     /// <value>The action being taken on the alert.</value>
-    [JsonConverter(typeof(JsonStringEnumConverter))]
+    
     public enum TypeEnum
     {
         /// <summary>
@@ -47,7 +47,7 @@ public partial class AlertRequest : IEquatable<AlertRequest>
     /// The action being taken on the alert.
     /// </summary>
     /// <value>The action being taken on the alert.</value>
-    [DataMember(Name = "type", EmitDefaultValue = false)]
+    [JsonPropertyName("type")]
     public TypeEnum? Type { get; set; }
 
     /// <summary>
@@ -81,7 +81,7 @@ public partial class AlertRequest : IEquatable<AlertRequest>
     /// The start date of the mute/snooze period. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z
     /// </summary>
     /// <value>The start date of the mute/snooze period. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z</value>
-    [DataMember(Name = "dateStart", EmitDefaultValue = false)]
+    [JsonPropertyName("dateStart")]
     public DateTime? DateStart { get; set; }
 
 
@@ -90,7 +90,7 @@ public partial class AlertRequest : IEquatable<AlertRequest>
     /// The end date of the mute/snooze period. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z
     /// </summary>
     /// <value>The end date of the mute/snooze period. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z</value>
-    [DataMember(Name = "dateEnd", EmitDefaultValue = false)]
+    [JsonPropertyName("dateEnd")]
     public DateTime? DateEnd { get; set; }
 
 
@@ -99,7 +99,7 @@ public partial class AlertRequest : IEquatable<AlertRequest>
     /// The fields need for an unread update requests
     /// </summary>
     /// <value>The fields need for an unread update requests</value>
-    [DataMember(Name = "unread", EmitDefaultValue = false)]
+    [JsonPropertyName("unread")]
     public UnreadFields Unread { get; set; }
 
 
@@ -107,7 +107,7 @@ public partial class AlertRequest : IEquatable<AlertRequest>
     /// <summary>
     /// Gets or Sets ValidRequest
     /// </summary>
-    [DataMember(Name = "validRequest", EmitDefaultValue = false)]
+    [JsonPropertyName("validRequest")]
     public bool? ValidRequest { get; set; }
 
 

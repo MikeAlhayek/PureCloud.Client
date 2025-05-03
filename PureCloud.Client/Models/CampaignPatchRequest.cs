@@ -1,12 +1,12 @@
-using System.Runtime.Serialization;
 using System.Text;
+using System.Text.Json.Serialization;
 
 namespace PureCloud.Client.Models;
 
 /// <summary>
 /// Campaign patch request
 /// </summary>
-[DataContract]
+
 public partial class CampaignPatchRequest : IEquatable<CampaignPatchRequest>
 {
     /// <summary>
@@ -33,7 +33,7 @@ public partial class CampaignPatchRequest : IEquatable<CampaignPatchRequest>
     /// The number of outbound lines to be concurrently dialed.
     /// </summary>
     /// <value>The number of outbound lines to be concurrently dialed.</value>
-    [DataMember(Name = "outboundLineCount", EmitDefaultValue = false)]
+    [JsonPropertyName("outboundLineCount")]
     public int? OutboundLineCount { get; set; }
 
 
@@ -42,7 +42,7 @@ public partial class CampaignPatchRequest : IEquatable<CampaignPatchRequest>
     /// The targeted compliance abandon rate percentage
     /// </summary>
     /// <value>The targeted compliance abandon rate percentage</value>
-    [DataMember(Name = "abandonRate", EmitDefaultValue = false)]
+    [JsonPropertyName("abandonRate")]
     public double? AbandonRate { get; set; }
 
 
@@ -51,7 +51,7 @@ public partial class CampaignPatchRequest : IEquatable<CampaignPatchRequest>
     /// The maximum number of calls that can be placed per agent on this campaign
     /// </summary>
     /// <value>The maximum number of calls that can be placed per agent on this campaign</value>
-    [DataMember(Name = "maxCallsPerAgent", EmitDefaultValue = false)]
+    [JsonPropertyName("maxCallsPerAgent")]
     public double? MaxCallsPerAgent { get; set; }
 
 
@@ -60,7 +60,7 @@ public partial class CampaignPatchRequest : IEquatable<CampaignPatchRequest>
     /// Dynamic line balancing settings
     /// </summary>
     /// <value>Dynamic line balancing settings</value>
-    [DataMember(Name = "dynamicLineBalancingSettings", EmitDefaultValue = false)]
+    [JsonPropertyName("dynamicLineBalancingSettings")]
     public DynamicLineBalancingSettingsPatchRequest DynamicLineBalancingSettings { get; set; }
 
 
@@ -69,7 +69,7 @@ public partial class CampaignPatchRequest : IEquatable<CampaignPatchRequest>
     /// The Queue for this Campaign to route calls to.
     /// </summary>
     /// <value>The Queue for this Campaign to route calls to.</value>
-    [DataMember(Name = "queue", EmitDefaultValue = false)]
+    [JsonPropertyName("queue")]
     public AddressableEntityRef Queue { get; set; }
 
 

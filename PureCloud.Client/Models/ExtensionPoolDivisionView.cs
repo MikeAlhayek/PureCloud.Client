@@ -1,4 +1,3 @@
-using System.Runtime.Serialization;
 using System.Text;
 using System.Text.Json.Serialization;
 
@@ -7,7 +6,7 @@ namespace PureCloud.Client.Models;
 /// <summary>
 /// ExtensionPoolDivisionView
 /// </summary>
-[DataContract]
+
 public partial class ExtensionPoolDivisionView : IEquatable<ExtensionPoolDivisionView>
 {
 
@@ -36,7 +35,7 @@ public partial class ExtensionPoolDivisionView : IEquatable<ExtensionPoolDivisio
     /// The extension pool identifier
     /// </summary>
     /// <value>The extension pool identifier</value>
-    [DataMember(Name = "id", EmitDefaultValue = false)]
+    [JsonPropertyName("id")]
     public string Id { get; set; }
 
 
@@ -45,7 +44,7 @@ public partial class ExtensionPoolDivisionView : IEquatable<ExtensionPoolDivisio
     /// The start number of the extension pool.
     /// </summary>
     /// <value>The start number of the extension pool.</value>
-    [DataMember(Name = "name", EmitDefaultValue = false)]
+    [JsonPropertyName("name")]
     public string Name { get; set; }
 
 
@@ -54,7 +53,7 @@ public partial class ExtensionPoolDivisionView : IEquatable<ExtensionPoolDivisio
     /// The division to which this entity belongs.
     /// </summary>
     /// <value>The division to which this entity belongs.</value>
-    [DataMember(Name = "division", EmitDefaultValue = false)]
+    [JsonPropertyName("division")]
     public Division Division { get; set; }
 
 
@@ -63,7 +62,7 @@ public partial class ExtensionPoolDivisionView : IEquatable<ExtensionPoolDivisio
     /// The URI for this object
     /// </summary>
     /// <value>The URI for this object</value>
-    [DataMember(Name = "selfUri", EmitDefaultValue = false)]
+    [JsonPropertyName("selfUri")]
     public string SelfUri { get; private set; }
 
 

@@ -1,12 +1,12 @@
-using System.Runtime.Serialization;
 using System.Text;
+using System.Text.Json.Serialization;
 
 namespace PureCloud.Client.Models;
 
 /// <summary>
 /// Learning module reassign summary data
 /// </summary>
-[DataContract]
+
 public partial class LearningModuleReassignSummary : IEquatable<LearningModuleReassignSummary>
 {
     /// <summary>
@@ -33,7 +33,7 @@ public partial class LearningModuleReassignSummary : IEquatable<LearningModuleRe
     /// The total number of users for whom assignment is reassigned
     /// </summary>
     /// <value>The total number of users for whom assignment is reassigned</value>
-    [DataMember(Name = "totalReassigned", EmitDefaultValue = false)]
+    [JsonPropertyName("totalReassigned")]
     public int? TotalReassigned { get; set; }
 
 
@@ -42,7 +42,7 @@ public partial class LearningModuleReassignSummary : IEquatable<LearningModuleRe
     /// The total number of users who have the assignment in Completed state
     /// </summary>
     /// <value>The total number of users who have the assignment in Completed state</value>
-    [DataMember(Name = "completedCount", EmitDefaultValue = false)]
+    [JsonPropertyName("completedCount")]
     public int? CompletedCount { get; set; }
 
 
@@ -51,7 +51,7 @@ public partial class LearningModuleReassignSummary : IEquatable<LearningModuleRe
     /// The total number of users who have the assignment in InProgress state
     /// </summary>
     /// <value>The total number of users who have the assignment in InProgress state</value>
-    [DataMember(Name = "inProgressCount", EmitDefaultValue = false)]
+    [JsonPropertyName("inProgressCount")]
     public int? InProgressCount { get; set; }
 
 
@@ -60,7 +60,7 @@ public partial class LearningModuleReassignSummary : IEquatable<LearningModuleRe
     /// The total number of users who have the assignment in Assigned state
     /// </summary>
     /// <value>The total number of users who have the assignment in Assigned state</value>
-    [DataMember(Name = "assignedCount", EmitDefaultValue = false)]
+    [JsonPropertyName("assignedCount")]
     public int? AssignedCount { get; set; }
 
 
@@ -69,7 +69,7 @@ public partial class LearningModuleReassignSummary : IEquatable<LearningModuleRe
     /// The total number of users who have their assignment overdue
     /// </summary>
     /// <value>The total number of users who have their assignment overdue</value>
-    [DataMember(Name = "notCompletedCount", EmitDefaultValue = false)]
+    [JsonPropertyName("notCompletedCount")]
     public int? NotCompletedCount { get; set; }
 
 

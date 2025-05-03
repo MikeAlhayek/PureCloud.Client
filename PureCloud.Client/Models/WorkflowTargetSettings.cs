@@ -7,14 +7,14 @@ namespace PureCloud.Client.Models;
 /// <summary>
 /// WorkflowTargetSettings
 /// </summary>
-[DataContract]
+
 public partial class WorkflowTargetSettings : IEquatable<WorkflowTargetSettings>
 {
     /// <summary>
     /// The data format to use when invoking target.
     /// </summary>
     /// <value>The data format to use when invoking target.</value>
-    [JsonConverter(typeof(JsonStringEnumConverter))]
+    
     public enum DataFormatEnum
     {
         /// <summary>
@@ -41,7 +41,7 @@ public partial class WorkflowTargetSettings : IEquatable<WorkflowTargetSettings>
     /// The data format to use when invoking target.
     /// </summary>
     /// <value>The data format to use when invoking target.</value>
-    [DataMember(Name = "dataFormat", EmitDefaultValue = false)]
+    [JsonPropertyName("dataFormat")]
     public DataFormatEnum? DataFormat { get; set; }
     /// <summary>
     /// Initializes a new instance of the <see cref="WorkflowTargetSettings" /> class.

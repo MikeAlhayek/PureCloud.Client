@@ -1,12 +1,12 @@
-using System.Runtime.Serialization;
 using System.Text;
+using System.Text.Json.Serialization;
 
 namespace PureCloud.Client.Models;
 
 /// <summary>
 /// ResolutionAsyncAggregateQueryResponse
 /// </summary>
-[DataContract]
+
 public partial class ResolutionAsyncAggregateQueryResponse : IEquatable<ResolutionAsyncAggregateQueryResponse>
 {
     /// <summary>
@@ -26,7 +26,7 @@ public partial class ResolutionAsyncAggregateQueryResponse : IEquatable<Resoluti
     /// <summary>
     /// Gets or Sets Results
     /// </summary>
-    [DataMember(Name = "results", EmitDefaultValue = false)]
+    [JsonPropertyName("results")]
     public List<ResolutionAggregateDataContainer> Results { get; set; }
 
 
@@ -35,7 +35,7 @@ public partial class ResolutionAsyncAggregateQueryResponse : IEquatable<Resoluti
     /// Cursor token to retrieve next page
     /// </summary>
     /// <value>Cursor token to retrieve next page</value>
-    [DataMember(Name = "cursor", EmitDefaultValue = false)]
+    [JsonPropertyName("cursor")]
     public string Cursor { get; set; }
 
 

@@ -1,4 +1,3 @@
-using System.Runtime.Serialization;
 using System.Text;
 using System.Text.Json.Serialization;
 
@@ -7,7 +6,7 @@ namespace PureCloud.Client.Models;
 /// <summary>
 /// AppEventResponse
 /// </summary>
-[DataContract]
+
 public partial class AppEventResponse : IEquatable<AppEventResponse>
 {
 
@@ -64,7 +63,7 @@ public partial class AppEventResponse : IEquatable<AppEventResponse>
     /// System-generated UUID for the event.
     /// </summary>
     /// <value>System-generated UUID for the event.</value>
-    [DataMember(Name = "id", EmitDefaultValue = false)]
+    [JsonPropertyName("id")]
     public string Id { get; set; }
 
 
@@ -73,7 +72,7 @@ public partial class AppEventResponse : IEquatable<AppEventResponse>
     /// Identifier of the customer in the source of the event.
     /// </summary>
     /// <value>Identifier of the customer in the source of the event.</value>
-    [DataMember(Name = "customerId", EmitDefaultValue = false)]
+    [JsonPropertyName("customerId")]
     public string CustomerId { get; set; }
 
 
@@ -82,7 +81,7 @@ public partial class AppEventResponse : IEquatable<AppEventResponse>
     /// Type of identifier for the customer ID (cookie, email etc.).
     /// </summary>
     /// <value>Type of identifier for the customer ID (cookie, email etc.).</value>
-    [DataMember(Name = "customerIdType", EmitDefaultValue = false)]
+    [JsonPropertyName("customerIdType")]
     public string CustomerIdType { get; set; }
 
 
@@ -91,7 +90,7 @@ public partial class AppEventResponse : IEquatable<AppEventResponse>
     /// Represents the action the customer performed. A good event name is typically an object followed by the action performed in past tense (e.g. screen_viewed, order_completed, user_registered).
     /// </summary>
     /// <value>Represents the action the customer performed. A good event name is typically an object followed by the action performed in past tense (e.g. screen_viewed, order_completed, user_registered).</value>
-    [DataMember(Name = "eventName", EmitDefaultValue = false)]
+    [JsonPropertyName("eventName")]
     public string EventName { get; set; }
 
 
@@ -100,7 +99,7 @@ public partial class AppEventResponse : IEquatable<AppEventResponse>
     /// The name of the screen in the app that the event took place.
     /// </summary>
     /// <value>The name of the screen in the app that the event took place.</value>
-    [DataMember(Name = "screenName", EmitDefaultValue = false)]
+    [JsonPropertyName("screenName")]
     public string ScreenName { get; set; }
 
 
@@ -109,7 +108,7 @@ public partial class AppEventResponse : IEquatable<AppEventResponse>
     /// Application that the customer is interacting with.
     /// </summary>
     /// <value>Application that the customer is interacting with.</value>
-    [DataMember(Name = "app", EmitDefaultValue = false)]
+    [JsonPropertyName("app")]
     public JourneyApp App { get; set; }
 
 
@@ -118,7 +117,7 @@ public partial class AppEventResponse : IEquatable<AppEventResponse>
     /// Customer&#39;s device.
     /// </summary>
     /// <value>Customer&#39;s device.</value>
-    [DataMember(Name = "device", EmitDefaultValue = false)]
+    [JsonPropertyName("device")]
     public Device Device { get; set; }
 
 
@@ -127,7 +126,7 @@ public partial class AppEventResponse : IEquatable<AppEventResponse>
     /// Customer&#39;s IP-based organization or ISP name.
     /// </summary>
     /// <value>Customer&#39;s IP-based organization or ISP name.</value>
-    [DataMember(Name = "ipOrganization", EmitDefaultValue = false)]
+    [JsonPropertyName("ipOrganization")]
     public string IpOrganization { get; set; }
 
 
@@ -136,7 +135,7 @@ public partial class AppEventResponse : IEquatable<AppEventResponse>
     /// Customer&#39;s geolocation.
     /// </summary>
     /// <value>Customer&#39;s geolocation.</value>
-    [DataMember(Name = "geolocation", EmitDefaultValue = false)]
+    [JsonPropertyName("geolocation")]
     public JourneyGeolocation Geolocation { get; set; }
 
 
@@ -145,7 +144,7 @@ public partial class AppEventResponse : IEquatable<AppEventResponse>
     /// SDK library used to generate the event.
     /// </summary>
     /// <value>SDK library used to generate the event.</value>
-    [DataMember(Name = "sdkLibrary", EmitDefaultValue = false)]
+    [JsonPropertyName("sdkLibrary")]
     public SdkLibrary SdkLibrary { get; set; }
 
 
@@ -154,7 +153,7 @@ public partial class AppEventResponse : IEquatable<AppEventResponse>
     /// Information relating to the device&#39;s network connectivity.
     /// </summary>
     /// <value>Information relating to the device&#39;s network connectivity.</value>
-    [DataMember(Name = "networkConnectivity", EmitDefaultValue = false)]
+    [JsonPropertyName("networkConnectivity")]
     public NetworkConnectivity NetworkConnectivity { get; set; }
 
 
@@ -163,7 +162,7 @@ public partial class AppEventResponse : IEquatable<AppEventResponse>
     /// Marketing / traffic source information.
     /// </summary>
     /// <value>Marketing / traffic source information.</value>
-    [DataMember(Name = "mktCampaign", EmitDefaultValue = false)]
+    [JsonPropertyName("mktCampaign")]
     public JourneyCampaign MktCampaign { get; set; }
 
 
@@ -172,7 +171,7 @@ public partial class AppEventResponse : IEquatable<AppEventResponse>
     /// The app session the event belongs to.
     /// </summary>
     /// <value>The app session the event belongs to.</value>
-    [DataMember(Name = "session", EmitDefaultValue = false)]
+    [JsonPropertyName("session")]
     public AppEventResponseSession Session { get; set; }
 
 
@@ -181,7 +180,7 @@ public partial class AppEventResponse : IEquatable<AppEventResponse>
     /// Represents the keywords in a customer search query.
     /// </summary>
     /// <value>Represents the keywords in a customer search query.</value>
-    [DataMember(Name = "searchQuery", EmitDefaultValue = false)]
+    [JsonPropertyName("searchQuery")]
     public string SearchQuery { get; set; }
 
 
@@ -190,7 +189,7 @@ public partial class AppEventResponse : IEquatable<AppEventResponse>
     /// User-defined attributes associated with a particular event.
     /// </summary>
     /// <value>User-defined attributes associated with a particular event.</value>
-    [DataMember(Name = "attributes", EmitDefaultValue = false)]
+    [JsonPropertyName("attributes")]
     public Dictionary<string, CustomEventAttribute> Attributes { get; set; }
 
 
@@ -199,7 +198,7 @@ public partial class AppEventResponse : IEquatable<AppEventResponse>
     /// Traits are attributes intrinsic to the customer that may be sent in selected events (e.g. email, name, phone).
     /// </summary>
     /// <value>Traits are attributes intrinsic to the customer that may be sent in selected events (e.g. email, name, phone).</value>
-    [DataMember(Name = "traits", EmitDefaultValue = false)]
+    [JsonPropertyName("traits")]
     public Dictionary<string, CustomEventAttribute> Traits { get; set; }
 
 
@@ -208,7 +207,7 @@ public partial class AppEventResponse : IEquatable<AppEventResponse>
     /// UTC timestamp indicating when the event actually took place. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z
     /// </summary>
     /// <value>UTC timestamp indicating when the event actually took place. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z</value>
-    [DataMember(Name = "createdDate", EmitDefaultValue = false)]
+    [JsonPropertyName("createdDate")]
     public DateTime? CreatedDate { get; set; }
 
 

@@ -1,4 +1,3 @@
-using System.Runtime.Serialization;
 using System.Text;
 using System.Text.Json.Serialization;
 
@@ -7,7 +6,7 @@ namespace PureCloud.Client.Models;
 /// <summary>
 /// Defines a link between an External Identifier and Authority pair to a Entity Type and Entity Identifier pair. Represents the two way, one to one mapping of an External Authority or System of Record&#39;s identifier to a PureCloudEnvironment entity. e.g. (ExternalId&#x3D;&#39;05001&#39;,Authority&#x3D;&#39;XyzCRM&#39;) to (entityType&#x3D;user,entityId&#x3D;&#39;8eb03b33-3acb-4bc1-a244-50b9b9f19495&#39;)
 /// </summary>
-[DataContract]
+
 public partial class UserExternalIdentifier : IEquatable<UserExternalIdentifier>
 {
 
@@ -34,7 +33,7 @@ public partial class UserExternalIdentifier : IEquatable<UserExternalIdentifier>
     /// Authority or System of Record which owns the External Identifier
     /// </summary>
     /// <value>Authority or System of Record which owns the External Identifier</value>
-    [DataMember(Name = "authorityName", EmitDefaultValue = false)]
+    [JsonPropertyName("authorityName")]
     public string AuthorityName { get; set; }
 
 
@@ -43,7 +42,7 @@ public partial class UserExternalIdentifier : IEquatable<UserExternalIdentifier>
     /// External Key
     /// </summary>
     /// <value>External Key</value>
-    [DataMember(Name = "externalKey", EmitDefaultValue = false)]
+    [JsonPropertyName("externalKey")]
     public string ExternalKey { get; set; }
 
 
@@ -52,7 +51,7 @@ public partial class UserExternalIdentifier : IEquatable<UserExternalIdentifier>
     /// The URI for this object
     /// </summary>
     /// <value>The URI for this object</value>
-    [DataMember(Name = "selfUri", EmitDefaultValue = false)]
+    [JsonPropertyName("selfUri")]
     public string SelfUri { get; private set; }
 
 

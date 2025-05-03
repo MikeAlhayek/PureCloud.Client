@@ -1,4 +1,3 @@
-using System.Runtime.Serialization;
 using System.Text;
 using System.Text.Json.Serialization;
 
@@ -7,7 +6,7 @@ namespace PureCloud.Client.Models;
 /// <summary>
 /// ContextIntent
 /// </summary>
-[DataContract]
+
 public partial class ContextIntent : IEquatable<ContextIntent>
 {
 
@@ -32,7 +31,7 @@ public partial class ContextIntent : IEquatable<ContextIntent>
     /// The name of the intent.
     /// </summary>
     /// <value>The name of the intent.</value>
-    [DataMember(Name = "name", EmitDefaultValue = false)]
+    [JsonPropertyName("name")]
     public string Name { get; set; }
 
 

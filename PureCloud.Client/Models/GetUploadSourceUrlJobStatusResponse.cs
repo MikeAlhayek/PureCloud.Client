@@ -7,14 +7,14 @@ namespace PureCloud.Client.Models;
 /// <summary>
 /// GetUploadSourceUrlJobStatusResponse
 /// </summary>
-[DataContract]
+
 public partial class GetUploadSourceUrlJobStatusResponse : IEquatable<GetUploadSourceUrlJobStatusResponse>
 {
     /// <summary>
     /// Status of the upload job
     /// </summary>
     /// <value>Status of the upload job</value>
-    [JsonConverter(typeof(JsonStringEnumConverter))]
+    
     public enum StatusEnum
     {
         /// <summary>
@@ -53,7 +53,7 @@ public partial class GetUploadSourceUrlJobStatusResponse : IEquatable<GetUploadS
     /// Status of the upload job
     /// </summary>
     /// <value>Status of the upload job</value>
-    [DataMember(Name = "status", EmitDefaultValue = false)]
+    [JsonPropertyName("status")]
     public StatusEnum? Status { get; set; }
     /// <summary>
     /// Initializes a new instance of the <see cref="GetUploadSourceUrlJobStatusResponse" /> class.
@@ -77,7 +77,7 @@ public partial class GetUploadSourceUrlJobStatusResponse : IEquatable<GetUploadS
     /// Id of the upload from URL job.
     /// </summary>
     /// <value>Id of the upload from URL job.</value>
-    [DataMember(Name = "id", EmitDefaultValue = false)]
+    [JsonPropertyName("id")]
     public string Id { get; set; }
 
 
@@ -88,7 +88,7 @@ public partial class GetUploadSourceUrlJobStatusResponse : IEquatable<GetUploadS
     /// Key that identifies the file in the storage including the file name
     /// </summary>
     /// <value>Key that identifies the file in the storage including the file name</value>
-    [DataMember(Name = "uploadKey", EmitDefaultValue = false)]
+    [JsonPropertyName("uploadKey")]
     public string UploadKey { get; set; }
 
 
@@ -97,7 +97,7 @@ public partial class GetUploadSourceUrlJobStatusResponse : IEquatable<GetUploadS
     /// Any error information, or null of the processing is not in failed state.
     /// </summary>
     /// <value>Any error information, or null of the processing is not in failed state.</value>
-    [DataMember(Name = "errorInformation", EmitDefaultValue = false)]
+    [JsonPropertyName("errorInformation")]
     public ErrorBody ErrorInformation { get; set; }
 
 
@@ -106,7 +106,7 @@ public partial class GetUploadSourceUrlJobStatusResponse : IEquatable<GetUploadS
     /// The URI for this object
     /// </summary>
     /// <value>The URI for this object</value>
-    [DataMember(Name = "selfUri", EmitDefaultValue = false)]
+    [JsonPropertyName("selfUri")]
     public string SelfUri { get; private set; }
 
 

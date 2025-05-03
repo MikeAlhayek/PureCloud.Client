@@ -1,4 +1,3 @@
-using System.Runtime.Serialization;
 using System.Text;
 using System.Text.Json.Serialization;
 
@@ -7,7 +6,7 @@ namespace PureCloud.Client.Models;
 /// <summary>
 /// TranscriptTranslation
 /// </summary>
-[DataContract]
+
 public partial class TranscriptTranslation : IEquatable<TranscriptTranslation>
 {
 
@@ -36,7 +35,7 @@ public partial class TranscriptTranslation : IEquatable<TranscriptTranslation>
     /// Transcript Id
     /// </summary>
     /// <value>Transcript Id</value>
-    [DataMember(Name = "id", EmitDefaultValue = false)]
+    [JsonPropertyName("id")]
     public string Id { get; set; }
 
 
@@ -45,7 +44,7 @@ public partial class TranscriptTranslation : IEquatable<TranscriptTranslation>
     /// List of translated phrases, if translation succeeded
     /// </summary>
     /// <value>List of translated phrases, if translation succeeded</value>
-    [DataMember(Name = "phrases", EmitDefaultValue = false)]
+    [JsonPropertyName("phrases")]
     public List<PhraseTranslation> Phrases { get; set; }
 
 
@@ -54,7 +53,7 @@ public partial class TranscriptTranslation : IEquatable<TranscriptTranslation>
     /// Translation error, if translation failed
     /// </summary>
     /// <value>Translation error, if translation failed</value>
-    [DataMember(Name = "translateError", EmitDefaultValue = false)]
+    [JsonPropertyName("translateError")]
     public string TranslateError { get; set; }
 
 

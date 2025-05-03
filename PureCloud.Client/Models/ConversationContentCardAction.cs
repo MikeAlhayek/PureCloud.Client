@@ -7,14 +7,14 @@ namespace PureCloud.Client.Models;
 /// <summary>
 /// A card action that a user can take.
 /// </summary>
-[DataContract]
+
 public partial class ConversationContentCardAction : IEquatable<ConversationContentCardAction>
 {
     /// <summary>
     /// Describes the type of action.
     /// </summary>
     /// <value>Describes the type of action.</value>
-    [JsonConverter(typeof(JsonStringEnumConverter))]
+    
     public enum TypeEnum
     {
         /// <summary>
@@ -47,7 +47,7 @@ public partial class ConversationContentCardAction : IEquatable<ConversationCont
     /// Describes the type of action.
     /// </summary>
     /// <value>Describes the type of action.</value>
-    [DataMember(Name = "type", EmitDefaultValue = false)]
+    [JsonPropertyName("type")]
     public TypeEnum? Type { get; set; }
     /// <summary>
     /// Initializes a new instance of the <see cref="ConversationContentCardAction" /> class.
@@ -73,7 +73,7 @@ public partial class ConversationContentCardAction : IEquatable<ConversationCont
     /// The response text from the button click.
     /// </summary>
     /// <value>The response text from the button click.</value>
-    [DataMember(Name = "text", EmitDefaultValue = false)]
+    [JsonPropertyName("text")]
     public string Text { get; set; }
 
 
@@ -82,7 +82,7 @@ public partial class ConversationContentCardAction : IEquatable<ConversationCont
     /// Text to be returned as the payload from a ButtonResponse when a button is clicked. The payload and text are a combination which will have to be unique across each card and carousel in order to determine which button was clicked in that card or carousel.
     /// </summary>
     /// <value>Text to be returned as the payload from a ButtonResponse when a button is clicked. The payload and text are a combination which will have to be unique across each card and carousel in order to determine which button was clicked in that card or carousel.</value>
-    [DataMember(Name = "payload", EmitDefaultValue = false)]
+    [JsonPropertyName("payload")]
     public string Payload { get; set; }
 
 
@@ -91,7 +91,7 @@ public partial class ConversationContentCardAction : IEquatable<ConversationCont
     /// A URL of a web page to direct the user to.
     /// </summary>
     /// <value>A URL of a web page to direct the user to.</value>
-    [DataMember(Name = "url", EmitDefaultValue = false)]
+    [JsonPropertyName("url")]
     public string Url { get; set; }
 
 

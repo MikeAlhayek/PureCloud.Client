@@ -7,14 +7,14 @@ namespace PureCloud.Client.Models;
 /// <summary>
 /// List content object.
 /// </summary>
-[DataContract]
+
 public partial class ContentList : IEquatable<ContentList>
 {
     /// <summary>
     /// The type of list this instance represents.
     /// </summary>
     /// <value>The type of list this instance represents.</value>
-    [JsonConverter(typeof(JsonStringEnumConverter))]
+    
     public enum ListTypeEnum
     {
         /// <summary>
@@ -41,7 +41,7 @@ public partial class ContentList : IEquatable<ContentList>
     /// The type of list this instance represents.
     /// </summary>
     /// <value>The type of list this instance represents.</value>
-    [DataMember(Name = "listType", EmitDefaultValue = false)]
+    [JsonPropertyName("listType")]
     public ListTypeEnum? ListType { get; set; }
     /// <summary>
     /// Initializes a new instance of the <see cref="ContentList" /> class.
@@ -71,7 +71,7 @@ public partial class ContentList : IEquatable<ContentList>
     /// A unique ID assigned to this rich message content.
     /// </summary>
     /// <value>A unique ID assigned to this rich message content.</value>
-    [DataMember(Name = "id", EmitDefaultValue = false)]
+    [JsonPropertyName("id")]
     public string Id { get; set; }
 
 
@@ -82,7 +82,7 @@ public partial class ContentList : IEquatable<ContentList>
     /// Text to show in the title.
     /// </summary>
     /// <value>Text to show in the title.</value>
-    [DataMember(Name = "title", EmitDefaultValue = false)]
+    [JsonPropertyName("title")]
     public string Title { get; set; }
 
 
@@ -91,7 +91,7 @@ public partial class ContentList : IEquatable<ContentList>
     /// Text to show in the description.
     /// </summary>
     /// <value>Text to show in the description.</value>
-    [DataMember(Name = "description", EmitDefaultValue = false)]
+    [JsonPropertyName("description")]
     public string Description { get; set; }
 
 
@@ -100,7 +100,7 @@ public partial class ContentList : IEquatable<ContentList>
     /// Label for Submit button.
     /// </summary>
     /// <value>Label for Submit button.</value>
-    [DataMember(Name = "submitLabel", EmitDefaultValue = false)]
+    [JsonPropertyName("submitLabel")]
     public string SubmitLabel { get; set; }
 
 
@@ -109,7 +109,7 @@ public partial class ContentList : IEquatable<ContentList>
     /// The list actions (Deprecated).
     /// </summary>
     /// <value>The list actions (Deprecated).</value>
-    [DataMember(Name = "actions", EmitDefaultValue = false)]
+    [JsonPropertyName("actions")]
     public ContentActions Actions { get; set; }
 
 
@@ -118,7 +118,7 @@ public partial class ContentList : IEquatable<ContentList>
     /// An array of component objects.
     /// </summary>
     /// <value>An array of component objects.</value>
-    [DataMember(Name = "components", EmitDefaultValue = false)]
+    [JsonPropertyName("components")]
     public List<ListItemComponent> Components { get; set; }
 
 

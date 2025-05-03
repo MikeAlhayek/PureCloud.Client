@@ -1,12 +1,12 @@
-using System.Runtime.Serialization;
 using System.Text;
+using System.Text.Json.Serialization;
 
 namespace PureCloud.Client.Models;
 
 /// <summary>
 /// WfmAgent
 /// </summary>
-[DataContract]
+
 public partial class WfmAgent : IEquatable<WfmAgent>
 {
     /// <summary>
@@ -43,7 +43,7 @@ public partial class WfmAgent : IEquatable<WfmAgent>
     /// The globally unique identifier for the object.
     /// </summary>
     /// <value>The globally unique identifier for the object.</value>
-    [DataMember(Name = "id", EmitDefaultValue = false)]
+    [JsonPropertyName("id")]
     public string Id { get; private set; }
 
 
@@ -52,7 +52,7 @@ public partial class WfmAgent : IEquatable<WfmAgent>
     /// The user associated with this data
     /// </summary>
     /// <value>The user associated with this data</value>
-    [DataMember(Name = "user", EmitDefaultValue = false)]
+    [JsonPropertyName("user")]
     public UserReference User { get; set; }
 
 
@@ -61,7 +61,7 @@ public partial class WfmAgent : IEquatable<WfmAgent>
     /// The work plan associated with this agent, if applicable
     /// </summary>
     /// <value>The work plan associated with this agent, if applicable</value>
-    [DataMember(Name = "workPlan", EmitDefaultValue = false)]
+    [JsonPropertyName("workPlan")]
     public WorkPlanReference WorkPlan { get; set; }
 
 
@@ -70,7 +70,7 @@ public partial class WfmAgent : IEquatable<WfmAgent>
     /// The work plan rotation associated with this agent, if applicable
     /// </summary>
     /// <value>The work plan rotation associated with this agent, if applicable</value>
-    [DataMember(Name = "workPlanRotation", EmitDefaultValue = false)]
+    [JsonPropertyName("workPlanRotation")]
     public WorkPlanRotationReference WorkPlanRotation { get; set; }
 
 
@@ -79,7 +79,7 @@ public partial class WfmAgent : IEquatable<WfmAgent>
     /// Whether the agent accepts direct shift trade requests
     /// </summary>
     /// <value>Whether the agent accepts direct shift trade requests</value>
-    [DataMember(Name = "acceptDirectShiftTrades", EmitDefaultValue = false)]
+    [JsonPropertyName("acceptDirectShiftTrades")]
     public bool? AcceptDirectShiftTrades { get; set; }
 
 
@@ -88,7 +88,7 @@ public partial class WfmAgent : IEquatable<WfmAgent>
     /// The work plan overrides associated with this agent. Populate with expand&#x3D;workPlanOverrides
     /// </summary>
     /// <value>The work plan overrides associated with this agent. Populate with expand&#x3D;workPlanOverrides</value>
-    [DataMember(Name = "workPlanOverrides", EmitDefaultValue = false)]
+    [JsonPropertyName("workPlanOverrides")]
     public List<WorkPlanOverride> WorkPlanOverrides { get; set; }
 
 
@@ -97,7 +97,7 @@ public partial class WfmAgent : IEquatable<WfmAgent>
     /// List of queues to which this agent is capable of handling
     /// </summary>
     /// <value>List of queues to which this agent is capable of handling</value>
-    [DataMember(Name = "queues", EmitDefaultValue = false)]
+    [JsonPropertyName("queues")]
     public List<QueueReference> Queues { get; set; }
 
 
@@ -106,7 +106,7 @@ public partial class WfmAgent : IEquatable<WfmAgent>
     /// The list of languages this agent is capable of handling
     /// </summary>
     /// <value>The list of languages this agent is capable of handling</value>
-    [DataMember(Name = "languages", EmitDefaultValue = false)]
+    [JsonPropertyName("languages")]
     public List<LanguageReference> Languages { get; set; }
 
 
@@ -115,7 +115,7 @@ public partial class WfmAgent : IEquatable<WfmAgent>
     /// The list of skills this agent is capable of handling
     /// </summary>
     /// <value>The list of skills this agent is capable of handling</value>
-    [DataMember(Name = "skills", EmitDefaultValue = false)]
+    [JsonPropertyName("skills")]
     public List<RoutingSkillReference> Skills { get; set; }
 
 
@@ -124,7 +124,7 @@ public partial class WfmAgent : IEquatable<WfmAgent>
     /// Whether the agent can be included in schedule generation
     /// </summary>
     /// <value>Whether the agent can be included in schedule generation</value>
-    [DataMember(Name = "schedulable", EmitDefaultValue = false)]
+    [JsonPropertyName("schedulable")]
     public bool? Schedulable { get; set; }
 
 
@@ -133,7 +133,7 @@ public partial class WfmAgent : IEquatable<WfmAgent>
     /// Metadata for this agent
     /// </summary>
     /// <value>Metadata for this agent</value>
-    [DataMember(Name = "metadata", EmitDefaultValue = false)]
+    [JsonPropertyName("metadata")]
     public WfmVersionedEntityMetadata Metadata { get; set; }
 
 
@@ -142,7 +142,7 @@ public partial class WfmAgent : IEquatable<WfmAgent>
     /// The URI for this object
     /// </summary>
     /// <value>The URI for this object</value>
-    [DataMember(Name = "selfUri", EmitDefaultValue = false)]
+    [JsonPropertyName("selfUri")]
     public string SelfUri { get; private set; }
 
 

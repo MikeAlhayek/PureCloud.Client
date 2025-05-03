@@ -7,14 +7,14 @@ namespace PureCloud.Client.Models;
 /// <summary>
 /// CategoryRequest
 /// </summary>
-[DataContract]
+
 public partial class CategoryRequest : IEquatable<CategoryRequest>
 {
     /// <summary>
     /// The type of interaction the category will apply to
     /// </summary>
     /// <value>The type of interaction the category will apply to</value>
-    [JsonConverter(typeof(JsonStringEnumConverter))]
+    
     public enum InteractionTypeEnum
     {
         /// <summary>
@@ -47,7 +47,7 @@ public partial class CategoryRequest : IEquatable<CategoryRequest>
     /// The type of interaction the category will apply to
     /// </summary>
     /// <value>The type of interaction the category will apply to</value>
-    [DataMember(Name = "interactionType", EmitDefaultValue = false)]
+    [JsonPropertyName("interactionType")]
     public InteractionTypeEnum? InteractionType { get; set; }
 
     /// <summary>
@@ -77,7 +77,7 @@ public partial class CategoryRequest : IEquatable<CategoryRequest>
     /// The name of the category
     /// </summary>
     /// <value>The name of the category</value>
-    [DataMember(Name = "name", EmitDefaultValue = false)]
+    [JsonPropertyName("name")]
     public string Name { get; set; }
 
 
@@ -86,7 +86,7 @@ public partial class CategoryRequest : IEquatable<CategoryRequest>
     /// The description of the category
     /// </summary>
     /// <value>The description of the category</value>
-    [DataMember(Name = "description", EmitDefaultValue = false)]
+    [JsonPropertyName("description")]
     public string Description { get; set; }
 
 
@@ -97,7 +97,7 @@ public partial class CategoryRequest : IEquatable<CategoryRequest>
     /// A collection of conditions joined together by logical operation to provide more refined filtering of conversations
     /// </summary>
     /// <value>A collection of conditions joined together by logical operation to provide more refined filtering of conversations</value>
-    [DataMember(Name = "criteria", EmitDefaultValue = false)]
+    [JsonPropertyName("criteria")]
     public Operand Criteria { get; set; }
 
 

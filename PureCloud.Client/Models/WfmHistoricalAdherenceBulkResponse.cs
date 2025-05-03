@@ -1,12 +1,12 @@
-using System.Runtime.Serialization;
 using System.Text;
+using System.Text.Json.Serialization;
 
 namespace PureCloud.Client.Models;
 
 /// <summary>
 /// WfmHistoricalAdherenceBulkResponse
 /// </summary>
-[DataContract]
+
 public partial class WfmHistoricalAdherenceBulkResponse : IEquatable<WfmHistoricalAdherenceBulkResponse>
 {
     /// <summary>
@@ -29,7 +29,7 @@ public partial class WfmHistoricalAdherenceBulkResponse : IEquatable<WfmHistoric
     /// A reference to the job that was started by the request
     /// </summary>
     /// <value>A reference to the job that was started by the request</value>
-    [DataMember(Name = "job", EmitDefaultValue = false)]
+    [JsonPropertyName("job")]
     public WfmHistoricalAdherenceBulkJobReference Job { get; set; }
 
 
@@ -38,7 +38,7 @@ public partial class WfmHistoricalAdherenceBulkResponse : IEquatable<WfmHistoric
     /// The uri list to GET the results of the Historical Adherence query. This field is populated only if query state is Complete
     /// </summary>
     /// <value>The uri list to GET the results of the Historical Adherence query. This field is populated only if query state is Complete</value>
-    [DataMember(Name = "downloadUrls", EmitDefaultValue = false)]
+    [JsonPropertyName("downloadUrls")]
     public List<string> DownloadUrls { get; set; }
 
 
@@ -47,7 +47,7 @@ public partial class WfmHistoricalAdherenceBulkResponse : IEquatable<WfmHistoric
     /// Results will always come via downloadUrls; however the schema is included for documentation
     /// </summary>
     /// <value>Results will always come via downloadUrls; however the schema is included for documentation</value>
-    [DataMember(Name = "downloadResult", EmitDefaultValue = false)]
+    [JsonPropertyName("downloadResult")]
     public WfmHistoricalAdherenceBulkResult DownloadResult { get; set; }
 
 

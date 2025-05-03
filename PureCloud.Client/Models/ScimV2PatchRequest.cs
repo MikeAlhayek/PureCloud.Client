@@ -1,4 +1,3 @@
-using System.Runtime.Serialization;
 using System.Text;
 using System.Text.Json.Serialization;
 
@@ -7,7 +6,7 @@ namespace PureCloud.Client.Models;
 /// <summary>
 /// Defines a SCIM PATCH request. See section 3.5.2 \&quot;Modifying with PATCH\&quot; in RFC 7644 for details.
 /// </summary>
-[DataContract]
+
 public partial class ScimV2PatchRequest : IEquatable<ScimV2PatchRequest>
 {
 
@@ -34,7 +33,7 @@ public partial class ScimV2PatchRequest : IEquatable<ScimV2PatchRequest>
     /// The list of schemas used in the PATCH request.
     /// </summary>
     /// <value>The list of schemas used in the PATCH request.</value>
-    [DataMember(Name = "schemas", EmitDefaultValue = false)]
+    [JsonPropertyName("schemas")]
     public List<string> Schemas { get; set; }
 
 
@@ -43,7 +42,7 @@ public partial class ScimV2PatchRequest : IEquatable<ScimV2PatchRequest>
     /// The list of operations to perform for the PATCH request.
     /// </summary>
     /// <value>The list of operations to perform for the PATCH request.</value>
-    [DataMember(Name = "Operations", EmitDefaultValue = false)]
+    [JsonPropertyName("Operations")]
     public List<ScimV2PatchOperation> Operations { get; set; }
 
 

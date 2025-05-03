@@ -7,13 +7,13 @@ namespace PureCloud.Client.Models;
 /// <summary>
 /// JourneyOutcomeEventsNotificationDevice
 /// </summary>
-[DataContract]
+
 public partial class JourneyOutcomeEventsNotificationDevice : IEquatable<JourneyOutcomeEventsNotificationDevice>
 {
     /// <summary>
     /// Gets or Sets Category
     /// </summary>
-    [JsonConverter(typeof(JsonStringEnumConverter))]
+    
     public enum CategoryEnum
     {
         /// <summary>
@@ -51,7 +51,7 @@ public partial class JourneyOutcomeEventsNotificationDevice : IEquatable<Journey
     /// <summary>
     /// Gets or Sets Category
     /// </summary>
-    [DataMember(Name = "category", EmitDefaultValue = false)]
+    [JsonPropertyName("category")]
     public CategoryEnum? Category { get; set; }
     /// <summary>
     /// Initializes a new instance of the <see cref="JourneyOutcomeEventsNotificationDevice" /> class.
@@ -86,7 +86,7 @@ public partial class JourneyOutcomeEventsNotificationDevice : IEquatable<Journey
     /// <summary>
     /// Gets or Sets Type
     /// </summary>
-    [DataMember(Name = "type", EmitDefaultValue = false)]
+    [JsonPropertyName("type")]
     public string Type { get; set; }
 
 
@@ -94,7 +94,7 @@ public partial class JourneyOutcomeEventsNotificationDevice : IEquatable<Journey
     /// <summary>
     /// Gets or Sets IsMobile
     /// </summary>
-    [DataMember(Name = "isMobile", EmitDefaultValue = false)]
+    [JsonPropertyName("isMobile")]
     public bool? IsMobile { get; set; }
 
 
@@ -102,7 +102,7 @@ public partial class JourneyOutcomeEventsNotificationDevice : IEquatable<Journey
     /// <summary>
     /// Gets or Sets ScreenHeight
     /// </summary>
-    [DataMember(Name = "screenHeight", EmitDefaultValue = false)]
+    [JsonPropertyName("screenHeight")]
     public long? ScreenHeight { get; set; }
 
 
@@ -110,7 +110,7 @@ public partial class JourneyOutcomeEventsNotificationDevice : IEquatable<Journey
     /// <summary>
     /// Gets or Sets ScreenWidth
     /// </summary>
-    [DataMember(Name = "screenWidth", EmitDefaultValue = false)]
+    [JsonPropertyName("screenWidth")]
     public long? ScreenWidth { get; set; }
 
 
@@ -118,7 +118,7 @@ public partial class JourneyOutcomeEventsNotificationDevice : IEquatable<Journey
     /// <summary>
     /// Gets or Sets ScreenDensity
     /// </summary>
-    [DataMember(Name = "screenDensity", EmitDefaultValue = false)]
+    [JsonPropertyName("screenDensity")]
     public long? ScreenDensity { get; set; }
 
 
@@ -126,7 +126,7 @@ public partial class JourneyOutcomeEventsNotificationDevice : IEquatable<Journey
     /// <summary>
     /// Gets or Sets Fingerprint
     /// </summary>
-    [DataMember(Name = "fingerprint", EmitDefaultValue = false)]
+    [JsonPropertyName("fingerprint")]
     public string Fingerprint { get; set; }
 
 
@@ -134,7 +134,7 @@ public partial class JourneyOutcomeEventsNotificationDevice : IEquatable<Journey
     /// <summary>
     /// Gets or Sets OsFamily
     /// </summary>
-    [DataMember(Name = "osFamily", EmitDefaultValue = false)]
+    [JsonPropertyName("osFamily")]
     public string OsFamily { get; set; }
 
 
@@ -142,7 +142,7 @@ public partial class JourneyOutcomeEventsNotificationDevice : IEquatable<Journey
     /// <summary>
     /// Gets or Sets OsVersion
     /// </summary>
-    [DataMember(Name = "osVersion", EmitDefaultValue = false)]
+    [JsonPropertyName("osVersion")]
     public string OsVersion { get; set; }
 
 
@@ -152,7 +152,7 @@ public partial class JourneyOutcomeEventsNotificationDevice : IEquatable<Journey
     /// <summary>
     /// Gets or Sets Manufacturer
     /// </summary>
-    [DataMember(Name = "manufacturer", EmitDefaultValue = false)]
+    [JsonPropertyName("manufacturer")]
     public string Manufacturer { get; set; }
 
 

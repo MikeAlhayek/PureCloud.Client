@@ -1,12 +1,12 @@
-using System.Runtime.Serialization;
 using System.Text;
+using System.Text.Json.Serialization;
 
 namespace PureCloud.Client.Models;
 
 /// <summary>
 /// V2WebMessagingUndeliveredMessageTopicWebMessagingUndeliveredMessageEventBody
 /// </summary>
-[DataContract]
+
 public partial class V2WebMessagingUndeliveredMessageTopicWebMessagingUndeliveredMessageEventBody : IEquatable<V2WebMessagingUndeliveredMessageTopicWebMessagingUndeliveredMessageEventBody>
 {
     /// <summary>
@@ -38,7 +38,7 @@ public partial class V2WebMessagingUndeliveredMessageTopicWebMessagingUndelivere
     /// <summary>
     /// Gets or Sets ConversationId
     /// </summary>
-    [DataMember(Name = "conversationId", EmitDefaultValue = false)]
+    [JsonPropertyName("conversationId")]
     public string ConversationId { get; set; }
 
 
@@ -46,7 +46,7 @@ public partial class V2WebMessagingUndeliveredMessageTopicWebMessagingUndelivere
     /// <summary>
     /// Gets or Sets DeploymentId
     /// </summary>
-    [DataMember(Name = "deploymentId", EmitDefaultValue = false)]
+    [JsonPropertyName("deploymentId")]
     public string DeploymentId { get; set; }
 
 
@@ -54,7 +54,7 @@ public partial class V2WebMessagingUndeliveredMessageTopicWebMessagingUndelivere
     /// <summary>
     /// Gets or Sets ParticipantId
     /// </summary>
-    [DataMember(Name = "participantId", EmitDefaultValue = false)]
+    [JsonPropertyName("participantId")]
     public string ParticipantId { get; set; }
 
 
@@ -62,7 +62,7 @@ public partial class V2WebMessagingUndeliveredMessageTopicWebMessagingUndelivere
     /// <summary>
     /// Gets or Sets ExternalContactId
     /// </summary>
-    [DataMember(Name = "externalContactId", EmitDefaultValue = false)]
+    [JsonPropertyName("externalContactId")]
     public string ExternalContactId { get; set; }
 
 
@@ -70,7 +70,7 @@ public partial class V2WebMessagingUndeliveredMessageTopicWebMessagingUndelivere
     /// <summary>
     /// Gets or Sets CommunicationId
     /// </summary>
-    [DataMember(Name = "communicationId", EmitDefaultValue = false)]
+    [JsonPropertyName("communicationId")]
     public string CommunicationId { get; set; }
 
 
@@ -78,7 +78,7 @@ public partial class V2WebMessagingUndeliveredMessageTopicWebMessagingUndelivere
     /// <summary>
     /// Gets or Sets SessionExpiry
     /// </summary>
-    [DataMember(Name = "sessionExpiry", EmitDefaultValue = false)]
+    [JsonPropertyName("sessionExpiry")]
     public long? SessionExpiry { get; set; }
 
 
@@ -86,7 +86,7 @@ public partial class V2WebMessagingUndeliveredMessageTopicWebMessagingUndelivere
     /// <summary>
     /// Gets or Sets Messages
     /// </summary>
-    [DataMember(Name = "messages", EmitDefaultValue = false)]
+    [JsonPropertyName("messages")]
     public List<V2WebMessagingUndeliveredMessageTopicMessage> Messages { get; set; }
 
 
@@ -94,7 +94,7 @@ public partial class V2WebMessagingUndeliveredMessageTopicWebMessagingUndelivere
     /// <summary>
     /// Gets or Sets EventTimeMs
     /// </summary>
-    [DataMember(Name = "eventTimeMs", EmitDefaultValue = false)]
+    [JsonPropertyName("eventTimeMs")]
     public long? EventTimeMs { get; set; }
 
 

@@ -7,14 +7,14 @@ namespace PureCloud.Client.Models;
 /// <summary>
 /// GraphApiSettings
 /// </summary>
-[DataContract]
+
 public partial class GraphApiSettings : IEquatable<GraphApiSettings>
 {
     /// <summary>
     /// Graph API Server Status
     /// </summary>
     /// <value>Graph API Server Status</value>
-    [JsonConverter(typeof(JsonStringEnumConverter))]
+    
     public enum StatusEnum
     {
         /// <summary>
@@ -59,7 +59,7 @@ public partial class GraphApiSettings : IEquatable<GraphApiSettings>
     /// Graph API Server Status
     /// </summary>
     /// <value>Graph API Server Status</value>
-    [DataMember(Name = "status", EmitDefaultValue = false)]
+    [JsonPropertyName("status")]
     public StatusEnum? Status { get; private set; }
     /// <summary>
     /// Initializes a new instance of the <see cref="GraphApiSettings" /> class.
@@ -77,7 +77,7 @@ public partial class GraphApiSettings : IEquatable<GraphApiSettings>
     /// The Graph API server integration to use for emails.
     /// </summary>
     /// <value>The Graph API server integration to use for emails.</value>
-    [DataMember(Name = "integration", EmitDefaultValue = false)]
+    [JsonPropertyName("integration")]
     public DomainEntityRef Integration { get; set; }
 
 
@@ -88,7 +88,7 @@ public partial class GraphApiSettings : IEquatable<GraphApiSettings>
     /// Additional Graph API Server error information
     /// </summary>
     /// <value>Additional Graph API Server error information</value>
-    [DataMember(Name = "errorInfo", EmitDefaultValue = false)]
+    [JsonPropertyName("errorInfo")]
     public EmailErrorInfo ErrorInfo { get; private set; }
 
 

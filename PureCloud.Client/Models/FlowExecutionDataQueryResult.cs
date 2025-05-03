@@ -7,14 +7,14 @@ namespace PureCloud.Client.Models;
 /// <summary>
 /// This is the metadata of an executionData entry for a flow.
 /// </summary>
-[DataContract]
+
 public partial class FlowExecutionDataQueryResult : IEquatable<FlowExecutionDataQueryResult>
 {
     /// <summary>
     /// The type of flow.
     /// </summary>
     /// <value>The type of flow.</value>
-    [JsonConverter(typeof(JsonStringEnumConverter))]
+    
     public enum FlowTypeEnum
     {
         /// <summary>
@@ -137,7 +137,7 @@ public partial class FlowExecutionDataQueryResult : IEquatable<FlowExecutionData
     /// The type of flow.
     /// </summary>
     /// <value>The type of flow.</value>
-    [DataMember(Name = "flowType", EmitDefaultValue = false)]
+    [JsonPropertyName("flowType")]
     public FlowTypeEnum? FlowType { get; set; }
     /// <summary>
     /// Initializes a new instance of the <see cref="FlowExecutionDataQueryResult" /> class.
@@ -175,7 +175,7 @@ public partial class FlowExecutionDataQueryResult : IEquatable<FlowExecutionData
     /// The globally unique identifier for the object.
     /// </summary>
     /// <value>The globally unique identifier for the object.</value>
-    [DataMember(Name = "id", EmitDefaultValue = false)]
+    [JsonPropertyName("id")]
     public string Id { get; private set; }
 
 
@@ -183,7 +183,7 @@ public partial class FlowExecutionDataQueryResult : IEquatable<FlowExecutionData
     /// <summary>
     /// Gets or Sets Name
     /// </summary>
-    [DataMember(Name = "name", EmitDefaultValue = false)]
+    [JsonPropertyName("name")]
     public string Name { get; set; }
 
 
@@ -192,7 +192,7 @@ public partial class FlowExecutionDataQueryResult : IEquatable<FlowExecutionData
     /// The start time for the execution of this flow. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z
     /// </summary>
     /// <value>The start time for the execution of this flow. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z</value>
-    [DataMember(Name = "startDateTime", EmitDefaultValue = false)]
+    [JsonPropertyName("startDateTime")]
     public DateTime? StartDateTime { get; set; }
 
 
@@ -201,7 +201,7 @@ public partial class FlowExecutionDataQueryResult : IEquatable<FlowExecutionData
     /// The end time for the execution of this flow. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z
     /// </summary>
     /// <value>The end time for the execution of this flow. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z</value>
-    [DataMember(Name = "endDateTime", EmitDefaultValue = false)]
+    [JsonPropertyName("endDateTime")]
     public DateTime? EndDateTime { get; set; }
 
 
@@ -210,7 +210,7 @@ public partial class FlowExecutionDataQueryResult : IEquatable<FlowExecutionData
     /// The id of the flow that was executed.
     /// </summary>
     /// <value>The id of the flow that was executed.</value>
-    [DataMember(Name = "flowId", EmitDefaultValue = false)]
+    [JsonPropertyName("flowId")]
     public string FlowId { get; set; }
 
 
@@ -219,7 +219,7 @@ public partial class FlowExecutionDataQueryResult : IEquatable<FlowExecutionData
     /// The version of the flow that was executed.
     /// </summary>
     /// <value>The version of the flow that was executed.</value>
-    [DataMember(Name = "flowVersion", EmitDefaultValue = false)]
+    [JsonPropertyName("flowVersion")]
     public string FlowVersion { get; set; }
 
 
@@ -228,7 +228,7 @@ public partial class FlowExecutionDataQueryResult : IEquatable<FlowExecutionData
     /// The id of the conversation that executed this flow.
     /// </summary>
     /// <value>The id of the conversation that executed this flow.</value>
-    [DataMember(Name = "conversationId", EmitDefaultValue = false)]
+    [JsonPropertyName("conversationId")]
     public string ConversationId { get; set; }
 
 
@@ -237,7 +237,7 @@ public partial class FlowExecutionDataQueryResult : IEquatable<FlowExecutionData
     /// The id of the workitem that executed this flow.
     /// </summary>
     /// <value>The id of the workitem that executed this flow.</value>
-    [DataMember(Name = "workitemId", EmitDefaultValue = false)]
+    [JsonPropertyName("workitemId")]
     public string WorkitemId { get; set; }
 
 
@@ -248,7 +248,7 @@ public partial class FlowExecutionDataQueryResult : IEquatable<FlowExecutionData
     /// If the flow errored out this is the reason.
     /// </summary>
     /// <value>If the flow errored out this is the reason.</value>
-    [DataMember(Name = "flowErrorReason", EmitDefaultValue = false)]
+    [JsonPropertyName("flowErrorReason")]
     public string FlowErrorReason { get; set; }
 
 
@@ -257,7 +257,7 @@ public partial class FlowExecutionDataQueryResult : IEquatable<FlowExecutionData
     /// If the flow had a warning, this is the reason.
     /// </summary>
     /// <value>If the flow had a warning, this is the reason.</value>
-    [DataMember(Name = "flowWarningReason", EmitDefaultValue = false)]
+    [JsonPropertyName("flowWarningReason")]
     public string FlowWarningReason { get; set; }
 
 
@@ -266,7 +266,7 @@ public partial class FlowExecutionDataQueryResult : IEquatable<FlowExecutionData
     /// The name of the flow.
     /// </summary>
     /// <value>The name of the flow.</value>
-    [DataMember(Name = "flowName", EmitDefaultValue = false)]
+    [JsonPropertyName("flowName")]
     public string FlowName { get; set; }
 
 
@@ -275,7 +275,7 @@ public partial class FlowExecutionDataQueryResult : IEquatable<FlowExecutionData
     /// The URI for this object
     /// </summary>
     /// <value>The URI for this object</value>
-    [DataMember(Name = "selfUri", EmitDefaultValue = false)]
+    [JsonPropertyName("selfUri")]
     public string SelfUri { get; private set; }
 
 

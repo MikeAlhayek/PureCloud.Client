@@ -1,12 +1,12 @@
-using System.Runtime.Serialization;
 using System.Text;
+using System.Text.Json.Serialization;
 
 namespace PureCloud.Client.Models;
 
 /// <summary>
 /// DialerRulesetConfigChangeAction
 /// </summary>
-[DataContract]
+
 public partial class DialerRulesetConfigChangeAction : IEquatable<DialerRulesetConfigChangeAction>
 {
     /// <summary>
@@ -33,7 +33,7 @@ public partial class DialerRulesetConfigChangeAction : IEquatable<DialerRulesetC
     /// Type of the action
     /// </summary>
     /// <value>Type of the action</value>
-    [DataMember(Name = "type", EmitDefaultValue = false)]
+    [JsonPropertyName("type")]
     public string Type { get; set; }
 
 
@@ -42,7 +42,7 @@ public partial class DialerRulesetConfigChangeAction : IEquatable<DialerRulesetC
     /// Identifier of the action
     /// </summary>
     /// <value>Identifier of the action</value>
-    [DataMember(Name = "actionTypeName", EmitDefaultValue = false)]
+    [JsonPropertyName("actionTypeName")]
     public string ActionTypeName { get; set; }
 
 
@@ -51,7 +51,7 @@ public partial class DialerRulesetConfigChangeAction : IEquatable<DialerRulesetC
     /// Indicator of the type of update action (applicable only to certain types of actions)
     /// </summary>
     /// <value>Indicator of the type of update action (applicable only to certain types of actions)</value>
-    [DataMember(Name = "updateOption", EmitDefaultValue = false)]
+    [JsonPropertyName("updateOption")]
     public string UpdateOption { get; set; }
 
 
@@ -60,7 +60,7 @@ public partial class DialerRulesetConfigChangeAction : IEquatable<DialerRulesetC
     /// Map of key-value pairs pertinent to the action (different actions require different properties)
     /// </summary>
     /// <value>Map of key-value pairs pertinent to the action (different actions require different properties)</value>
-    [DataMember(Name = "properties", EmitDefaultValue = false)]
+    [JsonPropertyName("properties")]
     public Dictionary<string, string> Properties { get; set; }
 
 
@@ -68,7 +68,7 @@ public partial class DialerRulesetConfigChangeAction : IEquatable<DialerRulesetC
     /// <summary>
     /// Gets or Sets AdditionalProperties
     /// </summary>
-    [DataMember(Name = "additionalProperties", EmitDefaultValue = false)]
+    [JsonPropertyName("additionalProperties")]
     public Dictionary<string, object> AdditionalProperties { get; set; }
 
 

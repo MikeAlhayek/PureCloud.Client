@@ -1,12 +1,12 @@
-using System.Runtime.Serialization;
 using System.Text;
+using System.Text.Json.Serialization;
 
 namespace PureCloud.Client.Models;
 
 /// <summary>
 /// Results from evaluating matching criteria against test input
 /// </summary>
-[DataContract]
+
 public partial class TestMatchesEventOperation : IEquatable<TestMatchesEventOperation>
 {
     /// <summary>
@@ -31,7 +31,7 @@ public partial class TestMatchesEventOperation : IEquatable<TestMatchesEventOper
     /// The name of the processing step
     /// </summary>
     /// <value>The name of the processing step</value>
-    [DataMember(Name = "name", EmitDefaultValue = false)]
+    [JsonPropertyName("name")]
     public string Name { get; set; }
 
 
@@ -40,7 +40,7 @@ public partial class TestMatchesEventOperation : IEquatable<TestMatchesEventOper
     /// The number of the processing step
     /// </summary>
     /// <value>The number of the processing step</value>
-    [DataMember(Name = "step", EmitDefaultValue = false)]
+    [JsonPropertyName("step")]
     public int? Step { get; set; }
 
 
@@ -49,7 +49,7 @@ public partial class TestMatchesEventOperation : IEquatable<TestMatchesEventOper
     /// Triggers that matched
     /// </summary>
     /// <value>Triggers that matched</value>
-    [DataMember(Name = "matchedTriggers", EmitDefaultValue = false)]
+    [JsonPropertyName("matchedTriggers")]
     public List<TestModeTrigger> MatchedTriggers { get; set; }
 
 
@@ -58,7 +58,7 @@ public partial class TestMatchesEventOperation : IEquatable<TestMatchesEventOper
     /// Triggers that did not match
     /// </summary>
     /// <value>Triggers that did not match</value>
-    [DataMember(Name = "unmatchedTriggers", EmitDefaultValue = false)]
+    [JsonPropertyName("unmatchedTriggers")]
     public List<TestModeTrigger> UnmatchedTriggers { get; set; }
 
 

@@ -7,14 +7,14 @@ namespace PureCloud.Client.Models;
 /// <summary>
 /// DomainLogicalInterface
 /// </summary>
-[DataContract]
+
 public partial class DomainLogicalInterface : IEquatable<DomainLogicalInterface>
 {
     /// <summary>
     /// Indicates if the resource is active, inactive, or deleted.
     /// </summary>
     /// <value>Indicates if the resource is active, inactive, or deleted.</value>
-    [JsonConverter(typeof(JsonStringEnumConverter))]
+    
     public enum StateEnum
     {
         /// <summary>
@@ -47,7 +47,7 @@ public partial class DomainLogicalInterface : IEquatable<DomainLogicalInterface>
     /// The type of this network interface.
     /// </summary>
     /// <value>The type of this network interface.</value>
-    [JsonConverter(typeof(JsonStringEnumConverter))]
+    
     public enum InterfaceTypeEnum
     {
         /// <summary>
@@ -73,7 +73,7 @@ public partial class DomainLogicalInterface : IEquatable<DomainLogicalInterface>
     /// <summary>
     /// Gets or Sets CurrentState
     /// </summary>
-    [JsonConverter(typeof(JsonStringEnumConverter))]
+    
     public enum CurrentStateEnum
     {
         /// <summary>
@@ -124,18 +124,18 @@ public partial class DomainLogicalInterface : IEquatable<DomainLogicalInterface>
     /// Indicates if the resource is active, inactive, or deleted.
     /// </summary>
     /// <value>Indicates if the resource is active, inactive, or deleted.</value>
-    [DataMember(Name = "state", EmitDefaultValue = false)]
+    [JsonPropertyName("state")]
     public StateEnum? State { get; private set; }
     /// <summary>
     /// The type of this network interface.
     /// </summary>
     /// <value>The type of this network interface.</value>
-    [DataMember(Name = "interfaceType", EmitDefaultValue = false)]
+    [JsonPropertyName("interfaceType")]
     public InterfaceTypeEnum? InterfaceType { get; private set; }
     /// <summary>
     /// Gets or Sets CurrentState
     /// </summary>
-    [DataMember(Name = "currentState", EmitDefaultValue = false)]
+    [JsonPropertyName("currentState")]
     public CurrentStateEnum? CurrentState { get; set; }
 
     /// <summary>
@@ -219,7 +219,7 @@ public partial class DomainLogicalInterface : IEquatable<DomainLogicalInterface>
     /// The globally unique identifier for the object.
     /// </summary>
     /// <value>The globally unique identifier for the object.</value>
-    [DataMember(Name = "id", EmitDefaultValue = false)]
+    [JsonPropertyName("id")]
     public string Id { get; private set; }
 
 
@@ -228,7 +228,7 @@ public partial class DomainLogicalInterface : IEquatable<DomainLogicalInterface>
     /// The name of the entity.
     /// </summary>
     /// <value>The name of the entity.</value>
-    [DataMember(Name = "name", EmitDefaultValue = false)]
+    [JsonPropertyName("name")]
     public string Name { get; set; }
 
 
@@ -237,7 +237,7 @@ public partial class DomainLogicalInterface : IEquatable<DomainLogicalInterface>
     /// The division to which this entity belongs.
     /// </summary>
     /// <value>The division to which this entity belongs.</value>
-    [DataMember(Name = "division", EmitDefaultValue = false)]
+    [JsonPropertyName("division")]
     public Division Division { get; set; }
 
 
@@ -246,7 +246,7 @@ public partial class DomainLogicalInterface : IEquatable<DomainLogicalInterface>
     /// The resource&#39;s description.
     /// </summary>
     /// <value>The resource&#39;s description.</value>
-    [DataMember(Name = "description", EmitDefaultValue = false)]
+    [JsonPropertyName("description")]
     public string Description { get; set; }
 
 
@@ -255,7 +255,7 @@ public partial class DomainLogicalInterface : IEquatable<DomainLogicalInterface>
     /// The current version of the resource.
     /// </summary>
     /// <value>The current version of the resource.</value>
-    [DataMember(Name = "version", EmitDefaultValue = false)]
+    [JsonPropertyName("version")]
     public int? Version { get; set; }
 
 
@@ -264,7 +264,7 @@ public partial class DomainLogicalInterface : IEquatable<DomainLogicalInterface>
     /// The date the resource was created. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z
     /// </summary>
     /// <value>The date the resource was created. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z</value>
-    [DataMember(Name = "dateCreated", EmitDefaultValue = false)]
+    [JsonPropertyName("dateCreated")]
     public DateTime? DateCreated { get; private set; }
 
 
@@ -273,7 +273,7 @@ public partial class DomainLogicalInterface : IEquatable<DomainLogicalInterface>
     /// The date of the last modification to the resource. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z
     /// </summary>
     /// <value>The date of the last modification to the resource. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z</value>
-    [DataMember(Name = "dateModified", EmitDefaultValue = false)]
+    [JsonPropertyName("dateModified")]
     public DateTime? DateModified { get; private set; }
 
 
@@ -282,7 +282,7 @@ public partial class DomainLogicalInterface : IEquatable<DomainLogicalInterface>
     /// The ID of the user that last modified the resource.
     /// </summary>
     /// <value>The ID of the user that last modified the resource.</value>
-    [DataMember(Name = "modifiedBy", EmitDefaultValue = false)]
+    [JsonPropertyName("modifiedBy")]
     public string ModifiedBy { get; private set; }
 
 
@@ -291,7 +291,7 @@ public partial class DomainLogicalInterface : IEquatable<DomainLogicalInterface>
     /// The ID of the user that created the resource.
     /// </summary>
     /// <value>The ID of the user that created the resource.</value>
-    [DataMember(Name = "createdBy", EmitDefaultValue = false)]
+    [JsonPropertyName("createdBy")]
     public string CreatedBy { get; private set; }
 
 
@@ -302,7 +302,7 @@ public partial class DomainLogicalInterface : IEquatable<DomainLogicalInterface>
     /// The application that last modified the resource.
     /// </summary>
     /// <value>The application that last modified the resource.</value>
-    [DataMember(Name = "modifiedByApp", EmitDefaultValue = false)]
+    [JsonPropertyName("modifiedByApp")]
     public string ModifiedByApp { get; private set; }
 
 
@@ -311,7 +311,7 @@ public partial class DomainLogicalInterface : IEquatable<DomainLogicalInterface>
     /// The application that created the resource.
     /// </summary>
     /// <value>The application that created the resource.</value>
-    [DataMember(Name = "createdByApp", EmitDefaultValue = false)]
+    [JsonPropertyName("createdByApp")]
     public string CreatedByApp { get; private set; }
 
 
@@ -319,7 +319,7 @@ public partial class DomainLogicalInterface : IEquatable<DomainLogicalInterface>
     /// <summary>
     /// Gets or Sets EdgeUri
     /// </summary>
-    [DataMember(Name = "edgeUri", EmitDefaultValue = false)]
+    [JsonPropertyName("edgeUri")]
     public string EdgeUri { get; set; }
 
 
@@ -327,7 +327,7 @@ public partial class DomainLogicalInterface : IEquatable<DomainLogicalInterface>
     /// <summary>
     /// Gets or Sets EdgeAssignedId
     /// </summary>
-    [DataMember(Name = "edgeAssignedId", EmitDefaultValue = false)]
+    [JsonPropertyName("edgeAssignedId")]
     public string EdgeAssignedId { get; set; }
 
 
@@ -336,7 +336,7 @@ public partial class DomainLogicalInterface : IEquatable<DomainLogicalInterface>
     /// Friendly Name
     /// </summary>
     /// <value>Friendly Name</value>
-    [DataMember(Name = "friendlyName", EmitDefaultValue = false)]
+    [JsonPropertyName("friendlyName")]
     public string FriendlyName { get; set; }
 
 
@@ -344,7 +344,7 @@ public partial class DomainLogicalInterface : IEquatable<DomainLogicalInterface>
     /// <summary>
     /// Gets or Sets VlanTagId
     /// </summary>
-    [DataMember(Name = "vlanTagId", EmitDefaultValue = false)]
+    [JsonPropertyName("vlanTagId")]
     public int? VlanTagId { get; set; }
 
 
@@ -353,7 +353,7 @@ public partial class DomainLogicalInterface : IEquatable<DomainLogicalInterface>
     /// Hardware Address
     /// </summary>
     /// <value>Hardware Address</value>
-    [DataMember(Name = "hardwareAddress", EmitDefaultValue = false)]
+    [JsonPropertyName("hardwareAddress")]
     public string HardwareAddress { get; set; }
 
 
@@ -362,7 +362,7 @@ public partial class DomainLogicalInterface : IEquatable<DomainLogicalInterface>
     /// Physical Adapter Id
     /// </summary>
     /// <value>Physical Adapter Id</value>
-    [DataMember(Name = "physicalAdapterId", EmitDefaultValue = false)]
+    [JsonPropertyName("physicalAdapterId")]
     public string PhysicalAdapterId { get; set; }
 
 
@@ -370,7 +370,7 @@ public partial class DomainLogicalInterface : IEquatable<DomainLogicalInterface>
     /// <summary>
     /// Gets or Sets IfStatus
     /// </summary>
-    [DataMember(Name = "ifStatus", EmitDefaultValue = false)]
+    [JsonPropertyName("ifStatus")]
     public string IfStatus { get; set; }
 
 
@@ -381,7 +381,7 @@ public partial class DomainLogicalInterface : IEquatable<DomainLogicalInterface>
     /// IPv4 NENT IP Address
     /// </summary>
     /// <value>IPv4 NENT IP Address</value>
-    [DataMember(Name = "publicNatAddressIpV4", EmitDefaultValue = false)]
+    [JsonPropertyName("publicNatAddressIpV4")]
     public string PublicNatAddressIpV4 { get; set; }
 
 
@@ -390,7 +390,7 @@ public partial class DomainLogicalInterface : IEquatable<DomainLogicalInterface>
     /// IPv6 NENT IP Address
     /// </summary>
     /// <value>IPv6 NENT IP Address</value>
-    [DataMember(Name = "publicNatAddressIpV6", EmitDefaultValue = false)]
+    [JsonPropertyName("publicNatAddressIpV6")]
     public string PublicNatAddressIpV6 { get; set; }
 
 
@@ -399,7 +399,7 @@ public partial class DomainLogicalInterface : IEquatable<DomainLogicalInterface>
     /// The list of routes assigned to this interface.
     /// </summary>
     /// <value>The list of routes assigned to this interface.</value>
-    [DataMember(Name = "routes", EmitDefaultValue = false)]
+    [JsonPropertyName("routes")]
     public List<DomainNetworkRoute> Routes { get; set; }
 
 
@@ -408,7 +408,7 @@ public partial class DomainLogicalInterface : IEquatable<DomainLogicalInterface>
     /// The list of IP addresses on this interface.  Priority of dns addresses are based on order in the list.
     /// </summary>
     /// <value>The list of IP addresses on this interface.  Priority of dns addresses are based on order in the list.</value>
-    [DataMember(Name = "addresses", EmitDefaultValue = false)]
+    [JsonPropertyName("addresses")]
     public List<DomainNetworkAddress> Addresses { get; set; }
 
 
@@ -417,7 +417,7 @@ public partial class DomainLogicalInterface : IEquatable<DomainLogicalInterface>
     /// IPv4 interface settings.
     /// </summary>
     /// <value>IPv4 interface settings.</value>
-    [DataMember(Name = "ipv4Capabilities", EmitDefaultValue = false)]
+    [JsonPropertyName("ipv4Capabilities")]
     public DomainCapabilities Ipv4Capabilities { get; set; }
 
 
@@ -426,7 +426,7 @@ public partial class DomainLogicalInterface : IEquatable<DomainLogicalInterface>
     /// IPv6 interface settings.
     /// </summary>
     /// <value>IPv6 interface settings.</value>
-    [DataMember(Name = "ipv6Capabilities", EmitDefaultValue = false)]
+    [JsonPropertyName("ipv6Capabilities")]
     public DomainCapabilities Ipv6Capabilities { get; set; }
 
 
@@ -436,7 +436,7 @@ public partial class DomainLogicalInterface : IEquatable<DomainLogicalInterface>
     /// <summary>
     /// Gets or Sets LastModifiedUserId
     /// </summary>
-    [DataMember(Name = "lastModifiedUserId", EmitDefaultValue = false)]
+    [JsonPropertyName("lastModifiedUserId")]
     public string LastModifiedUserId { get; set; }
 
 
@@ -444,7 +444,7 @@ public partial class DomainLogicalInterface : IEquatable<DomainLogicalInterface>
     /// <summary>
     /// Gets or Sets LastModifiedCorrelationId
     /// </summary>
-    [DataMember(Name = "lastModifiedCorrelationId", EmitDefaultValue = false)]
+    [JsonPropertyName("lastModifiedCorrelationId")]
     public string LastModifiedCorrelationId { get; set; }
 
 
@@ -452,7 +452,7 @@ public partial class DomainLogicalInterface : IEquatable<DomainLogicalInterface>
     /// <summary>
     /// Gets or Sets CommandResponses
     /// </summary>
-    [DataMember(Name = "commandResponses", EmitDefaultValue = false)]
+    [JsonPropertyName("commandResponses")]
     public List<DomainNetworkCommandResponse> CommandResponses { get; set; }
 
 
@@ -461,7 +461,7 @@ public partial class DomainLogicalInterface : IEquatable<DomainLogicalInterface>
     /// The IPv4 phone trunk base assignment will be inherited from the Edge Group.
     /// </summary>
     /// <value>The IPv4 phone trunk base assignment will be inherited from the Edge Group.</value>
-    [DataMember(Name = "inheritPhoneTrunkBasesIPv4", EmitDefaultValue = false)]
+    [JsonPropertyName("inheritPhoneTrunkBasesIPv4")]
     public bool? InheritPhoneTrunkBasesIPv4 { get; set; }
 
 
@@ -470,7 +470,7 @@ public partial class DomainLogicalInterface : IEquatable<DomainLogicalInterface>
     /// The IPv6 phone trunk base assignment will be inherited from the Edge Group.
     /// </summary>
     /// <value>The IPv6 phone trunk base assignment will be inherited from the Edge Group.</value>
-    [DataMember(Name = "inheritPhoneTrunkBasesIPv6", EmitDefaultValue = false)]
+    [JsonPropertyName("inheritPhoneTrunkBasesIPv6")]
     public bool? InheritPhoneTrunkBasesIPv6 { get; set; }
 
 
@@ -479,7 +479,7 @@ public partial class DomainLogicalInterface : IEquatable<DomainLogicalInterface>
     /// This interface will be used for all internal edge-to-edge communication using settings from the edgeTrunkBaseAssignment on the Edge Group.
     /// </summary>
     /// <value>This interface will be used for all internal edge-to-edge communication using settings from the edgeTrunkBaseAssignment on the Edge Group.</value>
-    [DataMember(Name = "useForInternalEdgeCommunication", EmitDefaultValue = false)]
+    [JsonPropertyName("useForInternalEdgeCommunication")]
     public bool? UseForInternalEdgeCommunication { get; set; }
 
 
@@ -488,7 +488,7 @@ public partial class DomainLogicalInterface : IEquatable<DomainLogicalInterface>
     /// Site Interconnects using the \&quot;Indirect\&quot; method will communicate using the Public IP Address specified on the interface. Use this option when a NAT enabled firewall is between the Edge and the far end.
     /// </summary>
     /// <value>Site Interconnects using the \&quot;Indirect\&quot; method will communicate using the Public IP Address specified on the interface. Use this option when a NAT enabled firewall is between the Edge and the far end.</value>
-    [DataMember(Name = "useForIndirectEdgeCommunication", EmitDefaultValue = false)]
+    [JsonPropertyName("useForIndirectEdgeCommunication")]
     public bool? UseForIndirectEdgeCommunication { get; set; }
 
 
@@ -497,7 +497,7 @@ public partial class DomainLogicalInterface : IEquatable<DomainLogicalInterface>
     /// Site Interconnects using the \&quot;Cloud Proxy\&quot; method will broker the connection between them with a Cloud Proxy. This method is required for connections between one or more Sites using Cloud Media, but can optionally be used between two premises Sites if Direct or Indirect are not an option.
     /// </summary>
     /// <value>Site Interconnects using the \&quot;Cloud Proxy\&quot; method will broker the connection between them with a Cloud Proxy. This method is required for connections between one or more Sites using Cloud Media, but can optionally be used between two premises Sites if Direct or Indirect are not an option.</value>
-    [DataMember(Name = "useForCloudProxyEdgeCommunication", EmitDefaultValue = false)]
+    [JsonPropertyName("useForCloudProxyEdgeCommunication")]
     public bool? UseForCloudProxyEdgeCommunication { get; set; }
 
 
@@ -506,7 +506,7 @@ public partial class DomainLogicalInterface : IEquatable<DomainLogicalInterface>
     /// This interface will be used for all communication with the internet.
     /// </summary>
     /// <value>This interface will be used for all communication with the internet.</value>
-    [DataMember(Name = "useForWanInterface", EmitDefaultValue = false)]
+    [JsonPropertyName("useForWanInterface")]
     public bool? UseForWanInterface { get; private set; }
 
 
@@ -515,7 +515,7 @@ public partial class DomainLogicalInterface : IEquatable<DomainLogicalInterface>
     /// External trunk base settings to use for external communication from this interface.
     /// </summary>
     /// <value>External trunk base settings to use for external communication from this interface.</value>
-    [DataMember(Name = "externalTrunkBaseAssignments", EmitDefaultValue = false)]
+    [JsonPropertyName("externalTrunkBaseAssignments")]
     public List<TrunkBaseAssignment> ExternalTrunkBaseAssignments { get; set; }
 
 
@@ -524,7 +524,7 @@ public partial class DomainLogicalInterface : IEquatable<DomainLogicalInterface>
     /// Phone trunk base settings to use for phone communication from this interface.  These settings will be ignored when \&quot;inheritPhoneTrunkBases\&quot; is true.
     /// </summary>
     /// <value>Phone trunk base settings to use for phone communication from this interface.  These settings will be ignored when \&quot;inheritPhoneTrunkBases\&quot; is true.</value>
-    [DataMember(Name = "phoneTrunkBaseAssignments", EmitDefaultValue = false)]
+    [JsonPropertyName("phoneTrunkBaseAssignments")]
     public List<TrunkBaseAssignment> PhoneTrunkBaseAssignments { get; set; }
 
 
@@ -532,7 +532,7 @@ public partial class DomainLogicalInterface : IEquatable<DomainLogicalInterface>
     /// <summary>
     /// Gets or Sets TraceEnabled
     /// </summary>
-    [DataMember(Name = "traceEnabled", EmitDefaultValue = false)]
+    [JsonPropertyName("traceEnabled")]
     public bool? TraceEnabled { get; set; }
 
 
@@ -541,7 +541,7 @@ public partial class DomainLogicalInterface : IEquatable<DomainLogicalInterface>
     /// Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z
     /// </summary>
     /// <value>Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z</value>
-    [DataMember(Name = "startDate", EmitDefaultValue = false)]
+    [JsonPropertyName("startDate")]
     public DateTime? StartDate { get; set; }
 
 
@@ -550,7 +550,7 @@ public partial class DomainLogicalInterface : IEquatable<DomainLogicalInterface>
     /// Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z
     /// </summary>
     /// <value>Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z</value>
-    [DataMember(Name = "endDate", EmitDefaultValue = false)]
+    [JsonPropertyName("endDate")]
     public DateTime? EndDate { get; set; }
 
 
@@ -559,7 +559,7 @@ public partial class DomainLogicalInterface : IEquatable<DomainLogicalInterface>
     /// The URI for this object
     /// </summary>
     /// <value>The URI for this object</value>
-    [DataMember(Name = "selfUri", EmitDefaultValue = false)]
+    [JsonPropertyName("selfUri")]
     public string SelfUri { get; private set; }
 
 

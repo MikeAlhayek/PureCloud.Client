@@ -1,12 +1,12 @@
-using System.Runtime.Serialization;
 using System.Text;
+using System.Text.Json.Serialization;
 
 namespace PureCloud.Client.Models;
 
 /// <summary>
 /// LicenseOrgToggle
 /// </summary>
-[DataContract]
+
 public partial class LicenseOrgToggle : IEquatable<LicenseOrgToggle>
 {
     /// <summary>
@@ -26,7 +26,7 @@ public partial class LicenseOrgToggle : IEquatable<LicenseOrgToggle>
     /// <summary>
     /// Gets or Sets FeatureName
     /// </summary>
-    [DataMember(Name = "featureName", EmitDefaultValue = false)]
+    [JsonPropertyName("featureName")]
     public string FeatureName { get; set; }
 
 
@@ -34,7 +34,7 @@ public partial class LicenseOrgToggle : IEquatable<LicenseOrgToggle>
     /// <summary>
     /// Gets or Sets Enabled
     /// </summary>
-    [DataMember(Name = "enabled", EmitDefaultValue = false)]
+    [JsonPropertyName("enabled")]
     public bool? Enabled { get; set; }
 
 

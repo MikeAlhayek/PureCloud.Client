@@ -1,12 +1,12 @@
-using System.Runtime.Serialization;
 using System.Text;
+using System.Text.Json.Serialization;
 
 namespace PureCloud.Client.Models;
 
 /// <summary>
 /// RecipientFlow
 /// </summary>
-[DataContract]
+
 public partial class RecipientFlow : IEquatable<RecipientFlow>
 {
     /// <summary>
@@ -25,7 +25,7 @@ public partial class RecipientFlow : IEquatable<RecipientFlow>
     /// The flow identifier
     /// </summary>
     /// <value>The flow identifier</value>
-    [DataMember(Name = "id", EmitDefaultValue = false)]
+    [JsonPropertyName("id")]
     public string Id { get; set; }
 
 

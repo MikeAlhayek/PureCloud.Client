@@ -1,4 +1,3 @@
-using System.Runtime.Serialization;
 using System.Text;
 using System.Text.Json.Serialization;
 
@@ -7,7 +6,7 @@ namespace PureCloud.Client.Models;
 /// <summary>
 /// CreatePerformanceProfile
 /// </summary>
-[DataContract]
+
 public partial class CreatePerformanceProfile : IEquatable<CreatePerformanceProfile>
 {
 
@@ -42,7 +41,7 @@ public partial class CreatePerformanceProfile : IEquatable<CreatePerformanceProf
     /// The globally unique identifier for the object.
     /// </summary>
     /// <value>The globally unique identifier for the object.</value>
-    [DataMember(Name = "id", EmitDefaultValue = false)]
+    [JsonPropertyName("id")]
     public string Id { get; private set; }
 
 
@@ -51,7 +50,7 @@ public partial class CreatePerformanceProfile : IEquatable<CreatePerformanceProf
     /// A name for this performance profile
     /// </summary>
     /// <value>A name for this performance profile</value>
-    [DataMember(Name = "name", EmitDefaultValue = false)]
+    [JsonPropertyName("name")]
     public string Name { get; set; }
 
 
@@ -60,7 +59,7 @@ public partial class CreatePerformanceProfile : IEquatable<CreatePerformanceProf
     /// The associated division for this Performance Profile
     /// </summary>
     /// <value>The associated division for this Performance Profile</value>
-    [DataMember(Name = "division", EmitDefaultValue = false)]
+    [JsonPropertyName("division")]
     public WritableDivision Division { get; set; }
 
 
@@ -69,7 +68,7 @@ public partial class CreatePerformanceProfile : IEquatable<CreatePerformanceProf
     /// A description about this performance profile
     /// </summary>
     /// <value>A description about this performance profile</value>
-    [DataMember(Name = "description", EmitDefaultValue = false)]
+    [JsonPropertyName("description")]
     public string Description { get; set; }
 
 
@@ -78,7 +77,7 @@ public partial class CreatePerformanceProfile : IEquatable<CreatePerformanceProf
     /// Order of the associated metrics. The list should contain valid ids for metrics
     /// </summary>
     /// <value>Order of the associated metrics. The list should contain valid ids for metrics</value>
-    [DataMember(Name = "metricOrders", EmitDefaultValue = false)]
+    [JsonPropertyName("metricOrders")]
     public List<string> MetricOrders { get; private set; }
 
 
@@ -87,7 +86,7 @@ public partial class CreatePerformanceProfile : IEquatable<CreatePerformanceProf
     /// Creation date for this performance profile. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z
     /// </summary>
     /// <value>Creation date for this performance profile. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z</value>
-    [DataMember(Name = "dateCreated", EmitDefaultValue = false)]
+    [JsonPropertyName("dateCreated")]
     public DateTime? DateCreated { get; private set; }
 
 
@@ -96,7 +95,7 @@ public partial class CreatePerformanceProfile : IEquatable<CreatePerformanceProf
     /// The reporting interval periods for this performance profile
     /// </summary>
     /// <value>The reporting interval periods for this performance profile</value>
-    [DataMember(Name = "reportingIntervals", EmitDefaultValue = false)]
+    [JsonPropertyName("reportingIntervals")]
     public List<ReportingInterval> ReportingIntervals { get; set; }
 
 
@@ -105,7 +104,7 @@ public partial class CreatePerformanceProfile : IEquatable<CreatePerformanceProf
     /// The flag for active profiles
     /// </summary>
     /// <value>The flag for active profiles</value>
-    [DataMember(Name = "active", EmitDefaultValue = false)]
+    [JsonPropertyName("active")]
     public bool? Active { get; set; }
 
 
@@ -114,7 +113,7 @@ public partial class CreatePerformanceProfile : IEquatable<CreatePerformanceProf
     /// The number of members in this performance profile
     /// </summary>
     /// <value>The number of members in this performance profile</value>
-    [DataMember(Name = "memberCount", EmitDefaultValue = false)]
+    [JsonPropertyName("memberCount")]
     public int? MemberCount { get; private set; }
 
 
@@ -123,7 +122,7 @@ public partial class CreatePerformanceProfile : IEquatable<CreatePerformanceProf
     /// The maximum rank size for the leaderboard. This counts the number of ranks can be retrieved in a leaderboard queries
     /// </summary>
     /// <value>The maximum rank size for the leaderboard. This counts the number of ranks can be retrieved in a leaderboard queries</value>
-    [DataMember(Name = "maxLeaderboardRankSize", EmitDefaultValue = false)]
+    [JsonPropertyName("maxLeaderboardRankSize")]
     public int? MaxLeaderboardRankSize { get; set; }
 
 
@@ -132,7 +131,7 @@ public partial class CreatePerformanceProfile : IEquatable<CreatePerformanceProf
     /// The URI for this object
     /// </summary>
     /// <value>The URI for this object</value>
-    [DataMember(Name = "selfUri", EmitDefaultValue = false)]
+    [JsonPropertyName("selfUri")]
     public string SelfUri { get; private set; }
 
 

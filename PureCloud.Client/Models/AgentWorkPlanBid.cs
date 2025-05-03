@@ -7,14 +7,14 @@ namespace PureCloud.Client.Models;
 /// <summary>
 /// Work plan bid reference
 /// </summary>
-[DataContract]
+
 public partial class AgentWorkPlanBid : IEquatable<AgentWorkPlanBid>
 {
     /// <summary>
     /// The state of the bid
     /// </summary>
     /// <value>The state of the bid</value>
-    [JsonConverter(typeof(JsonStringEnumConverter))]
+    
     public enum StatusEnum
     {
         /// <summary>
@@ -76,7 +76,7 @@ public partial class AgentWorkPlanBid : IEquatable<AgentWorkPlanBid>
     /// <summary>
     /// Gets or Sets WorkPlanFieldsVisibleToAgents
     /// </summary>
-    [JsonConverter(typeof(JsonStringEnumConverter))]
+    
     public enum WorkPlanFieldsVisibleToAgentsEnum
     {
         /// <summary>
@@ -103,7 +103,7 @@ public partial class AgentWorkPlanBid : IEquatable<AgentWorkPlanBid>
     /// The state of the bid
     /// </summary>
     /// <value>The state of the bid</value>
-    [DataMember(Name = "status", EmitDefaultValue = false)]
+    [JsonPropertyName("status")]
     public StatusEnum? Status { get; set; }
 
     /// <summary>
@@ -139,7 +139,7 @@ public partial class AgentWorkPlanBid : IEquatable<AgentWorkPlanBid>
     /// The ID of the work plan bid
     /// </summary>
     /// <value>The ID of the work plan bid</value>
-    [DataMember(Name = "id", EmitDefaultValue = false)]
+    [JsonPropertyName("id")]
     public string Id { get; set; }
 
 
@@ -147,7 +147,7 @@ public partial class AgentWorkPlanBid : IEquatable<AgentWorkPlanBid>
     /// <summary>
     /// Gets or Sets Name
     /// </summary>
-    [DataMember(Name = "name", EmitDefaultValue = false)]
+    [JsonPropertyName("name")]
     public string Name { get; set; }
 
 
@@ -156,7 +156,7 @@ public partial class AgentWorkPlanBid : IEquatable<AgentWorkPlanBid>
     /// The date when agents can start participating in work plan bidding. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd
     /// </summary>
     /// <value>The date when agents can start participating in work plan bidding. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd</value>
-    [DataMember(Name = "bidWindowStartDate", EmitDefaultValue = false)]
+    [JsonPropertyName("bidWindowStartDate")]
     public string BidWindowStartDate { get; set; }
 
 
@@ -165,7 +165,7 @@ public partial class AgentWorkPlanBid : IEquatable<AgentWorkPlanBid>
     /// The inclusive end date of a bid window. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd
     /// </summary>
     /// <value>The inclusive end date of a bid window. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd</value>
-    [DataMember(Name = "bidWindowEndDate", EmitDefaultValue = false)]
+    [JsonPropertyName("bidWindowEndDate")]
     public string BidWindowEndDate { get; set; }
 
 
@@ -174,7 +174,7 @@ public partial class AgentWorkPlanBid : IEquatable<AgentWorkPlanBid>
     /// The date when agents will be assigned to the new work plan. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd
     /// </summary>
     /// <value>The date when agents will be assigned to the new work plan. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd</value>
-    [DataMember(Name = "effectiveDate", EmitDefaultValue = false)]
+    [JsonPropertyName("effectiveDate")]
     public string EffectiveDate { get; set; }
 
 
@@ -185,7 +185,7 @@ public partial class AgentWorkPlanBid : IEquatable<AgentWorkPlanBid>
     /// The work plan fields visible to agents whenever work plan preferences are made
     /// </summary>
     /// <value>The work plan fields visible to agents whenever work plan preferences are made</value>
-    [DataMember(Name = "workPlanFieldsVisibleToAgents", EmitDefaultValue = false)]
+    [JsonPropertyName("workPlanFieldsVisibleToAgents")]
     public List<WorkPlanFieldsVisibleToAgentsEnum> WorkPlanFieldsVisibleToAgents { get; set; }
 
 
@@ -194,7 +194,7 @@ public partial class AgentWorkPlanBid : IEquatable<AgentWorkPlanBid>
     /// The URI for this object
     /// </summary>
     /// <value>The URI for this object</value>
-    [DataMember(Name = "selfUri", EmitDefaultValue = false)]
+    [JsonPropertyName("selfUri")]
     public string SelfUri { get; private set; }
 
 

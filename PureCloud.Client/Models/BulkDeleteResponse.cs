@@ -1,12 +1,12 @@
-using System.Runtime.Serialization;
 using System.Text;
+using System.Text.Json.Serialization;
 
 namespace PureCloud.Client.Models;
 
 /// <summary>
 /// BulkDeleteResponse
 /// </summary>
-[DataContract]
+
 public partial class BulkDeleteResponse : IEquatable<BulkDeleteResponse>
 {
     /// <summary>
@@ -29,7 +29,7 @@ public partial class BulkDeleteResponse : IEquatable<BulkDeleteResponse>
     /// A list of results for all of the Bulk operations specified in the request. Includes both successes and failures. Ordering is NOT guaranteed - may be in a different order from the request.
     /// </summary>
     /// <value>A list of results for all of the Bulk operations specified in the request. Includes both successes and failures. Ordering is NOT guaranteed - may be in a different order from the request.</value>
-    [DataMember(Name = "results", EmitDefaultValue = false)]
+    [JsonPropertyName("results")]
     public List<BulkResponseResultVoidEntityBulkEntityErrorEntity> Results { get; set; }
 
 
@@ -38,7 +38,7 @@ public partial class BulkDeleteResponse : IEquatable<BulkDeleteResponse>
     /// The number of failed operations in the results.
     /// </summary>
     /// <value>The number of failed operations in the results.</value>
-    [DataMember(Name = "errorCount", EmitDefaultValue = false)]
+    [JsonPropertyName("errorCount")]
     public int? ErrorCount { get; set; }
 
 
@@ -47,7 +47,7 @@ public partial class BulkDeleteResponse : IEquatable<BulkDeleteResponse>
     /// The indexes of all failed operations in the results field.
     /// </summary>
     /// <value>The indexes of all failed operations in the results field.</value>
-    [DataMember(Name = "errorIndexes", EmitDefaultValue = false)]
+    [JsonPropertyName("errorIndexes")]
     public List<int?> ErrorIndexes { get; set; }
 
 

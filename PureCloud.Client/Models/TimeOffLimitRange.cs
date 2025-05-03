@@ -7,14 +7,14 @@ namespace PureCloud.Client.Models;
 /// <summary>
 /// TimeOffLimitRange
 /// </summary>
-[DataContract]
+
 public partial class TimeOffLimitRange : IEquatable<TimeOffLimitRange>
 {
     /// <summary>
     /// Granularity choice for the time off limit
     /// </summary>
     /// <value>Granularity choice for the time off limit</value>
-    [JsonConverter(typeof(JsonStringEnumConverter))]
+    
     public enum GranularityEnum
     {
         /// <summary>
@@ -35,7 +35,7 @@ public partial class TimeOffLimitRange : IEquatable<TimeOffLimitRange>
     /// Granularity choice for the time off limit
     /// </summary>
     /// <value>Granularity choice for the time off limit</value>
-    [DataMember(Name = "granularity", EmitDefaultValue = false)]
+    [JsonPropertyName("granularity")]
     public GranularityEnum? Granularity { get; set; }
 
     /// <summary>
@@ -63,7 +63,7 @@ public partial class TimeOffLimitRange : IEquatable<TimeOffLimitRange>
     /// Start date of the range. The end date is determined by &#39;granularity&#39; and the size of &#39;limitMinutesPerInterval&#39;. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd
     /// </summary>
     /// <value>Start date of the range. The end date is determined by &#39;granularity&#39; and the size of &#39;limitMinutesPerInterval&#39;. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd</value>
-    [DataMember(Name = "startDate", EmitDefaultValue = false)]
+    [JsonPropertyName("startDate")]
     public string StartDate { get; set; }
 
 
@@ -74,7 +74,7 @@ public partial class TimeOffLimitRange : IEquatable<TimeOffLimitRange>
     /// The list of time off limit values in minutes per granularity interval. If &#39;null&#39; is specified, then interval specific value is cleared. Such interval will have &#39;defaultLimitMinutes&#39; value
     /// </summary>
     /// <value>The list of time off limit values in minutes per granularity interval. If &#39;null&#39; is specified, then interval specific value is cleared. Such interval will have &#39;defaultLimitMinutes&#39; value</value>
-    [DataMember(Name = "limitMinutesPerInterval", EmitDefaultValue = false)]
+    [JsonPropertyName("limitMinutesPerInterval")]
     public List<int?> LimitMinutesPerInterval { get; set; }
 
 

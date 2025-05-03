@@ -1,4 +1,3 @@
-using System.Runtime.Serialization;
 using System.Text;
 using System.Text.Json.Serialization;
 
@@ -7,7 +6,7 @@ namespace PureCloud.Client.Models;
 /// <summary>
 /// ActionMapScheduleGroups
 /// </summary>
-[DataContract]
+
 public partial class ActionMapScheduleGroups : IEquatable<ActionMapScheduleGroups>
 {
 
@@ -34,7 +33,7 @@ public partial class ActionMapScheduleGroups : IEquatable<ActionMapScheduleGroup
     /// The actions map&#39;s associated schedule group.
     /// </summary>
     /// <value>The actions map&#39;s associated schedule group.</value>
-    [DataMember(Name = "actionMapScheduleGroup", EmitDefaultValue = false)]
+    [JsonPropertyName("actionMapScheduleGroup")]
     public ActionMapScheduleGroup ActionMapScheduleGroup { get; set; }
 
 
@@ -43,7 +42,7 @@ public partial class ActionMapScheduleGroups : IEquatable<ActionMapScheduleGroup
     /// The action map&#39;s associated emergency schedule group.
     /// </summary>
     /// <value>The action map&#39;s associated emergency schedule group.</value>
-    [DataMember(Name = "emergencyActionMapScheduleGroup", EmitDefaultValue = false)]
+    [JsonPropertyName("emergencyActionMapScheduleGroup")]
     public ActionMapScheduleGroup EmergencyActionMapScheduleGroup { get; set; }
 
 

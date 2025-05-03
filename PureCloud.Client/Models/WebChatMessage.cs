@@ -7,14 +7,14 @@ namespace PureCloud.Client.Models;
 /// <summary>
 /// WebChatMessage
 /// </summary>
-[DataContract]
+
 public partial class WebChatMessage : IEquatable<WebChatMessage>
 {
     /// <summary>
     /// The purpose of the message within the conversation, such as a standard text entry versus a greeting.
     /// </summary>
     /// <value>The purpose of the message within the conversation, such as a standard text entry versus a greeting.</value>
-    [JsonConverter(typeof(JsonStringEnumConverter))]
+    
     public enum BodyTypeEnum
     {
         /// <summary>
@@ -59,7 +59,7 @@ public partial class WebChatMessage : IEquatable<WebChatMessage>
     /// The purpose of the message within the conversation, such as a standard text entry versus a greeting.
     /// </summary>
     /// <value>The purpose of the message within the conversation, such as a standard text entry versus a greeting.</value>
-    [DataMember(Name = "bodyType", EmitDefaultValue = false)]
+    [JsonPropertyName("bodyType")]
     public BodyTypeEnum? BodyType { get; set; }
 
     /// <summary>
@@ -93,7 +93,7 @@ public partial class WebChatMessage : IEquatable<WebChatMessage>
     /// The globally unique identifier for the object.
     /// </summary>
     /// <value>The globally unique identifier for the object.</value>
-    [DataMember(Name = "id", EmitDefaultValue = false)]
+    [JsonPropertyName("id")]
     public string Id { get; private set; }
 
 
@@ -101,7 +101,7 @@ public partial class WebChatMessage : IEquatable<WebChatMessage>
     /// <summary>
     /// Gets or Sets Name
     /// </summary>
-    [DataMember(Name = "name", EmitDefaultValue = false)]
+    [JsonPropertyName("name")]
     public string Name { get; set; }
 
 
@@ -110,7 +110,7 @@ public partial class WebChatMessage : IEquatable<WebChatMessage>
     /// The identifier of the conversation
     /// </summary>
     /// <value>The identifier of the conversation</value>
-    [DataMember(Name = "conversation", EmitDefaultValue = false)]
+    [JsonPropertyName("conversation")]
     public WebChatConversation Conversation { get; set; }
 
 
@@ -119,7 +119,7 @@ public partial class WebChatMessage : IEquatable<WebChatMessage>
     /// The member who sent the message
     /// </summary>
     /// <value>The member who sent the message</value>
-    [DataMember(Name = "sender", EmitDefaultValue = false)]
+    [JsonPropertyName("sender")]
     public WebChatMemberInfo Sender { get; set; }
 
 
@@ -128,7 +128,7 @@ public partial class WebChatMessage : IEquatable<WebChatMessage>
     /// The message body.
     /// </summary>
     /// <value>The message body.</value>
-    [DataMember(Name = "body", EmitDefaultValue = false)]
+    [JsonPropertyName("body")]
     public string Body { get; set; }
 
 
@@ -139,7 +139,7 @@ public partial class WebChatMessage : IEquatable<WebChatMessage>
     /// The timestamp of the message, in ISO-8601 format
     /// </summary>
     /// <value>The timestamp of the message, in ISO-8601 format</value>
-    [DataMember(Name = "timestamp", EmitDefaultValue = false)]
+    [JsonPropertyName("timestamp")]
     public DateTime? Timestamp { get; set; }
 
 
@@ -148,7 +148,7 @@ public partial class WebChatMessage : IEquatable<WebChatMessage>
     /// The URI for this object
     /// </summary>
     /// <value>The URI for this object</value>
-    [DataMember(Name = "selfUri", EmitDefaultValue = false)]
+    [JsonPropertyName("selfUri")]
     public string SelfUri { get; private set; }
 
 

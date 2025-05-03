@@ -1,12 +1,12 @@
-using System.Runtime.Serialization;
 using System.Text;
+using System.Text.Json.Serialization;
 
 namespace PureCloud.Client.Models;
 
 /// <summary>
 /// TransferDestination
 /// </summary>
-[DataContract]
+
 public partial class TransferDestination : IEquatable<TransferDestination>
 {
     /// <summary>
@@ -27,7 +27,7 @@ public partial class TransferDestination : IEquatable<TransferDestination>
     /// The id of the user if the command destination is a user.
     /// </summary>
     /// <value>The id of the user if the command destination is a user.</value>
-    [DataMember(Name = "userId", EmitDefaultValue = false)]
+    [JsonPropertyName("userId")]
     public string UserId { get; set; }
 
 
@@ -36,7 +36,7 @@ public partial class TransferDestination : IEquatable<TransferDestination>
     /// The destination address if the command destination is an endpoint.
     /// </summary>
     /// <value>The destination address if the command destination is an endpoint.</value>
-    [DataMember(Name = "address", EmitDefaultValue = false)]
+    [JsonPropertyName("address")]
     public string Address { get; set; }
 
 

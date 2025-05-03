@@ -1,12 +1,12 @@
-using System.Runtime.Serialization;
 using System.Text;
+using System.Text.Json.Serialization;
 
 namespace PureCloud.Client.Models;
 
 /// <summary>
 /// UserConversationsEventMediaSummary
 /// </summary>
-[DataContract]
+
 public partial class UserConversationsEventMediaSummary : IEquatable<UserConversationsEventMediaSummary>
 {
     /// <summary>
@@ -26,7 +26,7 @@ public partial class UserConversationsEventMediaSummary : IEquatable<UserConvers
     /// <summary>
     /// Gets or Sets ContactCenter
     /// </summary>
-    [DataMember(Name = "contactCenter", EmitDefaultValue = false)]
+    [JsonPropertyName("contactCenter")]
     public UserConversationsEventMediaSummaryDetail ContactCenter { get; set; }
 
 
@@ -34,7 +34,7 @@ public partial class UserConversationsEventMediaSummary : IEquatable<UserConvers
     /// <summary>
     /// Gets or Sets Enterprise
     /// </summary>
-    [DataMember(Name = "enterprise", EmitDefaultValue = false)]
+    [JsonPropertyName("enterprise")]
     public UserConversationsEventMediaSummaryDetail Enterprise { get; set; }
 
 

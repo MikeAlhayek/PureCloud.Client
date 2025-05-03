@@ -1,12 +1,12 @@
-using System.Runtime.Serialization;
 using System.Text;
+using System.Text.Json.Serialization;
 
 namespace PureCloud.Client.Models;
 
 /// <summary>
 /// HistoricalImportStatusJobResponse
 /// </summary>
-[DataContract]
+
 public partial class HistoricalImportStatusJobResponse : IEquatable<HistoricalImportStatusJobResponse>
 {
     /// <summary>
@@ -25,7 +25,7 @@ public partial class HistoricalImportStatusJobResponse : IEquatable<HistoricalIm
     /// The job id for the import request
     /// </summary>
     /// <value>The job id for the import request</value>
-    [DataMember(Name = "id", EmitDefaultValue = false)]
+    [JsonPropertyName("id")]
     public string Id { get; private set; }
 
 
@@ -34,7 +34,7 @@ public partial class HistoricalImportStatusJobResponse : IEquatable<HistoricalIm
     /// The historical import status result of the import job
     /// </summary>
     /// <value>The historical import status result of the import job</value>
-    [DataMember(Name = "importStatusResult", EmitDefaultValue = false)]
+    [JsonPropertyName("importStatusResult")]
     public HistoricalImportStatus ImportStatusResult { get; set; }
 
 
@@ -43,7 +43,7 @@ public partial class HistoricalImportStatusJobResponse : IEquatable<HistoricalIm
     /// The URI for this object
     /// </summary>
     /// <value>The URI for this object</value>
-    [DataMember(Name = "selfUri", EmitDefaultValue = false)]
+    [JsonPropertyName("selfUri")]
     public string SelfUri { get; private set; }
 
 

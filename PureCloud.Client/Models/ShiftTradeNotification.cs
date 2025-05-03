@@ -7,14 +7,14 @@ namespace PureCloud.Client.Models;
 /// <summary>
 /// ShiftTradeNotification
 /// </summary>
-[DataContract]
+
 public partial class ShiftTradeNotification : IEquatable<ShiftTradeNotification>
 {
     /// <summary>
     /// The new state of the shift trade, null if there was no change
     /// </summary>
     /// <value>The new state of the shift trade, null if there was no change</value>
-    [JsonConverter(typeof(JsonStringEnumConverter))]
+    
     public enum NewStateEnum
     {
         /// <summary>
@@ -65,7 +65,7 @@ public partial class ShiftTradeNotification : IEquatable<ShiftTradeNotification>
     /// The new state of the shift trade, null if there was no change
     /// </summary>
     /// <value>The new state of the shift trade, null if there was no change</value>
-    [DataMember(Name = "newState", EmitDefaultValue = false)]
+    [JsonPropertyName("newState")]
     public NewStateEnum? NewState { get; set; }
     /// <summary>
     /// Initializes a new instance of the <see cref="ShiftTradeNotification" /> class.
@@ -97,7 +97,7 @@ public partial class ShiftTradeNotification : IEquatable<ShiftTradeNotification>
     /// The start week date of the initiating shift of the shift trade in yyyy-MM-dd format
     /// </summary>
     /// <value>The start week date of the initiating shift of the shift trade in yyyy-MM-dd format</value>
-    [DataMember(Name = "weekDate", EmitDefaultValue = false)]
+    [JsonPropertyName("weekDate")]
     public string WeekDate { get; set; }
 
 
@@ -106,7 +106,7 @@ public partial class ShiftTradeNotification : IEquatable<ShiftTradeNotification>
     /// The ID of the shift trade
     /// </summary>
     /// <value>The ID of the shift trade</value>
-    [DataMember(Name = "tradeId", EmitDefaultValue = false)]
+    [JsonPropertyName("tradeId")]
     public string TradeId { get; set; }
 
 
@@ -115,7 +115,7 @@ public partial class ShiftTradeNotification : IEquatable<ShiftTradeNotification>
     /// Whether this is a one sided shift trade
     /// </summary>
     /// <value>Whether this is a one sided shift trade</value>
-    [DataMember(Name = "oneSided", EmitDefaultValue = false)]
+    [JsonPropertyName("oneSided")]
     public bool? OneSided { get; set; }
 
 
@@ -126,7 +126,7 @@ public partial class ShiftTradeNotification : IEquatable<ShiftTradeNotification>
     /// The user who initiated the shift trade
     /// </summary>
     /// <value>The user who initiated the shift trade</value>
-    [DataMember(Name = "initiatingUser", EmitDefaultValue = false)]
+    [JsonPropertyName("initiatingUser")]
     public UserReference InitiatingUser { get; set; }
 
 
@@ -135,7 +135,7 @@ public partial class ShiftTradeNotification : IEquatable<ShiftTradeNotification>
     /// The start date and time of the initiating shift. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z
     /// </summary>
     /// <value>The start date and time of the initiating shift. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z</value>
-    [DataMember(Name = "initiatingShiftDate", EmitDefaultValue = false)]
+    [JsonPropertyName("initiatingShiftDate")]
     public DateTime? InitiatingShiftDate { get; set; }
 
 
@@ -144,7 +144,7 @@ public partial class ShiftTradeNotification : IEquatable<ShiftTradeNotification>
     /// The user on the receiving side of this shift trade (null if not matched)
     /// </summary>
     /// <value>The user on the receiving side of this shift trade (null if not matched)</value>
-    [DataMember(Name = "receivingUser", EmitDefaultValue = false)]
+    [JsonPropertyName("receivingUser")]
     public UserReference ReceivingUser { get; set; }
 
 
@@ -153,7 +153,7 @@ public partial class ShiftTradeNotification : IEquatable<ShiftTradeNotification>
     /// The start date and time of the receiving shift (null if not matched or if one-sided. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z
     /// </summary>
     /// <value>The start date and time of the receiving shift (null if not matched or if one-sided. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z</value>
-    [DataMember(Name = "receivingShiftDate", EmitDefaultValue = false)]
+    [JsonPropertyName("receivingShiftDate")]
     public DateTime? ReceivingShiftDate { get; set; }
 
 

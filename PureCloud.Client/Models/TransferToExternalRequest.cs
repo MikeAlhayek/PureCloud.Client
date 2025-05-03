@@ -7,14 +7,14 @@ namespace PureCloud.Client.Models;
 /// <summary>
 /// TransferToExternalRequest
 /// </summary>
-[DataContract]
+
 public partial class TransferToExternalRequest : IEquatable<TransferToExternalRequest>
 {
     /// <summary>
     /// The type of transfer to perform. Attended, where the initiating agent maintains ownership of the conversation until the intended recipient accepts the transfer, or Unattended, where the initiating agent immediately disconnects. Default is Unattended.
     /// </summary>
     /// <value>The type of transfer to perform. Attended, where the initiating agent maintains ownership of the conversation until the intended recipient accepts the transfer, or Unattended, where the initiating agent immediately disconnects. Default is Unattended.</value>
-    [JsonConverter(typeof(JsonStringEnumConverter))]
+    
     public enum TransferTypeEnum
     {
         /// <summary>
@@ -41,7 +41,7 @@ public partial class TransferToExternalRequest : IEquatable<TransferToExternalRe
     /// The type of transfer to perform. Attended, where the initiating agent maintains ownership of the conversation until the intended recipient accepts the transfer, or Unattended, where the initiating agent immediately disconnects. Default is Unattended.
     /// </summary>
     /// <value>The type of transfer to perform. Attended, where the initiating agent maintains ownership of the conversation until the intended recipient accepts the transfer, or Unattended, where the initiating agent immediately disconnects. Default is Unattended.</value>
-    [DataMember(Name = "transferType", EmitDefaultValue = false)]
+    [JsonPropertyName("transferType")]
     public TransferTypeEnum? TransferType { get; set; }
     /// <summary>
     /// Initializes a new instance of the <see cref="TransferToExternalRequest" /> class.
@@ -65,7 +65,7 @@ public partial class TransferToExternalRequest : IEquatable<TransferToExternalRe
     /// If true, the digital internal message will NOT be terminated.
     /// </summary>
     /// <value>If true, the digital internal message will NOT be terminated.</value>
-    [DataMember(Name = "keepInternalMessageAlive", EmitDefaultValue = false)]
+    [JsonPropertyName("keepInternalMessageAlive")]
     public bool? KeepInternalMessageAlive { get; set; }
 
 
@@ -74,7 +74,7 @@ public partial class TransferToExternalRequest : IEquatable<TransferToExternalRe
     /// The address (like phone number) of the external contact.
     /// </summary>
     /// <value>The address (like phone number) of the external contact.</value>
-    [DataMember(Name = "address", EmitDefaultValue = false)]
+    [JsonPropertyName("address")]
     public string Address { get; set; }
 
 

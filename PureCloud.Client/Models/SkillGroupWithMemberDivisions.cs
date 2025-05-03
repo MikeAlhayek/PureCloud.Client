@@ -7,14 +7,14 @@ namespace PureCloud.Client.Models;
 /// <summary>
 /// SkillGroupWithMemberDivisions
 /// </summary>
-[DataContract]
+
 public partial class SkillGroupWithMemberDivisions : IEquatable<SkillGroupWithMemberDivisions>
 {
     /// <summary>
     /// Group's filling status
     /// </summary>
     /// <value>Group's filling status</value>
-    [JsonConverter(typeof(JsonStringEnumConverter))]
+    
     public enum StatusEnum
     {
         /// <summary>
@@ -41,7 +41,7 @@ public partial class SkillGroupWithMemberDivisions : IEquatable<SkillGroupWithMe
     /// Group's filling status
     /// </summary>
     /// <value>Group's filling status</value>
-    [DataMember(Name = "status", EmitDefaultValue = false)]
+    [JsonPropertyName("status")]
     public StatusEnum? Status { get; private set; }
 
     /// <summary>
@@ -73,7 +73,7 @@ public partial class SkillGroupWithMemberDivisions : IEquatable<SkillGroupWithMe
     /// The globally unique identifier for the object.
     /// </summary>
     /// <value>The globally unique identifier for the object.</value>
-    [DataMember(Name = "id", EmitDefaultValue = false)]
+    [JsonPropertyName("id")]
     public string Id { get; private set; }
 
 
@@ -82,7 +82,7 @@ public partial class SkillGroupWithMemberDivisions : IEquatable<SkillGroupWithMe
     /// The group name.
     /// </summary>
     /// <value>The group name.</value>
-    [DataMember(Name = "name", EmitDefaultValue = false)]
+    [JsonPropertyName("name")]
     public string Name { get; set; }
 
 
@@ -91,7 +91,7 @@ public partial class SkillGroupWithMemberDivisions : IEquatable<SkillGroupWithMe
     /// The division to which this entity belongs.
     /// </summary>
     /// <value>The division to which this entity belongs.</value>
-    [DataMember(Name = "division", EmitDefaultValue = false)]
+    [JsonPropertyName("division")]
     public WritableDivision Division { get; set; }
 
 
@@ -100,7 +100,7 @@ public partial class SkillGroupWithMemberDivisions : IEquatable<SkillGroupWithMe
     /// Group description
     /// </summary>
     /// <value>Group description</value>
-    [DataMember(Name = "description", EmitDefaultValue = false)]
+    [JsonPropertyName("description")]
     public string Description { get; set; }
 
 
@@ -109,7 +109,7 @@ public partial class SkillGroupWithMemberDivisions : IEquatable<SkillGroupWithMe
     /// Estimated number of members in this group. It can take some time for the count to be updated after expressions are changed.
     /// </summary>
     /// <value>Estimated number of members in this group. It can take some time for the count to be updated after expressions are changed.</value>
-    [DataMember(Name = "memberCount", EmitDefaultValue = false)]
+    [JsonPropertyName("memberCount")]
     public long? MemberCount { get; private set; }
 
 
@@ -118,7 +118,7 @@ public partial class SkillGroupWithMemberDivisions : IEquatable<SkillGroupWithMe
     /// Last modified date/time of the skill group. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z
     /// </summary>
     /// <value>Last modified date/time of the skill group. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z</value>
-    [DataMember(Name = "dateModified", EmitDefaultValue = false)]
+    [JsonPropertyName("dateModified")]
     public DateTime? DateModified { get; private set; }
 
 
@@ -127,7 +127,7 @@ public partial class SkillGroupWithMemberDivisions : IEquatable<SkillGroupWithMe
     /// Created date/time of the skill group. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z
     /// </summary>
     /// <value>Created date/time of the skill group. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z</value>
-    [DataMember(Name = "dateCreated", EmitDefaultValue = false)]
+    [JsonPropertyName("dateCreated")]
     public DateTime? DateCreated { get; private set; }
 
 
@@ -138,7 +138,7 @@ public partial class SkillGroupWithMemberDivisions : IEquatable<SkillGroupWithMe
     /// Conditions for this group
     /// </summary>
     /// <value>Conditions for this group</value>
-    [DataMember(Name = "skillConditions", EmitDefaultValue = false)]
+    [JsonPropertyName("skillConditions")]
     public List<SkillGroupCondition> SkillConditions { get; set; }
 
 
@@ -147,7 +147,7 @@ public partial class SkillGroupWithMemberDivisions : IEquatable<SkillGroupWithMe
     /// Member divisions for this skill group
     /// </summary>
     /// <value>Member divisions for this skill group</value>
-    [DataMember(Name = "memberDivisions", EmitDefaultValue = false)]
+    [JsonPropertyName("memberDivisions")]
     public List<string> MemberDivisions { get; set; }
 
 
@@ -156,7 +156,7 @@ public partial class SkillGroupWithMemberDivisions : IEquatable<SkillGroupWithMe
     /// The URI for this object
     /// </summary>
     /// <value>The URI for this object</value>
-    [DataMember(Name = "selfUri", EmitDefaultValue = false)]
+    [JsonPropertyName("selfUri")]
     public string SelfUri { get; private set; }
 
 

@@ -7,14 +7,14 @@ namespace PureCloud.Client.Models;
 /// <summary>
 /// KnowledgeConversationContextResponse
 /// </summary>
-[DataContract]
+
 public partial class KnowledgeConversationContextResponse : IEquatable<KnowledgeConversationContextResponse>
 {
     /// <summary>
     /// The media type of the conversation.
     /// </summary>
     /// <value>The media type of the conversation.</value>
-    [JsonConverter(typeof(JsonStringEnumConverter))]
+    
     public enum MediaTypeEnum
     {
         /// <summary>
@@ -83,7 +83,7 @@ public partial class KnowledgeConversationContextResponse : IEquatable<Knowledge
     /// The media type of the conversation.
     /// </summary>
     /// <value>The media type of the conversation.</value>
-    [DataMember(Name = "mediaType", EmitDefaultValue = false)]
+    [JsonPropertyName("mediaType")]
     public MediaTypeEnum? MediaType { get; set; }
 
     /// <summary>
@@ -113,7 +113,7 @@ public partial class KnowledgeConversationContextResponse : IEquatable<Knowledge
     /// The conversation.
     /// </summary>
     /// <value>The conversation.</value>
-    [DataMember(Name = "conversation", EmitDefaultValue = false)]
+    [JsonPropertyName("conversation")]
     public AddressableEntityRef Conversation { get; set; }
 
 
@@ -122,7 +122,7 @@ public partial class KnowledgeConversationContextResponse : IEquatable<Knowledge
     /// The queue used to assign the interaction to the user.
     /// </summary>
     /// <value>The queue used to assign the interaction to the user.</value>
-    [DataMember(Name = "queue", EmitDefaultValue = false)]
+    [JsonPropertyName("queue")]
     public AddressableEntityRef Queue { get; set; }
 
 
@@ -131,7 +131,7 @@ public partial class KnowledgeConversationContextResponse : IEquatable<Knowledge
     /// The end-user participant of the conversation.
     /// </summary>
     /// <value>The end-user participant of the conversation.</value>
-    [DataMember(Name = "externalContact", EmitDefaultValue = false)]
+    [JsonPropertyName("externalContact")]
     public AddressableEntityRef ExternalContact { get; set; }
 
 

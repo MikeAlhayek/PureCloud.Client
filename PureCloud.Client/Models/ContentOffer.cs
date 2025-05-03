@@ -7,14 +7,14 @@ namespace PureCloud.Client.Models;
 /// <summary>
 /// ContentOffer
 /// </summary>
-[DataContract]
+
 public partial class ContentOffer : IEquatable<ContentOffer>
 {
     /// <summary>
     /// The display mode of Genesys Widgets when displaying content offer.
     /// </summary>
     /// <value>The display mode of Genesys Widgets when displaying content offer.</value>
-    [JsonConverter(typeof(JsonStringEnumConverter))]
+    
     public enum DisplayModeEnum
     {
         /// <summary>
@@ -47,7 +47,7 @@ public partial class ContentOffer : IEquatable<ContentOffer>
     /// The layout mode of the text shown to the user when displaying content offer.
     /// </summary>
     /// <value>The layout mode of the text shown to the user when displaying content offer.</value>
-    [JsonConverter(typeof(JsonStringEnumConverter))]
+    
     public enum LayoutModeEnum
     {
         /// <summary>
@@ -98,13 +98,13 @@ public partial class ContentOffer : IEquatable<ContentOffer>
     /// The display mode of Genesys Widgets when displaying content offer.
     /// </summary>
     /// <value>The display mode of Genesys Widgets when displaying content offer.</value>
-    [DataMember(Name = "displayMode", EmitDefaultValue = false)]
+    [JsonPropertyName("displayMode")]
     public DisplayModeEnum? DisplayMode { get; set; }
     /// <summary>
     /// The layout mode of the text shown to the user when displaying content offer.
     /// </summary>
     /// <value>The layout mode of the text shown to the user when displaying content offer.</value>
-    [DataMember(Name = "layoutMode", EmitDefaultValue = false)]
+    [JsonPropertyName("layoutMode")]
     public LayoutModeEnum? LayoutMode { get; set; }
 
     /// <summary>
@@ -142,7 +142,7 @@ public partial class ContentOffer : IEquatable<ContentOffer>
     /// URL for image displayed to the customer when displaying content offer.
     /// </summary>
     /// <value>URL for image displayed to the customer when displaying content offer.</value>
-    [DataMember(Name = "imageUrl", EmitDefaultValue = false)]
+    [JsonPropertyName("imageUrl")]
     public string ImageUrl { get; set; }
 
 
@@ -155,7 +155,7 @@ public partial class ContentOffer : IEquatable<ContentOffer>
     /// Title used in the header of the content offer.
     /// </summary>
     /// <value>Title used in the header of the content offer.</value>
-    [DataMember(Name = "title", EmitDefaultValue = false)]
+    [JsonPropertyName("title")]
     public string Title { get; set; }
 
 
@@ -164,7 +164,7 @@ public partial class ContentOffer : IEquatable<ContentOffer>
     /// Headline displayed above the body text of the content offer.
     /// </summary>
     /// <value>Headline displayed above the body text of the content offer.</value>
-    [DataMember(Name = "headline", EmitDefaultValue = false)]
+    [JsonPropertyName("headline")]
     public string Headline { get; set; }
 
 
@@ -173,7 +173,7 @@ public partial class ContentOffer : IEquatable<ContentOffer>
     /// Body text of the content offer.
     /// </summary>
     /// <value>Body text of the content offer.</value>
-    [DataMember(Name = "body", EmitDefaultValue = false)]
+    [JsonPropertyName("body")]
     public string Body { get; set; }
 
 
@@ -182,7 +182,7 @@ public partial class ContentOffer : IEquatable<ContentOffer>
     /// Properties customizing the call to action button on the content offer.
     /// </summary>
     /// <value>Properties customizing the call to action button on the content offer.</value>
-    [DataMember(Name = "callToAction", EmitDefaultValue = false)]
+    [JsonPropertyName("callToAction")]
     public CallToAction CallToAction { get; set; }
 
 
@@ -191,7 +191,7 @@ public partial class ContentOffer : IEquatable<ContentOffer>
     /// Properties customizing the styling of the content offer.
     /// </summary>
     /// <value>Properties customizing the styling of the content offer.</value>
-    [DataMember(Name = "style", EmitDefaultValue = false)]
+    [JsonPropertyName("style")]
     public ContentOfferStylingConfiguration Style { get; set; }
 
 

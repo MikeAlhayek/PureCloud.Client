@@ -7,14 +7,14 @@ namespace PureCloud.Client.Models;
 /// <summary>
 /// AgentStateAgentQueryClause
 /// </summary>
-[DataContract]
+
 public partial class AgentStateAgentQueryClause : IEquatable<AgentStateAgentQueryClause>
 {
     /// <summary>
     /// Boolean operation to apply to the provided predicates
     /// </summary>
     /// <value>Boolean operation to apply to the provided predicates</value>
-    [JsonConverter(typeof(JsonStringEnumConverter))]
+    
     public enum TypeEnum
     {
         /// <summary>
@@ -41,7 +41,7 @@ public partial class AgentStateAgentQueryClause : IEquatable<AgentStateAgentQuer
     /// Boolean operation to apply to the provided predicates
     /// </summary>
     /// <value>Boolean operation to apply to the provided predicates</value>
-    [DataMember(Name = "type", EmitDefaultValue = false)]
+    [JsonPropertyName("type")]
     public TypeEnum? Type { get; set; }
 
     /// <summary>
@@ -69,7 +69,7 @@ public partial class AgentStateAgentQueryClause : IEquatable<AgentStateAgentQuer
     /// Describes a &lt;dimension&gt; &#x3D; &lt;value&gt; filter used to perform matching
     /// </summary>
     /// <value>Describes a &lt;dimension&gt; &#x3D; &lt;value&gt; filter used to perform matching</value>
-    [DataMember(Name = "predicates", EmitDefaultValue = false)]
+    [JsonPropertyName("predicates")]
     public List<AgentStateAgentQueryPredicate> Predicates { get; set; }
 
 

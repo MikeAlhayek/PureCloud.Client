@@ -1,4 +1,3 @@
-using System.Runtime.Serialization;
 using System.Text;
 using System.Text.Json.Serialization;
 
@@ -7,7 +6,7 @@ namespace PureCloud.Client.Models;
 /// <summary>
 /// HistoricalImportDeleteFilesJobRequest
 /// </summary>
-[DataContract]
+
 public partial class HistoricalImportDeleteFilesJobRequest : IEquatable<HistoricalImportDeleteFilesJobRequest>
 {
 
@@ -32,7 +31,7 @@ public partial class HistoricalImportDeleteFilesJobRequest : IEquatable<Historic
     /// List of requestIds to be deleted. Max number of RequestIds should be 100
     /// </summary>
     /// <value>List of requestIds to be deleted. Max number of RequestIds should be 100</value>
-    [DataMember(Name = "requestIds", EmitDefaultValue = false)]
+    [JsonPropertyName("requestIds")]
     public List<string> RequestIds { get; set; }
 
 

@@ -1,12 +1,12 @@
-using System.Runtime.Serialization;
 using System.Text;
+using System.Text.Json.Serialization;
 
 namespace PureCloud.Client.Models;
 
 /// <summary>
 /// PerformancePredictionCompleteEventTopicErrorBody
 /// </summary>
-[DataContract]
+
 public partial class PerformancePredictionCompleteEventTopicErrorBody : IEquatable<PerformancePredictionCompleteEventTopicErrorBody>
 {
     /// <summary>
@@ -30,7 +30,7 @@ public partial class PerformancePredictionCompleteEventTopicErrorBody : IEquatab
     /// <summary>
     /// Gets or Sets Status
     /// </summary>
-    [DataMember(Name = "status", EmitDefaultValue = false)]
+    [JsonPropertyName("status")]
     public long? Status { get; set; }
 
 
@@ -38,7 +38,7 @@ public partial class PerformancePredictionCompleteEventTopicErrorBody : IEquatab
     /// <summary>
     /// Gets or Sets Code
     /// </summary>
-    [DataMember(Name = "code", EmitDefaultValue = false)]
+    [JsonPropertyName("code")]
     public string Code { get; set; }
 
 
@@ -46,7 +46,7 @@ public partial class PerformancePredictionCompleteEventTopicErrorBody : IEquatab
     /// <summary>
     /// Gets or Sets Message
     /// </summary>
-    [DataMember(Name = "message", EmitDefaultValue = false)]
+    [JsonPropertyName("message")]
     public string Message { get; set; }
 
 
@@ -54,7 +54,7 @@ public partial class PerformancePredictionCompleteEventTopicErrorBody : IEquatab
     /// <summary>
     /// Gets or Sets MessageParams
     /// </summary>
-    [DataMember(Name = "messageParams", EmitDefaultValue = false)]
+    [JsonPropertyName("messageParams")]
     public Dictionary<string, string> MessageParams { get; set; }
 
 

@@ -1,12 +1,12 @@
-using System.Runtime.Serialization;
 using System.Text;
+using System.Text.Json.Serialization;
 
 namespace PureCloud.Client.Models;
 
 /// <summary>
 /// VoicemailMediaInfo
 /// </summary>
-[DataContract]
+
 public partial class VoicemailMediaInfo : IEquatable<VoicemailMediaInfo>
 {
     /// <summary>
@@ -29,7 +29,7 @@ public partial class VoicemailMediaInfo : IEquatable<VoicemailMediaInfo>
     /// The globally unique identifier for the object.
     /// </summary>
     /// <value>The globally unique identifier for the object.</value>
-    [DataMember(Name = "id", EmitDefaultValue = false)]
+    [JsonPropertyName("id")]
     public string Id { get; private set; }
 
 
@@ -37,7 +37,7 @@ public partial class VoicemailMediaInfo : IEquatable<VoicemailMediaInfo>
     /// <summary>
     /// Gets or Sets MediaFileUri
     /// </summary>
-    [DataMember(Name = "mediaFileUri", EmitDefaultValue = false)]
+    [JsonPropertyName("mediaFileUri")]
     public string MediaFileUri { get; set; }
 
 
@@ -45,7 +45,7 @@ public partial class VoicemailMediaInfo : IEquatable<VoicemailMediaInfo>
     /// <summary>
     /// Gets or Sets MediaImageUri
     /// </summary>
-    [DataMember(Name = "mediaImageUri", EmitDefaultValue = false)]
+    [JsonPropertyName("mediaImageUri")]
     public string MediaImageUri { get; set; }
 
 
@@ -53,7 +53,7 @@ public partial class VoicemailMediaInfo : IEquatable<VoicemailMediaInfo>
     /// <summary>
     /// Gets or Sets WaveformData
     /// </summary>
-    [DataMember(Name = "waveformData", EmitDefaultValue = false)]
+    [JsonPropertyName("waveformData")]
     public List<float?> WaveformData { get; set; }
 
 

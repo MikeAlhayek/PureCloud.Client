@@ -1,12 +1,12 @@
-using System.Runtime.Serialization;
 using System.Text;
+using System.Text.Json.Serialization;
 
 namespace PureCloud.Client.Models;
 
 /// <summary>
 /// WorkitemsAttributeChangeInstant
 /// </summary>
-[DataContract]
+
 public partial class WorkitemsAttributeChangeInstant : IEquatable<WorkitemsAttributeChangeInstant>
 {
     /// <summary>
@@ -27,7 +27,7 @@ public partial class WorkitemsAttributeChangeInstant : IEquatable<WorkitemsAttri
     /// New property value. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z
     /// </summary>
     /// <value>New property value. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z</value>
-    [DataMember(Name = "newValue", EmitDefaultValue = false)]
+    [JsonPropertyName("newValue")]
     public DateTime? NewValue { get; set; }
 
 
@@ -36,7 +36,7 @@ public partial class WorkitemsAttributeChangeInstant : IEquatable<WorkitemsAttri
     /// Old property value. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z
     /// </summary>
     /// <value>Old property value. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z</value>
-    [DataMember(Name = "oldValue", EmitDefaultValue = false)]
+    [JsonPropertyName("oldValue")]
     public DateTime? OldValue { get; set; }
 
 

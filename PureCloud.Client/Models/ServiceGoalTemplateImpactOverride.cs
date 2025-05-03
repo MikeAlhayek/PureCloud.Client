@@ -1,4 +1,3 @@
-using System.Runtime.Serialization;
 using System.Text;
 using System.Text.Json.Serialization;
 
@@ -7,7 +6,7 @@ namespace PureCloud.Client.Models;
 /// <summary>
 /// ServiceGoalTemplateImpactOverride
 /// </summary>
-[DataContract]
+
 public partial class ServiceGoalTemplateImpactOverride : IEquatable<ServiceGoalTemplateImpactOverride>
 {
 
@@ -34,7 +33,7 @@ public partial class ServiceGoalTemplateImpactOverride : IEquatable<ServiceGoalT
     /// Whether service goal overrides are enabled for this service goal template
     /// </summary>
     /// <value>Whether service goal overrides are enabled for this service goal template</value>
-    [DataMember(Name = "enabled", EmitDefaultValue = false)]
+    [JsonPropertyName("enabled")]
     public bool? Enabled { get; set; }
 
 
@@ -43,7 +42,7 @@ public partial class ServiceGoalTemplateImpactOverride : IEquatable<ServiceGoalT
     /// Settings controlling max percent increase and decrease of service goals for this service goal template
     /// </summary>
     /// <value>Settings controlling max percent increase and decrease of service goals for this service goal template</value>
-    [DataMember(Name = "impact", EmitDefaultValue = false)]
+    [JsonPropertyName("impact")]
     public WfmServiceGoalImpactSettings Impact { get; set; }
 
 

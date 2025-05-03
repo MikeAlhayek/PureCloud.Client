@@ -7,14 +7,14 @@ namespace PureCloud.Client.Models;
 /// <summary>
 /// LogCaptureDownloadExecutionResponse
 /// </summary>
-[DataContract]
+
 public partial class LogCaptureDownloadExecutionResponse : IEquatable<LogCaptureDownloadExecutionResponse>
 {
     /// <summary>
     /// Execution state of the download.
     /// </summary>
     /// <value>Execution state of the download.</value>
-    [JsonConverter(typeof(JsonStringEnumConverter))]
+    
     public enum StateEnum
     {
         /// <summary>
@@ -47,7 +47,7 @@ public partial class LogCaptureDownloadExecutionResponse : IEquatable<LogCapture
     /// Execution state of the download.
     /// </summary>
     /// <value>Execution state of the download.</value>
-    [DataMember(Name = "state", EmitDefaultValue = false)]
+    [JsonPropertyName("state")]
     public StateEnum? State { get; private set; }
 
     /// <summary>
@@ -71,7 +71,7 @@ public partial class LogCaptureDownloadExecutionResponse : IEquatable<LogCapture
     /// Id of file download job.
     /// </summary>
     /// <value>Id of file download job.</value>
-    [DataMember(Name = "id", EmitDefaultValue = false)]
+    [JsonPropertyName("id")]
     public string Id { get; set; }
 
 
@@ -82,7 +82,7 @@ public partial class LogCaptureDownloadExecutionResponse : IEquatable<LogCapture
     /// Start date of file download execution. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z
     /// </summary>
     /// <value>Start date of file download execution. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z</value>
-    [DataMember(Name = "dateStart", EmitDefaultValue = false)]
+    [JsonPropertyName("dateStart")]
     public DateTime? DateStart { get; private set; }
 
 
@@ -91,7 +91,7 @@ public partial class LogCaptureDownloadExecutionResponse : IEquatable<LogCapture
     /// Url of a file with query result.
     /// </summary>
     /// <value>Url of a file with query result.</value>
-    [DataMember(Name = "fileUrl", EmitDefaultValue = false)]
+    [JsonPropertyName("fileUrl")]
     public string FileUrl { get; private set; }
 
 
@@ -100,7 +100,7 @@ public partial class LogCaptureDownloadExecutionResponse : IEquatable<LogCapture
     /// The URI for this object
     /// </summary>
     /// <value>The URI for this object</value>
-    [DataMember(Name = "selfUri", EmitDefaultValue = false)]
+    [JsonPropertyName("selfUri")]
     public string SelfUri { get; private set; }
 
 
@@ -109,7 +109,7 @@ public partial class LogCaptureDownloadExecutionResponse : IEquatable<LogCapture
     /// Details of the user that created the job
     /// </summary>
     /// <value>Details of the user that created the job</value>
-    [DataMember(Name = "user", EmitDefaultValue = false)]
+    [JsonPropertyName("user")]
     public AddressableEntityRef User { get; private set; }
 
 

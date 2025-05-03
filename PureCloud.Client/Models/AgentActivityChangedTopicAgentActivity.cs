@@ -1,12 +1,12 @@
-using System.Runtime.Serialization;
 using System.Text;
+using System.Text.Json.Serialization;
 
 namespace PureCloud.Client.Models;
 
 /// <summary>
 /// AgentActivityChangedTopicAgentActivity
 /// </summary>
-[DataContract]
+
 public partial class AgentActivityChangedTopicAgentActivity : IEquatable<AgentActivityChangedTopicAgentActivity>
 {
     /// <summary>
@@ -34,7 +34,7 @@ public partial class AgentActivityChangedTopicAgentActivity : IEquatable<AgentAc
     /// <summary>
     /// Gets or Sets Id
     /// </summary>
-    [DataMember(Name = "id", EmitDefaultValue = false)]
+    [JsonPropertyName("id")]
     public string Id { get; set; }
 
 
@@ -42,7 +42,7 @@ public partial class AgentActivityChangedTopicAgentActivity : IEquatable<AgentAc
     /// <summary>
     /// Gets or Sets RoutingStatus
     /// </summary>
-    [DataMember(Name = "routingStatus", EmitDefaultValue = false)]
+    [JsonPropertyName("routingStatus")]
     public AgentActivityChangedTopicRoutingStatus RoutingStatus { get; set; }
 
 
@@ -50,7 +50,7 @@ public partial class AgentActivityChangedTopicAgentActivity : IEquatable<AgentAc
     /// <summary>
     /// Gets or Sets Presence
     /// </summary>
-    [DataMember(Name = "presence", EmitDefaultValue = false)]
+    [JsonPropertyName("presence")]
     public AgentActivityChangedTopicPresence Presence { get; set; }
 
 
@@ -58,7 +58,7 @@ public partial class AgentActivityChangedTopicAgentActivity : IEquatable<AgentAc
     /// <summary>
     /// Gets or Sets OutOfOffice
     /// </summary>
-    [DataMember(Name = "outOfOffice", EmitDefaultValue = false)]
+    [JsonPropertyName("outOfOffice")]
     public AgentActivityChangedTopicOutOfOffice OutOfOffice { get; set; }
 
 
@@ -66,7 +66,7 @@ public partial class AgentActivityChangedTopicAgentActivity : IEquatable<AgentAc
     /// <summary>
     /// Gets or Sets ActiveQueueIds
     /// </summary>
-    [DataMember(Name = "activeQueueIds", EmitDefaultValue = false)]
+    [JsonPropertyName("activeQueueIds")]
     public List<string> ActiveQueueIds { get; set; }
 
 
@@ -74,7 +74,7 @@ public partial class AgentActivityChangedTopicAgentActivity : IEquatable<AgentAc
     /// <summary>
     /// Gets or Sets DateActiveQueuesChanged
     /// </summary>
-    [DataMember(Name = "dateActiveQueuesChanged", EmitDefaultValue = false)]
+    [JsonPropertyName("dateActiveQueuesChanged")]
     public DateTime? DateActiveQueuesChanged { get; set; }
 
 

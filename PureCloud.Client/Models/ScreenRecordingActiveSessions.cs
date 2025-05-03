@@ -1,12 +1,12 @@
-using System.Runtime.Serialization;
 using System.Text;
+using System.Text.Json.Serialization;
 
 namespace PureCloud.Client.Models;
 
 /// <summary>
 /// ScreenRecordingActiveSessions
 /// </summary>
-[DataContract]
+
 public partial class ScreenRecordingActiveSessions : IEquatable<ScreenRecordingActiveSessions>
 {
     /// <summary>
@@ -25,7 +25,7 @@ public partial class ScreenRecordingActiveSessions : IEquatable<ScreenRecordingA
     /// Current concurrent active screen recordings count for organization
     /// </summary>
     /// <value>Current concurrent active screen recordings count for organization</value>
-    [DataMember(Name = "count", EmitDefaultValue = false)]
+    [JsonPropertyName("count")]
     public int? Count { get; set; }
 
 

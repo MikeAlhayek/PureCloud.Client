@@ -1,4 +1,3 @@
-using System.Runtime.Serialization;
 using System.Text;
 using System.Text.Json.Serialization;
 
@@ -7,7 +6,7 @@ namespace PureCloud.Client.Models;
 /// <summary>
 /// BuQueryAgentSchedulesRequest
 /// </summary>
-[DataContract]
+
 public partial class BuQueryAgentSchedulesRequest : IEquatable<BuQueryAgentSchedulesRequest>
 {
 
@@ -36,7 +35,7 @@ public partial class BuQueryAgentSchedulesRequest : IEquatable<BuQueryAgentSched
     /// The ID of the management unit to query
     /// </summary>
     /// <value>The ID of the management unit to query</value>
-    [DataMember(Name = "managementUnitId", EmitDefaultValue = false)]
+    [JsonPropertyName("managementUnitId")]
     public string ManagementUnitId { get; set; }
 
 
@@ -45,7 +44,7 @@ public partial class BuQueryAgentSchedulesRequest : IEquatable<BuQueryAgentSched
     /// The IDs of the users to query.  Omit to query all user schedules in the management unit. Note: If teamIds is also specified, only schedules for users in the requested teams will be returned
     /// </summary>
     /// <value>The IDs of the users to query.  Omit to query all user schedules in the management unit. Note: If teamIds is also specified, only schedules for users in the requested teams will be returned</value>
-    [DataMember(Name = "userIds", EmitDefaultValue = false)]
+    [JsonPropertyName("userIds")]
     public List<string> UserIds { get; set; }
 
 
@@ -54,7 +53,7 @@ public partial class BuQueryAgentSchedulesRequest : IEquatable<BuQueryAgentSched
     /// The teamIds to request. If null or not set, results will be queried for requested users if applicable or otherwise all users in the management unit
     /// </summary>
     /// <value>The teamIds to request. If null or not set, results will be queried for requested users if applicable or otherwise all users in the management unit</value>
-    [DataMember(Name = "teamIds", EmitDefaultValue = false)]
+    [JsonPropertyName("teamIds")]
     public List<string> TeamIds { get; set; }
 
 

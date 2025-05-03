@@ -7,14 +7,14 @@ namespace PureCloud.Client.Models;
 /// <summary>
 /// FacebookIntegration
 /// </summary>
-[DataContract]
+
 public partial class FacebookIntegration : IEquatable<FacebookIntegration>
 {
     /// <summary>
     /// Status of asynchronous create operation
     /// </summary>
     /// <value>Status of asynchronous create operation</value>
-    [JsonConverter(typeof(JsonStringEnumConverter))]
+    
     public enum CreateStatusEnum
     {
         /// <summary>
@@ -47,7 +47,7 @@ public partial class FacebookIntegration : IEquatable<FacebookIntegration>
     /// Status of asynchronous create operation
     /// </summary>
     /// <value>Status of asynchronous create operation</value>
-    [DataMember(Name = "createStatus", EmitDefaultValue = false)]
+    [JsonPropertyName("createStatus")]
     public CreateStatusEnum? CreateStatus { get; private set; }
 
     /// <summary>
@@ -91,7 +91,7 @@ public partial class FacebookIntegration : IEquatable<FacebookIntegration>
     /// A unique Integration Id.
     /// </summary>
     /// <value>A unique Integration Id.</value>
-    [DataMember(Name = "id", EmitDefaultValue = false)]
+    [JsonPropertyName("id")]
     public string Id { get; private set; }
 
 
@@ -100,7 +100,7 @@ public partial class FacebookIntegration : IEquatable<FacebookIntegration>
     /// The name of the Facebook Integration
     /// </summary>
     /// <value>The name of the Facebook Integration</value>
-    [DataMember(Name = "name", EmitDefaultValue = false)]
+    [JsonPropertyName("name")]
     public string Name { get; set; }
 
 
@@ -109,7 +109,7 @@ public partial class FacebookIntegration : IEquatable<FacebookIntegration>
     /// Defines the SupportedContent profile configured for an integration
     /// </summary>
     /// <value>Defines the SupportedContent profile configured for an integration</value>
-    [DataMember(Name = "supportedContent", EmitDefaultValue = false)]
+    [JsonPropertyName("supportedContent")]
     public SupportedContentReference SupportedContent { get; set; }
 
 
@@ -117,7 +117,7 @@ public partial class FacebookIntegration : IEquatable<FacebookIntegration>
     /// <summary>
     /// Gets or Sets MessagingSetting
     /// </summary>
-    [DataMember(Name = "messagingSetting", EmitDefaultValue = false)]
+    [JsonPropertyName("messagingSetting")]
     public MessagingSettingReference MessagingSetting { get; set; }
 
 
@@ -126,7 +126,7 @@ public partial class FacebookIntegration : IEquatable<FacebookIntegration>
     /// The App Id from Facebook messenger
     /// </summary>
     /// <value>The App Id from Facebook messenger</value>
-    [DataMember(Name = "appId", EmitDefaultValue = false)]
+    [JsonPropertyName("appId")]
     public string AppId { get; set; }
 
 
@@ -135,7 +135,7 @@ public partial class FacebookIntegration : IEquatable<FacebookIntegration>
     /// The Page Id from Facebook messenger
     /// </summary>
     /// <value>The Page Id from Facebook messenger</value>
-    [DataMember(Name = "pageId", EmitDefaultValue = false)]
+    [JsonPropertyName("pageId")]
     public string PageId { get; set; }
 
 
@@ -144,7 +144,7 @@ public partial class FacebookIntegration : IEquatable<FacebookIntegration>
     /// The name of the Facebook page
     /// </summary>
     /// <value>The name of the Facebook page</value>
-    [DataMember(Name = "pageName", EmitDefaultValue = false)]
+    [JsonPropertyName("pageName")]
     public string PageName { get; private set; }
 
 
@@ -153,7 +153,7 @@ public partial class FacebookIntegration : IEquatable<FacebookIntegration>
     /// The url of the profile image of the Facebook page
     /// </summary>
     /// <value>The url of the profile image of the Facebook page</value>
-    [DataMember(Name = "pageProfileImageUrl", EmitDefaultValue = false)]
+    [JsonPropertyName("pageProfileImageUrl")]
     public string PageProfileImageUrl { get; private set; }
 
 
@@ -162,7 +162,7 @@ public partial class FacebookIntegration : IEquatable<FacebookIntegration>
     /// The status of the Facebook Integration
     /// </summary>
     /// <value>The status of the Facebook Integration</value>
-    [DataMember(Name = "status", EmitDefaultValue = false)]
+    [JsonPropertyName("status")]
     public string Status { get; set; }
 
 
@@ -171,7 +171,7 @@ public partial class FacebookIntegration : IEquatable<FacebookIntegration>
     /// The recipient reference associated to the Facebook Integration. This recipient is used to associate a flow to an integration
     /// </summary>
     /// <value>The recipient reference associated to the Facebook Integration. This recipient is used to associate a flow to an integration</value>
-    [DataMember(Name = "recipient", EmitDefaultValue = false)]
+    [JsonPropertyName("recipient")]
     public DomainEntityRef Recipient { get; private set; }
 
 
@@ -180,7 +180,7 @@ public partial class FacebookIntegration : IEquatable<FacebookIntegration>
     /// Date this Integration was created. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z
     /// </summary>
     /// <value>Date this Integration was created. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z</value>
-    [DataMember(Name = "dateCreated", EmitDefaultValue = false)]
+    [JsonPropertyName("dateCreated")]
     public DateTime? DateCreated { get; set; }
 
 
@@ -189,7 +189,7 @@ public partial class FacebookIntegration : IEquatable<FacebookIntegration>
     /// Date this Integration was modified. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z
     /// </summary>
     /// <value>Date this Integration was modified. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z</value>
-    [DataMember(Name = "dateModified", EmitDefaultValue = false)]
+    [JsonPropertyName("dateModified")]
     public DateTime? DateModified { get; set; }
 
 
@@ -198,7 +198,7 @@ public partial class FacebookIntegration : IEquatable<FacebookIntegration>
     /// User reference that created this Integration
     /// </summary>
     /// <value>User reference that created this Integration</value>
-    [DataMember(Name = "createdBy", EmitDefaultValue = false)]
+    [JsonPropertyName("createdBy")]
     public DomainEntityRef CreatedBy { get; set; }
 
 
@@ -207,7 +207,7 @@ public partial class FacebookIntegration : IEquatable<FacebookIntegration>
     /// User reference that last modified this Integration
     /// </summary>
     /// <value>User reference that last modified this Integration</value>
-    [DataMember(Name = "modifiedBy", EmitDefaultValue = false)]
+    [JsonPropertyName("modifiedBy")]
     public DomainEntityRef ModifiedBy { get; set; }
 
 
@@ -216,7 +216,7 @@ public partial class FacebookIntegration : IEquatable<FacebookIntegration>
     /// Version number required for updates.
     /// </summary>
     /// <value>Version number required for updates.</value>
-    [DataMember(Name = "version", EmitDefaultValue = false)]
+    [JsonPropertyName("version")]
     public int? Version { get; set; }
 
 
@@ -227,7 +227,7 @@ public partial class FacebookIntegration : IEquatable<FacebookIntegration>
     /// Error information returned, if createStatus is set to Error
     /// </summary>
     /// <value>Error information returned, if createStatus is set to Error</value>
-    [DataMember(Name = "createError", EmitDefaultValue = false)]
+    [JsonPropertyName("createError")]
     public ErrorBody CreateError { get; private set; }
 
 
@@ -236,7 +236,7 @@ public partial class FacebookIntegration : IEquatable<FacebookIntegration>
     /// The URI for this object
     /// </summary>
     /// <value>The URI for this object</value>
-    [DataMember(Name = "selfUri", EmitDefaultValue = false)]
+    [JsonPropertyName("selfUri")]
     public string SelfUri { get; private set; }
 
 

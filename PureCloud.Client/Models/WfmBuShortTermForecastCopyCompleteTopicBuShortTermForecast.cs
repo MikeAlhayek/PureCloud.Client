@@ -7,13 +7,13 @@ namespace PureCloud.Client.Models;
 /// <summary>
 /// WfmBuShortTermForecastCopyCompleteTopicBuShortTermForecast
 /// </summary>
-[DataContract]
+
 public partial class WfmBuShortTermForecastCopyCompleteTopicBuShortTermForecast : IEquatable<WfmBuShortTermForecastCopyCompleteTopicBuShortTermForecast>
 {
     /// <summary>
     /// Gets or Sets CreationMethod
     /// </summary>
-    [JsonConverter(typeof(JsonStringEnumConverter))]
+    
     public enum CreationMethodEnum
     {
         /// <summary>
@@ -51,7 +51,7 @@ public partial class WfmBuShortTermForecastCopyCompleteTopicBuShortTermForecast 
     /// <summary>
     /// Gets or Sets CreationMethod
     /// </summary>
-    [DataMember(Name = "creationMethod", EmitDefaultValue = false)]
+    [JsonPropertyName("creationMethod")]
     public CreationMethodEnum? CreationMethod { get; set; }
     /// <summary>
     /// Initializes a new instance of the <see cref="WfmBuShortTermForecastCopyCompleteTopicBuShortTermForecast" /> class.
@@ -92,7 +92,7 @@ public partial class WfmBuShortTermForecastCopyCompleteTopicBuShortTermForecast 
     /// <summary>
     /// Gets or Sets Id
     /// </summary>
-    [DataMember(Name = "id", EmitDefaultValue = false)]
+    [JsonPropertyName("id")]
     public string Id { get; set; }
 
 
@@ -100,7 +100,7 @@ public partial class WfmBuShortTermForecastCopyCompleteTopicBuShortTermForecast 
     /// <summary>
     /// Gets or Sets WeekDate
     /// </summary>
-    [DataMember(Name = "weekDate", EmitDefaultValue = false)]
+    [JsonPropertyName("weekDate")]
     public string WeekDate { get; set; }
 
 
@@ -110,7 +110,7 @@ public partial class WfmBuShortTermForecastCopyCompleteTopicBuShortTermForecast 
     /// <summary>
     /// Gets or Sets Description
     /// </summary>
-    [DataMember(Name = "description", EmitDefaultValue = false)]
+    [JsonPropertyName("description")]
     public string Description { get; set; }
 
 
@@ -118,7 +118,7 @@ public partial class WfmBuShortTermForecastCopyCompleteTopicBuShortTermForecast 
     /// <summary>
     /// Gets or Sets Legacy
     /// </summary>
-    [DataMember(Name = "legacy", EmitDefaultValue = false)]
+    [JsonPropertyName("legacy")]
     public bool? Legacy { get; set; }
 
 
@@ -126,7 +126,7 @@ public partial class WfmBuShortTermForecastCopyCompleteTopicBuShortTermForecast 
     /// <summary>
     /// Gets or Sets ReferenceStartDate
     /// </summary>
-    [DataMember(Name = "referenceStartDate", EmitDefaultValue = false)]
+    [JsonPropertyName("referenceStartDate")]
     public DateTime? ReferenceStartDate { get; set; }
 
 
@@ -134,7 +134,7 @@ public partial class WfmBuShortTermForecastCopyCompleteTopicBuShortTermForecast 
     /// <summary>
     /// Gets or Sets SourceDays
     /// </summary>
-    [DataMember(Name = "sourceDays", EmitDefaultValue = false)]
+    [JsonPropertyName("sourceDays")]
     public List<WfmBuShortTermForecastCopyCompleteTopicForecastSourceDayPointer> SourceDays { get; set; }
 
 
@@ -142,7 +142,7 @@ public partial class WfmBuShortTermForecastCopyCompleteTopicBuShortTermForecast 
     /// <summary>
     /// Gets or Sets Modifications
     /// </summary>
-    [DataMember(Name = "modifications", EmitDefaultValue = false)]
+    [JsonPropertyName("modifications")]
     public List<WfmBuShortTermForecastCopyCompleteTopicBuForecastModification> Modifications { get; set; }
 
 
@@ -150,7 +150,7 @@ public partial class WfmBuShortTermForecastCopyCompleteTopicBuShortTermForecast 
     /// <summary>
     /// Gets or Sets TimeZone
     /// </summary>
-    [DataMember(Name = "timeZone", EmitDefaultValue = false)]
+    [JsonPropertyName("timeZone")]
     public string TimeZone { get; set; }
 
 
@@ -158,7 +158,7 @@ public partial class WfmBuShortTermForecastCopyCompleteTopicBuShortTermForecast 
     /// <summary>
     /// Gets or Sets PlanningGroupsVersion
     /// </summary>
-    [DataMember(Name = "planningGroupsVersion", EmitDefaultValue = false)]
+    [JsonPropertyName("planningGroupsVersion")]
     public long? PlanningGroupsVersion { get; set; }
 
 
@@ -166,7 +166,7 @@ public partial class WfmBuShortTermForecastCopyCompleteTopicBuShortTermForecast 
     /// <summary>
     /// Gets or Sets WeekCount
     /// </summary>
-    [DataMember(Name = "weekCount", EmitDefaultValue = false)]
+    [JsonPropertyName("weekCount")]
     public long? WeekCount { get; set; }
 
 
@@ -174,7 +174,7 @@ public partial class WfmBuShortTermForecastCopyCompleteTopicBuShortTermForecast 
     /// <summary>
     /// Gets or Sets Metadata
     /// </summary>
-    [DataMember(Name = "metadata", EmitDefaultValue = false)]
+    [JsonPropertyName("metadata")]
     public WfmBuShortTermForecastCopyCompleteTopicWfmVersionedEntityMetadata Metadata { get; set; }
 
 
@@ -182,7 +182,7 @@ public partial class WfmBuShortTermForecastCopyCompleteTopicBuShortTermForecast 
     /// <summary>
     /// Gets or Sets CanUseForScheduling
     /// </summary>
-    [DataMember(Name = "canUseForScheduling", EmitDefaultValue = false)]
+    [JsonPropertyName("canUseForScheduling")]
     public bool? CanUseForScheduling { get; set; }
 
 

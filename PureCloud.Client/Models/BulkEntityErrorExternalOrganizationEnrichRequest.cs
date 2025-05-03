@@ -1,12 +1,12 @@
-using System.Runtime.Serialization;
 using System.Text;
+using System.Text.Json.Serialization;
 
 namespace PureCloud.Client.Models;
 
 /// <summary>
 /// BulkEntityErrorExternalOrganizationEnrichRequest
 /// </summary>
-[DataContract]
+
 public partial class BulkEntityErrorExternalOrganizationEnrichRequest : IEquatable<BulkEntityErrorExternalOrganizationEnrichRequest>
 {
     /// <summary>
@@ -35,7 +35,7 @@ public partial class BulkEntityErrorExternalOrganizationEnrichRequest : IEquatab
     /// An error code for the specific error condition.
     /// </summary>
     /// <value>An error code for the specific error condition.</value>
-    [DataMember(Name = "code", EmitDefaultValue = false)]
+    [JsonPropertyName("code")]
     public string Code { get; set; }
 
 
@@ -44,7 +44,7 @@ public partial class BulkEntityErrorExternalOrganizationEnrichRequest : IEquatab
     /// A short error message.
     /// </summary>
     /// <value>A short error message.</value>
-    [DataMember(Name = "message", EmitDefaultValue = false)]
+    [JsonPropertyName("message")]
     public string Message { get; set; }
 
 
@@ -53,7 +53,7 @@ public partial class BulkEntityErrorExternalOrganizationEnrichRequest : IEquatab
     /// The HTTP Status Code for the error.
     /// </summary>
     /// <value>The HTTP Status Code for the error.</value>
-    [DataMember(Name = "status", EmitDefaultValue = false)]
+    [JsonPropertyName("status")]
     public int? Status { get; set; }
 
 
@@ -62,7 +62,7 @@ public partial class BulkEntityErrorExternalOrganizationEnrichRequest : IEquatab
     /// Whether this particular error should be retried.
     /// </summary>
     /// <value>Whether this particular error should be retried.</value>
-    [DataMember(Name = "retryable", EmitDefaultValue = false)]
+    [JsonPropertyName("retryable")]
     public bool? Retryable { get; set; }
 
 
@@ -71,7 +71,7 @@ public partial class BulkEntityErrorExternalOrganizationEnrichRequest : IEquatab
     /// Additional error details for specific fields.
     /// </summary>
     /// <value>Additional error details for specific fields.</value>
-    [DataMember(Name = "details", EmitDefaultValue = false)]
+    [JsonPropertyName("details")]
     public List<BulkErrorDetail> Details { get; set; }
 
 
@@ -80,7 +80,7 @@ public partial class BulkEntityErrorExternalOrganizationEnrichRequest : IEquatab
     /// The entity body specified in the Bulk request operation that caused this error.
     /// </summary>
     /// <value>The entity body specified in the Bulk request operation that caused this error.</value>
-    [DataMember(Name = "entity", EmitDefaultValue = false)]
+    [JsonPropertyName("entity")]
     public ExternalOrganizationEnrichRequest Entity { get; set; }
 
 

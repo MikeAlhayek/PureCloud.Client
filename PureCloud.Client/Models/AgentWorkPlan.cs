@@ -1,4 +1,3 @@
-using System.Runtime.Serialization;
 using System.Text;
 using System.Text.Json.Serialization;
 
@@ -7,7 +6,7 @@ namespace PureCloud.Client.Models;
 /// <summary>
 /// AgentWorkPlan
 /// </summary>
-[DataContract]
+
 public partial class AgentWorkPlan : IEquatable<AgentWorkPlan>
 {
 
@@ -46,7 +45,7 @@ public partial class AgentWorkPlan : IEquatable<AgentWorkPlan>
     /// The globally unique identifier for the object.
     /// </summary>
     /// <value>The globally unique identifier for the object.</value>
-    [DataMember(Name = "id", EmitDefaultValue = false)]
+    [JsonPropertyName("id")]
     public string Id { get; private set; }
 
 
@@ -54,7 +53,7 @@ public partial class AgentWorkPlan : IEquatable<AgentWorkPlan>
     /// <summary>
     /// Gets or Sets Name
     /// </summary>
-    [DataMember(Name = "name", EmitDefaultValue = false)]
+    [JsonPropertyName("name")]
     public string Name { get; set; }
 
 
@@ -63,7 +62,7 @@ public partial class AgentWorkPlan : IEquatable<AgentWorkPlan>
     /// Whether the weekly paid time constraint is enabled for this work plan
     /// </summary>
     /// <value>Whether the weekly paid time constraint is enabled for this work plan</value>
-    [DataMember(Name = "constrainWeeklyPaidTime", EmitDefaultValue = false)]
+    [JsonPropertyName("constrainWeeklyPaidTime")]
     public bool? ConstrainWeeklyPaidTime { get; set; }
 
 
@@ -72,7 +71,7 @@ public partial class AgentWorkPlan : IEquatable<AgentWorkPlan>
     /// Whether the weekly paid time constraint is flexible for this work plan
     /// </summary>
     /// <value>Whether the weekly paid time constraint is flexible for this work plan</value>
-    [DataMember(Name = "flexibleWeeklyPaidTime", EmitDefaultValue = false)]
+    [JsonPropertyName("flexibleWeeklyPaidTime")]
     public bool? FlexibleWeeklyPaidTime { get; set; }
 
 
@@ -81,7 +80,7 @@ public partial class AgentWorkPlan : IEquatable<AgentWorkPlan>
     /// Exact weekly paid time in minutes for this work plan. Used if flexibleWeeklyPaidTime &#x3D;&#x3D; false
     /// </summary>
     /// <value>Exact weekly paid time in minutes for this work plan. Used if flexibleWeeklyPaidTime &#x3D;&#x3D; false</value>
-    [DataMember(Name = "weeklyExactPaidMinutes", EmitDefaultValue = false)]
+    [JsonPropertyName("weeklyExactPaidMinutes")]
     public int? WeeklyExactPaidMinutes { get; set; }
 
 
@@ -90,7 +89,7 @@ public partial class AgentWorkPlan : IEquatable<AgentWorkPlan>
     /// Minimum weekly paid time in minutes for this work plan. Used if flexibleWeeklyPaidTime &#x3D;&#x3D; true
     /// </summary>
     /// <value>Minimum weekly paid time in minutes for this work plan. Used if flexibleWeeklyPaidTime &#x3D;&#x3D; true</value>
-    [DataMember(Name = "weeklyMinimumPaidMinutes", EmitDefaultValue = false)]
+    [JsonPropertyName("weeklyMinimumPaidMinutes")]
     public int? WeeklyMinimumPaidMinutes { get; set; }
 
 
@@ -99,7 +98,7 @@ public partial class AgentWorkPlan : IEquatable<AgentWorkPlan>
     /// Maximum weekly paid time in minutes for this work plan. Used if flexibleWeeklyPaidTime &#x3D;&#x3D; true
     /// </summary>
     /// <value>Maximum weekly paid time in minutes for this work plan. Used if flexibleWeeklyPaidTime &#x3D;&#x3D; true</value>
-    [DataMember(Name = "weeklyMaximumPaidMinutes", EmitDefaultValue = false)]
+    [JsonPropertyName("weeklyMaximumPaidMinutes")]
     public int? WeeklyMaximumPaidMinutes { get; set; }
 
 
@@ -108,7 +107,7 @@ public partial class AgentWorkPlan : IEquatable<AgentWorkPlan>
     /// Optional days to schedule for this work plan
     /// </summary>
     /// <value>Optional days to schedule for this work plan</value>
-    [DataMember(Name = "optionalDays", EmitDefaultValue = false)]
+    [JsonPropertyName("optionalDays")]
     public SetWrapperDayOfWeek OptionalDays { get; set; }
 
 
@@ -117,7 +116,7 @@ public partial class AgentWorkPlan : IEquatable<AgentWorkPlan>
     /// Shifts in this work plan
     /// </summary>
     /// <value>Shifts in this work plan</value>
-    [DataMember(Name = "shifts", EmitDefaultValue = false)]
+    [JsonPropertyName("shifts")]
     public List<AgentWorkPlanShift> Shifts { get; set; }
 
 
@@ -126,7 +125,7 @@ public partial class AgentWorkPlan : IEquatable<AgentWorkPlan>
     /// The URI for this object
     /// </summary>
     /// <value>The URI for this object</value>
-    [DataMember(Name = "selfUri", EmitDefaultValue = false)]
+    [JsonPropertyName("selfUri")]
     public string SelfUri { get; private set; }
 
 

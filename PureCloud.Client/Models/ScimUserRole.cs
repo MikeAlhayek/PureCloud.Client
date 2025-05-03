@@ -1,12 +1,12 @@
-using System.Runtime.Serialization;
 using System.Text;
+using System.Text.Json.Serialization;
 
 namespace PureCloud.Client.Models;
 
 /// <summary>
 /// Defines a user role.
 /// </summary>
-[DataContract]
+
 public partial class ScimUserRole : IEquatable<ScimUserRole>
 {
     /// <summary>
@@ -25,7 +25,7 @@ public partial class ScimUserRole : IEquatable<ScimUserRole>
     /// The role of the Genesys Cloud user.
     /// </summary>
     /// <value>The role of the Genesys Cloud user.</value>
-    [DataMember(Name = "value", EmitDefaultValue = false)]
+    [JsonPropertyName("value")]
     public string Value { get; set; }
 
 

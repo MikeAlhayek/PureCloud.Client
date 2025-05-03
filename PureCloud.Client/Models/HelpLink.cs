@@ -1,12 +1,12 @@
-using System.Runtime.Serialization;
 using System.Text;
+using System.Text.Json.Serialization;
 
 namespace PureCloud.Client.Models;
 
 /// <summary>
 /// Link to a help or support resource
 /// </summary>
-[DataContract]
+
 public partial class HelpLink : IEquatable<HelpLink>
 {
     /// <summary>
@@ -23,7 +23,7 @@ public partial class HelpLink : IEquatable<HelpLink>
     /// URI of the help resource
     /// </summary>
     /// <value>URI of the help resource</value>
-    [DataMember(Name = "uri", EmitDefaultValue = false)]
+    [JsonPropertyName("uri")]
     public string Uri { get; private set; }
 
 
@@ -32,7 +32,7 @@ public partial class HelpLink : IEquatable<HelpLink>
     /// Link text of the resource
     /// </summary>
     /// <value>Link text of the resource</value>
-    [DataMember(Name = "title", EmitDefaultValue = false)]
+    [JsonPropertyName("title")]
     public string Title { get; private set; }
 
 
@@ -41,7 +41,7 @@ public partial class HelpLink : IEquatable<HelpLink>
     /// Description of the document or resource
     /// </summary>
     /// <value>Description of the document or resource</value>
-    [DataMember(Name = "description", EmitDefaultValue = false)]
+    [JsonPropertyName("description")]
     public string Description { get; private set; }
 
 

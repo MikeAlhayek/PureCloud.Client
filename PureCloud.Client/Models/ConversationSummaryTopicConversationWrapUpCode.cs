@@ -1,12 +1,12 @@
-using System.Runtime.Serialization;
 using System.Text;
+using System.Text.Json.Serialization;
 
 namespace PureCloud.Client.Models;
 
 /// <summary>
 /// ConversationSummaryTopicConversationWrapUpCode
 /// </summary>
-[DataContract]
+
 public partial class ConversationSummaryTopicConversationWrapUpCode : IEquatable<ConversationSummaryTopicConversationWrapUpCode>
 {
     /// <summary>
@@ -30,7 +30,7 @@ public partial class ConversationSummaryTopicConversationWrapUpCode : IEquatable
     /// <summary>
     /// Gets or Sets WrapUpCodeId
     /// </summary>
-    [DataMember(Name = "wrapUpCodeId", EmitDefaultValue = false)]
+    [JsonPropertyName("wrapUpCodeId")]
     public string WrapUpCodeId { get; set; }
 
 
@@ -38,7 +38,7 @@ public partial class ConversationSummaryTopicConversationWrapUpCode : IEquatable
     /// <summary>
     /// Gets or Sets Name
     /// </summary>
-    [DataMember(Name = "name", EmitDefaultValue = false)]
+    [JsonPropertyName("name")]
     public string Name { get; set; }
 
 
@@ -46,7 +46,7 @@ public partial class ConversationSummaryTopicConversationWrapUpCode : IEquatable
     /// <summary>
     /// Gets or Sets Description
     /// </summary>
-    [DataMember(Name = "description", EmitDefaultValue = false)]
+    [JsonPropertyName("description")]
     public string Description { get; set; }
 
 
@@ -54,7 +54,7 @@ public partial class ConversationSummaryTopicConversationWrapUpCode : IEquatable
     /// <summary>
     /// Gets or Sets Score
     /// </summary>
-    [DataMember(Name = "score", EmitDefaultValue = false)]
+    [JsonPropertyName("score")]
     public double? Score { get; set; }
 
 

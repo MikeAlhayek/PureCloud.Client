@@ -1,12 +1,12 @@
-using System.Runtime.Serialization;
 using System.Text;
+using System.Text.Json.Serialization;
 
 namespace PureCloud.Client.Models;
 
 /// <summary>
 /// WfmHistoricalAdherenceBulkResult
 /// </summary>
-[DataContract]
+
 public partial class WfmHistoricalAdherenceBulkResult : IEquatable<WfmHistoricalAdherenceBulkResult>
 {
     /// <summary>
@@ -33,7 +33,7 @@ public partial class WfmHistoricalAdherenceBulkResult : IEquatable<WfmHistorical
     /// Beginning of the date range for this result in ISO-8601 format
     /// </summary>
     /// <value>Beginning of the date range for this result in ISO-8601 format</value>
-    [DataMember(Name = "startDate", EmitDefaultValue = false)]
+    [JsonPropertyName("startDate")]
     public DateTime? StartDate { get; set; }
 
 
@@ -42,7 +42,7 @@ public partial class WfmHistoricalAdherenceBulkResult : IEquatable<WfmHistorical
     /// End of the date range for this result in ISO-8601 format
     /// </summary>
     /// <value>End of the date range for this result in ISO-8601 format</value>
-    [DataMember(Name = "endDate", EmitDefaultValue = false)]
+    [JsonPropertyName("endDate")]
     public DateTime? EndDate { get; set; }
 
 
@@ -51,7 +51,7 @@ public partial class WfmHistoricalAdherenceBulkResult : IEquatable<WfmHistorical
     /// The ID of the management unit for this result
     /// </summary>
     /// <value>The ID of the management unit for this result</value>
-    [DataMember(Name = "managementUnitId", EmitDefaultValue = false)]
+    [JsonPropertyName("managementUnitId")]
     public string ManagementUnitId { get; set; }
 
 
@@ -60,7 +60,7 @@ public partial class WfmHistoricalAdherenceBulkResult : IEquatable<WfmHistorical
     /// The individual results for each user
     /// </summary>
     /// <value>The individual results for each user</value>
-    [DataMember(Name = "userResults", EmitDefaultValue = false)]
+    [JsonPropertyName("userResults")]
     public List<WfmHistoricalAdherenceBulkUserResult> UserResults { get; set; }
 
 
@@ -69,7 +69,7 @@ public partial class WfmHistoricalAdherenceBulkResult : IEquatable<WfmHistorical
     /// Map of secondary presence lookup ID to corresponding secondary presence ID
     /// </summary>
     /// <value>Map of secondary presence lookup ID to corresponding secondary presence ID</value>
-    [DataMember(Name = "lookupIdToSecondaryPresenceId", EmitDefaultValue = false)]
+    [JsonPropertyName("lookupIdToSecondaryPresenceId")]
     public Dictionary<string, string> LookupIdToSecondaryPresenceId { get; set; }
 
 

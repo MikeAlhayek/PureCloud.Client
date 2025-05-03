@@ -1,12 +1,12 @@
-using System.Runtime.Serialization;
 using System.Text;
+using System.Text.Json.Serialization;
 
 namespace PureCloud.Client.Models;
 
 /// <summary>
 /// ActionProperties
 /// </summary>
-[DataContract]
+
 public partial class ActionProperties : IEquatable<ActionProperties>
 {
     /// <summary>
@@ -33,7 +33,7 @@ public partial class ActionProperties : IEquatable<ActionProperties>
     /// Prompt message shown to user, used for webchat type action.
     /// </summary>
     /// <value>Prompt message shown to user, used for webchat type action.</value>
-    [DataMember(Name = "webchatPrompt", EmitDefaultValue = false)]
+    [JsonPropertyName("webchatPrompt")]
     public string WebchatPrompt { get; set; }
 
 
@@ -42,7 +42,7 @@ public partial class ActionProperties : IEquatable<ActionProperties>
     /// Title shown to the user, used for webchat type action.
     /// </summary>
     /// <value>Title shown to the user, used for webchat type action.</value>
-    [DataMember(Name = "webchatTitleText", EmitDefaultValue = false)]
+    [JsonPropertyName("webchatTitleText")]
     public string WebchatTitleText { get; set; }
 
 
@@ -51,7 +51,7 @@ public partial class ActionProperties : IEquatable<ActionProperties>
     /// Accept button text shown to user, used for webchat type action.
     /// </summary>
     /// <value>Accept button text shown to user, used for webchat type action.</value>
-    [DataMember(Name = "webchatAcceptText", EmitDefaultValue = false)]
+    [JsonPropertyName("webchatAcceptText")]
     public string WebchatAcceptText { get; set; }
 
 
@@ -60,7 +60,7 @@ public partial class ActionProperties : IEquatable<ActionProperties>
     /// Decline button text shown to user, used for webchat type action.
     /// </summary>
     /// <value>Decline button text shown to user, used for webchat type action.</value>
-    [DataMember(Name = "webchatDeclineText", EmitDefaultValue = false)]
+    [JsonPropertyName("webchatDeclineText")]
     public string WebchatDeclineText { get; set; }
 
 
@@ -69,7 +69,7 @@ public partial class ActionProperties : IEquatable<ActionProperties>
     /// Survey provided to the user, used for webchat type action.
     /// </summary>
     /// <value>Survey provided to the user, used for webchat type action.</value>
-    [DataMember(Name = "webchatSurvey", EmitDefaultValue = false)]
+    [JsonPropertyName("webchatSurvey")]
     public ActionSurvey WebchatSurvey { get; set; }
 
 

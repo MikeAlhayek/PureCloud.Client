@@ -1,12 +1,12 @@
-using System.Runtime.Serialization;
 using System.Text;
+using System.Text.Json.Serialization;
 
 namespace PureCloud.Client.Models;
 
 /// <summary>
 /// FacebookPermissionEntityListing
 /// </summary>
-[DataContract]
+
 public partial class FacebookPermissionEntityListing : IEquatable<FacebookPermissionEntityListing>
 {
     /// <summary>
@@ -24,7 +24,7 @@ public partial class FacebookPermissionEntityListing : IEquatable<FacebookPermis
     /// <summary>
     /// Gets or Sets Entities
     /// </summary>
-    [DataMember(Name = "entities", EmitDefaultValue = false)]
+    [JsonPropertyName("entities")]
     public List<FacebookPermission> Entities { get; set; }
 
 

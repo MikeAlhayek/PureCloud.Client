@@ -1,4 +1,3 @@
-using System.Runtime.Serialization;
 using System.Text;
 using System.Text.Json.Serialization;
 
@@ -7,7 +6,7 @@ namespace PureCloud.Client.Models;
 /// <summary>
 /// WritableDialerContact
 /// </summary>
-[DataContract]
+
 public partial class WritableDialerContact : IEquatable<WritableDialerContact>
 {
 
@@ -44,7 +43,7 @@ public partial class WritableDialerContact : IEquatable<WritableDialerContact>
     /// The globally unique identifier for the object.
     /// </summary>
     /// <value>The globally unique identifier for the object.</value>
-    [DataMember(Name = "id", EmitDefaultValue = false)]
+    [JsonPropertyName("id")]
     public string Id { get; set; }
 
 
@@ -53,7 +52,7 @@ public partial class WritableDialerContact : IEquatable<WritableDialerContact>
     /// The identifier of the contact list containing this contact.
     /// </summary>
     /// <value>The identifier of the contact list containing this contact.</value>
-    [DataMember(Name = "contactListId", EmitDefaultValue = false)]
+    [JsonPropertyName("contactListId")]
     public string ContactListId { get; set; }
 
 
@@ -62,7 +61,7 @@ public partial class WritableDialerContact : IEquatable<WritableDialerContact>
     /// An ordered map of the contact&#39;s columns and corresponding values.
     /// </summary>
     /// <value>An ordered map of the contact&#39;s columns and corresponding values.</value>
-    [DataMember(Name = "data", EmitDefaultValue = false)]
+    [JsonPropertyName("data")]
     public Dictionary<string, string> Data { get; set; }
 
 
@@ -71,7 +70,7 @@ public partial class WritableDialerContact : IEquatable<WritableDialerContact>
     /// A map of SMS records for the contact phone columns.
     /// </summary>
     /// <value>A map of SMS records for the contact phone columns.</value>
-    [DataMember(Name = "latestSmsEvaluations", EmitDefaultValue = false)]
+    [JsonPropertyName("latestSmsEvaluations")]
     public Dictionary<string, MessageEvaluation> LatestSmsEvaluations { get; private set; }
 
 
@@ -80,7 +79,7 @@ public partial class WritableDialerContact : IEquatable<WritableDialerContact>
     /// A map of email records for the contact email columns.
     /// </summary>
     /// <value>A map of email records for the contact email columns.</value>
-    [DataMember(Name = "latestEmailEvaluations", EmitDefaultValue = false)]
+    [JsonPropertyName("latestEmailEvaluations")]
     public Dictionary<string, MessageEvaluation> LatestEmailEvaluations { get; private set; }
 
 
@@ -89,7 +88,7 @@ public partial class WritableDialerContact : IEquatable<WritableDialerContact>
     /// A map of whatsapp records for the contact whatsapp columns.
     /// </summary>
     /// <value>A map of whatsapp records for the contact whatsapp columns.</value>
-    [DataMember(Name = "latestWhatsAppEvaluations", EmitDefaultValue = false)]
+    [JsonPropertyName("latestWhatsAppEvaluations")]
     public Dictionary<string, MessageEvaluation> LatestWhatsAppEvaluations { get; set; }
 
 
@@ -98,7 +97,7 @@ public partial class WritableDialerContact : IEquatable<WritableDialerContact>
     /// Indicates whether or not the contact can be called.
     /// </summary>
     /// <value>Indicates whether or not the contact can be called.</value>
-    [DataMember(Name = "callable", EmitDefaultValue = false)]
+    [JsonPropertyName("callable")]
     public bool? Callable { get; set; }
 
 
@@ -107,7 +106,7 @@ public partial class WritableDialerContact : IEquatable<WritableDialerContact>
     /// A map of phone number columns to PhoneNumberStatuses, which indicate if the phone number is callable or not.
     /// </summary>
     /// <value>A map of phone number columns to PhoneNumberStatuses, which indicate if the phone number is callable or not.</value>
-    [DataMember(Name = "phoneNumberStatus", EmitDefaultValue = false)]
+    [JsonPropertyName("phoneNumberStatus")]
     public Dictionary<string, PhoneNumberStatus> PhoneNumberStatus { get; set; }
 
 
@@ -116,7 +115,7 @@ public partial class WritableDialerContact : IEquatable<WritableDialerContact>
     /// A map of media types (Voice, SMS and Email) to ContactableStatus, which indicates if the contact can be contacted using the specified media type.
     /// </summary>
     /// <value>A map of media types (Voice, SMS and Email) to ContactableStatus, which indicates if the contact can be contacted using the specified media type.</value>
-    [DataMember(Name = "contactableStatus", EmitDefaultValue = false)]
+    [JsonPropertyName("contactableStatus")]
     public Dictionary<string, ContactableStatus> ContactableStatus { get; set; }
 
 
@@ -125,7 +124,7 @@ public partial class WritableDialerContact : IEquatable<WritableDialerContact>
     /// Timestamp for when the contact was added. Contacts added prior to 2023 September 1 may be missing this value. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z
     /// </summary>
     /// <value>Timestamp for when the contact was added. Contacts added prior to 2023 September 1 may be missing this value. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z</value>
-    [DataMember(Name = "dateCreated", EmitDefaultValue = false)]
+    [JsonPropertyName("dateCreated")]
     public DateTime? DateCreated { get; private set; }
 
 

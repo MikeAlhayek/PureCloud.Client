@@ -1,12 +1,12 @@
-using System.Runtime.Serialization;
 using System.Text;
+using System.Text.Json.Serialization;
 
 namespace PureCloud.Client.Models;
 
 /// <summary>
 /// QualityAuditQueryExecutionResultsResponse
 /// </summary>
-[DataContract]
+
 public partial class QualityAuditQueryExecutionResultsResponse : IEquatable<QualityAuditQueryExecutionResultsResponse>
 {
     /// <summary>
@@ -31,7 +31,7 @@ public partial class QualityAuditQueryExecutionResultsResponse : IEquatable<Qual
     /// Id of the audit query execution request.
     /// </summary>
     /// <value>Id of the audit query execution request.</value>
-    [DataMember(Name = "id", EmitDefaultValue = false)]
+    [JsonPropertyName("id")]
     public string Id { get; set; }
 
 
@@ -40,7 +40,7 @@ public partial class QualityAuditQueryExecutionResultsResponse : IEquatable<Qual
     /// Number of results in a page.
     /// </summary>
     /// <value>Number of results in a page.</value>
-    [DataMember(Name = "pageSize", EmitDefaultValue = false)]
+    [JsonPropertyName("pageSize")]
     public int? PageSize { get; set; }
 
 
@@ -49,7 +49,7 @@ public partial class QualityAuditQueryExecutionResultsResponse : IEquatable<Qual
     /// Optional cursor to indicate where to resume the results.
     /// </summary>
     /// <value>Optional cursor to indicate where to resume the results.</value>
-    [DataMember(Name = "cursor", EmitDefaultValue = false)]
+    [JsonPropertyName("cursor")]
     public string Cursor { get; set; }
 
 
@@ -58,7 +58,7 @@ public partial class QualityAuditQueryExecutionResultsResponse : IEquatable<Qual
     /// List of audit messages.
     /// </summary>
     /// <value>List of audit messages.</value>
-    [DataMember(Name = "entities", EmitDefaultValue = false)]
+    [JsonPropertyName("entities")]
     public List<QualityAuditLogMessage> Entities { get; set; }
 
 

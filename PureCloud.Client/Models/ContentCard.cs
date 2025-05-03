@@ -1,4 +1,3 @@
-using System.Runtime.Serialization;
 using System.Text;
 using System.Text.Json.Serialization;
 
@@ -7,7 +6,7 @@ namespace PureCloud.Client.Models;
 /// <summary>
 /// Card content object.
 /// </summary>
-[DataContract]
+
 public partial class ContentCard : IEquatable<ContentCard>
 {
 
@@ -42,7 +41,7 @@ public partial class ContentCard : IEquatable<ContentCard>
     /// Text to show in the title.
     /// </summary>
     /// <value>Text to show in the title.</value>
-    [DataMember(Name = "title", EmitDefaultValue = false)]
+    [JsonPropertyName("title")]
     public string Title { get; set; }
 
 
@@ -51,7 +50,7 @@ public partial class ContentCard : IEquatable<ContentCard>
     /// Text to show in the description.
     /// </summary>
     /// <value>Text to show in the description.</value>
-    [DataMember(Name = "description", EmitDefaultValue = false)]
+    [JsonPropertyName("description")]
     public string Description { get; set; }
 
 
@@ -60,7 +59,7 @@ public partial class ContentCard : IEquatable<ContentCard>
     /// URL of an image.
     /// </summary>
     /// <value>URL of an image.</value>
-    [DataMember(Name = "image", EmitDefaultValue = false)]
+    [JsonPropertyName("image")]
     public string Image { get; set; }
 
 
@@ -69,7 +68,7 @@ public partial class ContentCard : IEquatable<ContentCard>
     /// URL of a video.
     /// </summary>
     /// <value>URL of a video.</value>
-    [DataMember(Name = "video", EmitDefaultValue = false)]
+    [JsonPropertyName("video")]
     public string Video { get; set; }
 
 
@@ -78,7 +77,7 @@ public partial class ContentCard : IEquatable<ContentCard>
     /// The default button action.
     /// </summary>
     /// <value>The default button action.</value>
-    [DataMember(Name = "defaultAction", EmitDefaultValue = false)]
+    [JsonPropertyName("defaultAction")]
     public ContentCardAction DefaultAction { get; set; }
 
 
@@ -87,7 +86,7 @@ public partial class ContentCard : IEquatable<ContentCard>
     /// An array of action objects.
     /// </summary>
     /// <value>An array of action objects.</value>
-    [DataMember(Name = "actions", EmitDefaultValue = false)]
+    [JsonPropertyName("actions")]
     public List<ContentCardAction> Actions { get; set; }
 
 

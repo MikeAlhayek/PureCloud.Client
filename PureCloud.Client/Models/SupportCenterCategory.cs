@@ -1,12 +1,12 @@
-using System.Runtime.Serialization;
 using System.Text;
+using System.Text.Json.Serialization;
 
 namespace PureCloud.Client.Models;
 
 /// <summary>
 /// SupportCenterCategory
 /// </summary>
-[DataContract]
+
 public partial class SupportCenterCategory : IEquatable<SupportCenterCategory>
 {
     /// <summary>
@@ -28,7 +28,7 @@ public partial class SupportCenterCategory : IEquatable<SupportCenterCategory>
     /// <summary>
     /// Gets or Sets Id
     /// </summary>
-    [DataMember(Name = "id", EmitDefaultValue = false)]
+    [JsonPropertyName("id")]
     public string Id { get; set; }
 
 
@@ -36,7 +36,7 @@ public partial class SupportCenterCategory : IEquatable<SupportCenterCategory>
     /// <summary>
     /// Gets or Sets SelfUri
     /// </summary>
-    [DataMember(Name = "selfUri", EmitDefaultValue = false)]
+    [JsonPropertyName("selfUri")]
     public string SelfUri { get; set; }
 
 
@@ -45,7 +45,7 @@ public partial class SupportCenterCategory : IEquatable<SupportCenterCategory>
     /// Image attributes for a featured category
     /// </summary>
     /// <value>Image attributes for a featured category</value>
-    [DataMember(Name = "image", EmitDefaultValue = false)]
+    [JsonPropertyName("image")]
     public SupportCenterImage Image { get; set; }
 
 

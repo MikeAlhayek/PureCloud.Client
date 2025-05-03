@@ -1,12 +1,12 @@
-using System.Runtime.Serialization;
 using System.Text;
+using System.Text.Json.Serialization;
 
 namespace PureCloud.Client.Models;
 
 /// <summary>
 /// PatchWebMessagingOfferFields
 /// </summary>
-[DataContract]
+
 public partial class PatchWebMessagingOfferFields : IEquatable<PatchWebMessagingOfferFields>
 {
     /// <summary>
@@ -27,7 +27,7 @@ public partial class PatchWebMessagingOfferFields : IEquatable<PatchWebMessaging
     /// Text value to be used when inviting a visitor to engage with a web messaging offer.
     /// </summary>
     /// <value>Text value to be used when inviting a visitor to engage with a web messaging offer.</value>
-    [DataMember(Name = "offerText", EmitDefaultValue = false)]
+    [JsonPropertyName("offerText")]
     public string OfferText { get; set; }
 
 
@@ -36,7 +36,7 @@ public partial class PatchWebMessagingOfferFields : IEquatable<PatchWebMessaging
     /// Flow to be invoked, overrides default flow when specified.
     /// </summary>
     /// <value>Flow to be invoked, overrides default flow when specified.</value>
-    [DataMember(Name = "architectFlow", EmitDefaultValue = false)]
+    [JsonPropertyName("architectFlow")]
     public AddressableEntityRef ArchitectFlow { get; set; }
 
 

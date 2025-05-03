@@ -1,12 +1,12 @@
-using System.Runtime.Serialization;
 using System.Text;
+using System.Text.Json.Serialization;
 
 namespace PureCloud.Client.Models;
 
 /// <summary>
 /// AuthzGrantPolicy
 /// </summary>
-[DataContract]
+
 public partial class AuthzGrantPolicy : IEquatable<AuthzGrantPolicy>
 {
     /// <summary>
@@ -30,7 +30,7 @@ public partial class AuthzGrantPolicy : IEquatable<AuthzGrantPolicy>
     /// <summary>
     /// Gets or Sets Actions
     /// </summary>
-    [DataMember(Name = "actions", EmitDefaultValue = false)]
+    [JsonPropertyName("actions")]
     public List<string> Actions { get; set; }
 
 
@@ -38,7 +38,7 @@ public partial class AuthzGrantPolicy : IEquatable<AuthzGrantPolicy>
     /// <summary>
     /// Gets or Sets Condition
     /// </summary>
-    [DataMember(Name = "condition", EmitDefaultValue = false)]
+    [JsonPropertyName("condition")]
     public string Condition { get; set; }
 
 
@@ -46,7 +46,7 @@ public partial class AuthzGrantPolicy : IEquatable<AuthzGrantPolicy>
     /// <summary>
     /// Gets or Sets Domain
     /// </summary>
-    [DataMember(Name = "domain", EmitDefaultValue = false)]
+    [JsonPropertyName("domain")]
     public string Domain { get; set; }
 
 
@@ -54,7 +54,7 @@ public partial class AuthzGrantPolicy : IEquatable<AuthzGrantPolicy>
     /// <summary>
     /// Gets or Sets EntityName
     /// </summary>
-    [DataMember(Name = "entityName", EmitDefaultValue = false)]
+    [JsonPropertyName("entityName")]
     public string EntityName { get; set; }
 
 

@@ -1,12 +1,12 @@
-using System.Runtime.Serialization;
 using System.Text;
+using System.Text.Json.Serialization;
 
 namespace PureCloud.Client.Models;
 
 /// <summary>
 /// ShiftTradePreviewResponse
 /// </summary>
-[DataContract]
+
 public partial class ShiftTradePreviewResponse : IEquatable<ShiftTradePreviewResponse>
 {
     /// <summary>
@@ -25,7 +25,7 @@ public partial class ShiftTradePreviewResponse : IEquatable<ShiftTradePreviewRes
     /// List of activities that will make up the new shift if this shift trade is approved
     /// </summary>
     /// <value>List of activities that will make up the new shift if this shift trade is approved</value>
-    [DataMember(Name = "activities", EmitDefaultValue = false)]
+    [JsonPropertyName("activities")]
     public List<ShiftTradeActivityPreviewResponse> Activities { get; set; }
 
 

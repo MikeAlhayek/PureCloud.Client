@@ -1,12 +1,12 @@
-using System.Runtime.Serialization;
 using System.Text;
+using System.Text.Json.Serialization;
 
 namespace PureCloud.Client.Models;
 
 /// <summary>
 /// Configuration information for the integration
 /// </summary>
-[DataContract]
+
 public partial class IntegrationConfigurationInfo : IEquatable<IntegrationConfigurationInfo>
 {
     /// <summary>
@@ -23,7 +23,7 @@ public partial class IntegrationConfigurationInfo : IEquatable<IntegrationConfig
     /// The current, active configuration for the integration.
     /// </summary>
     /// <value>The current, active configuration for the integration.</value>
-    [DataMember(Name = "current", EmitDefaultValue = false)]
+    [JsonPropertyName("current")]
     public IntegrationConfiguration Current { get; private set; }
 
 

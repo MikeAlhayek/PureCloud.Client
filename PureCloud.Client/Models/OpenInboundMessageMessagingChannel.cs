@@ -1,4 +1,3 @@
-using System.Runtime.Serialization;
 using System.Text;
 using System.Text.Json.Serialization;
 
@@ -7,7 +6,7 @@ namespace PureCloud.Client.Models;
 /// <summary>
 /// Open Channel-specific information that describes the message and the message channel/provider, with additional message information
 /// </summary>
-[DataContract]
+
 public partial class OpenInboundMessageMessagingChannel : IEquatable<OpenInboundMessageMessagingChannel>
 {
 
@@ -38,7 +37,7 @@ public partial class OpenInboundMessageMessagingChannel : IEquatable<OpenInbound
     /// Information about the recipient the message is received from.
     /// </summary>
     /// <value>Information about the recipient the message is received from.</value>
-    [DataMember(Name = "from", EmitDefaultValue = false)]
+    [JsonPropertyName("from")]
     public OpenMessagingFromRecipient From { get; set; }
 
 
@@ -47,7 +46,7 @@ public partial class OpenInboundMessageMessagingChannel : IEquatable<OpenInbound
     /// Original time of the event. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z
     /// </summary>
     /// <value>Original time of the event. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z</value>
-    [DataMember(Name = "time", EmitDefaultValue = false)]
+    [JsonPropertyName("time")]
     public DateTime? Time { get; set; }
 
 
@@ -56,7 +55,7 @@ public partial class OpenInboundMessageMessagingChannel : IEquatable<OpenInbound
     /// Unique provider ID of the message.
     /// </summary>
     /// <value>Unique provider ID of the message.</value>
-    [DataMember(Name = "messageId", EmitDefaultValue = false)]
+    [JsonPropertyName("messageId")]
     public string MessageId { get; set; }
 
 
@@ -65,7 +64,7 @@ public partial class OpenInboundMessageMessagingChannel : IEquatable<OpenInbound
     /// Additional Custom Information about the channel.
     /// </summary>
     /// <value>Additional Custom Information about the channel.</value>
-    [DataMember(Name = "metadata", EmitDefaultValue = false)]
+    [JsonPropertyName("metadata")]
     public object Metadata { get; set; }
 
 

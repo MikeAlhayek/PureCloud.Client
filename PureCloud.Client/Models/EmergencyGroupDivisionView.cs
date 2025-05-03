@@ -1,4 +1,3 @@
-using System.Runtime.Serialization;
 using System.Text;
 using System.Text.Json.Serialization;
 
@@ -7,7 +6,7 @@ namespace PureCloud.Client.Models;
 /// <summary>
 /// A group of call flows.
 /// </summary>
-[DataContract]
+
 public partial class EmergencyGroupDivisionView : IEquatable<EmergencyGroupDivisionView>
 {
 
@@ -36,7 +35,7 @@ public partial class EmergencyGroupDivisionView : IEquatable<EmergencyGroupDivis
     /// The emergency group identifier
     /// </summary>
     /// <value>The emergency group identifier</value>
-    [DataMember(Name = "id", EmitDefaultValue = false)]
+    [JsonPropertyName("id")]
     public string Id { get; set; }
 
 
@@ -45,7 +44,7 @@ public partial class EmergencyGroupDivisionView : IEquatable<EmergencyGroupDivis
     /// The emergency group name
     /// </summary>
     /// <value>The emergency group name</value>
-    [DataMember(Name = "name", EmitDefaultValue = false)]
+    [JsonPropertyName("name")]
     public string Name { get; set; }
 
 
@@ -54,7 +53,7 @@ public partial class EmergencyGroupDivisionView : IEquatable<EmergencyGroupDivis
     /// The division to which this entity belongs.
     /// </summary>
     /// <value>The division to which this entity belongs.</value>
-    [DataMember(Name = "division", EmitDefaultValue = false)]
+    [JsonPropertyName("division")]
     public WritableDivision Division { get; set; }
 
 
@@ -63,7 +62,7 @@ public partial class EmergencyGroupDivisionView : IEquatable<EmergencyGroupDivis
     /// The URI for this object
     /// </summary>
     /// <value>The URI for this object</value>
-    [DataMember(Name = "selfUri", EmitDefaultValue = false)]
+    [JsonPropertyName("selfUri")]
     public string SelfUri { get; private set; }
 
 

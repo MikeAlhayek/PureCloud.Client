@@ -7,14 +7,14 @@ namespace PureCloud.Client.Models;
 /// <summary>
 /// AsyncQueryStatus
 /// </summary>
-[DataContract]
+
 public partial class AsyncQueryStatus : IEquatable<AsyncQueryStatus>
 {
     /// <summary>
     /// The current state of the asynchronous query
     /// </summary>
     /// <value>The current state of the asynchronous query</value>
-    [JsonConverter(typeof(JsonStringEnumConverter))]
+    
     public enum StateEnum
     {
         /// <summary>
@@ -65,7 +65,7 @@ public partial class AsyncQueryStatus : IEquatable<AsyncQueryStatus>
     /// The current state of the asynchronous query
     /// </summary>
     /// <value>The current state of the asynchronous query</value>
-    [DataMember(Name = "state", EmitDefaultValue = false)]
+    [JsonPropertyName("state")]
     public StateEnum? State { get; set; }
     /// <summary>
     /// Initializes a new instance of the <see cref="AsyncQueryStatus" /> class.
@@ -93,7 +93,7 @@ public partial class AsyncQueryStatus : IEquatable<AsyncQueryStatus>
     /// The error associated with the current query, if the state is FAILED
     /// </summary>
     /// <value>The error associated with the current query, if the state is FAILED</value>
-    [DataMember(Name = "errorMessage", EmitDefaultValue = false)]
+    [JsonPropertyName("errorMessage")]
     public string ErrorMessage { get; set; }
 
 
@@ -102,7 +102,7 @@ public partial class AsyncQueryStatus : IEquatable<AsyncQueryStatus>
     /// The time at which results for this query will expire. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z
     /// </summary>
     /// <value>The time at which results for this query will expire. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z</value>
-    [DataMember(Name = "expirationDate", EmitDefaultValue = false)]
+    [JsonPropertyName("expirationDate")]
     public DateTime? ExpirationDate { get; set; }
 
 
@@ -111,7 +111,7 @@ public partial class AsyncQueryStatus : IEquatable<AsyncQueryStatus>
     /// The time at which the query was submitted. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z
     /// </summary>
     /// <value>The time at which the query was submitted. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z</value>
-    [DataMember(Name = "submissionDate", EmitDefaultValue = false)]
+    [JsonPropertyName("submissionDate")]
     public DateTime? SubmissionDate { get; set; }
 
 
@@ -120,7 +120,7 @@ public partial class AsyncQueryStatus : IEquatable<AsyncQueryStatus>
     /// The time at which the query completed. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z
     /// </summary>
     /// <value>The time at which the query completed. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z</value>
-    [DataMember(Name = "completionDate", EmitDefaultValue = false)]
+    [JsonPropertyName("completionDate")]
     public DateTime? CompletionDate { get; set; }
 
 

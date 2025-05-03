@@ -1,12 +1,12 @@
-using System.Runtime.Serialization;
 using System.Text;
+using System.Text.Json.Serialization;
 
 namespace PureCloud.Client.Models;
 
 /// <summary>
 /// LabelUtilizationRequest
 /// </summary>
-[DataContract]
+
 public partial class LabelUtilizationRequest : IEquatable<LabelUtilizationRequest>
 {
     /// <summary>
@@ -27,7 +27,7 @@ public partial class LabelUtilizationRequest : IEquatable<LabelUtilizationReques
     /// Defines the maximum number of interactions with this label that an agent can handle at one time.
     /// </summary>
     /// <value>Defines the maximum number of interactions with this label that an agent can handle at one time.</value>
-    [DataMember(Name = "maximumCapacity", EmitDefaultValue = false)]
+    [JsonPropertyName("maximumCapacity")]
     public int? MaximumCapacity { get; set; }
 
 
@@ -36,7 +36,7 @@ public partial class LabelUtilizationRequest : IEquatable<LabelUtilizationReques
     /// Defines other labels that can interrupt an interaction with this label.
     /// </summary>
     /// <value>Defines other labels that can interrupt an interaction with this label.</value>
-    [DataMember(Name = "interruptingLabelIds", EmitDefaultValue = false)]
+    [JsonPropertyName("interruptingLabelIds")]
     public List<string> InterruptingLabelIds { get; set; }
 
 

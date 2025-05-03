@@ -7,13 +7,13 @@ namespace PureCloud.Client.Models;
 /// <summary>
 /// WfmBuShortTermForecastCopyCompleteTopicBuForecastModification
 /// </summary>
-[DataContract]
+
 public partial class WfmBuShortTermForecastCopyCompleteTopicBuForecastModification : IEquatable<WfmBuShortTermForecastCopyCompleteTopicBuForecastModification>
 {
     /// <summary>
     /// Gets or Sets Type
     /// </summary>
-    [JsonConverter(typeof(JsonStringEnumConverter))]
+    
     public enum TypeEnum
     {
         /// <summary>
@@ -81,7 +81,7 @@ public partial class WfmBuShortTermForecastCopyCompleteTopicBuForecastModificati
     /// <summary>
     /// Gets or Sets Metric
     /// </summary>
-    [JsonConverter(typeof(JsonStringEnumConverter))]
+    
     public enum MetricEnum
     {
         /// <summary>
@@ -107,7 +107,7 @@ public partial class WfmBuShortTermForecastCopyCompleteTopicBuForecastModificati
     /// <summary>
     /// Gets or Sets LegacyMetric
     /// </summary>
-    [JsonConverter(typeof(JsonStringEnumConverter))]
+    
     public enum LegacyMetricEnum
     {
         /// <summary>
@@ -145,17 +145,17 @@ public partial class WfmBuShortTermForecastCopyCompleteTopicBuForecastModificati
     /// <summary>
     /// Gets or Sets Type
     /// </summary>
-    [DataMember(Name = "type", EmitDefaultValue = false)]
+    [JsonPropertyName("type")]
     public TypeEnum? Type { get; set; }
     /// <summary>
     /// Gets or Sets Metric
     /// </summary>
-    [DataMember(Name = "metric", EmitDefaultValue = false)]
+    [JsonPropertyName("metric")]
     public MetricEnum? Metric { get; set; }
     /// <summary>
     /// Gets or Sets LegacyMetric
     /// </summary>
-    [DataMember(Name = "legacyMetric", EmitDefaultValue = false)]
+    [JsonPropertyName("legacyMetric")]
     public LegacyMetricEnum? LegacyMetric { get; set; }
     /// <summary>
     /// Initializes a new instance of the <see cref="WfmBuShortTermForecastCopyCompleteTopicBuForecastModification" /> class.
@@ -198,7 +198,7 @@ public partial class WfmBuShortTermForecastCopyCompleteTopicBuForecastModificati
     /// <summary>
     /// Gets or Sets StartIntervalIndex
     /// </summary>
-    [DataMember(Name = "startIntervalIndex", EmitDefaultValue = false)]
+    [JsonPropertyName("startIntervalIndex")]
     public long? StartIntervalIndex { get; set; }
 
 
@@ -206,7 +206,7 @@ public partial class WfmBuShortTermForecastCopyCompleteTopicBuForecastModificati
     /// <summary>
     /// Gets or Sets EndIntervalIndex
     /// </summary>
-    [DataMember(Name = "endIntervalIndex", EmitDefaultValue = false)]
+    [JsonPropertyName("endIntervalIndex")]
     public long? EndIntervalIndex { get; set; }
 
 
@@ -218,7 +218,7 @@ public partial class WfmBuShortTermForecastCopyCompleteTopicBuForecastModificati
     /// <summary>
     /// Gets or Sets Value
     /// </summary>
-    [DataMember(Name = "value", EmitDefaultValue = false)]
+    [JsonPropertyName("value")]
     public double? Value { get; set; }
 
 
@@ -226,7 +226,7 @@ public partial class WfmBuShortTermForecastCopyCompleteTopicBuForecastModificati
     /// <summary>
     /// Gets or Sets Values
     /// </summary>
-    [DataMember(Name = "values", EmitDefaultValue = false)]
+    [JsonPropertyName("values")]
     public List<WfmBuShortTermForecastCopyCompleteTopicModificationIntervalOffsetValue> Values { get; set; }
 
 
@@ -234,7 +234,7 @@ public partial class WfmBuShortTermForecastCopyCompleteTopicBuForecastModificati
     /// <summary>
     /// Gets or Sets SecondaryValues
     /// </summary>
-    [DataMember(Name = "secondaryValues", EmitDefaultValue = false)]
+    [JsonPropertyName("secondaryValues")]
     public List<WfmBuShortTermForecastCopyCompleteTopicModificationIntervalOffsetValue> SecondaryValues { get; set; }
 
 
@@ -242,7 +242,7 @@ public partial class WfmBuShortTermForecastCopyCompleteTopicBuForecastModificati
     /// <summary>
     /// Gets or Sets Enabled
     /// </summary>
-    [DataMember(Name = "enabled", EmitDefaultValue = false)]
+    [JsonPropertyName("enabled")]
     public bool? Enabled { get; set; }
 
 
@@ -250,7 +250,7 @@ public partial class WfmBuShortTermForecastCopyCompleteTopicBuForecastModificati
     /// <summary>
     /// Gets or Sets Granularity
     /// </summary>
-    [DataMember(Name = "granularity", EmitDefaultValue = false)]
+    [JsonPropertyName("granularity")]
     public string Granularity { get; set; }
 
 
@@ -258,7 +258,7 @@ public partial class WfmBuShortTermForecastCopyCompleteTopicBuForecastModificati
     /// <summary>
     /// Gets or Sets SecondaryGranularity
     /// </summary>
-    [DataMember(Name = "secondaryGranularity", EmitDefaultValue = false)]
+    [JsonPropertyName("secondaryGranularity")]
     public string SecondaryGranularity { get; set; }
 
 
@@ -266,7 +266,7 @@ public partial class WfmBuShortTermForecastCopyCompleteTopicBuForecastModificati
     /// <summary>
     /// Gets or Sets DisplayGranularity
     /// </summary>
-    [DataMember(Name = "displayGranularity", EmitDefaultValue = false)]
+    [JsonPropertyName("displayGranularity")]
     public string DisplayGranularity { get; set; }
 
 
@@ -274,7 +274,7 @@ public partial class WfmBuShortTermForecastCopyCompleteTopicBuForecastModificati
     /// <summary>
     /// Gets or Sets PlanningGroupIds
     /// </summary>
-    [DataMember(Name = "planningGroupIds", EmitDefaultValue = false)]
+    [JsonPropertyName("planningGroupIds")]
     public List<string> PlanningGroupIds { get; set; }
 
 

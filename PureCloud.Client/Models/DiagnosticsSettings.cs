@@ -1,4 +1,3 @@
-using System.Runtime.Serialization;
 using System.Text;
 
 namespace PureCloud.Client.Models;
@@ -6,7 +5,7 @@ namespace PureCloud.Client.Models;
 /// <summary>
 /// DiagnosticsSettings
 /// </summary>
-[DataContract]
+
 public partial class DiagnosticsSettings : IEquatable<DiagnosticsSettings>
 {
     /// <summary>

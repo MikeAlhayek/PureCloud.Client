@@ -7,14 +7,14 @@ namespace PureCloud.Client.Models;
 /// <summary>
 /// ContactAddressConditionSettings
 /// </summary>
-[DataContract]
+
 public partial class ContactAddressConditionSettings : IEquatable<ContactAddressConditionSettings>
 {
     /// <summary>
     /// The operator to use when comparing address values.
     /// </summary>
     /// <value>The operator to use when comparing address values.</value>
-    [JsonConverter(typeof(JsonStringEnumConverter))]
+    
     public enum OperatorEnum
     {
         /// <summary>
@@ -53,7 +53,7 @@ public partial class ContactAddressConditionSettings : IEquatable<ContactAddress
     /// The operator to use when comparing address values.
     /// </summary>
     /// <value>The operator to use when comparing address values.</value>
-    [DataMember(Name = "operator", EmitDefaultValue = false)]
+    [JsonPropertyName("operator")]
     public OperatorEnum? Operator { get; set; }
 
     /// <summary>
@@ -81,7 +81,7 @@ public partial class ContactAddressConditionSettings : IEquatable<ContactAddress
     /// The value to compare against the contact&#39;s address.
     /// </summary>
     /// <value>The value to compare against the contact&#39;s address.</value>
-    [DataMember(Name = "value", EmitDefaultValue = false)]
+    [JsonPropertyName("value")]
     public string Value { get; set; }
 
 

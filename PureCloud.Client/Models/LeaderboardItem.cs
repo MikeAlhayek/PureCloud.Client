@@ -1,12 +1,12 @@
-using System.Runtime.Serialization;
 using System.Text;
+using System.Text.Json.Serialization;
 
 namespace PureCloud.Client.Models;
 
 /// <summary>
 /// LeaderboardItem
 /// </summary>
-[DataContract]
+
 public partial class LeaderboardItem : IEquatable<LeaderboardItem>
 {
     /// <summary>
@@ -23,7 +23,7 @@ public partial class LeaderboardItem : IEquatable<LeaderboardItem>
     /// The user object for this leaderboard rank
     /// </summary>
     /// <value>The user object for this leaderboard rank</value>
-    [DataMember(Name = "user", EmitDefaultValue = false)]
+    [JsonPropertyName("user")]
     public UserReference User { get; private set; }
 
 
@@ -32,7 +32,7 @@ public partial class LeaderboardItem : IEquatable<LeaderboardItem>
     /// The rank of the user
     /// </summary>
     /// <value>The rank of the user</value>
-    [DataMember(Name = "rank", EmitDefaultValue = false)]
+    [JsonPropertyName("rank")]
     public int? Rank { get; private set; }
 
 
@@ -41,7 +41,7 @@ public partial class LeaderboardItem : IEquatable<LeaderboardItem>
     /// The points collected by the user
     /// </summary>
     /// <value>The points collected by the user</value>
-    [DataMember(Name = "points", EmitDefaultValue = false)]
+    [JsonPropertyName("points")]
     public long? Points { get; private set; }
 
 

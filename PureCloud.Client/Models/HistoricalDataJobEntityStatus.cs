@@ -7,14 +7,14 @@ namespace PureCloud.Client.Models;
 /// <summary>
 /// HistoricalDataJobEntityStatus
 /// </summary>
-[DataContract]
+
 public partial class HistoricalDataJobEntityStatus : IEquatable<HistoricalDataJobEntityStatus>
 {
     /// <summary>
     /// Property denoting the status of the delete job
     /// </summary>
     /// <value>Property denoting the status of the delete job</value>
-    [JsonConverter(typeof(JsonStringEnumConverter))]
+    
     public enum StateEnum
     {
         /// <summary>
@@ -47,7 +47,7 @@ public partial class HistoricalDataJobEntityStatus : IEquatable<HistoricalDataJo
     /// Property denoting the status of the delete job
     /// </summary>
     /// <value>Property denoting the status of the delete job</value>
-    [DataMember(Name = "state", EmitDefaultValue = false)]
+    [JsonPropertyName("state")]
     public StateEnum? State { get; set; }
     /// <summary>
     /// Initializes a new instance of the <see cref="HistoricalDataJobEntityStatus" /> class.
@@ -65,7 +65,7 @@ public partial class HistoricalDataJobEntityStatus : IEquatable<HistoricalDataJo
     /// The Job Id Request
     /// </summary>
     /// <value>The Job Id Request</value>
-    [DataMember(Name = "id", EmitDefaultValue = false)]
+    [JsonPropertyName("id")]
     public string Id { get; private set; }
 
 
@@ -76,7 +76,7 @@ public partial class HistoricalDataJobEntityStatus : IEquatable<HistoricalDataJo
     /// The URI for this object
     /// </summary>
     /// <value>The URI for this object</value>
-    [DataMember(Name = "selfUri", EmitDefaultValue = false)]
+    [JsonPropertyName("selfUri")]
     public string SelfUri { get; private set; }
 
 

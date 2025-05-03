@@ -1,4 +1,3 @@
-using System.Runtime.Serialization;
 using System.Text;
 using System.Text.Json.Serialization;
 
@@ -7,7 +6,7 @@ namespace PureCloud.Client.Models;
 /// <summary>
 /// LongTermForecastPlanningGroupData
 /// </summary>
-[DataContract]
+
 public partial class LongTermForecastPlanningGroupData : IEquatable<LongTermForecastPlanningGroupData>
 {
 
@@ -36,7 +35,7 @@ public partial class LongTermForecastPlanningGroupData : IEquatable<LongTermFore
     /// The ID of the planning group to which this data applies. Note this is a snapshot of the planning group at the time of forecast creation and may not correspond to the current configuration
     /// </summary>
     /// <value>The ID of the planning group to which this data applies. Note this is a snapshot of the planning group at the time of forecast creation and may not correspond to the current configuration</value>
-    [DataMember(Name = "planningGroupId", EmitDefaultValue = false)]
+    [JsonPropertyName("planningGroupId")]
     public string PlanningGroupId { get; set; }
 
 
@@ -45,7 +44,7 @@ public partial class LongTermForecastPlanningGroupData : IEquatable<LongTermFore
     /// Forecast offered counts per day for this planning group
     /// </summary>
     /// <value>Forecast offered counts per day for this planning group</value>
-    [DataMember(Name = "offeredPerDay", EmitDefaultValue = false)]
+    [JsonPropertyName("offeredPerDay")]
     public List<double?> OfferedPerDay { get; set; }
 
 
@@ -54,7 +53,7 @@ public partial class LongTermForecastPlanningGroupData : IEquatable<LongTermFore
     /// Forecast average handle time per day in seconds
     /// </summary>
     /// <value>Forecast average handle time per day in seconds</value>
-    [DataMember(Name = "averageHandleTimeSecondsPerDay", EmitDefaultValue = false)]
+    [JsonPropertyName("averageHandleTimeSecondsPerDay")]
     public List<double?> AverageHandleTimeSecondsPerDay { get; set; }
 
 

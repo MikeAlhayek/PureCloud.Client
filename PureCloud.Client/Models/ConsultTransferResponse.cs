@@ -1,4 +1,3 @@
-using System.Runtime.Serialization;
 using System.Text;
 using System.Text.Json.Serialization;
 
@@ -7,7 +6,7 @@ namespace PureCloud.Client.Models;
 /// <summary>
 /// ConsultTransferResponse
 /// </summary>
-[DataContract]
+
 public partial class ConsultTransferResponse : IEquatable<ConsultTransferResponse>
 {
 
@@ -32,7 +31,7 @@ public partial class ConsultTransferResponse : IEquatable<ConsultTransferRespons
     /// Participant ID to whom the call is being transferred.
     /// </summary>
     /// <value>Participant ID to whom the call is being transferred.</value>
-    [DataMember(Name = "destinationParticipantId", EmitDefaultValue = false)]
+    [JsonPropertyName("destinationParticipantId")]
     public string DestinationParticipantId { get; set; }
 
 

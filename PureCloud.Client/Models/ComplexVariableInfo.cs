@@ -1,4 +1,3 @@
-using System.Runtime.Serialization;
 using System.Text;
 using System.Text.Json.Serialization;
 
@@ -7,7 +6,7 @@ namespace PureCloud.Client.Models;
 /// <summary>
 /// Variable type information about a complex type from the bot&#39;s definition
 /// </summary>
-[DataContract]
+
 public partial class ComplexVariableInfo : IEquatable<ComplexVariableInfo>
 {
 
@@ -34,7 +33,7 @@ public partial class ComplexVariableInfo : IEquatable<ComplexVariableInfo>
     /// The variable type ID
     /// </summary>
     /// <value>The variable type ID</value>
-    [DataMember(Name = "id", EmitDefaultValue = false)]
+    [JsonPropertyName("id")]
     public string Id { get; set; }
 
 
@@ -43,7 +42,7 @@ public partial class ComplexVariableInfo : IEquatable<ComplexVariableInfo>
     /// The variable type display name
     /// </summary>
     /// <value>The variable type display name</value>
-    [DataMember(Name = "name", EmitDefaultValue = false)]
+    [JsonPropertyName("name")]
     public string Name { get; set; }
 
 

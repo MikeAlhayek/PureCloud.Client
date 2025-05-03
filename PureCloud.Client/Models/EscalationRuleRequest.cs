@@ -7,14 +7,14 @@ namespace PureCloud.Client.Models;
 /// <summary>
 /// EscalationRuleRequest
 /// </summary>
-[DataContract]
+
 public partial class EscalationRuleRequest : IEquatable<EscalationRuleRequest>
 {
     /// <summary>
     /// The status of the escalation rule.
     /// </summary>
     /// <value>The status of the escalation rule.</value>
-    [JsonConverter(typeof(JsonStringEnumConverter))]
+    
     public enum StatusEnum
     {
         /// <summary>
@@ -41,7 +41,7 @@ public partial class EscalationRuleRequest : IEquatable<EscalationRuleRequest>
     /// The status of the escalation rule.
     /// </summary>
     /// <value>The status of the escalation rule.</value>
-    [DataMember(Name = "status", EmitDefaultValue = false)]
+    [JsonPropertyName("status")]
     public StatusEnum? Status { get; set; }
 
     /// <summary>
@@ -83,7 +83,7 @@ public partial class EscalationRuleRequest : IEquatable<EscalationRuleRequest>
     /// The name of the escalation rule.
     /// </summary>
     /// <value>The name of the escalation rule.</value>
-    [DataMember(Name = "name", EmitDefaultValue = false)]
+    [JsonPropertyName("name")]
     public string Name { get; set; }
 
 
@@ -92,7 +92,7 @@ public partial class EscalationRuleRequest : IEquatable<EscalationRuleRequest>
     /// The criteria that defines when a social media message should be escalated.
     /// </summary>
     /// <value>The criteria that defines when a social media message should be escalated.</value>
-    [DataMember(Name = "matchCriteria", EmitDefaultValue = false)]
+    [JsonPropertyName("matchCriteria")]
     public string MatchCriteria { get; set; }
 
 
@@ -101,7 +101,7 @@ public partial class EscalationRuleRequest : IEquatable<EscalationRuleRequest>
     /// The priority of the escalation rule. The lower the number the higer the priority. Once a rule is matched others are skipped.
     /// </summary>
     /// <value>The priority of the escalation rule. The lower the number the higer the priority. Once a rule is matched others are skipped.</value>
-    [DataMember(Name = "priority", EmitDefaultValue = false)]
+    [JsonPropertyName("priority")]
     public int? Priority { get; set; }
 
 
@@ -110,7 +110,7 @@ public partial class EscalationRuleRequest : IEquatable<EscalationRuleRequest>
     /// The ID of the division the social escalation rule belongs to.
     /// </summary>
     /// <value>The ID of the division the social escalation rule belongs to.</value>
-    [DataMember(Name = "divisionId", EmitDefaultValue = false)]
+    [JsonPropertyName("divisionId")]
     public string DivisionId { get; set; }
 
 
@@ -119,7 +119,7 @@ public partial class EscalationRuleRequest : IEquatable<EscalationRuleRequest>
     /// A description of the social escalation rule.
     /// </summary>
     /// <value>A description of the social escalation rule.</value>
-    [DataMember(Name = "description", EmitDefaultValue = false)]
+    [JsonPropertyName("description")]
     public string Description { get; set; }
 
 
@@ -130,7 +130,7 @@ public partial class EscalationRuleRequest : IEquatable<EscalationRuleRequest>
     /// The target integration configuration used for an open social media message if the match criteria returns true.
     /// </summary>
     /// <value>The target integration configuration used for an open social media message if the match criteria returns true.</value>
-    [DataMember(Name = "openEscalation", EmitDefaultValue = false)]
+    [JsonPropertyName("openEscalation")]
     public EscalationTarget OpenEscalation { get; set; }
 
 
@@ -139,7 +139,7 @@ public partial class EscalationRuleRequest : IEquatable<EscalationRuleRequest>
     /// The target integration configuration used for a Facebook social media message if the match criteria returns true.
     /// </summary>
     /// <value>The target integration configuration used for a Facebook social media message if the match criteria returns true.</value>
-    [DataMember(Name = "facebookEscalation", EmitDefaultValue = false)]
+    [JsonPropertyName("facebookEscalation")]
     public EscalationTarget FacebookEscalation { get; set; }
 
 
@@ -148,7 +148,7 @@ public partial class EscalationRuleRequest : IEquatable<EscalationRuleRequest>
     /// The target integration configuration used for an Instagram social media message if the match criteria returns true.
     /// </summary>
     /// <value>The target integration configuration used for an Instagram social media message if the match criteria returns true.</value>
-    [DataMember(Name = "instagramEscalation", EmitDefaultValue = false)]
+    [JsonPropertyName("instagramEscalation")]
     public EscalationTarget InstagramEscalation { get; set; }
 
 
@@ -157,7 +157,7 @@ public partial class EscalationRuleRequest : IEquatable<EscalationRuleRequest>
     /// The target integration configuration used for a X (formerly Twitter) social media message if the match criteria returns true.
     /// </summary>
     /// <value>The target integration configuration used for a X (formerly Twitter) social media message if the match criteria returns true.</value>
-    [DataMember(Name = "twitterEscalation", EmitDefaultValue = false)]
+    [JsonPropertyName("twitterEscalation")]
     public EscalationTarget TwitterEscalation { get; set; }
 
 

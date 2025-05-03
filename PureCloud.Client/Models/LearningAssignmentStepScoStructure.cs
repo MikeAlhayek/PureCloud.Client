@@ -7,14 +7,14 @@ namespace PureCloud.Client.Models;
 /// <summary>
 /// LearningAssignmentStepScoStructure
 /// </summary>
-[DataContract]
+
 public partial class LearningAssignmentStepScoStructure : IEquatable<LearningAssignmentStepScoStructure>
 {
     /// <summary>
     /// The success status of this SCO
     /// </summary>
     /// <value>The success status of this SCO</value>
-    [JsonConverter(typeof(JsonStringEnumConverter))]
+    
     public enum SuccessStatusEnum
     {
         /// <summary>
@@ -47,7 +47,7 @@ public partial class LearningAssignmentStepScoStructure : IEquatable<LearningAss
     /// The completion status of this SCO
     /// </summary>
     /// <value>The completion status of this SCO</value>
-    [JsonConverter(typeof(JsonStringEnumConverter))]
+    
     public enum CompletionStatusEnum
     {
         /// <summary>
@@ -86,13 +86,13 @@ public partial class LearningAssignmentStepScoStructure : IEquatable<LearningAss
     /// The success status of this SCO
     /// </summary>
     /// <value>The success status of this SCO</value>
-    [DataMember(Name = "successStatus", EmitDefaultValue = false)]
+    [JsonPropertyName("successStatus")]
     public SuccessStatusEnum? SuccessStatus { get; private set; }
     /// <summary>
     /// The completion status of this SCO
     /// </summary>
     /// <value>The completion status of this SCO</value>
-    [DataMember(Name = "completionStatus", EmitDefaultValue = false)]
+    [JsonPropertyName("completionStatus")]
     public CompletionStatusEnum? CompletionStatus { get; private set; }
     /// <summary>
     /// Initializes a new instance of the <see cref="LearningAssignmentStepScoStructure" /> class.
@@ -108,7 +108,7 @@ public partial class LearningAssignmentStepScoStructure : IEquatable<LearningAss
     /// The id of this SCO in the course manifest
     /// </summary>
     /// <value>The id of this SCO in the course manifest</value>
-    [DataMember(Name = "id", EmitDefaultValue = false)]
+    [JsonPropertyName("id")]
     public string Id { get; private set; }
 
 
@@ -117,7 +117,7 @@ public partial class LearningAssignmentStepScoStructure : IEquatable<LearningAss
     /// The name of this SCO in the course manifest
     /// </summary>
     /// <value>The name of this SCO in the course manifest</value>
-    [DataMember(Name = "name", EmitDefaultValue = false)]
+    [JsonPropertyName("name")]
     public string Name { get; private set; }
 
 
@@ -130,7 +130,7 @@ public partial class LearningAssignmentStepScoStructure : IEquatable<LearningAss
     /// Child items belonging to this SCO in the course manifest
     /// </summary>
     /// <value>Child items belonging to this SCO in the course manifest</value>
-    [DataMember(Name = "children", EmitDefaultValue = false)]
+    [JsonPropertyName("children")]
     public List<LearningAssignmentStepScoStructure> Children { get; private set; }
 
 

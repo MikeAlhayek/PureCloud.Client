@@ -1,12 +1,12 @@
-using System.Runtime.Serialization;
 using System.Text;
+using System.Text.Json.Serialization;
 
 namespace PureCloud.Client.Models;
 
 /// <summary>
 /// PatchContentOfferStyleProperties
 /// </summary>
-[DataContract]
+
 public partial class PatchContentOfferStyleProperties : IEquatable<PatchContentOfferStyleProperties>
 {
     /// <summary>
@@ -29,7 +29,7 @@ public partial class PatchContentOfferStyleProperties : IEquatable<PatchContentO
     /// Padding of the offer. (eg. 10px)
     /// </summary>
     /// <value>Padding of the offer. (eg. 10px)</value>
-    [DataMember(Name = "padding", EmitDefaultValue = false)]
+    [JsonPropertyName("padding")]
     public string Padding { get; set; }
 
 
@@ -38,7 +38,7 @@ public partial class PatchContentOfferStyleProperties : IEquatable<PatchContentO
     /// Text color of the offer. (eg. #FF0000)
     /// </summary>
     /// <value>Text color of the offer. (eg. #FF0000)</value>
-    [DataMember(Name = "color", EmitDefaultValue = false)]
+    [JsonPropertyName("color")]
     public string Color { get; set; }
 
 
@@ -47,7 +47,7 @@ public partial class PatchContentOfferStyleProperties : IEquatable<PatchContentO
     /// Background color of the offer. (eg. #000000)
     /// </summary>
     /// <value>Background color of the offer. (eg. #000000)</value>
-    [DataMember(Name = "backgroundColor", EmitDefaultValue = false)]
+    [JsonPropertyName("backgroundColor")]
     public string BackgroundColor { get; set; }
 
 

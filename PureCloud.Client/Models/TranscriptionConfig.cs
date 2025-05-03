@@ -7,14 +7,14 @@ namespace PureCloud.Client.Models;
 /// <summary>
 /// TranscriptionConfig
 /// </summary>
-[DataContract]
+
 public partial class TranscriptionConfig : IEquatable<TranscriptionConfig>
 {
     /// <summary>
     /// The name of the vendor used for speech transcription.
     /// </summary>
     /// <value>The name of the vendor used for speech transcription.</value>
-    [JsonConverter(typeof(JsonStringEnumConverter))]
+    
     public enum VendorNameEnum
     {
         /// <summary>
@@ -47,7 +47,7 @@ public partial class TranscriptionConfig : IEquatable<TranscriptionConfig>
     /// The name of the vendor used for speech transcription.
     /// </summary>
     /// <value>The name of the vendor used for speech transcription.</value>
-    [DataMember(Name = "vendorName", EmitDefaultValue = false)]
+    [JsonPropertyName("vendorName")]
     public VendorNameEnum? VendorName { get; set; }
 
     /// <summary>

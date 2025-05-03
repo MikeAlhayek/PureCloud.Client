@@ -7,14 +7,14 @@ namespace PureCloud.Client.Models;
 /// <summary>
 /// DocumentTextProperties
 /// </summary>
-[DataContract]
+
 public partial class DocumentTextProperties : IEquatable<DocumentTextProperties>
 {
     /// <summary>
     /// The font size for the text. The valid values in 'em'.
     /// </summary>
     /// <value>The font size for the text. The valid values in 'em'.</value>
-    [JsonConverter(typeof(JsonStringEnumConverter))]
+    
     public enum FontSizeEnum
     {
         /// <summary>
@@ -77,7 +77,7 @@ public partial class DocumentTextProperties : IEquatable<DocumentTextProperties>
     /// The font size for the text. The valid values in 'em'.
     /// </summary>
     /// <value>The font size for the text. The valid values in 'em'.</value>
-    [DataMember(Name = "fontSize", EmitDefaultValue = false)]
+    [JsonPropertyName("fontSize")]
     public FontSizeEnum? FontSize { get; set; }
     /// <summary>
     /// Initializes a new instance of the <see cref="DocumentTextProperties" /> class.
@@ -101,7 +101,7 @@ public partial class DocumentTextProperties : IEquatable<DocumentTextProperties>
     /// The text color for the text. The valid values in hex color code representation. For example black color - #000000
     /// </summary>
     /// <value>The text color for the text. The valid values in hex color code representation. For example black color - #000000</value>
-    [DataMember(Name = "textColor", EmitDefaultValue = false)]
+    [JsonPropertyName("textColor")]
     public string TextColor { get; set; }
 
 
@@ -110,7 +110,7 @@ public partial class DocumentTextProperties : IEquatable<DocumentTextProperties>
     /// The background color for the text. The valid values in hex color code representation. For example black color - #000000
     /// </summary>
     /// <value>The background color for the text. The valid values in hex color code representation. For example black color - #000000</value>
-    [DataMember(Name = "backgroundColor", EmitDefaultValue = false)]
+    [JsonPropertyName("backgroundColor")]
     public string BackgroundColor { get; set; }
 
 

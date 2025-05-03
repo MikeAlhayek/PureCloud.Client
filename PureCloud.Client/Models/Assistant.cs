@@ -7,14 +7,14 @@ namespace PureCloud.Client.Models;
 /// <summary>
 /// Assistant
 /// </summary>
-[DataContract]
+
 public partial class Assistant : IEquatable<Assistant>
 {
     /// <summary>
     /// State of the assistant.
     /// </summary>
     /// <value>State of the assistant.</value>
-    [JsonConverter(typeof(JsonStringEnumConverter))]
+    
     public enum StateEnum
     {
         /// <summary>
@@ -41,7 +41,7 @@ public partial class Assistant : IEquatable<Assistant>
     /// State of the assistant.
     /// </summary>
     /// <value>State of the assistant.</value>
-    [DataMember(Name = "state", EmitDefaultValue = false)]
+    [JsonPropertyName("state")]
     public StateEnum? State { get; private set; }
 
     /// <summary>
@@ -71,7 +71,7 @@ public partial class Assistant : IEquatable<Assistant>
     /// The globally unique identifier for the object.
     /// </summary>
     /// <value>The globally unique identifier for the object.</value>
-    [DataMember(Name = "id", EmitDefaultValue = false)]
+    [JsonPropertyName("id")]
     public string Id { get; private set; }
 
 
@@ -80,7 +80,7 @@ public partial class Assistant : IEquatable<Assistant>
     /// The name of the assistant that will assist the agent.
     /// </summary>
     /// <value>The name of the assistant that will assist the agent.</value>
-    [DataMember(Name = "name", EmitDefaultValue = false)]
+    [JsonPropertyName("name")]
     public string Name { get; set; }
 
 
@@ -89,7 +89,7 @@ public partial class Assistant : IEquatable<Assistant>
     /// Date when the assistant was created. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z
     /// </summary>
     /// <value>Date when the assistant was created. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z</value>
-    [DataMember(Name = "dateCreated", EmitDefaultValue = false)]
+    [JsonPropertyName("dateCreated")]
     public DateTime? DateCreated { get; private set; }
 
 
@@ -98,7 +98,7 @@ public partial class Assistant : IEquatable<Assistant>
     /// Date when the assistant was last modified. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z
     /// </summary>
     /// <value>Date when the assistant was last modified. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z</value>
-    [DataMember(Name = "dateModified", EmitDefaultValue = false)]
+    [JsonPropertyName("dateModified")]
     public DateTime? DateModified { get; private set; }
 
 
@@ -107,7 +107,7 @@ public partial class Assistant : IEquatable<Assistant>
     /// The user who created the assistant.
     /// </summary>
     /// <value>The user who created the assistant.</value>
-    [DataMember(Name = "createdBy", EmitDefaultValue = false)]
+    [JsonPropertyName("createdBy")]
     public UserReference CreatedBy { get; private set; }
 
 
@@ -116,7 +116,7 @@ public partial class Assistant : IEquatable<Assistant>
     /// The user who last modified the assistant.
     /// </summary>
     /// <value>The user who last modified the assistant.</value>
-    [DataMember(Name = "modifiedBy", EmitDefaultValue = false)]
+    [JsonPropertyName("modifiedBy")]
     public UserReference ModifiedBy { get; private set; }
 
 
@@ -125,7 +125,7 @@ public partial class Assistant : IEquatable<Assistant>
     /// (Deprecated: use the &#39;knowledgeSuggestionConfig&#39; for genesys knowledge suggestions) Configuration of Dialogflow used to assist the agent with transcriptions and knowledge suggestions.
     /// </summary>
     /// <value>(Deprecated: use the &#39;knowledgeSuggestionConfig&#39; for genesys knowledge suggestions) Configuration of Dialogflow used to assist the agent with transcriptions and knowledge suggestions.</value>
-    [DataMember(Name = "googleDialogflowConfig", EmitDefaultValue = false)]
+    [JsonPropertyName("googleDialogflowConfig")]
     public GoogleDialogflowConfig GoogleDialogflowConfig { get; set; }
 
 
@@ -134,7 +134,7 @@ public partial class Assistant : IEquatable<Assistant>
     /// Configuration for speech transcription used to assist the agent.
     /// </summary>
     /// <value>Configuration for speech transcription used to assist the agent.</value>
-    [DataMember(Name = "transcriptionConfig", EmitDefaultValue = false)]
+    [JsonPropertyName("transcriptionConfig")]
     public TranscriptionConfig TranscriptionConfig { get; set; }
 
 
@@ -143,7 +143,7 @@ public partial class Assistant : IEquatable<Assistant>
     /// Configuration that defines how to produce knowledge suggestions.
     /// </summary>
     /// <value>Configuration that defines how to produce knowledge suggestions.</value>
-    [DataMember(Name = "knowledgeSuggestionConfig", EmitDefaultValue = false)]
+    [JsonPropertyName("knowledgeSuggestionConfig")]
     public KnowledgeSuggestionConfig KnowledgeSuggestionConfig { get; set; }
 
 
@@ -154,7 +154,7 @@ public partial class Assistant : IEquatable<Assistant>
     /// Agent copilot configuration.
     /// </summary>
     /// <value>Agent copilot configuration.</value>
-    [DataMember(Name = "copilot", EmitDefaultValue = false)]
+    [JsonPropertyName("copilot")]
     public Copilot Copilot { get; private set; }
 
 
@@ -163,7 +163,7 @@ public partial class Assistant : IEquatable<Assistant>
     /// The URI for this object
     /// </summary>
     /// <value>The URI for this object</value>
-    [DataMember(Name = "selfUri", EmitDefaultValue = false)]
+    [JsonPropertyName("selfUri")]
     public string SelfUri { get; private set; }
 
 

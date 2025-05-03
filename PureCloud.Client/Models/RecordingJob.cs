@@ -7,14 +7,14 @@ namespace PureCloud.Client.Models;
 /// <summary>
 /// RecordingJob
 /// </summary>
-[DataContract]
+
 public partial class RecordingJob : IEquatable<RecordingJob>
 {
     /// <summary>
     /// The current state of the job.
     /// </summary>
     /// <value>The current state of the job.</value>
-    [JsonConverter(typeof(JsonStringEnumConverter))]
+    
     public enum StateEnum
     {
         /// <summary>
@@ -65,7 +65,7 @@ public partial class RecordingJob : IEquatable<RecordingJob>
     /// The current state of the job.
     /// </summary>
     /// <value>The current state of the job.</value>
-    [DataMember(Name = "state", EmitDefaultValue = false)]
+    [JsonPropertyName("state")]
     public StateEnum? State { get; set; }
 
     /// <summary>
@@ -89,7 +89,7 @@ public partial class RecordingJob : IEquatable<RecordingJob>
     /// The globally unique identifier for the object.
     /// </summary>
     /// <value>The globally unique identifier for the object.</value>
-    [DataMember(Name = "id", EmitDefaultValue = false)]
+    [JsonPropertyName("id")]
     public string Id { get; private set; }
 
 
@@ -100,7 +100,7 @@ public partial class RecordingJob : IEquatable<RecordingJob>
     /// Original query of the job.
     /// </summary>
     /// <value>Original query of the job.</value>
-    [DataMember(Name = "recordingJobsQuery", EmitDefaultValue = false)]
+    [JsonPropertyName("recordingJobsQuery")]
     public RecordingJobsQuery RecordingJobsQuery { get; private set; }
 
 
@@ -109,7 +109,7 @@ public partial class RecordingJob : IEquatable<RecordingJob>
     /// Date when the job was created. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z
     /// </summary>
     /// <value>Date when the job was created. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z</value>
-    [DataMember(Name = "dateCreated", EmitDefaultValue = false)]
+    [JsonPropertyName("dateCreated")]
     public DateTime? DateCreated { get; private set; }
 
 
@@ -118,7 +118,7 @@ public partial class RecordingJob : IEquatable<RecordingJob>
     /// Total number of conversations affected.
     /// </summary>
     /// <value>Total number of conversations affected.</value>
-    [DataMember(Name = "totalConversations", EmitDefaultValue = false)]
+    [JsonPropertyName("totalConversations")]
     public int? TotalConversations { get; private set; }
 
 
@@ -127,7 +127,7 @@ public partial class RecordingJob : IEquatable<RecordingJob>
     /// Total number of recordings affected.
     /// </summary>
     /// <value>Total number of recordings affected.</value>
-    [DataMember(Name = "totalRecordings", EmitDefaultValue = false)]
+    [JsonPropertyName("totalRecordings")]
     public int? TotalRecordings { get; private set; }
 
 
@@ -136,7 +136,7 @@ public partial class RecordingJob : IEquatable<RecordingJob>
     /// Total number of recordings that have been skipped.
     /// </summary>
     /// <value>Total number of recordings that have been skipped.</value>
-    [DataMember(Name = "totalSkippedRecordings", EmitDefaultValue = false)]
+    [JsonPropertyName("totalSkippedRecordings")]
     public int? TotalSkippedRecordings { get; private set; }
 
 
@@ -145,7 +145,7 @@ public partial class RecordingJob : IEquatable<RecordingJob>
     /// Total number of recordings that the bulk job failed to process.
     /// </summary>
     /// <value>Total number of recordings that the bulk job failed to process.</value>
-    [DataMember(Name = "totalFailedRecordings", EmitDefaultValue = false)]
+    [JsonPropertyName("totalFailedRecordings")]
     public int? TotalFailedRecordings { get; private set; }
 
 
@@ -154,7 +154,7 @@ public partial class RecordingJob : IEquatable<RecordingJob>
     /// Total number of recordings have been processed.
     /// </summary>
     /// <value>Total number of recordings have been processed.</value>
-    [DataMember(Name = "totalProcessedRecordings", EmitDefaultValue = false)]
+    [JsonPropertyName("totalProcessedRecordings")]
     public int? TotalProcessedRecordings { get; private set; }
 
 
@@ -163,7 +163,7 @@ public partial class RecordingJob : IEquatable<RecordingJob>
     /// Progress in percentage based on the number of recordings
     /// </summary>
     /// <value>Progress in percentage based on the number of recordings</value>
-    [DataMember(Name = "percentProgress", EmitDefaultValue = false)]
+    [JsonPropertyName("percentProgress")]
     public int? PercentProgress { get; private set; }
 
 
@@ -172,7 +172,7 @@ public partial class RecordingJob : IEquatable<RecordingJob>
     /// Error occurred during the job execution
     /// </summary>
     /// <value>Error occurred during the job execution</value>
-    [DataMember(Name = "errorMessage", EmitDefaultValue = false)]
+    [JsonPropertyName("errorMessage")]
     public string ErrorMessage { get; private set; }
 
 
@@ -181,7 +181,7 @@ public partial class RecordingJob : IEquatable<RecordingJob>
     /// Get IDs of recordings that the bulk job failed for
     /// </summary>
     /// <value>Get IDs of recordings that the bulk job failed for</value>
-    [DataMember(Name = "failedRecordings", EmitDefaultValue = false)]
+    [JsonPropertyName("failedRecordings")]
     public string FailedRecordings { get; private set; }
 
 
@@ -190,7 +190,7 @@ public partial class RecordingJob : IEquatable<RecordingJob>
     /// The URI for this object
     /// </summary>
     /// <value>The URI for this object</value>
-    [DataMember(Name = "selfUri", EmitDefaultValue = false)]
+    [JsonPropertyName("selfUri")]
     public string SelfUri { get; private set; }
 
 
@@ -199,7 +199,7 @@ public partial class RecordingJob : IEquatable<RecordingJob>
     /// Details of the user created the job
     /// </summary>
     /// <value>Details of the user created the job</value>
-    [DataMember(Name = "user", EmitDefaultValue = false)]
+    [JsonPropertyName("user")]
     public AddressableEntityRef User { get; private set; }
 
 

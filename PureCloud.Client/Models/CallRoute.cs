@@ -1,12 +1,12 @@
-using System.Runtime.Serialization;
 using System.Text;
+using System.Text.Json.Serialization;
 
 namespace PureCloud.Client.Models;
 
 /// <summary>
 /// CallRoute
 /// </summary>
-[DataContract]
+
 public partial class CallRoute : IEquatable<CallRoute>
 {
     /// <summary>
@@ -25,7 +25,7 @@ public partial class CallRoute : IEquatable<CallRoute>
     /// A list of CallTargets to be called when the CallRoute is executed
     /// </summary>
     /// <value>A list of CallTargets to be called when the CallRoute is executed</value>
-    [DataMember(Name = "targets", EmitDefaultValue = false)]
+    [JsonPropertyName("targets")]
     public List<CallTarget> Targets { get; set; }
 
 

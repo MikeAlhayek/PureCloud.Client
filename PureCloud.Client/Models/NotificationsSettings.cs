@@ -1,12 +1,12 @@
-using System.Runtime.Serialization;
 using System.Text;
+using System.Text.Json.Serialization;
 
 namespace PureCloud.Client.Models;
 
 /// <summary>
 /// Notification settings that handles messenger notifications
 /// </summary>
-[DataContract]
+
 public partial class NotificationsSettings : IEquatable<NotificationsSettings>
 {
     /// <summary>
@@ -25,7 +25,7 @@ public partial class NotificationsSettings : IEquatable<NotificationsSettings>
     /// The toggle to enable or disable notifications
     /// </summary>
     /// <value>The toggle to enable or disable notifications</value>
-    [DataMember(Name = "enabled", EmitDefaultValue = false)]
+    [JsonPropertyName("enabled")]
     public bool? Enabled { get; set; }
 
 

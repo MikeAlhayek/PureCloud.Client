@@ -7,14 +7,14 @@ namespace PureCloud.Client.Models;
 /// <summary>
 /// FlowPaths
 /// </summary>
-[DataContract]
+
 public partial class FlowPaths : IEquatable<FlowPaths>
 {
     /// <summary>
     /// Category (use case) of the paths within a given domain.
     /// </summary>
     /// <value>Category (use case) of the paths within a given domain.</value>
-    [JsonConverter(typeof(JsonStringEnumConverter))]
+    
     public enum CategoryEnum
     {
         /// <summary>
@@ -77,7 +77,7 @@ public partial class FlowPaths : IEquatable<FlowPaths>
     /// Category (use case) of the paths within a given domain.
     /// </summary>
     /// <value>Category (use case) of the paths within a given domain.</value>
-    [DataMember(Name = "category", EmitDefaultValue = false)]
+    [JsonPropertyName("category")]
     public CategoryEnum? Category { get; set; }
 
     /// <summary>
@@ -109,7 +109,7 @@ public partial class FlowPaths : IEquatable<FlowPaths>
     /// Start date of the date range included in the flow paths data. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z
     /// </summary>
     /// <value>Start date of the date range included in the flow paths data. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z</value>
-    [DataMember(Name = "dateStart", EmitDefaultValue = false)]
+    [JsonPropertyName("dateStart")]
     public DateTime? DateStart { get; set; }
 
 
@@ -118,7 +118,7 @@ public partial class FlowPaths : IEquatable<FlowPaths>
     /// End date of the date range included in the flow paths data. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z
     /// </summary>
     /// <value>End date of the date range included in the flow paths data. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z</value>
-    [DataMember(Name = "dateEnd", EmitDefaultValue = false)]
+    [JsonPropertyName("dateEnd")]
     public DateTime? DateEnd { get; set; }
 
 
@@ -127,7 +127,7 @@ public partial class FlowPaths : IEquatable<FlowPaths>
     /// Unique element identifiers and their corresponding elements in the trie data structure representing the paths.
     /// </summary>
     /// <value>Unique element identifiers and their corresponding elements in the trie data structure representing the paths.</value>
-    [DataMember(Name = "elements", EmitDefaultValue = false)]
+    [JsonPropertyName("elements")]
     public Dictionary<string, FlowPathsElement> Elements { get; set; }
 
 

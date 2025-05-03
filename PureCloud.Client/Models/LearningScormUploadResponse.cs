@@ -7,14 +7,14 @@ namespace PureCloud.Client.Models;
 /// <summary>
 /// Learning SCORM upload response
 /// </summary>
-[DataContract]
+
 public partial class LearningScormUploadResponse : IEquatable<LearningScormUploadResponse>
 {
     /// <summary>
     /// The status of the SCORM package
     /// </summary>
     /// <value>The status of the SCORM package</value>
-    [JsonConverter(typeof(JsonStringEnumConverter))]
+    
     public enum StatusEnum
     {
         /// <summary>
@@ -53,7 +53,7 @@ public partial class LearningScormUploadResponse : IEquatable<LearningScormUploa
     /// The status of the SCORM package
     /// </summary>
     /// <value>The status of the SCORM package</value>
-    [DataMember(Name = "status", EmitDefaultValue = false)]
+    [JsonPropertyName("status")]
     public StatusEnum? Status { get; set; }
     /// <summary>
     /// Initializes a new instance of the <see cref="LearningScormUploadResponse" /> class.
@@ -75,7 +75,7 @@ public partial class LearningScormUploadResponse : IEquatable<LearningScormUploa
     /// The globally unique identifier for the object.
     /// </summary>
     /// <value>The globally unique identifier for the object.</value>
-    [DataMember(Name = "id", EmitDefaultValue = false)]
+    [JsonPropertyName("id")]
     public string Id { get; private set; }
 
 
@@ -86,7 +86,7 @@ public partial class LearningScormUploadResponse : IEquatable<LearningScormUploa
     /// The pre-signed URL. Use it with headers below to upload file to S3
     /// </summary>
     /// <value>The pre-signed URL. Use it with headers below to upload file to S3</value>
-    [DataMember(Name = "uploadUrl", EmitDefaultValue = false)]
+    [JsonPropertyName("uploadUrl")]
     public string UploadUrl { get; set; }
 
 
@@ -95,7 +95,7 @@ public partial class LearningScormUploadResponse : IEquatable<LearningScormUploa
     /// The additional headers that need to be included in the upload request
     /// </summary>
     /// <value>The additional headers that need to be included in the upload request</value>
-    [DataMember(Name = "headers", EmitDefaultValue = false)]
+    [JsonPropertyName("headers")]
     public Dictionary<string, string> Headers { get; set; }
 
 
@@ -104,7 +104,7 @@ public partial class LearningScormUploadResponse : IEquatable<LearningScormUploa
     /// The URI for this object
     /// </summary>
     /// <value>The URI for this object</value>
-    [DataMember(Name = "selfUri", EmitDefaultValue = false)]
+    [JsonPropertyName("selfUri")]
     public string SelfUri { get; private set; }
 
 

@@ -1,12 +1,12 @@
-using System.Runtime.Serialization;
 using System.Text;
+using System.Text.Json.Serialization;
 
 namespace PureCloud.Client.Models;
 
 /// <summary>
 /// EmpathyScore
 /// </summary>
-[DataContract]
+
 public partial class EmpathyScore : IEquatable<EmpathyScore>
 {
     /// <summary>
@@ -27,7 +27,7 @@ public partial class EmpathyScore : IEquatable<EmpathyScore>
     /// Empathy score of the agent involved in the conversation
     /// </summary>
     /// <value>Empathy score of the agent involved in the conversation</value>
-    [DataMember(Name = "score", EmitDefaultValue = false)]
+    [JsonPropertyName("score")]
     public double? Score { get; set; }
 
 
@@ -36,7 +36,7 @@ public partial class EmpathyScore : IEquatable<EmpathyScore>
     /// UserId of the agent involved in the conversation
     /// </summary>
     /// <value>UserId of the agent involved in the conversation</value>
-    [DataMember(Name = "userId", EmitDefaultValue = false)]
+    [JsonPropertyName("userId")]
     public string UserId { get; set; }
 
 

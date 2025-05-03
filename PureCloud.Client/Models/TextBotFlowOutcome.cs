@@ -7,14 +7,14 @@ namespace PureCloud.Client.Models;
 /// <summary>
 /// Flow Outcome data related to a bot flow which is exiting gracefully.
 /// </summary>
-[DataContract]
+
 public partial class TextBotFlowOutcome : IEquatable<TextBotFlowOutcome>
 {
     /// <summary>
     /// The value of the FlowOutcome.
     /// </summary>
     /// <value>The value of the FlowOutcome.</value>
-    [JsonConverter(typeof(JsonStringEnumConverter))]
+    
     public enum OutcomeValueEnum
     {
         /// <summary>
@@ -41,7 +41,7 @@ public partial class TextBotFlowOutcome : IEquatable<TextBotFlowOutcome>
     /// The value of the FlowOutcome.
     /// </summary>
     /// <value>The value of the FlowOutcome.</value>
-    [DataMember(Name = "outcomeValue", EmitDefaultValue = false)]
+    [JsonPropertyName("outcomeValue")]
     public OutcomeValueEnum? OutcomeValue { get; set; }
     /// <summary>
     /// Initializes a new instance of the <see cref="TextBotFlowOutcome" /> class.
@@ -67,7 +67,7 @@ public partial class TextBotFlowOutcome : IEquatable<TextBotFlowOutcome>
     /// The Flow Outcome ID.
     /// </summary>
     /// <value>The Flow Outcome ID.</value>
-    [DataMember(Name = "outcomeId", EmitDefaultValue = false)]
+    [JsonPropertyName("outcomeId")]
     public string OutcomeId { get; set; }
 
 
@@ -78,7 +78,7 @@ public partial class TextBotFlowOutcome : IEquatable<TextBotFlowOutcome>
     /// The timestamp for when the Flow Outcome began. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z
     /// </summary>
     /// <value>The timestamp for when the Flow Outcome began. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z</value>
-    [DataMember(Name = "dateStart", EmitDefaultValue = false)]
+    [JsonPropertyName("dateStart")]
     public DateTime? DateStart { get; set; }
 
 
@@ -87,7 +87,7 @@ public partial class TextBotFlowOutcome : IEquatable<TextBotFlowOutcome>
     /// The timestamp for when the Flow Outcome finished. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z
     /// </summary>
     /// <value>The timestamp for when the Flow Outcome finished. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z</value>
-    [DataMember(Name = "dateEnd", EmitDefaultValue = false)]
+    [JsonPropertyName("dateEnd")]
     public DateTime? DateEnd { get; set; }
 
 
@@ -96,7 +96,7 @@ public partial class TextBotFlowOutcome : IEquatable<TextBotFlowOutcome>
     /// The Flow Milestones for the Flow Outcome.
     /// </summary>
     /// <value>The Flow Milestones for the Flow Outcome.</value>
-    [DataMember(Name = "milestones", EmitDefaultValue = false)]
+    [JsonPropertyName("milestones")]
     public List<TextBotFlowMilestone> Milestones { get; set; }
 
 

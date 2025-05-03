@@ -7,14 +7,14 @@ namespace PureCloud.Client.Models;
 /// <summary>
 /// WebChatConfig
 /// </summary>
-[DataContract]
+
 public partial class WebChatConfig : IEquatable<WebChatConfig>
 {
     /// <summary>
     /// css class to be applied to the web chat widget.
     /// </summary>
     /// <value>css class to be applied to the web chat widget.</value>
-    [JsonConverter(typeof(JsonStringEnumConverter))]
+    
     public enum WebChatSkinEnum
     {
         /// <summary>
@@ -41,7 +41,7 @@ public partial class WebChatConfig : IEquatable<WebChatConfig>
     /// css class to be applied to the web chat widget.
     /// </summary>
     /// <value>css class to be applied to the web chat widget.</value>
-    [DataMember(Name = "webChatSkin", EmitDefaultValue = false)]
+    [JsonPropertyName("webChatSkin")]
     public WebChatSkinEnum? WebChatSkin { get; set; }
     /// <summary>
     /// Initializes a new instance of the <see cref="WebChatConfig" /> class.

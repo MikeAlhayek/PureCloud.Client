@@ -1,12 +1,12 @@
-using System.Runtime.Serialization;
 using System.Text;
+using System.Text.Json.Serialization;
 
 namespace PureCloud.Client.Models;
 
 /// <summary>
 /// V2WemEngagementCelebrationUpdatesTopicContestWinnersScore
 /// </summary>
-[DataContract]
+
 public partial class V2WemEngagementCelebrationUpdatesTopicContestWinnersScore : IEquatable<V2WemEngagementCelebrationUpdatesTopicContestWinnersScore>
 {
     /// <summary>
@@ -24,7 +24,7 @@ public partial class V2WemEngagementCelebrationUpdatesTopicContestWinnersScore :
     /// <summary>
     /// Gets or Sets Score
     /// </summary>
-    [DataMember(Name = "score", EmitDefaultValue = false)]
+    [JsonPropertyName("score")]
     public double? Score { get; set; }
 
 

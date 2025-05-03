@@ -1,12 +1,12 @@
-using System.Runtime.Serialization;
 using System.Text;
+using System.Text.Json.Serialization;
 
 namespace PureCloud.Client.Models;
 
 /// <summary>
 /// DialerContactlistConfigChangeEmailColumn
 /// </summary>
-[DataContract]
+
 public partial class DialerContactlistConfigChangeEmailColumn : IEquatable<DialerContactlistConfigChangeEmailColumn>
 {
     /// <summary>
@@ -29,7 +29,7 @@ public partial class DialerContactlistConfigChangeEmailColumn : IEquatable<Diale
     /// The name of the email address column
     /// </summary>
     /// <value>The name of the email address column</value>
-    [DataMember(Name = "columnName", EmitDefaultValue = false)]
+    [JsonPropertyName("columnName")]
     public string ColumnName { get; set; }
 
 
@@ -38,7 +38,7 @@ public partial class DialerContactlistConfigChangeEmailColumn : IEquatable<Diale
     /// The type of the email address column, for example, &#39;work&#39; or &#39;home&#39;
     /// </summary>
     /// <value>The type of the email address column, for example, &#39;work&#39; or &#39;home&#39;</value>
-    [DataMember(Name = "type", EmitDefaultValue = false)]
+    [JsonPropertyName("type")]
     public string Type { get; set; }
 
 
@@ -46,7 +46,7 @@ public partial class DialerContactlistConfigChangeEmailColumn : IEquatable<Diale
     /// <summary>
     /// Gets or Sets AdditionalProperties
     /// </summary>
-    [DataMember(Name = "additionalProperties", EmitDefaultValue = false)]
+    [JsonPropertyName("additionalProperties")]
     public Dictionary<string, object> AdditionalProperties { get; set; }
 
 

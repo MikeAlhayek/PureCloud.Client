@@ -7,14 +7,14 @@ namespace PureCloud.Client.Models;
 /// <summary>
 /// Message event element.  Examples include: system messages, typing indicators, cobrowse offerings.
 /// </summary>
-[DataContract]
+
 public partial class ConversationMessageEvent : IEquatable<ConversationMessageEvent>
 {
     /// <summary>
     /// Type of this event element
     /// </summary>
     /// <value>Type of this event element</value>
-    [JsonConverter(typeof(JsonStringEnumConverter))]
+    
     public enum EventTypeEnum
     {
         /// <summary>
@@ -59,7 +59,7 @@ public partial class ConversationMessageEvent : IEquatable<ConversationMessageEv
     /// Type of this event element
     /// </summary>
     /// <value>Type of this event element</value>
-    [DataMember(Name = "eventType", EmitDefaultValue = false)]
+    [JsonPropertyName("eventType")]
     public EventTypeEnum? EventType { get; set; }
 
     /// <summary>
@@ -93,7 +93,7 @@ public partial class ConversationMessageEvent : IEquatable<ConversationMessageEv
     /// CoBrowse event.
     /// </summary>
     /// <value>CoBrowse event.</value>
-    [DataMember(Name = "coBrowse", EmitDefaultValue = false)]
+    [JsonPropertyName("coBrowse")]
     public ConversationEventCoBrowse CoBrowse { get; set; }
 
 
@@ -102,7 +102,7 @@ public partial class ConversationMessageEvent : IEquatable<ConversationMessageEv
     /// Typing event.
     /// </summary>
     /// <value>Typing event.</value>
-    [DataMember(Name = "typing", EmitDefaultValue = false)]
+    [JsonPropertyName("typing")]
     public ConversationEventTyping Typing { get; set; }
 
 
@@ -111,7 +111,7 @@ public partial class ConversationMessageEvent : IEquatable<ConversationMessageEv
     /// Presence event.
     /// </summary>
     /// <value>Presence event.</value>
-    [DataMember(Name = "presence", EmitDefaultValue = false)]
+    [JsonPropertyName("presence")]
     public ConversationEventPresence Presence { get; set; }
 
 
@@ -120,7 +120,7 @@ public partial class ConversationMessageEvent : IEquatable<ConversationMessageEv
     /// Video event.
     /// </summary>
     /// <value>Video event.</value>
-    [DataMember(Name = "video", EmitDefaultValue = false)]
+    [JsonPropertyName("video")]
     public ConversationEventVideo Video { get; set; }
 
 

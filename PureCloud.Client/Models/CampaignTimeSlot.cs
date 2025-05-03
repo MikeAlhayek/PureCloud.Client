@@ -1,4 +1,3 @@
-using System.Runtime.Serialization;
 using System.Text;
 using System.Text.Json.Serialization;
 
@@ -7,7 +6,7 @@ namespace PureCloud.Client.Models;
 /// <summary>
 /// CampaignTimeSlot
 /// </summary>
-[DataContract]
+
 public partial class CampaignTimeSlot : IEquatable<CampaignTimeSlot>
 {
 
@@ -36,7 +35,7 @@ public partial class CampaignTimeSlot : IEquatable<CampaignTimeSlot>
     /// The start time of the interval as an ISO-8601 string, i.e. HH:mm:ss
     /// </summary>
     /// <value>The start time of the interval as an ISO-8601 string, i.e. HH:mm:ss</value>
-    [DataMember(Name = "startTime", EmitDefaultValue = false)]
+    [JsonPropertyName("startTime")]
     public string StartTime { get; set; }
 
 
@@ -45,7 +44,7 @@ public partial class CampaignTimeSlot : IEquatable<CampaignTimeSlot>
     /// The end time of the interval as an ISO-8601 string, i.e. HH:mm:ss
     /// </summary>
     /// <value>The end time of the interval as an ISO-8601 string, i.e. HH:mm:ss</value>
-    [DataMember(Name = "stopTime", EmitDefaultValue = false)]
+    [JsonPropertyName("stopTime")]
     public string StopTime { get; set; }
 
 
@@ -54,7 +53,7 @@ public partial class CampaignTimeSlot : IEquatable<CampaignTimeSlot>
     /// The day of the interval. Valid values: [1-7], representing Monday through Sunday
     /// </summary>
     /// <value>The day of the interval. Valid values: [1-7], representing Monday through Sunday</value>
-    [DataMember(Name = "day", EmitDefaultValue = false)]
+    [JsonPropertyName("day")]
     public int? Day { get; set; }
 
 

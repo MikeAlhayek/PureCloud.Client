@@ -1,4 +1,3 @@
-using System.Runtime.Serialization;
 using System.Text;
 using System.Text.Json.Serialization;
 
@@ -7,7 +6,7 @@ namespace PureCloud.Client.Models;
 /// <summary>
 /// DateRangeWithOptionalEnd
 /// </summary>
-[DataContract]
+
 public partial class DateRangeWithOptionalEnd : IEquatable<DateRangeWithOptionalEnd>
 {
 
@@ -34,7 +33,7 @@ public partial class DateRangeWithOptionalEnd : IEquatable<DateRangeWithOptional
     /// The start date for work plan rotation or an agent, interpreted in the business unit&#39;s time zone. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd
     /// </summary>
     /// <value>The start date for work plan rotation or an agent, interpreted in the business unit&#39;s time zone. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd</value>
-    [DataMember(Name = "startBusinessUnitDate", EmitDefaultValue = false)]
+    [JsonPropertyName("startBusinessUnitDate")]
     public string StartBusinessUnitDate { get; set; }
 
 
@@ -43,7 +42,7 @@ public partial class DateRangeWithOptionalEnd : IEquatable<DateRangeWithOptional
     /// The end date for work plan rotation or an agent, interpreted in the business unit&#39;s time zone. Null denotes open ended date range. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd
     /// </summary>
     /// <value>The end date for work plan rotation or an agent, interpreted in the business unit&#39;s time zone. Null denotes open ended date range. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd</value>
-    [DataMember(Name = "endBusinessUnitDate", EmitDefaultValue = false)]
+    [JsonPropertyName("endBusinessUnitDate")]
     public string EndBusinessUnitDate { get; set; }
 
 

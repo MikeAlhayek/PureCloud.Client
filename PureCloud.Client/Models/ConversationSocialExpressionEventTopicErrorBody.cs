@@ -1,12 +1,12 @@
-using System.Runtime.Serialization;
 using System.Text;
+using System.Text.Json.Serialization;
 
 namespace PureCloud.Client.Models;
 
 /// <summary>
 /// ConversationSocialExpressionEventTopicErrorBody
 /// </summary>
-[DataContract]
+
 public partial class ConversationSocialExpressionEventTopicErrorBody : IEquatable<ConversationSocialExpressionEventTopicErrorBody>
 {
     /// <summary>
@@ -44,7 +44,7 @@ public partial class ConversationSocialExpressionEventTopicErrorBody : IEquatabl
     /// <summary>
     /// Gets or Sets Message
     /// </summary>
-    [DataMember(Name = "message", EmitDefaultValue = false)]
+    [JsonPropertyName("message")]
     public string Message { get; set; }
 
 
@@ -52,7 +52,7 @@ public partial class ConversationSocialExpressionEventTopicErrorBody : IEquatabl
     /// <summary>
     /// Gets or Sets Code
     /// </summary>
-    [DataMember(Name = "code", EmitDefaultValue = false)]
+    [JsonPropertyName("code")]
     public string Code { get; set; }
 
 
@@ -60,7 +60,7 @@ public partial class ConversationSocialExpressionEventTopicErrorBody : IEquatabl
     /// <summary>
     /// Gets or Sets Status
     /// </summary>
-    [DataMember(Name = "status", EmitDefaultValue = false)]
+    [JsonPropertyName("status")]
     public long? Status { get; set; }
 
 
@@ -68,7 +68,7 @@ public partial class ConversationSocialExpressionEventTopicErrorBody : IEquatabl
     /// <summary>
     /// Gets or Sets EntityId
     /// </summary>
-    [DataMember(Name = "entityId", EmitDefaultValue = false)]
+    [JsonPropertyName("entityId")]
     public string EntityId { get; set; }
 
 
@@ -76,7 +76,7 @@ public partial class ConversationSocialExpressionEventTopicErrorBody : IEquatabl
     /// <summary>
     /// Gets or Sets EntityName
     /// </summary>
-    [DataMember(Name = "entityName", EmitDefaultValue = false)]
+    [JsonPropertyName("entityName")]
     public string EntityName { get; set; }
 
 
@@ -84,7 +84,7 @@ public partial class ConversationSocialExpressionEventTopicErrorBody : IEquatabl
     /// <summary>
     /// Gets or Sets MessageWithParams
     /// </summary>
-    [DataMember(Name = "messageWithParams", EmitDefaultValue = false)]
+    [JsonPropertyName("messageWithParams")]
     public string MessageWithParams { get; set; }
 
 
@@ -92,7 +92,7 @@ public partial class ConversationSocialExpressionEventTopicErrorBody : IEquatabl
     /// <summary>
     /// Gets or Sets MessageParams
     /// </summary>
-    [DataMember(Name = "messageParams", EmitDefaultValue = false)]
+    [JsonPropertyName("messageParams")]
     public Dictionary<string, string> MessageParams { get; set; }
 
 
@@ -100,7 +100,7 @@ public partial class ConversationSocialExpressionEventTopicErrorBody : IEquatabl
     /// <summary>
     /// Gets or Sets ContextId
     /// </summary>
-    [DataMember(Name = "contextId", EmitDefaultValue = false)]
+    [JsonPropertyName("contextId")]
     public string ContextId { get; set; }
 
 
@@ -108,7 +108,7 @@ public partial class ConversationSocialExpressionEventTopicErrorBody : IEquatabl
     /// <summary>
     /// Gets or Sets Details
     /// </summary>
-    [DataMember(Name = "details", EmitDefaultValue = false)]
+    [JsonPropertyName("details")]
     public List<ConversationSocialExpressionEventTopicDetail> Details { get; set; }
 
 
@@ -116,7 +116,7 @@ public partial class ConversationSocialExpressionEventTopicErrorBody : IEquatabl
     /// <summary>
     /// Gets or Sets Errors
     /// </summary>
-    [DataMember(Name = "errors", EmitDefaultValue = false)]
+    [JsonPropertyName("errors")]
     public List<ConversationSocialExpressionEventTopicErrorBody> Errors { get; set; }
 
 
@@ -124,7 +124,7 @@ public partial class ConversationSocialExpressionEventTopicErrorBody : IEquatabl
     /// <summary>
     /// Gets or Sets Limit
     /// </summary>
-    [DataMember(Name = "limit", EmitDefaultValue = false)]
+    [JsonPropertyName("limit")]
     public ConversationSocialExpressionEventTopicLimit Limit { get; set; }
 
 

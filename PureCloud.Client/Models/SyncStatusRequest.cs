@@ -7,14 +7,14 @@ namespace PureCloud.Client.Models;
 /// <summary>
 /// SyncStatusRequest
 /// </summary>
-[DataContract]
+
 public partial class SyncStatusRequest : IEquatable<SyncStatusRequest>
 {
     /// <summary>
     /// New status for an existing sync operation
     /// </summary>
     /// <value>New status for an existing sync operation</value>
-    [JsonConverter(typeof(JsonStringEnumConverter))]
+    
     public enum StatusEnum
     {
         /// <summary>
@@ -95,7 +95,7 @@ public partial class SyncStatusRequest : IEquatable<SyncStatusRequest>
     /// New status for an existing sync operation
     /// </summary>
     /// <value>New status for an existing sync operation</value>
-    [DataMember(Name = "status", EmitDefaultValue = false)]
+    [JsonPropertyName("status")]
     public StatusEnum? Status { get; set; }
 
     /// <summary>

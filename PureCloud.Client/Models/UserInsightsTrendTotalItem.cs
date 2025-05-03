@@ -1,12 +1,12 @@
-using System.Runtime.Serialization;
 using System.Text;
+using System.Text.Json.Serialization;
 
 namespace PureCloud.Client.Models;
 
 /// <summary>
 /// UserInsightsTrendTotalItem
 /// </summary>
-[DataContract]
+
 public partial class UserInsightsTrendTotalItem : IEquatable<UserInsightsTrendTotalItem>
 {
     /// <summary>
@@ -25,7 +25,7 @@ public partial class UserInsightsTrendTotalItem : IEquatable<UserInsightsTrendTo
     /// Trends for the metric
     /// </summary>
     /// <value>Trends for the metric</value>
-    [DataMember(Name = "trends", EmitDefaultValue = false)]
+    [JsonPropertyName("trends")]
     public UserInsightsTrends Trends { get; set; }
 
 

@@ -1,4 +1,3 @@
-using System.Runtime.Serialization;
 using System.Text;
 using System.Text.Json.Serialization;
 
@@ -7,7 +6,7 @@ namespace PureCloud.Client.Models;
 /// <summary>
 /// Permissions
 /// </summary>
-[DataContract]
+
 public partial class Permissions : IEquatable<Permissions>
 {
 
@@ -32,7 +31,7 @@ public partial class Permissions : IEquatable<Permissions>
     /// List of permission ids.
     /// </summary>
     /// <value>List of permission ids.</value>
-    [DataMember(Name = "ids", EmitDefaultValue = false)]
+    [JsonPropertyName("ids")]
     public List<string> Ids { get; set; }
 
 

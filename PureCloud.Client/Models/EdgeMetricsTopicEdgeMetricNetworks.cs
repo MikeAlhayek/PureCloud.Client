@@ -1,12 +1,12 @@
-using System.Runtime.Serialization;
 using System.Text;
+using System.Text.Json.Serialization;
 
 namespace PureCloud.Client.Models;
 
 /// <summary>
 /// EdgeMetricsTopicEdgeMetricNetworks
 /// </summary>
-[DataContract]
+
 public partial class EdgeMetricsTopicEdgeMetricNetworks : IEquatable<EdgeMetricsTopicEdgeMetricNetworks>
 {
     /// <summary>
@@ -32,7 +32,7 @@ public partial class EdgeMetricsTopicEdgeMetricNetworks : IEquatable<EdgeMetrics
     /// <summary>
     /// Gets or Sets Ifname
     /// </summary>
-    [DataMember(Name = "ifname", EmitDefaultValue = false)]
+    [JsonPropertyName("ifname")]
     public string Ifname { get; set; }
 
 
@@ -40,7 +40,7 @@ public partial class EdgeMetricsTopicEdgeMetricNetworks : IEquatable<EdgeMetrics
     /// <summary>
     /// Gets or Sets SentBytesPerSec
     /// </summary>
-    [DataMember(Name = "sentBytesPerSec", EmitDefaultValue = false)]
+    [JsonPropertyName("sentBytesPerSec")]
     public long? SentBytesPerSec { get; set; }
 
 
@@ -48,7 +48,7 @@ public partial class EdgeMetricsTopicEdgeMetricNetworks : IEquatable<EdgeMetrics
     /// <summary>
     /// Gets or Sets ReceivedBytesPerSec
     /// </summary>
-    [DataMember(Name = "receivedBytesPerSec", EmitDefaultValue = false)]
+    [JsonPropertyName("receivedBytesPerSec")]
     public long? ReceivedBytesPerSec { get; set; }
 
 
@@ -56,7 +56,7 @@ public partial class EdgeMetricsTopicEdgeMetricNetworks : IEquatable<EdgeMetrics
     /// <summary>
     /// Gets or Sets BandwidthBitsPerSec
     /// </summary>
-    [DataMember(Name = "bandwidthBitsPerSec", EmitDefaultValue = false)]
+    [JsonPropertyName("bandwidthBitsPerSec")]
     public long? BandwidthBitsPerSec { get; set; }
 
 
@@ -64,7 +64,7 @@ public partial class EdgeMetricsTopicEdgeMetricNetworks : IEquatable<EdgeMetrics
     /// <summary>
     /// Gets or Sets UtilizationPct
     /// </summary>
-    [DataMember(Name = "utilizationPct", EmitDefaultValue = false)]
+    [JsonPropertyName("utilizationPct")]
     public double? UtilizationPct { get; set; }
 
 

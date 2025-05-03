@@ -1,12 +1,12 @@
-using System.Runtime.Serialization;
 using System.Text;
+using System.Text.Json.Serialization;
 
 namespace PureCloud.Client.Models;
 
 /// <summary>
 /// OutOfOfficeEventOutOfOffice
 /// </summary>
-[DataContract]
+
 public partial class OutOfOfficeEventOutOfOffice : IEquatable<OutOfOfficeEventOutOfOffice>
 {
     /// <summary>
@@ -32,7 +32,7 @@ public partial class OutOfOfficeEventOutOfOffice : IEquatable<OutOfOfficeEventOu
     /// <summary>
     /// Gets or Sets User
     /// </summary>
-    [DataMember(Name = "user", EmitDefaultValue = false)]
+    [JsonPropertyName("user")]
     public OutOfOfficeEventUser User { get; set; }
 
 
@@ -40,7 +40,7 @@ public partial class OutOfOfficeEventOutOfOffice : IEquatable<OutOfOfficeEventOu
     /// <summary>
     /// Gets or Sets Active
     /// </summary>
-    [DataMember(Name = "active", EmitDefaultValue = false)]
+    [JsonPropertyName("active")]
     public bool? Active { get; set; }
 
 
@@ -48,7 +48,7 @@ public partial class OutOfOfficeEventOutOfOffice : IEquatable<OutOfOfficeEventOu
     /// <summary>
     /// Gets or Sets Indefinite
     /// </summary>
-    [DataMember(Name = "indefinite", EmitDefaultValue = false)]
+    [JsonPropertyName("indefinite")]
     public bool? Indefinite { get; set; }
 
 
@@ -56,7 +56,7 @@ public partial class OutOfOfficeEventOutOfOffice : IEquatable<OutOfOfficeEventOu
     /// <summary>
     /// Gets or Sets StartDate
     /// </summary>
-    [DataMember(Name = "startDate", EmitDefaultValue = false)]
+    [JsonPropertyName("startDate")]
     public DateTime? StartDate { get; set; }
 
 
@@ -64,7 +64,7 @@ public partial class OutOfOfficeEventOutOfOffice : IEquatable<OutOfOfficeEventOu
     /// <summary>
     /// Gets or Sets EndDate
     /// </summary>
-    [DataMember(Name = "endDate", EmitDefaultValue = false)]
+    [JsonPropertyName("endDate")]
     public DateTime? EndDate { get; set; }
 
 

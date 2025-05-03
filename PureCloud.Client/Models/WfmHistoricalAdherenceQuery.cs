@@ -1,4 +1,3 @@
-using System.Runtime.Serialization;
 using System.Text;
 using System.Text.Json.Serialization;
 
@@ -7,7 +6,7 @@ namespace PureCloud.Client.Models;
 /// <summary>
 /// WfmHistoricalAdherenceQuery
 /// </summary>
-[DataContract]
+
 public partial class WfmHistoricalAdherenceQuery : IEquatable<WfmHistoricalAdherenceQuery>
 {
 
@@ -42,7 +41,7 @@ public partial class WfmHistoricalAdherenceQuery : IEquatable<WfmHistoricalAdher
     /// Beginning of the date range to query in ISO-8601 format
     /// </summary>
     /// <value>Beginning of the date range to query in ISO-8601 format</value>
-    [DataMember(Name = "startDate", EmitDefaultValue = false)]
+    [JsonPropertyName("startDate")]
     public DateTime? StartDate { get; set; }
 
 
@@ -51,7 +50,7 @@ public partial class WfmHistoricalAdherenceQuery : IEquatable<WfmHistoricalAdher
     /// End of the date range to query in ISO-8601 format. If it is not set, end date will be set to current time
     /// </summary>
     /// <value>End of the date range to query in ISO-8601 format. If it is not set, end date will be set to current time</value>
-    [DataMember(Name = "endDate", EmitDefaultValue = false)]
+    [JsonPropertyName("endDate")]
     public DateTime? EndDate { get; set; }
 
 
@@ -60,7 +59,7 @@ public partial class WfmHistoricalAdherenceQuery : IEquatable<WfmHistoricalAdher
     /// The time zone, in olson format, to use in defining days when computing adherence. The results will be returned as UTC timestamps regardless of the time zone input.
     /// </summary>
     /// <value>The time zone, in olson format, to use in defining days when computing adherence. The results will be returned as UTC timestamps regardless of the time zone input.</value>
-    [DataMember(Name = "timeZone", EmitDefaultValue = false)]
+    [JsonPropertyName("timeZone")]
     public string TimeZone { get; set; }
 
 
@@ -69,7 +68,7 @@ public partial class WfmHistoricalAdherenceQuery : IEquatable<WfmHistoricalAdher
     /// The userIds to report on. If null or not set, adherence will be computed for all the users in management unit or requested teamIds
     /// </summary>
     /// <value>The userIds to report on. If null or not set, adherence will be computed for all the users in management unit or requested teamIds</value>
-    [DataMember(Name = "userIds", EmitDefaultValue = false)]
+    [JsonPropertyName("userIds")]
     public List<string> UserIds { get; set; }
 
 
@@ -78,7 +77,7 @@ public partial class WfmHistoricalAdherenceQuery : IEquatable<WfmHistoricalAdher
     /// Whether user exceptions should be returned as part of the results
     /// </summary>
     /// <value>Whether user exceptions should be returned as part of the results</value>
-    [DataMember(Name = "includeExceptions", EmitDefaultValue = false)]
+    [JsonPropertyName("includeExceptions")]
     public bool? IncludeExceptions { get; set; }
 
 
@@ -87,7 +86,7 @@ public partial class WfmHistoricalAdherenceQuery : IEquatable<WfmHistoricalAdher
     /// The teamIds to report on. If null or not set, adherence will be computed for requested users if applicable or otherwise all users in the management unit. Note: If teamIds is also specified, only adherence for users in the requested teams will be returned
     /// </summary>
     /// <value>The teamIds to report on. If null or not set, adherence will be computed for requested users if applicable or otherwise all users in the management unit. Note: If teamIds is also specified, only adherence for users in the requested teams will be returned</value>
-    [DataMember(Name = "teamIds", EmitDefaultValue = false)]
+    [JsonPropertyName("teamIds")]
     public List<string> TeamIds { get; set; }
 
 

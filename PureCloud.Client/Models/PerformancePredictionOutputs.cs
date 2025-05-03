@@ -1,4 +1,3 @@
-using System.Runtime.Serialization;
 using System.Text;
 using System.Text.Json.Serialization;
 
@@ -7,7 +6,7 @@ namespace PureCloud.Client.Models;
 /// <summary>
 /// PerformancePredictionOutputs
 /// </summary>
-[DataContract]
+
 public partial class PerformancePredictionOutputs : IEquatable<PerformancePredictionOutputs>
 {
 
@@ -36,7 +35,7 @@ public partial class PerformancePredictionOutputs : IEquatable<PerformancePredic
     /// Date as an ISO-8601 string, corresponding to the beginning of the performance prediction results
     /// </summary>
     /// <value>Date as an ISO-8601 string, corresponding to the beginning of the performance prediction results</value>
-    [DataMember(Name = "calculationStartDate", EmitDefaultValue = false)]
+    [JsonPropertyName("calculationStartDate")]
     public DateTime? CalculationStartDate { get; set; }
 
 
@@ -45,7 +44,7 @@ public partial class PerformancePredictionOutputs : IEquatable<PerformancePredic
     /// Interval length of the response metrics
     /// </summary>
     /// <value>Interval length of the response metrics</value>
-    [DataMember(Name = "calculationIntervalLengthMinutes", EmitDefaultValue = false)]
+    [JsonPropertyName("calculationIntervalLengthMinutes")]
     public int? CalculationIntervalLengthMinutes { get; set; }
 
 
@@ -54,7 +53,7 @@ public partial class PerformancePredictionOutputs : IEquatable<PerformancePredic
     /// List of planning group level performance prediction results
     /// </summary>
     /// <value>List of planning group level performance prediction results</value>
-    [DataMember(Name = "planningGroupResults", EmitDefaultValue = false)]
+    [JsonPropertyName("planningGroupResults")]
     public List<PlanningGroupOutputs> PlanningGroupResults { get; set; }
 
 

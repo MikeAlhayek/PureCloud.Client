@@ -1,12 +1,12 @@
-using System.Runtime.Serialization;
 using System.Text;
+using System.Text.Json.Serialization;
 
 namespace PureCloud.Client.Models;
 
 /// <summary>
 /// SessionFiles
 /// </summary>
-[DataContract]
+
 public partial class SessionFiles : IEquatable<SessionFiles>
 {
     /// <summary>
@@ -29,7 +29,7 @@ public partial class SessionFiles : IEquatable<SessionFiles>
     /// Metadata for the requested session
     /// </summary>
     /// <value>Metadata for the requested session</value>
-    [DataMember(Name = "metaData", EmitDefaultValue = false)]
+    [JsonPropertyName("metaData")]
     public SessionMetaData MetaData { get; set; }
 
 
@@ -38,7 +38,7 @@ public partial class SessionFiles : IEquatable<SessionFiles>
     /// Offered data for the requested session
     /// </summary>
     /// <value>Offered data for the requested session</value>
-    [DataMember(Name = "offered", EmitDefaultValue = false)]
+    [JsonPropertyName("offered")]
     public SessionMetricData Offered { get; set; }
 
 
@@ -47,7 +47,7 @@ public partial class SessionFiles : IEquatable<SessionFiles>
     /// Average handle time data for the requested session
     /// </summary>
     /// <value>Average handle time data for the requested session</value>
-    [DataMember(Name = "averageHandleTime", EmitDefaultValue = false)]
+    [JsonPropertyName("averageHandleTime")]
     public SessionMetricData AverageHandleTime { get; set; }
 
 

@@ -1,12 +1,12 @@
-using System.Runtime.Serialization;
 using System.Text;
+using System.Text.Json.Serialization;
 
 namespace PureCloud.Client.Models;
 
 /// <summary>
 /// PolicyErrors
 /// </summary>
-[DataContract]
+
 public partial class PolicyErrors : IEquatable<PolicyErrors>
 {
     /// <summary>
@@ -24,7 +24,7 @@ public partial class PolicyErrors : IEquatable<PolicyErrors>
     /// <summary>
     /// Gets or Sets PolicyErrorMessages
     /// </summary>
-    [DataMember(Name = "policyErrorMessages", EmitDefaultValue = false)]
+    [JsonPropertyName("policyErrorMessages")]
     public List<PolicyErrorMessage> PolicyErrorMessages { get; set; }
 
 

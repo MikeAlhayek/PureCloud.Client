@@ -7,14 +7,14 @@ namespace PureCloud.Client.Models;
 /// <summary>
 /// ActivityPlanJobResponse
 /// </summary>
-[DataContract]
+
 public partial class ActivityPlanJobResponse : IEquatable<ActivityPlanJobResponse>
 {
     /// <summary>
     /// The status of the job
     /// </summary>
     /// <value>The status of the job</value>
-    [JsonConverter(typeof(JsonStringEnumConverter))]
+    
     public enum StatusEnum
     {
         /// <summary>
@@ -47,7 +47,7 @@ public partial class ActivityPlanJobResponse : IEquatable<ActivityPlanJobRespons
     /// The type of the job
     /// </summary>
     /// <value>The type of the job</value>
-    [JsonConverter(typeof(JsonStringEnumConverter))]
+    
     public enum TypeEnum
     {
         /// <summary>
@@ -74,13 +74,13 @@ public partial class ActivityPlanJobResponse : IEquatable<ActivityPlanJobRespons
     /// The status of the job
     /// </summary>
     /// <value>The status of the job</value>
-    [DataMember(Name = "status", EmitDefaultValue = false)]
+    [JsonPropertyName("status")]
     public StatusEnum? Status { get; set; }
     /// <summary>
     /// The type of the job
     /// </summary>
     /// <value>The type of the job</value>
-    [DataMember(Name = "type", EmitDefaultValue = false)]
+    [JsonPropertyName("type")]
     public TypeEnum? Type { get; set; }
 
     /// <summary>
@@ -114,7 +114,7 @@ public partial class ActivityPlanJobResponse : IEquatable<ActivityPlanJobRespons
     /// The globally unique identifier for the object.
     /// </summary>
     /// <value>The globally unique identifier for the object.</value>
-    [DataMember(Name = "id", EmitDefaultValue = false)]
+    [JsonPropertyName("id")]
     public string Id { get; private set; }
 
 
@@ -123,7 +123,7 @@ public partial class ActivityPlanJobResponse : IEquatable<ActivityPlanJobRespons
     /// The activity plan associated with this job
     /// </summary>
     /// <value>The activity plan associated with this job</value>
-    [DataMember(Name = "activityPlan", EmitDefaultValue = false)]
+    [JsonPropertyName("activityPlan")]
     public ActivityPlanReference ActivityPlan { get; set; }
 
 
@@ -134,7 +134,7 @@ public partial class ActivityPlanJobResponse : IEquatable<ActivityPlanJobRespons
     /// The list of exceptions that occurred while running this activity plan job. These are exceptions that affect individual occurrences but didn&#39;t prevent the job from completing
     /// </summary>
     /// <value>The list of exceptions that occurred while running this activity plan job. These are exceptions that affect individual occurrences but didn&#39;t prevent the job from completing</value>
-    [DataMember(Name = "exceptions", EmitDefaultValue = false)]
+    [JsonPropertyName("exceptions")]
     public List<ActivityPlanJobException> Exceptions { get; set; }
 
 
@@ -143,7 +143,7 @@ public partial class ActivityPlanJobResponse : IEquatable<ActivityPlanJobRespons
     /// Error details if status &#x3D;&#x3D; &#39;Error&#39;. These are errors that caused the job to fail to complete
     /// </summary>
     /// <value>Error details if status &#x3D;&#x3D; &#39;Error&#39;. These are errors that caused the job to fail to complete</value>
-    [DataMember(Name = "error", EmitDefaultValue = false)]
+    [JsonPropertyName("error")]
     public ErrorBody Error { get; set; }
 
 
@@ -152,7 +152,7 @@ public partial class ActivityPlanJobResponse : IEquatable<ActivityPlanJobRespons
     /// The occurrence associated with this job if type &#x3D;&#x3D; &#39;DeleteOccurrence&#39;
     /// </summary>
     /// <value>The occurrence associated with this job if type &#x3D;&#x3D; &#39;DeleteOccurrence&#39;</value>
-    [DataMember(Name = "occurrence", EmitDefaultValue = false)]
+    [JsonPropertyName("occurrence")]
     public ActivityPlanOccurrenceReference Occurrence { get; set; }
 
 
@@ -163,7 +163,7 @@ public partial class ActivityPlanJobResponse : IEquatable<ActivityPlanJobRespons
     /// The URI for this object
     /// </summary>
     /// <value>The URI for this object</value>
-    [DataMember(Name = "selfUri", EmitDefaultValue = false)]
+    [JsonPropertyName("selfUri")]
     public string SelfUri { get; private set; }
 
 

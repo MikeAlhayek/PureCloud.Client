@@ -1,4 +1,3 @@
-using System.Runtime.Serialization;
 using System.Text;
 using System.Text.Json.Serialization;
 
@@ -7,7 +6,7 @@ namespace PureCloud.Client.Models;
 /// <summary>
 /// OutcomeAttributionListing
 /// </summary>
-[DataContract]
+
 public partial class OutcomeAttributionListing : IEquatable<OutcomeAttributionListing>
 {
 
@@ -33,7 +32,7 @@ public partial class OutcomeAttributionListing : IEquatable<OutcomeAttributionLi
     /// <summary>
     /// Gets or Sets Entities
     /// </summary>
-    [DataMember(Name = "entities", EmitDefaultValue = false)]
+    [JsonPropertyName("entities")]
     public List<OutcomeAttributionRequest> Entities { get; set; }
 
 
@@ -42,7 +41,7 @@ public partial class OutcomeAttributionListing : IEquatable<OutcomeAttributionLi
     /// Optional percent failed threshold for validation errors; if reached will halt the job. Default is 5 percent, allowed values 0 to 100.
     /// </summary>
     /// <value>Optional percent failed threshold for validation errors; if reached will halt the job. Default is 5 percent, allowed values 0 to 100.</value>
-    [DataMember(Name = "percentFailedThreshold", EmitDefaultValue = false)]
+    [JsonPropertyName("percentFailedThreshold")]
     public int? PercentFailedThreshold { get; set; }
 
 

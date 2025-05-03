@@ -1,4 +1,3 @@
-using System.Runtime.Serialization;
 using System.Text;
 using System.Text.Json.Serialization;
 
@@ -7,7 +6,7 @@ namespace PureCloud.Client.Models;
 /// <summary>
 /// BuQueryAdherenceExplanationsRequest
 /// </summary>
-[DataContract]
+
 public partial class BuQueryAdherenceExplanationsRequest : IEquatable<BuQueryAdherenceExplanationsRequest>
 {
 
@@ -38,7 +37,7 @@ public partial class BuQueryAdherenceExplanationsRequest : IEquatable<BuQueryAdh
     /// The start date of the range to query. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z
     /// </summary>
     /// <value>The start date of the range to query. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z</value>
-    [DataMember(Name = "startDate", EmitDefaultValue = false)]
+    [JsonPropertyName("startDate")]
     public DateTime? StartDate { get; set; }
 
 
@@ -47,7 +46,7 @@ public partial class BuQueryAdherenceExplanationsRequest : IEquatable<BuQueryAdh
     /// The end date of the range to query. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z
     /// </summary>
     /// <value>The end date of the range to query. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z</value>
-    [DataMember(Name = "endDate", EmitDefaultValue = false)]
+    [JsonPropertyName("endDate")]
     public DateTime? EndDate { get; set; }
 
 
@@ -56,7 +55,7 @@ public partial class BuQueryAdherenceExplanationsRequest : IEquatable<BuQueryAdh
     /// A filter for which management units to query. Leave empty or omit entirely for all management units in the business unit
     /// </summary>
     /// <value>A filter for which management units to query. Leave empty or omit entirely for all management units in the business unit</value>
-    [DataMember(Name = "managementUnitIds", EmitDefaultValue = false)]
+    [JsonPropertyName("managementUnitIds")]
     public List<string> ManagementUnitIds { get; set; }
 
 
@@ -65,7 +64,7 @@ public partial class BuQueryAdherenceExplanationsRequest : IEquatable<BuQueryAdh
     /// A filter for which agents within the business unit to query. Leave empty or omit entirely for all agents in the business unit (or management units if specified)
     /// </summary>
     /// <value>A filter for which agents within the business unit to query. Leave empty or omit entirely for all agents in the business unit (or management units if specified)</value>
-    [DataMember(Name = "agentIds", EmitDefaultValue = false)]
+    [JsonPropertyName("agentIds")]
     public List<string> AgentIds { get; set; }
 
 

@@ -7,14 +7,14 @@ namespace PureCloud.Client.Models;
 /// <summary>
 /// DigitalRule
 /// </summary>
-[DataContract]
+
 public partial class DigitalRule : IEquatable<DigitalRule>
 {
     /// <summary>
     /// The category of the rule.
     /// </summary>
     /// <value>The category of the rule.</value>
-    [JsonConverter(typeof(JsonStringEnumConverter))]
+    
     public enum CategoryEnum
     {
         /// <summary>
@@ -41,7 +41,7 @@ public partial class DigitalRule : IEquatable<DigitalRule>
     /// The category of the rule.
     /// </summary>
     /// <value>The category of the rule.</value>
-    [DataMember(Name = "category", EmitDefaultValue = false)]
+    [JsonPropertyName("category")]
     public CategoryEnum? Category { get; set; }
 
     /// <summary>
@@ -73,7 +73,7 @@ public partial class DigitalRule : IEquatable<DigitalRule>
     /// The identifier of the rule.
     /// </summary>
     /// <value>The identifier of the rule.</value>
-    [DataMember(Name = "id", EmitDefaultValue = false)]
+    [JsonPropertyName("id")]
     public string Id { get; private set; }
 
 
@@ -82,7 +82,7 @@ public partial class DigitalRule : IEquatable<DigitalRule>
     /// The name of the rule.
     /// </summary>
     /// <value>The name of the rule.</value>
-    [DataMember(Name = "name", EmitDefaultValue = false)]
+    [JsonPropertyName("name")]
     public string Name { get; set; }
 
 
@@ -91,7 +91,7 @@ public partial class DigitalRule : IEquatable<DigitalRule>
     /// The ranked order of the rule. Rules are processed from lowest number to highest.
     /// </summary>
     /// <value>The ranked order of the rule. Rules are processed from lowest number to highest.</value>
-    [DataMember(Name = "order", EmitDefaultValue = false)]
+    [JsonPropertyName("order")]
     public int? Order { get; set; }
 
 
@@ -102,7 +102,7 @@ public partial class DigitalRule : IEquatable<DigitalRule>
     /// A list of conditions to evaluate. All of the Conditions must evaluate to true to trigger the actions.
     /// </summary>
     /// <value>A list of conditions to evaluate. All of the Conditions must evaluate to true to trigger the actions.</value>
-    [DataMember(Name = "conditions", EmitDefaultValue = false)]
+    [JsonPropertyName("conditions")]
     public List<DigitalCondition> Conditions { get; set; }
 
 
@@ -111,7 +111,7 @@ public partial class DigitalRule : IEquatable<DigitalRule>
     /// The list of actions to be taken if all conditions are true.
     /// </summary>
     /// <value>The list of actions to be taken if all conditions are true.</value>
-    [DataMember(Name = "actions", EmitDefaultValue = false)]
+    [JsonPropertyName("actions")]
     public List<DigitalAction> Actions { get; set; }
 
 

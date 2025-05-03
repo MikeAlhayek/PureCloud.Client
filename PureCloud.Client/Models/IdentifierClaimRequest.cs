@@ -7,14 +7,14 @@ namespace PureCloud.Client.Models;
 /// <summary>
 /// IdentifierClaimRequest
 /// </summary>
-[DataContract]
+
 public partial class IdentifierClaimRequest : IEquatable<IdentifierClaimRequest>
 {
     /// <summary>
     /// The operation to perform claim/release
     /// </summary>
     /// <value>The operation to perform claim/release</value>
-    [JsonConverter(typeof(JsonStringEnumConverter))]
+    
     public enum OperationEnum
     {
         /// <summary>
@@ -41,7 +41,7 @@ public partial class IdentifierClaimRequest : IEquatable<IdentifierClaimRequest>
     /// The operation to perform claim/release
     /// </summary>
     /// <value>The operation to perform claim/release</value>
-    [DataMember(Name = "operation", EmitDefaultValue = false)]
+    [JsonPropertyName("operation")]
     public OperationEnum? Operation { get; set; }
 
     /// <summary>
@@ -69,7 +69,7 @@ public partial class IdentifierClaimRequest : IEquatable<IdentifierClaimRequest>
     /// The identifier that should be claimed/released from a contact
     /// </summary>
     /// <value>The identifier that should be claimed/released from a contact</value>
-    [DataMember(Name = "identifier", EmitDefaultValue = false)]
+    [JsonPropertyName("identifier")]
     public ContactIdentifier Identifier { get; set; }
 
 

@@ -1,12 +1,12 @@
-using System.Runtime.Serialization;
 using System.Text;
+using System.Text.Json.Serialization;
 
 namespace PureCloud.Client.Models;
 
 /// <summary>
 /// PatchUser
 /// </summary>
-[DataContract]
+
 public partial class PatchUser : IEquatable<PatchUser>
 {
     /// <summary>
@@ -29,7 +29,7 @@ public partial class PatchUser : IEquatable<PatchUser>
     /// The globally unique identifier for the object.
     /// </summary>
     /// <value>The globally unique identifier for the object.</value>
-    [DataMember(Name = "id", EmitDefaultValue = false)]
+    [JsonPropertyName("id")]
     public string Id { get; set; }
 
 
@@ -38,7 +38,7 @@ public partial class PatchUser : IEquatable<PatchUser>
     /// Preferred full name of agent
     /// </summary>
     /// <value>Preferred full name of agent</value>
-    [DataMember(Name = "preferredName", EmitDefaultValue = false)]
+    [JsonPropertyName("preferredName")]
     public string PreferredName { get; set; }
 
 
@@ -47,7 +47,7 @@ public partial class PatchUser : IEquatable<PatchUser>
     /// The value that denotes if acdAutoAnswer is set on the user
     /// </summary>
     /// <value>The value that denotes if acdAutoAnswer is set on the user</value>
-    [DataMember(Name = "acdAutoAnswer", EmitDefaultValue = false)]
+    [JsonPropertyName("acdAutoAnswer")]
     public bool? AcdAutoAnswer { get; set; }
 
 

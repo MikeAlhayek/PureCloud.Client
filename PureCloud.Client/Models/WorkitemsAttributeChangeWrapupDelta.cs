@@ -1,12 +1,12 @@
-using System.Runtime.Serialization;
 using System.Text;
+using System.Text.Json.Serialization;
 
 namespace PureCloud.Client.Models;
 
 /// <summary>
 /// WorkitemsAttributeChangeWrapupDelta
 /// </summary>
-[DataContract]
+
 public partial class WorkitemsAttributeChangeWrapupDelta : IEquatable<WorkitemsAttributeChangeWrapupDelta>
 {
     /// <summary>
@@ -27,7 +27,7 @@ public partial class WorkitemsAttributeChangeWrapupDelta : IEquatable<WorkitemsA
     /// New property value
     /// </summary>
     /// <value>New property value</value>
-    [DataMember(Name = "newValue", EmitDefaultValue = false)]
+    [JsonPropertyName("newValue")]
     public WrapupDelta NewValue { get; set; }
 
 
@@ -36,7 +36,7 @@ public partial class WorkitemsAttributeChangeWrapupDelta : IEquatable<WorkitemsA
     /// Old property value
     /// </summary>
     /// <value>Old property value</value>
-    [DataMember(Name = "oldValue", EmitDefaultValue = false)]
+    [JsonPropertyName("oldValue")]
     public WrapupDelta OldValue { get; set; }
 
 

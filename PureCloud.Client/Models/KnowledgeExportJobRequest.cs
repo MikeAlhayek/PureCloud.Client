@@ -7,14 +7,14 @@ namespace PureCloud.Client.Models;
 /// <summary>
 /// KnowledgeExportJobRequest
 /// </summary>
-[DataContract]
+
 public partial class KnowledgeExportJobRequest : IEquatable<KnowledgeExportJobRequest>
 {
     /// <summary>
     /// File type of the document
     /// </summary>
     /// <value>File type of the document</value>
-    [JsonConverter(typeof(JsonStringEnumConverter))]
+    
     public enum FileTypeEnum
     {
         /// <summary>
@@ -47,7 +47,7 @@ public partial class KnowledgeExportJobRequest : IEquatable<KnowledgeExportJobRe
     /// File type of the document
     /// </summary>
     /// <value>File type of the document</value>
-    [DataMember(Name = "fileType", EmitDefaultValue = false)]
+    [JsonPropertyName("fileType")]
     public FileTypeEnum? FileType { get; set; }
 
     /// <summary>
@@ -77,7 +77,7 @@ public partial class KnowledgeExportJobRequest : IEquatable<KnowledgeExportJobRe
     /// What to export.
     /// </summary>
     /// <value>What to export.</value>
-    [DataMember(Name = "exportFilter", EmitDefaultValue = false)]
+    [JsonPropertyName("exportFilter")]
     public KnowledgeExportJobFilter ExportFilter { get; set; }
 
 
@@ -88,7 +88,7 @@ public partial class KnowledgeExportJobRequest : IEquatable<KnowledgeExportJobRe
     /// Knowledge integration source id.
     /// </summary>
     /// <value>Knowledge integration source id.</value>
-    [DataMember(Name = "sourceId", EmitDefaultValue = false)]
+    [JsonPropertyName("sourceId")]
     public string SourceId { get; set; }
 
 
@@ -97,7 +97,7 @@ public partial class KnowledgeExportJobRequest : IEquatable<KnowledgeExportJobRe
     /// Requested version of the exported json file. Available versions are 2 and 3, default is 2
     /// </summary>
     /// <value>Requested version of the exported json file. Available versions are 2 and 3, default is 2</value>
-    [DataMember(Name = "jsonFileVersion", EmitDefaultValue = false)]
+    [JsonPropertyName("jsonFileVersion")]
     public int? JsonFileVersion { get; set; }
 
 

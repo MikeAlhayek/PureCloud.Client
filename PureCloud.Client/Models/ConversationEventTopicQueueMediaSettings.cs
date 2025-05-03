@@ -1,12 +1,12 @@
-using System.Runtime.Serialization;
 using System.Text;
+using System.Text.Json.Serialization;
 
 namespace PureCloud.Client.Models;
 
 /// <summary>
 /// Represents the queue setting for this media.
 /// </summary>
-[DataContract]
+
 public partial class ConversationEventTopicQueueMediaSettings : IEquatable<ConversationEventTopicQueueMediaSettings>
 {
     /// <summary>
@@ -31,7 +31,7 @@ public partial class ConversationEventTopicQueueMediaSettings : IEquatable<Conve
     /// Specifies how long the agent has to answer an interaction before being marked as not responding.
     /// </summary>
     /// <value>Specifies how long the agent has to answer an interaction before being marked as not responding.</value>
-    [DataMember(Name = "alertingTimeoutSeconds", EmitDefaultValue = false)]
+    [JsonPropertyName("alertingTimeoutSeconds")]
     public long? AlertingTimeoutSeconds { get; set; }
 
 
@@ -40,7 +40,7 @@ public partial class ConversationEventTopicQueueMediaSettings : IEquatable<Conve
     /// Specifies the duration of the alerting sound to be played for auto answered interactions.
     /// </summary>
     /// <value>Specifies the duration of the alerting sound to be played for auto answered interactions.</value>
-    [DataMember(Name = "autoAnswerAlertToneSeconds", EmitDefaultValue = false)]
+    [JsonPropertyName("autoAnswerAlertToneSeconds")]
     public double? AutoAnswerAlertToneSeconds { get; set; }
 
 
@@ -49,7 +49,7 @@ public partial class ConversationEventTopicQueueMediaSettings : IEquatable<Conve
     /// Specifies the duration of the alerting sound to be played for manually answered interactions
     /// </summary>
     /// <value>Specifies the duration of the alerting sound to be played for manually answered interactions</value>
-    [DataMember(Name = "manualAnswerAlertToneSeconds", EmitDefaultValue = false)]
+    [JsonPropertyName("manualAnswerAlertToneSeconds")]
     public double? ManualAnswerAlertToneSeconds { get; set; }
 
 
@@ -58,7 +58,7 @@ public partial class ConversationEventTopicQueueMediaSettings : IEquatable<Conve
     /// Flag to indicate if auto answer is enabled for the given media type or media subtype.
     /// </summary>
     /// <value>Flag to indicate if auto answer is enabled for the given media type or media subtype.</value>
-    [DataMember(Name = "enableAutoAnswer", EmitDefaultValue = false)]
+    [JsonPropertyName("enableAutoAnswer")]
     public bool? EnableAutoAnswer { get; set; }
 
 

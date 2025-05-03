@@ -1,12 +1,12 @@
-using System.Runtime.Serialization;
 using System.Text;
+using System.Text.Json.Serialization;
 
 namespace PureCloud.Client.Models;
 
 /// <summary>
 /// BuAgentSchedulesSearchResponse
 /// </summary>
-[DataContract]
+
 public partial class BuAgentSchedulesSearchResponse : IEquatable<BuAgentSchedulesSearchResponse>
 {
     /// <summary>
@@ -29,7 +29,7 @@ public partial class BuAgentSchedulesSearchResponse : IEquatable<BuAgentSchedule
     /// The requested agent schedules
     /// </summary>
     /// <value>The requested agent schedules</value>
-    [DataMember(Name = "agentSchedules", EmitDefaultValue = false)]
+    [JsonPropertyName("agentSchedules")]
     public List<BuAgentScheduleSearchResponse> AgentSchedules { get; set; }
 
 
@@ -38,7 +38,7 @@ public partial class BuAgentSchedulesSearchResponse : IEquatable<BuAgentSchedule
     /// The time zone configured for the business unit to which this schedule applies
     /// </summary>
     /// <value>The time zone configured for the business unit to which this schedule applies</value>
-    [DataMember(Name = "businessUnitTimeZone", EmitDefaultValue = false)]
+    [JsonPropertyName("businessUnitTimeZone")]
     public string BusinessUnitTimeZone { get; set; }
 
 
@@ -47,7 +47,7 @@ public partial class BuAgentSchedulesSearchResponse : IEquatable<BuAgentSchedule
     /// References to all published week schedules overlapping the start/end date query parameters
     /// </summary>
     /// <value>References to all published week schedules overlapping the start/end date query parameters</value>
-    [DataMember(Name = "publishedSchedules", EmitDefaultValue = false)]
+    [JsonPropertyName("publishedSchedules")]
     public List<BuAgentSchedulePublishedScheduleReference> PublishedSchedules { get; set; }
 
 

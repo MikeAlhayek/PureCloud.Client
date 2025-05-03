@@ -1,12 +1,12 @@
-using System.Runtime.Serialization;
 using System.Text;
+using System.Text.Json.Serialization;
 
 namespace PureCloud.Client.Models;
 
 /// <summary>
 /// ListWrapperString
 /// </summary>
-[DataContract]
+
 public partial class ListWrapperString : IEquatable<ListWrapperString>
 {
     /// <summary>
@@ -24,7 +24,7 @@ public partial class ListWrapperString : IEquatable<ListWrapperString>
     /// <summary>
     /// Gets or Sets Values
     /// </summary>
-    [DataMember(Name = "values", EmitDefaultValue = false)]
+    [JsonPropertyName("values")]
     public List<string> Values { get; set; }
 
 

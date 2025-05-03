@@ -7,14 +7,14 @@ namespace PureCloud.Client.Models;
 /// <summary>
 /// WidgetDeployment
 /// </summary>
-[DataContract]
+
 public partial class WidgetDeployment : IEquatable<WidgetDeployment>
 {
     /// <summary>
     /// The type of display widget for which this Deployment is configured, which controls the administrator settings shown.
     /// </summary>
     /// <value>The type of display widget for which this Deployment is configured, which controls the administrator settings shown.</value>
-    [JsonConverter(typeof(JsonStringEnumConverter))]
+    
     public enum ClientTypeEnum
     {
         /// <summary>
@@ -53,7 +53,7 @@ public partial class WidgetDeployment : IEquatable<WidgetDeployment>
     /// The type of display widget for which this Deployment is configured, which controls the administrator settings shown.
     /// </summary>
     /// <value>The type of display widget for which this Deployment is configured, which controls the administrator settings shown.</value>
-    [DataMember(Name = "clientType", EmitDefaultValue = false)]
+    [JsonPropertyName("clientType")]
     public ClientTypeEnum? ClientType { get; set; }
     /// <summary>
     /// Initializes a new instance of the <see cref="WidgetDeployment" /> class.
@@ -85,7 +85,7 @@ public partial class WidgetDeployment : IEquatable<WidgetDeployment>
     /// The globally unique identifier for the object.
     /// </summary>
     /// <value>The globally unique identifier for the object.</value>
-    [DataMember(Name = "id", EmitDefaultValue = false)]
+    [JsonPropertyName("id")]
     public string Id { get; private set; }
 
 
@@ -93,7 +93,7 @@ public partial class WidgetDeployment : IEquatable<WidgetDeployment>
     /// <summary>
     /// Gets or Sets Name
     /// </summary>
-    [DataMember(Name = "name", EmitDefaultValue = false)]
+    [JsonPropertyName("name")]
     public string Name { get; set; }
 
 
@@ -102,7 +102,7 @@ public partial class WidgetDeployment : IEquatable<WidgetDeployment>
     /// A human-readable description of this Deployment.
     /// </summary>
     /// <value>A human-readable description of this Deployment.</value>
-    [DataMember(Name = "description", EmitDefaultValue = false)]
+    [JsonPropertyName("description")]
     public string Description { get; set; }
 
 
@@ -111,7 +111,7 @@ public partial class WidgetDeployment : IEquatable<WidgetDeployment>
     /// When true, the customer members starting a chat must be authenticated by supplying their JWT to the create operation.
     /// </summary>
     /// <value>When true, the customer members starting a chat must be authenticated by supplying their JWT to the create operation.</value>
-    [DataMember(Name = "authenticationRequired", EmitDefaultValue = false)]
+    [JsonPropertyName("authenticationRequired")]
     public bool? AuthenticationRequired { get; set; }
 
 
@@ -120,7 +120,7 @@ public partial class WidgetDeployment : IEquatable<WidgetDeployment>
     /// When true, all create chat operations using this Deployment will be rejected.
     /// </summary>
     /// <value>When true, all create chat operations using this Deployment will be rejected.</value>
-    [DataMember(Name = "disabled", EmitDefaultValue = false)]
+    [JsonPropertyName("disabled")]
     public bool? Disabled { get; set; }
 
 
@@ -129,7 +129,7 @@ public partial class WidgetDeployment : IEquatable<WidgetDeployment>
     /// The URI of the Inbound Chat Flow to run when new chats are initiated under this Deployment.
     /// </summary>
     /// <value>The URI of the Inbound Chat Flow to run when new chats are initiated under this Deployment.</value>
-    [DataMember(Name = "flow", EmitDefaultValue = false)]
+    [JsonPropertyName("flow")]
     public DomainEntityRef Flow { get; set; }
 
 
@@ -138,7 +138,7 @@ public partial class WidgetDeployment : IEquatable<WidgetDeployment>
     /// The list of domains that are approved to use this Deployment; the list will be added to CORS headers for ease of web use.
     /// </summary>
     /// <value>The list of domains that are approved to use this Deployment; the list will be added to CORS headers for ease of web use.</value>
-    [DataMember(Name = "allowedDomains", EmitDefaultValue = false)]
+    [JsonPropertyName("allowedDomains")]
     public List<string> AllowedDomains { get; set; }
 
 
@@ -149,7 +149,7 @@ public partial class WidgetDeployment : IEquatable<WidgetDeployment>
     /// The client configuration options that should be made available to the clients of this Deployment.
     /// </summary>
     /// <value>The client configuration options that should be made available to the clients of this Deployment.</value>
-    [DataMember(Name = "clientConfig", EmitDefaultValue = false)]
+    [JsonPropertyName("clientConfig")]
     public WidgetClientConfig ClientConfig { get; set; }
 
 
@@ -158,7 +158,7 @@ public partial class WidgetDeployment : IEquatable<WidgetDeployment>
     /// The URI for this object
     /// </summary>
     /// <value>The URI for this object</value>
-    [DataMember(Name = "selfUri", EmitDefaultValue = false)]
+    [JsonPropertyName("selfUri")]
     public string SelfUri { get; private set; }
 
 

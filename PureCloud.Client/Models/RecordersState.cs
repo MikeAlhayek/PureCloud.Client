@@ -7,14 +7,14 @@ namespace PureCloud.Client.Models;
 /// <summary>
 /// RecordersState
 /// </summary>
-[DataContract]
+
 public partial class RecordersState : IEquatable<RecordersState>
 {
     /// <summary>
     /// Indicates the state of the adhoc recorder.
     /// </summary>
     /// <value>Indicates the state of the adhoc recorder.</value>
-    [JsonConverter(typeof(JsonStringEnumConverter))]
+    
     public enum AdhocStateEnum
     {
         /// <summary>
@@ -47,7 +47,7 @@ public partial class RecordersState : IEquatable<RecordersState>
     /// Indicates the state of the customer experience recorder.
     /// </summary>
     /// <value>Indicates the state of the customer experience recorder.</value>
-    [JsonConverter(typeof(JsonStringEnumConverter))]
+    
     public enum CustomerExperienceStateEnum
     {
         /// <summary>
@@ -80,7 +80,7 @@ public partial class RecordersState : IEquatable<RecordersState>
     /// Indicates the state of the agent experience recorder.
     /// </summary>
     /// <value>Indicates the state of the agent experience recorder.</value>
-    [JsonConverter(typeof(JsonStringEnumConverter))]
+    
     public enum AgentExperienceStateEnum
     {
         /// <summary>
@@ -113,19 +113,19 @@ public partial class RecordersState : IEquatable<RecordersState>
     /// Indicates the state of the adhoc recorder.
     /// </summary>
     /// <value>Indicates the state of the adhoc recorder.</value>
-    [DataMember(Name = "adhocState", EmitDefaultValue = false)]
+    [JsonPropertyName("adhocState")]
     public AdhocStateEnum? AdhocState { get; set; }
     /// <summary>
     /// Indicates the state of the customer experience recorder.
     /// </summary>
     /// <value>Indicates the state of the customer experience recorder.</value>
-    [DataMember(Name = "customerExperienceState", EmitDefaultValue = false)]
+    [JsonPropertyName("customerExperienceState")]
     public CustomerExperienceStateEnum? CustomerExperienceState { get; set; }
     /// <summary>
     /// Indicates the state of the agent experience recorder.
     /// </summary>
     /// <value>Indicates the state of the agent experience recorder.</value>
-    [DataMember(Name = "agentExperienceState", EmitDefaultValue = false)]
+    [JsonPropertyName("agentExperienceState")]
     public AgentExperienceStateEnum? AgentExperienceState { get; set; }
     /// <summary>
     /// Initializes a new instance of the <see cref="RecordersState" /> class.

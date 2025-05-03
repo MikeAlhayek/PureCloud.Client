@@ -1,12 +1,12 @@
-using System.Runtime.Serialization;
 using System.Text;
+using System.Text.Json.Serialization;
 
 namespace PureCloud.Client.Models;
 
 /// <summary>
 /// DialerPreview
 /// </summary>
-[DataContract]
+
 public partial class DialerPreview : IEquatable<DialerPreview>
 {
     /// <summary>
@@ -34,7 +34,7 @@ public partial class DialerPreview : IEquatable<DialerPreview>
     /// <summary>
     /// Gets or Sets Id
     /// </summary>
-    [DataMember(Name = "id", EmitDefaultValue = false)]
+    [JsonPropertyName("id")]
     public string Id { get; set; }
 
 
@@ -43,7 +43,7 @@ public partial class DialerPreview : IEquatable<DialerPreview>
     /// The contact associated with this preview data pop
     /// </summary>
     /// <value>The contact associated with this preview data pop</value>
-    [DataMember(Name = "contactId", EmitDefaultValue = false)]
+    [JsonPropertyName("contactId")]
     public string ContactId { get; set; }
 
 
@@ -52,7 +52,7 @@ public partial class DialerPreview : IEquatable<DialerPreview>
     /// The contactList associated with this preview data pop.
     /// </summary>
     /// <value>The contactList associated with this preview data pop.</value>
-    [DataMember(Name = "contactListId", EmitDefaultValue = false)]
+    [JsonPropertyName("contactListId")]
     public string ContactListId { get; set; }
 
 
@@ -61,7 +61,7 @@ public partial class DialerPreview : IEquatable<DialerPreview>
     /// The campaignId associated with this preview data pop.
     /// </summary>
     /// <value>The campaignId associated with this preview data pop.</value>
-    [DataMember(Name = "campaignId", EmitDefaultValue = false)]
+    [JsonPropertyName("campaignId")]
     public string CampaignId { get; set; }
 
 
@@ -70,7 +70,7 @@ public partial class DialerPreview : IEquatable<DialerPreview>
     /// The phone number columns associated with this campaign
     /// </summary>
     /// <value>The phone number columns associated with this campaign</value>
-    [DataMember(Name = "phoneNumberColumns", EmitDefaultValue = false)]
+    [JsonPropertyName("phoneNumberColumns")]
     public List<PhoneNumberColumn> PhoneNumberColumns { get; set; }
 
 
@@ -79,7 +79,7 @@ public partial class DialerPreview : IEquatable<DialerPreview>
     /// Whether or not to auto answer the callback
     /// </summary>
     /// <value>Whether or not to auto answer the callback</value>
-    [DataMember(Name = "callbackAutoAnswer", EmitDefaultValue = false)]
+    [JsonPropertyName("callbackAutoAnswer")]
     public bool? CallbackAutoAnswer { get; set; }
 
 

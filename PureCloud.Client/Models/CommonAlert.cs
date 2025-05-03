@@ -1,4 +1,3 @@
-using System.Runtime.Serialization;
 using System.Text;
 using System.Text.Json.Serialization;
 
@@ -7,7 +6,7 @@ namespace PureCloud.Client.Models;
 /// <summary>
 /// CommonAlert
 /// </summary>
-[DataContract]
+
 public partial class CommonAlert : IEquatable<CommonAlert>
 {
 
@@ -64,7 +63,7 @@ public partial class CommonAlert : IEquatable<CommonAlert>
     /// The globally unique identifier for the object.
     /// </summary>
     /// <value>The globally unique identifier for the object.</value>
-    [DataMember(Name = "id", EmitDefaultValue = false)]
+    [JsonPropertyName("id")]
     public string Id { get; private set; }
 
 
@@ -72,7 +71,7 @@ public partial class CommonAlert : IEquatable<CommonAlert>
     /// <summary>
     /// Gets or Sets Name
     /// </summary>
-    [DataMember(Name = "name", EmitDefaultValue = false)]
+    [JsonPropertyName("name")]
     public string Name { get; set; }
 
 
@@ -81,7 +80,7 @@ public partial class CommonAlert : IEquatable<CommonAlert>
     /// The user who created the rule that triggered the alert.
     /// </summary>
     /// <value>The user who created the rule that triggered the alert.</value>
-    [DataMember(Name = "user", EmitDefaultValue = false)]
+    [JsonPropertyName("user")]
     public UserReference User { get; set; }
 
 
@@ -90,7 +89,7 @@ public partial class CommonAlert : IEquatable<CommonAlert>
     /// The properties of the rule that triggered the alert.
     /// </summary>
     /// <value>The properties of the rule that triggered the alert.</value>
-    [DataMember(Name = "rule", EmitDefaultValue = false)]
+    [JsonPropertyName("rule")]
     public AlertRuleProperties Rule { get; set; }
 
 
@@ -99,7 +98,7 @@ public partial class CommonAlert : IEquatable<CommonAlert>
     /// The collection of notification methods and the ids of users who were notified by those methods.
     /// </summary>
     /// <value>The collection of notification methods and the ids of users who were notified by those methods.</value>
-    [DataMember(Name = "notifications", EmitDefaultValue = false)]
+    [JsonPropertyName("notifications")]
     public List<AlertNotification> Notifications { get; set; }
 
 
@@ -108,7 +107,7 @@ public partial class CommonAlert : IEquatable<CommonAlert>
     /// The timestamp of when the alert was created. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z
     /// </summary>
     /// <value>The timestamp of when the alert was created. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z</value>
-    [DataMember(Name = "dateStart", EmitDefaultValue = false)]
+    [JsonPropertyName("dateStart")]
     public DateTime? DateStart { get; set; }
 
 
@@ -117,7 +116,7 @@ public partial class CommonAlert : IEquatable<CommonAlert>
     /// The timestamp of when the alert ended. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z
     /// </summary>
     /// <value>The timestamp of when the alert ended. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z</value>
-    [DataMember(Name = "dateEnd", EmitDefaultValue = false)]
+    [JsonPropertyName("dateEnd")]
     public DateTime? DateEnd { get; set; }
 
 
@@ -126,7 +125,7 @@ public partial class CommonAlert : IEquatable<CommonAlert>
     /// Indicates if an alert is currently active.
     /// </summary>
     /// <value>Indicates if an alert is currently active.</value>
-    [DataMember(Name = "active", EmitDefaultValue = false)]
+    [JsonPropertyName("active")]
     public bool? Active { get; set; }
 
 
@@ -135,7 +134,7 @@ public partial class CommonAlert : IEquatable<CommonAlert>
     /// Indicates if an alert has not been read.
     /// </summary>
     /// <value>Indicates if an alert has not been read.</value>
-    [DataMember(Name = "unread", EmitDefaultValue = false)]
+    [JsonPropertyName("unread")]
     public bool? Unread { get; set; }
 
 
@@ -144,7 +143,7 @@ public partial class CommonAlert : IEquatable<CommonAlert>
     /// The amount of time to wait between notification. Time is in milliseconds.
     /// </summary>
     /// <value>The amount of time to wait between notification. Time is in milliseconds.</value>
-    [DataMember(Name = "waitBetweenNotificationMs", EmitDefaultValue = false)]
+    [JsonPropertyName("waitBetweenNotificationMs")]
     public long? WaitBetweenNotificationMs { get; set; }
 
 
@@ -153,7 +152,7 @@ public partial class CommonAlert : IEquatable<CommonAlert>
     /// Flag indicating if the alert is in a muted state.
     /// </summary>
     /// <value>Flag indicating if the alert is in a muted state.</value>
-    [DataMember(Name = "muted", EmitDefaultValue = false)]
+    [JsonPropertyName("muted")]
     public bool? Muted { get; set; }
 
 
@@ -162,7 +161,7 @@ public partial class CommonAlert : IEquatable<CommonAlert>
     /// Flag indicating if the alert is in a snoozed state.
     /// </summary>
     /// <value>Flag indicating if the alert is in a snoozed state.</value>
-    [DataMember(Name = "snoozed", EmitDefaultValue = false)]
+    [JsonPropertyName("snoozed")]
     public bool? Snoozed { get; set; }
 
 
@@ -171,7 +170,7 @@ public partial class CommonAlert : IEquatable<CommonAlert>
     /// Timestamp of when the mute status of the alert should end. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z
     /// </summary>
     /// <value>Timestamp of when the mute status of the alert should end. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z</value>
-    [DataMember(Name = "dateMutedUntil", EmitDefaultValue = false)]
+    [JsonPropertyName("dateMutedUntil")]
     public DateTime? DateMutedUntil { get; set; }
 
 
@@ -180,7 +179,7 @@ public partial class CommonAlert : IEquatable<CommonAlert>
     /// Timestamp of when the snooze status of the alert should end. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z
     /// </summary>
     /// <value>Timestamp of when the snooze status of the alert should end. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z</value>
-    [DataMember(Name = "dateSnoozedUntil", EmitDefaultValue = false)]
+    [JsonPropertyName("dateSnoozedUntil")]
     public DateTime? DateSnoozedUntil { get; set; }
 
 
@@ -189,7 +188,7 @@ public partial class CommonAlert : IEquatable<CommonAlert>
     /// The conditions that make up the rule.
     /// </summary>
     /// <value>The conditions that make up the rule.</value>
-    [DataMember(Name = "conditions", EmitDefaultValue = false)]
+    [JsonPropertyName("conditions")]
     public CommonRuleConditions Conditions { get; set; }
 
 
@@ -198,7 +197,7 @@ public partial class CommonAlert : IEquatable<CommonAlert>
     /// The id of the conversation instance that caused the alert to trigger.
     /// </summary>
     /// <value>The id of the conversation instance that caused the alert to trigger.</value>
-    [DataMember(Name = "conversationId", EmitDefaultValue = false)]
+    [JsonPropertyName("conversationId")]
     public string ConversationId { get; set; }
 
 
@@ -207,7 +206,7 @@ public partial class CommonAlert : IEquatable<CommonAlert>
     /// Summary of the alert status of the entities defined in the conditions.  Is set when rule has instance-based or team member based rule predicates
     /// </summary>
     /// <value>Summary of the alert status of the entities defined in the conditions.  Is set when rule has instance-based or team member based rule predicates</value>
-    [DataMember(Name = "alertSummary", EmitDefaultValue = false)]
+    [JsonPropertyName("alertSummary")]
     public AlertSummary AlertSummary { get; set; }
 
 
@@ -215,7 +214,7 @@ public partial class CommonAlert : IEquatable<CommonAlert>
     /// <summary>
     /// Gets or Sets RuleUri
     /// </summary>
-    [DataMember(Name = "ruleUri", EmitDefaultValue = false)]
+    [JsonPropertyName("ruleUri")]
     public string RuleUri { get; set; }
 
 
@@ -224,7 +223,7 @@ public partial class CommonAlert : IEquatable<CommonAlert>
     /// The URI for this object
     /// </summary>
     /// <value>The URI for this object</value>
-    [DataMember(Name = "selfUri", EmitDefaultValue = false)]
+    [JsonPropertyName("selfUri")]
     public string SelfUri { get; private set; }
 
 

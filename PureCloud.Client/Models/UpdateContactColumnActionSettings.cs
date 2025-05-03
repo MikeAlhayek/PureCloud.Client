@@ -7,14 +7,14 @@ namespace PureCloud.Client.Models;
 /// <summary>
 /// UpdateContactColumnActionSettings
 /// </summary>
-[DataContract]
+
 public partial class UpdateContactColumnActionSettings : IEquatable<UpdateContactColumnActionSettings>
 {
     /// <summary>
     /// The type of update to make to the specified contact column(s).
     /// </summary>
     /// <value>The type of update to make to the specified contact column(s).</value>
-    [JsonConverter(typeof(JsonStringEnumConverter))]
+    
     public enum UpdateOptionEnum
     {
         /// <summary>
@@ -53,7 +53,7 @@ public partial class UpdateContactColumnActionSettings : IEquatable<UpdateContac
     /// The type of update to make to the specified contact column(s).
     /// </summary>
     /// <value>The type of update to make to the specified contact column(s).</value>
-    [DataMember(Name = "updateOption", EmitDefaultValue = false)]
+    [JsonPropertyName("updateOption")]
     public UpdateOptionEnum? UpdateOption { get; set; }
 
     /// <summary>
@@ -79,7 +79,7 @@ public partial class UpdateContactColumnActionSettings : IEquatable<UpdateContac
     /// A mapping of contact columns to their new values.
     /// </summary>
     /// <value>A mapping of contact columns to their new values.</value>
-    [DataMember(Name = "properties", EmitDefaultValue = false)]
+    [JsonPropertyName("properties")]
     public Dictionary<string, string> Properties { get; set; }
 
 

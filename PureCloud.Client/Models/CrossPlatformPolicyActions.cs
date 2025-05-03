@@ -1,12 +1,12 @@
-using System.Runtime.Serialization;
 using System.Text;
+using System.Text.Json.Serialization;
 
 namespace PureCloud.Client.Models;
 
 /// <summary>
 /// CrossPlatformPolicyActions
 /// </summary>
-[DataContract]
+
 public partial class CrossPlatformPolicyActions : IEquatable<CrossPlatformPolicyActions>
 {
     /// <summary>
@@ -43,7 +43,7 @@ public partial class CrossPlatformPolicyActions : IEquatable<CrossPlatformPolicy
     /// true to retain the recording associated with the conversation. Default &#x3D; true
     /// </summary>
     /// <value>true to retain the recording associated with the conversation. Default &#x3D; true</value>
-    [DataMember(Name = "retainRecording", EmitDefaultValue = false)]
+    [JsonPropertyName("retainRecording")]
     public bool? RetainRecording { get; set; }
 
 
@@ -52,7 +52,7 @@ public partial class CrossPlatformPolicyActions : IEquatable<CrossPlatformPolicy
     /// true to delete the recording associated with the conversation. If retainRecording &#x3D; true, this will be ignored. Default &#x3D; false
     /// </summary>
     /// <value>true to delete the recording associated with the conversation. If retainRecording &#x3D; true, this will be ignored. Default &#x3D; false</value>
-    [DataMember(Name = "deleteRecording", EmitDefaultValue = false)]
+    [JsonPropertyName("deleteRecording")]
     public bool? DeleteRecording { get; set; }
 
 
@@ -61,7 +61,7 @@ public partial class CrossPlatformPolicyActions : IEquatable<CrossPlatformPolicy
     /// true to delete the recording associated with the conversation regardless of the values of retainRecording or deleteRecording. Default &#x3D; false
     /// </summary>
     /// <value>true to delete the recording associated with the conversation regardless of the values of retainRecording or deleteRecording. Default &#x3D; false</value>
-    [DataMember(Name = "alwaysDelete", EmitDefaultValue = false)]
+    [JsonPropertyName("alwaysDelete")]
     public bool? AlwaysDelete { get; set; }
 
 
@@ -69,7 +69,7 @@ public partial class CrossPlatformPolicyActions : IEquatable<CrossPlatformPolicy
     /// <summary>
     /// Gets or Sets AssignEvaluations
     /// </summary>
-    [DataMember(Name = "assignEvaluations", EmitDefaultValue = false)]
+    [JsonPropertyName("assignEvaluations")]
     public List<EvaluationAssignment> AssignEvaluations { get; set; }
 
 
@@ -77,7 +77,7 @@ public partial class CrossPlatformPolicyActions : IEquatable<CrossPlatformPolicy
     /// <summary>
     /// Gets or Sets AssignMeteredEvaluations
     /// </summary>
-    [DataMember(Name = "assignMeteredEvaluations", EmitDefaultValue = false)]
+    [JsonPropertyName("assignMeteredEvaluations")]
     public List<MeteredEvaluationAssignment> AssignMeteredEvaluations { get; set; }
 
 
@@ -85,7 +85,7 @@ public partial class CrossPlatformPolicyActions : IEquatable<CrossPlatformPolicy
     /// <summary>
     /// Gets or Sets AssignMeteredAssignmentByAgent
     /// </summary>
-    [DataMember(Name = "assignMeteredAssignmentByAgent", EmitDefaultValue = false)]
+    [JsonPropertyName("assignMeteredAssignmentByAgent")]
     public List<MeteredAssignmentByAgent> AssignMeteredAssignmentByAgent { get; set; }
 
 
@@ -93,7 +93,7 @@ public partial class CrossPlatformPolicyActions : IEquatable<CrossPlatformPolicy
     /// <summary>
     /// Gets or Sets AssignCalibrations
     /// </summary>
-    [DataMember(Name = "assignCalibrations", EmitDefaultValue = false)]
+    [JsonPropertyName("assignCalibrations")]
     public List<CalibrationAssignment> AssignCalibrations { get; set; }
 
 
@@ -101,7 +101,7 @@ public partial class CrossPlatformPolicyActions : IEquatable<CrossPlatformPolicy
     /// <summary>
     /// Gets or Sets RetentionDuration
     /// </summary>
-    [DataMember(Name = "retentionDuration", EmitDefaultValue = false)]
+    [JsonPropertyName("retentionDuration")]
     public RetentionDuration RetentionDuration { get; set; }
 
 
@@ -109,7 +109,7 @@ public partial class CrossPlatformPolicyActions : IEquatable<CrossPlatformPolicy
     /// <summary>
     /// Gets or Sets MediaTranscriptions
     /// </summary>
-    [DataMember(Name = "mediaTranscriptions", EmitDefaultValue = false)]
+    [JsonPropertyName("mediaTranscriptions")]
     public List<MediaTranscription> MediaTranscriptions { get; set; }
 
 
@@ -118,7 +118,7 @@ public partial class CrossPlatformPolicyActions : IEquatable<CrossPlatformPolicy
     /// Policy action for exporting recordings using an integration to 3rd party s3.
     /// </summary>
     /// <value>Policy action for exporting recordings using an integration to 3rd party s3.</value>
-    [DataMember(Name = "integrationExport", EmitDefaultValue = false)]
+    [JsonPropertyName("integrationExport")]
     public IntegrationExport IntegrationExport { get; set; }
 
 

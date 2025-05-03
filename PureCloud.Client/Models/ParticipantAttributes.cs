@@ -1,12 +1,12 @@
-using System.Runtime.Serialization;
 using System.Text;
+using System.Text.Json.Serialization;
 
 namespace PureCloud.Client.Models;
 
 /// <summary>
 /// ParticipantAttributes
 /// </summary>
-[DataContract]
+
 public partial class ParticipantAttributes : IEquatable<ParticipantAttributes>
 {
     /// <summary>
@@ -25,7 +25,7 @@ public partial class ParticipantAttributes : IEquatable<ParticipantAttributes>
     /// The map of attribute keys to values.
     /// </summary>
     /// <value>The map of attribute keys to values.</value>
-    [DataMember(Name = "attributes", EmitDefaultValue = false)]
+    [JsonPropertyName("attributes")]
     public Dictionary<string, string> Attributes { get; set; }
 
 

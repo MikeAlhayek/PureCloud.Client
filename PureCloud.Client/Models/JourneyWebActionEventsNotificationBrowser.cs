@@ -1,12 +1,12 @@
-using System.Runtime.Serialization;
 using System.Text;
+using System.Text.Json.Serialization;
 
 namespace PureCloud.Client.Models;
 
 /// <summary>
 /// JourneyWebActionEventsNotificationBrowser
 /// </summary>
-[DataContract]
+
 public partial class JourneyWebActionEventsNotificationBrowser : IEquatable<JourneyWebActionEventsNotificationBrowser>
 {
     /// <summary>
@@ -42,7 +42,7 @@ public partial class JourneyWebActionEventsNotificationBrowser : IEquatable<Jour
     /// <summary>
     /// Gets or Sets Family
     /// </summary>
-    [DataMember(Name = "family", EmitDefaultValue = false)]
+    [JsonPropertyName("family")]
     public string Family { get; set; }
 
 
@@ -50,7 +50,7 @@ public partial class JourneyWebActionEventsNotificationBrowser : IEquatable<Jour
     /// <summary>
     /// Gets or Sets Version
     /// </summary>
-    [DataMember(Name = "version", EmitDefaultValue = false)]
+    [JsonPropertyName("version")]
     public string Version { get; set; }
 
 
@@ -58,7 +58,7 @@ public partial class JourneyWebActionEventsNotificationBrowser : IEquatable<Jour
     /// <summary>
     /// Gets or Sets Lang
     /// </summary>
-    [DataMember(Name = "lang", EmitDefaultValue = false)]
+    [JsonPropertyName("lang")]
     public string Lang { get; set; }
 
 
@@ -66,7 +66,7 @@ public partial class JourneyWebActionEventsNotificationBrowser : IEquatable<Jour
     /// <summary>
     /// Gets or Sets Fingerprint
     /// </summary>
-    [DataMember(Name = "fingerprint", EmitDefaultValue = false)]
+    [JsonPropertyName("fingerprint")]
     public string Fingerprint { get; set; }
 
 
@@ -74,7 +74,7 @@ public partial class JourneyWebActionEventsNotificationBrowser : IEquatable<Jour
     /// <summary>
     /// Gets or Sets ViewHeight
     /// </summary>
-    [DataMember(Name = "viewHeight", EmitDefaultValue = false)]
+    [JsonPropertyName("viewHeight")]
     public long? ViewHeight { get; set; }
 
 
@@ -82,7 +82,7 @@ public partial class JourneyWebActionEventsNotificationBrowser : IEquatable<Jour
     /// <summary>
     /// Gets or Sets ViewWidth
     /// </summary>
-    [DataMember(Name = "viewWidth", EmitDefaultValue = false)]
+    [JsonPropertyName("viewWidth")]
     public long? ViewWidth { get; set; }
 
 
@@ -90,7 +90,7 @@ public partial class JourneyWebActionEventsNotificationBrowser : IEquatable<Jour
     /// <summary>
     /// Gets or Sets FeaturesFlash
     /// </summary>
-    [DataMember(Name = "featuresFlash", EmitDefaultValue = false)]
+    [JsonPropertyName("featuresFlash")]
     public bool? FeaturesFlash { get; set; }
 
 
@@ -98,7 +98,7 @@ public partial class JourneyWebActionEventsNotificationBrowser : IEquatable<Jour
     /// <summary>
     /// Gets or Sets FeaturesJava
     /// </summary>
-    [DataMember(Name = "featuresJava", EmitDefaultValue = false)]
+    [JsonPropertyName("featuresJava")]
     public bool? FeaturesJava { get; set; }
 
 
@@ -106,7 +106,7 @@ public partial class JourneyWebActionEventsNotificationBrowser : IEquatable<Jour
     /// <summary>
     /// Gets or Sets FeaturesPdf
     /// </summary>
-    [DataMember(Name = "featuresPdf", EmitDefaultValue = false)]
+    [JsonPropertyName("featuresPdf")]
     public bool? FeaturesPdf { get; set; }
 
 
@@ -114,7 +114,7 @@ public partial class JourneyWebActionEventsNotificationBrowser : IEquatable<Jour
     /// <summary>
     /// Gets or Sets FeaturesWebrtc
     /// </summary>
-    [DataMember(Name = "featuresWebrtc", EmitDefaultValue = false)]
+    [JsonPropertyName("featuresWebrtc")]
     public bool? FeaturesWebrtc { get; set; }
 
 

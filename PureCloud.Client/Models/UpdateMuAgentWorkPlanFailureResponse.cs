@@ -7,14 +7,14 @@ namespace PureCloud.Client.Models;
 /// <summary>
 /// UpdateMuAgentWorkPlanFailureResponse
 /// </summary>
-[DataContract]
+
 public partial class UpdateMuAgentWorkPlanFailureResponse : IEquatable<UpdateMuAgentWorkPlanFailureResponse>
 {
     /// <summary>
     /// The work plan update failure reason
     /// </summary>
     /// <value>The work plan update failure reason</value>
-    [JsonConverter(typeof(JsonStringEnumConverter))]
+    
     public enum FailureEnum
     {
         /// <summary>
@@ -59,7 +59,7 @@ public partial class UpdateMuAgentWorkPlanFailureResponse : IEquatable<UpdateMuA
     /// The work plan update failure reason
     /// </summary>
     /// <value>The work plan update failure reason</value>
-    [DataMember(Name = "failure", EmitDefaultValue = false)]
+    [JsonPropertyName("failure")]
     public FailureEnum? Failure { get; set; }
 
     /// <summary>
@@ -87,7 +87,7 @@ public partial class UpdateMuAgentWorkPlanFailureResponse : IEquatable<UpdateMuA
     /// The user for whom the work plan update has failed
     /// </summary>
     /// <value>The user for whom the work plan update has failed</value>
-    [DataMember(Name = "user", EmitDefaultValue = false)]
+    [JsonPropertyName("user")]
     public UserReference User { get; set; }
 
 
@@ -98,7 +98,7 @@ public partial class UpdateMuAgentWorkPlanFailureResponse : IEquatable<UpdateMuA
     /// The id of the work plan that has not been found
     /// </summary>
     /// <value>The id of the work plan that has not been found</value>
-    [DataMember(Name = "notFoundWorkPlanId", EmitDefaultValue = false)]
+    [JsonPropertyName("notFoundWorkPlanId")]
     public string NotFoundWorkPlanId { get; set; }
 
 

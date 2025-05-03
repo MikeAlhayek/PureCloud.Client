@@ -7,14 +7,14 @@ namespace PureCloud.Client.Models;
 /// <summary>
 /// SurveyDetailQueryPredicate
 /// </summary>
-[DataContract]
+
 public partial class SurveyDetailQueryPredicate : IEquatable<SurveyDetailQueryPredicate>
 {
     /// <summary>
     /// Optional type, can usually be inferred
     /// </summary>
     /// <value>Optional type, can usually be inferred</value>
-    [JsonConverter(typeof(JsonStringEnumConverter))]
+    
     public enum TypeEnum
     {
         /// <summary>
@@ -47,7 +47,7 @@ public partial class SurveyDetailQueryPredicate : IEquatable<SurveyDetailQueryPr
     /// Left hand side for dimension predicates
     /// </summary>
     /// <value>Left hand side for dimension predicates</value>
-    [JsonConverter(typeof(JsonStringEnumConverter))]
+    
     public enum DimensionEnum
     {
         /// <summary>
@@ -128,7 +128,7 @@ public partial class SurveyDetailQueryPredicate : IEquatable<SurveyDetailQueryPr
     /// Left hand side for metric predicates
     /// </summary>
     /// <value>Left hand side for metric predicates</value>
-    [JsonConverter(typeof(JsonStringEnumConverter))]
+    
     public enum MetricEnum
     {
         /// <summary>
@@ -149,7 +149,7 @@ public partial class SurveyDetailQueryPredicate : IEquatable<SurveyDetailQueryPr
     /// Optional operator, default is matches
     /// </summary>
     /// <value>Optional operator, default is matches</value>
-    [JsonConverter(typeof(JsonStringEnumConverter))]
+    
     public enum OperatorEnum
     {
         /// <summary>
@@ -182,25 +182,25 @@ public partial class SurveyDetailQueryPredicate : IEquatable<SurveyDetailQueryPr
     /// Optional type, can usually be inferred
     /// </summary>
     /// <value>Optional type, can usually be inferred</value>
-    [DataMember(Name = "type", EmitDefaultValue = false)]
+    [JsonPropertyName("type")]
     public TypeEnum? Type { get; set; }
     /// <summary>
     /// Left hand side for dimension predicates
     /// </summary>
     /// <value>Left hand side for dimension predicates</value>
-    [DataMember(Name = "dimension", EmitDefaultValue = false)]
+    [JsonPropertyName("dimension")]
     public DimensionEnum? Dimension { get; set; }
     /// <summary>
     /// Left hand side for metric predicates
     /// </summary>
     /// <value>Left hand side for metric predicates</value>
-    [DataMember(Name = "metric", EmitDefaultValue = false)]
+    [JsonPropertyName("metric")]
     public MetricEnum? Metric { get; set; }
     /// <summary>
     /// Optional operator, default is matches
     /// </summary>
     /// <value>Optional operator, default is matches</value>
-    [DataMember(Name = "operator", EmitDefaultValue = false)]
+    [JsonPropertyName("operator")]
     public OperatorEnum? Operator { get; set; }
     /// <summary>
     /// Initializes a new instance of the <see cref="SurveyDetailQueryPredicate" /> class.
@@ -236,7 +236,7 @@ public partial class SurveyDetailQueryPredicate : IEquatable<SurveyDetailQueryPr
     /// Right hand side for dimension or metric predicates
     /// </summary>
     /// <value>Right hand side for dimension or metric predicates</value>
-    [DataMember(Name = "value", EmitDefaultValue = false)]
+    [JsonPropertyName("value")]
     public string Value { get; set; }
 
 
@@ -245,7 +245,7 @@ public partial class SurveyDetailQueryPredicate : IEquatable<SurveyDetailQueryPr
     /// Right hand side for dimension or metric predicates
     /// </summary>
     /// <value>Right hand side for dimension or metric predicates</value>
-    [DataMember(Name = "range", EmitDefaultValue = false)]
+    [JsonPropertyName("range")]
     public NumericRange Range { get; set; }
 
 

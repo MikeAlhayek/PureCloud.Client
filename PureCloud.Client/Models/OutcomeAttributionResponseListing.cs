@@ -1,12 +1,12 @@
-using System.Runtime.Serialization;
 using System.Text;
+using System.Text.Json.Serialization;
 
 namespace PureCloud.Client.Models;
 
 /// <summary>
 /// OutcomeAttributionResponseListing
 /// </summary>
-[DataContract]
+
 public partial class OutcomeAttributionResponseListing : IEquatable<OutcomeAttributionResponseListing>
 {
     /// <summary>
@@ -24,7 +24,7 @@ public partial class OutcomeAttributionResponseListing : IEquatable<OutcomeAttri
     /// <summary>
     /// Gets or Sets Entities
     /// </summary>
-    [DataMember(Name = "entities", EmitDefaultValue = false)]
+    [JsonPropertyName("entities")]
     public List<OutcomeAttributionResultsResponse> Entities { get; set; }
 
 

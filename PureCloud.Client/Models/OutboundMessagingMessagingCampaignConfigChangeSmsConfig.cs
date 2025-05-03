@@ -1,12 +1,12 @@
-using System.Runtime.Serialization;
 using System.Text;
+using System.Text.Json.Serialization;
 
 namespace PureCloud.Client.Models;
 
 /// <summary>
 /// An outbound-messaging messaging campaign SMS Config
 /// </summary>
-[DataContract]
+
 public partial class OutboundMessagingMessagingCampaignConfigChangeSmsConfig : IEquatable<OutboundMessagingMessagingCampaignConfigChangeSmsConfig>
 {
     /// <summary>
@@ -31,7 +31,7 @@ public partial class OutboundMessagingMessagingCampaignConfigChangeSmsConfig : I
     /// The Contact List column specifying the message to send to the contact.
     /// </summary>
     /// <value>The Contact List column specifying the message to send to the contact.</value>
-    [DataMember(Name = "messageColumn", EmitDefaultValue = false)]
+    [JsonPropertyName("messageColumn")]
     public string MessageColumn { get; set; }
 
 
@@ -40,7 +40,7 @@ public partial class OutboundMessagingMessagingCampaignConfigChangeSmsConfig : I
     /// The Contact List column specifying the phone number to send a message to.
     /// </summary>
     /// <value>The Contact List column specifying the phone number to send a message to.</value>
-    [DataMember(Name = "phoneColumn", EmitDefaultValue = false)]
+    [JsonPropertyName("phoneColumn")]
     public string PhoneColumn { get; set; }
 
 
@@ -48,7 +48,7 @@ public partial class OutboundMessagingMessagingCampaignConfigChangeSmsConfig : I
     /// <summary>
     /// Gets or Sets SenderSmsPhoneNumber
     /// </summary>
-    [DataMember(Name = "senderSmsPhoneNumber", EmitDefaultValue = false)]
+    [JsonPropertyName("senderSmsPhoneNumber")]
     public OutboundMessagingMessagingCampaignConfigChangeSmsPhoneNumberRef SenderSmsPhoneNumber { get; set; }
 
 
@@ -56,7 +56,7 @@ public partial class OutboundMessagingMessagingCampaignConfigChangeSmsConfig : I
     /// <summary>
     /// Gets or Sets ContentTemplate
     /// </summary>
-    [DataMember(Name = "contentTemplate", EmitDefaultValue = false)]
+    [JsonPropertyName("contentTemplate")]
     public OutboundMessagingMessagingCampaignConfigChangeResponseRef ContentTemplate { get; set; }
 
 

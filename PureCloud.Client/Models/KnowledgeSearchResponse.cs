@@ -1,12 +1,12 @@
-using System.Runtime.Serialization;
 using System.Text;
+using System.Text.Json.Serialization;
 
 namespace PureCloud.Client.Models;
 
 /// <summary>
 /// KnowledgeSearchResponse
 /// </summary>
-[DataContract]
+
 public partial class KnowledgeSearchResponse : IEquatable<KnowledgeSearchResponse>
 {
     /// <summary>
@@ -23,7 +23,7 @@ public partial class KnowledgeSearchResponse : IEquatable<KnowledgeSearchRespons
     /// Search Id
     /// </summary>
     /// <value>Search Id</value>
-    [DataMember(Name = "searchId", EmitDefaultValue = false)]
+    [JsonPropertyName("searchId")]
     public string SearchId { get; private set; }
 
 
@@ -32,7 +32,7 @@ public partial class KnowledgeSearchResponse : IEquatable<KnowledgeSearchRespons
     /// Total number of records returned
     /// </summary>
     /// <value>Total number of records returned</value>
-    [DataMember(Name = "total", EmitDefaultValue = false)]
+    [JsonPropertyName("total")]
     public int? Total { get; private set; }
 
 
@@ -41,7 +41,7 @@ public partial class KnowledgeSearchResponse : IEquatable<KnowledgeSearchRespons
     /// Number of pages returned in the result calculated according to the pageSize and the total
     /// </summary>
     /// <value>Number of pages returned in the result calculated according to the pageSize and the total</value>
-    [DataMember(Name = "pageCount", EmitDefaultValue = false)]
+    [JsonPropertyName("pageCount")]
     public int? PageCount { get; private set; }
 
 
@@ -50,7 +50,7 @@ public partial class KnowledgeSearchResponse : IEquatable<KnowledgeSearchRespons
     /// Number of records according to the page size
     /// </summary>
     /// <value>Number of records according to the page size</value>
-    [DataMember(Name = "pageSize", EmitDefaultValue = false)]
+    [JsonPropertyName("pageSize")]
     public int? PageSize { get; private set; }
 
 
@@ -59,7 +59,7 @@ public partial class KnowledgeSearchResponse : IEquatable<KnowledgeSearchRespons
     /// Current page number for the returned records
     /// </summary>
     /// <value>Current page number for the returned records</value>
-    [DataMember(Name = "pageNumber", EmitDefaultValue = false)]
+    [JsonPropertyName("pageNumber")]
     public int? PageNumber { get; private set; }
 
 
@@ -68,7 +68,7 @@ public partial class KnowledgeSearchResponse : IEquatable<KnowledgeSearchRespons
     /// Results associated to the search response
     /// </summary>
     /// <value>Results associated to the search response</value>
-    [DataMember(Name = "results", EmitDefaultValue = false)]
+    [JsonPropertyName("results")]
     public List<KnowledgeSearchDocumentV1> Results { get; private set; }
 
 

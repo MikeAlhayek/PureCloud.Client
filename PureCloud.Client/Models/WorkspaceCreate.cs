@@ -1,4 +1,3 @@
-using System.Runtime.Serialization;
 using System.Text;
 using System.Text.Json.Serialization;
 
@@ -7,7 +6,7 @@ namespace PureCloud.Client.Models;
 /// <summary>
 /// WorkspaceCreate
 /// </summary>
-[DataContract]
+
 public partial class WorkspaceCreate : IEquatable<WorkspaceCreate>
 {
 
@@ -36,7 +35,7 @@ public partial class WorkspaceCreate : IEquatable<WorkspaceCreate>
     /// The workspace name
     /// </summary>
     /// <value>The workspace name</value>
-    [DataMember(Name = "name", EmitDefaultValue = false)]
+    [JsonPropertyName("name")]
     public string Name { get; set; }
 
 
@@ -44,7 +43,7 @@ public partial class WorkspaceCreate : IEquatable<WorkspaceCreate>
     /// <summary>
     /// Gets or Sets Bucket
     /// </summary>
-    [DataMember(Name = "bucket", EmitDefaultValue = false)]
+    [JsonPropertyName("bucket")]
     public string Bucket { get; set; }
 
 
@@ -52,7 +51,7 @@ public partial class WorkspaceCreate : IEquatable<WorkspaceCreate>
     /// <summary>
     /// Gets or Sets Description
     /// </summary>
-    [DataMember(Name = "description", EmitDefaultValue = false)]
+    [JsonPropertyName("description")]
     public string Description { get; set; }
 
 

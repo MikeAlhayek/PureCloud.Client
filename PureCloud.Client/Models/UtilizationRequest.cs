@@ -1,12 +1,12 @@
-using System.Runtime.Serialization;
 using System.Text;
+using System.Text.Json.Serialization;
 
 namespace PureCloud.Client.Models;
 
 /// <summary>
 /// UtilizationRequest
 /// </summary>
-[DataContract]
+
 public partial class UtilizationRequest : IEquatable<UtilizationRequest>
 {
     /// <summary>
@@ -27,7 +27,7 @@ public partial class UtilizationRequest : IEquatable<UtilizationRequest>
     /// Map of media type to utilization settings.
     /// </summary>
     /// <value>Map of media type to utilization settings.</value>
-    [DataMember(Name = "utilization", EmitDefaultValue = false)]
+    [JsonPropertyName("utilization")]
     public Dictionary<string, MediaUtilization> Utilization { get; set; }
 
 
@@ -36,7 +36,7 @@ public partial class UtilizationRequest : IEquatable<UtilizationRequest>
     /// Map of label ids to utilization settings.
     /// </summary>
     /// <value>Map of label ids to utilization settings.</value>
-    [DataMember(Name = "labelUtilizations", EmitDefaultValue = false)]
+    [JsonPropertyName("labelUtilizations")]
     public Dictionary<string, LabelUtilizationRequest> LabelUtilizations { get; set; }
 
 

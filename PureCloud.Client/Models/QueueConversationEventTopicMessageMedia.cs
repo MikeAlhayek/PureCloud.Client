@@ -1,12 +1,12 @@
-using System.Runtime.Serialization;
 using System.Text;
+using System.Text.Json.Serialization;
 
 namespace PureCloud.Client.Models;
 
 /// <summary>
 /// QueueConversationEventTopicMessageMedia
 /// </summary>
-[DataContract]
+
 public partial class QueueConversationEventTopicMessageMedia : IEquatable<QueueConversationEventTopicMessageMedia>
 {
     /// <summary>
@@ -33,7 +33,7 @@ public partial class QueueConversationEventTopicMessageMedia : IEquatable<QueueC
     /// The location of the media, useful for retrieving it
     /// </summary>
     /// <value>The location of the media, useful for retrieving it</value>
-    [DataMember(Name = "url", EmitDefaultValue = false)]
+    [JsonPropertyName("url")]
     public string Url { get; set; }
 
 
@@ -42,7 +42,7 @@ public partial class QueueConversationEventTopicMessageMedia : IEquatable<QueueC
     /// The optional internet media type of the the media object.  If null then the media type should be dictated by the url
     /// </summary>
     /// <value>The optional internet media type of the the media object.  If null then the media type should be dictated by the url</value>
-    [DataMember(Name = "mediaType", EmitDefaultValue = false)]
+    [JsonPropertyName("mediaType")]
     public string MediaType { get; set; }
 
 
@@ -51,7 +51,7 @@ public partial class QueueConversationEventTopicMessageMedia : IEquatable<QueueC
     /// The optional content length of the the media object, in bytes.
     /// </summary>
     /// <value>The optional content length of the the media object, in bytes.</value>
-    [DataMember(Name = "contentLengthBytes", EmitDefaultValue = false)]
+    [JsonPropertyName("contentLengthBytes")]
     public long? ContentLengthBytes { get; set; }
 
 
@@ -60,7 +60,7 @@ public partial class QueueConversationEventTopicMessageMedia : IEquatable<QueueC
     /// The optional name of the the media object.
     /// </summary>
     /// <value>The optional name of the the media object.</value>
-    [DataMember(Name = "name", EmitDefaultValue = false)]
+    [JsonPropertyName("name")]
     public string Name { get; set; }
 
 
@@ -69,7 +69,7 @@ public partial class QueueConversationEventTopicMessageMedia : IEquatable<QueueC
     /// The optional id of the the media object.
     /// </summary>
     /// <value>The optional id of the the media object.</value>
-    [DataMember(Name = "id", EmitDefaultValue = false)]
+    [JsonPropertyName("id")]
     public string Id { get; set; }
 
 

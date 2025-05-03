@@ -1,12 +1,12 @@
-using System.Runtime.Serialization;
 using System.Text;
+using System.Text.Json.Serialization;
 
 namespace PureCloud.Client.Models;
 
 /// <summary>
 /// AgentActivity
 /// </summary>
-[DataContract]
+
 public partial class AgentActivity : IEquatable<AgentActivity>
 {
     /// <summary>
@@ -47,7 +47,7 @@ public partial class AgentActivity : IEquatable<AgentActivity>
     /// The globally unique identifier for the object.
     /// </summary>
     /// <value>The globally unique identifier for the object.</value>
-    [DataMember(Name = "id", EmitDefaultValue = false)]
+    [JsonPropertyName("id")]
     public string Id { get; private set; }
 
 
@@ -55,7 +55,7 @@ public partial class AgentActivity : IEquatable<AgentActivity>
     /// <summary>
     /// Gets or Sets Name
     /// </summary>
-    [DataMember(Name = "name", EmitDefaultValue = false)]
+    [JsonPropertyName("name")]
     public string Name { get; set; }
 
 
@@ -63,7 +63,7 @@ public partial class AgentActivity : IEquatable<AgentActivity>
     /// <summary>
     /// Gets or Sets Agent
     /// </summary>
-    [DataMember(Name = "agent", EmitDefaultValue = false)]
+    [JsonPropertyName("agent")]
     public User Agent { get; set; }
 
 
@@ -71,7 +71,7 @@ public partial class AgentActivity : IEquatable<AgentActivity>
     /// <summary>
     /// Gets or Sets NumEvaluations
     /// </summary>
-    [DataMember(Name = "numEvaluations", EmitDefaultValue = false)]
+    [JsonPropertyName("numEvaluations")]
     public int? NumEvaluations { get; set; }
 
 
@@ -79,7 +79,7 @@ public partial class AgentActivity : IEquatable<AgentActivity>
     /// <summary>
     /// Gets or Sets AverageEvaluationScore
     /// </summary>
-    [DataMember(Name = "averageEvaluationScore", EmitDefaultValue = false)]
+    [JsonPropertyName("averageEvaluationScore")]
     public int? AverageEvaluationScore { get; set; }
 
 
@@ -87,7 +87,7 @@ public partial class AgentActivity : IEquatable<AgentActivity>
     /// <summary>
     /// Gets or Sets NumCriticalEvaluations
     /// </summary>
-    [DataMember(Name = "numCriticalEvaluations", EmitDefaultValue = false)]
+    [JsonPropertyName("numCriticalEvaluations")]
     public int? NumCriticalEvaluations { get; set; }
 
 
@@ -95,7 +95,7 @@ public partial class AgentActivity : IEquatable<AgentActivity>
     /// <summary>
     /// Gets or Sets AverageCriticalScore
     /// </summary>
-    [DataMember(Name = "averageCriticalScore", EmitDefaultValue = false)]
+    [JsonPropertyName("averageCriticalScore")]
     public float? AverageCriticalScore { get; set; }
 
 
@@ -103,7 +103,7 @@ public partial class AgentActivity : IEquatable<AgentActivity>
     /// <summary>
     /// Gets or Sets HighestEvaluationScore
     /// </summary>
-    [DataMember(Name = "highestEvaluationScore", EmitDefaultValue = false)]
+    [JsonPropertyName("highestEvaluationScore")]
     public float? HighestEvaluationScore { get; set; }
 
 
@@ -111,7 +111,7 @@ public partial class AgentActivity : IEquatable<AgentActivity>
     /// <summary>
     /// Gets or Sets LowestEvaluationScore
     /// </summary>
-    [DataMember(Name = "lowestEvaluationScore", EmitDefaultValue = false)]
+    [JsonPropertyName("lowestEvaluationScore")]
     public float? LowestEvaluationScore { get; set; }
 
 
@@ -119,7 +119,7 @@ public partial class AgentActivity : IEquatable<AgentActivity>
     /// <summary>
     /// Gets or Sets HighestCriticalScore
     /// </summary>
-    [DataMember(Name = "highestCriticalScore", EmitDefaultValue = false)]
+    [JsonPropertyName("highestCriticalScore")]
     public float? HighestCriticalScore { get; set; }
 
 
@@ -127,7 +127,7 @@ public partial class AgentActivity : IEquatable<AgentActivity>
     /// <summary>
     /// Gets or Sets LowestCriticalScore
     /// </summary>
-    [DataMember(Name = "lowestCriticalScore", EmitDefaultValue = false)]
+    [JsonPropertyName("lowestCriticalScore")]
     public float? LowestCriticalScore { get; set; }
 
 
@@ -135,7 +135,7 @@ public partial class AgentActivity : IEquatable<AgentActivity>
     /// <summary>
     /// Gets or Sets AgentEvaluatorActivityList
     /// </summary>
-    [DataMember(Name = "agentEvaluatorActivityList", EmitDefaultValue = false)]
+    [JsonPropertyName("agentEvaluatorActivityList")]
     public List<AgentEvaluatorActivity> AgentEvaluatorActivityList { get; set; }
 
 
@@ -143,7 +143,7 @@ public partial class AgentActivity : IEquatable<AgentActivity>
     /// <summary>
     /// Gets or Sets NumEvaluationsWithoutViewPermission
     /// </summary>
-    [DataMember(Name = "numEvaluationsWithoutViewPermission", EmitDefaultValue = false)]
+    [JsonPropertyName("numEvaluationsWithoutViewPermission")]
     public int? NumEvaluationsWithoutViewPermission { get; set; }
 
 
@@ -152,7 +152,7 @@ public partial class AgentActivity : IEquatable<AgentActivity>
     /// The URI for this object
     /// </summary>
     /// <value>The URI for this object</value>
-    [DataMember(Name = "selfUri", EmitDefaultValue = false)]
+    [JsonPropertyName("selfUri")]
     public string SelfUri { get; private set; }
 
 

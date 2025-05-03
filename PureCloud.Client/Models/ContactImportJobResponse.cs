@@ -7,13 +7,13 @@ namespace PureCloud.Client.Models;
 /// <summary>
 /// ContactImportJobResponse
 /// </summary>
-[DataContract]
+
 public partial class ContactImportJobResponse : IEquatable<ContactImportJobResponse>
 {
     /// <summary>
     /// Gets or Sets Status
     /// </summary>
-    [JsonConverter(typeof(JsonStringEnumConverter))]
+    
     public enum StatusEnum
     {
         /// <summary>
@@ -58,7 +58,7 @@ public partial class ContactImportJobResponse : IEquatable<ContactImportJobRespo
     /// Detailed description for the Job execution state
     /// </summary>
     /// <value>Detailed description for the Job execution state</value>
-    [JsonConverter(typeof(JsonStringEnumConverter))]
+    
     public enum ExecutionStepEnum
     {
         /// <summary>
@@ -90,13 +90,13 @@ public partial class ContactImportJobResponse : IEquatable<ContactImportJobRespo
     /// <summary>
     /// Gets or Sets Status
     /// </summary>
-    [DataMember(Name = "status", EmitDefaultValue = false)]
+    [JsonPropertyName("status")]
     public StatusEnum? Status { get; set; }
     /// <summary>
     /// Detailed description for the Job execution state
     /// </summary>
     /// <value>Detailed description for the Job execution state</value>
-    [DataMember(Name = "executionStep", EmitDefaultValue = false)]
+    [JsonPropertyName("executionStep")]
     public ExecutionStepEnum? ExecutionStep { get; set; }
 
     /// <summary>
@@ -130,7 +130,7 @@ public partial class ContactImportJobResponse : IEquatable<ContactImportJobRespo
     /// The globally unique identifier for the object.
     /// </summary>
     /// <value>The globally unique identifier for the object.</value>
-    [DataMember(Name = "id", EmitDefaultValue = false)]
+    [JsonPropertyName("id")]
     public string Id { get; private set; }
 
 
@@ -141,7 +141,7 @@ public partial class ContactImportJobResponse : IEquatable<ContactImportJobRespo
     /// Detailed description for JobStatus.
     /// </summary>
     /// <value>Detailed description for JobStatus.</value>
-    [DataMember(Name = "statusDetails", EmitDefaultValue = false)]
+    [JsonPropertyName("statusDetails")]
     public string StatusDetails { get; set; }
 
 
@@ -152,7 +152,7 @@ public partial class ContactImportJobResponse : IEquatable<ContactImportJobRespo
     /// Metadata for the job
     /// </summary>
     /// <value>Metadata for the job</value>
-    [DataMember(Name = "metadata", EmitDefaultValue = false)]
+    [JsonPropertyName("metadata")]
     public ContactImportJobMetadata Metadata { get; set; }
 
 
@@ -161,7 +161,7 @@ public partial class ContactImportJobResponse : IEquatable<ContactImportJobRespo
     /// Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z
     /// </summary>
     /// <value>Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z</value>
-    [DataMember(Name = "dateCreated", EmitDefaultValue = false)]
+    [JsonPropertyName("dateCreated")]
     public DateTime? DateCreated { get; set; }
 
 
@@ -170,7 +170,7 @@ public partial class ContactImportJobResponse : IEquatable<ContactImportJobRespo
     /// The URI for this object
     /// </summary>
     /// <value>The URI for this object</value>
-    [DataMember(Name = "selfUri", EmitDefaultValue = false)]
+    [JsonPropertyName("selfUri")]
     public string SelfUri { get; private set; }
 
 
@@ -179,7 +179,7 @@ public partial class ContactImportJobResponse : IEquatable<ContactImportJobRespo
     /// Settings
     /// </summary>
     /// <value>Settings</value>
-    [DataMember(Name = "settings", EmitDefaultValue = false)]
+    [JsonPropertyName("settings")]
     public AddressableEntityRef Settings { get; set; }
 
 

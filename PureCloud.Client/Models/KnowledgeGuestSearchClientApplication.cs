@@ -7,14 +7,14 @@ namespace PureCloud.Client.Models;
 /// <summary>
 /// KnowledgeGuestSearchClientApplication
 /// </summary>
-[DataContract]
+
 public partial class KnowledgeGuestSearchClientApplication : IEquatable<KnowledgeGuestSearchClientApplication>
 {
     /// <summary>
     /// Application type.
     /// </summary>
     /// <value>Application type.</value>
-    [JsonConverter(typeof(JsonStringEnumConverter))]
+    
     public enum TypeEnum
     {
         /// <summary>
@@ -59,7 +59,7 @@ public partial class KnowledgeGuestSearchClientApplication : IEquatable<Knowledg
     /// Application type.
     /// </summary>
     /// <value>Application type.</value>
-    [DataMember(Name = "type", EmitDefaultValue = false)]
+    [JsonPropertyName("type")]
     public TypeEnum? Type { get; set; }
 
     /// <summary>
@@ -91,7 +91,7 @@ public partial class KnowledgeGuestSearchClientApplication : IEquatable<Knowledg
     /// Application details when type is MessengerKnowledgeApp or SupportCenter.
     /// </summary>
     /// <value>Application details when type is MessengerKnowledgeApp or SupportCenter.</value>
-    [DataMember(Name = "deployment", EmitDefaultValue = false)]
+    [JsonPropertyName("deployment")]
     public EntityReference Deployment { get; set; }
 
 
@@ -100,7 +100,7 @@ public partial class KnowledgeGuestSearchClientApplication : IEquatable<Knowledg
     /// Application details when type is BotFlow.
     /// </summary>
     /// <value>Application details when type is BotFlow.</value>
-    [DataMember(Name = "botFlow", EmitDefaultValue = false)]
+    [JsonPropertyName("botFlow")]
     public EntityReference BotFlow { get; set; }
 
 
@@ -109,7 +109,7 @@ public partial class KnowledgeGuestSearchClientApplication : IEquatable<Knowledg
     /// Application details when type is Assistant.
     /// </summary>
     /// <value>Application details when type is Assistant.</value>
-    [DataMember(Name = "assistant", EmitDefaultValue = false)]
+    [JsonPropertyName("assistant")]
     public EntityReference Assistant { get; set; }
 
 

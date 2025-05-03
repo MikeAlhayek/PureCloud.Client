@@ -1,12 +1,12 @@
-using System.Runtime.Serialization;
 using System.Text;
+using System.Text.Json.Serialization;
 
 namespace PureCloud.Client.Models;
 
 /// <summary>
 /// VoicemailUserPolicy
 /// </summary>
-[DataContract]
+
 public partial class VoicemailUserPolicy : IEquatable<VoicemailUserPolicy>
 {
     /// <summary>
@@ -29,7 +29,7 @@ public partial class VoicemailUserPolicy : IEquatable<VoicemailUserPolicy>
     /// Whether the user has voicemail enabled
     /// </summary>
     /// <value>Whether the user has voicemail enabled</value>
-    [DataMember(Name = "enabled", EmitDefaultValue = false)]
+    [JsonPropertyName("enabled")]
     public bool? Enabled { get; private set; }
 
 
@@ -38,7 +38,7 @@ public partial class VoicemailUserPolicy : IEquatable<VoicemailUserPolicy>
     /// The number of seconds to ring the user&#39;s phone before a call is transfered to voicemail
     /// </summary>
     /// <value>The number of seconds to ring the user&#39;s phone before a call is transfered to voicemail</value>
-    [DataMember(Name = "alertTimeoutSeconds", EmitDefaultValue = false)]
+    [JsonPropertyName("alertTimeoutSeconds")]
     public int? AlertTimeoutSeconds { get; set; }
 
 
@@ -47,7 +47,7 @@ public partial class VoicemailUserPolicy : IEquatable<VoicemailUserPolicy>
     /// The user&#39;s PIN to access their voicemail. This property is only used for updates and never provided otherwise to ensure security
     /// </summary>
     /// <value>The user&#39;s PIN to access their voicemail. This property is only used for updates and never provided otherwise to ensure security</value>
-    [DataMember(Name = "pin", EmitDefaultValue = false)]
+    [JsonPropertyName("pin")]
     public string Pin { get; set; }
 
 
@@ -56,7 +56,7 @@ public partial class VoicemailUserPolicy : IEquatable<VoicemailUserPolicy>
     /// The date the policy was last modified. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z
     /// </summary>
     /// <value>The date the policy was last modified. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z</value>
-    [DataMember(Name = "modifiedDate", EmitDefaultValue = false)]
+    [JsonPropertyName("modifiedDate")]
     public DateTime? ModifiedDate { get; private set; }
 
 
@@ -65,7 +65,7 @@ public partial class VoicemailUserPolicy : IEquatable<VoicemailUserPolicy>
     /// Whether email notifications are sent to the user when a new voicemail is received
     /// </summary>
     /// <value>Whether email notifications are sent to the user when a new voicemail is received</value>
-    [DataMember(Name = "sendEmailNotifications", EmitDefaultValue = false)]
+    [JsonPropertyName("sendEmailNotifications")]
     public bool? SendEmailNotifications { get; set; }
 
 

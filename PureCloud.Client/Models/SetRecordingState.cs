@@ -7,14 +7,14 @@ namespace PureCloud.Client.Models;
 /// <summary>
 /// SetRecordingState
 /// </summary>
-[DataContract]
+
 public partial class SetRecordingState : IEquatable<SetRecordingState>
 {
     /// <summary>
     /// On update, 'paused' initiates a secure pause, 'active' resumes any paused recordings.
     /// </summary>
     /// <value>On update, 'paused' initiates a secure pause, 'active' resumes any paused recordings.</value>
-    [JsonConverter(typeof(JsonStringEnumConverter))]
+    
     public enum RecordingStateEnum
     {
         /// <summary>
@@ -47,7 +47,7 @@ public partial class SetRecordingState : IEquatable<SetRecordingState>
     /// On update, 'paused' initiates a secure pause, 'active' resumes any paused recordings.
     /// </summary>
     /// <value>On update, 'paused' initiates a secure pause, 'active' resumes any paused recordings.</value>
-    [DataMember(Name = "recordingState", EmitDefaultValue = false)]
+    [JsonPropertyName("recordingState")]
     public RecordingStateEnum? RecordingState { get; set; }
     /// <summary>
     /// Initializes a new instance of the <see cref="SetRecordingState" /> class.

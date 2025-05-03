@@ -1,12 +1,12 @@
-using System.Runtime.Serialization;
 using System.Text;
+using System.Text.Json.Serialization;
 
 namespace PureCloud.Client.Models;
 
 /// <summary>
 /// ScreenRecordingMetaData
 /// </summary>
-[DataContract]
+
 public partial class ScreenRecordingMetaData : IEquatable<ScreenRecordingMetaData>
 {
     /// <summary>
@@ -36,7 +36,7 @@ public partial class ScreenRecordingMetaData : IEquatable<ScreenRecordingMetaDat
     /// <summary>
     /// Gets or Sets TrackId
     /// </summary>
-    [DataMember(Name = "trackId", EmitDefaultValue = false)]
+    [JsonPropertyName("trackId")]
     public string TrackId { get; set; }
 
 
@@ -44,7 +44,7 @@ public partial class ScreenRecordingMetaData : IEquatable<ScreenRecordingMetaDat
     /// <summary>
     /// Gets or Sets MediaId
     /// </summary>
-    [DataMember(Name = "mediaId", EmitDefaultValue = false)]
+    [JsonPropertyName("mediaId")]
     public string MediaId { get; set; }
 
 
@@ -52,7 +52,7 @@ public partial class ScreenRecordingMetaData : IEquatable<ScreenRecordingMetaDat
     /// <summary>
     /// Gets or Sets ScreenId
     /// </summary>
-    [DataMember(Name = "screenId", EmitDefaultValue = false)]
+    [JsonPropertyName("screenId")]
     public string ScreenId { get; set; }
 
 
@@ -60,7 +60,7 @@ public partial class ScreenRecordingMetaData : IEquatable<ScreenRecordingMetaDat
     /// <summary>
     /// Gets or Sets OriginX
     /// </summary>
-    [DataMember(Name = "originX", EmitDefaultValue = false)]
+    [JsonPropertyName("originX")]
     public int? OriginX { get; set; }
 
 
@@ -68,7 +68,7 @@ public partial class ScreenRecordingMetaData : IEquatable<ScreenRecordingMetaDat
     /// <summary>
     /// Gets or Sets OriginY
     /// </summary>
-    [DataMember(Name = "originY", EmitDefaultValue = false)]
+    [JsonPropertyName("originY")]
     public int? OriginY { get; set; }
 
 
@@ -76,7 +76,7 @@ public partial class ScreenRecordingMetaData : IEquatable<ScreenRecordingMetaDat
     /// <summary>
     /// Gets or Sets Primary
     /// </summary>
-    [DataMember(Name = "primary", EmitDefaultValue = false)]
+    [JsonPropertyName("primary")]
     public bool? Primary { get; set; }
 
 
@@ -84,7 +84,7 @@ public partial class ScreenRecordingMetaData : IEquatable<ScreenRecordingMetaDat
     /// <summary>
     /// Gets or Sets Main
     /// </summary>
-    [DataMember(Name = "main", EmitDefaultValue = false)]
+    [JsonPropertyName("main")]
     public bool? Main { get; set; }
 
 

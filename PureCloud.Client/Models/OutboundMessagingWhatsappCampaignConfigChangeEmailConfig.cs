@@ -1,12 +1,12 @@
-using System.Runtime.Serialization;
 using System.Text;
+using System.Text.Json.Serialization;
 
 namespace PureCloud.Client.Models;
 
 /// <summary>
 /// An outbound-messaging messaging campaign email Config
 /// </summary>
-[DataContract]
+
 public partial class OutboundMessagingWhatsappCampaignConfigChangeEmailConfig : IEquatable<OutboundMessagingWhatsappCampaignConfigChangeEmailConfig>
 {
     /// <summary>
@@ -31,7 +31,7 @@ public partial class OutboundMessagingWhatsappCampaignConfigChangeEmailConfig : 
     /// The Contact List column specifying the email to send to the contact.
     /// </summary>
     /// <value>The Contact List column specifying the email to send to the contact.</value>
-    [DataMember(Name = "emailColumns", EmitDefaultValue = false)]
+    [JsonPropertyName("emailColumns")]
     public List<string> EmailColumns { get; set; }
 
 
@@ -40,7 +40,7 @@ public partial class OutboundMessagingWhatsappCampaignConfigChangeEmailConfig : 
     /// A reference for a Response
     /// </summary>
     /// <value>A reference for a Response</value>
-    [DataMember(Name = "contentTemplate", EmitDefaultValue = false)]
+    [JsonPropertyName("contentTemplate")]
     public OutboundMessagingWhatsappCampaignConfigChangeResponseRef ContentTemplate { get; set; }
 
 
@@ -48,7 +48,7 @@ public partial class OutboundMessagingWhatsappCampaignConfigChangeEmailConfig : 
     /// <summary>
     /// Gets or Sets FromAddress
     /// </summary>
-    [DataMember(Name = "fromAddress", EmitDefaultValue = false)]
+    [JsonPropertyName("fromAddress")]
     public OutboundMessagingWhatsappCampaignConfigChangeFromEmailAddress FromAddress { get; set; }
 
 
@@ -56,7 +56,7 @@ public partial class OutboundMessagingWhatsappCampaignConfigChangeEmailConfig : 
     /// <summary>
     /// Gets or Sets ReplyToAddress
     /// </summary>
-    [DataMember(Name = "replyToAddress", EmitDefaultValue = false)]
+    [JsonPropertyName("replyToAddress")]
     public OutboundMessagingWhatsappCampaignConfigChangeReplyToEmailAddress ReplyToAddress { get; set; }
 
 

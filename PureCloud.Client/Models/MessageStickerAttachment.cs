@@ -1,12 +1,12 @@
-using System.Runtime.Serialization;
 using System.Text;
+using System.Text.Json.Serialization;
 
 namespace PureCloud.Client.Models;
 
 /// <summary>
 /// MessageStickerAttachment
 /// </summary>
-[DataContract]
+
 public partial class MessageStickerAttachment : IEquatable<MessageStickerAttachment>
 {
     /// <summary>
@@ -27,7 +27,7 @@ public partial class MessageStickerAttachment : IEquatable<MessageStickerAttachm
     /// The location of the media, useful for retrieving it
     /// </summary>
     /// <value>The location of the media, useful for retrieving it</value>
-    [DataMember(Name = "url", EmitDefaultValue = false)]
+    [JsonPropertyName("url")]
     public string Url { get; set; }
 
 
@@ -36,7 +36,7 @@ public partial class MessageStickerAttachment : IEquatable<MessageStickerAttachm
     /// A globally unique identifier for the media object.
     /// </summary>
     /// <value>A globally unique identifier for the media object.</value>
-    [DataMember(Name = "id", EmitDefaultValue = false)]
+    [JsonPropertyName("id")]
     public string Id { get; set; }
 
 

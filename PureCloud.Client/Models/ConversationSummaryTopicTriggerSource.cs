@@ -7,13 +7,13 @@ namespace PureCloud.Client.Models;
 /// <summary>
 /// ConversationSummaryTopicTriggerSource
 /// </summary>
-[DataContract]
+
 public partial class ConversationSummaryTopicTriggerSource : IEquatable<ConversationSummaryTopicTriggerSource>
 {
     /// <summary>
     /// Gets or Sets SourceType
     /// </summary>
-    [JsonConverter(typeof(JsonStringEnumConverter))]
+    
     public enum SourceTypeEnum
     {
         /// <summary>
@@ -57,7 +57,7 @@ public partial class ConversationSummaryTopicTriggerSource : IEquatable<Conversa
     /// <summary>
     /// Gets or Sets SourceType
     /// </summary>
-    [DataMember(Name = "sourceType", EmitDefaultValue = false)]
+    [JsonPropertyName("sourceType")]
     public SourceTypeEnum? SourceType { get; set; }
     /// <summary>
     /// Initializes a new instance of the <see cref="ConversationSummaryTopicTriggerSource" /> class.
@@ -78,7 +78,7 @@ public partial class ConversationSummaryTopicTriggerSource : IEquatable<Conversa
     /// <summary>
     /// Gets or Sets SourceId
     /// </summary>
-    [DataMember(Name = "sourceId", EmitDefaultValue = false)]
+    [JsonPropertyName("sourceId")]
     public string SourceId { get; set; }
 
 

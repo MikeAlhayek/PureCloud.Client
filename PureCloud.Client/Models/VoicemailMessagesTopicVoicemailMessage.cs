@@ -1,12 +1,12 @@
-using System.Runtime.Serialization;
 using System.Text;
+using System.Text.Json.Serialization;
 
 namespace PureCloud.Client.Models;
 
 /// <summary>
 /// VoicemailMessagesTopicVoicemailMessage
 /// </summary>
-[DataContract]
+
 public partial class VoicemailMessagesTopicVoicemailMessage : IEquatable<VoicemailMessagesTopicVoicemailMessage>
 {
     /// <summary>
@@ -54,7 +54,7 @@ public partial class VoicemailMessagesTopicVoicemailMessage : IEquatable<Voicema
     /// <summary>
     /// Gets or Sets Id
     /// </summary>
-    [DataMember(Name = "id", EmitDefaultValue = false)]
+    [JsonPropertyName("id")]
     public string Id { get; set; }
 
 
@@ -62,7 +62,7 @@ public partial class VoicemailMessagesTopicVoicemailMessage : IEquatable<Voicema
     /// <summary>
     /// Gets or Sets Read
     /// </summary>
-    [DataMember(Name = "read", EmitDefaultValue = false)]
+    [JsonPropertyName("read")]
     public bool? Read { get; set; }
 
 
@@ -70,7 +70,7 @@ public partial class VoicemailMessagesTopicVoicemailMessage : IEquatable<Voicema
     /// <summary>
     /// Gets or Sets AudioRecordingDurationSeconds
     /// </summary>
-    [DataMember(Name = "audioRecordingDurationSeconds", EmitDefaultValue = false)]
+    [JsonPropertyName("audioRecordingDurationSeconds")]
     public long? AudioRecordingDurationSeconds { get; set; }
 
 
@@ -78,7 +78,7 @@ public partial class VoicemailMessagesTopicVoicemailMessage : IEquatable<Voicema
     /// <summary>
     /// Gets or Sets AudioRecordingSizeBytes
     /// </summary>
-    [DataMember(Name = "audioRecordingSizeBytes", EmitDefaultValue = false)]
+    [JsonPropertyName("audioRecordingSizeBytes")]
     public long? AudioRecordingSizeBytes { get; set; }
 
 
@@ -86,7 +86,7 @@ public partial class VoicemailMessagesTopicVoicemailMessage : IEquatable<Voicema
     /// <summary>
     /// Gets or Sets CreatedDate
     /// </summary>
-    [DataMember(Name = "createdDate", EmitDefaultValue = false)]
+    [JsonPropertyName("createdDate")]
     public DateTime? CreatedDate { get; set; }
 
 
@@ -94,7 +94,7 @@ public partial class VoicemailMessagesTopicVoicemailMessage : IEquatable<Voicema
     /// <summary>
     /// Gets or Sets ModifiedDate
     /// </summary>
-    [DataMember(Name = "modifiedDate", EmitDefaultValue = false)]
+    [JsonPropertyName("modifiedDate")]
     public DateTime? ModifiedDate { get; set; }
 
 
@@ -102,7 +102,7 @@ public partial class VoicemailMessagesTopicVoicemailMessage : IEquatable<Voicema
     /// <summary>
     /// Gets or Sets CreatedDateString
     /// </summary>
-    [DataMember(Name = "createdDateString", EmitDefaultValue = false)]
+    [JsonPropertyName("createdDateString")]
     public string CreatedDateString { get; set; }
 
 
@@ -110,7 +110,7 @@ public partial class VoicemailMessagesTopicVoicemailMessage : IEquatable<Voicema
     /// <summary>
     /// Gets or Sets CallerAddress
     /// </summary>
-    [DataMember(Name = "callerAddress", EmitDefaultValue = false)]
+    [JsonPropertyName("callerAddress")]
     public string CallerAddress { get; set; }
 
 
@@ -118,7 +118,7 @@ public partial class VoicemailMessagesTopicVoicemailMessage : IEquatable<Voicema
     /// <summary>
     /// Gets or Sets CallerName
     /// </summary>
-    [DataMember(Name = "callerName", EmitDefaultValue = false)]
+    [JsonPropertyName("callerName")]
     public string CallerName { get; set; }
 
 
@@ -126,7 +126,7 @@ public partial class VoicemailMessagesTopicVoicemailMessage : IEquatable<Voicema
     /// <summary>
     /// Gets or Sets Action
     /// </summary>
-    [DataMember(Name = "action", EmitDefaultValue = false)]
+    [JsonPropertyName("action")]
     public string Action { get; set; }
 
 
@@ -134,7 +134,7 @@ public partial class VoicemailMessagesTopicVoicemailMessage : IEquatable<Voicema
     /// <summary>
     /// Gets or Sets Note
     /// </summary>
-    [DataMember(Name = "note", EmitDefaultValue = false)]
+    [JsonPropertyName("note")]
     public string Note { get; set; }
 
 
@@ -142,7 +142,7 @@ public partial class VoicemailMessagesTopicVoicemailMessage : IEquatable<Voicema
     /// <summary>
     /// Gets or Sets Deleted
     /// </summary>
-    [DataMember(Name = "deleted", EmitDefaultValue = false)]
+    [JsonPropertyName("deleted")]
     public bool? Deleted { get; set; }
 
 
@@ -150,7 +150,7 @@ public partial class VoicemailMessagesTopicVoicemailMessage : IEquatable<Voicema
     /// <summary>
     /// Gets or Sets ModifiedByUserId
     /// </summary>
-    [DataMember(Name = "modifiedByUserId", EmitDefaultValue = false)]
+    [JsonPropertyName("modifiedByUserId")]
     public string ModifiedByUserId { get; set; }
 
 
@@ -158,7 +158,7 @@ public partial class VoicemailMessagesTopicVoicemailMessage : IEquatable<Voicema
     /// <summary>
     /// Gets or Sets CopiedTo
     /// </summary>
-    [DataMember(Name = "copiedTo", EmitDefaultValue = false)]
+    [JsonPropertyName("copiedTo")]
     public List<VoicemailMessagesTopicVoicemailCopyRecord> CopiedTo { get; set; }
 
 
@@ -166,7 +166,7 @@ public partial class VoicemailMessagesTopicVoicemailMessage : IEquatable<Voicema
     /// <summary>
     /// Gets or Sets CopiedFrom
     /// </summary>
-    [DataMember(Name = "copiedFrom", EmitDefaultValue = false)]
+    [JsonPropertyName("copiedFrom")]
     public VoicemailMessagesTopicVoicemailCopyRecord CopiedFrom { get; set; }
 
 
@@ -174,7 +174,7 @@ public partial class VoicemailMessagesTopicVoicemailMessage : IEquatable<Voicema
     /// <summary>
     /// Gets or Sets ModifiedDateString
     /// </summary>
-    [DataMember(Name = "modifiedDateString", EmitDefaultValue = false)]
+    [JsonPropertyName("modifiedDateString")]
     public string ModifiedDateString { get; set; }
 
 

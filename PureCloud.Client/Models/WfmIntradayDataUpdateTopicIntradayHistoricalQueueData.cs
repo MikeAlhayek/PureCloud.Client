@@ -1,12 +1,12 @@
-using System.Runtime.Serialization;
 using System.Text;
+using System.Text.Json.Serialization;
 
 namespace PureCloud.Client.Models;
 
 /// <summary>
 /// WfmIntradayDataUpdateTopicIntradayHistoricalQueueData
 /// </summary>
-[DataContract]
+
 public partial class WfmIntradayDataUpdateTopicIntradayHistoricalQueueData : IEquatable<WfmIntradayDataUpdateTopicIntradayHistoricalQueueData>
 {
     /// <summary>
@@ -38,7 +38,7 @@ public partial class WfmIntradayDataUpdateTopicIntradayHistoricalQueueData : IEq
     /// <summary>
     /// Gets or Sets Offered
     /// </summary>
-    [DataMember(Name = "offered", EmitDefaultValue = false)]
+    [JsonPropertyName("offered")]
     public long? Offered { get; set; }
 
 
@@ -46,7 +46,7 @@ public partial class WfmIntradayDataUpdateTopicIntradayHistoricalQueueData : IEq
     /// <summary>
     /// Gets or Sets Completed
     /// </summary>
-    [DataMember(Name = "completed", EmitDefaultValue = false)]
+    [JsonPropertyName("completed")]
     public long? Completed { get; set; }
 
 
@@ -54,7 +54,7 @@ public partial class WfmIntradayDataUpdateTopicIntradayHistoricalQueueData : IEq
     /// <summary>
     /// Gets or Sets Answered
     /// </summary>
-    [DataMember(Name = "answered", EmitDefaultValue = false)]
+    [JsonPropertyName("answered")]
     public long? Answered { get; set; }
 
 
@@ -62,7 +62,7 @@ public partial class WfmIntradayDataUpdateTopicIntradayHistoricalQueueData : IEq
     /// <summary>
     /// Gets or Sets Abandoned
     /// </summary>
-    [DataMember(Name = "abandoned", EmitDefaultValue = false)]
+    [JsonPropertyName("abandoned")]
     public long? Abandoned { get; set; }
 
 
@@ -70,7 +70,7 @@ public partial class WfmIntradayDataUpdateTopicIntradayHistoricalQueueData : IEq
     /// <summary>
     /// Gets or Sets AverageTalkTimeSeconds
     /// </summary>
-    [DataMember(Name = "averageTalkTimeSeconds", EmitDefaultValue = false)]
+    [JsonPropertyName("averageTalkTimeSeconds")]
     public double? AverageTalkTimeSeconds { get; set; }
 
 
@@ -78,7 +78,7 @@ public partial class WfmIntradayDataUpdateTopicIntradayHistoricalQueueData : IEq
     /// <summary>
     /// Gets or Sets AverageAfterCallWorkSeconds
     /// </summary>
-    [DataMember(Name = "averageAfterCallWorkSeconds", EmitDefaultValue = false)]
+    [JsonPropertyName("averageAfterCallWorkSeconds")]
     public double? AverageAfterCallWorkSeconds { get; set; }
 
 
@@ -86,7 +86,7 @@ public partial class WfmIntradayDataUpdateTopicIntradayHistoricalQueueData : IEq
     /// <summary>
     /// Gets or Sets ServiceLevelPercent
     /// </summary>
-    [DataMember(Name = "serviceLevelPercent", EmitDefaultValue = false)]
+    [JsonPropertyName("serviceLevelPercent")]
     public double? ServiceLevelPercent { get; set; }
 
 
@@ -94,7 +94,7 @@ public partial class WfmIntradayDataUpdateTopicIntradayHistoricalQueueData : IEq
     /// <summary>
     /// Gets or Sets AverageSpeedOfAnswerSeconds
     /// </summary>
-    [DataMember(Name = "averageSpeedOfAnswerSeconds", EmitDefaultValue = false)]
+    [JsonPropertyName("averageSpeedOfAnswerSeconds")]
     public double? AverageSpeedOfAnswerSeconds { get; set; }
 
 

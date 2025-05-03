@@ -7,14 +7,14 @@ namespace PureCloud.Client.Models;
 /// <summary>
 /// ExternalMetricDataUnprocessedItem
 /// </summary>
-[DataContract]
+
 public partial class ExternalMetricDataUnprocessedItem : IEquatable<ExternalMetricDataUnprocessedItem>
 {
     /// <summary>
     /// The type of the metric data. The default value is Total.
     /// </summary>
     /// <value>The type of the metric data. The default value is Total.</value>
-    [JsonConverter(typeof(JsonStringEnumConverter))]
+    
     public enum TypeEnum
     {
         /// <summary>
@@ -41,7 +41,7 @@ public partial class ExternalMetricDataUnprocessedItem : IEquatable<ExternalMetr
     /// The type of the metric data. The default value is Total.
     /// </summary>
     /// <value>The type of the metric data. The default value is Total.</value>
-    [DataMember(Name = "type", EmitDefaultValue = false)]
+    [JsonPropertyName("type")]
     public TypeEnum? Type { get; set; }
 
     /// <summary>
@@ -81,7 +81,7 @@ public partial class ExternalMetricDataUnprocessedItem : IEquatable<ExternalMetr
     /// The user ID. Must provide either userId or userEmail, but not both.
     /// </summary>
     /// <value>The user ID. Must provide either userId or userEmail, but not both.</value>
-    [DataMember(Name = "userId", EmitDefaultValue = false)]
+    [JsonPropertyName("userId")]
     public string UserId { get; set; }
 
 
@@ -90,7 +90,7 @@ public partial class ExternalMetricDataUnprocessedItem : IEquatable<ExternalMetr
     /// The user main email used in user&#39;s GenesysCloud account. Must provide either userId or userEmail, but not both.
     /// </summary>
     /// <value>The user main email used in user&#39;s GenesysCloud account. Must provide either userId or userEmail, but not both.</value>
-    [DataMember(Name = "userEmail", EmitDefaultValue = false)]
+    [JsonPropertyName("userEmail")]
     public string UserEmail { get; set; }
 
 
@@ -99,7 +99,7 @@ public partial class ExternalMetricDataUnprocessedItem : IEquatable<ExternalMetr
     /// The ID of the external metric definition
     /// </summary>
     /// <value>The ID of the external metric definition</value>
-    [DataMember(Name = "metricId", EmitDefaultValue = false)]
+    [JsonPropertyName("metricId")]
     public string MetricId { get; set; }
 
 
@@ -108,7 +108,7 @@ public partial class ExternalMetricDataUnprocessedItem : IEquatable<ExternalMetr
     /// The date of the metric data. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd
     /// </summary>
     /// <value>The date of the metric data. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd</value>
-    [DataMember(Name = "dateOccurred", EmitDefaultValue = false)]
+    [JsonPropertyName("dateOccurred")]
     public string DateOccurred { get; set; }
 
 
@@ -117,7 +117,7 @@ public partial class ExternalMetricDataUnprocessedItem : IEquatable<ExternalMetr
     /// The value of the metric data. When value is null, the metric data will be deleted.
     /// </summary>
     /// <value>The value of the metric data. When value is null, the metric data will be deleted.</value>
-    [DataMember(Name = "value", EmitDefaultValue = false)]
+    [JsonPropertyName("value")]
     public double? Value { get; set; }
 
 
@@ -126,7 +126,7 @@ public partial class ExternalMetricDataUnprocessedItem : IEquatable<ExternalMetr
     /// The number of data points. The default value is 0 when type is Cumulative and the metric data already exists, otherwise 1. When total count reaches 0, the metric data will be deleted.
     /// </summary>
     /// <value>The number of data points. The default value is 0 when type is Cumulative and the metric data already exists, otherwise 1. When total count reaches 0, the metric data will be deleted.</value>
-    [DataMember(Name = "count", EmitDefaultValue = false)]
+    [JsonPropertyName("count")]
     public int? Count { get; set; }
 
 
@@ -137,7 +137,7 @@ public partial class ExternalMetricDataUnprocessedItem : IEquatable<ExternalMetr
     /// The error message
     /// </summary>
     /// <value>The error message</value>
-    [DataMember(Name = "message", EmitDefaultValue = false)]
+    [JsonPropertyName("message")]
     public string Message { get; set; }
 
 
@@ -146,7 +146,7 @@ public partial class ExternalMetricDataUnprocessedItem : IEquatable<ExternalMetr
     /// The error code
     /// </summary>
     /// <value>The error code</value>
-    [DataMember(Name = "code", EmitDefaultValue = false)]
+    [JsonPropertyName("code")]
     public string Code { get; set; }
 
 

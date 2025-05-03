@@ -7,14 +7,14 @@ namespace PureCloud.Client.Models;
 /// <summary>
 /// AsyncUserDetailsQuery
 /// </summary>
-[DataContract]
+
 public partial class AsyncUserDetailsQuery : IEquatable<AsyncUserDetailsQuery>
 {
     /// <summary>
     /// Sort the result set in ascending/descending order. Default is ascending
     /// </summary>
     /// <value>Sort the result set in ascending/descending order. Default is ascending</value>
-    [JsonConverter(typeof(JsonStringEnumConverter))]
+    
     public enum OrderEnum
     {
         /// <summary>
@@ -47,7 +47,7 @@ public partial class AsyncUserDetailsQuery : IEquatable<AsyncUserDetailsQuery>
     /// Sort the result set in ascending/descending order. Default is ascending
     /// </summary>
     /// <value>Sort the result set in ascending/descending order. Default is ascending</value>
-    [DataMember(Name = "order", EmitDefaultValue = false)]
+    [JsonPropertyName("order")]
     public OrderEnum? Order { get; set; }
 
     /// <summary>
@@ -81,7 +81,7 @@ public partial class AsyncUserDetailsQuery : IEquatable<AsyncUserDetailsQuery>
     /// Specifies the date and time range of data being queried. Conversations MUST have started within this time range to potentially be included within the result set. Intervals are represented as an ISO-8601 string. For example: YYYY-MM-DDThh:mm:ss/YYYY-MM-DDThh:mm:ss
     /// </summary>
     /// <value>Specifies the date and time range of data being queried. Conversations MUST have started within this time range to potentially be included within the result set. Intervals are represented as an ISO-8601 string. For example: YYYY-MM-DDThh:mm:ss/YYYY-MM-DDThh:mm:ss</value>
-    [DataMember(Name = "interval", EmitDefaultValue = false)]
+    [JsonPropertyName("interval")]
     public string Interval { get; set; }
 
 
@@ -90,7 +90,7 @@ public partial class AsyncUserDetailsQuery : IEquatable<AsyncUserDetailsQuery>
     /// Filters that target the users to retrieve data for
     /// </summary>
     /// <value>Filters that target the users to retrieve data for</value>
-    [DataMember(Name = "userFilters", EmitDefaultValue = false)]
+    [JsonPropertyName("userFilters")]
     public List<UserDetailQueryFilter> UserFilters { get; set; }
 
 
@@ -99,7 +99,7 @@ public partial class AsyncUserDetailsQuery : IEquatable<AsyncUserDetailsQuery>
     /// Filters that target system and organization presence-level data
     /// </summary>
     /// <value>Filters that target system and organization presence-level data</value>
-    [DataMember(Name = "presenceFilters", EmitDefaultValue = false)]
+    [JsonPropertyName("presenceFilters")]
     public List<PresenceDetailQueryFilter> PresenceFilters { get; set; }
 
 
@@ -108,7 +108,7 @@ public partial class AsyncUserDetailsQuery : IEquatable<AsyncUserDetailsQuery>
     /// Filters that target agent routing status-level data
     /// </summary>
     /// <value>Filters that target agent routing status-level data</value>
-    [DataMember(Name = "routingStatusFilters", EmitDefaultValue = false)]
+    [JsonPropertyName("routingStatusFilters")]
     public List<RoutingStatusDetailQueryFilter> RoutingStatusFilters { get; set; }
 
 
@@ -119,7 +119,7 @@ public partial class AsyncUserDetailsQuery : IEquatable<AsyncUserDetailsQuery>
     /// Specify number of results to be returned
     /// </summary>
     /// <value>Specify number of results to be returned</value>
-    [DataMember(Name = "limit", EmitDefaultValue = false)]
+    [JsonPropertyName("limit")]
     public int? Limit { get; set; }
 
 

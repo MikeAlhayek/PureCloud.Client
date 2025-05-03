@@ -1,12 +1,12 @@
-using System.Runtime.Serialization;
 using System.Text;
+using System.Text.Json.Serialization;
 
 namespace PureCloud.Client.Models;
 
 /// <summary>
 /// ResponseAsset
 /// </summary>
-[DataContract]
+
 public partial class ResponseAsset : IEquatable<ResponseAsset>
 {
     /// <summary>
@@ -43,7 +43,7 @@ public partial class ResponseAsset : IEquatable<ResponseAsset>
     /// The globally unique identifier for the object.
     /// </summary>
     /// <value>The globally unique identifier for the object.</value>
-    [DataMember(Name = "id", EmitDefaultValue = false)]
+    [JsonPropertyName("id")]
     public string Id { get; private set; }
 
 
@@ -51,7 +51,7 @@ public partial class ResponseAsset : IEquatable<ResponseAsset>
     /// <summary>
     /// Gets or Sets Name
     /// </summary>
-    [DataMember(Name = "name", EmitDefaultValue = false)]
+    [JsonPropertyName("name")]
     public string Name { get; set; }
 
 
@@ -60,7 +60,7 @@ public partial class ResponseAsset : IEquatable<ResponseAsset>
     /// The division to which this entity belongs.
     /// </summary>
     /// <value>The division to which this entity belongs.</value>
-    [DataMember(Name = "division", EmitDefaultValue = false)]
+    [JsonPropertyName("division")]
     public Division Division { get; set; }
 
 
@@ -69,7 +69,7 @@ public partial class ResponseAsset : IEquatable<ResponseAsset>
     /// response asset size in bytes
     /// </summary>
     /// <value>response asset size in bytes</value>
-    [DataMember(Name = "contentLength", EmitDefaultValue = false)]
+    [JsonPropertyName("contentLength")]
     public long? ContentLength { get; set; }
 
 
@@ -78,7 +78,7 @@ public partial class ResponseAsset : IEquatable<ResponseAsset>
     /// response asset location.
     /// </summary>
     /// <value>response asset location.</value>
-    [DataMember(Name = "contentLocation", EmitDefaultValue = false)]
+    [JsonPropertyName("contentLocation")]
     public string ContentLocation { get; set; }
 
 
@@ -87,7 +87,7 @@ public partial class ResponseAsset : IEquatable<ResponseAsset>
     /// MIME type of response asset
     /// </summary>
     /// <value>MIME type of response asset</value>
-    [DataMember(Name = "contentType", EmitDefaultValue = false)]
+    [JsonPropertyName("contentType")]
     public string ContentType { get; set; }
 
 
@@ -96,7 +96,7 @@ public partial class ResponseAsset : IEquatable<ResponseAsset>
     /// Created date of the response asset. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z
     /// </summary>
     /// <value>Created date of the response asset. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z</value>
-    [DataMember(Name = "dateCreated", EmitDefaultValue = false)]
+    [JsonPropertyName("dateCreated")]
     public DateTime? DateCreated { get; set; }
 
 
@@ -105,7 +105,7 @@ public partial class ResponseAsset : IEquatable<ResponseAsset>
     /// User who created the response asset
     /// </summary>
     /// <value>User who created the response asset</value>
-    [DataMember(Name = "createdBy", EmitDefaultValue = false)]
+    [JsonPropertyName("createdBy")]
     public DomainEntityRef CreatedBy { get; set; }
 
 
@@ -114,7 +114,7 @@ public partial class ResponseAsset : IEquatable<ResponseAsset>
     /// Last modified date of the response asset. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z
     /// </summary>
     /// <value>Last modified date of the response asset. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z</value>
-    [DataMember(Name = "dateModified", EmitDefaultValue = false)]
+    [JsonPropertyName("dateModified")]
     public DateTime? DateModified { get; set; }
 
 
@@ -123,7 +123,7 @@ public partial class ResponseAsset : IEquatable<ResponseAsset>
     /// User who last modified the response asset
     /// </summary>
     /// <value>User who last modified the response asset</value>
-    [DataMember(Name = "modifiedBy", EmitDefaultValue = false)]
+    [JsonPropertyName("modifiedBy")]
     public DomainEntityRef ModifiedBy { get; set; }
 
 
@@ -132,7 +132,7 @@ public partial class ResponseAsset : IEquatable<ResponseAsset>
     /// Canned responses actively using this asset
     /// </summary>
     /// <value>Canned responses actively using this asset</value>
-    [DataMember(Name = "responses", EmitDefaultValue = false)]
+    [JsonPropertyName("responses")]
     public List<DomainEntityRef> Responses { get; set; }
 
 
@@ -141,7 +141,7 @@ public partial class ResponseAsset : IEquatable<ResponseAsset>
     /// The URI for this object
     /// </summary>
     /// <value>The URI for this object</value>
-    [DataMember(Name = "selfUri", EmitDefaultValue = false)]
+    [JsonPropertyName("selfUri")]
     public string SelfUri { get; private set; }
 
 

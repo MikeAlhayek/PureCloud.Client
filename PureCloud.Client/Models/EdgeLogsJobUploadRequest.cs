@@ -1,4 +1,3 @@
-using System.Runtime.Serialization;
 using System.Text;
 using System.Text.Json.Serialization;
 
@@ -7,7 +6,7 @@ namespace PureCloud.Client.Models;
 /// <summary>
 /// EdgeLogsJobUploadRequest
 /// </summary>
-[DataContract]
+
 public partial class EdgeLogsJobUploadRequest : IEquatable<EdgeLogsJobUploadRequest>
 {
 
@@ -32,7 +31,7 @@ public partial class EdgeLogsJobUploadRequest : IEquatable<EdgeLogsJobUploadRequ
     /// A list of file ids to upload.
     /// </summary>
     /// <value>A list of file ids to upload.</value>
-    [DataMember(Name = "fileIds", EmitDefaultValue = false)]
+    [JsonPropertyName("fileIds")]
     public List<string> FileIds { get; set; }
 
 

@@ -7,14 +7,14 @@ namespace PureCloud.Client.Models;
 /// <summary>
 /// NumberPlan
 /// </summary>
-[DataContract]
+
 public partial class NumberPlan : IEquatable<NumberPlan>
 {
     /// <summary>
     /// Indicates if the resource is active, inactive, or deleted.
     /// </summary>
     /// <value>Indicates if the resource is active, inactive, or deleted.</value>
-    [JsonConverter(typeof(JsonStringEnumConverter))]
+    
     public enum StateEnum
     {
         /// <summary>
@@ -47,7 +47,7 @@ public partial class NumberPlan : IEquatable<NumberPlan>
     /// Indicates if the resource is active, inactive, or deleted.
     /// </summary>
     /// <value>Indicates if the resource is active, inactive, or deleted.</value>
-    [DataMember(Name = "state", EmitDefaultValue = false)]
+    [JsonPropertyName("state")]
     public StateEnum? State { get; private set; }
 
     /// <summary>
@@ -91,7 +91,7 @@ public partial class NumberPlan : IEquatable<NumberPlan>
     /// The globally unique identifier for the object.
     /// </summary>
     /// <value>The globally unique identifier for the object.</value>
-    [DataMember(Name = "id", EmitDefaultValue = false)]
+    [JsonPropertyName("id")]
     public string Id { get; private set; }
 
 
@@ -100,7 +100,7 @@ public partial class NumberPlan : IEquatable<NumberPlan>
     /// The name of the entity.
     /// </summary>
     /// <value>The name of the entity.</value>
-    [DataMember(Name = "name", EmitDefaultValue = false)]
+    [JsonPropertyName("name")]
     public string Name { get; set; }
 
 
@@ -109,7 +109,7 @@ public partial class NumberPlan : IEquatable<NumberPlan>
     /// The division to which this entity belongs.
     /// </summary>
     /// <value>The division to which this entity belongs.</value>
-    [DataMember(Name = "division", EmitDefaultValue = false)]
+    [JsonPropertyName("division")]
     public Division Division { get; set; }
 
 
@@ -118,7 +118,7 @@ public partial class NumberPlan : IEquatable<NumberPlan>
     /// The resource&#39;s description.
     /// </summary>
     /// <value>The resource&#39;s description.</value>
-    [DataMember(Name = "description", EmitDefaultValue = false)]
+    [JsonPropertyName("description")]
     public string Description { get; set; }
 
 
@@ -127,7 +127,7 @@ public partial class NumberPlan : IEquatable<NumberPlan>
     /// The current version of the resource.
     /// </summary>
     /// <value>The current version of the resource.</value>
-    [DataMember(Name = "version", EmitDefaultValue = false)]
+    [JsonPropertyName("version")]
     public int? Version { get; set; }
 
 
@@ -136,7 +136,7 @@ public partial class NumberPlan : IEquatable<NumberPlan>
     /// The date the resource was created. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z
     /// </summary>
     /// <value>The date the resource was created. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z</value>
-    [DataMember(Name = "dateCreated", EmitDefaultValue = false)]
+    [JsonPropertyName("dateCreated")]
     public DateTime? DateCreated { get; private set; }
 
 
@@ -145,7 +145,7 @@ public partial class NumberPlan : IEquatable<NumberPlan>
     /// The date of the last modification to the resource. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z
     /// </summary>
     /// <value>The date of the last modification to the resource. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z</value>
-    [DataMember(Name = "dateModified", EmitDefaultValue = false)]
+    [JsonPropertyName("dateModified")]
     public DateTime? DateModified { get; private set; }
 
 
@@ -154,7 +154,7 @@ public partial class NumberPlan : IEquatable<NumberPlan>
     /// The ID of the user that last modified the resource.
     /// </summary>
     /// <value>The ID of the user that last modified the resource.</value>
-    [DataMember(Name = "modifiedBy", EmitDefaultValue = false)]
+    [JsonPropertyName("modifiedBy")]
     public string ModifiedBy { get; private set; }
 
 
@@ -163,7 +163,7 @@ public partial class NumberPlan : IEquatable<NumberPlan>
     /// The ID of the user that created the resource.
     /// </summary>
     /// <value>The ID of the user that created the resource.</value>
-    [DataMember(Name = "createdBy", EmitDefaultValue = false)]
+    [JsonPropertyName("createdBy")]
     public string CreatedBy { get; private set; }
 
 
@@ -174,7 +174,7 @@ public partial class NumberPlan : IEquatable<NumberPlan>
     /// The application that last modified the resource.
     /// </summary>
     /// <value>The application that last modified the resource.</value>
-    [DataMember(Name = "modifiedByApp", EmitDefaultValue = false)]
+    [JsonPropertyName("modifiedByApp")]
     public string ModifiedByApp { get; private set; }
 
 
@@ -183,7 +183,7 @@ public partial class NumberPlan : IEquatable<NumberPlan>
     /// The application that created the resource.
     /// </summary>
     /// <value>The application that created the resource.</value>
-    [DataMember(Name = "createdByApp", EmitDefaultValue = false)]
+    [JsonPropertyName("createdByApp")]
     public string CreatedByApp { get; private set; }
 
 
@@ -191,7 +191,7 @@ public partial class NumberPlan : IEquatable<NumberPlan>
     /// <summary>
     /// Gets or Sets Match
     /// </summary>
-    [DataMember(Name = "match", EmitDefaultValue = false)]
+    [JsonPropertyName("match")]
     public string Match { get; set; }
 
 
@@ -199,7 +199,7 @@ public partial class NumberPlan : IEquatable<NumberPlan>
     /// <summary>
     /// Gets or Sets NormalizedFormat
     /// </summary>
-    [DataMember(Name = "normalizedFormat", EmitDefaultValue = false)]
+    [JsonPropertyName("normalizedFormat")]
     public string NormalizedFormat { get; set; }
 
 
@@ -207,7 +207,7 @@ public partial class NumberPlan : IEquatable<NumberPlan>
     /// <summary>
     /// Gets or Sets Priority
     /// </summary>
-    [DataMember(Name = "priority", EmitDefaultValue = false)]
+    [JsonPropertyName("priority")]
     public int? Priority { get; set; }
 
 
@@ -215,7 +215,7 @@ public partial class NumberPlan : IEquatable<NumberPlan>
     /// <summary>
     /// Gets or Sets Numbers
     /// </summary>
-    [DataMember(Name = "numbers", EmitDefaultValue = false)]
+    [JsonPropertyName("numbers")]
     public List<Number> Numbers { get; set; }
 
 
@@ -223,7 +223,7 @@ public partial class NumberPlan : IEquatable<NumberPlan>
     /// <summary>
     /// Gets or Sets DigitLength
     /// </summary>
-    [DataMember(Name = "digitLength", EmitDefaultValue = false)]
+    [JsonPropertyName("digitLength")]
     public DigitLength DigitLength { get; set; }
 
 
@@ -231,7 +231,7 @@ public partial class NumberPlan : IEquatable<NumberPlan>
     /// <summary>
     /// Gets or Sets Classification
     /// </summary>
-    [DataMember(Name = "classification", EmitDefaultValue = false)]
+    [JsonPropertyName("classification")]
     public string Classification { get; set; }
 
 
@@ -239,7 +239,7 @@ public partial class NumberPlan : IEquatable<NumberPlan>
     /// <summary>
     /// Gets or Sets MatchType
     /// </summary>
-    [DataMember(Name = "matchType", EmitDefaultValue = false)]
+    [JsonPropertyName("matchType")]
     public string MatchType { get; set; }
 
 
@@ -248,7 +248,7 @@ public partial class NumberPlan : IEquatable<NumberPlan>
     /// The URI for this object
     /// </summary>
     /// <value>The URI for this object</value>
-    [DataMember(Name = "selfUri", EmitDefaultValue = false)]
+    [JsonPropertyName("selfUri")]
     public string SelfUri { get; private set; }
 
 

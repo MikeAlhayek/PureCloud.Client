@@ -7,14 +7,14 @@ namespace PureCloud.Client.Models;
 /// <summary>
 /// Metadata information about a message.
 /// </summary>
-[DataContract]
+
 public partial class ConversationMessageMetadata : IEquatable<ConversationMessageMetadata>
 {
     /// <summary>
     /// Message type.
     /// </summary>
     /// <value>Message type.</value>
-    [JsonConverter(typeof(JsonStringEnumConverter))]
+    
     public enum TypeEnum
     {
         /// <summary>
@@ -65,7 +65,7 @@ public partial class ConversationMessageMetadata : IEquatable<ConversationMessag
     /// Message type.
     /// </summary>
     /// <value>Message type.</value>
-    [DataMember(Name = "type", EmitDefaultValue = false)]
+    [JsonPropertyName("type")]
     public TypeEnum? Type { get; set; }
     /// <summary>
     /// Initializes a new instance of the <see cref="ConversationMessageMetadata" /> class.
@@ -89,7 +89,7 @@ public partial class ConversationMessageMetadata : IEquatable<ConversationMessag
     /// List of events metadata
     /// </summary>
     /// <value>List of events metadata</value>
-    [DataMember(Name = "events", EmitDefaultValue = false)]
+    [JsonPropertyName("events")]
     public List<ConversationMessageMetadataEvent> Events { get; set; }
 
 
@@ -98,7 +98,7 @@ public partial class ConversationMessageMetadata : IEquatable<ConversationMessag
     /// List of message content
     /// </summary>
     /// <value>List of message content</value>
-    [DataMember(Name = "content", EmitDefaultValue = false)]
+    [JsonPropertyName("content")]
     public List<ConversationMessageMetadataContent> Content { get; set; }
 
 

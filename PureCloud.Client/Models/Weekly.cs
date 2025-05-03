@@ -1,12 +1,12 @@
-using System.Runtime.Serialization;
 using System.Text;
+using System.Text.Json.Serialization;
 
 namespace PureCloud.Client.Models;
 
 /// <summary>
 /// Weekly
 /// </summary>
-[DataContract]
+
 public partial class Weekly : IEquatable<Weekly>
 {
     /// <summary>
@@ -27,7 +27,7 @@ public partial class Weekly : IEquatable<Weekly>
     /// Download URL to fetch the result of weekly time series. This field is populated only if session state is Complete
     /// </summary>
     /// <value>Download URL to fetch the result of weekly time series. This field is populated only if session state is Complete</value>
-    [DataMember(Name = "downloadUrl", EmitDefaultValue = false)]
+    [JsonPropertyName("downloadUrl")]
     public string DownloadUrl { get; set; }
 
 
@@ -36,7 +36,7 @@ public partial class Weekly : IEquatable<Weekly>
     /// Result will always come via downloadUrls; however the schema is included for documentation
     /// </summary>
     /// <value>Result will always come via downloadUrls; however the schema is included for documentation</value>
-    [DataMember(Name = "downloadResult", EmitDefaultValue = false)]
+    [JsonPropertyName("downloadResult")]
     public List<Timeseries> DownloadResult { get; set; }
 
 

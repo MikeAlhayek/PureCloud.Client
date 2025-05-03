@@ -1,12 +1,12 @@
-using System.Runtime.Serialization;
 using System.Text;
+using System.Text.Json.Serialization;
 
 namespace PureCloud.Client.Models;
 
 /// <summary>
 /// ArchitectPromptNotificationPromptNotification
 /// </summary>
-[DataContract]
+
 public partial class ArchitectPromptNotificationPromptNotification : IEquatable<ArchitectPromptNotificationPromptNotification>
 {
     /// <summary>
@@ -31,7 +31,7 @@ public partial class ArchitectPromptNotificationPromptNotification : IEquatable<
     /// The prompt ID
     /// </summary>
     /// <value>The prompt ID</value>
-    [DataMember(Name = "id", EmitDefaultValue = false)]
+    [JsonPropertyName("id")]
     public string Id { get; set; }
 
 
@@ -40,7 +40,7 @@ public partial class ArchitectPromptNotificationPromptNotification : IEquatable<
     /// The prompt name
     /// </summary>
     /// <value>The prompt name</value>
-    [DataMember(Name = "name", EmitDefaultValue = false)]
+    [JsonPropertyName("name")]
     public string Name { get; set; }
 
 
@@ -49,7 +49,7 @@ public partial class ArchitectPromptNotificationPromptNotification : IEquatable<
     /// The prompt description
     /// </summary>
     /// <value>The prompt description</value>
-    [DataMember(Name = "description", EmitDefaultValue = false)]
+    [JsonPropertyName("description")]
     public string Description { get; set; }
 
 
@@ -57,7 +57,7 @@ public partial class ArchitectPromptNotificationPromptNotification : IEquatable<
     /// <summary>
     /// Gets or Sets CurrentOperation
     /// </summary>
-    [DataMember(Name = "currentOperation", EmitDefaultValue = false)]
+    [JsonPropertyName("currentOperation")]
     public ArchitectPromptNotificationArchitectOperation CurrentOperation { get; set; }
 
 

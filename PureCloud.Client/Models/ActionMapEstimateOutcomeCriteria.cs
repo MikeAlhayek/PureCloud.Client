@@ -1,4 +1,3 @@
-using System.Runtime.Serialization;
 using System.Text;
 using System.Text.Json.Serialization;
 
@@ -7,7 +6,7 @@ namespace PureCloud.Client.Models;
 /// <summary>
 /// ActionMapEstimateOutcomeCriteria
 /// </summary>
-[DataContract]
+
 public partial class ActionMapEstimateOutcomeCriteria : IEquatable<ActionMapEstimateOutcomeCriteria>
 {
 
@@ -40,7 +39,7 @@ public partial class ActionMapEstimateOutcomeCriteria : IEquatable<ActionMapEsti
     /// ID of outcome.
     /// </summary>
     /// <value>ID of outcome.</value>
-    [DataMember(Name = "outcomeId", EmitDefaultValue = false)]
+    [JsonPropertyName("outcomeId")]
     public string OutcomeId { get; set; }
 
 
@@ -49,7 +48,7 @@ public partial class ActionMapEstimateOutcomeCriteria : IEquatable<ActionMapEsti
     /// Probability value for the selected outcome at or above which the action map will trigger.
     /// </summary>
     /// <value>Probability value for the selected outcome at or above which the action map will trigger.</value>
-    [DataMember(Name = "maxProbability", EmitDefaultValue = false)]
+    [JsonPropertyName("maxProbability")]
     public float? MaxProbability { get; set; }
 
 
@@ -58,7 +57,7 @@ public partial class ActionMapEstimateOutcomeCriteria : IEquatable<ActionMapEsti
     /// Additional probability condition, where if set, the action map will trigger if the current outcome probability is lower or equal to the value.
     /// </summary>
     /// <value>Additional probability condition, where if set, the action map will trigger if the current outcome probability is lower or equal to the value.</value>
-    [DataMember(Name = "probability", EmitDefaultValue = false)]
+    [JsonPropertyName("probability")]
     public float? Probability { get; set; }
 
 
@@ -67,7 +66,7 @@ public partial class ActionMapEstimateOutcomeCriteria : IEquatable<ActionMapEsti
     /// Represents the quantity of sessions that have a maximum probability less than the predicted probability.
     /// </summary>
     /// <value>Represents the quantity of sessions that have a maximum probability less than the predicted probability.</value>
-    [DataMember(Name = "quantile", EmitDefaultValue = false)]
+    [JsonPropertyName("quantile")]
     public float? Quantile { get; set; }
 
 
@@ -76,7 +75,7 @@ public partial class ActionMapEstimateOutcomeCriteria : IEquatable<ActionMapEsti
     /// Represents the quantity of sessions that have a maximum probability less than the predicted session max probability.
     /// </summary>
     /// <value>Represents the quantity of sessions that have a maximum probability less than the predicted session max probability.</value>
-    [DataMember(Name = "maxQuantile", EmitDefaultValue = false)]
+    [JsonPropertyName("maxQuantile")]
     public float? MaxQuantile { get; set; }
 
 

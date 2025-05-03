@@ -1,12 +1,12 @@
-using System.Runtime.Serialization;
 using System.Text;
+using System.Text.Json.Serialization;
 
 namespace PureCloud.Client.Models;
 
 /// <summary>
 /// ContactEnrichOptions
 /// </summary>
-[DataContract]
+
 public partial class ContactEnrichOptions : IEquatable<ContactEnrichOptions>
 {
     /// <summary>
@@ -25,7 +25,7 @@ public partial class ContactEnrichOptions : IEquatable<ContactEnrichOptions>
     /// If true, any matched contact will have its type updated to Curated. If false, any matched contact will keep its original type in the operation.
     /// </summary>
     /// <value>If true, any matched contact will have its type updated to Curated. If false, any matched contact will keep its original type in the operation.</value>
-    [DataMember(Name = "promote", EmitDefaultValue = false)]
+    [JsonPropertyName("promote")]
     public bool? Promote { get; set; }
 
 

@@ -1,12 +1,12 @@
-using System.Runtime.Serialization;
 using System.Text;
+using System.Text.Json.Serialization;
 
 namespace PureCloud.Client.Models;
 
 /// <summary>
 /// ExportScriptResponse
 /// </summary>
-[DataContract]
+
 public partial class ExportScriptResponse : IEquatable<ExportScriptResponse>
 {
     /// <summary>
@@ -24,7 +24,7 @@ public partial class ExportScriptResponse : IEquatable<ExportScriptResponse>
     /// <summary>
     /// Gets or Sets Url
     /// </summary>
-    [DataMember(Name = "url", EmitDefaultValue = false)]
+    [JsonPropertyName("url")]
     public string Url { get; set; }
 
 

@@ -1,12 +1,12 @@
-using System.Runtime.Serialization;
 using System.Text;
+using System.Text.Json.Serialization;
 
 namespace PureCloud.Client.Models;
 
 /// <summary>
 /// KnowledgeDocumentGuestSearchResult
 /// </summary>
-[DataContract]
+
 public partial class KnowledgeDocumentGuestSearchResult : IEquatable<KnowledgeDocumentGuestSearchResult>
 {
     /// <summary>
@@ -27,7 +27,7 @@ public partial class KnowledgeDocumentGuestSearchResult : IEquatable<KnowledgeDo
     /// The confidence associated with a document with respect to a search query.
     /// </summary>
     /// <value>The confidence associated with a document with respect to a search query.</value>
-    [DataMember(Name = "confidence", EmitDefaultValue = false)]
+    [JsonPropertyName("confidence")]
     public double? Confidence { get; set; }
 
 
@@ -36,7 +36,7 @@ public partial class KnowledgeDocumentGuestSearchResult : IEquatable<KnowledgeDo
     /// Document that matched the query.
     /// </summary>
     /// <value>Document that matched the query.</value>
-    [DataMember(Name = "document", EmitDefaultValue = false)]
+    [JsonPropertyName("document")]
     public KnowledgeGuestSearchDocumentResponse Document { get; set; }
 
 

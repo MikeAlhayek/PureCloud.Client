@@ -1,12 +1,12 @@
-using System.Runtime.Serialization;
 using System.Text;
+using System.Text.Json.Serialization;
 
 namespace PureCloud.Client.Models;
 
 /// <summary>
 /// ValueWrapperUserSearchRule
 /// </summary>
-[DataContract]
+
 public partial class ValueWrapperUserSearchRule : IEquatable<ValueWrapperUserSearchRule>
 {
     /// <summary>
@@ -25,7 +25,7 @@ public partial class ValueWrapperUserSearchRule : IEquatable<ValueWrapperUserSea
     /// The value for the associated field
     /// </summary>
     /// <value>The value for the associated field</value>
-    [DataMember(Name = "value", EmitDefaultValue = false)]
+    [JsonPropertyName("value")]
     public UserSearchRule Value { get; set; }
 
 

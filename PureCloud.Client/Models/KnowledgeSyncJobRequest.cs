@@ -1,4 +1,3 @@
-using System.Runtime.Serialization;
 using System.Text;
 using System.Text.Json.Serialization;
 
@@ -7,7 +6,7 @@ namespace PureCloud.Client.Models;
 /// <summary>
 /// KnowledgeSyncJobRequest
 /// </summary>
-[DataContract]
+
 public partial class KnowledgeSyncJobRequest : IEquatable<KnowledgeSyncJobRequest>
 {
 
@@ -34,7 +33,7 @@ public partial class KnowledgeSyncJobRequest : IEquatable<KnowledgeSyncJobReques
     /// Upload key
     /// </summary>
     /// <value>Upload key</value>
-    [DataMember(Name = "uploadKey", EmitDefaultValue = false)]
+    [JsonPropertyName("uploadKey")]
     public string UploadKey { get; set; }
 
 
@@ -43,7 +42,7 @@ public partial class KnowledgeSyncJobRequest : IEquatable<KnowledgeSyncJobReques
     /// Knowledge integration source id.
     /// </summary>
     /// <value>Knowledge integration source id.</value>
-    [DataMember(Name = "sourceId", EmitDefaultValue = false)]
+    [JsonPropertyName("sourceId")]
     public string SourceId { get; set; }
 
 

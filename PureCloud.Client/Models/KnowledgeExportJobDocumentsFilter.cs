@@ -1,12 +1,12 @@
-using System.Runtime.Serialization;
 using System.Text;
+using System.Text.Json.Serialization;
 
 namespace PureCloud.Client.Models;
 
 /// <summary>
 /// KnowledgeExportJobDocumentsFilter
 /// </summary>
-[DataContract]
+
 public partial class KnowledgeExportJobDocumentsFilter : IEquatable<KnowledgeExportJobDocumentsFilter>
 {
     /// <summary>
@@ -31,7 +31,7 @@ public partial class KnowledgeExportJobDocumentsFilter : IEquatable<KnowledgeExp
     /// Retrieves the documents modified in specified date and time range. Cannot be used together with entities filter. Intervals are represented as an ISO-8601 string. For example: YYYY-MM-DDThh:mm:ss/YYYY-MM-DDThh:mm:ss
     /// </summary>
     /// <value>Retrieves the documents modified in specified date and time range. Cannot be used together with entities filter. Intervals are represented as an ISO-8601 string. For example: YYYY-MM-DDThh:mm:ss/YYYY-MM-DDThh:mm:ss</value>
-    [DataMember(Name = "interval", EmitDefaultValue = false)]
+    [JsonPropertyName("interval")]
     public string Interval { get; set; }
 
 
@@ -40,7 +40,7 @@ public partial class KnowledgeExportJobDocumentsFilter : IEquatable<KnowledgeExp
     /// Retrieves the documents with the given ids. Cannot be used together with internal filter.
     /// </summary>
     /// <value>Retrieves the documents with the given ids. Cannot be used together with internal filter.</value>
-    [DataMember(Name = "entities", EmitDefaultValue = false)]
+    [JsonPropertyName("entities")]
     public List<Entity> Entities { get; set; }
 
 
@@ -48,7 +48,7 @@ public partial class KnowledgeExportJobDocumentsFilter : IEquatable<KnowledgeExp
     /// <summary>
     /// Gets or Sets SourceId
     /// </summary>
-    [DataMember(Name = "sourceId", EmitDefaultValue = false)]
+    [JsonPropertyName("sourceId")]
     public string SourceId { get; set; }
 
 
@@ -56,7 +56,7 @@ public partial class KnowledgeExportJobDocumentsFilter : IEquatable<KnowledgeExp
     /// <summary>
     /// Gets or Sets IncludeDocumentsWithFileBody
     /// </summary>
-    [DataMember(Name = "includeDocumentsWithFileBody", EmitDefaultValue = false)]
+    [JsonPropertyName("includeDocumentsWithFileBody")]
     public bool? IncludeDocumentsWithFileBody { get; set; }
 
 

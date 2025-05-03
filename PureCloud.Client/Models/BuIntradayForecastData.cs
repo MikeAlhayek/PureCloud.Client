@@ -1,12 +1,12 @@
-using System.Runtime.Serialization;
 using System.Text;
+using System.Text.Json.Serialization;
 
 namespace PureCloud.Client.Models;
 
 /// <summary>
 /// BuIntradayForecastData
 /// </summary>
-[DataContract]
+
 public partial class BuIntradayForecastData : IEquatable<BuIntradayForecastData>
 {
     /// <summary>
@@ -27,7 +27,7 @@ public partial class BuIntradayForecastData : IEquatable<BuIntradayForecastData>
     /// The number of interactions routed into the queues in the selected planning groups for the given media type for an agent to answer
     /// </summary>
     /// <value>The number of interactions routed into the queues in the selected planning groups for the given media type for an agent to answer</value>
-    [DataMember(Name = "offered", EmitDefaultValue = false)]
+    [JsonPropertyName("offered")]
     public double? Offered { get; set; }
 
 
@@ -36,7 +36,7 @@ public partial class BuIntradayForecastData : IEquatable<BuIntradayForecastData>
     /// The average handle time in seconds an agent spent handling interactions
     /// </summary>
     /// <value>The average handle time in seconds an agent spent handling interactions</value>
-    [DataMember(Name = "averageHandleTimeSeconds", EmitDefaultValue = false)]
+    [JsonPropertyName("averageHandleTimeSeconds")]
     public double? AverageHandleTimeSeconds { get; set; }
 
 

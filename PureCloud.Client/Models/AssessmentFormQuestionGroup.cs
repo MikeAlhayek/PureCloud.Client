@@ -1,4 +1,3 @@
-using System.Runtime.Serialization;
 using System.Text;
 using System.Text.Json.Serialization;
 
@@ -7,7 +6,7 @@ namespace PureCloud.Client.Models;
 /// <summary>
 /// AssessmentFormQuestionGroup
 /// </summary>
-[DataContract]
+
 public partial class AssessmentFormQuestionGroup : IEquatable<AssessmentFormQuestionGroup>
 {
 
@@ -50,7 +49,7 @@ public partial class AssessmentFormQuestionGroup : IEquatable<AssessmentFormQues
     /// The ID of the question group,
     /// </summary>
     /// <value>The ID of the question group,</value>
-    [DataMember(Name = "id", EmitDefaultValue = false)]
+    [JsonPropertyName("id")]
     public string Id { get; set; }
 
 
@@ -59,7 +58,7 @@ public partial class AssessmentFormQuestionGroup : IEquatable<AssessmentFormQues
     /// The question group name
     /// </summary>
     /// <value>The question group name</value>
-    [DataMember(Name = "name", EmitDefaultValue = false)]
+    [JsonPropertyName("name")]
     public string Name { get; set; }
 
 
@@ -68,7 +67,7 @@ public partial class AssessmentFormQuestionGroup : IEquatable<AssessmentFormQues
     /// The question group type
     /// </summary>
     /// <value>The question group type</value>
-    [DataMember(Name = "type", EmitDefaultValue = false)]
+    [JsonPropertyName("type")]
     public string Type { get; set; }
 
 
@@ -76,7 +75,7 @@ public partial class AssessmentFormQuestionGroup : IEquatable<AssessmentFormQues
     /// <summary>
     /// Gets or Sets DefaultAnswersToHighest
     /// </summary>
-    [DataMember(Name = "defaultAnswersToHighest", EmitDefaultValue = false)]
+    [JsonPropertyName("defaultAnswersToHighest")]
     public bool? DefaultAnswersToHighest { get; set; }
 
 
@@ -84,7 +83,7 @@ public partial class AssessmentFormQuestionGroup : IEquatable<AssessmentFormQues
     /// <summary>
     /// Gets or Sets DefaultAnswersToNA
     /// </summary>
-    [DataMember(Name = "defaultAnswersToNA", EmitDefaultValue = false)]
+    [JsonPropertyName("defaultAnswersToNA")]
     public bool? DefaultAnswersToNA { get; set; }
 
 
@@ -92,7 +91,7 @@ public partial class AssessmentFormQuestionGroup : IEquatable<AssessmentFormQues
     /// <summary>
     /// Gets or Sets NaEnabled
     /// </summary>
-    [DataMember(Name = "naEnabled", EmitDefaultValue = false)]
+    [JsonPropertyName("naEnabled")]
     public bool? NaEnabled { get; set; }
 
 
@@ -100,7 +99,7 @@ public partial class AssessmentFormQuestionGroup : IEquatable<AssessmentFormQues
     /// <summary>
     /// Gets or Sets Weight
     /// </summary>
-    [DataMember(Name = "weight", EmitDefaultValue = false)]
+    [JsonPropertyName("weight")]
     public float? Weight { get; set; }
 
 
@@ -108,7 +107,7 @@ public partial class AssessmentFormQuestionGroup : IEquatable<AssessmentFormQues
     /// <summary>
     /// Gets or Sets ManualWeight
     /// </summary>
-    [DataMember(Name = "manualWeight", EmitDefaultValue = false)]
+    [JsonPropertyName("manualWeight")]
     public bool? ManualWeight { get; set; }
 
 
@@ -117,7 +116,7 @@ public partial class AssessmentFormQuestionGroup : IEquatable<AssessmentFormQues
     /// The list of questions for this question group
     /// </summary>
     /// <value>The list of questions for this question group</value>
-    [DataMember(Name = "questions", EmitDefaultValue = false)]
+    [JsonPropertyName("questions")]
     public List<AssessmentFormQuestion> Questions { get; set; }
 
 
@@ -125,7 +124,7 @@ public partial class AssessmentFormQuestionGroup : IEquatable<AssessmentFormQues
     /// <summary>
     /// Gets or Sets VisibilityCondition
     /// </summary>
-    [DataMember(Name = "visibilityCondition", EmitDefaultValue = false)]
+    [JsonPropertyName("visibilityCondition")]
     public VisibilityCondition VisibilityCondition { get; set; }
 
 
@@ -134,7 +133,7 @@ public partial class AssessmentFormQuestionGroup : IEquatable<AssessmentFormQues
     /// The URI for this object
     /// </summary>
     /// <value>The URI for this object</value>
-    [DataMember(Name = "selfUri", EmitDefaultValue = false)]
+    [JsonPropertyName("selfUri")]
     public string SelfUri { get; private set; }
 
 

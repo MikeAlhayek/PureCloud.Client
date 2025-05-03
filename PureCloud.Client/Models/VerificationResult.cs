@@ -7,14 +7,14 @@ namespace PureCloud.Client.Models;
 /// <summary>
 /// VerificationResult
 /// </summary>
-[DataContract]
+
 public partial class VerificationResult : IEquatable<VerificationResult>
 {
     /// <summary>
     /// The verification status.
     /// </summary>
     /// <value>The verification status.</value>
-    [JsonConverter(typeof(JsonStringEnumConverter))]
+    
     public enum StatusEnum
     {
         /// <summary>
@@ -53,7 +53,7 @@ public partial class VerificationResult : IEquatable<VerificationResult>
     /// The verification status.
     /// </summary>
     /// <value>The verification status.</value>
-    [DataMember(Name = "status", EmitDefaultValue = false)]
+    [JsonPropertyName("status")]
     public StatusEnum? Status { get; set; }
     /// <summary>
     /// Initializes a new instance of the <see cref="VerificationResult" /> class.
@@ -75,7 +75,7 @@ public partial class VerificationResult : IEquatable<VerificationResult>
     /// The list of DNS records that pertain that need to exist for verification.
     /// </summary>
     /// <value>The list of DNS records that pertain that need to exist for verification.</value>
-    [DataMember(Name = "records", EmitDefaultValue = false)]
+    [JsonPropertyName("records")]
     public List<Record> Records { get; set; }
 
 

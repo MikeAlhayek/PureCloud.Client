@@ -7,14 +7,14 @@ namespace PureCloud.Client.Models;
 /// <summary>
 /// Display attributes for the chart, such as type, labels and legends
 /// </summary>
-[DataContract]
+
 public partial class JourneyViewChartDisplayAttributes : IEquatable<JourneyViewChartDisplayAttributes>
 {
     /// <summary>
     /// The type of chart to display
     /// </summary>
     /// <value>The type of chart to display</value>
-    [JsonConverter(typeof(JsonStringEnumConverter))]
+    
     public enum TypeEnum
     {
         /// <summary>
@@ -47,7 +47,7 @@ public partial class JourneyViewChartDisplayAttributes : IEquatable<JourneyViewC
     /// The type of chart to display
     /// </summary>
     /// <value>The type of chart to display</value>
-    [DataMember(Name = "type", EmitDefaultValue = false)]
+    [JsonPropertyName("type")]
     public TypeEnum? Type { get; set; }
     /// <summary>
     /// Initializes a new instance of the <see cref="JourneyViewChartDisplayAttributes" /> class.
@@ -73,7 +73,7 @@ public partial class JourneyViewChartDisplayAttributes : IEquatable<JourneyViewC
     /// A title for the grouped by attributes (aka the x axis)
     /// </summary>
     /// <value>A title for the grouped by attributes (aka the x axis)</value>
-    [DataMember(Name = "groupByTitle", EmitDefaultValue = false)]
+    [JsonPropertyName("groupByTitle")]
     public string GroupByTitle { get; set; }
 
 
@@ -82,7 +82,7 @@ public partial class JourneyViewChartDisplayAttributes : IEquatable<JourneyViewC
     /// A title for the metrics (aka the y axis)
     /// </summary>
     /// <value>A title for the metrics (aka the y axis)</value>
-    [DataMember(Name = "metricsTitle", EmitDefaultValue = false)]
+    [JsonPropertyName("metricsTitle")]
     public string MetricsTitle { get; set; }
 
 
@@ -91,7 +91,7 @@ public partial class JourneyViewChartDisplayAttributes : IEquatable<JourneyViewC
     /// Whether to show a legend
     /// </summary>
     /// <value>Whether to show a legend</value>
-    [DataMember(Name = "showLegend", EmitDefaultValue = false)]
+    [JsonPropertyName("showLegend")]
     public bool? ShowLegend { get; set; }
 
 

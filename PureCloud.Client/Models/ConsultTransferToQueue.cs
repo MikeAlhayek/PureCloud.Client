@@ -7,14 +7,14 @@ namespace PureCloud.Client.Models;
 /// <summary>
 /// ConsultTransferToQueue
 /// </summary>
-[DataContract]
+
 public partial class ConsultTransferToQueue : IEquatable<ConsultTransferToQueue>
 {
     /// <summary>
     /// Determines to whom the initiating participant is requesting to speak. Defaults to DESTINATION
     /// </summary>
     /// <value>Determines to whom the initiating participant is requesting to speak. Defaults to DESTINATION</value>
-    [JsonConverter(typeof(JsonStringEnumConverter))]
+    
     public enum SpeakToEnum
     {
         /// <summary>
@@ -53,7 +53,7 @@ public partial class ConsultTransferToQueue : IEquatable<ConsultTransferToQueue>
     /// Determines to whom the initiating participant is requesting to speak. Defaults to DESTINATION
     /// </summary>
     /// <value>Determines to whom the initiating participant is requesting to speak. Defaults to DESTINATION</value>
-    [DataMember(Name = "speakTo", EmitDefaultValue = false)]
+    [JsonPropertyName("speakTo")]
     public SpeakToEnum? SpeakTo { get; set; }
 
     /// <summary>
@@ -85,7 +85,7 @@ public partial class ConsultTransferToQueue : IEquatable<ConsultTransferToQueue>
     /// The user ID of the person who wants to talk before completing the transfer. Could be the same of the context user ID
     /// </summary>
     /// <value>The user ID of the person who wants to talk before completing the transfer. Could be the same of the context user ID</value>
-    [DataMember(Name = "consultingUserId", EmitDefaultValue = false)]
+    [JsonPropertyName("consultingUserId")]
     public string ConsultingUserId { get; set; }
 
 
@@ -94,7 +94,7 @@ public partial class ConsultTransferToQueue : IEquatable<ConsultTransferToQueue>
     /// The id of the queue.
     /// </summary>
     /// <value>The id of the queue.</value>
-    [DataMember(Name = "queueId", EmitDefaultValue = false)]
+    [JsonPropertyName("queueId")]
     public string QueueId { get; set; }
 
 
@@ -103,7 +103,7 @@ public partial class ConsultTransferToQueue : IEquatable<ConsultTransferToQueue>
     /// The name of the queue.
     /// </summary>
     /// <value>The name of the queue.</value>
-    [DataMember(Name = "queueName", EmitDefaultValue = false)]
+    [JsonPropertyName("queueName")]
     public string QueueName { get; set; }
 
 

@@ -1,4 +1,3 @@
-using System.Runtime.Serialization;
 using System.Text;
 using System.Text.Json.Serialization;
 
@@ -7,7 +6,7 @@ namespace PureCloud.Client.Models;
 /// <summary>
 /// Used to copy a VoicemailMessage to either a User or a Group
 /// </summary>
-[DataContract]
+
 public partial class CopyVoicemailMessage : IEquatable<CopyVoicemailMessage>
 {
 
@@ -36,7 +35,7 @@ public partial class CopyVoicemailMessage : IEquatable<CopyVoicemailMessage>
     /// The id of the VoicemailMessage to copy
     /// </summary>
     /// <value>The id of the VoicemailMessage to copy</value>
-    [DataMember(Name = "voicemailMessageId", EmitDefaultValue = false)]
+    [JsonPropertyName("voicemailMessageId")]
     public string VoicemailMessageId { get; set; }
 
 
@@ -45,7 +44,7 @@ public partial class CopyVoicemailMessage : IEquatable<CopyVoicemailMessage>
     /// The id of the User to copy the VoicemailMessage to
     /// </summary>
     /// <value>The id of the User to copy the VoicemailMessage to</value>
-    [DataMember(Name = "userId", EmitDefaultValue = false)]
+    [JsonPropertyName("userId")]
     public string UserId { get; set; }
 
 
@@ -54,7 +53,7 @@ public partial class CopyVoicemailMessage : IEquatable<CopyVoicemailMessage>
     /// The id of the Group to copy the VoicemailMessage to
     /// </summary>
     /// <value>The id of the Group to copy the VoicemailMessage to</value>
-    [DataMember(Name = "groupId", EmitDefaultValue = false)]
+    [JsonPropertyName("groupId")]
     public string GroupId { get; set; }
 
 

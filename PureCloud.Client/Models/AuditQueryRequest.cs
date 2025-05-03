@@ -1,4 +1,3 @@
-using System.Runtime.Serialization;
 using System.Text;
 using System.Text.Json.Serialization;
 
@@ -7,7 +6,7 @@ namespace PureCloud.Client.Models;
 /// <summary>
 /// AuditQueryRequest
 /// </summary>
-[DataContract]
+
 public partial class AuditQueryRequest : IEquatable<AuditQueryRequest>
 {
 
@@ -38,7 +37,7 @@ public partial class AuditQueryRequest : IEquatable<AuditQueryRequest>
     /// Date and time range of data to query. Intervals are represented as an ISO-8601 string. For example: YYYY-MM-DDThh:mm:ssZ/YYYY-MM-DDThh:mm:ssZ
     /// </summary>
     /// <value>Date and time range of data to query. Intervals are represented as an ISO-8601 string. For example: YYYY-MM-DDThh:mm:ssZ/YYYY-MM-DDThh:mm:ssZ</value>
-    [DataMember(Name = "interval", EmitDefaultValue = false)]
+    [JsonPropertyName("interval")]
     public string Interval { get; set; }
 
 
@@ -47,7 +46,7 @@ public partial class AuditQueryRequest : IEquatable<AuditQueryRequest>
     /// Name of the service to query audits for.
     /// </summary>
     /// <value>Name of the service to query audits for.</value>
-    [DataMember(Name = "serviceName", EmitDefaultValue = false)]
+    [JsonPropertyName("serviceName")]
     public string ServiceName { get; set; }
 
 
@@ -56,7 +55,7 @@ public partial class AuditQueryRequest : IEquatable<AuditQueryRequest>
     /// Additional filters for the query.
     /// </summary>
     /// <value>Additional filters for the query.</value>
-    [DataMember(Name = "filters", EmitDefaultValue = false)]
+    [JsonPropertyName("filters")]
     public List<AuditQueryFilter> Filters { get; set; }
 
 
@@ -65,7 +64,7 @@ public partial class AuditQueryRequest : IEquatable<AuditQueryRequest>
     /// Sort parameter for the query.
     /// </summary>
     /// <value>Sort parameter for the query.</value>
-    [DataMember(Name = "sort", EmitDefaultValue = false)]
+    [JsonPropertyName("sort")]
     public List<AuditQuerySort> Sort { get; set; }
 
 

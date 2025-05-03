@@ -1,4 +1,3 @@
-using System.Runtime.Serialization;
 using System.Text;
 using System.Text.Json.Serialization;
 
@@ -7,7 +6,7 @@ namespace PureCloud.Client.Models;
 /// <summary>
 /// WfmVersionedEntityMetadata
 /// </summary>
-[DataContract]
+
 public partial class WfmVersionedEntityMetadata : IEquatable<WfmVersionedEntityMetadata>
 {
 
@@ -32,7 +31,7 @@ public partial class WfmVersionedEntityMetadata : IEquatable<WfmVersionedEntityM
     /// The version of the associated entity.  Used to prevent conflicts on concurrent edits
     /// </summary>
     /// <value>The version of the associated entity.  Used to prevent conflicts on concurrent edits</value>
-    [DataMember(Name = "version", EmitDefaultValue = false)]
+    [JsonPropertyName("version")]
     public int? Version { get; set; }
 
 
@@ -41,7 +40,7 @@ public partial class WfmVersionedEntityMetadata : IEquatable<WfmVersionedEntityM
     /// The user who last modified the associated entity. The id may be &#39;System&#39; if it was an automated process
     /// </summary>
     /// <value>The user who last modified the associated entity. The id may be &#39;System&#39; if it was an automated process</value>
-    [DataMember(Name = "modifiedBy", EmitDefaultValue = false)]
+    [JsonPropertyName("modifiedBy")]
     public UserReference ModifiedBy { get; private set; }
 
 
@@ -50,7 +49,7 @@ public partial class WfmVersionedEntityMetadata : IEquatable<WfmVersionedEntityM
     /// The date the associated entity was last modified. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z
     /// </summary>
     /// <value>The date the associated entity was last modified. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z</value>
-    [DataMember(Name = "dateModified", EmitDefaultValue = false)]
+    [JsonPropertyName("dateModified")]
     public DateTime? DateModified { get; private set; }
 
 
@@ -59,7 +58,7 @@ public partial class WfmVersionedEntityMetadata : IEquatable<WfmVersionedEntityM
     /// The user who created the associated entity, if available. The id may be &#39;System&#39; if it was an automated process
     /// </summary>
     /// <value>The user who created the associated entity, if available. The id may be &#39;System&#39; if it was an automated process</value>
-    [DataMember(Name = "createdBy", EmitDefaultValue = false)]
+    [JsonPropertyName("createdBy")]
     public UserReference CreatedBy { get; private set; }
 
 
@@ -68,7 +67,7 @@ public partial class WfmVersionedEntityMetadata : IEquatable<WfmVersionedEntityM
     /// The date the associated entity was created, if available. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z
     /// </summary>
     /// <value>The date the associated entity was created, if available. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z</value>
-    [DataMember(Name = "dateCreated", EmitDefaultValue = false)]
+    [JsonPropertyName("dateCreated")]
     public DateTime? DateCreated { get; private set; }
 
 

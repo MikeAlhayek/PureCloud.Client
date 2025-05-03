@@ -7,14 +7,14 @@ namespace PureCloud.Client.Models;
 /// <summary>
 /// Message content element.
 /// </summary>
-[DataContract]
+
 public partial class WebMessagingContent : IEquatable<WebMessagingContent>
 {
     /// <summary>
     /// Type of this content element. If contentType = \"Attachment\" only one item is allowed.
     /// </summary>
     /// <value>Type of this content element. If contentType = \"Attachment\" only one item is allowed.</value>
-    [JsonConverter(typeof(JsonStringEnumConverter))]
+    
     public enum ContentTypeEnum
     {
         /// <summary>
@@ -65,7 +65,7 @@ public partial class WebMessagingContent : IEquatable<WebMessagingContent>
     /// Type of this content element. If contentType = \"Attachment\" only one item is allowed.
     /// </summary>
     /// <value>Type of this content element. If contentType = \"Attachment\" only one item is allowed.</value>
-    [DataMember(Name = "contentType", EmitDefaultValue = false)]
+    [JsonPropertyName("contentType")]
     public ContentTypeEnum? ContentType { get; private set; }
     /// <summary>
     /// Initializes a new instance of the <see cref="WebMessagingContent" /> class.
@@ -93,7 +93,7 @@ public partial class WebMessagingContent : IEquatable<WebMessagingContent>
     /// Attachment content.
     /// </summary>
     /// <value>Attachment content.</value>
-    [DataMember(Name = "attachment", EmitDefaultValue = false)]
+    [JsonPropertyName("attachment")]
     public WebMessagingAttachment Attachment { get; private set; }
 
 
@@ -102,7 +102,7 @@ public partial class WebMessagingContent : IEquatable<WebMessagingContent>
     /// Quick reply content.
     /// </summary>
     /// <value>Quick reply content.</value>
-    [DataMember(Name = "quickReply", EmitDefaultValue = false)]
+    [JsonPropertyName("quickReply")]
     public WebMessagingQuickReply QuickReply { get; set; }
 
 
@@ -111,7 +111,7 @@ public partial class WebMessagingContent : IEquatable<WebMessagingContent>
     /// Button response content.
     /// </summary>
     /// <value>Button response content.</value>
-    [DataMember(Name = "buttonResponse", EmitDefaultValue = false)]
+    [JsonPropertyName("buttonResponse")]
     public WebMessagingButtonResponse ButtonResponse { get; set; }
 
 
@@ -120,7 +120,7 @@ public partial class WebMessagingContent : IEquatable<WebMessagingContent>
     /// Generic content (Deprecated).
     /// </summary>
     /// <value>Generic content (Deprecated).</value>
-    [DataMember(Name = "generic", EmitDefaultValue = false)]
+    [JsonPropertyName("generic")]
     public WebMessagingGeneric Generic { get; set; }
 
 
@@ -129,7 +129,7 @@ public partial class WebMessagingContent : IEquatable<WebMessagingContent>
     /// Card content
     /// </summary>
     /// <value>Card content</value>
-    [DataMember(Name = "card", EmitDefaultValue = false)]
+    [JsonPropertyName("card")]
     public ContentCard Card { get; set; }
 
 
@@ -138,7 +138,7 @@ public partial class WebMessagingContent : IEquatable<WebMessagingContent>
     /// Carousel content
     /// </summary>
     /// <value>Carousel content</value>
-    [DataMember(Name = "carousel", EmitDefaultValue = false)]
+    [JsonPropertyName("carousel")]
     public ContentCarousel Carousel { get; set; }
 
 

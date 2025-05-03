@@ -7,14 +7,14 @@ namespace PureCloud.Client.Models;
 /// <summary>
 /// AlertSummaryEntity
 /// </summary>
-[DataContract]
+
 public partial class AlertSummaryEntity : IEquatable<AlertSummaryEntity>
 {
     /// <summary>
     /// Specifies the type of entity being evaluated
     /// </summary>
     /// <value>Specifies the type of entity being evaluated</value>
-    [JsonConverter(typeof(JsonStringEnumConverter))]
+    
     public enum EntityTypeEnum
     {
         /// <summary>
@@ -59,7 +59,7 @@ public partial class AlertSummaryEntity : IEquatable<AlertSummaryEntity>
     /// Specifies the type of entity being evaluated
     /// </summary>
     /// <value>Specifies the type of entity being evaluated</value>
-    [DataMember(Name = "entityType", EmitDefaultValue = false)]
+    [JsonPropertyName("entityType")]
     public EntityTypeEnum? EntityType { get; set; }
 
     /// <summary>
@@ -95,7 +95,7 @@ public partial class AlertSummaryEntity : IEquatable<AlertSummaryEntity>
     /// User id of the entity being monitored
     /// </summary>
     /// <value>User id of the entity being monitored</value>
-    [DataMember(Name = "user", EmitDefaultValue = false)]
+    [JsonPropertyName("user")]
     public AddressableEntityRef User { get; set; }
 
 
@@ -104,7 +104,7 @@ public partial class AlertSummaryEntity : IEquatable<AlertSummaryEntity>
     /// Group id of the entity being monitored
     /// </summary>
     /// <value>Group id of the entity being monitored</value>
-    [DataMember(Name = "group", EmitDefaultValue = false)]
+    [JsonPropertyName("group")]
     public AddressableEntityRef Group { get; set; }
 
 
@@ -113,7 +113,7 @@ public partial class AlertSummaryEntity : IEquatable<AlertSummaryEntity>
     /// Queue id of the entity being monitored
     /// </summary>
     /// <value>Queue id of the entity being monitored</value>
-    [DataMember(Name = "queue", EmitDefaultValue = false)]
+    [JsonPropertyName("queue")]
     public AddressableEntityRef Queue { get; set; }
 
 
@@ -122,7 +122,7 @@ public partial class AlertSummaryEntity : IEquatable<AlertSummaryEntity>
     /// Team id of the entity being monitored
     /// </summary>
     /// <value>Team id of the entity being monitored</value>
-    [DataMember(Name = "team", EmitDefaultValue = false)]
+    [JsonPropertyName("team")]
     public AddressableEntityRef Team { get; set; }
 
 
@@ -131,7 +131,7 @@ public partial class AlertSummaryEntity : IEquatable<AlertSummaryEntity>
     /// Flag that indicated if the entity is current causing the alert to be triggered
     /// </summary>
     /// <value>Flag that indicated if the entity is current causing the alert to be triggered</value>
-    [DataMember(Name = "alerting", EmitDefaultValue = false)]
+    [JsonPropertyName("alerting")]
     public bool? Alerting { get; set; }
 
 

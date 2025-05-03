@@ -1,12 +1,12 @@
-using System.Runtime.Serialization;
 using System.Text;
+using System.Text.Json.Serialization;
 
 namespace PureCloud.Client.Models;
 
 /// <summary>
 /// DataAvailabilityResponse
 /// </summary>
-[DataContract]
+
 public partial class DataAvailabilityResponse : IEquatable<DataAvailabilityResponse>
 {
     /// <summary>
@@ -25,7 +25,7 @@ public partial class DataAvailabilityResponse : IEquatable<DataAvailabilityRespo
     /// Date and time before which data is guaranteed to be available in the datalake. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z
     /// </summary>
     /// <value>Date and time before which data is guaranteed to be available in the datalake. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z</value>
-    [DataMember(Name = "dataAvailabilityDate", EmitDefaultValue = false)]
+    [JsonPropertyName("dataAvailabilityDate")]
     public DateTime? DataAvailabilityDate { get; set; }
 
 

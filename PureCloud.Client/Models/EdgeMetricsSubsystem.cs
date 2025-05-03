@@ -1,12 +1,12 @@
-using System.Runtime.Serialization;
 using System.Text;
+using System.Text.Json.Serialization;
 
 namespace PureCloud.Client.Models;
 
 /// <summary>
 /// EdgeMetricsSubsystem
 /// </summary>
-[DataContract]
+
 public partial class EdgeMetricsSubsystem : IEquatable<EdgeMetricsSubsystem>
 {
     /// <summary>
@@ -29,7 +29,7 @@ public partial class EdgeMetricsSubsystem : IEquatable<EdgeMetricsSubsystem>
     /// Delay in milliseconds.
     /// </summary>
     /// <value>Delay in milliseconds.</value>
-    [DataMember(Name = "delayMs", EmitDefaultValue = false)]
+    [JsonPropertyName("delayMs")]
     public int? DelayMs { get; set; }
 
 
@@ -38,7 +38,7 @@ public partial class EdgeMetricsSubsystem : IEquatable<EdgeMetricsSubsystem>
     /// Name of the Edge process.
     /// </summary>
     /// <value>Name of the Edge process.</value>
-    [DataMember(Name = "processName", EmitDefaultValue = false)]
+    [JsonPropertyName("processName")]
     public string ProcessName { get; set; }
 
 
@@ -47,7 +47,7 @@ public partial class EdgeMetricsSubsystem : IEquatable<EdgeMetricsSubsystem>
     /// Subsystem for an Edge device.
     /// </summary>
     /// <value>Subsystem for an Edge device.</value>
-    [DataMember(Name = "mediaSubsystem", EmitDefaultValue = false)]
+    [JsonPropertyName("mediaSubsystem")]
     public EdgeMetricsSubsystem MediaSubsystem { get; set; }
 
 

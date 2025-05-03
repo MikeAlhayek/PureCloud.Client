@@ -7,14 +7,14 @@ namespace PureCloud.Client.Models;
 /// <summary>
 /// SourceLastSync
 /// </summary>
-[DataContract]
+
 public partial class SourceLastSync : IEquatable<SourceLastSync>
 {
     /// <summary>
     /// State of the last synchronization.
     /// </summary>
     /// <value>State of the last synchronization.</value>
-    [JsonConverter(typeof(JsonStringEnumConverter))]
+    
     public enum StateEnum
     {
         /// <summary>
@@ -53,7 +53,7 @@ public partial class SourceLastSync : IEquatable<SourceLastSync>
     /// State of the last synchronization.
     /// </summary>
     /// <value>State of the last synchronization.</value>
-    [DataMember(Name = "state", EmitDefaultValue = false)]
+    [JsonPropertyName("state")]
     public StateEnum? State { get; set; }
     /// <summary>
     /// Initializes a new instance of the <see cref="SourceLastSync" /> class.
@@ -79,7 +79,7 @@ public partial class SourceLastSync : IEquatable<SourceLastSync>
     /// Last synchronization start-time. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z
     /// </summary>
     /// <value>Last synchronization start-time. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z</value>
-    [DataMember(Name = "dateStarted", EmitDefaultValue = false)]
+    [JsonPropertyName("dateStarted")]
     public DateTime? DateStarted { get; set; }
 
 
@@ -88,7 +88,7 @@ public partial class SourceLastSync : IEquatable<SourceLastSync>
     /// Last synchronization end-time. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z
     /// </summary>
     /// <value>Last synchronization end-time. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z</value>
-    [DataMember(Name = "dateEnded", EmitDefaultValue = false)]
+    [JsonPropertyName("dateEnded")]
     public DateTime? DateEnded { get; set; }
 
 
@@ -97,7 +97,7 @@ public partial class SourceLastSync : IEquatable<SourceLastSync>
     /// Optional error message of the last synchronization.
     /// </summary>
     /// <value>Optional error message of the last synchronization.</value>
-    [DataMember(Name = "error", EmitDefaultValue = false)]
+    [JsonPropertyName("error")]
     public ErrorBody Error { get; set; }
 
 

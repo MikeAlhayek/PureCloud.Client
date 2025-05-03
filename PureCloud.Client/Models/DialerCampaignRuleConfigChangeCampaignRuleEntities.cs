@@ -1,12 +1,12 @@
-using System.Runtime.Serialization;
 using System.Text;
+using System.Text.Json.Serialization;
 
 namespace PureCloud.Client.Models;
 
 /// <summary>
 /// DialerCampaignRuleConfigChangeCampaignRuleEntities
 /// </summary>
-[DataContract]
+
 public partial class DialerCampaignRuleConfigChangeCampaignRuleEntities : IEquatable<DialerCampaignRuleConfigChangeCampaignRuleEntities>
 {
     /// <summary>
@@ -27,7 +27,7 @@ public partial class DialerCampaignRuleConfigChangeCampaignRuleEntities : IEquat
     /// A list of campaignIds to act on
     /// </summary>
     /// <value>A list of campaignIds to act on</value>
-    [DataMember(Name = "campaigns", EmitDefaultValue = false)]
+    [JsonPropertyName("campaigns")]
     public List<DialerCampaignRuleConfigChangeUriReference> Campaigns { get; set; }
 
 
@@ -36,7 +36,7 @@ public partial class DialerCampaignRuleConfigChangeCampaignRuleEntities : IEquat
     /// A list of sequenceIds to act on
     /// </summary>
     /// <value>A list of sequenceIds to act on</value>
-    [DataMember(Name = "sequences", EmitDefaultValue = false)]
+    [JsonPropertyName("sequences")]
     public List<DialerCampaignRuleConfigChangeUriReference> Sequences { get; set; }
 
 

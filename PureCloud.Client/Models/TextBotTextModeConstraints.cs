@@ -1,4 +1,3 @@
-using System.Runtime.Serialization;
 using System.Text;
 using System.Text.Json.Serialization;
 
@@ -7,7 +6,7 @@ namespace PureCloud.Client.Models;
 /// <summary>
 /// Mode constraints to observe when operating on a bot flow.
 /// </summary>
-[DataContract]
+
 public partial class TextBotTextModeConstraints : IEquatable<TextBotTextModeConstraints>
 {
 
@@ -34,7 +33,7 @@ public partial class TextBotTextModeConstraints : IEquatable<TextBotTextModeCons
     /// The list of language preferences by their ISO language code.
     /// </summary>
     /// <value>The list of language preferences by their ISO language code.</value>
-    [DataMember(Name = "languagePreferences", EmitDefaultValue = false)]
+    [JsonPropertyName("languagePreferences")]
     public List<string> LanguagePreferences { get; set; }
 
 
@@ -43,7 +42,7 @@ public partial class TextBotTextModeConstraints : IEquatable<TextBotTextModeCons
     /// The amount of time, in milliseconds, before the client should send the &#39;NoInput&#39; event  to trigger the \&quot;no input\&quot; bot response and handling on digital channels.  Note: This optional field will only be returned for &#39;Digital Bot Flow&#39; turns.
     /// </summary>
     /// <value>The amount of time, in milliseconds, before the client should send the &#39;NoInput&#39; event  to trigger the \&quot;no input\&quot; bot response and handling on digital channels.  Note: This optional field will only be returned for &#39;Digital Bot Flow&#39; turns.</value>
-    [DataMember(Name = "noInputTimeoutMilliseconds", EmitDefaultValue = false)]
+    [JsonPropertyName("noInputTimeoutMilliseconds")]
     public int? NoInputTimeoutMilliseconds { get; set; }
 
 

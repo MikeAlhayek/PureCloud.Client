@@ -1,12 +1,12 @@
-using System.Runtime.Serialization;
 using System.Text;
+using System.Text.Json.Serialization;
 
 namespace PureCloud.Client.Models;
 
 /// <summary>
 /// ReverseWhitepagesLookupResult
 /// </summary>
-[DataContract]
+
 public partial class ReverseWhitepagesLookupResult : IEquatable<ReverseWhitepagesLookupResult>
 {
     /// <summary>
@@ -26,7 +26,7 @@ public partial class ReverseWhitepagesLookupResult : IEquatable<ReverseWhitepage
     /// <summary>
     /// Gets or Sets Contacts
     /// </summary>
-    [DataMember(Name = "contacts", EmitDefaultValue = false)]
+    [JsonPropertyName("contacts")]
     public List<ExternalContact> Contacts { get; set; }
 
 
@@ -34,7 +34,7 @@ public partial class ReverseWhitepagesLookupResult : IEquatable<ReverseWhitepage
     /// <summary>
     /// Gets or Sets ExternalOrganizations
     /// </summary>
-    [DataMember(Name = "externalOrganizations", EmitDefaultValue = false)]
+    [JsonPropertyName("externalOrganizations")]
     public List<ExternalOrganization> ExternalOrganizations { get; set; }
 
 

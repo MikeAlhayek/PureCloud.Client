@@ -1,12 +1,12 @@
-using System.Runtime.Serialization;
 using System.Text;
+using System.Text.Json.Serialization;
 
 namespace PureCloud.Client.Models;
 
 /// <summary>
 /// ExternalOrganizationIdentifierListing
 /// </summary>
-[DataContract]
+
 public partial class ExternalOrganizationIdentifierListing : IEquatable<ExternalOrganizationIdentifierListing>
 {
     /// <summary>
@@ -24,7 +24,7 @@ public partial class ExternalOrganizationIdentifierListing : IEquatable<External
     /// <summary>
     /// Gets or Sets Entities
     /// </summary>
-    [DataMember(Name = "entities", EmitDefaultValue = false)]
+    [JsonPropertyName("entities")]
     public List<ExternalOrganizationIdentifier> Entities { get; set; }
 
 

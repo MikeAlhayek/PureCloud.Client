@@ -7,14 +7,14 @@ namespace PureCloud.Client.Models;
 /// <summary>
 /// KnowledgeDocumentContentUpload
 /// </summary>
-[DataContract]
+
 public partial class KnowledgeDocumentContentUpload : IEquatable<KnowledgeDocumentContentUpload>
 {
     /// <summary>
     /// Type of Article Content.
     /// </summary>
     /// <value>Type of Article Content.</value>
-    [JsonConverter(typeof(JsonStringEnumConverter))]
+    
     public enum ContentTypeEnum
     {
         /// <summary>
@@ -41,7 +41,7 @@ public partial class KnowledgeDocumentContentUpload : IEquatable<KnowledgeDocume
     /// Status of the upload operation
     /// </summary>
     /// <value>Status of the upload operation</value>
-    [JsonConverter(typeof(JsonStringEnumConverter))]
+    
     public enum StatusEnum
     {
         /// <summary>
@@ -74,13 +74,13 @@ public partial class KnowledgeDocumentContentUpload : IEquatable<KnowledgeDocume
     /// Type of Article Content.
     /// </summary>
     /// <value>Type of Article Content.</value>
-    [DataMember(Name = "contentType", EmitDefaultValue = false)]
+    [JsonPropertyName("contentType")]
     public ContentTypeEnum? ContentType { get; set; }
     /// <summary>
     /// Status of the upload operation
     /// </summary>
     /// <value>Status of the upload operation</value>
-    [DataMember(Name = "status", EmitDefaultValue = false)]
+    [JsonPropertyName("status")]
     public StatusEnum? Status { get; private set; }
 
     /// <summary>
@@ -106,7 +106,7 @@ public partial class KnowledgeDocumentContentUpload : IEquatable<KnowledgeDocume
     /// The globally unique identifier for the object.
     /// </summary>
     /// <value>The globally unique identifier for the object.</value>
-    [DataMember(Name = "id", EmitDefaultValue = false)]
+    [JsonPropertyName("id")]
     public string Id { get; private set; }
 
 
@@ -117,7 +117,7 @@ public partial class KnowledgeDocumentContentUpload : IEquatable<KnowledgeDocume
     /// Name of the file to upload. It must not start with a dot and not end with a forward slash. Whitespace and the following characters are not allowed: \\{^}%&#x60;]\&quot;&gt;[~&lt;#|
     /// </summary>
     /// <value>Name of the file to upload. It must not start with a dot and not end with a forward slash. Whitespace and the following characters are not allowed: \\{^}%&#x60;]\&quot;&gt;[~&lt;#|</value>
-    [DataMember(Name = "fileName", EmitDefaultValue = false)]
+    [JsonPropertyName("fileName")]
     public string FileName { get; set; }
 
 
@@ -128,7 +128,7 @@ public partial class KnowledgeDocumentContentUpload : IEquatable<KnowledgeDocume
     /// Key that identifies the file in the storage including the file name
     /// </summary>
     /// <value>Key that identifies the file in the storage including the file name</value>
-    [DataMember(Name = "uploadKey", EmitDefaultValue = false)]
+    [JsonPropertyName("uploadKey")]
     public string UploadKey { get; private set; }
 
 
@@ -137,7 +137,7 @@ public partial class KnowledgeDocumentContentUpload : IEquatable<KnowledgeDocume
     /// Presigned URL to PUT the file to
     /// </summary>
     /// <value>Presigned URL to PUT the file to</value>
-    [DataMember(Name = "url", EmitDefaultValue = false)]
+    [JsonPropertyName("url")]
     public string Url { get; private set; }
 
 
@@ -146,7 +146,7 @@ public partial class KnowledgeDocumentContentUpload : IEquatable<KnowledgeDocume
     /// Required headers when uploading a file through PUT request to the URL
     /// </summary>
     /// <value>Required headers when uploading a file through PUT request to the URL</value>
-    [DataMember(Name = "headers", EmitDefaultValue = false)]
+    [JsonPropertyName("headers")]
     public Dictionary<string, string> Headers { get; private set; }
 
 
@@ -155,7 +155,7 @@ public partial class KnowledgeDocumentContentUpload : IEquatable<KnowledgeDocume
     /// ID of the document for which article content is to be uploaded
     /// </summary>
     /// <value>ID of the document for which article content is to be uploaded</value>
-    [DataMember(Name = "document", EmitDefaultValue = false)]
+    [JsonPropertyName("document")]
     public AddressableEntityRef Document { get; private set; }
 
 
@@ -164,7 +164,7 @@ public partial class KnowledgeDocumentContentUpload : IEquatable<KnowledgeDocume
     /// Error message when upload fails
     /// </summary>
     /// <value>Error message when upload fails</value>
-    [DataMember(Name = "errorMessage", EmitDefaultValue = false)]
+    [JsonPropertyName("errorMessage")]
     public string ErrorMessage { get; private set; }
 
 
@@ -173,7 +173,7 @@ public partial class KnowledgeDocumentContentUpload : IEquatable<KnowledgeDocume
     /// The URI for this object
     /// </summary>
     /// <value>The URI for this object</value>
-    [DataMember(Name = "selfUri", EmitDefaultValue = false)]
+    [JsonPropertyName("selfUri")]
     public string SelfUri { get; private set; }
 
 

@@ -1,12 +1,12 @@
-using System.Runtime.Serialization;
 using System.Text;
+using System.Text.Json.Serialization;
 
 namespace PureCloud.Client.Models;
 
 /// <summary>
 /// InstagramIntegrationUpdateRequest
 /// </summary>
-[DataContract]
+
 public partial class InstagramIntegrationUpdateRequest : IEquatable<InstagramIntegrationUpdateRequest>
 {
     /// <summary>
@@ -33,7 +33,7 @@ public partial class InstagramIntegrationUpdateRequest : IEquatable<InstagramInt
     /// The globally unique identifier for the object.
     /// </summary>
     /// <value>The globally unique identifier for the object.</value>
-    [DataMember(Name = "id", EmitDefaultValue = false)]
+    [JsonPropertyName("id")]
     public string Id { get; private set; }
 
 
@@ -42,7 +42,7 @@ public partial class InstagramIntegrationUpdateRequest : IEquatable<InstagramInt
     /// The name of the Instagram Integration
     /// </summary>
     /// <value>The name of the Instagram Integration</value>
-    [DataMember(Name = "name", EmitDefaultValue = false)]
+    [JsonPropertyName("name")]
     public string Name { get; set; }
 
 
@@ -51,7 +51,7 @@ public partial class InstagramIntegrationUpdateRequest : IEquatable<InstagramInt
     /// Defines the SupportedContent profile configured for an integration
     /// </summary>
     /// <value>Defines the SupportedContent profile configured for an integration</value>
-    [DataMember(Name = "supportedContent", EmitDefaultValue = false)]
+    [JsonPropertyName("supportedContent")]
     public SupportedContentReference SupportedContent { get; set; }
 
 
@@ -60,7 +60,7 @@ public partial class InstagramIntegrationUpdateRequest : IEquatable<InstagramInt
     /// Defines the message settings to be applied for this integration
     /// </summary>
     /// <value>Defines the message settings to be applied for this integration</value>
-    [DataMember(Name = "messagingSetting", EmitDefaultValue = false)]
+    [JsonPropertyName("messagingSetting")]
     public MessagingSettingRequestReference MessagingSetting { get; set; }
 
 
@@ -69,7 +69,7 @@ public partial class InstagramIntegrationUpdateRequest : IEquatable<InstagramInt
     /// The long-lived Page Access Token of Instagram page.  See https://developers.facebook.com/docs/facebook-login/access-tokens.  Either pageAccessToken or userAccessToken should be provided.
     /// </summary>
     /// <value>The long-lived Page Access Token of Instagram page.  See https://developers.facebook.com/docs/facebook-login/access-tokens.  Either pageAccessToken or userAccessToken should be provided.</value>
-    [DataMember(Name = "pageAccessToken", EmitDefaultValue = false)]
+    [JsonPropertyName("pageAccessToken")]
     public string PageAccessToken { get; set; }
 
 
@@ -78,7 +78,7 @@ public partial class InstagramIntegrationUpdateRequest : IEquatable<InstagramInt
     /// The short-lived User Access Token of the Instagram user logged into the Facebook app.  See https://developers.facebook.com/docs/facebook-login/access-tokens.  Either pageAccessToken or userAccessToken should be provided.
     /// </summary>
     /// <value>The short-lived User Access Token of the Instagram user logged into the Facebook app.  See https://developers.facebook.com/docs/facebook-login/access-tokens.  Either pageAccessToken or userAccessToken should be provided.</value>
-    [DataMember(Name = "userAccessToken", EmitDefaultValue = false)]
+    [JsonPropertyName("userAccessToken")]
     public string UserAccessToken { get; set; }
 
 
@@ -87,7 +87,7 @@ public partial class InstagramIntegrationUpdateRequest : IEquatable<InstagramInt
     /// The URI for this object
     /// </summary>
     /// <value>The URI for this object</value>
-    [DataMember(Name = "selfUri", EmitDefaultValue = false)]
+    [JsonPropertyName("selfUri")]
     public string SelfUri { get; private set; }
 
 

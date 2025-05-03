@@ -1,4 +1,3 @@
-using System.Runtime.Serialization;
 using System.Text;
 using System.Text.Json.Serialization;
 
@@ -7,7 +6,7 @@ namespace PureCloud.Client.Models;
 /// <summary>
 /// PatchActionSurvey
 /// </summary>
-[DataContract]
+
 public partial class PatchActionSurvey : IEquatable<PatchActionSurvey>
 {
 
@@ -32,7 +31,7 @@ public partial class PatchActionSurvey : IEquatable<PatchActionSurvey>
     /// Questions shown to the user.
     /// </summary>
     /// <value>Questions shown to the user.</value>
-    [DataMember(Name = "questions", EmitDefaultValue = false)]
+    [JsonPropertyName("questions")]
     public List<PatchSurveyQuestion> Questions { get; set; }
 
 

@@ -7,13 +7,13 @@ namespace PureCloud.Client.Models;
 /// <summary>
 /// DialerCampaignScheduleConfigChangeAlteration
 /// </summary>
-[DataContract]
+
 public partial class DialerCampaignScheduleConfigChangeAlteration : IEquatable<DialerCampaignScheduleConfigChangeAlteration>
 {
     /// <summary>
     /// Gets or Sets Type
     /// </summary>
-    [JsonConverter(typeof(JsonStringEnumConverter))]
+    
     public enum TypeEnum
     {
         /// <summary>
@@ -39,7 +39,7 @@ public partial class DialerCampaignScheduleConfigChangeAlteration : IEquatable<D
     /// <summary>
     /// Gets or Sets Type
     /// </summary>
-    [DataMember(Name = "type", EmitDefaultValue = false)]
+    [JsonPropertyName("type")]
     public TypeEnum? Type { get; set; }
     /// <summary>
     /// Initializes a new instance of the <see cref="DialerCampaignScheduleConfigChangeAlteration" /> class.
@@ -65,7 +65,7 @@ public partial class DialerCampaignScheduleConfigChangeAlteration : IEquatable<D
     /// the end date of an alteration range as an ISO-8601 string
     /// </summary>
     /// <value>the end date of an alteration range as an ISO-8601 string</value>
-    [DataMember(Name = "start", EmitDefaultValue = false)]
+    [JsonPropertyName("start")]
     public string Start { get; set; }
 
 
@@ -74,7 +74,7 @@ public partial class DialerCampaignScheduleConfigChangeAlteration : IEquatable<D
     /// the end date of an alteration range as an ISO-8601 string
     /// </summary>
     /// <value>the end date of an alteration range as an ISO-8601 string</value>
-    [DataMember(Name = "end", EmitDefaultValue = false)]
+    [JsonPropertyName("end")]
     public string End { get; set; }
 
 
@@ -82,7 +82,7 @@ public partial class DialerCampaignScheduleConfigChangeAlteration : IEquatable<D
     /// <summary>
     /// Gets or Sets AdditionalProperties
     /// </summary>
-    [DataMember(Name = "additionalProperties", EmitDefaultValue = false)]
+    [JsonPropertyName("additionalProperties")]
     public Dictionary<string, object> AdditionalProperties { get; set; }
 
 

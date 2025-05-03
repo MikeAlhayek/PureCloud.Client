@@ -7,14 +7,14 @@ namespace PureCloud.Client.Models;
 /// <summary>
 /// ResponseAssetStatus
 /// </summary>
-[DataContract]
+
 public partial class ResponseAssetStatus : IEquatable<ResponseAssetStatus>
 {
     /// <summary>
     /// Upload status of the asset
     /// </summary>
     /// <value>Upload status of the asset</value>
-    [JsonConverter(typeof(JsonStringEnumConverter))]
+    
     public enum StatusEnum
     {
         /// <summary>
@@ -47,7 +47,7 @@ public partial class ResponseAssetStatus : IEquatable<ResponseAssetStatus>
     /// Upload status of the asset
     /// </summary>
     /// <value>Upload status of the asset</value>
-    [DataMember(Name = "status", EmitDefaultValue = false)]
+    [JsonPropertyName("status")]
     public StatusEnum? Status { get; private set; }
     /// <summary>
     /// Initializes a new instance of the <see cref="ResponseAssetStatus" /> class.
@@ -63,7 +63,7 @@ public partial class ResponseAssetStatus : IEquatable<ResponseAssetStatus>
     /// The globally unique identifier for the object.
     /// </summary>
     /// <value>The globally unique identifier for the object.</value>
-    [DataMember(Name = "id", EmitDefaultValue = false)]
+    [JsonPropertyName("id")]
     public string Id { get; private set; }
 
 
@@ -74,7 +74,7 @@ public partial class ResponseAssetStatus : IEquatable<ResponseAssetStatus>
     /// Error code. Used for localization
     /// </summary>
     /// <value>Error code. Used for localization</value>
-    [DataMember(Name = "errorCode", EmitDefaultValue = false)]
+    [JsonPropertyName("errorCode")]
     public string ErrorCode { get; private set; }
 
 
@@ -83,7 +83,7 @@ public partial class ResponseAssetStatus : IEquatable<ResponseAssetStatus>
     /// Error message that explains upload failure status 
     /// </summary>
     /// <value>Error message that explains upload failure status </value>
-    [DataMember(Name = "errorMessage", EmitDefaultValue = false)]
+    [JsonPropertyName("errorMessage")]
     public string ErrorMessage { get; private set; }
 
 

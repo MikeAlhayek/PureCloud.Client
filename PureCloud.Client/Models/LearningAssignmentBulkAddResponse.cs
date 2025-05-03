@@ -1,12 +1,12 @@
-using System.Runtime.Serialization;
 using System.Text;
+using System.Text.Json.Serialization;
 
 namespace PureCloud.Client.Models;
 
 /// <summary>
 /// LearningAssignmentBulkAddResponse
 /// </summary>
-[DataContract]
+
 public partial class LearningAssignmentBulkAddResponse : IEquatable<LearningAssignmentBulkAddResponse>
 {
     /// <summary>
@@ -27,7 +27,7 @@ public partial class LearningAssignmentBulkAddResponse : IEquatable<LearningAssi
     /// The learning assignments that were assigned correctly
     /// </summary>
     /// <value>The learning assignments that were assigned correctly</value>
-    [DataMember(Name = "entities", EmitDefaultValue = false)]
+    [JsonPropertyName("entities")]
     public List<LearningAssignment> Entities { get; set; }
 
 
@@ -36,7 +36,7 @@ public partial class LearningAssignmentBulkAddResponse : IEquatable<LearningAssi
     /// The items that were not allowed to be assigned
     /// </summary>
     /// <value>The items that were not allowed to be assigned</value>
-    [DataMember(Name = "disallowedEntities", EmitDefaultValue = false)]
+    [JsonPropertyName("disallowedEntities")]
     public List<DisallowedEntityLearningAssignmentItem> DisallowedEntities { get; set; }
 
 

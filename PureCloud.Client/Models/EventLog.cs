@@ -7,13 +7,13 @@ namespace PureCloud.Client.Models;
 /// <summary>
 /// EventLog
 /// </summary>
-[DataContract]
+
 public partial class EventLog : IEquatable<EventLog>
 {
     /// <summary>
     /// Gets or Sets Level
     /// </summary>
-    [JsonConverter(typeof(JsonStringEnumConverter))]
+    
     public enum LevelEnum
     {
         /// <summary>
@@ -45,7 +45,7 @@ public partial class EventLog : IEquatable<EventLog>
     /// <summary>
     /// Gets or Sets Category
     /// </summary>
-    [JsonConverter(typeof(JsonStringEnumConverter))]
+    
     public enum CategoryEnum
     {
         /// <summary>
@@ -167,12 +167,12 @@ public partial class EventLog : IEquatable<EventLog>
     /// <summary>
     /// Gets or Sets Level
     /// </summary>
-    [DataMember(Name = "level", EmitDefaultValue = false)]
+    [JsonPropertyName("level")]
     public LevelEnum? Level { get; set; }
     /// <summary>
     /// Gets or Sets Category
     /// </summary>
-    [DataMember(Name = "category", EmitDefaultValue = false)]
+    [JsonPropertyName("category")]
     public CategoryEnum? Category { get; set; }
     /// <summary>
     /// Initializes a new instance of the <see cref="EventLog" /> class.
@@ -204,7 +204,7 @@ public partial class EventLog : IEquatable<EventLog>
     /// The globally unique identifier for the object.
     /// </summary>
     /// <value>The globally unique identifier for the object.</value>
-    [DataMember(Name = "id", EmitDefaultValue = false)]
+    [JsonPropertyName("id")]
     public string Id { get; private set; }
 
 
@@ -212,7 +212,7 @@ public partial class EventLog : IEquatable<EventLog>
     /// <summary>
     /// Gets or Sets Name
     /// </summary>
-    [DataMember(Name = "name", EmitDefaultValue = false)]
+    [JsonPropertyName("name")]
     public string Name { get; set; }
 
 
@@ -220,7 +220,7 @@ public partial class EventLog : IEquatable<EventLog>
     /// <summary>
     /// Gets or Sets ErrorEntity
     /// </summary>
-    [DataMember(Name = "errorEntity", EmitDefaultValue = false)]
+    [JsonPropertyName("errorEntity")]
     public DomainEntityRef ErrorEntity { get; set; }
 
 
@@ -228,7 +228,7 @@ public partial class EventLog : IEquatable<EventLog>
     /// <summary>
     /// Gets or Sets RelatedEntity
     /// </summary>
-    [DataMember(Name = "relatedEntity", EmitDefaultValue = false)]
+    [JsonPropertyName("relatedEntity")]
     public DomainEntityRef RelatedEntity { get; set; }
 
 
@@ -237,7 +237,7 @@ public partial class EventLog : IEquatable<EventLog>
     /// Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z
     /// </summary>
     /// <value>Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z</value>
-    [DataMember(Name = "timestamp", EmitDefaultValue = false)]
+    [JsonPropertyName("timestamp")]
     public DateTime? Timestamp { get; set; }
 
 
@@ -249,7 +249,7 @@ public partial class EventLog : IEquatable<EventLog>
     /// <summary>
     /// Gets or Sets CorrelationId
     /// </summary>
-    [DataMember(Name = "correlationId", EmitDefaultValue = false)]
+    [JsonPropertyName("correlationId")]
     public string CorrelationId { get; set; }
 
 
@@ -257,7 +257,7 @@ public partial class EventLog : IEquatable<EventLog>
     /// <summary>
     /// Gets or Sets EventMessage
     /// </summary>
-    [DataMember(Name = "eventMessage", EmitDefaultValue = false)]
+    [JsonPropertyName("eventMessage")]
     public EventMessage EventMessage { get; set; }
 
 
@@ -266,7 +266,7 @@ public partial class EventLog : IEquatable<EventLog>
     /// The URI for this object
     /// </summary>
     /// <value>The URI for this object</value>
-    [DataMember(Name = "selfUri", EmitDefaultValue = false)]
+    [JsonPropertyName("selfUri")]
     public string SelfUri { get; private set; }
 
 

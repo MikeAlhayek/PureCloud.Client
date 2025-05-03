@@ -1,4 +1,3 @@
-using System.Runtime.Serialization;
 using System.Text;
 using System.Text.Json.Serialization;
 
@@ -7,7 +6,7 @@ namespace PureCloud.Client.Models;
 /// <summary>
 /// DocumentBodyVideo
 /// </summary>
-[DataContract]
+
 public partial class DocumentBodyVideo : IEquatable<DocumentBodyVideo>
 {
 
@@ -34,7 +33,7 @@ public partial class DocumentBodyVideo : IEquatable<DocumentBodyVideo>
     /// The URL for the video.
     /// </summary>
     /// <value>The URL for the video.</value>
-    [DataMember(Name = "url", EmitDefaultValue = false)]
+    [JsonPropertyName("url")]
     public string Url { get; set; }
 
 
@@ -43,7 +42,7 @@ public partial class DocumentBodyVideo : IEquatable<DocumentBodyVideo>
     /// The properties for the video.
     /// </summary>
     /// <value>The properties for the video.</value>
-    [DataMember(Name = "properties", EmitDefaultValue = false)]
+    [JsonPropertyName("properties")]
     public DocumentBodyVideoProperties Properties { get; set; }
 
 

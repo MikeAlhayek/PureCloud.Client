@@ -7,14 +7,14 @@ namespace PureCloud.Client.Models;
 /// <summary>
 /// RecordingRetention
 /// </summary>
-[DataContract]
+
 public partial class RecordingRetention : IEquatable<RecordingRetention>
 {
     /// <summary>
     /// The type of archive medium used. Example: CloudArchive
     /// </summary>
     /// <value>The type of archive medium used. Example: CloudArchive</value>
-    [JsonConverter(typeof(JsonStringEnumConverter))]
+    
     public enum ArchiveMediumEnum
     {
         /// <summary>
@@ -35,7 +35,7 @@ public partial class RecordingRetention : IEquatable<RecordingRetention>
     /// The type of archive medium used. Example: CloudArchive
     /// </summary>
     /// <value>The type of archive medium used. Example: CloudArchive</value>
-    [DataMember(Name = "archiveMedium", EmitDefaultValue = false)]
+    [JsonPropertyName("archiveMedium")]
     public ArchiveMediumEnum? ArchiveMedium { get; set; }
     /// <summary>
     /// Initializes a new instance of the <see cref="RecordingRetention" /> class.
@@ -66,7 +66,7 @@ public partial class RecordingRetention : IEquatable<RecordingRetention>
     /// <summary>
     /// Gets or Sets ConversationId
     /// </summary>
-    [DataMember(Name = "conversationId", EmitDefaultValue = false)]
+    [JsonPropertyName("conversationId")]
     public string ConversationId { get; set; }
 
 
@@ -74,7 +74,7 @@ public partial class RecordingRetention : IEquatable<RecordingRetention>
     /// <summary>
     /// Gets or Sets RecordingId
     /// </summary>
-    [DataMember(Name = "recordingId", EmitDefaultValue = false)]
+    [JsonPropertyName("recordingId")]
     public string RecordingId { get; set; }
 
 
@@ -83,7 +83,7 @@ public partial class RecordingRetention : IEquatable<RecordingRetention>
     /// The date the recording will be archived. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z
     /// </summary>
     /// <value>The date the recording will be archived. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z</value>
-    [DataMember(Name = "archiveDate", EmitDefaultValue = false)]
+    [JsonPropertyName("archiveDate")]
     public DateTime? ArchiveDate { get; set; }
 
 
@@ -94,7 +94,7 @@ public partial class RecordingRetention : IEquatable<RecordingRetention>
     /// The date the recording will be deleted. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z
     /// </summary>
     /// <value>The date the recording will be deleted. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z</value>
-    [DataMember(Name = "deleteDate", EmitDefaultValue = false)]
+    [JsonPropertyName("deleteDate")]
     public DateTime? DeleteDate { get; set; }
 
 
@@ -103,7 +103,7 @@ public partial class RecordingRetention : IEquatable<RecordingRetention>
     /// The date the recording will be exported. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z
     /// </summary>
     /// <value>The date the recording will be exported. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z</value>
-    [DataMember(Name = "exportDate", EmitDefaultValue = false)]
+    [JsonPropertyName("exportDate")]
     public DateTime? ExportDate { get; set; }
 
 
@@ -112,7 +112,7 @@ public partial class RecordingRetention : IEquatable<RecordingRetention>
     /// The date the recording was exported. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z
     /// </summary>
     /// <value>The date the recording was exported. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z</value>
-    [DataMember(Name = "exportedDate", EmitDefaultValue = false)]
+    [JsonPropertyName("exportedDate")]
     public DateTime? ExportedDate { get; set; }
 
 
@@ -121,7 +121,7 @@ public partial class RecordingRetention : IEquatable<RecordingRetention>
     /// The creation time of the recording. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z
     /// </summary>
     /// <value>The creation time of the recording. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z</value>
-    [DataMember(Name = "creationTime", EmitDefaultValue = false)]
+    [JsonPropertyName("creationTime")]
     public DateTime? CreationTime { get; set; }
 
 

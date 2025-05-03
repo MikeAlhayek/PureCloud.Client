@@ -1,4 +1,3 @@
-using System.Runtime.Serialization;
 using System.Text;
 using System.Text.Json.Serialization;
 
@@ -7,7 +6,7 @@ namespace PureCloud.Client.Models;
 /// <summary>
 /// ActivityPlanServiceLevelImpactOverride
 /// </summary>
-[DataContract]
+
 public partial class ActivityPlanServiceLevelImpactOverride : IEquatable<ActivityPlanServiceLevelImpactOverride>
 {
 
@@ -32,7 +31,7 @@ public partial class ActivityPlanServiceLevelImpactOverride : IEquatable<Activit
     /// Allowed service level decrease percent, from 0.0 to 100.0
     /// </summary>
     /// <value>Allowed service level decrease percent, from 0.0 to 100.0</value>
-    [DataMember(Name = "decreaseByPercent", EmitDefaultValue = false)]
+    [JsonPropertyName("decreaseByPercent")]
     public double? DecreaseByPercent { get; set; }
 
 

@@ -1,4 +1,3 @@
-using System.Runtime.Serialization;
 using System.Text;
 using System.Text.Json.Serialization;
 
@@ -7,7 +6,7 @@ namespace PureCloud.Client.Models;
 /// <summary>
 /// CreateTriggerRequest
 /// </summary>
-[DataContract]
+
 public partial class CreateTriggerRequest : IEquatable<CreateTriggerRequest>
 {
 
@@ -46,7 +45,7 @@ public partial class CreateTriggerRequest : IEquatable<CreateTriggerRequest>
     /// The target to invoke when a matching event is received
     /// </summary>
     /// <value>The target to invoke when a matching event is received</value>
-    [DataMember(Name = "target", EmitDefaultValue = false)]
+    [JsonPropertyName("target")]
     public TriggerTarget Target { get; set; }
 
 
@@ -55,7 +54,7 @@ public partial class CreateTriggerRequest : IEquatable<CreateTriggerRequest>
     /// Boolean indicating if Trigger is enabled
     /// </summary>
     /// <value>Boolean indicating if Trigger is enabled</value>
-    [DataMember(Name = "enabled", EmitDefaultValue = false)]
+    [JsonPropertyName("enabled")]
     public bool? Enabled { get; set; }
 
 
@@ -64,7 +63,7 @@ public partial class CreateTriggerRequest : IEquatable<CreateTriggerRequest>
     /// The configuration for when a trigger is considered to be a match for an event. When not provided, all events will fire the trigger
     /// </summary>
     /// <value>The configuration for when a trigger is considered to be a match for an event. When not provided, all events will fire the trigger</value>
-    [DataMember(Name = "matchCriteria", EmitDefaultValue = false)]
+    [JsonPropertyName("matchCriteria")]
     public List<MatchCriteria> MatchCriteria { get; set; }
 
 
@@ -73,7 +72,7 @@ public partial class CreateTriggerRequest : IEquatable<CreateTriggerRequest>
     /// The name of the trigger
     /// </summary>
     /// <value>The name of the trigger</value>
-    [DataMember(Name = "name", EmitDefaultValue = false)]
+    [JsonPropertyName("name")]
     public string Name { get; set; }
 
 
@@ -82,7 +81,7 @@ public partial class CreateTriggerRequest : IEquatable<CreateTriggerRequest>
     /// The topic that will cause the trigger to be invoked. Cannot be updated after creation. Valid topics can be found at /processautomation/triggers/topics 
     /// </summary>
     /// <value>The topic that will cause the trigger to be invoked. Cannot be updated after creation. Valid topics can be found at /processautomation/triggers/topics </value>
-    [DataMember(Name = "topicName", EmitDefaultValue = false)]
+    [JsonPropertyName("topicName")]
     public string TopicName { get; set; }
 
 
@@ -91,7 +90,7 @@ public partial class CreateTriggerRequest : IEquatable<CreateTriggerRequest>
     /// Optional length of time that events are meaningful after origination. Events older than this threshold may be dropped if the platform is delayed in processing events. Unset means events are valid indefinitely, otherwise must be set to at least 10 seconds. Only one of eventTTLSeconds or delayBySeconds can be set.
     /// </summary>
     /// <value>Optional length of time that events are meaningful after origination. Events older than this threshold may be dropped if the platform is delayed in processing events. Unset means events are valid indefinitely, otherwise must be set to at least 10 seconds. Only one of eventTTLSeconds or delayBySeconds can be set.</value>
-    [DataMember(Name = "eventTTLSeconds", EmitDefaultValue = false)]
+    [JsonPropertyName("eventTTLSeconds")]
     public int? EventTTLSeconds { get; set; }
 
 
@@ -100,7 +99,7 @@ public partial class CreateTriggerRequest : IEquatable<CreateTriggerRequest>
     /// Optional delay invoking target after trigger fires. Must be in the range of 60 to 900 seconds. Only one of eventTTLSeconds or delayBySeconds can be set.
     /// </summary>
     /// <value>Optional delay invoking target after trigger fires. Must be in the range of 60 to 900 seconds. Only one of eventTTLSeconds or delayBySeconds can be set.</value>
-    [DataMember(Name = "delayBySeconds", EmitDefaultValue = false)]
+    [JsonPropertyName("delayBySeconds")]
     public int? DelayBySeconds { get; set; }
 
 
@@ -109,7 +108,7 @@ public partial class CreateTriggerRequest : IEquatable<CreateTriggerRequest>
     /// Description of the trigger. Can be up to 512 characters in length.
     /// </summary>
     /// <value>Description of the trigger. Can be up to 512 characters in length.</value>
-    [DataMember(Name = "description", EmitDefaultValue = false)]
+    [JsonPropertyName("description")]
     public string Description { get; set; }
 
 

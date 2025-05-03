@@ -7,14 +7,14 @@ namespace PureCloud.Client.Models;
 /// <summary>
 /// Button
 /// </summary>
-[DataContract]
+
 public partial class Button : IEquatable<Button>
 {
     /// <summary>
     /// Type of button to include in whatsApp template
     /// </summary>
     /// <value>Type of button to include in whatsApp template</value>
-    [JsonConverter(typeof(JsonStringEnumConverter))]
+    
     public enum TypeEnum
     {
         /// <summary>
@@ -47,7 +47,7 @@ public partial class Button : IEquatable<Button>
     /// Type of button to include in whatsApp template
     /// </summary>
     /// <value>Type of button to include in whatsApp template</value>
-    [DataMember(Name = "type", EmitDefaultValue = false)]
+    [JsonPropertyName("type")]
     public TypeEnum? Type { get; set; }
     /// <summary>
     /// Initializes a new instance of the <see cref="Button" /> class.
@@ -71,7 +71,7 @@ public partial class Button : IEquatable<Button>
     /// Content of the button. Use for &#39;Url&#39; or &#39;PhoneNumber&#39; button type
     /// </summary>
     /// <value>Content of the button. Use for &#39;Url&#39; or &#39;PhoneNumber&#39; button type</value>
-    [DataMember(Name = "content", EmitDefaultValue = false)]
+    [JsonPropertyName("content")]
     public string Content { get; set; }
 
 
@@ -80,7 +80,7 @@ public partial class Button : IEquatable<Button>
     /// The text label that will be displayed on the button
     /// </summary>
     /// <value>The text label that will be displayed on the button</value>
-    [DataMember(Name = "contentText", EmitDefaultValue = false)]
+    [JsonPropertyName("contentText")]
     public string ContentText { get; set; }
 
 

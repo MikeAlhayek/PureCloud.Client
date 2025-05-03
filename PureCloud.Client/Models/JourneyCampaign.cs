@@ -1,12 +1,12 @@
-using System.Runtime.Serialization;
 using System.Text;
+using System.Text.Json.Serialization;
 
 namespace PureCloud.Client.Models;
 
 /// <summary>
 /// JourneyCampaign
 /// </summary>
-[DataContract]
+
 public partial class JourneyCampaign : IEquatable<JourneyCampaign>
 {
     /// <summary>
@@ -37,7 +37,7 @@ public partial class JourneyCampaign : IEquatable<JourneyCampaign>
     /// Differentiate ads or links that point to the same URL (e.g. textlink).
     /// </summary>
     /// <value>Differentiate ads or links that point to the same URL (e.g. textlink).</value>
-    [DataMember(Name = "content", EmitDefaultValue = false)]
+    [JsonPropertyName("content")]
     public string Content { get; set; }
 
 
@@ -46,7 +46,7 @@ public partial class JourneyCampaign : IEquatable<JourneyCampaign>
     /// Identify a medium such as email or cost-per-click (e.g. CPC).
     /// </summary>
     /// <value>Identify a medium such as email or cost-per-click (e.g. CPC).</value>
-    [DataMember(Name = "medium", EmitDefaultValue = false)]
+    [JsonPropertyName("medium")]
     public string Medium { get; set; }
 
 
@@ -55,7 +55,7 @@ public partial class JourneyCampaign : IEquatable<JourneyCampaign>
     /// Identify a specific product promotion or strategic campaign (e.g. 320banner).
     /// </summary>
     /// <value>Identify a specific product promotion or strategic campaign (e.g. 320banner).</value>
-    [DataMember(Name = "name", EmitDefaultValue = false)]
+    [JsonPropertyName("name")]
     public string Name { get; set; }
 
 
@@ -64,7 +64,7 @@ public partial class JourneyCampaign : IEquatable<JourneyCampaign>
     /// Identify a search engine, newsletter name, or other source (e.g. Google).
     /// </summary>
     /// <value>Identify a search engine, newsletter name, or other source (e.g. Google).</value>
-    [DataMember(Name = "source", EmitDefaultValue = false)]
+    [JsonPropertyName("source")]
     public string Source { get; set; }
 
 
@@ -73,7 +73,7 @@ public partial class JourneyCampaign : IEquatable<JourneyCampaign>
     /// Note the keywords for this ad (e.g. running+shoes).
     /// </summary>
     /// <value>Note the keywords for this ad (e.g. running+shoes).</value>
-    [DataMember(Name = "term", EmitDefaultValue = false)]
+    [JsonPropertyName("term")]
     public string Term { get; set; }
 
 
@@ -82,7 +82,7 @@ public partial class JourneyCampaign : IEquatable<JourneyCampaign>
     /// The click ID (unique number that is generated when a potential customer clicks on an affiliate link).
     /// </summary>
     /// <value>The click ID (unique number that is generated when a potential customer clicks on an affiliate link).</value>
-    [DataMember(Name = "clickId", EmitDefaultValue = false)]
+    [JsonPropertyName("clickId")]
     public string ClickId { get; set; }
 
 
@@ -91,7 +91,7 @@ public partial class JourneyCampaign : IEquatable<JourneyCampaign>
     /// The ad network to which the click ID belongs.
     /// </summary>
     /// <value>The ad network to which the click ID belongs.</value>
-    [DataMember(Name = "network", EmitDefaultValue = false)]
+    [JsonPropertyName("network")]
     public string Network { get; set; }
 
 

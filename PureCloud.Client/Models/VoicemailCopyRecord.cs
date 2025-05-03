@@ -1,12 +1,12 @@
-using System.Runtime.Serialization;
 using System.Text;
+using System.Text.Json.Serialization;
 
 namespace PureCloud.Client.Models;
 
 /// <summary>
 /// VoicemailCopyRecord
 /// </summary>
-[DataContract]
+
 public partial class VoicemailCopyRecord : IEquatable<VoicemailCopyRecord>
 {
     /// <summary>
@@ -23,7 +23,7 @@ public partial class VoicemailCopyRecord : IEquatable<VoicemailCopyRecord>
     /// The user that the voicemail message was copied to/from
     /// </summary>
     /// <value>The user that the voicemail message was copied to/from</value>
-    [DataMember(Name = "user", EmitDefaultValue = false)]
+    [JsonPropertyName("user")]
     public User User { get; private set; }
 
 
@@ -32,7 +32,7 @@ public partial class VoicemailCopyRecord : IEquatable<VoicemailCopyRecord>
     /// The group that the voicemail message was copied to/from
     /// </summary>
     /// <value>The group that the voicemail message was copied to/from</value>
-    [DataMember(Name = "group", EmitDefaultValue = false)]
+    [JsonPropertyName("group")]
     public Group Group { get; private set; }
 
 
@@ -41,7 +41,7 @@ public partial class VoicemailCopyRecord : IEquatable<VoicemailCopyRecord>
     /// The date when the voicemail was copied. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z
     /// </summary>
     /// <value>The date when the voicemail was copied. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z</value>
-    [DataMember(Name = "date", EmitDefaultValue = false)]
+    [JsonPropertyName("date")]
     public DateTime? Date { get; private set; }
 
 

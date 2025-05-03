@@ -1,4 +1,3 @@
-using System.Runtime.Serialization;
 using System.Text;
 using System.Text.Json.Serialization;
 
@@ -7,7 +6,7 @@ namespace PureCloud.Client.Models;
 /// <summary>
 /// QueryUserStaffingGroupListRequest
 /// </summary>
-[DataContract]
+
 public partial class QueryUserStaffingGroupListRequest : IEquatable<QueryUserStaffingGroupListRequest>
 {
 
@@ -32,7 +31,7 @@ public partial class QueryUserStaffingGroupListRequest : IEquatable<QueryUserSta
     /// The set of user IDs to fetch associated staffing groups
     /// </summary>
     /// <value>The set of user IDs to fetch associated staffing groups</value>
-    [DataMember(Name = "userIds", EmitDefaultValue = false)]
+    [JsonPropertyName("userIds")]
     public List<string> UserIds { get; set; }
 
 

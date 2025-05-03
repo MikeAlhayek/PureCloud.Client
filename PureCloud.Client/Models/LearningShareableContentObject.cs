@@ -7,14 +7,14 @@ namespace PureCloud.Client.Models;
 /// <summary>
 /// Learning assignment SCO (Shareable Content Object)
 /// </summary>
-[DataContract]
+
 public partial class LearningShareableContentObject : IEquatable<LearningShareableContentObject>
 {
     /// <summary>
     /// The status of the SCO. Maps to the SCORM 1.2 cmi.core.lesson_status property.
     /// </summary>
     /// <value>The status of the SCO. Maps to the SCORM 1.2 cmi.core.lesson_status property.</value>
-    [JsonConverter(typeof(JsonStringEnumConverter))]
+    
     public enum LessonStatusEnum
     {
         /// <summary>
@@ -65,7 +65,7 @@ public partial class LearningShareableContentObject : IEquatable<LearningShareab
     /// Indicates how or why the learner left the SCO. Maps to the SCORM 1.2 cmi.core.exit property.
     /// </summary>
     /// <value>Indicates how or why the learner left the SCO. Maps to the SCORM 1.2 cmi.core.exit property.</value>
-    [JsonConverter(typeof(JsonStringEnumConverter))]
+    
     public enum ExitEnum
     {
         /// <summary>
@@ -104,7 +104,7 @@ public partial class LearningShareableContentObject : IEquatable<LearningShareab
     /// Whether completing this course counts towards the overall assignment. Maps to the SCORM 1.2 cmi.core.credit property.
     /// </summary>
     /// <value>Whether completing this course counts towards the overall assignment. Maps to the SCORM 1.2 cmi.core.credit property.</value>
-    [JsonConverter(typeof(JsonStringEnumConverter))]
+    
     public enum CreditEnum
     {
         /// <summary>
@@ -131,7 +131,7 @@ public partial class LearningShareableContentObject : IEquatable<LearningShareab
     /// Whether the learner has previously accessed this SCO. Maps to the SCORM 1.2 cmi.core.entry property.
     /// </summary>
     /// <value>Whether the learner has previously accessed this SCO. Maps to the SCORM 1.2 cmi.core.entry property.</value>
-    [JsonConverter(typeof(JsonStringEnumConverter))]
+    
     public enum EntryEnum
     {
         /// <summary>
@@ -164,7 +164,7 @@ public partial class LearningShareableContentObject : IEquatable<LearningShareab
     /// Identifies the mode in which the SCO should be presented to the learner. Maps to the SCORM 1.2 cmi.core.lesson_mode property.
     /// </summary>
     /// <value>Identifies the mode in which the SCO should be presented to the learner. Maps to the SCORM 1.2 cmi.core.lesson_mode property.</value>
-    [JsonConverter(typeof(JsonStringEnumConverter))]
+    
     public enum ModeEnum
     {
         /// <summary>
@@ -197,31 +197,31 @@ public partial class LearningShareableContentObject : IEquatable<LearningShareab
     /// The status of the SCO. Maps to the SCORM 1.2 cmi.core.lesson_status property.
     /// </summary>
     /// <value>The status of the SCO. Maps to the SCORM 1.2 cmi.core.lesson_status property.</value>
-    [DataMember(Name = "lessonStatus", EmitDefaultValue = false)]
+    [JsonPropertyName("lessonStatus")]
     public LessonStatusEnum? LessonStatus { get; set; }
     /// <summary>
     /// Indicates how or why the learner left the SCO. Maps to the SCORM 1.2 cmi.core.exit property.
     /// </summary>
     /// <value>Indicates how or why the learner left the SCO. Maps to the SCORM 1.2 cmi.core.exit property.</value>
-    [DataMember(Name = "exit", EmitDefaultValue = false)]
+    [JsonPropertyName("exit")]
     public ExitEnum? Exit { get; set; }
     /// <summary>
     /// Whether completing this course counts towards the overall assignment. Maps to the SCORM 1.2 cmi.core.credit property.
     /// </summary>
     /// <value>Whether completing this course counts towards the overall assignment. Maps to the SCORM 1.2 cmi.core.credit property.</value>
-    [DataMember(Name = "credit", EmitDefaultValue = false)]
+    [JsonPropertyName("credit")]
     public CreditEnum? Credit { get; private set; }
     /// <summary>
     /// Whether the learner has previously accessed this SCO. Maps to the SCORM 1.2 cmi.core.entry property.
     /// </summary>
     /// <value>Whether the learner has previously accessed this SCO. Maps to the SCORM 1.2 cmi.core.entry property.</value>
-    [DataMember(Name = "entry", EmitDefaultValue = false)]
+    [JsonPropertyName("entry")]
     public EntryEnum? Entry { get; private set; }
     /// <summary>
     /// Identifies the mode in which the SCO should be presented to the learner. Maps to the SCORM 1.2 cmi.core.lesson_mode property.
     /// </summary>
     /// <value>Identifies the mode in which the SCO should be presented to the learner. Maps to the SCORM 1.2 cmi.core.lesson_mode property.</value>
-    [DataMember(Name = "mode", EmitDefaultValue = false)]
+    [JsonPropertyName("mode")]
     public ModeEnum? Mode { get; private set; }
 
     /// <summary>
@@ -261,7 +261,7 @@ public partial class LearningShareableContentObject : IEquatable<LearningShareab
     /// The ID of the SCO from the course manifest.
     /// </summary>
     /// <value>The ID of the SCO from the course manifest.</value>
-    [DataMember(Name = "id", EmitDefaultValue = false)]
+    [JsonPropertyName("id")]
     public string Id { get; set; }
 
 
@@ -274,7 +274,7 @@ public partial class LearningShareableContentObject : IEquatable<LearningShareab
     /// The learner’s current location in the SCO. Maps to the SCORM 1.2 cmi.core.lesson_location property.
     /// </summary>
     /// <value>The learner’s current location in the SCO. Maps to the SCORM 1.2 cmi.core.lesson_location property.</value>
-    [DataMember(Name = "location", EmitDefaultValue = false)]
+    [JsonPropertyName("location")]
     public string Location { get; set; }
 
 
@@ -283,7 +283,7 @@ public partial class LearningShareableContentObject : IEquatable<LearningShareab
     /// The score of the most recent attempt on the SCO. Maps to the SCORM 1.2 cmi.core.score.raw property.
     /// </summary>
     /// <value>The score of the most recent attempt on the SCO. Maps to the SCORM 1.2 cmi.core.score.raw property.</value>
-    [DataMember(Name = "scoreRaw", EmitDefaultValue = false)]
+    [JsonPropertyName("scoreRaw")]
     public float? ScoreRaw { get; set; }
 
 
@@ -292,7 +292,7 @@ public partial class LearningShareableContentObject : IEquatable<LearningShareab
     /// The maximum score that could be achieved on the SCO. Maps to the SCORM 1.2 cmi.core.score.max property.
     /// </summary>
     /// <value>The maximum score that could be achieved on the SCO. Maps to the SCORM 1.2 cmi.core.score.max property.</value>
-    [DataMember(Name = "scoreMax", EmitDefaultValue = false)]
+    [JsonPropertyName("scoreMax")]
     public float? ScoreMax { get; set; }
 
 
@@ -301,7 +301,7 @@ public partial class LearningShareableContentObject : IEquatable<LearningShareab
     /// The minimum score that could be achieved on the SCO. Maps to the SCORM 1.2 cmi.core.score.min property.
     /// </summary>
     /// <value>The minimum score that could be achieved on the SCO. Maps to the SCORM 1.2 cmi.core.score.min property.</value>
-    [DataMember(Name = "scoreMin", EmitDefaultValue = false)]
+    [JsonPropertyName("scoreMin")]
     public float? ScoreMin { get; set; }
 
 
@@ -310,7 +310,7 @@ public partial class LearningShareableContentObject : IEquatable<LearningShareab
     /// The unique information generated by the SCO from previous uses. Maps to the SCORM 1.2 cmi.suspend_data property.
     /// </summary>
     /// <value>The unique information generated by the SCO from previous uses. Maps to the SCORM 1.2 cmi.suspend_data property.</value>
-    [DataMember(Name = "suspendData", EmitDefaultValue = false)]
+    [JsonPropertyName("suspendData")]
     public string SuspendData { get; set; }
 
 
@@ -325,7 +325,7 @@ public partial class LearningShareableContentObject : IEquatable<LearningShareab
     /// The total amount of time the learner has spent in the SCO expressed as an ISO 8601 Duration, for example PT2H10M3.5S. Maps to the SCORM 1.2 cmi.core.total_time property.
     /// </summary>
     /// <value>The total amount of time the learner has spent in the SCO expressed as an ISO 8601 Duration, for example PT2H10M3.5S. Maps to the SCORM 1.2 cmi.core.total_time property.</value>
-    [DataMember(Name = "totalTime", EmitDefaultValue = false)]
+    [JsonPropertyName("totalTime")]
     public string TotalTime { get; private set; }
 
 
@@ -334,7 +334,7 @@ public partial class LearningShareableContentObject : IEquatable<LearningShareab
     /// The amount of time spent in the SCO in this session expressed as an ISO-8601 Duration, for example PT2H10M3.5S. Maps to the SCORM 1.2 cmi.core.session_time property.
     /// </summary>
     /// <value>The amount of time spent in the SCO in this session expressed as an ISO-8601 Duration, for example PT2H10M3.5S. Maps to the SCORM 1.2 cmi.core.session_time property.</value>
-    [DataMember(Name = "sessionTime", EmitDefaultValue = false)]
+    [JsonPropertyName("sessionTime")]
     public string SessionTime { get; set; }
 
 
@@ -343,7 +343,7 @@ public partial class LearningShareableContentObject : IEquatable<LearningShareab
     /// The href from the course manifest for this SCO.
     /// </summary>
     /// <value>The href from the course manifest for this SCO.</value>
-    [DataMember(Name = "href", EmitDefaultValue = false)]
+    [JsonPropertyName("href")]
     public string Href { get; private set; }
 
 
@@ -352,7 +352,7 @@ public partial class LearningShareableContentObject : IEquatable<LearningShareab
     /// The parameters from the course manifest for this SCO.
     /// </summary>
     /// <value>The parameters from the course manifest for this SCO.</value>
-    [DataMember(Name = "parameters", EmitDefaultValue = false)]
+    [JsonPropertyName("parameters")]
     public string Parameters { get; private set; }
 
 
@@ -361,7 +361,7 @@ public partial class LearningShareableContentObject : IEquatable<LearningShareab
     /// The launch data from the course manifest for this SCO.
     /// </summary>
     /// <value>The launch data from the course manifest for this SCO.</value>
-    [DataMember(Name = "launchData", EmitDefaultValue = false)]
+    [JsonPropertyName("launchData")]
     public string LaunchData { get; private set; }
 
 

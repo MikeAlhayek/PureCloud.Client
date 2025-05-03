@@ -1,12 +1,12 @@
-using System.Runtime.Serialization;
 using System.Text;
+using System.Text.Json.Serialization;
 
 namespace PureCloud.Client.Models;
 
 /// <summary>
 /// ContactAddressableEntityRef
 /// </summary>
-[DataContract]
+
 public partial class ContactAddressableEntityRef : IEquatable<ContactAddressableEntityRef>
 {
     /// <summary>
@@ -26,7 +26,7 @@ public partial class ContactAddressableEntityRef : IEquatable<ContactAddressable
     /// <summary>
     /// Gets or Sets Id
     /// </summary>
-    [DataMember(Name = "id", EmitDefaultValue = false)]
+    [JsonPropertyName("id")]
     public string Id { get; set; }
 
 
@@ -34,7 +34,7 @@ public partial class ContactAddressableEntityRef : IEquatable<ContactAddressable
     /// <summary>
     /// Gets or Sets SelfUri
     /// </summary>
-    [DataMember(Name = "selfUri", EmitDefaultValue = false)]
+    [JsonPropertyName("selfUri")]
     public string SelfUri { get; set; }
 
 

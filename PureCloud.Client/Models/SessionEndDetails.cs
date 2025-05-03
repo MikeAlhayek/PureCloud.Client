@@ -7,14 +7,14 @@ namespace PureCloud.Client.Models;
 /// <summary>
 /// SessionEndDetails
 /// </summary>
-[DataContract]
+
 public partial class SessionEndDetails : IEquatable<SessionEndDetails>
 {
     /// <summary>
     /// The type of termination handling that resulted in the session end. It can be either Exit or Disconnect
     /// </summary>
     /// <value>The type of termination handling that resulted in the session end. It can be either Exit or Disconnect</value>
-    [JsonConverter(typeof(JsonStringEnumConverter))]
+    
     public enum TypeEnum
     {
         /// <summary>
@@ -41,7 +41,7 @@ public partial class SessionEndDetails : IEquatable<SessionEndDetails>
     /// The type of termination handling that resulted in the session end. It can be either Exit or Disconnect
     /// </summary>
     /// <value>The type of termination handling that resulted in the session end. It can be either Exit or Disconnect</value>
-    [DataMember(Name = "type", EmitDefaultValue = false)]
+    [JsonPropertyName("type")]
     public TypeEnum? Type { get; set; }
     /// <summary>
     /// Initializes a new instance of the <see cref="SessionEndDetails" /> class.
@@ -63,7 +63,7 @@ public partial class SessionEndDetails : IEquatable<SessionEndDetails>
     /// The reason for termination action. It can be due to an error or normal flow execution
     /// </summary>
     /// <value>The reason for termination action. It can be due to an error or normal flow execution</value>
-    [DataMember(Name = "reason", EmitDefaultValue = false)]
+    [JsonPropertyName("reason")]
     public string Reason { get; set; }
 
 

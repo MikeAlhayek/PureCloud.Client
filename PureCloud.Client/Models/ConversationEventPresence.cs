@@ -7,14 +7,14 @@ namespace PureCloud.Client.Models;
 /// <summary>
 /// A Presence event.
 /// </summary>
-[DataContract]
+
 public partial class ConversationEventPresence : IEquatable<ConversationEventPresence>
 {
     /// <summary>
     /// Describes the type of Presence event.
     /// </summary>
     /// <value>Describes the type of Presence event.</value>
-    [JsonConverter(typeof(JsonStringEnumConverter))]
+    
     public enum TypeEnum
     {
         /// <summary>
@@ -59,7 +59,7 @@ public partial class ConversationEventPresence : IEquatable<ConversationEventPre
     /// Describes the type of Presence event.
     /// </summary>
     /// <value>Describes the type of Presence event.</value>
-    [DataMember(Name = "type", EmitDefaultValue = false)]
+    [JsonPropertyName("type")]
     public TypeEnum? Type { get; set; }
 
     /// <summary>

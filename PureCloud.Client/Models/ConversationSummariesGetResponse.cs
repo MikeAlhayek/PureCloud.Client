@@ -1,12 +1,12 @@
-using System.Runtime.Serialization;
 using System.Text;
+using System.Text.Json.Serialization;
 
 namespace PureCloud.Client.Models;
 
 /// <summary>
 /// Defines the summaries of a conversation.
 /// </summary>
-[DataContract]
+
 public partial class ConversationSummariesGetResponse : IEquatable<ConversationSummariesGetResponse>
 {
     /// <summary>
@@ -29,7 +29,7 @@ public partial class ConversationSummariesGetResponse : IEquatable<ConversationS
     /// The conversation object.
     /// </summary>
     /// <value>The conversation object.</value>
-    [DataMember(Name = "conversation", EmitDefaultValue = false)]
+    [JsonPropertyName("conversation")]
     public AddressableEntityRef Conversation { get; set; }
 
 
@@ -38,7 +38,7 @@ public partial class ConversationSummariesGetResponse : IEquatable<ConversationS
     /// The summary of the conversation.
     /// </summary>
     /// <value>The summary of the conversation.</value>
-    [DataMember(Name = "summary", EmitDefaultValue = false)]
+    [JsonPropertyName("summary")]
     public ConversationSummary Summary { get; set; }
 
 
@@ -47,7 +47,7 @@ public partial class ConversationSummariesGetResponse : IEquatable<ConversationS
     /// All the summaries of the session.
     /// </summary>
     /// <value>All the summaries of the session.</value>
-    [DataMember(Name = "sessionSummaries", EmitDefaultValue = false)]
+    [JsonPropertyName("sessionSummaries")]
     public List<ConversationSessionSummary> SessionSummaries { get; set; }
 
 

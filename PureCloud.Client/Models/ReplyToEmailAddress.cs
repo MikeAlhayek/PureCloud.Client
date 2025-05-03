@@ -1,4 +1,3 @@
-using System.Runtime.Serialization;
 using System.Text;
 using System.Text.Json.Serialization;
 
@@ -7,7 +6,7 @@ namespace PureCloud.Client.Models;
 /// <summary>
 /// ReplyToEmailAddress
 /// </summary>
-[DataContract]
+
 public partial class ReplyToEmailAddress : IEquatable<ReplyToEmailAddress>
 {
 
@@ -34,7 +33,7 @@ public partial class ReplyToEmailAddress : IEquatable<ReplyToEmailAddress>
     /// The InboundDomain used for the email address.
     /// </summary>
     /// <value>The InboundDomain used for the email address.</value>
-    [DataMember(Name = "domain", EmitDefaultValue = false)]
+    [JsonPropertyName("domain")]
     public DomainEntityRef Domain { get; set; }
 
 
@@ -43,7 +42,7 @@ public partial class ReplyToEmailAddress : IEquatable<ReplyToEmailAddress>
     /// The InboundRoute used for the email address.
     /// </summary>
     /// <value>The InboundRoute used for the email address.</value>
-    [DataMember(Name = "route", EmitDefaultValue = false)]
+    [JsonPropertyName("route")]
     public DomainEntityRef Route { get; set; }
 
 

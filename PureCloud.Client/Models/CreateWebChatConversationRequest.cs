@@ -1,4 +1,3 @@
-using System.Runtime.Serialization;
 using System.Text;
 using System.Text.Json.Serialization;
 
@@ -7,7 +6,7 @@ namespace PureCloud.Client.Models;
 /// <summary>
 /// CreateWebChatConversationRequest
 /// </summary>
-[DataContract]
+
 public partial class CreateWebChatConversationRequest : IEquatable<CreateWebChatConversationRequest>
 {
 
@@ -42,7 +41,7 @@ public partial class CreateWebChatConversationRequest : IEquatable<CreateWebChat
     /// The organization identifier.
     /// </summary>
     /// <value>The organization identifier.</value>
-    [DataMember(Name = "organizationId", EmitDefaultValue = false)]
+    [JsonPropertyName("organizationId")]
     public string OrganizationId { get; set; }
 
 
@@ -51,7 +50,7 @@ public partial class CreateWebChatConversationRequest : IEquatable<CreateWebChat
     /// The web chat Deployment ID which contains the appropriate settings for this chat conversation.
     /// </summary>
     /// <value>The web chat Deployment ID which contains the appropriate settings for this chat conversation.</value>
-    [DataMember(Name = "deploymentId", EmitDefaultValue = false)]
+    [JsonPropertyName("deploymentId")]
     public string DeploymentId { get; set; }
 
 
@@ -60,7 +59,7 @@ public partial class CreateWebChatConversationRequest : IEquatable<CreateWebChat
     /// The routing information to use for the new chat conversation.
     /// </summary>
     /// <value>The routing information to use for the new chat conversation.</value>
-    [DataMember(Name = "routingTarget", EmitDefaultValue = false)]
+    [JsonPropertyName("routingTarget")]
     public WebChatRoutingTarget RoutingTarget { get; set; }
 
 
@@ -69,7 +68,7 @@ public partial class CreateWebChatConversationRequest : IEquatable<CreateWebChat
     /// The guest member info to use for the new chat conversation.
     /// </summary>
     /// <value>The guest member info to use for the new chat conversation.</value>
-    [DataMember(Name = "memberInfo", EmitDefaultValue = false)]
+    [JsonPropertyName("memberInfo")]
     public GuestMemberInfo MemberInfo { get; set; }
 
 
@@ -78,7 +77,7 @@ public partial class CreateWebChatConversationRequest : IEquatable<CreateWebChat
     /// If the guest member is an authenticated member (ie, not anonymous) his JWT is provided here. The token will have been previously generated with the \&quot;POST /api/v2/signeddata\&quot; resource.
     /// </summary>
     /// <value>If the guest member is an authenticated member (ie, not anonymous) his JWT is provided here. The token will have been previously generated with the \&quot;POST /api/v2/signeddata\&quot; resource.</value>
-    [DataMember(Name = "memberAuthToken", EmitDefaultValue = false)]
+    [JsonPropertyName("memberAuthToken")]
     public string MemberAuthToken { get; set; }
 
 
@@ -87,7 +86,7 @@ public partial class CreateWebChatConversationRequest : IEquatable<CreateWebChat
     /// A subset of the Journey System&#39;s data relevant to this conversation/session request (for external linkage and internal usage/context).
     /// </summary>
     /// <value>A subset of the Journey System&#39;s data relevant to this conversation/session request (for external linkage and internal usage/context).</value>
-    [DataMember(Name = "journeyContext", EmitDefaultValue = false)]
+    [JsonPropertyName("journeyContext")]
     public JourneyContext JourneyContext { get; set; }
 
 

@@ -7,14 +7,14 @@ namespace PureCloud.Client.Models;
 /// <summary>
 /// UC Integration UI configuration data
 /// </summary>
-[DataContract]
+
 public partial class UCIntegration : IEquatable<UCIntegration>
 {
     /// <summary>
     /// integrationPresenceType
     /// </summary>
     /// <value>integrationPresenceType</value>
-    [JsonConverter(typeof(JsonStringEnumConverter))]
+    
     public enum IntegrationPresenceSourceEnum
     {
         /// <summary>
@@ -47,7 +47,7 @@ public partial class UCIntegration : IEquatable<UCIntegration>
     /// integrationPresenceType
     /// </summary>
     /// <value>integrationPresenceType</value>
-    [DataMember(Name = "integrationPresenceSource", EmitDefaultValue = false)]
+    [JsonPropertyName("integrationPresenceSource")]
     public IntegrationPresenceSourceEnum? IntegrationPresenceSource { get; private set; }
     /// <summary>
     /// Initializes a new instance of the <see cref="UCIntegration" /> class.
@@ -65,7 +65,7 @@ public partial class UCIntegration : IEquatable<UCIntegration>
     /// The globally unique identifier for the object.
     /// </summary>
     /// <value>The globally unique identifier for the object.</value>
-    [DataMember(Name = "id", EmitDefaultValue = false)]
+    [JsonPropertyName("id")]
     public string Id { get; private set; }
 
 
@@ -73,7 +73,7 @@ public partial class UCIntegration : IEquatable<UCIntegration>
     /// <summary>
     /// Gets or Sets Name
     /// </summary>
-    [DataMember(Name = "name", EmitDefaultValue = false)]
+    [JsonPropertyName("name")]
     public string Name { get; set; }
 
 
@@ -82,7 +82,7 @@ public partial class UCIntegration : IEquatable<UCIntegration>
     /// ucIntegrationKey
     /// </summary>
     /// <value>ucIntegrationKey</value>
-    [DataMember(Name = "ucIntegrationKey", EmitDefaultValue = false)]
+    [JsonPropertyName("ucIntegrationKey")]
     public string UcIntegrationKey { get; private set; }
 
 
@@ -93,7 +93,7 @@ public partial class UCIntegration : IEquatable<UCIntegration>
     /// pbxPermission
     /// </summary>
     /// <value>pbxPermission</value>
-    [DataMember(Name = "pbxPermission", EmitDefaultValue = false)]
+    [JsonPropertyName("pbxPermission")]
     public string PbxPermission { get; private set; }
 
 
@@ -102,7 +102,7 @@ public partial class UCIntegration : IEquatable<UCIntegration>
     /// icon
     /// </summary>
     /// <value>icon</value>
-    [DataMember(Name = "icon", EmitDefaultValue = false)]
+    [JsonPropertyName("icon")]
     public UCIcon Icon { get; private set; }
 
 
@@ -111,7 +111,7 @@ public partial class UCIntegration : IEquatable<UCIntegration>
     /// badgeIcon
     /// </summary>
     /// <value>badgeIcon</value>
-    [DataMember(Name = "badgeIcons", EmitDefaultValue = false)]
+    [JsonPropertyName("badgeIcons")]
     public Dictionary<string, UCIcon> BadgeIcons { get; private set; }
 
 
@@ -120,7 +120,7 @@ public partial class UCIntegration : IEquatable<UCIntegration>
     /// i10n
     /// </summary>
     /// <value>i10n</value>
-    [DataMember(Name = "i10n", EmitDefaultValue = false)]
+    [JsonPropertyName("i10n")]
     public Dictionary<string, UCI10n> I10n { get; private set; }
 
 
@@ -129,7 +129,7 @@ public partial class UCIntegration : IEquatable<UCIntegration>
     /// polledPresence
     /// </summary>
     /// <value>polledPresence</value>
-    [DataMember(Name = "polledPresence", EmitDefaultValue = false)]
+    [JsonPropertyName("polledPresence")]
     public bool? PolledPresence { get; private set; }
 
 
@@ -138,7 +138,7 @@ public partial class UCIntegration : IEquatable<UCIntegration>
     /// userPermissions
     /// </summary>
     /// <value>userPermissions</value>
-    [DataMember(Name = "userPermissions", EmitDefaultValue = false)]
+    [JsonPropertyName("userPermissions")]
     public List<string> UserPermissions { get; private set; }
 
 
@@ -147,7 +147,7 @@ public partial class UCIntegration : IEquatable<UCIntegration>
     /// The URI for this object
     /// </summary>
     /// <value>The URI for this object</value>
-    [DataMember(Name = "selfUri", EmitDefaultValue = false)]
+    [JsonPropertyName("selfUri")]
     public string SelfUri { get; private set; }
 
 

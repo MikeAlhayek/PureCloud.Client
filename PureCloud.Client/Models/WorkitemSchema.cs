@@ -1,4 +1,3 @@
-using System.Runtime.Serialization;
 using System.Text;
 using System.Text.Json.Serialization;
 
@@ -7,7 +6,7 @@ namespace PureCloud.Client.Models;
 /// <summary>
 /// WorkitemSchema
 /// </summary>
-[DataContract]
+
 public partial class WorkitemSchema : IEquatable<WorkitemSchema>
 {
 
@@ -34,7 +33,7 @@ public partial class WorkitemSchema : IEquatable<WorkitemSchema>
     /// The globally unique identifier for the object.
     /// </summary>
     /// <value>The globally unique identifier for the object.</value>
-    [DataMember(Name = "id", EmitDefaultValue = false)]
+    [JsonPropertyName("id")]
     public string Id { get; private set; }
 
 
@@ -42,7 +41,7 @@ public partial class WorkitemSchema : IEquatable<WorkitemSchema>
     /// <summary>
     /// Gets or Sets Name
     /// </summary>
-    [DataMember(Name = "name", EmitDefaultValue = false)]
+    [JsonPropertyName("name")]
     public string Name { get; set; }
 
 
@@ -51,7 +50,7 @@ public partial class WorkitemSchema : IEquatable<WorkitemSchema>
     /// The version of the Workitem custom attribute schema.
     /// </summary>
     /// <value>The version of the Workitem custom attribute schema.</value>
-    [DataMember(Name = "version", EmitDefaultValue = false)]
+    [JsonPropertyName("version")]
     public int? Version { get; set; }
 
 
@@ -60,7 +59,7 @@ public partial class WorkitemSchema : IEquatable<WorkitemSchema>
     /// The URI for this object
     /// </summary>
     /// <value>The URI for this object</value>
-    [DataMember(Name = "selfUri", EmitDefaultValue = false)]
+    [JsonPropertyName("selfUri")]
     public string SelfUri { get; private set; }
 
 

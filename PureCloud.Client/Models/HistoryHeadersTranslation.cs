@@ -1,4 +1,3 @@
-using System.Runtime.Serialization;
 using System.Text;
 using System.Text.Json.Serialization;
 
@@ -7,7 +6,7 @@ namespace PureCloud.Client.Models;
 /// <summary>
 /// HistoryHeadersTranslation
 /// </summary>
-[DataContract]
+
 public partial class HistoryHeadersTranslation : IEquatable<HistoryHeadersTranslation>
 {
 
@@ -48,7 +47,7 @@ public partial class HistoryHeadersTranslation : IEquatable<HistoryHeadersTransl
     /// A translation for the word \&quot;from\&quot;, for the expected language
     /// </summary>
     /// <value>A translation for the word \&quot;from\&quot;, for the expected language</value>
-    [DataMember(Name = "from", EmitDefaultValue = false)]
+    [JsonPropertyName("from")]
     public string From { get; set; }
 
 
@@ -57,7 +56,7 @@ public partial class HistoryHeadersTranslation : IEquatable<HistoryHeadersTransl
     /// A translation for the word \&quot;to\&quot;, for the expected language
     /// </summary>
     /// <value>A translation for the word \&quot;to\&quot;, for the expected language</value>
-    [DataMember(Name = "to", EmitDefaultValue = false)]
+    [JsonPropertyName("to")]
     public string To { get; set; }
 
 
@@ -66,7 +65,7 @@ public partial class HistoryHeadersTranslation : IEquatable<HistoryHeadersTransl
     /// A translation for the word \&quot;cc\&quot;, for the expected language
     /// </summary>
     /// <value>A translation for the word \&quot;cc\&quot;, for the expected language</value>
-    [DataMember(Name = "cc", EmitDefaultValue = false)]
+    [JsonPropertyName("cc")]
     public string Cc { get; set; }
 
 
@@ -75,7 +74,7 @@ public partial class HistoryHeadersTranslation : IEquatable<HistoryHeadersTransl
     /// A translation for the word \&quot;subject\&quot;, for the expected language
     /// </summary>
     /// <value>A translation for the word \&quot;subject\&quot;, for the expected language</value>
-    [DataMember(Name = "subject", EmitDefaultValue = false)]
+    [JsonPropertyName("subject")]
     public string Subject { get; set; }
 
 
@@ -84,7 +83,7 @@ public partial class HistoryHeadersTranslation : IEquatable<HistoryHeadersTransl
     /// A translation for the subject prefix \&quot;Reply\&quot;, for the expected language
     /// </summary>
     /// <value>A translation for the subject prefix \&quot;Reply\&quot;, for the expected language</value>
-    [DataMember(Name = "replyPrefix", EmitDefaultValue = false)]
+    [JsonPropertyName("replyPrefix")]
     public string ReplyPrefix { get; set; }
 
 
@@ -93,7 +92,7 @@ public partial class HistoryHeadersTranslation : IEquatable<HistoryHeadersTransl
     /// A translation for the subject prefix \&quot;Forward\&quot;, for the expected language
     /// </summary>
     /// <value>A translation for the subject prefix \&quot;Forward\&quot;, for the expected language</value>
-    [DataMember(Name = "forwardPrefix", EmitDefaultValue = false)]
+    [JsonPropertyName("forwardPrefix")]
     public string ForwardPrefix { get; set; }
 
 
@@ -102,7 +101,7 @@ public partial class HistoryHeadersTranslation : IEquatable<HistoryHeadersTransl
     /// A translation for the word \&quot;sent\&quot;, for the expected language
     /// </summary>
     /// <value>A translation for the word \&quot;sent\&quot;, for the expected language</value>
-    [DataMember(Name = "sent", EmitDefaultValue = false)]
+    [JsonPropertyName("sent")]
     public string Sent { get; set; }
 
 
@@ -111,7 +110,7 @@ public partial class HistoryHeadersTranslation : IEquatable<HistoryHeadersTransl
     /// The code of the expected language
     /// </summary>
     /// <value>The code of the expected language</value>
-    [DataMember(Name = "language", EmitDefaultValue = false)]
+    [JsonPropertyName("language")]
     public string Language { get; set; }
 
 
@@ -120,7 +119,7 @@ public partial class HistoryHeadersTranslation : IEquatable<HistoryHeadersTransl
     /// Timezone used by the agent, used to format the sent email date and time. If not defined, will default to UTC. Time zones are represented as a string of the zone name as found in the IANA time zone database. For example: UTC, Etc/UTC, or Europe/London
     /// </summary>
     /// <value>Timezone used by the agent, used to format the sent email date and time. If not defined, will default to UTC. Time zones are represented as a string of the zone name as found in the IANA time zone database. For example: UTC, Etc/UTC, or Europe/London</value>
-    [DataMember(Name = "timeZone", EmitDefaultValue = false)]
+    [JsonPropertyName("timeZone")]
     public string TimeZone { get; set; }
 
 

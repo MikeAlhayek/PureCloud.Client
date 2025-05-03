@@ -1,4 +1,3 @@
-using System.Runtime.Serialization;
 using System.Text;
 using System.Text.Json.Serialization;
 
@@ -7,7 +6,7 @@ namespace PureCloud.Client.Models;
 /// <summary>
 /// Input/Output data related to a bot flow which is exiting gracefully.
 /// </summary>
-[DataContract]
+
 public partial class TextBotInputOutputData : IEquatable<TextBotInputOutputData>
 {
 
@@ -32,7 +31,7 @@ public partial class TextBotInputOutputData : IEquatable<TextBotInputOutputData>
     /// The input/output variables using the format as appropriate for the variable data type in the flow definition.
     /// </summary>
     /// <value>The input/output variables using the format as appropriate for the variable data type in the flow definition.</value>
-    [DataMember(Name = "variables", EmitDefaultValue = false)]
+    [JsonPropertyName("variables")]
     public Dictionary<string, object> Variables { get; set; }
 
 

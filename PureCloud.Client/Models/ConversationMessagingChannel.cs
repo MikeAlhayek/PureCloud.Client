@@ -7,14 +7,14 @@ namespace PureCloud.Client.Models;
 /// <summary>
 /// Channel-specific information that describes the message and the message channel/provider.
 /// </summary>
-[DataContract]
+
 public partial class ConversationMessagingChannel : IEquatable<ConversationMessagingChannel>
 {
     /// <summary>
     /// The provider type.
     /// </summary>
     /// <value>The provider type.</value>
-    [JsonConverter(typeof(JsonStringEnumConverter))]
+    
     public enum PlatformEnum
     {
         /// <summary>
@@ -83,7 +83,7 @@ public partial class ConversationMessagingChannel : IEquatable<ConversationMessa
     /// The provider type.
     /// </summary>
     /// <value>The provider type.</value>
-    [DataMember(Name = "platform", EmitDefaultValue = false)]
+    [JsonPropertyName("platform")]
     public PlatformEnum? Platform { get; private set; }
     /// <summary>
     /// Initializes a new instance of the <see cref="ConversationMessagingChannel" /> class.
@@ -99,7 +99,7 @@ public partial class ConversationMessagingChannel : IEquatable<ConversationMessa
     /// The integration ID.
     /// </summary>
     /// <value>The integration ID.</value>
-    [DataMember(Name = "id", EmitDefaultValue = false)]
+    [JsonPropertyName("id")]
     public string Id { get; private set; }
 
 
@@ -110,7 +110,7 @@ public partial class ConversationMessagingChannel : IEquatable<ConversationMessa
     /// Unique provider ID of the message such as a Facebook message ID.
     /// </summary>
     /// <value>Unique provider ID of the message such as a Facebook message ID.</value>
-    [DataMember(Name = "messageId", EmitDefaultValue = false)]
+    [JsonPropertyName("messageId")]
     public string MessageId { get; private set; }
 
 
@@ -119,7 +119,7 @@ public partial class ConversationMessagingChannel : IEquatable<ConversationMessa
     /// Information about the recipient the message is sent to.
     /// </summary>
     /// <value>Information about the recipient the message is sent to.</value>
-    [DataMember(Name = "to", EmitDefaultValue = false)]
+    [JsonPropertyName("to")]
     public ConversationMessagingToRecipient To { get; private set; }
 
 
@@ -128,7 +128,7 @@ public partial class ConversationMessagingChannel : IEquatable<ConversationMessa
     /// Information about the recipient the message is received from.
     /// </summary>
     /// <value>Information about the recipient the message is received from.</value>
-    [DataMember(Name = "from", EmitDefaultValue = false)]
+    [JsonPropertyName("from")]
     public ConversationMessagingFromRecipient From { get; private set; }
 
 
@@ -137,7 +137,7 @@ public partial class ConversationMessagingChannel : IEquatable<ConversationMessa
     /// Original time of the event. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z
     /// </summary>
     /// <value>Original time of the event. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z</value>
-    [DataMember(Name = "time", EmitDefaultValue = false)]
+    [JsonPropertyName("time")]
     public DateTime? Time { get; private set; }
 
 
@@ -146,7 +146,7 @@ public partial class ConversationMessagingChannel : IEquatable<ConversationMessa
     /// Time the message was edited. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z
     /// </summary>
     /// <value>Time the message was edited. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z</value>
-    [DataMember(Name = "dateModified", EmitDefaultValue = false)]
+    [JsonPropertyName("dateModified")]
     public DateTime? DateModified { get; private set; }
 
 
@@ -155,7 +155,7 @@ public partial class ConversationMessagingChannel : IEquatable<ConversationMessa
     /// Time the message was deleted. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z
     /// </summary>
     /// <value>Time the message was deleted. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z</value>
-    [DataMember(Name = "dateDeleted", EmitDefaultValue = false)]
+    [JsonPropertyName("dateDeleted")]
     public DateTime? DateDeleted { get; private set; }
 
 

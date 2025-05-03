@@ -7,14 +7,14 @@ namespace PureCloud.Client.Models;
 /// <summary>
 /// SchedulingProcessingError
 /// </summary>
-[DataContract]
+
 public partial class SchedulingProcessingError : IEquatable<SchedulingProcessingError>
 {
     /// <summary>
     /// An internal code representing the type of error. BadJson for 'Unable to parse json.' NotFound for 'Resource not found.' Fail for 'An unexpected server error occured.'
     /// </summary>
     /// <value>An internal code representing the type of error. BadJson for 'Unable to parse json.' NotFound for 'Resource not found.' Fail for 'An unexpected server error occured.'</value>
-    [JsonConverter(typeof(JsonStringEnumConverter))]
+    
     public enum InternalErrorCodeEnum
     {
         /// <summary>
@@ -47,7 +47,7 @@ public partial class SchedulingProcessingError : IEquatable<SchedulingProcessing
     /// An internal code representing the type of error. BadJson for 'Unable to parse json.' NotFound for 'Resource not found.' Fail for 'An unexpected server error occured.'
     /// </summary>
     /// <value>An internal code representing the type of error. BadJson for 'Unable to parse json.' NotFound for 'Resource not found.' Fail for 'An unexpected server error occured.'</value>
-    [DataMember(Name = "internalErrorCode", EmitDefaultValue = false)]
+    [JsonPropertyName("internalErrorCode")]
     public InternalErrorCodeEnum? InternalErrorCode { get; private set; }
     /// <summary>
     /// Initializes a new instance of the <see cref="SchedulingProcessingError" /> class.
@@ -65,7 +65,7 @@ public partial class SchedulingProcessingError : IEquatable<SchedulingProcessing
     /// A text description of the error
     /// </summary>
     /// <value>A text description of the error</value>
-    [DataMember(Name = "description", EmitDefaultValue = false)]
+    [JsonPropertyName("description")]
     public string Description { get; private set; }
 
 

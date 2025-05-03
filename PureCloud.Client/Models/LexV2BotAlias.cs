@@ -7,14 +7,14 @@ namespace PureCloud.Client.Models;
 /// <summary>
 /// LexV2BotAlias
 /// </summary>
-[DataContract]
+
 public partial class LexV2BotAlias : IEquatable<LexV2BotAlias>
 {
     /// <summary>
     /// The status of the Lex V2 bot alias
     /// </summary>
     /// <value>The status of the Lex V2 bot alias</value>
-    [JsonConverter(typeof(JsonStringEnumConverter))]
+    
     public enum StatusEnum
     {
         /// <summary>
@@ -53,7 +53,7 @@ public partial class LexV2BotAlias : IEquatable<LexV2BotAlias>
     /// The status of the Lex V2 bot alias
     /// </summary>
     /// <value>The status of the Lex V2 bot alias</value>
-    [DataMember(Name = "status", EmitDefaultValue = false)]
+    [JsonPropertyName("status")]
     public StatusEnum? Status { get; set; }
 
     /// <summary>
@@ -91,7 +91,7 @@ public partial class LexV2BotAlias : IEquatable<LexV2BotAlias>
     /// The globally unique identifier for the object.
     /// </summary>
     /// <value>The globally unique identifier for the object.</value>
-    [DataMember(Name = "id", EmitDefaultValue = false)]
+    [JsonPropertyName("id")]
     public string Id { get; private set; }
 
 
@@ -99,7 +99,7 @@ public partial class LexV2BotAlias : IEquatable<LexV2BotAlias>
     /// <summary>
     /// Gets or Sets Name
     /// </summary>
-    [DataMember(Name = "name", EmitDefaultValue = false)]
+    [JsonPropertyName("name")]
     public string Name { get; set; }
 
 
@@ -108,7 +108,7 @@ public partial class LexV2BotAlias : IEquatable<LexV2BotAlias>
     /// The Lex V2 bot region
     /// </summary>
     /// <value>The Lex V2 bot region</value>
-    [DataMember(Name = "region", EmitDefaultValue = false)]
+    [JsonPropertyName("region")]
     public string Region { get; set; }
 
 
@@ -117,7 +117,7 @@ public partial class LexV2BotAlias : IEquatable<LexV2BotAlias>
     /// The Lex V2 bot alias Id
     /// </summary>
     /// <value>The Lex V2 bot alias Id</value>
-    [DataMember(Name = "aliasId", EmitDefaultValue = false)]
+    [JsonPropertyName("aliasId")]
     public string AliasId { get; set; }
 
 
@@ -126,7 +126,7 @@ public partial class LexV2BotAlias : IEquatable<LexV2BotAlias>
     /// The Lex V2 bot this is an alias for
     /// </summary>
     /// <value>The Lex V2 bot this is an alias for</value>
-    [DataMember(Name = "bot", EmitDefaultValue = false)]
+    [JsonPropertyName("bot")]
     public LexV2Bot Bot { get; set; }
 
 
@@ -135,7 +135,7 @@ public partial class LexV2BotAlias : IEquatable<LexV2BotAlias>
     /// The version of the Lex V2 bot this alias points at
     /// </summary>
     /// <value>The version of the Lex V2 bot this alias points at</value>
-    [DataMember(Name = "botVersion", EmitDefaultValue = false)]
+    [JsonPropertyName("botVersion")]
     public string BotVersion { get; set; }
 
 
@@ -146,7 +146,7 @@ public partial class LexV2BotAlias : IEquatable<LexV2BotAlias>
     /// The target language of the Lex V2 bot
     /// </summary>
     /// <value>The target language of the Lex V2 bot</value>
-    [DataMember(Name = "language", EmitDefaultValue = false)]
+    [JsonPropertyName("language")]
     public string Language { get; set; }
 
 
@@ -155,7 +155,7 @@ public partial class LexV2BotAlias : IEquatable<LexV2BotAlias>
     /// An array of Intents associated with this bot alias
     /// </summary>
     /// <value>An array of Intents associated with this bot alias</value>
-    [DataMember(Name = "intents", EmitDefaultValue = false)]
+    [JsonPropertyName("intents")]
     public List<LexV2Intent> Intents { get; set; }
 
 
@@ -164,7 +164,7 @@ public partial class LexV2BotAlias : IEquatable<LexV2BotAlias>
     /// The URI for this object
     /// </summary>
     /// <value>The URI for this object</value>
-    [DataMember(Name = "selfUri", EmitDefaultValue = false)]
+    [JsonPropertyName("selfUri")]
     public string SelfUri { get; private set; }
 
 

@@ -7,14 +7,14 @@ namespace PureCloud.Client.Models;
 /// <summary>
 /// TransferToAgentRequest
 /// </summary>
-[DataContract]
+
 public partial class TransferToAgentRequest : IEquatable<TransferToAgentRequest>
 {
     /// <summary>
     /// The type of transfer to perform. Attended, where the initiating agent maintains ownership of the conversation until the intended recipient accepts the transfer, or Unattended, where the initiating agent immediately disconnects. Default is Unattended.
     /// </summary>
     /// <value>The type of transfer to perform. Attended, where the initiating agent maintains ownership of the conversation until the intended recipient accepts the transfer, or Unattended, where the initiating agent immediately disconnects. Default is Unattended.</value>
-    [JsonConverter(typeof(JsonStringEnumConverter))]
+    
     public enum TransferTypeEnum
     {
         /// <summary>
@@ -41,7 +41,7 @@ public partial class TransferToAgentRequest : IEquatable<TransferToAgentRequest>
     /// The type of transfer to perform. Attended, where the initiating agent maintains ownership of the conversation until the intended recipient accepts the transfer, or Unattended, where the initiating agent immediately disconnects. Default is Unattended.
     /// </summary>
     /// <value>The type of transfer to perform. Attended, where the initiating agent maintains ownership of the conversation until the intended recipient accepts the transfer, or Unattended, where the initiating agent immediately disconnects. Default is Unattended.</value>
-    [DataMember(Name = "transferType", EmitDefaultValue = false)]
+    [JsonPropertyName("transferType")]
     public TransferTypeEnum? TransferType { get; set; }
     /// <summary>
     /// Initializes a new instance of the <see cref="TransferToAgentRequest" /> class.
@@ -71,7 +71,7 @@ public partial class TransferToAgentRequest : IEquatable<TransferToAgentRequest>
     /// If true, the digital internal message will NOT be terminated.
     /// </summary>
     /// <value>If true, the digital internal message will NOT be terminated.</value>
-    [DataMember(Name = "keepInternalMessageAlive", EmitDefaultValue = false)]
+    [JsonPropertyName("keepInternalMessageAlive")]
     public bool? KeepInternalMessageAlive { get; set; }
 
 
@@ -80,7 +80,7 @@ public partial class TransferToAgentRequest : IEquatable<TransferToAgentRequest>
     /// The id of the internal user.
     /// </summary>
     /// <value>The id of the internal user.</value>
-    [DataMember(Name = "userId", EmitDefaultValue = false)]
+    [JsonPropertyName("userId")]
     public string UserId { get; set; }
 
 
@@ -89,7 +89,7 @@ public partial class TransferToAgentRequest : IEquatable<TransferToAgentRequest>
     /// The userName (like user’s email) of the internal user.
     /// </summary>
     /// <value>The userName (like user’s email) of the internal user.</value>
-    [DataMember(Name = "userName", EmitDefaultValue = false)]
+    [JsonPropertyName("userName")]
     public string UserName { get; set; }
 
 
@@ -98,7 +98,7 @@ public partial class TransferToAgentRequest : IEquatable<TransferToAgentRequest>
     /// The name of the internal user.
     /// </summary>
     /// <value>The name of the internal user.</value>
-    [DataMember(Name = "userDisplayName", EmitDefaultValue = false)]
+    [JsonPropertyName("userDisplayName")]
     public string UserDisplayName { get; set; }
 
 
@@ -107,7 +107,7 @@ public partial class TransferToAgentRequest : IEquatable<TransferToAgentRequest>
     /// If true, transfer to the voicemail inbox of the participant that is being replaced.
     /// </summary>
     /// <value>If true, transfer to the voicemail inbox of the participant that is being replaced.</value>
-    [DataMember(Name = "voicemail", EmitDefaultValue = false)]
+    [JsonPropertyName("voicemail")]
     public bool? Voicemail { get; set; }
 
 

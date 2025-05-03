@@ -1,4 +1,3 @@
-using System.Runtime.Serialization;
 using System.Text;
 using System.Text.Json.Serialization;
 
@@ -7,7 +6,7 @@ namespace PureCloud.Client.Models;
 /// <summary>
 /// Display attributes for an element in a journey view
 /// </summary>
-[DataContract]
+
 public partial class JourneyViewElementDisplayAttributes : IEquatable<JourneyViewElementDisplayAttributes>
 {
 
@@ -36,7 +35,7 @@ public partial class JourneyViewElementDisplayAttributes : IEquatable<JourneyVie
     /// The horizontal position (x-coordinate) of the element on the journey view canvas
     /// </summary>
     /// <value>The horizontal position (x-coordinate) of the element on the journey view canvas</value>
-    [DataMember(Name = "x", EmitDefaultValue = false)]
+    [JsonPropertyName("x")]
     public int? X { get; set; }
 
 
@@ -45,7 +44,7 @@ public partial class JourneyViewElementDisplayAttributes : IEquatable<JourneyVie
     /// The vertical position (y-coordinate) of the element on the journey view canvas
     /// </summary>
     /// <value>The vertical position (y-coordinate) of the element on the journey view canvas</value>
-    [DataMember(Name = "y", EmitDefaultValue = false)]
+    [JsonPropertyName("y")]
     public int? Y { get; set; }
 
 
@@ -54,7 +53,7 @@ public partial class JourneyViewElementDisplayAttributes : IEquatable<JourneyVie
     /// The column position for the element in the journey view canvas
     /// </summary>
     /// <value>The column position for the element in the journey view canvas</value>
-    [DataMember(Name = "col", EmitDefaultValue = false)]
+    [JsonPropertyName("col")]
     public int? Col { get; set; }
 
 

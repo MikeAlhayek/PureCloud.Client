@@ -7,14 +7,14 @@ namespace PureCloud.Client.Models;
 /// <summary>
 /// InsightsTrend
 /// </summary>
-[DataContract]
+
 public partial class InsightsTrend : IEquatable<InsightsTrend>
 {
     /// <summary>
     /// Granularity
     /// </summary>
     /// <value>Granularity</value>
-    [JsonConverter(typeof(JsonStringEnumConverter))]
+    
     public enum GranularityEnum
     {
         /// <summary>
@@ -47,7 +47,7 @@ public partial class InsightsTrend : IEquatable<InsightsTrend>
     /// Granularity
     /// </summary>
     /// <value>Granularity</value>
-    [DataMember(Name = "granularity", EmitDefaultValue = false)]
+    [JsonPropertyName("granularity")]
     public GranularityEnum? Granularity { get; set; }
     /// <summary>
     /// Initializes a new instance of the <see cref="InsightsTrend" /> class.
@@ -77,7 +77,7 @@ public partial class InsightsTrend : IEquatable<InsightsTrend>
     /// The performance profile
     /// </summary>
     /// <value>The performance profile</value>
-    [DataMember(Name = "performanceProfile", EmitDefaultValue = false)]
+    [JsonPropertyName("performanceProfile")]
     public AddressableEntityRef PerformanceProfile { get; set; }
 
 
@@ -86,7 +86,7 @@ public partial class InsightsTrend : IEquatable<InsightsTrend>
     /// The division
     /// </summary>
     /// <value>The division</value>
-    [DataMember(Name = "division", EmitDefaultValue = false)]
+    [JsonPropertyName("division")]
     public DivisionReference Division { get; set; }
 
 
@@ -97,7 +97,7 @@ public partial class InsightsTrend : IEquatable<InsightsTrend>
     /// The comparative period work day date range
     /// </summary>
     /// <value>The comparative period work day date range</value>
-    [DataMember(Name = "comparativePeriod", EmitDefaultValue = false)]
+    [JsonPropertyName("comparativePeriod")]
     public WorkdayPeriod ComparativePeriod { get; set; }
 
 
@@ -106,7 +106,7 @@ public partial class InsightsTrend : IEquatable<InsightsTrend>
     /// The primary period work day date range
     /// </summary>
     /// <value>The primary period work day date range</value>
-    [DataMember(Name = "primaryPeriod", EmitDefaultValue = false)]
+    [JsonPropertyName("primaryPeriod")]
     public WorkdayPeriod PrimaryPeriod { get; set; }
 
 
@@ -115,7 +115,7 @@ public partial class InsightsTrend : IEquatable<InsightsTrend>
     /// The list of insights trend for each metric
     /// </summary>
     /// <value>The list of insights trend for each metric</value>
-    [DataMember(Name = "entities", EmitDefaultValue = false)]
+    [JsonPropertyName("entities")]
     public List<InsightsTrendMetricItem> Entities { get; set; }
 
 
@@ -124,7 +124,7 @@ public partial class InsightsTrend : IEquatable<InsightsTrend>
     /// The insights trend in total
     /// </summary>
     /// <value>The insights trend in total</value>
-    [DataMember(Name = "total", EmitDefaultValue = false)]
+    [JsonPropertyName("total")]
     public InsightsTrendTotalItem Total { get; set; }
 
 

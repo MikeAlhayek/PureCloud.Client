@@ -1,4 +1,3 @@
-using System.Runtime.Serialization;
 using System.Text;
 using System.Text.Json.Serialization;
 
@@ -7,7 +6,7 @@ namespace PureCloud.Client.Models;
 /// <summary>
 /// ConversationTagsUpdate
 /// </summary>
-[DataContract]
+
 public partial class ConversationTagsUpdate : IEquatable<ConversationTagsUpdate>
 {
 
@@ -32,7 +31,7 @@ public partial class ConversationTagsUpdate : IEquatable<ConversationTagsUpdate>
     /// The external tag associated with the conversation.
     /// </summary>
     /// <value>The external tag associated with the conversation.</value>
-    [DataMember(Name = "externalTag", EmitDefaultValue = false)]
+    [JsonPropertyName("externalTag")]
     public string ExternalTag { get; set; }
 
 

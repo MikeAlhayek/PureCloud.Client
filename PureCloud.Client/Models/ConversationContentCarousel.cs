@@ -1,4 +1,3 @@
-using System.Runtime.Serialization;
 using System.Text;
 using System.Text.Json.Serialization;
 
@@ -7,7 +6,7 @@ namespace PureCloud.Client.Models;
 /// <summary>
 /// Carousel content object.
 /// </summary>
-[DataContract]
+
 public partial class ConversationContentCarousel : IEquatable<ConversationContentCarousel>
 {
 
@@ -32,7 +31,7 @@ public partial class ConversationContentCarousel : IEquatable<ConversationConten
     /// An array of card objects.
     /// </summary>
     /// <value>An array of card objects.</value>
-    [DataMember(Name = "cards", EmitDefaultValue = false)]
+    [JsonPropertyName("cards")]
     public List<ConversationContentCard> Cards { get; set; }
 
 

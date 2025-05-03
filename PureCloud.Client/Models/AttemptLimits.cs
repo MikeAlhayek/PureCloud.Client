@@ -7,14 +7,14 @@ namespace PureCloud.Client.Models;
 /// <summary>
 /// AttemptLimits
 /// </summary>
-[DataContract]
+
 public partial class AttemptLimits : IEquatable<AttemptLimits>
 {
     /// <summary>
     /// After how long the number of attempts will be set back to 0. Defaults to NEVER.
     /// </summary>
     /// <value>After how long the number of attempts will be set back to 0. Defaults to NEVER.</value>
-    [JsonConverter(typeof(JsonStringEnumConverter))]
+    
     public enum ResetPeriodEnum
     {
         /// <summary>
@@ -41,7 +41,7 @@ public partial class AttemptLimits : IEquatable<AttemptLimits>
     /// After how long the number of attempts will be set back to 0. Defaults to NEVER.
     /// </summary>
     /// <value>After how long the number of attempts will be set back to 0. Defaults to NEVER.</value>
-    [DataMember(Name = "resetPeriod", EmitDefaultValue = false)]
+    [JsonPropertyName("resetPeriod")]
     public ResetPeriodEnum? ResetPeriod { get; set; }
     /// <summary>
     /// Initializes a new instance of the <see cref="AttemptLimits" /> class.
@@ -71,7 +71,7 @@ public partial class AttemptLimits : IEquatable<AttemptLimits>
     /// The globally unique identifier for the object.
     /// </summary>
     /// <value>The globally unique identifier for the object.</value>
-    [DataMember(Name = "id", EmitDefaultValue = false)]
+    [JsonPropertyName("id")]
     public string Id { get; private set; }
 
 
@@ -79,7 +79,7 @@ public partial class AttemptLimits : IEquatable<AttemptLimits>
     /// <summary>
     /// Gets or Sets Name
     /// </summary>
-    [DataMember(Name = "name", EmitDefaultValue = false)]
+    [JsonPropertyName("name")]
     public string Name { get; set; }
 
 
@@ -88,7 +88,7 @@ public partial class AttemptLimits : IEquatable<AttemptLimits>
     /// Creation time of the entity. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z
     /// </summary>
     /// <value>Creation time of the entity. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z</value>
-    [DataMember(Name = "dateCreated", EmitDefaultValue = false)]
+    [JsonPropertyName("dateCreated")]
     public DateTime? DateCreated { get; private set; }
 
 
@@ -97,7 +97,7 @@ public partial class AttemptLimits : IEquatable<AttemptLimits>
     /// Last modified time of the entity. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z
     /// </summary>
     /// <value>Last modified time of the entity. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z</value>
-    [DataMember(Name = "dateModified", EmitDefaultValue = false)]
+    [JsonPropertyName("dateModified")]
     public DateTime? DateModified { get; private set; }
 
 
@@ -106,7 +106,7 @@ public partial class AttemptLimits : IEquatable<AttemptLimits>
     /// Required for updates, must match the version number of the most recent update
     /// </summary>
     /// <value>Required for updates, must match the version number of the most recent update</value>
-    [DataMember(Name = "version", EmitDefaultValue = false)]
+    [JsonPropertyName("version")]
     public int? Version { get; set; }
 
 
@@ -115,7 +115,7 @@ public partial class AttemptLimits : IEquatable<AttemptLimits>
     /// The maximum number of times a contact can be called within the resetPeriod. Required if maxAttemptsPerNumber is not defined.
     /// </summary>
     /// <value>The maximum number of times a contact can be called within the resetPeriod. Required if maxAttemptsPerNumber is not defined.</value>
-    [DataMember(Name = "maxAttemptsPerContact", EmitDefaultValue = false)]
+    [JsonPropertyName("maxAttemptsPerContact")]
     public int? MaxAttemptsPerContact { get; set; }
 
 
@@ -124,7 +124,7 @@ public partial class AttemptLimits : IEquatable<AttemptLimits>
     /// The maximum number of times a phone number can be called within the resetPeriod. Required if maxAttemptsPerContact is not defined.
     /// </summary>
     /// <value>The maximum number of times a phone number can be called within the resetPeriod. Required if maxAttemptsPerContact is not defined.</value>
-    [DataMember(Name = "maxAttemptsPerNumber", EmitDefaultValue = false)]
+    [JsonPropertyName("maxAttemptsPerNumber")]
     public int? MaxAttemptsPerNumber { get; set; }
 
 
@@ -133,7 +133,7 @@ public partial class AttemptLimits : IEquatable<AttemptLimits>
     /// If the resetPeriod is TODAY, this specifies the timezone in which TODAY occurs. Required if the resetPeriod is TODAY.
     /// </summary>
     /// <value>If the resetPeriod is TODAY, this specifies the timezone in which TODAY occurs. Required if the resetPeriod is TODAY.</value>
-    [DataMember(Name = "timeZoneId", EmitDefaultValue = false)]
+    [JsonPropertyName("timeZoneId")]
     public string TimeZoneId { get; set; }
 
 
@@ -144,7 +144,7 @@ public partial class AttemptLimits : IEquatable<AttemptLimits>
     /// Configuration for recall attempts.
     /// </summary>
     /// <value>Configuration for recall attempts.</value>
-    [DataMember(Name = "recallEntries", EmitDefaultValue = false)]
+    [JsonPropertyName("recallEntries")]
     public Dictionary<string, RecallEntry> RecallEntries { get; set; }
 
 
@@ -153,7 +153,7 @@ public partial class AttemptLimits : IEquatable<AttemptLimits>
     /// The URI for this object
     /// </summary>
     /// <value>The URI for this object</value>
-    [DataMember(Name = "selfUri", EmitDefaultValue = false)]
+    [JsonPropertyName("selfUri")]
     public string SelfUri { get; private set; }
 
 

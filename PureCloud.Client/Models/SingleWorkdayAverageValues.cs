@@ -1,12 +1,12 @@
-using System.Runtime.Serialization;
 using System.Text;
+using System.Text.Json.Serialization;
 
 namespace PureCloud.Client.Models;
 
 /// <summary>
 /// SingleWorkdayAverageValues
 /// </summary>
-[DataContract]
+
 public partial class SingleWorkdayAverageValues : IEquatable<SingleWorkdayAverageValues>
 {
     /// <summary>
@@ -23,7 +23,7 @@ public partial class SingleWorkdayAverageValues : IEquatable<SingleWorkdayAverag
     /// The targeted workday for average value query. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd
     /// </summary>
     /// <value>The targeted workday for average value query. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd</value>
-    [DataMember(Name = "dateWorkday", EmitDefaultValue = false)]
+    [JsonPropertyName("dateWorkday")]
     public string DateWorkday { get; private set; }
 
 
@@ -32,7 +32,7 @@ public partial class SingleWorkdayAverageValues : IEquatable<SingleWorkdayAverag
     /// The targeted division for the metrics
     /// </summary>
     /// <value>The targeted division for the metrics</value>
-    [DataMember(Name = "division", EmitDefaultValue = false)]
+    [JsonPropertyName("division")]
     public Division Division { get; private set; }
 
 
@@ -41,7 +41,7 @@ public partial class SingleWorkdayAverageValues : IEquatable<SingleWorkdayAverag
     /// The targeted user for the metrics
     /// </summary>
     /// <value>The targeted user for the metrics</value>
-    [DataMember(Name = "user", EmitDefaultValue = false)]
+    [JsonPropertyName("user")]
     public UserReference User { get; private set; }
 
 
@@ -50,7 +50,7 @@ public partial class SingleWorkdayAverageValues : IEquatable<SingleWorkdayAverag
     /// The time zone used for aggregating metric values
     /// </summary>
     /// <value>The time zone used for aggregating metric values</value>
-    [DataMember(Name = "timezone", EmitDefaultValue = false)]
+    [JsonPropertyName("timezone")]
     public string Timezone { get; private set; }
 
 
@@ -59,7 +59,7 @@ public partial class SingleWorkdayAverageValues : IEquatable<SingleWorkdayAverag
     /// The metric value averages
     /// </summary>
     /// <value>The metric value averages</value>
-    [DataMember(Name = "results", EmitDefaultValue = false)]
+    [JsonPropertyName("results")]
     public List<WorkdayValuesMetricItem> Results { get; private set; }
 
 
@@ -68,7 +68,7 @@ public partial class SingleWorkdayAverageValues : IEquatable<SingleWorkdayAverag
     /// The targeted performance profile for the average points
     /// </summary>
     /// <value>The targeted performance profile for the average points</value>
-    [DataMember(Name = "performanceProfile", EmitDefaultValue = false)]
+    [JsonPropertyName("performanceProfile")]
     public AddressableEntityRef PerformanceProfile { get; private set; }
 
 

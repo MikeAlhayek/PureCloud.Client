@@ -7,14 +7,14 @@ namespace PureCloud.Client.Models;
 /// <summary>
 /// Screenshare
 /// </summary>
-[DataContract]
+
 public partial class Screenshare : IEquatable<Screenshare>
 {
     /// <summary>
     /// The connection state of this communication.
     /// </summary>
     /// <value>The connection state of this communication.</value>
-    [JsonConverter(typeof(JsonStringEnumConverter))]
+    
     public enum StateEnum
     {
         /// <summary>
@@ -77,7 +77,7 @@ public partial class Screenshare : IEquatable<Screenshare>
     /// The initial connection state of this communication.
     /// </summary>
     /// <value>The initial connection state of this communication.</value>
-    [JsonConverter(typeof(JsonStringEnumConverter))]
+    
     public enum InitialStateEnum
     {
         /// <summary>
@@ -140,7 +140,7 @@ public partial class Screenshare : IEquatable<Screenshare>
     /// System defined string indicating what caused the communication to disconnect. Will be null until the communication disconnects.
     /// </summary>
     /// <value>System defined string indicating what caused the communication to disconnect. Will be null until the communication disconnects.</value>
-    [JsonConverter(typeof(JsonStringEnumConverter))]
+    
     public enum DisconnectTypeEnum
     {
         /// <summary>
@@ -251,19 +251,19 @@ public partial class Screenshare : IEquatable<Screenshare>
     /// The connection state of this communication.
     /// </summary>
     /// <value>The connection state of this communication.</value>
-    [DataMember(Name = "state", EmitDefaultValue = false)]
+    [JsonPropertyName("state")]
     public StateEnum? State { get; set; }
     /// <summary>
     /// The initial connection state of this communication.
     /// </summary>
     /// <value>The initial connection state of this communication.</value>
-    [DataMember(Name = "initialState", EmitDefaultValue = false)]
+    [JsonPropertyName("initialState")]
     public InitialStateEnum? InitialState { get; set; }
     /// <summary>
     /// System defined string indicating what caused the communication to disconnect. Will be null until the communication disconnects.
     /// </summary>
     /// <value>System defined string indicating what caused the communication to disconnect. Will be null until the communication disconnects.</value>
-    [DataMember(Name = "disconnectType", EmitDefaultValue = false)]
+    [JsonPropertyName("disconnectType")]
     public DisconnectTypeEnum? DisconnectType { get; set; }
     /// <summary>
     /// Initializes a new instance of the <see cref="Screenshare" /> class.
@@ -315,7 +315,7 @@ public partial class Screenshare : IEquatable<Screenshare>
     /// A globally unique identifier for this communication.
     /// </summary>
     /// <value>A globally unique identifier for this communication.</value>
-    [DataMember(Name = "id", EmitDefaultValue = false)]
+    [JsonPropertyName("id")]
     public string Id { get; set; }
 
 
@@ -324,7 +324,7 @@ public partial class Screenshare : IEquatable<Screenshare>
     /// The room id context (xmpp jid) for the conference session.
     /// </summary>
     /// <value>The room id context (xmpp jid) for the conference session.</value>
-    [DataMember(Name = "context", EmitDefaultValue = false)]
+    [JsonPropertyName("context")]
     public string Context { get; set; }
 
 
@@ -333,7 +333,7 @@ public partial class Screenshare : IEquatable<Screenshare>
     /// Indicates whether this participant is sharing their screen.
     /// </summary>
     /// <value>Indicates whether this participant is sharing their screen.</value>
-    [DataMember(Name = "sharing", EmitDefaultValue = false)]
+    [JsonPropertyName("sharing")]
     public bool? Sharing { get; set; }
 
 
@@ -342,7 +342,7 @@ public partial class Screenshare : IEquatable<Screenshare>
     /// The number of peer participants from the perspective of the participant in the conference.
     /// </summary>
     /// <value>The number of peer participants from the perspective of the participant in the conference.</value>
-    [DataMember(Name = "peerCount", EmitDefaultValue = false)]
+    [JsonPropertyName("peerCount")]
     public int? PeerCount { get; set; }
 
 
@@ -353,7 +353,7 @@ public partial class Screenshare : IEquatable<Screenshare>
     /// The timestamp the communication has when it is first put into an alerting state. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z
     /// </summary>
     /// <value>The timestamp the communication has when it is first put into an alerting state. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z</value>
-    [DataMember(Name = "startAlertingTime", EmitDefaultValue = false)]
+    [JsonPropertyName("startAlertingTime")]
     public DateTime? StartAlertingTime { get; set; }
 
 
@@ -362,7 +362,7 @@ public partial class Screenshare : IEquatable<Screenshare>
     /// The timestamp when this communication was connected in the cloud clock. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z
     /// </summary>
     /// <value>The timestamp when this communication was connected in the cloud clock. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z</value>
-    [DataMember(Name = "connectedTime", EmitDefaultValue = false)]
+    [JsonPropertyName("connectedTime")]
     public DateTime? ConnectedTime { get; set; }
 
 
@@ -371,7 +371,7 @@ public partial class Screenshare : IEquatable<Screenshare>
     /// The timestamp when this communication disconnected from the conversation in the provider clock. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z
     /// </summary>
     /// <value>The timestamp when this communication disconnected from the conversation in the provider clock. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z</value>
-    [DataMember(Name = "disconnectedTime", EmitDefaultValue = false)]
+    [JsonPropertyName("disconnectedTime")]
     public DateTime? DisconnectedTime { get; set; }
 
 
@@ -380,7 +380,7 @@ public partial class Screenshare : IEquatable<Screenshare>
     /// The source provider for the screen share.
     /// </summary>
     /// <value>The source provider for the screen share.</value>
-    [DataMember(Name = "provider", EmitDefaultValue = false)]
+    [JsonPropertyName("provider")]
     public string Provider { get; set; }
 
 
@@ -389,7 +389,7 @@ public partial class Screenshare : IEquatable<Screenshare>
     /// The id of the peer communication corresponding to a matching leg for this communication.
     /// </summary>
     /// <value>The id of the peer communication corresponding to a matching leg for this communication.</value>
-    [DataMember(Name = "peerId", EmitDefaultValue = false)]
+    [JsonPropertyName("peerId")]
     public string PeerId { get; set; }
 
 
@@ -398,7 +398,7 @@ public partial class Screenshare : IEquatable<Screenshare>
     /// The time line of the participant&#39;s call, divided into activity segments.
     /// </summary>
     /// <value>The time line of the participant&#39;s call, divided into activity segments.</value>
-    [DataMember(Name = "segments", EmitDefaultValue = false)]
+    [JsonPropertyName("segments")]
     public List<Segment> Segments { get; set; }
 
 
@@ -407,7 +407,7 @@ public partial class Screenshare : IEquatable<Screenshare>
     /// Call wrap up or disposition data.
     /// </summary>
     /// <value>Call wrap up or disposition data.</value>
-    [DataMember(Name = "wrapup", EmitDefaultValue = false)]
+    [JsonPropertyName("wrapup")]
     public Wrapup Wrapup { get; set; }
 
 
@@ -416,7 +416,7 @@ public partial class Screenshare : IEquatable<Screenshare>
     /// After-call work for the communication.
     /// </summary>
     /// <value>After-call work for the communication.</value>
-    [DataMember(Name = "afterCallWork", EmitDefaultValue = false)]
+    [JsonPropertyName("afterCallWork")]
     public AfterCallWork AfterCallWork { get; set; }
 
 
@@ -425,7 +425,7 @@ public partial class Screenshare : IEquatable<Screenshare>
     /// Indicates if after-call work is required for a communication. Only used when the ACW Setting is Agent Requested.
     /// </summary>
     /// <value>Indicates if after-call work is required for a communication. Only used when the ACW Setting is Agent Requested.</value>
-    [DataMember(Name = "afterCallWorkRequired", EmitDefaultValue = false)]
+    [JsonPropertyName("afterCallWorkRequired")]
     public bool? AfterCallWorkRequired { get; set; }
 
 

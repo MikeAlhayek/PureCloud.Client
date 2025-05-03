@@ -1,12 +1,12 @@
-using System.Runtime.Serialization;
 using System.Text;
+using System.Text.Json.Serialization;
 
 namespace PureCloud.Client.Models;
 
 /// <summary>
 /// GenesysBotConnector
 /// </summary>
-[DataContract]
+
 public partial class GenesysBotConnector : IEquatable<GenesysBotConnector>
 {
     /// <summary>
@@ -25,7 +25,7 @@ public partial class GenesysBotConnector : IEquatable<GenesysBotConnector>
     /// User defined name/value parameters passed to the BotConnector bot.
     /// </summary>
     /// <value>User defined name/value parameters passed to the BotConnector bot.</value>
-    [DataMember(Name = "queryParameters", EmitDefaultValue = false)]
+    [JsonPropertyName("queryParameters")]
     public Dictionary<string, string> QueryParameters { get; set; }
 
 

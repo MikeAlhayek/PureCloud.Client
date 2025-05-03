@@ -1,4 +1,3 @@
-using System.Runtime.Serialization;
 using System.Text;
 using System.Text.Json.Serialization;
 
@@ -7,7 +6,7 @@ namespace PureCloud.Client.Models;
 /// <summary>
 /// BulkJobTerminateRequest
 /// </summary>
-[DataContract]
+
 public partial class BulkJobTerminateRequest : IEquatable<BulkJobTerminateRequest>
 {
 
@@ -32,7 +31,7 @@ public partial class BulkJobTerminateRequest : IEquatable<BulkJobTerminateReques
     /// The list of bulk job entities to terminate.
     /// </summary>
     /// <value>The list of bulk job entities to terminate.</value>
-    [DataMember(Name = "entities", EmitDefaultValue = false)]
+    [JsonPropertyName("entities")]
     public List<BulkJobEntity> Entities { get; set; }
 
 

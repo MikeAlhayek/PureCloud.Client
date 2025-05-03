@@ -1,4 +1,3 @@
-using System.Runtime.Serialization;
 using System.Text;
 using System.Text.Json.Serialization;
 
@@ -7,7 +6,7 @@ namespace PureCloud.Client.Models;
 /// <summary>
 /// BuSearchAgentSchedulesRequest
 /// </summary>
-[DataContract]
+
 public partial class BuSearchAgentSchedulesRequest : IEquatable<BuSearchAgentSchedulesRequest>
 {
 
@@ -36,7 +35,7 @@ public partial class BuSearchAgentSchedulesRequest : IEquatable<BuSearchAgentSch
     /// Start date of the range to search. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z
     /// </summary>
     /// <value>Start date of the range to search. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z</value>
-    [DataMember(Name = "startDate", EmitDefaultValue = false)]
+    [JsonPropertyName("startDate")]
     public DateTime? StartDate { get; set; }
 
 
@@ -45,7 +44,7 @@ public partial class BuSearchAgentSchedulesRequest : IEquatable<BuSearchAgentSch
     /// End date of the range to search. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z
     /// </summary>
     /// <value>End date of the range to search. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z</value>
-    [DataMember(Name = "endDate", EmitDefaultValue = false)]
+    [JsonPropertyName("endDate")]
     public DateTime? EndDate { get; set; }
 
 
@@ -54,7 +53,7 @@ public partial class BuSearchAgentSchedulesRequest : IEquatable<BuSearchAgentSch
     /// IDs of the users for whose schedules to search
     /// </summary>
     /// <value>IDs of the users for whose schedules to search</value>
-    [DataMember(Name = "userIds", EmitDefaultValue = false)]
+    [JsonPropertyName("userIds")]
     public List<string> UserIds { get; set; }
 
 

@@ -1,12 +1,12 @@
-using System.Runtime.Serialization;
 using System.Text;
+using System.Text.Json.Serialization;
 
 namespace PureCloud.Client.Models;
 
 /// <summary>
 /// WorkitemsAttributeChangeList
 /// </summary>
-[DataContract]
+
 public partial class WorkitemsAttributeChangeList : IEquatable<WorkitemsAttributeChangeList>
 {
     /// <summary>
@@ -27,7 +27,7 @@ public partial class WorkitemsAttributeChangeList : IEquatable<WorkitemsAttribut
     /// New property value
     /// </summary>
     /// <value>New property value</value>
-    [DataMember(Name = "newValue", EmitDefaultValue = false)]
+    [JsonPropertyName("newValue")]
     public List<object> NewValue { get; set; }
 
 
@@ -36,7 +36,7 @@ public partial class WorkitemsAttributeChangeList : IEquatable<WorkitemsAttribut
     /// Old property value
     /// </summary>
     /// <value>Old property value</value>
-    [DataMember(Name = "oldValue", EmitDefaultValue = false)]
+    [JsonPropertyName("oldValue")]
     public List<object> OldValue { get; set; }
 
 

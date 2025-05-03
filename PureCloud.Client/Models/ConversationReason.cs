@@ -7,14 +7,14 @@ namespace PureCloud.Client.Models;
 /// <summary>
 /// Reasons for a failed message receipt.
 /// </summary>
-[DataContract]
+
 public partial class ConversationReason : IEquatable<ConversationReason>
 {
     /// <summary>
     /// The reason code for the failed message receipt.
     /// </summary>
     /// <value>The reason code for the failed message receipt.</value>
-    [JsonConverter(typeof(JsonStringEnumConverter))]
+    
     public enum CodeEnum
     {
         /// <summary>
@@ -101,7 +101,7 @@ public partial class ConversationReason : IEquatable<ConversationReason>
     /// The reason code for the failed message receipt.
     /// </summary>
     /// <value>The reason code for the failed message receipt.</value>
-    [DataMember(Name = "code", EmitDefaultValue = false)]
+    [JsonPropertyName("code")]
     public CodeEnum? Code { get; set; }
 
     /// <summary>
@@ -129,7 +129,7 @@ public partial class ConversationReason : IEquatable<ConversationReason>
     /// Description of the reason for the failed message receipt.
     /// </summary>
     /// <value>Description of the reason for the failed message receipt.</value>
-    [DataMember(Name = "message", EmitDefaultValue = false)]
+    [JsonPropertyName("message")]
     public string Message { get; set; }
 
 

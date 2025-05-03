@@ -1,12 +1,12 @@
-using System.Runtime.Serialization;
 using System.Text;
+using System.Text.Json.Serialization;
 
 namespace PureCloud.Client.Models;
 
 /// <summary>
 /// MediaStatistics
 /// </summary>
-[DataContract]
+
 public partial class MediaStatistics : IEquatable<MediaStatistics>
 {
     /// <summary>
@@ -34,7 +34,7 @@ public partial class MediaStatistics : IEquatable<MediaStatistics>
     /// <summary>
     /// Gets or Sets CommunicationId
     /// </summary>
-    [DataMember(Name = "communicationId", EmitDefaultValue = false)]
+    [JsonPropertyName("communicationId")]
     public string CommunicationId { get; set; }
 
 
@@ -43,7 +43,7 @@ public partial class MediaStatistics : IEquatable<MediaStatistics>
     /// Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z
     /// </summary>
     /// <value>Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z</value>
-    [DataMember(Name = "dateStart", EmitDefaultValue = false)]
+    [JsonPropertyName("dateStart")]
     public DateTime? DateStart { get; set; }
 
 
@@ -52,7 +52,7 @@ public partial class MediaStatistics : IEquatable<MediaStatistics>
     /// Relative milliseconds to create media session
     /// </summary>
     /// <value>Relative milliseconds to create media session</value>
-    [DataMember(Name = "creationMilliseconds", EmitDefaultValue = false)]
+    [JsonPropertyName("creationMilliseconds")]
     public long? CreationMilliseconds { get; set; }
 
 
@@ -61,7 +61,7 @@ public partial class MediaStatistics : IEquatable<MediaStatistics>
     /// Preferred media region
     /// </summary>
     /// <value>Preferred media region</value>
-    [DataMember(Name = "preferredRegion", EmitDefaultValue = false)]
+    [JsonPropertyName("preferredRegion")]
     public string PreferredRegion { get; set; }
 
 
@@ -70,7 +70,7 @@ public partial class MediaStatistics : IEquatable<MediaStatistics>
     /// Actual media region
     /// </summary>
     /// <value>Actual media region</value>
-    [DataMember(Name = "effectiveRegion", EmitDefaultValue = false)]
+    [JsonPropertyName("effectiveRegion")]
     public string EffectiveRegion { get; set; }
 
 
@@ -79,7 +79,7 @@ public partial class MediaStatistics : IEquatable<MediaStatistics>
     /// Media statistics for each media endpoint
     /// </summary>
     /// <value>Media statistics for each media endpoint</value>
-    [DataMember(Name = "mediaStatistics", EmitDefaultValue = false)]
+    [JsonPropertyName("mediaStatistics")]
     public List<MediaEndpointStatistics> _MediaStatistics { get; set; }
 
 

@@ -7,14 +7,14 @@ namespace PureCloud.Client.Models;
 /// <summary>
 /// CampaignRule
 /// </summary>
-[DataContract]
+
 public partial class CampaignRule : IEquatable<CampaignRule>
 {
     /// <summary>
     /// CampaignRule processing algorithm
     /// </summary>
     /// <value>CampaignRule processing algorithm</value>
-    [JsonConverter(typeof(JsonStringEnumConverter))]
+    
     public enum CampaignRuleProcessingEnum
     {
         /// <summary>
@@ -35,7 +35,7 @@ public partial class CampaignRule : IEquatable<CampaignRule>
     /// CampaignRule processing algorithm
     /// </summary>
     /// <value>CampaignRule processing algorithm</value>
-    [DataMember(Name = "campaignRuleProcessing", EmitDefaultValue = false)]
+    [JsonPropertyName("campaignRuleProcessing")]
     public CampaignRuleProcessingEnum? CampaignRuleProcessing { get; set; }
 
     /// <summary>
@@ -77,7 +77,7 @@ public partial class CampaignRule : IEquatable<CampaignRule>
     /// The globally unique identifier for the object.
     /// </summary>
     /// <value>The globally unique identifier for the object.</value>
-    [DataMember(Name = "id", EmitDefaultValue = false)]
+    [JsonPropertyName("id")]
     public string Id { get; private set; }
 
 
@@ -86,7 +86,7 @@ public partial class CampaignRule : IEquatable<CampaignRule>
     /// The name of the CampaignRule.
     /// </summary>
     /// <value>The name of the CampaignRule.</value>
-    [DataMember(Name = "name", EmitDefaultValue = false)]
+    [JsonPropertyName("name")]
     public string Name { get; set; }
 
 
@@ -95,7 +95,7 @@ public partial class CampaignRule : IEquatable<CampaignRule>
     /// Creation time of the entity. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z
     /// </summary>
     /// <value>Creation time of the entity. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z</value>
-    [DataMember(Name = "dateCreated", EmitDefaultValue = false)]
+    [JsonPropertyName("dateCreated")]
     public DateTime? DateCreated { get; private set; }
 
 
@@ -104,7 +104,7 @@ public partial class CampaignRule : IEquatable<CampaignRule>
     /// Last modified time of the entity. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z
     /// </summary>
     /// <value>Last modified time of the entity. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z</value>
-    [DataMember(Name = "dateModified", EmitDefaultValue = false)]
+    [JsonPropertyName("dateModified")]
     public DateTime? DateModified { get; private set; }
 
 
@@ -113,7 +113,7 @@ public partial class CampaignRule : IEquatable<CampaignRule>
     /// Required for updates, must match the version number of the most recent update
     /// </summary>
     /// <value>Required for updates, must match the version number of the most recent update</value>
-    [DataMember(Name = "version", EmitDefaultValue = false)]
+    [JsonPropertyName("version")]
     public int? Version { get; set; }
 
 
@@ -122,7 +122,7 @@ public partial class CampaignRule : IEquatable<CampaignRule>
     /// The list of entities that this CampaignRule monitors.
     /// </summary>
     /// <value>The list of entities that this CampaignRule monitors.</value>
-    [DataMember(Name = "campaignRuleEntities", EmitDefaultValue = false)]
+    [JsonPropertyName("campaignRuleEntities")]
     public CampaignRuleEntities CampaignRuleEntities { get; set; }
 
 
@@ -131,7 +131,7 @@ public partial class CampaignRule : IEquatable<CampaignRule>
     /// The list of conditions that are evaluated on the entities.
     /// </summary>
     /// <value>The list of conditions that are evaluated on the entities.</value>
-    [DataMember(Name = "campaignRuleConditions", EmitDefaultValue = false)]
+    [JsonPropertyName("campaignRuleConditions")]
     public List<CampaignRuleCondition> CampaignRuleConditions { get; set; }
 
 
@@ -140,7 +140,7 @@ public partial class CampaignRule : IEquatable<CampaignRule>
     /// The list of actions that are executed if the conditions are satisfied.
     /// </summary>
     /// <value>The list of actions that are executed if the conditions are satisfied.</value>
-    [DataMember(Name = "campaignRuleActions", EmitDefaultValue = false)]
+    [JsonPropertyName("campaignRuleActions")]
     public List<CampaignRuleAction> CampaignRuleActions { get; set; }
 
 
@@ -148,7 +148,7 @@ public partial class CampaignRule : IEquatable<CampaignRule>
     /// <summary>
     /// Gets or Sets MatchAnyConditions
     /// </summary>
-    [DataMember(Name = "matchAnyConditions", EmitDefaultValue = false)]
+    [JsonPropertyName("matchAnyConditions")]
     public bool? MatchAnyConditions { get; set; }
 
 
@@ -157,7 +157,7 @@ public partial class CampaignRule : IEquatable<CampaignRule>
     /// Whether or not this CampaignRule is currently enabled. Required on updates.
     /// </summary>
     /// <value>Whether or not this CampaignRule is currently enabled. Required on updates.</value>
-    [DataMember(Name = "enabled", EmitDefaultValue = false)]
+    [JsonPropertyName("enabled")]
     public bool? Enabled { get; set; }
 
 
@@ -168,7 +168,7 @@ public partial class CampaignRule : IEquatable<CampaignRule>
     /// List of condition groups that are evaluated, used only with campaignRuleProcessing&#x3D;\&quot;v2\&quot;
     /// </summary>
     /// <value>List of condition groups that are evaluated, used only with campaignRuleProcessing&#x3D;\&quot;v2\&quot;</value>
-    [DataMember(Name = "conditionGroups", EmitDefaultValue = false)]
+    [JsonPropertyName("conditionGroups")]
     public List<CampaignRuleConditionGroup> ConditionGroups { get; set; }
 
 
@@ -177,7 +177,7 @@ public partial class CampaignRule : IEquatable<CampaignRule>
     /// CampaignRule execution settings
     /// </summary>
     /// <value>CampaignRule execution settings</value>
-    [DataMember(Name = "executionSettings", EmitDefaultValue = false)]
+    [JsonPropertyName("executionSettings")]
     public CampaignRuleExecutionSettings ExecutionSettings { get; set; }
 
 
@@ -186,7 +186,7 @@ public partial class CampaignRule : IEquatable<CampaignRule>
     /// A list of current warning conditions associated with the campaign rule.
     /// </summary>
     /// <value>A list of current warning conditions associated with the campaign rule.</value>
-    [DataMember(Name = "warnings", EmitDefaultValue = false)]
+    [JsonPropertyName("warnings")]
     public List<CampaignRuleWarning> Warnings { get; private set; }
 
 
@@ -195,7 +195,7 @@ public partial class CampaignRule : IEquatable<CampaignRule>
     /// The URI for this object
     /// </summary>
     /// <value>The URI for this object</value>
-    [DataMember(Name = "selfUri", EmitDefaultValue = false)]
+    [JsonPropertyName("selfUri")]
     public string SelfUri { get; private set; }
 
 

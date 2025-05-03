@@ -1,4 +1,3 @@
-using System.Runtime.Serialization;
 using System.Text;
 using System.Text.Json.Serialization;
 
@@ -7,7 +6,7 @@ namespace PureCloud.Client.Models;
 /// <summary>
 /// PatchCallbackRequest
 /// </summary>
-[DataContract]
+
 public partial class PatchCallbackRequest : IEquatable<PatchCallbackRequest>
 {
 
@@ -38,7 +37,7 @@ public partial class PatchCallbackRequest : IEquatable<PatchCallbackRequest>
     /// The conversationId.
     /// </summary>
     /// <value>The conversationId.</value>
-    [DataMember(Name = "conversationId", EmitDefaultValue = false)]
+    [JsonPropertyName("conversationId")]
     public string ConversationId { get; set; }
 
 
@@ -47,7 +46,7 @@ public partial class PatchCallbackRequest : IEquatable<PatchCallbackRequest>
     /// The identifier of the queue to be used for the callback.
     /// </summary>
     /// <value>The identifier of the queue to be used for the callback.</value>
-    [DataMember(Name = "queueId", EmitDefaultValue = false)]
+    [JsonPropertyName("queueId")]
     public string QueueId { get; set; }
 
 
@@ -56,7 +55,7 @@ public partial class PatchCallbackRequest : IEquatable<PatchCallbackRequest>
     /// The agentId.
     /// </summary>
     /// <value>The agentId.</value>
-    [DataMember(Name = "agentId", EmitDefaultValue = false)]
+    [JsonPropertyName("agentId")]
     public string AgentId { get; set; }
 
 
@@ -65,7 +64,7 @@ public partial class PatchCallbackRequest : IEquatable<PatchCallbackRequest>
     /// The scheduled date-time for the callback. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z
     /// </summary>
     /// <value>The scheduled date-time for the callback. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z</value>
-    [DataMember(Name = "callbackScheduledTime", EmitDefaultValue = false)]
+    [JsonPropertyName("callbackScheduledTime")]
     public DateTime? CallbackScheduledTime { get; set; }
 
 

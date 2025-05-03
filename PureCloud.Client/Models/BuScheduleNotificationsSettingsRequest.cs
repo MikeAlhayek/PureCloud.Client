@@ -1,12 +1,12 @@
-using System.Runtime.Serialization;
 using System.Text;
+using System.Text.Json.Serialization;
 
 namespace PureCloud.Client.Models;
 
 /// <summary>
 /// BuScheduleNotificationsSettingsRequest
 /// </summary>
-[DataContract]
+
 public partial class BuScheduleNotificationsSettingsRequest : IEquatable<BuScheduleNotificationsSettingsRequest>
 {
     /// <summary>
@@ -27,7 +27,7 @@ public partial class BuScheduleNotificationsSettingsRequest : IEquatable<BuSched
     /// The number of minutes prior to the scheduled event to display an early reminder notification
     /// </summary>
     /// <value>The number of minutes prior to the scheduled event to display an early reminder notification</value>
-    [DataMember(Name = "earlyReminderMinutes", EmitDefaultValue = false)]
+    [JsonPropertyName("earlyReminderMinutes")]
     public int? EarlyReminderMinutes { get; set; }
 
 
@@ -36,7 +36,7 @@ public partial class BuScheduleNotificationsSettingsRequest : IEquatable<BuSched
     /// List of activity category notification settings
     /// </summary>
     /// <value>List of activity category notification settings</value>
-    [DataMember(Name = "activityCategorySettings", EmitDefaultValue = false)]
+    [JsonPropertyName("activityCategorySettings")]
     public List<BuScheduleNotificationsCategorySettings> ActivityCategorySettings { get; set; }
 
 

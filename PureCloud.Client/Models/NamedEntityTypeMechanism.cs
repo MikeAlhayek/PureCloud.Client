@@ -7,14 +7,14 @@ namespace PureCloud.Client.Models;
 /// <summary>
 /// NamedEntityTypeMechanism
 /// </summary>
-[DataContract]
+
 public partial class NamedEntityTypeMechanism : IEquatable<NamedEntityTypeMechanism>
 {
     /// <summary>
     /// The type of the mechanism.
     /// </summary>
     /// <value>The type of the mechanism.</value>
-    [JsonConverter(typeof(JsonStringEnumConverter))]
+    
     public enum TypeEnum
     {
         /// <summary>
@@ -65,7 +65,7 @@ public partial class NamedEntityTypeMechanism : IEquatable<NamedEntityTypeMechan
     /// Subtype of detection mechanism
     /// </summary>
     /// <value>Subtype of detection mechanism</value>
-    [JsonConverter(typeof(JsonStringEnumConverter))]
+    
     public enum SubTypeEnum
     {
         /// <summary>
@@ -98,13 +98,13 @@ public partial class NamedEntityTypeMechanism : IEquatable<NamedEntityTypeMechan
     /// The type of the mechanism.
     /// </summary>
     /// <value>The type of the mechanism.</value>
-    [DataMember(Name = "type", EmitDefaultValue = false)]
+    [JsonPropertyName("type")]
     public TypeEnum? Type { get; set; }
     /// <summary>
     /// Subtype of detection mechanism
     /// </summary>
     /// <value>Subtype of detection mechanism</value>
-    [DataMember(Name = "subType", EmitDefaultValue = false)]
+    [JsonPropertyName("subType")]
     public SubTypeEnum? SubType { get; set; }
 
     /// <summary>
@@ -140,7 +140,7 @@ public partial class NamedEntityTypeMechanism : IEquatable<NamedEntityTypeMechan
     /// The items that define the named entity type.
     /// </summary>
     /// <value>The items that define the named entity type.</value>
-    [DataMember(Name = "items", EmitDefaultValue = false)]
+    [JsonPropertyName("items")]
     public List<NamedEntityTypeItem> Items { get; set; }
 
 
@@ -149,7 +149,7 @@ public partial class NamedEntityTypeMechanism : IEquatable<NamedEntityTypeMechan
     /// Whether the named entity type is restricted to the items provided. Default: false
     /// </summary>
     /// <value>Whether the named entity type is restricted to the items provided. Default: false</value>
-    [DataMember(Name = "restricted", EmitDefaultValue = false)]
+    [JsonPropertyName("restricted")]
     public bool? Restricted { get; set; }
 
 
@@ -162,7 +162,7 @@ public partial class NamedEntityTypeMechanism : IEquatable<NamedEntityTypeMechan
     /// The maximum length of the entity resolved value
     /// </summary>
     /// <value>The maximum length of the entity resolved value</value>
-    [DataMember(Name = "maxLength", EmitDefaultValue = false)]
+    [JsonPropertyName("maxLength")]
     public int? MaxLength { get; set; }
 
 
@@ -171,7 +171,7 @@ public partial class NamedEntityTypeMechanism : IEquatable<NamedEntityTypeMechan
     /// The minimum length of the entity resolved value
     /// </summary>
     /// <value>The minimum length of the entity resolved value</value>
-    [DataMember(Name = "minLength", EmitDefaultValue = false)]
+    [JsonPropertyName("minLength")]
     public int? MinLength { get; set; }
 
 
@@ -180,7 +180,7 @@ public partial class NamedEntityTypeMechanism : IEquatable<NamedEntityTypeMechan
     /// Examples for entity detection
     /// </summary>
     /// <value>Examples for entity detection</value>
-    [DataMember(Name = "examples", EmitDefaultValue = false)]
+    [JsonPropertyName("examples")]
     public List<NamedEntityTypeMechanismExample> Examples { get; set; }
 
 

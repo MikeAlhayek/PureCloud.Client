@@ -7,14 +7,14 @@ namespace PureCloud.Client.Models;
 /// <summary>
 /// EmergencyLocation
 /// </summary>
-[DataContract]
+
 public partial class EmergencyLocation : IEquatable<EmergencyLocation>
 {
     /// <summary>
     /// source
     /// </summary>
     /// <value>source</value>
-    [JsonConverter(typeof(JsonStringEnumConverter))]
+    
     public enum SourceEnum
     {
         /// <summary>
@@ -41,7 +41,7 @@ public partial class EmergencyLocation : IEquatable<EmergencyLocation>
     /// source
     /// </summary>
     /// <value>source</value>
-    [DataMember(Name = "source", EmitDefaultValue = false)]
+    [JsonPropertyName("source")]
     public SourceEnum? Source { get; set; }
 
     /// <summary>
@@ -71,7 +71,7 @@ public partial class EmergencyLocation : IEquatable<EmergencyLocation>
     /// The globally unique identifier for the object.
     /// </summary>
     /// <value>The globally unique identifier for the object.</value>
-    [DataMember(Name = "id", EmitDefaultValue = false)]
+    [JsonPropertyName("id")]
     public string Id { get; private set; }
 
 
@@ -79,7 +79,7 @@ public partial class EmergencyLocation : IEquatable<EmergencyLocation>
     /// <summary>
     /// Gets or Sets Name
     /// </summary>
-    [DataMember(Name = "name", EmitDefaultValue = false)]
+    [JsonPropertyName("name")]
     public string Name { get; set; }
 
 
@@ -88,7 +88,7 @@ public partial class EmergencyLocation : IEquatable<EmergencyLocation>
     /// Emergency address
     /// </summary>
     /// <value>Emergency address</value>
-    [DataMember(Name = "address", EmitDefaultValue = false)]
+    [JsonPropertyName("address")]
     public LocationAddress Address { get; set; }
 
 
@@ -97,7 +97,7 @@ public partial class EmergencyLocation : IEquatable<EmergencyLocation>
     /// Phone number in E164 format
     /// </summary>
     /// <value>Phone number in E164 format</value>
-    [DataMember(Name = "did", EmitDefaultValue = false)]
+    [JsonPropertyName("did")]
     public string Did { get; set; }
 
 
@@ -108,7 +108,7 @@ public partial class EmergencyLocation : IEquatable<EmergencyLocation>
     /// The URI for this object
     /// </summary>
     /// <value>The URI for this object</value>
-    [DataMember(Name = "selfUri", EmitDefaultValue = false)]
+    [JsonPropertyName("selfUri")]
     public string SelfUri { get; private set; }
 
 

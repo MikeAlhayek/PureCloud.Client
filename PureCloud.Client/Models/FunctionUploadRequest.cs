@@ -1,4 +1,3 @@
-using System.Runtime.Serialization;
 using System.Text;
 using System.Text.Json.Serialization;
 
@@ -7,7 +6,7 @@ namespace PureCloud.Client.Models;
 /// <summary>
 /// Action function URL upload input.
 /// </summary>
-[DataContract]
+
 public partial class FunctionUploadRequest : IEquatable<FunctionUploadRequest>
 {
 
@@ -34,7 +33,7 @@ public partial class FunctionUploadRequest : IEquatable<FunctionUploadRequest>
     /// Name of the file to upload.File name can only contain letters, numbers, and the following special characters: + - _ . &#39; ( )
     /// </summary>
     /// <value>Name of the file to upload.File name can only contain letters, numbers, and the following special characters: + - _ . &#39; ( )</value>
-    [DataMember(Name = "fileName", EmitDefaultValue = false)]
+    [JsonPropertyName("fileName")]
     public string FileName { get; set; }
 
 
@@ -43,7 +42,7 @@ public partial class FunctionUploadRequest : IEquatable<FunctionUploadRequest>
     /// The number of seconds the presigned URL is valid for (from 1 to 604800 seconds). If none provided, defaults to 900 seconds
     /// </summary>
     /// <value>The number of seconds the presigned URL is valid for (from 1 to 604800 seconds). If none provided, defaults to 900 seconds</value>
-    [DataMember(Name = "signedUrlTimeoutSeconds", EmitDefaultValue = false)]
+    [JsonPropertyName("signedUrlTimeoutSeconds")]
     public int? SignedUrlTimeoutSeconds { get; set; }
 
 

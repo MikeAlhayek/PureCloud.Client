@@ -1,4 +1,3 @@
-using System.Runtime.Serialization;
 using System.Text;
 using System.Text.Json.Serialization;
 
@@ -7,7 +6,7 @@ namespace PureCloud.Client.Models;
 /// <summary>
 /// BuTimeOffLimitRange
 /// </summary>
-[DataContract]
+
 public partial class BuTimeOffLimitRange : IEquatable<BuTimeOffLimitRange>
 {
 
@@ -34,7 +33,7 @@ public partial class BuTimeOffLimitRange : IEquatable<BuTimeOffLimitRange>
     /// Start date of the range. The end date is determined by the size of &#39;limitMinutesPerDay&#39;. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd
     /// </summary>
     /// <value>Start date of the range. The end date is determined by the size of &#39;limitMinutesPerDay&#39;. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd</value>
-    [DataMember(Name = "startDate", EmitDefaultValue = false)]
+    [JsonPropertyName("startDate")]
     public string StartDate { get; set; }
 
 
@@ -43,7 +42,7 @@ public partial class BuTimeOffLimitRange : IEquatable<BuTimeOffLimitRange>
     /// The list of time-off limit values in minutes per day. If &#39;null&#39; is specified, then the day-specific value is cleared. Such a day will have a value of 0
     /// </summary>
     /// <value>The list of time-off limit values in minutes per day. If &#39;null&#39; is specified, then the day-specific value is cleared. Such a day will have a value of 0</value>
-    [DataMember(Name = "limitMinutesPerDay", EmitDefaultValue = false)]
+    [JsonPropertyName("limitMinutesPerDay")]
     public List<int?> LimitMinutesPerDay { get; set; }
 
 

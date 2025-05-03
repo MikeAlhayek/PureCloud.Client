@@ -7,14 +7,14 @@ namespace PureCloud.Client.Models;
 /// <summary>
 /// MinerExecuteRequest
 /// </summary>
-[DataContract]
+
 public partial class MinerExecuteRequest : IEquatable<MinerExecuteRequest>
 {
     /// <summary>
     /// Media type for filtering conversations.
     /// </summary>
     /// <value>Media type for filtering conversations.</value>
-    [JsonConverter(typeof(JsonStringEnumConverter))]
+    
     public enum MediaTypeEnum
     {
         /// <summary>
@@ -53,7 +53,7 @@ public partial class MinerExecuteRequest : IEquatable<MinerExecuteRequest>
     /// Type of the participant, either agent, customer or both.
     /// </summary>
     /// <value>Type of the participant, either agent, customer or both.</value>
-    [JsonConverter(typeof(JsonStringEnumConverter))]
+    
     public enum ParticipantTypeEnum
     {
         /// <summary>
@@ -86,13 +86,13 @@ public partial class MinerExecuteRequest : IEquatable<MinerExecuteRequest>
     /// Media type for filtering conversations.
     /// </summary>
     /// <value>Media type for filtering conversations.</value>
-    [DataMember(Name = "mediaType", EmitDefaultValue = false)]
+    [JsonPropertyName("mediaType")]
     public MediaTypeEnum? MediaType { get; set; }
     /// <summary>
     /// Type of the participant, either agent, customer or both.
     /// </summary>
     /// <value>Type of the participant, either agent, customer or both.</value>
-    [DataMember(Name = "participantType", EmitDefaultValue = false)]
+    [JsonPropertyName("participantType")]
     public ParticipantTypeEnum? ParticipantType { get; set; }
     /// <summary>
     /// Initializes a new instance of the <see cref="MinerExecuteRequest" /> class.
@@ -120,7 +120,7 @@ public partial class MinerExecuteRequest : IEquatable<MinerExecuteRequest>
     /// Start date for the date range to mine. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd
     /// </summary>
     /// <value>Start date for the date range to mine. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd</value>
-    [DataMember(Name = "dateStart", EmitDefaultValue = false)]
+    [JsonPropertyName("dateStart")]
     public string DateStart { get; set; }
 
 
@@ -129,7 +129,7 @@ public partial class MinerExecuteRequest : IEquatable<MinerExecuteRequest>
     /// End date for the date range to mine. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd
     /// </summary>
     /// <value>End date for the date range to mine. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd</value>
-    [DataMember(Name = "dateEnd", EmitDefaultValue = false)]
+    [JsonPropertyName("dateEnd")]
     public string DateEnd { get; set; }
 
 
@@ -138,7 +138,7 @@ public partial class MinerExecuteRequest : IEquatable<MinerExecuteRequest>
     /// Location of input conversations.
     /// </summary>
     /// <value>Location of input conversations.</value>
-    [DataMember(Name = "uploadKey", EmitDefaultValue = false)]
+    [JsonPropertyName("uploadKey")]
     public string UploadKey { get; set; }
 
 
@@ -151,7 +151,7 @@ public partial class MinerExecuteRequest : IEquatable<MinerExecuteRequest>
     /// List of queue IDs for filtering conversations.
     /// </summary>
     /// <value>List of queue IDs for filtering conversations.</value>
-    [DataMember(Name = "queueIds", EmitDefaultValue = false)]
+    [JsonPropertyName("queueIds")]
     public List<string> QueueIds { get; set; }
 
 

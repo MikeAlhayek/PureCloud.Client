@@ -1,12 +1,12 @@
-using System.Runtime.Serialization;
 using System.Text;
+using System.Text.Json.Serialization;
 
 namespace PureCloud.Client.Models;
 
 /// <summary>
 /// PINConfiguration
 /// </summary>
-[DataContract]
+
 public partial class PINConfiguration : IEquatable<PINConfiguration>
 {
     /// <summary>
@@ -26,7 +26,7 @@ public partial class PINConfiguration : IEquatable<PINConfiguration>
     /// <summary>
     /// Gets or Sets MinimumLength
     /// </summary>
-    [DataMember(Name = "minimumLength", EmitDefaultValue = false)]
+    [JsonPropertyName("minimumLength")]
     public int? MinimumLength { get; set; }
 
 
@@ -34,7 +34,7 @@ public partial class PINConfiguration : IEquatable<PINConfiguration>
     /// <summary>
     /// Gets or Sets MaximumLength
     /// </summary>
-    [DataMember(Name = "maximumLength", EmitDefaultValue = false)]
+    [JsonPropertyName("maximumLength")]
     public int? MaximumLength { get; set; }
 
 

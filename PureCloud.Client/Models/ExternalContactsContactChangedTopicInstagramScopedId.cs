@@ -1,12 +1,12 @@
-using System.Runtime.Serialization;
 using System.Text;
+using System.Text.Json.Serialization;
 
 namespace PureCloud.Client.Models;
 
 /// <summary>
 /// ExternalContactsContactChangedTopicInstagramScopedId
 /// </summary>
-[DataContract]
+
 public partial class ExternalContactsContactChangedTopicInstagramScopedId : IEquatable<ExternalContactsContactChangedTopicInstagramScopedId>
 {
     /// <summary>
@@ -24,7 +24,7 @@ public partial class ExternalContactsContactChangedTopicInstagramScopedId : IEqu
     /// <summary>
     /// Gets or Sets ScopedId
     /// </summary>
-    [DataMember(Name = "scopedId", EmitDefaultValue = false)]
+    [JsonPropertyName("scopedId")]
     public string ScopedId { get; set; }
 
 

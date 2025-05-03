@@ -7,14 +7,14 @@ namespace PureCloud.Client.Models;
 /// <summary>
 /// UserSearchRequest
 /// </summary>
-[DataContract]
+
 public partial class UserSearchRequest : IEquatable<UserSearchRequest>
 {
     /// <summary>
     /// The sort order for results
     /// </summary>
     /// <value>The sort order for results</value>
-    [JsonConverter(typeof(JsonStringEnumConverter))]
+    
     public enum SortOrderEnum
     {
         /// <summary>
@@ -47,7 +47,7 @@ public partial class UserSearchRequest : IEquatable<UserSearchRequest>
     /// Gets an integration presence for users instead of their defaults. This parameter will only be used when presence is provided as an \"expand\". When using this parameter the maximum number of users that can be returned is 100.
     /// </summary>
     /// <value>Gets an integration presence for users instead of their defaults. This parameter will only be used when presence is provided as an \"expand\". When using this parameter the maximum number of users that can be returned is 100.</value>
-    [JsonConverter(typeof(JsonStringEnumConverter))]
+    
     public enum IntegrationPresenceSourceEnum
     {
         /// <summary>
@@ -80,13 +80,13 @@ public partial class UserSearchRequest : IEquatable<UserSearchRequest>
     /// The sort order for results
     /// </summary>
     /// <value>The sort order for results</value>
-    [DataMember(Name = "sortOrder", EmitDefaultValue = false)]
+    [JsonPropertyName("sortOrder")]
     public SortOrderEnum? SortOrder { get; set; }
     /// <summary>
     /// Gets an integration presence for users instead of their defaults. This parameter will only be used when presence is provided as an \"expand\". When using this parameter the maximum number of users that can be returned is 100.
     /// </summary>
     /// <value>Gets an integration presence for users instead of their defaults. This parameter will only be used when presence is provided as an \"expand\". When using this parameter the maximum number of users that can be returned is 100.</value>
-    [DataMember(Name = "integrationPresenceSource", EmitDefaultValue = false)]
+    [JsonPropertyName("integrationPresenceSource")]
     public IntegrationPresenceSourceEnum? IntegrationPresenceSource { get; set; }
     /// <summary>
     /// Initializes a new instance of the <see cref="UserSearchRequest" /> class.
@@ -122,7 +122,7 @@ public partial class UserSearchRequest : IEquatable<UserSearchRequest>
     /// The field in the resource that you want to sort the results by
     /// </summary>
     /// <value>The field in the resource that you want to sort the results by</value>
-    [DataMember(Name = "sortBy", EmitDefaultValue = false)]
+    [JsonPropertyName("sortBy")]
     public string SortBy { get; set; }
 
 
@@ -131,7 +131,7 @@ public partial class UserSearchRequest : IEquatable<UserSearchRequest>
     /// The number of results per page
     /// </summary>
     /// <value>The number of results per page</value>
-    [DataMember(Name = "pageSize", EmitDefaultValue = false)]
+    [JsonPropertyName("pageSize")]
     public int? PageSize { get; set; }
 
 
@@ -140,7 +140,7 @@ public partial class UserSearchRequest : IEquatable<UserSearchRequest>
     /// The page of resources you want to retrieve
     /// </summary>
     /// <value>The page of resources you want to retrieve</value>
-    [DataMember(Name = "pageNumber", EmitDefaultValue = false)]
+    [JsonPropertyName("pageNumber")]
     public int? PageNumber { get; set; }
 
 
@@ -149,7 +149,7 @@ public partial class UserSearchRequest : IEquatable<UserSearchRequest>
     /// Multi-value sort order, list of multiple sort values
     /// </summary>
     /// <value>Multi-value sort order, list of multiple sort values</value>
-    [DataMember(Name = "sort", EmitDefaultValue = false)]
+    [JsonPropertyName("sort")]
     public List<SearchSort> Sort { get; set; }
 
 
@@ -158,7 +158,7 @@ public partial class UserSearchRequest : IEquatable<UserSearchRequest>
     /// Provides more details about a specified resource
     /// </summary>
     /// <value>Provides more details about a specified resource</value>
-    [DataMember(Name = "expand", EmitDefaultValue = false)]
+    [JsonPropertyName("expand")]
     public List<string> Expand { get; set; }
 
 
@@ -166,7 +166,7 @@ public partial class UserSearchRequest : IEquatable<UserSearchRequest>
     /// <summary>
     /// Gets or Sets Query
     /// </summary>
-    [DataMember(Name = "query", EmitDefaultValue = false)]
+    [JsonPropertyName("query")]
     public List<UserSearchCriteria> Query { get; set; }
 
 
@@ -177,7 +177,7 @@ public partial class UserSearchRequest : IEquatable<UserSearchRequest>
     /// This property only applies to api/v2/user/search; when set to true add additional search criteria to filter users by: directory:user:view
     /// </summary>
     /// <value>This property only applies to api/v2/user/search; when set to true add additional search criteria to filter users by: directory:user:view</value>
-    [DataMember(Name = "enforcePermissions", EmitDefaultValue = false)]
+    [JsonPropertyName("enforcePermissions")]
     public bool? EnforcePermissions { get; set; }
 
 

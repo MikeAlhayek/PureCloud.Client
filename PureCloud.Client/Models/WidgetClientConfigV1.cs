@@ -7,13 +7,13 @@ namespace PureCloud.Client.Models;
 /// <summary>
 /// WidgetClientConfigV1
 /// </summary>
-[DataContract]
+
 public partial class WidgetClientConfigV1 : IEquatable<WidgetClientConfigV1>
 {
     /// <summary>
     /// Gets or Sets WebChatSkin
     /// </summary>
-    [JsonConverter(typeof(JsonStringEnumConverter))]
+    
     public enum WebChatSkinEnum
     {
         /// <summary>
@@ -39,7 +39,7 @@ public partial class WidgetClientConfigV1 : IEquatable<WidgetClientConfigV1>
     /// <summary>
     /// Gets or Sets WebChatSkin
     /// </summary>
-    [DataMember(Name = "webChatSkin", EmitDefaultValue = false)]
+    [JsonPropertyName("webChatSkin")]
     public WebChatSkinEnum? WebChatSkin { get; set; }
     /// <summary>
     /// Initializes a new instance of the <see cref="WidgetClientConfigV1" /> class.
@@ -60,7 +60,7 @@ public partial class WidgetClientConfigV1 : IEquatable<WidgetClientConfigV1>
     /// <summary>
     /// Gets or Sets AuthenticationUrl
     /// </summary>
-    [DataMember(Name = "authenticationUrl", EmitDefaultValue = false)]
+    [JsonPropertyName("authenticationUrl")]
     public string AuthenticationUrl { get; set; }
 
 

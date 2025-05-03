@@ -1,12 +1,12 @@
-using System.Runtime.Serialization;
 using System.Text;
+using System.Text.Json.Serialization;
 
 namespace PureCloud.Client.Models;
 
 /// <summary>
 /// UnpublishedProgramsEntityListing
 /// </summary>
-[DataContract]
+
 public partial class UnpublishedProgramsEntityListing : IEquatable<UnpublishedProgramsEntityListing>
 {
     /// <summary>
@@ -32,7 +32,7 @@ public partial class UnpublishedProgramsEntityListing : IEquatable<UnpublishedPr
     /// <summary>
     /// Gets or Sets Entities
     /// </summary>
-    [DataMember(Name = "entities", EmitDefaultValue = false)]
+    [JsonPropertyName("entities")]
     public List<Program> Entities { get; set; }
 
 
@@ -40,7 +40,7 @@ public partial class UnpublishedProgramsEntityListing : IEquatable<UnpublishedPr
     /// <summary>
     /// Gets or Sets PageSize
     /// </summary>
-    [DataMember(Name = "pageSize", EmitDefaultValue = false)]
+    [JsonPropertyName("pageSize")]
     public int? PageSize { get; set; }
 
 
@@ -48,7 +48,7 @@ public partial class UnpublishedProgramsEntityListing : IEquatable<UnpublishedPr
     /// <summary>
     /// Gets or Sets SelfUri
     /// </summary>
-    [DataMember(Name = "selfUri", EmitDefaultValue = false)]
+    [JsonPropertyName("selfUri")]
     public string SelfUri { get; set; }
 
 
@@ -56,7 +56,7 @@ public partial class UnpublishedProgramsEntityListing : IEquatable<UnpublishedPr
     /// <summary>
     /// Gets or Sets PageCount
     /// </summary>
-    [DataMember(Name = "pageCount", EmitDefaultValue = false)]
+    [JsonPropertyName("pageCount")]
     public int? PageCount { get; set; }
 
 
@@ -64,7 +64,7 @@ public partial class UnpublishedProgramsEntityListing : IEquatable<UnpublishedPr
     /// <summary>
     /// Gets or Sets NextUri
     /// </summary>
-    [DataMember(Name = "nextUri", EmitDefaultValue = false)]
+    [JsonPropertyName("nextUri")]
     public string NextUri { get; set; }
 
 

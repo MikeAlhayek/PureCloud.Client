@@ -1,4 +1,3 @@
-using System.Runtime.Serialization;
 using System.Text;
 using System.Text.Json.Serialization;
 
@@ -7,7 +6,7 @@ namespace PureCloud.Client.Models;
 /// <summary>
 /// GuestMemberInfo
 /// </summary>
-[DataContract]
+
 public partial class GuestMemberInfo : IEquatable<GuestMemberInfo>
 {
 
@@ -44,7 +43,7 @@ public partial class GuestMemberInfo : IEquatable<GuestMemberInfo>
     /// The display name to use for the guest member in the conversation.
     /// </summary>
     /// <value>The display name to use for the guest member in the conversation.</value>
-    [DataMember(Name = "displayName", EmitDefaultValue = false)]
+    [JsonPropertyName("displayName")]
     public string DisplayName { get; set; }
 
 
@@ -53,7 +52,7 @@ public partial class GuestMemberInfo : IEquatable<GuestMemberInfo>
     /// The first name to use for the guest member in the conversation.
     /// </summary>
     /// <value>The first name to use for the guest member in the conversation.</value>
-    [DataMember(Name = "firstName", EmitDefaultValue = false)]
+    [JsonPropertyName("firstName")]
     public string FirstName { get; set; }
 
 
@@ -62,7 +61,7 @@ public partial class GuestMemberInfo : IEquatable<GuestMemberInfo>
     /// The last name to use for the guest member in the conversation.
     /// </summary>
     /// <value>The last name to use for the guest member in the conversation.</value>
-    [DataMember(Name = "lastName", EmitDefaultValue = false)]
+    [JsonPropertyName("lastName")]
     public string LastName { get; set; }
 
 
@@ -71,7 +70,7 @@ public partial class GuestMemberInfo : IEquatable<GuestMemberInfo>
     /// The email address to use for the guest member in the conversation.
     /// </summary>
     /// <value>The email address to use for the guest member in the conversation.</value>
-    [DataMember(Name = "email", EmitDefaultValue = false)]
+    [JsonPropertyName("email")]
     public string Email { get; set; }
 
 
@@ -80,7 +79,7 @@ public partial class GuestMemberInfo : IEquatable<GuestMemberInfo>
     /// The phone number to use for the guest member in the conversation.
     /// </summary>
     /// <value>The phone number to use for the guest member in the conversation.</value>
-    [DataMember(Name = "phoneNumber", EmitDefaultValue = false)]
+    [JsonPropertyName("phoneNumber")]
     public string PhoneNumber { get; set; }
 
 
@@ -89,7 +88,7 @@ public partial class GuestMemberInfo : IEquatable<GuestMemberInfo>
     /// The URL to the avatar image to use for the guest member in the conversation, if any.
     /// </summary>
     /// <value>The URL to the avatar image to use for the guest member in the conversation, if any.</value>
-    [DataMember(Name = "avatarImageUrl", EmitDefaultValue = false)]
+    [JsonPropertyName("avatarImageUrl")]
     public string AvatarImageUrl { get; set; }
 
 
@@ -98,7 +97,7 @@ public partial class GuestMemberInfo : IEquatable<GuestMemberInfo>
     /// Any custom fields of information, in key-value format, to attach to the guest member in the conversation.
     /// </summary>
     /// <value>Any custom fields of information, in key-value format, to attach to the guest member in the conversation.</value>
-    [DataMember(Name = "customFields", EmitDefaultValue = false)]
+    [JsonPropertyName("customFields")]
     public Dictionary<string, string> CustomFields { get; set; }
 
 

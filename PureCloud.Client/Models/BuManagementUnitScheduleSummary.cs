@@ -1,12 +1,12 @@
-using System.Runtime.Serialization;
 using System.Text;
+using System.Text.Json.Serialization;
 
 namespace PureCloud.Client.Models;
 
 /// <summary>
 /// BuManagementUnitScheduleSummary
 /// </summary>
-[DataContract]
+
 public partial class BuManagementUnitScheduleSummary : IEquatable<BuManagementUnitScheduleSummary>
 {
     /// <summary>
@@ -33,7 +33,7 @@ public partial class BuManagementUnitScheduleSummary : IEquatable<BuManagementUn
     /// The management unit to which this summary applies
     /// </summary>
     /// <value>The management unit to which this summary applies</value>
-    [DataMember(Name = "managementUnit", EmitDefaultValue = false)]
+    [JsonPropertyName("managementUnit")]
     public ManagementUnitReference ManagementUnit { get; set; }
 
 
@@ -42,7 +42,7 @@ public partial class BuManagementUnitScheduleSummary : IEquatable<BuManagementUn
     /// The number of agents from this management unit that are in the schedule
     /// </summary>
     /// <value>The number of agents from this management unit that are in the schedule</value>
-    [DataMember(Name = "agentCount", EmitDefaultValue = false)]
+    [JsonPropertyName("agentCount")]
     public int? AgentCount { get; set; }
 
 
@@ -51,7 +51,7 @@ public partial class BuManagementUnitScheduleSummary : IEquatable<BuManagementUn
     /// The start of the schedule change in the management unit. Only populated in schedule update notifications. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z
     /// </summary>
     /// <value>The start of the schedule change in the management unit. Only populated in schedule update notifications. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z</value>
-    [DataMember(Name = "startDate", EmitDefaultValue = false)]
+    [JsonPropertyName("startDate")]
     public DateTime? StartDate { get; set; }
 
 
@@ -60,7 +60,7 @@ public partial class BuManagementUnitScheduleSummary : IEquatable<BuManagementUn
     /// The end of the schedule change in the management unit. Only populated in schedule update notifications. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z
     /// </summary>
     /// <value>The end of the schedule change in the management unit. Only populated in schedule update notifications. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z</value>
-    [DataMember(Name = "endDate", EmitDefaultValue = false)]
+    [JsonPropertyName("endDate")]
     public DateTime? EndDate { get; set; }
 
 
@@ -69,7 +69,7 @@ public partial class BuManagementUnitScheduleSummary : IEquatable<BuManagementUn
     /// The agents in the management unit who are part of this schedule, or in schedule change notifications, the agents that were changed. Note this will come back as an empty list unless the appropriate expand query parameter is passed
     /// </summary>
     /// <value>The agents in the management unit who are part of this schedule, or in schedule change notifications, the agents that were changed. Note this will come back as an empty list unless the appropriate expand query parameter is passed</value>
-    [DataMember(Name = "agents", EmitDefaultValue = false)]
+    [JsonPropertyName("agents")]
     public List<UserReference> Agents { get; set; }
 
 

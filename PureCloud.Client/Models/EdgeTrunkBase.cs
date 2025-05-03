@@ -7,14 +7,14 @@ namespace PureCloud.Client.Models;
 /// <summary>
 /// EdgeTrunkBase
 /// </summary>
-[DataContract]
+
 public partial class EdgeTrunkBase : IEquatable<EdgeTrunkBase>
 {
     /// <summary>
     /// Indicates if the resource is active, inactive, or deleted.
     /// </summary>
     /// <value>Indicates if the resource is active, inactive, or deleted.</value>
-    [JsonConverter(typeof(JsonStringEnumConverter))]
+    
     public enum StateEnum
     {
         /// <summary>
@@ -47,7 +47,7 @@ public partial class EdgeTrunkBase : IEquatable<EdgeTrunkBase>
     /// The type of this trunk base.
     /// </summary>
     /// <value>The type of this trunk base.</value>
-    [JsonConverter(typeof(JsonStringEnumConverter))]
+    
     public enum TrunkTypeEnum
     {
         /// <summary>
@@ -80,13 +80,13 @@ public partial class EdgeTrunkBase : IEquatable<EdgeTrunkBase>
     /// Indicates if the resource is active, inactive, or deleted.
     /// </summary>
     /// <value>Indicates if the resource is active, inactive, or deleted.</value>
-    [DataMember(Name = "state", EmitDefaultValue = false)]
+    [JsonPropertyName("state")]
     public StateEnum? State { get; private set; }
     /// <summary>
     /// The type of this trunk base.
     /// </summary>
     /// <value>The type of this trunk base.</value>
-    [DataMember(Name = "trunkType", EmitDefaultValue = false)]
+    [JsonPropertyName("trunkType")]
     public TrunkTypeEnum? TrunkType { get; set; }
 
     /// <summary>
@@ -126,7 +126,7 @@ public partial class EdgeTrunkBase : IEquatable<EdgeTrunkBase>
     /// The globally unique identifier for the object.
     /// </summary>
     /// <value>The globally unique identifier for the object.</value>
-    [DataMember(Name = "id", EmitDefaultValue = false)]
+    [JsonPropertyName("id")]
     public string Id { get; private set; }
 
 
@@ -135,7 +135,7 @@ public partial class EdgeTrunkBase : IEquatable<EdgeTrunkBase>
     /// The name of the entity.
     /// </summary>
     /// <value>The name of the entity.</value>
-    [DataMember(Name = "name", EmitDefaultValue = false)]
+    [JsonPropertyName("name")]
     public string Name { get; set; }
 
 
@@ -144,7 +144,7 @@ public partial class EdgeTrunkBase : IEquatable<EdgeTrunkBase>
     /// The division to which this entity belongs.
     /// </summary>
     /// <value>The division to which this entity belongs.</value>
-    [DataMember(Name = "division", EmitDefaultValue = false)]
+    [JsonPropertyName("division")]
     public Division Division { get; set; }
 
 
@@ -153,7 +153,7 @@ public partial class EdgeTrunkBase : IEquatable<EdgeTrunkBase>
     /// The resource&#39;s description.
     /// </summary>
     /// <value>The resource&#39;s description.</value>
-    [DataMember(Name = "description", EmitDefaultValue = false)]
+    [JsonPropertyName("description")]
     public string Description { get; set; }
 
 
@@ -162,7 +162,7 @@ public partial class EdgeTrunkBase : IEquatable<EdgeTrunkBase>
     /// The current version of the resource.
     /// </summary>
     /// <value>The current version of the resource.</value>
-    [DataMember(Name = "version", EmitDefaultValue = false)]
+    [JsonPropertyName("version")]
     public int? Version { get; set; }
 
 
@@ -171,7 +171,7 @@ public partial class EdgeTrunkBase : IEquatable<EdgeTrunkBase>
     /// The date the resource was created. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z
     /// </summary>
     /// <value>The date the resource was created. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z</value>
-    [DataMember(Name = "dateCreated", EmitDefaultValue = false)]
+    [JsonPropertyName("dateCreated")]
     public DateTime? DateCreated { get; private set; }
 
 
@@ -180,7 +180,7 @@ public partial class EdgeTrunkBase : IEquatable<EdgeTrunkBase>
     /// The date of the last modification to the resource. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z
     /// </summary>
     /// <value>The date of the last modification to the resource. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z</value>
-    [DataMember(Name = "dateModified", EmitDefaultValue = false)]
+    [JsonPropertyName("dateModified")]
     public DateTime? DateModified { get; private set; }
 
 
@@ -189,7 +189,7 @@ public partial class EdgeTrunkBase : IEquatable<EdgeTrunkBase>
     /// The ID of the user that last modified the resource.
     /// </summary>
     /// <value>The ID of the user that last modified the resource.</value>
-    [DataMember(Name = "modifiedBy", EmitDefaultValue = false)]
+    [JsonPropertyName("modifiedBy")]
     public string ModifiedBy { get; private set; }
 
 
@@ -198,7 +198,7 @@ public partial class EdgeTrunkBase : IEquatable<EdgeTrunkBase>
     /// The ID of the user that created the resource.
     /// </summary>
     /// <value>The ID of the user that created the resource.</value>
-    [DataMember(Name = "createdBy", EmitDefaultValue = false)]
+    [JsonPropertyName("createdBy")]
     public string CreatedBy { get; private set; }
 
 
@@ -209,7 +209,7 @@ public partial class EdgeTrunkBase : IEquatable<EdgeTrunkBase>
     /// The application that last modified the resource.
     /// </summary>
     /// <value>The application that last modified the resource.</value>
-    [DataMember(Name = "modifiedByApp", EmitDefaultValue = false)]
+    [JsonPropertyName("modifiedByApp")]
     public string ModifiedByApp { get; private set; }
 
 
@@ -218,7 +218,7 @@ public partial class EdgeTrunkBase : IEquatable<EdgeTrunkBase>
     /// The application that created the resource.
     /// </summary>
     /// <value>The application that created the resource.</value>
-    [DataMember(Name = "createdByApp", EmitDefaultValue = false)]
+    [JsonPropertyName("createdByApp")]
     public string CreatedByApp { get; private set; }
 
 
@@ -227,7 +227,7 @@ public partial class EdgeTrunkBase : IEquatable<EdgeTrunkBase>
     /// The meta-base this trunk is based on.
     /// </summary>
     /// <value>The meta-base this trunk is based on.</value>
-    [DataMember(Name = "trunkMetabase", EmitDefaultValue = false)]
+    [JsonPropertyName("trunkMetabase")]
     public DomainEntityRef TrunkMetabase { get; set; }
 
 
@@ -235,7 +235,7 @@ public partial class EdgeTrunkBase : IEquatable<EdgeTrunkBase>
     /// <summary>
     /// Gets or Sets Properties
     /// </summary>
-    [DataMember(Name = "properties", EmitDefaultValue = false)]
+    [JsonPropertyName("properties")]
     public Dictionary<string, object> Properties { get; set; }
 
 
@@ -246,7 +246,7 @@ public partial class EdgeTrunkBase : IEquatable<EdgeTrunkBase>
     /// Used to determine the media regions for inbound and outbound calls through a trunk. Also determines the dial plan to use for calls that came in on a trunk and have to be sent out on it as well.
     /// </summary>
     /// <value>Used to determine the media regions for inbound and outbound calls through a trunk. Also determines the dial plan to use for calls that came in on a trunk and have to be sent out on it as well.</value>
-    [DataMember(Name = "site", EmitDefaultValue = false)]
+    [JsonPropertyName("site")]
     public DomainEntityRef Site { get; set; }
 
 
@@ -255,7 +255,7 @@ public partial class EdgeTrunkBase : IEquatable<EdgeTrunkBase>
     /// Allows a customer to set the site to which inbound calls will be routed
     /// </summary>
     /// <value>Allows a customer to set the site to which inbound calls will be routed</value>
-    [DataMember(Name = "inboundSite", EmitDefaultValue = false)]
+    [JsonPropertyName("inboundSite")]
     public DomainEntityRef InboundSite { get; set; }
 
 
@@ -264,7 +264,7 @@ public partial class EdgeTrunkBase : IEquatable<EdgeTrunkBase>
     /// The URI for this object
     /// </summary>
     /// <value>The URI for this object</value>
-    [DataMember(Name = "selfUri", EmitDefaultValue = false)]
+    [JsonPropertyName("selfUri")]
     public string SelfUri { get; private set; }
 
 

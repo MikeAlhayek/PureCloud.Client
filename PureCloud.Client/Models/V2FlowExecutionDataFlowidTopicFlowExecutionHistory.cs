@@ -7,14 +7,14 @@ namespace PureCloud.Client.Models;
 /// <summary>
 /// V2FlowExecutionDataFlowidTopicFlowExecutionHistory
 /// </summary>
-[DataContract]
+
 public partial class V2FlowExecutionDataFlowidTopicFlowExecutionHistory : IEquatable<V2FlowExecutionDataFlowidTopicFlowExecutionHistory>
 {
     /// <summary>
     /// If applicable, the type of message platform from which the message originated.
     /// </summary>
     /// <value>If applicable, the type of message platform from which the message originated.</value>
-    [JsonConverter(typeof(JsonStringEnumConverter))]
+    
     public enum MessageTypeEnum
     {
         /// <summary>
@@ -83,7 +83,7 @@ public partial class V2FlowExecutionDataFlowidTopicFlowExecutionHistory : IEquat
     /// If applicable, the type of message platform from which the message originated.
     /// </summary>
     /// <value>If applicable, the type of message platform from which the message originated.</value>
-    [DataMember(Name = "messageType", EmitDefaultValue = false)]
+    [JsonPropertyName("messageType")]
     public MessageTypeEnum? MessageType { get; set; }
     /// <summary>
     /// Initializes a new instance of the <see cref="V2FlowExecutionDataFlowidTopicFlowExecutionHistory" /> class.
@@ -133,7 +133,7 @@ public partial class V2FlowExecutionDataFlowidTopicFlowExecutionHistory : IEquat
     /// The execution identifier which represents this unique instance of the flow that ran.
     /// </summary>
     /// <value>The execution identifier which represents this unique instance of the flow that ran.</value>
-    [DataMember(Name = "executionId", EmitDefaultValue = false)]
+    [JsonPropertyName("executionId")]
     public string ExecutionId { get; set; }
 
 
@@ -142,7 +142,7 @@ public partial class V2FlowExecutionDataFlowidTopicFlowExecutionHistory : IEquat
     /// The Genesys Cloud conversation identifier associated with this flow instance execution data.
     /// </summary>
     /// <value>The Genesys Cloud conversation identifier associated with this flow instance execution data.</value>
-    [DataMember(Name = "conversationId", EmitDefaultValue = false)]
+    [JsonPropertyName("conversationId")]
     public string ConversationId { get; set; }
 
 
@@ -151,7 +151,7 @@ public partial class V2FlowExecutionDataFlowidTopicFlowExecutionHistory : IEquat
     /// The division identifier for the division associated with the flow for this flow instance.
     /// </summary>
     /// <value>The division identifier for the division associated with the flow for this flow instance.</value>
-    [DataMember(Name = "divisionId", EmitDefaultValue = false)]
+    [JsonPropertyName("divisionId")]
     public string DivisionId { get; set; }
 
 
@@ -160,7 +160,7 @@ public partial class V2FlowExecutionDataFlowidTopicFlowExecutionHistory : IEquat
     /// The end date time for this flow instance execution data.
     /// </summary>
     /// <value>The end date time for this flow instance execution data.</value>
-    [DataMember(Name = "endDateTime", EmitDefaultValue = false)]
+    [JsonPropertyName("endDateTime")]
     public DateTime? EndDateTime { get; set; }
 
 
@@ -169,7 +169,7 @@ public partial class V2FlowExecutionDataFlowidTopicFlowExecutionHistory : IEquat
     /// The public endpoint a user can use to retrieve the full historical log from the service.
     /// </summary>
     /// <value>The public endpoint a user can use to retrieve the full historical log from the service.</value>
-    [DataMember(Name = "endpoint", EmitDefaultValue = false)]
+    [JsonPropertyName("endpoint")]
     public string Endpoint { get; set; }
 
 
@@ -178,7 +178,7 @@ public partial class V2FlowExecutionDataFlowidTopicFlowExecutionHistory : IEquat
     /// If the flow invoked error handling, an array of errors.
     /// </summary>
     /// <value>If the flow invoked error handling, an array of errors.</value>
-    [DataMember(Name = "errors", EmitDefaultValue = false)]
+    [JsonPropertyName("errors")]
     public List<V2FlowExecutionDataFlowidTopicFlowErrorWarningInfo> Errors { get; set; }
 
 
@@ -187,7 +187,7 @@ public partial class V2FlowExecutionDataFlowidTopicFlowExecutionHistory : IEquat
     /// An array of execution items that describe what happened when an Architect flow action container ran such as a flow, task, state or bot.
     /// </summary>
     /// <value>An array of execution items that describe what happened when an Architect flow action container ran such as a flow, task, state or bot.</value>
-    [DataMember(Name = "execution", EmitDefaultValue = false)]
+    [JsonPropertyName("execution")]
     public List<V2FlowExecutionDataFlowidTopicExecution> Execution { get; set; }
 
 
@@ -196,7 +196,7 @@ public partial class V2FlowExecutionDataFlowidTopicFlowExecutionHistory : IEquat
     /// Provides information about why a flow ended.
     /// </summary>
     /// <value>Provides information about why a flow ended.</value>
-    [DataMember(Name = "flowExitReason", EmitDefaultValue = false)]
+    [JsonPropertyName("flowExitReason")]
     public string FlowExitReason { get; set; }
 
 
@@ -205,7 +205,7 @@ public partial class V2FlowExecutionDataFlowidTopicFlowExecutionHistory : IEquat
     /// The flow identifier for this flow instance execution data.  This is the identifier of the flow configuration that users load up in Architect.
     /// </summary>
     /// <value>The flow identifier for this flow instance execution data.  This is the identifier of the flow configuration that users load up in Architect.</value>
-    [DataMember(Name = "flowId", EmitDefaultValue = false)]
+    [JsonPropertyName("flowId")]
     public string FlowId { get; set; }
 
 
@@ -214,7 +214,7 @@ public partial class V2FlowExecutionDataFlowidTopicFlowExecutionHistory : IEquat
     /// Whether the flow that ran for this flow instance execution data was in debug mode.
     /// </summary>
     /// <value>Whether the flow that ran for this flow instance execution data was in debug mode.</value>
-    [DataMember(Name = "flowIsDebug", EmitDefaultValue = false)]
+    [JsonPropertyName("flowIsDebug")]
     public bool? FlowIsDebug { get; set; }
 
 
@@ -223,7 +223,7 @@ public partial class V2FlowExecutionDataFlowidTopicFlowExecutionHistory : IEquat
     /// If true, the execution items in this event have been truncated to be deliverable.
     /// </summary>
     /// <value>If true, the execution items in this event have been truncated to be deliverable.</value>
-    [DataMember(Name = "executionItemsTruncated", EmitDefaultValue = false)]
+    [JsonPropertyName("executionItemsTruncated")]
     public bool? ExecutionItemsTruncated { get; set; }
 
 
@@ -232,7 +232,7 @@ public partial class V2FlowExecutionDataFlowidTopicFlowExecutionHistory : IEquat
     /// The flow type of the Architect flow that was run.
     /// </summary>
     /// <value>The flow type of the Architect flow that was run.</value>
-    [DataMember(Name = "flowType", EmitDefaultValue = false)]
+    [JsonPropertyName("flowType")]
     public string FlowType { get; set; }
 
 
@@ -241,7 +241,7 @@ public partial class V2FlowExecutionDataFlowidTopicFlowExecutionHistory : IEquat
     /// The version of the flow for this flow instance execution data. Typically this is a numeric value like 1.0 represented as a string but can also be &#39;debug&#39;
     /// </summary>
     /// <value>The version of the flow for this flow instance execution data. Typically this is a numeric value like 1.0 represented as a string but can also be &#39;debug&#39;</value>
-    [DataMember(Name = "flowVersion", EmitDefaultValue = false)]
+    [JsonPropertyName("flowVersion")]
     public string FlowVersion { get; set; }
 
 
@@ -251,7 +251,7 @@ public partial class V2FlowExecutionDataFlowidTopicFlowExecutionHistory : IEquat
     /// <summary>
     /// Gets or Sets InvokingContext
     /// </summary>
-    [DataMember(Name = "invokingContext", EmitDefaultValue = false)]
+    [JsonPropertyName("invokingContext")]
     public V2FlowExecutionDataFlowidTopicInvokingContext InvokingContext { get; set; }
 
 
@@ -260,7 +260,7 @@ public partial class V2FlowExecutionDataFlowidTopicFlowExecutionHistory : IEquat
     /// The start date time for this flow instance execution data.
     /// </summary>
     /// <value>The start date time for this flow instance execution data.</value>
-    [DataMember(Name = "startDateTime", EmitDefaultValue = false)]
+    [JsonPropertyName("startDateTime")]
     public DateTime? StartDateTime { get; set; }
 
 
@@ -269,7 +269,7 @@ public partial class V2FlowExecutionDataFlowidTopicFlowExecutionHistory : IEquat
     /// If the flow encountered a warning during execution, this is an array of the warnings.
     /// </summary>
     /// <value>If the flow encountered a warning during execution, this is an array of the warnings.</value>
-    [DataMember(Name = "warnings", EmitDefaultValue = false)]
+    [JsonPropertyName("warnings")]
     public List<V2FlowExecutionDataFlowidTopicFlowErrorWarningInfo> Warnings { get; set; }
 
 

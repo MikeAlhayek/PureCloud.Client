@@ -7,14 +7,14 @@ namespace PureCloud.Client.Models;
 /// <summary>
 /// LimitChangeRequestDetails
 /// </summary>
-[DataContract]
+
 public partial class LimitChangeRequestDetails : IEquatable<LimitChangeRequestDetails>
 {
     /// <summary>
     /// Namespace the key belongs to (see https://developer.mypurecloud.com/api/rest/v2/organization/limits.html#available_limits)
     /// </summary>
     /// <value>Namespace the key belongs to (see https://developer.mypurecloud.com/api/rest/v2/organization/limits.html#available_limits)</value>
-    [JsonConverter(typeof(JsonStringEnumConverter))]
+    
     public enum NamespaceEnum
     {
         /// <summary>
@@ -479,7 +479,7 @@ public partial class LimitChangeRequestDetails : IEquatable<LimitChangeRequestDe
     /// Current status of the limit change request
     /// </summary>
     /// <value>Current status of the limit change request</value>
-    [JsonConverter(typeof(JsonStringEnumConverter))]
+    
     public enum StatusEnum
     {
         /// <summary>
@@ -572,7 +572,7 @@ public partial class LimitChangeRequestDetails : IEquatable<LimitChangeRequestDe
     /// The reason for rejecting the limit override request
     /// </summary>
     /// <value>The reason for rejecting the limit override request</value>
-    [JsonConverter(typeof(JsonStringEnumConverter))]
+    
     public enum RejectReasonEnum
     {
         /// <summary>
@@ -617,19 +617,19 @@ public partial class LimitChangeRequestDetails : IEquatable<LimitChangeRequestDe
     /// Namespace the key belongs to (see https://developer.mypurecloud.com/api/rest/v2/organization/limits.html#available_limits)
     /// </summary>
     /// <value>Namespace the key belongs to (see https://developer.mypurecloud.com/api/rest/v2/organization/limits.html#available_limits)</value>
-    [DataMember(Name = "namespace", EmitDefaultValue = false)]
+    [JsonPropertyName("namespace")]
     public NamespaceEnum? Namespace { get; set; }
     /// <summary>
     /// Current status of the limit change request
     /// </summary>
     /// <value>Current status of the limit change request</value>
-    [DataMember(Name = "status", EmitDefaultValue = false)]
+    [JsonPropertyName("status")]
     public StatusEnum? Status { get; private set; }
     /// <summary>
     /// The reason for rejecting the limit override request
     /// </summary>
     /// <value>The reason for rejecting the limit override request</value>
-    [DataMember(Name = "rejectReason", EmitDefaultValue = false)]
+    [JsonPropertyName("rejectReason")]
     public RejectReasonEnum? RejectReason { get; private set; }
 
     /// <summary>
@@ -661,7 +661,7 @@ public partial class LimitChangeRequestDetails : IEquatable<LimitChangeRequestDe
     /// The globally unique identifier for the object.
     /// </summary>
     /// <value>The globally unique identifier for the object.</value>
-    [DataMember(Name = "id", EmitDefaultValue = false)]
+    [JsonPropertyName("id")]
     public string Id { get; private set; }
 
 
@@ -670,7 +670,7 @@ public partial class LimitChangeRequestDetails : IEquatable<LimitChangeRequestDe
     /// Limit key to be overridden (see https://developer.mypurecloud.com/api/rest/v2/organization/limits.html#available_limits)
     /// </summary>
     /// <value>Limit key to be overridden (see https://developer.mypurecloud.com/api/rest/v2/organization/limits.html#available_limits)</value>
-    [DataMember(Name = "key", EmitDefaultValue = false)]
+    [JsonPropertyName("key")]
     public string Key { get; set; }
 
 
@@ -681,7 +681,7 @@ public partial class LimitChangeRequestDetails : IEquatable<LimitChangeRequestDe
     /// Requested limit value for a given key
     /// </summary>
     /// <value>Requested limit value for a given key</value>
-    [DataMember(Name = "requestedValue", EmitDefaultValue = false)]
+    [JsonPropertyName("requestedValue")]
     public double? RequestedValue { get; set; }
 
 
@@ -690,7 +690,7 @@ public partial class LimitChangeRequestDetails : IEquatable<LimitChangeRequestDe
     /// Description of the need for the limit change request
     /// </summary>
     /// <value>Description of the need for the limit change request</value>
-    [DataMember(Name = "description", EmitDefaultValue = false)]
+    [JsonPropertyName("description")]
     public string Description { get; set; }
 
 
@@ -699,7 +699,7 @@ public partial class LimitChangeRequestDetails : IEquatable<LimitChangeRequestDe
     /// The support case url created by Care
     /// </summary>
     /// <value>The support case url created by Care</value>
-    [DataMember(Name = "supportCaseUrl", EmitDefaultValue = false)]
+    [JsonPropertyName("supportCaseUrl")]
     public string SupportCaseUrl { get; set; }
 
 
@@ -710,7 +710,7 @@ public partial class LimitChangeRequestDetails : IEquatable<LimitChangeRequestDe
     /// Current limit value for a given key
     /// </summary>
     /// <value>Current limit value for a given key</value>
-    [DataMember(Name = "currentValue", EmitDefaultValue = false)]
+    [JsonPropertyName("currentValue")]
     public double? CurrentValue { get; private set; }
 
 
@@ -719,7 +719,7 @@ public partial class LimitChangeRequestDetails : IEquatable<LimitChangeRequestDe
     /// The date of the limit change request creation. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z
     /// </summary>
     /// <value>The date of the limit change request creation. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z</value>
-    [DataMember(Name = "dateCreated", EmitDefaultValue = false)]
+    [JsonPropertyName("dateCreated")]
     public DateTime? DateCreated { get; private set; }
 
 
@@ -728,7 +728,7 @@ public partial class LimitChangeRequestDetails : IEquatable<LimitChangeRequestDe
     /// List of statuses that a limit change request has gone through
     /// </summary>
     /// <value>List of statuses that a limit change request has gone through</value>
-    [DataMember(Name = "statusHistory", EmitDefaultValue = false)]
+    [JsonPropertyName("statusHistory")]
     public List<StatusChange> StatusHistory { get; private set; }
 
 
@@ -737,7 +737,7 @@ public partial class LimitChangeRequestDetails : IEquatable<LimitChangeRequestDe
     /// The date of the limit change request completion (ChangeImplemented, Rejected, or RollbackImplemented. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z
     /// </summary>
     /// <value>The date of the limit change request completion (ChangeImplemented, Rejected, or RollbackImplemented. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z</value>
-    [DataMember(Name = "dateCompleted", EmitDefaultValue = false)]
+    [JsonPropertyName("dateCompleted")]
     public DateTime? DateCompleted { get; private set; }
 
 
@@ -748,7 +748,7 @@ public partial class LimitChangeRequestDetails : IEquatable<LimitChangeRequestDe
     /// The approval breakdown for this override request.
     /// </summary>
     /// <value>The approval breakdown for this override request.</value>
-    [DataMember(Name = "approvalNamespaces", EmitDefaultValue = false)]
+    [JsonPropertyName("approvalNamespaces")]
     public List<ApprovalNamespace> ApprovalNamespaces { get; private set; }
 
 
@@ -757,7 +757,7 @@ public partial class LimitChangeRequestDetails : IEquatable<LimitChangeRequestDe
     /// The URI for this object
     /// </summary>
     /// <value>The URI for this object</value>
-    [DataMember(Name = "selfUri", EmitDefaultValue = false)]
+    [JsonPropertyName("selfUri")]
     public string SelfUri { get; private set; }
 
 

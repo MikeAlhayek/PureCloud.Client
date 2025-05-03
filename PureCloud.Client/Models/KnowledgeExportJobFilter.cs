@@ -7,14 +7,14 @@ namespace PureCloud.Client.Models;
 /// <summary>
 /// KnowledgeExportJobFilter
 /// </summary>
-[DataContract]
+
 public partial class KnowledgeExportJobFilter : IEquatable<KnowledgeExportJobFilter>
 {
     /// <summary>
     /// Specifies what version should be exported.
     /// </summary>
     /// <value>Specifies what version should be exported.</value>
-    [JsonConverter(typeof(JsonStringEnumConverter))]
+    
     public enum VersionFilterEnum
     {
         /// <summary>
@@ -40,7 +40,7 @@ public partial class KnowledgeExportJobFilter : IEquatable<KnowledgeExportJobFil
     /// <summary>
     /// Gets or Sets Exclude
     /// </summary>
-    [JsonConverter(typeof(JsonStringEnumConverter))]
+    
     public enum ExcludeEnum
     {
         /// <summary>
@@ -73,7 +73,7 @@ public partial class KnowledgeExportJobFilter : IEquatable<KnowledgeExportJobFil
     /// Specifies what version should be exported.
     /// </summary>
     /// <value>Specifies what version should be exported.</value>
-    [DataMember(Name = "versionFilter", EmitDefaultValue = false)]
+    [JsonPropertyName("versionFilter")]
     public VersionFilterEnum? VersionFilter { get; set; }
 
     /// <summary>
@@ -101,7 +101,7 @@ public partial class KnowledgeExportJobFilter : IEquatable<KnowledgeExportJobFil
     /// Filters for narrowing down which documents to export.
     /// </summary>
     /// <value>Filters for narrowing down which documents to export.</value>
-    [DataMember(Name = "documentsFilter", EmitDefaultValue = false)]
+    [JsonPropertyName("documentsFilter")]
     public KnowledgeExportJobDocumentsFilter DocumentsFilter { get; set; }
 
 
@@ -112,7 +112,7 @@ public partial class KnowledgeExportJobFilter : IEquatable<KnowledgeExportJobFil
     /// Reduce the size of the export file by excluding certain items.
     /// </summary>
     /// <value>Reduce the size of the export file by excluding certain items.</value>
-    [DataMember(Name = "exclude", EmitDefaultValue = false)]
+    [JsonPropertyName("exclude")]
     public List<ExcludeEnum> Exclude { get; set; }
 
 

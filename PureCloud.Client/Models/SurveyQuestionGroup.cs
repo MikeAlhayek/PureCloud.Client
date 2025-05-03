@@ -1,12 +1,12 @@
-using System.Runtime.Serialization;
 using System.Text;
+using System.Text.Json.Serialization;
 
 namespace PureCloud.Client.Models;
 
 /// <summary>
 /// SurveyQuestionGroup
 /// </summary>
-[DataContract]
+
 public partial class SurveyQuestionGroup : IEquatable<SurveyQuestionGroup>
 {
     /// <summary>
@@ -34,7 +34,7 @@ public partial class SurveyQuestionGroup : IEquatable<SurveyQuestionGroup>
     /// <summary>
     /// Gets or Sets Id
     /// </summary>
-    [DataMember(Name = "id", EmitDefaultValue = false)]
+    [JsonPropertyName("id")]
     public string Id { get; set; }
 
 
@@ -42,7 +42,7 @@ public partial class SurveyQuestionGroup : IEquatable<SurveyQuestionGroup>
     /// <summary>
     /// Gets or Sets Name
     /// </summary>
-    [DataMember(Name = "name", EmitDefaultValue = false)]
+    [JsonPropertyName("name")]
     public string Name { get; set; }
 
 
@@ -50,7 +50,7 @@ public partial class SurveyQuestionGroup : IEquatable<SurveyQuestionGroup>
     /// <summary>
     /// Gets or Sets Type
     /// </summary>
-    [DataMember(Name = "type", EmitDefaultValue = false)]
+    [JsonPropertyName("type")]
     public string Type { get; set; }
 
 
@@ -58,7 +58,7 @@ public partial class SurveyQuestionGroup : IEquatable<SurveyQuestionGroup>
     /// <summary>
     /// Gets or Sets NaEnabled
     /// </summary>
-    [DataMember(Name = "naEnabled", EmitDefaultValue = false)]
+    [JsonPropertyName("naEnabled")]
     public bool? NaEnabled { get; set; }
 
 
@@ -66,7 +66,7 @@ public partial class SurveyQuestionGroup : IEquatable<SurveyQuestionGroup>
     /// <summary>
     /// Gets or Sets Questions
     /// </summary>
-    [DataMember(Name = "questions", EmitDefaultValue = false)]
+    [JsonPropertyName("questions")]
     public List<SurveyQuestion> Questions { get; set; }
 
 
@@ -74,7 +74,7 @@ public partial class SurveyQuestionGroup : IEquatable<SurveyQuestionGroup>
     /// <summary>
     /// Gets or Sets VisibilityCondition
     /// </summary>
-    [DataMember(Name = "visibilityCondition", EmitDefaultValue = false)]
+    [JsonPropertyName("visibilityCondition")]
     public VisibilityCondition VisibilityCondition { get; set; }
 
 

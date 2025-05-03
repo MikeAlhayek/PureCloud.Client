@@ -1,4 +1,3 @@
-using System.Runtime.Serialization;
 using System.Text;
 using System.Text.Json.Serialization;
 
@@ -7,7 +6,7 @@ namespace PureCloud.Client.Models;
 /// <summary>
 /// HrisTimeOffTypeResponse
 /// </summary>
-[DataContract]
+
 public partial class HrisTimeOffTypeResponse : IEquatable<HrisTimeOffTypeResponse>
 {
 
@@ -36,7 +35,7 @@ public partial class HrisTimeOffTypeResponse : IEquatable<HrisTimeOffTypeRespons
     /// ID of the time off type configured in integration
     /// </summary>
     /// <value>ID of the time off type configured in integration</value>
-    [DataMember(Name = "id", EmitDefaultValue = false)]
+    [JsonPropertyName("id")]
     public string Id { get; set; }
 
 
@@ -45,7 +44,7 @@ public partial class HrisTimeOffTypeResponse : IEquatable<HrisTimeOffTypeRespons
     /// Name of the time off type configured in integration
     /// </summary>
     /// <value>Name of the time off type configured in integration</value>
-    [DataMember(Name = "name", EmitDefaultValue = false)]
+    [JsonPropertyName("name")]
     public string Name { get; set; }
 
 
@@ -54,7 +53,7 @@ public partial class HrisTimeOffTypeResponse : IEquatable<HrisTimeOffTypeRespons
     /// Secondary ID of the time off type, if configured in integration
     /// </summary>
     /// <value>Secondary ID of the time off type, if configured in integration</value>
-    [DataMember(Name = "secondaryId", EmitDefaultValue = false)]
+    [JsonPropertyName("secondaryId")]
     public string SecondaryId { get; set; }
 
 

@@ -1,12 +1,12 @@
-using System.Runtime.Serialization;
 using System.Text;
+using System.Text.Json.Serialization;
 
 namespace PureCloud.Client.Models;
 
 /// <summary>
 /// MetadataItem
 /// </summary>
-[DataContract]
+
 public partial class MetadataItem : IEquatable<MetadataItem>
 {
     /// <summary>
@@ -27,7 +27,7 @@ public partial class MetadataItem : IEquatable<MetadataItem>
     /// The text contents of the metadata
     /// </summary>
     /// <value>The text contents of the metadata</value>
-    [DataMember(Name = "text", EmitDefaultValue = false)]
+    [JsonPropertyName("text")]
     public string Text { get; set; }
 
 
@@ -36,7 +36,7 @@ public partial class MetadataItem : IEquatable<MetadataItem>
     /// The custom attributes for the metadata
     /// </summary>
     /// <value>The custom attributes for the metadata</value>
-    [DataMember(Name = "attributes", EmitDefaultValue = false)]
+    [JsonPropertyName("attributes")]
     public Dictionary<string, string> Attributes { get; set; }
 
 

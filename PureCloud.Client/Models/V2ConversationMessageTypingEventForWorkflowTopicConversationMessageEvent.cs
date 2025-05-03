@@ -7,13 +7,13 @@ namespace PureCloud.Client.Models;
 /// <summary>
 /// V2ConversationMessageTypingEventForWorkflowTopicConversationMessageEvent
 /// </summary>
-[DataContract]
+
 public partial class V2ConversationMessageTypingEventForWorkflowTopicConversationMessageEvent : IEquatable<V2ConversationMessageTypingEventForWorkflowTopicConversationMessageEvent>
 {
     /// <summary>
     /// Gets or Sets EventType
     /// </summary>
-    [JsonConverter(typeof(JsonStringEnumConverter))]
+    
     public enum EventTypeEnum
     {
         /// <summary>
@@ -39,7 +39,7 @@ public partial class V2ConversationMessageTypingEventForWorkflowTopicConversatio
     /// <summary>
     /// Gets or Sets EventType
     /// </summary>
-    [DataMember(Name = "eventType", EmitDefaultValue = false)]
+    [JsonPropertyName("eventType")]
     public EventTypeEnum? EventType { get; set; }
     /// <summary>
     /// Initializes a new instance of the <see cref="V2ConversationMessageTypingEventForWorkflowTopicConversationMessageEvent" /> class.
@@ -60,7 +60,7 @@ public partial class V2ConversationMessageTypingEventForWorkflowTopicConversatio
     /// <summary>
     /// Gets or Sets Typing
     /// </summary>
-    [DataMember(Name = "typing", EmitDefaultValue = false)]
+    [JsonPropertyName("typing")]
     public V2ConversationMessageTypingEventForWorkflowTopicConversationEventTyping Typing { get; set; }
 
 

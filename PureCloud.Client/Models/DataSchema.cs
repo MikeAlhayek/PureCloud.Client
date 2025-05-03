@@ -7,13 +7,13 @@ namespace PureCloud.Client.Models;
 /// <summary>
 /// DataSchema
 /// </summary>
-[DataContract]
+
 public partial class DataSchema : IEquatable<DataSchema>
 {
     /// <summary>
     /// Gets or Sets AppliesTo
     /// </summary>
-    [JsonConverter(typeof(JsonStringEnumConverter))]
+    
     public enum AppliesToEnum
     {
         /// <summary>
@@ -90,7 +90,7 @@ public partial class DataSchema : IEquatable<DataSchema>
     /// The globally unique identifier for the schema.  Only required if a schema is used for custom fields during external entity creation or updates.
     /// </summary>
     /// <value>The globally unique identifier for the schema.  Only required if a schema is used for custom fields during external entity creation or updates.</value>
-    [DataMember(Name = "id", EmitDefaultValue = false)]
+    [JsonPropertyName("id")]
     public string Id { get; set; }
 
 
@@ -98,7 +98,7 @@ public partial class DataSchema : IEquatable<DataSchema>
     /// <summary>
     /// Gets or Sets Name
     /// </summary>
-    [DataMember(Name = "name", EmitDefaultValue = false)]
+    [JsonPropertyName("name")]
     public string Name { get; set; }
 
 
@@ -107,7 +107,7 @@ public partial class DataSchema : IEquatable<DataSchema>
     /// The schema&#39;s version, a positive integer. Required for updates.
     /// </summary>
     /// <value>The schema&#39;s version, a positive integer. Required for updates.</value>
-    [DataMember(Name = "version", EmitDefaultValue = false)]
+    [JsonPropertyName("version")]
     public int? Version { get; set; }
 
 
@@ -116,7 +116,7 @@ public partial class DataSchema : IEquatable<DataSchema>
     /// Indicates the built-in entity type to which this schema applies.
     /// </summary>
     /// <value>Indicates the built-in entity type to which this schema applies.</value>
-    [DataMember(Name = "appliesTo", EmitDefaultValue = false)]
+    [JsonPropertyName("appliesTo")]
     public List<AppliesToEnum> AppliesTo { get; private set; }
 
 
@@ -125,7 +125,7 @@ public partial class DataSchema : IEquatable<DataSchema>
     /// The schema&#39;s enabled/disabled status. A disabled schema cannot be assigned to any other entities, but the data on those entities from the schema still exists.
     /// </summary>
     /// <value>The schema&#39;s enabled/disabled status. A disabled schema cannot be assigned to any other entities, but the data on those entities from the schema still exists.</value>
-    [DataMember(Name = "enabled", EmitDefaultValue = false)]
+    [JsonPropertyName("enabled")]
     public bool? Enabled { get; set; }
 
 
@@ -134,7 +134,7 @@ public partial class DataSchema : IEquatable<DataSchema>
     /// The URI of the user that created this schema.
     /// </summary>
     /// <value>The URI of the user that created this schema.</value>
-    [DataMember(Name = "createdBy", EmitDefaultValue = false)]
+    [JsonPropertyName("createdBy")]
     public DomainEntityRef CreatedBy { get; private set; }
 
 
@@ -143,7 +143,7 @@ public partial class DataSchema : IEquatable<DataSchema>
     /// The date and time this schema was created. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z
     /// </summary>
     /// <value>The date and time this schema was created. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z</value>
-    [DataMember(Name = "dateCreated", EmitDefaultValue = false)]
+    [JsonPropertyName("dateCreated")]
     public DateTime? DateCreated { get; private set; }
 
 
@@ -152,7 +152,7 @@ public partial class DataSchema : IEquatable<DataSchema>
     /// A JSON schema defining the extension to the built-in entity type.
     /// </summary>
     /// <value>A JSON schema defining the extension to the built-in entity type.</value>
-    [DataMember(Name = "jsonSchema", EmitDefaultValue = false)]
+    [JsonPropertyName("jsonSchema")]
     public JsonSchemaDocument JsonSchema { get; set; }
 
 
@@ -161,7 +161,7 @@ public partial class DataSchema : IEquatable<DataSchema>
     /// The URI for this object
     /// </summary>
     /// <value>The URI for this object</value>
-    [DataMember(Name = "selfUri", EmitDefaultValue = false)]
+    [JsonPropertyName("selfUri")]
     public string SelfUri { get; private set; }
 
 

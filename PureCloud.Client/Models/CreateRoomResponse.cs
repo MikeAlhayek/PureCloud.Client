@@ -1,4 +1,3 @@
-using System.Runtime.Serialization;
 using System.Text;
 using System.Text.Json.Serialization;
 
@@ -7,7 +6,7 @@ namespace PureCloud.Client.Models;
 /// <summary>
 /// CreateRoomResponse
 /// </summary>
-[DataContract]
+
 public partial class CreateRoomResponse : IEquatable<CreateRoomResponse>
 {
 
@@ -32,7 +31,7 @@ public partial class CreateRoomResponse : IEquatable<CreateRoomResponse>
     /// The jid of the room
     /// </summary>
     /// <value>The jid of the room</value>
-    [DataMember(Name = "jid", EmitDefaultValue = false)]
+    [JsonPropertyName("jid")]
     public string Jid { get; set; }
 
 

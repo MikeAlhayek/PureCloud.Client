@@ -7,14 +7,14 @@ namespace PureCloud.Client.Models;
 /// <summary>
 /// CreateWebChatMessageRequest
 /// </summary>
-[DataContract]
+
 public partial class CreateWebChatMessageRequest : IEquatable<CreateWebChatMessageRequest>
 {
     /// <summary>
     /// The purpose of the message within the conversation, such as a standard text entry versus a greeting.
     /// </summary>
     /// <value>The purpose of the message within the conversation, such as a standard text entry versus a greeting.</value>
-    [JsonConverter(typeof(JsonStringEnumConverter))]
+    
     public enum BodyTypeEnum
     {
         /// <summary>
@@ -59,7 +59,7 @@ public partial class CreateWebChatMessageRequest : IEquatable<CreateWebChatMessa
     /// The purpose of the message within the conversation, such as a standard text entry versus a greeting.
     /// </summary>
     /// <value>The purpose of the message within the conversation, such as a standard text entry versus a greeting.</value>
-    [DataMember(Name = "bodyType", EmitDefaultValue = false)]
+    [JsonPropertyName("bodyType")]
     public BodyTypeEnum? BodyType { get; set; }
 
     /// <summary>
@@ -85,7 +85,7 @@ public partial class CreateWebChatMessageRequest : IEquatable<CreateWebChatMessa
     /// The message body. Note that message bodies are limited to 4,000 characters.
     /// </summary>
     /// <value>The message body. Note that message bodies are limited to 4,000 characters.</value>
-    [DataMember(Name = "body", EmitDefaultValue = false)]
+    [JsonPropertyName("body")]
     public string Body { get; set; }
 
 

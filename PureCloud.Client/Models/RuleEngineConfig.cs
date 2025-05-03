@@ -1,4 +1,3 @@
-using System.Runtime.Serialization;
 using System.Text;
 using System.Text.Json.Serialization;
 
@@ -7,7 +6,7 @@ namespace PureCloud.Client.Models;
 /// <summary>
 /// RuleEngineConfig
 /// </summary>
-[DataContract]
+
 public partial class RuleEngineConfig : IEquatable<RuleEngineConfig>
 {
 
@@ -34,7 +33,7 @@ public partial class RuleEngineConfig : IEquatable<RuleEngineConfig>
     /// List of rules to evaluate by the engine.
     /// </summary>
     /// <value>List of rules to evaluate by the engine.</value>
-    [DataMember(Name = "rules", EmitDefaultValue = false)]
+    [JsonPropertyName("rules")]
     public List<RuleConfig> Rules { get; set; }
 
 
@@ -43,7 +42,7 @@ public partial class RuleEngineConfig : IEquatable<RuleEngineConfig>
     /// Fallback configuration.
     /// </summary>
     /// <value>Fallback configuration.</value>
-    [DataMember(Name = "fallback", EmitDefaultValue = false)]
+    [JsonPropertyName("fallback")]
     public Fallback Fallback { get; set; }
 
 

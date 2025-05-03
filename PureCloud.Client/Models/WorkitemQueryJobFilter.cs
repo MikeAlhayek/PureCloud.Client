@@ -7,14 +7,14 @@ namespace PureCloud.Client.Models;
 /// <summary>
 /// WorkitemQueryJobFilter
 /// </summary>
-[DataContract]
+
 public partial class WorkitemQueryJobFilter : IEquatable<WorkitemQueryJobFilter>
 {
     /// <summary>
     /// Filter operator.
     /// </summary>
     /// <value>Filter operator.</value>
-    [JsonConverter(typeof(JsonStringEnumConverter))]
+    
     public enum OperatorEnum
     {
         /// <summary>
@@ -89,7 +89,7 @@ public partial class WorkitemQueryJobFilter : IEquatable<WorkitemQueryJobFilter>
     /// Filter operator.
     /// </summary>
     /// <value>Filter operator.</value>
-    [DataMember(Name = "operator", EmitDefaultValue = false)]
+    [JsonPropertyName("operator")]
     public OperatorEnum? Operator { get; set; }
 
     /// <summary>
@@ -117,7 +117,7 @@ public partial class WorkitemQueryJobFilter : IEquatable<WorkitemQueryJobFilter>
     /// Attribute name.
     /// </summary>
     /// <value>Attribute name.</value>
-    [DataMember(Name = "name", EmitDefaultValue = false)]
+    [JsonPropertyName("name")]
     public string Name { get; set; }
 
 
@@ -128,7 +128,7 @@ public partial class WorkitemQueryJobFilter : IEquatable<WorkitemQueryJobFilter>
     /// List of values to be used in the filter.
     /// </summary>
     /// <value>List of values to be used in the filter.</value>
-    [DataMember(Name = "values", EmitDefaultValue = false)]
+    [JsonPropertyName("values")]
     public List<string> Values { get; set; }
 
 

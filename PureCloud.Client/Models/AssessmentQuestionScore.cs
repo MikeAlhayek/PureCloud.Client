@@ -1,4 +1,3 @@
-using System.Runtime.Serialization;
 using System.Text;
 using System.Text.Json.Serialization;
 
@@ -7,7 +6,7 @@ namespace PureCloud.Client.Models;
 /// <summary>
 /// AssessmentQuestionScore
 /// </summary>
-[DataContract]
+
 public partial class AssessmentQuestionScore : IEquatable<AssessmentQuestionScore>
 {
 
@@ -42,7 +41,7 @@ public partial class AssessmentQuestionScore : IEquatable<AssessmentQuestionScor
     /// True if this was a failed Kill question
     /// </summary>
     /// <value>True if this was a failed Kill question</value>
-    [DataMember(Name = "failedKillQuestion", EmitDefaultValue = false)]
+    [JsonPropertyName("failedKillQuestion")]
     public bool? FailedKillQuestion { get; private set; }
 
 
@@ -51,7 +50,7 @@ public partial class AssessmentQuestionScore : IEquatable<AssessmentQuestionScor
     /// Comments provided for the answer
     /// </summary>
     /// <value>Comments provided for the answer</value>
-    [DataMember(Name = "comments", EmitDefaultValue = false)]
+    [JsonPropertyName("comments")]
     public string Comments { get; set; }
 
 
@@ -60,7 +59,7 @@ public partial class AssessmentQuestionScore : IEquatable<AssessmentQuestionScor
     /// The ID of the question
     /// </summary>
     /// <value>The ID of the question</value>
-    [DataMember(Name = "questionId", EmitDefaultValue = false)]
+    [JsonPropertyName("questionId")]
     public string QuestionId { get; set; }
 
 
@@ -69,7 +68,7 @@ public partial class AssessmentQuestionScore : IEquatable<AssessmentQuestionScor
     /// The ID of the selected answer
     /// </summary>
     /// <value>The ID of the selected answer</value>
-    [DataMember(Name = "answerId", EmitDefaultValue = false)]
+    [JsonPropertyName("answerId")]
     public string AnswerId { get; set; }
 
 
@@ -78,7 +77,7 @@ public partial class AssessmentQuestionScore : IEquatable<AssessmentQuestionScor
     /// The score received for this question
     /// </summary>
     /// <value>The score received for this question</value>
-    [DataMember(Name = "score", EmitDefaultValue = false)]
+    [JsonPropertyName("score")]
     public int? Score { get; private set; }
 
 
@@ -87,7 +86,7 @@ public partial class AssessmentQuestionScore : IEquatable<AssessmentQuestionScor
     /// True if this question was marked as NA
     /// </summary>
     /// <value>True if this question was marked as NA</value>
-    [DataMember(Name = "markedNA", EmitDefaultValue = false)]
+    [JsonPropertyName("markedNA")]
     public bool? MarkedNA { get; set; }
 
 
@@ -96,7 +95,7 @@ public partial class AssessmentQuestionScore : IEquatable<AssessmentQuestionScor
     /// If markedNA is true, systemMarkedNA indicates whether it was marked by a user or by the system due to visibility conditions. Always false if markedNA is false.
     /// </summary>
     /// <value>If markedNA is true, systemMarkedNA indicates whether it was marked by a user or by the system due to visibility conditions. Always false if markedNA is false.</value>
-    [DataMember(Name = "systemMarkedNA", EmitDefaultValue = false)]
+    [JsonPropertyName("systemMarkedNA")]
     public bool? SystemMarkedNA { get; set; }
 
 
@@ -105,7 +104,7 @@ public partial class AssessmentQuestionScore : IEquatable<AssessmentQuestionScor
     /// Answer for free text answer type
     /// </summary>
     /// <value>Answer for free text answer type</value>
-    [DataMember(Name = "freeTextAnswer", EmitDefaultValue = false)]
+    [JsonPropertyName("freeTextAnswer")]
     public string FreeTextAnswer { get; set; }
 
 

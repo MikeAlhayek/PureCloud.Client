@@ -7,14 +7,14 @@ namespace PureCloud.Client.Models;
 /// <summary>
 /// InboundDomain
 /// </summary>
-[DataContract]
+
 public partial class InboundDomain : IEquatable<InboundDomain>
 {
     /// <summary>
     /// Mx Record Status
     /// </summary>
     /// <value>Mx Record Status</value>
-    [JsonConverter(typeof(JsonStringEnumConverter))]
+    
     public enum MxRecordStatusEnum
     {
         /// <summary>
@@ -47,7 +47,7 @@ public partial class InboundDomain : IEquatable<InboundDomain>
     /// Mx Record Status
     /// </summary>
     /// <value>Mx Record Status</value>
-    [DataMember(Name = "mxRecordStatus", EmitDefaultValue = false)]
+    [JsonPropertyName("mxRecordStatus")]
     public MxRecordStatusEnum? MxRecordStatus { get; set; }
     /// <summary>
     /// Initializes a new instance of the <see cref="InboundDomain" /> class.
@@ -75,7 +75,7 @@ public partial class InboundDomain : IEquatable<InboundDomain>
     /// Unique Id of the domain such as: example.com
     /// </summary>
     /// <value>Unique Id of the domain such as: example.com</value>
-    [DataMember(Name = "id", EmitDefaultValue = false)]
+    [JsonPropertyName("id")]
     public string Id { get; set; }
 
 
@@ -83,7 +83,7 @@ public partial class InboundDomain : IEquatable<InboundDomain>
     /// <summary>
     /// Gets or Sets Name
     /// </summary>
-    [DataMember(Name = "name", EmitDefaultValue = false)]
+    [JsonPropertyName("name")]
     public string Name { get; set; }
 
 
@@ -94,7 +94,7 @@ public partial class InboundDomain : IEquatable<InboundDomain>
     /// Indicates if this a PureCloudEnvironment sub-domain.  If true, then the appropriate DNS records are created for sending/receiving email.
     /// </summary>
     /// <value>Indicates if this a PureCloudEnvironment sub-domain.  If true, then the appropriate DNS records are created for sending/receiving email.</value>
-    [DataMember(Name = "subDomain", EmitDefaultValue = false)]
+    [JsonPropertyName("subDomain")]
     public bool? SubDomain { get; set; }
 
 
@@ -103,7 +103,7 @@ public partial class InboundDomain : IEquatable<InboundDomain>
     /// The DNS settings if the inbound domain is using a custom Mail From. These settings can only be used on InboundDomains where subDomain is false.
     /// </summary>
     /// <value>The DNS settings if the inbound domain is using a custom Mail From. These settings can only be used on InboundDomains where subDomain is false.</value>
-    [DataMember(Name = "mailFromSettings", EmitDefaultValue = false)]
+    [JsonPropertyName("mailFromSettings")]
     public MailFromResult MailFromSettings { get; set; }
 
 
@@ -112,7 +112,7 @@ public partial class InboundDomain : IEquatable<InboundDomain>
     /// The custom SMTP server integration to use when sending outbound emails from this domain.
     /// </summary>
     /// <value>The custom SMTP server integration to use when sending outbound emails from this domain.</value>
-    [DataMember(Name = "customSMTPServer", EmitDefaultValue = false)]
+    [JsonPropertyName("customSMTPServer")]
     public DomainEntityRef CustomSMTPServer { get; set; }
 
 
@@ -121,7 +121,7 @@ public partial class InboundDomain : IEquatable<InboundDomain>
     /// The URI for this object
     /// </summary>
     /// <value>The URI for this object</value>
-    [DataMember(Name = "selfUri", EmitDefaultValue = false)]
+    [JsonPropertyName("selfUri")]
     public string SelfUri { get; private set; }
 
 

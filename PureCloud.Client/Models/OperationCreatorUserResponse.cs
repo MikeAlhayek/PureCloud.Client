@@ -7,14 +7,14 @@ namespace PureCloud.Client.Models;
 /// <summary>
 /// OperationCreatorUserResponse
 /// </summary>
-[DataContract]
+
 public partial class OperationCreatorUserResponse : IEquatable<OperationCreatorUserResponse>
 {
     /// <summary>
     /// Type of the operation creator entity: User or OAuthClient
     /// </summary>
     /// <value>Type of the operation creator entity: User or OAuthClient</value>
-    [JsonConverter(typeof(JsonStringEnumConverter))]
+    
     public enum TypeEnum
     {
         /// <summary>
@@ -41,7 +41,7 @@ public partial class OperationCreatorUserResponse : IEquatable<OperationCreatorU
     /// Type of the operation creator entity: User or OAuthClient
     /// </summary>
     /// <value>Type of the operation creator entity: User or OAuthClient</value>
-    [DataMember(Name = "type", EmitDefaultValue = false)]
+    [JsonPropertyName("type")]
     public TypeEnum? Type { get; set; }
     /// <summary>
     /// Initializes a new instance of the <see cref="OperationCreatorUserResponse" /> class.
@@ -59,7 +59,7 @@ public partial class OperationCreatorUserResponse : IEquatable<OperationCreatorU
     /// The globally unique identifier for the object.
     /// </summary>
     /// <value>The globally unique identifier for the object.</value>
-    [DataMember(Name = "id", EmitDefaultValue = false)]
+    [JsonPropertyName("id")]
     public string Id { get; private set; }
 
 
@@ -70,7 +70,7 @@ public partial class OperationCreatorUserResponse : IEquatable<OperationCreatorU
     /// The URI for this object
     /// </summary>
     /// <value>The URI for this object</value>
-    [DataMember(Name = "selfUri", EmitDefaultValue = false)]
+    [JsonPropertyName("selfUri")]
     public string SelfUri { get; private set; }
 
 

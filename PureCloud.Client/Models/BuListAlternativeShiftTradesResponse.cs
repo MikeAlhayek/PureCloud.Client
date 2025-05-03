@@ -1,12 +1,12 @@
-using System.Runtime.Serialization;
 using System.Text;
+using System.Text.Json.Serialization;
 
 namespace PureCloud.Client.Models;
 
 /// <summary>
 /// BuListAlternativeShiftTradesResponse
 /// </summary>
-[DataContract]
+
 public partial class BuListAlternativeShiftTradesResponse : IEquatable<BuListAlternativeShiftTradesResponse>
 {
     /// <summary>
@@ -27,7 +27,7 @@ public partial class BuListAlternativeShiftTradesResponse : IEquatable<BuListAlt
     /// The asynchronous job handling the request. Null if result returns synchronously
     /// </summary>
     /// <value>The asynchronous job handling the request. Null if result returns synchronously</value>
-    [DataMember(Name = "job", EmitDefaultValue = false)]
+    [JsonPropertyName("job")]
     public BuAlternativeShiftJobResponse Job { get; set; }
 
 
@@ -36,7 +36,7 @@ public partial class BuListAlternativeShiftTradesResponse : IEquatable<BuListAlt
     /// The result of the request. May come via notification. Null if job is populated
     /// </summary>
     /// <value>The result of the request. May come via notification. Null if job is populated</value>
-    [DataMember(Name = "result", EmitDefaultValue = false)]
+    [JsonPropertyName("result")]
     public AlternativeShiftTradeListing Result { get; set; }
 
 

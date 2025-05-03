@@ -7,13 +7,13 @@ namespace PureCloud.Client.Models;
 /// <summary>
 /// ShiftStartVariance
 /// </summary>
-[DataContract]
+
 public partial class ShiftStartVariance : IEquatable<ShiftStartVariance>
 {
     /// <summary>
     /// Gets or Sets ApplicableDays
     /// </summary>
-    [JsonConverter(typeof(JsonStringEnumConverter))]
+    
     public enum ApplicableDaysEnum
     {
         /// <summary>
@@ -90,7 +90,7 @@ public partial class ShiftStartVariance : IEquatable<ShiftStartVariance>
     /// Days for which shift start variance is configured
     /// </summary>
     /// <value>Days for which shift start variance is configured</value>
-    [DataMember(Name = "applicableDays", EmitDefaultValue = false)]
+    [JsonPropertyName("applicableDays")]
     public List<ApplicableDaysEnum> ApplicableDays { get; set; }
 
 
@@ -99,7 +99,7 @@ public partial class ShiftStartVariance : IEquatable<ShiftStartVariance>
     /// Maximum variance in minutes across shift starts
     /// </summary>
     /// <value>Maximum variance in minutes across shift starts</value>
-    [DataMember(Name = "maxShiftStartVarianceMinutes", EmitDefaultValue = false)]
+    [JsonPropertyName("maxShiftStartVarianceMinutes")]
     public int? MaxShiftStartVarianceMinutes { get; set; }
 
 

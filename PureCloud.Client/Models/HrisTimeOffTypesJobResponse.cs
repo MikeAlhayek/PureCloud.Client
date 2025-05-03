@@ -7,14 +7,14 @@ namespace PureCloud.Client.Models;
 /// <summary>
 /// HrisTimeOffTypesJobResponse
 /// </summary>
-[DataContract]
+
 public partial class HrisTimeOffTypesJobResponse : IEquatable<HrisTimeOffTypesJobResponse>
 {
     /// <summary>
     /// The status of the time off types job
     /// </summary>
     /// <value>The status of the time off types job</value>
-    [JsonConverter(typeof(JsonStringEnumConverter))]
+    
     public enum StatusEnum
     {
         /// <summary>
@@ -47,7 +47,7 @@ public partial class HrisTimeOffTypesJobResponse : IEquatable<HrisTimeOffTypesJo
     /// The status of the time off types job
     /// </summary>
     /// <value>The status of the time off types job</value>
-    [DataMember(Name = "status", EmitDefaultValue = false)]
+    [JsonPropertyName("status")]
     public StatusEnum? Status { get; set; }
     /// <summary>
     /// Initializes a new instance of the <see cref="HrisTimeOffTypesJobResponse" /> class.
@@ -66,7 +66,7 @@ public partial class HrisTimeOffTypesJobResponse : IEquatable<HrisTimeOffTypesJo
     /// <summary>
     /// Gets or Sets Entities
     /// </summary>
-    [DataMember(Name = "entities", EmitDefaultValue = false)]
+    [JsonPropertyName("entities")]
     public List<HrisTimeOffTypeResponse> Entities { get; set; }
 
 

@@ -1,12 +1,12 @@
-using System.Runtime.Serialization;
 using System.Text;
+using System.Text.Json.Serialization;
 
 namespace PureCloud.Client.Models;
 
 /// <summary>
 /// WorkspaceSummary
 /// </summary>
-[DataContract]
+
 public partial class WorkspaceSummary : IEquatable<WorkspaceSummary>
 {
     /// <summary>
@@ -26,7 +26,7 @@ public partial class WorkspaceSummary : IEquatable<WorkspaceSummary>
     /// <summary>
     /// Gets or Sets TotalDocumentCount
     /// </summary>
-    [DataMember(Name = "totalDocumentCount", EmitDefaultValue = false)]
+    [JsonPropertyName("totalDocumentCount")]
     public long? TotalDocumentCount { get; set; }
 
 
@@ -34,7 +34,7 @@ public partial class WorkspaceSummary : IEquatable<WorkspaceSummary>
     /// <summary>
     /// Gets or Sets TotalDocumentByteCount
     /// </summary>
-    [DataMember(Name = "totalDocumentByteCount", EmitDefaultValue = false)]
+    [JsonPropertyName("totalDocumentByteCount")]
     public long? TotalDocumentByteCount { get; set; }
 
 

@@ -1,4 +1,3 @@
-using System.Runtime.Serialization;
 using System.Text;
 using System.Text.Json.Serialization;
 
@@ -7,7 +6,7 @@ namespace PureCloud.Client.Models;
 /// <summary>
 /// NluQualityReportSummary
 /// </summary>
-[DataContract]
+
 public partial class NluQualityReportSummary : IEquatable<NluQualityReportSummary>
 {
 
@@ -32,7 +31,7 @@ public partial class NluQualityReportSummary : IEquatable<NluQualityReportSummar
     /// The list of metrics in the summary
     /// </summary>
     /// <value>The list of metrics in the summary</value>
-    [DataMember(Name = "metrics", EmitDefaultValue = false)]
+    [JsonPropertyName("metrics")]
     public List<NluQualityReportSummaryMetric> Metrics { get; set; }
 
 

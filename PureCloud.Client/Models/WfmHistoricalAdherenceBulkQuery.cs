@@ -1,4 +1,3 @@
-using System.Runtime.Serialization;
 using System.Text;
 using System.Text.Json.Serialization;
 
@@ -7,7 +6,7 @@ namespace PureCloud.Client.Models;
 /// <summary>
 /// WfmHistoricalAdherenceBulkQuery
 /// </summary>
-[DataContract]
+
 public partial class WfmHistoricalAdherenceBulkQuery : IEquatable<WfmHistoricalAdherenceBulkQuery>
 {
 
@@ -34,7 +33,7 @@ public partial class WfmHistoricalAdherenceBulkQuery : IEquatable<WfmHistoricalA
     /// The historical adherence items to query
     /// </summary>
     /// <value>The historical adherence items to query</value>
-    [DataMember(Name = "items", EmitDefaultValue = false)]
+    [JsonPropertyName("items")]
     public List<WfmHistoricalAdherenceBulkItem> Items { get; set; }
 
 
@@ -43,7 +42,7 @@ public partial class WfmHistoricalAdherenceBulkQuery : IEquatable<WfmHistoricalA
     /// The time zone, in olson format, to use in defining days when computing adherence. The results will be returned as UTC timestamps regardless of the time zone input.
     /// </summary>
     /// <value>The time zone, in olson format, to use in defining days when computing adherence. The results will be returned as UTC timestamps regardless of the time zone input.</value>
-    [DataMember(Name = "timeZone", EmitDefaultValue = false)]
+    [JsonPropertyName("timeZone")]
     public string TimeZone { get; set; }
 
 

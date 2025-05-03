@@ -7,13 +7,13 @@ namespace PureCloud.Client.Models;
 /// <summary>
 /// AlternativeShiftBuSettingsResponse
 /// </summary>
-[DataContract]
+
 public partial class AlternativeShiftBuSettingsResponse : IEquatable<AlternativeShiftBuSettingsResponse>
 {
     /// <summary>
     /// Gets or Sets EnabledGranularities
     /// </summary>
-    [JsonConverter(typeof(JsonStringEnumConverter))]
+    
     public enum EnabledGranularitiesEnum
     {
         /// <summary>
@@ -33,7 +33,7 @@ public partial class AlternativeShiftBuSettingsResponse : IEquatable<Alternative
     /// <summary>
     /// Gets or Sets RetainedActivityCategories
     /// </summary>
-    [JsonConverter(typeof(JsonStringEnumConverter))]
+    
     public enum RetainedActivityCategoriesEnum
     {
         /// <summary>
@@ -114,7 +114,7 @@ public partial class AlternativeShiftBuSettingsResponse : IEquatable<Alternative
     /// The granularity at which alternative shifts is allowed. An empty list means Alternative Shifts is disabled
     /// </summary>
     /// <value>The granularity at which alternative shifts is allowed. An empty list means Alternative Shifts is disabled</value>
-    [DataMember(Name = "enabledGranularities", EmitDefaultValue = false)]
+    [JsonPropertyName("enabledGranularities")]
     public List<EnabledGranularitiesEnum> EnabledGranularities { get; set; }
 
 
@@ -123,7 +123,7 @@ public partial class AlternativeShiftBuSettingsResponse : IEquatable<Alternative
     /// The minimum number of minutes before the start of a shift that an alternative shift can be automatically approved
     /// </summary>
     /// <value>The minimum number of minutes before the start of a shift that an alternative shift can be automatically approved</value>
-    [DataMember(Name = "minMinutesBeforeStartTime", EmitDefaultValue = false)]
+    [JsonPropertyName("minMinutesBeforeStartTime")]
     public int? MinMinutesBeforeStartTime { get; set; }
 
 
@@ -132,7 +132,7 @@ public partial class AlternativeShiftBuSettingsResponse : IEquatable<Alternative
     /// Categories of activities that are required to remain at the same time slot for the alternative shifts offered. An empty list represents no retained activities
     /// </summary>
     /// <value>Categories of activities that are required to remain at the same time slot for the alternative shifts offered. An empty list represents no retained activities</value>
-    [DataMember(Name = "retainedActivityCategories", EmitDefaultValue = false)]
+    [JsonPropertyName("retainedActivityCategories")]
     public List<RetainedActivityCategoriesEnum> RetainedActivityCategories { get; set; }
 
 
@@ -141,7 +141,7 @@ public partial class AlternativeShiftBuSettingsResponse : IEquatable<Alternative
     /// Version metadata for this business unit&#39;s alternative shift settings
     /// </summary>
     /// <value>Version metadata for this business unit&#39;s alternative shift settings</value>
-    [DataMember(Name = "metadata", EmitDefaultValue = false)]
+    [JsonPropertyName("metadata")]
     public WfmVersionedEntityMetadata Metadata { get; set; }
 
 

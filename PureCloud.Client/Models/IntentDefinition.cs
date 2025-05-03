@@ -1,4 +1,3 @@
-using System.Runtime.Serialization;
 using System.Text;
 using System.Text.Json.Serialization;
 
@@ -7,7 +6,7 @@ namespace PureCloud.Client.Models;
 /// <summary>
 /// IntentDefinition
 /// </summary>
-[DataContract]
+
 public partial class IntentDefinition : IEquatable<IntentDefinition>
 {
 
@@ -40,7 +39,7 @@ public partial class IntentDefinition : IEquatable<IntentDefinition>
     /// ID of the intent.
     /// </summary>
     /// <value>ID of the intent.</value>
-    [DataMember(Name = "id", EmitDefaultValue = false)]
+    [JsonPropertyName("id")]
     public string Id { get; private set; }
 
 
@@ -49,7 +48,7 @@ public partial class IntentDefinition : IEquatable<IntentDefinition>
     /// The name of the intent.
     /// </summary>
     /// <value>The name of the intent.</value>
-    [DataMember(Name = "name", EmitDefaultValue = false)]
+    [JsonPropertyName("name")]
     public string Name { get; set; }
 
 
@@ -58,7 +57,7 @@ public partial class IntentDefinition : IEquatable<IntentDefinition>
     /// The description of the intent.
     /// </summary>
     /// <value>The description of the intent.</value>
-    [DataMember(Name = "description", EmitDefaultValue = false)]
+    [JsonPropertyName("description")]
     public string Description { get; set; }
 
 
@@ -67,7 +66,7 @@ public partial class IntentDefinition : IEquatable<IntentDefinition>
     /// The bindings for the named entity types used in this intent.This field is mutually exclusive with entityNameReferences and entities
     /// </summary>
     /// <value>The bindings for the named entity types used in this intent.This field is mutually exclusive with entityNameReferences and entities</value>
-    [DataMember(Name = "entityTypeBindings", EmitDefaultValue = false)]
+    [JsonPropertyName("entityTypeBindings")]
     public List<NamedEntityTypeBinding> EntityTypeBindings { get; set; }
 
 
@@ -76,7 +75,7 @@ public partial class IntentDefinition : IEquatable<IntentDefinition>
     /// The references for the named entity used in this intent.This field is mutually exclusive with entityTypeBindings
     /// </summary>
     /// <value>The references for the named entity used in this intent.This field is mutually exclusive with entityTypeBindings</value>
-    [DataMember(Name = "entityNameReferences", EmitDefaultValue = false)]
+    [JsonPropertyName("entityNameReferences")]
     public List<string> EntityNameReferences { get; private set; }
 
 
@@ -85,7 +84,7 @@ public partial class IntentDefinition : IEquatable<IntentDefinition>
     /// The utterances that act as training phrases for the intent.
     /// </summary>
     /// <value>The utterances that act as training phrases for the intent.</value>
-    [DataMember(Name = "utterances", EmitDefaultValue = false)]
+    [JsonPropertyName("utterances")]
     public List<NluUtterance> Utterances { get; set; }
 
 
@@ -94,7 +93,7 @@ public partial class IntentDefinition : IEquatable<IntentDefinition>
     /// Additional languages for intents
     /// </summary>
     /// <value>Additional languages for intents</value>
-    [DataMember(Name = "additionalLanguages", EmitDefaultValue = false)]
+    [JsonPropertyName("additionalLanguages")]
     public Dictionary<string, AdditionalLanguagesIntent> AdditionalLanguages { get; set; }
 
 

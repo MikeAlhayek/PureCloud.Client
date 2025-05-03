@@ -1,4 +1,3 @@
-using System.Runtime.Serialization;
 using System.Text;
 using System.Text.Json.Serialization;
 
@@ -7,7 +6,7 @@ namespace PureCloud.Client.Models;
 /// <summary>
 /// UpdateMuAgentWorkPlanRequest
 /// </summary>
-[DataContract]
+
 public partial class UpdateMuAgentWorkPlanRequest : IEquatable<UpdateMuAgentWorkPlanRequest>
 {
 
@@ -36,7 +35,7 @@ public partial class UpdateMuAgentWorkPlanRequest : IEquatable<UpdateMuAgentWork
     /// The agent id for whom the work plan is updated
     /// </summary>
     /// <value>The agent id for whom the work plan is updated</value>
-    [DataMember(Name = "userId", EmitDefaultValue = false)]
+    [JsonPropertyName("userId")]
     public string UserId { get; set; }
 
 
@@ -45,7 +44,7 @@ public partial class UpdateMuAgentWorkPlanRequest : IEquatable<UpdateMuAgentWork
     /// The current work plan ID for the agent
     /// </summary>
     /// <value>The current work plan ID for the agent</value>
-    [DataMember(Name = "workPlanId", EmitDefaultValue = false)]
+    [JsonPropertyName("workPlanId")]
     public ValueWrapperString WorkPlanId { get; set; }
 
 
@@ -54,7 +53,7 @@ public partial class UpdateMuAgentWorkPlanRequest : IEquatable<UpdateMuAgentWork
     /// The list of work plan overrides for the agent
     /// </summary>
     /// <value>The list of work plan overrides for the agent</value>
-    [DataMember(Name = "workPlanOverrides", EmitDefaultValue = false)]
+    [JsonPropertyName("workPlanOverrides")]
     public WorkPlanOverrideListWrapperWorkPlanOverrideRequest WorkPlanOverrides { get; set; }
 
 

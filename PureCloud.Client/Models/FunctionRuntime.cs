@@ -7,14 +7,14 @@ namespace PureCloud.Client.Models;
 /// <summary>
 /// Action function runtime.
 /// </summary>
-[DataContract]
+
 public partial class FunctionRuntime : IEquatable<FunctionRuntime>
 {
     /// <summary>
     /// Availability status of runtime
     /// </summary>
     /// <value>Availability status of runtime</value>
-    [JsonConverter(typeof(JsonStringEnumConverter))]
+    
     public enum StatusEnum
     {
         /// <summary>
@@ -47,7 +47,7 @@ public partial class FunctionRuntime : IEquatable<FunctionRuntime>
     /// Availability status of runtime
     /// </summary>
     /// <value>Availability status of runtime</value>
-    [DataMember(Name = "status", EmitDefaultValue = false)]
+    [JsonPropertyName("status")]
     public StatusEnum? Status { get; private set; }
     /// <summary>
     /// Initializes a new instance of the <see cref="FunctionRuntime" /> class.
@@ -63,7 +63,7 @@ public partial class FunctionRuntime : IEquatable<FunctionRuntime>
     /// Name of the function runtime.
     /// </summary>
     /// <value>Name of the function runtime.</value>
-    [DataMember(Name = "name", EmitDefaultValue = false)]
+    [JsonPropertyName("name")]
     public string Name { get; private set; }
 
 
@@ -72,7 +72,7 @@ public partial class FunctionRuntime : IEquatable<FunctionRuntime>
     /// Description of function runtime.
     /// </summary>
     /// <value>Description of function runtime.</value>
-    [DataMember(Name = "description", EmitDefaultValue = false)]
+    [JsonPropertyName("description")]
     public string Description { get; private set; }
 
 
@@ -83,7 +83,7 @@ public partial class FunctionRuntime : IEquatable<FunctionRuntime>
     /// Optional end of life date. Present if the status is Deprecated. Date represents when support for runtime can no longer be guaranteed. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd
     /// </summary>
     /// <value>Optional end of life date. Present if the status is Deprecated. Date represents when support for runtime can no longer be guaranteed. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd</value>
-    [DataMember(Name = "dateEndOfLife", EmitDefaultValue = false)]
+    [JsonPropertyName("dateEndOfLife")]
     public string DateEndOfLife { get; private set; }
 
 

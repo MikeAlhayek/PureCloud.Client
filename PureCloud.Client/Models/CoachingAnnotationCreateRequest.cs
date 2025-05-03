@@ -7,14 +7,14 @@ namespace PureCloud.Client.Models;
 /// <summary>
 /// CoachingAnnotationCreateRequest
 /// </summary>
-[DataContract]
+
 public partial class CoachingAnnotationCreateRequest : IEquatable<CoachingAnnotationCreateRequest>
 {
     /// <summary>
     /// Determines the permissions required to view this item.
     /// </summary>
     /// <value>Determines the permissions required to view this item.</value>
-    [JsonConverter(typeof(JsonStringEnumConverter))]
+    
     public enum AccessTypeEnum
     {
         /// <summary>
@@ -41,7 +41,7 @@ public partial class CoachingAnnotationCreateRequest : IEquatable<CoachingAnnota
     /// Determines the permissions required to view this item.
     /// </summary>
     /// <value>Determines the permissions required to view this item.</value>
-    [DataMember(Name = "accessType", EmitDefaultValue = false)]
+    [JsonPropertyName("accessType")]
     public AccessTypeEnum? AccessType { get; set; }
 
     /// <summary>
@@ -67,7 +67,7 @@ public partial class CoachingAnnotationCreateRequest : IEquatable<CoachingAnnota
     /// The text of the annotation.
     /// </summary>
     /// <value>The text of the annotation.</value>
-    [DataMember(Name = "text", EmitDefaultValue = false)]
+    [JsonPropertyName("text")]
     public string Text { get; set; }
 
 

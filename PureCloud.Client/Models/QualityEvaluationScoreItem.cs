@@ -7,13 +7,13 @@ namespace PureCloud.Client.Models;
 /// <summary>
 /// QualityEvaluationScoreItem
 /// </summary>
-[DataContract]
+
 public partial class QualityEvaluationScoreItem : IEquatable<QualityEvaluationScoreItem>
 {
     /// <summary>
     /// Gets or Sets MediaTypes
     /// </summary>
-    [JsonConverter(typeof(JsonStringEnumConverter))]
+    
     public enum MediaTypesEnum
     {
         /// <summary>
@@ -100,7 +100,7 @@ public partial class QualityEvaluationScoreItem : IEquatable<QualityEvaluationSc
     /// The id of evaluation
     /// </summary>
     /// <value>The id of evaluation</value>
-    [DataMember(Name = "evaluationId", EmitDefaultValue = false)]
+    [JsonPropertyName("evaluationId")]
     public string EvaluationId { get; private set; }
 
 
@@ -109,7 +109,7 @@ public partial class QualityEvaluationScoreItem : IEquatable<QualityEvaluationSc
     /// The id of conversation
     /// </summary>
     /// <value>The id of conversation</value>
-    [DataMember(Name = "conversationId", EmitDefaultValue = false)]
+    [JsonPropertyName("conversationId")]
     public string ConversationId { get; private set; }
 
 
@@ -118,7 +118,7 @@ public partial class QualityEvaluationScoreItem : IEquatable<QualityEvaluationSc
     /// The date of conversation. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z
     /// </summary>
     /// <value>The date of conversation. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z</value>
-    [DataMember(Name = "conversationDate", EmitDefaultValue = false)]
+    [JsonPropertyName("conversationDate")]
     public DateTime? ConversationDate { get; private set; }
 
 
@@ -127,7 +127,7 @@ public partial class QualityEvaluationScoreItem : IEquatable<QualityEvaluationSc
     /// The end date of conversation. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z
     /// </summary>
     /// <value>The end date of conversation. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z</value>
-    [DataMember(Name = "conversationEndDate", EmitDefaultValue = false)]
+    [JsonPropertyName("conversationEndDate")]
     public DateTime? ConversationEndDate { get; private set; }
 
 
@@ -136,7 +136,7 @@ public partial class QualityEvaluationScoreItem : IEquatable<QualityEvaluationSc
     /// The name of form
     /// </summary>
     /// <value>The name of form</value>
-    [DataMember(Name = "formName", EmitDefaultValue = false)]
+    [JsonPropertyName("formName")]
     public string FormName { get; private set; }
 
 
@@ -145,7 +145,7 @@ public partial class QualityEvaluationScoreItem : IEquatable<QualityEvaluationSc
     /// Gamification points earned for this metric
     /// </summary>
     /// <value>Gamification points earned for this metric</value>
-    [DataMember(Name = "points", EmitDefaultValue = false)]
+    [JsonPropertyName("points")]
     public int? Points { get; private set; }
 
 
@@ -154,7 +154,7 @@ public partial class QualityEvaluationScoreItem : IEquatable<QualityEvaluationSc
     /// The quality score of evaluation as a percentage
     /// </summary>
     /// <value>The quality score of evaluation as a percentage</value>
-    [DataMember(Name = "evaluationScore", EmitDefaultValue = false)]
+    [JsonPropertyName("evaluationScore")]
     public double? EvaluationScore { get; private set; }
 
 
@@ -163,7 +163,7 @@ public partial class QualityEvaluationScoreItem : IEquatable<QualityEvaluationSc
     /// The maximum Gamification points a user may earn for this metric
     /// </summary>
     /// <value>The maximum Gamification points a user may earn for this metric</value>
-    [DataMember(Name = "maxPoints", EmitDefaultValue = false)]
+    [JsonPropertyName("maxPoints")]
     public int? MaxPoints { get; private set; }
 
 
@@ -172,7 +172,7 @@ public partial class QualityEvaluationScoreItem : IEquatable<QualityEvaluationSc
     /// A list of media types for the metric
     /// </summary>
     /// <value>A list of media types for the metric</value>
-    [DataMember(Name = "mediaTypes", EmitDefaultValue = false)]
+    [JsonPropertyName("mediaTypes")]
     public List<MediaTypesEnum> MediaTypes { get; set; }
 
 

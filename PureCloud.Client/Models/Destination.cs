@@ -1,12 +1,12 @@
-using System.Runtime.Serialization;
 using System.Text;
+using System.Text.Json.Serialization;
 
 namespace PureCloud.Client.Models;
 
 /// <summary>
 /// Destination
 /// </summary>
-[DataContract]
+
 public partial class Destination : IEquatable<Destination>
 {
     /// <summary>
@@ -31,7 +31,7 @@ public partial class Destination : IEquatable<Destination>
     /// Address or phone number.
     /// </summary>
     /// <value>Address or phone number.</value>
-    [DataMember(Name = "address", EmitDefaultValue = false)]
+    [JsonPropertyName("address")]
     public string Address { get; set; }
 
 
@@ -40,7 +40,7 @@ public partial class Destination : IEquatable<Destination>
     /// The name of the internal user.
     /// </summary>
     /// <value>The name of the internal user.</value>
-    [DataMember(Name = "name", EmitDefaultValue = false)]
+    [JsonPropertyName("name")]
     public string Name { get; set; }
 
 
@@ -49,7 +49,7 @@ public partial class Destination : IEquatable<Destination>
     /// The user ID.
     /// </summary>
     /// <value>The user ID.</value>
-    [DataMember(Name = "userId", EmitDefaultValue = false)]
+    [JsonPropertyName("userId")]
     public string UserId { get; set; }
 
 
@@ -58,7 +58,7 @@ public partial class Destination : IEquatable<Destination>
     /// The queue ID.
     /// </summary>
     /// <value>The queue ID.</value>
-    [DataMember(Name = "queueId", EmitDefaultValue = false)]
+    [JsonPropertyName("queueId")]
     public string QueueId { get; set; }
 
 

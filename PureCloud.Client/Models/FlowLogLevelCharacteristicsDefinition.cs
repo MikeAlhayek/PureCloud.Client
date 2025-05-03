@@ -7,14 +7,14 @@ namespace PureCloud.Client.Models;
 /// <summary>
 /// Defines a characteristic that can be captured by data providers
 /// </summary>
-[DataContract]
+
 public partial class FlowLogLevelCharacteristicsDefinition : IEquatable<FlowLogLevelCharacteristicsDefinition>
 {
     /// <summary>
     /// The minimum level required for this characteristic to be enabled.
     /// </summary>
     /// <value>The minimum level required for this characteristic to be enabled.</value>
-    [JsonConverter(typeof(JsonStringEnumConverter))]
+    
     public enum MinimumLevelEnum
     {
         /// <summary>
@@ -65,7 +65,7 @@ public partial class FlowLogLevelCharacteristicsDefinition : IEquatable<FlowLogL
     /// The minimum level required for this characteristic to be enabled.
     /// </summary>
     /// <value>The minimum level required for this characteristic to be enabled.</value>
-    [DataMember(Name = "minimumLevel", EmitDefaultValue = false)]
+    [JsonPropertyName("minimumLevel")]
     public MinimumLevelEnum? MinimumLevel { get; private set; }
     /// <summary>
     /// Initializes a new instance of the <see cref="FlowLogLevelCharacteristicsDefinition" /> class.
@@ -81,7 +81,7 @@ public partial class FlowLogLevelCharacteristicsDefinition : IEquatable<FlowLogL
     /// The globally unique identifier for the object.
     /// </summary>
     /// <value>The globally unique identifier for the object.</value>
-    [DataMember(Name = "id", EmitDefaultValue = false)]
+    [JsonPropertyName("id")]
     public string Id { get; private set; }
 
 
@@ -92,7 +92,7 @@ public partial class FlowLogLevelCharacteristicsDefinition : IEquatable<FlowLogL
     /// If set, this is the id of the characteristic that this one depends on and it must be enabled for this to be enabled.
     /// </summary>
     /// <value>If set, this is the id of the characteristic that this one depends on and it must be enabled for this to be enabled.</value>
-    [DataMember(Name = "dependsOn", EmitDefaultValue = false)]
+    [JsonPropertyName("dependsOn")]
     public FlowCharacteristics DependsOn { get; private set; }
 
 

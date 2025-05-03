@@ -7,14 +7,14 @@ namespace PureCloud.Client.Models;
 /// <summary>
 /// Message event element.  Examples include: system messages, typing indicators, cobrowse offerings.
 /// </summary>
-[DataContract]
+
 public partial class MessageEvent : IEquatable<MessageEvent>
 {
     /// <summary>
     /// Type of this event element
     /// </summary>
     /// <value>Type of this event element</value>
-    [JsonConverter(typeof(JsonStringEnumConverter))]
+    
     public enum EventTypeEnum
     {
         /// <summary>
@@ -59,7 +59,7 @@ public partial class MessageEvent : IEquatable<MessageEvent>
     /// Type of this event element
     /// </summary>
     /// <value>Type of this event element</value>
-    [DataMember(Name = "eventType", EmitDefaultValue = false)]
+    [JsonPropertyName("eventType")]
     public EventTypeEnum? EventType { get; set; }
 
     /// <summary>
@@ -95,7 +95,7 @@ public partial class MessageEvent : IEquatable<MessageEvent>
     /// CoBrowse event.
     /// </summary>
     /// <value>CoBrowse event.</value>
-    [DataMember(Name = "coBrowse", EmitDefaultValue = false)]
+    [JsonPropertyName("coBrowse")]
     public EventCoBrowse CoBrowse { get; set; }
 
 
@@ -104,7 +104,7 @@ public partial class MessageEvent : IEquatable<MessageEvent>
     /// Typing event.
     /// </summary>
     /// <value>Typing event.</value>
-    [DataMember(Name = "typing", EmitDefaultValue = false)]
+    [JsonPropertyName("typing")]
     public EventTyping Typing { get; set; }
 
 
@@ -113,7 +113,7 @@ public partial class MessageEvent : IEquatable<MessageEvent>
     /// Presence event.
     /// </summary>
     /// <value>Presence event.</value>
-    [DataMember(Name = "presence", EmitDefaultValue = false)]
+    [JsonPropertyName("presence")]
     public EventPresence Presence { get; set; }
 
 
@@ -122,7 +122,7 @@ public partial class MessageEvent : IEquatable<MessageEvent>
     /// Video event.
     /// </summary>
     /// <value>Video event.</value>
-    [DataMember(Name = "video", EmitDefaultValue = false)]
+    [JsonPropertyName("video")]
     public EventVideo Video { get; set; }
 
 
@@ -131,7 +131,7 @@ public partial class MessageEvent : IEquatable<MessageEvent>
     /// A list of reactions to a message.
     /// </summary>
     /// <value>A list of reactions to a message.</value>
-    [DataMember(Name = "reactions", EmitDefaultValue = false)]
+    [JsonPropertyName("reactions")]
     public List<ContentReaction> Reactions { get; set; }
 
 

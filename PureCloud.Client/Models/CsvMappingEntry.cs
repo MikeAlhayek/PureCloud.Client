@@ -1,4 +1,3 @@
-using System.Runtime.Serialization;
 using System.Text;
 using System.Text.Json.Serialization;
 
@@ -7,7 +6,7 @@ namespace PureCloud.Client.Models;
 /// <summary>
 /// CsvMappingEntry
 /// </summary>
-[DataContract]
+
 public partial class CsvMappingEntry : IEquatable<CsvMappingEntry>
 {
 
@@ -34,7 +33,7 @@ public partial class CsvMappingEntry : IEquatable<CsvMappingEntry>
     /// CSV field to map data from
     /// </summary>
     /// <value>CSV field to map data from</value>
-    [DataMember(Name = "sourceField", EmitDefaultValue = false)]
+    [JsonPropertyName("sourceField")]
     public string SourceField { get; set; }
 
 
@@ -43,7 +42,7 @@ public partial class CsvMappingEntry : IEquatable<CsvMappingEntry>
     /// Json path to map data to
     /// </summary>
     /// <value>Json path to map data to</value>
-    [DataMember(Name = "targetField", EmitDefaultValue = false)]
+    [JsonPropertyName("targetField")]
     public string TargetField { get; set; }
 
 

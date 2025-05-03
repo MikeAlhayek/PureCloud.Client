@@ -1,4 +1,3 @@
-using System.Runtime.Serialization;
 using System.Text;
 using System.Text.Json.Serialization;
 
@@ -7,7 +6,7 @@ namespace PureCloud.Client.Models;
 /// <summary>
 /// ImportScheduleUploadSchema
 /// </summary>
-[DataContract]
+
 public partial class ImportScheduleUploadSchema : IEquatable<ImportScheduleUploadSchema>
 {
 
@@ -42,7 +41,7 @@ public partial class ImportScheduleUploadSchema : IEquatable<ImportScheduleUploa
     /// The description for the imported schedule
     /// </summary>
     /// <value>The description for the imported schedule</value>
-    [DataMember(Name = "description", EmitDefaultValue = false)]
+    [JsonPropertyName("description")]
     public string Description { get; set; }
 
 
@@ -51,7 +50,7 @@ public partial class ImportScheduleUploadSchema : IEquatable<ImportScheduleUploa
     /// The number of weeks the imported schedule will cover
     /// </summary>
     /// <value>The number of weeks the imported schedule will cover</value>
-    [DataMember(Name = "weekCount", EmitDefaultValue = false)]
+    [JsonPropertyName("weekCount")]
     public int? WeekCount { get; set; }
 
 
@@ -60,7 +59,7 @@ public partial class ImportScheduleUploadSchema : IEquatable<ImportScheduleUploa
     /// Whether the imported schedule should be immediately published
     /// </summary>
     /// <value>Whether the imported schedule should be immediately published</value>
-    [DataMember(Name = "published", EmitDefaultValue = false)]
+    [JsonPropertyName("published")]
     public bool? Published { get; set; }
 
 
@@ -69,7 +68,7 @@ public partial class ImportScheduleUploadSchema : IEquatable<ImportScheduleUploa
     /// The short term forecast to associate with the imported schedule
     /// </summary>
     /// <value>The short term forecast to associate with the imported schedule</value>
-    [DataMember(Name = "shortTermForecast", EmitDefaultValue = false)]
+    [JsonPropertyName("shortTermForecast")]
     public BuShortTermForecastReference ShortTermForecast { get; set; }
 
 
@@ -78,7 +77,7 @@ public partial class ImportScheduleUploadSchema : IEquatable<ImportScheduleUploa
     /// The headcount forecast to associate with the imported schedule
     /// </summary>
     /// <value>The headcount forecast to associate with the imported schedule</value>
-    [DataMember(Name = "headcountForecast", EmitDefaultValue = false)]
+    [JsonPropertyName("headcountForecast")]
     public BuHeadcountForecast HeadcountForecast { get; set; }
 
 
@@ -87,7 +86,7 @@ public partial class ImportScheduleUploadSchema : IEquatable<ImportScheduleUploa
     /// Individual agent schedules
     /// </summary>
     /// <value>Individual agent schedules</value>
-    [DataMember(Name = "agentSchedules", EmitDefaultValue = false)]
+    [JsonPropertyName("agentSchedules")]
     public List<BuImportAgentScheduleUploadSchema> AgentSchedules { get; set; }
 
 

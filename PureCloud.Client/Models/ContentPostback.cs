@@ -1,4 +1,3 @@
-using System.Runtime.Serialization;
 using System.Text;
 using System.Text.Json.Serialization;
 
@@ -7,7 +6,7 @@ namespace PureCloud.Client.Models;
 /// <summary>
 /// Postback response object representing the click of a rich media button (Deprecated).
 /// </summary>
-[DataContract]
+
 public partial class ContentPostback : IEquatable<ContentPostback>
 {
 
@@ -36,7 +35,7 @@ public partial class ContentPostback : IEquatable<ContentPostback>
     /// An ID assigned to the button response.
     /// </summary>
     /// <value>An ID assigned to the button response.</value>
-    [DataMember(Name = "id", EmitDefaultValue = false)]
+    [JsonPropertyName("id")]
     public string Id { get; set; }
 
 
@@ -45,7 +44,7 @@ public partial class ContentPostback : IEquatable<ContentPostback>
     /// The response text from the button click.
     /// </summary>
     /// <value>The response text from the button click.</value>
-    [DataMember(Name = "text", EmitDefaultValue = false)]
+    [JsonPropertyName("text")]
     public string Text { get; set; }
 
 
@@ -54,7 +53,7 @@ public partial class ContentPostback : IEquatable<ContentPostback>
     /// The response payload associated with the clicked button.
     /// </summary>
     /// <value>The response payload associated with the clicked button.</value>
-    [DataMember(Name = "payload", EmitDefaultValue = false)]
+    [JsonPropertyName("payload")]
     public string Payload { get; set; }
 
 

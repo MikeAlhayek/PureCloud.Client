@@ -1,4 +1,3 @@
-using System.Runtime.Serialization;
 using System.Text;
 using System.Text.Json.Serialization;
 
@@ -7,7 +6,7 @@ namespace PureCloud.Client.Models;
 /// <summary>
 /// MaskingRuleValidateRequest
 /// </summary>
-[DataContract]
+
 public partial class MaskingRuleValidateRequest : IEquatable<MaskingRuleValidateRequest>
 {
 
@@ -34,7 +33,7 @@ public partial class MaskingRuleValidateRequest : IEquatable<MaskingRuleValidate
     /// Text to mask.
     /// </summary>
     /// <value>Text to mask.</value>
-    [DataMember(Name = "text", EmitDefaultValue = false)]
+    [JsonPropertyName("text")]
     public string Text { get; set; }
 
 
@@ -43,7 +42,7 @@ public partial class MaskingRuleValidateRequest : IEquatable<MaskingRuleValidate
     /// Regex to be applied
     /// </summary>
     /// <value>Regex to be applied</value>
-    [DataMember(Name = "definition", EmitDefaultValue = false)]
+    [JsonPropertyName("definition")]
     public string Definition { get; set; }
 
 

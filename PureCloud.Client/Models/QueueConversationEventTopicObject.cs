@@ -1,4 +1,3 @@
-using System.Runtime.Serialization;
 using System.Text;
 
 namespace PureCloud.Client.Models;
@@ -6,7 +5,7 @@ namespace PureCloud.Client.Models;
 /// <summary>
 /// The number of peer participants from the perspective of the participant in the conference.
 /// </summary>
-[DataContract]
+
 public partial class QueueConversationEventTopicObject : IEquatable<QueueConversationEventTopicObject>
 {
     /// <summary>

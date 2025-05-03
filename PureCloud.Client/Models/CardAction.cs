@@ -7,14 +7,14 @@ namespace PureCloud.Client.Models;
 /// <summary>
 /// A card action that a user can take.
 /// </summary>
-[DataContract]
+
 public partial class CardAction : IEquatable<CardAction>
 {
     /// <summary>
     /// Describes the type of action.
     /// </summary>
     /// <value>Describes the type of action.</value>
-    [JsonConverter(typeof(JsonStringEnumConverter))]
+    
     public enum TypeEnum
     {
         /// <summary>
@@ -41,7 +41,7 @@ public partial class CardAction : IEquatable<CardAction>
     /// Describes the type of action.
     /// </summary>
     /// <value>Describes the type of action.</value>
-    [DataMember(Name = "type", EmitDefaultValue = false)]
+    [JsonPropertyName("type")]
     public TypeEnum? Type { get; set; }
     /// <summary>
     /// Initializes a new instance of the <see cref="CardAction" /> class.
@@ -69,7 +69,7 @@ public partial class CardAction : IEquatable<CardAction>
     /// The response text from the button click.
     /// </summary>
     /// <value>The response text from the button click.</value>
-    [DataMember(Name = "text", EmitDefaultValue = false)]
+    [JsonPropertyName("text")]
     public string Text { get; set; }
 
 
@@ -78,7 +78,7 @@ public partial class CardAction : IEquatable<CardAction>
     /// Content of the textback payload after clicking a button.
     /// </summary>
     /// <value>Content of the textback payload after clicking a button.</value>
-    [DataMember(Name = "payload", EmitDefaultValue = false)]
+    [JsonPropertyName("payload")]
     public string Payload { get; set; }
 
 
@@ -87,7 +87,7 @@ public partial class CardAction : IEquatable<CardAction>
     /// The location of the image file associated with action.
     /// </summary>
     /// <value>The location of the image file associated with action.</value>
-    [DataMember(Name = "url", EmitDefaultValue = false)]
+    [JsonPropertyName("url")]
     public string Url { get; set; }
 
 
@@ -96,7 +96,7 @@ public partial class CardAction : IEquatable<CardAction>
     /// Indicates if the card option is selected by end customer.
     /// </summary>
     /// <value>Indicates if the card option is selected by end customer.</value>
-    [DataMember(Name = "isSelected", EmitDefaultValue = false)]
+    [JsonPropertyName("isSelected")]
     public bool? IsSelected { get; set; }
 
 

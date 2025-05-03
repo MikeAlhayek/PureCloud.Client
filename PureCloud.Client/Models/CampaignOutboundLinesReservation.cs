@@ -1,12 +1,12 @@
-using System.Runtime.Serialization;
 using System.Text;
+using System.Text.Json.Serialization;
 
 namespace PureCloud.Client.Models;
 
 /// <summary>
 /// CampaignOutboundLinesReservation
 /// </summary>
-[DataContract]
+
 public partial class CampaignOutboundLinesReservation : IEquatable<CampaignOutboundLinesReservation>
 {
     /// <summary>
@@ -27,7 +27,7 @@ public partial class CampaignOutboundLinesReservation : IEquatable<CampaignOutbo
     /// The Campaign
     /// </summary>
     /// <value>The Campaign</value>
-    [DataMember(Name = "campaign", EmitDefaultValue = false)]
+    [JsonPropertyName("campaign")]
     public DomainEntityRef Campaign { get; set; }
 
 
@@ -36,7 +36,7 @@ public partial class CampaignOutboundLinesReservation : IEquatable<CampaignOutbo
     /// The number of lines reserved for the campaign
     /// </summary>
     /// <value>The number of lines reserved for the campaign</value>
-    [DataMember(Name = "linesReserved", EmitDefaultValue = false)]
+    [JsonPropertyName("linesReserved")]
     public int? LinesReserved { get; set; }
 
 

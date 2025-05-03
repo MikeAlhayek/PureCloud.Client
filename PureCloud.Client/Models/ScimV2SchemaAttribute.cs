@@ -7,14 +7,14 @@ namespace PureCloud.Client.Models;
 /// <summary>
 /// A complex type that defines service provider attributes or subattributes and their qualities.
 /// </summary>
-[DataContract]
+
 public partial class ScimV2SchemaAttribute : IEquatable<ScimV2SchemaAttribute>
 {
     /// <summary>
     /// The data type of the attribute.
     /// </summary>
     /// <value>The data type of the attribute.</value>
-    [JsonConverter(typeof(JsonStringEnumConverter))]
+    
     public enum TypeEnum
     {
         /// <summary>
@@ -71,7 +71,7 @@ public partial class ScimV2SchemaAttribute : IEquatable<ScimV2SchemaAttribute>
     /// The circumstances under which an attribute can be defined or redefined. The default is \"readWrite\".
     /// </summary>
     /// <value>The circumstances under which an attribute can be defined or redefined. The default is \"readWrite\".</value>
-    [JsonConverter(typeof(JsonStringEnumConverter))]
+    
     public enum MutabilityEnum
     {
         /// <summary>
@@ -110,7 +110,7 @@ public partial class ScimV2SchemaAttribute : IEquatable<ScimV2SchemaAttribute>
     /// The circumstances under which an attribute and its values are returned in response to a GET, PUT, POST, or PATCH request.
     /// </summary>
     /// <value>The circumstances under which an attribute and its values are returned in response to a GET, PUT, POST, or PATCH request.</value>
-    [JsonConverter(typeof(JsonStringEnumConverter))]
+    
     public enum ReturnedEnum
     {
         /// <summary>
@@ -149,7 +149,7 @@ public partial class ScimV2SchemaAttribute : IEquatable<ScimV2SchemaAttribute>
     /// The method by which the service provider enforces the uniqueness of an attribute value. A server can reject a value by returning the HTTP response code 400 (Bad Request). A client can enforce uniqueness to a greater degree than the server provider enforces. For example, a client could make a value unique even though the server has \"uniqueness\" set to \"none\".
     /// </summary>
     /// <value>The method by which the service provider enforces the uniqueness of an attribute value. A server can reject a value by returning the HTTP response code 400 (Bad Request). A client can enforce uniqueness to a greater degree than the server provider enforces. For example, a client could make a value unique even though the server has \"uniqueness\" set to \"none\".</value>
-    [JsonConverter(typeof(JsonStringEnumConverter))]
+    
     public enum UniquenessEnum
     {
         /// <summary>
@@ -181,7 +181,7 @@ public partial class ScimV2SchemaAttribute : IEquatable<ScimV2SchemaAttribute>
     /// <summary>
     /// Gets or Sets ReferenceTypes
     /// </summary>
-    [JsonConverter(typeof(JsonStringEnumConverter))]
+    
     public enum ReferenceTypesEnum
     {
         /// <summary>
@@ -220,25 +220,25 @@ public partial class ScimV2SchemaAttribute : IEquatable<ScimV2SchemaAttribute>
     /// The data type of the attribute.
     /// </summary>
     /// <value>The data type of the attribute.</value>
-    [DataMember(Name = "type", EmitDefaultValue = false)]
+    [JsonPropertyName("type")]
     public TypeEnum? Type { get; private set; }
     /// <summary>
     /// The circumstances under which an attribute can be defined or redefined. The default is \"readWrite\".
     /// </summary>
     /// <value>The circumstances under which an attribute can be defined or redefined. The default is \"readWrite\".</value>
-    [DataMember(Name = "mutability", EmitDefaultValue = false)]
+    [JsonPropertyName("mutability")]
     public MutabilityEnum? Mutability { get; private set; }
     /// <summary>
     /// The circumstances under which an attribute and its values are returned in response to a GET, PUT, POST, or PATCH request.
     /// </summary>
     /// <value>The circumstances under which an attribute and its values are returned in response to a GET, PUT, POST, or PATCH request.</value>
-    [DataMember(Name = "returned", EmitDefaultValue = false)]
+    [JsonPropertyName("returned")]
     public ReturnedEnum? Returned { get; private set; }
     /// <summary>
     /// The method by which the service provider enforces the uniqueness of an attribute value. A server can reject a value by returning the HTTP response code 400 (Bad Request). A client can enforce uniqueness to a greater degree than the server provider enforces. For example, a client could make a value unique even though the server has \"uniqueness\" set to \"none\".
     /// </summary>
     /// <value>The method by which the service provider enforces the uniqueness of an attribute value. A server can reject a value by returning the HTTP response code 400 (Bad Request). A client can enforce uniqueness to a greater degree than the server provider enforces. For example, a client could make a value unique even though the server has \"uniqueness\" set to \"none\".</value>
-    [DataMember(Name = "uniqueness", EmitDefaultValue = false)]
+    [JsonPropertyName("uniqueness")]
     public UniquenessEnum? Uniqueness { get; private set; }
     /// <summary>
     /// Initializes a new instance of the <see cref="ScimV2SchemaAttribute" /> class.
@@ -254,7 +254,7 @@ public partial class ScimV2SchemaAttribute : IEquatable<ScimV2SchemaAttribute>
     /// The name of the attribute.
     /// </summary>
     /// <value>The name of the attribute.</value>
-    [DataMember(Name = "name", EmitDefaultValue = false)]
+    [JsonPropertyName("name")]
     public string Name { get; private set; }
 
 
@@ -265,7 +265,7 @@ public partial class ScimV2SchemaAttribute : IEquatable<ScimV2SchemaAttribute>
     /// The list of subattributes for an attribute of the type \&quot;complex\&quot;. Uses the same schema as \&quot;attributes\&quot;.
     /// </summary>
     /// <value>The list of subattributes for an attribute of the type \&quot;complex\&quot;. Uses the same schema as \&quot;attributes\&quot;.</value>
-    [DataMember(Name = "subAttributes", EmitDefaultValue = false)]
+    [JsonPropertyName("subAttributes")]
     public List<ScimV2SchemaAttribute> SubAttributes { get; private set; }
 
 
@@ -274,7 +274,7 @@ public partial class ScimV2SchemaAttribute : IEquatable<ScimV2SchemaAttribute>
     /// Indicates whether an attribute contains multiple values.
     /// </summary>
     /// <value>Indicates whether an attribute contains multiple values.</value>
-    [DataMember(Name = "multiValued", EmitDefaultValue = false)]
+    [JsonPropertyName("multiValued")]
     public bool? MultiValued { get; private set; }
 
 
@@ -283,7 +283,7 @@ public partial class ScimV2SchemaAttribute : IEquatable<ScimV2SchemaAttribute>
     /// The description of the attribute.
     /// </summary>
     /// <value>The description of the attribute.</value>
-    [DataMember(Name = "description", EmitDefaultValue = false)]
+    [JsonPropertyName("description")]
     public string Description { get; private set; }
 
 
@@ -292,7 +292,7 @@ public partial class ScimV2SchemaAttribute : IEquatable<ScimV2SchemaAttribute>
     /// Indicates whether an attribute is required.
     /// </summary>
     /// <value>Indicates whether an attribute is required.</value>
-    [DataMember(Name = "required", EmitDefaultValue = false)]
+    [JsonPropertyName("required")]
     public bool? Required { get; private set; }
 
 
@@ -301,7 +301,7 @@ public partial class ScimV2SchemaAttribute : IEquatable<ScimV2SchemaAttribute>
     /// The list of standard values that service providers may use. Service providers may ignore unsupported values.
     /// </summary>
     /// <value>The list of standard values that service providers may use. Service providers may ignore unsupported values.</value>
-    [DataMember(Name = "canonicalValues", EmitDefaultValue = false)]
+    [JsonPropertyName("canonicalValues")]
     public List<string> CanonicalValues { get; private set; }
 
 
@@ -310,7 +310,7 @@ public partial class ScimV2SchemaAttribute : IEquatable<ScimV2SchemaAttribute>
     /// Indicates whether a string attribute is case-sensitive. If set to \&quot;true\&quot;, the server preserves case sensitivity. If set to \&quot;false\&quot;, the server may change the case. The server also uses case sensitivity when evaluating filters. See section 3.4.2.2 \&quot;Filtering\&quot; in RFC 7644 for details.
     /// </summary>
     /// <value>Indicates whether a string attribute is case-sensitive. If set to \&quot;true\&quot;, the server preserves case sensitivity. If set to \&quot;false\&quot;, the server may change the case. The server also uses case sensitivity when evaluating filters. See section 3.4.2.2 \&quot;Filtering\&quot; in RFC 7644 for details.</value>
-    [DataMember(Name = "caseExact", EmitDefaultValue = false)]
+    [JsonPropertyName("caseExact")]
     public bool? CaseExact { get; private set; }
 
 
@@ -325,7 +325,7 @@ public partial class ScimV2SchemaAttribute : IEquatable<ScimV2SchemaAttribute>
     /// The list of SCIM resource types that may be referenced. Only applies when \&quot;type\&quot; is set to \&quot;reference\&quot;.
     /// </summary>
     /// <value>The list of SCIM resource types that may be referenced. Only applies when \&quot;type\&quot; is set to \&quot;reference\&quot;.</value>
-    [DataMember(Name = "referenceTypes", EmitDefaultValue = false)]
+    [JsonPropertyName("referenceTypes")]
     public List<ReferenceTypesEnum> ReferenceTypes { get; private set; }
 
 

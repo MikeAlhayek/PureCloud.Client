@@ -1,12 +1,12 @@
-using System.Runtime.Serialization;
 using System.Text;
+using System.Text.Json.Serialization;
 
 namespace PureCloud.Client.Models;
 
 /// <summary>
 /// UserScheduleContainer
 /// </summary>
-[DataContract]
+
 public partial class UserScheduleContainer : IEquatable<UserScheduleContainer>
 {
     /// <summary>
@@ -29,7 +29,7 @@ public partial class UserScheduleContainer : IEquatable<UserScheduleContainer>
     /// The reference time zone used for the management unit
     /// </summary>
     /// <value>The reference time zone used for the management unit</value>
-    [DataMember(Name = "managementUnitTimeZone", EmitDefaultValue = false)]
+    [JsonPropertyName("managementUnitTimeZone")]
     public string ManagementUnitTimeZone { get; set; }
 
 
@@ -38,7 +38,7 @@ public partial class UserScheduleContainer : IEquatable<UserScheduleContainer>
     /// References to all published week schedules overlapping the start/end date query parameters
     /// </summary>
     /// <value>References to all published week schedules overlapping the start/end date query parameters</value>
-    [DataMember(Name = "publishedSchedules", EmitDefaultValue = false)]
+    [JsonPropertyName("publishedSchedules")]
     public List<WeekScheduleReference> PublishedSchedules { get; set; }
 
 
@@ -47,7 +47,7 @@ public partial class UserScheduleContainer : IEquatable<UserScheduleContainer>
     /// Map of user id to user schedule
     /// </summary>
     /// <value>Map of user id to user schedule</value>
-    [DataMember(Name = "userSchedules", EmitDefaultValue = false)]
+    [JsonPropertyName("userSchedules")]
     public Dictionary<string, UserSchedule> UserSchedules { get; set; }
 
 

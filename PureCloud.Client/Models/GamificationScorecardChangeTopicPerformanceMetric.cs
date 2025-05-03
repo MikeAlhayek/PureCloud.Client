@@ -1,12 +1,12 @@
-using System.Runtime.Serialization;
 using System.Text;
+using System.Text.Json.Serialization;
 
 namespace PureCloud.Client.Models;
 
 /// <summary>
 /// GamificationScorecardChangeTopicPerformanceMetric
 /// </summary>
-[DataContract]
+
 public partial class GamificationScorecardChangeTopicPerformanceMetric : IEquatable<GamificationScorecardChangeTopicPerformanceMetric>
 {
     /// <summary>
@@ -32,7 +32,7 @@ public partial class GamificationScorecardChangeTopicPerformanceMetric : IEquata
     /// <summary>
     /// Gets or Sets Metric
     /// </summary>
-    [DataMember(Name = "metric", EmitDefaultValue = false)]
+    [JsonPropertyName("metric")]
     public GamificationScorecardChangeTopicMetric Metric { get; set; }
 
 
@@ -40,7 +40,7 @@ public partial class GamificationScorecardChangeTopicPerformanceMetric : IEquata
     /// <summary>
     /// Gets or Sets Points
     /// </summary>
-    [DataMember(Name = "points", EmitDefaultValue = false)]
+    [JsonPropertyName("points")]
     public long? Points { get; set; }
 
 
@@ -48,7 +48,7 @@ public partial class GamificationScorecardChangeTopicPerformanceMetric : IEquata
     /// <summary>
     /// Gets or Sets Value
     /// </summary>
-    [DataMember(Name = "value", EmitDefaultValue = false)]
+    [JsonPropertyName("value")]
     public double? Value { get; set; }
 
 
@@ -56,7 +56,7 @@ public partial class GamificationScorecardChangeTopicPerformanceMetric : IEquata
     /// <summary>
     /// Gets or Sets PunctualityEvents
     /// </summary>
-    [DataMember(Name = "punctualityEvents", EmitDefaultValue = false)]
+    [JsonPropertyName("punctualityEvents")]
     public List<GamificationScorecardChangeTopicPunctualityEvent> PunctualityEvents { get; set; }
 
 
@@ -64,7 +64,7 @@ public partial class GamificationScorecardChangeTopicPerformanceMetric : IEquata
     /// <summary>
     /// Gets or Sets EvaluationDetails
     /// </summary>
-    [DataMember(Name = "evaluationDetails", EmitDefaultValue = false)]
+    [JsonPropertyName("evaluationDetails")]
     public List<GamificationScorecardChangeTopicEvaluationDetail> EvaluationDetails { get; set; }
 
 

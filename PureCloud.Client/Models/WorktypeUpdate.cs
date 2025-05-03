@@ -1,12 +1,12 @@
-using System.Runtime.Serialization;
 using System.Text;
+using System.Text.Json.Serialization;
 
 namespace PureCloud.Client.Models;
 
 /// <summary>
 /// WorktypeUpdate
 /// </summary>
-[DataContract]
+
 public partial class WorktypeUpdate : IEquatable<WorktypeUpdate>
 {
     /// <summary>
@@ -59,7 +59,7 @@ public partial class WorktypeUpdate : IEquatable<WorktypeUpdate>
     /// The name of the Worktype. Valid length between 3 and 256 characters.
     /// </summary>
     /// <value>The name of the Worktype. Valid length between 3 and 256 characters.</value>
-    [DataMember(Name = "name", EmitDefaultValue = false)]
+    [JsonPropertyName("name")]
     public string Name { get; set; }
 
 
@@ -68,7 +68,7 @@ public partial class WorktypeUpdate : IEquatable<WorktypeUpdate>
     /// The ID of the default Workbin for Workitems created from the Worktype.
     /// </summary>
     /// <value>The ID of the default Workbin for Workitems created from the Worktype.</value>
-    [DataMember(Name = "defaultWorkbinId", EmitDefaultValue = false)]
+    [JsonPropertyName("defaultWorkbinId")]
     public string DefaultWorkbinId { get; set; }
 
 
@@ -77,7 +77,7 @@ public partial class WorktypeUpdate : IEquatable<WorktypeUpdate>
     /// The default duration in seconds for Workitems created from the Worktype. Maximum of 365 days.
     /// </summary>
     /// <value>The default duration in seconds for Workitems created from the Worktype. Maximum of 365 days.</value>
-    [DataMember(Name = "defaultDurationSeconds", EmitDefaultValue = false)]
+    [JsonPropertyName("defaultDurationSeconds")]
     public int? DefaultDurationSeconds { get; set; }
 
 
@@ -86,7 +86,7 @@ public partial class WorktypeUpdate : IEquatable<WorktypeUpdate>
     /// The default expiration time in seconds for Workitems created from the Worktype. Maximum of 365 days.
     /// </summary>
     /// <value>The default expiration time in seconds for Workitems created from the Worktype. Maximum of 365 days.</value>
-    [DataMember(Name = "defaultExpirationSeconds", EmitDefaultValue = false)]
+    [JsonPropertyName("defaultExpirationSeconds")]
     public int? DefaultExpirationSeconds { get; set; }
 
 
@@ -95,7 +95,7 @@ public partial class WorktypeUpdate : IEquatable<WorktypeUpdate>
     /// The default due duration in seconds for Workitems created from the Worktype. Maximum of 365 days.
     /// </summary>
     /// <value>The default due duration in seconds for Workitems created from the Worktype. Maximum of 365 days.</value>
-    [DataMember(Name = "defaultDueDurationSeconds", EmitDefaultValue = false)]
+    [JsonPropertyName("defaultDueDurationSeconds")]
     public int? DefaultDueDurationSeconds { get; set; }
 
 
@@ -104,7 +104,7 @@ public partial class WorktypeUpdate : IEquatable<WorktypeUpdate>
     /// The default priority for Workitems created from the Worktype. The valid range is between -25,000,000 and 25,000,000.
     /// </summary>
     /// <value>The default priority for Workitems created from the Worktype. The valid range is between -25,000,000 and 25,000,000.</value>
-    [DataMember(Name = "defaultPriority", EmitDefaultValue = false)]
+    [JsonPropertyName("defaultPriority")]
     public int? DefaultPriority { get; set; }
 
 
@@ -113,7 +113,7 @@ public partial class WorktypeUpdate : IEquatable<WorktypeUpdate>
     /// The default time to time to live in seconds for Workitems created from the Worktype. The valid range is between 1 and 365 days.
     /// </summary>
     /// <value>The default time to time to live in seconds for Workitems created from the Worktype. The valid range is between 1 and 365 days.</value>
-    [DataMember(Name = "defaultTtlSeconds", EmitDefaultValue = false)]
+    [JsonPropertyName("defaultTtlSeconds")]
     public int? DefaultTtlSeconds { get; set; }
 
 
@@ -122,7 +122,7 @@ public partial class WorktypeUpdate : IEquatable<WorktypeUpdate>
     /// When set to true, Workitems will be sent to the queue of the Worktype as they are created. Default value is false.
     /// </summary>
     /// <value>When set to true, Workitems will be sent to the queue of the Worktype as they are created. Default value is false.</value>
-    [DataMember(Name = "assignmentEnabled", EmitDefaultValue = false)]
+    [JsonPropertyName("assignmentEnabled")]
     public bool? AssignmentEnabled { get; set; }
 
 
@@ -131,7 +131,7 @@ public partial class WorktypeUpdate : IEquatable<WorktypeUpdate>
     /// The ID of the custom attribute schema for Workitems created from the Worktype. Must be a valid UUID.
     /// </summary>
     /// <value>The ID of the custom attribute schema for Workitems created from the Worktype. Must be a valid UUID.</value>
-    [DataMember(Name = "schemaId", EmitDefaultValue = false)]
+    [JsonPropertyName("schemaId")]
     public string SchemaId { get; set; }
 
 
@@ -140,7 +140,7 @@ public partial class WorktypeUpdate : IEquatable<WorktypeUpdate>
     /// The target service level for Workitems created from the Worktype. The default value is 100.
     /// </summary>
     /// <value>The target service level for Workitems created from the Worktype. The default value is 100.</value>
-    [DataMember(Name = "serviceLevelTarget", EmitDefaultValue = false)]
+    [JsonPropertyName("serviceLevelTarget")]
     public int? ServiceLevelTarget { get; set; }
 
 
@@ -149,7 +149,7 @@ public partial class WorktypeUpdate : IEquatable<WorktypeUpdate>
     /// Settings for the worktypes rules.
     /// </summary>
     /// <value>Settings for the worktypes rules.</value>
-    [DataMember(Name = "ruleSettings", EmitDefaultValue = false)]
+    [JsonPropertyName("ruleSettings")]
     public WorkitemRuleSettings RuleSettings { get; set; }
 
 
@@ -158,7 +158,7 @@ public partial class WorktypeUpdate : IEquatable<WorktypeUpdate>
     /// The description of the Worktype. Maximum length of 512 characters.
     /// </summary>
     /// <value>The description of the Worktype. Maximum length of 512 characters.</value>
-    [DataMember(Name = "description", EmitDefaultValue = false)]
+    [JsonPropertyName("description")]
     public string Description { get; set; }
 
 
@@ -167,7 +167,7 @@ public partial class WorktypeUpdate : IEquatable<WorktypeUpdate>
     /// The ID of the default status for Workitems created from the Worktype.
     /// </summary>
     /// <value>The ID of the default status for Workitems created from the Worktype.</value>
-    [DataMember(Name = "defaultStatusId", EmitDefaultValue = false)]
+    [JsonPropertyName("defaultStatusId")]
     public string DefaultStatusId { get; set; }
 
 
@@ -176,7 +176,7 @@ public partial class WorktypeUpdate : IEquatable<WorktypeUpdate>
     /// The version of the Worktypes custom attribute schema. The latest schema version will be used if this property is not set.
     /// </summary>
     /// <value>The version of the Worktypes custom attribute schema. The latest schema version will be used if this property is not set.</value>
-    [DataMember(Name = "schemaVersion", EmitDefaultValue = false)]
+    [JsonPropertyName("schemaVersion")]
     public int? SchemaVersion { get; set; }
 
 
@@ -185,7 +185,7 @@ public partial class WorktypeUpdate : IEquatable<WorktypeUpdate>
     /// The ID of the default language for Workitems created from the Worktype. Must be a valid UUID.
     /// </summary>
     /// <value>The ID of the default language for Workitems created from the Worktype. Must be a valid UUID.</value>
-    [DataMember(Name = "defaultLanguageId", EmitDefaultValue = false)]
+    [JsonPropertyName("defaultLanguageId")]
     public string DefaultLanguageId { get; set; }
 
 
@@ -194,7 +194,7 @@ public partial class WorktypeUpdate : IEquatable<WorktypeUpdate>
     /// The IDs of the default skills for Workitems created from the Worktype. Must be valid UUIDs. Maximum of 20 IDs
     /// </summary>
     /// <value>The IDs of the default skills for Workitems created from the Worktype. Must be valid UUIDs. Maximum of 20 IDs</value>
-    [DataMember(Name = "defaultSkillIds", EmitDefaultValue = false)]
+    [JsonPropertyName("defaultSkillIds")]
     public List<string> DefaultSkillIds { get; set; }
 
 
@@ -203,7 +203,7 @@ public partial class WorktypeUpdate : IEquatable<WorktypeUpdate>
     /// The ID of the default queue for Workitems created from the Worktype. Must be a valid UUID.
     /// </summary>
     /// <value>The ID of the default queue for Workitems created from the Worktype. Must be a valid UUID.</value>
-    [DataMember(Name = "defaultQueueId", EmitDefaultValue = false)]
+    [JsonPropertyName("defaultQueueId")]
     public string DefaultQueueId { get; set; }
 
 
@@ -212,7 +212,7 @@ public partial class WorktypeUpdate : IEquatable<WorktypeUpdate>
     /// The default script for Workitems created from the Worktype. Must be a valid UUID.
     /// </summary>
     /// <value>The default script for Workitems created from the Worktype. Must be a valid UUID.</value>
-    [DataMember(Name = "defaultScriptId", EmitDefaultValue = false)]
+    [JsonPropertyName("defaultScriptId")]
     public string DefaultScriptId { get; set; }
 
 

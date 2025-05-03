@@ -1,12 +1,12 @@
-using System.Runtime.Serialization;
 using System.Text;
+using System.Text.Json.Serialization;
 
 namespace PureCloud.Client.Models;
 
 /// <summary>
 /// IntegrationActionFields
 /// </summary>
-[DataContract]
+
 public partial class IntegrationActionFields : IEquatable<IntegrationActionFields>
 {
     /// <summary>
@@ -27,7 +27,7 @@ public partial class IntegrationActionFields : IEquatable<IntegrationActionField
     /// Reference to the Integration Action to be used when integrationAction type is qualified
     /// </summary>
     /// <value>Reference to the Integration Action to be used when integrationAction type is qualified</value>
-    [DataMember(Name = "integrationAction", EmitDefaultValue = false)]
+    [JsonPropertyName("integrationAction")]
     public IntegrationAction IntegrationAction { get; set; }
 
 
@@ -36,7 +36,7 @@ public partial class IntegrationActionFields : IEquatable<IntegrationActionField
     /// Collection of Request Mappings to use
     /// </summary>
     /// <value>Collection of Request Mappings to use</value>
-    [DataMember(Name = "requestMappings", EmitDefaultValue = false)]
+    [JsonPropertyName("requestMappings")]
     public List<RequestMapping> RequestMappings { get; set; }
 
 

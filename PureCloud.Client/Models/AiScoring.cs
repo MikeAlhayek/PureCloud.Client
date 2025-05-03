@@ -7,14 +7,14 @@ namespace PureCloud.Client.Models;
 /// <summary>
 /// AiScoring
 /// </summary>
-[DataContract]
+
 public partial class AiScoring : IEquatable<AiScoring>
 {
     /// <summary>
     /// The type of error that occurred while processing AI scores. It is null where there is no error.
     /// </summary>
     /// <value>The type of error that occurred while processing AI scores. It is null where there is no error.</value>
-    [JsonConverter(typeof(JsonStringEnumConverter))]
+    
     public enum FailureTypeEnum
     {
         /// <summary>
@@ -65,7 +65,7 @@ public partial class AiScoring : IEquatable<AiScoring>
     /// The type of error that occurred while processing AI scores. It is null where there is no error.
     /// </summary>
     /// <value>The type of error that occurred while processing AI scores. It is null where there is no error.</value>
-    [DataMember(Name = "failureType", EmitDefaultValue = false)]
+    [JsonPropertyName("failureType")]
     public FailureTypeEnum? FailureType { get; private set; }
     /// <summary>
     /// Initializes a new instance of the <see cref="AiScoring" /> class.
@@ -83,7 +83,7 @@ public partial class AiScoring : IEquatable<AiScoring>
     /// Indicates whether AI scoring is currently processing the evaluation.
     /// </summary>
     /// <value>Indicates whether AI scoring is currently processing the evaluation.</value>
-    [DataMember(Name = "pending", EmitDefaultValue = false)]
+    [JsonPropertyName("pending")]
     public bool? Pending { get; private set; }
 
 
@@ -92,7 +92,7 @@ public partial class AiScoring : IEquatable<AiScoring>
     /// The date when the AI scores were last updated. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z
     /// </summary>
     /// <value>The date when the AI scores were last updated. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z</value>
-    [DataMember(Name = "dateLastChanged", EmitDefaultValue = false)]
+    [JsonPropertyName("dateLastChanged")]
     public DateTime? DateLastChanged { get; private set; }
 
 

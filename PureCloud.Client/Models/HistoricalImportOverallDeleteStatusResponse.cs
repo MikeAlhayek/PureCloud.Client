@@ -7,14 +7,14 @@ namespace PureCloud.Client.Models;
 /// <summary>
 /// HistoricalImportOverallDeleteStatusResponse
 /// </summary>
-[DataContract]
+
 public partial class HistoricalImportOverallDeleteStatusResponse : IEquatable<HistoricalImportOverallDeleteStatusResponse>
 {
     /// <summary>
     /// Property denoting overall status of the service.
     /// </summary>
     /// <value>Property denoting overall status of the service.</value>
-    [JsonConverter(typeof(JsonStringEnumConverter))]
+    
     public enum StatusEnum
     {
         /// <summary>
@@ -41,7 +41,7 @@ public partial class HistoricalImportOverallDeleteStatusResponse : IEquatable<Hi
     /// Property denoting overall status of the service.
     /// </summary>
     /// <value>Property denoting overall status of the service.</value>
-    [DataMember(Name = "status", EmitDefaultValue = false)]
+    [JsonPropertyName("status")]
     public StatusEnum? Status { get; private set; }
     /// <summary>
     /// Initializes a new instance of the <see cref="HistoricalImportOverallDeleteStatusResponse" /> class.
@@ -59,7 +59,7 @@ public partial class HistoricalImportOverallDeleteStatusResponse : IEquatable<Hi
     /// List of all the delete jobs
     /// </summary>
     /// <value>List of all the delete jobs</value>
-    [DataMember(Name = "entities", EmitDefaultValue = false)]
+    [JsonPropertyName("entities")]
     public List<HistoricalDataJobEntityStatus> Entities { get; set; }
 
 

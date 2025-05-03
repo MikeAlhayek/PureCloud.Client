@@ -1,12 +1,12 @@
-using System.Runtime.Serialization;
 using System.Text;
+using System.Text.Json.Serialization;
 
 namespace PureCloud.Client.Models;
 
 /// <summary>
 /// Defines the list response for SCIM resource types.
 /// </summary>
-[DataContract]
+
 public partial class ScimV2SchemaListResponse : IEquatable<ScimV2SchemaListResponse>
 {
     /// <summary>
@@ -25,7 +25,7 @@ public partial class ScimV2SchemaListResponse : IEquatable<ScimV2SchemaListRespo
     /// The list of supported schemas.
     /// </summary>
     /// <value>The list of supported schemas.</value>
-    [DataMember(Name = "schemas", EmitDefaultValue = false)]
+    [JsonPropertyName("schemas")]
     public List<string> Schemas { get; set; }
 
 
@@ -34,7 +34,7 @@ public partial class ScimV2SchemaListResponse : IEquatable<ScimV2SchemaListRespo
     /// The total number of results.
     /// </summary>
     /// <value>The total number of results.</value>
-    [DataMember(Name = "totalResults", EmitDefaultValue = false)]
+    [JsonPropertyName("totalResults")]
     public long? TotalResults { get; private set; }
 
 
@@ -43,7 +43,7 @@ public partial class ScimV2SchemaListResponse : IEquatable<ScimV2SchemaListRespo
     /// The 1-based index of the first result returned by this request. Add this to \&quot;itemsPerPage\&quot; when requesting the next page of results.
     /// </summary>
     /// <value>The 1-based index of the first result returned by this request. Add this to \&quot;itemsPerPage\&quot; when requesting the next page of results.</value>
-    [DataMember(Name = "startIndex", EmitDefaultValue = false)]
+    [JsonPropertyName("startIndex")]
     public long? StartIndex { get; private set; }
 
 
@@ -52,7 +52,7 @@ public partial class ScimV2SchemaListResponse : IEquatable<ScimV2SchemaListRespo
     /// The number of resources returned per page.
     /// </summary>
     /// <value>The number of resources returned per page.</value>
-    [DataMember(Name = "itemsPerPage", EmitDefaultValue = false)]
+    [JsonPropertyName("itemsPerPage")]
     public long? ItemsPerPage { get; private set; }
 
 
@@ -61,7 +61,7 @@ public partial class ScimV2SchemaListResponse : IEquatable<ScimV2SchemaListRespo
     /// The list of requested resources.
     /// </summary>
     /// <value>The list of requested resources.</value>
-    [DataMember(Name = "Resources", EmitDefaultValue = false)]
+    [JsonPropertyName("Resources")]
     public List<ScimV2SchemaDefinition> Resources { get; private set; }
 
 

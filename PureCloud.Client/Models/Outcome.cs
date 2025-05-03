@@ -1,4 +1,3 @@
-using System.Runtime.Serialization;
 using System.Text;
 using System.Text.Json.Serialization;
 
@@ -7,7 +6,7 @@ namespace PureCloud.Client.Models;
 /// <summary>
 /// Outcome
 /// </summary>
-[DataContract]
+
 public partial class Outcome : IEquatable<Outcome>
 {
 
@@ -52,7 +51,7 @@ public partial class Outcome : IEquatable<Outcome>
     /// ID of the outcome.
     /// </summary>
     /// <value>ID of the outcome.</value>
-    [DataMember(Name = "id", EmitDefaultValue = false)]
+    [JsonPropertyName("id")]
     public string Id { get; set; }
 
 
@@ -61,7 +60,7 @@ public partial class Outcome : IEquatable<Outcome>
     /// Whether or not the outcome is active.
     /// </summary>
     /// <value>Whether or not the outcome is active.</value>
-    [DataMember(Name = "isActive", EmitDefaultValue = false)]
+    [JsonPropertyName("isActive")]
     public bool? IsActive { get; set; }
 
 
@@ -70,7 +69,7 @@ public partial class Outcome : IEquatable<Outcome>
     /// The display name of the outcome.
     /// </summary>
     /// <value>The display name of the outcome.</value>
-    [DataMember(Name = "displayName", EmitDefaultValue = false)]
+    [JsonPropertyName("displayName")]
     public string DisplayName { get; set; }
 
 
@@ -79,7 +78,7 @@ public partial class Outcome : IEquatable<Outcome>
     /// The version of the outcome.
     /// </summary>
     /// <value>The version of the outcome.</value>
-    [DataMember(Name = "version", EmitDefaultValue = false)]
+    [JsonPropertyName("version")]
     public int? Version { get; set; }
 
 
@@ -88,7 +87,7 @@ public partial class Outcome : IEquatable<Outcome>
     /// A description of the outcome.
     /// </summary>
     /// <value>A description of the outcome.</value>
-    [DataMember(Name = "description", EmitDefaultValue = false)]
+    [JsonPropertyName("description")]
     public string Description { get; set; }
 
 
@@ -97,7 +96,7 @@ public partial class Outcome : IEquatable<Outcome>
     /// Whether or not the outcome is positive.
     /// </summary>
     /// <value>Whether or not the outcome is positive.</value>
-    [DataMember(Name = "isPositive", EmitDefaultValue = false)]
+    [JsonPropertyName("isPositive")]
     public bool? IsPositive { get; set; }
 
 
@@ -106,7 +105,7 @@ public partial class Outcome : IEquatable<Outcome>
     /// The context of the outcome.
     /// </summary>
     /// <value>The context of the outcome.</value>
-    [DataMember(Name = "context", EmitDefaultValue = false)]
+    [JsonPropertyName("context")]
     public Context Context { get; set; }
 
 
@@ -115,7 +114,7 @@ public partial class Outcome : IEquatable<Outcome>
     /// The pattern of rules defining the filter of the outcome.
     /// </summary>
     /// <value>The pattern of rules defining the filter of the outcome.</value>
-    [DataMember(Name = "journey", EmitDefaultValue = false)]
+    [JsonPropertyName("journey")]
     public Journey Journey { get; set; }
 
 
@@ -124,7 +123,7 @@ public partial class Outcome : IEquatable<Outcome>
     /// The field from the event indicating the associated value.
     /// </summary>
     /// <value>The field from the event indicating the associated value.</value>
-    [DataMember(Name = "associatedValueField", EmitDefaultValue = false)]
+    [JsonPropertyName("associatedValueField")]
     public AssociatedValueField AssociatedValueField { get; set; }
 
 
@@ -133,7 +132,7 @@ public partial class Outcome : IEquatable<Outcome>
     /// The URI for this object
     /// </summary>
     /// <value>The URI for this object</value>
-    [DataMember(Name = "selfUri", EmitDefaultValue = false)]
+    [JsonPropertyName("selfUri")]
     public string SelfUri { get; private set; }
 
 
@@ -142,7 +141,7 @@ public partial class Outcome : IEquatable<Outcome>
     /// Timestamp indicating when the outcome was created. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z
     /// </summary>
     /// <value>Timestamp indicating when the outcome was created. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z</value>
-    [DataMember(Name = "createdDate", EmitDefaultValue = false)]
+    [JsonPropertyName("createdDate")]
     public DateTime? CreatedDate { get; set; }
 
 
@@ -151,7 +150,7 @@ public partial class Outcome : IEquatable<Outcome>
     /// Timestamp indicating when the outcome was last updated. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z
     /// </summary>
     /// <value>Timestamp indicating when the outcome was last updated. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z</value>
-    [DataMember(Name = "modifiedDate", EmitDefaultValue = false)]
+    [JsonPropertyName("modifiedDate")]
     public DateTime? ModifiedDate { get; set; }
 
 

@@ -1,12 +1,12 @@
-using System.Runtime.Serialization;
 using System.Text;
+using System.Text.Json.Serialization;
 
 namespace PureCloud.Client.Models;
 
 /// <summary>
 /// ContentPositionProperties
 /// </summary>
-[DataContract]
+
 public partial class ContentPositionProperties : IEquatable<ContentPositionProperties>
 {
     /// <summary>
@@ -31,7 +31,7 @@ public partial class ContentPositionProperties : IEquatable<ContentPositionPrope
     /// Top positioning offset.
     /// </summary>
     /// <value>Top positioning offset.</value>
-    [DataMember(Name = "top", EmitDefaultValue = false)]
+    [JsonPropertyName("top")]
     public string Top { get; set; }
 
 
@@ -40,7 +40,7 @@ public partial class ContentPositionProperties : IEquatable<ContentPositionPrope
     /// Bottom positioning offset.
     /// </summary>
     /// <value>Bottom positioning offset.</value>
-    [DataMember(Name = "bottom", EmitDefaultValue = false)]
+    [JsonPropertyName("bottom")]
     public string Bottom { get; set; }
 
 
@@ -49,7 +49,7 @@ public partial class ContentPositionProperties : IEquatable<ContentPositionPrope
     /// Left positioning offset.
     /// </summary>
     /// <value>Left positioning offset.</value>
-    [DataMember(Name = "left", EmitDefaultValue = false)]
+    [JsonPropertyName("left")]
     public string Left { get; set; }
 
 
@@ -58,7 +58,7 @@ public partial class ContentPositionProperties : IEquatable<ContentPositionPrope
     /// Right positioning offset.
     /// </summary>
     /// <value>Right positioning offset.</value>
-    [DataMember(Name = "right", EmitDefaultValue = false)]
+    [JsonPropertyName("right")]
     public string Right { get; set; }
 
 

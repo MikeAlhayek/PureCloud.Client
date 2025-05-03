@@ -1,12 +1,12 @@
-using System.Runtime.Serialization;
 using System.Text;
+using System.Text.Json.Serialization;
 
 namespace PureCloud.Client.Models;
 
 /// <summary>
 /// ContinuousForecastSnapshotResponse
 /// </summary>
-[DataContract]
+
 public partial class ContinuousForecastSnapshotResponse : IEquatable<ContinuousForecastSnapshotResponse>
 {
     /// <summary>
@@ -29,7 +29,7 @@ public partial class ContinuousForecastSnapshotResponse : IEquatable<ContinuousF
     /// Session Id of the continuous forecast
     /// </summary>
     /// <value>Session Id of the continuous forecast</value>
-    [DataMember(Name = "sessionId", EmitDefaultValue = false)]
+    [JsonPropertyName("sessionId")]
     public string SessionId { get; set; }
 
 
@@ -38,7 +38,7 @@ public partial class ContinuousForecastSnapshotResponse : IEquatable<ContinuousF
     /// Snapshot Id of the continuous forecast session
     /// </summary>
     /// <value>Snapshot Id of the continuous forecast session</value>
-    [DataMember(Name = "snapshotId", EmitDefaultValue = false)]
+    [JsonPropertyName("snapshotId")]
     public string SnapshotId { get; set; }
 
 
@@ -47,7 +47,7 @@ public partial class ContinuousForecastSnapshotResponse : IEquatable<ContinuousF
     /// Link to the files containing data for requested snapshot
     /// </summary>
     /// <value>Link to the files containing data for requested snapshot</value>
-    [DataMember(Name = "files", EmitDefaultValue = false)]
+    [JsonPropertyName("files")]
     public SnapshotFiles Files { get; set; }
 
 

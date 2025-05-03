@@ -7,14 +7,14 @@ namespace PureCloud.Client.Models;
 /// <summary>
 /// BuRescheduleRequest
 /// </summary>
-[DataContract]
+
 public partial class BuRescheduleRequest : IEquatable<BuRescheduleRequest>
 {
     /// <summary>
     /// Overrides the default BU level activity smoothing type for this reschedule run
     /// </summary>
     /// <value>Overrides the default BU level activity smoothing type for this reschedule run</value>
-    [JsonConverter(typeof(JsonStringEnumConverter))]
+    
     public enum ActivitySmoothingTypeEnum
     {
         /// <summary>
@@ -47,7 +47,7 @@ public partial class BuRescheduleRequest : IEquatable<BuRescheduleRequest>
     /// Overrides the default BU level activity smoothing type for this reschedule run
     /// </summary>
     /// <value>Overrides the default BU level activity smoothing type for this reschedule run</value>
-    [DataMember(Name = "activitySmoothingType", EmitDefaultValue = false)]
+    [JsonPropertyName("activitySmoothingType")]
     public ActivitySmoothingTypeEnum? ActivitySmoothingType { get; set; }
 
     /// <summary>
@@ -91,7 +91,7 @@ public partial class BuRescheduleRequest : IEquatable<BuRescheduleRequest>
     /// The start of the range to reschedule.  Defaults to the beginning of the schedule. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z
     /// </summary>
     /// <value>The start of the range to reschedule.  Defaults to the beginning of the schedule. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z</value>
-    [DataMember(Name = "startDate", EmitDefaultValue = false)]
+    [JsonPropertyName("startDate")]
     public DateTime? StartDate { get; set; }
 
 
@@ -100,7 +100,7 @@ public partial class BuRescheduleRequest : IEquatable<BuRescheduleRequest>
     /// The end of the range to reschedule.  Defaults the the end of the schedule. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z
     /// </summary>
     /// <value>The end of the range to reschedule.  Defaults the the end of the schedule. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z</value>
-    [DataMember(Name = "endDate", EmitDefaultValue = false)]
+    [JsonPropertyName("endDate")]
     public DateTime? EndDate { get; set; }
 
 
@@ -109,7 +109,7 @@ public partial class BuRescheduleRequest : IEquatable<BuRescheduleRequest>
     /// The IDs of the agents to consider for rescheduling.  Omit to consider all agents in the specified management units.Agents not in the specified management units will be ignored
     /// </summary>
     /// <value>The IDs of the agents to consider for rescheduling.  Omit to consider all agents in the specified management units.Agents not in the specified management units will be ignored</value>
-    [DataMember(Name = "agentIds", EmitDefaultValue = false)]
+    [JsonPropertyName("agentIds")]
     public List<string> AgentIds { get; set; }
 
 
@@ -118,7 +118,7 @@ public partial class BuRescheduleRequest : IEquatable<BuRescheduleRequest>
     /// The IDs of the activity codes to consider for rescheduling.  Omit to consider all activity codes
     /// </summary>
     /// <value>The IDs of the activity codes to consider for rescheduling.  Omit to consider all activity codes</value>
-    [DataMember(Name = "activityCodeIds", EmitDefaultValue = false)]
+    [JsonPropertyName("activityCodeIds")]
     public List<string> ActivityCodeIds { get; set; }
 
 
@@ -127,7 +127,7 @@ public partial class BuRescheduleRequest : IEquatable<BuRescheduleRequest>
     /// The IDs of the management units to reschedule
     /// </summary>
     /// <value>The IDs of the management units to reschedule</value>
-    [DataMember(Name = "managementUnitIds", EmitDefaultValue = false)]
+    [JsonPropertyName("managementUnitIds")]
     public List<string> ManagementUnitIds { get; set; }
 
 
@@ -136,7 +136,7 @@ public partial class BuRescheduleRequest : IEquatable<BuRescheduleRequest>
     /// Instructs the scheduler whether it is allowed to change weekly paid time
     /// </summary>
     /// <value>Instructs the scheduler whether it is allowed to change weekly paid time</value>
-    [DataMember(Name = "doNotChangeWeeklyPaidTime", EmitDefaultValue = false)]
+    [JsonPropertyName("doNotChangeWeeklyPaidTime")]
     public bool? DoNotChangeWeeklyPaidTime { get; set; }
 
 
@@ -145,7 +145,7 @@ public partial class BuRescheduleRequest : IEquatable<BuRescheduleRequest>
     /// Instructs the scheduler whether it is allowed to change daily paid time
     /// </summary>
     /// <value>Instructs the scheduler whether it is allowed to change daily paid time</value>
-    [DataMember(Name = "doNotChangeDailyPaidTime", EmitDefaultValue = false)]
+    [JsonPropertyName("doNotChangeDailyPaidTime")]
     public bool? DoNotChangeDailyPaidTime { get; set; }
 
 
@@ -154,7 +154,7 @@ public partial class BuRescheduleRequest : IEquatable<BuRescheduleRequest>
     /// Instructs the scheduler whether it is allowed to change shift start times
     /// </summary>
     /// <value>Instructs the scheduler whether it is allowed to change shift start times</value>
-    [DataMember(Name = "doNotChangeShiftStartTimes", EmitDefaultValue = false)]
+    [JsonPropertyName("doNotChangeShiftStartTimes")]
     public bool? DoNotChangeShiftStartTimes { get; set; }
 
 
@@ -163,7 +163,7 @@ public partial class BuRescheduleRequest : IEquatable<BuRescheduleRequest>
     /// Instructs the scheduler whether it is allowed to change manually edited shifts
     /// </summary>
     /// <value>Instructs the scheduler whether it is allowed to change manually edited shifts</value>
-    [DataMember(Name = "doNotChangeManuallyEditedShifts", EmitDefaultValue = false)]
+    [JsonPropertyName("doNotChangeManuallyEditedShifts")]
     public bool? DoNotChangeManuallyEditedShifts { get; set; }
 
 
@@ -174,7 +174,7 @@ public partial class BuRescheduleRequest : IEquatable<BuRescheduleRequest>
     /// Overrides the default BU level induce schedule variability setting for this reschedule run
     /// </summary>
     /// <value>Overrides the default BU level induce schedule variability setting for this reschedule run</value>
-    [DataMember(Name = "induceScheduleVariability", EmitDefaultValue = false)]
+    [JsonPropertyName("induceScheduleVariability")]
     public bool? InduceScheduleVariability { get; set; }
 
 

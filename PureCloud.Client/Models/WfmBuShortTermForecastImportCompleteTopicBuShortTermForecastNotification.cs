@@ -7,13 +7,13 @@ namespace PureCloud.Client.Models;
 /// <summary>
 /// WfmBuShortTermForecastImportCompleteTopicBuShortTermForecastNotification
 /// </summary>
-[DataContract]
+
 public partial class WfmBuShortTermForecastImportCompleteTopicBuShortTermForecastNotification : IEquatable<WfmBuShortTermForecastImportCompleteTopicBuShortTermForecastNotification>
 {
     /// <summary>
     /// Gets or Sets Status
     /// </summary>
-    [JsonConverter(typeof(JsonStringEnumConverter))]
+    
     public enum StatusEnum
     {
         /// <summary>
@@ -51,7 +51,7 @@ public partial class WfmBuShortTermForecastImportCompleteTopicBuShortTermForecas
     /// <summary>
     /// Gets or Sets Status
     /// </summary>
-    [DataMember(Name = "status", EmitDefaultValue = false)]
+    [JsonPropertyName("status")]
     public StatusEnum? Status { get; set; }
     /// <summary>
     /// Initializes a new instance of the <see cref="WfmBuShortTermForecastImportCompleteTopicBuShortTermForecastNotification" /> class.
@@ -74,7 +74,7 @@ public partial class WfmBuShortTermForecastImportCompleteTopicBuShortTermForecas
     /// <summary>
     /// Gets or Sets Result
     /// </summary>
-    [DataMember(Name = "result", EmitDefaultValue = false)]
+    [JsonPropertyName("result")]
     public WfmBuShortTermForecastImportCompleteTopicBuShortTermForecast Result { get; set; }
 
 
@@ -82,7 +82,7 @@ public partial class WfmBuShortTermForecastImportCompleteTopicBuShortTermForecas
     /// <summary>
     /// Gets or Sets OperationId
     /// </summary>
-    [DataMember(Name = "operationId", EmitDefaultValue = false)]
+    [JsonPropertyName("operationId")]
     public string OperationId { get; set; }
 
 

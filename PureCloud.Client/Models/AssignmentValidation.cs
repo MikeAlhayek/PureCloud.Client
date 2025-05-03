@@ -1,12 +1,12 @@
-using System.Runtime.Serialization;
 using System.Text;
+using System.Text.Json.Serialization;
 
 namespace PureCloud.Client.Models;
 
 /// <summary>
 /// AssignmentValidation
 /// </summary>
-[DataContract]
+
 public partial class AssignmentValidation : IEquatable<AssignmentValidation>
 {
     /// <summary>
@@ -31,7 +31,7 @@ public partial class AssignmentValidation : IEquatable<AssignmentValidation>
     /// The list of users that are not assigned to any custom performance profile
     /// </summary>
     /// <value>The list of users that are not assigned to any custom performance profile</value>
-    [DataMember(Name = "membersNotAssigned", EmitDefaultValue = false)]
+    [JsonPropertyName("membersNotAssigned")]
     public List<UserReference> MembersNotAssigned { get; set; }
 
 
@@ -40,7 +40,7 @@ public partial class AssignmentValidation : IEquatable<AssignmentValidation>
     /// The list of users that are already assigned to the requesting custom performance profile
     /// </summary>
     /// <value>The list of users that are already assigned to the requesting custom performance profile</value>
-    [DataMember(Name = "membersAlreadyAssigned", EmitDefaultValue = false)]
+    [JsonPropertyName("membersAlreadyAssigned")]
     public List<UserReference> MembersAlreadyAssigned { get; set; }
 
 
@@ -49,7 +49,7 @@ public partial class AssignmentValidation : IEquatable<AssignmentValidation>
     /// The list of users that are already assigned to other custom performance profiles
     /// </summary>
     /// <value>The list of users that are already assigned to other custom performance profiles</value>
-    [DataMember(Name = "membersAlreadyAssignedToOther", EmitDefaultValue = false)]
+    [JsonPropertyName("membersAlreadyAssignedToOther")]
     public List<OtherProfileAssignment> MembersAlreadyAssignedToOther { get; set; }
 
 
@@ -58,7 +58,7 @@ public partial class AssignmentValidation : IEquatable<AssignmentValidation>
     /// The list of user id that are invalid for the gamfication service to handle
     /// </summary>
     /// <value>The list of user id that are invalid for the gamfication service to handle</value>
-    [DataMember(Name = "invalidMemberAssignments", EmitDefaultValue = false)]
+    [JsonPropertyName("invalidMemberAssignments")]
     public List<InvalidAssignment> InvalidMemberAssignments { get; set; }
 
 

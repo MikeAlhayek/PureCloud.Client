@@ -7,14 +7,14 @@ namespace PureCloud.Client.Models;
 /// <summary>
 /// Coaching appointment response
 /// </summary>
-[DataContract]
+
 public partial class CoachingAppointmentResponse : IEquatable<CoachingAppointmentResponse>
 {
     /// <summary>
     /// The status of coaching appointment
     /// </summary>
     /// <value>The status of coaching appointment</value>
-    [JsonConverter(typeof(JsonStringEnumConverter))]
+    
     public enum StatusEnum
     {
         /// <summary>
@@ -53,7 +53,7 @@ public partial class CoachingAppointmentResponse : IEquatable<CoachingAppointmen
     /// The status of coaching appointment
     /// </summary>
     /// <value>The status of coaching appointment</value>
-    [DataMember(Name = "status", EmitDefaultValue = false)]
+    [JsonPropertyName("status")]
     public StatusEnum? Status { get; private set; }
     /// <summary>
     /// Initializes a new instance of the <see cref="CoachingAppointmentResponse" /> class.
@@ -69,7 +69,7 @@ public partial class CoachingAppointmentResponse : IEquatable<CoachingAppointmen
     /// The globally unique identifier for the object.
     /// </summary>
     /// <value>The globally unique identifier for the object.</value>
-    [DataMember(Name = "id", EmitDefaultValue = false)]
+    [JsonPropertyName("id")]
     public string Id { get; private set; }
 
 
@@ -78,7 +78,7 @@ public partial class CoachingAppointmentResponse : IEquatable<CoachingAppointmen
     /// The name of coaching appointment
     /// </summary>
     /// <value>The name of coaching appointment</value>
-    [DataMember(Name = "name", EmitDefaultValue = false)]
+    [JsonPropertyName("name")]
     public string Name { get; private set; }
 
 
@@ -87,7 +87,7 @@ public partial class CoachingAppointmentResponse : IEquatable<CoachingAppointmen
     /// The description of coaching appointment
     /// </summary>
     /// <value>The description of coaching appointment</value>
-    [DataMember(Name = "description", EmitDefaultValue = false)]
+    [JsonPropertyName("description")]
     public string Description { get; private set; }
 
 
@@ -96,7 +96,7 @@ public partial class CoachingAppointmentResponse : IEquatable<CoachingAppointmen
     /// The date/time the coaching appointment starts. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z
     /// </summary>
     /// <value>The date/time the coaching appointment starts. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z</value>
-    [DataMember(Name = "dateStart", EmitDefaultValue = false)]
+    [JsonPropertyName("dateStart")]
     public DateTime? DateStart { get; private set; }
 
 
@@ -105,7 +105,7 @@ public partial class CoachingAppointmentResponse : IEquatable<CoachingAppointmen
     /// The duration of coaching appointment in minutes
     /// </summary>
     /// <value>The duration of coaching appointment in minutes</value>
-    [DataMember(Name = "lengthInMinutes", EmitDefaultValue = false)]
+    [JsonPropertyName("lengthInMinutes")]
     public int? LengthInMinutes { get; private set; }
 
 
@@ -116,7 +116,7 @@ public partial class CoachingAppointmentResponse : IEquatable<CoachingAppointmen
     /// The facilitator of coaching appointment
     /// </summary>
     /// <value>The facilitator of coaching appointment</value>
-    [DataMember(Name = "facilitator", EmitDefaultValue = false)]
+    [JsonPropertyName("facilitator")]
     public UserReference Facilitator { get; private set; }
 
 
@@ -125,7 +125,7 @@ public partial class CoachingAppointmentResponse : IEquatable<CoachingAppointmen
     /// The list of attendees attending the coaching
     /// </summary>
     /// <value>The list of attendees attending the coaching</value>
-    [DataMember(Name = "attendees", EmitDefaultValue = false)]
+    [JsonPropertyName("attendees")]
     public List<UserReference> Attendees { get; private set; }
 
 
@@ -134,7 +134,7 @@ public partial class CoachingAppointmentResponse : IEquatable<CoachingAppointmen
     /// The user who created the coaching appointment
     /// </summary>
     /// <value>The user who created the coaching appointment</value>
-    [DataMember(Name = "createdBy", EmitDefaultValue = false)]
+    [JsonPropertyName("createdBy")]
     public UserReference CreatedBy { get; private set; }
 
 
@@ -143,7 +143,7 @@ public partial class CoachingAppointmentResponse : IEquatable<CoachingAppointmen
     /// The date/time the coaching appointment was created. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z
     /// </summary>
     /// <value>The date/time the coaching appointment was created. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z</value>
-    [DataMember(Name = "dateCreated", EmitDefaultValue = false)]
+    [JsonPropertyName("dateCreated")]
     public DateTime? DateCreated { get; private set; }
 
 
@@ -152,7 +152,7 @@ public partial class CoachingAppointmentResponse : IEquatable<CoachingAppointmen
     /// The last user to modify the coaching appointment
     /// </summary>
     /// <value>The last user to modify the coaching appointment</value>
-    [DataMember(Name = "modifiedBy", EmitDefaultValue = false)]
+    [JsonPropertyName("modifiedBy")]
     public UserReference ModifiedBy { get; private set; }
 
 
@@ -161,7 +161,7 @@ public partial class CoachingAppointmentResponse : IEquatable<CoachingAppointmen
     /// The date/time the coaching appointment was last modified. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z
     /// </summary>
     /// <value>The date/time the coaching appointment was last modified. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z</value>
-    [DataMember(Name = "dateModified", EmitDefaultValue = false)]
+    [JsonPropertyName("dateModified")]
     public DateTime? DateModified { get; private set; }
 
 
@@ -170,7 +170,7 @@ public partial class CoachingAppointmentResponse : IEquatable<CoachingAppointmen
     /// The list of conversations associated with coaching appointment.
     /// </summary>
     /// <value>The list of conversations associated with coaching appointment.</value>
-    [DataMember(Name = "conversations", EmitDefaultValue = false)]
+    [JsonPropertyName("conversations")]
     public List<ConversationReference> Conversations { get; private set; }
 
 
@@ -179,7 +179,7 @@ public partial class CoachingAppointmentResponse : IEquatable<CoachingAppointmen
     /// The list of documents associated with coaching appointment.
     /// </summary>
     /// <value>The list of documents associated with coaching appointment.</value>
-    [DataMember(Name = "documents", EmitDefaultValue = false)]
+    [JsonPropertyName("documents")]
     public List<DocumentReference> Documents { get; private set; }
 
 
@@ -188,7 +188,7 @@ public partial class CoachingAppointmentResponse : IEquatable<CoachingAppointmen
     /// Whether the appointment is overdue.
     /// </summary>
     /// <value>Whether the appointment is overdue.</value>
-    [DataMember(Name = "isOverdue", EmitDefaultValue = false)]
+    [JsonPropertyName("isOverdue")]
     public bool? IsOverdue { get; private set; }
 
 
@@ -197,7 +197,7 @@ public partial class CoachingAppointmentResponse : IEquatable<CoachingAppointmen
     /// The Workforce Management schedule the appointment is associated with.
     /// </summary>
     /// <value>The Workforce Management schedule the appointment is associated with.</value>
-    [DataMember(Name = "wfmSchedule", EmitDefaultValue = false)]
+    [JsonPropertyName("wfmSchedule")]
     public WfmScheduleReference WfmSchedule { get; private set; }
 
 
@@ -206,7 +206,7 @@ public partial class CoachingAppointmentResponse : IEquatable<CoachingAppointmen
     /// The date/time the coaching appointment was set to completed status. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z
     /// </summary>
     /// <value>The date/time the coaching appointment was set to completed status. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z</value>
-    [DataMember(Name = "dateCompleted", EmitDefaultValue = false)]
+    [JsonPropertyName("dateCompleted")]
     public DateTime? DateCompleted { get; private set; }
 
 
@@ -215,7 +215,7 @@ public partial class CoachingAppointmentResponse : IEquatable<CoachingAppointmen
     /// The list of external links related to the appointment
     /// </summary>
     /// <value>The list of external links related to the appointment</value>
-    [DataMember(Name = "externalLinks", EmitDefaultValue = false)]
+    [JsonPropertyName("externalLinks")]
     public List<string> ExternalLinks { get; private set; }
 
 
@@ -224,7 +224,7 @@ public partial class CoachingAppointmentResponse : IEquatable<CoachingAppointmen
     /// The location of the appointment
     /// </summary>
     /// <value>The location of the appointment</value>
-    [DataMember(Name = "location", EmitDefaultValue = false)]
+    [JsonPropertyName("location")]
     public string Location { get; private set; }
 
 
@@ -233,7 +233,7 @@ public partial class CoachingAppointmentResponse : IEquatable<CoachingAppointmen
     /// Whether to share the insight data
     /// </summary>
     /// <value>Whether to share the insight data</value>
-    [DataMember(Name = "shareInsightsData", EmitDefaultValue = false)]
+    [JsonPropertyName("shareInsightsData")]
     public bool? ShareInsightsData { get; private set; }
 
 
@@ -242,7 +242,7 @@ public partial class CoachingAppointmentResponse : IEquatable<CoachingAppointmen
     /// The URI for this object
     /// </summary>
     /// <value>The URI for this object</value>
-    [DataMember(Name = "selfUri", EmitDefaultValue = false)]
+    [JsonPropertyName("selfUri")]
     public string SelfUri { get; private set; }
 
 

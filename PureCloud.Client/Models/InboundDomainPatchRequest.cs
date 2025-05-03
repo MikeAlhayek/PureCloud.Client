@@ -1,12 +1,12 @@
-using System.Runtime.Serialization;
 using System.Text;
+using System.Text.Json.Serialization;
 
 namespace PureCloud.Client.Models;
 
 /// <summary>
 /// InboundDomainPatchRequest
 /// </summary>
-[DataContract]
+
 public partial class InboundDomainPatchRequest : IEquatable<InboundDomainPatchRequest>
 {
     /// <summary>
@@ -29,7 +29,7 @@ public partial class InboundDomainPatchRequest : IEquatable<InboundDomainPatchRe
     /// The DNS settings if the inbound domain is using a custom Mail From. These settings can only be used on InboundDomains where subDomain is false.
     /// </summary>
     /// <value>The DNS settings if the inbound domain is using a custom Mail From. These settings can only be used on InboundDomains where subDomain is false.</value>
-    [DataMember(Name = "mailFromSettings", EmitDefaultValue = false)]
+    [JsonPropertyName("mailFromSettings")]
     public MailFromResult MailFromSettings { get; set; }
 
 
@@ -38,7 +38,7 @@ public partial class InboundDomainPatchRequest : IEquatable<InboundDomainPatchRe
     /// The custom SMTP server integration to use when sending outbound emails from this domain.
     /// </summary>
     /// <value>The custom SMTP server integration to use when sending outbound emails from this domain.</value>
-    [DataMember(Name = "customSMTPServer", EmitDefaultValue = false)]
+    [JsonPropertyName("customSMTPServer")]
     public DomainEntityRef CustomSMTPServer { get; set; }
 
 
@@ -47,7 +47,7 @@ public partial class InboundDomainPatchRequest : IEquatable<InboundDomainPatchRe
     /// The IMAP server integration and settings to use for processing inbound emails.
     /// </summary>
     /// <value>The IMAP server integration and settings to use for processing inbound emails.</value>
-    [DataMember(Name = "imapSettings", EmitDefaultValue = false)]
+    [JsonPropertyName("imapSettings")]
     public ImapSettings ImapSettings { get; set; }
 
 

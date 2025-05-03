@@ -1,4 +1,3 @@
-using System.Runtime.Serialization;
 using System.Text;
 using System.Text.Json.Serialization;
 
@@ -7,7 +6,7 @@ namespace PureCloud.Client.Models;
 /// <summary>
 /// LicenseBatchAssignmentRequest
 /// </summary>
-[DataContract]
+
 public partial class LicenseBatchAssignmentRequest : IEquatable<LicenseBatchAssignmentRequest>
 {
 
@@ -32,7 +31,7 @@ public partial class LicenseBatchAssignmentRequest : IEquatable<LicenseBatchAssi
     /// The list of license assignment updates to make.
     /// </summary>
     /// <value>The list of license assignment updates to make.</value>
-    [DataMember(Name = "assignments", EmitDefaultValue = false)]
+    [JsonPropertyName("assignments")]
     public List<LicenseAssignmentRequest> Assignments { get; set; }
 
 

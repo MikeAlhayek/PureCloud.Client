@@ -1,12 +1,12 @@
-using System.Runtime.Serialization;
 using System.Text;
+using System.Text.Json.Serialization;
 
 namespace PureCloud.Client.Models;
 
 /// <summary>
 /// ValidateWorkPlanMessages
 /// </summary>
-[DataContract]
+
 public partial class ValidateWorkPlanMessages : IEquatable<ValidateWorkPlanMessages>
 {
     /// <summary>
@@ -27,7 +27,7 @@ public partial class ValidateWorkPlanMessages : IEquatable<ValidateWorkPlanMessa
     /// Messages for work plan violating some rules such as no shifts in a work plan
     /// </summary>
     /// <value>Messages for work plan violating some rules such as no shifts in a work plan</value>
-    [DataMember(Name = "violationMessages", EmitDefaultValue = false)]
+    [JsonPropertyName("violationMessages")]
     public List<WorkPlanConfigurationViolationMessage> ViolationMessages { get; set; }
 
 
@@ -36,7 +36,7 @@ public partial class ValidateWorkPlanMessages : IEquatable<ValidateWorkPlanMessa
     /// This field is not null when there is a set of work plan constraints that conflict thus agent schedules cannot be generated
     /// </summary>
     /// <value>This field is not null when there is a set of work plan constraints that conflict thus agent schedules cannot be generated</value>
-    [DataMember(Name = "constraintConflictMessage", EmitDefaultValue = false)]
+    [JsonPropertyName("constraintConflictMessage")]
     public ConstraintConflictMessage ConstraintConflictMessage { get; set; }
 
 

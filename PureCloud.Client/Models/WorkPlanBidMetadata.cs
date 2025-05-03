@@ -1,4 +1,3 @@
-using System.Runtime.Serialization;
 using System.Text;
 using System.Text.Json.Serialization;
 
@@ -7,7 +6,7 @@ namespace PureCloud.Client.Models;
 /// <summary>
 /// WorkPlanBidMetadata
 /// </summary>
-[DataContract]
+
 public partial class WorkPlanBidMetadata : IEquatable<WorkPlanBidMetadata>
 {
 
@@ -38,7 +37,7 @@ public partial class WorkPlanBidMetadata : IEquatable<WorkPlanBidMetadata>
     /// The user who created the associated entity
     /// </summary>
     /// <value>The user who created the associated entity</value>
-    [DataMember(Name = "createdBy", EmitDefaultValue = false)]
+    [JsonPropertyName("createdBy")]
     public UserReference CreatedBy { get; set; }
 
 
@@ -47,7 +46,7 @@ public partial class WorkPlanBidMetadata : IEquatable<WorkPlanBidMetadata>
     /// The date the entity created. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z
     /// </summary>
     /// <value>The date the entity created. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z</value>
-    [DataMember(Name = "createdDate", EmitDefaultValue = false)]
+    [JsonPropertyName("createdDate")]
     public DateTime? CreatedDate { get; set; }
 
 
@@ -56,7 +55,7 @@ public partial class WorkPlanBidMetadata : IEquatable<WorkPlanBidMetadata>
     /// The user who modified the entity. The id may be &#39;System&#39; if it was an automated process
     /// </summary>
     /// <value>The user who modified the entity. The id may be &#39;System&#39; if it was an automated process</value>
-    [DataMember(Name = "modifiedBy", EmitDefaultValue = false)]
+    [JsonPropertyName("modifiedBy")]
     public UserReference ModifiedBy { get; set; }
 
 
@@ -65,7 +64,7 @@ public partial class WorkPlanBidMetadata : IEquatable<WorkPlanBidMetadata>
     /// The entity last modified date. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z
     /// </summary>
     /// <value>The entity last modified date. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z</value>
-    [DataMember(Name = "modifiedDate", EmitDefaultValue = false)]
+    [JsonPropertyName("modifiedDate")]
     public DateTime? ModifiedDate { get; set; }
 
 

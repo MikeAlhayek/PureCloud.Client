@@ -1,12 +1,12 @@
-using System.Runtime.Serialization;
 using System.Text;
+using System.Text.Json.Serialization;
 
 namespace PureCloud.Client.Models;
 
 /// <summary>
 /// Learning module preview update response current step
 /// </summary>
-[DataContract]
+
 public partial class LearningModulePreviewUpdateResponseCurrentStep : IEquatable<LearningModulePreviewUpdateResponseCurrentStep>
 {
     /// <summary>
@@ -25,7 +25,7 @@ public partial class LearningModulePreviewUpdateResponseCurrentStep : IEquatable
     /// The SCO (Shareable Content Object) data
     /// </summary>
     /// <value>The SCO (Shareable Content Object) data</value>
-    [DataMember(Name = "shareableContentObject", EmitDefaultValue = false)]
+    [JsonPropertyName("shareableContentObject")]
     public LearningShareableContentObject ShareableContentObject { get; set; }
 
 

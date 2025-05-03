@@ -7,13 +7,13 @@ namespace PureCloud.Client.Models;
 /// <summary>
 /// DevelopmentActivityAggregateParam
 /// </summary>
-[DataContract]
+
 public partial class DevelopmentActivityAggregateParam : IEquatable<DevelopmentActivityAggregateParam>
 {
     /// <summary>
     /// Gets or Sets Metrics
     /// </summary>
-    [JsonConverter(typeof(JsonStringEnumConverter))]
+    
     public enum MetricsEnum
     {
         /// <summary>
@@ -87,7 +87,7 @@ public partial class DevelopmentActivityAggregateParam : IEquatable<DevelopmentA
     /// <summary>
     /// Gets or Sets GroupBy
     /// </summary>
-    [JsonConverter(typeof(JsonStringEnumConverter))]
+    
     public enum GroupByEnum
     {
         /// <summary>
@@ -132,7 +132,7 @@ public partial class DevelopmentActivityAggregateParam : IEquatable<DevelopmentA
     /// Specifies the range of due dates to be used for filtering. Milliseconds will be truncated. A maximum of 1 year can be specified in the range. End date is not inclusive. Intervals are represented as an ISO-8601 string. For example: YYYY-MM-DDThh:mm:ss/YYYY-MM-DDThh:mm:ss
     /// </summary>
     /// <value>Specifies the range of due dates to be used for filtering. Milliseconds will be truncated. A maximum of 1 year can be specified in the range. End date is not inclusive. Intervals are represented as an ISO-8601 string. For example: YYYY-MM-DDThh:mm:ss/YYYY-MM-DDThh:mm:ss</value>
-    [DataMember(Name = "interval", EmitDefaultValue = false)]
+    [JsonPropertyName("interval")]
     public string Interval { get; set; }
 
 
@@ -141,7 +141,7 @@ public partial class DevelopmentActivityAggregateParam : IEquatable<DevelopmentA
     /// The list of metrics to be returned. If omitted, all metrics are returned.
     /// </summary>
     /// <value>The list of metrics to be returned. If omitted, all metrics are returned.</value>
-    [DataMember(Name = "metrics", EmitDefaultValue = false)]
+    [JsonPropertyName("metrics")]
     public List<MetricsEnum> Metrics { get; set; }
 
 
@@ -150,7 +150,7 @@ public partial class DevelopmentActivityAggregateParam : IEquatable<DevelopmentA
     /// Specifies if the aggregated data is combined into a single set of metrics (groupBy is empty or not specified), or contains an element per attendeeId (groupBy is \&quot;attendeeId\&quot;)
     /// </summary>
     /// <value>Specifies if the aggregated data is combined into a single set of metrics (groupBy is empty or not specified), or contains an element per attendeeId (groupBy is \&quot;attendeeId\&quot;)</value>
-    [DataMember(Name = "groupBy", EmitDefaultValue = false)]
+    [JsonPropertyName("groupBy")]
     public List<GroupByEnum> GroupBy { get; set; }
 
 
@@ -159,7 +159,7 @@ public partial class DevelopmentActivityAggregateParam : IEquatable<DevelopmentA
     /// The filter applied to the data. This is ANDed with the interval parameter.
     /// </summary>
     /// <value>The filter applied to the data. This is ANDed with the interval parameter.</value>
-    [DataMember(Name = "filter", EmitDefaultValue = false)]
+    [JsonPropertyName("filter")]
     public DevelopmentActivityAggregateQueryRequestFilter Filter { get; set; }
 
 

@@ -1,4 +1,3 @@
-using System.Runtime.Serialization;
 using System.Text;
 using System.Text.Json.Serialization;
 
@@ -7,7 +6,7 @@ namespace PureCloud.Client.Models;
 /// <summary>
 /// Action function settings.
 /// </summary>
-[DataContract]
+
 public partial class Function : IEquatable<Function>
 {
 
@@ -38,7 +37,7 @@ public partial class Function : IEquatable<Function>
     /// Function identifier.
     /// </summary>
     /// <value>Function identifier.</value>
-    [DataMember(Name = "id", EmitDefaultValue = false)]
+    [JsonPropertyName("id")]
     public string Id { get; private set; }
 
 
@@ -47,7 +46,7 @@ public partial class Function : IEquatable<Function>
     /// Function name. This is automatically created based on the Action Id.
     /// </summary>
     /// <value>Function name. This is automatically created based on the Action Id.</value>
-    [DataMember(Name = "name", EmitDefaultValue = false)]
+    [JsonPropertyName("name")]
     public string Name { get; private set; }
 
 
@@ -56,7 +55,7 @@ public partial class Function : IEquatable<Function>
     /// Description of the function. Limit 255 characters.
     /// </summary>
     /// <value>Description of the function. Limit 255 characters.</value>
-    [DataMember(Name = "description", EmitDefaultValue = false)]
+    [JsonPropertyName("description")]
     public string Description { get; set; }
 
 
@@ -65,7 +64,7 @@ public partial class Function : IEquatable<Function>
     /// Date and time function was created. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z
     /// </summary>
     /// <value>Date and time function was created. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z</value>
-    [DataMember(Name = "dateCreated", EmitDefaultValue = false)]
+    [JsonPropertyName("dateCreated")]
     public DateTime? DateCreated { get; private set; }
 
 
@@ -74,7 +73,7 @@ public partial class Function : IEquatable<Function>
     /// Zip file identifier.
     /// </summary>
     /// <value>Zip file identifier.</value>
-    [DataMember(Name = "zipId", EmitDefaultValue = false)]
+    [JsonPropertyName("zipId")]
     public string ZipId { get; private set; }
 
 
@@ -83,7 +82,7 @@ public partial class Function : IEquatable<Function>
     /// Handler entry point into zip file to execute function. Should be path within upload function package to the invocation module without language extension, followed by a period and then exported invocation method name. e.g. &#39;src/index.handler&#39;
     /// </summary>
     /// <value>Handler entry point into zip file to execute function. Should be path within upload function package to the invocation module without language extension, followed by a period and then exported invocation method name. e.g. &#39;src/index.handler&#39;</value>
-    [DataMember(Name = "handler", EmitDefaultValue = false)]
+    [JsonPropertyName("handler")]
     public string Handler { get; set; }
 
 
@@ -92,7 +91,7 @@ public partial class Function : IEquatable<Function>
     /// Runtime required for execution. Valid runtimes change over time as versions are deprecated. Use /api/v2/integrations/actions/functions/runtimes for current list.
     /// </summary>
     /// <value>Runtime required for execution. Valid runtimes change over time as versions are deprecated. Use /api/v2/integrations/actions/functions/runtimes for current list.</value>
-    [DataMember(Name = "runtime", EmitDefaultValue = false)]
+    [JsonPropertyName("runtime")]
     public string Runtime { get; set; }
 
 
@@ -101,7 +100,7 @@ public partial class Function : IEquatable<Function>
     /// Execution timeout to apply to function. Value is in seconds. Range allowed 1 to 15. Default value 15 seconds.
     /// </summary>
     /// <value>Execution timeout to apply to function. Value is in seconds. Range allowed 1 to 15. Default value 15 seconds.</value>
-    [DataMember(Name = "timeoutSeconds", EmitDefaultValue = false)]
+    [JsonPropertyName("timeoutSeconds")]
     public int? TimeoutSeconds { get; set; }
 
 

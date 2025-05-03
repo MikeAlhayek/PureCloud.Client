@@ -1,12 +1,12 @@
-using System.Runtime.Serialization;
 using System.Text;
+using System.Text.Json.Serialization;
 
 namespace PureCloud.Client.Models;
 
 /// <summary>
 /// AgentsWorkPlansResponse
 /// </summary>
-[DataContract]
+
 public partial class AgentsWorkPlansResponse : IEquatable<AgentsWorkPlansResponse>
 {
     /// <summary>
@@ -27,7 +27,7 @@ public partial class AgentsWorkPlansResponse : IEquatable<AgentsWorkPlansRespons
     /// URL from which to fetch results for requests with a large result set. If populated, the downloaded data will conform to the same schema as would normally be returned, excepting downloaded data will never itself contain a downloadUrl
     /// </summary>
     /// <value>URL from which to fetch results for requests with a large result set. If populated, the downloaded data will conform to the same schema as would normally be returned, excepting downloaded data will never itself contain a downloadUrl</value>
-    [DataMember(Name = "downloadUrl", EmitDefaultValue = false)]
+    [JsonPropertyName("downloadUrl")]
     public string DownloadUrl { get; set; }
 
 
@@ -36,7 +36,7 @@ public partial class AgentsWorkPlansResponse : IEquatable<AgentsWorkPlansRespons
     /// The result of agent(s) work plans query
     /// </summary>
     /// <value>The result of agent(s) work plans query</value>
-    [DataMember(Name = "result", EmitDefaultValue = false)]
+    [JsonPropertyName("result")]
     public MuAgentsWorkPlansResult Result { get; set; }
 
 

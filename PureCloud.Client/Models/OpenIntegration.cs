@@ -7,14 +7,14 @@ namespace PureCloud.Client.Models;
 /// <summary>
 /// OpenIntegration
 /// </summary>
-[DataContract]
+
 public partial class OpenIntegration : IEquatable<OpenIntegration>
 {
     /// <summary>
     /// Status of asynchronous create operation
     /// </summary>
     /// <value>Status of asynchronous create operation</value>
-    [JsonConverter(typeof(JsonStringEnumConverter))]
+    
     public enum CreateStatusEnum
     {
         /// <summary>
@@ -47,7 +47,7 @@ public partial class OpenIntegration : IEquatable<OpenIntegration>
     /// Status of asynchronous create operation
     /// </summary>
     /// <value>Status of asynchronous create operation</value>
-    [DataMember(Name = "createStatus", EmitDefaultValue = false)]
+    [JsonPropertyName("createStatus")]
     public CreateStatusEnum? CreateStatus { get; private set; }
 
     /// <summary>
@@ -91,7 +91,7 @@ public partial class OpenIntegration : IEquatable<OpenIntegration>
     /// A unique Integration Id.
     /// </summary>
     /// <value>A unique Integration Id.</value>
-    [DataMember(Name = "id", EmitDefaultValue = false)]
+    [JsonPropertyName("id")]
     public string Id { get; private set; }
 
 
@@ -100,7 +100,7 @@ public partial class OpenIntegration : IEquatable<OpenIntegration>
     /// The name of the Open messaging integration.
     /// </summary>
     /// <value>The name of the Open messaging integration.</value>
-    [DataMember(Name = "name", EmitDefaultValue = false)]
+    [JsonPropertyName("name")]
     public string Name { get; set; }
 
 
@@ -109,7 +109,7 @@ public partial class OpenIntegration : IEquatable<OpenIntegration>
     /// Defines the SupportedContent profile configured for an integration
     /// </summary>
     /// <value>Defines the SupportedContent profile configured for an integration</value>
-    [DataMember(Name = "supportedContent", EmitDefaultValue = false)]
+    [JsonPropertyName("supportedContent")]
     public SupportedContentReference SupportedContent { get; set; }
 
 
@@ -117,7 +117,7 @@ public partial class OpenIntegration : IEquatable<OpenIntegration>
     /// <summary>
     /// Gets or Sets MessagingSetting
     /// </summary>
-    [DataMember(Name = "messagingSetting", EmitDefaultValue = false)]
+    [JsonPropertyName("messagingSetting")]
     public MessagingSettingReference MessagingSetting { get; set; }
 
 
@@ -126,7 +126,7 @@ public partial class OpenIntegration : IEquatable<OpenIntegration>
     /// The outbound notification webhook URL for the Open messaging integration.
     /// </summary>
     /// <value>The outbound notification webhook URL for the Open messaging integration.</value>
-    [DataMember(Name = "outboundNotificationWebhookUrl", EmitDefaultValue = false)]
+    [JsonPropertyName("outboundNotificationWebhookUrl")]
     public string OutboundNotificationWebhookUrl { get; set; }
 
 
@@ -135,7 +135,7 @@ public partial class OpenIntegration : IEquatable<OpenIntegration>
     /// The outbound notification webhook signature secret token.
     /// </summary>
     /// <value>The outbound notification webhook signature secret token.</value>
-    [DataMember(Name = "outboundNotificationWebhookSignatureSecretToken", EmitDefaultValue = false)]
+    [JsonPropertyName("outboundNotificationWebhookSignatureSecretToken")]
     public string OutboundNotificationWebhookSignatureSecretToken { get; set; }
 
 
@@ -144,7 +144,7 @@ public partial class OpenIntegration : IEquatable<OpenIntegration>
     /// The user specified headers for the Open messaging integration.
     /// </summary>
     /// <value>The user specified headers for the Open messaging integration.</value>
-    [DataMember(Name = "webhookHeaders", EmitDefaultValue = false)]
+    [JsonPropertyName("webhookHeaders")]
     public Dictionary<string, string> WebhookHeaders { get; set; }
 
 
@@ -153,7 +153,7 @@ public partial class OpenIntegration : IEquatable<OpenIntegration>
     /// The status of the Open Integration
     /// </summary>
     /// <value>The status of the Open Integration</value>
-    [DataMember(Name = "status", EmitDefaultValue = false)]
+    [JsonPropertyName("status")]
     public string Status { get; set; }
 
 
@@ -162,7 +162,7 @@ public partial class OpenIntegration : IEquatable<OpenIntegration>
     /// The recipient associated to the Open messaging Integration. This recipient is used to associate a flow to an integration
     /// </summary>
     /// <value>The recipient associated to the Open messaging Integration. This recipient is used to associate a flow to an integration</value>
-    [DataMember(Name = "recipient", EmitDefaultValue = false)]
+    [JsonPropertyName("recipient")]
     public DomainEntityRef Recipient { get; private set; }
 
 
@@ -171,7 +171,7 @@ public partial class OpenIntegration : IEquatable<OpenIntegration>
     /// Date this Integration was created. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z
     /// </summary>
     /// <value>Date this Integration was created. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z</value>
-    [DataMember(Name = "dateCreated", EmitDefaultValue = false)]
+    [JsonPropertyName("dateCreated")]
     public DateTime? DateCreated { get; set; }
 
 
@@ -180,7 +180,7 @@ public partial class OpenIntegration : IEquatable<OpenIntegration>
     /// Date this Integration was last modified. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z
     /// </summary>
     /// <value>Date this Integration was last modified. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z</value>
-    [DataMember(Name = "dateModified", EmitDefaultValue = false)]
+    [JsonPropertyName("dateModified")]
     public DateTime? DateModified { get; set; }
 
 
@@ -189,7 +189,7 @@ public partial class OpenIntegration : IEquatable<OpenIntegration>
     /// User reference that created this Integration
     /// </summary>
     /// <value>User reference that created this Integration</value>
-    [DataMember(Name = "createdBy", EmitDefaultValue = false)]
+    [JsonPropertyName("createdBy")]
     public DomainEntityRef CreatedBy { get; set; }
 
 
@@ -198,7 +198,7 @@ public partial class OpenIntegration : IEquatable<OpenIntegration>
     /// User reference that last modified this Integration
     /// </summary>
     /// <value>User reference that last modified this Integration</value>
-    [DataMember(Name = "modifiedBy", EmitDefaultValue = false)]
+    [JsonPropertyName("modifiedBy")]
     public DomainEntityRef ModifiedBy { get; set; }
 
 
@@ -209,7 +209,7 @@ public partial class OpenIntegration : IEquatable<OpenIntegration>
     /// Error information returned, if createStatus is set to Error
     /// </summary>
     /// <value>Error information returned, if createStatus is set to Error</value>
-    [DataMember(Name = "createError", EmitDefaultValue = false)]
+    [JsonPropertyName("createError")]
     public ErrorBody CreateError { get; private set; }
 
 
@@ -218,7 +218,7 @@ public partial class OpenIntegration : IEquatable<OpenIntegration>
     /// The URI for this object
     /// </summary>
     /// <value>The URI for this object</value>
-    [DataMember(Name = "selfUri", EmitDefaultValue = false)]
+    [JsonPropertyName("selfUri")]
     public string SelfUri { get; private set; }
 
 

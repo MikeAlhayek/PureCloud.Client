@@ -1,4 +1,3 @@
-using System.Runtime.Serialization;
 using System.Text;
 using System.Text.Json.Serialization;
 
@@ -7,7 +6,7 @@ namespace PureCloud.Client.Models;
 /// <summary>
 /// AgentWorkPlanListResponse
 /// </summary>
-[DataContract]
+
 public partial class AgentWorkPlanListResponse : IEquatable<AgentWorkPlanListResponse>
 {
 
@@ -33,7 +32,7 @@ public partial class AgentWorkPlanListResponse : IEquatable<AgentWorkPlanListRes
     /// <summary>
     /// Gets or Sets Entities
     /// </summary>
-    [DataMember(Name = "entities", EmitDefaultValue = false)]
+    [JsonPropertyName("entities")]
     public List<AgentWorkPlan> Entities { get; set; }
 
 
@@ -42,7 +41,7 @@ public partial class AgentWorkPlanListResponse : IEquatable<AgentWorkPlanListRes
     /// The management unit of the work plans
     /// </summary>
     /// <value>The management unit of the work plans</value>
-    [DataMember(Name = "managementUnit", EmitDefaultValue = false)]
+    [JsonPropertyName("managementUnit")]
     public ManagementUnitReference ManagementUnit { get; set; }
 
 

@@ -1,12 +1,12 @@
-using System.Runtime.Serialization;
 using System.Text;
+using System.Text.Json.Serialization;
 
 namespace PureCloud.Client.Models;
 
 /// <summary>
 /// EmailAttachment
 /// </summary>
-[DataContract]
+
 public partial class EmailAttachment : IEquatable<EmailAttachment>
 {
     /// <summary>
@@ -32,7 +32,7 @@ public partial class EmailAttachment : IEquatable<EmailAttachment>
     /// <summary>
     /// Gets or Sets Name
     /// </summary>
-    [DataMember(Name = "name", EmitDefaultValue = false)]
+    [JsonPropertyName("name")]
     public string Name { get; set; }
 
 
@@ -40,7 +40,7 @@ public partial class EmailAttachment : IEquatable<EmailAttachment>
     /// <summary>
     /// Gets or Sets ContentPath
     /// </summary>
-    [DataMember(Name = "contentPath", EmitDefaultValue = false)]
+    [JsonPropertyName("contentPath")]
     public string ContentPath { get; set; }
 
 
@@ -48,7 +48,7 @@ public partial class EmailAttachment : IEquatable<EmailAttachment>
     /// <summary>
     /// Gets or Sets ContentType
     /// </summary>
-    [DataMember(Name = "contentType", EmitDefaultValue = false)]
+    [JsonPropertyName("contentType")]
     public string ContentType { get; set; }
 
 
@@ -56,7 +56,7 @@ public partial class EmailAttachment : IEquatable<EmailAttachment>
     /// <summary>
     /// Gets or Sets AttachmentId
     /// </summary>
-    [DataMember(Name = "attachmentId", EmitDefaultValue = false)]
+    [JsonPropertyName("attachmentId")]
     public string AttachmentId { get; set; }
 
 
@@ -64,7 +64,7 @@ public partial class EmailAttachment : IEquatable<EmailAttachment>
     /// <summary>
     /// Gets or Sets ContentLength
     /// </summary>
-    [DataMember(Name = "contentLength", EmitDefaultValue = false)]
+    [JsonPropertyName("contentLength")]
     public int? ContentLength { get; set; }
 
 

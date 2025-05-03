@@ -1,12 +1,12 @@
-using System.Runtime.Serialization;
 using System.Text;
+using System.Text.Json.Serialization;
 
 namespace PureCloud.Client.Models;
 
 /// <summary>
 /// TimeSlot
 /// </summary>
-[DataContract]
+
 public partial class TimeSlot : IEquatable<TimeSlot>
 {
     /// <summary>
@@ -29,7 +29,7 @@ public partial class TimeSlot : IEquatable<TimeSlot>
     /// start time in xx:xx:xx.xxx format
     /// </summary>
     /// <value>start time in xx:xx:xx.xxx format</value>
-    [DataMember(Name = "startTime", EmitDefaultValue = false)]
+    [JsonPropertyName("startTime")]
     public string StartTime { get; set; }
 
 
@@ -38,7 +38,7 @@ public partial class TimeSlot : IEquatable<TimeSlot>
     /// stop time in xx:xx:xx.xxx format
     /// </summary>
     /// <value>stop time in xx:xx:xx.xxx format</value>
-    [DataMember(Name = "stopTime", EmitDefaultValue = false)]
+    [JsonPropertyName("stopTime")]
     public string StopTime { get; set; }
 
 
@@ -47,7 +47,7 @@ public partial class TimeSlot : IEquatable<TimeSlot>
     /// Day for this time slot, Monday &#x3D; 1 ... Sunday &#x3D; 7
     /// </summary>
     /// <value>Day for this time slot, Monday &#x3D; 1 ... Sunday &#x3D; 7</value>
-    [DataMember(Name = "day", EmitDefaultValue = false)]
+    [JsonPropertyName("day")]
     public int? Day { get; set; }
 
 

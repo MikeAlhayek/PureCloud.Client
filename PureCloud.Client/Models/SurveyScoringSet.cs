@@ -1,12 +1,12 @@
-using System.Runtime.Serialization;
 using System.Text;
+using System.Text.Json.Serialization;
 
 namespace PureCloud.Client.Models;
 
 /// <summary>
 /// SurveyScoringSet
 /// </summary>
-[DataContract]
+
 public partial class SurveyScoringSet : IEquatable<SurveyScoringSet>
 {
     /// <summary>
@@ -28,7 +28,7 @@ public partial class SurveyScoringSet : IEquatable<SurveyScoringSet>
     /// <summary>
     /// Gets or Sets TotalScore
     /// </summary>
-    [DataMember(Name = "totalScore", EmitDefaultValue = false)]
+    [JsonPropertyName("totalScore")]
     public float? TotalScore { get; set; }
 
 
@@ -36,7 +36,7 @@ public partial class SurveyScoringSet : IEquatable<SurveyScoringSet>
     /// <summary>
     /// Gets or Sets NpsScore
     /// </summary>
-    [DataMember(Name = "npsScore", EmitDefaultValue = false)]
+    [JsonPropertyName("npsScore")]
     public int? NpsScore { get; set; }
 
 
@@ -44,7 +44,7 @@ public partial class SurveyScoringSet : IEquatable<SurveyScoringSet>
     /// <summary>
     /// Gets or Sets QuestionGroupScores
     /// </summary>
-    [DataMember(Name = "questionGroupScores", EmitDefaultValue = false)]
+    [JsonPropertyName("questionGroupScores")]
     public List<SurveyQuestionGroupScore> QuestionGroupScores { get; set; }
 
 

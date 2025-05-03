@@ -1,12 +1,12 @@
-using System.Runtime.Serialization;
 using System.Text;
+using System.Text.Json.Serialization;
 
 namespace PureCloud.Client.Models;
 
 /// <summary>
 /// VoicemailMailboxInfo
 /// </summary>
-[DataContract]
+
 public partial class VoicemailMailboxInfo : IEquatable<VoicemailMailboxInfo>
 {
     /// <summary>
@@ -23,7 +23,7 @@ public partial class VoicemailMailboxInfo : IEquatable<VoicemailMailboxInfo>
     /// The total number of bytes for all voicemail message audio recordings
     /// </summary>
     /// <value>The total number of bytes for all voicemail message audio recordings</value>
-    [DataMember(Name = "usageSizeBytes", EmitDefaultValue = false)]
+    [JsonPropertyName("usageSizeBytes")]
     public long? UsageSizeBytes { get; private set; }
 
 
@@ -32,7 +32,7 @@ public partial class VoicemailMailboxInfo : IEquatable<VoicemailMailboxInfo>
     /// The total number of voicemail messages
     /// </summary>
     /// <value>The total number of voicemail messages</value>
-    [DataMember(Name = "totalCount", EmitDefaultValue = false)]
+    [JsonPropertyName("totalCount")]
     public int? TotalCount { get; private set; }
 
 
@@ -41,7 +41,7 @@ public partial class VoicemailMailboxInfo : IEquatable<VoicemailMailboxInfo>
     /// The total number of voicemail messages marked as unread
     /// </summary>
     /// <value>The total number of voicemail messages marked as unread</value>
-    [DataMember(Name = "unreadCount", EmitDefaultValue = false)]
+    [JsonPropertyName("unreadCount")]
     public int? UnreadCount { get; private set; }
 
 
@@ -50,7 +50,7 @@ public partial class VoicemailMailboxInfo : IEquatable<VoicemailMailboxInfo>
     /// The total number of voicemail messages marked as deleted
     /// </summary>
     /// <value>The total number of voicemail messages marked as deleted</value>
-    [DataMember(Name = "deletedCount", EmitDefaultValue = false)]
+    [JsonPropertyName("deletedCount")]
     public int? DeletedCount { get; private set; }
 
 
@@ -59,7 +59,7 @@ public partial class VoicemailMailboxInfo : IEquatable<VoicemailMailboxInfo>
     /// The date of the oldest voicemail message. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z
     /// </summary>
     /// <value>The date of the oldest voicemail message. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z</value>
-    [DataMember(Name = "createdDate", EmitDefaultValue = false)]
+    [JsonPropertyName("createdDate")]
     public DateTime? CreatedDate { get; private set; }
 
 
@@ -68,7 +68,7 @@ public partial class VoicemailMailboxInfo : IEquatable<VoicemailMailboxInfo>
     /// The date of the most recent voicemail message. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z
     /// </summary>
     /// <value>The date of the most recent voicemail message. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z</value>
-    [DataMember(Name = "modifiedDate", EmitDefaultValue = false)]
+    [JsonPropertyName("modifiedDate")]
     public DateTime? ModifiedDate { get; private set; }
 
 
@@ -77,7 +77,7 @@ public partial class VoicemailMailboxInfo : IEquatable<VoicemailMailboxInfo>
     /// The date of the most recent unread voicemail message. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z
     /// </summary>
     /// <value>The date of the most recent unread voicemail message. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z</value>
-    [DataMember(Name = "newestUnreadDate", EmitDefaultValue = false)]
+    [JsonPropertyName("newestUnreadDate")]
     public DateTime? NewestUnreadDate { get; private set; }
 
 
@@ -86,7 +86,7 @@ public partial class VoicemailMailboxInfo : IEquatable<VoicemailMailboxInfo>
     /// The date of the most oldest unread voicemail message. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z
     /// </summary>
     /// <value>The date of the most oldest unread voicemail message. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z</value>
-    [DataMember(Name = "oldestUnreadDate", EmitDefaultValue = false)]
+    [JsonPropertyName("oldestUnreadDate")]
     public DateTime? OldestUnreadDate { get; private set; }
 
 
@@ -95,7 +95,7 @@ public partial class VoicemailMailboxInfo : IEquatable<VoicemailMailboxInfo>
     /// The date of the most recent read voicemail message. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z
     /// </summary>
     /// <value>The date of the most recent read voicemail message. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z</value>
-    [DataMember(Name = "newestReadDate", EmitDefaultValue = false)]
+    [JsonPropertyName("newestReadDate")]
     public DateTime? NewestReadDate { get; private set; }
 
 
@@ -104,7 +104,7 @@ public partial class VoicemailMailboxInfo : IEquatable<VoicemailMailboxInfo>
     /// The date of the most oldest read voicemail message. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z
     /// </summary>
     /// <value>The date of the most oldest read voicemail message. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z</value>
-    [DataMember(Name = "oldestReadDate", EmitDefaultValue = false)]
+    [JsonPropertyName("oldestReadDate")]
     public DateTime? OldestReadDate { get; private set; }
 
 

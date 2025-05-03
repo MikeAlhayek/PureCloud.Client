@@ -7,13 +7,13 @@ namespace PureCloud.Client.Models;
 /// <summary>
 /// WfmBuShortTermForecastStaffingRequirementsGenerateCompleteTopicBuForecastShortTermStaffingRequirementsNotification
 /// </summary>
-[DataContract]
+
 public partial class WfmBuShortTermForecastStaffingRequirementsGenerateCompleteTopicBuForecastShortTermStaffingRequirementsNotification : IEquatable<WfmBuShortTermForecastStaffingRequirementsGenerateCompleteTopicBuForecastShortTermStaffingRequirementsNotification>
 {
     /// <summary>
     /// Gets or Sets State
     /// </summary>
-    [JsonConverter(typeof(JsonStringEnumConverter))]
+    
     public enum StateEnum
     {
         /// <summary>
@@ -51,7 +51,7 @@ public partial class WfmBuShortTermForecastStaffingRequirementsGenerateCompleteT
     /// <summary>
     /// Gets or Sets State
     /// </summary>
-    [DataMember(Name = "state", EmitDefaultValue = false)]
+    [JsonPropertyName("state")]
     public StateEnum? State { get; set; }
     /// <summary>
     /// Initializes a new instance of the <see cref="WfmBuShortTermForecastStaffingRequirementsGenerateCompleteTopicBuForecastShortTermStaffingRequirementsNotification" /> class.
@@ -80,7 +80,7 @@ public partial class WfmBuShortTermForecastStaffingRequirementsGenerateCompleteT
     /// <summary>
     /// Gets or Sets BusinessUnitId
     /// </summary>
-    [DataMember(Name = "businessUnitId", EmitDefaultValue = false)]
+    [JsonPropertyName("businessUnitId")]
     public string BusinessUnitId { get; set; }
 
 
@@ -90,7 +90,7 @@ public partial class WfmBuShortTermForecastStaffingRequirementsGenerateCompleteT
     /// <summary>
     /// Gets or Sets Forecast
     /// </summary>
-    [DataMember(Name = "forecast", EmitDefaultValue = false)]
+    [JsonPropertyName("forecast")]
     public WfmBuShortTermForecastStaffingRequirementsGenerateCompleteTopicBuShortTermForecastReference Forecast { get; set; }
 
 
@@ -98,7 +98,7 @@ public partial class WfmBuShortTermForecastStaffingRequirementsGenerateCompleteT
     /// <summary>
     /// Gets or Sets WeekCount
     /// </summary>
-    [DataMember(Name = "weekCount", EmitDefaultValue = false)]
+    [JsonPropertyName("weekCount")]
     public long? WeekCount { get; set; }
 
 
@@ -106,7 +106,7 @@ public partial class WfmBuShortTermForecastStaffingRequirementsGenerateCompleteT
     /// <summary>
     /// Gets or Sets IntervalLengthMinutes
     /// </summary>
-    [DataMember(Name = "intervalLengthMinutes", EmitDefaultValue = false)]
+    [JsonPropertyName("intervalLengthMinutes")]
     public long? IntervalLengthMinutes { get; set; }
 
 
@@ -114,7 +114,7 @@ public partial class WfmBuShortTermForecastStaffingRequirementsGenerateCompleteT
     /// <summary>
     /// Gets or Sets ReferenceStartDate
     /// </summary>
-    [DataMember(Name = "referenceStartDate", EmitDefaultValue = false)]
+    [JsonPropertyName("referenceStartDate")]
     public DateTime? ReferenceStartDate { get; set; }
 
 
@@ -122,7 +122,7 @@ public partial class WfmBuShortTermForecastStaffingRequirementsGenerateCompleteT
     /// <summary>
     /// Gets or Sets Results
     /// </summary>
-    [DataMember(Name = "results", EmitDefaultValue = false)]
+    [JsonPropertyName("results")]
     public List<WfmBuShortTermForecastStaffingRequirementsGenerateCompleteTopicBuForecastShortTermStaffingRequirementsResults> Results { get; set; }
 
 

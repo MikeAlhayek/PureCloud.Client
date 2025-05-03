@@ -1,12 +1,12 @@
-using System.Runtime.Serialization;
 using System.Text;
+using System.Text.Json.Serialization;
 
 namespace PureCloud.Client.Models;
 
 /// <summary>
 /// CustomerStartDetailEventTopicJourneyContext
 /// </summary>
-[DataContract]
+
 public partial class CustomerStartDetailEventTopicJourneyContext : IEquatable<CustomerStartDetailEventTopicJourneyContext>
 {
     /// <summary>
@@ -30,7 +30,7 @@ public partial class CustomerStartDetailEventTopicJourneyContext : IEquatable<Cu
     /// <summary>
     /// Gets or Sets SessionId
     /// </summary>
-    [DataMember(Name = "sessionId", EmitDefaultValue = false)]
+    [JsonPropertyName("sessionId")]
     public string SessionId { get; set; }
 
 
@@ -38,7 +38,7 @@ public partial class CustomerStartDetailEventTopicJourneyContext : IEquatable<Cu
     /// <summary>
     /// Gets or Sets SessionIdType
     /// </summary>
-    [DataMember(Name = "sessionIdType", EmitDefaultValue = false)]
+    [JsonPropertyName("sessionIdType")]
     public string SessionIdType { get; set; }
 
 
@@ -46,7 +46,7 @@ public partial class CustomerStartDetailEventTopicJourneyContext : IEquatable<Cu
     /// <summary>
     /// Gets or Sets ActionId
     /// </summary>
-    [DataMember(Name = "actionId", EmitDefaultValue = false)]
+    [JsonPropertyName("actionId")]
     public string ActionId { get; set; }
 
 
@@ -54,7 +54,7 @@ public partial class CustomerStartDetailEventTopicJourneyContext : IEquatable<Cu
     /// <summary>
     /// Gets or Sets ActionMapId
     /// </summary>
-    [DataMember(Name = "actionMapId", EmitDefaultValue = false)]
+    [JsonPropertyName("actionMapId")]
     public string ActionMapId { get; set; }
 
 

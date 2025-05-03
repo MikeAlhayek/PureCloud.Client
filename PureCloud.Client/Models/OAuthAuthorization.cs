@@ -7,13 +7,13 @@ namespace PureCloud.Client.Models;
 /// <summary>
 /// OAuthAuthorization
 /// </summary>
-[DataContract]
+
 public partial class OAuthAuthorization : IEquatable<OAuthAuthorization>
 {
     /// <summary>
     /// Gets or Sets State
     /// </summary>
-    [JsonConverter(typeof(JsonStringEnumConverter))]
+    
     public enum StateEnum
     {
         /// <summary>
@@ -51,7 +51,7 @@ public partial class OAuthAuthorization : IEquatable<OAuthAuthorization>
     /// <summary>
     /// Gets or Sets State
     /// </summary>
-    [DataMember(Name = "state", EmitDefaultValue = false)]
+    [JsonPropertyName("state")]
     public StateEnum? State { get; set; }
     /// <summary>
     /// Initializes a new instance of the <see cref="OAuthAuthorization" /> class.
@@ -86,7 +86,7 @@ public partial class OAuthAuthorization : IEquatable<OAuthAuthorization>
     /// <summary>
     /// Gets or Sets Client
     /// </summary>
-    [DataMember(Name = "client", EmitDefaultValue = false)]
+    [JsonPropertyName("client")]
     public OAuthClient Client { get; set; }
 
 
@@ -94,7 +94,7 @@ public partial class OAuthAuthorization : IEquatable<OAuthAuthorization>
     /// <summary>
     /// Gets or Sets Scope
     /// </summary>
-    [DataMember(Name = "scope", EmitDefaultValue = false)]
+    [JsonPropertyName("scope")]
     public List<string> Scope { get; set; }
 
 
@@ -102,7 +102,7 @@ public partial class OAuthAuthorization : IEquatable<OAuthAuthorization>
     /// <summary>
     /// Gets or Sets Roles
     /// </summary>
-    [DataMember(Name = "roles", EmitDefaultValue = false)]
+    [JsonPropertyName("roles")]
     public List<string> Roles { get; set; }
 
 
@@ -110,7 +110,7 @@ public partial class OAuthAuthorization : IEquatable<OAuthAuthorization>
     /// <summary>
     /// Gets or Sets ResourceOwner
     /// </summary>
-    [DataMember(Name = "resourceOwner", EmitDefaultValue = false)]
+    [JsonPropertyName("resourceOwner")]
     public DomainEntityRef ResourceOwner { get; set; }
 
 
@@ -119,7 +119,7 @@ public partial class OAuthAuthorization : IEquatable<OAuthAuthorization>
     /// Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z
     /// </summary>
     /// <value>Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z</value>
-    [DataMember(Name = "dateCreated", EmitDefaultValue = false)]
+    [JsonPropertyName("dateCreated")]
     public DateTime? DateCreated { get; set; }
 
 
@@ -128,7 +128,7 @@ public partial class OAuthAuthorization : IEquatable<OAuthAuthorization>
     /// Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z
     /// </summary>
     /// <value>Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z</value>
-    [DataMember(Name = "dateModified", EmitDefaultValue = false)]
+    [JsonPropertyName("dateModified")]
     public DateTime? DateModified { get; set; }
 
 
@@ -136,7 +136,7 @@ public partial class OAuthAuthorization : IEquatable<OAuthAuthorization>
     /// <summary>
     /// Gets or Sets CreatedBy
     /// </summary>
-    [DataMember(Name = "createdBy", EmitDefaultValue = false)]
+    [JsonPropertyName("createdBy")]
     public DomainEntityRef CreatedBy { get; set; }
 
 
@@ -144,7 +144,7 @@ public partial class OAuthAuthorization : IEquatable<OAuthAuthorization>
     /// <summary>
     /// Gets or Sets ModifiedBy
     /// </summary>
-    [DataMember(Name = "modifiedBy", EmitDefaultValue = false)]
+    [JsonPropertyName("modifiedBy")]
     public DomainEntityRef ModifiedBy { get; set; }
 
 
@@ -152,7 +152,7 @@ public partial class OAuthAuthorization : IEquatable<OAuthAuthorization>
     /// <summary>
     /// Gets or Sets Pending
     /// </summary>
-    [DataMember(Name = "pending", EmitDefaultValue = false)]
+    [JsonPropertyName("pending")]
     public bool? Pending { get; set; }
 
 
@@ -163,7 +163,7 @@ public partial class OAuthAuthorization : IEquatable<OAuthAuthorization>
     /// The URI for this object
     /// </summary>
     /// <value>The URI for this object</value>
-    [DataMember(Name = "selfUri", EmitDefaultValue = false)]
+    [JsonPropertyName("selfUri")]
     public string SelfUri { get; private set; }
 
 

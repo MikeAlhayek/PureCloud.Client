@@ -1,12 +1,12 @@
-using System.Runtime.Serialization;
 using System.Text;
+using System.Text.Json.Serialization;
 
 namespace PureCloud.Client.Models;
 
 /// <summary>
 /// A subset of the Journey System&#39;s action data relevant to a part of a conversation (for external linkage and internal usage/context)
 /// </summary>
-[DataContract]
+
 public partial class ConversationVideoEventTopicJourneyAction : IEquatable<ConversationVideoEventTopicJourneyAction>
 {
     /// <summary>
@@ -27,7 +27,7 @@ public partial class ConversationVideoEventTopicJourneyAction : IEquatable<Conve
     /// The ID of an action from the Journey System (an action is spawned from an actionMap)
     /// </summary>
     /// <value>The ID of an action from the Journey System (an action is spawned from an actionMap)</value>
-    [DataMember(Name = "id", EmitDefaultValue = false)]
+    [JsonPropertyName("id")]
     public string Id { get; set; }
 
 
@@ -35,7 +35,7 @@ public partial class ConversationVideoEventTopicJourneyAction : IEquatable<Conve
     /// <summary>
     /// Gets or Sets ActionMap
     /// </summary>
-    [DataMember(Name = "actionMap", EmitDefaultValue = false)]
+    [JsonPropertyName("actionMap")]
     public ConversationVideoEventTopicJourneyActionMap ActionMap { get; set; }
 
 

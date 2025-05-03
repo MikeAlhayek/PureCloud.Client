@@ -1,12 +1,12 @@
-using System.Runtime.Serialization;
 using System.Text;
+using System.Text.Json.Serialization;
 
 namespace PureCloud.Client.Models;
 
 /// <summary>
 /// KlaxonInteractionStatsAlertsTopicNotificationUser
 /// </summary>
-[DataContract]
+
 public partial class KlaxonInteractionStatsAlertsTopicNotificationUser : IEquatable<KlaxonInteractionStatsAlertsTopicNotificationUser>
 {
     /// <summary>
@@ -26,7 +26,7 @@ public partial class KlaxonInteractionStatsAlertsTopicNotificationUser : IEquata
     /// <summary>
     /// Gets or Sets Id
     /// </summary>
-    [DataMember(Name = "id", EmitDefaultValue = false)]
+    [JsonPropertyName("id")]
     public string Id { get; set; }
 
 
@@ -34,7 +34,7 @@ public partial class KlaxonInteractionStatsAlertsTopicNotificationUser : IEquata
     /// <summary>
     /// Gets or Sets DisplayName
     /// </summary>
-    [DataMember(Name = "displayName", EmitDefaultValue = false)]
+    [JsonPropertyName("displayName")]
     public string DisplayName { get; set; }
 
 

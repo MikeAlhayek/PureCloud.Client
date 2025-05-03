@@ -7,14 +7,14 @@ namespace PureCloud.Client.Models;
 /// <summary>
 /// BenefitAssessment
 /// </summary>
-[DataContract]
+
 public partial class BenefitAssessment : IEquatable<BenefitAssessment>
 {
     /// <summary>
     /// State of the benefit assessment.
     /// </summary>
     /// <value>State of the benefit assessment.</value>
-    [JsonConverter(typeof(JsonStringEnumConverter))]
+    
     public enum StateEnum
     {
         /// <summary>
@@ -47,7 +47,7 @@ public partial class BenefitAssessment : IEquatable<BenefitAssessment>
     /// State of the benefit assessment.
     /// </summary>
     /// <value>State of the benefit assessment.</value>
-    [DataMember(Name = "state", EmitDefaultValue = false)]
+    [JsonPropertyName("state")]
     public StateEnum? State { get; private set; }
     /// <summary>
     /// Initializes a new instance of the <see cref="BenefitAssessment" /> class.
@@ -63,7 +63,7 @@ public partial class BenefitAssessment : IEquatable<BenefitAssessment>
     /// The globally unique identifier for the object.
     /// </summary>
     /// <value>The globally unique identifier for the object.</value>
-    [DataMember(Name = "id", EmitDefaultValue = false)]
+    [JsonPropertyName("id")]
     public string Id { get; private set; }
 
 
@@ -72,7 +72,7 @@ public partial class BenefitAssessment : IEquatable<BenefitAssessment>
     /// The list of queues that are assessed for Predictive Routing benefit.
     /// </summary>
     /// <value>The list of queues that are assessed for Predictive Routing benefit.</value>
-    [DataMember(Name = "queues", EmitDefaultValue = false)]
+    [JsonPropertyName("queues")]
     public List<AddressableEntityRef> Queues { get; private set; }
 
 
@@ -81,7 +81,7 @@ public partial class BenefitAssessment : IEquatable<BenefitAssessment>
     /// A set of key performance indicators applied on the queue to determine suitability of Predictive Routing.
     /// </summary>
     /// <value>A set of key performance indicators applied on the queue to determine suitability of Predictive Routing.</value>
-    [DataMember(Name = "kpiAssessments", EmitDefaultValue = false)]
+    [JsonPropertyName("kpiAssessments")]
     public List<KeyPerformanceIndicatorAssessment> KpiAssessments { get; private set; }
 
 
@@ -92,7 +92,7 @@ public partial class BenefitAssessment : IEquatable<BenefitAssessment>
     /// The unique identifier of job that created this benefit assessment.
     /// </summary>
     /// <value>The unique identifier of job that created this benefit assessment.</value>
-    [DataMember(Name = "jobId", EmitDefaultValue = false)]
+    [JsonPropertyName("jobId")]
     public string JobId { get; private set; }
 
 
@@ -101,7 +101,7 @@ public partial class BenefitAssessment : IEquatable<BenefitAssessment>
     /// Creation Date of the benefit assessment. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z
     /// </summary>
     /// <value>Creation Date of the benefit assessment. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z</value>
-    [DataMember(Name = "dateCreated", EmitDefaultValue = false)]
+    [JsonPropertyName("dateCreated")]
     public DateTime? DateCreated { get; private set; }
 
 
@@ -110,7 +110,7 @@ public partial class BenefitAssessment : IEquatable<BenefitAssessment>
     /// Modified Date of the benefit assessment. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z
     /// </summary>
     /// <value>Modified Date of the benefit assessment. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z</value>
-    [DataMember(Name = "dateModified", EmitDefaultValue = false)]
+    [JsonPropertyName("dateModified")]
     public DateTime? DateModified { get; private set; }
 
 
@@ -119,7 +119,7 @@ public partial class BenefitAssessment : IEquatable<BenefitAssessment>
     /// The URI for this object
     /// </summary>
     /// <value>The URI for this object</value>
-    [DataMember(Name = "selfUri", EmitDefaultValue = false)]
+    [JsonPropertyName("selfUri")]
     public string SelfUri { get; private set; }
 
 

@@ -7,14 +7,14 @@ namespace PureCloud.Client.Models;
 /// <summary>
 /// Details for an Integration
 /// </summary>
-[DataContract]
+
 public partial class Integration : IEquatable<Integration>
 {
     /// <summary>
     /// Configured state of the integration.
     /// </summary>
     /// <value>Configured state of the integration.</value>
-    [JsonConverter(typeof(JsonStringEnumConverter))]
+    
     public enum IntendedStateEnum
     {
         /// <summary>
@@ -53,7 +53,7 @@ public partial class Integration : IEquatable<Integration>
     /// Configured state of the integration.
     /// </summary>
     /// <value>Configured state of the integration.</value>
-    [DataMember(Name = "intendedState", EmitDefaultValue = false)]
+    [JsonPropertyName("intendedState")]
     public IntendedStateEnum? IntendedState { get; set; }
 
     /// <summary>
@@ -77,7 +77,7 @@ public partial class Integration : IEquatable<Integration>
     /// The globally unique identifier for the object.
     /// </summary>
     /// <value>The globally unique identifier for the object.</value>
-    [DataMember(Name = "id", EmitDefaultValue = false)]
+    [JsonPropertyName("id")]
     public string Id { get; private set; }
 
 
@@ -86,7 +86,7 @@ public partial class Integration : IEquatable<Integration>
     /// The name of the integration, used to distinguish this integration from others of the same type.
     /// </summary>
     /// <value>The name of the integration, used to distinguish this integration from others of the same type.</value>
-    [DataMember(Name = "name", EmitDefaultValue = false)]
+    [JsonPropertyName("name")]
     public string Name { get; private set; }
 
 
@@ -95,7 +95,7 @@ public partial class Integration : IEquatable<Integration>
     /// Type of the integration
     /// </summary>
     /// <value>Type of the integration</value>
-    [DataMember(Name = "integrationType", EmitDefaultValue = false)]
+    [JsonPropertyName("integrationType")]
     public IntegrationType IntegrationType { get; private set; }
 
 
@@ -104,7 +104,7 @@ public partial class Integration : IEquatable<Integration>
     /// Notes about the integration.
     /// </summary>
     /// <value>Notes about the integration.</value>
-    [DataMember(Name = "notes", EmitDefaultValue = false)]
+    [JsonPropertyName("notes")]
     public string Notes { get; private set; }
 
 
@@ -115,7 +115,7 @@ public partial class Integration : IEquatable<Integration>
     /// Configuration information for the integration.
     /// </summary>
     /// <value>Configuration information for the integration.</value>
-    [DataMember(Name = "config", EmitDefaultValue = false)]
+    [JsonPropertyName("config")]
     public IntegrationConfigurationInfo Config { get; private set; }
 
 
@@ -124,7 +124,7 @@ public partial class Integration : IEquatable<Integration>
     /// Last reported status of the integration.
     /// </summary>
     /// <value>Last reported status of the integration.</value>
-    [DataMember(Name = "reportedState", EmitDefaultValue = false)]
+    [JsonPropertyName("reportedState")]
     public IntegrationStatusInfo ReportedState { get; private set; }
 
 
@@ -133,7 +133,7 @@ public partial class Integration : IEquatable<Integration>
     /// Read-only attributes for the integration.
     /// </summary>
     /// <value>Read-only attributes for the integration.</value>
-    [DataMember(Name = "attributes", EmitDefaultValue = false)]
+    [JsonPropertyName("attributes")]
     public Dictionary<string, string> Attributes { get; private set; }
 
 
@@ -142,7 +142,7 @@ public partial class Integration : IEquatable<Integration>
     /// The URI for this object
     /// </summary>
     /// <value>The URI for this object</value>
-    [DataMember(Name = "selfUri", EmitDefaultValue = false)]
+    [JsonPropertyName("selfUri")]
     public string SelfUri { get; private set; }
 
 

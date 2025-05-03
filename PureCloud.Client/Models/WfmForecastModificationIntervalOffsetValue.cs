@@ -1,4 +1,3 @@
-using System.Runtime.Serialization;
 using System.Text;
 using System.Text.Json.Serialization;
 
@@ -7,7 +6,7 @@ namespace PureCloud.Client.Models;
 /// <summary>
 /// WfmForecastModificationIntervalOffsetValue
 /// </summary>
-[DataContract]
+
 public partial class WfmForecastModificationIntervalOffsetValue : IEquatable<WfmForecastModificationIntervalOffsetValue>
 {
 
@@ -34,7 +33,7 @@ public partial class WfmForecastModificationIntervalOffsetValue : IEquatable<Wfm
     /// The number of intervals past referenceStartDate to which to apply this modification
     /// </summary>
     /// <value>The number of intervals past referenceStartDate to which to apply this modification</value>
-    [DataMember(Name = "intervalIndex", EmitDefaultValue = false)]
+    [JsonPropertyName("intervalIndex")]
     public int? IntervalIndex { get; set; }
 
 
@@ -43,7 +42,7 @@ public partial class WfmForecastModificationIntervalOffsetValue : IEquatable<Wfm
     /// The value to set for the given interval
     /// </summary>
     /// <value>The value to set for the given interval</value>
-    [DataMember(Name = "value", EmitDefaultValue = false)]
+    [JsonPropertyName("value")]
     public double? Value { get; set; }
 
 

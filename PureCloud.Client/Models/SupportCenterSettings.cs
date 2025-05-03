@@ -7,14 +7,14 @@ namespace PureCloud.Client.Models;
 /// <summary>
 /// Settings concerning knowledge portal (previously support center)
 /// </summary>
-[DataContract]
+
 public partial class SupportCenterSettings : IEquatable<SupportCenterSettings>
 {
     /// <summary>
     /// Router type for knowledge portal (previously support center)
     /// </summary>
     /// <value>Router type for knowledge portal (previously support center)</value>
-    [JsonConverter(typeof(JsonStringEnumConverter))]
+    
     public enum RouterTypeEnum
     {
         /// <summary>
@@ -41,7 +41,7 @@ public partial class SupportCenterSettings : IEquatable<SupportCenterSettings>
     /// Router type for knowledge portal (previously support center)
     /// </summary>
     /// <value>Router type for knowledge portal (previously support center)</value>
-    [DataMember(Name = "routerType", EmitDefaultValue = false)]
+    [JsonPropertyName("routerType")]
     public RouterTypeEnum? RouterType { get; set; }
 
     /// <summary>
@@ -81,7 +81,7 @@ public partial class SupportCenterSettings : IEquatable<SupportCenterSettings>
     /// Whether or not knowledge portal (previously support center) is enabled
     /// </summary>
     /// <value>Whether or not knowledge portal (previously support center) is enabled</value>
-    [DataMember(Name = "enabled", EmitDefaultValue = false)]
+    [JsonPropertyName("enabled")]
     public bool? Enabled { get; set; }
 
 
@@ -90,7 +90,7 @@ public partial class SupportCenterSettings : IEquatable<SupportCenterSettings>
     /// The knowledge base for knowledge portal (previously support center)
     /// </summary>
     /// <value>The knowledge base for knowledge portal (previously support center)</value>
-    [DataMember(Name = "knowledgeBase", EmitDefaultValue = false)]
+    [JsonPropertyName("knowledgeBase")]
     public AddressableEntityRef KnowledgeBase { get; set; }
 
 
@@ -99,7 +99,7 @@ public partial class SupportCenterSettings : IEquatable<SupportCenterSettings>
     /// Customizable display texts for knowledge portal (previously support center)
     /// </summary>
     /// <value>Customizable display texts for knowledge portal (previously support center)</value>
-    [DataMember(Name = "customMessages", EmitDefaultValue = false)]
+    [JsonPropertyName("customMessages")]
     public List<SupportCenterCustomMessage> CustomMessages { get; set; }
 
 
@@ -110,7 +110,7 @@ public partial class SupportCenterSettings : IEquatable<SupportCenterSettings>
     /// Available screens for the knowledge portal (previously support center) with its modules
     /// </summary>
     /// <value>Available screens for the knowledge portal (previously support center) with its modules</value>
-    [DataMember(Name = "screens", EmitDefaultValue = false)]
+    [JsonPropertyName("screens")]
     public List<SupportCenterScreen> Screens { get; set; }
 
 
@@ -119,7 +119,7 @@ public partial class SupportCenterSettings : IEquatable<SupportCenterSettings>
     /// Featured categories for knowledge portal (previously support center) home screen
     /// </summary>
     /// <value>Featured categories for knowledge portal (previously support center) home screen</value>
-    [DataMember(Name = "enabledCategories", EmitDefaultValue = false)]
+    [JsonPropertyName("enabledCategories")]
     public List<SupportCenterCategory> EnabledCategories { get; set; }
 
 
@@ -128,7 +128,7 @@ public partial class SupportCenterSettings : IEquatable<SupportCenterSettings>
     /// Document label filter. If set, only documents having at least one of the specified labels will be returned by knowledge document query operations.
     /// </summary>
     /// <value>Document label filter. If set, only documents having at least one of the specified labels will be returned by knowledge document query operations.</value>
-    [DataMember(Name = "labelFilter", EmitDefaultValue = false)]
+    [JsonPropertyName("labelFilter")]
     public SupportCenterLabelFilter LabelFilter { get; set; }
 
 
@@ -137,7 +137,7 @@ public partial class SupportCenterSettings : IEquatable<SupportCenterSettings>
     /// Style attributes for knowledge portal (previously support center)
     /// </summary>
     /// <value>Style attributes for knowledge portal (previously support center)</value>
-    [DataMember(Name = "styleSetting", EmitDefaultValue = false)]
+    [JsonPropertyName("styleSetting")]
     public SupportCenterStyleSetting StyleSetting { get; set; }
 
 
@@ -146,7 +146,7 @@ public partial class SupportCenterSettings : IEquatable<SupportCenterSettings>
     /// Customer feedback settings
     /// </summary>
     /// <value>Customer feedback settings</value>
-    [DataMember(Name = "feedback", EmitDefaultValue = false)]
+    [JsonPropertyName("feedback")]
     public SupportCenterFeedbackSettings Feedback { get; set; }
 
 

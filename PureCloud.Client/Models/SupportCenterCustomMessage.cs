@@ -7,14 +7,14 @@ namespace PureCloud.Client.Models;
 /// <summary>
 /// SupportCenterCustomMessage
 /// </summary>
-[DataContract]
+
 public partial class SupportCenterCustomMessage : IEquatable<SupportCenterCustomMessage>
 {
     /// <summary>
     /// Type of the message
     /// </summary>
     /// <value>Type of the message</value>
-    [JsonConverter(typeof(JsonStringEnumConverter))]
+    
     public enum TypeEnum
     {
         /// <summary>
@@ -41,7 +41,7 @@ public partial class SupportCenterCustomMessage : IEquatable<SupportCenterCustom
     /// Type of the message
     /// </summary>
     /// <value>Type of the message</value>
-    [DataMember(Name = "type", EmitDefaultValue = false)]
+    [JsonPropertyName("type")]
     public TypeEnum? Type { get; set; }
 
     /// <summary>
@@ -67,7 +67,7 @@ public partial class SupportCenterCustomMessage : IEquatable<SupportCenterCustom
     /// Default value for the message
     /// </summary>
     /// <value>Default value for the message</value>
-    [DataMember(Name = "defaultValue", EmitDefaultValue = false)]
+    [JsonPropertyName("defaultValue")]
     public string DefaultValue { get; set; }
 
 

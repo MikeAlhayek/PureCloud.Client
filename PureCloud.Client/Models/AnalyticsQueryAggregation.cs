@@ -7,14 +7,14 @@ namespace PureCloud.Client.Models;
 /// <summary>
 /// AnalyticsQueryAggregation
 /// </summary>
-[DataContract]
+
 public partial class AnalyticsQueryAggregation : IEquatable<AnalyticsQueryAggregation>
 {
     /// <summary>
     /// Optional type, can usually be inferred
     /// </summary>
     /// <value>Optional type, can usually be inferred</value>
-    [JsonConverter(typeof(JsonStringEnumConverter))]
+    
     public enum TypeEnum
     {
         /// <summary>
@@ -41,7 +41,7 @@ public partial class AnalyticsQueryAggregation : IEquatable<AnalyticsQueryAggreg
     /// Optional type, can usually be inferred
     /// </summary>
     /// <value>Optional type, can usually be inferred</value>
-    [DataMember(Name = "type", EmitDefaultValue = false)]
+    [JsonPropertyName("type")]
     public TypeEnum? Type { get; set; }
     /// <summary>
     /// Initializes a new instance of the <see cref="AnalyticsQueryAggregation" /> class.
@@ -69,7 +69,7 @@ public partial class AnalyticsQueryAggregation : IEquatable<AnalyticsQueryAggreg
     /// For use with termFrequency aggregations
     /// </summary>
     /// <value>For use with termFrequency aggregations</value>
-    [DataMember(Name = "dimension", EmitDefaultValue = false)]
+    [JsonPropertyName("dimension")]
     public string Dimension { get; set; }
 
 
@@ -78,7 +78,7 @@ public partial class AnalyticsQueryAggregation : IEquatable<AnalyticsQueryAggreg
     /// For use with numericRange aggregations
     /// </summary>
     /// <value>For use with numericRange aggregations</value>
-    [DataMember(Name = "metric", EmitDefaultValue = false)]
+    [JsonPropertyName("metric")]
     public string Metric { get; set; }
 
 
@@ -87,7 +87,7 @@ public partial class AnalyticsQueryAggregation : IEquatable<AnalyticsQueryAggreg
     /// For use with termFrequency aggregations
     /// </summary>
     /// <value>For use with termFrequency aggregations</value>
-    [DataMember(Name = "size", EmitDefaultValue = false)]
+    [JsonPropertyName("size")]
     public int? Size { get; set; }
 
 
@@ -96,7 +96,7 @@ public partial class AnalyticsQueryAggregation : IEquatable<AnalyticsQueryAggreg
     /// For use with numericRange aggregations
     /// </summary>
     /// <value>For use with numericRange aggregations</value>
-    [DataMember(Name = "ranges", EmitDefaultValue = false)]
+    [JsonPropertyName("ranges")]
     public List<AggregationRange> Ranges { get; set; }
 
 

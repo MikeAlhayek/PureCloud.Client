@@ -1,12 +1,12 @@
-using System.Runtime.Serialization;
 using System.Text;
+using System.Text.Json.Serialization;
 
 namespace PureCloud.Client.Models;
 
 /// <summary>
 /// JourneyViewElementFilterRangeData
 /// </summary>
-[DataContract]
+
 public partial class JourneyViewElementFilterRangeData : IEquatable<JourneyViewElementFilterRangeData>
 {
     /// <summary>
@@ -27,7 +27,7 @@ public partial class JourneyViewElementFilterRangeData : IEquatable<JourneyViewE
     /// An ISO 8601 time duration. Only one of number or duration must be specified.
     /// </summary>
     /// <value>An ISO 8601 time duration. Only one of number or duration must be specified.</value>
-    [DataMember(Name = "duration", EmitDefaultValue = false)]
+    [JsonPropertyName("duration")]
     public string Duration { get; set; }
 
 
@@ -36,7 +36,7 @@ public partial class JourneyViewElementFilterRangeData : IEquatable<JourneyViewE
     /// A numeric value. Only one of number or duration must be specified.
     /// </summary>
     /// <value>A numeric value. Only one of number or duration must be specified.</value>
-    [DataMember(Name = "number", EmitDefaultValue = false)]
+    [JsonPropertyName("number")]
     public double? Number { get; set; }
 
 

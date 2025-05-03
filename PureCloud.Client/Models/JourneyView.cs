@@ -1,4 +1,3 @@
-using System.Runtime.Serialization;
 using System.Text;
 using System.Text.Json.Serialization;
 
@@ -7,7 +6,7 @@ namespace PureCloud.Client.Models;
 /// <summary>
 /// A journey view
 /// </summary>
-[DataContract]
+
 public partial class JourneyView : IEquatable<JourneyView>
 {
 
@@ -42,7 +41,7 @@ public partial class JourneyView : IEquatable<JourneyView>
     /// The globally unique identifier for the object.
     /// </summary>
     /// <value>The globally unique identifier for the object.</value>
-    [DataMember(Name = "id", EmitDefaultValue = false)]
+    [JsonPropertyName("id")]
     public string Id { get; private set; }
 
 
@@ -50,7 +49,7 @@ public partial class JourneyView : IEquatable<JourneyView>
     /// <summary>
     /// Gets or Sets Name
     /// </summary>
-    [DataMember(Name = "name", EmitDefaultValue = false)]
+    [JsonPropertyName("name")]
     public string Name { get; set; }
 
 
@@ -59,7 +58,7 @@ public partial class JourneyView : IEquatable<JourneyView>
     /// A description of the journey view
     /// </summary>
     /// <value>A description of the journey view</value>
-    [DataMember(Name = "description", EmitDefaultValue = false)]
+    [JsonPropertyName("description")]
     public string Description { get; set; }
 
 
@@ -68,7 +67,7 @@ public partial class JourneyView : IEquatable<JourneyView>
     /// The version of the journey view
     /// </summary>
     /// <value>The version of the journey view</value>
-    [DataMember(Name = "version", EmitDefaultValue = false)]
+    [JsonPropertyName("version")]
     public int? Version { get; private set; }
 
 
@@ -77,7 +76,7 @@ public partial class JourneyView : IEquatable<JourneyView>
     /// User that has created the view.
     /// </summary>
     /// <value>User that has created the view.</value>
-    [DataMember(Name = "createdBy", EmitDefaultValue = false)]
+    [JsonPropertyName("createdBy")]
     public JourneyViewUser CreatedBy { get; private set; }
 
 
@@ -86,7 +85,7 @@ public partial class JourneyView : IEquatable<JourneyView>
     /// User that has modified the view.
     /// </summary>
     /// <value>User that has modified the view.</value>
-    [DataMember(Name = "modifiedBy", EmitDefaultValue = false)]
+    [JsonPropertyName("modifiedBy")]
     public JourneyViewUser ModifiedBy { get; private set; }
 
 
@@ -95,7 +94,7 @@ public partial class JourneyView : IEquatable<JourneyView>
     /// An absolute timeframe for the journey view, expressed as an ISO 8601 interval. Only one of interval or duration must be specified. Intervals are represented as an ISO-8601 string. For example: YYYY-MM-DDThh:mm:ss/YYYY-MM-DDThh:mm:ss
     /// </summary>
     /// <value>An absolute timeframe for the journey view, expressed as an ISO 8601 interval. Only one of interval or duration must be specified. Intervals are represented as an ISO-8601 string. For example: YYYY-MM-DDThh:mm:ss/YYYY-MM-DDThh:mm:ss</value>
-    [DataMember(Name = "interval", EmitDefaultValue = false)]
+    [JsonPropertyName("interval")]
     public string Interval { get; set; }
 
 
@@ -104,7 +103,7 @@ public partial class JourneyView : IEquatable<JourneyView>
     /// A relative timeframe for the journey view, expressed as an ISO 8601 duration. Only one of interval or duration must be specified. Periods are represented as an ISO-8601 string. For example: P1D or P1DT12H
     /// </summary>
     /// <value>A relative timeframe for the journey view, expressed as an ISO 8601 duration. Only one of interval or duration must be specified. Periods are represented as an ISO-8601 string. For example: P1D or P1DT12H</value>
-    [DataMember(Name = "duration", EmitDefaultValue = false)]
+    [JsonPropertyName("duration")]
     public string Duration { get; set; }
 
 
@@ -113,7 +112,7 @@ public partial class JourneyView : IEquatable<JourneyView>
     /// The elements within the journey view
     /// </summary>
     /// <value>The elements within the journey view</value>
-    [DataMember(Name = "elements", EmitDefaultValue = false)]
+    [JsonPropertyName("elements")]
     public List<JourneyViewElement> Elements { get; set; }
 
 
@@ -122,7 +121,7 @@ public partial class JourneyView : IEquatable<JourneyView>
     /// A list of charts to measure within context of the elements of the the journey view
     /// </summary>
     /// <value>A list of charts to measure within context of the elements of the the journey view</value>
-    [DataMember(Name = "charts", EmitDefaultValue = false)]
+    [JsonPropertyName("charts")]
     public List<JourneyViewChart> Charts { get; set; }
 
 
@@ -131,7 +130,7 @@ public partial class JourneyView : IEquatable<JourneyView>
     /// The date when the journey view was created. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z
     /// </summary>
     /// <value>The date when the journey view was created. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z</value>
-    [DataMember(Name = "dateCreated", EmitDefaultValue = false)]
+    [JsonPropertyName("dateCreated")]
     public DateTime? DateCreated { get; private set; }
 
 
@@ -140,7 +139,7 @@ public partial class JourneyView : IEquatable<JourneyView>
     /// The date when this version of the journey view was modified. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z
     /// </summary>
     /// <value>The date when this version of the journey view was modified. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z</value>
-    [DataMember(Name = "dateModified", EmitDefaultValue = false)]
+    [JsonPropertyName("dateModified")]
     public DateTime? DateModified { get; private set; }
 
 
@@ -149,7 +148,7 @@ public partial class JourneyView : IEquatable<JourneyView>
     /// The URI for this object
     /// </summary>
     /// <value>The URI for this object</value>
-    [DataMember(Name = "selfUri", EmitDefaultValue = false)]
+    [JsonPropertyName("selfUri")]
     public string SelfUri { get; private set; }
 
 

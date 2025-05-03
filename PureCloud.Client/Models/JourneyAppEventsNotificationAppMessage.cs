@@ -1,12 +1,12 @@
-using System.Runtime.Serialization;
 using System.Text;
+using System.Text.Json.Serialization;
 
 namespace PureCloud.Client.Models;
 
 /// <summary>
 /// JourneyAppEventsNotificationAppMessage
 /// </summary>
-[DataContract]
+
 public partial class JourneyAppEventsNotificationAppMessage : IEquatable<JourneyAppEventsNotificationAppMessage>
 {
     /// <summary>
@@ -48,7 +48,7 @@ public partial class JourneyAppEventsNotificationAppMessage : IEquatable<Journey
     /// <summary>
     /// Gets or Sets EventName
     /// </summary>
-    [DataMember(Name = "eventName", EmitDefaultValue = false)]
+    [JsonPropertyName("eventName")]
     public string EventName { get; set; }
 
 
@@ -56,7 +56,7 @@ public partial class JourneyAppEventsNotificationAppMessage : IEquatable<Journey
     /// <summary>
     /// Gets or Sets ScreenName
     /// </summary>
-    [DataMember(Name = "screenName", EmitDefaultValue = false)]
+    [JsonPropertyName("screenName")]
     public string ScreenName { get; set; }
 
 
@@ -64,7 +64,7 @@ public partial class JourneyAppEventsNotificationAppMessage : IEquatable<Journey
     /// <summary>
     /// Gets or Sets App
     /// </summary>
-    [DataMember(Name = "app", EmitDefaultValue = false)]
+    [JsonPropertyName("app")]
     public JourneyAppEventsNotificationApp App { get; set; }
 
 
@@ -72,7 +72,7 @@ public partial class JourneyAppEventsNotificationAppMessage : IEquatable<Journey
     /// <summary>
     /// Gets or Sets Device
     /// </summary>
-    [DataMember(Name = "device", EmitDefaultValue = false)]
+    [JsonPropertyName("device")]
     public JourneyAppEventsNotificationDevice Device { get; set; }
 
 
@@ -80,7 +80,7 @@ public partial class JourneyAppEventsNotificationAppMessage : IEquatable<Journey
     /// <summary>
     /// Gets or Sets IpAddress
     /// </summary>
-    [DataMember(Name = "ipAddress", EmitDefaultValue = false)]
+    [JsonPropertyName("ipAddress")]
     public string IpAddress { get; set; }
 
 
@@ -88,7 +88,7 @@ public partial class JourneyAppEventsNotificationAppMessage : IEquatable<Journey
     /// <summary>
     /// Gets or Sets IpOrganization
     /// </summary>
-    [DataMember(Name = "ipOrganization", EmitDefaultValue = false)]
+    [JsonPropertyName("ipOrganization")]
     public string IpOrganization { get; set; }
 
 
@@ -96,7 +96,7 @@ public partial class JourneyAppEventsNotificationAppMessage : IEquatable<Journey
     /// <summary>
     /// Gets or Sets Geolocation
     /// </summary>
-    [DataMember(Name = "geolocation", EmitDefaultValue = false)]
+    [JsonPropertyName("geolocation")]
     public JourneyAppEventsNotificationGeoLocation Geolocation { get; set; }
 
 
@@ -104,7 +104,7 @@ public partial class JourneyAppEventsNotificationAppMessage : IEquatable<Journey
     /// <summary>
     /// Gets or Sets SdkLibrary
     /// </summary>
-    [DataMember(Name = "sdkLibrary", EmitDefaultValue = false)]
+    [JsonPropertyName("sdkLibrary")]
     public JourneyAppEventsNotificationSdkLibrary SdkLibrary { get; set; }
 
 
@@ -112,7 +112,7 @@ public partial class JourneyAppEventsNotificationAppMessage : IEquatable<Journey
     /// <summary>
     /// Gets or Sets NetworkConnectivity
     /// </summary>
-    [DataMember(Name = "networkConnectivity", EmitDefaultValue = false)]
+    [JsonPropertyName("networkConnectivity")]
     public JourneyAppEventsNotificationNetworkConnectivity NetworkConnectivity { get; set; }
 
 
@@ -120,7 +120,7 @@ public partial class JourneyAppEventsNotificationAppMessage : IEquatable<Journey
     /// <summary>
     /// Gets or Sets MktCampaign
     /// </summary>
-    [DataMember(Name = "mktCampaign", EmitDefaultValue = false)]
+    [JsonPropertyName("mktCampaign")]
     public JourneyAppEventsNotificationMktCampaign MktCampaign { get; set; }
 
 
@@ -128,7 +128,7 @@ public partial class JourneyAppEventsNotificationAppMessage : IEquatable<Journey
     /// <summary>
     /// Gets or Sets SearchQuery
     /// </summary>
-    [DataMember(Name = "searchQuery", EmitDefaultValue = false)]
+    [JsonPropertyName("searchQuery")]
     public string SearchQuery { get; set; }
 
 
@@ -136,7 +136,7 @@ public partial class JourneyAppEventsNotificationAppMessage : IEquatable<Journey
     /// <summary>
     /// Gets or Sets Attributes
     /// </summary>
-    [DataMember(Name = "attributes", EmitDefaultValue = false)]
+    [JsonPropertyName("attributes")]
     public Dictionary<string, JourneyAppEventsNotificationCustomEventAttribute> Attributes { get; set; }
 
 
@@ -144,7 +144,7 @@ public partial class JourneyAppEventsNotificationAppMessage : IEquatable<Journey
     /// <summary>
     /// Gets or Sets Traits
     /// </summary>
-    [DataMember(Name = "traits", EmitDefaultValue = false)]
+    [JsonPropertyName("traits")]
     public Dictionary<string, JourneyAppEventsNotificationCustomEventAttribute> Traits { get; set; }
 
 

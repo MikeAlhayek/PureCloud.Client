@@ -7,14 +7,14 @@ namespace PureCloud.Client.Models;
 /// <summary>
 /// ColumnDataTypeSpecification
 /// </summary>
-[DataContract]
+
 public partial class ColumnDataTypeSpecification : IEquatable<ColumnDataTypeSpecification>
 {
     /// <summary>
     /// The data type of the column selected for dynamic queueing (TEXT, NUMERIC or TIMESTAMP)
     /// </summary>
     /// <value>The data type of the column selected for dynamic queueing (TEXT, NUMERIC or TIMESTAMP)</value>
-    [JsonConverter(typeof(JsonStringEnumConverter))]
+    
     public enum ColumnDataTypeEnum
     {
         /// <summary>
@@ -47,7 +47,7 @@ public partial class ColumnDataTypeSpecification : IEquatable<ColumnDataTypeSpec
     /// The data type of the column selected for dynamic queueing (TEXT, NUMERIC or TIMESTAMP)
     /// </summary>
     /// <value>The data type of the column selected for dynamic queueing (TEXT, NUMERIC or TIMESTAMP)</value>
-    [DataMember(Name = "columnDataType", EmitDefaultValue = false)]
+    [JsonPropertyName("columnDataType")]
     public ColumnDataTypeEnum? ColumnDataType { get; set; }
     /// <summary>
     /// Initializes a new instance of the <see cref="ColumnDataTypeSpecification" /> class.
@@ -73,7 +73,7 @@ public partial class ColumnDataTypeSpecification : IEquatable<ColumnDataTypeSpec
     /// The column name of a column selected for dynamic queueing
     /// </summary>
     /// <value>The column name of a column selected for dynamic queueing</value>
-    [DataMember(Name = "columnName", EmitDefaultValue = false)]
+    [JsonPropertyName("columnName")]
     public string ColumnName { get; set; }
 
 
@@ -84,7 +84,7 @@ public partial class ColumnDataTypeSpecification : IEquatable<ColumnDataTypeSpec
     /// The minimum length of the numeric column selected for dynamic queueing
     /// </summary>
     /// <value>The minimum length of the numeric column selected for dynamic queueing</value>
-    [DataMember(Name = "min", EmitDefaultValue = false)]
+    [JsonPropertyName("min")]
     public int? Min { get; set; }
 
 
@@ -93,7 +93,7 @@ public partial class ColumnDataTypeSpecification : IEquatable<ColumnDataTypeSpec
     /// The maximum length of the numeric column selected for dynamic queueing
     /// </summary>
     /// <value>The maximum length of the numeric column selected for dynamic queueing</value>
-    [DataMember(Name = "max", EmitDefaultValue = false)]
+    [JsonPropertyName("max")]
     public int? Max { get; set; }
 
 
@@ -102,7 +102,7 @@ public partial class ColumnDataTypeSpecification : IEquatable<ColumnDataTypeSpec
     /// The maximum length of the text column selected for dynamic queueing
     /// </summary>
     /// <value>The maximum length of the text column selected for dynamic queueing</value>
-    [DataMember(Name = "maxLength", EmitDefaultValue = false)]
+    [JsonPropertyName("maxLength")]
     public int? MaxLength { get; set; }
 
 

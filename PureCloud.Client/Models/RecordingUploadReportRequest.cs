@@ -7,14 +7,14 @@ namespace PureCloud.Client.Models;
 /// <summary>
 /// RecordingUploadReportRequest
 /// </summary>
-[DataContract]
+
 public partial class RecordingUploadReportRequest : IEquatable<RecordingUploadReportRequest>
 {
     /// <summary>
     /// Report will include uploads with this status
     /// </summary>
     /// <value>Report will include uploads with this status</value>
-    [JsonConverter(typeof(JsonStringEnumConverter))]
+    
     public enum UploadStatusEnum
     {
         /// <summary>
@@ -53,7 +53,7 @@ public partial class RecordingUploadReportRequest : IEquatable<RecordingUploadRe
     /// Report will include uploads with this status
     /// </summary>
     /// <value>Report will include uploads with this status</value>
-    [DataMember(Name = "uploadStatus", EmitDefaultValue = false)]
+    [JsonPropertyName("uploadStatus")]
     public UploadStatusEnum? UploadStatus { get; set; }
 
     /// <summary>
@@ -79,7 +79,7 @@ public partial class RecordingUploadReportRequest : IEquatable<RecordingUploadRe
     /// Report will include uploads since this date. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z
     /// </summary>
     /// <value>Report will include uploads since this date. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z</value>
-    [DataMember(Name = "dateSince", EmitDefaultValue = false)]
+    [JsonPropertyName("dateSince")]
     public DateTime? DateSince { get; set; }
 
 

@@ -1,4 +1,3 @@
-using System.Runtime.Serialization;
 using System.Text;
 using System.Text.Json.Serialization;
 
@@ -7,7 +6,7 @@ namespace PureCloud.Client.Models;
 /// <summary>
 /// Template body object.
 /// </summary>
-[DataContract]
+
 public partial class NotificationTemplateBody : IEquatable<NotificationTemplateBody>
 {
 
@@ -34,7 +33,7 @@ public partial class NotificationTemplateBody : IEquatable<NotificationTemplateB
     /// Body text. For WhatsApp, ignored.
     /// </summary>
     /// <value>Body text. For WhatsApp, ignored.</value>
-    [DataMember(Name = "text", EmitDefaultValue = false)]
+    [JsonPropertyName("text")]
     public string Text { get; set; }
 
 
@@ -43,7 +42,7 @@ public partial class NotificationTemplateBody : IEquatable<NotificationTemplateB
     /// Template parameters for placeholders in template.
     /// </summary>
     /// <value>Template parameters for placeholders in template.</value>
-    [DataMember(Name = "parameters", EmitDefaultValue = false)]
+    [JsonPropertyName("parameters")]
     public List<NotificationTemplateParameter> Parameters { get; set; }
 
 

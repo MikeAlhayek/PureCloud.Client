@@ -1,12 +1,12 @@
-using System.Runtime.Serialization;
 using System.Text;
+using System.Text.Json.Serialization;
 
 namespace PureCloud.Client.Models;
 
 /// <summary>
 /// AddConversationResponse
 /// </summary>
-[DataContract]
+
 public partial class AddConversationResponse : IEquatable<AddConversationResponse>
 {
     /// <summary>
@@ -23,7 +23,7 @@ public partial class AddConversationResponse : IEquatable<AddConversationRespons
     /// The conversation reference
     /// </summary>
     /// <value>The conversation reference</value>
-    [DataMember(Name = "conversation", EmitDefaultValue = false)]
+    [JsonPropertyName("conversation")]
     public ConversationReference Conversation { get; private set; }
 
 
@@ -32,7 +32,7 @@ public partial class AddConversationResponse : IEquatable<AddConversationRespons
     /// The appointment reference
     /// </summary>
     /// <value>The appointment reference</value>
-    [DataMember(Name = "appointment", EmitDefaultValue = false)]
+    [JsonPropertyName("appointment")]
     public CoachingAppointmentReference Appointment { get; private set; }
 
 

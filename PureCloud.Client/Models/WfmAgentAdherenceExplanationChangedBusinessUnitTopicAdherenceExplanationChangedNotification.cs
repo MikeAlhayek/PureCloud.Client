@@ -7,13 +7,13 @@ namespace PureCloud.Client.Models;
 /// <summary>
 /// WfmAgentAdherenceExplanationChangedBusinessUnitTopicAdherenceExplanationChangedNotification
 /// </summary>
-[DataContract]
+
 public partial class WfmAgentAdherenceExplanationChangedBusinessUnitTopicAdherenceExplanationChangedNotification : IEquatable<WfmAgentAdherenceExplanationChangedBusinessUnitTopicAdherenceExplanationChangedNotification>
 {
     /// <summary>
     /// Gets or Sets Type
     /// </summary>
-    [JsonConverter(typeof(JsonStringEnumConverter))]
+    
     public enum TypeEnum
     {
         /// <summary>
@@ -33,7 +33,7 @@ public partial class WfmAgentAdherenceExplanationChangedBusinessUnitTopicAdheren
     /// <summary>
     /// Gets or Sets Status
     /// </summary>
-    [JsonConverter(typeof(JsonStringEnumConverter))]
+    
     public enum StatusEnum
     {
         /// <summary>
@@ -65,12 +65,12 @@ public partial class WfmAgentAdherenceExplanationChangedBusinessUnitTopicAdheren
     /// <summary>
     /// Gets or Sets Type
     /// </summary>
-    [DataMember(Name = "type", EmitDefaultValue = false)]
+    [JsonPropertyName("type")]
     public TypeEnum? Type { get; set; }
     /// <summary>
     /// Gets or Sets Status
     /// </summary>
-    [DataMember(Name = "status", EmitDefaultValue = false)]
+    [JsonPropertyName("status")]
     public StatusEnum? Status { get; set; }
     /// <summary>
     /// Initializes a new instance of the <see cref="WfmAgentAdherenceExplanationChangedBusinessUnitTopicAdherenceExplanationChangedNotification" /> class.
@@ -107,7 +107,7 @@ public partial class WfmAgentAdherenceExplanationChangedBusinessUnitTopicAdheren
     /// <summary>
     /// Gets or Sets Id
     /// </summary>
-    [DataMember(Name = "id", EmitDefaultValue = false)]
+    [JsonPropertyName("id")]
     public string Id { get; set; }
 
 
@@ -115,7 +115,7 @@ public partial class WfmAgentAdherenceExplanationChangedBusinessUnitTopicAdheren
     /// <summary>
     /// Gets or Sets Agent
     /// </summary>
-    [DataMember(Name = "agent", EmitDefaultValue = false)]
+    [JsonPropertyName("agent")]
     public WfmAgentAdherenceExplanationChangedBusinessUnitTopicUserReference Agent { get; set; }
 
 
@@ -123,7 +123,7 @@ public partial class WfmAgentAdherenceExplanationChangedBusinessUnitTopicAdheren
     /// <summary>
     /// Gets or Sets ManagementUnit
     /// </summary>
-    [DataMember(Name = "managementUnit", EmitDefaultValue = false)]
+    [JsonPropertyName("managementUnit")]
     public WfmAgentAdherenceExplanationChangedBusinessUnitTopicManagementUnit ManagementUnit { get; set; }
 
 
@@ -131,7 +131,7 @@ public partial class WfmAgentAdherenceExplanationChangedBusinessUnitTopicAdheren
     /// <summary>
     /// Gets or Sets BusinessUnit
     /// </summary>
-    [DataMember(Name = "businessUnit", EmitDefaultValue = false)]
+    [JsonPropertyName("businessUnit")]
     public WfmAgentAdherenceExplanationChangedBusinessUnitTopicBusinessUnit BusinessUnit { get; set; }
 
 
@@ -143,7 +143,7 @@ public partial class WfmAgentAdherenceExplanationChangedBusinessUnitTopicAdheren
     /// <summary>
     /// Gets or Sets StartDate
     /// </summary>
-    [DataMember(Name = "startDate", EmitDefaultValue = false)]
+    [JsonPropertyName("startDate")]
     public DateTime? StartDate { get; set; }
 
 
@@ -151,7 +151,7 @@ public partial class WfmAgentAdherenceExplanationChangedBusinessUnitTopicAdheren
     /// <summary>
     /// Gets or Sets LengthMinutes
     /// </summary>
-    [DataMember(Name = "lengthMinutes", EmitDefaultValue = false)]
+    [JsonPropertyName("lengthMinutes")]
     public long? LengthMinutes { get; set; }
 
 
@@ -159,7 +159,7 @@ public partial class WfmAgentAdherenceExplanationChangedBusinessUnitTopicAdheren
     /// <summary>
     /// Gets or Sets Notes
     /// </summary>
-    [DataMember(Name = "notes", EmitDefaultValue = false)]
+    [JsonPropertyName("notes")]
     public string Notes { get; set; }
 
 
@@ -167,7 +167,7 @@ public partial class WfmAgentAdherenceExplanationChangedBusinessUnitTopicAdheren
     /// <summary>
     /// Gets or Sets ReviewedBy
     /// </summary>
-    [DataMember(Name = "reviewedBy", EmitDefaultValue = false)]
+    [JsonPropertyName("reviewedBy")]
     public WfmAgentAdherenceExplanationChangedBusinessUnitTopicUserReference ReviewedBy { get; set; }
 
 
@@ -175,7 +175,7 @@ public partial class WfmAgentAdherenceExplanationChangedBusinessUnitTopicAdheren
     /// <summary>
     /// Gets or Sets ReviewedDate
     /// </summary>
-    [DataMember(Name = "reviewedDate", EmitDefaultValue = false)]
+    [JsonPropertyName("reviewedDate")]
     public DateTime? ReviewedDate { get; set; }
 
 

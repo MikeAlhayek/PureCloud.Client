@@ -1,12 +1,12 @@
-using System.Runtime.Serialization;
 using System.Text;
+using System.Text.Json.Serialization;
 
 namespace PureCloud.Client.Models;
 
 /// <summary>
 /// AnalyticsSessionMetric
 /// </summary>
-[DataContract]
+
 public partial class AnalyticsSessionMetric : IEquatable<AnalyticsSessionMetric>
 {
     /// <summary>
@@ -29,7 +29,7 @@ public partial class AnalyticsSessionMetric : IEquatable<AnalyticsSessionMetric>
     /// Metric emission date. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z
     /// </summary>
     /// <value>Metric emission date. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z</value>
-    [DataMember(Name = "emitDate", EmitDefaultValue = false)]
+    [JsonPropertyName("emitDate")]
     public DateTime? EmitDate { get; set; }
 
 
@@ -38,7 +38,7 @@ public partial class AnalyticsSessionMetric : IEquatable<AnalyticsSessionMetric>
     /// Unique name of this metric
     /// </summary>
     /// <value>Unique name of this metric</value>
-    [DataMember(Name = "name", EmitDefaultValue = false)]
+    [JsonPropertyName("name")]
     public string Name { get; set; }
 
 
@@ -47,7 +47,7 @@ public partial class AnalyticsSessionMetric : IEquatable<AnalyticsSessionMetric>
     /// The metric value
     /// </summary>
     /// <value>The metric value</value>
-    [DataMember(Name = "value", EmitDefaultValue = false)]
+    [JsonPropertyName("value")]
     public long? Value { get; set; }
 
 

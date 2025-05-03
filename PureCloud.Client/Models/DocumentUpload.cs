@@ -1,4 +1,3 @@
-using System.Runtime.Serialization;
 using System.Text;
 using System.Text.Json.Serialization;
 
@@ -7,7 +6,7 @@ namespace PureCloud.Client.Models;
 /// <summary>
 /// DocumentUpload
 /// </summary>
-[DataContract]
+
 public partial class DocumentUpload : IEquatable<DocumentUpload>
 {
 
@@ -38,7 +37,7 @@ public partial class DocumentUpload : IEquatable<DocumentUpload>
     /// The name of the document
     /// </summary>
     /// <value>The name of the document</value>
-    [DataMember(Name = "name", EmitDefaultValue = false)]
+    [JsonPropertyName("name")]
     public string Name { get; set; }
 
 
@@ -47,7 +46,7 @@ public partial class DocumentUpload : IEquatable<DocumentUpload>
     /// The workspace the document will be uploaded to
     /// </summary>
     /// <value>The workspace the document will be uploaded to</value>
-    [DataMember(Name = "workspace", EmitDefaultValue = false)]
+    [JsonPropertyName("workspace")]
     public DomainEntityRef Workspace { get; set; }
 
 
@@ -55,7 +54,7 @@ public partial class DocumentUpload : IEquatable<DocumentUpload>
     /// <summary>
     /// Gets or Sets Tags
     /// </summary>
-    [DataMember(Name = "tags", EmitDefaultValue = false)]
+    [JsonPropertyName("tags")]
     public List<string> Tags { get; set; }
 
 
@@ -63,7 +62,7 @@ public partial class DocumentUpload : IEquatable<DocumentUpload>
     /// <summary>
     /// Gets or Sets TagIds
     /// </summary>
-    [DataMember(Name = "tagIds", EmitDefaultValue = false)]
+    [JsonPropertyName("tagIds")]
     public List<string> TagIds { get; set; }
 
 

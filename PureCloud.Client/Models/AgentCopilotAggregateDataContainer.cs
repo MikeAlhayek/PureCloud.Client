@@ -1,12 +1,12 @@
-using System.Runtime.Serialization;
 using System.Text;
+using System.Text.Json.Serialization;
 
 namespace PureCloud.Client.Models;
 
 /// <summary>
 /// AgentCopilotAggregateDataContainer
 /// </summary>
-[DataContract]
+
 public partial class AgentCopilotAggregateDataContainer : IEquatable<AgentCopilotAggregateDataContainer>
 {
     /// <summary>
@@ -27,7 +27,7 @@ public partial class AgentCopilotAggregateDataContainer : IEquatable<AgentCopilo
     /// A mapping from dimension to value
     /// </summary>
     /// <value>A mapping from dimension to value</value>
-    [DataMember(Name = "group", EmitDefaultValue = false)]
+    [JsonPropertyName("group")]
     public Dictionary<string, string> Group { get; set; }
 
 
@@ -35,7 +35,7 @@ public partial class AgentCopilotAggregateDataContainer : IEquatable<AgentCopilo
     /// <summary>
     /// Gets or Sets Data
     /// </summary>
-    [DataMember(Name = "data", EmitDefaultValue = false)]
+    [JsonPropertyName("data")]
     public List<StatisticalResponse> Data { get; set; }
 
 

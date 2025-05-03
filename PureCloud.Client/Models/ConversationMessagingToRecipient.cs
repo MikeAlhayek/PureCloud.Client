@@ -7,14 +7,14 @@ namespace PureCloud.Client.Models;
 /// <summary>
 /// Information about the recipient the message is sent to.
 /// </summary>
-[DataContract]
+
 public partial class ConversationMessagingToRecipient : IEquatable<ConversationMessagingToRecipient>
 {
     /// <summary>
     /// The recipient ID type. This is used to indicate the format used for the ID.
     /// </summary>
     /// <value>The recipient ID type. This is used to indicate the format used for the ID.</value>
-    [JsonConverter(typeof(JsonStringEnumConverter))]
+    
     public enum IdTypeEnum
     {
         /// <summary>
@@ -53,7 +53,7 @@ public partial class ConversationMessagingToRecipient : IEquatable<ConversationM
     /// The recipient ID type. This is used to indicate the format used for the ID.
     /// </summary>
     /// <value>The recipient ID type. This is used to indicate the format used for the ID.</value>
-    [DataMember(Name = "idType", EmitDefaultValue = false)]
+    [JsonPropertyName("idType")]
     public IdTypeEnum? IdType { get; private set; }
 
     /// <summary>
@@ -79,7 +79,7 @@ public partial class ConversationMessagingToRecipient : IEquatable<ConversationM
     /// Nickname or display name of the recipient.
     /// </summary>
     /// <value>Nickname or display name of the recipient.</value>
-    [DataMember(Name = "nickname", EmitDefaultValue = false)]
+    [JsonPropertyName("nickname")]
     public string Nickname { get; private set; }
 
 
@@ -88,7 +88,7 @@ public partial class ConversationMessagingToRecipient : IEquatable<ConversationM
     /// The recipient ID specific to the provider.
     /// </summary>
     /// <value>The recipient ID specific to the provider.</value>
-    [DataMember(Name = "id", EmitDefaultValue = false)]
+    [JsonPropertyName("id")]
     public string Id { get; set; }
 
 
@@ -99,7 +99,7 @@ public partial class ConversationMessagingToRecipient : IEquatable<ConversationM
     /// URL of an image that represents the recipient.
     /// </summary>
     /// <value>URL of an image that represents the recipient.</value>
-    [DataMember(Name = "image", EmitDefaultValue = false)]
+    [JsonPropertyName("image")]
     public string Image { get; private set; }
 
 
@@ -108,7 +108,7 @@ public partial class ConversationMessagingToRecipient : IEquatable<ConversationM
     /// First name of the recipient.
     /// </summary>
     /// <value>First name of the recipient.</value>
-    [DataMember(Name = "firstName", EmitDefaultValue = false)]
+    [JsonPropertyName("firstName")]
     public string FirstName { get; private set; }
 
 
@@ -117,7 +117,7 @@ public partial class ConversationMessagingToRecipient : IEquatable<ConversationM
     /// Last name of the recipient.
     /// </summary>
     /// <value>Last name of the recipient.</value>
-    [DataMember(Name = "lastName", EmitDefaultValue = false)]
+    [JsonPropertyName("lastName")]
     public string LastName { get; private set; }
 
 
@@ -126,7 +126,7 @@ public partial class ConversationMessagingToRecipient : IEquatable<ConversationM
     /// E-mail address of the recipient.
     /// </summary>
     /// <value>E-mail address of the recipient.</value>
-    [DataMember(Name = "email", EmitDefaultValue = false)]
+    [JsonPropertyName("email")]
     public string Email { get; private set; }
 
 
@@ -135,7 +135,7 @@ public partial class ConversationMessagingToRecipient : IEquatable<ConversationM
     /// The identifier of the external contact.
     /// </summary>
     /// <value>The identifier of the external contact.</value>
-    [DataMember(Name = "externalContactId", EmitDefaultValue = false)]
+    [JsonPropertyName("externalContactId")]
     public string ExternalContactId { get; set; }
 
 
@@ -144,7 +144,7 @@ public partial class ConversationMessagingToRecipient : IEquatable<ConversationM
     /// List of recipient additional identifiers
     /// </summary>
     /// <value>List of recipient additional identifiers</value>
-    [DataMember(Name = "additionalIds", EmitDefaultValue = false)]
+    [JsonPropertyName("additionalIds")]
     public List<ConversationRecipientAdditionalIdentifier> AdditionalIds { get; private set; }
 
 

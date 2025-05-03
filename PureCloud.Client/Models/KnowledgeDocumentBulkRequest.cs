@@ -7,14 +7,14 @@ namespace PureCloud.Client.Models;
 /// <summary>
 /// KnowledgeDocumentBulkRequest
 /// </summary>
-[DataContract]
+
 public partial class KnowledgeDocumentBulkRequest : IEquatable<KnowledgeDocumentBulkRequest>
 {
     /// <summary>
     /// Document type according to assigned template
     /// </summary>
     /// <value>Document type according to assigned template</value>
-    [JsonConverter(typeof(JsonStringEnumConverter))]
+    
     public enum TypeEnum
     {
         /// <summary>
@@ -41,7 +41,7 @@ public partial class KnowledgeDocumentBulkRequest : IEquatable<KnowledgeDocument
     /// Document type according to assigned template
     /// </summary>
     /// <value>Document type according to assigned template</value>
-    [DataMember(Name = "type", EmitDefaultValue = false)]
+    [JsonPropertyName("type")]
     public TypeEnum? Type { get; set; }
 
     /// <summary>
@@ -77,7 +77,7 @@ public partial class KnowledgeDocumentBulkRequest : IEquatable<KnowledgeDocument
     /// External Url to the document
     /// </summary>
     /// <value>External Url to the document</value>
-    [DataMember(Name = "externalUrl", EmitDefaultValue = false)]
+    [JsonPropertyName("externalUrl")]
     public string ExternalUrl { get; set; }
 
 
@@ -86,7 +86,7 @@ public partial class KnowledgeDocumentBulkRequest : IEquatable<KnowledgeDocument
     /// Faq document details
     /// </summary>
     /// <value>Faq document details</value>
-    [DataMember(Name = "faq", EmitDefaultValue = false)]
+    [JsonPropertyName("faq")]
     public DocumentFaq Faq { get; set; }
 
 
@@ -95,7 +95,7 @@ public partial class KnowledgeDocumentBulkRequest : IEquatable<KnowledgeDocument
     /// Document categories
     /// </summary>
     /// <value>Document categories</value>
-    [DataMember(Name = "categories", EmitDefaultValue = false)]
+    [JsonPropertyName("categories")]
     public List<DocumentCategoryInput> Categories { get; set; }
 
 
@@ -104,7 +104,7 @@ public partial class KnowledgeDocumentBulkRequest : IEquatable<KnowledgeDocument
     /// Article details
     /// </summary>
     /// <value>Article details</value>
-    [DataMember(Name = "article", EmitDefaultValue = false)]
+    [JsonPropertyName("article")]
     public DocumentArticle Article { get; set; }
 
 
@@ -113,7 +113,7 @@ public partial class KnowledgeDocumentBulkRequest : IEquatable<KnowledgeDocument
     /// Identifier of document for update. Omit for create new Document.
     /// </summary>
     /// <value>Identifier of document for update. Omit for create new Document.</value>
-    [DataMember(Name = "id", EmitDefaultValue = false)]
+    [JsonPropertyName("id")]
     public string Id { get; set; }
 
 

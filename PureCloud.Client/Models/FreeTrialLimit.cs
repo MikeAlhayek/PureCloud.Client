@@ -1,12 +1,12 @@
-using System.Runtime.Serialization;
 using System.Text;
+using System.Text.Json.Serialization;
 
 namespace PureCloud.Client.Models;
 
 /// <summary>
 /// FreeTrialLimit
 /// </summary>
-[DataContract]
+
 public partial class FreeTrialLimit : IEquatable<FreeTrialLimit>
 {
     /// <summary>
@@ -30,7 +30,7 @@ public partial class FreeTrialLimit : IEquatable<FreeTrialLimit>
     /// <summary>
     /// Gets or Sets Key
     /// </summary>
-    [DataMember(Name = "key", EmitDefaultValue = false)]
+    [JsonPropertyName("key")]
     public string Key { get; set; }
 
 
@@ -38,7 +38,7 @@ public partial class FreeTrialLimit : IEquatable<FreeTrialLimit>
     /// <summary>
     /// Gets or Sets DefaultValue
     /// </summary>
-    [DataMember(Name = "defaultValue", EmitDefaultValue = false)]
+    [JsonPropertyName("defaultValue")]
     public long? DefaultValue { get; set; }
 
 
@@ -46,7 +46,7 @@ public partial class FreeTrialLimit : IEquatable<FreeTrialLimit>
     /// <summary>
     /// Gets or Sets Description
     /// </summary>
-    [DataMember(Name = "description", EmitDefaultValue = false)]
+    [JsonPropertyName("description")]
     public string Description { get; set; }
 
 
@@ -54,7 +54,7 @@ public partial class FreeTrialLimit : IEquatable<FreeTrialLimit>
     /// <summary>
     /// Gets or Sets Resource
     /// </summary>
-    [DataMember(Name = "resource", EmitDefaultValue = false)]
+    [JsonPropertyName("resource")]
     public string Resource { get; set; }
 
 

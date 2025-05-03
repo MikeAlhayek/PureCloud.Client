@@ -1,4 +1,3 @@
-using System.Runtime.Serialization;
 using System.Text;
 using System.Text.Json.Serialization;
 
@@ -7,7 +6,7 @@ namespace PureCloud.Client.Models;
 /// <summary>
 /// GenerateBuForecastRequest
 /// </summary>
-[DataContract]
+
 public partial class GenerateBuForecastRequest : IEquatable<GenerateBuForecastRequest>
 {
 
@@ -36,7 +35,7 @@ public partial class GenerateBuForecastRequest : IEquatable<GenerateBuForecastRe
     /// The description for the forecast
     /// </summary>
     /// <value>The description for the forecast</value>
-    [DataMember(Name = "description", EmitDefaultValue = false)]
+    [JsonPropertyName("description")]
     public string Description { get; set; }
 
 
@@ -45,7 +44,7 @@ public partial class GenerateBuForecastRequest : IEquatable<GenerateBuForecastRe
     /// The number of weeks this forecast covers
     /// </summary>
     /// <value>The number of weeks this forecast covers</value>
-    [DataMember(Name = "weekCount", EmitDefaultValue = false)]
+    [JsonPropertyName("weekCount")]
     public int? WeekCount { get; set; }
 
 
@@ -54,7 +53,7 @@ public partial class GenerateBuForecastRequest : IEquatable<GenerateBuForecastRe
     /// Whether this forecast can be used for scheduling
     /// </summary>
     /// <value>Whether this forecast can be used for scheduling</value>
-    [DataMember(Name = "canUseForScheduling", EmitDefaultValue = false)]
+    [JsonPropertyName("canUseForScheduling")]
     public bool? CanUseForScheduling { get; set; }
 
 

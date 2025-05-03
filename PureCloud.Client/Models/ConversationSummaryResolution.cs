@@ -1,12 +1,12 @@
-using System.Runtime.Serialization;
 using System.Text;
+using System.Text.Json.Serialization;
 
 namespace PureCloud.Client.Models;
 
 /// <summary>
 /// ConversationSummaryResolution
 /// </summary>
-[DataContract]
+
 public partial class ConversationSummaryResolution : IEquatable<ConversationSummaryResolution>
 {
     /// <summary>
@@ -27,7 +27,7 @@ public partial class ConversationSummaryResolution : IEquatable<ConversationSumm
     /// The text of the resolution.
     /// </summary>
     /// <value>The text of the resolution.</value>
-    [DataMember(Name = "text", EmitDefaultValue = false)]
+    [JsonPropertyName("text")]
     public string Text { get; set; }
 
 
@@ -36,7 +36,7 @@ public partial class ConversationSummaryResolution : IEquatable<ConversationSumm
     /// The description.
     /// </summary>
     /// <value>The description.</value>
-    [DataMember(Name = "description", EmitDefaultValue = false)]
+    [JsonPropertyName("description")]
     public string Description { get; set; }
 
 
@@ -45,7 +45,7 @@ public partial class ConversationSummaryResolution : IEquatable<ConversationSumm
     /// The AI confidence value.
     /// </summary>
     /// <value>The AI confidence value.</value>
-    [DataMember(Name = "confidence", EmitDefaultValue = false)]
+    [JsonPropertyName("confidence")]
     public float? Confidence { get; private set; }
 
 
@@ -54,7 +54,7 @@ public partial class ConversationSummaryResolution : IEquatable<ConversationSumm
     /// The outcome of the conversation&#39;s resolution.
     /// </summary>
     /// <value>The outcome of the conversation&#39;s resolution.</value>
-    [DataMember(Name = "outcome", EmitDefaultValue = false)]
+    [JsonPropertyName("outcome")]
     public string Outcome { get; private set; }
 
 

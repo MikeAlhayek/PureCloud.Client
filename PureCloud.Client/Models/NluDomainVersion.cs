@@ -7,14 +7,14 @@ namespace PureCloud.Client.Models;
 /// <summary>
 /// NluDomainVersion
 /// </summary>
-[DataContract]
+
 public partial class NluDomainVersion : IEquatable<NluDomainVersion>
 {
     /// <summary>
     /// The training status of the NLU domain version.
     /// </summary>
     /// <value>The training status of the NLU domain version.</value>
-    [JsonConverter(typeof(JsonStringEnumConverter))]
+    
     public enum TrainingStatusEnum
     {
         /// <summary>
@@ -59,7 +59,7 @@ public partial class NluDomainVersion : IEquatable<NluDomainVersion>
     /// The evaluation status of the NLU domain version.
     /// </summary>
     /// <value>The evaluation status of the NLU domain version.</value>
-    [JsonConverter(typeof(JsonStringEnumConverter))]
+    
     public enum EvaluationStatusEnum
     {
         /// <summary>
@@ -98,13 +98,13 @@ public partial class NluDomainVersion : IEquatable<NluDomainVersion>
     /// The training status of the NLU domain version.
     /// </summary>
     /// <value>The training status of the NLU domain version.</value>
-    [DataMember(Name = "trainingStatus", EmitDefaultValue = false)]
+    [JsonPropertyName("trainingStatus")]
     public TrainingStatusEnum? TrainingStatus { get; private set; }
     /// <summary>
     /// The evaluation status of the NLU domain version.
     /// </summary>
     /// <value>The evaluation status of the NLU domain version.</value>
-    [DataMember(Name = "evaluationStatus", EmitDefaultValue = false)]
+    [JsonPropertyName("evaluationStatus")]
     public EvaluationStatusEnum? EvaluationStatus { get; private set; }
 
     /// <summary>
@@ -136,7 +136,7 @@ public partial class NluDomainVersion : IEquatable<NluDomainVersion>
     /// The globally unique identifier for the object.
     /// </summary>
     /// <value>The globally unique identifier for the object.</value>
-    [DataMember(Name = "id", EmitDefaultValue = false)]
+    [JsonPropertyName("id")]
     public string Id { get; private set; }
 
 
@@ -145,7 +145,7 @@ public partial class NluDomainVersion : IEquatable<NluDomainVersion>
     /// The NLU domain of the version.
     /// </summary>
     /// <value>The NLU domain of the version.</value>
-    [DataMember(Name = "domain", EmitDefaultValue = false)]
+    [JsonPropertyName("domain")]
     public NluDomain Domain { get; private set; }
 
 
@@ -154,7 +154,7 @@ public partial class NluDomainVersion : IEquatable<NluDomainVersion>
     /// The description of the NLU domain version.
     /// </summary>
     /// <value>The description of the NLU domain version.</value>
-    [DataMember(Name = "description", EmitDefaultValue = false)]
+    [JsonPropertyName("description")]
     public string Description { get; set; }
 
 
@@ -163,7 +163,7 @@ public partial class NluDomainVersion : IEquatable<NluDomainVersion>
     /// The language that the NLU domain version supports.
     /// </summary>
     /// <value>The language that the NLU domain version supports.</value>
-    [DataMember(Name = "language", EmitDefaultValue = false)]
+    [JsonPropertyName("language")]
     public string Language { get; set; }
 
 
@@ -172,7 +172,7 @@ public partial class NluDomainVersion : IEquatable<NluDomainVersion>
     /// Whether this NLU domain version has been published.
     /// </summary>
     /// <value>Whether this NLU domain version has been published.</value>
-    [DataMember(Name = "published", EmitDefaultValue = false)]
+    [JsonPropertyName("published")]
     public bool? Published { get; private set; }
 
 
@@ -181,7 +181,7 @@ public partial class NluDomainVersion : IEquatable<NluDomainVersion>
     /// The date when the NLU domain version was created. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z
     /// </summary>
     /// <value>The date when the NLU domain version was created. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z</value>
-    [DataMember(Name = "dateCreated", EmitDefaultValue = false)]
+    [JsonPropertyName("dateCreated")]
     public DateTime? DateCreated { get; private set; }
 
 
@@ -190,7 +190,7 @@ public partial class NluDomainVersion : IEquatable<NluDomainVersion>
     /// The date when the NLU domain version was updated. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z
     /// </summary>
     /// <value>The date when the NLU domain version was updated. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z</value>
-    [DataMember(Name = "dateModified", EmitDefaultValue = false)]
+    [JsonPropertyName("dateModified")]
     public DateTime? DateModified { get; private set; }
 
 
@@ -199,7 +199,7 @@ public partial class NluDomainVersion : IEquatable<NluDomainVersion>
     /// The date when the NLU domain version was trained. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z
     /// </summary>
     /// <value>The date when the NLU domain version was trained. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z</value>
-    [DataMember(Name = "dateTrained", EmitDefaultValue = false)]
+    [JsonPropertyName("dateTrained")]
     public DateTime? DateTrained { get; private set; }
 
 
@@ -208,7 +208,7 @@ public partial class NluDomainVersion : IEquatable<NluDomainVersion>
     /// The date when the NLU domain version was published. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z
     /// </summary>
     /// <value>The date when the NLU domain version was published. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z</value>
-    [DataMember(Name = "datePublished", EmitDefaultValue = false)]
+    [JsonPropertyName("datePublished")]
     public DateTime? DatePublished { get; private set; }
 
 
@@ -221,7 +221,7 @@ public partial class NluDomainVersion : IEquatable<NluDomainVersion>
     /// The intents defined for this NLU domain version.
     /// </summary>
     /// <value>The intents defined for this NLU domain version.</value>
-    [DataMember(Name = "intents", EmitDefaultValue = false)]
+    [JsonPropertyName("intents")]
     public List<IntentDefinition> Intents { get; set; }
 
 
@@ -230,7 +230,7 @@ public partial class NluDomainVersion : IEquatable<NluDomainVersion>
     /// The entity types defined for this NLU domain version.
     /// </summary>
     /// <value>The entity types defined for this NLU domain version.</value>
-    [DataMember(Name = "entityTypes", EmitDefaultValue = false)]
+    [JsonPropertyName("entityTypes")]
     public List<NamedEntityTypeDefinition> EntityTypes { get; set; }
 
 
@@ -239,7 +239,7 @@ public partial class NluDomainVersion : IEquatable<NluDomainVersion>
     /// The entities defined for this NLU domain version.This field is mutually exclusive with entityTypeBindings
     /// </summary>
     /// <value>The entities defined for this NLU domain version.This field is mutually exclusive with entityTypeBindings</value>
-    [DataMember(Name = "entities", EmitDefaultValue = false)]
+    [JsonPropertyName("entities")]
     public List<NamedEntityDefinition> Entities { get; set; }
 
 
@@ -248,7 +248,7 @@ public partial class NluDomainVersion : IEquatable<NluDomainVersion>
     /// The URI for this object
     /// </summary>
     /// <value>The URI for this object</value>
-    [DataMember(Name = "selfUri", EmitDefaultValue = false)]
+    [JsonPropertyName("selfUri")]
     public string SelfUri { get; private set; }
 
 

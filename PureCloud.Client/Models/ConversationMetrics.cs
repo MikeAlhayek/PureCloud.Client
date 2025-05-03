@@ -7,14 +7,14 @@ namespace PureCloud.Client.Models;
 /// <summary>
 /// ConversationMetrics
 /// </summary>
-[DataContract]
+
 public partial class ConversationMetrics : IEquatable<ConversationMetrics>
 {
     /// <summary>
     /// The Sentiment Trend Class
     /// </summary>
     /// <value>The Sentiment Trend Class</value>
-    [JsonConverter(typeof(JsonStringEnumConverter))]
+    
     public enum SentimentTrendClassEnum
     {
         /// <summary>
@@ -65,7 +65,7 @@ public partial class ConversationMetrics : IEquatable<ConversationMetrics>
     /// The Sentiment Trend Class
     /// </summary>
     /// <value>The Sentiment Trend Class</value>
-    [DataMember(Name = "sentimentTrendClass", EmitDefaultValue = false)]
+    [JsonPropertyName("sentimentTrendClass")]
     public SentimentTrendClassEnum? SentimentTrendClass { get; set; }
     /// <summary>
     /// Initializes a new instance of the <see cref="ConversationMetrics" /> class.
@@ -93,7 +93,7 @@ public partial class ConversationMetrics : IEquatable<ConversationMetrics>
     /// The Conversation Reference
     /// </summary>
     /// <value>The Conversation Reference</value>
-    [DataMember(Name = "conversation", EmitDefaultValue = false)]
+    [JsonPropertyName("conversation")]
     public AddressableEntityRef Conversation { get; set; }
 
 
@@ -102,7 +102,7 @@ public partial class ConversationMetrics : IEquatable<ConversationMetrics>
     /// The Sentiment Score
     /// </summary>
     /// <value>The Sentiment Score</value>
-    [DataMember(Name = "sentimentScore", EmitDefaultValue = false)]
+    [JsonPropertyName("sentimentScore")]
     public double? SentimentScore { get; set; }
 
 
@@ -111,7 +111,7 @@ public partial class ConversationMetrics : IEquatable<ConversationMetrics>
     /// The Sentiment Trend
     /// </summary>
     /// <value>The Sentiment Trend</value>
-    [DataMember(Name = "sentimentTrend", EmitDefaultValue = false)]
+    [JsonPropertyName("sentimentTrend")]
     public double? SentimentTrend { get; set; }
 
 
@@ -122,7 +122,7 @@ public partial class ConversationMetrics : IEquatable<ConversationMetrics>
     /// The Empathy Scores
     /// </summary>
     /// <value>The Empathy Scores</value>
-    [DataMember(Name = "empathyScores", EmitDefaultValue = false)]
+    [JsonPropertyName("empathyScores")]
     public List<EmpathyScore> EmpathyScores { get; set; }
 
 
@@ -131,7 +131,7 @@ public partial class ConversationMetrics : IEquatable<ConversationMetrics>
     /// The Participant Metrics
     /// </summary>
     /// <value>The Participant Metrics</value>
-    [DataMember(Name = "participantMetrics", EmitDefaultValue = false)]
+    [JsonPropertyName("participantMetrics")]
     public ParticipantMetrics ParticipantMetrics { get; set; }
 
 

@@ -7,14 +7,14 @@ namespace PureCloud.Client.Models;
 /// <summary>
 /// ShiftTradeActivityRule
 /// </summary>
-[DataContract]
+
 public partial class ShiftTradeActivityRule : IEquatable<ShiftTradeActivityRule>
 {
     /// <summary>
     /// The activity category to which to apply this rule
     /// </summary>
     /// <value>The activity category to which to apply this rule</value>
-    [JsonConverter(typeof(JsonStringEnumConverter))]
+    
     public enum ActivityCategoryEnum
     {
         /// <summary>
@@ -83,7 +83,7 @@ public partial class ShiftTradeActivityRule : IEquatable<ShiftTradeActivityRule>
     /// The action this rule invokes
     /// </summary>
     /// <value>The action this rule invokes</value>
-    [JsonConverter(typeof(JsonStringEnumConverter))]
+    
     public enum ActionEnum
     {
         /// <summary>
@@ -116,13 +116,13 @@ public partial class ShiftTradeActivityRule : IEquatable<ShiftTradeActivityRule>
     /// The activity category to which to apply this rule
     /// </summary>
     /// <value>The activity category to which to apply this rule</value>
-    [DataMember(Name = "activityCategory", EmitDefaultValue = false)]
+    [JsonPropertyName("activityCategory")]
     public ActivityCategoryEnum? ActivityCategory { get; set; }
     /// <summary>
     /// The action this rule invokes
     /// </summary>
     /// <value>The action this rule invokes</value>
-    [DataMember(Name = "action", EmitDefaultValue = false)]
+    [JsonPropertyName("action")]
     public ActionEnum? Action { get; set; }
 
     /// <summary>
@@ -154,7 +154,7 @@ public partial class ShiftTradeActivityRule : IEquatable<ShiftTradeActivityRule>
     /// The activity code ID with which to replace activities belonging to the original category if applicable (required if action &#x3D;&#x3D; Replace, must be a default activity code ID)
     /// </summary>
     /// <value>The activity code ID with which to replace activities belonging to the original category if applicable (required if action &#x3D;&#x3D; Replace, must be a default activity code ID)</value>
-    [DataMember(Name = "activityCodeIdReplacement", EmitDefaultValue = false)]
+    [JsonPropertyName("activityCodeIdReplacement")]
     public string ActivityCodeIdReplacement { get; set; }
 
 

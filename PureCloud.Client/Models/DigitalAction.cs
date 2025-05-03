@@ -1,12 +1,12 @@
-using System.Runtime.Serialization;
 using System.Text;
+using System.Text.Json.Serialization;
 
 namespace PureCloud.Client.Models;
 
 /// <summary>
 /// DigitalAction
 /// </summary>
-[DataContract]
+
 public partial class DigitalAction : IEquatable<DigitalAction>
 {
     /// <summary>
@@ -37,7 +37,7 @@ public partial class DigitalAction : IEquatable<DigitalAction>
     /// The settings for an &#39;update contact column&#39; action.
     /// </summary>
     /// <value>The settings for an &#39;update contact column&#39; action.</value>
-    [DataMember(Name = "updateContactColumnActionSettings", EmitDefaultValue = false)]
+    [JsonPropertyName("updateContactColumnActionSettings")]
     public UpdateContactColumnActionSettings UpdateContactColumnActionSettings { get; set; }
 
 
@@ -46,7 +46,7 @@ public partial class DigitalAction : IEquatable<DigitalAction>
     /// The settings for a &#39;do not send&#39; action.
     /// </summary>
     /// <value>The settings for a &#39;do not send&#39; action.</value>
-    [DataMember(Name = "doNotSendActionSettings", EmitDefaultValue = false)]
+    [JsonPropertyName("doNotSendActionSettings")]
     public object DoNotSendActionSettings { get; set; }
 
 
@@ -55,7 +55,7 @@ public partial class DigitalAction : IEquatable<DigitalAction>
     /// The settings for an &#39;Append to DNC&#39; action.
     /// </summary>
     /// <value>The settings for an &#39;Append to DNC&#39; action.</value>
-    [DataMember(Name = "appendToDncActionSettings", EmitDefaultValue = false)]
+    [JsonPropertyName("appendToDncActionSettings")]
     public AppendToDncActionSettings AppendToDncActionSettings { get; set; }
 
 
@@ -64,7 +64,7 @@ public partial class DigitalAction : IEquatable<DigitalAction>
     /// The settings for a &#39;mark contact uncontactable&#39; action.
     /// </summary>
     /// <value>The settings for a &#39;mark contact uncontactable&#39; action.</value>
-    [DataMember(Name = "markContactUncontactableActionSettings", EmitDefaultValue = false)]
+    [JsonPropertyName("markContactUncontactableActionSettings")]
     public MarkContactUncontactableActionSettings MarkContactUncontactableActionSettings { get; set; }
 
 
@@ -73,7 +73,7 @@ public partial class DigitalAction : IEquatable<DigitalAction>
     /// The settings for an &#39;mark contact address uncontactable&#39; action.
     /// </summary>
     /// <value>The settings for an &#39;mark contact address uncontactable&#39; action.</value>
-    [DataMember(Name = "markContactAddressUncontactableActionSettings", EmitDefaultValue = false)]
+    [JsonPropertyName("markContactAddressUncontactableActionSettings")]
     public object MarkContactAddressUncontactableActionSettings { get; set; }
 
 
@@ -82,7 +82,7 @@ public partial class DigitalAction : IEquatable<DigitalAction>
     /// The settings for a &#39;Set content template&#39; action.
     /// </summary>
     /// <value>The settings for a &#39;Set content template&#39; action.</value>
-    [DataMember(Name = "setContentTemplateActionSettings", EmitDefaultValue = false)]
+    [JsonPropertyName("setContentTemplateActionSettings")]
     public SetContentTemplateActionSettings SetContentTemplateActionSettings { get; set; }
 
 
@@ -91,7 +91,7 @@ public partial class DigitalAction : IEquatable<DigitalAction>
     /// The settings for a &#39;set sms phone number&#39; action.
     /// </summary>
     /// <value>The settings for a &#39;set sms phone number&#39; action.</value>
-    [DataMember(Name = "setSmsPhoneNumberActionSettings", EmitDefaultValue = false)]
+    [JsonPropertyName("setSmsPhoneNumberActionSettings")]
     public SetSmsPhoneNumberActionSettings SetSmsPhoneNumberActionSettings { get; set; }
 
 

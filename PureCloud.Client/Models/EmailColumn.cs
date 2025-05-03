@@ -1,4 +1,3 @@
-using System.Runtime.Serialization;
 using System.Text;
 using System.Text.Json.Serialization;
 
@@ -7,7 +6,7 @@ namespace PureCloud.Client.Models;
 /// <summary>
 /// EmailColumn
 /// </summary>
-[DataContract]
+
 public partial class EmailColumn : IEquatable<EmailColumn>
 {
 
@@ -36,7 +35,7 @@ public partial class EmailColumn : IEquatable<EmailColumn>
     /// The name of the email column.
     /// </summary>
     /// <value>The name of the email column.</value>
-    [DataMember(Name = "columnName", EmitDefaultValue = false)]
+    [JsonPropertyName("columnName")]
     public string ColumnName { get; set; }
 
 
@@ -45,7 +44,7 @@ public partial class EmailColumn : IEquatable<EmailColumn>
     /// Indicates the type of the email column. For example, &#39;work&#39; or &#39;personal&#39;.
     /// </summary>
     /// <value>Indicates the type of the email column. For example, &#39;work&#39; or &#39;personal&#39;.</value>
-    [DataMember(Name = "type", EmitDefaultValue = false)]
+    [JsonPropertyName("type")]
     public string Type { get; set; }
 
 
@@ -54,7 +53,7 @@ public partial class EmailColumn : IEquatable<EmailColumn>
     /// A column that indicates the timezone to use for a given contact when checking contactable times.
     /// </summary>
     /// <value>A column that indicates the timezone to use for a given contact when checking contactable times.</value>
-    [DataMember(Name = "contactableTimeColumn", EmitDefaultValue = false)]
+    [JsonPropertyName("contactableTimeColumn")]
     public string ContactableTimeColumn { get; set; }
 
 

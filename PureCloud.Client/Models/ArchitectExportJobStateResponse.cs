@@ -7,14 +7,14 @@ namespace PureCloud.Client.Models;
 /// <summary>
 /// ArchitectExportJobStateResponse
 /// </summary>
-[DataContract]
+
 public partial class ArchitectExportJobStateResponse : IEquatable<ArchitectExportJobStateResponse>
 {
     /// <summary>
     /// Status of the Architect Export Job
     /// </summary>
     /// <value>Status of the Architect Export Job</value>
-    [JsonConverter(typeof(JsonStringEnumConverter))]
+    
     public enum StatusEnum
     {
         /// <summary>
@@ -53,7 +53,7 @@ public partial class ArchitectExportJobStateResponse : IEquatable<ArchitectExpor
     /// The command executed by the Architect Job
     /// </summary>
     /// <value>The command executed by the Architect Job</value>
-    [JsonConverter(typeof(JsonStringEnumConverter))]
+    
     public enum CommandEnum
     {
         /// <summary>
@@ -92,13 +92,13 @@ public partial class ArchitectExportJobStateResponse : IEquatable<ArchitectExpor
     /// Status of the Architect Export Job
     /// </summary>
     /// <value>Status of the Architect Export Job</value>
-    [DataMember(Name = "status", EmitDefaultValue = false)]
+    [JsonPropertyName("status")]
     public StatusEnum? Status { get; set; }
     /// <summary>
     /// The command executed by the Architect Job
     /// </summary>
     /// <value>The command executed by the Architect Job</value>
-    [DataMember(Name = "command", EmitDefaultValue = false)]
+    [JsonPropertyName("command")]
     public CommandEnum? Command { get; set; }
     /// <summary>
     /// Initializes a new instance of the <see cref="ArchitectExportJobStateResponse" /> class.
@@ -122,7 +122,7 @@ public partial class ArchitectExportJobStateResponse : IEquatable<ArchitectExpor
     /// The globally unique identifier for the object.
     /// </summary>
     /// <value>The globally unique identifier for the object.</value>
-    [DataMember(Name = "id", EmitDefaultValue = false)]
+    [JsonPropertyName("id")]
     public string Id { get; private set; }
 
 
@@ -135,7 +135,7 @@ public partial class ArchitectExportJobStateResponse : IEquatable<ArchitectExpor
     /// The signed URL for downloading exported Architect data. If more than one flow was exported as part of the job, the URL provides a zipped folder containing all flows.
     /// </summary>
     /// <value>The signed URL for downloading exported Architect data. If more than one flow was exported as part of the job, the URL provides a zipped folder containing all flows.</value>
-    [DataMember(Name = "downloadUrl", EmitDefaultValue = false)]
+    [JsonPropertyName("downloadUrl")]
     public string DownloadUrl { get; set; }
 
 
@@ -144,7 +144,7 @@ public partial class ArchitectExportJobStateResponse : IEquatable<ArchitectExpor
     /// Warnings and Errors messages of the Architect Job
     /// </summary>
     /// <value>Warnings and Errors messages of the Architect Job</value>
-    [DataMember(Name = "messages", EmitDefaultValue = false)]
+    [JsonPropertyName("messages")]
     public List<ArchitectJobMessage> Messages { get; set; }
 
 
@@ -153,7 +153,7 @@ public partial class ArchitectExportJobStateResponse : IEquatable<ArchitectExpor
     /// The URI for this object
     /// </summary>
     /// <value>The URI for this object</value>
-    [DataMember(Name = "selfUri", EmitDefaultValue = false)]
+    [JsonPropertyName("selfUri")]
     public string SelfUri { get; private set; }
 
 

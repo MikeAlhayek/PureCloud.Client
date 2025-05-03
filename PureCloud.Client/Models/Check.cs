@@ -7,14 +7,14 @@ namespace PureCloud.Client.Models;
 /// <summary>
 /// Check
 /// </summary>
-[DataContract]
+
 public partial class Check : IEquatable<Check>
 {
     /// <summary>
     /// The result of a check executed. This indicates if the check was successful or not.
     /// </summary>
     /// <value>The result of a check executed. This indicates if the check was successful or not.</value>
-    [JsonConverter(typeof(JsonStringEnumConverter))]
+    
     public enum ResultEnum
     {
         /// <summary>
@@ -59,7 +59,7 @@ public partial class Check : IEquatable<Check>
     /// The type of check executed.
     /// </summary>
     /// <value>The type of check executed.</value>
-    [JsonConverter(typeof(JsonStringEnumConverter))]
+    
     public enum TypeEnum
     {
         /// <summary>
@@ -140,13 +140,13 @@ public partial class Check : IEquatable<Check>
     /// The result of a check executed. This indicates if the check was successful or not.
     /// </summary>
     /// <value>The result of a check executed. This indicates if the check was successful or not.</value>
-    [DataMember(Name = "result", EmitDefaultValue = false)]
+    [JsonPropertyName("result")]
     public ResultEnum? Result { get; private set; }
     /// <summary>
     /// The type of check executed.
     /// </summary>
     /// <value>The type of check executed.</value>
-    [DataMember(Name = "type", EmitDefaultValue = false)]
+    [JsonPropertyName("type")]
     public TypeEnum? Type { get; private set; }
     /// <summary>
     /// Initializes a new instance of the <see cref="Check" /> class.

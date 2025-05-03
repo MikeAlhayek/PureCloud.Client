@@ -1,12 +1,12 @@
-using System.Runtime.Serialization;
 using System.Text;
+using System.Text.Json.Serialization;
 
 namespace PureCloud.Client.Models;
 
 /// <summary>
 /// ConversationEventTopicInternalMessageDetails
 /// </summary>
-[DataContract]
+
 public partial class ConversationEventTopicInternalMessageDetails : IEquatable<ConversationEventTopicInternalMessageDetails>
 {
     /// <summary>
@@ -27,7 +27,7 @@ public partial class ConversationEventTopicInternalMessageDetails : IEquatable<C
     /// UUID identifying the internal message media.
     /// </summary>
     /// <value>UUID identifying the internal message media.</value>
-    [DataMember(Name = "messageId", EmitDefaultValue = false)]
+    [JsonPropertyName("messageId")]
     public string MessageId { get; set; }
 
 
@@ -36,7 +36,7 @@ public partial class ConversationEventTopicInternalMessageDetails : IEquatable<C
     /// The time when the internal message was sent or received.
     /// </summary>
     /// <value>The time when the internal message was sent or received.</value>
-    [DataMember(Name = "messageTime", EmitDefaultValue = false)]
+    [JsonPropertyName("messageTime")]
     public DateTime? MessageTime { get; set; }
 
 

@@ -1,12 +1,12 @@
-using System.Runtime.Serialization;
 using System.Text;
+using System.Text.Json.Serialization;
 
 namespace PureCloud.Client.Models;
 
 /// <summary>
 /// PatchActionProperties
 /// </summary>
-[DataContract]
+
 public partial class PatchActionProperties : IEquatable<PatchActionProperties>
 {
     /// <summary>
@@ -33,7 +33,7 @@ public partial class PatchActionProperties : IEquatable<PatchActionProperties>
     /// Prompt message shown to user, used for webchat type action.
     /// </summary>
     /// <value>Prompt message shown to user, used for webchat type action.</value>
-    [DataMember(Name = "webchatPrompt", EmitDefaultValue = false)]
+    [JsonPropertyName("webchatPrompt")]
     public string WebchatPrompt { get; set; }
 
 
@@ -42,7 +42,7 @@ public partial class PatchActionProperties : IEquatable<PatchActionProperties>
     /// Title shown to the user, used for webchat type action.
     /// </summary>
     /// <value>Title shown to the user, used for webchat type action.</value>
-    [DataMember(Name = "webchatTitleText", EmitDefaultValue = false)]
+    [JsonPropertyName("webchatTitleText")]
     public string WebchatTitleText { get; set; }
 
 
@@ -51,7 +51,7 @@ public partial class PatchActionProperties : IEquatable<PatchActionProperties>
     /// Accept button text shown to user, used for webchat type action.
     /// </summary>
     /// <value>Accept button text shown to user, used for webchat type action.</value>
-    [DataMember(Name = "webchatAcceptText", EmitDefaultValue = false)]
+    [JsonPropertyName("webchatAcceptText")]
     public string WebchatAcceptText { get; set; }
 
 
@@ -60,7 +60,7 @@ public partial class PatchActionProperties : IEquatable<PatchActionProperties>
     /// Decline button text shown to user, used for webchat type action.
     /// </summary>
     /// <value>Decline button text shown to user, used for webchat type action.</value>
-    [DataMember(Name = "webchatDeclineText", EmitDefaultValue = false)]
+    [JsonPropertyName("webchatDeclineText")]
     public string WebchatDeclineText { get; set; }
 
 
@@ -69,7 +69,7 @@ public partial class PatchActionProperties : IEquatable<PatchActionProperties>
     /// Survey provided to the user, used for webchat type action.
     /// </summary>
     /// <value>Survey provided to the user, used for webchat type action.</value>
-    [DataMember(Name = "webchatSurvey", EmitDefaultValue = false)]
+    [JsonPropertyName("webchatSurvey")]
     public PatchActionSurvey WebchatSurvey { get; set; }
 
 

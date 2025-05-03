@@ -7,13 +7,13 @@ namespace PureCloud.Client.Models;
 /// <summary>
 /// AgentMaxUtilizationResponse
 /// </summary>
-[DataContract]
+
 public partial class AgentMaxUtilizationResponse : IEquatable<AgentMaxUtilizationResponse>
 {
     /// <summary>
     /// Gets or Sets Level
     /// </summary>
-    [JsonConverter(typeof(JsonStringEnumConverter))]
+    
     public enum LevelEnum
     {
         /// <summary>
@@ -39,7 +39,7 @@ public partial class AgentMaxUtilizationResponse : IEquatable<AgentMaxUtilizatio
     /// <summary>
     /// Gets or Sets Level
     /// </summary>
-    [DataMember(Name = "level", EmitDefaultValue = false)]
+    [JsonPropertyName("level")]
     public LevelEnum? Level { get; set; }
     /// <summary>
     /// Initializes a new instance of the <see cref="AgentMaxUtilizationResponse" /> class.
@@ -61,7 +61,7 @@ public partial class AgentMaxUtilizationResponse : IEquatable<AgentMaxUtilizatio
     /// Map of media type to utilization settings.
     /// </summary>
     /// <value>Map of media type to utilization settings.</value>
-    [DataMember(Name = "utilization", EmitDefaultValue = false)]
+    [JsonPropertyName("utilization")]
     public Dictionary<string, MediaUtilization> Utilization { get; set; }
 
 
@@ -70,7 +70,7 @@ public partial class AgentMaxUtilizationResponse : IEquatable<AgentMaxUtilizatio
     /// Map of label ids to utilization settings.
     /// </summary>
     /// <value>Map of label ids to utilization settings.</value>
-    [DataMember(Name = "labelUtilizations", EmitDefaultValue = false)]
+    [JsonPropertyName("labelUtilizations")]
     public Dictionary<string, LabelUtilizationResponse> LabelUtilizations { get; set; }
 
 

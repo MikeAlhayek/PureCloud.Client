@@ -1,12 +1,12 @@
-using System.Runtime.Serialization;
 using System.Text;
+using System.Text.Json.Serialization;
 
 namespace PureCloud.Client.Models;
 
 /// <summary>
 /// AuthzGrantRole
 /// </summary>
-[DataContract]
+
 public partial class AuthzGrantRole : IEquatable<AuthzGrantRole>
 {
     /// <summary>
@@ -31,7 +31,7 @@ public partial class AuthzGrantRole : IEquatable<AuthzGrantRole>
     /// The globally unique identifier for the object.
     /// </summary>
     /// <value>The globally unique identifier for the object.</value>
-    [DataMember(Name = "id", EmitDefaultValue = false)]
+    [JsonPropertyName("id")]
     public string Id { get; private set; }
 
 
@@ -39,7 +39,7 @@ public partial class AuthzGrantRole : IEquatable<AuthzGrantRole>
     /// <summary>
     /// Gets or Sets Name
     /// </summary>
-    [DataMember(Name = "name", EmitDefaultValue = false)]
+    [JsonPropertyName("name")]
     public string Name { get; set; }
 
 
@@ -47,7 +47,7 @@ public partial class AuthzGrantRole : IEquatable<AuthzGrantRole>
     /// <summary>
     /// Gets or Sets Description
     /// </summary>
-    [DataMember(Name = "description", EmitDefaultValue = false)]
+    [JsonPropertyName("description")]
     public string Description { get; set; }
 
 
@@ -55,7 +55,7 @@ public partial class AuthzGrantRole : IEquatable<AuthzGrantRole>
     /// <summary>
     /// Gets or Sets Policies
     /// </summary>
-    [DataMember(Name = "policies", EmitDefaultValue = false)]
+    [JsonPropertyName("policies")]
     public List<AuthzGrantPolicy> Policies { get; set; }
 
 
@@ -63,7 +63,7 @@ public partial class AuthzGrantRole : IEquatable<AuthzGrantRole>
     /// <summary>
     /// Gets or Sets Default
     /// </summary>
-    [DataMember(Name = "default", EmitDefaultValue = false)]
+    [JsonPropertyName("default")]
     public bool? Default { get; set; }
 
 
@@ -72,7 +72,7 @@ public partial class AuthzGrantRole : IEquatable<AuthzGrantRole>
     /// The URI for this object
     /// </summary>
     /// <value>The URI for this object</value>
-    [DataMember(Name = "selfUri", EmitDefaultValue = false)]
+    [JsonPropertyName("selfUri")]
     public string SelfUri { get; private set; }
 
 

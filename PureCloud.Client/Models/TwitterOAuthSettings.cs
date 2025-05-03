@@ -1,12 +1,12 @@
-using System.Runtime.Serialization;
 using System.Text;
+using System.Text.Json.Serialization;
 
 namespace PureCloud.Client.Models;
 
 /// <summary>
 /// TwitterOAuthSettings
 /// </summary>
-[DataContract]
+
 public partial class TwitterOAuthSettings : IEquatable<TwitterOAuthSettings>
 {
     /// <summary>
@@ -27,7 +27,7 @@ public partial class TwitterOAuthSettings : IEquatable<TwitterOAuthSettings>
     /// The client id of the twitter app the requesting org will use to signup
     /// </summary>
     /// <value>The client id of the twitter app the requesting org will use to signup</value>
-    [DataMember(Name = "clientId", EmitDefaultValue = false)]
+    [JsonPropertyName("clientId")]
     public string ClientId { get; set; }
 
 
@@ -36,7 +36,7 @@ public partial class TwitterOAuthSettings : IEquatable<TwitterOAuthSettings>
     /// The scopes/permissions requested during the signup process during the signup process to allow their future integrations to direct message
     /// </summary>
     /// <value>The scopes/permissions requested during the signup process during the signup process to allow their future integrations to direct message</value>
-    [DataMember(Name = "scopes", EmitDefaultValue = false)]
+    [JsonPropertyName("scopes")]
     public List<string> Scopes { get; set; }
 
 

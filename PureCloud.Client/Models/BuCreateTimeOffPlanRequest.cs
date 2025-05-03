@@ -7,14 +7,14 @@ namespace PureCloud.Client.Models;
 /// <summary>
 /// BuCreateTimeOffPlanRequest
 /// </summary>
-[DataContract]
+
 public partial class BuCreateTimeOffPlanRequest : IEquatable<BuCreateTimeOffPlanRequest>
 {
     /// <summary>
     /// Auto approval rule for this time-off plan. Default is Never
     /// </summary>
     /// <value>Auto approval rule for this time-off plan. Default is Never</value>
-    [JsonConverter(typeof(JsonStringEnumConverter))]
+    
     public enum AutoApprovalRuleEnum
     {
         /// <summary>
@@ -59,7 +59,7 @@ public partial class BuCreateTimeOffPlanRequest : IEquatable<BuCreateTimeOffPlan
     /// Auto approval rule for this time-off plan. Default is Never
     /// </summary>
     /// <value>Auto approval rule for this time-off plan. Default is Never</value>
-    [DataMember(Name = "autoApprovalRule", EmitDefaultValue = false)]
+    [JsonPropertyName("autoApprovalRule")]
     public AutoApprovalRuleEnum? AutoApprovalRule { get; set; }
 
     /// <summary>
@@ -99,7 +99,7 @@ public partial class BuCreateTimeOffPlanRequest : IEquatable<BuCreateTimeOffPlan
     /// The name of this time-off plan
     /// </summary>
     /// <value>The name of this time-off plan</value>
-    [DataMember(Name = "name", EmitDefaultValue = false)]
+    [JsonPropertyName("name")]
     public string Name { get; set; }
 
 
@@ -108,7 +108,7 @@ public partial class BuCreateTimeOffPlanRequest : IEquatable<BuCreateTimeOffPlan
     /// The IDs of activity codes to associate with this time-off plan
     /// </summary>
     /// <value>The IDs of activity codes to associate with this time-off plan</value>
-    [DataMember(Name = "activityCodeIds", EmitDefaultValue = false)]
+    [JsonPropertyName("activityCodeIds")]
     public List<string> ActivityCodeIds { get; set; }
 
 
@@ -119,7 +119,7 @@ public partial class BuCreateTimeOffPlanRequest : IEquatable<BuCreateTimeOffPlan
     /// The number of days before the time-off request start date for when the request will be expired from the waitlist. Default is 0
     /// </summary>
     /// <value>The number of days before the time-off request start date for when the request will be expired from the waitlist. Default is 0</value>
-    [DataMember(Name = "daysBeforeStartToExpireFromWaitlist", EmitDefaultValue = false)]
+    [JsonPropertyName("daysBeforeStartToExpireFromWaitlist")]
     public int? DaysBeforeStartToExpireFromWaitlist { get; set; }
 
 
@@ -128,7 +128,7 @@ public partial class BuCreateTimeOffPlanRequest : IEquatable<BuCreateTimeOffPlan
     /// Time-off type, if this time-off plan is associated with the integration
     /// </summary>
     /// <value>Time-off type, if this time-off plan is associated with the integration</value>
-    [DataMember(Name = "hrisTimeOffType", EmitDefaultValue = false)]
+    [JsonPropertyName("hrisTimeOffType")]
     public HrisTimeOffType HrisTimeOffType { get; set; }
 
 
@@ -137,7 +137,7 @@ public partial class BuCreateTimeOffPlanRequest : IEquatable<BuCreateTimeOffPlan
     /// Whether this time-off plan should be used by agents. Default is true
     /// </summary>
     /// <value>Whether this time-off plan should be used by agents. Default is true</value>
-    [DataMember(Name = "enabled", EmitDefaultValue = false)]
+    [JsonPropertyName("enabled")]
     public bool? Enabled { get; set; }
 
 
@@ -146,7 +146,7 @@ public partial class BuCreateTimeOffPlanRequest : IEquatable<BuCreateTimeOffPlan
     /// Whether this time-off plan should count against time-off limits. Default is false
     /// </summary>
     /// <value>Whether this time-off plan should count against time-off limits. Default is false</value>
-    [DataMember(Name = "countAgainstTimeOffLimits", EmitDefaultValue = false)]
+    [JsonPropertyName("countAgainstTimeOffLimits")]
     public bool? CountAgainstTimeOffLimits { get; set; }
 
 
@@ -155,7 +155,7 @@ public partial class BuCreateTimeOffPlanRequest : IEquatable<BuCreateTimeOffPlan
     /// Business unit association, if the time-off plan belongs to a business unit. managementUnitAssociation must not be set if this is populated
     /// </summary>
     /// <value>Business unit association, if the time-off plan belongs to a business unit. managementUnitAssociation must not be set if this is populated</value>
-    [DataMember(Name = "businessUnitAssociation", EmitDefaultValue = false)]
+    [JsonPropertyName("businessUnitAssociation")]
     public CreateTimeOffPlanBusinessUnitAssociation BusinessUnitAssociation { get; set; }
 
 
@@ -164,7 +164,7 @@ public partial class BuCreateTimeOffPlanRequest : IEquatable<BuCreateTimeOffPlan
     /// Management unit association, if the time-off plan belongs to a management unit. businessUnitAssociation must not be set if this is populated
     /// </summary>
     /// <value>Management unit association, if the time-off plan belongs to a management unit. businessUnitAssociation must not be set if this is populated</value>
-    [DataMember(Name = "managementUnitAssociation", EmitDefaultValue = false)]
+    [JsonPropertyName("managementUnitAssociation")]
     public CreateTimeOffPlanManagementUnitAssociation ManagementUnitAssociation { get; set; }
 
 

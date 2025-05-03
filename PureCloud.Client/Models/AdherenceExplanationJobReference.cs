@@ -7,14 +7,14 @@ namespace PureCloud.Client.Models;
 /// <summary>
 /// AdherenceExplanationJobReference
 /// </summary>
-[DataContract]
+
 public partial class AdherenceExplanationJobReference : IEquatable<AdherenceExplanationJobReference>
 {
     /// <summary>
     /// The type of the adherence explanation job
     /// </summary>
     /// <value>The type of the adherence explanation job</value>
-    [JsonConverter(typeof(JsonStringEnumConverter))]
+    
     public enum TypeEnum
     {
         /// <summary>
@@ -53,7 +53,7 @@ public partial class AdherenceExplanationJobReference : IEquatable<AdherenceExpl
     /// The status of the adherence explanation job
     /// </summary>
     /// <value>The status of the adherence explanation job</value>
-    [JsonConverter(typeof(JsonStringEnumConverter))]
+    
     public enum StatusEnum
     {
         /// <summary>
@@ -86,13 +86,13 @@ public partial class AdherenceExplanationJobReference : IEquatable<AdherenceExpl
     /// The type of the adherence explanation job
     /// </summary>
     /// <value>The type of the adherence explanation job</value>
-    [DataMember(Name = "type", EmitDefaultValue = false)]
+    [JsonPropertyName("type")]
     public TypeEnum? Type { get; set; }
     /// <summary>
     /// The status of the adherence explanation job
     /// </summary>
     /// <value>The status of the adherence explanation job</value>
-    [DataMember(Name = "status", EmitDefaultValue = false)]
+    [JsonPropertyName("status")]
     public StatusEnum? Status { get; set; }
     /// <summary>
     /// Initializes a new instance of the <see cref="AdherenceExplanationJobReference" /> class.
@@ -112,7 +112,7 @@ public partial class AdherenceExplanationJobReference : IEquatable<AdherenceExpl
     /// The globally unique identifier for the object.
     /// </summary>
     /// <value>The globally unique identifier for the object.</value>
-    [DataMember(Name = "id", EmitDefaultValue = false)]
+    [JsonPropertyName("id")]
     public string Id { get; private set; }
 
 
@@ -125,7 +125,7 @@ public partial class AdherenceExplanationJobReference : IEquatable<AdherenceExpl
     /// The URI for this object
     /// </summary>
     /// <value>The URI for this object</value>
-    [DataMember(Name = "selfUri", EmitDefaultValue = false)]
+    [JsonPropertyName("selfUri")]
     public string SelfUri { get; private set; }
 
 

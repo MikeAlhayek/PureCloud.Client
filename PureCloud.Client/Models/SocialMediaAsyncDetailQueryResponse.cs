@@ -1,12 +1,12 @@
-using System.Runtime.Serialization;
 using System.Text;
+using System.Text.Json.Serialization;
 
 namespace PureCloud.Client.Models;
 
 /// <summary>
 /// SocialMediaAsyncDetailQueryResponse
 /// </summary>
-[DataContract]
+
 public partial class SocialMediaAsyncDetailQueryResponse : IEquatable<SocialMediaAsyncDetailQueryResponse>
 {
     /// <summary>
@@ -26,7 +26,7 @@ public partial class SocialMediaAsyncDetailQueryResponse : IEquatable<SocialMedi
     /// <summary>
     /// Gets or Sets Results
     /// </summary>
-    [DataMember(Name = "results", EmitDefaultValue = false)]
+    [JsonPropertyName("results")]
     public List<SocialMediaDetailDataContainer> Results { get; set; }
 
 
@@ -35,7 +35,7 @@ public partial class SocialMediaAsyncDetailQueryResponse : IEquatable<SocialMedi
     /// Cursor token to retrieve next or previous page
     /// </summary>
     /// <value>Cursor token to retrieve next or previous page</value>
-    [DataMember(Name = "cursor", EmitDefaultValue = false)]
+    [JsonPropertyName("cursor")]
     public string Cursor { get; set; }
 
 

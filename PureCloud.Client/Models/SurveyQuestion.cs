@@ -7,13 +7,13 @@ namespace PureCloud.Client.Models;
 /// <summary>
 /// SurveyQuestion
 /// </summary>
-[DataContract]
+
 public partial class SurveyQuestion : IEquatable<SurveyQuestion>
 {
     /// <summary>
     /// Gets or Sets Type
     /// </summary>
-    [JsonConverter(typeof(JsonStringEnumConverter))]
+    
     public enum TypeEnum
     {
         /// <summary>
@@ -51,7 +51,7 @@ public partial class SurveyQuestion : IEquatable<SurveyQuestion>
     /// <summary>
     /// Gets or Sets Type
     /// </summary>
-    [DataMember(Name = "type", EmitDefaultValue = false)]
+    [JsonPropertyName("type")]
     public TypeEnum? Type { get; set; }
     /// <summary>
     /// Initializes a new instance of the <see cref="SurveyQuestion" /> class.
@@ -84,7 +84,7 @@ public partial class SurveyQuestion : IEquatable<SurveyQuestion>
     /// <summary>
     /// Gets or Sets Id
     /// </summary>
-    [DataMember(Name = "id", EmitDefaultValue = false)]
+    [JsonPropertyName("id")]
     public string Id { get; set; }
 
 
@@ -92,7 +92,7 @@ public partial class SurveyQuestion : IEquatable<SurveyQuestion>
     /// <summary>
     /// Gets or Sets Text
     /// </summary>
-    [DataMember(Name = "text", EmitDefaultValue = false)]
+    [JsonPropertyName("text")]
     public string Text { get; set; }
 
 
@@ -100,7 +100,7 @@ public partial class SurveyQuestion : IEquatable<SurveyQuestion>
     /// <summary>
     /// Gets or Sets HelpText
     /// </summary>
-    [DataMember(Name = "helpText", EmitDefaultValue = false)]
+    [JsonPropertyName("helpText")]
     public string HelpText { get; set; }
 
 
@@ -110,7 +110,7 @@ public partial class SurveyQuestion : IEquatable<SurveyQuestion>
     /// <summary>
     /// Gets or Sets NaEnabled
     /// </summary>
-    [DataMember(Name = "naEnabled", EmitDefaultValue = false)]
+    [JsonPropertyName("naEnabled")]
     public bool? NaEnabled { get; set; }
 
 
@@ -118,7 +118,7 @@ public partial class SurveyQuestion : IEquatable<SurveyQuestion>
     /// <summary>
     /// Gets or Sets VisibilityCondition
     /// </summary>
-    [DataMember(Name = "visibilityCondition", EmitDefaultValue = false)]
+    [JsonPropertyName("visibilityCondition")]
     public VisibilityCondition VisibilityCondition { get; set; }
 
 
@@ -127,7 +127,7 @@ public partial class SurveyQuestion : IEquatable<SurveyQuestion>
     /// Options from which to choose an answer for this question. Only used by Multiple Choice type questions.
     /// </summary>
     /// <value>Options from which to choose an answer for this question. Only used by Multiple Choice type questions.</value>
-    [DataMember(Name = "answerOptions", EmitDefaultValue = false)]
+    [JsonPropertyName("answerOptions")]
     public List<AnswerOption> AnswerOptions { get; set; }
 
 
@@ -136,7 +136,7 @@ public partial class SurveyQuestion : IEquatable<SurveyQuestion>
     /// How many characters are allowed in the text response to this question. Used by NPS and Free Text question types.
     /// </summary>
     /// <value>How many characters are allowed in the text response to this question. Used by NPS and Free Text question types.</value>
-    [DataMember(Name = "maxResponseCharacters", EmitDefaultValue = false)]
+    [JsonPropertyName("maxResponseCharacters")]
     public int? MaxResponseCharacters { get; set; }
 
 
@@ -145,7 +145,7 @@ public partial class SurveyQuestion : IEquatable<SurveyQuestion>
     /// Prompt for details explaining the chosen NPS score. Used by NPS questions.
     /// </summary>
     /// <value>Prompt for details explaining the chosen NPS score. Used by NPS questions.</value>
-    [DataMember(Name = "explanationPrompt", EmitDefaultValue = false)]
+    [JsonPropertyName("explanationPrompt")]
     public string ExplanationPrompt { get; set; }
 
 

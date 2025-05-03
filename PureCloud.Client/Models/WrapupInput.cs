@@ -1,12 +1,12 @@
-using System.Runtime.Serialization;
 using System.Text;
+using System.Text.Json.Serialization;
 
 namespace PureCloud.Client.Models;
 
 /// <summary>
 /// WrapupInput
 /// </summary>
-[DataContract]
+
 public partial class WrapupInput : IEquatable<WrapupInput>
 {
     /// <summary>
@@ -39,7 +39,7 @@ public partial class WrapupInput : IEquatable<WrapupInput>
     /// The user configured wrap up code id.
     /// </summary>
     /// <value>The user configured wrap up code id.</value>
-    [DataMember(Name = "code", EmitDefaultValue = false)]
+    [JsonPropertyName("code")]
     public string Code { get; set; }
 
 
@@ -48,7 +48,7 @@ public partial class WrapupInput : IEquatable<WrapupInput>
     /// The user configured wrap up code name.
     /// </summary>
     /// <value>The user configured wrap up code name.</value>
-    [DataMember(Name = "name", EmitDefaultValue = false)]
+    [JsonPropertyName("name")]
     public string Name { get; set; }
 
 
@@ -57,7 +57,7 @@ public partial class WrapupInput : IEquatable<WrapupInput>
     /// Text entered by the agent to describe the call or disposition.
     /// </summary>
     /// <value>Text entered by the agent to describe the call or disposition.</value>
-    [DataMember(Name = "notes", EmitDefaultValue = false)]
+    [JsonPropertyName("notes")]
     public string Notes { get; set; }
 
 
@@ -66,7 +66,7 @@ public partial class WrapupInput : IEquatable<WrapupInput>
     /// List of tags selected by the agent to describe the call or disposition.
     /// </summary>
     /// <value>List of tags selected by the agent to describe the call or disposition.</value>
-    [DataMember(Name = "tags", EmitDefaultValue = false)]
+    [JsonPropertyName("tags")]
     public List<string> Tags { get; set; }
 
 
@@ -75,7 +75,7 @@ public partial class WrapupInput : IEquatable<WrapupInput>
     /// The length of time in seconds that the agent spent doing after call work.
     /// </summary>
     /// <value>The length of time in seconds that the agent spent doing after call work.</value>
-    [DataMember(Name = "durationSeconds", EmitDefaultValue = false)]
+    [JsonPropertyName("durationSeconds")]
     public int? DurationSeconds { get; set; }
 
 
@@ -84,7 +84,7 @@ public partial class WrapupInput : IEquatable<WrapupInput>
     /// The timestamp when the wrapup was finished. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z
     /// </summary>
     /// <value>The timestamp when the wrapup was finished. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z</value>
-    [DataMember(Name = "endTime", EmitDefaultValue = false)]
+    [JsonPropertyName("endTime")]
     public DateTime? EndTime { get; set; }
 
 
@@ -93,7 +93,7 @@ public partial class WrapupInput : IEquatable<WrapupInput>
     /// Indicates if this is a pending save and should not require a code to be specified.  This allows someone to save some temporary wrapup that will be used later.
     /// </summary>
     /// <value>Indicates if this is a pending save and should not require a code to be specified.  This allows someone to save some temporary wrapup that will be used later.</value>
-    [DataMember(Name = "provisional", EmitDefaultValue = false)]
+    [JsonPropertyName("provisional")]
     public bool? Provisional { get; set; }
 
 
@@ -102,7 +102,7 @@ public partial class WrapupInput : IEquatable<WrapupInput>
     /// Prevent updates to wrapup end time when set to true.
     /// </summary>
     /// <value>Prevent updates to wrapup end time when set to true.</value>
-    [DataMember(Name = "disableEndTimeUpdates", EmitDefaultValue = false)]
+    [JsonPropertyName("disableEndTimeUpdates")]
     public bool? DisableEndTimeUpdates { get; set; }
 
 

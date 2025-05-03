@@ -7,14 +7,14 @@ namespace PureCloud.Client.Models;
 /// <summary>
 /// SiteConnection
 /// </summary>
-[DataContract]
+
 public partial class SiteConnection : IEquatable<SiteConnection>
 {
     /// <summary>
     /// Connection method from site to site (Direct, Indirect, CloudProxy
     /// </summary>
     /// <value>Connection method from site to site (Direct, Indirect, CloudProxy</value>
-    [JsonConverter(typeof(JsonStringEnumConverter))]
+    
     public enum TypeEnum
     {
         /// <summary>
@@ -47,7 +47,7 @@ public partial class SiteConnection : IEquatable<SiteConnection>
     /// Media model for the current site.
     /// </summary>
     /// <value>Media model for the current site.</value>
-    [JsonConverter(typeof(JsonStringEnumConverter))]
+    
     public enum MediaModelEnum
     {
         /// <summary>
@@ -74,13 +74,13 @@ public partial class SiteConnection : IEquatable<SiteConnection>
     /// Connection method from site to site (Direct, Indirect, CloudProxy
     /// </summary>
     /// <value>Connection method from site to site (Direct, Indirect, CloudProxy</value>
-    [DataMember(Name = "type", EmitDefaultValue = false)]
+    [JsonPropertyName("type")]
     public TypeEnum? Type { get; set; }
     /// <summary>
     /// Media model for the current site.
     /// </summary>
     /// <value>Media model for the current site.</value>
-    [DataMember(Name = "mediaModel", EmitDefaultValue = false)]
+    [JsonPropertyName("mediaModel")]
     public MediaModelEnum? MediaModel { get; private set; }
     /// <summary>
     /// Initializes a new instance of the <see cref="SiteConnection" /> class.
@@ -107,7 +107,7 @@ public partial class SiteConnection : IEquatable<SiteConnection>
     /// <summary>
     /// Gets or Sets Id
     /// </summary>
-    [DataMember(Name = "id", EmitDefaultValue = false)]
+    [JsonPropertyName("id")]
     public string Id { get; set; }
 
 
@@ -115,7 +115,7 @@ public partial class SiteConnection : IEquatable<SiteConnection>
     /// <summary>
     /// Gets or Sets Name
     /// </summary>
-    [DataMember(Name = "name", EmitDefaultValue = false)]
+    [JsonPropertyName("name")]
     public string Name { get; set; }
 
 
@@ -123,7 +123,7 @@ public partial class SiteConnection : IEquatable<SiteConnection>
     /// <summary>
     /// Gets or Sets SelfUri
     /// </summary>
-    [DataMember(Name = "selfUri", EmitDefaultValue = false)]
+    [JsonPropertyName("selfUri")]
     public string SelfUri { get; set; }
 
 
@@ -131,7 +131,7 @@ public partial class SiteConnection : IEquatable<SiteConnection>
     /// <summary>
     /// Gets or Sets Managed
     /// </summary>
-    [DataMember(Name = "managed", EmitDefaultValue = false)]
+    [JsonPropertyName("managed")]
     public bool? Managed { get; set; }
 
 
@@ -142,7 +142,7 @@ public partial class SiteConnection : IEquatable<SiteConnection>
     /// Indicates if the current site is linked
     /// </summary>
     /// <value>Indicates if the current site is linked</value>
-    [DataMember(Name = "enabled", EmitDefaultValue = false)]
+    [JsonPropertyName("enabled")]
     public bool? Enabled { get; set; }
 
 
@@ -153,7 +153,7 @@ public partial class SiteConnection : IEquatable<SiteConnection>
     /// All of the edges to which the site connects
     /// </summary>
     /// <value>All of the edges to which the site connects</value>
-    [DataMember(Name = "edgeList", EmitDefaultValue = false)]
+    [JsonPropertyName("edgeList")]
     public List<ConnectedEdge> EdgeList { get; private set; }
 
 
@@ -162,7 +162,7 @@ public partial class SiteConnection : IEquatable<SiteConnection>
     /// The core site
     /// </summary>
     /// <value>The core site</value>
-    [DataMember(Name = "coreSite", EmitDefaultValue = false)]
+    [JsonPropertyName("coreSite")]
     public bool? CoreSite { get; private set; }
 
 
@@ -171,7 +171,7 @@ public partial class SiteConnection : IEquatable<SiteConnection>
     /// List of site ids names and selfUris for the primary core sites
     /// </summary>
     /// <value>List of site ids names and selfUris for the primary core sites</value>
-    [DataMember(Name = "primaryCoreSites", EmitDefaultValue = false)]
+    [JsonPropertyName("primaryCoreSites")]
     public List<DomainEntityRef> PrimaryCoreSites { get; private set; }
 
 
@@ -180,7 +180,7 @@ public partial class SiteConnection : IEquatable<SiteConnection>
     /// List of site ids names and selfUris for the secondary core sites
     /// </summary>
     /// <value>List of site ids names and selfUris for the secondary core sites</value>
-    [DataMember(Name = "secondaryCoreSites", EmitDefaultValue = false)]
+    [JsonPropertyName("secondaryCoreSites")]
     public List<DomainEntityRef> SecondaryCoreSites { get; private set; }
 
 

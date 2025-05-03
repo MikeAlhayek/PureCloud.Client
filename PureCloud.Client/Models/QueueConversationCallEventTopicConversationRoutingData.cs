@@ -1,12 +1,12 @@
-using System.Runtime.Serialization;
 using System.Text;
+using System.Text.Json.Serialization;
 
 namespace PureCloud.Client.Models;
 
 /// <summary>
 /// QueueConversationCallEventTopicConversationRoutingData
 /// </summary>
-[DataContract]
+
 public partial class QueueConversationCallEventTopicConversationRoutingData : IEquatable<QueueConversationCallEventTopicConversationRoutingData>
 {
     /// <summary>
@@ -33,7 +33,7 @@ public partial class QueueConversationCallEventTopicConversationRoutingData : IE
     /// A UriReference for a resource
     /// </summary>
     /// <value>A UriReference for a resource</value>
-    [DataMember(Name = "queue", EmitDefaultValue = false)]
+    [JsonPropertyName("queue")]
     public QueueConversationCallEventTopicUriReference Queue { get; set; }
 
 
@@ -42,7 +42,7 @@ public partial class QueueConversationCallEventTopicConversationRoutingData : IE
     /// A UriReference for a resource
     /// </summary>
     /// <value>A UriReference for a resource</value>
-    [DataMember(Name = "language", EmitDefaultValue = false)]
+    [JsonPropertyName("language")]
     public QueueConversationCallEventTopicUriReference Language { get; set; }
 
 
@@ -51,7 +51,7 @@ public partial class QueueConversationCallEventTopicConversationRoutingData : IE
     /// The priority of the conversation to use for routing decisions
     /// </summary>
     /// <value>The priority of the conversation to use for routing decisions</value>
-    [DataMember(Name = "priority", EmitDefaultValue = false)]
+    [JsonPropertyName("priority")]
     public long? Priority { get; set; }
 
 
@@ -60,7 +60,7 @@ public partial class QueueConversationCallEventTopicConversationRoutingData : IE
     /// The skills to use for routing decisions
     /// </summary>
     /// <value>The skills to use for routing decisions</value>
-    [DataMember(Name = "skills", EmitDefaultValue = false)]
+    [JsonPropertyName("skills")]
     public List<QueueConversationCallEventTopicUriReference> Skills { get; set; }
 
 
@@ -69,7 +69,7 @@ public partial class QueueConversationCallEventTopicConversationRoutingData : IE
     /// A collection of agents and their assigned scores for this conversation (0 - 100, higher being better), for use in routing to preferred agents
     /// </summary>
     /// <value>A collection of agents and their assigned scores for this conversation (0 - 100, higher being better), for use in routing to preferred agents</value>
-    [DataMember(Name = "scoredAgents", EmitDefaultValue = false)]
+    [JsonPropertyName("scoredAgents")]
     public List<QueueConversationCallEventTopicScoredAgent> ScoredAgents { get; set; }
 
 

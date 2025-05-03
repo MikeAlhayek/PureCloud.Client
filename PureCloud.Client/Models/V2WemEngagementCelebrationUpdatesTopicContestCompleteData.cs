@@ -7,13 +7,13 @@ namespace PureCloud.Client.Models;
 /// <summary>
 /// V2WemEngagementCelebrationUpdatesTopicContestCompleteData
 /// </summary>
-[DataContract]
+
 public partial class V2WemEngagementCelebrationUpdatesTopicContestCompleteData : IEquatable<V2WemEngagementCelebrationUpdatesTopicContestCompleteData>
 {
     /// <summary>
     /// Gets or Sets Anonymization
     /// </summary>
-    [JsonConverter(typeof(JsonStringEnumConverter))]
+    
     public enum AnonymizationEnum
     {
         /// <summary>
@@ -51,7 +51,7 @@ public partial class V2WemEngagementCelebrationUpdatesTopicContestCompleteData :
     /// <summary>
     /// Gets or Sets Anonymization
     /// </summary>
-    [DataMember(Name = "anonymization", EmitDefaultValue = false)]
+    [JsonPropertyName("anonymization")]
     public AnonymizationEnum? Anonymization { get; set; }
     /// <summary>
     /// Initializes a new instance of the <see cref="V2WemEngagementCelebrationUpdatesTopicContestCompleteData" /> class.
@@ -76,7 +76,7 @@ public partial class V2WemEngagementCelebrationUpdatesTopicContestCompleteData :
     /// <summary>
     /// Gets or Sets DateEnd
     /// </summary>
-    [DataMember(Name = "dateEnd", EmitDefaultValue = false)]
+    [JsonPropertyName("dateEnd")]
     public string DateEnd { get; set; }
 
 
@@ -86,7 +86,7 @@ public partial class V2WemEngagementCelebrationUpdatesTopicContestCompleteData :
     /// <summary>
     /// Gets or Sets Metrics
     /// </summary>
-    [DataMember(Name = "metrics", EmitDefaultValue = false)]
+    [JsonPropertyName("metrics")]
     public List<V2WemEngagementCelebrationUpdatesTopicContestMetrics> Metrics { get; set; }
 
 
@@ -94,7 +94,7 @@ public partial class V2WemEngagementCelebrationUpdatesTopicContestCompleteData :
     /// <summary>
     /// Gets or Sets Prizes
     /// </summary>
-    [DataMember(Name = "prizes", EmitDefaultValue = false)]
+    [JsonPropertyName("prizes")]
     public List<V2WemEngagementCelebrationUpdatesTopicContestPrizes> Prizes { get; set; }
 
 
@@ -102,7 +102,7 @@ public partial class V2WemEngagementCelebrationUpdatesTopicContestCompleteData :
     /// <summary>
     /// Gets or Sets Winners
     /// </summary>
-    [DataMember(Name = "winners", EmitDefaultValue = false)]
+    [JsonPropertyName("winners")]
     public List<V2WemEngagementCelebrationUpdatesTopicContestWinners> Winners { get; set; }
 
 

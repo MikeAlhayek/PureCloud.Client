@@ -1,12 +1,12 @@
-using System.Runtime.Serialization;
 using System.Text;
+using System.Text.Json.Serialization;
 
 namespace PureCloud.Client.Models;
 
 /// <summary>
 /// WfmIntradayDataUpdateTopicIntradayScheduleData
 /// </summary>
-[DataContract]
+
 public partial class WfmIntradayDataUpdateTopicIntradayScheduleData : IEquatable<WfmIntradayDataUpdateTopicIntradayScheduleData>
 {
     /// <summary>
@@ -26,7 +26,7 @@ public partial class WfmIntradayDataUpdateTopicIntradayScheduleData : IEquatable
     /// <summary>
     /// Gets or Sets OnQueueTimeSeconds
     /// </summary>
-    [DataMember(Name = "onQueueTimeSeconds", EmitDefaultValue = false)]
+    [JsonPropertyName("onQueueTimeSeconds")]
     public long? OnQueueTimeSeconds { get; set; }
 
 
@@ -34,7 +34,7 @@ public partial class WfmIntradayDataUpdateTopicIntradayScheduleData : IEquatable
     /// <summary>
     /// Gets or Sets ScheduledTimeSeconds
     /// </summary>
-    [DataMember(Name = "scheduledTimeSeconds", EmitDefaultValue = false)]
+    [JsonPropertyName("scheduledTimeSeconds")]
     public long? ScheduledTimeSeconds { get; set; }
 
 

@@ -1,12 +1,12 @@
-using System.Runtime.Serialization;
 using System.Text;
+using System.Text.Json.Serialization;
 
 namespace PureCloud.Client.Models;
 
 /// <summary>
 /// ContactsExportQueryConditions
 /// </summary>
-[DataContract]
+
 public partial class ContactsExportQueryConditions : IEquatable<ContactsExportQueryConditions>
 {
     /// <summary>
@@ -27,7 +27,7 @@ public partial class ContactsExportQueryConditions : IEquatable<ContactsExportQu
     /// Filters to apply on export
     /// </summary>
     /// <value>Filters to apply on export</value>
-    [DataMember(Name = "filters", EmitDefaultValue = false)]
+    [JsonPropertyName("filters")]
     public ContactsExportFilter Filters { get; set; }
 
 
@@ -36,7 +36,7 @@ public partial class ContactsExportQueryConditions : IEquatable<ContactsExportQu
     /// Maximum result count in export, default is 180 000 000
     /// </summary>
     /// <value>Maximum result count in export, default is 180 000 000</value>
-    [DataMember(Name = "limit", EmitDefaultValue = false)]
+    [JsonPropertyName("limit")]
     public int? Limit { get; set; }
 
 

@@ -1,4 +1,3 @@
-using System.Runtime.Serialization;
 using System.Text;
 using System.Text.Json.Serialization;
 
@@ -7,7 +6,7 @@ namespace PureCloud.Client.Models;
 /// <summary>
 /// Prompt
 /// </summary>
-[DataContract]
+
 public partial class Prompt : IEquatable<Prompt>
 {
 
@@ -36,7 +35,7 @@ public partial class Prompt : IEquatable<Prompt>
     /// The prompt identifier
     /// </summary>
     /// <value>The prompt identifier</value>
-    [DataMember(Name = "id", EmitDefaultValue = false)]
+    [JsonPropertyName("id")]
     public string Id { get; set; }
 
 
@@ -45,7 +44,7 @@ public partial class Prompt : IEquatable<Prompt>
     /// The prompt name.
     /// </summary>
     /// <value>The prompt name.</value>
-    [DataMember(Name = "name", EmitDefaultValue = false)]
+    [JsonPropertyName("name")]
     public string Name { get; set; }
 
 
@@ -53,7 +52,7 @@ public partial class Prompt : IEquatable<Prompt>
     /// <summary>
     /// Gets or Sets Description
     /// </summary>
-    [DataMember(Name = "description", EmitDefaultValue = false)]
+    [JsonPropertyName("description")]
     public string Description { get; set; }
 
 
@@ -62,7 +61,7 @@ public partial class Prompt : IEquatable<Prompt>
     /// List of resources associated with this prompt
     /// </summary>
     /// <value>List of resources associated with this prompt</value>
-    [DataMember(Name = "resources", EmitDefaultValue = false)]
+    [JsonPropertyName("resources")]
     public List<PromptAsset> Resources { get; private set; }
 
 
@@ -71,7 +70,7 @@ public partial class Prompt : IEquatable<Prompt>
     /// Current prompt operation status
     /// </summary>
     /// <value>Current prompt operation status</value>
-    [DataMember(Name = "currentOperation", EmitDefaultValue = false)]
+    [JsonPropertyName("currentOperation")]
     public Operation CurrentOperation { get; private set; }
 
 
@@ -80,7 +79,7 @@ public partial class Prompt : IEquatable<Prompt>
     /// The URI for this object
     /// </summary>
     /// <value>The URI for this object</value>
-    [DataMember(Name = "selfUri", EmitDefaultValue = false)]
+    [JsonPropertyName("selfUri")]
     public string SelfUri { get; private set; }
 
 

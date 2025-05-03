@@ -7,13 +7,13 @@ namespace PureCloud.Client.Models;
 /// <summary>
 /// CollaborateChatGroupMessageEventTopicCollaborateChatEntity
 /// </summary>
-[DataContract]
+
 public partial class CollaborateChatGroupMessageEventTopicCollaborateChatEntity : IEquatable<CollaborateChatGroupMessageEventTopicCollaborateChatEntity>
 {
     /// <summary>
     /// Gets or Sets EntityType
     /// </summary>
-    [JsonConverter(typeof(JsonStringEnumConverter))]
+    
     public enum EntityTypeEnum
     {
         /// <summary>
@@ -45,7 +45,7 @@ public partial class CollaborateChatGroupMessageEventTopicCollaborateChatEntity 
     /// <summary>
     /// Gets or Sets EntityType
     /// </summary>
-    [DataMember(Name = "entityType", EmitDefaultValue = false)]
+    [JsonPropertyName("entityType")]
     public EntityTypeEnum? EntityType { get; set; }
     /// <summary>
     /// Initializes a new instance of the <see cref="CollaborateChatGroupMessageEventTopicCollaborateChatEntity" /> class.
@@ -66,7 +66,7 @@ public partial class CollaborateChatGroupMessageEventTopicCollaborateChatEntity 
     /// <summary>
     /// Gets or Sets EntityJid
     /// </summary>
-    [DataMember(Name = "entityJid", EmitDefaultValue = false)]
+    [JsonPropertyName("entityJid")]
     public string EntityJid { get; set; }
 
 
@@ -74,7 +74,7 @@ public partial class CollaborateChatGroupMessageEventTopicCollaborateChatEntity 
     /// <summary>
     /// Gets or Sets EntityId
     /// </summary>
-    [DataMember(Name = "entityId", EmitDefaultValue = false)]
+    [JsonPropertyName("entityId")]
     public string EntityId { get; set; }
 
 

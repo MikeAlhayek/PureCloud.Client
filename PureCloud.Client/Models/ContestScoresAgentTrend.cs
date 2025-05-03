@@ -1,12 +1,12 @@
-using System.Runtime.Serialization;
 using System.Text;
+using System.Text.Json.Serialization;
 
 namespace PureCloud.Client.Models;
 
 /// <summary>
 /// ContestScoresAgentTrend
 /// </summary>
-[DataContract]
+
 public partial class ContestScoresAgentTrend : IEquatable<ContestScoresAgentTrend>
 {
     /// <summary>
@@ -31,7 +31,7 @@ public partial class ContestScoresAgentTrend : IEquatable<ContestScoresAgentTren
     /// The Contest score
     /// </summary>
     /// <value>The Contest score</value>
-    [DataMember(Name = "contestScore", EmitDefaultValue = false)]
+    [JsonPropertyName("contestScore")]
     public ContestScoreRanked ContestScore { get; set; }
 
 
@@ -40,7 +40,7 @@ public partial class ContestScoresAgentTrend : IEquatable<ContestScoresAgentTren
     /// The Contest metric scores
     /// </summary>
     /// <value>The Contest metric scores</value>
-    [DataMember(Name = "metricScores", EmitDefaultValue = false)]
+    [JsonPropertyName("metricScores")]
     public List<ContestMetricScoreRanked> MetricScores { get; set; }
 
 
@@ -49,7 +49,7 @@ public partial class ContestScoresAgentTrend : IEquatable<ContestScoresAgentTren
     /// Indicates whether an agent is disqualified or not
     /// </summary>
     /// <value>Indicates whether an agent is disqualified or not</value>
-    [DataMember(Name = "disqualified", EmitDefaultValue = false)]
+    [JsonPropertyName("disqualified")]
     public bool? Disqualified { get; set; }
 
 
@@ -58,7 +58,7 @@ public partial class ContestScoresAgentTrend : IEquatable<ContestScoresAgentTren
     /// Workday of the contest scores leaderboard. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd
     /// </summary>
     /// <value>Workday of the contest scores leaderboard. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd</value>
-    [DataMember(Name = "dateWorkday", EmitDefaultValue = false)]
+    [JsonPropertyName("dateWorkday")]
     public string DateWorkday { get; set; }
 
 

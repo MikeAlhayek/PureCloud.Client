@@ -1,4 +1,3 @@
-using System.Runtime.Serialization;
 using System.Text;
 using System.Text.Json.Serialization;
 
@@ -7,7 +6,7 @@ namespace PureCloud.Client.Models;
 /// <summary>
 /// Settings for a chat user
 /// </summary>
-[DataContract]
+
 public partial class ChatUserSettings : IEquatable<ChatUserSettings>
 {
 
@@ -32,7 +31,7 @@ public partial class ChatUserSettings : IEquatable<ChatUserSettings>
     /// Settings for mobile devices
     /// </summary>
     /// <value>Settings for mobile devices</value>
-    [DataMember(Name = "mobile", EmitDefaultValue = false)]
+    [JsonPropertyName("mobile")]
     public MobileSettings Mobile { get; set; }
 
 

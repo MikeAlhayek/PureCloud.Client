@@ -7,14 +7,14 @@ namespace PureCloud.Client.Models;
 /// <summary>
 /// UserRoutingStatusRoutingStatus
 /// </summary>
-[DataContract]
+
 public partial class UserRoutingStatusRoutingStatus : IEquatable<UserRoutingStatusRoutingStatus>
 {
     /// <summary>
     /// Indicates the Routing State of the agent.
     /// </summary>
     /// <value>Indicates the Routing State of the agent.</value>
-    [JsonConverter(typeof(JsonStringEnumConverter))]
+    
     public enum StatusEnum
     {
         /// <summary>
@@ -59,7 +59,7 @@ public partial class UserRoutingStatusRoutingStatus : IEquatable<UserRoutingStat
     /// Indicates the Routing State of the agent.
     /// </summary>
     /// <value>Indicates the Routing State of the agent.</value>
-    [DataMember(Name = "status", EmitDefaultValue = false)]
+    [JsonPropertyName("status")]
     public StatusEnum? Status { get; set; }
     /// <summary>
     /// Initializes a new instance of the <see cref="UserRoutingStatusRoutingStatus" /> class.
@@ -81,7 +81,7 @@ public partial class UserRoutingStatusRoutingStatus : IEquatable<UserRoutingStat
     /// The timestamp when the agent went into this state.
     /// </summary>
     /// <value>The timestamp when the agent went into this state.</value>
-    [DataMember(Name = "startTime", EmitDefaultValue = false)]
+    [JsonPropertyName("startTime")]
     public DateTime? StartTime { get; set; }
 
 

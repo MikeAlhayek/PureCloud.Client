@@ -7,14 +7,14 @@ namespace PureCloud.Client.Models;
 /// <summary>
 /// WebEventDevice
 /// </summary>
-[DataContract]
+
 public partial class WebEventDevice : IEquatable<WebEventDevice>
 {
     /// <summary>
     /// Device category.
     /// </summary>
     /// <value>Device category.</value>
-    [JsonConverter(typeof(JsonStringEnumConverter))]
+    
     public enum CategoryEnum
     {
         /// <summary>
@@ -53,7 +53,7 @@ public partial class WebEventDevice : IEquatable<WebEventDevice>
     /// Device category.
     /// </summary>
     /// <value>Device category.</value>
-    [DataMember(Name = "category", EmitDefaultValue = false)]
+    [JsonPropertyName("category")]
     public CategoryEnum? Category { get; set; }
 
     /// <summary>
@@ -95,7 +95,7 @@ public partial class WebEventDevice : IEquatable<WebEventDevice>
     /// Device type (e.g. iPad, iPhone, Other).
     /// </summary>
     /// <value>Device type (e.g. iPad, iPhone, Other).</value>
-    [DataMember(Name = "type", EmitDefaultValue = false)]
+    [JsonPropertyName("type")]
     public string Type { get; set; }
 
 
@@ -104,7 +104,7 @@ public partial class WebEventDevice : IEquatable<WebEventDevice>
     /// Flag that is true for mobile devices.
     /// </summary>
     /// <value>Flag that is true for mobile devices.</value>
-    [DataMember(Name = "isMobile", EmitDefaultValue = false)]
+    [JsonPropertyName("isMobile")]
     public bool? IsMobile { get; set; }
 
 
@@ -113,7 +113,7 @@ public partial class WebEventDevice : IEquatable<WebEventDevice>
     /// Device&#39;s screen height.
     /// </summary>
     /// <value>Device&#39;s screen height.</value>
-    [DataMember(Name = "screenHeight", EmitDefaultValue = false)]
+    [JsonPropertyName("screenHeight")]
     public int? ScreenHeight { get; set; }
 
 
@@ -122,7 +122,7 @@ public partial class WebEventDevice : IEquatable<WebEventDevice>
     /// Device&#39;s screen width.
     /// </summary>
     /// <value>Device&#39;s screen width.</value>
-    [DataMember(Name = "screenWidth", EmitDefaultValue = false)]
+    [JsonPropertyName("screenWidth")]
     public int? ScreenWidth { get; set; }
 
 
@@ -131,7 +131,7 @@ public partial class WebEventDevice : IEquatable<WebEventDevice>
     /// Device&#39;s screen density, measured as a scale factor where a value of 1 represents a baseline 1:1 ratio of pixels to logical (device-independent) pixels.
     /// </summary>
     /// <value>Device&#39;s screen density, measured as a scale factor where a value of 1 represents a baseline 1:1 ratio of pixels to logical (device-independent) pixels.</value>
-    [DataMember(Name = "screenDensity", EmitDefaultValue = false)]
+    [JsonPropertyName("screenDensity")]
     public int? ScreenDensity { get; set; }
 
 
@@ -140,7 +140,7 @@ public partial class WebEventDevice : IEquatable<WebEventDevice>
     /// Operating system family.
     /// </summary>
     /// <value>Operating system family.</value>
-    [DataMember(Name = "osFamily", EmitDefaultValue = false)]
+    [JsonPropertyName("osFamily")]
     public string OsFamily { get; set; }
 
 
@@ -149,7 +149,7 @@ public partial class WebEventDevice : IEquatable<WebEventDevice>
     /// Operating system version.
     /// </summary>
     /// <value>Operating system version.</value>
-    [DataMember(Name = "osVersion", EmitDefaultValue = false)]
+    [JsonPropertyName("osVersion")]
     public string OsVersion { get; set; }
 
 
@@ -158,7 +158,7 @@ public partial class WebEventDevice : IEquatable<WebEventDevice>
     /// Manufacturer of the device.
     /// </summary>
     /// <value>Manufacturer of the device.</value>
-    [DataMember(Name = "manufacturer", EmitDefaultValue = false)]
+    [JsonPropertyName("manufacturer")]
     public string Manufacturer { get; set; }
 
 

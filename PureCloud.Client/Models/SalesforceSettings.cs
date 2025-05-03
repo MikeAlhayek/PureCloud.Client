@@ -7,14 +7,14 @@ namespace PureCloud.Client.Models;
 /// <summary>
 /// SalesforceSettings
 /// </summary>
-[DataContract]
+
 public partial class SalesforceSettings : IEquatable<SalesforceSettings>
 {
     /// <summary>
     /// Filter source by channel.
     /// </summary>
     /// <value>Filter source by channel.</value>
-    [JsonConverter(typeof(JsonStringEnumConverter))]
+    
     public enum ChannelEnum
     {
         /// <summary>
@@ -53,7 +53,7 @@ public partial class SalesforceSettings : IEquatable<SalesforceSettings>
     /// Filter source by channel.
     /// </summary>
     /// <value>Filter source by channel.</value>
-    [DataMember(Name = "channel", EmitDefaultValue = false)]
+    [JsonPropertyName("channel")]
     public ChannelEnum? Channel { get; set; }
     /// <summary>
     /// Initializes a new instance of the <see cref="SalesforceSettings" /> class.
@@ -79,7 +79,7 @@ public partial class SalesforceSettings : IEquatable<SalesforceSettings>
     /// Filter source by language.
     /// </summary>
     /// <value>Filter source by language.</value>
-    [DataMember(Name = "language", EmitDefaultValue = false)]
+    [JsonPropertyName("language")]
     public string Language { get; set; }
 
 
@@ -88,7 +88,7 @@ public partial class SalesforceSettings : IEquatable<SalesforceSettings>
     /// Filter source by categories.
     /// </summary>
     /// <value>Filter source by categories.</value>
-    [DataMember(Name = "categories", EmitDefaultValue = false)]
+    [JsonPropertyName("categories")]
     public List<string> Categories { get; set; }
 
 
@@ -97,7 +97,7 @@ public partial class SalesforceSettings : IEquatable<SalesforceSettings>
     /// The base URL to resources.
     /// </summary>
     /// <value>The base URL to resources.</value>
-    [DataMember(Name = "baseUrl", EmitDefaultValue = false)]
+    [JsonPropertyName("baseUrl")]
     public string BaseUrl { get; set; }
 
 

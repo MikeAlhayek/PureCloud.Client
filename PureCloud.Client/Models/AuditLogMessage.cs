@@ -7,14 +7,14 @@ namespace PureCloud.Client.Models;
 /// <summary>
 /// AuditLogMessage
 /// </summary>
-[DataContract]
+
 public partial class AuditLogMessage : IEquatable<AuditLogMessage>
 {
     /// <summary>
     /// Level of this audit message, USER or SYSTEM.
     /// </summary>
     /// <value>Level of this audit message, USER or SYSTEM.</value>
-    [JsonConverter(typeof(JsonStringEnumConverter))]
+    
     public enum LevelEnum
     {
         /// <summary>
@@ -47,7 +47,7 @@ public partial class AuditLogMessage : IEquatable<AuditLogMessage>
     /// Status of the event being audited
     /// </summary>
     /// <value>Status of the event being audited</value>
-    [JsonConverter(typeof(JsonStringEnumConverter))]
+    
     public enum StatusEnum
     {
         /// <summary>
@@ -80,13 +80,13 @@ public partial class AuditLogMessage : IEquatable<AuditLogMessage>
     /// Level of this audit message, USER or SYSTEM.
     /// </summary>
     /// <value>Level of this audit message, USER or SYSTEM.</value>
-    [DataMember(Name = "level", EmitDefaultValue = false)]
+    [JsonPropertyName("level")]
     public LevelEnum? Level { get; set; }
     /// <summary>
     /// Status of the event being audited
     /// </summary>
     /// <value>Status of the event being audited</value>
-    [DataMember(Name = "status", EmitDefaultValue = false)]
+    [JsonPropertyName("status")]
     public StatusEnum? Status { get; set; }
     /// <summary>
     /// Initializes a new instance of the <see cref="AuditLogMessage" /> class.
@@ -140,7 +140,7 @@ public partial class AuditLogMessage : IEquatable<AuditLogMessage>
     /// Id of the audit message.
     /// </summary>
     /// <value>Id of the audit message.</value>
-    [DataMember(Name = "id", EmitDefaultValue = false)]
+    [JsonPropertyName("id")]
     public string Id { get; set; }
 
 
@@ -149,7 +149,7 @@ public partial class AuditLogMessage : IEquatable<AuditLogMessage>
     /// Home Organization Id associated with this audit message.
     /// </summary>
     /// <value>Home Organization Id associated with this audit message.</value>
-    [DataMember(Name = "userHomeOrgId", EmitDefaultValue = false)]
+    [JsonPropertyName("userHomeOrgId")]
     public string UserHomeOrgId { get; set; }
 
 
@@ -158,7 +158,7 @@ public partial class AuditLogMessage : IEquatable<AuditLogMessage>
     /// User associated with this audit message.
     /// </summary>
     /// <value>User associated with this audit message.</value>
-    [DataMember(Name = "user", EmitDefaultValue = false)]
+    [JsonPropertyName("user")]
     public DomainEntityRef User { get; set; }
 
 
@@ -167,7 +167,7 @@ public partial class AuditLogMessage : IEquatable<AuditLogMessage>
     /// Client associated with this audit message.
     /// </summary>
     /// <value>Client associated with this audit message.</value>
-    [DataMember(Name = "client", EmitDefaultValue = false)]
+    [JsonPropertyName("client")]
     public AddressableEntityRef Client { get; set; }
 
 
@@ -176,7 +176,7 @@ public partial class AuditLogMessage : IEquatable<AuditLogMessage>
     /// List of IP addresses of systems that originated or handled the request.
     /// </summary>
     /// <value>List of IP addresses of systems that originated or handled the request.</value>
-    [DataMember(Name = "remoteIp", EmitDefaultValue = false)]
+    [JsonPropertyName("remoteIp")]
     public List<string> RemoteIp { get; set; }
 
 
@@ -185,7 +185,7 @@ public partial class AuditLogMessage : IEquatable<AuditLogMessage>
     /// Name of the service that logged this audit message.
     /// </summary>
     /// <value>Name of the service that logged this audit message.</value>
-    [DataMember(Name = "serviceName", EmitDefaultValue = false)]
+    [JsonPropertyName("serviceName")]
     public string ServiceName { get; set; }
 
 
@@ -196,7 +196,7 @@ public partial class AuditLogMessage : IEquatable<AuditLogMessage>
     /// Date and time of when the audit message was logged. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z
     /// </summary>
     /// <value>Date and time of when the audit message was logged. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z</value>
-    [DataMember(Name = "eventDate", EmitDefaultValue = false)]
+    [JsonPropertyName("eventDate")]
     public DateTime? EventDate { get; set; }
 
 
@@ -205,7 +205,7 @@ public partial class AuditLogMessage : IEquatable<AuditLogMessage>
     /// Message describing the event being audited.
     /// </summary>
     /// <value>Message describing the event being audited.</value>
-    [DataMember(Name = "message", EmitDefaultValue = false)]
+    [JsonPropertyName("message")]
     public MessageInfo Message { get; set; }
 
 
@@ -214,7 +214,7 @@ public partial class AuditLogMessage : IEquatable<AuditLogMessage>
     /// Action that took place.
     /// </summary>
     /// <value>Action that took place.</value>
-    [DataMember(Name = "action", EmitDefaultValue = false)]
+    [JsonPropertyName("action")]
     public string Action { get; set; }
 
 
@@ -223,7 +223,7 @@ public partial class AuditLogMessage : IEquatable<AuditLogMessage>
     /// Entity that was impacted.
     /// </summary>
     /// <value>Entity that was impacted.</value>
-    [DataMember(Name = "entity", EmitDefaultValue = false)]
+    [JsonPropertyName("entity")]
     public DomainEntityRef Entity { get; set; }
 
 
@@ -232,7 +232,7 @@ public partial class AuditLogMessage : IEquatable<AuditLogMessage>
     /// Type of the entity that was impacted.
     /// </summary>
     /// <value>Type of the entity that was impacted.</value>
-    [DataMember(Name = "entityType", EmitDefaultValue = false)]
+    [JsonPropertyName("entityType")]
     public string EntityType { get; set; }
 
 
@@ -243,7 +243,7 @@ public partial class AuditLogMessage : IEquatable<AuditLogMessage>
     /// Name of the application used to perform the audit&#39;s action
     /// </summary>
     /// <value>Name of the application used to perform the audit&#39;s action</value>
-    [DataMember(Name = "application", EmitDefaultValue = false)]
+    [JsonPropertyName("application")]
     public string Application { get; set; }
 
 
@@ -252,7 +252,7 @@ public partial class AuditLogMessage : IEquatable<AuditLogMessage>
     /// Id and action of the audit initiating the transaction
     /// </summary>
     /// <value>Id and action of the audit initiating the transaction</value>
-    [DataMember(Name = "initiatingAction", EmitDefaultValue = false)]
+    [JsonPropertyName("initiatingAction")]
     public InitiatingAction InitiatingAction { get; set; }
 
 
@@ -261,7 +261,7 @@ public partial class AuditLogMessage : IEquatable<AuditLogMessage>
     /// Whether the current audit is the initiator of the transaction
     /// </summary>
     /// <value>Whether the current audit is the initiator of the transaction</value>
-    [DataMember(Name = "transactionInitiator", EmitDefaultValue = false)]
+    [JsonPropertyName("transactionInitiator")]
     public bool? TransactionInitiator { get; set; }
 
 
@@ -270,7 +270,7 @@ public partial class AuditLogMessage : IEquatable<AuditLogMessage>
     /// List of properties that were changed and changes made to those properties.
     /// </summary>
     /// <value>List of properties that were changed and changes made to those properties.</value>
-    [DataMember(Name = "propertyChanges", EmitDefaultValue = false)]
+    [JsonPropertyName("propertyChanges")]
     public List<PropertyChange> PropertyChanges { get; set; }
 
 
@@ -279,7 +279,7 @@ public partial class AuditLogMessage : IEquatable<AuditLogMessage>
     /// Additional context for this message.
     /// </summary>
     /// <value>Additional context for this message.</value>
-    [DataMember(Name = "context", EmitDefaultValue = false)]
+    [JsonPropertyName("context")]
     public Dictionary<string, string> Context { get; set; }
 
 
@@ -288,7 +288,7 @@ public partial class AuditLogMessage : IEquatable<AuditLogMessage>
     /// List of entities that were changed and changes made to those entities.
     /// </summary>
     /// <value>List of entities that were changed and changes made to those entities.</value>
-    [DataMember(Name = "entityChanges", EmitDefaultValue = false)]
+    [JsonPropertyName("entityChanges")]
     public List<EntityChange> EntityChanges { get; set; }
 
 

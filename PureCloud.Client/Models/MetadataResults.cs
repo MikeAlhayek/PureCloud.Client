@@ -1,12 +1,12 @@
-using System.Runtime.Serialization;
 using System.Text;
+using System.Text.Json.Serialization;
 
 namespace PureCloud.Client.Models;
 
 /// <summary>
 /// List of resources created or modified as a result of running an accelerator
 /// </summary>
-[DataContract]
+
 public partial class MetadataResults : IEquatable<MetadataResults>
 {
     /// <summary>
@@ -23,7 +23,7 @@ public partial class MetadataResults : IEquatable<MetadataResults>
     /// list of resources
     /// </summary>
     /// <value>list of resources</value>
-    [DataMember(Name = "entities", EmitDefaultValue = false)]
+    [JsonPropertyName("entities")]
     public List<MetadataResultEntity> Entities { get; private set; }
 
 

@@ -1,12 +1,12 @@
-using System.Runtime.Serialization;
 using System.Text;
+using System.Text.Json.Serialization;
 
 namespace PureCloud.Client.Models;
 
 /// <summary>
 /// KnowledgeParseJobRequestImport
 /// </summary>
-[DataContract]
+
 public partial class KnowledgeParseJobRequestImport : IEquatable<KnowledgeParseJobRequestImport>
 {
     /// <summary>
@@ -27,7 +27,7 @@ public partial class KnowledgeParseJobRequestImport : IEquatable<KnowledgeParseJ
     /// Override of the result of the parse.
     /// </summary>
     /// <value>Override of the result of the parse.</value>
-    [DataMember(Name = "edits", EmitDefaultValue = false)]
+    [JsonPropertyName("edits")]
     public List<KnowledgeParseRecord> Edits { get; set; }
 
 
@@ -36,7 +36,7 @@ public partial class KnowledgeParseJobRequestImport : IEquatable<KnowledgeParseJ
     /// Excluded results.
     /// </summary>
     /// <value>Excluded results.</value>
-    [DataMember(Name = "excludes", EmitDefaultValue = false)]
+    [JsonPropertyName("excludes")]
     public List<string> Excludes { get; set; }
 
 

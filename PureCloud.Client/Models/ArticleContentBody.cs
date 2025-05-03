@@ -1,12 +1,12 @@
-using System.Runtime.Serialization;
 using System.Text;
+using System.Text.Json.Serialization;
 
 namespace PureCloud.Client.Models;
 
 /// <summary>
 /// ArticleContentBody
 /// </summary>
-[DataContract]
+
 public partial class ArticleContentBody : IEquatable<ArticleContentBody>
 {
     /// <summary>
@@ -23,7 +23,7 @@ public partial class ArticleContentBody : IEquatable<ArticleContentBody>
     /// Presigned URL to retrieve the document content.
     /// </summary>
     /// <value>Presigned URL to retrieve the document content.</value>
-    [DataMember(Name = "locationUrl", EmitDefaultValue = false)]
+    [JsonPropertyName("locationUrl")]
     public string LocationUrl { get; private set; }
 
 

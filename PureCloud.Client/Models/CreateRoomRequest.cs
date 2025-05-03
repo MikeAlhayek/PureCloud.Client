@@ -1,4 +1,3 @@
-using System.Runtime.Serialization;
 using System.Text;
 using System.Text.Json.Serialization;
 
@@ -7,7 +6,7 @@ namespace PureCloud.Client.Models;
 /// <summary>
 /// CreateRoomRequest
 /// </summary>
-[DataContract]
+
 public partial class CreateRoomRequest : IEquatable<CreateRoomRequest>
 {
 
@@ -36,7 +35,7 @@ public partial class CreateRoomRequest : IEquatable<CreateRoomRequest>
     /// Room&#39;s description
     /// </summary>
     /// <value>Room&#39;s description</value>
-    [DataMember(Name = "description", EmitDefaultValue = false)]
+    [JsonPropertyName("description")]
     public string Description { get; set; }
 
 
@@ -45,7 +44,7 @@ public partial class CreateRoomRequest : IEquatable<CreateRoomRequest>
     /// Room&#39;s subject
     /// </summary>
     /// <value>Room&#39;s subject</value>
-    [DataMember(Name = "subject", EmitDefaultValue = false)]
+    [JsonPropertyName("subject")]
     public string Subject { get; set; }
 
 
@@ -54,7 +53,7 @@ public partial class CreateRoomRequest : IEquatable<CreateRoomRequest>
     /// Users to add to the room
     /// </summary>
     /// <value>Users to add to the room</value>
-    [DataMember(Name = "userIds", EmitDefaultValue = false)]
+    [JsonPropertyName("userIds")]
     public List<string> UserIds { get; set; }
 
 

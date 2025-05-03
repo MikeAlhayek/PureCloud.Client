@@ -7,14 +7,14 @@ namespace PureCloud.Client.Models;
 /// <summary>
 /// ConversationAssociation
 /// </summary>
-[DataContract]
+
 public partial class ConversationAssociation : IEquatable<ConversationAssociation>
 {
     /// <summary>
     /// Media type
     /// </summary>
     /// <value>Media type</value>
-    [JsonConverter(typeof(JsonStringEnumConverter))]
+    
     public enum MediaTypeEnum
     {
         /// <summary>
@@ -89,7 +89,7 @@ public partial class ConversationAssociation : IEquatable<ConversationAssociatio
     /// Media type
     /// </summary>
     /// <value>Media type</value>
-    [DataMember(Name = "mediaType", EmitDefaultValue = false)]
+    [JsonPropertyName("mediaType")]
     public MediaTypeEnum? MediaType { get; set; }
 
     /// <summary>
@@ -119,7 +119,7 @@ public partial class ConversationAssociation : IEquatable<ConversationAssociatio
     /// An external contact ID.  If not supplied, implies the conversation should be disassociated with any external contact.
     /// </summary>
     /// <value>An external contact ID.  If not supplied, implies the conversation should be disassociated with any external contact.</value>
-    [DataMember(Name = "externalContactId", EmitDefaultValue = false)]
+    [JsonPropertyName("externalContactId")]
     public string ExternalContactId { get; set; }
 
 
@@ -128,7 +128,7 @@ public partial class ConversationAssociation : IEquatable<ConversationAssociatio
     /// Conversation ID
     /// </summary>
     /// <value>Conversation ID</value>
-    [DataMember(Name = "conversationId", EmitDefaultValue = false)]
+    [JsonPropertyName("conversationId")]
     public string ConversationId { get; set; }
 
 
@@ -137,7 +137,7 @@ public partial class ConversationAssociation : IEquatable<ConversationAssociatio
     /// Communication ID
     /// </summary>
     /// <value>Communication ID</value>
-    [DataMember(Name = "communicationId", EmitDefaultValue = false)]
+    [JsonPropertyName("communicationId")]
     public string CommunicationId { get; set; }
 
 

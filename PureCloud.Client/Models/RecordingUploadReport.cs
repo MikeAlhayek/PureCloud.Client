@@ -7,14 +7,14 @@ namespace PureCloud.Client.Models;
 /// <summary>
 /// RecordingUploadReport
 /// </summary>
-[DataContract]
+
 public partial class RecordingUploadReport : IEquatable<RecordingUploadReport>
 {
     /// <summary>
     /// The current status of the upload report.
     /// </summary>
     /// <value>The current status of the upload report.</value>
-    [JsonConverter(typeof(JsonStringEnumConverter))]
+    
     public enum StateEnum
     {
         /// <summary>
@@ -47,7 +47,7 @@ public partial class RecordingUploadReport : IEquatable<RecordingUploadReport>
     /// The current status of the upload report.
     /// </summary>
     /// <value>The current status of the upload report.</value>
-    [DataMember(Name = "state", EmitDefaultValue = false)]
+    [JsonPropertyName("state")]
     public StateEnum? State { get; set; }
     /// <summary>
     /// Initializes a new instance of the <see cref="RecordingUploadReport" /> class.
@@ -71,7 +71,7 @@ public partial class RecordingUploadReport : IEquatable<RecordingUploadReport>
     /// The report id.
     /// </summary>
     /// <value>The report id.</value>
-    [DataMember(Name = "id", EmitDefaultValue = false)]
+    [JsonPropertyName("id")]
     public string Id { get; set; }
 
 
@@ -79,7 +79,7 @@ public partial class RecordingUploadReport : IEquatable<RecordingUploadReport>
     /// <summary>
     /// Gets or Sets Name
     /// </summary>
-    [DataMember(Name = "name", EmitDefaultValue = false)]
+    [JsonPropertyName("name")]
     public string Name { get; set; }
 
 
@@ -90,7 +90,7 @@ public partial class RecordingUploadReport : IEquatable<RecordingUploadReport>
     /// For COMPLETED tasks, the signed url to download the report.
     /// </summary>
     /// <value>For COMPLETED tasks, the signed url to download the report.</value>
-    [DataMember(Name = "signedUrl", EmitDefaultValue = false)]
+    [JsonPropertyName("signedUrl")]
     public string SignedUrl { get; set; }
 
 
@@ -99,7 +99,7 @@ public partial class RecordingUploadReport : IEquatable<RecordingUploadReport>
     /// The URI for this object
     /// </summary>
     /// <value>The URI for this object</value>
-    [DataMember(Name = "selfUri", EmitDefaultValue = false)]
+    [JsonPropertyName("selfUri")]
     public string SelfUri { get; private set; }
 
 

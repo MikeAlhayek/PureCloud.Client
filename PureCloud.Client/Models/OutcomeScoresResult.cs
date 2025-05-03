@@ -1,12 +1,12 @@
-using System.Runtime.Serialization;
 using System.Text;
+using System.Text.Json.Serialization;
 
 namespace PureCloud.Client.Models;
 
 /// <summary>
 /// OutcomeScoresResult
 /// </summary>
-[DataContract]
+
 public partial class OutcomeScoresResult : IEquatable<OutcomeScoresResult>
 {
     /// <summary>
@@ -25,7 +25,7 @@ public partial class OutcomeScoresResult : IEquatable<OutcomeScoresResult>
     /// List of scored outcomes in the session.
     /// </summary>
     /// <value>List of scored outcomes in the session.</value>
-    [DataMember(Name = "outcomeScores", EmitDefaultValue = false)]
+    [JsonPropertyName("outcomeScores")]
     public List<OutcomeScore> OutcomeScores { get; set; }
 
 
@@ -34,7 +34,7 @@ public partial class OutcomeScoresResult : IEquatable<OutcomeScoresResult>
     /// Timestamp indicating the last time that the event was scored. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z
     /// </summary>
     /// <value>Timestamp indicating the last time that the event was scored. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z</value>
-    [DataMember(Name = "modifiedDate", EmitDefaultValue = false)]
+    [JsonPropertyName("modifiedDate")]
     public DateTime? ModifiedDate { get; private set; }
 
 

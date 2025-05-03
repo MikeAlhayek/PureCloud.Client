@@ -1,12 +1,12 @@
-using System.Runtime.Serialization;
 using System.Text;
+using System.Text.Json.Serialization;
 
 namespace PureCloud.Client.Models;
 
 /// <summary>
 /// SetWrapperRoutePathRequest
 /// </summary>
-[DataContract]
+
 public partial class SetWrapperRoutePathRequest : IEquatable<SetWrapperRoutePathRequest>
 {
     /// <summary>
@@ -24,7 +24,7 @@ public partial class SetWrapperRoutePathRequest : IEquatable<SetWrapperRoutePath
     /// <summary>
     /// Gets or Sets Values
     /// </summary>
-    [DataMember(Name = "values", EmitDefaultValue = false)]
+    [JsonPropertyName("values")]
     public List<RoutePathRequest> Values { get; set; }
 
 

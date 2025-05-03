@@ -1,4 +1,3 @@
-using System.Runtime.Serialization;
 using System.Text;
 using System.Text.Json.Serialization;
 
@@ -7,7 +6,7 @@ namespace PureCloud.Client.Models;
 /// <summary>
 /// TimeOffRequestListing
 /// </summary>
-[DataContract]
+
 public partial class TimeOffRequestListing : IEquatable<TimeOffRequestListing>
 {
 
@@ -34,7 +33,7 @@ public partial class TimeOffRequestListing : IEquatable<TimeOffRequestListing>
     /// List of time off requests
     /// </summary>
     /// <value>List of time off requests</value>
-    [DataMember(Name = "entities", EmitDefaultValue = false)]
+    [JsonPropertyName("entities")]
     public List<TimeOffRequest> Entities { get; set; }
 
 
@@ -43,7 +42,7 @@ public partial class TimeOffRequestListing : IEquatable<TimeOffRequestListing>
     /// URL from which to fetch results for requests with a large result set. If populated, the downloaded data will conform to the same schema as would normally be returned, excepting downloaded data will never itself contain a downloadUrl
     /// </summary>
     /// <value>URL from which to fetch results for requests with a large result set. If populated, the downloaded data will conform to the same schema as would normally be returned, excepting downloaded data will never itself contain a downloadUrl</value>
-    [DataMember(Name = "downloadUrl", EmitDefaultValue = false)]
+    [JsonPropertyName("downloadUrl")]
     public string DownloadUrl { get; set; }
 
 

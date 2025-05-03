@@ -7,14 +7,14 @@ namespace PureCloud.Client.Models;
 /// <summary>
 /// OutboundOnlySetting
 /// </summary>
-[DataContract]
+
 public partial class OutboundOnlySetting : IEquatable<OutboundOnlySetting>
 {
     /// <summary>
     /// Status for the Outbound Direction
     /// </summary>
     /// <value>Status for the Outbound Direction</value>
-    [JsonConverter(typeof(JsonStringEnumConverter))]
+    
     public enum OutboundEnum
     {
         /// <summary>
@@ -41,7 +41,7 @@ public partial class OutboundOnlySetting : IEquatable<OutboundOnlySetting>
     /// Status for the Outbound Direction
     /// </summary>
     /// <value>Status for the Outbound Direction</value>
-    [DataMember(Name = "outbound", EmitDefaultValue = false)]
+    [JsonPropertyName("outbound")]
     public OutboundEnum? Outbound { get; set; }
     /// <summary>
     /// Initializes a new instance of the <see cref="OutboundOnlySetting" /> class.

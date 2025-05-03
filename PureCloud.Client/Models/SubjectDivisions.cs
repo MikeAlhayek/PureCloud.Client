@@ -1,4 +1,3 @@
-using System.Runtime.Serialization;
 using System.Text;
 using System.Text.Json.Serialization;
 
@@ -7,7 +6,7 @@ namespace PureCloud.Client.Models;
 /// <summary>
 /// SubjectDivisions
 /// </summary>
-[DataContract]
+
 public partial class SubjectDivisions : IEquatable<SubjectDivisions>
 {
 
@@ -34,7 +33,7 @@ public partial class SubjectDivisions : IEquatable<SubjectDivisions>
     /// A collection of subject IDs to associate with the given divisions
     /// </summary>
     /// <value>A collection of subject IDs to associate with the given divisions</value>
-    [DataMember(Name = "subjectIds", EmitDefaultValue = false)]
+    [JsonPropertyName("subjectIds")]
     public List<string> SubjectIds { get; set; }
 
 
@@ -43,7 +42,7 @@ public partial class SubjectDivisions : IEquatable<SubjectDivisions>
     /// A collection of division IDs to associate with the given subjects
     /// </summary>
     /// <value>A collection of division IDs to associate with the given subjects</value>
-    [DataMember(Name = "divisionIds", EmitDefaultValue = false)]
+    [JsonPropertyName("divisionIds")]
     public List<string> DivisionIds { get; set; }
 
 

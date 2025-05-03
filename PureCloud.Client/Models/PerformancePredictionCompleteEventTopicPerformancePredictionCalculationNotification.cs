@@ -7,13 +7,13 @@ namespace PureCloud.Client.Models;
 /// <summary>
 /// PerformancePredictionCompleteEventTopicPerformancePredictionCalculationNotification
 /// </summary>
-[DataContract]
+
 public partial class PerformancePredictionCompleteEventTopicPerformancePredictionCalculationNotification : IEquatable<PerformancePredictionCompleteEventTopicPerformancePredictionCalculationNotification>
 {
     /// <summary>
     /// Gets or Sets State
     /// </summary>
-    [JsonConverter(typeof(JsonStringEnumConverter))]
+    
     public enum StateEnum
     {
         /// <summary>
@@ -51,7 +51,7 @@ public partial class PerformancePredictionCompleteEventTopicPerformancePredictio
     /// <summary>
     /// Gets or Sets State
     /// </summary>
-    [DataMember(Name = "state", EmitDefaultValue = false)]
+    [JsonPropertyName("state")]
     public StateEnum? State { get; set; }
     /// <summary>
     /// Initializes a new instance of the <see cref="PerformancePredictionCompleteEventTopicPerformancePredictionCalculationNotification" /> class.
@@ -76,7 +76,7 @@ public partial class PerformancePredictionCompleteEventTopicPerformancePredictio
     /// <summary>
     /// Gets or Sets ScheduleId
     /// </summary>
-    [DataMember(Name = "scheduleId", EmitDefaultValue = false)]
+    [JsonPropertyName("scheduleId")]
     public string ScheduleId { get; set; }
 
 
@@ -84,7 +84,7 @@ public partial class PerformancePredictionCompleteEventTopicPerformancePredictio
     /// <summary>
     /// Gets or Sets WeekDate
     /// </summary>
-    [DataMember(Name = "weekDate", EmitDefaultValue = false)]
+    [JsonPropertyName("weekDate")]
     public string WeekDate { get; set; }
 
 
@@ -92,7 +92,7 @@ public partial class PerformancePredictionCompleteEventTopicPerformancePredictio
     /// <summary>
     /// Gets or Sets DownloadUrl
     /// </summary>
-    [DataMember(Name = "downloadUrl", EmitDefaultValue = false)]
+    [JsonPropertyName("downloadUrl")]
     public string DownloadUrl { get; set; }
 
 
@@ -102,7 +102,7 @@ public partial class PerformancePredictionCompleteEventTopicPerformancePredictio
     /// <summary>
     /// Gets or Sets Error
     /// </summary>
-    [DataMember(Name = "error", EmitDefaultValue = false)]
+    [JsonPropertyName("error")]
     public PerformancePredictionCompleteEventTopicErrorBody Error { get; set; }
 
 

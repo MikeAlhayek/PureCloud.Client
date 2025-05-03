@@ -1,12 +1,12 @@
-using System.Runtime.Serialization;
 using System.Text;
+using System.Text.Json.Serialization;
 
 namespace PureCloud.Client.Models;
 
 /// <summary>
 /// BuAgentScheduleRescheduleResponse
 /// </summary>
-[DataContract]
+
 public partial class BuAgentScheduleRescheduleResponse : IEquatable<BuAgentScheduleRescheduleResponse>
 {
     /// <summary>
@@ -33,7 +33,7 @@ public partial class BuAgentScheduleRescheduleResponse : IEquatable<BuAgentSched
     /// The user to whom this agent schedule applies
     /// </summary>
     /// <value>The user to whom this agent schedule applies</value>
-    [DataMember(Name = "user", EmitDefaultValue = false)]
+    [JsonPropertyName("user")]
     public UserReference User { get; set; }
 
 
@@ -42,7 +42,7 @@ public partial class BuAgentScheduleRescheduleResponse : IEquatable<BuAgentSched
     /// The shift definitions for this agent schedule
     /// </summary>
     /// <value>The shift definitions for this agent schedule</value>
-    [DataMember(Name = "shifts", EmitDefaultValue = false)]
+    [JsonPropertyName("shifts")]
     public List<BuAgentScheduleShift> Shifts { get; set; }
 
 
@@ -51,7 +51,7 @@ public partial class BuAgentScheduleRescheduleResponse : IEquatable<BuAgentSched
     /// Full day time off markers which apply to this agent schedule
     /// </summary>
     /// <value>Full day time off markers which apply to this agent schedule</value>
-    [DataMember(Name = "fullDayTimeOffMarkers", EmitDefaultValue = false)]
+    [JsonPropertyName("fullDayTimeOffMarkers")]
     public List<BuFullDayTimeOffMarker> FullDayTimeOffMarkers { get; set; }
 
 
@@ -60,7 +60,7 @@ public partial class BuAgentScheduleRescheduleResponse : IEquatable<BuAgentSched
     /// The work plan for this user
     /// </summary>
     /// <value>The work plan for this user</value>
-    [DataMember(Name = "workPlan", EmitDefaultValue = false)]
+    [JsonPropertyName("workPlan")]
     public WorkPlanReference WorkPlan { get; set; }
 
 
@@ -69,7 +69,7 @@ public partial class BuAgentScheduleRescheduleResponse : IEquatable<BuAgentSched
     /// The work plans per week for this user from the work plan rotation. Null values in the list denotes that user is not part of any work plan for that week
     /// </summary>
     /// <value>The work plans per week for this user from the work plan rotation. Null values in the list denotes that user is not part of any work plan for that week</value>
-    [DataMember(Name = "workPlansPerWeek", EmitDefaultValue = false)]
+    [JsonPropertyName("workPlansPerWeek")]
     public List<WorkPlanReference> WorkPlansPerWeek { get; set; }
 
 

@@ -7,13 +7,13 @@ namespace PureCloud.Client.Models;
 /// <summary>
 /// AssessmentScoringSet
 /// </summary>
-[DataContract]
+
 public partial class AssessmentScoringSet : IEquatable<AssessmentScoringSet>
 {
     /// <summary>
     /// Gets or Sets FailureReasons
     /// </summary>
-    [JsonConverter(typeof(JsonStringEnumConverter))]
+    
     public enum FailureReasonsEnum
     {
         /// <summary>
@@ -68,7 +68,7 @@ public partial class AssessmentScoringSet : IEquatable<AssessmentScoringSet>
     /// The total score of the answers
     /// </summary>
     /// <value>The total score of the answers</value>
-    [DataMember(Name = "totalScore", EmitDefaultValue = false)]
+    [JsonPropertyName("totalScore")]
     public float? TotalScore { get; private set; }
 
 
@@ -77,7 +77,7 @@ public partial class AssessmentScoringSet : IEquatable<AssessmentScoringSet>
     /// The total score for the critical questions
     /// </summary>
     /// <value>The total score for the critical questions</value>
-    [DataMember(Name = "totalCriticalScore", EmitDefaultValue = false)]
+    [JsonPropertyName("totalCriticalScore")]
     public float? TotalCriticalScore { get; private set; }
 
 
@@ -86,7 +86,7 @@ public partial class AssessmentScoringSet : IEquatable<AssessmentScoringSet>
     /// The total score for the non-critical questions
     /// </summary>
     /// <value>The total score for the non-critical questions</value>
-    [DataMember(Name = "totalNonCriticalScore", EmitDefaultValue = false)]
+    [JsonPropertyName("totalNonCriticalScore")]
     public float? TotalNonCriticalScore { get; private set; }
 
 
@@ -95,7 +95,7 @@ public partial class AssessmentScoringSet : IEquatable<AssessmentScoringSet>
     /// The individual scores for each question group
     /// </summary>
     /// <value>The individual scores for each question group</value>
-    [DataMember(Name = "questionGroupScores", EmitDefaultValue = false)]
+    [JsonPropertyName("questionGroupScores")]
     public List<AssessmentQuestionGroupScore> QuestionGroupScores { get; set; }
 
 
@@ -104,7 +104,7 @@ public partial class AssessmentScoringSet : IEquatable<AssessmentScoringSet>
     /// If the assessment was not passed, the reasons for failure.
     /// </summary>
     /// <value>If the assessment was not passed, the reasons for failure.</value>
-    [DataMember(Name = "failureReasons", EmitDefaultValue = false)]
+    [JsonPropertyName("failureReasons")]
     public List<FailureReasonsEnum> FailureReasons { get; private set; }
 
 
@@ -113,7 +113,7 @@ public partial class AssessmentScoringSet : IEquatable<AssessmentScoringSet>
     /// Comments provided for these answers.
     /// </summary>
     /// <value>Comments provided for these answers.</value>
-    [DataMember(Name = "comments", EmitDefaultValue = false)]
+    [JsonPropertyName("comments")]
     public string Comments { get; set; }
 
 
@@ -122,7 +122,7 @@ public partial class AssessmentScoringSet : IEquatable<AssessmentScoringSet>
     /// Comments provided by agent.
     /// </summary>
     /// <value>Comments provided by agent.</value>
-    [DataMember(Name = "agentComments", EmitDefaultValue = false)]
+    [JsonPropertyName("agentComments")]
     public string AgentComments { get; set; }
 
 
@@ -131,7 +131,7 @@ public partial class AssessmentScoringSet : IEquatable<AssessmentScoringSet>
     /// True if the assessment was passed
     /// </summary>
     /// <value>True if the assessment was passed</value>
-    [DataMember(Name = "isPassed", EmitDefaultValue = false)]
+    [JsonPropertyName("isPassed")]
     public bool? IsPassed { get; private set; }
 
 

@@ -1,12 +1,12 @@
-using System.Runtime.Serialization;
 using System.Text;
+using System.Text.Json.Serialization;
 
 namespace PureCloud.Client.Models;
 
 /// <summary>
 /// EventSetting
 /// </summary>
-[DataContract]
+
 public partial class EventSetting : IEquatable<EventSetting>
 {
     /// <summary>
@@ -25,7 +25,7 @@ public partial class EventSetting : IEquatable<EventSetting>
     /// Settings regarding typing events
     /// </summary>
     /// <value>Settings regarding typing events</value>
-    [DataMember(Name = "typing", EmitDefaultValue = false)]
+    [JsonPropertyName("typing")]
     public TypingSetting Typing { get; set; }
 
 

@@ -7,14 +7,14 @@ namespace PureCloud.Client.Models;
 /// <summary>
 /// JourneyAggregateQueryClause
 /// </summary>
-[DataContract]
+
 public partial class JourneyAggregateQueryClause : IEquatable<JourneyAggregateQueryClause>
 {
     /// <summary>
     /// Boolean operation to apply to the provided predicates
     /// </summary>
     /// <value>Boolean operation to apply to the provided predicates</value>
-    [JsonConverter(typeof(JsonStringEnumConverter))]
+    
     public enum TypeEnum
     {
         /// <summary>
@@ -41,7 +41,7 @@ public partial class JourneyAggregateQueryClause : IEquatable<JourneyAggregateQu
     /// Boolean operation to apply to the provided predicates
     /// </summary>
     /// <value>Boolean operation to apply to the provided predicates</value>
-    [DataMember(Name = "type", EmitDefaultValue = false)]
+    [JsonPropertyName("type")]
     public TypeEnum? Type { get; set; }
 
     /// <summary>
@@ -69,7 +69,7 @@ public partial class JourneyAggregateQueryClause : IEquatable<JourneyAggregateQu
     /// Like a three-word sentence: (attribute-name) (operator) (target-value).
     /// </summary>
     /// <value>Like a three-word sentence: (attribute-name) (operator) (target-value).</value>
-    [DataMember(Name = "predicates", EmitDefaultValue = false)]
+    [JsonPropertyName("predicates")]
     public List<JourneyAggregateQueryPredicate> Predicates { get; set; }
 
 

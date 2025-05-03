@@ -7,14 +7,14 @@ namespace PureCloud.Client.Models;
 /// <summary>
 /// ConversationEncryptionConfiguration
 /// </summary>
-[DataContract]
+
 public partial class ConversationEncryptionConfiguration : IEquatable<ConversationEncryptionConfiguration>
 {
     /// <summary>
     /// Type should be 'KmsSymmetric' when create or update Key configurations, 'None' to disable configuration.
     /// </summary>
     /// <value>Type should be 'KmsSymmetric' when create or update Key configurations, 'None' to disable configuration.</value>
-    [JsonConverter(typeof(JsonStringEnumConverter))]
+    
     public enum KeyConfigurationTypeEnum
     {
         /// <summary>
@@ -53,7 +53,7 @@ public partial class ConversationEncryptionConfiguration : IEquatable<Conversati
     /// Type should be 'KmsSymmetric' when create or update Key configurations, 'None' to disable configuration.
     /// </summary>
     /// <value>Type should be 'KmsSymmetric' when create or update Key configurations, 'None' to disable configuration.</value>
-    [DataMember(Name = "keyConfigurationType", EmitDefaultValue = false)]
+    [JsonPropertyName("keyConfigurationType")]
     public KeyConfigurationTypeEnum? KeyConfigurationType { get; set; }
 
     /// <summary>
@@ -81,7 +81,7 @@ public partial class ConversationEncryptionConfiguration : IEquatable<Conversati
     /// The globally unique identifier for the object.
     /// </summary>
     /// <value>The globally unique identifier for the object.</value>
-    [DataMember(Name = "id", EmitDefaultValue = false)]
+    [JsonPropertyName("id")]
     public string Id { get; private set; }
 
 
@@ -90,7 +90,7 @@ public partial class ConversationEncryptionConfiguration : IEquatable<Conversati
     /// keyConfigurationType is always KmsSymmetric, and should be the arn to the key alias for the master key
     /// </summary>
     /// <value>keyConfigurationType is always KmsSymmetric, and should be the arn to the key alias for the master key</value>
-    [DataMember(Name = "url", EmitDefaultValue = false)]
+    [JsonPropertyName("url")]
     public string Url { get; set; }
 
 
@@ -101,7 +101,7 @@ public partial class ConversationEncryptionConfiguration : IEquatable<Conversati
     /// The error message related to the configuration
     /// </summary>
     /// <value>The error message related to the configuration</value>
-    [DataMember(Name = "lastError", EmitDefaultValue = false)]
+    [JsonPropertyName("lastError")]
     public ErrorBody LastError { get; set; }
 
 
@@ -110,7 +110,7 @@ public partial class ConversationEncryptionConfiguration : IEquatable<Conversati
     /// The URI for this object
     /// </summary>
     /// <value>The URI for this object</value>
-    [DataMember(Name = "selfUri", EmitDefaultValue = false)]
+    [JsonPropertyName("selfUri")]
     public string SelfUri { get; private set; }
 
 

@@ -7,14 +7,14 @@ namespace PureCloud.Client.Models;
 /// <summary>
 /// BuForecastTimeSeriesResult
 /// </summary>
-[DataContract]
+
 public partial class BuForecastTimeSeriesResult : IEquatable<BuForecastTimeSeriesResult>
 {
     /// <summary>
     /// The metric this result applies to
     /// </summary>
     /// <value>The metric this result applies to</value>
-    [JsonConverter(typeof(JsonStringEnumConverter))]
+    
     public enum MetricEnum
     {
         /// <summary>
@@ -41,7 +41,7 @@ public partial class BuForecastTimeSeriesResult : IEquatable<BuForecastTimeSerie
     /// The forecasting method that was used for this metric
     /// </summary>
     /// <value>The forecasting method that was used for this metric</value>
-    [JsonConverter(typeof(JsonStringEnumConverter))]
+    
     public enum ForecastingMethodEnum
     {
         /// <summary>
@@ -212,7 +212,7 @@ public partial class BuForecastTimeSeriesResult : IEquatable<BuForecastTimeSerie
     /// The forecasting type in this forecast result
     /// </summary>
     /// <value>The forecasting type in this forecast result</value>
-    [JsonConverter(typeof(JsonStringEnumConverter))]
+    
     public enum ForecastTypeEnum
     {
         /// <summary>
@@ -239,19 +239,19 @@ public partial class BuForecastTimeSeriesResult : IEquatable<BuForecastTimeSerie
     /// The metric this result applies to
     /// </summary>
     /// <value>The metric this result applies to</value>
-    [DataMember(Name = "metric", EmitDefaultValue = false)]
+    [JsonPropertyName("metric")]
     public MetricEnum? Metric { get; set; }
     /// <summary>
     /// The forecasting method that was used for this metric
     /// </summary>
     /// <value>The forecasting method that was used for this metric</value>
-    [DataMember(Name = "forecastingMethod", EmitDefaultValue = false)]
+    [JsonPropertyName("forecastingMethod")]
     public ForecastingMethodEnum? ForecastingMethod { get; set; }
     /// <summary>
     /// The forecasting type in this forecast result
     /// </summary>
     /// <value>The forecasting type in this forecast result</value>
-    [DataMember(Name = "forecastType", EmitDefaultValue = false)]
+    [JsonPropertyName("forecastType")]
     public ForecastTypeEnum? ForecastType { get; set; }
     /// <summary>
     /// Initializes a new instance of the <see cref="BuForecastTimeSeriesResult" /> class.

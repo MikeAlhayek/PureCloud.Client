@@ -1,12 +1,12 @@
-using System.Runtime.Serialization;
 using System.Text;
+using System.Text.Json.Serialization;
 
 namespace PureCloud.Client.Models;
 
 /// <summary>
 /// PhonesReboot
 /// </summary>
-[DataContract]
+
 public partial class PhonesReboot : IEquatable<PhonesReboot>
 {
     /// <summary>
@@ -27,7 +27,7 @@ public partial class PhonesReboot : IEquatable<PhonesReboot>
     /// The list of phone Ids to reboot.
     /// </summary>
     /// <value>The list of phone Ids to reboot.</value>
-    [DataMember(Name = "phoneIds", EmitDefaultValue = false)]
+    [JsonPropertyName("phoneIds")]
     public List<string> PhoneIds { get; set; }
 
 
@@ -36,7 +36,7 @@ public partial class PhonesReboot : IEquatable<PhonesReboot>
     /// ID of the site for which to reboot all phones at that site. no.active.edge and phone.cannot.resolve errors are ignored.
     /// </summary>
     /// <value>ID of the site for which to reboot all phones at that site. no.active.edge and phone.cannot.resolve errors are ignored.</value>
-    [DataMember(Name = "siteId", EmitDefaultValue = false)]
+    [JsonPropertyName("siteId")]
     public string SiteId { get; set; }
 
 

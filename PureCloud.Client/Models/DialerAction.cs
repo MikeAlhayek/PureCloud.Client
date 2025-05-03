@@ -7,14 +7,14 @@ namespace PureCloud.Client.Models;
 /// <summary>
 /// DialerAction
 /// </summary>
-[DataContract]
+
 public partial class DialerAction : IEquatable<DialerAction>
 {
     /// <summary>
     /// The type of this DialerAction.
     /// </summary>
     /// <value>The type of this DialerAction.</value>
-    [JsonConverter(typeof(JsonStringEnumConverter))]
+    
     public enum TypeEnum
     {
         /// <summary>
@@ -47,7 +47,7 @@ public partial class DialerAction : IEquatable<DialerAction>
     /// Additional type specification for this DialerAction.
     /// </summary>
     /// <value>Additional type specification for this DialerAction.</value>
-    [JsonConverter(typeof(JsonStringEnumConverter))]
+    
     public enum ActionTypeNameEnum
     {
         /// <summary>
@@ -128,7 +128,7 @@ public partial class DialerAction : IEquatable<DialerAction>
     /// Specifies how a contact attribute should be updated. Required for MODIFY_CONTACT_ATTRIBUTE.
     /// </summary>
     /// <value>Specifies how a contact attribute should be updated. Required for MODIFY_CONTACT_ATTRIBUTE.</value>
-    [JsonConverter(typeof(JsonStringEnumConverter))]
+    
     public enum UpdateOptionEnum
     {
         /// <summary>
@@ -167,19 +167,19 @@ public partial class DialerAction : IEquatable<DialerAction>
     /// The type of this DialerAction.
     /// </summary>
     /// <value>The type of this DialerAction.</value>
-    [DataMember(Name = "type", EmitDefaultValue = false)]
+    [JsonPropertyName("type")]
     public TypeEnum? Type { get; set; }
     /// <summary>
     /// Additional type specification for this DialerAction.
     /// </summary>
     /// <value>Additional type specification for this DialerAction.</value>
-    [DataMember(Name = "actionTypeName", EmitDefaultValue = false)]
+    [JsonPropertyName("actionTypeName")]
     public ActionTypeNameEnum? ActionTypeName { get; set; }
     /// <summary>
     /// Specifies how a contact attribute should be updated. Required for MODIFY_CONTACT_ATTRIBUTE.
     /// </summary>
     /// <value>Specifies how a contact attribute should be updated. Required for MODIFY_CONTACT_ATTRIBUTE.</value>
-    [DataMember(Name = "updateOption", EmitDefaultValue = false)]
+    [JsonPropertyName("updateOption")]
     public UpdateOptionEnum? UpdateOption { get; set; }
 
     /// <summary>
@@ -225,7 +225,7 @@ public partial class DialerAction : IEquatable<DialerAction>
     /// A map of key-value pairs pertinent to the DialerAction. Different types of DialerActions require different properties. MODIFY_CONTACT_ATTRIBUTE with an updateOption of SET takes a contact column as the key and accepts any value. SCHEDULE_CALLBACK takes a key &#39;callbackOffset&#39; that specifies how far in the future the callback should be scheduled, in minutes. SET_CALLER_ID takes two keys: &#39;callerAddress&#39;, which should be the caller id phone number, and &#39;callerName&#39;. For either key, you can also specify a column on the contact to get the value from. To do this, specify &#39;contact.Column&#39;, where &#39;Column&#39; is the name of the contact column from which to get the value. SET_SKILLS takes a key &#39;skills&#39; with an array of skill ids wrapped into a string (Example: {&#39;skills&#39;: &#39;[&#39;skillIdHere&#39;]&#39;} ).
     /// </summary>
     /// <value>A map of key-value pairs pertinent to the DialerAction. Different types of DialerActions require different properties. MODIFY_CONTACT_ATTRIBUTE with an updateOption of SET takes a contact column as the key and accepts any value. SCHEDULE_CALLBACK takes a key &#39;callbackOffset&#39; that specifies how far in the future the callback should be scheduled, in minutes. SET_CALLER_ID takes two keys: &#39;callerAddress&#39;, which should be the caller id phone number, and &#39;callerName&#39;. For either key, you can also specify a column on the contact to get the value from. To do this, specify &#39;contact.Column&#39;, where &#39;Column&#39; is the name of the contact column from which to get the value. SET_SKILLS takes a key &#39;skills&#39; with an array of skill ids wrapped into a string (Example: {&#39;skills&#39;: &#39;[&#39;skillIdHere&#39;]&#39;} ).</value>
-    [DataMember(Name = "properties", EmitDefaultValue = false)]
+    [JsonPropertyName("properties")]
     public Dictionary<string, string> Properties { get; set; }
 
 
@@ -234,7 +234,7 @@ public partial class DialerAction : IEquatable<DialerAction>
     /// The Data Action to use for this action. Required for a dataActionBehavior.
     /// </summary>
     /// <value>The Data Action to use for this action. Required for a dataActionBehavior.</value>
-    [DataMember(Name = "dataAction", EmitDefaultValue = false)]
+    [JsonPropertyName("dataAction")]
     public DomainEntityRef DataAction { get; set; }
 
 
@@ -243,7 +243,7 @@ public partial class DialerAction : IEquatable<DialerAction>
     /// A list of mappings defining which contact data fields will be passed to which data action input fields for this condition. Valid for a dataActionBehavior.
     /// </summary>
     /// <value>A list of mappings defining which contact data fields will be passed to which data action input fields for this condition. Valid for a dataActionBehavior.</value>
-    [DataMember(Name = "contactColumnToDataActionFieldMappings", EmitDefaultValue = false)]
+    [JsonPropertyName("contactColumnToDataActionFieldMappings")]
     public List<ContactColumnToDataActionFieldMapping> ContactColumnToDataActionFieldMappings { get; set; }
 
 
@@ -252,7 +252,7 @@ public partial class DialerAction : IEquatable<DialerAction>
     /// The input field from the data action that the contactId will be passed to for this condition. Valid for a dataActionBehavior.
     /// </summary>
     /// <value>The input field from the data action that the contactId will be passed to for this condition. Valid for a dataActionBehavior.</value>
-    [DataMember(Name = "contactIdField", EmitDefaultValue = false)]
+    [JsonPropertyName("contactIdField")]
     public string ContactIdField { get; set; }
 
 
@@ -261,7 +261,7 @@ public partial class DialerAction : IEquatable<DialerAction>
     /// The input field from the data action that the callAnalysisResult will be passed to for this condition. Valid for a wrapup dataActionBehavior.
     /// </summary>
     /// <value>The input field from the data action that the callAnalysisResult will be passed to for this condition. Valid for a wrapup dataActionBehavior.</value>
-    [DataMember(Name = "callAnalysisResultField", EmitDefaultValue = false)]
+    [JsonPropertyName("callAnalysisResultField")]
     public string CallAnalysisResultField { get; set; }
 
 
@@ -270,7 +270,7 @@ public partial class DialerAction : IEquatable<DialerAction>
     /// The input field from the data action that the agentWrapup will be passed to for this condition. Valid for a wrapup dataActionBehavior.
     /// </summary>
     /// <value>The input field from the data action that the agentWrapup will be passed to for this condition. Valid for a wrapup dataActionBehavior.</value>
-    [DataMember(Name = "agentWrapupField", EmitDefaultValue = false)]
+    [JsonPropertyName("agentWrapupField")]
     public string AgentWrapupField { get; set; }
 
 

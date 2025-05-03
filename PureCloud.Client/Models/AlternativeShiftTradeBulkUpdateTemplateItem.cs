@@ -7,14 +7,14 @@ namespace PureCloud.Client.Models;
 /// <summary>
 /// AlternativeShiftTradeBulkUpdateTemplateItem
 /// </summary>
-[DataContract]
+
 public partial class AlternativeShiftTradeBulkUpdateTemplateItem : IEquatable<AlternativeShiftTradeBulkUpdateTemplateItem>
 {
     /// <summary>
     /// The current state of this alternative shift trade request
     /// </summary>
     /// <value>The current state of this alternative shift trade request</value>
-    [JsonConverter(typeof(JsonStringEnumConverter))]
+    
     public enum StateEnum
     {
         /// <summary>
@@ -59,7 +59,7 @@ public partial class AlternativeShiftTradeBulkUpdateTemplateItem : IEquatable<Al
     /// The reason the update failed, if applicable
     /// </summary>
     /// <value>The reason the update failed, if applicable</value>
-    [JsonConverter(typeof(JsonStringEnumConverter))]
+    
     public enum FailureReasonEnum
     {
         /// <summary>
@@ -86,13 +86,13 @@ public partial class AlternativeShiftTradeBulkUpdateTemplateItem : IEquatable<Al
     /// The current state of this alternative shift trade request
     /// </summary>
     /// <value>The current state of this alternative shift trade request</value>
-    [DataMember(Name = "state", EmitDefaultValue = false)]
+    [JsonPropertyName("state")]
     public StateEnum? State { get; set; }
     /// <summary>
     /// The reason the update failed, if applicable
     /// </summary>
     /// <value>The reason the update failed, if applicable</value>
-    [DataMember(Name = "failureReason", EmitDefaultValue = false)]
+    [JsonPropertyName("failureReason")]
     public FailureReasonEnum? FailureReason { get; set; }
 
     /// <summary>
@@ -126,7 +126,7 @@ public partial class AlternativeShiftTradeBulkUpdateTemplateItem : IEquatable<Al
     /// The ID of this alternative shift trade
     /// </summary>
     /// <value>The ID of this alternative shift trade</value>
-    [DataMember(Name = "tradeId", EmitDefaultValue = false)]
+    [JsonPropertyName("tradeId")]
     public string TradeId { get; set; }
 
 
@@ -139,7 +139,7 @@ public partial class AlternativeShiftTradeBulkUpdateTemplateItem : IEquatable<Al
     /// The timestamp of when the trade request was manually reviewed by an admin in ISO-8601 format
     /// </summary>
     /// <value>The timestamp of when the trade request was manually reviewed by an admin in ISO-8601 format</value>
-    [DataMember(Name = "adminDateReviewed", EmitDefaultValue = false)]
+    [JsonPropertyName("adminDateReviewed")]
     public DateTime? AdminDateReviewed { get; set; }
 
 
@@ -148,7 +148,7 @@ public partial class AlternativeShiftTradeBulkUpdateTemplateItem : IEquatable<Al
     /// The admin who manually reviewed this alternative shift trade after system denial
     /// </summary>
     /// <value>The admin who manually reviewed this alternative shift trade after system denial</value>
-    [DataMember(Name = "adminReviewedBy", EmitDefaultValue = false)]
+    [JsonPropertyName("adminReviewedBy")]
     public UserReference AdminReviewedBy { get; set; }
 
 
@@ -157,7 +157,7 @@ public partial class AlternativeShiftTradeBulkUpdateTemplateItem : IEquatable<Al
     /// Version metadata for this alternative shift trade
     /// </summary>
     /// <value>Version metadata for this alternative shift trade</value>
-    [DataMember(Name = "metadata", EmitDefaultValue = false)]
+    [JsonPropertyName("metadata")]
     public WfmVersionedEntityMetadata Metadata { get; set; }
 
 

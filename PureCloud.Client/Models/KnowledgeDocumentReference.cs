@@ -1,4 +1,3 @@
-using System.Runtime.Serialization;
 using System.Text;
 using System.Text.Json.Serialization;
 
@@ -7,7 +6,7 @@ namespace PureCloud.Client.Models;
 /// <summary>
 /// KnowledgeDocumentReference
 /// </summary>
-[DataContract]
+
 public partial class KnowledgeDocumentReference : IEquatable<KnowledgeDocumentReference>
 {
 
@@ -34,7 +33,7 @@ public partial class KnowledgeDocumentReference : IEquatable<KnowledgeDocumentRe
     /// The globally unique identifier for the document.
     /// </summary>
     /// <value>The globally unique identifier for the document.</value>
-    [DataMember(Name = "id", EmitDefaultValue = false)]
+    [JsonPropertyName("id")]
     public string Id { get; set; }
 
 
@@ -43,7 +42,7 @@ public partial class KnowledgeDocumentReference : IEquatable<KnowledgeDocumentRe
     /// The knowledge base that the document belongs to.
     /// </summary>
     /// <value>The knowledge base that the document belongs to.</value>
-    [DataMember(Name = "knowledgeBase", EmitDefaultValue = false)]
+    [JsonPropertyName("knowledgeBase")]
     public KnowledgeBaseReference KnowledgeBase { get; set; }
 
 
@@ -52,7 +51,7 @@ public partial class KnowledgeDocumentReference : IEquatable<KnowledgeDocumentRe
     /// The URI for this object
     /// </summary>
     /// <value>The URI for this object</value>
-    [DataMember(Name = "selfUri", EmitDefaultValue = false)]
+    [JsonPropertyName("selfUri")]
     public string SelfUri { get; private set; }
 
 

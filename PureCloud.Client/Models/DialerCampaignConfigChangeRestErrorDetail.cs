@@ -1,12 +1,12 @@
-using System.Runtime.Serialization;
 using System.Text;
+using System.Text.Json.Serialization;
 
 namespace PureCloud.Client.Models;
 
 /// <summary>
 /// DialerCampaignConfigChangeRestErrorDetail
 /// </summary>
-[DataContract]
+
 public partial class DialerCampaignConfigChangeRestErrorDetail : IEquatable<DialerCampaignConfigChangeRestErrorDetail>
 {
     /// <summary>
@@ -29,7 +29,7 @@ public partial class DialerCampaignConfigChangeRestErrorDetail : IEquatable<Dial
     /// name of the error
     /// </summary>
     /// <value>name of the error</value>
-    [DataMember(Name = "error", EmitDefaultValue = false)]
+    [JsonPropertyName("error")]
     public string Error { get; set; }
 
 
@@ -38,7 +38,7 @@ public partial class DialerCampaignConfigChangeRestErrorDetail : IEquatable<Dial
     /// additional information regarding the error
     /// </summary>
     /// <value>additional information regarding the error</value>
-    [DataMember(Name = "details", EmitDefaultValue = false)]
+    [JsonPropertyName("details")]
     public string Details { get; set; }
 
 
@@ -46,7 +46,7 @@ public partial class DialerCampaignConfigChangeRestErrorDetail : IEquatable<Dial
     /// <summary>
     /// Gets or Sets AdditionalProperties
     /// </summary>
-    [DataMember(Name = "additionalProperties", EmitDefaultValue = false)]
+    [JsonPropertyName("additionalProperties")]
     public Dictionary<string, object> AdditionalProperties { get; set; }
 
 

@@ -7,14 +7,14 @@ namespace PureCloud.Client.Models;
 /// <summary>
 /// DocumentTableContentBlockWithHighlight
 /// </summary>
-[DataContract]
+
 public partial class DocumentTableContentBlockWithHighlight : IEquatable<DocumentTableContentBlockWithHighlight>
 {
     /// <summary>
     /// The type of the block for the table cell. This determines which body block object (paragraph, list, video, image or table) would have a value.
     /// </summary>
     /// <value>The type of the block for the table cell. This determines which body block object (paragraph, list, video, image or table) would have a value.</value>
-    [JsonConverter(typeof(JsonStringEnumConverter))]
+    
     public enum TypeEnum
     {
         /// <summary>
@@ -71,7 +71,7 @@ public partial class DocumentTableContentBlockWithHighlight : IEquatable<Documen
     /// The type of the block for the table cell. This determines which body block object (paragraph, list, video, image or table) would have a value.
     /// </summary>
     /// <value>The type of the block for the table cell. This determines which body block object (paragraph, list, video, image or table) would have a value.</value>
-    [DataMember(Name = "type", EmitDefaultValue = false)]
+    [JsonPropertyName("type")]
     public TypeEnum? Type { get; set; }
 
     /// <summary>
@@ -111,7 +111,7 @@ public partial class DocumentTableContentBlockWithHighlight : IEquatable<Documen
     /// Text. It must contain a value if the type of the block is Text.
     /// </summary>
     /// <value>Text. It must contain a value if the type of the block is Text.</value>
-    [DataMember(Name = "text", EmitDefaultValue = false)]
+    [JsonPropertyName("text")]
     public DocumentText Text { get; set; }
 
 
@@ -120,7 +120,7 @@ public partial class DocumentTableContentBlockWithHighlight : IEquatable<Documen
     /// Image. It must contain a value if the type of the block is Image.
     /// </summary>
     /// <value>Image. It must contain a value if the type of the block is Image.</value>
-    [DataMember(Name = "image", EmitDefaultValue = false)]
+    [JsonPropertyName("image")]
     public DocumentBodyImage Image { get; set; }
 
 
@@ -129,7 +129,7 @@ public partial class DocumentTableContentBlockWithHighlight : IEquatable<Documen
     /// Video. It must contain a value if the type of the block is Video.
     /// </summary>
     /// <value>Video. It must contain a value if the type of the block is Video.</value>
-    [DataMember(Name = "video", EmitDefaultValue = false)]
+    [JsonPropertyName("video")]
     public DocumentBodyVideo Video { get; set; }
 
 
@@ -138,7 +138,7 @@ public partial class DocumentTableContentBlockWithHighlight : IEquatable<Documen
     /// Paragraph. It must contain a value if the type of the block is Paragraph.
     /// </summary>
     /// <value>Paragraph. It must contain a value if the type of the block is Paragraph.</value>
-    [DataMember(Name = "paragraph", EmitDefaultValue = false)]
+    [JsonPropertyName("paragraph")]
     public DocumentBodyParagraphWithHighlight Paragraph { get; set; }
 
 
@@ -147,7 +147,7 @@ public partial class DocumentTableContentBlockWithHighlight : IEquatable<Documen
     /// List. It must contain a value if the type of the block is UnorderedList or OrderedList.
     /// </summary>
     /// <value>List. It must contain a value if the type of the block is UnorderedList or OrderedList.</value>
-    [DataMember(Name = "list", EmitDefaultValue = false)]
+    [JsonPropertyName("list")]
     public DocumentBodyListWithHighlight List { get; set; }
 
 
@@ -156,7 +156,7 @@ public partial class DocumentTableContentBlockWithHighlight : IEquatable<Documen
     /// Table. It must contain a value if the type of the block is Table.
     /// </summary>
     /// <value>Table. It must contain a value if the type of the block is Table.</value>
-    [DataMember(Name = "table", EmitDefaultValue = false)]
+    [JsonPropertyName("table")]
     public DocumentBodyTableWithHighlight Table { get; set; }
 
 
@@ -165,7 +165,7 @@ public partial class DocumentTableContentBlockWithHighlight : IEquatable<Documen
     /// The block highlight data.
     /// </summary>
     /// <value>The block highlight data.</value>
-    [DataMember(Name = "answerHighlight", EmitDefaultValue = false)]
+    [JsonPropertyName("answerHighlight")]
     public DocumentContentHighlightIndex AnswerHighlight { get; set; }
 
 

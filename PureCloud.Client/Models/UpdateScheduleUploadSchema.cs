@@ -1,4 +1,3 @@
-using System.Runtime.Serialization;
 using System.Text;
 using System.Text.Json.Serialization;
 
@@ -7,7 +6,7 @@ namespace PureCloud.Client.Models;
 /// <summary>
 /// UpdateScheduleUploadSchema
 /// </summary>
-[DataContract]
+
 public partial class UpdateScheduleUploadSchema : IEquatable<UpdateScheduleUploadSchema>
 {
 
@@ -42,7 +41,7 @@ public partial class UpdateScheduleUploadSchema : IEquatable<UpdateScheduleUploa
     /// The description to set for the schedule
     /// </summary>
     /// <value>The description to set for the schedule</value>
-    [DataMember(Name = "description", EmitDefaultValue = false)]
+    [JsonPropertyName("description")]
     public string Description { get; set; }
 
 
@@ -51,7 +50,7 @@ public partial class UpdateScheduleUploadSchema : IEquatable<UpdateScheduleUploa
     /// Whether to publish the schedule. Note: a schedule cannot be un-published unless another schedule is published over it
     /// </summary>
     /// <value>Whether to publish the schedule. Note: a schedule cannot be un-published unless another schedule is published over it</value>
-    [DataMember(Name = "published", EmitDefaultValue = false)]
+    [JsonPropertyName("published")]
     public bool? Published { get; set; }
 
 
@@ -60,7 +59,7 @@ public partial class UpdateScheduleUploadSchema : IEquatable<UpdateScheduleUploa
     /// The short term forecast to associate with the schedule
     /// </summary>
     /// <value>The short term forecast to associate with the schedule</value>
-    [DataMember(Name = "shortTermForecast", EmitDefaultValue = false)]
+    [JsonPropertyName("shortTermForecast")]
     public BuShortTermForecastReference ShortTermForecast { get; set; }
 
 
@@ -69,7 +68,7 @@ public partial class UpdateScheduleUploadSchema : IEquatable<UpdateScheduleUploa
     /// The headcount forecast to associate with the schedule
     /// </summary>
     /// <value>The headcount forecast to associate with the schedule</value>
-    [DataMember(Name = "headcountForecast", EmitDefaultValue = false)]
+    [JsonPropertyName("headcountForecast")]
     public BuHeadcountForecast HeadcountForecast { get; set; }
 
 
@@ -78,7 +77,7 @@ public partial class UpdateScheduleUploadSchema : IEquatable<UpdateScheduleUploa
     /// Individual agent schedules
     /// </summary>
     /// <value>Individual agent schedules</value>
-    [DataMember(Name = "agentSchedules", EmitDefaultValue = false)]
+    [JsonPropertyName("agentSchedules")]
     public List<BuUpdateAgentScheduleUploadSchema> AgentSchedules { get; set; }
 
 
@@ -87,7 +86,7 @@ public partial class UpdateScheduleUploadSchema : IEquatable<UpdateScheduleUploa
     /// Version metadata for this schedule
     /// </summary>
     /// <value>Version metadata for this schedule</value>
-    [DataMember(Name = "metadata", EmitDefaultValue = false)]
+    [JsonPropertyName("metadata")]
     public WfmVersionedEntityMetadata Metadata { get; set; }
 
 

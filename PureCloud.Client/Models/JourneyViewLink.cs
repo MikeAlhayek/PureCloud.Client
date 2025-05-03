@@ -7,14 +7,14 @@ namespace PureCloud.Client.Models;
 /// <summary>
 /// A link between elements in a journey view
 /// </summary>
-[DataContract]
+
 public partial class JourneyViewLink : IEquatable<JourneyViewLink>
 {
     /// <summary>
     /// The type of events that will be counted. Note: Concurrent will override any JourneyViewLinkTimeConstraint. Default is Sequential.
     /// </summary>
     /// <value>The type of events that will be counted. Note: Concurrent will override any JourneyViewLinkTimeConstraint. Default is Sequential.</value>
-    [JsonConverter(typeof(JsonStringEnumConverter))]
+    
     public enum EventCountTypeEnum
     {
         /// <summary>
@@ -47,7 +47,7 @@ public partial class JourneyViewLink : IEquatable<JourneyViewLink>
     /// The type of events that will be counted. Note: Concurrent will override any JourneyViewLinkTimeConstraint. Default is Sequential.
     /// </summary>
     /// <value>The type of events that will be counted. Note: Concurrent will override any JourneyViewLinkTimeConstraint. Default is Sequential.</value>
-    [DataMember(Name = "eventCountType", EmitDefaultValue = false)]
+    [JsonPropertyName("eventCountType")]
     public EventCountTypeEnum? EventCountType { get; set; }
 
     /// <summary>
@@ -79,7 +79,7 @@ public partial class JourneyViewLink : IEquatable<JourneyViewLink>
     /// The identifier of the element downstream
     /// </summary>
     /// <value>The identifier of the element downstream</value>
-    [DataMember(Name = "id", EmitDefaultValue = false)]
+    [JsonPropertyName("id")]
     public string Id { get; set; }
 
 
@@ -88,7 +88,7 @@ public partial class JourneyViewLink : IEquatable<JourneyViewLink>
     /// A time constraint on this link, which requires a customer to complete the downstream element within this amount of time to be counted.
     /// </summary>
     /// <value>A time constraint on this link, which requires a customer to complete the downstream element within this amount of time to be counted.</value>
-    [DataMember(Name = "constraintWithin", EmitDefaultValue = false)]
+    [JsonPropertyName("constraintWithin")]
     public JourneyViewLinkTimeConstraint ConstraintWithin { get; set; }
 
 
@@ -97,7 +97,7 @@ public partial class JourneyViewLink : IEquatable<JourneyViewLink>
     /// A time constraint on this link, which requires a customer must complete the downstream element after this amount of time to be counted.
     /// </summary>
     /// <value>A time constraint on this link, which requires a customer must complete the downstream element after this amount of time to be counted.</value>
-    [DataMember(Name = "constraintAfter", EmitDefaultValue = false)]
+    [JsonPropertyName("constraintAfter")]
     public JourneyViewLinkTimeConstraint ConstraintAfter { get; set; }
 
 
@@ -108,7 +108,7 @@ public partial class JourneyViewLink : IEquatable<JourneyViewLink>
     /// Other (secondary) attributes on which this link should join the customers being counted
     /// </summary>
     /// <value>Other (secondary) attributes on which this link should join the customers being counted</value>
-    [DataMember(Name = "joinAttributes", EmitDefaultValue = false)]
+    [JsonPropertyName("joinAttributes")]
     public List<string> JoinAttributes { get; set; }
 
 

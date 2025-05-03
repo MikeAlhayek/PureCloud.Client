@@ -1,12 +1,12 @@
-using System.Runtime.Serialization;
 using System.Text;
+using System.Text.Json.Serialization;
 
 namespace PureCloud.Client.Models;
 
 /// <summary>
 /// MediaRtpStatistics
 /// </summary>
-[DataContract]
+
 public partial class MediaRtpStatistics : IEquatable<MediaRtpStatistics>
 {
     /// <summary>
@@ -33,7 +33,7 @@ public partial class MediaRtpStatistics : IEquatable<MediaRtpStatistics>
     /// Number of packets received, including all invalid, duplicate, and discarded packets
     /// </summary>
     /// <value>Number of packets received, including all invalid, duplicate, and discarded packets</value>
-    [DataMember(Name = "packetsReceived", EmitDefaultValue = false)]
+    [JsonPropertyName("packetsReceived")]
     public int? PacketsReceived { get; set; }
 
 
@@ -42,7 +42,7 @@ public partial class MediaRtpStatistics : IEquatable<MediaRtpStatistics>
     /// Number of packets sent
     /// </summary>
     /// <value>Number of packets sent</value>
-    [DataMember(Name = "packetsSent", EmitDefaultValue = false)]
+    [JsonPropertyName("packetsSent")]
     public int? PacketsSent { get; set; }
 
 
@@ -51,7 +51,7 @@ public partial class MediaRtpStatistics : IEquatable<MediaRtpStatistics>
     /// Number of RFC#2833 packets received
     /// </summary>
     /// <value>Number of RFC#2833 packets received</value>
-    [DataMember(Name = "rtpEventsReceived", EmitDefaultValue = false)]
+    [JsonPropertyName("rtpEventsReceived")]
     public int? RtpEventsReceived { get; set; }
 
 
@@ -60,7 +60,7 @@ public partial class MediaRtpStatistics : IEquatable<MediaRtpStatistics>
     /// Number of RFC#2833 packets sent
     /// </summary>
     /// <value>Number of RFC#2833 packets sent</value>
-    [DataMember(Name = "rtpEventsSent", EmitDefaultValue = false)]
+    [JsonPropertyName("rtpEventsSent")]
     public int? RtpEventsSent { get; set; }
 
 
@@ -69,7 +69,7 @@ public partial class MediaRtpStatistics : IEquatable<MediaRtpStatistics>
     /// The estimated average MOS score
     /// </summary>
     /// <value>The estimated average MOS score</value>
-    [DataMember(Name = "estimatedAverageMos", EmitDefaultValue = false)]
+    [JsonPropertyName("estimatedAverageMos")]
     public double? EstimatedAverageMos { get; set; }
 
 

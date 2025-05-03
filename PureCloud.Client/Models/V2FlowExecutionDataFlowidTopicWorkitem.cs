@@ -1,12 +1,12 @@
-using System.Runtime.Serialization;
 using System.Text;
+using System.Text.Json.Serialization;
 
 namespace PureCloud.Client.Models;
 
 /// <summary>
 /// This contains information about the workitem that invoked this flow execution.
 /// </summary>
-[DataContract]
+
 public partial class V2FlowExecutionDataFlowidTopicWorkitem : IEquatable<V2FlowExecutionDataFlowidTopicWorkitem>
 {
     /// <summary>
@@ -27,7 +27,7 @@ public partial class V2FlowExecutionDataFlowidTopicWorkitem : IEquatable<V2FlowE
     /// The identifier of the workitem that invoked this flow.
     /// </summary>
     /// <value>The identifier of the workitem that invoked this flow.</value>
-    [DataMember(Name = "workitemId", EmitDefaultValue = false)]
+    [JsonPropertyName("workitemId")]
     public string WorkitemId { get; set; }
 
 
@@ -36,7 +36,7 @@ public partial class V2FlowExecutionDataFlowidTopicWorkitem : IEquatable<V2FlowE
     /// The name of the process workitem that invoked this flow.
     /// </summary>
     /// <value>The name of the process workitem that invoked this flow.</value>
-    [DataMember(Name = "workitemName", EmitDefaultValue = false)]
+    [JsonPropertyName("workitemName")]
     public string WorkitemName { get; set; }
 
 

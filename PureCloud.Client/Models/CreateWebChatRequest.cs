@@ -1,4 +1,3 @@
-using System.Runtime.Serialization;
 using System.Text;
 using System.Text.Json.Serialization;
 
@@ -7,7 +6,7 @@ namespace PureCloud.Client.Models;
 /// <summary>
 /// CreateWebChatRequest
 /// </summary>
-[DataContract]
+
 public partial class CreateWebChatRequest : IEquatable<CreateWebChatRequest>
 {
 
@@ -44,7 +43,7 @@ public partial class CreateWebChatRequest : IEquatable<CreateWebChatRequest>
     /// The ID of the queue to use for routing the chat conversation.
     /// </summary>
     /// <value>The ID of the queue to use for routing the chat conversation.</value>
-    [DataMember(Name = "queueId", EmitDefaultValue = false)]
+    [JsonPropertyName("queueId")]
     public string QueueId { get; set; }
 
 
@@ -53,7 +52,7 @@ public partial class CreateWebChatRequest : IEquatable<CreateWebChatRequest>
     /// The name of the provider that is sourcing the web chat.
     /// </summary>
     /// <value>The name of the provider that is sourcing the web chat.</value>
-    [DataMember(Name = "provider", EmitDefaultValue = false)]
+    [JsonPropertyName("provider")]
     public string Provider { get; set; }
 
 
@@ -62,7 +61,7 @@ public partial class CreateWebChatRequest : IEquatable<CreateWebChatRequest>
     /// The list of skill ID&#39;s to use for routing.
     /// </summary>
     /// <value>The list of skill ID&#39;s to use for routing.</value>
-    [DataMember(Name = "skillIds", EmitDefaultValue = false)]
+    [JsonPropertyName("skillIds")]
     public List<string> SkillIds { get; set; }
 
 
@@ -71,7 +70,7 @@ public partial class CreateWebChatRequest : IEquatable<CreateWebChatRequest>
     /// The ID of the langauge to use for routing.
     /// </summary>
     /// <value>The ID of the langauge to use for routing.</value>
-    [DataMember(Name = "languageId", EmitDefaultValue = false)]
+    [JsonPropertyName("languageId")]
     public string LanguageId { get; set; }
 
 
@@ -80,7 +79,7 @@ public partial class CreateWebChatRequest : IEquatable<CreateWebChatRequest>
     /// The priority to assign to the conversation for routing.
     /// </summary>
     /// <value>The priority to assign to the conversation for routing.</value>
-    [DataMember(Name = "priority", EmitDefaultValue = false)]
+    [JsonPropertyName("priority")]
     public long? Priority { get; set; }
 
 
@@ -89,7 +88,7 @@ public partial class CreateWebChatRequest : IEquatable<CreateWebChatRequest>
     /// The list of attributes to associate with the customer participant.
     /// </summary>
     /// <value>The list of attributes to associate with the customer participant.</value>
-    [DataMember(Name = "attributes", EmitDefaultValue = false)]
+    [JsonPropertyName("attributes")]
     public Dictionary<string, string> Attributes { get; set; }
 
 
@@ -98,7 +97,7 @@ public partial class CreateWebChatRequest : IEquatable<CreateWebChatRequest>
     /// The name of the customer participating in the web chat.
     /// </summary>
     /// <value>The name of the customer participating in the web chat.</value>
-    [DataMember(Name = "customerName", EmitDefaultValue = false)]
+    [JsonPropertyName("customerName")]
     public string CustomerName { get; set; }
 
 

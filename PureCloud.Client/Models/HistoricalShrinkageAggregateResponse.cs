@@ -1,12 +1,12 @@
-using System.Runtime.Serialization;
 using System.Text;
+using System.Text.Json.Serialization;
 
 namespace PureCloud.Client.Models;
 
 /// <summary>
 /// HistoricalShrinkageAggregateResponse
 /// </summary>
-[DataContract]
+
 public partial class HistoricalShrinkageAggregateResponse : IEquatable<HistoricalShrinkageAggregateResponse>
 {
     /// <summary>
@@ -39,7 +39,7 @@ public partial class HistoricalShrinkageAggregateResponse : IEquatable<Historica
     /// Aggregated shrinkage value in seconds for scheduled activities
     /// </summary>
     /// <value>Aggregated shrinkage value in seconds for scheduled activities</value>
-    [DataMember(Name = "scheduledShrinkageSeconds", EmitDefaultValue = false)]
+    [JsonPropertyName("scheduledShrinkageSeconds")]
     public int? ScheduledShrinkageSeconds { get; set; }
 
 
@@ -48,7 +48,7 @@ public partial class HistoricalShrinkageAggregateResponse : IEquatable<Historica
     /// Aggregated shrinkage value in percent from 0.0 to 100.0 for scheduled activities
     /// </summary>
     /// <value>Aggregated shrinkage value in percent from 0.0 to 100.0 for scheduled activities</value>
-    [DataMember(Name = "scheduledShrinkagePercent", EmitDefaultValue = false)]
+    [JsonPropertyName("scheduledShrinkagePercent")]
     public double? ScheduledShrinkagePercent { get; set; }
 
 
@@ -57,7 +57,7 @@ public partial class HistoricalShrinkageAggregateResponse : IEquatable<Historica
     /// Aggregated actual value in seconds for scheduled activities
     /// </summary>
     /// <value>Aggregated actual value in seconds for scheduled activities</value>
-    [DataMember(Name = "actualShrinkageSeconds", EmitDefaultValue = false)]
+    [JsonPropertyName("actualShrinkageSeconds")]
     public int? ActualShrinkageSeconds { get; set; }
 
 
@@ -66,7 +66,7 @@ public partial class HistoricalShrinkageAggregateResponse : IEquatable<Historica
     /// Aggregated actual value in percent from 0.0 to 100.0 for scheduled activities
     /// </summary>
     /// <value>Aggregated actual value in percent from 0.0 to 100.0 for scheduled activities</value>
-    [DataMember(Name = "actualShrinkagePercent", EmitDefaultValue = false)]
+    [JsonPropertyName("actualShrinkagePercent")]
     public double? ActualShrinkagePercent { get; set; }
 
 
@@ -75,7 +75,7 @@ public partial class HistoricalShrinkageAggregateResponse : IEquatable<Historica
     /// Aggregated shrinkage value in seconds for paid activities
     /// </summary>
     /// <value>Aggregated shrinkage value in seconds for paid activities</value>
-    [DataMember(Name = "paidShrinkageSeconds", EmitDefaultValue = false)]
+    [JsonPropertyName("paidShrinkageSeconds")]
     public int? PaidShrinkageSeconds { get; set; }
 
 
@@ -84,7 +84,7 @@ public partial class HistoricalShrinkageAggregateResponse : IEquatable<Historica
     /// Aggregated shrinkage value in seconds for unpaid activities
     /// </summary>
     /// <value>Aggregated shrinkage value in seconds for unpaid activities</value>
-    [DataMember(Name = "unpaidShrinkageSeconds", EmitDefaultValue = false)]
+    [JsonPropertyName("unpaidShrinkageSeconds")]
     public int? UnpaidShrinkageSeconds { get; set; }
 
 
@@ -93,7 +93,7 @@ public partial class HistoricalShrinkageAggregateResponse : IEquatable<Historica
     /// Aggregated shrinkage value in seconds for planned activities
     /// </summary>
     /// <value>Aggregated shrinkage value in seconds for planned activities</value>
-    [DataMember(Name = "plannedShrinkageSeconds", EmitDefaultValue = false)]
+    [JsonPropertyName("plannedShrinkageSeconds")]
     public int? PlannedShrinkageSeconds { get; set; }
 
 
@@ -102,7 +102,7 @@ public partial class HistoricalShrinkageAggregateResponse : IEquatable<Historica
     /// Aggregated shrinkage value in seconds for unplanned activities
     /// </summary>
     /// <value>Aggregated shrinkage value in seconds for unplanned activities</value>
-    [DataMember(Name = "unplannedShrinkageSeconds", EmitDefaultValue = false)]
+    [JsonPropertyName("unplannedShrinkageSeconds")]
     public int? UnplannedShrinkageSeconds { get; set; }
 
 

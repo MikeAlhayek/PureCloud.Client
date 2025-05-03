@@ -1,4 +1,3 @@
-using System.Runtime.Serialization;
 using System.Text;
 using System.Text.Json.Serialization;
 
@@ -7,7 +6,7 @@ namespace PureCloud.Client.Models;
 /// <summary>
 /// DataActionContactColumnFieldMapping
 /// </summary>
-[DataContract]
+
 public partial class DataActionContactColumnFieldMapping : IEquatable<DataActionContactColumnFieldMapping>
 {
 
@@ -34,7 +33,7 @@ public partial class DataActionContactColumnFieldMapping : IEquatable<DataAction
     /// The name of a contact column whose data will be passed to the data action
     /// </summary>
     /// <value>The name of a contact column whose data will be passed to the data action</value>
-    [DataMember(Name = "contactColumnName", EmitDefaultValue = false)]
+    [JsonPropertyName("contactColumnName")]
     public string ContactColumnName { get; set; }
 
 
@@ -43,7 +42,7 @@ public partial class DataActionContactColumnFieldMapping : IEquatable<DataAction
     /// The name of an input field from the data action that the contact column data will be passed to
     /// </summary>
     /// <value>The name of an input field from the data action that the contact column data will be passed to</value>
-    [DataMember(Name = "dataActionField", EmitDefaultValue = false)]
+    [JsonPropertyName("dataActionField")]
     public string DataActionField { get; set; }
 
 

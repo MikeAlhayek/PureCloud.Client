@@ -1,12 +1,12 @@
-using System.Runtime.Serialization;
 using System.Text;
+using System.Text.Json.Serialization;
 
 namespace PureCloud.Client.Models;
 
 /// <summary>
 /// LearningAssignmentReassign
 /// </summary>
-[DataContract]
+
 public partial class LearningAssignmentReassign : IEquatable<LearningAssignmentReassign>
 {
     /// <summary>
@@ -27,7 +27,7 @@ public partial class LearningAssignmentReassign : IEquatable<LearningAssignmentR
     /// The recommended completion date of assignment. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z
     /// </summary>
     /// <value>The recommended completion date of assignment. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z</value>
-    [DataMember(Name = "recommendedCompletionDate", EmitDefaultValue = false)]
+    [JsonPropertyName("recommendedCompletionDate")]
     public DateTime? RecommendedCompletionDate { get; set; }
 
 
@@ -36,7 +36,7 @@ public partial class LearningAssignmentReassign : IEquatable<LearningAssignmentR
     /// The length in minutes of assignment
     /// </summary>
     /// <value>The length in minutes of assignment</value>
-    [DataMember(Name = "lengthInMinutes", EmitDefaultValue = false)]
+    [JsonPropertyName("lengthInMinutes")]
     public int? LengthInMinutes { get; set; }
 
 

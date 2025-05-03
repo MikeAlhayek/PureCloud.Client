@@ -7,14 +7,14 @@ namespace PureCloud.Client.Models;
 /// <summary>
 /// ContentFileResponse
 /// </summary>
-[DataContract]
+
 public partial class ContentFileResponse : IEquatable<ContentFileResponse>
 {
     /// <summary>
     /// The file format
     /// </summary>
     /// <value>The file format</value>
-    [JsonConverter(typeof(JsonStringEnumConverter))]
+    
     public enum TypeEnum
     {
         /// <summary>
@@ -47,7 +47,7 @@ public partial class ContentFileResponse : IEquatable<ContentFileResponse>
     /// The file format
     /// </summary>
     /// <value>The file format</value>
-    [DataMember(Name = "type", EmitDefaultValue = false)]
+    [JsonPropertyName("type")]
     public TypeEnum? Type { get; set; }
 
     /// <summary>
@@ -79,7 +79,7 @@ public partial class ContentFileResponse : IEquatable<ContentFileResponse>
     /// The name of the file
     /// </summary>
     /// <value>The name of the file</value>
-    [DataMember(Name = "name", EmitDefaultValue = false)]
+    [JsonPropertyName("name")]
     public string Name { get; set; }
 
 
@@ -90,7 +90,7 @@ public partial class ContentFileResponse : IEquatable<ContentFileResponse>
     /// The checksum of the file
     /// </summary>
     /// <value>The checksum of the file</value>
-    [DataMember(Name = "checksum", EmitDefaultValue = false)]
+    [JsonPropertyName("checksum")]
     public string Checksum { get; set; }
 
 
@@ -99,7 +99,7 @@ public partial class ContentFileResponse : IEquatable<ContentFileResponse>
     /// The size of the file in bytes
     /// </summary>
     /// <value>The size of the file in bytes</value>
-    [DataMember(Name = "size", EmitDefaultValue = false)]
+    [JsonPropertyName("size")]
     public long? Size { get; set; }
 
 
@@ -108,7 +108,7 @@ public partial class ContentFileResponse : IEquatable<ContentFileResponse>
     /// Public download url for content. Needs to be expanded
     /// </summary>
     /// <value>Public download url for content. Needs to be expanded</value>
-    [DataMember(Name = "contentUrl", EmitDefaultValue = false)]
+    [JsonPropertyName("contentUrl")]
     public string ContentUrl { get; set; }
 
 

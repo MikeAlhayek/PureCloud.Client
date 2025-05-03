@@ -7,13 +7,13 @@ namespace PureCloud.Client.Models;
 /// <summary>
 /// WfmUserScheduleAdherenceUpdatedTopicUserScheduleAdherenceUpdate
 /// </summary>
-[DataContract]
+
 public partial class WfmUserScheduleAdherenceUpdatedTopicUserScheduleAdherenceUpdate : IEquatable<WfmUserScheduleAdherenceUpdatedTopicUserScheduleAdherenceUpdate>
 {
     /// <summary>
     /// Gets or Sets RoutingStatus
     /// </summary>
-    [JsonConverter(typeof(JsonStringEnumConverter))]
+    
     public enum RoutingStatusEnum
     {
         /// <summary>
@@ -69,7 +69,7 @@ public partial class WfmUserScheduleAdherenceUpdatedTopicUserScheduleAdherenceUp
     /// <summary>
     /// Gets or Sets AdherenceState
     /// </summary>
-    [JsonConverter(typeof(JsonStringEnumConverter))]
+    
     public enum AdherenceStateEnum
     {
         /// <summary>
@@ -119,12 +119,12 @@ public partial class WfmUserScheduleAdherenceUpdatedTopicUserScheduleAdherenceUp
     /// <summary>
     /// Gets or Sets RoutingStatus
     /// </summary>
-    [DataMember(Name = "routingStatus", EmitDefaultValue = false)]
+    [JsonPropertyName("routingStatus")]
     public RoutingStatusEnum? RoutingStatus { get; set; }
     /// <summary>
     /// Gets or Sets AdherenceState
     /// </summary>
-    [DataMember(Name = "adherenceState", EmitDefaultValue = false)]
+    [JsonPropertyName("adherenceState")]
     public AdherenceStateEnum? AdherenceState { get; set; }
     /// <summary>
     /// Initializes a new instance of the <see cref="WfmUserScheduleAdherenceUpdatedTopicUserScheduleAdherenceUpdate" /> class.
@@ -179,7 +179,7 @@ public partial class WfmUserScheduleAdherenceUpdatedTopicUserScheduleAdherenceUp
     /// <summary>
     /// Gets or Sets User
     /// </summary>
-    [DataMember(Name = "user", EmitDefaultValue = false)]
+    [JsonPropertyName("user")]
     public WfmUserScheduleAdherenceUpdatedTopicUserReference User { get; set; }
 
 
@@ -187,7 +187,7 @@ public partial class WfmUserScheduleAdherenceUpdatedTopicUserScheduleAdherenceUp
     /// <summary>
     /// Gets or Sets ManagementUnitId
     /// </summary>
-    [DataMember(Name = "managementUnitId", EmitDefaultValue = false)]
+    [JsonPropertyName("managementUnitId")]
     public string ManagementUnitId { get; set; }
 
 
@@ -195,7 +195,7 @@ public partial class WfmUserScheduleAdherenceUpdatedTopicUserScheduleAdherenceUp
     /// <summary>
     /// Gets or Sets Team
     /// </summary>
-    [DataMember(Name = "team", EmitDefaultValue = false)]
+    [JsonPropertyName("team")]
     public WfmUserScheduleAdherenceUpdatedTopicUriReference Team { get; set; }
 
 
@@ -203,7 +203,7 @@ public partial class WfmUserScheduleAdherenceUpdatedTopicUserScheduleAdherenceUp
     /// <summary>
     /// Gets or Sets ScheduledActivityCategory
     /// </summary>
-    [DataMember(Name = "scheduledActivityCategory", EmitDefaultValue = false)]
+    [JsonPropertyName("scheduledActivityCategory")]
     public string ScheduledActivityCategory { get; set; }
 
 
@@ -211,7 +211,7 @@ public partial class WfmUserScheduleAdherenceUpdatedTopicUserScheduleAdherenceUp
     /// <summary>
     /// Gets or Sets ScheduledActivityCode
     /// </summary>
-    [DataMember(Name = "scheduledActivityCode", EmitDefaultValue = false)]
+    [JsonPropertyName("scheduledActivityCode")]
     public WfmUserScheduleAdherenceUpdatedTopicActivityCodeReference ScheduledActivityCode { get; set; }
 
 
@@ -219,7 +219,7 @@ public partial class WfmUserScheduleAdherenceUpdatedTopicUserScheduleAdherenceUp
     /// <summary>
     /// Gets or Sets SystemPresence
     /// </summary>
-    [DataMember(Name = "systemPresence", EmitDefaultValue = false)]
+    [JsonPropertyName("systemPresence")]
     public string SystemPresence { get; set; }
 
 
@@ -227,7 +227,7 @@ public partial class WfmUserScheduleAdherenceUpdatedTopicUserScheduleAdherenceUp
     /// <summary>
     /// Gets or Sets OrganizationSecondaryPresenceId
     /// </summary>
-    [DataMember(Name = "organizationSecondaryPresenceId", EmitDefaultValue = false)]
+    [JsonPropertyName("organizationSecondaryPresenceId")]
     public string OrganizationSecondaryPresenceId { get; set; }
 
 
@@ -237,7 +237,7 @@ public partial class WfmUserScheduleAdherenceUpdatedTopicUserScheduleAdherenceUp
     /// <summary>
     /// Gets or Sets ActualActivityCategory
     /// </summary>
-    [DataMember(Name = "actualActivityCategory", EmitDefaultValue = false)]
+    [JsonPropertyName("actualActivityCategory")]
     public string ActualActivityCategory { get; set; }
 
 
@@ -245,7 +245,7 @@ public partial class WfmUserScheduleAdherenceUpdatedTopicUserScheduleAdherenceUp
     /// <summary>
     /// Gets or Sets IsOutOfOffice
     /// </summary>
-    [DataMember(Name = "isOutOfOffice", EmitDefaultValue = false)]
+    [JsonPropertyName("isOutOfOffice")]
     public bool? IsOutOfOffice { get; set; }
 
 
@@ -255,7 +255,7 @@ public partial class WfmUserScheduleAdherenceUpdatedTopicUserScheduleAdherenceUp
     /// <summary>
     /// Gets or Sets Impact
     /// </summary>
-    [DataMember(Name = "impact", EmitDefaultValue = false)]
+    [JsonPropertyName("impact")]
     public string Impact { get; set; }
 
 
@@ -263,7 +263,7 @@ public partial class WfmUserScheduleAdherenceUpdatedTopicUserScheduleAdherenceUp
     /// <summary>
     /// Gets or Sets AdherenceExplanation
     /// </summary>
-    [DataMember(Name = "adherenceExplanation", EmitDefaultValue = false)]
+    [JsonPropertyName("adherenceExplanation")]
     public WfmUserScheduleAdherenceUpdatedTopicRealTimeAdherenceExplanation AdherenceExplanation { get; set; }
 
 
@@ -271,7 +271,7 @@ public partial class WfmUserScheduleAdherenceUpdatedTopicUserScheduleAdherenceUp
     /// <summary>
     /// Gets or Sets AdherenceChangeTime
     /// </summary>
-    [DataMember(Name = "adherenceChangeTime", EmitDefaultValue = false)]
+    [JsonPropertyName("adherenceChangeTime")]
     public DateTime? AdherenceChangeTime { get; set; }
 
 
@@ -279,7 +279,7 @@ public partial class WfmUserScheduleAdherenceUpdatedTopicUserScheduleAdherenceUp
     /// <summary>
     /// Gets or Sets PresenceUpdateTime
     /// </summary>
-    [DataMember(Name = "presenceUpdateTime", EmitDefaultValue = false)]
+    [JsonPropertyName("presenceUpdateTime")]
     public DateTime? PresenceUpdateTime { get; set; }
 
 
@@ -287,7 +287,7 @@ public partial class WfmUserScheduleAdherenceUpdatedTopicUserScheduleAdherenceUp
     /// <summary>
     /// Gets or Sets ActiveQueues
     /// </summary>
-    [DataMember(Name = "activeQueues", EmitDefaultValue = false)]
+    [JsonPropertyName("activeQueues")]
     public List<WfmUserScheduleAdherenceUpdatedTopicQueueReference> ActiveQueues { get; set; }
 
 
@@ -295,7 +295,7 @@ public partial class WfmUserScheduleAdherenceUpdatedTopicUserScheduleAdherenceUp
     /// <summary>
     /// Gets or Sets ActiveQueuesModifiedTime
     /// </summary>
-    [DataMember(Name = "activeQueuesModifiedTime", EmitDefaultValue = false)]
+    [JsonPropertyName("activeQueuesModifiedTime")]
     public DateTime? ActiveQueuesModifiedTime { get; set; }
 
 
@@ -303,7 +303,7 @@ public partial class WfmUserScheduleAdherenceUpdatedTopicUserScheduleAdherenceUp
     /// <summary>
     /// Gets or Sets RemovedFromManagementUnit
     /// </summary>
-    [DataMember(Name = "removedFromManagementUnit", EmitDefaultValue = false)]
+    [JsonPropertyName("removedFromManagementUnit")]
     public bool? RemovedFromManagementUnit { get; set; }
 
 
@@ -311,7 +311,7 @@ public partial class WfmUserScheduleAdherenceUpdatedTopicUserScheduleAdherenceUp
     /// <summary>
     /// Gets or Sets SuppressOnTimeReminder
     /// </summary>
-    [DataMember(Name = "suppressOnTimeReminder", EmitDefaultValue = false)]
+    [JsonPropertyName("suppressOnTimeReminder")]
     public bool? SuppressOnTimeReminder { get; set; }
 
 
@@ -319,7 +319,7 @@ public partial class WfmUserScheduleAdherenceUpdatedTopicUserScheduleAdherenceUp
     /// <summary>
     /// Gets or Sets NextActivityReminders
     /// </summary>
-    [DataMember(Name = "nextActivityReminders", EmitDefaultValue = false)]
+    [JsonPropertyName("nextActivityReminders")]
     public List<WfmUserScheduleAdherenceUpdatedTopicUserNextActivityReminder> NextActivityReminders { get; set; }
 
 

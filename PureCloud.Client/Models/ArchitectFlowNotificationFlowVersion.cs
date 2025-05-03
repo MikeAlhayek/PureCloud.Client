@@ -1,12 +1,12 @@
-using System.Runtime.Serialization;
 using System.Text;
+using System.Text.Json.Serialization;
 
 namespace PureCloud.Client.Models;
 
 /// <summary>
 /// A bare-bones flow version object
 /// </summary>
-[DataContract]
+
 public partial class ArchitectFlowNotificationFlowVersion : IEquatable<ArchitectFlowNotificationFlowVersion>
 {
     /// <summary>
@@ -25,7 +25,7 @@ public partial class ArchitectFlowNotificationFlowVersion : IEquatable<Architect
     /// The version ID
     /// </summary>
     /// <value>The version ID</value>
-    [DataMember(Name = "id", EmitDefaultValue = false)]
+    [JsonPropertyName("id")]
     public string Id { get; set; }
 
 

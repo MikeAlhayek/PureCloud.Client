@@ -1,4 +1,3 @@
-using System.Runtime.Serialization;
 using System.Text;
 using System.Text.Json.Serialization;
 
@@ -7,7 +6,7 @@ namespace PureCloud.Client.Models;
 /// <summary>
 /// EdgeNetworkDiagnosticRequest
 /// </summary>
-[DataContract]
+
 public partial class EdgeNetworkDiagnosticRequest : IEquatable<EdgeNetworkDiagnosticRequest>
 {
 
@@ -32,7 +31,7 @@ public partial class EdgeNetworkDiagnosticRequest : IEquatable<EdgeNetworkDiagno
     /// IPv4/6 address or host to be probed for connectivity. No port allowed.
     /// </summary>
     /// <value>IPv4/6 address or host to be probed for connectivity. No port allowed.</value>
-    [DataMember(Name = "host", EmitDefaultValue = false)]
+    [JsonPropertyName("host")]
     public string Host { get; set; }
 
 

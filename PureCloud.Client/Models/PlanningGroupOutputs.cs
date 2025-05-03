@@ -1,4 +1,3 @@
-using System.Runtime.Serialization;
 using System.Text;
 using System.Text.Json.Serialization;
 
@@ -7,7 +6,7 @@ namespace PureCloud.Client.Models;
 /// <summary>
 /// PlanningGroupOutputs
 /// </summary>
-[DataContract]
+
 public partial class PlanningGroupOutputs : IEquatable<PlanningGroupOutputs>
 {
 
@@ -40,7 +39,7 @@ public partial class PlanningGroupOutputs : IEquatable<PlanningGroupOutputs>
     /// The ID for for the associated planning group result
     /// </summary>
     /// <value>The ID for for the associated planning group result</value>
-    [DataMember(Name = "planningGroupId", EmitDefaultValue = false)]
+    [JsonPropertyName("planningGroupId")]
     public string PlanningGroupId { get; set; }
 
 
@@ -49,7 +48,7 @@ public partial class PlanningGroupOutputs : IEquatable<PlanningGroupOutputs>
     /// List of Service Level percentage (0.0-100.0) results per interval
     /// </summary>
     /// <value>List of Service Level percentage (0.0-100.0) results per interval</value>
-    [DataMember(Name = "serviceLevelPerInterval", EmitDefaultValue = false)]
+    [JsonPropertyName("serviceLevelPerInterval")]
     public List<double?> ServiceLevelPerInterval { get; set; }
 
 
@@ -58,7 +57,7 @@ public partial class PlanningGroupOutputs : IEquatable<PlanningGroupOutputs>
     /// List of Occupancy percentage (0.0-100.0) results per interval
     /// </summary>
     /// <value>List of Occupancy percentage (0.0-100.0) results per interval</value>
-    [DataMember(Name = "occupancyPerInterval", EmitDefaultValue = false)]
+    [JsonPropertyName("occupancyPerInterval")]
     public List<double?> OccupancyPerInterval { get; set; }
 
 
@@ -67,7 +66,7 @@ public partial class PlanningGroupOutputs : IEquatable<PlanningGroupOutputs>
     /// List of Average Speed of Answer (in seconds) results per interval
     /// </summary>
     /// <value>List of Average Speed of Answer (in seconds) results per interval</value>
-    [DataMember(Name = "averageSpeedOfAnswerSecondsPerInterval", EmitDefaultValue = false)]
+    [JsonPropertyName("averageSpeedOfAnswerSecondsPerInterval")]
     public List<double?> AverageSpeedOfAnswerSecondsPerInterval { get; set; }
 
 
@@ -76,7 +75,7 @@ public partial class PlanningGroupOutputs : IEquatable<PlanningGroupOutputs>
     /// List of Abandon rate percentage (0.0-100.0) results per interval
     /// </summary>
     /// <value>List of Abandon rate percentage (0.0-100.0) results per interval</value>
-    [DataMember(Name = "abandonRatePerInterval", EmitDefaultValue = false)]
+    [JsonPropertyName("abandonRatePerInterval")]
     public List<double?> AbandonRatePerInterval { get; set; }
 
 

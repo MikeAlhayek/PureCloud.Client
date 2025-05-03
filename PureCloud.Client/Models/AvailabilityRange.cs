@@ -1,4 +1,3 @@
-using System.Runtime.Serialization;
 using System.Text;
 using System.Text.Json.Serialization;
 
@@ -7,7 +6,7 @@ namespace PureCloud.Client.Models;
 /// <summary>
 /// AvailabilityRange
 /// </summary>
-[DataContract]
+
 public partial class AvailabilityRange : IEquatable<AvailabilityRange>
 {
 
@@ -34,7 +33,7 @@ public partial class AvailabilityRange : IEquatable<AvailabilityRange>
     /// The earliest time of day the activity can be scheduled to begin, in minutes from midnight in the configured time zone of the business unit
     /// </summary>
     /// <value>The earliest time of day the activity can be scheduled to begin, in minutes from midnight in the configured time zone of the business unit</value>
-    [DataMember(Name = "earliestStartMinutesFromMidnight", EmitDefaultValue = false)]
+    [JsonPropertyName("earliestStartMinutesFromMidnight")]
     public int? EarliestStartMinutesFromMidnight { get; set; }
 
 
@@ -43,7 +42,7 @@ public partial class AvailabilityRange : IEquatable<AvailabilityRange>
     /// The latest time of day the activity can be scheduled to end, in minutes from midnight in the configured time zone of the business unit
     /// </summary>
     /// <value>The latest time of day the activity can be scheduled to end, in minutes from midnight in the configured time zone of the business unit</value>
-    [DataMember(Name = "latestEndMinutesFromMidnight", EmitDefaultValue = false)]
+    [JsonPropertyName("latestEndMinutesFromMidnight")]
     public int? LatestEndMinutesFromMidnight { get; set; }
 
 

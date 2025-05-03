@@ -7,14 +7,14 @@ namespace PureCloud.Client.Models;
 /// <summary>
 /// DialerAttemptLimitsConfigChangeAttemptLimits
 /// </summary>
-[DataContract]
+
 public partial class DialerAttemptLimitsConfigChangeAttemptLimits : IEquatable<DialerAttemptLimitsConfigChangeAttemptLimits>
 {
     /// <summary>
     /// After how long the number of attempts will be set back to 0
     /// </summary>
     /// <value>After how long the number of attempts will be set back to 0</value>
-    [JsonConverter(typeof(JsonStringEnumConverter))]
+    
     public enum ResetPeriodEnum
     {
         /// <summary>
@@ -41,7 +41,7 @@ public partial class DialerAttemptLimitsConfigChangeAttemptLimits : IEquatable<D
     /// After how long the number of attempts will be set back to 0
     /// </summary>
     /// <value>After how long the number of attempts will be set back to 0</value>
-    [DataMember(Name = "resetPeriod", EmitDefaultValue = false)]
+    [JsonPropertyName("resetPeriod")]
     public ResetPeriodEnum? ResetPeriod { get; set; }
     /// <summary>
     /// Initializes a new instance of the <see cref="DialerAttemptLimitsConfigChangeAttemptLimits" /> class.
@@ -80,7 +80,7 @@ public partial class DialerAttemptLimitsConfigChangeAttemptLimits : IEquatable<D
     /// <summary>
     /// Gets or Sets MaxAttemptsPerContact
     /// </summary>
-    [DataMember(Name = "maxAttemptsPerContact", EmitDefaultValue = false)]
+    [JsonPropertyName("maxAttemptsPerContact")]
     public long? MaxAttemptsPerContact { get; set; }
 
 
@@ -88,7 +88,7 @@ public partial class DialerAttemptLimitsConfigChangeAttemptLimits : IEquatable<D
     /// <summary>
     /// Gets or Sets MaxAttemptsPerNumber
     /// </summary>
-    [DataMember(Name = "maxAttemptsPerNumber", EmitDefaultValue = false)]
+    [JsonPropertyName("maxAttemptsPerNumber")]
     public long? MaxAttemptsPerNumber { get; set; }
 
 
@@ -97,7 +97,7 @@ public partial class DialerAttemptLimitsConfigChangeAttemptLimits : IEquatable<D
     /// The timezone is necessary to define when \&quot;today\&quot; starts and ends
     /// </summary>
     /// <value>The timezone is necessary to define when \&quot;today\&quot; starts and ends</value>
-    [DataMember(Name = "timeZoneId", EmitDefaultValue = false)]
+    [JsonPropertyName("timeZoneId")]
     public string TimeZoneId { get; set; }
 
 
@@ -108,7 +108,7 @@ public partial class DialerAttemptLimitsConfigChangeAttemptLimits : IEquatable<D
     /// Configuration for recall attempts
     /// </summary>
     /// <value>Configuration for recall attempts</value>
-    [DataMember(Name = "recallEntries", EmitDefaultValue = false)]
+    [JsonPropertyName("recallEntries")]
     public Dictionary<string, DialerAttemptLimitsConfigChangeRecallEntry> RecallEntries { get; set; }
 
 
@@ -117,7 +117,7 @@ public partial class DialerAttemptLimitsConfigChangeAttemptLimits : IEquatable<D
     /// Whether recalls are performed before considering other numbers (true) or after (false)
     /// </summary>
     /// <value>Whether recalls are performed before considering other numbers (true) or after (false)</value>
-    [DataMember(Name = "breadthFirstRecalls", EmitDefaultValue = false)]
+    [JsonPropertyName("breadthFirstRecalls")]
     public bool? BreadthFirstRecalls { get; set; }
 
 
@@ -125,7 +125,7 @@ public partial class DialerAttemptLimitsConfigChangeAttemptLimits : IEquatable<D
     /// <summary>
     /// Gets or Sets AdditionalProperties
     /// </summary>
-    [DataMember(Name = "additionalProperties", EmitDefaultValue = false)]
+    [JsonPropertyName("additionalProperties")]
     public Dictionary<string, object> AdditionalProperties { get; set; }
 
 
@@ -134,7 +134,7 @@ public partial class DialerAttemptLimitsConfigChangeAttemptLimits : IEquatable<D
     /// The globally unique identifier for the object.
     /// </summary>
     /// <value>The globally unique identifier for the object.</value>
-    [DataMember(Name = "id", EmitDefaultValue = false)]
+    [JsonPropertyName("id")]
     public string Id { get; set; }
 
 
@@ -143,7 +143,7 @@ public partial class DialerAttemptLimitsConfigChangeAttemptLimits : IEquatable<D
     /// The UI-visible name of the object
     /// </summary>
     /// <value>The UI-visible name of the object</value>
-    [DataMember(Name = "name", EmitDefaultValue = false)]
+    [JsonPropertyName("name")]
     public string Name { get; set; }
 
 
@@ -152,7 +152,7 @@ public partial class DialerAttemptLimitsConfigChangeAttemptLimits : IEquatable<D
     /// Creation time of the entity
     /// </summary>
     /// <value>Creation time of the entity</value>
-    [DataMember(Name = "dateCreated", EmitDefaultValue = false)]
+    [JsonPropertyName("dateCreated")]
     public DateTime? DateCreated { get; set; }
 
 
@@ -161,7 +161,7 @@ public partial class DialerAttemptLimitsConfigChangeAttemptLimits : IEquatable<D
     /// Last modified time of the entity
     /// </summary>
     /// <value>Last modified time of the entity</value>
-    [DataMember(Name = "dateModified", EmitDefaultValue = false)]
+    [JsonPropertyName("dateModified")]
     public DateTime? DateModified { get; set; }
 
 
@@ -170,7 +170,7 @@ public partial class DialerAttemptLimitsConfigChangeAttemptLimits : IEquatable<D
     /// Required for updates, must match the version number of the most recent update
     /// </summary>
     /// <value>Required for updates, must match the version number of the most recent update</value>
-    [DataMember(Name = "version", EmitDefaultValue = false)]
+    [JsonPropertyName("version")]
     public long? Version { get; set; }
 
 

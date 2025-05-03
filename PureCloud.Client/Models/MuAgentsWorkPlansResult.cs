@@ -1,4 +1,3 @@
-using System.Runtime.Serialization;
 using System.Text;
 using System.Text.Json.Serialization;
 
@@ -7,7 +6,7 @@ namespace PureCloud.Client.Models;
 /// <summary>
 /// MuAgentsWorkPlansResult
 /// </summary>
-[DataContract]
+
 public partial class MuAgentsWorkPlansResult : IEquatable<MuAgentsWorkPlansResult>
 {
 
@@ -35,7 +34,7 @@ public partial class MuAgentsWorkPlansResult : IEquatable<MuAgentsWorkPlansResul
     /// <summary>
     /// Gets or Sets Entities
     /// </summary>
-    [DataMember(Name = "entities", EmitDefaultValue = false)]
+    [JsonPropertyName("entities")]
     public List<AgentWorkPlans> Entities { get; set; }
 
 
@@ -44,7 +43,7 @@ public partial class MuAgentsWorkPlansResult : IEquatable<MuAgentsWorkPlansResul
     /// The reference date in yyyy-MM-dd format rolled back to nearest BU start day of week. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd
     /// </summary>
     /// <value>The reference date in yyyy-MM-dd format rolled back to nearest BU start day of week. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd</value>
-    [DataMember(Name = "referenceStartWeekDate", EmitDefaultValue = false)]
+    [JsonPropertyName("referenceStartWeekDate")]
     public string ReferenceStartWeekDate { get; set; }
 
 
@@ -53,7 +52,7 @@ public partial class MuAgentsWorkPlansResult : IEquatable<MuAgentsWorkPlansResul
     /// Map containing lookup values for agent work plans. The integer keys serves as lookup keys for effective work plan from workPlanLookupKeysPerWeek property
     /// </summary>
     /// <value>Map containing lookup values for agent work plans. The integer keys serves as lookup keys for effective work plan from workPlanLookupKeysPerWeek property</value>
-    [DataMember(Name = "workPlanLookup", EmitDefaultValue = false)]
+    [JsonPropertyName("workPlanLookup")]
     public Dictionary<string, WorkPlanReference> WorkPlanLookup { get; set; }
 
 

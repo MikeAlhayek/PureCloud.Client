@@ -1,12 +1,12 @@
-using System.Runtime.Serialization;
 using System.Text;
+using System.Text.Json.Serialization;
 
 namespace PureCloud.Client.Models;
 
 /// <summary>
 /// CampaignStats
 /// </summary>
-[DataContract]
+
 public partial class CampaignStats : IEquatable<CampaignStats>
 {
     /// <summary>
@@ -23,7 +23,7 @@ public partial class CampaignStats : IEquatable<CampaignStats>
     /// Information regarding the campaign&#39;s connect rate
     /// </summary>
     /// <value>Information regarding the campaign&#39;s connect rate</value>
-    [DataMember(Name = "contactRate", EmitDefaultValue = false)]
+    [JsonPropertyName("contactRate")]
     public ConnectRate ContactRate { get; private set; }
 
 
@@ -32,7 +32,7 @@ public partial class CampaignStats : IEquatable<CampaignStats>
     /// Number of available agents not currently being utilized
     /// </summary>
     /// <value>Number of available agents not currently being utilized</value>
-    [DataMember(Name = "idleAgents", EmitDefaultValue = false)]
+    [JsonPropertyName("idleAgents")]
     public int? IdleAgents { get; private set; }
 
 
@@ -41,7 +41,7 @@ public partial class CampaignStats : IEquatable<CampaignStats>
     /// Number of effective available agents not currently being utilized
     /// </summary>
     /// <value>Number of effective available agents not currently being utilized</value>
-    [DataMember(Name = "effectiveIdleAgents", EmitDefaultValue = false)]
+    [JsonPropertyName("effectiveIdleAgents")]
     public double? EffectiveIdleAgents { get; private set; }
 
 
@@ -50,7 +50,7 @@ public partial class CampaignStats : IEquatable<CampaignStats>
     /// Calls per agent adjusted by pace
     /// </summary>
     /// <value>Calls per agent adjusted by pace</value>
-    [DataMember(Name = "adjustedCallsPerAgent", EmitDefaultValue = false)]
+    [JsonPropertyName("adjustedCallsPerAgent")]
     public double? AdjustedCallsPerAgent { get; private set; }
 
 
@@ -59,7 +59,7 @@ public partial class CampaignStats : IEquatable<CampaignStats>
     /// Number of campaign calls currently ongoing
     /// </summary>
     /// <value>Number of campaign calls currently ongoing</value>
-    [DataMember(Name = "outstandingCalls", EmitDefaultValue = false)]
+    [JsonPropertyName("outstandingCalls")]
     public int? OutstandingCalls { get; private set; }
 
 
@@ -68,7 +68,7 @@ public partial class CampaignStats : IEquatable<CampaignStats>
     /// Number of campaign calls currently scheduled
     /// </summary>
     /// <value>Number of campaign calls currently scheduled</value>
-    [DataMember(Name = "scheduledCalls", EmitDefaultValue = false)]
+    [JsonPropertyName("scheduledCalls")]
     public int? ScheduledCalls { get; private set; }
 
 
@@ -77,7 +77,7 @@ public partial class CampaignStats : IEquatable<CampaignStats>
     /// Number of campaign calls currently timezone rescheduled
     /// </summary>
     /// <value>Number of campaign calls currently timezone rescheduled</value>
-    [DataMember(Name = "timeZoneRescheduledCalls", EmitDefaultValue = false)]
+    [JsonPropertyName("timeZoneRescheduledCalls")]
     public int? TimeZoneRescheduledCalls { get; private set; }
 
 
@@ -86,7 +86,7 @@ public partial class CampaignStats : IEquatable<CampaignStats>
     /// Number of contacts that don&#39;t match filter. This is currently supported only for Campaigns with dynamic filter on.
     /// </summary>
     /// <value>Number of contacts that don&#39;t match filter. This is currently supported only for Campaigns with dynamic filter on.</value>
-    [DataMember(Name = "filteredOutContactsCount", EmitDefaultValue = false)]
+    [JsonPropertyName("filteredOutContactsCount")]
     public int? FilteredOutContactsCount { get; private set; }
 
 
@@ -95,7 +95,7 @@ public partial class CampaignStats : IEquatable<CampaignStats>
     /// Information on the campaign&#39;s number of Right Party Contacts
     /// </summary>
     /// <value>Information on the campaign&#39;s number of Right Party Contacts</value>
-    [DataMember(Name = "rightPartyContactsCount", EmitDefaultValue = false)]
+    [JsonPropertyName("rightPartyContactsCount")]
     public int? RightPartyContactsCount { get; private set; }
 
 
@@ -104,7 +104,7 @@ public partial class CampaignStats : IEquatable<CampaignStats>
     /// Information on the campaign&#39;s valid attempts
     /// </summary>
     /// <value>Information on the campaign&#39;s valid attempts</value>
-    [DataMember(Name = "validAttempts", EmitDefaultValue = false)]
+    [JsonPropertyName("validAttempts")]
     public int? ValidAttempts { get; private set; }
 
 
@@ -113,7 +113,7 @@ public partial class CampaignStats : IEquatable<CampaignStats>
     /// Information on the campaign&#39;s lines utilization
     /// </summary>
     /// <value>Information on the campaign&#39;s lines utilization</value>
-    [DataMember(Name = "linesUtilization", EmitDefaultValue = false)]
+    [JsonPropertyName("linesUtilization")]
     public CampaignLinesUtilization LinesUtilization { get; private set; }
 
 
@@ -122,7 +122,7 @@ public partial class CampaignStats : IEquatable<CampaignStats>
     /// Information on the campaign&#39;s business category metrics
     /// </summary>
     /// <value>Information on the campaign&#39;s business category metrics</value>
-    [DataMember(Name = "businessCategoryMetrics", EmitDefaultValue = false)]
+    [JsonPropertyName("businessCategoryMetrics")]
     public CampaignBusinessCategoryMetrics BusinessCategoryMetrics { get; private set; }
 
 

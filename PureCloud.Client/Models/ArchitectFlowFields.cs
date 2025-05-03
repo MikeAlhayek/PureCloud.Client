@@ -1,12 +1,12 @@
-using System.Runtime.Serialization;
 using System.Text;
+using System.Text.Json.Serialization;
 
 namespace PureCloud.Client.Models;
 
 /// <summary>
 /// ArchitectFlowFields
 /// </summary>
-[DataContract]
+
 public partial class ArchitectFlowFields : IEquatable<ArchitectFlowFields>
 {
     /// <summary>
@@ -27,7 +27,7 @@ public partial class ArchitectFlowFields : IEquatable<ArchitectFlowFields>
     /// The architect flow.
     /// </summary>
     /// <value>The architect flow.</value>
-    [DataMember(Name = "architectFlow", EmitDefaultValue = false)]
+    [JsonPropertyName("architectFlow")]
     public AddressableEntityRef ArchitectFlow { get; set; }
 
 
@@ -36,7 +36,7 @@ public partial class ArchitectFlowFields : IEquatable<ArchitectFlowFields>
     /// Collection of Architect Flow Request Mappings to use.
     /// </summary>
     /// <value>Collection of Architect Flow Request Mappings to use.</value>
-    [DataMember(Name = "flowRequestMappings", EmitDefaultValue = false)]
+    [JsonPropertyName("flowRequestMappings")]
     public List<RequestMapping> FlowRequestMappings { get; set; }
 
 

@@ -7,13 +7,13 @@ namespace PureCloud.Client.Models;
 /// <summary>
 /// Survey
 /// </summary>
-[DataContract]
+
 public partial class Survey : IEquatable<Survey>
 {
     /// <summary>
     /// Gets or Sets Status
     /// </summary>
-    [JsonConverter(typeof(JsonStringEnumConverter))]
+    
     public enum StatusEnum
     {
         /// <summary>
@@ -70,7 +70,7 @@ public partial class Survey : IEquatable<Survey>
     /// Type of the survey
     /// </summary>
     /// <value>Type of the survey</value>
-    [JsonConverter(typeof(JsonStringEnumConverter))]
+    
     public enum SurveyTypeEnum
     {
         /// <summary>
@@ -96,13 +96,13 @@ public partial class Survey : IEquatable<Survey>
     /// <summary>
     /// Gets or Sets Status
     /// </summary>
-    [DataMember(Name = "status", EmitDefaultValue = false)]
+    [JsonPropertyName("status")]
     public StatusEnum? Status { get; set; }
     /// <summary>
     /// Type of the survey
     /// </summary>
     /// <value>Type of the survey</value>
-    [DataMember(Name = "surveyType", EmitDefaultValue = false)]
+    [JsonPropertyName("surveyType")]
     public SurveyTypeEnum? SurveyType { get; set; }
     /// <summary>
     /// Initializes a new instance of the <see cref="Survey" /> class.
@@ -144,7 +144,7 @@ public partial class Survey : IEquatable<Survey>
     /// The globally unique identifier for the object.
     /// </summary>
     /// <value>The globally unique identifier for the object.</value>
-    [DataMember(Name = "id", EmitDefaultValue = false)]
+    [JsonPropertyName("id")]
     public string Id { get; private set; }
 
 
@@ -152,7 +152,7 @@ public partial class Survey : IEquatable<Survey>
     /// <summary>
     /// Gets or Sets Name
     /// </summary>
-    [DataMember(Name = "name", EmitDefaultValue = false)]
+    [JsonPropertyName("name")]
     public string Name { get; set; }
 
 
@@ -160,7 +160,7 @@ public partial class Survey : IEquatable<Survey>
     /// <summary>
     /// Gets or Sets Conversation
     /// </summary>
-    [DataMember(Name = "conversation", EmitDefaultValue = false)]
+    [JsonPropertyName("conversation")]
     public ConversationReference Conversation { get; set; }
 
 
@@ -169,7 +169,7 @@ public partial class Survey : IEquatable<Survey>
     /// Survey form used for this survey.
     /// </summary>
     /// <value>Survey form used for this survey.</value>
-    [DataMember(Name = "surveyForm", EmitDefaultValue = false)]
+    [JsonPropertyName("surveyForm")]
     public SurveyForm SurveyForm { get; set; }
 
 
@@ -177,7 +177,7 @@ public partial class Survey : IEquatable<Survey>
     /// <summary>
     /// Gets or Sets Agent
     /// </summary>
-    [DataMember(Name = "agent", EmitDefaultValue = false)]
+    [JsonPropertyName("agent")]
     public DomainEntityRef Agent { get; set; }
 
 
@@ -187,7 +187,7 @@ public partial class Survey : IEquatable<Survey>
     /// <summary>
     /// Gets or Sets Queue
     /// </summary>
-    [DataMember(Name = "queue", EmitDefaultValue = false)]
+    [JsonPropertyName("queue")]
     public QueueReference Queue { get; set; }
 
 
@@ -195,7 +195,7 @@ public partial class Survey : IEquatable<Survey>
     /// <summary>
     /// Gets or Sets Answers
     /// </summary>
-    [DataMember(Name = "answers", EmitDefaultValue = false)]
+    [JsonPropertyName("answers")]
     public SurveyScoringSet Answers { get; set; }
 
 
@@ -204,7 +204,7 @@ public partial class Survey : IEquatable<Survey>
     /// Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z
     /// </summary>
     /// <value>Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z</value>
-    [DataMember(Name = "completedDate", EmitDefaultValue = false)]
+    [JsonPropertyName("completedDate")]
     public DateTime? CompletedDate { get; set; }
 
 
@@ -213,7 +213,7 @@ public partial class Survey : IEquatable<Survey>
     /// Additional information about what happened when the survey is in Error status.
     /// </summary>
     /// <value>Additional information about what happened when the survey is in Error status.</value>
-    [DataMember(Name = "surveyErrorDetails", EmitDefaultValue = false)]
+    [JsonPropertyName("surveyErrorDetails")]
     public SurveyErrorDetails SurveyErrorDetails { get; set; }
 
 
@@ -222,7 +222,7 @@ public partial class Survey : IEquatable<Survey>
     /// The team that the agent belongs to
     /// </summary>
     /// <value>The team that the agent belongs to</value>
-    [DataMember(Name = "agentTeam", EmitDefaultValue = false)]
+    [JsonPropertyName("agentTeam")]
     public Team AgentTeam { get; set; }
 
 
@@ -233,7 +233,7 @@ public partial class Survey : IEquatable<Survey>
     /// True if any of the required questions for the survey form have not been answered. Null if survey is not finished.
     /// </summary>
     /// <value>True if any of the required questions for the survey form have not been answered. Null if survey is not finished.</value>
-    [DataMember(Name = "missingRequiredAnswer", EmitDefaultValue = false)]
+    [JsonPropertyName("missingRequiredAnswer")]
     public bool? MissingRequiredAnswer { get; set; }
 
 
@@ -242,7 +242,7 @@ public partial class Survey : IEquatable<Survey>
     /// An Architect flow that executed in order to collect the answers for this survey.
     /// </summary>
     /// <value>An Architect flow that executed in order to collect the answers for this survey.</value>
-    [DataMember(Name = "flow", EmitDefaultValue = false)]
+    [JsonPropertyName("flow")]
     public AddressableEntityRef Flow { get; set; }
 
 
@@ -251,7 +251,7 @@ public partial class Survey : IEquatable<Survey>
     /// The URI for this object
     /// </summary>
     /// <value>The URI for this object</value>
-    [DataMember(Name = "selfUri", EmitDefaultValue = false)]
+    [JsonPropertyName("selfUri")]
     public string SelfUri { get; private set; }
 
 

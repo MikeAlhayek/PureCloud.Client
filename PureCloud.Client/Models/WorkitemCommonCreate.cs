@@ -1,4 +1,3 @@
-using System.Runtime.Serialization;
 using System.Text;
 using System.Text.Json.Serialization;
 
@@ -7,7 +6,7 @@ namespace PureCloud.Client.Models;
 /// <summary>
 /// WorkitemCommonCreate
 /// </summary>
-[DataContract]
+
 public partial class WorkitemCommonCreate : IEquatable<WorkitemCommonCreate>
 {
 
@@ -68,7 +67,7 @@ public partial class WorkitemCommonCreate : IEquatable<WorkitemCommonCreate>
     /// The name of the Workitem. Valid length between 3 and 256 characters.
     /// </summary>
     /// <value>The name of the Workitem. Valid length between 3 and 256 characters.</value>
-    [DataMember(Name = "name", EmitDefaultValue = false)]
+    [JsonPropertyName("name")]
     public string Name { get; set; }
 
 
@@ -77,7 +76,7 @@ public partial class WorkitemCommonCreate : IEquatable<WorkitemCommonCreate>
     /// The priority of the Workitem. The valid range is between -25,000,000 and 25,000,000.
     /// </summary>
     /// <value>The priority of the Workitem. The valid range is between -25,000,000 and 25,000,000.</value>
-    [DataMember(Name = "priority", EmitDefaultValue = false)]
+    [JsonPropertyName("priority")]
     public int? Priority { get; set; }
 
 
@@ -86,7 +85,7 @@ public partial class WorkitemCommonCreate : IEquatable<WorkitemCommonCreate>
     /// The due date of the Workitem. Can not be greater than 365 days from the current time. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z
     /// </summary>
     /// <value>The due date of the Workitem. Can not be greater than 365 days from the current time. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z</value>
-    [DataMember(Name = "dateDue", EmitDefaultValue = false)]
+    [JsonPropertyName("dateDue")]
     public DateTime? DateDue { get; set; }
 
 
@@ -95,7 +94,7 @@ public partial class WorkitemCommonCreate : IEquatable<WorkitemCommonCreate>
     /// The expiry date of the Workitem. Can not be greater than 365 days from the current time. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z
     /// </summary>
     /// <value>The expiry date of the Workitem. Can not be greater than 365 days from the current time. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z</value>
-    [DataMember(Name = "dateExpires", EmitDefaultValue = false)]
+    [JsonPropertyName("dateExpires")]
     public DateTime? DateExpires { get; set; }
 
 
@@ -104,7 +103,7 @@ public partial class WorkitemCommonCreate : IEquatable<WorkitemCommonCreate>
     /// The estimated duration in seconds to complete the Workitem. Maximum of 365 days.
     /// </summary>
     /// <value>The estimated duration in seconds to complete the Workitem. Maximum of 365 days.</value>
-    [DataMember(Name = "durationSeconds", EmitDefaultValue = false)]
+    [JsonPropertyName("durationSeconds")]
     public int? DurationSeconds { get; set; }
 
 
@@ -113,7 +112,7 @@ public partial class WorkitemCommonCreate : IEquatable<WorkitemCommonCreate>
     /// The epoch timestamp in seconds specifying the time to live for the Workitem. Can not be greater than 365 days from the current time.
     /// </summary>
     /// <value>The epoch timestamp in seconds specifying the time to live for the Workitem. Can not be greater than 365 days from the current time.</value>
-    [DataMember(Name = "ttl", EmitDefaultValue = false)]
+    [JsonPropertyName("ttl")]
     public int? Ttl { get; set; }
 
 
@@ -122,7 +121,7 @@ public partial class WorkitemCommonCreate : IEquatable<WorkitemCommonCreate>
     /// The ID of the Status of the Workitem.
     /// </summary>
     /// <value>The ID of the Status of the Workitem.</value>
-    [DataMember(Name = "statusId", EmitDefaultValue = false)]
+    [JsonPropertyName("statusId")]
     public string StatusId { get; set; }
 
 
@@ -131,7 +130,7 @@ public partial class WorkitemCommonCreate : IEquatable<WorkitemCommonCreate>
     /// The ID of Workbin that contains the Workitem.
     /// </summary>
     /// <value>The ID of Workbin that contains the Workitem.</value>
-    [DataMember(Name = "workbinId", EmitDefaultValue = false)]
+    [JsonPropertyName("workbinId")]
     public string WorkbinId { get; set; }
 
 
@@ -140,7 +139,7 @@ public partial class WorkitemCommonCreate : IEquatable<WorkitemCommonCreate>
     /// Set it to false to disable auto status transition. By default, it is enabled.
     /// </summary>
     /// <value>Set it to false to disable auto status transition. By default, it is enabled.</value>
-    [DataMember(Name = "autoStatusTransition", EmitDefaultValue = false)]
+    [JsonPropertyName("autoStatusTransition")]
     public bool? AutoStatusTransition { get; set; }
 
 
@@ -149,7 +148,7 @@ public partial class WorkitemCommonCreate : IEquatable<WorkitemCommonCreate>
     /// The description of the Workitem. Maximum length of 512 characters.
     /// </summary>
     /// <value>The description of the Workitem. Maximum length of 512 characters.</value>
-    [DataMember(Name = "description", EmitDefaultValue = false)]
+    [JsonPropertyName("description")]
     public string Description { get; set; }
 
 
@@ -158,7 +157,7 @@ public partial class WorkitemCommonCreate : IEquatable<WorkitemCommonCreate>
     /// The ID of the Worktype of the Workitem.
     /// </summary>
     /// <value>The ID of the Worktype of the Workitem.</value>
-    [DataMember(Name = "typeId", EmitDefaultValue = false)]
+    [JsonPropertyName("typeId")]
     public string TypeId { get; set; }
 
 
@@ -167,7 +166,7 @@ public partial class WorkitemCommonCreate : IEquatable<WorkitemCommonCreate>
     /// Custom fields defined in the schema referenced by the worktype of the workitem.
     /// </summary>
     /// <value>Custom fields defined in the schema referenced by the worktype of the workitem.</value>
-    [DataMember(Name = "customFields", EmitDefaultValue = false)]
+    [JsonPropertyName("customFields")]
     public Dictionary<string, object> CustomFields { get; set; }
 
 
@@ -176,7 +175,7 @@ public partial class WorkitemCommonCreate : IEquatable<WorkitemCommonCreate>
     /// The ID of the Workitems queue. Must be a valid UUID.
     /// </summary>
     /// <value>The ID of the Workitems queue. Must be a valid UUID.</value>
-    [DataMember(Name = "queueId", EmitDefaultValue = false)]
+    [JsonPropertyName("queueId")]
     public string QueueId { get; set; }
 
 
@@ -185,7 +184,7 @@ public partial class WorkitemCommonCreate : IEquatable<WorkitemCommonCreate>
     /// The ID of the assignee of the Workitem. Must be a valid UUID.
     /// </summary>
     /// <value>The ID of the assignee of the Workitem. Must be a valid UUID.</value>
-    [DataMember(Name = "assigneeId", EmitDefaultValue = false)]
+    [JsonPropertyName("assigneeId")]
     public string AssigneeId { get; set; }
 
 
@@ -194,7 +193,7 @@ public partial class WorkitemCommonCreate : IEquatable<WorkitemCommonCreate>
     /// The ID of language of the Workitem. Must be a valid UUID.
     /// </summary>
     /// <value>The ID of language of the Workitem. Must be a valid UUID.</value>
-    [DataMember(Name = "languageId", EmitDefaultValue = false)]
+    [JsonPropertyName("languageId")]
     public string LanguageId { get; set; }
 
 
@@ -203,7 +202,7 @@ public partial class WorkitemCommonCreate : IEquatable<WorkitemCommonCreate>
     /// The ID of the external contact of the Workitem. Must be a valid UUID.
     /// </summary>
     /// <value>The ID of the external contact of the Workitem. Must be a valid UUID.</value>
-    [DataMember(Name = "externalContactId", EmitDefaultValue = false)]
+    [JsonPropertyName("externalContactId")]
     public string ExternalContactId { get; set; }
 
 
@@ -212,7 +211,7 @@ public partial class WorkitemCommonCreate : IEquatable<WorkitemCommonCreate>
     /// The external tag of the Workitem.
     /// </summary>
     /// <value>The external tag of the Workitem.</value>
-    [DataMember(Name = "externalTag", EmitDefaultValue = false)]
+    [JsonPropertyName("externalTag")]
     public string ExternalTag { get; set; }
 
 
@@ -221,7 +220,7 @@ public partial class WorkitemCommonCreate : IEquatable<WorkitemCommonCreate>
     /// The skill IDs of the Workitem. Must be valid UUIDs.
     /// </summary>
     /// <value>The skill IDs of the Workitem. Must be valid UUIDs.</value>
-    [DataMember(Name = "skillIds", EmitDefaultValue = false)]
+    [JsonPropertyName("skillIds")]
     public List<string> SkillIds { get; set; }
 
 
@@ -230,7 +229,7 @@ public partial class WorkitemCommonCreate : IEquatable<WorkitemCommonCreate>
     /// The ID of the Workitems script. Must be a valid UUID.
     /// </summary>
     /// <value>The ID of the Workitems script. Must be a valid UUID.</value>
-    [DataMember(Name = "scriptId", EmitDefaultValue = false)]
+    [JsonPropertyName("scriptId")]
     public string ScriptId { get; set; }
 
 

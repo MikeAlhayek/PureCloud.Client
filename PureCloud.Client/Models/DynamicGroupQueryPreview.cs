@@ -1,12 +1,12 @@
-using System.Runtime.Serialization;
 using System.Text;
+using System.Text.Json.Serialization;
 
 namespace PureCloud.Client.Models;
 
 /// <summary>
 /// DynamicGroupQueryPreview
 /// </summary>
-[DataContract]
+
 public partial class DynamicGroupQueryPreview : IEquatable<DynamicGroupQueryPreview>
 {
     /// <summary>
@@ -25,7 +25,7 @@ public partial class DynamicGroupQueryPreview : IEquatable<DynamicGroupQueryPrev
     /// Number of Users that match the DynamicGroupQuery
     /// </summary>
     /// <value>Number of Users that match the DynamicGroupQuery</value>
-    [DataMember(Name = "userCount", EmitDefaultValue = false)]
+    [JsonPropertyName("userCount")]
     public int? UserCount { get; set; }
 
 

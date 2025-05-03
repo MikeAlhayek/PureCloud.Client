@@ -1,4 +1,3 @@
-using System.Runtime.Serialization;
 using System.Text;
 using System.Text.Json.Serialization;
 
@@ -7,7 +6,7 @@ namespace PureCloud.Client.Models;
 /// <summary>
 /// DynamicGroupDefinition
 /// </summary>
-[DataContract]
+
 public partial class DynamicGroupDefinition : IEquatable<DynamicGroupDefinition>
 {
 
@@ -36,7 +35,7 @@ public partial class DynamicGroupDefinition : IEquatable<DynamicGroupDefinition>
     /// The group the dynamic group definition belongs to
     /// </summary>
     /// <value>The group the dynamic group definition belongs to</value>
-    [DataMember(Name = "group", EmitDefaultValue = false)]
+    [JsonPropertyName("group")]
     public AddressableEntityRef Group { get; set; }
 
 
@@ -45,7 +44,7 @@ public partial class DynamicGroupDefinition : IEquatable<DynamicGroupDefinition>
     /// Last modified date/time of the dynamic group definition. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z
     /// </summary>
     /// <value>Last modified date/time of the dynamic group definition. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z</value>
-    [DataMember(Name = "dateModified", EmitDefaultValue = false)]
+    [JsonPropertyName("dateModified")]
     public DateTime? DateModified { get; set; }
 
 
@@ -54,7 +53,7 @@ public partial class DynamicGroupDefinition : IEquatable<DynamicGroupDefinition>
     /// Properties used for building a dynamic groups query
     /// </summary>
     /// <value>Properties used for building a dynamic groups query</value>
-    [DataMember(Name = "query", EmitDefaultValue = false)]
+    [JsonPropertyName("query")]
     public DynamicGroupQuery Query { get; set; }
 
 
@@ -63,7 +62,7 @@ public partial class DynamicGroupDefinition : IEquatable<DynamicGroupDefinition>
     /// The URI for this object
     /// </summary>
     /// <value>The URI for this object</value>
-    [DataMember(Name = "selfUri", EmitDefaultValue = false)]
+    [JsonPropertyName("selfUri")]
     public string SelfUri { get; private set; }
 
 

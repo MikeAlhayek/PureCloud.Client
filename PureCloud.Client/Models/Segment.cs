@@ -1,4 +1,3 @@
-using System.Runtime.Serialization;
 using System.Text;
 using System.Text.Json.Serialization;
 
@@ -7,7 +6,7 @@ namespace PureCloud.Client.Models;
 /// <summary>
 /// Segment
 /// </summary>
-[DataContract]
+
 public partial class Segment : IEquatable<Segment>
 {
 
@@ -40,7 +39,7 @@ public partial class Segment : IEquatable<Segment>
     /// The timestamp when this segment began. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z
     /// </summary>
     /// <value>The timestamp when this segment began. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z</value>
-    [DataMember(Name = "startTime", EmitDefaultValue = false)]
+    [JsonPropertyName("startTime")]
     public DateTime? StartTime { get; set; }
 
 
@@ -49,7 +48,7 @@ public partial class Segment : IEquatable<Segment>
     /// The timestamp when this segment ended. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z
     /// </summary>
     /// <value>The timestamp when this segment ended. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z</value>
-    [DataMember(Name = "endTime", EmitDefaultValue = false)]
+    [JsonPropertyName("endTime")]
     public DateTime? EndTime { get; set; }
 
 
@@ -58,7 +57,7 @@ public partial class Segment : IEquatable<Segment>
     /// The activity taking place for the participant in the segment.
     /// </summary>
     /// <value>The activity taking place for the participant in the segment.</value>
-    [DataMember(Name = "type", EmitDefaultValue = false)]
+    [JsonPropertyName("type")]
     public string Type { get; set; }
 
 
@@ -67,7 +66,7 @@ public partial class Segment : IEquatable<Segment>
     /// A description of the event that ended the segment.
     /// </summary>
     /// <value>A description of the event that ended the segment.</value>
-    [DataMember(Name = "howEnded", EmitDefaultValue = false)]
+    [JsonPropertyName("howEnded")]
     public string HowEnded { get; set; }
 
 
@@ -76,7 +75,7 @@ public partial class Segment : IEquatable<Segment>
     /// A description of the event that disconnected the segment
     /// </summary>
     /// <value>A description of the event that disconnected the segment</value>
-    [DataMember(Name = "disconnectType", EmitDefaultValue = false)]
+    [JsonPropertyName("disconnectType")]
     public string DisconnectType { get; set; }
 
 

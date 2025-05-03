@@ -7,14 +7,14 @@ namespace PureCloud.Client.Models;
 /// <summary>
 /// ShiftTradeResponse
 /// </summary>
-[DataContract]
+
 public partial class ShiftTradeResponse : IEquatable<ShiftTradeResponse>
 {
     /// <summary>
     /// The state of this shift trade
     /// </summary>
     /// <value>The state of this shift trade</value>
-    [JsonConverter(typeof(JsonStringEnumConverter))]
+    
     public enum StateEnum
     {
         /// <summary>
@@ -65,7 +65,7 @@ public partial class ShiftTradeResponse : IEquatable<ShiftTradeResponse>
     /// The state of this shift trade
     /// </summary>
     /// <value>The state of this shift trade</value>
-    [DataMember(Name = "state", EmitDefaultValue = false)]
+    [JsonPropertyName("state")]
     public StateEnum? State { get; set; }
     /// <summary>
     /// Initializes a new instance of the <see cref="ShiftTradeResponse" /> class.
@@ -117,7 +117,7 @@ public partial class ShiftTradeResponse : IEquatable<ShiftTradeResponse>
     /// The ID of this shift trade
     /// </summary>
     /// <value>The ID of this shift trade</value>
-    [DataMember(Name = "id", EmitDefaultValue = false)]
+    [JsonPropertyName("id")]
     public string Id { get; set; }
 
 
@@ -126,7 +126,7 @@ public partial class ShiftTradeResponse : IEquatable<ShiftTradeResponse>
     /// The start week date of the initiating shift in yyyy-MM-dd format. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd
     /// </summary>
     /// <value>The start week date of the initiating shift in yyyy-MM-dd format. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd</value>
-    [DataMember(Name = "weekDate", EmitDefaultValue = false)]
+    [JsonPropertyName("weekDate")]
     public string WeekDate { get; set; }
 
 
@@ -135,7 +135,7 @@ public partial class ShiftTradeResponse : IEquatable<ShiftTradeResponse>
     /// A reference to the associated schedule
     /// </summary>
     /// <value>A reference to the associated schedule</value>
-    [DataMember(Name = "schedule", EmitDefaultValue = false)]
+    [JsonPropertyName("schedule")]
     public BuScheduleReferenceForMuRoute Schedule { get; set; }
 
 
@@ -146,7 +146,7 @@ public partial class ShiftTradeResponse : IEquatable<ShiftTradeResponse>
     /// The user who initiated this trade
     /// </summary>
     /// <value>The user who initiated this trade</value>
-    [DataMember(Name = "initiatingUser", EmitDefaultValue = false)]
+    [JsonPropertyName("initiatingUser")]
     public UserReference InitiatingUser { get; set; }
 
 
@@ -155,7 +155,7 @@ public partial class ShiftTradeResponse : IEquatable<ShiftTradeResponse>
     /// The ID of the shift offered for trade by the initiating user
     /// </summary>
     /// <value>The ID of the shift offered for trade by the initiating user</value>
-    [DataMember(Name = "initiatingShiftId", EmitDefaultValue = false)]
+    [JsonPropertyName("initiatingShiftId")]
     public string InitiatingShiftId { get; set; }
 
 
@@ -164,7 +164,7 @@ public partial class ShiftTradeResponse : IEquatable<ShiftTradeResponse>
     /// The start date/time of the shift being offered for trade. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z
     /// </summary>
     /// <value>The start date/time of the shift being offered for trade. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z</value>
-    [DataMember(Name = "initiatingShiftStart", EmitDefaultValue = false)]
+    [JsonPropertyName("initiatingShiftStart")]
     public DateTime? InitiatingShiftStart { get; set; }
 
 
@@ -173,7 +173,7 @@ public partial class ShiftTradeResponse : IEquatable<ShiftTradeResponse>
     /// The end date/time of the shift being offered for trade. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z
     /// </summary>
     /// <value>The end date/time of the shift being offered for trade. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z</value>
-    [DataMember(Name = "initiatingShiftEnd", EmitDefaultValue = false)]
+    [JsonPropertyName("initiatingShiftEnd")]
     public DateTime? InitiatingShiftEnd { get; set; }
 
 
@@ -182,7 +182,7 @@ public partial class ShiftTradeResponse : IEquatable<ShiftTradeResponse>
     /// The user matching the trade, or if the state is not &#39;Matched&#39;, the user to whom the trade request was sent
     /// </summary>
     /// <value>The user matching the trade, or if the state is not &#39;Matched&#39;, the user to whom the trade request was sent</value>
-    [DataMember(Name = "receivingUser", EmitDefaultValue = false)]
+    [JsonPropertyName("receivingUser")]
     public UserReference ReceivingUser { get; set; }
 
 
@@ -191,7 +191,7 @@ public partial class ShiftTradeResponse : IEquatable<ShiftTradeResponse>
     /// The ID of the shift being exchanged for the initiating shift, null if the receiving user is picking up a shift
     /// </summary>
     /// <value>The ID of the shift being exchanged for the initiating shift, null if the receiving user is picking up a shift</value>
-    [DataMember(Name = "receivingShiftId", EmitDefaultValue = false)]
+    [JsonPropertyName("receivingShiftId")]
     public string ReceivingShiftId { get; set; }
 
 
@@ -200,7 +200,7 @@ public partial class ShiftTradeResponse : IEquatable<ShiftTradeResponse>
     /// The start date/time of the receiving shift. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z
     /// </summary>
     /// <value>The start date/time of the receiving shift. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z</value>
-    [DataMember(Name = "receivingShiftStart", EmitDefaultValue = false)]
+    [JsonPropertyName("receivingShiftStart")]
     public DateTime? ReceivingShiftStart { get; set; }
 
 
@@ -209,7 +209,7 @@ public partial class ShiftTradeResponse : IEquatable<ShiftTradeResponse>
     /// The end date/time of the receiving shift. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z
     /// </summary>
     /// <value>The end date/time of the receiving shift. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z</value>
-    [DataMember(Name = "receivingShiftEnd", EmitDefaultValue = false)]
+    [JsonPropertyName("receivingShiftEnd")]
     public DateTime? ReceivingShiftEnd { get; set; }
 
 
@@ -218,7 +218,7 @@ public partial class ShiftTradeResponse : IEquatable<ShiftTradeResponse>
     /// When this shift trade offer will expire if not matched or approved. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z
     /// </summary>
     /// <value>When this shift trade offer will expire if not matched or approved. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z</value>
-    [DataMember(Name = "expiration", EmitDefaultValue = false)]
+    [JsonPropertyName("expiration")]
     public DateTime? Expiration { get; set; }
 
 
@@ -227,7 +227,7 @@ public partial class ShiftTradeResponse : IEquatable<ShiftTradeResponse>
     /// Whether this is a one-sided shift trade (e.g. the initiating user is not asking for a shift in return)
     /// </summary>
     /// <value>Whether this is a one-sided shift trade (e.g. the initiating user is not asking for a shift in return)</value>
-    [DataMember(Name = "oneSided", EmitDefaultValue = false)]
+    [JsonPropertyName("oneSided")]
     public bool? OneSided { get; set; }
 
 
@@ -236,7 +236,7 @@ public partial class ShiftTradeResponse : IEquatable<ShiftTradeResponse>
     /// Time frames when the initiating user is willing to accept trades. Empty means giving up the shift. Intervals are represented as an ISO-8601 string. For example: YYYY-MM-DDThh:mm:ss/YYYY-MM-DDThh:mm:ss
     /// </summary>
     /// <value>Time frames when the initiating user is willing to accept trades. Empty means giving up the shift. Intervals are represented as an ISO-8601 string. For example: YYYY-MM-DDThh:mm:ss/YYYY-MM-DDThh:mm:ss</value>
-    [DataMember(Name = "acceptableIntervals", EmitDefaultValue = false)]
+    [JsonPropertyName("acceptableIntervals")]
     public List<string> AcceptableIntervals { get; set; }
 
 
@@ -245,7 +245,7 @@ public partial class ShiftTradeResponse : IEquatable<ShiftTradeResponse>
     /// The user who reviewed this shift trade. The id may be &#39;System&#39; if it was an automated process
     /// </summary>
     /// <value>The user who reviewed this shift trade. The id may be &#39;System&#39; if it was an automated process</value>
-    [DataMember(Name = "reviewedBy", EmitDefaultValue = false)]
+    [JsonPropertyName("reviewedBy")]
     public UserReference ReviewedBy { get; set; }
 
 
@@ -254,7 +254,7 @@ public partial class ShiftTradeResponse : IEquatable<ShiftTradeResponse>
     /// The timestamp when this shift trade was reviewed. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z
     /// </summary>
     /// <value>The timestamp when this shift trade was reviewed. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z</value>
-    [DataMember(Name = "reviewedDate", EmitDefaultValue = false)]
+    [JsonPropertyName("reviewedDate")]
     public DateTime? ReviewedDate { get; set; }
 
 
@@ -263,7 +263,7 @@ public partial class ShiftTradeResponse : IEquatable<ShiftTradeResponse>
     /// Version data for this trade
     /// </summary>
     /// <value>Version data for this trade</value>
-    [DataMember(Name = "metadata", EmitDefaultValue = false)]
+    [JsonPropertyName("metadata")]
     public WfmVersionedEntityMetadata Metadata { get; set; }
 
 

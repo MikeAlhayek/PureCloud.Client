@@ -1,4 +1,3 @@
-using System.Runtime.Serialization;
 using System.Text;
 using System.Text.Json.Serialization;
 
@@ -7,7 +6,7 @@ namespace PureCloud.Client.Models;
 /// <summary>
 /// Effective Configuration for an ClientApp. This is comprised of the integration specific configuration along with overrides specified in the integration type.
 /// </summary>
-[DataContract]
+
 public partial class EffectiveConfiguration : IEquatable<EffectiveConfiguration>
 {
 
@@ -40,7 +39,7 @@ public partial class EffectiveConfiguration : IEquatable<EffectiveConfiguration>
     /// Key-value configuration settings described by the schema in the propertiesSchemaUri field.
     /// </summary>
     /// <value>Key-value configuration settings described by the schema in the propertiesSchemaUri field.</value>
-    [DataMember(Name = "properties", EmitDefaultValue = false)]
+    [JsonPropertyName("properties")]
     public Dictionary<string, object> Properties { get; set; }
 
 
@@ -49,7 +48,7 @@ public partial class EffectiveConfiguration : IEquatable<EffectiveConfiguration>
     /// Advanced configuration described by the schema in the advancedSchemaUri field.
     /// </summary>
     /// <value>Advanced configuration described by the schema in the advancedSchemaUri field.</value>
-    [DataMember(Name = "advanced", EmitDefaultValue = false)]
+    [JsonPropertyName("advanced")]
     public Dictionary<string, object> Advanced { get; set; }
 
 
@@ -58,7 +57,7 @@ public partial class EffectiveConfiguration : IEquatable<EffectiveConfiguration>
     /// The name of the integration, used to distinguish this integration from others of the same type.
     /// </summary>
     /// <value>The name of the integration, used to distinguish this integration from others of the same type.</value>
-    [DataMember(Name = "name", EmitDefaultValue = false)]
+    [JsonPropertyName("name")]
     public string Name { get; set; }
 
 
@@ -67,7 +66,7 @@ public partial class EffectiveConfiguration : IEquatable<EffectiveConfiguration>
     /// Notes about the integration.
     /// </summary>
     /// <value>Notes about the integration.</value>
-    [DataMember(Name = "notes", EmitDefaultValue = false)]
+    [JsonPropertyName("notes")]
     public string Notes { get; set; }
 
 
@@ -76,7 +75,7 @@ public partial class EffectiveConfiguration : IEquatable<EffectiveConfiguration>
     /// Credentials required by the integration. The required keys are indicated in the credentials property of the Integration Type
     /// </summary>
     /// <value>Credentials required by the integration. The required keys are indicated in the credentials property of the Integration Type</value>
-    [DataMember(Name = "credentials", EmitDefaultValue = false)]
+    [JsonPropertyName("credentials")]
     public Dictionary<string, CredentialInfo> Credentials { get; set; }
 
 

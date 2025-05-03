@@ -1,12 +1,12 @@
-using System.Runtime.Serialization;
 using System.Text;
+using System.Text.Json.Serialization;
 
 namespace PureCloud.Client.Models;
 
 /// <summary>
 /// Snapshots
 /// </summary>
-[DataContract]
+
 public partial class Snapshots : IEquatable<Snapshots>
 {
     /// <summary>
@@ -27,7 +27,7 @@ public partial class Snapshots : IEquatable<Snapshots>
     /// The snapshot Id
     /// </summary>
     /// <value>The snapshot Id</value>
-    [DataMember(Name = "id", EmitDefaultValue = false)]
+    [JsonPropertyName("id")]
     public string Id { get; set; }
 
 
@@ -36,7 +36,7 @@ public partial class Snapshots : IEquatable<Snapshots>
     /// The number of days from today denoting when the snapshot was captured
     /// </summary>
     /// <value>The number of days from today denoting when the snapshot was captured</value>
-    [DataMember(Name = "daysInPast", EmitDefaultValue = false)]
+    [JsonPropertyName("daysInPast")]
     public int? DaysInPast { get; set; }
 
 

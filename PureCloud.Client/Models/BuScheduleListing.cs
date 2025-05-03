@@ -1,12 +1,12 @@
-using System.Runtime.Serialization;
 using System.Text;
+using System.Text.Json.Serialization;
 
 namespace PureCloud.Client.Models;
 
 /// <summary>
 /// BuScheduleListing
 /// </summary>
-[DataContract]
+
 public partial class BuScheduleListing : IEquatable<BuScheduleListing>
 {
     /// <summary>
@@ -24,7 +24,7 @@ public partial class BuScheduleListing : IEquatable<BuScheduleListing>
     /// <summary>
     /// Gets or Sets Entities
     /// </summary>
-    [DataMember(Name = "entities", EmitDefaultValue = false)]
+    [JsonPropertyName("entities")]
     public List<BuScheduleListItem> Entities { get; set; }
 
 

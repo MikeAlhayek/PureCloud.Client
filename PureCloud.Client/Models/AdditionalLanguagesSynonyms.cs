@@ -1,12 +1,12 @@
-using System.Runtime.Serialization;
 using System.Text;
+using System.Text.Json.Serialization;
 
 namespace PureCloud.Client.Models;
 
 /// <summary>
 /// AdditionalLanguagesSynonyms
 /// </summary>
-[DataContract]
+
 public partial class AdditionalLanguagesSynonyms : IEquatable<AdditionalLanguagesSynonyms>
 {
     /// <summary>
@@ -23,7 +23,7 @@ public partial class AdditionalLanguagesSynonyms : IEquatable<AdditionalLanguage
     /// Synonyms for additional language
     /// </summary>
     /// <value>Synonyms for additional language</value>
-    [DataMember(Name = "synonyms", EmitDefaultValue = false)]
+    [JsonPropertyName("synonyms")]
     public List<string> Synonyms { get; private set; }
 
 

@@ -1,12 +1,12 @@
-using System.Runtime.Serialization;
 using System.Text;
+using System.Text.Json.Serialization;
 
 namespace PureCloud.Client.Models;
 
 /// <summary>
 /// SuggestionKnowledgeSearch
 /// </summary>
-[DataContract]
+
 public partial class SuggestionKnowledgeSearch : IEquatable<SuggestionKnowledgeSearch>
 {
     /// <summary>
@@ -23,7 +23,7 @@ public partial class SuggestionKnowledgeSearch : IEquatable<SuggestionKnowledgeS
     /// The article title.
     /// </summary>
     /// <value>The article title.</value>
-    [DataMember(Name = "title", EmitDefaultValue = false)]
+    [JsonPropertyName("title")]
     public string Title { get; private set; }
 
 
@@ -32,7 +32,7 @@ public partial class SuggestionKnowledgeSearch : IEquatable<SuggestionKnowledgeS
     /// Snippets of text from the article matching the query.
     /// </summary>
     /// <value>Snippets of text from the article matching the query.</value>
-    [DataMember(Name = "snippets", EmitDefaultValue = false)]
+    [JsonPropertyName("snippets")]
     public List<string> Snippets { get; private set; }
 
 
@@ -41,7 +41,7 @@ public partial class SuggestionKnowledgeSearch : IEquatable<SuggestionKnowledgeS
     /// Value between 0 and 1. 1 corresponds to very confident, 0 to not confident at all.
     /// </summary>
     /// <value>Value between 0 and 1. 1 corresponds to very confident, 0 to not confident at all.</value>
-    [DataMember(Name = "confidence", EmitDefaultValue = false)]
+    [JsonPropertyName("confidence")]
     public float? Confidence { get; private set; }
 
 
@@ -50,7 +50,7 @@ public partial class SuggestionKnowledgeSearch : IEquatable<SuggestionKnowledgeS
     /// The search id.
     /// </summary>
     /// <value>The search id.</value>
-    [DataMember(Name = "searchId", EmitDefaultValue = false)]
+    [JsonPropertyName("searchId")]
     public string SearchId { get; private set; }
 
 
@@ -59,7 +59,7 @@ public partial class SuggestionKnowledgeSearch : IEquatable<SuggestionKnowledgeS
     /// The article matching the query.
     /// </summary>
     /// <value>The article matching the query.</value>
-    [DataMember(Name = "document", EmitDefaultValue = false)]
+    [JsonPropertyName("document")]
     public AddressableEntityRef Document { get; private set; }
 
 
@@ -68,7 +68,7 @@ public partial class SuggestionKnowledgeSearch : IEquatable<SuggestionKnowledgeS
     /// The version of the article.
     /// </summary>
     /// <value>The version of the article.</value>
-    [DataMember(Name = "version", EmitDefaultValue = false)]
+    [JsonPropertyName("version")]
     public AddressableEntityRef Version { get; private set; }
 
 
@@ -77,7 +77,7 @@ public partial class SuggestionKnowledgeSearch : IEquatable<SuggestionKnowledgeS
     /// The most relevant answer within a searched article for the searched query
     /// </summary>
     /// <value>The most relevant answer within a searched article for the searched query</value>
-    [DataMember(Name = "knowledgeAnswer", EmitDefaultValue = false)]
+    [JsonPropertyName("knowledgeAnswer")]
     public SuggestionKnowledgeAnswer KnowledgeAnswer { get; private set; }
 
 
@@ -86,7 +86,7 @@ public partial class SuggestionKnowledgeSearch : IEquatable<SuggestionKnowledgeS
     /// Variations of the article.
     /// </summary>
     /// <value>Variations of the article.</value>
-    [DataMember(Name = "variations", EmitDefaultValue = false)]
+    [JsonPropertyName("variations")]
     public List<AddressableEntityRef> Variations { get; private set; }
 
 

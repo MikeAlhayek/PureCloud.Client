@@ -1,12 +1,12 @@
-using System.Runtime.Serialization;
 using System.Text;
+using System.Text.Json.Serialization;
 
 namespace PureCloud.Client.Models;
 
 /// <summary>
 /// Information about the results being matched by the expressions
 /// </summary>
-[DataContract]
+
 public partial class MatchTestResult : IEquatable<MatchTestResult>
 {
     /// <summary>
@@ -27,7 +27,7 @@ public partial class MatchTestResult : IEquatable<MatchTestResult>
     /// The value of the field being matched
     /// </summary>
     /// <value>The value of the field being matched</value>
-    [DataMember(Name = "value", EmitDefaultValue = false)]
+    [JsonPropertyName("value")]
     public object Value { get; set; }
 
 
@@ -36,7 +36,7 @@ public partial class MatchTestResult : IEquatable<MatchTestResult>
     /// The json path to the json node being matched on. ex: $[&#39;things&#39;][1]
     /// </summary>
     /// <value>The json path to the json node being matched on. ex: $[&#39;things&#39;][1]</value>
-    [DataMember(Name = "path", EmitDefaultValue = false)]
+    [JsonPropertyName("path")]
     public string Path { get; set; }
 
 

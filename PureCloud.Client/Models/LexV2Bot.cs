@@ -1,4 +1,3 @@
-using System.Runtime.Serialization;
 using System.Text;
 using System.Text.Json.Serialization;
 
@@ -7,7 +6,7 @@ namespace PureCloud.Client.Models;
 /// <summary>
 /// LexV2Bot
 /// </summary>
-[DataContract]
+
 public partial class LexV2Bot : IEquatable<LexV2Bot>
 {
 
@@ -38,7 +37,7 @@ public partial class LexV2Bot : IEquatable<LexV2Bot>
     /// The globally unique identifier for the object.
     /// </summary>
     /// <value>The globally unique identifier for the object.</value>
-    [DataMember(Name = "id", EmitDefaultValue = false)]
+    [JsonPropertyName("id")]
     public string Id { get; private set; }
 
 
@@ -46,7 +45,7 @@ public partial class LexV2Bot : IEquatable<LexV2Bot>
     /// <summary>
     /// Gets or Sets Name
     /// </summary>
-    [DataMember(Name = "name", EmitDefaultValue = false)]
+    [JsonPropertyName("name")]
     public string Name { get; set; }
 
 
@@ -55,7 +54,7 @@ public partial class LexV2Bot : IEquatable<LexV2Bot>
     /// Lex V2 bot Id
     /// </summary>
     /// <value>Lex V2 bot Id</value>
-    [DataMember(Name = "botId", EmitDefaultValue = false)]
+    [JsonPropertyName("botId")]
     public string BotId { get; set; }
 
 
@@ -64,7 +63,7 @@ public partial class LexV2Bot : IEquatable<LexV2Bot>
     /// A region of the Lex V2 bot
     /// </summary>
     /// <value>A region of the Lex V2 bot</value>
-    [DataMember(Name = "region", EmitDefaultValue = false)]
+    [JsonPropertyName("region")]
     public string Region { get; set; }
 
 
@@ -73,7 +72,7 @@ public partial class LexV2Bot : IEquatable<LexV2Bot>
     /// A description of the Lex V2 bot
     /// </summary>
     /// <value>A description of the Lex V2 bot</value>
-    [DataMember(Name = "description", EmitDefaultValue = false)]
+    [JsonPropertyName("description")]
     public string Description { get; set; }
 
 
@@ -82,7 +81,7 @@ public partial class LexV2Bot : IEquatable<LexV2Bot>
     /// The URI for this object
     /// </summary>
     /// <value>The URI for this object</value>
-    [DataMember(Name = "selfUri", EmitDefaultValue = false)]
+    [JsonPropertyName("selfUri")]
     public string SelfUri { get; private set; }
 
 

@@ -1,12 +1,12 @@
-using System.Runtime.Serialization;
 using System.Text;
+using System.Text.Json.Serialization;
 
 namespace PureCloud.Client.Models;
 
 /// <summary>
 /// ShiftTradeActivityPreviewResponse
 /// </summary>
-[DataContract]
+
 public partial class ShiftTradeActivityPreviewResponse : IEquatable<ShiftTradeActivityPreviewResponse>
 {
     /// <summary>
@@ -33,7 +33,7 @@ public partial class ShiftTradeActivityPreviewResponse : IEquatable<ShiftTradeAc
     /// The start date and time of this activity. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z
     /// </summary>
     /// <value>The start date and time of this activity. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z</value>
-    [DataMember(Name = "startDate", EmitDefaultValue = false)]
+    [JsonPropertyName("startDate")]
     public DateTime? StartDate { get; set; }
 
 
@@ -42,7 +42,7 @@ public partial class ShiftTradeActivityPreviewResponse : IEquatable<ShiftTradeAc
     /// The length in minutes of this activity
     /// </summary>
     /// <value>The length in minutes of this activity</value>
-    [DataMember(Name = "lengthMinutes", EmitDefaultValue = false)]
+    [JsonPropertyName("lengthMinutes")]
     public int? LengthMinutes { get; set; }
 
 
@@ -51,7 +51,7 @@ public partial class ShiftTradeActivityPreviewResponse : IEquatable<ShiftTradeAc
     /// The ID of the activity code for this activity
     /// </summary>
     /// <value>The ID of the activity code for this activity</value>
-    [DataMember(Name = "activityCodeId", EmitDefaultValue = false)]
+    [JsonPropertyName("activityCodeId")]
     public string ActivityCodeId { get; set; }
 
 
@@ -60,7 +60,7 @@ public partial class ShiftTradeActivityPreviewResponse : IEquatable<ShiftTradeAc
     /// Whether this activity counts as paid time
     /// </summary>
     /// <value>Whether this activity counts as paid time</value>
-    [DataMember(Name = "countsAsPaidTime", EmitDefaultValue = false)]
+    [JsonPropertyName("countsAsPaidTime")]
     public bool? CountsAsPaidTime { get; set; }
 
 
@@ -69,7 +69,7 @@ public partial class ShiftTradeActivityPreviewResponse : IEquatable<ShiftTradeAc
     /// Payable minutes for this activity
     /// </summary>
     /// <value>Payable minutes for this activity</value>
-    [DataMember(Name = "payableMinutes", EmitDefaultValue = false)]
+    [JsonPropertyName("payableMinutes")]
     public int? PayableMinutes { get; set; }
 
 

@@ -1,4 +1,3 @@
-using System.Runtime.Serialization;
 using System.Text;
 using System.Text.Json.Serialization;
 
@@ -7,7 +6,7 @@ namespace PureCloud.Client.Models;
 /// <summary>
 /// ContactListFilterBulkRetrieveBody
 /// </summary>
-[DataContract]
+
 public partial class ContactListFilterBulkRetrieveBody : IEquatable<ContactListFilterBulkRetrieveBody>
 {
 
@@ -32,7 +31,7 @@ public partial class ContactListFilterBulkRetrieveBody : IEquatable<ContactListF
     /// The IDs of the Contact List Filters to retrieve.
     /// </summary>
     /// <value>The IDs of the Contact List Filters to retrieve.</value>
-    [DataMember(Name = "ids", EmitDefaultValue = false)]
+    [JsonPropertyName("ids")]
     public List<string> Ids { get; set; }
 
 

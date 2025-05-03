@@ -1,12 +1,12 @@
-using System.Runtime.Serialization;
 using System.Text;
+using System.Text.Json.Serialization;
 
 namespace PureCloud.Client.Models;
 
 /// <summary>
 /// TrunkConnectedStatus
 /// </summary>
-[DataContract]
+
 public partial class TrunkConnectedStatus : IEquatable<TrunkConnectedStatus>
 {
     /// <summary>
@@ -26,7 +26,7 @@ public partial class TrunkConnectedStatus : IEquatable<TrunkConnectedStatus>
     /// <summary>
     /// Gets or Sets Connected
     /// </summary>
-    [DataMember(Name = "connected", EmitDefaultValue = false)]
+    [JsonPropertyName("connected")]
     public bool? Connected { get; set; }
 
 
@@ -35,7 +35,7 @@ public partial class TrunkConnectedStatus : IEquatable<TrunkConnectedStatus>
     /// Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z
     /// </summary>
     /// <value>Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z</value>
-    [DataMember(Name = "connectedStateTime", EmitDefaultValue = false)]
+    [JsonPropertyName("connectedStateTime")]
     public DateTime? ConnectedStateTime { get; set; }
 
 

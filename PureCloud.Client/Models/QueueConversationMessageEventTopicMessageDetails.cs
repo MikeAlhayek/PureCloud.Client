@@ -7,13 +7,13 @@ namespace PureCloud.Client.Models;
 /// <summary>
 /// QueueConversationMessageEventTopicMessageDetails
 /// </summary>
-[DataContract]
+
 public partial class QueueConversationMessageEventTopicMessageDetails : IEquatable<QueueConversationMessageEventTopicMessageDetails>
 {
     /// <summary>
     /// Gets or Sets MessageStatus
     /// </summary>
-    [JsonConverter(typeof(JsonStringEnumConverter))]
+    
     public enum MessageStatusEnum
     {
         /// <summary>
@@ -81,7 +81,7 @@ public partial class QueueConversationMessageEventTopicMessageDetails : IEquatab
     /// <summary>
     /// Gets or Sets SocialVisibility
     /// </summary>
-    [JsonConverter(typeof(JsonStringEnumConverter))]
+    
     public enum SocialVisibilityEnum
     {
         /// <summary>
@@ -107,12 +107,12 @@ public partial class QueueConversationMessageEventTopicMessageDetails : IEquatab
     /// <summary>
     /// Gets or Sets MessageStatus
     /// </summary>
-    [DataMember(Name = "messageStatus", EmitDefaultValue = false)]
+    [JsonPropertyName("messageStatus")]
     public MessageStatusEnum? MessageStatus { get; set; }
     /// <summary>
     /// Gets or Sets SocialVisibility
     /// </summary>
-    [DataMember(Name = "socialVisibility", EmitDefaultValue = false)]
+    [JsonPropertyName("socialVisibility")]
     public SocialVisibilityEnum? SocialVisibility { get; set; }
     /// <summary>
     /// Initializes a new instance of the <see cref="QueueConversationMessageEventTopicMessageDetails" /> class.
@@ -145,7 +145,7 @@ public partial class QueueConversationMessageEventTopicMessageDetails : IEquatab
     /// <summary>
     /// Gets or Sets Message
     /// </summary>
-    [DataMember(Name = "message", EmitDefaultValue = false)]
+    [JsonPropertyName("message")]
     public QueueConversationMessageEventTopicUriReference Message { get; set; }
 
 
@@ -153,7 +153,7 @@ public partial class QueueConversationMessageEventTopicMessageDetails : IEquatab
     /// <summary>
     /// Gets or Sets MessageTime
     /// </summary>
-    [DataMember(Name = "messageTime", EmitDefaultValue = false)]
+    [JsonPropertyName("messageTime")]
     public DateTime? MessageTime { get; set; }
 
 
@@ -161,7 +161,7 @@ public partial class QueueConversationMessageEventTopicMessageDetails : IEquatab
     /// <summary>
     /// Gets or Sets MessageSegmentCount
     /// </summary>
-    [DataMember(Name = "messageSegmentCount", EmitDefaultValue = false)]
+    [JsonPropertyName("messageSegmentCount")]
     public long? MessageSegmentCount { get; set; }
 
 
@@ -171,7 +171,7 @@ public partial class QueueConversationMessageEventTopicMessageDetails : IEquatab
     /// <summary>
     /// Gets or Sets Media
     /// </summary>
-    [DataMember(Name = "media", EmitDefaultValue = false)]
+    [JsonPropertyName("media")]
     public List<QueueConversationMessageEventTopicMessageMedia> Media { get; set; }
 
 
@@ -179,7 +179,7 @@ public partial class QueueConversationMessageEventTopicMessageDetails : IEquatab
     /// <summary>
     /// Gets or Sets Stickers
     /// </summary>
-    [DataMember(Name = "stickers", EmitDefaultValue = false)]
+    [JsonPropertyName("stickers")]
     public List<QueueConversationMessageEventTopicMessageSticker> Stickers { get; set; }
 
 
@@ -187,7 +187,7 @@ public partial class QueueConversationMessageEventTopicMessageDetails : IEquatab
     /// <summary>
     /// Gets or Sets ErrorInfo
     /// </summary>
-    [DataMember(Name = "errorInfo", EmitDefaultValue = false)]
+    [JsonPropertyName("errorInfo")]
     public QueueConversationMessageEventTopicErrorDetails ErrorInfo { get; set; }
 
 
@@ -195,7 +195,7 @@ public partial class QueueConversationMessageEventTopicMessageDetails : IEquatab
     /// <summary>
     /// Gets or Sets MessageMetadata
     /// </summary>
-    [DataMember(Name = "messageMetadata", EmitDefaultValue = false)]
+    [JsonPropertyName("messageMetadata")]
     public QueueConversationMessageEventTopicMessageMetadata MessageMetadata { get; set; }
 
 

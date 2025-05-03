@@ -1,12 +1,12 @@
-using System.Runtime.Serialization;
 using System.Text;
+using System.Text.Json.Serialization;
 
 namespace PureCloud.Client.Models;
 
 /// <summary>
 /// InsightsSummaryMetricItem
 /// </summary>
-[DataContract]
+
 public partial class InsightsSummaryMetricItem : IEquatable<InsightsSummaryMetricItem>
 {
     /// <summary>
@@ -33,7 +33,7 @@ public partial class InsightsSummaryMetricItem : IEquatable<InsightsSummaryMetri
     /// The gamification metric for the data
     /// </summary>
     /// <value>The gamification metric for the data</value>
-    [DataMember(Name = "metric", EmitDefaultValue = false)]
+    [JsonPropertyName("metric")]
     public AddressableEntityRef Metric { get; set; }
 
 
@@ -42,7 +42,7 @@ public partial class InsightsSummaryMetricItem : IEquatable<InsightsSummaryMetri
     /// Insights data in the comparative period
     /// </summary>
     /// <value>Insights data in the comparative period</value>
-    [DataMember(Name = "comparativePeriod", EmitDefaultValue = false)]
+    [JsonPropertyName("comparativePeriod")]
     public InsightsSummaryMetricPeriodPoints ComparativePeriod { get; set; }
 
 
@@ -51,7 +51,7 @@ public partial class InsightsSummaryMetricItem : IEquatable<InsightsSummaryMetri
     /// Insights data in the primary period
     /// </summary>
     /// <value>Insights data in the primary period</value>
-    [DataMember(Name = "primaryPeriod", EmitDefaultValue = false)]
+    [JsonPropertyName("primaryPeriod")]
     public InsightsSummaryMetricPeriodPoints PrimaryPeriod { get; set; }
 
 
@@ -60,7 +60,7 @@ public partial class InsightsSummaryMetricItem : IEquatable<InsightsSummaryMetri
     /// Percent of goal change
     /// </summary>
     /// <value>Percent of goal change</value>
-    [DataMember(Name = "percentOfGoalChange", EmitDefaultValue = false)]
+    [JsonPropertyName("percentOfGoalChange")]
     public double? PercentOfGoalChange { get; set; }
 
 
@@ -69,7 +69,7 @@ public partial class InsightsSummaryMetricItem : IEquatable<InsightsSummaryMetri
     /// Value change
     /// </summary>
     /// <value>Value change</value>
-    [DataMember(Name = "valueChange", EmitDefaultValue = false)]
+    [JsonPropertyName("valueChange")]
     public double? ValueChange { get; set; }
 
 

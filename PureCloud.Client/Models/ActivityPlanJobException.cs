@@ -7,14 +7,14 @@ namespace PureCloud.Client.Models;
 /// <summary>
 /// ActivityPlanJobException
 /// </summary>
-[DataContract]
+
 public partial class ActivityPlanJobException : IEquatable<ActivityPlanJobException>
 {
     /// <summary>
     /// The type of error
     /// </summary>
     /// <value>The type of error</value>
-    [JsonConverter(typeof(JsonStringEnumConverter))]
+    
     public enum ExceptionTypeEnum
     {
         /// <summary>
@@ -41,7 +41,7 @@ public partial class ActivityPlanJobException : IEquatable<ActivityPlanJobExcept
     /// The type of error
     /// </summary>
     /// <value>The type of error</value>
-    [DataMember(Name = "exceptionType", EmitDefaultValue = false)]
+    [JsonPropertyName("exceptionType")]
     public ExceptionTypeEnum? ExceptionType { get; set; }
 
     /// <summary>
@@ -69,7 +69,7 @@ public partial class ActivityPlanJobException : IEquatable<ActivityPlanJobExcept
     /// The occurrences in which this error occurred
     /// </summary>
     /// <value>The occurrences in which this error occurred</value>
-    [DataMember(Name = "occurrences", EmitDefaultValue = false)]
+    [JsonPropertyName("occurrences")]
     public List<ActivityPlanOccurrenceReference> Occurrences { get; set; }
 
 

@@ -1,12 +1,12 @@
-using System.Runtime.Serialization;
 using System.Text;
+using System.Text.Json.Serialization;
 
 namespace PureCloud.Client.Models;
 
 /// <summary>
 /// TimeAllowed
 /// </summary>
-[DataContract]
+
 public partial class TimeAllowed : IEquatable<TimeAllowed>
 {
     /// <summary>
@@ -28,7 +28,7 @@ public partial class TimeAllowed : IEquatable<TimeAllowed>
     /// <summary>
     /// Gets or Sets TimeSlots
     /// </summary>
-    [DataMember(Name = "timeSlots", EmitDefaultValue = false)]
+    [JsonPropertyName("timeSlots")]
     public List<TimeSlot> TimeSlots { get; set; }
 
 
@@ -36,7 +36,7 @@ public partial class TimeAllowed : IEquatable<TimeAllowed>
     /// <summary>
     /// Gets or Sets TimeZoneId
     /// </summary>
-    [DataMember(Name = "timeZoneId", EmitDefaultValue = false)]
+    [JsonPropertyName("timeZoneId")]
     public string TimeZoneId { get; set; }
 
 
@@ -44,7 +44,7 @@ public partial class TimeAllowed : IEquatable<TimeAllowed>
     /// <summary>
     /// Gets or Sets Empty
     /// </summary>
-    [DataMember(Name = "empty", EmitDefaultValue = false)]
+    [JsonPropertyName("empty")]
     public bool? Empty { get; set; }
 
 

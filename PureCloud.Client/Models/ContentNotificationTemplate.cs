@@ -1,4 +1,3 @@
-using System.Runtime.Serialization;
 using System.Text;
 using System.Text.Json.Serialization;
 
@@ -7,7 +6,7 @@ namespace PureCloud.Client.Models;
 /// <summary>
 /// Template notification object.
 /// </summary>
-[DataContract]
+
 public partial class ContentNotificationTemplate : IEquatable<ContentNotificationTemplate>
 {
 
@@ -42,7 +41,7 @@ public partial class ContentNotificationTemplate : IEquatable<ContentNotificatio
     /// The messaging provider template ID. For WhatsApp, &#39;namespace@name&#39;.
     /// </summary>
     /// <value>The messaging provider template ID. For WhatsApp, &#39;namespace@name&#39;.</value>
-    [DataMember(Name = "id", EmitDefaultValue = false)]
+    [JsonPropertyName("id")]
     public string Id { get; set; }
 
 
@@ -51,7 +50,7 @@ public partial class ContentNotificationTemplate : IEquatable<ContentNotificatio
     /// Template language.
     /// </summary>
     /// <value>Template language.</value>
-    [DataMember(Name = "language", EmitDefaultValue = false)]
+    [JsonPropertyName("language")]
     public string Language { get; set; }
 
 
@@ -60,7 +59,7 @@ public partial class ContentNotificationTemplate : IEquatable<ContentNotificatio
     /// The template header.
     /// </summary>
     /// <value>The template header.</value>
-    [DataMember(Name = "header", EmitDefaultValue = false)]
+    [JsonPropertyName("header")]
     public NotificationTemplateHeader Header { get; set; }
 
 
@@ -69,7 +68,7 @@ public partial class ContentNotificationTemplate : IEquatable<ContentNotificatio
     /// The template body.
     /// </summary>
     /// <value>The template body.</value>
-    [DataMember(Name = "body", EmitDefaultValue = false)]
+    [JsonPropertyName("body")]
     public NotificationTemplateBody Body { get; set; }
 
 
@@ -78,7 +77,7 @@ public partial class ContentNotificationTemplate : IEquatable<ContentNotificatio
     /// Template buttons
     /// </summary>
     /// <value>Template buttons</value>
-    [DataMember(Name = "buttons", EmitDefaultValue = false)]
+    [JsonPropertyName("buttons")]
     public List<NotificationTemplateButton> Buttons { get; set; }
 
 
@@ -87,7 +86,7 @@ public partial class ContentNotificationTemplate : IEquatable<ContentNotificatio
     /// The template footer.
     /// </summary>
     /// <value>The template footer.</value>
-    [DataMember(Name = "footer", EmitDefaultValue = false)]
+    [JsonPropertyName("footer")]
     public NotificationTemplateFooter Footer { get; set; }
 
 

@@ -1,12 +1,12 @@
-using System.Runtime.Serialization;
 using System.Text;
+using System.Text.Json.Serialization;
 
 namespace PureCloud.Client.Models;
 
 /// <summary>
 /// GeolocationEventGeolocation
 /// </summary>
-[DataContract]
+
 public partial class GeolocationEventGeolocation : IEquatable<GeolocationEventGeolocation>
 {
     /// <summary>
@@ -32,7 +32,7 @@ public partial class GeolocationEventGeolocation : IEquatable<GeolocationEventGe
     /// <summary>
     /// Gets or Sets UserId
     /// </summary>
-    [DataMember(Name = "userId", EmitDefaultValue = false)]
+    [JsonPropertyName("userId")]
     public string UserId { get; set; }
 
 
@@ -40,7 +40,7 @@ public partial class GeolocationEventGeolocation : IEquatable<GeolocationEventGe
     /// <summary>
     /// Gets or Sets Type
     /// </summary>
-    [DataMember(Name = "type", EmitDefaultValue = false)]
+    [JsonPropertyName("type")]
     public string Type { get; set; }
 
 
@@ -48,7 +48,7 @@ public partial class GeolocationEventGeolocation : IEquatable<GeolocationEventGe
     /// <summary>
     /// Gets or Sets Country
     /// </summary>
-    [DataMember(Name = "country", EmitDefaultValue = false)]
+    [JsonPropertyName("country")]
     public string Country { get; set; }
 
 
@@ -56,7 +56,7 @@ public partial class GeolocationEventGeolocation : IEquatable<GeolocationEventGe
     /// <summary>
     /// Gets or Sets Region
     /// </summary>
-    [DataMember(Name = "region", EmitDefaultValue = false)]
+    [JsonPropertyName("region")]
     public string Region { get; set; }
 
 
@@ -64,7 +64,7 @@ public partial class GeolocationEventGeolocation : IEquatable<GeolocationEventGe
     /// <summary>
     /// Gets or Sets City
     /// </summary>
-    [DataMember(Name = "city", EmitDefaultValue = false)]
+    [JsonPropertyName("city")]
     public string City { get; set; }
 
 

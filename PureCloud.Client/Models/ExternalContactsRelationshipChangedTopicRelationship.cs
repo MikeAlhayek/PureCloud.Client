@@ -1,12 +1,12 @@
-using System.Runtime.Serialization;
 using System.Text;
+using System.Text.Json.Serialization;
 
 namespace PureCloud.Client.Models;
 
 /// <summary>
 /// ExternalContactsRelationshipChangedTopicRelationship
 /// </summary>
-[DataContract]
+
 public partial class ExternalContactsRelationshipChangedTopicRelationship : IEquatable<ExternalContactsRelationshipChangedTopicRelationship>
 {
     /// <summary>
@@ -36,7 +36,7 @@ public partial class ExternalContactsRelationshipChangedTopicRelationship : IEqu
     /// <summary>
     /// Gets or Sets Id
     /// </summary>
-    [DataMember(Name = "id", EmitDefaultValue = false)]
+    [JsonPropertyName("id")]
     public string Id { get; set; }
 
 
@@ -44,7 +44,7 @@ public partial class ExternalContactsRelationshipChangedTopicRelationship : IEqu
     /// <summary>
     /// Gets or Sets Division
     /// </summary>
-    [DataMember(Name = "division", EmitDefaultValue = false)]
+    [JsonPropertyName("division")]
     public ExternalContactsRelationshipChangedTopicDivision Division { get; set; }
 
 
@@ -52,7 +52,7 @@ public partial class ExternalContactsRelationshipChangedTopicRelationship : IEqu
     /// <summary>
     /// Gets or Sets User
     /// </summary>
-    [DataMember(Name = "user", EmitDefaultValue = false)]
+    [JsonPropertyName("user")]
     public ExternalContactsRelationshipChangedTopicUser User { get; set; }
 
 
@@ -60,7 +60,7 @@ public partial class ExternalContactsRelationshipChangedTopicRelationship : IEqu
     /// <summary>
     /// Gets or Sets ExternalOrganization
     /// </summary>
-    [DataMember(Name = "externalOrganization", EmitDefaultValue = false)]
+    [JsonPropertyName("externalOrganization")]
     public ExternalContactsRelationshipChangedTopicExternalOrganization ExternalOrganization { get; set; }
 
 
@@ -68,7 +68,7 @@ public partial class ExternalContactsRelationshipChangedTopicRelationship : IEqu
     /// <summary>
     /// Gets or Sets Relationship
     /// </summary>
-    [DataMember(Name = "relationship", EmitDefaultValue = false)]
+    [JsonPropertyName("relationship")]
     public string Relationship { get; set; }
 
 
@@ -76,7 +76,7 @@ public partial class ExternalContactsRelationshipChangedTopicRelationship : IEqu
     /// <summary>
     /// Gets or Sets CreateDate
     /// </summary>
-    [DataMember(Name = "createDate", EmitDefaultValue = false)]
+    [JsonPropertyName("createDate")]
     public DateTime? CreateDate { get; set; }
 
 
@@ -84,7 +84,7 @@ public partial class ExternalContactsRelationshipChangedTopicRelationship : IEqu
     /// <summary>
     /// Gets or Sets ModifyDate
     /// </summary>
-    [DataMember(Name = "modifyDate", EmitDefaultValue = false)]
+    [JsonPropertyName("modifyDate")]
     public DateTime? ModifyDate { get; set; }
 
 

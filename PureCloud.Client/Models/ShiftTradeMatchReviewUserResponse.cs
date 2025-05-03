@@ -1,12 +1,12 @@
-using System.Runtime.Serialization;
 using System.Text;
+using System.Text.Json.Serialization;
 
 namespace PureCloud.Client.Models;
 
 /// <summary>
 /// ShiftTradeMatchReviewUserResponse
 /// </summary>
-[DataContract]
+
 public partial class ShiftTradeMatchReviewUserResponse : IEquatable<ShiftTradeMatchReviewUserResponse>
 {
     /// <summary>
@@ -33,7 +33,7 @@ public partial class ShiftTradeMatchReviewUserResponse : IEquatable<ShiftTradeMa
     /// The minimum weekly paid minutes for this user per the work plan tied to the agent schedule
     /// </summary>
     /// <value>The minimum weekly paid minutes for this user per the work plan tied to the agent schedule</value>
-    [DataMember(Name = "weeklyMinimumPaidMinutes", EmitDefaultValue = false)]
+    [JsonPropertyName("weeklyMinimumPaidMinutes")]
     public int? WeeklyMinimumPaidMinutes { get; set; }
 
 
@@ -42,7 +42,7 @@ public partial class ShiftTradeMatchReviewUserResponse : IEquatable<ShiftTradeMa
     /// The maximum weekly paid minutes for this user per the work plan tied to the agent schedule
     /// </summary>
     /// <value>The maximum weekly paid minutes for this user per the work plan tied to the agent schedule</value>
-    [DataMember(Name = "weeklyMaximumPaidMinutes", EmitDefaultValue = false)]
+    [JsonPropertyName("weeklyMaximumPaidMinutes")]
     public int? WeeklyMaximumPaidMinutes { get; set; }
 
 
@@ -51,7 +51,7 @@ public partial class ShiftTradeMatchReviewUserResponse : IEquatable<ShiftTradeMa
     /// The paid minutes on the week schedule for this user prior to the shift trade
     /// </summary>
     /// <value>The paid minutes on the week schedule for this user prior to the shift trade</value>
-    [DataMember(Name = "preTradeSchedulePaidMinutes", EmitDefaultValue = false)]
+    [JsonPropertyName("preTradeSchedulePaidMinutes")]
     public int? PreTradeSchedulePaidMinutes { get; set; }
 
 
@@ -60,7 +60,7 @@ public partial class ShiftTradeMatchReviewUserResponse : IEquatable<ShiftTradeMa
     /// The paid minutes on the week schedule for this user if the shift trade is approved
     /// </summary>
     /// <value>The paid minutes on the week schedule for this user if the shift trade is approved</value>
-    [DataMember(Name = "postTradeSchedulePaidMinutes", EmitDefaultValue = false)]
+    [JsonPropertyName("postTradeSchedulePaidMinutes")]
     public int? PostTradeSchedulePaidMinutes { get; set; }
 
 
@@ -69,7 +69,7 @@ public partial class ShiftTradeMatchReviewUserResponse : IEquatable<ShiftTradeMa
     /// Preview of what the shift will look like for the opposite side of this trade after the match is approved
     /// </summary>
     /// <value>Preview of what the shift will look like for the opposite side of this trade after the match is approved</value>
-    [DataMember(Name = "postTradeNewShift", EmitDefaultValue = false)]
+    [JsonPropertyName("postTradeNewShift")]
     public ShiftTradePreviewResponse PostTradeNewShift { get; set; }
 
 

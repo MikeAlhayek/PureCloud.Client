@@ -7,14 +7,14 @@ namespace PureCloud.Client.Models;
 /// <summary>
 /// RecordingJobsQuery
 /// </summary>
-[DataContract]
+
 public partial class RecordingJobsQuery : IEquatable<RecordingJobsQuery>
 {
     /// <summary>
     /// Operation to perform bulk task. If the operation will cause the delete date of a recording to be older than the export date, the export date will be adjusted to the delete date.
     /// </summary>
     /// <value>Operation to perform bulk task. If the operation will cause the delete date of a recording to be older than the export date, the export date will be adjusted to the delete date.</value>
-    [JsonConverter(typeof(JsonStringEnumConverter))]
+    
     public enum ActionEnum
     {
         /// <summary>
@@ -47,7 +47,7 @@ public partial class RecordingJobsQuery : IEquatable<RecordingJobsQuery>
     /// Operation to perform bulk task. If the operation will cause the delete date of a recording to be older than the export date, the export date will be adjusted to the delete date.
     /// </summary>
     /// <value>Operation to perform bulk task. If the operation will cause the delete date of a recording to be older than the export date, the export date will be adjusted to the delete date.</value>
-    [DataMember(Name = "action", EmitDefaultValue = false)]
+    [JsonPropertyName("action")]
     public ActionEnum? Action { get; set; }
 
     /// <summary>
@@ -93,7 +93,7 @@ public partial class RecordingJobsQuery : IEquatable<RecordingJobsQuery>
     /// The date when the action will be performed. If screenRecordingActionDate is also provided, this value is only used for non-screen recordings. Otherwise this value is used for all recordings. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z
     /// </summary>
     /// <value>The date when the action will be performed. If screenRecordingActionDate is also provided, this value is only used for non-screen recordings. Otherwise this value is used for all recordings. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z</value>
-    [DataMember(Name = "actionDate", EmitDefaultValue = false)]
+    [JsonPropertyName("actionDate")]
     public DateTime? ActionDate { get; set; }
 
 
@@ -102,7 +102,7 @@ public partial class RecordingJobsQuery : IEquatable<RecordingJobsQuery>
     /// The number of days after each recording&#39;s creation date when the action will be performed. If screenRecordingActionAge is also provided, this value is only used for non-screen recordings. Otherwise this value is used for all recordings.
     /// </summary>
     /// <value>The number of days after each recording&#39;s creation date when the action will be performed. If screenRecordingActionAge is also provided, this value is only used for non-screen recordings. Otherwise this value is used for all recordings.</value>
-    [DataMember(Name = "actionAge", EmitDefaultValue = false)]
+    [JsonPropertyName("actionAge")]
     public int? ActionAge { get; set; }
 
 
@@ -111,7 +111,7 @@ public partial class RecordingJobsQuery : IEquatable<RecordingJobsQuery>
     /// The date when the action will be performed for screen recordings. If this is provided then includeScreenRecordings must be true. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z
     /// </summary>
     /// <value>The date when the action will be performed for screen recordings. If this is provided then includeScreenRecordings must be true. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z</value>
-    [DataMember(Name = "screenRecordingActionDate", EmitDefaultValue = false)]
+    [JsonPropertyName("screenRecordingActionDate")]
     public DateTime? ScreenRecordingActionDate { get; set; }
 
 
@@ -120,7 +120,7 @@ public partial class RecordingJobsQuery : IEquatable<RecordingJobsQuery>
     /// The number of days after each screen recording&#39;s creation date when the action will be performed. If this is provided then includeScreenRecordings must be true.
     /// </summary>
     /// <value>The number of days after each screen recording&#39;s creation date when the action will be performed. If this is provided then includeScreenRecordings must be true.</value>
-    [DataMember(Name = "screenRecordingActionAge", EmitDefaultValue = false)]
+    [JsonPropertyName("screenRecordingActionAge")]
     public int? ScreenRecordingActionAge { get; set; }
 
 
@@ -129,7 +129,7 @@ public partial class RecordingJobsQuery : IEquatable<RecordingJobsQuery>
     /// IntegrationId to Access AWS S3 bucket for bulk recording exports. This field is required and used only for EXPORT action.
     /// </summary>
     /// <value>IntegrationId to Access AWS S3 bucket for bulk recording exports. This field is required and used only for EXPORT action.</value>
-    [DataMember(Name = "integrationId", EmitDefaultValue = false)]
+    [JsonPropertyName("integrationId")]
     public string IntegrationId { get; set; }
 
 
@@ -138,7 +138,7 @@ public partial class RecordingJobsQuery : IEquatable<RecordingJobsQuery>
     /// Whether to include recordings with PCI DSS and/or PII data, default value &#x3D; false 
     /// </summary>
     /// <value>Whether to include recordings with PCI DSS and/or PII data, default value &#x3D; false </value>
-    [DataMember(Name = "includeRecordingsWithSensitiveData", EmitDefaultValue = false)]
+    [JsonPropertyName("includeRecordingsWithSensitiveData")]
     public bool? IncludeRecordingsWithSensitiveData { get; set; }
 
 
@@ -147,7 +147,7 @@ public partial class RecordingJobsQuery : IEquatable<RecordingJobsQuery>
     /// Whether to include Screen recordings for the action, default value &#x3D; true 
     /// </summary>
     /// <value>Whether to include Screen recordings for the action, default value &#x3D; true </value>
-    [DataMember(Name = "includeScreenRecordings", EmitDefaultValue = false)]
+    [JsonPropertyName("includeScreenRecordings")]
     public bool? IncludeScreenRecordings { get; set; }
 
 
@@ -156,7 +156,7 @@ public partial class RecordingJobsQuery : IEquatable<RecordingJobsQuery>
     /// For DELETE action, setting this to true will clear any pending exports for recordings. This field is only used for DELETE action. Default value &#x3D; false
     /// </summary>
     /// <value>For DELETE action, setting this to true will clear any pending exports for recordings. This field is only used for DELETE action. Default value &#x3D; false</value>
-    [DataMember(Name = "clearExport", EmitDefaultValue = false)]
+    [JsonPropertyName("clearExport")]
     public bool? ClearExport { get; set; }
 
 
@@ -165,7 +165,7 @@ public partial class RecordingJobsQuery : IEquatable<RecordingJobsQuery>
     /// Conversation Query. Note: After the recording is created, it might take up to 48 hours for the recording to be included in the submitted job query.  This result depends on the analytics data lake job completion. See also: https://developer.genesys.cloud/analyticsdatamanagement/analytics/jobs/conversation-details-job#data-availability.This is supported only when querying for conversations up to and including 5 years old.
     /// </summary>
     /// <value>Conversation Query. Note: After the recording is created, it might take up to 48 hours for the recording to be included in the submitted job query.  This result depends on the analytics data lake job completion. See also: https://developer.genesys.cloud/analyticsdatamanagement/analytics/jobs/conversation-details-job#data-availability.This is supported only when querying for conversations up to and including 5 years old.</value>
-    [DataMember(Name = "conversationQuery", EmitDefaultValue = false)]
+    [JsonPropertyName("conversationQuery")]
     public AsyncConversationQuery ConversationQuery { get; set; }
 
 
@@ -174,7 +174,7 @@ public partial class RecordingJobsQuery : IEquatable<RecordingJobsQuery>
     /// As an alternative to conversationQuery, specify the date and time range of conversations that are older than 5 years to query.Results will include all conversations that had activity during the interval. This is supported only when querying for conversations older than 5 years;conversationQuery must not be provided when this is provided. Intervals are represented as an ISO-8601 string. For example: YYYY-MM-DDThh:mm:ss/YYYY-MM-DDThh:mm:ss.Interval duration must not exceed 6 months. Intervals are represented as an ISO-8601 string. For example: YYYY-MM-DDThh:mm:ss/YYYY-MM-DDThh:mm:ss
     /// </summary>
     /// <value>As an alternative to conversationQuery, specify the date and time range of conversations that are older than 5 years to query.Results will include all conversations that had activity during the interval. This is supported only when querying for conversations older than 5 years;conversationQuery must not be provided when this is provided. Intervals are represented as an ISO-8601 string. For example: YYYY-MM-DDThh:mm:ss/YYYY-MM-DDThh:mm:ss.Interval duration must not exceed 6 months. Intervals are represented as an ISO-8601 string. For example: YYYY-MM-DDThh:mm:ss/YYYY-MM-DDThh:mm:ss</value>
-    [DataMember(Name = "agedConversationInterval", EmitDefaultValue = false)]
+    [JsonPropertyName("agedConversationInterval")]
     public string AgedConversationInterval { get; set; }
 
 

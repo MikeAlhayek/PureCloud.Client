@@ -1,12 +1,12 @@
-using System.Runtime.Serialization;
 using System.Text;
+using System.Text.Json.Serialization;
 
 namespace PureCloud.Client.Models;
 
 /// <summary>
 /// UploadUrlResponse
 /// </summary>
-[DataContract]
+
 public partial class UploadUrlResponse : IEquatable<UploadUrlResponse>
 {
     /// <summary>
@@ -23,7 +23,7 @@ public partial class UploadUrlResponse : IEquatable<UploadUrlResponse>
     /// Presigned URL to PUT the file to
     /// </summary>
     /// <value>Presigned URL to PUT the file to</value>
-    [DataMember(Name = "url", EmitDefaultValue = false)]
+    [JsonPropertyName("url")]
     public string Url { get; private set; }
 
 
@@ -32,7 +32,7 @@ public partial class UploadUrlResponse : IEquatable<UploadUrlResponse>
     /// Key that identifies the file in the storage including the file name
     /// </summary>
     /// <value>Key that identifies the file in the storage including the file name</value>
-    [DataMember(Name = "uploadKey", EmitDefaultValue = false)]
+    [JsonPropertyName("uploadKey")]
     public string UploadKey { get; private set; }
 
 
@@ -41,7 +41,7 @@ public partial class UploadUrlResponse : IEquatable<UploadUrlResponse>
     /// Required headers when uploading a file through PUT request to the URL
     /// </summary>
     /// <value>Required headers when uploading a file through PUT request to the URL</value>
-    [DataMember(Name = "headers", EmitDefaultValue = false)]
+    [JsonPropertyName("headers")]
     public Dictionary<string, string> Headers { get; private set; }
 
 

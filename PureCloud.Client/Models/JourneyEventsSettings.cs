@@ -7,14 +7,14 @@ namespace PureCloud.Client.Models;
 /// <summary>
 /// Settings concerning journey events
 /// </summary>
-[DataContract]
+
 public partial class JourneyEventsSettings : IEquatable<JourneyEventsSettings>
 {
     /// <summary>
     /// Controls how the pageview events are tracked.
     /// </summary>
     /// <value>Controls how the pageview events are tracked.</value>
-    [JsonConverter(typeof(JsonStringEnumConverter))]
+    
     public enum PageviewConfigEnum
     {
         /// <summary>
@@ -47,7 +47,7 @@ public partial class JourneyEventsSettings : IEquatable<JourneyEventsSettings>
     /// Controls how the pageview events are tracked.
     /// </summary>
     /// <value>Controls how the pageview events are tracked.</value>
-    [DataMember(Name = "pageviewConfig", EmitDefaultValue = false)]
+    [JsonPropertyName("pageviewConfig")]
     public PageviewConfigEnum? PageviewConfig { get; set; }
     /// <summary>
     /// Initializes a new instance of the <see cref="JourneyEventsSettings" /> class.
@@ -83,7 +83,7 @@ public partial class JourneyEventsSettings : IEquatable<JourneyEventsSettings>
     /// Whether or not journey event collection is enabled.
     /// </summary>
     /// <value>Whether or not journey event collection is enabled.</value>
-    [DataMember(Name = "enabled", EmitDefaultValue = false)]
+    [JsonPropertyName("enabled")]
     public bool? Enabled { get; set; }
 
 
@@ -92,7 +92,7 @@ public partial class JourneyEventsSettings : IEquatable<JourneyEventsSettings>
     /// List of parameters to be excluded from the query string.
     /// </summary>
     /// <value>List of parameters to be excluded from the query string.</value>
-    [DataMember(Name = "excludedQueryParameters", EmitDefaultValue = false)]
+    [JsonPropertyName("excludedQueryParameters")]
     public List<string> ExcludedQueryParameters { get; set; }
 
 
@@ -101,7 +101,7 @@ public partial class JourneyEventsSettings : IEquatable<JourneyEventsSettings>
     /// Whether or not to keep the URL fragment.
     /// </summary>
     /// <value>Whether or not to keep the URL fragment.</value>
-    [DataMember(Name = "shouldKeepUrlFragment", EmitDefaultValue = false)]
+    [JsonPropertyName("shouldKeepUrlFragment")]
     public bool? ShouldKeepUrlFragment { get; set; }
 
 
@@ -110,7 +110,7 @@ public partial class JourneyEventsSettings : IEquatable<JourneyEventsSettings>
     /// List of query parameters used for search (e.g. &#39;q&#39;).
     /// </summary>
     /// <value>List of query parameters used for search (e.g. &#39;q&#39;).</value>
-    [DataMember(Name = "searchQueryParameters", EmitDefaultValue = false)]
+    [JsonPropertyName("searchQueryParameters")]
     public List<string> SearchQueryParameters { get; set; }
 
 
@@ -121,7 +121,7 @@ public partial class JourneyEventsSettings : IEquatable<JourneyEventsSettings>
     /// Tracks when and where a visitor clicks on a webpage.
     /// </summary>
     /// <value>Tracks when and where a visitor clicks on a webpage.</value>
-    [DataMember(Name = "clickEvents", EmitDefaultValue = false)]
+    [JsonPropertyName("clickEvents")]
     public List<SelectorEventTrigger> ClickEvents { get; set; }
 
 
@@ -130,7 +130,7 @@ public partial class JourneyEventsSettings : IEquatable<JourneyEventsSettings>
     /// Controls how the form submitted and form abandoned events are tracked after a visitor interacts with a form element.
     /// </summary>
     /// <value>Controls how the form submitted and form abandoned events are tracked after a visitor interacts with a form element.</value>
-    [DataMember(Name = "formsTrackEvents", EmitDefaultValue = false)]
+    [JsonPropertyName("formsTrackEvents")]
     public List<FormsTrackTrigger> FormsTrackEvents { get; set; }
 
 
@@ -139,7 +139,7 @@ public partial class JourneyEventsSettings : IEquatable<JourneyEventsSettings>
     /// Tracks when and where a visitor becomes inactive on a webpage.
     /// </summary>
     /// <value>Tracks when and where a visitor becomes inactive on a webpage.</value>
-    [DataMember(Name = "idleEvents", EmitDefaultValue = false)]
+    [JsonPropertyName("idleEvents")]
     public List<IdleEventTrigger> IdleEvents { get; set; }
 
 
@@ -148,7 +148,7 @@ public partial class JourneyEventsSettings : IEquatable<JourneyEventsSettings>
     /// Tracks when elements become visible or hidden on screen.
     /// </summary>
     /// <value>Tracks when elements become visible or hidden on screen.</value>
-    [DataMember(Name = "inViewportEvents", EmitDefaultValue = false)]
+    [JsonPropertyName("inViewportEvents")]
     public List<SelectorEventTrigger> InViewportEvents { get; set; }
 
 
@@ -157,7 +157,7 @@ public partial class JourneyEventsSettings : IEquatable<JourneyEventsSettings>
     /// Tracks when a visitor scrolls to a specific percentage of a webpage.
     /// </summary>
     /// <value>Tracks when a visitor scrolls to a specific percentage of a webpage.</value>
-    [DataMember(Name = "scrollDepthEvents", EmitDefaultValue = false)]
+    [JsonPropertyName("scrollDepthEvents")]
     public List<ScrollPercentageEventTrigger> ScrollDepthEvents { get; set; }
 
 

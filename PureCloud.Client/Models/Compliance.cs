@@ -1,4 +1,3 @@
-using System.Runtime.Serialization;
 using System.Text;
 using System.Text.Json.Serialization;
 
@@ -7,7 +6,7 @@ namespace PureCloud.Client.Models;
 /// <summary>
 /// Compliance
 /// </summary>
-[DataContract]
+
 public partial class Compliance : IEquatable<Compliance>
 {
 
@@ -36,7 +35,7 @@ public partial class Compliance : IEquatable<Compliance>
     /// List of configurations for &#39;StopSettings&#39; compliance
     /// </summary>
     /// <value>List of configurations for &#39;StopSettings&#39; compliance</value>
-    [DataMember(Name = "stopSettings", EmitDefaultValue = false)]
+    [JsonPropertyName("stopSettings")]
     public List<StopSettings> StopSettings { get; set; }
 
 
@@ -45,7 +44,7 @@ public partial class Compliance : IEquatable<Compliance>
     /// List of configurations for &#39;OptInSettings&#39; compliance
     /// </summary>
     /// <value>List of configurations for &#39;OptInSettings&#39; compliance</value>
-    [DataMember(Name = "optInSettings", EmitDefaultValue = false)]
+    [JsonPropertyName("optInSettings")]
     public List<OptInSettings> OptInSettings { get; set; }
 
 
@@ -54,7 +53,7 @@ public partial class Compliance : IEquatable<Compliance>
     /// List of configurations for &#39;HelpSettings&#39; compliance
     /// </summary>
     /// <value>List of configurations for &#39;HelpSettings&#39; compliance</value>
-    [DataMember(Name = "helpSettings", EmitDefaultValue = false)]
+    [JsonPropertyName("helpSettings")]
     public List<HelpSettings> HelpSettings { get; set; }
 
 

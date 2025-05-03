@@ -7,14 +7,14 @@ namespace PureCloud.Client.Models;
 /// <summary>
 /// MoveAgentResponse
 /// </summary>
-[DataContract]
+
 public partial class MoveAgentResponse : IEquatable<MoveAgentResponse>
 {
     /// <summary>
     /// The result of the move
     /// </summary>
     /// <value>The result of the move</value>
-    [JsonConverter(typeof(JsonStringEnumConverter))]
+    
     public enum ResultEnum
     {
         /// <summary>
@@ -77,7 +77,7 @@ public partial class MoveAgentResponse : IEquatable<MoveAgentResponse>
     /// The result of the move
     /// </summary>
     /// <value>The result of the move</value>
-    [DataMember(Name = "result", EmitDefaultValue = false)]
+    [JsonPropertyName("result")]
     public ResultEnum? Result { get; set; }
     /// <summary>
     /// Initializes a new instance of the <see cref="MoveAgentResponse" /> class.
@@ -97,7 +97,7 @@ public partial class MoveAgentResponse : IEquatable<MoveAgentResponse>
     /// The user associated with the move
     /// </summary>
     /// <value>The user associated with the move</value>
-    [DataMember(Name = "user", EmitDefaultValue = false)]
+    [JsonPropertyName("user")]
     public UserReference User { get; set; }
 
 

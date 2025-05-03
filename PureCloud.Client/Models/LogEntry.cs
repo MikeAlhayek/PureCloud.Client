@@ -1,12 +1,12 @@
-using System.Runtime.Serialization;
 using System.Text;
+using System.Text.Json.Serialization;
 
 namespace PureCloud.Client.Models;
 
 /// <summary>
 /// LogEntry
 /// </summary>
-[DataContract]
+
 public partial class LogEntry : IEquatable<LogEntry>
 {
     /// <summary>
@@ -29,7 +29,7 @@ public partial class LogEntry : IEquatable<LogEntry>
     /// Level of log entry
     /// </summary>
     /// <value>Level of log entry</value>
-    [DataMember(Name = "level", EmitDefaultValue = false)]
+    [JsonPropertyName("level")]
     public string Level { get; set; }
 
 
@@ -38,7 +38,7 @@ public partial class LogEntry : IEquatable<LogEntry>
     /// Log message
     /// </summary>
     /// <value>Log message</value>
-    [DataMember(Name = "message", EmitDefaultValue = false)]
+    [JsonPropertyName("message")]
     public string Message { get; set; }
 
 
@@ -47,7 +47,7 @@ public partial class LogEntry : IEquatable<LogEntry>
     /// Timestamp of log entry
     /// </summary>
     /// <value>Timestamp of log entry</value>
-    [DataMember(Name = "timestamp", EmitDefaultValue = false)]
+    [JsonPropertyName("timestamp")]
     public long? Timestamp { get; set; }
 
 

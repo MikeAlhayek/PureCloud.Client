@@ -1,12 +1,12 @@
-using System.Runtime.Serialization;
 using System.Text;
+using System.Text.Json.Serialization;
 
 namespace PureCloud.Client.Models;
 
 /// <summary>
 /// SessionMetaDataResult
 /// </summary>
-[DataContract]
+
 public partial class SessionMetaDataResult : IEquatable<SessionMetaDataResult>
 {
     /// <summary>
@@ -35,7 +35,7 @@ public partial class SessionMetaDataResult : IEquatable<SessionMetaDataResult>
     /// Information about the continuous forecast session
     /// </summary>
     /// <value>Information about the continuous forecast session</value>
-    [DataMember(Name = "sessionInfo", EmitDefaultValue = false)]
+    [JsonPropertyName("sessionInfo")]
     public SessionInfo SessionInfo { get; set; }
 
 
@@ -44,7 +44,7 @@ public partial class SessionMetaDataResult : IEquatable<SessionMetaDataResult>
     /// Captured snapshots
     /// </summary>
     /// <value>Captured snapshots</value>
-    [DataMember(Name = "snapshots", EmitDefaultValue = false)]
+    [JsonPropertyName("snapshots")]
     public List<Snapshots> Snapshots { get; set; }
 
 
@@ -53,7 +53,7 @@ public partial class SessionMetaDataResult : IEquatable<SessionMetaDataResult>
     /// Start date of the forecast. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z
     /// </summary>
     /// <value>Start date of the forecast. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z</value>
-    [DataMember(Name = "dateForecastStart", EmitDefaultValue = false)]
+    [JsonPropertyName("dateForecastStart")]
     public DateTime? DateForecastStart { get; set; }
 
 
@@ -62,7 +62,7 @@ public partial class SessionMetaDataResult : IEquatable<SessionMetaDataResult>
     /// Start date of the oldest available historical week. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z
     /// </summary>
     /// <value>Start date of the oldest available historical week. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z</value>
-    [DataMember(Name = "dateHistoricalStart", EmitDefaultValue = false)]
+    [JsonPropertyName("dateHistoricalStart")]
     public DateTime? DateHistoricalStart { get; set; }
 
 
@@ -71,7 +71,7 @@ public partial class SessionMetaDataResult : IEquatable<SessionMetaDataResult>
     /// Total historical availability for offered metric across all planning groups
     /// </summary>
     /// <value>Total historical availability for offered metric across all planning groups</value>
-    [DataMember(Name = "aggregateOfferedHistoricalAvailability", EmitDefaultValue = false)]
+    [JsonPropertyName("aggregateOfferedHistoricalAvailability")]
     public AggregateHistoricalAvailability AggregateOfferedHistoricalAvailability { get; set; }
 
 
@@ -80,7 +80,7 @@ public partial class SessionMetaDataResult : IEquatable<SessionMetaDataResult>
     /// Total historical availability for average handle time metric across all planning groups
     /// </summary>
     /// <value>Total historical availability for average handle time metric across all planning groups</value>
-    [DataMember(Name = "aggregateAverageHandleTimeHistoricalAvailability", EmitDefaultValue = false)]
+    [JsonPropertyName("aggregateAverageHandleTimeHistoricalAvailability")]
     public AggregateHistoricalAvailability AggregateAverageHandleTimeHistoricalAvailability { get; set; }
 
 

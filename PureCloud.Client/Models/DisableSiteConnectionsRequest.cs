@@ -1,12 +1,12 @@
-using System.Runtime.Serialization;
 using System.Text;
+using System.Text.Json.Serialization;
 
 namespace PureCloud.Client.Models;
 
 /// <summary>
 /// DisableSiteConnectionsRequest
 /// </summary>
-[DataContract]
+
 public partial class DisableSiteConnectionsRequest : IEquatable<DisableSiteConnectionsRequest>
 {
     /// <summary>
@@ -24,7 +24,7 @@ public partial class DisableSiteConnectionsRequest : IEquatable<DisableSiteConne
     /// <summary>
     /// Gets or Sets Enabled
     /// </summary>
-    [DataMember(Name = "enabled", EmitDefaultValue = false)]
+    [JsonPropertyName("enabled")]
     public bool? Enabled { get; set; }
 
 

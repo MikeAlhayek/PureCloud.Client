@@ -1,4 +1,3 @@
-using System.Runtime.Serialization;
 using System.Text;
 using System.Text.Json.Serialization;
 
@@ -7,7 +6,7 @@ namespace PureCloud.Client.Models;
 /// <summary>
 /// InsightsSettingsRequest
 /// </summary>
-[DataContract]
+
 public partial class InsightsSettingsRequest : IEquatable<InsightsSettingsRequest>
 {
 
@@ -32,7 +31,7 @@ public partial class InsightsSettingsRequest : IEquatable<InsightsSettingsReques
     /// The AI Insights setting
     /// </summary>
     /// <value>The AI Insights setting</value>
-    [DataMember(Name = "enabled", EmitDefaultValue = false)]
+    [JsonPropertyName("enabled")]
     public bool? Enabled { get; set; }
 
 

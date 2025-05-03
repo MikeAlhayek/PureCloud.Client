@@ -1,12 +1,12 @@
-using System.Runtime.Serialization;
 using System.Text;
+using System.Text.Json.Serialization;
 
 namespace PureCloud.Client.Models;
 
 /// <summary>
 /// OutlierInfo
 /// </summary>
-[DataContract]
+
 public partial class OutlierInfo : IEquatable<OutlierInfo>
 {
     /// <summary>
@@ -27,7 +27,7 @@ public partial class OutlierInfo : IEquatable<OutlierInfo>
     /// Boolean to identify if an outlier or not.
     /// </summary>
     /// <value>Boolean to identify if an outlier or not.</value>
-    [DataMember(Name = "outlier", EmitDefaultValue = false)]
+    [JsonPropertyName("outlier")]
     public bool? Outlier { get; set; }
 
 
@@ -36,7 +36,7 @@ public partial class OutlierInfo : IEquatable<OutlierInfo>
     /// Outlier score for this utterance. The score is always 0 or greater and higher the score, the more outlier.
     /// </summary>
     /// <value>Outlier score for this utterance. The score is always 0 or greater and higher the score, the more outlier.</value>
-    [DataMember(Name = "score", EmitDefaultValue = false)]
+    [JsonPropertyName("score")]
     public float? Score { get; set; }
 
 

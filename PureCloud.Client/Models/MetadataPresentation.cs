@@ -1,12 +1,12 @@
-using System.Runtime.Serialization;
 using System.Text;
+using System.Text.Json.Serialization;
 
 namespace PureCloud.Client.Models;
 
 /// <summary>
 /// A representation of data fields to be gathered for installing the accelerator
 /// </summary>
-[DataContract]
+
 public partial class MetadataPresentation : IEquatable<MetadataPresentation>
 {
     /// <summary>
@@ -23,7 +23,7 @@ public partial class MetadataPresentation : IEquatable<MetadataPresentation>
     /// title for a set of data to be gathered
     /// </summary>
     /// <value>title for a set of data to be gathered</value>
-    [DataMember(Name = "title", EmitDefaultValue = false)]
+    [JsonPropertyName("title")]
     public string Title { get; private set; }
 
 
@@ -32,7 +32,7 @@ public partial class MetadataPresentation : IEquatable<MetadataPresentation>
     /// description of the contents of the data gathering interface
     /// </summary>
     /// <value>description of the contents of the data gathering interface</value>
-    [DataMember(Name = "schema", EmitDefaultValue = false)]
+    [JsonPropertyName("schema")]
     public MetadataSchema Schema { get; private set; }
 
 

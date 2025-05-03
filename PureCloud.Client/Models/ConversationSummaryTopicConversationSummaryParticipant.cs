@@ -7,13 +7,13 @@ namespace PureCloud.Client.Models;
 /// <summary>
 /// ConversationSummaryTopicConversationSummaryParticipant
 /// </summary>
-[DataContract]
+
 public partial class ConversationSummaryTopicConversationSummaryParticipant : IEquatable<ConversationSummaryTopicConversationSummaryParticipant>
 {
     /// <summary>
     /// Gets or Sets Purpose
     /// </summary>
-    [JsonConverter(typeof(JsonStringEnumConverter))]
+    
     public enum PurposeEnum
     {
         /// <summary>
@@ -57,7 +57,7 @@ public partial class ConversationSummaryTopicConversationSummaryParticipant : IE
     /// <summary>
     /// Gets or Sets Purpose
     /// </summary>
-    [DataMember(Name = "purpose", EmitDefaultValue = false)]
+    [JsonPropertyName("purpose")]
     public PurposeEnum? Purpose { get; set; }
     /// <summary>
     /// Initializes a new instance of the <see cref="ConversationSummaryTopicConversationSummaryParticipant" /> class.
@@ -76,7 +76,7 @@ public partial class ConversationSummaryTopicConversationSummaryParticipant : IE
     /// <summary>
     /// Gets or Sets UserId
     /// </summary>
-    [DataMember(Name = "userId", EmitDefaultValue = false)]
+    [JsonPropertyName("userId")]
     public string UserId { get; set; }
 
 

@@ -1,4 +1,3 @@
-using System.Runtime.Serialization;
 using System.Text;
 using System.Text.Json.Serialization;
 
@@ -7,7 +6,7 @@ namespace PureCloud.Client.Models;
 /// <summary>
 /// SupportCenterHeroStyle
 /// </summary>
-[DataContract]
+
 public partial class SupportCenterHeroStyle : IEquatable<SupportCenterHeroStyle>
 {
 
@@ -36,7 +35,7 @@ public partial class SupportCenterHeroStyle : IEquatable<SupportCenterHeroStyle>
     /// Background color for hero section, in hexadecimal format, eg #ffffff
     /// </summary>
     /// <value>Background color for hero section, in hexadecimal format, eg #ffffff</value>
-    [DataMember(Name = "backgroundColor", EmitDefaultValue = false)]
+    [JsonPropertyName("backgroundColor")]
     public string BackgroundColor { get; set; }
 
 
@@ -45,7 +44,7 @@ public partial class SupportCenterHeroStyle : IEquatable<SupportCenterHeroStyle>
     /// Text color for hero section, in hexadecimal format, eg #ffffff
     /// </summary>
     /// <value>Text color for hero section, in hexadecimal format, eg #ffffff</value>
-    [DataMember(Name = "textColor", EmitDefaultValue = false)]
+    [JsonPropertyName("textColor")]
     public string TextColor { get; set; }
 
 
@@ -54,7 +53,7 @@ public partial class SupportCenterHeroStyle : IEquatable<SupportCenterHeroStyle>
     /// Background image for hero section
     /// </summary>
     /// <value>Background image for hero section</value>
-    [DataMember(Name = "image", EmitDefaultValue = false)]
+    [JsonPropertyName("image")]
     public SupportCenterImage Image { get; set; }
 
 

@@ -1,12 +1,12 @@
-using System.Runtime.Serialization;
 using System.Text;
+using System.Text.Json.Serialization;
 
 namespace PureCloud.Client.Models;
 
 /// <summary>
 /// BotMessengerProfile
 /// </summary>
-[DataContract]
+
 public partial class BotMessengerProfile : IEquatable<BotMessengerProfile>
 {
     /// <summary>
@@ -27,7 +27,7 @@ public partial class BotMessengerProfile : IEquatable<BotMessengerProfile>
     /// Name of the Bot
     /// </summary>
     /// <value>Name of the Bot</value>
-    [DataMember(Name = "name", EmitDefaultValue = false)]
+    [JsonPropertyName("name")]
     public string Name { get; set; }
 
 
@@ -36,7 +36,7 @@ public partial class BotMessengerProfile : IEquatable<BotMessengerProfile>
     /// Avatar for Bot
     /// </summary>
     /// <value>Avatar for Bot</value>
-    [DataMember(Name = "avatarUrl", EmitDefaultValue = false)]
+    [JsonPropertyName("avatarUrl")]
     public string AvatarUrl { get; set; }
 
 

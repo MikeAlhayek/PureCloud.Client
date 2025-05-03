@@ -1,12 +1,12 @@
-using System.Runtime.Serialization;
 using System.Text;
+using System.Text.Json.Serialization;
 
 namespace PureCloud.Client.Models;
 
 /// <summary>
 /// SurveyErrorDetails
 /// </summary>
-[DataContract]
+
 public partial class SurveyErrorDetails : IEquatable<SurveyErrorDetails>
 {
     /// <summary>
@@ -27,7 +27,7 @@ public partial class SurveyErrorDetails : IEquatable<SurveyErrorDetails>
     /// Additional information about any errors that occurred in the survey invite flow.
     /// </summary>
     /// <value>Additional information about any errors that occurred in the survey invite flow.</value>
-    [DataMember(Name = "flowDiagnosticInfo", EmitDefaultValue = false)]
+    [JsonPropertyName("flowDiagnosticInfo")]
     public FlowDiagnosticInfo FlowDiagnosticInfo { get; set; }
 
 
@@ -36,7 +36,7 @@ public partial class SurveyErrorDetails : IEquatable<SurveyErrorDetails>
     /// An error code indicating the reason for the survey failure.
     /// </summary>
     /// <value>An error code indicating the reason for the survey failure.</value>
-    [DataMember(Name = "surveyErrorReason", EmitDefaultValue = false)]
+    [JsonPropertyName("surveyErrorReason")]
     public string SurveyErrorReason { get; set; }
 
 

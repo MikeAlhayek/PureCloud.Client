@@ -1,12 +1,12 @@
-using System.Runtime.Serialization;
 using System.Text;
+using System.Text.Json.Serialization;
 
 namespace PureCloud.Client.Models;
 
 /// <summary>
 /// UserTokensTopicTokenNotification
 /// </summary>
-[DataContract]
+
 public partial class UserTokensTopicTokenNotification : IEquatable<UserTokensTopicTokenNotification>
 {
     /// <summary>
@@ -36,7 +36,7 @@ public partial class UserTokensTopicTokenNotification : IEquatable<UserTokensTop
     /// <summary>
     /// Gets or Sets User
     /// </summary>
-    [DataMember(Name = "user", EmitDefaultValue = false)]
+    [JsonPropertyName("user")]
     public UserTokensTopicUriReference User { get; set; }
 
 
@@ -44,7 +44,7 @@ public partial class UserTokensTopicTokenNotification : IEquatable<UserTokensTop
     /// <summary>
     /// Gets or Sets IpAddress
     /// </summary>
-    [DataMember(Name = "ipAddress", EmitDefaultValue = false)]
+    [JsonPropertyName("ipAddress")]
     public string IpAddress { get; set; }
 
 
@@ -52,7 +52,7 @@ public partial class UserTokensTopicTokenNotification : IEquatable<UserTokensTop
     /// <summary>
     /// Gets or Sets DateCreated
     /// </summary>
-    [DataMember(Name = "dateCreated", EmitDefaultValue = false)]
+    [JsonPropertyName("dateCreated")]
     public string DateCreated { get; set; }
 
 
@@ -60,7 +60,7 @@ public partial class UserTokensTopicTokenNotification : IEquatable<UserTokensTop
     /// <summary>
     /// Gets or Sets TokenExpirationDate
     /// </summary>
-    [DataMember(Name = "tokenExpirationDate", EmitDefaultValue = false)]
+    [JsonPropertyName("tokenExpirationDate")]
     public string TokenExpirationDate { get; set; }
 
 
@@ -68,7 +68,7 @@ public partial class UserTokensTopicTokenNotification : IEquatable<UserTokensTop
     /// <summary>
     /// Gets or Sets SessionId
     /// </summary>
-    [DataMember(Name = "sessionId", EmitDefaultValue = false)]
+    [JsonPropertyName("sessionId")]
     public string SessionId { get; set; }
 
 
@@ -76,7 +76,7 @@ public partial class UserTokensTopicTokenNotification : IEquatable<UserTokensTop
     /// <summary>
     /// Gets or Sets ClientId
     /// </summary>
-    [DataMember(Name = "clientId", EmitDefaultValue = false)]
+    [JsonPropertyName("clientId")]
     public string ClientId { get; set; }
 
 
@@ -84,7 +84,7 @@ public partial class UserTokensTopicTokenNotification : IEquatable<UserTokensTop
     /// <summary>
     /// Gets or Sets TokenHash
     /// </summary>
-    [DataMember(Name = "tokenHash", EmitDefaultValue = false)]
+    [JsonPropertyName("tokenHash")]
     public string TokenHash { get; set; }
 
 

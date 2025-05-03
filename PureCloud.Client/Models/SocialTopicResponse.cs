@@ -7,14 +7,14 @@ namespace PureCloud.Client.Models;
 /// <summary>
 /// SocialTopicResponse
 /// </summary>
-[DataContract]
+
 public partial class SocialTopicResponse : IEquatable<SocialTopicResponse>
 {
     /// <summary>
     /// The status of the social topic.
     /// </summary>
     /// <value>The status of the social topic.</value>
-    [JsonConverter(typeof(JsonStringEnumConverter))]
+    
     public enum StatusEnum
     {
         /// <summary>
@@ -47,7 +47,7 @@ public partial class SocialTopicResponse : IEquatable<SocialTopicResponse>
     /// The status of the social topic.
     /// </summary>
     /// <value>The status of the social topic.</value>
-    [DataMember(Name = "status", EmitDefaultValue = false)]
+    [JsonPropertyName("status")]
     public StatusEnum? Status { get; set; }
     /// <summary>
     /// Initializes a new instance of the <see cref="SocialTopicResponse" /> class.
@@ -79,7 +79,7 @@ public partial class SocialTopicResponse : IEquatable<SocialTopicResponse>
     /// ID of the social topic.
     /// </summary>
     /// <value>ID of the social topic.</value>
-    [DataMember(Name = "id", EmitDefaultValue = false)]
+    [JsonPropertyName("id")]
     public string Id { get; set; }
 
 
@@ -88,7 +88,7 @@ public partial class SocialTopicResponse : IEquatable<SocialTopicResponse>
     /// The name of the social topic.
     /// </summary>
     /// <value>The name of the social topic.</value>
-    [DataMember(Name = "name", EmitDefaultValue = false)]
+    [JsonPropertyName("name")]
     public string Name { get; set; }
 
 
@@ -97,7 +97,7 @@ public partial class SocialTopicResponse : IEquatable<SocialTopicResponse>
     /// A description of the social topic.
     /// </summary>
     /// <value>A description of the social topic.</value>
-    [DataMember(Name = "description", EmitDefaultValue = false)]
+    [JsonPropertyName("description")]
     public string Description { get; set; }
 
 
@@ -106,7 +106,7 @@ public partial class SocialTopicResponse : IEquatable<SocialTopicResponse>
     /// Timestamp indicating when the social topic was created. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z
     /// </summary>
     /// <value>Timestamp indicating when the social topic was created. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z</value>
-    [DataMember(Name = "dateCreated", EmitDefaultValue = false)]
+    [JsonPropertyName("dateCreated")]
     public DateTime? DateCreated { get; set; }
 
 
@@ -115,7 +115,7 @@ public partial class SocialTopicResponse : IEquatable<SocialTopicResponse>
     /// Timestamp indicating when the social topic was last updated. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z
     /// </summary>
     /// <value>Timestamp indicating when the social topic was last updated. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z</value>
-    [DataMember(Name = "dateModified", EmitDefaultValue = false)]
+    [JsonPropertyName("dateModified")]
     public DateTime? DateModified { get; set; }
 
 
@@ -124,7 +124,7 @@ public partial class SocialTopicResponse : IEquatable<SocialTopicResponse>
     /// The ID of the division to which the social topic belongs to.
     /// </summary>
     /// <value>The ID of the division to which the social topic belongs to.</value>
-    [DataMember(Name = "divisionId", EmitDefaultValue = false)]
+    [JsonPropertyName("divisionId")]
     public string DivisionId { get; set; }
 
 
@@ -135,7 +135,7 @@ public partial class SocialTopicResponse : IEquatable<SocialTopicResponse>
     /// The data ingestion rule metadata.
     /// </summary>
     /// <value>The data ingestion rule metadata.</value>
-    [DataMember(Name = "dataIngestionRulesMetadata", EmitDefaultValue = false)]
+    [JsonPropertyName("dataIngestionRulesMetadata")]
     public List<DataIngestionRulesMetadata> DataIngestionRulesMetadata { get; set; }
 
 
@@ -144,7 +144,7 @@ public partial class SocialTopicResponse : IEquatable<SocialTopicResponse>
     /// The URI for this object
     /// </summary>
     /// <value>The URI for this object</value>
-    [DataMember(Name = "selfUri", EmitDefaultValue = false)]
+    [JsonPropertyName("selfUri")]
     public string SelfUri { get; private set; }
 
 

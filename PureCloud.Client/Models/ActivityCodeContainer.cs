@@ -1,4 +1,3 @@
-using System.Runtime.Serialization;
 using System.Text;
 using System.Text.Json.Serialization;
 
@@ -7,7 +6,7 @@ namespace PureCloud.Client.Models;
 /// <summary>
 /// ActivityCodeContainer
 /// </summary>
-[DataContract]
+
 public partial class ActivityCodeContainer : IEquatable<ActivityCodeContainer>
 {
 
@@ -34,7 +33,7 @@ public partial class ActivityCodeContainer : IEquatable<ActivityCodeContainer>
     /// Map of activity code id to activity code
     /// </summary>
     /// <value>Map of activity code id to activity code</value>
-    [DataMember(Name = "activityCodes", EmitDefaultValue = false)]
+    [JsonPropertyName("activityCodes")]
     public Dictionary<string, ActivityCode> ActivityCodes { get; set; }
 
 
@@ -43,7 +42,7 @@ public partial class ActivityCodeContainer : IEquatable<ActivityCodeContainer>
     /// Version metadata for the associated management unit&#39;s list of activity codes
     /// </summary>
     /// <value>Version metadata for the associated management unit&#39;s list of activity codes</value>
-    [DataMember(Name = "metadata", EmitDefaultValue = false)]
+    [JsonPropertyName("metadata")]
     public WfmVersionedEntityMetadata Metadata { get; set; }
 
 

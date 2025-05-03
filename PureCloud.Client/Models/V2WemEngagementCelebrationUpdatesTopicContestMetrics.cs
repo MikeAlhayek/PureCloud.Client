@@ -1,12 +1,12 @@
-using System.Runtime.Serialization;
 using System.Text;
+using System.Text.Json.Serialization;
 
 namespace PureCloud.Client.Models;
 
 /// <summary>
 /// V2WemEngagementCelebrationUpdatesTopicContestMetrics
 /// </summary>
-[DataContract]
+
 public partial class V2WemEngagementCelebrationUpdatesTopicContestMetrics : IEquatable<V2WemEngagementCelebrationUpdatesTopicContestMetrics>
 {
     /// <summary>
@@ -26,7 +26,7 @@ public partial class V2WemEngagementCelebrationUpdatesTopicContestMetrics : IEqu
     /// <summary>
     /// Gets or Sets Id
     /// </summary>
-    [DataMember(Name = "id", EmitDefaultValue = false)]
+    [JsonPropertyName("id")]
     public Guid? Id { get; set; }
 
 
@@ -34,7 +34,7 @@ public partial class V2WemEngagementCelebrationUpdatesTopicContestMetrics : IEqu
     /// <summary>
     /// Gets or Sets Name
     /// </summary>
-    [DataMember(Name = "name", EmitDefaultValue = false)]
+    [JsonPropertyName("name")]
     public string Name { get; set; }
 
 

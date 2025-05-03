@@ -1,4 +1,3 @@
-using System.Runtime.Serialization;
 using System.Text;
 using System.Text.Json.Serialization;
 
@@ -7,7 +6,7 @@ namespace PureCloud.Client.Models;
 /// <summary>
 /// IntegrationExport
 /// </summary>
-[DataContract]
+
 public partial class IntegrationExport : IEquatable<IntegrationExport>
 {
 
@@ -34,7 +33,7 @@ public partial class IntegrationExport : IEquatable<IntegrationExport>
     /// The aws-s3-recording-bulk-actions-integration that the policy uses for exports.
     /// </summary>
     /// <value>The aws-s3-recording-bulk-actions-integration that the policy uses for exports.</value>
-    [DataMember(Name = "integration", EmitDefaultValue = false)]
+    [JsonPropertyName("integration")]
     public DomainEntityRef Integration { get; set; }
 
 
@@ -43,7 +42,7 @@ public partial class IntegrationExport : IEquatable<IntegrationExport>
     /// True if the policy should export screen recordings in addition to the other conversation media. Default &#x3D; true
     /// </summary>
     /// <value>True if the policy should export screen recordings in addition to the other conversation media. Default &#x3D; true</value>
-    [DataMember(Name = "shouldExportScreenRecordings", EmitDefaultValue = false)]
+    [JsonPropertyName("shouldExportScreenRecordings")]
     public bool? ShouldExportScreenRecordings { get; set; }
 
 

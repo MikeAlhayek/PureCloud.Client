@@ -1,4 +1,3 @@
-using System.Runtime.Serialization;
 using System.Text;
 using System.Text.Json.Serialization;
 
@@ -7,7 +6,7 @@ namespace PureCloud.Client.Models;
 /// <summary>
 /// AgentPossibleWorkShiftsRequest
 /// </summary>
-[DataContract]
+
 public partial class AgentPossibleWorkShiftsRequest : IEquatable<AgentPossibleWorkShiftsRequest>
 {
 
@@ -34,7 +33,7 @@ public partial class AgentPossibleWorkShiftsRequest : IEquatable<AgentPossibleWo
     /// Start date of requested effective work plan, day of week will be in line with business unit start day of week. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd
     /// </summary>
     /// <value>Start date of requested effective work plan, day of week will be in line with business unit start day of week. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd</value>
-    [DataMember(Name = "weekStartDate", EmitDefaultValue = false)]
+    [JsonPropertyName("weekStartDate")]
     public string WeekStartDate { get; set; }
 
 
@@ -43,7 +42,7 @@ public partial class AgentPossibleWorkShiftsRequest : IEquatable<AgentPossibleWo
     /// Number of weeks for which to return possible work shifts
     /// </summary>
     /// <value>Number of weeks for which to return possible work shifts</value>
-    [DataMember(Name = "weekCount", EmitDefaultValue = false)]
+    [JsonPropertyName("weekCount")]
     public int? WeekCount { get; set; }
 
 

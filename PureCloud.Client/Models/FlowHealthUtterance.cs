@@ -7,14 +7,14 @@ namespace PureCloud.Client.Models;
 /// <summary>
 /// FlowHealthUtterance
 /// </summary>
-[DataContract]
+
 public partial class FlowHealthUtterance : IEquatable<FlowHealthUtterance>
 {
     /// <summary>
     /// Language provided for this utterance's health.
     /// </summary>
     /// <value>Language provided for this utterance's health.</value>
-    [JsonConverter(typeof(JsonStringEnumConverter))]
+    
     public enum LanguageEnum
     {
         /// <summary>
@@ -124,7 +124,7 @@ public partial class FlowHealthUtterance : IEquatable<FlowHealthUtterance>
     /// <summary>
     /// Gets or Sets StaticValidationResults
     /// </summary>
-    [JsonConverter(typeof(JsonStringEnumConverter))]
+    
     public enum StaticValidationResultsEnum
     {
         /// <summary>
@@ -163,7 +163,7 @@ public partial class FlowHealthUtterance : IEquatable<FlowHealthUtterance>
     /// Language provided for this utterance's health.
     /// </summary>
     /// <value>Language provided for this utterance's health.</value>
-    [DataMember(Name = "language", EmitDefaultValue = false)]
+    [JsonPropertyName("language")]
     public LanguageEnum? Language { get; set; }
     /// <summary>
     /// Initializes a new instance of the <see cref="FlowHealthUtterance" /> class.
@@ -191,7 +191,7 @@ public partial class FlowHealthUtterance : IEquatable<FlowHealthUtterance>
     /// The globally unique identifier for the object.
     /// </summary>
     /// <value>The globally unique identifier for the object.</value>
-    [DataMember(Name = "id", EmitDefaultValue = false)]
+    [JsonPropertyName("id")]
     public string Id { get; private set; }
 
 
@@ -200,7 +200,7 @@ public partial class FlowHealthUtterance : IEquatable<FlowHealthUtterance>
     /// Utterance Text.
     /// </summary>
     /// <value>Utterance Text.</value>
-    [DataMember(Name = "text", EmitDefaultValue = false)]
+    [JsonPropertyName("text")]
     public string Text { get; set; }
 
 
@@ -209,7 +209,7 @@ public partial class FlowHealthUtterance : IEquatable<FlowHealthUtterance>
     /// Number of issues found for this utterance.
     /// </summary>
     /// <value>Number of issues found for this utterance.</value>
-    [DataMember(Name = "issueCount", EmitDefaultValue = false)]
+    [JsonPropertyName("issueCount")]
     public long? IssueCount { get; set; }
 
 
@@ -220,7 +220,7 @@ public partial class FlowHealthUtterance : IEquatable<FlowHealthUtterance>
     /// Validation results for the utterance.
     /// </summary>
     /// <value>Validation results for the utterance.</value>
-    [DataMember(Name = "staticValidationResults", EmitDefaultValue = false)]
+    [JsonPropertyName("staticValidationResults")]
     public List<StaticValidationResultsEnum> StaticValidationResults { get; set; }
 
 
@@ -229,7 +229,7 @@ public partial class FlowHealthUtterance : IEquatable<FlowHealthUtterance>
     /// Details about this utterance being an outlier or not.
     /// </summary>
     /// <value>Details about this utterance being an outlier or not.</value>
-    [DataMember(Name = "outlierInfo", EmitDefaultValue = false)]
+    [JsonPropertyName("outlierInfo")]
     public OutlierInfo OutlierInfo { get; set; }
 
 
@@ -238,7 +238,7 @@ public partial class FlowHealthUtterance : IEquatable<FlowHealthUtterance>
     /// Confusion details with other utterances.
     /// </summary>
     /// <value>Confusion details with other utterances.</value>
-    [DataMember(Name = "confusionInfo", EmitDefaultValue = false)]
+    [JsonPropertyName("confusionInfo")]
     public ConfusionDetails ConfusionInfo { get; set; }
 
 
@@ -247,7 +247,7 @@ public partial class FlowHealthUtterance : IEquatable<FlowHealthUtterance>
     /// The URI for this object
     /// </summary>
     /// <value>The URI for this object</value>
-    [DataMember(Name = "selfUri", EmitDefaultValue = false)]
+    [JsonPropertyName("selfUri")]
     public string SelfUri { get; private set; }
 
 

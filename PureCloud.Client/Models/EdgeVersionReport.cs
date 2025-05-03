@@ -1,12 +1,12 @@
-using System.Runtime.Serialization;
 using System.Text;
+using System.Text.Json.Serialization;
 
 namespace PureCloud.Client.Models;
 
 /// <summary>
 /// EdgeVersionReport
 /// </summary>
-[DataContract]
+
 public partial class EdgeVersionReport : IEquatable<EdgeVersionReport>
 {
     /// <summary>
@@ -26,7 +26,7 @@ public partial class EdgeVersionReport : IEquatable<EdgeVersionReport>
     /// <summary>
     /// Gets or Sets OldestVersion
     /// </summary>
-    [DataMember(Name = "oldestVersion", EmitDefaultValue = false)]
+    [JsonPropertyName("oldestVersion")]
     public EdgeVersionInformation OldestVersion { get; set; }
 
 
@@ -34,7 +34,7 @@ public partial class EdgeVersionReport : IEquatable<EdgeVersionReport>
     /// <summary>
     /// Gets or Sets NewestVersion
     /// </summary>
-    [DataMember(Name = "newestVersion", EmitDefaultValue = false)]
+    [JsonPropertyName("newestVersion")]
     public EdgeVersionInformation NewestVersion { get; set; }
 
 

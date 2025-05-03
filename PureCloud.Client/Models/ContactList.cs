@@ -1,4 +1,3 @@
-using System.Runtime.Serialization;
 using System.Text;
 using System.Text.Json.Serialization;
 
@@ -7,7 +6,7 @@ namespace PureCloud.Client.Models;
 /// <summary>
 /// ContactList
 /// </summary>
-[DataContract]
+
 public partial class ContactList : IEquatable<ContactList>
 {
 
@@ -58,7 +57,7 @@ public partial class ContactList : IEquatable<ContactList>
     /// The globally unique identifier for the object.
     /// </summary>
     /// <value>The globally unique identifier for the object.</value>
-    [DataMember(Name = "id", EmitDefaultValue = false)]
+    [JsonPropertyName("id")]
     public string Id { get; private set; }
 
 
@@ -66,7 +65,7 @@ public partial class ContactList : IEquatable<ContactList>
     /// <summary>
     /// Gets or Sets Name
     /// </summary>
-    [DataMember(Name = "name", EmitDefaultValue = false)]
+    [JsonPropertyName("name")]
     public string Name { get; set; }
 
 
@@ -75,7 +74,7 @@ public partial class ContactList : IEquatable<ContactList>
     /// Creation time of the entity. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z
     /// </summary>
     /// <value>Creation time of the entity. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z</value>
-    [DataMember(Name = "dateCreated", EmitDefaultValue = false)]
+    [JsonPropertyName("dateCreated")]
     public DateTime? DateCreated { get; private set; }
 
 
@@ -84,7 +83,7 @@ public partial class ContactList : IEquatable<ContactList>
     /// Last modified time of the entity. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z
     /// </summary>
     /// <value>Last modified time of the entity. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z</value>
-    [DataMember(Name = "dateModified", EmitDefaultValue = false)]
+    [JsonPropertyName("dateModified")]
     public DateTime? DateModified { get; private set; }
 
 
@@ -93,7 +92,7 @@ public partial class ContactList : IEquatable<ContactList>
     /// Required for updates, must match the version number of the most recent update
     /// </summary>
     /// <value>Required for updates, must match the version number of the most recent update</value>
-    [DataMember(Name = "version", EmitDefaultValue = false)]
+    [JsonPropertyName("version")]
     public int? Version { get; set; }
 
 
@@ -102,7 +101,7 @@ public partial class ContactList : IEquatable<ContactList>
     /// The division this entity belongs to.
     /// </summary>
     /// <value>The division this entity belongs to.</value>
-    [DataMember(Name = "division", EmitDefaultValue = false)]
+    [JsonPropertyName("division")]
     public DomainEntityRef Division { get; set; }
 
 
@@ -111,7 +110,7 @@ public partial class ContactList : IEquatable<ContactList>
     /// The names of the contact data columns.
     /// </summary>
     /// <value>The names of the contact data columns.</value>
-    [DataMember(Name = "columnNames", EmitDefaultValue = false)]
+    [JsonPropertyName("columnNames")]
     public List<string> ColumnNames { get; set; }
 
 
@@ -120,7 +119,7 @@ public partial class ContactList : IEquatable<ContactList>
     /// Indicates which columns are phone numbers.
     /// </summary>
     /// <value>Indicates which columns are phone numbers.</value>
-    [DataMember(Name = "phoneColumns", EmitDefaultValue = false)]
+    [JsonPropertyName("phoneColumns")]
     public List<ContactPhoneNumberColumn> PhoneColumns { get; set; }
 
 
@@ -129,7 +128,7 @@ public partial class ContactList : IEquatable<ContactList>
     /// Indicates which columns are email addresses
     /// </summary>
     /// <value>Indicates which columns are email addresses</value>
-    [DataMember(Name = "emailColumns", EmitDefaultValue = false)]
+    [JsonPropertyName("emailColumns")]
     public List<EmailColumn> EmailColumns { get; set; }
 
 
@@ -138,7 +137,7 @@ public partial class ContactList : IEquatable<ContactList>
     /// Indicates which columns are whatsApp contacts
     /// </summary>
     /// <value>Indicates which columns are whatsApp contacts</value>
-    [DataMember(Name = "whatsAppColumns", EmitDefaultValue = false)]
+    [JsonPropertyName("whatsAppColumns")]
     public List<WhatsAppColumn> WhatsAppColumns { get; set; }
 
 
@@ -147,7 +146,7 @@ public partial class ContactList : IEquatable<ContactList>
     /// The status of the import process.
     /// </summary>
     /// <value>The status of the import process.</value>
-    [DataMember(Name = "importStatus", EmitDefaultValue = false)]
+    [JsonPropertyName("importStatus")]
     public ImportStatus ImportStatus { get; private set; }
 
 
@@ -156,7 +155,7 @@ public partial class ContactList : IEquatable<ContactList>
     /// A column to check if a contact should always be dialed in preview mode.
     /// </summary>
     /// <value>A column to check if a contact should always be dialed in preview mode.</value>
-    [DataMember(Name = "previewModeColumnName", EmitDefaultValue = false)]
+    [JsonPropertyName("previewModeColumnName")]
     public string PreviewModeColumnName { get; set; }
 
 
@@ -165,7 +164,7 @@ public partial class ContactList : IEquatable<ContactList>
     /// The values in the previewModeColumnName column that indicate a contact should always be dialed in preview mode.
     /// </summary>
     /// <value>The values in the previewModeColumnName column that indicate a contact should always be dialed in preview mode.</value>
-    [DataMember(Name = "previewModeAcceptedValues", EmitDefaultValue = false)]
+    [JsonPropertyName("previewModeAcceptedValues")]
     public List<string> PreviewModeAcceptedValues { get; set; }
 
 
@@ -174,7 +173,7 @@ public partial class ContactList : IEquatable<ContactList>
     /// The number of contacts in the ContactList.
     /// </summary>
     /// <value>The number of contacts in the ContactList.</value>
-    [DataMember(Name = "size", EmitDefaultValue = false)]
+    [JsonPropertyName("size")]
     public long? Size { get; private set; }
 
 
@@ -183,7 +182,7 @@ public partial class ContactList : IEquatable<ContactList>
     /// AttemptLimits for this ContactList.
     /// </summary>
     /// <value>AttemptLimits for this ContactList.</value>
-    [DataMember(Name = "attemptLimits", EmitDefaultValue = false)]
+    [JsonPropertyName("attemptLimits")]
     public DomainEntityRef AttemptLimits { get; set; }
 
 
@@ -192,7 +191,7 @@ public partial class ContactList : IEquatable<ContactList>
     /// Indicates if automatic time zone mapping is to be used for this ContactList.
     /// </summary>
     /// <value>Indicates if automatic time zone mapping is to be used for this ContactList.</value>
-    [DataMember(Name = "automaticTimeZoneMapping", EmitDefaultValue = false)]
+    [JsonPropertyName("automaticTimeZoneMapping")]
     public bool? AutomaticTimeZoneMapping { get; set; }
 
 
@@ -201,7 +200,7 @@ public partial class ContactList : IEquatable<ContactList>
     /// The name of contact list column containing the zip code for use with automatic time zone mapping. Only allowed if &#39;automaticTimeZoneMapping&#39; is set to true.
     /// </summary>
     /// <value>The name of contact list column containing the zip code for use with automatic time zone mapping. Only allowed if &#39;automaticTimeZoneMapping&#39; is set to true.</value>
-    [DataMember(Name = "zipCodeColumnName", EmitDefaultValue = false)]
+    [JsonPropertyName("zipCodeColumnName")]
     public string ZipCodeColumnName { get; set; }
 
 
@@ -210,7 +209,7 @@ public partial class ContactList : IEquatable<ContactList>
     /// The settings of the columns selected for dynamic queueing
     /// </summary>
     /// <value>The settings of the columns selected for dynamic queueing</value>
-    [DataMember(Name = "columnDataTypeSpecifications", EmitDefaultValue = false)]
+    [JsonPropertyName("columnDataTypeSpecifications")]
     public List<ColumnDataTypeSpecification> ColumnDataTypeSpecifications { get; set; }
 
 
@@ -219,7 +218,7 @@ public partial class ContactList : IEquatable<ContactList>
     /// Whether to trim white space when importing a contactlist csv file, default value &#x3D; true
     /// </summary>
     /// <value>Whether to trim white space when importing a contactlist csv file, default value &#x3D; true</value>
-    [DataMember(Name = "trimWhitespace", EmitDefaultValue = false)]
+    [JsonPropertyName("trimWhitespace")]
     public bool? TrimWhitespace { get; set; }
 
 
@@ -228,7 +227,7 @@ public partial class ContactList : IEquatable<ContactList>
     /// The URI for this object
     /// </summary>
     /// <value>The URI for this object</value>
-    [DataMember(Name = "selfUri", EmitDefaultValue = false)]
+    [JsonPropertyName("selfUri")]
     public string SelfUri { get; private set; }
 
 

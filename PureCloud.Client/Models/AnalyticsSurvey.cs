@@ -7,14 +7,14 @@ namespace PureCloud.Client.Models;
 /// <summary>
 /// AnalyticsSurvey
 /// </summary>
-[DataContract]
+
 public partial class AnalyticsSurvey : IEquatable<AnalyticsSurvey>
 {
     /// <summary>
     /// The type of the survey
     /// </summary>
     /// <value>The type of the survey</value>
-    [JsonConverter(typeof(JsonStringEnumConverter))]
+    
     public enum SurveyTypeEnum
     {
         /// <summary>
@@ -41,7 +41,7 @@ public partial class AnalyticsSurvey : IEquatable<AnalyticsSurvey>
     /// The type of the survey
     /// </summary>
     /// <value>The type of the survey</value>
-    [DataMember(Name = "surveyType", EmitDefaultValue = false)]
+    [JsonPropertyName("surveyType")]
     public SurveyTypeEnum? SurveyType { get; set; }
     /// <summary>
     /// Initializes a new instance of the <see cref="AnalyticsSurvey" /> class.
@@ -83,7 +83,7 @@ public partial class AnalyticsSurvey : IEquatable<AnalyticsSurvey>
     /// Specifies when an event occurred. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z
     /// </summary>
     /// <value>Specifies when an event occurred. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z</value>
-    [DataMember(Name = "eventTime", EmitDefaultValue = false)]
+    [JsonPropertyName("eventTime")]
     public DateTime? EventTime { get; set; }
 
 
@@ -92,7 +92,7 @@ public partial class AnalyticsSurvey : IEquatable<AnalyticsSurvey>
     /// The ID of the associated queue
     /// </summary>
     /// <value>The ID of the associated queue</value>
-    [DataMember(Name = "queueId", EmitDefaultValue = false)]
+    [JsonPropertyName("queueId")]
     public string QueueId { get; set; }
 
 
@@ -101,7 +101,7 @@ public partial class AnalyticsSurvey : IEquatable<AnalyticsSurvey>
     /// Completion datetime of the survey in ISO 8601 format
     /// </summary>
     /// <value>Completion datetime of the survey in ISO 8601 format</value>
-    [DataMember(Name = "surveyCompletedDate", EmitDefaultValue = false)]
+    [JsonPropertyName("surveyCompletedDate")]
     public DateTime? SurveyCompletedDate { get; set; }
 
 
@@ -110,7 +110,7 @@ public partial class AnalyticsSurvey : IEquatable<AnalyticsSurvey>
     /// Unique identifier for the survey form, regardless of version
     /// </summary>
     /// <value>Unique identifier for the survey form, regardless of version</value>
-    [DataMember(Name = "surveyFormContextId", EmitDefaultValue = false)]
+    [JsonPropertyName("surveyFormContextId")]
     public string SurveyFormContextId { get; set; }
 
 
@@ -119,7 +119,7 @@ public partial class AnalyticsSurvey : IEquatable<AnalyticsSurvey>
     /// ID of the survey form used
     /// </summary>
     /// <value>ID of the survey form used</value>
-    [DataMember(Name = "surveyFormId", EmitDefaultValue = false)]
+    [JsonPropertyName("surveyFormId")]
     public string SurveyFormId { get; set; }
 
 
@@ -128,7 +128,7 @@ public partial class AnalyticsSurvey : IEquatable<AnalyticsSurvey>
     /// Name of the survey form used
     /// </summary>
     /// <value>Name of the survey form used</value>
-    [DataMember(Name = "surveyFormName", EmitDefaultValue = false)]
+    [JsonPropertyName("surveyFormName")]
     public string SurveyFormName { get; set; }
 
 
@@ -137,7 +137,7 @@ public partial class AnalyticsSurvey : IEquatable<AnalyticsSurvey>
     /// ID of the survey
     /// </summary>
     /// <value>ID of the survey</value>
-    [DataMember(Name = "surveyId", EmitDefaultValue = false)]
+    [JsonPropertyName("surveyId")]
     public string SurveyId { get; set; }
 
 
@@ -146,7 +146,7 @@ public partial class AnalyticsSurvey : IEquatable<AnalyticsSurvey>
     /// Whether the survey was completed with any required questions unanswered.
     /// </summary>
     /// <value>Whether the survey was completed with any required questions unanswered.</value>
-    [DataMember(Name = "surveyPartialResponse", EmitDefaultValue = false)]
+    [JsonPropertyName("surveyPartialResponse")]
     public bool? SurveyPartialResponse { get; set; }
 
 
@@ -155,7 +155,7 @@ public partial class AnalyticsSurvey : IEquatable<AnalyticsSurvey>
     /// Score of the survey used with NPS
     /// </summary>
     /// <value>Score of the survey used with NPS</value>
-    [DataMember(Name = "surveyPromoterScore", EmitDefaultValue = false)]
+    [JsonPropertyName("surveyPromoterScore")]
     public int? SurveyPromoterScore { get; set; }
 
 
@@ -164,7 +164,7 @@ public partial class AnalyticsSurvey : IEquatable<AnalyticsSurvey>
     /// The status of the survey
     /// </summary>
     /// <value>The status of the survey</value>
-    [DataMember(Name = "surveyStatus", EmitDefaultValue = false)]
+    [JsonPropertyName("surveyStatus")]
     public string SurveyStatus { get; set; }
 
 
@@ -175,7 +175,7 @@ public partial class AnalyticsSurvey : IEquatable<AnalyticsSurvey>
     /// ID of the agent the survey was performed against
     /// </summary>
     /// <value>ID of the agent the survey was performed against</value>
-    [DataMember(Name = "userId", EmitDefaultValue = false)]
+    [JsonPropertyName("userId")]
     public string UserId { get; set; }
 
 
@@ -183,7 +183,7 @@ public partial class AnalyticsSurvey : IEquatable<AnalyticsSurvey>
     /// <summary>
     /// Gets or Sets OSurveyTotalScore
     /// </summary>
-    [DataMember(Name = "oSurveyTotalScore", EmitDefaultValue = false)]
+    [JsonPropertyName("oSurveyTotalScore")]
     public long? OSurveyTotalScore { get; set; }
 
 

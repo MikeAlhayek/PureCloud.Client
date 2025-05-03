@@ -1,12 +1,12 @@
-using System.Runtime.Serialization;
 using System.Text;
+using System.Text.Json.Serialization;
 
 namespace PureCloud.Client.Models;
 
 /// <summary>
 /// UserBestPoints
 /// </summary>
-[DataContract]
+
 public partial class UserBestPoints : IEquatable<UserBestPoints>
 {
     /// <summary>
@@ -23,7 +23,7 @@ public partial class UserBestPoints : IEquatable<UserBestPoints>
     /// The requested user for the best points
     /// </summary>
     /// <value>The requested user for the best points</value>
-    [DataMember(Name = "user", EmitDefaultValue = false)]
+    [JsonPropertyName("user")]
     public UserReference User { get; private set; }
 
 
@@ -32,7 +32,7 @@ public partial class UserBestPoints : IEquatable<UserBestPoints>
     /// List of best point for the requested user
     /// </summary>
     /// <value>List of best point for the requested user</value>
-    [DataMember(Name = "bestPoints", EmitDefaultValue = false)]
+    [JsonPropertyName("bestPoints")]
     public List<UserBestPointsItem> BestPoints { get; private set; }
 
 

@@ -1,12 +1,12 @@
-using System.Runtime.Serialization;
 using System.Text;
+using System.Text.Json.Serialization;
 
 namespace PureCloud.Client.Models;
 
 /// <summary>
 /// BuAgentSchedulePublishedScheduleReference
 /// </summary>
-[DataContract]
+
 public partial class BuAgentSchedulePublishedScheduleReference : IEquatable<BuAgentSchedulePublishedScheduleReference>
 {
     /// <summary>
@@ -27,7 +27,7 @@ public partial class BuAgentSchedulePublishedScheduleReference : IEquatable<BuAg
     /// The globally unique identifier for the object.
     /// </summary>
     /// <value>The globally unique identifier for the object.</value>
-    [DataMember(Name = "id", EmitDefaultValue = false)]
+    [JsonPropertyName("id")]
     public string Id { get; private set; }
 
 
@@ -36,7 +36,7 @@ public partial class BuAgentSchedulePublishedScheduleReference : IEquatable<BuAg
     /// The start week date for this schedule. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd
     /// </summary>
     /// <value>The start week date for this schedule. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd</value>
-    [DataMember(Name = "weekDate", EmitDefaultValue = false)]
+    [JsonPropertyName("weekDate")]
     public string WeekDate { get; set; }
 
 
@@ -45,7 +45,7 @@ public partial class BuAgentSchedulePublishedScheduleReference : IEquatable<BuAg
     /// The number of weeks encompassed by the schedule
     /// </summary>
     /// <value>The number of weeks encompassed by the schedule</value>
-    [DataMember(Name = "weekCount", EmitDefaultValue = false)]
+    [JsonPropertyName("weekCount")]
     public int? WeekCount { get; set; }
 
 
@@ -54,7 +54,7 @@ public partial class BuAgentSchedulePublishedScheduleReference : IEquatable<BuAg
     /// The URI for this object
     /// </summary>
     /// <value>The URI for this object</value>
-    [DataMember(Name = "selfUri", EmitDefaultValue = false)]
+    [JsonPropertyName("selfUri")]
     public string SelfUri { get; private set; }
 
 

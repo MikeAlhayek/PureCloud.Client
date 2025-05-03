@@ -1,12 +1,12 @@
-using System.Runtime.Serialization;
 using System.Text;
+using System.Text.Json.Serialization;
 
 namespace PureCloud.Client.Models;
 
 /// <summary>
 /// PrizeImages
 /// </summary>
-[DataContract]
+
 public partial class PrizeImages : IEquatable<PrizeImages>
 {
     /// <summary>
@@ -23,7 +23,7 @@ public partial class PrizeImages : IEquatable<PrizeImages>
     /// The Contest Prize image url
     /// </summary>
     /// <value>The Contest Prize image url</value>
-    [DataMember(Name = "imageUrl", EmitDefaultValue = false)]
+    [JsonPropertyName("imageUrl")]
     public string ImageUrl { get; private set; }
 
 

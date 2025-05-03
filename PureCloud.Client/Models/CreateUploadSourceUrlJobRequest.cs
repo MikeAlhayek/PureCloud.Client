@@ -1,4 +1,3 @@
-using System.Runtime.Serialization;
 using System.Text;
 using System.Text.Json.Serialization;
 
@@ -7,7 +6,7 @@ namespace PureCloud.Client.Models;
 /// <summary>
 /// CreateUploadSourceUrlJobRequest
 /// </summary>
-[DataContract]
+
 public partial class CreateUploadSourceUrlJobRequest : IEquatable<CreateUploadSourceUrlJobRequest>
 {
 
@@ -32,7 +31,7 @@ public partial class CreateUploadSourceUrlJobRequest : IEquatable<CreateUploadSo
     /// The URL of the content to upload.
     /// </summary>
     /// <value>The URL of the content to upload.</value>
-    [DataMember(Name = "uploadUrl", EmitDefaultValue = false)]
+    [JsonPropertyName("uploadUrl")]
     public string UploadUrl { get; set; }
 
 

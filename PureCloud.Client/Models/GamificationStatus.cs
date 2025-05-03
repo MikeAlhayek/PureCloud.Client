@@ -1,12 +1,12 @@
-using System.Runtime.Serialization;
 using System.Text;
+using System.Text.Json.Serialization;
 
 namespace PureCloud.Client.Models;
 
 /// <summary>
 /// GamificationStatus
 /// </summary>
-[DataContract]
+
 public partial class GamificationStatus : IEquatable<GamificationStatus>
 {
     /// <summary>
@@ -31,7 +31,7 @@ public partial class GamificationStatus : IEquatable<GamificationStatus>
     /// Gamification status of the organization.
     /// </summary>
     /// <value>Gamification status of the organization.</value>
-    [DataMember(Name = "isActive", EmitDefaultValue = false)]
+    [JsonPropertyName("isActive")]
     public bool? IsActive { get; set; }
 
 
@@ -40,7 +40,7 @@ public partial class GamificationStatus : IEquatable<GamificationStatus>
     /// Gamification start date. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd
     /// </summary>
     /// <value>Gamification start date. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd</value>
-    [DataMember(Name = "dateStart", EmitDefaultValue = false)]
+    [JsonPropertyName("dateStart")]
     public string DateStart { get; set; }
 
 
@@ -49,7 +49,7 @@ public partial class GamificationStatus : IEquatable<GamificationStatus>
     /// Automatic assignment of users to the default profile
     /// </summary>
     /// <value>Automatic assignment of users to the default profile</value>
-    [DataMember(Name = "automaticUserAssignment", EmitDefaultValue = false)]
+    [JsonPropertyName("automaticUserAssignment")]
     public bool? AutomaticUserAssignment { get; set; }
 
 
@@ -58,7 +58,7 @@ public partial class GamificationStatus : IEquatable<GamificationStatus>
     /// Personal best aggregation starting date. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd
     /// </summary>
     /// <value>Personal best aggregation starting date. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd</value>
-    [DataMember(Name = "dateStartPersonalBest", EmitDefaultValue = false)]
+    [JsonPropertyName("dateStartPersonalBest")]
     public string DateStartPersonalBest { get; set; }
 
 

@@ -1,4 +1,3 @@
-using System.Runtime.Serialization;
 using System.Text;
 using System.Text.Json.Serialization;
 
@@ -7,7 +6,7 @@ namespace PureCloud.Client.Models;
 /// <summary>
 /// JsonCursorSearchResponse
 /// </summary>
-[DataContract]
+
 public partial class JsonCursorSearchResponse : IEquatable<JsonCursorSearchResponse>
 {
 
@@ -38,7 +37,7 @@ public partial class JsonCursorSearchResponse : IEquatable<JsonCursorSearchRespo
     /// Resource types the search was performed against
     /// </summary>
     /// <value>Resource types the search was performed against</value>
-    [DataMember(Name = "types", EmitDefaultValue = false)]
+    [JsonPropertyName("types")]
     public List<string> Types { get; set; }
 
 
@@ -47,7 +46,7 @@ public partial class JsonCursorSearchResponse : IEquatable<JsonCursorSearchRespo
     /// Search results
     /// </summary>
     /// <value>Search results</value>
-    [DataMember(Name = "results", EmitDefaultValue = false)]
+    [JsonPropertyName("results")]
     public object Results { get; set; }
 
 
@@ -55,7 +54,7 @@ public partial class JsonCursorSearchResponse : IEquatable<JsonCursorSearchRespo
     /// <summary>
     /// Gets or Sets Aggregations
     /// </summary>
-    [DataMember(Name = "aggregations", EmitDefaultValue = false)]
+    [JsonPropertyName("aggregations")]
     public object Aggregations { get; set; }
 
 
@@ -64,7 +63,7 @@ public partial class JsonCursorSearchResponse : IEquatable<JsonCursorSearchRespo
     /// The page cursor
     /// </summary>
     /// <value>The page cursor</value>
-    [DataMember(Name = "cursor", EmitDefaultValue = false)]
+    [JsonPropertyName("cursor")]
     public string Cursor { get; set; }
 
 

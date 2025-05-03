@@ -7,14 +7,14 @@ namespace PureCloud.Client.Models;
 /// <summary>
 /// KnowledgeDocument
 /// </summary>
-[DataContract]
+
 public partial class KnowledgeDocument : IEquatable<KnowledgeDocument>
 {
     /// <summary>
     /// Language of the document
     /// </summary>
     /// <value>Language of the document</value>
-    [JsonConverter(typeof(JsonStringEnumConverter))]
+    
     public enum LanguageCodeEnum
     {
         /// <summary>
@@ -305,7 +305,7 @@ public partial class KnowledgeDocument : IEquatable<KnowledgeDocument>
     /// Document type
     /// </summary>
     /// <value>Document type</value>
-    [JsonConverter(typeof(JsonStringEnumConverter))]
+    
     public enum TypeEnum
     {
         /// <summary>
@@ -332,13 +332,13 @@ public partial class KnowledgeDocument : IEquatable<KnowledgeDocument>
     /// Language of the document
     /// </summary>
     /// <value>Language of the document</value>
-    [DataMember(Name = "languageCode", EmitDefaultValue = false)]
+    [JsonPropertyName("languageCode")]
     public LanguageCodeEnum? LanguageCode { get; set; }
     /// <summary>
     /// Document type
     /// </summary>
     /// <value>Document type</value>
-    [DataMember(Name = "type", EmitDefaultValue = false)]
+    [JsonPropertyName("type")]
     public TypeEnum? Type { get; set; }
 
     /// <summary>
@@ -374,7 +374,7 @@ public partial class KnowledgeDocument : IEquatable<KnowledgeDocument>
     /// The globally unique identifier for the object.
     /// </summary>
     /// <value>The globally unique identifier for the object.</value>
-    [DataMember(Name = "id", EmitDefaultValue = false)]
+    [JsonPropertyName("id")]
     public string Id { get; private set; }
 
 
@@ -382,7 +382,7 @@ public partial class KnowledgeDocument : IEquatable<KnowledgeDocument>
     /// <summary>
     /// Gets or Sets Name
     /// </summary>
-    [DataMember(Name = "name", EmitDefaultValue = false)]
+    [JsonPropertyName("name")]
     public string Name { get; set; }
 
 
@@ -395,7 +395,7 @@ public partial class KnowledgeDocument : IEquatable<KnowledgeDocument>
     /// FAQ document details
     /// </summary>
     /// <value>FAQ document details</value>
-    [DataMember(Name = "faq", EmitDefaultValue = false)]
+    [JsonPropertyName("faq")]
     public DocumentFaq Faq { get; set; }
 
 
@@ -404,7 +404,7 @@ public partial class KnowledgeDocument : IEquatable<KnowledgeDocument>
     /// Document creation date-time. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z
     /// </summary>
     /// <value>Document creation date-time. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z</value>
-    [DataMember(Name = "dateCreated", EmitDefaultValue = false)]
+    [JsonPropertyName("dateCreated")]
     public DateTime? DateCreated { get; private set; }
 
 
@@ -413,7 +413,7 @@ public partial class KnowledgeDocument : IEquatable<KnowledgeDocument>
     /// Document last modification date-time. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z
     /// </summary>
     /// <value>Document last modification date-time. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z</value>
-    [DataMember(Name = "dateModified", EmitDefaultValue = false)]
+    [JsonPropertyName("dateModified")]
     public DateTime? DateModified { get; private set; }
 
 
@@ -422,7 +422,7 @@ public partial class KnowledgeDocument : IEquatable<KnowledgeDocument>
     /// Document categories
     /// </summary>
     /// <value>Document categories</value>
-    [DataMember(Name = "categories", EmitDefaultValue = false)]
+    [JsonPropertyName("categories")]
     public List<KnowledgeCategory> Categories { get; set; }
 
 
@@ -431,7 +431,7 @@ public partial class KnowledgeDocument : IEquatable<KnowledgeDocument>
     /// Knowledge base which document does belong to
     /// </summary>
     /// <value>Knowledge base which document does belong to</value>
-    [DataMember(Name = "knowledgeBase", EmitDefaultValue = false)]
+    [JsonPropertyName("knowledgeBase")]
     public KnowledgeBase KnowledgeBase { get; private set; }
 
 
@@ -440,7 +440,7 @@ public partial class KnowledgeDocument : IEquatable<KnowledgeDocument>
     /// External URL to the document
     /// </summary>
     /// <value>External URL to the document</value>
-    [DataMember(Name = "externalUrl", EmitDefaultValue = false)]
+    [JsonPropertyName("externalUrl")]
     public string ExternalUrl { get; set; }
 
 
@@ -449,7 +449,7 @@ public partial class KnowledgeDocument : IEquatable<KnowledgeDocument>
     /// Article
     /// </summary>
     /// <value>Article</value>
-    [DataMember(Name = "article", EmitDefaultValue = false)]
+    [JsonPropertyName("article")]
     public DocumentArticle Article { get; set; }
 
 
@@ -458,7 +458,7 @@ public partial class KnowledgeDocument : IEquatable<KnowledgeDocument>
     /// The URI for this object
     /// </summary>
     /// <value>The URI for this object</value>
-    [DataMember(Name = "selfUri", EmitDefaultValue = false)]
+    [JsonPropertyName("selfUri")]
     public string SelfUri { get; private set; }
 
 

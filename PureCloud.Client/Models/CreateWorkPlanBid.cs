@@ -7,14 +7,14 @@ namespace PureCloud.Client.Models;
 /// <summary>
 /// Create work plan bid model
 /// </summary>
-[DataContract]
+
 public partial class CreateWorkPlanBid : IEquatable<CreateWorkPlanBid>
 {
     /// <summary>
     /// The type of agent ranking selected for this bid
     /// </summary>
     /// <value>The type of agent ranking selected for this bid</value>
-    [JsonConverter(typeof(JsonStringEnumConverter))]
+    
     public enum AgentRankingTypeEnum
     {
         /// <summary>
@@ -41,7 +41,7 @@ public partial class CreateWorkPlanBid : IEquatable<CreateWorkPlanBid>
     /// Ranking tiebreaker to be used
     /// </summary>
     /// <value>Ranking tiebreaker to be used</value>
-    [JsonConverter(typeof(JsonStringEnumConverter))]
+    
     public enum RankingTiebreakerTypeEnum
     {
         /// <summary>
@@ -79,7 +79,7 @@ public partial class CreateWorkPlanBid : IEquatable<CreateWorkPlanBid>
     /// <summary>
     /// Gets or Sets WorkPlanFieldsVisibleToAgents
     /// </summary>
-    [JsonConverter(typeof(JsonStringEnumConverter))]
+    
     public enum WorkPlanFieldsVisibleToAgentsEnum
     {
         /// <summary>
@@ -106,13 +106,13 @@ public partial class CreateWorkPlanBid : IEquatable<CreateWorkPlanBid>
     /// The type of agent ranking selected for this bid
     /// </summary>
     /// <value>The type of agent ranking selected for this bid</value>
-    [DataMember(Name = "agentRankingType", EmitDefaultValue = false)]
+    [JsonPropertyName("agentRankingType")]
     public AgentRankingTypeEnum? AgentRankingType { get; set; }
     /// <summary>
     /// Ranking tiebreaker to be used
     /// </summary>
     /// <value>Ranking tiebreaker to be used</value>
-    [DataMember(Name = "rankingTiebreakerType", EmitDefaultValue = false)]
+    [JsonPropertyName("rankingTiebreakerType")]
     public RankingTiebreakerTypeEnum? RankingTiebreakerType { get; set; }
 
     /// <summary>
@@ -150,7 +150,7 @@ public partial class CreateWorkPlanBid : IEquatable<CreateWorkPlanBid>
     /// The name of the work plan bid
     /// </summary>
     /// <value>The name of the work plan bid</value>
-    [DataMember(Name = "name", EmitDefaultValue = false)]
+    [JsonPropertyName("name")]
     public string Name { get; set; }
 
 
@@ -159,7 +159,7 @@ public partial class CreateWorkPlanBid : IEquatable<CreateWorkPlanBid>
     /// The selected forecast in this work plan bid
     /// </summary>
     /// <value>The selected forecast in this work plan bid</value>
-    [DataMember(Name = "forecast", EmitDefaultValue = false)]
+    [JsonPropertyName("forecast")]
     public BuShortTermForecastWeekReference Forecast { get; set; }
 
 
@@ -168,7 +168,7 @@ public partial class CreateWorkPlanBid : IEquatable<CreateWorkPlanBid>
     /// The bid start date where agents start participate in work plan bidding in yyyy-MM-dd format. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd
     /// </summary>
     /// <value>The bid start date where agents start participate in work plan bidding in yyyy-MM-dd format. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd</value>
-    [DataMember(Name = "bidWindowStartDate", EmitDefaultValue = false)]
+    [JsonPropertyName("bidWindowStartDate")]
     public string BidWindowStartDate { get; set; }
 
 
@@ -177,7 +177,7 @@ public partial class CreateWorkPlanBid : IEquatable<CreateWorkPlanBid>
     /// The bid end date in yyyy-MM-dd format. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd
     /// </summary>
     /// <value>The bid end date in yyyy-MM-dd format. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd</value>
-    [DataMember(Name = "bidWindowEndDate", EmitDefaultValue = false)]
+    [JsonPropertyName("bidWindowEndDate")]
     public string BidWindowEndDate { get; set; }
 
 
@@ -186,7 +186,7 @@ public partial class CreateWorkPlanBid : IEquatable<CreateWorkPlanBid>
     /// The date when agents will be assigned to the new work plan in yyyy-MM-dd format. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd
     /// </summary>
     /// <value>The date when agents will be assigned to the new work plan in yyyy-MM-dd format. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd</value>
-    [DataMember(Name = "effectiveDate", EmitDefaultValue = false)]
+    [JsonPropertyName("effectiveDate")]
     public string EffectiveDate { get; set; }
 
 
@@ -199,7 +199,7 @@ public partial class CreateWorkPlanBid : IEquatable<CreateWorkPlanBid>
     /// The work plan fields visible to agents whenever work plan preferences are made
     /// </summary>
     /// <value>The work plan fields visible to agents whenever work plan preferences are made</value>
-    [DataMember(Name = "workPlanFieldsVisibleToAgents", EmitDefaultValue = false)]
+    [JsonPropertyName("workPlanFieldsVisibleToAgents")]
     public List<WorkPlanFieldsVisibleToAgentsEnum> WorkPlanFieldsVisibleToAgents { get; set; }
 
 

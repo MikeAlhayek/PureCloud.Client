@@ -1,4 +1,3 @@
-using System.Runtime.Serialization;
 using System.Text;
 using System.Text.Json.Serialization;
 
@@ -7,7 +6,7 @@ namespace PureCloud.Client.Models;
 /// <summary>
 /// PatchShiftTradeRequest
 /// </summary>
-[DataContract]
+
 public partial class PatchShiftTradeRequest : IEquatable<PatchShiftTradeRequest>
 {
 
@@ -38,7 +37,7 @@ public partial class PatchShiftTradeRequest : IEquatable<PatchShiftTradeRequest>
     /// Update the ID of the receiving user to direct the request at a specific user, or set the wrapped id to null to open up a trade to be matched by any user.
     /// </summary>
     /// <value>Update the ID of the receiving user to direct the request at a specific user, or set the wrapped id to null to open up a trade to be matched by any user.</value>
-    [DataMember(Name = "receivingUserId", EmitDefaultValue = false)]
+    [JsonPropertyName("receivingUserId")]
     public ValueWrapperString ReceivingUserId { get; set; }
 
 
@@ -47,7 +46,7 @@ public partial class PatchShiftTradeRequest : IEquatable<PatchShiftTradeRequest>
     /// Update the expiration time for this shift trade.
     /// </summary>
     /// <value>Update the expiration time for this shift trade.</value>
-    [DataMember(Name = "expiration", EmitDefaultValue = false)]
+    [JsonPropertyName("expiration")]
     public ValueWrapperDate Expiration { get; set; }
 
 
@@ -56,7 +55,7 @@ public partial class PatchShiftTradeRequest : IEquatable<PatchShiftTradeRequest>
     /// Update the acceptable intervals the initiating user is willing to accept in trade. Setting the enclosed list to empty will make this a one sided trade request
     /// </summary>
     /// <value>Update the acceptable intervals the initiating user is willing to accept in trade. Setting the enclosed list to empty will make this a one sided trade request</value>
-    [DataMember(Name = "acceptableIntervals", EmitDefaultValue = false)]
+    [JsonPropertyName("acceptableIntervals")]
     public ListWrapperInterval AcceptableIntervals { get; set; }
 
 
@@ -65,7 +64,7 @@ public partial class PatchShiftTradeRequest : IEquatable<PatchShiftTradeRequest>
     /// Version metadata
     /// </summary>
     /// <value>Version metadata</value>
-    [DataMember(Name = "metadata", EmitDefaultValue = false)]
+    [JsonPropertyName("metadata")]
     public WfmVersionedEntityMetadata Metadata { get; set; }
 
 

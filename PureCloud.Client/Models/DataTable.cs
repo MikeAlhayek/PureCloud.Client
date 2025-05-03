@@ -1,12 +1,12 @@
-using System.Runtime.Serialization;
 using System.Text;
+using System.Text.Json.Serialization;
 
 namespace PureCloud.Client.Models;
 
 /// <summary>
 /// Contains a metadata representation for a JSON schema stored in DataTables along with an optional field for the schema itself
 /// </summary>
-[DataContract]
+
 public partial class DataTable : IEquatable<DataTable>
 {
     /// <summary>
@@ -31,7 +31,7 @@ public partial class DataTable : IEquatable<DataTable>
     /// The globally unique identifier for the object.
     /// </summary>
     /// <value>The globally unique identifier for the object.</value>
-    [DataMember(Name = "id", EmitDefaultValue = false)]
+    [JsonPropertyName("id")]
     public string Id { get; private set; }
 
 
@@ -39,7 +39,7 @@ public partial class DataTable : IEquatable<DataTable>
     /// <summary>
     /// Gets or Sets Name
     /// </summary>
-    [DataMember(Name = "name", EmitDefaultValue = false)]
+    [JsonPropertyName("name")]
     public string Name { get; set; }
 
 
@@ -48,7 +48,7 @@ public partial class DataTable : IEquatable<DataTable>
     /// The division to which this entity belongs.
     /// </summary>
     /// <value>The division to which this entity belongs.</value>
-    [DataMember(Name = "division", EmitDefaultValue = false)]
+    [JsonPropertyName("division")]
     public WritableDivision Division { get; set; }
 
 
@@ -57,7 +57,7 @@ public partial class DataTable : IEquatable<DataTable>
     /// The description from the JSON schema (equates to the Description field on the JSON schema.)
     /// </summary>
     /// <value>The description from the JSON schema (equates to the Description field on the JSON schema.)</value>
-    [DataMember(Name = "description", EmitDefaultValue = false)]
+    [JsonPropertyName("description")]
     public string Description { get; set; }
 
 
@@ -66,7 +66,7 @@ public partial class DataTable : IEquatable<DataTable>
     /// the schema as stored in the system.
     /// </summary>
     /// <value>the schema as stored in the system.</value>
-    [DataMember(Name = "schema", EmitDefaultValue = false)]
+    [JsonPropertyName("schema")]
     public JsonSchemaDocument Schema { get; set; }
 
 
@@ -75,7 +75,7 @@ public partial class DataTable : IEquatable<DataTable>
     /// The URI for this object
     /// </summary>
     /// <value>The URI for this object</value>
-    [DataMember(Name = "selfUri", EmitDefaultValue = false)]
+    [JsonPropertyName("selfUri")]
     public string SelfUri { get; private set; }
 
 

@@ -1,12 +1,12 @@
-using System.Runtime.Serialization;
 using System.Text;
+using System.Text.Json.Serialization;
 
 namespace PureCloud.Client.Models;
 
 /// <summary>
 /// WhatsAppAvailablePhoneNumberDetails
 /// </summary>
-[DataContract]
+
 public partial class WhatsAppAvailablePhoneNumberDetails : IEquatable<WhatsAppAvailablePhoneNumberDetails>
 {
     /// <summary>
@@ -23,7 +23,7 @@ public partial class WhatsAppAvailablePhoneNumberDetails : IEquatable<WhatsAppAv
     /// The verified name associated with this phone number.
     /// </summary>
     /// <value>The verified name associated with this phone number.</value>
-    [DataMember(Name = "name", EmitDefaultValue = false)]
+    [JsonPropertyName("name")]
     public string Name { get; private set; }
 
 
@@ -32,7 +32,7 @@ public partial class WhatsAppAvailablePhoneNumberDetails : IEquatable<WhatsAppAv
     /// The display name associated with this phone number. It&#39;s typically the E.164 representation of the number.
     /// </summary>
     /// <value>The display name associated with this phone number. It&#39;s typically the E.164 representation of the number.</value>
-    [DataMember(Name = "phoneNumber", EmitDefaultValue = false)]
+    [JsonPropertyName("phoneNumber")]
     public string PhoneNumber { get; private set; }
 
 
@@ -41,7 +41,7 @@ public partial class WhatsAppAvailablePhoneNumberDetails : IEquatable<WhatsAppAv
     /// The status of this phone number.
     /// </summary>
     /// <value>The status of this phone number.</value>
-    [DataMember(Name = "status", EmitDefaultValue = false)]
+    [JsonPropertyName("status")]
     public string Status { get; private set; }
 
 

@@ -7,14 +7,14 @@ namespace PureCloud.Client.Models;
 /// <summary>
 /// DraftManipulationRequest
 /// </summary>
-[DataContract]
+
 public partial class DraftManipulationRequest : IEquatable<DraftManipulationRequest>
 {
     /// <summary>
     /// The kind of draft that as to be treated. Used to prefix response subject or auto-include information
     /// </summary>
     /// <value>The kind of draft that as to be treated. Used to prefix response subject or auto-include information</value>
-    [JsonConverter(typeof(JsonStringEnumConverter))]
+    
     public enum DraftTypeEnum
     {
         /// <summary>
@@ -47,7 +47,7 @@ public partial class DraftManipulationRequest : IEquatable<DraftManipulationRequ
     /// The kind of draft that as to be treated. Used to prefix response subject or auto-include information
     /// </summary>
     /// <value>The kind of draft that as to be treated. Used to prefix response subject or auto-include information</value>
-    [DataMember(Name = "draftType", EmitDefaultValue = false)]
+    [JsonPropertyName("draftType")]
     public DraftTypeEnum? DraftType { get; set; }
     /// <summary>
     /// Initializes a new instance of the <see cref="DraftManipulationRequest" /> class.
@@ -67,7 +67,7 @@ public partial class DraftManipulationRequest : IEquatable<DraftManipulationRequ
     /// A set of definitions to translate email attributes and correctly display date and time, for a given language
     /// </summary>
     /// <value>A set of definitions to translate email attributes and correctly display date and time, for a given language</value>
-    [DataMember(Name = "translate", EmitDefaultValue = false)]
+    [JsonPropertyName("translate")]
     public HistoryHeadersTranslation Translate { get; set; }
 
 

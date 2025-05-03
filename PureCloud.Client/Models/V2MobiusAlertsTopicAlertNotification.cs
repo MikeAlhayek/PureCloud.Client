@@ -7,13 +7,13 @@ namespace PureCloud.Client.Models;
 /// <summary>
 /// V2MobiusAlertsTopicAlertNotification
 /// </summary>
-[DataContract]
+
 public partial class V2MobiusAlertsTopicAlertNotification : IEquatable<V2MobiusAlertsTopicAlertNotification>
 {
     /// <summary>
     /// Gets or Sets NotificationTypes
     /// </summary>
-    [JsonConverter(typeof(JsonStringEnumConverter))]
+    
     public enum NotificationTypesEnum
     {
         /// <summary>
@@ -73,7 +73,7 @@ public partial class V2MobiusAlertsTopicAlertNotification : IEquatable<V2MobiusA
     /// <summary>
     /// Gets or Sets Recipient
     /// </summary>
-    [DataMember(Name = "recipient", EmitDefaultValue = false)]
+    [JsonPropertyName("recipient")]
     public V2MobiusAlertsTopicAlertNotificationRecipient Recipient { get; set; }
 
 
@@ -81,7 +81,7 @@ public partial class V2MobiusAlertsTopicAlertNotification : IEquatable<V2MobiusA
     /// <summary>
     /// Gets or Sets NotificationTypes
     /// </summary>
-    [DataMember(Name = "notificationTypes", EmitDefaultValue = false)]
+    [JsonPropertyName("notificationTypes")]
     public List<NotificationTypesEnum> NotificationTypes { get; set; }
 
 
@@ -89,7 +89,7 @@ public partial class V2MobiusAlertsTopicAlertNotification : IEquatable<V2MobiusA
     /// <summary>
     /// Gets or Sets Locale
     /// </summary>
-    [DataMember(Name = "locale", EmitDefaultValue = false)]
+    [JsonPropertyName("locale")]
     public string Locale { get; set; }
 
 

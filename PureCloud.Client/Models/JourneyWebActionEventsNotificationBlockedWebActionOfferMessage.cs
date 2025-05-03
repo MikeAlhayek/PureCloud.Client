@@ -7,13 +7,13 @@ namespace PureCloud.Client.Models;
 /// <summary>
 /// JourneyWebActionEventsNotificationBlockedWebActionOfferMessage
 /// </summary>
-[DataContract]
+
 public partial class JourneyWebActionEventsNotificationBlockedWebActionOfferMessage : IEquatable<JourneyWebActionEventsNotificationBlockedWebActionOfferMessage>
 {
     /// <summary>
     /// Gets or Sets BlockingReason
     /// </summary>
-    [JsonConverter(typeof(JsonStringEnumConverter))]
+    
     public enum BlockingReasonEnum
     {
         /// <summary>
@@ -81,7 +81,7 @@ public partial class JourneyWebActionEventsNotificationBlockedWebActionOfferMess
     /// <summary>
     /// Gets or Sets BlockingFrequencyCapBehaviour
     /// </summary>
-    [JsonConverter(typeof(JsonStringEnumConverter))]
+    
     public enum BlockingFrequencyCapBehaviourEnum
     {
         /// <summary>
@@ -119,12 +119,12 @@ public partial class JourneyWebActionEventsNotificationBlockedWebActionOfferMess
     /// <summary>
     /// Gets or Sets BlockingReason
     /// </summary>
-    [DataMember(Name = "blockingReason", EmitDefaultValue = false)]
+    [JsonPropertyName("blockingReason")]
     public BlockingReasonEnum? BlockingReason { get; set; }
     /// <summary>
     /// Gets or Sets BlockingFrequencyCapBehaviour
     /// </summary>
-    [DataMember(Name = "blockingFrequencyCapBehaviour", EmitDefaultValue = false)]
+    [JsonPropertyName("blockingFrequencyCapBehaviour")]
     public BlockingFrequencyCapBehaviourEnum? BlockingFrequencyCapBehaviour { get; set; }
     /// <summary>
     /// Initializes a new instance of the <see cref="JourneyWebActionEventsNotificationBlockedWebActionOfferMessage" /> class.
@@ -159,7 +159,7 @@ public partial class JourneyWebActionEventsNotificationBlockedWebActionOfferMess
     /// <summary>
     /// Gets or Sets Action
     /// </summary>
-    [DataMember(Name = "action", EmitDefaultValue = false)]
+    [JsonPropertyName("action")]
     public JourneyWebActionEventsNotificationEventAction Action { get; set; }
 
 
@@ -167,7 +167,7 @@ public partial class JourneyWebActionEventsNotificationBlockedWebActionOfferMess
     /// <summary>
     /// Gets or Sets ActionMap
     /// </summary>
-    [DataMember(Name = "actionMap", EmitDefaultValue = false)]
+    [JsonPropertyName("actionMap")]
     public JourneyWebActionEventsNotificationActionMap ActionMap { get; set; }
 
 
@@ -175,7 +175,7 @@ public partial class JourneyWebActionEventsNotificationBlockedWebActionOfferMess
     /// <summary>
     /// Gets or Sets ActionTarget
     /// </summary>
-    [DataMember(Name = "actionTarget", EmitDefaultValue = false)]
+    [JsonPropertyName("actionTarget")]
     public JourneyWebActionEventsNotificationActionTarget ActionTarget { get; set; }
 
 
@@ -185,7 +185,7 @@ public partial class JourneyWebActionEventsNotificationBlockedWebActionOfferMess
     /// <summary>
     /// Gets or Sets BlockingActionMap
     /// </summary>
-    [DataMember(Name = "blockingActionMap", EmitDefaultValue = false)]
+    [JsonPropertyName("blockingActionMap")]
     public JourneyWebActionEventsNotificationActionMap BlockingActionMap { get; set; }
 
 
@@ -193,7 +193,7 @@ public partial class JourneyWebActionEventsNotificationBlockedWebActionOfferMess
     /// <summary>
     /// Gets or Sets BlockingAction
     /// </summary>
-    [DataMember(Name = "blockingAction", EmitDefaultValue = false)]
+    [JsonPropertyName("blockingAction")]
     public JourneyWebActionEventsNotificationEventAction BlockingAction { get; set; }
 
 
@@ -203,7 +203,7 @@ public partial class JourneyWebActionEventsNotificationBlockedWebActionOfferMess
     /// <summary>
     /// Gets or Sets BlockingPageUrlConditions
     /// </summary>
-    [DataMember(Name = "blockingPageUrlConditions", EmitDefaultValue = false)]
+    [JsonPropertyName("blockingPageUrlConditions")]
     public List<JourneyWebActionEventsNotificationActionMapPageUrlCondition> BlockingPageUrlConditions { get; set; }
 
 
@@ -211,7 +211,7 @@ public partial class JourneyWebActionEventsNotificationBlockedWebActionOfferMess
     /// <summary>
     /// Gets or Sets BlockingScheduleGroup
     /// </summary>
-    [DataMember(Name = "blockingScheduleGroup", EmitDefaultValue = false)]
+    [JsonPropertyName("blockingScheduleGroup")]
     public JourneyWebActionEventsNotificationScheduleGroup BlockingScheduleGroup { get; set; }
 
 
@@ -219,7 +219,7 @@ public partial class JourneyWebActionEventsNotificationBlockedWebActionOfferMess
     /// <summary>
     /// Gets or Sets BlockingEmergencyScheduleGroup
     /// </summary>
-    [DataMember(Name = "blockingEmergencyScheduleGroup", EmitDefaultValue = false)]
+    [JsonPropertyName("blockingEmergencyScheduleGroup")]
     public JourneyWebActionEventsNotificationEmergencyGroup BlockingEmergencyScheduleGroup { get; set; }
 
 

@@ -7,14 +7,14 @@ namespace PureCloud.Client.Models;
 /// <summary>
 /// SendAgentlessOutboundMessageRequest
 /// </summary>
-[DataContract]
+
 public partial class SendAgentlessOutboundMessageRequest : IEquatable<SendAgentlessOutboundMessageRequest>
 {
     /// <summary>
     /// The recipient messaging address messenger type.
     /// </summary>
     /// <value>The recipient messaging address messenger type.</value>
-    [JsonConverter(typeof(JsonStringEnumConverter))]
+    
     public enum ToAddressMessengerTypeEnum
     {
         /// <summary>
@@ -47,7 +47,7 @@ public partial class SendAgentlessOutboundMessageRequest : IEquatable<SendAgentl
     /// The recipient messaging address messenger type.
     /// </summary>
     /// <value>The recipient messaging address messenger type.</value>
-    [DataMember(Name = "toAddressMessengerType", EmitDefaultValue = false)]
+    [JsonPropertyName("toAddressMessengerType")]
     public ToAddressMessengerTypeEnum? ToAddressMessengerType { get; set; }
 
     /// <summary>
@@ -81,7 +81,7 @@ public partial class SendAgentlessOutboundMessageRequest : IEquatable<SendAgentl
     /// The messaging address of the sender of the message. For an SMS messenger type, this must be a currently provisioned SMS phone number. For a WhatsApp messenger type use the provisioned WhatsApp integration’s ID
     /// </summary>
     /// <value>The messaging address of the sender of the message. For an SMS messenger type, this must be a currently provisioned SMS phone number. For a WhatsApp messenger type use the provisioned WhatsApp integration’s ID</value>
-    [DataMember(Name = "fromAddress", EmitDefaultValue = false)]
+    [JsonPropertyName("fromAddress")]
     public string FromAddress { get; set; }
 
 
@@ -90,7 +90,7 @@ public partial class SendAgentlessOutboundMessageRequest : IEquatable<SendAgentl
     /// The messaging address of the recipient of the message. For an SMS messenger type, the phone number address must be in E.164 format. E.g. +13175555555 or +34234234234. For WhatsApp messenger type, use a WhatsApp ID of a phone number. E.g for a E.164 formatted phone number &#x60;+13175555555&#x60;, a WhatsApp ID would be 13175555555
     /// </summary>
     /// <value>The messaging address of the recipient of the message. For an SMS messenger type, the phone number address must be in E.164 format. E.g. +13175555555 or +34234234234. For WhatsApp messenger type, use a WhatsApp ID of a phone number. E.g for a E.164 formatted phone number &#x60;+13175555555&#x60;, a WhatsApp ID would be 13175555555</value>
-    [DataMember(Name = "toAddress", EmitDefaultValue = false)]
+    [JsonPropertyName("toAddress")]
     public string ToAddress { get; set; }
 
 
@@ -101,7 +101,7 @@ public partial class SendAgentlessOutboundMessageRequest : IEquatable<SendAgentl
     /// The text of the message to send. This field is required in the case of SMS messenger type. Maximum character counts are: SMS - 765 characters, other channels - 2000 characters.
     /// </summary>
     /// <value>The text of the message to send. This field is required in the case of SMS messenger type. Maximum character counts are: SMS - 765 characters, other channels - 2000 characters.</value>
-    [DataMember(Name = "textBody", EmitDefaultValue = false)]
+    [JsonPropertyName("textBody")]
     public string TextBody { get; set; }
 
 
@@ -110,7 +110,7 @@ public partial class SendAgentlessOutboundMessageRequest : IEquatable<SendAgentl
     /// The messaging template to use in the case of WhatsApp messenger type. This field is required when using WhatsApp messenger type
     /// </summary>
     /// <value>The messaging template to use in the case of WhatsApp messenger type. This field is required when using WhatsApp messenger type</value>
-    [DataMember(Name = "messagingTemplate", EmitDefaultValue = false)]
+    [JsonPropertyName("messagingTemplate")]
     public SendMessagingTemplateRequest MessagingTemplate { get; set; }
 
 
@@ -119,7 +119,7 @@ public partial class SendAgentlessOutboundMessageRequest : IEquatable<SendAgentl
     /// Use an existing active conversation to send the agentless outbound message. Set this parameter to &#39;true&#39; to use active conversation. Default value: false
     /// </summary>
     /// <value>Use an existing active conversation to send the agentless outbound message. Set this parameter to &#39;true&#39; to use active conversation. Default value: false</value>
-    [DataMember(Name = "useExistingActiveConversation", EmitDefaultValue = false)]
+    [JsonPropertyName("useExistingActiveConversation")]
     public bool? UseExistingActiveConversation { get; set; }
 
 

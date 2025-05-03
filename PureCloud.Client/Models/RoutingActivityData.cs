@@ -1,12 +1,12 @@
-using System.Runtime.Serialization;
 using System.Text;
+using System.Text.Json.Serialization;
 
 namespace PureCloud.Client.Models;
 
 /// <summary>
 /// RoutingActivityData
 /// </summary>
-[DataContract]
+
 public partial class RoutingActivityData : IEquatable<RoutingActivityData>
 {
     /// <summary>
@@ -31,7 +31,7 @@ public partial class RoutingActivityData : IEquatable<RoutingActivityData>
     /// A mapping from grouping dimension to value
     /// </summary>
     /// <value>A mapping from grouping dimension to value</value>
-    [DataMember(Name = "group", EmitDefaultValue = false)]
+    [JsonPropertyName("group")]
     public Dictionary<string, string> Group { get; set; }
 
 
@@ -40,7 +40,7 @@ public partial class RoutingActivityData : IEquatable<RoutingActivityData>
     /// Data for metrics
     /// </summary>
     /// <value>Data for metrics</value>
-    [DataMember(Name = "data", EmitDefaultValue = false)]
+    [JsonPropertyName("data")]
     public List<RoutingActivityMetricValue> Data { get; set; }
 
 
@@ -49,7 +49,7 @@ public partial class RoutingActivityData : IEquatable<RoutingActivityData>
     /// Flag for a truncated list of entities. If truncated, the first half of the list of entities will contain the oldest entities and the second half the newest entities.
     /// </summary>
     /// <value>Flag for a truncated list of entities. If truncated, the first half of the list of entities will contain the oldest entities and the second half the newest entities.</value>
-    [DataMember(Name = "truncated", EmitDefaultValue = false)]
+    [JsonPropertyName("truncated")]
     public bool? Truncated { get; set; }
 
 
@@ -58,7 +58,7 @@ public partial class RoutingActivityData : IEquatable<RoutingActivityData>
     /// Details for active entities
     /// </summary>
     /// <value>Details for active entities</value>
-    [DataMember(Name = "entities", EmitDefaultValue = false)]
+    [JsonPropertyName("entities")]
     public List<RoutingActivityEntityData> Entities { get; set; }
 
 

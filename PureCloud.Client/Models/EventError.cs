@@ -1,12 +1,12 @@
-using System.Runtime.Serialization;
 using System.Text;
+using System.Text.Json.Serialization;
 
 namespace PureCloud.Client.Models;
 
 /// <summary>
 /// EventError
 /// </summary>
-[DataContract]
+
 public partial class EventError : IEquatable<EventError>
 {
     /// <summary>
@@ -29,7 +29,7 @@ public partial class EventError : IEquatable<EventError>
     /// The eventId (V4 UUID) for the event that encountered an error.
     /// </summary>
     /// <value>The eventId (V4 UUID) for the event that encountered an error.</value>
-    [DataMember(Name = "eventId", EmitDefaultValue = false)]
+    [JsonPropertyName("eventId")]
     public string EventId { get; set; }
 
 
@@ -38,7 +38,7 @@ public partial class EventError : IEquatable<EventError>
     /// A message describing the error.
     /// </summary>
     /// <value>A message describing the error.</value>
-    [DataMember(Name = "message", EmitDefaultValue = false)]
+    [JsonPropertyName("message")]
     public string Message { get; set; }
 
 
@@ -47,7 +47,7 @@ public partial class EventError : IEquatable<EventError>
     /// The event for this eventId can be resubmitted if this value is true.
     /// </summary>
     /// <value>The event for this eventId can be resubmitted if this value is true.</value>
-    [DataMember(Name = "retryable", EmitDefaultValue = false)]
+    [JsonPropertyName("retryable")]
     public bool? Retryable { get; set; }
 
 

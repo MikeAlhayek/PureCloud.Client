@@ -7,14 +7,14 @@ namespace PureCloud.Client.Models;
 /// <summary>
 /// PostTextResponse
 /// </summary>
-[DataContract]
+
 public partial class PostTextResponse : IEquatable<PostTextResponse>
 {
     /// <summary>
     /// The state of the bot after completion of the request
     /// </summary>
     /// <value>The state of the bot after completion of the request</value>
-    [JsonConverter(typeof(JsonStringEnumConverter))]
+    
     public enum BotStateEnum
     {
         /// <summary>
@@ -47,7 +47,7 @@ public partial class PostTextResponse : IEquatable<PostTextResponse>
     /// The state of the bot after completion of the request
     /// </summary>
     /// <value>The state of the bot after completion of the request</value>
-    [DataMember(Name = "botState", EmitDefaultValue = false)]
+    [JsonPropertyName("botState")]
     public BotStateEnum? BotState { get; set; }
 
     /// <summary>
@@ -91,7 +91,7 @@ public partial class PostTextResponse : IEquatable<PostTextResponse>
     /// The list of messages to respond with, if any
     /// </summary>
     /// <value>The list of messages to respond with, if any</value>
-    [DataMember(Name = "replyMessages", EmitDefaultValue = false)]
+    [JsonPropertyName("replyMessages")]
     public List<PostTextMessage> ReplyMessages { get; set; }
 
 
@@ -100,7 +100,7 @@ public partial class PostTextResponse : IEquatable<PostTextResponse>
     /// The name of the intent the bot is either processing or has processed, this will be blank if no intent could be detected.
     /// </summary>
     /// <value>The name of the intent the bot is either processing or has processed, this will be blank if no intent could be detected.</value>
-    [DataMember(Name = "intentName", EmitDefaultValue = false)]
+    [JsonPropertyName("intentName")]
     public string IntentName { get; set; }
 
 
@@ -109,7 +109,7 @@ public partial class PostTextResponse : IEquatable<PostTextResponse>
     /// Data parameters detected and filled by the bot.
     /// </summary>
     /// <value>Data parameters detected and filled by the bot.</value>
-    [DataMember(Name = "slots", EmitDefaultValue = false)]
+    [JsonPropertyName("slots")]
     public Dictionary<string, string> Slots { get; set; }
 
 
@@ -118,7 +118,7 @@ public partial class PostTextResponse : IEquatable<PostTextResponse>
     /// The optional ID specified in the request
     /// </summary>
     /// <value>The optional ID specified in the request</value>
-    [DataMember(Name = "botCorrelationId", EmitDefaultValue = false)]
+    [JsonPropertyName("botCorrelationId")]
     public string BotCorrelationId { get; set; }
 
 
@@ -127,7 +127,7 @@ public partial class PostTextResponse : IEquatable<PostTextResponse>
     /// Raw data response from AWS (if called)
     /// </summary>
     /// <value>Raw data response from AWS (if called)</value>
-    [DataMember(Name = "amazonLex", EmitDefaultValue = false)]
+    [JsonPropertyName("amazonLex")]
     public Dictionary<string, object> AmazonLex { get; set; }
 
 
@@ -136,7 +136,7 @@ public partial class PostTextResponse : IEquatable<PostTextResponse>
     /// Raw data response from Google Dialogflow (if called)
     /// </summary>
     /// <value>Raw data response from Google Dialogflow (if called)</value>
-    [DataMember(Name = "googleDialogFlow", EmitDefaultValue = false)]
+    [JsonPropertyName("googleDialogFlow")]
     public Dictionary<string, object> GoogleDialogFlow { get; set; }
 
 
@@ -145,7 +145,7 @@ public partial class PostTextResponse : IEquatable<PostTextResponse>
     /// Raw data response from Genesys&#39; Dialogengine (if called)
     /// </summary>
     /// <value>Raw data response from Genesys&#39; Dialogengine (if called)</value>
-    [DataMember(Name = "genesysDialogEngine", EmitDefaultValue = false)]
+    [JsonPropertyName("genesysDialogEngine")]
     public Dictionary<string, object> GenesysDialogEngine { get; set; }
 
 
@@ -154,7 +154,7 @@ public partial class PostTextResponse : IEquatable<PostTextResponse>
     /// Raw data response from Genesys&#39; BotConnector (if called)
     /// </summary>
     /// <value>Raw data response from Genesys&#39; BotConnector (if called)</value>
-    [DataMember(Name = "genesysBotConnector", EmitDefaultValue = false)]
+    [JsonPropertyName("genesysBotConnector")]
     public Dictionary<string, object> GenesysBotConnector { get; set; }
 
 
@@ -163,7 +163,7 @@ public partial class PostTextResponse : IEquatable<PostTextResponse>
     /// Raw data response from Nuance Mix Dlg (if called)
     /// </summary>
     /// <value>Raw data response from Nuance Mix Dlg (if called)</value>
-    [DataMember(Name = "nuanceMixDlg", EmitDefaultValue = false)]
+    [JsonPropertyName("nuanceMixDlg")]
     public Dictionary<string, object> NuanceMixDlg { get; set; }
 
 

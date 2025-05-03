@@ -1,12 +1,12 @@
-using System.Runtime.Serialization;
 using System.Text;
+using System.Text.Json.Serialization;
 
 namespace PureCloud.Client.Models;
 
 /// <summary>
 /// ResultCounters
 /// </summary>
-[DataContract]
+
 public partial class ResultCounters : IEquatable<ResultCounters>
 {
     /// <summary>
@@ -26,7 +26,7 @@ public partial class ResultCounters : IEquatable<ResultCounters>
     /// <summary>
     /// Gets or Sets Success
     /// </summary>
-    [DataMember(Name = "success", EmitDefaultValue = false)]
+    [JsonPropertyName("success")]
     public int? Success { get; set; }
 
 
@@ -34,7 +34,7 @@ public partial class ResultCounters : IEquatable<ResultCounters>
     /// <summary>
     /// Gets or Sets Failure
     /// </summary>
-    [DataMember(Name = "failure", EmitDefaultValue = false)]
+    [JsonPropertyName("failure")]
     public int? Failure { get; set; }
 
 

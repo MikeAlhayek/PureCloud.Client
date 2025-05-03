@@ -1,4 +1,3 @@
-using System.Runtime.Serialization;
 using System.Text;
 using System.Text.Json.Serialization;
 
@@ -7,7 +6,7 @@ namespace PureCloud.Client.Models;
 /// <summary>
 /// ImportStatusRequest
 /// </summary>
-[DataContract]
+
 public partial class ImportStatusRequest : IEquatable<ImportStatusRequest>
 {
 
@@ -32,7 +31,7 @@ public partial class ImportStatusRequest : IEquatable<ImportStatusRequest>
     /// New status for existing import operation
     /// </summary>
     /// <value>New status for existing import operation</value>
-    [DataMember(Name = "status", EmitDefaultValue = false)]
+    [JsonPropertyName("status")]
     public string Status { get; set; }
 
 

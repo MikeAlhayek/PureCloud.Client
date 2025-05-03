@@ -1,4 +1,3 @@
-using System.Runtime.Serialization;
 using System.Text;
 using System.Text.Json.Serialization;
 
@@ -7,7 +6,7 @@ namespace PureCloud.Client.Models;
 /// <summary>
 /// UpdatePlanningGroupRequest
 /// </summary>
-[DataContract]
+
 public partial class UpdatePlanningGroupRequest : IEquatable<UpdatePlanningGroupRequest>
 {
 
@@ -38,7 +37,7 @@ public partial class UpdatePlanningGroupRequest : IEquatable<UpdatePlanningGroup
     /// The name of the planning group
     /// </summary>
     /// <value>The name of the planning group</value>
-    [DataMember(Name = "name", EmitDefaultValue = false)]
+    [JsonPropertyName("name")]
     public string Name { get; set; }
 
 
@@ -47,7 +46,7 @@ public partial class UpdatePlanningGroupRequest : IEquatable<UpdatePlanningGroup
     /// Set of route paths to associate with the planning group
     /// </summary>
     /// <value>Set of route paths to associate with the planning group</value>
-    [DataMember(Name = "routePaths", EmitDefaultValue = false)]
+    [JsonPropertyName("routePaths")]
     public SetWrapperRoutePathRequest RoutePaths { get; set; }
 
 
@@ -56,7 +55,7 @@ public partial class UpdatePlanningGroupRequest : IEquatable<UpdatePlanningGroup
     /// The ID of the service goal template to associate with this planning group
     /// </summary>
     /// <value>The ID of the service goal template to associate with this planning group</value>
-    [DataMember(Name = "serviceGoalTemplateId", EmitDefaultValue = false)]
+    [JsonPropertyName("serviceGoalTemplateId")]
     public string ServiceGoalTemplateId { get; set; }
 
 
@@ -65,7 +64,7 @@ public partial class UpdatePlanningGroupRequest : IEquatable<UpdatePlanningGroup
     /// Version metadata for the planning group
     /// </summary>
     /// <value>Version metadata for the planning group</value>
-    [DataMember(Name = "metadata", EmitDefaultValue = false)]
+    [JsonPropertyName("metadata")]
     public WfmVersionedEntityMetadata Metadata { get; set; }
 
 

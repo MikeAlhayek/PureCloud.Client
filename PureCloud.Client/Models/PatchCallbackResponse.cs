@@ -1,4 +1,3 @@
-using System.Runtime.Serialization;
 using System.Text;
 using System.Text.Json.Serialization;
 
@@ -7,7 +6,7 @@ namespace PureCloud.Client.Models;
 /// <summary>
 /// PatchCallbackResponse
 /// </summary>
-[DataContract]
+
 public partial class PatchCallbackResponse : IEquatable<PatchCallbackResponse>
 {
 
@@ -34,7 +33,7 @@ public partial class PatchCallbackResponse : IEquatable<PatchCallbackResponse>
     /// The conversation associated with the callback
     /// </summary>
     /// <value>The conversation associated with the callback</value>
-    [DataMember(Name = "conversation", EmitDefaultValue = false)]
+    [JsonPropertyName("conversation")]
     public DomainEntityRef Conversation { get; set; }
 
 
@@ -43,7 +42,7 @@ public partial class PatchCallbackResponse : IEquatable<PatchCallbackResponse>
     /// The list of communication identifiers for the callback participants
     /// </summary>
     /// <value>The list of communication identifiers for the callback participants</value>
-    [DataMember(Name = "callbackIdentifiers", EmitDefaultValue = false)]
+    [JsonPropertyName("callbackIdentifiers")]
     public List<CallbackIdentifier> CallbackIdentifiers { get; set; }
 
 

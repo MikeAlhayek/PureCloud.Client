@@ -1,12 +1,12 @@
-using System.Runtime.Serialization;
 using System.Text;
+using System.Text.Json.Serialization;
 
 namespace PureCloud.Client.Models;
 
 /// <summary>
 /// ConfusionUtterance
 /// </summary>
-[DataContract]
+
 public partial class ConfusionUtterance : IEquatable<ConfusionUtterance>
 {
     /// <summary>
@@ -27,7 +27,7 @@ public partial class ConfusionUtterance : IEquatable<ConfusionUtterance>
     /// The globally unique identifier for the object.
     /// </summary>
     /// <value>The globally unique identifier for the object.</value>
-    [DataMember(Name = "id", EmitDefaultValue = false)]
+    [JsonPropertyName("id")]
     public string Id { get; private set; }
 
 
@@ -36,7 +36,7 @@ public partial class ConfusionUtterance : IEquatable<ConfusionUtterance>
     /// Utterance Text.
     /// </summary>
     /// <value>Utterance Text.</value>
-    [DataMember(Name = "text", EmitDefaultValue = false)]
+    [JsonPropertyName("text")]
     public string Text { get; set; }
 
 
@@ -45,7 +45,7 @@ public partial class ConfusionUtterance : IEquatable<ConfusionUtterance>
     /// Utterance&#39;s similarity score, 0 being dissimilar and 1 being very similar.
     /// </summary>
     /// <value>Utterance&#39;s similarity score, 0 being dissimilar and 1 being very similar.</value>
-    [DataMember(Name = "similarity", EmitDefaultValue = false)]
+    [JsonPropertyName("similarity")]
     public float? Similarity { get; set; }
 
 

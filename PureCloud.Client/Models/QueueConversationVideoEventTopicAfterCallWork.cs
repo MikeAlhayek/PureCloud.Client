@@ -7,14 +7,14 @@ namespace PureCloud.Client.Models;
 /// <summary>
 /// A communication&#39;s after-call work data.
 /// </summary>
-[DataContract]
+
 public partial class QueueConversationVideoEventTopicAfterCallWork : IEquatable<QueueConversationVideoEventTopicAfterCallWork>
 {
     /// <summary>
     /// The communication's after-call work state.
     /// </summary>
     /// <value>The communication's after-call work state.</value>
-    [JsonConverter(typeof(JsonStringEnumConverter))]
+    
     public enum StateEnum
     {
         /// <summary>
@@ -59,7 +59,7 @@ public partial class QueueConversationVideoEventTopicAfterCallWork : IEquatable<
     /// The communication's after-call work state.
     /// </summary>
     /// <value>The communication's after-call work state.</value>
-    [DataMember(Name = "state", EmitDefaultValue = false)]
+    [JsonPropertyName("state")]
     public StateEnum? State { get; set; }
     /// <summary>
     /// Initializes a new instance of the <see cref="QueueConversationVideoEventTopicAfterCallWork" /> class.
@@ -83,7 +83,7 @@ public partial class QueueConversationVideoEventTopicAfterCallWork : IEquatable<
     /// The timestamp when this communication started after-call work in the cloud clock.
     /// </summary>
     /// <value>The timestamp when this communication started after-call work in the cloud clock.</value>
-    [DataMember(Name = "startTime", EmitDefaultValue = false)]
+    [JsonPropertyName("startTime")]
     public DateTime? StartTime { get; set; }
 
 
@@ -92,7 +92,7 @@ public partial class QueueConversationVideoEventTopicAfterCallWork : IEquatable<
     /// The timestamp when this communication ended after-call work in the cloud clock.
     /// </summary>
     /// <value>The timestamp when this communication ended after-call work in the cloud clock.</value>
-    [DataMember(Name = "endTime", EmitDefaultValue = false)]
+    [JsonPropertyName("endTime")]
     public DateTime? EndTime { get; set; }
 
 

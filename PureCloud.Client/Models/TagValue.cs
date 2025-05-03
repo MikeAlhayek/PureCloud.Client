@@ -1,4 +1,3 @@
-using System.Runtime.Serialization;
 using System.Text;
 using System.Text.Json.Serialization;
 
@@ -7,7 +6,7 @@ namespace PureCloud.Client.Models;
 /// <summary>
 /// TagValue
 /// </summary>
-[DataContract]
+
 public partial class TagValue : IEquatable<TagValue>
 {
 
@@ -36,7 +35,7 @@ public partial class TagValue : IEquatable<TagValue>
     /// The globally unique identifier for the object.
     /// </summary>
     /// <value>The globally unique identifier for the object.</value>
-    [DataMember(Name = "id", EmitDefaultValue = false)]
+    [JsonPropertyName("id")]
     public string Id { get; private set; }
 
 
@@ -45,7 +44,7 @@ public partial class TagValue : IEquatable<TagValue>
     /// The workspace tag name.
     /// </summary>
     /// <value>The workspace tag name.</value>
-    [DataMember(Name = "name", EmitDefaultValue = false)]
+    [JsonPropertyName("name")]
     public string Name { get; set; }
 
 
@@ -53,7 +52,7 @@ public partial class TagValue : IEquatable<TagValue>
     /// <summary>
     /// Gets or Sets InUse
     /// </summary>
-    [DataMember(Name = "inUse", EmitDefaultValue = false)]
+    [JsonPropertyName("inUse")]
     public bool? InUse { get; set; }
 
 
@@ -61,7 +60,7 @@ public partial class TagValue : IEquatable<TagValue>
     /// <summary>
     /// Gets or Sets Acl
     /// </summary>
-    [DataMember(Name = "acl", EmitDefaultValue = false)]
+    [JsonPropertyName("acl")]
     public List<string> Acl { get; set; }
 
 
@@ -70,7 +69,7 @@ public partial class TagValue : IEquatable<TagValue>
     /// The URI for this object
     /// </summary>
     /// <value>The URI for this object</value>
-    [DataMember(Name = "selfUri", EmitDefaultValue = false)]
+    [JsonPropertyName("selfUri")]
     public string SelfUri { get; private set; }
 
 

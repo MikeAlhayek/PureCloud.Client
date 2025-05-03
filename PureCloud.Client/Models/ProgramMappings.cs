@@ -1,12 +1,12 @@
-using System.Runtime.Serialization;
 using System.Text;
+using System.Text.Json.Serialization;
 
 namespace PureCloud.Client.Models;
 
 /// <summary>
 /// ProgramMappings
 /// </summary>
-[DataContract]
+
 public partial class ProgramMappings : IEquatable<ProgramMappings>
 {
     /// <summary>
@@ -32,7 +32,7 @@ public partial class ProgramMappings : IEquatable<ProgramMappings>
     /// <summary>
     /// Gets or Sets Program
     /// </summary>
-    [DataMember(Name = "program", EmitDefaultValue = false)]
+    [JsonPropertyName("program")]
     public BaseProgramEntity Program { get; set; }
 
 
@@ -40,7 +40,7 @@ public partial class ProgramMappings : IEquatable<ProgramMappings>
     /// <summary>
     /// Gets or Sets Queues
     /// </summary>
-    [DataMember(Name = "queues", EmitDefaultValue = false)]
+    [JsonPropertyName("queues")]
     public List<AddressableEntityRef> Queues { get; set; }
 
 
@@ -48,7 +48,7 @@ public partial class ProgramMappings : IEquatable<ProgramMappings>
     /// <summary>
     /// Gets or Sets Flows
     /// </summary>
-    [DataMember(Name = "flows", EmitDefaultValue = false)]
+    [JsonPropertyName("flows")]
     public List<AddressableEntityRef> Flows { get; set; }
 
 
@@ -56,7 +56,7 @@ public partial class ProgramMappings : IEquatable<ProgramMappings>
     /// <summary>
     /// Gets or Sets ModifiedBy
     /// </summary>
-    [DataMember(Name = "modifiedBy", EmitDefaultValue = false)]
+    [JsonPropertyName("modifiedBy")]
     public AddressableEntityRef ModifiedBy { get; set; }
 
 
@@ -65,7 +65,7 @@ public partial class ProgramMappings : IEquatable<ProgramMappings>
     /// Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z
     /// </summary>
     /// <value>Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z</value>
-    [DataMember(Name = "dateModified", EmitDefaultValue = false)]
+    [JsonPropertyName("dateModified")]
     public DateTime? DateModified { get; set; }
 
 

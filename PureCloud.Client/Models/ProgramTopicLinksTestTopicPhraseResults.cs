@@ -1,12 +1,12 @@
-using System.Runtime.Serialization;
 using System.Text;
+using System.Text.Json.Serialization;
 
 namespace PureCloud.Client.Models;
 
 /// <summary>
 /// ProgramTopicLinksTestTopicPhraseResults
 /// </summary>
-[DataContract]
+
 public partial class ProgramTopicLinksTestTopicPhraseResults : IEquatable<ProgramTopicLinksTestTopicPhraseResults>
 {
     /// <summary>
@@ -28,7 +28,7 @@ public partial class ProgramTopicLinksTestTopicPhraseResults : IEquatable<Progra
     /// <summary>
     /// Gets or Sets ProcessedTranscriptsCount
     /// </summary>
-    [DataMember(Name = "processedTranscriptsCount", EmitDefaultValue = false)]
+    [JsonPropertyName("processedTranscriptsCount")]
     public long? ProcessedTranscriptsCount { get; set; }
 
 
@@ -36,7 +36,7 @@ public partial class ProgramTopicLinksTestTopicPhraseResults : IEquatable<Progra
     /// <summary>
     /// Gets or Sets MatchedTranscriptsCount
     /// </summary>
-    [DataMember(Name = "matchedTranscriptsCount", EmitDefaultValue = false)]
+    [JsonPropertyName("matchedTranscriptsCount")]
     public long? MatchedTranscriptsCount { get; set; }
 
 
@@ -44,7 +44,7 @@ public partial class ProgramTopicLinksTestTopicPhraseResults : IEquatable<Progra
     /// <summary>
     /// Gets or Sets MatchedTranscripts
     /// </summary>
-    [DataMember(Name = "matchedTranscripts", EmitDefaultValue = false)]
+    [JsonPropertyName("matchedTranscripts")]
     public List<ProgramTopicLinksTestPhraseMatchedTranscript> MatchedTranscripts { get; set; }
 
 

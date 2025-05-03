@@ -7,13 +7,13 @@ namespace PureCloud.Client.Models;
 /// <summary>
 /// FieldConfig
 /// </summary>
-[DataContract]
+
 public partial class FieldConfig : IEquatable<FieldConfig>
 {
     /// <summary>
     /// Gets or Sets EntityType
     /// </summary>
-    [JsonConverter(typeof(JsonStringEnumConverter))]
+    
     public enum EntityTypeEnum
     {
         /// <summary>
@@ -45,7 +45,7 @@ public partial class FieldConfig : IEquatable<FieldConfig>
     /// <summary>
     /// Gets or Sets EntityType
     /// </summary>
-    [DataMember(Name = "entityType", EmitDefaultValue = false)]
+    [JsonPropertyName("entityType")]
     public EntityTypeEnum? EntityType { get; set; }
     /// <summary>
     /// Initializes a new instance of the <see cref="FieldConfig" /> class.
@@ -73,7 +73,7 @@ public partial class FieldConfig : IEquatable<FieldConfig>
     /// The globally unique identifier for the object.
     /// </summary>
     /// <value>The globally unique identifier for the object.</value>
-    [DataMember(Name = "id", EmitDefaultValue = false)]
+    [JsonPropertyName("id")]
     public string Id { get; private set; }
 
 
@@ -81,7 +81,7 @@ public partial class FieldConfig : IEquatable<FieldConfig>
     /// <summary>
     /// Gets or Sets Name
     /// </summary>
-    [DataMember(Name = "name", EmitDefaultValue = false)]
+    [JsonPropertyName("name")]
     public string Name { get; set; }
 
 
@@ -91,7 +91,7 @@ public partial class FieldConfig : IEquatable<FieldConfig>
     /// <summary>
     /// Gets or Sets State
     /// </summary>
-    [DataMember(Name = "state", EmitDefaultValue = false)]
+    [JsonPropertyName("state")]
     public string State { get; set; }
 
 
@@ -99,7 +99,7 @@ public partial class FieldConfig : IEquatable<FieldConfig>
     /// <summary>
     /// Gets or Sets Sections
     /// </summary>
-    [DataMember(Name = "sections", EmitDefaultValue = false)]
+    [JsonPropertyName("sections")]
     public List<Section> Sections { get; set; }
 
 
@@ -107,7 +107,7 @@ public partial class FieldConfig : IEquatable<FieldConfig>
     /// <summary>
     /// Gets or Sets Version
     /// </summary>
-    [DataMember(Name = "version", EmitDefaultValue = false)]
+    [JsonPropertyName("version")]
     public string Version { get; set; }
 
 
@@ -115,7 +115,7 @@ public partial class FieldConfig : IEquatable<FieldConfig>
     /// <summary>
     /// Gets or Sets SchemaVersion
     /// </summary>
-    [DataMember(Name = "schemaVersion", EmitDefaultValue = false)]
+    [JsonPropertyName("schemaVersion")]
     public string SchemaVersion { get; set; }
 
 
@@ -124,7 +124,7 @@ public partial class FieldConfig : IEquatable<FieldConfig>
     /// The URI for this object
     /// </summary>
     /// <value>The URI for this object</value>
-    [DataMember(Name = "selfUri", EmitDefaultValue = false)]
+    [JsonPropertyName("selfUri")]
     public string SelfUri { get; private set; }
 
 

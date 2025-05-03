@@ -1,12 +1,12 @@
-using System.Runtime.Serialization;
 using System.Text;
+using System.Text.Json.Serialization;
 
 namespace PureCloud.Client.Models;
 
 /// <summary>
 /// Specifies the requirements for a credential that can be provided for configuring an integration
 /// </summary>
-[DataContract]
+
 public partial class CredentialSpecification : IEquatable<CredentialSpecification>
 {
     /// <summary>
@@ -23,7 +23,7 @@ public partial class CredentialSpecification : IEquatable<CredentialSpecificatio
     /// Indicates if the credential must be provided in order for the integration configuration to be valid.
     /// </summary>
     /// <value>Indicates if the credential must be provided in order for the integration configuration to be valid.</value>
-    [DataMember(Name = "required", EmitDefaultValue = false)]
+    [JsonPropertyName("required")]
     public bool? Required { get; private set; }
 
 
@@ -32,7 +32,7 @@ public partial class CredentialSpecification : IEquatable<CredentialSpecificatio
     /// Title describing the usage for this credential.
     /// </summary>
     /// <value>Title describing the usage for this credential.</value>
-    [DataMember(Name = "title", EmitDefaultValue = false)]
+    [JsonPropertyName("title")]
     public string Title { get; private set; }
 
 
@@ -41,7 +41,7 @@ public partial class CredentialSpecification : IEquatable<CredentialSpecificatio
     /// List of acceptable credential types that can be provided for this credential.
     /// </summary>
     /// <value>List of acceptable credential types that can be provided for this credential.</value>
-    [DataMember(Name = "credentialTypes", EmitDefaultValue = false)]
+    [JsonPropertyName("credentialTypes")]
     public List<string> CredentialTypes { get; private set; }
 
 

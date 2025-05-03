@@ -7,13 +7,13 @@ namespace PureCloud.Client.Models;
 /// <summary>
 /// WfmTimeOffRequestUpdateTopicTimeOffRequestUpdate
 /// </summary>
-[DataContract]
+
 public partial class WfmTimeOffRequestUpdateTopicTimeOffRequestUpdate : IEquatable<WfmTimeOffRequestUpdateTopicTimeOffRequestUpdate>
 {
     /// <summary>
     /// Gets or Sets Status
     /// </summary>
-    [JsonConverter(typeof(JsonStringEnumConverter))]
+    
     public enum StatusEnum
     {
         /// <summary>
@@ -51,7 +51,7 @@ public partial class WfmTimeOffRequestUpdateTopicTimeOffRequestUpdate : IEquatab
     /// <summary>
     /// Gets or Sets Substatus
     /// </summary>
-    [JsonConverter(typeof(JsonStringEnumConverter))]
+    
     public enum SubstatusEnum
     {
         /// <summary>
@@ -113,12 +113,12 @@ public partial class WfmTimeOffRequestUpdateTopicTimeOffRequestUpdate : IEquatab
     /// <summary>
     /// Gets or Sets Status
     /// </summary>
-    [DataMember(Name = "status", EmitDefaultValue = false)]
+    [JsonPropertyName("status")]
     public StatusEnum? Status { get; set; }
     /// <summary>
     /// Gets or Sets Substatus
     /// </summary>
-    [DataMember(Name = "substatus", EmitDefaultValue = false)]
+    [JsonPropertyName("substatus")]
     public SubstatusEnum? Substatus { get; set; }
     /// <summary>
     /// Initializes a new instance of the <see cref="WfmTimeOffRequestUpdateTopicTimeOffRequestUpdate" /> class.
@@ -173,7 +173,7 @@ public partial class WfmTimeOffRequestUpdateTopicTimeOffRequestUpdate : IEquatab
     /// <summary>
     /// Gets or Sets Id
     /// </summary>
-    [DataMember(Name = "id", EmitDefaultValue = false)]
+    [JsonPropertyName("id")]
     public string Id { get; set; }
 
 
@@ -181,7 +181,7 @@ public partial class WfmTimeOffRequestUpdateTopicTimeOffRequestUpdate : IEquatab
     /// <summary>
     /// Gets or Sets User
     /// </summary>
-    [DataMember(Name = "user", EmitDefaultValue = false)]
+    [JsonPropertyName("user")]
     public WfmTimeOffRequestUpdateTopicUserReference User { get; set; }
 
 
@@ -189,7 +189,7 @@ public partial class WfmTimeOffRequestUpdateTopicTimeOffRequestUpdate : IEquatab
     /// <summary>
     /// Gets or Sets IsFullDayRequest
     /// </summary>
-    [DataMember(Name = "isFullDayRequest", EmitDefaultValue = false)]
+    [JsonPropertyName("isFullDayRequest")]
     public bool? IsFullDayRequest { get; set; }
 
 
@@ -197,7 +197,7 @@ public partial class WfmTimeOffRequestUpdateTopicTimeOffRequestUpdate : IEquatab
     /// <summary>
     /// Gets or Sets MarkedAsRead
     /// </summary>
-    [DataMember(Name = "markedAsRead", EmitDefaultValue = false)]
+    [JsonPropertyName("markedAsRead")]
     public bool? MarkedAsRead { get; set; }
 
 
@@ -205,7 +205,7 @@ public partial class WfmTimeOffRequestUpdateTopicTimeOffRequestUpdate : IEquatab
     /// <summary>
     /// Gets or Sets ActivityCodeId
     /// </summary>
-    [DataMember(Name = "activityCodeId", EmitDefaultValue = false)]
+    [JsonPropertyName("activityCodeId")]
     public string ActivityCodeId { get; set; }
 
 
@@ -213,7 +213,7 @@ public partial class WfmTimeOffRequestUpdateTopicTimeOffRequestUpdate : IEquatab
     /// <summary>
     /// Gets or Sets Paid
     /// </summary>
-    [DataMember(Name = "paid", EmitDefaultValue = false)]
+    [JsonPropertyName("paid")]
     public bool? Paid { get; set; }
 
 
@@ -225,7 +225,7 @@ public partial class WfmTimeOffRequestUpdateTopicTimeOffRequestUpdate : IEquatab
     /// <summary>
     /// Gets or Sets PartialDayStartDateTimes
     /// </summary>
-    [DataMember(Name = "partialDayStartDateTimes", EmitDefaultValue = false)]
+    [JsonPropertyName("partialDayStartDateTimes")]
     public List<string> PartialDayStartDateTimes { get; set; }
 
 
@@ -233,7 +233,7 @@ public partial class WfmTimeOffRequestUpdateTopicTimeOffRequestUpdate : IEquatab
     /// <summary>
     /// Gets or Sets FullDayManagementUnitDates
     /// </summary>
-    [DataMember(Name = "fullDayManagementUnitDates", EmitDefaultValue = false)]
+    [JsonPropertyName("fullDayManagementUnitDates")]
     public List<string> FullDayManagementUnitDates { get; set; }
 
 
@@ -241,7 +241,7 @@ public partial class WfmTimeOffRequestUpdateTopicTimeOffRequestUpdate : IEquatab
     /// <summary>
     /// Gets or Sets DailyDurationMinutes
     /// </summary>
-    [DataMember(Name = "dailyDurationMinutes", EmitDefaultValue = false)]
+    [JsonPropertyName("dailyDurationMinutes")]
     public long? DailyDurationMinutes { get; set; }
 
 
@@ -249,7 +249,7 @@ public partial class WfmTimeOffRequestUpdateTopicTimeOffRequestUpdate : IEquatab
     /// <summary>
     /// Gets or Sets DurationMinutes
     /// </summary>
-    [DataMember(Name = "durationMinutes", EmitDefaultValue = false)]
+    [JsonPropertyName("durationMinutes")]
     public List<long?> DurationMinutes { get; set; }
 
 
@@ -257,7 +257,7 @@ public partial class WfmTimeOffRequestUpdateTopicTimeOffRequestUpdate : IEquatab
     /// <summary>
     /// Gets or Sets PayableMinutes
     /// </summary>
-    [DataMember(Name = "payableMinutes", EmitDefaultValue = false)]
+    [JsonPropertyName("payableMinutes")]
     public List<long?> PayableMinutes { get; set; }
 
 
@@ -265,7 +265,7 @@ public partial class WfmTimeOffRequestUpdateTopicTimeOffRequestUpdate : IEquatab
     /// <summary>
     /// Gets or Sets Notes
     /// </summary>
-    [DataMember(Name = "notes", EmitDefaultValue = false)]
+    [JsonPropertyName("notes")]
     public string Notes { get; set; }
 
 
@@ -273,7 +273,7 @@ public partial class WfmTimeOffRequestUpdateTopicTimeOffRequestUpdate : IEquatab
     /// <summary>
     /// Gets or Sets ReviewedDate
     /// </summary>
-    [DataMember(Name = "reviewedDate", EmitDefaultValue = false)]
+    [JsonPropertyName("reviewedDate")]
     public string ReviewedDate { get; set; }
 
 
@@ -281,7 +281,7 @@ public partial class WfmTimeOffRequestUpdateTopicTimeOffRequestUpdate : IEquatab
     /// <summary>
     /// Gets or Sets ReviewedBy
     /// </summary>
-    [DataMember(Name = "reviewedBy", EmitDefaultValue = false)]
+    [JsonPropertyName("reviewedBy")]
     public string ReviewedBy { get; set; }
 
 
@@ -289,7 +289,7 @@ public partial class WfmTimeOffRequestUpdateTopicTimeOffRequestUpdate : IEquatab
     /// <summary>
     /// Gets or Sets SubmittedDate
     /// </summary>
-    [DataMember(Name = "submittedDate", EmitDefaultValue = false)]
+    [JsonPropertyName("submittedDate")]
     public string SubmittedDate { get; set; }
 
 
@@ -297,7 +297,7 @@ public partial class WfmTimeOffRequestUpdateTopicTimeOffRequestUpdate : IEquatab
     /// <summary>
     /// Gets or Sets SubmittedBy
     /// </summary>
-    [DataMember(Name = "submittedBy", EmitDefaultValue = false)]
+    [JsonPropertyName("submittedBy")]
     public string SubmittedBy { get; set; }
 
 
@@ -305,7 +305,7 @@ public partial class WfmTimeOffRequestUpdateTopicTimeOffRequestUpdate : IEquatab
     /// <summary>
     /// Gets or Sets ModifiedDate
     /// </summary>
-    [DataMember(Name = "modifiedDate", EmitDefaultValue = false)]
+    [JsonPropertyName("modifiedDate")]
     public string ModifiedDate { get; set; }
 
 
@@ -313,7 +313,7 @@ public partial class WfmTimeOffRequestUpdateTopicTimeOffRequestUpdate : IEquatab
     /// <summary>
     /// Gets or Sets ModifiedBy
     /// </summary>
-    [DataMember(Name = "modifiedBy", EmitDefaultValue = false)]
+    [JsonPropertyName("modifiedBy")]
     public string ModifiedBy { get; set; }
 
 

@@ -7,13 +7,13 @@ namespace PureCloud.Client.Models;
 /// <summary>
 /// SetWrapperSyncTimeOffProperty
 /// </summary>
-[DataContract]
+
 public partial class SetWrapperSyncTimeOffProperty : IEquatable<SetWrapperSyncTimeOffProperty>
 {
     /// <summary>
     /// Gets or Sets Values
     /// </summary>
-    [JsonConverter(typeof(JsonStringEnumConverter))]
+    
     public enum ValuesEnum
     {
         /// <summary>
@@ -45,7 +45,7 @@ public partial class SetWrapperSyncTimeOffProperty : IEquatable<SetWrapperSyncTi
     /// <summary>
     /// Gets or Sets Values
     /// </summary>
-    [DataMember(Name = "values", EmitDefaultValue = false)]
+    [JsonPropertyName("values")]
     public List<ValuesEnum> Values { get; set; }
 
 

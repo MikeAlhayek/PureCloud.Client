@@ -1,4 +1,3 @@
-using System.Runtime.Serialization;
 using System.Text;
 using System.Text.Json.Serialization;
 
@@ -7,7 +6,7 @@ namespace PureCloud.Client.Models;
 /// <summary>
 /// Template parameters for placeholders in template.
 /// </summary>
-[DataContract]
+
 public partial class NotificationTemplateParameter : IEquatable<NotificationTemplateParameter>
 {
 
@@ -34,7 +33,7 @@ public partial class NotificationTemplateParameter : IEquatable<NotificationTemp
     /// Parameter name.
     /// </summary>
     /// <value>Parameter name.</value>
-    [DataMember(Name = "name", EmitDefaultValue = false)]
+    [JsonPropertyName("name")]
     public string Name { get; set; }
 
 
@@ -43,7 +42,7 @@ public partial class NotificationTemplateParameter : IEquatable<NotificationTemp
     /// Parameter text value.
     /// </summary>
     /// <value>Parameter text value.</value>
-    [DataMember(Name = "text", EmitDefaultValue = false)]
+    [JsonPropertyName("text")]
     public string Text { get; set; }
 
 

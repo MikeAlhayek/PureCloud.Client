@@ -7,14 +7,14 @@ namespace PureCloud.Client.Models;
 /// <summary>
 /// General rich media message structure with normalized feature support across many messaging channels.
 /// </summary>
-[DataContract]
+
 public partial class ConversationNormalizedMessage : IEquatable<ConversationNormalizedMessage>
 {
     /// <summary>
     /// Message type.
     /// </summary>
     /// <value>Message type.</value>
-    [JsonConverter(typeof(JsonStringEnumConverter))]
+    
     public enum TypeEnum
     {
         /// <summary>
@@ -65,7 +65,7 @@ public partial class ConversationNormalizedMessage : IEquatable<ConversationNorm
     /// Message receipt status, only used with type Receipt.
     /// </summary>
     /// <value>Message receipt status, only used with type Receipt.</value>
-    [JsonConverter(typeof(JsonStringEnumConverter))]
+    
     public enum StatusEnum
     {
         /// <summary>
@@ -116,7 +116,7 @@ public partial class ConversationNormalizedMessage : IEquatable<ConversationNorm
     /// Specifies if this message was sent by a human agent or bot. The platform may use this to apply appropriate provider policies.
     /// </summary>
     /// <value>Specifies if this message was sent by a human agent or bot. The platform may use this to apply appropriate provider policies.</value>
-    [JsonConverter(typeof(JsonStringEnumConverter))]
+    
     public enum OriginatingEntityEnum
     {
         /// <summary>
@@ -143,7 +143,7 @@ public partial class ConversationNormalizedMessage : IEquatable<ConversationNorm
     /// The direction of the message.
     /// </summary>
     /// <value>The direction of the message.</value>
-    [JsonConverter(typeof(JsonStringEnumConverter))]
+    
     public enum DirectionEnum
     {
         /// <summary>
@@ -170,25 +170,25 @@ public partial class ConversationNormalizedMessage : IEquatable<ConversationNorm
     /// Message type.
     /// </summary>
     /// <value>Message type.</value>
-    [DataMember(Name = "type", EmitDefaultValue = false)]
+    [JsonPropertyName("type")]
     public TypeEnum? Type { get; set; }
     /// <summary>
     /// Message receipt status, only used with type Receipt.
     /// </summary>
     /// <value>Message receipt status, only used with type Receipt.</value>
-    [DataMember(Name = "status", EmitDefaultValue = false)]
+    [JsonPropertyName("status")]
     public StatusEnum? Status { get; private set; }
     /// <summary>
     /// Specifies if this message was sent by a human agent or bot. The platform may use this to apply appropriate provider policies.
     /// </summary>
     /// <value>Specifies if this message was sent by a human agent or bot. The platform may use this to apply appropriate provider policies.</value>
-    [DataMember(Name = "originatingEntity", EmitDefaultValue = false)]
+    [JsonPropertyName("originatingEntity")]
     public OriginatingEntityEnum? OriginatingEntity { get; set; }
     /// <summary>
     /// The direction of the message.
     /// </summary>
     /// <value>The direction of the message.</value>
-    [DataMember(Name = "direction", EmitDefaultValue = false)]
+    [JsonPropertyName("direction")]
     public DirectionEnum? Direction { get; private set; }
 
     /// <summary>
@@ -224,7 +224,7 @@ public partial class ConversationNormalizedMessage : IEquatable<ConversationNorm
     /// Unique ID of the message. Message receipts will have the same ID as the message they reference.
     /// </summary>
     /// <value>Unique ID of the message. Message receipts will have the same ID as the message they reference.</value>
-    [DataMember(Name = "id", EmitDefaultValue = false)]
+    [JsonPropertyName("id")]
     public string Id { get; private set; }
 
 
@@ -233,7 +233,7 @@ public partial class ConversationNormalizedMessage : IEquatable<ConversationNorm
     /// Channel-specific information that describes the message and the message channel/provider.
     /// </summary>
     /// <value>Channel-specific information that describes the message and the message channel/provider.</value>
-    [DataMember(Name = "channel", EmitDefaultValue = false)]
+    [JsonPropertyName("channel")]
     public ConversationMessagingChannel Channel { get; private set; }
 
 
@@ -244,7 +244,7 @@ public partial class ConversationNormalizedMessage : IEquatable<ConversationNorm
     /// Message text.
     /// </summary>
     /// <value>Message text.</value>
-    [DataMember(Name = "text", EmitDefaultValue = false)]
+    [JsonPropertyName("text")]
     public string Text { get; set; }
 
 
@@ -253,7 +253,7 @@ public partial class ConversationNormalizedMessage : IEquatable<ConversationNorm
     /// List of content elements.
     /// </summary>
     /// <value>List of content elements.</value>
-    [DataMember(Name = "content", EmitDefaultValue = false)]
+    [JsonPropertyName("content")]
     public List<ConversationMessageContent> Content { get; set; }
 
 
@@ -262,7 +262,7 @@ public partial class ConversationNormalizedMessage : IEquatable<ConversationNorm
     /// List of event elements.
     /// </summary>
     /// <value>List of event elements.</value>
-    [DataMember(Name = "events", EmitDefaultValue = false)]
+    [JsonPropertyName("events")]
     public List<ConversationMessageEvent> Events { get; set; }
 
 
@@ -273,7 +273,7 @@ public partial class ConversationNormalizedMessage : IEquatable<ConversationNorm
     /// List of reasons for a message receipt that indicates the message has failed. Only used with Failed status.
     /// </summary>
     /// <value>List of reasons for a message receipt that indicates the message has failed. Only used with Failed status.</value>
-    [DataMember(Name = "reasons", EmitDefaultValue = false)]
+    [JsonPropertyName("reasons")]
     public List<ConversationReason> Reasons { get; private set; }
 
 
@@ -284,7 +284,7 @@ public partial class ConversationNormalizedMessage : IEquatable<ConversationNorm
     /// Indicates if this is the last message receipt for this message, or if another message receipt can be expected.
     /// </summary>
     /// <value>Indicates if this is the last message receipt for this message, or if another message receipt can be expected.</value>
-    [DataMember(Name = "isFinalReceipt", EmitDefaultValue = false)]
+    [JsonPropertyName("isFinalReceipt")]
     public bool? IsFinalReceipt { get; private set; }
 
 
@@ -295,7 +295,7 @@ public partial class ConversationNormalizedMessage : IEquatable<ConversationNorm
     /// Additional metadata about this message.
     /// </summary>
     /// <value>Additional metadata about this message.</value>
-    [DataMember(Name = "metadata", EmitDefaultValue = false)]
+    [JsonPropertyName("metadata")]
     public Dictionary<string, string> Metadata { get; set; }
 
 
@@ -304,7 +304,7 @@ public partial class ConversationNormalizedMessage : IEquatable<ConversationNorm
     /// The internal id representing the customer supplied sms integration message.
     /// </summary>
     /// <value>The internal id representing the customer supplied sms integration message.</value>
-    [DataMember(Name = "byoSmsIntegrationId", EmitDefaultValue = false)]
+    [JsonPropertyName("byoSmsIntegrationId")]
     public string ByoSmsIntegrationId { get; set; }
 
 

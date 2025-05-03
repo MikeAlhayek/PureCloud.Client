@@ -7,14 +7,14 @@ namespace PureCloud.Client.Models;
 /// <summary>
 /// ExternalSegment
 /// </summary>
-[DataContract]
+
 public partial class ExternalSegment : IEquatable<ExternalSegment>
 {
     /// <summary>
     /// The external system where the segment originates from.
     /// </summary>
     /// <value>The external system where the segment originates from.</value>
-    [JsonConverter(typeof(JsonStringEnumConverter))]
+    
     public enum SourceEnum
     {
         /// <summary>
@@ -41,7 +41,7 @@ public partial class ExternalSegment : IEquatable<ExternalSegment>
     /// The external system where the segment originates from.
     /// </summary>
     /// <value>The external system where the segment originates from.</value>
-    [DataMember(Name = "source", EmitDefaultValue = false)]
+    [JsonPropertyName("source")]
     public SourceEnum? Source { get; set; }
 
     /// <summary>
@@ -69,7 +69,7 @@ public partial class ExternalSegment : IEquatable<ExternalSegment>
     /// Identifier for the external segment in the system where it originates from.
     /// </summary>
     /// <value>Identifier for the external segment in the system where it originates from.</value>
-    [DataMember(Name = "id", EmitDefaultValue = false)]
+    [JsonPropertyName("id")]
     public string Id { get; set; }
 
 
@@ -78,7 +78,7 @@ public partial class ExternalSegment : IEquatable<ExternalSegment>
     /// Name for the external segment in the system where it originates from.
     /// </summary>
     /// <value>Name for the external segment in the system where it originates from.</value>
-    [DataMember(Name = "name", EmitDefaultValue = false)]
+    [JsonPropertyName("name")]
     public string Name { get; set; }
 
 

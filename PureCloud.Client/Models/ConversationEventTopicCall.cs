@@ -7,13 +7,13 @@ namespace PureCloud.Client.Models;
 /// <summary>
 /// ConversationEventTopicCall
 /// </summary>
-[DataContract]
+
 public partial class ConversationEventTopicCall : IEquatable<ConversationEventTopicCall>
 {
     /// <summary>
     /// Gets or Sets State
     /// </summary>
-    [JsonConverter(typeof(JsonStringEnumConverter))]
+    
     public enum StateEnum
     {
         /// <summary>
@@ -93,7 +93,7 @@ public partial class ConversationEventTopicCall : IEquatable<ConversationEventTo
     /// <summary>
     /// Gets or Sets InitialState
     /// </summary>
-    [JsonConverter(typeof(JsonStringEnumConverter))]
+    
     public enum InitialStateEnum
     {
         /// <summary>
@@ -174,7 +174,7 @@ public partial class ConversationEventTopicCall : IEquatable<ConversationEventTo
     /// State of recording on this call.
     /// </summary>
     /// <value>State of recording on this call.</value>
-    [JsonConverter(typeof(JsonStringEnumConverter))]
+    
     public enum RecordingStateEnum
     {
         /// <summary>
@@ -207,7 +207,7 @@ public partial class ConversationEventTopicCall : IEquatable<ConversationEventTo
     /// System defined string indicating what caused the communication to disconnect. Will be null until the communication disconnects.
     /// </summary>
     /// <value>System defined string indicating what caused the communication to disconnect. Will be null until the communication disconnects.</value>
-    [JsonConverter(typeof(JsonStringEnumConverter))]
+    
     public enum DisconnectTypeEnum
     {
         /// <summary>
@@ -330,7 +330,7 @@ public partial class ConversationEventTopicCall : IEquatable<ConversationEventTo
     /// Whether a call is inbound or outbound.
     /// </summary>
     /// <value>Whether a call is inbound or outbound.</value>
-    [JsonConverter(typeof(JsonStringEnumConverter))]
+    
     public enum DirectionEnum
     {
         /// <summary>
@@ -356,30 +356,30 @@ public partial class ConversationEventTopicCall : IEquatable<ConversationEventTo
     /// <summary>
     /// Gets or Sets State
     /// </summary>
-    [DataMember(Name = "state", EmitDefaultValue = false)]
+    [JsonPropertyName("state")]
     public StateEnum? State { get; set; }
     /// <summary>
     /// Gets or Sets InitialState
     /// </summary>
-    [DataMember(Name = "initialState", EmitDefaultValue = false)]
+    [JsonPropertyName("initialState")]
     public InitialStateEnum? InitialState { get; set; }
     /// <summary>
     /// State of recording on this call.
     /// </summary>
     /// <value>State of recording on this call.</value>
-    [DataMember(Name = "recordingState", EmitDefaultValue = false)]
+    [JsonPropertyName("recordingState")]
     public RecordingStateEnum? RecordingState { get; set; }
     /// <summary>
     /// System defined string indicating what caused the communication to disconnect. Will be null until the communication disconnects.
     /// </summary>
     /// <value>System defined string indicating what caused the communication to disconnect. Will be null until the communication disconnects.</value>
-    [DataMember(Name = "disconnectType", EmitDefaultValue = false)]
+    [JsonPropertyName("disconnectType")]
     public DisconnectTypeEnum? DisconnectType { get; set; }
     /// <summary>
     /// Whether a call is inbound or outbound.
     /// </summary>
     /// <value>Whether a call is inbound or outbound.</value>
-    [DataMember(Name = "direction", EmitDefaultValue = false)]
+    [JsonPropertyName("direction")]
     public DirectionEnum? Direction { get; set; }
     /// <summary>
     /// Initializes a new instance of the <see cref="ConversationEventTopicCall" /> class.
@@ -455,7 +455,7 @@ public partial class ConversationEventTopicCall : IEquatable<ConversationEventTo
     /// A globally unique identifier for this communication.
     /// </summary>
     /// <value>A globally unique identifier for this communication.</value>
-    [DataMember(Name = "id", EmitDefaultValue = false)]
+    [JsonPropertyName("id")]
     public string Id { get; set; }
 
 
@@ -468,7 +468,7 @@ public partial class ConversationEventTopicCall : IEquatable<ConversationEventTo
     /// True if this call is being recorded.
     /// </summary>
     /// <value>True if this call is being recorded.</value>
-    [DataMember(Name = "recording", EmitDefaultValue = false)]
+    [JsonPropertyName("recording")]
     public bool? Recording { get; set; }
 
 
@@ -479,7 +479,7 @@ public partial class ConversationEventTopicCall : IEquatable<ConversationEventTo
     /// True if this call is muted so that remote participants can&#39;t hear any audio from this end.
     /// </summary>
     /// <value>True if this call is muted so that remote participants can&#39;t hear any audio from this end.</value>
-    [DataMember(Name = "muted", EmitDefaultValue = false)]
+    [JsonPropertyName("muted")]
     public bool? Muted { get; set; }
 
 
@@ -488,7 +488,7 @@ public partial class ConversationEventTopicCall : IEquatable<ConversationEventTo
     /// True if this call is held and the person on this side hears hold music.
     /// </summary>
     /// <value>True if this call is held and the person on this side hears hold music.</value>
-    [DataMember(Name = "confined", EmitDefaultValue = false)]
+    [JsonPropertyName("confined")]
     public bool? Confined { get; set; }
 
 
@@ -497,7 +497,7 @@ public partial class ConversationEventTopicCall : IEquatable<ConversationEventTo
     /// True if this call is held and the person on this side hears silence.
     /// </summary>
     /// <value>True if this call is held and the person on this side hears silence.</value>
-    [DataMember(Name = "held", EmitDefaultValue = false)]
+    [JsonPropertyName("held")]
     public bool? Held { get; set; }
 
 
@@ -506,7 +506,7 @@ public partial class ConversationEventTopicCall : IEquatable<ConversationEventTo
     /// True when the recording of this call is in secure pause status.
     /// </summary>
     /// <value>True when the recording of this call is in secure pause status.</value>
-    [DataMember(Name = "securePause", EmitDefaultValue = false)]
+    [JsonPropertyName("securePause")]
     public bool? SecurePause { get; set; }
 
 
@@ -514,7 +514,7 @@ public partial class ConversationEventTopicCall : IEquatable<ConversationEventTo
     /// <summary>
     /// Gets or Sets ErrorInfo
     /// </summary>
-    [DataMember(Name = "errorInfo", EmitDefaultValue = false)]
+    [JsonPropertyName("errorInfo")]
     public ConversationEventTopicErrorDetails ErrorInfo { get; set; }
 
 
@@ -525,7 +525,7 @@ public partial class ConversationEventTopicCall : IEquatable<ConversationEventTo
     /// The timestamp the call was placed on hold in the cloud clock if the call is currently on hold.
     /// </summary>
     /// <value>The timestamp the call was placed on hold in the cloud clock if the call is currently on hold.</value>
-    [DataMember(Name = "startHoldTime", EmitDefaultValue = false)]
+    [JsonPropertyName("startHoldTime")]
     public DateTime? StartHoldTime { get; set; }
 
 
@@ -536,7 +536,7 @@ public partial class ConversationEventTopicCall : IEquatable<ConversationEventTo
     /// If call is a fax of a document in content management, the id of the document in content management.
     /// </summary>
     /// <value>If call is a fax of a document in content management, the id of the document in content management.</value>
-    [DataMember(Name = "documentId", EmitDefaultValue = false)]
+    [JsonPropertyName("documentId")]
     public string DocumentId { get; set; }
 
 
@@ -544,7 +544,7 @@ public partial class ConversationEventTopicCall : IEquatable<ConversationEventTo
     /// <summary>
     /// Gets or Sets Self
     /// </summary>
-    [DataMember(Name = "self", EmitDefaultValue = false)]
+    [JsonPropertyName("self")]
     public ConversationEventTopicAddress Self { get; set; }
 
 
@@ -553,7 +553,7 @@ public partial class ConversationEventTopicCall : IEquatable<ConversationEventTo
     /// Address and name data for a call endpoint.
     /// </summary>
     /// <value>Address and name data for a call endpoint.</value>
-    [DataMember(Name = "other", EmitDefaultValue = false)]
+    [JsonPropertyName("other")]
     public ConversationEventTopicAddress Other { get; set; }
 
 
@@ -562,7 +562,7 @@ public partial class ConversationEventTopicCall : IEquatable<ConversationEventTo
     /// The source provider of the call.
     /// </summary>
     /// <value>The source provider of the call.</value>
-    [DataMember(Name = "provider", EmitDefaultValue = false)]
+    [JsonPropertyName("provider")]
     public string Provider { get; set; }
 
 
@@ -571,7 +571,7 @@ public partial class ConversationEventTopicCall : IEquatable<ConversationEventTo
     /// The UUID of the script to use.
     /// </summary>
     /// <value>The UUID of the script to use.</value>
-    [DataMember(Name = "scriptId", EmitDefaultValue = false)]
+    [JsonPropertyName("scriptId")]
     public string ScriptId { get; set; }
 
 
@@ -580,7 +580,7 @@ public partial class ConversationEventTopicCall : IEquatable<ConversationEventTo
     /// The id of the peer communication corresponding to a matching leg for this communication.
     /// </summary>
     /// <value>The id of the peer communication corresponding to a matching leg for this communication.</value>
-    [DataMember(Name = "peerId", EmitDefaultValue = false)]
+    [JsonPropertyName("peerId")]
     public string PeerId { get; set; }
 
 
@@ -589,7 +589,7 @@ public partial class ConversationEventTopicCall : IEquatable<ConversationEventTo
     /// The timestamp when this communication was connected in the cloud clock.
     /// </summary>
     /// <value>The timestamp when this communication was connected in the cloud clock.</value>
-    [DataMember(Name = "connectedTime", EmitDefaultValue = false)]
+    [JsonPropertyName("connectedTime")]
     public DateTime? ConnectedTime { get; set; }
 
 
@@ -598,7 +598,7 @@ public partial class ConversationEventTopicCall : IEquatable<ConversationEventTo
     /// The timestamp when this communication disconnected from the conversation in the provider clock.
     /// </summary>
     /// <value>The timestamp when this communication disconnected from the conversation in the provider clock.</value>
-    [DataMember(Name = "disconnectedTime", EmitDefaultValue = false)]
+    [JsonPropertyName("disconnectedTime")]
     public DateTime? DisconnectedTime { get; set; }
 
 
@@ -607,7 +607,7 @@ public partial class ConversationEventTopicCall : IEquatable<ConversationEventTo
     /// List of reasons that this call was disconnected. This will be set once the call disconnects.
     /// </summary>
     /// <value>List of reasons that this call was disconnected. This will be set once the call disconnects.</value>
-    [DataMember(Name = "disconnectReasons", EmitDefaultValue = false)]
+    [JsonPropertyName("disconnectReasons")]
     public List<ConversationEventTopicDisconnectReason> DisconnectReasons { get; set; }
 
 
@@ -615,7 +615,7 @@ public partial class ConversationEventTopicCall : IEquatable<ConversationEventTo
     /// <summary>
     /// Gets or Sets FaxStatus
     /// </summary>
-    [DataMember(Name = "faxStatus", EmitDefaultValue = false)]
+    [JsonPropertyName("faxStatus")]
     public ConversationEventTopicFaxStatus FaxStatus { get; set; }
 
 
@@ -624,7 +624,7 @@ public partial class ConversationEventTopicCall : IEquatable<ConversationEventTo
     /// User to User Information (UUI) data managed by SIP session application.
     /// </summary>
     /// <value>User to User Information (UUI) data managed by SIP session application.</value>
-    [DataMember(Name = "uuiData", EmitDefaultValue = false)]
+    [JsonPropertyName("uuiData")]
     public string UuiData { get; set; }
 
 
@@ -633,7 +633,7 @@ public partial class ConversationEventTopicCall : IEquatable<ConversationEventTo
     /// The timestamp when this participant was connected to the barge conference in the provider clock.
     /// </summary>
     /// <value>The timestamp when this participant was connected to the barge conference in the provider clock.</value>
-    [DataMember(Name = "bargedTime", EmitDefaultValue = false)]
+    [JsonPropertyName("bargedTime")]
     public DateTime? BargedTime { get; set; }
 
 
@@ -642,7 +642,7 @@ public partial class ConversationEventTopicCall : IEquatable<ConversationEventTo
     /// Call wrap up or disposition data.
     /// </summary>
     /// <value>Call wrap up or disposition data.</value>
-    [DataMember(Name = "wrapup", EmitDefaultValue = false)]
+    [JsonPropertyName("wrapup")]
     public ConversationEventTopicWrapup Wrapup { get; set; }
 
 
@@ -650,7 +650,7 @@ public partial class ConversationEventTopicCall : IEquatable<ConversationEventTo
     /// <summary>
     /// Gets or Sets AfterCallWork
     /// </summary>
-    [DataMember(Name = "afterCallWork", EmitDefaultValue = false)]
+    [JsonPropertyName("afterCallWork")]
     public ConversationEventTopicAfterCallWork AfterCallWork { get; set; }
 
 
@@ -659,7 +659,7 @@ public partial class ConversationEventTopicCall : IEquatable<ConversationEventTo
     /// Indicates if after-call is required for a communication. Only used when the ACW Setting is Agent Requested.
     /// </summary>
     /// <value>Indicates if after-call is required for a communication. Only used when the ACW Setting is Agent Requested.</value>
-    [DataMember(Name = "afterCallWorkRequired", EmitDefaultValue = false)]
+    [JsonPropertyName("afterCallWorkRequired")]
     public bool? AfterCallWorkRequired { get; set; }
 
 
@@ -668,7 +668,7 @@ public partial class ConversationEventTopicCall : IEquatable<ConversationEventTo
     /// UUID of virtual agent assistant that provide suggestions to the agent participant during the conversation.
     /// </summary>
     /// <value>UUID of virtual agent assistant that provide suggestions to the agent participant during the conversation.</value>
-    [DataMember(Name = "agentAssistantId", EmitDefaultValue = false)]
+    [JsonPropertyName("agentAssistantId")]
     public string AgentAssistantId { get; set; }
 
 
@@ -676,7 +676,7 @@ public partial class ConversationEventTopicCall : IEquatable<ConversationEventTo
     /// <summary>
     /// Gets or Sets QueueMediaSettings
     /// </summary>
-    [DataMember(Name = "queueMediaSettings", EmitDefaultValue = false)]
+    [JsonPropertyName("queueMediaSettings")]
     public ConversationEventTopicQueueMediaSettings QueueMediaSettings { get; set; }
 
 

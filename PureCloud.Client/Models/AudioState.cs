@@ -1,12 +1,12 @@
-using System.Runtime.Serialization;
 using System.Text;
+using System.Text.Json.Serialization;
 
 namespace PureCloud.Client.Models;
 
 /// <summary>
 /// AudioState
 /// </summary>
-[DataContract]
+
 public partial class AudioState : IEquatable<AudioState>
 {
     /// <summary>
@@ -27,7 +27,7 @@ public partial class AudioState : IEquatable<AudioState>
     /// Indicates that this communication&#39;s audio allows its participant to hear others.
     /// </summary>
     /// <value>Indicates that this communication&#39;s audio allows its participant to hear others.</value>
-    [DataMember(Name = "canHear", EmitDefaultValue = false)]
+    [JsonPropertyName("canHear")]
     public bool? CanHear { get; set; }
 
 
@@ -36,7 +36,7 @@ public partial class AudioState : IEquatable<AudioState>
     /// Indicates that this communication&#39;s audio allows others to hear this participant.
     /// </summary>
     /// <value>Indicates that this communication&#39;s audio allows others to hear this participant.</value>
-    [DataMember(Name = "canSpeak", EmitDefaultValue = false)]
+    [JsonPropertyName("canSpeak")]
     public bool? CanSpeak { get; set; }
 
 

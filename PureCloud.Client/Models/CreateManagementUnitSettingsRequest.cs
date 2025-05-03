@@ -1,12 +1,12 @@
-using System.Runtime.Serialization;
 using System.Text;
+using System.Text.Json.Serialization;
 
 namespace PureCloud.Client.Models;
 
 /// <summary>
 /// CreateManagementUnitSettingsRequest
 /// </summary>
-[DataContract]
+
 public partial class CreateManagementUnitSettingsRequest : IEquatable<CreateManagementUnitSettingsRequest>
 {
     /// <summary>
@@ -33,7 +33,7 @@ public partial class CreateManagementUnitSettingsRequest : IEquatable<CreateMana
     /// Adherence settings for this management unit
     /// </summary>
     /// <value>Adherence settings for this management unit</value>
-    [DataMember(Name = "adherence", EmitDefaultValue = false)]
+    [JsonPropertyName("adherence")]
     public AdherenceSettings Adherence { get; set; }
 
 
@@ -42,7 +42,7 @@ public partial class CreateManagementUnitSettingsRequest : IEquatable<CreateMana
     /// Short term forecasting settings for this management unit.  Moving to Business Unit
     /// </summary>
     /// <value>Short term forecasting settings for this management unit.  Moving to Business Unit</value>
-    [DataMember(Name = "shortTermForecasting", EmitDefaultValue = false)]
+    [JsonPropertyName("shortTermForecasting")]
     public ShortTermForecastingSettings ShortTermForecasting { get; set; }
 
 
@@ -51,7 +51,7 @@ public partial class CreateManagementUnitSettingsRequest : IEquatable<CreateMana
     /// Time off request settings for this management unit
     /// </summary>
     /// <value>Time off request settings for this management unit</value>
-    [DataMember(Name = "timeOff", EmitDefaultValue = false)]
+    [JsonPropertyName("timeOff")]
     public TimeOffSettingsRequest TimeOff { get; set; }
 
 
@@ -60,7 +60,7 @@ public partial class CreateManagementUnitSettingsRequest : IEquatable<CreateMana
     /// Scheduling settings for this management unit
     /// </summary>
     /// <value>Scheduling settings for this management unit</value>
-    [DataMember(Name = "scheduling", EmitDefaultValue = false)]
+    [JsonPropertyName("scheduling")]
     public SchedulingSettingsRequest Scheduling { get; set; }
 
 
@@ -69,7 +69,7 @@ public partial class CreateManagementUnitSettingsRequest : IEquatable<CreateMana
     /// Shift trade settings for this management unit
     /// </summary>
     /// <value>Shift trade settings for this management unit</value>
-    [DataMember(Name = "shiftTrading", EmitDefaultValue = false)]
+    [JsonPropertyName("shiftTrading")]
     public ShiftTradeSettings ShiftTrading { get; set; }
 
 

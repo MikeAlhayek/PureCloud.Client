@@ -1,12 +1,12 @@
-using System.Runtime.Serialization;
 using System.Text;
+using System.Text.Json.Serialization;
 
 namespace PureCloud.Client.Models;
 
 /// <summary>
 /// EventDefinition
 /// </summary>
-[DataContract]
+
 public partial class EventDefinition : IEquatable<EventDefinition>
 {
     /// <summary>
@@ -23,7 +23,7 @@ public partial class EventDefinition : IEquatable<EventDefinition>
     /// The globally unique identifier for the object.
     /// </summary>
     /// <value>The globally unique identifier for the object.</value>
-    [DataMember(Name = "id", EmitDefaultValue = false)]
+    [JsonPropertyName("id")]
     public string Id { get; private set; }
 
 
@@ -32,7 +32,7 @@ public partial class EventDefinition : IEquatable<EventDefinition>
     /// The name of the object.
     /// </summary>
     /// <value>The name of the object.</value>
-    [DataMember(Name = "name", EmitDefaultValue = false)]
+    [JsonPropertyName("name")]
     public string Name { get; private set; }
 
 
@@ -41,7 +41,7 @@ public partial class EventDefinition : IEquatable<EventDefinition>
     /// description
     /// </summary>
     /// <value>description</value>
-    [DataMember(Name = "description", EmitDefaultValue = false)]
+    [JsonPropertyName("description")]
     public string Description { get; private set; }
 
 

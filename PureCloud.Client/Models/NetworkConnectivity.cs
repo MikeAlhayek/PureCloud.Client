@@ -1,4 +1,3 @@
-using System.Runtime.Serialization;
 using System.Text;
 using System.Text.Json.Serialization;
 
@@ -7,7 +6,7 @@ namespace PureCloud.Client.Models;
 /// <summary>
 /// NetworkConnectivity
 /// </summary>
-[DataContract]
+
 public partial class NetworkConnectivity : IEquatable<NetworkConnectivity>
 {
 
@@ -38,7 +37,7 @@ public partial class NetworkConnectivity : IEquatable<NetworkConnectivity>
     /// The name of the network carrier.
     /// </summary>
     /// <value>The name of the network carrier.</value>
-    [DataMember(Name = "carrier", EmitDefaultValue = false)]
+    [JsonPropertyName("carrier")]
     public string Carrier { get; set; }
 
 
@@ -47,7 +46,7 @@ public partial class NetworkConnectivity : IEquatable<NetworkConnectivity>
     /// Whether Bluetooth is enabled.
     /// </summary>
     /// <value>Whether Bluetooth is enabled.</value>
-    [DataMember(Name = "bluetoothEnabled", EmitDefaultValue = false)]
+    [JsonPropertyName("bluetoothEnabled")]
     public bool? BluetoothEnabled { get; set; }
 
 
@@ -56,7 +55,7 @@ public partial class NetworkConnectivity : IEquatable<NetworkConnectivity>
     /// Whether Cellular is enabled.
     /// </summary>
     /// <value>Whether Cellular is enabled.</value>
-    [DataMember(Name = "cellularEnabled", EmitDefaultValue = false)]
+    [JsonPropertyName("cellularEnabled")]
     public bool? CellularEnabled { get; set; }
 
 
@@ -65,7 +64,7 @@ public partial class NetworkConnectivity : IEquatable<NetworkConnectivity>
     /// Whether Wi-Fi is enabled.
     /// </summary>
     /// <value>Whether Wi-Fi is enabled.</value>
-    [DataMember(Name = "wifiEnabled", EmitDefaultValue = false)]
+    [JsonPropertyName("wifiEnabled")]
     public bool? WifiEnabled { get; set; }
 
 

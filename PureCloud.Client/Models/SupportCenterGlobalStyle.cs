@@ -1,4 +1,3 @@
-using System.Runtime.Serialization;
 using System.Text;
 using System.Text.Json.Serialization;
 
@@ -7,7 +6,7 @@ namespace PureCloud.Client.Models;
 /// <summary>
 /// SupportCenterGlobalStyle
 /// </summary>
-[DataContract]
+
 public partial class SupportCenterGlobalStyle : IEquatable<SupportCenterGlobalStyle>
 {
 
@@ -42,7 +41,7 @@ public partial class SupportCenterGlobalStyle : IEquatable<SupportCenterGlobalSt
     /// Global background color, in hexadecimal format, eg #ffffff
     /// </summary>
     /// <value>Global background color, in hexadecimal format, eg #ffffff</value>
-    [DataMember(Name = "backgroundColor", EmitDefaultValue = false)]
+    [JsonPropertyName("backgroundColor")]
     public string BackgroundColor { get; set; }
 
 
@@ -51,7 +50,7 @@ public partial class SupportCenterGlobalStyle : IEquatable<SupportCenterGlobalSt
     /// Global primary color, in hexadecimal format, eg #ffffff
     /// </summary>
     /// <value>Global primary color, in hexadecimal format, eg #ffffff</value>
-    [DataMember(Name = "primaryColor", EmitDefaultValue = false)]
+    [JsonPropertyName("primaryColor")]
     public string PrimaryColor { get; set; }
 
 
@@ -60,7 +59,7 @@ public partial class SupportCenterGlobalStyle : IEquatable<SupportCenterGlobalSt
     /// Global dark primary color, in hexadecimal format, eg #ffffff
     /// </summary>
     /// <value>Global dark primary color, in hexadecimal format, eg #ffffff</value>
-    [DataMember(Name = "primaryColorDark", EmitDefaultValue = false)]
+    [JsonPropertyName("primaryColorDark")]
     public string PrimaryColorDark { get; set; }
 
 
@@ -69,7 +68,7 @@ public partial class SupportCenterGlobalStyle : IEquatable<SupportCenterGlobalSt
     /// Global light primary color, in hexadecimal format, eg #ffffff
     /// </summary>
     /// <value>Global light primary color, in hexadecimal format, eg #ffffff</value>
-    [DataMember(Name = "primaryColorLight", EmitDefaultValue = false)]
+    [JsonPropertyName("primaryColorLight")]
     public string PrimaryColorLight { get; set; }
 
 
@@ -78,7 +77,7 @@ public partial class SupportCenterGlobalStyle : IEquatable<SupportCenterGlobalSt
     /// Global text color, in hexadecimal format, eg #ffffff
     /// </summary>
     /// <value>Global text color, in hexadecimal format, eg #ffffff</value>
-    [DataMember(Name = "textColor", EmitDefaultValue = false)]
+    [JsonPropertyName("textColor")]
     public string TextColor { get; set; }
 
 
@@ -87,7 +86,7 @@ public partial class SupportCenterGlobalStyle : IEquatable<SupportCenterGlobalSt
     /// Global font family
     /// </summary>
     /// <value>Global font family</value>
-    [DataMember(Name = "fontFamily", EmitDefaultValue = false)]
+    [JsonPropertyName("fontFamily")]
     public string FontFamily { get; set; }
 
 

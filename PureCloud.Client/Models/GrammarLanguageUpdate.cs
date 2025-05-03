@@ -1,12 +1,12 @@
-using System.Runtime.Serialization;
 using System.Text;
+using System.Text.Json.Serialization;
 
 namespace PureCloud.Client.Models;
 
 /// <summary>
 /// GrammarLanguageUpdate
 /// </summary>
-[DataContract]
+
 public partial class GrammarLanguageUpdate : IEquatable<GrammarLanguageUpdate>
 {
     /// <summary>
@@ -27,7 +27,7 @@ public partial class GrammarLanguageUpdate : IEquatable<GrammarLanguageUpdate>
     /// Additional information about the associated voice file
     /// </summary>
     /// <value>Additional information about the associated voice file</value>
-    [DataMember(Name = "voiceFileMetadata", EmitDefaultValue = false)]
+    [JsonPropertyName("voiceFileMetadata")]
     public GrammarLanguageFileMetadata VoiceFileMetadata { get; set; }
 
 
@@ -36,7 +36,7 @@ public partial class GrammarLanguageUpdate : IEquatable<GrammarLanguageUpdate>
     /// Additional information about the associated dtmf file
     /// </summary>
     /// <value>Additional information about the associated dtmf file</value>
-    [DataMember(Name = "dtmfFileMetadata", EmitDefaultValue = false)]
+    [JsonPropertyName("dtmfFileMetadata")]
     public GrammarLanguageFileMetadata DtmfFileMetadata { get; set; }
 
 

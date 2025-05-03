@@ -1,12 +1,12 @@
-using System.Runtime.Serialization;
 using System.Text;
+using System.Text.Json.Serialization;
 
 namespace PureCloud.Client.Models;
 
 /// <summary>
 /// EmailThreadingSettings
 /// </summary>
-[DataContract]
+
 public partial class EmailThreadingSettings : IEquatable<EmailThreadingSettings>
 {
     /// <summary>
@@ -27,7 +27,7 @@ public partial class EmailThreadingSettings : IEquatable<EmailThreadingSettings>
     /// This setting controls whether a new conversation is started if the subject of an inbound email is different from the subject of the current conversation. RE: and FWD: prefixes in any language are ignored.
     /// </summary>
     /// <value>This setting controls whether a new conversation is started if the subject of an inbound email is different from the subject of the current conversation. RE: and FWD: prefixes in any language are ignored.</value>
-    [DataMember(Name = "startNewConversationOnSubjectChange", EmitDefaultValue = false)]
+    [JsonPropertyName("startNewConversationOnSubjectChange")]
     public bool? StartNewConversationOnSubjectChange { get; set; }
 
 
@@ -36,7 +36,7 @@ public partial class EmailThreadingSettings : IEquatable<EmailThreadingSettings>
     /// In minutes, how long an email conversation should keep being threaded after being disconnected.
     /// </summary>
     /// <value>In minutes, how long an email conversation should keep being threaded after being disconnected.</value>
-    [DataMember(Name = "timeoutInMinutes", EmitDefaultValue = false)]
+    [JsonPropertyName("timeoutInMinutes")]
     public long? TimeoutInMinutes { get; set; }
 
 

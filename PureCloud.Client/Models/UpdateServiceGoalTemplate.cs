@@ -1,4 +1,3 @@
-using System.Runtime.Serialization;
 using System.Text;
 using System.Text.Json.Serialization;
 
@@ -7,7 +6,7 @@ namespace PureCloud.Client.Models;
 /// <summary>
 /// UpdateServiceGoalTemplate
 /// </summary>
-[DataContract]
+
 public partial class UpdateServiceGoalTemplate : IEquatable<UpdateServiceGoalTemplate>
 {
 
@@ -42,7 +41,7 @@ public partial class UpdateServiceGoalTemplate : IEquatable<UpdateServiceGoalTem
     /// The name of the service goal template.
     /// </summary>
     /// <value>The name of the service goal template.</value>
-    [DataMember(Name = "name", EmitDefaultValue = false)]
+    [JsonPropertyName("name")]
     public string Name { get; set; }
 
 
@@ -51,7 +50,7 @@ public partial class UpdateServiceGoalTemplate : IEquatable<UpdateServiceGoalTem
     /// Service level targets for this service goal template
     /// </summary>
     /// <value>Service level targets for this service goal template</value>
-    [DataMember(Name = "serviceLevel", EmitDefaultValue = false)]
+    [JsonPropertyName("serviceLevel")]
     public BuServiceLevel ServiceLevel { get; set; }
 
 
@@ -60,7 +59,7 @@ public partial class UpdateServiceGoalTemplate : IEquatable<UpdateServiceGoalTem
     /// Average speed of answer targets for this service goal template
     /// </summary>
     /// <value>Average speed of answer targets for this service goal template</value>
-    [DataMember(Name = "averageSpeedOfAnswer", EmitDefaultValue = false)]
+    [JsonPropertyName("averageSpeedOfAnswer")]
     public BuAverageSpeedOfAnswer AverageSpeedOfAnswer { get; set; }
 
 
@@ -69,7 +68,7 @@ public partial class UpdateServiceGoalTemplate : IEquatable<UpdateServiceGoalTem
     /// Abandon rate targets for this service goal template
     /// </summary>
     /// <value>Abandon rate targets for this service goal template</value>
-    [DataMember(Name = "abandonRate", EmitDefaultValue = false)]
+    [JsonPropertyName("abandonRate")]
     public BuAbandonRate AbandonRate { get; set; }
 
 
@@ -78,7 +77,7 @@ public partial class UpdateServiceGoalTemplate : IEquatable<UpdateServiceGoalTem
     /// Version metadata for the service goal template
     /// </summary>
     /// <value>Version metadata for the service goal template</value>
-    [DataMember(Name = "metadata", EmitDefaultValue = false)]
+    [JsonPropertyName("metadata")]
     public WfmVersionedEntityMetadata Metadata { get; set; }
 
 
@@ -87,7 +86,7 @@ public partial class UpdateServiceGoalTemplate : IEquatable<UpdateServiceGoalTem
     /// Settings controlling max percent increase and decrease of service goals for this service goal template
     /// </summary>
     /// <value>Settings controlling max percent increase and decrease of service goals for this service goal template</value>
-    [DataMember(Name = "impactOverride", EmitDefaultValue = false)]
+    [JsonPropertyName("impactOverride")]
     public ServiceGoalTemplateImpactOverride ImpactOverride { get; set; }
 
 

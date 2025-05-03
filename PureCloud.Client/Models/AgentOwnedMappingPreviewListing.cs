@@ -1,12 +1,12 @@
-using System.Runtime.Serialization;
 using System.Text;
+using System.Text.Json.Serialization;
 
 namespace PureCloud.Client.Models;
 
 /// <summary>
 /// AgentOwnedMappingPreviewListing
 /// </summary>
-[DataContract]
+
 public partial class AgentOwnedMappingPreviewListing : IEquatable<AgentOwnedMappingPreviewListing>
 {
     /// <summary>
@@ -24,7 +24,7 @@ public partial class AgentOwnedMappingPreviewListing : IEquatable<AgentOwnedMapp
     /// <summary>
     /// Gets or Sets Entities
     /// </summary>
-    [DataMember(Name = "entities", EmitDefaultValue = false)]
+    [JsonPropertyName("entities")]
     public List<AgentOwnedMappingPreview> Entities { get; set; }
 
 

@@ -7,14 +7,14 @@ namespace PureCloud.Client.Models;
 /// <summary>
 /// AsyncIntradayResponse
 /// </summary>
-[DataContract]
+
 public partial class AsyncIntradayResponse : IEquatable<AsyncIntradayResponse>
 {
     /// <summary>
     /// The status of the operation
     /// </summary>
     /// <value>The status of the operation</value>
-    [JsonConverter(typeof(JsonStringEnumConverter))]
+    
     public enum StatusEnum
     {
         /// <summary>
@@ -53,7 +53,7 @@ public partial class AsyncIntradayResponse : IEquatable<AsyncIntradayResponse>
     /// The status of the operation
     /// </summary>
     /// <value>The status of the operation</value>
-    [DataMember(Name = "status", EmitDefaultValue = false)]
+    [JsonPropertyName("status")]
     public StatusEnum? Status { get; set; }
     /// <summary>
     /// Initializes a new instance of the <see cref="AsyncIntradayResponse" /> class.
@@ -77,7 +77,7 @@ public partial class AsyncIntradayResponse : IEquatable<AsyncIntradayResponse>
     /// The ID for the operation
     /// </summary>
     /// <value>The ID for the operation</value>
-    [DataMember(Name = "operationId", EmitDefaultValue = false)]
+    [JsonPropertyName("operationId")]
     public string OperationId { get; set; }
 
 
@@ -86,7 +86,7 @@ public partial class AsyncIntradayResponse : IEquatable<AsyncIntradayResponse>
     /// The result of the operation.  Null unless status &#x3D;&#x3D; Complete
     /// </summary>
     /// <value>The result of the operation.  Null unless status &#x3D;&#x3D; Complete</value>
-    [DataMember(Name = "result", EmitDefaultValue = false)]
+    [JsonPropertyName("result")]
     public BuIntradayResponse Result { get; set; }
 
 

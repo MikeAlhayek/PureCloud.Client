@@ -1,12 +1,12 @@
-using System.Runtime.Serialization;
 using System.Text;
+using System.Text.Json.Serialization;
 
 namespace PureCloud.Client.Models;
 
 /// <summary>
 /// DocumentThumbnail
 /// </summary>
-[DataContract]
+
 public partial class DocumentThumbnail : IEquatable<DocumentThumbnail>
 {
     /// <summary>
@@ -30,7 +30,7 @@ public partial class DocumentThumbnail : IEquatable<DocumentThumbnail>
     /// <summary>
     /// Gets or Sets Resolution
     /// </summary>
-    [DataMember(Name = "resolution", EmitDefaultValue = false)]
+    [JsonPropertyName("resolution")]
     public string Resolution { get; set; }
 
 
@@ -38,7 +38,7 @@ public partial class DocumentThumbnail : IEquatable<DocumentThumbnail>
     /// <summary>
     /// Gets or Sets ImageUri
     /// </summary>
-    [DataMember(Name = "imageUri", EmitDefaultValue = false)]
+    [JsonPropertyName("imageUri")]
     public string ImageUri { get; set; }
 
 
@@ -46,7 +46,7 @@ public partial class DocumentThumbnail : IEquatable<DocumentThumbnail>
     /// <summary>
     /// Gets or Sets Height
     /// </summary>
-    [DataMember(Name = "height", EmitDefaultValue = false)]
+    [JsonPropertyName("height")]
     public int? Height { get; set; }
 
 
@@ -54,7 +54,7 @@ public partial class DocumentThumbnail : IEquatable<DocumentThumbnail>
     /// <summary>
     /// Gets or Sets Width
     /// </summary>
-    [DataMember(Name = "width", EmitDefaultValue = false)]
+    [JsonPropertyName("width")]
     public int? Width { get; set; }
 
 

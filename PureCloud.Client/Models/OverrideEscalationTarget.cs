@@ -1,4 +1,3 @@
-using System.Runtime.Serialization;
 using System.Text;
 using System.Text.Json.Serialization;
 
@@ -7,7 +6,7 @@ namespace PureCloud.Client.Models;
 /// <summary>
 /// OverrideEscalationTarget
 /// </summary>
-[DataContract]
+
 public partial class OverrideEscalationTarget : IEquatable<OverrideEscalationTarget>
 {
 
@@ -32,7 +31,7 @@ public partial class OverrideEscalationTarget : IEquatable<OverrideEscalationTar
     /// The ID of the integration.
     /// </summary>
     /// <value>The ID of the integration.</value>
-    [DataMember(Name = "integrationId", EmitDefaultValue = false)]
+    [JsonPropertyName("integrationId")]
     public string IntegrationId { get; set; }
 
 

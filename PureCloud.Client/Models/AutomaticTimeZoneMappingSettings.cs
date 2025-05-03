@@ -1,12 +1,12 @@
-using System.Runtime.Serialization;
 using System.Text;
+using System.Text.Json.Serialization;
 
 namespace PureCloud.Client.Models;
 
 /// <summary>
 /// AutomaticTimeZoneMappingSettings
 /// </summary>
-[DataContract]
+
 public partial class AutomaticTimeZoneMappingSettings : IEquatable<AutomaticTimeZoneMappingSettings>
 {
     /// <summary>
@@ -27,7 +27,7 @@ public partial class AutomaticTimeZoneMappingSettings : IEquatable<AutomaticTime
     /// The time intervals to use for automatic time zone mapping.
     /// </summary>
     /// <value>The time intervals to use for automatic time zone mapping.</value>
-    [DataMember(Name = "callableWindows", EmitDefaultValue = false)]
+    [JsonPropertyName("callableWindows")]
     public List<CallableWindow> CallableWindows { get; set; }
 
 
@@ -36,7 +36,7 @@ public partial class AutomaticTimeZoneMappingSettings : IEquatable<AutomaticTime
     /// The countries that are supported for automatic time zone mapping.
     /// </summary>
     /// <value>The countries that are supported for automatic time zone mapping.</value>
-    [DataMember(Name = "supportedCountries", EmitDefaultValue = false)]
+    [JsonPropertyName("supportedCountries")]
     public List<string> SupportedCountries { get; set; }
 
 

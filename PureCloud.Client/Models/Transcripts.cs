@@ -1,12 +1,12 @@
-using System.Runtime.Serialization;
 using System.Text;
+using System.Text.Json.Serialization;
 
 namespace PureCloud.Client.Models;
 
 /// <summary>
 /// Transcripts
 /// </summary>
-[DataContract]
+
 public partial class Transcripts : IEquatable<Transcripts>
 {
     /// <summary>
@@ -29,7 +29,7 @@ public partial class Transcripts : IEquatable<Transcripts>
     /// List of transcript contents which needs to satisfy exact match criteria
     /// </summary>
     /// <value>List of transcript contents which needs to satisfy exact match criteria</value>
-    [DataMember(Name = "exactMatch", EmitDefaultValue = false)]
+    [JsonPropertyName("exactMatch")]
     public List<string> ExactMatch { get; set; }
 
 
@@ -38,7 +38,7 @@ public partial class Transcripts : IEquatable<Transcripts>
     /// List of transcript contents which needs to satisfy contains criteria
     /// </summary>
     /// <value>List of transcript contents which needs to satisfy contains criteria</value>
-    [DataMember(Name = "contains", EmitDefaultValue = false)]
+    [JsonPropertyName("contains")]
     public List<string> Contains { get; set; }
 
 
@@ -47,7 +47,7 @@ public partial class Transcripts : IEquatable<Transcripts>
     /// List of transcript contents which needs to satisfy does not contain criteria
     /// </summary>
     /// <value>List of transcript contents which needs to satisfy does not contain criteria</value>
-    [DataMember(Name = "doesNotContain", EmitDefaultValue = false)]
+    [JsonPropertyName("doesNotContain")]
     public List<string> DoesNotContain { get; set; }
 
 

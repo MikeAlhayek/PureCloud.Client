@@ -1,12 +1,12 @@
-using System.Runtime.Serialization;
 using System.Text;
+using System.Text.Json.Serialization;
 
 namespace PureCloud.Client.Models;
 
 /// <summary>
 /// AnalyticsAgentStateCountsResponse
 /// </summary>
-[DataContract]
+
 public partial class AnalyticsAgentStateCountsResponse : IEquatable<AnalyticsAgentStateCountsResponse>
 {
     /// <summary>
@@ -25,7 +25,7 @@ public partial class AnalyticsAgentStateCountsResponse : IEquatable<AnalyticsAge
     /// List of count by segment types
     /// </summary>
     /// <value>List of count by segment types</value>
-    [DataMember(Name = "segmentCounts", EmitDefaultValue = false)]
+    [JsonPropertyName("segmentCounts")]
     public List<AgentStateSegmentTypeCount> SegmentCounts { get; set; }
 
 

@@ -1,12 +1,12 @@
-using System.Runtime.Serialization;
 using System.Text;
+using System.Text.Json.Serialization;
 
 namespace PureCloud.Client.Models;
 
 /// <summary>
 /// UserGreetingEventGreetingOwner
 /// </summary>
-[DataContract]
+
 public partial class UserGreetingEventGreetingOwner : IEquatable<UserGreetingEventGreetingOwner>
 {
     /// <summary>
@@ -24,7 +24,7 @@ public partial class UserGreetingEventGreetingOwner : IEquatable<UserGreetingEve
     /// <summary>
     /// Gets or Sets Id
     /// </summary>
-    [DataMember(Name = "id", EmitDefaultValue = false)]
+    [JsonPropertyName("id")]
     public string Id { get; set; }
 
 

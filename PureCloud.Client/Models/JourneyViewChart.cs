@@ -7,14 +7,14 @@ namespace PureCloud.Client.Models;
 /// <summary>
 /// A chart within the context of the elements of the the journey view
 /// </summary>
-[DataContract]
+
 public partial class JourneyViewChart : IEquatable<JourneyViewChart>
 {
     /// <summary>
     /// A time unit to group the metrics by. There is a limit on the number of groupBy properties which can be specified.
     /// </summary>
     /// <value>A time unit to group the metrics by. There is a limit on the number of groupBy properties which can be specified.</value>
-    [JsonConverter(typeof(JsonStringEnumConverter))]
+    
     public enum GroupByTimeEnum
     {
         /// <summary>
@@ -53,7 +53,7 @@ public partial class JourneyViewChart : IEquatable<JourneyViewChart>
     /// A time unit to group the metrics by. There is a limit on the number of groupBy properties which can be specified.
     /// </summary>
     /// <value>A time unit to group the metrics by. There is a limit on the number of groupBy properties which can be specified.</value>
-    [DataMember(Name = "groupByTime", EmitDefaultValue = false)]
+    [JsonPropertyName("groupByTime")]
     public GroupByTimeEnum? GroupByTime { get; set; }
 
     /// <summary>
@@ -87,7 +87,7 @@ public partial class JourneyViewChart : IEquatable<JourneyViewChart>
     /// The globally unique identifier for the object.
     /// </summary>
     /// <value>The globally unique identifier for the object.</value>
-    [DataMember(Name = "id", EmitDefaultValue = false)]
+    [JsonPropertyName("id")]
     public string Id { get; private set; }
 
 
@@ -95,7 +95,7 @@ public partial class JourneyViewChart : IEquatable<JourneyViewChart>
     /// <summary>
     /// Gets or Sets Name
     /// </summary>
-    [DataMember(Name = "name", EmitDefaultValue = false)]
+    [JsonPropertyName("name")]
     public string Name { get; set; }
 
 
@@ -104,7 +104,7 @@ public partial class JourneyViewChart : IEquatable<JourneyViewChart>
     /// The version of the journey view chart
     /// </summary>
     /// <value>The version of the journey view chart</value>
-    [DataMember(Name = "version", EmitDefaultValue = false)]
+    [JsonPropertyName("version")]
     public int? Version { get; private set; }
 
 
@@ -115,7 +115,7 @@ public partial class JourneyViewChart : IEquatable<JourneyViewChart>
     /// A list of attributes to group the metrics by. There is a limit on the number of groupBy properties which can be specified.
     /// </summary>
     /// <value>A list of attributes to group the metrics by. There is a limit on the number of groupBy properties which can be specified.</value>
-    [DataMember(Name = "groupByAttributes", EmitDefaultValue = false)]
+    [JsonPropertyName("groupByAttributes")]
     public List<JourneyViewChartGroupByAttribute> GroupByAttributes { get; set; }
 
 
@@ -124,7 +124,7 @@ public partial class JourneyViewChart : IEquatable<JourneyViewChart>
     /// A list of metrics to calculate within the chart by (aka the y axis)
     /// </summary>
     /// <value>A list of metrics to calculate within the chart by (aka the y axis)</value>
-    [DataMember(Name = "metrics", EmitDefaultValue = false)]
+    [JsonPropertyName("metrics")]
     public List<JourneyViewChartMetric> Metrics { get; set; }
 
 
@@ -133,7 +133,7 @@ public partial class JourneyViewChart : IEquatable<JourneyViewChart>
     /// Optional display attributes for rendering the chart
     /// </summary>
     /// <value>Optional display attributes for rendering the chart</value>
-    [DataMember(Name = "displayAttributes", EmitDefaultValue = false)]
+    [JsonPropertyName("displayAttributes")]
     public JourneyViewChartDisplayAttributes DisplayAttributes { get; set; }
 
 
@@ -142,7 +142,7 @@ public partial class JourneyViewChart : IEquatable<JourneyViewChart>
     /// A maximum on the number of values being grouped by
     /// </summary>
     /// <value>A maximum on the number of values being grouped by</value>
-    [DataMember(Name = "groupByMax", EmitDefaultValue = false)]
+    [JsonPropertyName("groupByMax")]
     public int? GroupByMax { get; set; }
 
 
@@ -151,7 +151,7 @@ public partial class JourneyViewChart : IEquatable<JourneyViewChart>
     /// The URI for this object
     /// </summary>
     /// <value>The URI for this object</value>
-    [DataMember(Name = "selfUri", EmitDefaultValue = false)]
+    [JsonPropertyName("selfUri")]
     public string SelfUri { get; private set; }
 
 

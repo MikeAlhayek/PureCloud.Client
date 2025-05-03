@@ -7,14 +7,14 @@ namespace PureCloud.Client.Models;
 /// <summary>
 /// DocumentBodyListBlockProperties
 /// </summary>
-[DataContract]
+
 public partial class DocumentBodyListBlockProperties : IEquatable<DocumentBodyListBlockProperties>
 {
     /// <summary>
     /// The type of icon for the unordered list.
     /// </summary>
     /// <value>The type of icon for the unordered list.</value>
-    [JsonConverter(typeof(JsonStringEnumConverter))]
+    
     public enum UnorderedTypeEnum
     {
         /// <summary>
@@ -53,7 +53,7 @@ public partial class DocumentBodyListBlockProperties : IEquatable<DocumentBodyLi
     /// The type of icon for the ordered list.
     /// </summary>
     /// <value>The type of icon for the ordered list.</value>
-    [JsonConverter(typeof(JsonStringEnumConverter))]
+    
     public enum OrderedTypeEnum
     {
         /// <summary>
@@ -110,13 +110,13 @@ public partial class DocumentBodyListBlockProperties : IEquatable<DocumentBodyLi
     /// The type of icon for the unordered list.
     /// </summary>
     /// <value>The type of icon for the unordered list.</value>
-    [DataMember(Name = "unorderedType", EmitDefaultValue = false)]
+    [JsonPropertyName("unorderedType")]
     public UnorderedTypeEnum? UnorderedType { get; set; }
     /// <summary>
     /// The type of icon for the ordered list.
     /// </summary>
     /// <value>The type of icon for the ordered list.</value>
-    [DataMember(Name = "orderedType", EmitDefaultValue = false)]
+    [JsonPropertyName("orderedType")]
     public OrderedTypeEnum? OrderedType { get; set; }
     /// <summary>
     /// Initializes a new instance of the <see cref="DocumentBodyListBlockProperties" /> class.

@@ -1,12 +1,12 @@
-using System.Runtime.Serialization;
 using System.Text;
+using System.Text.Json.Serialization;
 
 namespace PureCloud.Client.Models;
 
 /// <summary>
 /// ShiftTradeMatchReviewResponse
 /// </summary>
-[DataContract]
+
 public partial class ShiftTradeMatchReviewResponse : IEquatable<ShiftTradeMatchReviewResponse>
 {
     /// <summary>
@@ -31,7 +31,7 @@ public partial class ShiftTradeMatchReviewResponse : IEquatable<ShiftTradeMatchR
     /// Details for the initiatingUser side of the shift trade
     /// </summary>
     /// <value>Details for the initiatingUser side of the shift trade</value>
-    [DataMember(Name = "initiatingUser", EmitDefaultValue = false)]
+    [JsonPropertyName("initiatingUser")]
     public ShiftTradeMatchReviewUserResponse InitiatingUser { get; set; }
 
 
@@ -40,7 +40,7 @@ public partial class ShiftTradeMatchReviewResponse : IEquatable<ShiftTradeMatchR
     /// Details for the receivingUser side of the shift trade
     /// </summary>
     /// <value>Details for the receivingUser side of the shift trade</value>
-    [DataMember(Name = "receivingUser", EmitDefaultValue = false)]
+    [JsonPropertyName("receivingUser")]
     public ShiftTradeMatchReviewUserResponse ReceivingUser { get; set; }
 
 
@@ -49,7 +49,7 @@ public partial class ShiftTradeMatchReviewResponse : IEquatable<ShiftTradeMatchR
     /// Constraint violations introduced after being matched that would normally disallow a trade, but which can still be overridden by the shift trade administrator
     /// </summary>
     /// <value>Constraint violations introduced after being matched that would normally disallow a trade, but which can still be overridden by the shift trade administrator</value>
-    [DataMember(Name = "violations", EmitDefaultValue = false)]
+    [JsonPropertyName("violations")]
     public List<ShiftTradeMatchViolation> Violations { get; set; }
 
 
@@ -58,7 +58,7 @@ public partial class ShiftTradeMatchReviewResponse : IEquatable<ShiftTradeMatchR
     /// Constraint violations associated with this shift trade which require shift trade administrator review
     /// </summary>
     /// <value>Constraint violations associated with this shift trade which require shift trade administrator review</value>
-    [DataMember(Name = "adminReviewViolations", EmitDefaultValue = false)]
+    [JsonPropertyName("adminReviewViolations")]
     public List<ShiftTradeMatchViolation> AdminReviewViolations { get; set; }
 
 

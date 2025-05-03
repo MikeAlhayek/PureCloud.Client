@@ -7,14 +7,14 @@ namespace PureCloud.Client.Models;
 /// <summary>
 /// LearningAssignmentAggregateQueryResponseMetric
 /// </summary>
-[DataContract]
+
 public partial class LearningAssignmentAggregateQueryResponseMetric : IEquatable<LearningAssignmentAggregateQueryResponseMetric>
 {
     /// <summary>
     /// The metric this applies to
     /// </summary>
     /// <value>The metric this applies to</value>
-    [JsonConverter(typeof(JsonStringEnumConverter))]
+    
     public enum MetricEnum
     {
         /// <summary>
@@ -89,7 +89,7 @@ public partial class LearningAssignmentAggregateQueryResponseMetric : IEquatable
     /// The metric this applies to
     /// </summary>
     /// <value>The metric this applies to</value>
-    [DataMember(Name = "metric", EmitDefaultValue = false)]
+    [JsonPropertyName("metric")]
     public MetricEnum? Metric { get; set; }
     /// <summary>
     /// Initializes a new instance of the <see cref="LearningAssignmentAggregateQueryResponseMetric" /> class.
@@ -111,7 +111,7 @@ public partial class LearningAssignmentAggregateQueryResponseMetric : IEquatable
     /// The aggregated values for this metric
     /// </summary>
     /// <value>The aggregated values for this metric</value>
-    [DataMember(Name = "stats", EmitDefaultValue = false)]
+    [JsonPropertyName("stats")]
     public LearningAssignmentAggregateQueryResponseStats Stats { get; set; }
 
 

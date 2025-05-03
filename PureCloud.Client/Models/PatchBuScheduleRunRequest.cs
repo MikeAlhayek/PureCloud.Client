@@ -1,12 +1,12 @@
-using System.Runtime.Serialization;
 using System.Text;
+using System.Text.Json.Serialization;
 
 namespace PureCloud.Client.Models;
 
 /// <summary>
 /// PatchBuScheduleRunRequest
 /// </summary>
-[DataContract]
+
 public partial class PatchBuScheduleRunRequest : IEquatable<PatchBuScheduleRunRequest>
 {
     /// <summary>
@@ -25,7 +25,7 @@ public partial class PatchBuScheduleRunRequest : IEquatable<PatchBuScheduleRunRe
     /// The rescheduling options to update
     /// </summary>
     /// <value>The rescheduling options to update</value>
-    [DataMember(Name = "reschedulingOptions", EmitDefaultValue = false)]
+    [JsonPropertyName("reschedulingOptions")]
     public PatchBuReschedulingOptionsRequest ReschedulingOptions { get; set; }
 
 

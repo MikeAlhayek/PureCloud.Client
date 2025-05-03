@@ -1,4 +1,3 @@
-using System.Runtime.Serialization;
 using System.Text;
 using System.Text.Json.Serialization;
 
@@ -7,7 +6,7 @@ namespace PureCloud.Client.Models;
 /// <summary>
 /// PublishForm
 /// </summary>
-[DataContract]
+
 public partial class PublishForm : IEquatable<PublishForm>
 {
 
@@ -34,7 +33,7 @@ public partial class PublishForm : IEquatable<PublishForm>
     /// Is this form published
     /// </summary>
     /// <value>Is this form published</value>
-    [DataMember(Name = "published", EmitDefaultValue = false)]
+    [JsonPropertyName("published")]
     public bool? Published { get; set; }
 
 
@@ -43,7 +42,7 @@ public partial class PublishForm : IEquatable<PublishForm>
     /// Unique Id for this version of this form
     /// </summary>
     /// <value>Unique Id for this version of this form</value>
-    [DataMember(Name = "id", EmitDefaultValue = false)]
+    [JsonPropertyName("id")]
     public string Id { get; set; }
 
 

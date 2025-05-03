@@ -1,4 +1,3 @@
-using System.Runtime.Serialization;
 using System.Text;
 using System.Text.Json.Serialization;
 
@@ -7,7 +6,7 @@ namespace PureCloud.Client.Models;
 /// <summary>
 /// OutcomeQuantileCondition
 /// </summary>
-[DataContract]
+
 public partial class OutcomeQuantileCondition : IEquatable<OutcomeQuantileCondition>
 {
 
@@ -36,7 +35,7 @@ public partial class OutcomeQuantileCondition : IEquatable<OutcomeQuantileCondit
     /// The outcome ID.
     /// </summary>
     /// <value>The outcome ID.</value>
-    [DataMember(Name = "outcomeId", EmitDefaultValue = false)]
+    [JsonPropertyName("outcomeId")]
     public string OutcomeId { get; set; }
 
 
@@ -45,7 +44,7 @@ public partial class OutcomeQuantileCondition : IEquatable<OutcomeQuantileCondit
     /// This Outcome Quantile Condition is met when sessionMaxQuantile of the OutcomeScore is above this value, (unless fallbackQuantile is set). Range 0.00-1.00
     /// </summary>
     /// <value>This Outcome Quantile Condition is met when sessionMaxQuantile of the OutcomeScore is above this value, (unless fallbackQuantile is set). Range 0.00-1.00</value>
-    [DataMember(Name = "maxQuantileThreshold", EmitDefaultValue = false)]
+    [JsonPropertyName("maxQuantileThreshold")]
     public float? MaxQuantileThreshold { get; set; }
 
 
@@ -54,7 +53,7 @@ public partial class OutcomeQuantileCondition : IEquatable<OutcomeQuantileCondit
     /// (Optional) If set, this Condition is met when maxQuantileThreshold is met, AND the current quantile of the OutcomeScore is below this fallbackQuantileThreshold. Range 0.00-1.00
     /// </summary>
     /// <value>(Optional) If set, this Condition is met when maxQuantileThreshold is met, AND the current quantile of the OutcomeScore is below this fallbackQuantileThreshold. Range 0.00-1.00</value>
-    [DataMember(Name = "fallbackQuantileThreshold", EmitDefaultValue = false)]
+    [JsonPropertyName("fallbackQuantileThreshold")]
     public float? FallbackQuantileThreshold { get; set; }
 
 

@@ -7,13 +7,13 @@ namespace PureCloud.Client.Models;
 /// <summary>
 /// EdgeSoftwareUpdateTopicDomainEdgeSoftwareUpdate
 /// </summary>
-[DataContract]
+
 public partial class EdgeSoftwareUpdateTopicDomainEdgeSoftwareUpdate : IEquatable<EdgeSoftwareUpdateTopicDomainEdgeSoftwareUpdate>
 {
     /// <summary>
     /// Gets or Sets Status
     /// </summary>
-    [JsonConverter(typeof(JsonStringEnumConverter))]
+    
     public enum StatusEnum
     {
         /// <summary>
@@ -81,7 +81,7 @@ public partial class EdgeSoftwareUpdateTopicDomainEdgeSoftwareUpdate : IEquatabl
     /// <summary>
     /// Gets or Sets Status
     /// </summary>
-    [DataMember(Name = "status", EmitDefaultValue = false)]
+    [JsonPropertyName("status")]
     public StatusEnum? Status { get; set; }
     /// <summary>
     /// Initializes a new instance of the <see cref="EdgeSoftwareUpdateTopicDomainEdgeSoftwareUpdate" /> class.
@@ -106,7 +106,7 @@ public partial class EdgeSoftwareUpdateTopicDomainEdgeSoftwareUpdate : IEquatabl
     /// <summary>
     /// Gets or Sets Id
     /// </summary>
-    [DataMember(Name = "id", EmitDefaultValue = false)]
+    [JsonPropertyName("id")]
     public string Id { get; set; }
 
 
@@ -116,7 +116,7 @@ public partial class EdgeSoftwareUpdateTopicDomainEdgeSoftwareUpdate : IEquatabl
     /// <summary>
     /// Gets or Sets DownloadStartTime
     /// </summary>
-    [DataMember(Name = "downloadStartTime", EmitDefaultValue = false)]
+    [JsonPropertyName("downloadStartTime")]
     public DateTime? DownloadStartTime { get; set; }
 
 
@@ -124,7 +124,7 @@ public partial class EdgeSoftwareUpdateTopicDomainEdgeSoftwareUpdate : IEquatabl
     /// <summary>
     /// Gets or Sets ExecuteStartTime
     /// </summary>
-    [DataMember(Name = "executeStartTime", EmitDefaultValue = false)]
+    [JsonPropertyName("executeStartTime")]
     public DateTime? ExecuteStartTime { get; set; }
 
 
@@ -132,7 +132,7 @@ public partial class EdgeSoftwareUpdateTopicDomainEdgeSoftwareUpdate : IEquatabl
     /// <summary>
     /// Gets or Sets ExecuteStopTime
     /// </summary>
-    [DataMember(Name = "executeStopTime", EmitDefaultValue = false)]
+    [JsonPropertyName("executeStopTime")]
     public DateTime? ExecuteStopTime { get; set; }
 
 

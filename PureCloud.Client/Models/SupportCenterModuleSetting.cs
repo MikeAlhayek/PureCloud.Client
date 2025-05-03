@@ -7,14 +7,14 @@ namespace PureCloud.Client.Models;
 /// <summary>
 /// SupportCenterModuleSetting
 /// </summary>
-[DataContract]
+
 public partial class SupportCenterModuleSetting : IEquatable<SupportCenterModuleSetting>
 {
     /// <summary>
     /// Screen module type
     /// </summary>
     /// <value>Screen module type</value>
-    [JsonConverter(typeof(JsonStringEnumConverter))]
+    
     public enum TypeEnum
     {
         /// <summary>
@@ -71,7 +71,7 @@ public partial class SupportCenterModuleSetting : IEquatable<SupportCenterModule
     /// Screen module type
     /// </summary>
     /// <value>Screen module type</value>
-    [DataMember(Name = "type", EmitDefaultValue = false)]
+    [JsonPropertyName("type")]
     public TypeEnum? Type { get; set; }
 
     /// <summary>
@@ -103,7 +103,7 @@ public partial class SupportCenterModuleSetting : IEquatable<SupportCenterModule
     /// Whether or not knowledge portal (previously support center) screen module is enabled
     /// </summary>
     /// <value>Whether or not knowledge portal (previously support center) screen module is enabled</value>
-    [DataMember(Name = "enabled", EmitDefaultValue = false)]
+    [JsonPropertyName("enabled")]
     public bool? Enabled { get; set; }
 
 
@@ -112,7 +112,7 @@ public partial class SupportCenterModuleSetting : IEquatable<SupportCenterModule
     /// Compact category module template
     /// </summary>
     /// <value>Compact category module template</value>
-    [DataMember(Name = "compactCategoryModuleTemplate", EmitDefaultValue = false)]
+    [JsonPropertyName("compactCategoryModuleTemplate")]
     public SupportCenterCompactCategoryModuleTemplate CompactCategoryModuleTemplate { get; set; }
 
 
@@ -121,7 +121,7 @@ public partial class SupportCenterModuleSetting : IEquatable<SupportCenterModule
     /// Detailed category module template
     /// </summary>
     /// <value>Detailed category module template</value>
-    [DataMember(Name = "detailedCategoryModuleTemplate", EmitDefaultValue = false)]
+    [JsonPropertyName("detailedCategoryModuleTemplate")]
     public SupportCenterDetailedCategoryModuleTemplate DetailedCategoryModuleTemplate { get; set; }
 
 

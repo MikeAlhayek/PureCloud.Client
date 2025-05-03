@@ -7,13 +7,13 @@ namespace PureCloud.Client.Models;
 /// <summary>
 /// CommonRuleBulkUpdateNotificationsRequest
 /// </summary>
-[DataContract]
+
 public partial class CommonRuleBulkUpdateNotificationsRequest : IEquatable<CommonRuleBulkUpdateNotificationsRequest>
 {
     /// <summary>
     /// Gets or Sets TypesToAdd
     /// </summary>
-    [JsonConverter(typeof(JsonStringEnumConverter))]
+    
     public enum TypesToAddEnum
     {
         /// <summary>
@@ -51,7 +51,7 @@ public partial class CommonRuleBulkUpdateNotificationsRequest : IEquatable<Commo
     /// <summary>
     /// Gets or Sets TypesToRemove
     /// </summary>
-    [JsonConverter(typeof(JsonStringEnumConverter))]
+    
     public enum TypesToRemoveEnum
     {
         /// <summary>
@@ -114,7 +114,7 @@ public partial class CommonRuleBulkUpdateNotificationsRequest : IEquatable<Commo
     /// The user supplied rules ids to be updated
     /// </summary>
     /// <value>The user supplied rules ids to be updated</value>
-    [DataMember(Name = "ruleIds", EmitDefaultValue = false)]
+    [JsonPropertyName("ruleIds")]
     public List<string> RuleIds { get; set; }
 
 
@@ -123,7 +123,7 @@ public partial class CommonRuleBulkUpdateNotificationsRequest : IEquatable<Commo
     /// The rule properties to be updated
     /// </summary>
     /// <value>The rule properties to be updated</value>
-    [DataMember(Name = "properties", EmitDefaultValue = false)]
+    [JsonPropertyName("properties")]
     public ModifiableRuleProperties Properties { get; set; }
 
 
@@ -132,7 +132,7 @@ public partial class CommonRuleBulkUpdateNotificationsRequest : IEquatable<Commo
     /// Collection of alerting notification types to add for all entities in the rules
     /// </summary>
     /// <value>Collection of alerting notification types to add for all entities in the rules</value>
-    [DataMember(Name = "typesToAdd", EmitDefaultValue = false)]
+    [JsonPropertyName("typesToAdd")]
     public List<TypesToAddEnum> TypesToAdd { get; set; }
 
 
@@ -141,7 +141,7 @@ public partial class CommonRuleBulkUpdateNotificationsRequest : IEquatable<Commo
     /// Collection of alerting notification types to remove for all entities in the rules
     /// </summary>
     /// <value>Collection of alerting notification types to remove for all entities in the rules</value>
-    [DataMember(Name = "typesToRemove", EmitDefaultValue = false)]
+    [JsonPropertyName("typesToRemove")]
     public List<TypesToRemoveEnum> TypesToRemove { get; set; }
 
 

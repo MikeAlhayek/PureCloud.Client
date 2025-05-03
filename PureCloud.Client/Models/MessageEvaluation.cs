@@ -7,14 +7,14 @@ namespace PureCloud.Client.Models;
 /// <summary>
 /// MessageEvaluation
 /// </summary>
-[DataContract]
+
 public partial class MessageEvaluation : IEquatable<MessageEvaluation>
 {
     /// <summary>
     /// The type of message sent
     /// </summary>
     /// <value>The type of message sent</value>
-    [JsonConverter(typeof(JsonStringEnumConverter))]
+    
     public enum MessageTypeEnum
     {
         /// <summary>
@@ -47,7 +47,7 @@ public partial class MessageEvaluation : IEquatable<MessageEvaluation>
     /// The type of message sent
     /// </summary>
     /// <value>The type of message sent</value>
-    [DataMember(Name = "messageType", EmitDefaultValue = false)]
+    [JsonPropertyName("messageType")]
     public MessageTypeEnum? MessageType { get; set; }
     /// <summary>
     /// Initializes a new instance of the <see cref="MessageEvaluation" /> class.
@@ -73,7 +73,7 @@ public partial class MessageEvaluation : IEquatable<MessageEvaluation>
     /// The name of the contact column that was wrapped up
     /// </summary>
     /// <value>The name of the contact column that was wrapped up</value>
-    [DataMember(Name = "contactColumn", EmitDefaultValue = false)]
+    [JsonPropertyName("contactColumn")]
     public string ContactColumn { get; set; }
 
 
@@ -82,7 +82,7 @@ public partial class MessageEvaluation : IEquatable<MessageEvaluation>
     /// The address (phone or email) that was wrapped up
     /// </summary>
     /// <value>The address (phone or email) that was wrapped up</value>
-    [DataMember(Name = "contactAddress", EmitDefaultValue = false)]
+    [JsonPropertyName("contactAddress")]
     public string ContactAddress { get; set; }
 
 
@@ -93,7 +93,7 @@ public partial class MessageEvaluation : IEquatable<MessageEvaluation>
     /// The id of the wrap-up code
     /// </summary>
     /// <value>The id of the wrap-up code</value>
-    [DataMember(Name = "wrapupCodeId", EmitDefaultValue = false)]
+    [JsonPropertyName("wrapupCodeId")]
     public string WrapupCodeId { get; set; }
 
 
@@ -102,7 +102,7 @@ public partial class MessageEvaluation : IEquatable<MessageEvaluation>
     /// The time that the wrap-up was applied. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z
     /// </summary>
     /// <value>The time that the wrap-up was applied. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z</value>
-    [DataMember(Name = "timestamp", EmitDefaultValue = false)]
+    [JsonPropertyName("timestamp")]
     public DateTime? Timestamp { get; set; }
 
 

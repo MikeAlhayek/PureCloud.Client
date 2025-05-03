@@ -1,12 +1,12 @@
-using System.Runtime.Serialization;
 using System.Text;
+using System.Text.Json.Serialization;
 
 namespace PureCloud.Client.Models;
 
 /// <summary>
 /// WfmIntradayDataUpdateTopicIntradayPerformancePredictionQueueData
 /// </summary>
-[DataContract]
+
 public partial class WfmIntradayDataUpdateTopicIntradayPerformancePredictionQueueData : IEquatable<WfmIntradayDataUpdateTopicIntradayPerformancePredictionQueueData>
 {
     /// <summary>
@@ -28,7 +28,7 @@ public partial class WfmIntradayDataUpdateTopicIntradayPerformancePredictionQueu
     /// <summary>
     /// Gets or Sets ServiceLevelPercent
     /// </summary>
-    [DataMember(Name = "serviceLevelPercent", EmitDefaultValue = false)]
+    [JsonPropertyName("serviceLevelPercent")]
     public double? ServiceLevelPercent { get; set; }
 
 
@@ -36,7 +36,7 @@ public partial class WfmIntradayDataUpdateTopicIntradayPerformancePredictionQueu
     /// <summary>
     /// Gets or Sets AverageSpeedOfAnswerSeconds
     /// </summary>
-    [DataMember(Name = "averageSpeedOfAnswerSeconds", EmitDefaultValue = false)]
+    [JsonPropertyName("averageSpeedOfAnswerSeconds")]
     public double? AverageSpeedOfAnswerSeconds { get; set; }
 
 
@@ -44,7 +44,7 @@ public partial class WfmIntradayDataUpdateTopicIntradayPerformancePredictionQueu
     /// <summary>
     /// Gets or Sets NumberOfInteractions
     /// </summary>
-    [DataMember(Name = "numberOfInteractions", EmitDefaultValue = false)]
+    [JsonPropertyName("numberOfInteractions")]
     public double? NumberOfInteractions { get; set; }
 
 

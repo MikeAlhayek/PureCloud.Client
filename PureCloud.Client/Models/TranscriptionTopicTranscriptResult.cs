@@ -7,13 +7,13 @@ namespace PureCloud.Client.Models;
 /// <summary>
 /// TranscriptionTopicTranscriptResult
 /// </summary>
-[DataContract]
+
 public partial class TranscriptionTopicTranscriptResult : IEquatable<TranscriptionTopicTranscriptResult>
 {
     /// <summary>
     /// Gets or Sets Channel
     /// </summary>
-    [JsonConverter(typeof(JsonStringEnumConverter))]
+    
     public enum ChannelEnum
     {
         /// <summary>
@@ -51,7 +51,7 @@ public partial class TranscriptionTopicTranscriptResult : IEquatable<Transcripti
     /// <summary>
     /// Gets or Sets Channel
     /// </summary>
-    [DataMember(Name = "channel", EmitDefaultValue = false)]
+    [JsonPropertyName("channel")]
     public ChannelEnum? Channel { get; set; }
     /// <summary>
     /// Initializes a new instance of the <see cref="TranscriptionTopicTranscriptResult" /> class.
@@ -90,7 +90,7 @@ public partial class TranscriptionTopicTranscriptResult : IEquatable<Transcripti
     /// <summary>
     /// Gets or Sets UtteranceId
     /// </summary>
-    [DataMember(Name = "utteranceId", EmitDefaultValue = false)]
+    [JsonPropertyName("utteranceId")]
     public string UtteranceId { get; set; }
 
 
@@ -98,7 +98,7 @@ public partial class TranscriptionTopicTranscriptResult : IEquatable<Transcripti
     /// <summary>
     /// Gets or Sets IsFinal
     /// </summary>
-    [DataMember(Name = "isFinal", EmitDefaultValue = false)]
+    [JsonPropertyName("isFinal")]
     public bool? IsFinal { get; set; }
 
 
@@ -108,7 +108,7 @@ public partial class TranscriptionTopicTranscriptResult : IEquatable<Transcripti
     /// <summary>
     /// Gets or Sets Alternatives
     /// </summary>
-    [DataMember(Name = "alternatives", EmitDefaultValue = false)]
+    [JsonPropertyName("alternatives")]
     public List<TranscriptionTopicTranscriptAlternative> Alternatives { get; set; }
 
 
@@ -116,7 +116,7 @@ public partial class TranscriptionTopicTranscriptResult : IEquatable<Transcripti
     /// <summary>
     /// Gets or Sets AgentAssistantId
     /// </summary>
-    [DataMember(Name = "agentAssistantId", EmitDefaultValue = false)]
+    [JsonPropertyName("agentAssistantId")]
     public string AgentAssistantId { get; set; }
 
 
@@ -124,7 +124,7 @@ public partial class TranscriptionTopicTranscriptResult : IEquatable<Transcripti
     /// <summary>
     /// Gets or Sets EngineProvider
     /// </summary>
-    [DataMember(Name = "engineProvider", EmitDefaultValue = false)]
+    [JsonPropertyName("engineProvider")]
     public string EngineProvider { get; set; }
 
 
@@ -132,7 +132,7 @@ public partial class TranscriptionTopicTranscriptResult : IEquatable<Transcripti
     /// <summary>
     /// Gets or Sets EngineId
     /// </summary>
-    [DataMember(Name = "engineId", EmitDefaultValue = false)]
+    [JsonPropertyName("engineId")]
     public string EngineId { get; set; }
 
 
@@ -140,7 +140,7 @@ public partial class TranscriptionTopicTranscriptResult : IEquatable<Transcripti
     /// <summary>
     /// Gets or Sets EngineName
     /// </summary>
-    [DataMember(Name = "engineName", EmitDefaultValue = false)]
+    [JsonPropertyName("engineName")]
     public string EngineName { get; set; }
 
 
@@ -148,7 +148,7 @@ public partial class TranscriptionTopicTranscriptResult : IEquatable<Transcripti
     /// <summary>
     /// Gets or Sets Dialect
     /// </summary>
-    [DataMember(Name = "dialect", EmitDefaultValue = false)]
+    [JsonPropertyName("dialect")]
     public string Dialect { get; set; }
 
 
@@ -156,7 +156,7 @@ public partial class TranscriptionTopicTranscriptResult : IEquatable<Transcripti
     /// <summary>
     /// Gets or Sets SpeechTextAnalyticsProgramId
     /// </summary>
-    [DataMember(Name = "speechTextAnalyticsProgramId", EmitDefaultValue = false)]
+    [JsonPropertyName("speechTextAnalyticsProgramId")]
     public string SpeechTextAnalyticsProgramId { get; set; }
 
 
@@ -164,7 +164,7 @@ public partial class TranscriptionTopicTranscriptResult : IEquatable<Transcripti
     /// <summary>
     /// Gets or Sets AgentAssistEnabled
     /// </summary>
-    [DataMember(Name = "agentAssistEnabled", EmitDefaultValue = false)]
+    [JsonPropertyName("agentAssistEnabled")]
     public bool? AgentAssistEnabled { get; set; }
 
 
@@ -172,7 +172,7 @@ public partial class TranscriptionTopicTranscriptResult : IEquatable<Transcripti
     /// <summary>
     /// Gets or Sets VoiceTranscriptionEnabled
     /// </summary>
-    [DataMember(Name = "voiceTranscriptionEnabled", EmitDefaultValue = false)]
+    [JsonPropertyName("voiceTranscriptionEnabled")]
     public bool? VoiceTranscriptionEnabled { get; set; }
 
 

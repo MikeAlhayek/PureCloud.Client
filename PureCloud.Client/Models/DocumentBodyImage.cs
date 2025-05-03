@@ -1,4 +1,3 @@
-using System.Runtime.Serialization;
 using System.Text;
 using System.Text.Json.Serialization;
 
@@ -7,7 +6,7 @@ namespace PureCloud.Client.Models;
 /// <summary>
 /// DocumentBodyImage
 /// </summary>
-[DataContract]
+
 public partial class DocumentBodyImage : IEquatable<DocumentBodyImage>
 {
 
@@ -36,7 +35,7 @@ public partial class DocumentBodyImage : IEquatable<DocumentBodyImage>
     /// The URL for the image.
     /// </summary>
     /// <value>The URL for the image.</value>
-    [DataMember(Name = "url", EmitDefaultValue = false)]
+    [JsonPropertyName("url")]
     public string Url { get; set; }
 
 
@@ -45,7 +44,7 @@ public partial class DocumentBodyImage : IEquatable<DocumentBodyImage>
     /// The URL of the page OR an email OR the reference to the knowledge article that the hyperlink goes to. Possible URL value types are https://&lt;url link&gt; | mailto:&lt;email&gt; | grn:knowledge:::documentVariation/&lt;knowledgeBaseId&gt;/&lt;documentId&gt;/&lt;variationId&gt; | grn:knowledge:::document/&lt;knowledgeBaseId&gt;/&lt;documentId&gt; | grn:knowledge:::category/&lt;knowledgeBaseId&gt;/&lt;categoryId&gt; | grn:knowledge:::label/&lt;knowledgeBaseId&gt;/&lt;labelId&gt;
     /// </summary>
     /// <value>The URL of the page OR an email OR the reference to the knowledge article that the hyperlink goes to. Possible URL value types are https://&lt;url link&gt; | mailto:&lt;email&gt; | grn:knowledge:::documentVariation/&lt;knowledgeBaseId&gt;/&lt;documentId&gt;/&lt;variationId&gt; | grn:knowledge:::document/&lt;knowledgeBaseId&gt;/&lt;documentId&gt; | grn:knowledge:::category/&lt;knowledgeBaseId&gt;/&lt;categoryId&gt; | grn:knowledge:::label/&lt;knowledgeBaseId&gt;/&lt;labelId&gt;</value>
-    [DataMember(Name = "hyperlink", EmitDefaultValue = false)]
+    [JsonPropertyName("hyperlink")]
     public string Hyperlink { get; set; }
 
 
@@ -54,7 +53,7 @@ public partial class DocumentBodyImage : IEquatable<DocumentBodyImage>
     /// The properties for the image.
     /// </summary>
     /// <value>The properties for the image.</value>
-    [DataMember(Name = "properties", EmitDefaultValue = false)]
+    [JsonPropertyName("properties")]
     public DocumentBodyImageProperties Properties { get; set; }
 
 

@@ -7,14 +7,14 @@ namespace PureCloud.Client.Models;
 /// <summary>
 /// LastAttemptByColumnConditionSettings
 /// </summary>
-[DataContract]
+
 public partial class LastAttemptByColumnConditionSettings : IEquatable<LastAttemptByColumnConditionSettings>
 {
     /// <summary>
     /// The operator to use when comparing values.
     /// </summary>
     /// <value>The operator to use when comparing values.</value>
-    [JsonConverter(typeof(JsonStringEnumConverter))]
+    
     public enum OperatorEnum
     {
         /// <summary>
@@ -41,7 +41,7 @@ public partial class LastAttemptByColumnConditionSettings : IEquatable<LastAttem
     /// The operator to use when comparing values.
     /// </summary>
     /// <value>The operator to use when comparing values.</value>
-    [DataMember(Name = "operator", EmitDefaultValue = false)]
+    [JsonPropertyName("operator")]
     public OperatorEnum? Operator { get; set; }
 
     /// <summary>
@@ -71,7 +71,7 @@ public partial class LastAttemptByColumnConditionSettings : IEquatable<LastAttem
     /// The name of the contact column to evaluate for Email.
     /// </summary>
     /// <value>The name of the contact column to evaluate for Email.</value>
-    [DataMember(Name = "emailColumnName", EmitDefaultValue = false)]
+    [JsonPropertyName("emailColumnName")]
     public string EmailColumnName { get; set; }
 
 
@@ -80,7 +80,7 @@ public partial class LastAttemptByColumnConditionSettings : IEquatable<LastAttem
     /// The name of the contact column to evaluate for SMS.
     /// </summary>
     /// <value>The name of the contact column to evaluate for SMS.</value>
-    [DataMember(Name = "smsColumnName", EmitDefaultValue = false)]
+    [JsonPropertyName("smsColumnName")]
     public string SmsColumnName { get; set; }
 
 
@@ -91,7 +91,7 @@ public partial class LastAttemptByColumnConditionSettings : IEquatable<LastAttem
     /// The period value to compare against the contact&#39;s data.
     /// </summary>
     /// <value>The period value to compare against the contact&#39;s data.</value>
-    [DataMember(Name = "value", EmitDefaultValue = false)]
+    [JsonPropertyName("value")]
     public string Value { get; set; }
 
 

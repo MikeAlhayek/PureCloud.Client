@@ -1,4 +1,3 @@
-using System.Runtime.Serialization;
 using System.Text;
 using System.Text.Json.Serialization;
 
@@ -7,7 +6,7 @@ namespace PureCloud.Client.Models;
 /// <summary>
 /// KnowledgeDocumentVersion
 /// </summary>
-[DataContract]
+
 public partial class KnowledgeDocumentVersion : IEquatable<KnowledgeDocumentVersion>
 {
 
@@ -32,7 +31,7 @@ public partial class KnowledgeDocumentVersion : IEquatable<KnowledgeDocumentVers
     /// Globally unique identifier for the document version.
     /// </summary>
     /// <value>Globally unique identifier for the document version.</value>
-    [DataMember(Name = "id", EmitDefaultValue = false)]
+    [JsonPropertyName("id")]
     public string Id { get; private set; }
 
 
@@ -41,7 +40,7 @@ public partial class KnowledgeDocumentVersion : IEquatable<KnowledgeDocumentVers
     /// Published date of document version. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z
     /// </summary>
     /// <value>Published date of document version. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z</value>
-    [DataMember(Name = "datePublished", EmitDefaultValue = false)]
+    [JsonPropertyName("datePublished")]
     public DateTime? DatePublished { get; private set; }
 
 
@@ -50,7 +49,7 @@ public partial class KnowledgeDocumentVersion : IEquatable<KnowledgeDocumentVers
     /// The document which is versioned.
     /// </summary>
     /// <value>The document which is versioned.</value>
-    [DataMember(Name = "document", EmitDefaultValue = false)]
+    [JsonPropertyName("document")]
     public KnowledgeDocumentResponse Document { get; private set; }
 
 
@@ -59,7 +58,7 @@ public partial class KnowledgeDocumentVersion : IEquatable<KnowledgeDocumentVers
     /// The globally unique identifier for the document version. If the value is provided, the document is restored to the given version. If not, it publishes the draft changes as a new version of the document.
     /// </summary>
     /// <value>The globally unique identifier for the document version. If the value is provided, the document is restored to the given version. If not, it publishes the draft changes as a new version of the document.</value>
-    [DataMember(Name = "restoreFromVersionId", EmitDefaultValue = false)]
+    [JsonPropertyName("restoreFromVersionId")]
     public string RestoreFromVersionId { get; set; }
 
 
@@ -68,7 +67,7 @@ public partial class KnowledgeDocumentVersion : IEquatable<KnowledgeDocumentVers
     /// Version Number of the document.
     /// </summary>
     /// <value>Version Number of the document.</value>
-    [DataMember(Name = "versionNumber", EmitDefaultValue = false)]
+    [JsonPropertyName("versionNumber")]
     public int? VersionNumber { get; private set; }
 
 
@@ -77,7 +76,7 @@ public partial class KnowledgeDocumentVersion : IEquatable<KnowledgeDocumentVers
     /// Expiry date of document version, applicable only to the &#39;Archived&#39; version of the document. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z
     /// </summary>
     /// <value>Expiry date of document version, applicable only to the &#39;Archived&#39; version of the document. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z</value>
-    [DataMember(Name = "dateExpires", EmitDefaultValue = false)]
+    [JsonPropertyName("dateExpires")]
     public DateTime? DateExpires { get; private set; }
 
 
@@ -86,7 +85,7 @@ public partial class KnowledgeDocumentVersion : IEquatable<KnowledgeDocumentVers
     /// The URI for this object
     /// </summary>
     /// <value>The URI for this object</value>
-    [DataMember(Name = "selfUri", EmitDefaultValue = false)]
+    [JsonPropertyName("selfUri")]
     public string SelfUri { get; private set; }
 
 

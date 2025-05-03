@@ -1,12 +1,12 @@
-using System.Runtime.Serialization;
 using System.Text;
+using System.Text.Json.Serialization;
 
 namespace PureCloud.Client.Models;
 
 /// <summary>
 /// ScheduleGenerationResult
 /// </summary>
-[DataContract]
+
 public partial class ScheduleGenerationResult : IEquatable<ScheduleGenerationResult>
 {
     /// <summary>
@@ -33,7 +33,7 @@ public partial class ScheduleGenerationResult : IEquatable<ScheduleGenerationRes
     /// Whether the schedule generation run failed
     /// </summary>
     /// <value>Whether the schedule generation run failed</value>
-    [DataMember(Name = "failed", EmitDefaultValue = false)]
+    [JsonPropertyName("failed")]
     public bool? Failed { get; set; }
 
 
@@ -42,7 +42,7 @@ public partial class ScheduleGenerationResult : IEquatable<ScheduleGenerationRes
     /// The ID of the schedule generation run. Reference this when requesting support
     /// </summary>
     /// <value>The ID of the schedule generation run. Reference this when requesting support</value>
-    [DataMember(Name = "runId", EmitDefaultValue = false)]
+    [JsonPropertyName("runId")]
     public string RunId { get; set; }
 
 
@@ -51,7 +51,7 @@ public partial class ScheduleGenerationResult : IEquatable<ScheduleGenerationRes
     /// The number of schedule generation messages for this schedule generation run
     /// </summary>
     /// <value>The number of schedule generation messages for this schedule generation run</value>
-    [DataMember(Name = "messageCount", EmitDefaultValue = false)]
+    [JsonPropertyName("messageCount")]
     public int? MessageCount { get; set; }
 
 
@@ -60,7 +60,7 @@ public partial class ScheduleGenerationResult : IEquatable<ScheduleGenerationRes
     /// User facing messages related to the schedule generation run
     /// </summary>
     /// <value>User facing messages related to the schedule generation run</value>
-    [DataMember(Name = "messages", EmitDefaultValue = false)]
+    [JsonPropertyName("messages")]
     public List<ScheduleGenerationMessage> Messages { get; set; }
 
 
@@ -69,7 +69,7 @@ public partial class ScheduleGenerationResult : IEquatable<ScheduleGenerationRes
     /// The list of messages by severity in this schedule generation run
     /// </summary>
     /// <value>The list of messages by severity in this schedule generation run</value>
-    [DataMember(Name = "messageSeverities", EmitDefaultValue = false)]
+    [JsonPropertyName("messageSeverities")]
     public List<SchedulerMessageTypeSeverity> MessageSeverities { get; set; }
 
 

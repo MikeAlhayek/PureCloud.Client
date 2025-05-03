@@ -7,14 +7,14 @@ namespace PureCloud.Client.Models;
 /// <summary>
 /// This is a table of settings per a loglevel that define what will be logged in executionData when enabled (true)
 /// </summary>
-[DataContract]
+
 public partial class FlowSettingsResponse : IEquatable<FlowSettingsResponse>
 {
     /// <summary>
     /// The Flow Type
     /// </summary>
     /// <value>The Flow Type</value>
-    [JsonConverter(typeof(JsonStringEnumConverter))]
+    
     public enum TypeEnum
     {
         /// <summary>
@@ -137,7 +137,7 @@ public partial class FlowSettingsResponse : IEquatable<FlowSettingsResponse>
     /// The Flow Type
     /// </summary>
     /// <value>The Flow Type</value>
-    [DataMember(Name = "type", EmitDefaultValue = false)]
+    [JsonPropertyName("type")]
     public TypeEnum? Type { get; set; }
     /// <summary>
     /// Initializes a new instance of the <see cref="FlowSettingsResponse" /> class.
@@ -165,7 +165,7 @@ public partial class FlowSettingsResponse : IEquatable<FlowSettingsResponse>
     /// The globally unique identifier for the object.
     /// </summary>
     /// <value>The globally unique identifier for the object.</value>
-    [DataMember(Name = "id", EmitDefaultValue = false)]
+    [JsonPropertyName("id")]
     public string Id { get; private set; }
 
 
@@ -173,7 +173,7 @@ public partial class FlowSettingsResponse : IEquatable<FlowSettingsResponse>
     /// <summary>
     /// Gets or Sets Name
     /// </summary>
-    [DataMember(Name = "name", EmitDefaultValue = false)]
+    [JsonPropertyName("name")]
     public string Name { get; set; }
 
 
@@ -184,7 +184,7 @@ public partial class FlowSettingsResponse : IEquatable<FlowSettingsResponse>
     /// User that last changed the log level setting.
     /// </summary>
     /// <value>User that last changed the log level setting.</value>
-    [DataMember(Name = "modifiedBy", EmitDefaultValue = false)]
+    [JsonPropertyName("modifiedBy")]
     public UserReference ModifiedBy { get; set; }
 
 
@@ -193,7 +193,7 @@ public partial class FlowSettingsResponse : IEquatable<FlowSettingsResponse>
     /// OAuth client that last changed the log level setting.
     /// </summary>
     /// <value>OAuth client that last changed the log level setting.</value>
-    [DataMember(Name = "modifiedByClient", EmitDefaultValue = false)]
+    [JsonPropertyName("modifiedByClient")]
     public DomainEntityRef ModifiedByClient { get; set; }
 
 
@@ -202,7 +202,7 @@ public partial class FlowSettingsResponse : IEquatable<FlowSettingsResponse>
     /// The time this log level was set. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z
     /// </summary>
     /// <value>The time this log level was set. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z</value>
-    [DataMember(Name = "dateModified", EmitDefaultValue = false)]
+    [JsonPropertyName("dateModified")]
     public DateTime? DateModified { get; set; }
 
 
@@ -211,7 +211,7 @@ public partial class FlowSettingsResponse : IEquatable<FlowSettingsResponse>
     /// The log level set for this flow
     /// </summary>
     /// <value>The log level set for this flow</value>
-    [DataMember(Name = "logLevelCharacteristics", EmitDefaultValue = false)]
+    [JsonPropertyName("logLevelCharacteristics")]
     public FlowLogLevel LogLevelCharacteristics { get; set; }
 
 
@@ -220,7 +220,7 @@ public partial class FlowSettingsResponse : IEquatable<FlowSettingsResponse>
     /// The URI for this object
     /// </summary>
     /// <value>The URI for this object</value>
-    [DataMember(Name = "selfUri", EmitDefaultValue = false)]
+    [JsonPropertyName("selfUri")]
     public string SelfUri { get; private set; }
 
 

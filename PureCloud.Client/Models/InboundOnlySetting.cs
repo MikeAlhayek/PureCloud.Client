@@ -7,13 +7,13 @@ namespace PureCloud.Client.Models;
 /// <summary>
 /// InboundOnlySetting
 /// </summary>
-[DataContract]
+
 public partial class InboundOnlySetting : IEquatable<InboundOnlySetting>
 {
     /// <summary>
     /// Gets or Sets Inbound
     /// </summary>
-    [JsonConverter(typeof(JsonStringEnumConverter))]
+    
     public enum InboundEnum
     {
         /// <summary>
@@ -39,7 +39,7 @@ public partial class InboundOnlySetting : IEquatable<InboundOnlySetting>
     /// <summary>
     /// Gets or Sets Inbound
     /// </summary>
-    [DataMember(Name = "inbound", EmitDefaultValue = false)]
+    [JsonPropertyName("inbound")]
     public InboundEnum? Inbound { get; set; }
     /// <summary>
     /// Initializes a new instance of the <see cref="InboundOnlySetting" /> class.

@@ -7,13 +7,13 @@ namespace PureCloud.Client.Models;
 /// <summary>
 /// Limit
 /// </summary>
-[DataContract]
+
 public partial class Limit : IEquatable<Limit>
 {
     /// <summary>
     /// Gets or Sets Namespace
     /// </summary>
-    [JsonConverter(typeof(JsonStringEnumConverter))]
+    
     public enum NamespaceEnum
     {
         /// <summary>
@@ -477,7 +477,7 @@ public partial class Limit : IEquatable<Limit>
     /// <summary>
     /// Gets or Sets Namespace
     /// </summary>
-    [DataMember(Name = "namespace", EmitDefaultValue = false)]
+    [JsonPropertyName("namespace")]
     public NamespaceEnum? Namespace { get; set; }
     /// <summary>
     /// Initializes a new instance of the <see cref="Limit" /> class.
@@ -498,7 +498,7 @@ public partial class Limit : IEquatable<Limit>
     /// <summary>
     /// Gets or Sets Key
     /// </summary>
-    [DataMember(Name = "key", EmitDefaultValue = false)]
+    [JsonPropertyName("key")]
     public string Key { get; set; }
 
 
@@ -508,7 +508,7 @@ public partial class Limit : IEquatable<Limit>
     /// <summary>
     /// Gets or Sets Value
     /// </summary>
-    [DataMember(Name = "value", EmitDefaultValue = false)]
+    [JsonPropertyName("value")]
     public long? Value { get; set; }
 
 

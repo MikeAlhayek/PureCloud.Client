@@ -1,4 +1,3 @@
-using System.Runtime.Serialization;
 using System.Text;
 using System.Text.Json.Serialization;
 
@@ -7,7 +6,7 @@ namespace PureCloud.Client.Models;
 /// <summary>
 /// Update coaching appointment request
 /// </summary>
-[DataContract]
+
 public partial class AddConversationRequest : IEquatable<AddConversationRequest>
 {
 
@@ -32,7 +31,7 @@ public partial class AddConversationRequest : IEquatable<AddConversationRequest>
     /// The id of the conversation to add
     /// </summary>
     /// <value>The id of the conversation to add</value>
-    [DataMember(Name = "conversationId", EmitDefaultValue = false)]
+    [JsonPropertyName("conversationId")]
     public string ConversationId { get; set; }
 
 

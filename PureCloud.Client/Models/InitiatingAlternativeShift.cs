@@ -1,4 +1,3 @@
-using System.Runtime.Serialization;
 using System.Text;
 using System.Text.Json.Serialization;
 
@@ -7,7 +6,7 @@ namespace PureCloud.Client.Models;
 /// <summary>
 /// InitiatingAlternativeShift
 /// </summary>
-[DataContract]
+
 public partial class InitiatingAlternativeShift : IEquatable<InitiatingAlternativeShift>
 {
 
@@ -34,7 +33,7 @@ public partial class InitiatingAlternativeShift : IEquatable<InitiatingAlternati
     /// The ID of the shift from a user&#39;s schedule
     /// </summary>
     /// <value>The ID of the shift from a user&#39;s schedule</value>
-    [DataMember(Name = "id", EmitDefaultValue = false)]
+    [JsonPropertyName("id")]
     public string Id { get; set; }
 
 
@@ -43,7 +42,7 @@ public partial class InitiatingAlternativeShift : IEquatable<InitiatingAlternati
     /// The start date for the shift in the user&#39;s schedule in ISO-8601 format. For example: YYYY-MM-DDThh:mm:ss.SSSZ
     /// </summary>
     /// <value>The start date for the shift in the user&#39;s schedule in ISO-8601 format. For example: YYYY-MM-DDThh:mm:ss.SSSZ</value>
-    [DataMember(Name = "startDate", EmitDefaultValue = false)]
+    [JsonPropertyName("startDate")]
     public DateTime? StartDate { get; set; }
 
 

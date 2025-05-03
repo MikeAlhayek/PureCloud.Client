@@ -1,12 +1,12 @@
-using System.Runtime.Serialization;
 using System.Text;
+using System.Text.Json.Serialization;
 
 namespace PureCloud.Client.Models;
 
 /// <summary>
 /// SuggestionKnowledgeArticle
 /// </summary>
-[DataContract]
+
 public partial class SuggestionKnowledgeArticle : IEquatable<SuggestionKnowledgeArticle>
 {
     /// <summary>
@@ -23,7 +23,7 @@ public partial class SuggestionKnowledgeArticle : IEquatable<SuggestionKnowledge
     /// The article title.
     /// </summary>
     /// <value>The article title.</value>
-    [DataMember(Name = "title", EmitDefaultValue = false)]
+    [JsonPropertyName("title")]
     public string Title { get; private set; }
 
 
@@ -32,7 +32,7 @@ public partial class SuggestionKnowledgeArticle : IEquatable<SuggestionKnowledge
     /// Snippets of text from the article matching the query.
     /// </summary>
     /// <value>Snippets of text from the article matching the query.</value>
-    [DataMember(Name = "snippets", EmitDefaultValue = false)]
+    [JsonPropertyName("snippets")]
     public List<string> Snippets { get; private set; }
 
 
@@ -41,7 +41,7 @@ public partial class SuggestionKnowledgeArticle : IEquatable<SuggestionKnowledge
     /// The article.
     /// </summary>
     /// <value>The article.</value>
-    [DataMember(Name = "document", EmitDefaultValue = false)]
+    [JsonPropertyName("document")]
     public AddressableEntityRef Document { get; private set; }
 
 
@@ -50,7 +50,7 @@ public partial class SuggestionKnowledgeArticle : IEquatable<SuggestionKnowledge
     /// The version of the article.
     /// </summary>
     /// <value>The version of the article.</value>
-    [DataMember(Name = "version", EmitDefaultValue = false)]
+    [JsonPropertyName("version")]
     public AddressableEntityRef Version { get; private set; }
 
 
@@ -59,7 +59,7 @@ public partial class SuggestionKnowledgeArticle : IEquatable<SuggestionKnowledge
     /// The most relevant answer within the suggested article.
     /// </summary>
     /// <value>The most relevant answer within the suggested article.</value>
-    [DataMember(Name = "knowledgeAnswer", EmitDefaultValue = false)]
+    [JsonPropertyName("knowledgeAnswer")]
     public SuggestionKnowledgeAnswer KnowledgeAnswer { get; private set; }
 
 
@@ -68,7 +68,7 @@ public partial class SuggestionKnowledgeArticle : IEquatable<SuggestionKnowledge
     /// The variations of the article.
     /// </summary>
     /// <value>The variations of the article.</value>
-    [DataMember(Name = "variations", EmitDefaultValue = false)]
+    [JsonPropertyName("variations")]
     public List<AddressableEntityRef> Variations { get; private set; }
 
 

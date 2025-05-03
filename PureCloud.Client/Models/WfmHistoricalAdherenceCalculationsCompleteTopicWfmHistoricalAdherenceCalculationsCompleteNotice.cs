@@ -7,13 +7,13 @@ namespace PureCloud.Client.Models;
 /// <summary>
 /// WfmHistoricalAdherenceCalculationsCompleteTopicWfmHistoricalAdherenceCalculationsCompleteNotice
 /// </summary>
-[DataContract]
+
 public partial class WfmHistoricalAdherenceCalculationsCompleteTopicWfmHistoricalAdherenceCalculationsCompleteNotice : IEquatable<WfmHistoricalAdherenceCalculationsCompleteTopicWfmHistoricalAdherenceCalculationsCompleteNotice>
 {
     /// <summary>
     /// Gets or Sets QueryState
     /// </summary>
-    [JsonConverter(typeof(JsonStringEnumConverter))]
+    
     public enum QueryStateEnum
     {
         /// <summary>
@@ -51,7 +51,7 @@ public partial class WfmHistoricalAdherenceCalculationsCompleteTopicWfmHistorica
     /// <summary>
     /// Gets or Sets QueryState
     /// </summary>
-    [DataMember(Name = "queryState", EmitDefaultValue = false)]
+    [JsonPropertyName("queryState")]
     public QueryStateEnum? QueryState { get; set; }
     /// <summary>
     /// Initializes a new instance of the <see cref="WfmHistoricalAdherenceCalculationsCompleteTopicWfmHistoricalAdherenceCalculationsCompleteNotice" /> class.
@@ -74,7 +74,7 @@ public partial class WfmHistoricalAdherenceCalculationsCompleteTopicWfmHistorica
     /// <summary>
     /// Gets or Sets Id
     /// </summary>
-    [DataMember(Name = "id", EmitDefaultValue = false)]
+    [JsonPropertyName("id")]
     public string Id { get; set; }
 
 
@@ -82,7 +82,7 @@ public partial class WfmHistoricalAdherenceCalculationsCompleteTopicWfmHistorica
     /// <summary>
     /// Gets or Sets DownloadUrl
     /// </summary>
-    [DataMember(Name = "downloadUrl", EmitDefaultValue = false)]
+    [JsonPropertyName("downloadUrl")]
     public string DownloadUrl { get; set; }
 
 
@@ -90,7 +90,7 @@ public partial class WfmHistoricalAdherenceCalculationsCompleteTopicWfmHistorica
     /// <summary>
     /// Gets or Sets DownloadUrls
     /// </summary>
-    [DataMember(Name = "downloadUrls", EmitDefaultValue = false)]
+    [JsonPropertyName("downloadUrls")]
     public List<string> DownloadUrls { get; set; }
 
 

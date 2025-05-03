@@ -1,12 +1,12 @@
-using System.Runtime.Serialization;
 using System.Text;
+using System.Text.Json.Serialization;
 
 namespace PureCloud.Client.Models;
 
 /// <summary>
 /// UserGreetingEventGreetingAudioFile
 /// </summary>
-[DataContract]
+
 public partial class UserGreetingEventGreetingAudioFile : IEquatable<UserGreetingEventGreetingAudioFile>
 {
     /// <summary>
@@ -26,7 +26,7 @@ public partial class UserGreetingEventGreetingAudioFile : IEquatable<UserGreetin
     /// <summary>
     /// Gets or Sets DurationMilliseconds
     /// </summary>
-    [DataMember(Name = "durationMilliseconds", EmitDefaultValue = false)]
+    [JsonPropertyName("durationMilliseconds")]
     public long? DurationMilliseconds { get; set; }
 
 
@@ -34,7 +34,7 @@ public partial class UserGreetingEventGreetingAudioFile : IEquatable<UserGreetin
     /// <summary>
     /// Gets or Sets SizeBytes
     /// </summary>
-    [DataMember(Name = "sizeBytes", EmitDefaultValue = false)]
+    [JsonPropertyName("sizeBytes")]
     public long? SizeBytes { get; set; }
 
 

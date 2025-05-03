@@ -1,12 +1,12 @@
-using System.Runtime.Serialization;
 using System.Text;
+using System.Text.Json.Serialization;
 
 namespace PureCloud.Client.Models;
 
 /// <summary>
 /// MeteredEvaluationAssignment
 /// </summary>
-[DataContract]
+
 public partial class MeteredEvaluationAssignment : IEquatable<MeteredEvaluationAssignment>
 {
     /// <summary>
@@ -34,7 +34,7 @@ public partial class MeteredEvaluationAssignment : IEquatable<MeteredEvaluationA
     /// <summary>
     /// Gets or Sets EvaluationContextId
     /// </summary>
-    [DataMember(Name = "evaluationContextId", EmitDefaultValue = false)]
+    [JsonPropertyName("evaluationContextId")]
     public string EvaluationContextId { get; set; }
 
 
@@ -42,7 +42,7 @@ public partial class MeteredEvaluationAssignment : IEquatable<MeteredEvaluationA
     /// <summary>
     /// Gets or Sets Evaluators
     /// </summary>
-    [DataMember(Name = "evaluators", EmitDefaultValue = false)]
+    [JsonPropertyName("evaluators")]
     public List<User> Evaluators { get; set; }
 
 
@@ -50,7 +50,7 @@ public partial class MeteredEvaluationAssignment : IEquatable<MeteredEvaluationA
     /// <summary>
     /// Gets or Sets MaxNumberEvaluations
     /// </summary>
-    [DataMember(Name = "maxNumberEvaluations", EmitDefaultValue = false)]
+    [JsonPropertyName("maxNumberEvaluations")]
     public int? MaxNumberEvaluations { get; set; }
 
 
@@ -58,7 +58,7 @@ public partial class MeteredEvaluationAssignment : IEquatable<MeteredEvaluationA
     /// <summary>
     /// Gets or Sets EvaluationForm
     /// </summary>
-    [DataMember(Name = "evaluationForm", EmitDefaultValue = false)]
+    [JsonPropertyName("evaluationForm")]
     public EvaluationForm EvaluationForm { get; set; }
 
 
@@ -66,7 +66,7 @@ public partial class MeteredEvaluationAssignment : IEquatable<MeteredEvaluationA
     /// <summary>
     /// Gets or Sets AssignToActiveUser
     /// </summary>
-    [DataMember(Name = "assignToActiveUser", EmitDefaultValue = false)]
+    [JsonPropertyName("assignToActiveUser")]
     public bool? AssignToActiveUser { get; set; }
 
 
@@ -74,7 +74,7 @@ public partial class MeteredEvaluationAssignment : IEquatable<MeteredEvaluationA
     /// <summary>
     /// Gets or Sets TimeInterval
     /// </summary>
-    [DataMember(Name = "timeInterval", EmitDefaultValue = false)]
+    [JsonPropertyName("timeInterval")]
     public TimeInterval TimeInterval { get; set; }
 
 

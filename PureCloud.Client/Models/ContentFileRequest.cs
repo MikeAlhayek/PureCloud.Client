@@ -1,12 +1,12 @@
-using System.Runtime.Serialization;
 using System.Text;
+using System.Text.Json.Serialization;
 
 namespace PureCloud.Client.Models;
 
 /// <summary>
 /// ContentFileRequest
 /// </summary>
-[DataContract]
+
 public partial class ContentFileRequest : IEquatable<ContentFileRequest>
 {
     /// <summary>
@@ -27,7 +27,7 @@ public partial class ContentFileRequest : IEquatable<ContentFileRequest>
     /// Key that identifies the file in the storage including the file name
     /// </summary>
     /// <value>Key that identifies the file in the storage including the file name</value>
-    [DataMember(Name = "uploadKey", EmitDefaultValue = false)]
+    [JsonPropertyName("uploadKey")]
     public string UploadKey { get; set; }
 
 
@@ -36,7 +36,7 @@ public partial class ContentFileRequest : IEquatable<ContentFileRequest>
     /// The name of the file
     /// </summary>
     /// <value>The name of the file</value>
-    [DataMember(Name = "name", EmitDefaultValue = false)]
+    [JsonPropertyName("name")]
     public string Name { get; set; }
 
 

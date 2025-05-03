@@ -7,13 +7,13 @@ namespace PureCloud.Client.Models;
 /// <summary>
 /// WemCoachingUserNotificationTopicCoachingUserNotification
 /// </summary>
-[DataContract]
+
 public partial class WemCoachingUserNotificationTopicCoachingUserNotification : IEquatable<WemCoachingUserNotificationTopicCoachingUserNotification>
 {
     /// <summary>
     /// Gets or Sets ActionType
     /// </summary>
-    [JsonConverter(typeof(JsonStringEnumConverter))]
+    
     public enum ActionTypeEnum
     {
         /// <summary>
@@ -51,7 +51,7 @@ public partial class WemCoachingUserNotificationTopicCoachingUserNotification : 
     /// <summary>
     /// Gets or Sets Relationship
     /// </summary>
-    [JsonConverter(typeof(JsonStringEnumConverter))]
+    
     public enum RelationshipEnum
     {
         /// <summary>
@@ -83,7 +83,7 @@ public partial class WemCoachingUserNotificationTopicCoachingUserNotification : 
     /// <summary>
     /// Gets or Sets Status
     /// </summary>
-    [JsonConverter(typeof(JsonStringEnumConverter))]
+    
     public enum StatusEnum
     {
         /// <summary>
@@ -121,17 +121,17 @@ public partial class WemCoachingUserNotificationTopicCoachingUserNotification : 
     /// <summary>
     /// Gets or Sets ActionType
     /// </summary>
-    [DataMember(Name = "actionType", EmitDefaultValue = false)]
+    [JsonPropertyName("actionType")]
     public ActionTypeEnum? ActionType { get; set; }
     /// <summary>
     /// Gets or Sets Relationship
     /// </summary>
-    [DataMember(Name = "relationship", EmitDefaultValue = false)]
+    [JsonPropertyName("relationship")]
     public RelationshipEnum? Relationship { get; set; }
     /// <summary>
     /// Gets or Sets Status
     /// </summary>
-    [DataMember(Name = "status", EmitDefaultValue = false)]
+    [JsonPropertyName("status")]
     public StatusEnum? Status { get; set; }
     /// <summary>
     /// Initializes a new instance of the <see cref="WemCoachingUserNotificationTopicCoachingUserNotification" /> class.
@@ -164,7 +164,7 @@ public partial class WemCoachingUserNotificationTopicCoachingUserNotification : 
     /// <summary>
     /// Gets or Sets Id
     /// </summary>
-    [DataMember(Name = "id", EmitDefaultValue = false)]
+    [JsonPropertyName("id")]
     public string Id { get; set; }
 
 
@@ -172,7 +172,7 @@ public partial class WemCoachingUserNotificationTopicCoachingUserNotification : 
     /// <summary>
     /// Gets or Sets Name
     /// </summary>
-    [DataMember(Name = "name", EmitDefaultValue = false)]
+    [JsonPropertyName("name")]
     public string Name { get; set; }
 
 
@@ -180,7 +180,7 @@ public partial class WemCoachingUserNotificationTopicCoachingUserNotification : 
     /// <summary>
     /// Gets or Sets MarkedAsRead
     /// </summary>
-    [DataMember(Name = "markedAsRead", EmitDefaultValue = false)]
+    [JsonPropertyName("markedAsRead")]
     public bool? MarkedAsRead { get; set; }
 
 
@@ -192,7 +192,7 @@ public partial class WemCoachingUserNotificationTopicCoachingUserNotification : 
     /// <summary>
     /// Gets or Sets Appointment
     /// </summary>
-    [DataMember(Name = "appointment", EmitDefaultValue = false)]
+    [JsonPropertyName("appointment")]
     public WemCoachingUserNotificationTopicCoachingAppointmentReference Appointment { get; set; }
 
 
@@ -200,7 +200,7 @@ public partial class WemCoachingUserNotificationTopicCoachingUserNotification : 
     /// <summary>
     /// Gets or Sets DateStart
     /// </summary>
-    [DataMember(Name = "dateStart", EmitDefaultValue = false)]
+    [JsonPropertyName("dateStart")]
     public DateTime? DateStart { get; set; }
 
 
@@ -208,7 +208,7 @@ public partial class WemCoachingUserNotificationTopicCoachingUserNotification : 
     /// <summary>
     /// Gets or Sets LengthInMinutes
     /// </summary>
-    [DataMember(Name = "lengthInMinutes", EmitDefaultValue = false)]
+    [JsonPropertyName("lengthInMinutes")]
     public long? LengthInMinutes { get; set; }
 
 

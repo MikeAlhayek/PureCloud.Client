@@ -7,14 +7,14 @@ namespace PureCloud.Client.Models;
 /// <summary>
 /// CampaignRuleCondition
 /// </summary>
-[DataContract]
+
 public partial class CampaignRuleCondition : IEquatable<CampaignRuleCondition>
 {
     /// <summary>
     /// The type of condition to evaluate.
     /// </summary>
     /// <value>The type of condition to evaluate.</value>
-    [JsonConverter(typeof(JsonStringEnumConverter))]
+    
     public enum ConditionTypeEnum
     {
         /// <summary>
@@ -83,7 +83,7 @@ public partial class CampaignRuleCondition : IEquatable<CampaignRuleCondition>
     /// The type of condition to evaluate.
     /// </summary>
     /// <value>The type of condition to evaluate.</value>
-    [DataMember(Name = "conditionType", EmitDefaultValue = false)]
+    [JsonPropertyName("conditionType")]
     public ConditionTypeEnum? ConditionType { get; set; }
 
     /// <summary>
@@ -110,7 +110,7 @@ public partial class CampaignRuleCondition : IEquatable<CampaignRuleCondition>
     /// <summary>
     /// Gets or Sets Id
     /// </summary>
-    [DataMember(Name = "id", EmitDefaultValue = false)]
+    [JsonPropertyName("id")]
     public string Id { get; set; }
 
 
@@ -119,7 +119,7 @@ public partial class CampaignRuleCondition : IEquatable<CampaignRuleCondition>
     /// The parameters for the CampaignRuleCondition.
     /// </summary>
     /// <value>The parameters for the CampaignRuleCondition.</value>
-    [DataMember(Name = "parameters", EmitDefaultValue = false)]
+    [JsonPropertyName("parameters")]
     public CampaignRuleParameters Parameters { get; set; }
 
 

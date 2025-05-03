@@ -1,12 +1,12 @@
-using System.Runtime.Serialization;
 using System.Text;
+using System.Text.Json.Serialization;
 
 namespace PureCloud.Client.Models;
 
 /// <summary>
 /// SnapshotMetaDataResult
 /// </summary>
-[DataContract]
+
 public partial class SnapshotMetaDataResult : IEquatable<SnapshotMetaDataResult>
 {
     /// <summary>
@@ -27,7 +27,7 @@ public partial class SnapshotMetaDataResult : IEquatable<SnapshotMetaDataResult>
     /// Information about the snapshot
     /// </summary>
     /// <value>Information about the snapshot</value>
-    [DataMember(Name = "snapshotInfo", EmitDefaultValue = false)]
+    [JsonPropertyName("snapshotInfo")]
     public SnapshotInfo SnapshotInfo { get; set; }
 
 
@@ -36,7 +36,7 @@ public partial class SnapshotMetaDataResult : IEquatable<SnapshotMetaDataResult>
     /// Start date of the forecast. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z
     /// </summary>
     /// <value>Start date of the forecast. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z</value>
-    [DataMember(Name = "dateForecastStart", EmitDefaultValue = false)]
+    [JsonPropertyName("dateForecastStart")]
     public DateTime? DateForecastStart { get; set; }
 
 

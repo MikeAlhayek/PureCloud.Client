@@ -1,12 +1,12 @@
-using System.Runtime.Serialization;
 using System.Text;
+using System.Text.Json.Serialization;
 
 namespace PureCloud.Client.Models;
 
 /// <summary>
 /// KnowledgeImportJobSettings
 /// </summary>
-[DataContract]
+
 public partial class KnowledgeImportJobSettings : IEquatable<KnowledgeImportJobSettings>
 {
     /// <summary>
@@ -31,7 +31,7 @@ public partial class KnowledgeImportJobSettings : IEquatable<KnowledgeImportJobS
     /// If enabled import creates a new document even if update is available.
     /// </summary>
     /// <value>If enabled import creates a new document even if update is available.</value>
-    [DataMember(Name = "importAsNew", EmitDefaultValue = false)]
+    [JsonPropertyName("importAsNew")]
     public bool? ImportAsNew { get; set; }
 
 
@@ -40,7 +40,7 @@ public partial class KnowledgeImportJobSettings : IEquatable<KnowledgeImportJobS
     /// If specified, import will override the visibility of the imported documents.
     /// </summary>
     /// <value>If specified, import will override the visibility of the imported documents.</value>
-    [DataMember(Name = "visible", EmitDefaultValue = false)]
+    [JsonPropertyName("visible")]
     public bool? Visible { get; set; }
 
 
@@ -49,7 +49,7 @@ public partial class KnowledgeImportJobSettings : IEquatable<KnowledgeImportJobS
     /// If specified, import will override the category of the imported documents.
     /// </summary>
     /// <value>If specified, import will override the category of the imported documents.</value>
-    [DataMember(Name = "categoryId", EmitDefaultValue = false)]
+    [JsonPropertyName("categoryId")]
     public string CategoryId { get; set; }
 
 
@@ -58,7 +58,7 @@ public partial class KnowledgeImportJobSettings : IEquatable<KnowledgeImportJobS
     /// If specified, import will add this labels to the imported documents.
     /// </summary>
     /// <value>If specified, import will add this labels to the imported documents.</value>
-    [DataMember(Name = "labelIds", EmitDefaultValue = false)]
+    [JsonPropertyName("labelIds")]
     public List<string> LabelIds { get; set; }
 
 

@@ -7,14 +7,14 @@ namespace PureCloud.Client.Models;
 /// <summary>
 /// DialerContactlistfilterConfigChangeFilterPredicate
 /// </summary>
-[DataContract]
+
 public partial class DialerContactlistfilterConfigChangeFilterPredicate : IEquatable<DialerContactlistfilterConfigChangeFilterPredicate>
 {
     /// <summary>
     /// Whether a contact column is numeric or alphabetic
     /// </summary>
     /// <value>Whether a contact column is numeric or alphabetic</value>
-    [JsonConverter(typeof(JsonStringEnumConverter))]
+    
     public enum ColumnTypeEnum
     {
         /// <summary>
@@ -41,7 +41,7 @@ public partial class DialerContactlistfilterConfigChangeFilterPredicate : IEquat
     /// The comparison operator
     /// </summary>
     /// <value>The comparison operator</value>
-    [JsonConverter(typeof(JsonStringEnumConverter))]
+    
     public enum OperatorEnum
     {
         /// <summary>
@@ -128,13 +128,13 @@ public partial class DialerContactlistfilterConfigChangeFilterPredicate : IEquat
     /// Whether a contact column is numeric or alphabetic
     /// </summary>
     /// <value>Whether a contact column is numeric or alphabetic</value>
-    [DataMember(Name = "columnType", EmitDefaultValue = false)]
+    [JsonPropertyName("columnType")]
     public ColumnTypeEnum? ColumnType { get; set; }
     /// <summary>
     /// The comparison operator
     /// </summary>
     /// <value>The comparison operator</value>
-    [DataMember(Name = "operator", EmitDefaultValue = false)]
+    [JsonPropertyName("operator")]
     public OperatorEnum? Operator { get; set; }
     /// <summary>
     /// Initializes a new instance of the <see cref="DialerContactlistfilterConfigChangeFilterPredicate" /> class.
@@ -164,7 +164,7 @@ public partial class DialerContactlistfilterConfigChangeFilterPredicate : IEquat
     /// The contact list column
     /// </summary>
     /// <value>The contact list column</value>
-    [DataMember(Name = "column", EmitDefaultValue = false)]
+    [JsonPropertyName("column")]
     public string Column { get; set; }
 
 
@@ -177,7 +177,7 @@ public partial class DialerContactlistfilterConfigChangeFilterPredicate : IEquat
     /// The value the predicate applies to
     /// </summary>
     /// <value>The value the predicate applies to</value>
-    [DataMember(Name = "value", EmitDefaultValue = false)]
+    [JsonPropertyName("value")]
     public string Value { get; set; }
 
 
@@ -185,7 +185,7 @@ public partial class DialerContactlistfilterConfigChangeFilterPredicate : IEquat
     /// <summary>
     /// Gets or Sets Range
     /// </summary>
-    [DataMember(Name = "range", EmitDefaultValue = false)]
+    [JsonPropertyName("range")]
     public DialerContactlistfilterConfigChangeRange Range { get; set; }
 
 
@@ -194,7 +194,7 @@ public partial class DialerContactlistfilterConfigChangeFilterPredicate : IEquat
     /// Whether or not to invert to result of evaluating the predicate
     /// </summary>
     /// <value>Whether or not to invert to result of evaluating the predicate</value>
-    [DataMember(Name = "inverted", EmitDefaultValue = false)]
+    [JsonPropertyName("inverted")]
     public bool? Inverted { get; set; }
 
 
@@ -202,7 +202,7 @@ public partial class DialerContactlistfilterConfigChangeFilterPredicate : IEquat
     /// <summary>
     /// Gets or Sets AdditionalProperties
     /// </summary>
-    [DataMember(Name = "additionalProperties", EmitDefaultValue = false)]
+    [JsonPropertyName("additionalProperties")]
     public Dictionary<string, object> AdditionalProperties { get; set; }
 
 

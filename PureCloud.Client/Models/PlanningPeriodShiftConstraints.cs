@@ -1,12 +1,12 @@
-using System.Runtime.Serialization;
 using System.Text;
+using System.Text.Json.Serialization;
 
 namespace PureCloud.Client.Models;
 
 /// <summary>
 /// PlanningPeriodShiftConstraints
 /// </summary>
-[DataContract]
+
 public partial class PlanningPeriodShiftConstraints : IEquatable<PlanningPeriodShiftConstraints>
 {
     /// <summary>
@@ -29,7 +29,7 @@ public partial class PlanningPeriodShiftConstraints : IEquatable<PlanningPeriodS
     /// Whether shifts per planning period is enabled. This field is non-nullable on the response
     /// </summary>
     /// <value>Whether shifts per planning period is enabled. This field is non-nullable on the response</value>
-    [DataMember(Name = "enabled", EmitDefaultValue = false)]
+    [JsonPropertyName("enabled")]
     public bool? Enabled { get; set; }
 
 
@@ -38,7 +38,7 @@ public partial class PlanningPeriodShiftConstraints : IEquatable<PlanningPeriodS
     /// The minimum number of shifts required per planning period. This field is non-nullable on the response
     /// </summary>
     /// <value>The minimum number of shifts required per planning period. This field is non-nullable on the response</value>
-    [DataMember(Name = "minimumCount", EmitDefaultValue = false)]
+    [JsonPropertyName("minimumCount")]
     public int? MinimumCount { get; set; }
 
 
@@ -47,7 +47,7 @@ public partial class PlanningPeriodShiftConstraints : IEquatable<PlanningPeriodS
     /// The maximum number of shifts allowed per planning period. This field is non-nullable on the response
     /// </summary>
     /// <value>The maximum number of shifts allowed per planning period. This field is non-nullable on the response</value>
-    [DataMember(Name = "maximumCount", EmitDefaultValue = false)]
+    [JsonPropertyName("maximumCount")]
     public int? MaximumCount { get; set; }
 
 

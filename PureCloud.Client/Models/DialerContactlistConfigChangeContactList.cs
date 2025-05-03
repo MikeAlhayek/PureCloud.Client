@@ -1,12 +1,12 @@
-using System.Runtime.Serialization;
 using System.Text;
+using System.Text.Json.Serialization;
 
 namespace PureCloud.Client.Models;
 
 /// <summary>
 /// DialerContactlistConfigChangeContactList
 /// </summary>
-[DataContract]
+
 public partial class DialerContactlistConfigChangeContactList : IEquatable<DialerContactlistConfigChangeContactList>
 {
     /// <summary>
@@ -57,7 +57,7 @@ public partial class DialerContactlistConfigChangeContactList : IEquatable<Diale
     /// the contact column names
     /// </summary>
     /// <value>the contact column names</value>
-    [DataMember(Name = "columnNames", EmitDefaultValue = false)]
+    [JsonPropertyName("columnNames")]
     public List<string> ColumnNames { get; set; }
 
 
@@ -66,7 +66,7 @@ public partial class DialerContactlistConfigChangeContactList : IEquatable<Diale
     /// the columns containing phone numbers
     /// </summary>
     /// <value>the columns containing phone numbers</value>
-    [DataMember(Name = "phoneColumns", EmitDefaultValue = false)]
+    [JsonPropertyName("phoneColumns")]
     public List<DialerContactlistConfigChangeContactPhoneNumberColumn> PhoneColumns { get; set; }
 
 
@@ -75,7 +75,7 @@ public partial class DialerContactlistConfigChangeContactList : IEquatable<Diale
     /// the columns containing email addresses
     /// </summary>
     /// <value>the columns containing email addresses</value>
-    [DataMember(Name = "emailColumns", EmitDefaultValue = false)]
+    [JsonPropertyName("emailColumns")]
     public List<DialerContactlistConfigChangeEmailColumn> EmailColumns { get; set; }
 
 
@@ -83,7 +83,7 @@ public partial class DialerContactlistConfigChangeContactList : IEquatable<Diale
     /// <summary>
     /// Gets or Sets ImportStatus
     /// </summary>
-    [DataMember(Name = "importStatus", EmitDefaultValue = false)]
+    [JsonPropertyName("importStatus")]
     public DialerContactlistConfigChangeImportStatus ImportStatus { get; set; }
 
 
@@ -92,7 +92,7 @@ public partial class DialerContactlistConfigChangeContactList : IEquatable<Diale
     /// the name of the column that holds the indicators for contacts that are to be dialed in preview mode only
     /// </summary>
     /// <value>the name of the column that holds the indicators for contacts that are to be dialed in preview mode only</value>
-    [DataMember(Name = "previewModeColumnName", EmitDefaultValue = false)]
+    [JsonPropertyName("previewModeColumnName")]
     public string PreviewModeColumnName { get; set; }
 
 
@@ -101,7 +101,7 @@ public partial class DialerContactlistConfigChangeContactList : IEquatable<Diale
     /// list of user-defined values indicating the contact is to be dialed in preview mode only
     /// </summary>
     /// <value>list of user-defined values indicating the contact is to be dialed in preview mode only</value>
-    [DataMember(Name = "previewModeAcceptedValues", EmitDefaultValue = false)]
+    [JsonPropertyName("previewModeAcceptedValues")]
     public List<string> PreviewModeAcceptedValues { get; set; }
 
 
@@ -110,7 +110,7 @@ public partial class DialerContactlistConfigChangeContactList : IEquatable<Diale
     /// the number of contacts in the contact list
     /// </summary>
     /// <value>the number of contacts in the contact list</value>
-    [DataMember(Name = "size", EmitDefaultValue = false)]
+    [JsonPropertyName("size")]
     public long? Size { get; set; }
 
 
@@ -118,7 +118,7 @@ public partial class DialerContactlistConfigChangeContactList : IEquatable<Diale
     /// <summary>
     /// Gets or Sets AttemptLimits
     /// </summary>
-    [DataMember(Name = "attemptLimits", EmitDefaultValue = false)]
+    [JsonPropertyName("attemptLimits")]
     public DialerContactlistConfigChangeUriReference AttemptLimits { get; set; }
 
 
@@ -127,7 +127,7 @@ public partial class DialerContactlistConfigChangeContactList : IEquatable<Diale
     /// whether or not automatic time zone mapping is enabled on the list
     /// </summary>
     /// <value>whether or not automatic time zone mapping is enabled on the list</value>
-    [DataMember(Name = "automaticTimeZoneMapping", EmitDefaultValue = false)]
+    [JsonPropertyName("automaticTimeZoneMapping")]
     public bool? AutomaticTimeZoneMapping { get; set; }
 
 
@@ -136,7 +136,7 @@ public partial class DialerContactlistConfigChangeContactList : IEquatable<Diale
     /// zip code column from the contact list to be used optionally with automatic time zone mapping
     /// </summary>
     /// <value>zip code column from the contact list to be used optionally with automatic time zone mapping</value>
-    [DataMember(Name = "zipCodeColumnName", EmitDefaultValue = false)]
+    [JsonPropertyName("zipCodeColumnName")]
     public string ZipCodeColumnName { get; set; }
 
 
@@ -145,7 +145,7 @@ public partial class DialerContactlistConfigChangeContactList : IEquatable<Diale
     /// A UriReference for a resource
     /// </summary>
     /// <value>A UriReference for a resource</value>
-    [DataMember(Name = "division", EmitDefaultValue = false)]
+    [JsonPropertyName("division")]
     public DialerContactlistConfigChangeUriReference Division { get; set; }
 
 
@@ -153,7 +153,7 @@ public partial class DialerContactlistConfigChangeContactList : IEquatable<Diale
     /// <summary>
     /// Gets or Sets AdditionalProperties
     /// </summary>
-    [DataMember(Name = "additionalProperties", EmitDefaultValue = false)]
+    [JsonPropertyName("additionalProperties")]
     public Dictionary<string, object> AdditionalProperties { get; set; }
 
 
@@ -162,7 +162,7 @@ public partial class DialerContactlistConfigChangeContactList : IEquatable<Diale
     /// The globally unique identifier for the object.
     /// </summary>
     /// <value>The globally unique identifier for the object.</value>
-    [DataMember(Name = "id", EmitDefaultValue = false)]
+    [JsonPropertyName("id")]
     public string Id { get; set; }
 
 
@@ -171,7 +171,7 @@ public partial class DialerContactlistConfigChangeContactList : IEquatable<Diale
     /// The UI-visible name of the object
     /// </summary>
     /// <value>The UI-visible name of the object</value>
-    [DataMember(Name = "name", EmitDefaultValue = false)]
+    [JsonPropertyName("name")]
     public string Name { get; set; }
 
 
@@ -180,7 +180,7 @@ public partial class DialerContactlistConfigChangeContactList : IEquatable<Diale
     /// Creation time of the entity
     /// </summary>
     /// <value>Creation time of the entity</value>
-    [DataMember(Name = "dateCreated", EmitDefaultValue = false)]
+    [JsonPropertyName("dateCreated")]
     public DateTime? DateCreated { get; set; }
 
 
@@ -189,7 +189,7 @@ public partial class DialerContactlistConfigChangeContactList : IEquatable<Diale
     /// Last modified time of the entity
     /// </summary>
     /// <value>Last modified time of the entity</value>
-    [DataMember(Name = "dateModified", EmitDefaultValue = false)]
+    [JsonPropertyName("dateModified")]
     public DateTime? DateModified { get; set; }
 
 
@@ -198,7 +198,7 @@ public partial class DialerContactlistConfigChangeContactList : IEquatable<Diale
     /// Required for updates, must match the version number of the most recent update
     /// </summary>
     /// <value>Required for updates, must match the version number of the most recent update</value>
-    [DataMember(Name = "version", EmitDefaultValue = false)]
+    [JsonPropertyName("version")]
     public long? Version { get; set; }
 
 

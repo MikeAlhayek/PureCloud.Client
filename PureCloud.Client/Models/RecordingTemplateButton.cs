@@ -7,14 +7,14 @@ namespace PureCloud.Client.Models;
 /// <summary>
 /// RecordingTemplateButton
 /// </summary>
-[DataContract]
+
 public partial class RecordingTemplateButton : IEquatable<RecordingTemplateButton>
 {
     /// <summary>
     /// Specifies the type of the button.
     /// </summary>
     /// <value>Specifies the type of the button.</value>
-    [JsonConverter(typeof(JsonStringEnumConverter))]
+    
     public enum TypeEnum
     {
         /// <summary>
@@ -47,7 +47,7 @@ public partial class RecordingTemplateButton : IEquatable<RecordingTemplateButto
     /// Specifies the type of the button.
     /// </summary>
     /// <value>Specifies the type of the button.</value>
-    [DataMember(Name = "type", EmitDefaultValue = false)]
+    [JsonPropertyName("type")]
     public TypeEnum? Type { get; set; }
     /// <summary>
     /// Initializes a new instance of the <see cref="RecordingTemplateButton" /> class.
@@ -77,7 +77,7 @@ public partial class RecordingTemplateButton : IEquatable<RecordingTemplateButto
     /// Button text message.
     /// </summary>
     /// <value>Button text message.</value>
-    [DataMember(Name = "text", EmitDefaultValue = false)]
+    [JsonPropertyName("text")]
     public string Text { get; set; }
 
 
@@ -86,7 +86,7 @@ public partial class RecordingTemplateButton : IEquatable<RecordingTemplateButto
     /// Index of the button in the list.
     /// </summary>
     /// <value>Index of the button in the list.</value>
-    [DataMember(Name = "index", EmitDefaultValue = false)]
+    [JsonPropertyName("index")]
     public long? Index { get; set; }
 
 
@@ -95,7 +95,7 @@ public partial class RecordingTemplateButton : IEquatable<RecordingTemplateButto
     /// Button phone number.
     /// </summary>
     /// <value>Button phone number.</value>
-    [DataMember(Name = "phoneNumber", EmitDefaultValue = false)]
+    [JsonPropertyName("phoneNumber")]
     public string PhoneNumber { get; set; }
 
 
@@ -104,7 +104,7 @@ public partial class RecordingTemplateButton : IEquatable<RecordingTemplateButto
     /// Button URL link.
     /// </summary>
     /// <value>Button URL link.</value>
-    [DataMember(Name = "url", EmitDefaultValue = false)]
+    [JsonPropertyName("url")]
     public string Url { get; set; }
 
 
@@ -113,7 +113,7 @@ public partial class RecordingTemplateButton : IEquatable<RecordingTemplateButto
     /// Indicates if the button is selected by end customer.
     /// </summary>
     /// <value>Indicates if the button is selected by end customer.</value>
-    [DataMember(Name = "isSelected", EmitDefaultValue = false)]
+    [JsonPropertyName("isSelected")]
     public bool? IsSelected { get; set; }
 
 

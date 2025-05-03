@@ -1,12 +1,12 @@
-using System.Runtime.Serialization;
 using System.Text;
+using System.Text.Json.Serialization;
 
 namespace PureCloud.Client.Models;
 
 /// <summary>
 /// QueueConversationEventTopicMessageSticker
 /// </summary>
-[DataContract]
+
 public partial class QueueConversationEventTopicMessageSticker : IEquatable<QueueConversationEventTopicMessageSticker>
 {
     /// <summary>
@@ -27,7 +27,7 @@ public partial class QueueConversationEventTopicMessageSticker : IEquatable<Queu
     /// The location of the sticker, useful for retrieving it
     /// </summary>
     /// <value>The location of the sticker, useful for retrieving it</value>
-    [DataMember(Name = "url", EmitDefaultValue = false)]
+    [JsonPropertyName("url")]
     public string Url { get; set; }
 
 
@@ -36,7 +36,7 @@ public partial class QueueConversationEventTopicMessageSticker : IEquatable<Queu
     /// The unique id of the the sticker object.
     /// </summary>
     /// <value>The unique id of the the sticker object.</value>
-    [DataMember(Name = "id", EmitDefaultValue = false)]
+    [JsonPropertyName("id")]
     public string Id { get; set; }
 
 

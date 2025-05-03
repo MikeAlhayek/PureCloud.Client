@@ -1,12 +1,12 @@
-using System.Runtime.Serialization;
 using System.Text;
+using System.Text.Json.Serialization;
 
 namespace PureCloud.Client.Models;
 
 /// <summary>
 /// GDPRSubject
 /// </summary>
-[DataContract]
+
 public partial class GDPRSubject : IEquatable<GDPRSubject>
 {
     /// <summary>
@@ -42,7 +42,7 @@ public partial class GDPRSubject : IEquatable<GDPRSubject>
     /// <summary>
     /// Gets or Sets Name
     /// </summary>
-    [DataMember(Name = "name", EmitDefaultValue = false)]
+    [JsonPropertyName("name")]
     public string Name { get; set; }
 
 
@@ -50,7 +50,7 @@ public partial class GDPRSubject : IEquatable<GDPRSubject>
     /// <summary>
     /// Gets or Sets UserId
     /// </summary>
-    [DataMember(Name = "userId", EmitDefaultValue = false)]
+    [JsonPropertyName("userId")]
     public string UserId { get; set; }
 
 
@@ -58,7 +58,7 @@ public partial class GDPRSubject : IEquatable<GDPRSubject>
     /// <summary>
     /// Gets or Sets ExternalContactId
     /// </summary>
-    [DataMember(Name = "externalContactId", EmitDefaultValue = false)]
+    [JsonPropertyName("externalContactId")]
     public string ExternalContactId { get; set; }
 
 
@@ -66,7 +66,7 @@ public partial class GDPRSubject : IEquatable<GDPRSubject>
     /// <summary>
     /// Gets or Sets DialerContactId
     /// </summary>
-    [DataMember(Name = "dialerContactId", EmitDefaultValue = false)]
+    [JsonPropertyName("dialerContactId")]
     public DialerContactId DialerContactId { get; set; }
 
 
@@ -74,7 +74,7 @@ public partial class GDPRSubject : IEquatable<GDPRSubject>
     /// <summary>
     /// Gets or Sets JourneyCustomer
     /// </summary>
-    [DataMember(Name = "journeyCustomer", EmitDefaultValue = false)]
+    [JsonPropertyName("journeyCustomer")]
     public GDPRJourneyCustomer JourneyCustomer { get; set; }
 
 
@@ -82,7 +82,7 @@ public partial class GDPRSubject : IEquatable<GDPRSubject>
     /// <summary>
     /// Gets or Sets SocialHandle
     /// </summary>
-    [DataMember(Name = "socialHandle", EmitDefaultValue = false)]
+    [JsonPropertyName("socialHandle")]
     public SocialHandle SocialHandle { get; set; }
 
 
@@ -90,7 +90,7 @@ public partial class GDPRSubject : IEquatable<GDPRSubject>
     /// <summary>
     /// Gets or Sets ExternalId
     /// </summary>
-    [DataMember(Name = "externalId", EmitDefaultValue = false)]
+    [JsonPropertyName("externalId")]
     public string ExternalId { get; set; }
 
 
@@ -98,7 +98,7 @@ public partial class GDPRSubject : IEquatable<GDPRSubject>
     /// <summary>
     /// Gets or Sets Addresses
     /// </summary>
-    [DataMember(Name = "addresses", EmitDefaultValue = false)]
+    [JsonPropertyName("addresses")]
     public List<string> Addresses { get; set; }
 
 
@@ -106,7 +106,7 @@ public partial class GDPRSubject : IEquatable<GDPRSubject>
     /// <summary>
     /// Gets or Sets PhoneNumbers
     /// </summary>
-    [DataMember(Name = "phoneNumbers", EmitDefaultValue = false)]
+    [JsonPropertyName("phoneNumbers")]
     public List<string> PhoneNumbers { get; set; }
 
 
@@ -114,7 +114,7 @@ public partial class GDPRSubject : IEquatable<GDPRSubject>
     /// <summary>
     /// Gets or Sets EmailAddresses
     /// </summary>
-    [DataMember(Name = "emailAddresses", EmitDefaultValue = false)]
+    [JsonPropertyName("emailAddresses")]
     public List<string> EmailAddresses { get; set; }
 
 

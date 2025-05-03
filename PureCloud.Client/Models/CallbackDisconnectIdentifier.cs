@@ -1,4 +1,3 @@
-using System.Runtime.Serialization;
 using System.Text;
 using System.Text.Json.Serialization;
 
@@ -7,7 +6,7 @@ namespace PureCloud.Client.Models;
 /// <summary>
 /// CallbackDisconnectIdentifier
 /// </summary>
-[DataContract]
+
 public partial class CallbackDisconnectIdentifier : IEquatable<CallbackDisconnectIdentifier>
 {
 
@@ -34,7 +33,7 @@ public partial class CallbackDisconnectIdentifier : IEquatable<CallbackDisconnec
     /// The Conversation Id.
     /// </summary>
     /// <value>The Conversation Id.</value>
-    [DataMember(Name = "conversationId", EmitDefaultValue = false)]
+    [JsonPropertyName("conversationId")]
     public string ConversationId { get; set; }
 
 
@@ -43,7 +42,7 @@ public partial class CallbackDisconnectIdentifier : IEquatable<CallbackDisconnec
     /// The callback id.
     /// </summary>
     /// <value>The callback id.</value>
-    [DataMember(Name = "callbackId", EmitDefaultValue = false)]
+    [JsonPropertyName("callbackId")]
     public string CallbackId { get; set; }
 
 

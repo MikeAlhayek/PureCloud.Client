@@ -7,14 +7,14 @@ namespace PureCloud.Client.Models;
 /// <summary>
 /// KnowledgeGuestDocumentCopy
 /// </summary>
-[DataContract]
+
 public partial class KnowledgeGuestDocumentCopy : IEquatable<KnowledgeGuestDocumentCopy>
 {
     /// <summary>
     /// The type of the query that surfaced the document.
     /// </summary>
     /// <value>The type of the query that surfaced the document.</value>
-    [JsonConverter(typeof(JsonStringEnumConverter))]
+    
     public enum QueryTypeEnum
     {
         /// <summary>
@@ -71,7 +71,7 @@ public partial class KnowledgeGuestDocumentCopy : IEquatable<KnowledgeGuestDocum
     /// The method how knowledge was surfaced. Article: Full article was shown. Snippet: A snippet from the article was shown. Highlight: A highlighted answer in a snippet was shown.
     /// </summary>
     /// <value>The method how knowledge was surfaced. Article: Full article was shown. Snippet: A snippet from the article was shown. Highlight: A highlighted answer in a snippet was shown.</value>
-    [JsonConverter(typeof(JsonStringEnumConverter))]
+    
     public enum SurfacingMethodEnum
     {
         /// <summary>
@@ -110,13 +110,13 @@ public partial class KnowledgeGuestDocumentCopy : IEquatable<KnowledgeGuestDocum
     /// The type of the query that surfaced the document.
     /// </summary>
     /// <value>The type of the query that surfaced the document.</value>
-    [DataMember(Name = "queryType", EmitDefaultValue = false)]
+    [JsonPropertyName("queryType")]
     public QueryTypeEnum? QueryType { get; set; }
     /// <summary>
     /// The method how knowledge was surfaced. Article: Full article was shown. Snippet: A snippet from the article was shown. Highlight: A highlighted answer in a snippet was shown.
     /// </summary>
     /// <value>The method how knowledge was surfaced. Article: Full article was shown. Snippet: A snippet from the article was shown. Highlight: A highlighted answer in a snippet was shown.</value>
-    [DataMember(Name = "surfacingMethod", EmitDefaultValue = false)]
+    [JsonPropertyName("surfacingMethod")]
     public SurfacingMethodEnum? SurfacingMethod { get; set; }
 
     /// <summary>
@@ -148,7 +148,7 @@ public partial class KnowledgeGuestDocumentCopy : IEquatable<KnowledgeGuestDocum
     /// The variation of the document whose content was copied.
     /// </summary>
     /// <value>The variation of the document whose content was copied.</value>
-    [DataMember(Name = "documentVariationId", EmitDefaultValue = false)]
+    [JsonPropertyName("documentVariationId")]
     public string DocumentVariationId { get; set; }
 
 
@@ -157,7 +157,7 @@ public partial class KnowledgeGuestDocumentCopy : IEquatable<KnowledgeGuestDocum
     /// The version of the document whose content was copied.
     /// </summary>
     /// <value>The version of the document whose content was copied.</value>
-    [DataMember(Name = "documentVersionId", EmitDefaultValue = false)]
+    [JsonPropertyName("documentVersionId")]
     public string DocumentVersionId { get; set; }
 
 
@@ -166,7 +166,7 @@ public partial class KnowledgeGuestDocumentCopy : IEquatable<KnowledgeGuestDocum
     /// The search that surfaced the document whose content was copied.
     /// </summary>
     /// <value>The search that surfaced the document whose content was copied.</value>
-    [DataMember(Name = "searchId", EmitDefaultValue = false)]
+    [JsonPropertyName("searchId")]
     public string SearchId { get; set; }
 
 
@@ -179,7 +179,7 @@ public partial class KnowledgeGuestDocumentCopy : IEquatable<KnowledgeGuestDocum
     /// Knowledge session ID.
     /// </summary>
     /// <value>Knowledge session ID.</value>
-    [DataMember(Name = "sessionId", EmitDefaultValue = false)]
+    [JsonPropertyName("sessionId")]
     public string SessionId { get; private set; }
 
 
@@ -188,7 +188,7 @@ public partial class KnowledgeGuestDocumentCopy : IEquatable<KnowledgeGuestDocum
     /// The client application in which the document content was copied.
     /// </summary>
     /// <value>The client application in which the document content was copied.</value>
-    [DataMember(Name = "application", EmitDefaultValue = false)]
+    [JsonPropertyName("application")]
     public KnowledgeGuestSearchClientApplication Application { get; private set; }
 
 

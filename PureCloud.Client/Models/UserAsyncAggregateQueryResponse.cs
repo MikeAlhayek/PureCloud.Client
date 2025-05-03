@@ -1,12 +1,12 @@
-using System.Runtime.Serialization;
 using System.Text;
+using System.Text.Json.Serialization;
 
 namespace PureCloud.Client.Models;
 
 /// <summary>
 /// UserAsyncAggregateQueryResponse
 /// </summary>
-[DataContract]
+
 public partial class UserAsyncAggregateQueryResponse : IEquatable<UserAsyncAggregateQueryResponse>
 {
     /// <summary>
@@ -29,7 +29,7 @@ public partial class UserAsyncAggregateQueryResponse : IEquatable<UserAsyncAggre
     /// A mapping from system presence to a list of organization presence ids
     /// </summary>
     /// <value>A mapping from system presence to a list of organization presence ids</value>
-    [DataMember(Name = "systemToOrganizationMappings", EmitDefaultValue = false)]
+    [JsonPropertyName("systemToOrganizationMappings")]
     public Dictionary<string, List<string>> SystemToOrganizationMappings { get; set; }
 
 
@@ -37,7 +37,7 @@ public partial class UserAsyncAggregateQueryResponse : IEquatable<UserAsyncAggre
     /// <summary>
     /// Gets or Sets Results
     /// </summary>
-    [DataMember(Name = "results", EmitDefaultValue = false)]
+    [JsonPropertyName("results")]
     public List<UserAggregateDataContainer> Results { get; set; }
 
 
@@ -46,7 +46,7 @@ public partial class UserAsyncAggregateQueryResponse : IEquatable<UserAsyncAggre
     /// Cursor token to retrieve next page
     /// </summary>
     /// <value>Cursor token to retrieve next page</value>
-    [DataMember(Name = "cursor", EmitDefaultValue = false)]
+    [JsonPropertyName("cursor")]
     public string Cursor { get; set; }
 
 

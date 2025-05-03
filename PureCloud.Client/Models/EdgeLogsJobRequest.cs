@@ -1,12 +1,12 @@
-using System.Runtime.Serialization;
 using System.Text;
+using System.Text.Json.Serialization;
 
 namespace PureCloud.Client.Models;
 
 /// <summary>
 /// EdgeLogsJobRequest
 /// </summary>
-[DataContract]
+
 public partial class EdgeLogsJobRequest : IEquatable<EdgeLogsJobRequest>
 {
     /// <summary>
@@ -29,7 +29,7 @@ public partial class EdgeLogsJobRequest : IEquatable<EdgeLogsJobRequest>
     /// A relative directory to the root Edge log folder to query from.
     /// </summary>
     /// <value>A relative directory to the root Edge log folder to query from.</value>
-    [DataMember(Name = "path", EmitDefaultValue = false)]
+    [JsonPropertyName("path")]
     public string Path { get; set; }
 
 
@@ -38,7 +38,7 @@ public partial class EdgeLogsJobRequest : IEquatable<EdgeLogsJobRequest>
     /// The pattern to use when searching for logs, which may include the wildcards {*, ?}.  Multiple search patterns may be combined using a pipe &#39;|&#39; as a delimiter.
     /// </summary>
     /// <value>The pattern to use when searching for logs, which may include the wildcards {*, ?}.  Multiple search patterns may be combined using a pipe &#39;|&#39; as a delimiter.</value>
-    [DataMember(Name = "query", EmitDefaultValue = false)]
+    [JsonPropertyName("query")]
     public string Query { get; set; }
 
 
@@ -47,7 +47,7 @@ public partial class EdgeLogsJobRequest : IEquatable<EdgeLogsJobRequest>
     /// Boolean whether or not to recurse into directories.
     /// </summary>
     /// <value>Boolean whether or not to recurse into directories.</value>
-    [DataMember(Name = "recurse", EmitDefaultValue = false)]
+    [JsonPropertyName("recurse")]
     public bool? Recurse { get; set; }
 
 

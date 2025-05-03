@@ -1,4 +1,3 @@
-using System.Runtime.Serialization;
 using System.Text;
 using System.Text.Json.Serialization;
 
@@ -7,7 +6,7 @@ namespace PureCloud.Client.Models;
 /// <summary>
 /// KnowledgeDocumentCreateRequest
 /// </summary>
-[DataContract]
+
 public partial class KnowledgeDocumentCreateRequest : IEquatable<KnowledgeDocumentCreateRequest>
 {
 
@@ -44,7 +43,7 @@ public partial class KnowledgeDocumentCreateRequest : IEquatable<KnowledgeDocume
     /// The globally unique identifier for the object.
     /// </summary>
     /// <value>The globally unique identifier for the object.</value>
-    [DataMember(Name = "id", EmitDefaultValue = false)]
+    [JsonPropertyName("id")]
     public string Id { get; private set; }
 
 
@@ -53,7 +52,7 @@ public partial class KnowledgeDocumentCreateRequest : IEquatable<KnowledgeDocume
     /// Document title.
     /// </summary>
     /// <value>Document title.</value>
-    [DataMember(Name = "title", EmitDefaultValue = false)]
+    [JsonPropertyName("title")]
     public string Title { get; set; }
 
 
@@ -62,7 +61,7 @@ public partial class KnowledgeDocumentCreateRequest : IEquatable<KnowledgeDocume
     /// Indicates if the knowledge document should be included in search results.
     /// </summary>
     /// <value>Indicates if the knowledge document should be included in search results.</value>
-    [DataMember(Name = "visible", EmitDefaultValue = false)]
+    [JsonPropertyName("visible")]
     public bool? Visible { get; set; }
 
 
@@ -71,7 +70,7 @@ public partial class KnowledgeDocumentCreateRequest : IEquatable<KnowledgeDocume
     /// List of alternate phrases related to the title which improves search results.
     /// </summary>
     /// <value>List of alternate phrases related to the title which improves search results.</value>
-    [DataMember(Name = "alternatives", EmitDefaultValue = false)]
+    [JsonPropertyName("alternatives")]
     public List<KnowledgeDocumentAlternative> Alternatives { get; set; }
 
 
@@ -80,7 +79,7 @@ public partial class KnowledgeDocumentCreateRequest : IEquatable<KnowledgeDocume
     /// The category associated with the document.
     /// </summary>
     /// <value>The category associated with the document.</value>
-    [DataMember(Name = "categoryId", EmitDefaultValue = false)]
+    [JsonPropertyName("categoryId")]
     public string CategoryId { get; set; }
 
 
@@ -89,7 +88,7 @@ public partial class KnowledgeDocumentCreateRequest : IEquatable<KnowledgeDocume
     /// The ids of labels associated with the document.
     /// </summary>
     /// <value>The ids of labels associated with the document.</value>
-    [DataMember(Name = "labelIds", EmitDefaultValue = false)]
+    [JsonPropertyName("labelIds")]
     public List<string> LabelIds { get; set; }
 
 
@@ -98,7 +97,7 @@ public partial class KnowledgeDocumentCreateRequest : IEquatable<KnowledgeDocume
     /// The external id associated with the document.
     /// </summary>
     /// <value>The external id associated with the document.</value>
-    [DataMember(Name = "externalId", EmitDefaultValue = false)]
+    [JsonPropertyName("externalId")]
     public string ExternalId { get; set; }
 
 
@@ -107,7 +106,7 @@ public partial class KnowledgeDocumentCreateRequest : IEquatable<KnowledgeDocume
     /// The URL to external document.
     /// </summary>
     /// <value>The URL to external document.</value>
-    [DataMember(Name = "externalUrl", EmitDefaultValue = false)]
+    [JsonPropertyName("externalUrl")]
     public string ExternalUrl { get; set; }
 
 
@@ -116,7 +115,7 @@ public partial class KnowledgeDocumentCreateRequest : IEquatable<KnowledgeDocume
     /// The URI for this object
     /// </summary>
     /// <value>The URI for this object</value>
-    [DataMember(Name = "selfUri", EmitDefaultValue = false)]
+    [JsonPropertyName("selfUri")]
     public string SelfUri { get; private set; }
 
 

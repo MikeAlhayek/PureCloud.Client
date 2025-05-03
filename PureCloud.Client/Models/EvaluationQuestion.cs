@@ -7,13 +7,13 @@ namespace PureCloud.Client.Models;
 /// <summary>
 /// EvaluationQuestion
 /// </summary>
-[DataContract]
+
 public partial class EvaluationQuestion : IEquatable<EvaluationQuestion>
 {
     /// <summary>
     /// Gets or Sets Type
     /// </summary>
-    [JsonConverter(typeof(JsonStringEnumConverter))]
+    
     public enum TypeEnum
     {
         /// <summary>
@@ -51,7 +51,7 @@ public partial class EvaluationQuestion : IEquatable<EvaluationQuestion>
     /// <summary>
     /// Gets or Sets Type
     /// </summary>
-    [DataMember(Name = "type", EmitDefaultValue = false)]
+    [JsonPropertyName("type")]
     public TypeEnum? Type { get; set; }
     /// <summary>
     /// Initializes a new instance of the <see cref="EvaluationQuestion" /> class.
@@ -86,7 +86,7 @@ public partial class EvaluationQuestion : IEquatable<EvaluationQuestion>
     /// <summary>
     /// Gets or Sets Id
     /// </summary>
-    [DataMember(Name = "id", EmitDefaultValue = false)]
+    [JsonPropertyName("id")]
     public string Id { get; set; }
 
 
@@ -95,7 +95,7 @@ public partial class EvaluationQuestion : IEquatable<EvaluationQuestion>
     /// An identifier for this question that stays the same across versions of the form.
     /// </summary>
     /// <value>An identifier for this question that stays the same across versions of the form.</value>
-    [DataMember(Name = "contextId", EmitDefaultValue = false)]
+    [JsonPropertyName("contextId")]
     public string ContextId { get; private set; }
 
 
@@ -103,7 +103,7 @@ public partial class EvaluationQuestion : IEquatable<EvaluationQuestion>
     /// <summary>
     /// Gets or Sets Text
     /// </summary>
-    [DataMember(Name = "text", EmitDefaultValue = false)]
+    [JsonPropertyName("text")]
     public string Text { get; set; }
 
 
@@ -111,7 +111,7 @@ public partial class EvaluationQuestion : IEquatable<EvaluationQuestion>
     /// <summary>
     /// Gets or Sets HelpText
     /// </summary>
-    [DataMember(Name = "helpText", EmitDefaultValue = false)]
+    [JsonPropertyName("helpText")]
     public string HelpText { get; set; }
 
 
@@ -121,7 +121,7 @@ public partial class EvaluationQuestion : IEquatable<EvaluationQuestion>
     /// <summary>
     /// Gets or Sets NaEnabled
     /// </summary>
-    [DataMember(Name = "naEnabled", EmitDefaultValue = false)]
+    [JsonPropertyName("naEnabled")]
     public bool? NaEnabled { get; set; }
 
 
@@ -129,7 +129,7 @@ public partial class EvaluationQuestion : IEquatable<EvaluationQuestion>
     /// <summary>
     /// Gets or Sets CommentsRequired
     /// </summary>
-    [DataMember(Name = "commentsRequired", EmitDefaultValue = false)]
+    [JsonPropertyName("commentsRequired")]
     public bool? CommentsRequired { get; set; }
 
 
@@ -137,7 +137,7 @@ public partial class EvaluationQuestion : IEquatable<EvaluationQuestion>
     /// <summary>
     /// Gets or Sets VisibilityCondition
     /// </summary>
-    [DataMember(Name = "visibilityCondition", EmitDefaultValue = false)]
+    [JsonPropertyName("visibilityCondition")]
     public VisibilityCondition VisibilityCondition { get; set; }
 
 
@@ -146,7 +146,7 @@ public partial class EvaluationQuestion : IEquatable<EvaluationQuestion>
     /// Options from which to choose an answer for this question. Only used by Multiple Choice type questions.
     /// </summary>
     /// <value>Options from which to choose an answer for this question. Only used by Multiple Choice type questions.</value>
-    [DataMember(Name = "answerOptions", EmitDefaultValue = false)]
+    [JsonPropertyName("answerOptions")]
     public List<AnswerOption> AnswerOptions { get; set; }
 
 
@@ -154,7 +154,7 @@ public partial class EvaluationQuestion : IEquatable<EvaluationQuestion>
     /// <summary>
     /// Gets or Sets IsKill
     /// </summary>
-    [DataMember(Name = "isKill", EmitDefaultValue = false)]
+    [JsonPropertyName("isKill")]
     public bool? IsKill { get; set; }
 
 
@@ -162,7 +162,7 @@ public partial class EvaluationQuestion : IEquatable<EvaluationQuestion>
     /// <summary>
     /// Gets or Sets IsCritical
     /// </summary>
-    [DataMember(Name = "isCritical", EmitDefaultValue = false)]
+    [JsonPropertyName("isCritical")]
     public bool? IsCritical { get; set; }
 
 

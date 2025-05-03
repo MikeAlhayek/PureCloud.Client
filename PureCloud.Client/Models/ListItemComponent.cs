@@ -7,14 +7,14 @@ namespace PureCloud.Client.Models;
 /// <summary>
 /// An entry in a List template.
 /// </summary>
-[DataContract]
+
 public partial class ListItemComponent : IEquatable<ListItemComponent>
 {
     /// <summary>
     /// The type of list item to render.
     /// </summary>
     /// <value>The type of list item to render.</value>
-    [JsonConverter(typeof(JsonStringEnumConverter))]
+    
     public enum TypeEnum
     {
         /// <summary>
@@ -41,7 +41,7 @@ public partial class ListItemComponent : IEquatable<ListItemComponent>
     /// The type of list item to render.
     /// </summary>
     /// <value>The type of list item to render.</value>
-    [DataMember(Name = "type", EmitDefaultValue = false)]
+    [JsonPropertyName("type")]
     public TypeEnum? Type { get; set; }
     /// <summary>
     /// Initializes a new instance of the <see cref="ListItemComponent" /> class.
@@ -71,7 +71,7 @@ public partial class ListItemComponent : IEquatable<ListItemComponent>
     /// An ID assigned to this list item.
     /// </summary>
     /// <value>An ID assigned to this list item.</value>
-    [DataMember(Name = "id", EmitDefaultValue = false)]
+    [JsonPropertyName("id")]
     public string Id { get; set; }
 
 
@@ -80,7 +80,7 @@ public partial class ListItemComponent : IEquatable<ListItemComponent>
     /// An ID of the rich message instance.
     /// </summary>
     /// <value>An ID of the rich message instance.</value>
-    [DataMember(Name = "rmid", EmitDefaultValue = false)]
+    [JsonPropertyName("rmid")]
     public string Rmid { get; set; }
 
 
@@ -91,7 +91,7 @@ public partial class ListItemComponent : IEquatable<ListItemComponent>
     /// URL of an image.
     /// </summary>
     /// <value>URL of an image.</value>
-    [DataMember(Name = "image", EmitDefaultValue = false)]
+    [JsonPropertyName("image")]
     public string Image { get; set; }
 
 
@@ -100,7 +100,7 @@ public partial class ListItemComponent : IEquatable<ListItemComponent>
     /// The main headline of the list item.
     /// </summary>
     /// <value>The main headline of the list item.</value>
-    [DataMember(Name = "title", EmitDefaultValue = false)]
+    [JsonPropertyName("title")]
     public string Title { get; set; }
 
 
@@ -109,7 +109,7 @@ public partial class ListItemComponent : IEquatable<ListItemComponent>
     /// Text to show in the list item description.
     /// </summary>
     /// <value>Text to show in the list item description.</value>
-    [DataMember(Name = "description", EmitDefaultValue = false)]
+    [JsonPropertyName("description")]
     public string Description { get; set; }
 
 
@@ -118,7 +118,7 @@ public partial class ListItemComponent : IEquatable<ListItemComponent>
     /// The list item actions (Deprecated).
     /// </summary>
     /// <value>The list item actions (Deprecated).</value>
-    [DataMember(Name = "actions", EmitDefaultValue = false)]
+    [JsonPropertyName("actions")]
     public ContentActions Actions { get; set; }
 
 

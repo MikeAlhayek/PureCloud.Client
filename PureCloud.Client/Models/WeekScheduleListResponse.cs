@@ -1,12 +1,12 @@
-using System.Runtime.Serialization;
 using System.Text;
+using System.Text.Json.Serialization;
 
 namespace PureCloud.Client.Models;
 
 /// <summary>
 /// WeekScheduleListResponse
 /// </summary>
-[DataContract]
+
 public partial class WeekScheduleListResponse : IEquatable<WeekScheduleListResponse>
 {
     /// <summary>
@@ -24,7 +24,7 @@ public partial class WeekScheduleListResponse : IEquatable<WeekScheduleListRespo
     /// <summary>
     /// Gets or Sets Entities
     /// </summary>
-    [DataMember(Name = "entities", EmitDefaultValue = false)]
+    [JsonPropertyName("entities")]
     public List<WeekScheduleListItemResponse> Entities { get; set; }
 
 

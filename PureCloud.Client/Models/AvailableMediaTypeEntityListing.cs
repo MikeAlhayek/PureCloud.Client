@@ -1,12 +1,12 @@
-using System.Runtime.Serialization;
 using System.Text;
+using System.Text.Json.Serialization;
 
 namespace PureCloud.Client.Models;
 
 /// <summary>
 /// AvailableMediaTypeEntityListing
 /// </summary>
-[DataContract]
+
 public partial class AvailableMediaTypeEntityListing : IEquatable<AvailableMediaTypeEntityListing>
 {
     /// <summary>
@@ -24,7 +24,7 @@ public partial class AvailableMediaTypeEntityListing : IEquatable<AvailableMedia
     /// <summary>
     /// Gets or Sets Entities
     /// </summary>
-    [DataMember(Name = "entities", EmitDefaultValue = false)]
+    [JsonPropertyName("entities")]
     public List<AvailableMediaType> Entities { get; set; }
 
 

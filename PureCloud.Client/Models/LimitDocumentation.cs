@@ -1,12 +1,12 @@
-using System.Runtime.Serialization;
 using System.Text;
+using System.Text.Json.Serialization;
 
 namespace PureCloud.Client.Models;
 
 /// <summary>
 /// LimitDocumentation
 /// </summary>
-[DataContract]
+
 public partial class LimitDocumentation : IEquatable<LimitDocumentation>
 {
     /// <summary>
@@ -26,7 +26,7 @@ public partial class LimitDocumentation : IEquatable<LimitDocumentation>
     /// <summary>
     /// Gets or Sets Url
     /// </summary>
-    [DataMember(Name = "url", EmitDefaultValue = false)]
+    [JsonPropertyName("url")]
     public string Url { get; set; }
 
 
@@ -34,7 +34,7 @@ public partial class LimitDocumentation : IEquatable<LimitDocumentation>
     /// <summary>
     /// Gets or Sets Namespaces
     /// </summary>
-    [DataMember(Name = "namespaces", EmitDefaultValue = false)]
+    [JsonPropertyName("namespaces")]
     public List<NamespaceDocs> Namespaces { get; set; }
 
 

@@ -1,12 +1,12 @@
-using System.Runtime.Serialization;
 using System.Text;
+using System.Text.Json.Serialization;
 
 namespace PureCloud.Client.Models;
 
 /// <summary>
 /// GamificationScorecardChangeTopicScorecardChange
 /// </summary>
-[DataContract]
+
 public partial class GamificationScorecardChangeTopicScorecardChange : IEquatable<GamificationScorecardChangeTopicScorecardChange>
 {
     /// <summary>
@@ -34,7 +34,7 @@ public partial class GamificationScorecardChangeTopicScorecardChange : IEquatabl
     /// <summary>
     /// Gets or Sets Workday
     /// </summary>
-    [DataMember(Name = "workday", EmitDefaultValue = false)]
+    [JsonPropertyName("workday")]
     public string Workday { get; set; }
 
 
@@ -42,7 +42,7 @@ public partial class GamificationScorecardChangeTopicScorecardChange : IEquatabl
     /// <summary>
     /// Gets or Sets DivisionId
     /// </summary>
-    [DataMember(Name = "divisionId", EmitDefaultValue = false)]
+    [JsonPropertyName("divisionId")]
     public string DivisionId { get; set; }
 
 
@@ -50,7 +50,7 @@ public partial class GamificationScorecardChangeTopicScorecardChange : IEquatabl
     /// <summary>
     /// Gets or Sets TeamId
     /// </summary>
-    [DataMember(Name = "teamId", EmitDefaultValue = false)]
+    [JsonPropertyName("teamId")]
     public string TeamId { get; set; }
 
 
@@ -58,7 +58,7 @@ public partial class GamificationScorecardChangeTopicScorecardChange : IEquatabl
     /// <summary>
     /// Gets or Sets PerformanceProfileId
     /// </summary>
-    [DataMember(Name = "performanceProfileId", EmitDefaultValue = false)]
+    [JsonPropertyName("performanceProfileId")]
     public string PerformanceProfileId { get; set; }
 
 
@@ -66,7 +66,7 @@ public partial class GamificationScorecardChangeTopicScorecardChange : IEquatabl
     /// <summary>
     /// Gets or Sets UserId
     /// </summary>
-    [DataMember(Name = "userId", EmitDefaultValue = false)]
+    [JsonPropertyName("userId")]
     public string UserId { get; set; }
 
 
@@ -74,7 +74,7 @@ public partial class GamificationScorecardChangeTopicScorecardChange : IEquatabl
     /// <summary>
     /// Gets or Sets PerformanceMetrics
     /// </summary>
-    [DataMember(Name = "performanceMetrics", EmitDefaultValue = false)]
+    [JsonPropertyName("performanceMetrics")]
     public List<GamificationScorecardChangeTopicPerformanceMetric> PerformanceMetrics { get; set; }
 
 

@@ -1,12 +1,12 @@
-using System.Runtime.Serialization;
 using System.Text;
+using System.Text.Json.Serialization;
 
 namespace PureCloud.Client.Models;
 
 /// <summary>
 /// ChatMessageEntityListing
 /// </summary>
-[DataContract]
+
 public partial class ChatMessageEntityListing : IEquatable<ChatMessageEntityListing>
 {
     /// <summary>
@@ -24,7 +24,7 @@ public partial class ChatMessageEntityListing : IEquatable<ChatMessageEntityList
     /// <summary>
     /// Gets or Sets Entities
     /// </summary>
-    [DataMember(Name = "entities", EmitDefaultValue = false)]
+    [JsonPropertyName("entities")]
     public List<ChatMessageResponse> Entities { get; set; }
 
 

@@ -1,4 +1,3 @@
-using System.Runtime.Serialization;
 using System.Text;
 using System.Text.Json.Serialization;
 
@@ -7,7 +6,7 @@ namespace PureCloud.Client.Models;
 /// <summary>
 /// AddWorkPlanRotationAgentRequest
 /// </summary>
-[DataContract]
+
 public partial class AddWorkPlanRotationAgentRequest : IEquatable<AddWorkPlanRotationAgentRequest>
 {
 
@@ -36,7 +35,7 @@ public partial class AddWorkPlanRotationAgentRequest : IEquatable<AddWorkPlanRot
     /// The ID of an agent in this work plan rotation
     /// </summary>
     /// <value>The ID of an agent in this work plan rotation</value>
-    [DataMember(Name = "userId", EmitDefaultValue = false)]
+    [JsonPropertyName("userId")]
     public string UserId { get; set; }
 
 
@@ -45,7 +44,7 @@ public partial class AddWorkPlanRotationAgentRequest : IEquatable<AddWorkPlanRot
     /// The date range to which this agent is effective in the work plan rotation
     /// </summary>
     /// <value>The date range to which this agent is effective in the work plan rotation</value>
-    [DataMember(Name = "dateRange", EmitDefaultValue = false)]
+    [JsonPropertyName("dateRange")]
     public DateRangeWithOptionalEnd DateRange { get; set; }
 
 
@@ -54,7 +53,7 @@ public partial class AddWorkPlanRotationAgentRequest : IEquatable<AddWorkPlanRot
     /// Start position of the work plan in the pattern for this agent in the work plan rotation. Position value starts from 0
     /// </summary>
     /// <value>Start position of the work plan in the pattern for this agent in the work plan rotation. Position value starts from 0</value>
-    [DataMember(Name = "position", EmitDefaultValue = false)]
+    [JsonPropertyName("position")]
     public int? Position { get; set; }
 
 

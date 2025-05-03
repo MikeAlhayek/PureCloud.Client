@@ -7,13 +7,13 @@ namespace PureCloud.Client.Models;
 /// <summary>
 /// V2MobiusAlertsTopicAlertRuleProperties
 /// </summary>
-[DataContract]
+
 public partial class V2MobiusAlertsTopicAlertRuleProperties : IEquatable<V2MobiusAlertsTopicAlertRuleProperties>
 {
     /// <summary>
     /// Gets or Sets Type
     /// </summary>
-    [JsonConverter(typeof(JsonStringEnumConverter))]
+    
     public enum TypeEnum
     {
         /// <summary>
@@ -57,7 +57,7 @@ public partial class V2MobiusAlertsTopicAlertRuleProperties : IEquatable<V2Mobiu
     /// <summary>
     /// Gets or Sets Type
     /// </summary>
-    [DataMember(Name = "type", EmitDefaultValue = false)]
+    [JsonPropertyName("type")]
     public TypeEnum? Type { get; set; }
     /// <summary>
     /// Initializes a new instance of the <see cref="V2MobiusAlertsTopicAlertRuleProperties" /> class.
@@ -78,7 +78,7 @@ public partial class V2MobiusAlertsTopicAlertRuleProperties : IEquatable<V2Mobiu
     /// <summary>
     /// Gets or Sets Id
     /// </summary>
-    [DataMember(Name = "id", EmitDefaultValue = false)]
+    [JsonPropertyName("id")]
     public Guid? Id { get; set; }
 
 
@@ -86,7 +86,7 @@ public partial class V2MobiusAlertsTopicAlertRuleProperties : IEquatable<V2Mobiu
     /// <summary>
     /// Gets or Sets Name
     /// </summary>
-    [DataMember(Name = "name", EmitDefaultValue = false)]
+    [JsonPropertyName("name")]
     public string Name { get; set; }
 
 

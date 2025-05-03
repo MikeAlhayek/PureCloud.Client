@@ -1,12 +1,12 @@
-using System.Runtime.Serialization;
 using System.Text;
+using System.Text.Json.Serialization;
 
 namespace PureCloud.Client.Models;
 
 /// <summary>
 /// MediaIceStatistics
 /// </summary>
-[DataContract]
+
 public partial class MediaIceStatistics : IEquatable<MediaIceStatistics>
 {
     /// <summary>
@@ -25,7 +25,7 @@ public partial class MediaIceStatistics : IEquatable<MediaIceStatistics>
     /// The candidate pairs selected for the media stream
     /// </summary>
     /// <value>The candidate pairs selected for the media stream</value>
-    [DataMember(Name = "selectedPairs", EmitDefaultValue = false)]
+    [JsonPropertyName("selectedPairs")]
     public List<MediaIceSelectedPair> SelectedPairs { get; set; }
 
 

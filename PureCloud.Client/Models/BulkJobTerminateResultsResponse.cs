@@ -1,12 +1,12 @@
-using System.Runtime.Serialization;
 using System.Text;
+using System.Text.Json.Serialization;
 
 namespace PureCloud.Client.Models;
 
 /// <summary>
 /// BulkJobTerminateResultsResponse
 /// </summary>
-[DataContract]
+
 public partial class BulkJobTerminateResultsResponse : IEquatable<BulkJobTerminateResultsResponse>
 {
     /// <summary>
@@ -29,7 +29,7 @@ public partial class BulkJobTerminateResultsResponse : IEquatable<BulkJobTermina
     /// A list of the results from the bulk operation.
     /// </summary>
     /// <value>A list of the results from the bulk operation.</value>
-    [DataMember(Name = "results", EmitDefaultValue = false)]
+    [JsonPropertyName("results")]
     public List<BulkJobTerminateResult> Results { get; set; }
 
 
@@ -38,7 +38,7 @@ public partial class BulkJobTerminateResultsResponse : IEquatable<BulkJobTermina
     /// The number of errors from the bulk operation.
     /// </summary>
     /// <value>The number of errors from the bulk operation.</value>
-    [DataMember(Name = "errorCount", EmitDefaultValue = false)]
+    [JsonPropertyName("errorCount")]
     public int? ErrorCount { get; set; }
 
 
@@ -47,7 +47,7 @@ public partial class BulkJobTerminateResultsResponse : IEquatable<BulkJobTermina
     /// An index of where the errors are in the listing.
     /// </summary>
     /// <value>An index of where the errors are in the listing.</value>
-    [DataMember(Name = "errorIndexes", EmitDefaultValue = false)]
+    [JsonPropertyName("errorIndexes")]
     public List<int?> ErrorIndexes { get; set; }
 
 

@@ -1,12 +1,12 @@
-using System.Runtime.Serialization;
 using System.Text;
+using System.Text.Json.Serialization;
 
 namespace PureCloud.Client.Models;
 
 /// <summary>
 /// ChatBadgeTopicChatBadge
 /// </summary>
-[DataContract]
+
 public partial class ChatBadgeTopicChatBadge : IEquatable<ChatBadgeTopicChatBadge>
 {
     /// <summary>
@@ -28,7 +28,7 @@ public partial class ChatBadgeTopicChatBadge : IEquatable<ChatBadgeTopicChatBadg
     /// <summary>
     /// Gets or Sets Entity
     /// </summary>
-    [DataMember(Name = "entity", EmitDefaultValue = false)]
+    [JsonPropertyName("entity")]
     public ChatBadgeTopicBadgeEntity Entity { get; set; }
 
 
@@ -36,7 +36,7 @@ public partial class ChatBadgeTopicChatBadge : IEquatable<ChatBadgeTopicChatBadg
     /// <summary>
     /// Gets or Sets UnreadCount
     /// </summary>
-    [DataMember(Name = "unreadCount", EmitDefaultValue = false)]
+    [JsonPropertyName("unreadCount")]
     public long? UnreadCount { get; set; }
 
 
@@ -44,7 +44,7 @@ public partial class ChatBadgeTopicChatBadge : IEquatable<ChatBadgeTopicChatBadg
     /// <summary>
     /// Gets or Sets LastUnreadNotificationDate
     /// </summary>
-    [DataMember(Name = "lastUnreadNotificationDate", EmitDefaultValue = false)]
+    [JsonPropertyName("lastUnreadNotificationDate")]
     public DateTime? LastUnreadNotificationDate { get; set; }
 
 

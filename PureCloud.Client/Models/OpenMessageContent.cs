@@ -7,14 +7,14 @@ namespace PureCloud.Client.Models;
 /// <summary>
 /// Message content element.
 /// </summary>
-[DataContract]
+
 public partial class OpenMessageContent : IEquatable<OpenMessageContent>
 {
     /// <summary>
     /// Type of this content element. If contentType = \"Attachment\" only one item is allowed.
     /// </summary>
     /// <value>Type of this content element. If contentType = \"Attachment\" only one item is allowed.</value>
-    [JsonConverter(typeof(JsonStringEnumConverter))]
+    
     public enum ContentTypeEnum
     {
         /// <summary>
@@ -35,7 +35,7 @@ public partial class OpenMessageContent : IEquatable<OpenMessageContent>
     /// Type of this content element. If contentType = \"Attachment\" only one item is allowed.
     /// </summary>
     /// <value>Type of this content element. If contentType = \"Attachment\" only one item is allowed.</value>
-    [DataMember(Name = "contentType", EmitDefaultValue = false)]
+    [JsonPropertyName("contentType")]
     public ContentTypeEnum? ContentType { get; set; }
 
     /// <summary>
@@ -63,7 +63,7 @@ public partial class OpenMessageContent : IEquatable<OpenMessageContent>
     /// Attachment content.
     /// </summary>
     /// <value>Attachment content.</value>
-    [DataMember(Name = "attachment", EmitDefaultValue = false)]
+    [JsonPropertyName("attachment")]
     public ConversationContentAttachment Attachment { get; set; }
 
 

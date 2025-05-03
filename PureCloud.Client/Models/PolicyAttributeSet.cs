@@ -1,12 +1,12 @@
-using System.Runtime.Serialization;
 using System.Text;
+using System.Text.Json.Serialization;
 
 namespace PureCloud.Client.Models;
 
 /// <summary>
 /// PolicyAttributeSet
 /// </summary>
-[DataContract]
+
 public partial class PolicyAttributeSet : IEquatable<PolicyAttributeSet>
 {
     /// <summary>
@@ -29,7 +29,7 @@ public partial class PolicyAttributeSet : IEquatable<PolicyAttributeSet>
     /// The globally unique identifier for the object.
     /// </summary>
     /// <value>The globally unique identifier for the object.</value>
-    [DataMember(Name = "id", EmitDefaultValue = false)]
+    [JsonPropertyName("id")]
     public string Id { get; private set; }
 
 
@@ -37,7 +37,7 @@ public partial class PolicyAttributeSet : IEquatable<PolicyAttributeSet>
     /// <summary>
     /// Gets or Sets Name
     /// </summary>
-    [DataMember(Name = "name", EmitDefaultValue = false)]
+    [JsonPropertyName("name")]
     public string Name { get; set; }
 
 
@@ -46,7 +46,7 @@ public partial class PolicyAttributeSet : IEquatable<PolicyAttributeSet>
     /// A set of the attributes checked by the requested policy.
     /// </summary>
     /// <value>A set of the attributes checked by the requested policy.</value>
-    [DataMember(Name = "policyAttributes", EmitDefaultValue = false)]
+    [JsonPropertyName("policyAttributes")]
     public List<PolicyAttribute> PolicyAttributes { get; set; }
 
 
@@ -55,7 +55,7 @@ public partial class PolicyAttributeSet : IEquatable<PolicyAttributeSet>
     /// Map of names and values of preset attributes used in this policy.
     /// </summary>
     /// <value>Map of names and values of preset attributes used in this policy.</value>
-    [DataMember(Name = "presetAttributes", EmitDefaultValue = false)]
+    [JsonPropertyName("presetAttributes")]
     public Dictionary<string, TypedAttribute> PresetAttributes { get; set; }
 
 
@@ -64,7 +64,7 @@ public partial class PolicyAttributeSet : IEquatable<PolicyAttributeSet>
     /// The URI for this object
     /// </summary>
     /// <value>The URI for this object</value>
-    [DataMember(Name = "selfUri", EmitDefaultValue = false)]
+    [JsonPropertyName("selfUri")]
     public string SelfUri { get; private set; }
 
 

@@ -1,12 +1,12 @@
-using System.Runtime.Serialization;
 using System.Text;
+using System.Text.Json.Serialization;
 
 namespace PureCloud.Client.Models;
 
 /// <summary>
 /// RecallEntry
 /// </summary>
-[DataContract]
+
 public partial class RecallEntry : IEquatable<RecallEntry>
 {
     /// <summary>
@@ -26,7 +26,7 @@ public partial class RecallEntry : IEquatable<RecallEntry>
     /// <summary>
     /// Gets or Sets NbrAttempts
     /// </summary>
-    [DataMember(Name = "nbrAttempts", EmitDefaultValue = false)]
+    [JsonPropertyName("nbrAttempts")]
     public int? NbrAttempts { get; set; }
 
 
@@ -34,7 +34,7 @@ public partial class RecallEntry : IEquatable<RecallEntry>
     /// <summary>
     /// Gets or Sets MinutesBetweenAttempts
     /// </summary>
-    [DataMember(Name = "minutesBetweenAttempts", EmitDefaultValue = false)]
+    [JsonPropertyName("minutesBetweenAttempts")]
     public int? MinutesBetweenAttempts { get; set; }
 
 

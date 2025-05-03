@@ -1,12 +1,12 @@
-using System.Runtime.Serialization;
 using System.Text;
+using System.Text.Json.Serialization;
 
 namespace PureCloud.Client.Models;
 
 /// <summary>
 /// LearningAssignmentEntity
 /// </summary>
-[DataContract]
+
 public partial class LearningAssignmentEntity : IEquatable<LearningAssignmentEntity>
 {
     /// <summary>
@@ -24,7 +24,7 @@ public partial class LearningAssignmentEntity : IEquatable<LearningAssignmentEnt
     /// <summary>
     /// Gets or Sets AssignmentId
     /// </summary>
-    [DataMember(Name = "assignmentId", EmitDefaultValue = false)]
+    [JsonPropertyName("assignmentId")]
     public string AssignmentId { get; set; }
 
 

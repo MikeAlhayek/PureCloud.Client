@@ -1,4 +1,3 @@
-using System.Runtime.Serialization;
 using System.Text;
 using System.Text.Json.Serialization;
 
@@ -7,7 +6,7 @@ namespace PureCloud.Client.Models;
 /// <summary>
 /// AgentIntegrationsRequest
 /// </summary>
-[DataContract]
+
 public partial class AgentIntegrationsRequest : IEquatable<AgentIntegrationsRequest>
 {
 
@@ -34,7 +33,7 @@ public partial class AgentIntegrationsRequest : IEquatable<AgentIntegrationsRequ
     /// The ID of the integration selected for the agent. If not set, no integration will be used for the agent
     /// </summary>
     /// <value>The ID of the integration selected for the agent. If not set, no integration will be used for the agent</value>
-    [DataMember(Name = "selectedIntegrationId", EmitDefaultValue = false)]
+    [JsonPropertyName("selectedIntegrationId")]
     public string SelectedIntegrationId { get; set; }
 
 
@@ -43,7 +42,7 @@ public partial class AgentIntegrationsRequest : IEquatable<AgentIntegrationsRequ
     /// The list of integrations associated with the agent
     /// </summary>
     /// <value>The list of integrations associated with the agent</value>
-    [DataMember(Name = "associatedIntegrations", EmitDefaultValue = false)]
+    [JsonPropertyName("associatedIntegrations")]
     public List<AgentIntegrationAssociationRequest> AssociatedIntegrations { get; set; }
 
 

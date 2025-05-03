@@ -7,14 +7,14 @@ namespace PureCloud.Client.Models;
 /// <summary>
 /// KnowledgeImportJobRequest
 /// </summary>
-[DataContract]
+
 public partial class KnowledgeImportJobRequest : IEquatable<KnowledgeImportJobRequest>
 {
     /// <summary>
     /// File type of the document
     /// </summary>
     /// <value>File type of the document</value>
-    [JsonConverter(typeof(JsonStringEnumConverter))]
+    
     public enum FileTypeEnum
     {
         /// <summary>
@@ -47,7 +47,7 @@ public partial class KnowledgeImportJobRequest : IEquatable<KnowledgeImportJobRe
     /// File type of the document
     /// </summary>
     /// <value>File type of the document</value>
-    [DataMember(Name = "fileType", EmitDefaultValue = false)]
+    [JsonPropertyName("fileType")]
     public FileTypeEnum? FileType { get; set; }
 
     /// <summary>
@@ -77,7 +77,7 @@ public partial class KnowledgeImportJobRequest : IEquatable<KnowledgeImportJobRe
     /// Upload key
     /// </summary>
     /// <value>Upload key</value>
-    [DataMember(Name = "uploadKey", EmitDefaultValue = false)]
+    [JsonPropertyName("uploadKey")]
     public string UploadKey { get; set; }
 
 
@@ -88,7 +88,7 @@ public partial class KnowledgeImportJobRequest : IEquatable<KnowledgeImportJobRe
     /// Additional optional settings
     /// </summary>
     /// <value>Additional optional settings</value>
-    [DataMember(Name = "settings", EmitDefaultValue = false)]
+    [JsonPropertyName("settings")]
     public KnowledgeImportJobSettings Settings { get; set; }
 
 
@@ -97,7 +97,7 @@ public partial class KnowledgeImportJobRequest : IEquatable<KnowledgeImportJobRe
     /// If enabled pre-validation step will be skipped.
     /// </summary>
     /// <value>If enabled pre-validation step will be skipped.</value>
-    [DataMember(Name = "skipConfirmationStep", EmitDefaultValue = false)]
+    [JsonPropertyName("skipConfirmationStep")]
     public bool? SkipConfirmationStep { get; set; }
 
 

@@ -7,14 +7,14 @@ namespace PureCloud.Client.Models;
 /// <summary>
 /// DocumentQueryInterval
 /// </summary>
-[DataContract]
+
 public partial class DocumentQueryInterval : IEquatable<DocumentQueryInterval>
 {
     /// <summary>
     /// Specifies the date field to be used for date and time range.
     /// </summary>
     /// <value>Specifies the date field to be used for date and time range.</value>
-    [JsonConverter(typeof(JsonStringEnumConverter))]
+    
     public enum FieldEnum
     {
         /// <summary>
@@ -47,7 +47,7 @@ public partial class DocumentQueryInterval : IEquatable<DocumentQueryInterval>
     /// Specifies the date field to be used for date and time range.
     /// </summary>
     /// <value>Specifies the date field to be used for date and time range.</value>
-    [DataMember(Name = "field", EmitDefaultValue = false)]
+    [JsonPropertyName("field")]
     public FieldEnum? Field { get; set; }
     /// <summary>
     /// Initializes a new instance of the <see cref="DocumentQueryInterval" /> class.
@@ -69,7 +69,7 @@ public partial class DocumentQueryInterval : IEquatable<DocumentQueryInterval>
     /// Specifies the date and time range for filtering the documents. Intervals are represented as an ISO-8601 string. For example: YYYY-MM-DDThh:mm:ss/YYYY-MM-DDThh:mm:ss
     /// </summary>
     /// <value>Specifies the date and time range for filtering the documents. Intervals are represented as an ISO-8601 string. For example: YYYY-MM-DDThh:mm:ss/YYYY-MM-DDThh:mm:ss</value>
-    [DataMember(Name = "value", EmitDefaultValue = false)]
+    [JsonPropertyName("value")]
     public string Value { get; set; }
 
 

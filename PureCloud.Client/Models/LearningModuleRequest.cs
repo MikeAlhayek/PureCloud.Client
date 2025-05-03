@@ -7,14 +7,14 @@ namespace PureCloud.Client.Models;
 /// <summary>
 /// Learning module request
 /// </summary>
-[DataContract]
+
 public partial class LearningModuleRequest : IEquatable<LearningModuleRequest>
 {
     /// <summary>
     /// The type for the learning module. Informational, AssessedContent and Assessment are deprecated
     /// </summary>
     /// <value>The type for the learning module. Informational, AssessedContent and Assessment are deprecated</value>
-    [JsonConverter(typeof(JsonStringEnumConverter))]
+    
     public enum TypeEnum
     {
         /// <summary>
@@ -59,7 +59,7 @@ public partial class LearningModuleRequest : IEquatable<LearningModuleRequest>
     /// The type for the learning module. Informational, AssessedContent and Assessment are deprecated
     /// </summary>
     /// <value>The type for the learning module. Informational, AssessedContent and Assessment are deprecated</value>
-    [DataMember(Name = "type", EmitDefaultValue = false)]
+    [JsonPropertyName("type")]
     public TypeEnum? Type { get; set; }
 
     /// <summary>
@@ -105,7 +105,7 @@ public partial class LearningModuleRequest : IEquatable<LearningModuleRequest>
     /// The name of learning module
     /// </summary>
     /// <value>The name of learning module</value>
-    [DataMember(Name = "name", EmitDefaultValue = false)]
+    [JsonPropertyName("name")]
     public string Name { get; set; }
 
 
@@ -114,7 +114,7 @@ public partial class LearningModuleRequest : IEquatable<LearningModuleRequest>
     /// The description of learning module
     /// </summary>
     /// <value>The description of learning module</value>
-    [DataMember(Name = "description", EmitDefaultValue = false)]
+    [JsonPropertyName("description")]
     public string Description { get; set; }
 
 
@@ -123,7 +123,7 @@ public partial class LearningModuleRequest : IEquatable<LearningModuleRequest>
     /// The completion time of learning module in days
     /// </summary>
     /// <value>The completion time of learning module in days</value>
-    [DataMember(Name = "completionTimeInDays", EmitDefaultValue = false)]
+    [JsonPropertyName("completionTimeInDays")]
     public int? CompletionTimeInDays { get; set; }
 
 
@@ -132,7 +132,7 @@ public partial class LearningModuleRequest : IEquatable<LearningModuleRequest>
     /// The list of inform steps in a learning module
     /// </summary>
     /// <value>The list of inform steps in a learning module</value>
-    [DataMember(Name = "informSteps", EmitDefaultValue = false)]
+    [JsonPropertyName("informSteps")]
     public List<LearningModuleInformStepRequest> InformSteps { get; set; }
 
 
@@ -143,7 +143,7 @@ public partial class LearningModuleRequest : IEquatable<LearningModuleRequest>
     /// The assessment form for learning module
     /// </summary>
     /// <value>The assessment form for learning module</value>
-    [DataMember(Name = "assessmentForm", EmitDefaultValue = false)]
+    [JsonPropertyName("assessmentForm")]
     public AssessmentForm AssessmentForm { get; set; }
 
 
@@ -152,7 +152,7 @@ public partial class LearningModuleRequest : IEquatable<LearningModuleRequest>
     /// The cover art for the learning module
     /// </summary>
     /// <value>The cover art for the learning module</value>
-    [DataMember(Name = "coverArt", EmitDefaultValue = false)]
+    [JsonPropertyName("coverArt")]
     public LearningModuleCoverArtRequest CoverArt { get; set; }
 
 
@@ -161,7 +161,7 @@ public partial class LearningModuleRequest : IEquatable<LearningModuleRequest>
     /// The recommended time in minutes to complete the module
     /// </summary>
     /// <value>The recommended time in minutes to complete the module</value>
-    [DataMember(Name = "lengthInMinutes", EmitDefaultValue = false)]
+    [JsonPropertyName("lengthInMinutes")]
     public int? LengthInMinutes { get; set; }
 
 
@@ -170,7 +170,7 @@ public partial class LearningModuleRequest : IEquatable<LearningModuleRequest>
     /// If true, learning module is excluded when retrieving modules for manual assignment
     /// </summary>
     /// <value>If true, learning module is excluded when retrieving modules for manual assignment</value>
-    [DataMember(Name = "excludedFromCatalog", EmitDefaultValue = false)]
+    [JsonPropertyName("excludedFromCatalog")]
     public bool? ExcludedFromCatalog { get; set; }
 
 
@@ -179,7 +179,7 @@ public partial class LearningModuleRequest : IEquatable<LearningModuleRequest>
     /// The external ID of the learning module. Maximum length: 50 characters.
     /// </summary>
     /// <value>The external ID of the learning module. Maximum length: 50 characters.</value>
-    [DataMember(Name = "externalId", EmitDefaultValue = false)]
+    [JsonPropertyName("externalId")]
     public string ExternalId { get; set; }
 
 
@@ -188,7 +188,7 @@ public partial class LearningModuleRequest : IEquatable<LearningModuleRequest>
     /// If true, learning module content should be viewed one by one in order
     /// </summary>
     /// <value>If true, learning module content should be viewed one by one in order</value>
-    [DataMember(Name = "enforceContentOrder", EmitDefaultValue = false)]
+    [JsonPropertyName("enforceContentOrder")]
     public bool? EnforceContentOrder { get; set; }
 
 
@@ -197,7 +197,7 @@ public partial class LearningModuleRequest : IEquatable<LearningModuleRequest>
     /// Allows to view Assessment results in detail
     /// </summary>
     /// <value>Allows to view Assessment results in detail</value>
-    [DataMember(Name = "reviewAssessmentResults", EmitDefaultValue = false)]
+    [JsonPropertyName("reviewAssessmentResults")]
     public ReviewAssessmentResults ReviewAssessmentResults { get; set; }
 
 

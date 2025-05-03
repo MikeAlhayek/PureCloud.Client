@@ -1,12 +1,12 @@
-using System.Runtime.Serialization;
 using System.Text;
+using System.Text.Json.Serialization;
 
 namespace PureCloud.Client.Models;
 
 /// <summary>
 /// NextOccurrenceDetails
 /// </summary>
-[DataContract]
+
 public partial class NextOccurrenceDetails : IEquatable<NextOccurrenceDetails>
 {
     /// <summary>
@@ -27,7 +27,7 @@ public partial class NextOccurrenceDetails : IEquatable<NextOccurrenceDetails>
     /// The details for the next start occurrence for the recurrence.
     /// </summary>
     /// <value>The details for the next start occurrence for the recurrence.</value>
-    [DataMember(Name = "startOccurrenceDetails", EmitDefaultValue = false)]
+    [JsonPropertyName("startOccurrenceDetails")]
     public OccurrenceDetails StartOccurrenceDetails { get; set; }
 
 
@@ -36,7 +36,7 @@ public partial class NextOccurrenceDetails : IEquatable<NextOccurrenceDetails>
     /// The details for the next end occurrence for the recurrence.
     /// </summary>
     /// <value>The details for the next end occurrence for the recurrence.</value>
-    [DataMember(Name = "endOccurrenceDetails", EmitDefaultValue = false)]
+    [JsonPropertyName("endOccurrenceDetails")]
     public OccurrenceDetails EndOccurrenceDetails { get; set; }
 
 

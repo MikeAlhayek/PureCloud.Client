@@ -7,14 +7,14 @@ namespace PureCloud.Client.Models;
 /// <summary>
 /// CommonRulePredicate
 /// </summary>
-[DataContract]
+
 public partial class CommonRulePredicate : IEquatable<CommonRulePredicate>
 {
     /// <summary>
     /// The type of metric being evaluated.
     /// </summary>
     /// <value>The type of metric being evaluated.</value>
-    [JsonConverter(typeof(JsonStringEnumConverter))]
+    
     public enum MetricTypeEnum
     {
         /// <summary>
@@ -41,7 +41,7 @@ public partial class CommonRulePredicate : IEquatable<CommonRulePredicate>
     /// The type of metric value being evaluated.
     /// </summary>
     /// <value>The type of metric value being evaluated.</value>
-    [JsonConverter(typeof(JsonStringEnumConverter))]
+    
     public enum MetricValueTypeEnum
     {
         /// <summary>
@@ -98,7 +98,7 @@ public partial class CommonRulePredicate : IEquatable<CommonRulePredicate>
     /// The comparison operator being performed on the metric.
     /// </summary>
     /// <value>The comparison operator being performed on the metric.</value>
-    [JsonConverter(typeof(JsonStringEnumConverter))]
+    
     public enum ComparisonOperatorEnum
     {
         /// <summary>
@@ -149,7 +149,7 @@ public partial class CommonRulePredicate : IEquatable<CommonRulePredicate>
     /// The media type of the conversation the metric describes.
     /// </summary>
     /// <value>The media type of the conversation the metric describes.</value>
-    [JsonConverter(typeof(JsonStringEnumConverter))]
+    
     public enum MediaTypeEnum
     {
         /// <summary>
@@ -194,7 +194,7 @@ public partial class CommonRulePredicate : IEquatable<CommonRulePredicate>
     /// The metric being evaluated.
     /// </summary>
     /// <value>The metric being evaluated.</value>
-    [JsonConverter(typeof(JsonStringEnumConverter))]
+    
     public enum MetricEnum
     {
         /// <summary>
@@ -377,31 +377,31 @@ public partial class CommonRulePredicate : IEquatable<CommonRulePredicate>
     /// The type of metric being evaluated.
     /// </summary>
     /// <value>The type of metric being evaluated.</value>
-    [DataMember(Name = "metricType", EmitDefaultValue = false)]
+    [JsonPropertyName("metricType")]
     public MetricTypeEnum? MetricType { get; set; }
     /// <summary>
     /// The type of metric value being evaluated.
     /// </summary>
     /// <value>The type of metric value being evaluated.</value>
-    [DataMember(Name = "metricValueType", EmitDefaultValue = false)]
+    [JsonPropertyName("metricValueType")]
     public MetricValueTypeEnum? MetricValueType { get; set; }
     /// <summary>
     /// The comparison operator being performed on the metric.
     /// </summary>
     /// <value>The comparison operator being performed on the metric.</value>
-    [DataMember(Name = "comparisonOperator", EmitDefaultValue = false)]
+    [JsonPropertyName("comparisonOperator")]
     public ComparisonOperatorEnum? ComparisonOperator { get; set; }
     /// <summary>
     /// The media type of the conversation the metric describes.
     /// </summary>
     /// <value>The media type of the conversation the metric describes.</value>
-    [DataMember(Name = "mediaType", EmitDefaultValue = false)]
+    [JsonPropertyName("mediaType")]
     public MediaTypeEnum? MediaType { get; set; }
     /// <summary>
     /// The metric being evaluated.
     /// </summary>
     /// <value>The metric being evaluated.</value>
-    [DataMember(Name = "metric", EmitDefaultValue = false)]
+    [JsonPropertyName("metric")]
     public MetricEnum? Metric { get; set; }
 
     /// <summary>
@@ -447,7 +447,7 @@ public partial class CommonRulePredicate : IEquatable<CommonRulePredicate>
     /// The value the metric will be compared to.
     /// </summary>
     /// <value>The value the metric will be compared to.</value>
-    [DataMember(Name = "value", EmitDefaultValue = false)]
+    [JsonPropertyName("value")]
     public double? Value { get; set; }
 
 
@@ -456,7 +456,7 @@ public partial class CommonRulePredicate : IEquatable<CommonRulePredicate>
     /// The status of the entity corresponding to the metric.
     /// </summary>
     /// <value>The status of the entity corresponding to the metric.</value>
-    [DataMember(Name = "status", EmitDefaultValue = false)]
+    [JsonPropertyName("status")]
     public string Status { get; set; }
 
 
@@ -465,7 +465,7 @@ public partial class CommonRulePredicate : IEquatable<CommonRulePredicate>
     /// The operational console topic corresponding to the metric.
     /// </summary>
     /// <value>The operational console topic corresponding to the metric.</value>
-    [DataMember(Name = "topic", EmitDefaultValue = false)]
+    [JsonPropertyName("topic")]
     public string Topic { get; set; }
 
 
@@ -474,7 +474,7 @@ public partial class CommonRulePredicate : IEquatable<CommonRulePredicate>
     /// The entity whose metric is being represented.
     /// </summary>
     /// <value>The entity whose metric is being represented.</value>
-    [DataMember(Name = "entity", EmitDefaultValue = false)]
+    [JsonPropertyName("entity")]
     public CommonRulePredicateEntity Entity { get; set; }
 
 

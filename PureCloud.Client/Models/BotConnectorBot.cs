@@ -1,4 +1,3 @@
-using System.Runtime.Serialization;
 using System.Text;
 using System.Text.Json.Serialization;
 
@@ -7,7 +6,7 @@ namespace PureCloud.Client.Models;
 /// <summary>
 /// A botConnector Bot Instance
 /// </summary>
-[DataContract]
+
 public partial class BotConnectorBot : IEquatable<BotConnectorBot>
 {
 
@@ -38,7 +37,7 @@ public partial class BotConnectorBot : IEquatable<BotConnectorBot>
     /// The Botconnector Bot Id - this is configurable by the user when put
     /// </summary>
     /// <value>The Botconnector Bot Id - this is configurable by the user when put</value>
-    [DataMember(Name = "id", EmitDefaultValue = false)]
+    [JsonPropertyName("id")]
     public string Id { get; set; }
 
 
@@ -46,7 +45,7 @@ public partial class BotConnectorBot : IEquatable<BotConnectorBot>
     /// <summary>
     /// Gets or Sets Name
     /// </summary>
-    [DataMember(Name = "name", EmitDefaultValue = false)]
+    [JsonPropertyName("name")]
     public string Name { get; set; }
 
 
@@ -55,7 +54,7 @@ public partial class BotConnectorBot : IEquatable<BotConnectorBot>
     /// An optional description of the bot.  This can be up to 256 characters long and must be comprised of displayable characters without leading or trailing whitespace
     /// </summary>
     /// <value>An optional description of the bot.  This can be up to 256 characters long and must be comprised of displayable characters without leading or trailing whitespace</value>
-    [DataMember(Name = "description", EmitDefaultValue = false)]
+    [JsonPropertyName("description")]
     public string Description { get; set; }
 
 
@@ -64,7 +63,7 @@ public partial class BotConnectorBot : IEquatable<BotConnectorBot>
     /// This bots versions, limit of 50 per bot
     /// </summary>
     /// <value>This bots versions, limit of 50 per bot</value>
-    [DataMember(Name = "versions", EmitDefaultValue = false)]
+    [JsonPropertyName("versions")]
     public List<BotConnectorBotVersion> Versions { get; set; }
 
 
@@ -73,7 +72,7 @@ public partial class BotConnectorBot : IEquatable<BotConnectorBot>
     /// A system-generated string that contains metadata about this bot.
     /// </summary>
     /// <value>A system-generated string that contains metadata about this bot.</value>
-    [DataMember(Name = "botCompositeTag", EmitDefaultValue = false)]
+    [JsonPropertyName("botCompositeTag")]
     public string BotCompositeTag { get; private set; }
 
 
@@ -82,7 +81,7 @@ public partial class BotConnectorBot : IEquatable<BotConnectorBot>
     /// The URI for this object
     /// </summary>
     /// <value>The URI for this object</value>
-    [DataMember(Name = "selfUri", EmitDefaultValue = false)]
+    [JsonPropertyName("selfUri")]
     public string SelfUri { get; private set; }
 
 

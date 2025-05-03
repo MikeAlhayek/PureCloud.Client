@@ -1,12 +1,12 @@
-using System.Runtime.Serialization;
 using System.Text;
+using System.Text.Json.Serialization;
 
 namespace PureCloud.Client.Models;
 
 /// <summary>
 /// Usage
 /// </summary>
-[DataContract]
+
 public partial class Usage : IEquatable<Usage>
 {
     /// <summary>
@@ -24,7 +24,7 @@ public partial class Usage : IEquatable<Usage>
     /// <summary>
     /// Gets or Sets Types
     /// </summary>
-    [DataMember(Name = "types", EmitDefaultValue = false)]
+    [JsonPropertyName("types")]
     public List<UsageItem> Types { get; set; }
 
 

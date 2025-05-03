@@ -1,4 +1,3 @@
-using System.Runtime.Serialization;
 using System.Text;
 using System.Text.Json.Serialization;
 
@@ -7,7 +6,7 @@ namespace PureCloud.Client.Models;
 /// <summary>
 /// Model for a Nuance bot environment
 /// </summary>
-[DataContract]
+
 public partial class NuanceEnvironment : IEquatable<NuanceEnvironment>
 {
 
@@ -38,7 +37,7 @@ public partial class NuanceEnvironment : IEquatable<NuanceEnvironment>
     /// The environment ID
     /// </summary>
     /// <value>The environment ID</value>
-    [DataMember(Name = "id", EmitDefaultValue = false)]
+    [JsonPropertyName("id")]
     public string Id { get; set; }
 
 
@@ -47,7 +46,7 @@ public partial class NuanceEnvironment : IEquatable<NuanceEnvironment>
     /// The environment name
     /// </summary>
     /// <value>The environment name</value>
-    [DataMember(Name = "name", EmitDefaultValue = false)]
+    [JsonPropertyName("name")]
     public string Name { get; set; }
 
 
@@ -56,7 +55,7 @@ public partial class NuanceEnvironment : IEquatable<NuanceEnvironment>
     /// The environment type, usually a value like SANDBOX or PRODUCTION
     /// </summary>
     /// <value>The environment type, usually a value like SANDBOX or PRODUCTION</value>
-    [DataMember(Name = "environmentDesignation", EmitDefaultValue = false)]
+    [JsonPropertyName("environmentDesignation")]
     public string EnvironmentDesignation { get; set; }
 
 
@@ -65,7 +64,7 @@ public partial class NuanceEnvironment : IEquatable<NuanceEnvironment>
     /// The host used to execute this bot, similar to &#39;api.nuance.com:443&#39;
     /// </summary>
     /// <value>The host used to execute this bot, similar to &#39;api.nuance.com:443&#39;</value>
-    [DataMember(Name = "executionHost", EmitDefaultValue = false)]
+    [JsonPropertyName("executionHost")]
     public string ExecutionHost { get; set; }
 
 

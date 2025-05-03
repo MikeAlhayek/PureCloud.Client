@@ -7,13 +7,13 @@ namespace PureCloud.Client.Models;
 /// <summary>
 /// V2MobiusAlertsTopicAlertSummary
 /// </summary>
-[DataContract]
+
 public partial class V2MobiusAlertsTopicAlertSummary : IEquatable<V2MobiusAlertsTopicAlertSummary>
 {
     /// <summary>
     /// Gets or Sets MetricType
     /// </summary>
-    [JsonConverter(typeof(JsonStringEnumConverter))]
+    
     public enum MetricTypeEnum
     {
         /// <summary>
@@ -45,7 +45,7 @@ public partial class V2MobiusAlertsTopicAlertSummary : IEquatable<V2MobiusAlerts
     /// <summary>
     /// Gets or Sets MetricType
     /// </summary>
-    [DataMember(Name = "metricType", EmitDefaultValue = false)]
+    [JsonPropertyName("metricType")]
     public MetricTypeEnum? MetricType { get; set; }
     /// <summary>
     /// Initializes a new instance of the <see cref="V2MobiusAlertsTopicAlertSummary" /> class.
@@ -70,7 +70,7 @@ public partial class V2MobiusAlertsTopicAlertSummary : IEquatable<V2MobiusAlerts
     /// <summary>
     /// Gets or Sets Entities
     /// </summary>
-    [DataMember(Name = "entities", EmitDefaultValue = false)]
+    [JsonPropertyName("entities")]
     public List<V2MobiusAlertsTopicAlertSummaryEntity> Entities { get; set; }
 
 
@@ -78,7 +78,7 @@ public partial class V2MobiusAlertsTopicAlertSummary : IEquatable<V2MobiusAlerts
     /// <summary>
     /// Gets or Sets Conversation
     /// </summary>
-    [DataMember(Name = "conversation", EmitDefaultValue = false)]
+    [JsonPropertyName("conversation")]
     public V2MobiusAlertsTopicAddressableEntityRef Conversation { get; set; }
 
 
@@ -88,7 +88,7 @@ public partial class V2MobiusAlertsTopicAlertSummary : IEquatable<V2MobiusAlerts
     /// <summary>
     /// Gets or Sets IsTeamMemberRuleSummary
     /// </summary>
-    [DataMember(Name = "isTeamMemberRuleSummary", EmitDefaultValue = false)]
+    [JsonPropertyName("isTeamMemberRuleSummary")]
     public bool? IsTeamMemberRuleSummary { get; set; }
 
 
@@ -96,7 +96,7 @@ public partial class V2MobiusAlertsTopicAlertSummary : IEquatable<V2MobiusAlerts
     /// <summary>
     /// Gets or Sets TeamMemberRuleSummary
     /// </summary>
-    [DataMember(Name = "teamMemberRuleSummary", EmitDefaultValue = false)]
+    [JsonPropertyName("teamMemberRuleSummary")]
     public bool? TeamMemberRuleSummary { get; set; }
 
 

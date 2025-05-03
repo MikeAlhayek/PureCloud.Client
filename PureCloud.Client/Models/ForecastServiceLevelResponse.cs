@@ -1,12 +1,12 @@
-using System.Runtime.Serialization;
 using System.Text;
+using System.Text.Json.Serialization;
 
 namespace PureCloud.Client.Models;
 
 /// <summary>
 /// ForecastServiceLevelResponse
 /// </summary>
-[DataContract]
+
 public partial class ForecastServiceLevelResponse : IEquatable<ForecastServiceLevelResponse>
 {
     /// <summary>
@@ -27,7 +27,7 @@ public partial class ForecastServiceLevelResponse : IEquatable<ForecastServiceLe
     /// The percent of calls to answer in the number of seconds defined
     /// </summary>
     /// <value>The percent of calls to answer in the number of seconds defined</value>
-    [DataMember(Name = "percent", EmitDefaultValue = false)]
+    [JsonPropertyName("percent")]
     public int? Percent { get; set; }
 
 
@@ -36,7 +36,7 @@ public partial class ForecastServiceLevelResponse : IEquatable<ForecastServiceLe
     /// The number of seconds to define for the percent of calls to be answered
     /// </summary>
     /// <value>The number of seconds to define for the percent of calls to be answered</value>
-    [DataMember(Name = "seconds", EmitDefaultValue = false)]
+    [JsonPropertyName("seconds")]
     public int? Seconds { get; set; }
 
 

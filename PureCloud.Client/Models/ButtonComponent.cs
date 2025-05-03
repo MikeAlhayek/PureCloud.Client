@@ -1,12 +1,12 @@
-using System.Runtime.Serialization;
 using System.Text;
+using System.Text.Json.Serialization;
 
 namespace PureCloud.Client.Models;
 
 /// <summary>
 /// Structured template button object.
 /// </summary>
-[DataContract]
+
 public partial class ButtonComponent : IEquatable<ButtonComponent>
 {
     /// <summary>
@@ -27,7 +27,7 @@ public partial class ButtonComponent : IEquatable<ButtonComponent>
     /// Text to show inside the button.
     /// </summary>
     /// <value>Text to show inside the button.</value>
-    [DataMember(Name = "title", EmitDefaultValue = false)]
+    [JsonPropertyName("title")]
     public string Title { get; set; }
 
 
@@ -36,7 +36,7 @@ public partial class ButtonComponent : IEquatable<ButtonComponent>
     /// The button actions (Deprecated).
     /// </summary>
     /// <value>The button actions (Deprecated).</value>
-    [DataMember(Name = "actions", EmitDefaultValue = false)]
+    [JsonPropertyName("actions")]
     public ContentActions Actions { get; set; }
 
 

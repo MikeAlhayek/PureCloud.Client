@@ -1,12 +1,12 @@
-using System.Runtime.Serialization;
 using System.Text;
+using System.Text.Json.Serialization;
 
 namespace PureCloud.Client.Models;
 
 /// <summary>
 /// KnowledgeParseJobRequestPatch
 /// </summary>
-[DataContract]
+
 public partial class KnowledgeParseJobRequestPatch : IEquatable<KnowledgeParseJobRequestPatch>
 {
     /// <summary>
@@ -25,7 +25,7 @@ public partial class KnowledgeParseJobRequestPatch : IEquatable<KnowledgeParseJo
     /// Hinted titles for the parser.
     /// </summary>
     /// <value>Hinted titles for the parser.</value>
-    [DataMember(Name = "hints", EmitDefaultValue = false)]
+    [JsonPropertyName("hints")]
     public List<string> Hints { get; set; }
 
 

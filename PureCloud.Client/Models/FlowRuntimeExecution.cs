@@ -7,14 +7,14 @@ namespace PureCloud.Client.Models;
 /// <summary>
 /// Details about the current state of a Flow execution
 /// </summary>
-[DataContract]
+
 public partial class FlowRuntimeExecution : IEquatable<FlowRuntimeExecution>
 {
     /// <summary>
     /// The flow's running status, which indicates whether the flow is running normally or completed, etc.
     /// </summary>
     /// <value>The flow's running status, which indicates whether the flow is running normally or completed, etc.</value>
-    [JsonConverter(typeof(JsonStringEnumConverter))]
+    
     public enum StatusEnum
     {
         /// <summary>
@@ -65,7 +65,7 @@ public partial class FlowRuntimeExecution : IEquatable<FlowRuntimeExecution>
     /// The flow's running status, which indicates whether the flow is running normally or completed, etc.
     /// </summary>
     /// <value>The flow's running status, which indicates whether the flow is running normally or completed, etc.</value>
-    [DataMember(Name = "status", EmitDefaultValue = false)]
+    [JsonPropertyName("status")]
     public StatusEnum? Status { get; set; }
 
     /// <summary>
@@ -107,7 +107,7 @@ public partial class FlowRuntimeExecution : IEquatable<FlowRuntimeExecution>
     /// The flow execution ID
     /// </summary>
     /// <value>The flow execution ID</value>
-    [DataMember(Name = "id", EmitDefaultValue = false)]
+    [JsonPropertyName("id")]
     public string Id { get; set; }
 
 
@@ -116,7 +116,7 @@ public partial class FlowRuntimeExecution : IEquatable<FlowRuntimeExecution>
     /// The flow execution name.
     /// </summary>
     /// <value>The flow execution name.</value>
-    [DataMember(Name = "name", EmitDefaultValue = false)]
+    [JsonPropertyName("name")]
     public string Name { get; set; }
 
 
@@ -125,7 +125,7 @@ public partial class FlowRuntimeExecution : IEquatable<FlowRuntimeExecution>
     /// The Version of the flow definition of the flow execution.
     /// </summary>
     /// <value>The Version of the flow definition of the flow execution.</value>
-    [DataMember(Name = "flowVersion", EmitDefaultValue = false)]
+    [JsonPropertyName("flowVersion")]
     public FlowVersion FlowVersion { get; set; }
 
 
@@ -134,7 +134,7 @@ public partial class FlowRuntimeExecution : IEquatable<FlowRuntimeExecution>
     /// The time the flow was launched. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z
     /// </summary>
     /// <value>The time the flow was launched. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z</value>
-    [DataMember(Name = "dateLaunched", EmitDefaultValue = false)]
+    [JsonPropertyName("dateLaunched")]
     public DateTime? DateLaunched { get; set; }
 
 
@@ -145,7 +145,7 @@ public partial class FlowRuntimeExecution : IEquatable<FlowRuntimeExecution>
     /// The time the flow completed, if applicable. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z
     /// </summary>
     /// <value>The time the flow completed, if applicable. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z</value>
-    [DataMember(Name = "dateCompleted", EmitDefaultValue = false)]
+    [JsonPropertyName("dateCompleted")]
     public DateTime? DateCompleted { get; set; }
 
 
@@ -154,7 +154,7 @@ public partial class FlowRuntimeExecution : IEquatable<FlowRuntimeExecution>
     /// The completion reason set at the flow completion time, if applicable.
     /// </summary>
     /// <value>The completion reason set at the flow completion time, if applicable.</value>
-    [DataMember(Name = "completionReason", EmitDefaultValue = false)]
+    [JsonPropertyName("completionReason")]
     public string CompletionReason { get; set; }
 
 
@@ -163,7 +163,7 @@ public partial class FlowRuntimeExecution : IEquatable<FlowRuntimeExecution>
     /// Additional information if the flow is in error
     /// </summary>
     /// <value>Additional information if the flow is in error</value>
-    [DataMember(Name = "flowErrorInfo", EmitDefaultValue = false)]
+    [JsonPropertyName("flowErrorInfo")]
     public ErrorBody FlowErrorInfo { get; set; }
 
 
@@ -172,7 +172,7 @@ public partial class FlowRuntimeExecution : IEquatable<FlowRuntimeExecution>
     /// List of the flow&#39;s output variables, if any. Output variables are only supplied for Completed flows.
     /// </summary>
     /// <value>List of the flow&#39;s output variables, if any. Output variables are only supplied for Completed flows.</value>
-    [DataMember(Name = "outputData", EmitDefaultValue = false)]
+    [JsonPropertyName("outputData")]
     public Dictionary<string, object> OutputData { get; set; }
 
 
@@ -181,7 +181,7 @@ public partial class FlowRuntimeExecution : IEquatable<FlowRuntimeExecution>
     /// The conversation to which this Flow execution is related
     /// </summary>
     /// <value>The conversation to which this Flow execution is related</value>
-    [DataMember(Name = "conversation", EmitDefaultValue = false)]
+    [JsonPropertyName("conversation")]
     public DomainEntityRef Conversation { get; set; }
 
 
@@ -190,7 +190,7 @@ public partial class FlowRuntimeExecution : IEquatable<FlowRuntimeExecution>
     /// The URI for this object
     /// </summary>
     /// <value>The URI for this object</value>
-    [DataMember(Name = "selfUri", EmitDefaultValue = false)]
+    [JsonPropertyName("selfUri")]
     public string SelfUri { get; private set; }
 
 

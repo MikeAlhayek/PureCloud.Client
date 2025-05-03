@@ -1,12 +1,12 @@
-using System.Runtime.Serialization;
 using System.Text;
+using System.Text.Json.Serialization;
 
 namespace PureCloud.Client.Models;
 
 /// <summary>
 /// SkillGroupMemberDivisionList
 /// </summary>
-[DataContract]
+
 public partial class SkillGroupMemberDivisionList : IEquatable<SkillGroupMemberDivisionList>
 {
     /// <summary>
@@ -24,7 +24,7 @@ public partial class SkillGroupMemberDivisionList : IEquatable<SkillGroupMemberD
     /// <summary>
     /// Gets or Sets Entities
     /// </summary>
-    [DataMember(Name = "entities", EmitDefaultValue = false)]
+    [JsonPropertyName("entities")]
     public List<Division> Entities { get; set; }
 
 

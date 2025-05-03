@@ -1,12 +1,12 @@
-using System.Runtime.Serialization;
 using System.Text;
+using System.Text.Json.Serialization;
 
 namespace PureCloud.Client.Models;
 
 /// <summary>
 /// KnowledgeAggregateQueryResponse
 /// </summary>
-[DataContract]
+
 public partial class KnowledgeAggregateQueryResponse : IEquatable<KnowledgeAggregateQueryResponse>
 {
     /// <summary>
@@ -24,7 +24,7 @@ public partial class KnowledgeAggregateQueryResponse : IEquatable<KnowledgeAggre
     /// <summary>
     /// Gets or Sets Results
     /// </summary>
-    [DataMember(Name = "results", EmitDefaultValue = false)]
+    [JsonPropertyName("results")]
     public List<KnowledgeAggregateDataContainer> Results { get; set; }
 
 

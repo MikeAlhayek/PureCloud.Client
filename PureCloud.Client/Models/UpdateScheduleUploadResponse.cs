@@ -1,12 +1,12 @@
-using System.Runtime.Serialization;
 using System.Text;
+using System.Text.Json.Serialization;
 
 namespace PureCloud.Client.Models;
 
 /// <summary>
 /// UpdateScheduleUploadResponse
 /// </summary>
-[DataContract]
+
 public partial class UpdateScheduleUploadResponse : IEquatable<UpdateScheduleUploadResponse>
 {
     /// <summary>
@@ -31,7 +31,7 @@ public partial class UpdateScheduleUploadResponse : IEquatable<UpdateScheduleUpl
     /// The key to pass to the secondary request to start processing of the upload
     /// </summary>
     /// <value>The key to pass to the secondary request to start processing of the upload</value>
-    [DataMember(Name = "uploadKey", EmitDefaultValue = false)]
+    [JsonPropertyName("uploadKey")]
     public string UploadKey { get; set; }
 
 
@@ -40,7 +40,7 @@ public partial class UpdateScheduleUploadResponse : IEquatable<UpdateScheduleUpl
     /// The url to which to PUT the upload body
     /// </summary>
     /// <value>The url to which to PUT the upload body</value>
-    [DataMember(Name = "url", EmitDefaultValue = false)]
+    [JsonPropertyName("url")]
     public string Url { get; set; }
 
 
@@ -49,7 +49,7 @@ public partial class UpdateScheduleUploadResponse : IEquatable<UpdateScheduleUpl
     /// Required headers for the PUT request to the url
     /// </summary>
     /// <value>Required headers for the PUT request to the url</value>
-    [DataMember(Name = "headers", EmitDefaultValue = false)]
+    [JsonPropertyName("headers")]
     public Dictionary<string, string> Headers { get; set; }
 
 
@@ -58,7 +58,7 @@ public partial class UpdateScheduleUploadResponse : IEquatable<UpdateScheduleUpl
     /// Always null. Defines the schema of the json body to be PUT to the url. The json body should be gzip encoded before uploading
     /// </summary>
     /// <value>Always null. Defines the schema of the json body to be PUT to the url. The json body should be gzip encoded before uploading</value>
-    [DataMember(Name = "uploadBodySchema", EmitDefaultValue = false)]
+    [JsonPropertyName("uploadBodySchema")]
     public UpdateScheduleUploadSchema UploadBodySchema { get; set; }
 
 

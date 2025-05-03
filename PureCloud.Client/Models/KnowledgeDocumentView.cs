@@ -7,14 +7,14 @@ namespace PureCloud.Client.Models;
 /// <summary>
 /// KnowledgeDocumentView
 /// </summary>
-[DataContract]
+
 public partial class KnowledgeDocumentView : IEquatable<KnowledgeDocumentView>
 {
     /// <summary>
     /// The type of the query that surfaced the document.
     /// </summary>
     /// <value>The type of the query that surfaced the document.</value>
-    [JsonConverter(typeof(JsonStringEnumConverter))]
+    
     public enum QueryTypeEnum
     {
         /// <summary>
@@ -71,7 +71,7 @@ public partial class KnowledgeDocumentView : IEquatable<KnowledgeDocumentView>
     /// The method how knowledge was surfaced. Article: Full article was shown. Snippet: A snippet from the article was shown. Highlight: A highlighted answer in a snippet was shown.
     /// </summary>
     /// <value>The method how knowledge was surfaced. Article: Full article was shown. Snippet: A snippet from the article was shown. Highlight: A highlighted answer in a snippet was shown.</value>
-    [JsonConverter(typeof(JsonStringEnumConverter))]
+    
     public enum SurfacingMethodEnum
     {
         /// <summary>
@@ -110,13 +110,13 @@ public partial class KnowledgeDocumentView : IEquatable<KnowledgeDocumentView>
     /// The type of the query that surfaced the document.
     /// </summary>
     /// <value>The type of the query that surfaced the document.</value>
-    [DataMember(Name = "queryType", EmitDefaultValue = false)]
+    [JsonPropertyName("queryType")]
     public QueryTypeEnum? QueryType { get; set; }
     /// <summary>
     /// The method how knowledge was surfaced. Article: Full article was shown. Snippet: A snippet from the article was shown. Highlight: A highlighted answer in a snippet was shown.
     /// </summary>
     /// <value>The method how knowledge was surfaced. Article: Full article was shown. Snippet: A snippet from the article was shown. Highlight: A highlighted answer in a snippet was shown.</value>
-    [DataMember(Name = "surfacingMethod", EmitDefaultValue = false)]
+    [JsonPropertyName("surfacingMethod")]
     public SurfacingMethodEnum? SurfacingMethod { get; set; }
 
     /// <summary>
@@ -154,7 +154,7 @@ public partial class KnowledgeDocumentView : IEquatable<KnowledgeDocumentView>
     /// The variation of the viewed document.
     /// </summary>
     /// <value>The variation of the viewed document.</value>
-    [DataMember(Name = "documentVariationId", EmitDefaultValue = false)]
+    [JsonPropertyName("documentVariationId")]
     public string DocumentVariationId { get; set; }
 
 
@@ -163,7 +163,7 @@ public partial class KnowledgeDocumentView : IEquatable<KnowledgeDocumentView>
     /// The version of the viewed document.
     /// </summary>
     /// <value>The version of the viewed document.</value>
-    [DataMember(Name = "documentVersionId", EmitDefaultValue = false)]
+    [JsonPropertyName("documentVersionId")]
     public string DocumentVersionId { get; set; }
 
 
@@ -172,7 +172,7 @@ public partial class KnowledgeDocumentView : IEquatable<KnowledgeDocumentView>
     /// The search that surfaced the viewed document.
     /// </summary>
     /// <value>The search that surfaced the viewed document.</value>
-    [DataMember(Name = "searchId", EmitDefaultValue = false)]
+    [JsonPropertyName("searchId")]
     public string SearchId { get; set; }
 
 
@@ -185,7 +185,7 @@ public partial class KnowledgeDocumentView : IEquatable<KnowledgeDocumentView>
     /// The client application from which the document was viewed.
     /// </summary>
     /// <value>The client application from which the document was viewed.</value>
-    [DataMember(Name = "application", EmitDefaultValue = false)]
+    [JsonPropertyName("application")]
     public KnowledgeSearchClientApplication Application { get; set; }
 
 
@@ -194,7 +194,7 @@ public partial class KnowledgeDocumentView : IEquatable<KnowledgeDocumentView>
     /// The unique identifier of the knowledge session in which the document was viewed.
     /// </summary>
     /// <value>The unique identifier of the knowledge session in which the document was viewed.</value>
-    [DataMember(Name = "sessionId", EmitDefaultValue = false)]
+    [JsonPropertyName("sessionId")]
     public string SessionId { get; set; }
 
 
@@ -203,7 +203,7 @@ public partial class KnowledgeDocumentView : IEquatable<KnowledgeDocumentView>
     /// Conversation context information if the document was viewed in the context of a conversation.
     /// </summary>
     /// <value>Conversation context information if the document was viewed in the context of a conversation.</value>
-    [DataMember(Name = "conversationContext", EmitDefaultValue = false)]
+    [JsonPropertyName("conversationContext")]
     public KnowledgeConversationContext ConversationContext { get; set; }
 
 

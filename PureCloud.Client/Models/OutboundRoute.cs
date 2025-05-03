@@ -7,14 +7,14 @@ namespace PureCloud.Client.Models;
 /// <summary>
 /// OutboundRoute
 /// </summary>
-[DataContract]
+
 public partial class OutboundRoute : IEquatable<OutboundRoute>
 {
     /// <summary>
     /// Indicates if the resource is active, inactive, or deleted.
     /// </summary>
     /// <value>Indicates if the resource is active, inactive, or deleted.</value>
-    [JsonConverter(typeof(JsonStringEnumConverter))]
+    
     public enum StateEnum
     {
         /// <summary>
@@ -46,7 +46,7 @@ public partial class OutboundRoute : IEquatable<OutboundRoute>
     /// <summary>
     /// Gets or Sets Distribution
     /// </summary>
-    [JsonConverter(typeof(JsonStringEnumConverter))]
+    
     public enum DistributionEnum
     {
         /// <summary>
@@ -73,12 +73,12 @@ public partial class OutboundRoute : IEquatable<OutboundRoute>
     /// Indicates if the resource is active, inactive, or deleted.
     /// </summary>
     /// <value>Indicates if the resource is active, inactive, or deleted.</value>
-    [DataMember(Name = "state", EmitDefaultValue = false)]
+    [JsonPropertyName("state")]
     public StateEnum? State { get; private set; }
     /// <summary>
     /// Gets or Sets Distribution
     /// </summary>
-    [DataMember(Name = "distribution", EmitDefaultValue = false)]
+    [JsonPropertyName("distribution")]
     public DistributionEnum? Distribution { get; set; }
 
     /// <summary>
@@ -116,7 +116,7 @@ public partial class OutboundRoute : IEquatable<OutboundRoute>
     /// The globally unique identifier for the object.
     /// </summary>
     /// <value>The globally unique identifier for the object.</value>
-    [DataMember(Name = "id", EmitDefaultValue = false)]
+    [JsonPropertyName("id")]
     public string Id { get; private set; }
 
 
@@ -125,7 +125,7 @@ public partial class OutboundRoute : IEquatable<OutboundRoute>
     /// The name of the entity.
     /// </summary>
     /// <value>The name of the entity.</value>
-    [DataMember(Name = "name", EmitDefaultValue = false)]
+    [JsonPropertyName("name")]
     public string Name { get; set; }
 
 
@@ -134,7 +134,7 @@ public partial class OutboundRoute : IEquatable<OutboundRoute>
     /// The division to which this entity belongs.
     /// </summary>
     /// <value>The division to which this entity belongs.</value>
-    [DataMember(Name = "division", EmitDefaultValue = false)]
+    [JsonPropertyName("division")]
     public Division Division { get; set; }
 
 
@@ -143,7 +143,7 @@ public partial class OutboundRoute : IEquatable<OutboundRoute>
     /// The resource&#39;s description.
     /// </summary>
     /// <value>The resource&#39;s description.</value>
-    [DataMember(Name = "description", EmitDefaultValue = false)]
+    [JsonPropertyName("description")]
     public string Description { get; set; }
 
 
@@ -152,7 +152,7 @@ public partial class OutboundRoute : IEquatable<OutboundRoute>
     /// The current version of the resource.
     /// </summary>
     /// <value>The current version of the resource.</value>
-    [DataMember(Name = "version", EmitDefaultValue = false)]
+    [JsonPropertyName("version")]
     public int? Version { get; set; }
 
 
@@ -161,7 +161,7 @@ public partial class OutboundRoute : IEquatable<OutboundRoute>
     /// The date the resource was created. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z
     /// </summary>
     /// <value>The date the resource was created. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z</value>
-    [DataMember(Name = "dateCreated", EmitDefaultValue = false)]
+    [JsonPropertyName("dateCreated")]
     public DateTime? DateCreated { get; private set; }
 
 
@@ -170,7 +170,7 @@ public partial class OutboundRoute : IEquatable<OutboundRoute>
     /// The date of the last modification to the resource. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z
     /// </summary>
     /// <value>The date of the last modification to the resource. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z</value>
-    [DataMember(Name = "dateModified", EmitDefaultValue = false)]
+    [JsonPropertyName("dateModified")]
     public DateTime? DateModified { get; private set; }
 
 
@@ -179,7 +179,7 @@ public partial class OutboundRoute : IEquatable<OutboundRoute>
     /// The ID of the user that last modified the resource.
     /// </summary>
     /// <value>The ID of the user that last modified the resource.</value>
-    [DataMember(Name = "modifiedBy", EmitDefaultValue = false)]
+    [JsonPropertyName("modifiedBy")]
     public string ModifiedBy { get; private set; }
 
 
@@ -188,7 +188,7 @@ public partial class OutboundRoute : IEquatable<OutboundRoute>
     /// The ID of the user that created the resource.
     /// </summary>
     /// <value>The ID of the user that created the resource.</value>
-    [DataMember(Name = "createdBy", EmitDefaultValue = false)]
+    [JsonPropertyName("createdBy")]
     public string CreatedBy { get; private set; }
 
 
@@ -199,7 +199,7 @@ public partial class OutboundRoute : IEquatable<OutboundRoute>
     /// The application that last modified the resource.
     /// </summary>
     /// <value>The application that last modified the resource.</value>
-    [DataMember(Name = "modifiedByApp", EmitDefaultValue = false)]
+    [JsonPropertyName("modifiedByApp")]
     public string ModifiedByApp { get; private set; }
 
 
@@ -208,7 +208,7 @@ public partial class OutboundRoute : IEquatable<OutboundRoute>
     /// The application that created the resource.
     /// </summary>
     /// <value>The application that created the resource.</value>
-    [DataMember(Name = "createdByApp", EmitDefaultValue = false)]
+    [JsonPropertyName("createdByApp")]
     public string CreatedByApp { get; private set; }
 
 
@@ -217,7 +217,7 @@ public partial class OutboundRoute : IEquatable<OutboundRoute>
     /// The site associated to the outbound route.
     /// </summary>
     /// <value>The site associated to the outbound route.</value>
-    [DataMember(Name = "classificationTypes", EmitDefaultValue = false)]
+    [JsonPropertyName("classificationTypes")]
     public List<string> ClassificationTypes { get; set; }
 
 
@@ -225,7 +225,7 @@ public partial class OutboundRoute : IEquatable<OutboundRoute>
     /// <summary>
     /// Gets or Sets Enabled
     /// </summary>
-    [DataMember(Name = "enabled", EmitDefaultValue = false)]
+    [JsonPropertyName("enabled")]
     public bool? Enabled { get; set; }
 
 
@@ -236,7 +236,7 @@ public partial class OutboundRoute : IEquatable<OutboundRoute>
     /// Trunk base settings of trunkType \&quot;EXTERNAL\&quot;.  This base must also be set on an edge logical interface for correct routing.
     /// </summary>
     /// <value>Trunk base settings of trunkType \&quot;EXTERNAL\&quot;.  This base must also be set on an edge logical interface for correct routing.</value>
-    [DataMember(Name = "externalTrunkBases", EmitDefaultValue = false)]
+    [JsonPropertyName("externalTrunkBases")]
     public List<DomainEntityRef> ExternalTrunkBases { get; set; }
 
 
@@ -245,7 +245,7 @@ public partial class OutboundRoute : IEquatable<OutboundRoute>
     /// The site associated to the outbound route.
     /// </summary>
     /// <value>The site associated to the outbound route.</value>
-    [DataMember(Name = "site", EmitDefaultValue = false)]
+    [JsonPropertyName("site")]
     public Site Site { get; private set; }
 
 
@@ -254,7 +254,7 @@ public partial class OutboundRoute : IEquatable<OutboundRoute>
     /// Is this outbound route being managed remotely.
     /// </summary>
     /// <value>Is this outbound route being managed remotely.</value>
-    [DataMember(Name = "managed", EmitDefaultValue = false)]
+    [JsonPropertyName("managed")]
     public bool? Managed { get; private set; }
 
 
@@ -263,7 +263,7 @@ public partial class OutboundRoute : IEquatable<OutboundRoute>
     /// The URI for this object
     /// </summary>
     /// <value>The URI for this object</value>
-    [DataMember(Name = "selfUri", EmitDefaultValue = false)]
+    [JsonPropertyName("selfUri")]
     public string SelfUri { get; private set; }
 
 

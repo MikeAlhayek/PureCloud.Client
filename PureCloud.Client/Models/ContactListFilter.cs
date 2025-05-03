@@ -7,14 +7,14 @@ namespace PureCloud.Client.Models;
 /// <summary>
 /// ContactListFilter
 /// </summary>
-[DataContract]
+
 public partial class ContactListFilter : IEquatable<ContactListFilter>
 {
     /// <summary>
     /// The source type the filter is based on.
     /// </summary>
     /// <value>The source type the filter is based on.</value>
-    [JsonConverter(typeof(JsonStringEnumConverter))]
+    
     public enum SourceTypeEnum
     {
         /// <summary>
@@ -41,7 +41,7 @@ public partial class ContactListFilter : IEquatable<ContactListFilter>
     /// How to join clauses together.
     /// </summary>
     /// <value>How to join clauses together.</value>
-    [JsonConverter(typeof(JsonStringEnumConverter))]
+    
     public enum FilterTypeEnum
     {
         /// <summary>
@@ -68,13 +68,13 @@ public partial class ContactListFilter : IEquatable<ContactListFilter>
     /// The source type the filter is based on.
     /// </summary>
     /// <value>The source type the filter is based on.</value>
-    [DataMember(Name = "sourceType", EmitDefaultValue = false)]
+    [JsonPropertyName("sourceType")]
     public SourceTypeEnum? SourceType { get; set; }
     /// <summary>
     /// How to join clauses together.
     /// </summary>
     /// <value>How to join clauses together.</value>
-    [DataMember(Name = "filterType", EmitDefaultValue = false)]
+    [JsonPropertyName("filterType")]
     public FilterTypeEnum? FilterType { get; set; }
 
     /// <summary>
@@ -110,7 +110,7 @@ public partial class ContactListFilter : IEquatable<ContactListFilter>
     /// The globally unique identifier for the object.
     /// </summary>
     /// <value>The globally unique identifier for the object.</value>
-    [DataMember(Name = "id", EmitDefaultValue = false)]
+    [JsonPropertyName("id")]
     public string Id { get; private set; }
 
 
@@ -119,7 +119,7 @@ public partial class ContactListFilter : IEquatable<ContactListFilter>
     /// The name of the list.
     /// </summary>
     /// <value>The name of the list.</value>
-    [DataMember(Name = "name", EmitDefaultValue = false)]
+    [JsonPropertyName("name")]
     public string Name { get; set; }
 
 
@@ -128,7 +128,7 @@ public partial class ContactListFilter : IEquatable<ContactListFilter>
     /// Creation time of the entity. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z
     /// </summary>
     /// <value>Creation time of the entity. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z</value>
-    [DataMember(Name = "dateCreated", EmitDefaultValue = false)]
+    [JsonPropertyName("dateCreated")]
     public DateTime? DateCreated { get; private set; }
 
 
@@ -137,7 +137,7 @@ public partial class ContactListFilter : IEquatable<ContactListFilter>
     /// Last modified time of the entity. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z
     /// </summary>
     /// <value>Last modified time of the entity. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z</value>
-    [DataMember(Name = "dateModified", EmitDefaultValue = false)]
+    [JsonPropertyName("dateModified")]
     public DateTime? DateModified { get; private set; }
 
 
@@ -146,7 +146,7 @@ public partial class ContactListFilter : IEquatable<ContactListFilter>
     /// Required for updates, must match the version number of the most recent update
     /// </summary>
     /// <value>Required for updates, must match the version number of the most recent update</value>
-    [DataMember(Name = "version", EmitDefaultValue = false)]
+    [JsonPropertyName("version")]
     public int? Version { get; set; }
 
 
@@ -155,7 +155,7 @@ public partial class ContactListFilter : IEquatable<ContactListFilter>
     /// The contact list the filter is based on. Required if sourceType is ContactList
     /// </summary>
     /// <value>The contact list the filter is based on. Required if sourceType is ContactList</value>
-    [DataMember(Name = "contactList", EmitDefaultValue = false)]
+    [JsonPropertyName("contactList")]
     public DomainEntityRef ContactList { get; set; }
 
 
@@ -164,7 +164,7 @@ public partial class ContactListFilter : IEquatable<ContactListFilter>
     /// The contact list template the filter is based on. Required if sourceType is ContactListTemplate
     /// </summary>
     /// <value>The contact list template the filter is based on. Required if sourceType is ContactListTemplate</value>
-    [DataMember(Name = "contactListTemplate", EmitDefaultValue = false)]
+    [JsonPropertyName("contactListTemplate")]
     public DomainEntityRef ContactListTemplate { get; set; }
 
 
@@ -175,7 +175,7 @@ public partial class ContactListFilter : IEquatable<ContactListFilter>
     /// Groups of conditions to filter the contacts by.
     /// </summary>
     /// <value>Groups of conditions to filter the contacts by.</value>
-    [DataMember(Name = "clauses", EmitDefaultValue = false)]
+    [JsonPropertyName("clauses")]
     public List<ContactListFilterClause> Clauses { get; set; }
 
 
@@ -186,7 +186,7 @@ public partial class ContactListFilter : IEquatable<ContactListFilter>
     /// The URI for this object
     /// </summary>
     /// <value>The URI for this object</value>
-    [DataMember(Name = "selfUri", EmitDefaultValue = false)]
+    [JsonPropertyName("selfUri")]
     public string SelfUri { get; private set; }
 
 

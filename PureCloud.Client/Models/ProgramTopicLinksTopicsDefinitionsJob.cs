@@ -7,13 +7,13 @@ namespace PureCloud.Client.Models;
 /// <summary>
 /// ProgramTopicLinksTopicsDefinitionsJob
 /// </summary>
-[DataContract]
+
 public partial class ProgramTopicLinksTopicsDefinitionsJob : IEquatable<ProgramTopicLinksTopicsDefinitionsJob>
 {
     /// <summary>
     /// Gets or Sets State
     /// </summary>
-    [JsonConverter(typeof(JsonStringEnumConverter))]
+    
     public enum StateEnum
     {
         /// <summary>
@@ -45,7 +45,7 @@ public partial class ProgramTopicLinksTopicsDefinitionsJob : IEquatable<ProgramT
     /// <summary>
     /// Gets or Sets State
     /// </summary>
-    [DataMember(Name = "state", EmitDefaultValue = false)]
+    [JsonPropertyName("state")]
     public StateEnum? State { get; set; }
     /// <summary>
     /// Initializes a new instance of the <see cref="ProgramTopicLinksTopicsDefinitionsJob" /> class.
@@ -66,7 +66,7 @@ public partial class ProgramTopicLinksTopicsDefinitionsJob : IEquatable<ProgramT
     /// <summary>
     /// Gets or Sets Id
     /// </summary>
-    [DataMember(Name = "id", EmitDefaultValue = false)]
+    [JsonPropertyName("id")]
     public string Id { get; set; }
 
 
@@ -76,7 +76,7 @@ public partial class ProgramTopicLinksTopicsDefinitionsJob : IEquatable<ProgramT
     /// <summary>
     /// Gets or Sets TestTopicPhraseResults
     /// </summary>
-    [DataMember(Name = "testTopicPhraseResults", EmitDefaultValue = false)]
+    [JsonPropertyName("testTopicPhraseResults")]
     public List<ProgramTopicLinksTestTopicPhraseResults> TestTopicPhraseResults { get; set; }
 
 

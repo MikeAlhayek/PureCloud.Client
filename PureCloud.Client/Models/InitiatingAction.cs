@@ -1,12 +1,12 @@
-using System.Runtime.Serialization;
 using System.Text;
+using System.Text.Json.Serialization;
 
 namespace PureCloud.Client.Models;
 
 /// <summary>
 /// InitiatingAction
 /// </summary>
-[DataContract]
+
 public partial class InitiatingAction : IEquatable<InitiatingAction>
 {
     /// <summary>
@@ -27,7 +27,7 @@ public partial class InitiatingAction : IEquatable<InitiatingAction>
     /// Id of the audit initiating the transaction
     /// </summary>
     /// <value>Id of the audit initiating the transaction</value>
-    [DataMember(Name = "transactionId", EmitDefaultValue = false)]
+    [JsonPropertyName("transactionId")]
     public string TransactionId { get; set; }
 
 
@@ -36,7 +36,7 @@ public partial class InitiatingAction : IEquatable<InitiatingAction>
     /// Action of the audit initiating the transaction
     /// </summary>
     /// <value>Action of the audit initiating the transaction</value>
-    [DataMember(Name = "actionContext", EmitDefaultValue = false)]
+    [JsonPropertyName("actionContext")]
     public string ActionContext { get; set; }
 
 

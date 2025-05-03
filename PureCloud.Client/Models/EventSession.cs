@@ -1,4 +1,3 @@
-using System.Runtime.Serialization;
 using System.Text;
 using System.Text.Json.Serialization;
 
@@ -7,7 +6,7 @@ namespace PureCloud.Client.Models;
 /// <summary>
 /// EventSession
 /// </summary>
-[DataContract]
+
 public partial class EventSession : IEquatable<EventSession>
 {
 
@@ -36,7 +35,7 @@ public partial class EventSession : IEquatable<EventSession>
     /// The ID of the session.
     /// </summary>
     /// <value>The ID of the session.</value>
-    [DataMember(Name = "id", EmitDefaultValue = false)]
+    [JsonPropertyName("id")]
     public string Id { get; set; }
 
 
@@ -44,7 +43,7 @@ public partial class EventSession : IEquatable<EventSession>
     /// <summary>
     /// Gets or Sets SelfUri
     /// </summary>
-    [DataMember(Name = "selfUri", EmitDefaultValue = false)]
+    [JsonPropertyName("selfUri")]
     public string SelfUri { get; set; }
 
 
@@ -53,7 +52,7 @@ public partial class EventSession : IEquatable<EventSession>
     /// Session types indicate the type or category of sessions (e.g. web, app).
     /// </summary>
     /// <value>Session types indicate the type or category of sessions (e.g. web, app).</value>
-    [DataMember(Name = "type", EmitDefaultValue = false)]
+    [JsonPropertyName("type")]
     public string Type { get; set; }
 
 

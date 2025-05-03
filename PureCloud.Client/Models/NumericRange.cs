@@ -1,12 +1,12 @@
-using System.Runtime.Serialization;
 using System.Text;
+using System.Text.Json.Serialization;
 
 namespace PureCloud.Client.Models;
 
 /// <summary>
 /// NumericRange
 /// </summary>
-[DataContract]
+
 public partial class NumericRange : IEquatable<NumericRange>
 {
     /// <summary>
@@ -31,7 +31,7 @@ public partial class NumericRange : IEquatable<NumericRange>
     /// Greater than
     /// </summary>
     /// <value>Greater than</value>
-    [DataMember(Name = "gt", EmitDefaultValue = false)]
+    [JsonPropertyName("gt")]
     public double? Gt { get; set; }
 
 
@@ -40,7 +40,7 @@ public partial class NumericRange : IEquatable<NumericRange>
     /// Greater than or equal to
     /// </summary>
     /// <value>Greater than or equal to</value>
-    [DataMember(Name = "gte", EmitDefaultValue = false)]
+    [JsonPropertyName("gte")]
     public double? Gte { get; set; }
 
 
@@ -49,7 +49,7 @@ public partial class NumericRange : IEquatable<NumericRange>
     /// Less than
     /// </summary>
     /// <value>Less than</value>
-    [DataMember(Name = "lt", EmitDefaultValue = false)]
+    [JsonPropertyName("lt")]
     public double? Lt { get; set; }
 
 
@@ -58,7 +58,7 @@ public partial class NumericRange : IEquatable<NumericRange>
     /// Less than or equal to
     /// </summary>
     /// <value>Less than or equal to</value>
-    [DataMember(Name = "lte", EmitDefaultValue = false)]
+    [JsonPropertyName("lte")]
     public double? Lte { get; set; }
 
 

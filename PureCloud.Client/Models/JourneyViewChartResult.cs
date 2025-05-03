@@ -1,12 +1,12 @@
-using System.Runtime.Serialization;
 using System.Text;
+using System.Text.Json.Serialization;
 
 namespace PureCloud.Client.Models;
 
 /// <summary>
 /// JourneyViewChartResult
 /// </summary>
-[DataContract]
+
 public partial class JourneyViewChartResult : IEquatable<JourneyViewChartResult>
 {
     /// <summary>
@@ -23,7 +23,7 @@ public partial class JourneyViewChartResult : IEquatable<JourneyViewChartResult>
     /// The globally unique identifier for the object.
     /// </summary>
     /// <value>The globally unique identifier for the object.</value>
-    [DataMember(Name = "id", EmitDefaultValue = false)]
+    [JsonPropertyName("id")]
     public string Id { get; private set; }
 
 
@@ -32,7 +32,7 @@ public partial class JourneyViewChartResult : IEquatable<JourneyViewChartResult>
     /// Version of the chart
     /// </summary>
     /// <value>Version of the chart</value>
-    [DataMember(Name = "version", EmitDefaultValue = false)]
+    [JsonPropertyName("version")]
     public int? Version { get; private set; }
 
 
@@ -41,7 +41,7 @@ public partial class JourneyViewChartResult : IEquatable<JourneyViewChartResult>
     /// Metric results for this chart
     /// </summary>
     /// <value>Metric results for this chart</value>
-    [DataMember(Name = "metrics", EmitDefaultValue = false)]
+    [JsonPropertyName("metrics")]
     public List<JourneyViewChartMetricResult> Metrics { get; private set; }
 
 
@@ -50,7 +50,7 @@ public partial class JourneyViewChartResult : IEquatable<JourneyViewChartResult>
     /// The URI for this object
     /// </summary>
     /// <value>The URI for this object</value>
-    [DataMember(Name = "selfUri", EmitDefaultValue = false)]
+    [JsonPropertyName("selfUri")]
     public string SelfUri { get; private set; }
 
 

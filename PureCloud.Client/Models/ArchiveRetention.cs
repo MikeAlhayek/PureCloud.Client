@@ -7,13 +7,13 @@ namespace PureCloud.Client.Models;
 /// <summary>
 /// ArchiveRetention
 /// </summary>
-[DataContract]
+
 public partial class ArchiveRetention : IEquatable<ArchiveRetention>
 {
     /// <summary>
     /// Gets or Sets StorageMedium
     /// </summary>
-    [JsonConverter(typeof(JsonStringEnumConverter))]
+    
     public enum StorageMediumEnum
     {
         /// <summary>
@@ -33,7 +33,7 @@ public partial class ArchiveRetention : IEquatable<ArchiveRetention>
     /// <summary>
     /// Gets or Sets StorageMedium
     /// </summary>
-    [DataMember(Name = "storageMedium", EmitDefaultValue = false)]
+    [JsonPropertyName("storageMedium")]
     public StorageMediumEnum? StorageMedium { get; set; }
     /// <summary>
     /// Initializes a new instance of the <see cref="ArchiveRetention" /> class.
@@ -52,7 +52,7 @@ public partial class ArchiveRetention : IEquatable<ArchiveRetention>
     /// <summary>
     /// Gets or Sets Days
     /// </summary>
-    [DataMember(Name = "days", EmitDefaultValue = false)]
+    [JsonPropertyName("days")]
     public int? Days { get; set; }
 
 

@@ -7,14 +7,14 @@ namespace PureCloud.Client.Models;
 /// <summary>
 /// MessageData
 /// </summary>
-[DataContract]
+
 public partial class MessageData : IEquatable<MessageData>
 {
     /// <summary>
     /// The direction of the message.
     /// </summary>
     /// <value>The direction of the message.</value>
-    [JsonConverter(typeof(JsonStringEnumConverter))]
+    
     public enum DirectionEnum
     {
         /// <summary>
@@ -41,7 +41,7 @@ public partial class MessageData : IEquatable<MessageData>
     /// Type of text messenger.
     /// </summary>
     /// <value>Type of text messenger.</value>
-    [JsonConverter(typeof(JsonStringEnumConverter))]
+    
     public enum MessengerTypeEnum
     {
         /// <summary>
@@ -104,7 +104,7 @@ public partial class MessageData : IEquatable<MessageData>
     /// The status of the message.
     /// </summary>
     /// <value>The status of the message.</value>
-    [JsonConverter(typeof(JsonStringEnumConverter))]
+    
     public enum StatusEnum
     {
         /// <summary>
@@ -173,19 +173,19 @@ public partial class MessageData : IEquatable<MessageData>
     /// The direction of the message.
     /// </summary>
     /// <value>The direction of the message.</value>
-    [DataMember(Name = "direction", EmitDefaultValue = false)]
+    [JsonPropertyName("direction")]
     public DirectionEnum? Direction { get; set; }
     /// <summary>
     /// Type of text messenger.
     /// </summary>
     /// <value>Type of text messenger.</value>
-    [DataMember(Name = "messengerType", EmitDefaultValue = false)]
+    [JsonPropertyName("messengerType")]
     public MessengerTypeEnum? MessengerType { get; set; }
     /// <summary>
     /// The status of the message.
     /// </summary>
     /// <value>The status of the message.</value>
-    [DataMember(Name = "status", EmitDefaultValue = false)]
+    [JsonPropertyName("status")]
     public StatusEnum? Status { get; set; }
 
     /// <summary>
@@ -233,7 +233,7 @@ public partial class MessageData : IEquatable<MessageData>
     /// The globally unique identifier for the object.
     /// </summary>
     /// <value>The globally unique identifier for the object.</value>
-    [DataMember(Name = "id", EmitDefaultValue = false)]
+    [JsonPropertyName("id")]
     public string Id { get; private set; }
 
 
@@ -241,7 +241,7 @@ public partial class MessageData : IEquatable<MessageData>
     /// <summary>
     /// Gets or Sets Name
     /// </summary>
-    [DataMember(Name = "name", EmitDefaultValue = false)]
+    [JsonPropertyName("name")]
     public string Name { get; set; }
 
 
@@ -250,7 +250,7 @@ public partial class MessageData : IEquatable<MessageData>
     /// The unique identifier of the message from provider
     /// </summary>
     /// <value>The unique identifier of the message from provider</value>
-    [DataMember(Name = "providerMessageId", EmitDefaultValue = false)]
+    [JsonPropertyName("providerMessageId")]
     public string ProviderMessageId { get; set; }
 
 
@@ -259,7 +259,7 @@ public partial class MessageData : IEquatable<MessageData>
     /// The time when the message was received or sent. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z
     /// </summary>
     /// <value>The time when the message was received or sent. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z</value>
-    [DataMember(Name = "timestamp", EmitDefaultValue = false)]
+    [JsonPropertyName("timestamp")]
     public DateTime? Timestamp { get; set; }
 
 
@@ -268,7 +268,7 @@ public partial class MessageData : IEquatable<MessageData>
     /// The sender of the text message.
     /// </summary>
     /// <value>The sender of the text message.</value>
-    [DataMember(Name = "fromAddress", EmitDefaultValue = false)]
+    [JsonPropertyName("fromAddress")]
     public string FromAddress { get; set; }
 
 
@@ -277,7 +277,7 @@ public partial class MessageData : IEquatable<MessageData>
     /// The recipient of the text message.
     /// </summary>
     /// <value>The recipient of the text message.</value>
-    [DataMember(Name = "toAddress", EmitDefaultValue = false)]
+    [JsonPropertyName("toAddress")]
     public string ToAddress { get; set; }
 
 
@@ -290,7 +290,7 @@ public partial class MessageData : IEquatable<MessageData>
     /// The body of the text message. (Deprecated - Instead use normalizedMessage.text)
     /// </summary>
     /// <value>The body of the text message. (Deprecated - Instead use normalizedMessage.text)</value>
-    [DataMember(Name = "textBody", EmitDefaultValue = false)]
+    [JsonPropertyName("textBody")]
     public string TextBody { get; set; }
 
 
@@ -301,7 +301,7 @@ public partial class MessageData : IEquatable<MessageData>
     /// The media details associated to a message. (Deprecated - Instead use normalizedMessage.content[index].attachment)
     /// </summary>
     /// <value>The media details associated to a message. (Deprecated - Instead use normalizedMessage.content[index].attachment)</value>
-    [DataMember(Name = "media", EmitDefaultValue = false)]
+    [JsonPropertyName("media")]
     public List<MessageMedia> Media { get; set; }
 
 
@@ -310,7 +310,7 @@ public partial class MessageData : IEquatable<MessageData>
     /// The sticker details associated to a message. (Deprecated - Instead use normalizedMessage.content[index].attachment
     /// </summary>
     /// <value>The sticker details associated to a message. (Deprecated - Instead use normalizedMessage.content[index].attachment</value>
-    [DataMember(Name = "stickers", EmitDefaultValue = false)]
+    [JsonPropertyName("stickers")]
     public List<MessageSticker> Stickers { get; set; }
 
 
@@ -319,7 +319,7 @@ public partial class MessageData : IEquatable<MessageData>
     /// The message into normalized format
     /// </summary>
     /// <value>The message into normalized format</value>
-    [DataMember(Name = "normalizedMessage", EmitDefaultValue = false)]
+    [JsonPropertyName("normalizedMessage")]
     public ConversationNormalizedMessage NormalizedMessage { get; private set; }
 
 
@@ -328,7 +328,7 @@ public partial class MessageData : IEquatable<MessageData>
     /// The delivery event associated with this message in normalized format, if the message direction was outbound
     /// </summary>
     /// <value>The delivery event associated with this message in normalized format, if the message direction was outbound</value>
-    [DataMember(Name = "normalizedReceipts", EmitDefaultValue = false)]
+    [JsonPropertyName("normalizedReceipts")]
     public List<ConversationNormalizedMessage> NormalizedReceipts { get; private set; }
 
 
@@ -337,7 +337,7 @@ public partial class MessageData : IEquatable<MessageData>
     /// User who sent this message.
     /// </summary>
     /// <value>User who sent this message.</value>
-    [DataMember(Name = "createdBy", EmitDefaultValue = false)]
+    [JsonPropertyName("createdBy")]
     public User CreatedBy { get; set; }
 
 
@@ -346,7 +346,7 @@ public partial class MessageData : IEquatable<MessageData>
     /// The id of the conversation of this message.
     /// </summary>
     /// <value>The id of the conversation of this message.</value>
-    [DataMember(Name = "conversationId", EmitDefaultValue = false)]
+    [JsonPropertyName("conversationId")]
     public string ConversationId { get; set; }
 
 
@@ -355,7 +355,7 @@ public partial class MessageData : IEquatable<MessageData>
     /// The URI for this object
     /// </summary>
     /// <value>The URI for this object</value>
-    [DataMember(Name = "selfUri", EmitDefaultValue = false)]
+    [JsonPropertyName("selfUri")]
     public string SelfUri { get; private set; }
 
 

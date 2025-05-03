@@ -7,14 +7,14 @@ namespace PureCloud.Client.Models;
 /// <summary>
 /// AdminAgentWorkPlanBiddingPreference
 /// </summary>
-[DataContract]
+
 public partial class AdminAgentWorkPlanBiddingPreference : IEquatable<AdminAgentWorkPlanBiddingPreference>
 {
     /// <summary>
     /// The reason why the assigned work plan has been overridden. This must be null without an override work plan
     /// </summary>
     /// <value>The reason why the assigned work plan has been overridden. This must be null without an override work plan</value>
-    [JsonConverter(typeof(JsonStringEnumConverter))]
+    
     public enum OverrideReasonEnum
     {
         /// <summary>
@@ -53,7 +53,7 @@ public partial class AdminAgentWorkPlanBiddingPreference : IEquatable<AdminAgent
     /// The reason why the assigned work plan has been overridden. This must be null without an override work plan
     /// </summary>
     /// <value>The reason why the assigned work plan has been overridden. This must be null without an override work plan</value>
-    [DataMember(Name = "overrideReason", EmitDefaultValue = false)]
+    [JsonPropertyName("overrideReason")]
     public OverrideReasonEnum? OverrideReason { get; set; }
 
     /// <summary>
@@ -87,7 +87,7 @@ public partial class AdminAgentWorkPlanBiddingPreference : IEquatable<AdminAgent
     /// The agent to whom this work plan bidding preference applies
     /// </summary>
     /// <value>The agent to whom this work plan bidding preference applies</value>
-    [DataMember(Name = "agent", EmitDefaultValue = false)]
+    [JsonPropertyName("agent")]
     public UserReference Agent { get; set; }
 
 
@@ -96,7 +96,7 @@ public partial class AdminAgentWorkPlanBiddingPreference : IEquatable<AdminAgent
     /// Whether the preference is submitted
     /// </summary>
     /// <value>Whether the preference is submitted</value>
-    [DataMember(Name = "submitted", EmitDefaultValue = false)]
+    [JsonPropertyName("submitted")]
     public bool? Submitted { get; set; }
 
 
@@ -105,7 +105,7 @@ public partial class AdminAgentWorkPlanBiddingPreference : IEquatable<AdminAgent
     /// The work plan assigned to the agent by the bid process
     /// </summary>
     /// <value>The work plan assigned to the agent by the bid process</value>
-    [DataMember(Name = "assignedWorkPlan", EmitDefaultValue = false)]
+    [JsonPropertyName("assignedWorkPlan")]
     public WorkPlanReference AssignedWorkPlan { get; set; }
 
 
@@ -114,7 +114,7 @@ public partial class AdminAgentWorkPlanBiddingPreference : IEquatable<AdminAgent
     /// The work plan that overrides the assigned work plan for the agent
     /// </summary>
     /// <value>The work plan that overrides the assigned work plan for the agent</value>
-    [DataMember(Name = "overriddenWorkPlan", EmitDefaultValue = false)]
+    [JsonPropertyName("overriddenWorkPlan")]
     public WorkPlanReference OverriddenWorkPlan { get; set; }
 
 
@@ -125,7 +125,7 @@ public partial class AdminAgentWorkPlanBiddingPreference : IEquatable<AdminAgent
     /// The agent priorities for the list of work plans. The index of the priorities should match with the list of work plans that belong to bid group. It contains null if priority is not set for the work plan
     /// </summary>
     /// <value>The agent priorities for the list of work plans. The index of the priorities should match with the list of work plans that belong to bid group. It contains null if priority is not set for the work plan</value>
-    [DataMember(Name = "priorities", EmitDefaultValue = false)]
+    [JsonPropertyName("priorities")]
     public List<int?> Priorities { get; set; }
 
 

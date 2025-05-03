@@ -7,13 +7,13 @@ namespace PureCloud.Client.Models;
 /// <summary>
 /// ConversationCallEventTopicCallConversation
 /// </summary>
-[DataContract]
+
 public partial class ConversationCallEventTopicCallConversation : IEquatable<ConversationCallEventTopicCallConversation>
 {
     /// <summary>
     /// Gets or Sets RecordingState
     /// </summary>
-    [JsonConverter(typeof(JsonStringEnumConverter))]
+    
     public enum RecordingStateEnum
     {
         /// <summary>
@@ -45,7 +45,7 @@ public partial class ConversationCallEventTopicCallConversation : IEquatable<Con
     /// <summary>
     /// Gets or Sets RecordingState
     /// </summary>
-    [DataMember(Name = "recordingState", EmitDefaultValue = false)]
+    [JsonPropertyName("recordingState")]
     public RecordingStateEnum? RecordingState { get; set; }
     /// <summary>
     /// Initializes a new instance of the <see cref="ConversationCallEventTopicCallConversation" /> class.
@@ -80,7 +80,7 @@ public partial class ConversationCallEventTopicCallConversation : IEquatable<Con
     /// <summary>
     /// Gets or Sets Id
     /// </summary>
-    [DataMember(Name = "id", EmitDefaultValue = false)]
+    [JsonPropertyName("id")]
     public string Id { get; set; }
 
 
@@ -88,7 +88,7 @@ public partial class ConversationCallEventTopicCallConversation : IEquatable<Con
     /// <summary>
     /// Gets or Sets Name
     /// </summary>
-    [DataMember(Name = "name", EmitDefaultValue = false)]
+    [JsonPropertyName("name")]
     public string Name { get; set; }
 
 
@@ -96,7 +96,7 @@ public partial class ConversationCallEventTopicCallConversation : IEquatable<Con
     /// <summary>
     /// Gets or Sets Participants
     /// </summary>
-    [DataMember(Name = "participants", EmitDefaultValue = false)]
+    [JsonPropertyName("participants")]
     public List<ConversationCallEventTopicCallMediaParticipant> Participants { get; set; }
 
 
@@ -104,7 +104,7 @@ public partial class ConversationCallEventTopicCallConversation : IEquatable<Con
     /// <summary>
     /// Gets or Sets OtherMediaUris
     /// </summary>
-    [DataMember(Name = "otherMediaUris", EmitDefaultValue = false)]
+    [JsonPropertyName("otherMediaUris")]
     public List<string> OtherMediaUris { get; set; }
 
 
@@ -112,7 +112,7 @@ public partial class ConversationCallEventTopicCallConversation : IEquatable<Con
     /// <summary>
     /// Gets or Sets Address
     /// </summary>
-    [DataMember(Name = "address", EmitDefaultValue = false)]
+    [JsonPropertyName("address")]
     public string Address { get; set; }
 
 
@@ -120,7 +120,7 @@ public partial class ConversationCallEventTopicCallConversation : IEquatable<Con
     /// <summary>
     /// Gets or Sets UtilizationLabelId
     /// </summary>
-    [DataMember(Name = "utilizationLabelId", EmitDefaultValue = false)]
+    [JsonPropertyName("utilizationLabelId")]
     public string UtilizationLabelId { get; set; }
 
 
@@ -128,7 +128,7 @@ public partial class ConversationCallEventTopicCallConversation : IEquatable<Con
     /// <summary>
     /// Gets or Sets Divisions
     /// </summary>
-    [DataMember(Name = "divisions", EmitDefaultValue = false)]
+    [JsonPropertyName("divisions")]
     public List<ConversationCallEventTopicConversationDivisionMembership> Divisions { get; set; }
 
 
@@ -138,7 +138,7 @@ public partial class ConversationCallEventTopicCallConversation : IEquatable<Con
     /// <summary>
     /// Gets or Sets SecurePause
     /// </summary>
-    [DataMember(Name = "securePause", EmitDefaultValue = false)]
+    [JsonPropertyName("securePause")]
     public bool? SecurePause { get; set; }
 
 
@@ -146,7 +146,7 @@ public partial class ConversationCallEventTopicCallConversation : IEquatable<Con
     /// <summary>
     /// Gets or Sets MaxParticipants
     /// </summary>
-    [DataMember(Name = "maxParticipants", EmitDefaultValue = false)]
+    [JsonPropertyName("maxParticipants")]
     public long? MaxParticipants { get; set; }
 
 

@@ -1,4 +1,3 @@
-using System.Runtime.Serialization;
 using System.Text;
 using System.Text.Json.Serialization;
 
@@ -7,7 +6,7 @@ namespace PureCloud.Client.Models;
 /// <summary>
 /// Model for a Nuance bot variable
 /// </summary>
-[DataContract]
+
 public partial class NuanceBotVariable : IEquatable<NuanceBotVariable>
 {
 
@@ -42,7 +41,7 @@ public partial class NuanceBotVariable : IEquatable<NuanceBotVariable>
     /// The variable ID
     /// </summary>
     /// <value>The variable ID</value>
-    [DataMember(Name = "id", EmitDefaultValue = false)]
+    [JsonPropertyName("id")]
     public string Id { get; set; }
 
 
@@ -51,7 +50,7 @@ public partial class NuanceBotVariable : IEquatable<NuanceBotVariable>
     /// The variable display name
     /// </summary>
     /// <value>The variable display name</value>
-    [DataMember(Name = "name", EmitDefaultValue = false)]
+    [JsonPropertyName("name")]
     public string Name { get; set; }
 
 
@@ -60,7 +59,7 @@ public partial class NuanceBotVariable : IEquatable<NuanceBotVariable>
     /// The variable description
     /// </summary>
     /// <value>The variable description</value>
-    [DataMember(Name = "description", EmitDefaultValue = false)]
+    [JsonPropertyName("description")]
     public string Description { get; set; }
 
 
@@ -69,7 +68,7 @@ public partial class NuanceBotVariable : IEquatable<NuanceBotVariable>
     /// True if the variable is a reserved variable
     /// </summary>
     /// <value>True if the variable is a reserved variable</value>
-    [DataMember(Name = "reserved", EmitDefaultValue = false)]
+    [JsonPropertyName("reserved")]
     public bool? Reserved { get; set; }
 
 
@@ -78,7 +77,7 @@ public partial class NuanceBotVariable : IEquatable<NuanceBotVariable>
     /// The type information for this variable
     /// </summary>
     /// <value>The type information for this variable</value>
-    [DataMember(Name = "simpleVariableInfo", EmitDefaultValue = false)]
+    [JsonPropertyName("simpleVariableInfo")]
     public string SimpleVariableInfo { get; set; }
 
 
@@ -87,7 +86,7 @@ public partial class NuanceBotVariable : IEquatable<NuanceBotVariable>
     /// The type information for this variable
     /// </summary>
     /// <value>The type information for this variable</value>
-    [DataMember(Name = "complexGenericVariableInfo", EmitDefaultValue = false)]
+    [JsonPropertyName("complexGenericVariableInfo")]
     public ComplexVariableInfo ComplexGenericVariableInfo { get; set; }
 
 

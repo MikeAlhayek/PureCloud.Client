@@ -1,12 +1,12 @@
-using System.Runtime.Serialization;
 using System.Text;
+using System.Text.Json.Serialization;
 
 namespace PureCloud.Client.Models;
 
 /// <summary>
 /// Generic content object. (Deprecated
 /// </summary>
-[DataContract]
+
 public partial class WebMessagingGeneric : IEquatable<WebMessagingGeneric>
 {
     /// <summary>
@@ -33,7 +33,7 @@ public partial class WebMessagingGeneric : IEquatable<WebMessagingGeneric>
     /// Text to show in the title.
     /// </summary>
     /// <value>Text to show in the title.</value>
-    [DataMember(Name = "title", EmitDefaultValue = false)]
+    [JsonPropertyName("title")]
     public string Title { get; set; }
 
 
@@ -42,7 +42,7 @@ public partial class WebMessagingGeneric : IEquatable<WebMessagingGeneric>
     /// Text to show in the description.
     /// </summary>
     /// <value>Text to show in the description.</value>
-    [DataMember(Name = "description", EmitDefaultValue = false)]
+    [JsonPropertyName("description")]
     public string Description { get; set; }
 
 
@@ -51,7 +51,7 @@ public partial class WebMessagingGeneric : IEquatable<WebMessagingGeneric>
     /// URL of an image.
     /// </summary>
     /// <value>URL of an image.</value>
-    [DataMember(Name = "image", EmitDefaultValue = false)]
+    [JsonPropertyName("image")]
     public string Image { get; set; }
 
 
@@ -60,7 +60,7 @@ public partial class WebMessagingGeneric : IEquatable<WebMessagingGeneric>
     /// Actions to be taken.
     /// </summary>
     /// <value>Actions to be taken.</value>
-    [DataMember(Name = "actions", EmitDefaultValue = false)]
+    [JsonPropertyName("actions")]
     public ContentActions Actions { get; set; }
 
 
@@ -69,7 +69,7 @@ public partial class WebMessagingGeneric : IEquatable<WebMessagingGeneric>
     /// An array of component objects.
     /// </summary>
     /// <value>An array of component objects.</value>
-    [DataMember(Name = "components", EmitDefaultValue = false)]
+    [JsonPropertyName("components")]
     public List<ButtonComponent> Components { get; set; }
 
 

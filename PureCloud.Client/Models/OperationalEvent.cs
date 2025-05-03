@@ -1,12 +1,12 @@
-using System.Runtime.Serialization;
 using System.Text;
+using System.Text.Json.Serialization;
 
 namespace PureCloud.Client.Models;
 
 /// <summary>
 /// OperationalEvent
 /// </summary>
-[DataContract]
+
 public partial class OperationalEvent : IEquatable<OperationalEvent>
 {
     /// <summary>
@@ -45,7 +45,7 @@ public partial class OperationalEvent : IEquatable<OperationalEvent>
     /// The event that occurred.
     /// </summary>
     /// <value>The event that occurred.</value>
-    [DataMember(Name = "eventDefinition", EmitDefaultValue = false)]
+    [JsonPropertyName("eventDefinition")]
     public AddressableEntityRef EventDefinition { get; set; }
 
 
@@ -54,7 +54,7 @@ public partial class OperationalEvent : IEquatable<OperationalEvent>
     /// The unique identifier for the entity
     /// </summary>
     /// <value>The unique identifier for the entity</value>
-    [DataMember(Name = "entityId", EmitDefaultValue = false)]
+    [JsonPropertyName("entityId")]
     public string EntityId { get; set; }
 
 
@@ -63,7 +63,7 @@ public partial class OperationalEvent : IEquatable<OperationalEvent>
     /// A token representing the entity
     /// </summary>
     /// <value>A token representing the entity</value>
-    [DataMember(Name = "entityToken", EmitDefaultValue = false)]
+    [JsonPropertyName("entityToken")]
     public string EntityToken { get; set; }
 
 
@@ -72,7 +72,7 @@ public partial class OperationalEvent : IEquatable<OperationalEvent>
     /// The name for the entity
     /// </summary>
     /// <value>The name for the entity</value>
-    [DataMember(Name = "entityName", EmitDefaultValue = false)]
+    [JsonPropertyName("entityName")]
     public string EntityName { get; set; }
 
 
@@ -81,7 +81,7 @@ public partial class OperationalEvent : IEquatable<OperationalEvent>
     /// The value prior to the event
     /// </summary>
     /// <value>The value prior to the event</value>
-    [DataMember(Name = "previousValue", EmitDefaultValue = false)]
+    [JsonPropertyName("previousValue")]
     public string PreviousValue { get; set; }
 
 
@@ -90,7 +90,7 @@ public partial class OperationalEvent : IEquatable<OperationalEvent>
     /// The changed value following the event
     /// </summary>
     /// <value>The changed value following the event</value>
-    [DataMember(Name = "currentValue", EmitDefaultValue = false)]
+    [JsonPropertyName("currentValue")]
     public string CurrentValue { get; set; }
 
 
@@ -99,7 +99,7 @@ public partial class OperationalEvent : IEquatable<OperationalEvent>
     /// The error code of the entity in the providing service associated to the event
     /// </summary>
     /// <value>The error code of the entity in the providing service associated to the event</value>
-    [DataMember(Name = "errorCode", EmitDefaultValue = false)]
+    [JsonPropertyName("errorCode")]
     public string ErrorCode { get; set; }
 
 
@@ -108,7 +108,7 @@ public partial class OperationalEvent : IEquatable<OperationalEvent>
     /// The unique identifier for the parent of the entity
     /// </summary>
     /// <value>The unique identifier for the parent of the entity</value>
-    [DataMember(Name = "parentEntityId", EmitDefaultValue = false)]
+    [JsonPropertyName("parentEntityId")]
     public string ParentEntityId { get; set; }
 
 
@@ -117,7 +117,7 @@ public partial class OperationalEvent : IEquatable<OperationalEvent>
     /// The link to a conversation
     /// </summary>
     /// <value>The link to a conversation</value>
-    [DataMember(Name = "conversation", EmitDefaultValue = false)]
+    [JsonPropertyName("conversation")]
     public AddressableEntityRef Conversation { get; set; }
 
 
@@ -126,7 +126,7 @@ public partial class OperationalEvent : IEquatable<OperationalEvent>
     /// The date when the event created. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z
     /// </summary>
     /// <value>The date when the event created. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z</value>
-    [DataMember(Name = "dateCreated", EmitDefaultValue = false)]
+    [JsonPropertyName("dateCreated")]
     public DateTime? DateCreated { get; set; }
 
 
@@ -135,7 +135,7 @@ public partial class OperationalEvent : IEquatable<OperationalEvent>
     /// The version of the entity in the providing service
     /// </summary>
     /// <value>The version of the entity in the providing service</value>
-    [DataMember(Name = "entityVersion", EmitDefaultValue = false)]
+    [JsonPropertyName("entityVersion")]
     public string EntityVersion { get; set; }
 
 

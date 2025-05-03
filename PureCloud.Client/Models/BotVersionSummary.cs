@@ -1,4 +1,3 @@
-using System.Runtime.Serialization;
 using System.Text;
 using System.Text.Json.Serialization;
 
@@ -7,7 +6,7 @@ namespace PureCloud.Client.Models;
 /// <summary>
 /// A version summary for a botConnector bot.
 /// </summary>
-[DataContract]
+
 public partial class BotVersionSummary : IEquatable<BotVersionSummary>
 {
 
@@ -38,7 +37,7 @@ public partial class BotVersionSummary : IEquatable<BotVersionSummary>
     /// The name of the bot.
     /// </summary>
     /// <value>The name of the bot.</value>
-    [DataMember(Name = "name", EmitDefaultValue = false)]
+    [JsonPropertyName("name")]
     public string Name { get; set; }
 
 
@@ -47,7 +46,7 @@ public partial class BotVersionSummary : IEquatable<BotVersionSummary>
     /// The id of the bot.
     /// </summary>
     /// <value>The id of the bot.</value>
-    [DataMember(Name = "id", EmitDefaultValue = false)]
+    [JsonPropertyName("id")]
     public string Id { get; set; }
 
 
@@ -56,7 +55,7 @@ public partial class BotVersionSummary : IEquatable<BotVersionSummary>
     /// An optional description of the bot.
     /// </summary>
     /// <value>An optional description of the bot.</value>
-    [DataMember(Name = "description", EmitDefaultValue = false)]
+    [JsonPropertyName("description")]
     public string Description { get; set; }
 
 
@@ -65,7 +64,7 @@ public partial class BotVersionSummary : IEquatable<BotVersionSummary>
     /// A system-generated string that contains metadata about this bot.
     /// </summary>
     /// <value>A system-generated string that contains metadata about this bot.</value>
-    [DataMember(Name = "botCompositeTag", EmitDefaultValue = false)]
+    [JsonPropertyName("botCompositeTag")]
     public string BotCompositeTag { get; private set; }
 
 
@@ -74,7 +73,7 @@ public partial class BotVersionSummary : IEquatable<BotVersionSummary>
     /// The name of the version.
     /// </summary>
     /// <value>The name of the version.</value>
-    [DataMember(Name = "version", EmitDefaultValue = false)]
+    [JsonPropertyName("version")]
     public string Version { get; set; }
 
 

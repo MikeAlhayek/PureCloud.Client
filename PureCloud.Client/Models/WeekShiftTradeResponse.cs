@@ -1,12 +1,12 @@
-using System.Runtime.Serialization;
 using System.Text;
+using System.Text.Json.Serialization;
 
 namespace PureCloud.Client.Models;
 
 /// <summary>
 /// WeekShiftTradeResponse
 /// </summary>
-[DataContract]
+
 public partial class WeekShiftTradeResponse : IEquatable<WeekShiftTradeResponse>
 {
     /// <summary>
@@ -27,7 +27,7 @@ public partial class WeekShiftTradeResponse : IEquatable<WeekShiftTradeResponse>
     /// The shift trade details
     /// </summary>
     /// <value>The shift trade details</value>
-    [DataMember(Name = "trade", EmitDefaultValue = false)]
+    [JsonPropertyName("trade")]
     public ShiftTradeResponse Trade { get; set; }
 
 
@@ -36,7 +36,7 @@ public partial class WeekShiftTradeResponse : IEquatable<WeekShiftTradeResponse>
     /// A preview of what the schedule would look like if the shift trade is approved plus any violations
     /// </summary>
     /// <value>A preview of what the schedule would look like if the shift trade is approved plus any violations</value>
-    [DataMember(Name = "matchReview", EmitDefaultValue = false)]
+    [JsonPropertyName("matchReview")]
     public ShiftTradeMatchReviewResponse MatchReview { get; set; }
 
 

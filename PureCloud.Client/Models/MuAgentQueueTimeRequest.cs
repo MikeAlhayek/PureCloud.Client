@@ -1,4 +1,3 @@
-using System.Runtime.Serialization;
 using System.Text;
 using System.Text.Json.Serialization;
 
@@ -7,7 +6,7 @@ namespace PureCloud.Client.Models;
 /// <summary>
 /// MuAgentQueueTimeRequest
 /// </summary>
-[DataContract]
+
 public partial class MuAgentQueueTimeRequest : IEquatable<MuAgentQueueTimeRequest>
 {
 
@@ -34,7 +33,7 @@ public partial class MuAgentQueueTimeRequest : IEquatable<MuAgentQueueTimeReques
     /// ID of the management unit
     /// </summary>
     /// <value>ID of the management unit</value>
-    [DataMember(Name = "managementUnitId", EmitDefaultValue = false)]
+    [JsonPropertyName("managementUnitId")]
     public string ManagementUnitId { get; set; }
 
 
@@ -43,7 +42,7 @@ public partial class MuAgentQueueTimeRequest : IEquatable<MuAgentQueueTimeReques
     /// List of Agent queue times within the management unit
     /// </summary>
     /// <value>List of Agent queue times within the management unit</value>
-    [DataMember(Name = "agentOnQueueTimes", EmitDefaultValue = false)]
+    [JsonPropertyName("agentOnQueueTimes")]
     public List<AgentQueueTimeRequest> AgentOnQueueTimes { get; set; }
 
 

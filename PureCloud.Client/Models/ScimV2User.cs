@@ -1,12 +1,12 @@
-using System.Runtime.Serialization;
 using System.Text;
+using System.Text.Json.Serialization;
 
 namespace PureCloud.Client.Models;
 
 /// <summary>
 /// Defines a SCIM user.
 /// </summary>
-[DataContract]
+
 public partial class ScimV2User : IEquatable<ScimV2User>
 {
     /// <summary>
@@ -45,7 +45,7 @@ public partial class ScimV2User : IEquatable<ScimV2User>
     /// The ID of the SCIM resource. Set by the service provider. \&quot;caseExact\&quot; is set to \&quot;true\&quot;. \&quot;mutability\&quot; is set to \&quot;readOnly\&quot;. \&quot;returned\&quot; is set to \&quot;always\&quot;.
     /// </summary>
     /// <value>The ID of the SCIM resource. Set by the service provider. \&quot;caseExact\&quot; is set to \&quot;true\&quot;. \&quot;mutability\&quot; is set to \&quot;readOnly\&quot;. \&quot;returned\&quot; is set to \&quot;always\&quot;.</value>
-    [DataMember(Name = "id", EmitDefaultValue = false)]
+    [JsonPropertyName("id")]
     public string Id { get; private set; }
 
 
@@ -54,7 +54,7 @@ public partial class ScimV2User : IEquatable<ScimV2User>
     /// The list of supported schemas.
     /// </summary>
     /// <value>The list of supported schemas.</value>
-    [DataMember(Name = "schemas", EmitDefaultValue = false)]
+    [JsonPropertyName("schemas")]
     public List<string> Schemas { get; private set; }
 
 
@@ -63,7 +63,7 @@ public partial class ScimV2User : IEquatable<ScimV2User>
     /// Indicates whether the user&#39;s administrative status is active.
     /// </summary>
     /// <value>Indicates whether the user&#39;s administrative status is active.</value>
-    [DataMember(Name = "active", EmitDefaultValue = false)]
+    [JsonPropertyName("active")]
     public bool? Active { get; set; }
 
 
@@ -72,7 +72,7 @@ public partial class ScimV2User : IEquatable<ScimV2User>
     /// The user&#39;s Genesys Cloud email address. Must be unique.
     /// </summary>
     /// <value>The user&#39;s Genesys Cloud email address. Must be unique.</value>
-    [DataMember(Name = "userName", EmitDefaultValue = false)]
+    [JsonPropertyName("userName")]
     public string UserName { get; set; }
 
 
@@ -81,7 +81,7 @@ public partial class ScimV2User : IEquatable<ScimV2User>
     /// The display name of the user.
     /// </summary>
     /// <value>The display name of the user.</value>
-    [DataMember(Name = "displayName", EmitDefaultValue = false)]
+    [JsonPropertyName("displayName")]
     public string DisplayName { get; set; }
 
 
@@ -90,7 +90,7 @@ public partial class ScimV2User : IEquatable<ScimV2User>
     /// The new password for the Genesys Cloud user. Does not return an existing password. When creating a user, if a password is not supplied, then a password will be randomly generated that is 40 characters in length and contains five characters from each of the password policy groups.
     /// </summary>
     /// <value>The new password for the Genesys Cloud user. Does not return an existing password. When creating a user, if a password is not supplied, then a password will be randomly generated that is 40 characters in length and contains five characters from each of the password policy groups.</value>
-    [DataMember(Name = "password", EmitDefaultValue = false)]
+    [JsonPropertyName("password")]
     public string Password { get; set; }
 
 
@@ -99,7 +99,7 @@ public partial class ScimV2User : IEquatable<ScimV2User>
     /// The user&#39;s title.
     /// </summary>
     /// <value>The user&#39;s title.</value>
-    [DataMember(Name = "title", EmitDefaultValue = false)]
+    [JsonPropertyName("title")]
     public string Title { get; set; }
 
 
@@ -108,7 +108,7 @@ public partial class ScimV2User : IEquatable<ScimV2User>
     /// The list of the user&#39;s phone numbers.
     /// </summary>
     /// <value>The list of the user&#39;s phone numbers.</value>
-    [DataMember(Name = "phoneNumbers", EmitDefaultValue = false)]
+    [JsonPropertyName("phoneNumbers")]
     public List<ScimPhoneNumber> PhoneNumbers { get; set; }
 
 
@@ -117,7 +117,7 @@ public partial class ScimV2User : IEquatable<ScimV2User>
     /// The list of the user&#39;s email addresses.
     /// </summary>
     /// <value>The list of the user&#39;s email addresses.</value>
-    [DataMember(Name = "emails", EmitDefaultValue = false)]
+    [JsonPropertyName("emails")]
     public List<ScimEmail> Emails { get; set; }
 
 
@@ -126,7 +126,7 @@ public partial class ScimV2User : IEquatable<ScimV2User>
     /// The external ID of the user. Set by the provisioning client. \&quot;caseExact\&quot; is set to \&quot;true\&quot;. \&quot;mutability\&quot; is set to \&quot;readWrite\&quot;.
     /// </summary>
     /// <value>The external ID of the user. Set by the provisioning client. \&quot;caseExact\&quot; is set to \&quot;true\&quot;. \&quot;mutability\&quot; is set to \&quot;readWrite\&quot;.</value>
-    [DataMember(Name = "externalId", EmitDefaultValue = false)]
+    [JsonPropertyName("externalId")]
     public string ExternalId { get; set; }
 
 
@@ -135,7 +135,7 @@ public partial class ScimV2User : IEquatable<ScimV2User>
     /// The list of groups that the user is a member of. This list is immutable per SCIM RFC and may only be updated using the GROUPS resource endpoint.
     /// </summary>
     /// <value>The list of groups that the user is a member of. This list is immutable per SCIM RFC and may only be updated using the GROUPS resource endpoint.</value>
-    [DataMember(Name = "groups", EmitDefaultValue = false)]
+    [JsonPropertyName("groups")]
     public List<ScimV2GroupReference> Groups { get; private set; }
 
 
@@ -144,7 +144,7 @@ public partial class ScimV2User : IEquatable<ScimV2User>
     /// The list of roles assigned to the user.
     /// </summary>
     /// <value>The list of roles assigned to the user.</value>
-    [DataMember(Name = "roles", EmitDefaultValue = false)]
+    [JsonPropertyName("roles")]
     public List<ScimUserRole> Roles { get; set; }
 
 
@@ -153,7 +153,7 @@ public partial class ScimV2User : IEquatable<ScimV2User>
     /// The URI of the schema for the enterprise user.
     /// </summary>
     /// <value>The URI of the schema for the enterprise user.</value>
-    [DataMember(Name = "urn:ietf:params:scim:schemas:extension:enterprise:2.0:User", EmitDefaultValue = false)]
+    [JsonPropertyName("urn:ietf:params:scim:schemas:extension:enterprise:2.0:User")]
     public ScimV2EnterpriseUser Urnietfparamsscimschemasextensionenterprise20User { get; set; }
 
 
@@ -162,7 +162,7 @@ public partial class ScimV2User : IEquatable<ScimV2User>
     /// The URI of the schema for the Genesys Cloud user.
     /// </summary>
     /// <value>The URI of the schema for the Genesys Cloud user.</value>
-    [DataMember(Name = "urn:ietf:params:scim:schemas:extension:genesys:purecloud:2.0:User", EmitDefaultValue = false)]
+    [JsonPropertyName("urn:ietf:params:scim:schemas:extension:genesys:purecloud:2.0:User")]
     public ScimUserExtensions Urnietfparamsscimschemasextensiongenesyspurecloud20User { get; set; }
 
 
@@ -171,7 +171,7 @@ public partial class ScimV2User : IEquatable<ScimV2User>
     /// The metadata of the SCIM resource. Metadata is defined as immutable per SCIM RFC.
     /// </summary>
     /// <value>The metadata of the SCIM resource. Metadata is defined as immutable per SCIM RFC.</value>
-    [DataMember(Name = "meta", EmitDefaultValue = false)]
+    [JsonPropertyName("meta")]
     public ScimMetadata Meta { get; private set; }
 
 

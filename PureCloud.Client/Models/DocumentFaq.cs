@@ -1,4 +1,3 @@
-using System.Runtime.Serialization;
 using System.Text;
 using System.Text.Json.Serialization;
 
@@ -7,7 +6,7 @@ namespace PureCloud.Client.Models;
 /// <summary>
 /// DocumentFaq
 /// </summary>
-[DataContract]
+
 public partial class DocumentFaq : IEquatable<DocumentFaq>
 {
 
@@ -36,7 +35,7 @@ public partial class DocumentFaq : IEquatable<DocumentFaq>
     /// The question for this FAQ
     /// </summary>
     /// <value>The question for this FAQ</value>
-    [DataMember(Name = "question", EmitDefaultValue = false)]
+    [JsonPropertyName("question")]
     public string Question { get; set; }
 
 
@@ -45,7 +44,7 @@ public partial class DocumentFaq : IEquatable<DocumentFaq>
     /// The answer for this FAQ
     /// </summary>
     /// <value>The answer for this FAQ</value>
-    [DataMember(Name = "answer", EmitDefaultValue = false)]
+    [JsonPropertyName("answer")]
     public string Answer { get; set; }
 
 
@@ -54,7 +53,7 @@ public partial class DocumentFaq : IEquatable<DocumentFaq>
     /// List of Alternative questions related to the answer which helps in improving the likelihood of a match to user query
     /// </summary>
     /// <value>List of Alternative questions related to the answer which helps in improving the likelihood of a match to user query</value>
-    [DataMember(Name = "alternatives", EmitDefaultValue = false)]
+    [JsonPropertyName("alternatives")]
     public List<string> Alternatives { get; set; }
 
 

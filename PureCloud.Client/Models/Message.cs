@@ -7,14 +7,14 @@ namespace PureCloud.Client.Models;
 /// <summary>
 /// Message
 /// </summary>
-[DataContract]
+
 public partial class Message : IEquatable<Message>
 {
     /// <summary>
     /// The connection state of this communication.
     /// </summary>
     /// <value>The connection state of this communication.</value>
-    [JsonConverter(typeof(JsonStringEnumConverter))]
+    
     public enum StateEnum
     {
         /// <summary>
@@ -47,7 +47,7 @@ public partial class Message : IEquatable<Message>
     /// The initial connection state of this communication.
     /// </summary>
     /// <value>The initial connection state of this communication.</value>
-    [JsonConverter(typeof(JsonStringEnumConverter))]
+    
     public enum InitialStateEnum
     {
         /// <summary>
@@ -80,7 +80,7 @@ public partial class Message : IEquatable<Message>
     /// The direction of the message.
     /// </summary>
     /// <value>The direction of the message.</value>
-    [JsonConverter(typeof(JsonStringEnumConverter))]
+    
     public enum DirectionEnum
     {
         /// <summary>
@@ -107,7 +107,7 @@ public partial class Message : IEquatable<Message>
     /// System defined string indicating what caused the communication to disconnect. Will be null until the communication disconnects.
     /// </summary>
     /// <value>System defined string indicating what caused the communication to disconnect. Will be null until the communication disconnects.</value>
-    [JsonConverter(typeof(JsonStringEnumConverter))]
+    
     public enum DisconnectTypeEnum
     {
         /// <summary>
@@ -218,7 +218,7 @@ public partial class Message : IEquatable<Message>
     /// Indicates the type of message platform from which the message originated.
     /// </summary>
     /// <value>Indicates the type of message platform from which the message originated.</value>
-    [JsonConverter(typeof(JsonStringEnumConverter))]
+    
     public enum TypeEnum
     {
         /// <summary>
@@ -305,31 +305,31 @@ public partial class Message : IEquatable<Message>
     /// The connection state of this communication.
     /// </summary>
     /// <value>The connection state of this communication.</value>
-    [DataMember(Name = "state", EmitDefaultValue = false)]
+    [JsonPropertyName("state")]
     public StateEnum? State { get; set; }
     /// <summary>
     /// The initial connection state of this communication.
     /// </summary>
     /// <value>The initial connection state of this communication.</value>
-    [DataMember(Name = "initialState", EmitDefaultValue = false)]
+    [JsonPropertyName("initialState")]
     public InitialStateEnum? InitialState { get; set; }
     /// <summary>
     /// The direction of the message.
     /// </summary>
     /// <value>The direction of the message.</value>
-    [DataMember(Name = "direction", EmitDefaultValue = false)]
+    [JsonPropertyName("direction")]
     public DirectionEnum? Direction { get; set; }
     /// <summary>
     /// System defined string indicating what caused the communication to disconnect. Will be null until the communication disconnects.
     /// </summary>
     /// <value>System defined string indicating what caused the communication to disconnect. Will be null until the communication disconnects.</value>
-    [DataMember(Name = "disconnectType", EmitDefaultValue = false)]
+    [JsonPropertyName("disconnectType")]
     public DisconnectTypeEnum? DisconnectType { get; set; }
     /// <summary>
     /// Indicates the type of message platform from which the message originated.
     /// </summary>
     /// <value>Indicates the type of message platform from which the message originated.</value>
-    [DataMember(Name = "type", EmitDefaultValue = false)]
+    [JsonPropertyName("type")]
     public TypeEnum? Type { get; set; }
     /// <summary>
     /// Initializes a new instance of the <see cref="Message" /> class.
@@ -409,7 +409,7 @@ public partial class Message : IEquatable<Message>
     /// A globally unique identifier for this communication.
     /// </summary>
     /// <value>A globally unique identifier for this communication.</value>
-    [DataMember(Name = "id", EmitDefaultValue = false)]
+    [JsonPropertyName("id")]
     public string Id { get; set; }
 
 
@@ -418,7 +418,7 @@ public partial class Message : IEquatable<Message>
     /// True if this call is held and the person on this side hears silence.
     /// </summary>
     /// <value>True if this call is held and the person on this side hears silence.</value>
-    [DataMember(Name = "held", EmitDefaultValue = false)]
+    [JsonPropertyName("held")]
     public bool? Held { get; set; }
 
 
@@ -427,7 +427,7 @@ public partial class Message : IEquatable<Message>
     /// The time line of the participant&#39;s message, divided into activity segments.
     /// </summary>
     /// <value>The time line of the participant&#39;s message, divided into activity segments.</value>
-    [DataMember(Name = "segments", EmitDefaultValue = false)]
+    [JsonPropertyName("segments")]
     public List<Segment> Segments { get; set; }
 
 
@@ -438,7 +438,7 @@ public partial class Message : IEquatable<Message>
     /// A globally unique identifier for the recording associated with this message.
     /// </summary>
     /// <value>A globally unique identifier for the recording associated with this message.</value>
-    [DataMember(Name = "recordingId", EmitDefaultValue = false)]
+    [JsonPropertyName("recordingId")]
     public string RecordingId { get; set; }
 
 
@@ -446,7 +446,7 @@ public partial class Message : IEquatable<Message>
     /// <summary>
     /// Gets or Sets ErrorInfo
     /// </summary>
-    [DataMember(Name = "errorInfo", EmitDefaultValue = false)]
+    [JsonPropertyName("errorInfo")]
     public ErrorBody ErrorInfo { get; set; }
 
 
@@ -457,7 +457,7 @@ public partial class Message : IEquatable<Message>
     /// The timestamp the message was placed on hold in the cloud clock if the message is currently on hold. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z
     /// </summary>
     /// <value>The timestamp the message was placed on hold in the cloud clock if the message is currently on hold. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z</value>
-    [DataMember(Name = "startHoldTime", EmitDefaultValue = false)]
+    [JsonPropertyName("startHoldTime")]
     public DateTime? StartHoldTime { get; set; }
 
 
@@ -466,7 +466,7 @@ public partial class Message : IEquatable<Message>
     /// The timestamp the communication has when it is first put into an alerting state. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z
     /// </summary>
     /// <value>The timestamp the communication has when it is first put into an alerting state. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z</value>
-    [DataMember(Name = "startAlertingTime", EmitDefaultValue = false)]
+    [JsonPropertyName("startAlertingTime")]
     public DateTime? StartAlertingTime { get; set; }
 
 
@@ -475,7 +475,7 @@ public partial class Message : IEquatable<Message>
     /// The timestamp when this communication was connected in the cloud clock. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z
     /// </summary>
     /// <value>The timestamp when this communication was connected in the cloud clock. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z</value>
-    [DataMember(Name = "connectedTime", EmitDefaultValue = false)]
+    [JsonPropertyName("connectedTime")]
     public DateTime? ConnectedTime { get; set; }
 
 
@@ -484,7 +484,7 @@ public partial class Message : IEquatable<Message>
     /// The timestamp when this communication disconnected from the conversation in the provider clock. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z
     /// </summary>
     /// <value>The timestamp when this communication disconnected from the conversation in the provider clock. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z</value>
-    [DataMember(Name = "disconnectedTime", EmitDefaultValue = false)]
+    [JsonPropertyName("disconnectedTime")]
     public DateTime? DisconnectedTime { get; set; }
 
 
@@ -493,7 +493,7 @@ public partial class Message : IEquatable<Message>
     /// The source provider for the message.
     /// </summary>
     /// <value>The source provider for the message.</value>
-    [DataMember(Name = "provider", EmitDefaultValue = false)]
+    [JsonPropertyName("provider")]
     public string Provider { get; set; }
 
 
@@ -502,7 +502,7 @@ public partial class Message : IEquatable<Message>
     /// If true, the participant member is authenticated.
     /// </summary>
     /// <value>If true, the participant member is authenticated.</value>
-    [DataMember(Name = "authenticated", EmitDefaultValue = false)]
+    [JsonPropertyName("authenticated")]
     public bool? Authenticated { get; set; }
 
 
@@ -513,7 +513,7 @@ public partial class Message : IEquatable<Message>
     /// Indicates the country where the recipient is associated in ISO 3166-1 alpha-2 format.
     /// </summary>
     /// <value>Indicates the country where the recipient is associated in ISO 3166-1 alpha-2 format.</value>
-    [DataMember(Name = "recipientCountry", EmitDefaultValue = false)]
+    [JsonPropertyName("recipientCountry")]
     public string RecipientCountry { get; set; }
 
 
@@ -522,7 +522,7 @@ public partial class Message : IEquatable<Message>
     /// The type of the recipient. Eg: Provisioned phoneNumber is the recipient for sms message type.
     /// </summary>
     /// <value>The type of the recipient. Eg: Provisioned phoneNumber is the recipient for sms message type.</value>
-    [DataMember(Name = "recipientType", EmitDefaultValue = false)]
+    [JsonPropertyName("recipientType")]
     public string RecipientType { get; set; }
 
 
@@ -531,7 +531,7 @@ public partial class Message : IEquatable<Message>
     /// The UUID of the script to use.
     /// </summary>
     /// <value>The UUID of the script to use.</value>
-    [DataMember(Name = "scriptId", EmitDefaultValue = false)]
+    [JsonPropertyName("scriptId")]
     public string ScriptId { get; set; }
 
 
@@ -540,7 +540,7 @@ public partial class Message : IEquatable<Message>
     /// The id of the peer communication corresponding to a matching leg for this communication.
     /// </summary>
     /// <value>The id of the peer communication corresponding to a matching leg for this communication.</value>
-    [DataMember(Name = "peerId", EmitDefaultValue = false)]
+    [JsonPropertyName("peerId")]
     public string PeerId { get; set; }
 
 
@@ -549,7 +549,7 @@ public partial class Message : IEquatable<Message>
     /// Address and name data for a call endpoint.
     /// </summary>
     /// <value>Address and name data for a call endpoint.</value>
-    [DataMember(Name = "toAddress", EmitDefaultValue = false)]
+    [JsonPropertyName("toAddress")]
     public Address ToAddress { get; set; }
 
 
@@ -558,7 +558,7 @@ public partial class Message : IEquatable<Message>
     /// Address and name data for a call endpoint.
     /// </summary>
     /// <value>Address and name data for a call endpoint.</value>
-    [DataMember(Name = "fromAddress", EmitDefaultValue = false)]
+    [JsonPropertyName("fromAddress")]
     public Address FromAddress { get; set; }
 
 
@@ -567,7 +567,7 @@ public partial class Message : IEquatable<Message>
     /// The messages sent on this communication channel.
     /// </summary>
     /// <value>The messages sent on this communication channel.</value>
-    [DataMember(Name = "messages", EmitDefaultValue = false)]
+    [JsonPropertyName("messages")]
     public List<MessageDetails> Messages { get; set; }
 
 
@@ -576,7 +576,7 @@ public partial class Message : IEquatable<Message>
     /// A subset of the Journey System&#39;s data relevant to a part of a conversation (for external linkage and internal usage/context).
     /// </summary>
     /// <value>A subset of the Journey System&#39;s data relevant to a part of a conversation (for external linkage and internal usage/context).</value>
-    [DataMember(Name = "journeyContext", EmitDefaultValue = false)]
+    [JsonPropertyName("journeyContext")]
     public JourneyContext JourneyContext { get; set; }
 
 
@@ -585,7 +585,7 @@ public partial class Message : IEquatable<Message>
     /// Call wrap up or disposition data.
     /// </summary>
     /// <value>Call wrap up or disposition data.</value>
-    [DataMember(Name = "wrapup", EmitDefaultValue = false)]
+    [JsonPropertyName("wrapup")]
     public Wrapup Wrapup { get; set; }
 
 
@@ -594,7 +594,7 @@ public partial class Message : IEquatable<Message>
     /// After-call work for the communication.
     /// </summary>
     /// <value>After-call work for the communication.</value>
-    [DataMember(Name = "afterCallWork", EmitDefaultValue = false)]
+    [JsonPropertyName("afterCallWork")]
     public AfterCallWork AfterCallWork { get; set; }
 
 
@@ -603,7 +603,7 @@ public partial class Message : IEquatable<Message>
     /// Indicates if after-call work is required for a communication. Only used when the ACW Setting is Agent Requested.
     /// </summary>
     /// <value>Indicates if after-call work is required for a communication. Only used when the ACW Setting is Agent Requested.</value>
-    [DataMember(Name = "afterCallWorkRequired", EmitDefaultValue = false)]
+    [JsonPropertyName("afterCallWorkRequired")]
     public bool? AfterCallWorkRequired { get; set; }
 
 
@@ -612,7 +612,7 @@ public partial class Message : IEquatable<Message>
     /// UUID of virtual agent assistant that provide suggestions to the agent participant during the conversation.
     /// </summary>
     /// <value>UUID of virtual agent assistant that provide suggestions to the agent participant during the conversation.</value>
-    [DataMember(Name = "agentAssistantId", EmitDefaultValue = false)]
+    [JsonPropertyName("agentAssistantId")]
     public string AgentAssistantId { get; set; }
 
 
@@ -621,7 +621,7 @@ public partial class Message : IEquatable<Message>
     /// The internal id representing the customer supplied sms integration message.
     /// </summary>
     /// <value>The internal id representing the customer supplied sms integration message.</value>
-    [DataMember(Name = "byoSmsIntegrationId", EmitDefaultValue = false)]
+    [JsonPropertyName("byoSmsIntegrationId")]
     public string ByoSmsIntegrationId { get; set; }
 
 
@@ -630,7 +630,7 @@ public partial class Message : IEquatable<Message>
     /// Represents the queue settings for this media type.
     /// </summary>
     /// <value>Represents the queue settings for this media type.</value>
-    [DataMember(Name = "queueMediaSettings", EmitDefaultValue = false)]
+    [JsonPropertyName("queueMediaSettings")]
     public ConversationQueueMediaSettings QueueMediaSettings { get; set; }
 
 

@@ -1,12 +1,12 @@
-using System.Runtime.Serialization;
 using System.Text;
+using System.Text.Json.Serialization;
 
 namespace PureCloud.Client.Models;
 
 /// <summary>
 /// LongTermForecastResult
 /// </summary>
-[DataContract]
+
 public partial class LongTermForecastResult : IEquatable<LongTermForecastResult>
 {
     /// <summary>
@@ -29,7 +29,7 @@ public partial class LongTermForecastResult : IEquatable<LongTermForecastResult>
     /// The forecast data broken up by planning group
     /// </summary>
     /// <value>The forecast data broken up by planning group</value>
-    [DataMember(Name = "planningGroups", EmitDefaultValue = false)]
+    [JsonPropertyName("planningGroups")]
     public List<LongTermForecastPlanningGroupData> PlanningGroups { get; set; }
 
 
@@ -38,7 +38,7 @@ public partial class LongTermForecastResult : IEquatable<LongTermForecastResult>
     /// The reference start date relative to the business unit time zone in this forecast. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd
     /// </summary>
     /// <value>The reference start date relative to the business unit time zone in this forecast. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd</value>
-    [DataMember(Name = "referenceStartDate", EmitDefaultValue = false)]
+    [JsonPropertyName("referenceStartDate")]
     public string ReferenceStartDate { get; set; }
 
 
@@ -47,7 +47,7 @@ public partial class LongTermForecastResult : IEquatable<LongTermForecastResult>
     /// The number of weeks in this forecast
     /// </summary>
     /// <value>The number of weeks in this forecast</value>
-    [DataMember(Name = "weekCount", EmitDefaultValue = false)]
+    [JsonPropertyName("weekCount")]
     public int? WeekCount { get; set; }
 
 

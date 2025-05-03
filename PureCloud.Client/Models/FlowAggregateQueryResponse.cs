@@ -1,12 +1,12 @@
-using System.Runtime.Serialization;
 using System.Text;
+using System.Text.Json.Serialization;
 
 namespace PureCloud.Client.Models;
 
 /// <summary>
 /// FlowAggregateQueryResponse
 /// </summary>
-[DataContract]
+
 public partial class FlowAggregateQueryResponse : IEquatable<FlowAggregateQueryResponse>
 {
     /// <summary>
@@ -24,7 +24,7 @@ public partial class FlowAggregateQueryResponse : IEquatable<FlowAggregateQueryR
     /// <summary>
     /// Gets or Sets Results
     /// </summary>
-    [DataMember(Name = "results", EmitDefaultValue = false)]
+    [JsonPropertyName("results")]
     public List<FlowAggregateDataContainer> Results { get; set; }
 
 

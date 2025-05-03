@@ -7,14 +7,14 @@ namespace PureCloud.Client.Models;
 /// <summary>
 /// FlowPathsFlowDetails
 /// </summary>
-[DataContract]
+
 public partial class FlowPathsFlowDetails : IEquatable<FlowPathsFlowDetails>
 {
     /// <summary>
     /// The type of the flow.
     /// </summary>
     /// <value>The type of the flow.</value>
-    [JsonConverter(typeof(JsonStringEnumConverter))]
+    
     public enum TypeEnum
     {
         /// <summary>
@@ -71,7 +71,7 @@ public partial class FlowPathsFlowDetails : IEquatable<FlowPathsFlowDetails>
     /// The type of the flow.
     /// </summary>
     /// <value>The type of the flow.</value>
-    [DataMember(Name = "type", EmitDefaultValue = false)]
+    [JsonPropertyName("type")]
     public TypeEnum? Type { get; set; }
 
     /// <summary>
@@ -99,7 +99,7 @@ public partial class FlowPathsFlowDetails : IEquatable<FlowPathsFlowDetails>
     /// The version of the flow.
     /// </summary>
     /// <value>The version of the flow.</value>
-    [DataMember(Name = "version", EmitDefaultValue = false)]
+    [JsonPropertyName("version")]
     public string Version { get; set; }
 
 
@@ -110,7 +110,7 @@ public partial class FlowPathsFlowDetails : IEquatable<FlowPathsFlowDetails>
     /// Count of all journeys that include this element in the given flow.
     /// </summary>
     /// <value>Count of all journeys that include this element in the given flow.</value>
-    [DataMember(Name = "count", EmitDefaultValue = false)]
+    [JsonPropertyName("count")]
     public int? Count { get; set; }
 
 
@@ -119,7 +119,7 @@ public partial class FlowPathsFlowDetails : IEquatable<FlowPathsFlowDetails>
     /// The identifier of the flow.
     /// </summary>
     /// <value>The identifier of the flow.</value>
-    [DataMember(Name = "flow", EmitDefaultValue = false)]
+    [JsonPropertyName("flow")]
     public AddressableEntityRef Flow { get; private set; }
 
 

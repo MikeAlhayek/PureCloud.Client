@@ -1,4 +1,3 @@
-using System.Runtime.Serialization;
 using System.Text;
 using System.Text.Json.Serialization;
 
@@ -7,7 +6,7 @@ namespace PureCloud.Client.Models;
 /// <summary>
 /// Used to set the log level of a particular flow
 /// </summary>
-[DataContract]
+
 public partial class FlowLogLevelRequest : IEquatable<FlowLogLevelRequest>
 {
 
@@ -32,7 +31,7 @@ public partial class FlowLogLevelRequest : IEquatable<FlowLogLevelRequest>
     /// The log level characteristics currently set for this flow
     /// </summary>
     /// <value>The log level characteristics currently set for this flow</value>
-    [DataMember(Name = "logLevelCharacteristics", EmitDefaultValue = false)]
+    [JsonPropertyName("logLevelCharacteristics")]
     public FlowLogLevel LogLevelCharacteristics { get; set; }
 
 

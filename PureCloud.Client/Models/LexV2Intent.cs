@@ -1,4 +1,3 @@
-using System.Runtime.Serialization;
 using System.Text;
 using System.Text.Json.Serialization;
 
@@ -7,7 +6,7 @@ namespace PureCloud.Client.Models;
 /// <summary>
 /// LexV2Intent
 /// </summary>
-[DataContract]
+
 public partial class LexV2Intent : IEquatable<LexV2Intent>
 {
 
@@ -38,7 +37,7 @@ public partial class LexV2Intent : IEquatable<LexV2Intent>
     /// The intent name
     /// </summary>
     /// <value>The intent name</value>
-    [DataMember(Name = "intentName", EmitDefaultValue = false)]
+    [JsonPropertyName("intentName")]
     public string IntentName { get; set; }
 
 
@@ -47,7 +46,7 @@ public partial class LexV2Intent : IEquatable<LexV2Intent>
     /// A description of the intent
     /// </summary>
     /// <value>A description of the intent</value>
-    [DataMember(Name = "description", EmitDefaultValue = false)]
+    [JsonPropertyName("description")]
     public string Description { get; set; }
 
 
@@ -56,7 +55,7 @@ public partial class LexV2Intent : IEquatable<LexV2Intent>
     /// An object mapping slot names to Slot objects
     /// </summary>
     /// <value>An object mapping slot names to Slot objects</value>
-    [DataMember(Name = "slots", EmitDefaultValue = false)]
+    [JsonPropertyName("slots")]
     public Dictionary<string, LexV2Slot> Slots { get; set; }
 
 
@@ -65,7 +64,7 @@ public partial class LexV2Intent : IEquatable<LexV2Intent>
     /// The intent id
     /// </summary>
     /// <value>The intent id</value>
-    [DataMember(Name = "intentId", EmitDefaultValue = false)]
+    [JsonPropertyName("intentId")]
     public string IntentId { get; set; }
 
 

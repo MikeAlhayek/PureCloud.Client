@@ -7,14 +7,14 @@ namespace PureCloud.Client.Models;
 /// <summary>
 /// EmailMessagePreview
 /// </summary>
-[DataContract]
+
 public partial class EmailMessagePreview : IEquatable<EmailMessagePreview>
 {
     /// <summary>
     /// The state of the current draft.
     /// </summary>
     /// <value>The state of the current draft.</value>
-    [JsonConverter(typeof(JsonStringEnumConverter))]
+    
     public enum StateEnum
     {
         /// <summary>
@@ -47,7 +47,7 @@ public partial class EmailMessagePreview : IEquatable<EmailMessagePreview>
     /// The type of draft that need to be treated.
     /// </summary>
     /// <value>The type of draft that need to be treated.</value>
-    [JsonConverter(typeof(JsonStringEnumConverter))]
+    
     public enum DraftTypeEnum
     {
         /// <summary>
@@ -80,13 +80,13 @@ public partial class EmailMessagePreview : IEquatable<EmailMessagePreview>
     /// The state of the current draft.
     /// </summary>
     /// <value>The state of the current draft.</value>
-    [DataMember(Name = "state", EmitDefaultValue = false)]
+    [JsonPropertyName("state")]
     public StateEnum? State { get; set; }
     /// <summary>
     /// The type of draft that need to be treated.
     /// </summary>
     /// <value>The type of draft that need to be treated.</value>
-    [DataMember(Name = "draftType", EmitDefaultValue = false)]
+    [JsonPropertyName("draftType")]
     public DraftTypeEnum? DraftType { get; set; }
 
     /// <summary>
@@ -134,7 +134,7 @@ public partial class EmailMessagePreview : IEquatable<EmailMessagePreview>
     /// The globally unique identifier for the object.
     /// </summary>
     /// <value>The globally unique identifier for the object.</value>
-    [DataMember(Name = "id", EmitDefaultValue = false)]
+    [JsonPropertyName("id")]
     public string Id { get; private set; }
 
 
@@ -142,7 +142,7 @@ public partial class EmailMessagePreview : IEquatable<EmailMessagePreview>
     /// <summary>
     /// Gets or Sets Name
     /// </summary>
-    [DataMember(Name = "name", EmitDefaultValue = false)]
+    [JsonPropertyName("name")]
     public string Name { get; set; }
 
 
@@ -151,7 +151,7 @@ public partial class EmailMessagePreview : IEquatable<EmailMessagePreview>
     /// The recipients of the email message.
     /// </summary>
     /// <value>The recipients of the email message.</value>
-    [DataMember(Name = "to", EmitDefaultValue = false)]
+    [JsonPropertyName("to")]
     public List<EmailAddress> To { get; set; }
 
 
@@ -160,7 +160,7 @@ public partial class EmailMessagePreview : IEquatable<EmailMessagePreview>
     /// The recipients that were copied on the email message.
     /// </summary>
     /// <value>The recipients that were copied on the email message.</value>
-    [DataMember(Name = "cc", EmitDefaultValue = false)]
+    [JsonPropertyName("cc")]
     public List<EmailAddress> Cc { get; set; }
 
 
@@ -169,7 +169,7 @@ public partial class EmailMessagePreview : IEquatable<EmailMessagePreview>
     /// The recipients that were blind copied on the email message.
     /// </summary>
     /// <value>The recipients that were blind copied on the email message.</value>
-    [DataMember(Name = "bcc", EmitDefaultValue = false)]
+    [JsonPropertyName("bcc")]
     public List<EmailAddress> Bcc { get; set; }
 
 
@@ -178,7 +178,7 @@ public partial class EmailMessagePreview : IEquatable<EmailMessagePreview>
     /// The sender of the email message.
     /// </summary>
     /// <value>The sender of the email message.</value>
-    [DataMember(Name = "from", EmitDefaultValue = false)]
+    [JsonPropertyName("from")]
     public EmailAddress From { get; set; }
 
 
@@ -187,7 +187,7 @@ public partial class EmailMessagePreview : IEquatable<EmailMessagePreview>
     /// The receiver of the reply email message.
     /// </summary>
     /// <value>The receiver of the reply email message.</value>
-    [DataMember(Name = "replyTo", EmitDefaultValue = false)]
+    [JsonPropertyName("replyTo")]
     public EmailAddress ReplyTo { get; set; }
 
 
@@ -196,7 +196,7 @@ public partial class EmailMessagePreview : IEquatable<EmailMessagePreview>
     /// The subject of the email message.
     /// </summary>
     /// <value>The subject of the email message.</value>
-    [DataMember(Name = "subject", EmitDefaultValue = false)]
+    [JsonPropertyName("subject")]
     public string Subject { get; set; }
 
 
@@ -205,7 +205,7 @@ public partial class EmailMessagePreview : IEquatable<EmailMessagePreview>
     /// The attachments of the email message.
     /// </summary>
     /// <value>The attachments of the email message.</value>
-    [DataMember(Name = "attachments", EmitDefaultValue = false)]
+    [JsonPropertyName("attachments")]
     public List<Attachment> Attachments { get; set; }
 
 
@@ -214,7 +214,7 @@ public partial class EmailMessagePreview : IEquatable<EmailMessagePreview>
     /// A truncated version of the textBody
     /// </summary>
     /// <value>A truncated version of the textBody</value>
-    [DataMember(Name = "textBodyPreview", EmitDefaultValue = false)]
+    [JsonPropertyName("textBodyPreview")]
     public string TextBodyPreview { get; set; }
 
 
@@ -223,7 +223,7 @@ public partial class EmailMessagePreview : IEquatable<EmailMessagePreview>
     /// The time when the message was received or sent. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z
     /// </summary>
     /// <value>The time when the message was received or sent. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z</value>
-    [DataMember(Name = "time", EmitDefaultValue = false)]
+    [JsonPropertyName("time")]
     public DateTime? Time { get; set; }
 
 
@@ -232,7 +232,7 @@ public partial class EmailMessagePreview : IEquatable<EmailMessagePreview>
     /// Indicates whether the history of previous emails of the conversation is included within the email bodies of this message.
     /// </summary>
     /// <value>Indicates whether the history of previous emails of the conversation is included within the email bodies of this message.</value>
-    [DataMember(Name = "historyIncluded", EmitDefaultValue = false)]
+    [JsonPropertyName("historyIncluded")]
     public bool? HistoryIncluded { get; set; }
 
 
@@ -245,7 +245,7 @@ public partial class EmailMessagePreview : IEquatable<EmailMessagePreview>
     /// Indicates an estimation of the size of the current email as a whole, in its final, ready to be sent form.
     /// </summary>
     /// <value>Indicates an estimation of the size of the current email as a whole, in its final, ready to be sent form.</value>
-    [DataMember(Name = "emailSizeBytes", EmitDefaultValue = false)]
+    [JsonPropertyName("emailSizeBytes")]
     public int? EmailSizeBytes { get; private set; }
 
 
@@ -254,7 +254,7 @@ public partial class EmailMessagePreview : IEquatable<EmailMessagePreview>
     /// Indicates the maximum allowed size for an email to be send via SMTP server, based on the email domain configuration
     /// </summary>
     /// <value>Indicates the maximum allowed size for an email to be send via SMTP server, based on the email domain configuration</value>
-    [DataMember(Name = "maxEmailSizeBytes", EmitDefaultValue = false)]
+    [JsonPropertyName("maxEmailSizeBytes")]
     public int? MaxEmailSizeBytes { get; private set; }
 
 
@@ -263,7 +263,7 @@ public partial class EmailMessagePreview : IEquatable<EmailMessagePreview>
     /// The URI for this object
     /// </summary>
     /// <value>The URI for this object</value>
-    [DataMember(Name = "selfUri", EmitDefaultValue = false)]
+    [JsonPropertyName("selfUri")]
     public string SelfUri { get; private set; }
 
 

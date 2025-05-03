@@ -1,12 +1,12 @@
-using System.Runtime.Serialization;
 using System.Text;
+using System.Text.Json.Serialization;
 
 namespace PureCloud.Client.Models;
 
 /// <summary>
 /// DialerResponsesetConfigChangeResponseSet
 /// </summary>
-[DataContract]
+
 public partial class DialerResponsesetConfigChangeResponseSet : IEquatable<DialerResponsesetConfigChangeResponseSet>
 {
     /// <summary>
@@ -39,7 +39,7 @@ public partial class DialerResponsesetConfigChangeResponseSet : IEquatable<Diale
     /// Map of disposition identifiers to reactions. For example: {\&quot;disposition.classification.callable.person\&quot;: {\&quot;reactionType\&quot;: \&quot;transfer\&quot;}}
     /// </summary>
     /// <value>Map of disposition identifiers to reactions. For example: {\&quot;disposition.classification.callable.person\&quot;: {\&quot;reactionType\&quot;: \&quot;transfer\&quot;}}</value>
-    [DataMember(Name = "responses", EmitDefaultValue = false)]
+    [JsonPropertyName("responses")]
     public Dictionary<string, DialerResponsesetConfigChangeReaction> Responses { get; set; }
 
 
@@ -48,7 +48,7 @@ public partial class DialerResponsesetConfigChangeResponseSet : IEquatable<Diale
     /// When beep detection is enabled, answering machine detection will wait for the beep before transferring the call
     /// </summary>
     /// <value>When beep detection is enabled, answering machine detection will wait for the beep before transferring the call</value>
-    [DataMember(Name = "beepDetectionEnabled", EmitDefaultValue = false)]
+    [JsonPropertyName("beepDetectionEnabled")]
     public bool? BeepDetectionEnabled { get; set; }
 
 
@@ -56,7 +56,7 @@ public partial class DialerResponsesetConfigChangeResponseSet : IEquatable<Diale
     /// <summary>
     /// Gets or Sets AdditionalProperties
     /// </summary>
-    [DataMember(Name = "additionalProperties", EmitDefaultValue = false)]
+    [JsonPropertyName("additionalProperties")]
     public Dictionary<string, object> AdditionalProperties { get; set; }
 
 
@@ -65,7 +65,7 @@ public partial class DialerResponsesetConfigChangeResponseSet : IEquatable<Diale
     /// The globally unique identifier for the object.
     /// </summary>
     /// <value>The globally unique identifier for the object.</value>
-    [DataMember(Name = "id", EmitDefaultValue = false)]
+    [JsonPropertyName("id")]
     public string Id { get; set; }
 
 
@@ -74,7 +74,7 @@ public partial class DialerResponsesetConfigChangeResponseSet : IEquatable<Diale
     /// The UI-visible name of the object
     /// </summary>
     /// <value>The UI-visible name of the object</value>
-    [DataMember(Name = "name", EmitDefaultValue = false)]
+    [JsonPropertyName("name")]
     public string Name { get; set; }
 
 
@@ -83,7 +83,7 @@ public partial class DialerResponsesetConfigChangeResponseSet : IEquatable<Diale
     /// Creation time of the entity
     /// </summary>
     /// <value>Creation time of the entity</value>
-    [DataMember(Name = "dateCreated", EmitDefaultValue = false)]
+    [JsonPropertyName("dateCreated")]
     public DateTime? DateCreated { get; set; }
 
 
@@ -92,7 +92,7 @@ public partial class DialerResponsesetConfigChangeResponseSet : IEquatable<Diale
     /// Last modified time of the entity
     /// </summary>
     /// <value>Last modified time of the entity</value>
-    [DataMember(Name = "dateModified", EmitDefaultValue = false)]
+    [JsonPropertyName("dateModified")]
     public DateTime? DateModified { get; set; }
 
 
@@ -101,7 +101,7 @@ public partial class DialerResponsesetConfigChangeResponseSet : IEquatable<Diale
     /// Required for updates, must match the version number of the most recent update
     /// </summary>
     /// <value>Required for updates, must match the version number of the most recent update</value>
-    [DataMember(Name = "version", EmitDefaultValue = false)]
+    [JsonPropertyName("version")]
     public long? Version { get; set; }
 
 

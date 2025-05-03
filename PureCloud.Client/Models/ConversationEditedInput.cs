@@ -1,12 +1,12 @@
-using System.Runtime.Serialization;
 using System.Text;
+using System.Text.Json.Serialization;
 
 namespace PureCloud.Client.Models;
 
 /// <summary>
 /// ConversationEditedInput
 /// </summary>
-[DataContract]
+
 public partial class ConversationEditedInput : IEquatable<ConversationEditedInput>
 {
     /// <summary>
@@ -27,7 +27,7 @@ public partial class ConversationEditedInput : IEquatable<ConversationEditedInpu
     /// The text of the edited input.
     /// </summary>
     /// <value>The text of the edited input.</value>
-    [DataMember(Name = "text", EmitDefaultValue = false)]
+    [JsonPropertyName("text")]
     public string Text { get; set; }
 
 
@@ -36,7 +36,7 @@ public partial class ConversationEditedInput : IEquatable<ConversationEditedInpu
     /// The modification date of the edited input. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z
     /// </summary>
     /// <value>The modification date of the edited input. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z</value>
-    [DataMember(Name = "dateModified", EmitDefaultValue = false)]
+    [JsonPropertyName("dateModified")]
     public DateTime? DateModified { get; set; }
 
 

@@ -1,12 +1,12 @@
-using System.Runtime.Serialization;
 using System.Text;
+using System.Text.Json.Serialization;
 
 namespace PureCloud.Client.Models;
 
 /// <summary>
 /// LearningAssignmentRuleRunTopicLearningAssignmentsCreated
 /// </summary>
-[DataContract]
+
 public partial class LearningAssignmentRuleRunTopicLearningAssignmentsCreated : IEquatable<LearningAssignmentRuleRunTopicLearningAssignmentsCreated>
 {
     /// <summary>
@@ -24,7 +24,7 @@ public partial class LearningAssignmentRuleRunTopicLearningAssignmentsCreated : 
     /// <summary>
     /// Gets or Sets Module
     /// </summary>
-    [DataMember(Name = "module", EmitDefaultValue = false)]
+    [JsonPropertyName("module")]
     public LearningAssignmentRuleRunTopicLearningModuleReference Module { get; set; }
 
 

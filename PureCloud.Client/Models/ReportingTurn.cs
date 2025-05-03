@@ -7,14 +7,14 @@ namespace PureCloud.Client.Models;
 /// <summary>
 /// ReportingTurn
 /// </summary>
-[DataContract]
+
 public partial class ReportingTurn : IEquatable<ReportingTurn>
 {
     /// <summary>
     /// Result of the bot flow 'ask' action.
     /// </summary>
     /// <value>Result of the bot flow 'ask' action.</value>
-    [JsonConverter(typeof(JsonStringEnumConverter))]
+    
     public enum AskActionResultEnum
     {
         /// <summary>
@@ -137,7 +137,7 @@ public partial class ReportingTurn : IEquatable<ReportingTurn>
     /// Result of the bot flow 'ask' action.
     /// </summary>
     /// <value>Result of the bot flow 'ask' action.</value>
-    [DataMember(Name = "askActionResult", EmitDefaultValue = false)]
+    [JsonPropertyName("askActionResult")]
     public AskActionResultEnum? AskActionResult { get; set; }
     /// <summary>
     /// Initializes a new instance of the <see cref="ReportingTurn" /> class.
@@ -175,7 +175,7 @@ public partial class ReportingTurn : IEquatable<ReportingTurn>
     /// The chosen user input associated with this reporting turn.
     /// </summary>
     /// <value>The chosen user input associated with this reporting turn.</value>
-    [DataMember(Name = "userInput", EmitDefaultValue = false)]
+    [JsonPropertyName("userInput")]
     public string UserInput { get; set; }
 
 
@@ -184,7 +184,7 @@ public partial class ReportingTurn : IEquatable<ReportingTurn>
     /// The bot prompts associated with this reporting turn.
     /// </summary>
     /// <value>The bot prompts associated with this reporting turn.</value>
-    [DataMember(Name = "botPrompts", EmitDefaultValue = false)]
+    [JsonPropertyName("botPrompts")]
     public List<string> BotPrompts { get; set; }
 
 
@@ -193,7 +193,7 @@ public partial class ReportingTurn : IEquatable<ReportingTurn>
     /// The bot session ID that this reporting turn is grouped under.
     /// </summary>
     /// <value>The bot session ID that this reporting turn is grouped under.</value>
-    [DataMember(Name = "sessionId", EmitDefaultValue = false)]
+    [JsonPropertyName("sessionId")]
     public string SessionId { get; set; }
 
 
@@ -202,7 +202,7 @@ public partial class ReportingTurn : IEquatable<ReportingTurn>
     /// The bot flow &#39;ask&#39; action associated with this reporting turn (e.g. AskForIntent).
     /// </summary>
     /// <value>The bot flow &#39;ask&#39; action associated with this reporting turn (e.g. AskForIntent).</value>
-    [DataMember(Name = "askAction", EmitDefaultValue = false)]
+    [JsonPropertyName("askAction")]
     public ReportingTurnAction AskAction { get; set; }
 
 
@@ -211,7 +211,7 @@ public partial class ReportingTurn : IEquatable<ReportingTurn>
     /// The intent and associated slots detected during this reporting turn.
     /// </summary>
     /// <value>The intent and associated slots detected during this reporting turn.</value>
-    [DataMember(Name = "intent", EmitDefaultValue = false)]
+    [JsonPropertyName("intent")]
     public ReportingTurnIntent Intent { get; set; }
 
 
@@ -220,7 +220,7 @@ public partial class ReportingTurn : IEquatable<ReportingTurn>
     /// The knowledge data captured during this reporting turn.
     /// </summary>
     /// <value>The knowledge data captured during this reporting turn.</value>
-    [DataMember(Name = "knowledge", EmitDefaultValue = false)]
+    [JsonPropertyName("knowledge")]
     public ReportingTurnKnowledge Knowledge { get; set; }
 
 
@@ -229,7 +229,7 @@ public partial class ReportingTurn : IEquatable<ReportingTurn>
     /// The knowledge data captured during this reporting turn.
     /// </summary>
     /// <value>The knowledge data captured during this reporting turn.</value>
-    [DataMember(Name = "knowledgeBaseEvents", EmitDefaultValue = false)]
+    [JsonPropertyName("knowledgeBaseEvents")]
     public ReportingTurnKnowledgeEvents KnowledgeBaseEvents { get; set; }
 
 
@@ -238,7 +238,7 @@ public partial class ReportingTurn : IEquatable<ReportingTurn>
     /// Timestamp indicating when the original turn was created. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z
     /// </summary>
     /// <value>Timestamp indicating when the original turn was created. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z</value>
-    [DataMember(Name = "dateCreated", EmitDefaultValue = false)]
+    [JsonPropertyName("dateCreated")]
     public DateTime? DateCreated { get; set; }
 
 
@@ -247,7 +247,7 @@ public partial class ReportingTurn : IEquatable<ReportingTurn>
     /// Timestamp indicating when the original turn was completed. Note: The &#39;interval&#39; query param uses this timestamp to filter the output. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z
     /// </summary>
     /// <value>Timestamp indicating when the original turn was completed. Note: The &#39;interval&#39; query param uses this timestamp to filter the output. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z</value>
-    [DataMember(Name = "dateCompleted", EmitDefaultValue = false)]
+    [JsonPropertyName("dateCompleted")]
     public DateTime? DateCompleted { get; set; }
 
 
@@ -258,7 +258,7 @@ public partial class ReportingTurn : IEquatable<ReportingTurn>
     /// The details related to end of bot flow session.
     /// </summary>
     /// <value>The details related to end of bot flow session.</value>
-    [DataMember(Name = "sessionEndDetails", EmitDefaultValue = false)]
+    [JsonPropertyName("sessionEndDetails")]
     public SessionEndDetails SessionEndDetails { get; set; }
 
 
@@ -267,7 +267,7 @@ public partial class ReportingTurn : IEquatable<ReportingTurn>
     /// The conversation details, across potentially multiple Bot Flow sessions.
     /// </summary>
     /// <value>The conversation details, across potentially multiple Bot Flow sessions.</value>
-    [DataMember(Name = "conversation", EmitDefaultValue = false)]
+    [JsonPropertyName("conversation")]
     public AddressableEntityRef Conversation { get; private set; }
 
 

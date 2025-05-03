@@ -1,12 +1,12 @@
-using System.Runtime.Serialization;
 using System.Text;
+using System.Text.Json.Serialization;
 
 namespace PureCloud.Client.Models;
 
 /// <summary>
 /// Media type definition
 /// </summary>
-[DataContract]
+
 public partial class MediaType : IEquatable<MediaType>
 {
     /// <summary>
@@ -25,7 +25,7 @@ public partial class MediaType : IEquatable<MediaType>
     /// The media type string as defined by RFC 2046. You can define specific types such as &#39;image/jpeg&#39;, &#39;video/mpeg&#39;, or specify wild cards for a range of types, &#39;image/_*&#39;, or all types &#39;*_/_*&#39;. See https://www.iana.org/assignments/media-types/media-types.xhtml for a list of registered media types.
     /// </summary>
     /// <value>The media type string as defined by RFC 2046. You can define specific types such as &#39;image/jpeg&#39;, &#39;video/mpeg&#39;, or specify wild cards for a range of types, &#39;image/_*&#39;, or all types &#39;*_/_*&#39;. See https://www.iana.org/assignments/media-types/media-types.xhtml for a list of registered media types.</value>
-    [DataMember(Name = "type", EmitDefaultValue = false)]
+    [JsonPropertyName("type")]
     public string Type { get; set; }
 
 

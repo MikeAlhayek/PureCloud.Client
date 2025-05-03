@@ -1,4 +1,3 @@
-using System.Runtime.Serialization;
 using System.Text;
 using System.Text.Json.Serialization;
 
@@ -7,7 +6,7 @@ namespace PureCloud.Client.Models;
 /// <summary>
 /// ValidationError
 /// </summary>
-[DataContract]
+
 public partial class ValidationError : IEquatable<ValidationError>
 {
 
@@ -34,7 +33,7 @@ public partial class ValidationError : IEquatable<ValidationError>
     /// Line number for the error in CSV
     /// </summary>
     /// <value>Line number for the error in CSV</value>
-    [DataMember(Name = "lineNumber", EmitDefaultValue = false)]
+    [JsonPropertyName("lineNumber")]
     public long? LineNumber { get; set; }
 
 
@@ -43,7 +42,7 @@ public partial class ValidationError : IEquatable<ValidationError>
     /// Detail of the error in CSV
     /// </summary>
     /// <value>Detail of the error in CSV</value>
-    [DataMember(Name = "message", EmitDefaultValue = false)]
+    [JsonPropertyName("message")]
     public string Message { get; set; }
 
 

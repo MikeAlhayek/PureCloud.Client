@@ -1,12 +1,12 @@
-using System.Runtime.Serialization;
 using System.Text;
+using System.Text.Json.Serialization;
 
 namespace PureCloud.Client.Models;
 
 /// <summary>
 /// InsightsSummaryMetricPeriodPoints
 /// </summary>
-[DataContract]
+
 public partial class InsightsSummaryMetricPeriodPoints : IEquatable<InsightsSummaryMetricPeriodPoints>
 {
     /// <summary>
@@ -33,7 +33,7 @@ public partial class InsightsSummaryMetricPeriodPoints : IEquatable<InsightsSumm
     /// Points scored
     /// </summary>
     /// <value>Points scored</value>
-    [DataMember(Name = "points", EmitDefaultValue = false)]
+    [JsonPropertyName("points")]
     public int? Points { get; set; }
 
 
@@ -42,7 +42,7 @@ public partial class InsightsSummaryMetricPeriodPoints : IEquatable<InsightsSumm
     /// Max possible points
     /// </summary>
     /// <value>Max possible points</value>
-    [DataMember(Name = "maxPoints", EmitDefaultValue = false)]
+    [JsonPropertyName("maxPoints")]
     public int? MaxPoints { get; set; }
 
 
@@ -51,7 +51,7 @@ public partial class InsightsSummaryMetricPeriodPoints : IEquatable<InsightsSumm
     /// Number of data points
     /// </summary>
     /// <value>Number of data points</value>
-    [DataMember(Name = "dataPointCount", EmitDefaultValue = false)]
+    [JsonPropertyName("dataPointCount")]
     public int? DataPointCount { get; set; }
 
 
@@ -60,7 +60,7 @@ public partial class InsightsSummaryMetricPeriodPoints : IEquatable<InsightsSumm
     /// Percentage of the goal
     /// </summary>
     /// <value>Percentage of the goal</value>
-    [DataMember(Name = "percentOfGoal", EmitDefaultValue = false)]
+    [JsonPropertyName("percentOfGoal")]
     public double? PercentOfGoal { get; set; }
 
 
@@ -69,7 +69,7 @@ public partial class InsightsSummaryMetricPeriodPoints : IEquatable<InsightsSumm
     /// Average value
     /// </summary>
     /// <value>Average value</value>
-    [DataMember(Name = "value", EmitDefaultValue = false)]
+    [JsonPropertyName("value")]
     public double? Value { get; set; }
 
 

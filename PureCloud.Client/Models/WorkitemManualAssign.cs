@@ -1,4 +1,3 @@
-using System.Runtime.Serialization;
 using System.Text;
 using System.Text.Json.Serialization;
 
@@ -7,7 +6,7 @@ namespace PureCloud.Client.Models;
 /// <summary>
 /// WorkitemManualAssign
 /// </summary>
-[DataContract]
+
 public partial class WorkitemManualAssign : IEquatable<WorkitemManualAssign>
 {
 
@@ -32,7 +31,7 @@ public partial class WorkitemManualAssign : IEquatable<WorkitemManualAssign>
     /// The globally unique identifier for this user.
     /// </summary>
     /// <value>The globally unique identifier for this user.</value>
-    [DataMember(Name = "id", EmitDefaultValue = false)]
+    [JsonPropertyName("id")]
     public string Id { get; set; }
 
 

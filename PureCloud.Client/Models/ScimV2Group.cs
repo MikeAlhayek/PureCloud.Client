@@ -1,12 +1,12 @@
-using System.Runtime.Serialization;
 using System.Text;
+using System.Text.Json.Serialization;
 
 namespace PureCloud.Client.Models;
 
 /// <summary>
 /// Defines a SCIM group.
 /// </summary>
-[DataContract]
+
 public partial class ScimV2Group : IEquatable<ScimV2Group>
 {
     /// <summary>
@@ -27,7 +27,7 @@ public partial class ScimV2Group : IEquatable<ScimV2Group>
     /// The ID of the SCIM resource. Set by the service provider. \&quot;caseExact\&quot; is set to \&quot;true\&quot;. \&quot;mutability\&quot; is set to \&quot;readOnly\&quot;. \&quot;returned\&quot; is set to \&quot;always\&quot;.
     /// </summary>
     /// <value>The ID of the SCIM resource. Set by the service provider. \&quot;caseExact\&quot; is set to \&quot;true\&quot;. \&quot;mutability\&quot; is set to \&quot;readOnly\&quot;. \&quot;returned\&quot; is set to \&quot;always\&quot;.</value>
-    [DataMember(Name = "id", EmitDefaultValue = false)]
+    [JsonPropertyName("id")]
     public string Id { get; private set; }
 
 
@@ -36,7 +36,7 @@ public partial class ScimV2Group : IEquatable<ScimV2Group>
     /// The list of supported schemas.
     /// </summary>
     /// <value>The list of supported schemas.</value>
-    [DataMember(Name = "schemas", EmitDefaultValue = false)]
+    [JsonPropertyName("schemas")]
     public List<string> Schemas { get; private set; }
 
 
@@ -45,7 +45,7 @@ public partial class ScimV2Group : IEquatable<ScimV2Group>
     /// The display name of the group.
     /// </summary>
     /// <value>The display name of the group.</value>
-    [DataMember(Name = "displayName", EmitDefaultValue = false)]
+    [JsonPropertyName("displayName")]
     public string DisplayName { get; private set; }
 
 
@@ -54,7 +54,7 @@ public partial class ScimV2Group : IEquatable<ScimV2Group>
     /// The external ID of the group. Set by the provisioning client. \&quot;caseExact\&quot; is set to \&quot;true\&quot;. \&quot;mutability\&quot; is set to \&quot;readWrite\&quot;.
     /// </summary>
     /// <value>The external ID of the group. Set by the provisioning client. \&quot;caseExact\&quot; is set to \&quot;true\&quot;. \&quot;mutability\&quot; is set to \&quot;readWrite\&quot;.</value>
-    [DataMember(Name = "externalId", EmitDefaultValue = false)]
+    [JsonPropertyName("externalId")]
     public string ExternalId { get; set; }
 
 
@@ -63,7 +63,7 @@ public partial class ScimV2Group : IEquatable<ScimV2Group>
     /// The list of members in the group.
     /// </summary>
     /// <value>The list of members in the group.</value>
-    [DataMember(Name = "members", EmitDefaultValue = false)]
+    [JsonPropertyName("members")]
     public List<ScimV2MemberReference> Members { get; set; }
 
 
@@ -72,7 +72,7 @@ public partial class ScimV2Group : IEquatable<ScimV2Group>
     /// The metadata of the SCIM resource. Metadata is defined as immutable per SCIM RFC.
     /// </summary>
     /// <value>The metadata of the SCIM resource. Metadata is defined as immutable per SCIM RFC.</value>
-    [DataMember(Name = "meta", EmitDefaultValue = false)]
+    [JsonPropertyName("meta")]
     public ScimMetadata Meta { get; private set; }
 
 

@@ -1,12 +1,12 @@
-using System.Runtime.Serialization;
 using System.Text;
+using System.Text.Json.Serialization;
 
 namespace PureCloud.Client.Models;
 
 /// <summary>
 /// CoverSheet
 /// </summary>
-[DataContract]
+
 public partial class CoverSheet : IEquatable<CoverSheet>
 {
     /// <summary>
@@ -27,7 +27,7 @@ public partial class CoverSheet : IEquatable<CoverSheet>
     /// Text to be added to the coversheet
     /// </summary>
     /// <value>Text to be added to the coversheet</value>
-    [DataMember(Name = "notes", EmitDefaultValue = false)]
+    [JsonPropertyName("notes")]
     public string Notes { get; set; }
 
 
@@ -36,7 +36,7 @@ public partial class CoverSheet : IEquatable<CoverSheet>
     /// Locale, e.g. &#x3D; en-US
     /// </summary>
     /// <value>Locale, e.g. &#x3D; en-US</value>
-    [DataMember(Name = "locale", EmitDefaultValue = false)]
+    [JsonPropertyName("locale")]
     public string Locale { get; set; }
 
 

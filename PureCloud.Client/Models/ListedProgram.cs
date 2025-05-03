@@ -1,12 +1,12 @@
-using System.Runtime.Serialization;
 using System.Text;
+using System.Text.Json.Serialization;
 
 namespace PureCloud.Client.Models;
 
 /// <summary>
 /// ListedProgram
 /// </summary>
-[DataContract]
+
 public partial class ListedProgram : IEquatable<ListedProgram>
 {
     /// <summary>
@@ -37,7 +37,7 @@ public partial class ListedProgram : IEquatable<ListedProgram>
     /// The globally unique identifier for the object.
     /// </summary>
     /// <value>The globally unique identifier for the object.</value>
-    [DataMember(Name = "id", EmitDefaultValue = false)]
+    [JsonPropertyName("id")]
     public string Id { get; private set; }
 
 
@@ -45,7 +45,7 @@ public partial class ListedProgram : IEquatable<ListedProgram>
     /// <summary>
     /// Gets or Sets Name
     /// </summary>
-    [DataMember(Name = "name", EmitDefaultValue = false)]
+    [JsonPropertyName("name")]
     public string Name { get; set; }
 
 
@@ -53,7 +53,7 @@ public partial class ListedProgram : IEquatable<ListedProgram>
     /// <summary>
     /// Gets or Sets Description
     /// </summary>
-    [DataMember(Name = "description", EmitDefaultValue = false)]
+    [JsonPropertyName("description")]
     public string Description { get; set; }
 
 
@@ -61,7 +61,7 @@ public partial class ListedProgram : IEquatable<ListedProgram>
     /// <summary>
     /// Gets or Sets Published
     /// </summary>
-    [DataMember(Name = "published", EmitDefaultValue = false)]
+    [JsonPropertyName("published")]
     public bool? Published { get; set; }
 
 
@@ -69,7 +69,7 @@ public partial class ListedProgram : IEquatable<ListedProgram>
     /// <summary>
     /// Gets or Sets TopicsCount
     /// </summary>
-    [DataMember(Name = "topicsCount", EmitDefaultValue = false)]
+    [JsonPropertyName("topicsCount")]
     public int? TopicsCount { get; set; }
 
 
@@ -77,7 +77,7 @@ public partial class ListedProgram : IEquatable<ListedProgram>
     /// <summary>
     /// Gets or Sets Tags
     /// </summary>
-    [DataMember(Name = "tags", EmitDefaultValue = false)]
+    [JsonPropertyName("tags")]
     public List<string> Tags { get; set; }
 
 
@@ -85,7 +85,7 @@ public partial class ListedProgram : IEquatable<ListedProgram>
     /// <summary>
     /// Gets or Sets ModifiedBy
     /// </summary>
-    [DataMember(Name = "modifiedBy", EmitDefaultValue = false)]
+    [JsonPropertyName("modifiedBy")]
     public AddressableEntityRef ModifiedBy { get; set; }
 
 
@@ -94,7 +94,7 @@ public partial class ListedProgram : IEquatable<ListedProgram>
     /// Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z
     /// </summary>
     /// <value>Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z</value>
-    [DataMember(Name = "dateModified", EmitDefaultValue = false)]
+    [JsonPropertyName("dateModified")]
     public DateTime? DateModified { get; set; }
 
 
@@ -103,7 +103,7 @@ public partial class ListedProgram : IEquatable<ListedProgram>
     /// The URI for this object
     /// </summary>
     /// <value>The URI for this object</value>
-    [DataMember(Name = "selfUri", EmitDefaultValue = false)]
+    [JsonPropertyName("selfUri")]
     public string SelfUri { get; private set; }
 
 

@@ -7,14 +7,14 @@ namespace PureCloud.Client.Models;
 /// <summary>
 /// RecordingAttachment
 /// </summary>
-[DataContract]
+
 public partial class RecordingAttachment : IEquatable<RecordingAttachment>
 {
     /// <summary>
     /// The type of attachment this instance represents.
     /// </summary>
     /// <value>The type of attachment this instance represents.</value>
-    [JsonConverter(typeof(JsonStringEnumConverter))]
+    
     public enum MediaTypeEnum
     {
         /// <summary>
@@ -59,7 +59,7 @@ public partial class RecordingAttachment : IEquatable<RecordingAttachment>
     /// The type of attachment this instance represents.
     /// </summary>
     /// <value>The type of attachment this instance represents.</value>
-    [DataMember(Name = "mediaType", EmitDefaultValue = false)]
+    [JsonPropertyName("mediaType")]
     public MediaTypeEnum? MediaType { get; set; }
     /// <summary>
     /// Initializes a new instance of the <see cref="RecordingAttachment" /> class.
@@ -85,7 +85,7 @@ public partial class RecordingAttachment : IEquatable<RecordingAttachment>
     /// The globally unique identifier for the object.
     /// </summary>
     /// <value>The globally unique identifier for the object.</value>
-    [DataMember(Name = "id", EmitDefaultValue = false)]
+    [JsonPropertyName("id")]
     public string Id { get; private set; }
 
 
@@ -96,7 +96,7 @@ public partial class RecordingAttachment : IEquatable<RecordingAttachment>
     /// URL of the attachment.
     /// </summary>
     /// <value>URL of the attachment.</value>
-    [DataMember(Name = "url", EmitDefaultValue = false)]
+    [JsonPropertyName("url")]
     public string Url { get; set; }
 
 
@@ -105,7 +105,7 @@ public partial class RecordingAttachment : IEquatable<RecordingAttachment>
     /// Attachment mime type.
     /// </summary>
     /// <value>Attachment mime type.</value>
-    [DataMember(Name = "mime", EmitDefaultValue = false)]
+    [JsonPropertyName("mime")]
     public string Mime { get; set; }
 
 
@@ -114,7 +114,7 @@ public partial class RecordingAttachment : IEquatable<RecordingAttachment>
     /// Text associated with attachment such as an image caption.
     /// </summary>
     /// <value>Text associated with attachment such as an image caption.</value>
-    [DataMember(Name = "text", EmitDefaultValue = false)]
+    [JsonPropertyName("text")]
     public string Text { get; set; }
 
 
@@ -123,7 +123,7 @@ public partial class RecordingAttachment : IEquatable<RecordingAttachment>
     /// Suggested file name for attachment.
     /// </summary>
     /// <value>Suggested file name for attachment.</value>
-    [DataMember(Name = "fileName", EmitDefaultValue = false)]
+    [JsonPropertyName("fileName")]
     public string FileName { get; set; }
 
 

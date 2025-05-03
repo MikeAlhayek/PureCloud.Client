@@ -1,4 +1,3 @@
-using System.Runtime.Serialization;
 using System.Text;
 using System.Text.Json.Serialization;
 
@@ -7,7 +6,7 @@ namespace PureCloud.Client.Models;
 /// <summary>
 /// KnowledgeGuestSessionContext
 /// </summary>
-[DataContract]
+
 public partial class KnowledgeGuestSessionContext : IEquatable<KnowledgeGuestSessionContext>
 {
 
@@ -34,7 +33,7 @@ public partial class KnowledgeGuestSessionContext : IEquatable<KnowledgeGuestSes
     /// The context id associated with the session.
     /// </summary>
     /// <value>The context id associated with the session.</value>
-    [DataMember(Name = "id", EmitDefaultValue = false)]
+    [JsonPropertyName("id")]
     public string Id { get; set; }
 
 
@@ -43,7 +42,7 @@ public partial class KnowledgeGuestSessionContext : IEquatable<KnowledgeGuestSes
     /// The list of knowledge context values associated with the session.
     /// </summary>
     /// <value>The list of knowledge context values associated with the session.</value>
-    [DataMember(Name = "values", EmitDefaultValue = false)]
+    [JsonPropertyName("values")]
     public List<Entity> Values { get; set; }
 
 

@@ -1,12 +1,12 @@
-using System.Runtime.Serialization;
 using System.Text;
+using System.Text.Json.Serialization;
 
 namespace PureCloud.Client.Models;
 
 /// <summary>
 /// AnalyticsFlowOutcome
 /// </summary>
-[DataContract]
+
 public partial class AnalyticsFlowOutcome : IEquatable<AnalyticsFlowOutcome>
 {
     /// <summary>
@@ -33,7 +33,7 @@ public partial class AnalyticsFlowOutcome : IEquatable<AnalyticsFlowOutcome>
     /// Combination of unique flow outcome identifier and its value separated by colon
     /// </summary>
     /// <value>Combination of unique flow outcome identifier and its value separated by colon</value>
-    [DataMember(Name = "flowOutcome", EmitDefaultValue = false)]
+    [JsonPropertyName("flowOutcome")]
     public string FlowOutcome { get; set; }
 
 
@@ -42,7 +42,7 @@ public partial class AnalyticsFlowOutcome : IEquatable<AnalyticsFlowOutcome>
     /// The outcome ending timestamp in ISO 8601 format. This may be null if the outcome did not succeed.
     /// </summary>
     /// <value>The outcome ending timestamp in ISO 8601 format. This may be null if the outcome did not succeed.</value>
-    [DataMember(Name = "flowOutcomeEndTimestamp", EmitDefaultValue = false)]
+    [JsonPropertyName("flowOutcomeEndTimestamp")]
     public DateTime? FlowOutcomeEndTimestamp { get; set; }
 
 
@@ -51,7 +51,7 @@ public partial class AnalyticsFlowOutcome : IEquatable<AnalyticsFlowOutcome>
     /// Unique identifier of a flow outcome
     /// </summary>
     /// <value>Unique identifier of a flow outcome</value>
-    [DataMember(Name = "flowOutcomeId", EmitDefaultValue = false)]
+    [JsonPropertyName("flowOutcomeId")]
     public string FlowOutcomeId { get; set; }
 
 
@@ -60,7 +60,7 @@ public partial class AnalyticsFlowOutcome : IEquatable<AnalyticsFlowOutcome>
     /// The outcome starting timestamp in ISO 8601 format
     /// </summary>
     /// <value>The outcome starting timestamp in ISO 8601 format</value>
-    [DataMember(Name = "flowOutcomeStartTimestamp", EmitDefaultValue = false)]
+    [JsonPropertyName("flowOutcomeStartTimestamp")]
     public DateTime? FlowOutcomeStartTimestamp { get; set; }
 
 
@@ -69,7 +69,7 @@ public partial class AnalyticsFlowOutcome : IEquatable<AnalyticsFlowOutcome>
     /// Flow outcome value, e.g. SUCCESS
     /// </summary>
     /// <value>Flow outcome value, e.g. SUCCESS</value>
-    [DataMember(Name = "flowOutcomeValue", EmitDefaultValue = false)]
+    [JsonPropertyName("flowOutcomeValue")]
     public string FlowOutcomeValue { get; set; }
 
 

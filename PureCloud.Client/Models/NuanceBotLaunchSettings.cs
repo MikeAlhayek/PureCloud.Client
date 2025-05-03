@@ -1,4 +1,3 @@
-using System.Runtime.Serialization;
 using System.Text;
 using System.Text.Json.Serialization;
 
@@ -7,7 +6,7 @@ namespace PureCloud.Client.Models;
 /// <summary>
 /// Model for setting the launch configuration for Nuance bots available to Genesys Cloud
 /// </summary>
-[DataContract]
+
 public partial class NuanceBotLaunchSettings : IEquatable<NuanceBotLaunchSettings>
 {
 
@@ -32,7 +31,7 @@ public partial class NuanceBotLaunchSettings : IEquatable<NuanceBotLaunchSetting
     /// The list of Nuance bots that are configured as available to the Genesys Cloud system
     /// </summary>
     /// <value>The list of Nuance bots that are configured as available to the Genesys Cloud system</value>
-    [DataMember(Name = "botExecutionConfigurations", EmitDefaultValue = false)]
+    [JsonPropertyName("botExecutionConfigurations")]
     public List<BotExecutionConfiguration> BotExecutionConfigurations { get; set; }
 
 

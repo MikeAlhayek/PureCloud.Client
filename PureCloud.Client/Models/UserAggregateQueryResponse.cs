@@ -1,12 +1,12 @@
-using System.Runtime.Serialization;
 using System.Text;
+using System.Text.Json.Serialization;
 
 namespace PureCloud.Client.Models;
 
 /// <summary>
 /// UserAggregateQueryResponse
 /// </summary>
-[DataContract]
+
 public partial class UserAggregateQueryResponse : IEquatable<UserAggregateQueryResponse>
 {
     /// <summary>
@@ -27,7 +27,7 @@ public partial class UserAggregateQueryResponse : IEquatable<UserAggregateQueryR
     /// A mapping from system presence to a list of organization presence ids
     /// </summary>
     /// <value>A mapping from system presence to a list of organization presence ids</value>
-    [DataMember(Name = "systemToOrganizationMappings", EmitDefaultValue = false)]
+    [JsonPropertyName("systemToOrganizationMappings")]
     public Dictionary<string, List<string>> SystemToOrganizationMappings { get; set; }
 
 
@@ -35,7 +35,7 @@ public partial class UserAggregateQueryResponse : IEquatable<UserAggregateQueryR
     /// <summary>
     /// Gets or Sets Results
     /// </summary>
-    [DataMember(Name = "results", EmitDefaultValue = false)]
+    [JsonPropertyName("results")]
     public List<UserAggregateDataContainer> Results { get; set; }
 
 

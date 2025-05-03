@@ -7,14 +7,14 @@ namespace PureCloud.Client.Models;
 /// <summary>
 /// ReportingExportMetadataJobResponse
 /// </summary>
-[DataContract]
+
 public partial class ReportingExportMetadataJobResponse : IEquatable<ReportingExportMetadataJobResponse>
 {
     /// <summary>
     /// The view type of the export metadata
     /// </summary>
     /// <value>The view type of the export metadata</value>
-    [JsonConverter(typeof(JsonStringEnumConverter))]
+    
     public enum ViewTypeEnum
     {
         /// <summary>
@@ -755,7 +755,7 @@ public partial class ReportingExportMetadataJobResponse : IEquatable<ReportingEx
     /// The view type of the export metadata
     /// </summary>
     /// <value>The view type of the export metadata</value>
-    [DataMember(Name = "viewType", EmitDefaultValue = false)]
+    [JsonPropertyName("viewType")]
     public ViewTypeEnum? ViewType { get; set; }
     /// <summary>
     /// Initializes a new instance of the <see cref="ReportingExportMetadataJobResponse" /> class.
@@ -787,7 +787,7 @@ public partial class ReportingExportMetadataJobResponse : IEquatable<ReportingEx
     /// The globally unique identifier for the object.
     /// </summary>
     /// <value>The globally unique identifier for the object.</value>
-    [DataMember(Name = "id", EmitDefaultValue = false)]
+    [JsonPropertyName("id")]
     public string Id { get; private set; }
 
 
@@ -795,7 +795,7 @@ public partial class ReportingExportMetadataJobResponse : IEquatable<ReportingEx
     /// <summary>
     /// Gets or Sets Name
     /// </summary>
-    [DataMember(Name = "name", EmitDefaultValue = false)]
+    [JsonPropertyName("name")]
     public string Name { get; set; }
 
 
@@ -806,7 +806,7 @@ public partial class ReportingExportMetadataJobResponse : IEquatable<ReportingEx
     /// The date limitations of the export metadata
     /// </summary>
     /// <value>The date limitations of the export metadata</value>
-    [DataMember(Name = "dateLimitations", EmitDefaultValue = false)]
+    [JsonPropertyName("dateLimitations")]
     public string DateLimitations { get; set; }
 
 
@@ -815,7 +815,7 @@ public partial class ReportingExportMetadataJobResponse : IEquatable<ReportingEx
     /// The list of required filters for the export metadata
     /// </summary>
     /// <value>The list of required filters for the export metadata</value>
-    [DataMember(Name = "requiredFilters", EmitDefaultValue = false)]
+    [JsonPropertyName("requiredFilters")]
     public List<string> RequiredFilters { get; set; }
 
 
@@ -824,7 +824,7 @@ public partial class ReportingExportMetadataJobResponse : IEquatable<ReportingEx
     /// The list of supported filters for the export metadata
     /// </summary>
     /// <value>The list of supported filters for the export metadata</value>
-    [DataMember(Name = "supportedFilters", EmitDefaultValue = false)]
+    [JsonPropertyName("supportedFilters")]
     public List<string> SupportedFilters { get; set; }
 
 
@@ -833,7 +833,7 @@ public partial class ReportingExportMetadataJobResponse : IEquatable<ReportingEx
     /// The list of required column ids for the export metadata
     /// </summary>
     /// <value>The list of required column ids for the export metadata</value>
-    [DataMember(Name = "requiredColumnIds", EmitDefaultValue = false)]
+    [JsonPropertyName("requiredColumnIds")]
     public List<string> RequiredColumnIds { get; set; }
 
 
@@ -842,7 +842,7 @@ public partial class ReportingExportMetadataJobResponse : IEquatable<ReportingEx
     /// The list of dependent column ids for the export metadata
     /// </summary>
     /// <value>The list of dependent column ids for the export metadata</value>
-    [DataMember(Name = "dependentColumnIds", EmitDefaultValue = false)]
+    [JsonPropertyName("dependentColumnIds")]
     public Dictionary<string, List<string>> DependentColumnIds { get; set; }
 
 
@@ -851,7 +851,7 @@ public partial class ReportingExportMetadataJobResponse : IEquatable<ReportingEx
     /// The list of available column ids for the export metadata
     /// </summary>
     /// <value>The list of available column ids for the export metadata</value>
-    [DataMember(Name = "availableColumnIds", EmitDefaultValue = false)]
+    [JsonPropertyName("availableColumnIds")]
     public List<string> AvailableColumnIds { get; set; }
 
 
@@ -860,7 +860,7 @@ public partial class ReportingExportMetadataJobResponse : IEquatable<ReportingEx
     /// The URI for this object
     /// </summary>
     /// <value>The URI for this object</value>
-    [DataMember(Name = "selfUri", EmitDefaultValue = false)]
+    [JsonPropertyName("selfUri")]
     public string SelfUri { get; private set; }
 
 

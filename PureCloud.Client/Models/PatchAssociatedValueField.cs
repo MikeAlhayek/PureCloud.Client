@@ -7,14 +7,14 @@ namespace PureCloud.Client.Models;
 /// <summary>
 /// PatchAssociatedValueField
 /// </summary>
-[DataContract]
+
 public partial class PatchAssociatedValueField : IEquatable<PatchAssociatedValueField>
 {
     /// <summary>
     /// The data type of the value field.
     /// </summary>
     /// <value>The data type of the value field.</value>
-    [JsonConverter(typeof(JsonStringEnumConverter))]
+    
     public enum DataTypeEnum
     {
         /// <summary>
@@ -41,7 +41,7 @@ public partial class PatchAssociatedValueField : IEquatable<PatchAssociatedValue
     /// The data type of the value field.
     /// </summary>
     /// <value>The data type of the value field.</value>
-    [DataMember(Name = "dataType", EmitDefaultValue = false)]
+    [JsonPropertyName("dataType")]
     public DataTypeEnum? DataType { get; set; }
     /// <summary>
     /// Initializes a new instance of the <see cref="PatchAssociatedValueField" /> class.
@@ -63,7 +63,7 @@ public partial class PatchAssociatedValueField : IEquatable<PatchAssociatedValue
     /// The field name for extracting value from event.
     /// </summary>
     /// <value>The field name for extracting value from event.</value>
-    [DataMember(Name = "name", EmitDefaultValue = false)]
+    [JsonPropertyName("name")]
     public string Name { get; set; }
 
 

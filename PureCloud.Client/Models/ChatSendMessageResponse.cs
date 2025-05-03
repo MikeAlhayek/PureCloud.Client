@@ -1,4 +1,3 @@
-using System.Runtime.Serialization;
 using System.Text;
 using System.Text.Json.Serialization;
 
@@ -7,7 +6,7 @@ namespace PureCloud.Client.Models;
 /// <summary>
 /// ChatSendMessageResponse
 /// </summary>
-[DataContract]
+
 public partial class ChatSendMessageResponse : IEquatable<ChatSendMessageResponse>
 {
 
@@ -32,7 +31,7 @@ public partial class ChatSendMessageResponse : IEquatable<ChatSendMessageRespons
     /// The id of the created message
     /// </summary>
     /// <value>The id of the created message</value>
-    [DataMember(Name = "id", EmitDefaultValue = false)]
+    [JsonPropertyName("id")]
     public string Id { get; set; }
 
 

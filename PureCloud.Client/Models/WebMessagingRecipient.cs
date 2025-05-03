@@ -1,12 +1,12 @@
-using System.Runtime.Serialization;
 using System.Text;
+using System.Text.Json.Serialization;
 
 namespace PureCloud.Client.Models;
 
 /// <summary>
 /// Information about the recipient the message is sent to or received from.
 /// </summary>
-[DataContract]
+
 public partial class WebMessagingRecipient : IEquatable<WebMessagingRecipient>
 {
     /// <summary>
@@ -23,7 +23,7 @@ public partial class WebMessagingRecipient : IEquatable<WebMessagingRecipient>
     /// First name of the recipient.
     /// </summary>
     /// <value>First name of the recipient.</value>
-    [DataMember(Name = "firstName", EmitDefaultValue = false)]
+    [JsonPropertyName("firstName")]
     public string FirstName { get; private set; }
 
 
@@ -32,7 +32,7 @@ public partial class WebMessagingRecipient : IEquatable<WebMessagingRecipient>
     /// Last name of the recipient.
     /// </summary>
     /// <value>Last name of the recipient.</value>
-    [DataMember(Name = "lastName", EmitDefaultValue = false)]
+    [JsonPropertyName("lastName")]
     public string LastName { get; private set; }
 
 
@@ -41,7 +41,7 @@ public partial class WebMessagingRecipient : IEquatable<WebMessagingRecipient>
     /// Nickname or display name of the recipient.
     /// </summary>
     /// <value>Nickname or display name of the recipient.</value>
-    [DataMember(Name = "nickname", EmitDefaultValue = false)]
+    [JsonPropertyName("nickname")]
     public string Nickname { get; private set; }
 
 
@@ -50,7 +50,7 @@ public partial class WebMessagingRecipient : IEquatable<WebMessagingRecipient>
     /// URL of an image that represents the recipient.
     /// </summary>
     /// <value>URL of an image that represents the recipient.</value>
-    [DataMember(Name = "image", EmitDefaultValue = false)]
+    [JsonPropertyName("image")]
     public string Image { get; private set; }
 
 
@@ -59,7 +59,7 @@ public partial class WebMessagingRecipient : IEquatable<WebMessagingRecipient>
     /// List of recipient additional identifiers
     /// </summary>
     /// <value>List of recipient additional identifiers</value>
-    [DataMember(Name = "additionalIds", EmitDefaultValue = false)]
+    [JsonPropertyName("additionalIds")]
     public List<RecipientAdditionalIdentifier> AdditionalIds { get; private set; }
 
 

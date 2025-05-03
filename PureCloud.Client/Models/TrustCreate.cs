@@ -1,4 +1,3 @@
-using System.Runtime.Serialization;
 using System.Text;
 using System.Text.Json.Serialization;
 
@@ -7,7 +6,7 @@ namespace PureCloud.Client.Models;
 /// <summary>
 /// TrustCreate
 /// </summary>
-[DataContract]
+
 public partial class TrustCreate : IEquatable<TrustCreate>
 {
 
@@ -40,7 +39,7 @@ public partial class TrustCreate : IEquatable<TrustCreate>
     /// The pairing Id created by the trustee. This is required to prove that the trustee agrees to the relationship.  Not required when creating a default pairing with Customer Care.
     /// </summary>
     /// <value>The pairing Id created by the trustee. This is required to prove that the trustee agrees to the relationship.  Not required when creating a default pairing with Customer Care.</value>
-    [DataMember(Name = "pairingId", EmitDefaultValue = false)]
+    [JsonPropertyName("pairingId")]
     public string PairingId { get; set; }
 
 
@@ -49,7 +48,7 @@ public partial class TrustCreate : IEquatable<TrustCreate>
     /// If disabled no trustee user will have access, even if they were previously added.
     /// </summary>
     /// <value>If disabled no trustee user will have access, even if they were previously added.</value>
-    [DataMember(Name = "enabled", EmitDefaultValue = false)]
+    [JsonPropertyName("enabled")]
     public bool? Enabled { get; set; }
 
 
@@ -58,7 +57,7 @@ public partial class TrustCreate : IEquatable<TrustCreate>
     /// The list of users and their roles to which access will be granted. The users are from the trustee and the roles are from the trustor. If no users are specified, at least one group is required.
     /// </summary>
     /// <value>The list of users and their roles to which access will be granted. The users are from the trustee and the roles are from the trustor. If no users are specified, at least one group is required.</value>
-    [DataMember(Name = "users", EmitDefaultValue = false)]
+    [JsonPropertyName("users")]
     public List<TrustMemberCreate> Users { get; set; }
 
 
@@ -67,7 +66,7 @@ public partial class TrustCreate : IEquatable<TrustCreate>
     /// The list of groups and their roles to which access will be granted. The groups are from the trustee and the roles are from the trustor. If no groups are specified, at least one user is required.
     /// </summary>
     /// <value>The list of groups and their roles to which access will be granted. The groups are from the trustee and the roles are from the trustor. If no groups are specified, at least one user is required.</value>
-    [DataMember(Name = "groups", EmitDefaultValue = false)]
+    [JsonPropertyName("groups")]
     public List<TrustMemberCreate> Groups { get; set; }
 
 
@@ -76,7 +75,7 @@ public partial class TrustCreate : IEquatable<TrustCreate>
     /// The expiration date of the trust. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z
     /// </summary>
     /// <value>The expiration date of the trust. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z</value>
-    [DataMember(Name = "dateExpired", EmitDefaultValue = false)]
+    [JsonPropertyName("dateExpired")]
     public DateTime? DateExpired { get; set; }
 
 

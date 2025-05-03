@@ -7,14 +7,14 @@ namespace PureCloud.Client.Models;
 /// <summary>
 /// BuTimeOffLimitValueRange
 /// </summary>
-[DataContract]
+
 public partial class BuTimeOffLimitValueRange : IEquatable<BuTimeOffLimitValueRange>
 {
     /// <summary>
     /// Granularity choice for time-off limit
     /// </summary>
     /// <value>Granularity choice for time-off limit</value>
-    [JsonConverter(typeof(JsonStringEnumConverter))]
+    
     public enum GranularityEnum
     {
         /// <summary>
@@ -35,7 +35,7 @@ public partial class BuTimeOffLimitValueRange : IEquatable<BuTimeOffLimitValueRa
     /// Granularity choice for time-off limit
     /// </summary>
     /// <value>Granularity choice for time-off limit</value>
-    [DataMember(Name = "granularity", EmitDefaultValue = false)]
+    [JsonPropertyName("granularity")]
     public GranularityEnum? Granularity { get; set; }
 
     /// <summary>
@@ -73,7 +73,7 @@ public partial class BuTimeOffLimitValueRange : IEquatable<BuTimeOffLimitValueRa
     /// The globally unique identifier for the object.
     /// </summary>
     /// <value>The globally unique identifier for the object.</value>
-    [DataMember(Name = "id", EmitDefaultValue = false)]
+    [JsonPropertyName("id")]
     public string Id { get; private set; }
 
 
@@ -82,7 +82,7 @@ public partial class BuTimeOffLimitValueRange : IEquatable<BuTimeOffLimitValueRa
     /// The ID of the time-off limit
     /// </summary>
     /// <value>The ID of the time-off limit</value>
-    [DataMember(Name = "timeOffLimit", EmitDefaultValue = false)]
+    [JsonPropertyName("timeOffLimit")]
     public BuTimeOffLimitReference TimeOffLimit { get; set; }
 
 
@@ -91,7 +91,7 @@ public partial class BuTimeOffLimitValueRange : IEquatable<BuTimeOffLimitValueRa
     /// Start date of the requested date range, in ISO-8601 format. The end date is determined by the size of interval lists
     /// </summary>
     /// <value>Start date of the requested date range, in ISO-8601 format. The end date is determined by the size of interval lists</value>
-    [DataMember(Name = "startDate", EmitDefaultValue = false)]
+    [JsonPropertyName("startDate")]
     public string StartDate { get; set; }
 
 
@@ -102,7 +102,7 @@ public partial class BuTimeOffLimitValueRange : IEquatable<BuTimeOffLimitValueRa
     /// A list of time-off limit values in minutes per granularity interval
     /// </summary>
     /// <value>A list of time-off limit values in minutes per granularity interval</value>
-    [DataMember(Name = "limitMinutesPerInterval", EmitDefaultValue = false)]
+    [JsonPropertyName("limitMinutesPerInterval")]
     public List<int?> LimitMinutesPerInterval { get; set; }
 
 
@@ -111,7 +111,7 @@ public partial class BuTimeOffLimitValueRange : IEquatable<BuTimeOffLimitValueRa
     /// A list of allocated time-off minutes per granularity interval
     /// </summary>
     /// <value>A list of allocated time-off minutes per granularity interval</value>
-    [DataMember(Name = "allocatedMinutesPerInterval", EmitDefaultValue = false)]
+    [JsonPropertyName("allocatedMinutesPerInterval")]
     public List<int?> AllocatedMinutesPerInterval { get; set; }
 
 
@@ -120,7 +120,7 @@ public partial class BuTimeOffLimitValueRange : IEquatable<BuTimeOffLimitValueRa
     /// A list of waitlisted time-off minutes per granularity interval
     /// </summary>
     /// <value>A list of waitlisted time-off minutes per granularity interval</value>
-    [DataMember(Name = "waitlistedMinutesPerInterval", EmitDefaultValue = false)]
+    [JsonPropertyName("waitlistedMinutesPerInterval")]
     public List<int?> WaitlistedMinutesPerInterval { get; set; }
 
 
@@ -129,7 +129,7 @@ public partial class BuTimeOffLimitValueRange : IEquatable<BuTimeOffLimitValueRa
     /// The current number of waitlisted time-off requests for every interval per granularity
     /// </summary>
     /// <value>The current number of waitlisted time-off requests for every interval per granularity</value>
-    [DataMember(Name = "waitlistedRequestsPerInterval", EmitDefaultValue = false)]
+    [JsonPropertyName("waitlistedRequestsPerInterval")]
     public List<int?> WaitlistedRequestsPerInterval { get; set; }
 
 
@@ -138,7 +138,7 @@ public partial class BuTimeOffLimitValueRange : IEquatable<BuTimeOffLimitValueRa
     /// Version metadata for the time-off limit
     /// </summary>
     /// <value>Version metadata for the time-off limit</value>
-    [DataMember(Name = "metadata", EmitDefaultValue = false)]
+    [JsonPropertyName("metadata")]
     public WfmVersionedEntityMetadata Metadata { get; set; }
 
 
@@ -147,7 +147,7 @@ public partial class BuTimeOffLimitValueRange : IEquatable<BuTimeOffLimitValueRa
     /// The URI for this object
     /// </summary>
     /// <value>The URI for this object</value>
-    [DataMember(Name = "selfUri", EmitDefaultValue = false)]
+    [JsonPropertyName("selfUri")]
     public string SelfUri { get; private set; }
 
 

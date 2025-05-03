@@ -1,12 +1,12 @@
-using System.Runtime.Serialization;
 using System.Text;
+using System.Text.Json.Serialization;
 
 namespace PureCloud.Client.Models;
 
 /// <summary>
 /// User information for a WhatsApp account
 /// </summary>
-[DataContract]
+
 public partial class WhatsAppId : IEquatable<WhatsAppId>
 {
     /// <summary>
@@ -27,7 +27,7 @@ public partial class WhatsAppId : IEquatable<WhatsAppId>
     /// The phone number associated with this WhatsApp account
     /// </summary>
     /// <value>The phone number associated with this WhatsApp account</value>
-    [DataMember(Name = "phoneNumber", EmitDefaultValue = false)]
+    [JsonPropertyName("phoneNumber")]
     public PhoneNumber PhoneNumber { get; set; }
 
 
@@ -36,7 +36,7 @@ public partial class WhatsAppId : IEquatable<WhatsAppId>
     /// The displayName of this person&#39;s account in WhatsApp
     /// </summary>
     /// <value>The displayName of this person&#39;s account in WhatsApp</value>
-    [DataMember(Name = "displayName", EmitDefaultValue = false)]
+    [JsonPropertyName("displayName")]
     public string DisplayName { get; set; }
 
 

@@ -1,12 +1,12 @@
-using System.Runtime.Serialization;
 using System.Text;
+using System.Text.Json.Serialization;
 
 namespace PureCloud.Client.Models;
 
 /// <summary>
 /// Coretype
 /// </summary>
-[DataContract]
+
 public partial class Coretype : IEquatable<Coretype>
 {
     /// <summary>
@@ -41,7 +41,7 @@ public partial class Coretype : IEquatable<Coretype>
     /// The globally unique identifier for the object.
     /// </summary>
     /// <value>The globally unique identifier for the object.</value>
-    [DataMember(Name = "id", EmitDefaultValue = false)]
+    [JsonPropertyName("id")]
     public string Id { get; private set; }
 
 
@@ -49,7 +49,7 @@ public partial class Coretype : IEquatable<Coretype>
     /// <summary>
     /// Gets or Sets Name
     /// </summary>
-    [DataMember(Name = "name", EmitDefaultValue = false)]
+    [JsonPropertyName("name")]
     public string Name { get; set; }
 
 
@@ -58,7 +58,7 @@ public partial class Coretype : IEquatable<Coretype>
     /// A positive integer denoting the core type&#39;s version
     /// </summary>
     /// <value>A positive integer denoting the core type&#39;s version</value>
-    [DataMember(Name = "version", EmitDefaultValue = false)]
+    [JsonPropertyName("version")]
     public int? Version { get; set; }
 
 
@@ -67,7 +67,7 @@ public partial class Coretype : IEquatable<Coretype>
     /// The date the core type was created. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z
     /// </summary>
     /// <value>The date the core type was created. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z</value>
-    [DataMember(Name = "dateCreated", EmitDefaultValue = false)]
+    [JsonPropertyName("dateCreated")]
     public DateTime? DateCreated { get; set; }
 
 
@@ -76,7 +76,7 @@ public partial class Coretype : IEquatable<Coretype>
     /// The core type&#39;s built-in schema
     /// </summary>
     /// <value>The core type&#39;s built-in schema</value>
-    [DataMember(Name = "schema", EmitDefaultValue = false)]
+    [JsonPropertyName("schema")]
     public Schema Schema { get; set; }
 
 
@@ -85,7 +85,7 @@ public partial class Coretype : IEquatable<Coretype>
     /// A boolean indicating if the core type&#39;s version is the current one in use by the system
     /// </summary>
     /// <value>A boolean indicating if the core type&#39;s version is the current one in use by the system</value>
-    [DataMember(Name = "current", EmitDefaultValue = false)]
+    [JsonPropertyName("current")]
     public bool? Current { get; set; }
 
 
@@ -94,7 +94,7 @@ public partial class Coretype : IEquatable<Coretype>
     /// An array of strings naming the fields of the core type subject to validation.  Validation constraints are specified by a schema author using the core type.
     /// </summary>
     /// <value>An array of strings naming the fields of the core type subject to validation.  Validation constraints are specified by a schema author using the core type.</value>
-    [DataMember(Name = "validationFields", EmitDefaultValue = false)]
+    [JsonPropertyName("validationFields")]
     public List<string> ValidationFields { get; set; }
 
 
@@ -103,7 +103,7 @@ public partial class Coretype : IEquatable<Coretype>
     /// A structure denoting the system-imposed minimum and maximum string length (for text-based core types) or numeric values (for number-based) core types.  For example, the validationLimits for a text-based core type specify the min/max values for a minimum string length (minLength) constraint supplied by a schemaauthor on a text field.  Similarly, the maxLength&#39;s min/max specifies maximum string length constraint supplied by a schema author for the same field.
     /// </summary>
     /// <value>A structure denoting the system-imposed minimum and maximum string length (for text-based core types) or numeric values (for number-based) core types.  For example, the validationLimits for a text-based core type specify the min/max values for a minimum string length (minLength) constraint supplied by a schemaauthor on a text field.  Similarly, the maxLength&#39;s min/max specifies maximum string length constraint supplied by a schema author for the same field.</value>
-    [DataMember(Name = "validationLimits", EmitDefaultValue = false)]
+    [JsonPropertyName("validationLimits")]
     public ValidationLimits ValidationLimits { get; set; }
 
 
@@ -112,7 +112,7 @@ public partial class Coretype : IEquatable<Coretype>
     /// Specific to the \&quot;tag\&quot; core type, this is an array of strings naming the tag item fields of the core type subject to validation
     /// </summary>
     /// <value>Specific to the \&quot;tag\&quot; core type, this is an array of strings naming the tag item fields of the core type subject to validation</value>
-    [DataMember(Name = "itemValidationFields", EmitDefaultValue = false)]
+    [JsonPropertyName("itemValidationFields")]
     public List<string> ItemValidationFields { get; set; }
 
 
@@ -121,7 +121,7 @@ public partial class Coretype : IEquatable<Coretype>
     /// A structure denoting the system-imposed minimum and maximum string length for string-array based core types such as \&quot;tag\&quot; and \&quot;enum\&quot;.  Forexample, the validationLimits for a schema field using a tag core type specify the min/max values for a minimum string length (minLength) constraint supplied by a schema author on individual tags.  Similarly, the maxLength&#39;s min/max specifies maximum string length constraint supplied by a schema author for the same field&#39;s tags.
     /// </summary>
     /// <value>A structure denoting the system-imposed minimum and maximum string length for string-array based core types such as \&quot;tag\&quot; and \&quot;enum\&quot;.  Forexample, the validationLimits for a schema field using a tag core type specify the min/max values for a minimum string length (minLength) constraint supplied by a schema author on individual tags.  Similarly, the maxLength&#39;s min/max specifies maximum string length constraint supplied by a schema author for the same field&#39;s tags.</value>
-    [DataMember(Name = "itemValidationLimits", EmitDefaultValue = false)]
+    [JsonPropertyName("itemValidationLimits")]
     public ItemValidationLimits ItemValidationLimits { get; set; }
 
 
@@ -130,7 +130,7 @@ public partial class Coretype : IEquatable<Coretype>
     /// The URI for this object
     /// </summary>
     /// <value>The URI for this object</value>
-    [DataMember(Name = "selfUri", EmitDefaultValue = false)]
+    [JsonPropertyName("selfUri")]
     public string SelfUri { get; private set; }
 
 

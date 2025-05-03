@@ -7,14 +7,14 @@ namespace PureCloud.Client.Models;
 /// <summary>
 /// QuickReply
 /// </summary>
-[DataContract]
+
 public partial class QuickReply : IEquatable<QuickReply>
 {
     /// <summary>
     /// Specifies the type of action that is triggered upon clicking the quick reply. Currently, the only supported action is \"Message\" which sends a message using the quick reply text.
     /// </summary>
     /// <value>Specifies the type of action that is triggered upon clicking the quick reply. Currently, the only supported action is \"Message\" which sends a message using the quick reply text.</value>
-    [JsonConverter(typeof(JsonStringEnumConverter))]
+    
     public enum ActionEnum
     {
         /// <summary>
@@ -35,7 +35,7 @@ public partial class QuickReply : IEquatable<QuickReply>
     /// Specifies the type of action that is triggered upon clicking the quick reply. Currently, the only supported action is \"Message\" which sends a message using the quick reply text.
     /// </summary>
     /// <value>Specifies the type of action that is triggered upon clicking the quick reply. Currently, the only supported action is \"Message\" which sends a message using the quick reply text.</value>
-    [DataMember(Name = "action", EmitDefaultValue = false)]
+    [JsonPropertyName("action")]
     public ActionEnum? Action { get; set; }
     /// <summary>
     /// Initializes a new instance of the <see cref="QuickReply" /> class.
@@ -61,7 +61,7 @@ public partial class QuickReply : IEquatable<QuickReply>
     /// Text to show inside the quick reply. This is also used as the response text after clicking on the quick reply.
     /// </summary>
     /// <value>Text to show inside the quick reply. This is also used as the response text after clicking on the quick reply.</value>
-    [DataMember(Name = "text", EmitDefaultValue = false)]
+    [JsonPropertyName("text")]
     public string Text { get; set; }
 
 
@@ -70,7 +70,7 @@ public partial class QuickReply : IEquatable<QuickReply>
     /// Content of the textback payload after clicking a quick reply
     /// </summary>
     /// <value>Content of the textback payload after clicking a quick reply</value>
-    [DataMember(Name = "payload", EmitDefaultValue = false)]
+    [JsonPropertyName("payload")]
     public string Payload { get; set; }
 
 
@@ -79,7 +79,7 @@ public partial class QuickReply : IEquatable<QuickReply>
     /// The location of the image file associated with quick reply
     /// </summary>
     /// <value>The location of the image file associated with quick reply</value>
-    [DataMember(Name = "url", EmitDefaultValue = false)]
+    [JsonPropertyName("url")]
     public string Url { get; set; }
 
 
@@ -90,7 +90,7 @@ public partial class QuickReply : IEquatable<QuickReply>
     /// Indicates if the quick reply option is selected by end customer
     /// </summary>
     /// <value>Indicates if the quick reply option is selected by end customer</value>
-    [DataMember(Name = "isSelected", EmitDefaultValue = false)]
+    [JsonPropertyName("isSelected")]
     public bool? IsSelected { get; set; }
 
 

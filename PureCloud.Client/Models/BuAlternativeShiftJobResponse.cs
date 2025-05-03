@@ -7,14 +7,14 @@ namespace PureCloud.Client.Models;
 /// <summary>
 /// BuAlternativeShiftJobResponse
 /// </summary>
-[DataContract]
+
 public partial class BuAlternativeShiftJobResponse : IEquatable<BuAlternativeShiftJobResponse>
 {
     /// <summary>
     /// The status of the alternative shift job
     /// </summary>
     /// <value>The status of the alternative shift job</value>
-    [JsonConverter(typeof(JsonStringEnumConverter))]
+    
     public enum StatusEnum
     {
         /// <summary>
@@ -47,7 +47,7 @@ public partial class BuAlternativeShiftJobResponse : IEquatable<BuAlternativeShi
     /// The type of job
     /// </summary>
     /// <value>The type of job</value>
-    [JsonConverter(typeof(JsonStringEnumConverter))]
+    
     public enum TypeEnum
     {
         /// <summary>
@@ -92,13 +92,13 @@ public partial class BuAlternativeShiftJobResponse : IEquatable<BuAlternativeShi
     /// The status of the alternative shift job
     /// </summary>
     /// <value>The status of the alternative shift job</value>
-    [DataMember(Name = "status", EmitDefaultValue = false)]
+    [JsonPropertyName("status")]
     public StatusEnum? Status { get; set; }
     /// <summary>
     /// The type of job
     /// </summary>
     /// <value>The type of job</value>
-    [DataMember(Name = "type", EmitDefaultValue = false)]
+    [JsonPropertyName("type")]
     public TypeEnum? Type { get; set; }
 
     /// <summary>
@@ -134,7 +134,7 @@ public partial class BuAlternativeShiftJobResponse : IEquatable<BuAlternativeShi
     /// The globally unique identifier for the object.
     /// </summary>
     /// <value>The globally unique identifier for the object.</value>
-    [DataMember(Name = "id", EmitDefaultValue = false)]
+    [JsonPropertyName("id")]
     public string Id { get; private set; }
 
 
@@ -147,7 +147,7 @@ public partial class BuAlternativeShiftJobResponse : IEquatable<BuAlternativeShi
     /// The URL where completed results are available, only set if status &#x3D;&#x3D; &#39;Complete&#39;
     /// </summary>
     /// <value>The URL where completed results are available, only set if status &#x3D;&#x3D; &#39;Complete&#39;</value>
-    [DataMember(Name = "downloadUrl", EmitDefaultValue = false)]
+    [JsonPropertyName("downloadUrl")]
     public string DownloadUrl { get; set; }
 
 
@@ -156,7 +156,7 @@ public partial class BuAlternativeShiftJobResponse : IEquatable<BuAlternativeShi
     /// Any error information, only set if the status &#x3D;&#x3D; &#39;Error&#39;
     /// </summary>
     /// <value>Any error information, only set if the status &#x3D;&#x3D; &#39;Error&#39;</value>
-    [DataMember(Name = "error", EmitDefaultValue = false)]
+    [JsonPropertyName("error")]
     public ErrorBody Error { get; set; }
 
 
@@ -165,7 +165,7 @@ public partial class BuAlternativeShiftJobResponse : IEquatable<BuAlternativeShi
     /// Schema template for deserializing data returned from the downloadUrl. Use if type &#x3D;&#x3D; &#39;ListOffers&#39; or &#39;SearchOffers&#39;
     /// </summary>
     /// <value>Schema template for deserializing data returned from the downloadUrl. Use if type &#x3D;&#x3D; &#39;ListOffers&#39; or &#39;SearchOffers&#39;</value>
-    [DataMember(Name = "viewOffersResults", EmitDefaultValue = false)]
+    [JsonPropertyName("viewOffersResults")]
     public AlternativeShiftOffersViewResponseTemplate ViewOffersResults { get; set; }
 
 
@@ -174,7 +174,7 @@ public partial class BuAlternativeShiftJobResponse : IEquatable<BuAlternativeShi
     /// Schema template for deserializing data returned from the downloadUrl. Use if type &#x3D;&#x3D; &#39;ListUserTrades&#39; or &#39;SearchTrades&#39;
     /// </summary>
     /// <value>Schema template for deserializing data returned from the downloadUrl. Use if type &#x3D;&#x3D; &#39;ListUserTrades&#39; or &#39;SearchTrades&#39;</value>
-    [DataMember(Name = "viewTradesResults", EmitDefaultValue = false)]
+    [JsonPropertyName("viewTradesResults")]
     public AlternativeShiftTradesViewResponseTemplate ViewTradesResults { get; set; }
 
 
@@ -183,7 +183,7 @@ public partial class BuAlternativeShiftJobResponse : IEquatable<BuAlternativeShi
     /// Schema template for deserializing data returned from the downloadUrl. Use if type &#x3D;&#x3D; &#39;BulkUpdateTrades&#39;
     /// </summary>
     /// <value>Schema template for deserializing data returned from the downloadUrl. Use if type &#x3D;&#x3D; &#39;BulkUpdateTrades&#39;</value>
-    [DataMember(Name = "bulkUpdateTradesResults", EmitDefaultValue = false)]
+    [JsonPropertyName("bulkUpdateTradesResults")]
     public AlternativeShiftBulkUpdateTradesResponseTemplate BulkUpdateTradesResults { get; set; }
 
 
@@ -192,7 +192,7 @@ public partial class BuAlternativeShiftJobResponse : IEquatable<BuAlternativeShi
     /// The URI for this object
     /// </summary>
     /// <value>The URI for this object</value>
-    [DataMember(Name = "selfUri", EmitDefaultValue = false)]
+    [JsonPropertyName("selfUri")]
     public string SelfUri { get; private set; }
 
 

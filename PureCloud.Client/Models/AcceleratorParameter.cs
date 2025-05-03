@@ -1,4 +1,3 @@
-using System.Runtime.Serialization;
 using System.Text;
 using System.Text.Json.Serialization;
 
@@ -7,7 +6,6 @@ namespace PureCloud.Client.Models;
 /// <summary>
 /// Input parameter for a CX infrastructure as code accelerator
 /// </summary>
-[DataContract]
 public partial class AcceleratorParameter : IEquatable<AcceleratorParameter>
 {
 
@@ -27,13 +25,9 @@ public partial class AcceleratorParameter : IEquatable<AcceleratorParameter>
         this.Value = Value;
     }
 
-
-
     /// <summary>
     /// Parameter Name
     /// </summary>
-    /// <value>Parameter Name</value>
-    [DataMember(Name = "name", EmitDefaultValue = false)]
     public string Name { get; set; }
 
 
@@ -41,8 +35,6 @@ public partial class AcceleratorParameter : IEquatable<AcceleratorParameter>
     /// <summary>
     /// Parameter Value
     /// </summary>
-    /// <value>Parameter Value</value>
-    [DataMember(Name = "value", EmitDefaultValue = false)]
     public string Value { get; set; }
 
 

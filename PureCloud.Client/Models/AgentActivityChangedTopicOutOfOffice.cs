@@ -1,12 +1,12 @@
-using System.Runtime.Serialization;
 using System.Text;
+using System.Text.Json.Serialization;
 
 namespace PureCloud.Client.Models;
 
 /// <summary>
 /// AgentActivityChangedTopicOutOfOffice
 /// </summary>
-[DataContract]
+
 public partial class AgentActivityChangedTopicOutOfOffice : IEquatable<AgentActivityChangedTopicOutOfOffice>
 {
     /// <summary>
@@ -26,7 +26,7 @@ public partial class AgentActivityChangedTopicOutOfOffice : IEquatable<AgentActi
     /// <summary>
     /// Gets or Sets Active
     /// </summary>
-    [DataMember(Name = "active", EmitDefaultValue = false)]
+    [JsonPropertyName("active")]
     public bool? Active { get; set; }
 
 
@@ -34,7 +34,7 @@ public partial class AgentActivityChangedTopicOutOfOffice : IEquatable<AgentActi
     /// <summary>
     /// Gets or Sets ModifiedDate
     /// </summary>
-    [DataMember(Name = "modifiedDate", EmitDefaultValue = false)]
+    [JsonPropertyName("modifiedDate")]
     public DateTime? ModifiedDate { get; set; }
 
 

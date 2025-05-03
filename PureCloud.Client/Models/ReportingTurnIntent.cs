@@ -1,12 +1,12 @@
-using System.Runtime.Serialization;
 using System.Text;
+using System.Text.Json.Serialization;
 
 namespace PureCloud.Client.Models;
 
 /// <summary>
 /// ReportingTurnIntent
 /// </summary>
-[DataContract]
+
 public partial class ReportingTurnIntent : IEquatable<ReportingTurnIntent>
 {
     /// <summary>
@@ -29,7 +29,7 @@ public partial class ReportingTurnIntent : IEquatable<ReportingTurnIntent>
     /// The name of the intent detected during this reporting turn.
     /// </summary>
     /// <value>The name of the intent detected during this reporting turn.</value>
-    [DataMember(Name = "name", EmitDefaultValue = false)]
+    [JsonPropertyName("name")]
     public string Name { get; set; }
 
 
@@ -38,7 +38,7 @@ public partial class ReportingTurnIntent : IEquatable<ReportingTurnIntent>
     /// The confidence score of the intent detected during this reporting turn.
     /// </summary>
     /// <value>The confidence score of the intent detected during this reporting turn.</value>
-    [DataMember(Name = "confidence", EmitDefaultValue = false)]
+    [JsonPropertyName("confidence")]
     public double? Confidence { get; set; }
 
 
@@ -47,7 +47,7 @@ public partial class ReportingTurnIntent : IEquatable<ReportingTurnIntent>
     /// The slots detected during this reporting turn.
     /// </summary>
     /// <value>The slots detected during this reporting turn.</value>
-    [DataMember(Name = "slots", EmitDefaultValue = false)]
+    [JsonPropertyName("slots")]
     public List<ReportingTurnIntentSlot> Slots { get; set; }
 
 

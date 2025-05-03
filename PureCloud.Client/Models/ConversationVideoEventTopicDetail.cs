@@ -1,12 +1,12 @@
-using System.Runtime.Serialization;
 using System.Text;
+using System.Text.Json.Serialization;
 
 namespace PureCloud.Client.Models;
 
 /// <summary>
 /// ConversationVideoEventTopicDetail
 /// </summary>
-[DataContract]
+
 public partial class ConversationVideoEventTopicDetail : IEquatable<ConversationVideoEventTopicDetail>
 {
     /// <summary>
@@ -30,7 +30,7 @@ public partial class ConversationVideoEventTopicDetail : IEquatable<Conversation
     /// <summary>
     /// Gets or Sets ErrorCode
     /// </summary>
-    [DataMember(Name = "errorCode", EmitDefaultValue = false)]
+    [JsonPropertyName("errorCode")]
     public string ErrorCode { get; set; }
 
 
@@ -38,7 +38,7 @@ public partial class ConversationVideoEventTopicDetail : IEquatable<Conversation
     /// <summary>
     /// Gets or Sets FieldName
     /// </summary>
-    [DataMember(Name = "fieldName", EmitDefaultValue = false)]
+    [JsonPropertyName("fieldName")]
     public string FieldName { get; set; }
 
 
@@ -46,7 +46,7 @@ public partial class ConversationVideoEventTopicDetail : IEquatable<Conversation
     /// <summary>
     /// Gets or Sets EntityId
     /// </summary>
-    [DataMember(Name = "entityId", EmitDefaultValue = false)]
+    [JsonPropertyName("entityId")]
     public string EntityId { get; set; }
 
 
@@ -54,7 +54,7 @@ public partial class ConversationVideoEventTopicDetail : IEquatable<Conversation
     /// <summary>
     /// Gets or Sets EntityName
     /// </summary>
-    [DataMember(Name = "entityName", EmitDefaultValue = false)]
+    [JsonPropertyName("entityName")]
     public string EntityName { get; set; }
 
 

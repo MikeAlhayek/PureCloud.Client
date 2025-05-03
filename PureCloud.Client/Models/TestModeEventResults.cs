@@ -1,12 +1,12 @@
-using System.Runtime.Serialization;
 using System.Text;
+using System.Text.Json.Serialization;
 
 namespace PureCloud.Client.Models;
 
 /// <summary>
 /// Information about event test mode execution
 /// </summary>
-[DataContract]
+
 public partial class TestModeEventResults : IEquatable<TestModeEventResults>
 {
     /// <summary>
@@ -27,7 +27,7 @@ public partial class TestModeEventResults : IEquatable<TestModeEventResults>
     /// Information about the validation of the schema of the event body passed in to test mode
     /// </summary>
     /// <value>Information about the validation of the schema of the event body passed in to test mode</value>
-    [DataMember(Name = "schemaValidation", EmitDefaultValue = false)]
+    [JsonPropertyName("schemaValidation")]
     public TestSchemaOperation SchemaValidation { get; set; }
 
 
@@ -36,7 +36,7 @@ public partial class TestModeEventResults : IEquatable<TestModeEventResults>
     /// Information about matched and unmatched triggers
     /// </summary>
     /// <value>Information about matched and unmatched triggers</value>
-    [DataMember(Name = "triggerMatchValidation", EmitDefaultValue = false)]
+    [JsonPropertyName("triggerMatchValidation")]
     public TestMatchesEventOperation TriggerMatchValidation { get; set; }
 
 

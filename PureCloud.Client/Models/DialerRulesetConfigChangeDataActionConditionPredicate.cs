@@ -7,14 +7,14 @@ namespace PureCloud.Client.Models;
 /// <summary>
 /// DialerRulesetConfigChangeDataActionConditionPredicate
 /// </summary>
-[DataContract]
+
 public partial class DialerRulesetConfigChangeDataActionConditionPredicate : IEquatable<DialerRulesetConfigChangeDataActionConditionPredicate>
 {
     /// <summary>
     /// The operation with which to evaluate this condition
     /// </summary>
     /// <value>The operation with which to evaluate this condition</value>
-    [JsonConverter(typeof(JsonStringEnumConverter))]
+    
     public enum OutputOperatorEnum
     {
         /// <summary>
@@ -89,7 +89,7 @@ public partial class DialerRulesetConfigChangeDataActionConditionPredicate : IEq
     /// The operation with which to evaluate this condition
     /// </summary>
     /// <value>The operation with which to evaluate this condition</value>
-    [DataMember(Name = "outputOperator", EmitDefaultValue = false)]
+    [JsonPropertyName("outputOperator")]
     public OutputOperatorEnum? OutputOperator { get; set; }
     /// <summary>
     /// Initializes a new instance of the <see cref="DialerRulesetConfigChangeDataActionConditionPredicate" /> class.
@@ -117,7 +117,7 @@ public partial class DialerRulesetConfigChangeDataActionConditionPredicate : IEq
     /// The name of an output field from the data action&#39;s output to use for this condition
     /// </summary>
     /// <value>The name of an output field from the data action&#39;s output to use for this condition</value>
-    [DataMember(Name = "outputField", EmitDefaultValue = false)]
+    [JsonPropertyName("outputField")]
     public string OutputField { get; set; }
 
 
@@ -128,7 +128,7 @@ public partial class DialerRulesetConfigChangeDataActionConditionPredicate : IEq
     /// The value to compare against for this condition
     /// </summary>
     /// <value>The value to compare against for this condition</value>
-    [DataMember(Name = "comparisonValue", EmitDefaultValue = false)]
+    [JsonPropertyName("comparisonValue")]
     public string ComparisonValue { get; set; }
 
 
@@ -137,7 +137,7 @@ public partial class DialerRulesetConfigChangeDataActionConditionPredicate : IEq
     /// The result of this predicate if the requested output field is missing from the data action&#39;s result
     /// </summary>
     /// <value>The result of this predicate if the requested output field is missing from the data action&#39;s result</value>
-    [DataMember(Name = "outputFieldMissingResolution", EmitDefaultValue = false)]
+    [JsonPropertyName("outputFieldMissingResolution")]
     public bool? OutputFieldMissingResolution { get; set; }
 
 
@@ -146,7 +146,7 @@ public partial class DialerRulesetConfigChangeDataActionConditionPredicate : IEq
     /// If true, inverts the result of evaluating this Predicate. Default is false.
     /// </summary>
     /// <value>If true, inverts the result of evaluating this Predicate. Default is false.</value>
-    [DataMember(Name = "inverted", EmitDefaultValue = false)]
+    [JsonPropertyName("inverted")]
     public bool? Inverted { get; set; }
 
 
@@ -154,7 +154,7 @@ public partial class DialerRulesetConfigChangeDataActionConditionPredicate : IEq
     /// <summary>
     /// Gets or Sets AdditionalProperties
     /// </summary>
-    [DataMember(Name = "additionalProperties", EmitDefaultValue = false)]
+    [JsonPropertyName("additionalProperties")]
     public Dictionary<string, object> AdditionalProperties { get; set; }
 
 

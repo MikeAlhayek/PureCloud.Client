@@ -1,12 +1,12 @@
-using System.Runtime.Serialization;
 using System.Text;
+using System.Text.Json.Serialization;
 
 namespace PureCloud.Client.Models;
 
 /// <summary>
 /// TranscriptionTopicTranscriptionMessage
 /// </summary>
-[DataContract]
+
 public partial class TranscriptionTopicTranscriptionMessage : IEquatable<TranscriptionTopicTranscriptionMessage>
 {
     /// <summary>
@@ -38,7 +38,7 @@ public partial class TranscriptionTopicTranscriptionMessage : IEquatable<Transcr
     /// <summary>
     /// Gets or Sets EventTime
     /// </summary>
-    [DataMember(Name = "eventTime", EmitDefaultValue = false)]
+    [JsonPropertyName("eventTime")]
     public DateTime? EventTime { get; set; }
 
 
@@ -46,7 +46,7 @@ public partial class TranscriptionTopicTranscriptionMessage : IEquatable<Transcr
     /// <summary>
     /// Gets or Sets OrganizationId
     /// </summary>
-    [DataMember(Name = "organizationId", EmitDefaultValue = false)]
+    [JsonPropertyName("organizationId")]
     public string OrganizationId { get; set; }
 
 
@@ -54,7 +54,7 @@ public partial class TranscriptionTopicTranscriptionMessage : IEquatable<Transcr
     /// <summary>
     /// Gets or Sets ConversationId
     /// </summary>
-    [DataMember(Name = "conversationId", EmitDefaultValue = false)]
+    [JsonPropertyName("conversationId")]
     public string ConversationId { get; set; }
 
 
@@ -62,7 +62,7 @@ public partial class TranscriptionTopicTranscriptionMessage : IEquatable<Transcr
     /// <summary>
     /// Gets or Sets CommunicationId
     /// </summary>
-    [DataMember(Name = "communicationId", EmitDefaultValue = false)]
+    [JsonPropertyName("communicationId")]
     public string CommunicationId { get; set; }
 
 
@@ -70,7 +70,7 @@ public partial class TranscriptionTopicTranscriptionMessage : IEquatable<Transcr
     /// <summary>
     /// Gets or Sets SessionStartTimeMs
     /// </summary>
-    [DataMember(Name = "sessionStartTimeMs", EmitDefaultValue = false)]
+    [JsonPropertyName("sessionStartTimeMs")]
     public long? SessionStartTimeMs { get; set; }
 
 
@@ -78,7 +78,7 @@ public partial class TranscriptionTopicTranscriptionMessage : IEquatable<Transcr
     /// <summary>
     /// Gets or Sets TranscriptionStartTimeMs
     /// </summary>
-    [DataMember(Name = "transcriptionStartTimeMs", EmitDefaultValue = false)]
+    [JsonPropertyName("transcriptionStartTimeMs")]
     public long? TranscriptionStartTimeMs { get; set; }
 
 
@@ -86,7 +86,7 @@ public partial class TranscriptionTopicTranscriptionMessage : IEquatable<Transcr
     /// <summary>
     /// Gets or Sets Transcripts
     /// </summary>
-    [DataMember(Name = "transcripts", EmitDefaultValue = false)]
+    [JsonPropertyName("transcripts")]
     public List<TranscriptionTopicTranscriptResult> Transcripts { get; set; }
 
 
@@ -94,7 +94,7 @@ public partial class TranscriptionTopicTranscriptionMessage : IEquatable<Transcr
     /// <summary>
     /// Gets or Sets Status
     /// </summary>
-    [DataMember(Name = "status", EmitDefaultValue = false)]
+    [JsonPropertyName("status")]
     public TranscriptionTopicTranscriptionRequestStatus Status { get; set; }
 
 

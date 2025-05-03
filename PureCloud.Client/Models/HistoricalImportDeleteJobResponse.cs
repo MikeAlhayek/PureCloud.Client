@@ -7,14 +7,14 @@ namespace PureCloud.Client.Models;
 /// <summary>
 /// HistoricalImportDeleteJobResponse
 /// </summary>
-[DataContract]
+
 public partial class HistoricalImportDeleteJobResponse : IEquatable<HistoricalImportDeleteJobResponse>
 {
     /// <summary>
     /// Property denoting the status of the delete.
     /// </summary>
     /// <value>Property denoting the status of the delete.</value>
-    [JsonConverter(typeof(JsonStringEnumConverter))]
+    
     public enum StatusEnum
     {
         /// <summary>
@@ -47,7 +47,7 @@ public partial class HistoricalImportDeleteJobResponse : IEquatable<HistoricalIm
     /// Property denoting the status of the delete.
     /// </summary>
     /// <value>Property denoting the status of the delete.</value>
-    [DataMember(Name = "status", EmitDefaultValue = false)]
+    [JsonPropertyName("status")]
     public StatusEnum? Status { get; private set; }
     /// <summary>
     /// Initializes a new instance of the <see cref="HistoricalImportDeleteJobResponse" /> class.
@@ -65,7 +65,7 @@ public partial class HistoricalImportDeleteJobResponse : IEquatable<HistoricalIm
     /// The globally unique identifier for the object.
     /// </summary>
     /// <value>The globally unique identifier for the object.</value>
-    [DataMember(Name = "id", EmitDefaultValue = false)]
+    [JsonPropertyName("id")]
     public string Id { get; private set; }
 
 
@@ -73,7 +73,7 @@ public partial class HistoricalImportDeleteJobResponse : IEquatable<HistoricalIm
     /// <summary>
     /// Gets or Sets Name
     /// </summary>
-    [DataMember(Name = "name", EmitDefaultValue = false)]
+    [JsonPropertyName("name")]
     public string Name { get; set; }
 
 
@@ -84,7 +84,7 @@ public partial class HistoricalImportDeleteJobResponse : IEquatable<HistoricalIm
     /// The URI for this object
     /// </summary>
     /// <value>The URI for this object</value>
-    [DataMember(Name = "selfUri", EmitDefaultValue = false)]
+    [JsonPropertyName("selfUri")]
     public string SelfUri { get; private set; }
 
 

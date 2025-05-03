@@ -7,14 +7,14 @@ namespace PureCloud.Client.Models;
 /// <summary>
 /// AlternativeShiftTradeResponse
 /// </summary>
-[DataContract]
+
 public partial class AlternativeShiftTradeResponse : IEquatable<AlternativeShiftTradeResponse>
 {
     /// <summary>
     /// The state of this alternative shift trade
     /// </summary>
     /// <value>The state of this alternative shift trade</value>
-    [JsonConverter(typeof(JsonStringEnumConverter))]
+    
     public enum StateEnum
     {
         /// <summary>
@@ -59,7 +59,7 @@ public partial class AlternativeShiftTradeResponse : IEquatable<AlternativeShift
     /// The processing status of this alternative shift trade
     /// </summary>
     /// <value>The processing status of this alternative shift trade</value>
-    [JsonConverter(typeof(JsonStringEnumConverter))]
+    
     public enum ProcessingStatusEnum
     {
         /// <summary>
@@ -109,7 +109,7 @@ public partial class AlternativeShiftTradeResponse : IEquatable<AlternativeShift
     /// <summary>
     /// Gets or Sets Violations
     /// </summary>
-    [JsonConverter(typeof(JsonStringEnumConverter))]
+    
     public enum ViolationsEnum
     {
         /// <summary>
@@ -130,13 +130,13 @@ public partial class AlternativeShiftTradeResponse : IEquatable<AlternativeShift
     /// The state of this alternative shift trade
     /// </summary>
     /// <value>The state of this alternative shift trade</value>
-    [DataMember(Name = "state", EmitDefaultValue = false)]
+    [JsonPropertyName("state")]
     public StateEnum? State { get; set; }
     /// <summary>
     /// The processing status of this alternative shift trade
     /// </summary>
     /// <value>The processing status of this alternative shift trade</value>
-    [DataMember(Name = "processingStatus", EmitDefaultValue = false)]
+    [JsonPropertyName("processingStatus")]
     public ProcessingStatusEnum? ProcessingStatus { get; set; }
 
     /// <summary>
@@ -188,7 +188,7 @@ public partial class AlternativeShiftTradeResponse : IEquatable<AlternativeShift
     /// The globally unique identifier for the object.
     /// </summary>
     /// <value>The globally unique identifier for the object.</value>
-    [DataMember(Name = "id", EmitDefaultValue = false)]
+    [JsonPropertyName("id")]
     public string Id { get; private set; }
 
 
@@ -197,7 +197,7 @@ public partial class AlternativeShiftTradeResponse : IEquatable<AlternativeShift
     /// The job ID of the alternative shift offer listing, from which the trade was chosen
     /// </summary>
     /// <value>The job ID of the alternative shift offer listing, from which the trade was chosen</value>
-    [DataMember(Name = "shiftOfferJobId", EmitDefaultValue = false)]
+    [JsonPropertyName("shiftOfferJobId")]
     public string ShiftOfferJobId { get; set; }
 
 
@@ -206,7 +206,7 @@ public partial class AlternativeShiftTradeResponse : IEquatable<AlternativeShift
     /// The existing shifts from the offer, may be empty
     /// </summary>
     /// <value>The existing shifts from the offer, may be empty</value>
-    [DataMember(Name = "existingShifts", EmitDefaultValue = false)]
+    [JsonPropertyName("existingShifts")]
     public List<AlternativeShiftAgentScheduledShift> ExistingShifts { get; set; }
 
 
@@ -215,7 +215,7 @@ public partial class AlternativeShiftTradeResponse : IEquatable<AlternativeShift
     /// The offered shifts from the offer, may be empty
     /// </summary>
     /// <value>The offered shifts from the offer, may be empty</value>
-    [DataMember(Name = "offeredShifts", EmitDefaultValue = false)]
+    [JsonPropertyName("offeredShifts")]
     public List<AlternativeShiftAgentScheduledShift> OfferedShifts { get; set; }
 
 
@@ -224,7 +224,7 @@ public partial class AlternativeShiftTradeResponse : IEquatable<AlternativeShift
     /// The existing schedule information associated with the trade
     /// </summary>
     /// <value>The existing schedule information associated with the trade</value>
-    [DataMember(Name = "schedule", EmitDefaultValue = false)]
+    [JsonPropertyName("schedule")]
     public AlternativeShiftScheduleLookup Schedule { get; set; }
 
 
@@ -233,7 +233,7 @@ public partial class AlternativeShiftTradeResponse : IEquatable<AlternativeShift
     /// The management unit of this alternative shift trade request
     /// </summary>
     /// <value>The management unit of this alternative shift trade request</value>
-    [DataMember(Name = "managementUnit", EmitDefaultValue = false)]
+    [JsonPropertyName("managementUnit")]
     public ManagementUnitReference ManagementUnit { get; set; }
 
 
@@ -242,7 +242,7 @@ public partial class AlternativeShiftTradeResponse : IEquatable<AlternativeShift
     /// The user who submitted the trade request
     /// </summary>
     /// <value>The user who submitted the trade request</value>
-    [DataMember(Name = "user", EmitDefaultValue = false)]
+    [JsonPropertyName("user")]
     public UserReference User { get; set; }
 
 
@@ -251,7 +251,7 @@ public partial class AlternativeShiftTradeResponse : IEquatable<AlternativeShift
     /// The start week date of the associated schedule in yyyy-MM-dd format. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd
     /// </summary>
     /// <value>The start week date of the associated schedule in yyyy-MM-dd format. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd</value>
-    [DataMember(Name = "weekDate", EmitDefaultValue = false)]
+    [JsonPropertyName("weekDate")]
     public string WeekDate { get; set; }
 
 
@@ -260,7 +260,7 @@ public partial class AlternativeShiftTradeResponse : IEquatable<AlternativeShift
     /// The date when the trade will expire in ISO-8601 format. The trade cannot be approved after expiration
     /// </summary>
     /// <value>The date when the trade will expire in ISO-8601 format. The trade cannot be approved after expiration</value>
-    [DataMember(Name = "expirationDate", EmitDefaultValue = false)]
+    [JsonPropertyName("expirationDate")]
     public DateTime? ExpirationDate { get; set; }
 
 
@@ -273,7 +273,7 @@ public partial class AlternativeShiftTradeResponse : IEquatable<AlternativeShift
     /// The timestamp of when the trade request was reviewed by the system in ISO-8601 format
     /// </summary>
     /// <value>The timestamp of when the trade request was reviewed by the system in ISO-8601 format</value>
-    [DataMember(Name = "systemDateReviewed", EmitDefaultValue = false)]
+    [JsonPropertyName("systemDateReviewed")]
     public DateTime? SystemDateReviewed { get; set; }
 
 
@@ -282,7 +282,7 @@ public partial class AlternativeShiftTradeResponse : IEquatable<AlternativeShift
     /// The timestamp of when the trade request was reviewed by an admin in ISO-8601 format
     /// </summary>
     /// <value>The timestamp of when the trade request was reviewed by an admin in ISO-8601 format</value>
-    [DataMember(Name = "adminDateReviewed", EmitDefaultValue = false)]
+    [JsonPropertyName("adminDateReviewed")]
     public DateTime? AdminDateReviewed { get; set; }
 
 
@@ -291,7 +291,7 @@ public partial class AlternativeShiftTradeResponse : IEquatable<AlternativeShift
     /// The admin who reviewed this alternative shift trade after system denial
     /// </summary>
     /// <value>The admin who reviewed this alternative shift trade after system denial</value>
-    [DataMember(Name = "adminReviewedBy", EmitDefaultValue = false)]
+    [JsonPropertyName("adminReviewedBy")]
     public UserReference AdminReviewedBy { get; set; }
 
 
@@ -300,7 +300,7 @@ public partial class AlternativeShiftTradeResponse : IEquatable<AlternativeShift
     /// A list of trade match violations
     /// </summary>
     /// <value>A list of trade match violations</value>
-    [DataMember(Name = "violations", EmitDefaultValue = false)]
+    [JsonPropertyName("violations")]
     public List<ViolationsEnum> Violations { get; set; }
 
 
@@ -309,7 +309,7 @@ public partial class AlternativeShiftTradeResponse : IEquatable<AlternativeShift
     /// Version metadata for this alternative shift trade
     /// </summary>
     /// <value>Version metadata for this alternative shift trade</value>
-    [DataMember(Name = "metadata", EmitDefaultValue = false)]
+    [JsonPropertyName("metadata")]
     public WfmVersionedEntityMetadata Metadata { get; set; }
 
 
@@ -318,7 +318,7 @@ public partial class AlternativeShiftTradeResponse : IEquatable<AlternativeShift
     /// The URI for this object
     /// </summary>
     /// <value>The URI for this object</value>
-    [DataMember(Name = "selfUri", EmitDefaultValue = false)]
+    [JsonPropertyName("selfUri")]
     public string SelfUri { get; private set; }
 
 

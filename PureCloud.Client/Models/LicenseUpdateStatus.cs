@@ -1,12 +1,12 @@
-using System.Runtime.Serialization;
 using System.Text;
+using System.Text.Json.Serialization;
 
 namespace PureCloud.Client.Models;
 
 /// <summary>
 /// LicenseUpdateStatus
 /// </summary>
-[DataContract]
+
 public partial class LicenseUpdateStatus : IEquatable<LicenseUpdateStatus>
 {
     /// <summary>
@@ -28,7 +28,7 @@ public partial class LicenseUpdateStatus : IEquatable<LicenseUpdateStatus>
     /// <summary>
     /// Gets or Sets UserId
     /// </summary>
-    [DataMember(Name = "userId", EmitDefaultValue = false)]
+    [JsonPropertyName("userId")]
     public string UserId { get; set; }
 
 
@@ -36,7 +36,7 @@ public partial class LicenseUpdateStatus : IEquatable<LicenseUpdateStatus>
     /// <summary>
     /// Gets or Sets LicenseId
     /// </summary>
-    [DataMember(Name = "licenseId", EmitDefaultValue = false)]
+    [JsonPropertyName("licenseId")]
     public string LicenseId { get; set; }
 
 
@@ -44,7 +44,7 @@ public partial class LicenseUpdateStatus : IEquatable<LicenseUpdateStatus>
     /// <summary>
     /// Gets or Sets Result
     /// </summary>
-    [DataMember(Name = "result", EmitDefaultValue = false)]
+    [JsonPropertyName("result")]
     public string Result { get; set; }
 
 

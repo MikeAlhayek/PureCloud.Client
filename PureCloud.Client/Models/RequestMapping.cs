@@ -7,14 +7,14 @@ namespace PureCloud.Client.Models;
 /// <summary>
 /// RequestMapping
 /// </summary>
-[DataContract]
+
 public partial class RequestMapping : IEquatable<RequestMapping>
 {
     /// <summary>
     /// Type of the value supplied
     /// </summary>
     /// <value>Type of the value supplied</value>
-    [JsonConverter(typeof(JsonStringEnumConverter))]
+    
     public enum AttributeTypeEnum
     {
         /// <summary>
@@ -53,7 +53,7 @@ public partial class RequestMapping : IEquatable<RequestMapping>
     /// Method of finding value to use with Attribute
     /// </summary>
     /// <value>Method of finding value to use with Attribute</value>
-    [JsonConverter(typeof(JsonStringEnumConverter))]
+    
     public enum MappingTypeEnum
     {
         /// <summary>
@@ -80,13 +80,13 @@ public partial class RequestMapping : IEquatable<RequestMapping>
     /// Type of the value supplied
     /// </summary>
     /// <value>Type of the value supplied</value>
-    [DataMember(Name = "attributeType", EmitDefaultValue = false)]
+    [JsonPropertyName("attributeType")]
     public AttributeTypeEnum? AttributeType { get; set; }
     /// <summary>
     /// Method of finding value to use with Attribute
     /// </summary>
     /// <value>Method of finding value to use with Attribute</value>
-    [DataMember(Name = "mappingType", EmitDefaultValue = false)]
+    [JsonPropertyName("mappingType")]
     public MappingTypeEnum? MappingType { get; set; }
     /// <summary>
     /// Initializes a new instance of the <see cref="RequestMapping" /> class.
@@ -110,7 +110,7 @@ public partial class RequestMapping : IEquatable<RequestMapping>
     /// Name of the Integration Action Attribute to supply the value for
     /// </summary>
     /// <value>Name of the Integration Action Attribute to supply the value for</value>
-    [DataMember(Name = "name", EmitDefaultValue = false)]
+    [JsonPropertyName("name")]
     public string Name { get; set; }
 
 
@@ -123,7 +123,7 @@ public partial class RequestMapping : IEquatable<RequestMapping>
     /// Value to supply for the specified Attribute
     /// </summary>
     /// <value>Value to supply for the specified Attribute</value>
-    [DataMember(Name = "value", EmitDefaultValue = false)]
+    [JsonPropertyName("value")]
     public string Value { get; set; }
 
 

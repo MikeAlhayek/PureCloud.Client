@@ -1,12 +1,12 @@
-using System.Runtime.Serialization;
 using System.Text;
+using System.Text.Json.Serialization;
 
 namespace PureCloud.Client.Models;
 
 /// <summary>
 /// ReportingTurnKnowledgeSearchEvent
 /// </summary>
-[DataContract]
+
 public partial class ReportingTurnKnowledgeSearchEvent : IEquatable<ReportingTurnKnowledgeSearchEvent>
 {
     /// <summary>
@@ -33,7 +33,7 @@ public partial class ReportingTurnKnowledgeSearchEvent : IEquatable<ReportingTur
     /// The ID of this knowledge search.
     /// </summary>
     /// <value>The ID of this knowledge search.</value>
-    [DataMember(Name = "searchId", EmitDefaultValue = false)]
+    [JsonPropertyName("searchId")]
     public string SearchId { get; set; }
 
 
@@ -42,7 +42,7 @@ public partial class ReportingTurnKnowledgeSearchEvent : IEquatable<ReportingTur
     /// The Knowledge Base ID that the captured knowledge data relates to.
     /// </summary>
     /// <value>The Knowledge Base ID that the captured knowledge data relates to.</value>
-    [DataMember(Name = "knowledgeBaseId", EmitDefaultValue = false)]
+    [JsonPropertyName("knowledgeBaseId")]
     public string KnowledgeBaseId { get; set; }
 
 
@@ -51,7 +51,7 @@ public partial class ReportingTurnKnowledgeSearchEvent : IEquatable<ReportingTur
     /// The list of search documents that the feedback applies to.
     /// </summary>
     /// <value>The list of search documents that the feedback applies to.</value>
-    [DataMember(Name = "documents", EmitDefaultValue = false)]
+    [JsonPropertyName("documents")]
     public List<ReportingTurnKnowledgeDocument> Documents { get; set; }
 
 
@@ -60,7 +60,7 @@ public partial class ReportingTurnKnowledgeSearchEvent : IEquatable<ReportingTur
     /// The search query that was used to search the Knowledge Base documents for a matching question.
     /// </summary>
     /// <value>The search query that was used to search the Knowledge Base documents for a matching question.</value>
-    [DataMember(Name = "searchQuery", EmitDefaultValue = false)]
+    [JsonPropertyName("searchQuery")]
     public string SearchQuery { get; set; }
 
 
@@ -69,7 +69,7 @@ public partial class ReportingTurnKnowledgeSearchEvent : IEquatable<ReportingTur
     /// The document ID of the search answer.
     /// </summary>
     /// <value>The document ID of the search answer.</value>
-    [DataMember(Name = "answerDocumentId", EmitDefaultValue = false)]
+    [JsonPropertyName("answerDocumentId")]
     public string AnswerDocumentId { get; set; }
 
 

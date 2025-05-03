@@ -1,4 +1,3 @@
-using System.Runtime.Serialization;
 using System.Text;
 using System.Text.Json.Serialization;
 
@@ -7,7 +6,7 @@ namespace PureCloud.Client.Models;
 /// <summary>
 /// AdminAgentWorkPlanPreferenceResponse
 /// </summary>
-[DataContract]
+
 public partial class AdminAgentWorkPlanPreferenceResponse : IEquatable<AdminAgentWorkPlanPreferenceResponse>
 {
 
@@ -34,7 +33,7 @@ public partial class AdminAgentWorkPlanPreferenceResponse : IEquatable<AdminAgen
     /// The globally unique identifier for the object.
     /// </summary>
     /// <value>The globally unique identifier for the object.</value>
-    [DataMember(Name = "id", EmitDefaultValue = false)]
+    [JsonPropertyName("id")]
     public string Id { get; private set; }
 
 
@@ -43,7 +42,7 @@ public partial class AdminAgentWorkPlanPreferenceResponse : IEquatable<AdminAgen
     /// The list of work plans that belong to this bid group
     /// </summary>
     /// <value>The list of work plans that belong to this bid group</value>
-    [DataMember(Name = "workPlans", EmitDefaultValue = false)]
+    [JsonPropertyName("workPlans")]
     public List<WorkPlanReference> WorkPlans { get; set; }
 
 
@@ -52,7 +51,7 @@ public partial class AdminAgentWorkPlanPreferenceResponse : IEquatable<AdminAgen
     /// The list of agents work plan bidding preferences
     /// </summary>
     /// <value>The list of agents work plan bidding preferences</value>
-    [DataMember(Name = "agentWorkPlanBidPreferences", EmitDefaultValue = false)]
+    [JsonPropertyName("agentWorkPlanBidPreferences")]
     public List<AdminAgentWorkPlanBiddingPreference> AgentWorkPlanBidPreferences { get; set; }
 
 
@@ -61,7 +60,7 @@ public partial class AdminAgentWorkPlanPreferenceResponse : IEquatable<AdminAgen
     /// The URI for this object
     /// </summary>
     /// <value>The URI for this object</value>
-    [DataMember(Name = "selfUri", EmitDefaultValue = false)]
+    [JsonPropertyName("selfUri")]
     public string SelfUri { get; private set; }
 
 

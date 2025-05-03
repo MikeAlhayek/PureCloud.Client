@@ -1,4 +1,3 @@
-using System.Runtime.Serialization;
 using System.Text;
 using System.Text.Json.Serialization;
 
@@ -7,7 +6,7 @@ namespace PureCloud.Client.Models;
 /// <summary>
 /// TrustMemberCreate
 /// </summary>
-[DataContract]
+
 public partial class TrustMemberCreate : IEquatable<TrustMemberCreate>
 {
 
@@ -36,7 +35,7 @@ public partial class TrustMemberCreate : IEquatable<TrustMemberCreate>
     /// Trustee User or Group Id
     /// </summary>
     /// <value>Trustee User or Group Id</value>
-    [DataMember(Name = "id", EmitDefaultValue = false)]
+    [JsonPropertyName("id")]
     public string Id { get; set; }
 
 
@@ -45,7 +44,7 @@ public partial class TrustMemberCreate : IEquatable<TrustMemberCreate>
     /// The list of roles to be granted to this user or group. Roles will be granted in all divisions.
     /// </summary>
     /// <value>The list of roles to be granted to this user or group. Roles will be granted in all divisions.</value>
-    [DataMember(Name = "roleIds", EmitDefaultValue = false)]
+    [JsonPropertyName("roleIds")]
     public List<string> RoleIds { get; set; }
 
 
@@ -54,7 +53,7 @@ public partial class TrustMemberCreate : IEquatable<TrustMemberCreate>
     /// The list of trustor organization roles granting this user or group access paired with the divisions for those roles.
     /// </summary>
     /// <value>The list of trustor organization roles granting this user or group access paired with the divisions for those roles.</value>
-    [DataMember(Name = "roleDivisions", EmitDefaultValue = false)]
+    [JsonPropertyName("roleDivisions")]
     public RoleDivisionGrants RoleDivisions { get; set; }
 
 

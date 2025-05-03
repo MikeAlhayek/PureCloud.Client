@@ -7,14 +7,14 @@ namespace PureCloud.Client.Models;
 /// <summary>
 /// AsyncForecastOperationResult
 /// </summary>
-[DataContract]
+
 public partial class AsyncForecastOperationResult : IEquatable<AsyncForecastOperationResult>
 {
     /// <summary>
     /// The status of the operation
     /// </summary>
     /// <value>The status of the operation</value>
-    [JsonConverter(typeof(JsonStringEnumConverter))]
+    
     public enum StatusEnum
     {
         /// <summary>
@@ -53,7 +53,7 @@ public partial class AsyncForecastOperationResult : IEquatable<AsyncForecastOper
     /// The status of the operation
     /// </summary>
     /// <value>The status of the operation</value>
-    [DataMember(Name = "status", EmitDefaultValue = false)]
+    [JsonPropertyName("status")]
     public StatusEnum? Status { get; set; }
     /// <summary>
     /// Initializes a new instance of the <see cref="AsyncForecastOperationResult" /> class.
@@ -79,7 +79,7 @@ public partial class AsyncForecastOperationResult : IEquatable<AsyncForecastOper
     /// The ID for the operation
     /// </summary>
     /// <value>The ID for the operation</value>
-    [DataMember(Name = "operationId", EmitDefaultValue = false)]
+    [JsonPropertyName("operationId")]
     public string OperationId { get; set; }
 
 
@@ -88,7 +88,7 @@ public partial class AsyncForecastOperationResult : IEquatable<AsyncForecastOper
     /// The result of the operation.  Null unless status &#x3D;&#x3D; Complete
     /// </summary>
     /// <value>The result of the operation.  Null unless status &#x3D;&#x3D; Complete</value>
-    [DataMember(Name = "result", EmitDefaultValue = false)]
+    [JsonPropertyName("result")]
     public BuShortTermForecast Result { get; set; }
 
 
@@ -97,7 +97,7 @@ public partial class AsyncForecastOperationResult : IEquatable<AsyncForecastOper
     /// Percent progress for the operation
     /// </summary>
     /// <value>Percent progress for the operation</value>
-    [DataMember(Name = "progress", EmitDefaultValue = false)]
+    [JsonPropertyName("progress")]
     public int? Progress { get; set; }
 
 

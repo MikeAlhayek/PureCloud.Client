@@ -7,13 +7,13 @@ namespace PureCloud.Client.Models;
 /// <summary>
 /// FileUploadMode
 /// </summary>
-[DataContract]
+
 public partial class FileUploadMode : IEquatable<FileUploadMode>
 {
     /// <summary>
     /// Gets or Sets FileTypes
     /// </summary>
-    [JsonConverter(typeof(JsonStringEnumConverter))]
+    
     public enum FileTypesEnum
     {
         /// <summary>
@@ -60,7 +60,7 @@ public partial class FileUploadMode : IEquatable<FileUploadMode>
     /// A list of supported content types for uploading files.
     /// </summary>
     /// <value>A list of supported content types for uploading files.</value>
-    [DataMember(Name = "fileTypes", EmitDefaultValue = false)]
+    [JsonPropertyName("fileTypes")]
     public List<FileTypesEnum> FileTypes { get; set; }
 
 
@@ -69,7 +69,7 @@ public partial class FileUploadMode : IEquatable<FileUploadMode>
     /// The maximum file size for file uploads in kilobytes. Default is 10240 (10 MB)
     /// </summary>
     /// <value>The maximum file size for file uploads in kilobytes. Default is 10240 (10 MB)</value>
-    [DataMember(Name = "maxFileSizeKB", EmitDefaultValue = false)]
+    [JsonPropertyName("maxFileSizeKB")]
     public long? MaxFileSizeKB { get; set; }
 
 

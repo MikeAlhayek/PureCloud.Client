@@ -7,14 +7,14 @@ namespace PureCloud.Client.Models;
 /// <summary>
 /// CreateRecognition
 /// </summary>
-[DataContract]
+
 public partial class CreateRecognition : IEquatable<CreateRecognition>
 {
     /// <summary>
     /// The type of the recognition
     /// </summary>
     /// <value>The type of the recognition</value>
-    [JsonConverter(typeof(JsonStringEnumConverter))]
+    
     public enum TypeEnum
     {
         /// <summary>
@@ -53,7 +53,7 @@ public partial class CreateRecognition : IEquatable<CreateRecognition>
     /// The context type (optional)
     /// </summary>
     /// <value>The context type (optional)</value>
-    [JsonConverter(typeof(JsonStringEnumConverter))]
+    
     public enum ContextTypeEnum
     {
         /// <summary>
@@ -92,13 +92,13 @@ public partial class CreateRecognition : IEquatable<CreateRecognition>
     /// The type of the recognition
     /// </summary>
     /// <value>The type of the recognition</value>
-    [DataMember(Name = "type", EmitDefaultValue = false)]
+    [JsonPropertyName("type")]
     public TypeEnum? Type { get; set; }
     /// <summary>
     /// The context type (optional)
     /// </summary>
     /// <value>The context type (optional)</value>
-    [DataMember(Name = "contextType", EmitDefaultValue = false)]
+    [JsonPropertyName("contextType")]
     public ContextTypeEnum? ContextType { get; set; }
 
     /// <summary>
@@ -132,7 +132,7 @@ public partial class CreateRecognition : IEquatable<CreateRecognition>
     /// The recipient of the recognition
     /// </summary>
     /// <value>The recipient of the recognition</value>
-    [DataMember(Name = "recipientId", EmitDefaultValue = false)]
+    [JsonPropertyName("recipientId")]
     public string RecipientId { get; set; }
 
 
@@ -143,7 +143,7 @@ public partial class CreateRecognition : IEquatable<CreateRecognition>
     /// The title of the recognition. Max length of 100 characters (optional)
     /// </summary>
     /// <value>The title of the recognition. Max length of 100 characters (optional)</value>
-    [DataMember(Name = "title", EmitDefaultValue = false)]
+    [JsonPropertyName("title")]
     public string Title { get; set; }
 
 
@@ -152,7 +152,7 @@ public partial class CreateRecognition : IEquatable<CreateRecognition>
     /// The note of the recognition. Max length of 800 characters (optional)
     /// </summary>
     /// <value>The note of the recognition. Max length of 800 characters (optional)</value>
-    [DataMember(Name = "note", EmitDefaultValue = false)]
+    [JsonPropertyName("note")]
     public string Note { get; set; }
 
 
@@ -163,7 +163,7 @@ public partial class CreateRecognition : IEquatable<CreateRecognition>
     /// The context id (optional)
     /// </summary>
     /// <value>The context id (optional)</value>
-    [DataMember(Name = "contextId", EmitDefaultValue = false)]
+    [JsonPropertyName("contextId")]
     public string ContextId { get; set; }
 
 

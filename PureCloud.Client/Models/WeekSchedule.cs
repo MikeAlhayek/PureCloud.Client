@@ -1,12 +1,12 @@
-using System.Runtime.Serialization;
 using System.Text;
+using System.Text.Json.Serialization;
 
 namespace PureCloud.Client.Models;
 
 /// <summary>
 /// WeekSchedule
 /// </summary>
-[DataContract]
+
 public partial class WeekSchedule : IEquatable<WeekSchedule>
 {
     /// <summary>
@@ -41,7 +41,7 @@ public partial class WeekSchedule : IEquatable<WeekSchedule>
     /// The globally unique identifier for the object.
     /// </summary>
     /// <value>The globally unique identifier for the object.</value>
-    [DataMember(Name = "id", EmitDefaultValue = false)]
+    [JsonPropertyName("id")]
     public string Id { get; private set; }
 
 
@@ -50,7 +50,7 @@ public partial class WeekSchedule : IEquatable<WeekSchedule>
     /// The URI for this object
     /// </summary>
     /// <value>The URI for this object</value>
-    [DataMember(Name = "selfUri", EmitDefaultValue = false)]
+    [JsonPropertyName("selfUri")]
     public string SelfUri { get; private set; }
 
 
@@ -59,7 +59,7 @@ public partial class WeekSchedule : IEquatable<WeekSchedule>
     /// First day of this week schedule in yyyy-MM-dd format
     /// </summary>
     /// <value>First day of this week schedule in yyyy-MM-dd format</value>
-    [DataMember(Name = "weekDate", EmitDefaultValue = false)]
+    [JsonPropertyName("weekDate")]
     public string WeekDate { get; set; }
 
 
@@ -68,7 +68,7 @@ public partial class WeekSchedule : IEquatable<WeekSchedule>
     /// Description of the week schedule
     /// </summary>
     /// <value>Description of the week schedule</value>
-    [DataMember(Name = "description", EmitDefaultValue = false)]
+    [JsonPropertyName("description")]
     public string Description { get; set; }
 
 
@@ -77,7 +77,7 @@ public partial class WeekSchedule : IEquatable<WeekSchedule>
     /// Whether the week schedule is published
     /// </summary>
     /// <value>Whether the week schedule is published</value>
-    [DataMember(Name = "published", EmitDefaultValue = false)]
+    [JsonPropertyName("published")]
     public bool? Published { get; set; }
 
 
@@ -86,7 +86,7 @@ public partial class WeekSchedule : IEquatable<WeekSchedule>
     /// Summary of the results from the schedule run
     /// </summary>
     /// <value>Summary of the results from the schedule run</value>
-    [DataMember(Name = "generationResults", EmitDefaultValue = false)]
+    [JsonPropertyName("generationResults")]
     public WeekScheduleGenerationResult GenerationResults { get; set; }
 
 
@@ -95,7 +95,7 @@ public partial class WeekSchedule : IEquatable<WeekSchedule>
     /// Short term forecast associated with this schedule
     /// </summary>
     /// <value>Short term forecast associated with this schedule</value>
-    [DataMember(Name = "shortTermForecast", EmitDefaultValue = false)]
+    [JsonPropertyName("shortTermForecast")]
     public ShortTermForecastReference ShortTermForecast { get; set; }
 
 
@@ -104,7 +104,7 @@ public partial class WeekSchedule : IEquatable<WeekSchedule>
     /// Version metadata for this work plan
     /// </summary>
     /// <value>Version metadata for this work plan</value>
-    [DataMember(Name = "metadata", EmitDefaultValue = false)]
+    [JsonPropertyName("metadata")]
     public WfmVersionedEntityMetadata Metadata { get; set; }
 
 
@@ -113,7 +113,7 @@ public partial class WeekSchedule : IEquatable<WeekSchedule>
     /// User schedules in the week
     /// </summary>
     /// <value>User schedules in the week</value>
-    [DataMember(Name = "userSchedules", EmitDefaultValue = false)]
+    [JsonPropertyName("userSchedules")]
     public Dictionary<string, UserSchedule> UserSchedules { get; set; }
 
 
@@ -122,7 +122,7 @@ public partial class WeekSchedule : IEquatable<WeekSchedule>
     /// Headcount information for the week schedule
     /// </summary>
     /// <value>Headcount information for the week schedule</value>
-    [DataMember(Name = "headcountForecast", EmitDefaultValue = false)]
+    [JsonPropertyName("headcountForecast")]
     public HeadcountForecast HeadcountForecast { get; set; }
 
 
@@ -131,7 +131,7 @@ public partial class WeekSchedule : IEquatable<WeekSchedule>
     /// Version of agent schedules in the week schedule
     /// </summary>
     /// <value>Version of agent schedules in the week schedule</value>
-    [DataMember(Name = "agentSchedulesVersion", EmitDefaultValue = false)]
+    [JsonPropertyName("agentSchedulesVersion")]
     public int? AgentSchedulesVersion { get; set; }
 
 

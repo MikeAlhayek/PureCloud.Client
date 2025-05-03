@@ -7,14 +7,14 @@ namespace PureCloud.Client.Models;
 /// <summary>
 /// DocumentQueryClause
 /// </summary>
-[DataContract]
+
 public partial class DocumentQueryClause : IEquatable<DocumentQueryClause>
 {
     /// <summary>
     /// Specifies how the predicates will be applied together.
     /// </summary>
     /// <value>Specifies how the predicates will be applied together.</value>
-    [JsonConverter(typeof(JsonStringEnumConverter))]
+    
     public enum OperatorEnum
     {
         /// <summary>
@@ -41,7 +41,7 @@ public partial class DocumentQueryClause : IEquatable<DocumentQueryClause>
     /// Specifies how the predicates will be applied together.
     /// </summary>
     /// <value>Specifies how the predicates will be applied together.</value>
-    [DataMember(Name = "operator", EmitDefaultValue = false)]
+    [JsonPropertyName("operator")]
     public OperatorEnum? Operator { get; set; }
 
     /// <summary>
@@ -69,7 +69,7 @@ public partial class DocumentQueryClause : IEquatable<DocumentQueryClause>
     /// To apply multiple conditions. Limit of 10 predicates across all clauses.
     /// </summary>
     /// <value>To apply multiple conditions. Limit of 10 predicates across all clauses.</value>
-    [DataMember(Name = "predicates", EmitDefaultValue = false)]
+    [JsonPropertyName("predicates")]
     public List<DocumentQueryPredicate> Predicates { get; set; }
 
 

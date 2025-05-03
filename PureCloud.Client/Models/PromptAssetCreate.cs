@@ -7,14 +7,14 @@ namespace PureCloud.Client.Models;
 /// <summary>
 /// PromptAssetCreate
 /// </summary>
-[DataContract]
+
 public partial class PromptAssetCreate : IEquatable<PromptAssetCreate>
 {
     /// <summary>
     /// Audio upload status
     /// </summary>
     /// <value>Audio upload status</value>
-    [JsonConverter(typeof(JsonStringEnumConverter))]
+    
     public enum UploadStatusEnum
     {
         /// <summary>
@@ -53,7 +53,7 @@ public partial class PromptAssetCreate : IEquatable<PromptAssetCreate>
     /// Audio upload status
     /// </summary>
     /// <value>Audio upload status</value>
-    [DataMember(Name = "uploadStatus", EmitDefaultValue = false)]
+    [JsonPropertyName("uploadStatus")]
     public UploadStatusEnum? UploadStatus { get; private set; }
 
     /// <summary>
@@ -87,7 +87,7 @@ public partial class PromptAssetCreate : IEquatable<PromptAssetCreate>
     /// The globally unique identifier for the object.
     /// </summary>
     /// <value>The globally unique identifier for the object.</value>
-    [DataMember(Name = "id", EmitDefaultValue = false)]
+    [JsonPropertyName("id")]
     public string Id { get; private set; }
 
 
@@ -95,7 +95,7 @@ public partial class PromptAssetCreate : IEquatable<PromptAssetCreate>
     /// <summary>
     /// Gets or Sets Name
     /// </summary>
-    [DataMember(Name = "name", EmitDefaultValue = false)]
+    [JsonPropertyName("name")]
     public string Name { get; set; }
 
 
@@ -104,7 +104,7 @@ public partial class PromptAssetCreate : IEquatable<PromptAssetCreate>
     /// Associated prompt ID
     /// </summary>
     /// <value>Associated prompt ID</value>
-    [DataMember(Name = "promptId", EmitDefaultValue = false)]
+    [JsonPropertyName("promptId")]
     public string PromptId { get; private set; }
 
 
@@ -113,7 +113,7 @@ public partial class PromptAssetCreate : IEquatable<PromptAssetCreate>
     /// The prompt language.
     /// </summary>
     /// <value>The prompt language.</value>
-    [DataMember(Name = "language", EmitDefaultValue = false)]
+    [JsonPropertyName("language")]
     public string Language { get; set; }
 
 
@@ -122,7 +122,7 @@ public partial class PromptAssetCreate : IEquatable<PromptAssetCreate>
     /// URI of the resource audio
     /// </summary>
     /// <value>URI of the resource audio</value>
-    [DataMember(Name = "mediaUri", EmitDefaultValue = false)]
+    [JsonPropertyName("mediaUri")]
     public string MediaUri { get; private set; }
 
 
@@ -131,7 +131,7 @@ public partial class PromptAssetCreate : IEquatable<PromptAssetCreate>
     /// Text to speech of the resource
     /// </summary>
     /// <value>Text to speech of the resource</value>
-    [DataMember(Name = "ttsString", EmitDefaultValue = false)]
+    [JsonPropertyName("ttsString")]
     public string TtsString { get; set; }
 
 
@@ -140,7 +140,7 @@ public partial class PromptAssetCreate : IEquatable<PromptAssetCreate>
     /// Text of the resource
     /// </summary>
     /// <value>Text of the resource</value>
-    [DataMember(Name = "text", EmitDefaultValue = false)]
+    [JsonPropertyName("text")]
     public string Text { get; set; }
 
 
@@ -151,7 +151,7 @@ public partial class PromptAssetCreate : IEquatable<PromptAssetCreate>
     /// Upload URI for the resource audio
     /// </summary>
     /// <value>Upload URI for the resource audio</value>
-    [DataMember(Name = "uploadUri", EmitDefaultValue = false)]
+    [JsonPropertyName("uploadUri")]
     public string UploadUri { get; private set; }
 
 
@@ -160,7 +160,7 @@ public partial class PromptAssetCreate : IEquatable<PromptAssetCreate>
     /// Whether or not this resource locale is the default for the language
     /// </summary>
     /// <value>Whether or not this resource locale is the default for the language</value>
-    [DataMember(Name = "languageDefault", EmitDefaultValue = false)]
+    [JsonPropertyName("languageDefault")]
     public bool? LanguageDefault { get; private set; }
 
 
@@ -168,7 +168,7 @@ public partial class PromptAssetCreate : IEquatable<PromptAssetCreate>
     /// <summary>
     /// Gets or Sets Tags
     /// </summary>
-    [DataMember(Name = "tags", EmitDefaultValue = false)]
+    [JsonPropertyName("tags")]
     public Dictionary<string, List<string>> Tags { get; set; }
 
 
@@ -176,7 +176,7 @@ public partial class PromptAssetCreate : IEquatable<PromptAssetCreate>
     /// <summary>
     /// Gets or Sets DurationSeconds
     /// </summary>
-    [DataMember(Name = "durationSeconds", EmitDefaultValue = false)]
+    [JsonPropertyName("durationSeconds")]
     public double? DurationSeconds { get; set; }
 
 
@@ -185,7 +185,7 @@ public partial class PromptAssetCreate : IEquatable<PromptAssetCreate>
     /// The URI for this object
     /// </summary>
     /// <value>The URI for this object</value>
-    [DataMember(Name = "selfUri", EmitDefaultValue = false)]
+    [JsonPropertyName("selfUri")]
     public string SelfUri { get; private set; }
 
 

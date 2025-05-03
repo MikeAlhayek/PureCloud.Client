@@ -7,14 +7,14 @@ namespace PureCloud.Client.Models;
 /// <summary>
 /// Contains localized labels used in messenger apps
 /// </summary>
-[DataContract]
+
 public partial class LocalizedLabels : IEquatable<LocalizedLabels>
 {
     /// <summary>
     /// Contains localized label key used in messenger homescreen
     /// </summary>
     /// <value>Contains localized label key used in messenger homescreen</value>
-    [JsonConverter(typeof(JsonStringEnumConverter))]
+    
     public enum KeyEnum
     {
         /// <summary>
@@ -53,7 +53,7 @@ public partial class LocalizedLabels : IEquatable<LocalizedLabels>
     /// Contains localized label key used in messenger homescreen
     /// </summary>
     /// <value>Contains localized label key used in messenger homescreen</value>
-    [DataMember(Name = "key", EmitDefaultValue = false)]
+    [JsonPropertyName("key")]
     public KeyEnum? Key { get; set; }
     /// <summary>
     /// Initializes a new instance of the <see cref="LocalizedLabels" /> class.
@@ -75,7 +75,7 @@ public partial class LocalizedLabels : IEquatable<LocalizedLabels>
     /// Contains localized label value used in messenger homescreen
     /// </summary>
     /// <value>Contains localized label value used in messenger homescreen</value>
-    [DataMember(Name = "value", EmitDefaultValue = false)]
+    [JsonPropertyName("value")]
     public string Value { get; set; }
 
 

@@ -7,14 +7,14 @@ namespace PureCloud.Client.Models;
 /// <summary>
 /// SentimentFeedback
 /// </summary>
-[DataContract]
+
 public partial class SentimentFeedback : IEquatable<SentimentFeedback>
 {
     /// <summary>
     /// The sentiment feedback value for the given phrase
     /// </summary>
     /// <value>The sentiment feedback value for the given phrase</value>
-    [JsonConverter(typeof(JsonStringEnumConverter))]
+    
     public enum FeedbackValueEnum
     {
         /// <summary>
@@ -47,7 +47,7 @@ public partial class SentimentFeedback : IEquatable<SentimentFeedback>
     /// The sentiment feedback value for the given phrase
     /// </summary>
     /// <value>The sentiment feedback value for the given phrase</value>
-    [DataMember(Name = "feedbackValue", EmitDefaultValue = false)]
+    [JsonPropertyName("feedbackValue")]
     public FeedbackValueEnum? FeedbackValue { get; set; }
 
     /// <summary>
@@ -75,7 +75,7 @@ public partial class SentimentFeedback : IEquatable<SentimentFeedback>
     /// The globally unique identifier for the object.
     /// </summary>
     /// <value>The globally unique identifier for the object.</value>
-    [DataMember(Name = "id", EmitDefaultValue = false)]
+    [JsonPropertyName("id")]
     public string Id { get; private set; }
 
 
@@ -84,7 +84,7 @@ public partial class SentimentFeedback : IEquatable<SentimentFeedback>
     /// The phrase for which sentiment feedback is provided
     /// </summary>
     /// <value>The phrase for which sentiment feedback is provided</value>
-    [DataMember(Name = "phrase", EmitDefaultValue = false)]
+    [JsonPropertyName("phrase")]
     public string Phrase { get; set; }
 
 
@@ -93,7 +93,7 @@ public partial class SentimentFeedback : IEquatable<SentimentFeedback>
     /// The dialect for the given phrase, dialect format is {language}-{country} where language follows ISO 639-1 standard and country follows ISO 3166-1 alpha 2 standard
     /// </summary>
     /// <value>The dialect for the given phrase, dialect format is {language}-{country} where language follows ISO 639-1 standard and country follows ISO 3166-1 alpha 2 standard</value>
-    [DataMember(Name = "dialect", EmitDefaultValue = false)]
+    [JsonPropertyName("dialect")]
     public string Dialect { get; set; }
 
 
@@ -104,7 +104,7 @@ public partial class SentimentFeedback : IEquatable<SentimentFeedback>
     /// The Timestamp when sentiment feedback created. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z
     /// </summary>
     /// <value>The Timestamp when sentiment feedback created. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z</value>
-    [DataMember(Name = "dateCreated", EmitDefaultValue = false)]
+    [JsonPropertyName("dateCreated")]
     public DateTime? DateCreated { get; private set; }
 
 
@@ -113,7 +113,7 @@ public partial class SentimentFeedback : IEquatable<SentimentFeedback>
     /// The Id of user who created the sentiment feedback
     /// </summary>
     /// <value>The Id of user who created the sentiment feedback</value>
-    [DataMember(Name = "createdBy", EmitDefaultValue = false)]
+    [JsonPropertyName("createdBy")]
     public AddressableEntityRef CreatedBy { get; private set; }
 
 

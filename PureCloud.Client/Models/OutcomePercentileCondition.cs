@@ -1,4 +1,3 @@
-using System.Runtime.Serialization;
 using System.Text;
 using System.Text.Json.Serialization;
 
@@ -7,7 +6,7 @@ namespace PureCloud.Client.Models;
 /// <summary>
 /// OutcomePercentileCondition
 /// </summary>
-[DataContract]
+
 public partial class OutcomePercentileCondition : IEquatable<OutcomePercentileCondition>
 {
 
@@ -36,7 +35,7 @@ public partial class OutcomePercentileCondition : IEquatable<OutcomePercentileCo
     /// The outcome ID.
     /// </summary>
     /// <value>The outcome ID.</value>
-    [DataMember(Name = "outcomeId", EmitDefaultValue = false)]
+    [JsonPropertyName("outcomeId")]
     public string OutcomeId { get; set; }
 
 
@@ -45,7 +44,7 @@ public partial class OutcomePercentileCondition : IEquatable<OutcomePercentileCo
     /// Percentile value for the selected outcome, at or above which the action map will trigger.
     /// </summary>
     /// <value>Percentile value for the selected outcome, at or above which the action map will trigger.</value>
-    [DataMember(Name = "maximumPercentile", EmitDefaultValue = false)]
+    [JsonPropertyName("maximumPercentile")]
     public float? MaximumPercentile { get; set; }
 
 
@@ -54,7 +53,7 @@ public partial class OutcomePercentileCondition : IEquatable<OutcomePercentileCo
     /// Additional percentile condition, where if set, the action map will trigger if the current outcome percentile is lower or equal to the value.
     /// </summary>
     /// <value>Additional percentile condition, where if set, the action map will trigger if the current outcome percentile is lower or equal to the value.</value>
-    [DataMember(Name = "fallbackPercentile", EmitDefaultValue = false)]
+    [JsonPropertyName("fallbackPercentile")]
     public float? FallbackPercentile { get; set; }
 
 

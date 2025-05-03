@@ -7,14 +7,14 @@ namespace PureCloud.Client.Models;
 /// <summary>
 /// ImportStatus
 /// </summary>
-[DataContract]
+
 public partial class ImportStatus : IEquatable<ImportStatus>
 {
     /// <summary>
     /// current status of the import
     /// </summary>
     /// <value>current status of the import</value>
-    [JsonConverter(typeof(JsonStringEnumConverter))]
+    
     public enum StateEnum
     {
         /// <summary>
@@ -41,7 +41,7 @@ public partial class ImportStatus : IEquatable<ImportStatus>
     /// current status of the import
     /// </summary>
     /// <value>current status of the import</value>
-    [DataMember(Name = "state", EmitDefaultValue = false)]
+    [JsonPropertyName("state")]
     public StateEnum? State { get; private set; }
     /// <summary>
     /// Initializes a new instance of the <see cref="ImportStatus" /> class.
@@ -59,7 +59,7 @@ public partial class ImportStatus : IEquatable<ImportStatus>
     /// total number of records to be imported
     /// </summary>
     /// <value>total number of records to be imported</value>
-    [DataMember(Name = "totalRecords", EmitDefaultValue = false)]
+    [JsonPropertyName("totalRecords")]
     public long? TotalRecords { get; private set; }
 
 
@@ -68,7 +68,7 @@ public partial class ImportStatus : IEquatable<ImportStatus>
     /// number of records finished importing
     /// </summary>
     /// <value>number of records finished importing</value>
-    [DataMember(Name = "completedRecords", EmitDefaultValue = false)]
+    [JsonPropertyName("completedRecords")]
     public long? CompletedRecords { get; private set; }
 
 
@@ -77,7 +77,7 @@ public partial class ImportStatus : IEquatable<ImportStatus>
     /// percentage of records finished importing
     /// </summary>
     /// <value>percentage of records finished importing</value>
-    [DataMember(Name = "percentComplete", EmitDefaultValue = false)]
+    [JsonPropertyName("percentComplete")]
     public int? PercentComplete { get; private set; }
 
 
@@ -86,7 +86,7 @@ public partial class ImportStatus : IEquatable<ImportStatus>
     /// if the import has failed, the reason for the failure
     /// </summary>
     /// <value>if the import has failed, the reason for the failure</value>
-    [DataMember(Name = "failureReason", EmitDefaultValue = false)]
+    [JsonPropertyName("failureReason")]
     public string FailureReason { get; private set; }
 
 
@@ -95,7 +95,7 @@ public partial class ImportStatus : IEquatable<ImportStatus>
     /// The contact list Ids for target contact lists.
     /// </summary>
     /// <value>The contact list Ids for target contact lists.</value>
-    [DataMember(Name = "targetContactListIds", EmitDefaultValue = false)]
+    [JsonPropertyName("targetContactListIds")]
     public List<string> TargetContactListIds { get; private set; }
 
 
@@ -104,7 +104,7 @@ public partial class ImportStatus : IEquatable<ImportStatus>
     /// The prefix for the contact list name
     /// </summary>
     /// <value>The prefix for the contact list name</value>
-    [DataMember(Name = "listNamePrefix", EmitDefaultValue = false)]
+    [JsonPropertyName("listNamePrefix")]
     public string ListNamePrefix { get; private set; }
 
 

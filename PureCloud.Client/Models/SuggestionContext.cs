@@ -7,14 +7,14 @@ namespace PureCloud.Client.Models;
 /// <summary>
 /// SuggestionContext
 /// </summary>
-[DataContract]
+
 public partial class SuggestionContext : IEquatable<SuggestionContext>
 {
     /// <summary>
     /// The media type of the conversation in which the suggestion event was raised.
     /// </summary>
     /// <value>The media type of the conversation in which the suggestion event was raised.</value>
-    [JsonConverter(typeof(JsonStringEnumConverter))]
+    
     public enum MediaTypeEnum
     {
         /// <summary>
@@ -47,7 +47,7 @@ public partial class SuggestionContext : IEquatable<SuggestionContext>
     /// The media type of the conversation in which the suggestion event was raised.
     /// </summary>
     /// <value>The media type of the conversation in which the suggestion event was raised.</value>
-    [DataMember(Name = "mediaType", EmitDefaultValue = false)]
+    [JsonPropertyName("mediaType")]
     public MediaTypeEnum? MediaType { get; private set; }
     /// <summary>
     /// Initializes a new instance of the <see cref="SuggestionContext" /> class.
@@ -63,7 +63,7 @@ public partial class SuggestionContext : IEquatable<SuggestionContext>
     /// The queue used to assign the interaction to the user, if any.
     /// </summary>
     /// <value>The queue used to assign the interaction to the user, if any.</value>
-    [DataMember(Name = "queue", EmitDefaultValue = false)]
+    [JsonPropertyName("queue")]
     public AddressableEntityRef Queue { get; private set; }
 
 
@@ -74,7 +74,7 @@ public partial class SuggestionContext : IEquatable<SuggestionContext>
     /// The agent participant who received the raised suggestion, if any.
     /// </summary>
     /// <value>The agent participant who received the raised suggestion, if any.</value>
-    [DataMember(Name = "user", EmitDefaultValue = false)]
+    [JsonPropertyName("user")]
     public UserReference User { get; private set; }
 
 
@@ -83,7 +83,7 @@ public partial class SuggestionContext : IEquatable<SuggestionContext>
     /// The external contact of the end-user participant, if any.
     /// </summary>
     /// <value>The external contact of the end-user participant, if any.</value>
-    [DataMember(Name = "externalContact", EmitDefaultValue = false)]
+    [JsonPropertyName("externalContact")]
     public AddressableEntityRef ExternalContact { get; private set; }
 
 
@@ -92,7 +92,7 @@ public partial class SuggestionContext : IEquatable<SuggestionContext>
     /// The utterance in the voice conversation, after which the suggestion was raised, if any.
     /// </summary>
     /// <value>The utterance in the voice conversation, after which the suggestion was raised, if any.</value>
-    [DataMember(Name = "utterance", EmitDefaultValue = false)]
+    [JsonPropertyName("utterance")]
     public Entity Utterance { get; private set; }
 
 
@@ -101,7 +101,7 @@ public partial class SuggestionContext : IEquatable<SuggestionContext>
     /// The message in the digital conversation, after which the suggestion was raised, if any.
     /// </summary>
     /// <value>The message in the digital conversation, after which the suggestion was raised, if any.</value>
-    [DataMember(Name = "message", EmitDefaultValue = false)]
+    [JsonPropertyName("message")]
     public AddressableEntityRef Message { get; private set; }
 
 
@@ -110,7 +110,7 @@ public partial class SuggestionContext : IEquatable<SuggestionContext>
     /// The query statement used when generating the suggestion, if any.
     /// </summary>
     /// <value>The query statement used when generating the suggestion, if any.</value>
-    [DataMember(Name = "queryStatement", EmitDefaultValue = false)]
+    [JsonPropertyName("queryStatement")]
     public string QueryStatement { get; private set; }
 
 

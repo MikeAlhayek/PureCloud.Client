@@ -7,13 +7,13 @@ namespace PureCloud.Client.Models;
 /// <summary>
 /// EvaluationQualityV2TopicEvaluationV2
 /// </summary>
-[DataContract]
+
 public partial class EvaluationQualityV2TopicEvaluationV2 : IEquatable<EvaluationQualityV2TopicEvaluationV2>
 {
     /// <summary>
     /// Gets or Sets Status
     /// </summary>
-    [JsonConverter(typeof(JsonStringEnumConverter))]
+    
     public enum StatusEnum
     {
         /// <summary>
@@ -57,7 +57,7 @@ public partial class EvaluationQualityV2TopicEvaluationV2 : IEquatable<Evaluatio
     /// <summary>
     /// Gets or Sets PreviousStatus
     /// </summary>
-    [JsonConverter(typeof(JsonStringEnumConverter))]
+    
     public enum PreviousStatusEnum
     {
         /// <summary>
@@ -101,12 +101,12 @@ public partial class EvaluationQualityV2TopicEvaluationV2 : IEquatable<Evaluatio
     /// <summary>
     /// Gets or Sets Status
     /// </summary>
-    [DataMember(Name = "status", EmitDefaultValue = false)]
+    [JsonPropertyName("status")]
     public StatusEnum? Status { get; set; }
     /// <summary>
     /// Gets or Sets PreviousStatus
     /// </summary>
-    [DataMember(Name = "previousStatus", EmitDefaultValue = false)]
+    [JsonPropertyName("previousStatus")]
     public PreviousStatusEnum? PreviousStatus { get; set; }
     /// <summary>
     /// Initializes a new instance of the <see cref="EvaluationQualityV2TopicEvaluationV2" /> class.
@@ -195,7 +195,7 @@ public partial class EvaluationQualityV2TopicEvaluationV2 : IEquatable<Evaluatio
     /// <summary>
     /// Gets or Sets Id
     /// </summary>
-    [DataMember(Name = "id", EmitDefaultValue = false)]
+    [JsonPropertyName("id")]
     public string Id { get; set; }
 
 
@@ -203,7 +203,7 @@ public partial class EvaluationQualityV2TopicEvaluationV2 : IEquatable<Evaluatio
     /// <summary>
     /// Gets or Sets ConversationId
     /// </summary>
-    [DataMember(Name = "conversationId", EmitDefaultValue = false)]
+    [JsonPropertyName("conversationId")]
     public string ConversationId { get; set; }
 
 
@@ -211,7 +211,7 @@ public partial class EvaluationQualityV2TopicEvaluationV2 : IEquatable<Evaluatio
     /// <summary>
     /// Gets or Sets Agent
     /// </summary>
-    [DataMember(Name = "agent", EmitDefaultValue = false)]
+    [JsonPropertyName("agent")]
     public EvaluationQualityV2TopicUser Agent { get; set; }
 
 
@@ -219,7 +219,7 @@ public partial class EvaluationQualityV2TopicEvaluationV2 : IEquatable<Evaluatio
     /// <summary>
     /// Gets or Sets Evaluator
     /// </summary>
-    [DataMember(Name = "evaluator", EmitDefaultValue = false)]
+    [JsonPropertyName("evaluator")]
     public EvaluationQualityV2TopicUser Evaluator { get; set; }
 
 
@@ -227,7 +227,7 @@ public partial class EvaluationQualityV2TopicEvaluationV2 : IEquatable<Evaluatio
     /// <summary>
     /// Gets or Sets EventTime
     /// </summary>
-    [DataMember(Name = "eventTime", EmitDefaultValue = false)]
+    [JsonPropertyName("eventTime")]
     public DateTime? EventTime { get; set; }
 
 
@@ -235,7 +235,7 @@ public partial class EvaluationQualityV2TopicEvaluationV2 : IEquatable<Evaluatio
     /// <summary>
     /// Gets or Sets EvaluationFormId
     /// </summary>
-    [DataMember(Name = "evaluationFormId", EmitDefaultValue = false)]
+    [JsonPropertyName("evaluationFormId")]
     public string EvaluationFormId { get; set; }
 
 
@@ -243,7 +243,7 @@ public partial class EvaluationQualityV2TopicEvaluationV2 : IEquatable<Evaluatio
     /// <summary>
     /// Gets or Sets FormName
     /// </summary>
-    [DataMember(Name = "formName", EmitDefaultValue = false)]
+    [JsonPropertyName("formName")]
     public string FormName { get; set; }
 
 
@@ -251,7 +251,7 @@ public partial class EvaluationQualityV2TopicEvaluationV2 : IEquatable<Evaluatio
     /// <summary>
     /// Gets or Sets ScoringSet
     /// </summary>
-    [DataMember(Name = "scoringSet", EmitDefaultValue = false)]
+    [JsonPropertyName("scoringSet")]
     public EvaluationQualityV2TopicEvaluationScoringSet ScoringSet { get; set; }
 
 
@@ -259,7 +259,7 @@ public partial class EvaluationQualityV2TopicEvaluationV2 : IEquatable<Evaluatio
     /// <summary>
     /// Gets or Sets ContextId
     /// </summary>
-    [DataMember(Name = "contextId", EmitDefaultValue = false)]
+    [JsonPropertyName("contextId")]
     public string ContextId { get; set; }
 
 
@@ -269,7 +269,7 @@ public partial class EvaluationQualityV2TopicEvaluationV2 : IEquatable<Evaluatio
     /// <summary>
     /// Gets or Sets AgentHasRead
     /// </summary>
-    [DataMember(Name = "agentHasRead", EmitDefaultValue = false)]
+    [JsonPropertyName("agentHasRead")]
     public bool? AgentHasRead { get; set; }
 
 
@@ -277,7 +277,7 @@ public partial class EvaluationQualityV2TopicEvaluationV2 : IEquatable<Evaluatio
     /// <summary>
     /// Gets or Sets ReleaseDate
     /// </summary>
-    [DataMember(Name = "releaseDate", EmitDefaultValue = false)]
+    [JsonPropertyName("releaseDate")]
     public DateTime? ReleaseDate { get; set; }
 
 
@@ -285,7 +285,7 @@ public partial class EvaluationQualityV2TopicEvaluationV2 : IEquatable<Evaluatio
     /// <summary>
     /// Gets or Sets AssignedDate
     /// </summary>
-    [DataMember(Name = "assignedDate", EmitDefaultValue = false)]
+    [JsonPropertyName("assignedDate")]
     public DateTime? AssignedDate { get; set; }
 
 
@@ -293,7 +293,7 @@ public partial class EvaluationQualityV2TopicEvaluationV2 : IEquatable<Evaluatio
     /// <summary>
     /// Gets or Sets ChangedDate
     /// </summary>
-    [DataMember(Name = "changedDate", EmitDefaultValue = false)]
+    [JsonPropertyName("changedDate")]
     public DateTime? ChangedDate { get; set; }
 
 
@@ -301,7 +301,7 @@ public partial class EvaluationQualityV2TopicEvaluationV2 : IEquatable<Evaluatio
     /// <summary>
     /// Gets or Sets EventType
     /// </summary>
-    [DataMember(Name = "eventType", EmitDefaultValue = false)]
+    [JsonPropertyName("eventType")]
     public string EventType { get; set; }
 
 
@@ -309,7 +309,7 @@ public partial class EvaluationQualityV2TopicEvaluationV2 : IEquatable<Evaluatio
     /// <summary>
     /// Gets or Sets ResourceId
     /// </summary>
-    [DataMember(Name = "resourceId", EmitDefaultValue = false)]
+    [JsonPropertyName("resourceId")]
     public string ResourceId { get; set; }
 
 
@@ -317,7 +317,7 @@ public partial class EvaluationQualityV2TopicEvaluationV2 : IEquatable<Evaluatio
     /// <summary>
     /// Gets or Sets ResourceType
     /// </summary>
-    [DataMember(Name = "resourceType", EmitDefaultValue = false)]
+    [JsonPropertyName("resourceType")]
     public string ResourceType { get; set; }
 
 
@@ -325,7 +325,7 @@ public partial class EvaluationQualityV2TopicEvaluationV2 : IEquatable<Evaluatio
     /// <summary>
     /// Gets or Sets DivisionIds
     /// </summary>
-    [DataMember(Name = "divisionIds", EmitDefaultValue = false)]
+    [JsonPropertyName("divisionIds")]
     public List<string> DivisionIds { get; set; }
 
 
@@ -333,7 +333,7 @@ public partial class EvaluationQualityV2TopicEvaluationV2 : IEquatable<Evaluatio
     /// <summary>
     /// Gets or Sets Rescore
     /// </summary>
-    [DataMember(Name = "rescore", EmitDefaultValue = false)]
+    [JsonPropertyName("rescore")]
     public bool? Rescore { get; set; }
 
 
@@ -341,7 +341,7 @@ public partial class EvaluationQualityV2TopicEvaluationV2 : IEquatable<Evaluatio
     /// <summary>
     /// Gets or Sets ConversationDate
     /// </summary>
-    [DataMember(Name = "conversationDate", EmitDefaultValue = false)]
+    [JsonPropertyName("conversationDate")]
     public DateTime? ConversationDate { get; set; }
 
 
@@ -349,7 +349,7 @@ public partial class EvaluationQualityV2TopicEvaluationV2 : IEquatable<Evaluatio
     /// <summary>
     /// Gets or Sets MediaType
     /// </summary>
-    [DataMember(Name = "mediaType", EmitDefaultValue = false)]
+    [JsonPropertyName("mediaType")]
     public List<string> MediaType { get; set; }
 
 
@@ -357,7 +357,7 @@ public partial class EvaluationQualityV2TopicEvaluationV2 : IEquatable<Evaluatio
     /// <summary>
     /// Gets or Sets Calibration
     /// </summary>
-    [DataMember(Name = "calibration", EmitDefaultValue = false)]
+    [JsonPropertyName("calibration")]
     public EvaluationQualityV2TopicCalibration Calibration { get; set; }
 
 
@@ -365,7 +365,7 @@ public partial class EvaluationQualityV2TopicEvaluationV2 : IEquatable<Evaluatio
     /// <summary>
     /// Gets or Sets EvaluationSource
     /// </summary>
-    [DataMember(Name = "evaluationSource", EmitDefaultValue = false)]
+    [JsonPropertyName("evaluationSource")]
     public EvaluationQualityV2TopicEvaluationSource EvaluationSource { get; set; }
 
 
@@ -373,7 +373,7 @@ public partial class EvaluationQualityV2TopicEvaluationV2 : IEquatable<Evaluatio
     /// <summary>
     /// Gets or Sets AssigneeUserId
     /// </summary>
-    [DataMember(Name = "assigneeUserId", EmitDefaultValue = false)]
+    [JsonPropertyName("assigneeUserId")]
     public string AssigneeUserId { get; set; }
 
 
@@ -381,7 +381,7 @@ public partial class EvaluationQualityV2TopicEvaluationV2 : IEquatable<Evaluatio
     /// <summary>
     /// Gets or Sets PreviousAssigneeUserId
     /// </summary>
-    [DataMember(Name = "previousAssigneeUserId", EmitDefaultValue = false)]
+    [JsonPropertyName("previousAssigneeUserId")]
     public string PreviousAssigneeUserId { get; set; }
 
 
@@ -389,7 +389,7 @@ public partial class EvaluationQualityV2TopicEvaluationV2 : IEquatable<Evaluatio
     /// <summary>
     /// Gets or Sets AssigneeApplicable
     /// </summary>
-    [DataMember(Name = "assigneeApplicable", EmitDefaultValue = false)]
+    [JsonPropertyName("assigneeApplicable")]
     public bool? AssigneeApplicable { get; set; }
 
 
@@ -397,7 +397,7 @@ public partial class EvaluationQualityV2TopicEvaluationV2 : IEquatable<Evaluatio
     /// <summary>
     /// Gets or Sets EvaluationContextId
     /// </summary>
-    [DataMember(Name = "evaluationContextId", EmitDefaultValue = false)]
+    [JsonPropertyName("evaluationContextId")]
     public string EvaluationContextId { get; set; }
 
 
@@ -405,7 +405,7 @@ public partial class EvaluationQualityV2TopicEvaluationV2 : IEquatable<Evaluatio
     /// <summary>
     /// Gets or Sets DisputeCount
     /// </summary>
-    [DataMember(Name = "disputeCount", EmitDefaultValue = false)]
+    [JsonPropertyName("disputeCount")]
     public long? DisputeCount { get; set; }
 
 
@@ -413,7 +413,7 @@ public partial class EvaluationQualityV2TopicEvaluationV2 : IEquatable<Evaluatio
     /// <summary>
     /// Gets or Sets Version
     /// </summary>
-    [DataMember(Name = "version", EmitDefaultValue = false)]
+    [JsonPropertyName("version")]
     public long? Version { get; set; }
 
 
@@ -423,7 +423,7 @@ public partial class EvaluationQualityV2TopicEvaluationV2 : IEquatable<Evaluatio
     /// <summary>
     /// Gets or Sets DeclinedReview
     /// </summary>
-    [DataMember(Name = "declinedReview", EmitDefaultValue = false)]
+    [JsonPropertyName("declinedReview")]
     public bool? DeclinedReview { get; set; }
 
 
@@ -431,7 +431,7 @@ public partial class EvaluationQualityV2TopicEvaluationV2 : IEquatable<Evaluatio
     /// <summary>
     /// Gets or Sets RetractedEvaluation
     /// </summary>
-    [DataMember(Name = "retractedEvaluation", EmitDefaultValue = false)]
+    [JsonPropertyName("retractedEvaluation")]
     public EvaluationQualityV2TopicEvaluationReference RetractedEvaluation { get; set; }
 
 
@@ -439,7 +439,7 @@ public partial class EvaluationQualityV2TopicEvaluationV2 : IEquatable<Evaluatio
     /// <summary>
     /// Gets or Sets RescoreCount
     /// </summary>
-    [DataMember(Name = "rescoreCount", EmitDefaultValue = false)]
+    [JsonPropertyName("rescoreCount")]
     public long? RescoreCount { get; set; }
 
 
@@ -447,7 +447,7 @@ public partial class EvaluationQualityV2TopicEvaluationV2 : IEquatable<Evaluatio
     /// <summary>
     /// Gets or Sets EvaluatorCommentHasUpdated
     /// </summary>
-    [DataMember(Name = "evaluatorCommentHasUpdated", EmitDefaultValue = false)]
+    [JsonPropertyName("evaluatorCommentHasUpdated")]
     public bool? EvaluatorCommentHasUpdated { get; set; }
 
 
@@ -455,7 +455,7 @@ public partial class EvaluationQualityV2TopicEvaluationV2 : IEquatable<Evaluatio
     /// <summary>
     /// Gets or Sets AgentCommentHasUpdated
     /// </summary>
-    [DataMember(Name = "agentCommentHasUpdated", EmitDefaultValue = false)]
+    [JsonPropertyName("agentCommentHasUpdated")]
     public bool? AgentCommentHasUpdated { get; set; }
 
 
@@ -463,7 +463,7 @@ public partial class EvaluationQualityV2TopicEvaluationV2 : IEquatable<Evaluatio
     /// <summary>
     /// Gets or Sets PreviousRescoreCount
     /// </summary>
-    [DataMember(Name = "previousRescoreCount", EmitDefaultValue = false)]
+    [JsonPropertyName("previousRescoreCount")]
     public long? PreviousRescoreCount { get; set; }
 
 
@@ -471,7 +471,7 @@ public partial class EvaluationQualityV2TopicEvaluationV2 : IEquatable<Evaluatio
     /// <summary>
     /// Gets or Sets PreviousEvaluatorUserId
     /// </summary>
-    [DataMember(Name = "previousEvaluatorUserId", EmitDefaultValue = false)]
+    [JsonPropertyName("previousEvaluatorUserId")]
     public string PreviousEvaluatorUserId { get; set; }
 
 

@@ -1,12 +1,12 @@
-using System.Runtime.Serialization;
 using System.Text;
+using System.Text.Json.Serialization;
 
 namespace PureCloud.Client.Models;
 
 /// <summary>
 /// AmazonLexRequest
 /// </summary>
-[DataContract]
+
 public partial class AmazonLexRequest : IEquatable<AmazonLexRequest>
 {
     /// <summary>
@@ -27,7 +27,7 @@ public partial class AmazonLexRequest : IEquatable<AmazonLexRequest>
     /// AttributeName/AttributeValue pairs of User Defined Request Attributes to be sent to the amazon bot See - https://docs.aws.amazon.com/lex/latest/dg/context-mgmt.html#context-mgmt-request-attribs
     /// </summary>
     /// <value>AttributeName/AttributeValue pairs of User Defined Request Attributes to be sent to the amazon bot See - https://docs.aws.amazon.com/lex/latest/dg/context-mgmt.html#context-mgmt-request-attribs</value>
-    [DataMember(Name = "requestAttributes", EmitDefaultValue = false)]
+    [JsonPropertyName("requestAttributes")]
     public Dictionary<string, string> RequestAttributes { get; set; }
 
 
@@ -36,7 +36,7 @@ public partial class AmazonLexRequest : IEquatable<AmazonLexRequest>
     /// AttributeName/AttributeValue pairs of Session Attributes to be sent to the amazon bot. See - https://docs.aws.amazon.com/lex/latest/dg/context-mgmt.html#context-mgmt-session-attribs
     /// </summary>
     /// <value>AttributeName/AttributeValue pairs of Session Attributes to be sent to the amazon bot. See - https://docs.aws.amazon.com/lex/latest/dg/context-mgmt.html#context-mgmt-session-attribs</value>
-    [DataMember(Name = "sessionAttributes", EmitDefaultValue = false)]
+    [JsonPropertyName("sessionAttributes")]
     public Dictionary<string, string> SessionAttributes { get; set; }
 
 

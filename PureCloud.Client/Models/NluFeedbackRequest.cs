@@ -1,4 +1,3 @@
-using System.Runtime.Serialization;
 using System.Text;
 using System.Text.Json.Serialization;
 
@@ -7,7 +6,7 @@ namespace PureCloud.Client.Models;
 /// <summary>
 /// NluFeedbackRequest
 /// </summary>
-[DataContract]
+
 public partial class NluFeedbackRequest : IEquatable<NluFeedbackRequest>
 {
 
@@ -38,7 +37,7 @@ public partial class NluFeedbackRequest : IEquatable<NluFeedbackRequest>
     /// The feedback text.
     /// </summary>
     /// <value>The feedback text.</value>
-    [DataMember(Name = "text", EmitDefaultValue = false)]
+    [JsonPropertyName("text")]
     public string Text { get; set; }
 
 
@@ -47,7 +46,7 @@ public partial class NluFeedbackRequest : IEquatable<NluFeedbackRequest>
     /// Detected intent of the utterance
     /// </summary>
     /// <value>Detected intent of the utterance</value>
-    [DataMember(Name = "intents", EmitDefaultValue = false)]
+    [JsonPropertyName("intents")]
     public List<IntentFeedback> Intents { get; set; }
 
 
@@ -56,7 +55,7 @@ public partial class NluFeedbackRequest : IEquatable<NluFeedbackRequest>
     /// The domain version ID of the feedback.
     /// </summary>
     /// <value>The domain version ID of the feedback.</value>
-    [DataMember(Name = "versionId", EmitDefaultValue = false)]
+    [JsonPropertyName("versionId")]
     public string VersionId { get; set; }
 
 
@@ -65,7 +64,7 @@ public partial class NluFeedbackRequest : IEquatable<NluFeedbackRequest>
     /// The language of the version to which feedback is linked, e.g. en-us, de-de
     /// </summary>
     /// <value>The language of the version to which feedback is linked, e.g. en-us, de-de</value>
-    [DataMember(Name = "language", EmitDefaultValue = false)]
+    [JsonPropertyName("language")]
     public string Language { get; set; }
 
 

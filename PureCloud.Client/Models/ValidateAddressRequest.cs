@@ -1,12 +1,12 @@
-using System.Runtime.Serialization;
 using System.Text;
+using System.Text.Json.Serialization;
 
 namespace PureCloud.Client.Models;
 
 /// <summary>
 /// ValidateAddressRequest
 /// </summary>
-[DataContract]
+
 public partial class ValidateAddressRequest : IEquatable<ValidateAddressRequest>
 {
     /// <summary>
@@ -25,7 +25,7 @@ public partial class ValidateAddressRequest : IEquatable<ValidateAddressRequest>
     /// Address schema
     /// </summary>
     /// <value>Address schema</value>
-    [DataMember(Name = "address", EmitDefaultValue = false)]
+    [JsonPropertyName("address")]
     public StreetAddress Address { get; set; }
 
 

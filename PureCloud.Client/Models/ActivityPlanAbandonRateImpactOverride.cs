@@ -1,4 +1,3 @@
-using System.Runtime.Serialization;
 using System.Text;
 using System.Text.Json.Serialization;
 
@@ -7,7 +6,7 @@ namespace PureCloud.Client.Models;
 /// <summary>
 /// ActivityPlanAbandonRateImpactOverride
 /// </summary>
-[DataContract]
+
 public partial class ActivityPlanAbandonRateImpactOverride : IEquatable<ActivityPlanAbandonRateImpactOverride>
 {
 
@@ -32,7 +31,7 @@ public partial class ActivityPlanAbandonRateImpactOverride : IEquatable<Activity
     /// Allowed abandon rate increase percent, from 0.0 to 100.0
     /// </summary>
     /// <value>Allowed abandon rate increase percent, from 0.0 to 100.0</value>
-    [DataMember(Name = "increaseByPercent", EmitDefaultValue = false)]
+    [JsonPropertyName("increaseByPercent")]
     public double? IncreaseByPercent { get; set; }
 
 

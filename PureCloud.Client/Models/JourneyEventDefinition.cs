@@ -7,14 +7,14 @@ namespace PureCloud.Client.Models;
 /// <summary>
 /// An event definition used when creating journey views
 /// </summary>
-[DataContract]
+
 public partial class JourneyEventDefinition : IEquatable<JourneyEventDefinition>
 {
     /// <summary>
     /// The source of the event definition
     /// </summary>
     /// <value>The source of the event definition</value>
-    [JsonConverter(typeof(JsonStringEnumConverter))]
+    
     public enum SourceEnum
     {
         /// <summary>
@@ -41,7 +41,7 @@ public partial class JourneyEventDefinition : IEquatable<JourneyEventDefinition>
     /// The source of the event definition
     /// </summary>
     /// <value>The source of the event definition</value>
-    [DataMember(Name = "source", EmitDefaultValue = false)]
+    [JsonPropertyName("source")]
     public SourceEnum? Source { get; private set; }
     /// <summary>
     /// Initializes a new instance of the <see cref="JourneyEventDefinition" /> class.
@@ -57,7 +57,7 @@ public partial class JourneyEventDefinition : IEquatable<JourneyEventDefinition>
     /// The globally unique identifier for the object.
     /// </summary>
     /// <value>The globally unique identifier for the object.</value>
-    [DataMember(Name = "id", EmitDefaultValue = false)]
+    [JsonPropertyName("id")]
     public string Id { get; private set; }
 
 
@@ -66,7 +66,7 @@ public partial class JourneyEventDefinition : IEquatable<JourneyEventDefinition>
     /// The name of the event definition
     /// </summary>
     /// <value>The name of the event definition</value>
-    [DataMember(Name = "name", EmitDefaultValue = false)]
+    [JsonPropertyName("name")]
     public string Name { get; private set; }
 
 
@@ -77,7 +77,7 @@ public partial class JourneyEventDefinition : IEquatable<JourneyEventDefinition>
     /// The description of this event definition
     /// </summary>
     /// <value>The description of this event definition</value>
-    [DataMember(Name = "description", EmitDefaultValue = false)]
+    [JsonPropertyName("description")]
     public string Description { get; private set; }
 
 
@@ -86,7 +86,7 @@ public partial class JourneyEventDefinition : IEquatable<JourneyEventDefinition>
     /// The JSON schema of this event definition
     /// </summary>
     /// <value>The JSON schema of this event definition</value>
-    [DataMember(Name = "jsonSchema", EmitDefaultValue = false)]
+    [JsonPropertyName("jsonSchema")]
     public JsonSchemaDocument JsonSchema { get; private set; }
 
 
@@ -95,7 +95,7 @@ public partial class JourneyEventDefinition : IEquatable<JourneyEventDefinition>
     /// The URI for this object
     /// </summary>
     /// <value>The URI for this object</value>
-    [DataMember(Name = "selfUri", EmitDefaultValue = false)]
+    [JsonPropertyName("selfUri")]
     public string SelfUri { get; private set; }
 
 

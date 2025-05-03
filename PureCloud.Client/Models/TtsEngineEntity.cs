@@ -1,4 +1,3 @@
-using System.Runtime.Serialization;
 using System.Text;
 using System.Text.Json.Serialization;
 
@@ -7,7 +6,7 @@ namespace PureCloud.Client.Models;
 /// <summary>
 /// TtsEngineEntity
 /// </summary>
-[DataContract]
+
 public partial class TtsEngineEntity : IEquatable<TtsEngineEntity>
 {
 
@@ -42,7 +41,7 @@ public partial class TtsEngineEntity : IEquatable<TtsEngineEntity>
     /// The globally unique identifier for the object.
     /// </summary>
     /// <value>The globally unique identifier for the object.</value>
-    [DataMember(Name = "id", EmitDefaultValue = false)]
+    [JsonPropertyName("id")]
     public string Id { get; private set; }
 
 
@@ -50,7 +49,7 @@ public partial class TtsEngineEntity : IEquatable<TtsEngineEntity>
     /// <summary>
     /// Gets or Sets Name
     /// </summary>
-    [DataMember(Name = "name", EmitDefaultValue = false)]
+    [JsonPropertyName("name")]
     public string Name { get; set; }
 
 
@@ -59,7 +58,7 @@ public partial class TtsEngineEntity : IEquatable<TtsEngineEntity>
     /// The set of languages the TTS engine supports
     /// </summary>
     /// <value>The set of languages the TTS engine supports</value>
-    [DataMember(Name = "languages", EmitDefaultValue = false)]
+    [JsonPropertyName("languages")]
     public List<string> Languages { get; set; }
 
 
@@ -68,7 +67,7 @@ public partial class TtsEngineEntity : IEquatable<TtsEngineEntity>
     /// The set of output formats the TTS engine can produce
     /// </summary>
     /// <value>The set of output formats the TTS engine can produce</value>
-    [DataMember(Name = "outputFormats", EmitDefaultValue = false)]
+    [JsonPropertyName("outputFormats")]
     public List<string> OutputFormats { get; set; }
 
 
@@ -77,7 +76,7 @@ public partial class TtsEngineEntity : IEquatable<TtsEngineEntity>
     /// The set of voices the TTS engine supports
     /// </summary>
     /// <value>The set of voices the TTS engine supports</value>
-    [DataMember(Name = "voices", EmitDefaultValue = false)]
+    [JsonPropertyName("voices")]
     public List<TtsVoiceEntity> Voices { get; set; }
 
 
@@ -86,7 +85,7 @@ public partial class TtsEngineEntity : IEquatable<TtsEngineEntity>
     /// The TTS engine is the global default engine
     /// </summary>
     /// <value>The TTS engine is the global default engine</value>
-    [DataMember(Name = "isDefault", EmitDefaultValue = false)]
+    [JsonPropertyName("isDefault")]
     public bool? IsDefault { get; set; }
 
 
@@ -95,7 +94,7 @@ public partial class TtsEngineEntity : IEquatable<TtsEngineEntity>
     /// The TTS engine can be used in a secure call flow
     /// </summary>
     /// <value>The TTS engine can be used in a secure call flow</value>
-    [DataMember(Name = "isSecure", EmitDefaultValue = false)]
+    [JsonPropertyName("isSecure")]
     public bool? IsSecure { get; set; }
 
 
@@ -104,7 +103,7 @@ public partial class TtsEngineEntity : IEquatable<TtsEngineEntity>
     /// The URI for this object
     /// </summary>
     /// <value>The URI for this object</value>
-    [DataMember(Name = "selfUri", EmitDefaultValue = false)]
+    [JsonPropertyName("selfUri")]
     public string SelfUri { get; private set; }
 
 

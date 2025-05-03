@@ -1,12 +1,12 @@
-using System.Runtime.Serialization;
 using System.Text;
+using System.Text.Json.Serialization;
 
 namespace PureCloud.Client.Models;
 
 /// <summary>
 /// WorktypeQueryEntityListing
 /// </summary>
-[DataContract]
+
 public partial class WorktypeQueryEntityListing : IEquatable<WorktypeQueryEntityListing>
 {
     /// <summary>
@@ -34,7 +34,7 @@ public partial class WorktypeQueryEntityListing : IEquatable<WorktypeQueryEntity
     /// <summary>
     /// Gets or Sets Entities
     /// </summary>
-    [DataMember(Name = "entities", EmitDefaultValue = false)]
+    [JsonPropertyName("entities")]
     public List<Worktype> Entities { get; set; }
 
 
@@ -42,7 +42,7 @@ public partial class WorktypeQueryEntityListing : IEquatable<WorktypeQueryEntity
     /// <summary>
     /// Gets or Sets NextUri
     /// </summary>
-    [DataMember(Name = "nextUri", EmitDefaultValue = false)]
+    [JsonPropertyName("nextUri")]
     public string NextUri { get; set; }
 
 
@@ -50,7 +50,7 @@ public partial class WorktypeQueryEntityListing : IEquatable<WorktypeQueryEntity
     /// <summary>
     /// Gets or Sets SelfUri
     /// </summary>
-    [DataMember(Name = "selfUri", EmitDefaultValue = false)]
+    [JsonPropertyName("selfUri")]
     public string SelfUri { get; set; }
 
 
@@ -58,7 +58,7 @@ public partial class WorktypeQueryEntityListing : IEquatable<WorktypeQueryEntity
     /// <summary>
     /// Gets or Sets PreviousUri
     /// </summary>
-    [DataMember(Name = "previousUri", EmitDefaultValue = false)]
+    [JsonPropertyName("previousUri")]
     public string PreviousUri { get; set; }
 
 
@@ -66,7 +66,7 @@ public partial class WorktypeQueryEntityListing : IEquatable<WorktypeQueryEntity
     /// <summary>
     /// Gets or Sets After
     /// </summary>
-    [DataMember(Name = "after", EmitDefaultValue = false)]
+    [JsonPropertyName("after")]
     public string After { get; set; }
 
 
@@ -75,7 +75,7 @@ public partial class WorktypeQueryEntityListing : IEquatable<WorktypeQueryEntity
     /// Count of items returned by the query. Refer to the \&quot;select\&quot; request parameter for more information.
     /// </summary>
     /// <value>Count of items returned by the query. Refer to the \&quot;select\&quot; request parameter for more information.</value>
-    [DataMember(Name = "count", EmitDefaultValue = false)]
+    [JsonPropertyName("count")]
     public int? Count { get; set; }
 
 

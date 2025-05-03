@@ -1,12 +1,12 @@
-using System.Runtime.Serialization;
 using System.Text;
+using System.Text.Json.Serialization;
 
 namespace PureCloud.Client.Models;
 
 /// <summary>
 /// AdditionalLanguagesIntent
 /// </summary>
-[DataContract]
+
 public partial class AdditionalLanguagesIntent : IEquatable<AdditionalLanguagesIntent>
 {
     /// <summary>
@@ -25,7 +25,7 @@ public partial class AdditionalLanguagesIntent : IEquatable<AdditionalLanguagesI
     /// ID of the intent for respective additional language
     /// </summary>
     /// <value>ID of the intent for respective additional language</value>
-    [DataMember(Name = "id", EmitDefaultValue = false)]
+    [JsonPropertyName("id")]
     public string Id { get; private set; }
 
 
@@ -34,7 +34,7 @@ public partial class AdditionalLanguagesIntent : IEquatable<AdditionalLanguagesI
     /// Utterances list for additional language
     /// </summary>
     /// <value>Utterances list for additional language</value>
-    [DataMember(Name = "utterances", EmitDefaultValue = false)]
+    [JsonPropertyName("utterances")]
     public List<NluUtterance> Utterances { get; set; }
 
 

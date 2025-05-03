@@ -7,13 +7,13 @@ namespace PureCloud.Client.Models;
 /// <summary>
 /// WfmActivityPlanRunJobCompleteTopicActivityPlanRunJobCompleteNotification
 /// </summary>
-[DataContract]
+
 public partial class WfmActivityPlanRunJobCompleteTopicActivityPlanRunJobCompleteNotification : IEquatable<WfmActivityPlanRunJobCompleteTopicActivityPlanRunJobCompleteNotification>
 {
     /// <summary>
     /// Gets or Sets Type
     /// </summary>
-    [JsonConverter(typeof(JsonStringEnumConverter))]
+    
     public enum TypeEnum
     {
         /// <summary>
@@ -39,7 +39,7 @@ public partial class WfmActivityPlanRunJobCompleteTopicActivityPlanRunJobComplet
     /// <summary>
     /// Gets or Sets Status
     /// </summary>
-    [JsonConverter(typeof(JsonStringEnumConverter))]
+    
     public enum StatusEnum
     {
         /// <summary>
@@ -71,12 +71,12 @@ public partial class WfmActivityPlanRunJobCompleteTopicActivityPlanRunJobComplet
     /// <summary>
     /// Gets or Sets Type
     /// </summary>
-    [DataMember(Name = "type", EmitDefaultValue = false)]
+    [JsonPropertyName("type")]
     public TypeEnum? Type { get; set; }
     /// <summary>
     /// Gets or Sets Status
     /// </summary>
-    [DataMember(Name = "status", EmitDefaultValue = false)]
+    [JsonPropertyName("status")]
     public StatusEnum? Status { get; set; }
     /// <summary>
     /// Initializes a new instance of the <see cref="WfmActivityPlanRunJobCompleteTopicActivityPlanRunJobCompleteNotification" /> class.
@@ -103,7 +103,7 @@ public partial class WfmActivityPlanRunJobCompleteTopicActivityPlanRunJobComplet
     /// <summary>
     /// Gets or Sets Id
     /// </summary>
-    [DataMember(Name = "id", EmitDefaultValue = false)]
+    [JsonPropertyName("id")]
     public string Id { get; set; }
 
 
@@ -113,7 +113,7 @@ public partial class WfmActivityPlanRunJobCompleteTopicActivityPlanRunJobComplet
     /// <summary>
     /// Gets or Sets ActivityPlan
     /// </summary>
-    [DataMember(Name = "activityPlan", EmitDefaultValue = false)]
+    [JsonPropertyName("activityPlan")]
     public WfmActivityPlanRunJobCompleteTopicActivityPlanReference ActivityPlan { get; set; }
 
 
@@ -123,7 +123,7 @@ public partial class WfmActivityPlanRunJobCompleteTopicActivityPlanRunJobComplet
     /// <summary>
     /// Gets or Sets Exceptions
     /// </summary>
-    [DataMember(Name = "exceptions", EmitDefaultValue = false)]
+    [JsonPropertyName("exceptions")]
     public List<WfmActivityPlanRunJobCompleteTopicActivityPlanJobException> Exceptions { get; set; }
 
 
@@ -131,7 +131,7 @@ public partial class WfmActivityPlanRunJobCompleteTopicActivityPlanRunJobComplet
     /// <summary>
     /// Gets or Sets Error
     /// </summary>
-    [DataMember(Name = "error", EmitDefaultValue = false)]
+    [JsonPropertyName("error")]
     public WfmActivityPlanRunJobCompleteTopicErrorBody Error { get; set; }
 
 

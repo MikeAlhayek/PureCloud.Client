@@ -1,12 +1,12 @@
-using System.Runtime.Serialization;
 using System.Text;
+using System.Text.Json.Serialization;
 
 namespace PureCloud.Client.Models;
 
 /// <summary>
 /// ChatMediaPolicyConditions
 /// </summary>
-[DataContract]
+
 public partial class ChatMediaPolicyConditions : IEquatable<ChatMediaPolicyConditions>
 {
     /// <summary>
@@ -38,7 +38,7 @@ public partial class ChatMediaPolicyConditions : IEquatable<ChatMediaPolicyCondi
     /// <summary>
     /// Gets or Sets ForUsers
     /// </summary>
-    [DataMember(Name = "forUsers", EmitDefaultValue = false)]
+    [JsonPropertyName("forUsers")]
     public List<User> ForUsers { get; set; }
 
 
@@ -46,7 +46,7 @@ public partial class ChatMediaPolicyConditions : IEquatable<ChatMediaPolicyCondi
     /// <summary>
     /// Gets or Sets DateRanges
     /// </summary>
-    [DataMember(Name = "dateRanges", EmitDefaultValue = false)]
+    [JsonPropertyName("dateRanges")]
     public List<string> DateRanges { get; set; }
 
 
@@ -54,7 +54,7 @@ public partial class ChatMediaPolicyConditions : IEquatable<ChatMediaPolicyCondi
     /// <summary>
     /// Gets or Sets ForQueues
     /// </summary>
-    [DataMember(Name = "forQueues", EmitDefaultValue = false)]
+    [JsonPropertyName("forQueues")]
     public List<Queue> ForQueues { get; set; }
 
 
@@ -62,7 +62,7 @@ public partial class ChatMediaPolicyConditions : IEquatable<ChatMediaPolicyCondi
     /// <summary>
     /// Gets or Sets WrapupCodes
     /// </summary>
-    [DataMember(Name = "wrapupCodes", EmitDefaultValue = false)]
+    [JsonPropertyName("wrapupCodes")]
     public List<WrapupCode> WrapupCodes { get; set; }
 
 
@@ -70,7 +70,7 @@ public partial class ChatMediaPolicyConditions : IEquatable<ChatMediaPolicyCondi
     /// <summary>
     /// Gets or Sets Languages
     /// </summary>
-    [DataMember(Name = "languages", EmitDefaultValue = false)]
+    [JsonPropertyName("languages")]
     public List<Language> Languages { get; set; }
 
 
@@ -78,7 +78,7 @@ public partial class ChatMediaPolicyConditions : IEquatable<ChatMediaPolicyCondi
     /// <summary>
     /// Gets or Sets TimeAllowed
     /// </summary>
-    [DataMember(Name = "timeAllowed", EmitDefaultValue = false)]
+    [JsonPropertyName("timeAllowed")]
     public TimeAllowed TimeAllowed { get; set; }
 
 
@@ -87,7 +87,7 @@ public partial class ChatMediaPolicyConditions : IEquatable<ChatMediaPolicyCondi
     /// Teams to match conversations against
     /// </summary>
     /// <value>Teams to match conversations against</value>
-    [DataMember(Name = "teams", EmitDefaultValue = false)]
+    [JsonPropertyName("teams")]
     public List<Team> Teams { get; set; }
 
 
@@ -95,7 +95,7 @@ public partial class ChatMediaPolicyConditions : IEquatable<ChatMediaPolicyCondi
     /// <summary>
     /// Gets or Sets Duration
     /// </summary>
-    [DataMember(Name = "duration", EmitDefaultValue = false)]
+    [JsonPropertyName("duration")]
     public DurationCondition Duration { get; set; }
 
 

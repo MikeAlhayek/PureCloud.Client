@@ -7,14 +7,14 @@ namespace PureCloud.Client.Models;
 /// <summary>
 /// TrustUser
 /// </summary>
-[DataContract]
+
 public partial class TrustUser : IEquatable<TrustUser>
 {
     /// <summary>
     /// The current state for this user.
     /// </summary>
     /// <value>The current state for this user.</value>
-    [JsonConverter(typeof(JsonStringEnumConverter))]
+    
     public enum StateEnum
     {
         /// <summary>
@@ -47,7 +47,7 @@ public partial class TrustUser : IEquatable<TrustUser>
     /// The current state for this user.
     /// </summary>
     /// <value>The current state for this user.</value>
-    [DataMember(Name = "state", EmitDefaultValue = false)]
+    [JsonPropertyName("state")]
     public StateEnum? State { get; private set; }
 
     /// <summary>
@@ -105,7 +105,7 @@ public partial class TrustUser : IEquatable<TrustUser>
     /// The globally unique identifier for the object.
     /// </summary>
     /// <value>The globally unique identifier for the object.</value>
-    [DataMember(Name = "id", EmitDefaultValue = false)]
+    [JsonPropertyName("id")]
     public string Id { get; private set; }
 
 
@@ -113,7 +113,7 @@ public partial class TrustUser : IEquatable<TrustUser>
     /// <summary>
     /// Gets or Sets Name
     /// </summary>
-    [DataMember(Name = "name", EmitDefaultValue = false)]
+    [JsonPropertyName("name")]
     public string Name { get; set; }
 
 
@@ -122,7 +122,7 @@ public partial class TrustUser : IEquatable<TrustUser>
     /// The division to which this entity belongs.
     /// </summary>
     /// <value>The division to which this entity belongs.</value>
-    [DataMember(Name = "division", EmitDefaultValue = false)]
+    [JsonPropertyName("division")]
     public Division Division { get; set; }
 
 
@@ -130,7 +130,7 @@ public partial class TrustUser : IEquatable<TrustUser>
     /// <summary>
     /// Gets or Sets Chat
     /// </summary>
-    [DataMember(Name = "chat", EmitDefaultValue = false)]
+    [JsonPropertyName("chat")]
     public Chat Chat { get; set; }
 
 
@@ -138,7 +138,7 @@ public partial class TrustUser : IEquatable<TrustUser>
     /// <summary>
     /// Gets or Sets Department
     /// </summary>
-    [DataMember(Name = "department", EmitDefaultValue = false)]
+    [JsonPropertyName("department")]
     public string Department { get; set; }
 
 
@@ -146,7 +146,7 @@ public partial class TrustUser : IEquatable<TrustUser>
     /// <summary>
     /// Gets or Sets Email
     /// </summary>
-    [DataMember(Name = "email", EmitDefaultValue = false)]
+    [JsonPropertyName("email")]
     public string Email { get; set; }
 
 
@@ -155,7 +155,7 @@ public partial class TrustUser : IEquatable<TrustUser>
     /// Auto populated from addresses.
     /// </summary>
     /// <value>Auto populated from addresses.</value>
-    [DataMember(Name = "primaryContactInfo", EmitDefaultValue = false)]
+    [JsonPropertyName("primaryContactInfo")]
     public List<Contact> PrimaryContactInfo { get; private set; }
 
 
@@ -164,7 +164,7 @@ public partial class TrustUser : IEquatable<TrustUser>
     /// Email addresses and phone numbers for this user
     /// </summary>
     /// <value>Email addresses and phone numbers for this user</value>
-    [DataMember(Name = "addresses", EmitDefaultValue = false)]
+    [JsonPropertyName("addresses")]
     public List<Contact> Addresses { get; set; }
 
 
@@ -174,7 +174,7 @@ public partial class TrustUser : IEquatable<TrustUser>
     /// <summary>
     /// Gets or Sets Title
     /// </summary>
-    [DataMember(Name = "title", EmitDefaultValue = false)]
+    [JsonPropertyName("title")]
     public string Title { get; set; }
 
 
@@ -182,7 +182,7 @@ public partial class TrustUser : IEquatable<TrustUser>
     /// <summary>
     /// Gets or Sets Username
     /// </summary>
-    [DataMember(Name = "username", EmitDefaultValue = false)]
+    [JsonPropertyName("username")]
     public string Username { get; set; }
 
 
@@ -190,7 +190,7 @@ public partial class TrustUser : IEquatable<TrustUser>
     /// <summary>
     /// Gets or Sets Manager
     /// </summary>
-    [DataMember(Name = "manager", EmitDefaultValue = false)]
+    [JsonPropertyName("manager")]
     public User Manager { get; set; }
 
 
@@ -198,7 +198,7 @@ public partial class TrustUser : IEquatable<TrustUser>
     /// <summary>
     /// Gets or Sets Images
     /// </summary>
-    [DataMember(Name = "images", EmitDefaultValue = false)]
+    [JsonPropertyName("images")]
     public List<Image> Images { get; set; }
 
 
@@ -207,7 +207,7 @@ public partial class TrustUser : IEquatable<TrustUser>
     /// Required when updating a user, this value should be the current version of the user.  The current version can be obtained with a GET on the user before doing a PATCH.
     /// </summary>
     /// <value>Required when updating a user, this value should be the current version of the user.  The current version can be obtained with a GET on the user before doing a PATCH.</value>
-    [DataMember(Name = "version", EmitDefaultValue = false)]
+    [JsonPropertyName("version")]
     public int? Version { get; set; }
 
 
@@ -215,7 +215,7 @@ public partial class TrustUser : IEquatable<TrustUser>
     /// <summary>
     /// Gets or Sets Certifications
     /// </summary>
-    [DataMember(Name = "certifications", EmitDefaultValue = false)]
+    [JsonPropertyName("certifications")]
     public List<string> Certifications { get; set; }
 
 
@@ -223,7 +223,7 @@ public partial class TrustUser : IEquatable<TrustUser>
     /// <summary>
     /// Gets or Sets Biography
     /// </summary>
-    [DataMember(Name = "biography", EmitDefaultValue = false)]
+    [JsonPropertyName("biography")]
     public Biography Biography { get; set; }
 
 
@@ -231,7 +231,7 @@ public partial class TrustUser : IEquatable<TrustUser>
     /// <summary>
     /// Gets or Sets EmployerInfo
     /// </summary>
-    [DataMember(Name = "employerInfo", EmitDefaultValue = false)]
+    [JsonPropertyName("employerInfo")]
     public EmployerInfo EmployerInfo { get; set; }
 
 
@@ -240,7 +240,7 @@ public partial class TrustUser : IEquatable<TrustUser>
     /// Preferred full name of the agent
     /// </summary>
     /// <value>Preferred full name of the agent</value>
-    [DataMember(Name = "preferredName", EmitDefaultValue = false)]
+    [JsonPropertyName("preferredName")]
     public string PreferredName { get; set; }
 
 
@@ -249,7 +249,7 @@ public partial class TrustUser : IEquatable<TrustUser>
     /// ACD routing status
     /// </summary>
     /// <value>ACD routing status</value>
-    [DataMember(Name = "routingStatus", EmitDefaultValue = false)]
+    [JsonPropertyName("routingStatus")]
     public RoutingStatus RoutingStatus { get; private set; }
 
 
@@ -258,7 +258,7 @@ public partial class TrustUser : IEquatable<TrustUser>
     /// Active presence
     /// </summary>
     /// <value>Active presence</value>
-    [DataMember(Name = "presence", EmitDefaultValue = false)]
+    [JsonPropertyName("presence")]
     public UserPresence Presence { get; private set; }
 
 
@@ -267,7 +267,7 @@ public partial class TrustUser : IEquatable<TrustUser>
     /// Integration presence
     /// </summary>
     /// <value>Integration presence</value>
-    [DataMember(Name = "integrationPresence", EmitDefaultValue = false)]
+    [JsonPropertyName("integrationPresence")]
     public UserPresence IntegrationPresence { get; private set; }
 
 
@@ -276,7 +276,7 @@ public partial class TrustUser : IEquatable<TrustUser>
     /// Summary of conversion statistics for conversation types.
     /// </summary>
     /// <value>Summary of conversion statistics for conversation types.</value>
-    [DataMember(Name = "conversationSummary", EmitDefaultValue = false)]
+    [JsonPropertyName("conversationSummary")]
     public UserConversationSummary ConversationSummary { get; private set; }
 
 
@@ -285,7 +285,7 @@ public partial class TrustUser : IEquatable<TrustUser>
     /// Determine if out of office is enabled
     /// </summary>
     /// <value>Determine if out of office is enabled</value>
-    [DataMember(Name = "outOfOffice", EmitDefaultValue = false)]
+    [JsonPropertyName("outOfOffice")]
     public OutOfOffice OutOfOffice { get; private set; }
 
 
@@ -294,7 +294,7 @@ public partial class TrustUser : IEquatable<TrustUser>
     /// Current geolocation position
     /// </summary>
     /// <value>Current geolocation position</value>
-    [DataMember(Name = "geolocation", EmitDefaultValue = false)]
+    [JsonPropertyName("geolocation")]
     public Geolocation Geolocation { get; private set; }
 
 
@@ -303,7 +303,7 @@ public partial class TrustUser : IEquatable<TrustUser>
     /// Effective, default, and last station information
     /// </summary>
     /// <value>Effective, default, and last station information</value>
-    [DataMember(Name = "station", EmitDefaultValue = false)]
+    [JsonPropertyName("station")]
     public UserStations Station { get; private set; }
 
 
@@ -312,7 +312,7 @@ public partial class TrustUser : IEquatable<TrustUser>
     /// Roles and permissions assigned to the user
     /// </summary>
     /// <value>Roles and permissions assigned to the user</value>
-    [DataMember(Name = "authorization", EmitDefaultValue = false)]
+    [JsonPropertyName("authorization")]
     public UserAuthorization Authorization { get; private set; }
 
 
@@ -321,7 +321,7 @@ public partial class TrustUser : IEquatable<TrustUser>
     /// Profile skills possessed by the user
     /// </summary>
     /// <value>Profile skills possessed by the user</value>
-    [DataMember(Name = "profileSkills", EmitDefaultValue = false)]
+    [JsonPropertyName("profileSkills")]
     public List<string> ProfileSkills { get; private set; }
 
 
@@ -330,7 +330,7 @@ public partial class TrustUser : IEquatable<TrustUser>
     /// The user placement at each site location.
     /// </summary>
     /// <value>The user placement at each site location.</value>
-    [DataMember(Name = "locations", EmitDefaultValue = false)]
+    [JsonPropertyName("locations")]
     public List<Location> Locations { get; private set; }
 
 
@@ -339,7 +339,7 @@ public partial class TrustUser : IEquatable<TrustUser>
     /// The groups the user is a member of
     /// </summary>
     /// <value>The groups the user is a member of</value>
-    [DataMember(Name = "groups", EmitDefaultValue = false)]
+    [JsonPropertyName("groups")]
     public List<Group> Groups { get; private set; }
 
 
@@ -348,7 +348,7 @@ public partial class TrustUser : IEquatable<TrustUser>
     /// The team the user is a member of
     /// </summary>
     /// <value>The team the user is a member of</value>
-    [DataMember(Name = "team", EmitDefaultValue = false)]
+    [JsonPropertyName("team")]
     public Team Team { get; private set; }
 
 
@@ -357,7 +357,7 @@ public partial class TrustUser : IEquatable<TrustUser>
     /// The WFM work plan bid rank settings for the user
     /// </summary>
     /// <value>The WFM work plan bid rank settings for the user</value>
-    [DataMember(Name = "workPlanBidRanks", EmitDefaultValue = false)]
+    [JsonPropertyName("workPlanBidRanks")]
     public WorkPlanBidRanks WorkPlanBidRanks { get; private set; }
 
 
@@ -366,7 +366,7 @@ public partial class TrustUser : IEquatable<TrustUser>
     /// Routing (ACD) skills possessed by the user
     /// </summary>
     /// <value>Routing (ACD) skills possessed by the user</value>
-    [DataMember(Name = "skills", EmitDefaultValue = false)]
+    [JsonPropertyName("skills")]
     public List<UserRoutingSkill> Skills { get; private set; }
 
 
@@ -375,7 +375,7 @@ public partial class TrustUser : IEquatable<TrustUser>
     /// Routing (ACD) languages possessed by the user
     /// </summary>
     /// <value>Routing (ACD) languages possessed by the user</value>
-    [DataMember(Name = "languages", EmitDefaultValue = false)]
+    [JsonPropertyName("languages")]
     public List<UserRoutingLanguage> Languages { get; private set; }
 
 
@@ -384,7 +384,7 @@ public partial class TrustUser : IEquatable<TrustUser>
     /// acd auto answer
     /// </summary>
     /// <value>acd auto answer</value>
-    [DataMember(Name = "acdAutoAnswer", EmitDefaultValue = false)]
+    [JsonPropertyName("acdAutoAnswer")]
     public bool? AcdAutoAnswer { get; set; }
 
 
@@ -393,7 +393,7 @@ public partial class TrustUser : IEquatable<TrustUser>
     /// preferred language by the user
     /// </summary>
     /// <value>preferred language by the user</value>
-    [DataMember(Name = "languagePreference", EmitDefaultValue = false)]
+    [JsonPropertyName("languagePreference")]
     public string LanguagePreference { get; private set; }
 
 
@@ -401,7 +401,7 @@ public partial class TrustUser : IEquatable<TrustUser>
     /// <summary>
     /// Gets or Sets LastTokenIssued
     /// </summary>
-    [DataMember(Name = "lastTokenIssued", EmitDefaultValue = false)]
+    [JsonPropertyName("lastTokenIssued")]
     public OAuthLastTokenIssued LastTokenIssued { get; set; }
 
 
@@ -410,7 +410,7 @@ public partial class TrustUser : IEquatable<TrustUser>
     /// The last time the user logged in using username and password. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z
     /// </summary>
     /// <value>The last time the user logged in using username and password. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z</value>
-    [DataMember(Name = "dateLastLogin", EmitDefaultValue = false)]
+    [JsonPropertyName("dateLastLogin")]
     public DateTime? DateLastLogin { get; private set; }
 
 
@@ -419,7 +419,7 @@ public partial class TrustUser : IEquatable<TrustUser>
     /// The date &amp; time the user was sent their welcome email. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z
     /// </summary>
     /// <value>The date &amp; time the user was sent their welcome email. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z</value>
-    [DataMember(Name = "dateWelcomeSent", EmitDefaultValue = false)]
+    [JsonPropertyName("dateWelcomeSent")]
     public DateTime? DateWelcomeSent { get; private set; }
 
 
@@ -427,7 +427,7 @@ public partial class TrustUser : IEquatable<TrustUser>
     /// <summary>
     /// Gets or Sets TrustUserDetails
     /// </summary>
-    [DataMember(Name = "trustUserDetails", EmitDefaultValue = false)]
+    [JsonPropertyName("trustUserDetails")]
     public TrustUserDetails TrustUserDetails { get; set; }
 
 

@@ -7,14 +7,14 @@ namespace PureCloud.Client.Models;
 /// <summary>
 /// DialerCampaignConfigChangeCampaign
 /// </summary>
-[DataContract]
+
 public partial class DialerCampaignConfigChangeCampaign : IEquatable<DialerCampaignConfigChangeCampaign>
 {
     /// <summary>
     /// dialing mode of the campaign
     /// </summary>
     /// <value>dialing mode of the campaign</value>
-    [JsonConverter(typeof(JsonStringEnumConverter))]
+    
     public enum DialingModeEnum
     {
         /// <summary>
@@ -64,7 +64,7 @@ public partial class DialerCampaignConfigChangeCampaign : IEquatable<DialerCampa
     /// <summary>
     /// Gets or Sets CampaignStatus
     /// </summary>
-    [JsonConverter(typeof(JsonStringEnumConverter))]
+    
     public enum CampaignStatusEnum
     {
         /// <summary>
@@ -109,12 +109,12 @@ public partial class DialerCampaignConfigChangeCampaign : IEquatable<DialerCampa
     /// dialing mode of the campaign
     /// </summary>
     /// <value>dialing mode of the campaign</value>
-    [DataMember(Name = "dialingMode", EmitDefaultValue = false)]
+    [JsonPropertyName("dialingMode")]
     public DialingModeEnum? DialingMode { get; set; }
     /// <summary>
     /// Gets or Sets CampaignStatus
     /// </summary>
-    [DataMember(Name = "campaignStatus", EmitDefaultValue = false)]
+    [JsonPropertyName("campaignStatus")]
     public CampaignStatusEnum? CampaignStatus { get; set; }
     /// <summary>
     /// Initializes a new instance of the <see cref="DialerCampaignConfigChangeCampaign" /> class.
@@ -197,7 +197,7 @@ public partial class DialerCampaignConfigChangeCampaign : IEquatable<DialerCampa
     /// <summary>
     /// Gets or Sets ContactList
     /// </summary>
-    [DataMember(Name = "contactList", EmitDefaultValue = false)]
+    [JsonPropertyName("contactList")]
     public DialerCampaignConfigChangeUriReference ContactList { get; set; }
 
 
@@ -206,7 +206,7 @@ public partial class DialerCampaignConfigChangeCampaign : IEquatable<DialerCampa
     /// A UriReference for a resource
     /// </summary>
     /// <value>A UriReference for a resource</value>
-    [DataMember(Name = "queue", EmitDefaultValue = false)]
+    [JsonPropertyName("queue")]
     public DialerCampaignConfigChangeUriReference Queue { get; set; }
 
 
@@ -217,7 +217,7 @@ public partial class DialerCampaignConfigChangeCampaign : IEquatable<DialerCampa
     /// A UriReference for a resource
     /// </summary>
     /// <value>A UriReference for a resource</value>
-    [DataMember(Name = "script", EmitDefaultValue = false)]
+    [JsonPropertyName("script")]
     public DialerCampaignConfigChangeUriReference Script { get; set; }
 
 
@@ -226,7 +226,7 @@ public partial class DialerCampaignConfigChangeCampaign : IEquatable<DialerCampa
     /// A UriReference for a resource
     /// </summary>
     /// <value>A UriReference for a resource</value>
-    [DataMember(Name = "edgeGroup", EmitDefaultValue = false)]
+    [JsonPropertyName("edgeGroup")]
     public DialerCampaignConfigChangeUriReference EdgeGroup { get; set; }
 
 
@@ -235,7 +235,7 @@ public partial class DialerCampaignConfigChangeCampaign : IEquatable<DialerCampa
     /// A UriReference for a resource
     /// </summary>
     /// <value>A UriReference for a resource</value>
-    [DataMember(Name = "site", EmitDefaultValue = false)]
+    [JsonPropertyName("site")]
     public DialerCampaignConfigChangeUriReference Site { get; set; }
 
 
@@ -246,7 +246,7 @@ public partial class DialerCampaignConfigChangeCampaign : IEquatable<DialerCampa
     /// the contact list phone columns to be called for the campaign
     /// </summary>
     /// <value>the contact list phone columns to be called for the campaign</value>
-    [DataMember(Name = "phoneColumns", EmitDefaultValue = false)]
+    [JsonPropertyName("phoneColumns")]
     public List<DialerCampaignConfigChangePhoneColumn> PhoneColumns { get; set; }
 
 
@@ -255,7 +255,7 @@ public partial class DialerCampaignConfigChangeCampaign : IEquatable<DialerCampa
     /// the targeted abandon rate percentage
     /// </summary>
     /// <value>the targeted abandon rate percentage</value>
-    [DataMember(Name = "abandonRate", EmitDefaultValue = false)]
+    [JsonPropertyName("abandonRate")]
     public double? AbandonRate { get; set; }
 
 
@@ -264,7 +264,7 @@ public partial class DialerCampaignConfigChangeCampaign : IEquatable<DialerCampa
     /// identifiers of the do not call lists
     /// </summary>
     /// <value>identifiers of the do not call lists</value>
-    [DataMember(Name = "dncLists", EmitDefaultValue = false)]
+    [JsonPropertyName("dncLists")]
     public List<DialerCampaignConfigChangeUriReference> DncLists { get; set; }
 
 
@@ -273,7 +273,7 @@ public partial class DialerCampaignConfigChangeCampaign : IEquatable<DialerCampa
     /// A UriReference for a resource
     /// </summary>
     /// <value>A UriReference for a resource</value>
-    [DataMember(Name = "callableTimeSet", EmitDefaultValue = false)]
+    [JsonPropertyName("callableTimeSet")]
     public DialerCampaignConfigChangeUriReference CallableTimeSet { get; set; }
 
 
@@ -282,7 +282,7 @@ public partial class DialerCampaignConfigChangeCampaign : IEquatable<DialerCampa
     /// A UriReference for a resource
     /// </summary>
     /// <value>A UriReference for a resource</value>
-    [DataMember(Name = "callAnalysisResponseSet", EmitDefaultValue = false)]
+    [JsonPropertyName("callAnalysisResponseSet")]
     public DialerCampaignConfigChangeUriReference CallAnalysisResponseSet { get; set; }
 
 
@@ -291,7 +291,7 @@ public partial class DialerCampaignConfigChangeCampaign : IEquatable<DialerCampa
     /// caller id name to be displayed on the outbound call
     /// </summary>
     /// <value>caller id name to be displayed on the outbound call</value>
-    [DataMember(Name = "callerName", EmitDefaultValue = false)]
+    [JsonPropertyName("callerName")]
     public string CallerName { get; set; }
 
 
@@ -300,7 +300,7 @@ public partial class DialerCampaignConfigChangeCampaign : IEquatable<DialerCampa
     /// caller id phone number to be displayed on the outbound call
     /// </summary>
     /// <value>caller id phone number to be displayed on the outbound call</value>
-    [DataMember(Name = "callerAddress", EmitDefaultValue = false)]
+    [JsonPropertyName("callerAddress")]
     public string CallerAddress { get; set; }
 
 
@@ -309,7 +309,7 @@ public partial class DialerCampaignConfigChangeCampaign : IEquatable<DialerCampa
     /// for agentless campaigns, the number of outbound lines to be concurrently dialed
     /// </summary>
     /// <value>for agentless campaigns, the number of outbound lines to be concurrently dialed</value>
-    [DataMember(Name = "outboundLineCount", EmitDefaultValue = false)]
+    [JsonPropertyName("outboundLineCount")]
     public long? OutboundLineCount { get; set; }
 
 
@@ -318,7 +318,7 @@ public partial class DialerCampaignConfigChangeCampaign : IEquatable<DialerCampa
     /// a list of current error conditions associated with the campaign
     /// </summary>
     /// <value>a list of current error conditions associated with the campaign</value>
-    [DataMember(Name = "errors", EmitDefaultValue = false)]
+    [JsonPropertyName("errors")]
     public List<DialerCampaignConfigChangeRestErrorDetail> Errors { get; set; }
 
 
@@ -327,7 +327,7 @@ public partial class DialerCampaignConfigChangeCampaign : IEquatable<DialerCampa
     /// identifiers of the rule sets
     /// </summary>
     /// <value>identifiers of the rule sets</value>
-    [DataMember(Name = "ruleSets", EmitDefaultValue = false)]
+    [JsonPropertyName("ruleSets")]
     public List<DialerCampaignConfigChangeUriReference> RuleSets { get; set; }
 
 
@@ -336,7 +336,7 @@ public partial class DialerCampaignConfigChangeCampaign : IEquatable<DialerCampa
     /// for preview campaigns, indicator of whether the agent can skip a preview without placing a call
     /// </summary>
     /// <value>for preview campaigns, indicator of whether the agent can skip a preview without placing a call</value>
-    [DataMember(Name = "skipPreviewDisabled", EmitDefaultValue = false)]
+    [JsonPropertyName("skipPreviewDisabled")]
     public bool? SkipPreviewDisabled { get; set; }
 
 
@@ -345,7 +345,7 @@ public partial class DialerCampaignConfigChangeCampaign : IEquatable<DialerCampa
     /// for preview campaigns, number of seconds before a call will be automatically placed. A value of 0 indicates no automatic placement of calls
     /// </summary>
     /// <value>for preview campaigns, number of seconds before a call will be automatically placed. A value of 0 indicates no automatic placement of calls</value>
-    [DataMember(Name = "previewTimeOutSeconds", EmitDefaultValue = false)]
+    [JsonPropertyName("previewTimeOutSeconds")]
     public long? PreviewTimeOutSeconds { get; set; }
 
 
@@ -354,7 +354,7 @@ public partial class DialerCampaignConfigChangeCampaign : IEquatable<DialerCampa
     /// for preview campaigns with multiple phone columns, indicator if one (true) or multiple (false) phone numbers will be available to call for each preview
     /// </summary>
     /// <value>for preview campaigns with multiple phone columns, indicator if one (true) or multiple (false) phone numbers will be available to call for each preview</value>
-    [DataMember(Name = "singleNumberPreview", EmitDefaultValue = false)]
+    [JsonPropertyName("singleNumberPreview")]
     public bool? SingleNumberPreview { get; set; }
 
 
@@ -362,7 +362,7 @@ public partial class DialerCampaignConfigChangeCampaign : IEquatable<DialerCampa
     /// <summary>
     /// Gets or Sets ContactSort
     /// </summary>
-    [DataMember(Name = "contactSort", EmitDefaultValue = false)]
+    [JsonPropertyName("contactSort")]
     public DialerCampaignConfigChangeContactSort ContactSort { get; set; }
 
 
@@ -371,7 +371,7 @@ public partial class DialerCampaignConfigChangeCampaign : IEquatable<DialerCampa
     /// List of contact sort objects.
     /// </summary>
     /// <value>List of contact sort objects.</value>
-    [DataMember(Name = "contactSorts", EmitDefaultValue = false)]
+    [JsonPropertyName("contactSorts")]
     public List<DialerCampaignConfigChangeContactSort> ContactSorts { get; set; }
 
 
@@ -380,7 +380,7 @@ public partial class DialerCampaignConfigChangeCampaign : IEquatable<DialerCampa
     /// for non-preview campaigns, how long to wait before dispositioning as &#39;no-answer&#39;, default 30 seconds
     /// </summary>
     /// <value>for non-preview campaigns, how long to wait before dispositioning as &#39;no-answer&#39;, default 30 seconds</value>
-    [DataMember(Name = "noAnswerTimeout", EmitDefaultValue = false)]
+    [JsonPropertyName("noAnswerTimeout")]
     public long? NoAnswerTimeout { get; set; }
 
 
@@ -389,7 +389,7 @@ public partial class DialerCampaignConfigChangeCampaign : IEquatable<DialerCampa
     /// The language the edge will use to analyze the call
     /// </summary>
     /// <value>The language the edge will use to analyze the call</value>
-    [DataMember(Name = "callAnalysisLanguage", EmitDefaultValue = false)]
+    [JsonPropertyName("callAnalysisLanguage")]
     public string CallAnalysisLanguage { get; set; }
 
 
@@ -398,7 +398,7 @@ public partial class DialerCampaignConfigChangeCampaign : IEquatable<DialerCampa
     /// The priority of this campaign relative to other campaigns
     /// </summary>
     /// <value>The priority of this campaign relative to other campaigns</value>
-    [DataMember(Name = "priority", EmitDefaultValue = false)]
+    [JsonPropertyName("priority")]
     public long? Priority { get; set; }
 
 
@@ -407,7 +407,7 @@ public partial class DialerCampaignConfigChangeCampaign : IEquatable<DialerCampa
     /// List of contact filters
     /// </summary>
     /// <value>List of contact filters</value>
-    [DataMember(Name = "contactListFilters", EmitDefaultValue = false)]
+    [JsonPropertyName("contactListFilters")]
     public List<DialerCampaignConfigChangeUriReference> ContactListFilters { get; set; }
 
 
@@ -416,7 +416,7 @@ public partial class DialerCampaignConfigChangeCampaign : IEquatable<DialerCampa
     /// A UriReference for a resource
     /// </summary>
     /// <value>A UriReference for a resource</value>
-    [DataMember(Name = "division", EmitDefaultValue = false)]
+    [JsonPropertyName("division")]
     public DialerCampaignConfigChangeUriReference Division { get; set; }
 
 
@@ -425,7 +425,7 @@ public partial class DialerCampaignConfigChangeCampaign : IEquatable<DialerCampa
     /// For Preview Campaigns. Name of the contact column in the contact list containing the userIds of agents to assign specific contact records to.
     /// </summary>
     /// <value>For Preview Campaigns. Name of the contact column in the contact list containing the userIds of agents to assign specific contact records to.</value>
-    [DataMember(Name = "agentOwnedColumn", EmitDefaultValue = false)]
+    [JsonPropertyName("agentOwnedColumn")]
     public string AgentOwnedColumn { get; set; }
 
 
@@ -433,7 +433,7 @@ public partial class DialerCampaignConfigChangeCampaign : IEquatable<DialerCampa
     /// <summary>
     /// Gets or Sets AdditionalProperties
     /// </summary>
-    [DataMember(Name = "additionalProperties", EmitDefaultValue = false)]
+    [JsonPropertyName("additionalProperties")]
     public Dictionary<string, object> AdditionalProperties { get; set; }
 
 
@@ -442,7 +442,7 @@ public partial class DialerCampaignConfigChangeCampaign : IEquatable<DialerCampa
     /// The globally unique identifier for the object.
     /// </summary>
     /// <value>The globally unique identifier for the object.</value>
-    [DataMember(Name = "id", EmitDefaultValue = false)]
+    [JsonPropertyName("id")]
     public string Id { get; set; }
 
 
@@ -451,7 +451,7 @@ public partial class DialerCampaignConfigChangeCampaign : IEquatable<DialerCampa
     /// The UI-visible name of the object
     /// </summary>
     /// <value>The UI-visible name of the object</value>
-    [DataMember(Name = "name", EmitDefaultValue = false)]
+    [JsonPropertyName("name")]
     public string Name { get; set; }
 
 
@@ -460,7 +460,7 @@ public partial class DialerCampaignConfigChangeCampaign : IEquatable<DialerCampa
     /// Creation time of the entity
     /// </summary>
     /// <value>Creation time of the entity</value>
-    [DataMember(Name = "dateCreated", EmitDefaultValue = false)]
+    [JsonPropertyName("dateCreated")]
     public DateTime? DateCreated { get; set; }
 
 
@@ -469,7 +469,7 @@ public partial class DialerCampaignConfigChangeCampaign : IEquatable<DialerCampa
     /// Last modified time of the entity
     /// </summary>
     /// <value>Last modified time of the entity</value>
-    [DataMember(Name = "dateModified", EmitDefaultValue = false)]
+    [JsonPropertyName("dateModified")]
     public DateTime? DateModified { get; set; }
 
 
@@ -478,7 +478,7 @@ public partial class DialerCampaignConfigChangeCampaign : IEquatable<DialerCampa
     /// Required for updates, must match the version number of the most recent update
     /// </summary>
     /// <value>Required for updates, must match the version number of the most recent update</value>
-    [DataMember(Name = "version", EmitDefaultValue = false)]
+    [JsonPropertyName("version")]
     public long? Version { get; set; }
 
 

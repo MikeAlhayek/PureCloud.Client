@@ -1,12 +1,12 @@
-using System.Runtime.Serialization;
 using System.Text;
+using System.Text.Json.Serialization;
 
 namespace PureCloud.Client.Models;
 
 /// <summary>
 /// EventDefinitionAggregates
 /// </summary>
-[DataContract]
+
 public partial class EventDefinitionAggregates : IEquatable<EventDefinitionAggregates>
 {
     /// <summary>
@@ -27,7 +27,7 @@ public partial class EventDefinitionAggregates : IEquatable<EventDefinitionAggre
     /// Event definition.
     /// </summary>
     /// <value>Event definition.</value>
-    [DataMember(Name = "eventDefinition", EmitDefaultValue = false)]
+    [JsonPropertyName("eventDefinition")]
     public AddressableEntityRef EventDefinition { get; set; }
 
 
@@ -36,7 +36,7 @@ public partial class EventDefinitionAggregates : IEquatable<EventDefinitionAggre
     /// How many events have occurred.
     /// </summary>
     /// <value>How many events have occurred.</value>
-    [DataMember(Name = "eventCount", EmitDefaultValue = false)]
+    [JsonPropertyName("eventCount")]
     public int? EventCount { get; set; }
 
 

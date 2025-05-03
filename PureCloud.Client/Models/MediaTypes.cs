@@ -1,12 +1,12 @@
-using System.Runtime.Serialization;
 using System.Text;
+using System.Text.Json.Serialization;
 
 namespace PureCloud.Client.Models;
 
 /// <summary>
 /// Media types
 /// </summary>
-[DataContract]
+
 public partial class MediaTypes : IEquatable<MediaTypes>
 {
     /// <summary>
@@ -25,7 +25,7 @@ public partial class MediaTypes : IEquatable<MediaTypes>
     /// Specify allowed media types for inbound and outbound messages. If this field is empty, all inbound and outbound media will be blocked.
     /// </summary>
     /// <value>Specify allowed media types for inbound and outbound messages. If this field is empty, all inbound and outbound media will be blocked.</value>
-    [DataMember(Name = "allow", EmitDefaultValue = false)]
+    [JsonPropertyName("allow")]
     public MediaTypeAccess Allow { get; set; }
 
 

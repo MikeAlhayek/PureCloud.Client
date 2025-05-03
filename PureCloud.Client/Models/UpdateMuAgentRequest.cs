@@ -1,4 +1,3 @@
-using System.Runtime.Serialization;
 using System.Text;
 using System.Text.Json.Serialization;
 
@@ -7,7 +6,7 @@ namespace PureCloud.Client.Models;
 /// <summary>
 /// UpdateMuAgentRequest
 /// </summary>
-[DataContract]
+
 public partial class UpdateMuAgentRequest : IEquatable<UpdateMuAgentRequest>
 {
 
@@ -34,7 +33,7 @@ public partial class UpdateMuAgentRequest : IEquatable<UpdateMuAgentRequest>
     /// Whether the agent can be included in schedule generation
     /// </summary>
     /// <value>Whether the agent can be included in schedule generation</value>
-    [DataMember(Name = "schedulable", EmitDefaultValue = false)]
+    [JsonPropertyName("schedulable")]
     public bool? Schedulable { get; set; }
 
 
@@ -43,7 +42,7 @@ public partial class UpdateMuAgentRequest : IEquatable<UpdateMuAgentRequest>
     /// User to be updated
     /// </summary>
     /// <value>User to be updated</value>
-    [DataMember(Name = "userId", EmitDefaultValue = false)]
+    [JsonPropertyName("userId")]
     public string UserId { get; set; }
 
 

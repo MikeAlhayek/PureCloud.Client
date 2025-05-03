@@ -1,4 +1,3 @@
-using System.Runtime.Serialization;
 using System.Text;
 using System.Text.Json.Serialization;
 
@@ -7,7 +6,7 @@ namespace PureCloud.Client.Models;
 /// <summary>
 /// NamedEntityTypeBinding
 /// </summary>
-[DataContract]
+
 public partial class NamedEntityTypeBinding : IEquatable<NamedEntityTypeBinding>
 {
 
@@ -34,7 +33,7 @@ public partial class NamedEntityTypeBinding : IEquatable<NamedEntityTypeBinding>
     /// The named entity type of the binding. It can be a built-in one such as builtin:number or a custom entity type such as BeverageType.
     /// </summary>
     /// <value>The named entity type of the binding. It can be a built-in one such as builtin:number or a custom entity type such as BeverageType.</value>
-    [DataMember(Name = "entityType", EmitDefaultValue = false)]
+    [JsonPropertyName("entityType")]
     public string EntityType { get; set; }
 
 
@@ -43,7 +42,7 @@ public partial class NamedEntityTypeBinding : IEquatable<NamedEntityTypeBinding>
     /// The name that this named entity type is bound to.
     /// </summary>
     /// <value>The name that this named entity type is bound to.</value>
-    [DataMember(Name = "entityName", EmitDefaultValue = false)]
+    [JsonPropertyName("entityName")]
     public string EntityName { get; set; }
 
 

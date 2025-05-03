@@ -1,12 +1,12 @@
-using System.Runtime.Serialization;
 using System.Text;
+using System.Text.Json.Serialization;
 
 namespace PureCloud.Client.Models;
 
 /// <summary>
 /// IdentityResolutionQueueConfig
 /// </summary>
-[DataContract]
+
 public partial class IdentityResolutionQueueConfig : IEquatable<IdentityResolutionQueueConfig>
 {
     /// <summary>
@@ -24,7 +24,7 @@ public partial class IdentityResolutionQueueConfig : IEquatable<IdentityResoluti
     /// <summary>
     /// Gets or Sets CallOnBehalfOfQueue
     /// </summary>
-    [DataMember(Name = "callOnBehalfOfQueue", EmitDefaultValue = false)]
+    [JsonPropertyName("callOnBehalfOfQueue")]
     public IdentityResolutionConfig CallOnBehalfOfQueue { get; set; }
 
 

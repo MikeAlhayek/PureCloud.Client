@@ -7,14 +7,14 @@ namespace PureCloud.Client.Models;
 /// <summary>
 /// ShiftTradeSettings
 /// </summary>
-[DataContract]
+
 public partial class ShiftTradeSettings : IEquatable<ShiftTradeSettings>
 {
     /// <summary>
     /// How to handle shift trades which involve unequal paid times
     /// </summary>
     /// <value>How to handle shift trades which involve unequal paid times</value>
-    [JsonConverter(typeof(JsonStringEnumConverter))]
+    
     public enum UnequalPaidEnum
     {
         /// <summary>
@@ -47,7 +47,7 @@ public partial class ShiftTradeSettings : IEquatable<ShiftTradeSettings>
     /// How to handle one-sided shift trades
     /// </summary>
     /// <value>How to handle one-sided shift trades</value>
-    [JsonConverter(typeof(JsonStringEnumConverter))]
+    
     public enum OneSidedEnum
     {
         /// <summary>
@@ -80,7 +80,7 @@ public partial class ShiftTradeSettings : IEquatable<ShiftTradeSettings>
     /// How to handle shift trades which result in violations of weekly minimum paid time constraint
     /// </summary>
     /// <value>How to handle shift trades which result in violations of weekly minimum paid time constraint</value>
-    [JsonConverter(typeof(JsonStringEnumConverter))]
+    
     public enum WeeklyMinPaidViolationsEnum
     {
         /// <summary>
@@ -113,7 +113,7 @@ public partial class ShiftTradeSettings : IEquatable<ShiftTradeSettings>
     /// How to handle shift trades which result in violations of weekly maximum paid time constraint
     /// </summary>
     /// <value>How to handle shift trades which result in violations of weekly maximum paid time constraint</value>
-    [JsonConverter(typeof(JsonStringEnumConverter))]
+    
     public enum WeeklyMaxPaidViolationsEnum
     {
         /// <summary>
@@ -146,25 +146,25 @@ public partial class ShiftTradeSettings : IEquatable<ShiftTradeSettings>
     /// How to handle shift trades which involve unequal paid times
     /// </summary>
     /// <value>How to handle shift trades which involve unequal paid times</value>
-    [DataMember(Name = "unequalPaid", EmitDefaultValue = false)]
+    [JsonPropertyName("unequalPaid")]
     public UnequalPaidEnum? UnequalPaid { get; set; }
     /// <summary>
     /// How to handle one-sided shift trades
     /// </summary>
     /// <value>How to handle one-sided shift trades</value>
-    [DataMember(Name = "oneSided", EmitDefaultValue = false)]
+    [JsonPropertyName("oneSided")]
     public OneSidedEnum? OneSided { get; set; }
     /// <summary>
     /// How to handle shift trades which result in violations of weekly minimum paid time constraint
     /// </summary>
     /// <value>How to handle shift trades which result in violations of weekly minimum paid time constraint</value>
-    [DataMember(Name = "weeklyMinPaidViolations", EmitDefaultValue = false)]
+    [JsonPropertyName("weeklyMinPaidViolations")]
     public WeeklyMinPaidViolationsEnum? WeeklyMinPaidViolations { get; set; }
     /// <summary>
     /// How to handle shift trades which result in violations of weekly maximum paid time constraint
     /// </summary>
     /// <value>How to handle shift trades which result in violations of weekly maximum paid time constraint</value>
-    [DataMember(Name = "weeklyMaxPaidViolations", EmitDefaultValue = false)]
+    [JsonPropertyName("weeklyMaxPaidViolations")]
     public WeeklyMaxPaidViolationsEnum? WeeklyMaxPaidViolations { get; set; }
     /// <summary>
     /// Initializes a new instance of the <see cref="ShiftTradeSettings" /> class.
@@ -206,7 +206,7 @@ public partial class ShiftTradeSettings : IEquatable<ShiftTradeSettings>
     /// Whether shift trading is enabled for this management unit
     /// </summary>
     /// <value>Whether shift trading is enabled for this management unit</value>
-    [DataMember(Name = "enabled", EmitDefaultValue = false)]
+    [JsonPropertyName("enabled")]
     public bool? Enabled { get; set; }
 
 
@@ -215,7 +215,7 @@ public partial class ShiftTradeSettings : IEquatable<ShiftTradeSettings>
     /// Whether automatic shift trade review is enabled according to the rules defined in for this management unit
     /// </summary>
     /// <value>Whether automatic shift trade review is enabled according to the rules defined in for this management unit</value>
-    [DataMember(Name = "autoReview", EmitDefaultValue = false)]
+    [JsonPropertyName("autoReview")]
     public bool? AutoReview { get; set; }
 
 
@@ -224,7 +224,7 @@ public partial class ShiftTradeSettings : IEquatable<ShiftTradeSettings>
     /// Whether direct shift trades between agents are allowed
     /// </summary>
     /// <value>Whether direct shift trades between agents are allowed</value>
-    [DataMember(Name = "allowDirectTrades", EmitDefaultValue = false)]
+    [JsonPropertyName("allowDirectTrades")]
     public bool? AllowDirectTrades { get; set; }
 
 
@@ -233,7 +233,7 @@ public partial class ShiftTradeSettings : IEquatable<ShiftTradeSettings>
     /// The minimum number of hours in the future shift trades are allowed
     /// </summary>
     /// <value>The minimum number of hours in the future shift trades are allowed</value>
-    [DataMember(Name = "minHoursInFuture", EmitDefaultValue = false)]
+    [JsonPropertyName("minHoursInFuture")]
     public int? MinHoursInFuture { get; set; }
 
 
@@ -250,7 +250,7 @@ public partial class ShiftTradeSettings : IEquatable<ShiftTradeSettings>
     /// Whether to constrain shift trades to agents with matching queues
     /// </summary>
     /// <value>Whether to constrain shift trades to agents with matching queues</value>
-    [DataMember(Name = "requiresMatchingQueues", EmitDefaultValue = false)]
+    [JsonPropertyName("requiresMatchingQueues")]
     public bool? RequiresMatchingQueues { get; set; }
 
 
@@ -259,7 +259,7 @@ public partial class ShiftTradeSettings : IEquatable<ShiftTradeSettings>
     /// Whether to constrain shift trades to agents with matching languages
     /// </summary>
     /// <value>Whether to constrain shift trades to agents with matching languages</value>
-    [DataMember(Name = "requiresMatchingLanguages", EmitDefaultValue = false)]
+    [JsonPropertyName("requiresMatchingLanguages")]
     public bool? RequiresMatchingLanguages { get; set; }
 
 
@@ -268,7 +268,7 @@ public partial class ShiftTradeSettings : IEquatable<ShiftTradeSettings>
     /// Whether to constrain shift trades to agents with matching skills
     /// </summary>
     /// <value>Whether to constrain shift trades to agents with matching skills</value>
-    [DataMember(Name = "requiresMatchingSkills", EmitDefaultValue = false)]
+    [JsonPropertyName("requiresMatchingSkills")]
     public bool? RequiresMatchingSkills { get; set; }
 
 
@@ -277,7 +277,7 @@ public partial class ShiftTradeSettings : IEquatable<ShiftTradeSettings>
     /// Whether to constrain shift trades to agents with matching planning groups
     /// </summary>
     /// <value>Whether to constrain shift trades to agents with matching planning groups</value>
-    [DataMember(Name = "requiresMatchingPlanningGroups", EmitDefaultValue = false)]
+    [JsonPropertyName("requiresMatchingPlanningGroups")]
     public bool? RequiresMatchingPlanningGroups { get; set; }
 
 
@@ -286,7 +286,7 @@ public partial class ShiftTradeSettings : IEquatable<ShiftTradeSettings>
     /// Rules that specify what to do with activity categories that are part of a shift defined in a trade
     /// </summary>
     /// <value>Rules that specify what to do with activity categories that are part of a shift defined in a trade</value>
-    [DataMember(Name = "activityCategoryRules", EmitDefaultValue = false)]
+    [JsonPropertyName("activityCategoryRules")]
     public List<ShiftTradeActivityRule> ActivityCategoryRules { get; set; }
 
 

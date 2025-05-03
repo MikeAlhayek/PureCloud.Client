@@ -7,14 +7,14 @@ namespace PureCloud.Client.Models;
 /// <summary>
 /// CreateMetric
 /// </summary>
-[DataContract]
+
 public partial class CreateMetric : IEquatable<CreateMetric>
 {
     /// <summary>
     /// The time unit in which the metric should be displayed - - this parameter is ignored when displaying non-time values
     /// </summary>
     /// <value>The time unit in which the metric should be displayed - - this parameter is ignored when displaying non-time values</value>
-    [JsonConverter(typeof(JsonStringEnumConverter))]
+    
     public enum TimeDisplayUnitEnum
     {
         /// <summary>
@@ -53,7 +53,7 @@ public partial class CreateMetric : IEquatable<CreateMetric>
     /// The time unit in which the metric should be displayed - - this parameter is ignored when displaying non-time values
     /// </summary>
     /// <value>The time unit in which the metric should be displayed - - this parameter is ignored when displaying non-time values</value>
-    [DataMember(Name = "timeDisplayUnit", EmitDefaultValue = false)]
+    [JsonPropertyName("timeDisplayUnit")]
     public TimeDisplayUnitEnum? TimeDisplayUnit { get; set; }
 
     /// <summary>
@@ -89,7 +89,7 @@ public partial class CreateMetric : IEquatable<CreateMetric>
     /// The id of associated metric definition
     /// </summary>
     /// <value>The id of associated metric definition</value>
-    [DataMember(Name = "metricDefinitionId", EmitDefaultValue = false)]
+    [JsonPropertyName("metricDefinitionId")]
     public string MetricDefinitionId { get; set; }
 
 
@@ -98,7 +98,7 @@ public partial class CreateMetric : IEquatable<CreateMetric>
     /// The id of associated external metric definition
     /// </summary>
     /// <value>The id of associated external metric definition</value>
-    [DataMember(Name = "externalMetricDefinitionId", EmitDefaultValue = false)]
+    [JsonPropertyName("externalMetricDefinitionId")]
     public string ExternalMetricDefinitionId { get; set; }
 
 
@@ -107,7 +107,7 @@ public partial class CreateMetric : IEquatable<CreateMetric>
     /// Associated objective for this metric
     /// </summary>
     /// <value>Associated objective for this metric</value>
-    [DataMember(Name = "objective", EmitDefaultValue = false)]
+    [JsonPropertyName("objective")]
     public CreateObjective Objective { get; set; }
 
 
@@ -116,7 +116,7 @@ public partial class CreateMetric : IEquatable<CreateMetric>
     /// Performance profile id of this metric
     /// </summary>
     /// <value>Performance profile id of this metric</value>
-    [DataMember(Name = "performanceProfileId", EmitDefaultValue = false)]
+    [JsonPropertyName("performanceProfileId")]
     public string PerformanceProfileId { get; set; }
 
 
@@ -125,7 +125,7 @@ public partial class CreateMetric : IEquatable<CreateMetric>
     /// The name of this metric
     /// </summary>
     /// <value>The name of this metric</value>
-    [DataMember(Name = "name", EmitDefaultValue = false)]
+    [JsonPropertyName("name")]
     public string Name { get; set; }
 
 
@@ -134,7 +134,7 @@ public partial class CreateMetric : IEquatable<CreateMetric>
     /// The precision of the metric, must be between 0 and 5
     /// </summary>
     /// <value>The precision of the metric, must be between 0 and 5</value>
-    [DataMember(Name = "precision", EmitDefaultValue = false)]
+    [JsonPropertyName("precision")]
     public int? Precision { get; set; }
 
 

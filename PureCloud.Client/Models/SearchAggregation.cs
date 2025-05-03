@@ -7,14 +7,14 @@ namespace PureCloud.Client.Models;
 /// <summary>
 /// SearchAggregation
 /// </summary>
-[DataContract]
+
 public partial class SearchAggregation : IEquatable<SearchAggregation>
 {
     /// <summary>
     /// The type of aggregation to perform
     /// </summary>
     /// <value>The type of aggregation to perform</value>
-    [JsonConverter(typeof(JsonStringEnumConverter))]
+    
     public enum TypeEnum
     {
         /// <summary>
@@ -70,7 +70,7 @@ public partial class SearchAggregation : IEquatable<SearchAggregation>
     /// <summary>
     /// Gets or Sets Order
     /// </summary>
-    [JsonConverter(typeof(JsonStringEnumConverter))]
+    
     public enum OrderEnum
     {
         /// <summary>
@@ -109,7 +109,7 @@ public partial class SearchAggregation : IEquatable<SearchAggregation>
     /// The type of aggregation to perform
     /// </summary>
     /// <value>The type of aggregation to perform</value>
-    [DataMember(Name = "type", EmitDefaultValue = false)]
+    [JsonPropertyName("type")]
     public TypeEnum? Type { get; set; }
     /// <summary>
     /// Initializes a new instance of the <see cref="SearchAggregation" /> class.
@@ -137,7 +137,7 @@ public partial class SearchAggregation : IEquatable<SearchAggregation>
     /// The field used for aggregation
     /// </summary>
     /// <value>The field used for aggregation</value>
-    [DataMember(Name = "field", EmitDefaultValue = false)]
+    [JsonPropertyName("field")]
     public string Field { get; set; }
 
 
@@ -146,7 +146,7 @@ public partial class SearchAggregation : IEquatable<SearchAggregation>
     /// The name of the aggregation. The response aggregation uses this name.
     /// </summary>
     /// <value>The name of the aggregation. The response aggregation uses this name.</value>
-    [DataMember(Name = "name", EmitDefaultValue = false)]
+    [JsonPropertyName("name")]
     public string Name { get; set; }
 
 
@@ -157,7 +157,7 @@ public partial class SearchAggregation : IEquatable<SearchAggregation>
     /// A value to use for aggregation
     /// </summary>
     /// <value>A value to use for aggregation</value>
-    [DataMember(Name = "value", EmitDefaultValue = false)]
+    [JsonPropertyName("value")]
     public string Value { get; set; }
 
 
@@ -166,7 +166,7 @@ public partial class SearchAggregation : IEquatable<SearchAggregation>
     /// The number aggregations results to return out of the entire result set
     /// </summary>
     /// <value>The number aggregations results to return out of the entire result set</value>
-    [DataMember(Name = "size", EmitDefaultValue = false)]
+    [JsonPropertyName("size")]
     public int? Size { get; set; }
 
 
@@ -175,7 +175,7 @@ public partial class SearchAggregation : IEquatable<SearchAggregation>
     /// The order in which aggregation results are sorted
     /// </summary>
     /// <value>The order in which aggregation results are sorted</value>
-    [DataMember(Name = "order", EmitDefaultValue = false)]
+    [JsonPropertyName("order")]
     public List<OrderEnum> Order { get; set; }
 
 

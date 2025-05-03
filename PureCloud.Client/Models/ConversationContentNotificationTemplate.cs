@@ -1,4 +1,3 @@
-using System.Runtime.Serialization;
 using System.Text;
 using System.Text.Json.Serialization;
 
@@ -7,7 +6,7 @@ namespace PureCloud.Client.Models;
 /// <summary>
 /// Template notification object.
 /// </summary>
-[DataContract]
+
 public partial class ConversationContentNotificationTemplate : IEquatable<ConversationContentNotificationTemplate>
 {
 
@@ -42,7 +41,7 @@ public partial class ConversationContentNotificationTemplate : IEquatable<Conver
     /// The identifier of the message template in &#39;your-namespace@your-template-id/name&#39; format. For External vendor (e.g WhatsApp), &#39;your-namespace@your-template-name&#39;. For GenesysCloud canned response message template use &#39;cannedresponse&#39; as your-namespace and use response ID as your-template-id (e.g. response ID&#x3D;1234 then &#39;cannedresponse@1234&#39;)
     /// </summary>
     /// <value>The identifier of the message template in &#39;your-namespace@your-template-id/name&#39; format. For External vendor (e.g WhatsApp), &#39;your-namespace@your-template-name&#39;. For GenesysCloud canned response message template use &#39;cannedresponse&#39; as your-namespace and use response ID as your-template-id (e.g. response ID&#x3D;1234 then &#39;cannedresponse@1234&#39;)</value>
-    [DataMember(Name = "id", EmitDefaultValue = false)]
+    [JsonPropertyName("id")]
     public string Id { get; set; }
 
 
@@ -51,7 +50,7 @@ public partial class ConversationContentNotificationTemplate : IEquatable<Conver
     /// Template language.
     /// </summary>
     /// <value>Template language.</value>
-    [DataMember(Name = "language", EmitDefaultValue = false)]
+    [JsonPropertyName("language")]
     public string Language { get; set; }
 
 
@@ -60,7 +59,7 @@ public partial class ConversationContentNotificationTemplate : IEquatable<Conver
     /// The template header.
     /// </summary>
     /// <value>The template header.</value>
-    [DataMember(Name = "header", EmitDefaultValue = false)]
+    [JsonPropertyName("header")]
     public ConversationNotificationTemplateHeader Header { get; set; }
 
 
@@ -69,7 +68,7 @@ public partial class ConversationContentNotificationTemplate : IEquatable<Conver
     /// The template body.
     /// </summary>
     /// <value>The template body.</value>
-    [DataMember(Name = "body", EmitDefaultValue = false)]
+    [JsonPropertyName("body")]
     public ConversationNotificationTemplateBody Body { get; set; }
 
 
@@ -78,7 +77,7 @@ public partial class ConversationContentNotificationTemplate : IEquatable<Conver
     /// Template buttons
     /// </summary>
     /// <value>Template buttons</value>
-    [DataMember(Name = "buttons", EmitDefaultValue = false)]
+    [JsonPropertyName("buttons")]
     public List<ConversationNotificationTemplateButton> Buttons { get; set; }
 
 
@@ -87,7 +86,7 @@ public partial class ConversationContentNotificationTemplate : IEquatable<Conver
     /// The template footer.
     /// </summary>
     /// <value>The template footer.</value>
-    [DataMember(Name = "footer", EmitDefaultValue = false)]
+    [JsonPropertyName("footer")]
     public ConversationNotificationTemplateFooter Footer { get; set; }
 
 

@@ -7,14 +7,14 @@ namespace PureCloud.Client.Models;
 /// <summary>
 /// HistoricalImportDeleteFilesJobResponse
 /// </summary>
-[DataContract]
+
 public partial class HistoricalImportDeleteFilesJobResponse : IEquatable<HistoricalImportDeleteFilesJobResponse>
 {
     /// <summary>
     /// Property denoting the state of the remove request
     /// </summary>
     /// <value>Property denoting the state of the remove request</value>
-    [JsonConverter(typeof(JsonStringEnumConverter))]
+    
     public enum StateEnum
     {
         /// <summary>
@@ -47,7 +47,7 @@ public partial class HistoricalImportDeleteFilesJobResponse : IEquatable<Histori
     /// Property denoting the state of the remove request
     /// </summary>
     /// <value>Property denoting the state of the remove request</value>
-    [DataMember(Name = "state", EmitDefaultValue = false)]
+    [JsonPropertyName("state")]
     public StateEnum? State { get; set; }
     /// <summary>
     /// Initializes a new instance of the <see cref="HistoricalImportDeleteFilesJobResponse" /> class.
@@ -69,7 +69,7 @@ public partial class HistoricalImportDeleteFilesJobResponse : IEquatable<Histori
     /// The Job Id Request
     /// </summary>
     /// <value>The Job Id Request</value>
-    [DataMember(Name = "id", EmitDefaultValue = false)]
+    [JsonPropertyName("id")]
     public string Id { get; private set; }
 
 
@@ -80,7 +80,7 @@ public partial class HistoricalImportDeleteFilesJobResponse : IEquatable<Histori
     /// The request entities that got deleted
     /// </summary>
     /// <value>The request entities that got deleted</value>
-    [DataMember(Name = "entities", EmitDefaultValue = false)]
+    [JsonPropertyName("entities")]
     public List<HistoricalDataDeleteEntity> Entities { get; set; }
 
 
@@ -89,7 +89,7 @@ public partial class HistoricalImportDeleteFilesJobResponse : IEquatable<Histori
     /// The request entities that were disallowed to be deleted
     /// </summary>
     /// <value>The request entities that were disallowed to be deleted</value>
-    [DataMember(Name = "disallowedEntities", EmitDefaultValue = false)]
+    [JsonPropertyName("disallowedEntities")]
     public List<HistoricalDataDisallowedDeleteEntity> DisallowedEntities { get; set; }
 
 
@@ -98,7 +98,7 @@ public partial class HistoricalImportDeleteFilesJobResponse : IEquatable<Histori
     /// The URI for this object
     /// </summary>
     /// <value>The URI for this object</value>
-    [DataMember(Name = "selfUri", EmitDefaultValue = false)]
+    [JsonPropertyName("selfUri")]
     public string SelfUri { get; private set; }
 
 

@@ -1,12 +1,12 @@
-using System.Runtime.Serialization;
 using System.Text;
+using System.Text.Json.Serialization;
 
 namespace PureCloud.Client.Models;
 
 /// <summary>
 /// AuthzSubject
 /// </summary>
-[DataContract]
+
 public partial class AuthzSubject : IEquatable<AuthzSubject>
 {
     /// <summary>
@@ -29,7 +29,7 @@ public partial class AuthzSubject : IEquatable<AuthzSubject>
     /// The globally unique identifier for the object.
     /// </summary>
     /// <value>The globally unique identifier for the object.</value>
-    [DataMember(Name = "id", EmitDefaultValue = false)]
+    [JsonPropertyName("id")]
     public string Id { get; private set; }
 
 
@@ -37,7 +37,7 @@ public partial class AuthzSubject : IEquatable<AuthzSubject>
     /// <summary>
     /// Gets or Sets Name
     /// </summary>
-    [DataMember(Name = "name", EmitDefaultValue = false)]
+    [JsonPropertyName("name")]
     public string Name { get; set; }
 
 
@@ -45,7 +45,7 @@ public partial class AuthzSubject : IEquatable<AuthzSubject>
     /// <summary>
     /// Gets or Sets Grants
     /// </summary>
-    [DataMember(Name = "grants", EmitDefaultValue = false)]
+    [JsonPropertyName("grants")]
     public List<AuthzGrant> Grants { get; set; }
 
 
@@ -53,7 +53,7 @@ public partial class AuthzSubject : IEquatable<AuthzSubject>
     /// <summary>
     /// Gets or Sets Version
     /// </summary>
-    [DataMember(Name = "version", EmitDefaultValue = false)]
+    [JsonPropertyName("version")]
     public int? Version { get; set; }
 
 
@@ -62,7 +62,7 @@ public partial class AuthzSubject : IEquatable<AuthzSubject>
     /// The URI for this object
     /// </summary>
     /// <value>The URI for this object</value>
-    [DataMember(Name = "selfUri", EmitDefaultValue = false)]
+    [JsonPropertyName("selfUri")]
     public string SelfUri { get; private set; }
 
 

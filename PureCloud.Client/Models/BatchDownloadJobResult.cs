@@ -1,12 +1,12 @@
-using System.Runtime.Serialization;
 using System.Text;
+using System.Text.Json.Serialization;
 
 namespace PureCloud.Client.Models;
 
 /// <summary>
 /// BatchDownloadJobResult
 /// </summary>
-[DataContract]
+
 public partial class BatchDownloadJobResult : IEquatable<BatchDownloadJobResult>
 {
     /// <summary>
@@ -33,7 +33,7 @@ public partial class BatchDownloadJobResult : IEquatable<BatchDownloadJobResult>
     /// Conversation id of the result
     /// </summary>
     /// <value>Conversation id of the result</value>
-    [DataMember(Name = "conversationId", EmitDefaultValue = false)]
+    [JsonPropertyName("conversationId")]
     public string ConversationId { get; set; }
 
 
@@ -42,7 +42,7 @@ public partial class BatchDownloadJobResult : IEquatable<BatchDownloadJobResult>
     /// Recording id of the result
     /// </summary>
     /// <value>Recording id of the result</value>
-    [DataMember(Name = "recordingId", EmitDefaultValue = false)]
+    [JsonPropertyName("recordingId")]
     public string RecordingId { get; set; }
 
 
@@ -51,7 +51,7 @@ public partial class BatchDownloadJobResult : IEquatable<BatchDownloadJobResult>
     /// URL of results... HTTP GET from this location to download results for this item
     /// </summary>
     /// <value>URL of results... HTTP GET from this location to download results for this item</value>
-    [DataMember(Name = "resultUrl", EmitDefaultValue = false)]
+    [JsonPropertyName("resultUrl")]
     public string ResultUrl { get; set; }
 
 
@@ -60,7 +60,7 @@ public partial class BatchDownloadJobResult : IEquatable<BatchDownloadJobResult>
     /// Content type of this result
     /// </summary>
     /// <value>Content type of this result</value>
-    [DataMember(Name = "contentType", EmitDefaultValue = false)]
+    [JsonPropertyName("contentType")]
     public string ContentType { get; set; }
 
 
@@ -69,7 +69,7 @@ public partial class BatchDownloadJobResult : IEquatable<BatchDownloadJobResult>
     /// An error message, in case of failed processing will indicate the cause of the failure
     /// </summary>
     /// <value>An error message, in case of failed processing will indicate the cause of the failure</value>
-    [DataMember(Name = "errorMsg", EmitDefaultValue = false)]
+    [JsonPropertyName("errorMsg")]
     public string ErrorMsg { get; set; }
 
 

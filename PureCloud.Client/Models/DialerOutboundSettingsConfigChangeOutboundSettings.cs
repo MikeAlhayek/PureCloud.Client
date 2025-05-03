@@ -7,14 +7,14 @@ namespace PureCloud.Client.Models;
 /// <summary>
 /// DialerOutboundSettingsConfigChangeOutboundSettings
 /// </summary>
-[DataContract]
+
 public partial class DialerOutboundSettingsConfigChangeOutboundSettings : IEquatable<DialerOutboundSettingsConfigChangeOutboundSettings>
 {
     /// <summary>
     /// The denominator to be used in determining the compliance abandon rate
     /// </summary>
     /// <value>The denominator to be used in determining the compliance abandon rate</value>
-    [JsonConverter(typeof(JsonStringEnumConverter))]
+    
     public enum ComplianceAbandonRateDenominatorEnum
     {
         /// <summary>
@@ -41,7 +41,7 @@ public partial class DialerOutboundSettingsConfigChangeOutboundSettings : IEquat
     /// The denominator to be used in determining the compliance abandon rate
     /// </summary>
     /// <value>The denominator to be used in determining the compliance abandon rate</value>
-    [DataMember(Name = "complianceAbandonRateDenominator", EmitDefaultValue = false)]
+    [JsonPropertyName("complianceAbandonRateDenominator")]
     public ComplianceAbandonRateDenominatorEnum? ComplianceAbandonRateDenominator { get; set; }
     /// <summary>
     /// Initializes a new instance of the <see cref="DialerOutboundSettingsConfigChangeOutboundSettings" /> class.
@@ -77,7 +77,7 @@ public partial class DialerOutboundSettingsConfigChangeOutboundSettings : IEquat
     /// The maximum number of calls that can be placed per agent on any campaign
     /// </summary>
     /// <value>The maximum number of calls that can be placed per agent on any campaign</value>
-    [DataMember(Name = "maxCallsPerAgent", EmitDefaultValue = false)]
+    [JsonPropertyName("maxCallsPerAgent")]
     public long? MaxCallsPerAgent { get; set; }
 
 
@@ -86,7 +86,7 @@ public partial class DialerOutboundSettingsConfigChangeOutboundSettings : IEquat
     /// The maximum percentage of lines that should be used for Outbound, expressed as a decimal in the range [0.0, 1.0]
     /// </summary>
     /// <value>The maximum percentage of lines that should be used for Outbound, expressed as a decimal in the range [0.0, 1.0]</value>
-    [DataMember(Name = "maxLineUtilization", EmitDefaultValue = false)]
+    [JsonPropertyName("maxLineUtilization")]
     public double? MaxLineUtilization { get; set; }
 
 
@@ -95,7 +95,7 @@ public partial class DialerOutboundSettingsConfigChangeOutboundSettings : IEquat
     /// The number of seconds used to determine if a call is abandoned
     /// </summary>
     /// <value>The number of seconds used to determine if a call is abandoned</value>
-    [DataMember(Name = "abandonSeconds", EmitDefaultValue = false)]
+    [JsonPropertyName("abandonSeconds")]
     public double? AbandonSeconds { get; set; }
 
 
@@ -105,7 +105,7 @@ public partial class DialerOutboundSettingsConfigChangeOutboundSettings : IEquat
     /// <summary>
     /// Gets or Sets AutomaticTimeZoneMapping
     /// </summary>
-    [DataMember(Name = "automaticTimeZoneMapping", EmitDefaultValue = false)]
+    [JsonPropertyName("automaticTimeZoneMapping")]
     public DialerOutboundSettingsConfigChangeAutomaticTimeZoneMappingSettings AutomaticTimeZoneMapping { get; set; }
 
 
@@ -114,7 +114,7 @@ public partial class DialerOutboundSettingsConfigChangeOutboundSettings : IEquat
     /// The globally unique identifier for the object.
     /// </summary>
     /// <value>The globally unique identifier for the object.</value>
-    [DataMember(Name = "id", EmitDefaultValue = false)]
+    [JsonPropertyName("id")]
     public string Id { get; set; }
 
 
@@ -123,7 +123,7 @@ public partial class DialerOutboundSettingsConfigChangeOutboundSettings : IEquat
     /// The UI-visible name of the object
     /// </summary>
     /// <value>The UI-visible name of the object</value>
-    [DataMember(Name = "name", EmitDefaultValue = false)]
+    [JsonPropertyName("name")]
     public string Name { get; set; }
 
 
@@ -132,7 +132,7 @@ public partial class DialerOutboundSettingsConfigChangeOutboundSettings : IEquat
     /// Creation time of the entity
     /// </summary>
     /// <value>Creation time of the entity</value>
-    [DataMember(Name = "dateCreated", EmitDefaultValue = false)]
+    [JsonPropertyName("dateCreated")]
     public DateTime? DateCreated { get; set; }
 
 
@@ -141,7 +141,7 @@ public partial class DialerOutboundSettingsConfigChangeOutboundSettings : IEquat
     /// Last modified time of the entity
     /// </summary>
     /// <value>Last modified time of the entity</value>
-    [DataMember(Name = "dateModified", EmitDefaultValue = false)]
+    [JsonPropertyName("dateModified")]
     public DateTime? DateModified { get; set; }
 
 
@@ -150,7 +150,7 @@ public partial class DialerOutboundSettingsConfigChangeOutboundSettings : IEquat
     /// Required for updates, must match the version number of the most recent update
     /// </summary>
     /// <value>Required for updates, must match the version number of the most recent update</value>
-    [DataMember(Name = "version", EmitDefaultValue = false)]
+    [JsonPropertyName("version")]
     public long? Version { get; set; }
 
 

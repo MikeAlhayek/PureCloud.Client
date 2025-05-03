@@ -7,14 +7,14 @@ namespace PureCloud.Client.Models;
 /// <summary>
 /// WorkitemQueryJobQueryFilters
 /// </summary>
-[DataContract]
+
 public partial class WorkitemQueryJobQueryFilters : IEquatable<WorkitemQueryJobQueryFilters>
 {
     /// <summary>
     /// Name of the attribute to filter.
     /// </summary>
     /// <value>Name of the attribute to filter.</value>
-    [JsonConverter(typeof(JsonStringEnumConverter))]
+    
     public enum NameEnum
     {
         /// <summary>
@@ -35,7 +35,7 @@ public partial class WorkitemQueryJobQueryFilters : IEquatable<WorkitemQueryJobQ
     /// Query filter logical operator to join criteria.
     /// </summary>
     /// <value>Query filter logical operator to join criteria.</value>
-    [JsonConverter(typeof(JsonStringEnumConverter))]
+    
     public enum OperatorEnum
     {
         /// <summary>
@@ -62,13 +62,13 @@ public partial class WorkitemQueryJobQueryFilters : IEquatable<WorkitemQueryJobQ
     /// Name of the attribute to filter.
     /// </summary>
     /// <value>Name of the attribute to filter.</value>
-    [DataMember(Name = "name", EmitDefaultValue = false)]
+    [JsonPropertyName("name")]
     public NameEnum? Name { get; set; }
     /// <summary>
     /// Query filter logical operator to join criteria.
     /// </summary>
     /// <value>Query filter logical operator to join criteria.</value>
-    [DataMember(Name = "operator", EmitDefaultValue = false)]
+    [JsonPropertyName("operator")]
     public OperatorEnum? Operator { get; set; }
 
     /// <summary>
@@ -100,7 +100,7 @@ public partial class WorkitemQueryJobQueryFilters : IEquatable<WorkitemQueryJobQ
     /// Query filter criteria.
     /// </summary>
     /// <value>Query filter criteria.</value>
-    [DataMember(Name = "criteria", EmitDefaultValue = false)]
+    [JsonPropertyName("criteria")]
     public List<WorkitemQueryJobQueryFiltersCriteria> Criteria { get; set; }
 
 

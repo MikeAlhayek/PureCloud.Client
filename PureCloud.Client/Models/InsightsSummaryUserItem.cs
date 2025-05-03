@@ -1,12 +1,12 @@
-using System.Runtime.Serialization;
 using System.Text;
+using System.Text.Json.Serialization;
 
 namespace PureCloud.Client.Models;
 
 /// <summary>
 /// InsightsSummaryUserItem
 /// </summary>
-[DataContract]
+
 public partial class InsightsSummaryUserItem : IEquatable<InsightsSummaryUserItem>
 {
     /// <summary>
@@ -31,7 +31,7 @@ public partial class InsightsSummaryUserItem : IEquatable<InsightsSummaryUserIte
     /// Queried user
     /// </summary>
     /// <value>Queried user</value>
-    [DataMember(Name = "user", EmitDefaultValue = false)]
+    [JsonPropertyName("user")]
     public UserReference User { get; set; }
 
 
@@ -40,7 +40,7 @@ public partial class InsightsSummaryUserItem : IEquatable<InsightsSummaryUserIte
     /// The list of insights data for each metric of the user
     /// </summary>
     /// <value>The list of insights data for each metric of the user</value>
-    [DataMember(Name = "metricData", EmitDefaultValue = false)]
+    [JsonPropertyName("metricData")]
     public List<InsightsSummaryMetricItem> MetricData { get; set; }
 
 
@@ -49,7 +49,7 @@ public partial class InsightsSummaryUserItem : IEquatable<InsightsSummaryUserIte
     /// Overall insights data of the user
     /// </summary>
     /// <value>Overall insights data of the user</value>
-    [DataMember(Name = "overallData", EmitDefaultValue = false)]
+    [JsonPropertyName("overallData")]
     public InsightsSummaryOverallItem OverallData { get; set; }
 
 
@@ -58,7 +58,7 @@ public partial class InsightsSummaryUserItem : IEquatable<InsightsSummaryUserIte
     /// Ranking of the user
     /// </summary>
     /// <value>Ranking of the user</value>
-    [DataMember(Name = "ranking", EmitDefaultValue = false)]
+    [JsonPropertyName("ranking")]
     public int? Ranking { get; set; }
 
 

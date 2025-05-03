@@ -1,12 +1,12 @@
-using System.Runtime.Serialization;
 using System.Text;
+using System.Text.Json.Serialization;
 
 namespace PureCloud.Client.Models;
 
 /// <summary>
 /// DialogflowCXAgent
 /// </summary>
-[DataContract]
+
 public partial class DialogflowCXAgent : IEquatable<DialogflowCXAgent>
 {
     /// <summary>
@@ -33,7 +33,7 @@ public partial class DialogflowCXAgent : IEquatable<DialogflowCXAgent>
     /// The globally unique identifier for the object.
     /// </summary>
     /// <value>The globally unique identifier for the object.</value>
-    [DataMember(Name = "id", EmitDefaultValue = false)]
+    [JsonPropertyName("id")]
     public string Id { get; private set; }
 
 
@@ -41,7 +41,7 @@ public partial class DialogflowCXAgent : IEquatable<DialogflowCXAgent>
     /// <summary>
     /// Gets or Sets Name
     /// </summary>
-    [DataMember(Name = "name", EmitDefaultValue = false)]
+    [JsonPropertyName("name")]
     public string Name { get; set; }
 
 
@@ -50,7 +50,7 @@ public partial class DialogflowCXAgent : IEquatable<DialogflowCXAgent>
     /// The project this Dialogflow CX agent belongs to.
     /// </summary>
     /// <value>The project this Dialogflow CX agent belongs to.</value>
-    [DataMember(Name = "project", EmitDefaultValue = false)]
+    [JsonPropertyName("project")]
     public DialogflowCXProject Project { get; set; }
 
 
@@ -59,7 +59,7 @@ public partial class DialogflowCXAgent : IEquatable<DialogflowCXAgent>
     /// The supported languages of the Dialogflow CX agent.  Each value will be a language code in the country-locale format. e.g. en-us, es-us, fr-ca, etc.
     /// </summary>
     /// <value>The supported languages of the Dialogflow CX agent.  Each value will be a language code in the country-locale format. e.g. en-us, es-us, fr-ca, etc.</value>
-    [DataMember(Name = "languages", EmitDefaultValue = false)]
+    [JsonPropertyName("languages")]
     public List<string> Languages { get; set; }
 
 
@@ -68,7 +68,7 @@ public partial class DialogflowCXAgent : IEquatable<DialogflowCXAgent>
     /// Available environments for this CX agent.
     /// </summary>
     /// <value>Available environments for this CX agent.</value>
-    [DataMember(Name = "environments", EmitDefaultValue = false)]
+    [JsonPropertyName("environments")]
     public List<DialogflowCXEnvironment> Environments { get; set; }
 
 
@@ -77,7 +77,7 @@ public partial class DialogflowCXAgent : IEquatable<DialogflowCXAgent>
     /// The Integration this Dialogflow CX agent was referenced from.
     /// </summary>
     /// <value>The Integration this Dialogflow CX agent was referenced from.</value>
-    [DataMember(Name = "integration", EmitDefaultValue = false)]
+    [JsonPropertyName("integration")]
     public DomainEntityRef Integration { get; set; }
 
 
@@ -86,7 +86,7 @@ public partial class DialogflowCXAgent : IEquatable<DialogflowCXAgent>
     /// The URI for this object
     /// </summary>
     /// <value>The URI for this object</value>
-    [DataMember(Name = "selfUri", EmitDefaultValue = false)]
+    [JsonPropertyName("selfUri")]
     public string SelfUri { get; private set; }
 
 

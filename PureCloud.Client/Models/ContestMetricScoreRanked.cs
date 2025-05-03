@@ -1,12 +1,12 @@
-using System.Runtime.Serialization;
 using System.Text;
+using System.Text.Json.Serialization;
 
 namespace PureCloud.Client.Models;
 
 /// <summary>
 /// ContestMetricScoreRanked
 /// </summary>
-[DataContract]
+
 public partial class ContestMetricScoreRanked : IEquatable<ContestMetricScoreRanked>
 {
     /// <summary>
@@ -33,7 +33,7 @@ public partial class ContestMetricScoreRanked : IEquatable<ContestMetricScoreRan
     /// The gamification metric for the data
     /// </summary>
     /// <value>The gamification metric for the data</value>
-    [DataMember(Name = "metric", EmitDefaultValue = false)]
+    [JsonPropertyName("metric")]
     public AddressableEntityRef Metric { get; set; }
 
 
@@ -42,7 +42,7 @@ public partial class ContestMetricScoreRanked : IEquatable<ContestMetricScoreRan
     /// The Contest Metric score
     /// </summary>
     /// <value>The Contest Metric score</value>
-    [DataMember(Name = "score", EmitDefaultValue = false)]
+    [JsonPropertyName("score")]
     public double? Score { get; set; }
 
 
@@ -51,7 +51,7 @@ public partial class ContestMetricScoreRanked : IEquatable<ContestMetricScoreRan
     /// The Contest Metric totalPoints
     /// </summary>
     /// <value>The Contest Metric totalPoints</value>
-    [DataMember(Name = "totalPoints", EmitDefaultValue = false)]
+    [JsonPropertyName("totalPoints")]
     public double? TotalPoints { get; set; }
 
 
@@ -60,7 +60,7 @@ public partial class ContestMetricScoreRanked : IEquatable<ContestMetricScoreRan
     /// The Contest Metric percentOfGoal
     /// </summary>
     /// <value>The Contest Metric percentOfGoal</value>
-    [DataMember(Name = "percentOfGoal", EmitDefaultValue = false)]
+    [JsonPropertyName("percentOfGoal")]
     public double? PercentOfGoal { get; set; }
 
 
@@ -69,7 +69,7 @@ public partial class ContestMetricScoreRanked : IEquatable<ContestMetricScoreRan
     /// The Contest Score rank, a lower rank is better (1 is the best)
     /// </summary>
     /// <value>The Contest Score rank, a lower rank is better (1 is the best)</value>
-    [DataMember(Name = "rank", EmitDefaultValue = false)]
+    [JsonPropertyName("rank")]
     public int? Rank { get; set; }
 
 

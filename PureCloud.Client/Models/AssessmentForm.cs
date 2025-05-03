@@ -1,4 +1,3 @@
-using System.Runtime.Serialization;
 using System.Text;
 using System.Text.Json.Serialization;
 
@@ -7,7 +6,7 @@ namespace PureCloud.Client.Models;
 /// <summary>
 /// AssessmentForm
 /// </summary>
-[DataContract]
+
 public partial class AssessmentForm : IEquatable<AssessmentForm>
 {
 
@@ -34,7 +33,7 @@ public partial class AssessmentForm : IEquatable<AssessmentForm>
     /// The globally unique identifier for the object.
     /// </summary>
     /// <value>The globally unique identifier for the object.</value>
-    [DataMember(Name = "id", EmitDefaultValue = false)]
+    [JsonPropertyName("id")]
     public string Id { get; private set; }
 
 
@@ -43,7 +42,7 @@ public partial class AssessmentForm : IEquatable<AssessmentForm>
     /// Last modified date of the assessment form. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z
     /// </summary>
     /// <value>Last modified date of the assessment form. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z</value>
-    [DataMember(Name = "dateModified", EmitDefaultValue = false)]
+    [JsonPropertyName("dateModified")]
     public DateTime? DateModified { get; private set; }
 
 
@@ -52,7 +51,7 @@ public partial class AssessmentForm : IEquatable<AssessmentForm>
     /// The unique Id for all versions of this assessment form
     /// </summary>
     /// <value>The unique Id for all versions of this assessment form</value>
-    [DataMember(Name = "contextId", EmitDefaultValue = false)]
+    [JsonPropertyName("contextId")]
     public string ContextId { get; private set; }
 
 
@@ -61,7 +60,7 @@ public partial class AssessmentForm : IEquatable<AssessmentForm>
     /// The URI for this object
     /// </summary>
     /// <value>The URI for this object</value>
-    [DataMember(Name = "selfUri", EmitDefaultValue = false)]
+    [JsonPropertyName("selfUri")]
     public string SelfUri { get; private set; }
 
 
@@ -70,7 +69,7 @@ public partial class AssessmentForm : IEquatable<AssessmentForm>
     /// If true, assessment form is published
     /// </summary>
     /// <value>If true, assessment form is published</value>
-    [DataMember(Name = "published", EmitDefaultValue = false)]
+    [JsonPropertyName("published")]
     public bool? Published { get; private set; }
 
 
@@ -79,7 +78,7 @@ public partial class AssessmentForm : IEquatable<AssessmentForm>
     /// The pass percent for the assessment form
     /// </summary>
     /// <value>The pass percent for the assessment form</value>
-    [DataMember(Name = "passPercent", EmitDefaultValue = false)]
+    [JsonPropertyName("passPercent")]
     public int? PassPercent { get; set; }
 
 
@@ -88,7 +87,7 @@ public partial class AssessmentForm : IEquatable<AssessmentForm>
     /// A list of question groups
     /// </summary>
     /// <value>A list of question groups</value>
-    [DataMember(Name = "questionGroups", EmitDefaultValue = false)]
+    [JsonPropertyName("questionGroups")]
     public List<AssessmentFormQuestionGroup> QuestionGroups { get; set; }
 
 

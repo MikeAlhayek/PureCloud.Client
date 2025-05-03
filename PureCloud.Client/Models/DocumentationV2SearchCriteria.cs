@@ -7,14 +7,14 @@ namespace PureCloud.Client.Models;
 /// <summary>
 /// DocumentationV2SearchCriteria
 /// </summary>
-[DataContract]
+
 public partial class DocumentationV2SearchCriteria : IEquatable<DocumentationV2SearchCriteria>
 {
     /// <summary>
     /// How to apply this search criteria against other criteria
     /// </summary>
     /// <value>How to apply this search criteria against other criteria</value>
-    [JsonConverter(typeof(JsonStringEnumConverter))]
+    
     public enum OperatorEnum
     {
         /// <summary>
@@ -46,7 +46,7 @@ public partial class DocumentationV2SearchCriteria : IEquatable<DocumentationV2S
     /// <summary>
     /// Gets or Sets Type
     /// </summary>
-    [JsonConverter(typeof(JsonStringEnumConverter))]
+    
     public enum TypeEnum
     {
         /// <summary>
@@ -73,12 +73,12 @@ public partial class DocumentationV2SearchCriteria : IEquatable<DocumentationV2S
     /// How to apply this search criteria against other criteria
     /// </summary>
     /// <value>How to apply this search criteria against other criteria</value>
-    [DataMember(Name = "operator", EmitDefaultValue = false)]
+    [JsonPropertyName("operator")]
     public OperatorEnum? Operator { get; set; }
     /// <summary>
     /// Gets or Sets Type
     /// </summary>
-    [DataMember(Name = "type", EmitDefaultValue = false)]
+    [JsonPropertyName("type")]
     public TypeEnum? Type { get; set; }
     /// <summary>
     /// Initializes a new instance of the <see cref="DocumentationV2SearchCriteria" /> class.
@@ -112,7 +112,7 @@ public partial class DocumentationV2SearchCriteria : IEquatable<DocumentationV2S
     /// The end value of the range. This field is used for range search types.
     /// </summary>
     /// <value>The end value of the range. This field is used for range search types.</value>
-    [DataMember(Name = "endValue", EmitDefaultValue = false)]
+    [JsonPropertyName("endValue")]
     public string EndValue { get; set; }
 
 
@@ -121,7 +121,7 @@ public partial class DocumentationV2SearchCriteria : IEquatable<DocumentationV2S
     /// A list of values for the search to match against
     /// </summary>
     /// <value>A list of values for the search to match against</value>
-    [DataMember(Name = "values", EmitDefaultValue = false)]
+    [JsonPropertyName("values")]
     public List<string> Values { get; set; }
 
 
@@ -130,7 +130,7 @@ public partial class DocumentationV2SearchCriteria : IEquatable<DocumentationV2S
     /// The start value of the range. This field is used for range search types.
     /// </summary>
     /// <value>The start value of the range. This field is used for range search types.</value>
-    [DataMember(Name = "startValue", EmitDefaultValue = false)]
+    [JsonPropertyName("startValue")]
     public string StartValue { get; set; }
 
 
@@ -139,7 +139,7 @@ public partial class DocumentationV2SearchCriteria : IEquatable<DocumentationV2S
     /// A value for the search to match against
     /// </summary>
     /// <value>A value for the search to match against</value>
-    [DataMember(Name = "value", EmitDefaultValue = false)]
+    [JsonPropertyName("value")]
     public string Value { get; set; }
 
 
@@ -150,7 +150,7 @@ public partial class DocumentationV2SearchCriteria : IEquatable<DocumentationV2S
     /// Groups multiple conditions
     /// </summary>
     /// <value>Groups multiple conditions</value>
-    [DataMember(Name = "group", EmitDefaultValue = false)]
+    [JsonPropertyName("group")]
     public List<DocumentationV2SearchCriteria> Group { get; set; }
 
 
@@ -159,7 +159,7 @@ public partial class DocumentationV2SearchCriteria : IEquatable<DocumentationV2S
     /// Set date format for criteria values when using date range search type.  Supports Java date format syntax, example yyyy-MM-dd&#39;T&#39;HH:mm:ss.SSSX.
     /// </summary>
     /// <value>Set date format for criteria values when using date range search type.  Supports Java date format syntax, example yyyy-MM-dd&#39;T&#39;HH:mm:ss.SSSX.</value>
-    [DataMember(Name = "dateFormat", EmitDefaultValue = false)]
+    [JsonPropertyName("dateFormat")]
     public string DateFormat { get; set; }
 
 
@@ -170,7 +170,7 @@ public partial class DocumentationV2SearchCriteria : IEquatable<DocumentationV2S
     /// Field names to search against
     /// </summary>
     /// <value>Field names to search against</value>
-    [DataMember(Name = "fields", EmitDefaultValue = false)]
+    [JsonPropertyName("fields")]
     public List<string> Fields { get; set; }
 
 

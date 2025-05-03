@@ -1,12 +1,12 @@
-using System.Runtime.Serialization;
 using System.Text;
+using System.Text.Json.Serialization;
 
 namespace PureCloud.Client.Models;
 
 /// <summary>
 /// SnapshotFiles
 /// </summary>
-[DataContract]
+
 public partial class SnapshotFiles : IEquatable<SnapshotFiles>
 {
     /// <summary>
@@ -29,7 +29,7 @@ public partial class SnapshotFiles : IEquatable<SnapshotFiles>
     /// Metadata for requested snapshot
     /// </summary>
     /// <value>Metadata for requested snapshot</value>
-    [DataMember(Name = "metaData", EmitDefaultValue = false)]
+    [JsonPropertyName("metaData")]
     public SnapshotMetaData MetaData { get; set; }
 
 
@@ -38,7 +38,7 @@ public partial class SnapshotFiles : IEquatable<SnapshotFiles>
     /// Offered data for the requested snapshot
     /// </summary>
     /// <value>Offered data for the requested snapshot</value>
-    [DataMember(Name = "offered", EmitDefaultValue = false)]
+    [JsonPropertyName("offered")]
     public SnapshotMetricData Offered { get; set; }
 
 
@@ -47,7 +47,7 @@ public partial class SnapshotFiles : IEquatable<SnapshotFiles>
     /// Average handle time data for the requested snapshot
     /// </summary>
     /// <value>Average handle time data for the requested snapshot</value>
-    [DataMember(Name = "averageHandleTime", EmitDefaultValue = false)]
+    [JsonPropertyName("averageHandleTime")]
     public SnapshotMetricData AverageHandleTime { get; set; }
 
 

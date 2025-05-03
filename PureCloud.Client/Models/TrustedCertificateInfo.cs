@@ -1,12 +1,12 @@
-using System.Runtime.Serialization;
 using System.Text;
+using System.Text.Json.Serialization;
 
 namespace PureCloud.Client.Models;
 
 /// <summary>
 /// TrustedCertificateInfo
 /// </summary>
-[DataContract]
+
 public partial class TrustedCertificateInfo : IEquatable<TrustedCertificateInfo>
 {
     /// <summary>
@@ -29,7 +29,7 @@ public partial class TrustedCertificateInfo : IEquatable<TrustedCertificateInfo>
     /// The description of the certificate
     /// </summary>
     /// <value>The description of the certificate</value>
-    [DataMember(Name = "description", EmitDefaultValue = false)]
+    [JsonPropertyName("description")]
     public string Description { get; set; }
 
 
@@ -38,7 +38,7 @@ public partial class TrustedCertificateInfo : IEquatable<TrustedCertificateInfo>
     /// The serial number of the certificate
     /// </summary>
     /// <value>The serial number of the certificate</value>
-    [DataMember(Name = "serialNumber", EmitDefaultValue = false)]
+    [JsonPropertyName("serialNumber")]
     public string SerialNumber { get; set; }
 
 
@@ -47,7 +47,7 @@ public partial class TrustedCertificateInfo : IEquatable<TrustedCertificateInfo>
     /// The signature of the certificate
     /// </summary>
     /// <value>The signature of the certificate</value>
-    [DataMember(Name = "signature", EmitDefaultValue = false)]
+    [JsonPropertyName("signature")]
     public string Signature { get; set; }
 
 

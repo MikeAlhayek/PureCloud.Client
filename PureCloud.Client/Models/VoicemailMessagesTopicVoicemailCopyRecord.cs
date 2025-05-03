@@ -1,12 +1,12 @@
-using System.Runtime.Serialization;
 using System.Text;
+using System.Text.Json.Serialization;
 
 namespace PureCloud.Client.Models;
 
 /// <summary>
 /// VoicemailMessagesTopicVoicemailCopyRecord
 /// </summary>
-[DataContract]
+
 public partial class VoicemailMessagesTopicVoicemailCopyRecord : IEquatable<VoicemailMessagesTopicVoicemailCopyRecord>
 {
     /// <summary>
@@ -26,7 +26,7 @@ public partial class VoicemailMessagesTopicVoicemailCopyRecord : IEquatable<Voic
     /// <summary>
     /// Gets or Sets User
     /// </summary>
-    [DataMember(Name = "user", EmitDefaultValue = false)]
+    [JsonPropertyName("user")]
     public VoicemailMessagesTopicOwner User { get; set; }
 
 
@@ -34,7 +34,7 @@ public partial class VoicemailMessagesTopicVoicemailCopyRecord : IEquatable<Voic
     /// <summary>
     /// Gets or Sets Group
     /// </summary>
-    [DataMember(Name = "group", EmitDefaultValue = false)]
+    [JsonPropertyName("group")]
     public VoicemailMessagesTopicOwner Group { get; set; }
 
 

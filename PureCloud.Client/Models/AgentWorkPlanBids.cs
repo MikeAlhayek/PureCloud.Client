@@ -1,4 +1,3 @@
-using System.Runtime.Serialization;
 using System.Text;
 using System.Text.Json.Serialization;
 
@@ -7,7 +6,7 @@ namespace PureCloud.Client.Models;
 /// <summary>
 /// AgentWorkPlanBids
 /// </summary>
-[DataContract]
+
 public partial class AgentWorkPlanBids : IEquatable<AgentWorkPlanBids>
 {
 
@@ -34,7 +33,7 @@ public partial class AgentWorkPlanBids : IEquatable<AgentWorkPlanBids>
     /// The globally unique identifier for the object.
     /// </summary>
     /// <value>The globally unique identifier for the object.</value>
-    [DataMember(Name = "id", EmitDefaultValue = false)]
+    [JsonPropertyName("id")]
     public string Id { get; private set; }
 
 
@@ -43,7 +42,7 @@ public partial class AgentWorkPlanBids : IEquatable<AgentWorkPlanBids>
     /// The business unit to which the bids belong
     /// </summary>
     /// <value>The business unit to which the bids belong</value>
-    [DataMember(Name = "businessUnit", EmitDefaultValue = false)]
+    [JsonPropertyName("businessUnit")]
     public BusinessUnitReference BusinessUnit { get; set; }
 
 
@@ -52,7 +51,7 @@ public partial class AgentWorkPlanBids : IEquatable<AgentWorkPlanBids>
     /// Work plan bid summaries associated with this agent
     /// </summary>
     /// <value>Work plan bid summaries associated with this agent</value>
-    [DataMember(Name = "agentWorkPlanBids", EmitDefaultValue = false)]
+    [JsonPropertyName("agentWorkPlanBids")]
     public List<AgentWorkPlanBid> _AgentWorkPlanBids { get; set; }
 
 
@@ -61,7 +60,7 @@ public partial class AgentWorkPlanBids : IEquatable<AgentWorkPlanBids>
     /// The URI for this object
     /// </summary>
     /// <value>The URI for this object</value>
-    [DataMember(Name = "selfUri", EmitDefaultValue = false)]
+    [JsonPropertyName("selfUri")]
     public string SelfUri { get; private set; }
 
 

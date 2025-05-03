@@ -1,12 +1,12 @@
-using System.Runtime.Serialization;
 using System.Text;
+using System.Text.Json.Serialization;
 
 namespace PureCloud.Client.Models;
 
 /// <summary>
 /// TrunkInstanceTopicTrunkMetricsNetworkTypeIp
 /// </summary>
-[DataContract]
+
 public partial class TrunkInstanceTopicTrunkMetricsNetworkTypeIp : IEquatable<TrunkInstanceTopicTrunkMetricsNetworkTypeIp>
 {
     /// <summary>
@@ -26,7 +26,7 @@ public partial class TrunkInstanceTopicTrunkMetricsNetworkTypeIp : IEquatable<Tr
     /// <summary>
     /// Gets or Sets Address
     /// </summary>
-    [DataMember(Name = "address", EmitDefaultValue = false)]
+    [JsonPropertyName("address")]
     public string Address { get; set; }
 
 
@@ -34,7 +34,7 @@ public partial class TrunkInstanceTopicTrunkMetricsNetworkTypeIp : IEquatable<Tr
     /// <summary>
     /// Gets or Sets ErrorInfo
     /// </summary>
-    [DataMember(Name = "errorInfo", EmitDefaultValue = false)]
+    [JsonPropertyName("errorInfo")]
     public TrunkInstanceTopicTrunkErrorInfo ErrorInfo { get; set; }
 
 

@@ -7,14 +7,14 @@ namespace PureCloud.Client.Models;
 /// <summary>
 /// GeneralProgramJobRequest
 /// </summary>
-[DataContract]
+
 public partial class GeneralProgramJobRequest : IEquatable<GeneralProgramJobRequest>
 {
     /// <summary>
     /// The dialect of the topics to link with the general program, dialect format is {language}-{country} where language follows ISO 639-1 standard and country follows ISO 3166-1 alpha 2 standard
     /// </summary>
     /// <value>The dialect of the topics to link with the general program, dialect format is {language}-{country} where language follows ISO 639-1 standard and country follows ISO 3166-1 alpha 2 standard</value>
-    [JsonConverter(typeof(JsonStringEnumConverter))]
+    
     public enum DialectEnum
     {
         /// <summary>
@@ -239,7 +239,7 @@ public partial class GeneralProgramJobRequest : IEquatable<GeneralProgramJobRequ
     /// The mode to use for the general program job, default value is Skip
     /// </summary>
     /// <value>The mode to use for the general program job, default value is Skip</value>
-    [JsonConverter(typeof(JsonStringEnumConverter))]
+    
     public enum ModeEnum
     {
         /// <summary>
@@ -272,13 +272,13 @@ public partial class GeneralProgramJobRequest : IEquatable<GeneralProgramJobRequ
     /// The dialect of the topics to link with the general program, dialect format is {language}-{country} where language follows ISO 639-1 standard and country follows ISO 3166-1 alpha 2 standard
     /// </summary>
     /// <value>The dialect of the topics to link with the general program, dialect format is {language}-{country} where language follows ISO 639-1 standard and country follows ISO 3166-1 alpha 2 standard</value>
-    [DataMember(Name = "dialect", EmitDefaultValue = false)]
+    [JsonPropertyName("dialect")]
     public DialectEnum? Dialect { get; set; }
     /// <summary>
     /// The mode to use for the general program job, default value is Skip
     /// </summary>
     /// <value>The mode to use for the general program job, default value is Skip</value>
-    [DataMember(Name = "mode", EmitDefaultValue = false)]
+    [JsonPropertyName("mode")]
     public ModeEnum? Mode { get; set; }
 
     /// <summary>

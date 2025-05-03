@@ -7,13 +7,13 @@ namespace PureCloud.Client.Models;
 /// <summary>
 /// EvaluationCreateBody
 /// </summary>
-[DataContract]
+
 public partial class EvaluationCreateBody : IEquatable<EvaluationCreateBody>
 {
     /// <summary>
     /// Gets or Sets ResourceType
     /// </summary>
-    [JsonConverter(typeof(JsonStringEnumConverter))]
+    
     public enum ResourceTypeEnum
     {
         /// <summary>
@@ -33,7 +33,7 @@ public partial class EvaluationCreateBody : IEquatable<EvaluationCreateBody>
     /// <summary>
     /// Gets or Sets Status
     /// </summary>
-    [JsonConverter(typeof(JsonStringEnumConverter))]
+    
     public enum StatusEnum
     {
         /// <summary>
@@ -77,12 +77,12 @@ public partial class EvaluationCreateBody : IEquatable<EvaluationCreateBody>
     /// <summary>
     /// Gets or Sets ResourceType
     /// </summary>
-    [DataMember(Name = "resourceType", EmitDefaultValue = false)]
+    [JsonPropertyName("resourceType")]
     public ResourceTypeEnum? ResourceType { get; set; }
     /// <summary>
     /// Gets or Sets Status
     /// </summary>
-    [DataMember(Name = "status", EmitDefaultValue = false)]
+    [JsonPropertyName("status")]
     public StatusEnum? Status { get; set; }
     /// <summary>
     /// Initializes a new instance of the <see cref="EvaluationCreateBody" /> class.
@@ -132,7 +132,7 @@ public partial class EvaluationCreateBody : IEquatable<EvaluationCreateBody>
     /// The globally unique identifier for the object.
     /// </summary>
     /// <value>The globally unique identifier for the object.</value>
-    [DataMember(Name = "id", EmitDefaultValue = false)]
+    [JsonPropertyName("id")]
     public string Id { get; private set; }
 
 
@@ -141,7 +141,7 @@ public partial class EvaluationCreateBody : IEquatable<EvaluationCreateBody>
     /// Evaluation form used for evaluation (must be included for a successful request)
     /// </summary>
     /// <value>Evaluation form used for evaluation (must be included for a successful request)</value>
-    [DataMember(Name = "evaluationForm", EmitDefaultValue = false)]
+    [JsonPropertyName("evaluationForm")]
     public EvaluationCreateEvalForm EvaluationForm { get; set; }
 
 
@@ -150,7 +150,7 @@ public partial class EvaluationCreateBody : IEquatable<EvaluationCreateBody>
     /// User ID of the evaluator (must be included for a successful request)
     /// </summary>
     /// <value>User ID of the evaluator (must be included for a successful request)</value>
-    [DataMember(Name = "evaluator", EmitDefaultValue = false)]
+    [JsonPropertyName("evaluator")]
     public EvaluationCreateUser Evaluator { get; set; }
 
 
@@ -159,7 +159,7 @@ public partial class EvaluationCreateBody : IEquatable<EvaluationCreateBody>
     /// User ID of the agent (must be included for a successful request)
     /// </summary>
     /// <value>User ID of the agent (must be included for a successful request)</value>
-    [DataMember(Name = "agent", EmitDefaultValue = false)]
+    [JsonPropertyName("agent")]
     public EvaluationCreateUser Agent { get; set; }
 
 
@@ -167,7 +167,7 @@ public partial class EvaluationCreateBody : IEquatable<EvaluationCreateBody>
     /// <summary>
     /// Gets or Sets AgentHasRead
     /// </summary>
-    [DataMember(Name = "agentHasRead", EmitDefaultValue = false)]
+    [JsonPropertyName("agentHasRead")]
     public bool? AgentHasRead { get; set; }
 
 
@@ -175,7 +175,7 @@ public partial class EvaluationCreateBody : IEquatable<EvaluationCreateBody>
     /// <summary>
     /// Gets or Sets Answers
     /// </summary>
-    [DataMember(Name = "answers", EmitDefaultValue = false)]
+    [JsonPropertyName("answers")]
     public EvaluationScoringSet Answers { get; set; }
 
 
@@ -183,7 +183,7 @@ public partial class EvaluationCreateBody : IEquatable<EvaluationCreateBody>
     /// <summary>
     /// Gets or Sets Calibration
     /// </summary>
-    [DataMember(Name = "calibration", EmitDefaultValue = false)]
+    [JsonPropertyName("calibration")]
     public EvaluationCreateCalibration Calibration { get; set; }
 
 
@@ -191,7 +191,7 @@ public partial class EvaluationCreateBody : IEquatable<EvaluationCreateBody>
     /// <summary>
     /// Gets or Sets EvaluationContextId
     /// </summary>
-    [DataMember(Name = "evaluationContextId", EmitDefaultValue = false)]
+    [JsonPropertyName("evaluationContextId")]
     public string EvaluationContextId { get; set; }
 
 
@@ -199,7 +199,7 @@ public partial class EvaluationCreateBody : IEquatable<EvaluationCreateBody>
     /// <summary>
     /// Gets or Sets Conversation
     /// </summary>
-    [DataMember(Name = "conversation", EmitDefaultValue = false)]
+    [JsonPropertyName("conversation")]
     public EvaluationCreateConversation Conversation { get; set; }
 
 
@@ -209,7 +209,7 @@ public partial class EvaluationCreateBody : IEquatable<EvaluationCreateBody>
     /// <summary>
     /// Gets or Sets EvaluationSource
     /// </summary>
-    [DataMember(Name = "evaluationSource", EmitDefaultValue = false)]
+    [JsonPropertyName("evaluationSource")]
     public EvaluationSource EvaluationSource { get; set; }
 
 
@@ -217,7 +217,7 @@ public partial class EvaluationCreateBody : IEquatable<EvaluationCreateBody>
     /// <summary>
     /// Gets or Sets Rescore
     /// </summary>
-    [DataMember(Name = "rescore", EmitDefaultValue = false)]
+    [JsonPropertyName("rescore")]
     public bool? Rescore { get; set; }
 
 
@@ -225,7 +225,7 @@ public partial class EvaluationCreateBody : IEquatable<EvaluationCreateBody>
     /// <summary>
     /// Gets or Sets Queue
     /// </summary>
-    [DataMember(Name = "queue", EmitDefaultValue = false)]
+    [JsonPropertyName("queue")]
     public EvaluationCreateQueue Queue { get; set; }
 
 
@@ -234,7 +234,7 @@ public partial class EvaluationCreateBody : IEquatable<EvaluationCreateBody>
     /// Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z
     /// </summary>
     /// <value>Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z</value>
-    [DataMember(Name = "releaseDate", EmitDefaultValue = false)]
+    [JsonPropertyName("releaseDate")]
     public DateTime? ReleaseDate { get; set; }
 
 
@@ -244,7 +244,7 @@ public partial class EvaluationCreateBody : IEquatable<EvaluationCreateBody>
     /// <summary>
     /// Gets or Sets NeverRelease
     /// </summary>
-    [DataMember(Name = "neverRelease", EmitDefaultValue = false)]
+    [JsonPropertyName("neverRelease")]
     public bool? NeverRelease { get; set; }
 
 
@@ -253,7 +253,7 @@ public partial class EvaluationCreateBody : IEquatable<EvaluationCreateBody>
     /// Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z
     /// </summary>
     /// <value>Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z</value>
-    [DataMember(Name = "dateAssigneeChanged", EmitDefaultValue = false)]
+    [JsonPropertyName("dateAssigneeChanged")]
     public DateTime? DateAssigneeChanged { get; set; }
 
 
@@ -261,7 +261,7 @@ public partial class EvaluationCreateBody : IEquatable<EvaluationCreateBody>
     /// <summary>
     /// Gets or Sets Assignee
     /// </summary>
-    [DataMember(Name = "assignee", EmitDefaultValue = false)]
+    [JsonPropertyName("assignee")]
     public EvaluationCreateUser Assignee { get; set; }
 
 
@@ -270,7 +270,7 @@ public partial class EvaluationCreateBody : IEquatable<EvaluationCreateBody>
     /// The URI for this object
     /// </summary>
     /// <value>The URI for this object</value>
-    [DataMember(Name = "selfUri", EmitDefaultValue = false)]
+    [JsonPropertyName("selfUri")]
     public string SelfUri { get; private set; }
 
 

@@ -1,12 +1,12 @@
-using System.Runtime.Serialization;
 using System.Text;
+using System.Text.Json.Serialization;
 
 namespace PureCloud.Client.Models;
 
 /// <summary>
 /// This contains information about the flow that invoked this execution.  Both a flow execution and action identifier are needed to uniquely identify the invocation point.
 /// </summary>
-[DataContract]
+
 public partial class V2FlowExecutionDataFlowidTopicFlow : IEquatable<V2FlowExecutionDataFlowidTopicFlow>
 {
     /// <summary>
@@ -27,7 +27,7 @@ public partial class V2FlowExecutionDataFlowidTopicFlow : IEquatable<V2FlowExecu
     /// The flow execution identifier whose runtime that invoked this.
     /// </summary>
     /// <value>The flow execution identifier whose runtime that invoked this.</value>
-    [DataMember(Name = "flowExecutionId", EmitDefaultValue = false)]
+    [JsonPropertyName("flowExecutionId")]
     public string FlowExecutionId { get; set; }
 
 
@@ -36,7 +36,7 @@ public partial class V2FlowExecutionDataFlowidTopicFlow : IEquatable<V2FlowExecu
     /// The object execution identifier within the flow whose runtime that invoked this.  In Architect flows, this object execution identifier will be either an action execution identifier or a menu execution identifier.
     /// </summary>
     /// <value>The object execution identifier within the flow whose runtime that invoked this.  In Architect flows, this object execution identifier will be either an action execution identifier or a menu execution identifier.</value>
-    [DataMember(Name = "objectExecutionId", EmitDefaultValue = false)]
+    [JsonPropertyName("objectExecutionId")]
     public string ObjectExecutionId { get; set; }
 
 

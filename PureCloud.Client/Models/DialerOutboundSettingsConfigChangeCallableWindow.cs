@@ -1,12 +1,12 @@
-using System.Runtime.Serialization;
 using System.Text;
+using System.Text.Json.Serialization;
 
 namespace PureCloud.Client.Models;
 
 /// <summary>
 /// DialerOutboundSettingsConfigChangeCallableWindow
 /// </summary>
-[DataContract]
+
 public partial class DialerOutboundSettingsConfigChangeCallableWindow : IEquatable<DialerOutboundSettingsConfigChangeCallableWindow>
 {
     /// <summary>
@@ -26,7 +26,7 @@ public partial class DialerOutboundSettingsConfigChangeCallableWindow : IEquatab
     /// <summary>
     /// Gets or Sets Mapped
     /// </summary>
-    [DataMember(Name = "mapped", EmitDefaultValue = false)]
+    [JsonPropertyName("mapped")]
     public DialerOutboundSettingsConfigChangeAtzmTimeSlot Mapped { get; set; }
 
 
@@ -34,7 +34,7 @@ public partial class DialerOutboundSettingsConfigChangeCallableWindow : IEquatab
     /// <summary>
     /// Gets or Sets Unmapped
     /// </summary>
-    [DataMember(Name = "unmapped", EmitDefaultValue = false)]
+    [JsonPropertyName("unmapped")]
     public DialerOutboundSettingsConfigChangeAtzmTimeSlotWithTimeZone Unmapped { get; set; }
 
 

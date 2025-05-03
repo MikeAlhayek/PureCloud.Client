@@ -7,14 +7,14 @@ namespace PureCloud.Client.Models;
 /// <summary>
 /// Defines a simple matching condition
 /// </summary>
-[DataContract]
+
 public partial class MatchCriteria : IEquatable<MatchCriteria>
 {
     /// <summary>
     /// The type of operation to perform for matching check
     /// </summary>
     /// <value>The type of operation to perform for matching check</value>
-    [JsonConverter(typeof(JsonStringEnumConverter))]
+    
     public enum OperatorEnum
     {
         /// <summary>
@@ -101,7 +101,7 @@ public partial class MatchCriteria : IEquatable<MatchCriteria>
     /// The type of operation to perform for matching check
     /// </summary>
     /// <value>The type of operation to perform for matching check</value>
-    [DataMember(Name = "operator", EmitDefaultValue = false)]
+    [JsonPropertyName("operator")]
     public OperatorEnum? Operator { get; set; }
     /// <summary>
     /// Initializes a new instance of the <see cref="MatchCriteria" /> class.
@@ -125,7 +125,7 @@ public partial class MatchCriteria : IEquatable<MatchCriteria>
     /// The Goessner json path of the field to match
     /// </summary>
     /// <value>The Goessner json path of the field to match</value>
-    [DataMember(Name = "jsonPath", EmitDefaultValue = false)]
+    [JsonPropertyName("jsonPath")]
     public string JsonPath { get; set; }
 
 
@@ -136,7 +136,7 @@ public partial class MatchCriteria : IEquatable<MatchCriteria>
     /// The value to match on. Only one of value and values can be included
     /// </summary>
     /// <value>The value to match on. Only one of value and values can be included</value>
-    [DataMember(Name = "value", EmitDefaultValue = false)]
+    [JsonPropertyName("value")]
     public object Value { get; set; }
 
 
@@ -145,7 +145,7 @@ public partial class MatchCriteria : IEquatable<MatchCriteria>
     /// The list of values to match on. Only one of value and values can be included
     /// </summary>
     /// <value>The list of values to match on. Only one of value and values can be included</value>
-    [DataMember(Name = "values", EmitDefaultValue = false)]
+    [JsonPropertyName("values")]
     public List<object> Values { get; set; }
 
 

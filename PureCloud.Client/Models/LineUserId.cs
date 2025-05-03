@@ -1,12 +1,12 @@
-using System.Runtime.Serialization;
 using System.Text;
+using System.Text.Json.Serialization;
 
 namespace PureCloud.Client.Models;
 
 /// <summary>
 /// Channel-specific User ID for Line accounts
 /// </summary>
-[DataContract]
+
 public partial class LineUserId : IEquatable<LineUserId>
 {
     /// <summary>
@@ -25,7 +25,7 @@ public partial class LineUserId : IEquatable<LineUserId>
     /// The unique channel-specific userId for the user
     /// </summary>
     /// <value>The unique channel-specific userId for the user</value>
-    [DataMember(Name = "userId", EmitDefaultValue = false)]
+    [JsonPropertyName("userId")]
     public string UserId { get; set; }
 
 

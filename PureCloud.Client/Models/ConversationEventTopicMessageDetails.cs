@@ -7,14 +7,14 @@ namespace PureCloud.Client.Models;
 /// <summary>
 /// ConversationEventTopicMessageDetails
 /// </summary>
-[DataContract]
+
 public partial class ConversationEventTopicMessageDetails : IEquatable<ConversationEventTopicMessageDetails>
 {
     /// <summary>
     /// Indicates the delivery status of the message.
     /// </summary>
     /// <value>Indicates the delivery status of the message.</value>
-    [JsonConverter(typeof(JsonStringEnumConverter))]
+    
     public enum MessageStatusEnum
     {
         /// <summary>
@@ -83,7 +83,7 @@ public partial class ConversationEventTopicMessageDetails : IEquatable<Conversat
     /// For social media messages, the visibility of the message in the originating social platform
     /// </summary>
     /// <value>For social media messages, the visibility of the message in the originating social platform</value>
-    [JsonConverter(typeof(JsonStringEnumConverter))]
+    
     public enum SocialVisibilityEnum
     {
         /// <summary>
@@ -110,13 +110,13 @@ public partial class ConversationEventTopicMessageDetails : IEquatable<Conversat
     /// Indicates the delivery status of the message.
     /// </summary>
     /// <value>Indicates the delivery status of the message.</value>
-    [DataMember(Name = "messageStatus", EmitDefaultValue = false)]
+    [JsonPropertyName("messageStatus")]
     public MessageStatusEnum? MessageStatus { get; set; }
     /// <summary>
     /// For social media messages, the visibility of the message in the originating social platform
     /// </summary>
     /// <value>For social media messages, the visibility of the message in the originating social platform</value>
-    [DataMember(Name = "socialVisibility", EmitDefaultValue = false)]
+    [JsonPropertyName("socialVisibility")]
     public SocialVisibilityEnum? SocialVisibility { get; set; }
     /// <summary>
     /// Initializes a new instance of the <see cref="ConversationEventTopicMessageDetails" /> class.
@@ -150,7 +150,7 @@ public partial class ConversationEventTopicMessageDetails : IEquatable<Conversat
     /// UUID identifying the message media.
     /// </summary>
     /// <value>UUID identifying the message media.</value>
-    [DataMember(Name = "messageId", EmitDefaultValue = false)]
+    [JsonPropertyName("messageId")]
     public string MessageId { get; set; }
 
 
@@ -159,7 +159,7 @@ public partial class ConversationEventTopicMessageDetails : IEquatable<Conversat
     /// The time when the message was sent or received.
     /// </summary>
     /// <value>The time when the message was sent or received.</value>
-    [DataMember(Name = "messageTime", EmitDefaultValue = false)]
+    [JsonPropertyName("messageTime")]
     public DateTime? MessageTime { get; set; }
 
 
@@ -170,7 +170,7 @@ public partial class ConversationEventTopicMessageDetails : IEquatable<Conversat
     /// The message segment count, greater than 1 if the message content was split into multiple parts for this message type, e.g. SMS character limits.
     /// </summary>
     /// <value>The message segment count, greater than 1 if the message content was split into multiple parts for this message type, e.g. SMS character limits.</value>
-    [DataMember(Name = "messageSegmentCount", EmitDefaultValue = false)]
+    [JsonPropertyName("messageSegmentCount")]
     public long? MessageSegmentCount { get; set; }
 
 
@@ -179,7 +179,7 @@ public partial class ConversationEventTopicMessageDetails : IEquatable<Conversat
     /// The media (images, files, etc) associated with this message, if any
     /// </summary>
     /// <value>The media (images, files, etc) associated with this message, if any</value>
-    [DataMember(Name = "media", EmitDefaultValue = false)]
+    [JsonPropertyName("media")]
     public List<ConversationEventTopicMessageMedia> Media { get; set; }
 
 
@@ -188,7 +188,7 @@ public partial class ConversationEventTopicMessageDetails : IEquatable<Conversat
     /// Detailed information about an error response.
     /// </summary>
     /// <value>Detailed information about an error response.</value>
-    [DataMember(Name = "errorInfo", EmitDefaultValue = false)]
+    [JsonPropertyName("errorInfo")]
     public ConversationEventTopicErrorDetails ErrorInfo { get; set; }
 
 
@@ -197,7 +197,7 @@ public partial class ConversationEventTopicMessageDetails : IEquatable<Conversat
     /// A list of stickers included in the message
     /// </summary>
     /// <value>A list of stickers included in the message</value>
-    [DataMember(Name = "stickers", EmitDefaultValue = false)]
+    [JsonPropertyName("stickers")]
     public List<ConversationEventTopicMessageSticker> Stickers { get; set; }
 
 
@@ -205,7 +205,7 @@ public partial class ConversationEventTopicMessageDetails : IEquatable<Conversat
     /// <summary>
     /// Gets or Sets MessageMetadata
     /// </summary>
-    [DataMember(Name = "messageMetadata", EmitDefaultValue = false)]
+    [JsonPropertyName("messageMetadata")]
     public ConversationEventTopicMessageMetadata MessageMetadata { get; set; }
 
 

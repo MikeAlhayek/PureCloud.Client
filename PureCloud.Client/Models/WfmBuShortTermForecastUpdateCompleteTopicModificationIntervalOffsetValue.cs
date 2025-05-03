@@ -1,12 +1,12 @@
-using System.Runtime.Serialization;
 using System.Text;
+using System.Text.Json.Serialization;
 
 namespace PureCloud.Client.Models;
 
 /// <summary>
 /// WfmBuShortTermForecastUpdateCompleteTopicModificationIntervalOffsetValue
 /// </summary>
-[DataContract]
+
 public partial class WfmBuShortTermForecastUpdateCompleteTopicModificationIntervalOffsetValue : IEquatable<WfmBuShortTermForecastUpdateCompleteTopicModificationIntervalOffsetValue>
 {
     /// <summary>
@@ -26,7 +26,7 @@ public partial class WfmBuShortTermForecastUpdateCompleteTopicModificationInterv
     /// <summary>
     /// Gets or Sets IntervalIndex
     /// </summary>
-    [DataMember(Name = "intervalIndex", EmitDefaultValue = false)]
+    [JsonPropertyName("intervalIndex")]
     public long? IntervalIndex { get; set; }
 
 
@@ -34,7 +34,7 @@ public partial class WfmBuShortTermForecastUpdateCompleteTopicModificationInterv
     /// <summary>
     /// Gets or Sets Value
     /// </summary>
-    [DataMember(Name = "value", EmitDefaultValue = false)]
+    [JsonPropertyName("value")]
     public double? Value { get; set; }
 
 

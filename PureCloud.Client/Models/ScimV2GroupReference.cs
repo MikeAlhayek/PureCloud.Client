@@ -7,14 +7,14 @@ namespace PureCloud.Client.Models;
 /// <summary>
 /// Defines a reference to SCIM groups.
 /// </summary>
-[DataContract]
+
 public partial class ScimV2GroupReference : IEquatable<ScimV2GroupReference>
 {
     /// <summary>
     /// The type of SCIM resource.
     /// </summary>
     /// <value>The type of SCIM resource.</value>
-    [JsonConverter(typeof(JsonStringEnumConverter))]
+    
     public enum TypeEnum
     {
         /// <summary>
@@ -59,7 +59,7 @@ public partial class ScimV2GroupReference : IEquatable<ScimV2GroupReference>
     /// The type of SCIM resource.
     /// </summary>
     /// <value>The type of SCIM resource.</value>
-    [DataMember(Name = "type", EmitDefaultValue = false)]
+    [JsonPropertyName("type")]
     public TypeEnum? Type { get; private set; }
     /// <summary>
     /// Initializes a new instance of the <see cref="ScimV2GroupReference" /> class.
@@ -79,7 +79,7 @@ public partial class ScimV2GroupReference : IEquatable<ScimV2GroupReference>
     /// The ID of the group member. Can be \&quot;userId\&quot; or \&quot;groupId\&quot;.
     /// </summary>
     /// <value>The ID of the group member. Can be \&quot;userId\&quot; or \&quot;groupId\&quot;.</value>
-    [DataMember(Name = "value", EmitDefaultValue = false)]
+    [JsonPropertyName("value")]
     public string Value { get; set; }
 
 
@@ -88,7 +88,7 @@ public partial class ScimV2GroupReference : IEquatable<ScimV2GroupReference>
     /// The reference URI of the SCIM resource.
     /// </summary>
     /// <value>The reference URI of the SCIM resource.</value>
-    [DataMember(Name = "$ref", EmitDefaultValue = false)]
+    [JsonPropertyName("$ref")]
     public string Ref { get; private set; }
 
 

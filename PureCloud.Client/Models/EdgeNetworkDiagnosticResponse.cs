@@ -1,12 +1,12 @@
-using System.Runtime.Serialization;
 using System.Text;
+using System.Text.Json.Serialization;
 
 namespace PureCloud.Client.Models;
 
 /// <summary>
 /// EdgeNetworkDiagnosticResponse
 /// </summary>
-[DataContract]
+
 public partial class EdgeNetworkDiagnosticResponse : IEquatable<EdgeNetworkDiagnosticResponse>
 {
     /// <summary>
@@ -27,7 +27,7 @@ public partial class EdgeNetworkDiagnosticResponse : IEquatable<EdgeNetworkDiagn
     /// UUID of each executed command on edge
     /// </summary>
     /// <value>UUID of each executed command on edge</value>
-    [DataMember(Name = "commandCorrelationId", EmitDefaultValue = false)]
+    [JsonPropertyName("commandCorrelationId")]
     public string CommandCorrelationId { get; set; }
 
 
@@ -36,7 +36,7 @@ public partial class EdgeNetworkDiagnosticResponse : IEquatable<EdgeNetworkDiagn
     /// Response string of executed command from edge
     /// </summary>
     /// <value>Response string of executed command from edge</value>
-    [DataMember(Name = "diagnostics", EmitDefaultValue = false)]
+    [JsonPropertyName("diagnostics")]
     public string Diagnostics { get; set; }
 
 

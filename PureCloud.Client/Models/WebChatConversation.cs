@@ -1,12 +1,12 @@
-using System.Runtime.Serialization;
 using System.Text;
+using System.Text.Json.Serialization;
 
 namespace PureCloud.Client.Models;
 
 /// <summary>
 /// WebChatConversation
 /// </summary>
-[DataContract]
+
 public partial class WebChatConversation : IEquatable<WebChatConversation>
 {
     /// <summary>
@@ -27,7 +27,7 @@ public partial class WebChatConversation : IEquatable<WebChatConversation>
     /// The globally unique identifier for the object.
     /// </summary>
     /// <value>The globally unique identifier for the object.</value>
-    [DataMember(Name = "id", EmitDefaultValue = false)]
+    [JsonPropertyName("id")]
     public string Id { get; private set; }
 
 
@@ -35,7 +35,7 @@ public partial class WebChatConversation : IEquatable<WebChatConversation>
     /// <summary>
     /// Gets or Sets Name
     /// </summary>
-    [DataMember(Name = "name", EmitDefaultValue = false)]
+    [JsonPropertyName("name")]
     public string Name { get; set; }
 
 
@@ -44,7 +44,7 @@ public partial class WebChatConversation : IEquatable<WebChatConversation>
     /// Chat Member
     /// </summary>
     /// <value>Chat Member</value>
-    [DataMember(Name = "member", EmitDefaultValue = false)]
+    [JsonPropertyName("member")]
     public WebChatMemberInfo Member { get; set; }
 
 
@@ -53,7 +53,7 @@ public partial class WebChatConversation : IEquatable<WebChatConversation>
     /// The URI for this object
     /// </summary>
     /// <value>The URI for this object</value>
-    [DataMember(Name = "selfUri", EmitDefaultValue = false)]
+    [JsonPropertyName("selfUri")]
     public string SelfUri { get; private set; }
 
 

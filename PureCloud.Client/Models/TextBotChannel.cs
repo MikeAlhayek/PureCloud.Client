@@ -7,14 +7,14 @@ namespace PureCloud.Client.Models;
 /// <summary>
 /// Channel information relevant to a bot flow.
 /// </summary>
-[DataContract]
+
 public partial class TextBotChannel : IEquatable<TextBotChannel>
 {
     /// <summary>
     /// The name of the channel.
     /// </summary>
     /// <value>The name of the channel.</value>
-    [JsonConverter(typeof(JsonStringEnumConverter))]
+    
     public enum NameEnum
     {
         /// <summary>
@@ -46,7 +46,7 @@ public partial class TextBotChannel : IEquatable<TextBotChannel>
     /// <summary>
     /// Gets or Sets InputModes
     /// </summary>
-    [JsonConverter(typeof(JsonStringEnumConverter))]
+    
     public enum InputModesEnum
     {
         /// <summary>
@@ -66,7 +66,7 @@ public partial class TextBotChannel : IEquatable<TextBotChannel>
     /// <summary>
     /// Gets or Sets OutputModes
     /// </summary>
-    [JsonConverter(typeof(JsonStringEnumConverter))]
+    
     public enum OutputModesEnum
     {
         /// <summary>
@@ -87,7 +87,7 @@ public partial class TextBotChannel : IEquatable<TextBotChannel>
     /// The name of the channel.
     /// </summary>
     /// <value>The name of the channel.</value>
-    [DataMember(Name = "name", EmitDefaultValue = false)]
+    [JsonPropertyName("name")]
     public NameEnum? Name { get; set; }
 
     /// <summary>
@@ -119,7 +119,7 @@ public partial class TextBotChannel : IEquatable<TextBotChannel>
     /// The input modes for the channel.
     /// </summary>
     /// <value>The input modes for the channel.</value>
-    [DataMember(Name = "inputModes", EmitDefaultValue = false)]
+    [JsonPropertyName("inputModes")]
     public List<InputModesEnum> InputModes { get; set; }
 
 
@@ -128,7 +128,7 @@ public partial class TextBotChannel : IEquatable<TextBotChannel>
     /// The output modes for the channel.
     /// </summary>
     /// <value>The output modes for the channel.</value>
-    [DataMember(Name = "outputModes", EmitDefaultValue = false)]
+    [JsonPropertyName("outputModes")]
     public List<OutputModesEnum> OutputModes { get; set; }
 
 
@@ -137,7 +137,7 @@ public partial class TextBotChannel : IEquatable<TextBotChannel>
     /// Information about the end user agent calling the bot flow.
     /// </summary>
     /// <value>Information about the end user agent calling the bot flow.</value>
-    [DataMember(Name = "userAgent", EmitDefaultValue = false)]
+    [JsonPropertyName("userAgent")]
     public TextBotUserAgent UserAgent { get; set; }
 
 

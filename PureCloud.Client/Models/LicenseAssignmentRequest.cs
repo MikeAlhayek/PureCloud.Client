@@ -1,4 +1,3 @@
-using System.Runtime.Serialization;
 using System.Text;
 using System.Text.Json.Serialization;
 
@@ -7,7 +6,7 @@ namespace PureCloud.Client.Models;
 /// <summary>
 /// LicenseAssignmentRequest
 /// </summary>
-[DataContract]
+
 public partial class LicenseAssignmentRequest : IEquatable<LicenseAssignmentRequest>
 {
 
@@ -36,7 +35,7 @@ public partial class LicenseAssignmentRequest : IEquatable<LicenseAssignmentRequ
     /// The id of the license to assign/unassign.
     /// </summary>
     /// <value>The id of the license to assign/unassign.</value>
-    [DataMember(Name = "licenseId", EmitDefaultValue = false)]
+    [JsonPropertyName("licenseId")]
     public string LicenseId { get; set; }
 
 
@@ -45,7 +44,7 @@ public partial class LicenseAssignmentRequest : IEquatable<LicenseAssignmentRequ
     /// The ids of users to assign this license to.
     /// </summary>
     /// <value>The ids of users to assign this license to.</value>
-    [DataMember(Name = "userIdsAdd", EmitDefaultValue = false)]
+    [JsonPropertyName("userIdsAdd")]
     public List<string> UserIdsAdd { get; set; }
 
 
@@ -54,7 +53,7 @@ public partial class LicenseAssignmentRequest : IEquatable<LicenseAssignmentRequ
     /// The ids of users to unassign this license from.
     /// </summary>
     /// <value>The ids of users to unassign this license from.</value>
-    [DataMember(Name = "userIdsRemove", EmitDefaultValue = false)]
+    [JsonPropertyName("userIdsRemove")]
     public List<string> UserIdsRemove { get; set; }
 
 

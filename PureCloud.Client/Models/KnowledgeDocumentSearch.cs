@@ -7,14 +7,14 @@ namespace PureCloud.Client.Models;
 /// <summary>
 /// KnowledgeDocumentSearch
 /// </summary>
-[DataContract]
+
 public partial class KnowledgeDocumentSearch : IEquatable<KnowledgeDocumentSearch>
 {
     /// <summary>
     /// The type of the query that initiates the search.
     /// </summary>
     /// <value>The type of the query that initiates the search.</value>
-    [JsonConverter(typeof(JsonStringEnumConverter))]
+    
     public enum QueryTypeEnum
     {
         /// <summary>
@@ -47,7 +47,7 @@ public partial class KnowledgeDocumentSearch : IEquatable<KnowledgeDocumentSearc
     /// The type of the query that initiates the search.
     /// </summary>
     /// <value>The type of the query that initiates the search.</value>
-    [DataMember(Name = "queryType", EmitDefaultValue = false)]
+    [JsonPropertyName("queryType")]
     public QueryTypeEnum? QueryType { get; set; }
 
     /// <summary>
@@ -85,7 +85,7 @@ public partial class KnowledgeDocumentSearch : IEquatable<KnowledgeDocumentSearc
     /// Query to search content in the knowledge base. Maximum of 30 records per query can be fetched.
     /// </summary>
     /// <value>Query to search content in the knowledge base. Maximum of 30 records per query can be fetched.</value>
-    [DataMember(Name = "query", EmitDefaultValue = false)]
+    [JsonPropertyName("query")]
     public string Query { get; set; }
 
 
@@ -94,7 +94,7 @@ public partial class KnowledgeDocumentSearch : IEquatable<KnowledgeDocumentSearc
     /// Page size of the returned results.
     /// </summary>
     /// <value>Page size of the returned results.</value>
-    [DataMember(Name = "pageSize", EmitDefaultValue = false)]
+    [JsonPropertyName("pageSize")]
     public int? PageSize { get; set; }
 
 
@@ -103,7 +103,7 @@ public partial class KnowledgeDocumentSearch : IEquatable<KnowledgeDocumentSearc
     /// Page number of the returned results.
     /// </summary>
     /// <value>Page number of the returned results.</value>
-    [DataMember(Name = "pageNumber", EmitDefaultValue = false)]
+    [JsonPropertyName("pageNumber")]
     public int? PageNumber { get; set; }
 
 
@@ -112,7 +112,7 @@ public partial class KnowledgeDocumentSearch : IEquatable<KnowledgeDocumentSearc
     /// The globally unique identifier for the search.
     /// </summary>
     /// <value>The globally unique identifier for the search.</value>
-    [DataMember(Name = "searchId", EmitDefaultValue = false)]
+    [JsonPropertyName("searchId")]
     public string SearchId { get; private set; }
 
 
@@ -121,7 +121,7 @@ public partial class KnowledgeDocumentSearch : IEquatable<KnowledgeDocumentSearc
     /// The total number of documents matching the query.
     /// </summary>
     /// <value>The total number of documents matching the query.</value>
-    [DataMember(Name = "total", EmitDefaultValue = false)]
+    [JsonPropertyName("total")]
     public int? Total { get; private set; }
 
 
@@ -130,7 +130,7 @@ public partial class KnowledgeDocumentSearch : IEquatable<KnowledgeDocumentSearc
     /// Number of pages returned in the result calculated according to the pageSize and the total
     /// </summary>
     /// <value>Number of pages returned in the result calculated according to the pageSize and the total</value>
-    [DataMember(Name = "pageCount", EmitDefaultValue = false)]
+    [JsonPropertyName("pageCount")]
     public int? PageCount { get; private set; }
 
 
@@ -141,7 +141,7 @@ public partial class KnowledgeDocumentSearch : IEquatable<KnowledgeDocumentSearc
     /// Documents matching the search query.
     /// </summary>
     /// <value>Documents matching the search query.</value>
-    [DataMember(Name = "results", EmitDefaultValue = false)]
+    [JsonPropertyName("results")]
     public List<KnowledgeDocumentSearchResult> Results { get; private set; }
 
 
@@ -150,7 +150,7 @@ public partial class KnowledgeDocumentSearch : IEquatable<KnowledgeDocumentSearc
     /// The client application details from which search happened.
     /// </summary>
     /// <value>The client application details from which search happened.</value>
-    [DataMember(Name = "application", EmitDefaultValue = false)]
+    [JsonPropertyName("application")]
     public KnowledgeSearchClientApplication Application { get; set; }
 
 
@@ -159,7 +159,7 @@ public partial class KnowledgeDocumentSearch : IEquatable<KnowledgeDocumentSearc
     /// Conversation context information if the search is initiated in the context of a conversation.
     /// </summary>
     /// <value>Conversation context information if the search is initiated in the context of a conversation.</value>
-    [DataMember(Name = "conversationContext", EmitDefaultValue = false)]
+    [JsonPropertyName("conversationContext")]
     public KnowledgeConversationContextResponse ConversationContext { get; set; }
 
 
@@ -168,7 +168,7 @@ public partial class KnowledgeDocumentSearch : IEquatable<KnowledgeDocumentSearc
     /// The confidence threshold for the search results. If applied, the returned results will have an equal or higher confidence than the threshold.
     /// </summary>
     /// <value>The confidence threshold for the search results. If applied, the returned results will have an equal or higher confidence than the threshold.</value>
-    [DataMember(Name = "confidenceThreshold", EmitDefaultValue = false)]
+    [JsonPropertyName("confidenceThreshold")]
     public float? ConfidenceThreshold { get; set; }
 
 
@@ -177,7 +177,7 @@ public partial class KnowledgeDocumentSearch : IEquatable<KnowledgeDocumentSearc
     /// The results with AI-generated answer if the answerMode request property contains \&quot;AnswerGeneration\&quot;.
     /// </summary>
     /// <value>The results with AI-generated answer if the answerMode request property contains \&quot;AnswerGeneration\&quot;.</value>
-    [DataMember(Name = "answerGeneration", EmitDefaultValue = false)]
+    [JsonPropertyName("answerGeneration")]
     public KnowledgeAnswerGenerationResponse AnswerGeneration { get; set; }
 
 

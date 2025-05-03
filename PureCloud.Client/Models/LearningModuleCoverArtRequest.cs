@@ -1,4 +1,3 @@
-using System.Runtime.Serialization;
 using System.Text;
 using System.Text.Json.Serialization;
 
@@ -7,7 +6,7 @@ namespace PureCloud.Client.Models;
 /// <summary>
 /// LearningModuleCoverArtRequest
 /// </summary>
-[DataContract]
+
 public partial class LearningModuleCoverArtRequest : IEquatable<LearningModuleCoverArtRequest>
 {
 
@@ -32,7 +31,7 @@ public partial class LearningModuleCoverArtRequest : IEquatable<LearningModuleCo
     /// The key identifier for the cover art
     /// </summary>
     /// <value>The key identifier for the cover art</value>
-    [DataMember(Name = "id", EmitDefaultValue = false)]
+    [JsonPropertyName("id")]
     public string Id { get; set; }
 
 

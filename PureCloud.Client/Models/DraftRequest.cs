@@ -1,12 +1,12 @@
-using System.Runtime.Serialization;
 using System.Text;
+using System.Text.Json.Serialization;
 
 namespace PureCloud.Client.Models;
 
 /// <summary>
 /// DraftRequest
 /// </summary>
-[DataContract]
+
 public partial class DraftRequest : IEquatable<DraftRequest>
 {
     /// <summary>
@@ -27,7 +27,7 @@ public partial class DraftRequest : IEquatable<DraftRequest>
     /// Draft intent object.
     /// </summary>
     /// <value>Draft intent object.</value>
-    [DataMember(Name = "intents", EmitDefaultValue = false)]
+    [JsonPropertyName("intents")]
     public List<DraftIntents> Intents { get; set; }
 
 
@@ -36,7 +36,7 @@ public partial class DraftRequest : IEquatable<DraftRequest>
     /// Draft topic object.
     /// </summary>
     /// <value>Draft topic object.</value>
-    [DataMember(Name = "topics", EmitDefaultValue = false)]
+    [JsonPropertyName("topics")]
     public List<DraftTopicRequest> Topics { get; set; }
 
 

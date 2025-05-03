@@ -1,12 +1,12 @@
-using System.Runtime.Serialization;
 using System.Text;
+using System.Text.Json.Serialization;
 
 namespace PureCloud.Client.Models;
 
 /// <summary>
 /// SchedulingTestingOptionsRequest
 /// </summary>
-[DataContract]
+
 public partial class SchedulingTestingOptionsRequest : IEquatable<SchedulingTestingOptionsRequest>
 {
     /// <summary>
@@ -33,7 +33,7 @@ public partial class SchedulingTestingOptionsRequest : IEquatable<SchedulingTest
     /// Whether to enable fast scheduling
     /// </summary>
     /// <value>Whether to enable fast scheduling</value>
-    [DataMember(Name = "fastScheduling", EmitDefaultValue = false)]
+    [JsonPropertyName("fastScheduling")]
     public bool? FastScheduling { get; set; }
 
 
@@ -42,7 +42,7 @@ public partial class SchedulingTestingOptionsRequest : IEquatable<SchedulingTest
     /// Whether to force delayed scheduling
     /// </summary>
     /// <value>Whether to force delayed scheduling</value>
-    [DataMember(Name = "delayScheduling", EmitDefaultValue = false)]
+    [JsonPropertyName("delayScheduling")]
     public bool? DelayScheduling { get; set; }
 
 
@@ -51,7 +51,7 @@ public partial class SchedulingTestingOptionsRequest : IEquatable<SchedulingTest
     /// Whether to force scheduling to fail
     /// </summary>
     /// <value>Whether to force scheduling to fail</value>
-    [DataMember(Name = "failScheduling", EmitDefaultValue = false)]
+    [JsonPropertyName("failScheduling")]
     public bool? FailScheduling { get; set; }
 
 
@@ -60,7 +60,7 @@ public partial class SchedulingTestingOptionsRequest : IEquatable<SchedulingTest
     /// Whether to populate warnings in the generated schedule
     /// </summary>
     /// <value>Whether to populate warnings in the generated schedule</value>
-    [DataMember(Name = "populateWarnings", EmitDefaultValue = false)]
+    [JsonPropertyName("populateWarnings")]
     public bool? PopulateWarnings { get; set; }
 
 
@@ -69,7 +69,7 @@ public partial class SchedulingTestingOptionsRequest : IEquatable<SchedulingTest
     /// Whether to populate deprecated warnings in the generated schedule
     /// </summary>
     /// <value>Whether to populate deprecated warnings in the generated schedule</value>
-    [DataMember(Name = "populateDeprecatedWarnings", EmitDefaultValue = false)]
+    [JsonPropertyName("populateDeprecatedWarnings")]
     public bool? PopulateDeprecatedWarnings { get; set; }
 
 

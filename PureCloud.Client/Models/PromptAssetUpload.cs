@@ -1,12 +1,12 @@
-using System.Runtime.Serialization;
 using System.Text;
+using System.Text.Json.Serialization;
 
 namespace PureCloud.Client.Models;
 
 /// <summary>
 /// PromptAssetUpload
 /// </summary>
-[DataContract]
+
 public partial class PromptAssetUpload : IEquatable<PromptAssetUpload>
 {
     /// <summary>
@@ -23,7 +23,7 @@ public partial class PromptAssetUpload : IEquatable<PromptAssetUpload>
     /// Pre-signed URL to PUT the file to
     /// </summary>
     /// <value>Pre-signed URL to PUT the file to</value>
-    [DataMember(Name = "url", EmitDefaultValue = false)]
+    [JsonPropertyName("url")]
     public string Url { get; private set; }
 
 
@@ -32,7 +32,7 @@ public partial class PromptAssetUpload : IEquatable<PromptAssetUpload>
     /// Required headers when uploading a file through PUT request to the URL
     /// </summary>
     /// <value>Required headers when uploading a file through PUT request to the URL</value>
-    [DataMember(Name = "headers", EmitDefaultValue = false)]
+    [JsonPropertyName("headers")]
     public Dictionary<string, string> Headers { get; private set; }
 
 

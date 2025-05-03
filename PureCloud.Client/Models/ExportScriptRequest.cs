@@ -1,12 +1,12 @@
-using System.Runtime.Serialization;
 using System.Text;
+using System.Text.Json.Serialization;
 
 namespace PureCloud.Client.Models;
 
 /// <summary>
 /// Creating an exported script via Download Service
 /// </summary>
-[DataContract]
+
 public partial class ExportScriptRequest : IEquatable<ExportScriptRequest>
 {
     /// <summary>
@@ -27,7 +27,7 @@ public partial class ExportScriptRequest : IEquatable<ExportScriptRequest>
     /// The final file name (no extension) of the script download: &lt;fileName&gt;.script
     /// </summary>
     /// <value>The final file name (no extension) of the script download: &lt;fileName&gt;.script</value>
-    [DataMember(Name = "fileName", EmitDefaultValue = false)]
+    [JsonPropertyName("fileName")]
     public string FileName { get; set; }
 
 
@@ -36,7 +36,7 @@ public partial class ExportScriptRequest : IEquatable<ExportScriptRequest>
     /// The UUID version of the script to be exported.  Defaults to the current editable version.
     /// </summary>
     /// <value>The UUID version of the script to be exported.  Defaults to the current editable version.</value>
-    [DataMember(Name = "versionId", EmitDefaultValue = false)]
+    [JsonPropertyName("versionId")]
     public string VersionId { get; set; }
 
 

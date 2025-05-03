@@ -1,12 +1,12 @@
-using System.Runtime.Serialization;
 using System.Text;
+using System.Text.Json.Serialization;
 
 namespace PureCloud.Client.Models;
 
 /// <summary>
 /// Output definition of Action.
 /// </summary>
-[DataContract]
+
 public partial class ActionOutput : IEquatable<ActionOutput>
 {
     /// <summary>
@@ -35,7 +35,7 @@ public partial class ActionOutput : IEquatable<ActionOutput>
     /// JSON schema that defines the transformed, successful result that will be sent back to the caller. If the &#39;flatten&#39; query parameter is omitted or false, this field will be returned. Either successSchema or successSchemaFlattened will be returned, not both.
     /// </summary>
     /// <value>JSON schema that defines the transformed, successful result that will be sent back to the caller. If the &#39;flatten&#39; query parameter is omitted or false, this field will be returned. Either successSchema or successSchemaFlattened will be returned, not both.</value>
-    [DataMember(Name = "successSchema", EmitDefaultValue = false)]
+    [JsonPropertyName("successSchema")]
     public JsonSchemaDocument SuccessSchema { get; set; }
 
 
@@ -44,7 +44,7 @@ public partial class ActionOutput : IEquatable<ActionOutput>
     /// URI to retrieve success schema
     /// </summary>
     /// <value>URI to retrieve success schema</value>
-    [DataMember(Name = "successSchemaUri", EmitDefaultValue = false)]
+    [JsonPropertyName("successSchemaUri")]
     public string SuccessSchemaUri { get; set; }
 
 
@@ -53,7 +53,7 @@ public partial class ActionOutput : IEquatable<ActionOutput>
     /// JSON schema that defines the body of response when request is not successful. If the &#39;flatten&#39; query parameter is omitted or false, this field will be returned. Either errorSchema or errorSchemaFlattened will be returned, not both.
     /// </summary>
     /// <value>JSON schema that defines the body of response when request is not successful. If the &#39;flatten&#39; query parameter is omitted or false, this field will be returned. Either errorSchema or errorSchemaFlattened will be returned, not both.</value>
-    [DataMember(Name = "errorSchema", EmitDefaultValue = false)]
+    [JsonPropertyName("errorSchema")]
     public JsonSchemaDocument ErrorSchema { get; set; }
 
 
@@ -62,7 +62,7 @@ public partial class ActionOutput : IEquatable<ActionOutput>
     /// URI to retrieve error schema
     /// </summary>
     /// <value>URI to retrieve error schema</value>
-    [DataMember(Name = "errorSchemaUri", EmitDefaultValue = false)]
+    [JsonPropertyName("errorSchemaUri")]
     public string ErrorSchemaUri { get; set; }
 
 
@@ -71,7 +71,7 @@ public partial class ActionOutput : IEquatable<ActionOutput>
     /// JSON schema that defines the transformed, successful result that will be sent back to the caller. The schema is transformed based on Architect&#39;s flattened format. If the &#39;flatten&#39; query parameter is supplied as true, this field will be returned. Either successSchema or successSchemaFlattened will be returned, not both.
     /// </summary>
     /// <value>JSON schema that defines the transformed, successful result that will be sent back to the caller. The schema is transformed based on Architect&#39;s flattened format. If the &#39;flatten&#39; query parameter is supplied as true, this field will be returned. Either successSchema or successSchemaFlattened will be returned, not both.</value>
-    [DataMember(Name = "successSchemaFlattened", EmitDefaultValue = false)]
+    [JsonPropertyName("successSchemaFlattened")]
     public FlattenedJsonSchemaDocument SuccessSchemaFlattened { get; set; }
 
 
@@ -80,7 +80,7 @@ public partial class ActionOutput : IEquatable<ActionOutput>
     /// JSON schema that defines the body of response when request is not successful. The schema is transformed based on Architect&#39;s flattened format. If the &#39;flatten&#39; query parameter is supplied as true, this field will be returned. Either errorSchema or errorSchemaFlattened will be returned, not both.
     /// </summary>
     /// <value>JSON schema that defines the body of response when request is not successful. The schema is transformed based on Architect&#39;s flattened format. If the &#39;flatten&#39; query parameter is supplied as true, this field will be returned. Either errorSchema or errorSchemaFlattened will be returned, not both.</value>
-    [DataMember(Name = "errorSchemaFlattened", EmitDefaultValue = false)]
+    [JsonPropertyName("errorSchemaFlattened")]
     public FlattenedJsonSchemaDocument ErrorSchemaFlattened { get; set; }
 
 

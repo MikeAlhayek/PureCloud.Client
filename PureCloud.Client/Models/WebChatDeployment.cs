@@ -1,12 +1,12 @@
-using System.Runtime.Serialization;
 using System.Text;
+using System.Text.Json.Serialization;
 
 namespace PureCloud.Client.Models;
 
 /// <summary>
 /// WebChatDeployment
 /// </summary>
-[DataContract]
+
 public partial class WebChatDeployment : IEquatable<WebChatDeployment>
 {
     /// <summary>
@@ -39,7 +39,7 @@ public partial class WebChatDeployment : IEquatable<WebChatDeployment>
     /// The globally unique identifier for the object.
     /// </summary>
     /// <value>The globally unique identifier for the object.</value>
-    [DataMember(Name = "id", EmitDefaultValue = false)]
+    [JsonPropertyName("id")]
     public string Id { get; private set; }
 
 
@@ -47,7 +47,7 @@ public partial class WebChatDeployment : IEquatable<WebChatDeployment>
     /// <summary>
     /// Gets or Sets Name
     /// </summary>
-    [DataMember(Name = "name", EmitDefaultValue = false)]
+    [JsonPropertyName("name")]
     public string Name { get; set; }
 
 
@@ -55,7 +55,7 @@ public partial class WebChatDeployment : IEquatable<WebChatDeployment>
     /// <summary>
     /// Gets or Sets Description
     /// </summary>
-    [DataMember(Name = "description", EmitDefaultValue = false)]
+    [JsonPropertyName("description")]
     public string Description { get; set; }
 
 
@@ -63,7 +63,7 @@ public partial class WebChatDeployment : IEquatable<WebChatDeployment>
     /// <summary>
     /// Gets or Sets AuthenticationRequired
     /// </summary>
-    [DataMember(Name = "authenticationRequired", EmitDefaultValue = false)]
+    [JsonPropertyName("authenticationRequired")]
     public bool? AuthenticationRequired { get; set; }
 
 
@@ -72,7 +72,7 @@ public partial class WebChatDeployment : IEquatable<WebChatDeployment>
     /// URL for third party service authenticating web chat clients. See https://github.com/MyPureCloud/authenticated-web-chat-server-examples
     /// </summary>
     /// <value>URL for third party service authenticating web chat clients. See https://github.com/MyPureCloud/authenticated-web-chat-server-examples</value>
-    [DataMember(Name = "authenticationUrl", EmitDefaultValue = false)]
+    [JsonPropertyName("authenticationUrl")]
     public string AuthenticationUrl { get; set; }
 
 
@@ -80,7 +80,7 @@ public partial class WebChatDeployment : IEquatable<WebChatDeployment>
     /// <summary>
     /// Gets or Sets Disabled
     /// </summary>
-    [DataMember(Name = "disabled", EmitDefaultValue = false)]
+    [JsonPropertyName("disabled")]
     public bool? Disabled { get; set; }
 
 
@@ -88,7 +88,7 @@ public partial class WebChatDeployment : IEquatable<WebChatDeployment>
     /// <summary>
     /// Gets or Sets WebChatConfig
     /// </summary>
-    [DataMember(Name = "webChatConfig", EmitDefaultValue = false)]
+    [JsonPropertyName("webChatConfig")]
     public WebChatConfig WebChatConfig { get; set; }
 
 
@@ -96,7 +96,7 @@ public partial class WebChatDeployment : IEquatable<WebChatDeployment>
     /// <summary>
     /// Gets or Sets AllowedDomains
     /// </summary>
-    [DataMember(Name = "allowedDomains", EmitDefaultValue = false)]
+    [JsonPropertyName("allowedDomains")]
     public List<string> AllowedDomains { get; set; }
 
 
@@ -105,7 +105,7 @@ public partial class WebChatDeployment : IEquatable<WebChatDeployment>
     /// The URI of the Inbound Chat Flow to run when new chats are initiated under this Deployment.
     /// </summary>
     /// <value>The URI of the Inbound Chat Flow to run when new chats are initiated under this Deployment.</value>
-    [DataMember(Name = "flow", EmitDefaultValue = false)]
+    [JsonPropertyName("flow")]
     public DomainEntityRef Flow { get; set; }
 
 
@@ -114,7 +114,7 @@ public partial class WebChatDeployment : IEquatable<WebChatDeployment>
     /// The URI for this object
     /// </summary>
     /// <value>The URI for this object</value>
-    [DataMember(Name = "selfUri", EmitDefaultValue = false)]
+    [JsonPropertyName("selfUri")]
     public string SelfUri { get; private set; }
 
 

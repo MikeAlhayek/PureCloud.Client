@@ -1,12 +1,12 @@
-using System.Runtime.Serialization;
 using System.Text;
+using System.Text.Json.Serialization;
 
 namespace PureCloud.Client.Models;
 
 /// <summary>
 /// UserObservationDataContainer
 /// </summary>
-[DataContract]
+
 public partial class UserObservationDataContainer : IEquatable<UserObservationDataContainer>
 {
     /// <summary>
@@ -27,7 +27,7 @@ public partial class UserObservationDataContainer : IEquatable<UserObservationDa
     /// A mapping from dimension to value
     /// </summary>
     /// <value>A mapping from dimension to value</value>
-    [DataMember(Name = "group", EmitDefaultValue = false)]
+    [JsonPropertyName("group")]
     public Dictionary<string, string> Group { get; set; }
 
 
@@ -35,7 +35,7 @@ public partial class UserObservationDataContainer : IEquatable<UserObservationDa
     /// <summary>
     /// Gets or Sets Data
     /// </summary>
-    [DataMember(Name = "data", EmitDefaultValue = false)]
+    [JsonPropertyName("data")]
     public List<ObservationMetricData> Data { get; set; }
 
 

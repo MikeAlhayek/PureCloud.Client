@@ -7,14 +7,14 @@ namespace PureCloud.Client.Models;
 /// <summary>
 /// SkillGroupLanguageCondition
 /// </summary>
-[DataContract]
+
 public partial class SkillGroupLanguageCondition : IEquatable<SkillGroupLanguageCondition>
 {
     /// <summary>
     /// Comparator that will be applied to the proficiency
     /// </summary>
     /// <value>Comparator that will be applied to the proficiency</value>
-    [JsonConverter(typeof(JsonStringEnumConverter))]
+    
     public enum ComparatorEnum
     {
         /// <summary>
@@ -65,7 +65,7 @@ public partial class SkillGroupLanguageCondition : IEquatable<SkillGroupLanguage
     /// Comparator that will be applied to the proficiency
     /// </summary>
     /// <value>Comparator that will be applied to the proficiency</value>
-    [DataMember(Name = "comparator", EmitDefaultValue = false)]
+    [JsonPropertyName("comparator")]
     public ComparatorEnum? Comparator { get; set; }
 
     /// <summary>
@@ -95,7 +95,7 @@ public partial class SkillGroupLanguageCondition : IEquatable<SkillGroupLanguage
     /// The language skill to be used in the skill condition query
     /// </summary>
     /// <value>The language skill to be used in the skill condition query</value>
-    [DataMember(Name = "languageSkill", EmitDefaultValue = false)]
+    [JsonPropertyName("languageSkill")]
     public string LanguageSkill { get; set; }
 
 
@@ -106,7 +106,7 @@ public partial class SkillGroupLanguageCondition : IEquatable<SkillGroupLanguage
     /// The skill proficiency that will be used for the language skill. Integer range 0-5
     /// </summary>
     /// <value>The skill proficiency that will be used for the language skill. Integer range 0-5</value>
-    [DataMember(Name = "proficiency", EmitDefaultValue = false)]
+    [JsonPropertyName("proficiency")]
     public int? Proficiency { get; set; }
 
 
@@ -115,7 +115,7 @@ public partial class SkillGroupLanguageCondition : IEquatable<SkillGroupLanguage
     /// Nested conditions to be applied to this skill condition
     /// </summary>
     /// <value>Nested conditions to be applied to this skill condition</value>
-    [DataMember(Name = "childConditions", EmitDefaultValue = false)]
+    [JsonPropertyName("childConditions")]
     public List<SkillGroupCondition> ChildConditions { get; set; }
 
 

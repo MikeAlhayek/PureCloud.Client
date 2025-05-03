@@ -1,12 +1,12 @@
-using System.Runtime.Serialization;
 using System.Text;
+using System.Text.Json.Serialization;
 
 namespace PureCloud.Client.Models;
 
 /// <summary>
 /// WeekShiftTradeMatchesSummaryResponse
 /// </summary>
-[DataContract]
+
 public partial class WeekShiftTradeMatchesSummaryResponse : IEquatable<WeekShiftTradeMatchesSummaryResponse>
 {
     /// <summary>
@@ -27,7 +27,7 @@ public partial class WeekShiftTradeMatchesSummaryResponse : IEquatable<WeekShift
     /// The schedule week date in yyyy-MM-dd format. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd
     /// </summary>
     /// <value>The schedule week date in yyyy-MM-dd format. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd</value>
-    [DataMember(Name = "weekDate", EmitDefaultValue = false)]
+    [JsonPropertyName("weekDate")]
     public string WeekDate { get; set; }
 
 
@@ -36,7 +36,7 @@ public partial class WeekShiftTradeMatchesSummaryResponse : IEquatable<WeekShift
     /// The number of trades in the &#39;Matched&#39; state with the initiating shift in the given week
     /// </summary>
     /// <value>The number of trades in the &#39;Matched&#39; state with the initiating shift in the given week</value>
-    [DataMember(Name = "count", EmitDefaultValue = false)]
+    [JsonPropertyName("count")]
     public int? Count { get; set; }
 
 

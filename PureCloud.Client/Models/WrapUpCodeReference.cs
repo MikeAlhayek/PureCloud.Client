@@ -1,12 +1,12 @@
-using System.Runtime.Serialization;
 using System.Text;
+using System.Text.Json.Serialization;
 
 namespace PureCloud.Client.Models;
 
 /// <summary>
 /// WrapUpCodeReference
 /// </summary>
-[DataContract]
+
 public partial class WrapUpCodeReference : IEquatable<WrapUpCodeReference>
 {
     /// <summary>
@@ -25,7 +25,7 @@ public partial class WrapUpCodeReference : IEquatable<WrapUpCodeReference>
     /// The globally unique identifier for the object.
     /// </summary>
     /// <value>The globally unique identifier for the object.</value>
-    [DataMember(Name = "id", EmitDefaultValue = false)]
+    [JsonPropertyName("id")]
     public string Id { get; set; }
 
 

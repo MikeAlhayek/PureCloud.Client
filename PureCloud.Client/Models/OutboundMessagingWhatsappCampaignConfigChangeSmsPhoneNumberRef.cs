@@ -1,12 +1,12 @@
-using System.Runtime.Serialization;
 using System.Text;
+using System.Text.Json.Serialization;
 
 namespace PureCloud.Client.Models;
 
 /// <summary>
 /// A reference for an SmsPhoneNumber
 /// </summary>
-[DataContract]
+
 public partial class OutboundMessagingWhatsappCampaignConfigChangeSmsPhoneNumberRef : IEquatable<OutboundMessagingWhatsappCampaignConfigChangeSmsPhoneNumberRef>
 {
     /// <summary>
@@ -25,7 +25,7 @@ public partial class OutboundMessagingWhatsappCampaignConfigChangeSmsPhoneNumber
     /// The unique phone number
     /// </summary>
     /// <value>The unique phone number</value>
-    [DataMember(Name = "phoneNumber", EmitDefaultValue = false)]
+    [JsonPropertyName("phoneNumber")]
     public string PhoneNumber { get; set; }
 
 

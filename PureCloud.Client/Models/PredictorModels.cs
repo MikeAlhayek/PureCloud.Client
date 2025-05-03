@@ -1,12 +1,12 @@
-using System.Runtime.Serialization;
 using System.Text;
+using System.Text.Json.Serialization;
 
 namespace PureCloud.Client.Models;
 
 /// <summary>
 /// PredictorModels
 /// </summary>
-[DataContract]
+
 public partial class PredictorModels : IEquatable<PredictorModels>
 {
     /// <summary>
@@ -26,7 +26,7 @@ public partial class PredictorModels : IEquatable<PredictorModels>
     /// <summary>
     /// Gets or Sets Entities
     /// </summary>
-    [DataMember(Name = "entities", EmitDefaultValue = false)]
+    [JsonPropertyName("entities")]
     public List<PredictorModel> Entities { get; set; }
 
 
@@ -34,7 +34,7 @@ public partial class PredictorModels : IEquatable<PredictorModels>
     /// <summary>
     /// Gets or Sets _PredictorModels
     /// </summary>
-    [DataMember(Name = "predictorModels", EmitDefaultValue = false)]
+    [JsonPropertyName("predictorModels")]
     public List<PredictorModel> _PredictorModels { get; set; }
 
 

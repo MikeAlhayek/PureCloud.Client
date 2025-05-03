@@ -1,12 +1,12 @@
-using System.Runtime.Serialization;
 using System.Text;
+using System.Text.Json.Serialization;
 
 namespace PureCloud.Client.Models;
 
 /// <summary>
 /// RoutingConversationAttributesResponse
 /// </summary>
-[DataContract]
+
 public partial class RoutingConversationAttributesResponse : IEquatable<RoutingConversationAttributesResponse>
 {
     /// <summary>
@@ -33,7 +33,7 @@ public partial class RoutingConversationAttributesResponse : IEquatable<RoutingC
     /// Current priority value on in-queue conversation. Range:[-25000000, 25000000]
     /// </summary>
     /// <value>Current priority value on in-queue conversation. Range:[-25000000, 25000000]</value>
-    [DataMember(Name = "priority", EmitDefaultValue = false)]
+    [JsonPropertyName("priority")]
     public int? Priority { get; set; }
 
 
@@ -42,7 +42,7 @@ public partial class RoutingConversationAttributesResponse : IEquatable<RoutingC
     /// Current routing skills on in-queue conversation
     /// </summary>
     /// <value>Current routing skills on in-queue conversation</value>
-    [DataMember(Name = "skills", EmitDefaultValue = false)]
+    [JsonPropertyName("skills")]
     public List<RoutingSkill> Skills { get; set; }
 
 
@@ -51,7 +51,7 @@ public partial class RoutingConversationAttributesResponse : IEquatable<RoutingC
     /// Current language on in-queue conversation
     /// </summary>
     /// <value>Current language on in-queue conversation</value>
-    [DataMember(Name = "language", EmitDefaultValue = false)]
+    [JsonPropertyName("language")]
     public Language Language { get; set; }
 
 
@@ -60,7 +60,7 @@ public partial class RoutingConversationAttributesResponse : IEquatable<RoutingC
     /// Current label on in-queue conversation
     /// </summary>
     /// <value>Current label on in-queue conversation</value>
-    [DataMember(Name = "label", EmitDefaultValue = false)]
+    [JsonPropertyName("label")]
     public UtilizationLabel Label { get; set; }
 
 
@@ -69,7 +69,7 @@ public partial class RoutingConversationAttributesResponse : IEquatable<RoutingC
     /// Current scored agents on in-queue conversation
     /// </summary>
     /// <value>Current scored agents on in-queue conversation</value>
-    [DataMember(Name = "scoredAgents", EmitDefaultValue = false)]
+    [JsonPropertyName("scoredAgents")]
     public List<ScoredAgent> ScoredAgents { get; set; }
 
 

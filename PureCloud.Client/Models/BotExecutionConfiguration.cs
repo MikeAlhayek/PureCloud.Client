@@ -1,4 +1,3 @@
-using System.Runtime.Serialization;
 using System.Text;
 using System.Text.Json.Serialization;
 
@@ -7,7 +6,7 @@ namespace PureCloud.Client.Models;
 /// <summary>
 /// Model for setting the launch configuration for a Nuance bot available to Genesys Cloud
 /// </summary>
-[DataContract]
+
 public partial class BotExecutionConfiguration : IEquatable<BotExecutionConfiguration>
 {
 
@@ -36,7 +35,7 @@ public partial class BotExecutionConfiguration : IEquatable<BotExecutionConfigur
     /// The Nuance bot ID
     /// </summary>
     /// <value>The Nuance bot ID</value>
-    [DataMember(Name = "botId", EmitDefaultValue = false)]
+    [JsonPropertyName("botId")]
     public string BotId { get; set; }
 
 
@@ -45,7 +44,7 @@ public partial class BotExecutionConfiguration : IEquatable<BotExecutionConfigur
     /// The hostname to use when contacting Nuance to execute this bot
     /// </summary>
     /// <value>The hostname to use when contacting Nuance to execute this bot</value>
-    [DataMember(Name = "executionHost", EmitDefaultValue = false)]
+    [JsonPropertyName("executionHost")]
     public string ExecutionHost { get; set; }
 
 
@@ -54,7 +53,7 @@ public partial class BotExecutionConfiguration : IEquatable<BotExecutionConfigur
     /// The bot&#39;s launch credentials
     /// </summary>
     /// <value>The bot&#39;s launch credentials</value>
-    [DataMember(Name = "botCredentials", EmitDefaultValue = false)]
+    [JsonPropertyName("botCredentials")]
     public NuanceBotCredentials BotCredentials { get; set; }
 
 

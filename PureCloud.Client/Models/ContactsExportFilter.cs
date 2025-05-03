@@ -1,12 +1,12 @@
-using System.Runtime.Serialization;
 using System.Text;
+using System.Text.Json.Serialization;
 
 namespace PureCloud.Client.Models;
 
 /// <summary>
 /// ContactsExportFilter
 /// </summary>
-[DataContract]
+
 public partial class ContactsExportFilter : IEquatable<ContactsExportFilter>
 {
     /// <summary>
@@ -33,7 +33,7 @@ public partial class ContactsExportFilter : IEquatable<ContactsExportFilter>
     /// Filtered field should have the same value
     /// </summary>
     /// <value>Filtered field should have the same value</value>
-    [DataMember(Name = "eq", EmitDefaultValue = false)]
+    [JsonPropertyName("eq")]
     public ContactsExportFieldFilter Eq { get; set; }
 
 
@@ -42,7 +42,7 @@ public partial class ContactsExportFilter : IEquatable<ContactsExportFilter>
     /// Filtered field should match one of the listed values
     /// </summary>
     /// <value>Filtered field should match one of the listed values</value>
-    [DataMember(Name = "in", EmitDefaultValue = false)]
+    [JsonPropertyName("in")]
     public ContactsExportFieldListFilter In { get; set; }
 
 
@@ -51,7 +51,7 @@ public partial class ContactsExportFilter : IEquatable<ContactsExportFilter>
     /// Boolean AND combination of filters
     /// </summary>
     /// <value>Boolean AND combination of filters</value>
-    [DataMember(Name = "and", EmitDefaultValue = false)]
+    [JsonPropertyName("and")]
     public List<ContactsExportFilter> And { get; set; }
 
 
@@ -60,7 +60,7 @@ public partial class ContactsExportFilter : IEquatable<ContactsExportFilter>
     /// Boolean OR combination of filters
     /// </summary>
     /// <value>Boolean OR combination of filters</value>
-    [DataMember(Name = "or", EmitDefaultValue = false)]
+    [JsonPropertyName("or")]
     public List<ContactsExportFilter> Or { get; set; }
 
 
@@ -69,7 +69,7 @@ public partial class ContactsExportFilter : IEquatable<ContactsExportFilter>
     /// Boolean negation of filters
     /// </summary>
     /// <value>Boolean negation of filters</value>
-    [DataMember(Name = "not", EmitDefaultValue = false)]
+    [JsonPropertyName("not")]
     public ContactsExportFilter Not { get; set; }
 
 

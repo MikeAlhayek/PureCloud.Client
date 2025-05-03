@@ -1,4 +1,3 @@
-using System.Runtime.Serialization;
 using System.Text;
 using System.Text.Json.Serialization;
 
@@ -7,7 +6,7 @@ namespace PureCloud.Client.Models;
 /// <summary>
 /// WorkitemDateBasedRuleCreate
 /// </summary>
-[DataContract]
+
 public partial class WorkitemDateBasedRuleCreate : IEquatable<WorkitemDateBasedRuleCreate>
 {
 
@@ -34,7 +33,7 @@ public partial class WorkitemDateBasedRuleCreate : IEquatable<WorkitemDateBasedR
     /// The name of the rule.
     /// </summary>
     /// <value>The name of the rule.</value>
-    [DataMember(Name = "name", EmitDefaultValue = false)]
+    [JsonPropertyName("name")]
     public string Name { get; set; }
 
 
@@ -43,7 +42,7 @@ public partial class WorkitemDateBasedRuleCreate : IEquatable<WorkitemDateBasedR
     /// The rules condition. If the condition criteria is met the rules action will be executed.
     /// </summary>
     /// <value>The rules condition. If the condition criteria is met the rules action will be executed.</value>
-    [DataMember(Name = "condition", EmitDefaultValue = false)]
+    [JsonPropertyName("condition")]
     public WorkitemDateBasedCondition Condition { get; set; }
 
 

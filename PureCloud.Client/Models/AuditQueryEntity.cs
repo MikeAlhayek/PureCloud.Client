@@ -1,12 +1,12 @@
-using System.Runtime.Serialization;
 using System.Text;
+using System.Text.Json.Serialization;
 
 namespace PureCloud.Client.Models;
 
 /// <summary>
 /// AuditQueryEntity
 /// </summary>
-[DataContract]
+
 public partial class AuditQueryEntity : IEquatable<AuditQueryEntity>
 {
     /// <summary>
@@ -27,7 +27,7 @@ public partial class AuditQueryEntity : IEquatable<AuditQueryEntity>
     /// Name of the Entity
     /// </summary>
     /// <value>Name of the Entity</value>
-    [DataMember(Name = "name", EmitDefaultValue = false)]
+    [JsonPropertyName("name")]
     public string Name { get; set; }
 
 
@@ -36,7 +36,7 @@ public partial class AuditQueryEntity : IEquatable<AuditQueryEntity>
     /// List of Actions
     /// </summary>
     /// <value>List of Actions</value>
-    [DataMember(Name = "actions", EmitDefaultValue = false)]
+    [JsonPropertyName("actions")]
     public List<string> Actions { get; set; }
 
 

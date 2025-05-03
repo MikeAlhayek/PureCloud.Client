@@ -7,14 +7,14 @@ namespace PureCloud.Client.Models;
 /// <summary>
 /// ResolutionDetailQueryClause
 /// </summary>
-[DataContract]
+
 public partial class ResolutionDetailQueryClause : IEquatable<ResolutionDetailQueryClause>
 {
     /// <summary>
     /// Boolean operation to apply to the provided predicates
     /// </summary>
     /// <value>Boolean operation to apply to the provided predicates</value>
-    [JsonConverter(typeof(JsonStringEnumConverter))]
+    
     public enum TypeEnum
     {
         /// <summary>
@@ -41,7 +41,7 @@ public partial class ResolutionDetailQueryClause : IEquatable<ResolutionDetailQu
     /// Boolean operation to apply to the provided predicates
     /// </summary>
     /// <value>Boolean operation to apply to the provided predicates</value>
-    [DataMember(Name = "type", EmitDefaultValue = false)]
+    [JsonPropertyName("type")]
     public TypeEnum? Type { get; set; }
 
     /// <summary>
@@ -69,7 +69,7 @@ public partial class ResolutionDetailQueryClause : IEquatable<ResolutionDetailQu
     /// Like a three-word sentence: (attribute-name) (operator) (target-value).
     /// </summary>
     /// <value>Like a three-word sentence: (attribute-name) (operator) (target-value).</value>
-    [DataMember(Name = "predicates", EmitDefaultValue = false)]
+    [JsonPropertyName("predicates")]
     public List<ResolutionDetailQueryPredicate> Predicates { get; set; }
 
 

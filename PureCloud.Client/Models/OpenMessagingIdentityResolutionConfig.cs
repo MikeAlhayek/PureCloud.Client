@@ -1,4 +1,3 @@
-using System.Runtime.Serialization;
 using System.Text;
 using System.Text.Json.Serialization;
 
@@ -7,7 +6,7 @@ namespace PureCloud.Client.Models;
 /// <summary>
 /// OpenMessagingIdentityResolutionConfig
 /// </summary>
-[DataContract]
+
 public partial class OpenMessagingIdentityResolutionConfig : IEquatable<OpenMessagingIdentityResolutionConfig>
 {
 
@@ -36,7 +35,7 @@ public partial class OpenMessagingIdentityResolutionConfig : IEquatable<OpenMess
     /// The globally unique identifier for the object.
     /// </summary>
     /// <value>The globally unique identifier for the object.</value>
-    [DataMember(Name = "id", EmitDefaultValue = false)]
+    [JsonPropertyName("id")]
     public string Id { get; private set; }
 
 
@@ -45,7 +44,7 @@ public partial class OpenMessagingIdentityResolutionConfig : IEquatable<OpenMess
     /// The division to which this entity belongs.
     /// </summary>
     /// <value>The division to which this entity belongs.</value>
-    [DataMember(Name = "division", EmitDefaultValue = false)]
+    [JsonPropertyName("division")]
     public WritableStarrableDivision Division { get; set; }
 
 
@@ -54,7 +53,7 @@ public partial class OpenMessagingIdentityResolutionConfig : IEquatable<OpenMess
     /// Whether the channel should resolve identities
     /// </summary>
     /// <value>Whether the channel should resolve identities</value>
-    [DataMember(Name = "resolveIdentities", EmitDefaultValue = false)]
+    [JsonPropertyName("resolveIdentities")]
     public bool? ResolveIdentities { get; set; }
 
 
@@ -63,7 +62,7 @@ public partial class OpenMessagingIdentityResolutionConfig : IEquatable<OpenMess
     /// The external source used for stitching this channel - used only for Open Messaging.
     /// </summary>
     /// <value>The external source used for stitching this channel - used only for Open Messaging.</value>
-    [DataMember(Name = "externalSource", EmitDefaultValue = false)]
+    [JsonPropertyName("externalSource")]
     public AddressableEntityRef ExternalSource { get; set; }
 
 
@@ -72,7 +71,7 @@ public partial class OpenMessagingIdentityResolutionConfig : IEquatable<OpenMess
     /// The URI for this object
     /// </summary>
     /// <value>The URI for this object</value>
-    [DataMember(Name = "selfUri", EmitDefaultValue = false)]
+    [JsonPropertyName("selfUri")]
     public string SelfUri { get; private set; }
 
 

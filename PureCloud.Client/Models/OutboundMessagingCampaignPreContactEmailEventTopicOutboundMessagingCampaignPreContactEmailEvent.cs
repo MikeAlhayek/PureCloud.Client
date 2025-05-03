@@ -7,13 +7,13 @@ namespace PureCloud.Client.Models;
 /// <summary>
 /// OutboundMessagingCampaignPreContactEmailEventTopicOutboundMessagingCampaignPreContactEmailEvent
 /// </summary>
-[DataContract]
+
 public partial class OutboundMessagingCampaignPreContactEmailEventTopicOutboundMessagingCampaignPreContactEmailEvent : IEquatable<OutboundMessagingCampaignPreContactEmailEventTopicOutboundMessagingCampaignPreContactEmailEvent>
 {
     /// <summary>
     /// Gets or Sets OutboundCampaignType
     /// </summary>
-    [JsonConverter(typeof(JsonStringEnumConverter))]
+    
     public enum OutboundCampaignTypeEnum
     {
         /// <summary>
@@ -45,7 +45,7 @@ public partial class OutboundMessagingCampaignPreContactEmailEventTopicOutboundM
     /// <summary>
     /// Gets or Sets WrapupCode
     /// </summary>
-    [JsonConverter(typeof(JsonStringEnumConverter))]
+    
     public enum WrapupCodeEnum
     {
         /// <summary>
@@ -149,12 +149,12 @@ public partial class OutboundMessagingCampaignPreContactEmailEventTopicOutboundM
     /// <summary>
     /// Gets or Sets OutboundCampaignType
     /// </summary>
-    [DataMember(Name = "outboundCampaignType", EmitDefaultValue = false)]
+    [JsonPropertyName("outboundCampaignType")]
     public OutboundCampaignTypeEnum? OutboundCampaignType { get; set; }
     /// <summary>
     /// Gets or Sets WrapupCode
     /// </summary>
-    [DataMember(Name = "wrapupCode", EmitDefaultValue = false)]
+    [JsonPropertyName("wrapupCode")]
     public WrapupCodeEnum? WrapupCode { get; set; }
     /// <summary>
     /// Initializes a new instance of the <see cref="OutboundMessagingCampaignPreContactEmailEventTopicOutboundMessagingCampaignPreContactEmailEvent" /> class.
@@ -189,7 +189,7 @@ public partial class OutboundMessagingCampaignPreContactEmailEventTopicOutboundM
     /// <summary>
     /// Gets or Sets EventTime
     /// </summary>
-    [DataMember(Name = "eventTime", EmitDefaultValue = false)]
+    [JsonPropertyName("eventTime")]
     public long? EventTime { get; set; }
 
 
@@ -199,7 +199,7 @@ public partial class OutboundMessagingCampaignPreContactEmailEventTopicOutboundM
     /// <summary>
     /// Gets or Sets EmailAttributes
     /// </summary>
-    [DataMember(Name = "emailAttributes", EmitDefaultValue = false)]
+    [JsonPropertyName("emailAttributes")]
     public OutboundMessagingCampaignPreContactEmailEventTopicEmailAttributes EmailAttributes { get; set; }
 
 
@@ -209,7 +209,7 @@ public partial class OutboundMessagingCampaignPreContactEmailEventTopicOutboundM
     /// <summary>
     /// Gets or Sets OutboundCampaignId
     /// </summary>
-    [DataMember(Name = "outboundCampaignId", EmitDefaultValue = false)]
+    [JsonPropertyName("outboundCampaignId")]
     public Guid? OutboundCampaignId { get; set; }
 
 
@@ -217,7 +217,7 @@ public partial class OutboundMessagingCampaignPreContactEmailEventTopicOutboundM
     /// <summary>
     /// Gets or Sets DivisionId
     /// </summary>
-    [DataMember(Name = "divisionId", EmitDefaultValue = false)]
+    [JsonPropertyName("divisionId")]
     public Guid? DivisionId { get; set; }
 
 
@@ -225,7 +225,7 @@ public partial class OutboundMessagingCampaignPreContactEmailEventTopicOutboundM
     /// <summary>
     /// Gets or Sets ContentTemplateId
     /// </summary>
-    [DataMember(Name = "contentTemplateId", EmitDefaultValue = false)]
+    [JsonPropertyName("contentTemplateId")]
     public Guid? ContentTemplateId { get; set; }
 
 
@@ -233,7 +233,7 @@ public partial class OutboundMessagingCampaignPreContactEmailEventTopicOutboundM
     /// <summary>
     /// Gets or Sets OutboundContactListId
     /// </summary>
-    [DataMember(Name = "outboundContactListId", EmitDefaultValue = false)]
+    [JsonPropertyName("outboundContactListId")]
     public Guid? OutboundContactListId { get; set; }
 
 
@@ -241,7 +241,7 @@ public partial class OutboundMessagingCampaignPreContactEmailEventTopicOutboundM
     /// <summary>
     /// Gets or Sets OutboundContactId
     /// </summary>
-    [DataMember(Name = "outboundContactId", EmitDefaultValue = false)]
+    [JsonPropertyName("outboundContactId")]
     public string OutboundContactId { get; set; }
 
 
@@ -249,7 +249,7 @@ public partial class OutboundMessagingCampaignPreContactEmailEventTopicOutboundM
     /// <summary>
     /// Gets or Sets IsCampaignAlwaysRunning
     /// </summary>
-    [DataMember(Name = "isCampaignAlwaysRunning", EmitDefaultValue = false)]
+    [JsonPropertyName("isCampaignAlwaysRunning")]
     public bool? IsCampaignAlwaysRunning { get; set; }
 
 

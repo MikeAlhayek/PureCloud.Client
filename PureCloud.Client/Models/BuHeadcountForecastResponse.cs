@@ -1,12 +1,12 @@
-using System.Runtime.Serialization;
 using System.Text;
+using System.Text.Json.Serialization;
 
 namespace PureCloud.Client.Models;
 
 /// <summary>
 /// BuHeadcountForecastResponse
 /// </summary>
-[DataContract]
+
 public partial class BuHeadcountForecastResponse : IEquatable<BuHeadcountForecastResponse>
 {
     /// <summary>
@@ -27,7 +27,7 @@ public partial class BuHeadcountForecastResponse : IEquatable<BuHeadcountForecas
     /// The headcount forecast, null when downloadUrl is provided
     /// </summary>
     /// <value>The headcount forecast, null when downloadUrl is provided</value>
-    [DataMember(Name = "result", EmitDefaultValue = false)]
+    [JsonPropertyName("result")]
     public BuHeadcountForecast Result { get; set; }
 
 
@@ -36,7 +36,7 @@ public partial class BuHeadcountForecastResponse : IEquatable<BuHeadcountForecas
     /// Download URL.  Null unless the response is too large to pass directly through the api
     /// </summary>
     /// <value>Download URL.  Null unless the response is too large to pass directly through the api</value>
-    [DataMember(Name = "downloadUrl", EmitDefaultValue = false)]
+    [JsonPropertyName("downloadUrl")]
     public string DownloadUrl { get; set; }
 
 

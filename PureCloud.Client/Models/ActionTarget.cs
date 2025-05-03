@@ -7,13 +7,13 @@ namespace PureCloud.Client.Models;
 /// <summary>
 /// ActionTarget
 /// </summary>
-[DataContract]
+
 public partial class ActionTarget : IEquatable<ActionTarget>
 {
     /// <summary>
     /// Gets or Sets SupportedMediaTypes
     /// </summary>
-    [JsonConverter(typeof(JsonStringEnumConverter))]
+    
     public enum SupportedMediaTypesEnum
     {
         /// <summary>
@@ -70,7 +70,7 @@ public partial class ActionTarget : IEquatable<ActionTarget>
     /// Indicates the state of the target.
     /// </summary>
     /// <value>Indicates the state of the target.</value>
-    [JsonConverter(typeof(JsonStringEnumConverter))]
+    
     public enum StateEnum
     {
         /// <summary>
@@ -103,7 +103,7 @@ public partial class ActionTarget : IEquatable<ActionTarget>
     /// Indicates the state of the target.
     /// </summary>
     /// <value>Indicates the state of the target.</value>
-    [DataMember(Name = "state", EmitDefaultValue = false)]
+    [JsonPropertyName("state")]
     public StateEnum? State { get; set; }
     /// <summary>
     /// Initializes a new instance of the <see cref="ActionTarget" /> class.
@@ -137,7 +137,7 @@ public partial class ActionTarget : IEquatable<ActionTarget>
     /// The globally unique identifier for the object.
     /// </summary>
     /// <value>The globally unique identifier for the object.</value>
-    [DataMember(Name = "id", EmitDefaultValue = false)]
+    [JsonPropertyName("id")]
     public string Id { get; private set; }
 
 
@@ -145,7 +145,7 @@ public partial class ActionTarget : IEquatable<ActionTarget>
     /// <summary>
     /// Gets or Sets Name
     /// </summary>
-    [DataMember(Name = "name", EmitDefaultValue = false)]
+    [JsonPropertyName("name")]
     public string Name { get; set; }
 
 
@@ -154,7 +154,7 @@ public partial class ActionTarget : IEquatable<ActionTarget>
     /// Additional user data associated with the target in key/value format.
     /// </summary>
     /// <value>Additional user data associated with the target in key/value format.</value>
-    [DataMember(Name = "userData", EmitDefaultValue = false)]
+    [JsonPropertyName("userData")]
     public List<KeyValue> UserData { get; set; }
 
 
@@ -163,7 +163,7 @@ public partial class ActionTarget : IEquatable<ActionTarget>
     /// Supported media types of the target.
     /// </summary>
     /// <value>Supported media types of the target.</value>
-    [DataMember(Name = "supportedMediaTypes", EmitDefaultValue = false)]
+    [JsonPropertyName("supportedMediaTypes")]
     public List<SupportedMediaTypesEnum> SupportedMediaTypes { get; set; }
 
 
@@ -174,7 +174,7 @@ public partial class ActionTarget : IEquatable<ActionTarget>
     /// Description of the target.
     /// </summary>
     /// <value>Description of the target.</value>
-    [DataMember(Name = "description", EmitDefaultValue = false)]
+    [JsonPropertyName("description")]
     public string Description { get; set; }
 
 
@@ -183,7 +183,7 @@ public partial class ActionTarget : IEquatable<ActionTarget>
     /// Service Level of the action target. Chat offers for the target will be throttled with the aim of achieving this service level.
     /// </summary>
     /// <value>Service Level of the action target. Chat offers for the target will be throttled with the aim of achieving this service level.</value>
-    [DataMember(Name = "serviceLevel", EmitDefaultValue = false)]
+    [JsonPropertyName("serviceLevel")]
     public ServiceLevel ServiceLevel { get; set; }
 
 
@@ -192,7 +192,7 @@ public partial class ActionTarget : IEquatable<ActionTarget>
     /// Indicates the non-default short abandon threshold
     /// </summary>
     /// <value>Indicates the non-default short abandon threshold</value>
-    [DataMember(Name = "shortAbandonThreshold", EmitDefaultValue = false)]
+    [JsonPropertyName("shortAbandonThreshold")]
     public int? ShortAbandonThreshold { get; set; }
 
 
@@ -201,7 +201,7 @@ public partial class ActionTarget : IEquatable<ActionTarget>
     /// The URI for this object
     /// </summary>
     /// <value>The URI for this object</value>
-    [DataMember(Name = "selfUri", EmitDefaultValue = false)]
+    [JsonPropertyName("selfUri")]
     public string SelfUri { get; private set; }
 
 
@@ -210,7 +210,7 @@ public partial class ActionTarget : IEquatable<ActionTarget>
     /// The date the target was created. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z
     /// </summary>
     /// <value>The date the target was created. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z</value>
-    [DataMember(Name = "createdDate", EmitDefaultValue = false)]
+    [JsonPropertyName("createdDate")]
     public DateTime? CreatedDate { get; set; }
 
 
@@ -219,7 +219,7 @@ public partial class ActionTarget : IEquatable<ActionTarget>
     /// The date the target was last modified. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z
     /// </summary>
     /// <value>The date the target was last modified. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z</value>
-    [DataMember(Name = "modifiedDate", EmitDefaultValue = false)]
+    [JsonPropertyName("modifiedDate")]
     public DateTime? ModifiedDate { get; set; }
 
 

@@ -1,4 +1,3 @@
-using System.Runtime.Serialization;
 using System.Text;
 using System.Text.Json.Serialization;
 
@@ -7,7 +6,7 @@ namespace PureCloud.Client.Models;
 /// <summary>
 /// Settings for an input event to the bot flow indicating an error has occurred.
 /// </summary>
-[DataContract]
+
 public partial class TextBotErrorInputEvent : IEquatable<TextBotErrorInputEvent>
 {
 
@@ -34,7 +33,7 @@ public partial class TextBotErrorInputEvent : IEquatable<TextBotErrorInputEvent>
     /// The error code.
     /// </summary>
     /// <value>The error code.</value>
-    [DataMember(Name = "code", EmitDefaultValue = false)]
+    [JsonPropertyName("code")]
     public string Code { get; set; }
 
 
@@ -43,7 +42,7 @@ public partial class TextBotErrorInputEvent : IEquatable<TextBotErrorInputEvent>
     /// The error message.
     /// </summary>
     /// <value>The error message.</value>
-    [DataMember(Name = "message", EmitDefaultValue = false)]
+    [JsonPropertyName("message")]
     public string Message { get; set; }
 
 

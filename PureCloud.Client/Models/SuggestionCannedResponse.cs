@@ -1,12 +1,12 @@
-using System.Runtime.Serialization;
 using System.Text;
+using System.Text.Json.Serialization;
 
 namespace PureCloud.Client.Models;
 
 /// <summary>
 /// SuggestionCannedResponse
 /// </summary>
-[DataContract]
+
 public partial class SuggestionCannedResponse : IEquatable<SuggestionCannedResponse>
 {
     /// <summary>
@@ -23,7 +23,7 @@ public partial class SuggestionCannedResponse : IEquatable<SuggestionCannedRespo
     /// The suggested response.
     /// </summary>
     /// <value>The suggested response.</value>
-    [DataMember(Name = "response", EmitDefaultValue = false)]
+    [JsonPropertyName("response")]
     public AddressableEntityRef Response { get; private set; }
 
 
@@ -32,7 +32,7 @@ public partial class SuggestionCannedResponse : IEquatable<SuggestionCannedRespo
     /// The library from which the canned response is suggested
     /// </summary>
     /// <value>The library from which the canned response is suggested</value>
-    [DataMember(Name = "library", EmitDefaultValue = false)]
+    [JsonPropertyName("library")]
     public AddressableEntityRef Library { get; private set; }
 
 

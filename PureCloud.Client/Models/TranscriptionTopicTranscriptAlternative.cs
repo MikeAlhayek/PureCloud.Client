@@ -1,12 +1,12 @@
-using System.Runtime.Serialization;
 using System.Text;
+using System.Text.Json.Serialization;
 
 namespace PureCloud.Client.Models;
 
 /// <summary>
 /// TranscriptionTopicTranscriptAlternative
 /// </summary>
-[DataContract]
+
 public partial class TranscriptionTopicTranscriptAlternative : IEquatable<TranscriptionTopicTranscriptAlternative>
 {
     /// <summary>
@@ -36,7 +36,7 @@ public partial class TranscriptionTopicTranscriptAlternative : IEquatable<Transc
     /// <summary>
     /// Gets or Sets Confidence
     /// </summary>
-    [DataMember(Name = "confidence", EmitDefaultValue = false)]
+    [JsonPropertyName("confidence")]
     public double? Confidence { get; set; }
 
 
@@ -44,7 +44,7 @@ public partial class TranscriptionTopicTranscriptAlternative : IEquatable<Transc
     /// <summary>
     /// Gets or Sets OffsetMs
     /// </summary>
-    [DataMember(Name = "offsetMs", EmitDefaultValue = false)]
+    [JsonPropertyName("offsetMs")]
     public long? OffsetMs { get; set; }
 
 
@@ -52,7 +52,7 @@ public partial class TranscriptionTopicTranscriptAlternative : IEquatable<Transc
     /// <summary>
     /// Gets or Sets DurationMs
     /// </summary>
-    [DataMember(Name = "durationMs", EmitDefaultValue = false)]
+    [JsonPropertyName("durationMs")]
     public long? DurationMs { get; set; }
 
 
@@ -60,7 +60,7 @@ public partial class TranscriptionTopicTranscriptAlternative : IEquatable<Transc
     /// <summary>
     /// Gets or Sets Transcript
     /// </summary>
-    [DataMember(Name = "transcript", EmitDefaultValue = false)]
+    [JsonPropertyName("transcript")]
     public string Transcript { get; set; }
 
 
@@ -68,7 +68,7 @@ public partial class TranscriptionTopicTranscriptAlternative : IEquatable<Transc
     /// <summary>
     /// Gets or Sets Words
     /// </summary>
-    [DataMember(Name = "words", EmitDefaultValue = false)]
+    [JsonPropertyName("words")]
     public List<TranscriptionTopicTranscriptWord> Words { get; set; }
 
 
@@ -76,7 +76,7 @@ public partial class TranscriptionTopicTranscriptAlternative : IEquatable<Transc
     /// <summary>
     /// Gets or Sets DecoratedTranscript
     /// </summary>
-    [DataMember(Name = "decoratedTranscript", EmitDefaultValue = false)]
+    [JsonPropertyName("decoratedTranscript")]
     public string DecoratedTranscript { get; set; }
 
 
@@ -84,7 +84,7 @@ public partial class TranscriptionTopicTranscriptAlternative : IEquatable<Transc
     /// <summary>
     /// Gets or Sets DecoratedWords
     /// </summary>
-    [DataMember(Name = "decoratedWords", EmitDefaultValue = false)]
+    [JsonPropertyName("decoratedWords")]
     public List<TranscriptionTopicTranscriptWord> DecoratedWords { get; set; }
 
 

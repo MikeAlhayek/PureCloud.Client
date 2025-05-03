@@ -1,12 +1,12 @@
-using System.Runtime.Serialization;
 using System.Text;
+using System.Text.Json.Serialization;
 
 namespace PureCloud.Client.Models;
 
 /// <summary>
 /// QuarterHourly
 /// </summary>
-[DataContract]
+
 public partial class QuarterHourly : IEquatable<QuarterHourly>
 {
     /// <summary>
@@ -27,7 +27,7 @@ public partial class QuarterHourly : IEquatable<QuarterHourly>
     /// List of download URLs to fetch the result of quarter hour time series. This field is populated only if session state is Complete
     /// </summary>
     /// <value>List of download URLs to fetch the result of quarter hour time series. This field is populated only if session state is Complete</value>
-    [DataMember(Name = "downloadUrls", EmitDefaultValue = false)]
+    [JsonPropertyName("downloadUrls")]
     public List<string> DownloadUrls { get; set; }
 
 
@@ -36,7 +36,7 @@ public partial class QuarterHourly : IEquatable<QuarterHourly>
     /// Result will always come via downloadUrls; however the schema is included for documentation
     /// </summary>
     /// <value>Result will always come via downloadUrls; however the schema is included for documentation</value>
-    [DataMember(Name = "downloadResult", EmitDefaultValue = false)]
+    [JsonPropertyName("downloadResult")]
     public List<Timeseries> DownloadResult { get; set; }
 
 

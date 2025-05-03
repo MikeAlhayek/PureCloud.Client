@@ -1,12 +1,12 @@
-using System.Runtime.Serialization;
 using System.Text;
+using System.Text.Json.Serialization;
 
 namespace PureCloud.Client.Models;
 
 /// <summary>
 /// List of available Action categories.
 /// </summary>
-[DataContract]
+
 public partial class Category : IEquatable<Category>
 {
     /// <summary>
@@ -25,7 +25,7 @@ public partial class Category : IEquatable<Category>
     /// Category name
     /// </summary>
     /// <value>Category name</value>
-    [DataMember(Name = "name", EmitDefaultValue = false)]
+    [JsonPropertyName("name")]
     public string Name { get; set; }
 
 

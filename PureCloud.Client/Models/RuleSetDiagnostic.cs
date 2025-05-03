@@ -7,13 +7,13 @@ namespace PureCloud.Client.Models;
 /// <summary>
 /// RuleSetDiagnostic
 /// </summary>
-[DataContract]
+
 public partial class RuleSetDiagnostic : IEquatable<RuleSetDiagnostic>
 {
     /// <summary>
     /// Gets or Sets Warnings
     /// </summary>
-    [JsonConverter(typeof(JsonStringEnumConverter))]
+    
     public enum WarningsEnum
     {
         /// <summary>
@@ -62,7 +62,7 @@ public partial class RuleSetDiagnostic : IEquatable<RuleSetDiagnostic>
     /// A campaign rule set
     /// </summary>
     /// <value>A campaign rule set</value>
-    [DataMember(Name = "ruleSet", EmitDefaultValue = false)]
+    [JsonPropertyName("ruleSet")]
     public DomainEntityRef RuleSet { get; private set; }
 
 
@@ -71,7 +71,7 @@ public partial class RuleSetDiagnostic : IEquatable<RuleSetDiagnostic>
     /// Diagnostic warnings for the rule set
     /// </summary>
     /// <value>Diagnostic warnings for the rule set</value>
-    [DataMember(Name = "warnings", EmitDefaultValue = false)]
+    [JsonPropertyName("warnings")]
     public List<WarningsEnum> Warnings { get; private set; }
 
 

@@ -7,13 +7,13 @@ namespace PureCloud.Client.Models;
 /// <summary>
 /// Flow
 /// </summary>
-[DataContract]
+
 public partial class Flow : IEquatable<Flow>
 {
     /// <summary>
     /// Gets or Sets Type
     /// </summary>
-    [JsonConverter(typeof(JsonStringEnumConverter))]
+    
     public enum TypeEnum
     {
         /// <summary>
@@ -141,7 +141,7 @@ public partial class Flow : IEquatable<Flow>
     /// <summary>
     /// Gets or Sets CompatibleFlowTypes
     /// </summary>
-    [JsonConverter(typeof(JsonStringEnumConverter))]
+    
     public enum CompatibleFlowTypesEnum
     {
         /// <summary>
@@ -269,7 +269,7 @@ public partial class Flow : IEquatable<Flow>
     /// <summary>
     /// Gets or Sets Type
     /// </summary>
-    [DataMember(Name = "type", EmitDefaultValue = false)]
+    [JsonPropertyName("type")]
     public TypeEnum? Type { get; set; }
 
     /// <summary>
@@ -331,7 +331,7 @@ public partial class Flow : IEquatable<Flow>
     /// The flow identifier
     /// </summary>
     /// <value>The flow identifier</value>
-    [DataMember(Name = "id", EmitDefaultValue = false)]
+    [JsonPropertyName("id")]
     public string Id { get; set; }
 
 
@@ -340,7 +340,7 @@ public partial class Flow : IEquatable<Flow>
     /// The flow name
     /// </summary>
     /// <value>The flow name</value>
-    [DataMember(Name = "name", EmitDefaultValue = false)]
+    [JsonPropertyName("name")]
     public string Name { get; set; }
 
 
@@ -349,7 +349,7 @@ public partial class Flow : IEquatable<Flow>
     /// The division to which this entity belongs.
     /// </summary>
     /// <value>The division to which this entity belongs.</value>
-    [DataMember(Name = "division", EmitDefaultValue = false)]
+    [JsonPropertyName("division")]
     public WritableDivision Division { get; set; }
 
 
@@ -357,7 +357,7 @@ public partial class Flow : IEquatable<Flow>
     /// <summary>
     /// Gets or Sets Description
     /// </summary>
-    [DataMember(Name = "description", EmitDefaultValue = false)]
+    [JsonPropertyName("description")]
     public string Description { get; set; }
 
 
@@ -368,7 +368,7 @@ public partial class Flow : IEquatable<Flow>
     /// User that has the flow locked.
     /// </summary>
     /// <value>User that has the flow locked.</value>
-    [DataMember(Name = "lockedUser", EmitDefaultValue = false)]
+    [JsonPropertyName("lockedUser")]
     public User LockedUser { get; set; }
 
 
@@ -377,7 +377,7 @@ public partial class Flow : IEquatable<Flow>
     /// OAuth client that has the flow locked.
     /// </summary>
     /// <value>OAuth client that has the flow locked.</value>
-    [DataMember(Name = "lockedClient", EmitDefaultValue = false)]
+    [JsonPropertyName("lockedClient")]
     public DomainEntityRef LockedClient { get; set; }
 
 
@@ -385,7 +385,7 @@ public partial class Flow : IEquatable<Flow>
     /// <summary>
     /// Gets or Sets Active
     /// </summary>
-    [DataMember(Name = "active", EmitDefaultValue = false)]
+    [JsonPropertyName("active")]
     public bool? Active { get; set; }
 
 
@@ -393,7 +393,7 @@ public partial class Flow : IEquatable<Flow>
     /// <summary>
     /// Gets or Sets System
     /// </summary>
-    [DataMember(Name = "system", EmitDefaultValue = false)]
+    [JsonPropertyName("system")]
     public bool? System { get; set; }
 
 
@@ -401,7 +401,7 @@ public partial class Flow : IEquatable<Flow>
     /// <summary>
     /// Gets or Sets Deleted
     /// </summary>
-    [DataMember(Name = "deleted", EmitDefaultValue = false)]
+    [JsonPropertyName("deleted")]
     public bool? Deleted { get; set; }
 
 
@@ -409,7 +409,7 @@ public partial class Flow : IEquatable<Flow>
     /// <summary>
     /// Gets or Sets PublishedVersion
     /// </summary>
-    [DataMember(Name = "publishedVersion", EmitDefaultValue = false)]
+    [JsonPropertyName("publishedVersion")]
     public FlowVersion PublishedVersion { get; set; }
 
 
@@ -417,7 +417,7 @@ public partial class Flow : IEquatable<Flow>
     /// <summary>
     /// Gets or Sets SavedVersion
     /// </summary>
-    [DataMember(Name = "savedVersion", EmitDefaultValue = false)]
+    [JsonPropertyName("savedVersion")]
     public FlowVersion SavedVersion { get; set; }
 
 
@@ -426,7 +426,7 @@ public partial class Flow : IEquatable<Flow>
     /// json schema describing the inputs for the flow
     /// </summary>
     /// <value>json schema describing the inputs for the flow</value>
-    [DataMember(Name = "inputSchema", EmitDefaultValue = false)]
+    [JsonPropertyName("inputSchema")]
     public object InputSchema { get; set; }
 
 
@@ -435,7 +435,7 @@ public partial class Flow : IEquatable<Flow>
     /// json schema describing the outputs for the flow
     /// </summary>
     /// <value>json schema describing the outputs for the flow</value>
-    [DataMember(Name = "outputSchema", EmitDefaultValue = false)]
+    [JsonPropertyName("outputSchema")]
     public object OutputSchema { get; set; }
 
 
@@ -443,7 +443,7 @@ public partial class Flow : IEquatable<Flow>
     /// <summary>
     /// Gets or Sets CheckedInVersion
     /// </summary>
-    [DataMember(Name = "checkedInVersion", EmitDefaultValue = false)]
+    [JsonPropertyName("checkedInVersion")]
     public FlowVersion CheckedInVersion { get; set; }
 
 
@@ -451,7 +451,7 @@ public partial class Flow : IEquatable<Flow>
     /// <summary>
     /// Gets or Sets DebugVersion
     /// </summary>
-    [DataMember(Name = "debugVersion", EmitDefaultValue = false)]
+    [JsonPropertyName("debugVersion")]
     public FlowVersion DebugVersion { get; set; }
 
 
@@ -459,7 +459,7 @@ public partial class Flow : IEquatable<Flow>
     /// <summary>
     /// Gets or Sets PublishedBy
     /// </summary>
-    [DataMember(Name = "publishedBy", EmitDefaultValue = false)]
+    [JsonPropertyName("publishedBy")]
     public User PublishedBy { get; set; }
 
 
@@ -467,7 +467,7 @@ public partial class Flow : IEquatable<Flow>
     /// <summary>
     /// Gets or Sets CurrentOperation
     /// </summary>
-    [DataMember(Name = "currentOperation", EmitDefaultValue = false)]
+    [JsonPropertyName("currentOperation")]
     public Operation CurrentOperation { get; set; }
 
 
@@ -476,7 +476,7 @@ public partial class Flow : IEquatable<Flow>
     /// Information about the natural language understanding configuration for the published version of the flow
     /// </summary>
     /// <value>Information about the natural language understanding configuration for the published version of the flow</value>
-    [DataMember(Name = "nluInfo", EmitDefaultValue = false)]
+    [JsonPropertyName("nluInfo")]
     public NluInfo NluInfo { get; private set; }
 
 
@@ -485,7 +485,7 @@ public partial class Flow : IEquatable<Flow>
     /// List of supported languages for the published version of the flow.
     /// </summary>
     /// <value>List of supported languages for the published version of the flow.</value>
-    [DataMember(Name = "supportedLanguages", EmitDefaultValue = false)]
+    [JsonPropertyName("supportedLanguages")]
     public List<SupportedLanguage> SupportedLanguages { get; private set; }
 
 
@@ -494,7 +494,7 @@ public partial class Flow : IEquatable<Flow>
     /// Compatible flow types designate which flow types are allowed to embed a flow’s configuration within their own flow configuration.  Currently the only flows that can be embedded are Common Module flows and the embedding flow can invoke them using the Call Common Module action.
     /// </summary>
     /// <value>Compatible flow types designate which flow types are allowed to embed a flow’s configuration within their own flow configuration.  Currently the only flows that can be embedded are Common Module flows and the embedding flow can invoke them using the Call Common Module action.</value>
-    [DataMember(Name = "compatibleFlowTypes", EmitDefaultValue = false)]
+    [JsonPropertyName("compatibleFlowTypes")]
     public List<CompatibleFlowTypesEnum> CompatibleFlowTypes { get; private set; }
 
 
@@ -502,7 +502,7 @@ public partial class Flow : IEquatable<Flow>
     /// <summary>
     /// Gets or Sets WorktypeId
     /// </summary>
-    [DataMember(Name = "worktypeId", EmitDefaultValue = false)]
+    [JsonPropertyName("worktypeId")]
     public string WorktypeId { get; set; }
 
 
@@ -510,7 +510,7 @@ public partial class Flow : IEquatable<Flow>
     /// <summary>
     /// Gets or Sets VirtualAgentEnabled
     /// </summary>
-    [DataMember(Name = "virtualAgentEnabled", EmitDefaultValue = false)]
+    [JsonPropertyName("virtualAgentEnabled")]
     public bool? VirtualAgentEnabled { get; set; }
 
 
@@ -519,7 +519,7 @@ public partial class Flow : IEquatable<Flow>
     /// The URI for this object
     /// </summary>
     /// <value>The URI for this object</value>
-    [DataMember(Name = "selfUri", EmitDefaultValue = false)]
+    [JsonPropertyName("selfUri")]
     public string SelfUri { get; private set; }
 
 

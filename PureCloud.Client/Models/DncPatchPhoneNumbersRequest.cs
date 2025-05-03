@@ -7,14 +7,14 @@ namespace PureCloud.Client.Models;
 /// <summary>
 /// DncPatchPhoneNumbersRequest
 /// </summary>
-[DataContract]
+
 public partial class DncPatchPhoneNumbersRequest : IEquatable<DncPatchPhoneNumbersRequest>
 {
     /// <summary>
     /// The action to perform
     /// </summary>
     /// <value>The action to perform</value>
-    [JsonConverter(typeof(JsonStringEnumConverter))]
+    
     public enum ActionEnum
     {
         /// <summary>
@@ -41,7 +41,7 @@ public partial class DncPatchPhoneNumbersRequest : IEquatable<DncPatchPhoneNumbe
     /// The action to perform
     /// </summary>
     /// <value>The action to perform</value>
-    [DataMember(Name = "action", EmitDefaultValue = false)]
+    [JsonPropertyName("action")]
     public ActionEnum? Action { get; set; }
     /// <summary>
     /// Initializes a new instance of the <see cref="DncPatchPhoneNumbersRequest" /> class.
@@ -65,7 +65,7 @@ public partial class DncPatchPhoneNumbersRequest : IEquatable<DncPatchPhoneNumbe
     /// The list of phone numbers to Add to / Remove from the DNC list 
     /// </summary>
     /// <value>The list of phone numbers to Add to / Remove from the DNC list </value>
-    [DataMember(Name = "phoneNumbers", EmitDefaultValue = false)]
+    [JsonPropertyName("phoneNumbers")]
     public List<string> PhoneNumbers { get; set; }
 
 
@@ -74,7 +74,7 @@ public partial class DncPatchPhoneNumbersRequest : IEquatable<DncPatchPhoneNumbe
     /// Expiration date for DNC phone numbers in yyyy-MM-ddTHH:mmZ format
     /// </summary>
     /// <value>Expiration date for DNC phone numbers in yyyy-MM-ddTHH:mmZ format</value>
-    [DataMember(Name = "expirationDateTime", EmitDefaultValue = false)]
+    [JsonPropertyName("expirationDateTime")]
     public string ExpirationDateTime { get; set; }
 
 

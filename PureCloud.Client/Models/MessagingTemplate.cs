@@ -1,12 +1,12 @@
-using System.Runtime.Serialization;
 using System.Text;
+using System.Text.Json.Serialization;
 
 namespace PureCloud.Client.Models;
 
 /// <summary>
 /// The messaging template identifies a structured message templates supported by a messaging channel.
 /// </summary>
-[DataContract]
+
 public partial class MessagingTemplate : IEquatable<MessagingTemplate>
 {
     /// <summary>
@@ -25,7 +25,7 @@ public partial class MessagingTemplate : IEquatable<MessagingTemplate>
     /// Defines a messaging template for a WhatsApp messaging channel
     /// </summary>
     /// <value>Defines a messaging template for a WhatsApp messaging channel</value>
-    [DataMember(Name = "whatsApp", EmitDefaultValue = false)]
+    [JsonPropertyName("whatsApp")]
     public WhatsAppDefinition WhatsApp { get; set; }
 
 

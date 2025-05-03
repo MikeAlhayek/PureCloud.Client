@@ -7,14 +7,14 @@ namespace PureCloud.Client.Models;
 /// <summary>
 /// PatchContentOffer
 /// </summary>
-[DataContract]
+
 public partial class PatchContentOffer : IEquatable<PatchContentOffer>
 {
     /// <summary>
     /// The display mode of Genesys Widgets when displaying content offer.
     /// </summary>
     /// <value>The display mode of Genesys Widgets when displaying content offer.</value>
-    [JsonConverter(typeof(JsonStringEnumConverter))]
+    
     public enum DisplayModeEnum
     {
         /// <summary>
@@ -47,7 +47,7 @@ public partial class PatchContentOffer : IEquatable<PatchContentOffer>
     /// The layout mode of the text shown to the user when displaying content offer.
     /// </summary>
     /// <value>The layout mode of the text shown to the user when displaying content offer.</value>
-    [JsonConverter(typeof(JsonStringEnumConverter))]
+    
     public enum LayoutModeEnum
     {
         /// <summary>
@@ -98,13 +98,13 @@ public partial class PatchContentOffer : IEquatable<PatchContentOffer>
     /// The display mode of Genesys Widgets when displaying content offer.
     /// </summary>
     /// <value>The display mode of Genesys Widgets when displaying content offer.</value>
-    [DataMember(Name = "displayMode", EmitDefaultValue = false)]
+    [JsonPropertyName("displayMode")]
     public DisplayModeEnum? DisplayMode { get; set; }
     /// <summary>
     /// The layout mode of the text shown to the user when displaying content offer.
     /// </summary>
     /// <value>The layout mode of the text shown to the user when displaying content offer.</value>
-    [DataMember(Name = "layoutMode", EmitDefaultValue = false)]
+    [JsonPropertyName("layoutMode")]
     public LayoutModeEnum? LayoutMode { get; set; }
     /// <summary>
     /// Initializes a new instance of the <see cref="PatchContentOffer" /> class.
@@ -136,7 +136,7 @@ public partial class PatchContentOffer : IEquatable<PatchContentOffer>
     /// URL for image displayed to the customer when displaying content offer.
     /// </summary>
     /// <value>URL for image displayed to the customer when displaying content offer.</value>
-    [DataMember(Name = "imageUrl", EmitDefaultValue = false)]
+    [JsonPropertyName("imageUrl")]
     public string ImageUrl { get; set; }
 
 
@@ -149,7 +149,7 @@ public partial class PatchContentOffer : IEquatable<PatchContentOffer>
     /// Title used in the header of the content offer.
     /// </summary>
     /// <value>Title used in the header of the content offer.</value>
-    [DataMember(Name = "title", EmitDefaultValue = false)]
+    [JsonPropertyName("title")]
     public string Title { get; set; }
 
 
@@ -158,7 +158,7 @@ public partial class PatchContentOffer : IEquatable<PatchContentOffer>
     /// Headline displayed above the body text of the content offer.
     /// </summary>
     /// <value>Headline displayed above the body text of the content offer.</value>
-    [DataMember(Name = "headline", EmitDefaultValue = false)]
+    [JsonPropertyName("headline")]
     public string Headline { get; set; }
 
 
@@ -167,7 +167,7 @@ public partial class PatchContentOffer : IEquatable<PatchContentOffer>
     /// Body text of the content offer.
     /// </summary>
     /// <value>Body text of the content offer.</value>
-    [DataMember(Name = "body", EmitDefaultValue = false)]
+    [JsonPropertyName("body")]
     public string Body { get; set; }
 
 
@@ -176,7 +176,7 @@ public partial class PatchContentOffer : IEquatable<PatchContentOffer>
     /// Properties customizing the call to action button on the content offer.
     /// </summary>
     /// <value>Properties customizing the call to action button on the content offer.</value>
-    [DataMember(Name = "callToAction", EmitDefaultValue = false)]
+    [JsonPropertyName("callToAction")]
     public PatchCallToAction CallToAction { get; set; }
 
 
@@ -185,7 +185,7 @@ public partial class PatchContentOffer : IEquatable<PatchContentOffer>
     /// Properties customizing the styling of the content offer.
     /// </summary>
     /// <value>Properties customizing the styling of the content offer.</value>
-    [DataMember(Name = "style", EmitDefaultValue = false)]
+    [JsonPropertyName("style")]
     public PatchContentOfferStylingConfiguration Style { get; set; }
 
 

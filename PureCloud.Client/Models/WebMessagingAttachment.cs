@@ -7,14 +7,14 @@ namespace PureCloud.Client.Models;
 /// <summary>
 /// Attachment object.
 /// </summary>
-[DataContract]
+
 public partial class WebMessagingAttachment : IEquatable<WebMessagingAttachment>
 {
     /// <summary>
     /// The type of attachment this instance represents.
     /// </summary>
     /// <value>The type of attachment this instance represents.</value>
-    [JsonConverter(typeof(JsonStringEnumConverter))]
+    
     public enum MediaTypeEnum
     {
         /// <summary>
@@ -59,7 +59,7 @@ public partial class WebMessagingAttachment : IEquatable<WebMessagingAttachment>
     /// The type of attachment this instance represents.
     /// </summary>
     /// <value>The type of attachment this instance represents.</value>
-    [DataMember(Name = "mediaType", EmitDefaultValue = false)]
+    [JsonPropertyName("mediaType")]
     public MediaTypeEnum? MediaType { get; private set; }
     /// <summary>
     /// Initializes a new instance of the <see cref="WebMessagingAttachment" /> class.
@@ -75,7 +75,7 @@ public partial class WebMessagingAttachment : IEquatable<WebMessagingAttachment>
     /// The globally unique identifier for the object.
     /// </summary>
     /// <value>The globally unique identifier for the object.</value>
-    [DataMember(Name = "id", EmitDefaultValue = false)]
+    [JsonPropertyName("id")]
     public string Id { get; private set; }
 
 
@@ -86,7 +86,7 @@ public partial class WebMessagingAttachment : IEquatable<WebMessagingAttachment>
     /// URL of the attachment.
     /// </summary>
     /// <value>URL of the attachment.</value>
-    [DataMember(Name = "url", EmitDefaultValue = false)]
+    [JsonPropertyName("url")]
     public string Url { get; private set; }
 
 
@@ -95,7 +95,7 @@ public partial class WebMessagingAttachment : IEquatable<WebMessagingAttachment>
     /// Attachment mime type (https://www.iana.org/assignments/media-types/media-types.xhtml).
     /// </summary>
     /// <value>Attachment mime type (https://www.iana.org/assignments/media-types/media-types.xhtml).</value>
-    [DataMember(Name = "mime", EmitDefaultValue = false)]
+    [JsonPropertyName("mime")]
     public string Mime { get; private set; }
 
 
@@ -104,7 +104,7 @@ public partial class WebMessagingAttachment : IEquatable<WebMessagingAttachment>
     /// Text associated with attachment such as an image caption.
     /// </summary>
     /// <value>Text associated with attachment such as an image caption.</value>
-    [DataMember(Name = "text", EmitDefaultValue = false)]
+    [JsonPropertyName("text")]
     public string Text { get; private set; }
 
 
@@ -113,7 +113,7 @@ public partial class WebMessagingAttachment : IEquatable<WebMessagingAttachment>
     /// Secure hash of the attachment content.
     /// </summary>
     /// <value>Secure hash of the attachment content.</value>
-    [DataMember(Name = "sha256", EmitDefaultValue = false)]
+    [JsonPropertyName("sha256")]
     public string Sha256 { get; private set; }
 
 
@@ -122,7 +122,7 @@ public partial class WebMessagingAttachment : IEquatable<WebMessagingAttachment>
     /// Suggested file name for attachment.
     /// </summary>
     /// <value>Suggested file name for attachment.</value>
-    [DataMember(Name = "filename", EmitDefaultValue = false)]
+    [JsonPropertyName("filename")]
     public string Filename { get; private set; }
 
 
@@ -131,7 +131,7 @@ public partial class WebMessagingAttachment : IEquatable<WebMessagingAttachment>
     /// The file size associated with the file
     /// </summary>
     /// <value>The file size associated with the file</value>
-    [DataMember(Name = "fileSize", EmitDefaultValue = false)]
+    [JsonPropertyName("fileSize")]
     public int? FileSize { get; private set; }
 
 

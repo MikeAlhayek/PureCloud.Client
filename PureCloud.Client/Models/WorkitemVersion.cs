@@ -7,14 +7,14 @@ namespace PureCloud.Client.Models;
 /// <summary>
 /// WorkitemVersion
 /// </summary>
-[DataContract]
+
 public partial class WorkitemVersion : IEquatable<WorkitemVersion>
 {
     /// <summary>
     /// The Category of the current Status of the Workitem.
     /// </summary>
     /// <value>The Category of the current Status of the Workitem.</value>
-    [JsonConverter(typeof(JsonStringEnumConverter))]
+    
     public enum StatusCategoryEnum
     {
         /// <summary>
@@ -59,7 +59,7 @@ public partial class WorkitemVersion : IEquatable<WorkitemVersion>
     /// The assignment state of the workitem.
     /// </summary>
     /// <value>The assignment state of the workitem.</value>
-    [JsonConverter(typeof(JsonStringEnumConverter))]
+    
     public enum AssignmentStateEnum
     {
         /// <summary>
@@ -152,13 +152,13 @@ public partial class WorkitemVersion : IEquatable<WorkitemVersion>
     /// The Category of the current Status of the Workitem.
     /// </summary>
     /// <value>The Category of the current Status of the Workitem.</value>
-    [DataMember(Name = "statusCategory", EmitDefaultValue = false)]
+    [JsonPropertyName("statusCategory")]
     public StatusCategoryEnum? StatusCategory { get; set; }
     /// <summary>
     /// The assignment state of the workitem.
     /// </summary>
     /// <value>The assignment state of the workitem.</value>
-    [DataMember(Name = "assignmentState", EmitDefaultValue = false)]
+    [JsonPropertyName("assignmentState")]
     public AssignmentStateEnum? AssignmentState { get; set; }
     /// <summary>
     /// Initializes a new instance of the <see cref="WorkitemVersion" /> class.
@@ -246,7 +246,7 @@ public partial class WorkitemVersion : IEquatable<WorkitemVersion>
     /// The globally unique identifier for the object.
     /// </summary>
     /// <value>The globally unique identifier for the object.</value>
-    [DataMember(Name = "id", EmitDefaultValue = false)]
+    [JsonPropertyName("id")]
     public string Id { get; private set; }
 
 
@@ -255,7 +255,7 @@ public partial class WorkitemVersion : IEquatable<WorkitemVersion>
     /// The name of the Workitem.
     /// </summary>
     /// <value>The name of the Workitem.</value>
-    [DataMember(Name = "name", EmitDefaultValue = false)]
+    [JsonPropertyName("name")]
     public string Name { get; set; }
 
 
@@ -264,7 +264,7 @@ public partial class WorkitemVersion : IEquatable<WorkitemVersion>
     /// The division to which this entity belongs.
     /// </summary>
     /// <value>The division to which this entity belongs.</value>
-    [DataMember(Name = "division", EmitDefaultValue = false)]
+    [JsonPropertyName("division")]
     public Division Division { get; set; }
 
 
@@ -273,7 +273,7 @@ public partial class WorkitemVersion : IEquatable<WorkitemVersion>
     /// The Worktype of the Workitem.
     /// </summary>
     /// <value>The Worktype of the Workitem.</value>
-    [DataMember(Name = "type", EmitDefaultValue = false)]
+    [JsonPropertyName("type")]
     public WorktypeReference Type { get; set; }
 
 
@@ -282,7 +282,7 @@ public partial class WorkitemVersion : IEquatable<WorkitemVersion>
     /// The description of the Workitem.
     /// </summary>
     /// <value>The description of the Workitem.</value>
-    [DataMember(Name = "description", EmitDefaultValue = false)]
+    [JsonPropertyName("description")]
     public string Description { get; set; }
 
 
@@ -291,7 +291,7 @@ public partial class WorkitemVersion : IEquatable<WorkitemVersion>
     /// The language of the Workitem.
     /// </summary>
     /// <value>The language of the Workitem.</value>
-    [DataMember(Name = "language", EmitDefaultValue = false)]
+    [JsonPropertyName("language")]
     public LanguageReference Language { get; set; }
 
 
@@ -300,7 +300,7 @@ public partial class WorkitemVersion : IEquatable<WorkitemVersion>
     /// The utilization label of the Workitem.
     /// </summary>
     /// <value>The utilization label of the Workitem.</value>
-    [DataMember(Name = "utilizationLabel", EmitDefaultValue = false)]
+    [JsonPropertyName("utilizationLabel")]
     public WorkitemUtilizationLabelReference UtilizationLabel { get; set; }
 
 
@@ -309,7 +309,7 @@ public partial class WorkitemVersion : IEquatable<WorkitemVersion>
     /// The priority of the Workitem. The valid range is between -25,000,000 and 25,000,000.
     /// </summary>
     /// <value>The priority of the Workitem. The valid range is between -25,000,000 and 25,000,000.</value>
-    [DataMember(Name = "priority", EmitDefaultValue = false)]
+    [JsonPropertyName("priority")]
     public int? Priority { get; set; }
 
 
@@ -318,7 +318,7 @@ public partial class WorkitemVersion : IEquatable<WorkitemVersion>
     /// The creation date of the Workitem. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z
     /// </summary>
     /// <value>The creation date of the Workitem. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z</value>
-    [DataMember(Name = "dateCreated", EmitDefaultValue = false)]
+    [JsonPropertyName("dateCreated")]
     public DateTime? DateCreated { get; set; }
 
 
@@ -327,7 +327,7 @@ public partial class WorkitemVersion : IEquatable<WorkitemVersion>
     /// The modified date of the Workitem. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z
     /// </summary>
     /// <value>The modified date of the Workitem. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z</value>
-    [DataMember(Name = "dateModified", EmitDefaultValue = false)]
+    [JsonPropertyName("dateModified")]
     public DateTime? DateModified { get; set; }
 
 
@@ -336,7 +336,7 @@ public partial class WorkitemVersion : IEquatable<WorkitemVersion>
     /// The due date of the Workitem. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z
     /// </summary>
     /// <value>The due date of the Workitem. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z</value>
-    [DataMember(Name = "dateDue", EmitDefaultValue = false)]
+    [JsonPropertyName("dateDue")]
     public DateTime? DateDue { get; set; }
 
 
@@ -345,7 +345,7 @@ public partial class WorkitemVersion : IEquatable<WorkitemVersion>
     /// The expiry date of the Workitem. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z
     /// </summary>
     /// <value>The expiry date of the Workitem. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z</value>
-    [DataMember(Name = "dateExpires", EmitDefaultValue = false)]
+    [JsonPropertyName("dateExpires")]
     public DateTime? DateExpires { get; set; }
 
 
@@ -354,7 +354,7 @@ public partial class WorkitemVersion : IEquatable<WorkitemVersion>
     /// The estimated duration in seconds to complete the workitem.
     /// </summary>
     /// <value>The estimated duration in seconds to complete the workitem.</value>
-    [DataMember(Name = "durationSeconds", EmitDefaultValue = false)]
+    [JsonPropertyName("durationSeconds")]
     public int? DurationSeconds { get; set; }
 
 
@@ -363,7 +363,7 @@ public partial class WorkitemVersion : IEquatable<WorkitemVersion>
     /// The time to live of the Workitem in seconds.
     /// </summary>
     /// <value>The time to live of the Workitem in seconds.</value>
-    [DataMember(Name = "ttl", EmitDefaultValue = false)]
+    [JsonPropertyName("ttl")]
     public int? Ttl { get; set; }
 
 
@@ -372,7 +372,7 @@ public partial class WorkitemVersion : IEquatable<WorkitemVersion>
     /// The current Status of the Workitem.
     /// </summary>
     /// <value>The current Status of the Workitem.</value>
-    [DataMember(Name = "status", EmitDefaultValue = false)]
+    [JsonPropertyName("status")]
     public WorkitemStatusReference Status { get; set; }
 
 
@@ -383,7 +383,7 @@ public partial class WorkitemVersion : IEquatable<WorkitemVersion>
     /// The State change date. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z
     /// </summary>
     /// <value>The State change date. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z</value>
-    [DataMember(Name = "dateStatusChanged", EmitDefaultValue = false)]
+    [JsonPropertyName("dateStatusChanged")]
     public DateTime? DateStatusChanged { get; set; }
 
 
@@ -392,7 +392,7 @@ public partial class WorkitemVersion : IEquatable<WorkitemVersion>
     /// The date the Workitem was closed. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z
     /// </summary>
     /// <value>The date the Workitem was closed. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z</value>
-    [DataMember(Name = "dateClosed", EmitDefaultValue = false)]
+    [JsonPropertyName("dateClosed")]
     public DateTime? DateClosed { get; set; }
 
 
@@ -401,7 +401,7 @@ public partial class WorkitemVersion : IEquatable<WorkitemVersion>
     /// The Workbin that contains the Workitem.
     /// </summary>
     /// <value>The Workbin that contains the Workitem.</value>
-    [DataMember(Name = "workbin", EmitDefaultValue = false)]
+    [JsonPropertyName("workbin")]
     public WorkbinReference Workbin { get; set; }
 
 
@@ -410,7 +410,7 @@ public partial class WorkitemVersion : IEquatable<WorkitemVersion>
     /// The reporter of the Workitem.
     /// </summary>
     /// <value>The reporter of the Workitem.</value>
-    [DataMember(Name = "reporter", EmitDefaultValue = false)]
+    [JsonPropertyName("reporter")]
     public UserReferenceWithName Reporter { get; set; }
 
 
@@ -419,7 +419,7 @@ public partial class WorkitemVersion : IEquatable<WorkitemVersion>
     /// The assignee of the Workitem.
     /// </summary>
     /// <value>The assignee of the Workitem.</value>
-    [DataMember(Name = "assignee", EmitDefaultValue = false)]
+    [JsonPropertyName("assignee")]
     public UserReferenceWithName Assignee { get; set; }
 
 
@@ -428,7 +428,7 @@ public partial class WorkitemVersion : IEquatable<WorkitemVersion>
     /// The external contact of the Workitem.
     /// </summary>
     /// <value>The external contact of the Workitem.</value>
-    [DataMember(Name = "externalContact", EmitDefaultValue = false)]
+    [JsonPropertyName("externalContact")]
     public ExternalContactReference ExternalContact { get; set; }
 
 
@@ -437,7 +437,7 @@ public partial class WorkitemVersion : IEquatable<WorkitemVersion>
     /// The external tag of the Workitem.
     /// </summary>
     /// <value>The external tag of the Workitem.</value>
-    [DataMember(Name = "externalTag", EmitDefaultValue = false)]
+    [JsonPropertyName("externalTag")]
     public string ExternalTag { get; set; }
 
 
@@ -446,7 +446,7 @@ public partial class WorkitemVersion : IEquatable<WorkitemVersion>
     /// The User who modified the Workitem.
     /// </summary>
     /// <value>The User who modified the Workitem.</value>
-    [DataMember(Name = "modifiedBy", EmitDefaultValue = false)]
+    [JsonPropertyName("modifiedBy")]
     public UserReference ModifiedBy { get; set; }
 
 
@@ -455,7 +455,7 @@ public partial class WorkitemVersion : IEquatable<WorkitemVersion>
     /// The Workitems queue.
     /// </summary>
     /// <value>The Workitems queue.</value>
-    [DataMember(Name = "queue", EmitDefaultValue = false)]
+    [JsonPropertyName("queue")]
     public WorkitemQueueReference Queue { get; set; }
 
 
@@ -466,7 +466,7 @@ public partial class WorkitemVersion : IEquatable<WorkitemVersion>
     /// The assignment state change date. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z
     /// </summary>
     /// <value>The assignment state change date. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z</value>
-    [DataMember(Name = "dateAssignmentStateChanged", EmitDefaultValue = false)]
+    [JsonPropertyName("dateAssignmentStateChanged")]
     public DateTime? DateAssignmentStateChanged { get; set; }
 
 
@@ -475,7 +475,7 @@ public partial class WorkitemVersion : IEquatable<WorkitemVersion>
     /// The duration in seconds before an alert will timeout.
     /// </summary>
     /// <value>The duration in seconds before an alert will timeout.</value>
-    [DataMember(Name = "alertTimeoutSeconds", EmitDefaultValue = false)]
+    [JsonPropertyName("alertTimeoutSeconds")]
     public int? AlertTimeoutSeconds { get; set; }
 
 
@@ -484,7 +484,7 @@ public partial class WorkitemVersion : IEquatable<WorkitemVersion>
     /// The skills of the Workitem.
     /// </summary>
     /// <value>The skills of the Workitem.</value>
-    [DataMember(Name = "skills", EmitDefaultValue = false)]
+    [JsonPropertyName("skills")]
     public List<RoutingSkillReference> Skills { get; set; }
 
 
@@ -493,7 +493,7 @@ public partial class WorkitemVersion : IEquatable<WorkitemVersion>
     /// The preferred agents of the Workitem.
     /// </summary>
     /// <value>The preferred agents of the Workitem.</value>
-    [DataMember(Name = "preferredAgents", EmitDefaultValue = false)]
+    [JsonPropertyName("preferredAgents")]
     public List<UserReference> PreferredAgents { get; set; }
 
 
@@ -502,7 +502,7 @@ public partial class WorkitemVersion : IEquatable<WorkitemVersion>
     /// Set it to false to disable auto status transition. By default, it is enabled.
     /// </summary>
     /// <value>Set it to false to disable auto status transition. By default, it is enabled.</value>
-    [DataMember(Name = "autoStatusTransition", EmitDefaultValue = false)]
+    [JsonPropertyName("autoStatusTransition")]
     public bool? AutoStatusTransition { get; set; }
 
 
@@ -511,7 +511,7 @@ public partial class WorkitemVersion : IEquatable<WorkitemVersion>
     /// The schema defining the custom fields of the Workitem. The schema is inherited from the Workitems Worktype at creation time.
     /// </summary>
     /// <value>The schema defining the custom fields of the Workitem. The schema is inherited from the Workitems Worktype at creation time.</value>
-    [DataMember(Name = "schema", EmitDefaultValue = false)]
+    [JsonPropertyName("schema")]
     public WorkitemSchema Schema { get; set; }
 
 
@@ -520,7 +520,7 @@ public partial class WorkitemVersion : IEquatable<WorkitemVersion>
     /// Custom fields defined in the schema referenced by the Workitem.
     /// </summary>
     /// <value>Custom fields defined in the schema referenced by the Workitem.</value>
-    [DataMember(Name = "customFields", EmitDefaultValue = false)]
+    [JsonPropertyName("customFields")]
     public Dictionary<string, object> CustomFields { get; set; }
 
 
@@ -529,7 +529,7 @@ public partial class WorkitemVersion : IEquatable<WorkitemVersion>
     /// Auto status transition details of Workitem.
     /// </summary>
     /// <value>Auto status transition details of Workitem.</value>
-    [DataMember(Name = "autoStatusTransitionDetail", EmitDefaultValue = false)]
+    [JsonPropertyName("autoStatusTransitionDetail")]
     public AutoStatusTransitionDetail AutoStatusTransitionDetail { get; set; }
 
 
@@ -538,7 +538,7 @@ public partial class WorkitemVersion : IEquatable<WorkitemVersion>
     /// A list of scored agents for the Workitem.
     /// </summary>
     /// <value>A list of scored agents for the Workitem.</value>
-    [DataMember(Name = "scoredAgents", EmitDefaultValue = false)]
+    [JsonPropertyName("scoredAgents")]
     public List<WorkitemScoredAgent> ScoredAgents { get; set; }
 
 
@@ -547,7 +547,7 @@ public partial class WorkitemVersion : IEquatable<WorkitemVersion>
     /// The script that will be executed for the Workitem.
     /// </summary>
     /// <value>The script that will be executed for the Workitem.</value>
-    [DataMember(Name = "script", EmitDefaultValue = false)]
+    [JsonPropertyName("script")]
     public WorkitemScriptReference Script { get; set; }
 
 
@@ -556,7 +556,7 @@ public partial class WorkitemVersion : IEquatable<WorkitemVersion>
     /// Version
     /// </summary>
     /// <value>Version</value>
-    [DataMember(Name = "version", EmitDefaultValue = false)]
+    [JsonPropertyName("version")]
     public int? Version { get; set; }
 
 
@@ -565,7 +565,7 @@ public partial class WorkitemVersion : IEquatable<WorkitemVersion>
     /// The URI for this object
     /// </summary>
     /// <value>The URI for this object</value>
-    [DataMember(Name = "selfUri", EmitDefaultValue = false)]
+    [JsonPropertyName("selfUri")]
     public string SelfUri { get; private set; }
 
 

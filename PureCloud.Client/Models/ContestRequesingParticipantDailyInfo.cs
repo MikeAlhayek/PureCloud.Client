@@ -1,12 +1,12 @@
-using System.Runtime.Serialization;
 using System.Text;
+using System.Text.Json.Serialization;
 
 namespace PureCloud.Client.Models;
 
 /// <summary>
 /// ContestRequesingParticipantDailyInfo
 /// </summary>
-[DataContract]
+
 public partial class ContestRequesingParticipantDailyInfo : IEquatable<ContestRequesingParticipantDailyInfo>
 {
     /// <summary>
@@ -27,7 +27,7 @@ public partial class ContestRequesingParticipantDailyInfo : IEquatable<ContestRe
     /// Workday of the contest info. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd
     /// </summary>
     /// <value>Workday of the contest info. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd</value>
-    [DataMember(Name = "dateWorkday", EmitDefaultValue = false)]
+    [JsonPropertyName("dateWorkday")]
     public string DateWorkday { get; set; }
 
 
@@ -36,7 +36,7 @@ public partial class ContestRequesingParticipantDailyInfo : IEquatable<ContestRe
     /// The Contest score
     /// </summary>
     /// <value>The Contest score</value>
-    [DataMember(Name = "contestScore", EmitDefaultValue = false)]
+    [JsonPropertyName("contestScore")]
     public ContestScoreRanked ContestScore { get; set; }
 
 

@@ -7,14 +7,14 @@ namespace PureCloud.Client.Models;
 /// <summary>
 /// ExternalMetricDefinition
 /// </summary>
-[DataContract]
+
 public partial class ExternalMetricDefinition : IEquatable<ExternalMetricDefinition>
 {
     /// <summary>
     /// The unit of the External Metric Definition
     /// </summary>
     /// <value>The unit of the External Metric Definition</value>
-    [JsonConverter(typeof(JsonStringEnumConverter))]
+    
     public enum UnitEnum
     {
         /// <summary>
@@ -53,7 +53,7 @@ public partial class ExternalMetricDefinition : IEquatable<ExternalMetricDefinit
     /// The default objective type of the External Metric Definition
     /// </summary>
     /// <value>The default objective type of the External Metric Definition</value>
-    [JsonConverter(typeof(JsonStringEnumConverter))]
+    
     public enum DefaultObjectiveTypeEnum
     {
         /// <summary>
@@ -86,13 +86,13 @@ public partial class ExternalMetricDefinition : IEquatable<ExternalMetricDefinit
     /// The unit of the External Metric Definition
     /// </summary>
     /// <value>The unit of the External Metric Definition</value>
-    [DataMember(Name = "unit", EmitDefaultValue = false)]
+    [JsonPropertyName("unit")]
     public UnitEnum? Unit { get; set; }
     /// <summary>
     /// The default objective type of the External Metric Definition
     /// </summary>
     /// <value>The default objective type of the External Metric Definition</value>
-    [DataMember(Name = "defaultObjectiveType", EmitDefaultValue = false)]
+    [JsonPropertyName("defaultObjectiveType")]
     public DefaultObjectiveTypeEnum? DefaultObjectiveType { get; set; }
     /// <summary>
     /// Initializes a new instance of the <see cref="ExternalMetricDefinition" /> class.
@@ -124,7 +124,7 @@ public partial class ExternalMetricDefinition : IEquatable<ExternalMetricDefinit
     /// The globally unique identifier for the object.
     /// </summary>
     /// <value>The globally unique identifier for the object.</value>
-    [DataMember(Name = "id", EmitDefaultValue = false)]
+    [JsonPropertyName("id")]
     public string Id { get; private set; }
 
 
@@ -133,7 +133,7 @@ public partial class ExternalMetricDefinition : IEquatable<ExternalMetricDefinit
     /// The name of the External Metric Definition
     /// </summary>
     /// <value>The name of the External Metric Definition</value>
-    [DataMember(Name = "name", EmitDefaultValue = false)]
+    [JsonPropertyName("name")]
     public string Name { get; set; }
 
 
@@ -144,7 +144,7 @@ public partial class ExternalMetricDefinition : IEquatable<ExternalMetricDefinit
     /// The unit definition of the External Metric Definition
     /// </summary>
     /// <value>The unit definition of the External Metric Definition</value>
-    [DataMember(Name = "unitDefinition", EmitDefaultValue = false)]
+    [JsonPropertyName("unitDefinition")]
     public string UnitDefinition { get; set; }
 
 
@@ -153,7 +153,7 @@ public partial class ExternalMetricDefinition : IEquatable<ExternalMetricDefinit
     /// The decimal precision of the External Metric Definition
     /// </summary>
     /// <value>The decimal precision of the External Metric Definition</value>
-    [DataMember(Name = "precision", EmitDefaultValue = false)]
+    [JsonPropertyName("precision")]
     public int? Precision { get; set; }
 
 
@@ -164,7 +164,7 @@ public partial class ExternalMetricDefinition : IEquatable<ExternalMetricDefinit
     /// The retention in months of the External Metric Definition
     /// </summary>
     /// <value>The retention in months of the External Metric Definition</value>
-    [DataMember(Name = "retentionMonths", EmitDefaultValue = false)]
+    [JsonPropertyName("retentionMonths")]
     public int? RetentionMonths { get; set; }
 
 
@@ -173,7 +173,7 @@ public partial class ExternalMetricDefinition : IEquatable<ExternalMetricDefinit
     /// True if the External Metric Definition is enabled
     /// </summary>
     /// <value>True if the External Metric Definition is enabled</value>
-    [DataMember(Name = "enabled", EmitDefaultValue = false)]
+    [JsonPropertyName("enabled")]
     public bool? Enabled { get; set; }
 
 
@@ -182,7 +182,7 @@ public partial class ExternalMetricDefinition : IEquatable<ExternalMetricDefinit
     /// True if the External Metric Definition is in use
     /// </summary>
     /// <value>True if the External Metric Definition is in use</value>
-    [DataMember(Name = "inUse", EmitDefaultValue = false)]
+    [JsonPropertyName("inUse")]
     public bool? InUse { get; private set; }
 
 
@@ -191,7 +191,7 @@ public partial class ExternalMetricDefinition : IEquatable<ExternalMetricDefinit
     /// The last date and time that the metric data was refreshed. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z
     /// </summary>
     /// <value>The last date and time that the metric data was refreshed. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z</value>
-    [DataMember(Name = "dateLastRefreshed", EmitDefaultValue = false)]
+    [JsonPropertyName("dateLastRefreshed")]
     public DateTime? DateLastRefreshed { get; set; }
 
 
@@ -200,7 +200,7 @@ public partial class ExternalMetricDefinition : IEquatable<ExternalMetricDefinit
     /// The URI for this object
     /// </summary>
     /// <value>The URI for this object</value>
-    [DataMember(Name = "selfUri", EmitDefaultValue = false)]
+    [JsonPropertyName("selfUri")]
     public string SelfUri { get; private set; }
 
 

@@ -7,14 +7,14 @@ namespace PureCloud.Client.Models;
 /// <summary>
 /// KnowledgeDocumentQuery
 /// </summary>
-[DataContract]
+
 public partial class KnowledgeDocumentQuery : IEquatable<KnowledgeDocumentQuery>
 {
     /// <summary>
     /// Indicates which document variations to include in returned documents. All: all variations regardless of the filter expression; AllMatching: all variations that match the filter expression; SingleMostRelevant: single variation that matches the filter expression and has the highest priority. The default is All.
     /// </summary>
     /// <value>Indicates which document variations to include in returned documents. All: all variations regardless of the filter expression; AllMatching: all variations that match the filter expression; SingleMostRelevant: single variation that matches the filter expression and has the highest priority. The default is All.</value>
-    [JsonConverter(typeof(JsonStringEnumConverter))]
+    
     public enum IncludeVariationsEnum
     {
         /// <summary>
@@ -47,7 +47,7 @@ public partial class KnowledgeDocumentQuery : IEquatable<KnowledgeDocumentQuery>
     /// The sort order for results.
     /// </summary>
     /// <value>The sort order for results.</value>
-    [JsonConverter(typeof(JsonStringEnumConverter))]
+    
     public enum SortOrderEnum
     {
         /// <summary>
@@ -74,7 +74,7 @@ public partial class KnowledgeDocumentQuery : IEquatable<KnowledgeDocumentQuery>
     /// The field in the documents that you want to sort the results by.
     /// </summary>
     /// <value>The field in the documents that you want to sort the results by.</value>
-    [JsonConverter(typeof(JsonStringEnumConverter))]
+    
     public enum SortByEnum
     {
         /// <summary>
@@ -119,19 +119,19 @@ public partial class KnowledgeDocumentQuery : IEquatable<KnowledgeDocumentQuery>
     /// Indicates which document variations to include in returned documents. All: all variations regardless of the filter expression; AllMatching: all variations that match the filter expression; SingleMostRelevant: single variation that matches the filter expression and has the highest priority. The default is All.
     /// </summary>
     /// <value>Indicates which document variations to include in returned documents. All: all variations regardless of the filter expression; AllMatching: all variations that match the filter expression; SingleMostRelevant: single variation that matches the filter expression and has the highest priority. The default is All.</value>
-    [DataMember(Name = "includeVariations", EmitDefaultValue = false)]
+    [JsonPropertyName("includeVariations")]
     public IncludeVariationsEnum? IncludeVariations { get; set; }
     /// <summary>
     /// The sort order for results.
     /// </summary>
     /// <value>The sort order for results.</value>
-    [DataMember(Name = "sortOrder", EmitDefaultValue = false)]
+    [JsonPropertyName("sortOrder")]
     public SortOrderEnum? SortOrder { get; set; }
     /// <summary>
     /// The field in the documents that you want to sort the results by.
     /// </summary>
     /// <value>The field in the documents that you want to sort the results by.</value>
-    [DataMember(Name = "sortBy", EmitDefaultValue = false)]
+    [JsonPropertyName("sortBy")]
     public SortByEnum? SortBy { get; set; }
 
     /// <summary>
@@ -169,7 +169,7 @@ public partial class KnowledgeDocumentQuery : IEquatable<KnowledgeDocumentQuery>
     /// Page size of the returned results.
     /// </summary>
     /// <value>Page size of the returned results.</value>
-    [DataMember(Name = "pageSize", EmitDefaultValue = false)]
+    [JsonPropertyName("pageSize")]
     public int? PageSize { get; set; }
 
 
@@ -178,7 +178,7 @@ public partial class KnowledgeDocumentQuery : IEquatable<KnowledgeDocumentQuery>
     /// Page number of the returned results.
     /// </summary>
     /// <value>Page number of the returned results.</value>
-    [DataMember(Name = "pageNumber", EmitDefaultValue = false)]
+    [JsonPropertyName("pageNumber")]
     public int? PageNumber { get; set; }
 
 
@@ -187,7 +187,7 @@ public partial class KnowledgeDocumentQuery : IEquatable<KnowledgeDocumentQuery>
     /// Indicates whether the results would also include draft documents.
     /// </summary>
     /// <value>Indicates whether the results would also include draft documents.</value>
-    [DataMember(Name = "includeDraftDocuments", EmitDefaultValue = false)]
+    [JsonPropertyName("includeDraftDocuments")]
     public bool? IncludeDraftDocuments { get; set; }
 
 
@@ -196,7 +196,7 @@ public partial class KnowledgeDocumentQuery : IEquatable<KnowledgeDocumentQuery>
     /// Retrieves the documents created/modified/published in specified date and time range.
     /// </summary>
     /// <value>Retrieves the documents created/modified/published in specified date and time range.</value>
-    [DataMember(Name = "interval", EmitDefaultValue = false)]
+    [JsonPropertyName("interval")]
     public DocumentQueryInterval Interval { get; set; }
 
 
@@ -205,7 +205,7 @@ public partial class KnowledgeDocumentQuery : IEquatable<KnowledgeDocumentQuery>
     /// Filter for the document query.
     /// </summary>
     /// <value>Filter for the document query.</value>
-    [DataMember(Name = "filter", EmitDefaultValue = false)]
+    [JsonPropertyName("filter")]
     public DocumentQuery Filter { get; set; }
 
 

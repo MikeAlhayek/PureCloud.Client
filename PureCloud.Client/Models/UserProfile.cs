@@ -7,14 +7,14 @@ namespace PureCloud.Client.Models;
 /// <summary>
 /// UserProfile
 /// </summary>
-[DataContract]
+
 public partial class UserProfile : IEquatable<UserProfile>
 {
     /// <summary>
     /// The state of the user resource
     /// </summary>
     /// <value>The state of the user resource</value>
-    [JsonConverter(typeof(JsonStringEnumConverter))]
+    
     public enum StateEnum
     {
         /// <summary>
@@ -47,7 +47,7 @@ public partial class UserProfile : IEquatable<UserProfile>
     /// The state of the user resource
     /// </summary>
     /// <value>The state of the user resource</value>
-    [DataMember(Name = "state", EmitDefaultValue = false)]
+    [JsonPropertyName("state")]
     public StateEnum? State { get; set; }
 
     /// <summary>
@@ -75,7 +75,7 @@ public partial class UserProfile : IEquatable<UserProfile>
     /// The globally unique identifier for the object.
     /// </summary>
     /// <value>The globally unique identifier for the object.</value>
-    [DataMember(Name = "id", EmitDefaultValue = false)]
+    [JsonPropertyName("id")]
     public string Id { get; private set; }
 
 
@@ -83,7 +83,7 @@ public partial class UserProfile : IEquatable<UserProfile>
     /// <summary>
     /// Gets or Sets Name
     /// </summary>
-    [DataMember(Name = "name", EmitDefaultValue = false)]
+    [JsonPropertyName("name")]
     public string Name { get; set; }
 
 
@@ -94,7 +94,7 @@ public partial class UserProfile : IEquatable<UserProfile>
     /// Datetime of the last modification. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z
     /// </summary>
     /// <value>Datetime of the last modification. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z</value>
-    [DataMember(Name = "dateModified", EmitDefaultValue = false)]
+    [JsonPropertyName("dateModified")]
     public DateTime? DateModified { get; private set; }
 
 
@@ -103,7 +103,7 @@ public partial class UserProfile : IEquatable<UserProfile>
     /// The version of the group resource
     /// </summary>
     /// <value>The version of the group resource</value>
-    [DataMember(Name = "version", EmitDefaultValue = false)]
+    [JsonPropertyName("version")]
     public long? Version { get; set; }
 
 
@@ -112,7 +112,7 @@ public partial class UserProfile : IEquatable<UserProfile>
     /// User information expansions
     /// </summary>
     /// <value>User information expansions</value>
-    [DataMember(Name = "expands", EmitDefaultValue = false)]
+    [JsonPropertyName("expands")]
     public UserExpands Expands { get; private set; }
 
 
@@ -121,7 +121,7 @@ public partial class UserProfile : IEquatable<UserProfile>
     /// The URI for this object
     /// </summary>
     /// <value>The URI for this object</value>
-    [DataMember(Name = "selfUri", EmitDefaultValue = false)]
+    [JsonPropertyName("selfUri")]
     public string SelfUri { get; private set; }
 
 

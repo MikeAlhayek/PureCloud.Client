@@ -1,12 +1,12 @@
-using System.Runtime.Serialization;
 using System.Text;
+using System.Text.Json.Serialization;
 
 namespace PureCloud.Client.Models;
 
 /// <summary>
 /// PolicyConditionResult
 /// </summary>
-[DataContract]
+
 public partial class PolicyConditionResult : IEquatable<PolicyConditionResult>
 {
     /// <summary>
@@ -27,7 +27,7 @@ public partial class PolicyConditionResult : IEquatable<PolicyConditionResult>
     /// The condition name
     /// </summary>
     /// <value>The condition name</value>
-    [DataMember(Name = "name", EmitDefaultValue = false)]
+    [JsonPropertyName("name")]
     public string Name { get; set; }
 
 
@@ -36,7 +36,7 @@ public partial class PolicyConditionResult : IEquatable<PolicyConditionResult>
     /// The boolean result of the condition
     /// </summary>
     /// <value>The boolean result of the condition</value>
-    [DataMember(Name = "result", EmitDefaultValue = false)]
+    [JsonPropertyName("result")]
     public bool? Result { get; set; }
 
 

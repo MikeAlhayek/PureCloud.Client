@@ -1,12 +1,12 @@
-using System.Runtime.Serialization;
 using System.Text;
+using System.Text.Json.Serialization;
 
 namespace PureCloud.Client.Models;
 
 /// <summary>
 /// DeploymentPing
 /// </summary>
-[DataContract]
+
 public partial class DeploymentPing : IEquatable<DeploymentPing>
 {
     /// <summary>
@@ -27,7 +27,7 @@ public partial class DeploymentPing : IEquatable<DeploymentPing>
     /// Collection of actions to be offered or displayed to the visitor.
     /// </summary>
     /// <value>Collection of actions to be offered or displayed to the visitor.</value>
-    [DataMember(Name = "actions", EmitDefaultValue = false)]
+    [JsonPropertyName("actions")]
     public List<DeploymentWebAction> Actions { get; set; }
 
 
@@ -36,7 +36,7 @@ public partial class DeploymentPing : IEquatable<DeploymentPing>
     /// Custom poll interval in milliseconds; when the return value is -1, disable pings.
     /// </summary>
     /// <value>Custom poll interval in milliseconds; when the return value is -1, disable pings.</value>
-    [DataMember(Name = "pollIntervalMilliseconds", EmitDefaultValue = false)]
+    [JsonPropertyName("pollIntervalMilliseconds")]
     public int? PollIntervalMilliseconds { get; set; }
 
 

@@ -7,13 +7,13 @@ namespace PureCloud.Client.Models;
 /// <summary>
 /// AcdEndDetailEventTopicAcdEndEvent
 /// </summary>
-[DataContract]
+
 public partial class AcdEndDetailEventTopicAcdEndEvent : IEquatable<AcdEndDetailEventTopicAcdEndEvent>
 {
     /// <summary>
     /// Gets or Sets DisconnectType
     /// </summary>
-    [JsonConverter(typeof(JsonStringEnumConverter))]
+    
     public enum DisconnectTypeEnum
     {
         /// <summary>
@@ -141,7 +141,7 @@ public partial class AcdEndDetailEventTopicAcdEndEvent : IEquatable<AcdEndDetail
     /// <summary>
     /// Gets or Sets MediaType
     /// </summary>
-    [JsonConverter(typeof(JsonStringEnumConverter))]
+    
     public enum MediaTypeEnum
     {
         /// <summary>
@@ -215,7 +215,7 @@ public partial class AcdEndDetailEventTopicAcdEndEvent : IEquatable<AcdEndDetail
     /// <summary>
     /// Gets or Sets Direction
     /// </summary>
-    [JsonConverter(typeof(JsonStringEnumConverter))]
+    
     public enum DirectionEnum
     {
         /// <summary>
@@ -247,7 +247,7 @@ public partial class AcdEndDetailEventTopicAcdEndEvent : IEquatable<AcdEndDetail
     /// <summary>
     /// Gets or Sets MessageType
     /// </summary>
-    [JsonConverter(typeof(JsonStringEnumConverter))]
+    
     public enum MessageTypeEnum
     {
         /// <summary>
@@ -321,7 +321,7 @@ public partial class AcdEndDetailEventTopicAcdEndEvent : IEquatable<AcdEndDetail
     /// <summary>
     /// Gets or Sets AcdOutcome
     /// </summary>
-    [JsonConverter(typeof(JsonStringEnumConverter))]
+    
     public enum AcdOutcomeEnum
     {
         /// <summary>
@@ -359,7 +359,7 @@ public partial class AcdEndDetailEventTopicAcdEndEvent : IEquatable<AcdEndDetail
     /// <summary>
     /// Gets or Sets RequestedRoutings
     /// </summary>
-    [JsonConverter(typeof(JsonStringEnumConverter))]
+    
     public enum RequestedRoutingsEnum
     {
         /// <summary>
@@ -433,7 +433,7 @@ public partial class AcdEndDetailEventTopicAcdEndEvent : IEquatable<AcdEndDetail
     /// <summary>
     /// Gets or Sets UsedRouting
     /// </summary>
-    [JsonConverter(typeof(JsonStringEnumConverter))]
+    
     public enum UsedRoutingEnum
     {
         /// <summary>
@@ -507,32 +507,32 @@ public partial class AcdEndDetailEventTopicAcdEndEvent : IEquatable<AcdEndDetail
     /// <summary>
     /// Gets or Sets DisconnectType
     /// </summary>
-    [DataMember(Name = "disconnectType", EmitDefaultValue = false)]
+    [JsonPropertyName("disconnectType")]
     public DisconnectTypeEnum? DisconnectType { get; set; }
     /// <summary>
     /// Gets or Sets MediaType
     /// </summary>
-    [DataMember(Name = "mediaType", EmitDefaultValue = false)]
+    [JsonPropertyName("mediaType")]
     public MediaTypeEnum? MediaType { get; set; }
     /// <summary>
     /// Gets or Sets Direction
     /// </summary>
-    [DataMember(Name = "direction", EmitDefaultValue = false)]
+    [JsonPropertyName("direction")]
     public DirectionEnum? Direction { get; set; }
     /// <summary>
     /// Gets or Sets MessageType
     /// </summary>
-    [DataMember(Name = "messageType", EmitDefaultValue = false)]
+    [JsonPropertyName("messageType")]
     public MessageTypeEnum? MessageType { get; set; }
     /// <summary>
     /// Gets or Sets AcdOutcome
     /// </summary>
-    [DataMember(Name = "acdOutcome", EmitDefaultValue = false)]
+    [JsonPropertyName("acdOutcome")]
     public AcdOutcomeEnum? AcdOutcome { get; set; }
     /// <summary>
     /// Gets or Sets UsedRouting
     /// </summary>
-    [DataMember(Name = "usedRouting", EmitDefaultValue = false)]
+    [JsonPropertyName("usedRouting")]
     public UsedRoutingEnum? UsedRouting { get; set; }
     /// <summary>
     /// Initializes a new instance of the <see cref="AcdEndDetailEventTopicAcdEndEvent" /> class.
@@ -611,7 +611,7 @@ public partial class AcdEndDetailEventTopicAcdEndEvent : IEquatable<AcdEndDetail
     /// <summary>
     /// Gets or Sets EventTime
     /// </summary>
-    [DataMember(Name = "eventTime", EmitDefaultValue = false)]
+    [JsonPropertyName("eventTime")]
     public long? EventTime { get; set; }
 
 
@@ -619,7 +619,7 @@ public partial class AcdEndDetailEventTopicAcdEndEvent : IEquatable<AcdEndDetail
     /// <summary>
     /// Gets or Sets ConversationId
     /// </summary>
-    [DataMember(Name = "conversationId", EmitDefaultValue = false)]
+    [JsonPropertyName("conversationId")]
     public string ConversationId { get; set; }
 
 
@@ -627,7 +627,7 @@ public partial class AcdEndDetailEventTopicAcdEndEvent : IEquatable<AcdEndDetail
     /// <summary>
     /// Gets or Sets ParticipantId
     /// </summary>
-    [DataMember(Name = "participantId", EmitDefaultValue = false)]
+    [JsonPropertyName("participantId")]
     public string ParticipantId { get; set; }
 
 
@@ -635,7 +635,7 @@ public partial class AcdEndDetailEventTopicAcdEndEvent : IEquatable<AcdEndDetail
     /// <summary>
     /// Gets or Sets SessionId
     /// </summary>
-    [DataMember(Name = "sessionId", EmitDefaultValue = false)]
+    [JsonPropertyName("sessionId")]
     public string SessionId { get; set; }
 
 
@@ -647,7 +647,7 @@ public partial class AcdEndDetailEventTopicAcdEndEvent : IEquatable<AcdEndDetail
     /// <summary>
     /// Gets or Sets Provider
     /// </summary>
-    [DataMember(Name = "provider", EmitDefaultValue = false)]
+    [JsonPropertyName("provider")]
     public string Provider { get; set; }
 
 
@@ -657,7 +657,7 @@ public partial class AcdEndDetailEventTopicAcdEndEvent : IEquatable<AcdEndDetail
     /// <summary>
     /// Gets or Sets Ani
     /// </summary>
-    [DataMember(Name = "ani", EmitDefaultValue = false)]
+    [JsonPropertyName("ani")]
     public string Ani { get; set; }
 
 
@@ -665,7 +665,7 @@ public partial class AcdEndDetailEventTopicAcdEndEvent : IEquatable<AcdEndDetail
     /// <summary>
     /// Gets or Sets Dnis
     /// </summary>
-    [DataMember(Name = "dnis", EmitDefaultValue = false)]
+    [JsonPropertyName("dnis")]
     public string Dnis { get; set; }
 
 
@@ -673,7 +673,7 @@ public partial class AcdEndDetailEventTopicAcdEndEvent : IEquatable<AcdEndDetail
     /// <summary>
     /// Gets or Sets AddressTo
     /// </summary>
-    [DataMember(Name = "addressTo", EmitDefaultValue = false)]
+    [JsonPropertyName("addressTo")]
     public string AddressTo { get; set; }
 
 
@@ -681,7 +681,7 @@ public partial class AcdEndDetailEventTopicAcdEndEvent : IEquatable<AcdEndDetail
     /// <summary>
     /// Gets or Sets AddressFrom
     /// </summary>
-    [DataMember(Name = "addressFrom", EmitDefaultValue = false)]
+    [JsonPropertyName("addressFrom")]
     public string AddressFrom { get; set; }
 
 
@@ -689,7 +689,7 @@ public partial class AcdEndDetailEventTopicAcdEndEvent : IEquatable<AcdEndDetail
     /// <summary>
     /// Gets or Sets CallbackUserName
     /// </summary>
-    [DataMember(Name = "callbackUserName", EmitDefaultValue = false)]
+    [JsonPropertyName("callbackUserName")]
     public string CallbackUserName { get; set; }
 
 
@@ -697,7 +697,7 @@ public partial class AcdEndDetailEventTopicAcdEndEvent : IEquatable<AcdEndDetail
     /// <summary>
     /// Gets or Sets CallbackNumbers
     /// </summary>
-    [DataMember(Name = "callbackNumbers", EmitDefaultValue = false)]
+    [JsonPropertyName("callbackNumbers")]
     public List<string> CallbackNumbers { get; set; }
 
 
@@ -705,7 +705,7 @@ public partial class AcdEndDetailEventTopicAcdEndEvent : IEquatable<AcdEndDetail
     /// <summary>
     /// Gets or Sets CallbackScheduledTime
     /// </summary>
-    [DataMember(Name = "callbackScheduledTime", EmitDefaultValue = false)]
+    [JsonPropertyName("callbackScheduledTime")]
     public long? CallbackScheduledTime { get; set; }
 
 
@@ -713,7 +713,7 @@ public partial class AcdEndDetailEventTopicAcdEndEvent : IEquatable<AcdEndDetail
     /// <summary>
     /// Gets or Sets Subject
     /// </summary>
-    [DataMember(Name = "subject", EmitDefaultValue = false)]
+    [JsonPropertyName("subject")]
     public string Subject { get; set; }
 
 
@@ -723,7 +723,7 @@ public partial class AcdEndDetailEventTopicAcdEndEvent : IEquatable<AcdEndDetail
     /// <summary>
     /// Gets or Sets QueueId
     /// </summary>
-    [DataMember(Name = "queueId", EmitDefaultValue = false)]
+    [JsonPropertyName("queueId")]
     public string QueueId { get; set; }
 
 
@@ -731,7 +731,7 @@ public partial class AcdEndDetailEventTopicAcdEndEvent : IEquatable<AcdEndDetail
     /// <summary>
     /// Gets or Sets DivisionId
     /// </summary>
-    [DataMember(Name = "divisionId", EmitDefaultValue = false)]
+    [JsonPropertyName("divisionId")]
     public string DivisionId { get; set; }
 
 
@@ -741,7 +741,7 @@ public partial class AcdEndDetailEventTopicAcdEndEvent : IEquatable<AcdEndDetail
     /// <summary>
     /// Gets or Sets AnsweredUserId
     /// </summary>
-    [DataMember(Name = "answeredUserId", EmitDefaultValue = false)]
+    [JsonPropertyName("answeredUserId")]
     public string AnsweredUserId { get; set; }
 
 
@@ -749,7 +749,7 @@ public partial class AcdEndDetailEventTopicAcdEndEvent : IEquatable<AcdEndDetail
     /// <summary>
     /// Gets or Sets RequestedRoutings
     /// </summary>
-    [DataMember(Name = "requestedRoutings", EmitDefaultValue = false)]
+    [JsonPropertyName("requestedRoutings")]
     public List<RequestedRoutingsEnum> RequestedRoutings { get; set; }
 
 
@@ -759,7 +759,7 @@ public partial class AcdEndDetailEventTopicAcdEndEvent : IEquatable<AcdEndDetail
     /// <summary>
     /// Gets or Sets RequestedRoutingSkillIds
     /// </summary>
-    [DataMember(Name = "requestedRoutingSkillIds", EmitDefaultValue = false)]
+    [JsonPropertyName("requestedRoutingSkillIds")]
     public List<Guid?> RequestedRoutingSkillIds { get; set; }
 
 
@@ -767,7 +767,7 @@ public partial class AcdEndDetailEventTopicAcdEndEvent : IEquatable<AcdEndDetail
     /// <summary>
     /// Gets or Sets RequestedLanguageId
     /// </summary>
-    [DataMember(Name = "requestedLanguageId", EmitDefaultValue = false)]
+    [JsonPropertyName("requestedLanguageId")]
     public string RequestedLanguageId { get; set; }
 
 
@@ -775,7 +775,7 @@ public partial class AcdEndDetailEventTopicAcdEndEvent : IEquatable<AcdEndDetail
     /// <summary>
     /// Gets or Sets RequestedRoutingUserIds
     /// </summary>
-    [DataMember(Name = "requestedRoutingUserIds", EmitDefaultValue = false)]
+    [JsonPropertyName("requestedRoutingUserIds")]
     public List<Guid?> RequestedRoutingUserIds { get; set; }
 
 
@@ -783,7 +783,7 @@ public partial class AcdEndDetailEventTopicAcdEndEvent : IEquatable<AcdEndDetail
     /// <summary>
     /// Gets or Sets RoutingPriority
     /// </summary>
-    [DataMember(Name = "routingPriority", EmitDefaultValue = false)]
+    [JsonPropertyName("routingPriority")]
     public long? RoutingPriority { get; set; }
 
 
@@ -791,7 +791,7 @@ public partial class AcdEndDetailEventTopicAcdEndEvent : IEquatable<AcdEndDetail
     /// <summary>
     /// Gets or Sets ConnectedDurationMs
     /// </summary>
-    [DataMember(Name = "connectedDurationMs", EmitDefaultValue = false)]
+    [JsonPropertyName("connectedDurationMs")]
     public long? ConnectedDurationMs { get; set; }
 
 
@@ -799,7 +799,7 @@ public partial class AcdEndDetailEventTopicAcdEndEvent : IEquatable<AcdEndDetail
     /// <summary>
     /// Gets or Sets ConversationExternalContactIds
     /// </summary>
-    [DataMember(Name = "conversationExternalContactIds", EmitDefaultValue = false)]
+    [JsonPropertyName("conversationExternalContactIds")]
     public List<string> ConversationExternalContactIds { get; set; }
 
 
@@ -807,7 +807,7 @@ public partial class AcdEndDetailEventTopicAcdEndEvent : IEquatable<AcdEndDetail
     /// <summary>
     /// Gets or Sets ConversationExternalOrganizationIds
     /// </summary>
-    [DataMember(Name = "conversationExternalOrganizationIds", EmitDefaultValue = false)]
+    [JsonPropertyName("conversationExternalOrganizationIds")]
     public List<string> ConversationExternalOrganizationIds { get; set; }
 
 
@@ -815,7 +815,7 @@ public partial class AcdEndDetailEventTopicAcdEndEvent : IEquatable<AcdEndDetail
     /// <summary>
     /// Gets or Sets UtilizationLabel
     /// </summary>
-    [DataMember(Name = "utilizationLabel", EmitDefaultValue = false)]
+    [JsonPropertyName("utilizationLabel")]
     public string UtilizationLabel { get; set; }
 
 
@@ -823,7 +823,7 @@ public partial class AcdEndDetailEventTopicAcdEndEvent : IEquatable<AcdEndDetail
     /// <summary>
     /// Gets or Sets FlowType
     /// </summary>
-    [DataMember(Name = "flowType", EmitDefaultValue = false)]
+    [JsonPropertyName("flowType")]
     public string FlowType { get; set; }
 
 

@@ -1,4 +1,3 @@
-using System.Runtime.Serialization;
 using System.Text;
 using System.Text.Json.Serialization;
 
@@ -7,7 +6,7 @@ namespace PureCloud.Client.Models;
 /// <summary>
 /// AddShiftTradeRequest
 /// </summary>
-[DataContract]
+
 public partial class AddShiftTradeRequest : IEquatable<AddShiftTradeRequest>
 {
 
@@ -40,7 +39,7 @@ public partial class AddShiftTradeRequest : IEquatable<AddShiftTradeRequest>
     /// The ID of the schedule to which the initiating and receiving shifts belong
     /// </summary>
     /// <value>The ID of the schedule to which the initiating and receiving shifts belong</value>
-    [DataMember(Name = "scheduleId", EmitDefaultValue = false)]
+    [JsonPropertyName("scheduleId")]
     public string ScheduleId { get; set; }
 
 
@@ -49,7 +48,7 @@ public partial class AddShiftTradeRequest : IEquatable<AddShiftTradeRequest>
     /// The ID of the shift that the initiating user wants to give up
     /// </summary>
     /// <value>The ID of the shift that the initiating user wants to give up</value>
-    [DataMember(Name = "initiatingShiftId", EmitDefaultValue = false)]
+    [JsonPropertyName("initiatingShiftId")]
     public string InitiatingShiftId { get; set; }
 
 
@@ -58,7 +57,7 @@ public partial class AddShiftTradeRequest : IEquatable<AddShiftTradeRequest>
     /// The ID of the user to whom to send the request (for use in direct trade requests)
     /// </summary>
     /// <value>The ID of the user to whom to send the request (for use in direct trade requests)</value>
-    [DataMember(Name = "receivingUserId", EmitDefaultValue = false)]
+    [JsonPropertyName("receivingUserId")]
     public string ReceivingUserId { get; set; }
 
 
@@ -67,7 +66,7 @@ public partial class AddShiftTradeRequest : IEquatable<AddShiftTradeRequest>
     /// When this shift trade request should expire. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z
     /// </summary>
     /// <value>When this shift trade request should expire. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z</value>
-    [DataMember(Name = "expiration", EmitDefaultValue = false)]
+    [JsonPropertyName("expiration")]
     public DateTime? Expiration { get; set; }
 
 
@@ -76,7 +75,7 @@ public partial class AddShiftTradeRequest : IEquatable<AddShiftTradeRequest>
     /// The acceptable intervals the initiating user is willing to accept in trade.  Empty indicates the user is giving up the shift. Intervals are represented as an ISO-8601 string. For example: YYYY-MM-DDThh:mm:ss/YYYY-MM-DDThh:mm:ss
     /// </summary>
     /// <value>The acceptable intervals the initiating user is willing to accept in trade.  Empty indicates the user is giving up the shift. Intervals are represented as an ISO-8601 string. For example: YYYY-MM-DDThh:mm:ss/YYYY-MM-DDThh:mm:ss</value>
-    [DataMember(Name = "acceptableIntervals", EmitDefaultValue = false)]
+    [JsonPropertyName("acceptableIntervals")]
     public List<string> AcceptableIntervals { get; set; }
 
 

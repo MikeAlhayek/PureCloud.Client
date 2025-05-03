@@ -7,14 +7,14 @@ namespace PureCloud.Client.Models;
 /// <summary>
 /// SchedulingStatusResponse
 /// </summary>
-[DataContract]
+
 public partial class SchedulingStatusResponse : IEquatable<SchedulingStatusResponse>
 {
     /// <summary>
     /// The status of the scheduling job.
     /// </summary>
     /// <value>The status of the scheduling job.</value>
-    [JsonConverter(typeof(JsonStringEnumConverter))]
+    
     public enum StatusEnum
     {
         /// <summary>
@@ -59,7 +59,7 @@ public partial class SchedulingStatusResponse : IEquatable<SchedulingStatusRespo
     /// The status of the scheduling job.
     /// </summary>
     /// <value>The status of the scheduling job.</value>
-    [DataMember(Name = "status", EmitDefaultValue = false)]
+    [JsonPropertyName("status")]
     public StatusEnum? Status { get; private set; }
     /// <summary>
     /// Initializes a new instance of the <see cref="SchedulingStatusResponse" /> class.
@@ -75,7 +75,7 @@ public partial class SchedulingStatusResponse : IEquatable<SchedulingStatusRespo
     /// The ID generated for the scheduling job.  Use to GET result when job is completed.
     /// </summary>
     /// <value>The ID generated for the scheduling job.  Use to GET result when job is completed.</value>
-    [DataMember(Name = "id", EmitDefaultValue = false)]
+    [JsonPropertyName("id")]
     public string Id { get; private set; }
 
 
@@ -86,7 +86,7 @@ public partial class SchedulingStatusResponse : IEquatable<SchedulingStatusRespo
     /// If the request could not be properly processed, error details will be given here.
     /// </summary>
     /// <value>If the request could not be properly processed, error details will be given here.</value>
-    [DataMember(Name = "errorDetails", EmitDefaultValue = false)]
+    [JsonPropertyName("errorDetails")]
     public List<SchedulingProcessingError> ErrorDetails { get; private set; }
 
 
@@ -95,7 +95,7 @@ public partial class SchedulingStatusResponse : IEquatable<SchedulingStatusRespo
     /// The uri of the scheduling result. It has a value if the status is &#39;Success&#39;.
     /// </summary>
     /// <value>The uri of the scheduling result. It has a value if the status is &#39;Success&#39;.</value>
-    [DataMember(Name = "schedulingResultUri", EmitDefaultValue = false)]
+    [JsonPropertyName("schedulingResultUri")]
     public string SchedulingResultUri { get; private set; }
 
 
@@ -104,7 +104,7 @@ public partial class SchedulingStatusResponse : IEquatable<SchedulingStatusRespo
     /// The percentage of the job that is complete.
     /// </summary>
     /// <value>The percentage of the job that is complete.</value>
-    [DataMember(Name = "percentComplete", EmitDefaultValue = false)]
+    [JsonPropertyName("percentComplete")]
     public int? PercentComplete { get; private set; }
 
 

@@ -1,4 +1,3 @@
-using System.Runtime.Serialization;
 using System.Text;
 using System.Text.Json.Serialization;
 
@@ -7,7 +6,7 @@ namespace PureCloud.Client.Models;
 /// <summary>
 /// Contains information about the substitutions associated with a response.
 /// </summary>
-[DataContract]
+
 public partial class ResponseSubstitution : IEquatable<ResponseSubstitution>
 {
 
@@ -36,7 +35,7 @@ public partial class ResponseSubstitution : IEquatable<ResponseSubstitution>
     /// Response substitution identifier.
     /// </summary>
     /// <value>Response substitution identifier.</value>
-    [DataMember(Name = "id", EmitDefaultValue = false)]
+    [JsonPropertyName("id")]
     public string Id { get; set; }
 
 
@@ -45,7 +44,7 @@ public partial class ResponseSubstitution : IEquatable<ResponseSubstitution>
     /// Response substitution description.
     /// </summary>
     /// <value>Response substitution description.</value>
-    [DataMember(Name = "description", EmitDefaultValue = false)]
+    [JsonPropertyName("description")]
     public string Description { get; set; }
 
 
@@ -54,7 +53,7 @@ public partial class ResponseSubstitution : IEquatable<ResponseSubstitution>
     /// Response substitution default value.
     /// </summary>
     /// <value>Response substitution default value.</value>
-    [DataMember(Name = "defaultValue", EmitDefaultValue = false)]
+    [JsonPropertyName("defaultValue")]
     public string DefaultValue { get; set; }
 
 

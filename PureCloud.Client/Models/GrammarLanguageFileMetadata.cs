@@ -7,14 +7,14 @@ namespace PureCloud.Client.Models;
 /// <summary>
 /// GrammarLanguageFileMetadata
 /// </summary>
-[DataContract]
+
 public partial class GrammarLanguageFileMetadata : IEquatable<GrammarLanguageFileMetadata>
 {
     /// <summary>
     /// The extension of the file
     /// </summary>
     /// <value>The extension of the file</value>
-    [JsonConverter(typeof(JsonStringEnumConverter))]
+    
     public enum FileTypeEnum
     {
         /// <summary>
@@ -41,7 +41,7 @@ public partial class GrammarLanguageFileMetadata : IEquatable<GrammarLanguageFil
     /// The extension of the file
     /// </summary>
     /// <value>The extension of the file</value>
-    [DataMember(Name = "fileType", EmitDefaultValue = false)]
+    [JsonPropertyName("fileType")]
     public FileTypeEnum? FileType { get; set; }
     /// <summary>
     /// Initializes a new instance of the <see cref="GrammarLanguageFileMetadata" /> class.
@@ -65,7 +65,7 @@ public partial class GrammarLanguageFileMetadata : IEquatable<GrammarLanguageFil
     /// The name of the file as defined by the user
     /// </summary>
     /// <value>The name of the file as defined by the user</value>
-    [DataMember(Name = "fileName", EmitDefaultValue = false)]
+    [JsonPropertyName("fileName")]
     public string FileName { get; set; }
 
 
@@ -74,7 +74,7 @@ public partial class GrammarLanguageFileMetadata : IEquatable<GrammarLanguageFil
     /// The size of the file in bytes
     /// </summary>
     /// <value>The size of the file in bytes</value>
-    [DataMember(Name = "fileSizeBytes", EmitDefaultValue = false)]
+    [JsonPropertyName("fileSizeBytes")]
     public int? FileSizeBytes { get; set; }
 
 
@@ -83,7 +83,7 @@ public partial class GrammarLanguageFileMetadata : IEquatable<GrammarLanguageFil
     /// The date the file was uploaded. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z
     /// </summary>
     /// <value>The date the file was uploaded. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z</value>
-    [DataMember(Name = "dateUploaded", EmitDefaultValue = false)]
+    [JsonPropertyName("dateUploaded")]
     public DateTime? DateUploaded { get; set; }
 
 

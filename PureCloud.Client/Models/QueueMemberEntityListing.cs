@@ -1,12 +1,12 @@
-using System.Runtime.Serialization;
 using System.Text;
+using System.Text.Json.Serialization;
 
 namespace PureCloud.Client.Models;
 
 /// <summary>
 /// QueueMemberEntityListing
 /// </summary>
-[DataContract]
+
 public partial class QueueMemberEntityListing : IEquatable<QueueMemberEntityListing>
 {
     /// <summary>
@@ -36,7 +36,7 @@ public partial class QueueMemberEntityListing : IEquatable<QueueMemberEntityList
     /// <summary>
     /// Gets or Sets Entities
     /// </summary>
-    [DataMember(Name = "entities", EmitDefaultValue = false)]
+    [JsonPropertyName("entities")]
     public List<QueueMember> Entities { get; set; }
 
 
@@ -44,7 +44,7 @@ public partial class QueueMemberEntityListing : IEquatable<QueueMemberEntityList
     /// <summary>
     /// Gets or Sets PageNumber
     /// </summary>
-    [DataMember(Name = "pageNumber", EmitDefaultValue = false)]
+    [JsonPropertyName("pageNumber")]
     public int? PageNumber { get; set; }
 
 
@@ -52,7 +52,7 @@ public partial class QueueMemberEntityListing : IEquatable<QueueMemberEntityList
     /// <summary>
     /// Gets or Sets PageSize
     /// </summary>
-    [DataMember(Name = "pageSize", EmitDefaultValue = false)]
+    [JsonPropertyName("pageSize")]
     public int? PageSize { get; set; }
 
 
@@ -60,7 +60,7 @@ public partial class QueueMemberEntityListing : IEquatable<QueueMemberEntityList
     /// <summary>
     /// Gets or Sets FirstUri
     /// </summary>
-    [DataMember(Name = "firstUri", EmitDefaultValue = false)]
+    [JsonPropertyName("firstUri")]
     public string FirstUri { get; set; }
 
 
@@ -68,7 +68,7 @@ public partial class QueueMemberEntityListing : IEquatable<QueueMemberEntityList
     /// <summary>
     /// Gets or Sets SelfUri
     /// </summary>
-    [DataMember(Name = "selfUri", EmitDefaultValue = false)]
+    [JsonPropertyName("selfUri")]
     public string SelfUri { get; set; }
 
 
@@ -76,7 +76,7 @@ public partial class QueueMemberEntityListing : IEquatable<QueueMemberEntityList
     /// <summary>
     /// Gets or Sets NextUri
     /// </summary>
-    [DataMember(Name = "nextUri", EmitDefaultValue = false)]
+    [JsonPropertyName("nextUri")]
     public string NextUri { get; set; }
 
 
@@ -84,7 +84,7 @@ public partial class QueueMemberEntityListing : IEquatable<QueueMemberEntityList
     /// <summary>
     /// Gets or Sets PreviousUri
     /// </summary>
-    [DataMember(Name = "previousUri", EmitDefaultValue = false)]
+    [JsonPropertyName("previousUri")]
     public string PreviousUri { get; set; }
 
 

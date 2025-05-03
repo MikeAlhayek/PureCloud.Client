@@ -7,14 +7,14 @@ namespace PureCloud.Client.Models;
 /// <summary>
 /// WorkPlan
 /// </summary>
-[DataContract]
+
 public partial class WorkPlan : IEquatable<WorkPlan>
 {
     /// <summary>
     /// This constraint ensures that an agent starts each workday within a user-defined time threshold
     /// </summary>
     /// <value>This constraint ensures that an agent starts each workday within a user-defined time threshold</value>
-    [JsonConverter(typeof(JsonStringEnumConverter))]
+    
     public enum ShiftStartVarianceTypeEnum
     {
         /// <summary>
@@ -41,7 +41,7 @@ public partial class WorkPlan : IEquatable<WorkPlan>
     /// This constraint ensures that an agent starts each workday within a user-defined time threshold
     /// </summary>
     /// <value>This constraint ensures that an agent starts each workday within a user-defined time threshold</value>
-    [DataMember(Name = "shiftStartVarianceType", EmitDefaultValue = false)]
+    [JsonPropertyName("shiftStartVarianceType")]
     public ShiftStartVarianceTypeEnum? ShiftStartVarianceType { get; set; }
 
     /// <summary>
@@ -123,7 +123,7 @@ public partial class WorkPlan : IEquatable<WorkPlan>
     /// The globally unique identifier for the object.
     /// </summary>
     /// <value>The globally unique identifier for the object.</value>
-    [DataMember(Name = "id", EmitDefaultValue = false)]
+    [JsonPropertyName("id")]
     public string Id { get; private set; }
 
 
@@ -131,7 +131,7 @@ public partial class WorkPlan : IEquatable<WorkPlan>
     /// <summary>
     /// Gets or Sets Name
     /// </summary>
-    [DataMember(Name = "name", EmitDefaultValue = false)]
+    [JsonPropertyName("name")]
     public string Name { get; set; }
 
 
@@ -140,7 +140,7 @@ public partial class WorkPlan : IEquatable<WorkPlan>
     /// Whether the work plan is enabled for scheduling
     /// </summary>
     /// <value>Whether the work plan is enabled for scheduling</value>
-    [DataMember(Name = "enabled", EmitDefaultValue = false)]
+    [JsonPropertyName("enabled")]
     public bool? Enabled { get; set; }
 
 
@@ -149,7 +149,7 @@ public partial class WorkPlan : IEquatable<WorkPlan>
     /// Whether the work plan is valid or not
     /// </summary>
     /// <value>Whether the work plan is valid or not</value>
-    [DataMember(Name = "valid", EmitDefaultValue = false)]
+    [JsonPropertyName("valid")]
     public bool? Valid { get; private set; }
 
 
@@ -158,7 +158,7 @@ public partial class WorkPlan : IEquatable<WorkPlan>
     /// Whether the weekly paid time constraint is enabled for this work plan
     /// </summary>
     /// <value>Whether the weekly paid time constraint is enabled for this work plan</value>
-    [DataMember(Name = "constrainWeeklyPaidTime", EmitDefaultValue = false)]
+    [JsonPropertyName("constrainWeeklyPaidTime")]
     public bool? ConstrainWeeklyPaidTime { get; set; }
 
 
@@ -167,7 +167,7 @@ public partial class WorkPlan : IEquatable<WorkPlan>
     /// Whether the weekly paid time constraint is flexible for this work plan
     /// </summary>
     /// <value>Whether the weekly paid time constraint is flexible for this work plan</value>
-    [DataMember(Name = "flexibleWeeklyPaidTime", EmitDefaultValue = false)]
+    [JsonPropertyName("flexibleWeeklyPaidTime")]
     public bool? FlexibleWeeklyPaidTime { get; set; }
 
 
@@ -176,7 +176,7 @@ public partial class WorkPlan : IEquatable<WorkPlan>
     /// Exact weekly paid time in minutes for this work plan. Used if flexibleWeeklyPaidTime &#x3D;&#x3D; false
     /// </summary>
     /// <value>Exact weekly paid time in minutes for this work plan. Used if flexibleWeeklyPaidTime &#x3D;&#x3D; false</value>
-    [DataMember(Name = "weeklyExactPaidMinutes", EmitDefaultValue = false)]
+    [JsonPropertyName("weeklyExactPaidMinutes")]
     public int? WeeklyExactPaidMinutes { get; set; }
 
 
@@ -185,7 +185,7 @@ public partial class WorkPlan : IEquatable<WorkPlan>
     /// Minimum weekly paid time in minutes for this work plan. Used if flexibleWeeklyPaidTime &#x3D;&#x3D; true
     /// </summary>
     /// <value>Minimum weekly paid time in minutes for this work plan. Used if flexibleWeeklyPaidTime &#x3D;&#x3D; true</value>
-    [DataMember(Name = "weeklyMinimumPaidMinutes", EmitDefaultValue = false)]
+    [JsonPropertyName("weeklyMinimumPaidMinutes")]
     public int? WeeklyMinimumPaidMinutes { get; set; }
 
 
@@ -194,7 +194,7 @@ public partial class WorkPlan : IEquatable<WorkPlan>
     /// Maximum weekly paid time in minutes for this work plan. Used if flexibleWeeklyPaidTime &#x3D;&#x3D; true
     /// </summary>
     /// <value>Maximum weekly paid time in minutes for this work plan. Used if flexibleWeeklyPaidTime &#x3D;&#x3D; true</value>
-    [DataMember(Name = "weeklyMaximumPaidMinutes", EmitDefaultValue = false)]
+    [JsonPropertyName("weeklyMaximumPaidMinutes")]
     public int? WeeklyMaximumPaidMinutes { get; set; }
 
 
@@ -203,7 +203,7 @@ public partial class WorkPlan : IEquatable<WorkPlan>
     /// Whether paid time granularity is constrained for this work plan
     /// </summary>
     /// <value>Whether paid time granularity is constrained for this work plan</value>
-    [DataMember(Name = "constrainPaidTimeGranularity", EmitDefaultValue = false)]
+    [JsonPropertyName("constrainPaidTimeGranularity")]
     public bool? ConstrainPaidTimeGranularity { get; set; }
 
 
@@ -212,7 +212,7 @@ public partial class WorkPlan : IEquatable<WorkPlan>
     /// Granularity in minutes allowed for shift paid time in this work plan. Used if constrainPaidTimeGranularity &#x3D;&#x3D; true
     /// </summary>
     /// <value>Granularity in minutes allowed for shift paid time in this work plan. Used if constrainPaidTimeGranularity &#x3D;&#x3D; true</value>
-    [DataMember(Name = "paidTimeGranularityMinutes", EmitDefaultValue = false)]
+    [JsonPropertyName("paidTimeGranularityMinutes")]
     public int? PaidTimeGranularityMinutes { get; set; }
 
 
@@ -221,7 +221,7 @@ public partial class WorkPlan : IEquatable<WorkPlan>
     /// Whether the minimum time between shifts constraint is enabled for this work plan
     /// </summary>
     /// <value>Whether the minimum time between shifts constraint is enabled for this work plan</value>
-    [DataMember(Name = "constrainMinimumTimeBetweenShifts", EmitDefaultValue = false)]
+    [JsonPropertyName("constrainMinimumTimeBetweenShifts")]
     public bool? ConstrainMinimumTimeBetweenShifts { get; set; }
 
 
@@ -230,7 +230,7 @@ public partial class WorkPlan : IEquatable<WorkPlan>
     /// Minimum time between shifts in minutes defined in this work plan. Used if constrainMinimumTimeBetweenShifts &#x3D;&#x3D; true
     /// </summary>
     /// <value>Minimum time between shifts in minutes defined in this work plan. Used if constrainMinimumTimeBetweenShifts &#x3D;&#x3D; true</value>
-    [DataMember(Name = "minimumTimeBetweenShiftsMinutes", EmitDefaultValue = false)]
+    [JsonPropertyName("minimumTimeBetweenShiftsMinutes")]
     public int? MinimumTimeBetweenShiftsMinutes { get; set; }
 
 
@@ -239,7 +239,7 @@ public partial class WorkPlan : IEquatable<WorkPlan>
     /// Maximum number days in a week allowed to be scheduled for this work plan
     /// </summary>
     /// <value>Maximum number days in a week allowed to be scheduled for this work plan</value>
-    [DataMember(Name = "maximumDays", EmitDefaultValue = false)]
+    [JsonPropertyName("maximumDays")]
     public int? MaximumDays { get; set; }
 
 
@@ -248,7 +248,7 @@ public partial class WorkPlan : IEquatable<WorkPlan>
     /// Minimum amount of consecutive non working minutes per week that agents who are assigned this work plan are allowed to have off
     /// </summary>
     /// <value>Minimum amount of consecutive non working minutes per week that agents who are assigned this work plan are allowed to have off</value>
-    [DataMember(Name = "minimumConsecutiveNonWorkingMinutesPerWeek", EmitDefaultValue = false)]
+    [JsonPropertyName("minimumConsecutiveNonWorkingMinutesPerWeek")]
     public int? MinimumConsecutiveNonWorkingMinutesPerWeek { get; set; }
 
 
@@ -257,7 +257,7 @@ public partial class WorkPlan : IEquatable<WorkPlan>
     /// Whether to constrain the maximum consecutive working weekends
     /// </summary>
     /// <value>Whether to constrain the maximum consecutive working weekends</value>
-    [DataMember(Name = "constrainMaximumConsecutiveWorkingWeekends", EmitDefaultValue = false)]
+    [JsonPropertyName("constrainMaximumConsecutiveWorkingWeekends")]
     public bool? ConstrainMaximumConsecutiveWorkingWeekends { get; set; }
 
 
@@ -266,7 +266,7 @@ public partial class WorkPlan : IEquatable<WorkPlan>
     /// The maximum number of consecutive weekends that agents who are assigned to this work plan are allowed to work
     /// </summary>
     /// <value>The maximum number of consecutive weekends that agents who are assigned to this work plan are allowed to work</value>
-    [DataMember(Name = "maximumConsecutiveWorkingWeekends", EmitDefaultValue = false)]
+    [JsonPropertyName("maximumConsecutiveWorkingWeekends")]
     public int? MaximumConsecutiveWorkingWeekends { get; set; }
 
 
@@ -275,7 +275,7 @@ public partial class WorkPlan : IEquatable<WorkPlan>
     /// The minimum number of days that agents assigned to a work plan must work per week
     /// </summary>
     /// <value>The minimum number of days that agents assigned to a work plan must work per week</value>
-    [DataMember(Name = "minimumWorkingDaysPerWeek", EmitDefaultValue = false)]
+    [JsonPropertyName("minimumWorkingDaysPerWeek")]
     public int? MinimumWorkingDaysPerWeek { get; set; }
 
 
@@ -284,7 +284,7 @@ public partial class WorkPlan : IEquatable<WorkPlan>
     /// Whether to constrain the maximum consecutive working days
     /// </summary>
     /// <value>Whether to constrain the maximum consecutive working days</value>
-    [DataMember(Name = "constrainMaximumConsecutiveWorkingDays", EmitDefaultValue = false)]
+    [JsonPropertyName("constrainMaximumConsecutiveWorkingDays")]
     public bool? ConstrainMaximumConsecutiveWorkingDays { get; set; }
 
 
@@ -293,7 +293,7 @@ public partial class WorkPlan : IEquatable<WorkPlan>
     /// The maximum number of consecutive days that agents assigned to this work plan are allowed to work. Used if constrainMaximumConsecutiveWorkingDays &#x3D;&#x3D; true
     /// </summary>
     /// <value>The maximum number of consecutive days that agents assigned to this work plan are allowed to work. Used if constrainMaximumConsecutiveWorkingDays &#x3D;&#x3D; true</value>
-    [DataMember(Name = "maximumConsecutiveWorkingDays", EmitDefaultValue = false)]
+    [JsonPropertyName("maximumConsecutiveWorkingDays")]
     public int? MaximumConsecutiveWorkingDays { get; set; }
 
 
@@ -302,7 +302,7 @@ public partial class WorkPlan : IEquatable<WorkPlan>
     /// The time period in minutes for the duration between the start times of two consecutive working days
     /// </summary>
     /// <value>The time period in minutes for the duration between the start times of two consecutive working days</value>
-    [DataMember(Name = "minimumShiftStartDistanceMinutes", EmitDefaultValue = false)]
+    [JsonPropertyName("minimumShiftStartDistanceMinutes")]
     public int? MinimumShiftStartDistanceMinutes { get; set; }
 
 
@@ -311,7 +311,7 @@ public partial class WorkPlan : IEquatable<WorkPlan>
     /// Minimum days off in the planning period
     /// </summary>
     /// <value>Minimum days off in the planning period</value>
-    [DataMember(Name = "minimumDaysOffPerPlanningPeriod", EmitDefaultValue = false)]
+    [JsonPropertyName("minimumDaysOffPerPlanningPeriod")]
     public int? MinimumDaysOffPerPlanningPeriod { get; set; }
 
 
@@ -320,7 +320,7 @@ public partial class WorkPlan : IEquatable<WorkPlan>
     /// Maximum days off in the planning period
     /// </summary>
     /// <value>Maximum days off in the planning period</value>
-    [DataMember(Name = "maximumDaysOffPerPlanningPeriod", EmitDefaultValue = false)]
+    [JsonPropertyName("maximumDaysOffPerPlanningPeriod")]
     public int? MaximumDaysOffPerPlanningPeriod { get; set; }
 
 
@@ -329,7 +329,7 @@ public partial class WorkPlan : IEquatable<WorkPlan>
     /// Minimum paid minutes in the planning period
     /// </summary>
     /// <value>Minimum paid minutes in the planning period</value>
-    [DataMember(Name = "minimumPaidMinutesPerPlanningPeriod", EmitDefaultValue = false)]
+    [JsonPropertyName("minimumPaidMinutesPerPlanningPeriod")]
     public int? MinimumPaidMinutesPerPlanningPeriod { get; set; }
 
 
@@ -338,7 +338,7 @@ public partial class WorkPlan : IEquatable<WorkPlan>
     /// Maximum paid minutes in the planning period
     /// </summary>
     /// <value>Maximum paid minutes in the planning period</value>
-    [DataMember(Name = "maximumPaidMinutesPerPlanningPeriod", EmitDefaultValue = false)]
+    [JsonPropertyName("maximumPaidMinutesPerPlanningPeriod")]
     public int? MaximumPaidMinutesPerPlanningPeriod { get; set; }
 
 
@@ -347,7 +347,7 @@ public partial class WorkPlan : IEquatable<WorkPlan>
     /// Optional days to schedule for this work plan
     /// </summary>
     /// <value>Optional days to schedule for this work plan</value>
-    [DataMember(Name = "optionalDays", EmitDefaultValue = false)]
+    [JsonPropertyName("optionalDays")]
     public SetWrapperDayOfWeek OptionalDays { get; set; }
 
 
@@ -358,7 +358,7 @@ public partial class WorkPlan : IEquatable<WorkPlan>
     /// Variance in minutes among start times of shifts in this work plan
     /// </summary>
     /// <value>Variance in minutes among start times of shifts in this work plan</value>
-    [DataMember(Name = "shiftStartVariances", EmitDefaultValue = false)]
+    [JsonPropertyName("shiftStartVariances")]
     public ListWrapperShiftStartVariance ShiftStartVariances { get; set; }
 
 
@@ -367,7 +367,7 @@ public partial class WorkPlan : IEquatable<WorkPlan>
     /// Shifts in this work plan
     /// </summary>
     /// <value>Shifts in this work plan</value>
-    [DataMember(Name = "shifts", EmitDefaultValue = false)]
+    [JsonPropertyName("shifts")]
     public List<WorkPlanShift> Shifts { get; set; }
 
 
@@ -376,7 +376,7 @@ public partial class WorkPlan : IEquatable<WorkPlan>
     /// Agents in this work plan
     /// </summary>
     /// <value>Agents in this work plan</value>
-    [DataMember(Name = "agents", EmitDefaultValue = false)]
+    [JsonPropertyName("agents")]
     public List<DeletableUserReference> Agents { get; set; }
 
 
@@ -385,7 +385,7 @@ public partial class WorkPlan : IEquatable<WorkPlan>
     /// Number of agents in this work plan
     /// </summary>
     /// <value>Number of agents in this work plan</value>
-    [DataMember(Name = "agentCount", EmitDefaultValue = false)]
+    [JsonPropertyName("agentCount")]
     public int? AgentCount { get; set; }
 
 
@@ -394,7 +394,7 @@ public partial class WorkPlan : IEquatable<WorkPlan>
     /// Version metadata for this work plan
     /// </summary>
     /// <value>Version metadata for this work plan</value>
-    [DataMember(Name = "metadata", EmitDefaultValue = false)]
+    [JsonPropertyName("metadata")]
     public WfmVersionedEntityMetadata Metadata { get; set; }
 
 
@@ -403,7 +403,7 @@ public partial class WorkPlan : IEquatable<WorkPlan>
     /// The URI for this object
     /// </summary>
     /// <value>The URI for this object</value>
-    [DataMember(Name = "selfUri", EmitDefaultValue = false)]
+    [JsonPropertyName("selfUri")]
     public string SelfUri { get; private set; }
 
 

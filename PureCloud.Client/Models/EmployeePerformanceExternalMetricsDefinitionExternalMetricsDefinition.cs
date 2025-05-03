@@ -7,13 +7,13 @@ namespace PureCloud.Client.Models;
 /// <summary>
 /// EmployeePerformanceExternalMetricsDefinitionExternalMetricsDefinition
 /// </summary>
-[DataContract]
+
 public partial class EmployeePerformanceExternalMetricsDefinitionExternalMetricsDefinition : IEquatable<EmployeePerformanceExternalMetricsDefinitionExternalMetricsDefinition>
 {
     /// <summary>
     /// Gets or Sets Unit
     /// </summary>
-    [JsonConverter(typeof(JsonStringEnumConverter))]
+    
     public enum UnitEnum
     {
         /// <summary>
@@ -57,7 +57,7 @@ public partial class EmployeePerformanceExternalMetricsDefinitionExternalMetrics
     /// <summary>
     /// Gets or Sets DefaultObjectiveType
     /// </summary>
-    [JsonConverter(typeof(JsonStringEnumConverter))]
+    
     public enum DefaultObjectiveTypeEnum
     {
         /// <summary>
@@ -95,12 +95,12 @@ public partial class EmployeePerformanceExternalMetricsDefinitionExternalMetrics
     /// <summary>
     /// Gets or Sets Unit
     /// </summary>
-    [DataMember(Name = "unit", EmitDefaultValue = false)]
+    [JsonPropertyName("unit")]
     public UnitEnum? Unit { get; set; }
     /// <summary>
     /// Gets or Sets DefaultObjectiveType
     /// </summary>
-    [DataMember(Name = "defaultObjectiveType", EmitDefaultValue = false)]
+    [JsonPropertyName("defaultObjectiveType")]
     public DefaultObjectiveTypeEnum? DefaultObjectiveType { get; set; }
     /// <summary>
     /// Initializes a new instance of the <see cref="EmployeePerformanceExternalMetricsDefinitionExternalMetricsDefinition" /> class.
@@ -135,7 +135,7 @@ public partial class EmployeePerformanceExternalMetricsDefinitionExternalMetrics
     /// <summary>
     /// Gets or Sets Id
     /// </summary>
-    [DataMember(Name = "id", EmitDefaultValue = false)]
+    [JsonPropertyName("id")]
     public string Id { get; set; }
 
 
@@ -143,7 +143,7 @@ public partial class EmployeePerformanceExternalMetricsDefinitionExternalMetrics
     /// <summary>
     /// Gets or Sets Name
     /// </summary>
-    [DataMember(Name = "name", EmitDefaultValue = false)]
+    [JsonPropertyName("name")]
     public string Name { get; set; }
 
 
@@ -153,7 +153,7 @@ public partial class EmployeePerformanceExternalMetricsDefinitionExternalMetrics
     /// <summary>
     /// Gets or Sets UnitDefinition
     /// </summary>
-    [DataMember(Name = "unitDefinition", EmitDefaultValue = false)]
+    [JsonPropertyName("unitDefinition")]
     public string UnitDefinition { get; set; }
 
 
@@ -161,7 +161,7 @@ public partial class EmployeePerformanceExternalMetricsDefinitionExternalMetrics
     /// <summary>
     /// Gets or Sets Precision
     /// </summary>
-    [DataMember(Name = "precision", EmitDefaultValue = false)]
+    [JsonPropertyName("precision")]
     public long? Precision { get; set; }
 
 
@@ -171,7 +171,7 @@ public partial class EmployeePerformanceExternalMetricsDefinitionExternalMetrics
     /// <summary>
     /// Gets or Sets RetentionMonths
     /// </summary>
-    [DataMember(Name = "retentionMonths", EmitDefaultValue = false)]
+    [JsonPropertyName("retentionMonths")]
     public long? RetentionMonths { get; set; }
 
 
@@ -179,7 +179,7 @@ public partial class EmployeePerformanceExternalMetricsDefinitionExternalMetrics
     /// <summary>
     /// Gets or Sets Enabled
     /// </summary>
-    [DataMember(Name = "enabled", EmitDefaultValue = false)]
+    [JsonPropertyName("enabled")]
     public bool? Enabled { get; set; }
 
 
@@ -187,7 +187,7 @@ public partial class EmployeePerformanceExternalMetricsDefinitionExternalMetrics
     /// <summary>
     /// Gets or Sets InUse
     /// </summary>
-    [DataMember(Name = "inUse", EmitDefaultValue = false)]
+    [JsonPropertyName("inUse")]
     public bool? InUse { get; set; }
 
 
@@ -195,7 +195,7 @@ public partial class EmployeePerformanceExternalMetricsDefinitionExternalMetrics
     /// <summary>
     /// Gets or Sets DateLastRefreshed
     /// </summary>
-    [DataMember(Name = "dateLastRefreshed", EmitDefaultValue = false)]
+    [JsonPropertyName("dateLastRefreshed")]
     public DateTime? DateLastRefreshed { get; set; }
 
 

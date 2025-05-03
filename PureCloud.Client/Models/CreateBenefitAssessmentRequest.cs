@@ -1,4 +1,3 @@
-using System.Runtime.Serialization;
 using System.Text;
 using System.Text.Json.Serialization;
 
@@ -7,7 +6,7 @@ namespace PureCloud.Client.Models;
 /// <summary>
 /// CreateBenefitAssessmentRequest
 /// </summary>
-[DataContract]
+
 public partial class CreateBenefitAssessmentRequest : IEquatable<CreateBenefitAssessmentRequest>
 {
 
@@ -32,7 +31,7 @@ public partial class CreateBenefitAssessmentRequest : IEquatable<CreateBenefitAs
     /// The list of queue ids that are to be assessed for Predictive Routing benefit.
     /// </summary>
     /// <value>The list of queue ids that are to be assessed for Predictive Routing benefit.</value>
-    [DataMember(Name = "queueIds", EmitDefaultValue = false)]
+    [JsonPropertyName("queueIds")]
     public List<string> QueueIds { get; set; }
 
 

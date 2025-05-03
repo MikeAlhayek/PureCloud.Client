@@ -1,12 +1,12 @@
-using System.Runtime.Serialization;
 using System.Text;
+using System.Text.Json.Serialization;
 
 namespace PureCloud.Client.Models;
 
 /// <summary>
 /// DigitalCondition
 /// </summary>
-[DataContract]
+
 public partial class DigitalCondition : IEquatable<DigitalCondition>
 {
     /// <summary>
@@ -41,7 +41,7 @@ public partial class DigitalCondition : IEquatable<DigitalCondition>
     /// If true, inverts the result of evaluating this condition. Default is false.
     /// </summary>
     /// <value>If true, inverts the result of evaluating this condition. Default is false.</value>
-    [DataMember(Name = "inverted", EmitDefaultValue = false)]
+    [JsonPropertyName("inverted")]
     public bool? Inverted { get; set; }
 
 
@@ -50,7 +50,7 @@ public partial class DigitalCondition : IEquatable<DigitalCondition>
     /// The settings for a &#39;contact list column&#39; condition.
     /// </summary>
     /// <value>The settings for a &#39;contact list column&#39; condition.</value>
-    [DataMember(Name = "contactColumnConditionSettings", EmitDefaultValue = false)]
+    [JsonPropertyName("contactColumnConditionSettings")]
     public ContactColumnConditionSettings ContactColumnConditionSettings { get; set; }
 
 
@@ -59,7 +59,7 @@ public partial class DigitalCondition : IEquatable<DigitalCondition>
     /// The settings for a &#39;contact address&#39; condition.
     /// </summary>
     /// <value>The settings for a &#39;contact address&#39; condition.</value>
-    [DataMember(Name = "contactAddressConditionSettings", EmitDefaultValue = false)]
+    [JsonPropertyName("contactAddressConditionSettings")]
     public ContactAddressConditionSettings ContactAddressConditionSettings { get; set; }
 
 
@@ -68,7 +68,7 @@ public partial class DigitalCondition : IEquatable<DigitalCondition>
     /// The settings for a &#39;contact address type&#39; condition.
     /// </summary>
     /// <value>The settings for a &#39;contact address type&#39; condition.</value>
-    [DataMember(Name = "contactAddressTypeConditionSettings", EmitDefaultValue = false)]
+    [JsonPropertyName("contactAddressTypeConditionSettings")]
     public ContactAddressTypeConditionSettings ContactAddressTypeConditionSettings { get; set; }
 
 
@@ -77,7 +77,7 @@ public partial class DigitalCondition : IEquatable<DigitalCondition>
     /// The settings for a &#39;last attempt by column&#39; condition.
     /// </summary>
     /// <value>The settings for a &#39;last attempt by column&#39; condition.</value>
-    [DataMember(Name = "lastAttemptByColumnConditionSettings", EmitDefaultValue = false)]
+    [JsonPropertyName("lastAttemptByColumnConditionSettings")]
     public LastAttemptByColumnConditionSettings LastAttemptByColumnConditionSettings { get; set; }
 
 
@@ -86,7 +86,7 @@ public partial class DigitalCondition : IEquatable<DigitalCondition>
     /// The settings for a &#39;last attempt overall&#39; condition.
     /// </summary>
     /// <value>The settings for a &#39;last attempt overall&#39; condition.</value>
-    [DataMember(Name = "lastAttemptOverallConditionSettings", EmitDefaultValue = false)]
+    [JsonPropertyName("lastAttemptOverallConditionSettings")]
     public LastAttemptOverallConditionSettings LastAttemptOverallConditionSettings { get; set; }
 
 
@@ -95,7 +95,7 @@ public partial class DigitalCondition : IEquatable<DigitalCondition>
     /// The settings for a &#39;last result by column&#39; condition.
     /// </summary>
     /// <value>The settings for a &#39;last result by column&#39; condition.</value>
-    [DataMember(Name = "lastResultByColumnConditionSettings", EmitDefaultValue = false)]
+    [JsonPropertyName("lastResultByColumnConditionSettings")]
     public LastResultByColumnConditionSettings LastResultByColumnConditionSettings { get; set; }
 
 
@@ -104,7 +104,7 @@ public partial class DigitalCondition : IEquatable<DigitalCondition>
     /// The settings for a &#39;last result overall&#39; condition.
     /// </summary>
     /// <value>The settings for a &#39;last result overall&#39; condition.</value>
-    [DataMember(Name = "lastResultOverallConditionSettings", EmitDefaultValue = false)]
+    [JsonPropertyName("lastResultOverallConditionSettings")]
     public LastResultOverallConditionSettings LastResultOverallConditionSettings { get; set; }
 
 
@@ -113,7 +113,7 @@ public partial class DigitalCondition : IEquatable<DigitalCondition>
     /// The settings for a &#39;data action&#39; condition.
     /// </summary>
     /// <value>The settings for a &#39;data action&#39; condition.</value>
-    [DataMember(Name = "dataActionConditionSettings", EmitDefaultValue = false)]
+    [JsonPropertyName("dataActionConditionSettings")]
     public DataActionConditionSettings DataActionConditionSettings { get; set; }
 
 

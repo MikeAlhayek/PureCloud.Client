@@ -7,13 +7,13 @@ namespace PureCloud.Client.Models;
 /// <summary>
 /// SocialMediaMessageEscalationInfo
 /// </summary>
-[DataContract]
+
 public partial class SocialMediaMessageEscalationInfo : IEquatable<SocialMediaMessageEscalationInfo>
 {
     /// <summary>
     /// Gets or Sets EscalationStatus
     /// </summary>
-    [JsonConverter(typeof(JsonStringEnumConverter))]
+    
     public enum EscalationStatusEnum
     {
         /// <summary>
@@ -63,7 +63,7 @@ public partial class SocialMediaMessageEscalationInfo : IEquatable<SocialMediaMe
     /// <summary>
     /// Gets or Sets EscalationStatus
     /// </summary>
-    [DataMember(Name = "escalationStatus", EmitDefaultValue = false)]
+    [JsonPropertyName("escalationStatus")]
     public EscalationStatusEnum? EscalationStatus { get; set; }
     /// <summary>
     /// Initializes a new instance of the <see cref="SocialMediaMessageEscalationInfo" /> class.

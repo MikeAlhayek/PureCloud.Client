@@ -1,12 +1,12 @@
-using System.Runtime.Serialization;
 using System.Text;
+using System.Text.Json.Serialization;
 
 namespace PureCloud.Client.Models;
 
 /// <summary>
 /// AuthzGrant
 /// </summary>
-[DataContract]
+
 public partial class AuthzGrant : IEquatable<AuthzGrant>
 {
     /// <summary>
@@ -30,7 +30,7 @@ public partial class AuthzGrant : IEquatable<AuthzGrant>
     /// <summary>
     /// Gets or Sets SubjectId
     /// </summary>
-    [DataMember(Name = "subjectId", EmitDefaultValue = false)]
+    [JsonPropertyName("subjectId")]
     public string SubjectId { get; set; }
 
 
@@ -38,7 +38,7 @@ public partial class AuthzGrant : IEquatable<AuthzGrant>
     /// <summary>
     /// Gets or Sets Division
     /// </summary>
-    [DataMember(Name = "division", EmitDefaultValue = false)]
+    [JsonPropertyName("division")]
     public AuthzDivision Division { get; set; }
 
 
@@ -46,7 +46,7 @@ public partial class AuthzGrant : IEquatable<AuthzGrant>
     /// <summary>
     /// Gets or Sets Role
     /// </summary>
-    [DataMember(Name = "role", EmitDefaultValue = false)]
+    [JsonPropertyName("role")]
     public AuthzGrantRole Role { get; set; }
 
 
@@ -55,7 +55,7 @@ public partial class AuthzGrant : IEquatable<AuthzGrant>
     /// Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z
     /// </summary>
     /// <value>Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z</value>
-    [DataMember(Name = "grantMadeAt", EmitDefaultValue = false)]
+    [JsonPropertyName("grantMadeAt")]
     public DateTime? GrantMadeAt { get; set; }
 
 

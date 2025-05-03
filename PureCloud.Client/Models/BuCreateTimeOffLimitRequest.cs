@@ -1,12 +1,12 @@
-using System.Runtime.Serialization;
 using System.Text;
+using System.Text.Json.Serialization;
 
 namespace PureCloud.Client.Models;
 
 /// <summary>
 /// BuCreateTimeOffLimitRequest
 /// </summary>
-[DataContract]
+
 public partial class BuCreateTimeOffLimitRequest : IEquatable<BuCreateTimeOffLimitRequest>
 {
     /// <summary>
@@ -27,7 +27,7 @@ public partial class BuCreateTimeOffLimitRequest : IEquatable<BuCreateTimeOffLim
     /// The ID of the staffing group to which this time-off limit is associated. It can be either management unit or business unit level staffing group. One of managementUnitId or staffingGroupId must be set. This must not be set if managementUnitId has value
     /// </summary>
     /// <value>The ID of the staffing group to which this time-off limit is associated. It can be either management unit or business unit level staffing group. One of managementUnitId or staffingGroupId must be set. This must not be set if managementUnitId has value</value>
-    [DataMember(Name = "staffingGroupId", EmitDefaultValue = false)]
+    [JsonPropertyName("staffingGroupId")]
     public string StaffingGroupId { get; set; }
 
 
@@ -36,7 +36,7 @@ public partial class BuCreateTimeOffLimitRequest : IEquatable<BuCreateTimeOffLim
     /// The ID of the management unit to which this time-off limit is associated. One of managementUnitId or staffingGroupId must be set. This must not be set if staffingGroupId has value
     /// </summary>
     /// <value>The ID of the management unit to which this time-off limit is associated. One of managementUnitId or staffingGroupId must be set. This must not be set if staffingGroupId has value</value>
-    [DataMember(Name = "managementUnitId", EmitDefaultValue = false)]
+    [JsonPropertyName("managementUnitId")]
     public string ManagementUnitId { get; set; }
 
 

@@ -7,13 +7,13 @@ namespace PureCloud.Client.Models;
 /// <summary>
 /// EventMessage
 /// </summary>
-[DataContract]
+
 public partial class EventMessage : IEquatable<EventMessage>
 {
     /// <summary>
     /// Gets or Sets Code
     /// </summary>
-    [JsonConverter(typeof(JsonStringEnumConverter))]
+    
     public enum CodeEnum
     {
         /// <summary>
@@ -621,7 +621,7 @@ public partial class EventMessage : IEquatable<EventMessage>
     /// <summary>
     /// Gets or Sets Code
     /// </summary>
-    [DataMember(Name = "code", EmitDefaultValue = false)]
+    [JsonPropertyName("code")]
     public CodeEnum? Code { get; set; }
     /// <summary>
     /// Initializes a new instance of the <see cref="EventMessage" /> class.
@@ -650,7 +650,7 @@ public partial class EventMessage : IEquatable<EventMessage>
     /// <summary>
     /// Gets or Sets Message
     /// </summary>
-    [DataMember(Name = "message", EmitDefaultValue = false)]
+    [JsonPropertyName("message")]
     public string Message { get; set; }
 
 
@@ -658,7 +658,7 @@ public partial class EventMessage : IEquatable<EventMessage>
     /// <summary>
     /// Gets or Sets MessageWithParams
     /// </summary>
-    [DataMember(Name = "messageWithParams", EmitDefaultValue = false)]
+    [JsonPropertyName("messageWithParams")]
     public string MessageWithParams { get; set; }
 
 
@@ -666,7 +666,7 @@ public partial class EventMessage : IEquatable<EventMessage>
     /// <summary>
     /// Gets or Sets MessageParams
     /// </summary>
-    [DataMember(Name = "messageParams", EmitDefaultValue = false)]
+    [JsonPropertyName("messageParams")]
     public Dictionary<string, object> MessageParams { get; set; }
 
 
@@ -674,7 +674,7 @@ public partial class EventMessage : IEquatable<EventMessage>
     /// <summary>
     /// Gets or Sets DocumentationUri
     /// </summary>
-    [DataMember(Name = "documentationUri", EmitDefaultValue = false)]
+    [JsonPropertyName("documentationUri")]
     public string DocumentationUri { get; set; }
 
 
@@ -682,7 +682,7 @@ public partial class EventMessage : IEquatable<EventMessage>
     /// <summary>
     /// Gets or Sets ResourceURIs
     /// </summary>
-    [DataMember(Name = "resourceURIs", EmitDefaultValue = false)]
+    [JsonPropertyName("resourceURIs")]
     public List<string> ResourceURIs { get; set; }
 
 

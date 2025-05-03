@@ -7,14 +7,14 @@ namespace PureCloud.Client.Models;
 /// <summary>
 /// CampaignRuleParameters
 /// </summary>
-[DataContract]
+
 public partial class CampaignRuleParameters : IEquatable<CampaignRuleParameters>
 {
     /// <summary>
     /// The operator for comparison. Required for a CampaignRuleCondition.
     /// </summary>
     /// <value>The operator for comparison. Required for a CampaignRuleCondition.</value>
-    [JsonConverter(typeof(JsonStringEnumConverter))]
+    
     public enum OperatorEnum
     {
         /// <summary>
@@ -59,7 +59,7 @@ public partial class CampaignRuleParameters : IEquatable<CampaignRuleParameters>
     /// The priority to set a campaign to. Required for the 'setCampaignPriority' action.
     /// </summary>
     /// <value>The priority to set a campaign to. Required for the 'setCampaignPriority' action.</value>
-    [JsonConverter(typeof(JsonStringEnumConverter))]
+    
     public enum PriorityEnum
     {
         /// <summary>
@@ -104,7 +104,7 @@ public partial class CampaignRuleParameters : IEquatable<CampaignRuleParameters>
     /// The dialing mode to set a campaign to. Required for the 'setCampaignDialingMode' action.
     /// </summary>
     /// <value>The dialing mode to set a campaign to. Required for the 'setCampaignDialingMode' action.</value>
-    [JsonConverter(typeof(JsonStringEnumConverter))]
+    
     public enum DialingModeEnum
     {
         /// <summary>
@@ -155,19 +155,19 @@ public partial class CampaignRuleParameters : IEquatable<CampaignRuleParameters>
     /// The operator for comparison. Required for a CampaignRuleCondition.
     /// </summary>
     /// <value>The operator for comparison. Required for a CampaignRuleCondition.</value>
-    [DataMember(Name = "operator", EmitDefaultValue = false)]
+    [JsonPropertyName("operator")]
     public OperatorEnum? Operator { get; set; }
     /// <summary>
     /// The priority to set a campaign to. Required for the 'setCampaignPriority' action.
     /// </summary>
     /// <value>The priority to set a campaign to. Required for the 'setCampaignPriority' action.</value>
-    [DataMember(Name = "priority", EmitDefaultValue = false)]
+    [JsonPropertyName("priority")]
     public PriorityEnum? Priority { get; set; }
     /// <summary>
     /// The dialing mode to set a campaign to. Required for the 'setCampaignDialingMode' action.
     /// </summary>
     /// <value>The dialing mode to set a campaign to. Required for the 'setCampaignDialingMode' action.</value>
-    [DataMember(Name = "dialingMode", EmitDefaultValue = false)]
+    [JsonPropertyName("dialingMode")]
     public DialingModeEnum? DialingMode { get; set; }
     /// <summary>
     /// Initializes a new instance of the <see cref="CampaignRuleParameters" /> class.
@@ -213,7 +213,7 @@ public partial class CampaignRuleParameters : IEquatable<CampaignRuleParameters>
     /// The value for comparison. Required for a CampaignRuleCondition.
     /// </summary>
     /// <value>The value for comparison. Required for a CampaignRuleCondition.</value>
-    [DataMember(Name = "value", EmitDefaultValue = false)]
+    [JsonPropertyName("value")]
     public string Value { get; set; }
 
 
@@ -226,7 +226,7 @@ public partial class CampaignRuleParameters : IEquatable<CampaignRuleParameters>
     /// The abandon rate to set a campaign to. Required for the &#39;setCampaignAbandonRate&#39; action.
     /// </summary>
     /// <value>The abandon rate to set a campaign to. Required for the &#39;setCampaignAbandonRate&#39; action.</value>
-    [DataMember(Name = "abandonRate", EmitDefaultValue = false)]
+    [JsonPropertyName("abandonRate")]
     public double? AbandonRate { get; set; }
 
 
@@ -235,7 +235,7 @@ public partial class CampaignRuleParameters : IEquatable<CampaignRuleParameters>
     /// The  number of outbound lines to set a campaign to. Required for the &#39;setCampaignNumberOfLines&#39; action.
     /// </summary>
     /// <value>The  number of outbound lines to set a campaign to. Required for the &#39;setCampaignNumberOfLines&#39; action.</value>
-    [DataMember(Name = "outboundLineCount", EmitDefaultValue = false)]
+    [JsonPropertyName("outboundLineCount")]
     public int? OutboundLineCount { get; set; }
 
 
@@ -244,7 +244,7 @@ public partial class CampaignRuleParameters : IEquatable<CampaignRuleParameters>
     /// The relative weight to set a campaign to. Required for the &#39;setCampaignWeight&#39; action.
     /// </summary>
     /// <value>The relative weight to set a campaign to. Required for the &#39;setCampaignWeight&#39; action.</value>
-    [DataMember(Name = "relativeWeight", EmitDefaultValue = false)]
+    [JsonPropertyName("relativeWeight")]
     public int? RelativeWeight { get; set; }
 
 
@@ -253,7 +253,7 @@ public partial class CampaignRuleParameters : IEquatable<CampaignRuleParameters>
     /// The maximum number of calls per agent to set a campaign to. Required for the &#39;setCampaignMaxCallsPerAgent&#39; action.
     /// </summary>
     /// <value>The maximum number of calls per agent to set a campaign to. Required for the &#39;setCampaignMaxCallsPerAgent&#39; action.</value>
-    [DataMember(Name = "maxCallsPerAgent", EmitDefaultValue = false)]
+    [JsonPropertyName("maxCallsPerAgent")]
     public double? MaxCallsPerAgent { get; set; }
 
 
@@ -262,7 +262,7 @@ public partial class CampaignRuleParameters : IEquatable<CampaignRuleParameters>
     /// The queue a campaign to. Required for the &#39;changeCampaignQueue&#39; action.
     /// </summary>
     /// <value>The queue a campaign to. Required for the &#39;changeCampaignQueue&#39; action.</value>
-    [DataMember(Name = "queue", EmitDefaultValue = false)]
+    [JsonPropertyName("queue")]
     public DomainEntityRef Queue { get; set; }
 
 
@@ -271,7 +271,7 @@ public partial class CampaignRuleParameters : IEquatable<CampaignRuleParameters>
     /// The number of messages per minute to set a messaging campaign to.
     /// </summary>
     /// <value>The number of messages per minute to set a messaging campaign to.</value>
-    [DataMember(Name = "messagesPerMinute", EmitDefaultValue = false)]
+    [JsonPropertyName("messagesPerMinute")]
     public int? MessagesPerMinute { get; set; }
 
 
@@ -280,7 +280,7 @@ public partial class CampaignRuleParameters : IEquatable<CampaignRuleParameters>
     /// The number of messages per minute to set a SMS messaging campaign to.
     /// </summary>
     /// <value>The number of messages per minute to set a SMS messaging campaign to.</value>
-    [DataMember(Name = "smsMessagesPerMinute", EmitDefaultValue = false)]
+    [JsonPropertyName("smsMessagesPerMinute")]
     public int? SmsMessagesPerMinute { get; set; }
 
 
@@ -289,7 +289,7 @@ public partial class CampaignRuleParameters : IEquatable<CampaignRuleParameters>
     /// The number of messages per minute to set a Email messaging campaign to.
     /// </summary>
     /// <value>The number of messages per minute to set a Email messaging campaign to.</value>
-    [DataMember(Name = "emailMessagesPerMinute", EmitDefaultValue = false)]
+    [JsonPropertyName("emailMessagesPerMinute")]
     public int? EmailMessagesPerMinute { get; set; }
 
 
@@ -298,7 +298,7 @@ public partial class CampaignRuleParameters : IEquatable<CampaignRuleParameters>
     /// The content template to set a SMS campaign to.
     /// </summary>
     /// <value>The content template to set a SMS campaign to.</value>
-    [DataMember(Name = "smsContentTemplate", EmitDefaultValue = false)]
+    [JsonPropertyName("smsContentTemplate")]
     public DomainEntityRef SmsContentTemplate { get; set; }
 
 
@@ -307,7 +307,7 @@ public partial class CampaignRuleParameters : IEquatable<CampaignRuleParameters>
     /// The content template to set a Email campaign to.
     /// </summary>
     /// <value>The content template to set a Email campaign to.</value>
-    [DataMember(Name = "emailContentTemplate", EmitDefaultValue = false)]
+    [JsonPropertyName("emailContentTemplate")]
     public DomainEntityRef EmailContentTemplate { get; set; }
 
 

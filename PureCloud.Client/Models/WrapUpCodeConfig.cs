@@ -1,4 +1,3 @@
-using System.Runtime.Serialization;
 using System.Text;
 using System.Text.Json.Serialization;
 
@@ -7,7 +6,7 @@ namespace PureCloud.Client.Models;
 /// <summary>
 /// WrapUpCodeConfig
 /// </summary>
-[DataContract]
+
 public partial class WrapUpCodeConfig : IEquatable<WrapUpCodeConfig>
 {
 
@@ -32,7 +31,7 @@ public partial class WrapUpCodeConfig : IEquatable<WrapUpCodeConfig>
     /// A set of valid Wrap Up Code UUIDs used to optimize a KPI.
     /// </summary>
     /// <value>A set of valid Wrap Up Code UUIDs used to optimize a KPI.</value>
-    [DataMember(Name = "values", EmitDefaultValue = false)]
+    [JsonPropertyName("values")]
     public List<string> Values { get; set; }
 
 

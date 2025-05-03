@@ -7,14 +7,14 @@ namespace PureCloud.Client.Models;
 /// <summary>
 /// InsightsSummary
 /// </summary>
-[DataContract]
+
 public partial class InsightsSummary : IEquatable<InsightsSummary>
 {
     /// <summary>
     /// Granularity
     /// </summary>
     /// <value>Granularity</value>
-    [JsonConverter(typeof(JsonStringEnumConverter))]
+    
     public enum GranularityEnum
     {
         /// <summary>
@@ -47,7 +47,7 @@ public partial class InsightsSummary : IEquatable<InsightsSummary>
     /// Granularity
     /// </summary>
     /// <value>Granularity</value>
-    [DataMember(Name = "granularity", EmitDefaultValue = false)]
+    [JsonPropertyName("granularity")]
     public GranularityEnum? Granularity { get; set; }
     /// <summary>
     /// Initializes a new instance of the <see cref="InsightsSummary" /> class.
@@ -82,7 +82,7 @@ public partial class InsightsSummary : IEquatable<InsightsSummary>
     /// <summary>
     /// Gets or Sets Entities
     /// </summary>
-    [DataMember(Name = "entities", EmitDefaultValue = false)]
+    [JsonPropertyName("entities")]
     public List<InsightsSummaryUserItem> Entities { get; set; }
 
 
@@ -90,7 +90,7 @@ public partial class InsightsSummary : IEquatable<InsightsSummary>
     /// <summary>
     /// Gets or Sets PageSize
     /// </summary>
-    [DataMember(Name = "pageSize", EmitDefaultValue = false)]
+    [JsonPropertyName("pageSize")]
     public int? PageSize { get; set; }
 
 
@@ -98,7 +98,7 @@ public partial class InsightsSummary : IEquatable<InsightsSummary>
     /// <summary>
     /// Gets or Sets PageNumber
     /// </summary>
-    [DataMember(Name = "pageNumber", EmitDefaultValue = false)]
+    [JsonPropertyName("pageNumber")]
     public int? PageNumber { get; set; }
 
 
@@ -106,7 +106,7 @@ public partial class InsightsSummary : IEquatable<InsightsSummary>
     /// <summary>
     /// Gets or Sets Total
     /// </summary>
-    [DataMember(Name = "total", EmitDefaultValue = false)]
+    [JsonPropertyName("total")]
     public long? Total { get; set; }
 
 
@@ -115,7 +115,7 @@ public partial class InsightsSummary : IEquatable<InsightsSummary>
     /// The performance profile
     /// </summary>
     /// <value>The performance profile</value>
-    [DataMember(Name = "performanceProfile", EmitDefaultValue = false)]
+    [JsonPropertyName("performanceProfile")]
     public AddressableEntityRef PerformanceProfile { get; set; }
 
 
@@ -124,7 +124,7 @@ public partial class InsightsSummary : IEquatable<InsightsSummary>
     /// The division
     /// </summary>
     /// <value>The division</value>
-    [DataMember(Name = "division", EmitDefaultValue = false)]
+    [JsonPropertyName("division")]
     public DivisionReference Division { get; set; }
 
 
@@ -135,7 +135,7 @@ public partial class InsightsSummary : IEquatable<InsightsSummary>
     /// The comparative period work day date range
     /// </summary>
     /// <value>The comparative period work day date range</value>
-    [DataMember(Name = "comparativePeriod", EmitDefaultValue = false)]
+    [JsonPropertyName("comparativePeriod")]
     public WorkdayPeriod ComparativePeriod { get; set; }
 
 
@@ -144,7 +144,7 @@ public partial class InsightsSummary : IEquatable<InsightsSummary>
     /// The primary period work day date range
     /// </summary>
     /// <value>The primary period work day date range</value>
-    [DataMember(Name = "primaryPeriod", EmitDefaultValue = false)]
+    [JsonPropertyName("primaryPeriod")]
     public WorkdayPeriod PrimaryPeriod { get; set; }
 
 
@@ -152,7 +152,7 @@ public partial class InsightsSummary : IEquatable<InsightsSummary>
     /// <summary>
     /// Gets or Sets PageCount
     /// </summary>
-    [DataMember(Name = "pageCount", EmitDefaultValue = false)]
+    [JsonPropertyName("pageCount")]
     public int? PageCount { get; set; }
 
 

@@ -1,4 +1,3 @@
-using System.Runtime.Serialization;
 using System.Text;
 using System.Text.Json.Serialization;
 
@@ -7,7 +6,7 @@ namespace PureCloud.Client.Models;
 /// <summary>
 /// Learning SCORM upload request
 /// </summary>
-[DataContract]
+
 public partial class LearningScormUploadRequest : IEquatable<LearningScormUploadRequest>
 {
 
@@ -32,7 +31,7 @@ public partial class LearningScormUploadRequest : IEquatable<LearningScormUpload
     /// The MD5 content of the SCORM package
     /// </summary>
     /// <value>The MD5 content of the SCORM package</value>
-    [DataMember(Name = "contentMd5", EmitDefaultValue = false)]
+    [JsonPropertyName("contentMd5")]
     public string ContentMd5 { get; set; }
 
 

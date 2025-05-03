@@ -1,12 +1,12 @@
-using System.Runtime.Serialization;
 using System.Text;
+using System.Text.Json.Serialization;
 
 namespace PureCloud.Client.Models;
 
 /// <summary>
 /// The user who initiated the change.
 /// </summary>
-[DataContract]
+
 public partial class ArchitectFlowNotificationUser : IEquatable<ArchitectFlowNotificationUser>
 {
     /// <summary>
@@ -29,7 +29,7 @@ public partial class ArchitectFlowNotificationUser : IEquatable<ArchitectFlowNot
     /// The ID of the user.
     /// </summary>
     /// <value>The ID of the user.</value>
-    [DataMember(Name = "id", EmitDefaultValue = false)]
+    [JsonPropertyName("id")]
     public string Id { get; set; }
 
 
@@ -38,7 +38,7 @@ public partial class ArchitectFlowNotificationUser : IEquatable<ArchitectFlowNot
     /// The name of the user, if available.
     /// </summary>
     /// <value>The name of the user, if available.</value>
-    [DataMember(Name = "name", EmitDefaultValue = false)]
+    [JsonPropertyName("name")]
     public string Name { get; set; }
 
 
@@ -46,7 +46,7 @@ public partial class ArchitectFlowNotificationUser : IEquatable<ArchitectFlowNot
     /// <summary>
     /// Gets or Sets HomeOrg
     /// </summary>
-    [DataMember(Name = "homeOrg", EmitDefaultValue = false)]
+    [JsonPropertyName("homeOrg")]
     public ArchitectFlowNotificationHomeOrganization HomeOrg { get; set; }
 
 

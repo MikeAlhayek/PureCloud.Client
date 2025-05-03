@@ -1,12 +1,12 @@
-using System.Runtime.Serialization;
 using System.Text;
+using System.Text.Json.Serialization;
 
 namespace PureCloud.Client.Models;
 
 /// <summary>
 /// Deprecated, should use Card.
 /// </summary>
-[DataContract]
+
 public partial class ContentGeneric : IEquatable<ContentGeneric>
 {
     /// <summary>
@@ -35,7 +35,7 @@ public partial class ContentGeneric : IEquatable<ContentGeneric>
     /// Text to show in the title.
     /// </summary>
     /// <value>Text to show in the title.</value>
-    [DataMember(Name = "title", EmitDefaultValue = false)]
+    [JsonPropertyName("title")]
     public string Title { get; set; }
 
 
@@ -44,7 +44,7 @@ public partial class ContentGeneric : IEquatable<ContentGeneric>
     /// Text to show in the description.
     /// </summary>
     /// <value>Text to show in the description.</value>
-    [DataMember(Name = "description", EmitDefaultValue = false)]
+    [JsonPropertyName("description")]
     public string Description { get; set; }
 
 
@@ -53,7 +53,7 @@ public partial class ContentGeneric : IEquatable<ContentGeneric>
     /// URL of an image.
     /// </summary>
     /// <value>URL of an image.</value>
-    [DataMember(Name = "image", EmitDefaultValue = false)]
+    [JsonPropertyName("image")]
     public string Image { get; set; }
 
 
@@ -62,7 +62,7 @@ public partial class ContentGeneric : IEquatable<ContentGeneric>
     /// URL of a video.
     /// </summary>
     /// <value>URL of a video.</value>
-    [DataMember(Name = "video", EmitDefaultValue = false)]
+    [JsonPropertyName("video")]
     public string Video { get; set; }
 
 
@@ -71,7 +71,7 @@ public partial class ContentGeneric : IEquatable<ContentGeneric>
     /// Actions to be taken (Deprecated).
     /// </summary>
     /// <value>Actions to be taken (Deprecated).</value>
-    [DataMember(Name = "actions", EmitDefaultValue = false)]
+    [JsonPropertyName("actions")]
     public ContentActions Actions { get; set; }
 
 
@@ -80,7 +80,7 @@ public partial class ContentGeneric : IEquatable<ContentGeneric>
     /// An array of component objects.
     /// </summary>
     /// <value>An array of component objects.</value>
-    [DataMember(Name = "components", EmitDefaultValue = false)]
+    [JsonPropertyName("components")]
     public List<ButtonComponent> Components { get; set; }
 
 

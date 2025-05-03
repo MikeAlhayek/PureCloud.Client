@@ -7,14 +7,14 @@ namespace PureCloud.Client.Models;
 /// <summary>
 /// Defines a SCIM error.
 /// </summary>
-[DataContract]
+
 public partial class ScimError : IEquatable<ScimError>
 {
     /// <summary>
     /// The type of SCIM error when httpStatus is a \"400\" error.
     /// </summary>
     /// <value>The type of SCIM error when httpStatus is a \"400\" error.</value>
-    [JsonConverter(typeof(JsonStringEnumConverter))]
+    
     public enum ScimTypeEnum
     {
         /// <summary>
@@ -89,7 +89,7 @@ public partial class ScimError : IEquatable<ScimError>
     /// The type of SCIM error when httpStatus is a \"400\" error.
     /// </summary>
     /// <value>The type of SCIM error when httpStatus is a \"400\" error.</value>
-    [DataMember(Name = "scimType", EmitDefaultValue = false)]
+    [JsonPropertyName("scimType")]
     public ScimTypeEnum? ScimType { get; private set; }
     /// <summary>
     /// Initializes a new instance of the <see cref="ScimError" /> class.
@@ -105,7 +105,7 @@ public partial class ScimError : IEquatable<ScimError>
     /// The list of schemas for the SCIM error.
     /// </summary>
     /// <value>The list of schemas for the SCIM error.</value>
-    [DataMember(Name = "schemas", EmitDefaultValue = false)]
+    [JsonPropertyName("schemas")]
     public List<string> Schemas { get; private set; }
 
 
@@ -114,7 +114,7 @@ public partial class ScimError : IEquatable<ScimError>
     /// The HTTP status code returned for the SCIM error.
     /// </summary>
     /// <value>The HTTP status code returned for the SCIM error.</value>
-    [DataMember(Name = "status", EmitDefaultValue = false)]
+    [JsonPropertyName("status")]
     public string Status { get; private set; }
 
 
@@ -125,7 +125,7 @@ public partial class ScimError : IEquatable<ScimError>
     /// The detailed description of the SCIM error.
     /// </summary>
     /// <value>The detailed description of the SCIM error.</value>
-    [DataMember(Name = "detail", EmitDefaultValue = false)]
+    [JsonPropertyName("detail")]
     public string Detail { get; private set; }
 
 

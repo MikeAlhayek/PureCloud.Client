@@ -7,14 +7,14 @@ namespace PureCloud.Client.Models;
 /// <summary>
 /// VoicemailGroupPolicy
 /// </summary>
-[DataContract]
+
 public partial class VoicemailGroupPolicy : IEquatable<VoicemailGroupPolicy>
 {
     /// <summary>
     /// Specifies if the members in this group should be contacted randomly, in a specific order, or by round-robin.
     /// </summary>
     /// <value>Specifies if the members in this group should be contacted randomly, in a specific order, or by round-robin.</value>
-    [JsonConverter(typeof(JsonStringEnumConverter))]
+    
     public enum GroupAlertTypeEnum
     {
         /// <summary>
@@ -47,7 +47,7 @@ public partial class VoicemailGroupPolicy : IEquatable<VoicemailGroupPolicy>
     /// Specifies if the members in this group should be contacted randomly, in a specific order, or by round-robin.
     /// </summary>
     /// <value>Specifies if the members in this group should be contacted randomly, in a specific order, or by round-robin.</value>
-    [DataMember(Name = "groupAlertType", EmitDefaultValue = false)]
+    [JsonPropertyName("groupAlertType")]
     public GroupAlertTypeEnum? GroupAlertType { get; set; }
     /// <summary>
     /// Initializes a new instance of the <see cref="VoicemailGroupPolicy" /> class.
@@ -88,7 +88,7 @@ public partial class VoicemailGroupPolicy : IEquatable<VoicemailGroupPolicy>
     /// <summary>
     /// Gets or Sets Name
     /// </summary>
-    [DataMember(Name = "name", EmitDefaultValue = false)]
+    [JsonPropertyName("name")]
     public string Name { get; set; }
 
 
@@ -97,7 +97,7 @@ public partial class VoicemailGroupPolicy : IEquatable<VoicemailGroupPolicy>
     /// The group associated with the policy
     /// </summary>
     /// <value>The group associated with the policy</value>
-    [DataMember(Name = "group", EmitDefaultValue = false)]
+    [JsonPropertyName("group")]
     public Group Group { get; private set; }
 
 
@@ -106,7 +106,7 @@ public partial class VoicemailGroupPolicy : IEquatable<VoicemailGroupPolicy>
     /// Whether voicemail is enabled for the group
     /// </summary>
     /// <value>Whether voicemail is enabled for the group</value>
-    [DataMember(Name = "enabled", EmitDefaultValue = false)]
+    [JsonPropertyName("enabled")]
     public bool? Enabled { get; set; }
 
 
@@ -115,7 +115,7 @@ public partial class VoicemailGroupPolicy : IEquatable<VoicemailGroupPolicy>
     /// Whether email notifications are sent to group members when a new voicemail is received
     /// </summary>
     /// <value>Whether email notifications are sent to group members when a new voicemail is received</value>
-    [DataMember(Name = "sendEmailNotifications", EmitDefaultValue = false)]
+    [JsonPropertyName("sendEmailNotifications")]
     public bool? SendEmailNotifications { get; set; }
 
 
@@ -124,7 +124,7 @@ public partial class VoicemailGroupPolicy : IEquatable<VoicemailGroupPolicy>
     /// Removes any PII from group emails. This is overridden by the analogous organization configuration value. This is always true if HIPAA is enabled or unknown for an organization.
     /// </summary>
     /// <value>Removes any PII from group emails. This is overridden by the analogous organization configuration value. This is always true if HIPAA is enabled or unknown for an organization.</value>
-    [DataMember(Name = "disableEmailPii", EmitDefaultValue = false)]
+    [JsonPropertyName("disableEmailPii")]
     public bool? DisableEmailPii { get; set; }
 
 
@@ -133,7 +133,7 @@ public partial class VoicemailGroupPolicy : IEquatable<VoicemailGroupPolicy>
     /// Whether to include the voicemail transcription in a group notification email
     /// </summary>
     /// <value>Whether to include the voicemail transcription in a group notification email</value>
-    [DataMember(Name = "includeEmailTranscriptions", EmitDefaultValue = false)]
+    [JsonPropertyName("includeEmailTranscriptions")]
     public bool? IncludeEmailTranscriptions { get; set; }
 
 
@@ -142,7 +142,7 @@ public partial class VoicemailGroupPolicy : IEquatable<VoicemailGroupPolicy>
     /// The language preference for the group.  Used for group voicemail transcription
     /// </summary>
     /// <value>The language preference for the group.  Used for group voicemail transcription</value>
-    [DataMember(Name = "languagePreference", EmitDefaultValue = false)]
+    [JsonPropertyName("languagePreference")]
     public string LanguagePreference { get; set; }
 
 
@@ -151,7 +151,7 @@ public partial class VoicemailGroupPolicy : IEquatable<VoicemailGroupPolicy>
     /// The email policy for the group
     /// </summary>
     /// <value>The email policy for the group</value>
-    [DataMember(Name = "emailPolicy", EmitDefaultValue = false)]
+    [JsonPropertyName("emailPolicy")]
     public GroupEmailPolicy EmailPolicy { get; set; }
 
 
@@ -160,7 +160,7 @@ public partial class VoicemailGroupPolicy : IEquatable<VoicemailGroupPolicy>
     /// How many seconds to ring before rotating to the next member in the group
     /// </summary>
     /// <value>How many seconds to ring before rotating to the next member in the group</value>
-    [DataMember(Name = "rotateCallsSecs", EmitDefaultValue = false)]
+    [JsonPropertyName("rotateCallsSecs")]
     public int? RotateCallsSecs { get; set; }
 
 
@@ -169,7 +169,7 @@ public partial class VoicemailGroupPolicy : IEquatable<VoicemailGroupPolicy>
     /// How many rotations to go through
     /// </summary>
     /// <value>How many rotations to go through</value>
-    [DataMember(Name = "stopRingingAfterRotations", EmitDefaultValue = false)]
+    [JsonPropertyName("stopRingingAfterRotations")]
     public int? StopRingingAfterRotations { get; set; }
 
 
@@ -178,7 +178,7 @@ public partial class VoicemailGroupPolicy : IEquatable<VoicemailGroupPolicy>
     /// A fallback group to contact when all of the members in this group did not answer the call.
     /// </summary>
     /// <value>A fallback group to contact when all of the members in this group did not answer the call.</value>
-    [DataMember(Name = "overflowGroupId", EmitDefaultValue = false)]
+    [JsonPropertyName("overflowGroupId")]
     public string OverflowGroupId { get; set; }
 
 
@@ -189,7 +189,7 @@ public partial class VoicemailGroupPolicy : IEquatable<VoicemailGroupPolicy>
     /// The prompt to use when connecting a user to a Group Ring call
     /// </summary>
     /// <value>The prompt to use when connecting a user to a Group Ring call</value>
-    [DataMember(Name = "interactiveResponsePromptId", EmitDefaultValue = false)]
+    [JsonPropertyName("interactiveResponsePromptId")]
     public string InteractiveResponsePromptId { get; set; }
 
 
@@ -198,7 +198,7 @@ public partial class VoicemailGroupPolicy : IEquatable<VoicemailGroupPolicy>
     /// Whether user should be prompted with a confirmation prompt when connecting to a Group Ring call
     /// </summary>
     /// <value>Whether user should be prompted with a confirmation prompt when connecting to a Group Ring call</value>
-    [DataMember(Name = "interactiveResponseRequired", EmitDefaultValue = false)]
+    [JsonPropertyName("interactiveResponseRequired")]
     public bool? InteractiveResponseRequired { get; set; }
 
 

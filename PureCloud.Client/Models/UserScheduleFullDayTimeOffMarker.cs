@@ -1,12 +1,12 @@
-using System.Runtime.Serialization;
 using System.Text;
+using System.Text.Json.Serialization;
 
 namespace PureCloud.Client.Models;
 
 /// <summary>
 /// UserScheduleFullDayTimeOffMarker
 /// </summary>
-[DataContract]
+
 public partial class UserScheduleFullDayTimeOffMarker : IEquatable<UserScheduleFullDayTimeOffMarker>
 {
     /// <summary>
@@ -35,7 +35,7 @@ public partial class UserScheduleFullDayTimeOffMarker : IEquatable<UserScheduleF
     /// The date associated with the time off request that this marker corresponds to.  Date only, in ISO-8601 format.
     /// </summary>
     /// <value>The date associated with the time off request that this marker corresponds to.  Date only, in ISO-8601 format.</value>
-    [DataMember(Name = "managementUnitDate", EmitDefaultValue = false)]
+    [JsonPropertyName("managementUnitDate")]
     public string ManagementUnitDate { get; set; }
 
 
@@ -44,7 +44,7 @@ public partial class UserScheduleFullDayTimeOffMarker : IEquatable<UserScheduleF
     /// The id for the activity code.  Look up a map of activity codes with the activities route
     /// </summary>
     /// <value>The id for the activity code.  Look up a map of activity codes with the activities route</value>
-    [DataMember(Name = "activityCodeId", EmitDefaultValue = false)]
+    [JsonPropertyName("activityCodeId")]
     public string ActivityCodeId { get; set; }
 
 
@@ -53,7 +53,7 @@ public partial class UserScheduleFullDayTimeOffMarker : IEquatable<UserScheduleF
     /// Whether this is paid time off
     /// </summary>
     /// <value>Whether this is paid time off</value>
-    [DataMember(Name = "isPaid", EmitDefaultValue = false)]
+    [JsonPropertyName("isPaid")]
     public bool? IsPaid { get; set; }
 
 
@@ -62,7 +62,7 @@ public partial class UserScheduleFullDayTimeOffMarker : IEquatable<UserScheduleF
     /// The length in minutes of this time off marker
     /// </summary>
     /// <value>The length in minutes of this time off marker</value>
-    [DataMember(Name = "lengthInMinutes", EmitDefaultValue = false)]
+    [JsonPropertyName("lengthInMinutes")]
     public int? LengthInMinutes { get; set; }
 
 
@@ -71,7 +71,7 @@ public partial class UserScheduleFullDayTimeOffMarker : IEquatable<UserScheduleF
     /// The description associated with the time off request that this marker corresponds to
     /// </summary>
     /// <value>The description associated with the time off request that this marker corresponds to</value>
-    [DataMember(Name = "description", EmitDefaultValue = false)]
+    [JsonPropertyName("description")]
     public string Description { get; set; }
 
 
@@ -80,7 +80,7 @@ public partial class UserScheduleFullDayTimeOffMarker : IEquatable<UserScheduleF
     /// If marked true for updating an existing full day time off marker, it will be deleted
     /// </summary>
     /// <value>If marked true for updating an existing full day time off marker, it will be deleted</value>
-    [DataMember(Name = "delete", EmitDefaultValue = false)]
+    [JsonPropertyName("delete")]
     public bool? Delete { get; set; }
 
 

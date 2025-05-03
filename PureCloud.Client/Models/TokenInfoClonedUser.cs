@@ -1,12 +1,12 @@
-using System.Runtime.Serialization;
 using System.Text;
+using System.Text.Json.Serialization;
 
 namespace PureCloud.Client.Models;
 
 /// <summary>
 /// TokenInfoClonedUser
 /// </summary>
-[DataContract]
+
 public partial class TokenInfoClonedUser : IEquatable<TokenInfoClonedUser>
 {
     /// <summary>
@@ -23,7 +23,7 @@ public partial class TokenInfoClonedUser : IEquatable<TokenInfoClonedUser>
     /// User id of the original native user
     /// </summary>
     /// <value>User id of the original native user</value>
-    [DataMember(Name = "id", EmitDefaultValue = false)]
+    [JsonPropertyName("id")]
     public string Id { get; private set; }
 
 
@@ -32,7 +32,7 @@ public partial class TokenInfoClonedUser : IEquatable<TokenInfoClonedUser>
     /// Organization of the original native user
     /// </summary>
     /// <value>Organization of the original native user</value>
-    [DataMember(Name = "organization", EmitDefaultValue = false)]
+    [JsonPropertyName("organization")]
     public Entity Organization { get; private set; }
 
 

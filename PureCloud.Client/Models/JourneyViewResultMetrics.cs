@@ -1,12 +1,12 @@
-using System.Runtime.Serialization;
 using System.Text;
+using System.Text.Json.Serialization;
 
 namespace PureCloud.Client.Models;
 
 /// <summary>
 /// The metrics of an element or a link in journey 
 /// </summary>
-[DataContract]
+
 public partial class JourneyViewResultMetrics : IEquatable<JourneyViewResultMetrics>
 {
     /// <summary>
@@ -23,7 +23,7 @@ public partial class JourneyViewResultMetrics : IEquatable<JourneyViewResultMetr
     /// number of external contacts who participated at the element
     /// </summary>
     /// <value>number of external contacts who participated at the element</value>
-    [DataMember(Name = "participantCount", EmitDefaultValue = false)]
+    [JsonPropertyName("participantCount")]
     public int? ParticipantCount { get; private set; }
 
 
@@ -32,7 +32,7 @@ public partial class JourneyViewResultMetrics : IEquatable<JourneyViewResultMetr
     /// number of external contacts who could still complete the journey
     /// </summary>
     /// <value>number of external contacts who could still complete the journey</value>
-    [DataMember(Name = "activeCount", EmitDefaultValue = false)]
+    [JsonPropertyName("activeCount")]
     public int? ActiveCount { get; private set; }
 
 
@@ -41,7 +41,7 @@ public partial class JourneyViewResultMetrics : IEquatable<JourneyViewResultMetr
     /// number of external contacts who completed the journey forward
     /// </summary>
     /// <value>number of external contacts who completed the journey forward</value>
-    [DataMember(Name = "completedCount", EmitDefaultValue = false)]
+    [JsonPropertyName("completedCount")]
     public int? CompletedCount { get; private set; }
 
 
@@ -50,7 +50,7 @@ public partial class JourneyViewResultMetrics : IEquatable<JourneyViewResultMetr
     /// number of external contacts who did not make it to the next element
     /// </summary>
     /// <value>number of external contacts who did not make it to the next element</value>
-    [DataMember(Name = "dropoutCount", EmitDefaultValue = false)]
+    [JsonPropertyName("dropoutCount")]
     public int? DropoutCount { get; private set; }
 
 
@@ -59,7 +59,7 @@ public partial class JourneyViewResultMetrics : IEquatable<JourneyViewResultMetr
     /// number of external contacts who moved from one element to next element but did not complete the journey
     /// </summary>
     /// <value>number of external contacts who moved from one element to next element but did not complete the journey</value>
-    [DataMember(Name = "flowCount", EmitDefaultValue = false)]
+    [JsonPropertyName("flowCount")]
     public int? FlowCount { get; private set; }
 
 

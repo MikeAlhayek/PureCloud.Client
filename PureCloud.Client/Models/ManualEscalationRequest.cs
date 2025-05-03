@@ -1,4 +1,3 @@
-using System.Runtime.Serialization;
 using System.Text;
 using System.Text.Json.Serialization;
 
@@ -7,7 +6,7 @@ namespace PureCloud.Client.Models;
 /// <summary>
 /// ManualEscalationRequest
 /// </summary>
-[DataContract]
+
 public partial class ManualEscalationRequest : IEquatable<ManualEscalationRequest>
 {
 
@@ -34,7 +33,7 @@ public partial class ManualEscalationRequest : IEquatable<ManualEscalationReques
     /// The social media normalized message ID to be escalated.
     /// </summary>
     /// <value>The social media normalized message ID to be escalated.</value>
-    [DataMember(Name = "socialMediaNormalizedMessageId", EmitDefaultValue = false)]
+    [JsonPropertyName("socialMediaNormalizedMessageId")]
     public string SocialMediaNormalizedMessageId { get; set; }
 
 
@@ -43,7 +42,7 @@ public partial class ManualEscalationRequest : IEquatable<ManualEscalationReques
     /// The escalation target to which the specified social media normalized message should be routed.
     /// </summary>
     /// <value>The escalation target to which the specified social media normalized message should be routed.</value>
-    [DataMember(Name = "escalationTarget", EmitDefaultValue = false)]
+    [JsonPropertyName("escalationTarget")]
     public EscalationTarget EscalationTarget { get; set; }
 
 

@@ -7,13 +7,13 @@ namespace PureCloud.Client.Models;
 /// <summary>
 /// VoicemailStartDetailEventTopicVoicemailStartEvent
 /// </summary>
-[DataContract]
+
 public partial class VoicemailStartDetailEventTopicVoicemailStartEvent : IEquatable<VoicemailStartDetailEventTopicVoicemailStartEvent>
 {
     /// <summary>
     /// Gets or Sets MediaType
     /// </summary>
-    [JsonConverter(typeof(JsonStringEnumConverter))]
+    
     public enum MediaTypeEnum
     {
         /// <summary>
@@ -87,7 +87,7 @@ public partial class VoicemailStartDetailEventTopicVoicemailStartEvent : IEquata
     /// <summary>
     /// Gets or Sets Direction
     /// </summary>
-    [JsonConverter(typeof(JsonStringEnumConverter))]
+    
     public enum DirectionEnum
     {
         /// <summary>
@@ -119,12 +119,12 @@ public partial class VoicemailStartDetailEventTopicVoicemailStartEvent : IEquata
     /// <summary>
     /// Gets or Sets MediaType
     /// </summary>
-    [DataMember(Name = "mediaType", EmitDefaultValue = false)]
+    [JsonPropertyName("mediaType")]
     public MediaTypeEnum? MediaType { get; set; }
     /// <summary>
     /// Gets or Sets Direction
     /// </summary>
-    [DataMember(Name = "direction", EmitDefaultValue = false)]
+    [JsonPropertyName("direction")]
     public DirectionEnum? Direction { get; set; }
     /// <summary>
     /// Initializes a new instance of the <see cref="VoicemailStartDetailEventTopicVoicemailStartEvent" /> class.
@@ -167,7 +167,7 @@ public partial class VoicemailStartDetailEventTopicVoicemailStartEvent : IEquata
     /// <summary>
     /// Gets or Sets EventTime
     /// </summary>
-    [DataMember(Name = "eventTime", EmitDefaultValue = false)]
+    [JsonPropertyName("eventTime")]
     public long? EventTime { get; set; }
 
 
@@ -175,7 +175,7 @@ public partial class VoicemailStartDetailEventTopicVoicemailStartEvent : IEquata
     /// <summary>
     /// Gets or Sets ConversationId
     /// </summary>
-    [DataMember(Name = "conversationId", EmitDefaultValue = false)]
+    [JsonPropertyName("conversationId")]
     public string ConversationId { get; set; }
 
 
@@ -183,7 +183,7 @@ public partial class VoicemailStartDetailEventTopicVoicemailStartEvent : IEquata
     /// <summary>
     /// Gets or Sets ParticipantId
     /// </summary>
-    [DataMember(Name = "participantId", EmitDefaultValue = false)]
+    [JsonPropertyName("participantId")]
     public string ParticipantId { get; set; }
 
 
@@ -191,7 +191,7 @@ public partial class VoicemailStartDetailEventTopicVoicemailStartEvent : IEquata
     /// <summary>
     /// Gets or Sets SessionId
     /// </summary>
-    [DataMember(Name = "sessionId", EmitDefaultValue = false)]
+    [JsonPropertyName("sessionId")]
     public string SessionId { get; set; }
 
 
@@ -201,7 +201,7 @@ public partial class VoicemailStartDetailEventTopicVoicemailStartEvent : IEquata
     /// <summary>
     /// Gets or Sets Provider
     /// </summary>
-    [DataMember(Name = "provider", EmitDefaultValue = false)]
+    [JsonPropertyName("provider")]
     public string Provider { get; set; }
 
 
@@ -211,7 +211,7 @@ public partial class VoicemailStartDetailEventTopicVoicemailStartEvent : IEquata
     /// <summary>
     /// Gets or Sets Ani
     /// </summary>
-    [DataMember(Name = "ani", EmitDefaultValue = false)]
+    [JsonPropertyName("ani")]
     public string Ani { get; set; }
 
 
@@ -219,7 +219,7 @@ public partial class VoicemailStartDetailEventTopicVoicemailStartEvent : IEquata
     /// <summary>
     /// Gets or Sets Dnis
     /// </summary>
-    [DataMember(Name = "dnis", EmitDefaultValue = false)]
+    [JsonPropertyName("dnis")]
     public string Dnis { get; set; }
 
 
@@ -227,7 +227,7 @@ public partial class VoicemailStartDetailEventTopicVoicemailStartEvent : IEquata
     /// <summary>
     /// Gets or Sets UserId
     /// </summary>
-    [DataMember(Name = "userId", EmitDefaultValue = false)]
+    [JsonPropertyName("userId")]
     public string UserId { get; set; }
 
 
@@ -235,7 +235,7 @@ public partial class VoicemailStartDetailEventTopicVoicemailStartEvent : IEquata
     /// <summary>
     /// Gets or Sets QueueId
     /// </summary>
-    [DataMember(Name = "queueId", EmitDefaultValue = false)]
+    [JsonPropertyName("queueId")]
     public string QueueId { get; set; }
 
 
@@ -243,7 +243,7 @@ public partial class VoicemailStartDetailEventTopicVoicemailStartEvent : IEquata
     /// <summary>
     /// Gets or Sets DivisionId
     /// </summary>
-    [DataMember(Name = "divisionId", EmitDefaultValue = false)]
+    [JsonPropertyName("divisionId")]
     public string DivisionId { get; set; }
 
 
@@ -251,7 +251,7 @@ public partial class VoicemailStartDetailEventTopicVoicemailStartEvent : IEquata
     /// <summary>
     /// Gets or Sets ConversationExternalContactIds
     /// </summary>
-    [DataMember(Name = "conversationExternalContactIds", EmitDefaultValue = false)]
+    [JsonPropertyName("conversationExternalContactIds")]
     public List<string> ConversationExternalContactIds { get; set; }
 
 
@@ -259,7 +259,7 @@ public partial class VoicemailStartDetailEventTopicVoicemailStartEvent : IEquata
     /// <summary>
     /// Gets or Sets ConversationExternalOrganizationIds
     /// </summary>
-    [DataMember(Name = "conversationExternalOrganizationIds", EmitDefaultValue = false)]
+    [JsonPropertyName("conversationExternalOrganizationIds")]
     public List<string> ConversationExternalOrganizationIds { get; set; }
 
 

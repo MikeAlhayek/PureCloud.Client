@@ -84,7 +84,6 @@ public partial class WebMessagingApi : IWebMessagingApi
     {
         Configuration = new Configuration(new ApiClient(basePath));
 
-        // ensure API client has configuration ready
         if (Configuration.ApiClient.Configuration == null)
         {
             Configuration.ApiClient.Configuration = Configuration;

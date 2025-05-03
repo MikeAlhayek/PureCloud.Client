@@ -1,12 +1,12 @@
-using System.Runtime.Serialization;
 using System.Text;
+using System.Text.Json.Serialization;
 
 namespace PureCloud.Client.Models;
 
 /// <summary>
 /// BulkJobAddWorkitemSummary
 /// </summary>
-[DataContract]
+
 public partial class BulkJobAddWorkitemSummary : IEquatable<BulkJobAddWorkitemSummary>
 {
     /// <summary>
@@ -29,7 +29,7 @@ public partial class BulkJobAddWorkitemSummary : IEquatable<BulkJobAddWorkitemSu
     /// The globally unique identifier for the object.
     /// </summary>
     /// <value>The globally unique identifier for the object.</value>
-    [DataMember(Name = "id", EmitDefaultValue = false)]
+    [JsonPropertyName("id")]
     public string Id { get; private set; }
 
 
@@ -37,7 +37,7 @@ public partial class BulkJobAddWorkitemSummary : IEquatable<BulkJobAddWorkitemSu
     /// <summary>
     /// Gets or Sets Name
     /// </summary>
-    [DataMember(Name = "name", EmitDefaultValue = false)]
+    [JsonPropertyName("name")]
     public string Name { get; set; }
 
 
@@ -46,7 +46,7 @@ public partial class BulkJobAddWorkitemSummary : IEquatable<BulkJobAddWorkitemSu
     /// The workbin of the workitem.
     /// </summary>
     /// <value>The workbin of the workitem.</value>
-    [DataMember(Name = "workbin", EmitDefaultValue = false)]
+    [JsonPropertyName("workbin")]
     public WorkbinReference Workbin { get; set; }
 
 
@@ -55,7 +55,7 @@ public partial class BulkJobAddWorkitemSummary : IEquatable<BulkJobAddWorkitemSu
     /// The worktype of the workitem.
     /// </summary>
     /// <value>The worktype of the workitem.</value>
-    [DataMember(Name = "type", EmitDefaultValue = false)]
+    [JsonPropertyName("type")]
     public WorktypeReference Type { get; set; }
 
 
@@ -64,7 +64,7 @@ public partial class BulkJobAddWorkitemSummary : IEquatable<BulkJobAddWorkitemSu
     /// The URI for this object
     /// </summary>
     /// <value>The URI for this object</value>
-    [DataMember(Name = "selfUri", EmitDefaultValue = false)]
+    [JsonPropertyName("selfUri")]
     public string SelfUri { get; private set; }
 
 

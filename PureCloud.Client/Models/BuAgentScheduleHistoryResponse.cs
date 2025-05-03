@@ -1,12 +1,12 @@
-using System.Runtime.Serialization;
 using System.Text;
+using System.Text.Json.Serialization;
 
 namespace PureCloud.Client.Models;
 
 /// <summary>
 /// BuAgentScheduleHistoryResponse
 /// </summary>
-[DataContract]
+
 public partial class BuAgentScheduleHistoryResponse : IEquatable<BuAgentScheduleHistoryResponse>
 {
     /// <summary>
@@ -31,7 +31,7 @@ public partial class BuAgentScheduleHistoryResponse : IEquatable<BuAgentSchedule
     /// The list of previously published schedules
     /// </summary>
     /// <value>The list of previously published schedules</value>
-    [DataMember(Name = "priorPublishedSchedules", EmitDefaultValue = false)]
+    [JsonPropertyName("priorPublishedSchedules")]
     public List<BuScheduleReference> PriorPublishedSchedules { get; set; }
 
 
@@ -40,7 +40,7 @@ public partial class BuAgentScheduleHistoryResponse : IEquatable<BuAgentSchedule
     /// The originally published agent schedules
     /// </summary>
     /// <value>The originally published agent schedules</value>
-    [DataMember(Name = "basePublishedSchedule", EmitDefaultValue = false)]
+    [JsonPropertyName("basePublishedSchedule")]
     public BuAgentScheduleHistoryChange BasePublishedSchedule { get; set; }
 
 
@@ -49,7 +49,7 @@ public partial class BuAgentScheduleHistoryResponse : IEquatable<BuAgentSchedule
     /// The changes dropped from the schedule history. This will happen if the schedule history is too large
     /// </summary>
     /// <value>The changes dropped from the schedule history. This will happen if the schedule history is too large</value>
-    [DataMember(Name = "droppedChanges", EmitDefaultValue = false)]
+    [JsonPropertyName("droppedChanges")]
     public List<BuAgentScheduleHistoryDroppedChange> DroppedChanges { get; set; }
 
 
@@ -58,7 +58,7 @@ public partial class BuAgentScheduleHistoryResponse : IEquatable<BuAgentSchedule
     /// The list of changes for the schedule history
     /// </summary>
     /// <value>The list of changes for the schedule history</value>
-    [DataMember(Name = "changes", EmitDefaultValue = false)]
+    [JsonPropertyName("changes")]
     public List<BuAgentScheduleHistoryChange> Changes { get; set; }
 
 

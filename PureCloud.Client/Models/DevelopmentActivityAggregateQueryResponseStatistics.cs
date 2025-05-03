@@ -1,12 +1,12 @@
-using System.Runtime.Serialization;
 using System.Text;
+using System.Text.Json.Serialization;
 
 namespace PureCloud.Client.Models;
 
 /// <summary>
 /// DevelopmentActivityAggregateQueryResponseStatistics
 /// </summary>
-[DataContract]
+
 public partial class DevelopmentActivityAggregateQueryResponseStatistics : IEquatable<DevelopmentActivityAggregateQueryResponseStatistics>
 {
     /// <summary>
@@ -31,7 +31,7 @@ public partial class DevelopmentActivityAggregateQueryResponseStatistics : IEqua
     /// The count for this metric
     /// </summary>
     /// <value>The count for this metric</value>
-    [DataMember(Name = "count", EmitDefaultValue = false)]
+    [JsonPropertyName("count")]
     public int? Count { get; set; }
 
 
@@ -40,7 +40,7 @@ public partial class DevelopmentActivityAggregateQueryResponseStatistics : IEqua
     /// The minimum value in this metric
     /// </summary>
     /// <value>The minimum value in this metric</value>
-    [DataMember(Name = "min", EmitDefaultValue = false)]
+    [JsonPropertyName("min")]
     public double? Min { get; set; }
 
 
@@ -49,7 +49,7 @@ public partial class DevelopmentActivityAggregateQueryResponseStatistics : IEqua
     /// The maximum value in this metric
     /// </summary>
     /// <value>The maximum value in this metric</value>
-    [DataMember(Name = "max", EmitDefaultValue = false)]
+    [JsonPropertyName("max")]
     public double? Max { get; set; }
 
 
@@ -58,7 +58,7 @@ public partial class DevelopmentActivityAggregateQueryResponseStatistics : IEqua
     /// The total of the values for this metric
     /// </summary>
     /// <value>The total of the values for this metric</value>
-    [DataMember(Name = "sum", EmitDefaultValue = false)]
+    [JsonPropertyName("sum")]
     public double? Sum { get; set; }
 
 

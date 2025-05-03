@@ -7,14 +7,14 @@ namespace PureCloud.Client.Models;
 /// <summary>
 /// Details about a Web Deployment
 /// </summary>
-[DataContract]
+
 public partial class WebDeployment : IEquatable<WebDeployment>
 {
     /// <summary>
     /// The current status of the deployment
     /// </summary>
     /// <value>The current status of the deployment</value>
-    [JsonConverter(typeof(JsonStringEnumConverter))]
+    
     public enum StatusEnum
     {
         /// <summary>
@@ -59,7 +59,7 @@ public partial class WebDeployment : IEquatable<WebDeployment>
     /// The current status of the deployment
     /// </summary>
     /// <value>The current status of the deployment</value>
-    [DataMember(Name = "status", EmitDefaultValue = false)]
+    [JsonPropertyName("status")]
     public StatusEnum? Status { get; set; }
 
     /// <summary>
@@ -97,7 +97,7 @@ public partial class WebDeployment : IEquatable<WebDeployment>
     /// The deployment ID
     /// </summary>
     /// <value>The deployment ID</value>
-    [DataMember(Name = "id", EmitDefaultValue = false)]
+    [JsonPropertyName("id")]
     public string Id { get; private set; }
 
 
@@ -106,7 +106,7 @@ public partial class WebDeployment : IEquatable<WebDeployment>
     /// The deployment name
     /// </summary>
     /// <value>The deployment name</value>
-    [DataMember(Name = "name", EmitDefaultValue = false)]
+    [JsonPropertyName("name")]
     public string Name { get; set; }
 
 
@@ -115,7 +115,7 @@ public partial class WebDeployment : IEquatable<WebDeployment>
     /// The description of the config
     /// </summary>
     /// <value>The description of the config</value>
-    [DataMember(Name = "description", EmitDefaultValue = false)]
+    [JsonPropertyName("description")]
     public string Description { get; set; }
 
 
@@ -124,7 +124,7 @@ public partial class WebDeployment : IEquatable<WebDeployment>
     /// Property indicates whether all domains are allowed or not. allowedDomains must be empty when this is set as true.
     /// </summary>
     /// <value>Property indicates whether all domains are allowed or not. allowedDomains must be empty when this is set as true.</value>
-    [DataMember(Name = "allowAllDomains", EmitDefaultValue = false)]
+    [JsonPropertyName("allowAllDomains")]
     public bool? AllowAllDomains { get; set; }
 
 
@@ -133,7 +133,7 @@ public partial class WebDeployment : IEquatable<WebDeployment>
     /// The list of domains that are approved to use this deployment; the list will be added to CORS headers for ease of web use.
     /// </summary>
     /// <value>The list of domains that are approved to use this deployment; the list will be added to CORS headers for ease of web use.</value>
-    [DataMember(Name = "allowedDomains", EmitDefaultValue = false)]
+    [JsonPropertyName("allowedDomains")]
     public List<string> AllowedDomains { get; set; }
 
 
@@ -142,7 +142,7 @@ public partial class WebDeployment : IEquatable<WebDeployment>
     /// The supported content profile for a deployment
     /// </summary>
     /// <value>The supported content profile for a deployment</value>
-    [DataMember(Name = "supportedContent", EmitDefaultValue = false)]
+    [JsonPropertyName("supportedContent")]
     public SupportedContentReference SupportedContent { get; set; }
 
 
@@ -151,7 +151,7 @@ public partial class WebDeployment : IEquatable<WebDeployment>
     /// Javascript snippet used to load the config
     /// </summary>
     /// <value>Javascript snippet used to load the config</value>
-    [DataMember(Name = "snippet", EmitDefaultValue = false)]
+    [JsonPropertyName("snippet")]
     public string Snippet { get; private set; }
 
 
@@ -160,7 +160,7 @@ public partial class WebDeployment : IEquatable<WebDeployment>
     /// The date the deployment was created. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z
     /// </summary>
     /// <value>The date the deployment was created. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z</value>
-    [DataMember(Name = "dateCreated", EmitDefaultValue = false)]
+    [JsonPropertyName("dateCreated")]
     public DateTime? DateCreated { get; private set; }
 
 
@@ -169,7 +169,7 @@ public partial class WebDeployment : IEquatable<WebDeployment>
     /// The date the deployment was most recently modified. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z
     /// </summary>
     /// <value>The date the deployment was most recently modified. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z</value>
-    [DataMember(Name = "dateModified", EmitDefaultValue = false)]
+    [JsonPropertyName("dateModified")]
     public DateTime? DateModified { get; private set; }
 
 
@@ -178,7 +178,7 @@ public partial class WebDeployment : IEquatable<WebDeployment>
     /// A reference to the user who most recently modified the deployment
     /// </summary>
     /// <value>A reference to the user who most recently modified the deployment</value>
-    [DataMember(Name = "lastModifiedUser", EmitDefaultValue = false)]
+    [JsonPropertyName("lastModifiedUser")]
     public AddressableEntityRef LastModifiedUser { get; private set; }
 
 
@@ -187,7 +187,7 @@ public partial class WebDeployment : IEquatable<WebDeployment>
     /// A reference to the inboundshortmessage flow used by this deployment
     /// </summary>
     /// <value>A reference to the inboundshortmessage flow used by this deployment</value>
-    [DataMember(Name = "flow", EmitDefaultValue = false)]
+    [JsonPropertyName("flow")]
     public WebDeploymentFlowEntityRef Flow { get; set; }
 
 
@@ -198,7 +198,7 @@ public partial class WebDeployment : IEquatable<WebDeployment>
     /// The config version this deployment uses
     /// </summary>
     /// <value>The config version this deployment uses</value>
-    [DataMember(Name = "configuration", EmitDefaultValue = false)]
+    [JsonPropertyName("configuration")]
     public WebDeploymentConfigurationVersionEntityRef Configuration { get; set; }
 
 
@@ -207,7 +207,7 @@ public partial class WebDeployment : IEquatable<WebDeployment>
     /// The URI for this object
     /// </summary>
     /// <value>The URI for this object</value>
-    [DataMember(Name = "selfUri", EmitDefaultValue = false)]
+    [JsonPropertyName("selfUri")]
     public string SelfUri { get; private set; }
 
 

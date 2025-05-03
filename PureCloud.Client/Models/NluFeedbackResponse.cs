@@ -1,12 +1,12 @@
-using System.Runtime.Serialization;
 using System.Text;
+using System.Text.Json.Serialization;
 
 namespace PureCloud.Client.Models;
 
 /// <summary>
 /// NluFeedbackResponse
 /// </summary>
-[DataContract]
+
 public partial class NluFeedbackResponse : IEquatable<NluFeedbackResponse>
 {
     /// <summary>
@@ -29,7 +29,7 @@ public partial class NluFeedbackResponse : IEquatable<NluFeedbackResponse>
     /// The globally unique identifier for the object.
     /// </summary>
     /// <value>The globally unique identifier for the object.</value>
-    [DataMember(Name = "id", EmitDefaultValue = false)]
+    [JsonPropertyName("id")]
     public string Id { get; private set; }
 
 
@@ -38,7 +38,7 @@ public partial class NluFeedbackResponse : IEquatable<NluFeedbackResponse>
     /// The feedback text.
     /// </summary>
     /// <value>The feedback text.</value>
-    [DataMember(Name = "text", EmitDefaultValue = false)]
+    [JsonPropertyName("text")]
     public string Text { get; set; }
 
 
@@ -47,7 +47,7 @@ public partial class NluFeedbackResponse : IEquatable<NluFeedbackResponse>
     /// Detected intent of the utterance
     /// </summary>
     /// <value>Detected intent of the utterance</value>
-    [DataMember(Name = "intents", EmitDefaultValue = false)]
+    [JsonPropertyName("intents")]
     public List<IntentFeedback> Intents { get; set; }
 
 
@@ -56,7 +56,7 @@ public partial class NluFeedbackResponse : IEquatable<NluFeedbackResponse>
     /// The domain version of the feedback.
     /// </summary>
     /// <value>The domain version of the feedback.</value>
-    [DataMember(Name = "version", EmitDefaultValue = false)]
+    [JsonPropertyName("version")]
     public NluDomainVersion Version { get; private set; }
 
 
@@ -65,7 +65,7 @@ public partial class NluFeedbackResponse : IEquatable<NluFeedbackResponse>
     /// The date when the feedback was created. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z
     /// </summary>
     /// <value>The date when the feedback was created. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z</value>
-    [DataMember(Name = "dateCreated", EmitDefaultValue = false)]
+    [JsonPropertyName("dateCreated")]
     public DateTime? DateCreated { get; private set; }
 
 
@@ -74,7 +74,7 @@ public partial class NluFeedbackResponse : IEquatable<NluFeedbackResponse>
     /// The language of the version to which feedback is linked, e.g. en-us, de-de
     /// </summary>
     /// <value>The language of the version to which feedback is linked, e.g. en-us, de-de</value>
-    [DataMember(Name = "language", EmitDefaultValue = false)]
+    [JsonPropertyName("language")]
     public string Language { get; set; }
 
 
@@ -83,7 +83,7 @@ public partial class NluFeedbackResponse : IEquatable<NluFeedbackResponse>
     /// The URI for this object
     /// </summary>
     /// <value>The URI for this object</value>
-    [DataMember(Name = "selfUri", EmitDefaultValue = false)]
+    [JsonPropertyName("selfUri")]
     public string SelfUri { get; private set; }
 
 

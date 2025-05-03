@@ -1,4 +1,3 @@
-using System.Runtime.Serialization;
 using System.Text;
 using System.Text.Json.Serialization;
 
@@ -7,7 +6,7 @@ namespace PureCloud.Client.Models;
 /// <summary>
 /// KnowledgeGuestDocumentSuggestion
 /// </summary>
-[DataContract]
+
 public partial class KnowledgeGuestDocumentSuggestion : IEquatable<KnowledgeGuestDocumentSuggestion>
 {
 
@@ -34,7 +33,7 @@ public partial class KnowledgeGuestDocumentSuggestion : IEquatable<KnowledgeGues
     /// Query to get autocomplete suggestions for the matching knowledge documents.
     /// </summary>
     /// <value>Query to get autocomplete suggestions for the matching knowledge documents.</value>
-    [DataMember(Name = "query", EmitDefaultValue = false)]
+    [JsonPropertyName("query")]
     public string Query { get; set; }
 
 
@@ -43,7 +42,7 @@ public partial class KnowledgeGuestDocumentSuggestion : IEquatable<KnowledgeGues
     /// Page size of the returned results.
     /// </summary>
     /// <value>Page size of the returned results.</value>
-    [DataMember(Name = "pageSize", EmitDefaultValue = false)]
+    [JsonPropertyName("pageSize")]
     public int? PageSize { get; set; }
 
 
@@ -52,7 +51,7 @@ public partial class KnowledgeGuestDocumentSuggestion : IEquatable<KnowledgeGues
     /// Session ID of the guest suggestions.
     /// </summary>
     /// <value>Session ID of the guest suggestions.</value>
-    [DataMember(Name = "sessionId", EmitDefaultValue = false)]
+    [JsonPropertyName("sessionId")]
     public string SessionId { get; private set; }
 
 
@@ -61,7 +60,7 @@ public partial class KnowledgeGuestDocumentSuggestion : IEquatable<KnowledgeGues
     /// Suggestions matching the query.
     /// </summary>
     /// <value>Suggestions matching the query.</value>
-    [DataMember(Name = "results", EmitDefaultValue = false)]
+    [JsonPropertyName("results")]
     public List<KnowledgeGuestDocumentSuggestionResult> Results { get; private set; }
 
 

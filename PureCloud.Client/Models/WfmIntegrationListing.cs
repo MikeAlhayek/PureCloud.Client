@@ -1,12 +1,12 @@
-using System.Runtime.Serialization;
 using System.Text;
+using System.Text.Json.Serialization;
 
 namespace PureCloud.Client.Models;
 
 /// <summary>
 /// WfmIntegrationListing
 /// </summary>
-[DataContract]
+
 public partial class WfmIntegrationListing : IEquatable<WfmIntegrationListing>
 {
     /// <summary>
@@ -24,7 +24,7 @@ public partial class WfmIntegrationListing : IEquatable<WfmIntegrationListing>
     /// <summary>
     /// Gets or Sets Entities
     /// </summary>
-    [DataMember(Name = "entities", EmitDefaultValue = false)]
+    [JsonPropertyName("entities")]
     public List<WfmIntegrationResponse> Entities { get; set; }
 
 

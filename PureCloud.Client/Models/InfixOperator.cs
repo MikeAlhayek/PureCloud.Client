@@ -7,14 +7,14 @@ namespace PureCloud.Client.Models;
 /// <summary>
 /// InfixOperator
 /// </summary>
-[DataContract]
+
 public partial class InfixOperator : IEquatable<InfixOperator>
 {
     /// <summary>
     /// The logical operation that is applied on the operand against the following operand
     /// </summary>
     /// <value>The logical operation that is applied on the operand against the following operand</value>
-    [JsonConverter(typeof(JsonStringEnumConverter))]
+    
     public enum OperatorTypeEnum
     {
         /// <summary>
@@ -47,7 +47,7 @@ public partial class InfixOperator : IEquatable<InfixOperator>
     /// The logical operation that is applied on the operand against the following operand
     /// </summary>
     /// <value>The logical operation that is applied on the operand against the following operand</value>
-    [DataMember(Name = "operatorType", EmitDefaultValue = false)]
+    [JsonPropertyName("operatorType")]
     public OperatorTypeEnum? OperatorType { get; set; }
 
     /// <summary>
@@ -75,7 +75,7 @@ public partial class InfixOperator : IEquatable<InfixOperator>
     /// Dictates when the following operand should occur relative to current operand
     /// </summary>
     /// <value>Dictates when the following operand should occur relative to current operand</value>
-    [DataMember(Name = "operatorPosition", EmitDefaultValue = false)]
+    [JsonPropertyName("operatorPosition")]
     public OperatorPosition OperatorPosition { get; set; }
 
 

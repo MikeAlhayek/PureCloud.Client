@@ -7,13 +7,13 @@ namespace PureCloud.Client.Models;
 /// <summary>
 /// the schedule range
 /// </summary>
-[DataContract]
+
 public partial class DialerSequenceScheduleConfigChangeRecurrenceRange : IEquatable<DialerSequenceScheduleConfigChangeRecurrenceRange>
 {
     /// <summary>
     /// Gets or Sets Type
     /// </summary>
-    [JsonConverter(typeof(JsonStringEnumConverter))]
+    
     public enum TypeEnum
     {
         /// <summary>
@@ -45,7 +45,7 @@ public partial class DialerSequenceScheduleConfigChangeRecurrenceRange : IEquata
     /// <summary>
     /// Gets or Sets Type
     /// </summary>
-    [DataMember(Name = "type", EmitDefaultValue = false)]
+    [JsonPropertyName("type")]
     public TypeEnum? Type { get; set; }
     /// <summary>
     /// Initializes a new instance of the <see cref="DialerSequenceScheduleConfigChangeRecurrenceRange" /> class.
@@ -71,7 +71,7 @@ public partial class DialerSequenceScheduleConfigChangeRecurrenceRange : IEquata
     /// the range end date
     /// </summary>
     /// <value>the range end date</value>
-    [DataMember(Name = "end", EmitDefaultValue = false)]
+    [JsonPropertyName("end")]
     public string End { get; set; }
 
 
@@ -80,7 +80,7 @@ public partial class DialerSequenceScheduleConfigChangeRecurrenceRange : IEquata
     /// the number of occurrences to happen before ending
     /// </summary>
     /// <value>the number of occurrences to happen before ending</value>
-    [DataMember(Name = "numberOfOccurrences", EmitDefaultValue = false)]
+    [JsonPropertyName("numberOfOccurrences")]
     public long? NumberOfOccurrences { get; set; }
 
 
@@ -88,7 +88,7 @@ public partial class DialerSequenceScheduleConfigChangeRecurrenceRange : IEquata
     /// <summary>
     /// Gets or Sets AdditionalProperties
     /// </summary>
-    [DataMember(Name = "additionalProperties", EmitDefaultValue = false)]
+    [JsonPropertyName("additionalProperties")]
     public Dictionary<string, object> AdditionalProperties { get; set; }
 
 

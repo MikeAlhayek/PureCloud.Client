@@ -1,12 +1,12 @@
-using System.Runtime.Serialization;
 using System.Text;
+using System.Text.Json.Serialization;
 
 namespace PureCloud.Client.Models;
 
 /// <summary>
 /// MinerIntent
 /// </summary>
-[DataContract]
+
 public partial class MinerIntent : IEquatable<MinerIntent>
 {
     /// <summary>
@@ -31,7 +31,7 @@ public partial class MinerIntent : IEquatable<MinerIntent>
     /// The globally unique identifier for the object.
     /// </summary>
     /// <value>The globally unique identifier for the object.</value>
-    [DataMember(Name = "id", EmitDefaultValue = false)]
+    [JsonPropertyName("id")]
     public string Id { get; private set; }
 
 
@@ -40,7 +40,7 @@ public partial class MinerIntent : IEquatable<MinerIntent>
     /// Intent name.
     /// </summary>
     /// <value>Intent name.</value>
-    [DataMember(Name = "name", EmitDefaultValue = false)]
+    [JsonPropertyName("name")]
     public string Name { get; set; }
 
 
@@ -49,7 +49,7 @@ public partial class MinerIntent : IEquatable<MinerIntent>
     /// The miner to which the intent belongs.
     /// </summary>
     /// <value>The miner to which the intent belongs.</value>
-    [DataMember(Name = "miner", EmitDefaultValue = false)]
+    [JsonPropertyName("miner")]
     public Miner Miner { get; set; }
 
 
@@ -58,7 +58,7 @@ public partial class MinerIntent : IEquatable<MinerIntent>
     /// The utterances that are extracted for an Intent.
     /// </summary>
     /// <value>The utterances that are extracted for an Intent.</value>
-    [DataMember(Name = "utterances", EmitDefaultValue = false)]
+    [JsonPropertyName("utterances")]
     public List<Utterance> Utterances { get; set; }
 
 
@@ -67,7 +67,7 @@ public partial class MinerIntent : IEquatable<MinerIntent>
     /// Percentage of conversations belonging to the intent.
     /// </summary>
     /// <value>Percentage of conversations belonging to the intent.</value>
-    [DataMember(Name = "analyticVolumePercent", EmitDefaultValue = false)]
+    [JsonPropertyName("analyticVolumePercent")]
     public double? AnalyticVolumePercent { get; set; }
 
 
@@ -76,7 +76,7 @@ public partial class MinerIntent : IEquatable<MinerIntent>
     /// The URI for this object
     /// </summary>
     /// <value>The URI for this object</value>
-    [DataMember(Name = "selfUri", EmitDefaultValue = false)]
+    [JsonPropertyName("selfUri")]
     public string SelfUri { get; private set; }
 
 

@@ -1,12 +1,12 @@
-using System.Runtime.Serialization;
 using System.Text;
+using System.Text.Json.Serialization;
 
 namespace PureCloud.Client.Models;
 
 /// <summary>
 /// SortItem
 /// </summary>
-[DataContract]
+
 public partial class SortItem : IEquatable<SortItem>
 {
     /// <summary>
@@ -26,7 +26,7 @@ public partial class SortItem : IEquatable<SortItem>
     /// <summary>
     /// Gets or Sets Name
     /// </summary>
-    [DataMember(Name = "name", EmitDefaultValue = false)]
+    [JsonPropertyName("name")]
     public string Name { get; set; }
 
 
@@ -34,7 +34,7 @@ public partial class SortItem : IEquatable<SortItem>
     /// <summary>
     /// Gets or Sets Ascending
     /// </summary>
-    [DataMember(Name = "ascending", EmitDefaultValue = false)]
+    [JsonPropertyName("ascending")]
     public bool? Ascending { get; set; }
 
 

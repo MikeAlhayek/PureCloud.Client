@@ -1,4 +1,3 @@
-using System.Runtime.Serialization;
 using System.Text;
 using System.Text.Json.Serialization;
 
@@ -7,7 +6,7 @@ namespace PureCloud.Client.Models;
 /// <summary>
 /// ContestPrizes
 /// </summary>
-[DataContract]
+
 public partial class ContestPrizes : IEquatable<ContestPrizes>
 {
 
@@ -40,7 +39,7 @@ public partial class ContestPrizes : IEquatable<ContestPrizes>
     /// The Contest Prize tier
     /// </summary>
     /// <value>The Contest Prize tier</value>
-    [DataMember(Name = "tier", EmitDefaultValue = false)]
+    [JsonPropertyName("tier")]
     public int? Tier { get; set; }
 
 
@@ -49,7 +48,7 @@ public partial class ContestPrizes : IEquatable<ContestPrizes>
     /// The Contest Prize name
     /// </summary>
     /// <value>The Contest Prize name</value>
-    [DataMember(Name = "name", EmitDefaultValue = false)]
+    [JsonPropertyName("name")]
     public string Name { get; set; }
 
 
@@ -58,7 +57,7 @@ public partial class ContestPrizes : IEquatable<ContestPrizes>
     /// The Contest Prize description
     /// </summary>
     /// <value>The Contest Prize description</value>
-    [DataMember(Name = "description", EmitDefaultValue = false)]
+    [JsonPropertyName("description")]
     public string Description { get; set; }
 
 
@@ -67,7 +66,7 @@ public partial class ContestPrizes : IEquatable<ContestPrizes>
     /// The Contest Prize image id
     /// </summary>
     /// <value>The Contest Prize image id</value>
-    [DataMember(Name = "imageId", EmitDefaultValue = false)]
+    [JsonPropertyName("imageId")]
     public string ImageId { get; set; }
 
 
@@ -76,7 +75,7 @@ public partial class ContestPrizes : IEquatable<ContestPrizes>
     /// The Contest Prize image url
     /// </summary>
     /// <value>The Contest Prize image url</value>
-    [DataMember(Name = "imageUrl", EmitDefaultValue = false)]
+    [JsonPropertyName("imageUrl")]
     public string ImageUrl { get; private set; }
 
 
@@ -85,7 +84,7 @@ public partial class ContestPrizes : IEquatable<ContestPrizes>
     /// The Contest Prize winner Count
     /// </summary>
     /// <value>The Contest Prize winner Count</value>
-    [DataMember(Name = "winnersCount", EmitDefaultValue = false)]
+    [JsonPropertyName("winnersCount")]
     public int? WinnersCount { get; set; }
 
 

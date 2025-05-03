@@ -1,4 +1,3 @@
-using System.Runtime.Serialization;
 using System.Text;
 using System.Text.Json.Serialization;
 
@@ -7,7 +6,7 @@ namespace PureCloud.Client.Models;
 /// <summary>
 /// RuleSet
 /// </summary>
-[DataContract]
+
 public partial class RuleSet : IEquatable<RuleSet>
 {
 
@@ -40,7 +39,7 @@ public partial class RuleSet : IEquatable<RuleSet>
     /// The globally unique identifier for the object.
     /// </summary>
     /// <value>The globally unique identifier for the object.</value>
-    [DataMember(Name = "id", EmitDefaultValue = false)]
+    [JsonPropertyName("id")]
     public string Id { get; private set; }
 
 
@@ -49,7 +48,7 @@ public partial class RuleSet : IEquatable<RuleSet>
     /// The name of the RuleSet.
     /// </summary>
     /// <value>The name of the RuleSet.</value>
-    [DataMember(Name = "name", EmitDefaultValue = false)]
+    [JsonPropertyName("name")]
     public string Name { get; set; }
 
 
@@ -58,7 +57,7 @@ public partial class RuleSet : IEquatable<RuleSet>
     /// Creation time of the entity. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z
     /// </summary>
     /// <value>Creation time of the entity. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z</value>
-    [DataMember(Name = "dateCreated", EmitDefaultValue = false)]
+    [JsonPropertyName("dateCreated")]
     public DateTime? DateCreated { get; private set; }
 
 
@@ -67,7 +66,7 @@ public partial class RuleSet : IEquatable<RuleSet>
     /// Last modified time of the entity. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z
     /// </summary>
     /// <value>Last modified time of the entity. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z</value>
-    [DataMember(Name = "dateModified", EmitDefaultValue = false)]
+    [JsonPropertyName("dateModified")]
     public DateTime? DateModified { get; private set; }
 
 
@@ -76,7 +75,7 @@ public partial class RuleSet : IEquatable<RuleSet>
     /// Required for updates, must match the version number of the most recent update
     /// </summary>
     /// <value>Required for updates, must match the version number of the most recent update</value>
-    [DataMember(Name = "version", EmitDefaultValue = false)]
+    [JsonPropertyName("version")]
     public int? Version { get; set; }
 
 
@@ -85,7 +84,7 @@ public partial class RuleSet : IEquatable<RuleSet>
     /// A ContactList to provide user-interface suggestions for contact columns on relevant conditions and actions.
     /// </summary>
     /// <value>A ContactList to provide user-interface suggestions for contact columns on relevant conditions and actions.</value>
-    [DataMember(Name = "contactList", EmitDefaultValue = false)]
+    [JsonPropertyName("contactList")]
     public DomainEntityRef ContactList { get; set; }
 
 
@@ -94,7 +93,7 @@ public partial class RuleSet : IEquatable<RuleSet>
     /// A Queue to provide user-interface suggestions for wrap-up codes on relevant conditions and actions.
     /// </summary>
     /// <value>A Queue to provide user-interface suggestions for wrap-up codes on relevant conditions and actions.</value>
-    [DataMember(Name = "queue", EmitDefaultValue = false)]
+    [JsonPropertyName("queue")]
     public DomainEntityRef Queue { get; set; }
 
 
@@ -103,7 +102,7 @@ public partial class RuleSet : IEquatable<RuleSet>
     /// The list of rules.
     /// </summary>
     /// <value>The list of rules.</value>
-    [DataMember(Name = "rules", EmitDefaultValue = false)]
+    [JsonPropertyName("rules")]
     public List<DialerRule> Rules { get; set; }
 
 
@@ -112,7 +111,7 @@ public partial class RuleSet : IEquatable<RuleSet>
     /// The URI for this object
     /// </summary>
     /// <value>The URI for this object</value>
-    [DataMember(Name = "selfUri", EmitDefaultValue = false)]
+    [JsonPropertyName("selfUri")]
     public string SelfUri { get; private set; }
 
 

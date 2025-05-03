@@ -7,14 +7,14 @@ namespace PureCloud.Client.Models;
 /// <summary>
 /// ActionMapAction
 /// </summary>
-[DataContract]
+
 public partial class ActionMapAction : IEquatable<ActionMapAction>
 {
     /// <summary>
     /// Media type of action.
     /// </summary>
     /// <value>Media type of action.</value>
-    [JsonConverter(typeof(JsonStringEnumConverter))]
+    
     public enum MediaTypeEnum
     {
         /// <summary>
@@ -65,7 +65,7 @@ public partial class ActionMapAction : IEquatable<ActionMapAction>
     /// Media type of action.
     /// </summary>
     /// <value>Media type of action.</value>
-    [DataMember(Name = "mediaType", EmitDefaultValue = false)]
+    [JsonPropertyName("mediaType")]
     public MediaTypeEnum? MediaType { get; set; }
     /// <summary>
     /// Initializes a new instance of the <see cref="ActionMapAction" /> class.
@@ -97,7 +97,7 @@ public partial class ActionMapAction : IEquatable<ActionMapAction>
     /// Action template associated with the action map.
     /// </summary>
     /// <value>Action template associated with the action map.</value>
-    [DataMember(Name = "actionTemplate", EmitDefaultValue = false)]
+    [JsonPropertyName("actionTemplate")]
     public ActionMapActionTemplate ActionTemplate { get; set; }
 
 
@@ -108,7 +108,7 @@ public partial class ActionMapAction : IEquatable<ActionMapAction>
     /// Action target ID.
     /// </summary>
     /// <value>Action target ID.</value>
-    [DataMember(Name = "actionTargetId", EmitDefaultValue = false)]
+    [JsonPropertyName("actionTargetId")]
     public string ActionTargetId { get; set; }
 
 
@@ -117,7 +117,7 @@ public partial class ActionMapAction : IEquatable<ActionMapAction>
     /// Whether this action should be throttled.
     /// </summary>
     /// <value>Whether this action should be throttled.</value>
-    [DataMember(Name = "isPacingEnabled", EmitDefaultValue = false)]
+    [JsonPropertyName("isPacingEnabled")]
     public bool? IsPacingEnabled { get; set; }
 
 
@@ -126,7 +126,7 @@ public partial class ActionMapAction : IEquatable<ActionMapAction>
     /// Additional properties.
     /// </summary>
     /// <value>Additional properties.</value>
-    [DataMember(Name = "props", EmitDefaultValue = false)]
+    [JsonPropertyName("props")]
     public ActionProperties Props { get; set; }
 
 
@@ -135,7 +135,7 @@ public partial class ActionMapAction : IEquatable<ActionMapAction>
     /// Architect Flow Id and input contract.
     /// </summary>
     /// <value>Architect Flow Id and input contract.</value>
-    [DataMember(Name = "architectFlowFields", EmitDefaultValue = false)]
+    [JsonPropertyName("architectFlowFields")]
     public ArchitectFlowFields ArchitectFlowFields { get; set; }
 
 
@@ -144,7 +144,7 @@ public partial class ActionMapAction : IEquatable<ActionMapAction>
     /// Admin-configurable fields of a web messaging offer action.
     /// </summary>
     /// <value>Admin-configurable fields of a web messaging offer action.</value>
-    [DataMember(Name = "webMessagingOfferFields", EmitDefaultValue = false)]
+    [JsonPropertyName("webMessagingOfferFields")]
     public WebMessagingOfferFields WebMessagingOfferFields { get; set; }
 
 
@@ -153,7 +153,7 @@ public partial class ActionMapAction : IEquatable<ActionMapAction>
     /// Admin-configurable fields of an open action.
     /// </summary>
     /// <value>Admin-configurable fields of an open action.</value>
-    [DataMember(Name = "openActionFields", EmitDefaultValue = false)]
+    [JsonPropertyName("openActionFields")]
     public OpenActionFields OpenActionFields { get; set; }
 
 

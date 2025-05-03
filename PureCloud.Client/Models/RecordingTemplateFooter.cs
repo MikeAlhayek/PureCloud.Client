@@ -1,12 +1,12 @@
-using System.Runtime.Serialization;
 using System.Text;
+using System.Text.Json.Serialization;
 
 namespace PureCloud.Client.Models;
 
 /// <summary>
 /// RecordingTemplateFooter
 /// </summary>
-[DataContract]
+
 public partial class RecordingTemplateFooter : IEquatable<RecordingTemplateFooter>
 {
     /// <summary>
@@ -25,7 +25,7 @@ public partial class RecordingTemplateFooter : IEquatable<RecordingTemplateFoote
     /// Footer text.
     /// </summary>
     /// <value>Footer text.</value>
-    [DataMember(Name = "text", EmitDefaultValue = false)]
+    [JsonPropertyName("text")]
     public string Text { get; set; }
 
 

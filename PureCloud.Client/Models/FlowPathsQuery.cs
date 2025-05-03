@@ -7,14 +7,14 @@ namespace PureCloud.Client.Models;
 /// <summary>
 /// FlowPathsQuery
 /// </summary>
-[DataContract]
+
 public partial class FlowPathsQuery : IEquatable<FlowPathsQuery>
 {
     /// <summary>
     /// Category (use case) of the paths within a given domain.
     /// </summary>
     /// <value>Category (use case) of the paths within a given domain.</value>
-    [JsonConverter(typeof(JsonStringEnumConverter))]
+    
     public enum CategoryEnum
     {
         /// <summary>
@@ -77,7 +77,7 @@ public partial class FlowPathsQuery : IEquatable<FlowPathsQuery>
     /// Category (use case) of the paths within a given domain.
     /// </summary>
     /// <value>Category (use case) of the paths within a given domain.</value>
-    [DataMember(Name = "category", EmitDefaultValue = false)]
+    [JsonPropertyName("category")]
     public CategoryEnum? Category { get; set; }
 
     /// <summary>
@@ -105,7 +105,7 @@ public partial class FlowPathsQuery : IEquatable<FlowPathsQuery>
     /// List of flows to query the paths result.
     /// </summary>
     /// <value>List of flows to query the paths result.</value>
-    [DataMember(Name = "flows", EmitDefaultValue = false)]
+    [JsonPropertyName("flows")]
     public List<FlowPathsFlowFilter> Flows { get; set; }
 
 

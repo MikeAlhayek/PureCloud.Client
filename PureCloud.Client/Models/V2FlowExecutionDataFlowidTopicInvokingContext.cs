@@ -1,12 +1,12 @@
-using System.Runtime.Serialization;
 using System.Text;
+using System.Text.Json.Serialization;
 
 namespace PureCloud.Client.Models;
 
 /// <summary>
 /// This contains contextual information about an invoking entity.
 /// </summary>
-[DataContract]
+
 public partial class V2FlowExecutionDataFlowidTopicInvokingContext : IEquatable<V2FlowExecutionDataFlowidTopicInvokingContext>
 {
     /// <summary>
@@ -32,7 +32,7 @@ public partial class V2FlowExecutionDataFlowidTopicInvokingContext : IEquatable<
     /// <summary>
     /// Gets or Sets Flow
     /// </summary>
-    [DataMember(Name = "flow", EmitDefaultValue = false)]
+    [JsonPropertyName("flow")]
     public V2FlowExecutionDataFlowidTopicFlow Flow { get; set; }
 
 
@@ -40,7 +40,7 @@ public partial class V2FlowExecutionDataFlowidTopicInvokingContext : IEquatable<
     /// <summary>
     /// Gets or Sets JourneyActionMap
     /// </summary>
-    [DataMember(Name = "journeyActionMap", EmitDefaultValue = false)]
+    [JsonPropertyName("journeyActionMap")]
     public V2FlowExecutionDataFlowidTopicJourneyActionMap JourneyActionMap { get; set; }
 
 
@@ -48,7 +48,7 @@ public partial class V2FlowExecutionDataFlowidTopicInvokingContext : IEquatable<
     /// <summary>
     /// Gets or Sets ProcessAutomation
     /// </summary>
-    [DataMember(Name = "processAutomation", EmitDefaultValue = false)]
+    [JsonPropertyName("processAutomation")]
     public V2FlowExecutionDataFlowidTopicProcessAutomation ProcessAutomation { get; set; }
 
 
@@ -56,7 +56,7 @@ public partial class V2FlowExecutionDataFlowidTopicInvokingContext : IEquatable<
     /// <summary>
     /// Gets or Sets Quality
     /// </summary>
-    [DataMember(Name = "quality", EmitDefaultValue = false)]
+    [JsonPropertyName("quality")]
     public V2FlowExecutionDataFlowidTopicQuality Quality { get; set; }
 
 
@@ -64,7 +64,7 @@ public partial class V2FlowExecutionDataFlowidTopicInvokingContext : IEquatable<
     /// <summary>
     /// Gets or Sets Workitem
     /// </summary>
-    [DataMember(Name = "workitem", EmitDefaultValue = false)]
+    [JsonPropertyName("workitem")]
     public V2FlowExecutionDataFlowidTopicWorkitem Workitem { get; set; }
 
 

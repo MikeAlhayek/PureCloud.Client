@@ -1,4 +1,3 @@
-using System.Runtime.Serialization;
 using System.Text;
 using System.Text.Json.Serialization;
 
@@ -7,7 +6,7 @@ namespace PureCloud.Client.Models;
 /// <summary>
 /// KnowledgeGuestSession
 /// </summary>
-[DataContract]
+
 public partial class KnowledgeGuestSession : IEquatable<KnowledgeGuestSession>
 {
 
@@ -40,7 +39,7 @@ public partial class KnowledgeGuestSession : IEquatable<KnowledgeGuestSession>
     /// Session ID.
     /// </summary>
     /// <value>Session ID.</value>
-    [DataMember(Name = "id", EmitDefaultValue = false)]
+    [JsonPropertyName("id")]
     public string Id { get; private set; }
 
 
@@ -49,7 +48,7 @@ public partial class KnowledgeGuestSession : IEquatable<KnowledgeGuestSession>
     /// The app where the session is started.
     /// </summary>
     /// <value>The app where the session is started.</value>
-    [DataMember(Name = "app", EmitDefaultValue = false)]
+    [JsonPropertyName("app")]
     public KnowledgeGuestSessionApp App { get; set; }
 
 
@@ -58,7 +57,7 @@ public partial class KnowledgeGuestSession : IEquatable<KnowledgeGuestSession>
     /// An arbitrary ID for the customer starting the session. Used to track multiple sessions started by the same customer.
     /// </summary>
     /// <value>An arbitrary ID for the customer starting the session. Used to track multiple sessions started by the same customer.</value>
-    [DataMember(Name = "customerId", EmitDefaultValue = false)]
+    [JsonPropertyName("customerId")]
     public string CustomerId { get; set; }
 
 
@@ -67,7 +66,7 @@ public partial class KnowledgeGuestSession : IEquatable<KnowledgeGuestSession>
     /// URL of the page where the session is started.
     /// </summary>
     /// <value>URL of the page where the session is started.</value>
-    [DataMember(Name = "pageUrl", EmitDefaultValue = false)]
+    [JsonPropertyName("pageUrl")]
     public string PageUrl { get; set; }
 
 
@@ -76,7 +75,7 @@ public partial class KnowledgeGuestSession : IEquatable<KnowledgeGuestSession>
     /// The session contexts.
     /// </summary>
     /// <value>The session contexts.</value>
-    [DataMember(Name = "contexts", EmitDefaultValue = false)]
+    [JsonPropertyName("contexts")]
     public List<KnowledgeGuestSessionContext> Contexts { get; set; }
 
 
@@ -85,7 +84,7 @@ public partial class KnowledgeGuestSession : IEquatable<KnowledgeGuestSession>
     /// Journey session ID. Used to get the segments of the customer to filter search results.
     /// </summary>
     /// <value>Journey session ID. Used to get the segments of the customer to filter search results.</value>
-    [DataMember(Name = "journeySessionId", EmitDefaultValue = false)]
+    [JsonPropertyName("journeySessionId")]
     public string JourneySessionId { get; set; }
 
 

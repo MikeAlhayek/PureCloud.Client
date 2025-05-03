@@ -7,14 +7,14 @@ namespace PureCloud.Client.Models;
 /// <summary>
 /// SearchRequest
 /// </summary>
-[DataContract]
+
 public partial class SearchRequest : IEquatable<SearchRequest>
 {
     /// <summary>
     /// The sort order for results
     /// </summary>
     /// <value>The sort order for results</value>
-    [JsonConverter(typeof(JsonStringEnumConverter))]
+    
     public enum SortOrderEnum
     {
         /// <summary>
@@ -47,7 +47,7 @@ public partial class SearchRequest : IEquatable<SearchRequest>
     /// The sort order for results
     /// </summary>
     /// <value>The sort order for results</value>
-    [DataMember(Name = "sortOrder", EmitDefaultValue = false)]
+    [JsonPropertyName("sortOrder")]
     public SortOrderEnum? SortOrder { get; set; }
 
     /// <summary>
@@ -91,7 +91,7 @@ public partial class SearchRequest : IEquatable<SearchRequest>
     /// The field in the resource that you want to sort the results by
     /// </summary>
     /// <value>The field in the resource that you want to sort the results by</value>
-    [DataMember(Name = "sortBy", EmitDefaultValue = false)]
+    [JsonPropertyName("sortBy")]
     public string SortBy { get; set; }
 
 
@@ -100,7 +100,7 @@ public partial class SearchRequest : IEquatable<SearchRequest>
     /// The number of results per page
     /// </summary>
     /// <value>The number of results per page</value>
-    [DataMember(Name = "pageSize", EmitDefaultValue = false)]
+    [JsonPropertyName("pageSize")]
     public int? PageSize { get; set; }
 
 
@@ -109,7 +109,7 @@ public partial class SearchRequest : IEquatable<SearchRequest>
     /// The page of resources you want to retrieve
     /// </summary>
     /// <value>The page of resources you want to retrieve</value>
-    [DataMember(Name = "pageNumber", EmitDefaultValue = false)]
+    [JsonPropertyName("pageNumber")]
     public int? PageNumber { get; set; }
 
 
@@ -118,7 +118,7 @@ public partial class SearchRequest : IEquatable<SearchRequest>
     /// Multi-value sort order, list of multiple sort values
     /// </summary>
     /// <value>Multi-value sort order, list of multiple sort values</value>
-    [DataMember(Name = "sort", EmitDefaultValue = false)]
+    [JsonPropertyName("sort")]
     public List<SearchSort> Sort { get; set; }
 
 
@@ -127,7 +127,7 @@ public partial class SearchRequest : IEquatable<SearchRequest>
     /// A List of strings.  Possible values are any field in the resource you are searching on.  The other option is to use ALL_FIELDS, when this is provided all fields in the resource will be returned in the search results.
     /// </summary>
     /// <value>A List of strings.  Possible values are any field in the resource you are searching on.  The other option is to use ALL_FIELDS, when this is provided all fields in the resource will be returned in the search results.</value>
-    [DataMember(Name = "returnFields", EmitDefaultValue = false)]
+    [JsonPropertyName("returnFields")]
     public List<string> ReturnFields { get; set; }
 
 
@@ -136,7 +136,7 @@ public partial class SearchRequest : IEquatable<SearchRequest>
     /// Provides more details about a specified resource
     /// </summary>
     /// <value>Provides more details about a specified resource</value>
-    [DataMember(Name = "expand", EmitDefaultValue = false)]
+    [JsonPropertyName("expand")]
     public List<string> Expand { get; set; }
 
 
@@ -145,7 +145,7 @@ public partial class SearchRequest : IEquatable<SearchRequest>
     /// Resource domain type to search
     /// </summary>
     /// <value>Resource domain type to search</value>
-    [DataMember(Name = "types", EmitDefaultValue = false)]
+    [JsonPropertyName("types")]
     public List<string> Types { get; set; }
 
 
@@ -154,7 +154,7 @@ public partial class SearchRequest : IEquatable<SearchRequest>
     /// The search criteria
     /// </summary>
     /// <value>The search criteria</value>
-    [DataMember(Name = "query", EmitDefaultValue = false)]
+    [JsonPropertyName("query")]
     public List<SearchCriteria> Query { get; set; }
 
 
@@ -163,7 +163,7 @@ public partial class SearchRequest : IEquatable<SearchRequest>
     /// Aggregation criteria
     /// </summary>
     /// <value>Aggregation criteria</value>
-    [DataMember(Name = "aggregations", EmitDefaultValue = false)]
+    [JsonPropertyName("aggregations")]
     public List<SearchAggregation> Aggregations { get; set; }
 
 

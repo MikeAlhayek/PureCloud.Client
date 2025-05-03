@@ -7,14 +7,14 @@ namespace PureCloud.Client.Models;
 /// <summary>
 /// Celebration
 /// </summary>
-[DataContract]
+
 public partial class Celebration : IEquatable<Celebration>
 {
     /// <summary>
     /// The Celebration Type
     /// </summary>
     /// <value>The Celebration Type</value>
-    [JsonConverter(typeof(JsonStringEnumConverter))]
+    
     public enum TypeEnum
     {
         /// <summary>
@@ -41,7 +41,7 @@ public partial class Celebration : IEquatable<Celebration>
     /// The Celebration Type
     /// </summary>
     /// <value>The Celebration Type</value>
-    [DataMember(Name = "type", EmitDefaultValue = false)]
+    [JsonPropertyName("type")]
     public TypeEnum? Type { get; set; }
     /// <summary>
     /// Initializes a new instance of the <see cref="Celebration" /> class.
@@ -71,7 +71,7 @@ public partial class Celebration : IEquatable<Celebration>
     /// The globally unique identifier for the object.
     /// </summary>
     /// <value>The globally unique identifier for the object.</value>
-    [DataMember(Name = "id", EmitDefaultValue = false)]
+    [JsonPropertyName("id")]
     public string Id { get; private set; }
 
 
@@ -80,7 +80,7 @@ public partial class Celebration : IEquatable<Celebration>
     /// The Recipient of the celebration
     /// </summary>
     /// <value>The Recipient of the celebration</value>
-    [DataMember(Name = "recipient", EmitDefaultValue = false)]
+    [JsonPropertyName("recipient")]
     public UserReference Recipient { get; set; }
 
 
@@ -89,7 +89,7 @@ public partial class Celebration : IEquatable<Celebration>
     /// The creator of the celebration
     /// </summary>
     /// <value>The creator of the celebration</value>
-    [DataMember(Name = "createdBy", EmitDefaultValue = false)]
+    [JsonPropertyName("createdBy")]
     public UserReference CreatedBy { get; set; }
 
 
@@ -98,7 +98,7 @@ public partial class Celebration : IEquatable<Celebration>
     /// The date the celebration was created on. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z
     /// </summary>
     /// <value>The date the celebration was created on. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z</value>
-    [DataMember(Name = "dateCreated", EmitDefaultValue = false)]
+    [JsonPropertyName("dateCreated")]
     public DateTime? DateCreated { get; set; }
 
 
@@ -109,7 +109,7 @@ public partial class Celebration : IEquatable<Celebration>
     /// The Celebration title
     /// </summary>
     /// <value>The Celebration title</value>
-    [DataMember(Name = "title", EmitDefaultValue = false)]
+    [JsonPropertyName("title")]
     public string Title { get; set; }
 
 
@@ -118,7 +118,7 @@ public partial class Celebration : IEquatable<Celebration>
     /// The Celebration note
     /// </summary>
     /// <value>The Celebration note</value>
-    [DataMember(Name = "note", EmitDefaultValue = false)]
+    [JsonPropertyName("note")]
     public string Note { get; set; }
 
 
@@ -127,7 +127,7 @@ public partial class Celebration : IEquatable<Celebration>
     /// The celebration&#39;s source entity
     /// </summary>
     /// <value>The celebration&#39;s source entity</value>
-    [DataMember(Name = "sourceEntity", EmitDefaultValue = false)]
+    [JsonPropertyName("sourceEntity")]
     public SourceEntity SourceEntity { get; set; }
 
 
@@ -136,7 +136,7 @@ public partial class Celebration : IEquatable<Celebration>
     /// The URI for this object
     /// </summary>
     /// <value>The URI for this object</value>
-    [DataMember(Name = "selfUri", EmitDefaultValue = false)]
+    [JsonPropertyName("selfUri")]
     public string SelfUri { get; private set; }
 
 

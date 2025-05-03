@@ -7,14 +7,14 @@ namespace PureCloud.Client.Models;
 /// <summary>
 /// SocialMediaAsyncDetailQuery
 /// </summary>
-[DataContract]
+
 public partial class SocialMediaAsyncDetailQuery : IEquatable<SocialMediaAsyncDetailQuery>
 {
     /// <summary>
     /// Sorting of results based on time
     /// </summary>
     /// <value>Sorting of results based on time</value>
-    [JsonConverter(typeof(JsonStringEnumConverter))]
+    
     public enum OrderEnum
     {
         /// <summary>
@@ -41,7 +41,7 @@ public partial class SocialMediaAsyncDetailQuery : IEquatable<SocialMediaAsyncDe
     /// Sorting of results based on time
     /// </summary>
     /// <value>Sorting of results based on time</value>
-    [DataMember(Name = "order", EmitDefaultValue = false)]
+    [JsonPropertyName("order")]
     public OrderEnum? Order { get; set; }
 
     /// <summary>
@@ -73,7 +73,7 @@ public partial class SocialMediaAsyncDetailQuery : IEquatable<SocialMediaAsyncDe
     /// Behaves like one clause in a SQL WHERE. Specifies the date and time range of data being queried. Intervals are represented as an ISO-8601 string. For example: YYYY-MM-DDThh:mm:ss/YYYY-MM-DDThh:mm:ss
     /// </summary>
     /// <value>Behaves like one clause in a SQL WHERE. Specifies the date and time range of data being queried. Intervals are represented as an ISO-8601 string. For example: YYYY-MM-DDThh:mm:ss/YYYY-MM-DDThh:mm:ss</value>
-    [DataMember(Name = "interval", EmitDefaultValue = false)]
+    [JsonPropertyName("interval")]
     public string Interval { get; set; }
 
 
@@ -82,7 +82,7 @@ public partial class SocialMediaAsyncDetailQuery : IEquatable<SocialMediaAsyncDe
     /// Time zone context used to calculate response intervals (this allows resolving DST changes). The interval offset is used even when timeZone is specified. Default is UTC. Time zones are represented as a string of the zone name as found in the IANA time zone database. For example: UTC, Etc/UTC, or Europe/London
     /// </summary>
     /// <value>Time zone context used to calculate response intervals (this allows resolving DST changes). The interval offset is used even when timeZone is specified. Default is UTC. Time zones are represented as a string of the zone name as found in the IANA time zone database. For example: UTC, Etc/UTC, or Europe/London</value>
-    [DataMember(Name = "timeZone", EmitDefaultValue = false)]
+    [JsonPropertyName("timeZone")]
     public string TimeZone { get; set; }
 
 
@@ -91,7 +91,7 @@ public partial class SocialMediaAsyncDetailQuery : IEquatable<SocialMediaAsyncDe
     /// Behaves like a SQL WHERE clause. This is ANDed with the interval parameter. Expresses boolean logical predicates as well as dimensional filters
     /// </summary>
     /// <value>Behaves like a SQL WHERE clause. This is ANDed with the interval parameter. Expresses boolean logical predicates as well as dimensional filters</value>
-    [DataMember(Name = "filter", EmitDefaultValue = false)]
+    [JsonPropertyName("filter")]
     public SocialMediaQueryFilter Filter { get; set; }
 
 
@@ -100,7 +100,7 @@ public partial class SocialMediaAsyncDetailQuery : IEquatable<SocialMediaAsyncDe
     /// The number of results per page
     /// </summary>
     /// <value>The number of results per page</value>
-    [DataMember(Name = "pageSize", EmitDefaultValue = false)]
+    [JsonPropertyName("pageSize")]
     public int? PageSize { get; set; }
 
 

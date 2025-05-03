@@ -605,7 +605,7 @@ public class ApiClient
     /// </summary>
     /// <returns>Return changed from RestClient to Void . Since no purpose to expose underlying RestClient to Consumer and 
     ///  design changed to One Restclient per API</returns>
-    public void setBasePath(string basePath)
+    public void SetBasePath(string basePath)
     {
         if (string.IsNullOrEmpty(basePath))
         {
@@ -621,9 +621,9 @@ public class ApiClient
     /// </summary>
     /// <returns>Return changed from RestClient to Void . Since no purpose to expose underlying RestClient to Consumer and 
     ///  design changed to One Restclient per API</returns>
-    public void setBasePath(PureCloudRegionHosts region)
+    public void SetBasePath(PureCloudRegionHosts region)
     {
-        setBasePath(region.GetDescription());
+        SetBasePath(region.GetDescription());
     }
 
     /// <summary>

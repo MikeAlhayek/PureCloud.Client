@@ -7,14 +7,14 @@ namespace PureCloud.Client.Models;
 /// <summary>
 /// Results of a matching expression
 /// </summary>
-[DataContract]
+
 public partial class MatchCriteriaTestResult : IEquatable<MatchCriteriaTestResult>
 {
     /// <summary>
     /// The type of operation to perform for matching check
     /// </summary>
     /// <value>The type of operation to perform for matching check</value>
-    [JsonConverter(typeof(JsonStringEnumConverter))]
+    
     public enum OperatorEnum
     {
         /// <summary>
@@ -101,7 +101,7 @@ public partial class MatchCriteriaTestResult : IEquatable<MatchCriteriaTestResul
     /// The type of operation to perform for matching check
     /// </summary>
     /// <value>The type of operation to perform for matching check</value>
-    [DataMember(Name = "operator", EmitDefaultValue = false)]
+    [JsonPropertyName("operator")]
     public OperatorEnum? Operator { get; set; }
     /// <summary>
     /// Initializes a new instance of the <see cref="MatchCriteriaTestResult" /> class.
@@ -131,7 +131,7 @@ public partial class MatchCriteriaTestResult : IEquatable<MatchCriteriaTestResul
     /// The Goessner json path of the field to match
     /// </summary>
     /// <value>The Goessner json path of the field to match</value>
-    [DataMember(Name = "jsonPath", EmitDefaultValue = false)]
+    [JsonPropertyName("jsonPath")]
     public string JsonPath { get; set; }
 
 
@@ -142,7 +142,7 @@ public partial class MatchCriteriaTestResult : IEquatable<MatchCriteriaTestResul
     /// The value to match on. Only one of value and values can be included
     /// </summary>
     /// <value>The value to match on. Only one of value and values can be included</value>
-    [DataMember(Name = "value", EmitDefaultValue = false)]
+    [JsonPropertyName("value")]
     public object Value { get; set; }
 
 
@@ -151,7 +151,7 @@ public partial class MatchCriteriaTestResult : IEquatable<MatchCriteriaTestResul
     /// The list of values to match on. Only one of value and values can be included
     /// </summary>
     /// <value>The list of values to match on. Only one of value and values can be included</value>
-    [DataMember(Name = "values", EmitDefaultValue = false)]
+    [JsonPropertyName("values")]
     public List<object> Values { get; set; }
 
 
@@ -160,7 +160,7 @@ public partial class MatchCriteriaTestResult : IEquatable<MatchCriteriaTestResul
     /// The generated json path condition
     /// </summary>
     /// <value>The generated json path condition</value>
-    [DataMember(Name = "generatedJsonPathCondition", EmitDefaultValue = false)]
+    [JsonPropertyName("generatedJsonPathCondition")]
     public string GeneratedJsonPathCondition { get; set; }
 
 
@@ -169,7 +169,7 @@ public partial class MatchCriteriaTestResult : IEquatable<MatchCriteriaTestResul
     /// Did the generated json path condition match
     /// </summary>
     /// <value>Did the generated json path condition match</value>
-    [DataMember(Name = "match", EmitDefaultValue = false)]
+    [JsonPropertyName("match")]
     public bool? Match { get; set; }
 
 
@@ -178,7 +178,7 @@ public partial class MatchCriteriaTestResult : IEquatable<MatchCriteriaTestResul
     /// The json paths and their values that were compared
     /// </summary>
     /// <value>The json paths and their values that were compared</value>
-    [DataMember(Name = "jsonPathExtraction", EmitDefaultValue = false)]
+    [JsonPropertyName("jsonPathExtraction")]
     public List<MatchTestResult> JsonPathExtraction { get; set; }
 
 

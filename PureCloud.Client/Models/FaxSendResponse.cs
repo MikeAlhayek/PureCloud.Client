@@ -7,13 +7,13 @@ namespace PureCloud.Client.Models;
 /// <summary>
 /// FaxSendResponse
 /// </summary>
-[DataContract]
+
 public partial class FaxSendResponse : IEquatable<FaxSendResponse>
 {
     /// <summary>
     /// Gets or Sets UploadMethodType
     /// </summary>
-    [JsonConverter(typeof(JsonStringEnumConverter))]
+    
     public enum UploadMethodTypeEnum
     {
         /// <summary>
@@ -39,7 +39,7 @@ public partial class FaxSendResponse : IEquatable<FaxSendResponse>
     /// <summary>
     /// Gets or Sets UploadMethodType
     /// </summary>
-    [DataMember(Name = "uploadMethodType", EmitDefaultValue = false)]
+    [JsonPropertyName("uploadMethodType")]
     public UploadMethodTypeEnum? UploadMethodType { get; set; }
     /// <summary>
     /// Initializes a new instance of the <see cref="FaxSendResponse" /> class.
@@ -63,7 +63,7 @@ public partial class FaxSendResponse : IEquatable<FaxSendResponse>
     /// The globally unique identifier for the object.
     /// </summary>
     /// <value>The globally unique identifier for the object.</value>
-    [DataMember(Name = "id", EmitDefaultValue = false)]
+    [JsonPropertyName("id")]
     public string Id { get; private set; }
 
 
@@ -71,7 +71,7 @@ public partial class FaxSendResponse : IEquatable<FaxSendResponse>
     /// <summary>
     /// Gets or Sets Name
     /// </summary>
-    [DataMember(Name = "name", EmitDefaultValue = false)]
+    [JsonPropertyName("name")]
     public string Name { get; set; }
 
 
@@ -79,7 +79,7 @@ public partial class FaxSendResponse : IEquatable<FaxSendResponse>
     /// <summary>
     /// Gets or Sets UploadDestinationUri
     /// </summary>
-    [DataMember(Name = "uploadDestinationUri", EmitDefaultValue = false)]
+    [JsonPropertyName("uploadDestinationUri")]
     public string UploadDestinationUri { get; set; }
 
 
@@ -89,7 +89,7 @@ public partial class FaxSendResponse : IEquatable<FaxSendResponse>
     /// <summary>
     /// Gets or Sets Headers
     /// </summary>
-    [DataMember(Name = "headers", EmitDefaultValue = false)]
+    [JsonPropertyName("headers")]
     public Dictionary<string, string> Headers { get; set; }
 
 
@@ -98,7 +98,7 @@ public partial class FaxSendResponse : IEquatable<FaxSendResponse>
     /// The URI for this object
     /// </summary>
     /// <value>The URI for this object</value>
-    [DataMember(Name = "selfUri", EmitDefaultValue = false)]
+    [JsonPropertyName("selfUri")]
     public string SelfUri { get; private set; }
 
 

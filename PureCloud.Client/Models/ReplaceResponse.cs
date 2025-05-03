@@ -7,13 +7,13 @@ namespace PureCloud.Client.Models;
 /// <summary>
 /// ReplaceResponse
 /// </summary>
-[DataContract]
+
 public partial class ReplaceResponse : IEquatable<ReplaceResponse>
 {
     /// <summary>
     /// Gets or Sets UploadMethod
     /// </summary>
-    [JsonConverter(typeof(JsonStringEnumConverter))]
+    
     public enum UploadMethodEnum
     {
         /// <summary>
@@ -39,7 +39,7 @@ public partial class ReplaceResponse : IEquatable<ReplaceResponse>
     /// <summary>
     /// Gets or Sets UploadMethod
     /// </summary>
-    [DataMember(Name = "uploadMethod", EmitDefaultValue = false)]
+    [JsonPropertyName("uploadMethod")]
     public UploadMethodEnum? UploadMethod { get; set; }
     /// <summary>
     /// Initializes a new instance of the <see cref="ReplaceResponse" /> class.
@@ -66,7 +66,7 @@ public partial class ReplaceResponse : IEquatable<ReplaceResponse>
     /// <summary>
     /// Gets or Sets Id
     /// </summary>
-    [DataMember(Name = "id", EmitDefaultValue = false)]
+    [JsonPropertyName("id")]
     public string Id { get; set; }
 
 
@@ -74,7 +74,7 @@ public partial class ReplaceResponse : IEquatable<ReplaceResponse>
     /// <summary>
     /// Gets or Sets Name
     /// </summary>
-    [DataMember(Name = "name", EmitDefaultValue = false)]
+    [JsonPropertyName("name")]
     public string Name { get; set; }
 
 
@@ -82,7 +82,7 @@ public partial class ReplaceResponse : IEquatable<ReplaceResponse>
     /// <summary>
     /// Gets or Sets ChangeNumber
     /// </summary>
-    [DataMember(Name = "changeNumber", EmitDefaultValue = false)]
+    [JsonPropertyName("changeNumber")]
     public int? ChangeNumber { get; set; }
 
 
@@ -90,7 +90,7 @@ public partial class ReplaceResponse : IEquatable<ReplaceResponse>
     /// <summary>
     /// Gets or Sets UploadStatus
     /// </summary>
-    [DataMember(Name = "uploadStatus", EmitDefaultValue = false)]
+    [JsonPropertyName("uploadStatus")]
     public DomainEntityRef UploadStatus { get; set; }
 
 
@@ -98,7 +98,7 @@ public partial class ReplaceResponse : IEquatable<ReplaceResponse>
     /// <summary>
     /// Gets or Sets UploadDestinationUri
     /// </summary>
-    [DataMember(Name = "uploadDestinationUri", EmitDefaultValue = false)]
+    [JsonPropertyName("uploadDestinationUri")]
     public string UploadDestinationUri { get; set; }
 
 

@@ -7,14 +7,14 @@ namespace PureCloud.Client.Models;
 /// <summary>
 /// AgentBidWorkPlanOverrideRequest
 /// </summary>
-[DataContract]
+
 public partial class AgentBidWorkPlanOverrideRequest : IEquatable<AgentBidWorkPlanOverrideRequest>
 {
     /// <summary>
     /// The reason for overriding the assigned work plan. This must be null if overrideWorkPlanId is not specified
     /// </summary>
     /// <value>The reason for overriding the assigned work plan. This must be null if overrideWorkPlanId is not specified</value>
-    [JsonConverter(typeof(JsonStringEnumConverter))]
+    
     public enum OverrideReasonEnum
     {
         /// <summary>
@@ -53,7 +53,7 @@ public partial class AgentBidWorkPlanOverrideRequest : IEquatable<AgentBidWorkPl
     /// The reason for overriding the assigned work plan. This must be null if overrideWorkPlanId is not specified
     /// </summary>
     /// <value>The reason for overriding the assigned work plan. This must be null if overrideWorkPlanId is not specified</value>
-    [DataMember(Name = "overrideReason", EmitDefaultValue = false)]
+    [JsonPropertyName("overrideReason")]
     public OverrideReasonEnum? OverrideReason { get; set; }
 
     /// <summary>
@@ -81,7 +81,7 @@ public partial class AgentBidWorkPlanOverrideRequest : IEquatable<AgentBidWorkPl
     /// The ID of agent
     /// </summary>
     /// <value>The ID of agent</value>
-    [DataMember(Name = "agentId", EmitDefaultValue = false)]
+    [JsonPropertyName("agentId")]
     public string AgentId { get; set; }
 
 
@@ -90,7 +90,7 @@ public partial class AgentBidWorkPlanOverrideRequest : IEquatable<AgentBidWorkPl
     /// The ID of the work plan that overrides the assigned work plan for the agent
     /// </summary>
     /// <value>The ID of the work plan that overrides the assigned work plan for the agent</value>
-    [DataMember(Name = "overrideWorkPlanId", EmitDefaultValue = false)]
+    [JsonPropertyName("overrideWorkPlanId")]
     public string OverrideWorkPlanId { get; set; }
 
 

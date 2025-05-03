@@ -1,12 +1,12 @@
-using System.Runtime.Serialization;
 using System.Text;
+using System.Text.Json.Serialization;
 
 namespace PureCloud.Client.Models;
 
 /// <summary>
 /// EdgeRebootParameters
 /// </summary>
-[DataContract]
+
 public partial class EdgeRebootParameters : IEquatable<EdgeRebootParameters>
 {
     /// <summary>
@@ -25,7 +25,7 @@ public partial class EdgeRebootParameters : IEquatable<EdgeRebootParameters>
     /// The number of seconds to wait for call draining to complete before initiating the reboot. A value of 0 will prevent call draining and all calls will disconnect immediately.
     /// </summary>
     /// <value>The number of seconds to wait for call draining to complete before initiating the reboot. A value of 0 will prevent call draining and all calls will disconnect immediately.</value>
-    [DataMember(Name = "callDrainingWaitTimeSeconds", EmitDefaultValue = false)]
+    [JsonPropertyName("callDrainingWaitTimeSeconds")]
     public int? CallDrainingWaitTimeSeconds { get; set; }
 
 

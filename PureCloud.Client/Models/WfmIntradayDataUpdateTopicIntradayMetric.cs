@@ -7,13 +7,13 @@ namespace PureCloud.Client.Models;
 /// <summary>
 /// WfmIntradayDataUpdateTopicIntradayMetric
 /// </summary>
-[DataContract]
+
 public partial class WfmIntradayDataUpdateTopicIntradayMetric : IEquatable<WfmIntradayDataUpdateTopicIntradayMetric>
 {
     /// <summary>
     /// Gets or Sets Category
     /// </summary>
-    [JsonConverter(typeof(JsonStringEnumConverter))]
+    
     public enum CategoryEnum
     {
         /// <summary>
@@ -63,7 +63,7 @@ public partial class WfmIntradayDataUpdateTopicIntradayMetric : IEquatable<WfmIn
     /// <summary>
     /// Gets or Sets Category
     /// </summary>
-    [DataMember(Name = "category", EmitDefaultValue = false)]
+    [JsonPropertyName("category")]
     public CategoryEnum? Category { get; set; }
     /// <summary>
     /// Initializes a new instance of the <see cref="WfmIntradayDataUpdateTopicIntradayMetric" /> class.
@@ -84,7 +84,7 @@ public partial class WfmIntradayDataUpdateTopicIntradayMetric : IEquatable<WfmIn
     /// <summary>
     /// Gets or Sets Version
     /// </summary>
-    [DataMember(Name = "version", EmitDefaultValue = false)]
+    [JsonPropertyName("version")]
     public string Version { get; set; }
 
 

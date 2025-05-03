@@ -1,12 +1,12 @@
-using System.Runtime.Serialization;
 using System.Text;
+using System.Text.Json.Serialization;
 
 namespace PureCloud.Client.Models;
 
 /// <summary>
 /// OAuthScopeListing
 /// </summary>
-[DataContract]
+
 public partial class OAuthScopeListing : IEquatable<OAuthScopeListing>
 {
     /// <summary>
@@ -28,7 +28,7 @@ public partial class OAuthScopeListing : IEquatable<OAuthScopeListing>
     /// <summary>
     /// Gets or Sets Total
     /// </summary>
-    [DataMember(Name = "total", EmitDefaultValue = false)]
+    [JsonPropertyName("total")]
     public long? Total { get; set; }
 
 
@@ -36,7 +36,7 @@ public partial class OAuthScopeListing : IEquatable<OAuthScopeListing>
     /// <summary>
     /// Gets or Sets Entities
     /// </summary>
-    [DataMember(Name = "entities", EmitDefaultValue = false)]
+    [JsonPropertyName("entities")]
     public List<OAuthScope> Entities { get; set; }
 
 
@@ -44,7 +44,7 @@ public partial class OAuthScopeListing : IEquatable<OAuthScopeListing>
     /// <summary>
     /// Gets or Sets SelfUri
     /// </summary>
-    [DataMember(Name = "selfUri", EmitDefaultValue = false)]
+    [JsonPropertyName("selfUri")]
     public string SelfUri { get; set; }
 
 

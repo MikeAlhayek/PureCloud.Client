@@ -7,14 +7,14 @@ namespace PureCloud.Client.Models;
 /// <summary>
 /// CelebrationStateParam
 /// </summary>
-[DataContract]
+
 public partial class CelebrationStateParam : IEquatable<CelebrationStateParam>
 {
     /// <summary>
     /// The state of the celebration
     /// </summary>
     /// <value>The state of the celebration</value>
-    [JsonConverter(typeof(JsonStringEnumConverter))]
+    
     public enum StateEnum
     {
         /// <summary>
@@ -35,7 +35,7 @@ public partial class CelebrationStateParam : IEquatable<CelebrationStateParam>
     /// The state of the celebration
     /// </summary>
     /// <value>The state of the celebration</value>
-    [DataMember(Name = "state", EmitDefaultValue = false)]
+    [JsonPropertyName("state")]
     public StateEnum? State { get; set; }
     /// <summary>
     /// Initializes a new instance of the <see cref="CelebrationStateParam" /> class.

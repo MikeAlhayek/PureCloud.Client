@@ -1,4 +1,3 @@
-using System.Runtime.Serialization;
 using System.Text;
 using System.Text.Json.Serialization;
 
@@ -7,7 +6,7 @@ namespace PureCloud.Client.Models;
 /// <summary>
 /// User input data used in a bot flow turn.
 /// </summary>
-[DataContract]
+
 public partial class TextBotUserInputAlternative : IEquatable<TextBotUserInputAlternative>
 {
 
@@ -32,7 +31,7 @@ public partial class TextBotUserInputAlternative : IEquatable<TextBotUserInputAl
     /// The user input transcript.
     /// </summary>
     /// <value>The user input transcript.</value>
-    [DataMember(Name = "transcript", EmitDefaultValue = false)]
+    [JsonPropertyName("transcript")]
     public TextBotTranscript Transcript { get; set; }
 
 

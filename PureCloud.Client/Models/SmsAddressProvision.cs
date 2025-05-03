@@ -1,4 +1,3 @@
-using System.Runtime.Serialization;
 using System.Text;
 using System.Text.Json.Serialization;
 
@@ -7,7 +6,7 @@ namespace PureCloud.Client.Models;
 /// <summary>
 /// SmsAddressProvision
 /// </summary>
-[DataContract]
+
 public partial class SmsAddressProvision : IEquatable<SmsAddressProvision>
 {
 
@@ -44,7 +43,7 @@ public partial class SmsAddressProvision : IEquatable<SmsAddressProvision>
     /// The globally unique identifier for the object.
     /// </summary>
     /// <value>The globally unique identifier for the object.</value>
-    [DataMember(Name = "id", EmitDefaultValue = false)]
+    [JsonPropertyName("id")]
     public string Id { get; private set; }
 
 
@@ -53,7 +52,7 @@ public partial class SmsAddressProvision : IEquatable<SmsAddressProvision>
     /// Name associated with this address
     /// </summary>
     /// <value>Name associated with this address</value>
-    [DataMember(Name = "name", EmitDefaultValue = false)]
+    [JsonPropertyName("name")]
     public string Name { get; set; }
 
 
@@ -62,7 +61,7 @@ public partial class SmsAddressProvision : IEquatable<SmsAddressProvision>
     /// The number and street address where this address is located.
     /// </summary>
     /// <value>The number and street address where this address is located.</value>
-    [DataMember(Name = "street", EmitDefaultValue = false)]
+    [JsonPropertyName("street")]
     public string Street { get; set; }
 
 
@@ -71,7 +70,7 @@ public partial class SmsAddressProvision : IEquatable<SmsAddressProvision>
     /// The city in which this address is in
     /// </summary>
     /// <value>The city in which this address is in</value>
-    [DataMember(Name = "city", EmitDefaultValue = false)]
+    [JsonPropertyName("city")]
     public string City { get; set; }
 
 
@@ -80,7 +79,7 @@ public partial class SmsAddressProvision : IEquatable<SmsAddressProvision>
     /// The state or region this address is in
     /// </summary>
     /// <value>The state or region this address is in</value>
-    [DataMember(Name = "region", EmitDefaultValue = false)]
+    [JsonPropertyName("region")]
     public string Region { get; set; }
 
 
@@ -89,7 +88,7 @@ public partial class SmsAddressProvision : IEquatable<SmsAddressProvision>
     /// The postal code this address is in
     /// </summary>
     /// <value>The postal code this address is in</value>
-    [DataMember(Name = "postalCode", EmitDefaultValue = false)]
+    [JsonPropertyName("postalCode")]
     public string PostalCode { get; set; }
 
 
@@ -98,7 +97,7 @@ public partial class SmsAddressProvision : IEquatable<SmsAddressProvision>
     /// The ISO country code of this address
     /// </summary>
     /// <value>The ISO country code of this address</value>
-    [DataMember(Name = "countryCode", EmitDefaultValue = false)]
+    [JsonPropertyName("countryCode")]
     public string CountryCode { get; set; }
 
 
@@ -107,7 +106,7 @@ public partial class SmsAddressProvision : IEquatable<SmsAddressProvision>
     /// This is used when the address is created. If the value is not set or true, then the system will, if necessary, auto-correct the address you provide. Set this value to false if the system should not auto-correct the address.
     /// </summary>
     /// <value>This is used when the address is created. If the value is not set or true, then the system will, if necessary, auto-correct the address you provide. Set this value to false if the system should not auto-correct the address.</value>
-    [DataMember(Name = "autoCorrectAddress", EmitDefaultValue = false)]
+    [JsonPropertyName("autoCorrectAddress")]
     public bool? AutoCorrectAddress { get; set; }
 
 
@@ -116,7 +115,7 @@ public partial class SmsAddressProvision : IEquatable<SmsAddressProvision>
     /// The URI for this object
     /// </summary>
     /// <value>The URI for this object</value>
-    [DataMember(Name = "selfUri", EmitDefaultValue = false)]
+    [JsonPropertyName("selfUri")]
     public string SelfUri { get; private set; }
 
 

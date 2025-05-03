@@ -7,14 +7,14 @@ namespace PureCloud.Client.Models;
 /// <summary>
 /// RoutePathRequest
 /// </summary>
-[DataContract]
+
 public partial class RoutePathRequest : IEquatable<RoutePathRequest>
 {
     /// <summary>
     /// The media type of the given queue to associate with the route path
     /// </summary>
     /// <value>The media type of the given queue to associate with the route path</value>
-    [JsonConverter(typeof(JsonStringEnumConverter))]
+    
     public enum MediaTypeEnum
     {
         /// <summary>
@@ -65,7 +65,7 @@ public partial class RoutePathRequest : IEquatable<RoutePathRequest>
     /// The media type of the given queue to associate with the route path
     /// </summary>
     /// <value>The media type of the given queue to associate with the route path</value>
-    [DataMember(Name = "mediaType", EmitDefaultValue = false)]
+    [JsonPropertyName("mediaType")]
     public MediaTypeEnum? MediaType { get; set; }
 
     /// <summary>
@@ -97,7 +97,7 @@ public partial class RoutePathRequest : IEquatable<RoutePathRequest>
     /// The ID of the queue to associate with the route path
     /// </summary>
     /// <value>The ID of the queue to associate with the route path</value>
-    [DataMember(Name = "queueId", EmitDefaultValue = false)]
+    [JsonPropertyName("queueId")]
     public string QueueId { get; set; }
 
 
@@ -108,7 +108,7 @@ public partial class RoutePathRequest : IEquatable<RoutePathRequest>
     /// The ID of the language to associate with the route path
     /// </summary>
     /// <value>The ID of the language to associate with the route path</value>
-    [DataMember(Name = "languageId", EmitDefaultValue = false)]
+    [JsonPropertyName("languageId")]
     public string LanguageId { get; set; }
 
 
@@ -117,7 +117,7 @@ public partial class RoutePathRequest : IEquatable<RoutePathRequest>
     /// The set of skill IDs to associate with the route path
     /// </summary>
     /// <value>The set of skill IDs to associate with the route path</value>
-    [DataMember(Name = "skillIds", EmitDefaultValue = false)]
+    [JsonPropertyName("skillIds")]
     public List<string> SkillIds { get; set; }
 
 
@@ -126,7 +126,7 @@ public partial class RoutePathRequest : IEquatable<RoutePathRequest>
     /// The planning group from which to take route paths. This property is only needed if a route path already exists in another planning group.Note that taking a route path from another planning group will modify the other planning group
     /// </summary>
     /// <value>The planning group from which to take route paths. This property is only needed if a route path already exists in another planning group.Note that taking a route path from another planning group will modify the other planning group</value>
-    [DataMember(Name = "sourcePlanningGroup", EmitDefaultValue = false)]
+    [JsonPropertyName("sourcePlanningGroup")]
     public SourcePlanningGroupRequest SourcePlanningGroup { get; set; }
 
 

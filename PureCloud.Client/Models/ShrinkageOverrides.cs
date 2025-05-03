@@ -1,12 +1,12 @@
-using System.Runtime.Serialization;
 using System.Text;
+using System.Text.Json.Serialization;
 
 namespace PureCloud.Client.Models;
 
 /// <summary>
 /// ShrinkageOverrides
 /// </summary>
-[DataContract]
+
 public partial class ShrinkageOverrides : IEquatable<ShrinkageOverrides>
 {
     /// <summary>
@@ -27,7 +27,7 @@ public partial class ShrinkageOverrides : IEquatable<ShrinkageOverrides>
     /// Set true to clear the shrinkage interval overrides
     /// </summary>
     /// <value>Set true to clear the shrinkage interval overrides</value>
-    [DataMember(Name = "clear", EmitDefaultValue = false)]
+    [JsonPropertyName("clear")]
     public bool? Clear { get; set; }
 
 
@@ -36,7 +36,7 @@ public partial class ShrinkageOverrides : IEquatable<ShrinkageOverrides>
     /// List of interval shrinkage overrides
     /// </summary>
     /// <value>List of interval shrinkage overrides</value>
-    [DataMember(Name = "values", EmitDefaultValue = false)]
+    [JsonPropertyName("values")]
     public List<ShrinkageOverride> Values { get; set; }
 
 

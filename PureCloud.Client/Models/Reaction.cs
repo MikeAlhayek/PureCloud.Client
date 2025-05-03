@@ -7,14 +7,14 @@ namespace PureCloud.Client.Models;
 /// <summary>
 /// Reaction
 /// </summary>
-[DataContract]
+
 public partial class Reaction : IEquatable<Reaction>
 {
     /// <summary>
     /// The reaction to take for a given call analysis result.
     /// </summary>
     /// <value>The reaction to take for a given call analysis result.</value>
-    [JsonConverter(typeof(JsonStringEnumConverter))]
+    
     public enum ReactionTypeEnum
     {
         /// <summary>
@@ -53,7 +53,7 @@ public partial class Reaction : IEquatable<Reaction>
     /// The reaction to take for a given call analysis result.
     /// </summary>
     /// <value>The reaction to take for a given call analysis result.</value>
-    [DataMember(Name = "reactionType", EmitDefaultValue = false)]
+    [JsonPropertyName("reactionType")]
     public ReactionTypeEnum? ReactionType { get; set; }
 
     /// <summary>
@@ -81,7 +81,7 @@ public partial class Reaction : IEquatable<Reaction>
     /// Parameter for this reaction. For transfer_flow, this would be the outbound flow id.
     /// </summary>
     /// <value>Parameter for this reaction. For transfer_flow, this would be the outbound flow id.</value>
-    [DataMember(Name = "data", EmitDefaultValue = false)]
+    [JsonPropertyName("data")]
     public string Data { get; set; }
 
 
@@ -90,7 +90,7 @@ public partial class Reaction : IEquatable<Reaction>
     /// Name of the parameter for this reaction. For transfer_flow, this would be the outbound flow name.
     /// </summary>
     /// <value>Name of the parameter for this reaction. For transfer_flow, this would be the outbound flow name.</value>
-    [DataMember(Name = "name", EmitDefaultValue = false)]
+    [JsonPropertyName("name")]
     public string Name { get; set; }
 
 

@@ -1,4 +1,3 @@
-using System.Runtime.Serialization;
 using System.Text;
 using System.Text.Json.Serialization;
 
@@ -7,7 +6,7 @@ namespace PureCloud.Client.Models;
 /// <summary>
 /// WebChatTyping
 /// </summary>
-[DataContract]
+
 public partial class WebChatTyping : IEquatable<WebChatTyping>
 {
 
@@ -38,7 +37,7 @@ public partial class WebChatTyping : IEquatable<WebChatTyping>
     /// The event identifier of this typing indicator event (useful to guard against event re-delivery
     /// </summary>
     /// <value>The event identifier of this typing indicator event (useful to guard against event re-delivery</value>
-    [DataMember(Name = "id", EmitDefaultValue = false)]
+    [JsonPropertyName("id")]
     public string Id { get; set; }
 
 
@@ -47,7 +46,7 @@ public partial class WebChatTyping : IEquatable<WebChatTyping>
     /// The identifier of the conversation
     /// </summary>
     /// <value>The identifier of the conversation</value>
-    [DataMember(Name = "conversation", EmitDefaultValue = false)]
+    [JsonPropertyName("conversation")]
     public WebChatConversation Conversation { get; set; }
 
 
@@ -56,7 +55,7 @@ public partial class WebChatTyping : IEquatable<WebChatTyping>
     /// The member who sent the message
     /// </summary>
     /// <value>The member who sent the message</value>
-    [DataMember(Name = "sender", EmitDefaultValue = false)]
+    [JsonPropertyName("sender")]
     public WebChatMemberInfo Sender { get; set; }
 
 
@@ -65,7 +64,7 @@ public partial class WebChatTyping : IEquatable<WebChatTyping>
     /// The timestamp of the message, in ISO-8601 format
     /// </summary>
     /// <value>The timestamp of the message, in ISO-8601 format</value>
-    [DataMember(Name = "timestamp", EmitDefaultValue = false)]
+    [JsonPropertyName("timestamp")]
     public DateTime? Timestamp { get; set; }
 
 

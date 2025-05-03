@@ -1,12 +1,12 @@
-using System.Runtime.Serialization;
 using System.Text;
+using System.Text.Json.Serialization;
 
 namespace PureCloud.Client.Models;
 
 /// <summary>
 /// ReviewAssessmentResults
 /// </summary>
-[DataContract]
+
 public partial class ReviewAssessmentResults : IEquatable<ReviewAssessmentResults>
 {
     /// <summary>
@@ -27,7 +27,7 @@ public partial class ReviewAssessmentResults : IEquatable<ReviewAssessmentResult
     /// If true, learning assignment results can be seen in detail by assignees
     /// </summary>
     /// <value>If true, learning assignment results can be seen in detail by assignees</value>
-    [DataMember(Name = "byAssignees", EmitDefaultValue = false)]
+    [JsonPropertyName("byAssignees")]
     public bool? ByAssignees { get; set; }
 
 
@@ -36,7 +36,7 @@ public partial class ReviewAssessmentResults : IEquatable<ReviewAssessmentResult
     /// If true, learning assignment results can be seen in detail by people who are eligible to view
     /// </summary>
     /// <value>If true, learning assignment results can be seen in detail by people who are eligible to view</value>
-    [DataMember(Name = "byViewers", EmitDefaultValue = false)]
+    [JsonPropertyName("byViewers")]
     public bool? ByViewers { get; set; }
 
 

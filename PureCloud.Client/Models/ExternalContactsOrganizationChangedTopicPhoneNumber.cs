@@ -1,12 +1,12 @@
-using System.Runtime.Serialization;
 using System.Text;
+using System.Text.Json.Serialization;
 
 namespace PureCloud.Client.Models;
 
 /// <summary>
 /// ExternalContactsOrganizationChangedTopicPhoneNumber
 /// </summary>
-[DataContract]
+
 public partial class ExternalContactsOrganizationChangedTopicPhoneNumber : IEquatable<ExternalContactsOrganizationChangedTopicPhoneNumber>
 {
     /// <summary>
@@ -36,7 +36,7 @@ public partial class ExternalContactsOrganizationChangedTopicPhoneNumber : IEqua
     /// <summary>
     /// Gets or Sets Display
     /// </summary>
-    [DataMember(Name = "display", EmitDefaultValue = false)]
+    [JsonPropertyName("display")]
     public string Display { get; set; }
 
 
@@ -44,7 +44,7 @@ public partial class ExternalContactsOrganizationChangedTopicPhoneNumber : IEqua
     /// <summary>
     /// Gets or Sets Extension
     /// </summary>
-    [DataMember(Name = "extension", EmitDefaultValue = false)]
+    [JsonPropertyName("extension")]
     public long? Extension { get; set; }
 
 
@@ -52,7 +52,7 @@ public partial class ExternalContactsOrganizationChangedTopicPhoneNumber : IEqua
     /// <summary>
     /// Gets or Sets AcceptsSMS
     /// </summary>
-    [DataMember(Name = "acceptsSMS", EmitDefaultValue = false)]
+    [JsonPropertyName("acceptsSMS")]
     public bool? AcceptsSMS { get; set; }
 
 
@@ -60,7 +60,7 @@ public partial class ExternalContactsOrganizationChangedTopicPhoneNumber : IEqua
     /// <summary>
     /// Gets or Sets UserInput
     /// </summary>
-    [DataMember(Name = "userInput", EmitDefaultValue = false)]
+    [JsonPropertyName("userInput")]
     public string UserInput { get; set; }
 
 
@@ -68,7 +68,7 @@ public partial class ExternalContactsOrganizationChangedTopicPhoneNumber : IEqua
     /// <summary>
     /// Gets or Sets E164
     /// </summary>
-    [DataMember(Name = "e164", EmitDefaultValue = false)]
+    [JsonPropertyName("e164")]
     public string E164 { get; set; }
 
 
@@ -76,7 +76,7 @@ public partial class ExternalContactsOrganizationChangedTopicPhoneNumber : IEqua
     /// <summary>
     /// Gets or Sets CountryCode
     /// </summary>
-    [DataMember(Name = "countryCode", EmitDefaultValue = false)]
+    [JsonPropertyName("countryCode")]
     public string CountryCode { get; set; }
 
 
@@ -84,7 +84,7 @@ public partial class ExternalContactsOrganizationChangedTopicPhoneNumber : IEqua
     /// <summary>
     /// Gets or Sets NormalizationCountryCode
     /// </summary>
-    [DataMember(Name = "normalizationCountryCode", EmitDefaultValue = false)]
+    [JsonPropertyName("normalizationCountryCode")]
     public string NormalizationCountryCode { get; set; }
 
 

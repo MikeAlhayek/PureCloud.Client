@@ -1,12 +1,12 @@
-using System.Runtime.Serialization;
 using System.Text;
+using System.Text.Json.Serialization;
 
 namespace PureCloud.Client.Models;
 
 /// <summary>
 /// ExternalContactsUnresolvedContactChangedTopicTicker
 /// </summary>
-[DataContract]
+
 public partial class ExternalContactsUnresolvedContactChangedTopicTicker : IEquatable<ExternalContactsUnresolvedContactChangedTopicTicker>
 {
     /// <summary>
@@ -26,7 +26,7 @@ public partial class ExternalContactsUnresolvedContactChangedTopicTicker : IEqua
     /// <summary>
     /// Gets or Sets Symbol
     /// </summary>
-    [DataMember(Name = "symbol", EmitDefaultValue = false)]
+    [JsonPropertyName("symbol")]
     public string Symbol { get; set; }
 
 
@@ -34,7 +34,7 @@ public partial class ExternalContactsUnresolvedContactChangedTopicTicker : IEqua
     /// <summary>
     /// Gets or Sets Exchange
     /// </summary>
-    [DataMember(Name = "exchange", EmitDefaultValue = false)]
+    [JsonPropertyName("exchange")]
     public string Exchange { get; set; }
 
 

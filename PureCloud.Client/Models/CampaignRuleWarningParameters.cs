@@ -7,14 +7,14 @@ namespace PureCloud.Client.Models;
 /// <summary>
 /// CampaignRuleWarningParameters
 /// </summary>
-[DataContract]
+
 public partial class CampaignRuleWarningParameters : IEquatable<CampaignRuleWarningParameters>
 {
     /// <summary>
     /// Type of action
     /// </summary>
     /// <value>Type of action</value>
-    [JsonConverter(typeof(JsonStringEnumConverter))]
+    
     public enum ActionTypeEnum
     {
         /// <summary>
@@ -113,7 +113,7 @@ public partial class CampaignRuleWarningParameters : IEquatable<CampaignRuleWarn
     /// Type of condition
     /// </summary>
     /// <value>Type of condition</value>
-    [JsonConverter(typeof(JsonStringEnumConverter))]
+    
     public enum ConditionTypeEnum
     {
         /// <summary>
@@ -182,13 +182,13 @@ public partial class CampaignRuleWarningParameters : IEquatable<CampaignRuleWarn
     /// Type of action
     /// </summary>
     /// <value>Type of action</value>
-    [DataMember(Name = "actionType", EmitDefaultValue = false)]
+    [JsonPropertyName("actionType")]
     public ActionTypeEnum? ActionType { get; set; }
     /// <summary>
     /// Type of condition
     /// </summary>
     /// <value>Type of condition</value>
-    [DataMember(Name = "conditionType", EmitDefaultValue = false)]
+    [JsonPropertyName("conditionType")]
     public ConditionTypeEnum? ConditionType { get; set; }
     /// <summary>
     /// Initializes a new instance of the <see cref="CampaignRuleWarningParameters" /> class.
@@ -212,7 +212,7 @@ public partial class CampaignRuleWarningParameters : IEquatable<CampaignRuleWarn
     /// ID of action
     /// </summary>
     /// <value>ID of action</value>
-    [DataMember(Name = "actionId", EmitDefaultValue = false)]
+    [JsonPropertyName("actionId")]
     public string ActionId { get; set; }
 
 
@@ -221,7 +221,7 @@ public partial class CampaignRuleWarningParameters : IEquatable<CampaignRuleWarn
     /// ID of condition
     /// </summary>
     /// <value>ID of condition</value>
-    [DataMember(Name = "conditionId", EmitDefaultValue = false)]
+    [JsonPropertyName("conditionId")]
     public string ConditionId { get; set; }
 
 

@@ -1,12 +1,12 @@
-using System.Runtime.Serialization;
 using System.Text;
+using System.Text.Json.Serialization;
 
 namespace PureCloud.Client.Models;
 
 /// <summary>
 /// EdgeMetrics
 /// </summary>
-[DataContract]
+
 public partial class EdgeMetrics : IEquatable<EdgeMetrics>
 {
     /// <summary>
@@ -38,7 +38,7 @@ public partial class EdgeMetrics : IEquatable<EdgeMetrics>
     /// <summary>
     /// Gets or Sets Edge
     /// </summary>
-    [DataMember(Name = "edge", EmitDefaultValue = false)]
+    [JsonPropertyName("edge")]
     public DomainEntityRef Edge { get; set; }
 
 
@@ -47,7 +47,7 @@ public partial class EdgeMetrics : IEquatable<EdgeMetrics>
     /// Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z
     /// </summary>
     /// <value>Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z</value>
-    [DataMember(Name = "eventTime", EmitDefaultValue = false)]
+    [JsonPropertyName("eventTime")]
     public DateTime? EventTime { get; set; }
 
 
@@ -55,7 +55,7 @@ public partial class EdgeMetrics : IEquatable<EdgeMetrics>
     /// <summary>
     /// Gets or Sets UpTimeMsec
     /// </summary>
-    [DataMember(Name = "upTimeMsec", EmitDefaultValue = false)]
+    [JsonPropertyName("upTimeMsec")]
     public long? UpTimeMsec { get; set; }
 
 
@@ -63,7 +63,7 @@ public partial class EdgeMetrics : IEquatable<EdgeMetrics>
     /// <summary>
     /// Gets or Sets Processors
     /// </summary>
-    [DataMember(Name = "processors", EmitDefaultValue = false)]
+    [JsonPropertyName("processors")]
     public List<EdgeMetricsProcessor> Processors { get; set; }
 
 
@@ -71,7 +71,7 @@ public partial class EdgeMetrics : IEquatable<EdgeMetrics>
     /// <summary>
     /// Gets or Sets Memory
     /// </summary>
-    [DataMember(Name = "memory", EmitDefaultValue = false)]
+    [JsonPropertyName("memory")]
     public List<EdgeMetricsMemory> Memory { get; set; }
 
 
@@ -79,7 +79,7 @@ public partial class EdgeMetrics : IEquatable<EdgeMetrics>
     /// <summary>
     /// Gets or Sets Disks
     /// </summary>
-    [DataMember(Name = "disks", EmitDefaultValue = false)]
+    [JsonPropertyName("disks")]
     public List<EdgeMetricsDisk> Disks { get; set; }
 
 
@@ -87,7 +87,7 @@ public partial class EdgeMetrics : IEquatable<EdgeMetrics>
     /// <summary>
     /// Gets or Sets Subsystems
     /// </summary>
-    [DataMember(Name = "subsystems", EmitDefaultValue = false)]
+    [JsonPropertyName("subsystems")]
     public List<EdgeMetricsSubsystem> Subsystems { get; set; }
 
 
@@ -95,7 +95,7 @@ public partial class EdgeMetrics : IEquatable<EdgeMetrics>
     /// <summary>
     /// Gets or Sets Networks
     /// </summary>
-    [DataMember(Name = "networks", EmitDefaultValue = false)]
+    [JsonPropertyName("networks")]
     public List<EdgeMetricsNetwork> Networks { get; set; }
 
 

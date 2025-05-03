@@ -1,12 +1,12 @@
-using System.Runtime.Serialization;
 using System.Text;
+using System.Text.Json.Serialization;
 
 namespace PureCloud.Client.Models;
 
 /// <summary>
 /// FacebookAppCredentials
 /// </summary>
-[DataContract]
+
 public partial class FacebookAppCredentials : IEquatable<FacebookAppCredentials>
 {
     /// <summary>
@@ -23,7 +23,7 @@ public partial class FacebookAppCredentials : IEquatable<FacebookAppCredentials>
     /// Genesys Cloud Facebook App Id
     /// </summary>
     /// <value>Genesys Cloud Facebook App Id</value>
-    [DataMember(Name = "id", EmitDefaultValue = false)]
+    [JsonPropertyName("id")]
     public string Id { get; private set; }
 
 

@@ -7,14 +7,14 @@ namespace PureCloud.Client.Models;
 /// <summary>
 /// Settings for an input event to the bot flow indicating user input is available.
 /// </summary>
-[DataContract]
+
 public partial class TextBotUserInputEvent : IEquatable<TextBotUserInputEvent>
 {
     /// <summary>
     /// The input mode.
     /// </summary>
     /// <value>The input mode.</value>
-    [JsonConverter(typeof(JsonStringEnumConverter))]
+    
     public enum ModeEnum
     {
         /// <summary>
@@ -35,7 +35,7 @@ public partial class TextBotUserInputEvent : IEquatable<TextBotUserInputEvent>
     /// The input mode.
     /// </summary>
     /// <value>The input mode.</value>
-    [DataMember(Name = "mode", EmitDefaultValue = false)]
+    [JsonPropertyName("mode")]
     public ModeEnum? Mode { get; set; }
 
     /// <summary>
@@ -63,7 +63,7 @@ public partial class TextBotUserInputEvent : IEquatable<TextBotUserInputEvent>
     /// The input alternatives.
     /// </summary>
     /// <value>The input alternatives.</value>
-    [DataMember(Name = "alternatives", EmitDefaultValue = false)]
+    [JsonPropertyName("alternatives")]
     public List<TextBotUserInputAlternative> Alternatives { get; set; }
 
 

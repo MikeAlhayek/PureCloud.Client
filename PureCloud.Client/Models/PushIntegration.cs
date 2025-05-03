@@ -7,14 +7,14 @@ namespace PureCloud.Client.Models;
 /// <summary>
 /// PushIntegration
 /// </summary>
-[DataContract]
+
 public partial class PushIntegration : IEquatable<PushIntegration>
 {
     /// <summary>
     /// The integration provider associated with the deployment
     /// </summary>
     /// <value>The integration provider associated with the deployment</value>
-    [JsonConverter(typeof(JsonStringEnumConverter))]
+    
     public enum ProviderEnum
     {
         /// <summary>
@@ -41,7 +41,7 @@ public partial class PushIntegration : IEquatable<PushIntegration>
     /// The integration provider associated with the deployment
     /// </summary>
     /// <value>The integration provider associated with the deployment</value>
-    [DataMember(Name = "provider", EmitDefaultValue = false)]
+    [JsonPropertyName("provider")]
     public ProviderEnum? Provider { get; set; }
     /// <summary>
     /// Initializes a new instance of the <see cref="PushIntegration" /> class.
@@ -59,7 +59,7 @@ public partial class PushIntegration : IEquatable<PushIntegration>
     /// The globally unique identifier for the object.
     /// </summary>
     /// <value>The globally unique identifier for the object.</value>
-    [DataMember(Name = "id", EmitDefaultValue = false)]
+    [JsonPropertyName("id")]
     public string Id { get; private set; }
 
 

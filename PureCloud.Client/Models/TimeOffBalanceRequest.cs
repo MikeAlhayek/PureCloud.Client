@@ -1,4 +1,3 @@
-using System.Runtime.Serialization;
 using System.Text;
 using System.Text.Json.Serialization;
 
@@ -7,7 +6,7 @@ namespace PureCloud.Client.Models;
 /// <summary>
 /// TimeOffBalanceRequest
 /// </summary>
-[DataContract]
+
 public partial class TimeOffBalanceRequest : IEquatable<TimeOffBalanceRequest>
 {
 
@@ -34,7 +33,7 @@ public partial class TimeOffBalanceRequest : IEquatable<TimeOffBalanceRequest>
     /// The set of activity code IDs for which to query available time off balances
     /// </summary>
     /// <value>The set of activity code IDs for which to query available time off balances</value>
-    [DataMember(Name = "activityCodeIds", EmitDefaultValue = false)]
+    [JsonPropertyName("activityCodeIds")]
     public List<string> ActivityCodeIds { get; set; }
 
 
@@ -43,7 +42,7 @@ public partial class TimeOffBalanceRequest : IEquatable<TimeOffBalanceRequest>
     /// The list of date ranges for which to query time off balance
     /// </summary>
     /// <value>The list of date ranges for which to query time off balance</value>
-    [DataMember(Name = "dateRanges", EmitDefaultValue = false)]
+    [JsonPropertyName("dateRanges")]
     public List<LocalDateRange> DateRanges { get; set; }
 
 

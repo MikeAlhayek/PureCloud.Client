@@ -7,14 +7,14 @@ namespace PureCloud.Client.Models;
 /// <summary>
 /// AlternativeShiftJobReference
 /// </summary>
-[DataContract]
+
 public partial class AlternativeShiftJobReference : IEquatable<AlternativeShiftJobReference>
 {
     /// <summary>
     /// The status of the alternative shift job
     /// </summary>
     /// <value>The status of the alternative shift job</value>
-    [JsonConverter(typeof(JsonStringEnumConverter))]
+    
     public enum StatusEnum
     {
         /// <summary>
@@ -47,7 +47,7 @@ public partial class AlternativeShiftJobReference : IEquatable<AlternativeShiftJ
     /// The type of alternative shift asynchronous job
     /// </summary>
     /// <value>The type of alternative shift asynchronous job</value>
-    [JsonConverter(typeof(JsonStringEnumConverter))]
+    
     public enum TypeEnum
     {
         /// <summary>
@@ -92,13 +92,13 @@ public partial class AlternativeShiftJobReference : IEquatable<AlternativeShiftJ
     /// The status of the alternative shift job
     /// </summary>
     /// <value>The status of the alternative shift job</value>
-    [DataMember(Name = "status", EmitDefaultValue = false)]
+    [JsonPropertyName("status")]
     public StatusEnum? Status { get; set; }
     /// <summary>
     /// The type of alternative shift asynchronous job
     /// </summary>
     /// <value>The type of alternative shift asynchronous job</value>
-    [DataMember(Name = "type", EmitDefaultValue = false)]
+    [JsonPropertyName("type")]
     public TypeEnum? Type { get; set; }
 
     /// <summary>
@@ -124,7 +124,7 @@ public partial class AlternativeShiftJobReference : IEquatable<AlternativeShiftJ
     /// The globally unique identifier for the object.
     /// </summary>
     /// <value>The globally unique identifier for the object.</value>
-    [DataMember(Name = "id", EmitDefaultValue = false)]
+    [JsonPropertyName("id")]
     public string Id { get; private set; }
 
 
@@ -137,7 +137,7 @@ public partial class AlternativeShiftJobReference : IEquatable<AlternativeShiftJ
     /// The URI for this object
     /// </summary>
     /// <value>The URI for this object</value>
-    [DataMember(Name = "selfUri", EmitDefaultValue = false)]
+    [JsonPropertyName("selfUri")]
     public string SelfUri { get; private set; }
 
 

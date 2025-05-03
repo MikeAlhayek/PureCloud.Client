@@ -7,14 +7,14 @@ namespace PureCloud.Client.Models;
 /// <summary>
 /// KnowledgeDocumentFeedbackUpdateRequest
 /// </summary>
-[DataContract]
+
 public partial class KnowledgeDocumentFeedbackUpdateRequest : IEquatable<KnowledgeDocumentFeedbackUpdateRequest>
 {
     /// <summary>
     /// Feedback rating.
     /// </summary>
     /// <value>Feedback rating.</value>
-    [JsonConverter(typeof(JsonStringEnumConverter))]
+    
     public enum RatingEnum
     {
         /// <summary>
@@ -41,7 +41,7 @@ public partial class KnowledgeDocumentFeedbackUpdateRequest : IEquatable<Knowled
     /// Feedback reason
     /// </summary>
     /// <value>Feedback reason</value>
-    [JsonConverter(typeof(JsonStringEnumConverter))]
+    
     public enum ReasonEnum
     {
         /// <summary>
@@ -68,7 +68,7 @@ public partial class KnowledgeDocumentFeedbackUpdateRequest : IEquatable<Knowled
     /// Feedback state
     /// </summary>
     /// <value>Feedback state</value>
-    [JsonConverter(typeof(JsonStringEnumConverter))]
+    
     public enum StateEnum
     {
         /// <summary>
@@ -95,19 +95,19 @@ public partial class KnowledgeDocumentFeedbackUpdateRequest : IEquatable<Knowled
     /// Feedback rating.
     /// </summary>
     /// <value>Feedback rating.</value>
-    [DataMember(Name = "rating", EmitDefaultValue = false)]
+    [JsonPropertyName("rating")]
     public RatingEnum? Rating { get; set; }
     /// <summary>
     /// Feedback reason
     /// </summary>
     /// <value>Feedback reason</value>
-    [DataMember(Name = "reason", EmitDefaultValue = false)]
+    [JsonPropertyName("reason")]
     public ReasonEnum? Reason { get; set; }
     /// <summary>
     /// Feedback state
     /// </summary>
     /// <value>Feedback state</value>
-    [DataMember(Name = "state", EmitDefaultValue = false)]
+    [JsonPropertyName("state")]
     public StateEnum? State { get; set; }
 
     /// <summary>
@@ -141,7 +141,7 @@ public partial class KnowledgeDocumentFeedbackUpdateRequest : IEquatable<Knowled
     /// Feedback comment
     /// </summary>
     /// <value>Feedback comment</value>
-    [DataMember(Name = "comment", EmitDefaultValue = false)]
+    [JsonPropertyName("comment")]
     public string Comment { get; set; }
 
 

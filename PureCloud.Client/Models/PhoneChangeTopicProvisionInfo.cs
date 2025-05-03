@@ -1,12 +1,12 @@
-using System.Runtime.Serialization;
 using System.Text;
+using System.Text.Json.Serialization;
 
 namespace PureCloud.Client.Models;
 
 /// <summary>
 /// PhoneChangeTopicProvisionInfo
 /// </summary>
-[DataContract]
+
 public partial class PhoneChangeTopicProvisionInfo : IEquatable<PhoneChangeTopicProvisionInfo>
 {
     /// <summary>
@@ -28,7 +28,7 @@ public partial class PhoneChangeTopicProvisionInfo : IEquatable<PhoneChangeTopic
     /// <summary>
     /// Gets or Sets Time
     /// </summary>
-    [DataMember(Name = "time", EmitDefaultValue = false)]
+    [JsonPropertyName("time")]
     public DateTime? Time { get; set; }
 
 
@@ -36,7 +36,7 @@ public partial class PhoneChangeTopicProvisionInfo : IEquatable<PhoneChangeTopic
     /// <summary>
     /// Gets or Sets Source
     /// </summary>
-    [DataMember(Name = "source", EmitDefaultValue = false)]
+    [JsonPropertyName("source")]
     public string Source { get; set; }
 
 
@@ -44,7 +44,7 @@ public partial class PhoneChangeTopicProvisionInfo : IEquatable<PhoneChangeTopic
     /// <summary>
     /// Gets or Sets ErrorInfo
     /// </summary>
-    [DataMember(Name = "errorInfo", EmitDefaultValue = false)]
+    [JsonPropertyName("errorInfo")]
     public string ErrorInfo { get; set; }
 
 

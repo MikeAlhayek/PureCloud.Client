@@ -7,13 +7,13 @@ namespace PureCloud.Client.Models;
 /// <summary>
 /// EdgeChangeTopicEdge
 /// </summary>
-[DataContract]
+
 public partial class EdgeChangeTopicEdge : IEquatable<EdgeChangeTopicEdge>
 {
     /// <summary>
     /// Gets or Sets OnlineStatus
     /// </summary>
-    [JsonConverter(typeof(JsonStringEnumConverter))]
+    
     public enum OnlineStatusEnum
     {
         /// <summary>
@@ -39,7 +39,7 @@ public partial class EdgeChangeTopicEdge : IEquatable<EdgeChangeTopicEdge>
     /// <summary>
     /// Gets or Sets OnlineStatus
     /// </summary>
-    [DataMember(Name = "onlineStatus", EmitDefaultValue = false)]
+    [JsonPropertyName("onlineStatus")]
     public OnlineStatusEnum? OnlineStatus { get; set; }
     /// <summary>
     /// Initializes a new instance of the <see cref="EdgeChangeTopicEdge" /> class.
@@ -58,7 +58,7 @@ public partial class EdgeChangeTopicEdge : IEquatable<EdgeChangeTopicEdge>
     /// <summary>
     /// Gets or Sets Id
     /// </summary>
-    [DataMember(Name = "id", EmitDefaultValue = false)]
+    [JsonPropertyName("id")]
     public string Id { get; set; }
 
 

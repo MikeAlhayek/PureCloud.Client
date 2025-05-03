@@ -1,12 +1,12 @@
-using System.Runtime.Serialization;
 using System.Text;
+using System.Text.Json.Serialization;
 
 namespace PureCloud.Client.Models;
 
 /// <summary>
 /// TargetAttributes
 /// </summary>
-[DataContract]
+
 public partial class TargetAttributes : IEquatable<TargetAttributes>
 {
     /// <summary>
@@ -27,7 +27,7 @@ public partial class TargetAttributes : IEquatable<TargetAttributes>
     /// A set of base attributes which may be used in policies for any target.
     /// </summary>
     /// <value>A set of base attributes which may be used in policies for any target.</value>
-    [DataMember(Name = "baseAttributes", EmitDefaultValue = false)]
+    [JsonPropertyName("baseAttributes")]
     public List<PolicyAttribute> BaseAttributes { get; set; }
 
 
@@ -36,7 +36,7 @@ public partial class TargetAttributes : IEquatable<TargetAttributes>
     /// A map of policy targets to any additional attributes which are valid for that target.
     /// </summary>
     /// <value>A map of policy targets to any additional attributes which are valid for that target.</value>
-    [DataMember(Name = "targetAttributes", EmitDefaultValue = false)]
+    [JsonPropertyName("targetAttributes")]
     public Dictionary<string, TargetAttributeValue> _TargetAttributes { get; set; }
 
 

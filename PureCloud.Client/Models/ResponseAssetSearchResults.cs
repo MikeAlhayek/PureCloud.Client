@@ -1,12 +1,12 @@
-using System.Runtime.Serialization;
 using System.Text;
+using System.Text.Json.Serialization;
 
 namespace PureCloud.Client.Models;
 
 /// <summary>
 /// ResponseAssetSearchResults
 /// </summary>
-[DataContract]
+
 public partial class ResponseAssetSearchResults : IEquatable<ResponseAssetSearchResults>
 {
     /// <summary>
@@ -33,7 +33,7 @@ public partial class ResponseAssetSearchResults : IEquatable<ResponseAssetSearch
     /// The total number of results found
     /// </summary>
     /// <value>The total number of results found</value>
-    [DataMember(Name = "total", EmitDefaultValue = false)]
+    [JsonPropertyName("total")]
     public long? Total { get; set; }
 
 
@@ -42,7 +42,7 @@ public partial class ResponseAssetSearchResults : IEquatable<ResponseAssetSearch
     /// The total number of pages
     /// </summary>
     /// <value>The total number of pages</value>
-    [DataMember(Name = "pageCount", EmitDefaultValue = false)]
+    [JsonPropertyName("pageCount")]
     public int? PageCount { get; set; }
 
 
@@ -51,7 +51,7 @@ public partial class ResponseAssetSearchResults : IEquatable<ResponseAssetSearch
     /// The current page size
     /// </summary>
     /// <value>The current page size</value>
-    [DataMember(Name = "pageSize", EmitDefaultValue = false)]
+    [JsonPropertyName("pageSize")]
     public int? PageSize { get; set; }
 
 
@@ -60,7 +60,7 @@ public partial class ResponseAssetSearchResults : IEquatable<ResponseAssetSearch
     /// The current page number
     /// </summary>
     /// <value>The current page number</value>
-    [DataMember(Name = "pageNumber", EmitDefaultValue = false)]
+    [JsonPropertyName("pageNumber")]
     public int? PageNumber { get; set; }
 
 
@@ -69,7 +69,7 @@ public partial class ResponseAssetSearchResults : IEquatable<ResponseAssetSearch
     /// Search results
     /// </summary>
     /// <value>Search results</value>
-    [DataMember(Name = "results", EmitDefaultValue = false)]
+    [JsonPropertyName("results")]
     public List<ResponseAsset> Results { get; set; }
 
 

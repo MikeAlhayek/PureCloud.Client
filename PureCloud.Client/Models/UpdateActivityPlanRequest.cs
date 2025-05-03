@@ -7,14 +7,14 @@ namespace PureCloud.Client.Models;
 /// <summary>
 /// UpdateActivityPlanRequest
 /// </summary>
-[DataContract]
+
 public partial class UpdateActivityPlanRequest : IEquatable<UpdateActivityPlanRequest>
 {
     /// <summary>
     /// The optimization objective of this activity plan
     /// </summary>
     /// <value>The optimization objective of this activity plan</value>
-    [JsonConverter(typeof(JsonStringEnumConverter))]
+    
     public enum OptimizationObjectiveEnum
     {
         /// <summary>
@@ -41,7 +41,7 @@ public partial class UpdateActivityPlanRequest : IEquatable<UpdateActivityPlanRe
     /// The state of this activity plan
     /// </summary>
     /// <value>The state of this activity plan</value>
-    [JsonConverter(typeof(JsonStringEnumConverter))]
+    
     public enum StateEnum
     {
         /// <summary>
@@ -68,13 +68,13 @@ public partial class UpdateActivityPlanRequest : IEquatable<UpdateActivityPlanRe
     /// The optimization objective of this activity plan
     /// </summary>
     /// <value>The optimization objective of this activity plan</value>
-    [DataMember(Name = "optimizationObjective", EmitDefaultValue = false)]
+    [JsonPropertyName("optimizationObjective")]
     public OptimizationObjectiveEnum? OptimizationObjective { get; set; }
     /// <summary>
     /// The state of this activity plan
     /// </summary>
     /// <value>The state of this activity plan</value>
-    [DataMember(Name = "state", EmitDefaultValue = false)]
+    [JsonPropertyName("state")]
     public StateEnum? State { get; set; }
     /// <summary>
     /// Initializes a new instance of the <see cref="UpdateActivityPlanRequest" /> class.
@@ -110,7 +110,7 @@ public partial class UpdateActivityPlanRequest : IEquatable<UpdateActivityPlanRe
     /// The name of the activity plan
     /// </summary>
     /// <value>The name of the activity plan</value>
-    [DataMember(Name = "name", EmitDefaultValue = false)]
+    [JsonPropertyName("name")]
     public string Name { get; set; }
 
 
@@ -119,7 +119,7 @@ public partial class UpdateActivityPlanRequest : IEquatable<UpdateActivityPlanRe
     /// The description of the activity plan
     /// </summary>
     /// <value>The description of the activity plan</value>
-    [DataMember(Name = "description", EmitDefaultValue = false)]
+    [JsonPropertyName("description")]
     public string Description { get; set; }
 
 
@@ -128,7 +128,7 @@ public partial class UpdateActivityPlanRequest : IEquatable<UpdateActivityPlanRe
     /// Group settings for the activity plan
     /// </summary>
     /// <value>Group settings for the activity plan</value>
-    [DataMember(Name = "groupSettings", EmitDefaultValue = false)]
+    [JsonPropertyName("groupSettings")]
     public ValueWrapperGroupSettings GroupSettings { get; set; }
 
 
@@ -137,7 +137,7 @@ public partial class UpdateActivityPlanRequest : IEquatable<UpdateActivityPlanRe
     /// Attendee search rule for this activity plan
     /// </summary>
     /// <value>Attendee search rule for this activity plan</value>
-    [DataMember(Name = "attendeesSearchRule", EmitDefaultValue = false)]
+    [JsonPropertyName("attendeesSearchRule")]
     public ValueWrapperUserSearchRule AttendeesSearchRule { get; set; }
 
 
@@ -146,7 +146,7 @@ public partial class UpdateActivityPlanRequest : IEquatable<UpdateActivityPlanRe
     /// Facilitator search rule for this activity plan
     /// </summary>
     /// <value>Facilitator search rule for this activity plan</value>
-    [DataMember(Name = "facilitatorsSearchRule", EmitDefaultValue = false)]
+    [JsonPropertyName("facilitatorsSearchRule")]
     public ValueWrapperUserSearchRule FacilitatorsSearchRule { get; set; }
 
 
@@ -155,7 +155,7 @@ public partial class UpdateActivityPlanRequest : IEquatable<UpdateActivityPlanRe
     /// Transition time in minutes between facilitated sessions
     /// </summary>
     /// <value>Transition time in minutes between facilitated sessions</value>
-    [DataMember(Name = "transitionTimeMinutes", EmitDefaultValue = false)]
+    [JsonPropertyName("transitionTimeMinutes")]
     public int? TransitionTimeMinutes { get; set; }
 
 
@@ -164,7 +164,7 @@ public partial class UpdateActivityPlanRequest : IEquatable<UpdateActivityPlanRe
     /// Allowable service goal impact override settings for this activity plan
     /// </summary>
     /// <value>Allowable service goal impact override settings for this activity plan</value>
-    [DataMember(Name = "serviceGoalImpactOverrides", EmitDefaultValue = false)]
+    [JsonPropertyName("serviceGoalImpactOverrides")]
     public ValueWrapperActivityPlanServiceGoalImpactOverrides ServiceGoalImpactOverrides { get; set; }
 
 
@@ -177,7 +177,7 @@ public partial class UpdateActivityPlanRequest : IEquatable<UpdateActivityPlanRe
     /// Fixed availability configuration for the activity plan
     /// </summary>
     /// <value>Fixed availability configuration for the activity plan</value>
-    [DataMember(Name = "fixedAvailability", EmitDefaultValue = false)]
+    [JsonPropertyName("fixedAvailability")]
     public ListWrapperFixedAvailability FixedAvailability { get; set; }
 
 

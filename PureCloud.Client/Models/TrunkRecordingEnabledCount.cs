@@ -1,12 +1,12 @@
-using System.Runtime.Serialization;
 using System.Text;
+using System.Text.Json.Serialization;
 
 namespace PureCloud.Client.Models;
 
 /// <summary>
 /// TrunkRecordingEnabledCount
 /// </summary>
-[DataContract]
+
 public partial class TrunkRecordingEnabledCount : IEquatable<TrunkRecordingEnabledCount>
 {
     /// <summary>
@@ -27,7 +27,7 @@ public partial class TrunkRecordingEnabledCount : IEquatable<TrunkRecordingEnabl
     /// The amount of trunks that have recording enabled
     /// </summary>
     /// <value>The amount of trunks that have recording enabled</value>
-    [DataMember(Name = "enabledCount", EmitDefaultValue = false)]
+    [JsonPropertyName("enabledCount")]
     public int? EnabledCount { get; set; }
 
 
@@ -36,7 +36,7 @@ public partial class TrunkRecordingEnabledCount : IEquatable<TrunkRecordingEnabl
     /// The amount of trunks that do not have recording enabled
     /// </summary>
     /// <value>The amount of trunks that do not have recording enabled</value>
-    [DataMember(Name = "disabledCount", EmitDefaultValue = false)]
+    [JsonPropertyName("disabledCount")]
     public int? DisabledCount { get; set; }
 
 

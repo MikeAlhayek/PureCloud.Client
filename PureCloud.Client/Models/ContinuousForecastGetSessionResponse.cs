@@ -7,14 +7,14 @@ namespace PureCloud.Client.Models;
 /// <summary>
 /// ContinuousForecastGetSessionResponse
 /// </summary>
-[DataContract]
+
 public partial class ContinuousForecastGetSessionResponse : IEquatable<ContinuousForecastGetSessionResponse>
 {
     /// <summary>
     /// State of the latest session
     /// </summary>
     /// <value>State of the latest session</value>
-    [JsonConverter(typeof(JsonStringEnumConverter))]
+    
     public enum StateEnum
     {
         /// <summary>
@@ -47,7 +47,7 @@ public partial class ContinuousForecastGetSessionResponse : IEquatable<Continuou
     /// State of the latest session
     /// </summary>
     /// <value>State of the latest session</value>
-    [DataMember(Name = "state", EmitDefaultValue = false)]
+    [JsonPropertyName("state")]
     public StateEnum? State { get; set; }
     /// <summary>
     /// Initializes a new instance of the <see cref="ContinuousForecastGetSessionResponse" /> class.
@@ -71,7 +71,7 @@ public partial class ContinuousForecastGetSessionResponse : IEquatable<Continuou
     /// Latest session ID of the business unit
     /// </summary>
     /// <value>Latest session ID of the business unit</value>
-    [DataMember(Name = "sessionId", EmitDefaultValue = false)]
+    [JsonPropertyName("sessionId")]
     public string SessionId { get; set; }
 
 
@@ -80,7 +80,7 @@ public partial class ContinuousForecastGetSessionResponse : IEquatable<Continuou
     /// Last successful session ID of the business unit
     /// </summary>
     /// <value>Last successful session ID of the business unit</value>
-    [DataMember(Name = "lastSuccessfulSessionId", EmitDefaultValue = false)]
+    [JsonPropertyName("lastSuccessfulSessionId")]
     public string LastSuccessfulSessionId { get; set; }
 
 
@@ -91,7 +91,7 @@ public partial class ContinuousForecastGetSessionResponse : IEquatable<Continuou
     /// Failed session error code
     /// </summary>
     /// <value>Failed session error code</value>
-    [DataMember(Name = "errorCode", EmitDefaultValue = false)]
+    [JsonPropertyName("errorCode")]
     public string ErrorCode { get; set; }
 
 

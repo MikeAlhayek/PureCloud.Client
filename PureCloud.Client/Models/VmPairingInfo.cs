@@ -1,12 +1,12 @@
-using System.Runtime.Serialization;
 using System.Text;
+using System.Text.Json.Serialization;
 
 namespace PureCloud.Client.Models;
 
 /// <summary>
 /// VmPairingInfo
 /// </summary>
-[DataContract]
+
 public partial class VmPairingInfo : IEquatable<VmPairingInfo>
 {
     /// <summary>
@@ -31,7 +31,7 @@ public partial class VmPairingInfo : IEquatable<VmPairingInfo>
     /// This is to be used to complete the setup process of a locally deployed virtual edge device.
     /// </summary>
     /// <value>This is to be used to complete the setup process of a locally deployed virtual edge device.</value>
-    [DataMember(Name = "meta-data", EmitDefaultValue = false)]
+    [JsonPropertyName("meta-data")]
     public MetaData MetaData { get; set; }
 
 
@@ -39,7 +39,7 @@ public partial class VmPairingInfo : IEquatable<VmPairingInfo>
     /// <summary>
     /// Gets or Sets EdgeId
     /// </summary>
-    [DataMember(Name = "edge-id", EmitDefaultValue = false)]
+    [JsonPropertyName("edge-id")]
     public string EdgeId { get; set; }
 
 
@@ -47,7 +47,7 @@ public partial class VmPairingInfo : IEquatable<VmPairingInfo>
     /// <summary>
     /// Gets or Sets AuthToken
     /// </summary>
-    [DataMember(Name = "auth-token", EmitDefaultValue = false)]
+    [JsonPropertyName("auth-token")]
     public string AuthToken { get; set; }
 
 
@@ -55,7 +55,7 @@ public partial class VmPairingInfo : IEquatable<VmPairingInfo>
     /// <summary>
     /// Gets or Sets OrgId
     /// </summary>
-    [DataMember(Name = "org-id", EmitDefaultValue = false)]
+    [JsonPropertyName("org-id")]
     public string OrgId { get; set; }
 
 

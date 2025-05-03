@@ -1,12 +1,12 @@
-using System.Runtime.Serialization;
 using System.Text;
+using System.Text.Json.Serialization;
 
 namespace PureCloud.Client.Models;
 
 /// <summary>
 /// DetectedNamedEntity
 /// </summary>
-[DataContract]
+
 public partial class DetectedNamedEntity : IEquatable<DetectedNamedEntity>
 {
     /// <summary>
@@ -23,7 +23,7 @@ public partial class DetectedNamedEntity : IEquatable<DetectedNamedEntity>
     /// The name of the detected named entity.
     /// </summary>
     /// <value>The name of the detected named entity.</value>
-    [DataMember(Name = "name", EmitDefaultValue = false)]
+    [JsonPropertyName("name")]
     public string Name { get; private set; }
 
 
@@ -32,7 +32,7 @@ public partial class DetectedNamedEntity : IEquatable<DetectedNamedEntity>
     /// The type of the detected named entity.
     /// </summary>
     /// <value>The type of the detected named entity.</value>
-    [DataMember(Name = "entityType", EmitDefaultValue = false)]
+    [JsonPropertyName("entityType")]
     public string EntityType { get; private set; }
 
 
@@ -41,7 +41,7 @@ public partial class DetectedNamedEntity : IEquatable<DetectedNamedEntity>
     /// The probability of the detected named entity.
     /// </summary>
     /// <value>The probability of the detected named entity.</value>
-    [DataMember(Name = "probability", EmitDefaultValue = false)]
+    [JsonPropertyName("probability")]
     public double? Probability { get; private set; }
 
 
@@ -50,7 +50,7 @@ public partial class DetectedNamedEntity : IEquatable<DetectedNamedEntity>
     /// The value of the detected named entity.
     /// </summary>
     /// <value>The value of the detected named entity.</value>
-    [DataMember(Name = "value", EmitDefaultValue = false)]
+    [JsonPropertyName("value")]
     public DetectedNamedEntityValue Value { get; private set; }
 
 

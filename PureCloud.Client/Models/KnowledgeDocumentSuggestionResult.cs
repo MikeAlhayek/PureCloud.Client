@@ -1,12 +1,12 @@
-using System.Runtime.Serialization;
 using System.Text;
+using System.Text.Json.Serialization;
 
 namespace PureCloud.Client.Models;
 
 /// <summary>
 /// KnowledgeDocumentSuggestionResult
 /// </summary>
-[DataContract]
+
 public partial class KnowledgeDocumentSuggestionResult : IEquatable<KnowledgeDocumentSuggestionResult>
 {
     /// <summary>
@@ -27,7 +27,7 @@ public partial class KnowledgeDocumentSuggestionResult : IEquatable<KnowledgeDoc
     /// Matched phrase to the autocomplete suggestions query.
     /// </summary>
     /// <value>Matched phrase to the autocomplete suggestions query.</value>
-    [DataMember(Name = "matchedPhrase", EmitDefaultValue = false)]
+    [JsonPropertyName("matchedPhrase")]
     public string MatchedPhrase { get; set; }
 
 
@@ -35,7 +35,7 @@ public partial class KnowledgeDocumentSuggestionResult : IEquatable<KnowledgeDoc
     /// <summary>
     /// Gets or Sets Document
     /// </summary>
-    [DataMember(Name = "document", EmitDefaultValue = false)]
+    [JsonPropertyName("document")]
     public KnowledgeDocumentSuggestionResultDocument Document { get; set; }
 
 

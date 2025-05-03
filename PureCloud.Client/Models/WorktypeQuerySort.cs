@@ -7,14 +7,14 @@ namespace PureCloud.Client.Models;
 /// <summary>
 /// WorktypeQuerySort
 /// </summary>
-[DataContract]
+
 public partial class WorktypeQuerySort : IEquatable<WorktypeQuerySort>
 {
     /// <summary>
     /// Specify an attribute for sorting. It's possible to use an attribute both for sorting and in the query at the same time, but these restrictions apply: Only the operators EQ, LT, LTE, GT, GTE, BETWEEN and BEGINS_WITH are supported and the attribute can't be present in more than one filter.
     /// </summary>
     /// <value>Specify an attribute for sorting. It's possible to use an attribute both for sorting and in the query at the same time, but these restrictions apply: Only the operators EQ, LT, LTE, GT, GTE, BETWEEN and BEGINS_WITH are supported and the attribute can't be present in more than one filter.</value>
-    [JsonConverter(typeof(JsonStringEnumConverter))]
+    
     public enum NameEnum
     {
         /// <summary>
@@ -41,7 +41,7 @@ public partial class WorktypeQuerySort : IEquatable<WorktypeQuerySort>
     /// Specify an attribute for sorting. It's possible to use an attribute both for sorting and in the query at the same time, but these restrictions apply: Only the operators EQ, LT, LTE, GT, GTE, BETWEEN and BEGINS_WITH are supported and the attribute can't be present in more than one filter.
     /// </summary>
     /// <value>Specify an attribute for sorting. It's possible to use an attribute both for sorting and in the query at the same time, but these restrictions apply: Only the operators EQ, LT, LTE, GT, GTE, BETWEEN and BEGINS_WITH are supported and the attribute can't be present in more than one filter.</value>
-    [DataMember(Name = "name", EmitDefaultValue = false)]
+    [JsonPropertyName("name")]
     public NameEnum? Name { get; set; }
     /// <summary>
     /// Initializes a new instance of the <see cref="WorktypeQuerySort" /> class.
@@ -63,7 +63,7 @@ public partial class WorktypeQuerySort : IEquatable<WorktypeQuerySort>
     /// Sort Ascending
     /// </summary>
     /// <value>Sort Ascending</value>
-    [DataMember(Name = "ascending", EmitDefaultValue = false)]
+    [JsonPropertyName("ascending")]
     public bool? Ascending { get; set; }
 
 

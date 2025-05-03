@@ -1,4 +1,3 @@
-using System.Runtime.Serialization;
 using System.Text;
 using System.Text.Json.Serialization;
 
@@ -7,7 +6,7 @@ namespace PureCloud.Client.Models;
 /// <summary>
 /// The associated user reference as a member of a performance profile
 /// </summary>
-[DataContract]
+
 public partial class Member : IEquatable<Member>
 {
 
@@ -32,7 +31,7 @@ public partial class Member : IEquatable<Member>
     /// The user&#39;s id
     /// </summary>
     /// <value>The user&#39;s id</value>
-    [DataMember(Name = "id", EmitDefaultValue = false)]
+    [JsonPropertyName("id")]
     public string Id { get; set; }
 
 
@@ -41,7 +40,7 @@ public partial class Member : IEquatable<Member>
     /// The URI for this object
     /// </summary>
     /// <value>The URI for this object</value>
-    [DataMember(Name = "selfUri", EmitDefaultValue = false)]
+    [JsonPropertyName("selfUri")]
     public string SelfUri { get; private set; }
 
 

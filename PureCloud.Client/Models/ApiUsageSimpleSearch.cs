@@ -7,13 +7,13 @@ namespace PureCloud.Client.Models;
 /// <summary>
 /// ApiUsageSimpleSearch
 /// </summary>
-[DataContract]
+
 public partial class ApiUsageSimpleSearch : IEquatable<ApiUsageSimpleSearch>
 {
     /// <summary>
     /// Gets or Sets Metrics
     /// </summary>
-    [JsonConverter(typeof(JsonStringEnumConverter))]
+    
     public enum MetricsEnum
     {
         /// <summary>
@@ -81,7 +81,7 @@ public partial class ApiUsageSimpleSearch : IEquatable<ApiUsageSimpleSearch>
     /// <summary>
     /// Gets or Sets HttpMethods
     /// </summary>
-    [JsonConverter(typeof(JsonStringEnumConverter))]
+    
     public enum HttpMethodsEnum
     {
         /// <summary>
@@ -176,7 +176,7 @@ public partial class ApiUsageSimpleSearch : IEquatable<ApiUsageSimpleSearch>
     /// Behaves like one clause in a SQL WHERE. Specifies the date and time range of data being queried. Intervals are represented as an ISO-8601 string. For example: YYYY-MM-DDThh:mm:ss/YYYY-MM-DDThh:mm:ss
     /// </summary>
     /// <value>Behaves like one clause in a SQL WHERE. Specifies the date and time range of data being queried. Intervals are represented as an ISO-8601 string. For example: YYYY-MM-DDThh:mm:ss/YYYY-MM-DDThh:mm:ss</value>
-    [DataMember(Name = "interval", EmitDefaultValue = false)]
+    [JsonPropertyName("interval")]
     public string Interval { get; set; }
 
 
@@ -185,7 +185,7 @@ public partial class ApiUsageSimpleSearch : IEquatable<ApiUsageSimpleSearch>
     /// Behaves like a SQL SELECT clause. Enables retrieving only named metrics. If omitted, all metrics that are available will be returned (like SELECT *).
     /// </summary>
     /// <value>Behaves like a SQL SELECT clause. Enables retrieving only named metrics. If omitted, all metrics that are available will be returned (like SELECT *).</value>
-    [DataMember(Name = "metrics", EmitDefaultValue = false)]
+    [JsonPropertyName("metrics")]
     public List<MetricsEnum> Metrics { get; set; }
 
 
@@ -194,7 +194,7 @@ public partial class ApiUsageSimpleSearch : IEquatable<ApiUsageSimpleSearch>
     /// Behaves like a SQL WHERE with multiple IN operators. Specifies a list of OAuth client names to be queried.
     /// </summary>
     /// <value>Behaves like a SQL WHERE with multiple IN operators. Specifies a list of OAuth client names to be queried.</value>
-    [DataMember(Name = "oauthClientNames", EmitDefaultValue = false)]
+    [JsonPropertyName("oauthClientNames")]
     public List<string> OauthClientNames { get; set; }
 
 
@@ -203,7 +203,7 @@ public partial class ApiUsageSimpleSearch : IEquatable<ApiUsageSimpleSearch>
     /// Behaves like a SQL WHERE with multiple IN operators. Specifies a list of HTTP methods to be queried.
     /// </summary>
     /// <value>Behaves like a SQL WHERE with multiple IN operators. Specifies a list of HTTP methods to be queried.</value>
-    [DataMember(Name = "httpMethods", EmitDefaultValue = false)]
+    [JsonPropertyName("httpMethods")]
     public List<HttpMethodsEnum> HttpMethods { get; set; }
 
 
@@ -212,7 +212,7 @@ public partial class ApiUsageSimpleSearch : IEquatable<ApiUsageSimpleSearch>
     /// Behaves like a SQL WHERE with multiple IN operators. Specifies a list of Template Uris to be queried.
     /// </summary>
     /// <value>Behaves like a SQL WHERE with multiple IN operators. Specifies a list of Template Uris to be queried.</value>
-    [DataMember(Name = "templateUris", EmitDefaultValue = false)]
+    [JsonPropertyName("templateUris")]
     public List<string> TemplateUris { get; set; }
 
 

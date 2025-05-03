@@ -7,14 +7,14 @@ namespace PureCloud.Client.Models;
 /// <summary>
 /// ContinuousForecastSessionResponse
 /// </summary>
-[DataContract]
+
 public partial class ContinuousForecastSessionResponse : IEquatable<ContinuousForecastSessionResponse>
 {
     /// <summary>
     /// State of the requested session
     /// </summary>
     /// <value>State of the requested session</value>
-    [JsonConverter(typeof(JsonStringEnumConverter))]
+    
     public enum StateEnum
     {
         /// <summary>
@@ -47,7 +47,7 @@ public partial class ContinuousForecastSessionResponse : IEquatable<ContinuousFo
     /// State of the requested session
     /// </summary>
     /// <value>State of the requested session</value>
-    [DataMember(Name = "state", EmitDefaultValue = false)]
+    [JsonPropertyName("state")]
     public StateEnum? State { get; set; }
     /// <summary>
     /// Initializes a new instance of the <see cref="ContinuousForecastSessionResponse" /> class.
@@ -69,7 +69,7 @@ public partial class ContinuousForecastSessionResponse : IEquatable<ContinuousFo
     /// Session ID of the continuous forecast data
     /// </summary>
     /// <value>Session ID of the continuous forecast data</value>
-    [DataMember(Name = "sessionId", EmitDefaultValue = false)]
+    [JsonPropertyName("sessionId")]
     public string SessionId { get; set; }
 
 
@@ -80,7 +80,7 @@ public partial class ContinuousForecastSessionResponse : IEquatable<ContinuousFo
     /// Link to the files containing data for requested session
     /// </summary>
     /// <value>Link to the files containing data for requested session</value>
-    [DataMember(Name = "files", EmitDefaultValue = false)]
+    [JsonPropertyName("files")]
     public SessionFiles Files { get; set; }
 
 

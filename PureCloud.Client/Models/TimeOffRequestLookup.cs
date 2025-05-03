@@ -1,4 +1,3 @@
-using System.Runtime.Serialization;
 using System.Text;
 using System.Text.Json.Serialization;
 
@@ -7,7 +6,7 @@ namespace PureCloud.Client.Models;
 /// <summary>
 /// TimeOffRequestLookup
 /// </summary>
-[DataContract]
+
 public partial class TimeOffRequestLookup : IEquatable<TimeOffRequestLookup>
 {
 
@@ -34,7 +33,7 @@ public partial class TimeOffRequestLookup : IEquatable<TimeOffRequestLookup>
     /// The ID of the time off request
     /// </summary>
     /// <value>The ID of the time off request</value>
-    [DataMember(Name = "timeOffRequestId", EmitDefaultValue = false)]
+    [JsonPropertyName("timeOffRequestId")]
     public string TimeOffRequestId { get; set; }
 
 
@@ -43,7 +42,7 @@ public partial class TimeOffRequestLookup : IEquatable<TimeOffRequestLookup>
     /// The ID of the user to whom the time off request belongs
     /// </summary>
     /// <value>The ID of the user to whom the time off request belongs</value>
-    [DataMember(Name = "userId", EmitDefaultValue = false)]
+    [JsonPropertyName("userId")]
     public string UserId { get; set; }
 
 

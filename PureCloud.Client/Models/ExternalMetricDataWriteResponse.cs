@@ -1,12 +1,12 @@
-using System.Runtime.Serialization;
 using System.Text;
+using System.Text.Json.Serialization;
 
 namespace PureCloud.Client.Models;
 
 /// <summary>
 /// External metric data write response
 /// </summary>
-[DataContract]
+
 public partial class ExternalMetricDataWriteResponse : IEquatable<ExternalMetricDataWriteResponse>
 {
     /// <summary>
@@ -27,7 +27,7 @@ public partial class ExternalMetricDataWriteResponse : IEquatable<ExternalMetric
     /// The list of processed entities
     /// </summary>
     /// <value>The list of processed entities</value>
-    [DataMember(Name = "processedEntities", EmitDefaultValue = false)]
+    [JsonPropertyName("processedEntities")]
     public List<ExternalMetricDataProcessedItem> ProcessedEntities { get; set; }
 
 
@@ -36,7 +36,7 @@ public partial class ExternalMetricDataWriteResponse : IEquatable<ExternalMetric
     /// The list of unprocessed entities
     /// </summary>
     /// <value>The list of unprocessed entities</value>
-    [DataMember(Name = "unprocessedEntities", EmitDefaultValue = false)]
+    [JsonPropertyName("unprocessedEntities")]
     public List<ExternalMetricDataUnprocessedItem> UnprocessedEntities { get; set; }
 
 

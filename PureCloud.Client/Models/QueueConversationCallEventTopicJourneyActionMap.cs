@@ -1,12 +1,12 @@
-using System.Runtime.Serialization;
 using System.Text;
+using System.Text.Json.Serialization;
 
 namespace PureCloud.Client.Models;
 
 /// <summary>
 /// Details about the action map from the Journey System which triggered this action
 /// </summary>
-[DataContract]
+
 public partial class QueueConversationCallEventTopicJourneyActionMap : IEquatable<QueueConversationCallEventTopicJourneyActionMap>
 {
     /// <summary>
@@ -27,7 +27,7 @@ public partial class QueueConversationCallEventTopicJourneyActionMap : IEquatabl
     /// The ID of the actionMap in the Journey System which triggered this action
     /// </summary>
     /// <value>The ID of the actionMap in the Journey System which triggered this action</value>
-    [DataMember(Name = "id", EmitDefaultValue = false)]
+    [JsonPropertyName("id")]
     public string Id { get; set; }
 
 
@@ -36,7 +36,7 @@ public partial class QueueConversationCallEventTopicJourneyActionMap : IEquatabl
     /// The version number of the actionMap in the Journey System at the time this action was triggered
     /// </summary>
     /// <value>The version number of the actionMap in the Journey System at the time this action was triggered</value>
-    [DataMember(Name = "version", EmitDefaultValue = false)]
+    [JsonPropertyName("version")]
     public long? Version { get; set; }
 
 

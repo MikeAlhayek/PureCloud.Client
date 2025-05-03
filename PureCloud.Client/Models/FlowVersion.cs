@@ -7,13 +7,13 @@ namespace PureCloud.Client.Models;
 /// <summary>
 /// FlowVersion
 /// </summary>
-[DataContract]
+
 public partial class FlowVersion : IEquatable<FlowVersion>
 {
     /// <summary>
     /// Gets or Sets Type
     /// </summary>
-    [JsonConverter(typeof(JsonStringEnumConverter))]
+    
     public enum TypeEnum
     {
         /// <summary>
@@ -45,7 +45,7 @@ public partial class FlowVersion : IEquatable<FlowVersion>
     /// <summary>
     /// Gets or Sets CompatibleFlowTypes
     /// </summary>
-    [JsonConverter(typeof(JsonStringEnumConverter))]
+    
     public enum CompatibleFlowTypesEnum
     {
         /// <summary>
@@ -173,7 +173,7 @@ public partial class FlowVersion : IEquatable<FlowVersion>
     /// <summary>
     /// Gets or Sets Type
     /// </summary>
-    [DataMember(Name = "type", EmitDefaultValue = false)]
+    [JsonPropertyName("type")]
     public TypeEnum? Type { get; set; }
     /// <summary>
     /// Initializes a new instance of the <see cref="FlowVersion" /> class.
@@ -225,7 +225,7 @@ public partial class FlowVersion : IEquatable<FlowVersion>
     /// The flow version identifier
     /// </summary>
     /// <value>The flow version identifier</value>
-    [DataMember(Name = "id", EmitDefaultValue = false)]
+    [JsonPropertyName("id")]
     public string Id { get; set; }
 
 
@@ -233,7 +233,7 @@ public partial class FlowVersion : IEquatable<FlowVersion>
     /// <summary>
     /// Gets or Sets Name
     /// </summary>
-    [DataMember(Name = "name", EmitDefaultValue = false)]
+    [JsonPropertyName("name")]
     public string Name { get; set; }
 
 
@@ -241,7 +241,7 @@ public partial class FlowVersion : IEquatable<FlowVersion>
     /// <summary>
     /// Gets or Sets CommitVersion
     /// </summary>
-    [DataMember(Name = "commitVersion", EmitDefaultValue = false)]
+    [JsonPropertyName("commitVersion")]
     public string CommitVersion { get; set; }
 
 
@@ -249,7 +249,7 @@ public partial class FlowVersion : IEquatable<FlowVersion>
     /// <summary>
     /// Gets or Sets ConfigurationVersion
     /// </summary>
-    [DataMember(Name = "configurationVersion", EmitDefaultValue = false)]
+    [JsonPropertyName("configurationVersion")]
     public string ConfigurationVersion { get; set; }
 
 
@@ -259,7 +259,7 @@ public partial class FlowVersion : IEquatable<FlowVersion>
     /// <summary>
     /// Gets or Sets Secure
     /// </summary>
-    [DataMember(Name = "secure", EmitDefaultValue = false)]
+    [JsonPropertyName("secure")]
     public bool? Secure { get; set; }
 
 
@@ -267,7 +267,7 @@ public partial class FlowVersion : IEquatable<FlowVersion>
     /// <summary>
     /// Gets or Sets Debug
     /// </summary>
-    [DataMember(Name = "debug", EmitDefaultValue = false)]
+    [JsonPropertyName("debug")]
     public bool? Debug { get; set; }
 
 
@@ -275,7 +275,7 @@ public partial class FlowVersion : IEquatable<FlowVersion>
     /// <summary>
     /// Gets or Sets CreatedBy
     /// </summary>
-    [DataMember(Name = "createdBy", EmitDefaultValue = false)]
+    [JsonPropertyName("createdBy")]
     public User CreatedBy { get; set; }
 
 
@@ -283,7 +283,7 @@ public partial class FlowVersion : IEquatable<FlowVersion>
     /// <summary>
     /// Gets or Sets CreatedByClient
     /// </summary>
-    [DataMember(Name = "createdByClient", EmitDefaultValue = false)]
+    [JsonPropertyName("createdByClient")]
     public DomainEntityRef CreatedByClient { get; set; }
 
 
@@ -291,7 +291,7 @@ public partial class FlowVersion : IEquatable<FlowVersion>
     /// <summary>
     /// Gets or Sets ConfigurationUri
     /// </summary>
-    [DataMember(Name = "configurationUri", EmitDefaultValue = false)]
+    [JsonPropertyName("configurationUri")]
     public string ConfigurationUri { get; set; }
 
 
@@ -299,7 +299,7 @@ public partial class FlowVersion : IEquatable<FlowVersion>
     /// <summary>
     /// Gets or Sets DateCreated
     /// </summary>
-    [DataMember(Name = "dateCreated", EmitDefaultValue = false)]
+    [JsonPropertyName("dateCreated")]
     public long? DateCreated { get; set; }
 
 
@@ -307,7 +307,7 @@ public partial class FlowVersion : IEquatable<FlowVersion>
     /// <summary>
     /// Gets or Sets DateCheckedIn
     /// </summary>
-    [DataMember(Name = "dateCheckedIn", EmitDefaultValue = false)]
+    [JsonPropertyName("dateCheckedIn")]
     public long? DateCheckedIn { get; set; }
 
 
@@ -315,7 +315,7 @@ public partial class FlowVersion : IEquatable<FlowVersion>
     /// <summary>
     /// Gets or Sets DateSaved
     /// </summary>
-    [DataMember(Name = "dateSaved", EmitDefaultValue = false)]
+    [JsonPropertyName("dateSaved")]
     public long? DateSaved { get; set; }
 
 
@@ -323,7 +323,7 @@ public partial class FlowVersion : IEquatable<FlowVersion>
     /// <summary>
     /// Gets or Sets GenerationId
     /// </summary>
-    [DataMember(Name = "generationId", EmitDefaultValue = false)]
+    [JsonPropertyName("generationId")]
     public string GenerationId { get; set; }
 
 
@@ -331,7 +331,7 @@ public partial class FlowVersion : IEquatable<FlowVersion>
     /// <summary>
     /// Gets or Sets PublishResultUri
     /// </summary>
-    [DataMember(Name = "publishResultUri", EmitDefaultValue = false)]
+    [JsonPropertyName("publishResultUri")]
     public string PublishResultUri { get; set; }
 
 
@@ -339,7 +339,7 @@ public partial class FlowVersion : IEquatable<FlowVersion>
     /// <summary>
     /// Gets or Sets InputSchema
     /// </summary>
-    [DataMember(Name = "inputSchema", EmitDefaultValue = false)]
+    [JsonPropertyName("inputSchema")]
     public JsonSchemaDocument InputSchema { get; set; }
 
 
@@ -347,7 +347,7 @@ public partial class FlowVersion : IEquatable<FlowVersion>
     /// <summary>
     /// Gets or Sets OutputSchema
     /// </summary>
-    [DataMember(Name = "outputSchema", EmitDefaultValue = false)]
+    [JsonPropertyName("outputSchema")]
     public JsonSchemaDocument OutputSchema { get; set; }
 
 
@@ -355,7 +355,7 @@ public partial class FlowVersion : IEquatable<FlowVersion>
     /// <summary>
     /// Gets or Sets VirtualAgentEnabled
     /// </summary>
-    [DataMember(Name = "virtualAgentEnabled", EmitDefaultValue = false)]
+    [JsonPropertyName("virtualAgentEnabled")]
     public bool? VirtualAgentEnabled { get; set; }
 
 
@@ -364,7 +364,7 @@ public partial class FlowVersion : IEquatable<FlowVersion>
     /// The date this version became the published version of the flow. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z
     /// </summary>
     /// <value>The date this version became the published version of the flow. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z</value>
-    [DataMember(Name = "datePublished", EmitDefaultValue = false)]
+    [JsonPropertyName("datePublished")]
     public DateTime? DatePublished { get; private set; }
 
 
@@ -373,7 +373,7 @@ public partial class FlowVersion : IEquatable<FlowVersion>
     /// The date this version was no longer the published version of the flow. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z
     /// </summary>
     /// <value>The date this version was no longer the published version of the flow. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z</value>
-    [DataMember(Name = "datePublishedEnd", EmitDefaultValue = false)]
+    [JsonPropertyName("datePublishedEnd")]
     public DateTime? DatePublishedEnd { get; private set; }
 
 
@@ -382,7 +382,7 @@ public partial class FlowVersion : IEquatable<FlowVersion>
     /// Information about the natural language understanding configuration for the flow version
     /// </summary>
     /// <value>Information about the natural language understanding configuration for the flow version</value>
-    [DataMember(Name = "nluInfo", EmitDefaultValue = false)]
+    [JsonPropertyName("nluInfo")]
     public NluInfo NluInfo { get; private set; }
 
 
@@ -391,7 +391,7 @@ public partial class FlowVersion : IEquatable<FlowVersion>
     /// List of supported languages for this version of the flow
     /// </summary>
     /// <value>List of supported languages for this version of the flow</value>
-    [DataMember(Name = "supportedLanguages", EmitDefaultValue = false)]
+    [JsonPropertyName("supportedLanguages")]
     public List<SupportedLanguage> SupportedLanguages { get; private set; }
 
 
@@ -400,7 +400,7 @@ public partial class FlowVersion : IEquatable<FlowVersion>
     /// Compatible flow types designate which flow types are allowed to embed a flow’s configuration within their own flow configuration.  Currently the only flows that can be embedded are Common Module flows and the embedding flow can invoke them using the Call Common Module action.
     /// </summary>
     /// <value>Compatible flow types designate which flow types are allowed to embed a flow’s configuration within their own flow configuration.  Currently the only flows that can be embedded are Common Module flows and the embedding flow can invoke them using the Call Common Module action.</value>
-    [DataMember(Name = "compatibleFlowTypes", EmitDefaultValue = false)]
+    [JsonPropertyName("compatibleFlowTypes")]
     public List<CompatibleFlowTypesEnum> CompatibleFlowTypes { get; private set; }
 
 
@@ -409,7 +409,7 @@ public partial class FlowVersion : IEquatable<FlowVersion>
     /// The URI for this object
     /// </summary>
     /// <value>The URI for this object</value>
-    [DataMember(Name = "selfUri", EmitDefaultValue = false)]
+    [JsonPropertyName("selfUri")]
     public string SelfUri { get; private set; }
 
 

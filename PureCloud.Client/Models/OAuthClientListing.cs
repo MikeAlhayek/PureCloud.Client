@@ -7,14 +7,14 @@ namespace PureCloud.Client.Models;
 /// <summary>
 /// OAuthClientListing
 /// </summary>
-[DataContract]
+
 public partial class OAuthClientListing : IEquatable<OAuthClientListing>
 {
     /// <summary>
     /// The state of the OAuth client. Active: The OAuth client can be used to create access tokens. This is the default state. Disabled: Access tokens created by the client are invalid and new ones cannot be created. Inactive: Access tokens cannot be created with this OAuth client and it will be deleted.
     /// </summary>
     /// <value>The state of the OAuth client. Active: The OAuth client can be used to create access tokens. This is the default state. Disabled: Access tokens created by the client are invalid and new ones cannot be created. Inactive: Access tokens cannot be created with this OAuth client and it will be deleted.</value>
-    [JsonConverter(typeof(JsonStringEnumConverter))]
+    
     public enum StateEnum
     {
         /// <summary>
@@ -47,7 +47,7 @@ public partial class OAuthClientListing : IEquatable<OAuthClientListing>
     /// The state of the OAuth client. Active: The OAuth client can be used to create access tokens. This is the default state. Disabled: Access tokens created by the client are invalid and new ones cannot be created. Inactive: Access tokens cannot be created with this OAuth client and it will be deleted.
     /// </summary>
     /// <value>The state of the OAuth client. Active: The OAuth client can be used to create access tokens. This is the default state. Disabled: Access tokens created by the client are invalid and new ones cannot be created. Inactive: Access tokens cannot be created with this OAuth client and it will be deleted.</value>
-    [DataMember(Name = "state", EmitDefaultValue = false)]
+    [JsonPropertyName("state")]
     public StateEnum? State { get; set; }
 
     /// <summary>
@@ -97,7 +97,7 @@ public partial class OAuthClientListing : IEquatable<OAuthClientListing>
     /// The globally unique identifier for the object.
     /// </summary>
     /// <value>The globally unique identifier for the object.</value>
-    [DataMember(Name = "id", EmitDefaultValue = false)]
+    [JsonPropertyName("id")]
     public string Id { get; private set; }
 
 
@@ -106,7 +106,7 @@ public partial class OAuthClientListing : IEquatable<OAuthClientListing>
     /// The name of the OAuth client.
     /// </summary>
     /// <value>The name of the OAuth client.</value>
-    [DataMember(Name = "name", EmitDefaultValue = false)]
+    [JsonPropertyName("name")]
     public string Name { get; set; }
 
 
@@ -115,7 +115,7 @@ public partial class OAuthClientListing : IEquatable<OAuthClientListing>
     /// The number of seconds, between 5mins and 48hrs, until tokens created with this client expire. If this field is omitted, a default of 24 hours will be applied.
     /// </summary>
     /// <value>The number of seconds, between 5mins and 48hrs, until tokens created with this client expire. If this field is omitted, a default of 24 hours will be applied.</value>
-    [DataMember(Name = "accessTokenValiditySeconds", EmitDefaultValue = false)]
+    [JsonPropertyName("accessTokenValiditySeconds")]
     public long? AccessTokenValiditySeconds { get; set; }
 
 
@@ -123,7 +123,7 @@ public partial class OAuthClientListing : IEquatable<OAuthClientListing>
     /// <summary>
     /// Gets or Sets Description
     /// </summary>
-    [DataMember(Name = "description", EmitDefaultValue = false)]
+    [JsonPropertyName("description")]
     public string Description { get; set; }
 
 
@@ -132,7 +132,7 @@ public partial class OAuthClientListing : IEquatable<OAuthClientListing>
     /// List of allowed callbacks for this client. For example: https://myap.example.com/auth/callback
     /// </summary>
     /// <value>List of allowed callbacks for this client. For example: https://myap.example.com/auth/callback</value>
-    [DataMember(Name = "registeredRedirectUri", EmitDefaultValue = false)]
+    [JsonPropertyName("registeredRedirectUri")]
     public List<string> RegisteredRedirectUri { get; set; }
 
 
@@ -141,7 +141,7 @@ public partial class OAuthClientListing : IEquatable<OAuthClientListing>
     /// System created secret assigned to this client. Secrets are required for code authorization and client credential grants.
     /// </summary>
     /// <value>System created secret assigned to this client. Secrets are required for code authorization and client credential grants.</value>
-    [DataMember(Name = "secret", EmitDefaultValue = false)]
+    [JsonPropertyName("secret")]
     public string Secret { get; set; }
 
 
@@ -150,7 +150,7 @@ public partial class OAuthClientListing : IEquatable<OAuthClientListing>
     /// Deprecated. Use roleDivisions instead.
     /// </summary>
     /// <value>Deprecated. Use roleDivisions instead.</value>
-    [DataMember(Name = "roleIds", EmitDefaultValue = false)]
+    [JsonPropertyName("roleIds")]
     public List<string> RoleIds { get; set; }
 
 
@@ -159,7 +159,7 @@ public partial class OAuthClientListing : IEquatable<OAuthClientListing>
     /// Date this client was created. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z
     /// </summary>
     /// <value>Date this client was created. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z</value>
-    [DataMember(Name = "dateCreated", EmitDefaultValue = false)]
+    [JsonPropertyName("dateCreated")]
     public DateTime? DateCreated { get; set; }
 
 
@@ -168,7 +168,7 @@ public partial class OAuthClientListing : IEquatable<OAuthClientListing>
     /// Date this client was last modified. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z
     /// </summary>
     /// <value>Date this client was last modified. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z</value>
-    [DataMember(Name = "dateModified", EmitDefaultValue = false)]
+    [JsonPropertyName("dateModified")]
     public DateTime? DateModified { get; set; }
 
 
@@ -177,7 +177,7 @@ public partial class OAuthClientListing : IEquatable<OAuthClientListing>
     /// User that created this client
     /// </summary>
     /// <value>User that created this client</value>
-    [DataMember(Name = "createdBy", EmitDefaultValue = false)]
+    [JsonPropertyName("createdBy")]
     public DomainEntityRef CreatedBy { get; set; }
 
 
@@ -186,7 +186,7 @@ public partial class OAuthClientListing : IEquatable<OAuthClientListing>
     /// User that last modified this client
     /// </summary>
     /// <value>User that last modified this client</value>
-    [DataMember(Name = "modifiedBy", EmitDefaultValue = false)]
+    [JsonPropertyName("modifiedBy")]
     public DomainEntityRef ModifiedBy { get; set; }
 
 
@@ -195,7 +195,7 @@ public partial class OAuthClientListing : IEquatable<OAuthClientListing>
     /// The scope requested by this client. Scopes only apply to clients not using the client_credential grant
     /// </summary>
     /// <value>The scope requested by this client. Scopes only apply to clients not using the client_credential grant</value>
-    [DataMember(Name = "scope", EmitDefaultValue = false)]
+    [JsonPropertyName("scope")]
     public List<string> Scope { get; set; }
 
 
@@ -204,7 +204,7 @@ public partial class OAuthClientListing : IEquatable<OAuthClientListing>
     /// Set of roles and their corresponding divisions associated with this client. Roles and divisions only apply to clients using the client_credential grant
     /// </summary>
     /// <value>Set of roles and their corresponding divisions associated with this client. Roles and divisions only apply to clients using the client_credential grant</value>
-    [DataMember(Name = "roleDivisions", EmitDefaultValue = false)]
+    [JsonPropertyName("roleDivisions")]
     public List<RoleDivision> RoleDivisions { get; set; }
 
 
@@ -215,7 +215,7 @@ public partial class OAuthClientListing : IEquatable<OAuthClientListing>
     /// The time at which this client will be deleted. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z
     /// </summary>
     /// <value>The time at which this client will be deleted. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z</value>
-    [DataMember(Name = "dateToDelete", EmitDefaultValue = false)]
+    [JsonPropertyName("dateToDelete")]
     public DateTime? DateToDelete { get; set; }
 
 
@@ -224,7 +224,7 @@ public partial class OAuthClientListing : IEquatable<OAuthClientListing>
     /// The URI for this object
     /// </summary>
     /// <value>The URI for this object</value>
-    [DataMember(Name = "selfUri", EmitDefaultValue = false)]
+    [JsonPropertyName("selfUri")]
     public string SelfUri { get; private set; }
 
 

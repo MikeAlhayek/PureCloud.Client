@@ -1,12 +1,12 @@
-using System.Runtime.Serialization;
 using System.Text;
+using System.Text.Json.Serialization;
 
 namespace PureCloud.Client.Models;
 
 /// <summary>
 /// AnalyticsAgentStateAgentResponse
 /// </summary>
-[DataContract]
+
 public partial class AnalyticsAgentStateAgentResponse : IEquatable<AnalyticsAgentStateAgentResponse>
 {
     /// <summary>
@@ -35,7 +35,7 @@ public partial class AnalyticsAgentStateAgentResponse : IEquatable<AnalyticsAgen
     /// User Id - only returned if division is covered by agentStateNames permission
     /// </summary>
     /// <value>User Id - only returned if division is covered by agentStateNames permission</value>
-    [DataMember(Name = "userId", EmitDefaultValue = false)]
+    [JsonPropertyName("userId")]
     public string UserId { get; set; }
 
 
@@ -44,7 +44,7 @@ public partial class AnalyticsAgentStateAgentResponse : IEquatable<AnalyticsAgen
     /// Division Id
     /// </summary>
     /// <value>Division Id</value>
-    [DataMember(Name = "divisionId", EmitDefaultValue = false)]
+    [JsonPropertyName("divisionId")]
     public string DivisionId { get; set; }
 
 
@@ -53,7 +53,7 @@ public partial class AnalyticsAgentStateAgentResponse : IEquatable<AnalyticsAgen
     /// User name - only returned if division is covered by agentStateNames permission
     /// </summary>
     /// <value>User name - only returned if division is covered by agentStateNames permission</value>
-    [DataMember(Name = "userName", EmitDefaultValue = false)]
+    [JsonPropertyName("userName")]
     public string UserName { get; set; }
 
 
@@ -62,7 +62,7 @@ public partial class AnalyticsAgentStateAgentResponse : IEquatable<AnalyticsAgen
     /// The user that this user reports to
     /// </summary>
     /// <value>The user that this user reports to</value>
-    [DataMember(Name = "managerId", EmitDefaultValue = false)]
+    [JsonPropertyName("managerId")]
     public string ManagerId { get; set; }
 
 
@@ -71,7 +71,7 @@ public partial class AnalyticsAgentStateAgentResponse : IEquatable<AnalyticsAgen
     /// The count of sessions
     /// </summary>
     /// <value>The count of sessions</value>
-    [DataMember(Name = "sessionCount", EmitDefaultValue = false)]
+    [JsonPropertyName("sessionCount")]
     public int? SessionCount { get; set; }
 
 
@@ -80,7 +80,7 @@ public partial class AnalyticsAgentStateAgentResponse : IEquatable<AnalyticsAgen
     /// List of sessions
     /// </summary>
     /// <value>List of sessions</value>
-    [DataMember(Name = "sessions", EmitDefaultValue = false)]
+    [JsonPropertyName("sessions")]
     public List<AnalyticsAgentStateAgentSessionResult> Sessions { get; set; }
 
 

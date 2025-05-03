@@ -1,12 +1,12 @@
-using System.Runtime.Serialization;
 using System.Text;
+using System.Text.Json.Serialization;
 
 namespace PureCloud.Client.Models;
 
 /// <summary>
 /// TrunkMetricsTopicTrunkMetrics
 /// </summary>
-[DataContract]
+
 public partial class TrunkMetricsTopicTrunkMetrics : IEquatable<TrunkMetricsTopicTrunkMetrics>
 {
     /// <summary>
@@ -30,7 +30,7 @@ public partial class TrunkMetricsTopicTrunkMetrics : IEquatable<TrunkMetricsTopi
     /// <summary>
     /// Gets or Sets Calls
     /// </summary>
-    [DataMember(Name = "calls", EmitDefaultValue = false)]
+    [JsonPropertyName("calls")]
     public TrunkMetricsTopicTrunkMetricsCalls Calls { get; set; }
 
 
@@ -38,7 +38,7 @@ public partial class TrunkMetricsTopicTrunkMetrics : IEquatable<TrunkMetricsTopi
     /// <summary>
     /// Gets or Sets EventTime
     /// </summary>
-    [DataMember(Name = "eventTime", EmitDefaultValue = false)]
+    [JsonPropertyName("eventTime")]
     public DateTime? EventTime { get; set; }
 
 
@@ -46,7 +46,7 @@ public partial class TrunkMetricsTopicTrunkMetrics : IEquatable<TrunkMetricsTopi
     /// <summary>
     /// Gets or Sets Qos
     /// </summary>
-    [DataMember(Name = "qos", EmitDefaultValue = false)]
+    [JsonPropertyName("qos")]
     public TrunkMetricsTopicTrunkMetricsQoS Qos { get; set; }
 
 
@@ -54,7 +54,7 @@ public partial class TrunkMetricsTopicTrunkMetrics : IEquatable<TrunkMetricsTopi
     /// <summary>
     /// Gets or Sets Trunk
     /// </summary>
-    [DataMember(Name = "trunk", EmitDefaultValue = false)]
+    [JsonPropertyName("trunk")]
     public TrunkMetricsTopicUriReference Trunk { get; set; }
 
 

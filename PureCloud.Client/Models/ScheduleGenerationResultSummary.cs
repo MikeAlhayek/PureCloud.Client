@@ -1,12 +1,12 @@
-using System.Runtime.Serialization;
 using System.Text;
+using System.Text.Json.Serialization;
 
 namespace PureCloud.Client.Models;
 
 /// <summary>
 /// ScheduleGenerationResultSummary
 /// </summary>
-[DataContract]
+
 public partial class ScheduleGenerationResultSummary : IEquatable<ScheduleGenerationResultSummary>
 {
     /// <summary>
@@ -31,7 +31,7 @@ public partial class ScheduleGenerationResultSummary : IEquatable<ScheduleGenera
     /// Whether the schedule generation run failed
     /// </summary>
     /// <value>Whether the schedule generation run failed</value>
-    [DataMember(Name = "failed", EmitDefaultValue = false)]
+    [JsonPropertyName("failed")]
     public bool? Failed { get; set; }
 
 
@@ -40,7 +40,7 @@ public partial class ScheduleGenerationResultSummary : IEquatable<ScheduleGenera
     /// The ID of the schedule generation run. Reference this when requesting support
     /// </summary>
     /// <value>The ID of the schedule generation run. Reference this when requesting support</value>
-    [DataMember(Name = "runId", EmitDefaultValue = false)]
+    [JsonPropertyName("runId")]
     public string RunId { get; set; }
 
 
@@ -49,7 +49,7 @@ public partial class ScheduleGenerationResultSummary : IEquatable<ScheduleGenera
     /// The number of schedule generation messages for this schedule generation run
     /// </summary>
     /// <value>The number of schedule generation messages for this schedule generation run</value>
-    [DataMember(Name = "messageCount", EmitDefaultValue = false)]
+    [JsonPropertyName("messageCount")]
     public int? MessageCount { get; set; }
 
 
@@ -58,7 +58,7 @@ public partial class ScheduleGenerationResultSummary : IEquatable<ScheduleGenera
     /// The list of schedule generation message counts by severity for this schedule generation run
     /// </summary>
     /// <value>The list of schedule generation message counts by severity for this schedule generation run</value>
-    [DataMember(Name = "messageSeverityCounts", EmitDefaultValue = false)]
+    [JsonPropertyName("messageSeverityCounts")]
     public List<SchedulerMessageSeverityCount> MessageSeverityCounts { get; set; }
 
 

@@ -7,14 +7,14 @@ namespace PureCloud.Client.Models;
 /// <summary>
 /// ConversationThreadingWindowSetting
 /// </summary>
-[DataContract]
+
 public partial class ConversationThreadingWindowSetting : IEquatable<ConversationThreadingWindowSetting>
 {
     /// <summary>
     /// The type of messenger
     /// </summary>
     /// <value>The type of messenger</value>
-    [JsonConverter(typeof(JsonStringEnumConverter))]
+    
     public enum MessengerTypeEnum
     {
         /// <summary>
@@ -77,7 +77,7 @@ public partial class ConversationThreadingWindowSetting : IEquatable<Conversatio
     /// The type of messenger
     /// </summary>
     /// <value>The type of messenger</value>
-    [DataMember(Name = "messengerType", EmitDefaultValue = false)]
+    [JsonPropertyName("messengerType")]
     public MessengerTypeEnum? MessengerType { get; set; }
 
     /// <summary>
@@ -105,7 +105,7 @@ public partial class ConversationThreadingWindowSetting : IEquatable<Conversatio
     /// The conversation threading window timeout (Minutes) of specified messenger type
     /// </summary>
     /// <value>The conversation threading window timeout (Minutes) of specified messenger type</value>
-    [DataMember(Name = "timeoutInMinutes", EmitDefaultValue = false)]
+    [JsonPropertyName("timeoutInMinutes")]
     public long? TimeoutInMinutes { get; set; }
 
 

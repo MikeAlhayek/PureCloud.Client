@@ -1,4 +1,3 @@
-using System.Runtime.Serialization;
 using System.Text;
 using System.Text.Json.Serialization;
 
@@ -7,7 +6,7 @@ namespace PureCloud.Client.Models;
 /// <summary>
 /// PropertyIndexRequest
 /// </summary>
-[DataContract]
+
 public partial class PropertyIndexRequest : IEquatable<PropertyIndexRequest>
 {
 
@@ -36,7 +35,7 @@ public partial class PropertyIndexRequest : IEquatable<PropertyIndexRequest>
     /// Attach properties to a segment in the indicated session
     /// </summary>
     /// <value>Attach properties to a segment in the indicated session</value>
-    [DataMember(Name = "sessionId", EmitDefaultValue = false)]
+    [JsonPropertyName("sessionId")]
     public string SessionId { get; set; }
 
 
@@ -45,7 +44,7 @@ public partial class PropertyIndexRequest : IEquatable<PropertyIndexRequest>
     /// Attach properties to a segment covering a specific point in time. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z
     /// </summary>
     /// <value>Attach properties to a segment covering a specific point in time. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z</value>
-    [DataMember(Name = "targetDate", EmitDefaultValue = false)]
+    [JsonPropertyName("targetDate")]
     public DateTime? TargetDate { get; set; }
 
 
@@ -54,7 +53,7 @@ public partial class PropertyIndexRequest : IEquatable<PropertyIndexRequest>
     /// The list of properties to index
     /// </summary>
     /// <value>The list of properties to index</value>
-    [DataMember(Name = "properties", EmitDefaultValue = false)]
+    [JsonPropertyName("properties")]
     public List<AnalyticsProperty> Properties { get; set; }
 
 

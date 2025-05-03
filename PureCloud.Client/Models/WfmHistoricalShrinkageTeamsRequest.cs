@@ -7,14 +7,14 @@ namespace PureCloud.Client.Models;
 /// <summary>
 /// WfmHistoricalShrinkageTeamsRequest
 /// </summary>
-[DataContract]
+
 public partial class WfmHistoricalShrinkageTeamsRequest : IEquatable<WfmHistoricalShrinkageTeamsRequest>
 {
     /// <summary>
     /// Shrinkage aggregation interval granularity
     /// </summary>
     /// <value>Shrinkage aggregation interval granularity</value>
-    [JsonConverter(typeof(JsonStringEnumConverter))]
+    
     public enum GranularityEnum
     {
         /// <summary>
@@ -41,7 +41,7 @@ public partial class WfmHistoricalShrinkageTeamsRequest : IEquatable<WfmHistoric
     /// Shrinkage aggregation interval granularity
     /// </summary>
     /// <value>Shrinkage aggregation interval granularity</value>
-    [DataMember(Name = "granularity", EmitDefaultValue = false)]
+    [JsonPropertyName("granularity")]
     public GranularityEnum? Granularity { get; set; }
 
     /// <summary>
@@ -71,7 +71,7 @@ public partial class WfmHistoricalShrinkageTeamsRequest : IEquatable<WfmHistoric
     /// Beginning of the date range to query in ISO-8601 format
     /// </summary>
     /// <value>Beginning of the date range to query in ISO-8601 format</value>
-    [DataMember(Name = "startDate", EmitDefaultValue = false)]
+    [JsonPropertyName("startDate")]
     public DateTime? StartDate { get; set; }
 
 
@@ -80,7 +80,7 @@ public partial class WfmHistoricalShrinkageTeamsRequest : IEquatable<WfmHistoric
     /// End of the date range to query in ISO-8601 format. If it is not set, end date will be set to current time
     /// </summary>
     /// <value>End of the date range to query in ISO-8601 format. If it is not set, end date will be set to current time</value>
-    [DataMember(Name = "endDate", EmitDefaultValue = false)]
+    [JsonPropertyName("endDate")]
     public DateTime? EndDate { get; set; }
 
 
@@ -89,7 +89,7 @@ public partial class WfmHistoricalShrinkageTeamsRequest : IEquatable<WfmHistoric
     /// The time zone, in olson format, to use in defining days when computing shrinkage for requested granularity. The results will be returned as UTC timestamps regardless of the time zone input.
     /// </summary>
     /// <value>The time zone, in olson format, to use in defining days when computing shrinkage for requested granularity. The results will be returned as UTC timestamps regardless of the time zone input.</value>
-    [DataMember(Name = "timeZone", EmitDefaultValue = false)]
+    [JsonPropertyName("timeZone")]
     public string TimeZone { get; set; }
 
 

@@ -1,12 +1,12 @@
-using System.Runtime.Serialization;
 using System.Text;
+using System.Text.Json.Serialization;
 
 namespace PureCloud.Client.Models;
 
 /// <summary>
 /// MessageInfo
 /// </summary>
-[DataContract]
+
 public partial class MessageInfo : IEquatable<MessageInfo>
 {
     /// <summary>
@@ -31,7 +31,7 @@ public partial class MessageInfo : IEquatable<MessageInfo>
     /// Key that can be used to localize the message.
     /// </summary>
     /// <value>Key that can be used to localize the message.</value>
-    [DataMember(Name = "localizableMessageCode", EmitDefaultValue = false)]
+    [JsonPropertyName("localizableMessageCode")]
     public string LocalizableMessageCode { get; set; }
 
 
@@ -40,7 +40,7 @@ public partial class MessageInfo : IEquatable<MessageInfo>
     /// Description of the message.
     /// </summary>
     /// <value>Description of the message.</value>
-    [DataMember(Name = "message", EmitDefaultValue = false)]
+    [JsonPropertyName("message")]
     public string Message { get; set; }
 
 
@@ -49,7 +49,7 @@ public partial class MessageInfo : IEquatable<MessageInfo>
     /// Message with template fields for variable replacement.
     /// </summary>
     /// <value>Message with template fields for variable replacement.</value>
-    [DataMember(Name = "messageWithParams", EmitDefaultValue = false)]
+    [JsonPropertyName("messageWithParams")]
     public string MessageWithParams { get; set; }
 
 
@@ -58,7 +58,7 @@ public partial class MessageInfo : IEquatable<MessageInfo>
     /// Map with fields for variable replacement.
     /// </summary>
     /// <value>Map with fields for variable replacement.</value>
-    [DataMember(Name = "messageParams", EmitDefaultValue = false)]
+    [JsonPropertyName("messageParams")]
     public Dictionary<string, string> MessageParams { get; set; }
 
 

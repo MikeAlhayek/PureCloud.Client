@@ -1,12 +1,12 @@
-using System.Runtime.Serialization;
 using System.Text;
+using System.Text.Json.Serialization;
 
 namespace PureCloud.Client.Models;
 
 /// <summary>
 /// FaxSummary
 /// </summary>
-[DataContract]
+
 public partial class FaxSummary : IEquatable<FaxSummary>
 {
     /// <summary>
@@ -28,7 +28,7 @@ public partial class FaxSummary : IEquatable<FaxSummary>
     /// <summary>
     /// Gets or Sets ReadCount
     /// </summary>
-    [DataMember(Name = "readCount", EmitDefaultValue = false)]
+    [JsonPropertyName("readCount")]
     public int? ReadCount { get; set; }
 
 
@@ -36,7 +36,7 @@ public partial class FaxSummary : IEquatable<FaxSummary>
     /// <summary>
     /// Gets or Sets UnreadCount
     /// </summary>
-    [DataMember(Name = "unreadCount", EmitDefaultValue = false)]
+    [JsonPropertyName("unreadCount")]
     public int? UnreadCount { get; set; }
 
 
@@ -44,7 +44,7 @@ public partial class FaxSummary : IEquatable<FaxSummary>
     /// <summary>
     /// Gets or Sets TotalCount
     /// </summary>
-    [DataMember(Name = "totalCount", EmitDefaultValue = false)]
+    [JsonPropertyName("totalCount")]
     public int? TotalCount { get; set; }
 
 

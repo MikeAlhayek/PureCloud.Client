@@ -7,13 +7,13 @@ namespace PureCloud.Client.Models;
 /// <summary>
 /// TranscriptionTopicTranscriptionRequestStatus
 /// </summary>
-[DataContract]
+
 public partial class TranscriptionTopicTranscriptionRequestStatus : IEquatable<TranscriptionTopicTranscriptionRequestStatus>
 {
     /// <summary>
     /// Gets or Sets Status
     /// </summary>
-    [JsonConverter(typeof(JsonStringEnumConverter))]
+    
     public enum StatusEnum
     {
         /// <summary>
@@ -45,7 +45,7 @@ public partial class TranscriptionTopicTranscriptionRequestStatus : IEquatable<T
     /// <summary>
     /// Gets or Sets Status
     /// </summary>
-    [DataMember(Name = "status", EmitDefaultValue = false)]
+    [JsonPropertyName("status")]
     public StatusEnum? Status { get; set; }
     /// <summary>
     /// Initializes a new instance of the <see cref="TranscriptionTopicTranscriptionRequestStatus" /> class.
@@ -64,7 +64,7 @@ public partial class TranscriptionTopicTranscriptionRequestStatus : IEquatable<T
     /// <summary>
     /// Gets or Sets OffsetMs
     /// </summary>
-    [DataMember(Name = "offsetMs", EmitDefaultValue = false)]
+    [JsonPropertyName("offsetMs")]
     public long? OffsetMs { get; set; }
 
 

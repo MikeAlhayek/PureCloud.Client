@@ -1,12 +1,12 @@
-using System.Runtime.Serialization;
 using System.Text;
+using System.Text.Json.Serialization;
 
 namespace PureCloud.Client.Models;
 
 /// <summary>
 /// RegisterArchitectJobResponse
 /// </summary>
-[DataContract]
+
 public partial class RegisterArchitectJobResponse : IEquatable<RegisterArchitectJobResponse>
 {
     /// <summary>
@@ -23,7 +23,7 @@ public partial class RegisterArchitectJobResponse : IEquatable<RegisterArchitect
     /// The globally unique identifier for the object.
     /// </summary>
     /// <value>The globally unique identifier for the object.</value>
-    [DataMember(Name = "id", EmitDefaultValue = false)]
+    [JsonPropertyName("id")]
     public string Id { get; private set; }
 
 
@@ -32,7 +32,7 @@ public partial class RegisterArchitectJobResponse : IEquatable<RegisterArchitect
     /// Presigned URL to upload the file in S3
     /// </summary>
     /// <value>Presigned URL to upload the file in S3</value>
-    [DataMember(Name = "presignedUrl", EmitDefaultValue = false)]
+    [JsonPropertyName("presignedUrl")]
     public string PresignedUrl { get; private set; }
 
 
@@ -41,7 +41,7 @@ public partial class RegisterArchitectJobResponse : IEquatable<RegisterArchitect
     /// Required headers when uploading a file through PUT request to the URL
     /// </summary>
     /// <value>Required headers when uploading a file through PUT request to the URL</value>
-    [DataMember(Name = "headers", EmitDefaultValue = false)]
+    [JsonPropertyName("headers")]
     public Dictionary<string, string> Headers { get; private set; }
 
 
@@ -50,7 +50,7 @@ public partial class RegisterArchitectJobResponse : IEquatable<RegisterArchitect
     /// The URI for this object
     /// </summary>
     /// <value>The URI for this object</value>
-    [DataMember(Name = "selfUri", EmitDefaultValue = false)]
+    [JsonPropertyName("selfUri")]
     public string SelfUri { get; private set; }
 
 

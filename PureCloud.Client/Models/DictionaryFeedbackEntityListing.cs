@@ -1,12 +1,12 @@
-using System.Runtime.Serialization;
 using System.Text;
+using System.Text.Json.Serialization;
 
 namespace PureCloud.Client.Models;
 
 /// <summary>
 /// DictionaryFeedbackEntityListing
 /// </summary>
-[DataContract]
+
 public partial class DictionaryFeedbackEntityListing : IEquatable<DictionaryFeedbackEntityListing>
 {
     /// <summary>
@@ -34,7 +34,7 @@ public partial class DictionaryFeedbackEntityListing : IEquatable<DictionaryFeed
     /// <summary>
     /// Gets or Sets Entities
     /// </summary>
-    [DataMember(Name = "entities", EmitDefaultValue = false)]
+    [JsonPropertyName("entities")]
     public List<ListedDictionaryFeedback> Entities { get; set; }
 
 
@@ -42,7 +42,7 @@ public partial class DictionaryFeedbackEntityListing : IEquatable<DictionaryFeed
     /// <summary>
     /// Gets or Sets PageSize
     /// </summary>
-    [DataMember(Name = "pageSize", EmitDefaultValue = false)]
+    [JsonPropertyName("pageSize")]
     public int? PageSize { get; set; }
 
 
@@ -50,7 +50,7 @@ public partial class DictionaryFeedbackEntityListing : IEquatable<DictionaryFeed
     /// <summary>
     /// Gets or Sets PageCount
     /// </summary>
-    [DataMember(Name = "pageCount", EmitDefaultValue = false)]
+    [JsonPropertyName("pageCount")]
     public int? PageCount { get; set; }
 
 
@@ -58,7 +58,7 @@ public partial class DictionaryFeedbackEntityListing : IEquatable<DictionaryFeed
     /// <summary>
     /// Gets or Sets Total
     /// </summary>
-    [DataMember(Name = "total", EmitDefaultValue = false)]
+    [JsonPropertyName("total")]
     public int? Total { get; set; }
 
 
@@ -66,7 +66,7 @@ public partial class DictionaryFeedbackEntityListing : IEquatable<DictionaryFeed
     /// <summary>
     /// Gets or Sets SelfUri
     /// </summary>
-    [DataMember(Name = "selfUri", EmitDefaultValue = false)]
+    [JsonPropertyName("selfUri")]
     public string SelfUri { get; set; }
 
 
@@ -74,7 +74,7 @@ public partial class DictionaryFeedbackEntityListing : IEquatable<DictionaryFeed
     /// <summary>
     /// Gets or Sets NextUri
     /// </summary>
-    [DataMember(Name = "nextUri", EmitDefaultValue = false)]
+    [JsonPropertyName("nextUri")]
     public string NextUri { get; set; }
 
 

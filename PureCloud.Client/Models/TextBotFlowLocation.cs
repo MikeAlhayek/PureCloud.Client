@@ -1,4 +1,3 @@
-using System.Runtime.Serialization;
 using System.Text;
 using System.Text.Json.Serialization;
 
@@ -7,7 +6,7 @@ namespace PureCloud.Client.Models;
 /// <summary>
 /// Describes a flow location.
 /// </summary>
-[DataContract]
+
 public partial class TextBotFlowLocation : IEquatable<TextBotFlowLocation>
 {
 
@@ -36,7 +35,7 @@ public partial class TextBotFlowLocation : IEquatable<TextBotFlowLocation>
     /// The name of the action that was active when the event of interest happened.
     /// </summary>
     /// <value>The name of the action that was active when the event of interest happened.</value>
-    [DataMember(Name = "actionName", EmitDefaultValue = false)]
+    [JsonPropertyName("actionName")]
     public string ActionName { get; set; }
 
 
@@ -45,7 +44,7 @@ public partial class TextBotFlowLocation : IEquatable<TextBotFlowLocation>
     /// The number of the action that was active when the event of interest happened.
     /// </summary>
     /// <value>The number of the action that was active when the event of interest happened.</value>
-    [DataMember(Name = "actionNumber", EmitDefaultValue = false)]
+    [JsonPropertyName("actionNumber")]
     public int? ActionNumber { get; set; }
 
 
@@ -54,7 +53,7 @@ public partial class TextBotFlowLocation : IEquatable<TextBotFlowLocation>
     /// The name of the state or task which was active when the event of interest happened.
     /// </summary>
     /// <value>The name of the state or task which was active when the event of interest happened.</value>
-    [DataMember(Name = "sequenceName", EmitDefaultValue = false)]
+    [JsonPropertyName("sequenceName")]
     public string SequenceName { get; set; }
 
 

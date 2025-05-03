@@ -1,12 +1,12 @@
-using System.Runtime.Serialization;
 using System.Text;
+using System.Text.Json.Serialization;
 
 namespace PureCloud.Client.Models;
 
 /// <summary>
 /// VoicemailMessage
 /// </summary>
-[DataContract]
+
 public partial class VoicemailMessage : IEquatable<VoicemailMessage>
 {
     /// <summary>
@@ -31,7 +31,7 @@ public partial class VoicemailMessage : IEquatable<VoicemailMessage>
     /// The globally unique identifier for the object.
     /// </summary>
     /// <value>The globally unique identifier for the object.</value>
-    [DataMember(Name = "id", EmitDefaultValue = false)]
+    [JsonPropertyName("id")]
     public string Id { get; private set; }
 
 
@@ -40,7 +40,7 @@ public partial class VoicemailMessage : IEquatable<VoicemailMessage>
     /// The conversation that the voicemail message is associated with
     /// </summary>
     /// <value>The conversation that the voicemail message is associated with</value>
-    [DataMember(Name = "conversation", EmitDefaultValue = false)]
+    [JsonPropertyName("conversation")]
     public Conversation Conversation { get; private set; }
 
 
@@ -49,7 +49,7 @@ public partial class VoicemailMessage : IEquatable<VoicemailMessage>
     /// Whether the voicemail message is marked as read
     /// </summary>
     /// <value>Whether the voicemail message is marked as read</value>
-    [DataMember(Name = "read", EmitDefaultValue = false)]
+    [JsonPropertyName("read")]
     public bool? Read { get; set; }
 
 
@@ -58,7 +58,7 @@ public partial class VoicemailMessage : IEquatable<VoicemailMessage>
     /// The voicemail message&#39;s audio recording duration in seconds
     /// </summary>
     /// <value>The voicemail message&#39;s audio recording duration in seconds</value>
-    [DataMember(Name = "audioRecordingDurationSeconds", EmitDefaultValue = false)]
+    [JsonPropertyName("audioRecordingDurationSeconds")]
     public int? AudioRecordingDurationSeconds { get; private set; }
 
 
@@ -67,7 +67,7 @@ public partial class VoicemailMessage : IEquatable<VoicemailMessage>
     /// The voicemail message&#39;s audio recording size in bytes
     /// </summary>
     /// <value>The voicemail message&#39;s audio recording size in bytes</value>
-    [DataMember(Name = "audioRecordingSizeBytes", EmitDefaultValue = false)]
+    [JsonPropertyName("audioRecordingSizeBytes")]
     public long? AudioRecordingSizeBytes { get; private set; }
 
 
@@ -76,7 +76,7 @@ public partial class VoicemailMessage : IEquatable<VoicemailMessage>
     /// The transcription of the voicemail&#39;s audio
     /// </summary>
     /// <value>The transcription of the voicemail&#39;s audio</value>
-    [DataMember(Name = "transcription", EmitDefaultValue = false)]
+    [JsonPropertyName("transcription")]
     public string Transcription { get; private set; }
 
 
@@ -85,7 +85,7 @@ public partial class VoicemailMessage : IEquatable<VoicemailMessage>
     /// The date the voicemail message was created. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z
     /// </summary>
     /// <value>The date the voicemail message was created. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z</value>
-    [DataMember(Name = "createdDate", EmitDefaultValue = false)]
+    [JsonPropertyName("createdDate")]
     public DateTime? CreatedDate { get; private set; }
 
 
@@ -94,7 +94,7 @@ public partial class VoicemailMessage : IEquatable<VoicemailMessage>
     /// The date the voicemail message was last modified. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z
     /// </summary>
     /// <value>The date the voicemail message was last modified. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z</value>
-    [DataMember(Name = "modifiedDate", EmitDefaultValue = false)]
+    [JsonPropertyName("modifiedDate")]
     public DateTime? ModifiedDate { get; private set; }
 
 
@@ -103,7 +103,7 @@ public partial class VoicemailMessage : IEquatable<VoicemailMessage>
     /// The date the voicemail message deleted property was set to true. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z
     /// </summary>
     /// <value>The date the voicemail message deleted property was set to true. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z</value>
-    [DataMember(Name = "deletedDate", EmitDefaultValue = false)]
+    [JsonPropertyName("deletedDate")]
     public DateTime? DeletedDate { get; private set; }
 
 
@@ -112,7 +112,7 @@ public partial class VoicemailMessage : IEquatable<VoicemailMessage>
     /// The caller address
     /// </summary>
     /// <value>The caller address</value>
-    [DataMember(Name = "callerAddress", EmitDefaultValue = false)]
+    [JsonPropertyName("callerAddress")]
     public string CallerAddress { get; private set; }
 
 
@@ -121,7 +121,7 @@ public partial class VoicemailMessage : IEquatable<VoicemailMessage>
     /// Optionally the name of the caller that left the voicemail message if the caller was a known user
     /// </summary>
     /// <value>Optionally the name of the caller that left the voicemail message if the caller was a known user</value>
-    [DataMember(Name = "callerName", EmitDefaultValue = false)]
+    [JsonPropertyName("callerName")]
     public string CallerName { get; private set; }
 
 
@@ -130,7 +130,7 @@ public partial class VoicemailMessage : IEquatable<VoicemailMessage>
     /// Optionally the user that left the voicemail message if the caller was a known user
     /// </summary>
     /// <value>Optionally the user that left the voicemail message if the caller was a known user</value>
-    [DataMember(Name = "callerUser", EmitDefaultValue = false)]
+    [JsonPropertyName("callerUser")]
     public User CallerUser { get; private set; }
 
 
@@ -139,7 +139,7 @@ public partial class VoicemailMessage : IEquatable<VoicemailMessage>
     /// Whether the voicemail message has been marked as deleted
     /// </summary>
     /// <value>Whether the voicemail message has been marked as deleted</value>
-    [DataMember(Name = "deleted", EmitDefaultValue = false)]
+    [JsonPropertyName("deleted")]
     public bool? Deleted { get; set; }
 
 
@@ -148,7 +148,7 @@ public partial class VoicemailMessage : IEquatable<VoicemailMessage>
     /// An optional note
     /// </summary>
     /// <value>An optional note</value>
-    [DataMember(Name = "note", EmitDefaultValue = false)]
+    [JsonPropertyName("note")]
     public string Note { get; set; }
 
 
@@ -157,7 +157,7 @@ public partial class VoicemailMessage : IEquatable<VoicemailMessage>
     /// The user that the voicemail message belongs to or null which means the voicemail message belongs to a group or queue
     /// </summary>
     /// <value>The user that the voicemail message belongs to or null which means the voicemail message belongs to a group or queue</value>
-    [DataMember(Name = "user", EmitDefaultValue = false)]
+    [JsonPropertyName("user")]
     public User User { get; private set; }
 
 
@@ -166,7 +166,7 @@ public partial class VoicemailMessage : IEquatable<VoicemailMessage>
     /// The group that the voicemail message belongs to or null which means the voicemail message belongs to a user or queue
     /// </summary>
     /// <value>The group that the voicemail message belongs to or null which means the voicemail message belongs to a user or queue</value>
-    [DataMember(Name = "group", EmitDefaultValue = false)]
+    [JsonPropertyName("group")]
     public Group Group { get; private set; }
 
 
@@ -175,7 +175,7 @@ public partial class VoicemailMessage : IEquatable<VoicemailMessage>
     /// The queue that the voicemail message belongs to or null which means the voicemail message belongs to a user or group
     /// </summary>
     /// <value>The queue that the voicemail message belongs to or null which means the voicemail message belongs to a user or group</value>
-    [DataMember(Name = "queue", EmitDefaultValue = false)]
+    [JsonPropertyName("queue")]
     public Queue Queue { get; private set; }
 
 
@@ -184,7 +184,7 @@ public partial class VoicemailMessage : IEquatable<VoicemailMessage>
     /// Represents where this voicemail message was copied from
     /// </summary>
     /// <value>Represents where this voicemail message was copied from</value>
-    [DataMember(Name = "copiedFrom", EmitDefaultValue = false)]
+    [JsonPropertyName("copiedFrom")]
     public VoicemailCopyRecord CopiedFrom { get; private set; }
 
 
@@ -193,7 +193,7 @@ public partial class VoicemailMessage : IEquatable<VoicemailMessage>
     /// Represents where this voicemail has been copied to
     /// </summary>
     /// <value>Represents where this voicemail has been copied to</value>
-    [DataMember(Name = "copiedTo", EmitDefaultValue = false)]
+    [JsonPropertyName("copiedTo")]
     public List<VoicemailCopyRecord> CopiedTo { get; private set; }
 
 
@@ -202,7 +202,7 @@ public partial class VoicemailMessage : IEquatable<VoicemailMessage>
     /// The retention policy for this voicemail when deleted is set to true
     /// </summary>
     /// <value>The retention policy for this voicemail when deleted is set to true</value>
-    [DataMember(Name = "deleteRetentionPolicy", EmitDefaultValue = false)]
+    [JsonPropertyName("deleteRetentionPolicy")]
     public VoicemailRetentionPolicy DeleteRetentionPolicy { get; set; }
 
 
@@ -211,7 +211,7 @@ public partial class VoicemailMessage : IEquatable<VoicemailMessage>
     /// The URI for this object
     /// </summary>
     /// <value>The URI for this object</value>
-    [DataMember(Name = "selfUri", EmitDefaultValue = false)]
+    [JsonPropertyName("selfUri")]
     public string SelfUri { get; private set; }
 
 

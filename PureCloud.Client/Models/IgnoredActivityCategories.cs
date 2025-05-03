@@ -7,13 +7,13 @@ namespace PureCloud.Client.Models;
 /// <summary>
 /// IgnoredActivityCategories
 /// </summary>
-[DataContract]
+
 public partial class IgnoredActivityCategories : IEquatable<IgnoredActivityCategories>
 {
     /// <summary>
     /// Gets or Sets Values
     /// </summary>
-    [JsonConverter(typeof(JsonStringEnumConverter))]
+    
     public enum ValuesEnum
     {
         /// <summary>
@@ -94,7 +94,7 @@ public partial class IgnoredActivityCategories : IEquatable<IgnoredActivityCateg
     /// Activity categories list
     /// </summary>
     /// <value>Activity categories list</value>
-    [DataMember(Name = "values", EmitDefaultValue = false)]
+    [JsonPropertyName("values")]
     public List<ValuesEnum> Values { get; set; }
 
 

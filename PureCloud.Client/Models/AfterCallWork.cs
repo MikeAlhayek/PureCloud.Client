@@ -7,13 +7,13 @@ namespace PureCloud.Client.Models;
 /// <summary>
 /// AfterCallWork
 /// </summary>
-[DataContract]
+
 public partial class AfterCallWork : IEquatable<AfterCallWork>
 {
     /// <summary>
     /// Gets or Sets State
     /// </summary>
-    [JsonConverter(typeof(JsonStringEnumConverter))]
+    
     public enum StateEnum
     {
         /// <summary>
@@ -58,7 +58,7 @@ public partial class AfterCallWork : IEquatable<AfterCallWork>
     /// <summary>
     /// Gets or Sets State
     /// </summary>
-    [DataMember(Name = "state", EmitDefaultValue = false)]
+    [JsonPropertyName("state")]
     public StateEnum? State { get; set; }
 
     /// <summary>
@@ -78,7 +78,7 @@ public partial class AfterCallWork : IEquatable<AfterCallWork>
     /// Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z
     /// </summary>
     /// <value>Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z</value>
-    [DataMember(Name = "startTime", EmitDefaultValue = false)]
+    [JsonPropertyName("startTime")]
     public DateTime? StartTime { get; set; }
 
 
@@ -87,7 +87,7 @@ public partial class AfterCallWork : IEquatable<AfterCallWork>
     /// Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z
     /// </summary>
     /// <value>Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z</value>
-    [DataMember(Name = "endTime", EmitDefaultValue = false)]
+    [JsonPropertyName("endTime")]
     public DateTime? EndTime { get; set; }
 
 

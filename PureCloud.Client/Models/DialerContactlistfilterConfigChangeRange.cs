@@ -1,12 +1,12 @@
-using System.Runtime.Serialization;
 using System.Text;
+using System.Text.Json.Serialization;
 
 namespace PureCloud.Client.Models;
 
 /// <summary>
 /// FilterRange is one of the attributes of a FilterPredicate
 /// </summary>
-[DataContract]
+
 public partial class DialerContactlistfilterConfigChangeRange : IEquatable<DialerContactlistfilterConfigChangeRange>
 {
     /// <summary>
@@ -35,7 +35,7 @@ public partial class DialerContactlistfilterConfigChangeRange : IEquatable<Diale
     /// Minimum end of the range
     /// </summary>
     /// <value>Minimum end of the range</value>
-    [DataMember(Name = "min", EmitDefaultValue = false)]
+    [JsonPropertyName("min")]
     public string Min { get; set; }
 
 
@@ -44,7 +44,7 @@ public partial class DialerContactlistfilterConfigChangeRange : IEquatable<Diale
     /// Maximum end of the range
     /// </summary>
     /// <value>Maximum end of the range</value>
-    [DataMember(Name = "max", EmitDefaultValue = false)]
+    [JsonPropertyName("max")]
     public string Max { get; set; }
 
 
@@ -53,7 +53,7 @@ public partial class DialerContactlistfilterConfigChangeRange : IEquatable<Diale
     /// Whether or not to include the minimum in the range
     /// </summary>
     /// <value>Whether or not to include the minimum in the range</value>
-    [DataMember(Name = "minInclusive", EmitDefaultValue = false)]
+    [JsonPropertyName("minInclusive")]
     public bool? MinInclusive { get; set; }
 
 
@@ -62,7 +62,7 @@ public partial class DialerContactlistfilterConfigChangeRange : IEquatable<Diale
     /// Whether or not to include the maximum in the range
     /// </summary>
     /// <value>Whether or not to include the maximum in the range</value>
-    [DataMember(Name = "maxInclusive", EmitDefaultValue = false)]
+    [JsonPropertyName("maxInclusive")]
     public bool? MaxInclusive { get; set; }
 
 
@@ -71,7 +71,7 @@ public partial class DialerContactlistfilterConfigChangeRange : IEquatable<Diale
     /// Elements that apply to the IN operator
     /// </summary>
     /// <value>Elements that apply to the IN operator</value>
-    [DataMember(Name = "inSet", EmitDefaultValue = false)]
+    [JsonPropertyName("inSet")]
     public List<string> InSet { get; set; }
 
 
@@ -79,7 +79,7 @@ public partial class DialerContactlistfilterConfigChangeRange : IEquatable<Diale
     /// <summary>
     /// Gets or Sets AdditionalProperties
     /// </summary>
-    [DataMember(Name = "additionalProperties", EmitDefaultValue = false)]
+    [JsonPropertyName("additionalProperties")]
     public Dictionary<string, object> AdditionalProperties { get; set; }
 
 

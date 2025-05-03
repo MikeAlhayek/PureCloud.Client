@@ -7,13 +7,13 @@ namespace PureCloud.Client.Models;
 /// <summary>
 /// V2ConversationMessageTypingEventForWorkflowTopicConversationNormalizedMessage
 /// </summary>
-[DataContract]
+
 public partial class V2ConversationMessageTypingEventForWorkflowTopicConversationNormalizedMessage : IEquatable<V2ConversationMessageTypingEventForWorkflowTopicConversationNormalizedMessage>
 {
     /// <summary>
     /// Gets or Sets Type
     /// </summary>
-    [JsonConverter(typeof(JsonStringEnumConverter))]
+    
     public enum TypeEnum
     {
         /// <summary>
@@ -33,7 +33,7 @@ public partial class V2ConversationMessageTypingEventForWorkflowTopicConversatio
     /// <summary>
     /// Gets or Sets Direction
     /// </summary>
-    [JsonConverter(typeof(JsonStringEnumConverter))]
+    
     public enum DirectionEnum
     {
         /// <summary>
@@ -59,12 +59,12 @@ public partial class V2ConversationMessageTypingEventForWorkflowTopicConversatio
     /// <summary>
     /// Gets or Sets Type
     /// </summary>
-    [DataMember(Name = "type", EmitDefaultValue = false)]
+    [JsonPropertyName("type")]
     public TypeEnum? Type { get; set; }
     /// <summary>
     /// Gets or Sets Direction
     /// </summary>
-    [DataMember(Name = "direction", EmitDefaultValue = false)]
+    [JsonPropertyName("direction")]
     public DirectionEnum? Direction { get; set; }
     /// <summary>
     /// Initializes a new instance of the <see cref="V2ConversationMessageTypingEventForWorkflowTopicConversationNormalizedMessage" /> class.
@@ -87,7 +87,7 @@ public partial class V2ConversationMessageTypingEventForWorkflowTopicConversatio
     /// <summary>
     /// Gets or Sets Channel
     /// </summary>
-    [DataMember(Name = "channel", EmitDefaultValue = false)]
+    [JsonPropertyName("channel")]
     public V2ConversationMessageTypingEventForWorkflowTopicConversationMessagingChannel Channel { get; set; }
 
 
@@ -97,7 +97,7 @@ public partial class V2ConversationMessageTypingEventForWorkflowTopicConversatio
     /// <summary>
     /// Gets or Sets Events
     /// </summary>
-    [DataMember(Name = "events", EmitDefaultValue = false)]
+    [JsonPropertyName("events")]
     public List<V2ConversationMessageTypingEventForWorkflowTopicConversationMessageEvent> Events { get; set; }
 
 

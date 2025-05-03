@@ -1,12 +1,12 @@
-using System.Runtime.Serialization;
 using System.Text;
+using System.Text.Json.Serialization;
 
 namespace PureCloud.Client.Models;
 
 /// <summary>
 /// Channel-specific information that describes the message and the message channel/provider.
 /// </summary>
-[DataContract]
+
 public partial class WebMessagingChannel : IEquatable<WebMessagingChannel>
 {
     /// <summary>
@@ -23,7 +23,7 @@ public partial class WebMessagingChannel : IEquatable<WebMessagingChannel>
     /// Information about the recipient the message is received from.
     /// </summary>
     /// <value>Information about the recipient the message is received from.</value>
-    [DataMember(Name = "from", EmitDefaultValue = false)]
+    [JsonPropertyName("from")]
     public WebMessagingRecipient From { get; private set; }
 
 
@@ -32,7 +32,7 @@ public partial class WebMessagingChannel : IEquatable<WebMessagingChannel>
     /// Information about the recipient the message is sent to.
     /// </summary>
     /// <value>Information about the recipient the message is sent to.</value>
-    [DataMember(Name = "to", EmitDefaultValue = false)]
+    [JsonPropertyName("to")]
     public WebMessagingRecipient To { get; private set; }
 
 
@@ -41,7 +41,7 @@ public partial class WebMessagingChannel : IEquatable<WebMessagingChannel>
     /// When the message was processed by Genesys Cloud. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z
     /// </summary>
     /// <value>When the message was processed by Genesys Cloud. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z</value>
-    [DataMember(Name = "time", EmitDefaultValue = false)]
+    [JsonPropertyName("time")]
     public DateTime? Time { get; private set; }
 
 
@@ -50,7 +50,7 @@ public partial class WebMessagingChannel : IEquatable<WebMessagingChannel>
     /// Unique provider ID of the message.
     /// </summary>
     /// <value>Unique provider ID of the message.</value>
-    [DataMember(Name = "messageId", EmitDefaultValue = false)]
+    [JsonPropertyName("messageId")]
     public string MessageId { get; private set; }
 
 

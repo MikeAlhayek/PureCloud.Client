@@ -7,14 +7,14 @@ namespace PureCloud.Client.Models;
 /// <summary>
 /// Message event element.
 /// </summary>
-[DataContract]
+
 public partial class OpenEvent : IEquatable<OpenEvent>
 {
     /// <summary>
     /// Type of this event element
     /// </summary>
     /// <value>Type of this event element</value>
-    [JsonConverter(typeof(JsonStringEnumConverter))]
+    
     public enum EventTypeEnum
     {
         /// <summary>
@@ -35,7 +35,7 @@ public partial class OpenEvent : IEquatable<OpenEvent>
     /// Type of this event element
     /// </summary>
     /// <value>Type of this event element</value>
-    [DataMember(Name = "eventType", EmitDefaultValue = false)]
+    [JsonPropertyName("eventType")]
     public EventTypeEnum? EventType { get; set; }
 
     /// <summary>

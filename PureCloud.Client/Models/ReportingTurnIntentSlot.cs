@@ -1,12 +1,12 @@
-using System.Runtime.Serialization;
 using System.Text;
+using System.Text.Json.Serialization;
 
 namespace PureCloud.Client.Models;
 
 /// <summary>
 /// ReportingTurnIntentSlot
 /// </summary>
-[DataContract]
+
 public partial class ReportingTurnIntentSlot : IEquatable<ReportingTurnIntentSlot>
 {
     /// <summary>
@@ -31,7 +31,7 @@ public partial class ReportingTurnIntentSlot : IEquatable<ReportingTurnIntentSlo
     /// The name of the slot.
     /// </summary>
     /// <value>The name of the slot.</value>
-    [DataMember(Name = "name", EmitDefaultValue = false)]
+    [JsonPropertyName("name")]
     public string Name { get; set; }
 
 
@@ -40,7 +40,7 @@ public partial class ReportingTurnIntentSlot : IEquatable<ReportingTurnIntentSlo
     /// The value of the slot.
     /// </summary>
     /// <value>The value of the slot.</value>
-    [DataMember(Name = "value", EmitDefaultValue = false)]
+    [JsonPropertyName("value")]
     public string Value { get; set; }
 
 
@@ -49,7 +49,7 @@ public partial class ReportingTurnIntentSlot : IEquatable<ReportingTurnIntentSlo
     /// The NLU entity type of the slot (either builtin or user defined)
     /// </summary>
     /// <value>The NLU entity type of the slot (either builtin or user defined)</value>
-    [DataMember(Name = "type", EmitDefaultValue = false)]
+    [JsonPropertyName("type")]
     public string Type { get; set; }
 
 
@@ -58,7 +58,7 @@ public partial class ReportingTurnIntentSlot : IEquatable<ReportingTurnIntentSlo
     /// The confidence score this slot received during detection.
     /// </summary>
     /// <value>The confidence score this slot received during detection.</value>
-    [DataMember(Name = "confidence", EmitDefaultValue = false)]
+    [JsonPropertyName("confidence")]
     public double? Confidence { get; set; }
 
 

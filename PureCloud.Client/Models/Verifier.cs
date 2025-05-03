@@ -1,12 +1,12 @@
-using System.Runtime.Serialization;
 using System.Text;
+using System.Text.Json.Serialization;
 
 namespace PureCloud.Client.Models;
 
 /// <summary>
 /// Verifier
 /// </summary>
-[DataContract]
+
 public partial class Verifier : IEquatable<Verifier>
 {
     /// <summary>
@@ -29,7 +29,7 @@ public partial class Verifier : IEquatable<Verifier>
     /// The globally unique identifier for the object.
     /// </summary>
     /// <value>The globally unique identifier for the object.</value>
-    [DataMember(Name = "id", EmitDefaultValue = false)]
+    [JsonPropertyName("id")]
     public string Id { get; private set; }
 
 
@@ -37,7 +37,7 @@ public partial class Verifier : IEquatable<Verifier>
     /// <summary>
     /// Gets or Sets Name
     /// </summary>
-    [DataMember(Name = "name", EmitDefaultValue = false)]
+    [JsonPropertyName("name")]
     public string Name { get; set; }
 
 
@@ -46,7 +46,7 @@ public partial class Verifier : IEquatable<Verifier>
     /// Indicates whether this verifier is enabled.
     /// </summary>
     /// <value>Indicates whether this verifier is enabled.</value>
-    [DataMember(Name = "enabled", EmitDefaultValue = false)]
+    [JsonPropertyName("enabled")]
     public bool? Enabled { get; set; }
 
 
@@ -55,7 +55,7 @@ public partial class Verifier : IEquatable<Verifier>
     /// Indicates whether this is the default verifier.
     /// </summary>
     /// <value>Indicates whether this is the default verifier.</value>
-    [DataMember(Name = "default", EmitDefaultValue = false)]
+    [JsonPropertyName("default")]
     public bool? Default { get; set; }
 
 
@@ -64,7 +64,7 @@ public partial class Verifier : IEquatable<Verifier>
     /// The URI for this object
     /// </summary>
     /// <value>The URI for this object</value>
-    [DataMember(Name = "selfUri", EmitDefaultValue = false)]
+    [JsonPropertyName("selfUri")]
     public string SelfUri { get; private set; }
 
 

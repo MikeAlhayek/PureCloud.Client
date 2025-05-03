@@ -1,4 +1,3 @@
-using System.Runtime.Serialization;
 using System.Text;
 using System.Text.Json.Serialization;
 
@@ -7,7 +6,7 @@ namespace PureCloud.Client.Models;
 /// <summary>
 /// JourneyAction
 /// </summary>
-[DataContract]
+
 public partial class JourneyAction : IEquatable<JourneyAction>
 {
 
@@ -34,7 +33,7 @@ public partial class JourneyAction : IEquatable<JourneyAction>
     /// The ID of an action from the Journey System (an action is spawned from an actionMap)
     /// </summary>
     /// <value>The ID of an action from the Journey System (an action is spawned from an actionMap)</value>
-    [DataMember(Name = "id", EmitDefaultValue = false)]
+    [JsonPropertyName("id")]
     public string Id { get; set; }
 
 
@@ -43,7 +42,7 @@ public partial class JourneyAction : IEquatable<JourneyAction>
     /// Details about the action map from the Journey System which triggered this action
     /// </summary>
     /// <value>Details about the action map from the Journey System which triggered this action</value>
-    [DataMember(Name = "actionMap", EmitDefaultValue = false)]
+    [JsonPropertyName("actionMap")]
     public JourneyActionMap ActionMap { get; set; }
 
 

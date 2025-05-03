@@ -1,4 +1,3 @@
-using System.Runtime.Serialization;
 using System.Text;
 using System.Text.Json.Serialization;
 
@@ -7,7 +6,7 @@ namespace PureCloud.Client.Models;
 /// <summary>
 /// RequestPage
 /// </summary>
-[DataContract]
+
 public partial class RequestPage : IEquatable<RequestPage>
 {
 
@@ -38,7 +37,7 @@ public partial class RequestPage : IEquatable<RequestPage>
     /// The page URL.
     /// </summary>
     /// <value>The page URL.</value>
-    [DataMember(Name = "url", EmitDefaultValue = false)]
+    [JsonPropertyName("url")]
     public string Url { get; set; }
 
 
@@ -47,7 +46,7 @@ public partial class RequestPage : IEquatable<RequestPage>
     /// Title of the page.
     /// </summary>
     /// <value>Title of the page.</value>
-    [DataMember(Name = "title", EmitDefaultValue = false)]
+    [JsonPropertyName("title")]
     public string Title { get; set; }
 
 
@@ -56,7 +55,7 @@ public partial class RequestPage : IEquatable<RequestPage>
     /// Keywords from the HTML &lt;meta&gt; tag of the page.
     /// </summary>
     /// <value>Keywords from the HTML &lt;meta&gt; tag of the page.</value>
-    [DataMember(Name = "keywords", EmitDefaultValue = false)]
+    [JsonPropertyName("keywords")]
     public string Keywords { get; set; }
 
 
@@ -65,7 +64,7 @@ public partial class RequestPage : IEquatable<RequestPage>
     /// ISO 639-1 language code for the page as defined in the &lt;html&gt; tag.
     /// </summary>
     /// <value>ISO 639-1 language code for the page as defined in the &lt;html&gt; tag.</value>
-    [DataMember(Name = "lang", EmitDefaultValue = false)]
+    [JsonPropertyName("lang")]
     public string Lang { get; set; }
 
 

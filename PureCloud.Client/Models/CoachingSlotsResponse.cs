@@ -1,12 +1,12 @@
-using System.Runtime.Serialization;
 using System.Text;
+using System.Text.Json.Serialization;
 
 namespace PureCloud.Client.Models;
 
 /// <summary>
 /// CoachingSlotsResponse
 /// </summary>
-[DataContract]
+
 public partial class CoachingSlotsResponse : IEquatable<CoachingSlotsResponse>
 {
     /// <summary>
@@ -23,7 +23,7 @@ public partial class CoachingSlotsResponse : IEquatable<CoachingSlotsResponse>
     /// List of slots where coaching appointment can be scheduled
     /// </summary>
     /// <value>List of slots where coaching appointment can be scheduled</value>
-    [DataMember(Name = "suggestedSlots", EmitDefaultValue = false)]
+    [JsonPropertyName("suggestedSlots")]
     public List<CoachingSlot> SuggestedSlots { get; private set; }
 
 
@@ -32,7 +32,7 @@ public partial class CoachingSlotsResponse : IEquatable<CoachingSlotsResponse>
     /// Periods of availability for attendees to schedule coaching appointment
     /// </summary>
     /// <value>Periods of availability for attendees to schedule coaching appointment</value>
-    [DataMember(Name = "attendeeSchedules", EmitDefaultValue = false)]
+    [JsonPropertyName("attendeeSchedules")]
     public List<UserAvailableTimes> AttendeeSchedules { get; private set; }
 
 
@@ -41,7 +41,7 @@ public partial class CoachingSlotsResponse : IEquatable<CoachingSlotsResponse>
     /// Periods of availability for facilitators to schedule coaching appointment
     /// </summary>
     /// <value>Periods of availability for facilitators to schedule coaching appointment</value>
-    [DataMember(Name = "facilitatorSchedules", EmitDefaultValue = false)]
+    [JsonPropertyName("facilitatorSchedules")]
     public List<UserAvailableTimes> FacilitatorSchedules { get; private set; }
 
 
@@ -50,7 +50,7 @@ public partial class CoachingSlotsResponse : IEquatable<CoachingSlotsResponse>
     /// Detailed data for WFM scheduled activities
     /// </summary>
     /// <value>Detailed data for WFM scheduled activities</value>
-    [DataMember(Name = "wfmScheduleActivities", EmitDefaultValue = false)]
+    [JsonPropertyName("wfmScheduleActivities")]
     public List<WfmScheduleActivity> WfmScheduleActivities { get; private set; }
 
 

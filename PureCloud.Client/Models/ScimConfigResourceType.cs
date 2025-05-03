@@ -1,12 +1,12 @@
-using System.Runtime.Serialization;
 using System.Text;
+using System.Text.Json.Serialization;
 
 namespace PureCloud.Client.Models;
 
 /// <summary>
 /// Defines a SCIM resource.
 /// </summary>
-[DataContract]
+
 public partial class ScimConfigResourceType : IEquatable<ScimConfigResourceType>
 {
     /// <summary>
@@ -23,7 +23,7 @@ public partial class ScimConfigResourceType : IEquatable<ScimConfigResourceType>
     /// The ID of the SCIM resource. Set by the service provider. \&quot;caseExact\&quot; is set to \&quot;true\&quot;. \&quot;mutability\&quot; is set to \&quot;readOnly\&quot;. \&quot;returned\&quot; is set to \&quot;always\&quot;.
     /// </summary>
     /// <value>The ID of the SCIM resource. Set by the service provider. \&quot;caseExact\&quot; is set to \&quot;true\&quot;. \&quot;mutability\&quot; is set to \&quot;readOnly\&quot;. \&quot;returned\&quot; is set to \&quot;always\&quot;.</value>
-    [DataMember(Name = "id", EmitDefaultValue = false)]
+    [JsonPropertyName("id")]
     public string Id { get; private set; }
 
 
@@ -32,7 +32,7 @@ public partial class ScimConfigResourceType : IEquatable<ScimConfigResourceType>
     /// The list of supported schemas.
     /// </summary>
     /// <value>The list of supported schemas.</value>
-    [DataMember(Name = "schemas", EmitDefaultValue = false)]
+    [JsonPropertyName("schemas")]
     public List<string> Schemas { get; private set; }
 
 
@@ -41,7 +41,7 @@ public partial class ScimConfigResourceType : IEquatable<ScimConfigResourceType>
     /// The name of the resource type.
     /// </summary>
     /// <value>The name of the resource type.</value>
-    [DataMember(Name = "name", EmitDefaultValue = false)]
+    [JsonPropertyName("name")]
     public string Name { get; private set; }
 
 
@@ -50,7 +50,7 @@ public partial class ScimConfigResourceType : IEquatable<ScimConfigResourceType>
     /// The description of the resource type.
     /// </summary>
     /// <value>The description of the resource type.</value>
-    [DataMember(Name = "description", EmitDefaultValue = false)]
+    [JsonPropertyName("description")]
     public string Description { get; private set; }
 
 
@@ -59,7 +59,7 @@ public partial class ScimConfigResourceType : IEquatable<ScimConfigResourceType>
     /// The URI of the primary or base schema for the resource type.
     /// </summary>
     /// <value>The URI of the primary or base schema for the resource type.</value>
-    [DataMember(Name = "schema", EmitDefaultValue = false)]
+    [JsonPropertyName("schema")]
     public string Schema { get; private set; }
 
 
@@ -68,7 +68,7 @@ public partial class ScimConfigResourceType : IEquatable<ScimConfigResourceType>
     /// The list of schema extensions for the resource type.
     /// </summary>
     /// <value>The list of schema extensions for the resource type.</value>
-    [DataMember(Name = "schemaExtensions", EmitDefaultValue = false)]
+    [JsonPropertyName("schemaExtensions")]
     public List<ScimConfigResourceTypeSchemaExtension> SchemaExtensions { get; private set; }
 
 
@@ -77,7 +77,7 @@ public partial class ScimConfigResourceType : IEquatable<ScimConfigResourceType>
     /// The HTTP-addressable endpoint of the resource type. Appears after the base URL.
     /// </summary>
     /// <value>The HTTP-addressable endpoint of the resource type. Appears after the base URL.</value>
-    [DataMember(Name = "endpoint", EmitDefaultValue = false)]
+    [JsonPropertyName("endpoint")]
     public string Endpoint { get; private set; }
 
 
@@ -86,7 +86,7 @@ public partial class ScimConfigResourceType : IEquatable<ScimConfigResourceType>
     /// The metadata of the SCIM resource. Only \&quot;location\&quot; and \&quot;resourceType\&quot; are set for \&quot;ResourceType\&quot; resources.
     /// </summary>
     /// <value>The metadata of the SCIM resource. Only \&quot;location\&quot; and \&quot;resourceType\&quot; are set for \&quot;ResourceType\&quot; resources.</value>
-    [DataMember(Name = "meta", EmitDefaultValue = false)]
+    [JsonPropertyName("meta")]
     public ScimMetadata Meta { get; private set; }
 
 

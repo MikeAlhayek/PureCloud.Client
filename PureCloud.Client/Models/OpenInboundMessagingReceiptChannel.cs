@@ -1,4 +1,3 @@
-using System.Runtime.Serialization;
 using System.Text;
 using System.Text.Json.Serialization;
 
@@ -7,7 +6,7 @@ namespace PureCloud.Client.Models;
 /// <summary>
 /// Open Channel-specific information that describes the message and the message channel/provider.
 /// </summary>
-[DataContract]
+
 public partial class OpenInboundMessagingReceiptChannel : IEquatable<OpenInboundMessagingReceiptChannel>
 {
 
@@ -34,7 +33,7 @@ public partial class OpenInboundMessagingReceiptChannel : IEquatable<OpenInbound
     /// Information about the recipient the message is intended for.
     /// </summary>
     /// <value>Information about the recipient the message is intended for.</value>
-    [DataMember(Name = "to", EmitDefaultValue = false)]
+    [JsonPropertyName("to")]
     public OpenMessagingToRecipient To { get; set; }
 
 
@@ -43,7 +42,7 @@ public partial class OpenInboundMessagingReceiptChannel : IEquatable<OpenInbound
     /// Original time of the event. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z
     /// </summary>
     /// <value>Original time of the event. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z</value>
-    [DataMember(Name = "time", EmitDefaultValue = false)]
+    [JsonPropertyName("time")]
     public DateTime? Time { get; set; }
 
 

@@ -1,12 +1,12 @@
-using System.Runtime.Serialization;
 using System.Text;
+using System.Text.Json.Serialization;
 
 namespace PureCloud.Client.Models;
 
 /// <summary>
 /// IdleTokenTimeout
 /// </summary>
-[DataContract]
+
 public partial class IdleTokenTimeout : IEquatable<IdleTokenTimeout>
 {
     /// <summary>
@@ -27,7 +27,7 @@ public partial class IdleTokenTimeout : IEquatable<IdleTokenTimeout>
     /// Token timeout length in seconds. Must be at least 5 minutes and 8 hours or less (if HIPAA is disabled) or 15 minutes or less (if HIPAA is enabled).
     /// </summary>
     /// <value>Token timeout length in seconds. Must be at least 5 minutes and 8 hours or less (if HIPAA is disabled) or 15 minutes or less (if HIPAA is enabled).</value>
-    [DataMember(Name = "idleTokenTimeoutSeconds", EmitDefaultValue = false)]
+    [JsonPropertyName("idleTokenTimeoutSeconds")]
     public int? IdleTokenTimeoutSeconds { get; set; }
 
 
@@ -36,7 +36,7 @@ public partial class IdleTokenTimeout : IEquatable<IdleTokenTimeout>
     /// Indicates whether the Token Timeout should be enabled or disabled.
     /// </summary>
     /// <value>Indicates whether the Token Timeout should be enabled or disabled.</value>
-    [DataMember(Name = "enableIdleTokenTimeout", EmitDefaultValue = false)]
+    [JsonPropertyName("enableIdleTokenTimeout")]
     public bool? EnableIdleTokenTimeout { get; set; }
 
 

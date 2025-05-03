@@ -7,14 +7,14 @@ namespace PureCloud.Client.Models;
 /// <summary>
 /// DialerCampaignRuleConfigChangeCampaignRuleCondition
 /// </summary>
-[DataContract]
+
 public partial class DialerCampaignRuleConfigChangeCampaignRuleCondition : IEquatable<DialerCampaignRuleConfigChangeCampaignRuleCondition>
 {
     /// <summary>
     /// The type of this condition
     /// </summary>
     /// <value>The type of this condition</value>
-    [JsonConverter(typeof(JsonStringEnumConverter))]
+    
     public enum ConditionTypeEnum
     {
         /// <summary>
@@ -41,7 +41,7 @@ public partial class DialerCampaignRuleConfigChangeCampaignRuleCondition : IEqua
     /// The type of this condition
     /// </summary>
     /// <value>The type of this condition</value>
-    [DataMember(Name = "conditionType", EmitDefaultValue = false)]
+    [JsonPropertyName("conditionType")]
     public ConditionTypeEnum? ConditionType { get; set; }
     /// <summary>
     /// Initializes a new instance of the <see cref="DialerCampaignRuleConfigChangeCampaignRuleCondition" /> class.
@@ -65,7 +65,7 @@ public partial class DialerCampaignRuleConfigChangeCampaignRuleCondition : IEqua
     /// The globally unique identifier for the condition
     /// </summary>
     /// <value>The globally unique identifier for the condition</value>
-    [DataMember(Name = "id", EmitDefaultValue = false)]
+    [JsonPropertyName("id")]
     public string Id { get; set; }
 
 
@@ -74,7 +74,7 @@ public partial class DialerCampaignRuleConfigChangeCampaignRuleCondition : IEqua
     /// The parameters to match this condition
     /// </summary>
     /// <value>The parameters to match this condition</value>
-    [DataMember(Name = "parameters", EmitDefaultValue = false)]
+    [JsonPropertyName("parameters")]
     public Dictionary<string, string> Parameters { get; set; }
 
 
@@ -84,7 +84,7 @@ public partial class DialerCampaignRuleConfigChangeCampaignRuleCondition : IEqua
     /// <summary>
     /// Gets or Sets AdditionalProperties
     /// </summary>
-    [DataMember(Name = "additionalProperties", EmitDefaultValue = false)]
+    [JsonPropertyName("additionalProperties")]
     public Dictionary<string, object> AdditionalProperties { get; set; }
 
 

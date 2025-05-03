@@ -1,4 +1,3 @@
-using System.Runtime.Serialization;
 using System.Text;
 using System.Text.Json.Serialization;
 
@@ -7,7 +6,7 @@ namespace PureCloud.Client.Models;
 /// <summary>
 /// StreetAddress
 /// </summary>
-[DataContract]
+
 public partial class StreetAddress : IEquatable<StreetAddress>
 {
 
@@ -46,7 +45,7 @@ public partial class StreetAddress : IEquatable<StreetAddress>
     /// 2 Letter Country code, like US or GB
     /// </summary>
     /// <value>2 Letter Country code, like US or GB</value>
-    [DataMember(Name = "country", EmitDefaultValue = false)]
+    [JsonPropertyName("country")]
     public string Country { get; set; }
 
 
@@ -55,7 +54,7 @@ public partial class StreetAddress : IEquatable<StreetAddress>
     /// State or Province
     /// </summary>
     /// <value>State or Province</value>
-    [DataMember(Name = "A1", EmitDefaultValue = false)]
+    [JsonPropertyName("A1")]
     public string A1 { get; set; }
 
 
@@ -64,7 +63,7 @@ public partial class StreetAddress : IEquatable<StreetAddress>
     /// City or township
     /// </summary>
     /// <value>City or township</value>
-    [DataMember(Name = "A3", EmitDefaultValue = false)]
+    [JsonPropertyName("A3")]
     public string A3 { get; set; }
 
 
@@ -73,7 +72,7 @@ public partial class StreetAddress : IEquatable<StreetAddress>
     /// Number and street
     /// </summary>
     /// <value>Number and street</value>
-    [DataMember(Name = "RD", EmitDefaultValue = false)]
+    [JsonPropertyName("RD")]
     public string RD { get; set; }
 
 
@@ -82,7 +81,7 @@ public partial class StreetAddress : IEquatable<StreetAddress>
     /// House Number
     /// </summary>
     /// <value>House Number</value>
-    [DataMember(Name = "HNO", EmitDefaultValue = false)]
+    [JsonPropertyName("HNO")]
     public string HNO { get; set; }
 
 
@@ -91,7 +90,7 @@ public partial class StreetAddress : IEquatable<StreetAddress>
     /// extra location info like suite 300
     /// </summary>
     /// <value>extra location info like suite 300</value>
-    [DataMember(Name = "LOC", EmitDefaultValue = false)]
+    [JsonPropertyName("LOC")]
     public string LOC { get; set; }
 
 
@@ -100,7 +99,7 @@ public partial class StreetAddress : IEquatable<StreetAddress>
     /// Name of the customer
     /// </summary>
     /// <value>Name of the customer</value>
-    [DataMember(Name = "NAM", EmitDefaultValue = false)]
+    [JsonPropertyName("NAM")]
     public string NAM { get; set; }
 
 
@@ -109,7 +108,7 @@ public partial class StreetAddress : IEquatable<StreetAddress>
     /// Postal code
     /// </summary>
     /// <value>Postal code</value>
-    [DataMember(Name = "PC", EmitDefaultValue = false)]
+    [JsonPropertyName("PC")]
     public string PC { get; set; }
 
 

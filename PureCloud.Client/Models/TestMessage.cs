@@ -1,4 +1,3 @@
-using System.Runtime.Serialization;
 using System.Text;
 using System.Text.Json.Serialization;
 
@@ -7,7 +6,7 @@ namespace PureCloud.Client.Models;
 /// <summary>
 /// TestMessage
 /// </summary>
-[DataContract]
+
 public partial class TestMessage : IEquatable<TestMessage>
 {
 
@@ -42,7 +41,7 @@ public partial class TestMessage : IEquatable<TestMessage>
     /// After the message has been sent, this is the value of the Message-ID email header.
     /// </summary>
     /// <value>After the message has been sent, this is the value of the Message-ID email header.</value>
-    [DataMember(Name = "id", EmitDefaultValue = false)]
+    [JsonPropertyName("id")]
     public string Id { get; private set; }
 
 
@@ -51,7 +50,7 @@ public partial class TestMessage : IEquatable<TestMessage>
     /// The recipients of the email message.
     /// </summary>
     /// <value>The recipients of the email message.</value>
-    [DataMember(Name = "to", EmitDefaultValue = false)]
+    [JsonPropertyName("to")]
     public List<EmailAddress> To { get; set; }
 
 
@@ -60,7 +59,7 @@ public partial class TestMessage : IEquatable<TestMessage>
     /// The sender of the email message.
     /// </summary>
     /// <value>The sender of the email message.</value>
-    [DataMember(Name = "from", EmitDefaultValue = false)]
+    [JsonPropertyName("from")]
     public EmailAddress From { get; set; }
 
 
@@ -69,7 +68,7 @@ public partial class TestMessage : IEquatable<TestMessage>
     /// The subject of the email message.
     /// </summary>
     /// <value>The subject of the email message.</value>
-    [DataMember(Name = "subject", EmitDefaultValue = false)]
+    [JsonPropertyName("subject")]
     public string Subject { get; set; }
 
 
@@ -78,7 +77,7 @@ public partial class TestMessage : IEquatable<TestMessage>
     /// The text body of the email message.
     /// </summary>
     /// <value>The text body of the email message.</value>
-    [DataMember(Name = "textBody", EmitDefaultValue = false)]
+    [JsonPropertyName("textBody")]
     public string TextBody { get; set; }
 
 
@@ -87,7 +86,7 @@ public partial class TestMessage : IEquatable<TestMessage>
     /// The html body of the email message
     /// </summary>
     /// <value>The html body of the email message</value>
-    [DataMember(Name = "htmlBody", EmitDefaultValue = false)]
+    [JsonPropertyName("htmlBody")]
     public string HtmlBody { get; set; }
 
 
@@ -96,7 +95,7 @@ public partial class TestMessage : IEquatable<TestMessage>
     /// The time when the message was sent. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z
     /// </summary>
     /// <value>The time when the message was sent. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z</value>
-    [DataMember(Name = "time", EmitDefaultValue = false)]
+    [JsonPropertyName("time")]
     public DateTime? Time { get; set; }
 
 

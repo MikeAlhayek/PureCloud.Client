@@ -7,14 +7,14 @@ namespace PureCloud.Client.Models;
 /// <summary>
 /// TimeOffLimit
 /// </summary>
-[DataContract]
+
 public partial class TimeOffLimit : IEquatable<TimeOffLimit>
 {
     /// <summary>
     /// Granularity choice for the time off limit
     /// </summary>
     /// <value>Granularity choice for the time off limit</value>
-    [JsonConverter(typeof(JsonStringEnumConverter))]
+    
     public enum GranularityEnum
     {
         /// <summary>
@@ -35,7 +35,7 @@ public partial class TimeOffLimit : IEquatable<TimeOffLimit>
     /// Granularity choice for the time off limit
     /// </summary>
     /// <value>Granularity choice for the time off limit</value>
-    [DataMember(Name = "granularity", EmitDefaultValue = false)]
+    [JsonPropertyName("granularity")]
     public GranularityEnum? Granularity { get; set; }
     /// <summary>
     /// Initializes a new instance of the <see cref="TimeOffLimit" /> class.
@@ -57,7 +57,7 @@ public partial class TimeOffLimit : IEquatable<TimeOffLimit>
     /// The globally unique identifier for the object.
     /// </summary>
     /// <value>The globally unique identifier for the object.</value>
-    [DataMember(Name = "id", EmitDefaultValue = false)]
+    [JsonPropertyName("id")]
     public string Id { get; private set; }
 
 
@@ -68,7 +68,7 @@ public partial class TimeOffLimit : IEquatable<TimeOffLimit>
     /// The default time off limit value in minutes per granularity interval
     /// </summary>
     /// <value>The default time off limit value in minutes per granularity interval</value>
-    [DataMember(Name = "defaultLimitMinutes", EmitDefaultValue = false)]
+    [JsonPropertyName("defaultLimitMinutes")]
     public int? DefaultLimitMinutes { get; set; }
 
 
@@ -77,7 +77,7 @@ public partial class TimeOffLimit : IEquatable<TimeOffLimit>
     /// Version metadata for the time off limit
     /// </summary>
     /// <value>Version metadata for the time off limit</value>
-    [DataMember(Name = "metadata", EmitDefaultValue = false)]
+    [JsonPropertyName("metadata")]
     public WfmVersionedEntityMetadata Metadata { get; set; }
 
 
@@ -86,7 +86,7 @@ public partial class TimeOffLimit : IEquatable<TimeOffLimit>
     /// The URI for this object
     /// </summary>
     /// <value>The URI for this object</value>
-    [DataMember(Name = "selfUri", EmitDefaultValue = false)]
+    [JsonPropertyName("selfUri")]
     public string SelfUri { get; private set; }
 
 

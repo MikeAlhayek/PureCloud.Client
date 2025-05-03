@@ -1,4 +1,3 @@
-using System.Runtime.Serialization;
 using System.Text;
 using System.Text.Json.Serialization;
 
@@ -7,7 +6,7 @@ namespace PureCloud.Client.Models;
 /// <summary>
 /// KnowledgeDocumentAlternative
 /// </summary>
-[DataContract]
+
 public partial class KnowledgeDocumentAlternative : IEquatable<KnowledgeDocumentAlternative>
 {
 
@@ -34,7 +33,7 @@ public partial class KnowledgeDocumentAlternative : IEquatable<KnowledgeDocument
     /// Alternate phrasing to the document title, having a limit of 500 words.
     /// </summary>
     /// <value>Alternate phrasing to the document title, having a limit of 500 words.</value>
-    [DataMember(Name = "phrase", EmitDefaultValue = false)]
+    [JsonPropertyName("phrase")]
     public string Phrase { get; set; }
 
 
@@ -43,7 +42,7 @@ public partial class KnowledgeDocumentAlternative : IEquatable<KnowledgeDocument
     /// Autocomplete enabled for the alternate phrase.
     /// </summary>
     /// <value>Autocomplete enabled for the alternate phrase.</value>
-    [DataMember(Name = "autocomplete", EmitDefaultValue = false)]
+    [JsonPropertyName("autocomplete")]
     public bool? Autocomplete { get; set; }
 
 

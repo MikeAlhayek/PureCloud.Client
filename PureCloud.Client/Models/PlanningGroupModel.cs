@@ -1,12 +1,12 @@
-using System.Runtime.Serialization;
 using System.Text;
+using System.Text.Json.Serialization;
 
 namespace PureCloud.Client.Models;
 
 /// <summary>
 /// PlanningGroupModel
 /// </summary>
-[DataContract]
+
 public partial class PlanningGroupModel : IEquatable<PlanningGroupModel>
 {
     /// <summary>
@@ -25,7 +25,7 @@ public partial class PlanningGroupModel : IEquatable<PlanningGroupModel>
     /// Planning group id
     /// </summary>
     /// <value>Planning group id</value>
-    [DataMember(Name = "planningGroup", EmitDefaultValue = false)]
+    [JsonPropertyName("planningGroup")]
     public string PlanningGroup { get; set; }
 
 

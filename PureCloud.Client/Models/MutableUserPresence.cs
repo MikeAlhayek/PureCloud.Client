@@ -1,12 +1,12 @@
-using System.Runtime.Serialization;
 using System.Text;
+using System.Text.Json.Serialization;
 
 namespace PureCloud.Client.Models;
 
 /// <summary>
 /// MutableUserPresence
 /// </summary>
-[DataContract]
+
 public partial class MutableUserPresence : IEquatable<MutableUserPresence>
 {
     /// <summary>
@@ -39,7 +39,7 @@ public partial class MutableUserPresence : IEquatable<MutableUserPresence>
     /// The user&#39;s id
     /// </summary>
     /// <value>The user&#39;s id</value>
-    [DataMember(Name = "id", EmitDefaultValue = false)]
+    [JsonPropertyName("id")]
     public string Id { get; set; }
 
 
@@ -47,7 +47,7 @@ public partial class MutableUserPresence : IEquatable<MutableUserPresence>
     /// <summary>
     /// Gets or Sets Name
     /// </summary>
-    [DataMember(Name = "name", EmitDefaultValue = false)]
+    [JsonPropertyName("name")]
     public string Name { get; set; }
 
 
@@ -56,7 +56,7 @@ public partial class MutableUserPresence : IEquatable<MutableUserPresence>
     /// Deprecated - The sourceID field should be used as a replacement.
     /// </summary>
     /// <value>Deprecated - The sourceID field should be used as a replacement.</value>
-    [DataMember(Name = "source", EmitDefaultValue = false)]
+    [JsonPropertyName("source")]
     public string Source { get; set; }
 
 
@@ -65,7 +65,7 @@ public partial class MutableUserPresence : IEquatable<MutableUserPresence>
     /// Represents the ID of a registered source
     /// </summary>
     /// <value>Represents the ID of a registered source</value>
-    [DataMember(Name = "sourceId", EmitDefaultValue = false)]
+    [JsonPropertyName("sourceId")]
     public string SourceId { get; set; }
 
 
@@ -74,7 +74,7 @@ public partial class MutableUserPresence : IEquatable<MutableUserPresence>
     /// A boolean used to tell whether or not to set this presence source as the primary on a PATCH
     /// </summary>
     /// <value>A boolean used to tell whether or not to set this presence source as the primary on a PATCH</value>
-    [DataMember(Name = "primary", EmitDefaultValue = false)]
+    [JsonPropertyName("primary")]
     public bool? Primary { get; set; }
 
 
@@ -82,7 +82,7 @@ public partial class MutableUserPresence : IEquatable<MutableUserPresence>
     /// <summary>
     /// Gets or Sets PresenceDefinition
     /// </summary>
-    [DataMember(Name = "presenceDefinition", EmitDefaultValue = false)]
+    [JsonPropertyName("presenceDefinition")]
     public PresenceDefinition PresenceDefinition { get; set; }
 
 
@@ -90,7 +90,7 @@ public partial class MutableUserPresence : IEquatable<MutableUserPresence>
     /// <summary>
     /// Gets or Sets Message
     /// </summary>
-    [DataMember(Name = "message", EmitDefaultValue = false)]
+    [JsonPropertyName("message")]
     public string Message { get; set; }
 
 
@@ -99,7 +99,7 @@ public partial class MutableUserPresence : IEquatable<MutableUserPresence>
     /// Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z
     /// </summary>
     /// <value>Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z</value>
-    [DataMember(Name = "modifiedDate", EmitDefaultValue = false)]
+    [JsonPropertyName("modifiedDate")]
     public DateTime? ModifiedDate { get; set; }
 
 
@@ -108,7 +108,7 @@ public partial class MutableUserPresence : IEquatable<MutableUserPresence>
     /// The URI for this object
     /// </summary>
     /// <value>The URI for this object</value>
-    [DataMember(Name = "selfUri", EmitDefaultValue = false)]
+    [JsonPropertyName("selfUri")]
     public string SelfUri { get; private set; }
 
 

@@ -7,14 +7,14 @@ namespace PureCloud.Client.Models;
 /// <summary>
 /// ConversationSessionSummary
 /// </summary>
-[DataContract]
+
 public partial class ConversationSessionSummary : IEquatable<ConversationSessionSummary>
 {
     /// <summary>
     /// The status of the conversation summary.
     /// </summary>
     /// <value>The status of the conversation summary.</value>
-    [JsonConverter(typeof(JsonStringEnumConverter))]
+    
     public enum StatusEnum
     {
         /// <summary>
@@ -65,7 +65,7 @@ public partial class ConversationSessionSummary : IEquatable<ConversationSession
     /// The media type of the conversation.
     /// </summary>
     /// <value>The media type of the conversation.</value>
-    [JsonConverter(typeof(JsonStringEnumConverter))]
+    
     public enum MediaTypeEnum
     {
         /// <summary>
@@ -116,13 +116,13 @@ public partial class ConversationSessionSummary : IEquatable<ConversationSession
     /// The status of the conversation summary.
     /// </summary>
     /// <value>The status of the conversation summary.</value>
-    [DataMember(Name = "status", EmitDefaultValue = false)]
+    [JsonPropertyName("status")]
     public StatusEnum? Status { get; set; }
     /// <summary>
     /// The media type of the conversation.
     /// </summary>
     /// <value>The media type of the conversation.</value>
-    [DataMember(Name = "mediaType", EmitDefaultValue = false)]
+    [JsonPropertyName("mediaType")]
     public MediaTypeEnum? MediaType { get; set; }
     /// <summary>
     /// Initializes a new instance of the <see cref="ConversationSessionSummary" /> class.
@@ -160,7 +160,7 @@ public partial class ConversationSessionSummary : IEquatable<ConversationSession
     /// The text of the summary.
     /// </summary>
     /// <value>The text of the summary.</value>
-    [DataMember(Name = "text", EmitDefaultValue = false)]
+    [JsonPropertyName("text")]
     public string Text { get; set; }
 
 
@@ -173,7 +173,7 @@ public partial class ConversationSessionSummary : IEquatable<ConversationSession
     /// The language of the conversation.
     /// </summary>
     /// <value>The language of the conversation.</value>
-    [DataMember(Name = "language", EmitDefaultValue = false)]
+    [JsonPropertyName("language")]
     public string Language { get; set; }
 
 
@@ -182,7 +182,7 @@ public partial class ConversationSessionSummary : IEquatable<ConversationSession
     /// The wrapup codes of the conversation summary.
     /// </summary>
     /// <value>The wrapup codes of the conversation summary.</value>
-    [DataMember(Name = "predictedWrapupCodes", EmitDefaultValue = false)]
+    [JsonPropertyName("predictedWrapupCodes")]
     public List<ConversationSummaryWrapupCode> PredictedWrapupCodes { get; set; }
 
 
@@ -191,7 +191,7 @@ public partial class ConversationSessionSummary : IEquatable<ConversationSession
     /// The edited summary of the conversation.
     /// </summary>
     /// <value>The edited summary of the conversation.</value>
-    [DataMember(Name = "editedSummary", EmitDefaultValue = false)]
+    [JsonPropertyName("editedSummary")]
     public ConversationEditedInput EditedSummary { get; set; }
 
 
@@ -200,7 +200,7 @@ public partial class ConversationSessionSummary : IEquatable<ConversationSession
     /// The reason of the conversation summary.
     /// </summary>
     /// <value>The reason of the conversation summary.</value>
-    [DataMember(Name = "reason", EmitDefaultValue = false)]
+    [JsonPropertyName("reason")]
     public ConversationSummaryReason Reason { get; set; }
 
 
@@ -209,7 +209,7 @@ public partial class ConversationSessionSummary : IEquatable<ConversationSession
     /// The followup of the conversation summary.
     /// </summary>
     /// <value>The followup of the conversation summary.</value>
-    [DataMember(Name = "followup", EmitDefaultValue = false)]
+    [JsonPropertyName("followup")]
     public ConversationSummaryFollowup Followup { get; set; }
 
 
@@ -218,7 +218,7 @@ public partial class ConversationSessionSummary : IEquatable<ConversationSession
     /// The resolution of the conversation summary.
     /// </summary>
     /// <value>The resolution of the conversation summary.</value>
-    [DataMember(Name = "resolution", EmitDefaultValue = false)]
+    [JsonPropertyName("resolution")]
     public ConversationSummaryResolution Resolution { get; set; }
 
 
@@ -227,7 +227,7 @@ public partial class ConversationSessionSummary : IEquatable<ConversationSession
     /// The created date of the summary. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z
     /// </summary>
     /// <value>The created date of the summary. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z</value>
-    [DataMember(Name = "dateCreated", EmitDefaultValue = false)]
+    [JsonPropertyName("dateCreated")]
     public DateTime? DateCreated { get; set; }
 
 
@@ -236,7 +236,7 @@ public partial class ConversationSessionSummary : IEquatable<ConversationSession
     /// The id of the summary.
     /// </summary>
     /// <value>The id of the summary.</value>
-    [DataMember(Name = "id", EmitDefaultValue = false)]
+    [JsonPropertyName("id")]
     public string Id { get; private set; }
 
 
@@ -245,7 +245,7 @@ public partial class ConversationSessionSummary : IEquatable<ConversationSession
     /// The AI confidence value.
     /// </summary>
     /// <value>The AI confidence value.</value>
-    [DataMember(Name = "confidence", EmitDefaultValue = false)]
+    [JsonPropertyName("confidence")]
     public float? Confidence { get; private set; }
 
 
@@ -254,7 +254,7 @@ public partial class ConversationSessionSummary : IEquatable<ConversationSession
     /// The list of participants.
     /// </summary>
     /// <value>The list of participants.</value>
-    [DataMember(Name = "participants", EmitDefaultValue = false)]
+    [JsonPropertyName("participants")]
     public List<AddressableEntityRef> Participants { get; set; }
 
 
@@ -263,7 +263,7 @@ public partial class ConversationSessionSummary : IEquatable<ConversationSession
     /// The communication object of the summary.
     /// </summary>
     /// <value>The communication object of the summary.</value>
-    [DataMember(Name = "communication", EmitDefaultValue = false)]
+    [JsonPropertyName("communication")]
     public Entity Communication { get; private set; }
 
 

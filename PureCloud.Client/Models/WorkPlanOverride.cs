@@ -1,4 +1,3 @@
-using System.Runtime.Serialization;
 using System.Text;
 using System.Text.Json.Serialization;
 
@@ -7,7 +6,7 @@ namespace PureCloud.Client.Models;
 /// <summary>
 /// WorkPlanOverride
 /// </summary>
-[DataContract]
+
 public partial class WorkPlanOverride : IEquatable<WorkPlanOverride>
 {
 
@@ -36,7 +35,7 @@ public partial class WorkPlanOverride : IEquatable<WorkPlanOverride>
     /// The start date in yyyy-MM-dd format of the work plan override. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd
     /// </summary>
     /// <value>The start date in yyyy-MM-dd format of the work plan override. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd</value>
-    [DataMember(Name = "startDate", EmitDefaultValue = false)]
+    [JsonPropertyName("startDate")]
     public string StartDate { get; set; }
 
 
@@ -45,7 +44,7 @@ public partial class WorkPlanOverride : IEquatable<WorkPlanOverride>
     /// Number of weeks for the work plan override
     /// </summary>
     /// <value>Number of weeks for the work plan override</value>
-    [DataMember(Name = "weekCount", EmitDefaultValue = false)]
+    [JsonPropertyName("weekCount")]
     public int? WeekCount { get; set; }
 
 
@@ -54,7 +53,7 @@ public partial class WorkPlanOverride : IEquatable<WorkPlanOverride>
     /// The work plan reference associated with this override
     /// </summary>
     /// <value>The work plan reference associated with this override</value>
-    [DataMember(Name = "workPlan", EmitDefaultValue = false)]
+    [JsonPropertyName("workPlan")]
     public WorkPlanReference WorkPlan { get; set; }
 
 

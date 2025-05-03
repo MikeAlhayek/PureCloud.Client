@@ -7,14 +7,14 @@ namespace PureCloud.Client.Models;
 /// <summary>
 /// TranscriptionSettings
 /// </summary>
-[DataContract]
+
 public partial class TranscriptionSettings : IEquatable<TranscriptionSettings>
 {
     /// <summary>
     /// Setting to enable/disable transcription capability
     /// </summary>
     /// <value>Setting to enable/disable transcription capability</value>
-    [JsonConverter(typeof(JsonStringEnumConverter))]
+    
     public enum TranscriptionEnum
     {
         /// <summary>
@@ -47,7 +47,7 @@ public partial class TranscriptionSettings : IEquatable<TranscriptionSettings>
     /// Setting to enable/disable transcription capability
     /// </summary>
     /// <value>Setting to enable/disable transcription capability</value>
-    [DataMember(Name = "transcription", EmitDefaultValue = false)]
+    [JsonPropertyName("transcription")]
     public TranscriptionEnum? Transcription { get; set; }
 
     /// <summary>
@@ -83,7 +83,7 @@ public partial class TranscriptionSettings : IEquatable<TranscriptionSettings>
     /// Configure confidence threshold. The possible values are from 1 to 100.
     /// </summary>
     /// <value>Configure confidence threshold. The possible values are from 1 to 100.</value>
-    [DataMember(Name = "transcriptionConfidenceThreshold", EmitDefaultValue = false)]
+    [JsonPropertyName("transcriptionConfidenceThreshold")]
     public int? TranscriptionConfidenceThreshold { get; set; }
 
 
@@ -92,7 +92,7 @@ public partial class TranscriptionSettings : IEquatable<TranscriptionSettings>
     /// Boolean flag indicating whether low latency transcription via Notification API is enabled
     /// </summary>
     /// <value>Boolean flag indicating whether low latency transcription via Notification API is enabled</value>
-    [DataMember(Name = "lowLatencyTranscriptionEnabled", EmitDefaultValue = false)]
+    [JsonPropertyName("lowLatencyTranscriptionEnabled")]
     public bool? LowLatencyTranscriptionEnabled { get; set; }
 
 
@@ -101,7 +101,7 @@ public partial class TranscriptionSettings : IEquatable<TranscriptionSettings>
     /// Setting to enable/disable content search
     /// </summary>
     /// <value>Setting to enable/disable content search</value>
-    [DataMember(Name = "contentSearchEnabled", EmitDefaultValue = false)]
+    [JsonPropertyName("contentSearchEnabled")]
     public bool? ContentSearchEnabled { get; set; }
 
 
@@ -110,7 +110,7 @@ public partial class TranscriptionSettings : IEquatable<TranscriptionSettings>
     /// Setting to enable/disable PCI DSS Redaction
     /// </summary>
     /// <value>Setting to enable/disable PCI DSS Redaction</value>
-    [DataMember(Name = "pciDssRedactionEnabled", EmitDefaultValue = false)]
+    [JsonPropertyName("pciDssRedactionEnabled")]
     public bool? PciDssRedactionEnabled { get; set; }
 
 
@@ -119,7 +119,7 @@ public partial class TranscriptionSettings : IEquatable<TranscriptionSettings>
     /// Setting to enable/disable PII Redaction
     /// </summary>
     /// <value>Setting to enable/disable PII Redaction</value>
-    [DataMember(Name = "piiRedactionEnabled", EmitDefaultValue = false)]
+    [JsonPropertyName("piiRedactionEnabled")]
     public bool? PiiRedactionEnabled { get; set; }
 
 

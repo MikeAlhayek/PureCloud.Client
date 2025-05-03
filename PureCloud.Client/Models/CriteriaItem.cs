@@ -7,14 +7,14 @@ namespace PureCloud.Client.Models;
 /// <summary>
 /// A singular criteria used to query executionData.
 /// </summary>
-[DataContract]
+
 public partial class CriteriaItem : IEquatable<CriteriaItem>
 {
     /// <summary>
     /// The id of the criteria to be checked.
     /// </summary>
     /// <value>The id of the criteria to be checked.</value>
-    [JsonConverter(typeof(JsonStringEnumConverter))]
+    
     public enum KeyEnum
     {
         /// <summary>
@@ -161,7 +161,7 @@ public partial class CriteriaItem : IEquatable<CriteriaItem>
     /// The operator used to check on the criteria id.
     /// </summary>
     /// <value>The operator used to check on the criteria id.</value>
-    [JsonConverter(typeof(JsonStringEnumConverter))]
+    
     public enum OperatorEnum
     {
         /// <summary>
@@ -224,13 +224,13 @@ public partial class CriteriaItem : IEquatable<CriteriaItem>
     /// The id of the criteria to be checked.
     /// </summary>
     /// <value>The id of the criteria to be checked.</value>
-    [DataMember(Name = "key", EmitDefaultValue = false)]
+    [JsonPropertyName("key")]
     public KeyEnum? Key { get; set; }
     /// <summary>
     /// The operator used to check on the criteria id.
     /// </summary>
     /// <value>The operator used to check on the criteria id.</value>
-    [DataMember(Name = "operator", EmitDefaultValue = false)]
+    [JsonPropertyName("operator")]
     public OperatorEnum? Operator { get; set; }
     /// <summary>
     /// Initializes a new instance of the <see cref="CriteriaItem" /> class.
@@ -256,7 +256,7 @@ public partial class CriteriaItem : IEquatable<CriteriaItem>
     /// The target value used to query on.
     /// </summary>
     /// <value>The target value used to query on.</value>
-    [DataMember(Name = "value", EmitDefaultValue = false)]
+    [JsonPropertyName("value")]
     public string Value { get; set; }
 
 

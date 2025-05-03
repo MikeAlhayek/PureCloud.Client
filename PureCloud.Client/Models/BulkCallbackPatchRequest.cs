@@ -1,4 +1,3 @@
-using System.Runtime.Serialization;
 using System.Text;
 using System.Text.Json.Serialization;
 
@@ -7,7 +6,7 @@ namespace PureCloud.Client.Models;
 /// <summary>
 /// BulkCallbackPatchRequest
 /// </summary>
-[DataContract]
+
 public partial class BulkCallbackPatchRequest : IEquatable<BulkCallbackPatchRequest>
 {
 
@@ -32,7 +31,7 @@ public partial class BulkCallbackPatchRequest : IEquatable<BulkCallbackPatchRequ
     /// The list of requests to update callbacks in bulk
     /// </summary>
     /// <value>The list of requests to update callbacks in bulk</value>
-    [DataMember(Name = "patchCallbackRequests", EmitDefaultValue = false)]
+    [JsonPropertyName("patchCallbackRequests")]
     public List<PatchCallbackRequest> PatchCallbackRequests { get; set; }
 
 

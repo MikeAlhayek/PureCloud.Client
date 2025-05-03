@@ -1,4 +1,3 @@
-using System.Runtime.Serialization;
 using System.Text;
 using System.Text.Json.Serialization;
 
@@ -7,7 +6,7 @@ namespace PureCloud.Client.Models;
 /// <summary>
 /// BuImportShortTermForecastSchema
 /// </summary>
-[DataContract]
+
 public partial class BuImportShortTermForecastSchema : IEquatable<BuImportShortTermForecastSchema>
 {
 
@@ -40,7 +39,7 @@ public partial class BuImportShortTermForecastSchema : IEquatable<BuImportShortT
     /// The description for the forecast
     /// </summary>
     /// <value>The description for the forecast</value>
-    [DataMember(Name = "description", EmitDefaultValue = false)]
+    [JsonPropertyName("description")]
     public string Description { get; set; }
 
 
@@ -49,7 +48,7 @@ public partial class BuImportShortTermForecastSchema : IEquatable<BuImportShortT
     /// The number of weeks covered by the forecast
     /// </summary>
     /// <value>The number of weeks covered by the forecast</value>
-    [DataMember(Name = "weekCount", EmitDefaultValue = false)]
+    [JsonPropertyName("weekCount")]
     public int? WeekCount { get; set; }
 
 
@@ -58,7 +57,7 @@ public partial class BuImportShortTermForecastSchema : IEquatable<BuImportShortT
     /// The short term planning group data
     /// </summary>
     /// <value>The short term planning group data</value>
-    [DataMember(Name = "planningGroups", EmitDefaultValue = false)]
+    [JsonPropertyName("planningGroups")]
     public List<ForecastPlanningGroupData> PlanningGroups { get; set; }
 
 
@@ -67,7 +66,7 @@ public partial class BuImportShortTermForecastSchema : IEquatable<BuImportShortT
     /// The long term planning group data
     /// </summary>
     /// <value>The long term planning group data</value>
-    [DataMember(Name = "longTermPlanningGroups", EmitDefaultValue = false)]
+    [JsonPropertyName("longTermPlanningGroups")]
     public List<LongTermForecastPlanningGroupData> LongTermPlanningGroups { get; set; }
 
 
@@ -76,7 +75,7 @@ public partial class BuImportShortTermForecastSchema : IEquatable<BuImportShortT
     /// Whether this forecast can be used for scheduling
     /// </summary>
     /// <value>Whether this forecast can be used for scheduling</value>
-    [DataMember(Name = "canUseForScheduling", EmitDefaultValue = false)]
+    [JsonPropertyName("canUseForScheduling")]
     public bool? CanUseForScheduling { get; set; }
 
 

@@ -7,14 +7,14 @@ namespace PureCloud.Client.Models;
 /// <summary>
 /// Miner
 /// </summary>
-[DataContract]
+
 public partial class Miner : IEquatable<Miner>
 {
     /// <summary>
     /// Language Localization code.
     /// </summary>
     /// <value>Language Localization code.</value>
-    [JsonConverter(typeof(JsonStringEnumConverter))]
+    
     public enum LanguageEnum
     {
         /// <summary>
@@ -119,7 +119,7 @@ public partial class Miner : IEquatable<Miner>
     /// Type of the miner, intent or topic.
     /// </summary>
     /// <value>Type of the miner, intent or topic.</value>
-    [JsonConverter(typeof(JsonStringEnumConverter))]
+    
     public enum MinerTypeEnum
     {
         /// <summary>
@@ -146,7 +146,7 @@ public partial class Miner : IEquatable<Miner>
     /// Status of the miner.
     /// </summary>
     /// <value>Status of the miner.</value>
-    [JsonConverter(typeof(JsonStringEnumConverter))]
+    
     public enum StatusEnum
     {
         /// <summary>
@@ -269,7 +269,7 @@ public partial class Miner : IEquatable<Miner>
     /// Media type for filtering conversations.
     /// </summary>
     /// <value>Media type for filtering conversations.</value>
-    [JsonConverter(typeof(JsonStringEnumConverter))]
+    
     public enum MediaTypeEnum
     {
         /// <summary>
@@ -308,7 +308,7 @@ public partial class Miner : IEquatable<Miner>
     /// Type of the participant, either agent, customer or both.
     /// </summary>
     /// <value>Type of the participant, either agent, customer or both.</value>
-    [JsonConverter(typeof(JsonStringEnumConverter))]
+    
     public enum ParticipantTypeEnum
     {
         /// <summary>
@@ -341,31 +341,31 @@ public partial class Miner : IEquatable<Miner>
     /// Language Localization code.
     /// </summary>
     /// <value>Language Localization code.</value>
-    [DataMember(Name = "language", EmitDefaultValue = false)]
+    [JsonPropertyName("language")]
     public LanguageEnum? Language { get; set; }
     /// <summary>
     /// Type of the miner, intent or topic.
     /// </summary>
     /// <value>Type of the miner, intent or topic.</value>
-    [DataMember(Name = "minerType", EmitDefaultValue = false)]
+    [JsonPropertyName("minerType")]
     public MinerTypeEnum? MinerType { get; set; }
     /// <summary>
     /// Status of the miner.
     /// </summary>
     /// <value>Status of the miner.</value>
-    [DataMember(Name = "status", EmitDefaultValue = false)]
+    [JsonPropertyName("status")]
     public StatusEnum? Status { get; private set; }
     /// <summary>
     /// Media type for filtering conversations.
     /// </summary>
     /// <value>Media type for filtering conversations.</value>
-    [DataMember(Name = "mediaType", EmitDefaultValue = false)]
+    [JsonPropertyName("mediaType")]
     public MediaTypeEnum? MediaType { get; private set; }
     /// <summary>
     /// Type of the participant, either agent, customer or both.
     /// </summary>
     /// <value>Type of the participant, either agent, customer or both.</value>
-    [DataMember(Name = "participantType", EmitDefaultValue = false)]
+    [JsonPropertyName("participantType")]
     public ParticipantTypeEnum? ParticipantType { get; private set; }
 
     /// <summary>
@@ -393,7 +393,7 @@ public partial class Miner : IEquatable<Miner>
     /// The globally unique identifier for the object.
     /// </summary>
     /// <value>The globally unique identifier for the object.</value>
-    [DataMember(Name = "id", EmitDefaultValue = false)]
+    [JsonPropertyName("id")]
     public string Id { get; private set; }
 
 
@@ -402,7 +402,7 @@ public partial class Miner : IEquatable<Miner>
     /// Chat Corpus Name.
     /// </summary>
     /// <value>Chat Corpus Name.</value>
-    [DataMember(Name = "name", EmitDefaultValue = false)]
+    [JsonPropertyName("name")]
     public string Name { get; set; }
 
 
@@ -415,7 +415,7 @@ public partial class Miner : IEquatable<Miner>
     /// Date when the miner was created. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z
     /// </summary>
     /// <value>Date when the miner was created. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z</value>
-    [DataMember(Name = "dateCreated", EmitDefaultValue = false)]
+    [JsonPropertyName("dateCreated")]
     public DateTime? DateCreated { get; private set; }
 
 
@@ -426,7 +426,7 @@ public partial class Miner : IEquatable<Miner>
     /// Date from which the conversations need to be taken for mining. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd
     /// </summary>
     /// <value>Date from which the conversations need to be taken for mining. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd</value>
-    [DataMember(Name = "conversationsDateRangeStart", EmitDefaultValue = false)]
+    [JsonPropertyName("conversationsDateRangeStart")]
     public string ConversationsDateRangeStart { get; private set; }
 
 
@@ -435,7 +435,7 @@ public partial class Miner : IEquatable<Miner>
     /// Date till which the conversations need to be taken for mining. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd
     /// </summary>
     /// <value>Date till which the conversations need to be taken for mining. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd</value>
-    [DataMember(Name = "conversationsDateRangeEnd", EmitDefaultValue = false)]
+    [JsonPropertyName("conversationsDateRangeEnd")]
     public string ConversationsDateRangeEnd { get; private set; }
 
 
@@ -444,7 +444,7 @@ public partial class Miner : IEquatable<Miner>
     /// Date when the mining process was completed. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z
     /// </summary>
     /// <value>Date when the mining process was completed. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z</value>
-    [DataMember(Name = "dateCompleted", EmitDefaultValue = false)]
+    [JsonPropertyName("dateCompleted")]
     public DateTime? DateCompleted { get; private set; }
 
 
@@ -453,7 +453,7 @@ public partial class Miner : IEquatable<Miner>
     /// Mining message if present.
     /// </summary>
     /// <value>Mining message if present.</value>
-    [DataMember(Name = "message", EmitDefaultValue = false)]
+    [JsonPropertyName("message")]
     public string Message { get; private set; }
 
 
@@ -462,7 +462,7 @@ public partial class Miner : IEquatable<Miner>
     /// Error Information
     /// </summary>
     /// <value>Error Information</value>
-    [DataMember(Name = "errorInfo", EmitDefaultValue = false)]
+    [JsonPropertyName("errorInfo")]
     public MinerErrorInfo ErrorInfo { get; private set; }
 
 
@@ -471,7 +471,7 @@ public partial class Miner : IEquatable<Miner>
     /// Warning Information
     /// </summary>
     /// <value>Warning Information</value>
-    [DataMember(Name = "warningInfo", EmitDefaultValue = false)]
+    [JsonPropertyName("warningInfo")]
     public MinerErrorInfo WarningInfo { get; private set; }
 
 
@@ -480,7 +480,7 @@ public partial class Miner : IEquatable<Miner>
     /// Flag to indicate whether data file to be mined was uploaded.
     /// </summary>
     /// <value>Flag to indicate whether data file to be mined was uploaded.</value>
-    [DataMember(Name = "conversationDataUploaded", EmitDefaultValue = false)]
+    [JsonPropertyName("conversationDataUploaded")]
     public bool? ConversationDataUploaded { get; private set; }
 
 
@@ -493,7 +493,7 @@ public partial class Miner : IEquatable<Miner>
     /// List of queue IDs for filtering conversations.
     /// </summary>
     /// <value>List of queue IDs for filtering conversations.</value>
-    [DataMember(Name = "queueIds", EmitDefaultValue = false)]
+    [JsonPropertyName("queueIds")]
     public List<string> QueueIds { get; private set; }
 
 
@@ -502,7 +502,7 @@ public partial class Miner : IEquatable<Miner>
     /// Date when the miner started execution. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z
     /// </summary>
     /// <value>Date when the miner started execution. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z</value>
-    [DataMember(Name = "dateTriggered", EmitDefaultValue = false)]
+    [JsonPropertyName("dateTriggered")]
     public DateTime? DateTriggered { get; private set; }
 
 
@@ -511,7 +511,7 @@ public partial class Miner : IEquatable<Miner>
     /// Date when the miner was last modified. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z
     /// </summary>
     /// <value>Date when the miner was last modified. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z</value>
-    [DataMember(Name = "dateModified", EmitDefaultValue = false)]
+    [JsonPropertyName("dateModified")]
     public DateTime? DateModified { get; private set; }
 
 
@@ -520,7 +520,7 @@ public partial class Miner : IEquatable<Miner>
     /// Latest draft details of the miner.
     /// </summary>
     /// <value>Latest draft details of the miner.</value>
-    [DataMember(Name = "latestDraftVersion", EmitDefaultValue = false)]
+    [JsonPropertyName("latestDraftVersion")]
     public Draft LatestDraftVersion { get; private set; }
 
 
@@ -529,7 +529,7 @@ public partial class Miner : IEquatable<Miner>
     /// Number of conversations/transcripts fetched.
     /// </summary>
     /// <value>Number of conversations/transcripts fetched.</value>
-    [DataMember(Name = "conversationsFetchedCount", EmitDefaultValue = false)]
+    [JsonPropertyName("conversationsFetchedCount")]
     public int? ConversationsFetchedCount { get; private set; }
 
 
@@ -538,7 +538,7 @@ public partial class Miner : IEquatable<Miner>
     /// Number of conversations/recordings/transcripts that were found valid for mining purposes.
     /// </summary>
     /// <value>Number of conversations/recordings/transcripts that were found valid for mining purposes.</value>
-    [DataMember(Name = "conversationsValidCount", EmitDefaultValue = false)]
+    [JsonPropertyName("conversationsValidCount")]
     public int? ConversationsValidCount { get; private set; }
 
 
@@ -547,7 +547,7 @@ public partial class Miner : IEquatable<Miner>
     /// Number of intents or topics based on the miner type.
     /// </summary>
     /// <value>Number of intents or topics based on the miner type.</value>
-    [DataMember(Name = "getminedItemCount", EmitDefaultValue = false)]
+    [JsonPropertyName("getminedItemCount")]
     public int? GetminedItemCount { get; private set; }
 
 
@@ -556,7 +556,7 @@ public partial class Miner : IEquatable<Miner>
     /// The URI for this object
     /// </summary>
     /// <value>The URI for this object</value>
-    [DataMember(Name = "selfUri", EmitDefaultValue = false)]
+    [JsonPropertyName("selfUri")]
     public string SelfUri { get; private set; }
 
 

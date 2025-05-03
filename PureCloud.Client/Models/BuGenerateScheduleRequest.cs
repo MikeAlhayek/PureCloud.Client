@@ -1,4 +1,3 @@
-using System.Runtime.Serialization;
 using System.Text;
 using System.Text.Json.Serialization;
 
@@ -7,7 +6,7 @@ namespace PureCloud.Client.Models;
 /// <summary>
 /// BuGenerateScheduleRequest
 /// </summary>
-[DataContract]
+
 public partial class BuGenerateScheduleRequest : IEquatable<BuGenerateScheduleRequest>
 {
 
@@ -38,7 +37,7 @@ public partial class BuGenerateScheduleRequest : IEquatable<BuGenerateScheduleRe
     /// The description for the schedule
     /// </summary>
     /// <value>The description for the schedule</value>
-    [DataMember(Name = "description", EmitDefaultValue = false)]
+    [JsonPropertyName("description")]
     public string Description { get; set; }
 
 
@@ -47,7 +46,7 @@ public partial class BuGenerateScheduleRequest : IEquatable<BuGenerateScheduleRe
     /// The forecast to use when generating the schedule.  Note that the forecast must fully encompass the schedule&#39;s start week + week count
     /// </summary>
     /// <value>The forecast to use when generating the schedule.  Note that the forecast must fully encompass the schedule&#39;s start week + week count</value>
-    [DataMember(Name = "shortTermForecast", EmitDefaultValue = false)]
+    [JsonPropertyName("shortTermForecast")]
     public BuShortTermForecastReference ShortTermForecast { get; set; }
 
 
@@ -56,7 +55,7 @@ public partial class BuGenerateScheduleRequest : IEquatable<BuGenerateScheduleRe
     /// The number of weeks in the schedule. One extra day is added at the end
     /// </summary>
     /// <value>The number of weeks in the schedule. One extra day is added at the end</value>
-    [DataMember(Name = "weekCount", EmitDefaultValue = false)]
+    [JsonPropertyName("weekCount")]
     public int? WeekCount { get; set; }
 
 
@@ -65,7 +64,7 @@ public partial class BuGenerateScheduleRequest : IEquatable<BuGenerateScheduleRe
     /// Additional scheduling options
     /// </summary>
     /// <value>Additional scheduling options</value>
-    [DataMember(Name = "options", EmitDefaultValue = false)]
+    [JsonPropertyName("options")]
     public SchedulingOptionsRequest Options { get; set; }
 
 

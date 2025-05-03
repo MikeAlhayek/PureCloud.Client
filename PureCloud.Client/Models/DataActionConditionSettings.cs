@@ -1,4 +1,3 @@
-using System.Runtime.Serialization;
 using System.Text;
 using System.Text.Json.Serialization;
 
@@ -7,7 +6,7 @@ namespace PureCloud.Client.Models;
 /// <summary>
 /// DataActionConditionSettings
 /// </summary>
-[DataContract]
+
 public partial class DataActionConditionSettings : IEquatable<DataActionConditionSettings>
 {
 
@@ -40,7 +39,7 @@ public partial class DataActionConditionSettings : IEquatable<DataActionConditio
     /// The Data Action Id to use for this condition.
     /// </summary>
     /// <value>The Data Action Id to use for this condition.</value>
-    [DataMember(Name = "dataActionId", EmitDefaultValue = false)]
+    [JsonPropertyName("dataActionId")]
     public string DataActionId { get; set; }
 
 
@@ -49,7 +48,7 @@ public partial class DataActionConditionSettings : IEquatable<DataActionConditio
     /// The input field from the data action that the contactId will be passed into.
     /// </summary>
     /// <value>The input field from the data action that the contactId will be passed into.</value>
-    [DataMember(Name = "contactIdField", EmitDefaultValue = false)]
+    [JsonPropertyName("contactIdField")]
     public string ContactIdField { get; set; }
 
 
@@ -58,7 +57,7 @@ public partial class DataActionConditionSettings : IEquatable<DataActionConditio
     /// The result of this condition if the data action returns a result indicating there was no data.
     /// </summary>
     /// <value>The result of this condition if the data action returns a result indicating there was no data.</value>
-    [DataMember(Name = "dataNotFoundResolution", EmitDefaultValue = false)]
+    [JsonPropertyName("dataNotFoundResolution")]
     public bool? DataNotFoundResolution { get; set; }
 
 
@@ -67,7 +66,7 @@ public partial class DataActionConditionSettings : IEquatable<DataActionConditio
     /// A list of predicates defining the comparisons to use for this condition.
     /// </summary>
     /// <value>A list of predicates defining the comparisons to use for this condition.</value>
-    [DataMember(Name = "predicates", EmitDefaultValue = false)]
+    [JsonPropertyName("predicates")]
     public List<DigitalDataActionConditionPredicate> Predicates { get; set; }
 
 
@@ -76,7 +75,7 @@ public partial class DataActionConditionSettings : IEquatable<DataActionConditio
     /// A list of mappings defining which contact data fields will be passed to which data action input fields.
     /// </summary>
     /// <value>A list of mappings defining which contact data fields will be passed to which data action input fields.</value>
-    [DataMember(Name = "contactColumnToDataActionFieldMappings", EmitDefaultValue = false)]
+    [JsonPropertyName("contactColumnToDataActionFieldMappings")]
     public List<DataActionContactColumnFieldMapping> ContactColumnToDataActionFieldMappings { get; set; }
 
 

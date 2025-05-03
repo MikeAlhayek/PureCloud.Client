@@ -1,12 +1,12 @@
-using System.Runtime.Serialization;
 using System.Text;
+using System.Text.Json.Serialization;
 
 namespace PureCloud.Client.Models;
 
 /// <summary>
 /// AnswerOption
 /// </summary>
-[DataContract]
+
 public partial class AnswerOption : IEquatable<AnswerOption>
 {
     /// <summary>
@@ -30,7 +30,7 @@ public partial class AnswerOption : IEquatable<AnswerOption>
     /// <summary>
     /// Gets or Sets Id
     /// </summary>
-    [DataMember(Name = "id", EmitDefaultValue = false)]
+    [JsonPropertyName("id")]
     public string Id { get; set; }
 
 
@@ -38,7 +38,7 @@ public partial class AnswerOption : IEquatable<AnswerOption>
     /// <summary>
     /// Gets or Sets Text
     /// </summary>
-    [DataMember(Name = "text", EmitDefaultValue = false)]
+    [JsonPropertyName("text")]
     public string Text { get; set; }
 
 
@@ -46,7 +46,7 @@ public partial class AnswerOption : IEquatable<AnswerOption>
     /// <summary>
     /// Gets or Sets Value
     /// </summary>
-    [DataMember(Name = "value", EmitDefaultValue = false)]
+    [JsonPropertyName("value")]
     public int? Value { get; set; }
 
 
@@ -55,7 +55,7 @@ public partial class AnswerOption : IEquatable<AnswerOption>
     /// List of assistance conditions which are combined together with a logical AND operator. Eg ( assistanceCondtion1 &amp;&amp; assistanceCondition2 ) wherein assistanceCondition could be ( EXISTS topic1 || topic2 || ... ) or (NOTEXISTS topic3 || topic4 || ...).
     /// </summary>
     /// <value>List of assistance conditions which are combined together with a logical AND operator. Eg ( assistanceCondtion1 &amp;&amp; assistanceCondition2 ) wherein assistanceCondition could be ( EXISTS topic1 || topic2 || ... ) or (NOTEXISTS topic3 || topic4 || ...).</value>
-    [DataMember(Name = "assistanceConditions", EmitDefaultValue = false)]
+    [JsonPropertyName("assistanceConditions")]
     public List<AssistanceCondition> AssistanceConditions { get; set; }
 
 

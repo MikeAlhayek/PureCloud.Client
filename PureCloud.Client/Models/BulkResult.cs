@@ -1,12 +1,12 @@
-using System.Runtime.Serialization;
 using System.Text;
+using System.Text.Json.Serialization;
 
 namespace PureCloud.Client.Models;
 
 /// <summary>
 /// BulkResult
 /// </summary>
-[DataContract]
+
 public partial class BulkResult : IEquatable<BulkResult>
 {
     /// <summary>
@@ -27,7 +27,7 @@ public partial class BulkResult : IEquatable<BulkResult>
     /// Error details if the operation failed.
     /// </summary>
     /// <value>Error details if the operation failed.</value>
-    [DataMember(Name = "error", EmitDefaultValue = false)]
+    [JsonPropertyName("error")]
     public BulkError Error { get; set; }
 
 
@@ -36,7 +36,7 @@ public partial class BulkResult : IEquatable<BulkResult>
     /// The result of the operation if it succeeded.
     /// </summary>
     /// <value>The result of the operation if it succeeded.</value>
-    [DataMember(Name = "entity", EmitDefaultValue = false)]
+    [JsonPropertyName("entity")]
     public object Entity { get; set; }
 
 

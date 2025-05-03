@@ -1,12 +1,12 @@
-using System.Runtime.Serialization;
 using System.Text;
+using System.Text.Json.Serialization;
 
 namespace PureCloud.Client.Models;
 
 /// <summary>
 /// PhoneNumberStatus
 /// </summary>
-[DataContract]
+
 public partial class PhoneNumberStatus : IEquatable<PhoneNumberStatus>
 {
     /// <summary>
@@ -25,7 +25,7 @@ public partial class PhoneNumberStatus : IEquatable<PhoneNumberStatus>
     /// Indicates whether or not a phone number is callable.
     /// </summary>
     /// <value>Indicates whether or not a phone number is callable.</value>
-    [DataMember(Name = "callable", EmitDefaultValue = false)]
+    [JsonPropertyName("callable")]
     public bool? Callable { get; set; }
 
 

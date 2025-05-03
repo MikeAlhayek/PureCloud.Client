@@ -1,12 +1,12 @@
-using System.Runtime.Serialization;
 using System.Text;
+using System.Text.Json.Serialization;
 
 namespace PureCloud.Client.Models;
 
 /// <summary>
 /// QueueConversationCobrowseEventTopicJourneyContext
 /// </summary>
-[DataContract]
+
 public partial class QueueConversationCobrowseEventTopicJourneyContext : IEquatable<QueueConversationCobrowseEventTopicJourneyContext>
 {
     /// <summary>
@@ -28,7 +28,7 @@ public partial class QueueConversationCobrowseEventTopicJourneyContext : IEquata
     /// <summary>
     /// Gets or Sets Customer
     /// </summary>
-    [DataMember(Name = "customer", EmitDefaultValue = false)]
+    [JsonPropertyName("customer")]
     public QueueConversationCobrowseEventTopicJourneyCustomer Customer { get; set; }
 
 
@@ -36,7 +36,7 @@ public partial class QueueConversationCobrowseEventTopicJourneyContext : IEquata
     /// <summary>
     /// Gets or Sets CustomerSession
     /// </summary>
-    [DataMember(Name = "customerSession", EmitDefaultValue = false)]
+    [JsonPropertyName("customerSession")]
     public QueueConversationCobrowseEventTopicJourneyCustomerSession CustomerSession { get; set; }
 
 
@@ -44,7 +44,7 @@ public partial class QueueConversationCobrowseEventTopicJourneyContext : IEquata
     /// <summary>
     /// Gets or Sets TriggeringAction
     /// </summary>
-    [DataMember(Name = "triggeringAction", EmitDefaultValue = false)]
+    [JsonPropertyName("triggeringAction")]
     public QueueConversationCobrowseEventTopicJourneyAction TriggeringAction { get; set; }
 
 

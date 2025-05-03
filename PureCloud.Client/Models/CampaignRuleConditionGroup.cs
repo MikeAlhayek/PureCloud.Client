@@ -1,4 +1,3 @@
-using System.Runtime.Serialization;
 using System.Text;
 using System.Text.Json.Serialization;
 
@@ -7,7 +6,7 @@ namespace PureCloud.Client.Models;
 /// <summary>
 /// CampaignRuleConditionGroup
 /// </summary>
-[DataContract]
+
 public partial class CampaignRuleConditionGroup : IEquatable<CampaignRuleConditionGroup>
 {
 
@@ -34,7 +33,7 @@ public partial class CampaignRuleConditionGroup : IEquatable<CampaignRuleConditi
     /// Whether or not this condition group should be evaluated as true if any of sub conditions is matched
     /// </summary>
     /// <value>Whether or not this condition group should be evaluated as true if any of sub conditions is matched</value>
-    [DataMember(Name = "matchAnyConditions", EmitDefaultValue = false)]
+    [JsonPropertyName("matchAnyConditions")]
     public bool? MatchAnyConditions { get; set; }
 
 
@@ -43,7 +42,7 @@ public partial class CampaignRuleConditionGroup : IEquatable<CampaignRuleConditi
     /// The parameters for the CampaignRuleCondition.
     /// </summary>
     /// <value>The parameters for the CampaignRuleCondition.</value>
-    [DataMember(Name = "conditions", EmitDefaultValue = false)]
+    [JsonPropertyName("conditions")]
     public List<CampaignRuleCondition> Conditions { get; set; }
 
 

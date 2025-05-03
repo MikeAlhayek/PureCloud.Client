@@ -1,4 +1,3 @@
-using System.Runtime.Serialization;
 using System.Text;
 using System.Text.Json.Serialization;
 
@@ -7,7 +6,7 @@ namespace PureCloud.Client.Models;
 /// <summary>
 /// ServiceNowSourceRequest
 /// </summary>
-[DataContract]
+
 public partial class ServiceNowSourceRequest : IEquatable<ServiceNowSourceRequest>
 {
 
@@ -38,7 +37,7 @@ public partial class ServiceNowSourceRequest : IEquatable<ServiceNowSourceReques
     /// The globally unique identifier for the object.
     /// </summary>
     /// <value>The globally unique identifier for the object.</value>
-    [DataMember(Name = "id", EmitDefaultValue = false)]
+    [JsonPropertyName("id")]
     public string Id { get; private set; }
 
 
@@ -47,7 +46,7 @@ public partial class ServiceNowSourceRequest : IEquatable<ServiceNowSourceReques
     /// The name of the integration source.
     /// </summary>
     /// <value>The name of the integration source.</value>
-    [DataMember(Name = "name", EmitDefaultValue = false)]
+    [JsonPropertyName("name")]
     public string Name { get; set; }
 
 
@@ -56,7 +55,7 @@ public partial class ServiceNowSourceRequest : IEquatable<ServiceNowSourceReques
     /// The integration associated with the source.
     /// </summary>
     /// <value>The integration associated with the source.</value>
-    [DataMember(Name = "integrationId", EmitDefaultValue = false)]
+    [JsonPropertyName("integrationId")]
     public string IntegrationId { get; set; }
 
 
@@ -65,7 +64,7 @@ public partial class ServiceNowSourceRequest : IEquatable<ServiceNowSourceReques
     /// The schedule period of the source in hours. Must be at least 6 and at most 48 hours.
     /// </summary>
     /// <value>The schedule period of the source in hours. Must be at least 6 and at most 48 hours.</value>
-    [DataMember(Name = "schedulePeriod", EmitDefaultValue = false)]
+    [JsonPropertyName("schedulePeriod")]
     public int? SchedulePeriod { get; set; }
 
 
@@ -74,7 +73,7 @@ public partial class ServiceNowSourceRequest : IEquatable<ServiceNowSourceReques
     /// The settings of the source.
     /// </summary>
     /// <value>The settings of the source.</value>
-    [DataMember(Name = "settings", EmitDefaultValue = false)]
+    [JsonPropertyName("settings")]
     public ServiceNowSettings Settings { get; set; }
 
 
@@ -83,7 +82,7 @@ public partial class ServiceNowSourceRequest : IEquatable<ServiceNowSourceReques
     /// The URI for this object
     /// </summary>
     /// <value>The URI for this object</value>
-    [DataMember(Name = "selfUri", EmitDefaultValue = false)]
+    [JsonPropertyName("selfUri")]
     public string SelfUri { get; private set; }
 
 

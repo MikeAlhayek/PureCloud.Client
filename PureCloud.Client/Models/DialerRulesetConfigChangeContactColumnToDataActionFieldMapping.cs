@@ -1,12 +1,12 @@
-using System.Runtime.Serialization;
 using System.Text;
+using System.Text.Json.Serialization;
 
 namespace PureCloud.Client.Models;
 
 /// <summary>
 /// DialerRulesetConfigChangeContactColumnToDataActionFieldMapping
 /// </summary>
-[DataContract]
+
 public partial class DialerRulesetConfigChangeContactColumnToDataActionFieldMapping : IEquatable<DialerRulesetConfigChangeContactColumnToDataActionFieldMapping>
 {
     /// <summary>
@@ -29,7 +29,7 @@ public partial class DialerRulesetConfigChangeContactColumnToDataActionFieldMapp
     /// The name of a contact column whose data will be passed to the data action
     /// </summary>
     /// <value>The name of a contact column whose data will be passed to the data action</value>
-    [DataMember(Name = "contactColumnName", EmitDefaultValue = false)]
+    [JsonPropertyName("contactColumnName")]
     public string ContactColumnName { get; set; }
 
 
@@ -38,7 +38,7 @@ public partial class DialerRulesetConfigChangeContactColumnToDataActionFieldMapp
     /// The name of an output field from the data action that the contact column data will be passed to
     /// </summary>
     /// <value>The name of an output field from the data action that the contact column data will be passed to</value>
-    [DataMember(Name = "dataActionField", EmitDefaultValue = false)]
+    [JsonPropertyName("dataActionField")]
     public string DataActionField { get; set; }
 
 
@@ -46,7 +46,7 @@ public partial class DialerRulesetConfigChangeContactColumnToDataActionFieldMapp
     /// <summary>
     /// Gets or Sets AdditionalProperties
     /// </summary>
-    [DataMember(Name = "additionalProperties", EmitDefaultValue = false)]
+    [JsonPropertyName("additionalProperties")]
     public Dictionary<string, object> AdditionalProperties { get; set; }
 
 

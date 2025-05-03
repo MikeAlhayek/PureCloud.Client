@@ -7,14 +7,14 @@ namespace PureCloud.Client.Models;
 /// <summary>
 /// Template header object.
 /// </summary>
-[DataContract]
+
 public partial class NotificationTemplateHeader : IEquatable<NotificationTemplateHeader>
 {
     /// <summary>
     /// Template header type.
     /// </summary>
     /// <value>Template header type.</value>
-    [JsonConverter(typeof(JsonStringEnumConverter))]
+    
     public enum TypeEnum
     {
         /// <summary>
@@ -41,7 +41,7 @@ public partial class NotificationTemplateHeader : IEquatable<NotificationTemplat
     /// Template header type.
     /// </summary>
     /// <value>Template header type.</value>
-    [DataMember(Name = "type", EmitDefaultValue = false)]
+    [JsonPropertyName("type")]
     public TypeEnum? Type { get; set; }
 
     /// <summary>
@@ -73,7 +73,7 @@ public partial class NotificationTemplateHeader : IEquatable<NotificationTemplat
     /// Header text. For WhatsApp, ignored.
     /// </summary>
     /// <value>Header text. For WhatsApp, ignored.</value>
-    [DataMember(Name = "text", EmitDefaultValue = false)]
+    [JsonPropertyName("text")]
     public string Text { get; set; }
 
 
@@ -82,7 +82,7 @@ public partial class NotificationTemplateHeader : IEquatable<NotificationTemplat
     /// Media template header image.
     /// </summary>
     /// <value>Media template header image.</value>
-    [DataMember(Name = "media", EmitDefaultValue = false)]
+    [JsonPropertyName("media")]
     public ContentAttachment Media { get; set; }
 
 
@@ -91,7 +91,7 @@ public partial class NotificationTemplateHeader : IEquatable<NotificationTemplat
     /// Template parameters for placeholders in template.
     /// </summary>
     /// <value>Template parameters for placeholders in template.</value>
-    [DataMember(Name = "parameters", EmitDefaultValue = false)]
+    [JsonPropertyName("parameters")]
     public List<NotificationTemplateParameter> Parameters { get; set; }
 
 

@@ -1,12 +1,12 @@
-using System.Runtime.Serialization;
 using System.Text;
+using System.Text.Json.Serialization;
 
 namespace PureCloud.Client.Models;
 
 /// <summary>
 /// ExternalContactsContactChangedTopicExternalOrganization
 /// </summary>
-[DataContract]
+
 public partial class ExternalContactsContactChangedTopicExternalOrganization : IEquatable<ExternalContactsContactChangedTopicExternalOrganization>
 {
     /// <summary>
@@ -60,7 +60,7 @@ public partial class ExternalContactsContactChangedTopicExternalOrganization : I
     /// <summary>
     /// Gets or Sets Id
     /// </summary>
-    [DataMember(Name = "id", EmitDefaultValue = false)]
+    [JsonPropertyName("id")]
     public string Id { get; set; }
 
 
@@ -68,7 +68,7 @@ public partial class ExternalContactsContactChangedTopicExternalOrganization : I
     /// <summary>
     /// Gets or Sets Division
     /// </summary>
-    [DataMember(Name = "division", EmitDefaultValue = false)]
+    [JsonPropertyName("division")]
     public ExternalContactsContactChangedTopicDivision Division { get; set; }
 
 
@@ -76,7 +76,7 @@ public partial class ExternalContactsContactChangedTopicExternalOrganization : I
     /// <summary>
     /// Gets or Sets Name
     /// </summary>
-    [DataMember(Name = "name", EmitDefaultValue = false)]
+    [JsonPropertyName("name")]
     public string Name { get; set; }
 
 
@@ -84,7 +84,7 @@ public partial class ExternalContactsContactChangedTopicExternalOrganization : I
     /// <summary>
     /// Gets or Sets CompanyType
     /// </summary>
-    [DataMember(Name = "companyType", EmitDefaultValue = false)]
+    [JsonPropertyName("companyType")]
     public string CompanyType { get; set; }
 
 
@@ -92,7 +92,7 @@ public partial class ExternalContactsContactChangedTopicExternalOrganization : I
     /// <summary>
     /// Gets or Sets Industry
     /// </summary>
-    [DataMember(Name = "industry", EmitDefaultValue = false)]
+    [JsonPropertyName("industry")]
     public string Industry { get; set; }
 
 
@@ -100,7 +100,7 @@ public partial class ExternalContactsContactChangedTopicExternalOrganization : I
     /// <summary>
     /// Gets or Sets PrimaryContactId
     /// </summary>
-    [DataMember(Name = "primaryContactId", EmitDefaultValue = false)]
+    [JsonPropertyName("primaryContactId")]
     public string PrimaryContactId { get; set; }
 
 
@@ -108,7 +108,7 @@ public partial class ExternalContactsContactChangedTopicExternalOrganization : I
     /// <summary>
     /// Gets or Sets Address
     /// </summary>
-    [DataMember(Name = "address", EmitDefaultValue = false)]
+    [JsonPropertyName("address")]
     public ExternalContactsContactChangedTopicContactAddress Address { get; set; }
 
 
@@ -116,7 +116,7 @@ public partial class ExternalContactsContactChangedTopicExternalOrganization : I
     /// <summary>
     /// Gets or Sets PhoneNumber
     /// </summary>
-    [DataMember(Name = "phoneNumber", EmitDefaultValue = false)]
+    [JsonPropertyName("phoneNumber")]
     public ExternalContactsContactChangedTopicPhoneNumber PhoneNumber { get; set; }
 
 
@@ -124,7 +124,7 @@ public partial class ExternalContactsContactChangedTopicExternalOrganization : I
     /// <summary>
     /// Gets or Sets FaxNumber
     /// </summary>
-    [DataMember(Name = "faxNumber", EmitDefaultValue = false)]
+    [JsonPropertyName("faxNumber")]
     public ExternalContactsContactChangedTopicPhoneNumber FaxNumber { get; set; }
 
 
@@ -132,7 +132,7 @@ public partial class ExternalContactsContactChangedTopicExternalOrganization : I
     /// <summary>
     /// Gets or Sets EmployeeCount
     /// </summary>
-    [DataMember(Name = "employeeCount", EmitDefaultValue = false)]
+    [JsonPropertyName("employeeCount")]
     public long? EmployeeCount { get; set; }
 
 
@@ -140,7 +140,7 @@ public partial class ExternalContactsContactChangedTopicExternalOrganization : I
     /// <summary>
     /// Gets or Sets Revenue
     /// </summary>
-    [DataMember(Name = "revenue", EmitDefaultValue = false)]
+    [JsonPropertyName("revenue")]
     public long? Revenue { get; set; }
 
 
@@ -148,7 +148,7 @@ public partial class ExternalContactsContactChangedTopicExternalOrganization : I
     /// <summary>
     /// Gets or Sets Tags
     /// </summary>
-    [DataMember(Name = "tags", EmitDefaultValue = false)]
+    [JsonPropertyName("tags")]
     public List<string> Tags { get; set; }
 
 
@@ -156,7 +156,7 @@ public partial class ExternalContactsContactChangedTopicExternalOrganization : I
     /// <summary>
     /// Gets or Sets Websites
     /// </summary>
-    [DataMember(Name = "websites", EmitDefaultValue = false)]
+    [JsonPropertyName("websites")]
     public List<string> Websites { get; set; }
 
 
@@ -164,7 +164,7 @@ public partial class ExternalContactsContactChangedTopicExternalOrganization : I
     /// <summary>
     /// Gets or Sets Tickers
     /// </summary>
-    [DataMember(Name = "tickers", EmitDefaultValue = false)]
+    [JsonPropertyName("tickers")]
     public List<ExternalContactsContactChangedTopicTicker> Tickers { get; set; }
 
 
@@ -172,7 +172,7 @@ public partial class ExternalContactsContactChangedTopicExternalOrganization : I
     /// <summary>
     /// Gets or Sets TwitterId
     /// </summary>
-    [DataMember(Name = "twitterId", EmitDefaultValue = false)]
+    [JsonPropertyName("twitterId")]
     public ExternalContactsContactChangedTopicTwitterId TwitterId { get; set; }
 
 
@@ -180,7 +180,7 @@ public partial class ExternalContactsContactChangedTopicExternalOrganization : I
     /// <summary>
     /// Gets or Sets ExternalSystemUrl
     /// </summary>
-    [DataMember(Name = "externalSystemUrl", EmitDefaultValue = false)]
+    [JsonPropertyName("externalSystemUrl")]
     public string ExternalSystemUrl { get; set; }
 
 
@@ -188,7 +188,7 @@ public partial class ExternalContactsContactChangedTopicExternalOrganization : I
     /// <summary>
     /// Gets or Sets CustomFields
     /// </summary>
-    [DataMember(Name = "customFields", EmitDefaultValue = false)]
+    [JsonPropertyName("customFields")]
     public Dictionary<string, object> CustomFields { get; set; }
 
 
@@ -196,7 +196,7 @@ public partial class ExternalContactsContactChangedTopicExternalOrganization : I
     /// <summary>
     /// Gets or Sets CreateDate
     /// </summary>
-    [DataMember(Name = "createDate", EmitDefaultValue = false)]
+    [JsonPropertyName("createDate")]
     public DateTime? CreateDate { get; set; }
 
 
@@ -204,7 +204,7 @@ public partial class ExternalContactsContactChangedTopicExternalOrganization : I
     /// <summary>
     /// Gets or Sets ModifyDate
     /// </summary>
-    [DataMember(Name = "modifyDate", EmitDefaultValue = false)]
+    [JsonPropertyName("modifyDate")]
     public DateTime? ModifyDate { get; set; }
 
 

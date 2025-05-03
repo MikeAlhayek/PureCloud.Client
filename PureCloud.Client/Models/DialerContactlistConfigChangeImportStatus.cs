@@ -7,14 +7,14 @@ namespace PureCloud.Client.Models;
 /// <summary>
 /// DialerContactlistConfigChangeImportStatus
 /// </summary>
-[DataContract]
+
 public partial class DialerContactlistConfigChangeImportStatus : IEquatable<DialerContactlistConfigChangeImportStatus>
 {
     /// <summary>
     /// current status of the import
     /// </summary>
     /// <value>current status of the import</value>
-    [JsonConverter(typeof(JsonStringEnumConverter))]
+    
     public enum ImportStateEnum
     {
         /// <summary>
@@ -41,7 +41,7 @@ public partial class DialerContactlistConfigChangeImportStatus : IEquatable<Dial
     /// current status of the import
     /// </summary>
     /// <value>current status of the import</value>
-    [DataMember(Name = "importState", EmitDefaultValue = false)]
+    [JsonPropertyName("importState")]
     public ImportStateEnum? ImportState { get; set; }
     /// <summary>
     /// Initializes a new instance of the <see cref="DialerContactlistConfigChangeImportStatus" /> class.
@@ -75,7 +75,7 @@ public partial class DialerContactlistConfigChangeImportStatus : IEquatable<Dial
     /// total number of records to be imported
     /// </summary>
     /// <value>total number of records to be imported</value>
-    [DataMember(Name = "totalRecords", EmitDefaultValue = false)]
+    [JsonPropertyName("totalRecords")]
     public long? TotalRecords { get; set; }
 
 
@@ -84,7 +84,7 @@ public partial class DialerContactlistConfigChangeImportStatus : IEquatable<Dial
     /// number of records finished importing
     /// </summary>
     /// <value>number of records finished importing</value>
-    [DataMember(Name = "completedRecords", EmitDefaultValue = false)]
+    [JsonPropertyName("completedRecords")]
     public long? CompletedRecords { get; set; }
 
 
@@ -93,7 +93,7 @@ public partial class DialerContactlistConfigChangeImportStatus : IEquatable<Dial
     /// percentage of records finished importing
     /// </summary>
     /// <value>percentage of records finished importing</value>
-    [DataMember(Name = "percentageComplete", EmitDefaultValue = false)]
+    [JsonPropertyName("percentageComplete")]
     public long? PercentageComplete { get; set; }
 
 
@@ -102,7 +102,7 @@ public partial class DialerContactlistConfigChangeImportStatus : IEquatable<Dial
     /// if the import has failed, the reason for the failure
     /// </summary>
     /// <value>if the import has failed, the reason for the failure</value>
-    [DataMember(Name = "failureReason", EmitDefaultValue = false)]
+    [JsonPropertyName("failureReason")]
     public string FailureReason { get; set; }
 
 
@@ -111,7 +111,7 @@ public partial class DialerContactlistConfigChangeImportStatus : IEquatable<Dial
     /// The ids for target contact lists
     /// </summary>
     /// <value>The ids for target contact lists</value>
-    [DataMember(Name = "targetContactListIds", EmitDefaultValue = false)]
+    [JsonPropertyName("targetContactListIds")]
     public List<string> TargetContactListIds { get; set; }
 
 
@@ -120,7 +120,7 @@ public partial class DialerContactlistConfigChangeImportStatus : IEquatable<Dial
     /// The prefix used for target contact list names
     /// </summary>
     /// <value>The prefix used for target contact list names</value>
-    [DataMember(Name = "listNamePrefix", EmitDefaultValue = false)]
+    [JsonPropertyName("listNamePrefix")]
     public string ListNamePrefix { get; set; }
 
 
@@ -128,7 +128,7 @@ public partial class DialerContactlistConfigChangeImportStatus : IEquatable<Dial
     /// <summary>
     /// Gets or Sets AdditionalProperties
     /// </summary>
-    [DataMember(Name = "additionalProperties", EmitDefaultValue = false)]
+    [JsonPropertyName("additionalProperties")]
     public Dictionary<string, object> AdditionalProperties { get; set; }
 
 

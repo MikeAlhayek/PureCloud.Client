@@ -7,13 +7,13 @@ namespace PureCloud.Client.Models;
 /// <summary>
 /// CommandStatus
 /// </summary>
-[DataContract]
+
 public partial class CommandStatus : IEquatable<CommandStatus>
 {
     /// <summary>
     /// Gets or Sets StatusCode
     /// </summary>
-    [JsonConverter(typeof(JsonStringEnumConverter))]
+    
     public enum StatusCodeEnum
     {
         /// <summary>
@@ -57,7 +57,7 @@ public partial class CommandStatus : IEquatable<CommandStatus>
     /// <summary>
     /// Gets or Sets CommandType
     /// </summary>
-    [JsonConverter(typeof(JsonStringEnumConverter))]
+    
     public enum CommandTypeEnum
     {
         /// <summary>
@@ -131,12 +131,12 @@ public partial class CommandStatus : IEquatable<CommandStatus>
     /// <summary>
     /// Gets or Sets StatusCode
     /// </summary>
-    [DataMember(Name = "statusCode", EmitDefaultValue = false)]
+    [JsonPropertyName("statusCode")]
     public StatusCodeEnum? StatusCode { get; set; }
     /// <summary>
     /// Gets or Sets CommandType
     /// </summary>
-    [DataMember(Name = "commandType", EmitDefaultValue = false)]
+    [JsonPropertyName("commandType")]
     public CommandTypeEnum? CommandType { get; set; }
     /// <summary>
     /// Initializes a new instance of the <see cref="CommandStatus" /> class.
@@ -164,7 +164,7 @@ public partial class CommandStatus : IEquatable<CommandStatus>
     /// The globally unique identifier for the object.
     /// </summary>
     /// <value>The globally unique identifier for the object.</value>
-    [DataMember(Name = "id", EmitDefaultValue = false)]
+    [JsonPropertyName("id")]
     public string Id { get; private set; }
 
 
@@ -172,7 +172,7 @@ public partial class CommandStatus : IEquatable<CommandStatus>
     /// <summary>
     /// Gets or Sets Name
     /// </summary>
-    [DataMember(Name = "name", EmitDefaultValue = false)]
+    [JsonPropertyName("name")]
     public string Name { get; set; }
 
 
@@ -181,7 +181,7 @@ public partial class CommandStatus : IEquatable<CommandStatus>
     /// Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z
     /// </summary>
     /// <value>Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z</value>
-    [DataMember(Name = "expiration", EmitDefaultValue = false)]
+    [JsonPropertyName("expiration")]
     public DateTime? Expiration { get; set; }
 
 
@@ -189,7 +189,7 @@ public partial class CommandStatus : IEquatable<CommandStatus>
     /// <summary>
     /// Gets or Sets UserId
     /// </summary>
-    [DataMember(Name = "userId", EmitDefaultValue = false)]
+    [JsonPropertyName("userId")]
     public string UserId { get; set; }
 
 
@@ -201,7 +201,7 @@ public partial class CommandStatus : IEquatable<CommandStatus>
     /// <summary>
     /// Gets or Sets Document
     /// </summary>
-    [DataMember(Name = "document", EmitDefaultValue = false)]
+    [JsonPropertyName("document")]
     public Document Document { get; set; }
 
 
@@ -210,7 +210,7 @@ public partial class CommandStatus : IEquatable<CommandStatus>
     /// The URI for this object
     /// </summary>
     /// <value>The URI for this object</value>
-    [DataMember(Name = "selfUri", EmitDefaultValue = false)]
+    [JsonPropertyName("selfUri")]
     public string SelfUri { get; private set; }
 
 

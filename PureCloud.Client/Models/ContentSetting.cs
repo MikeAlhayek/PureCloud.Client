@@ -1,12 +1,12 @@
-using System.Runtime.Serialization;
 using System.Text;
+using System.Text.Json.Serialization;
 
 namespace PureCloud.Client.Models;
 
 /// <summary>
 /// ContentSetting
 /// </summary>
-[DataContract]
+
 public partial class ContentSetting : IEquatable<ContentSetting>
 {
     /// <summary>
@@ -25,7 +25,7 @@ public partial class ContentSetting : IEquatable<ContentSetting>
     /// Settings relating to facebook and instagram stories feature
     /// </summary>
     /// <value>Settings relating to facebook and instagram stories feature</value>
-    [DataMember(Name = "story", EmitDefaultValue = false)]
+    [JsonPropertyName("story")]
     public StorySetting Story { get; set; }
 
 

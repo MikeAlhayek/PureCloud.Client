@@ -1,4 +1,3 @@
-using System.Runtime.Serialization;
 using System.Text;
 using System.Text.Json.Serialization;
 
@@ -7,7 +6,7 @@ namespace PureCloud.Client.Models;
 /// <summary>
 /// BulkCallbackDisconnectRequest
 /// </summary>
-[DataContract]
+
 public partial class BulkCallbackDisconnectRequest : IEquatable<BulkCallbackDisconnectRequest>
 {
 
@@ -32,7 +31,7 @@ public partial class BulkCallbackDisconnectRequest : IEquatable<BulkCallbackDisc
     /// The list of requests to disconnect callbacks in bulk
     /// </summary>
     /// <value>The list of requests to disconnect callbacks in bulk</value>
-    [DataMember(Name = "callbackDisconnectIdentifiers", EmitDefaultValue = false)]
+    [JsonPropertyName("callbackDisconnectIdentifiers")]
     public List<CallbackDisconnectIdentifier> CallbackDisconnectIdentifiers { get; set; }
 
 

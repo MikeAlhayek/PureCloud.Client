@@ -1,12 +1,12 @@
-using System.Runtime.Serialization;
 using System.Text;
+using System.Text.Json.Serialization;
 
 namespace PureCloud.Client.Models;
 
 /// <summary>
 /// CrossPlatformMessageMediaPolicy
 /// </summary>
-[DataContract]
+
 public partial class CrossPlatformMessageMediaPolicy : IEquatable<CrossPlatformMessageMediaPolicy>
 {
     /// <summary>
@@ -27,7 +27,7 @@ public partial class CrossPlatformMessageMediaPolicy : IEquatable<CrossPlatformM
     /// Actions applied when specified conditions are met
     /// </summary>
     /// <value>Actions applied when specified conditions are met</value>
-    [DataMember(Name = "actions", EmitDefaultValue = false)]
+    [JsonPropertyName("actions")]
     public CrossPlatformPolicyActions Actions { get; set; }
 
 
@@ -36,7 +36,7 @@ public partial class CrossPlatformMessageMediaPolicy : IEquatable<CrossPlatformM
     /// Conditions for when actions should be applied
     /// </summary>
     /// <value>Conditions for when actions should be applied</value>
-    [DataMember(Name = "conditions", EmitDefaultValue = false)]
+    [JsonPropertyName("conditions")]
     public MessageMediaPolicyConditions Conditions { get; set; }
 
 

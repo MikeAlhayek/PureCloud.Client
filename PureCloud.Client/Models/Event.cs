@@ -1,4 +1,3 @@
-using System.Runtime.Serialization;
 using System.Text;
 using System.Text.Json.Serialization;
 
@@ -7,7 +6,7 @@ namespace PureCloud.Client.Models;
 /// <summary>
 /// Event
 /// </summary>
-[DataContract]
+
 public partial class Event : IEquatable<Event>
 {
 
@@ -54,7 +53,7 @@ public partial class Event : IEquatable<Event>
     /// System-generated UUID for the event.
     /// </summary>
     /// <value>System-generated UUID for the event.</value>
-    [DataMember(Name = "id", EmitDefaultValue = false)]
+    [JsonPropertyName("id")]
     public string Id { get; set; }
 
 
@@ -63,7 +62,7 @@ public partial class Event : IEquatable<Event>
     /// UUID corresponding to triggering action that caused this event (e.g. HTTP POST, SIP invite, another event).
     /// </summary>
     /// <value>UUID corresponding to triggering action that caused this event (e.g. HTTP POST, SIP invite, another event).</value>
-    [DataMember(Name = "correlationId", EmitDefaultValue = false)]
+    [JsonPropertyName("correlationId")]
     public string CorrelationId { get; set; }
 
 
@@ -72,7 +71,7 @@ public partial class Event : IEquatable<Event>
     /// Primary identifier of the customer in the source of the events.
     /// </summary>
     /// <value>Primary identifier of the customer in the source of the events.</value>
-    [DataMember(Name = "customerId", EmitDefaultValue = false)]
+    [JsonPropertyName("customerId")]
     public string CustomerId { get; set; }
 
 
@@ -81,7 +80,7 @@ public partial class Event : IEquatable<Event>
     /// Type of primary identifier (e.g. cookie, email, phone).
     /// </summary>
     /// <value>Type of primary identifier (e.g. cookie, email, phone).</value>
-    [DataMember(Name = "customerIdType", EmitDefaultValue = false)]
+    [JsonPropertyName("customerIdType")]
     public string CustomerIdType { get; set; }
 
 
@@ -90,7 +89,7 @@ public partial class Event : IEquatable<Event>
     /// The session that the event belongs to.
     /// </summary>
     /// <value>The session that the event belongs to.</value>
-    [DataMember(Name = "session", EmitDefaultValue = false)]
+    [JsonPropertyName("session")]
     public EventSession Session { get; set; }
 
 
@@ -99,7 +98,7 @@ public partial class Event : IEquatable<Event>
     /// The name representing the type of event.
     /// </summary>
     /// <value>The name representing the type of event.</value>
-    [DataMember(Name = "eventType", EmitDefaultValue = false)]
+    [JsonPropertyName("eventType")]
     public string EventType { get; set; }
 
 
@@ -108,7 +107,7 @@ public partial class Event : IEquatable<Event>
     /// Event where a customer has achieved a specific outcome or goal.
     /// </summary>
     /// <value>Event where a customer has achieved a specific outcome or goal.</value>
-    [DataMember(Name = "outcomeAchievedEvent", EmitDefaultValue = false)]
+    [JsonPropertyName("outcomeAchievedEvent")]
     public OutcomeAchievedEvent OutcomeAchievedEvent { get; set; }
 
 
@@ -117,7 +116,7 @@ public partial class Event : IEquatable<Event>
     /// Event that represents a segment being assigned.
     /// </summary>
     /// <value>Event that represents a segment being assigned.</value>
-    [DataMember(Name = "segmentAssignmentEvent", EmitDefaultValue = false)]
+    [JsonPropertyName("segmentAssignmentEvent")]
     public SegmentAssignmentEvent SegmentAssignmentEvent { get; set; }
 
 
@@ -126,7 +125,7 @@ public partial class Event : IEquatable<Event>
     /// Event triggered by web actions.
     /// </summary>
     /// <value>Event triggered by web actions.</value>
-    [DataMember(Name = "webActionEvent", EmitDefaultValue = false)]
+    [JsonPropertyName("webActionEvent")]
     public WebActionEvent WebActionEvent { get; set; }
 
 
@@ -135,7 +134,7 @@ public partial class Event : IEquatable<Event>
     /// Event that tracks user interactions with content in a browser such as pageviews, downloads, mobile ad clicks, etc.
     /// </summary>
     /// <value>Event that tracks user interactions with content in a browser such as pageviews, downloads, mobile ad clicks, etc.</value>
-    [DataMember(Name = "webEvent", EmitDefaultValue = false)]
+    [JsonPropertyName("webEvent")]
     public WebEvent WebEvent { get; set; }
 
 
@@ -144,7 +143,7 @@ public partial class Event : IEquatable<Event>
     /// Event that tracks user interactions with content in an application such as screen views, searches, etc.
     /// </summary>
     /// <value>Event that tracks user interactions with content in an application such as screen views, searches, etc.</value>
-    [DataMember(Name = "appEvent", EmitDefaultValue = false)]
+    [JsonPropertyName("appEvent")]
     public AppEvent AppEvent { get; set; }
 
 
@@ -153,7 +152,7 @@ public partial class Event : IEquatable<Event>
     /// Timestamp indicating when the event actually took place. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z
     /// </summary>
     /// <value>Timestamp indicating when the event actually took place. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z</value>
-    [DataMember(Name = "createdDate", EmitDefaultValue = false)]
+    [JsonPropertyName("createdDate")]
     public DateTime? CreatedDate { get; set; }
 
 

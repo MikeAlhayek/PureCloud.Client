@@ -1,12 +1,12 @@
-using System.Runtime.Serialization;
 using System.Text;
+using System.Text.Json.Serialization;
 
 namespace PureCloud.Client.Models;
 
 /// <summary>
 /// RoomParticipantsResponse
 /// </summary>
-[DataContract]
+
 public partial class RoomParticipantsResponse : IEquatable<RoomParticipantsResponse>
 {
     /// <summary>
@@ -25,7 +25,7 @@ public partial class RoomParticipantsResponse : IEquatable<RoomParticipantsRespo
     /// list of room participants
     /// </summary>
     /// <value>list of room participants</value>
-    [DataMember(Name = "participants", EmitDefaultValue = false)]
+    [JsonPropertyName("participants")]
     public List<RoomParticipantResponse> Participants { get; set; }
 
 

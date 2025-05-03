@@ -1,12 +1,12 @@
-using System.Runtime.Serialization;
 using System.Text;
+using System.Text.Json.Serialization;
 
 namespace PureCloud.Client.Models;
 
 /// <summary>
 /// WfmBuScheduleTopicBuScheduleGenerationResultSummary
 /// </summary>
-[DataContract]
+
 public partial class WfmBuScheduleTopicBuScheduleGenerationResultSummary : IEquatable<WfmBuScheduleTopicBuScheduleGenerationResultSummary>
 {
     /// <summary>
@@ -30,7 +30,7 @@ public partial class WfmBuScheduleTopicBuScheduleGenerationResultSummary : IEqua
     /// <summary>
     /// Gets or Sets Failed
     /// </summary>
-    [DataMember(Name = "failed", EmitDefaultValue = false)]
+    [JsonPropertyName("failed")]
     public bool? Failed { get; set; }
 
 
@@ -38,7 +38,7 @@ public partial class WfmBuScheduleTopicBuScheduleGenerationResultSummary : IEqua
     /// <summary>
     /// Gets or Sets RunId
     /// </summary>
-    [DataMember(Name = "runId", EmitDefaultValue = false)]
+    [JsonPropertyName("runId")]
     public string RunId { get; set; }
 
 
@@ -46,7 +46,7 @@ public partial class WfmBuScheduleTopicBuScheduleGenerationResultSummary : IEqua
     /// <summary>
     /// Gets or Sets MessageCount
     /// </summary>
-    [DataMember(Name = "messageCount", EmitDefaultValue = false)]
+    [JsonPropertyName("messageCount")]
     public long? MessageCount { get; set; }
 
 
@@ -54,7 +54,7 @@ public partial class WfmBuScheduleTopicBuScheduleGenerationResultSummary : IEqua
     /// <summary>
     /// Gets or Sets MessageSeverityCounts
     /// </summary>
-    [DataMember(Name = "messageSeverityCounts", EmitDefaultValue = false)]
+    [JsonPropertyName("messageSeverityCounts")]
     public List<WfmBuScheduleTopicSchedulerMessageSeverityCount> MessageSeverityCounts { get; set; }
 
 

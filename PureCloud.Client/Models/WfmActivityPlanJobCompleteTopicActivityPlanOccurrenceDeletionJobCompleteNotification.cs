@@ -7,13 +7,13 @@ namespace PureCloud.Client.Models;
 /// <summary>
 /// WfmActivityPlanJobCompleteTopicActivityPlanOccurrenceDeletionJobCompleteNotification
 /// </summary>
-[DataContract]
+
 public partial class WfmActivityPlanJobCompleteTopicActivityPlanOccurrenceDeletionJobCompleteNotification : IEquatable<WfmActivityPlanJobCompleteTopicActivityPlanOccurrenceDeletionJobCompleteNotification>
 {
     /// <summary>
     /// Gets or Sets Type
     /// </summary>
-    [JsonConverter(typeof(JsonStringEnumConverter))]
+    
     public enum TypeEnum
     {
         /// <summary>
@@ -39,7 +39,7 @@ public partial class WfmActivityPlanJobCompleteTopicActivityPlanOccurrenceDeleti
     /// <summary>
     /// Gets or Sets Status
     /// </summary>
-    [JsonConverter(typeof(JsonStringEnumConverter))]
+    
     public enum StatusEnum
     {
         /// <summary>
@@ -71,12 +71,12 @@ public partial class WfmActivityPlanJobCompleteTopicActivityPlanOccurrenceDeleti
     /// <summary>
     /// Gets or Sets Type
     /// </summary>
-    [DataMember(Name = "type", EmitDefaultValue = false)]
+    [JsonPropertyName("type")]
     public TypeEnum? Type { get; set; }
     /// <summary>
     /// Gets or Sets Status
     /// </summary>
-    [DataMember(Name = "status", EmitDefaultValue = false)]
+    [JsonPropertyName("status")]
     public StatusEnum? Status { get; set; }
     /// <summary>
     /// Initializes a new instance of the <see cref="WfmActivityPlanJobCompleteTopicActivityPlanOccurrenceDeletionJobCompleteNotification" /> class.
@@ -105,7 +105,7 @@ public partial class WfmActivityPlanJobCompleteTopicActivityPlanOccurrenceDeleti
     /// <summary>
     /// Gets or Sets Id
     /// </summary>
-    [DataMember(Name = "id", EmitDefaultValue = false)]
+    [JsonPropertyName("id")]
     public string Id { get; set; }
 
 
@@ -115,7 +115,7 @@ public partial class WfmActivityPlanJobCompleteTopicActivityPlanOccurrenceDeleti
     /// <summary>
     /// Gets or Sets ActivityPlan
     /// </summary>
-    [DataMember(Name = "activityPlan", EmitDefaultValue = false)]
+    [JsonPropertyName("activityPlan")]
     public WfmActivityPlanJobCompleteTopicActivityPlanReference ActivityPlan { get; set; }
 
 
@@ -125,7 +125,7 @@ public partial class WfmActivityPlanJobCompleteTopicActivityPlanOccurrenceDeleti
     /// <summary>
     /// Gets or Sets Exceptions
     /// </summary>
-    [DataMember(Name = "exceptions", EmitDefaultValue = false)]
+    [JsonPropertyName("exceptions")]
     public List<WfmActivityPlanJobCompleteTopicActivityPlanJobException> Exceptions { get; set; }
 
 
@@ -133,7 +133,7 @@ public partial class WfmActivityPlanJobCompleteTopicActivityPlanOccurrenceDeleti
     /// <summary>
     /// Gets or Sets Error
     /// </summary>
-    [DataMember(Name = "error", EmitDefaultValue = false)]
+    [JsonPropertyName("error")]
     public WfmActivityPlanJobCompleteTopicErrorBody Error { get; set; }
 
 
@@ -141,7 +141,7 @@ public partial class WfmActivityPlanJobCompleteTopicActivityPlanOccurrenceDeleti
     /// <summary>
     /// Gets or Sets Occurrence
     /// </summary>
-    [DataMember(Name = "occurrence", EmitDefaultValue = false)]
+    [JsonPropertyName("occurrence")]
     public WfmActivityPlanJobCompleteTopicActivityPlanOccurrenceReference Occurrence { get; set; }
 
 

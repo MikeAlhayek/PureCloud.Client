@@ -1,12 +1,12 @@
-using System.Runtime.Serialization;
 using System.Text;
+using System.Text.Json.Serialization;
 
 namespace PureCloud.Client.Models;
 
 /// <summary>
 /// KnowledgeDocumentQueryResponse
 /// </summary>
-[DataContract]
+
 public partial class KnowledgeDocumentQueryResponse : IEquatable<KnowledgeDocumentQueryResponse>
 {
     /// <summary>
@@ -27,7 +27,7 @@ public partial class KnowledgeDocumentQueryResponse : IEquatable<KnowledgeDocume
     /// Page size of the returned results.
     /// </summary>
     /// <value>Page size of the returned results.</value>
-    [DataMember(Name = "pageSize", EmitDefaultValue = false)]
+    [JsonPropertyName("pageSize")]
     public int? PageSize { get; set; }
 
 
@@ -36,7 +36,7 @@ public partial class KnowledgeDocumentQueryResponse : IEquatable<KnowledgeDocume
     /// Page number of the returned results.
     /// </summary>
     /// <value>Page number of the returned results.</value>
-    [DataMember(Name = "pageNumber", EmitDefaultValue = false)]
+    [JsonPropertyName("pageNumber")]
     public int? PageNumber { get; set; }
 
 
@@ -45,7 +45,7 @@ public partial class KnowledgeDocumentQueryResponse : IEquatable<KnowledgeDocume
     /// The total number of documents matching the query.
     /// </summary>
     /// <value>The total number of documents matching the query.</value>
-    [DataMember(Name = "total", EmitDefaultValue = false)]
+    [JsonPropertyName("total")]
     public long? Total { get; private set; }
 
 
@@ -54,7 +54,7 @@ public partial class KnowledgeDocumentQueryResponse : IEquatable<KnowledgeDocume
     /// The total number of pages of results, calculated according to the pageSize and the total matching documents.
     /// </summary>
     /// <value>The total number of pages of results, calculated according to the pageSize and the total matching documents.</value>
-    [DataMember(Name = "pageCount", EmitDefaultValue = false)]
+    [JsonPropertyName("pageCount")]
     public int? PageCount { get; private set; }
 
 
@@ -63,7 +63,7 @@ public partial class KnowledgeDocumentQueryResponse : IEquatable<KnowledgeDocume
     /// Documents matching the query.
     /// </summary>
     /// <value>Documents matching the query.</value>
-    [DataMember(Name = "results", EmitDefaultValue = false)]
+    [JsonPropertyName("results")]
     public List<KnowledgeDocumentResponse> Results { get; private set; }
 
 

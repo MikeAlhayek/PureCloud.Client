@@ -1,4 +1,3 @@
-using System.Runtime.Serialization;
 using System.Text;
 using System.Text.Json.Serialization;
 
@@ -7,7 +6,7 @@ namespace PureCloud.Client.Models;
 /// <summary>
 /// KnowledgeGuestDocumentVersionReference
 /// </summary>
-[DataContract]
+
 public partial class KnowledgeGuestDocumentVersionReference : IEquatable<KnowledgeGuestDocumentVersionReference>
 {
 
@@ -32,7 +31,7 @@ public partial class KnowledgeGuestDocumentVersionReference : IEquatable<Knowled
     /// The globally unique identifier for the document.
     /// </summary>
     /// <value>The globally unique identifier for the document.</value>
-    [DataMember(Name = "id", EmitDefaultValue = false)]
+    [JsonPropertyName("id")]
     public string Id { get; private set; }
 
 
@@ -41,7 +40,7 @@ public partial class KnowledgeGuestDocumentVersionReference : IEquatable<Knowled
     /// The globally unique identifier for the version of the document.
     /// </summary>
     /// <value>The globally unique identifier for the version of the document.</value>
-    [DataMember(Name = "versionId", EmitDefaultValue = false)]
+    [JsonPropertyName("versionId")]
     public string VersionId { get; set; }
 
 

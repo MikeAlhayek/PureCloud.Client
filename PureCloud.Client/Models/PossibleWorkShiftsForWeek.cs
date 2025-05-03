@@ -1,12 +1,12 @@
-using System.Runtime.Serialization;
 using System.Text;
+using System.Text.Json.Serialization;
 
 namespace PureCloud.Client.Models;
 
 /// <summary>
 /// PossibleWorkShiftsForWeek
 /// </summary>
-[DataContract]
+
 public partial class PossibleWorkShiftsForWeek : IEquatable<PossibleWorkShiftsForWeek>
 {
     /// <summary>
@@ -27,7 +27,7 @@ public partial class PossibleWorkShiftsForWeek : IEquatable<PossibleWorkShiftsFo
     /// ID of this possible weekly shift
     /// </summary>
     /// <value>ID of this possible weekly shift</value>
-    [DataMember(Name = "id", EmitDefaultValue = false)]
+    [JsonPropertyName("id")]
     public int? Id { get; set; }
 
 
@@ -36,7 +36,7 @@ public partial class PossibleWorkShiftsForWeek : IEquatable<PossibleWorkShiftsFo
     /// Daily shifts in this possible weekly shift
     /// </summary>
     /// <value>Daily shifts in this possible weekly shift</value>
-    [DataMember(Name = "dailyPossibleShifts", EmitDefaultValue = false)]
+    [JsonPropertyName("dailyPossibleShifts")]
     public List<DailyPossibleShift> DailyPossibleShifts { get; set; }
 
 

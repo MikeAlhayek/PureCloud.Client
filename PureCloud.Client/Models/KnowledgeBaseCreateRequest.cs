@@ -7,14 +7,14 @@ namespace PureCloud.Client.Models;
 /// <summary>
 /// KnowledgeBaseCreateRequest
 /// </summary>
-[DataContract]
+
 public partial class KnowledgeBaseCreateRequest : IEquatable<KnowledgeBaseCreateRequest>
 {
     /// <summary>
     /// Core language for knowledge base in which initial content must be created, language codes [en-US, en-UK, en-AU, de-DE] are supported currently. However, the new DX knowledge will support all these language codes, along with 'early preview' language codes [ca-ES, tr-TR, sv-SE, fi-FI, nb-NO, da-DK, ja-JP, ar-AE, zh-CN, zh-TW, zh-HK, ko-KR, pl-PL, hi-IN, th-TH, hu-HU, vi-VN, uk-UA] which might have a lower accuracy.
     /// </summary>
     /// <value>Core language for knowledge base in which initial content must be created, language codes [en-US, en-UK, en-AU, de-DE] are supported currently. However, the new DX knowledge will support all these language codes, along with 'early preview' language codes [ca-ES, tr-TR, sv-SE, fi-FI, nb-NO, da-DK, ja-JP, ar-AE, zh-CN, zh-TW, zh-HK, ko-KR, pl-PL, hi-IN, th-TH, hu-HU, vi-VN, uk-UA] which might have a lower accuracy.</value>
-    [JsonConverter(typeof(JsonStringEnumConverter))]
+    
     public enum CoreLanguageEnum
     {
         /// <summary>
@@ -305,7 +305,7 @@ public partial class KnowledgeBaseCreateRequest : IEquatable<KnowledgeBaseCreate
     /// Core language for knowledge base in which initial content must be created, language codes [en-US, en-UK, en-AU, de-DE] are supported currently. However, the new DX knowledge will support all these language codes, along with 'early preview' language codes [ca-ES, tr-TR, sv-SE, fi-FI, nb-NO, da-DK, ja-JP, ar-AE, zh-CN, zh-TW, zh-HK, ko-KR, pl-PL, hi-IN, th-TH, hu-HU, vi-VN, uk-UA] which might have a lower accuracy.
     /// </summary>
     /// <value>Core language for knowledge base in which initial content must be created, language codes [en-US, en-UK, en-AU, de-DE] are supported currently. However, the new DX knowledge will support all these language codes, along with 'early preview' language codes [ca-ES, tr-TR, sv-SE, fi-FI, nb-NO, da-DK, ja-JP, ar-AE, zh-CN, zh-TW, zh-HK, ko-KR, pl-PL, hi-IN, th-TH, hu-HU, vi-VN, uk-UA] which might have a lower accuracy.</value>
-    [DataMember(Name = "coreLanguage", EmitDefaultValue = false)]
+    [JsonPropertyName("coreLanguage")]
     public CoreLanguageEnum? CoreLanguage { get; set; }
 
     /// <summary>
@@ -333,7 +333,7 @@ public partial class KnowledgeBaseCreateRequest : IEquatable<KnowledgeBaseCreate
     /// Knowledge base name
     /// </summary>
     /// <value>Knowledge base name</value>
-    [DataMember(Name = "name", EmitDefaultValue = false)]
+    [JsonPropertyName("name")]
     public string Name { get; set; }
 
 
@@ -342,7 +342,7 @@ public partial class KnowledgeBaseCreateRequest : IEquatable<KnowledgeBaseCreate
     /// Knowledge base description
     /// </summary>
     /// <value>Knowledge base description</value>
-    [DataMember(Name = "description", EmitDefaultValue = false)]
+    [JsonPropertyName("description")]
     public string Description { get; set; }
 
 

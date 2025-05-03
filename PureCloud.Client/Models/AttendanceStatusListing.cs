@@ -1,12 +1,12 @@
-using System.Runtime.Serialization;
 using System.Text;
+using System.Text.Json.Serialization;
 
 namespace PureCloud.Client.Models;
 
 /// <summary>
 /// AttendanceStatusListing
 /// </summary>
-[DataContract]
+
 public partial class AttendanceStatusListing : IEquatable<AttendanceStatusListing>
 {
     /// <summary>
@@ -24,7 +24,7 @@ public partial class AttendanceStatusListing : IEquatable<AttendanceStatusListin
     /// <summary>
     /// Gets or Sets Entities
     /// </summary>
-    [DataMember(Name = "entities", EmitDefaultValue = false)]
+    [JsonPropertyName("entities")]
     public List<AttendanceStatus> Entities { get; set; }
 
 

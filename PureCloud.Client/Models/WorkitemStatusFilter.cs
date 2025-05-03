@@ -1,12 +1,12 @@
-using System.Runtime.Serialization;
 using System.Text;
+using System.Text.Json.Serialization;
 
 namespace PureCloud.Client.Models;
 
 /// <summary>
 /// WorkitemStatusFilter
 /// </summary>
-[DataContract]
+
 public partial class WorkitemStatusFilter : IEquatable<WorkitemStatusFilter>
 {
     /// <summary>
@@ -27,7 +27,7 @@ public partial class WorkitemStatusFilter : IEquatable<WorkitemStatusFilter>
     /// Worktype ID belonging to the selected workitem status
     /// </summary>
     /// <value>Worktype ID belonging to the selected workitem status</value>
-    [DataMember(Name = "worktypeId", EmitDefaultValue = false)]
+    [JsonPropertyName("worktypeId")]
     public string WorktypeId { get; set; }
 
 
@@ -36,7 +36,7 @@ public partial class WorkitemStatusFilter : IEquatable<WorkitemStatusFilter>
     /// Workitem status ID
     /// </summary>
     /// <value>Workitem status ID</value>
-    [DataMember(Name = "workitemStatusId", EmitDefaultValue = false)]
+    [JsonPropertyName("workitemStatusId")]
     public string WorkitemStatusId { get; set; }
 
 

@@ -1,12 +1,12 @@
-using System.Runtime.Serialization;
 using System.Text;
+using System.Text.Json.Serialization;
 
 namespace PureCloud.Client.Models;
 
 /// <summary>
 /// AggregateHistoricalAvailability
 /// </summary>
-[DataContract]
+
 public partial class AggregateHistoricalAvailability : IEquatable<AggregateHistoricalAvailability>
 {
     /// <summary>
@@ -27,7 +27,7 @@ public partial class AggregateHistoricalAvailability : IEquatable<AggregateHisto
     /// All available week offsets from the historical start date.
     /// </summary>
     /// <value>All available week offsets from the historical start date.</value>
-    [DataMember(Name = "weekly", EmitDefaultValue = false)]
+    [JsonPropertyName("weekly")]
     public List<int?> Weekly { get; set; }
 
 
@@ -36,7 +36,7 @@ public partial class AggregateHistoricalAvailability : IEquatable<AggregateHisto
     /// All available historical year offsets from the forecast start date.
     /// </summary>
     /// <value>All available historical year offsets from the forecast start date.</value>
-    [DataMember(Name = "yearly", EmitDefaultValue = false)]
+    [JsonPropertyName("yearly")]
     public List<int?> Yearly { get; set; }
 
 

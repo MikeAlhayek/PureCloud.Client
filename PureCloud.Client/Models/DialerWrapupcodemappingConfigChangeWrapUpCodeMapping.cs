@@ -7,13 +7,13 @@ namespace PureCloud.Client.Models;
 /// <summary>
 /// DialerWrapupcodemappingConfigChangeWrapUpCodeMapping
 /// </summary>
-[DataContract]
+
 public partial class DialerWrapupcodemappingConfigChangeWrapUpCodeMapping : IEquatable<DialerWrapupcodemappingConfigChangeWrapUpCodeMapping>
 {
     /// <summary>
     /// Gets or Sets DefaultSet
     /// </summary>
-    [JsonConverter(typeof(JsonStringEnumConverter))]
+    
     public enum DefaultSetEnum
     {
         /// <summary>
@@ -70,7 +70,7 @@ public partial class DialerWrapupcodemappingConfigChangeWrapUpCodeMapping : IEqu
     /// The globally unique identifier for the object.
     /// </summary>
     /// <value>The globally unique identifier for the object.</value>
-    [DataMember(Name = "id", EmitDefaultValue = false)]
+    [JsonPropertyName("id")]
     public string Id { get; set; }
 
 
@@ -79,7 +79,7 @@ public partial class DialerWrapupcodemappingConfigChangeWrapUpCodeMapping : IEqu
     /// The UI-visible name of the object
     /// </summary>
     /// <value>The UI-visible name of the object</value>
-    [DataMember(Name = "name", EmitDefaultValue = false)]
+    [JsonPropertyName("name")]
     public string Name { get; set; }
 
 
@@ -88,7 +88,7 @@ public partial class DialerWrapupcodemappingConfigChangeWrapUpCodeMapping : IEqu
     /// Creation time of the entity
     /// </summary>
     /// <value>Creation time of the entity</value>
-    [DataMember(Name = "dateCreated", EmitDefaultValue = false)]
+    [JsonPropertyName("dateCreated")]
     public DateTime? DateCreated { get; set; }
 
 
@@ -97,7 +97,7 @@ public partial class DialerWrapupcodemappingConfigChangeWrapUpCodeMapping : IEqu
     /// Last modified time of the entity
     /// </summary>
     /// <value>Last modified time of the entity</value>
-    [DataMember(Name = "dateModified", EmitDefaultValue = false)]
+    [JsonPropertyName("dateModified")]
     public DateTime? DateModified { get; set; }
 
 
@@ -106,7 +106,7 @@ public partial class DialerWrapupcodemappingConfigChangeWrapUpCodeMapping : IEqu
     /// Required for updates, must match the version number of the most recent update
     /// </summary>
     /// <value>Required for updates, must match the version number of the most recent update</value>
-    [DataMember(Name = "version", EmitDefaultValue = false)]
+    [JsonPropertyName("version")]
     public long? Version { get; set; }
 
 
@@ -114,7 +114,7 @@ public partial class DialerWrapupcodemappingConfigChangeWrapUpCodeMapping : IEqu
     /// <summary>
     /// Gets or Sets DefaultSet
     /// </summary>
-    [DataMember(Name = "defaultSet", EmitDefaultValue = false)]
+    [JsonPropertyName("defaultSet")]
     public List<DefaultSetEnum> DefaultSet { get; set; }
 
 
@@ -122,7 +122,7 @@ public partial class DialerWrapupcodemappingConfigChangeWrapUpCodeMapping : IEqu
     /// <summary>
     /// Gets or Sets Mapping
     /// </summary>
-    [DataMember(Name = "mapping", EmitDefaultValue = false)]
+    [JsonPropertyName("mapping")]
     public Dictionary<string, List<string>> Mapping { get; set; }
 
 

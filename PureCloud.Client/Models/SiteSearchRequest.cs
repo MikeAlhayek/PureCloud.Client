@@ -7,14 +7,14 @@ namespace PureCloud.Client.Models;
 /// <summary>
 /// SiteSearchRequest
 /// </summary>
-[DataContract]
+
 public partial class SiteSearchRequest : IEquatable<SiteSearchRequest>
 {
     /// <summary>
     /// The sort order for results
     /// </summary>
     /// <value>The sort order for results</value>
-    [JsonConverter(typeof(JsonStringEnumConverter))]
+    
     public enum SortOrderEnum
     {
         /// <summary>
@@ -47,7 +47,7 @@ public partial class SiteSearchRequest : IEquatable<SiteSearchRequest>
     /// The sort order for results
     /// </summary>
     /// <value>The sort order for results</value>
-    [DataMember(Name = "sortOrder", EmitDefaultValue = false)]
+    [JsonPropertyName("sortOrder")]
     public SortOrderEnum? SortOrder { get; set; }
     /// <summary>
     /// Initializes a new instance of the <see cref="SiteSearchRequest" /> class.
@@ -79,7 +79,7 @@ public partial class SiteSearchRequest : IEquatable<SiteSearchRequest>
     /// The field in the resource that you want to sort the results by
     /// </summary>
     /// <value>The field in the resource that you want to sort the results by</value>
-    [DataMember(Name = "sortBy", EmitDefaultValue = false)]
+    [JsonPropertyName("sortBy")]
     public string SortBy { get; set; }
 
 
@@ -88,7 +88,7 @@ public partial class SiteSearchRequest : IEquatable<SiteSearchRequest>
     /// The number of results per page
     /// </summary>
     /// <value>The number of results per page</value>
-    [DataMember(Name = "pageSize", EmitDefaultValue = false)]
+    [JsonPropertyName("pageSize")]
     public int? PageSize { get; set; }
 
 
@@ -97,7 +97,7 @@ public partial class SiteSearchRequest : IEquatable<SiteSearchRequest>
     /// The page of resources you want to retrieve
     /// </summary>
     /// <value>The page of resources you want to retrieve</value>
-    [DataMember(Name = "pageNumber", EmitDefaultValue = false)]
+    [JsonPropertyName("pageNumber")]
     public int? PageNumber { get; set; }
 
 
@@ -106,7 +106,7 @@ public partial class SiteSearchRequest : IEquatable<SiteSearchRequest>
     /// Multi-value sort order, list of multiple sort values
     /// </summary>
     /// <value>Multi-value sort order, list of multiple sort values</value>
-    [DataMember(Name = "sort", EmitDefaultValue = false)]
+    [JsonPropertyName("sort")]
     public List<SearchSort> Sort { get; set; }
 
 
@@ -115,7 +115,7 @@ public partial class SiteSearchRequest : IEquatable<SiteSearchRequest>
     /// Provides more details about a specified resource
     /// </summary>
     /// <value>Provides more details about a specified resource</value>
-    [DataMember(Name = "expand", EmitDefaultValue = false)]
+    [JsonPropertyName("expand")]
     public List<string> Expand { get; set; }
 
 
@@ -123,7 +123,7 @@ public partial class SiteSearchRequest : IEquatable<SiteSearchRequest>
     /// <summary>
     /// Gets or Sets Query
     /// </summary>
-    [DataMember(Name = "query", EmitDefaultValue = false)]
+    [JsonPropertyName("query")]
     public List<SiteSearchCriteria> Query { get; set; }
 
 

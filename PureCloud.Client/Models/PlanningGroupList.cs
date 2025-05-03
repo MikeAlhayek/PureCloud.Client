@@ -1,12 +1,12 @@
-using System.Runtime.Serialization;
 using System.Text;
+using System.Text.Json.Serialization;
 
 namespace PureCloud.Client.Models;
 
 /// <summary>
 /// PlanningGroupList
 /// </summary>
-[DataContract]
+
 public partial class PlanningGroupList : IEquatable<PlanningGroupList>
 {
     /// <summary>
@@ -26,7 +26,7 @@ public partial class PlanningGroupList : IEquatable<PlanningGroupList>
     /// <summary>
     /// Gets or Sets Entities
     /// </summary>
-    [DataMember(Name = "entities", EmitDefaultValue = false)]
+    [JsonPropertyName("entities")]
     public List<PlanningGroup> Entities { get; set; }
 
 
@@ -35,7 +35,7 @@ public partial class PlanningGroupList : IEquatable<PlanningGroupList>
     /// Version metadata for the planning groups
     /// </summary>
     /// <value>Version metadata for the planning groups</value>
-    [DataMember(Name = "metadata", EmitDefaultValue = false)]
+    [JsonPropertyName("metadata")]
     public WfmVersionedEntityMetadata Metadata { get; set; }
 
 

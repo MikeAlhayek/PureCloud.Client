@@ -1,12 +1,12 @@
-using System.Runtime.Serialization;
 using System.Text;
+using System.Text.Json.Serialization;
 
 namespace PureCloud.Client.Models;
 
 /// <summary>
 /// ExecutionDataFlowSettingsResponse
 /// </summary>
-[DataContract]
+
 public partial class ExecutionDataFlowSettingsResponse : IEquatable<ExecutionDataFlowSettingsResponse>
 {
     /// <summary>
@@ -33,7 +33,7 @@ public partial class ExecutionDataFlowSettingsResponse : IEquatable<ExecutionDat
     /// The globally unique identifier for the object.
     /// </summary>
     /// <value>The globally unique identifier for the object.</value>
-    [DataMember(Name = "id", EmitDefaultValue = false)]
+    [JsonPropertyName("id")]
     public string Id { get; private set; }
 
 
@@ -41,7 +41,7 @@ public partial class ExecutionDataFlowSettingsResponse : IEquatable<ExecutionDat
     /// <summary>
     /// Gets or Sets Name
     /// </summary>
-    [DataMember(Name = "name", EmitDefaultValue = false)]
+    [JsonPropertyName("name")]
     public string Name { get; set; }
 
 
@@ -50,7 +50,7 @@ public partial class ExecutionDataFlowSettingsResponse : IEquatable<ExecutionDat
     /// whether or not the setting is enabled.
     /// </summary>
     /// <value>whether or not the setting is enabled.</value>
-    [DataMember(Name = "enabled", EmitDefaultValue = false)]
+    [JsonPropertyName("enabled")]
     public bool? Enabled { get; set; }
 
 
@@ -59,7 +59,7 @@ public partial class ExecutionDataFlowSettingsResponse : IEquatable<ExecutionDat
     /// User that last changed the setting.
     /// </summary>
     /// <value>User that last changed the setting.</value>
-    [DataMember(Name = "modifiedBy", EmitDefaultValue = false)]
+    [JsonPropertyName("modifiedBy")]
     public UserReference ModifiedBy { get; set; }
 
 
@@ -68,7 +68,7 @@ public partial class ExecutionDataFlowSettingsResponse : IEquatable<ExecutionDat
     /// OAuth client that last changed the setting.
     /// </summary>
     /// <value>OAuth client that last changed the setting.</value>
-    [DataMember(Name = "modifiedByClient", EmitDefaultValue = false)]
+    [JsonPropertyName("modifiedByClient")]
     public DomainEntityRef ModifiedByClient { get; set; }
 
 
@@ -77,7 +77,7 @@ public partial class ExecutionDataFlowSettingsResponse : IEquatable<ExecutionDat
     /// The time this setting was set. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z
     /// </summary>
     /// <value>The time this setting was set. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z</value>
-    [DataMember(Name = "dateModified", EmitDefaultValue = false)]
+    [JsonPropertyName("dateModified")]
     public DateTime? DateModified { get; set; }
 
 
@@ -86,7 +86,7 @@ public partial class ExecutionDataFlowSettingsResponse : IEquatable<ExecutionDat
     /// The URI for this object
     /// </summary>
     /// <value>The URI for this object</value>
-    [DataMember(Name = "selfUri", EmitDefaultValue = false)]
+    [JsonPropertyName("selfUri")]
     public string SelfUri { get; private set; }
 
 

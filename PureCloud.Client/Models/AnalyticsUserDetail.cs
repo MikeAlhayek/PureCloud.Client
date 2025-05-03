@@ -1,12 +1,12 @@
-using System.Runtime.Serialization;
 using System.Text;
+using System.Text.Json.Serialization;
 
 namespace PureCloud.Client.Models;
 
 /// <summary>
 /// AnalyticsUserDetail
 /// </summary>
-[DataContract]
+
 public partial class AnalyticsUserDetail : IEquatable<AnalyticsUserDetail>
 {
     /// <summary>
@@ -29,7 +29,7 @@ public partial class AnalyticsUserDetail : IEquatable<AnalyticsUserDetail>
     /// The identifier for the user
     /// </summary>
     /// <value>The identifier for the user</value>
-    [DataMember(Name = "userId", EmitDefaultValue = false)]
+    [JsonPropertyName("userId")]
     public string UserId { get; set; }
 
 
@@ -38,7 +38,7 @@ public partial class AnalyticsUserDetail : IEquatable<AnalyticsUserDetail>
     /// The presence records for the user
     /// </summary>
     /// <value>The presence records for the user</value>
-    [DataMember(Name = "primaryPresence", EmitDefaultValue = false)]
+    [JsonPropertyName("primaryPresence")]
     public List<AnalyticsUserPresenceRecord> PrimaryPresence { get; set; }
 
 
@@ -47,7 +47,7 @@ public partial class AnalyticsUserDetail : IEquatable<AnalyticsUserDetail>
     /// The ACD routing status records for the user
     /// </summary>
     /// <value>The ACD routing status records for the user</value>
-    [DataMember(Name = "routingStatus", EmitDefaultValue = false)]
+    [JsonPropertyName("routingStatus")]
     public List<AnalyticsRoutingStatusRecord> RoutingStatus { get; set; }
 
 

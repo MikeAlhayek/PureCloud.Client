@@ -7,13 +7,13 @@ namespace PureCloud.Client.Models;
 /// <summary>
 /// WfmUserNotificationTopicShiftTradeNotification
 /// </summary>
-[DataContract]
+
 public partial class WfmUserNotificationTopicShiftTradeNotification : IEquatable<WfmUserNotificationTopicShiftTradeNotification>
 {
     /// <summary>
     /// Gets or Sets NewState
     /// </summary>
-    [JsonConverter(typeof(JsonStringEnumConverter))]
+    
     public enum NewStateEnum
     {
         /// <summary>
@@ -63,7 +63,7 @@ public partial class WfmUserNotificationTopicShiftTradeNotification : IEquatable
     /// <summary>
     /// Gets or Sets NewState
     /// </summary>
-    [DataMember(Name = "newState", EmitDefaultValue = false)]
+    [JsonPropertyName("newState")]
     public NewStateEnum? NewState { get; set; }
     /// <summary>
     /// Initializes a new instance of the <see cref="WfmUserNotificationTopicShiftTradeNotification" /> class.
@@ -94,7 +94,7 @@ public partial class WfmUserNotificationTopicShiftTradeNotification : IEquatable
     /// <summary>
     /// Gets or Sets WeekDate
     /// </summary>
-    [DataMember(Name = "weekDate", EmitDefaultValue = false)]
+    [JsonPropertyName("weekDate")]
     public string WeekDate { get; set; }
 
 
@@ -102,7 +102,7 @@ public partial class WfmUserNotificationTopicShiftTradeNotification : IEquatable
     /// <summary>
     /// Gets or Sets TradeId
     /// </summary>
-    [DataMember(Name = "tradeId", EmitDefaultValue = false)]
+    [JsonPropertyName("tradeId")]
     public string TradeId { get; set; }
 
 
@@ -110,7 +110,7 @@ public partial class WfmUserNotificationTopicShiftTradeNotification : IEquatable
     /// <summary>
     /// Gets or Sets OneSided
     /// </summary>
-    [DataMember(Name = "oneSided", EmitDefaultValue = false)]
+    [JsonPropertyName("oneSided")]
     public bool? OneSided { get; set; }
 
 
@@ -120,7 +120,7 @@ public partial class WfmUserNotificationTopicShiftTradeNotification : IEquatable
     /// <summary>
     /// Gets or Sets InitiatingUser
     /// </summary>
-    [DataMember(Name = "initiatingUser", EmitDefaultValue = false)]
+    [JsonPropertyName("initiatingUser")]
     public WfmUserNotificationTopicUserReference InitiatingUser { get; set; }
 
 
@@ -128,7 +128,7 @@ public partial class WfmUserNotificationTopicShiftTradeNotification : IEquatable
     /// <summary>
     /// Gets or Sets InitiatingShiftDate
     /// </summary>
-    [DataMember(Name = "initiatingShiftDate", EmitDefaultValue = false)]
+    [JsonPropertyName("initiatingShiftDate")]
     public DateTime? InitiatingShiftDate { get; set; }
 
 
@@ -136,7 +136,7 @@ public partial class WfmUserNotificationTopicShiftTradeNotification : IEquatable
     /// <summary>
     /// Gets or Sets ReceivingUser
     /// </summary>
-    [DataMember(Name = "receivingUser", EmitDefaultValue = false)]
+    [JsonPropertyName("receivingUser")]
     public WfmUserNotificationTopicUserReference ReceivingUser { get; set; }
 
 
@@ -144,7 +144,7 @@ public partial class WfmUserNotificationTopicShiftTradeNotification : IEquatable
     /// <summary>
     /// Gets or Sets ReceivingShiftDate
     /// </summary>
-    [DataMember(Name = "receivingShiftDate", EmitDefaultValue = false)]
+    [JsonPropertyName("receivingShiftDate")]
     public DateTime? ReceivingShiftDate { get; set; }
 
 

@@ -1,4 +1,3 @@
-using System.Runtime.Serialization;
 using System.Text;
 using System.Text.Json.Serialization;
 
@@ -7,7 +6,7 @@ namespace PureCloud.Client.Models;
 /// <summary>
 /// CategoriesFilter
 /// </summary>
-[DataContract]
+
 public partial class CategoriesFilter : IEquatable<CategoriesFilter>
 {
 
@@ -32,7 +31,7 @@ public partial class CategoriesFilter : IEquatable<CategoriesFilter>
     /// A list of categories to filter by. Articles matching any of the specified categories can be accessed.
     /// </summary>
     /// <value>A list of categories to filter by. Articles matching any of the specified categories can be accessed.</value>
-    [DataMember(Name = "entities", EmitDefaultValue = false)]
+    [JsonPropertyName("entities")]
     public List<CategoryEntity> Entities { get; set; }
 
 

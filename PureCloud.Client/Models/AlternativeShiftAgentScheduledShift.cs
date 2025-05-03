@@ -1,4 +1,3 @@
-using System.Runtime.Serialization;
 using System.Text;
 using System.Text.Json.Serialization;
 
@@ -7,7 +6,7 @@ namespace PureCloud.Client.Models;
 /// <summary>
 /// AlternativeShiftAgentScheduledShift
 /// </summary>
-[DataContract]
+
 public partial class AlternativeShiftAgentScheduledShift : IEquatable<AlternativeShiftAgentScheduledShift>
 {
 
@@ -40,7 +39,7 @@ public partial class AlternativeShiftAgentScheduledShift : IEquatable<Alternativ
     /// The number of days since start of schedule
     /// </summary>
     /// <value>The number of days since start of schedule</value>
-    [DataMember(Name = "dayIndex", EmitDefaultValue = false)]
+    [JsonPropertyName("dayIndex")]
     public int? DayIndex { get; set; }
 
 
@@ -49,7 +48,7 @@ public partial class AlternativeShiftAgentScheduledShift : IEquatable<Alternativ
     /// A key generated for an offer to help facilitate alternative shift trading
     /// </summary>
     /// <value>A key generated for an offer to help facilitate alternative shift trading</value>
-    [DataMember(Name = "referenceKey", EmitDefaultValue = false)]
+    [JsonPropertyName("referenceKey")]
     public string ReferenceKey { get; set; }
 
 
@@ -58,7 +57,7 @@ public partial class AlternativeShiftAgentScheduledShift : IEquatable<Alternativ
     /// The start date of this shift in ISO-8601 format
     /// </summary>
     /// <value>The start date of this shift in ISO-8601 format</value>
-    [DataMember(Name = "startDate", EmitDefaultValue = false)]
+    [JsonPropertyName("startDate")]
     public DateTime? StartDate { get; set; }
 
 
@@ -67,7 +66,7 @@ public partial class AlternativeShiftAgentScheduledShift : IEquatable<Alternativ
     /// The length of this shift in minutes
     /// </summary>
     /// <value>The length of this shift in minutes</value>
-    [DataMember(Name = "lengthMinutes", EmitDefaultValue = false)]
+    [JsonPropertyName("lengthMinutes")]
     public int? LengthMinutes { get; set; }
 
 
@@ -76,7 +75,7 @@ public partial class AlternativeShiftAgentScheduledShift : IEquatable<Alternativ
     /// A list of activities in this shift
     /// </summary>
     /// <value>A list of activities in this shift</value>
-    [DataMember(Name = "activities", EmitDefaultValue = false)]
+    [JsonPropertyName("activities")]
     public List<BuAgentScheduleActivity> Activities { get; set; }
 
 

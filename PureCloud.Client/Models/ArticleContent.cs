@@ -1,12 +1,12 @@
-using System.Runtime.Serialization;
 using System.Text;
+using System.Text.Json.Serialization;
 
 namespace PureCloud.Client.Models;
 
 /// <summary>
 /// ArticleContent
 /// </summary>
-[DataContract]
+
 public partial class ArticleContent : IEquatable<ArticleContent>
 {
     /// <summary>
@@ -23,7 +23,7 @@ public partial class ArticleContent : IEquatable<ArticleContent>
     /// Body of the article content.
     /// </summary>
     /// <value>Body of the article content.</value>
-    [DataMember(Name = "body", EmitDefaultValue = false)]
+    [JsonPropertyName("body")]
     public ArticleContentBody Body { get; private set; }
 
 

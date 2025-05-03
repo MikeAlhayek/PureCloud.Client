@@ -7,14 +7,14 @@ namespace PureCloud.Client.Models;
 /// <summary>
 /// ArchitectFlowReference
 /// </summary>
-[DataContract]
+
 public partial class ArchitectFlowReference : IEquatable<ArchitectFlowReference>
 {
     /// <summary>
     /// The flow type.
     /// </summary>
     /// <value>The flow type.</value>
-    [JsonConverter(typeof(JsonStringEnumConverter))]
+    
     public enum TypeEnum
     {
         /// <summary>
@@ -143,7 +143,7 @@ public partial class ArchitectFlowReference : IEquatable<ArchitectFlowReference>
     /// The flow type.
     /// </summary>
     /// <value>The flow type.</value>
-    [DataMember(Name = "type", EmitDefaultValue = false)]
+    [JsonPropertyName("type")]
     public TypeEnum? Type { get; set; }
     /// <summary>
     /// Initializes a new instance of the <see cref="ArchitectFlowReference" /> class.
@@ -167,7 +167,7 @@ public partial class ArchitectFlowReference : IEquatable<ArchitectFlowReference>
     /// The flow identifier.
     /// </summary>
     /// <value>The flow identifier.</value>
-    [DataMember(Name = "id", EmitDefaultValue = false)]
+    [JsonPropertyName("id")]
     public string Id { get; set; }
 
 
@@ -176,7 +176,7 @@ public partial class ArchitectFlowReference : IEquatable<ArchitectFlowReference>
     /// The flow name.
     /// </summary>
     /// <value>The flow name.</value>
-    [DataMember(Name = "name", EmitDefaultValue = false)]
+    [JsonPropertyName("name")]
     public string Name { get; set; }
 
 
@@ -187,7 +187,7 @@ public partial class ArchitectFlowReference : IEquatable<ArchitectFlowReference>
     /// The flow version.
     /// </summary>
     /// <value>The flow version.</value>
-    [DataMember(Name = "version", EmitDefaultValue = false)]
+    [JsonPropertyName("version")]
     public string Version { get; set; }
 
 

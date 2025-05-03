@@ -1,4 +1,3 @@
-using System.Runtime.Serialization;
 using System.Text;
 using System.Text.Json.Serialization;
 
@@ -7,7 +6,7 @@ namespace PureCloud.Client.Models;
 /// <summary>
 /// KnowledgeParseJobRequest
 /// </summary>
-[DataContract]
+
 public partial class KnowledgeParseJobRequest : IEquatable<KnowledgeParseJobRequest>
 {
 
@@ -34,7 +33,7 @@ public partial class KnowledgeParseJobRequest : IEquatable<KnowledgeParseJobRequ
     /// Upload key
     /// </summary>
     /// <value>Upload key</value>
-    [DataMember(Name = "uploadKey", EmitDefaultValue = false)]
+    [JsonPropertyName("uploadKey")]
     public string UploadKey { get; set; }
 
 
@@ -43,7 +42,7 @@ public partial class KnowledgeParseJobRequest : IEquatable<KnowledgeParseJobRequ
     /// Hinted titles for the parser.
     /// </summary>
     /// <value>Hinted titles for the parser.</value>
-    [DataMember(Name = "hints", EmitDefaultValue = false)]
+    [JsonPropertyName("hints")]
     public List<string> Hints { get; set; }
 
 

@@ -1,4 +1,3 @@
-using System.Runtime.Serialization;
 using System.Text;
 using System.Text.Json.Serialization;
 
@@ -7,7 +6,7 @@ namespace PureCloud.Client.Models;
 /// <summary>
 /// CallCommand
 /// </summary>
-[DataContract]
+
 public partial class CallCommand : IEquatable<CallCommand>
 {
 
@@ -34,7 +33,7 @@ public partial class CallCommand : IEquatable<CallCommand>
     /// The phone number to dial for this call.
     /// </summary>
     /// <value>The phone number to dial for this call.</value>
-    [DataMember(Name = "callNumber", EmitDefaultValue = false)]
+    [JsonPropertyName("callNumber")]
     public string CallNumber { get; set; }
 
 
@@ -43,7 +42,7 @@ public partial class CallCommand : IEquatable<CallCommand>
     /// For a dialer preview or scheduled callback, the phone column associated with the phone number
     /// </summary>
     /// <value>For a dialer preview or scheduled callback, the phone column associated with the phone number</value>
-    [DataMember(Name = "phoneColumn", EmitDefaultValue = false)]
+    [JsonPropertyName("phoneColumn")]
     public string PhoneColumn { get; set; }
 
 

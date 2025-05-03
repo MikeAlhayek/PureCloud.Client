@@ -1,4 +1,3 @@
-using System.Runtime.Serialization;
 using System.Text;
 using System.Text.Json.Serialization;
 
@@ -7,7 +6,7 @@ namespace PureCloud.Client.Models;
 /// <summary>
 /// Used to retrieve a set of executionData history by the respective ids
 /// </summary>
-[DataContract]
+
 public partial class ExecutionDataRequest : IEquatable<ExecutionDataRequest>
 {
 
@@ -32,7 +31,7 @@ public partial class ExecutionDataRequest : IEquatable<ExecutionDataRequest>
     /// A list of ids to retrieve
     /// </summary>
     /// <value>A list of ids to retrieve</value>
-    [DataMember(Name = "ids", EmitDefaultValue = false)]
+    [JsonPropertyName("ids")]
     public List<string> Ids { get; set; }
 
 

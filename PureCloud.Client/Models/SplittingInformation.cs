@@ -7,14 +7,14 @@ namespace PureCloud.Client.Models;
 /// <summary>
 /// SplittingInformation
 /// </summary>
-[DataContract]
+
 public partial class SplittingInformation : IEquatable<SplittingInformation>
 {
     /// <summary>
     /// The splitting criteria type
     /// </summary>
     /// <value>The splitting criteria type</value>
-    [JsonConverter(typeof(JsonStringEnumConverter))]
+    
     public enum CriteriaEnum
     {
         /// <summary>
@@ -53,7 +53,7 @@ public partial class SplittingInformation : IEquatable<SplittingInformation>
     /// The splitting criteria type
     /// </summary>
     /// <value>The splitting criteria type</value>
-    [DataMember(Name = "criteria", EmitDefaultValue = false)]
+    [JsonPropertyName("criteria")]
     public CriteriaEnum? Criteria { get; set; }
     /// <summary>
     /// Initializes a new instance of the <see cref="SplittingInformation" /> class.
@@ -79,7 +79,7 @@ public partial class SplittingInformation : IEquatable<SplittingInformation>
     /// The criteria value for the specified criteria type
     /// </summary>
     /// <value>The criteria value for the specified criteria type</value>
-    [DataMember(Name = "criteriaValue", EmitDefaultValue = false)]
+    [JsonPropertyName("criteriaValue")]
     public string CriteriaValue { get; set; }
 
 
@@ -88,7 +88,7 @@ public partial class SplittingInformation : IEquatable<SplittingInformation>
     /// Whether to create remainder contact list
     /// </summary>
     /// <value>Whether to create remainder contact list</value>
-    [DataMember(Name = "createRemainderContactList", EmitDefaultValue = false)]
+    [JsonPropertyName("createRemainderContactList")]
     public bool? CreateRemainderContactList { get; set; }
 
 
@@ -97,7 +97,7 @@ public partial class SplittingInformation : IEquatable<SplittingInformation>
     /// Whether to use waterfall rule
     /// </summary>
     /// <value>Whether to use waterfall rule</value>
-    [DataMember(Name = "useWaterfallRule", EmitDefaultValue = false)]
+    [JsonPropertyName("useWaterfallRule")]
     public bool? UseWaterfallRule { get; set; }
 
 

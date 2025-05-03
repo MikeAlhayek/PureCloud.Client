@@ -1,4 +1,3 @@
-using System.Runtime.Serialization;
 using System.Text;
 using System.Text.Json.Serialization;
 
@@ -7,7 +6,7 @@ namespace PureCloud.Client.Models;
 /// <summary>
 /// UpdateNotificationsRequest
 /// </summary>
-[DataContract]
+
 public partial class UpdateNotificationsRequest : IEquatable<UpdateNotificationsRequest>
 {
 
@@ -32,7 +31,7 @@ public partial class UpdateNotificationsRequest : IEquatable<UpdateNotifications
     /// The notifications to update
     /// </summary>
     /// <value>The notifications to update</value>
-    [DataMember(Name = "entities", EmitDefaultValue = false)]
+    [JsonPropertyName("entities")]
     public List<WfmUserNotification> Entities { get; set; }
 
 

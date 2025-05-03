@@ -1,12 +1,12 @@
-using System.Runtime.Serialization;
 using System.Text;
+using System.Text.Json.Serialization;
 
 namespace PureCloud.Client.Models;
 
 /// <summary>
 /// CallForwardingEventTarget
 /// </summary>
-[DataContract]
+
 public partial class CallForwardingEventTarget : IEquatable<CallForwardingEventTarget>
 {
     /// <summary>
@@ -26,7 +26,7 @@ public partial class CallForwardingEventTarget : IEquatable<CallForwardingEventT
     /// <summary>
     /// Gets or Sets Type
     /// </summary>
-    [DataMember(Name = "type", EmitDefaultValue = false)]
+    [JsonPropertyName("type")]
     public string Type { get; set; }
 
 
@@ -34,7 +34,7 @@ public partial class CallForwardingEventTarget : IEquatable<CallForwardingEventT
     /// <summary>
     /// Gets or Sets Value
     /// </summary>
-    [DataMember(Name = "value", EmitDefaultValue = false)]
+    [JsonPropertyName("value")]
     public string Value { get; set; }
 
 

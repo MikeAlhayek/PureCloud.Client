@@ -1,4 +1,3 @@
-using System.Runtime.Serialization;
 using System.Text;
 using System.Text.Json.Serialization;
 
@@ -7,7 +6,7 @@ namespace PureCloud.Client.Models;
 /// <summary>
 /// MessagingSettingDefaultRequest
 /// </summary>
-[DataContract]
+
 public partial class MessagingSettingDefaultRequest : IEquatable<MessagingSettingDefaultRequest>
 {
 
@@ -32,7 +31,7 @@ public partial class MessagingSettingDefaultRequest : IEquatable<MessagingSettin
     /// Messaging Setting ID to be used as the default for this Organization.
     /// </summary>
     /// <value>Messaging Setting ID to be used as the default for this Organization.</value>
-    [DataMember(Name = "settingId", EmitDefaultValue = false)]
+    [JsonPropertyName("settingId")]
     public string SettingId { get; set; }
 
 

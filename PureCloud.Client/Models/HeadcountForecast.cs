@@ -1,4 +1,3 @@
-using System.Runtime.Serialization;
 using System.Text;
 using System.Text.Json.Serialization;
 
@@ -7,7 +6,7 @@ namespace PureCloud.Client.Models;
 /// <summary>
 /// HeadcountForecast
 /// </summary>
-[DataContract]
+
 public partial class HeadcountForecast : IEquatable<HeadcountForecast>
 {
 
@@ -34,7 +33,7 @@ public partial class HeadcountForecast : IEquatable<HeadcountForecast>
     /// Headcount information with shrinkage
     /// </summary>
     /// <value>Headcount information with shrinkage</value>
-    [DataMember(Name = "required", EmitDefaultValue = false)]
+    [JsonPropertyName("required")]
     public List<HeadcountInterval> Required { get; set; }
 
 
@@ -43,7 +42,7 @@ public partial class HeadcountForecast : IEquatable<HeadcountForecast>
     /// Headcount information without shrinkage
     /// </summary>
     /// <value>Headcount information without shrinkage</value>
-    [DataMember(Name = "requiredWithoutShrinkage", EmitDefaultValue = false)]
+    [JsonPropertyName("requiredWithoutShrinkage")]
     public List<HeadcountInterval> RequiredWithoutShrinkage { get; set; }
 
 

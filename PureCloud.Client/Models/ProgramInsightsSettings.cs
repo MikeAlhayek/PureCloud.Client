@@ -1,12 +1,12 @@
-using System.Runtime.Serialization;
 using System.Text;
+using System.Text.Json.Serialization;
 
 namespace PureCloud.Client.Models;
 
 /// <summary>
 /// ProgramInsightsSettings
 /// </summary>
-[DataContract]
+
 public partial class ProgramInsightsSettings : IEquatable<ProgramInsightsSettings>
 {
     /// <summary>
@@ -27,7 +27,7 @@ public partial class ProgramInsightsSettings : IEquatable<ProgramInsightsSetting
     /// The ID of the program
     /// </summary>
     /// <value>The ID of the program</value>
-    [DataMember(Name = "program", EmitDefaultValue = false)]
+    [JsonPropertyName("program")]
     public BaseProgramEntity Program { get; set; }
 
 
@@ -36,7 +36,7 @@ public partial class ProgramInsightsSettings : IEquatable<ProgramInsightsSetting
     /// The program AI Insights settings
     /// </summary>
     /// <value>The program AI Insights settings</value>
-    [DataMember(Name = "enabled", EmitDefaultValue = false)]
+    [JsonPropertyName("enabled")]
     public bool? Enabled { get; set; }
 
 

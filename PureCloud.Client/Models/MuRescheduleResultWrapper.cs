@@ -1,12 +1,12 @@
-using System.Runtime.Serialization;
 using System.Text;
+using System.Text.Json.Serialization;
 
 namespace PureCloud.Client.Models;
 
 /// <summary>
 /// MuRescheduleResultWrapper
 /// </summary>
-[DataContract]
+
 public partial class MuRescheduleResultWrapper : IEquatable<MuRescheduleResultWrapper>
 {
     /// <summary>
@@ -25,7 +25,7 @@ public partial class MuRescheduleResultWrapper : IEquatable<MuRescheduleResultWr
     /// The list of agent schedules
     /// </summary>
     /// <value>The list of agent schedules</value>
-    [DataMember(Name = "agentSchedules", EmitDefaultValue = false)]
+    [JsonPropertyName("agentSchedules")]
     public List<BuAgentScheduleRescheduleResponse> AgentSchedules { get; set; }
 
 

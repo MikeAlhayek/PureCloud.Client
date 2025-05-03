@@ -7,14 +7,14 @@ namespace PureCloud.Client.Models;
 /// <summary>
 /// Pattern
 /// </summary>
-[DataContract]
+
 public partial class Pattern : IEquatable<Pattern>
 {
     /// <summary>
     /// Pattern type (Daily/Weekly)
     /// </summary>
     /// <value>Pattern type (Daily/Weekly)</value>
-    [JsonConverter(typeof(JsonStringEnumConverter))]
+    
     public enum TypeEnum
     {
         /// <summary>
@@ -40,7 +40,7 @@ public partial class Pattern : IEquatable<Pattern>
     /// <summary>
     /// Gets or Sets DaysOfWeek
     /// </summary>
-    [JsonConverter(typeof(JsonStringEnumConverter))]
+    
     public enum DaysOfWeekEnum
     {
         /// <summary>
@@ -97,7 +97,7 @@ public partial class Pattern : IEquatable<Pattern>
     /// Pattern type (Daily/Weekly)
     /// </summary>
     /// <value>Pattern type (Daily/Weekly)</value>
-    [DataMember(Name = "type", EmitDefaultValue = false)]
+    [JsonPropertyName("type")]
     public TypeEnum? Type { get; set; }
 
     /// <summary>
@@ -127,7 +127,7 @@ public partial class Pattern : IEquatable<Pattern>
     /// The interval of days between the occurrences for Daily pattern type, and weeks between the occurrences for Weekly
     /// </summary>
     /// <value>The interval of days between the occurrences for Daily pattern type, and weeks between the occurrences for Weekly</value>
-    [DataMember(Name = "interval", EmitDefaultValue = false)]
+    [JsonPropertyName("interval")]
     public int? Interval { get; set; }
 
 
@@ -136,7 +136,7 @@ public partial class Pattern : IEquatable<Pattern>
     /// The day(s) of week the occurrence should be repeated. Required to set for Weekly pattern type. E.g. [\&quot;Monday\&quot;, \&quot;Wednesday\&quot;]
     /// </summary>
     /// <value>The day(s) of week the occurrence should be repeated. Required to set for Weekly pattern type. E.g. [\&quot;Monday\&quot;, \&quot;Wednesday\&quot;]</value>
-    [DataMember(Name = "daysOfWeek", EmitDefaultValue = false)]
+    [JsonPropertyName("daysOfWeek")]
     public List<DaysOfWeekEnum> DaysOfWeek { get; set; }
 
 

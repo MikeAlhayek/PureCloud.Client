@@ -1,4 +1,3 @@
-using System.Runtime.Serialization;
 using System.Text;
 using System.Text.Json.Serialization;
 
@@ -7,7 +6,7 @@ namespace PureCloud.Client.Models;
 /// <summary>
 /// EstimateAvailableTimeOffRequest
 /// </summary>
-[DataContract]
+
 public partial class EstimateAvailableTimeOffRequest : IEquatable<EstimateAvailableTimeOffRequest>
 {
 
@@ -38,7 +37,7 @@ public partial class EstimateAvailableTimeOffRequest : IEquatable<EstimateAvaila
     /// Full day dates. partialDayDates must be empty if this field is populated
     /// </summary>
     /// <value>Full day dates. partialDayDates must be empty if this field is populated</value>
-    [DataMember(Name = "fullDayDates", EmitDefaultValue = false)]
+    [JsonPropertyName("fullDayDates")]
     public List<EstimateAvailableFullDayTimeOffRequest> FullDayDates { get; set; }
 
 
@@ -47,7 +46,7 @@ public partial class EstimateAvailableTimeOffRequest : IEquatable<EstimateAvaila
     /// Partial day dates. fullDayDates must be empty if this field is populated
     /// </summary>
     /// <value>Partial day dates. fullDayDates must be empty if this field is populated</value>
-    [DataMember(Name = "partialDayDates", EmitDefaultValue = false)]
+    [JsonPropertyName("partialDayDates")]
     public List<EstimateAvailablePartialDayTimeOffRequest> PartialDayDates { get; set; }
 
 
@@ -56,7 +55,7 @@ public partial class EstimateAvailableTimeOffRequest : IEquatable<EstimateAvaila
     /// The ID of the activity code associated with the time off request. Activity code must be of the TimeOff category
     /// </summary>
     /// <value>The ID of the activity code associated with the time off request. Activity code must be of the TimeOff category</value>
-    [DataMember(Name = "activityCodeId", EmitDefaultValue = false)]
+    [JsonPropertyName("activityCodeId")]
     public string ActivityCodeId { get; set; }
 
 
@@ -65,7 +64,7 @@ public partial class EstimateAvailableTimeOffRequest : IEquatable<EstimateAvaila
     /// Whether this estimate is for a paid time off request
     /// </summary>
     /// <value>Whether this estimate is for a paid time off request</value>
-    [DataMember(Name = "paid", EmitDefaultValue = false)]
+    [JsonPropertyName("paid")]
     public bool? Paid { get; set; }
 
 

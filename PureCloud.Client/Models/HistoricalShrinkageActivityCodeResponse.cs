@@ -1,12 +1,12 @@
-using System.Runtime.Serialization;
 using System.Text;
+using System.Text.Json.Serialization;
 
 namespace PureCloud.Client.Models;
 
 /// <summary>
 /// HistoricalShrinkageActivityCodeResponse
 /// </summary>
-[DataContract]
+
 public partial class HistoricalShrinkageActivityCodeResponse : IEquatable<HistoricalShrinkageActivityCodeResponse>
 {
     /// <summary>
@@ -27,7 +27,7 @@ public partial class HistoricalShrinkageActivityCodeResponse : IEquatable<Histor
     /// The ID of the activity code for which shrinkage data is provided
     /// </summary>
     /// <value>The ID of the activity code for which shrinkage data is provided</value>
-    [DataMember(Name = "activityCodeId", EmitDefaultValue = false)]
+    [JsonPropertyName("activityCodeId")]
     public string ActivityCodeId { get; set; }
 
 
@@ -36,7 +36,7 @@ public partial class HistoricalShrinkageActivityCodeResponse : IEquatable<Histor
     /// Aggregated shrinkage data for the activity code
     /// </summary>
     /// <value>Aggregated shrinkage data for the activity code</value>
-    [DataMember(Name = "shrinkageForActivityCode", EmitDefaultValue = false)]
+    [JsonPropertyName("shrinkageForActivityCode")]
     public HistoricalShrinkageAggregateResponse ShrinkageForActivityCode { get; set; }
 
 

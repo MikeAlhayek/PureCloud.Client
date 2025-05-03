@@ -7,14 +7,14 @@ namespace PureCloud.Client.Models;
 /// <summary>
 /// Contains information about a response.
 /// </summary>
-[DataContract]
+
 public partial class Response : IEquatable<Response>
 {
     /// <summary>
     /// The interaction type for this response.
     /// </summary>
     /// <value>The interaction type for this response.</value>
-    [JsonConverter(typeof(JsonStringEnumConverter))]
+    
     public enum InteractionTypeEnum
     {
         /// <summary>
@@ -47,7 +47,7 @@ public partial class Response : IEquatable<Response>
     /// The response type represented by the response.
     /// </summary>
     /// <value>The response type represented by the response.</value>
-    [JsonConverter(typeof(JsonStringEnumConverter))]
+    
     public enum ResponseTypeEnum
     {
         /// <summary>
@@ -86,13 +86,13 @@ public partial class Response : IEquatable<Response>
     /// The interaction type for this response.
     /// </summary>
     /// <value>The interaction type for this response.</value>
-    [DataMember(Name = "interactionType", EmitDefaultValue = false)]
+    [JsonPropertyName("interactionType")]
     public InteractionTypeEnum? InteractionType { get; set; }
     /// <summary>
     /// The response type represented by the response.
     /// </summary>
     /// <value>The response type represented by the response.</value>
-    [DataMember(Name = "responseType", EmitDefaultValue = false)]
+    [JsonPropertyName("responseType")]
     public ResponseTypeEnum? ResponseType { get; set; }
 
     /// <summary>
@@ -136,7 +136,7 @@ public partial class Response : IEquatable<Response>
     /// The globally unique identifier for the object.
     /// </summary>
     /// <value>The globally unique identifier for the object.</value>
-    [DataMember(Name = "id", EmitDefaultValue = false)]
+    [JsonPropertyName("id")]
     public string Id { get; private set; }
 
 
@@ -144,7 +144,7 @@ public partial class Response : IEquatable<Response>
     /// <summary>
     /// Gets or Sets Name
     /// </summary>
-    [DataMember(Name = "name", EmitDefaultValue = false)]
+    [JsonPropertyName("name")]
     public string Name { get; set; }
 
 
@@ -153,7 +153,7 @@ public partial class Response : IEquatable<Response>
     /// Version number required for updates.
     /// </summary>
     /// <value>Version number required for updates.</value>
-    [DataMember(Name = "version", EmitDefaultValue = false)]
+    [JsonPropertyName("version")]
     public int? Version { get; set; }
 
 
@@ -162,7 +162,7 @@ public partial class Response : IEquatable<Response>
     /// One or more libraries response is associated with.
     /// </summary>
     /// <value>One or more libraries response is associated with.</value>
-    [DataMember(Name = "libraries", EmitDefaultValue = false)]
+    [JsonPropertyName("libraries")]
     public List<DomainEntityRef> Libraries { get; set; }
 
 
@@ -171,7 +171,7 @@ public partial class Response : IEquatable<Response>
     /// One or more texts associated with the response.
     /// </summary>
     /// <value>One or more texts associated with the response.</value>
-    [DataMember(Name = "texts", EmitDefaultValue = false)]
+    [JsonPropertyName("texts")]
     public List<ResponseText> Texts { get; set; }
 
 
@@ -180,7 +180,7 @@ public partial class Response : IEquatable<Response>
     /// User that created the response
     /// </summary>
     /// <value>User that created the response</value>
-    [DataMember(Name = "createdBy", EmitDefaultValue = false)]
+    [JsonPropertyName("createdBy")]
     public User CreatedBy { get; private set; }
 
 
@@ -189,7 +189,7 @@ public partial class Response : IEquatable<Response>
     /// The date and time the response was created. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z
     /// </summary>
     /// <value>The date and time the response was created. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z</value>
-    [DataMember(Name = "dateCreated", EmitDefaultValue = false)]
+    [JsonPropertyName("dateCreated")]
     public DateTime? DateCreated { get; private set; }
 
 
@@ -200,7 +200,7 @@ public partial class Response : IEquatable<Response>
     /// Details about any text substitutions used in the texts for this response.
     /// </summary>
     /// <value>Details about any text substitutions used in the texts for this response.</value>
-    [DataMember(Name = "substitutions", EmitDefaultValue = false)]
+    [JsonPropertyName("substitutions")]
     public List<ResponseSubstitution> Substitutions { get; set; }
 
 
@@ -209,7 +209,7 @@ public partial class Response : IEquatable<Response>
     /// Metadata about the text substitutions in json schema format.
     /// </summary>
     /// <value>Metadata about the text substitutions in json schema format.</value>
-    [DataMember(Name = "substitutionsSchema", EmitDefaultValue = false)]
+    [JsonPropertyName("substitutionsSchema")]
     public JsonSchemaDocument SubstitutionsSchema { get; set; }
 
 
@@ -220,7 +220,7 @@ public partial class Response : IEquatable<Response>
     /// An optional messaging template definition for responseType.MessagingTemplate.
     /// </summary>
     /// <value>An optional messaging template definition for responseType.MessagingTemplate.</value>
-    [DataMember(Name = "messagingTemplate", EmitDefaultValue = false)]
+    [JsonPropertyName("messagingTemplate")]
     public MessagingTemplate MessagingTemplate { get; set; }
 
 
@@ -229,7 +229,7 @@ public partial class Response : IEquatable<Response>
     /// Assets used in the response
     /// </summary>
     /// <value>Assets used in the response</value>
-    [DataMember(Name = "assets", EmitDefaultValue = false)]
+    [JsonPropertyName("assets")]
     public List<AddressableEntityRef> Assets { get; set; }
 
 
@@ -238,7 +238,7 @@ public partial class Response : IEquatable<Response>
     /// Footer template definition for responseType.Footer.
     /// </summary>
     /// <value>Footer template definition for responseType.Footer.</value>
-    [DataMember(Name = "footer", EmitDefaultValue = false)]
+    [JsonPropertyName("footer")]
     public FooterTemplate Footer { get; set; }
 
 
@@ -247,7 +247,7 @@ public partial class Response : IEquatable<Response>
     /// The URI for this object
     /// </summary>
     /// <value>The URI for this object</value>
-    [DataMember(Name = "selfUri", EmitDefaultValue = false)]
+    [JsonPropertyName("selfUri")]
     public string SelfUri { get; private set; }
 
 

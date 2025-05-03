@@ -1,4 +1,3 @@
-using System.Runtime.Serialization;
 using System.Text;
 using System.Text.Json.Serialization;
 
@@ -7,7 +6,7 @@ namespace PureCloud.Client.Models;
 /// <summary>
 /// AfterCallWorkUpdate
 /// </summary>
-[DataContract]
+
 public partial class AfterCallWorkUpdate : IEquatable<AfterCallWorkUpdate>
 {
 
@@ -32,7 +31,7 @@ public partial class AfterCallWorkUpdate : IEquatable<AfterCallWorkUpdate>
     /// Indicates whether or not after-call work must be completed for the communication. Can only be updated for connected communications.
     /// </summary>
     /// <value>Indicates whether or not after-call work must be completed for the communication. Can only be updated for connected communications.</value>
-    [DataMember(Name = "afterCallWorkRequired", EmitDefaultValue = false)]
+    [JsonPropertyName("afterCallWorkRequired")]
     public bool? AfterCallWorkRequired { get; set; }
 
 

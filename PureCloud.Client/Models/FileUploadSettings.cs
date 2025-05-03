@@ -1,12 +1,12 @@
-using System.Runtime.Serialization;
 using System.Text;
+using System.Text.Json.Serialization;
 
 namespace PureCloud.Client.Models;
 
 /// <summary>
 /// File upload settings for messenger
 /// </summary>
-[DataContract]
+
 public partial class FileUploadSettings : IEquatable<FileUploadSettings>
 {
     /// <summary>
@@ -27,7 +27,7 @@ public partial class FileUploadSettings : IEquatable<FileUploadSettings>
     /// whether or not attachments are enabled
     /// </summary>
     /// <value>whether or not attachments are enabled</value>
-    [DataMember(Name = "enableAttachments", EmitDefaultValue = false)]
+    [JsonPropertyName("enableAttachments")]
     public bool? EnableAttachments { get; set; }
 
 
@@ -36,7 +36,7 @@ public partial class FileUploadSettings : IEquatable<FileUploadSettings>
     /// The list of supported file upload modes
     /// </summary>
     /// <value>The list of supported file upload modes</value>
-    [DataMember(Name = "modes", EmitDefaultValue = false)]
+    [JsonPropertyName("modes")]
     public List<FileUploadMode> Modes { get; set; }
 
 

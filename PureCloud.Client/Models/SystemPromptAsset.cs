@@ -7,13 +7,13 @@ namespace PureCloud.Client.Models;
 /// <summary>
 /// SystemPromptAsset
 /// </summary>
-[DataContract]
+
 public partial class SystemPromptAsset : IEquatable<SystemPromptAsset>
 {
     /// <summary>
     /// Gets or Sets UploadStatus
     /// </summary>
-    [JsonConverter(typeof(JsonStringEnumConverter))]
+    
     public enum UploadStatusEnum
     {
         /// <summary>
@@ -51,7 +51,7 @@ public partial class SystemPromptAsset : IEquatable<SystemPromptAsset>
     /// <summary>
     /// Gets or Sets UploadStatus
     /// </summary>
-    [DataMember(Name = "uploadStatus", EmitDefaultValue = false)]
+    [JsonPropertyName("uploadStatus")]
     public UploadStatusEnum? UploadStatus { get; set; }
 
     /// <summary>
@@ -97,7 +97,7 @@ public partial class SystemPromptAsset : IEquatable<SystemPromptAsset>
     /// The globally unique identifier for the object.
     /// </summary>
     /// <value>The globally unique identifier for the object.</value>
-    [DataMember(Name = "id", EmitDefaultValue = false)]
+    [JsonPropertyName("id")]
     public string Id { get; private set; }
 
 
@@ -105,7 +105,7 @@ public partial class SystemPromptAsset : IEquatable<SystemPromptAsset>
     /// <summary>
     /// Gets or Sets Name
     /// </summary>
-    [DataMember(Name = "name", EmitDefaultValue = false)]
+    [JsonPropertyName("name")]
     public string Name { get; set; }
 
 
@@ -113,7 +113,7 @@ public partial class SystemPromptAsset : IEquatable<SystemPromptAsset>
     /// <summary>
     /// Gets or Sets PromptId
     /// </summary>
-    [DataMember(Name = "promptId", EmitDefaultValue = false)]
+    [JsonPropertyName("promptId")]
     public string PromptId { get; set; }
 
 
@@ -122,7 +122,7 @@ public partial class SystemPromptAsset : IEquatable<SystemPromptAsset>
     /// The asset resource language
     /// </summary>
     /// <value>The asset resource language</value>
-    [DataMember(Name = "language", EmitDefaultValue = false)]
+    [JsonPropertyName("language")]
     public string Language { get; set; }
 
 
@@ -130,7 +130,7 @@ public partial class SystemPromptAsset : IEquatable<SystemPromptAsset>
     /// <summary>
     /// Gets or Sets DurationSeconds
     /// </summary>
-    [DataMember(Name = "durationSeconds", EmitDefaultValue = false)]
+    [JsonPropertyName("durationSeconds")]
     public double? DurationSeconds { get; set; }
 
 
@@ -138,7 +138,7 @@ public partial class SystemPromptAsset : IEquatable<SystemPromptAsset>
     /// <summary>
     /// Gets or Sets MediaUri
     /// </summary>
-    [DataMember(Name = "mediaUri", EmitDefaultValue = false)]
+    [JsonPropertyName("mediaUri")]
     public string MediaUri { get; set; }
 
 
@@ -146,7 +146,7 @@ public partial class SystemPromptAsset : IEquatable<SystemPromptAsset>
     /// <summary>
     /// Gets or Sets TtsString
     /// </summary>
-    [DataMember(Name = "ttsString", EmitDefaultValue = false)]
+    [JsonPropertyName("ttsString")]
     public string TtsString { get; set; }
 
 
@@ -154,7 +154,7 @@ public partial class SystemPromptAsset : IEquatable<SystemPromptAsset>
     /// <summary>
     /// Gets or Sets Text
     /// </summary>
-    [DataMember(Name = "text", EmitDefaultValue = false)]
+    [JsonPropertyName("text")]
     public string Text { get; set; }
 
 
@@ -162,7 +162,7 @@ public partial class SystemPromptAsset : IEquatable<SystemPromptAsset>
     /// <summary>
     /// Gets or Sets UploadUri
     /// </summary>
-    [DataMember(Name = "uploadUri", EmitDefaultValue = false)]
+    [JsonPropertyName("uploadUri")]
     public string UploadUri { get; set; }
 
 
@@ -172,7 +172,7 @@ public partial class SystemPromptAsset : IEquatable<SystemPromptAsset>
     /// <summary>
     /// Gets or Sets HasDefault
     /// </summary>
-    [DataMember(Name = "hasDefault", EmitDefaultValue = false)]
+    [JsonPropertyName("hasDefault")]
     public bool? HasDefault { get; set; }
 
 
@@ -180,7 +180,7 @@ public partial class SystemPromptAsset : IEquatable<SystemPromptAsset>
     /// <summary>
     /// Gets or Sets LanguageDefault
     /// </summary>
-    [DataMember(Name = "languageDefault", EmitDefaultValue = false)]
+    [JsonPropertyName("languageDefault")]
     public bool? LanguageDefault { get; set; }
 
 
@@ -188,7 +188,7 @@ public partial class SystemPromptAsset : IEquatable<SystemPromptAsset>
     /// <summary>
     /// Gets or Sets Tags
     /// </summary>
-    [DataMember(Name = "tags", EmitDefaultValue = false)]
+    [JsonPropertyName("tags")]
     public Dictionary<string, List<string>> Tags { get; set; }
 
 
@@ -197,7 +197,7 @@ public partial class SystemPromptAsset : IEquatable<SystemPromptAsset>
     /// The URI for this object
     /// </summary>
     /// <value>The URI for this object</value>
-    [DataMember(Name = "selfUri", EmitDefaultValue = false)]
+    [JsonPropertyName("selfUri")]
     public string SelfUri { get; private set; }
 
 

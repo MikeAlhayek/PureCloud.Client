@@ -7,13 +7,13 @@ namespace PureCloud.Client.Models;
 /// <summary>
 /// RoutingActivityQuery
 /// </summary>
-[DataContract]
+
 public partial class RoutingActivityQuery : IEquatable<RoutingActivityQuery>
 {
     /// <summary>
     /// Gets or Sets GroupBy
     /// </summary>
-    [JsonConverter(typeof(JsonStringEnumConverter))]
+    
     public enum GroupByEnum
     {
         /// <summary>
@@ -34,7 +34,7 @@ public partial class RoutingActivityQuery : IEquatable<RoutingActivityQuery>
     /// Sort the result set in ascending/descending order. Default is ascending
     /// </summary>
     /// <value>Sort the result set in ascending/descending order. Default is ascending</value>
-    [JsonConverter(typeof(JsonStringEnumConverter))]
+    
     public enum OrderEnum
     {
         /// <summary>
@@ -67,7 +67,7 @@ public partial class RoutingActivityQuery : IEquatable<RoutingActivityQuery>
     /// Sort the result set in ascending/descending order. Default is ascending
     /// </summary>
     /// <value>Sort the result set in ascending/descending order. Default is ascending</value>
-    [DataMember(Name = "order", EmitDefaultValue = false)]
+    [JsonPropertyName("order")]
     public OrderEnum? Order { get; set; }
 
     /// <summary>
@@ -97,7 +97,7 @@ public partial class RoutingActivityQuery : IEquatable<RoutingActivityQuery>
     /// List of requested metrics
     /// </summary>
     /// <value>List of requested metrics</value>
-    [DataMember(Name = "metrics", EmitDefaultValue = false)]
+    [JsonPropertyName("metrics")]
     public List<RoutingActivityQueryMetric> Metrics { get; set; }
 
 
@@ -106,7 +106,7 @@ public partial class RoutingActivityQuery : IEquatable<RoutingActivityQuery>
     /// Dimension(s) to group by
     /// </summary>
     /// <value>Dimension(s) to group by</value>
-    [DataMember(Name = "groupBy", EmitDefaultValue = false)]
+    [JsonPropertyName("groupBy")]
     public List<GroupByEnum> GroupBy { get; set; }
 
 
@@ -115,7 +115,7 @@ public partial class RoutingActivityQuery : IEquatable<RoutingActivityQuery>
     /// Filter to return a subset of observations. Expresses boolean logical predicates as well as dimensional filters
     /// </summary>
     /// <value>Filter to return a subset of observations. Expresses boolean logical predicates as well as dimensional filters</value>
-    [DataMember(Name = "filter", EmitDefaultValue = false)]
+    [JsonPropertyName("filter")]
     public RoutingActivityQueryFilter Filter { get; set; }
 
 

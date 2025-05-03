@@ -1,12 +1,12 @@
-using System.Runtime.Serialization;
 using System.Text;
+using System.Text.Json.Serialization;
 
 namespace PureCloud.Client.Models;
 
 /// <summary>
 /// V2ConversationMessageTypingEventForUserTopicMessageData
 /// </summary>
-[DataContract]
+
 public partial class V2ConversationMessageTypingEventForUserTopicMessageData : IEquatable<V2ConversationMessageTypingEventForUserTopicMessageData>
 {
     /// <summary>
@@ -26,7 +26,7 @@ public partial class V2ConversationMessageTypingEventForUserTopicMessageData : I
     /// <summary>
     /// Gets or Sets ConversationId
     /// </summary>
-    [DataMember(Name = "conversationId", EmitDefaultValue = false)]
+    [JsonPropertyName("conversationId")]
     public string ConversationId { get; set; }
 
 
@@ -34,7 +34,7 @@ public partial class V2ConversationMessageTypingEventForUserTopicMessageData : I
     /// <summary>
     /// Gets or Sets NormalizedMessage
     /// </summary>
-    [DataMember(Name = "normalizedMessage", EmitDefaultValue = false)]
+    [JsonPropertyName("normalizedMessage")]
     public V2ConversationMessageTypingEventForUserTopicConversationNormalizedMessage NormalizedMessage { get; set; }
 
 

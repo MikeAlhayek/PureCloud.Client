@@ -7,13 +7,13 @@ namespace PureCloud.Client.Models;
 /// <summary>
 /// DownloadResponse
 /// </summary>
-[DataContract]
+
 public partial class DownloadResponse : IEquatable<DownloadResponse>
 {
     /// <summary>
     /// Gets or Sets State
     /// </summary>
-    [JsonConverter(typeof(JsonStringEnumConverter))]
+    
     public enum StateEnum
     {
         /// <summary>
@@ -39,7 +39,7 @@ public partial class DownloadResponse : IEquatable<DownloadResponse>
     /// <summary>
     /// Gets or Sets State
     /// </summary>
-    [DataMember(Name = "state", EmitDefaultValue = false)]
+    [JsonPropertyName("state")]
     public StateEnum? State { get; set; }
     /// <summary>
     /// Initializes a new instance of the <see cref="DownloadResponse" /> class.
@@ -68,7 +68,7 @@ public partial class DownloadResponse : IEquatable<DownloadResponse>
     /// <summary>
     /// Gets or Sets Id
     /// </summary>
-    [DataMember(Name = "id", EmitDefaultValue = false)]
+    [JsonPropertyName("id")]
     public string Id { get; set; }
 
 
@@ -76,7 +76,7 @@ public partial class DownloadResponse : IEquatable<DownloadResponse>
     /// <summary>
     /// Gets or Sets ContentLocationUri
     /// </summary>
-    [DataMember(Name = "contentLocationUri", EmitDefaultValue = false)]
+    [JsonPropertyName("contentLocationUri")]
     public string ContentLocationUri { get; set; }
 
 
@@ -84,7 +84,7 @@ public partial class DownloadResponse : IEquatable<DownloadResponse>
     /// <summary>
     /// Gets or Sets ImageUri
     /// </summary>
-    [DataMember(Name = "imageUri", EmitDefaultValue = false)]
+    [JsonPropertyName("imageUri")]
     public string ImageUri { get; set; }
 
 
@@ -92,7 +92,7 @@ public partial class DownloadResponse : IEquatable<DownloadResponse>
     /// <summary>
     /// Gets or Sets Thumbnails
     /// </summary>
-    [DataMember(Name = "thumbnails", EmitDefaultValue = false)]
+    [JsonPropertyName("thumbnails")]
     public List<DocumentThumbnail> Thumbnails { get; set; }
 
 
@@ -102,7 +102,7 @@ public partial class DownloadResponse : IEquatable<DownloadResponse>
     /// <summary>
     /// Gets or Sets ResultUri
     /// </summary>
-    [DataMember(Name = "resultUri", EmitDefaultValue = false)]
+    [JsonPropertyName("resultUri")]
     public string ResultUri { get; set; }
 
 
@@ -110,7 +110,7 @@ public partial class DownloadResponse : IEquatable<DownloadResponse>
     /// <summary>
     /// Gets or Sets SelfUri
     /// </summary>
-    [DataMember(Name = "selfUri", EmitDefaultValue = false)]
+    [JsonPropertyName("selfUri")]
     public string SelfUri { get; set; }
 
 

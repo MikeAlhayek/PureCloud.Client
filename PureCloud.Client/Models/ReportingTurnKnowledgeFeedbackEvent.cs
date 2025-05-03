@@ -1,12 +1,12 @@
-using System.Runtime.Serialization;
 using System.Text;
+using System.Text.Json.Serialization;
 
 namespace PureCloud.Client.Models;
 
 /// <summary>
 /// ReportingTurnKnowledgeFeedbackEvent
 /// </summary>
-[DataContract]
+
 public partial class ReportingTurnKnowledgeFeedbackEvent : IEquatable<ReportingTurnKnowledgeFeedbackEvent>
 {
     /// <summary>
@@ -35,7 +35,7 @@ public partial class ReportingTurnKnowledgeFeedbackEvent : IEquatable<ReportingT
     /// The ID of this knowledge search.
     /// </summary>
     /// <value>The ID of this knowledge search.</value>
-    [DataMember(Name = "searchId", EmitDefaultValue = false)]
+    [JsonPropertyName("searchId")]
     public string SearchId { get; set; }
 
 
@@ -44,7 +44,7 @@ public partial class ReportingTurnKnowledgeFeedbackEvent : IEquatable<ReportingT
     /// The Knowledge Base ID that the captured knowledge data relates to.
     /// </summary>
     /// <value>The Knowledge Base ID that the captured knowledge data relates to.</value>
-    [DataMember(Name = "knowledgeBaseId", EmitDefaultValue = false)]
+    [JsonPropertyName("knowledgeBaseId")]
     public string KnowledgeBaseId { get; set; }
 
 
@@ -53,7 +53,7 @@ public partial class ReportingTurnKnowledgeFeedbackEvent : IEquatable<ReportingT
     /// The list of search documents that the feedback applies to.
     /// </summary>
     /// <value>The list of search documents that the feedback applies to.</value>
-    [DataMember(Name = "documents", EmitDefaultValue = false)]
+    [JsonPropertyName("documents")]
     public List<ReportingTurnKnowledgeDocument> Documents { get; set; }
 
 
@@ -62,7 +62,7 @@ public partial class ReportingTurnKnowledgeFeedbackEvent : IEquatable<ReportingT
     /// The feedback rating for the search (1.0 - 5.0). 1 &#x3D; Negative, 5 &#x3D; Positive.
     /// </summary>
     /// <value>The feedback rating for the search (1.0 - 5.0). 1 &#x3D; Negative, 5 &#x3D; Positive.</value>
-    [DataMember(Name = "feedbackRating", EmitDefaultValue = false)]
+    [JsonPropertyName("feedbackRating")]
     public int? FeedbackRating { get; set; }
 
 
@@ -71,7 +71,7 @@ public partial class ReportingTurnKnowledgeFeedbackEvent : IEquatable<ReportingT
     /// The variation of the document.
     /// </summary>
     /// <value>The variation of the document.</value>
-    [DataMember(Name = "documentVariationId", EmitDefaultValue = false)]
+    [JsonPropertyName("documentVariationId")]
     public string DocumentVariationId { get; set; }
 
 
@@ -80,7 +80,7 @@ public partial class ReportingTurnKnowledgeFeedbackEvent : IEquatable<ReportingT
     /// The version of the document.
     /// </summary>
     /// <value>The version of the document.</value>
-    [DataMember(Name = "documentVersionId", EmitDefaultValue = false)]
+    [JsonPropertyName("documentVersionId")]
     public string DocumentVersionId { get; set; }
 
 

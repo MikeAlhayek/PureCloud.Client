@@ -7,14 +7,14 @@ namespace PureCloud.Client.Models;
 /// <summary>
 /// ExternalOrganizationIdentifier
 /// </summary>
-[DataContract]
+
 public partial class ExternalOrganizationIdentifier : IEquatable<ExternalOrganizationIdentifier>
 {
     /// <summary>
     /// The type of this identifier
     /// </summary>
     /// <value>The type of this identifier</value>
-    [JsonConverter(typeof(JsonStringEnumConverter))]
+    
     public enum TypeEnum
     {
         /// <summary>
@@ -35,7 +35,7 @@ public partial class ExternalOrganizationIdentifier : IEquatable<ExternalOrganiz
     /// The type of this identifier
     /// </summary>
     /// <value>The type of this identifier</value>
-    [DataMember(Name = "type", EmitDefaultValue = false)]
+    [JsonPropertyName("type")]
     public TypeEnum? Type { get; set; }
 
     /// <summary>
@@ -67,7 +67,7 @@ public partial class ExternalOrganizationIdentifier : IEquatable<ExternalOrganiz
     /// The globally unique identifier for the object.
     /// </summary>
     /// <value>The globally unique identifier for the object.</value>
-    [DataMember(Name = "id", EmitDefaultValue = false)]
+    [JsonPropertyName("id")]
     public string Id { get; private set; }
 
 
@@ -76,7 +76,7 @@ public partial class ExternalOrganizationIdentifier : IEquatable<ExternalOrganiz
     /// The division to which this entity belongs.
     /// </summary>
     /// <value>The division to which this entity belongs.</value>
-    [DataMember(Name = "division", EmitDefaultValue = false)]
+    [JsonPropertyName("division")]
     public WritableStarrableDivision Division { get; set; }
 
 
@@ -87,7 +87,7 @@ public partial class ExternalOrganizationIdentifier : IEquatable<ExternalOrganiz
     /// The string value of the identifier. Will vary in syntax by type.
     /// </summary>
     /// <value>The string value of the identifier. Will vary in syntax by type.</value>
-    [DataMember(Name = "value", EmitDefaultValue = false)]
+    [JsonPropertyName("value")]
     public string Value { get; set; }
 
 
@@ -96,7 +96,7 @@ public partial class ExternalOrganizationIdentifier : IEquatable<ExternalOrganiz
     /// Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z
     /// </summary>
     /// <value>Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z</value>
-    [DataMember(Name = "dateCreated", EmitDefaultValue = false)]
+    [JsonPropertyName("dateCreated")]
     public DateTime? DateCreated { get; set; }
 
 
@@ -105,7 +105,7 @@ public partial class ExternalOrganizationIdentifier : IEquatable<ExternalOrganiz
     /// The External Source ID of the identifier
     /// </summary>
     /// <value>The External Source ID of the identifier</value>
-    [DataMember(Name = "externalSource", EmitDefaultValue = false)]
+    [JsonPropertyName("externalSource")]
     public ExternalSource ExternalSource { get; set; }
 
 
@@ -114,7 +114,7 @@ public partial class ExternalOrganizationIdentifier : IEquatable<ExternalOrganiz
     /// The URI for this object
     /// </summary>
     /// <value>The URI for this object</value>
-    [DataMember(Name = "selfUri", EmitDefaultValue = false)]
+    [JsonPropertyName("selfUri")]
     public string SelfUri { get; private set; }
 
 

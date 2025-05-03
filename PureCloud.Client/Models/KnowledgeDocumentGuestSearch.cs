@@ -7,14 +7,14 @@ namespace PureCloud.Client.Models;
 /// <summary>
 /// KnowledgeDocumentGuestSearch
 /// </summary>
-[DataContract]
+
 public partial class KnowledgeDocumentGuestSearch : IEquatable<KnowledgeDocumentGuestSearch>
 {
     /// <summary>
     /// The type of the query that initiates the search.
     /// </summary>
     /// <value>The type of the query that initiates the search.</value>
-    [JsonConverter(typeof(JsonStringEnumConverter))]
+    
     public enum QueryTypeEnum
     {
         /// <summary>
@@ -47,7 +47,7 @@ public partial class KnowledgeDocumentGuestSearch : IEquatable<KnowledgeDocument
     /// The type of the query that initiates the search.
     /// </summary>
     /// <value>The type of the query that initiates the search.</value>
-    [DataMember(Name = "queryType", EmitDefaultValue = false)]
+    [JsonPropertyName("queryType")]
     public QueryTypeEnum? QueryType { get; set; }
 
     /// <summary>
@@ -77,7 +77,7 @@ public partial class KnowledgeDocumentGuestSearch : IEquatable<KnowledgeDocument
     /// Query to search content in the knowledge base. Maximum of 30 records per query can be fetched.
     /// </summary>
     /// <value>Query to search content in the knowledge base. Maximum of 30 records per query can be fetched.</value>
-    [DataMember(Name = "query", EmitDefaultValue = false)]
+    [JsonPropertyName("query")]
     public string Query { get; set; }
 
 
@@ -86,7 +86,7 @@ public partial class KnowledgeDocumentGuestSearch : IEquatable<KnowledgeDocument
     /// Page size of the returned results.
     /// </summary>
     /// <value>Page size of the returned results.</value>
-    [DataMember(Name = "pageSize", EmitDefaultValue = false)]
+    [JsonPropertyName("pageSize")]
     public int? PageSize { get; set; }
 
 
@@ -95,7 +95,7 @@ public partial class KnowledgeDocumentGuestSearch : IEquatable<KnowledgeDocument
     /// Page number of the returned results.
     /// </summary>
     /// <value>Page number of the returned results.</value>
-    [DataMember(Name = "pageNumber", EmitDefaultValue = false)]
+    [JsonPropertyName("pageNumber")]
     public int? PageNumber { get; set; }
 
 
@@ -104,7 +104,7 @@ public partial class KnowledgeDocumentGuestSearch : IEquatable<KnowledgeDocument
     /// The globally unique identifier for the search.
     /// </summary>
     /// <value>The globally unique identifier for the search.</value>
-    [DataMember(Name = "searchId", EmitDefaultValue = false)]
+    [JsonPropertyName("searchId")]
     public string SearchId { get; private set; }
 
 
@@ -113,7 +113,7 @@ public partial class KnowledgeDocumentGuestSearch : IEquatable<KnowledgeDocument
     /// The total number of documents matching the query.
     /// </summary>
     /// <value>The total number of documents matching the query.</value>
-    [DataMember(Name = "total", EmitDefaultValue = false)]
+    [JsonPropertyName("total")]
     public int? Total { get; private set; }
 
 
@@ -122,7 +122,7 @@ public partial class KnowledgeDocumentGuestSearch : IEquatable<KnowledgeDocument
     /// Number of pages returned in the result calculated according to the pageSize and the total
     /// </summary>
     /// <value>Number of pages returned in the result calculated according to the pageSize and the total</value>
-    [DataMember(Name = "pageCount", EmitDefaultValue = false)]
+    [JsonPropertyName("pageCount")]
     public int? PageCount { get; private set; }
 
 
@@ -133,7 +133,7 @@ public partial class KnowledgeDocumentGuestSearch : IEquatable<KnowledgeDocument
     /// Session ID of the search.
     /// </summary>
     /// <value>Session ID of the search.</value>
-    [DataMember(Name = "sessionId", EmitDefaultValue = false)]
+    [JsonPropertyName("sessionId")]
     public string SessionId { get; private set; }
 
 
@@ -142,7 +142,7 @@ public partial class KnowledgeDocumentGuestSearch : IEquatable<KnowledgeDocument
     /// Documents that matched the search query.
     /// </summary>
     /// <value>Documents that matched the search query.</value>
-    [DataMember(Name = "results", EmitDefaultValue = false)]
+    [JsonPropertyName("results")]
     public List<KnowledgeDocumentGuestSearchResult> Results { get; private set; }
 
 

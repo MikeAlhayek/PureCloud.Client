@@ -7,14 +7,14 @@ namespace PureCloud.Client.Models;
 /// <summary>
 /// RecurrencePeriod
 /// </summary>
-[DataContract]
+
 public partial class RecurrencePeriod : IEquatable<RecurrencePeriod>
 {
     /// <summary>
     /// The granularity unit to interpret the period of this activity plan
     /// </summary>
     /// <value>The granularity unit to interpret the period of this activity plan</value>
-    [JsonConverter(typeof(JsonStringEnumConverter))]
+    
     public enum GranularityEnum
     {
         /// <summary>
@@ -41,7 +41,7 @@ public partial class RecurrencePeriod : IEquatable<RecurrencePeriod>
     /// The granularity unit to interpret the period of this activity plan
     /// </summary>
     /// <value>The granularity unit to interpret the period of this activity plan</value>
-    [DataMember(Name = "granularity", EmitDefaultValue = false)]
+    [JsonPropertyName("granularity")]
     public GranularityEnum? Granularity { get; set; }
 
     /// <summary>
@@ -67,7 +67,7 @@ public partial class RecurrencePeriod : IEquatable<RecurrencePeriod>
     /// The period of the activity plan in granularity units
     /// </summary>
     /// <value>The period of the activity plan in granularity units</value>
-    [DataMember(Name = "magnitude", EmitDefaultValue = false)]
+    [JsonPropertyName("magnitude")]
     public int? Magnitude { get; set; }
 
 

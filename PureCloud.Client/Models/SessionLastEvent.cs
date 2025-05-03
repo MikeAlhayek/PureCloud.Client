@@ -1,4 +1,3 @@
-using System.Runtime.Serialization;
 using System.Text;
 using System.Text.Json.Serialization;
 
@@ -7,7 +6,7 @@ namespace PureCloud.Client.Models;
 /// <summary>
 /// SessionLastEvent
 /// </summary>
-[DataContract]
+
 public partial class SessionLastEvent : IEquatable<SessionLastEvent>
 {
 
@@ -36,7 +35,7 @@ public partial class SessionLastEvent : IEquatable<SessionLastEvent>
     /// The ID of the last event.
     /// </summary>
     /// <value>The ID of the last event.</value>
-    [DataMember(Name = "id", EmitDefaultValue = false)]
+    [JsonPropertyName("id")]
     public string Id { get; set; }
 
 
@@ -45,7 +44,7 @@ public partial class SessionLastEvent : IEquatable<SessionLastEvent>
     /// The name of the event.
     /// </summary>
     /// <value>The name of the event.</value>
-    [DataMember(Name = "eventName", EmitDefaultValue = false)]
+    [JsonPropertyName("eventName")]
     public string EventName { get; set; }
 
 
@@ -54,7 +53,7 @@ public partial class SessionLastEvent : IEquatable<SessionLastEvent>
     /// Timestamp indicating when the event was published. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z
     /// </summary>
     /// <value>Timestamp indicating when the event was published. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z</value>
-    [DataMember(Name = "createdDate", EmitDefaultValue = false)]
+    [JsonPropertyName("createdDate")]
     public DateTime? CreatedDate { get; set; }
 
 

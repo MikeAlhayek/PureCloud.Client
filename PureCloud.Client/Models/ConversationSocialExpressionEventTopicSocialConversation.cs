@@ -1,12 +1,12 @@
-using System.Runtime.Serialization;
 using System.Text;
+using System.Text.Json.Serialization;
 
 namespace PureCloud.Client.Models;
 
 /// <summary>
 /// ConversationSocialExpressionEventTopicSocialConversation
 /// </summary>
-[DataContract]
+
 public partial class ConversationSocialExpressionEventTopicSocialConversation : IEquatable<ConversationSocialExpressionEventTopicSocialConversation>
 {
     /// <summary>
@@ -36,7 +36,7 @@ public partial class ConversationSocialExpressionEventTopicSocialConversation : 
     /// <summary>
     /// Gets or Sets Id
     /// </summary>
-    [DataMember(Name = "id", EmitDefaultValue = false)]
+    [JsonPropertyName("id")]
     public string Id { get; set; }
 
 
@@ -44,7 +44,7 @@ public partial class ConversationSocialExpressionEventTopicSocialConversation : 
     /// <summary>
     /// Gets or Sets Name
     /// </summary>
-    [DataMember(Name = "name", EmitDefaultValue = false)]
+    [JsonPropertyName("name")]
     public string Name { get; set; }
 
 
@@ -52,7 +52,7 @@ public partial class ConversationSocialExpressionEventTopicSocialConversation : 
     /// <summary>
     /// Gets or Sets Participants
     /// </summary>
-    [DataMember(Name = "participants", EmitDefaultValue = false)]
+    [JsonPropertyName("participants")]
     public List<ConversationSocialExpressionEventTopicSocialMediaParticipant> Participants { get; set; }
 
 
@@ -60,7 +60,7 @@ public partial class ConversationSocialExpressionEventTopicSocialConversation : 
     /// <summary>
     /// Gets or Sets OtherMediaUris
     /// </summary>
-    [DataMember(Name = "otherMediaUris", EmitDefaultValue = false)]
+    [JsonPropertyName("otherMediaUris")]
     public List<string> OtherMediaUris { get; set; }
 
 
@@ -68,7 +68,7 @@ public partial class ConversationSocialExpressionEventTopicSocialConversation : 
     /// <summary>
     /// Gets or Sets Address
     /// </summary>
-    [DataMember(Name = "address", EmitDefaultValue = false)]
+    [JsonPropertyName("address")]
     public string Address { get; set; }
 
 
@@ -76,7 +76,7 @@ public partial class ConversationSocialExpressionEventTopicSocialConversation : 
     /// <summary>
     /// Gets or Sets UtilizationLabelId
     /// </summary>
-    [DataMember(Name = "utilizationLabelId", EmitDefaultValue = false)]
+    [JsonPropertyName("utilizationLabelId")]
     public string UtilizationLabelId { get; set; }
 
 
@@ -84,7 +84,7 @@ public partial class ConversationSocialExpressionEventTopicSocialConversation : 
     /// <summary>
     /// Gets or Sets Divisions
     /// </summary>
-    [DataMember(Name = "divisions", EmitDefaultValue = false)]
+    [JsonPropertyName("divisions")]
     public List<ConversationSocialExpressionEventTopicConversationDivisionMembership> Divisions { get; set; }
 
 

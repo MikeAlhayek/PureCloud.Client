@@ -7,14 +7,14 @@ namespace PureCloud.Client.Models;
 /// <summary>
 /// ChatMediaParticipant
 /// </summary>
-[DataContract]
+
 public partial class ChatMediaParticipant : IEquatable<ChatMediaParticipant>
 {
     /// <summary>
     /// The participant's state.  Values can be: 'alerting', 'connected', 'disconnected', 'dialing', 'contacting
     /// </summary>
     /// <value>The participant's state.  Values can be: 'alerting', 'connected', 'disconnected', 'dialing', 'contacting</value>
-    [JsonConverter(typeof(JsonStringEnumConverter))]
+    
     public enum StateEnum
     {
         /// <summary>
@@ -101,7 +101,7 @@ public partial class ChatMediaParticipant : IEquatable<ChatMediaParticipant>
     /// The participant's direction.  Values can be: 'inbound' or 'outbound'
     /// </summary>
     /// <value>The participant's direction.  Values can be: 'inbound' or 'outbound'</value>
-    [JsonConverter(typeof(JsonStringEnumConverter))]
+    
     public enum DirectionEnum
     {
         /// <summary>
@@ -128,7 +128,7 @@ public partial class ChatMediaParticipant : IEquatable<ChatMediaParticipant>
     /// The reason the participant was disconnected from the conversation.
     /// </summary>
     /// <value>The reason the participant was disconnected from the conversation.</value>
-    [JsonConverter(typeof(JsonStringEnumConverter))]
+    
     public enum DisconnectTypeEnum
     {
         /// <summary>
@@ -239,7 +239,7 @@ public partial class ChatMediaParticipant : IEquatable<ChatMediaParticipant>
     /// The reason specifying why participant flagged the conversation.
     /// </summary>
     /// <value>The reason specifying why participant flagged the conversation.</value>
-    [JsonConverter(typeof(JsonStringEnumConverter))]
+    
     public enum FlaggedReasonEnum
     {
         /// <summary>
@@ -260,25 +260,25 @@ public partial class ChatMediaParticipant : IEquatable<ChatMediaParticipant>
     /// The participant's state.  Values can be: 'alerting', 'connected', 'disconnected', 'dialing', 'contacting
     /// </summary>
     /// <value>The participant's state.  Values can be: 'alerting', 'connected', 'disconnected', 'dialing', 'contacting</value>
-    [DataMember(Name = "state", EmitDefaultValue = false)]
+    [JsonPropertyName("state")]
     public StateEnum? State { get; set; }
     /// <summary>
     /// The participant's direction.  Values can be: 'inbound' or 'outbound'
     /// </summary>
     /// <value>The participant's direction.  Values can be: 'inbound' or 'outbound'</value>
-    [DataMember(Name = "direction", EmitDefaultValue = false)]
+    [JsonPropertyName("direction")]
     public DirectionEnum? Direction { get; set; }
     /// <summary>
     /// The reason the participant was disconnected from the conversation.
     /// </summary>
     /// <value>The reason the participant was disconnected from the conversation.</value>
-    [DataMember(Name = "disconnectType", EmitDefaultValue = false)]
+    [JsonPropertyName("disconnectType")]
     public DisconnectTypeEnum? DisconnectType { get; set; }
     /// <summary>
     /// The reason specifying why participant flagged the conversation.
     /// </summary>
     /// <value>The reason specifying why participant flagged the conversation.</value>
-    [DataMember(Name = "flaggedReason", EmitDefaultValue = false)]
+    [JsonPropertyName("flaggedReason")]
     public FlaggedReasonEnum? FlaggedReason { get; set; }
     /// <summary>
     /// Initializes a new instance of the <see cref="ChatMediaParticipant" /> class.
@@ -372,7 +372,7 @@ public partial class ChatMediaParticipant : IEquatable<ChatMediaParticipant>
     /// The unique participant ID.
     /// </summary>
     /// <value>The unique participant ID.</value>
-    [DataMember(Name = "id", EmitDefaultValue = false)]
+    [JsonPropertyName("id")]
     public string Id { get; set; }
 
 
@@ -381,7 +381,7 @@ public partial class ChatMediaParticipant : IEquatable<ChatMediaParticipant>
     /// The display friendly name of the participant.
     /// </summary>
     /// <value>The display friendly name of the participant.</value>
-    [DataMember(Name = "name", EmitDefaultValue = false)]
+    [JsonPropertyName("name")]
     public string Name { get; set; }
 
 
@@ -390,7 +390,7 @@ public partial class ChatMediaParticipant : IEquatable<ChatMediaParticipant>
     /// The participant address.
     /// </summary>
     /// <value>The participant address.</value>
-    [DataMember(Name = "address", EmitDefaultValue = false)]
+    [JsonPropertyName("address")]
     public string Address { get; set; }
 
 
@@ -399,7 +399,7 @@ public partial class ChatMediaParticipant : IEquatable<ChatMediaParticipant>
     /// The time when this participant first joined the conversation. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z
     /// </summary>
     /// <value>The time when this participant first joined the conversation. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z</value>
-    [DataMember(Name = "startTime", EmitDefaultValue = false)]
+    [JsonPropertyName("startTime")]
     public DateTime? StartTime { get; set; }
 
 
@@ -408,7 +408,7 @@ public partial class ChatMediaParticipant : IEquatable<ChatMediaParticipant>
     /// The time when this participant went connected for this media (eg: video connected time). Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z
     /// </summary>
     /// <value>The time when this participant went connected for this media (eg: video connected time). Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z</value>
-    [DataMember(Name = "connectedTime", EmitDefaultValue = false)]
+    [JsonPropertyName("connectedTime")]
     public DateTime? ConnectedTime { get; set; }
 
 
@@ -417,7 +417,7 @@ public partial class ChatMediaParticipant : IEquatable<ChatMediaParticipant>
     /// The time when this participant went disconnected for this media (eg: video disconnected time). Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z
     /// </summary>
     /// <value>The time when this participant went disconnected for this media (eg: video disconnected time). Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z</value>
-    [DataMember(Name = "endTime", EmitDefaultValue = false)]
+    [JsonPropertyName("endTime")]
     public DateTime? EndTime { get; set; }
 
 
@@ -426,7 +426,7 @@ public partial class ChatMediaParticipant : IEquatable<ChatMediaParticipant>
     /// The time when this participant&#39;s hold started. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z
     /// </summary>
     /// <value>The time when this participant&#39;s hold started. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z</value>
-    [DataMember(Name = "startHoldTime", EmitDefaultValue = false)]
+    [JsonPropertyName("startHoldTime")]
     public DateTime? StartHoldTime { get; set; }
 
 
@@ -435,7 +435,7 @@ public partial class ChatMediaParticipant : IEquatable<ChatMediaParticipant>
     /// The participant&#39;s purpose.  Values can be: &#39;agent&#39;, &#39;user&#39;, &#39;customer&#39;, &#39;external&#39;, &#39;acd&#39;, &#39;ivr
     /// </summary>
     /// <value>The participant&#39;s purpose.  Values can be: &#39;agent&#39;, &#39;user&#39;, &#39;customer&#39;, &#39;external&#39;, &#39;acd&#39;, &#39;ivr</value>
-    [DataMember(Name = "purpose", EmitDefaultValue = false)]
+    [JsonPropertyName("purpose")]
     public string Purpose { get; set; }
 
 
@@ -450,7 +450,7 @@ public partial class ChatMediaParticipant : IEquatable<ChatMediaParticipant>
     /// Value is true when the participant is on hold.
     /// </summary>
     /// <value>Value is true when the participant is on hold.</value>
-    [DataMember(Name = "held", EmitDefaultValue = false)]
+    [JsonPropertyName("held")]
     public bool? Held { get; set; }
 
 
@@ -459,7 +459,7 @@ public partial class ChatMediaParticipant : IEquatable<ChatMediaParticipant>
     /// Value is true when the participant requires wrap-up.
     /// </summary>
     /// <value>Value is true when the participant requires wrap-up.</value>
-    [DataMember(Name = "wrapupRequired", EmitDefaultValue = false)]
+    [JsonPropertyName("wrapupRequired")]
     public bool? WrapupRequired { get; set; }
 
 
@@ -468,7 +468,7 @@ public partial class ChatMediaParticipant : IEquatable<ChatMediaParticipant>
     /// The wrap-up prompt indicating the type of wrap-up to be performed.
     /// </summary>
     /// <value>The wrap-up prompt indicating the type of wrap-up to be performed.</value>
-    [DataMember(Name = "wrapupPrompt", EmitDefaultValue = false)]
+    [JsonPropertyName("wrapupPrompt")]
     public string WrapupPrompt { get; set; }
 
 
@@ -477,7 +477,7 @@ public partial class ChatMediaParticipant : IEquatable<ChatMediaParticipant>
     /// List of roles this participant&#39;s media has had on the conversation, ie monitor, coach, etc
     /// </summary>
     /// <value>List of roles this participant&#39;s media has had on the conversation, ie monitor, coach, etc</value>
-    [DataMember(Name = "mediaRoles", EmitDefaultValue = false)]
+    [JsonPropertyName("mediaRoles")]
     public List<string> MediaRoles { get; set; }
 
 
@@ -486,7 +486,7 @@ public partial class ChatMediaParticipant : IEquatable<ChatMediaParticipant>
     /// The PureCloudEnvironment user for this participant.
     /// </summary>
     /// <value>The PureCloudEnvironment user for this participant.</value>
-    [DataMember(Name = "user", EmitDefaultValue = false)]
+    [JsonPropertyName("user")]
     public DomainEntityRef User { get; set; }
 
 
@@ -495,7 +495,7 @@ public partial class ChatMediaParticipant : IEquatable<ChatMediaParticipant>
     /// The PureCloudEnvironment queue for this participant.
     /// </summary>
     /// <value>The PureCloudEnvironment queue for this participant.</value>
-    [DataMember(Name = "queue", EmitDefaultValue = false)]
+    [JsonPropertyName("queue")]
     public DomainEntityRef Queue { get; set; }
 
 
@@ -504,7 +504,7 @@ public partial class ChatMediaParticipant : IEquatable<ChatMediaParticipant>
     /// The PureCloudEnvironment team for this participant.
     /// </summary>
     /// <value>The PureCloudEnvironment team for this participant.</value>
-    [DataMember(Name = "team", EmitDefaultValue = false)]
+    [JsonPropertyName("team")]
     public DomainEntityRef Team { get; set; }
 
 
@@ -513,7 +513,7 @@ public partial class ChatMediaParticipant : IEquatable<ChatMediaParticipant>
     /// A list of ad-hoc attributes for the participant.
     /// </summary>
     /// <value>A list of ad-hoc attributes for the participant.</value>
-    [DataMember(Name = "attributes", EmitDefaultValue = false)]
+    [JsonPropertyName("attributes")]
     public Dictionary<string, string> Attributes { get; set; }
 
 
@@ -522,7 +522,7 @@ public partial class ChatMediaParticipant : IEquatable<ChatMediaParticipant>
     /// If the conversation ends in error, contains additional error details.
     /// </summary>
     /// <value>If the conversation ends in error, contains additional error details.</value>
-    [DataMember(Name = "errorInfo", EmitDefaultValue = false)]
+    [JsonPropertyName("errorInfo")]
     public ErrorInfo ErrorInfo { get; set; }
 
 
@@ -531,7 +531,7 @@ public partial class ChatMediaParticipant : IEquatable<ChatMediaParticipant>
     /// The Engage script that should be used by this participant.
     /// </summary>
     /// <value>The Engage script that should be used by this participant.</value>
-    [DataMember(Name = "script", EmitDefaultValue = false)]
+    [JsonPropertyName("script")]
     public DomainEntityRef Script { get; set; }
 
 
@@ -540,7 +540,7 @@ public partial class ChatMediaParticipant : IEquatable<ChatMediaParticipant>
     /// The amount of time the participant has to complete wrap-up.
     /// </summary>
     /// <value>The amount of time the participant has to complete wrap-up.</value>
-    [DataMember(Name = "wrapupTimeoutMs", EmitDefaultValue = false)]
+    [JsonPropertyName("wrapupTimeoutMs")]
     public int? WrapupTimeoutMs { get; set; }
 
 
@@ -549,7 +549,7 @@ public partial class ChatMediaParticipant : IEquatable<ChatMediaParticipant>
     /// Value is true when the participant has skipped wrap-up.
     /// </summary>
     /// <value>Value is true when the participant has skipped wrap-up.</value>
-    [DataMember(Name = "wrapupSkipped", EmitDefaultValue = false)]
+    [JsonPropertyName("wrapupSkipped")]
     public bool? WrapupSkipped { get; set; }
 
 
@@ -558,7 +558,7 @@ public partial class ChatMediaParticipant : IEquatable<ChatMediaParticipant>
     /// Specifies how long the agent has to answer an interaction before being marked as not responding.
     /// </summary>
     /// <value>Specifies how long the agent has to answer an interaction before being marked as not responding.</value>
-    [DataMember(Name = "alertingTimeoutMs", EmitDefaultValue = false)]
+    [JsonPropertyName("alertingTimeoutMs")]
     public int? AlertingTimeoutMs { get; set; }
 
 
@@ -567,7 +567,7 @@ public partial class ChatMediaParticipant : IEquatable<ChatMediaParticipant>
     /// The source provider for the communication.
     /// </summary>
     /// <value>The source provider for the communication.</value>
-    [DataMember(Name = "provider", EmitDefaultValue = false)]
+    [JsonPropertyName("provider")]
     public string Provider { get; set; }
 
 
@@ -576,7 +576,7 @@ public partial class ChatMediaParticipant : IEquatable<ChatMediaParticipant>
     /// If this participant represents an external contact, then this will be the reference for the external contact.
     /// </summary>
     /// <value>If this participant represents an external contact, then this will be the reference for the external contact.</value>
-    [DataMember(Name = "externalContact", EmitDefaultValue = false)]
+    [JsonPropertyName("externalContact")]
     public DomainEntityRef ExternalContact { get; set; }
 
 
@@ -585,7 +585,7 @@ public partial class ChatMediaParticipant : IEquatable<ChatMediaParticipant>
     /// If this participant represents an external contact, then this will be the initial division for the external contact. This value will not be updated if the external contact is reassigned.
     /// </summary>
     /// <value>If this participant represents an external contact, then this will be the initial division for the external contact. This value will not be updated if the external contact is reassigned.</value>
-    [DataMember(Name = "externalContactInitialDivisionId", EmitDefaultValue = false)]
+    [JsonPropertyName("externalContactInitialDivisionId")]
     public string ExternalContactInitialDivisionId { get; set; }
 
 
@@ -594,7 +594,7 @@ public partial class ChatMediaParticipant : IEquatable<ChatMediaParticipant>
     /// If this participant represents an external org, then this will be the reference for the external org.
     /// </summary>
     /// <value>If this participant represents an external org, then this will be the reference for the external org.</value>
-    [DataMember(Name = "externalOrganization", EmitDefaultValue = false)]
+    [JsonPropertyName("externalOrganization")]
     public DomainEntityRef ExternalOrganization { get; set; }
 
 
@@ -603,7 +603,7 @@ public partial class ChatMediaParticipant : IEquatable<ChatMediaParticipant>
     /// Wrapup for this participant, if it has been applied.
     /// </summary>
     /// <value>Wrapup for this participant, if it has been applied.</value>
-    [DataMember(Name = "wrapup", EmitDefaultValue = false)]
+    [JsonPropertyName("wrapup")]
     public Wrapup Wrapup { get; set; }
 
 
@@ -612,7 +612,7 @@ public partial class ChatMediaParticipant : IEquatable<ChatMediaParticipant>
     /// The peer communication corresponding to a matching leg for this communication.
     /// </summary>
     /// <value>The peer communication corresponding to a matching leg for this communication.</value>
-    [DataMember(Name = "peer", EmitDefaultValue = false)]
+    [JsonPropertyName("peer")]
     public string Peer { get; set; }
 
 
@@ -623,7 +623,7 @@ public partial class ChatMediaParticipant : IEquatable<ChatMediaParticipant>
     /// Journey System data/context that is applicable to this communication.  When used for historical purposes, the context should be immutable.  When null, there is no applicable Journey System context.
     /// </summary>
     /// <value>Journey System data/context that is applicable to this communication.  When used for historical purposes, the context should be immutable.  When null, there is no applicable Journey System context.</value>
-    [DataMember(Name = "journeyContext", EmitDefaultValue = false)]
+    [JsonPropertyName("journeyContext")]
     public JourneyContext JourneyContext { get; set; }
 
 
@@ -632,7 +632,7 @@ public partial class ChatMediaParticipant : IEquatable<ChatMediaParticipant>
     /// Information on how a communication should be routed to an agent.
     /// </summary>
     /// <value>Information on how a communication should be routed to an agent.</value>
-    [DataMember(Name = "conversationRoutingData", EmitDefaultValue = false)]
+    [JsonPropertyName("conversationRoutingData")]
     public ConversationRoutingData ConversationRoutingData { get; set; }
 
 
@@ -641,7 +641,7 @@ public partial class ChatMediaParticipant : IEquatable<ChatMediaParticipant>
     /// The timestamp when this participant started after-call work. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z
     /// </summary>
     /// <value>The timestamp when this participant started after-call work. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z</value>
-    [DataMember(Name = "startAcwTime", EmitDefaultValue = false)]
+    [JsonPropertyName("startAcwTime")]
     public DateTime? StartAcwTime { get; set; }
 
 
@@ -650,7 +650,7 @@ public partial class ChatMediaParticipant : IEquatable<ChatMediaParticipant>
     /// The timestamp when this participant ended after-call work. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z
     /// </summary>
     /// <value>The timestamp when this participant ended after-call work. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z</value>
-    [DataMember(Name = "endAcwTime", EmitDefaultValue = false)]
+    [JsonPropertyName("endAcwTime")]
     public DateTime? EndAcwTime { get; set; }
 
 
@@ -659,7 +659,7 @@ public partial class ChatMediaParticipant : IEquatable<ChatMediaParticipant>
     /// The time when this participant&#39;s communication was last parked.  Does not reset on resume. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z
     /// </summary>
     /// <value>The time when this participant&#39;s communication was last parked.  Does not reset on resume. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z</value>
-    [DataMember(Name = "parkTime", EmitDefaultValue = false)]
+    [JsonPropertyName("parkTime")]
     public DateTime? ParkTime { get; set; }
 
 
@@ -668,7 +668,7 @@ public partial class ChatMediaParticipant : IEquatable<ChatMediaParticipant>
     /// The time when this participant&#39;s communications will resume. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z
     /// </summary>
     /// <value>The time when this participant&#39;s communications will resume. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z</value>
-    [DataMember(Name = "resumeTime", EmitDefaultValue = false)]
+    [JsonPropertyName("resumeTime")]
     public DateTime? ResumeTime { get; set; }
 
 
@@ -677,7 +677,7 @@ public partial class ChatMediaParticipant : IEquatable<ChatMediaParticipant>
     /// The ID of the chat room.
     /// </summary>
     /// <value>The ID of the chat room.</value>
-    [DataMember(Name = "roomId", EmitDefaultValue = false)]
+    [JsonPropertyName("roomId")]
     public string RoomId { get; set; }
 
 
@@ -686,7 +686,7 @@ public partial class ChatMediaParticipant : IEquatable<ChatMediaParticipant>
     /// If available, the URI to the avatar image of this communication.
     /// </summary>
     /// <value>If available, the URI to the avatar image of this communication.</value>
-    [DataMember(Name = "avatarImageUrl", EmitDefaultValue = false)]
+    [JsonPropertyName("avatarImageUrl")]
     public string AvatarImageUrl { get; set; }
 
 

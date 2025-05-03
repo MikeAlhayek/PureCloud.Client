@@ -1,4 +1,3 @@
-using System.Runtime.Serialization;
 using System.Text;
 using System.Text.Json.Serialization;
 
@@ -7,7 +6,7 @@ namespace PureCloud.Client.Models;
 /// <summary>
 /// RoutingData
 /// </summary>
-[DataContract]
+
 public partial class RoutingData : IEquatable<RoutingData>
 {
 
@@ -46,7 +45,7 @@ public partial class RoutingData : IEquatable<RoutingData>
     /// The identifier of the routing queue
     /// </summary>
     /// <value>The identifier of the routing queue</value>
-    [DataMember(Name = "queueId", EmitDefaultValue = false)]
+    [JsonPropertyName("queueId")]
     public string QueueId { get; set; }
 
 
@@ -55,7 +54,7 @@ public partial class RoutingData : IEquatable<RoutingData>
     /// The identifier of a language to be considered in routing
     /// </summary>
     /// <value>The identifier of a language to be considered in routing</value>
-    [DataMember(Name = "languageId", EmitDefaultValue = false)]
+    [JsonPropertyName("languageId")]
     public string LanguageId { get; set; }
 
 
@@ -64,7 +63,7 @@ public partial class RoutingData : IEquatable<RoutingData>
     /// An optional label that categorizes the conversation.  Max-utilization settings can be configured at a per-label level
     /// </summary>
     /// <value>An optional label that categorizes the conversation.  Max-utilization settings can be configured at a per-label level</value>
-    [DataMember(Name = "label", EmitDefaultValue = false)]
+    [JsonPropertyName("label")]
     public string Label { get; set; }
 
 
@@ -73,7 +72,7 @@ public partial class RoutingData : IEquatable<RoutingData>
     /// The priority for routing
     /// </summary>
     /// <value>The priority for routing</value>
-    [DataMember(Name = "priority", EmitDefaultValue = false)]
+    [JsonPropertyName("priority")]
     public int? Priority { get; set; }
 
 
@@ -82,7 +81,7 @@ public partial class RoutingData : IEquatable<RoutingData>
     /// A list of skill identifiers to be considered in routing
     /// </summary>
     /// <value>A list of skill identifiers to be considered in routing</value>
-    [DataMember(Name = "skillIds", EmitDefaultValue = false)]
+    [JsonPropertyName("skillIds")]
     public List<string> SkillIds { get; set; }
 
 
@@ -91,7 +90,7 @@ public partial class RoutingData : IEquatable<RoutingData>
     /// A list of agents to be preferred in routing
     /// </summary>
     /// <value>A list of agents to be preferred in routing</value>
-    [DataMember(Name = "preferredAgentIds", EmitDefaultValue = false)]
+    [JsonPropertyName("preferredAgentIds")]
     public List<string> PreferredAgentIds { get; set; }
 
 
@@ -100,7 +99,7 @@ public partial class RoutingData : IEquatable<RoutingData>
     /// A list of scored agents for routing decisions. For Agent Owned Callbacks use one scored agent with a score of 100.
     /// </summary>
     /// <value>A list of scored agents for routing decisions. For Agent Owned Callbacks use one scored agent with a score of 100.</value>
-    [DataMember(Name = "scoredAgents", EmitDefaultValue = false)]
+    [JsonPropertyName("scoredAgents")]
     public List<ScoredAgent> ScoredAgents { get; set; }
 
 
@@ -109,7 +108,7 @@ public partial class RoutingData : IEquatable<RoutingData>
     /// An array of flags indicating how the conversation should be routed. Use \&quot;AGENT_OWNED_CALLBACK\&quot; when creating an Agent Owned Callback.
     /// </summary>
     /// <value>An array of flags indicating how the conversation should be routed. Use \&quot;AGENT_OWNED_CALLBACK\&quot; when creating an Agent Owned Callback.</value>
-    [DataMember(Name = "routingFlags", EmitDefaultValue = false)]
+    [JsonPropertyName("routingFlags")]
     public List<string> RoutingFlags { get; set; }
 
 

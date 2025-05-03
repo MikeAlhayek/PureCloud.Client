@@ -1,4 +1,3 @@
-using System.Runtime.Serialization;
 using System.Text;
 using System.Text.Json.Serialization;
 
@@ -7,7 +6,7 @@ namespace PureCloud.Client.Models;
 /// <summary>
 /// ConversationDeletionProtectionQuery
 /// </summary>
-[DataContract]
+
 public partial class ConversationDeletionProtectionQuery : IEquatable<ConversationDeletionProtectionQuery>
 {
 
@@ -32,7 +31,7 @@ public partial class ConversationDeletionProtectionQuery : IEquatable<Conversati
     /// This is a list of ConversationIds. The list cannot exceed 100 conversationids.
     /// </summary>
     /// <value>This is a list of ConversationIds. The list cannot exceed 100 conversationids.</value>
-    [DataMember(Name = "conversationIds", EmitDefaultValue = false)]
+    [JsonPropertyName("conversationIds")]
     public List<string> ConversationIds { get; set; }
 
 

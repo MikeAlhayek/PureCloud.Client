@@ -1,4 +1,3 @@
-using System.Runtime.Serialization;
 using System.Text;
 
 namespace PureCloud.Client.Models;
@@ -6,7 +5,6 @@ namespace PureCloud.Client.Models;
 /// <summary>
 /// WritableEntity
 /// </summary>
-[DataContract]
 public partial class WritableEntity : IEquatable<WritableEntity>
 {
     /// <summary>
@@ -25,7 +23,6 @@ public partial class WritableEntity : IEquatable<WritableEntity>
     /// The globally unique identifier for the object.
     /// </summary>
     /// <value>The globally unique identifier for the object.</value>
-    [DataMember(Name = "id", EmitDefaultValue = false)]
     public string Id { get; set; }
 
 
@@ -42,7 +39,6 @@ public partial class WritableEntity : IEquatable<WritableEntity>
         sb.Append("}\n");
         return sb.ToString();
     }
-
 
     /// <summary>
     /// Returns true if objects are equal

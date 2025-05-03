@@ -7,14 +7,14 @@ namespace PureCloud.Client.Models;
 /// <summary>
 /// ContactsExport
 /// </summary>
-[DataContract]
+
 public partial class ContactsExport : IEquatable<ContactsExport>
 {
     /// <summary>
     /// The status of the request
     /// </summary>
     /// <value>The status of the request</value>
-    [JsonConverter(typeof(JsonStringEnumConverter))]
+    
     public enum StatusEnum
     {
         /// <summary>
@@ -47,7 +47,7 @@ public partial class ContactsExport : IEquatable<ContactsExport>
     /// The status of the request
     /// </summary>
     /// <value>The status of the request</value>
-    [DataMember(Name = "status", EmitDefaultValue = false)]
+    [JsonPropertyName("status")]
     public StatusEnum? Status { get; private set; }
     /// <summary>
     /// Initializes a new instance of the <see cref="ContactsExport" /> class.
@@ -67,7 +67,7 @@ public partial class ContactsExport : IEquatable<ContactsExport>
     /// The globally unique identifier for the object.
     /// </summary>
     /// <value>The globally unique identifier for the object.</value>
-    [DataMember(Name = "id", EmitDefaultValue = false)]
+    [JsonPropertyName("id")]
     public string Id { get; private set; }
 
 
@@ -76,7 +76,7 @@ public partial class ContactsExport : IEquatable<ContactsExport>
     /// Division IDs of entities
     /// </summary>
     /// <value>Division IDs of entities</value>
-    [DataMember(Name = "divisionIds", EmitDefaultValue = false)]
+    [JsonPropertyName("divisionIds")]
     public List<string> DivisionIds { get; set; }
 
 
@@ -85,7 +85,7 @@ public partial class ContactsExport : IEquatable<ContactsExport>
     /// Query conditions to apply on export
     /// </summary>
     /// <value>Query conditions to apply on export</value>
-    [DataMember(Name = "queryConditions", EmitDefaultValue = false)]
+    [JsonPropertyName("queryConditions")]
     public ContactsExportQueryConditions QueryConditions { get; set; }
 
 
@@ -94,7 +94,7 @@ public partial class ContactsExport : IEquatable<ContactsExport>
     /// The user that created this request
     /// </summary>
     /// <value>The user that created this request</value>
-    [DataMember(Name = "createdBy", EmitDefaultValue = false)]
+    [JsonPropertyName("createdBy")]
     public DomainEntityRef CreatedBy { get; private set; }
 
 
@@ -103,7 +103,7 @@ public partial class ContactsExport : IEquatable<ContactsExport>
     /// When the request was submitted. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z
     /// </summary>
     /// <value>When the request was submitted. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z</value>
-    [DataMember(Name = "dateCreated", EmitDefaultValue = false)]
+    [JsonPropertyName("dateCreated")]
     public DateTime? DateCreated { get; private set; }
 
 
@@ -114,7 +114,7 @@ public partial class ContactsExport : IEquatable<ContactsExport>
     /// The location where the results of the request can be retrieved
     /// </summary>
     /// <value>The location where the results of the request can be retrieved</value>
-    [DataMember(Name = "downloadUrl", EmitDefaultValue = false)]
+    [JsonPropertyName("downloadUrl")]
     public string DownloadUrl { get; private set; }
 
 
@@ -123,7 +123,7 @@ public partial class ContactsExport : IEquatable<ContactsExport>
     /// The URI for this object
     /// </summary>
     /// <value>The URI for this object</value>
-    [DataMember(Name = "selfUri", EmitDefaultValue = false)]
+    [JsonPropertyName("selfUri")]
     public string SelfUri { get; private set; }
 
 

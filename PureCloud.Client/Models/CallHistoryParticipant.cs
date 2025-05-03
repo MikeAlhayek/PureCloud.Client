@@ -7,14 +7,14 @@ namespace PureCloud.Client.Models;
 /// <summary>
 /// CallHistoryParticipant
 /// </summary>
-[DataContract]
+
 public partial class CallHistoryParticipant : IEquatable<CallHistoryParticipant>
 {
     /// <summary>
     /// The participant's direction.  Values can be: 'inbound' or 'outbound'
     /// </summary>
     /// <value>The participant's direction.  Values can be: 'inbound' or 'outbound'</value>
-    [JsonConverter(typeof(JsonStringEnumConverter))]
+    
     public enum DirectionEnum
     {
         /// <summary>
@@ -41,7 +41,7 @@ public partial class CallHistoryParticipant : IEquatable<CallHistoryParticipant>
     /// The reason the participant was disconnected from the conversation.
     /// </summary>
     /// <value>The reason the participant was disconnected from the conversation.</value>
-    [JsonConverter(typeof(JsonStringEnumConverter))]
+    
     public enum DisconnectTypeEnum
     {
         /// <summary>
@@ -152,7 +152,7 @@ public partial class CallHistoryParticipant : IEquatable<CallHistoryParticipant>
     /// The reason specifying why participant flagged the conversation.
     /// </summary>
     /// <value>The reason specifying why participant flagged the conversation.</value>
-    [JsonConverter(typeof(JsonStringEnumConverter))]
+    
     public enum FlaggedReasonEnum
     {
         /// <summary>
@@ -173,19 +173,19 @@ public partial class CallHistoryParticipant : IEquatable<CallHistoryParticipant>
     /// The participant's direction.  Values can be: 'inbound' or 'outbound'
     /// </summary>
     /// <value>The participant's direction.  Values can be: 'inbound' or 'outbound'</value>
-    [DataMember(Name = "direction", EmitDefaultValue = false)]
+    [JsonPropertyName("direction")]
     public DirectionEnum? Direction { get; set; }
     /// <summary>
     /// The reason the participant was disconnected from the conversation.
     /// </summary>
     /// <value>The reason the participant was disconnected from the conversation.</value>
-    [DataMember(Name = "disconnectType", EmitDefaultValue = false)]
+    [JsonPropertyName("disconnectType")]
     public DisconnectTypeEnum? DisconnectType { get; set; }
     /// <summary>
     /// The reason specifying why participant flagged the conversation.
     /// </summary>
     /// <value>The reason specifying why participant flagged the conversation.</value>
-    [DataMember(Name = "flaggedReason", EmitDefaultValue = false)]
+    [JsonPropertyName("flaggedReason")]
     public FlaggedReasonEnum? FlaggedReason { get; set; }
     /// <summary>
     /// Initializes a new instance of the <see cref="CallHistoryParticipant" /> class.
@@ -239,7 +239,7 @@ public partial class CallHistoryParticipant : IEquatable<CallHistoryParticipant>
     /// The unique participant ID.
     /// </summary>
     /// <value>The unique participant ID.</value>
-    [DataMember(Name = "id", EmitDefaultValue = false)]
+    [JsonPropertyName("id")]
     public string Id { get; set; }
 
 
@@ -248,7 +248,7 @@ public partial class CallHistoryParticipant : IEquatable<CallHistoryParticipant>
     /// The display friendly name of the participant.
     /// </summary>
     /// <value>The display friendly name of the participant.</value>
-    [DataMember(Name = "name", EmitDefaultValue = false)]
+    [JsonPropertyName("name")]
     public string Name { get; set; }
 
 
@@ -257,7 +257,7 @@ public partial class CallHistoryParticipant : IEquatable<CallHistoryParticipant>
     /// The participant address.
     /// </summary>
     /// <value>The participant address.</value>
-    [DataMember(Name = "address", EmitDefaultValue = false)]
+    [JsonPropertyName("address")]
     public string Address { get; set; }
 
 
@@ -266,7 +266,7 @@ public partial class CallHistoryParticipant : IEquatable<CallHistoryParticipant>
     /// The time when this participant first joined the conversation. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z
     /// </summary>
     /// <value>The time when this participant first joined the conversation. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z</value>
-    [DataMember(Name = "startTime", EmitDefaultValue = false)]
+    [JsonPropertyName("startTime")]
     public DateTime? StartTime { get; set; }
 
 
@@ -275,7 +275,7 @@ public partial class CallHistoryParticipant : IEquatable<CallHistoryParticipant>
     /// The time when this participant went disconnected for this media (eg: video disconnected time). Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z
     /// </summary>
     /// <value>The time when this participant went disconnected for this media (eg: video disconnected time). Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z</value>
-    [DataMember(Name = "endTime", EmitDefaultValue = false)]
+    [JsonPropertyName("endTime")]
     public DateTime? EndTime { get; set; }
 
 
@@ -284,7 +284,7 @@ public partial class CallHistoryParticipant : IEquatable<CallHistoryParticipant>
     /// The participant&#39;s purpose.  Values can be: &#39;agent&#39;, &#39;user&#39;, &#39;customer&#39;, &#39;external&#39;, &#39;acd&#39;, &#39;ivr
     /// </summary>
     /// <value>The participant&#39;s purpose.  Values can be: &#39;agent&#39;, &#39;user&#39;, &#39;customer&#39;, &#39;external&#39;, &#39;acd&#39;, &#39;ivr</value>
-    [DataMember(Name = "purpose", EmitDefaultValue = false)]
+    [JsonPropertyName("purpose")]
     public string Purpose { get; set; }
 
 
@@ -295,7 +295,7 @@ public partial class CallHistoryParticipant : IEquatable<CallHistoryParticipant>
     /// The call ANI.
     /// </summary>
     /// <value>The call ANI.</value>
-    [DataMember(Name = "ani", EmitDefaultValue = false)]
+    [JsonPropertyName("ani")]
     public string Ani { get; set; }
 
 
@@ -304,7 +304,7 @@ public partial class CallHistoryParticipant : IEquatable<CallHistoryParticipant>
     /// The call DNIS.
     /// </summary>
     /// <value>The call DNIS.</value>
-    [DataMember(Name = "dnis", EmitDefaultValue = false)]
+    [JsonPropertyName("dnis")]
     public string Dnis { get; set; }
 
 
@@ -313,7 +313,7 @@ public partial class CallHistoryParticipant : IEquatable<CallHistoryParticipant>
     /// The PureCloudEnvironment user for this participant.
     /// </summary>
     /// <value>The PureCloudEnvironment user for this participant.</value>
-    [DataMember(Name = "user", EmitDefaultValue = false)]
+    [JsonPropertyName("user")]
     public User User { get; set; }
 
 
@@ -322,7 +322,7 @@ public partial class CallHistoryParticipant : IEquatable<CallHistoryParticipant>
     /// The PureCloudEnvironment queue for this participant.
     /// </summary>
     /// <value>The PureCloudEnvironment queue for this participant.</value>
-    [DataMember(Name = "queue", EmitDefaultValue = false)]
+    [JsonPropertyName("queue")]
     public Queue Queue { get; set; }
 
 
@@ -331,7 +331,7 @@ public partial class CallHistoryParticipant : IEquatable<CallHistoryParticipant>
     /// The group involved in the group ring call.
     /// </summary>
     /// <value>The group involved in the group ring call.</value>
-    [DataMember(Name = "group", EmitDefaultValue = false)]
+    [JsonPropertyName("group")]
     public Group Group { get; set; }
 
 
@@ -342,7 +342,7 @@ public partial class CallHistoryParticipant : IEquatable<CallHistoryParticipant>
     /// The PureCloudEnvironment external contact
     /// </summary>
     /// <value>The PureCloudEnvironment external contact</value>
-    [DataMember(Name = "externalContact", EmitDefaultValue = false)]
+    [JsonPropertyName("externalContact")]
     public ExternalContact ExternalContact { get; set; }
 
 
@@ -351,7 +351,7 @@ public partial class CallHistoryParticipant : IEquatable<CallHistoryParticipant>
     /// The PureCloudEnvironment external organization
     /// </summary>
     /// <value>The PureCloudEnvironment external organization</value>
-    [DataMember(Name = "externalOrganization", EmitDefaultValue = false)]
+    [JsonPropertyName("externalOrganization")]
     public ExternalOrganization ExternalOrganization { get; set; }
 
 
@@ -360,7 +360,7 @@ public partial class CallHistoryParticipant : IEquatable<CallHistoryParticipant>
     /// Indicates whether the contact ever connected
     /// </summary>
     /// <value>Indicates whether the contact ever connected</value>
-    [DataMember(Name = "didInteract", EmitDefaultValue = false)]
+    [JsonPropertyName("didInteract")]
     public bool? DidInteract { get; set; }
 
 
@@ -369,7 +369,7 @@ public partial class CallHistoryParticipant : IEquatable<CallHistoryParticipant>
     /// Indicates SIP Response codes associated with the participant
     /// </summary>
     /// <value>Indicates SIP Response codes associated with the participant</value>
-    [DataMember(Name = "sipResponseCodes", EmitDefaultValue = false)]
+    [JsonPropertyName("sipResponseCodes")]
     public List<long?> SipResponseCodes { get; set; }
 
 
@@ -380,7 +380,7 @@ public partial class CallHistoryParticipant : IEquatable<CallHistoryParticipant>
     /// The outbound campaign associated with the participant
     /// </summary>
     /// <value>The outbound campaign associated with the participant</value>
-    [DataMember(Name = "outboundCampaign", EmitDefaultValue = false)]
+    [JsonPropertyName("outboundCampaign")]
     public Campaign OutboundCampaign { get; set; }
 
 

@@ -7,13 +7,13 @@ namespace PureCloud.Client.Models;
 /// <summary>
 /// ViewFilter
 /// </summary>
-[DataContract]
+
 public partial class ViewFilter : IEquatable<ViewFilter>
 {
     /// <summary>
     /// Gets or Sets MediaTypes
     /// </summary>
-    [JsonConverter(typeof(JsonStringEnumConverter))]
+    
     public enum MediaTypesEnum
     {
         /// <summary>
@@ -87,7 +87,7 @@ public partial class ViewFilter : IEquatable<ViewFilter>
     /// <summary>
     /// Gets or Sets Directions
     /// </summary>
-    [JsonConverter(typeof(JsonStringEnumConverter))]
+    
     public enum DirectionsEnum
     {
         /// <summary>
@@ -113,7 +113,7 @@ public partial class ViewFilter : IEquatable<ViewFilter>
     /// <summary>
     /// Gets or Sets OriginatingDirections
     /// </summary>
-    [JsonConverter(typeof(JsonStringEnumConverter))]
+    
     public enum OriginatingDirectionsEnum
     {
         /// <summary>
@@ -139,7 +139,7 @@ public partial class ViewFilter : IEquatable<ViewFilter>
     /// <summary>
     /// Gets or Sets MessageTypes
     /// </summary>
-    [JsonConverter(typeof(JsonStringEnumConverter))]
+    
     public enum MessageTypesEnum
     {
         /// <summary>
@@ -207,7 +207,7 @@ public partial class ViewFilter : IEquatable<ViewFilter>
     /// <summary>
     /// Gets or Sets FlowOutcomeValues
     /// </summary>
-    [JsonConverter(typeof(JsonStringEnumConverter))]
+    
     public enum FlowOutcomeValuesEnum
     {
         /// <summary>
@@ -233,7 +233,7 @@ public partial class ViewFilter : IEquatable<ViewFilter>
     /// <summary>
     /// Gets or Sets FlowDestinationTypes
     /// </summary>
-    [JsonConverter(typeof(JsonStringEnumConverter))]
+    
     public enum FlowDestinationTypesEnum
     {
         /// <summary>
@@ -307,7 +307,7 @@ public partial class ViewFilter : IEquatable<ViewFilter>
     /// <summary>
     /// Gets or Sets FlowDisconnectReasons
     /// </summary>
-    [JsonConverter(typeof(JsonStringEnumConverter))]
+    
     public enum FlowDisconnectReasonsEnum
     {
         /// <summary>
@@ -339,7 +339,7 @@ public partial class ViewFilter : IEquatable<ViewFilter>
     /// <summary>
     /// Gets or Sets FlowTypes
     /// </summary>
-    [JsonConverter(typeof(JsonStringEnumConverter))]
+    
     public enum FlowTypesEnum
     {
         /// <summary>
@@ -461,7 +461,7 @@ public partial class ViewFilter : IEquatable<ViewFilter>
     /// <summary>
     /// Gets or Sets FlowEntryTypes
     /// </summary>
-    [JsonConverter(typeof(JsonStringEnumConverter))]
+    
     public enum FlowEntryTypesEnum
     {
         /// <summary>
@@ -505,7 +505,7 @@ public partial class ViewFilter : IEquatable<ViewFilter>
     /// <summary>
     /// Gets or Sets UsedRoutingTypes
     /// </summary>
-    [JsonConverter(typeof(JsonStringEnumConverter))]
+    
     public enum UsedRoutingTypesEnum
     {
         /// <summary>
@@ -573,7 +573,7 @@ public partial class ViewFilter : IEquatable<ViewFilter>
     /// <summary>
     /// Gets or Sets RequestedRoutingTypes
     /// </summary>
-    [JsonConverter(typeof(JsonStringEnumConverter))]
+    
     public enum RequestedRoutingTypesEnum
     {
         /// <summary>
@@ -641,7 +641,7 @@ public partial class ViewFilter : IEquatable<ViewFilter>
     /// <summary>
     /// Gets or Sets ParticipantPurposes
     /// </summary>
-    [JsonConverter(typeof(JsonStringEnumConverter))]
+    
     public enum ParticipantPurposesEnum
     {
         /// <summary>
@@ -667,7 +667,7 @@ public partial class ViewFilter : IEquatable<ViewFilter>
     /// <summary>
     /// Gets or Sets JourneyActionMapTypes
     /// </summary>
-    [JsonConverter(typeof(JsonStringEnumConverter))]
+    
     public enum JourneyActionMapTypesEnum
     {
         /// <summary>
@@ -717,7 +717,7 @@ public partial class ViewFilter : IEquatable<ViewFilter>
     /// <summary>
     /// Gets or Sets DevelopmentRoleList
     /// </summary>
-    [JsonConverter(typeof(JsonStringEnumConverter))]
+    
     public enum DevelopmentRoleListEnum
     {
         /// <summary>
@@ -749,7 +749,7 @@ public partial class ViewFilter : IEquatable<ViewFilter>
     /// <summary>
     /// Gets or Sets DevelopmentTypeList
     /// </summary>
-    [JsonConverter(typeof(JsonStringEnumConverter))]
+    
     public enum DevelopmentTypeListEnum
     {
         /// <summary>
@@ -799,7 +799,7 @@ public partial class ViewFilter : IEquatable<ViewFilter>
     /// <summary>
     /// Gets or Sets DevelopmentStatusList
     /// </summary>
-    [JsonConverter(typeof(JsonStringEnumConverter))]
+    
     public enum DevelopmentStatusListEnum
     {
         /// <summary>
@@ -849,7 +849,7 @@ public partial class ViewFilter : IEquatable<ViewFilter>
     /// <summary>
     /// Gets or Sets BotMessageTypes
     /// </summary>
-    [JsonConverter(typeof(JsonStringEnumConverter))]
+    
     public enum BotMessageTypesEnum
     {
         /// <summary>
@@ -971,7 +971,7 @@ public partial class ViewFilter : IEquatable<ViewFilter>
     /// <summary>
     /// Gets or Sets BotProviderList
     /// </summary>
-    [JsonConverter(typeof(JsonStringEnumConverter))]
+    
     public enum BotProviderListEnum
     {
         /// <summary>
@@ -1015,7 +1015,7 @@ public partial class ViewFilter : IEquatable<ViewFilter>
     /// <summary>
     /// Gets or Sets BotProductList
     /// </summary>
-    [JsonConverter(typeof(JsonStringEnumConverter))]
+    
     public enum BotProductListEnum
     {
         /// <summary>
@@ -1119,7 +1119,7 @@ public partial class ViewFilter : IEquatable<ViewFilter>
     /// <summary>
     /// Gets or Sets BotRecognitionFailureReasonList
     /// </summary>
-    [JsonConverter(typeof(JsonStringEnumConverter))]
+    
     public enum BotRecognitionFailureReasonListEnum
     {
         /// <summary>
@@ -1187,7 +1187,7 @@ public partial class ViewFilter : IEquatable<ViewFilter>
     /// <summary>
     /// Gets or Sets BotResultList
     /// </summary>
-    [JsonConverter(typeof(JsonStringEnumConverter))]
+    
     public enum BotResultListEnum
     {
         /// <summary>
@@ -1267,7 +1267,7 @@ public partial class ViewFilter : IEquatable<ViewFilter>
     /// <summary>
     /// Gets or Sets BlockedReasons
     /// </summary>
-    [JsonConverter(typeof(JsonStringEnumConverter))]
+    
     public enum BlockedReasonsEnum
     {
         /// <summary>
@@ -1329,7 +1329,7 @@ public partial class ViewFilter : IEquatable<ViewFilter>
     /// <summary>
     /// Gets or Sets EmailDeliveryStatusList
     /// </summary>
-    [JsonConverter(typeof(JsonStringEnumConverter))]
+    
     public enum EmailDeliveryStatusListEnum
     {
         /// <summary>
@@ -1398,7 +1398,7 @@ public partial class ViewFilter : IEquatable<ViewFilter>
     /// Filter to indicate the availability of the dashboard is public or private.
     /// </summary>
     /// <value>Filter to indicate the availability of the dashboard is public or private.</value>
-    [JsonConverter(typeof(JsonStringEnumConverter))]
+    
     public enum AvailableDashboardEnum
     {
         /// <summary>
@@ -1424,7 +1424,7 @@ public partial class ViewFilter : IEquatable<ViewFilter>
     /// <summary>
     /// Gets or Sets EvaluationStatuses
     /// </summary>
-    [JsonConverter(typeof(JsonStringEnumConverter))]
+    
     public enum EvaluationStatusesEnum
     {
         /// <summary>
@@ -1469,7 +1469,7 @@ public partial class ViewFilter : IEquatable<ViewFilter>
     /// The user supplied state value in the view
     /// </summary>
     /// <value>The user supplied state value in the view</value>
-    [JsonConverter(typeof(JsonStringEnumConverter))]
+    
     public enum UserStateEnum
     {
         /// <summary>
@@ -1507,7 +1507,7 @@ public partial class ViewFilter : IEquatable<ViewFilter>
     /// <summary>
     /// Gets or Sets SurveyTypes
     /// </summary>
-    [JsonConverter(typeof(JsonStringEnumConverter))]
+    
     public enum SurveyTypesEnum
     {
         /// <summary>
@@ -1533,7 +1533,7 @@ public partial class ViewFilter : IEquatable<ViewFilter>
     /// <summary>
     /// Gets or Sets SurveyResponseStatuses
     /// </summary>
-    [JsonConverter(typeof(JsonStringEnumConverter))]
+    
     public enum SurveyResponseStatusesEnum
     {
         /// <summary>
@@ -1565,7 +1565,7 @@ public partial class ViewFilter : IEquatable<ViewFilter>
     /// <summary>
     /// Gets or Sets BotFlowTypes
     /// </summary>
-    [JsonConverter(typeof(JsonStringEnumConverter))]
+    
     public enum BotFlowTypesEnum
     {
         /// <summary>
@@ -1604,7 +1604,7 @@ public partial class ViewFilter : IEquatable<ViewFilter>
     /// The state of dashboard being filtered
     /// </summary>
     /// <value>The state of dashboard being filtered</value>
-    [JsonConverter(typeof(JsonStringEnumConverter))]
+    
     public enum DashboardStateEnum
     {
         /// <summary>
@@ -1631,7 +1631,7 @@ public partial class ViewFilter : IEquatable<ViewFilter>
     /// The type of dashboard being filtered
     /// </summary>
     /// <value>The type of dashboard being filtered</value>
-    [JsonConverter(typeof(JsonStringEnumConverter))]
+    
     public enum DashboardTypeEnum
     {
         /// <summary>
@@ -1676,7 +1676,7 @@ public partial class ViewFilter : IEquatable<ViewFilter>
     /// The type of dashboard access being filtered
     /// </summary>
     /// <value>The type of dashboard access being filtered</value>
-    [JsonConverter(typeof(JsonStringEnumConverter))]
+    
     public enum DashboardAccessFilterEnum
     {
         /// <summary>
@@ -1708,7 +1708,7 @@ public partial class ViewFilter : IEquatable<ViewFilter>
     /// <summary>
     /// Gets or Sets SocialChannels
     /// </summary>
-    [JsonConverter(typeof(JsonStringEnumConverter))]
+    
     public enum SocialChannelsEnum
     {
         /// <summary>
@@ -1746,7 +1746,7 @@ public partial class ViewFilter : IEquatable<ViewFilter>
     /// <summary>
     /// Gets or Sets SocialSentimentCategory
     /// </summary>
-    [JsonConverter(typeof(JsonStringEnumConverter))]
+    
     public enum SocialSentimentCategoryEnum
     {
         /// <summary>
@@ -1784,7 +1784,7 @@ public partial class ViewFilter : IEquatable<ViewFilter>
     /// <summary>
     /// Gets or Sets SocialContentType
     /// </summary>
-    [JsonConverter(typeof(JsonStringEnumConverter))]
+    
     public enum SocialContentTypeEnum
     {
         /// <summary>
@@ -1816,7 +1816,7 @@ public partial class ViewFilter : IEquatable<ViewFilter>
     /// <summary>
     /// Gets or Sets SocialClassifications
     /// </summary>
-    [JsonConverter(typeof(JsonStringEnumConverter))]
+    
     public enum SocialClassificationsEnum
     {
         /// <summary>
@@ -1842,7 +1842,7 @@ public partial class ViewFilter : IEquatable<ViewFilter>
     /// <summary>
     /// Gets or Sets RecommendationSources
     /// </summary>
-    [JsonConverter(typeof(JsonStringEnumConverter))]
+    
     public enum RecommendationSourcesEnum
     {
         /// <summary>
@@ -1875,7 +1875,7 @@ public partial class ViewFilter : IEquatable<ViewFilter>
     /// Sets the role when viewing agent evaluations
     /// </summary>
     /// <value>Sets the role when viewing agent evaluations</value>
-    [JsonConverter(typeof(JsonStringEnumConverter))]
+    
     public enum EvaluationRoleEnum
     {
         /// <summary>
@@ -1901,7 +1901,7 @@ public partial class ViewFilter : IEquatable<ViewFilter>
     /// <summary>
     /// Gets or Sets ViewMetrics
     /// </summary>
-    [JsonConverter(typeof(JsonStringEnumConverter))]
+    
     public enum ViewMetricsEnum
     {
         /// <summary>
@@ -3235,7 +3235,7 @@ public partial class ViewFilter : IEquatable<ViewFilter>
     /// <summary>
     /// Gets or Sets SegmentTypes
     /// </summary>
-    [JsonConverter(typeof(JsonStringEnumConverter))]
+    
     public enum SegmentTypesEnum
     {
         /// <summary>
@@ -3376,37 +3376,37 @@ public partial class ViewFilter : IEquatable<ViewFilter>
     /// Filter to indicate the availability of the dashboard is public or private.
     /// </summary>
     /// <value>Filter to indicate the availability of the dashboard is public or private.</value>
-    [DataMember(Name = "availableDashboard", EmitDefaultValue = false)]
+    [JsonPropertyName("availableDashboard")]
     public AvailableDashboardEnum? AvailableDashboard { get; set; }
     /// <summary>
     /// The user supplied state value in the view
     /// </summary>
     /// <value>The user supplied state value in the view</value>
-    [DataMember(Name = "userState", EmitDefaultValue = false)]
+    [JsonPropertyName("userState")]
     public UserStateEnum? UserState { get; set; }
     /// <summary>
     /// The state of dashboard being filtered
     /// </summary>
     /// <value>The state of dashboard being filtered</value>
-    [DataMember(Name = "dashboardState", EmitDefaultValue = false)]
+    [JsonPropertyName("dashboardState")]
     public DashboardStateEnum? DashboardState { get; set; }
     /// <summary>
     /// The type of dashboard being filtered
     /// </summary>
     /// <value>The type of dashboard being filtered</value>
-    [DataMember(Name = "dashboardType", EmitDefaultValue = false)]
+    [JsonPropertyName("dashboardType")]
     public DashboardTypeEnum? DashboardType { get; set; }
     /// <summary>
     /// The type of dashboard access being filtered
     /// </summary>
     /// <value>The type of dashboard access being filtered</value>
-    [DataMember(Name = "dashboardAccessFilter", EmitDefaultValue = false)]
+    [JsonPropertyName("dashboardAccessFilter")]
     public DashboardAccessFilterEnum? DashboardAccessFilter { get; set; }
     /// <summary>
     /// Sets the role when viewing agent evaluations
     /// </summary>
     /// <value>Sets the role when viewing agent evaluations</value>
-    [DataMember(Name = "evaluationRole", EmitDefaultValue = false)]
+    [JsonPropertyName("evaluationRole")]
     public EvaluationRoleEnum? EvaluationRole { get; set; }
     /// <summary>
     /// Initializes a new instance of the <see cref="ViewFilter" /> class.
@@ -3874,7 +3874,7 @@ public partial class ViewFilter : IEquatable<ViewFilter>
     /// The media types are used to filter the view
     /// </summary>
     /// <value>The media types are used to filter the view</value>
-    [DataMember(Name = "mediaTypes", EmitDefaultValue = false)]
+    [JsonPropertyName("mediaTypes")]
     public List<MediaTypesEnum> MediaTypes { get; set; }
 
 
@@ -3883,7 +3883,7 @@ public partial class ViewFilter : IEquatable<ViewFilter>
     /// The queue ids are used to filter the view
     /// </summary>
     /// <value>The queue ids are used to filter the view</value>
-    [DataMember(Name = "queueIds", EmitDefaultValue = false)]
+    [JsonPropertyName("queueIds")]
     public List<string> QueueIds { get; set; }
 
 
@@ -3892,7 +3892,7 @@ public partial class ViewFilter : IEquatable<ViewFilter>
     /// The skill ids are used to filter the view
     /// </summary>
     /// <value>The skill ids are used to filter the view</value>
-    [DataMember(Name = "skillIds", EmitDefaultValue = false)]
+    [JsonPropertyName("skillIds")]
     public List<string> SkillIds { get; set; }
 
 
@@ -3901,7 +3901,7 @@ public partial class ViewFilter : IEquatable<ViewFilter>
     /// The assigned user skill ids are used to filter the view
     /// </summary>
     /// <value>The assigned user skill ids are used to filter the view</value>
-    [DataMember(Name = "assignedSkillIds", EmitDefaultValue = false)]
+    [JsonPropertyName("assignedSkillIds")]
     public List<string> AssignedSkillIds { get; set; }
 
 
@@ -3910,7 +3910,7 @@ public partial class ViewFilter : IEquatable<ViewFilter>
     /// The skill groups used to filter the view
     /// </summary>
     /// <value>The skill groups used to filter the view</value>
-    [DataMember(Name = "skillGroups", EmitDefaultValue = false)]
+    [JsonPropertyName("skillGroups")]
     public List<string> SkillGroups { get; set; }
 
 
@@ -3919,7 +3919,7 @@ public partial class ViewFilter : IEquatable<ViewFilter>
     /// The language ids are used to filter the view
     /// </summary>
     /// <value>The language ids are used to filter the view</value>
-    [DataMember(Name = "languageIds", EmitDefaultValue = false)]
+    [JsonPropertyName("languageIds")]
     public List<string> LanguageIds { get; set; }
 
 
@@ -3928,7 +3928,7 @@ public partial class ViewFilter : IEquatable<ViewFilter>
     /// The assigned user language ids are used to filter the view
     /// </summary>
     /// <value>The assigned user language ids are used to filter the view</value>
-    [DataMember(Name = "assignedLanguageIds", EmitDefaultValue = false)]
+    [JsonPropertyName("assignedLanguageIds")]
     public List<string> AssignedLanguageIds { get; set; }
 
 
@@ -3937,7 +3937,7 @@ public partial class ViewFilter : IEquatable<ViewFilter>
     /// The language groups used to filter the view
     /// </summary>
     /// <value>The language groups used to filter the view</value>
-    [DataMember(Name = "languageGroups", EmitDefaultValue = false)]
+    [JsonPropertyName("languageGroups")]
     public List<string> LanguageGroups { get; set; }
 
 
@@ -3946,7 +3946,7 @@ public partial class ViewFilter : IEquatable<ViewFilter>
     /// The directions are used to filter the view
     /// </summary>
     /// <value>The directions are used to filter the view</value>
-    [DataMember(Name = "directions", EmitDefaultValue = false)]
+    [JsonPropertyName("directions")]
     public List<DirectionsEnum> Directions { get; set; }
 
 
@@ -3955,7 +3955,7 @@ public partial class ViewFilter : IEquatable<ViewFilter>
     /// The list of orginating directions used to filter the view
     /// </summary>
     /// <value>The list of orginating directions used to filter the view</value>
-    [DataMember(Name = "originatingDirections", EmitDefaultValue = false)]
+    [JsonPropertyName("originatingDirections")]
     public List<OriginatingDirectionsEnum> OriginatingDirections { get; set; }
 
 
@@ -3964,7 +3964,7 @@ public partial class ViewFilter : IEquatable<ViewFilter>
     /// The wrap up codes are used to filter the view
     /// </summary>
     /// <value>The wrap up codes are used to filter the view</value>
-    [DataMember(Name = "wrapUpCodes", EmitDefaultValue = false)]
+    [JsonPropertyName("wrapUpCodes")]
     public List<string> WrapUpCodes { get; set; }
 
 
@@ -3973,7 +3973,7 @@ public partial class ViewFilter : IEquatable<ViewFilter>
     /// The dnis list is used to filter the view
     /// </summary>
     /// <value>The dnis list is used to filter the view</value>
-    [DataMember(Name = "dnisList", EmitDefaultValue = false)]
+    [JsonPropertyName("dnisList")]
     public List<string> DnisList { get; set; }
 
 
@@ -3982,7 +3982,7 @@ public partial class ViewFilter : IEquatable<ViewFilter>
     /// The list of session dnis used to filter the view
     /// </summary>
     /// <value>The list of session dnis used to filter the view</value>
-    [DataMember(Name = "sessionDnisList", EmitDefaultValue = false)]
+    [JsonPropertyName("sessionDnisList")]
     public List<string> SessionDnisList { get; set; }
 
 
@@ -3991,7 +3991,7 @@ public partial class ViewFilter : IEquatable<ViewFilter>
     /// The user ids are used to fetch associated queues for the view
     /// </summary>
     /// <value>The user ids are used to fetch associated queues for the view</value>
-    [DataMember(Name = "filterQueuesByUserIds", EmitDefaultValue = false)]
+    [JsonPropertyName("filterQueuesByUserIds")]
     public List<string> FilterQueuesByUserIds { get; set; }
 
 
@@ -4000,7 +4000,7 @@ public partial class ViewFilter : IEquatable<ViewFilter>
     /// The queue ids are used to fetch associated users for the view
     /// </summary>
     /// <value>The queue ids are used to fetch associated users for the view</value>
-    [DataMember(Name = "filterUsersByQueueIds", EmitDefaultValue = false)]
+    [JsonPropertyName("filterUsersByQueueIds")]
     public List<string> FilterUsersByQueueIds { get; set; }
 
 
@@ -4009,7 +4009,7 @@ public partial class ViewFilter : IEquatable<ViewFilter>
     /// The user ids are used to filter the view
     /// </summary>
     /// <value>The user ids are used to filter the view</value>
-    [DataMember(Name = "userIds", EmitDefaultValue = false)]
+    [JsonPropertyName("userIds")]
     public List<string> UserIds { get; set; }
 
 
@@ -4018,7 +4018,7 @@ public partial class ViewFilter : IEquatable<ViewFilter>
     /// The management unit ids are used to filter the view
     /// </summary>
     /// <value>The management unit ids are used to filter the view</value>
-    [DataMember(Name = "managementUnitIds", EmitDefaultValue = false)]
+    [JsonPropertyName("managementUnitIds")]
     public List<string> ManagementUnitIds { get; set; }
 
 
@@ -4027,7 +4027,7 @@ public partial class ViewFilter : IEquatable<ViewFilter>
     /// The address To values are used to filter the view
     /// </summary>
     /// <value>The address To values are used to filter the view</value>
-    [DataMember(Name = "addressTos", EmitDefaultValue = false)]
+    [JsonPropertyName("addressTos")]
     public List<string> AddressTos { get; set; }
 
 
@@ -4036,7 +4036,7 @@ public partial class ViewFilter : IEquatable<ViewFilter>
     /// The address from values are used to filter the view
     /// </summary>
     /// <value>The address from values are used to filter the view</value>
-    [DataMember(Name = "addressFroms", EmitDefaultValue = false)]
+    [JsonPropertyName("addressFroms")]
     public List<string> AddressFroms { get; set; }
 
 
@@ -4045,7 +4045,7 @@ public partial class ViewFilter : IEquatable<ViewFilter>
     /// The outbound campaign ids are used to filter the view
     /// </summary>
     /// <value>The outbound campaign ids are used to filter the view</value>
-    [DataMember(Name = "outboundCampaignIds", EmitDefaultValue = false)]
+    [JsonPropertyName("outboundCampaignIds")]
     public List<string> OutboundCampaignIds { get; set; }
 
 
@@ -4054,7 +4054,7 @@ public partial class ViewFilter : IEquatable<ViewFilter>
     /// The outbound contact list ids are used to filter the view
     /// </summary>
     /// <value>The outbound contact list ids are used to filter the view</value>
-    [DataMember(Name = "outboundContactListIds", EmitDefaultValue = false)]
+    [JsonPropertyName("outboundContactListIds")]
     public List<string> OutboundContactListIds { get; set; }
 
 
@@ -4063,7 +4063,7 @@ public partial class ViewFilter : IEquatable<ViewFilter>
     /// The contact ids are used to filter the view
     /// </summary>
     /// <value>The contact ids are used to filter the view</value>
-    [DataMember(Name = "contactIds", EmitDefaultValue = false)]
+    [JsonPropertyName("contactIds")]
     public List<string> ContactIds { get; set; }
 
 
@@ -4072,7 +4072,7 @@ public partial class ViewFilter : IEquatable<ViewFilter>
     /// The external contact ids are used to filter the view
     /// </summary>
     /// <value>The external contact ids are used to filter the view</value>
-    [DataMember(Name = "externalContactIds", EmitDefaultValue = false)]
+    [JsonPropertyName("externalContactIds")]
     public List<string> ExternalContactIds { get; set; }
 
 
@@ -4081,7 +4081,7 @@ public partial class ViewFilter : IEquatable<ViewFilter>
     /// The external org ids are used to filter the view
     /// </summary>
     /// <value>The external org ids are used to filter the view</value>
-    [DataMember(Name = "externalOrgIds", EmitDefaultValue = false)]
+    [JsonPropertyName("externalOrgIds")]
     public List<string> ExternalOrgIds { get; set; }
 
 
@@ -4090,7 +4090,7 @@ public partial class ViewFilter : IEquatable<ViewFilter>
     /// The ani list ids are used to filter the view
     /// </summary>
     /// <value>The ani list ids are used to filter the view</value>
-    [DataMember(Name = "aniList", EmitDefaultValue = false)]
+    [JsonPropertyName("aniList")]
     public List<string> AniList { get; set; }
 
 
@@ -4099,7 +4099,7 @@ public partial class ViewFilter : IEquatable<ViewFilter>
     /// The durations in milliseconds used to filter the view
     /// </summary>
     /// <value>The durations in milliseconds used to filter the view</value>
-    [DataMember(Name = "durationsMilliseconds", EmitDefaultValue = false)]
+    [JsonPropertyName("durationsMilliseconds")]
     public List<NumericRange> DurationsMilliseconds { get; set; }
 
 
@@ -4108,7 +4108,7 @@ public partial class ViewFilter : IEquatable<ViewFilter>
     /// The acd durations in milliseconds used to filter the view
     /// </summary>
     /// <value>The acd durations in milliseconds used to filter the view</value>
-    [DataMember(Name = "acdDurationsMilliseconds", EmitDefaultValue = false)]
+    [JsonPropertyName("acdDurationsMilliseconds")]
     public List<NumericRange> AcdDurationsMilliseconds { get; set; }
 
 
@@ -4117,7 +4117,7 @@ public partial class ViewFilter : IEquatable<ViewFilter>
     /// The talk durations in milliseconds used to filter the view
     /// </summary>
     /// <value>The talk durations in milliseconds used to filter the view</value>
-    [DataMember(Name = "talkDurationsMilliseconds", EmitDefaultValue = false)]
+    [JsonPropertyName("talkDurationsMilliseconds")]
     public List<NumericRange> TalkDurationsMilliseconds { get; set; }
 
 
@@ -4126,7 +4126,7 @@ public partial class ViewFilter : IEquatable<ViewFilter>
     /// The acw durations in milliseconds used to filter the view
     /// </summary>
     /// <value>The acw durations in milliseconds used to filter the view</value>
-    [DataMember(Name = "acwDurationsMilliseconds", EmitDefaultValue = false)]
+    [JsonPropertyName("acwDurationsMilliseconds")]
     public List<NumericRange> AcwDurationsMilliseconds { get; set; }
 
 
@@ -4135,7 +4135,7 @@ public partial class ViewFilter : IEquatable<ViewFilter>
     /// The handle durations in milliseconds used to filter the view
     /// </summary>
     /// <value>The handle durations in milliseconds used to filter the view</value>
-    [DataMember(Name = "handleDurationsMilliseconds", EmitDefaultValue = false)]
+    [JsonPropertyName("handleDurationsMilliseconds")]
     public List<NumericRange> HandleDurationsMilliseconds { get; set; }
 
 
@@ -4144,7 +4144,7 @@ public partial class ViewFilter : IEquatable<ViewFilter>
     /// The hold durations in milliseconds used to filter the view
     /// </summary>
     /// <value>The hold durations in milliseconds used to filter the view</value>
-    [DataMember(Name = "holdDurationsMilliseconds", EmitDefaultValue = false)]
+    [JsonPropertyName("holdDurationsMilliseconds")]
     public List<NumericRange> HoldDurationsMilliseconds { get; set; }
 
 
@@ -4153,7 +4153,7 @@ public partial class ViewFilter : IEquatable<ViewFilter>
     /// The abandon durations in milliseconds used to filter the view
     /// </summary>
     /// <value>The abandon durations in milliseconds used to filter the view</value>
-    [DataMember(Name = "abandonDurationsMilliseconds", EmitDefaultValue = false)]
+    [JsonPropertyName("abandonDurationsMilliseconds")]
     public List<NumericRange> AbandonDurationsMilliseconds { get; set; }
 
 
@@ -4162,7 +4162,7 @@ public partial class ViewFilter : IEquatable<ViewFilter>
     /// The evaluationScore is used to filter the view
     /// </summary>
     /// <value>The evaluationScore is used to filter the view</value>
-    [DataMember(Name = "evaluationScore", EmitDefaultValue = false)]
+    [JsonPropertyName("evaluationScore")]
     public NumericRange EvaluationScore { get; set; }
 
 
@@ -4171,7 +4171,7 @@ public partial class ViewFilter : IEquatable<ViewFilter>
     /// The evaluationCriticalScore is used to filter the view
     /// </summary>
     /// <value>The evaluationCriticalScore is used to filter the view</value>
-    [DataMember(Name = "evaluationCriticalScore", EmitDefaultValue = false)]
+    [JsonPropertyName("evaluationCriticalScore")]
     public NumericRange EvaluationCriticalScore { get; set; }
 
 
@@ -4180,7 +4180,7 @@ public partial class ViewFilter : IEquatable<ViewFilter>
     /// The evaluation form ids are used to filter the view
     /// </summary>
     /// <value>The evaluation form ids are used to filter the view</value>
-    [DataMember(Name = "evaluationFormIds", EmitDefaultValue = false)]
+    [JsonPropertyName("evaluationFormIds")]
     public List<string> EvaluationFormIds { get; set; }
 
 
@@ -4189,7 +4189,7 @@ public partial class ViewFilter : IEquatable<ViewFilter>
     /// The evaluated agent ids are used to filter the view
     /// </summary>
     /// <value>The evaluated agent ids are used to filter the view</value>
-    [DataMember(Name = "evaluatedAgentIds", EmitDefaultValue = false)]
+    [JsonPropertyName("evaluatedAgentIds")]
     public List<string> EvaluatedAgentIds { get; set; }
 
 
@@ -4198,7 +4198,7 @@ public partial class ViewFilter : IEquatable<ViewFilter>
     /// The evaluator ids are used to filter the view
     /// </summary>
     /// <value>The evaluator ids are used to filter the view</value>
-    [DataMember(Name = "evaluatorIds", EmitDefaultValue = false)]
+    [JsonPropertyName("evaluatorIds")]
     public List<string> EvaluatorIds { get; set; }
 
 
@@ -4207,7 +4207,7 @@ public partial class ViewFilter : IEquatable<ViewFilter>
     /// Indicates filtering for transfers
     /// </summary>
     /// <value>Indicates filtering for transfers</value>
-    [DataMember(Name = "transferred", EmitDefaultValue = false)]
+    [JsonPropertyName("transferred")]
     public bool? Transferred { get; set; }
 
 
@@ -4216,7 +4216,7 @@ public partial class ViewFilter : IEquatable<ViewFilter>
     /// Indicates filtering for abandons
     /// </summary>
     /// <value>Indicates filtering for abandons</value>
-    [DataMember(Name = "abandoned", EmitDefaultValue = false)]
+    [JsonPropertyName("abandoned")]
     public bool? Abandoned { get; set; }
 
 
@@ -4225,7 +4225,7 @@ public partial class ViewFilter : IEquatable<ViewFilter>
     /// Indicates filtering for answered interactions
     /// </summary>
     /// <value>Indicates filtering for answered interactions</value>
-    [DataMember(Name = "answered", EmitDefaultValue = false)]
+    [JsonPropertyName("answered")]
     public bool? Answered { get; set; }
 
 
@@ -4234,7 +4234,7 @@ public partial class ViewFilter : IEquatable<ViewFilter>
     /// The message media types used to filter the view
     /// </summary>
     /// <value>The message media types used to filter the view</value>
-    [DataMember(Name = "messageTypes", EmitDefaultValue = false)]
+    [JsonPropertyName("messageTypes")]
     public List<MessageTypesEnum> MessageTypes { get; set; }
 
 
@@ -4243,7 +4243,7 @@ public partial class ViewFilter : IEquatable<ViewFilter>
     /// The divison Ids used to filter the view
     /// </summary>
     /// <value>The divison Ids used to filter the view</value>
-    [DataMember(Name = "divisionIds", EmitDefaultValue = false)]
+    [JsonPropertyName("divisionIds")]
     public List<string> DivisionIds { get; set; }
 
 
@@ -4252,7 +4252,7 @@ public partial class ViewFilter : IEquatable<ViewFilter>
     /// The survey form ids used to filter the view
     /// </summary>
     /// <value>The survey form ids used to filter the view</value>
-    [DataMember(Name = "surveyFormIds", EmitDefaultValue = false)]
+    [JsonPropertyName("surveyFormIds")]
     public List<string> SurveyFormIds { get; set; }
 
 
@@ -4261,7 +4261,7 @@ public partial class ViewFilter : IEquatable<ViewFilter>
     /// The survey total score used to filter the view
     /// </summary>
     /// <value>The survey total score used to filter the view</value>
-    [DataMember(Name = "surveyTotalScore", EmitDefaultValue = false)]
+    [JsonPropertyName("surveyTotalScore")]
     public NumericRange SurveyTotalScore { get; set; }
 
 
@@ -4270,7 +4270,7 @@ public partial class ViewFilter : IEquatable<ViewFilter>
     /// The survey NPS score used to filter the view
     /// </summary>
     /// <value>The survey NPS score used to filter the view</value>
-    [DataMember(Name = "surveyNpsScore", EmitDefaultValue = false)]
+    [JsonPropertyName("surveyNpsScore")]
     public NumericRange SurveyNpsScore { get; set; }
 
 
@@ -4279,7 +4279,7 @@ public partial class ViewFilter : IEquatable<ViewFilter>
     /// The desired range for mos values
     /// </summary>
     /// <value>The desired range for mos values</value>
-    [DataMember(Name = "mos", EmitDefaultValue = false)]
+    [JsonPropertyName("mos")]
     public NumericRange Mos { get; set; }
 
 
@@ -4288,7 +4288,7 @@ public partial class ViewFilter : IEquatable<ViewFilter>
     /// The survey question group score used to filter the view
     /// </summary>
     /// <value>The survey question group score used to filter the view</value>
-    [DataMember(Name = "surveyQuestionGroupScore", EmitDefaultValue = false)]
+    [JsonPropertyName("surveyQuestionGroupScore")]
     public NumericRange SurveyQuestionGroupScore { get; set; }
 
 
@@ -4297,7 +4297,7 @@ public partial class ViewFilter : IEquatable<ViewFilter>
     /// The survey promoter score used to filter the view
     /// </summary>
     /// <value>The survey promoter score used to filter the view</value>
-    [DataMember(Name = "surveyPromoterScore", EmitDefaultValue = false)]
+    [JsonPropertyName("surveyPromoterScore")]
     public NumericRange SurveyPromoterScore { get; set; }
 
 
@@ -4306,7 +4306,7 @@ public partial class ViewFilter : IEquatable<ViewFilter>
     /// The list of survey form context ids used to filter the view
     /// </summary>
     /// <value>The list of survey form context ids used to filter the view</value>
-    [DataMember(Name = "surveyFormContextIds", EmitDefaultValue = false)]
+    [JsonPropertyName("surveyFormContextIds")]
     public List<string> SurveyFormContextIds { get; set; }
 
 
@@ -4315,7 +4315,7 @@ public partial class ViewFilter : IEquatable<ViewFilter>
     /// The list of conversation ids used to filter the view
     /// </summary>
     /// <value>The list of conversation ids used to filter the view</value>
-    [DataMember(Name = "conversationIds", EmitDefaultValue = false)]
+    [JsonPropertyName("conversationIds")]
     public List<string> ConversationIds { get; set; }
 
 
@@ -4324,7 +4324,7 @@ public partial class ViewFilter : IEquatable<ViewFilter>
     /// The list of SIP call ids used to filter the view
     /// </summary>
     /// <value>The list of SIP call ids used to filter the view</value>
-    [DataMember(Name = "sipCallIds", EmitDefaultValue = false)]
+    [JsonPropertyName("sipCallIds")]
     public List<string> SipCallIds { get; set; }
 
 
@@ -4333,7 +4333,7 @@ public partial class ViewFilter : IEquatable<ViewFilter>
     /// Indicates filtering for ended
     /// </summary>
     /// <value>Indicates filtering for ended</value>
-    [DataMember(Name = "isEnded", EmitDefaultValue = false)]
+    [JsonPropertyName("isEnded")]
     public bool? IsEnded { get; set; }
 
 
@@ -4342,7 +4342,7 @@ public partial class ViewFilter : IEquatable<ViewFilter>
     /// Indicates filtering for survey
     /// </summary>
     /// <value>Indicates filtering for survey</value>
-    [DataMember(Name = "isSurveyed", EmitDefaultValue = false)]
+    [JsonPropertyName("isSurveyed")]
     public bool? IsSurveyed { get; set; }
 
 
@@ -4351,7 +4351,7 @@ public partial class ViewFilter : IEquatable<ViewFilter>
     /// The list of survey score ranges used to filter the view
     /// </summary>
     /// <value>The list of survey score ranges used to filter the view</value>
-    [DataMember(Name = "surveyScores", EmitDefaultValue = false)]
+    [JsonPropertyName("surveyScores")]
     public List<NumericRange> SurveyScores { get; set; }
 
 
@@ -4360,7 +4360,7 @@ public partial class ViewFilter : IEquatable<ViewFilter>
     /// The list of promoter score ranges used to filter the view
     /// </summary>
     /// <value>The list of promoter score ranges used to filter the view</value>
-    [DataMember(Name = "promoterScores", EmitDefaultValue = false)]
+    [JsonPropertyName("promoterScores")]
     public List<NumericRange> PromoterScores { get; set; }
 
 
@@ -4369,7 +4369,7 @@ public partial class ViewFilter : IEquatable<ViewFilter>
     /// Indicates filtering for campaign
     /// </summary>
     /// <value>Indicates filtering for campaign</value>
-    [DataMember(Name = "isCampaign", EmitDefaultValue = false)]
+    [JsonPropertyName("isCampaign")]
     public bool? IsCampaign { get; set; }
 
 
@@ -4378,7 +4378,7 @@ public partial class ViewFilter : IEquatable<ViewFilter>
     /// The list of survey statuses used to filter the view
     /// </summary>
     /// <value>The list of survey statuses used to filter the view</value>
-    [DataMember(Name = "surveyStatuses", EmitDefaultValue = false)]
+    [JsonPropertyName("surveyStatuses")]
     public List<string> SurveyStatuses { get; set; }
 
 
@@ -4387,7 +4387,7 @@ public partial class ViewFilter : IEquatable<ViewFilter>
     /// A grouping of conversation level filters
     /// </summary>
     /// <value>A grouping of conversation level filters</value>
-    [DataMember(Name = "conversationProperties", EmitDefaultValue = false)]
+    [JsonPropertyName("conversationProperties")]
     public ConversationProperties ConversationProperties { get; set; }
 
 
@@ -4396,7 +4396,7 @@ public partial class ViewFilter : IEquatable<ViewFilter>
     /// Indicates filtering for blind transferred
     /// </summary>
     /// <value>Indicates filtering for blind transferred</value>
-    [DataMember(Name = "isBlindTransferred", EmitDefaultValue = false)]
+    [JsonPropertyName("isBlindTransferred")]
     public bool? IsBlindTransferred { get; set; }
 
 
@@ -4405,7 +4405,7 @@ public partial class ViewFilter : IEquatable<ViewFilter>
     /// Indicates filtering for consulted
     /// </summary>
     /// <value>Indicates filtering for consulted</value>
-    [DataMember(Name = "isConsulted", EmitDefaultValue = false)]
+    [JsonPropertyName("isConsulted")]
     public bool? IsConsulted { get; set; }
 
 
@@ -4414,7 +4414,7 @@ public partial class ViewFilter : IEquatable<ViewFilter>
     /// Indicates filtering for consult transferred
     /// </summary>
     /// <value>Indicates filtering for consult transferred</value>
-    [DataMember(Name = "isConsultTransferred", EmitDefaultValue = false)]
+    [JsonPropertyName("isConsultTransferred")]
     public bool? IsConsultTransferred { get; set; }
 
 
@@ -4423,7 +4423,7 @@ public partial class ViewFilter : IEquatable<ViewFilter>
     /// The list of remote participants used to filter the view
     /// </summary>
     /// <value>The list of remote participants used to filter the view</value>
-    [DataMember(Name = "remoteParticipants", EmitDefaultValue = false)]
+    [JsonPropertyName("remoteParticipants")]
     public List<string> RemoteParticipants { get; set; }
 
 
@@ -4432,7 +4432,7 @@ public partial class ViewFilter : IEquatable<ViewFilter>
     /// The list of flow Ids
     /// </summary>
     /// <value>The list of flow Ids</value>
-    [DataMember(Name = "flowIds", EmitDefaultValue = false)]
+    [JsonPropertyName("flowIds")]
     public List<string> FlowIds { get; set; }
 
 
@@ -4441,7 +4441,7 @@ public partial class ViewFilter : IEquatable<ViewFilter>
     /// A list of outcome ids of the flow
     /// </summary>
     /// <value>A list of outcome ids of the flow</value>
-    [DataMember(Name = "flowOutcomeIds", EmitDefaultValue = false)]
+    [JsonPropertyName("flowOutcomeIds")]
     public List<string> FlowOutcomeIds { get; set; }
 
 
@@ -4450,7 +4450,7 @@ public partial class ViewFilter : IEquatable<ViewFilter>
     /// A list of outcome values of the flow
     /// </summary>
     /// <value>A list of outcome values of the flow</value>
-    [DataMember(Name = "flowOutcomeValues", EmitDefaultValue = false)]
+    [JsonPropertyName("flowOutcomeValues")]
     public List<FlowOutcomeValuesEnum> FlowOutcomeValues { get; set; }
 
 
@@ -4459,7 +4459,7 @@ public partial class ViewFilter : IEquatable<ViewFilter>
     /// The list of destination types of the flow
     /// </summary>
     /// <value>The list of destination types of the flow</value>
-    [DataMember(Name = "flowDestinationTypes", EmitDefaultValue = false)]
+    [JsonPropertyName("flowDestinationTypes")]
     public List<FlowDestinationTypesEnum> FlowDestinationTypes { get; set; }
 
 
@@ -4468,7 +4468,7 @@ public partial class ViewFilter : IEquatable<ViewFilter>
     /// The list of reasons for the flow to disconnect
     /// </summary>
     /// <value>The list of reasons for the flow to disconnect</value>
-    [DataMember(Name = "flowDisconnectReasons", EmitDefaultValue = false)]
+    [JsonPropertyName("flowDisconnectReasons")]
     public List<FlowDisconnectReasonsEnum> FlowDisconnectReasons { get; set; }
 
 
@@ -4477,7 +4477,7 @@ public partial class ViewFilter : IEquatable<ViewFilter>
     /// A list of types of the flow
     /// </summary>
     /// <value>A list of types of the flow</value>
-    [DataMember(Name = "flowTypes", EmitDefaultValue = false)]
+    [JsonPropertyName("flowTypes")]
     public List<FlowTypesEnum> FlowTypes { get; set; }
 
 
@@ -4486,7 +4486,7 @@ public partial class ViewFilter : IEquatable<ViewFilter>
     /// A list of types of the flow entry
     /// </summary>
     /// <value>A list of types of the flow entry</value>
-    [DataMember(Name = "flowEntryTypes", EmitDefaultValue = false)]
+    [JsonPropertyName("flowEntryTypes")]
     public List<FlowEntryTypesEnum> FlowEntryTypes { get; set; }
 
 
@@ -4495,7 +4495,7 @@ public partial class ViewFilter : IEquatable<ViewFilter>
     /// A list of reasons of flow entry
     /// </summary>
     /// <value>A list of reasons of flow entry</value>
-    [DataMember(Name = "flowEntryReasons", EmitDefaultValue = false)]
+    [JsonPropertyName("flowEntryReasons")]
     public List<string> FlowEntryReasons { get; set; }
 
 
@@ -4504,7 +4504,7 @@ public partial class ViewFilter : IEquatable<ViewFilter>
     /// A list of versions of a flow
     /// </summary>
     /// <value>A list of versions of a flow</value>
-    [DataMember(Name = "flowVersions", EmitDefaultValue = false)]
+    [JsonPropertyName("flowVersions")]
     public List<string> FlowVersions { get; set; }
 
 
@@ -4513,7 +4513,7 @@ public partial class ViewFilter : IEquatable<ViewFilter>
     /// A list of directory group ids
     /// </summary>
     /// <value>A list of directory group ids</value>
-    [DataMember(Name = "groupIds", EmitDefaultValue = false)]
+    [JsonPropertyName("groupIds")]
     public List<string> GroupIds { get; set; }
 
 
@@ -4522,7 +4522,7 @@ public partial class ViewFilter : IEquatable<ViewFilter>
     /// Indicates filtering for journey customer id
     /// </summary>
     /// <value>Indicates filtering for journey customer id</value>
-    [DataMember(Name = "hasJourneyCustomerId", EmitDefaultValue = false)]
+    [JsonPropertyName("hasJourneyCustomerId")]
     public bool? HasJourneyCustomerId { get; set; }
 
 
@@ -4531,7 +4531,7 @@ public partial class ViewFilter : IEquatable<ViewFilter>
     /// Indicates filtering for Journey action map id
     /// </summary>
     /// <value>Indicates filtering for Journey action map id</value>
-    [DataMember(Name = "hasJourneyActionMapId", EmitDefaultValue = false)]
+    [JsonPropertyName("hasJourneyActionMapId")]
     public bool? HasJourneyActionMapId { get; set; }
 
 
@@ -4540,7 +4540,7 @@ public partial class ViewFilter : IEquatable<ViewFilter>
     /// Indicates filtering for Journey visit id
     /// </summary>
     /// <value>Indicates filtering for Journey visit id</value>
-    [DataMember(Name = "hasJourneyVisitId", EmitDefaultValue = false)]
+    [JsonPropertyName("hasJourneyVisitId")]
     public bool? HasJourneyVisitId { get; set; }
 
 
@@ -4549,7 +4549,7 @@ public partial class ViewFilter : IEquatable<ViewFilter>
     /// Indicates filtering for presence of MMS media
     /// </summary>
     /// <value>Indicates filtering for presence of MMS media</value>
-    [DataMember(Name = "hasMedia", EmitDefaultValue = false)]
+    [JsonPropertyName("hasMedia")]
     public bool? HasMedia { get; set; }
 
 
@@ -4558,7 +4558,7 @@ public partial class ViewFilter : IEquatable<ViewFilter>
     /// The role Ids used to filter the view
     /// </summary>
     /// <value>The role Ids used to filter the view</value>
-    [DataMember(Name = "roleIds", EmitDefaultValue = false)]
+    [JsonPropertyName("roleIds")]
     public List<string> RoleIds { get; set; }
 
 
@@ -4567,7 +4567,7 @@ public partial class ViewFilter : IEquatable<ViewFilter>
     /// The report to user IDs used to filter the view
     /// </summary>
     /// <value>The report to user IDs used to filter the view</value>
-    [DataMember(Name = "reportsTos", EmitDefaultValue = false)]
+    [JsonPropertyName("reportsTos")]
     public List<string> ReportsTos { get; set; }
 
 
@@ -4576,7 +4576,7 @@ public partial class ViewFilter : IEquatable<ViewFilter>
     /// The location Ids used to filter the view
     /// </summary>
     /// <value>The location Ids used to filter the view</value>
-    [DataMember(Name = "locationIds", EmitDefaultValue = false)]
+    [JsonPropertyName("locationIds")]
     public List<string> LocationIds { get; set; }
 
 
@@ -4585,7 +4585,7 @@ public partial class ViewFilter : IEquatable<ViewFilter>
     /// A list of flow out types
     /// </summary>
     /// <value>A list of flow out types</value>
-    [DataMember(Name = "flowOutTypes", EmitDefaultValue = false)]
+    [JsonPropertyName("flowOutTypes")]
     public List<string> FlowOutTypes { get; set; }
 
 
@@ -4594,7 +4594,7 @@ public partial class ViewFilter : IEquatable<ViewFilter>
     /// A list of providers
     /// </summary>
     /// <value>A list of providers</value>
-    [DataMember(Name = "providerList", EmitDefaultValue = false)]
+    [JsonPropertyName("providerList")]
     public List<string> ProviderList { get; set; }
 
 
@@ -4603,7 +4603,7 @@ public partial class ViewFilter : IEquatable<ViewFilter>
     /// A list of callback numbers or substrings of numbers (ex: [\&quot;317\&quot;, \&quot;13172222222\&quot;])
     /// </summary>
     /// <value>A list of callback numbers or substrings of numbers (ex: [\&quot;317\&quot;, \&quot;13172222222\&quot;])</value>
-    [DataMember(Name = "callbackNumberList", EmitDefaultValue = false)]
+    [JsonPropertyName("callbackNumberList")]
     public List<string> CallbackNumberList { get; set; }
 
 
@@ -4612,7 +4612,7 @@ public partial class ViewFilter : IEquatable<ViewFilter>
     /// An interval of time to filter for scheduled callbacks. Intervals are represented as an ISO-8601 string. For example: YYYY-MM-DDThh:mm:ss/YYYY-MM-DDThh:mm:ss
     /// </summary>
     /// <value>An interval of time to filter for scheduled callbacks. Intervals are represented as an ISO-8601 string. For example: YYYY-MM-DDThh:mm:ss/YYYY-MM-DDThh:mm:ss</value>
-    [DataMember(Name = "callbackInterval", EmitDefaultValue = false)]
+    [JsonPropertyName("callbackInterval")]
     public string CallbackInterval { get; set; }
 
 
@@ -4621,7 +4621,7 @@ public partial class ViewFilter : IEquatable<ViewFilter>
     /// A list of routing types used
     /// </summary>
     /// <value>A list of routing types used</value>
-    [DataMember(Name = "usedRoutingTypes", EmitDefaultValue = false)]
+    [JsonPropertyName("usedRoutingTypes")]
     public List<UsedRoutingTypesEnum> UsedRoutingTypes { get; set; }
 
 
@@ -4630,7 +4630,7 @@ public partial class ViewFilter : IEquatable<ViewFilter>
     /// A list of routing types requested
     /// </summary>
     /// <value>A list of routing types requested</value>
-    [DataMember(Name = "requestedRoutingTypes", EmitDefaultValue = false)]
+    [JsonPropertyName("requestedRoutingTypes")]
     public List<RequestedRoutingTypesEnum> RequestedRoutingTypes { get; set; }
 
 
@@ -4639,7 +4639,7 @@ public partial class ViewFilter : IEquatable<ViewFilter>
     /// Indicates filtering for agent assist id
     /// </summary>
     /// <value>Indicates filtering for agent assist id</value>
-    [DataMember(Name = "hasAgentAssistId", EmitDefaultValue = false)]
+    [JsonPropertyName("hasAgentAssistId")]
     public bool? HasAgentAssistId { get; set; }
 
 
@@ -4648,7 +4648,7 @@ public partial class ViewFilter : IEquatable<ViewFilter>
     /// A list of transcript contents requested
     /// </summary>
     /// <value>A list of transcript contents requested</value>
-    [DataMember(Name = "transcripts", EmitDefaultValue = false)]
+    [JsonPropertyName("transcripts")]
     public List<Transcripts> Transcripts { get; set; }
 
 
@@ -4657,7 +4657,7 @@ public partial class ViewFilter : IEquatable<ViewFilter>
     /// A list of transcript languages requested
     /// </summary>
     /// <value>A list of transcript languages requested</value>
-    [DataMember(Name = "transcriptLanguages", EmitDefaultValue = false)]
+    [JsonPropertyName("transcriptLanguages")]
     public List<string> TranscriptLanguages { get; set; }
 
 
@@ -4666,7 +4666,7 @@ public partial class ViewFilter : IEquatable<ViewFilter>
     /// A list of participant purpose requested
     /// </summary>
     /// <value>A list of participant purpose requested</value>
-    [DataMember(Name = "participantPurposes", EmitDefaultValue = false)]
+    [JsonPropertyName("participantPurposes")]
     public List<ParticipantPurposesEnum> ParticipantPurposes { get; set; }
 
 
@@ -4675,7 +4675,7 @@ public partial class ViewFilter : IEquatable<ViewFilter>
     /// Indicates filtering for first queue data
     /// </summary>
     /// <value>Indicates filtering for first queue data</value>
-    [DataMember(Name = "showFirstQueue", EmitDefaultValue = false)]
+    [JsonPropertyName("showFirstQueue")]
     public bool? ShowFirstQueue { get; set; }
 
 
@@ -4684,7 +4684,7 @@ public partial class ViewFilter : IEquatable<ViewFilter>
     /// The team ids used to filter the view data
     /// </summary>
     /// <value>The team ids used to filter the view data</value>
-    [DataMember(Name = "teamIds", EmitDefaultValue = false)]
+    [JsonPropertyName("teamIds")]
     public List<string> TeamIds { get; set; }
 
 
@@ -4693,7 +4693,7 @@ public partial class ViewFilter : IEquatable<ViewFilter>
     /// The team ids are used to fetch associated users for the view
     /// </summary>
     /// <value>The team ids are used to fetch associated users for the view</value>
-    [DataMember(Name = "filterUsersByTeamIds", EmitDefaultValue = false)]
+    [JsonPropertyName("filterUsersByTeamIds")]
     public List<string> FilterUsersByTeamIds { get; set; }
 
 
@@ -4702,7 +4702,7 @@ public partial class ViewFilter : IEquatable<ViewFilter>
     /// The journey action map ids are used to fetch action maps for the associated view
     /// </summary>
     /// <value>The journey action map ids are used to fetch action maps for the associated view</value>
-    [DataMember(Name = "journeyActionMapIds", EmitDefaultValue = false)]
+    [JsonPropertyName("journeyActionMapIds")]
     public List<string> JourneyActionMapIds { get; set; }
 
 
@@ -4711,7 +4711,7 @@ public partial class ViewFilter : IEquatable<ViewFilter>
     /// The journey outcome ids are used to fetch outcomes for the associated view
     /// </summary>
     /// <value>The journey outcome ids are used to fetch outcomes for the associated view</value>
-    [DataMember(Name = "journeyOutcomeIds", EmitDefaultValue = false)]
+    [JsonPropertyName("journeyOutcomeIds")]
     public List<string> JourneyOutcomeIds { get; set; }
 
 
@@ -4720,7 +4720,7 @@ public partial class ViewFilter : IEquatable<ViewFilter>
     /// The journey segment ids are used to fetch segments for the associated view
     /// </summary>
     /// <value>The journey segment ids are used to fetch segments for the associated view</value>
-    [DataMember(Name = "journeySegmentIds", EmitDefaultValue = false)]
+    [JsonPropertyName("journeySegmentIds")]
     public List<string> JourneySegmentIds { get; set; }
 
 
@@ -4729,7 +4729,7 @@ public partial class ViewFilter : IEquatable<ViewFilter>
     /// The journey action map types are used to filter action map data for the associated view
     /// </summary>
     /// <value>The journey action map types are used to filter action map data for the associated view</value>
-    [DataMember(Name = "journeyActionMapTypes", EmitDefaultValue = false)]
+    [JsonPropertyName("journeyActionMapTypes")]
     public List<JourneyActionMapTypesEnum> JourneyActionMapTypes { get; set; }
 
 
@@ -4738,7 +4738,7 @@ public partial class ViewFilter : IEquatable<ViewFilter>
     /// The list of development roles used to filter agent development view
     /// </summary>
     /// <value>The list of development roles used to filter agent development view</value>
-    [DataMember(Name = "developmentRoleList", EmitDefaultValue = false)]
+    [JsonPropertyName("developmentRoleList")]
     public List<DevelopmentRoleListEnum> DevelopmentRoleList { get; set; }
 
 
@@ -4747,7 +4747,7 @@ public partial class ViewFilter : IEquatable<ViewFilter>
     /// The list of development types used to filter agent development view
     /// </summary>
     /// <value>The list of development types used to filter agent development view</value>
-    [DataMember(Name = "developmentTypeList", EmitDefaultValue = false)]
+    [JsonPropertyName("developmentTypeList")]
     public List<DevelopmentTypeListEnum> DevelopmentTypeList { get; set; }
 
 
@@ -4756,7 +4756,7 @@ public partial class ViewFilter : IEquatable<ViewFilter>
     /// The list of development status used to filter agent development view
     /// </summary>
     /// <value>The list of development status used to filter agent development view</value>
-    [DataMember(Name = "developmentStatusList", EmitDefaultValue = false)]
+    [JsonPropertyName("developmentStatusList")]
     public List<DevelopmentStatusListEnum> DevelopmentStatusList { get; set; }
 
 
@@ -4765,7 +4765,7 @@ public partial class ViewFilter : IEquatable<ViewFilter>
     /// The list of development moduleIds used to filter agent development view
     /// </summary>
     /// <value>The list of development moduleIds used to filter agent development view</value>
-    [DataMember(Name = "developmentModuleIds", EmitDefaultValue = false)]
+    [JsonPropertyName("developmentModuleIds")]
     public List<string> DevelopmentModuleIds { get; set; }
 
 
@@ -4774,7 +4774,7 @@ public partial class ViewFilter : IEquatable<ViewFilter>
     /// Indicates filtering for development activities
     /// </summary>
     /// <value>Indicates filtering for development activities</value>
-    [DataMember(Name = "developmentActivityOverdue", EmitDefaultValue = false)]
+    [JsonPropertyName("developmentActivityOverdue")]
     public bool? DevelopmentActivityOverdue { get; set; }
 
 
@@ -4783,7 +4783,7 @@ public partial class ViewFilter : IEquatable<ViewFilter>
     /// The customer sentiment score used to filter the view
     /// </summary>
     /// <value>The customer sentiment score used to filter the view</value>
-    [DataMember(Name = "customerSentimentScore", EmitDefaultValue = false)]
+    [JsonPropertyName("customerSentimentScore")]
     public NumericRange CustomerSentimentScore { get; set; }
 
 
@@ -4792,7 +4792,7 @@ public partial class ViewFilter : IEquatable<ViewFilter>
     /// The customer sentiment trend used to filter the view
     /// </summary>
     /// <value>The customer sentiment trend used to filter the view</value>
-    [DataMember(Name = "customerSentimentTrend", EmitDefaultValue = false)]
+    [JsonPropertyName("customerSentimentTrend")]
     public NumericRange CustomerSentimentTrend { get; set; }
 
 
@@ -4801,7 +4801,7 @@ public partial class ViewFilter : IEquatable<ViewFilter>
     /// The list of transfer targets used to filter flow data
     /// </summary>
     /// <value>The list of transfer targets used to filter flow data</value>
-    [DataMember(Name = "flowTransferTargets", EmitDefaultValue = false)]
+    [JsonPropertyName("flowTransferTargets")]
     public List<string> FlowTransferTargets { get; set; }
 
 
@@ -4810,7 +4810,7 @@ public partial class ViewFilter : IEquatable<ViewFilter>
     /// Filter for development name
     /// </summary>
     /// <value>Filter for development name</value>
-    [DataMember(Name = "developmentName", EmitDefaultValue = false)]
+    [JsonPropertyName("developmentName")]
     public string DevelopmentName { get; set; }
 
 
@@ -4819,7 +4819,7 @@ public partial class ViewFilter : IEquatable<ViewFilter>
     /// Represents the topics detected in the transcript
     /// </summary>
     /// <value>Represents the topics detected in the transcript</value>
-    [DataMember(Name = "topicIds", EmitDefaultValue = false)]
+    [JsonPropertyName("topicIds")]
     public List<string> TopicIds { get; set; }
 
 
@@ -4828,7 +4828,7 @@ public partial class ViewFilter : IEquatable<ViewFilter>
     /// The list of external Tags used to filter conversation data
     /// </summary>
     /// <value>The list of external Tags used to filter conversation data</value>
-    [DataMember(Name = "externalTags", EmitDefaultValue = false)]
+    [JsonPropertyName("externalTags")]
     public List<string> ExternalTags { get; set; }
 
 
@@ -4837,7 +4837,7 @@ public partial class ViewFilter : IEquatable<ViewFilter>
     /// Indicates filtering for not responding users
     /// </summary>
     /// <value>Indicates filtering for not responding users</value>
-    [DataMember(Name = "isNotResponding", EmitDefaultValue = false)]
+    [JsonPropertyName("isNotResponding")]
     public bool? IsNotResponding { get; set; }
 
 
@@ -4846,7 +4846,7 @@ public partial class ViewFilter : IEquatable<ViewFilter>
     /// Indicates filtering for the authenticated chat
     /// </summary>
     /// <value>Indicates filtering for the authenticated chat</value>
-    [DataMember(Name = "isAuthenticated", EmitDefaultValue = false)]
+    [JsonPropertyName("isAuthenticated")]
     public bool? IsAuthenticated { get; set; }
 
 
@@ -4855,7 +4855,7 @@ public partial class ViewFilter : IEquatable<ViewFilter>
     /// The list of bot IDs used to filter bot views
     /// </summary>
     /// <value>The list of bot IDs used to filter bot views</value>
-    [DataMember(Name = "botIds", EmitDefaultValue = false)]
+    [JsonPropertyName("botIds")]
     public List<string> BotIds { get; set; }
 
 
@@ -4864,7 +4864,7 @@ public partial class ViewFilter : IEquatable<ViewFilter>
     /// The list of bot versions used to filter bot views
     /// </summary>
     /// <value>The list of bot versions used to filter bot views</value>
-    [DataMember(Name = "botVersions", EmitDefaultValue = false)]
+    [JsonPropertyName("botVersions")]
     public List<string> BotVersions { get; set; }
 
 
@@ -4873,7 +4873,7 @@ public partial class ViewFilter : IEquatable<ViewFilter>
     /// The list of bot message types used to filter bot views
     /// </summary>
     /// <value>The list of bot message types used to filter bot views</value>
-    [DataMember(Name = "botMessageTypes", EmitDefaultValue = false)]
+    [JsonPropertyName("botMessageTypes")]
     public List<BotMessageTypesEnum> BotMessageTypes { get; set; }
 
 
@@ -4882,7 +4882,7 @@ public partial class ViewFilter : IEquatable<ViewFilter>
     /// The list of bot providers used to filter bot views
     /// </summary>
     /// <value>The list of bot providers used to filter bot views</value>
-    [DataMember(Name = "botProviderList", EmitDefaultValue = false)]
+    [JsonPropertyName("botProviderList")]
     public List<BotProviderListEnum> BotProviderList { get; set; }
 
 
@@ -4891,7 +4891,7 @@ public partial class ViewFilter : IEquatable<ViewFilter>
     /// The list of bot products used to filter bot views
     /// </summary>
     /// <value>The list of bot products used to filter bot views</value>
-    [DataMember(Name = "botProductList", EmitDefaultValue = false)]
+    [JsonPropertyName("botProductList")]
     public List<BotProductListEnum> BotProductList { get; set; }
 
 
@@ -4900,7 +4900,7 @@ public partial class ViewFilter : IEquatable<ViewFilter>
     /// The list of bot recognition failure reasons used to filter bot views
     /// </summary>
     /// <value>The list of bot recognition failure reasons used to filter bot views</value>
-    [DataMember(Name = "botRecognitionFailureReasonList", EmitDefaultValue = false)]
+    [JsonPropertyName("botRecognitionFailureReasonList")]
     public List<BotRecognitionFailureReasonListEnum> BotRecognitionFailureReasonList { get; set; }
 
 
@@ -4909,7 +4909,7 @@ public partial class ViewFilter : IEquatable<ViewFilter>
     /// The list of bot intents used to filter bot views
     /// </summary>
     /// <value>The list of bot intents used to filter bot views</value>
-    [DataMember(Name = "botIntentList", EmitDefaultValue = false)]
+    [JsonPropertyName("botIntentList")]
     public List<string> BotIntentList { get; set; }
 
 
@@ -4918,7 +4918,7 @@ public partial class ViewFilter : IEquatable<ViewFilter>
     /// The list of bot final intents used to filter bot views
     /// </summary>
     /// <value>The list of bot final intents used to filter bot views</value>
-    [DataMember(Name = "botFinalIntentList", EmitDefaultValue = false)]
+    [JsonPropertyName("botFinalIntentList")]
     public List<string> BotFinalIntentList { get; set; }
 
 
@@ -4927,7 +4927,7 @@ public partial class ViewFilter : IEquatable<ViewFilter>
     /// The list of bot slots used to filter bot views
     /// </summary>
     /// <value>The list of bot slots used to filter bot views</value>
-    [DataMember(Name = "botSlotList", EmitDefaultValue = false)]
+    [JsonPropertyName("botSlotList")]
     public List<string> BotSlotList { get; set; }
 
 
@@ -4936,7 +4936,7 @@ public partial class ViewFilter : IEquatable<ViewFilter>
     /// The list of bot results used to filter bot views
     /// </summary>
     /// <value>The list of bot results used to filter bot views</value>
-    [DataMember(Name = "botResultList", EmitDefaultValue = false)]
+    [JsonPropertyName("botResultList")]
     public List<BotResultListEnum> BotResultList { get; set; }
 
 
@@ -4945,7 +4945,7 @@ public partial class ViewFilter : IEquatable<ViewFilter>
     /// The list of blocked reason used to filter action map constraints views
     /// </summary>
     /// <value>The list of blocked reason used to filter action map constraints views</value>
-    [DataMember(Name = "blockedReasons", EmitDefaultValue = false)]
+    [JsonPropertyName("blockedReasons")]
     public List<BlockedReasonsEnum> BlockedReasons { get; set; }
 
 
@@ -4954,7 +4954,7 @@ public partial class ViewFilter : IEquatable<ViewFilter>
     /// Indicates filtering for recorded
     /// </summary>
     /// <value>Indicates filtering for recorded</value>
-    [DataMember(Name = "isRecorded", EmitDefaultValue = false)]
+    [JsonPropertyName("isRecorded")]
     public bool? IsRecorded { get; set; }
 
 
@@ -4963,7 +4963,7 @@ public partial class ViewFilter : IEquatable<ViewFilter>
     /// Indicates filtering for evaluation
     /// </summary>
     /// <value>Indicates filtering for evaluation</value>
-    [DataMember(Name = "hasEvaluation", EmitDefaultValue = false)]
+    [JsonPropertyName("hasEvaluation")]
     public bool? HasEvaluation { get; set; }
 
 
@@ -4972,7 +4972,7 @@ public partial class ViewFilter : IEquatable<ViewFilter>
     /// Indicates filtering for scored evaluation
     /// </summary>
     /// <value>Indicates filtering for scored evaluation</value>
-    [DataMember(Name = "hasScoredEvaluation", EmitDefaultValue = false)]
+    [JsonPropertyName("hasScoredEvaluation")]
     public bool? HasScoredEvaluation { get; set; }
 
 
@@ -4981,7 +4981,7 @@ public partial class ViewFilter : IEquatable<ViewFilter>
     /// The list of email delivery statuses used to filter views
     /// </summary>
     /// <value>The list of email delivery statuses used to filter views</value>
-    [DataMember(Name = "emailDeliveryStatusList", EmitDefaultValue = false)]
+    [JsonPropertyName("emailDeliveryStatusList")]
     public List<EmailDeliveryStatusListEnum> EmailDeliveryStatusList { get; set; }
 
 
@@ -4990,7 +4990,7 @@ public partial class ViewFilter : IEquatable<ViewFilter>
     /// Indicates filtering for agent owned callback interactions
     /// </summary>
     /// <value>Indicates filtering for agent owned callback interactions</value>
-    [DataMember(Name = "isAgentOwnedCallback", EmitDefaultValue = false)]
+    [JsonPropertyName("isAgentOwnedCallback")]
     public bool? IsAgentOwnedCallback { get; set; }
 
 
@@ -4999,7 +4999,7 @@ public partial class ViewFilter : IEquatable<ViewFilter>
     /// The list of callback owners used to filter interactions
     /// </summary>
     /// <value>The list of callback owners used to filter interactions</value>
-    [DataMember(Name = "agentCallbackOwnerIds", EmitDefaultValue = false)]
+    [JsonPropertyName("agentCallbackOwnerIds")]
     public List<string> AgentCallbackOwnerIds { get; set; }
 
 
@@ -5008,7 +5008,7 @@ public partial class ViewFilter : IEquatable<ViewFilter>
     /// The list of transcript topics requested in filter
     /// </summary>
     /// <value>The list of transcript topics requested in filter</value>
-    [DataMember(Name = "transcriptTopics", EmitDefaultValue = false)]
+    [JsonPropertyName("transcriptTopics")]
     public List<TranscriptTopics> TranscriptTopics { get; set; }
 
 
@@ -5017,7 +5017,7 @@ public partial class ViewFilter : IEquatable<ViewFilter>
     /// The list of frequency cap reasons to filter offer constraints
     /// </summary>
     /// <value>The list of frequency cap reasons to filter offer constraints</value>
-    [DataMember(Name = "journeyFrequencyCapReasons", EmitDefaultValue = false)]
+    [JsonPropertyName("journeyFrequencyCapReasons")]
     public List<string> JourneyFrequencyCapReasons { get; set; }
 
 
@@ -5026,7 +5026,7 @@ public partial class ViewFilter : IEquatable<ViewFilter>
     /// The list of blocking action maps to filter offer constraints
     /// </summary>
     /// <value>The list of blocking action maps to filter offer constraints</value>
-    [DataMember(Name = "journeyBlockingActionMapIds", EmitDefaultValue = false)]
+    [JsonPropertyName("journeyBlockingActionMapIds")]
     public List<string> JourneyBlockingActionMapIds { get; set; }
 
 
@@ -5035,7 +5035,7 @@ public partial class ViewFilter : IEquatable<ViewFilter>
     /// The list of action targets to filter offer constraints
     /// </summary>
     /// <value>The list of action targets to filter offer constraints</value>
-    [DataMember(Name = "journeyActionTargetIds", EmitDefaultValue = false)]
+    [JsonPropertyName("journeyActionTargetIds")]
     public List<string> JourneyActionTargetIds { get; set; }
 
 
@@ -5044,7 +5044,7 @@ public partial class ViewFilter : IEquatable<ViewFilter>
     /// The list of blocking schedule groups to filter offer constraints
     /// </summary>
     /// <value>The list of blocking schedule groups to filter offer constraints</value>
-    [DataMember(Name = "journeyBlockingScheduleGroupIds", EmitDefaultValue = false)]
+    [JsonPropertyName("journeyBlockingScheduleGroupIds")]
     public List<string> JourneyBlockingScheduleGroupIds { get; set; }
 
 
@@ -5053,7 +5053,7 @@ public partial class ViewFilter : IEquatable<ViewFilter>
     /// The list of emergency schedule groups to filter offer constraints
     /// </summary>
     /// <value>The list of emergency schedule groups to filter offer constraints</value>
-    [DataMember(Name = "journeyBlockingEmergencyScheduleGroupIds", EmitDefaultValue = false)]
+    [JsonPropertyName("journeyBlockingEmergencyScheduleGroupIds")]
     public List<string> JourneyBlockingEmergencyScheduleGroupIds { get; set; }
 
 
@@ -5062,7 +5062,7 @@ public partial class ViewFilter : IEquatable<ViewFilter>
     /// The list of url equal conditions to filter offer constraints
     /// </summary>
     /// <value>The list of url equal conditions to filter offer constraints</value>
-    [DataMember(Name = "journeyUrlEqualConditions", EmitDefaultValue = false)]
+    [JsonPropertyName("journeyUrlEqualConditions")]
     public List<string> JourneyUrlEqualConditions { get; set; }
 
 
@@ -5071,7 +5071,7 @@ public partial class ViewFilter : IEquatable<ViewFilter>
     /// The list of url not equal conditions to filter offer constraints
     /// </summary>
     /// <value>The list of url not equal conditions to filter offer constraints</value>
-    [DataMember(Name = "journeyUrlNotEqualConditions", EmitDefaultValue = false)]
+    [JsonPropertyName("journeyUrlNotEqualConditions")]
     public List<string> JourneyUrlNotEqualConditions { get; set; }
 
 
@@ -5080,7 +5080,7 @@ public partial class ViewFilter : IEquatable<ViewFilter>
     /// The list of url starts with conditions to filter offer constraints
     /// </summary>
     /// <value>The list of url starts with conditions to filter offer constraints</value>
-    [DataMember(Name = "journeyUrlStartsWithConditions", EmitDefaultValue = false)]
+    [JsonPropertyName("journeyUrlStartsWithConditions")]
     public List<string> JourneyUrlStartsWithConditions { get; set; }
 
 
@@ -5089,7 +5089,7 @@ public partial class ViewFilter : IEquatable<ViewFilter>
     /// The list of url ends with conditions to filter offer constraints
     /// </summary>
     /// <value>The list of url ends with conditions to filter offer constraints</value>
-    [DataMember(Name = "journeyUrlEndsWithConditions", EmitDefaultValue = false)]
+    [JsonPropertyName("journeyUrlEndsWithConditions")]
     public List<string> JourneyUrlEndsWithConditions { get; set; }
 
 
@@ -5098,7 +5098,7 @@ public partial class ViewFilter : IEquatable<ViewFilter>
     /// The list of url contains any conditions to filter offer constraints
     /// </summary>
     /// <value>The list of url contains any conditions to filter offer constraints</value>
-    [DataMember(Name = "journeyUrlContainsAnyConditions", EmitDefaultValue = false)]
+    [JsonPropertyName("journeyUrlContainsAnyConditions")]
     public List<string> JourneyUrlContainsAnyConditions { get; set; }
 
 
@@ -5107,7 +5107,7 @@ public partial class ViewFilter : IEquatable<ViewFilter>
     /// The list of url not contains any conditions to filter offer constraints
     /// </summary>
     /// <value>The list of url not contains any conditions to filter offer constraints</value>
-    [DataMember(Name = "journeyUrlNotContainsAnyConditions", EmitDefaultValue = false)]
+    [JsonPropertyName("journeyUrlNotContainsAnyConditions")]
     public List<string> JourneyUrlNotContainsAnyConditions { get; set; }
 
 
@@ -5116,7 +5116,7 @@ public partial class ViewFilter : IEquatable<ViewFilter>
     /// The list of url contains all conditions to filter offer constraints
     /// </summary>
     /// <value>The list of url contains all conditions to filter offer constraints</value>
-    [DataMember(Name = "journeyUrlContainsAllConditions", EmitDefaultValue = false)]
+    [JsonPropertyName("journeyUrlContainsAllConditions")]
     public List<string> JourneyUrlContainsAllConditions { get; set; }
 
 
@@ -5125,7 +5125,7 @@ public partial class ViewFilter : IEquatable<ViewFilter>
     /// The list of url not contains all conditions to filter offer constraints
     /// </summary>
     /// <value>The list of url not contains all conditions to filter offer constraints</value>
-    [DataMember(Name = "journeyUrlNotContainsAllConditions", EmitDefaultValue = false)]
+    [JsonPropertyName("journeyUrlNotContainsAllConditions")]
     public List<string> JourneyUrlNotContainsAllConditions { get; set; }
 
 
@@ -5134,7 +5134,7 @@ public partial class ViewFilter : IEquatable<ViewFilter>
     /// The list of flow milestones to filter exports
     /// </summary>
     /// <value>The list of flow milestones to filter exports</value>
-    [DataMember(Name = "flowMilestoneIds", EmitDefaultValue = false)]
+    [JsonPropertyName("flowMilestoneIds")]
     public List<string> FlowMilestoneIds { get; set; }
 
 
@@ -5143,7 +5143,7 @@ public partial class ViewFilter : IEquatable<ViewFilter>
     /// Filter to indicate if Agent passed assessment or not
     /// </summary>
     /// <value>Filter to indicate if Agent passed assessment or not</value>
-    [DataMember(Name = "isAssessmentPassed", EmitDefaultValue = false)]
+    [JsonPropertyName("isAssessmentPassed")]
     public bool? IsAssessmentPassed { get; set; }
 
 
@@ -5152,7 +5152,7 @@ public partial class ViewFilter : IEquatable<ViewFilter>
     /// The list to filter based on Brands (Bot/User/Agent) or End User who initiated the first message in the conversation
     /// </summary>
     /// <value>The list to filter based on Brands (Bot/User/Agent) or End User who initiated the first message in the conversation</value>
-    [DataMember(Name = "conversationInitiators", EmitDefaultValue = false)]
+    [JsonPropertyName("conversationInitiators")]
     public List<string> ConversationInitiators { get; set; }
 
 
@@ -5161,7 +5161,7 @@ public partial class ViewFilter : IEquatable<ViewFilter>
     /// Indicates if the customer has participated in an initiated conversation
     /// </summary>
     /// <value>Indicates if the customer has participated in an initiated conversation</value>
-    [DataMember(Name = "hasCustomerParticipated", EmitDefaultValue = false)]
+    [JsonPropertyName("hasCustomerParticipated")]
     public bool? HasCustomerParticipated { get; set; }
 
 
@@ -5170,7 +5170,7 @@ public partial class ViewFilter : IEquatable<ViewFilter>
     /// Filter to indicate if interaction was ACD or non-ACD
     /// </summary>
     /// <value>Filter to indicate if interaction was ACD or non-ACD</value>
-    [DataMember(Name = "isAcdInteraction", EmitDefaultValue = false)]
+    [JsonPropertyName("isAcdInteraction")]
     public bool? IsAcdInteraction { get; set; }
 
 
@@ -5179,7 +5179,7 @@ public partial class ViewFilter : IEquatable<ViewFilter>
     /// Filters to indicate if interaction has FAX
     /// </summary>
     /// <value>Filters to indicate if interaction has FAX</value>
-    [DataMember(Name = "hasFax", EmitDefaultValue = false)]
+    [JsonPropertyName("hasFax")]
     public bool? HasFax { get; set; }
 
 
@@ -5188,7 +5188,7 @@ public partial class ViewFilter : IEquatable<ViewFilter>
     /// The list of Data Action IDs 
     /// </summary>
     /// <value>The list of Data Action IDs </value>
-    [DataMember(Name = "dataActionIds", EmitDefaultValue = false)]
+    [JsonPropertyName("dataActionIds")]
     public List<string> DataActionIds { get; set; }
 
 
@@ -5197,7 +5197,7 @@ public partial class ViewFilter : IEquatable<ViewFilter>
     /// Deprecated - Please use integrationIds instead
     /// </summary>
     /// <value>Deprecated - Please use integrationIds instead</value>
-    [DataMember(Name = "actionCategoryName", EmitDefaultValue = false)]
+    [JsonPropertyName("actionCategoryName")]
     public string ActionCategoryName { get; set; }
 
 
@@ -5206,7 +5206,7 @@ public partial class ViewFilter : IEquatable<ViewFilter>
     /// The list of integration IDs for Data Action
     /// </summary>
     /// <value>The list of integration IDs for Data Action</value>
-    [DataMember(Name = "integrationIds", EmitDefaultValue = false)]
+    [JsonPropertyName("integrationIds")]
     public List<string> IntegrationIds { get; set; }
 
 
@@ -5215,7 +5215,7 @@ public partial class ViewFilter : IEquatable<ViewFilter>
     /// The list of Response codes for Data Action
     /// </summary>
     /// <value>The list of Response codes for Data Action</value>
-    [DataMember(Name = "responseStatuses", EmitDefaultValue = false)]
+    [JsonPropertyName("responseStatuses")]
     public List<string> ResponseStatuses { get; set; }
 
 
@@ -5226,7 +5226,7 @@ public partial class ViewFilter : IEquatable<ViewFilter>
     /// Filter to indicate whether the dashboard is favorite or unfavorite.
     /// </summary>
     /// <value>Filter to indicate whether the dashboard is favorite or unfavorite.</value>
-    [DataMember(Name = "favouriteDashboard", EmitDefaultValue = false)]
+    [JsonPropertyName("favouriteDashboard")]
     public bool? FavouriteDashboard { get; set; }
 
 
@@ -5235,7 +5235,7 @@ public partial class ViewFilter : IEquatable<ViewFilter>
     /// Filter to indicate the dashboard owned by the user.
     /// </summary>
     /// <value>Filter to indicate the dashboard owned by the user.</value>
-    [DataMember(Name = "myDashboard", EmitDefaultValue = false)]
+    [JsonPropertyName("myDashboard")]
     public bool? MyDashboard { get; set; }
 
 
@@ -5244,7 +5244,7 @@ public partial class ViewFilter : IEquatable<ViewFilter>
     /// The list of agent errors that are related to station
     /// </summary>
     /// <value>The list of agent errors that are related to station</value>
-    [DataMember(Name = "stationErrors", EmitDefaultValue = false)]
+    [JsonPropertyName("stationErrors")]
     public List<string> StationErrors { get; set; }
 
 
@@ -5253,7 +5253,7 @@ public partial class ViewFilter : IEquatable<ViewFilter>
     /// The canonical contact ids are used to filter the view
     /// </summary>
     /// <value>The canonical contact ids are used to filter the view</value>
-    [DataMember(Name = "canonicalContactIds", EmitDefaultValue = false)]
+    [JsonPropertyName("canonicalContactIds")]
     public List<string> CanonicalContactIds { get; set; }
 
 
@@ -5262,7 +5262,7 @@ public partial class ViewFilter : IEquatable<ViewFilter>
     /// The list of Alert Rule IDs
     /// </summary>
     /// <value>The list of Alert Rule IDs</value>
-    [DataMember(Name = "alertRuleIds", EmitDefaultValue = false)]
+    [JsonPropertyName("alertRuleIds")]
     public List<string> AlertRuleIds { get; set; }
 
 
@@ -5271,7 +5271,7 @@ public partial class ViewFilter : IEquatable<ViewFilter>
     /// The list of Evaluation Form Context IDs
     /// </summary>
     /// <value>The list of Evaluation Form Context IDs</value>
-    [DataMember(Name = "evaluationFormContextIds", EmitDefaultValue = false)]
+    [JsonPropertyName("evaluationFormContextIds")]
     public List<string> EvaluationFormContextIds { get; set; }
 
 
@@ -5280,7 +5280,7 @@ public partial class ViewFilter : IEquatable<ViewFilter>
     /// The evaluation statuses that are used to filter the view
     /// </summary>
     /// <value>The evaluation statuses that are used to filter the view</value>
-    [DataMember(Name = "evaluationStatuses", EmitDefaultValue = false)]
+    [JsonPropertyName("evaluationStatuses")]
     public List<EvaluationStatusesEnum> EvaluationStatuses { get; set; }
 
 
@@ -5289,7 +5289,7 @@ public partial class ViewFilter : IEquatable<ViewFilter>
     /// The list of Workbin IDs
     /// </summary>
     /// <value>The list of Workbin IDs</value>
-    [DataMember(Name = "workbinIds", EmitDefaultValue = false)]
+    [JsonPropertyName("workbinIds")]
     public List<string> WorkbinIds { get; set; }
 
 
@@ -5298,7 +5298,7 @@ public partial class ViewFilter : IEquatable<ViewFilter>
     /// The list of Worktype IDs
     /// </summary>
     /// <value>The list of Worktype IDs</value>
-    [DataMember(Name = "worktypeIds", EmitDefaultValue = false)]
+    [JsonPropertyName("worktypeIds")]
     public List<string> WorktypeIds { get; set; }
 
 
@@ -5307,7 +5307,7 @@ public partial class ViewFilter : IEquatable<ViewFilter>
     /// The list of Workitem IDs
     /// </summary>
     /// <value>The list of Workitem IDs</value>
-    [DataMember(Name = "workitemIds", EmitDefaultValue = false)]
+    [JsonPropertyName("workitemIds")]
     public List<string> WorkitemIds { get; set; }
 
 
@@ -5316,7 +5316,7 @@ public partial class ViewFilter : IEquatable<ViewFilter>
     /// The list of Workitem Assignee IDs
     /// </summary>
     /// <value>The list of Workitem Assignee IDs</value>
-    [DataMember(Name = "workitemAssigneeIds", EmitDefaultValue = false)]
+    [JsonPropertyName("workitemAssigneeIds")]
     public List<string> WorkitemAssigneeIds { get; set; }
 
 
@@ -5325,7 +5325,7 @@ public partial class ViewFilter : IEquatable<ViewFilter>
     /// The list of Workitem Statuses IDs
     /// </summary>
     /// <value>The list of Workitem Statuses IDs</value>
-    [DataMember(Name = "workitemStatuses", EmitDefaultValue = false)]
+    [JsonPropertyName("workitemStatuses")]
     public List<string> WorkitemStatuses { get; set; }
 
 
@@ -5334,7 +5334,7 @@ public partial class ViewFilter : IEquatable<ViewFilter>
     /// Deprecated - Use hasPciData or hasPiiData instead.
     /// </summary>
     /// <value>Deprecated - Use hasPciData or hasPiiData instead.</value>
-    [DataMember(Name = "isAnalyzedForSensitiveData", EmitDefaultValue = false)]
+    [JsonPropertyName("isAnalyzedForSensitiveData")]
     public bool? IsAnalyzedForSensitiveData { get; set; }
 
 
@@ -5343,7 +5343,7 @@ public partial class ViewFilter : IEquatable<ViewFilter>
     /// Deprecated. Use hasPciData or hasPiiData instead.
     /// </summary>
     /// <value>Deprecated. Use hasPciData or hasPiiData instead.</value>
-    [DataMember(Name = "hasSensitiveData", EmitDefaultValue = false)]
+    [JsonPropertyName("hasSensitiveData")]
     public bool? HasSensitiveData { get; set; }
 
 
@@ -5352,7 +5352,7 @@ public partial class ViewFilter : IEquatable<ViewFilter>
     /// Filter to indicate the transcript contains Pci data.
     /// </summary>
     /// <value>Filter to indicate the transcript contains Pci data.</value>
-    [DataMember(Name = "hasPciData", EmitDefaultValue = false)]
+    [JsonPropertyName("hasPciData")]
     public bool? HasPciData { get; set; }
 
 
@@ -5361,7 +5361,7 @@ public partial class ViewFilter : IEquatable<ViewFilter>
     /// Filter to indicate the transcript contains Pii data.
     /// </summary>
     /// <value>Filter to indicate the transcript contains Pii data.</value>
-    [DataMember(Name = "hasPiiData", EmitDefaultValue = false)]
+    [JsonPropertyName("hasPiiData")]
     public bool? HasPiiData { get; set; }
 
 
@@ -5370,7 +5370,7 @@ public partial class ViewFilter : IEquatable<ViewFilter>
     /// Filter for Sub Path
     /// </summary>
     /// <value>Filter for Sub Path</value>
-    [DataMember(Name = "subPath", EmitDefaultValue = false)]
+    [JsonPropertyName("subPath")]
     public string SubPath { get; set; }
 
 
@@ -5381,7 +5381,7 @@ public partial class ViewFilter : IEquatable<ViewFilter>
     /// Filter to indicate if the customer cleared the conversation.
     /// </summary>
     /// <value>Filter to indicate if the customer cleared the conversation.</value>
-    [DataMember(Name = "isClearedByCustomer", EmitDefaultValue = false)]
+    [JsonPropertyName("isClearedByCustomer")]
     public bool? IsClearedByCustomer { get; set; }
 
 
@@ -5390,7 +5390,7 @@ public partial class ViewFilter : IEquatable<ViewFilter>
     /// The evaluation assignee ids that are used to filter the view.
     /// </summary>
     /// <value>The evaluation assignee ids that are used to filter the view.</value>
-    [DataMember(Name = "evaluationAssigneeIds", EmitDefaultValue = false)]
+    [JsonPropertyName("evaluationAssigneeIds")]
     public List<string> EvaluationAssigneeIds { get; set; }
 
 
@@ -5399,7 +5399,7 @@ public partial class ViewFilter : IEquatable<ViewFilter>
     /// Filter to indicate that the user has no assigned evaluation.
     /// </summary>
     /// <value>Filter to indicate that the user has no assigned evaluation.</value>
-    [DataMember(Name = "evaluationAssigned", EmitDefaultValue = false)]
+    [JsonPropertyName("evaluationAssigned")]
     public bool? EvaluationAssigned { get; set; }
 
 
@@ -5408,7 +5408,7 @@ public partial class ViewFilter : IEquatable<ViewFilter>
     /// The assistant ids that are used to filter the view.
     /// </summary>
     /// <value>The assistant ids that are used to filter the view.</value>
-    [DataMember(Name = "assistantIds", EmitDefaultValue = false)]
+    [JsonPropertyName("assistantIds")]
     public List<string> AssistantIds { get; set; }
 
 
@@ -5417,7 +5417,7 @@ public partial class ViewFilter : IEquatable<ViewFilter>
     /// The knowledge base ids that are used to filter the view.
     /// </summary>
     /// <value>The knowledge base ids that are used to filter the view.</value>
-    [DataMember(Name = "knowledgeBaseIds", EmitDefaultValue = false)]
+    [JsonPropertyName("knowledgeBaseIds")]
     public List<string> KnowledgeBaseIds { get; set; }
 
 
@@ -5426,7 +5426,7 @@ public partial class ViewFilter : IEquatable<ViewFilter>
     /// Filter to indicate if the interactions are parked.
     /// </summary>
     /// <value>Filter to indicate if the interactions are parked.</value>
-    [DataMember(Name = "isParked", EmitDefaultValue = false)]
+    [JsonPropertyName("isParked")]
     public bool? IsParked { get; set; }
 
 
@@ -5435,7 +5435,7 @@ public partial class ViewFilter : IEquatable<ViewFilter>
     /// The agentEmpathyScore is used to filter the view
     /// </summary>
     /// <value>The agentEmpathyScore is used to filter the view</value>
-    [DataMember(Name = "agentEmpathyScore", EmitDefaultValue = false)]
+    [JsonPropertyName("agentEmpathyScore")]
     public NumericRange AgentEmpathyScore { get; set; }
 
 
@@ -5444,7 +5444,7 @@ public partial class ViewFilter : IEquatable<ViewFilter>
     /// The surveyTypes is used to filter the view
     /// </summary>
     /// <value>The surveyTypes is used to filter the view</value>
-    [DataMember(Name = "surveyTypes", EmitDefaultValue = false)]
+    [JsonPropertyName("surveyTypes")]
     public List<SurveyTypesEnum> SurveyTypes { get; set; }
 
 
@@ -5453,7 +5453,7 @@ public partial class ViewFilter : IEquatable<ViewFilter>
     /// The list of Survey Response Status
     /// </summary>
     /// <value>The list of Survey Response Status</value>
-    [DataMember(Name = "surveyResponseStatuses", EmitDefaultValue = false)]
+    [JsonPropertyName("surveyResponseStatuses")]
     public List<SurveyResponseStatusesEnum> SurveyResponseStatuses { get; set; }
 
 
@@ -5462,7 +5462,7 @@ public partial class ViewFilter : IEquatable<ViewFilter>
     /// The botFlowTypes is used to filter the view
     /// </summary>
     /// <value>The botFlowTypes is used to filter the view</value>
-    [DataMember(Name = "botFlowTypes", EmitDefaultValue = false)]
+    [JsonPropertyName("botFlowTypes")]
     public List<BotFlowTypesEnum> BotFlowTypes { get; set; }
 
 
@@ -5471,7 +5471,7 @@ public partial class ViewFilter : IEquatable<ViewFilter>
     /// The agent talk durations in milliseconds used to filter the view
     /// </summary>
     /// <value>The agent talk durations in milliseconds used to filter the view</value>
-    [DataMember(Name = "agentTalkDurationMilliseconds", EmitDefaultValue = false)]
+    [JsonPropertyName("agentTalkDurationMilliseconds")]
     public List<NumericRange> AgentTalkDurationMilliseconds { get; set; }
 
 
@@ -5480,7 +5480,7 @@ public partial class ViewFilter : IEquatable<ViewFilter>
     /// The customer talk durations in milliseconds used to filter the view
     /// </summary>
     /// <value>The customer talk durations in milliseconds used to filter the view</value>
-    [DataMember(Name = "customerTalkDurationMilliseconds", EmitDefaultValue = false)]
+    [JsonPropertyName("customerTalkDurationMilliseconds")]
     public List<NumericRange> CustomerTalkDurationMilliseconds { get; set; }
 
 
@@ -5489,7 +5489,7 @@ public partial class ViewFilter : IEquatable<ViewFilter>
     /// The overtalk durations in milliseconds used to filter the view
     /// </summary>
     /// <value>The overtalk durations in milliseconds used to filter the view</value>
-    [DataMember(Name = "overtalkDurationMilliseconds", EmitDefaultValue = false)]
+    [JsonPropertyName("overtalkDurationMilliseconds")]
     public List<NumericRange> OvertalkDurationMilliseconds { get; set; }
 
 
@@ -5498,7 +5498,7 @@ public partial class ViewFilter : IEquatable<ViewFilter>
     /// The silence durations in milliseconds used to filter the view
     /// </summary>
     /// <value>The silence durations in milliseconds used to filter the view</value>
-    [DataMember(Name = "silenceDurationMilliseconds", EmitDefaultValue = false)]
+    [JsonPropertyName("silenceDurationMilliseconds")]
     public List<NumericRange> SilenceDurationMilliseconds { get; set; }
 
 
@@ -5507,7 +5507,7 @@ public partial class ViewFilter : IEquatable<ViewFilter>
     /// The acd durations in milliseconds used to filter the view
     /// </summary>
     /// <value>The acd durations in milliseconds used to filter the view</value>
-    [DataMember(Name = "acdDurationMilliseconds", EmitDefaultValue = false)]
+    [JsonPropertyName("acdDurationMilliseconds")]
     public List<NumericRange> AcdDurationMilliseconds { get; set; }
 
 
@@ -5516,7 +5516,7 @@ public partial class ViewFilter : IEquatable<ViewFilter>
     /// The ivr durations in milliseconds used to filter the view
     /// </summary>
     /// <value>The ivr durations in milliseconds used to filter the view</value>
-    [DataMember(Name = "ivrDurationMilliseconds", EmitDefaultValue = false)]
+    [JsonPropertyName("ivrDurationMilliseconds")]
     public List<NumericRange> IvrDurationMilliseconds { get; set; }
 
 
@@ -5525,7 +5525,7 @@ public partial class ViewFilter : IEquatable<ViewFilter>
     /// The other (hold/music) durations in milliseconds used to filter the view
     /// </summary>
     /// <value>The other (hold/music) durations in milliseconds used to filter the view</value>
-    [DataMember(Name = "otherDurationMilliseconds", EmitDefaultValue = false)]
+    [JsonPropertyName("otherDurationMilliseconds")]
     public List<NumericRange> OtherDurationMilliseconds { get; set; }
 
 
@@ -5534,7 +5534,7 @@ public partial class ViewFilter : IEquatable<ViewFilter>
     /// The agent talk percentage used to filter the view
     /// </summary>
     /// <value>The agent talk percentage used to filter the view</value>
-    [DataMember(Name = "agentTalkPercentage", EmitDefaultValue = false)]
+    [JsonPropertyName("agentTalkPercentage")]
     public NumericRange AgentTalkPercentage { get; set; }
 
 
@@ -5543,7 +5543,7 @@ public partial class ViewFilter : IEquatable<ViewFilter>
     /// The customer talk percentage used to filter the view
     /// </summary>
     /// <value>The customer talk percentage used to filter the view</value>
-    [DataMember(Name = "customerTalkPercentage", EmitDefaultValue = false)]
+    [JsonPropertyName("customerTalkPercentage")]
     public NumericRange CustomerTalkPercentage { get; set; }
 
 
@@ -5552,7 +5552,7 @@ public partial class ViewFilter : IEquatable<ViewFilter>
     /// The overtalk percentage used to filter the view
     /// </summary>
     /// <value>The overtalk percentage used to filter the view</value>
-    [DataMember(Name = "overtalkPercentage", EmitDefaultValue = false)]
+    [JsonPropertyName("overtalkPercentage")]
     public NumericRange OvertalkPercentage { get; set; }
 
 
@@ -5561,7 +5561,7 @@ public partial class ViewFilter : IEquatable<ViewFilter>
     /// The silence percentage used to filter the view
     /// </summary>
     /// <value>The silence percentage used to filter the view</value>
-    [DataMember(Name = "silencePercentage", EmitDefaultValue = false)]
+    [JsonPropertyName("silencePercentage")]
     public NumericRange SilencePercentage { get; set; }
 
 
@@ -5570,7 +5570,7 @@ public partial class ViewFilter : IEquatable<ViewFilter>
     /// The acd percentage used to filter the view
     /// </summary>
     /// <value>The acd percentage used to filter the view</value>
-    [DataMember(Name = "acdPercentage", EmitDefaultValue = false)]
+    [JsonPropertyName("acdPercentage")]
     public NumericRange AcdPercentage { get; set; }
 
 
@@ -5579,7 +5579,7 @@ public partial class ViewFilter : IEquatable<ViewFilter>
     /// The ivr percentage used to filter the view
     /// </summary>
     /// <value>The ivr percentage used to filter the view</value>
-    [DataMember(Name = "ivrPercentage", EmitDefaultValue = false)]
+    [JsonPropertyName("ivrPercentage")]
     public NumericRange IvrPercentage { get; set; }
 
 
@@ -5588,7 +5588,7 @@ public partial class ViewFilter : IEquatable<ViewFilter>
     /// The other (hold/music percentage used to filter the view
     /// </summary>
     /// <value>The other (hold/music percentage used to filter the view</value>
-    [DataMember(Name = "otherPercentage", EmitDefaultValue = false)]
+    [JsonPropertyName("otherPercentage")]
     public NumericRange OtherPercentage { get; set; }
 
 
@@ -5597,7 +5597,7 @@ public partial class ViewFilter : IEquatable<ViewFilter>
     /// The overtalk instance range used to filter the view
     /// </summary>
     /// <value>The overtalk instance range used to filter the view</value>
-    [DataMember(Name = "overtalkInstances", EmitDefaultValue = false)]
+    [JsonPropertyName("overtalkInstances")]
     public NumericRange OvertalkInstances { get; set; }
 
 
@@ -5606,7 +5606,7 @@ public partial class ViewFilter : IEquatable<ViewFilter>
     /// Filter to indicate if the screen is recorded
     /// </summary>
     /// <value>Filter to indicate if the screen is recorded</value>
-    [DataMember(Name = "isScreenRecorded", EmitDefaultValue = false)]
+    [JsonPropertyName("isScreenRecorded")]
     public bool? IsScreenRecorded { get; set; }
 
 
@@ -5615,7 +5615,7 @@ public partial class ViewFilter : IEquatable<ViewFilter>
     /// The list of Screen Monitor User Ids
     /// </summary>
     /// <value>The list of Screen Monitor User Ids</value>
-    [DataMember(Name = "screenMonitorUserIds", EmitDefaultValue = false)]
+    [JsonPropertyName("screenMonitorUserIds")]
     public List<string> ScreenMonitorUserIds { get; set; }
 
 
@@ -5630,7 +5630,7 @@ public partial class ViewFilter : IEquatable<ViewFilter>
     /// The transcript durations in milliseconds used to filter the view
     /// </summary>
     /// <value>The transcript durations in milliseconds used to filter the view</value>
-    [DataMember(Name = "transcriptDurationMilliseconds", EmitDefaultValue = false)]
+    [JsonPropertyName("transcriptDurationMilliseconds")]
     public List<NumericRange> TranscriptDurationMilliseconds { get; set; }
 
 
@@ -5639,7 +5639,7 @@ public partial class ViewFilter : IEquatable<ViewFilter>
     /// The list of workitem status with worktype
     /// </summary>
     /// <value>The list of workitem status with worktype</value>
-    [DataMember(Name = "workitemsStatuses", EmitDefaultValue = false)]
+    [JsonPropertyName("workitemsStatuses")]
     public List<WorkitemStatusFilter> WorkitemsStatuses { get; set; }
 
 
@@ -5648,7 +5648,7 @@ public partial class ViewFilter : IEquatable<ViewFilter>
     /// List of countries for social filtering
     /// </summary>
     /// <value>List of countries for social filtering</value>
-    [DataMember(Name = "socialCountries", EmitDefaultValue = false)]
+    [JsonPropertyName("socialCountries")]
     public List<string> SocialCountries { get; set; }
 
 
@@ -5657,7 +5657,7 @@ public partial class ViewFilter : IEquatable<ViewFilter>
     /// List of languages for social filtering
     /// </summary>
     /// <value>List of languages for social filtering</value>
-    [DataMember(Name = "socialLanguages", EmitDefaultValue = false)]
+    [JsonPropertyName("socialLanguages")]
     public List<string> SocialLanguages { get; set; }
 
 
@@ -5666,7 +5666,7 @@ public partial class ViewFilter : IEquatable<ViewFilter>
     /// List of channels for social filtering
     /// </summary>
     /// <value>List of channels for social filtering</value>
-    [DataMember(Name = "socialChannels", EmitDefaultValue = false)]
+    [JsonPropertyName("socialChannels")]
     public List<SocialChannelsEnum> SocialChannels { get; set; }
 
 
@@ -5675,7 +5675,7 @@ public partial class ViewFilter : IEquatable<ViewFilter>
     /// The sentiment of the social post
     /// </summary>
     /// <value>The sentiment of the social post</value>
-    [DataMember(Name = "socialSentimentCategory", EmitDefaultValue = false)]
+    [JsonPropertyName("socialSentimentCategory")]
     public List<SocialSentimentCategoryEnum> SocialSentimentCategory { get; set; }
 
 
@@ -5684,7 +5684,7 @@ public partial class ViewFilter : IEquatable<ViewFilter>
     /// The list of topicIds for social filtering
     /// </summary>
     /// <value>The list of topicIds for social filtering</value>
-    [DataMember(Name = "socialTopicIds", EmitDefaultValue = false)]
+    [JsonPropertyName("socialTopicIds")]
     public List<string> SocialTopicIds { get; set; }
 
 
@@ -5693,7 +5693,7 @@ public partial class ViewFilter : IEquatable<ViewFilter>
     /// The list of ingestion ruleIds for social filtering
     /// </summary>
     /// <value>The list of ingestion ruleIds for social filtering</value>
-    [DataMember(Name = "socialIngestionRuleIds", EmitDefaultValue = false)]
+    [JsonPropertyName("socialIngestionRuleIds")]
     public List<string> SocialIngestionRuleIds { get; set; }
 
 
@@ -5702,7 +5702,7 @@ public partial class ViewFilter : IEquatable<ViewFilter>
     /// Filter to indicate if the post has created a conversation
     /// </summary>
     /// <value>Filter to indicate if the post has created a conversation</value>
-    [DataMember(Name = "socialConversationCreated", EmitDefaultValue = false)]
+    [JsonPropertyName("socialConversationCreated")]
     public bool? SocialConversationCreated { get; set; }
 
 
@@ -5711,7 +5711,7 @@ public partial class ViewFilter : IEquatable<ViewFilter>
     /// The list of content Type for social filtering
     /// </summary>
     /// <value>The list of content Type for social filtering</value>
-    [DataMember(Name = "socialContentType", EmitDefaultValue = false)]
+    [JsonPropertyName("socialContentType")]
     public List<SocialContentTypeEnum> SocialContentType { get; set; }
 
 
@@ -5720,7 +5720,7 @@ public partial class ViewFilter : IEquatable<ViewFilter>
     /// The list of keywords for social filtering
     /// </summary>
     /// <value>The list of keywords for social filtering</value>
-    [DataMember(Name = "socialKeywords", EmitDefaultValue = false)]
+    [JsonPropertyName("socialKeywords")]
     public List<SocialKeyword> SocialKeywords { get; set; }
 
 
@@ -5729,7 +5729,7 @@ public partial class ViewFilter : IEquatable<ViewFilter>
     /// Filter to indicate if the post is escalated
     /// </summary>
     /// <value>Filter to indicate if the post is escalated</value>
-    [DataMember(Name = "socialPostEscalated", EmitDefaultValue = false)]
+    [JsonPropertyName("socialPostEscalated")]
     public bool? SocialPostEscalated { get; set; }
 
 
@@ -5738,7 +5738,7 @@ public partial class ViewFilter : IEquatable<ViewFilter>
     /// Indicates if a social message was public or private
     /// </summary>
     /// <value>Indicates if a social message was public or private</value>
-    [DataMember(Name = "socialClassifications", EmitDefaultValue = false)]
+    [JsonPropertyName("socialClassifications")]
     public List<SocialClassificationsEnum> SocialClassifications { get; set; }
 
 
@@ -5747,7 +5747,7 @@ public partial class ViewFilter : IEquatable<ViewFilter>
     /// The manager ids used to fetch associated users for the view
     /// </summary>
     /// <value>The manager ids used to fetch associated users for the view</value>
-    [DataMember(Name = "filterUsersByManagerIds", EmitDefaultValue = false)]
+    [JsonPropertyName("filterUsersByManagerIds")]
     public List<string> FilterUsersByManagerIds { get; set; }
 
 
@@ -5756,7 +5756,7 @@ public partial class ViewFilter : IEquatable<ViewFilter>
     /// List of Dashboard slideshowIds to be filtered
     /// </summary>
     /// <value>List of Dashboard slideshowIds to be filtered</value>
-    [DataMember(Name = "slideshowIds", EmitDefaultValue = false)]
+    [JsonPropertyName("slideshowIds")]
     public List<string> SlideshowIds { get; set; }
 
 
@@ -5765,7 +5765,7 @@ public partial class ViewFilter : IEquatable<ViewFilter>
     /// Filter to indicate if the conversation has conference
     /// </summary>
     /// <value>Filter to indicate if the conversation has conference</value>
-    [DataMember(Name = "conferenced", EmitDefaultValue = false)]
+    [JsonPropertyName("conferenced")]
     public bool? Conferenced { get; set; }
 
 
@@ -5774,7 +5774,7 @@ public partial class ViewFilter : IEquatable<ViewFilter>
     /// Filter to indicate if the conversation has video
     /// </summary>
     /// <value>Filter to indicate if the conversation has video</value>
-    [DataMember(Name = "video", EmitDefaultValue = false)]
+    [JsonPropertyName("video")]
     public bool? Video { get; set; }
 
 
@@ -5783,7 +5783,7 @@ public partial class ViewFilter : IEquatable<ViewFilter>
     /// Filter to indicate if the conversation has linked interaction
     /// </summary>
     /// <value>Filter to indicate if the conversation has linked interaction</value>
-    [DataMember(Name = "linkedInteraction", EmitDefaultValue = false)]
+    [JsonPropertyName("linkedInteraction")]
     public bool? LinkedInteraction { get; set; }
 
 
@@ -5792,7 +5792,7 @@ public partial class ViewFilter : IEquatable<ViewFilter>
     /// List of recommendation sources for filtering recommendation details pane
     /// </summary>
     /// <value>List of recommendation sources for filtering recommendation details pane</value>
-    [DataMember(Name = "recommendationSources", EmitDefaultValue = false)]
+    [JsonPropertyName("recommendationSources")]
     public List<RecommendationSourcesEnum> RecommendationSources { get; set; }
 
 
@@ -5803,7 +5803,7 @@ public partial class ViewFilter : IEquatable<ViewFilter>
     /// The queue ids are used to for comparison to the primary queue filter in reporting
     /// </summary>
     /// <value>The queue ids are used to for comparison to the primary queue filter in reporting</value>
-    [DataMember(Name = "comparisonQueueIds", EmitDefaultValue = false)]
+    [JsonPropertyName("comparisonQueueIds")]
     public List<string> ComparisonQueueIds { get; set; }
 
 
@@ -5812,7 +5812,7 @@ public partial class ViewFilter : IEquatable<ViewFilter>
     /// A list of metrics selected for the view
     /// </summary>
     /// <value>A list of metrics selected for the view</value>
-    [DataMember(Name = "viewMetrics", EmitDefaultValue = false)]
+    [JsonPropertyName("viewMetrics")]
     public List<ViewMetricsEnum> ViewMetrics { get; set; }
 
 
@@ -5821,7 +5821,7 @@ public partial class ViewFilter : IEquatable<ViewFilter>
     /// A list of timeline categories
     /// </summary>
     /// <value>A list of timeline categories</value>
-    [DataMember(Name = "timelineCategories", EmitDefaultValue = false)]
+    [JsonPropertyName("timelineCategories")]
     public List<string> TimelineCategories { get; set; }
 
 
@@ -5830,7 +5830,7 @@ public partial class ViewFilter : IEquatable<ViewFilter>
     /// Filter to indicate for acw state
     /// </summary>
     /// <value>Filter to indicate for acw state</value>
-    [DataMember(Name = "acw", EmitDefaultValue = false)]
+    [JsonPropertyName("acw")]
     public bool? Acw { get; set; }
 
 
@@ -5839,7 +5839,7 @@ public partial class ViewFilter : IEquatable<ViewFilter>
     /// A list of filtered segment types
     /// </summary>
     /// <value>A list of filtered segment types</value>
-    [DataMember(Name = "segmentTypes", EmitDefaultValue = false)]
+    [JsonPropertyName("segmentTypes")]
     public List<SegmentTypesEnum> SegmentTypes { get; set; }
 
 
@@ -5848,7 +5848,7 @@ public partial class ViewFilter : IEquatable<ViewFilter>
     /// A list of program ids for filtering
     /// </summary>
     /// <value>A list of program ids for filtering</value>
-    [DataMember(Name = "programIds", EmitDefaultValue = false)]
+    [JsonPropertyName("programIds")]
     public List<string> ProgramIds { get; set; }
 
 
@@ -5857,7 +5857,7 @@ public partial class ViewFilter : IEquatable<ViewFilter>
     /// A list of category ids for filtering
     /// </summary>
     /// <value>A list of category ids for filtering</value>
-    [DataMember(Name = "categoryIds", EmitDefaultValue = false)]
+    [JsonPropertyName("categoryIds")]
     public List<string> CategoryIds { get; set; }
 
 

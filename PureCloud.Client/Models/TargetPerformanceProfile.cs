@@ -1,4 +1,3 @@
-using System.Runtime.Serialization;
 using System.Text;
 using System.Text.Json.Serialization;
 
@@ -7,7 +6,7 @@ namespace PureCloud.Client.Models;
 /// <summary>
 /// TargetPerformanceProfile
 /// </summary>
-[DataContract]
+
 public partial class TargetPerformanceProfile : IEquatable<TargetPerformanceProfile>
 {
 
@@ -32,7 +31,7 @@ public partial class TargetPerformanceProfile : IEquatable<TargetPerformanceProf
     /// The target destination performanceProfileId for the linked metric.
     /// </summary>
     /// <value>The target destination performanceProfileId for the linked metric.</value>
-    [DataMember(Name = "targetPerformanceProfileId", EmitDefaultValue = false)]
+    [JsonPropertyName("targetPerformanceProfileId")]
     public string TargetPerformanceProfileId { get; set; }
 
 

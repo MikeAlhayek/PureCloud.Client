@@ -7,13 +7,13 @@ namespace PureCloud.Client.Models;
 /// <summary>
 /// KlaxonHeartBeatRulesTopicHeartBeatRule
 /// </summary>
-[DataContract]
+
 public partial class KlaxonHeartBeatRulesTopicHeartBeatRule : IEquatable<KlaxonHeartBeatRulesTopicHeartBeatRule>
 {
     /// <summary>
     /// Gets or Sets AlertTypes
     /// </summary>
-    [JsonConverter(typeof(JsonStringEnumConverter))]
+    
     public enum AlertTypesEnum
     {
         /// <summary>
@@ -45,7 +45,7 @@ public partial class KlaxonHeartBeatRulesTopicHeartBeatRule : IEquatable<KlaxonH
     /// <summary>
     /// Gets or Sets RuleType
     /// </summary>
-    [JsonConverter(typeof(JsonStringEnumConverter))]
+    
     public enum RuleTypeEnum
     {
         /// <summary>
@@ -65,7 +65,7 @@ public partial class KlaxonHeartBeatRulesTopicHeartBeatRule : IEquatable<KlaxonH
     /// <summary>
     /// Gets or Sets RuleType
     /// </summary>
-    [DataMember(Name = "ruleType", EmitDefaultValue = false)]
+    [JsonPropertyName("ruleType")]
     public RuleTypeEnum? RuleType { get; set; }
     /// <summary>
     /// Initializes a new instance of the <see cref="KlaxonHeartBeatRulesTopicHeartBeatRule" /> class.
@@ -98,7 +98,7 @@ public partial class KlaxonHeartBeatRulesTopicHeartBeatRule : IEquatable<KlaxonH
     /// <summary>
     /// Gets or Sets Id
     /// </summary>
-    [DataMember(Name = "id", EmitDefaultValue = false)]
+    [JsonPropertyName("id")]
     public string Id { get; set; }
 
 
@@ -106,7 +106,7 @@ public partial class KlaxonHeartBeatRulesTopicHeartBeatRule : IEquatable<KlaxonH
     /// <summary>
     /// Gets or Sets Name
     /// </summary>
-    [DataMember(Name = "name", EmitDefaultValue = false)]
+    [JsonPropertyName("name")]
     public string Name { get; set; }
 
 
@@ -114,7 +114,7 @@ public partial class KlaxonHeartBeatRulesTopicHeartBeatRule : IEquatable<KlaxonH
     /// <summary>
     /// Gets or Sets SenderId
     /// </summary>
-    [DataMember(Name = "senderId", EmitDefaultValue = false)]
+    [JsonPropertyName("senderId")]
     public string SenderId { get; set; }
 
 
@@ -122,7 +122,7 @@ public partial class KlaxonHeartBeatRulesTopicHeartBeatRule : IEquatable<KlaxonH
     /// <summary>
     /// Gets or Sets HeartBeatTimeoutInMinutes
     /// </summary>
-    [DataMember(Name = "heartBeatTimeoutInMinutes", EmitDefaultValue = false)]
+    [JsonPropertyName("heartBeatTimeoutInMinutes")]
     public double? HeartBeatTimeoutInMinutes { get; set; }
 
 
@@ -130,7 +130,7 @@ public partial class KlaxonHeartBeatRulesTopicHeartBeatRule : IEquatable<KlaxonH
     /// <summary>
     /// Gets or Sets Enabled
     /// </summary>
-    [DataMember(Name = "enabled", EmitDefaultValue = false)]
+    [JsonPropertyName("enabled")]
     public bool? Enabled { get; set; }
 
 
@@ -138,7 +138,7 @@ public partial class KlaxonHeartBeatRulesTopicHeartBeatRule : IEquatable<KlaxonH
     /// <summary>
     /// Gets or Sets InAlarm
     /// </summary>
-    [DataMember(Name = "inAlarm", EmitDefaultValue = false)]
+    [JsonPropertyName("inAlarm")]
     public bool? InAlarm { get; set; }
 
 
@@ -146,7 +146,7 @@ public partial class KlaxonHeartBeatRulesTopicHeartBeatRule : IEquatable<KlaxonH
     /// <summary>
     /// Gets or Sets NotificationUsers
     /// </summary>
-    [DataMember(Name = "notificationUsers", EmitDefaultValue = false)]
+    [JsonPropertyName("notificationUsers")]
     public List<KlaxonHeartBeatRulesTopicNotificationUser> NotificationUsers { get; set; }
 
 
@@ -154,7 +154,7 @@ public partial class KlaxonHeartBeatRulesTopicHeartBeatRule : IEquatable<KlaxonH
     /// <summary>
     /// Gets or Sets AlertTypes
     /// </summary>
-    [DataMember(Name = "alertTypes", EmitDefaultValue = false)]
+    [JsonPropertyName("alertTypes")]
     public List<AlertTypesEnum> AlertTypes { get; set; }
 
 

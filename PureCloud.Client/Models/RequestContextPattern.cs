@@ -1,4 +1,3 @@
-using System.Runtime.Serialization;
 using System.Text;
 using System.Text.Json.Serialization;
 
@@ -7,7 +6,7 @@ namespace PureCloud.Client.Models;
 /// <summary>
 /// RequestContextPattern
 /// </summary>
-[DataContract]
+
 public partial class RequestContextPattern : IEquatable<RequestContextPattern>
 {
 
@@ -32,7 +31,7 @@ public partial class RequestContextPattern : IEquatable<RequestContextPattern>
     /// A list of one or more criteria to satisfy.
     /// </summary>
     /// <value>A list of one or more criteria to satisfy.</value>
-    [DataMember(Name = "criteria", EmitDefaultValue = false)]
+    [JsonPropertyName("criteria")]
     public List<RequestEntityTypeCriteria> Criteria { get; set; }
 
 

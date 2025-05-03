@@ -1,12 +1,12 @@
-using System.Runtime.Serialization;
 using System.Text;
+using System.Text.Json.Serialization;
 
 namespace PureCloud.Client.Models;
 
 /// <summary>
 /// UpdateVerifierRequest
 /// </summary>
-[DataContract]
+
 public partial class UpdateVerifierRequest : IEquatable<UpdateVerifierRequest>
 {
     /// <summary>
@@ -29,7 +29,7 @@ public partial class UpdateVerifierRequest : IEquatable<UpdateVerifierRequest>
     /// The name of the verifier.
     /// </summary>
     /// <value>The name of the verifier.</value>
-    [DataMember(Name = "name", EmitDefaultValue = false)]
+    [JsonPropertyName("name")]
     public string Name { get; set; }
 
 
@@ -38,7 +38,7 @@ public partial class UpdateVerifierRequest : IEquatable<UpdateVerifierRequest>
     /// Indicates whether this verifier will be enabled.
     /// </summary>
     /// <value>Indicates whether this verifier will be enabled.</value>
-    [DataMember(Name = "enabled", EmitDefaultValue = false)]
+    [JsonPropertyName("enabled")]
     public bool? Enabled { get; set; }
 
 
@@ -47,7 +47,7 @@ public partial class UpdateVerifierRequest : IEquatable<UpdateVerifierRequest>
     /// Indicates whether this will be the default verifier.
     /// </summary>
     /// <value>Indicates whether this will be the default verifier.</value>
-    [DataMember(Name = "default", EmitDefaultValue = false)]
+    [JsonPropertyName("default")]
     public bool? Default { get; set; }
 
 

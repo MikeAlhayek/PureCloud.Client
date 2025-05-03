@@ -1,12 +1,12 @@
-using System.Runtime.Serialization;
 using System.Text;
+using System.Text.Json.Serialization;
 
 namespace PureCloud.Client.Models;
 
 /// <summary>
 /// Genesys Cloud user extensions to SCIM RFC.
 /// </summary>
-[DataContract]
+
 public partial class ScimUserExtensions : IEquatable<ScimUserExtensions>
 {
     /// <summary>
@@ -29,7 +29,7 @@ public partial class ScimUserExtensions : IEquatable<ScimUserExtensions>
     /// The list of routing skills assigned to a user. Maximum 50 skills.
     /// </summary>
     /// <value>The list of routing skills assigned to a user. Maximum 50 skills.</value>
-    [DataMember(Name = "routingSkills", EmitDefaultValue = false)]
+    [JsonPropertyName("routingSkills")]
     public List<ScimUserRoutingSkill> RoutingSkills { get; set; }
 
 
@@ -38,7 +38,7 @@ public partial class ScimUserExtensions : IEquatable<ScimUserExtensions>
     /// The list of routing languages assigned to a user. Maximum 50 languages.
     /// </summary>
     /// <value>The list of routing languages assigned to a user. Maximum 50 languages.</value>
-    [DataMember(Name = "routingLanguages", EmitDefaultValue = false)]
+    [JsonPropertyName("routingLanguages")]
     public List<ScimUserRoutingLanguage> RoutingLanguages { get; set; }
 
 
@@ -47,7 +47,7 @@ public partial class ScimUserExtensions : IEquatable<ScimUserExtensions>
     /// The list of external identifiers assigned to user. Always includes an immutable SCIM authority prefixed with \&quot;x-pc:scimv2:v1\&quot;. ExternalIds are searchable with complex filter query parameter using &#39;authority&#39; and &#39;value&#39;, e.g., filter&#x3D;urn:ietf:params:scim:schemas:extension:genesys:purecloud:2.0:User:externalIds[authority eq \&quot;matchAuthName\&quot; and value eq \&quot;matchingExternalKeyValue\&quot;].
     /// </summary>
     /// <value>The list of external identifiers assigned to user. Always includes an immutable SCIM authority prefixed with \&quot;x-pc:scimv2:v1\&quot;. ExternalIds are searchable with complex filter query parameter using &#39;authority&#39; and &#39;value&#39;, e.g., filter&#x3D;urn:ietf:params:scim:schemas:extension:genesys:purecloud:2.0:User:externalIds[authority eq \&quot;matchAuthName\&quot; and value eq \&quot;matchingExternalKeyValue\&quot;].</value>
-    [DataMember(Name = "externalIds", EmitDefaultValue = false)]
+    [JsonPropertyName("externalIds")]
     public List<ScimGenesysUserExternalId> ExternalIds { get; set; }
 
 

@@ -7,14 +7,14 @@ namespace PureCloud.Client.Models;
 /// <summary>
 /// AgentStateUserFilter
 /// </summary>
-[DataContract]
+
 public partial class AgentStateUserFilter : IEquatable<AgentStateUserFilter>
 {
     /// <summary>
     /// Boolean operation to apply to the provided predicates and clauses
     /// </summary>
     /// <value>Boolean operation to apply to the provided predicates and clauses</value>
-    [JsonConverter(typeof(JsonStringEnumConverter))]
+    
     public enum TypeEnum
     {
         /// <summary>
@@ -41,7 +41,7 @@ public partial class AgentStateUserFilter : IEquatable<AgentStateUserFilter>
     /// Boolean operation to apply to the provided predicates and clauses
     /// </summary>
     /// <value>Boolean operation to apply to the provided predicates and clauses</value>
-    [DataMember(Name = "type", EmitDefaultValue = false)]
+    [JsonPropertyName("type")]
     public TypeEnum? Type { get; set; }
 
     /// <summary>
@@ -71,7 +71,7 @@ public partial class AgentStateUserFilter : IEquatable<AgentStateUserFilter>
     /// Boolean &#39;and/or&#39; logic with up to two-levels of nesting
     /// </summary>
     /// <value>Boolean &#39;and/or&#39; logic with up to two-levels of nesting</value>
-    [DataMember(Name = "clauses", EmitDefaultValue = false)]
+    [JsonPropertyName("clauses")]
     public List<AgentStateAgentQueryClause> Clauses { get; set; }
 
 
@@ -80,7 +80,7 @@ public partial class AgentStateUserFilter : IEquatable<AgentStateUserFilter>
     /// Describes a &lt;dimension&gt; &#x3D; &lt;value&gt; filter used to perform matching
     /// </summary>
     /// <value>Describes a &lt;dimension&gt; &#x3D; &lt;value&gt; filter used to perform matching</value>
-    [DataMember(Name = "predicates", EmitDefaultValue = false)]
+    [JsonPropertyName("predicates")]
     public List<AgentStateAgentQueryPredicate> Predicates { get; set; }
 
 

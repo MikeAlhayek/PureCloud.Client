@@ -7,13 +7,13 @@ namespace PureCloud.Client.Models;
 /// <summary>
 /// FixedAvailability
 /// </summary>
-[DataContract]
+
 public partial class FixedAvailability : IEquatable<FixedAvailability>
 {
     /// <summary>
     /// Gets or Sets DaysOfWeek
     /// </summary>
-    [JsonConverter(typeof(JsonStringEnumConverter))]
+    
     public enum DaysOfWeekEnum
     {
         /// <summary>
@@ -86,7 +86,7 @@ public partial class FixedAvailability : IEquatable<FixedAvailability>
     /// The range of time of day the activity can be scheduled
     /// </summary>
     /// <value>The range of time of day the activity can be scheduled</value>
-    [DataMember(Name = "availabilityRange", EmitDefaultValue = false)]
+    [JsonPropertyName("availabilityRange")]
     public AvailabilityRange AvailabilityRange { get; set; }
 
 
@@ -95,7 +95,7 @@ public partial class FixedAvailability : IEquatable<FixedAvailability>
     /// The range of date for which the activity plan could be scheduled
     /// </summary>
     /// <value>The range of date for which the activity plan could be scheduled</value>
-    [DataMember(Name = "dateRange", EmitDefaultValue = false)]
+    [JsonPropertyName("dateRange")]
     public RequiredLocalDateRange DateRange { get; set; }
 
 
@@ -104,7 +104,7 @@ public partial class FixedAvailability : IEquatable<FixedAvailability>
     /// The days of week available for scheduling. Empty list or null means daysOfWeek is not considered
     /// </summary>
     /// <value>The days of week available for scheduling. Empty list or null means daysOfWeek is not considered</value>
-    [DataMember(Name = "daysOfWeek", EmitDefaultValue = false)]
+    [JsonPropertyName("daysOfWeek")]
     public List<DaysOfWeekEnum> DaysOfWeek { get; set; }
 
 

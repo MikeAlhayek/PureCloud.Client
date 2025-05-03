@@ -1,4 +1,3 @@
-using System.Runtime.Serialization;
 using System.Text;
 using System.Text.Json.Serialization;
 
@@ -7,7 +6,7 @@ namespace PureCloud.Client.Models;
 /// <summary>
 /// Quick reply object V2.
 /// </summary>
-[DataContract]
+
 public partial class ContentQuickReplyV2 : IEquatable<ContentQuickReplyV2>
 {
 
@@ -34,7 +33,7 @@ public partial class ContentQuickReplyV2 : IEquatable<ContentQuickReplyV2>
     /// Text to show as the title of the quick reply.
     /// </summary>
     /// <value>Text to show as the title of the quick reply.</value>
-    [DataMember(Name = "title", EmitDefaultValue = false)]
+    [JsonPropertyName("title")]
     public string Title { get; set; }
 
 
@@ -43,7 +42,7 @@ public partial class ContentQuickReplyV2 : IEquatable<ContentQuickReplyV2>
     /// An array of quick reply objects.
     /// </summary>
     /// <value>An array of quick reply objects.</value>
-    [DataMember(Name = "actions", EmitDefaultValue = false)]
+    [JsonPropertyName("actions")]
     public List<ContentQuickReply> Actions { get; set; }
 
 

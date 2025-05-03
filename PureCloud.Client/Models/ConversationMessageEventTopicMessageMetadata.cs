@@ -1,12 +1,12 @@
-using System.Runtime.Serialization;
 using System.Text;
+using System.Text.Json.Serialization;
 
 namespace PureCloud.Client.Models;
 
 /// <summary>
 /// ConversationMessageEventTopicMessageMetadata
 /// </summary>
-[DataContract]
+
 public partial class ConversationMessageEventTopicMessageMetadata : IEquatable<ConversationMessageEventTopicMessageMetadata>
 {
     /// <summary>
@@ -29,7 +29,7 @@ public partial class ConversationMessageEventTopicMessageMetadata : IEquatable<C
     /// Message type.
     /// </summary>
     /// <value>Message type.</value>
-    [DataMember(Name = "type", EmitDefaultValue = false)]
+    [JsonPropertyName("type")]
     public string Type { get; set; }
 
 
@@ -38,7 +38,7 @@ public partial class ConversationMessageEventTopicMessageMetadata : IEquatable<C
     /// List of message events, if any
     /// </summary>
     /// <value>List of message events, if any</value>
-    [DataMember(Name = "events", EmitDefaultValue = false)]
+    [JsonPropertyName("events")]
     public List<ConversationMessageEventTopicMessageMetadataEvent> Events { get; set; }
 
 
@@ -47,7 +47,7 @@ public partial class ConversationMessageEventTopicMessageMetadata : IEquatable<C
     /// List of message content, if any
     /// </summary>
     /// <value>List of message content, if any</value>
-    [DataMember(Name = "content", EmitDefaultValue = false)]
+    [JsonPropertyName("content")]
     public List<ConversationMessageEventTopicMessageMetadataContent> Content { get; set; }
 
 

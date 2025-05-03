@@ -7,14 +7,14 @@ namespace PureCloud.Client.Models;
 /// <summary>
 /// CreateActivityCodeRequest
 /// </summary>
-[DataContract]
+
 public partial class CreateActivityCodeRequest : IEquatable<CreateActivityCodeRequest>
 {
     /// <summary>
     /// The activity code's category
     /// </summary>
     /// <value>The activity code's category</value>
-    [JsonConverter(typeof(JsonStringEnumConverter))]
+    
     public enum CategoryEnum
     {
         /// <summary>
@@ -83,7 +83,7 @@ public partial class CreateActivityCodeRequest : IEquatable<CreateActivityCodeRe
     /// The activity code's category
     /// </summary>
     /// <value>The activity code's category</value>
-    [DataMember(Name = "category", EmitDefaultValue = false)]
+    [JsonPropertyName("category")]
     public CategoryEnum? Category { get; set; }
 
     /// <summary>
@@ -125,7 +125,7 @@ public partial class CreateActivityCodeRequest : IEquatable<CreateActivityCodeRe
     /// The name of the activity code
     /// </summary>
     /// <value>The name of the activity code</value>
-    [DataMember(Name = "name", EmitDefaultValue = false)]
+    [JsonPropertyName("name")]
     public string Name { get; set; }
 
 
@@ -136,7 +136,7 @@ public partial class CreateActivityCodeRequest : IEquatable<CreateActivityCodeRe
     /// The default length of the activity in minutes
     /// </summary>
     /// <value>The default length of the activity in minutes</value>
-    [DataMember(Name = "lengthInMinutes", EmitDefaultValue = false)]
+    [JsonPropertyName("lengthInMinutes")]
     public int? LengthInMinutes { get; set; }
 
 
@@ -145,7 +145,7 @@ public partial class CreateActivityCodeRequest : IEquatable<CreateActivityCodeRe
     /// Whether an agent is paid while performing this activity
     /// </summary>
     /// <value>Whether an agent is paid while performing this activity</value>
-    [DataMember(Name = "countsAsPaidTime", EmitDefaultValue = false)]
+    [JsonPropertyName("countsAsPaidTime")]
     public bool? CountsAsPaidTime { get; set; }
 
 
@@ -154,7 +154,7 @@ public partial class CreateActivityCodeRequest : IEquatable<CreateActivityCodeRe
     /// Indicates whether or not the activity should be counted as work time
     /// </summary>
     /// <value>Indicates whether or not the activity should be counted as work time</value>
-    [DataMember(Name = "countsAsWorkTime", EmitDefaultValue = false)]
+    [JsonPropertyName("countsAsWorkTime")]
     public bool? CountsAsWorkTime { get; set; }
 
 
@@ -163,7 +163,7 @@ public partial class CreateActivityCodeRequest : IEquatable<CreateActivityCodeRe
     /// Whether an agent can select this activity code when creating or editing a time off request
     /// </summary>
     /// <value>Whether an agent can select this activity code when creating or editing a time off request</value>
-    [DataMember(Name = "agentTimeOffSelectable", EmitDefaultValue = false)]
+    [JsonPropertyName("agentTimeOffSelectable")]
     public bool? AgentTimeOffSelectable { get; set; }
 
 
@@ -172,7 +172,7 @@ public partial class CreateActivityCodeRequest : IEquatable<CreateActivityCodeRe
     /// Whether or not this activity code counts toward shrinkage calculations
     /// </summary>
     /// <value>Whether or not this activity code counts toward shrinkage calculations</value>
-    [DataMember(Name = "countsTowardShrinkage", EmitDefaultValue = false)]
+    [JsonPropertyName("countsTowardShrinkage")]
     public bool? CountsTowardShrinkage { get; set; }
 
 
@@ -181,7 +181,7 @@ public partial class CreateActivityCodeRequest : IEquatable<CreateActivityCodeRe
     /// Whether this activity code is considered planned or unplanned shrinkage
     /// </summary>
     /// <value>Whether this activity code is considered planned or unplanned shrinkage</value>
-    [DataMember(Name = "plannedShrinkage", EmitDefaultValue = false)]
+    [JsonPropertyName("plannedShrinkage")]
     public bool? PlannedShrinkage { get; set; }
 
 
@@ -190,7 +190,7 @@ public partial class CreateActivityCodeRequest : IEquatable<CreateActivityCodeRe
     /// Whether this activity code is considered interruptible
     /// </summary>
     /// <value>Whether this activity code is considered interruptible</value>
-    [DataMember(Name = "interruptible", EmitDefaultValue = false)]
+    [JsonPropertyName("interruptible")]
     public bool? Interruptible { get; set; }
 
 
@@ -199,7 +199,7 @@ public partial class CreateActivityCodeRequest : IEquatable<CreateActivityCodeRe
     /// The secondary presences of this activity code
     /// </summary>
     /// <value>The secondary presences of this activity code</value>
-    [DataMember(Name = "secondaryPresences", EmitDefaultValue = false)]
+    [JsonPropertyName("secondaryPresences")]
     public List<SecondaryPresence> SecondaryPresences { get; set; }
 
 

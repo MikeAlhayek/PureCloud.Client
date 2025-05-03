@@ -1,12 +1,12 @@
-using System.Runtime.Serialization;
 using System.Text;
+using System.Text.Json.Serialization;
 
 namespace PureCloud.Client.Models;
 
 /// <summary>
 /// MinerErrorInfo
 /// </summary>
-[DataContract]
+
 public partial class MinerErrorInfo : IEquatable<MinerErrorInfo>
 {
     /// <summary>
@@ -30,7 +30,7 @@ public partial class MinerErrorInfo : IEquatable<MinerErrorInfo>
     /// <summary>
     /// Gets or Sets Message
     /// </summary>
-    [DataMember(Name = "message", EmitDefaultValue = false)]
+    [JsonPropertyName("message")]
     public string Message { get; set; }
 
 
@@ -38,7 +38,7 @@ public partial class MinerErrorInfo : IEquatable<MinerErrorInfo>
     /// <summary>
     /// Gets or Sets Code
     /// </summary>
-    [DataMember(Name = "code", EmitDefaultValue = false)]
+    [JsonPropertyName("code")]
     public string Code { get; set; }
 
 
@@ -47,7 +47,7 @@ public partial class MinerErrorInfo : IEquatable<MinerErrorInfo>
     /// Error message with params included.
     /// </summary>
     /// <value>Error message with params included.</value>
-    [DataMember(Name = "messageWithParams", EmitDefaultValue = false)]
+    [JsonPropertyName("messageWithParams")]
     public string MessageWithParams { get; set; }
 
 
@@ -56,7 +56,7 @@ public partial class MinerErrorInfo : IEquatable<MinerErrorInfo>
     /// Map of variables and params for the error message.
     /// </summary>
     /// <value>Map of variables and params for the error message.</value>
-    [DataMember(Name = "messageParams", EmitDefaultValue = false)]
+    [JsonPropertyName("messageParams")]
     public Dictionary<string, object> MessageParams { get; set; }
 
 

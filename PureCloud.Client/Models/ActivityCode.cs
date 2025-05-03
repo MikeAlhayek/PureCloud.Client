@@ -7,14 +7,14 @@ namespace PureCloud.Client.Models;
 /// <summary>
 /// ActivityCode
 /// </summary>
-[DataContract]
+
 public partial class ActivityCode : IEquatable<ActivityCode>
 {
     /// <summary>
     /// The activity code's category.
     /// </summary>
     /// <value>The activity code's category.</value>
-    [JsonConverter(typeof(JsonStringEnumConverter))]
+    
     public enum CategoryEnum
     {
         /// <summary>
@@ -83,7 +83,7 @@ public partial class ActivityCode : IEquatable<ActivityCode>
     /// The activity code's category.
     /// </summary>
     /// <value>The activity code's category.</value>
-    [DataMember(Name = "category", EmitDefaultValue = false)]
+    [JsonPropertyName("category")]
     public CategoryEnum? Category { get; set; }
 
     /// <summary>
@@ -123,7 +123,7 @@ public partial class ActivityCode : IEquatable<ActivityCode>
     /// The globally unique identifier for the object.
     /// </summary>
     /// <value>The globally unique identifier for the object.</value>
-    [DataMember(Name = "id", EmitDefaultValue = false)]
+    [JsonPropertyName("id")]
     public string Id { get; private set; }
 
 
@@ -132,7 +132,7 @@ public partial class ActivityCode : IEquatable<ActivityCode>
     /// The URI for this object
     /// </summary>
     /// <value>The URI for this object</value>
-    [DataMember(Name = "selfUri", EmitDefaultValue = false)]
+    [JsonPropertyName("selfUri")]
     public string SelfUri { get; private set; }
 
 
@@ -141,7 +141,7 @@ public partial class ActivityCode : IEquatable<ActivityCode>
     /// The name of the activity code. Default activity codes will be created with an empty name
     /// </summary>
     /// <value>The name of the activity code. Default activity codes will be created with an empty name</value>
-    [DataMember(Name = "name", EmitDefaultValue = false)]
+    [JsonPropertyName("name")]
     public string Name { get; set; }
 
 
@@ -150,7 +150,7 @@ public partial class ActivityCode : IEquatable<ActivityCode>
     /// Whether this activity code is active or has been deleted
     /// </summary>
     /// <value>Whether this activity code is active or has been deleted</value>
-    [DataMember(Name = "isActive", EmitDefaultValue = false)]
+    [JsonPropertyName("isActive")]
     public bool? IsActive { get; set; }
 
 
@@ -159,7 +159,7 @@ public partial class ActivityCode : IEquatable<ActivityCode>
     /// Whether this is a default activity code
     /// </summary>
     /// <value>Whether this is a default activity code</value>
-    [DataMember(Name = "isDefault", EmitDefaultValue = false)]
+    [JsonPropertyName("isDefault")]
     public bool? IsDefault { get; set; }
 
 
@@ -170,7 +170,7 @@ public partial class ActivityCode : IEquatable<ActivityCode>
     /// The default length of the activity in minutes
     /// </summary>
     /// <value>The default length of the activity in minutes</value>
-    [DataMember(Name = "lengthInMinutes", EmitDefaultValue = false)]
+    [JsonPropertyName("lengthInMinutes")]
     public int? LengthInMinutes { get; set; }
 
 
@@ -179,7 +179,7 @@ public partial class ActivityCode : IEquatable<ActivityCode>
     /// Whether an agent is paid while performing this activity
     /// </summary>
     /// <value>Whether an agent is paid while performing this activity</value>
-    [DataMember(Name = "countsAsPaidTime", EmitDefaultValue = false)]
+    [JsonPropertyName("countsAsPaidTime")]
     public bool? CountsAsPaidTime { get; set; }
 
 
@@ -188,7 +188,7 @@ public partial class ActivityCode : IEquatable<ActivityCode>
     /// Indicates whether or not the activity should be counted as contiguous work time for calculating daily constraints
     /// </summary>
     /// <value>Indicates whether or not the activity should be counted as contiguous work time for calculating daily constraints</value>
-    [DataMember(Name = "countsAsWorkTime", EmitDefaultValue = false)]
+    [JsonPropertyName("countsAsWorkTime")]
     public bool? CountsAsWorkTime { get; set; }
 
 
@@ -197,7 +197,7 @@ public partial class ActivityCode : IEquatable<ActivityCode>
     /// Whether an agent can select this activity code when creating or editing a time off request. Null if the activity&#39;s category is not time off.
     /// </summary>
     /// <value>Whether an agent can select this activity code when creating or editing a time off request. Null if the activity&#39;s category is not time off.</value>
-    [DataMember(Name = "agentTimeOffSelectable", EmitDefaultValue = false)]
+    [JsonPropertyName("agentTimeOffSelectable")]
     public bool? AgentTimeOffSelectable { get; set; }
 
 
@@ -206,7 +206,7 @@ public partial class ActivityCode : IEquatable<ActivityCode>
     /// Version metadata for the associated management unit&#39;s list of activity codes
     /// </summary>
     /// <value>Version metadata for the associated management unit&#39;s list of activity codes</value>
-    [DataMember(Name = "metadata", EmitDefaultValue = false)]
+    [JsonPropertyName("metadata")]
     public WfmVersionedEntityMetadata Metadata { get; set; }
 
 

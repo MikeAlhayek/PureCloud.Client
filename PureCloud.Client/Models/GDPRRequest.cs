@@ -7,14 +7,14 @@ namespace PureCloud.Client.Models;
 /// <summary>
 /// GDPRRequest
 /// </summary>
-[DataContract]
+
 public partial class GDPRRequest : IEquatable<GDPRRequest>
 {
     /// <summary>
     /// The type of GDPR request
     /// </summary>
     /// <value>The type of GDPR request</value>
-    [JsonConverter(typeof(JsonStringEnumConverter))]
+    
     public enum RequestTypeEnum
     {
         /// <summary>
@@ -47,7 +47,7 @@ public partial class GDPRRequest : IEquatable<GDPRRequest>
     /// The status of the request
     /// </summary>
     /// <value>The status of the request</value>
-    [JsonConverter(typeof(JsonStringEnumConverter))]
+    
     public enum StatusEnum
     {
         /// <summary>
@@ -104,13 +104,13 @@ public partial class GDPRRequest : IEquatable<GDPRRequest>
     /// The type of GDPR request
     /// </summary>
     /// <value>The type of GDPR request</value>
-    [DataMember(Name = "requestType", EmitDefaultValue = false)]
+    [JsonPropertyName("requestType")]
     public RequestTypeEnum? RequestType { get; set; }
     /// <summary>
     /// The status of the request
     /// </summary>
     /// <value>The status of the request</value>
-    [DataMember(Name = "status", EmitDefaultValue = false)]
+    [JsonPropertyName("status")]
     public StatusEnum? Status { get; private set; }
 
     /// <summary>
@@ -140,7 +140,7 @@ public partial class GDPRRequest : IEquatable<GDPRRequest>
     /// The globally unique identifier for the object.
     /// </summary>
     /// <value>The globally unique identifier for the object.</value>
-    [DataMember(Name = "id", EmitDefaultValue = false)]
+    [JsonPropertyName("id")]
     public string Id { get; private set; }
 
 
@@ -148,7 +148,7 @@ public partial class GDPRRequest : IEquatable<GDPRRequest>
     /// <summary>
     /// Gets or Sets Name
     /// </summary>
-    [DataMember(Name = "name", EmitDefaultValue = false)]
+    [JsonPropertyName("name")]
     public string Name { get; set; }
 
 
@@ -157,7 +157,7 @@ public partial class GDPRRequest : IEquatable<GDPRRequest>
     /// The user that created this request
     /// </summary>
     /// <value>The user that created this request</value>
-    [DataMember(Name = "createdBy", EmitDefaultValue = false)]
+    [JsonPropertyName("createdBy")]
     public DomainEntityRef CreatedBy { get; private set; }
 
 
@@ -166,7 +166,7 @@ public partial class GDPRRequest : IEquatable<GDPRRequest>
     /// The replacement terms for the provided search terms, in the case of a GDPR_UPDATE request
     /// </summary>
     /// <value>The replacement terms for the provided search terms, in the case of a GDPR_UPDATE request</value>
-    [DataMember(Name = "replacementTerms", EmitDefaultValue = false)]
+    [JsonPropertyName("replacementTerms")]
     public List<ReplacementTerm> ReplacementTerms { get; set; }
 
 
@@ -177,7 +177,7 @@ public partial class GDPRRequest : IEquatable<GDPRRequest>
     /// When the request was submitted. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z
     /// </summary>
     /// <value>When the request was submitted. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z</value>
-    [DataMember(Name = "createdDate", EmitDefaultValue = false)]
+    [JsonPropertyName("createdDate")]
     public DateTime? CreatedDate { get; private set; }
 
 
@@ -188,7 +188,7 @@ public partial class GDPRRequest : IEquatable<GDPRRequest>
     /// The subject of the GDPR request
     /// </summary>
     /// <value>The subject of the GDPR request</value>
-    [DataMember(Name = "subject", EmitDefaultValue = false)]
+    [JsonPropertyName("subject")]
     public GDPRSubject Subject { get; set; }
 
 
@@ -197,7 +197,7 @@ public partial class GDPRRequest : IEquatable<GDPRRequest>
     /// The location where the results of the request can be retrieved
     /// </summary>
     /// <value>The location where the results of the request can be retrieved</value>
-    [DataMember(Name = "resultsUrl", EmitDefaultValue = false)]
+    [JsonPropertyName("resultsUrl")]
     public string ResultsUrl { get; private set; }
 
 
@@ -206,7 +206,7 @@ public partial class GDPRRequest : IEquatable<GDPRRequest>
     /// The URI for this object
     /// </summary>
     /// <value>The URI for this object</value>
-    [DataMember(Name = "selfUri", EmitDefaultValue = false)]
+    [JsonPropertyName("selfUri")]
     public string SelfUri { get; private set; }
 
 

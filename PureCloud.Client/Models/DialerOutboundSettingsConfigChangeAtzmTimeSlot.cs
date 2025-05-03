@@ -1,12 +1,12 @@
-using System.Runtime.Serialization;
 using System.Text;
+using System.Text.Json.Serialization;
 
 namespace PureCloud.Client.Models;
 
 /// <summary>
 /// The time interval to place outbound calls
 /// </summary>
-[DataContract]
+
 public partial class DialerOutboundSettingsConfigChangeAtzmTimeSlot : IEquatable<DialerOutboundSettingsConfigChangeAtzmTimeSlot>
 {
     /// <summary>
@@ -27,7 +27,7 @@ public partial class DialerOutboundSettingsConfigChangeAtzmTimeSlot : IEquatable
     /// The earliest time to dial a contact
     /// </summary>
     /// <value>The earliest time to dial a contact</value>
-    [DataMember(Name = "earliestCallableTime", EmitDefaultValue = false)]
+    [JsonPropertyName("earliestCallableTime")]
     public string EarliestCallableTime { get; set; }
 
 
@@ -36,7 +36,7 @@ public partial class DialerOutboundSettingsConfigChangeAtzmTimeSlot : IEquatable
     /// The latest time to dial a contact
     /// </summary>
     /// <value>The latest time to dial a contact</value>
-    [DataMember(Name = "latestCallableTime", EmitDefaultValue = false)]
+    [JsonPropertyName("latestCallableTime")]
     public string LatestCallableTime { get; set; }
 
 

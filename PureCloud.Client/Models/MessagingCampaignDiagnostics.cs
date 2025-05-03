@@ -1,12 +1,12 @@
-using System.Runtime.Serialization;
 using System.Text;
+using System.Text.Json.Serialization;
 
 namespace PureCloud.Client.Models;
 
 /// <summary>
 /// MessagingCampaignDiagnostics
 /// </summary>
-[DataContract]
+
 public partial class MessagingCampaignDiagnostics : IEquatable<MessagingCampaignDiagnostics>
 {
     /// <summary>
@@ -23,7 +23,7 @@ public partial class MessagingCampaignDiagnostics : IEquatable<MessagingCampaign
     /// Current number of time zone rescheduled messages on the campaign
     /// </summary>
     /// <value>Current number of time zone rescheduled messages on the campaign</value>
-    [DataMember(Name = "timeZoneRescheduledContactsCount", EmitDefaultValue = false)]
+    [JsonPropertyName("timeZoneRescheduledContactsCount")]
     public int? TimeZoneRescheduledContactsCount { get; private set; }
 
 
@@ -32,7 +32,7 @@ public partial class MessagingCampaignDiagnostics : IEquatable<MessagingCampaign
     /// Number of contacts that don&#39;t match filter. This is currently supported only for Campaigns with dynamic filter on.
     /// </summary>
     /// <value>Number of contacts that don&#39;t match filter. This is currently supported only for Campaigns with dynamic filter on.</value>
-    [DataMember(Name = "filteredOutContactsCount", EmitDefaultValue = false)]
+    [JsonPropertyName("filteredOutContactsCount")]
     public int? FilteredOutContactsCount { get; private set; }
 
 

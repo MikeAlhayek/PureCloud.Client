@@ -1,12 +1,12 @@
-using System.Runtime.Serialization;
 using System.Text;
+using System.Text.Json.Serialization;
 
 namespace PureCloud.Client.Models;
 
 /// <summary>
 /// AuditQueryExecutionLargeResultsResponse
 /// </summary>
-[DataContract]
+
 public partial class AuditQueryExecutionLargeResultsResponse : IEquatable<AuditQueryExecutionLargeResultsResponse>
 {
     /// <summary>
@@ -31,7 +31,7 @@ public partial class AuditQueryExecutionLargeResultsResponse : IEquatable<AuditQ
     /// Id of the audit query execution request.
     /// </summary>
     /// <value>Id of the audit query execution request.</value>
-    [DataMember(Name = "id", EmitDefaultValue = false)]
+    [JsonPropertyName("id")]
     public string Id { get; set; }
 
 
@@ -40,7 +40,7 @@ public partial class AuditQueryExecutionLargeResultsResponse : IEquatable<AuditQ
     /// Number of results in a page.
     /// </summary>
     /// <value>Number of results in a page.</value>
-    [DataMember(Name = "pageSize", EmitDefaultValue = false)]
+    [JsonPropertyName("pageSize")]
     public int? PageSize { get; set; }
 
 
@@ -49,7 +49,7 @@ public partial class AuditQueryExecutionLargeResultsResponse : IEquatable<AuditQ
     /// Optional cursor to indicate where to resume the results.
     /// </summary>
     /// <value>Optional cursor to indicate where to resume the results.</value>
-    [DataMember(Name = "cursor", EmitDefaultValue = false)]
+    [JsonPropertyName("cursor")]
     public string Cursor { get; set; }
 
 
@@ -58,7 +58,7 @@ public partial class AuditQueryExecutionLargeResultsResponse : IEquatable<AuditQ
     /// The presigned url which can be used to download the results.
     /// </summary>
     /// <value>The presigned url which can be used to download the results.</value>
-    [DataMember(Name = "downloadUrl", EmitDefaultValue = false)]
+    [JsonPropertyName("downloadUrl")]
     public string DownloadUrl { get; set; }
 
 

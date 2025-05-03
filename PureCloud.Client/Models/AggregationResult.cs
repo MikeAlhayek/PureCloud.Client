@@ -7,13 +7,13 @@ namespace PureCloud.Client.Models;
 /// <summary>
 /// AggregationResult
 /// </summary>
-[DataContract]
+
 public partial class AggregationResult : IEquatable<AggregationResult>
 {
     /// <summary>
     /// Gets or Sets Type
     /// </summary>
-    [JsonConverter(typeof(JsonStringEnumConverter))]
+    
     public enum TypeEnum
     {
         /// <summary>
@@ -39,7 +39,7 @@ public partial class AggregationResult : IEquatable<AggregationResult>
     /// <summary>
     /// Gets or Sets Type
     /// </summary>
-    [DataMember(Name = "type", EmitDefaultValue = false)]
+    [JsonPropertyName("type")]
     public TypeEnum? Type { get; set; }
     /// <summary>
     /// Initializes a new instance of the <see cref="AggregationResult" /> class.
@@ -67,7 +67,7 @@ public partial class AggregationResult : IEquatable<AggregationResult>
     /// For termFrequency aggregations
     /// </summary>
     /// <value>For termFrequency aggregations</value>
-    [DataMember(Name = "dimension", EmitDefaultValue = false)]
+    [JsonPropertyName("dimension")]
     public string Dimension { get; set; }
 
 
@@ -76,7 +76,7 @@ public partial class AggregationResult : IEquatable<AggregationResult>
     /// For numericRange aggregations
     /// </summary>
     /// <value>For numericRange aggregations</value>
-    [DataMember(Name = "metric", EmitDefaultValue = false)]
+    [JsonPropertyName("metric")]
     public string Metric { get; set; }
 
 
@@ -84,7 +84,7 @@ public partial class AggregationResult : IEquatable<AggregationResult>
     /// <summary>
     /// Gets or Sets Count
     /// </summary>
-    [DataMember(Name = "count", EmitDefaultValue = false)]
+    [JsonPropertyName("count")]
     public long? Count { get; set; }
 
 
@@ -92,7 +92,7 @@ public partial class AggregationResult : IEquatable<AggregationResult>
     /// <summary>
     /// Gets or Sets Results
     /// </summary>
-    [DataMember(Name = "results", EmitDefaultValue = false)]
+    [JsonPropertyName("results")]
     public List<AggregationResultEntry> Results { get; set; }
 
 

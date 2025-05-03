@@ -7,14 +7,14 @@ namespace PureCloud.Client.Models;
 /// <summary>
 /// ConsultTransferToAgent
 /// </summary>
-[DataContract]
+
 public partial class ConsultTransferToAgent : IEquatable<ConsultTransferToAgent>
 {
     /// <summary>
     /// Determines to whom the initiating participant is requesting to speak. Defaults to DESTINATION
     /// </summary>
     /// <value>Determines to whom the initiating participant is requesting to speak. Defaults to DESTINATION</value>
-    [JsonConverter(typeof(JsonStringEnumConverter))]
+    
     public enum SpeakToEnum
     {
         /// <summary>
@@ -53,7 +53,7 @@ public partial class ConsultTransferToAgent : IEquatable<ConsultTransferToAgent>
     /// Determines to whom the initiating participant is requesting to speak. Defaults to DESTINATION
     /// </summary>
     /// <value>Determines to whom the initiating participant is requesting to speak. Defaults to DESTINATION</value>
-    [DataMember(Name = "speakTo", EmitDefaultValue = false)]
+    [JsonPropertyName("speakTo")]
     public SpeakToEnum? SpeakTo { get; set; }
 
     /// <summary>
@@ -85,7 +85,7 @@ public partial class ConsultTransferToAgent : IEquatable<ConsultTransferToAgent>
     /// The user ID of the person who wants to talk before completing the transfer. Could be the same of the context user ID
     /// </summary>
     /// <value>The user ID of the person who wants to talk before completing the transfer. Could be the same of the context user ID</value>
-    [DataMember(Name = "consultingUserId", EmitDefaultValue = false)]
+    [JsonPropertyName("consultingUserId")]
     public string ConsultingUserId { get; set; }
 
 
@@ -94,7 +94,7 @@ public partial class ConsultTransferToAgent : IEquatable<ConsultTransferToAgent>
     /// The id of the internal user.
     /// </summary>
     /// <value>The id of the internal user.</value>
-    [DataMember(Name = "userId", EmitDefaultValue = false)]
+    [JsonPropertyName("userId")]
     public string UserId { get; set; }
 
 
@@ -103,7 +103,7 @@ public partial class ConsultTransferToAgent : IEquatable<ConsultTransferToAgent>
     /// The name of the internal user.
     /// </summary>
     /// <value>The name of the internal user.</value>
-    [DataMember(Name = "userDisplayName", EmitDefaultValue = false)]
+    [JsonPropertyName("userDisplayName")]
     public string UserDisplayName { get; set; }
 
 

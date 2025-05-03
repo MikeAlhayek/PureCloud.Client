@@ -1,12 +1,12 @@
-using System.Runtime.Serialization;
 using System.Text;
+using System.Text.Json.Serialization;
 
 namespace PureCloud.Client.Models;
 
 /// <summary>
 /// PersistentConnectionChangeTopicErrorInfo
 /// </summary>
-[DataContract]
+
 public partial class PersistentConnectionChangeTopicErrorInfo : IEquatable<PersistentConnectionChangeTopicErrorInfo>
 {
     /// <summary>
@@ -32,7 +32,7 @@ public partial class PersistentConnectionChangeTopicErrorInfo : IEquatable<Persi
     /// <summary>
     /// Gets or Sets Text
     /// </summary>
-    [DataMember(Name = "text", EmitDefaultValue = false)]
+    [JsonPropertyName("text")]
     public string Text { get; set; }
 
 
@@ -40,7 +40,7 @@ public partial class PersistentConnectionChangeTopicErrorInfo : IEquatable<Persi
     /// <summary>
     /// Gets or Sets Code
     /// </summary>
-    [DataMember(Name = "code", EmitDefaultValue = false)]
+    [JsonPropertyName("code")]
     public string Code { get; set; }
 
 
@@ -48,7 +48,7 @@ public partial class PersistentConnectionChangeTopicErrorInfo : IEquatable<Persi
     /// <summary>
     /// Gets or Sets UserMessage
     /// </summary>
-    [DataMember(Name = "userMessage", EmitDefaultValue = false)]
+    [JsonPropertyName("userMessage")]
     public string UserMessage { get; set; }
 
 
@@ -56,7 +56,7 @@ public partial class PersistentConnectionChangeTopicErrorInfo : IEquatable<Persi
     /// <summary>
     /// Gets or Sets UserParams
     /// </summary>
-    [DataMember(Name = "userParams", EmitDefaultValue = false)]
+    [JsonPropertyName("userParams")]
     public Dictionary<string, string> UserParams { get; set; }
 
 
@@ -64,7 +64,7 @@ public partial class PersistentConnectionChangeTopicErrorInfo : IEquatable<Persi
     /// <summary>
     /// Gets or Sets NestedErrorDetails
     /// </summary>
-    [DataMember(Name = "nestedErrorDetails", EmitDefaultValue = false)]
+    [JsonPropertyName("nestedErrorDetails")]
     public List<PersistentConnectionChangeTopicErrorInfoDetails> NestedErrorDetails { get; set; }
 
 

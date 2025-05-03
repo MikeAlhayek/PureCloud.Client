@@ -1,4 +1,3 @@
-using System.Runtime.Serialization;
 using System.Text;
 using System.Text.Json.Serialization;
 
@@ -7,7 +6,7 @@ namespace PureCloud.Client.Models;
 /// <summary>
 /// ActivityPlanServiceGoalImpactOverrides
 /// </summary>
-[DataContract]
+
 public partial class ActivityPlanServiceGoalImpactOverrides : IEquatable<ActivityPlanServiceGoalImpactOverrides>
 {
 
@@ -36,7 +35,7 @@ public partial class ActivityPlanServiceGoalImpactOverrides : IEquatable<Activit
     /// Abandon rate service goal override for the associated activity plan
     /// </summary>
     /// <value>Abandon rate service goal override for the associated activity plan</value>
-    [DataMember(Name = "abandonRate", EmitDefaultValue = false)]
+    [JsonPropertyName("abandonRate")]
     public ActivityPlanAbandonRateImpactOverride AbandonRate { get; set; }
 
 
@@ -45,7 +44,7 @@ public partial class ActivityPlanServiceGoalImpactOverrides : IEquatable<Activit
     /// Service level goal override for the associated activity plan
     /// </summary>
     /// <value>Service level goal override for the associated activity plan</value>
-    [DataMember(Name = "serviceLevel", EmitDefaultValue = false)]
+    [JsonPropertyName("serviceLevel")]
     public ActivityPlanServiceLevelImpactOverride ServiceLevel { get; set; }
 
 
@@ -54,7 +53,7 @@ public partial class ActivityPlanServiceGoalImpactOverrides : IEquatable<Activit
     /// Average speed of answer service goal override for the associated activity plan
     /// </summary>
     /// <value>Average speed of answer service goal override for the associated activity plan</value>
-    [DataMember(Name = "averageSpeedOfAnswer", EmitDefaultValue = false)]
+    [JsonPropertyName("averageSpeedOfAnswer")]
     public ActivityPlanAsaImpactOverride AverageSpeedOfAnswer { get; set; }
 
 

@@ -1,12 +1,12 @@
-using System.Runtime.Serialization;
 using System.Text;
+using System.Text.Json.Serialization;
 
 namespace PureCloud.Client.Models;
 
 /// <summary>
 /// SnapshotMetaData
 /// </summary>
-[DataContract]
+
 public partial class SnapshotMetaData : IEquatable<SnapshotMetaData>
 {
     /// <summary>
@@ -27,7 +27,7 @@ public partial class SnapshotMetaData : IEquatable<SnapshotMetaData>
     /// URL to fetch the snapshot meta data information
     /// </summary>
     /// <value>URL to fetch the snapshot meta data information</value>
-    [DataMember(Name = "downloadUrl", EmitDefaultValue = false)]
+    [JsonPropertyName("downloadUrl")]
     public string DownloadUrl { get; set; }
 
 
@@ -36,7 +36,7 @@ public partial class SnapshotMetaData : IEquatable<SnapshotMetaData>
     /// Result will always come via downloadUrls; however the schema is included for documentation
     /// </summary>
     /// <value>Result will always come via downloadUrls; however the schema is included for documentation</value>
-    [DataMember(Name = "downloadResult", EmitDefaultValue = false)]
+    [JsonPropertyName("downloadResult")]
     public SnapshotMetaDataResult DownloadResult { get; set; }
 
 

@@ -1,12 +1,12 @@
-using System.Runtime.Serialization;
 using System.Text;
+using System.Text.Json.Serialization;
 
 namespace PureCloud.Client.Models;
 
 /// <summary>
 /// ContestScoresAgents
 /// </summary>
-[DataContract]
+
 public partial class ContestScoresAgents : IEquatable<ContestScoresAgents>
 {
     /// <summary>
@@ -31,7 +31,7 @@ public partial class ContestScoresAgents : IEquatable<ContestScoresAgents>
     /// The Contest score
     /// </summary>
     /// <value>The Contest score</value>
-    [DataMember(Name = "contestScore", EmitDefaultValue = false)]
+    [JsonPropertyName("contestScore")]
     public ContestScoreRanked ContestScore { get; set; }
 
 
@@ -40,7 +40,7 @@ public partial class ContestScoresAgents : IEquatable<ContestScoresAgents>
     /// The Contest metric scores
     /// </summary>
     /// <value>The Contest metric scores</value>
-    [DataMember(Name = "metricScores", EmitDefaultValue = false)]
+    [JsonPropertyName("metricScores")]
     public List<ContestMetricScoreRanked> MetricScores { get; set; }
 
 
@@ -49,7 +49,7 @@ public partial class ContestScoresAgents : IEquatable<ContestScoresAgents>
     /// Indicates whether an agent is disqualified or not
     /// </summary>
     /// <value>Indicates whether an agent is disqualified or not</value>
-    [DataMember(Name = "disqualified", EmitDefaultValue = false)]
+    [JsonPropertyName("disqualified")]
     public bool? Disqualified { get; set; }
 
 
@@ -58,7 +58,7 @@ public partial class ContestScoresAgents : IEquatable<ContestScoresAgents>
     /// The Contest Scores Leaderboard user
     /// </summary>
     /// <value>The Contest Scores Leaderboard user</value>
-    [DataMember(Name = "user", EmitDefaultValue = false)]
+    [JsonPropertyName("user")]
     public UserReference User { get; set; }
 
 

@@ -1,12 +1,12 @@
-using System.Runtime.Serialization;
 using System.Text;
+using System.Text.Json.Serialization;
 
 namespace PureCloud.Client.Models;
 
 /// <summary>
 /// ConversationSummaryReason
 /// </summary>
-[DataContract]
+
 public partial class ConversationSummaryReason : IEquatable<ConversationSummaryReason>
 {
     /// <summary>
@@ -27,7 +27,7 @@ public partial class ConversationSummaryReason : IEquatable<ConversationSummaryR
     /// The text of the reason.
     /// </summary>
     /// <value>The text of the reason.</value>
-    [DataMember(Name = "text", EmitDefaultValue = false)]
+    [JsonPropertyName("text")]
     public string Text { get; set; }
 
 
@@ -36,7 +36,7 @@ public partial class ConversationSummaryReason : IEquatable<ConversationSummaryR
     /// The description.
     /// </summary>
     /// <value>The description.</value>
-    [DataMember(Name = "description", EmitDefaultValue = false)]
+    [JsonPropertyName("description")]
     public string Description { get; set; }
 
 
@@ -45,7 +45,7 @@ public partial class ConversationSummaryReason : IEquatable<ConversationSummaryR
     /// The AI confidence value.
     /// </summary>
     /// <value>The AI confidence value.</value>
-    [DataMember(Name = "confidence", EmitDefaultValue = false)]
+    [JsonPropertyName("confidence")]
     public float? Confidence { get; private set; }
 
 

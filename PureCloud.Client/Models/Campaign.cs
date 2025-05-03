@@ -7,14 +7,14 @@ namespace PureCloud.Client.Models;
 /// <summary>
 /// Campaign
 /// </summary>
-[DataContract]
+
 public partial class Campaign : IEquatable<Campaign>
 {
     /// <summary>
     /// The strategy this Campaign will use for dialing.
     /// </summary>
     /// <value>The strategy this Campaign will use for dialing.</value>
-    [JsonConverter(typeof(JsonStringEnumConverter))]
+    
     public enum DialingModeEnum
     {
         /// <summary>
@@ -65,7 +65,7 @@ public partial class Campaign : IEquatable<Campaign>
     /// The current status of the Campaign. A Campaign may be turned 'on' or 'off'. Required for updates.
     /// </summary>
     /// <value>The current status of the Campaign. A Campaign may be turned 'on' or 'off'. Required for updates.</value>
-    [JsonConverter(typeof(JsonStringEnumConverter))]
+    
     public enum CampaignStatusEnum
     {
         /// <summary>
@@ -122,13 +122,13 @@ public partial class Campaign : IEquatable<Campaign>
     /// The strategy this Campaign will use for dialing.
     /// </summary>
     /// <value>The strategy this Campaign will use for dialing.</value>
-    [DataMember(Name = "dialingMode", EmitDefaultValue = false)]
+    [JsonPropertyName("dialingMode")]
     public DialingModeEnum? DialingMode { get; set; }
     /// <summary>
     /// The current status of the Campaign. A Campaign may be turned 'on' or 'off'. Required for updates.
     /// </summary>
     /// <value>The current status of the Campaign. A Campaign may be turned 'on' or 'off'. Required for updates.</value>
-    [DataMember(Name = "campaignStatus", EmitDefaultValue = false)]
+    [JsonPropertyName("campaignStatus")]
     public CampaignStatusEnum? CampaignStatus { get; set; }
 
     /// <summary>
@@ -220,7 +220,7 @@ public partial class Campaign : IEquatable<Campaign>
     /// The globally unique identifier for the object.
     /// </summary>
     /// <value>The globally unique identifier for the object.</value>
-    [DataMember(Name = "id", EmitDefaultValue = false)]
+    [JsonPropertyName("id")]
     public string Id { get; private set; }
 
 
@@ -229,7 +229,7 @@ public partial class Campaign : IEquatable<Campaign>
     /// The name of the Campaign.
     /// </summary>
     /// <value>The name of the Campaign.</value>
-    [DataMember(Name = "name", EmitDefaultValue = false)]
+    [JsonPropertyName("name")]
     public string Name { get; set; }
 
 
@@ -238,7 +238,7 @@ public partial class Campaign : IEquatable<Campaign>
     /// Creation time of the entity. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z
     /// </summary>
     /// <value>Creation time of the entity. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z</value>
-    [DataMember(Name = "dateCreated", EmitDefaultValue = false)]
+    [JsonPropertyName("dateCreated")]
     public DateTime? DateCreated { get; private set; }
 
 
@@ -247,7 +247,7 @@ public partial class Campaign : IEquatable<Campaign>
     /// Last modified time of the entity. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z
     /// </summary>
     /// <value>Last modified time of the entity. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z</value>
-    [DataMember(Name = "dateModified", EmitDefaultValue = false)]
+    [JsonPropertyName("dateModified")]
     public DateTime? DateModified { get; private set; }
 
 
@@ -256,7 +256,7 @@ public partial class Campaign : IEquatable<Campaign>
     /// Required for updates, must match the version number of the most recent update
     /// </summary>
     /// <value>Required for updates, must match the version number of the most recent update</value>
-    [DataMember(Name = "version", EmitDefaultValue = false)]
+    [JsonPropertyName("version")]
     public int? Version { get; set; }
 
 
@@ -265,7 +265,7 @@ public partial class Campaign : IEquatable<Campaign>
     /// The ContactList for this Campaign to dial.
     /// </summary>
     /// <value>The ContactList for this Campaign to dial.</value>
-    [DataMember(Name = "contactList", EmitDefaultValue = false)]
+    [JsonPropertyName("contactList")]
     public DomainEntityRef ContactList { get; set; }
 
 
@@ -274,7 +274,7 @@ public partial class Campaign : IEquatable<Campaign>
     /// The Queue for this Campaign to route calls to. Required for all dialing modes except agentless.
     /// </summary>
     /// <value>The Queue for this Campaign to route calls to. Required for all dialing modes except agentless.</value>
-    [DataMember(Name = "queue", EmitDefaultValue = false)]
+    [JsonPropertyName("queue")]
     public DomainEntityRef Queue { get; set; }
 
 
@@ -285,7 +285,7 @@ public partial class Campaign : IEquatable<Campaign>
     /// The Script to be displayed to agents that are handling outbound calls. Required for all dialing modes except agentless.
     /// </summary>
     /// <value>The Script to be displayed to agents that are handling outbound calls. Required for all dialing modes except agentless.</value>
-    [DataMember(Name = "script", EmitDefaultValue = false)]
+    [JsonPropertyName("script")]
     public DomainEntityRef Script { get; set; }
 
 
@@ -294,7 +294,7 @@ public partial class Campaign : IEquatable<Campaign>
     /// The EdgeGroup that will place the calls. Required for all dialing modes except preview.
     /// </summary>
     /// <value>The EdgeGroup that will place the calls. Required for all dialing modes except preview.</value>
-    [DataMember(Name = "edgeGroup", EmitDefaultValue = false)]
+    [JsonPropertyName("edgeGroup")]
     public DomainEntityRef EdgeGroup { get; set; }
 
 
@@ -303,7 +303,7 @@ public partial class Campaign : IEquatable<Campaign>
     /// The identifier of the site to be used for dialing; can be set in place of an edge group.
     /// </summary>
     /// <value>The identifier of the site to be used for dialing; can be set in place of an edge group.</value>
-    [DataMember(Name = "site", EmitDefaultValue = false)]
+    [JsonPropertyName("site")]
     public DomainEntityRef Site { get; set; }
 
 
@@ -314,7 +314,7 @@ public partial class Campaign : IEquatable<Campaign>
     /// The ContactPhoneNumberColumns on the ContactList that this Campaign should dial.
     /// </summary>
     /// <value>The ContactPhoneNumberColumns on the ContactList that this Campaign should dial.</value>
-    [DataMember(Name = "phoneColumns", EmitDefaultValue = false)]
+    [JsonPropertyName("phoneColumns")]
     public List<PhoneColumn> PhoneColumns { get; set; }
 
 
@@ -323,7 +323,7 @@ public partial class Campaign : IEquatable<Campaign>
     /// The targeted compliance abandon rate percentage. Required for power and predictive campaigns.
     /// </summary>
     /// <value>The targeted compliance abandon rate percentage. Required for power and predictive campaigns.</value>
-    [DataMember(Name = "abandonRate", EmitDefaultValue = false)]
+    [JsonPropertyName("abandonRate")]
     public double? AbandonRate { get; set; }
 
 
@@ -332,7 +332,7 @@ public partial class Campaign : IEquatable<Campaign>
     /// DncLists for this Campaign to check before placing a call.
     /// </summary>
     /// <value>DncLists for this Campaign to check before placing a call.</value>
-    [DataMember(Name = "dncLists", EmitDefaultValue = false)]
+    [JsonPropertyName("dncLists")]
     public List<DomainEntityRef> DncLists { get; set; }
 
 
@@ -341,7 +341,7 @@ public partial class Campaign : IEquatable<Campaign>
     /// The callable time set for this campaign to check before placing a call.
     /// </summary>
     /// <value>The callable time set for this campaign to check before placing a call.</value>
-    [DataMember(Name = "callableTimeSet", EmitDefaultValue = false)]
+    [JsonPropertyName("callableTimeSet")]
     public DomainEntityRef CallableTimeSet { get; set; }
 
 
@@ -350,7 +350,7 @@ public partial class Campaign : IEquatable<Campaign>
     /// The call analysis response set to handle call analysis results from the edge. Required for all dialing modes except preview.
     /// </summary>
     /// <value>The call analysis response set to handle call analysis results from the edge. Required for all dialing modes except preview.</value>
-    [DataMember(Name = "callAnalysisResponseSet", EmitDefaultValue = false)]
+    [JsonPropertyName("callAnalysisResponseSet")]
     public DomainEntityRef CallAnalysisResponseSet { get; set; }
 
 
@@ -359,7 +359,7 @@ public partial class Campaign : IEquatable<Campaign>
     /// A list of current error conditions associated with the campaign.
     /// </summary>
     /// <value>A list of current error conditions associated with the campaign.</value>
-    [DataMember(Name = "errors", EmitDefaultValue = false)]
+    [JsonPropertyName("errors")]
     public List<RestErrorDetail> Errors { get; private set; }
 
 
@@ -368,7 +368,7 @@ public partial class Campaign : IEquatable<Campaign>
     /// The caller id name to be displayed on the outbound call.
     /// </summary>
     /// <value>The caller id name to be displayed on the outbound call.</value>
-    [DataMember(Name = "callerName", EmitDefaultValue = false)]
+    [JsonPropertyName("callerName")]
     public string CallerName { get; set; }
 
 
@@ -377,7 +377,7 @@ public partial class Campaign : IEquatable<Campaign>
     /// The caller id phone number to be displayed on the outbound call.
     /// </summary>
     /// <value>The caller id phone number to be displayed on the outbound call.</value>
-    [DataMember(Name = "callerAddress", EmitDefaultValue = false)]
+    [JsonPropertyName("callerAddress")]
     public string CallerAddress { get; set; }
 
 
@@ -386,7 +386,7 @@ public partial class Campaign : IEquatable<Campaign>
     /// The number of outbound lines to be concurrently dialed. Only applicable to non-preview campaigns; only required for agentless.
     /// </summary>
     /// <value>The number of outbound lines to be concurrently dialed. Only applicable to non-preview campaigns; only required for agentless.</value>
-    [DataMember(Name = "outboundLineCount", EmitDefaultValue = false)]
+    [JsonPropertyName("outboundLineCount")]
     public int? OutboundLineCount { get; set; }
 
 
@@ -395,7 +395,7 @@ public partial class Campaign : IEquatable<Campaign>
     /// Rule sets to be applied while this campaign is dialing.
     /// </summary>
     /// <value>Rule sets to be applied while this campaign is dialing.</value>
-    [DataMember(Name = "ruleSets", EmitDefaultValue = false)]
+    [JsonPropertyName("ruleSets")]
     public List<DomainEntityRef> RuleSets { get; set; }
 
 
@@ -404,7 +404,7 @@ public partial class Campaign : IEquatable<Campaign>
     /// Whether or not agents can skip previews without placing a call. Only applicable for preview campaigns.
     /// </summary>
     /// <value>Whether or not agents can skip previews without placing a call. Only applicable for preview campaigns.</value>
-    [DataMember(Name = "skipPreviewDisabled", EmitDefaultValue = false)]
+    [JsonPropertyName("skipPreviewDisabled")]
     public bool? SkipPreviewDisabled { get; set; }
 
 
@@ -413,7 +413,7 @@ public partial class Campaign : IEquatable<Campaign>
     /// The number of seconds before a call will be automatically placed on a preview. A value of 0 indicates no automatic placement of calls. Only applicable to preview campaigns.
     /// </summary>
     /// <value>The number of seconds before a call will be automatically placed on a preview. A value of 0 indicates no automatic placement of calls. Only applicable to preview campaigns.</value>
-    [DataMember(Name = "previewTimeOutSeconds", EmitDefaultValue = false)]
+    [JsonPropertyName("previewTimeOutSeconds")]
     public long? PreviewTimeOutSeconds { get; set; }
 
 
@@ -422,7 +422,7 @@ public partial class Campaign : IEquatable<Campaign>
     /// Indicates (when true) that the campaign will remain on after contacts are depleted, allowing additional contacts to be appended/added to the contact list and processed by the still-running campaign. The campaign can still be turned off manually.
     /// </summary>
     /// <value>Indicates (when true) that the campaign will remain on after contacts are depleted, allowing additional contacts to be appended/added to the contact list and processed by the still-running campaign. The campaign can still be turned off manually.</value>
-    [DataMember(Name = "alwaysRunning", EmitDefaultValue = false)]
+    [JsonPropertyName("alwaysRunning")]
     public bool? AlwaysRunning { get; set; }
 
 
@@ -431,7 +431,7 @@ public partial class Campaign : IEquatable<Campaign>
     /// The order in which to sort contacts for dialing, based on a column.
     /// </summary>
     /// <value>The order in which to sort contacts for dialing, based on a column.</value>
-    [DataMember(Name = "contactSort", EmitDefaultValue = false)]
+    [JsonPropertyName("contactSort")]
     public ContactSort ContactSort { get; set; }
 
 
@@ -440,7 +440,7 @@ public partial class Campaign : IEquatable<Campaign>
     /// The order in which to sort contacts for dialing, based on up to four columns.
     /// </summary>
     /// <value>The order in which to sort contacts for dialing, based on up to four columns.</value>
-    [DataMember(Name = "contactSorts", EmitDefaultValue = false)]
+    [JsonPropertyName("contactSorts")]
     public List<ContactSort> ContactSorts { get; set; }
 
 
@@ -449,7 +449,7 @@ public partial class Campaign : IEquatable<Campaign>
     /// How long to wait before dispositioning a call as &#39;no-answer&#39;. Default 30 seconds. Only applicable to non-preview campaigns.
     /// </summary>
     /// <value>How long to wait before dispositioning a call as &#39;no-answer&#39;. Default 30 seconds. Only applicable to non-preview campaigns.</value>
-    [DataMember(Name = "noAnswerTimeout", EmitDefaultValue = false)]
+    [JsonPropertyName("noAnswerTimeout")]
     public int? NoAnswerTimeout { get; set; }
 
 
@@ -458,7 +458,7 @@ public partial class Campaign : IEquatable<Campaign>
     /// The language the edge will use to analyze the call.
     /// </summary>
     /// <value>The language the edge will use to analyze the call.</value>
-    [DataMember(Name = "callAnalysisLanguage", EmitDefaultValue = false)]
+    [JsonPropertyName("callAnalysisLanguage")]
     public string CallAnalysisLanguage { get; set; }
 
 
@@ -467,7 +467,7 @@ public partial class Campaign : IEquatable<Campaign>
     /// The priority of this campaign relative to other campaigns that are running on the same queue. 5 is the highest priority, 1 the lowest.
     /// </summary>
     /// <value>The priority of this campaign relative to other campaigns that are running on the same queue. 5 is the highest priority, 1 the lowest.</value>
-    [DataMember(Name = "priority", EmitDefaultValue = false)]
+    [JsonPropertyName("priority")]
     public int? Priority { get; set; }
 
 
@@ -476,7 +476,7 @@ public partial class Campaign : IEquatable<Campaign>
     /// Filter to apply to the contact list before dialing. Currently a campaign can only have one filter applied.
     /// </summary>
     /// <value>Filter to apply to the contact list before dialing. Currently a campaign can only have one filter applied.</value>
-    [DataMember(Name = "contactListFilters", EmitDefaultValue = false)]
+    [JsonPropertyName("contactListFilters")]
     public List<DomainEntityRef> ContactListFilters { get; set; }
 
 
@@ -485,7 +485,7 @@ public partial class Campaign : IEquatable<Campaign>
     /// The division this campaign belongs to.
     /// </summary>
     /// <value>The division this campaign belongs to.</value>
-    [DataMember(Name = "division", EmitDefaultValue = false)]
+    [JsonPropertyName("division")]
     public DomainEntityRef Division { get; set; }
 
 
@@ -494,7 +494,7 @@ public partial class Campaign : IEquatable<Campaign>
     /// Name of the contact list column containing the id of the agent who owns the record. Only applicable to preview campaigns.
     /// </summary>
     /// <value>Name of the contact list column containing the id of the agent who owns the record. Only applicable to preview campaigns.</value>
-    [DataMember(Name = "agentOwnedColumn", EmitDefaultValue = false)]
+    [JsonPropertyName("agentOwnedColumn")]
     public string AgentOwnedColumn { get; set; }
 
 
@@ -503,7 +503,7 @@ public partial class Campaign : IEquatable<Campaign>
     /// Settings for dynamic queueing of contacts.
     /// </summary>
     /// <value>Settings for dynamic queueing of contacts.</value>
-    [DataMember(Name = "dynamicContactQueueingSettings", EmitDefaultValue = false)]
+    [JsonPropertyName("dynamicContactQueueingSettings")]
     public DynamicContactQueueingSettings DynamicContactQueueingSettings { get; set; }
 
 
@@ -512,7 +512,7 @@ public partial class Campaign : IEquatable<Campaign>
     /// The skill columns on the ContactList that this Campaign should take into account when dialing
     /// </summary>
     /// <value>The skill columns on the ContactList that this Campaign should take into account when dialing</value>
-    [DataMember(Name = "skillColumns", EmitDefaultValue = false)]
+    [JsonPropertyName("skillColumns")]
     public List<string> SkillColumns { get; set; }
 
 
@@ -521,7 +521,7 @@ public partial class Campaign : IEquatable<Campaign>
     /// The maximum number of calls that can be placed per agent on this campaign
     /// </summary>
     /// <value>The maximum number of calls that can be placed per agent on this campaign</value>
-    [DataMember(Name = "maxCallsPerAgent", EmitDefaultValue = false)]
+    [JsonPropertyName("maxCallsPerAgent")]
     public int? MaxCallsPerAgent { get; set; }
 
 
@@ -530,7 +530,7 @@ public partial class Campaign : IEquatable<Campaign>
     /// The maximum number of calls that can be placed per agent on this campaign with decimal precision
     /// </summary>
     /// <value>The maximum number of calls that can be placed per agent on this campaign with decimal precision</value>
-    [DataMember(Name = "maxCallsPerAgentDecimal", EmitDefaultValue = false)]
+    [JsonPropertyName("maxCallsPerAgentDecimal")]
     public double? MaxCallsPerAgentDecimal { get; set; }
 
 
@@ -539,7 +539,7 @@ public partial class Campaign : IEquatable<Campaign>
     /// The option manages the auto-answer callback calls
     /// </summary>
     /// <value>The option manages the auto-answer callback calls</value>
-    [DataMember(Name = "callbackAutoAnswer", EmitDefaultValue = false)]
+    [JsonPropertyName("callbackAutoAnswer")]
     public bool? CallbackAutoAnswer { get; set; }
 
 
@@ -548,7 +548,7 @@ public partial class Campaign : IEquatable<Campaign>
     /// Dynamic line balancing settings
     /// </summary>
     /// <value>Dynamic line balancing settings</value>
-    [DataMember(Name = "dynamicLineBalancingSettings", EmitDefaultValue = false)]
+    [JsonPropertyName("dynamicLineBalancingSettings")]
     public DynamicLineBalancingSettings DynamicLineBalancingSettings { get; set; }
 
 
@@ -557,7 +557,7 @@ public partial class Campaign : IEquatable<Campaign>
     /// The URI for this object
     /// </summary>
     /// <value>The URI for this object</value>
-    [DataMember(Name = "selfUri", EmitDefaultValue = false)]
+    [JsonPropertyName("selfUri")]
     public string SelfUri { get; private set; }
 
 

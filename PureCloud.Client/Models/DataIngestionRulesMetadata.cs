@@ -1,12 +1,12 @@
-using System.Runtime.Serialization;
 using System.Text;
+using System.Text.Json.Serialization;
 
 namespace PureCloud.Client.Models;
 
 /// <summary>
 /// DataIngestionRulesMetadata
 /// </summary>
-[DataContract]
+
 public partial class DataIngestionRulesMetadata : IEquatable<DataIngestionRulesMetadata>
 {
     /// <summary>
@@ -29,7 +29,7 @@ public partial class DataIngestionRulesMetadata : IEquatable<DataIngestionRulesM
     /// Count of data ingestion rules by status
     /// </summary>
     /// <value>Count of data ingestion rules by status</value>
-    [DataMember(Name = "countByStatus", EmitDefaultValue = false)]
+    [JsonPropertyName("countByStatus")]
     public Dictionary<string, int?> CountByStatus { get; set; }
 
 
@@ -38,7 +38,7 @@ public partial class DataIngestionRulesMetadata : IEquatable<DataIngestionRulesM
     /// The platform for which the data ingestion rules are available
     /// </summary>
     /// <value>The platform for which the data ingestion rules are available</value>
-    [DataMember(Name = "platform", EmitDefaultValue = false)]
+    [JsonPropertyName("platform")]
     public string Platform { get; set; }
 
 
@@ -47,7 +47,7 @@ public partial class DataIngestionRulesMetadata : IEquatable<DataIngestionRulesM
     /// The total count of data ingestion rule
     /// </summary>
     /// <value>The total count of data ingestion rule</value>
-    [DataMember(Name = "totalCount", EmitDefaultValue = false)]
+    [JsonPropertyName("totalCount")]
     public int? TotalCount { get; set; }
 
 

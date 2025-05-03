@@ -1,4 +1,3 @@
-using System.Runtime.Serialization;
 using System.Text;
 using System.Text.Json.Serialization;
 
@@ -7,7 +6,7 @@ namespace PureCloud.Client.Models;
 /// <summary>
 /// WebActionEvent
 /// </summary>
-[DataContract]
+
 public partial class WebActionEvent : IEquatable<WebActionEvent>
 {
 
@@ -58,7 +57,7 @@ public partial class WebActionEvent : IEquatable<WebActionEvent>
     /// The action that triggered the event.
     /// </summary>
     /// <value>The action that triggered the event.</value>
-    [DataMember(Name = "action", EmitDefaultValue = false)]
+    [JsonPropertyName("action")]
     public EventAction Action { get; set; }
 
 
@@ -67,7 +66,7 @@ public partial class WebActionEvent : IEquatable<WebActionEvent>
     /// The action map that triggered the action.
     /// </summary>
     /// <value>The action map that triggered the action.</value>
-    [DataMember(Name = "actionMap", EmitDefaultValue = false)]
+    [JsonPropertyName("actionMap")]
     public ActionEventActionMap ActionMap { get; set; }
 
 
@@ -76,7 +75,7 @@ public partial class WebActionEvent : IEquatable<WebActionEvent>
     /// The target for engagement actions.
     /// </summary>
     /// <value>The target for engagement actions.</value>
-    [DataMember(Name = "actionTarget", EmitDefaultValue = false)]
+    [JsonPropertyName("actionTarget")]
     public AddressableEntityRef ActionTarget { get; set; }
 
 
@@ -85,7 +84,7 @@ public partial class WebActionEvent : IEquatable<WebActionEvent>
     /// Milliseconds elapsed until the action is disposed.
     /// </summary>
     /// <value>Milliseconds elapsed until the action is disposed.</value>
-    [DataMember(Name = "timeToDisposition", EmitDefaultValue = false)]
+    [JsonPropertyName("timeToDisposition")]
     public long? TimeToDisposition { get; set; }
 
 
@@ -94,7 +93,7 @@ public partial class WebActionEvent : IEquatable<WebActionEvent>
     /// Code of the error returned when the action fails.
     /// </summary>
     /// <value>Code of the error returned when the action fails.</value>
-    [DataMember(Name = "errorCode", EmitDefaultValue = false)]
+    [JsonPropertyName("errorCode")]
     public string ErrorCode { get; set; }
 
 
@@ -103,7 +102,7 @@ public partial class WebActionEvent : IEquatable<WebActionEvent>
     /// Message of the error returned when the action fails.
     /// </summary>
     /// <value>Message of the error returned when the action fails.</value>
-    [DataMember(Name = "errorMessage", EmitDefaultValue = false)]
+    [JsonPropertyName("errorMessage")]
     public string ErrorMessage { get; set; }
 
 
@@ -112,7 +111,7 @@ public partial class WebActionEvent : IEquatable<WebActionEvent>
     /// HTTP User-Agent string (see https://tools.ietf.org/html/rfc1945#section-10.15).
     /// </summary>
     /// <value>HTTP User-Agent string (see https://tools.ietf.org/html/rfc1945#section-10.15).</value>
-    [DataMember(Name = "userAgentString", EmitDefaultValue = false)]
+    [JsonPropertyName("userAgentString")]
     public string UserAgentString { get; set; }
 
 
@@ -121,7 +120,7 @@ public partial class WebActionEvent : IEquatable<WebActionEvent>
     /// Customer&#39;s browser.
     /// </summary>
     /// <value>Customer&#39;s browser.</value>
-    [DataMember(Name = "browser", EmitDefaultValue = false)]
+    [JsonPropertyName("browser")]
     public Browser Browser { get; set; }
 
 
@@ -130,7 +129,7 @@ public partial class WebActionEvent : IEquatable<WebActionEvent>
     /// Customer&#39;s device.
     /// </summary>
     /// <value>Customer&#39;s device.</value>
-    [DataMember(Name = "device", EmitDefaultValue = false)]
+    [JsonPropertyName("device")]
     public Device Device { get; set; }
 
 
@@ -139,7 +138,7 @@ public partial class WebActionEvent : IEquatable<WebActionEvent>
     /// Customer&#39;s geolocation.
     /// </summary>
     /// <value>Customer&#39;s geolocation.</value>
-    [DataMember(Name = "geolocation", EmitDefaultValue = false)]
+    [JsonPropertyName("geolocation")]
     public JourneyGeolocation Geolocation { get; set; }
 
 
@@ -148,7 +147,7 @@ public partial class WebActionEvent : IEquatable<WebActionEvent>
     /// Visitor&#39;s IP address.
     /// </summary>
     /// <value>Visitor&#39;s IP address.</value>
-    [DataMember(Name = "ipAddress", EmitDefaultValue = false)]
+    [JsonPropertyName("ipAddress")]
     public string IpAddress { get; set; }
 
 
@@ -157,7 +156,7 @@ public partial class WebActionEvent : IEquatable<WebActionEvent>
     /// Visitor&#39;s IP-based organization or ISP name.
     /// </summary>
     /// <value>Visitor&#39;s IP-based organization or ISP name.</value>
-    [DataMember(Name = "ipOrganization", EmitDefaultValue = false)]
+    [JsonPropertyName("ipOrganization")]
     public string IpOrganization { get; set; }
 
 
@@ -166,7 +165,7 @@ public partial class WebActionEvent : IEquatable<WebActionEvent>
     /// Marketing / traffic source information.
     /// </summary>
     /// <value>Marketing / traffic source information.</value>
-    [DataMember(Name = "mktCampaign", EmitDefaultValue = false)]
+    [JsonPropertyName("mktCampaign")]
     public JourneyCampaign MktCampaign { get; set; }
 
 
@@ -175,7 +174,7 @@ public partial class WebActionEvent : IEquatable<WebActionEvent>
     /// Visit&#39;s referrer.
     /// </summary>
     /// <value>Visit&#39;s referrer.</value>
-    [DataMember(Name = "visitReferrer", EmitDefaultValue = false)]
+    [JsonPropertyName("visitReferrer")]
     public Referrer VisitReferrer { get; set; }
 
 

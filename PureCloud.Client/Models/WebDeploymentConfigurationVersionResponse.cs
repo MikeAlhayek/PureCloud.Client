@@ -7,14 +7,14 @@ namespace PureCloud.Client.Models;
 /// <summary>
 /// Details about the configuration version of a Web Deployment
 /// </summary>
-[DataContract]
+
 public partial class WebDeploymentConfigurationVersionResponse : IEquatable<WebDeploymentConfigurationVersionResponse>
 {
     /// <summary>
     /// The current status of the configuration version
     /// </summary>
     /// <value>The current status of the configuration version</value>
-    [JsonConverter(typeof(JsonStringEnumConverter))]
+    
     public enum StatusEnum
     {
         /// <summary>
@@ -59,7 +59,7 @@ public partial class WebDeploymentConfigurationVersionResponse : IEquatable<WebD
     /// The current status of the configuration version
     /// </summary>
     /// <value>The current status of the configuration version</value>
-    [DataMember(Name = "status", EmitDefaultValue = false)]
+    [JsonPropertyName("status")]
     public StatusEnum? Status { get; set; }
 
     /// <summary>
@@ -113,7 +113,7 @@ public partial class WebDeploymentConfigurationVersionResponse : IEquatable<WebD
     /// The configuration version ID
     /// </summary>
     /// <value>The configuration version ID</value>
-    [DataMember(Name = "id", EmitDefaultValue = false)]
+    [JsonPropertyName("id")]
     public string Id { get; set; }
 
 
@@ -122,7 +122,7 @@ public partial class WebDeploymentConfigurationVersionResponse : IEquatable<WebD
     /// The configuration version name
     /// </summary>
     /// <value>The configuration version name</value>
-    [DataMember(Name = "name", EmitDefaultValue = false)]
+    [JsonPropertyName("name")]
     public string Name { get; set; }
 
 
@@ -131,7 +131,7 @@ public partial class WebDeploymentConfigurationVersionResponse : IEquatable<WebD
     /// The version of the configuration
     /// </summary>
     /// <value>The version of the configuration</value>
-    [DataMember(Name = "version", EmitDefaultValue = false)]
+    [JsonPropertyName("version")]
     public string Version { get; set; }
 
 
@@ -140,7 +140,7 @@ public partial class WebDeploymentConfigurationVersionResponse : IEquatable<WebD
     /// Headless Mode Support which Controls UI components. When enabled, native UI components will be disabled and allows for custom-built UI.
     /// </summary>
     /// <value>Headless Mode Support which Controls UI components. When enabled, native UI components will be disabled and allows for custom-built UI.</value>
-    [DataMember(Name = "headlessMode", EmitDefaultValue = false)]
+    [JsonPropertyName("headlessMode")]
     public WebDeploymentHeadlessMode HeadlessMode { get; set; }
 
 
@@ -149,7 +149,7 @@ public partial class WebDeploymentConfigurationVersionResponse : IEquatable<WebD
     /// The description of the configuration
     /// </summary>
     /// <value>The description of the configuration</value>
-    [DataMember(Name = "description", EmitDefaultValue = false)]
+    [JsonPropertyName("description")]
     public string Description { get; set; }
 
 
@@ -158,7 +158,7 @@ public partial class WebDeploymentConfigurationVersionResponse : IEquatable<WebD
     /// A list of languages supported on the configuration required if the messenger is enabled
     /// </summary>
     /// <value>A list of languages supported on the configuration required if the messenger is enabled</value>
-    [DataMember(Name = "languages", EmitDefaultValue = false)]
+    [JsonPropertyName("languages")]
     public List<string> Languages { get; set; }
 
 
@@ -167,7 +167,7 @@ public partial class WebDeploymentConfigurationVersionResponse : IEquatable<WebD
     /// The default language to use for the configuration required if the messenger is enabled
     /// </summary>
     /// <value>The default language to use for the configuration required if the messenger is enabled</value>
-    [DataMember(Name = "defaultLanguage", EmitDefaultValue = false)]
+    [JsonPropertyName("defaultLanguage")]
     public string DefaultLanguage { get; set; }
 
 
@@ -176,7 +176,7 @@ public partial class WebDeploymentConfigurationVersionResponse : IEquatable<WebD
     /// The localization settings for homescreen app
     /// </summary>
     /// <value>The localization settings for homescreen app</value>
-    [DataMember(Name = "customI18nLabels", EmitDefaultValue = false)]
+    [JsonPropertyName("customI18nLabels")]
     public List<CustomI18nLabels> CustomI18nLabels { get; set; }
 
 
@@ -185,7 +185,7 @@ public partial class WebDeploymentConfigurationVersionResponse : IEquatable<WebD
     /// The settings for messenger
     /// </summary>
     /// <value>The settings for messenger</value>
-    [DataMember(Name = "messenger", EmitDefaultValue = false)]
+    [JsonPropertyName("messenger")]
     public MessengerSettings Messenger { get; set; }
 
 
@@ -194,7 +194,7 @@ public partial class WebDeploymentConfigurationVersionResponse : IEquatable<WebD
     /// The settings for position
     /// </summary>
     /// <value>The settings for position</value>
-    [DataMember(Name = "position", EmitDefaultValue = false)]
+    [JsonPropertyName("position")]
     public PositionSettings Position { get; set; }
 
 
@@ -203,7 +203,7 @@ public partial class WebDeploymentConfigurationVersionResponse : IEquatable<WebD
     /// The settings for knowledge portal (previously support center)
     /// </summary>
     /// <value>The settings for knowledge portal (previously support center)</value>
-    [DataMember(Name = "supportCenter", EmitDefaultValue = false)]
+    [JsonPropertyName("supportCenter")]
     public SupportCenterSettings SupportCenter { get; set; }
 
 
@@ -212,7 +212,7 @@ public partial class WebDeploymentConfigurationVersionResponse : IEquatable<WebD
     /// The settings for cobrowse
     /// </summary>
     /// <value>The settings for cobrowse</value>
-    [DataMember(Name = "cobrowse", EmitDefaultValue = false)]
+    [JsonPropertyName("cobrowse")]
     public CobrowseSettings Cobrowse { get; set; }
 
 
@@ -221,7 +221,7 @@ public partial class WebDeploymentConfigurationVersionResponse : IEquatable<WebD
     /// The settings for journey events
     /// </summary>
     /// <value>The settings for journey events</value>
-    [DataMember(Name = "journeyEvents", EmitDefaultValue = false)]
+    [JsonPropertyName("journeyEvents")]
     public JourneyEventsSettings JourneyEvents { get; set; }
 
 
@@ -230,7 +230,7 @@ public partial class WebDeploymentConfigurationVersionResponse : IEquatable<WebD
     /// The settings for authenticated deployments
     /// </summary>
     /// <value>The settings for authenticated deployments</value>
-    [DataMember(Name = "authenticationSettings", EmitDefaultValue = false)]
+    [JsonPropertyName("authenticationSettings")]
     public AuthenticationSettings AuthenticationSettings { get; set; }
 
 
@@ -239,7 +239,7 @@ public partial class WebDeploymentConfigurationVersionResponse : IEquatable<WebD
     /// The settings for video
     /// </summary>
     /// <value>The settings for video</value>
-    [DataMember(Name = "video", EmitDefaultValue = false)]
+    [JsonPropertyName("video")]
     public VideoSettings Video { get; set; }
 
 
@@ -248,7 +248,7 @@ public partial class WebDeploymentConfigurationVersionResponse : IEquatable<WebD
     /// The date the configuration version was created. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z
     /// </summary>
     /// <value>The date the configuration version was created. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z</value>
-    [DataMember(Name = "dateCreated", EmitDefaultValue = false)]
+    [JsonPropertyName("dateCreated")]
     public DateTime? DateCreated { get; private set; }
 
 
@@ -257,7 +257,7 @@ public partial class WebDeploymentConfigurationVersionResponse : IEquatable<WebD
     /// The date the configuration version was most recently modified. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z
     /// </summary>
     /// <value>The date the configuration version was most recently modified. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z</value>
-    [DataMember(Name = "dateModified", EmitDefaultValue = false)]
+    [JsonPropertyName("dateModified")]
     public DateTime? DateModified { get; private set; }
 
 
@@ -266,7 +266,7 @@ public partial class WebDeploymentConfigurationVersionResponse : IEquatable<WebD
     /// The date the configuration version was most recently published. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z
     /// </summary>
     /// <value>The date the configuration version was most recently published. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z</value>
-    [DataMember(Name = "datePublished", EmitDefaultValue = false)]
+    [JsonPropertyName("datePublished")]
     public DateTime? DatePublished { get; private set; }
 
 
@@ -275,7 +275,7 @@ public partial class WebDeploymentConfigurationVersionResponse : IEquatable<WebD
     /// A reference to the user who most recently modified the configuration version
     /// </summary>
     /// <value>A reference to the user who most recently modified the configuration version</value>
-    [DataMember(Name = "lastModifiedUser", EmitDefaultValue = false)]
+    [JsonPropertyName("lastModifiedUser")]
     public AddressableEntityRef LastModifiedUser { get; private set; }
 
 
@@ -284,7 +284,7 @@ public partial class WebDeploymentConfigurationVersionResponse : IEquatable<WebD
     /// A reference to the user who created the configuration version
     /// </summary>
     /// <value>A reference to the user who created the configuration version</value>
-    [DataMember(Name = "createdUser", EmitDefaultValue = false)]
+    [JsonPropertyName("createdUser")]
     public AddressableEntityRef CreatedUser { get; private set; }
 
 
@@ -293,7 +293,7 @@ public partial class WebDeploymentConfigurationVersionResponse : IEquatable<WebD
     /// A reference to the user who published the configuration version
     /// </summary>
     /// <value>A reference to the user who published the configuration version</value>
-    [DataMember(Name = "publishedUser", EmitDefaultValue = false)]
+    [JsonPropertyName("publishedUser")]
     public AddressableEntityRef PublishedUser { get; private set; }
 
 
@@ -304,7 +304,7 @@ public partial class WebDeploymentConfigurationVersionResponse : IEquatable<WebD
     /// The URI for this object
     /// </summary>
     /// <value>The URI for this object</value>
-    [DataMember(Name = "selfUri", EmitDefaultValue = false)]
+    [JsonPropertyName("selfUri")]
     public string SelfUri { get; private set; }
 
 

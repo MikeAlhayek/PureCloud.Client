@@ -7,13 +7,13 @@ namespace PureCloud.Client.Models;
 /// <summary>
 /// PingIdentity
 /// </summary>
-[DataContract]
+
 public partial class PingIdentity : IEquatable<PingIdentity>
 {
     /// <summary>
     /// Gets or Sets NameIdentifierFormat
     /// </summary>
-    [JsonConverter(typeof(JsonStringEnumConverter))]
+    
     public enum NameIdentifierFormatEnum
     {
         /// <summary>
@@ -75,7 +75,7 @@ public partial class PingIdentity : IEquatable<PingIdentity>
     /// <summary>
     /// Gets or Sets SsoBinding
     /// </summary>
-    [JsonConverter(typeof(JsonStringEnumConverter))]
+    
     public enum SsoBindingEnum
     {
         /// <summary>
@@ -101,12 +101,12 @@ public partial class PingIdentity : IEquatable<PingIdentity>
     /// <summary>
     /// Gets or Sets NameIdentifierFormat
     /// </summary>
-    [DataMember(Name = "nameIdentifierFormat", EmitDefaultValue = false)]
+    [JsonPropertyName("nameIdentifierFormat")]
     public NameIdentifierFormatEnum? NameIdentifierFormat { get; set; }
     /// <summary>
     /// Gets or Sets SsoBinding
     /// </summary>
-    [DataMember(Name = "ssoBinding", EmitDefaultValue = false)]
+    [JsonPropertyName("ssoBinding")]
     public SsoBindingEnum? SsoBinding { get; set; }
     /// <summary>
     /// Initializes a new instance of the <see cref="PingIdentity" /> class.
@@ -152,7 +152,7 @@ public partial class PingIdentity : IEquatable<PingIdentity>
     /// The globally unique identifier for the object.
     /// </summary>
     /// <value>The globally unique identifier for the object.</value>
-    [DataMember(Name = "id", EmitDefaultValue = false)]
+    [JsonPropertyName("id")]
     public string Id { get; private set; }
 
 
@@ -160,7 +160,7 @@ public partial class PingIdentity : IEquatable<PingIdentity>
     /// <summary>
     /// Gets or Sets Name
     /// </summary>
-    [DataMember(Name = "name", EmitDefaultValue = false)]
+    [JsonPropertyName("name")]
     public string Name { get; set; }
 
 
@@ -168,7 +168,7 @@ public partial class PingIdentity : IEquatable<PingIdentity>
     /// <summary>
     /// Gets or Sets Disabled
     /// </summary>
-    [DataMember(Name = "disabled", EmitDefaultValue = false)]
+    [JsonPropertyName("disabled")]
     public bool? Disabled { get; set; }
 
 
@@ -176,7 +176,7 @@ public partial class PingIdentity : IEquatable<PingIdentity>
     /// <summary>
     /// Gets or Sets IssuerURI
     /// </summary>
-    [DataMember(Name = "issuerURI", EmitDefaultValue = false)]
+    [JsonPropertyName("issuerURI")]
     public string IssuerURI { get; set; }
 
 
@@ -184,7 +184,7 @@ public partial class PingIdentity : IEquatable<PingIdentity>
     /// <summary>
     /// Gets or Sets SsoTargetURI
     /// </summary>
-    [DataMember(Name = "ssoTargetURI", EmitDefaultValue = false)]
+    [JsonPropertyName("ssoTargetURI")]
     public string SsoTargetURI { get; set; }
 
 
@@ -192,7 +192,7 @@ public partial class PingIdentity : IEquatable<PingIdentity>
     /// <summary>
     /// Gets or Sets SloURI
     /// </summary>
-    [DataMember(Name = "sloURI", EmitDefaultValue = false)]
+    [JsonPropertyName("sloURI")]
     public string SloURI { get; set; }
 
 
@@ -200,7 +200,7 @@ public partial class PingIdentity : IEquatable<PingIdentity>
     /// <summary>
     /// Gets or Sets SloBinding
     /// </summary>
-    [DataMember(Name = "sloBinding", EmitDefaultValue = false)]
+    [JsonPropertyName("sloBinding")]
     public string SloBinding { get; set; }
 
 
@@ -208,7 +208,7 @@ public partial class PingIdentity : IEquatable<PingIdentity>
     /// <summary>
     /// Gets or Sets RelyingPartyIdentifier
     /// </summary>
-    [DataMember(Name = "relyingPartyIdentifier", EmitDefaultValue = false)]
+    [JsonPropertyName("relyingPartyIdentifier")]
     public string RelyingPartyIdentifier { get; set; }
 
 
@@ -216,7 +216,7 @@ public partial class PingIdentity : IEquatable<PingIdentity>
     /// <summary>
     /// Gets or Sets Certificate
     /// </summary>
-    [DataMember(Name = "certificate", EmitDefaultValue = false)]
+    [JsonPropertyName("certificate")]
     public string Certificate { get; set; }
 
 
@@ -224,7 +224,7 @@ public partial class PingIdentity : IEquatable<PingIdentity>
     /// <summary>
     /// Gets or Sets Certificates
     /// </summary>
-    [DataMember(Name = "certificates", EmitDefaultValue = false)]
+    [JsonPropertyName("certificates")]
     public List<string> Certificates { get; set; }
 
 
@@ -232,7 +232,7 @@ public partial class PingIdentity : IEquatable<PingIdentity>
     /// <summary>
     /// Gets or Sets LogoImageData
     /// </summary>
-    [DataMember(Name = "logoImageData", EmitDefaultValue = false)]
+    [JsonPropertyName("logoImageData")]
     public string LogoImageData { get; set; }
 
 
@@ -244,7 +244,7 @@ public partial class PingIdentity : IEquatable<PingIdentity>
     /// <summary>
     /// Gets or Sets SignAuthnRequests
     /// </summary>
-    [DataMember(Name = "signAuthnRequests", EmitDefaultValue = false)]
+    [JsonPropertyName("signAuthnRequests")]
     public bool? SignAuthnRequests { get; set; }
 
 
@@ -252,7 +252,7 @@ public partial class PingIdentity : IEquatable<PingIdentity>
     /// <summary>
     /// Gets or Sets ProviderName
     /// </summary>
-    [DataMember(Name = "providerName", EmitDefaultValue = false)]
+    [JsonPropertyName("providerName")]
     public string ProviderName { get; set; }
 
 
@@ -260,7 +260,7 @@ public partial class PingIdentity : IEquatable<PingIdentity>
     /// <summary>
     /// Gets or Sets DisplayOnLogin
     /// </summary>
-    [DataMember(Name = "displayOnLogin", EmitDefaultValue = false)]
+    [JsonPropertyName("displayOnLogin")]
     public bool? DisplayOnLogin { get; set; }
 
 
@@ -269,7 +269,7 @@ public partial class PingIdentity : IEquatable<PingIdentity>
     /// The URI for this object
     /// </summary>
     /// <value>The URI for this object</value>
-    [DataMember(Name = "selfUri", EmitDefaultValue = false)]
+    [JsonPropertyName("selfUri")]
     public string SelfUri { get; private set; }
 
 

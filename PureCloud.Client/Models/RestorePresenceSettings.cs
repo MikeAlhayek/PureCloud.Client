@@ -1,4 +1,3 @@
-using System.Runtime.Serialization;
 using System.Text;
 using System.Text.Json.Serialization;
 
@@ -7,7 +6,7 @@ namespace PureCloud.Client.Models;
 /// <summary>
 /// RestorePresenceSettings
 /// </summary>
-[DataContract]
+
 public partial class RestorePresenceSettings : IEquatable<RestorePresenceSettings>
 {
 
@@ -36,7 +35,7 @@ public partial class RestorePresenceSettings : IEquatable<RestorePresenceSetting
     /// Whether the restore presence feature is enabled
     /// </summary>
     /// <value>Whether the restore presence feature is enabled</value>
-    [DataMember(Name = "enabled", EmitDefaultValue = false)]
+    [JsonPropertyName("enabled")]
     public bool? Enabled { get; set; }
 
 
@@ -45,7 +44,7 @@ public partial class RestorePresenceSettings : IEquatable<RestorePresenceSetting
     /// How many milliseconds the presence will be restored within
     /// </summary>
     /// <value>How many milliseconds the presence will be restored within</value>
-    [DataMember(Name = "restoreTimeMilliseconds", EmitDefaultValue = false)]
+    [JsonPropertyName("restoreTimeMilliseconds")]
     public long? RestoreTimeMilliseconds { get; set; }
 
 
@@ -54,7 +53,7 @@ public partial class RestorePresenceSettings : IEquatable<RestorePresenceSetting
     /// Whether the ON_QUEUE presence will be restored
     /// </summary>
     /// <value>Whether the ON_QUEUE presence will be restored</value>
-    [DataMember(Name = "restoreOnQueueEnabled", EmitDefaultValue = false)]
+    [JsonPropertyName("restoreOnQueueEnabled")]
     public bool? RestoreOnQueueEnabled { get; set; }
 
 

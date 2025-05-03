@@ -7,14 +7,14 @@ namespace PureCloud.Client.Models;
 /// <summary>
 /// AgentStateQueryRequest
 /// </summary>
-[DataContract]
+
 public partial class AgentStateQueryRequest : IEquatable<AgentStateQueryRequest>
 {
     /// <summary>
     /// Search user order dimension names; default to userName
     /// </summary>
     /// <value>Search user order dimension names; default to userName</value>
-    [JsonConverter(typeof(JsonStringEnumConverter))]
+    
     public enum UserOrderByEnum
     {
         /// <summary>
@@ -47,7 +47,7 @@ public partial class AgentStateQueryRequest : IEquatable<AgentStateQueryRequest>
     /// Search user order direction; default to asc
     /// </summary>
     /// <value>Search user order direction; default to asc</value>
-    [JsonConverter(typeof(JsonStringEnumConverter))]
+    
     public enum UserOrderEnum
     {
         /// <summary>
@@ -74,7 +74,7 @@ public partial class AgentStateQueryRequest : IEquatable<AgentStateQueryRequest>
     /// Search session order dimension names; default to segmentStart
     /// </summary>
     /// <value>Search session order dimension names; default to segmentStart</value>
-    [JsonConverter(typeof(JsonStringEnumConverter))]
+    
     public enum SessionOrderByEnum
     {
         /// <summary>
@@ -101,7 +101,7 @@ public partial class AgentStateQueryRequest : IEquatable<AgentStateQueryRequest>
     /// Search session order direction; default to asc
     /// </summary>
     /// <value>Search session order direction; default to asc</value>
-    [JsonConverter(typeof(JsonStringEnumConverter))]
+    
     public enum SessionOrderEnum
     {
         /// <summary>
@@ -128,25 +128,25 @@ public partial class AgentStateQueryRequest : IEquatable<AgentStateQueryRequest>
     /// Search user order dimension names; default to userName
     /// </summary>
     /// <value>Search user order dimension names; default to userName</value>
-    [DataMember(Name = "userOrderBy", EmitDefaultValue = false)]
+    [JsonPropertyName("userOrderBy")]
     public UserOrderByEnum? UserOrderBy { get; set; }
     /// <summary>
     /// Search user order direction; default to asc
     /// </summary>
     /// <value>Search user order direction; default to asc</value>
-    [DataMember(Name = "userOrder", EmitDefaultValue = false)]
+    [JsonPropertyName("userOrder")]
     public UserOrderEnum? UserOrder { get; set; }
     /// <summary>
     /// Search session order dimension names; default to segmentStart
     /// </summary>
     /// <value>Search session order dimension names; default to segmentStart</value>
-    [DataMember(Name = "sessionOrderBy", EmitDefaultValue = false)]
+    [JsonPropertyName("sessionOrderBy")]
     public SessionOrderByEnum? SessionOrderBy { get; set; }
     /// <summary>
     /// Search session order direction; default to asc
     /// </summary>
     /// <value>Search session order direction; default to asc</value>
-    [DataMember(Name = "sessionOrder", EmitDefaultValue = false)]
+    [JsonPropertyName("sessionOrder")]
     public SessionOrderEnum? SessionOrder { get; set; }
     /// <summary>
     /// Initializes a new instance of the <see cref="AgentStateQueryRequest" /> class.
@@ -174,7 +174,7 @@ public partial class AgentStateQueryRequest : IEquatable<AgentStateQueryRequest>
     /// Filters that target user-level data
     /// </summary>
     /// <value>Filters that target user-level data</value>
-    [DataMember(Name = "userFilter", EmitDefaultValue = false)]
+    [JsonPropertyName("userFilter")]
     public AgentStateUserFilter UserFilter { get; set; }
 
 
@@ -183,7 +183,7 @@ public partial class AgentStateQueryRequest : IEquatable<AgentStateQueryRequest>
     /// Filters that target session-level data
     /// </summary>
     /// <value>Filters that target session-level data</value>
-    [DataMember(Name = "sessionFilter", EmitDefaultValue = false)]
+    [JsonPropertyName("sessionFilter")]
     public AgentStateSessionFilter SessionFilter { get; set; }
 
 

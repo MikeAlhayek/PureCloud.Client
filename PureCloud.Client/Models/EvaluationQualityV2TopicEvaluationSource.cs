@@ -1,12 +1,12 @@
-using System.Runtime.Serialization;
 using System.Text;
+using System.Text.Json.Serialization;
 
 namespace PureCloud.Client.Models;
 
 /// <summary>
 /// EvaluationQualityV2TopicEvaluationSource
 /// </summary>
-[DataContract]
+
 public partial class EvaluationQualityV2TopicEvaluationSource : IEquatable<EvaluationQualityV2TopicEvaluationSource>
 {
     /// <summary>
@@ -28,7 +28,7 @@ public partial class EvaluationQualityV2TopicEvaluationSource : IEquatable<Evalu
     /// <summary>
     /// Gets or Sets EvaluationSourceType
     /// </summary>
-    [DataMember(Name = "evaluationSourceType", EmitDefaultValue = false)]
+    [JsonPropertyName("evaluationSourceType")]
     public string EvaluationSourceType { get; set; }
 
 
@@ -36,7 +36,7 @@ public partial class EvaluationQualityV2TopicEvaluationSource : IEquatable<Evalu
     /// <summary>
     /// Gets or Sets EvaluationSourceId
     /// </summary>
-    [DataMember(Name = "evaluationSourceId", EmitDefaultValue = false)]
+    [JsonPropertyName("evaluationSourceId")]
     public string EvaluationSourceId { get; set; }
 
 
@@ -44,7 +44,7 @@ public partial class EvaluationQualityV2TopicEvaluationSource : IEquatable<Evalu
     /// <summary>
     /// Gets or Sets EvaluationSourceName
     /// </summary>
-    [DataMember(Name = "evaluationSourceName", EmitDefaultValue = false)]
+    [JsonPropertyName("evaluationSourceName")]
     public string EvaluationSourceName { get; set; }
 
 

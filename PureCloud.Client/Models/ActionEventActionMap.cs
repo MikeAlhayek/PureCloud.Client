@@ -1,4 +1,3 @@
-using System.Runtime.Serialization;
 using System.Text;
 using System.Text.Json.Serialization;
 
@@ -7,7 +6,7 @@ namespace PureCloud.Client.Models;
 /// <summary>
 /// ActionEventActionMap
 /// </summary>
-[DataContract]
+
 public partial class ActionEventActionMap : IEquatable<ActionEventActionMap>
 {
 
@@ -38,7 +37,7 @@ public partial class ActionEventActionMap : IEquatable<ActionEventActionMap>
     /// The ID of the action map.
     /// </summary>
     /// <value>The ID of the action map.</value>
-    [DataMember(Name = "id", EmitDefaultValue = false)]
+    [JsonPropertyName("id")]
     public string Id { get; set; }
 
 
@@ -46,7 +45,7 @@ public partial class ActionEventActionMap : IEquatable<ActionEventActionMap>
     /// <summary>
     /// Gets or Sets SelfUri
     /// </summary>
-    [DataMember(Name = "selfUri", EmitDefaultValue = false)]
+    [JsonPropertyName("selfUri")]
     public string SelfUri { get; set; }
 
 
@@ -55,7 +54,7 @@ public partial class ActionEventActionMap : IEquatable<ActionEventActionMap>
     /// The version of the action map.
     /// </summary>
     /// <value>The version of the action map.</value>
-    [DataMember(Name = "version", EmitDefaultValue = false)]
+    [JsonPropertyName("version")]
     public int? Version { get; set; }
 
 
@@ -64,7 +63,7 @@ public partial class ActionEventActionMap : IEquatable<ActionEventActionMap>
     /// Display name of the action map.
     /// </summary>
     /// <value>Display name of the action map.</value>
-    [DataMember(Name = "displayName", EmitDefaultValue = false)]
+    [JsonPropertyName("displayName")]
     public string DisplayName { get; set; }
 
 

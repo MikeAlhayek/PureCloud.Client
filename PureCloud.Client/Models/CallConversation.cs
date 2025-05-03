@@ -7,13 +7,13 @@ namespace PureCloud.Client.Models;
 /// <summary>
 /// CallConversation
 /// </summary>
-[DataContract]
+
 public partial class CallConversation : IEquatable<CallConversation>
 {
     /// <summary>
     /// Gets or Sets RecordingState
     /// </summary>
-    [JsonConverter(typeof(JsonStringEnumConverter))]
+    
     public enum RecordingStateEnum
     {
         /// <summary>
@@ -45,7 +45,7 @@ public partial class CallConversation : IEquatable<CallConversation>
     /// <summary>
     /// Gets or Sets RecordingState
     /// </summary>
-    [DataMember(Name = "recordingState", EmitDefaultValue = false)]
+    [JsonPropertyName("recordingState")]
     public RecordingStateEnum? RecordingState { get; set; }
     /// <summary>
     /// Initializes a new instance of the <see cref="CallConversation" /> class.
@@ -79,7 +79,7 @@ public partial class CallConversation : IEquatable<CallConversation>
     /// The globally unique identifier for the object.
     /// </summary>
     /// <value>The globally unique identifier for the object.</value>
-    [DataMember(Name = "id", EmitDefaultValue = false)]
+    [JsonPropertyName("id")]
     public string Id { get; private set; }
 
 
@@ -87,7 +87,7 @@ public partial class CallConversation : IEquatable<CallConversation>
     /// <summary>
     /// Gets or Sets Name
     /// </summary>
-    [DataMember(Name = "name", EmitDefaultValue = false)]
+    [JsonPropertyName("name")]
     public string Name { get; set; }
 
 
@@ -96,7 +96,7 @@ public partial class CallConversation : IEquatable<CallConversation>
     /// The list of participants involved in the conversation.
     /// </summary>
     /// <value>The list of participants involved in the conversation.</value>
-    [DataMember(Name = "participants", EmitDefaultValue = false)]
+    [JsonPropertyName("participants")]
     public List<CallMediaParticipant> Participants { get; set; }
 
 
@@ -105,7 +105,7 @@ public partial class CallConversation : IEquatable<CallConversation>
     /// The list of other media channels involved in the conversation.
     /// </summary>
     /// <value>The list of other media channels involved in the conversation.</value>
-    [DataMember(Name = "otherMediaUris", EmitDefaultValue = false)]
+    [JsonPropertyName("otherMediaUris")]
     public List<string> OtherMediaUris { get; set; }
 
 
@@ -114,7 +114,7 @@ public partial class CallConversation : IEquatable<CallConversation>
     /// The list of the most recent 20 transfer commands applied to this conversation.
     /// </summary>
     /// <value>The list of the most recent 20 transfer commands applied to this conversation.</value>
-    [DataMember(Name = "recentTransfers", EmitDefaultValue = false)]
+    [JsonPropertyName("recentTransfers")]
     public List<TransferResponse> RecentTransfers { get; set; }
 
 
@@ -123,7 +123,7 @@ public partial class CallConversation : IEquatable<CallConversation>
     /// An optional label that categorizes the conversation.  Max-utilization settings can be configured at a per-label level
     /// </summary>
     /// <value>An optional label that categorizes the conversation.  Max-utilization settings can be configured at a per-label level</value>
-    [DataMember(Name = "utilizationLabelId", EmitDefaultValue = false)]
+    [JsonPropertyName("utilizationLabelId")]
     public string UtilizationLabelId { get; set; }
 
 
@@ -132,7 +132,7 @@ public partial class CallConversation : IEquatable<CallConversation>
     /// Identifiers of divisions associated with this conversation.
     /// </summary>
     /// <value>Identifiers of divisions associated with this conversation.</value>
-    [DataMember(Name = "divisions", EmitDefaultValue = false)]
+    [JsonPropertyName("divisions")]
     public List<ConversationDivisionMembership> Divisions { get; set; }
 
 
@@ -143,7 +143,7 @@ public partial class CallConversation : IEquatable<CallConversation>
     /// If this is a conference conversation, then this field indicates the maximum number of participants allowed to participant in the conference.
     /// </summary>
     /// <value>If this is a conference conversation, then this field indicates the maximum number of participants allowed to participant in the conference.</value>
-    [DataMember(Name = "maxParticipants", EmitDefaultValue = false)]
+    [JsonPropertyName("maxParticipants")]
     public int? MaxParticipants { get; set; }
 
 
@@ -152,7 +152,7 @@ public partial class CallConversation : IEquatable<CallConversation>
     /// True when the recording of this conversation is in secure pause status.
     /// </summary>
     /// <value>True when the recording of this conversation is in secure pause status.</value>
-    [DataMember(Name = "securePause", EmitDefaultValue = false)]
+    [JsonPropertyName("securePause")]
     public bool? SecurePause { get; set; }
 
 
@@ -161,7 +161,7 @@ public partial class CallConversation : IEquatable<CallConversation>
     /// The URI for this object
     /// </summary>
     /// <value>The URI for this object</value>
-    [DataMember(Name = "selfUri", EmitDefaultValue = false)]
+    [JsonPropertyName("selfUri")]
     public string SelfUri { get; private set; }
 
 

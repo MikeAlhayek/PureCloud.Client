@@ -1,12 +1,12 @@
-using System.Runtime.Serialization;
 using System.Text;
+using System.Text.Json.Serialization;
 
 namespace PureCloud.Client.Models;
 
 /// <summary>
 /// DialerCampaignRuleConfigChangeCampaignRule
 /// </summary>
-[DataContract]
+
 public partial class DialerCampaignRuleConfigChangeCampaignRule : IEquatable<DialerCampaignRuleConfigChangeCampaignRule>
 {
     /// <summary>
@@ -44,7 +44,7 @@ public partial class DialerCampaignRuleConfigChangeCampaignRule : IEquatable<Dia
     /// <summary>
     /// Gets or Sets CampaignRuleEntities
     /// </summary>
-    [DataMember(Name = "campaignRuleEntities", EmitDefaultValue = false)]
+    [JsonPropertyName("campaignRuleEntities")]
     public DialerCampaignRuleConfigChangeCampaignRuleEntities CampaignRuleEntities { get; set; }
 
 
@@ -53,7 +53,7 @@ public partial class DialerCampaignRuleConfigChangeCampaignRule : IEquatable<Dia
     /// The list of conditions that will trigger this Campaign Rule
     /// </summary>
     /// <value>The list of conditions that will trigger this Campaign Rule</value>
-    [DataMember(Name = "campaignRuleConditions", EmitDefaultValue = false)]
+    [JsonPropertyName("campaignRuleConditions")]
     public List<DialerCampaignRuleConfigChangeCampaignRuleCondition> CampaignRuleConditions { get; set; }
 
 
@@ -62,7 +62,7 @@ public partial class DialerCampaignRuleConfigChangeCampaignRule : IEquatable<Dia
     /// The list of actions that will be taken when this Campaign Rule&#39;s conditions are met
     /// </summary>
     /// <value>The list of actions that will be taken when this Campaign Rule&#39;s conditions are met</value>
-    [DataMember(Name = "campaignRuleActions", EmitDefaultValue = false)]
+    [JsonPropertyName("campaignRuleActions")]
     public List<DialerCampaignRuleConfigChangeCampaignRuleAction> CampaignRuleActions { get; set; }
 
 
@@ -71,7 +71,7 @@ public partial class DialerCampaignRuleConfigChangeCampaignRule : IEquatable<Dia
     /// Whether this Campaign Rule should match any conditions (inclusive OR) or match all conditions (ALL)
     /// </summary>
     /// <value>Whether this Campaign Rule should match any conditions (inclusive OR) or match all conditions (ALL)</value>
-    [DataMember(Name = "matchAnyConditions", EmitDefaultValue = false)]
+    [JsonPropertyName("matchAnyConditions")]
     public bool? MatchAnyConditions { get; set; }
 
 
@@ -80,7 +80,7 @@ public partial class DialerCampaignRuleConfigChangeCampaignRule : IEquatable<Dia
     /// Whether this campaign rule is enabled
     /// </summary>
     /// <value>Whether this campaign rule is enabled</value>
-    [DataMember(Name = "enabled", EmitDefaultValue = false)]
+    [JsonPropertyName("enabled")]
     public bool? Enabled { get; set; }
 
 
@@ -88,7 +88,7 @@ public partial class DialerCampaignRuleConfigChangeCampaignRule : IEquatable<Dia
     /// <summary>
     /// Gets or Sets AdditionalProperties
     /// </summary>
-    [DataMember(Name = "additionalProperties", EmitDefaultValue = false)]
+    [JsonPropertyName("additionalProperties")]
     public Dictionary<string, object> AdditionalProperties { get; set; }
 
 
@@ -97,7 +97,7 @@ public partial class DialerCampaignRuleConfigChangeCampaignRule : IEquatable<Dia
     /// The globally unique identifier for the object.
     /// </summary>
     /// <value>The globally unique identifier for the object.</value>
-    [DataMember(Name = "id", EmitDefaultValue = false)]
+    [JsonPropertyName("id")]
     public string Id { get; set; }
 
 
@@ -106,7 +106,7 @@ public partial class DialerCampaignRuleConfigChangeCampaignRule : IEquatable<Dia
     /// The UI-visible name of the object
     /// </summary>
     /// <value>The UI-visible name of the object</value>
-    [DataMember(Name = "name", EmitDefaultValue = false)]
+    [JsonPropertyName("name")]
     public string Name { get; set; }
 
 
@@ -115,7 +115,7 @@ public partial class DialerCampaignRuleConfigChangeCampaignRule : IEquatable<Dia
     /// Creation time of the entity
     /// </summary>
     /// <value>Creation time of the entity</value>
-    [DataMember(Name = "dateCreated", EmitDefaultValue = false)]
+    [JsonPropertyName("dateCreated")]
     public DateTime? DateCreated { get; set; }
 
 
@@ -124,7 +124,7 @@ public partial class DialerCampaignRuleConfigChangeCampaignRule : IEquatable<Dia
     /// Last modified time of the entity
     /// </summary>
     /// <value>Last modified time of the entity</value>
-    [DataMember(Name = "dateModified", EmitDefaultValue = false)]
+    [JsonPropertyName("dateModified")]
     public DateTime? DateModified { get; set; }
 
 
@@ -133,7 +133,7 @@ public partial class DialerCampaignRuleConfigChangeCampaignRule : IEquatable<Dia
     /// Required for updates, must match the version number of the most recent update
     /// </summary>
     /// <value>Required for updates, must match the version number of the most recent update</value>
-    [DataMember(Name = "version", EmitDefaultValue = false)]
+    [JsonPropertyName("version")]
     public long? Version { get; set; }
 
 

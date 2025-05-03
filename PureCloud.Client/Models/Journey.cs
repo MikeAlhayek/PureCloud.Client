@@ -1,4 +1,3 @@
-using System.Runtime.Serialization;
 using System.Text;
 using System.Text.Json.Serialization;
 
@@ -7,7 +6,7 @@ namespace PureCloud.Client.Models;
 /// <summary>
 /// Journey
 /// </summary>
-[DataContract]
+
 public partial class Journey : IEquatable<Journey>
 {
 
@@ -32,7 +31,7 @@ public partial class Journey : IEquatable<Journey>
     /// A list of zero or more patterns to match.
     /// </summary>
     /// <value>A list of zero or more patterns to match.</value>
-    [DataMember(Name = "patterns", EmitDefaultValue = false)]
+    [JsonPropertyName("patterns")]
     public List<JourneyPattern> Patterns { get; set; }
 
 

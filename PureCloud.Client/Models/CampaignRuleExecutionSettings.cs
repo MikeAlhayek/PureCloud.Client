@@ -7,14 +7,14 @@ namespace PureCloud.Client.Models;
 /// <summary>
 /// CampaignRuleExecutionSettings
 /// </summary>
-[DataContract]
+
 public partial class CampaignRuleExecutionSettings : IEquatable<CampaignRuleExecutionSettings>
 {
     /// <summary>
     /// Execution control frequency
     /// </summary>
     /// <value>Execution control frequency</value>
-    [JsonConverter(typeof(JsonStringEnumConverter))]
+    
     public enum FrequencyEnum
     {
         /// <summary>
@@ -41,7 +41,7 @@ public partial class CampaignRuleExecutionSettings : IEquatable<CampaignRuleExec
     /// Execution control frequency
     /// </summary>
     /// <value>Execution control frequency</value>
-    [DataMember(Name = "frequency", EmitDefaultValue = false)]
+    [JsonPropertyName("frequency")]
     public FrequencyEnum? Frequency { get; set; }
 
     /// <summary>
@@ -69,7 +69,7 @@ public partial class CampaignRuleExecutionSettings : IEquatable<CampaignRuleExec
     /// The time zone for the execution control frequency&#x3D;\&quot;oncePerDay\&quot;; for example, Africa/Abidjan. This property is ignored when frequency is not \&quot;oncePerDay\&quot;
     /// </summary>
     /// <value>The time zone for the execution control frequency&#x3D;\&quot;oncePerDay\&quot;; for example, Africa/Abidjan. This property is ignored when frequency is not \&quot;oncePerDay\&quot;</value>
-    [DataMember(Name = "timeZoneId", EmitDefaultValue = false)]
+    [JsonPropertyName("timeZoneId")]
     public string TimeZoneId { get; set; }
 
 

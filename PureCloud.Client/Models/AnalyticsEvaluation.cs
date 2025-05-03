@@ -7,14 +7,14 @@ namespace PureCloud.Client.Models;
 /// <summary>
 /// AnalyticsEvaluation
 /// </summary>
-[DataContract]
+
 public partial class AnalyticsEvaluation : IEquatable<AnalyticsEvaluation>
 {
     /// <summary>
     /// Status of evaluation
     /// </summary>
     /// <value>Status of evaluation</value>
-    [JsonConverter(typeof(JsonStringEnumConverter))]
+    
     public enum EvaluationStatusEnum
     {
         /// <summary>
@@ -59,7 +59,7 @@ public partial class AnalyticsEvaluation : IEquatable<AnalyticsEvaluation>
     /// Status of evaluation
     /// </summary>
     /// <value>Status of evaluation</value>
-    [DataMember(Name = "evaluationStatus", EmitDefaultValue = false)]
+    [JsonPropertyName("evaluationStatus")]
     public EvaluationStatusEnum? EvaluationStatus { get; set; }
     /// <summary>
     /// Initializes a new instance of the <see cref="AnalyticsEvaluation" /> class.
@@ -109,7 +109,7 @@ public partial class AnalyticsEvaluation : IEquatable<AnalyticsEvaluation>
     /// Indicates whether an assignee is applicable for the evaluation. Set to false when assignee is not applicable
     /// </summary>
     /// <value>Indicates whether an assignee is applicable for the evaluation. Set to false when assignee is not applicable</value>
-    [DataMember(Name = "assigneeApplicable", EmitDefaultValue = false)]
+    [JsonPropertyName("assigneeApplicable")]
     public bool? AssigneeApplicable { get; set; }
 
 
@@ -118,7 +118,7 @@ public partial class AnalyticsEvaluation : IEquatable<AnalyticsEvaluation>
     /// UserId of the assignee
     /// </summary>
     /// <value>UserId of the assignee</value>
-    [DataMember(Name = "assigneeId", EmitDefaultValue = false)]
+    [JsonPropertyName("assigneeId")]
     public string AssigneeId { get; set; }
 
 
@@ -127,7 +127,7 @@ public partial class AnalyticsEvaluation : IEquatable<AnalyticsEvaluation>
     /// The calibration ID used for the purpose of training evaluators
     /// </summary>
     /// <value>The calibration ID used for the purpose of training evaluators</value>
-    [DataMember(Name = "calibrationId", EmitDefaultValue = false)]
+    [JsonPropertyName("calibrationId")]
     public string CalibrationId { get; set; }
 
 
@@ -136,7 +136,7 @@ public partial class AnalyticsEvaluation : IEquatable<AnalyticsEvaluation>
     /// A unique identifier for an evaluation form, regardless of version
     /// </summary>
     /// <value>A unique identifier for an evaluation form, regardless of version</value>
-    [DataMember(Name = "contextId", EmitDefaultValue = false)]
+    [JsonPropertyName("contextId")]
     public string ContextId { get; set; }
 
 
@@ -145,7 +145,7 @@ public partial class AnalyticsEvaluation : IEquatable<AnalyticsEvaluation>
     /// Whether the evaluation has been deleted
     /// </summary>
     /// <value>Whether the evaluation has been deleted</value>
-    [DataMember(Name = "deleted", EmitDefaultValue = false)]
+    [JsonPropertyName("deleted")]
     public bool? Deleted { get; set; }
 
 
@@ -154,7 +154,7 @@ public partial class AnalyticsEvaluation : IEquatable<AnalyticsEvaluation>
     /// Unique identifier for the evaluation
     /// </summary>
     /// <value>Unique identifier for the evaluation</value>
-    [DataMember(Name = "evaluationId", EmitDefaultValue = false)]
+    [JsonPropertyName("evaluationId")]
     public string EvaluationId { get; set; }
 
 
@@ -165,7 +165,7 @@ public partial class AnalyticsEvaluation : IEquatable<AnalyticsEvaluation>
     /// A unique identifier of the user who evaluated the interaction
     /// </summary>
     /// <value>A unique identifier of the user who evaluated the interaction</value>
-    [DataMember(Name = "evaluatorId", EmitDefaultValue = false)]
+    [JsonPropertyName("evaluatorId")]
     public string EvaluatorId { get; set; }
 
 
@@ -174,7 +174,7 @@ public partial class AnalyticsEvaluation : IEquatable<AnalyticsEvaluation>
     /// Specifies when an evaluation occurred. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z
     /// </summary>
     /// <value>Specifies when an evaluation occurred. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z</value>
-    [DataMember(Name = "eventTime", EmitDefaultValue = false)]
+    [JsonPropertyName("eventTime")]
     public DateTime? EventTime { get; set; }
 
 
@@ -183,7 +183,7 @@ public partial class AnalyticsEvaluation : IEquatable<AnalyticsEvaluation>
     /// ID of the evaluation form used
     /// </summary>
     /// <value>ID of the evaluation form used</value>
-    [DataMember(Name = "formId", EmitDefaultValue = false)]
+    [JsonPropertyName("formId")]
     public string FormId { get; set; }
 
 
@@ -192,7 +192,7 @@ public partial class AnalyticsEvaluation : IEquatable<AnalyticsEvaluation>
     /// Name of the evaluation form used
     /// </summary>
     /// <value>Name of the evaluation form used</value>
-    [DataMember(Name = "formName", EmitDefaultValue = false)]
+    [JsonPropertyName("formName")]
     public string FormName { get; set; }
 
 
@@ -201,7 +201,7 @@ public partial class AnalyticsEvaluation : IEquatable<AnalyticsEvaluation>
     /// The ID of the associated queue
     /// </summary>
     /// <value>The ID of the associated queue</value>
-    [DataMember(Name = "queueId", EmitDefaultValue = false)]
+    [JsonPropertyName("queueId")]
     public string QueueId { get; set; }
 
 
@@ -210,7 +210,7 @@ public partial class AnalyticsEvaluation : IEquatable<AnalyticsEvaluation>
     /// Whether the evaluation has been released
     /// </summary>
     /// <value>Whether the evaluation has been released</value>
-    [DataMember(Name = "released", EmitDefaultValue = false)]
+    [JsonPropertyName("released")]
     public bool? Released { get; set; }
 
 
@@ -219,7 +219,7 @@ public partial class AnalyticsEvaluation : IEquatable<AnalyticsEvaluation>
     /// Whether the evaluation has been rescored at least once
     /// </summary>
     /// <value>Whether the evaluation has been rescored at least once</value>
-    [DataMember(Name = "rescored", EmitDefaultValue = false)]
+    [JsonPropertyName("rescored")]
     public bool? Rescored { get; set; }
 
 
@@ -228,7 +228,7 @@ public partial class AnalyticsEvaluation : IEquatable<AnalyticsEvaluation>
     /// ID of the agent the evaluation was performed against
     /// </summary>
     /// <value>ID of the agent the evaluation was performed against</value>
-    [DataMember(Name = "userId", EmitDefaultValue = false)]
+    [JsonPropertyName("userId")]
     public string UserId { get; set; }
 
 
@@ -236,7 +236,7 @@ public partial class AnalyticsEvaluation : IEquatable<AnalyticsEvaluation>
     /// <summary>
     /// Gets or Sets OTotalCriticalScore
     /// </summary>
-    [DataMember(Name = "oTotalCriticalScore", EmitDefaultValue = false)]
+    [JsonPropertyName("oTotalCriticalScore")]
     public long? OTotalCriticalScore { get; set; }
 
 
@@ -244,7 +244,7 @@ public partial class AnalyticsEvaluation : IEquatable<AnalyticsEvaluation>
     /// <summary>
     /// Gets or Sets OTotalScore
     /// </summary>
-    [DataMember(Name = "oTotalScore", EmitDefaultValue = false)]
+    [JsonPropertyName("oTotalScore")]
     public long? OTotalScore { get; set; }
 
 

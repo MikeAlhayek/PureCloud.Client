@@ -7,14 +7,14 @@ namespace PureCloud.Client.Models;
 /// <summary>
 /// DialerContactlistfilterConfigChangeContactListFilter
 /// </summary>
-[DataContract]
+
 public partial class DialerContactlistfilterConfigChangeContactListFilter : IEquatable<DialerContactlistfilterConfigChangeContactListFilter>
 {
     /// <summary>
     /// Contact list filter type
     /// </summary>
     /// <value>Contact list filter type</value>
-    [JsonConverter(typeof(JsonStringEnumConverter))]
+    
     public enum FilterTypeEnum
     {
         /// <summary>
@@ -41,7 +41,7 @@ public partial class DialerContactlistfilterConfigChangeContactListFilter : IEqu
     /// Contact list filter type
     /// </summary>
     /// <value>Contact list filter type</value>
-    [DataMember(Name = "filterType", EmitDefaultValue = false)]
+    [JsonPropertyName("filterType")]
     public FilterTypeEnum? FilterType { get; set; }
     /// <summary>
     /// Initializes a new instance of the <see cref="DialerContactlistfilterConfigChangeContactListFilter" /> class.
@@ -76,7 +76,7 @@ public partial class DialerContactlistfilterConfigChangeContactListFilter : IEqu
     /// <summary>
     /// Gets or Sets ContactList
     /// </summary>
-    [DataMember(Name = "contactList", EmitDefaultValue = false)]
+    [JsonPropertyName("contactList")]
     public DialerContactlistfilterConfigChangeUriReference ContactList { get; set; }
 
 
@@ -85,7 +85,7 @@ public partial class DialerContactlistfilterConfigChangeContactListFilter : IEqu
     /// The list of contact list columns
     /// </summary>
     /// <value>The list of contact list columns</value>
-    [DataMember(Name = "contactListColumns", EmitDefaultValue = false)]
+    [JsonPropertyName("contactListColumns")]
     public List<string> ContactListColumns { get; set; }
 
 
@@ -93,7 +93,7 @@ public partial class DialerContactlistfilterConfigChangeContactListFilter : IEqu
     /// <summary>
     /// Gets or Sets Clauses
     /// </summary>
-    [DataMember(Name = "clauses", EmitDefaultValue = false)]
+    [JsonPropertyName("clauses")]
     public List<DialerContactlistfilterConfigChangeFilterClause> Clauses { get; set; }
 
 
@@ -103,7 +103,7 @@ public partial class DialerContactlistfilterConfigChangeContactListFilter : IEqu
     /// <summary>
     /// Gets or Sets AdditionalProperties
     /// </summary>
-    [DataMember(Name = "additionalProperties", EmitDefaultValue = false)]
+    [JsonPropertyName("additionalProperties")]
     public Dictionary<string, object> AdditionalProperties { get; set; }
 
 
@@ -112,7 +112,7 @@ public partial class DialerContactlistfilterConfigChangeContactListFilter : IEqu
     /// The globally unique identifier for the object.
     /// </summary>
     /// <value>The globally unique identifier for the object.</value>
-    [DataMember(Name = "id", EmitDefaultValue = false)]
+    [JsonPropertyName("id")]
     public string Id { get; set; }
 
 
@@ -121,7 +121,7 @@ public partial class DialerContactlistfilterConfigChangeContactListFilter : IEqu
     /// The UI-visible name of the object
     /// </summary>
     /// <value>The UI-visible name of the object</value>
-    [DataMember(Name = "name", EmitDefaultValue = false)]
+    [JsonPropertyName("name")]
     public string Name { get; set; }
 
 
@@ -130,7 +130,7 @@ public partial class DialerContactlistfilterConfigChangeContactListFilter : IEqu
     /// Creation time of the entity
     /// </summary>
     /// <value>Creation time of the entity</value>
-    [DataMember(Name = "dateCreated", EmitDefaultValue = false)]
+    [JsonPropertyName("dateCreated")]
     public DateTime? DateCreated { get; set; }
 
 
@@ -139,7 +139,7 @@ public partial class DialerContactlistfilterConfigChangeContactListFilter : IEqu
     /// Last modified time of the entity
     /// </summary>
     /// <value>Last modified time of the entity</value>
-    [DataMember(Name = "dateModified", EmitDefaultValue = false)]
+    [JsonPropertyName("dateModified")]
     public DateTime? DateModified { get; set; }
 
 
@@ -148,7 +148,7 @@ public partial class DialerContactlistfilterConfigChangeContactListFilter : IEqu
     /// Required for updates, must match the version number of the most recent update
     /// </summary>
     /// <value>Required for updates, must match the version number of the most recent update</value>
-    [DataMember(Name = "version", EmitDefaultValue = false)]
+    [JsonPropertyName("version")]
     public long? Version { get; set; }
 
 

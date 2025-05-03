@@ -1,12 +1,12 @@
-using System.Runtime.Serialization;
 using System.Text;
+using System.Text.Json.Serialization;
 
 namespace PureCloud.Client.Models;
 
 /// <summary>
 /// Represents a link between 2 elements in a journey view result
 /// </summary>
-[DataContract]
+
 public partial class JourneyViewResultLink : IEquatable<JourneyViewResultLink>
 {
     /// <summary>
@@ -23,7 +23,7 @@ public partial class JourneyViewResultLink : IEquatable<JourneyViewResultLink>
     /// The globally unique identifier for the object.
     /// </summary>
     /// <value>The globally unique identifier for the object.</value>
-    [DataMember(Name = "id", EmitDefaultValue = false)]
+    [JsonPropertyName("id")]
     public string Id { get; private set; }
 
 
@@ -32,7 +32,7 @@ public partial class JourneyViewResultLink : IEquatable<JourneyViewResultLink>
     /// the number of connections for the journey view link
     /// </summary>
     /// <value>the number of connections for the journey view link</value>
-    [DataMember(Name = "connectionCount", EmitDefaultValue = false)]
+    [JsonPropertyName("connectionCount")]
     public int? ConnectionCount { get; private set; }
 
 
@@ -41,7 +41,7 @@ public partial class JourneyViewResultLink : IEquatable<JourneyViewResultLink>
     /// The URI for this object
     /// </summary>
     /// <value>The URI for this object</value>
-    [DataMember(Name = "selfUri", EmitDefaultValue = false)]
+    [JsonPropertyName("selfUri")]
     public string SelfUri { get; private set; }
 
 

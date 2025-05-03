@@ -7,13 +7,13 @@ namespace PureCloud.Client.Models;
 /// <summary>
 /// WfmBulkShiftTradeStateUpdateNotificationTopicBulkShiftTradeStateUpdateResult
 /// </summary>
-[DataContract]
+
 public partial class WfmBulkShiftTradeStateUpdateNotificationTopicBulkShiftTradeStateUpdateResult : IEquatable<WfmBulkShiftTradeStateUpdateNotificationTopicBulkShiftTradeStateUpdateResult>
 {
     /// <summary>
     /// Gets or Sets State
     /// </summary>
-    [JsonConverter(typeof(JsonStringEnumConverter))]
+    
     public enum StateEnum
     {
         /// <summary>
@@ -63,7 +63,7 @@ public partial class WfmBulkShiftTradeStateUpdateNotificationTopicBulkShiftTrade
     /// <summary>
     /// Gets or Sets FailureReason
     /// </summary>
-    [JsonConverter(typeof(JsonStringEnumConverter))]
+    
     public enum FailureReasonEnum
     {
         /// <summary>
@@ -119,12 +119,12 @@ public partial class WfmBulkShiftTradeStateUpdateNotificationTopicBulkShiftTrade
     /// <summary>
     /// Gets or Sets State
     /// </summary>
-    [DataMember(Name = "state", EmitDefaultValue = false)]
+    [JsonPropertyName("state")]
     public StateEnum? State { get; set; }
     /// <summary>
     /// Gets or Sets FailureReason
     /// </summary>
-    [DataMember(Name = "failureReason", EmitDefaultValue = false)]
+    [JsonPropertyName("failureReason")]
     public FailureReasonEnum? FailureReason { get; set; }
     /// <summary>
     /// Initializes a new instance of the <see cref="WfmBulkShiftTradeStateUpdateNotificationTopicBulkShiftTradeStateUpdateResult" /> class.
@@ -151,7 +151,7 @@ public partial class WfmBulkShiftTradeStateUpdateNotificationTopicBulkShiftTrade
     /// <summary>
     /// Gets or Sets Id
     /// </summary>
-    [DataMember(Name = "id", EmitDefaultValue = false)]
+    [JsonPropertyName("id")]
     public string Id { get; set; }
 
 
@@ -161,7 +161,7 @@ public partial class WfmBulkShiftTradeStateUpdateNotificationTopicBulkShiftTrade
     /// <summary>
     /// Gets or Sets ReviewedBy
     /// </summary>
-    [DataMember(Name = "reviewedBy", EmitDefaultValue = false)]
+    [JsonPropertyName("reviewedBy")]
     public WfmBulkShiftTradeStateUpdateNotificationTopicUserReference ReviewedBy { get; set; }
 
 
@@ -169,7 +169,7 @@ public partial class WfmBulkShiftTradeStateUpdateNotificationTopicBulkShiftTrade
     /// <summary>
     /// Gets or Sets ReviewedDate
     /// </summary>
-    [DataMember(Name = "reviewedDate", EmitDefaultValue = false)]
+    [JsonPropertyName("reviewedDate")]
     public DateTime? ReviewedDate { get; set; }
 
 
@@ -179,7 +179,7 @@ public partial class WfmBulkShiftTradeStateUpdateNotificationTopicBulkShiftTrade
     /// <summary>
     /// Gets or Sets Metadata
     /// </summary>
-    [DataMember(Name = "metadata", EmitDefaultValue = false)]
+    [JsonPropertyName("metadata")]
     public WfmBulkShiftTradeStateUpdateNotificationTopicWfmVersionedEntityMetadata Metadata { get; set; }
 
 

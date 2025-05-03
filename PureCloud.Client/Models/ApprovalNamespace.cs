@@ -7,14 +7,14 @@ namespace PureCloud.Client.Models;
 /// <summary>
 /// ApprovalNamespace
 /// </summary>
-[DataContract]
+
 public partial class ApprovalNamespace : IEquatable<ApprovalNamespace>
 {
     /// <summary>
     /// The namespace of the associated approvers.
     /// </summary>
     /// <value>The namespace of the associated approvers.</value>
-    [JsonConverter(typeof(JsonStringEnumConverter))]
+    
     public enum NamespaceEnum
     {
         /// <summary>
@@ -479,7 +479,7 @@ public partial class ApprovalNamespace : IEquatable<ApprovalNamespace>
     /// The current namespace approval status.
     /// </summary>
     /// <value>The current namespace approval status.</value>
-    [JsonConverter(typeof(JsonStringEnumConverter))]
+    
     public enum StatusEnum
     {
         /// <summary>
@@ -572,7 +572,7 @@ public partial class ApprovalNamespace : IEquatable<ApprovalNamespace>
     /// The type of namespace approval.
     /// </summary>
     /// <value>The type of namespace approval.</value>
-    [JsonConverter(typeof(JsonStringEnumConverter))]
+    
     public enum TypeEnum
     {
         /// <summary>
@@ -605,19 +605,19 @@ public partial class ApprovalNamespace : IEquatable<ApprovalNamespace>
     /// The namespace of the associated approvers.
     /// </summary>
     /// <value>The namespace of the associated approvers.</value>
-    [DataMember(Name = "namespace", EmitDefaultValue = false)]
+    [JsonPropertyName("namespace")]
     public NamespaceEnum? Namespace { get; private set; }
     /// <summary>
     /// The current namespace approval status.
     /// </summary>
     /// <value>The current namespace approval status.</value>
-    [DataMember(Name = "status", EmitDefaultValue = false)]
+    [JsonPropertyName("status")]
     public StatusEnum? Status { get; private set; }
     /// <summary>
     /// The type of namespace approval.
     /// </summary>
     /// <value>The type of namespace approval.</value>
-    [DataMember(Name = "type", EmitDefaultValue = false)]
+    [JsonPropertyName("type")]
     public TypeEnum? Type { get; private set; }
     /// <summary>
     /// Initializes a new instance of the <see cref="ApprovalNamespace" /> class.

@@ -1,12 +1,12 @@
-using System.Runtime.Serialization;
 using System.Text;
+using System.Text.Json.Serialization;
 
 namespace PureCloud.Client.Models;
 
 /// <summary>
 /// EntityChange
 /// </summary>
-[DataContract]
+
 public partial class EntityChange : IEquatable<EntityChange>
 {
     /// <summary>
@@ -33,7 +33,7 @@ public partial class EntityChange : IEquatable<EntityChange>
     /// Id of the entity that was changed
     /// </summary>
     /// <value>Id of the entity that was changed</value>
-    [DataMember(Name = "entityId", EmitDefaultValue = false)]
+    [JsonPropertyName("entityId")]
     public string EntityId { get; set; }
 
 
@@ -42,7 +42,7 @@ public partial class EntityChange : IEquatable<EntityChange>
     /// Name of the entity that was changed
     /// </summary>
     /// <value>Name of the entity that was changed</value>
-    [DataMember(Name = "entityName", EmitDefaultValue = false)]
+    [JsonPropertyName("entityName")]
     public string EntityName { get; set; }
 
 
@@ -51,7 +51,7 @@ public partial class EntityChange : IEquatable<EntityChange>
     /// Type of the entity that was changed
     /// </summary>
     /// <value>Type of the entity that was changed</value>
-    [DataMember(Name = "entityType", EmitDefaultValue = false)]
+    [JsonPropertyName("entityType")]
     public string EntityType { get; set; }
 
 
@@ -60,7 +60,7 @@ public partial class EntityChange : IEquatable<EntityChange>
     /// Previous values for the entity.
     /// </summary>
     /// <value>Previous values for the entity.</value>
-    [DataMember(Name = "oldValues", EmitDefaultValue = false)]
+    [JsonPropertyName("oldValues")]
     public List<string> OldValues { get; set; }
 
 
@@ -69,7 +69,7 @@ public partial class EntityChange : IEquatable<EntityChange>
     /// New values for the entity.
     /// </summary>
     /// <value>New values for the entity.</value>
-    [DataMember(Name = "newValues", EmitDefaultValue = false)]
+    [JsonPropertyName("newValues")]
     public List<string> NewValues { get; set; }
 
 

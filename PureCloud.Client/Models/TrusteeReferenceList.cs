@@ -1,12 +1,12 @@
-using System.Runtime.Serialization;
 using System.Text;
+using System.Text.Json.Serialization;
 
 namespace PureCloud.Client.Models;
 
 /// <summary>
 /// TrusteeReferenceList
 /// </summary>
-[DataContract]
+
 public partial class TrusteeReferenceList : IEquatable<TrusteeReferenceList>
 {
     /// <summary>
@@ -24,7 +24,7 @@ public partial class TrusteeReferenceList : IEquatable<TrusteeReferenceList>
     /// <summary>
     /// Gets or Sets Entities
     /// </summary>
-    [DataMember(Name = "entities", EmitDefaultValue = false)]
+    [JsonPropertyName("entities")]
     public List<AddressableEntityRef> Entities { get; set; }
 
 

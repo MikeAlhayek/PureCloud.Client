@@ -1,4 +1,3 @@
-using System.Runtime.Serialization;
 using System.Text;
 using System.Text.Json.Serialization;
 
@@ -7,7 +6,7 @@ namespace PureCloud.Client.Models;
 /// <summary>
 /// AppEventResponseSession
 /// </summary>
-[DataContract]
+
 public partial class AppEventResponseSession : IEquatable<AppEventResponseSession>
 {
 
@@ -42,7 +41,7 @@ public partial class AppEventResponseSession : IEquatable<AppEventResponseSessio
     /// ID of the app session.
     /// </summary>
     /// <value>ID of the app session.</value>
-    [DataMember(Name = "id", EmitDefaultValue = false)]
+    [JsonPropertyName("id")]
     public string Id { get; set; }
 
 
@@ -51,7 +50,7 @@ public partial class AppEventResponseSession : IEquatable<AppEventResponseSessio
     /// Indicates how long the customer has been in the app within this session.
     /// </summary>
     /// <value>Indicates how long the customer has been in the app within this session.</value>
-    [DataMember(Name = "durationInSeconds", EmitDefaultValue = false)]
+    [JsonPropertyName("durationInSeconds")]
     public int? DurationInSeconds { get; set; }
 
 
@@ -60,7 +59,7 @@ public partial class AppEventResponseSession : IEquatable<AppEventResponseSessio
     /// The count of all events recorded during this session.
     /// </summary>
     /// <value>The count of all events recorded during this session.</value>
-    [DataMember(Name = "eventCount", EmitDefaultValue = false)]
+    [JsonPropertyName("eventCount")]
     public int? EventCount { get; set; }
 
 
@@ -69,7 +68,7 @@ public partial class AppEventResponseSession : IEquatable<AppEventResponseSessio
     /// The count of all screen views recorded during this session.
     /// </summary>
     /// <value>The count of all screen views recorded during this session.</value>
-    [DataMember(Name = "screenviewCount", EmitDefaultValue = false)]
+    [JsonPropertyName("screenviewCount")]
     public int? ScreenviewCount { get; set; }
 
 
@@ -78,7 +77,7 @@ public partial class AppEventResponseSession : IEquatable<AppEventResponseSessio
     /// The referrer of the first event in the app session.
     /// </summary>
     /// <value>The referrer of the first event in the app session.</value>
-    [DataMember(Name = "referrer", EmitDefaultValue = false)]
+    [JsonPropertyName("referrer")]
     public Referrer Referrer { get; set; }
 
 
@@ -87,7 +86,7 @@ public partial class AppEventResponseSession : IEquatable<AppEventResponseSessio
     /// The URI for this object
     /// </summary>
     /// <value>The URI for this object</value>
-    [DataMember(Name = "selfUri", EmitDefaultValue = false)]
+    [JsonPropertyName("selfUri")]
     public string SelfUri { get; private set; }
 
 
@@ -96,7 +95,7 @@ public partial class AppEventResponseSession : IEquatable<AppEventResponseSessio
     /// UTC timestamp of the session&#39;s first event, that is when the session starts. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z
     /// </summary>
     /// <value>UTC timestamp of the session&#39;s first event, that is when the session starts. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z</value>
-    [DataMember(Name = "createdDate", EmitDefaultValue = false)]
+    [JsonPropertyName("createdDate")]
     public DateTime? CreatedDate { get; set; }
 
 

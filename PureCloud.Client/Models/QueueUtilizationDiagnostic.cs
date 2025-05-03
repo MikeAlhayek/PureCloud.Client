@@ -1,12 +1,12 @@
-using System.Runtime.Serialization;
 using System.Text;
+using System.Text.Json.Serialization;
 
 namespace PureCloud.Client.Models;
 
 /// <summary>
 /// QueueUtilizationDiagnostic
 /// </summary>
-[DataContract]
+
 public partial class QueueUtilizationDiagnostic : IEquatable<QueueUtilizationDiagnostic>
 {
     /// <summary>
@@ -23,7 +23,7 @@ public partial class QueueUtilizationDiagnostic : IEquatable<QueueUtilizationDia
     /// Identifier of the queue
     /// </summary>
     /// <value>Identifier of the queue</value>
-    [DataMember(Name = "queue", EmitDefaultValue = false)]
+    [JsonPropertyName("queue")]
     public DomainEntityRef Queue { get; private set; }
 
 
@@ -32,7 +32,7 @@ public partial class QueueUtilizationDiagnostic : IEquatable<QueueUtilizationDia
     /// The number of users joined to the queue
     /// </summary>
     /// <value>The number of users joined to the queue</value>
-    [DataMember(Name = "usersInQueue", EmitDefaultValue = false)]
+    [JsonPropertyName("usersInQueue")]
     public int? UsersInQueue { get; private set; }
 
 
@@ -41,7 +41,7 @@ public partial class QueueUtilizationDiagnostic : IEquatable<QueueUtilizationDia
     /// The number of users active on the queue
     /// </summary>
     /// <value>The number of users active on the queue</value>
-    [DataMember(Name = "activeUsersInQueue", EmitDefaultValue = false)]
+    [JsonPropertyName("activeUsersInQueue")]
     public int? ActiveUsersInQueue { get; private set; }
 
 
@@ -50,7 +50,7 @@ public partial class QueueUtilizationDiagnostic : IEquatable<QueueUtilizationDia
     /// The number of users with a status of on-queue
     /// </summary>
     /// <value>The number of users with a status of on-queue</value>
-    [DataMember(Name = "usersOnQueue", EmitDefaultValue = false)]
+    [JsonPropertyName("usersOnQueue")]
     public int? UsersOnQueue { get; private set; }
 
 
@@ -59,7 +59,7 @@ public partial class QueueUtilizationDiagnostic : IEquatable<QueueUtilizationDia
     /// The number of users in the queue currently not engaged
     /// </summary>
     /// <value>The number of users in the queue currently not engaged</value>
-    [DataMember(Name = "usersNotUtilized", EmitDefaultValue = false)]
+    [JsonPropertyName("usersNotUtilized")]
     public int? UsersNotUtilized { get; private set; }
 
 
@@ -68,7 +68,7 @@ public partial class QueueUtilizationDiagnostic : IEquatable<QueueUtilizationDia
     /// The number of users in the queue with a station
     /// </summary>
     /// <value>The number of users in the queue with a station</value>
-    [DataMember(Name = "usersOnQueueWithStation", EmitDefaultValue = false)]
+    [JsonPropertyName("usersOnQueueWithStation")]
     public int? UsersOnQueueWithStation { get; private set; }
 
 
@@ -77,7 +77,7 @@ public partial class QueueUtilizationDiagnostic : IEquatable<QueueUtilizationDia
     /// The number of users currently engaged in a campaign call
     /// </summary>
     /// <value>The number of users currently engaged in a campaign call</value>
-    [DataMember(Name = "usersOnACampaignCall", EmitDefaultValue = false)]
+    [JsonPropertyName("usersOnACampaignCall")]
     public int? UsersOnACampaignCall { get; private set; }
 
 
@@ -86,7 +86,7 @@ public partial class QueueUtilizationDiagnostic : IEquatable<QueueUtilizationDia
     /// The number of users whose station is homed to an edge different from the campaign
     /// </summary>
     /// <value>The number of users whose station is homed to an edge different from the campaign</value>
-    [DataMember(Name = "usersOnDifferentEdgeGroup", EmitDefaultValue = false)]
+    [JsonPropertyName("usersOnDifferentEdgeGroup")]
     public int? UsersOnDifferentEdgeGroup { get; private set; }
 
 
@@ -95,7 +95,7 @@ public partial class QueueUtilizationDiagnostic : IEquatable<QueueUtilizationDia
     /// The number of users currently engaged in a communication that is not part of the campaign
     /// </summary>
     /// <value>The number of users currently engaged in a communication that is not part of the campaign</value>
-    [DataMember(Name = "usersOnANonCampaignCall", EmitDefaultValue = false)]
+    [JsonPropertyName("usersOnANonCampaignCall")]
     public int? UsersOnANonCampaignCall { get; private set; }
 
 

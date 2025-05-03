@@ -1,12 +1,12 @@
-using System.Runtime.Serialization;
 using System.Text;
+using System.Text.Json.Serialization;
 
 namespace PureCloud.Client.Models;
 
 /// <summary>
 /// DialerCallabletimesetConfigChangeCallableTimeSet
 /// </summary>
-[DataContract]
+
 public partial class DialerCallabletimesetConfigChangeCallableTimeSet : IEquatable<DialerCallabletimesetConfigChangeCallableTimeSet>
 {
     /// <summary>
@@ -37,7 +37,7 @@ public partial class DialerCallabletimesetConfigChangeCallableTimeSet : IEquatab
     /// The list of callable times
     /// </summary>
     /// <value>The list of callable times</value>
-    [DataMember(Name = "callableTimes", EmitDefaultValue = false)]
+    [JsonPropertyName("callableTimes")]
     public List<DialerCallabletimesetConfigChangeCallableTime> CallableTimes { get; set; }
 
 
@@ -45,7 +45,7 @@ public partial class DialerCallabletimesetConfigChangeCallableTimeSet : IEquatab
     /// <summary>
     /// Gets or Sets AdditionalProperties
     /// </summary>
-    [DataMember(Name = "additionalProperties", EmitDefaultValue = false)]
+    [JsonPropertyName("additionalProperties")]
     public Dictionary<string, object> AdditionalProperties { get; set; }
 
 
@@ -54,7 +54,7 @@ public partial class DialerCallabletimesetConfigChangeCallableTimeSet : IEquatab
     /// The globally unique identifier for the object.
     /// </summary>
     /// <value>The globally unique identifier for the object.</value>
-    [DataMember(Name = "id", EmitDefaultValue = false)]
+    [JsonPropertyName("id")]
     public string Id { get; set; }
 
 
@@ -63,7 +63,7 @@ public partial class DialerCallabletimesetConfigChangeCallableTimeSet : IEquatab
     /// The UI-visible name of the object
     /// </summary>
     /// <value>The UI-visible name of the object</value>
-    [DataMember(Name = "name", EmitDefaultValue = false)]
+    [JsonPropertyName("name")]
     public string Name { get; set; }
 
 
@@ -72,7 +72,7 @@ public partial class DialerCallabletimesetConfigChangeCallableTimeSet : IEquatab
     /// Creation time of the entity
     /// </summary>
     /// <value>Creation time of the entity</value>
-    [DataMember(Name = "dateCreated", EmitDefaultValue = false)]
+    [JsonPropertyName("dateCreated")]
     public DateTime? DateCreated { get; set; }
 
 
@@ -81,7 +81,7 @@ public partial class DialerCallabletimesetConfigChangeCallableTimeSet : IEquatab
     /// Last modified time of the entity
     /// </summary>
     /// <value>Last modified time of the entity</value>
-    [DataMember(Name = "dateModified", EmitDefaultValue = false)]
+    [JsonPropertyName("dateModified")]
     public DateTime? DateModified { get; set; }
 
 
@@ -90,7 +90,7 @@ public partial class DialerCallabletimesetConfigChangeCallableTimeSet : IEquatab
     /// Required for updates, must match the version number of the most recent update
     /// </summary>
     /// <value>Required for updates, must match the version number of the most recent update</value>
-    [DataMember(Name = "version", EmitDefaultValue = false)]
+    [JsonPropertyName("version")]
     public long? Version { get; set; }
 
 

@@ -1,4 +1,3 @@
-using System.Runtime.Serialization;
 using System.Text;
 using System.Text.Json.Serialization;
 
@@ -7,7 +6,7 @@ namespace PureCloud.Client.Models;
 /// <summary>
 /// A WhatsApp messaging template definition as defined in the WhatsApp Business Manager
 /// </summary>
-[DataContract]
+
 public partial class WhatsAppDefinition : IEquatable<WhatsAppDefinition>
 {
 
@@ -42,7 +41,7 @@ public partial class WhatsAppDefinition : IEquatable<WhatsAppDefinition>
     /// The messaging template name.
     /// </summary>
     /// <value>The messaging template name.</value>
-    [DataMember(Name = "name", EmitDefaultValue = false)]
+    [JsonPropertyName("name")]
     public string Name { get; set; }
 
 
@@ -51,7 +50,7 @@ public partial class WhatsAppDefinition : IEquatable<WhatsAppDefinition>
     /// The messaging template namespace.
     /// </summary>
     /// <value>The messaging template namespace.</value>
-    [DataMember(Name = "namespace", EmitDefaultValue = false)]
+    [JsonPropertyName("namespace")]
     public string Namespace { get; set; }
 
 
@@ -60,7 +59,7 @@ public partial class WhatsAppDefinition : IEquatable<WhatsAppDefinition>
     /// The messaging template language configured for this template. This is a WhatsApp specific value. For example, &#39;en_US&#39;
     /// </summary>
     /// <value>The messaging template language configured for this template. This is a WhatsApp specific value. For example, &#39;en_US&#39;</value>
-    [DataMember(Name = "language", EmitDefaultValue = false)]
+    [JsonPropertyName("language")]
     public string Language { get; set; }
 
 
@@ -69,7 +68,7 @@ public partial class WhatsAppDefinition : IEquatable<WhatsAppDefinition>
     /// List of buttons to be included in the WhatsApp messages channel
     /// </summary>
     /// <value>List of buttons to be included in the WhatsApp messages channel</value>
-    [DataMember(Name = "buttons", EmitDefaultValue = false)]
+    [JsonPropertyName("buttons")]
     public List<Button> Buttons { get; set; }
 
 
@@ -78,7 +77,7 @@ public partial class WhatsAppDefinition : IEquatable<WhatsAppDefinition>
     /// Footer for the message in the WhatsApp messages channel
     /// </summary>
     /// <value>Footer for the message in the WhatsApp messages channel</value>
-    [DataMember(Name = "messageFooter", EmitDefaultValue = false)]
+    [JsonPropertyName("messageFooter")]
     public MessageFooter MessageFooter { get; set; }
 
 
@@ -87,7 +86,7 @@ public partial class WhatsAppDefinition : IEquatable<WhatsAppDefinition>
     /// Header for the message in the WhatsApp messages channel
     /// </summary>
     /// <value>Header for the message in the WhatsApp messages channel</value>
-    [DataMember(Name = "header", EmitDefaultValue = false)]
+    [JsonPropertyName("header")]
     public MessageHeader Header { get; set; }
 
 

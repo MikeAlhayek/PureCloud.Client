@@ -1,12 +1,12 @@
-using System.Runtime.Serialization;
 using System.Text;
+using System.Text.Json.Serialization;
 
 namespace PureCloud.Client.Models;
 
 /// <summary>
 /// PasswordRequirements
 /// </summary>
-[DataContract]
+
 public partial class PasswordRequirements : IEquatable<PasswordRequirements>
 {
     /// <summary>
@@ -38,7 +38,7 @@ public partial class PasswordRequirements : IEquatable<PasswordRequirements>
     /// <summary>
     /// Gets or Sets MinimumLength
     /// </summary>
-    [DataMember(Name = "minimumLength", EmitDefaultValue = false)]
+    [JsonPropertyName("minimumLength")]
     public int? MinimumLength { get; set; }
 
 
@@ -46,7 +46,7 @@ public partial class PasswordRequirements : IEquatable<PasswordRequirements>
     /// <summary>
     /// Gets or Sets MinimumDigits
     /// </summary>
-    [DataMember(Name = "minimumDigits", EmitDefaultValue = false)]
+    [JsonPropertyName("minimumDigits")]
     public int? MinimumDigits { get; set; }
 
 
@@ -54,7 +54,7 @@ public partial class PasswordRequirements : IEquatable<PasswordRequirements>
     /// <summary>
     /// Gets or Sets MinimumLetters
     /// </summary>
-    [DataMember(Name = "minimumLetters", EmitDefaultValue = false)]
+    [JsonPropertyName("minimumLetters")]
     public int? MinimumLetters { get; set; }
 
 
@@ -62,7 +62,7 @@ public partial class PasswordRequirements : IEquatable<PasswordRequirements>
     /// <summary>
     /// Gets or Sets MinimumUpper
     /// </summary>
-    [DataMember(Name = "minimumUpper", EmitDefaultValue = false)]
+    [JsonPropertyName("minimumUpper")]
     public int? MinimumUpper { get; set; }
 
 
@@ -70,7 +70,7 @@ public partial class PasswordRequirements : IEquatable<PasswordRequirements>
     /// <summary>
     /// Gets or Sets MinimumLower
     /// </summary>
-    [DataMember(Name = "minimumLower", EmitDefaultValue = false)]
+    [JsonPropertyName("minimumLower")]
     public int? MinimumLower { get; set; }
 
 
@@ -78,7 +78,7 @@ public partial class PasswordRequirements : IEquatable<PasswordRequirements>
     /// <summary>
     /// Gets or Sets MinimumSpecials
     /// </summary>
-    [DataMember(Name = "minimumSpecials", EmitDefaultValue = false)]
+    [JsonPropertyName("minimumSpecials")]
     public int? MinimumSpecials { get; set; }
 
 
@@ -86,7 +86,7 @@ public partial class PasswordRequirements : IEquatable<PasswordRequirements>
     /// <summary>
     /// Gets or Sets MinimumAgeSeconds
     /// </summary>
-    [DataMember(Name = "minimumAgeSeconds", EmitDefaultValue = false)]
+    [JsonPropertyName("minimumAgeSeconds")]
     public int? MinimumAgeSeconds { get; set; }
 
 
@@ -94,7 +94,7 @@ public partial class PasswordRequirements : IEquatable<PasswordRequirements>
     /// <summary>
     /// Gets or Sets ExpirationDays
     /// </summary>
-    [DataMember(Name = "expirationDays", EmitDefaultValue = false)]
+    [JsonPropertyName("expirationDays")]
     public int? ExpirationDays { get; set; }
 
 

@@ -1,4 +1,3 @@
-using System.Runtime.Serialization;
 using System.Text;
 using System.Text.Json.Serialization;
 
@@ -7,7 +6,7 @@ namespace PureCloud.Client.Models;
 /// <summary>
 /// PhoneColumn
 /// </summary>
-[DataContract]
+
 public partial class PhoneColumn : IEquatable<PhoneColumn>
 {
 
@@ -34,7 +33,7 @@ public partial class PhoneColumn : IEquatable<PhoneColumn>
     /// The name of the phone column.
     /// </summary>
     /// <value>The name of the phone column.</value>
-    [DataMember(Name = "columnName", EmitDefaultValue = false)]
+    [JsonPropertyName("columnName")]
     public string ColumnName { get; set; }
 
 
@@ -43,7 +42,7 @@ public partial class PhoneColumn : IEquatable<PhoneColumn>
     /// The type of the phone column. For example, &#39;cell&#39; or &#39;home&#39;.
     /// </summary>
     /// <value>The type of the phone column. For example, &#39;cell&#39; or &#39;home&#39;.</value>
-    [DataMember(Name = "type", EmitDefaultValue = false)]
+    [JsonPropertyName("type")]
     public string Type { get; set; }
 
 

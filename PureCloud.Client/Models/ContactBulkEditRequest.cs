@@ -1,12 +1,12 @@
-using System.Runtime.Serialization;
 using System.Text;
+using System.Text.Json.Serialization;
 
 namespace PureCloud.Client.Models;
 
 /// <summary>
 /// ContactBulkEditRequest
 /// </summary>
-[DataContract]
+
 public partial class ContactBulkEditRequest : IEquatable<ContactBulkEditRequest>
 {
     /// <summary>
@@ -31,7 +31,7 @@ public partial class ContactBulkEditRequest : IEquatable<ContactBulkEditRequest>
     /// Contact List Filter ID.
     /// </summary>
     /// <value>Contact List Filter ID.</value>
-    [DataMember(Name = "contactListFilterId", EmitDefaultValue = false)]
+    [JsonPropertyName("contactListFilterId")]
     public string ContactListFilterId { get; set; }
 
 
@@ -40,7 +40,7 @@ public partial class ContactBulkEditRequest : IEquatable<ContactBulkEditRequest>
     /// Criteria to filter the contacts by.
     /// </summary>
     /// <value>Criteria to filter the contacts by.</value>
-    [DataMember(Name = "criteria", EmitDefaultValue = false)]
+    [JsonPropertyName("criteria")]
     public ContactBulkSearchCriteria Criteria { get; set; }
 
 
@@ -49,7 +49,7 @@ public partial class ContactBulkEditRequest : IEquatable<ContactBulkEditRequest>
     /// Contact IDs to be bulk edited.
     /// </summary>
     /// <value>Contact IDs to be bulk edited.</value>
-    [DataMember(Name = "contactIds", EmitDefaultValue = false)]
+    [JsonPropertyName("contactIds")]
     public List<string> ContactIds { get; set; }
 
 
@@ -58,7 +58,7 @@ public partial class ContactBulkEditRequest : IEquatable<ContactBulkEditRequest>
     /// Contact object with details of fields used for patching.
     /// </summary>
     /// <value>Contact object with details of fields used for patching.</value>
-    [DataMember(Name = "contact", EmitDefaultValue = false)]
+    [JsonPropertyName("contact")]
     public DialerContact Contact { get; set; }
 
 

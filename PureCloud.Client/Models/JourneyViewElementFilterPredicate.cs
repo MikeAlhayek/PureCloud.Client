@@ -7,14 +7,14 @@ namespace PureCloud.Client.Models;
 /// <summary>
 /// A filter on an element within a journey view
 /// </summary>
-[DataContract]
+
 public partial class JourneyViewElementFilterPredicate : IEquatable<JourneyViewElementFilterPredicate>
 {
     /// <summary>
     /// Optional operator, default is Matches. Valid values: Matches
     /// </summary>
     /// <value>Optional operator, default is Matches. Valid values: Matches</value>
-    [JsonConverter(typeof(JsonStringEnumConverter))]
+    
     public enum OperatorEnum
     {
         /// <summary>
@@ -41,7 +41,7 @@ public partial class JourneyViewElementFilterPredicate : IEquatable<JourneyViewE
     /// Optional operator, default is Matches. Valid values: Matches
     /// </summary>
     /// <value>Optional operator, default is Matches. Valid values: Matches</value>
-    [DataMember(Name = "operator", EmitDefaultValue = false)]
+    [JsonPropertyName("operator")]
     public OperatorEnum? Operator { get; set; }
 
     /// <summary>
@@ -71,7 +71,7 @@ public partial class JourneyViewElementFilterPredicate : IEquatable<JourneyViewE
     /// the element&#39;s attribute being filtered on
     /// </summary>
     /// <value>the element&#39;s attribute being filtered on</value>
-    [DataMember(Name = "dimension", EmitDefaultValue = false)]
+    [JsonPropertyName("dimension")]
     public string Dimension { get; set; }
 
 
@@ -80,7 +80,7 @@ public partial class JourneyViewElementFilterPredicate : IEquatable<JourneyViewE
     /// the values of the attribute to filter on
     /// </summary>
     /// <value>the values of the attribute to filter on</value>
-    [DataMember(Name = "values", EmitDefaultValue = false)]
+    [JsonPropertyName("values")]
     public List<string> Values { get; set; }
 
 
@@ -91,7 +91,7 @@ public partial class JourneyViewElementFilterPredicate : IEquatable<JourneyViewE
     /// set this to true if no specific value to be considered
     /// </summary>
     /// <value>set this to true if no specific value to be considered</value>
-    [DataMember(Name = "noValue", EmitDefaultValue = false)]
+    [JsonPropertyName("noValue")]
     public bool? NoValue { get; set; }
 
 

@@ -1,12 +1,12 @@
-using System.Runtime.Serialization;
 using System.Text;
+using System.Text.Json.Serialization;
 
 namespace PureCloud.Client.Models;
 
 /// <summary>
 /// CreateWorkPlanActivity
 /// </summary>
-[DataContract]
+
 public partial class CreateWorkPlanActivity : IEquatable<CreateWorkPlanActivity>
 {
     /// <summary>
@@ -49,7 +49,7 @@ public partial class CreateWorkPlanActivity : IEquatable<CreateWorkPlanActivity>
     /// ID of the activity code associated with this activity
     /// </summary>
     /// <value>ID of the activity code associated with this activity</value>
-    [DataMember(Name = "activityCodeId", EmitDefaultValue = false)]
+    [JsonPropertyName("activityCodeId")]
     public string ActivityCodeId { get; set; }
 
 
@@ -58,7 +58,7 @@ public partial class CreateWorkPlanActivity : IEquatable<CreateWorkPlanActivity>
     /// Description of the activity
     /// </summary>
     /// <value>Description of the activity</value>
-    [DataMember(Name = "description", EmitDefaultValue = false)]
+    [JsonPropertyName("description")]
     public string Description { get; set; }
 
 
@@ -67,7 +67,7 @@ public partial class CreateWorkPlanActivity : IEquatable<CreateWorkPlanActivity>
     /// Length of the activity in minutes
     /// </summary>
     /// <value>Length of the activity in minutes</value>
-    [DataMember(Name = "lengthMinutes", EmitDefaultValue = false)]
+    [JsonPropertyName("lengthMinutes")]
     public int? LengthMinutes { get; set; }
 
 
@@ -76,7 +76,7 @@ public partial class CreateWorkPlanActivity : IEquatable<CreateWorkPlanActivity>
     /// Whether the start time of the activity is relative to the start time of the shift it belongs to
     /// </summary>
     /// <value>Whether the start time of the activity is relative to the start time of the shift it belongs to</value>
-    [DataMember(Name = "startTimeIsRelativeToShiftStart", EmitDefaultValue = false)]
+    [JsonPropertyName("startTimeIsRelativeToShiftStart")]
     public bool? StartTimeIsRelativeToShiftStart { get; set; }
 
 
@@ -85,7 +85,7 @@ public partial class CreateWorkPlanActivity : IEquatable<CreateWorkPlanActivity>
     /// Whether the start time of the activity is flexible
     /// </summary>
     /// <value>Whether the start time of the activity is flexible</value>
-    [DataMember(Name = "flexibleStartTime", EmitDefaultValue = false)]
+    [JsonPropertyName("flexibleStartTime")]
     public bool? FlexibleStartTime { get; set; }
 
 
@@ -94,7 +94,7 @@ public partial class CreateWorkPlanActivity : IEquatable<CreateWorkPlanActivity>
     /// Earliest activity start in offset minutes relative to shift start time if startTimeIsRelativeToShiftStart &#x3D;&#x3D; true else its based on midnight. Used if flexibleStartTime &#x3D;&#x3D; true
     /// </summary>
     /// <value>Earliest activity start in offset minutes relative to shift start time if startTimeIsRelativeToShiftStart &#x3D;&#x3D; true else its based on midnight. Used if flexibleStartTime &#x3D;&#x3D; true</value>
-    [DataMember(Name = "earliestStartTimeMinutes", EmitDefaultValue = false)]
+    [JsonPropertyName("earliestStartTimeMinutes")]
     public int? EarliestStartTimeMinutes { get; set; }
 
 
@@ -103,7 +103,7 @@ public partial class CreateWorkPlanActivity : IEquatable<CreateWorkPlanActivity>
     /// Latest activity start in offset minutes relative to shift start time if startTimeIsRelativeToShiftStart &#x3D;&#x3D; true else its based on midnight. Used if flexibleStartTime &#x3D;&#x3D; true
     /// </summary>
     /// <value>Latest activity start in offset minutes relative to shift start time if startTimeIsRelativeToShiftStart &#x3D;&#x3D; true else its based on midnight. Used if flexibleStartTime &#x3D;&#x3D; true</value>
-    [DataMember(Name = "latestStartTimeMinutes", EmitDefaultValue = false)]
+    [JsonPropertyName("latestStartTimeMinutes")]
     public int? LatestStartTimeMinutes { get; set; }
 
 
@@ -112,7 +112,7 @@ public partial class CreateWorkPlanActivity : IEquatable<CreateWorkPlanActivity>
     /// Exact activity start in offset minutes relative to shift start time if startTimeIsRelativeToShiftStart &#x3D;&#x3D; true else its based on midnight. Used if flexibleStartTime &#x3D;&#x3D; false
     /// </summary>
     /// <value>Exact activity start in offset minutes relative to shift start time if startTimeIsRelativeToShiftStart &#x3D;&#x3D; true else its based on midnight. Used if flexibleStartTime &#x3D;&#x3D; false</value>
-    [DataMember(Name = "exactStartTimeMinutes", EmitDefaultValue = false)]
+    [JsonPropertyName("exactStartTimeMinutes")]
     public int? ExactStartTimeMinutes { get; set; }
 
 
@@ -121,7 +121,7 @@ public partial class CreateWorkPlanActivity : IEquatable<CreateWorkPlanActivity>
     /// Increment in offset minutes that would contribute to different possible start times for the activity
     /// </summary>
     /// <value>Increment in offset minutes that would contribute to different possible start times for the activity</value>
-    [DataMember(Name = "startTimeIncrementMinutes", EmitDefaultValue = false)]
+    [JsonPropertyName("startTimeIncrementMinutes")]
     public int? StartTimeIncrementMinutes { get; set; }
 
 
@@ -130,7 +130,7 @@ public partial class CreateWorkPlanActivity : IEquatable<CreateWorkPlanActivity>
     /// Whether the activity is paid
     /// </summary>
     /// <value>Whether the activity is paid</value>
-    [DataMember(Name = "countsAsPaidTime", EmitDefaultValue = false)]
+    [JsonPropertyName("countsAsPaidTime")]
     public bool? CountsAsPaidTime { get; set; }
 
 
@@ -139,7 +139,7 @@ public partial class CreateWorkPlanActivity : IEquatable<CreateWorkPlanActivity>
     /// Whether the activity duration is counted towards contiguous work time
     /// </summary>
     /// <value>Whether the activity duration is counted towards contiguous work time</value>
-    [DataMember(Name = "countsAsContiguousWorkTime", EmitDefaultValue = false)]
+    [JsonPropertyName("countsAsContiguousWorkTime")]
     public bool? CountsAsContiguousWorkTime { get; set; }
 
 
@@ -148,7 +148,7 @@ public partial class CreateWorkPlanActivity : IEquatable<CreateWorkPlanActivity>
     /// The minimum duration between shift start and shift item (e.g., break or meal) start in minutes
     /// </summary>
     /// <value>The minimum duration between shift start and shift item (e.g., break or meal) start in minutes</value>
-    [DataMember(Name = "minimumLengthFromShiftStartMinutes", EmitDefaultValue = false)]
+    [JsonPropertyName("minimumLengthFromShiftStartMinutes")]
     public int? MinimumLengthFromShiftStartMinutes { get; set; }
 
 
@@ -157,7 +157,7 @@ public partial class CreateWorkPlanActivity : IEquatable<CreateWorkPlanActivity>
     /// The minimum duration between shift item (e.g., break or meal) end and shift end in minutes
     /// </summary>
     /// <value>The minimum duration between shift item (e.g., break or meal) end and shift end in minutes</value>
-    [DataMember(Name = "minimumLengthFromShiftEndMinutes", EmitDefaultValue = false)]
+    [JsonPropertyName("minimumLengthFromShiftEndMinutes")]
     public int? MinimumLengthFromShiftEndMinutes { get; set; }
 
 

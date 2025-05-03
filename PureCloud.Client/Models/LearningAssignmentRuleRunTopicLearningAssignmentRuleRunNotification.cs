@@ -1,12 +1,12 @@
-using System.Runtime.Serialization;
 using System.Text;
+using System.Text.Json.Serialization;
 
 namespace PureCloud.Client.Models;
 
 /// <summary>
 /// LearningAssignmentRuleRunTopicLearningAssignmentRuleRunNotification
 /// </summary>
-[DataContract]
+
 public partial class LearningAssignmentRuleRunTopicLearningAssignmentRuleRunNotification : IEquatable<LearningAssignmentRuleRunTopicLearningAssignmentRuleRunNotification>
 {
     /// <summary>
@@ -26,7 +26,7 @@ public partial class LearningAssignmentRuleRunTopicLearningAssignmentRuleRunNoti
     /// <summary>
     /// Gets or Sets Entities
     /// </summary>
-    [DataMember(Name = "entities", EmitDefaultValue = false)]
+    [JsonPropertyName("entities")]
     public List<LearningAssignmentRuleRunTopicLearningAssignmentsCreated> Entities { get; set; }
 
 
@@ -34,7 +34,7 @@ public partial class LearningAssignmentRuleRunTopicLearningAssignmentRuleRunNoti
     /// <summary>
     /// Gets or Sets Total
     /// </summary>
-    [DataMember(Name = "total", EmitDefaultValue = false)]
+    [JsonPropertyName("total")]
     public long? Total { get; set; }
 
 

@@ -1,12 +1,12 @@
-using System.Runtime.Serialization;
 using System.Text;
+using System.Text.Json.Serialization;
 
 namespace PureCloud.Client.Models;
 
 /// <summary>
 /// DomainNetworkCommandResponse
 /// </summary>
-[DataContract]
+
 public partial class DomainNetworkCommandResponse : IEquatable<DomainNetworkCommandResponse>
 {
     /// <summary>
@@ -30,7 +30,7 @@ public partial class DomainNetworkCommandResponse : IEquatable<DomainNetworkComm
     /// <summary>
     /// Gets or Sets CorrelationId
     /// </summary>
-    [DataMember(Name = "correlationId", EmitDefaultValue = false)]
+    [JsonPropertyName("correlationId")]
     public string CorrelationId { get; set; }
 
 
@@ -38,7 +38,7 @@ public partial class DomainNetworkCommandResponse : IEquatable<DomainNetworkComm
     /// <summary>
     /// Gets or Sets CommandName
     /// </summary>
-    [DataMember(Name = "commandName", EmitDefaultValue = false)]
+    [JsonPropertyName("commandName")]
     public string CommandName { get; set; }
 
 
@@ -46,7 +46,7 @@ public partial class DomainNetworkCommandResponse : IEquatable<DomainNetworkComm
     /// <summary>
     /// Gets or Sets Acknowledged
     /// </summary>
-    [DataMember(Name = "acknowledged", EmitDefaultValue = false)]
+    [JsonPropertyName("acknowledged")]
     public bool? Acknowledged { get; set; }
 
 
@@ -54,7 +54,7 @@ public partial class DomainNetworkCommandResponse : IEquatable<DomainNetworkComm
     /// <summary>
     /// Gets or Sets ErrorInfo
     /// </summary>
-    [DataMember(Name = "errorInfo", EmitDefaultValue = false)]
+    [JsonPropertyName("errorInfo")]
     public ErrorDetails ErrorInfo { get; set; }
 
 

@@ -1,4 +1,3 @@
-using System.Runtime.Serialization;
 using System.Text;
 using System.Text.Json.Serialization;
 
@@ -7,7 +6,7 @@ namespace PureCloud.Client.Models;
 /// <summary>
 /// OutcomeAchievedEventOutcome
 /// </summary>
-[DataContract]
+
 public partial class OutcomeAchievedEventOutcome : IEquatable<OutcomeAchievedEventOutcome>
 {
 
@@ -38,7 +37,7 @@ public partial class OutcomeAchievedEventOutcome : IEquatable<OutcomeAchievedEve
     /// ID of the outcome.
     /// </summary>
     /// <value>ID of the outcome.</value>
-    [DataMember(Name = "id", EmitDefaultValue = false)]
+    [JsonPropertyName("id")]
     public string Id { get; set; }
 
 
@@ -46,7 +45,7 @@ public partial class OutcomeAchievedEventOutcome : IEquatable<OutcomeAchievedEve
     /// <summary>
     /// Gets or Sets SelfUri
     /// </summary>
-    [DataMember(Name = "selfUri", EmitDefaultValue = false)]
+    [JsonPropertyName("selfUri")]
     public string SelfUri { get; set; }
 
 
@@ -55,7 +54,7 @@ public partial class OutcomeAchievedEventOutcome : IEquatable<OutcomeAchievedEve
     /// The display name of the outcome.
     /// </summary>
     /// <value>The display name of the outcome.</value>
-    [DataMember(Name = "displayName", EmitDefaultValue = false)]
+    [JsonPropertyName("displayName")]
     public string DisplayName { get; set; }
 
 
@@ -64,7 +63,7 @@ public partial class OutcomeAchievedEventOutcome : IEquatable<OutcomeAchievedEve
     /// The version of the outcome.
     /// </summary>
     /// <value>The version of the outcome.</value>
-    [DataMember(Name = "version", EmitDefaultValue = false)]
+    [JsonPropertyName("version")]
     public int? Version { get; set; }
 
 

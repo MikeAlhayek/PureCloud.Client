@@ -7,13 +7,13 @@ namespace PureCloud.Client.Models;
 /// <summary>
 /// WrapupDetailEventTopicWrapupEvent
 /// </summary>
-[DataContract]
+
 public partial class WrapupDetailEventTopicWrapupEvent : IEquatable<WrapupDetailEventTopicWrapupEvent>
 {
     /// <summary>
     /// Gets or Sets MediaType
     /// </summary>
-    [JsonConverter(typeof(JsonStringEnumConverter))]
+    
     public enum MediaTypeEnum
     {
         /// <summary>
@@ -87,7 +87,7 @@ public partial class WrapupDetailEventTopicWrapupEvent : IEquatable<WrapupDetail
     /// <summary>
     /// Gets or Sets Direction
     /// </summary>
-    [JsonConverter(typeof(JsonStringEnumConverter))]
+    
     public enum DirectionEnum
     {
         /// <summary>
@@ -119,7 +119,7 @@ public partial class WrapupDetailEventTopicWrapupEvent : IEquatable<WrapupDetail
     /// <summary>
     /// Gets or Sets MessageType
     /// </summary>
-    [JsonConverter(typeof(JsonStringEnumConverter))]
+    
     public enum MessageTypeEnum
     {
         /// <summary>
@@ -193,17 +193,17 @@ public partial class WrapupDetailEventTopicWrapupEvent : IEquatable<WrapupDetail
     /// <summary>
     /// Gets or Sets MediaType
     /// </summary>
-    [DataMember(Name = "mediaType", EmitDefaultValue = false)]
+    [JsonPropertyName("mediaType")]
     public MediaTypeEnum? MediaType { get; set; }
     /// <summary>
     /// Gets or Sets Direction
     /// </summary>
-    [DataMember(Name = "direction", EmitDefaultValue = false)]
+    [JsonPropertyName("direction")]
     public DirectionEnum? Direction { get; set; }
     /// <summary>
     /// Gets or Sets MessageType
     /// </summary>
-    [DataMember(Name = "messageType", EmitDefaultValue = false)]
+    [JsonPropertyName("messageType")]
     public MessageTypeEnum? MessageType { get; set; }
     /// <summary>
     /// Initializes a new instance of the <see cref="WrapupDetailEventTopicWrapupEvent" /> class.
@@ -262,7 +262,7 @@ public partial class WrapupDetailEventTopicWrapupEvent : IEquatable<WrapupDetail
     /// <summary>
     /// Gets or Sets EventTime
     /// </summary>
-    [DataMember(Name = "eventTime", EmitDefaultValue = false)]
+    [JsonPropertyName("eventTime")]
     public long? EventTime { get; set; }
 
 
@@ -270,7 +270,7 @@ public partial class WrapupDetailEventTopicWrapupEvent : IEquatable<WrapupDetail
     /// <summary>
     /// Gets or Sets ConversationId
     /// </summary>
-    [DataMember(Name = "conversationId", EmitDefaultValue = false)]
+    [JsonPropertyName("conversationId")]
     public string ConversationId { get; set; }
 
 
@@ -278,7 +278,7 @@ public partial class WrapupDetailEventTopicWrapupEvent : IEquatable<WrapupDetail
     /// <summary>
     /// Gets or Sets ParticipantId
     /// </summary>
-    [DataMember(Name = "participantId", EmitDefaultValue = false)]
+    [JsonPropertyName("participantId")]
     public string ParticipantId { get; set; }
 
 
@@ -286,7 +286,7 @@ public partial class WrapupDetailEventTopicWrapupEvent : IEquatable<WrapupDetail
     /// <summary>
     /// Gets or Sets SessionId
     /// </summary>
-    [DataMember(Name = "sessionId", EmitDefaultValue = false)]
+    [JsonPropertyName("sessionId")]
     public string SessionId { get; set; }
 
 
@@ -296,7 +296,7 @@ public partial class WrapupDetailEventTopicWrapupEvent : IEquatable<WrapupDetail
     /// <summary>
     /// Gets or Sets Provider
     /// </summary>
-    [DataMember(Name = "provider", EmitDefaultValue = false)]
+    [JsonPropertyName("provider")]
     public string Provider { get; set; }
 
 
@@ -306,7 +306,7 @@ public partial class WrapupDetailEventTopicWrapupEvent : IEquatable<WrapupDetail
     /// <summary>
     /// Gets or Sets Ani
     /// </summary>
-    [DataMember(Name = "ani", EmitDefaultValue = false)]
+    [JsonPropertyName("ani")]
     public string Ani { get; set; }
 
 
@@ -314,7 +314,7 @@ public partial class WrapupDetailEventTopicWrapupEvent : IEquatable<WrapupDetail
     /// <summary>
     /// Gets or Sets Dnis
     /// </summary>
-    [DataMember(Name = "dnis", EmitDefaultValue = false)]
+    [JsonPropertyName("dnis")]
     public string Dnis { get; set; }
 
 
@@ -322,7 +322,7 @@ public partial class WrapupDetailEventTopicWrapupEvent : IEquatable<WrapupDetail
     /// <summary>
     /// Gets or Sets AddressTo
     /// </summary>
-    [DataMember(Name = "addressTo", EmitDefaultValue = false)]
+    [JsonPropertyName("addressTo")]
     public string AddressTo { get; set; }
 
 
@@ -330,7 +330,7 @@ public partial class WrapupDetailEventTopicWrapupEvent : IEquatable<WrapupDetail
     /// <summary>
     /// Gets or Sets AddressFrom
     /// </summary>
-    [DataMember(Name = "addressFrom", EmitDefaultValue = false)]
+    [JsonPropertyName("addressFrom")]
     public string AddressFrom { get; set; }
 
 
@@ -338,7 +338,7 @@ public partial class WrapupDetailEventTopicWrapupEvent : IEquatable<WrapupDetail
     /// <summary>
     /// Gets or Sets CallbackUserName
     /// </summary>
-    [DataMember(Name = "callbackUserName", EmitDefaultValue = false)]
+    [JsonPropertyName("callbackUserName")]
     public string CallbackUserName { get; set; }
 
 
@@ -346,7 +346,7 @@ public partial class WrapupDetailEventTopicWrapupEvent : IEquatable<WrapupDetail
     /// <summary>
     /// Gets or Sets CallbackNumbers
     /// </summary>
-    [DataMember(Name = "callbackNumbers", EmitDefaultValue = false)]
+    [JsonPropertyName("callbackNumbers")]
     public List<string> CallbackNumbers { get; set; }
 
 
@@ -354,7 +354,7 @@ public partial class WrapupDetailEventTopicWrapupEvent : IEquatable<WrapupDetail
     /// <summary>
     /// Gets or Sets CallbackScheduledTime
     /// </summary>
-    [DataMember(Name = "callbackScheduledTime", EmitDefaultValue = false)]
+    [JsonPropertyName("callbackScheduledTime")]
     public long? CallbackScheduledTime { get; set; }
 
 
@@ -362,7 +362,7 @@ public partial class WrapupDetailEventTopicWrapupEvent : IEquatable<WrapupDetail
     /// <summary>
     /// Gets or Sets Subject
     /// </summary>
-    [DataMember(Name = "subject", EmitDefaultValue = false)]
+    [JsonPropertyName("subject")]
     public string Subject { get; set; }
 
 
@@ -372,7 +372,7 @@ public partial class WrapupDetailEventTopicWrapupEvent : IEquatable<WrapupDetail
     /// <summary>
     /// Gets or Sets QueueId
     /// </summary>
-    [DataMember(Name = "queueId", EmitDefaultValue = false)]
+    [JsonPropertyName("queueId")]
     public string QueueId { get; set; }
 
 
@@ -380,7 +380,7 @@ public partial class WrapupDetailEventTopicWrapupEvent : IEquatable<WrapupDetail
     /// <summary>
     /// Gets or Sets WrapupCode
     /// </summary>
-    [DataMember(Name = "wrapupCode", EmitDefaultValue = false)]
+    [JsonPropertyName("wrapupCode")]
     public string WrapupCode { get; set; }
 
 
@@ -388,7 +388,7 @@ public partial class WrapupDetailEventTopicWrapupEvent : IEquatable<WrapupDetail
     /// <summary>
     /// Gets or Sets WrapupNotes
     /// </summary>
-    [DataMember(Name = "wrapupNotes", EmitDefaultValue = false)]
+    [JsonPropertyName("wrapupNotes")]
     public string WrapupNotes { get; set; }
 
 
@@ -396,7 +396,7 @@ public partial class WrapupDetailEventTopicWrapupEvent : IEquatable<WrapupDetail
     /// <summary>
     /// Gets or Sets WrapupDurationMs
     /// </summary>
-    [DataMember(Name = "wrapupDurationMs", EmitDefaultValue = false)]
+    [JsonPropertyName("wrapupDurationMs")]
     public long? WrapupDurationMs { get; set; }
 
 
@@ -404,7 +404,7 @@ public partial class WrapupDetailEventTopicWrapupEvent : IEquatable<WrapupDetail
     /// <summary>
     /// Gets or Sets ConversationExternalContactIds
     /// </summary>
-    [DataMember(Name = "conversationExternalContactIds", EmitDefaultValue = false)]
+    [JsonPropertyName("conversationExternalContactIds")]
     public List<string> ConversationExternalContactIds { get; set; }
 
 
@@ -412,7 +412,7 @@ public partial class WrapupDetailEventTopicWrapupEvent : IEquatable<WrapupDetail
     /// <summary>
     /// Gets or Sets ConversationExternalOrganizationIds
     /// </summary>
-    [DataMember(Name = "conversationExternalOrganizationIds", EmitDefaultValue = false)]
+    [JsonPropertyName("conversationExternalOrganizationIds")]
     public List<string> ConversationExternalOrganizationIds { get; set; }
 
 

@@ -7,14 +7,14 @@ namespace PureCloud.Client.Models;
 /// <summary>
 /// HistoricalDataDisallowedDeleteEntity
 /// </summary>
-[DataContract]
+
 public partial class HistoricalDataDisallowedDeleteEntity : IEquatable<HistoricalDataDisallowedDeleteEntity>
 {
     /// <summary>
     /// The error code explaining why the delete request for the requestId was disallowed
     /// </summary>
     /// <value>The error code explaining why the delete request for the requestId was disallowed</value>
-    [JsonConverter(typeof(JsonStringEnumConverter))]
+    
     public enum ReasonEnum
     {
         /// <summary>
@@ -53,7 +53,7 @@ public partial class HistoricalDataDisallowedDeleteEntity : IEquatable<Historica
     /// The error code explaining why the delete request for the requestId was disallowed
     /// </summary>
     /// <value>The error code explaining why the delete request for the requestId was disallowed</value>
-    [DataMember(Name = "reason", EmitDefaultValue = false)]
+    [JsonPropertyName("reason")]
     public ReasonEnum? Reason { get; set; }
     /// <summary>
     /// Initializes a new instance of the <see cref="HistoricalDataDisallowedDeleteEntity" /> class.
@@ -73,7 +73,7 @@ public partial class HistoricalDataDisallowedDeleteEntity : IEquatable<Historica
     /// The requestId associated with this disallowed entity
     /// </summary>
     /// <value>The requestId associated with this disallowed entity</value>
-    [DataMember(Name = "requestId", EmitDefaultValue = false)]
+    [JsonPropertyName("requestId")]
     public string RequestId { get; set; }
 
 

@@ -1,4 +1,3 @@
-using System.Runtime.Serialization;
 using System.Text;
 using System.Text.Json.Serialization;
 
@@ -7,7 +6,7 @@ namespace PureCloud.Client.Models;
 /// <summary>
 /// BulkJobAddRequest
 /// </summary>
-[DataContract]
+
 public partial class BulkJobAddRequest : IEquatable<BulkJobAddRequest>
 {
 
@@ -32,7 +31,7 @@ public partial class BulkJobAddRequest : IEquatable<BulkJobAddRequest>
     /// The list of workitem entities to create.
     /// </summary>
     /// <value>The list of workitem entities to create.</value>
-    [DataMember(Name = "entities", EmitDefaultValue = false)]
+    [JsonPropertyName("entities")]
     public List<WorkitemCommonCreate> Entities { get; set; }
 
 

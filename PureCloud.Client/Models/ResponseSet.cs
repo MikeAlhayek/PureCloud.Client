@@ -7,14 +7,14 @@ namespace PureCloud.Client.Models;
 /// <summary>
 /// ResponseSet
 /// </summary>
-[DataContract]
+
 public partial class ResponseSet : IEquatable<ResponseSet>
 {
     /// <summary>
     /// Setting level of live speaker detection based on ringbacks
     /// </summary>
     /// <value>Setting level of live speaker detection based on ringbacks</value>
-    [JsonConverter(typeof(JsonStringEnumConverter))]
+    
     public enum LiveSpeakerDetectionModeEnum
     {
         /// <summary>
@@ -53,7 +53,7 @@ public partial class ResponseSet : IEquatable<ResponseSet>
     /// Setting level of live speaker detection based on ringbacks
     /// </summary>
     /// <value>Setting level of live speaker detection based on ringbacks</value>
-    [DataMember(Name = "liveSpeakerDetectionMode", EmitDefaultValue = false)]
+    [JsonPropertyName("liveSpeakerDetectionMode")]
     public LiveSpeakerDetectionModeEnum? LiveSpeakerDetectionMode { get; set; }
 
     /// <summary>
@@ -87,7 +87,7 @@ public partial class ResponseSet : IEquatable<ResponseSet>
     /// The globally unique identifier for the object.
     /// </summary>
     /// <value>The globally unique identifier for the object.</value>
-    [DataMember(Name = "id", EmitDefaultValue = false)]
+    [JsonPropertyName("id")]
     public string Id { get; private set; }
 
 
@@ -96,7 +96,7 @@ public partial class ResponseSet : IEquatable<ResponseSet>
     /// The name of the ResponseSet.
     /// </summary>
     /// <value>The name of the ResponseSet.</value>
-    [DataMember(Name = "name", EmitDefaultValue = false)]
+    [JsonPropertyName("name")]
     public string Name { get; set; }
 
 
@@ -105,7 +105,7 @@ public partial class ResponseSet : IEquatable<ResponseSet>
     /// Creation time of the entity. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z
     /// </summary>
     /// <value>Creation time of the entity. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z</value>
-    [DataMember(Name = "dateCreated", EmitDefaultValue = false)]
+    [JsonPropertyName("dateCreated")]
     public DateTime? DateCreated { get; private set; }
 
 
@@ -114,7 +114,7 @@ public partial class ResponseSet : IEquatable<ResponseSet>
     /// Last modified time of the entity. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z
     /// </summary>
     /// <value>Last modified time of the entity. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z</value>
-    [DataMember(Name = "dateModified", EmitDefaultValue = false)]
+    [JsonPropertyName("dateModified")]
     public DateTime? DateModified { get; private set; }
 
 
@@ -123,7 +123,7 @@ public partial class ResponseSet : IEquatable<ResponseSet>
     /// Required for updates, must match the version number of the most recent update
     /// </summary>
     /// <value>Required for updates, must match the version number of the most recent update</value>
-    [DataMember(Name = "version", EmitDefaultValue = false)]
+    [JsonPropertyName("version")]
     public int? Version { get; set; }
 
 
@@ -132,7 +132,7 @@ public partial class ResponseSet : IEquatable<ResponseSet>
     /// Map of disposition identifiers to reactions. For example: {\&quot;disposition.classification.callable.person\&quot;: {\&quot;reactionType\&quot;: \&quot;transfer\&quot;}}.
     /// </summary>
     /// <value>Map of disposition identifiers to reactions. For example: {\&quot;disposition.classification.callable.person\&quot;: {\&quot;reactionType\&quot;: \&quot;transfer\&quot;}}.</value>
-    [DataMember(Name = "responses", EmitDefaultValue = false)]
+    [JsonPropertyName("responses")]
     public Dictionary<string, Reaction> Responses { get; set; }
 
 
@@ -141,7 +141,7 @@ public partial class ResponseSet : IEquatable<ResponseSet>
     /// Whether to enable answering machine beep detection
     /// </summary>
     /// <value>Whether to enable answering machine beep detection</value>
-    [DataMember(Name = "beepDetectionEnabled", EmitDefaultValue = false)]
+    [JsonPropertyName("beepDetectionEnabled")]
     public bool? BeepDetectionEnabled { get; set; }
 
 
@@ -150,7 +150,7 @@ public partial class ResponseSet : IEquatable<ResponseSet>
     /// Whether to enable answering machine detection
     /// </summary>
     /// <value>Whether to enable answering machine detection</value>
-    [DataMember(Name = "amdSpeechDistinguishEnabled", EmitDefaultValue = false)]
+    [JsonPropertyName("amdSpeechDistinguishEnabled")]
     public bool? AmdSpeechDistinguishEnabled { get; set; }
 
 
@@ -161,7 +161,7 @@ public partial class ResponseSet : IEquatable<ResponseSet>
     /// The URI for this object
     /// </summary>
     /// <value>The URI for this object</value>
-    [DataMember(Name = "selfUri", EmitDefaultValue = false)]
+    [JsonPropertyName("selfUri")]
     public string SelfUri { get; private set; }
 
 

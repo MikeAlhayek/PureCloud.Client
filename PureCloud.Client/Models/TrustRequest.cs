@@ -1,12 +1,12 @@
-using System.Runtime.Serialization;
 using System.Text;
+using System.Text.Json.Serialization;
 
 namespace PureCloud.Client.Models;
 
 /// <summary>
 /// TrustRequest
 /// </summary>
-[DataContract]
+
 public partial class TrustRequest : IEquatable<TrustRequest>
 {
     /// <summary>
@@ -23,7 +23,7 @@ public partial class TrustRequest : IEquatable<TrustRequest>
     /// The globally unique identifier for the object.
     /// </summary>
     /// <value>The globally unique identifier for the object.</value>
-    [DataMember(Name = "id", EmitDefaultValue = false)]
+    [JsonPropertyName("id")]
     public string Id { get; private set; }
 
 
@@ -32,7 +32,7 @@ public partial class TrustRequest : IEquatable<TrustRequest>
     /// User who created this request.
     /// </summary>
     /// <value>User who created this request.</value>
-    [DataMember(Name = "createdBy", EmitDefaultValue = false)]
+    [JsonPropertyName("createdBy")]
     public OrgUser CreatedBy { get; private set; }
 
 
@@ -41,7 +41,7 @@ public partial class TrustRequest : IEquatable<TrustRequest>
     /// Date request was created. There is a 48 hour expiration on all requests. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z
     /// </summary>
     /// <value>Date request was created. There is a 48 hour expiration on all requests. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z</value>
-    [DataMember(Name = "dateCreated", EmitDefaultValue = false)]
+    [JsonPropertyName("dateCreated")]
     public DateTime? DateCreated { get; private set; }
 
 
@@ -50,7 +50,7 @@ public partial class TrustRequest : IEquatable<TrustRequest>
     /// Trustee organization who generated this request.
     /// </summary>
     /// <value>Trustee organization who generated this request.</value>
-    [DataMember(Name = "trustee", EmitDefaultValue = false)]
+    [JsonPropertyName("trustee")]
     public Organization Trustee { get; private set; }
 
 
@@ -59,7 +59,7 @@ public partial class TrustRequest : IEquatable<TrustRequest>
     /// The list of trustee users that are requesting access.
     /// </summary>
     /// <value>The list of trustee users that are requesting access.</value>
-    [DataMember(Name = "users", EmitDefaultValue = false)]
+    [JsonPropertyName("users")]
     public List<OrgUser> Users { get; private set; }
 
 
@@ -68,7 +68,7 @@ public partial class TrustRequest : IEquatable<TrustRequest>
     /// The list of trustee groups that are requesting access.
     /// </summary>
     /// <value>The list of trustee groups that are requesting access.</value>
-    [DataMember(Name = "groups", EmitDefaultValue = false)]
+    [JsonPropertyName("groups")]
     public List<TrustGroup> Groups { get; private set; }
 
 
@@ -77,7 +77,7 @@ public partial class TrustRequest : IEquatable<TrustRequest>
     /// The URI for this object
     /// </summary>
     /// <value>The URI for this object</value>
-    [DataMember(Name = "selfUri", EmitDefaultValue = false)]
+    [JsonPropertyName("selfUri")]
     public string SelfUri { get; private set; }
 
 

@@ -7,14 +7,14 @@ namespace PureCloud.Client.Models;
 /// <summary>
 /// ConversationDisconnectSettings
 /// </summary>
-[DataContract]
+
 public partial class ConversationDisconnectSettings : IEquatable<ConversationDisconnectSettings>
 {
     /// <summary>
     /// Conversation disconnect type
     /// </summary>
     /// <value>Conversation disconnect type</value>
-    [JsonConverter(typeof(JsonStringEnumConverter))]
+    
     public enum TypeEnum
     {
         /// <summary>
@@ -41,7 +41,7 @@ public partial class ConversationDisconnectSettings : IEquatable<ConversationDis
     /// Conversation disconnect type
     /// </summary>
     /// <value>Conversation disconnect type</value>
-    [DataMember(Name = "type", EmitDefaultValue = false)]
+    [JsonPropertyName("type")]
     public TypeEnum? Type { get; set; }
     /// <summary>
     /// Initializes a new instance of the <see cref="ConversationDisconnectSettings" /> class.
@@ -61,7 +61,7 @@ public partial class ConversationDisconnectSettings : IEquatable<ConversationDis
     /// whether or not conversation disconnect setting is enabled
     /// </summary>
     /// <value>whether or not conversation disconnect setting is enabled</value>
-    [DataMember(Name = "enabled", EmitDefaultValue = false)]
+    [JsonPropertyName("enabled")]
     public bool? Enabled { get; set; }
 
 

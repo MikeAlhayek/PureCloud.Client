@@ -1,4 +1,3 @@
-using System.Runtime.Serialization;
 using System.Text;
 using System.Text.Json.Serialization;
 
@@ -7,7 +6,7 @@ namespace PureCloud.Client.Models;
 /// <summary>
 /// WfmScheduleReference
 /// </summary>
-[DataContract]
+
 public partial class WfmScheduleReference : IEquatable<WfmScheduleReference>
 {
 
@@ -36,7 +35,7 @@ public partial class WfmScheduleReference : IEquatable<WfmScheduleReference>
     /// The ID of the WFM schedule
     /// </summary>
     /// <value>The ID of the WFM schedule</value>
-    [DataMember(Name = "id", EmitDefaultValue = false)]
+    [JsonPropertyName("id")]
     public string Id { get; set; }
 
 
@@ -45,7 +44,7 @@ public partial class WfmScheduleReference : IEquatable<WfmScheduleReference>
     /// A reference to a Workforce Management Business Unit
     /// </summary>
     /// <value>A reference to a Workforce Management Business Unit</value>
-    [DataMember(Name = "businessUnit", EmitDefaultValue = false)]
+    [JsonPropertyName("businessUnit")]
     public WfmBusinessUnitReference BusinessUnit { get; set; }
 
 
@@ -54,7 +53,7 @@ public partial class WfmScheduleReference : IEquatable<WfmScheduleReference>
     /// The start week date for this schedule. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd
     /// </summary>
     /// <value>The start week date for this schedule. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd</value>
-    [DataMember(Name = "weekDate", EmitDefaultValue = false)]
+    [JsonPropertyName("weekDate")]
     public string WeekDate { get; set; }
 
 
@@ -63,7 +62,7 @@ public partial class WfmScheduleReference : IEquatable<WfmScheduleReference>
     /// The URI for this object
     /// </summary>
     /// <value>The URI for this object</value>
-    [DataMember(Name = "selfUri", EmitDefaultValue = false)]
+    [JsonPropertyName("selfUri")]
     public string SelfUri { get; private set; }
 
 

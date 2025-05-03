@@ -7,14 +7,14 @@ namespace PureCloud.Client.Models;
 /// <summary>
 /// TransferRequest
 /// </summary>
-[DataContract]
+
 public partial class TransferRequest : IEquatable<TransferRequest>
 {
     /// <summary>
     /// The type of transfer to perform. Attended, where the initiating agent maintains ownership of the conversation until the intended recipient accepts the transfer, or Unattended, where the initiating agent immediately disconnects. Default is Unattended.
     /// </summary>
     /// <value>The type of transfer to perform. Attended, where the initiating agent maintains ownership of the conversation until the intended recipient accepts the transfer, or Unattended, where the initiating agent immediately disconnects. Default is Unattended.</value>
-    [JsonConverter(typeof(JsonStringEnumConverter))]
+    
     public enum TransferTypeEnum
     {
         /// <summary>
@@ -41,7 +41,7 @@ public partial class TransferRequest : IEquatable<TransferRequest>
     /// The type of transfer to perform. Attended, where the initiating agent maintains ownership of the conversation until the intended recipient accepts the transfer, or Unattended, where the initiating agent immediately disconnects. Default is Unattended.
     /// </summary>
     /// <value>The type of transfer to perform. Attended, where the initiating agent maintains ownership of the conversation until the intended recipient accepts the transfer, or Unattended, where the initiating agent immediately disconnects. Default is Unattended.</value>
-    [DataMember(Name = "transferType", EmitDefaultValue = false)]
+    [JsonPropertyName("transferType")]
     public TransferTypeEnum? TransferType { get; set; }
     /// <summary>
     /// Initializes a new instance of the <see cref="TransferRequest" /> class.
@@ -73,7 +73,7 @@ public partial class TransferRequest : IEquatable<TransferRequest>
     /// If true, the digital internal message will NOT be terminated.
     /// </summary>
     /// <value>If true, the digital internal message will NOT be terminated.</value>
-    [DataMember(Name = "keepInternalMessageAlive", EmitDefaultValue = false)]
+    [JsonPropertyName("keepInternalMessageAlive")]
     public bool? KeepInternalMessageAlive { get; set; }
 
 
@@ -82,7 +82,7 @@ public partial class TransferRequest : IEquatable<TransferRequest>
     /// The user ID of the transfer target.
     /// </summary>
     /// <value>The user ID of the transfer target.</value>
-    [DataMember(Name = "userId", EmitDefaultValue = false)]
+    [JsonPropertyName("userId")]
     public string UserId { get; set; }
 
 
@@ -91,7 +91,7 @@ public partial class TransferRequest : IEquatable<TransferRequest>
     /// The user ID or queue ID of the transfer target. Address like a phone number can not be used for callbacks, but they can be used for other forms of communication.
     /// </summary>
     /// <value>The user ID or queue ID of the transfer target. Address like a phone number can not be used for callbacks, but they can be used for other forms of communication.</value>
-    [DataMember(Name = "address", EmitDefaultValue = false)]
+    [JsonPropertyName("address")]
     public string Address { get; set; }
 
 
@@ -100,7 +100,7 @@ public partial class TransferRequest : IEquatable<TransferRequest>
     /// The user name of the transfer target.
     /// </summary>
     /// <value>The user name of the transfer target.</value>
-    [DataMember(Name = "userName", EmitDefaultValue = false)]
+    [JsonPropertyName("userName")]
     public string UserName { get; set; }
 
 
@@ -109,7 +109,7 @@ public partial class TransferRequest : IEquatable<TransferRequest>
     /// The queue ID of the transfer target.
     /// </summary>
     /// <value>The queue ID of the transfer target.</value>
-    [DataMember(Name = "queueId", EmitDefaultValue = false)]
+    [JsonPropertyName("queueId")]
     public string QueueId { get; set; }
 
 
@@ -118,7 +118,7 @@ public partial class TransferRequest : IEquatable<TransferRequest>
     /// If true, transfer to the voicemail inbox of the participant that is being replaced.
     /// </summary>
     /// <value>If true, transfer to the voicemail inbox of the participant that is being replaced.</value>
-    [DataMember(Name = "voicemail", EmitDefaultValue = false)]
+    [JsonPropertyName("voicemail")]
     public bool? Voicemail { get; set; }
 
 

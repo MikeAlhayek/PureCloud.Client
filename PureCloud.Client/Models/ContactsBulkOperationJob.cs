@@ -7,14 +7,14 @@ namespace PureCloud.Client.Models;
 /// <summary>
 /// ContactsBulkOperationJob
 /// </summary>
-[DataContract]
+
 public partial class ContactsBulkOperationJob : IEquatable<ContactsBulkOperationJob>
 {
     /// <summary>
     /// The job state.
     /// </summary>
     /// <value>The job state.</value>
-    [JsonConverter(typeof(JsonStringEnumConverter))]
+    
     public enum StateEnum
     {
         /// <summary>
@@ -47,7 +47,7 @@ public partial class ContactsBulkOperationJob : IEquatable<ContactsBulkOperation
     /// The job type.
     /// </summary>
     /// <value>The job type.</value>
-    [JsonConverter(typeof(JsonStringEnumConverter))]
+    
     public enum TypeEnum
     {
         /// <summary>
@@ -74,13 +74,13 @@ public partial class ContactsBulkOperationJob : IEquatable<ContactsBulkOperation
     /// The job state.
     /// </summary>
     /// <value>The job state.</value>
-    [DataMember(Name = "state", EmitDefaultValue = false)]
+    [JsonPropertyName("state")]
     public StateEnum? State { get; private set; }
     /// <summary>
     /// The job type.
     /// </summary>
     /// <value>The job type.</value>
-    [DataMember(Name = "type", EmitDefaultValue = false)]
+    [JsonPropertyName("type")]
     public TypeEnum? Type { get; private set; }
     /// <summary>
     /// Initializes a new instance of the <see cref="ContactsBulkOperationJob" /> class.
@@ -96,7 +96,7 @@ public partial class ContactsBulkOperationJob : IEquatable<ContactsBulkOperation
     /// The globally unique job identifier.
     /// </summary>
     /// <value>The globally unique job identifier.</value>
-    [DataMember(Name = "id", EmitDefaultValue = false)]
+    [JsonPropertyName("id")]
     public string Id { get; private set; }
 
 
@@ -109,7 +109,7 @@ public partial class ContactsBulkOperationJob : IEquatable<ContactsBulkOperation
     /// Total records that will be impacted by the bulk operation.
     /// </summary>
     /// <value>Total records that will be impacted by the bulk operation.</value>
-    [DataMember(Name = "totalRecords", EmitDefaultValue = false)]
+    [JsonPropertyName("totalRecords")]
     public long? TotalRecords { get; private set; }
 
 
@@ -118,7 +118,7 @@ public partial class ContactsBulkOperationJob : IEquatable<ContactsBulkOperation
     /// Amount of records that have been impacted by the bulk operation.
     /// </summary>
     /// <value>Amount of records that have been impacted by the bulk operation.</value>
-    [DataMember(Name = "completedRecords", EmitDefaultValue = false)]
+    [JsonPropertyName("completedRecords")]
     public long? CompletedRecords { get; private set; }
 
 
@@ -127,7 +127,7 @@ public partial class ContactsBulkOperationJob : IEquatable<ContactsBulkOperation
     /// Percentage of records that have been impacted by the bulk operation.
     /// </summary>
     /// <value>Percentage of records that have been impacted by the bulk operation.</value>
-    [DataMember(Name = "percentComplete", EmitDefaultValue = false)]
+    [JsonPropertyName("percentComplete")]
     public int? PercentComplete { get; private set; }
 
 
@@ -136,7 +136,7 @@ public partial class ContactsBulkOperationJob : IEquatable<ContactsBulkOperation
     /// Information on failure reason.
     /// </summary>
     /// <value>Information on failure reason.</value>
-    [DataMember(Name = "failureReason", EmitDefaultValue = false)]
+    [JsonPropertyName("failureReason")]
     public ErrorInfo FailureReason { get; private set; }
 
 
@@ -145,7 +145,7 @@ public partial class ContactsBulkOperationJob : IEquatable<ContactsBulkOperation
     /// URI to download the original backup contacts.
     /// </summary>
     /// <value>URI to download the original backup contacts.</value>
-    [DataMember(Name = "downloadURI", EmitDefaultValue = false)]
+    [JsonPropertyName("downloadURI")]
     public string DownloadURI { get; private set; }
 
 
@@ -154,7 +154,7 @@ public partial class ContactsBulkOperationJob : IEquatable<ContactsBulkOperation
     /// The URI for this object
     /// </summary>
     /// <value>The URI for this object</value>
-    [DataMember(Name = "selfUri", EmitDefaultValue = false)]
+    [JsonPropertyName("selfUri")]
     public string SelfUri { get; private set; }
 
 

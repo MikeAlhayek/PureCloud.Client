@@ -7,14 +7,14 @@ namespace PureCloud.Client.Models;
 /// <summary>
 /// CampaignRuleWarning
 /// </summary>
-[DataContract]
+
 public partial class CampaignRuleWarning : IEquatable<CampaignRuleWarning>
 {
     /// <summary>
     /// Warning code for this warning.
     /// </summary>
     /// <value>Warning code for this warning.</value>
-    [JsonConverter(typeof(JsonStringEnumConverter))]
+    
     public enum CodeEnum
     {
         /// <summary>
@@ -101,7 +101,7 @@ public partial class CampaignRuleWarning : IEquatable<CampaignRuleWarning>
     /// Warning code for this warning.
     /// </summary>
     /// <value>Warning code for this warning.</value>
-    [DataMember(Name = "code", EmitDefaultValue = false)]
+    [JsonPropertyName("code")]
     public CodeEnum? Code { get; set; }
 
     /// <summary>
@@ -131,7 +131,7 @@ public partial class CampaignRuleWarning : IEquatable<CampaignRuleWarning>
     /// Warning message for this warning.
     /// </summary>
     /// <value>Warning message for this warning.</value>
-    [DataMember(Name = "message", EmitDefaultValue = false)]
+    [JsonPropertyName("message")]
     public string Message { get; set; }
 
 
@@ -140,7 +140,7 @@ public partial class CampaignRuleWarning : IEquatable<CampaignRuleWarning>
     /// Additional warning information
     /// </summary>
     /// <value>Additional warning information</value>
-    [DataMember(Name = "params", EmitDefaultValue = false)]
+    [JsonPropertyName("params")]
     public CampaignRuleWarningParameters Params { get; set; }
 
 

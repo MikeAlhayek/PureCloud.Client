@@ -1,12 +1,12 @@
-using System.Runtime.Serialization;
 using System.Text;
+using System.Text.Json.Serialization;
 
 namespace PureCloud.Client.Models;
 
 /// <summary>
 /// CampaignDiagnostics
 /// </summary>
-[DataContract]
+
 public partial class CampaignDiagnostics : IEquatable<CampaignDiagnostics>
 {
     /// <summary>
@@ -23,7 +23,7 @@ public partial class CampaignDiagnostics : IEquatable<CampaignDiagnostics>
     /// Campaign properties that can impact which contacts are callable
     /// </summary>
     /// <value>Campaign properties that can impact which contacts are callable</value>
-    [DataMember(Name = "callableContacts", EmitDefaultValue = false)]
+    [JsonPropertyName("callableContacts")]
     public CallableContactsDiagnostic CallableContacts { get; private set; }
 
 
@@ -32,7 +32,7 @@ public partial class CampaignDiagnostics : IEquatable<CampaignDiagnostics>
     /// Information regarding the campaign&#39;s queue
     /// </summary>
     /// <value>Information regarding the campaign&#39;s queue</value>
-    [DataMember(Name = "queueUtilizationDiagnostic", EmitDefaultValue = false)]
+    [JsonPropertyName("queueUtilizationDiagnostic")]
     public QueueUtilizationDiagnostic QueueUtilizationDiagnostic { get; private set; }
 
 
@@ -41,7 +41,7 @@ public partial class CampaignDiagnostics : IEquatable<CampaignDiagnostics>
     /// Information regarding the campaign&#39;s rule sets
     /// </summary>
     /// <value>Information regarding the campaign&#39;s rule sets</value>
-    [DataMember(Name = "ruleSetDiagnostics", EmitDefaultValue = false)]
+    [JsonPropertyName("ruleSetDiagnostics")]
     public List<RuleSetDiagnostic> RuleSetDiagnostics { get; private set; }
 
 
@@ -50,7 +50,7 @@ public partial class CampaignDiagnostics : IEquatable<CampaignDiagnostics>
     /// Current number of outstanding interactions on the campaign
     /// </summary>
     /// <value>Current number of outstanding interactions on the campaign</value>
-    [DataMember(Name = "outstandingInteractionsCount", EmitDefaultValue = false)]
+    [JsonPropertyName("outstandingInteractionsCount")]
     public int? OutstandingInteractionsCount { get; private set; }
 
 
@@ -59,7 +59,7 @@ public partial class CampaignDiagnostics : IEquatable<CampaignDiagnostics>
     /// Current number of scheduled interactions on the campaign
     /// </summary>
     /// <value>Current number of scheduled interactions on the campaign</value>
-    [DataMember(Name = "scheduledInteractionsCount", EmitDefaultValue = false)]
+    [JsonPropertyName("scheduledInteractionsCount")]
     public int? ScheduledInteractionsCount { get; private set; }
 
 
@@ -68,7 +68,7 @@ public partial class CampaignDiagnostics : IEquatable<CampaignDiagnostics>
     /// Current number of time zone rescheduled calls on the campaign
     /// </summary>
     /// <value>Current number of time zone rescheduled calls on the campaign</value>
-    [DataMember(Name = "timeZoneRescheduledCallsCount", EmitDefaultValue = false)]
+    [JsonPropertyName("timeZoneRescheduledCallsCount")]
     public int? TimeZoneRescheduledCallsCount { get; private set; }
 
 
@@ -77,7 +77,7 @@ public partial class CampaignDiagnostics : IEquatable<CampaignDiagnostics>
     /// Number of contacts that don&#39;t match filter. This is currently supported only for Campaigns with dynamic filter on.
     /// </summary>
     /// <value>Number of contacts that don&#39;t match filter. This is currently supported only for Campaigns with dynamic filter on.</value>
-    [DataMember(Name = "filteredOutContactsCount", EmitDefaultValue = false)]
+    [JsonPropertyName("filteredOutContactsCount")]
     public int? FilteredOutContactsCount { get; private set; }
 
 
@@ -86,7 +86,7 @@ public partial class CampaignDiagnostics : IEquatable<CampaignDiagnostics>
     /// Information regarding the campaign&#39;s skills
     /// </summary>
     /// <value>Information regarding the campaign&#39;s skills</value>
-    [DataMember(Name = "campaignSkillStatistics", EmitDefaultValue = false)]
+    [JsonPropertyName("campaignSkillStatistics")]
     public CampaignSkillStatistics CampaignSkillStatistics { get; private set; }
 
 

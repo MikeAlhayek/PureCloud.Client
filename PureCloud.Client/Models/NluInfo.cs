@@ -1,12 +1,12 @@
-using System.Runtime.Serialization;
 using System.Text;
+using System.Text.Json.Serialization;
 
 namespace PureCloud.Client.Models;
 
 /// <summary>
 /// NluInfo
 /// </summary>
-[DataContract]
+
 public partial class NluInfo : IEquatable<NluInfo>
 {
     /// <summary>
@@ -28,7 +28,7 @@ public partial class NluInfo : IEquatable<NluInfo>
     /// <summary>
     /// Gets or Sets Domain
     /// </summary>
-    [DataMember(Name = "domain", EmitDefaultValue = false)]
+    [JsonPropertyName("domain")]
     public AddressableEntityRef Domain { get; private set; }
 
 
@@ -36,7 +36,7 @@ public partial class NluInfo : IEquatable<NluInfo>
     /// <summary>
     /// Gets or Sets Version
     /// </summary>
-    [DataMember(Name = "version", EmitDefaultValue = false)]
+    [JsonPropertyName("version")]
     public NluDomainVersion Version { get; private set; }
 
 
@@ -44,7 +44,7 @@ public partial class NluInfo : IEquatable<NluInfo>
     /// <summary>
     /// Gets or Sets Intents
     /// </summary>
-    [DataMember(Name = "intents", EmitDefaultValue = false)]
+    [JsonPropertyName("intents")]
     public List<Intent> Intents { get; set; }
 
 
@@ -52,7 +52,7 @@ public partial class NluInfo : IEquatable<NluInfo>
     /// <summary>
     /// Gets or Sets EngineVersion
     /// </summary>
-    [DataMember(Name = "engineVersion", EmitDefaultValue = false)]
+    [JsonPropertyName("engineVersion")]
     public string EngineVersion { get; set; }
 
 
@@ -60,7 +60,7 @@ public partial class NluInfo : IEquatable<NluInfo>
     /// <summary>
     /// Gets or Sets NluData
     /// </summary>
-    [DataMember(Name = "nluData", EmitDefaultValue = false)]
+    [JsonPropertyName("nluData")]
     public NluDomainVersion NluData { get; set; }
 
 

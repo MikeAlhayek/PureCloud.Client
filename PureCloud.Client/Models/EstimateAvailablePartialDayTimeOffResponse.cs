@@ -1,4 +1,3 @@
-using System.Runtime.Serialization;
 using System.Text;
 using System.Text.Json.Serialization;
 
@@ -7,7 +6,7 @@ namespace PureCloud.Client.Models;
 /// <summary>
 /// EstimateAvailablePartialDayTimeOffResponse
 /// </summary>
-[DataContract]
+
 public partial class EstimateAvailablePartialDayTimeOffResponse : IEquatable<EstimateAvailablePartialDayTimeOffResponse>
 {
 
@@ -38,7 +37,7 @@ public partial class EstimateAvailablePartialDayTimeOffResponse : IEquatable<Est
     /// Start date-time in ISO-8601 format for partial day request
     /// </summary>
     /// <value>Start date-time in ISO-8601 format for partial day request</value>
-    [DataMember(Name = "date", EmitDefaultValue = false)]
+    [JsonPropertyName("date")]
     public DateTime? Date { get; set; }
 
 
@@ -47,7 +46,7 @@ public partial class EstimateAvailablePartialDayTimeOffResponse : IEquatable<Est
     /// An estimation of time off request length in minutes
     /// </summary>
     /// <value>An estimation of time off request length in minutes</value>
-    [DataMember(Name = "durationMinutes", EmitDefaultValue = false)]
+    [JsonPropertyName("durationMinutes")]
     public int? DurationMinutes { get; set; }
 
 
@@ -56,7 +55,7 @@ public partial class EstimateAvailablePartialDayTimeOffResponse : IEquatable<Est
     /// An estimation of payable part of time off request in minutes
     /// </summary>
     /// <value>An estimation of payable part of time off request in minutes</value>
-    [DataMember(Name = "payableMinutes", EmitDefaultValue = false)]
+    [JsonPropertyName("payableMinutes")]
     public int? PayableMinutes { get; set; }
 
 
@@ -65,7 +64,7 @@ public partial class EstimateAvailablePartialDayTimeOffResponse : IEquatable<Est
     /// Whether there is flexibility for a user to choose different hours than the system estimated
     /// </summary>
     /// <value>Whether there is flexibility for a user to choose different hours than the system estimated</value>
-    [DataMember(Name = "flexible", EmitDefaultValue = false)]
+    [JsonPropertyName("flexible")]
     public bool? Flexible { get; set; }
 
 

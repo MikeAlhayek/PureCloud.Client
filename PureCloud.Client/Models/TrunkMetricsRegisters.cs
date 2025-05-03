@@ -1,12 +1,12 @@
-using System.Runtime.Serialization;
 using System.Text;
+using System.Text.Json.Serialization;
 
 namespace PureCloud.Client.Models;
 
 /// <summary>
 /// TrunkMetricsRegisters
 /// </summary>
-[DataContract]
+
 public partial class TrunkMetricsRegisters : IEquatable<TrunkMetricsRegisters>
 {
     /// <summary>
@@ -31,7 +31,7 @@ public partial class TrunkMetricsRegisters : IEquatable<TrunkMetricsRegisters>
     /// Server proxy address that this registers array element represents.
     /// </summary>
     /// <value>Server proxy address that this registers array element represents.</value>
-    [DataMember(Name = "proxyAddress", EmitDefaultValue = false)]
+    [JsonPropertyName("proxyAddress")]
     public string ProxyAddress { get; set; }
 
 
@@ -40,7 +40,7 @@ public partial class TrunkMetricsRegisters : IEquatable<TrunkMetricsRegisters>
     /// True if last REGISTER message had positive response; false if error response or no response.
     /// </summary>
     /// <value>True if last REGISTER message had positive response; false if error response or no response.</value>
-    [DataMember(Name = "registerState", EmitDefaultValue = false)]
+    [JsonPropertyName("registerState")]
     public bool? RegisterState { get; set; }
 
 
@@ -49,7 +49,7 @@ public partial class TrunkMetricsRegisters : IEquatable<TrunkMetricsRegisters>
     /// ISO 8601 format UTC absolute date &amp; time of the last change of the register state.
     /// </summary>
     /// <value>ISO 8601 format UTC absolute date &amp; time of the last change of the register state.</value>
-    [DataMember(Name = "registerStateTime", EmitDefaultValue = false)]
+    [JsonPropertyName("registerStateTime")]
     public DateTime? RegisterStateTime { get; set; }
 
 
@@ -57,7 +57,7 @@ public partial class TrunkMetricsRegisters : IEquatable<TrunkMetricsRegisters>
     /// <summary>
     /// Gets or Sets ErrorInfo
     /// </summary>
-    [DataMember(Name = "errorInfo", EmitDefaultValue = false)]
+    [JsonPropertyName("errorInfo")]
     public TrunkErrorInfo ErrorInfo { get; set; }
 
 

@@ -1,12 +1,12 @@
-using System.Runtime.Serialization;
 using System.Text;
+using System.Text.Json.Serialization;
 
 namespace PureCloud.Client.Models;
 
 /// <summary>
 /// EdgeMetricsDisk
 /// </summary>
-[DataContract]
+
 public partial class EdgeMetricsDisk : IEquatable<EdgeMetricsDisk>
 {
     /// <summary>
@@ -29,7 +29,7 @@ public partial class EdgeMetricsDisk : IEquatable<EdgeMetricsDisk>
     /// Available memory in bytes.
     /// </summary>
     /// <value>Available memory in bytes.</value>
-    [DataMember(Name = "availableBytes", EmitDefaultValue = false)]
+    [JsonPropertyName("availableBytes")]
     public double? AvailableBytes { get; set; }
 
 
@@ -38,7 +38,7 @@ public partial class EdgeMetricsDisk : IEquatable<EdgeMetricsDisk>
     /// Disk partition name.
     /// </summary>
     /// <value>Disk partition name.</value>
-    [DataMember(Name = "partitionName", EmitDefaultValue = false)]
+    [JsonPropertyName("partitionName")]
     public string PartitionName { get; set; }
 
 
@@ -47,7 +47,7 @@ public partial class EdgeMetricsDisk : IEquatable<EdgeMetricsDisk>
     /// Total memory in bytes.
     /// </summary>
     /// <value>Total memory in bytes.</value>
-    [DataMember(Name = "totalBytes", EmitDefaultValue = false)]
+    [JsonPropertyName("totalBytes")]
     public double? TotalBytes { get; set; }
 
 

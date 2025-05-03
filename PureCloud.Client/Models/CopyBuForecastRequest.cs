@@ -1,4 +1,3 @@
-using System.Runtime.Serialization;
 using System.Text;
 using System.Text.Json.Serialization;
 
@@ -7,7 +6,7 @@ namespace PureCloud.Client.Models;
 /// <summary>
 /// CopyBuForecastRequest
 /// </summary>
-[DataContract]
+
 public partial class CopyBuForecastRequest : IEquatable<CopyBuForecastRequest>
 {
 
@@ -34,7 +33,7 @@ public partial class CopyBuForecastRequest : IEquatable<CopyBuForecastRequest>
     /// The description for the forecast
     /// </summary>
     /// <value>The description for the forecast</value>
-    [DataMember(Name = "description", EmitDefaultValue = false)]
+    [JsonPropertyName("description")]
     public string Description { get; set; }
 
 
@@ -43,7 +42,7 @@ public partial class CopyBuForecastRequest : IEquatable<CopyBuForecastRequest>
     /// The start date of the new forecast to create from the existing forecast. Must correspond to the start day of week for the business unit. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd
     /// </summary>
     /// <value>The start date of the new forecast to create from the existing forecast. Must correspond to the start day of week for the business unit. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd</value>
-    [DataMember(Name = "weekDate", EmitDefaultValue = false)]
+    [JsonPropertyName("weekDate")]
     public string WeekDate { get; set; }
 
 

@@ -7,13 +7,13 @@ namespace PureCloud.Client.Models;
 /// <summary>
 /// PostTextRequest
 /// </summary>
-[DataContract]
+
 public partial class PostTextRequest : IEquatable<PostTextRequest>
 {
     /// <summary>
     /// Gets or Sets BotChannels
     /// </summary>
-    [JsonConverter(typeof(JsonStringEnumConverter))]
+    
     public enum BotChannelsEnum
     {
         /// <summary>
@@ -52,7 +52,7 @@ public partial class PostTextRequest : IEquatable<PostTextRequest>
     /// If the channels list contains a 'Messaging' item and the messaging platform is known, include it here to get accurate analytics
     /// </summary>
     /// <value>If the channels list contains a 'Messaging' item and the messaging platform is known, include it here to get accurate analytics</value>
-    [JsonConverter(typeof(JsonStringEnumConverter))]
+    
     public enum MessagingPlatformTypeEnum
     {
         /// <summary>
@@ -175,7 +175,7 @@ public partial class PostTextRequest : IEquatable<PostTextRequest>
     /// If the channels list contains a 'Messaging' item and the messaging platform is known, include it here to get accurate analytics
     /// </summary>
     /// <value>If the channels list contains a 'Messaging' item and the messaging platform is known, include it here to get accurate analytics</value>
-    [DataMember(Name = "messagingPlatformType", EmitDefaultValue = false)]
+    [JsonPropertyName("messagingPlatformType")]
     public MessagingPlatformTypeEnum? MessagingPlatformType { get; set; }
 
     /// <summary>
@@ -225,7 +225,7 @@ public partial class PostTextRequest : IEquatable<PostTextRequest>
     /// ID of the bot to send the text to.
     /// </summary>
     /// <value>ID of the bot to send the text to.</value>
-    [DataMember(Name = "botId", EmitDefaultValue = false)]
+    [JsonPropertyName("botId")]
     public string BotId { get; set; }
 
 
@@ -234,7 +234,7 @@ public partial class PostTextRequest : IEquatable<PostTextRequest>
     /// Alias/Version of the bot
     /// </summary>
     /// <value>Alias/Version of the bot</value>
-    [DataMember(Name = "botAlias", EmitDefaultValue = false)]
+    [JsonPropertyName("botAlias")]
     public string BotAlias { get; set; }
 
 
@@ -243,7 +243,7 @@ public partial class PostTextRequest : IEquatable<PostTextRequest>
     /// the integration service id for the bot&#39;s credentials
     /// </summary>
     /// <value>the integration service id for the bot&#39;s credentials</value>
-    [DataMember(Name = "integrationId", EmitDefaultValue = false)]
+    [JsonPropertyName("integrationId")]
     public string IntegrationId { get; set; }
 
 
@@ -252,7 +252,7 @@ public partial class PostTextRequest : IEquatable<PostTextRequest>
     /// GUID for this bot&#39;s session
     /// </summary>
     /// <value>GUID for this bot&#39;s session</value>
-    [DataMember(Name = "botSessionId", EmitDefaultValue = false)]
+    [JsonPropertyName("botSessionId")]
     public string BotSessionId { get; set; }
 
 
@@ -261,7 +261,7 @@ public partial class PostTextRequest : IEquatable<PostTextRequest>
     /// Message to send to the bot
     /// </summary>
     /// <value>Message to send to the bot</value>
-    [DataMember(Name = "postTextMessage", EmitDefaultValue = false)]
+    [JsonPropertyName("postTextMessage")]
     public PostTextMessage PostTextMessage { get; set; }
 
 
@@ -270,7 +270,7 @@ public partial class PostTextRequest : IEquatable<PostTextRequest>
     /// The launguage code the bot will run under
     /// </summary>
     /// <value>The launguage code the bot will run under</value>
-    [DataMember(Name = "languageCode", EmitDefaultValue = false)]
+    [JsonPropertyName("languageCode")]
     public string LanguageCode { get; set; }
 
 
@@ -279,7 +279,7 @@ public partial class PostTextRequest : IEquatable<PostTextRequest>
     /// Override timeout for the bot session. This should be greater than 10 minutes.
     /// </summary>
     /// <value>Override timeout for the bot session. This should be greater than 10 minutes.</value>
-    [DataMember(Name = "botSessionTimeoutMinutes", EmitDefaultValue = false)]
+    [JsonPropertyName("botSessionTimeoutMinutes")]
     public int? BotSessionTimeoutMinutes { get; set; }
 
 
@@ -288,7 +288,7 @@ public partial class PostTextRequest : IEquatable<PostTextRequest>
     /// The channels this bot is utilizing
     /// </summary>
     /// <value>The channels this bot is utilizing</value>
-    [DataMember(Name = "botChannels", EmitDefaultValue = false)]
+    [JsonPropertyName("botChannels")]
     public List<BotChannelsEnum> BotChannels { get; set; }
 
 
@@ -297,7 +297,7 @@ public partial class PostTextRequest : IEquatable<PostTextRequest>
     /// Id for tracking the activity - this will be returned in the response
     /// </summary>
     /// <value>Id for tracking the activity - this will be returned in the response</value>
-    [DataMember(Name = "botCorrelationId", EmitDefaultValue = false)]
+    [JsonPropertyName("botCorrelationId")]
     public string BotCorrelationId { get; set; }
 
 
@@ -308,7 +308,7 @@ public partial class PostTextRequest : IEquatable<PostTextRequest>
     /// Provider specific settings, if any
     /// </summary>
     /// <value>Provider specific settings, if any</value>
-    [DataMember(Name = "amazonLexRequest", EmitDefaultValue = false)]
+    [JsonPropertyName("amazonLexRequest")]
     public AmazonLexRequest AmazonLexRequest { get; set; }
 
 
@@ -317,7 +317,7 @@ public partial class PostTextRequest : IEquatable<PostTextRequest>
     /// Provider specific settings, if any
     /// </summary>
     /// <value>Provider specific settings, if any</value>
-    [DataMember(Name = "googleDialogflow", EmitDefaultValue = false)]
+    [JsonPropertyName("googleDialogflow")]
     public GoogleDialogflowCustomSettings GoogleDialogflow { get; set; }
 
 
@@ -326,7 +326,7 @@ public partial class PostTextRequest : IEquatable<PostTextRequest>
     /// Provider specific settings, if any
     /// </summary>
     /// <value>Provider specific settings, if any</value>
-    [DataMember(Name = "genesysBotConnector", EmitDefaultValue = false)]
+    [JsonPropertyName("genesysBotConnector")]
     public GenesysBotConnector GenesysBotConnector { get; set; }
 
 
@@ -335,7 +335,7 @@ public partial class PostTextRequest : IEquatable<PostTextRequest>
     /// Provider specific settings, if any
     /// </summary>
     /// <value>Provider specific settings, if any</value>
-    [DataMember(Name = "nuanceMixDlg", EmitDefaultValue = false)]
+    [JsonPropertyName("nuanceMixDlg")]
     public NuanceMixDlgSettings NuanceMixDlg { get; set; }
 
 

@@ -1,12 +1,12 @@
-using System.Runtime.Serialization;
 using System.Text;
+using System.Text.Json.Serialization;
 
 namespace PureCloud.Client.Models;
 
 /// <summary>
 /// CampaignRuleActionEntities
 /// </summary>
-[DataContract]
+
 public partial class CampaignRuleActionEntities : IEquatable<CampaignRuleActionEntities>
 {
     /// <summary>
@@ -33,7 +33,7 @@ public partial class CampaignRuleActionEntities : IEquatable<CampaignRuleActionE
     /// The list of campaigns for a CampaignRule to monitor. Required if the CampaignRule has any conditions that run on a campaign.
     /// </summary>
     /// <value>The list of campaigns for a CampaignRule to monitor. Required if the CampaignRule has any conditions that run on a campaign.</value>
-    [DataMember(Name = "campaigns", EmitDefaultValue = false)]
+    [JsonPropertyName("campaigns")]
     public List<DomainEntityRef> Campaigns { get; set; }
 
 
@@ -42,7 +42,7 @@ public partial class CampaignRuleActionEntities : IEquatable<CampaignRuleActionE
     /// The list of sequences for a CampaignRule to monitor. Required if the CampaignRule has any conditions that run on a sequence.
     /// </summary>
     /// <value>The list of sequences for a CampaignRule to monitor. Required if the CampaignRule has any conditions that run on a sequence.</value>
-    [DataMember(Name = "sequences", EmitDefaultValue = false)]
+    [JsonPropertyName("sequences")]
     public List<DomainEntityRef> Sequences { get; set; }
 
 
@@ -51,7 +51,7 @@ public partial class CampaignRuleActionEntities : IEquatable<CampaignRuleActionE
     /// The list of Email campaigns for a CampaignRule to monitor. Required if the CampaignRule has any conditions that run on a Email campaign.
     /// </summary>
     /// <value>The list of Email campaigns for a CampaignRule to monitor. Required if the CampaignRule has any conditions that run on a Email campaign.</value>
-    [DataMember(Name = "emailCampaigns", EmitDefaultValue = false)]
+    [JsonPropertyName("emailCampaigns")]
     public List<DomainEntityRef> EmailCampaigns { get; set; }
 
 
@@ -60,7 +60,7 @@ public partial class CampaignRuleActionEntities : IEquatable<CampaignRuleActionE
     /// The list of SMS campaigns for a CampaignRule to monitor. Required if the CampaignRule has any conditions that run on a SMS campaign.
     /// </summary>
     /// <value>The list of SMS campaigns for a CampaignRule to monitor. Required if the CampaignRule has any conditions that run on a SMS campaign.</value>
-    [DataMember(Name = "smsCampaigns", EmitDefaultValue = false)]
+    [JsonPropertyName("smsCampaigns")]
     public List<DomainEntityRef> SmsCampaigns { get; set; }
 
 
@@ -69,7 +69,7 @@ public partial class CampaignRuleActionEntities : IEquatable<CampaignRuleActionE
     /// If true, the CampaignRuleAction will apply to the same entity that triggered the CampaignRuleCondition.
     /// </summary>
     /// <value>If true, the CampaignRuleAction will apply to the same entity that triggered the CampaignRuleCondition.</value>
-    [DataMember(Name = "useTriggeringEntity", EmitDefaultValue = false)]
+    [JsonPropertyName("useTriggeringEntity")]
     public bool? UseTriggeringEntity { get; set; }
 
 

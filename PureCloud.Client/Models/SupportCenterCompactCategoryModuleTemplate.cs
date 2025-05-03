@@ -1,4 +1,3 @@
-using System.Runtime.Serialization;
 using System.Text;
 using System.Text.Json.Serialization;
 
@@ -7,7 +6,7 @@ namespace PureCloud.Client.Models;
 /// <summary>
 /// SupportCenterCompactCategoryModuleTemplate
 /// </summary>
-[DataContract]
+
 public partial class SupportCenterCompactCategoryModuleTemplate : IEquatable<SupportCenterCompactCategoryModuleTemplate>
 {
 
@@ -32,7 +31,7 @@ public partial class SupportCenterCompactCategoryModuleTemplate : IEquatable<Sup
     /// Whether this template is active or not
     /// </summary>
     /// <value>Whether this template is active or not</value>
-    [DataMember(Name = "active", EmitDefaultValue = false)]
+    [JsonPropertyName("active")]
     public bool? Active { get; set; }
 
 

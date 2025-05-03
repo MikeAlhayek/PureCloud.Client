@@ -7,14 +7,14 @@ namespace PureCloud.Client.Models;
 /// <summary>
 /// SchedulingNoForecastOptionsRequest
 /// </summary>
-[DataContract]
+
 public partial class SchedulingNoForecastOptionsRequest : IEquatable<SchedulingNoForecastOptionsRequest>
 {
     /// <summary>
     /// The shift length option to apply if no forecast is supplied
     /// </summary>
     /// <value>The shift length option to apply if no forecast is supplied</value>
-    [JsonConverter(typeof(JsonStringEnumConverter))]
+    
     public enum ShiftLengthEnum
     {
         /// <summary>
@@ -53,7 +53,7 @@ public partial class SchedulingNoForecastOptionsRequest : IEquatable<SchedulingN
     /// The shift start option to apply if no forecast is supplied
     /// </summary>
     /// <value>The shift start option to apply if no forecast is supplied</value>
-    [JsonConverter(typeof(JsonStringEnumConverter))]
+    
     public enum ShiftStartEnum
     {
         /// <summary>
@@ -92,13 +92,13 @@ public partial class SchedulingNoForecastOptionsRequest : IEquatable<SchedulingN
     /// The shift length option to apply if no forecast is supplied
     /// </summary>
     /// <value>The shift length option to apply if no forecast is supplied</value>
-    [DataMember(Name = "shiftLength", EmitDefaultValue = false)]
+    [JsonPropertyName("shiftLength")]
     public ShiftLengthEnum? ShiftLength { get; set; }
     /// <summary>
     /// The shift start option to apply if no forecast is supplied
     /// </summary>
     /// <value>The shift start option to apply if no forecast is supplied</value>
-    [DataMember(Name = "shiftStart", EmitDefaultValue = false)]
+    [JsonPropertyName("shiftStart")]
     public ShiftStartEnum? ShiftStart { get; set; }
     /// <summary>
     /// Initializes a new instance of the <see cref="SchedulingNoForecastOptionsRequest" /> class.

@@ -7,14 +7,14 @@ namespace PureCloud.Client.Models;
 /// <summary>
 /// GamificationContestPrizeImageUploadUrlRequest
 /// </summary>
-[DataContract]
+
 public partial class GamificationContestPrizeImageUploadUrlRequest : IEquatable<GamificationContestPrizeImageUploadUrlRequest>
 {
     /// <summary>
     /// The content type of the file to upload.
     /// </summary>
     /// <value>The content type of the file to upload.</value>
-    [JsonConverter(typeof(JsonStringEnumConverter))]
+    
     public enum ContentTypeEnum
     {
         /// <summary>
@@ -46,7 +46,7 @@ public partial class GamificationContestPrizeImageUploadUrlRequest : IEquatable<
     /// <summary>
     /// Gets or Sets ServerSideEncryption
     /// </summary>
-    [JsonConverter(typeof(JsonStringEnumConverter))]
+    
     public enum ServerSideEncryptionEnum
     {
         /// <summary>
@@ -67,12 +67,12 @@ public partial class GamificationContestPrizeImageUploadUrlRequest : IEquatable<
     /// The content type of the file to upload.
     /// </summary>
     /// <value>The content type of the file to upload.</value>
-    [DataMember(Name = "contentType", EmitDefaultValue = false)]
+    [JsonPropertyName("contentType")]
     public ContentTypeEnum? ContentType { get; set; }
     /// <summary>
     /// Gets or Sets ServerSideEncryption
     /// </summary>
-    [DataMember(Name = "serverSideEncryption", EmitDefaultValue = false)]
+    [JsonPropertyName("serverSideEncryption")]
     public ServerSideEncryptionEnum? ServerSideEncryption { get; set; }
 
     /// <summary>
@@ -106,7 +106,7 @@ public partial class GamificationContestPrizeImageUploadUrlRequest : IEquatable<
     /// Name of the file to upload. It must not start with a dot and not end with a forward slash. Whitespace and the following characters are not allowed: \\{^}%&#x60;]\&quot;&gt;[~&lt;#|
     /// </summary>
     /// <value>Name of the file to upload. It must not start with a dot and not end with a forward slash. Whitespace and the following characters are not allowed: \\{^}%&#x60;]\&quot;&gt;[~&lt;#|</value>
-    [DataMember(Name = "fileName", EmitDefaultValue = false)]
+    [JsonPropertyName("fileName")]
     public string FileName { get; set; }
 
 
@@ -115,7 +115,7 @@ public partial class GamificationContestPrizeImageUploadUrlRequest : IEquatable<
     /// Content MD5 of the file to upload
     /// </summary>
     /// <value>Content MD5 of the file to upload</value>
-    [DataMember(Name = "contentMd5", EmitDefaultValue = false)]
+    [JsonPropertyName("contentMd5")]
     public string ContentMd5 { get; set; }
 
 
@@ -124,7 +124,7 @@ public partial class GamificationContestPrizeImageUploadUrlRequest : IEquatable<
     /// The number of seconds the presigned URL is valid for (from 1 to 604800 seconds). If none provided, defaults to 600 seconds
     /// </summary>
     /// <value>The number of seconds the presigned URL is valid for (from 1 to 604800 seconds). If none provided, defaults to 600 seconds</value>
-    [DataMember(Name = "signedUrlTimeoutSeconds", EmitDefaultValue = false)]
+    [JsonPropertyName("signedUrlTimeoutSeconds")]
     public int? SignedUrlTimeoutSeconds { get; set; }
 
 
@@ -135,7 +135,7 @@ public partial class GamificationContestPrizeImageUploadUrlRequest : IEquatable<
     /// The size of the file to upload.
     /// </summary>
     /// <value>The size of the file to upload.</value>
-    [DataMember(Name = "contentLength", EmitDefaultValue = false)]
+    [JsonPropertyName("contentLength")]
     public long? ContentLength { get; set; }
 
 

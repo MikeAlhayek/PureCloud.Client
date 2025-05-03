@@ -1,12 +1,12 @@
-using System.Runtime.Serialization;
 using System.Text;
+using System.Text.Json.Serialization;
 
 namespace PureCloud.Client.Models;
 
 /// <summary>
 /// WeekShiftTradeListResponse
 /// </summary>
-[DataContract]
+
 public partial class WeekShiftTradeListResponse : IEquatable<WeekShiftTradeListResponse>
 {
     /// <summary>
@@ -26,7 +26,7 @@ public partial class WeekShiftTradeListResponse : IEquatable<WeekShiftTradeListR
     /// <summary>
     /// Gets or Sets Entities
     /// </summary>
-    [DataMember(Name = "entities", EmitDefaultValue = false)]
+    [JsonPropertyName("entities")]
     public List<WeekShiftTradeResponse> Entities { get; set; }
 
 
@@ -35,7 +35,7 @@ public partial class WeekShiftTradeListResponse : IEquatable<WeekShiftTradeListR
     /// URL from which to fetch results for requests with a large result set. If populated, the downloaded data will conform to the same schema as would normally be returned, excepting downloaded data will never itself contain a downloadUrl
     /// </summary>
     /// <value>URL from which to fetch results for requests with a large result set. If populated, the downloaded data will conform to the same schema as would normally be returned, excepting downloaded data will never itself contain a downloadUrl</value>
-    [DataMember(Name = "downloadUrl", EmitDefaultValue = false)]
+    [JsonPropertyName("downloadUrl")]
     public string DownloadUrl { get; set; }
 
 

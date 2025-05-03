@@ -1,12 +1,12 @@
-using System.Runtime.Serialization;
 using System.Text;
+using System.Text.Json.Serialization;
 
 namespace PureCloud.Client.Models;
 
 /// <summary>
 /// BuFullDayTimeOffMarker
 /// </summary>
-[DataContract]
+
 public partial class BuFullDayTimeOffMarker : IEquatable<BuFullDayTimeOffMarker>
 {
     /// <summary>
@@ -41,7 +41,7 @@ public partial class BuFullDayTimeOffMarker : IEquatable<BuFullDayTimeOffMarker>
     /// The date of the time off marker, interpreted in the business unit&#39;s time zone. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd
     /// </summary>
     /// <value>The date of the time off marker, interpreted in the business unit&#39;s time zone. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd</value>
-    [DataMember(Name = "businessUnitDate", EmitDefaultValue = false)]
+    [JsonPropertyName("businessUnitDate")]
     public string BusinessUnitDate { get; set; }
 
 
@@ -50,7 +50,7 @@ public partial class BuFullDayTimeOffMarker : IEquatable<BuFullDayTimeOffMarker>
     /// The length of the time off marker in minutes
     /// </summary>
     /// <value>The length of the time off marker in minutes</value>
-    [DataMember(Name = "lengthMinutes", EmitDefaultValue = false)]
+    [JsonPropertyName("lengthMinutes")]
     public int? LengthMinutes { get; set; }
 
 
@@ -59,7 +59,7 @@ public partial class BuFullDayTimeOffMarker : IEquatable<BuFullDayTimeOffMarker>
     /// The description of the time off marker
     /// </summary>
     /// <value>The description of the time off marker</value>
-    [DataMember(Name = "description", EmitDefaultValue = false)]
+    [JsonPropertyName("description")]
     public string Description { get; set; }
 
 
@@ -68,7 +68,7 @@ public partial class BuFullDayTimeOffMarker : IEquatable<BuFullDayTimeOffMarker>
     /// The ID of the activity code associated with the time off marker
     /// </summary>
     /// <value>The ID of the activity code associated with the time off marker</value>
-    [DataMember(Name = "activityCodeId", EmitDefaultValue = false)]
+    [JsonPropertyName("activityCodeId")]
     public string ActivityCodeId { get; set; }
 
 
@@ -77,7 +77,7 @@ public partial class BuFullDayTimeOffMarker : IEquatable<BuFullDayTimeOffMarker>
     /// Whether the time off marker is paid
     /// </summary>
     /// <value>Whether the time off marker is paid</value>
-    [DataMember(Name = "paid", EmitDefaultValue = false)]
+    [JsonPropertyName("paid")]
     public bool? Paid { get; set; }
 
 
@@ -86,7 +86,7 @@ public partial class BuFullDayTimeOffMarker : IEquatable<BuFullDayTimeOffMarker>
     /// Payable minutes for the time off marker
     /// </summary>
     /// <value>Payable minutes for the time off marker</value>
-    [DataMember(Name = "payableMinutes", EmitDefaultValue = false)]
+    [JsonPropertyName("payableMinutes")]
     public int? PayableMinutes { get; set; }
 
 
@@ -95,7 +95,7 @@ public partial class BuFullDayTimeOffMarker : IEquatable<BuFullDayTimeOffMarker>
     /// The ID of the time off request
     /// </summary>
     /// <value>The ID of the time off request</value>
-    [DataMember(Name = "timeOffRequestId", EmitDefaultValue = false)]
+    [JsonPropertyName("timeOffRequestId")]
     public string TimeOffRequestId { get; set; }
 
 
@@ -104,7 +104,7 @@ public partial class BuFullDayTimeOffMarker : IEquatable<BuFullDayTimeOffMarker>
     /// The sync version of the full day time off request for which the scheduled activity is associated
     /// </summary>
     /// <value>The sync version of the full day time off request for which the scheduled activity is associated</value>
-    [DataMember(Name = "timeOffRequestSyncVersion", EmitDefaultValue = false)]
+    [JsonPropertyName("timeOffRequestSyncVersion")]
     public int? TimeOffRequestSyncVersion { get; set; }
 
 
@@ -113,7 +113,7 @@ public partial class BuFullDayTimeOffMarker : IEquatable<BuFullDayTimeOffMarker>
     /// Set to &#39;true&#39; to delete this time off marker. Will always be null on responses, only has an effect on schedule update
     /// </summary>
     /// <value>Set to &#39;true&#39; to delete this time off marker. Will always be null on responses, only has an effect on schedule update</value>
-    [DataMember(Name = "delete", EmitDefaultValue = false)]
+    [JsonPropertyName("delete")]
     public bool? Delete { get; set; }
 
 

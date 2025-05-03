@@ -7,14 +7,14 @@ namespace PureCloud.Client.Models;
 /// <summary>
 /// ContestsResponse
 /// </summary>
-[DataContract]
+
 public partial class ContestsResponse : IEquatable<ContestsResponse>
 {
     /// <summary>
     /// The Contest winning criteria
     /// </summary>
     /// <value>The Contest winning criteria</value>
-    [JsonConverter(typeof(JsonStringEnumConverter))]
+    
     public enum WinningCriteriaEnum
     {
         /// <summary>
@@ -41,7 +41,7 @@ public partial class ContestsResponse : IEquatable<ContestsResponse>
     /// The Contest anonymization
     /// </summary>
     /// <value>The Contest anonymization</value>
-    [JsonConverter(typeof(JsonStringEnumConverter))]
+    
     public enum AnonymizationEnum
     {
         /// <summary>
@@ -74,7 +74,7 @@ public partial class ContestsResponse : IEquatable<ContestsResponse>
     /// The Contest status
     /// </summary>
     /// <value>The Contest status</value>
-    [JsonConverter(typeof(JsonStringEnumConverter))]
+    
     public enum StatusEnum
     {
         /// <summary>
@@ -125,19 +125,19 @@ public partial class ContestsResponse : IEquatable<ContestsResponse>
     /// The Contest winning criteria
     /// </summary>
     /// <value>The Contest winning criteria</value>
-    [DataMember(Name = "winningCriteria", EmitDefaultValue = false)]
+    [JsonPropertyName("winningCriteria")]
     public WinningCriteriaEnum? WinningCriteria { get; set; }
     /// <summary>
     /// The Contest anonymization
     /// </summary>
     /// <value>The Contest anonymization</value>
-    [DataMember(Name = "anonymization", EmitDefaultValue = false)]
+    [JsonPropertyName("anonymization")]
     public AnonymizationEnum? Anonymization { get; set; }
     /// <summary>
     /// The Contest status
     /// </summary>
     /// <value>The Contest status</value>
-    [DataMember(Name = "status", EmitDefaultValue = false)]
+    [JsonPropertyName("status")]
     public StatusEnum? Status { get; set; }
 
     /// <summary>
@@ -205,7 +205,7 @@ public partial class ContestsResponse : IEquatable<ContestsResponse>
     /// The globally unique identifier for the object.
     /// </summary>
     /// <value>The globally unique identifier for the object.</value>
-    [DataMember(Name = "id", EmitDefaultValue = false)]
+    [JsonPropertyName("id")]
     public string Id { get; private set; }
 
 
@@ -214,7 +214,7 @@ public partial class ContestsResponse : IEquatable<ContestsResponse>
     /// The division for this performance profile associate to
     /// </summary>
     /// <value>The division for this performance profile associate to</value>
-    [DataMember(Name = "division", EmitDefaultValue = false)]
+    [JsonPropertyName("division")]
     public WritableDivision Division { get; set; }
 
 
@@ -223,7 +223,7 @@ public partial class ContestsResponse : IEquatable<ContestsResponse>
     /// The Contest title
     /// </summary>
     /// <value>The Contest title</value>
-    [DataMember(Name = "title", EmitDefaultValue = false)]
+    [JsonPropertyName("title")]
     public string Title { get; set; }
 
 
@@ -232,7 +232,7 @@ public partial class ContestsResponse : IEquatable<ContestsResponse>
     /// The Contest description
     /// </summary>
     /// <value>The Contest description</value>
-    [DataMember(Name = "description", EmitDefaultValue = false)]
+    [JsonPropertyName("description")]
     public string Description { get; set; }
 
 
@@ -241,7 +241,7 @@ public partial class ContestsResponse : IEquatable<ContestsResponse>
     /// Start date of the contest. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd
     /// </summary>
     /// <value>Start date of the contest. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd</value>
-    [DataMember(Name = "dateStart", EmitDefaultValue = false)]
+    [JsonPropertyName("dateStart")]
     public string DateStart { get; set; }
 
 
@@ -250,7 +250,7 @@ public partial class ContestsResponse : IEquatable<ContestsResponse>
     /// End date of the contest. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd
     /// </summary>
     /// <value>End date of the contest. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd</value>
-    [DataMember(Name = "dateEnd", EmitDefaultValue = false)]
+    [JsonPropertyName("dateEnd")]
     public string DateEnd { get; set; }
 
 
@@ -261,7 +261,7 @@ public partial class ContestsResponse : IEquatable<ContestsResponse>
     /// The Contest&#39;s Announcement Datetime. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z
     /// </summary>
     /// <value>The Contest&#39;s Announcement Datetime. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z</value>
-    [DataMember(Name = "dateAnnounced", EmitDefaultValue = false)]
+    [JsonPropertyName("dateAnnounced")]
     public DateTime? DateAnnounced { get; set; }
 
 
@@ -270,7 +270,7 @@ public partial class ContestsResponse : IEquatable<ContestsResponse>
     /// The Contest&#39;s Announcement Timezone. Valid values are strings of the zone name as found in the IANA time zone database. For example: UTC, Etc/UTC, or Europe/London
     /// </summary>
     /// <value>The Contest&#39;s Announcement Timezone. Valid values are strings of the zone name as found in the IANA time zone database. For example: UTC, Etc/UTC, or Europe/London</value>
-    [DataMember(Name = "announcementTimezone", EmitDefaultValue = false)]
+    [JsonPropertyName("announcementTimezone")]
     public string AnnouncementTimezone { get; set; }
 
 
@@ -281,7 +281,7 @@ public partial class ContestsResponse : IEquatable<ContestsResponse>
     /// The Contest&#39;s Metrics
     /// </summary>
     /// <value>The Contest&#39;s Metrics</value>
-    [DataMember(Name = "metrics", EmitDefaultValue = false)]
+    [JsonPropertyName("metrics")]
     public List<ContestMetrics> Metrics { get; set; }
 
 
@@ -290,7 +290,7 @@ public partial class ContestsResponse : IEquatable<ContestsResponse>
     /// The Contest Prizes
     /// </summary>
     /// <value>The Contest Prizes</value>
-    [DataMember(Name = "prizes", EmitDefaultValue = false)]
+    [JsonPropertyName("prizes")]
     public List<ContestPrizes> Prizes { get; set; }
 
 
@@ -299,7 +299,7 @@ public partial class ContestsResponse : IEquatable<ContestsResponse>
     /// The Contest Version
     /// </summary>
     /// <value>The Contest Version</value>
-    [DataMember(Name = "version", EmitDefaultValue = false)]
+    [JsonPropertyName("version")]
     public int? Version { get; set; }
 
 
@@ -308,7 +308,7 @@ public partial class ContestsResponse : IEquatable<ContestsResponse>
     /// The creator of the contest
     /// </summary>
     /// <value>The creator of the contest</value>
-    [DataMember(Name = "createdBy", EmitDefaultValue = false)]
+    [JsonPropertyName("createdBy")]
     public UserReference CreatedBy { get; set; }
 
 
@@ -317,7 +317,7 @@ public partial class ContestsResponse : IEquatable<ContestsResponse>
     /// The performance profile
     /// </summary>
     /// <value>The performance profile</value>
-    [DataMember(Name = "profile", EmitDefaultValue = false)]
+    [JsonPropertyName("profile")]
     public ContestProfile Profile { get; set; }
 
 
@@ -326,7 +326,7 @@ public partial class ContestsResponse : IEquatable<ContestsResponse>
     /// The Contest&#39;s participants
     /// </summary>
     /// <value>The Contest&#39;s participants</value>
-    [DataMember(Name = "participants", EmitDefaultValue = false)]
+    [JsonPropertyName("participants")]
     public List<UserReference> Participants { get; set; }
 
 
@@ -337,7 +337,7 @@ public partial class ContestsResponse : IEquatable<ContestsResponse>
     /// The Number of participants in the contest
     /// </summary>
     /// <value>The Number of participants in the contest</value>
-    [DataMember(Name = "participantCount", EmitDefaultValue = false)]
+    [JsonPropertyName("participantCount")]
     public int? ParticipantCount { get; set; }
 
 
@@ -346,7 +346,7 @@ public partial class ContestsResponse : IEquatable<ContestsResponse>
     /// The Contest&#39;s finalize datetime, returned when a contest is complete. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z
     /// </summary>
     /// <value>The Contest&#39;s finalize datetime, returned when a contest is complete. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z</value>
-    [DataMember(Name = "dateFinalized", EmitDefaultValue = false)]
+    [JsonPropertyName("dateFinalized")]
     public DateTime? DateFinalized { get; set; }
 
 
@@ -355,7 +355,7 @@ public partial class ContestsResponse : IEquatable<ContestsResponse>
     /// The Contest&#39;s cancelled datetime, returned when a contest is complete. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z
     /// </summary>
     /// <value>The Contest&#39;s cancelled datetime, returned when a contest is complete. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z</value>
-    [DataMember(Name = "dateCancelled", EmitDefaultValue = false)]
+    [JsonPropertyName("dateCancelled")]
     public DateTime? DateCancelled { get; set; }
 
 
@@ -364,7 +364,7 @@ public partial class ContestsResponse : IEquatable<ContestsResponse>
     /// The Contest&#39;s last modified datetime. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z
     /// </summary>
     /// <value>The Contest&#39;s last modified datetime. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z</value>
-    [DataMember(Name = "dateModified", EmitDefaultValue = false)]
+    [JsonPropertyName("dateModified")]
     public DateTime? DateModified { get; set; }
 
 
@@ -373,7 +373,7 @@ public partial class ContestsResponse : IEquatable<ContestsResponse>
     /// The datetime the contest scores were last updated. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z
     /// </summary>
     /// <value>The datetime the contest scores were last updated. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z</value>
-    [DataMember(Name = "dateScoresModified", EmitDefaultValue = false)]
+    [JsonPropertyName("dateScoresModified")]
     public DateTime? DateScoresModified { get; set; }
 
 
@@ -382,7 +382,7 @@ public partial class ContestsResponse : IEquatable<ContestsResponse>
     /// The Contest Winners
     /// </summary>
     /// <value>The Contest Winners</value>
-    [DataMember(Name = "winners", EmitDefaultValue = false)]
+    [JsonPropertyName("winners")]
     public List<ContestWinners> Winners { get; set; }
 
 
@@ -391,7 +391,7 @@ public partial class ContestsResponse : IEquatable<ContestsResponse>
     /// The Contest&#39;s disqualified agents, returned when a contest is complete
     /// </summary>
     /// <value>The Contest&#39;s disqualified agents, returned when a contest is complete</value>
-    [DataMember(Name = "disqualifiedAgents", EmitDefaultValue = false)]
+    [JsonPropertyName("disqualifiedAgents")]
     public List<ContestDisqualifiedAgents> DisqualifiedAgents { get; set; }
 
 
@@ -400,7 +400,7 @@ public partial class ContestsResponse : IEquatable<ContestsResponse>
     /// The URI for this object
     /// </summary>
     /// <value>The URI for this object</value>
-    [DataMember(Name = "selfUri", EmitDefaultValue = false)]
+    [JsonPropertyName("selfUri")]
     public string SelfUri { get; private set; }
 
 

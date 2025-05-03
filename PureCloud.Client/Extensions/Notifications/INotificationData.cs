@@ -9,10 +9,12 @@ public interface INotificationData
     /// Name of the topic
     ///</Summary>
     string TopicName { get; set; }
+
     ///<Summary>
     /// Version
     ///</Summary>
     string Version { get; set; }
+
     ///<Summary>
     /// Metadata
     ///</Summary>

@@ -1,12 +1,12 @@
-using System.Runtime.Serialization;
 using System.Text;
+using System.Text.Json.Serialization;
 
 namespace PureCloud.Client.Models;
 
 /// <summary>
 /// ChatUserRef
 /// </summary>
-[DataContract]
+
 public partial class ChatUserRef : IEquatable<ChatUserRef>
 {
     /// <summary>
@@ -36,7 +36,7 @@ public partial class ChatUserRef : IEquatable<ChatUserRef>
     /// <summary>
     /// Gets or Sets Id
     /// </summary>
-    [DataMember(Name = "id", EmitDefaultValue = false)]
+    [JsonPropertyName("id")]
     public string Id { get; set; }
 
 
@@ -44,7 +44,7 @@ public partial class ChatUserRef : IEquatable<ChatUserRef>
     /// <summary>
     /// Gets or Sets Name
     /// </summary>
-    [DataMember(Name = "name", EmitDefaultValue = false)]
+    [JsonPropertyName("name")]
     public string Name { get; set; }
 
 
@@ -52,7 +52,7 @@ public partial class ChatUserRef : IEquatable<ChatUserRef>
     /// <summary>
     /// Gets or Sets SelfUri
     /// </summary>
-    [DataMember(Name = "selfUri", EmitDefaultValue = false)]
+    [JsonPropertyName("selfUri")]
     public string SelfUri { get; set; }
 
 
@@ -60,7 +60,7 @@ public partial class ChatUserRef : IEquatable<ChatUserRef>
     /// <summary>
     /// Gets or Sets Jid
     /// </summary>
-    [DataMember(Name = "jid", EmitDefaultValue = false)]
+    [JsonPropertyName("jid")]
     public string Jid { get; set; }
 
 
@@ -68,7 +68,7 @@ public partial class ChatUserRef : IEquatable<ChatUserRef>
     /// <summary>
     /// Gets or Sets Inactive
     /// </summary>
-    [DataMember(Name = "inactive", EmitDefaultValue = false)]
+    [JsonPropertyName("inactive")]
     public bool? Inactive { get; set; }
 
 
@@ -76,7 +76,7 @@ public partial class ChatUserRef : IEquatable<ChatUserRef>
     /// <summary>
     /// Gets or Sets Integrations
     /// </summary>
-    [DataMember(Name = "integrations", EmitDefaultValue = false)]
+    [JsonPropertyName("integrations")]
     public List<Contact> Integrations { get; set; }
 
 
@@ -84,7 +84,7 @@ public partial class ChatUserRef : IEquatable<ChatUserRef>
     /// <summary>
     /// Gets or Sets Presence
     /// </summary>
-    [DataMember(Name = "presence", EmitDefaultValue = false)]
+    [JsonPropertyName("presence")]
     public ChatPresence Presence { get; set; }
 
 

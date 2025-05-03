@@ -1,4 +1,3 @@
-using System.Runtime.Serialization;
 using System.Text;
 using System.Text.Json.Serialization;
 
@@ -7,7 +6,7 @@ namespace PureCloud.Client.Models;
 /// <summary>
 /// AgentWorkPlanBiddingPreference
 /// </summary>
-[DataContract]
+
 public partial class AgentWorkPlanBiddingPreference : IEquatable<AgentWorkPlanBiddingPreference>
 {
 
@@ -34,7 +33,7 @@ public partial class AgentWorkPlanBiddingPreference : IEquatable<AgentWorkPlanBi
     /// The work plan that belongs to the agent&#39;s bid group
     /// </summary>
     /// <value>The work plan that belongs to the agent&#39;s bid group</value>
-    [DataMember(Name = "workPlan", EmitDefaultValue = false)]
+    [JsonPropertyName("workPlan")]
     public WorkPlanReference WorkPlan { get; set; }
 
 
@@ -43,7 +42,7 @@ public partial class AgentWorkPlanBiddingPreference : IEquatable<AgentWorkPlanBi
     /// The agent&#39;s priority for this work plan, with 1 being the best priority. Null if priority is not set for the work plan
     /// </summary>
     /// <value>The agent&#39;s priority for this work plan, with 1 being the best priority. Null if priority is not set for the work plan</value>
-    [DataMember(Name = "priority", EmitDefaultValue = false)]
+    [JsonPropertyName("priority")]
     public int? Priority { get; set; }
 
 

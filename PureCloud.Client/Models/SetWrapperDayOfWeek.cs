@@ -7,13 +7,13 @@ namespace PureCloud.Client.Models;
 /// <summary>
 /// SetWrapperDayOfWeek
 /// </summary>
-[DataContract]
+
 public partial class SetWrapperDayOfWeek : IEquatable<SetWrapperDayOfWeek>
 {
     /// <summary>
     /// Gets or Sets Values
     /// </summary>
-    [JsonConverter(typeof(JsonStringEnumConverter))]
+    
     public enum ValuesEnum
     {
         /// <summary>
@@ -81,7 +81,7 @@ public partial class SetWrapperDayOfWeek : IEquatable<SetWrapperDayOfWeek>
     /// <summary>
     /// Gets or Sets Values
     /// </summary>
-    [DataMember(Name = "values", EmitDefaultValue = false)]
+    [JsonPropertyName("values")]
     public List<ValuesEnum> Values { get; set; }
 
 

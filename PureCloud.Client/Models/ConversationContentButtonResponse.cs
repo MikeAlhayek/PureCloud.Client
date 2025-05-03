@@ -7,14 +7,14 @@ namespace PureCloud.Client.Models;
 /// <summary>
 /// Button response object representing the click of a structured message button, such as a quick reply.
 /// </summary>
-[DataContract]
+
 public partial class ConversationContentButtonResponse : IEquatable<ConversationContentButtonResponse>
 {
     /// <summary>
     /// Describes the button that resulted in the Button Response.
     /// </summary>
     /// <value>Describes the button that resulted in the Button Response.</value>
-    [JsonConverter(typeof(JsonStringEnumConverter))]
+    
     public enum TypeEnum
     {
         /// <summary>
@@ -47,7 +47,7 @@ public partial class ConversationContentButtonResponse : IEquatable<Conversation
     /// Describes the button that resulted in the Button Response.
     /// </summary>
     /// <value>Describes the button that resulted in the Button Response.</value>
-    [DataMember(Name = "type", EmitDefaultValue = false)]
+    [JsonPropertyName("type")]
     public TypeEnum? Type { get; set; }
 
     /// <summary>
@@ -77,7 +77,7 @@ public partial class ConversationContentButtonResponse : IEquatable<Conversation
     /// The response text from the button click.
     /// </summary>
     /// <value>The response text from the button click.</value>
-    [DataMember(Name = "text", EmitDefaultValue = false)]
+    [JsonPropertyName("text")]
     public string Text { get; set; }
 
 
@@ -86,7 +86,7 @@ public partial class ConversationContentButtonResponse : IEquatable<Conversation
     /// The response payload associated with the clicked button.
     /// </summary>
     /// <value>The response payload associated with the clicked button.</value>
-    [DataMember(Name = "payload", EmitDefaultValue = false)]
+    [JsonPropertyName("payload")]
     public string Payload { get; set; }
 
 

@@ -1,12 +1,12 @@
-using System.Runtime.Serialization;
 using System.Text;
+using System.Text.Json.Serialization;
 
 namespace PureCloud.Client.Models;
 
 /// <summary>
 /// WorkitemsChangeWorkitemDelta
 /// </summary>
-[DataContract]
+
 public partial class WorkitemsChangeWorkitemDelta : IEquatable<WorkitemsChangeWorkitemDelta>
 {
     /// <summary>
@@ -29,7 +29,7 @@ public partial class WorkitemsChangeWorkitemDelta : IEquatable<WorkitemsChangeWo
     /// Version
     /// </summary>
     /// <value>Version</value>
-    [DataMember(Name = "version", EmitDefaultValue = false)]
+    [JsonPropertyName("version")]
     public int? Version { get; set; }
 
 
@@ -38,7 +38,7 @@ public partial class WorkitemsChangeWorkitemDelta : IEquatable<WorkitemsChangeWo
     /// modifiedBy
     /// </summary>
     /// <value>modifiedBy</value>
-    [DataMember(Name = "modifiedBy", EmitDefaultValue = false)]
+    [JsonPropertyName("modifiedBy")]
     public UserReference ModifiedBy { get; set; }
 
 
@@ -47,7 +47,7 @@ public partial class WorkitemsChangeWorkitemDelta : IEquatable<WorkitemsChangeWo
     /// The changes that originated this version
     /// </summary>
     /// <value>The changes that originated this version</value>
-    [DataMember(Name = "delta", EmitDefaultValue = false)]
+    [JsonPropertyName("delta")]
     public WorkitemDelta Delta { get; set; }
 
 

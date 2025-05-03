@@ -1,12 +1,12 @@
-using System.Runtime.Serialization;
 using System.Text;
+using System.Text.Json.Serialization;
 
 namespace PureCloud.Client.Models;
 
 /// <summary>
 /// WfmBuIntradayDataUpdateTopicBuIntradayNotification
 /// </summary>
-[DataContract]
+
 public partial class WfmBuIntradayDataUpdateTopicBuIntradayNotification : IEquatable<WfmBuIntradayDataUpdateTopicBuIntradayNotification>
 {
     /// <summary>
@@ -26,7 +26,7 @@ public partial class WfmBuIntradayDataUpdateTopicBuIntradayNotification : IEquat
     /// <summary>
     /// Gets or Sets OperationId
     /// </summary>
-    [DataMember(Name = "operationId", EmitDefaultValue = false)]
+    [JsonPropertyName("operationId")]
     public string OperationId { get; set; }
 
 
@@ -34,7 +34,7 @@ public partial class WfmBuIntradayDataUpdateTopicBuIntradayNotification : IEquat
     /// <summary>
     /// Gets or Sets Result
     /// </summary>
-    [DataMember(Name = "result", EmitDefaultValue = false)]
+    [JsonPropertyName("result")]
     public WfmBuIntradayDataUpdateTopicBuIntradayResult Result { get; set; }
 
 

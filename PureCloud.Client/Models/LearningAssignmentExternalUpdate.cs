@@ -7,14 +7,14 @@ namespace PureCloud.Client.Models;
 /// <summary>
 /// LearningAssignmentExternalUpdate
 /// </summary>
-[DataContract]
+
 public partial class LearningAssignmentExternalUpdate : IEquatable<LearningAssignmentExternalUpdate>
 {
     /// <summary>
     /// The Learning Assignment state
     /// </summary>
     /// <value>The Learning Assignment state</value>
-    [JsonConverter(typeof(JsonStringEnumConverter))]
+    
     public enum StateEnum
     {
         /// <summary>
@@ -65,7 +65,7 @@ public partial class LearningAssignmentExternalUpdate : IEquatable<LearningAssig
     /// The Learning Assignment state
     /// </summary>
     /// <value>The Learning Assignment state</value>
-    [DataMember(Name = "state", EmitDefaultValue = false)]
+    [JsonPropertyName("state")]
     public StateEnum? State { get; set; }
     /// <summary>
     /// Initializes a new instance of the <see cref="LearningAssignmentExternalUpdate" /> class.
@@ -89,7 +89,7 @@ public partial class LearningAssignmentExternalUpdate : IEquatable<LearningAssig
     /// The score
     /// </summary>
     /// <value>The score</value>
-    [DataMember(Name = "percentageScore", EmitDefaultValue = false)]
+    [JsonPropertyName("percentageScore")]
     public float? PercentageScore { get; set; }
 
 
@@ -98,7 +98,7 @@ public partial class LearningAssignmentExternalUpdate : IEquatable<LearningAssig
     /// Was the assignment marked as passed
     /// </summary>
     /// <value>Was the assignment marked as passed</value>
-    [DataMember(Name = "isPassed", EmitDefaultValue = false)]
+    [JsonPropertyName("isPassed")]
     public bool? IsPassed { get; set; }
 
 

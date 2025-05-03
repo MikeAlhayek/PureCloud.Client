@@ -1,12 +1,12 @@
-using System.Runtime.Serialization;
 using System.Text;
+using System.Text.Json.Serialization;
 
 namespace PureCloud.Client.Models;
 
 /// <summary>
 /// CrossPlatformEmailMediaPolicy
 /// </summary>
-[DataContract]
+
 public partial class CrossPlatformEmailMediaPolicy : IEquatable<CrossPlatformEmailMediaPolicy>
 {
     /// <summary>
@@ -27,7 +27,7 @@ public partial class CrossPlatformEmailMediaPolicy : IEquatable<CrossPlatformEma
     /// Actions applied when specified conditions are met
     /// </summary>
     /// <value>Actions applied when specified conditions are met</value>
-    [DataMember(Name = "actions", EmitDefaultValue = false)]
+    [JsonPropertyName("actions")]
     public CrossPlatformPolicyActions Actions { get; set; }
 
 
@@ -36,7 +36,7 @@ public partial class CrossPlatformEmailMediaPolicy : IEquatable<CrossPlatformEma
     /// Conditions for when actions should be applied
     /// </summary>
     /// <value>Conditions for when actions should be applied</value>
-    [DataMember(Name = "conditions", EmitDefaultValue = false)]
+    [JsonPropertyName("conditions")]
     public EmailMediaPolicyConditions Conditions { get; set; }
 
 

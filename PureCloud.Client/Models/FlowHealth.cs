@@ -1,12 +1,12 @@
-using System.Runtime.Serialization;
 using System.Text;
+using System.Text.Json.Serialization;
 
 namespace PureCloud.Client.Models;
 
 /// <summary>
 /// FlowHealth
 /// </summary>
-[DataContract]
+
 public partial class FlowHealth : IEquatable<FlowHealth>
 {
     /// <summary>
@@ -29,7 +29,7 @@ public partial class FlowHealth : IEquatable<FlowHealth>
     /// Info about given flow version.
     /// </summary>
     /// <value>Info about given flow version.</value>
-    [DataMember(Name = "flowVersionInfo", EmitDefaultValue = false)]
+    [JsonPropertyName("flowVersionInfo")]
     public FlowHealthVersionInfo FlowVersionInfo { get; set; }
 
 
@@ -38,7 +38,7 @@ public partial class FlowHealth : IEquatable<FlowHealth>
     /// Each language&#39;s status about its health computation.
     /// </summary>
     /// <value>Each language&#39;s status about its health computation.</value>
-    [DataMember(Name = "languageInfo", EmitDefaultValue = false)]
+    [JsonPropertyName("languageInfo")]
     public Dictionary<string, LocaleInfo> LanguageInfo { get; set; }
 
 
@@ -47,7 +47,7 @@ public partial class FlowHealth : IEquatable<FlowHealth>
     /// Health metrics information for the intents.
     /// </summary>
     /// <value>Health metrics information for the intents.</value>
-    [DataMember(Name = "intents", EmitDefaultValue = false)]
+    [JsonPropertyName("intents")]
     public List<FlowHealthIntentInfo> Intents { get; set; }
 
 
@@ -56,7 +56,7 @@ public partial class FlowHealth : IEquatable<FlowHealth>
     /// The URI for this object
     /// </summary>
     /// <value>The URI for this object</value>
-    [DataMember(Name = "selfUri", EmitDefaultValue = false)]
+    [JsonPropertyName("selfUri")]
     public string SelfUri { get; private set; }
 
 

@@ -1,12 +1,12 @@
-using System.Runtime.Serialization;
 using System.Text;
+using System.Text.Json.Serialization;
 
 namespace PureCloud.Client.Models;
 
 /// <summary>
 /// BuForecastGenerationResult
 /// </summary>
-[DataContract]
+
 public partial class BuForecastGenerationResult : IEquatable<BuForecastGenerationResult>
 {
     /// <summary>
@@ -25,7 +25,7 @@ public partial class BuForecastGenerationResult : IEquatable<BuForecastGeneratio
     /// Generation results, broken down by planning group
     /// </summary>
     /// <value>Generation results, broken down by planning group</value>
-    [DataMember(Name = "planningGroupResults", EmitDefaultValue = false)]
+    [JsonPropertyName("planningGroupResults")]
     public List<BuForecastGenerationPlanningGroupResult> PlanningGroupResults { get; set; }
 
 

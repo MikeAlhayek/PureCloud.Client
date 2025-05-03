@@ -7,14 +7,14 @@ namespace PureCloud.Client.Models;
 /// <summary>
 /// DocumentElementLength
 /// </summary>
-[DataContract]
+
 public partial class DocumentElementLength : IEquatable<DocumentElementLength>
 {
     /// <summary>
     /// The unit of length.
     /// </summary>
     /// <value>The unit of length.</value>
-    [JsonConverter(typeof(JsonStringEnumConverter))]
+    
     public enum UnitEnum
     {
         /// <summary>
@@ -47,7 +47,7 @@ public partial class DocumentElementLength : IEquatable<DocumentElementLength>
     /// The unit of length.
     /// </summary>
     /// <value>The unit of length.</value>
-    [DataMember(Name = "unit", EmitDefaultValue = false)]
+    [JsonPropertyName("unit")]
     public UnitEnum? Unit { get; set; }
 
     /// <summary>
@@ -73,7 +73,7 @@ public partial class DocumentElementLength : IEquatable<DocumentElementLength>
     /// The length value of the element in the selected unit.
     /// </summary>
     /// <value>The length value of the element in the selected unit.</value>
-    [DataMember(Name = "value", EmitDefaultValue = false)]
+    [JsonPropertyName("value")]
     public float? Value { get; set; }
 
 

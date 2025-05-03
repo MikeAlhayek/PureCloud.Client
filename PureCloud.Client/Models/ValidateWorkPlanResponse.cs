@@ -1,12 +1,12 @@
-using System.Runtime.Serialization;
 using System.Text;
+using System.Text.Json.Serialization;
 
 namespace PureCloud.Client.Models;
 
 /// <summary>
 /// ValidateWorkPlanResponse
 /// </summary>
-[DataContract]
+
 public partial class ValidateWorkPlanResponse : IEquatable<ValidateWorkPlanResponse>
 {
     /// <summary>
@@ -29,7 +29,7 @@ public partial class ValidateWorkPlanResponse : IEquatable<ValidateWorkPlanRespo
     /// The work plan reference associated with this response
     /// </summary>
     /// <value>The work plan reference associated with this response</value>
-    [DataMember(Name = "workPlan", EmitDefaultValue = false)]
+    [JsonPropertyName("workPlan")]
     public WorkPlanReference WorkPlan { get; set; }
 
 
@@ -38,7 +38,7 @@ public partial class ValidateWorkPlanResponse : IEquatable<ValidateWorkPlanRespo
     /// Whether the work plan is valid or not
     /// </summary>
     /// <value>Whether the work plan is valid or not</value>
-    [DataMember(Name = "valid", EmitDefaultValue = false)]
+    [JsonPropertyName("valid")]
     public bool? Valid { get; set; }
 
 
@@ -47,7 +47,7 @@ public partial class ValidateWorkPlanResponse : IEquatable<ValidateWorkPlanRespo
     /// Validation messages for this work plan
     /// </summary>
     /// <value>Validation messages for this work plan</value>
-    [DataMember(Name = "messages", EmitDefaultValue = false)]
+    [JsonPropertyName("messages")]
     public ValidateWorkPlanMessages Messages { get; set; }
 
 

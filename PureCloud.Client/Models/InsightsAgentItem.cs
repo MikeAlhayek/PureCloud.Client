@@ -1,12 +1,12 @@
-using System.Runtime.Serialization;
 using System.Text;
+using System.Text.Json.Serialization;
 
 namespace PureCloud.Client.Models;
 
 /// <summary>
 /// InsightsAgentItem
 /// </summary>
-[DataContract]
+
 public partial class InsightsAgentItem : IEquatable<InsightsAgentItem>
 {
     /// <summary>
@@ -27,7 +27,7 @@ public partial class InsightsAgentItem : IEquatable<InsightsAgentItem>
     /// The globally unique identifier for the object.
     /// </summary>
     /// <value>The globally unique identifier for the object.</value>
-    [DataMember(Name = "id", EmitDefaultValue = false)]
+    [JsonPropertyName("id")]
     public string Id { get; private set; }
 
 
@@ -35,7 +35,7 @@ public partial class InsightsAgentItem : IEquatable<InsightsAgentItem>
     /// <summary>
     /// Gets or Sets Name
     /// </summary>
-    [DataMember(Name = "name", EmitDefaultValue = false)]
+    [JsonPropertyName("name")]
     public string Name { get; set; }
 
 
@@ -44,7 +44,7 @@ public partial class InsightsAgentItem : IEquatable<InsightsAgentItem>
     /// This user&#39;s manager.
     /// </summary>
     /// <value>This user&#39;s manager.</value>
-    [DataMember(Name = "manager", EmitDefaultValue = false)]
+    [JsonPropertyName("manager")]
     public DomainEntityRef Manager { get; set; }
 
 
@@ -53,7 +53,7 @@ public partial class InsightsAgentItem : IEquatable<InsightsAgentItem>
     /// The URI for this object
     /// </summary>
     /// <value>The URI for this object</value>
-    [DataMember(Name = "selfUri", EmitDefaultValue = false)]
+    [JsonPropertyName("selfUri")]
     public string SelfUri { get; private set; }
 
 

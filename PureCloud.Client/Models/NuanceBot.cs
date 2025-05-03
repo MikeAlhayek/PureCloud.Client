@@ -1,4 +1,3 @@
-using System.Runtime.Serialization;
 using System.Text;
 using System.Text.Json.Serialization;
 
@@ -7,7 +6,7 @@ namespace PureCloud.Client.Models;
 /// <summary>
 /// Model for a Nuance bot
 /// </summary>
-[DataContract]
+
 public partial class NuanceBot : IEquatable<NuanceBot>
 {
 
@@ -54,7 +53,7 @@ public partial class NuanceBot : IEquatable<NuanceBot>
     /// Nuance bot Id
     /// </summary>
     /// <value>Nuance bot Id</value>
-    [DataMember(Name = "id", EmitDefaultValue = false)]
+    [JsonPropertyName("id")]
     public string Id { get; set; }
 
 
@@ -63,7 +62,7 @@ public partial class NuanceBot : IEquatable<NuanceBot>
     /// Nuance bot name
     /// </summary>
     /// <value>Nuance bot name</value>
-    [DataMember(Name = "name", EmitDefaultValue = false)]
+    [JsonPropertyName("name")]
     public string Name { get; set; }
 
 
@@ -72,7 +71,7 @@ public partial class NuanceBot : IEquatable<NuanceBot>
     /// The Integration Id for this bot
     /// </summary>
     /// <value>The Integration Id for this bot</value>
-    [DataMember(Name = "integrationId", EmitDefaultValue = false)]
+    [JsonPropertyName("integrationId")]
     public string IntegrationId { get; set; }
 
 
@@ -81,7 +80,7 @@ public partial class NuanceBot : IEquatable<NuanceBot>
     /// The Nuance Organization for this bot
     /// </summary>
     /// <value>The Nuance Organization for this bot</value>
-    [DataMember(Name = "nuanceOrganization", EmitDefaultValue = false)]
+    [JsonPropertyName("nuanceOrganization")]
     public NuanceOrganization NuanceOrganization { get; set; }
 
 
@@ -90,7 +89,7 @@ public partial class NuanceBot : IEquatable<NuanceBot>
     /// The Application for this bot
     /// </summary>
     /// <value>The Application for this bot</value>
-    [DataMember(Name = "application", EmitDefaultValue = false)]
+    [JsonPropertyName("application")]
     public NuanceApplication Application { get; set; }
 
 
@@ -99,7 +98,7 @@ public partial class NuanceBot : IEquatable<NuanceBot>
     /// The environment of the Nuance bot
     /// </summary>
     /// <value>The environment of the Nuance bot</value>
-    [DataMember(Name = "nuanceEnvironment", EmitDefaultValue = false)]
+    [JsonPropertyName("nuanceEnvironment")]
     public NuanceEnvironment NuanceEnvironment { get; set; }
 
 
@@ -108,7 +107,7 @@ public partial class NuanceBot : IEquatable<NuanceBot>
     /// The Geography of the Nuance bot
     /// </summary>
     /// <value>The Geography of the Nuance bot</value>
-    [DataMember(Name = "geography", EmitDefaultValue = false)]
+    [JsonPropertyName("geography")]
     public NuanceGeography Geography { get; set; }
 
 
@@ -117,7 +116,7 @@ public partial class NuanceBot : IEquatable<NuanceBot>
     /// client ID/Secret objects for the credentials that execute this Nuance bot
     /// </summary>
     /// <value>client ID/Secret objects for the credentials that execute this Nuance bot</value>
-    [DataMember(Name = "credentials", EmitDefaultValue = false)]
+    [JsonPropertyName("credentials")]
     public List<NuanceBotCredentials> Credentials { get; set; }
 
 
@@ -126,7 +125,7 @@ public partial class NuanceBot : IEquatable<NuanceBot>
     /// List of available variables in this Nuance bot.  When querying, use the &#39;expand&#x3D;variables&#39; query param to populate this value
     /// </summary>
     /// <value>List of available variables in this Nuance bot.  When querying, use the &#39;expand&#x3D;variables&#39; query param to populate this value</value>
-    [DataMember(Name = "variables", EmitDefaultValue = false)]
+    [JsonPropertyName("variables")]
     public List<NuanceBotVariable> Variables { get; set; }
 
 
@@ -135,7 +134,7 @@ public partial class NuanceBot : IEquatable<NuanceBot>
     /// List of transferNodes in this Nuance bot.  When querying, use the &#39;expand&#x3D;transferNodes&#39; query param to populate this value
     /// </summary>
     /// <value>List of transferNodes in this Nuance bot.  When querying, use the &#39;expand&#x3D;transferNodes&#39; query param to populate this value</value>
-    [DataMember(Name = "transferNodes", EmitDefaultValue = false)]
+    [JsonPropertyName("transferNodes")]
     public List<NuanceBotTransferNode> TransferNodes { get; set; }
 
 
@@ -144,7 +143,7 @@ public partial class NuanceBot : IEquatable<NuanceBot>
     /// List of locales associated with this Nuance bot.  Generally in the ISO format such as &#39;en-US&#39;
     /// </summary>
     /// <value>List of locales associated with this Nuance bot.  Generally in the ISO format such as &#39;en-US&#39;</value>
-    [DataMember(Name = "locales", EmitDefaultValue = false)]
+    [JsonPropertyName("locales")]
     public List<string> Locales { get; set; }
 
 
@@ -153,7 +152,7 @@ public partial class NuanceBot : IEquatable<NuanceBot>
     /// List of channels associated with this Nuance bot.
     /// </summary>
     /// <value>List of channels associated with this Nuance bot.</value>
-    [DataMember(Name = "channels", EmitDefaultValue = false)]
+    [JsonPropertyName("channels")]
     public List<NuanceChannel> Channels { get; set; }
 
 
@@ -162,7 +161,7 @@ public partial class NuanceBot : IEquatable<NuanceBot>
     /// The URI for this object
     /// </summary>
     /// <value>The URI for this object</value>
-    [DataMember(Name = "selfUri", EmitDefaultValue = false)]
+    [JsonPropertyName("selfUri")]
     public string SelfUri { get; private set; }
 
 

@@ -1,12 +1,12 @@
-using System.Runtime.Serialization;
 using System.Text;
+using System.Text.Json.Serialization;
 
 namespace PureCloud.Client.Models;
 
 /// <summary>
 /// ForecastAverageSpeedOfAnswerResponse
 /// </summary>
-[DataContract]
+
 public partial class ForecastAverageSpeedOfAnswerResponse : IEquatable<ForecastAverageSpeedOfAnswerResponse>
 {
     /// <summary>
@@ -25,7 +25,7 @@ public partial class ForecastAverageSpeedOfAnswerResponse : IEquatable<ForecastA
     /// the average speed of answer goal in seconds
     /// </summary>
     /// <value>the average speed of answer goal in seconds</value>
-    [DataMember(Name = "seconds", EmitDefaultValue = false)]
+    [JsonPropertyName("seconds")]
     public int? Seconds { get; set; }
 
 

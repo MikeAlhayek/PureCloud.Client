@@ -7,14 +7,14 @@ namespace PureCloud.Client.Models;
 /// <summary>
 /// DocumentBodyImageProperties
 /// </summary>
-[DataContract]
+
 public partial class DocumentBodyImageProperties : IEquatable<DocumentBodyImageProperties>
 {
     /// <summary>
     /// The align property for the image.
     /// </summary>
     /// <value>The align property for the image.</value>
-    [JsonConverter(typeof(JsonStringEnumConverter))]
+    
     public enum AlignEnum
     {
         /// <summary>
@@ -53,7 +53,7 @@ public partial class DocumentBodyImageProperties : IEquatable<DocumentBodyImageP
     /// The align property for the image.
     /// </summary>
     /// <value>The align property for the image.</value>
-    [DataMember(Name = "align", EmitDefaultValue = false)]
+    [JsonPropertyName("align")]
     public AlignEnum? Align { get; set; }
     /// <summary>
     /// Initializes a new instance of the <see cref="DocumentBodyImageProperties" /> class.
@@ -81,7 +81,7 @@ public partial class DocumentBodyImageProperties : IEquatable<DocumentBodyImageP
     /// The background color property for the image. The valid values in hex color code representation. For example black color - #000000
     /// </summary>
     /// <value>The background color property for the image. The valid values in hex color code representation. For example black color - #000000</value>
-    [DataMember(Name = "backgroundColor", EmitDefaultValue = false)]
+    [JsonPropertyName("backgroundColor")]
     public string BackgroundColor { get; set; }
 
 
@@ -92,7 +92,7 @@ public partial class DocumentBodyImageProperties : IEquatable<DocumentBodyImageP
     /// The indentation property for the image. The valid values in &#39;em&#39;.
     /// </summary>
     /// <value>The indentation property for the image. The valid values in &#39;em&#39;.</value>
-    [DataMember(Name = "indentation", EmitDefaultValue = false)]
+    [JsonPropertyName("indentation")]
     public float? Indentation { get; set; }
 
 
@@ -101,7 +101,7 @@ public partial class DocumentBodyImageProperties : IEquatable<DocumentBodyImageP
     /// The width of the image converted to em unit.
     /// </summary>
     /// <value>The width of the image converted to em unit.</value>
-    [DataMember(Name = "width", EmitDefaultValue = false)]
+    [JsonPropertyName("width")]
     public float? Width { get; set; }
 
 
@@ -110,7 +110,7 @@ public partial class DocumentBodyImageProperties : IEquatable<DocumentBodyImageP
     /// The width of the image in the specified unit.
     /// </summary>
     /// <value>The width of the image in the specified unit.</value>
-    [DataMember(Name = "widthWithUnit", EmitDefaultValue = false)]
+    [JsonPropertyName("widthWithUnit")]
     public DocumentElementLength WidthWithUnit { get; set; }
 
 
@@ -119,7 +119,7 @@ public partial class DocumentBodyImageProperties : IEquatable<DocumentBodyImageP
     /// Alternate text for the image for accessibility and when the image can&#39;t be loaded.
     /// </summary>
     /// <value>Alternate text for the image for accessibility and when the image can&#39;t be loaded.</value>
-    [DataMember(Name = "altText", EmitDefaultValue = false)]
+    [JsonPropertyName("altText")]
     public string AltText { get; set; }
 
 

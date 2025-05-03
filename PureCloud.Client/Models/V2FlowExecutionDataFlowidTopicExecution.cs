@@ -1,12 +1,12 @@
-using System.Runtime.Serialization;
 using System.Text;
+using System.Text.Json.Serialization;
 
 namespace PureCloud.Client.Models;
 
 /// <summary>
 /// V2FlowExecutionDataFlowidTopicExecution
 /// </summary>
-[DataContract]
+
 public partial class V2FlowExecutionDataFlowidTopicExecution : IEquatable<V2FlowExecutionDataFlowidTopicExecution>
 {
     /// <summary>
@@ -39,7 +39,7 @@ public partial class V2FlowExecutionDataFlowidTopicExecution : IEquatable<V2Flow
     /// The type of executionItem that was executed.
     /// </summary>
     /// <value>The type of executionItem that was executed.</value>
-    [DataMember(Name = "objectType", EmitDefaultValue = false)]
+    [JsonPropertyName("objectType")]
     public string ObjectType { get; set; }
 
 
@@ -48,7 +48,7 @@ public partial class V2FlowExecutionDataFlowidTopicExecution : IEquatable<V2Flow
     /// If applicable, the actionId, menuId or taskId for the executionItem.
     /// </summary>
     /// <value>If applicable, the actionId, menuId or taskId for the executionItem.</value>
-    [DataMember(Name = "objectId", EmitDefaultValue = false)]
+    [JsonPropertyName("objectId")]
     public string ObjectId { get; set; }
 
 
@@ -57,7 +57,7 @@ public partial class V2FlowExecutionDataFlowidTopicExecution : IEquatable<V2Flow
     /// If applicable, the identifier of the OutputPath that was taken.
     /// </summary>
     /// <value>If applicable, the identifier of the OutputPath that was taken.</value>
-    [DataMember(Name = "outputPathId", EmitDefaultValue = false)]
+    [JsonPropertyName("outputPathId")]
     public string OutputPathId { get; set; }
 
 
@@ -66,7 +66,7 @@ public partial class V2FlowExecutionDataFlowidTopicExecution : IEquatable<V2Flow
     /// If applicable, the executionId for the executionItem.
     /// </summary>
     /// <value>If applicable, the executionId for the executionItem.</value>
-    [DataMember(Name = "executionId", EmitDefaultValue = false)]
+    [JsonPropertyName("executionId")]
     public string ExecutionId { get; set; }
 
 
@@ -75,7 +75,7 @@ public partial class V2FlowExecutionDataFlowidTopicExecution : IEquatable<V2Flow
     /// This is the starting time of the executionItem.
     /// </summary>
     /// <value>This is the starting time of the executionItem.</value>
-    [DataMember(Name = "startDateTime", EmitDefaultValue = false)]
+    [JsonPropertyName("startDateTime")]
     public DateTime? StartDateTime { get; set; }
 
 
@@ -84,7 +84,7 @@ public partial class V2FlowExecutionDataFlowidTopicExecution : IEquatable<V2Flow
     /// Event generated when a Flow&#39;s Execution History is received and logged.
     /// </summary>
     /// <value>Event generated when a Flow&#39;s Execution History is received and logged.</value>
-    [DataMember(Name = "error", EmitDefaultValue = false)]
+    [JsonPropertyName("error")]
     public V2FlowExecutionDataFlowidTopicFlowErrorWarningInfo Error { get; set; }
 
 
@@ -93,7 +93,7 @@ public partial class V2FlowExecutionDataFlowidTopicExecution : IEquatable<V2Flow
     /// Event generated when a Flow&#39;s Execution History is received and logged.
     /// </summary>
     /// <value>Event generated when a Flow&#39;s Execution History is received and logged.</value>
-    [DataMember(Name = "warning", EmitDefaultValue = false)]
+    [JsonPropertyName("warning")]
     public V2FlowExecutionDataFlowidTopicFlowErrorWarningInfo Warning { get; set; }
 
 
@@ -102,7 +102,7 @@ public partial class V2FlowExecutionDataFlowidTopicExecution : IEquatable<V2Flow
     /// If applicable, the language tag associated set by the execution.
     /// </summary>
     /// <value>If applicable, the language tag associated set by the execution.</value>
-    [DataMember(Name = "languageTag", EmitDefaultValue = false)]
+    [JsonPropertyName("languageTag")]
     public string LanguageTag { get; set; }
 
 

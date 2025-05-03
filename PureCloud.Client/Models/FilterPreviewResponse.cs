@@ -1,12 +1,12 @@
-using System.Runtime.Serialization;
 using System.Text;
+using System.Text.Json.Serialization;
 
 namespace PureCloud.Client.Models;
 
 /// <summary>
 /// FilterPreviewResponse
 /// </summary>
-[DataContract]
+
 public partial class FilterPreviewResponse : IEquatable<FilterPreviewResponse>
 {
     /// <summary>
@@ -28,7 +28,7 @@ public partial class FilterPreviewResponse : IEquatable<FilterPreviewResponse>
     /// <summary>
     /// Gets or Sets FilteredContacts
     /// </summary>
-    [DataMember(Name = "filteredContacts", EmitDefaultValue = false)]
+    [JsonPropertyName("filteredContacts")]
     public long? FilteredContacts { get; set; }
 
 
@@ -36,7 +36,7 @@ public partial class FilterPreviewResponse : IEquatable<FilterPreviewResponse>
     /// <summary>
     /// Gets or Sets TotalContacts
     /// </summary>
-    [DataMember(Name = "totalContacts", EmitDefaultValue = false)]
+    [JsonPropertyName("totalContacts")]
     public long? TotalContacts { get; set; }
 
 
@@ -44,7 +44,7 @@ public partial class FilterPreviewResponse : IEquatable<FilterPreviewResponse>
     /// <summary>
     /// Gets or Sets Preview
     /// </summary>
-    [DataMember(Name = "preview", EmitDefaultValue = false)]
+    [JsonPropertyName("preview")]
     public List<DialerContact> Preview { get; set; }
 
 

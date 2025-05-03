@@ -1,12 +1,12 @@
-using System.Runtime.Serialization;
 using System.Text;
+using System.Text.Json.Serialization;
 
 namespace PureCloud.Client.Models;
 
 /// <summary>
 /// ConversationCallEventTopicFaxStatus
 /// </summary>
-[DataContract]
+
 public partial class ConversationCallEventTopicFaxStatus : IEquatable<ConversationCallEventTopicFaxStatus>
 {
     /// <summary>
@@ -38,7 +38,7 @@ public partial class ConversationCallEventTopicFaxStatus : IEquatable<Conversati
     /// <summary>
     /// Gets or Sets Direction
     /// </summary>
-    [DataMember(Name = "direction", EmitDefaultValue = false)]
+    [JsonPropertyName("direction")]
     public string Direction { get; set; }
 
 
@@ -46,7 +46,7 @@ public partial class ConversationCallEventTopicFaxStatus : IEquatable<Conversati
     /// <summary>
     /// Gets or Sets ExpectedPages
     /// </summary>
-    [DataMember(Name = "expectedPages", EmitDefaultValue = false)]
+    [JsonPropertyName("expectedPages")]
     public long? ExpectedPages { get; set; }
 
 
@@ -54,7 +54,7 @@ public partial class ConversationCallEventTopicFaxStatus : IEquatable<Conversati
     /// <summary>
     /// Gets or Sets ActivePage
     /// </summary>
-    [DataMember(Name = "activePage", EmitDefaultValue = false)]
+    [JsonPropertyName("activePage")]
     public long? ActivePage { get; set; }
 
 
@@ -62,7 +62,7 @@ public partial class ConversationCallEventTopicFaxStatus : IEquatable<Conversati
     /// <summary>
     /// Gets or Sets LinesTransmitted
     /// </summary>
-    [DataMember(Name = "linesTransmitted", EmitDefaultValue = false)]
+    [JsonPropertyName("linesTransmitted")]
     public long? LinesTransmitted { get; set; }
 
 
@@ -70,7 +70,7 @@ public partial class ConversationCallEventTopicFaxStatus : IEquatable<Conversati
     /// <summary>
     /// Gets or Sets BytesTransmitted
     /// </summary>
-    [DataMember(Name = "bytesTransmitted", EmitDefaultValue = false)]
+    [JsonPropertyName("bytesTransmitted")]
     public long? BytesTransmitted { get; set; }
 
 
@@ -78,7 +78,7 @@ public partial class ConversationCallEventTopicFaxStatus : IEquatable<Conversati
     /// <summary>
     /// Gets or Sets DataRate
     /// </summary>
-    [DataMember(Name = "dataRate", EmitDefaultValue = false)]
+    [JsonPropertyName("dataRate")]
     public long? DataRate { get; set; }
 
 
@@ -86,7 +86,7 @@ public partial class ConversationCallEventTopicFaxStatus : IEquatable<Conversati
     /// <summary>
     /// Gets or Sets PageErrors
     /// </summary>
-    [DataMember(Name = "pageErrors", EmitDefaultValue = false)]
+    [JsonPropertyName("pageErrors")]
     public long? PageErrors { get; set; }
 
 
@@ -94,7 +94,7 @@ public partial class ConversationCallEventTopicFaxStatus : IEquatable<Conversati
     /// <summary>
     /// Gets or Sets LineErrors
     /// </summary>
-    [DataMember(Name = "lineErrors", EmitDefaultValue = false)]
+    [JsonPropertyName("lineErrors")]
     public long? LineErrors { get; set; }
 
 

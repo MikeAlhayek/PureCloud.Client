@@ -1,12 +1,12 @@
-using System.Runtime.Serialization;
 using System.Text;
+using System.Text.Json.Serialization;
 
 namespace PureCloud.Client.Models;
 
 /// <summary>
 /// SnapshotMetricData
 /// </summary>
-[DataContract]
+
 public partial class SnapshotMetricData : IEquatable<SnapshotMetricData>
 {
     /// <summary>
@@ -27,7 +27,7 @@ public partial class SnapshotMetricData : IEquatable<SnapshotMetricData>
     /// Weekly time series for snapshot data
     /// </summary>
     /// <value>Weekly time series for snapshot data</value>
-    [DataMember(Name = "weekly", EmitDefaultValue = false)]
+    [JsonPropertyName("weekly")]
     public Weekly Weekly { get; set; }
 
 
@@ -36,7 +36,7 @@ public partial class SnapshotMetricData : IEquatable<SnapshotMetricData>
     /// Quarter hour time series for snapshot data
     /// </summary>
     /// <value>Quarter hour time series for snapshot data</value>
-    [DataMember(Name = "quarterHour", EmitDefaultValue = false)]
+    [JsonPropertyName("quarterHour")]
     public QuarterHourly QuarterHour { get; set; }
 
 

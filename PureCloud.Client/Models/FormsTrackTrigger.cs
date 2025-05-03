@@ -1,4 +1,3 @@
-using System.Runtime.Serialization;
 using System.Text;
 using System.Text.Json.Serialization;
 
@@ -7,7 +6,7 @@ namespace PureCloud.Client.Models;
 /// <summary>
 /// Details about a forms tracking event trigger
 /// </summary>
-[DataContract]
+
 public partial class FormsTrackTrigger : IEquatable<FormsTrackTrigger>
 {
 
@@ -38,7 +37,7 @@ public partial class FormsTrackTrigger : IEquatable<FormsTrackTrigger>
     /// Form element that triggers the form submitted or abandoned event.
     /// </summary>
     /// <value>Form element that triggers the form submitted or abandoned event.</value>
-    [DataMember(Name = "selector", EmitDefaultValue = false)]
+    [JsonPropertyName("selector")]
     public string Selector { get; set; }
 
 
@@ -47,7 +46,7 @@ public partial class FormsTrackTrigger : IEquatable<FormsTrackTrigger>
     /// Prefix for the form submitted or abandoned event name.
     /// </summary>
     /// <value>Prefix for the form submitted or abandoned event name.</value>
-    [DataMember(Name = "formName", EmitDefaultValue = false)]
+    [JsonPropertyName("formName")]
     public string FormName { get; set; }
 
 
@@ -56,7 +55,7 @@ public partial class FormsTrackTrigger : IEquatable<FormsTrackTrigger>
     /// Whether to capture the form data in the form abandoned event.
     /// </summary>
     /// <value>Whether to capture the form data in the form abandoned event.</value>
-    [DataMember(Name = "captureDataOnFormAbandon", EmitDefaultValue = false)]
+    [JsonPropertyName("captureDataOnFormAbandon")]
     public bool? CaptureDataOnFormAbandon { get; set; }
 
 
@@ -65,7 +64,7 @@ public partial class FormsTrackTrigger : IEquatable<FormsTrackTrigger>
     /// Whether to capture the form data in the form submitted event.
     /// </summary>
     /// <value>Whether to capture the form data in the form submitted event.</value>
-    [DataMember(Name = "captureDataOnFormSubmit", EmitDefaultValue = false)]
+    [JsonPropertyName("captureDataOnFormSubmit")]
     public bool? CaptureDataOnFormSubmit { get; set; }
 
 

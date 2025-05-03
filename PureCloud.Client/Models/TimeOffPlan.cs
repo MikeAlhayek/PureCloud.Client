@@ -7,14 +7,14 @@ namespace PureCloud.Client.Models;
 /// <summary>
 /// TimeOffPlan
 /// </summary>
-[DataContract]
+
 public partial class TimeOffPlan : IEquatable<TimeOffPlan>
 {
     /// <summary>
     /// Auto approval rule for this time off plan
     /// </summary>
     /// <value>Auto approval rule for this time off plan</value>
-    [JsonConverter(typeof(JsonStringEnumConverter))]
+    
     public enum AutoApprovalRuleEnum
     {
         /// <summary>
@@ -59,7 +59,7 @@ public partial class TimeOffPlan : IEquatable<TimeOffPlan>
     /// Auto approval rule for this time off plan
     /// </summary>
     /// <value>Auto approval rule for this time off plan</value>
-    [DataMember(Name = "autoApprovalRule", EmitDefaultValue = false)]
+    [JsonPropertyName("autoApprovalRule")]
     public AutoApprovalRuleEnum? AutoApprovalRule { get; set; }
     /// <summary>
     /// Initializes a new instance of the <see cref="TimeOffPlan" /> class.
@@ -91,7 +91,7 @@ public partial class TimeOffPlan : IEquatable<TimeOffPlan>
     /// The globally unique identifier for the object.
     /// </summary>
     /// <value>The globally unique identifier for the object.</value>
-    [DataMember(Name = "id", EmitDefaultValue = false)]
+    [JsonPropertyName("id")]
     public string Id { get; private set; }
 
 
@@ -100,7 +100,7 @@ public partial class TimeOffPlan : IEquatable<TimeOffPlan>
     /// The name of this time off plan.
     /// </summary>
     /// <value>The name of this time off plan.</value>
-    [DataMember(Name = "name", EmitDefaultValue = false)]
+    [JsonPropertyName("name")]
     public string Name { get; set; }
 
 
@@ -109,7 +109,7 @@ public partial class TimeOffPlan : IEquatable<TimeOffPlan>
     /// The set of activity code IDs associated with this time off plan.
     /// </summary>
     /// <value>The set of activity code IDs associated with this time off plan.</value>
-    [DataMember(Name = "activityCodeIds", EmitDefaultValue = false)]
+    [JsonPropertyName("activityCodeIds")]
     public List<string> ActivityCodeIds { get; set; }
 
 
@@ -118,7 +118,7 @@ public partial class TimeOffPlan : IEquatable<TimeOffPlan>
     /// The set of time off limit IDs associated with this time off plan.
     /// </summary>
     /// <value>The set of time off limit IDs associated with this time off plan.</value>
-    [DataMember(Name = "timeOffLimits", EmitDefaultValue = false)]
+    [JsonPropertyName("timeOffLimits")]
     public List<TimeOffLimitReference> TimeOffLimits { get; set; }
 
 
@@ -129,7 +129,7 @@ public partial class TimeOffPlan : IEquatable<TimeOffPlan>
     /// The number of days before the time off request start date for when the request will be expired from the waitlist.
     /// </summary>
     /// <value>The number of days before the time off request start date for when the request will be expired from the waitlist.</value>
-    [DataMember(Name = "daysBeforeStartToExpireFromWaitlist", EmitDefaultValue = false)]
+    [JsonPropertyName("daysBeforeStartToExpireFromWaitlist")]
     public int? DaysBeforeStartToExpireFromWaitlist { get; set; }
 
 
@@ -138,7 +138,7 @@ public partial class TimeOffPlan : IEquatable<TimeOffPlan>
     /// Time off type, if this time off plan is associated with the integration.
     /// </summary>
     /// <value>Time off type, if this time off plan is associated with the integration.</value>
-    [DataMember(Name = "hrisTimeOffType", EmitDefaultValue = false)]
+    [JsonPropertyName("hrisTimeOffType")]
     public HrisTimeOffType HrisTimeOffType { get; set; }
 
 
@@ -147,7 +147,7 @@ public partial class TimeOffPlan : IEquatable<TimeOffPlan>
     /// Whether this time off plan is currently being used by agents.
     /// </summary>
     /// <value>Whether this time off plan is currently being used by agents.</value>
-    [DataMember(Name = "active", EmitDefaultValue = false)]
+    [JsonPropertyName("active")]
     public bool? Active { get; set; }
 
 
@@ -156,7 +156,7 @@ public partial class TimeOffPlan : IEquatable<TimeOffPlan>
     /// Version metadata for the time off plan.
     /// </summary>
     /// <value>Version metadata for the time off plan.</value>
-    [DataMember(Name = "metadata", EmitDefaultValue = false)]
+    [JsonPropertyName("metadata")]
     public WfmVersionedEntityMetadata Metadata { get; set; }
 
 
@@ -165,7 +165,7 @@ public partial class TimeOffPlan : IEquatable<TimeOffPlan>
     /// The URI for this object
     /// </summary>
     /// <value>The URI for this object</value>
-    [DataMember(Name = "selfUri", EmitDefaultValue = false)]
+    [JsonPropertyName("selfUri")]
     public string SelfUri { get; private set; }
 
 

@@ -1,4 +1,3 @@
-using System.Runtime.Serialization;
 using System.Text;
 using System.Text.Json.Serialization;
 
@@ -7,7 +6,7 @@ namespace PureCloud.Client.Models;
 /// <summary>
 /// BuForecastStaffingRequirementsResult
 /// </summary>
-[DataContract]
+
 public partial class BuForecastStaffingRequirementsResult : IEquatable<BuForecastStaffingRequirementsResult>
 {
 
@@ -38,7 +37,7 @@ public partial class BuForecastStaffingRequirementsResult : IEquatable<BuForecas
     /// The week number represented by this response
     /// </summary>
     /// <value>The week number represented by this response</value>
-    [DataMember(Name = "weekNumber", EmitDefaultValue = false)]
+    [JsonPropertyName("weekNumber")]
     public int? WeekNumber { get; set; }
 
 
@@ -47,7 +46,7 @@ public partial class BuForecastStaffingRequirementsResult : IEquatable<BuForecas
     /// The url to get the requirements results for this week
     /// </summary>
     /// <value>The url to get the requirements results for this week</value>
-    [DataMember(Name = "downloadUrl", EmitDefaultValue = false)]
+    [JsonPropertyName("downloadUrl")]
     public string DownloadUrl { get; set; }
 
 
@@ -56,7 +55,7 @@ public partial class BuForecastStaffingRequirementsResult : IEquatable<BuForecas
     /// The expiration date of the download url, as an ISO-8601 string
     /// </summary>
     /// <value>The expiration date of the download url, as an ISO-8601 string</value>
-    [DataMember(Name = "downloadUrlExpirationDate", EmitDefaultValue = false)]
+    [JsonPropertyName("downloadUrlExpirationDate")]
     public DateTime? DownloadUrlExpirationDate { get; set; }
 
 
@@ -65,7 +64,7 @@ public partial class BuForecastStaffingRequirementsResult : IEquatable<BuForecas
     /// Results will always come via downloadUrl, however the schema is included for documentation
     /// </summary>
     /// <value>Results will always come via downloadUrl, however the schema is included for documentation</value>
-    [DataMember(Name = "planningGroupStaffingRequirements", EmitDefaultValue = false)]
+    [JsonPropertyName("planningGroupStaffingRequirements")]
     public List<StaffingRequirementsPlanningGroupData> PlanningGroupStaffingRequirements { get; set; }
 
 

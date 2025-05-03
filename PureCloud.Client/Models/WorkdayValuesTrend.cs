@@ -1,12 +1,12 @@
-using System.Runtime.Serialization;
 using System.Text;
+using System.Text.Json.Serialization;
 
 namespace PureCloud.Client.Models;
 
 /// <summary>
 /// WorkdayValuesTrend
 /// </summary>
-[DataContract]
+
 public partial class WorkdayValuesTrend : IEquatable<WorkdayValuesTrend>
 {
     /// <summary>
@@ -23,7 +23,7 @@ public partial class WorkdayValuesTrend : IEquatable<WorkdayValuesTrend>
     /// The start workday for the query range for the metric value trend. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd
     /// </summary>
     /// <value>The start workday for the query range for the metric value trend. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd</value>
-    [DataMember(Name = "dateStartWorkday", EmitDefaultValue = false)]
+    [JsonPropertyName("dateStartWorkday")]
     public string DateStartWorkday { get; private set; }
 
 
@@ -32,7 +32,7 @@ public partial class WorkdayValuesTrend : IEquatable<WorkdayValuesTrend>
     /// The end workday for the query range for the metric value trend. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd
     /// </summary>
     /// <value>The end workday for the query range for the metric value trend. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd</value>
-    [DataMember(Name = "dateEndWorkday", EmitDefaultValue = false)]
+    [JsonPropertyName("dateEndWorkday")]
     public string DateEndWorkday { get; private set; }
 
 
@@ -41,7 +41,7 @@ public partial class WorkdayValuesTrend : IEquatable<WorkdayValuesTrend>
     /// The reference workday used to determine the metric definition. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd
     /// </summary>
     /// <value>The reference workday used to determine the metric definition. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd</value>
-    [DataMember(Name = "dateReferenceWorkday", EmitDefaultValue = false)]
+    [JsonPropertyName("dateReferenceWorkday")]
     public string DateReferenceWorkday { get; private set; }
 
 
@@ -50,7 +50,7 @@ public partial class WorkdayValuesTrend : IEquatable<WorkdayValuesTrend>
     /// The targeted division for the query
     /// </summary>
     /// <value>The targeted division for the query</value>
-    [DataMember(Name = "division", EmitDefaultValue = false)]
+    [JsonPropertyName("division")]
     public Division Division { get; private set; }
 
 
@@ -59,7 +59,7 @@ public partial class WorkdayValuesTrend : IEquatable<WorkdayValuesTrend>
     /// The targeted user for the query
     /// </summary>
     /// <value>The targeted user for the query</value>
-    [DataMember(Name = "user", EmitDefaultValue = false)]
+    [JsonPropertyName("user")]
     public UserReference User { get; private set; }
 
 
@@ -68,7 +68,7 @@ public partial class WorkdayValuesTrend : IEquatable<WorkdayValuesTrend>
     /// The time zone used for aggregating metric values
     /// </summary>
     /// <value>The time zone used for aggregating metric values</value>
-    [DataMember(Name = "timezone", EmitDefaultValue = false)]
+    [JsonPropertyName("timezone")]
     public string Timezone { get; private set; }
 
 
@@ -77,7 +77,7 @@ public partial class WorkdayValuesTrend : IEquatable<WorkdayValuesTrend>
     /// The metric value trends
     /// </summary>
     /// <value>The metric value trends</value>
-    [DataMember(Name = "results", EmitDefaultValue = false)]
+    [JsonPropertyName("results")]
     public List<WorkdayValuesMetricItem> Results { get; private set; }
 
 
@@ -86,7 +86,7 @@ public partial class WorkdayValuesTrend : IEquatable<WorkdayValuesTrend>
     /// The targeted performance profile for the average points
     /// </summary>
     /// <value>The targeted performance profile for the average points</value>
-    [DataMember(Name = "performanceProfile", EmitDefaultValue = false)]
+    [JsonPropertyName("performanceProfile")]
     public AddressableEntityRef PerformanceProfile { get; private set; }
 
 
@@ -95,7 +95,7 @@ public partial class WorkdayValuesTrend : IEquatable<WorkdayValuesTrend>
     /// The targeted metric for the average points
     /// </summary>
     /// <value>The targeted metric for the average points</value>
-    [DataMember(Name = "metric", EmitDefaultValue = false)]
+    [JsonPropertyName("metric")]
     public AddressableEntityRef Metric { get; private set; }
 
 

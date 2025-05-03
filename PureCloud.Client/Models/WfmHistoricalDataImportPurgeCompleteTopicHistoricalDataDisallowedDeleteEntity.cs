@@ -7,13 +7,13 @@ namespace PureCloud.Client.Models;
 /// <summary>
 /// WfmHistoricalDataImportPurgeCompleteTopicHistoricalDataDisallowedDeleteEntity
 /// </summary>
-[DataContract]
+
 public partial class WfmHistoricalDataImportPurgeCompleteTopicHistoricalDataDisallowedDeleteEntity : IEquatable<WfmHistoricalDataImportPurgeCompleteTopicHistoricalDataDisallowedDeleteEntity>
 {
     /// <summary>
     /// Gets or Sets Reason
     /// </summary>
-    [JsonConverter(typeof(JsonStringEnumConverter))]
+    
     public enum ReasonEnum
     {
         /// <summary>
@@ -57,7 +57,7 @@ public partial class WfmHistoricalDataImportPurgeCompleteTopicHistoricalDataDisa
     /// <summary>
     /// Gets or Sets Reason
     /// </summary>
-    [DataMember(Name = "reason", EmitDefaultValue = false)]
+    [JsonPropertyName("reason")]
     public ReasonEnum? Reason { get; set; }
     /// <summary>
     /// Initializes a new instance of the <see cref="WfmHistoricalDataImportPurgeCompleteTopicHistoricalDataDisallowedDeleteEntity" /> class.
@@ -76,7 +76,7 @@ public partial class WfmHistoricalDataImportPurgeCompleteTopicHistoricalDataDisa
     /// <summary>
     /// Gets or Sets RequestId
     /// </summary>
-    [DataMember(Name = "requestId", EmitDefaultValue = false)]
+    [JsonPropertyName("requestId")]
     public string RequestId { get; set; }
 
 

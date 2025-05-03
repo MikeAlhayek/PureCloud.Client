@@ -1,12 +1,12 @@
-using System.Runtime.Serialization;
 using System.Text;
+using System.Text.Json.Serialization;
 
 namespace PureCloud.Client.Models;
 
 /// <summary>
 /// The localization settings for homescreen
 /// </summary>
-[DataContract]
+
 public partial class CustomI18nLabels : IEquatable<CustomI18nLabels>
 {
     /// <summary>
@@ -27,7 +27,7 @@ public partial class CustomI18nLabels : IEquatable<CustomI18nLabels>
     /// Language of localized labels in homescreen app (eg. en-us, de-de)
     /// </summary>
     /// <value>Language of localized labels in homescreen app (eg. en-us, de-de)</value>
-    [DataMember(Name = "language", EmitDefaultValue = false)]
+    [JsonPropertyName("language")]
     public string Language { get; set; }
 
 
@@ -36,7 +36,7 @@ public partial class CustomI18nLabels : IEquatable<CustomI18nLabels>
     /// Contains localized labels used in homescreen app
     /// </summary>
     /// <value>Contains localized labels used in homescreen app</value>
-    [DataMember(Name = "localizedLabels", EmitDefaultValue = false)]
+    [JsonPropertyName("localizedLabels")]
     public List<LocalizedLabels> LocalizedLabels { get; set; }
 
 

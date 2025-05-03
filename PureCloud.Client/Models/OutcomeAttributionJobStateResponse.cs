@@ -7,14 +7,14 @@ namespace PureCloud.Client.Models;
 /// <summary>
 /// OutcomeAttributionJobStateResponse
 /// </summary>
-[DataContract]
+
 public partial class OutcomeAttributionJobStateResponse : IEquatable<OutcomeAttributionJobStateResponse>
 {
     /// <summary>
     /// State of job.
     /// </summary>
     /// <value>State of job.</value>
-    [JsonConverter(typeof(JsonStringEnumConverter))]
+    
     public enum StateEnum
     {
         /// <summary>
@@ -53,7 +53,7 @@ public partial class OutcomeAttributionJobStateResponse : IEquatable<OutcomeAttr
     /// State of job.
     /// </summary>
     /// <value>State of job.</value>
-    [DataMember(Name = "state", EmitDefaultValue = false)]
+    [JsonPropertyName("state")]
     public StateEnum? State { get; set; }
     /// <summary>
     /// Initializes a new instance of the <see cref="OutcomeAttributionJobStateResponse" /> class.
@@ -77,7 +77,7 @@ public partial class OutcomeAttributionJobStateResponse : IEquatable<OutcomeAttr
     /// The globally unique identifier for the object.
     /// </summary>
     /// <value>The globally unique identifier for the object.</value>
-    [DataMember(Name = "id", EmitDefaultValue = false)]
+    [JsonPropertyName("id")]
     public string Id { get; private set; }
 
 
@@ -88,7 +88,7 @@ public partial class OutcomeAttributionJobStateResponse : IEquatable<OutcomeAttr
     /// URI where the query results can be retrieved.  Populated when job has reached a terminal state, i.e. no longer Running.
     /// </summary>
     /// <value>URI where the query results can be retrieved.  Populated when job has reached a terminal state, i.e. no longer Running.</value>
-    [DataMember(Name = "resultsUri", EmitDefaultValue = false)]
+    [JsonPropertyName("resultsUri")]
     public string ResultsUri { get; set; }
 
 
@@ -97,7 +97,7 @@ public partial class OutcomeAttributionJobStateResponse : IEquatable<OutcomeAttr
     /// Optional percent failed threshold for validation errors; if reached will halt the job. Default is 5 percent, allowed values 0 to 100.
     /// </summary>
     /// <value>Optional percent failed threshold for validation errors; if reached will halt the job. Default is 5 percent, allowed values 0 to 100.</value>
-    [DataMember(Name = "percentFailedThreshold", EmitDefaultValue = false)]
+    [JsonPropertyName("percentFailedThreshold")]
     public int? PercentFailedThreshold { get; set; }
 
 
@@ -106,7 +106,7 @@ public partial class OutcomeAttributionJobStateResponse : IEquatable<OutcomeAttr
     /// The URI for this object
     /// </summary>
     /// <value>The URI for this object</value>
-    [DataMember(Name = "selfUri", EmitDefaultValue = false)]
+    [JsonPropertyName("selfUri")]
     public string SelfUri { get; private set; }
 
 
@@ -115,7 +115,7 @@ public partial class OutcomeAttributionJobStateResponse : IEquatable<OutcomeAttr
     /// Date when the job was created. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z
     /// </summary>
     /// <value>Date when the job was created. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z</value>
-    [DataMember(Name = "createdDate", EmitDefaultValue = false)]
+    [JsonPropertyName("createdDate")]
     public DateTime? CreatedDate { get; set; }
 
 

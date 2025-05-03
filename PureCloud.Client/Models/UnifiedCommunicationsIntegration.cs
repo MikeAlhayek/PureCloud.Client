@@ -7,14 +7,14 @@ namespace PureCloud.Client.Models;
 /// <summary>
 /// UC Integration UI configuration data
 /// </summary>
-[DataContract]
+
 public partial class UnifiedCommunicationsIntegration : IEquatable<UnifiedCommunicationsIntegration>
 {
     /// <summary>
     /// integrationPresenceType
     /// </summary>
     /// <value>integrationPresenceType</value>
-    [JsonConverter(typeof(JsonStringEnumConverter))]
+    
     public enum IntegrationPresenceSourceEnum
     {
         /// <summary>
@@ -47,7 +47,7 @@ public partial class UnifiedCommunicationsIntegration : IEquatable<UnifiedCommun
     /// integrationPresenceType
     /// </summary>
     /// <value>integrationPresenceType</value>
-    [DataMember(Name = "integrationPresenceSource", EmitDefaultValue = false)]
+    [JsonPropertyName("integrationPresenceSource")]
     public IntegrationPresenceSourceEnum? IntegrationPresenceSource { get; private set; }
     /// <summary>
     /// Initializes a new instance of the <see cref="UnifiedCommunicationsIntegration" /> class.
@@ -67,7 +67,7 @@ public partial class UnifiedCommunicationsIntegration : IEquatable<UnifiedCommun
     /// The globally unique identifier for the object.
     /// </summary>
     /// <value>The globally unique identifier for the object.</value>
-    [DataMember(Name = "id", EmitDefaultValue = false)]
+    [JsonPropertyName("id")]
     public string Id { get; private set; }
 
 
@@ -75,7 +75,7 @@ public partial class UnifiedCommunicationsIntegration : IEquatable<UnifiedCommun
     /// <summary>
     /// Gets or Sets Name
     /// </summary>
-    [DataMember(Name = "name", EmitDefaultValue = false)]
+    [JsonPropertyName("name")]
     public string Name { get; set; }
 
 
@@ -84,7 +84,7 @@ public partial class UnifiedCommunicationsIntegration : IEquatable<UnifiedCommun
     /// ucIntegrationKey
     /// </summary>
     /// <value>ucIntegrationKey</value>
-    [DataMember(Name = "ucIntegrationKey", EmitDefaultValue = false)]
+    [JsonPropertyName("ucIntegrationKey")]
     public AddressableEntityRef UcIntegrationKey { get; private set; }
 
 
@@ -95,7 +95,7 @@ public partial class UnifiedCommunicationsIntegration : IEquatable<UnifiedCommun
     /// pbxPermission
     /// </summary>
     /// <value>pbxPermission</value>
-    [DataMember(Name = "pbxPermission", EmitDefaultValue = false)]
+    [JsonPropertyName("pbxPermission")]
     public string PbxPermission { get; private set; }
 
 
@@ -104,7 +104,7 @@ public partial class UnifiedCommunicationsIntegration : IEquatable<UnifiedCommun
     /// icon
     /// </summary>
     /// <value>icon</value>
-    [DataMember(Name = "icon", EmitDefaultValue = false)]
+    [JsonPropertyName("icon")]
     public UCIcon Icon { get; private set; }
 
 
@@ -113,7 +113,7 @@ public partial class UnifiedCommunicationsIntegration : IEquatable<UnifiedCommun
     /// badgeIcon
     /// </summary>
     /// <value>badgeIcon</value>
-    [DataMember(Name = "badgeIcons", EmitDefaultValue = false)]
+    [JsonPropertyName("badgeIcons")]
     public Dictionary<string, UCIcon> BadgeIcons { get; private set; }
 
 
@@ -122,7 +122,7 @@ public partial class UnifiedCommunicationsIntegration : IEquatable<UnifiedCommun
     /// i10n
     /// </summary>
     /// <value>i10n</value>
-    [DataMember(Name = "i10n", EmitDefaultValue = false)]
+    [JsonPropertyName("i10n")]
     public Dictionary<string, UCI10n> I10n { get; private set; }
 
 
@@ -131,7 +131,7 @@ public partial class UnifiedCommunicationsIntegration : IEquatable<UnifiedCommun
     /// polledPresence
     /// </summary>
     /// <value>polledPresence</value>
-    [DataMember(Name = "polledPresence", EmitDefaultValue = false)]
+    [JsonPropertyName("polledPresence")]
     public bool? PolledPresence { get; private set; }
 
 
@@ -140,7 +140,7 @@ public partial class UnifiedCommunicationsIntegration : IEquatable<UnifiedCommun
     /// pollIntervalSec
     /// </summary>
     /// <value>pollIntervalSec</value>
-    [DataMember(Name = "pollIntervalSec", EmitDefaultValue = false)]
+    [JsonPropertyName("pollIntervalSec")]
     public int? PollIntervalSec { get; private set; }
 
 
@@ -149,7 +149,7 @@ public partial class UnifiedCommunicationsIntegration : IEquatable<UnifiedCommun
     /// includeBadge
     /// </summary>
     /// <value>includeBadge</value>
-    [DataMember(Name = "includeBadge", EmitDefaultValue = false)]
+    [JsonPropertyName("includeBadge")]
     public bool? IncludeBadge { get; private set; }
 
 
@@ -158,7 +158,7 @@ public partial class UnifiedCommunicationsIntegration : IEquatable<UnifiedCommun
     /// userPermissions
     /// </summary>
     /// <value>userPermissions</value>
-    [DataMember(Name = "userPermissions", EmitDefaultValue = false)]
+    [JsonPropertyName("userPermissions")]
     public List<string> UserPermissions { get; private set; }
 
 
@@ -166,7 +166,7 @@ public partial class UnifiedCommunicationsIntegration : IEquatable<UnifiedCommun
     /// <summary>
     /// Gets or Sets OauthScopes
     /// </summary>
-    [DataMember(Name = "oauthScopes", EmitDefaultValue = false)]
+    [JsonPropertyName("oauthScopes")]
     public List<string> OauthScopes { get; set; }
 
 
@@ -175,7 +175,7 @@ public partial class UnifiedCommunicationsIntegration : IEquatable<UnifiedCommun
     /// The URI for this object
     /// </summary>
     /// <value>The URI for this object</value>
-    [DataMember(Name = "selfUri", EmitDefaultValue = false)]
+    [JsonPropertyName("selfUri")]
     public string SelfUri { get; private set; }
 
 

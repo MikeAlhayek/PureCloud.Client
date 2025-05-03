@@ -1,4 +1,3 @@
-using System.Runtime.Serialization;
 using System.Text;
 using System.Text.Json.Serialization;
 
@@ -7,7 +6,7 @@ namespace PureCloud.Client.Models;
 /// <summary>
 /// LexSlot
 /// </summary>
-[DataContract]
+
 public partial class LexSlot : IEquatable<LexSlot>
 {
 
@@ -38,7 +37,7 @@ public partial class LexSlot : IEquatable<LexSlot>
     /// The slot name
     /// </summary>
     /// <value>The slot name</value>
-    [DataMember(Name = "name", EmitDefaultValue = false)]
+    [JsonPropertyName("name")]
     public string Name { get; set; }
 
 
@@ -47,7 +46,7 @@ public partial class LexSlot : IEquatable<LexSlot>
     /// The slot description
     /// </summary>
     /// <value>The slot description</value>
-    [DataMember(Name = "description", EmitDefaultValue = false)]
+    [JsonPropertyName("description")]
     public string Description { get; set; }
 
 
@@ -56,7 +55,7 @@ public partial class LexSlot : IEquatable<LexSlot>
     /// The slot type
     /// </summary>
     /// <value>The slot type</value>
-    [DataMember(Name = "type", EmitDefaultValue = false)]
+    [JsonPropertyName("type")]
     public string Type { get; set; }
 
 
@@ -65,7 +64,7 @@ public partial class LexSlot : IEquatable<LexSlot>
     /// The priority of the slot
     /// </summary>
     /// <value>The priority of the slot</value>
-    [DataMember(Name = "priority", EmitDefaultValue = false)]
+    [JsonPropertyName("priority")]
     public int? Priority { get; set; }
 
 

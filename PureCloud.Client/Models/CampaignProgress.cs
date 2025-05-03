@@ -1,4 +1,3 @@
-using System.Runtime.Serialization;
 using System.Text;
 using System.Text.Json.Serialization;
 
@@ -7,7 +6,7 @@ namespace PureCloud.Client.Models;
 /// <summary>
 /// CampaignProgress
 /// </summary>
-[DataContract]
+
 public partial class CampaignProgress : IEquatable<CampaignProgress>
 {
 
@@ -34,7 +33,7 @@ public partial class CampaignProgress : IEquatable<CampaignProgress>
     /// Identifier of the campaign
     /// </summary>
     /// <value>Identifier of the campaign</value>
-    [DataMember(Name = "campaign", EmitDefaultValue = false)]
+    [JsonPropertyName("campaign")]
     public DomainEntityRef Campaign { get; set; }
 
 
@@ -43,7 +42,7 @@ public partial class CampaignProgress : IEquatable<CampaignProgress>
     /// Identifier of the contact list
     /// </summary>
     /// <value>Identifier of the contact list</value>
-    [DataMember(Name = "contactList", EmitDefaultValue = false)]
+    [JsonPropertyName("contactList")]
     public DomainEntityRef ContactList { get; set; }
 
 
@@ -52,7 +51,7 @@ public partial class CampaignProgress : IEquatable<CampaignProgress>
     /// Number of contacts called during the campaign
     /// </summary>
     /// <value>Number of contacts called during the campaign</value>
-    [DataMember(Name = "numberOfContactsCalled", EmitDefaultValue = false)]
+    [JsonPropertyName("numberOfContactsCalled")]
     public long? NumberOfContactsCalled { get; private set; }
 
 
@@ -61,7 +60,7 @@ public partial class CampaignProgress : IEquatable<CampaignProgress>
     /// Number of contacts messaged during the campaign
     /// </summary>
     /// <value>Number of contacts messaged during the campaign</value>
-    [DataMember(Name = "numberOfContactsMessaged", EmitDefaultValue = false)]
+    [JsonPropertyName("numberOfContactsMessaged")]
     public long? NumberOfContactsMessaged { get; private set; }
 
 
@@ -70,7 +69,7 @@ public partial class CampaignProgress : IEquatable<CampaignProgress>
     /// Total number of contacts in the campaign
     /// </summary>
     /// <value>Total number of contacts in the campaign</value>
-    [DataMember(Name = "totalNumberOfContacts", EmitDefaultValue = false)]
+    [JsonPropertyName("totalNumberOfContacts")]
     public long? TotalNumberOfContacts { get; private set; }
 
 
@@ -79,7 +78,7 @@ public partial class CampaignProgress : IEquatable<CampaignProgress>
     /// Percentage of contacts processed during the campaign
     /// </summary>
     /// <value>Percentage of contacts processed during the campaign</value>
-    [DataMember(Name = "percentage", EmitDefaultValue = false)]
+    [JsonPropertyName("percentage")]
     public long? Percentage { get; private set; }
 
 
@@ -88,7 +87,7 @@ public partial class CampaignProgress : IEquatable<CampaignProgress>
     /// Number of contacts skipped during the campaign
     /// </summary>
     /// <value>Number of contacts skipped during the campaign</value>
-    [DataMember(Name = "numberOfContactsSkipped", EmitDefaultValue = false)]
+    [JsonPropertyName("numberOfContactsSkipped")]
     public Dictionary<string, int?> NumberOfContactsSkipped { get; private set; }
 
 

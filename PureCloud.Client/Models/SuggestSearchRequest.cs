@@ -1,4 +1,3 @@
-using System.Runtime.Serialization;
 using System.Text;
 using System.Text.Json.Serialization;
 
@@ -7,7 +6,7 @@ namespace PureCloud.Client.Models;
 /// <summary>
 /// SuggestSearchRequest
 /// </summary>
-[DataContract]
+
 public partial class SuggestSearchRequest : IEquatable<SuggestSearchRequest>
 {
 
@@ -36,7 +35,7 @@ public partial class SuggestSearchRequest : IEquatable<SuggestSearchRequest>
     /// Provides more details about a specified resource
     /// </summary>
     /// <value>Provides more details about a specified resource</value>
-    [DataMember(Name = "expand", EmitDefaultValue = false)]
+    [JsonPropertyName("expand")]
     public List<string> Expand { get; set; }
 
 
@@ -45,7 +44,7 @@ public partial class SuggestSearchRequest : IEquatable<SuggestSearchRequest>
     /// Resource domain type to search
     /// </summary>
     /// <value>Resource domain type to search</value>
-    [DataMember(Name = "types", EmitDefaultValue = false)]
+    [JsonPropertyName("types")]
     public List<string> Types { get; set; }
 
 
@@ -54,7 +53,7 @@ public partial class SuggestSearchRequest : IEquatable<SuggestSearchRequest>
     /// Suggest query
     /// </summary>
     /// <value>Suggest query</value>
-    [DataMember(Name = "query", EmitDefaultValue = false)]
+    [JsonPropertyName("query")]
     public List<SuggestSearchCriteria> Query { get; set; }
 
 

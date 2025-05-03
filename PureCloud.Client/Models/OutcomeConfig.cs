@@ -1,12 +1,12 @@
-using System.Runtime.Serialization;
 using System.Text;
+using System.Text.Json.Serialization;
 
 namespace PureCloud.Client.Models;
 
 /// <summary>
 /// OutcomeConfig
 /// </summary>
-[DataContract]
+
 public partial class OutcomeConfig : IEquatable<OutcomeConfig>
 {
     /// <summary>
@@ -25,7 +25,7 @@ public partial class OutcomeConfig : IEquatable<OutcomeConfig>
     /// A set of valid Outcome UUIDs used to optimize a KPI.
     /// </summary>
     /// <value>A set of valid Outcome UUIDs used to optimize a KPI.</value>
-    [DataMember(Name = "values", EmitDefaultValue = false)]
+    [JsonPropertyName("values")]
     public List<string> Values { get; set; }
 
 

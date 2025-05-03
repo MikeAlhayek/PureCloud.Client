@@ -1,12 +1,12 @@
-using System.Runtime.Serialization;
 using System.Text;
+using System.Text.Json.Serialization;
 
 namespace PureCloud.Client.Models;
 
 /// <summary>
 /// QueueConversationScreenShareEventTopicUriReference
 /// </summary>
-[DataContract]
+
 public partial class QueueConversationScreenShareEventTopicUriReference : IEquatable<QueueConversationScreenShareEventTopicUriReference>
 {
     /// <summary>
@@ -27,7 +27,7 @@ public partial class QueueConversationScreenShareEventTopicUriReference : IEquat
     /// The ID of the resource
     /// </summary>
     /// <value>The ID of the resource</value>
-    [DataMember(Name = "id", EmitDefaultValue = false)]
+    [JsonPropertyName("id")]
     public string Id { get; set; }
 
 
@@ -36,7 +36,7 @@ public partial class QueueConversationScreenShareEventTopicUriReference : IEquat
     /// The name of the resource
     /// </summary>
     /// <value>The name of the resource</value>
-    [DataMember(Name = "name", EmitDefaultValue = false)]
+    [JsonPropertyName("name")]
     public string Name { get; set; }
 
 

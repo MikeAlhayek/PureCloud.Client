@@ -1,4 +1,3 @@
-using System.Runtime.Serialization;
 using System.Text;
 using System.Text.Json.Serialization;
 
@@ -7,7 +6,7 @@ namespace PureCloud.Client.Models;
 /// <summary>
 /// Label
 /// </summary>
-[DataContract]
+
 public partial class Label : IEquatable<Label>
 {
 
@@ -34,7 +33,7 @@ public partial class Label : IEquatable<Label>
     /// Name of the label
     /// </summary>
     /// <value>Name of the label</value>
-    [DataMember(Name = "name", EmitDefaultValue = false)]
+    [JsonPropertyName("name")]
     public string Name { get; set; }
 
 
@@ -43,7 +42,7 @@ public partial class Label : IEquatable<Label>
     /// Value of the label
     /// </summary>
     /// <value>Value of the label</value>
-    [DataMember(Name = "value", EmitDefaultValue = false)]
+    [JsonPropertyName("value")]
     public string Value { get; set; }
 
 
@@ -52,7 +51,7 @@ public partial class Label : IEquatable<Label>
     /// Whether the label is encoded or not
     /// </summary>
     /// <value>Whether the label is encoded or not</value>
-    [DataMember(Name = "encoded", EmitDefaultValue = false)]
+    [JsonPropertyName("encoded")]
     public bool? Encoded { get; private set; }
 
 

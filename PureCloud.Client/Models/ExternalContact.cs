@@ -7,14 +7,14 @@ namespace PureCloud.Client.Models;
 /// <summary>
 /// ExternalContact
 /// </summary>
-[DataContract]
+
 public partial class ExternalContact : IEquatable<ExternalContact>
 {
     /// <summary>
     /// The type of contact
     /// </summary>
     /// <value>The type of contact</value>
-    [JsonConverter(typeof(JsonStringEnumConverter))]
+    
     public enum TypeEnum
     {
         /// <summary>
@@ -47,7 +47,7 @@ public partial class ExternalContact : IEquatable<ExternalContact>
     /// The type of contact
     /// </summary>
     /// <value>The type of contact</value>
-    [DataMember(Name = "type", EmitDefaultValue = false)]
+    [JsonPropertyName("type")]
     public TypeEnum? Type { get; private set; }
     /// <summary>
     /// Initializes a new instance of the <see cref="ExternalContact" /> class.
@@ -119,7 +119,7 @@ public partial class ExternalContact : IEquatable<ExternalContact>
     /// The globally unique identifier for the object.
     /// </summary>
     /// <value>The globally unique identifier for the object.</value>
-    [DataMember(Name = "id", EmitDefaultValue = false)]
+    [JsonPropertyName("id")]
     public string Id { get; set; }
 
 
@@ -128,7 +128,7 @@ public partial class ExternalContact : IEquatable<ExternalContact>
     /// The division to which this entity belongs.
     /// </summary>
     /// <value>The division to which this entity belongs.</value>
-    [DataMember(Name = "division", EmitDefaultValue = false)]
+    [JsonPropertyName("division")]
     public WritableStarrableDivision Division { get; set; }
 
 
@@ -137,7 +137,7 @@ public partial class ExternalContact : IEquatable<ExternalContact>
     /// The first name of the contact.
     /// </summary>
     /// <value>The first name of the contact.</value>
-    [DataMember(Name = "firstName", EmitDefaultValue = false)]
+    [JsonPropertyName("firstName")]
     public string FirstName { get; set; }
 
 
@@ -145,7 +145,7 @@ public partial class ExternalContact : IEquatable<ExternalContact>
     /// <summary>
     /// Gets or Sets MiddleName
     /// </summary>
-    [DataMember(Name = "middleName", EmitDefaultValue = false)]
+    [JsonPropertyName("middleName")]
     public string MiddleName { get; set; }
 
 
@@ -154,7 +154,7 @@ public partial class ExternalContact : IEquatable<ExternalContact>
     /// The last name of the contact.
     /// </summary>
     /// <value>The last name of the contact.</value>
-    [DataMember(Name = "lastName", EmitDefaultValue = false)]
+    [JsonPropertyName("lastName")]
     public string LastName { get; set; }
 
 
@@ -162,7 +162,7 @@ public partial class ExternalContact : IEquatable<ExternalContact>
     /// <summary>
     /// Gets or Sets Salutation
     /// </summary>
-    [DataMember(Name = "salutation", EmitDefaultValue = false)]
+    [JsonPropertyName("salutation")]
     public string Salutation { get; set; }
 
 
@@ -170,7 +170,7 @@ public partial class ExternalContact : IEquatable<ExternalContact>
     /// <summary>
     /// Gets or Sets Title
     /// </summary>
-    [DataMember(Name = "title", EmitDefaultValue = false)]
+    [JsonPropertyName("title")]
     public string Title { get; set; }
 
 
@@ -178,7 +178,7 @@ public partial class ExternalContact : IEquatable<ExternalContact>
     /// <summary>
     /// Gets or Sets WorkPhone
     /// </summary>
-    [DataMember(Name = "workPhone", EmitDefaultValue = false)]
+    [JsonPropertyName("workPhone")]
     public PhoneNumber WorkPhone { get; set; }
 
 
@@ -186,7 +186,7 @@ public partial class ExternalContact : IEquatable<ExternalContact>
     /// <summary>
     /// Gets or Sets CellPhone
     /// </summary>
-    [DataMember(Name = "cellPhone", EmitDefaultValue = false)]
+    [JsonPropertyName("cellPhone")]
     public PhoneNumber CellPhone { get; set; }
 
 
@@ -194,7 +194,7 @@ public partial class ExternalContact : IEquatable<ExternalContact>
     /// <summary>
     /// Gets or Sets HomePhone
     /// </summary>
-    [DataMember(Name = "homePhone", EmitDefaultValue = false)]
+    [JsonPropertyName("homePhone")]
     public PhoneNumber HomePhone { get; set; }
 
 
@@ -202,7 +202,7 @@ public partial class ExternalContact : IEquatable<ExternalContact>
     /// <summary>
     /// Gets or Sets OtherPhone
     /// </summary>
-    [DataMember(Name = "otherPhone", EmitDefaultValue = false)]
+    [JsonPropertyName("otherPhone")]
     public PhoneNumber OtherPhone { get; set; }
 
 
@@ -210,7 +210,7 @@ public partial class ExternalContact : IEquatable<ExternalContact>
     /// <summary>
     /// Gets or Sets WorkEmail
     /// </summary>
-    [DataMember(Name = "workEmail", EmitDefaultValue = false)]
+    [JsonPropertyName("workEmail")]
     public string WorkEmail { get; set; }
 
 
@@ -218,7 +218,7 @@ public partial class ExternalContact : IEquatable<ExternalContact>
     /// <summary>
     /// Gets or Sets PersonalEmail
     /// </summary>
-    [DataMember(Name = "personalEmail", EmitDefaultValue = false)]
+    [JsonPropertyName("personalEmail")]
     public string PersonalEmail { get; set; }
 
 
@@ -226,7 +226,7 @@ public partial class ExternalContact : IEquatable<ExternalContact>
     /// <summary>
     /// Gets or Sets OtherEmail
     /// </summary>
-    [DataMember(Name = "otherEmail", EmitDefaultValue = false)]
+    [JsonPropertyName("otherEmail")]
     public string OtherEmail { get; set; }
 
 
@@ -234,7 +234,7 @@ public partial class ExternalContact : IEquatable<ExternalContact>
     /// <summary>
     /// Gets or Sets Address
     /// </summary>
-    [DataMember(Name = "address", EmitDefaultValue = false)]
+    [JsonPropertyName("address")]
     public ContactAddress Address { get; set; }
 
 
@@ -242,7 +242,7 @@ public partial class ExternalContact : IEquatable<ExternalContact>
     /// <summary>
     /// Gets or Sets TwitterId
     /// </summary>
-    [DataMember(Name = "twitterId", EmitDefaultValue = false)]
+    [JsonPropertyName("twitterId")]
     public TwitterId TwitterId { get; set; }
 
 
@@ -250,7 +250,7 @@ public partial class ExternalContact : IEquatable<ExternalContact>
     /// <summary>
     /// Gets or Sets LineId
     /// </summary>
-    [DataMember(Name = "lineId", EmitDefaultValue = false)]
+    [JsonPropertyName("lineId")]
     public LineId LineId { get; set; }
 
 
@@ -258,7 +258,7 @@ public partial class ExternalContact : IEquatable<ExternalContact>
     /// <summary>
     /// Gets or Sets WhatsAppId
     /// </summary>
-    [DataMember(Name = "whatsAppId", EmitDefaultValue = false)]
+    [JsonPropertyName("whatsAppId")]
     public WhatsAppId WhatsAppId { get; set; }
 
 
@@ -266,7 +266,7 @@ public partial class ExternalContact : IEquatable<ExternalContact>
     /// <summary>
     /// Gets or Sets FacebookId
     /// </summary>
-    [DataMember(Name = "facebookId", EmitDefaultValue = false)]
+    [JsonPropertyName("facebookId")]
     public FacebookId FacebookId { get; set; }
 
 
@@ -275,7 +275,7 @@ public partial class ExternalContact : IEquatable<ExternalContact>
     /// A list of external identifiers that identify this contact in an external system
     /// </summary>
     /// <value>A list of external identifiers that identify this contact in an external system</value>
-    [DataMember(Name = "externalIds", EmitDefaultValue = false)]
+    [JsonPropertyName("externalIds")]
     public List<ExternalId> ExternalIds { get; set; }
 
 
@@ -284,7 +284,7 @@ public partial class ExternalContact : IEquatable<ExternalContact>
     /// Identifiers claimed by this contact
     /// </summary>
     /// <value>Identifiers claimed by this contact</value>
-    [DataMember(Name = "identifiers", EmitDefaultValue = false)]
+    [JsonPropertyName("identifiers")]
     public List<ContactIdentifier> Identifiers { get; set; }
 
 
@@ -293,7 +293,7 @@ public partial class ExternalContact : IEquatable<ExternalContact>
     /// Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z
     /// </summary>
     /// <value>Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z</value>
-    [DataMember(Name = "modifyDate", EmitDefaultValue = false)]
+    [JsonPropertyName("modifyDate")]
     public DateTime? ModifyDate { get; set; }
 
 
@@ -302,7 +302,7 @@ public partial class ExternalContact : IEquatable<ExternalContact>
     /// Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z
     /// </summary>
     /// <value>Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z</value>
-    [DataMember(Name = "createDate", EmitDefaultValue = false)]
+    [JsonPropertyName("createDate")]
     public DateTime? CreateDate { get; set; }
 
 
@@ -310,7 +310,7 @@ public partial class ExternalContact : IEquatable<ExternalContact>
     /// <summary>
     /// Gets or Sets ExternalOrganization
     /// </summary>
-    [DataMember(Name = "externalOrganization", EmitDefaultValue = false)]
+    [JsonPropertyName("externalOrganization")]
     public ExternalOrganization ExternalOrganization { get; set; }
 
 
@@ -318,7 +318,7 @@ public partial class ExternalContact : IEquatable<ExternalContact>
     /// <summary>
     /// Gets or Sets SurveyOptOut
     /// </summary>
-    [DataMember(Name = "surveyOptOut", EmitDefaultValue = false)]
+    [JsonPropertyName("surveyOptOut")]
     public bool? SurveyOptOut { get; set; }
 
 
@@ -327,7 +327,7 @@ public partial class ExternalContact : IEquatable<ExternalContact>
     /// A string that identifies an external system-of-record resource that may have more detailed information on the contact. It should be a valid URL (including the http/https protocol, port, and path [if any]). The value is automatically trimmed of any leading and trailing whitespace.
     /// </summary>
     /// <value>A string that identifies an external system-of-record resource that may have more detailed information on the contact. It should be a valid URL (including the http/https protocol, port, and path [if any]). The value is automatically trimmed of any leading and trailing whitespace.</value>
-    [DataMember(Name = "externalSystemUrl", EmitDefaultValue = false)]
+    [JsonPropertyName("externalSystemUrl")]
     public string ExternalSystemUrl { get; set; }
 
 
@@ -336,7 +336,7 @@ public partial class ExternalContact : IEquatable<ExternalContact>
     /// The schema defining custom fields for this contact
     /// </summary>
     /// <value>The schema defining custom fields for this contact</value>
-    [DataMember(Name = "schema", EmitDefaultValue = false)]
+    [JsonPropertyName("schema")]
     public DataSchema Schema { get; set; }
 
 
@@ -345,7 +345,7 @@ public partial class ExternalContact : IEquatable<ExternalContact>
     /// Custom fields defined in the schema referenced by schemaId and schemaVersion.
     /// </summary>
     /// <value>Custom fields defined in the schema referenced by schemaId and schemaVersion.</value>
-    [DataMember(Name = "customFields", EmitDefaultValue = false)]
+    [JsonPropertyName("customFields")]
     public Dictionary<string, object> CustomFields { get; set; }
 
 
@@ -354,7 +354,7 @@ public partial class ExternalContact : IEquatable<ExternalContact>
     /// Links to the sources of data (e.g. one source might be a CRM) that contributed data to this record.  Read-only, and only populated when requested via expand param.
     /// </summary>
     /// <value>Links to the sources of data (e.g. one source might be a CRM) that contributed data to this record.  Read-only, and only populated when requested via expand param.</value>
-    [DataMember(Name = "externalDataSources", EmitDefaultValue = false)]
+    [JsonPropertyName("externalDataSources")]
     public List<ExternalDataSource> ExternalDataSources { get; private set; }
 
 
@@ -365,7 +365,7 @@ public partial class ExternalContact : IEquatable<ExternalContact>
     /// The contact at the head of the merge tree. If null, this contact is not a part of any merge.
     /// </summary>
     /// <value>The contact at the head of the merge tree. If null, this contact is not a part of any merge.</value>
-    [DataMember(Name = "canonicalContact", EmitDefaultValue = false)]
+    [JsonPropertyName("canonicalContact")]
     public ContactAddressableEntityRef CanonicalContact { get; private set; }
 
 
@@ -374,7 +374,7 @@ public partial class ExternalContact : IEquatable<ExternalContact>
     /// The set of all contacts that are a part of the merge tree. If null, this contact is not a part of any merge.
     /// </summary>
     /// <value>The set of all contacts that are a part of the merge tree. If null, this contact is not a part of any merge.</value>
-    [DataMember(Name = "mergeSet", EmitDefaultValue = false)]
+    [JsonPropertyName("mergeSet")]
     public List<ContactAddressableEntityRef> MergeSet { get; private set; }
 
 
@@ -383,7 +383,7 @@ public partial class ExternalContact : IEquatable<ExternalContact>
     /// Information about the merge history of this contact. If null, this contact is not a part of any merge.
     /// </summary>
     /// <value>Information about the merge history of this contact. If null, this contact is not a part of any merge.</value>
-    [DataMember(Name = "mergeOperation", EmitDefaultValue = false)]
+    [JsonPropertyName("mergeOperation")]
     public MergeOperation MergeOperation { get; private set; }
 
 
@@ -392,7 +392,7 @@ public partial class ExternalContact : IEquatable<ExternalContact>
     /// The URI for this object
     /// </summary>
     /// <value>The URI for this object</value>
-    [DataMember(Name = "selfUri", EmitDefaultValue = false)]
+    [JsonPropertyName("selfUri")]
     public string SelfUri { get; private set; }
 
 

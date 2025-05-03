@@ -1,4 +1,3 @@
-using System.Runtime.Serialization;
 using System.Text;
 using System.Text.Json.Serialization;
 
@@ -7,7 +6,7 @@ namespace PureCloud.Client.Models;
 /// <summary>
 /// CsvJobRequest
 /// </summary>
-[DataContract]
+
 public partial class CsvJobRequest : IEquatable<CsvJobRequest>
 {
 
@@ -34,7 +33,7 @@ public partial class CsvJobRequest : IEquatable<CsvJobRequest>
     /// Upload for the csv job
     /// </summary>
     /// <value>Upload for the csv job</value>
-    [DataMember(Name = "uploadId", EmitDefaultValue = false)]
+    [JsonPropertyName("uploadId")]
     public string UploadId { get; set; }
 
 
@@ -43,7 +42,7 @@ public partial class CsvJobRequest : IEquatable<CsvJobRequest>
     /// Settings for the csv job
     /// </summary>
     /// <value>Settings for the csv job</value>
-    [DataMember(Name = "settingsId", EmitDefaultValue = false)]
+    [JsonPropertyName("settingsId")]
     public string SettingsId { get; set; }
 
 

@@ -7,14 +7,14 @@ namespace PureCloud.Client.Models;
 /// <summary>
 /// SettingDirection
 /// </summary>
-[DataContract]
+
 public partial class SettingDirection : IEquatable<SettingDirection>
 {
     /// <summary>
     /// Status for the Inbound Direction
     /// </summary>
     /// <value>Status for the Inbound Direction</value>
-    [JsonConverter(typeof(JsonStringEnumConverter))]
+    
     public enum InboundEnum
     {
         /// <summary>
@@ -41,7 +41,7 @@ public partial class SettingDirection : IEquatable<SettingDirection>
     /// Status for the Outbound Direction
     /// </summary>
     /// <value>Status for the Outbound Direction</value>
-    [JsonConverter(typeof(JsonStringEnumConverter))]
+    
     public enum OutboundEnum
     {
         /// <summary>
@@ -68,13 +68,13 @@ public partial class SettingDirection : IEquatable<SettingDirection>
     /// Status for the Inbound Direction
     /// </summary>
     /// <value>Status for the Inbound Direction</value>
-    [DataMember(Name = "inbound", EmitDefaultValue = false)]
+    [JsonPropertyName("inbound")]
     public InboundEnum? Inbound { get; set; }
     /// <summary>
     /// Status for the Outbound Direction
     /// </summary>
     /// <value>Status for the Outbound Direction</value>
-    [DataMember(Name = "outbound", EmitDefaultValue = false)]
+    [JsonPropertyName("outbound")]
     public OutboundEnum? Outbound { get; set; }
     /// <summary>
     /// Initializes a new instance of the <see cref="SettingDirection" /> class.

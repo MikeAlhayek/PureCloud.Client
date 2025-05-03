@@ -7,14 +7,14 @@ namespace PureCloud.Client.Models;
 /// <summary>
 /// NluUtterance
 /// </summary>
-[DataContract]
+
 public partial class NluUtterance : IEquatable<NluUtterance>
 {
     /// <summary>
     /// The source of the utterance.
     /// </summary>
     /// <value>The source of the utterance.</value>
-    [JsonConverter(typeof(JsonStringEnumConverter))]
+    
     public enum SourceEnum
     {
         /// <summary>
@@ -41,7 +41,7 @@ public partial class NluUtterance : IEquatable<NluUtterance>
     /// The source of the utterance.
     /// </summary>
     /// <value>The source of the utterance.</value>
-    [DataMember(Name = "source", EmitDefaultValue = false)]
+    [JsonPropertyName("source")]
     public SourceEnum? Source { get; set; }
 
     /// <summary>
@@ -67,7 +67,7 @@ public partial class NluUtterance : IEquatable<NluUtterance>
     /// ID of the utterance.
     /// </summary>
     /// <value>ID of the utterance.</value>
-    [DataMember(Name = "id", EmitDefaultValue = false)]
+    [JsonPropertyName("id")]
     public string Id { get; private set; }
 
 
@@ -78,7 +78,7 @@ public partial class NluUtterance : IEquatable<NluUtterance>
     /// The list of segments that that constitute this utterance for the given intent.
     /// </summary>
     /// <value>The list of segments that that constitute this utterance for the given intent.</value>
-    [DataMember(Name = "segments", EmitDefaultValue = false)]
+    [JsonPropertyName("segments")]
     public List<NluUtteranceSegment> Segments { get; set; }
 
 

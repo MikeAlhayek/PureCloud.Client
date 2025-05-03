@@ -7,14 +7,14 @@ namespace PureCloud.Client.Models;
 /// <summary>
 /// DocumentBodyParagraphProperties
 /// </summary>
-[DataContract]
+
 public partial class DocumentBodyParagraphProperties : IEquatable<DocumentBodyParagraphProperties>
 {
     /// <summary>
     /// The font size for the paragraph. The valid values in 'em'.
     /// </summary>
     /// <value>The font size for the paragraph. The valid values in 'em'.</value>
-    [JsonConverter(typeof(JsonStringEnumConverter))]
+    
     public enum FontSizeEnum
     {
         /// <summary>
@@ -77,7 +77,7 @@ public partial class DocumentBodyParagraphProperties : IEquatable<DocumentBodyPa
     /// The font type for the paragraph.
     /// </summary>
     /// <value>The font type for the paragraph.</value>
-    [JsonConverter(typeof(JsonStringEnumConverter))]
+    
     public enum FontTypeEnum
     {
         /// <summary>
@@ -140,7 +140,7 @@ public partial class DocumentBodyParagraphProperties : IEquatable<DocumentBodyPa
     /// The align type for the paragraph.
     /// </summary>
     /// <value>The align type for the paragraph.</value>
-    [JsonConverter(typeof(JsonStringEnumConverter))]
+    
     public enum AlignEnum
     {
         /// <summary>
@@ -179,19 +179,19 @@ public partial class DocumentBodyParagraphProperties : IEquatable<DocumentBodyPa
     /// The font size for the paragraph. The valid values in 'em'.
     /// </summary>
     /// <value>The font size for the paragraph. The valid values in 'em'.</value>
-    [DataMember(Name = "fontSize", EmitDefaultValue = false)]
+    [JsonPropertyName("fontSize")]
     public FontSizeEnum? FontSize { get; set; }
     /// <summary>
     /// The font type for the paragraph.
     /// </summary>
     /// <value>The font type for the paragraph.</value>
-    [DataMember(Name = "fontType", EmitDefaultValue = false)]
+    [JsonPropertyName("fontType")]
     public FontTypeEnum? FontType { get; set; }
     /// <summary>
     /// The align type for the paragraph.
     /// </summary>
     /// <value>The align type for the paragraph.</value>
-    [DataMember(Name = "align", EmitDefaultValue = false)]
+    [JsonPropertyName("align")]
     public AlignEnum? Align { get; set; }
     /// <summary>
     /// Initializes a new instance of the <see cref="DocumentBodyParagraphProperties" /> class.
@@ -223,7 +223,7 @@ public partial class DocumentBodyParagraphProperties : IEquatable<DocumentBodyPa
     /// The text color for the paragraph. The valid values in hex color code representation. For example black color - #000000
     /// </summary>
     /// <value>The text color for the paragraph. The valid values in hex color code representation. For example black color - #000000</value>
-    [DataMember(Name = "textColor", EmitDefaultValue = false)]
+    [JsonPropertyName("textColor")]
     public string TextColor { get; set; }
 
 
@@ -232,7 +232,7 @@ public partial class DocumentBodyParagraphProperties : IEquatable<DocumentBodyPa
     /// The background color for the paragraph. The valid values in hex color code representation. For example black color - #000000
     /// </summary>
     /// <value>The background color for the paragraph. The valid values in hex color code representation. For example black color - #000000</value>
-    [DataMember(Name = "backgroundColor", EmitDefaultValue = false)]
+    [JsonPropertyName("backgroundColor")]
     public string BackgroundColor { get; set; }
 
 
@@ -243,7 +243,7 @@ public partial class DocumentBodyParagraphProperties : IEquatable<DocumentBodyPa
     /// The indentation color for the paragraph. The valid values in &#39;em&#39;.
     /// </summary>
     /// <value>The indentation color for the paragraph. The valid values in &#39;em&#39;.</value>
-    [DataMember(Name = "indentation", EmitDefaultValue = false)]
+    [JsonPropertyName("indentation")]
     public float? Indentation { get; set; }
 
 

@@ -7,14 +7,14 @@ namespace PureCloud.Client.Models;
 /// <summary>
 /// Quick reply object.
 /// </summary>
-[DataContract]
+
 public partial class ContentQuickReply : IEquatable<ContentQuickReply>
 {
     /// <summary>
     /// Specifies the type of action that is triggered upon clicking the quick reply.
     /// </summary>
     /// <value>Specifies the type of action that is triggered upon clicking the quick reply.</value>
-    [JsonConverter(typeof(JsonStringEnumConverter))]
+    
     public enum ActionEnum
     {
         /// <summary>
@@ -35,7 +35,7 @@ public partial class ContentQuickReply : IEquatable<ContentQuickReply>
     /// Specifies the type of action that is triggered upon clicking the quick reply.
     /// </summary>
     /// <value>Specifies the type of action that is triggered upon clicking the quick reply.</value>
-    [DataMember(Name = "action", EmitDefaultValue = false)]
+    [JsonPropertyName("action")]
     public ActionEnum? Action { get; set; }
 
     /// <summary>
@@ -67,7 +67,7 @@ public partial class ContentQuickReply : IEquatable<ContentQuickReply>
     /// A unique ID assigned to the quick reply (Deprecated).
     /// </summary>
     /// <value>A unique ID assigned to the quick reply (Deprecated).</value>
-    [DataMember(Name = "id", EmitDefaultValue = false)]
+    [JsonPropertyName("id")]
     public string Id { get; set; }
 
 
@@ -76,7 +76,7 @@ public partial class ContentQuickReply : IEquatable<ContentQuickReply>
     /// Text to show inside the quick reply. This is also used as the response text after clicking on the quick reply.
     /// </summary>
     /// <value>Text to show inside the quick reply. This is also used as the response text after clicking on the quick reply.</value>
-    [DataMember(Name = "text", EmitDefaultValue = false)]
+    [JsonPropertyName("text")]
     public string Text { get; set; }
 
 
@@ -85,7 +85,7 @@ public partial class ContentQuickReply : IEquatable<ContentQuickReply>
     /// Content of the payload included in the quick reply response. Could be an ID identifying the quick reply response.
     /// </summary>
     /// <value>Content of the payload included in the quick reply response. Could be an ID identifying the quick reply response.</value>
-    [DataMember(Name = "payload", EmitDefaultValue = false)]
+    [JsonPropertyName("payload")]
     public string Payload { get; set; }
 
 
@@ -94,7 +94,7 @@ public partial class ContentQuickReply : IEquatable<ContentQuickReply>
     /// URL of an image associated with the quick reply.
     /// </summary>
     /// <value>URL of an image associated with the quick reply.</value>
-    [DataMember(Name = "image", EmitDefaultValue = false)]
+    [JsonPropertyName("image")]
     public string Image { get; set; }
 
 

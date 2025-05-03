@@ -1,12 +1,12 @@
-using System.Runtime.Serialization;
 using System.Text;
+using System.Text.Json.Serialization;
 
 namespace PureCloud.Client.Models;
 
 /// <summary>
 /// BuForecastResult
 /// </summary>
-[DataContract]
+
 public partial class BuForecastResult : IEquatable<BuForecastResult>
 {
     /// <summary>
@@ -31,7 +31,7 @@ public partial class BuForecastResult : IEquatable<BuForecastResult>
     /// The reference start date for interval-based data for this forecast. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z
     /// </summary>
     /// <value>The reference start date for interval-based data for this forecast. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z</value>
-    [DataMember(Name = "referenceStartDate", EmitDefaultValue = false)]
+    [JsonPropertyName("referenceStartDate")]
     public DateTime? ReferenceStartDate { get; set; }
 
 
@@ -40,7 +40,7 @@ public partial class BuForecastResult : IEquatable<BuForecastResult>
     /// The forecast data broken up by planning group
     /// </summary>
     /// <value>The forecast data broken up by planning group</value>
-    [DataMember(Name = "planningGroups", EmitDefaultValue = false)]
+    [JsonPropertyName("planningGroups")]
     public List<ForecastPlanningGroupData> PlanningGroups { get; set; }
 
 
@@ -49,7 +49,7 @@ public partial class BuForecastResult : IEquatable<BuForecastResult>
     /// The week number represented by this response
     /// </summary>
     /// <value>The week number represented by this response</value>
-    [DataMember(Name = "weekNumber", EmitDefaultValue = false)]
+    [JsonPropertyName("weekNumber")]
     public int? WeekNumber { get; set; }
 
 
@@ -58,7 +58,7 @@ public partial class BuForecastResult : IEquatable<BuForecastResult>
     /// The number of weeks in this forecast
     /// </summary>
     /// <value>The number of weeks in this forecast</value>
-    [DataMember(Name = "weekCount", EmitDefaultValue = false)]
+    [JsonPropertyName("weekCount")]
     public int? WeekCount { get; set; }
 
 

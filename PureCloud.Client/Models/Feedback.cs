@@ -7,14 +7,14 @@ namespace PureCloud.Client.Models;
 /// <summary>
 /// Feedback
 /// </summary>
-[DataContract]
+
 public partial class Feedback : IEquatable<Feedback>
 {
     /// <summary>
     /// Feedback relevance.
     /// </summary>
     /// <value>Feedback relevance.</value>
-    [JsonConverter(typeof(JsonStringEnumConverter))]
+    
     public enum RelevanceEnum
     {
         /// <summary>
@@ -47,7 +47,7 @@ public partial class Feedback : IEquatable<Feedback>
     /// Feedback relevance.
     /// </summary>
     /// <value>Feedback relevance.</value>
-    [DataMember(Name = "relevance", EmitDefaultValue = false)]
+    [JsonPropertyName("relevance")]
     public RelevanceEnum? Relevance { get; set; }
 
     /// <summary>
@@ -75,7 +75,7 @@ public partial class Feedback : IEquatable<Feedback>
     /// Feedback suggestion id.
     /// </summary>
     /// <value>Feedback suggestion id.</value>
-    [DataMember(Name = "suggestionId", EmitDefaultValue = false)]
+    [JsonPropertyName("suggestionId")]
     public string SuggestionId { get; set; }
 
 
@@ -84,7 +84,7 @@ public partial class Feedback : IEquatable<Feedback>
     /// Indicates whether the answer/item was clicked by the human agent or not.
     /// </summary>
     /// <value>Indicates whether the answer/item was clicked by the human agent or not.</value>
-    [DataMember(Name = "userProvided", EmitDefaultValue = false)]
+    [JsonPropertyName("userProvided")]
     public bool? UserProvided { get; set; }
 
 

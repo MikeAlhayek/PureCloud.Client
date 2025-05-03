@@ -7,14 +7,14 @@ namespace PureCloud.Client.Models;
 /// <summary>
 /// HistoricalAdherenceActuals
 /// </summary>
-[DataContract]
+
 public partial class HistoricalAdherenceActuals : IEquatable<HistoricalAdherenceActuals>
 {
     /// <summary>
     /// Activity in which the user is actually engaged
     /// </summary>
     /// <value>Activity in which the user is actually engaged</value>
-    [JsonConverter(typeof(JsonStringEnumConverter))]
+    
     public enum ActualActivityCategoryEnum
     {
         /// <summary>
@@ -83,7 +83,7 @@ public partial class HistoricalAdherenceActuals : IEquatable<HistoricalAdherence
     /// Activity in which the user is actually engaged
     /// </summary>
     /// <value>Activity in which the user is actually engaged</value>
-    [DataMember(Name = "actualActivityCategory", EmitDefaultValue = false)]
+    [JsonPropertyName("actualActivityCategory")]
     public ActualActivityCategoryEnum? ActualActivityCategory { get; set; }
     /// <summary>
     /// Initializes a new instance of the <see cref="HistoricalAdherenceActuals" /> class.
@@ -109,7 +109,7 @@ public partial class HistoricalAdherenceActuals : IEquatable<HistoricalAdherence
     /// The lookup ID used to retrieve the actual secondary status from map of lookup ID to corresponding secondary presence ID
     /// </summary>
     /// <value>The lookup ID used to retrieve the actual secondary status from map of lookup ID to corresponding secondary presence ID</value>
-    [DataMember(Name = "actualSecondaryPresenceLookupId", EmitDefaultValue = false)]
+    [JsonPropertyName("actualSecondaryPresenceLookupId")]
     public string ActualSecondaryPresenceLookupId { get; set; }
 
 
@@ -118,7 +118,7 @@ public partial class HistoricalAdherenceActuals : IEquatable<HistoricalAdherence
     /// Actual start offset in seconds relative to query start time
     /// </summary>
     /// <value>Actual start offset in seconds relative to query start time</value>
-    [DataMember(Name = "startOffsetSeconds", EmitDefaultValue = false)]
+    [JsonPropertyName("startOffsetSeconds")]
     public int? StartOffsetSeconds { get; set; }
 
 
@@ -127,7 +127,7 @@ public partial class HistoricalAdherenceActuals : IEquatable<HistoricalAdherence
     /// Actual end offset in seconds relative to query start time
     /// </summary>
     /// <value>Actual end offset in seconds relative to query start time</value>
-    [DataMember(Name = "endOffsetSeconds", EmitDefaultValue = false)]
+    [JsonPropertyName("endOffsetSeconds")]
     public int? EndOffsetSeconds { get; set; }
 
 

@@ -1,12 +1,12 @@
-using System.Runtime.Serialization;
 using System.Text;
+using System.Text.Json.Serialization;
 
 namespace PureCloud.Client.Models;
 
 /// <summary>
 /// ArchitectFlowOutcomeNotificationFlowOutcomeNotification
 /// </summary>
-[DataContract]
+
 public partial class ArchitectFlowOutcomeNotificationFlowOutcomeNotification : IEquatable<ArchitectFlowOutcomeNotificationFlowOutcomeNotification>
 {
     /// <summary>
@@ -31,7 +31,7 @@ public partial class ArchitectFlowOutcomeNotificationFlowOutcomeNotification : I
     /// The flow outcome ID
     /// </summary>
     /// <value>The flow outcome ID</value>
-    [DataMember(Name = "id", EmitDefaultValue = false)]
+    [JsonPropertyName("id")]
     public string Id { get; set; }
 
 
@@ -40,7 +40,7 @@ public partial class ArchitectFlowOutcomeNotificationFlowOutcomeNotification : I
     /// The flow outcome name
     /// </summary>
     /// <value>The flow outcome name</value>
-    [DataMember(Name = "name", EmitDefaultValue = false)]
+    [JsonPropertyName("name")]
     public string Name { get; set; }
 
 
@@ -49,7 +49,7 @@ public partial class ArchitectFlowOutcomeNotificationFlowOutcomeNotification : I
     /// The flow outcome description
     /// </summary>
     /// <value>The flow outcome description</value>
-    [DataMember(Name = "description", EmitDefaultValue = false)]
+    [JsonPropertyName("description")]
     public string Description { get; set; }
 
 
@@ -57,7 +57,7 @@ public partial class ArchitectFlowOutcomeNotificationFlowOutcomeNotification : I
     /// <summary>
     /// Gets or Sets CurrentOperation
     /// </summary>
-    [DataMember(Name = "currentOperation", EmitDefaultValue = false)]
+    [JsonPropertyName("currentOperation")]
     public ArchitectFlowOutcomeNotificationArchitectOperation CurrentOperation { get; set; }
 
 

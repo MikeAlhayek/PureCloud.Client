@@ -1,12 +1,12 @@
-using System.Runtime.Serialization;
 using System.Text;
+using System.Text.Json.Serialization;
 
 namespace PureCloud.Client.Models;
 
 /// <summary>
 /// ConversationSocialExpressionEventTopicConversationDivisionMembership
 /// </summary>
-[DataContract]
+
 public partial class ConversationSocialExpressionEventTopicConversationDivisionMembership : IEquatable<ConversationSocialExpressionEventTopicConversationDivisionMembership>
 {
     /// <summary>
@@ -26,7 +26,7 @@ public partial class ConversationSocialExpressionEventTopicConversationDivisionM
     /// <summary>
     /// Gets or Sets Division
     /// </summary>
-    [DataMember(Name = "division", EmitDefaultValue = false)]
+    [JsonPropertyName("division")]
     public ConversationSocialExpressionEventTopicDomainEntityRef Division { get; set; }
 
 
@@ -34,7 +34,7 @@ public partial class ConversationSocialExpressionEventTopicConversationDivisionM
     /// <summary>
     /// Gets or Sets Entities
     /// </summary>
-    [DataMember(Name = "entities", EmitDefaultValue = false)]
+    [JsonPropertyName("entities")]
     public List<ConversationSocialExpressionEventTopicDivisionEntityRef> Entities { get; set; }
 
 

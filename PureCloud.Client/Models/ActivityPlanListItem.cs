@@ -7,14 +7,14 @@ namespace PureCloud.Client.Models;
 /// <summary>
 /// ActivityPlanListItem
 /// </summary>
-[DataContract]
+
 public partial class ActivityPlanListItem : IEquatable<ActivityPlanListItem>
 {
     /// <summary>
     /// The type of the activity plan
     /// </summary>
     /// <value>The type of the activity plan</value>
-    [JsonConverter(typeof(JsonStringEnumConverter))]
+    
     public enum TypeEnum
     {
         /// <summary>
@@ -41,7 +41,7 @@ public partial class ActivityPlanListItem : IEquatable<ActivityPlanListItem>
     /// The optimization objective of this activity plan
     /// </summary>
     /// <value>The optimization objective of this activity plan</value>
-    [JsonConverter(typeof(JsonStringEnumConverter))]
+    
     public enum OptimizationObjectiveEnum
     {
         /// <summary>
@@ -68,7 +68,7 @@ public partial class ActivityPlanListItem : IEquatable<ActivityPlanListItem>
     /// The state of this activity plan
     /// </summary>
     /// <value>The state of this activity plan</value>
-    [JsonConverter(typeof(JsonStringEnumConverter))]
+    
     public enum StateEnum
     {
         /// <summary>
@@ -95,19 +95,19 @@ public partial class ActivityPlanListItem : IEquatable<ActivityPlanListItem>
     /// The type of the activity plan
     /// </summary>
     /// <value>The type of the activity plan</value>
-    [DataMember(Name = "type", EmitDefaultValue = false)]
+    [JsonPropertyName("type")]
     public TypeEnum? Type { get; set; }
     /// <summary>
     /// The optimization objective of this activity plan
     /// </summary>
     /// <value>The optimization objective of this activity plan</value>
-    [DataMember(Name = "optimizationObjective", EmitDefaultValue = false)]
+    [JsonPropertyName("optimizationObjective")]
     public OptimizationObjectiveEnum? OptimizationObjective { get; set; }
     /// <summary>
     /// The state of this activity plan
     /// </summary>
     /// <value>The state of this activity plan</value>
-    [DataMember(Name = "state", EmitDefaultValue = false)]
+    [JsonPropertyName("state")]
     public StateEnum? State { get; set; }
 
     /// <summary>
@@ -157,7 +157,7 @@ public partial class ActivityPlanListItem : IEquatable<ActivityPlanListItem>
     /// The globally unique identifier for the object.
     /// </summary>
     /// <value>The globally unique identifier for the object.</value>
-    [DataMember(Name = "id", EmitDefaultValue = false)]
+    [JsonPropertyName("id")]
     public string Id { get; private set; }
 
 
@@ -166,7 +166,7 @@ public partial class ActivityPlanListItem : IEquatable<ActivityPlanListItem>
     /// The name of the activity plan
     /// </summary>
     /// <value>The name of the activity plan</value>
-    [DataMember(Name = "name", EmitDefaultValue = false)]
+    [JsonPropertyName("name")]
     public string Name { get; set; }
 
 
@@ -175,7 +175,7 @@ public partial class ActivityPlanListItem : IEquatable<ActivityPlanListItem>
     /// The management units to which this activity plan applies. Empty list or null means this activity plan applies to all management units in the business unit
     /// </summary>
     /// <value>The management units to which this activity plan applies. Empty list or null means this activity plan applies to all management units in the business unit</value>
-    [DataMember(Name = "managementUnits", EmitDefaultValue = false)]
+    [JsonPropertyName("managementUnits")]
     public List<ManagementUnitReference> ManagementUnits { get; set; }
 
 
@@ -184,7 +184,7 @@ public partial class ActivityPlanListItem : IEquatable<ActivityPlanListItem>
     /// The description of this activity plan
     /// </summary>
     /// <value>The description of this activity plan</value>
-    [DataMember(Name = "description", EmitDefaultValue = false)]
+    [JsonPropertyName("description")]
     public string Description { get; set; }
 
 
@@ -193,7 +193,7 @@ public partial class ActivityPlanListItem : IEquatable<ActivityPlanListItem>
     /// The activity code to which this activity plan applies. Note: It is recommended to load and cache the entire list of activity codes rather than look up individual codes
     /// </summary>
     /// <value>The activity code to which this activity plan applies. Note: It is recommended to load and cache the entire list of activity codes rather than look up individual codes</value>
-    [DataMember(Name = "activityCode", EmitDefaultValue = false)]
+    [JsonPropertyName("activityCode")]
     public ActivityCodeReference ActivityCode { get; set; }
 
 
@@ -206,7 +206,7 @@ public partial class ActivityPlanListItem : IEquatable<ActivityPlanListItem>
     /// Recurrence settings for this activity plan
     /// </summary>
     /// <value>Recurrence settings for this activity plan</value>
-    [DataMember(Name = "recurrenceSettings", EmitDefaultValue = false)]
+    [JsonPropertyName("recurrenceSettings")]
     public RecurrenceSettings RecurrenceSettings { get; set; }
 
 
@@ -217,7 +217,7 @@ public partial class ActivityPlanListItem : IEquatable<ActivityPlanListItem>
     /// The date the activity plan was last run, in ISO-8601 format
     /// </summary>
     /// <value>The date the activity plan was last run, in ISO-8601 format</value>
-    [DataMember(Name = "lastRunDate", EmitDefaultValue = false)]
+    [JsonPropertyName("lastRunDate")]
     public DateTime? LastRunDate { get; set; }
 
 
@@ -226,7 +226,7 @@ public partial class ActivityPlanListItem : IEquatable<ActivityPlanListItem>
     /// The last user to run this activity plan
     /// </summary>
     /// <value>The last user to run this activity plan</value>
-    [DataMember(Name = "lastRunBy", EmitDefaultValue = false)]
+    [JsonPropertyName("lastRunBy")]
     public UserReference LastRunBy { get; set; }
 
 
@@ -235,7 +235,7 @@ public partial class ActivityPlanListItem : IEquatable<ActivityPlanListItem>
     /// The date the activity plan was created, in ISO-8601 format
     /// </summary>
     /// <value>The date the activity plan was created, in ISO-8601 format</value>
-    [DataMember(Name = "createdDate", EmitDefaultValue = false)]
+    [JsonPropertyName("createdDate")]
     public DateTime? CreatedDate { get; set; }
 
 
@@ -244,7 +244,7 @@ public partial class ActivityPlanListItem : IEquatable<ActivityPlanListItem>
     /// The user who created this activity plan
     /// </summary>
     /// <value>The user who created this activity plan</value>
-    [DataMember(Name = "createdBy", EmitDefaultValue = false)]
+    [JsonPropertyName("createdBy")]
     public UserReference CreatedBy { get; set; }
 
 
@@ -253,7 +253,7 @@ public partial class ActivityPlanListItem : IEquatable<ActivityPlanListItem>
     /// The date the activity plan was modified, in ISO-8601 format
     /// </summary>
     /// <value>The date the activity plan was modified, in ISO-8601 format</value>
-    [DataMember(Name = "modifiedDate", EmitDefaultValue = false)]
+    [JsonPropertyName("modifiedDate")]
     public DateTime? ModifiedDate { get; set; }
 
 
@@ -262,7 +262,7 @@ public partial class ActivityPlanListItem : IEquatable<ActivityPlanListItem>
     /// The last user to modify this activity plan. The id may be &#39;System&#39; if it was an automated process
     /// </summary>
     /// <value>The last user to modify this activity plan. The id may be &#39;System&#39; if it was an automated process</value>
-    [DataMember(Name = "modifiedBy", EmitDefaultValue = false)]
+    [JsonPropertyName("modifiedBy")]
     public UserReference ModifiedBy { get; set; }
 
 
@@ -271,7 +271,7 @@ public partial class ActivityPlanListItem : IEquatable<ActivityPlanListItem>
     /// The URI for this object
     /// </summary>
     /// <value>The URI for this object</value>
-    [DataMember(Name = "selfUri", EmitDefaultValue = false)]
+    [JsonPropertyName("selfUri")]
     public string SelfUri { get; private set; }
 
 

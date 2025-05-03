@@ -1,12 +1,12 @@
-using System.Runtime.Serialization;
 using System.Text;
+using System.Text.Json.Serialization;
 
 namespace PureCloud.Client.Models;
 
 /// <summary>
 /// UserParam
 /// </summary>
-[DataContract]
+
 public partial class UserParam : IEquatable<UserParam>
 {
     /// <summary>
@@ -26,7 +26,7 @@ public partial class UserParam : IEquatable<UserParam>
     /// <summary>
     /// Gets or Sets Key
     /// </summary>
-    [DataMember(Name = "key", EmitDefaultValue = false)]
+    [JsonPropertyName("key")]
     public string Key { get; set; }
 
 
@@ -34,7 +34,7 @@ public partial class UserParam : IEquatable<UserParam>
     /// <summary>
     /// Gets or Sets Value
     /// </summary>
-    [DataMember(Name = "value", EmitDefaultValue = false)]
+    [JsonPropertyName("value")]
     public string Value { get; set; }
 
 

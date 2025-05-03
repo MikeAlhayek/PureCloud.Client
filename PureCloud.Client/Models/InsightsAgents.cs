@@ -7,14 +7,14 @@ namespace PureCloud.Client.Models;
 /// <summary>
 /// InsightsAgents
 /// </summary>
-[DataContract]
+
 public partial class InsightsAgents : IEquatable<InsightsAgents>
 {
     /// <summary>
     /// Granularity
     /// </summary>
     /// <value>Granularity</value>
-    [JsonConverter(typeof(JsonStringEnumConverter))]
+    
     public enum GranularityEnum
     {
         /// <summary>
@@ -47,7 +47,7 @@ public partial class InsightsAgents : IEquatable<InsightsAgents>
     /// Granularity
     /// </summary>
     /// <value>Granularity</value>
-    [DataMember(Name = "granularity", EmitDefaultValue = false)]
+    [JsonPropertyName("granularity")]
     public GranularityEnum? Granularity { get; set; }
     /// <summary>
     /// Initializes a new instance of the <see cref="InsightsAgents" /> class.
@@ -75,7 +75,7 @@ public partial class InsightsAgents : IEquatable<InsightsAgents>
     /// The performance profile
     /// </summary>
     /// <value>The performance profile</value>
-    [DataMember(Name = "performanceProfile", EmitDefaultValue = false)]
+    [JsonPropertyName("performanceProfile")]
     public AddressableEntityRef PerformanceProfile { get; set; }
 
 
@@ -84,7 +84,7 @@ public partial class InsightsAgents : IEquatable<InsightsAgents>
     /// The division
     /// </summary>
     /// <value>The division</value>
-    [DataMember(Name = "division", EmitDefaultValue = false)]
+    [JsonPropertyName("division")]
     public DivisionReference Division { get; set; }
 
 
@@ -95,7 +95,7 @@ public partial class InsightsAgents : IEquatable<InsightsAgents>
     /// Start workday used as the date range. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd
     /// </summary>
     /// <value>Start workday used as the date range. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd</value>
-    [DataMember(Name = "dateStartWorkday", EmitDefaultValue = false)]
+    [JsonPropertyName("dateStartWorkday")]
     public string DateStartWorkday { get; set; }
 
 
@@ -104,7 +104,7 @@ public partial class InsightsAgents : IEquatable<InsightsAgents>
     /// End workday used as the date range. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd
     /// </summary>
     /// <value>End workday used as the date range. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd</value>
-    [DataMember(Name = "dateEndWorkday", EmitDefaultValue = false)]
+    [JsonPropertyName("dateEndWorkday")]
     public string DateEndWorkday { get; set; }
 
 
@@ -113,7 +113,7 @@ public partial class InsightsAgents : IEquatable<InsightsAgents>
     /// The list of insights agents
     /// </summary>
     /// <value>The list of insights agents</value>
-    [DataMember(Name = "entities", EmitDefaultValue = false)]
+    [JsonPropertyName("entities")]
     public List<InsightsAgentItem> Entities { get; set; }
 
 

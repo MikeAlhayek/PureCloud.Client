@@ -7,14 +7,14 @@ namespace PureCloud.Client.Models;
 /// <summary>
 /// BuIntradayResponse
 /// </summary>
-[DataContract]
+
 public partial class BuIntradayResponse : IEquatable<BuIntradayResponse>
 {
     /// <summary>
     /// If not null, the reason there was no data for the request
     /// </summary>
     /// <value>If not null, the reason there was no data for the request</value>
-    [JsonConverter(typeof(JsonStringEnumConverter))]
+    
     public enum NoDataReasonEnum
     {
         /// <summary>
@@ -40,7 +40,7 @@ public partial class BuIntradayResponse : IEquatable<BuIntradayResponse>
     /// <summary>
     /// Gets or Sets Categories
     /// </summary>
-    [JsonConverter(typeof(JsonStringEnumConverter))]
+    
     public enum CategoriesEnum
     {
         /// <summary>
@@ -73,7 +73,7 @@ public partial class BuIntradayResponse : IEquatable<BuIntradayResponse>
     /// If not null, the reason there was no data for the request
     /// </summary>
     /// <value>If not null, the reason there was no data for the request</value>
-    [DataMember(Name = "noDataReason", EmitDefaultValue = false)]
+    [JsonPropertyName("noDataReason")]
     public NoDataReasonEnum? NoDataReason { get; set; }
     /// <summary>
     /// Initializes a new instance of the <see cref="BuIntradayResponse" /> class.
@@ -105,7 +105,7 @@ public partial class BuIntradayResponse : IEquatable<BuIntradayResponse>
     /// The start of the date range for which this data applies.  This is also the start reference point for the intervals represented in the various arrays. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z
     /// </summary>
     /// <value>The start of the date range for which this data applies.  This is also the start reference point for the intervals represented in the various arrays. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z</value>
-    [DataMember(Name = "startDate", EmitDefaultValue = false)]
+    [JsonPropertyName("startDate")]
     public DateTime? StartDate { get; set; }
 
 
@@ -114,7 +114,7 @@ public partial class BuIntradayResponse : IEquatable<BuIntradayResponse>
     /// The end of the date range for which this data applies. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z
     /// </summary>
     /// <value>The end of the date range for which this data applies. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z</value>
-    [DataMember(Name = "endDate", EmitDefaultValue = false)]
+    [JsonPropertyName("endDate")]
     public DateTime? EndDate { get; set; }
 
 
@@ -123,7 +123,7 @@ public partial class BuIntradayResponse : IEquatable<BuIntradayResponse>
     /// The aggregation period in minutes, which determines the interval duration of the returned data
     /// </summary>
     /// <value>The aggregation period in minutes, which determines the interval duration of the returned data</value>
-    [DataMember(Name = "intervalLengthMinutes", EmitDefaultValue = false)]
+    [JsonPropertyName("intervalLengthMinutes")]
     public int? IntervalLengthMinutes { get; set; }
 
 
@@ -134,7 +134,7 @@ public partial class BuIntradayResponse : IEquatable<BuIntradayResponse>
     /// The categories to which this data corresponds
     /// </summary>
     /// <value>The categories to which this data corresponds</value>
-    [DataMember(Name = "categories", EmitDefaultValue = false)]
+    [JsonPropertyName("categories")]
     public List<CategoriesEnum> Categories { get; set; }
 
 
@@ -143,7 +143,7 @@ public partial class BuIntradayResponse : IEquatable<BuIntradayResponse>
     /// Short term forecast reference
     /// </summary>
     /// <value>Short term forecast reference</value>
-    [DataMember(Name = "shortTermForecast", EmitDefaultValue = false)]
+    [JsonPropertyName("shortTermForecast")]
     public BuShortTermForecastReference ShortTermForecast { get; set; }
 
 
@@ -152,7 +152,7 @@ public partial class BuIntradayResponse : IEquatable<BuIntradayResponse>
     /// Schedule reference
     /// </summary>
     /// <value>Schedule reference</value>
-    [DataMember(Name = "schedule", EmitDefaultValue = false)]
+    [JsonPropertyName("schedule")]
     public BuScheduleReference Schedule { get; set; }
 
 
@@ -161,7 +161,7 @@ public partial class BuIntradayResponse : IEquatable<BuIntradayResponse>
     /// Intraday data grouped by a single media type and set of planning group IDs
     /// </summary>
     /// <value>Intraday data grouped by a single media type and set of planning group IDs</value>
-    [DataMember(Name = "intradayDataGroupings", EmitDefaultValue = false)]
+    [JsonPropertyName("intradayDataGroupings")]
     public List<BuIntradayDataGroup> IntradayDataGroupings { get; set; }
 
 

@@ -1,12 +1,12 @@
-using System.Runtime.Serialization;
 using System.Text;
+using System.Text.Json.Serialization;
 
 namespace PureCloud.Client.Models;
 
 /// <summary>
 /// AnalyticsProposedAgent
 /// </summary>
-[DataContract]
+
 public partial class AnalyticsProposedAgent : IEquatable<AnalyticsProposedAgent>
 {
     /// <summary>
@@ -27,7 +27,7 @@ public partial class AnalyticsProposedAgent : IEquatable<AnalyticsProposedAgent>
     /// Proposed agent rank for this conversation from predictive routing (lower is better)
     /// </summary>
     /// <value>Proposed agent rank for this conversation from predictive routing (lower is better)</value>
-    [DataMember(Name = "agentRank", EmitDefaultValue = false)]
+    [JsonPropertyName("agentRank")]
     public int? AgentRank { get; set; }
 
 
@@ -36,7 +36,7 @@ public partial class AnalyticsProposedAgent : IEquatable<AnalyticsProposedAgent>
     /// Unique identifier for the agent that was proposed by predictive routing
     /// </summary>
     /// <value>Unique identifier for the agent that was proposed by predictive routing</value>
-    [DataMember(Name = "proposedAgentId", EmitDefaultValue = false)]
+    [JsonPropertyName("proposedAgentId")]
     public string ProposedAgentId { get; set; }
 
 

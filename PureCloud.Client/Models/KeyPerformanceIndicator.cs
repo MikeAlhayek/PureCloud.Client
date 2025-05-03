@@ -7,14 +7,14 @@ namespace PureCloud.Client.Models;
 /// <summary>
 /// KeyPerformanceIndicator
 /// </summary>
-[DataContract]
+
 public partial class KeyPerformanceIndicator : IEquatable<KeyPerformanceIndicator>
 {
     /// <summary>
     /// The optimization type of the Key Performance Indicator.
     /// </summary>
     /// <value>The optimization type of the Key Performance Indicator.</value>
-    [JsonConverter(typeof(JsonStringEnumConverter))]
+    
     public enum OptimizationTypeEnum
     {
         /// <summary>
@@ -41,7 +41,7 @@ public partial class KeyPerformanceIndicator : IEquatable<KeyPerformanceIndicato
     /// The problem type of the Key Performance Indicator.
     /// </summary>
     /// <value>The problem type of the Key Performance Indicator.</value>
-    [JsonConverter(typeof(JsonStringEnumConverter))]
+    
     public enum ProblemTypeEnum
     {
         /// <summary>
@@ -68,7 +68,7 @@ public partial class KeyPerformanceIndicator : IEquatable<KeyPerformanceIndicato
     /// The type of Key Performance Indicator.
     /// </summary>
     /// <value>The type of Key Performance Indicator.</value>
-    [JsonConverter(typeof(JsonStringEnumConverter))]
+    
     public enum KpiTypeEnum
     {
         /// <summary>
@@ -119,7 +119,7 @@ public partial class KeyPerformanceIndicator : IEquatable<KeyPerformanceIndicato
     /// Source of values for Key Performance Indicator.
     /// </summary>
     /// <value>Source of values for Key Performance Indicator.</value>
-    [JsonConverter(typeof(JsonStringEnumConverter))]
+    
     public enum SourceEnum
     {
         /// <summary>
@@ -152,7 +152,7 @@ public partial class KeyPerformanceIndicator : IEquatable<KeyPerformanceIndicato
     /// The status of the Key Performance Indicator.
     /// </summary>
     /// <value>The status of the Key Performance Indicator.</value>
-    [JsonConverter(typeof(JsonStringEnumConverter))]
+    
     public enum StatusEnum
     {
         /// <summary>
@@ -179,7 +179,7 @@ public partial class KeyPerformanceIndicator : IEquatable<KeyPerformanceIndicato
     /// The group the Key Performance Indicator belongs to.
     /// </summary>
     /// <value>The group the Key Performance Indicator belongs to.</value>
-    [JsonConverter(typeof(JsonStringEnumConverter))]
+    
     public enum KpiGroupEnum
     {
         /// <summary>
@@ -206,37 +206,37 @@ public partial class KeyPerformanceIndicator : IEquatable<KeyPerformanceIndicato
     /// The optimization type of the Key Performance Indicator.
     /// </summary>
     /// <value>The optimization type of the Key Performance Indicator.</value>
-    [DataMember(Name = "optimizationType", EmitDefaultValue = false)]
+    [JsonPropertyName("optimizationType")]
     public OptimizationTypeEnum? OptimizationType { get; private set; }
     /// <summary>
     /// The problem type of the Key Performance Indicator.
     /// </summary>
     /// <value>The problem type of the Key Performance Indicator.</value>
-    [DataMember(Name = "problemType", EmitDefaultValue = false)]
+    [JsonPropertyName("problemType")]
     public ProblemTypeEnum? ProblemType { get; private set; }
     /// <summary>
     /// The type of Key Performance Indicator.
     /// </summary>
     /// <value>The type of Key Performance Indicator.</value>
-    [DataMember(Name = "kpiType", EmitDefaultValue = false)]
+    [JsonPropertyName("kpiType")]
     public KpiTypeEnum? KpiType { get; private set; }
     /// <summary>
     /// Source of values for Key Performance Indicator.
     /// </summary>
     /// <value>Source of values for Key Performance Indicator.</value>
-    [DataMember(Name = "source", EmitDefaultValue = false)]
+    [JsonPropertyName("source")]
     public SourceEnum? Source { get; private set; }
     /// <summary>
     /// The status of the Key Performance Indicator.
     /// </summary>
     /// <value>The status of the Key Performance Indicator.</value>
-    [DataMember(Name = "status", EmitDefaultValue = false)]
+    [JsonPropertyName("status")]
     public StatusEnum? Status { get; private set; }
     /// <summary>
     /// The group the Key Performance Indicator belongs to.
     /// </summary>
     /// <value>The group the Key Performance Indicator belongs to.</value>
-    [DataMember(Name = "kpiGroup", EmitDefaultValue = false)]
+    [JsonPropertyName("kpiGroup")]
     public KpiGroupEnum? KpiGroup { get; private set; }
     /// <summary>
     /// Initializes a new instance of the <see cref="KeyPerformanceIndicator" /> class.
@@ -252,7 +252,7 @@ public partial class KeyPerformanceIndicator : IEquatable<KeyPerformanceIndicato
     /// The globally unique identifier for the object.
     /// </summary>
     /// <value>The globally unique identifier for the object.</value>
-    [DataMember(Name = "id", EmitDefaultValue = false)]
+    [JsonPropertyName("id")]
     public string Id { get; private set; }
 
 
@@ -261,7 +261,7 @@ public partial class KeyPerformanceIndicator : IEquatable<KeyPerformanceIndicato
     /// The name of the Key Performance Indicator.
     /// </summary>
     /// <value>The name of the Key Performance Indicator.</value>
-    [DataMember(Name = "name", EmitDefaultValue = false)]
+    [JsonPropertyName("name")]
     public string Name { get; private set; }
 
 
@@ -274,7 +274,7 @@ public partial class KeyPerformanceIndicator : IEquatable<KeyPerformanceIndicato
     /// DateTime indicating when the Key Performance Indicator was created. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z
     /// </summary>
     /// <value>DateTime indicating when the Key Performance Indicator was created. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z</value>
-    [DataMember(Name = "dateCreated", EmitDefaultValue = false)]
+    [JsonPropertyName("dateCreated")]
     public DateTime? DateCreated { get; private set; }
 
 
@@ -283,7 +283,7 @@ public partial class KeyPerformanceIndicator : IEquatable<KeyPerformanceIndicato
     /// DateTime indicating when the Key Performance Indicator was modified. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z
     /// </summary>
     /// <value>DateTime indicating when the Key Performance Indicator was modified. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z</value>
-    [DataMember(Name = "dateModified", EmitDefaultValue = false)]
+    [JsonPropertyName("dateModified")]
     public DateTime? DateModified { get; private set; }
 
 
@@ -292,7 +292,7 @@ public partial class KeyPerformanceIndicator : IEquatable<KeyPerformanceIndicato
     /// The description of the Key Performance Indicator.
     /// </summary>
     /// <value>The description of the Key Performance Indicator.</value>
-    [DataMember(Name = "description", EmitDefaultValue = false)]
+    [JsonPropertyName("description")]
     public string Description { get; private set; }
 
 
@@ -305,7 +305,7 @@ public partial class KeyPerformanceIndicator : IEquatable<KeyPerformanceIndicato
     /// Defines what wrap up codes are mapped to Key Performance Indicator.
     /// </summary>
     /// <value>Defines what wrap up codes are mapped to Key Performance Indicator.</value>
-    [DataMember(Name = "wrapUpCodeConfig", EmitDefaultValue = false)]
+    [JsonPropertyName("wrapUpCodeConfig")]
     public WrapUpCodeConfig WrapUpCodeConfig { get; private set; }
 
 
@@ -314,7 +314,7 @@ public partial class KeyPerformanceIndicator : IEquatable<KeyPerformanceIndicato
     /// Defines what outcome ids are mapped to Key Performance Indicator.
     /// </summary>
     /// <value>Defines what outcome ids are mapped to Key Performance Indicator.</value>
-    [DataMember(Name = "outcomeConfig", EmitDefaultValue = false)]
+    [JsonPropertyName("outcomeConfig")]
     public OutcomeConfig OutcomeConfig { get; private set; }
 
 
@@ -327,7 +327,7 @@ public partial class KeyPerformanceIndicator : IEquatable<KeyPerformanceIndicato
     /// Queue IDs on which KPI specification is used.
     /// </summary>
     /// <value>Queue IDs on which KPI specification is used.</value>
-    [DataMember(Name = "queues", EmitDefaultValue = false)]
+    [JsonPropertyName("queues")]
     public List<string> Queues { get; private set; }
 
 
@@ -336,7 +336,7 @@ public partial class KeyPerformanceIndicator : IEquatable<KeyPerformanceIndicato
     /// The URI for this object
     /// </summary>
     /// <value>The URI for this object</value>
-    [DataMember(Name = "selfUri", EmitDefaultValue = false)]
+    [JsonPropertyName("selfUri")]
     public string SelfUri { get; private set; }
 
 

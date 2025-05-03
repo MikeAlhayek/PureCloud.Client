@@ -7,14 +7,14 @@ namespace PureCloud.Client.Models;
 /// <summary>
 /// AgentlessEmailSendResponseDto
 /// </summary>
-[DataContract]
+
 public partial class AgentlessEmailSendResponseDto : IEquatable<AgentlessEmailSendResponseDto>
 {
     /// <summary>
     /// The identifier of the external participant of the given conversation.
     /// </summary>
     /// <value>The identifier of the external participant of the given conversation.</value>
-    [JsonConverter(typeof(JsonStringEnumConverter))]
+    
     public enum SenderTypeEnum
     {
         /// <summary>
@@ -47,7 +47,7 @@ public partial class AgentlessEmailSendResponseDto : IEquatable<AgentlessEmailSe
     /// The identifier of the external participant of the given conversation.
     /// </summary>
     /// <value>The identifier of the external participant of the given conversation.</value>
-    [DataMember(Name = "senderType", EmitDefaultValue = false)]
+    [JsonPropertyName("senderType")]
     public SenderTypeEnum? SenderType { get; set; }
 
     /// <summary>
@@ -83,7 +83,7 @@ public partial class AgentlessEmailSendResponseDto : IEquatable<AgentlessEmailSe
     /// The globally unique identifier for the object.
     /// </summary>
     /// <value>The globally unique identifier for the object.</value>
-    [DataMember(Name = "id", EmitDefaultValue = false)]
+    [JsonPropertyName("id")]
     public string Id { get; private set; }
 
 
@@ -92,7 +92,7 @@ public partial class AgentlessEmailSendResponseDto : IEquatable<AgentlessEmailSe
     /// The identifier of the conversation.
     /// </summary>
     /// <value>The identifier of the conversation.</value>
-    [DataMember(Name = "conversationId", EmitDefaultValue = false)]
+    [JsonPropertyName("conversationId")]
     public string ConversationId { get; set; }
 
 
@@ -103,7 +103,7 @@ public partial class AgentlessEmailSendResponseDto : IEquatable<AgentlessEmailSe
     /// The sender of the message.
     /// </summary>
     /// <value>The sender of the message.</value>
-    [DataMember(Name = "fromAddress", EmitDefaultValue = false)]
+    [JsonPropertyName("fromAddress")]
     public EmailAddress FromAddress { get; set; }
 
 
@@ -112,7 +112,7 @@ public partial class AgentlessEmailSendResponseDto : IEquatable<AgentlessEmailSe
     /// The recipient of the message. We currently support one recipient only.
     /// </summary>
     /// <value>The recipient of the message. We currently support one recipient only.</value>
-    [DataMember(Name = "toAddresses", EmitDefaultValue = false)]
+    [JsonPropertyName("toAddresses")]
     public List<EmailAddress> ToAddresses { get; set; }
 
 
@@ -121,7 +121,7 @@ public partial class AgentlessEmailSendResponseDto : IEquatable<AgentlessEmailSe
     /// The address to use for reply.
     /// </summary>
     /// <value>The address to use for reply.</value>
-    [DataMember(Name = "replyToAddress", EmitDefaultValue = false)]
+    [JsonPropertyName("replyToAddress")]
     public EmailAddress ReplyToAddress { get; set; }
 
 
@@ -130,7 +130,7 @@ public partial class AgentlessEmailSendResponseDto : IEquatable<AgentlessEmailSe
     /// The subject of the message.
     /// </summary>
     /// <value>The subject of the message.</value>
-    [DataMember(Name = "subject", EmitDefaultValue = false)]
+    [JsonPropertyName("subject")]
     public string Subject { get; set; }
 
 
@@ -139,7 +139,7 @@ public partial class AgentlessEmailSendResponseDto : IEquatable<AgentlessEmailSe
     /// The message creation timestamp. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z
     /// </summary>
     /// <value>The message creation timestamp. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z</value>
-    [DataMember(Name = "dateCreated", EmitDefaultValue = false)]
+    [JsonPropertyName("dateCreated")]
     public DateTime? DateCreated { get; set; }
 
 
@@ -148,7 +148,7 @@ public partial class AgentlessEmailSendResponseDto : IEquatable<AgentlessEmailSe
     /// The URI for this object
     /// </summary>
     /// <value>The URI for this object</value>
-    [DataMember(Name = "selfUri", EmitDefaultValue = false)]
+    [JsonPropertyName("selfUri")]
     public string SelfUri { get; private set; }
 
 

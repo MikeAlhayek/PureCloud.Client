@@ -7,14 +7,14 @@ namespace PureCloud.Client.Models;
 /// <summary>
 /// Defines a SCIM phone number.
 /// </summary>
-[DataContract]
+
 public partial class ScimPhoneNumber : IEquatable<ScimPhoneNumber>
 {
     /// <summary>
     /// The type of phone number.
     /// </summary>
     /// <value>The type of phone number.</value>
-    [JsonConverter(typeof(JsonStringEnumConverter))]
+    
     public enum TypeEnum
     {
         /// <summary>
@@ -89,7 +89,7 @@ public partial class ScimPhoneNumber : IEquatable<ScimPhoneNumber>
     /// The type of phone number.
     /// </summary>
     /// <value>The type of phone number.</value>
-    [DataMember(Name = "type", EmitDefaultValue = false)]
+    [JsonPropertyName("type")]
     public TypeEnum? Type { get; set; }
     /// <summary>
     /// Initializes a new instance of the <see cref="ScimPhoneNumber" /> class.
@@ -111,7 +111,7 @@ public partial class ScimPhoneNumber : IEquatable<ScimPhoneNumber>
     /// The phone number in E.164 or tel URI format, for example, tel:+nnnnnnnn; ext&#x3D;xxxxx.
     /// </summary>
     /// <value>The phone number in E.164 or tel URI format, for example, tel:+nnnnnnnn; ext&#x3D;xxxxx.</value>
-    [DataMember(Name = "value", EmitDefaultValue = false)]
+    [JsonPropertyName("value")]
     public string Value { get; set; }
 
 
@@ -122,7 +122,7 @@ public partial class ScimPhoneNumber : IEquatable<ScimPhoneNumber>
     /// Indicates whether the phone number is the primary phone number.
     /// </summary>
     /// <value>Indicates whether the phone number is the primary phone number.</value>
-    [DataMember(Name = "primary", EmitDefaultValue = false)]
+    [JsonPropertyName("primary")]
     public bool? Primary { get; set; }
 
 

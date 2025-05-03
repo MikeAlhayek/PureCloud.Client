@@ -7,14 +7,14 @@ namespace PureCloud.Client.Models;
 /// <summary>
 /// AgentStateSegmentTypeCount
 /// </summary>
-[DataContract]
+
 public partial class AgentStateSegmentTypeCount : IEquatable<AgentStateSegmentTypeCount>
 {
     /// <summary>
     /// Segment type
     /// </summary>
     /// <value>Segment type</value>
-    [JsonConverter(typeof(JsonStringEnumConverter))]
+    
     public enum SegmentTypeEnum
     {
         /// <summary>
@@ -155,7 +155,7 @@ public partial class AgentStateSegmentTypeCount : IEquatable<AgentStateSegmentTy
     /// Segment type
     /// </summary>
     /// <value>Segment type</value>
-    [DataMember(Name = "segmentType", EmitDefaultValue = false)]
+    [JsonPropertyName("segmentType")]
     public SegmentTypeEnum? SegmentType { get; set; }
     /// <summary>
     /// Initializes a new instance of the <see cref="AgentStateSegmentTypeCount" /> class.
@@ -177,7 +177,7 @@ public partial class AgentStateSegmentTypeCount : IEquatable<AgentStateSegmentTy
     /// Count of segment type
     /// </summary>
     /// <value>Count of segment type</value>
-    [DataMember(Name = "count", EmitDefaultValue = false)]
+    [JsonPropertyName("count")]
     public int? Count { get; set; }
 
 

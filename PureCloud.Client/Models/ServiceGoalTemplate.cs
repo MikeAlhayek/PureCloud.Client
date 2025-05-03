@@ -1,12 +1,12 @@
-using System.Runtime.Serialization;
 using System.Text;
+using System.Text.Json.Serialization;
 
 namespace PureCloud.Client.Models;
 
 /// <summary>
 /// ServiceGoalTemplate
 /// </summary>
-[DataContract]
+
 public partial class ServiceGoalTemplate : IEquatable<ServiceGoalTemplate>
 {
     /// <summary>
@@ -35,7 +35,7 @@ public partial class ServiceGoalTemplate : IEquatable<ServiceGoalTemplate>
     /// The globally unique identifier for the object.
     /// </summary>
     /// <value>The globally unique identifier for the object.</value>
-    [DataMember(Name = "id", EmitDefaultValue = false)]
+    [JsonPropertyName("id")]
     public string Id { get; private set; }
 
 
@@ -43,7 +43,7 @@ public partial class ServiceGoalTemplate : IEquatable<ServiceGoalTemplate>
     /// <summary>
     /// Gets or Sets Name
     /// </summary>
-    [DataMember(Name = "name", EmitDefaultValue = false)]
+    [JsonPropertyName("name")]
     public string Name { get; set; }
 
 
@@ -52,7 +52,7 @@ public partial class ServiceGoalTemplate : IEquatable<ServiceGoalTemplate>
     /// Service level targets for this service goal template
     /// </summary>
     /// <value>Service level targets for this service goal template</value>
-    [DataMember(Name = "serviceLevel", EmitDefaultValue = false)]
+    [JsonPropertyName("serviceLevel")]
     public BuServiceLevel ServiceLevel { get; set; }
 
 
@@ -61,7 +61,7 @@ public partial class ServiceGoalTemplate : IEquatable<ServiceGoalTemplate>
     /// Average speed of answer targets for this service goal template
     /// </summary>
     /// <value>Average speed of answer targets for this service goal template</value>
-    [DataMember(Name = "averageSpeedOfAnswer", EmitDefaultValue = false)]
+    [JsonPropertyName("averageSpeedOfAnswer")]
     public BuAverageSpeedOfAnswer AverageSpeedOfAnswer { get; set; }
 
 
@@ -70,7 +70,7 @@ public partial class ServiceGoalTemplate : IEquatable<ServiceGoalTemplate>
     /// Abandon rate targets for this service goal template
     /// </summary>
     /// <value>Abandon rate targets for this service goal template</value>
-    [DataMember(Name = "abandonRate", EmitDefaultValue = false)]
+    [JsonPropertyName("abandonRate")]
     public BuAbandonRate AbandonRate { get; set; }
 
 
@@ -79,7 +79,7 @@ public partial class ServiceGoalTemplate : IEquatable<ServiceGoalTemplate>
     /// Version metadata for the service goal template
     /// </summary>
     /// <value>Version metadata for the service goal template</value>
-    [DataMember(Name = "metadata", EmitDefaultValue = false)]
+    [JsonPropertyName("metadata")]
     public WfmVersionedEntityMetadata Metadata { get; set; }
 
 
@@ -88,7 +88,7 @@ public partial class ServiceGoalTemplate : IEquatable<ServiceGoalTemplate>
     /// Settings controlling max percent increase and decrease of service goals for this service goal template
     /// </summary>
     /// <value>Settings controlling max percent increase and decrease of service goals for this service goal template</value>
-    [DataMember(Name = "impactOverride", EmitDefaultValue = false)]
+    [JsonPropertyName("impactOverride")]
     public ServiceGoalTemplateImpactOverride ImpactOverride { get; set; }
 
 
@@ -97,7 +97,7 @@ public partial class ServiceGoalTemplate : IEquatable<ServiceGoalTemplate>
     /// The URI for this object
     /// </summary>
     /// <value>The URI for this object</value>
-    [DataMember(Name = "selfUri", EmitDefaultValue = false)]
+    [JsonPropertyName("selfUri")]
     public string SelfUri { get; private set; }
 
 

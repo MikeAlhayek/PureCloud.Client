@@ -7,14 +7,14 @@ namespace PureCloud.Client.Models;
 /// <summary>
 /// SuggestionEngagement
 /// </summary>
-[DataContract]
+
 public partial class SuggestionEngagement : IEquatable<SuggestionEngagement>
 {
     /// <summary>
     /// The type of engagement with the suggestion.
     /// </summary>
     /// <value>The type of engagement with the suggestion.</value>
-    [JsonConverter(typeof(JsonStringEnumConverter))]
+    
     public enum EngagementTypeEnum
     {
         /// <summary>
@@ -53,7 +53,7 @@ public partial class SuggestionEngagement : IEquatable<SuggestionEngagement>
     /// The type of engagement with the suggestion.
     /// </summary>
     /// <value>The type of engagement with the suggestion.</value>
-    [DataMember(Name = "engagementType", EmitDefaultValue = false)]
+    [JsonPropertyName("engagementType")]
     public EngagementTypeEnum? EngagementType { get; set; }
 
     /// <summary>
@@ -81,7 +81,7 @@ public partial class SuggestionEngagement : IEquatable<SuggestionEngagement>
     /// The given feedback on the suggestion, if any.
     /// </summary>
     /// <value>The given feedback on the suggestion, if any.</value>
-    [DataMember(Name = "feedback", EmitDefaultValue = false)]
+    [JsonPropertyName("feedback")]
     public SuggestionFeedback Feedback { get; set; }
 
 

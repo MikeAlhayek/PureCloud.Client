@@ -7,14 +7,14 @@ namespace PureCloud.Client.Models;
 /// <summary>
 /// LearningSlot
 /// </summary>
-[DataContract]
+
 public partial class LearningSlot : IEquatable<LearningSlot>
 {
     /// <summary>
     /// Rating based on the staffing difference for scheduled slot
     /// </summary>
     /// <value>Rating based on the staffing difference for scheduled slot</value>
-    [JsonConverter(typeof(JsonStringEnumConverter))]
+    
     public enum DifferenceRatingEnum
     {
         /// <summary>
@@ -47,7 +47,7 @@ public partial class LearningSlot : IEquatable<LearningSlot>
     /// Rating based on the staffing difference for scheduled slot
     /// </summary>
     /// <value>Rating based on the staffing difference for scheduled slot</value>
-    [DataMember(Name = "differenceRating", EmitDefaultValue = false)]
+    [JsonPropertyName("differenceRating")]
     public DifferenceRatingEnum? DifferenceRating { get; set; }
     /// <summary>
     /// Initializes a new instance of the <see cref="LearningSlot" /> class.
@@ -71,7 +71,7 @@ public partial class LearningSlot : IEquatable<LearningSlot>
     /// Start date and time of scheduled Learning activity slot. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z
     /// </summary>
     /// <value>Start date and time of scheduled Learning activity slot. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z</value>
-    [DataMember(Name = "dateStart", EmitDefaultValue = false)]
+    [JsonPropertyName("dateStart")]
     public DateTime? DateStart { get; set; }
 
 
@@ -80,7 +80,7 @@ public partial class LearningSlot : IEquatable<LearningSlot>
     /// Length of Learning activity slot in minutes
     /// </summary>
     /// <value>Length of Learning activity slot in minutes</value>
-    [DataMember(Name = "lengthInMinutes", EmitDefaultValue = false)]
+    [JsonPropertyName("lengthInMinutes")]
     public int? LengthInMinutes { get; set; }
 
 
@@ -89,7 +89,7 @@ public partial class LearningSlot : IEquatable<LearningSlot>
     /// Difference between scheduled and forecast headcount for this slot after scheduling the Learning activity
     /// </summary>
     /// <value>Difference between scheduled and forecast headcount for this slot after scheduling the Learning activity</value>
-    [DataMember(Name = "staffingDifference", EmitDefaultValue = false)]
+    [JsonPropertyName("staffingDifference")]
     public double? StaffingDifference { get; set; }
 
 

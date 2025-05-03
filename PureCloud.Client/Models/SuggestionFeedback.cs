@@ -7,14 +7,14 @@ namespace PureCloud.Client.Models;
 /// <summary>
 /// SuggestionFeedback
 /// </summary>
-[DataContract]
+
 public partial class SuggestionFeedback : IEquatable<SuggestionFeedback>
 {
     /// <summary>
     /// The rating value of the suggestion feedback.
     /// </summary>
     /// <value>The rating value of the suggestion feedback.</value>
-    [JsonConverter(typeof(JsonStringEnumConverter))]
+    
     public enum RatingEnum
     {
         /// <summary>
@@ -41,7 +41,7 @@ public partial class SuggestionFeedback : IEquatable<SuggestionFeedback>
     /// The rating value of the suggestion feedback.
     /// </summary>
     /// <value>The rating value of the suggestion feedback.</value>
-    [DataMember(Name = "rating", EmitDefaultValue = false)]
+    [JsonPropertyName("rating")]
     public RatingEnum? Rating { get; set; }
 
     /// <summary>

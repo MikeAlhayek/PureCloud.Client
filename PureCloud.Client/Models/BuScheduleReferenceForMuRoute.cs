@@ -1,12 +1,12 @@
-using System.Runtime.Serialization;
 using System.Text;
+using System.Text.Json.Serialization;
 
 namespace PureCloud.Client.Models;
 
 /// <summary>
 /// BuScheduleReferenceForMuRoute
 /// </summary>
-[DataContract]
+
 public partial class BuScheduleReferenceForMuRoute : IEquatable<BuScheduleReferenceForMuRoute>
 {
     /// <summary>
@@ -27,7 +27,7 @@ public partial class BuScheduleReferenceForMuRoute : IEquatable<BuScheduleRefere
     /// The globally unique identifier for the object.
     /// </summary>
     /// <value>The globally unique identifier for the object.</value>
-    [DataMember(Name = "id", EmitDefaultValue = false)]
+    [JsonPropertyName("id")]
     public string Id { get; private set; }
 
 
@@ -36,7 +36,7 @@ public partial class BuScheduleReferenceForMuRoute : IEquatable<BuScheduleRefere
     /// The start week date for this schedule. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd
     /// </summary>
     /// <value>The start week date for this schedule. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd</value>
-    [DataMember(Name = "weekDate", EmitDefaultValue = false)]
+    [JsonPropertyName("weekDate")]
     public string WeekDate { get; set; }
 
 
@@ -45,7 +45,7 @@ public partial class BuScheduleReferenceForMuRoute : IEquatable<BuScheduleRefere
     /// The start week date for this schedule
     /// </summary>
     /// <value>The start week date for this schedule</value>
-    [DataMember(Name = "businessUnit", EmitDefaultValue = false)]
+    [JsonPropertyName("businessUnit")]
     public BusinessUnitReference BusinessUnit { get; set; }
 
 
@@ -54,7 +54,7 @@ public partial class BuScheduleReferenceForMuRoute : IEquatable<BuScheduleRefere
     /// The URI for this object
     /// </summary>
     /// <value>The URI for this object</value>
-    [DataMember(Name = "selfUri", EmitDefaultValue = false)]
+    [JsonPropertyName("selfUri")]
     public string SelfUri { get; private set; }
 
 

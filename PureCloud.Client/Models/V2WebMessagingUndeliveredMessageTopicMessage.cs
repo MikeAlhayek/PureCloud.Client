@@ -1,12 +1,12 @@
-using System.Runtime.Serialization;
 using System.Text;
+using System.Text.Json.Serialization;
 
 namespace PureCloud.Client.Models;
 
 /// <summary>
 /// V2WebMessagingUndeliveredMessageTopicMessage
 /// </summary>
-[DataContract]
+
 public partial class V2WebMessagingUndeliveredMessageTopicMessage : IEquatable<V2WebMessagingUndeliveredMessageTopicMessage>
 {
     /// <summary>
@@ -26,7 +26,7 @@ public partial class V2WebMessagingUndeliveredMessageTopicMessage : IEquatable<V
     /// <summary>
     /// Gets or Sets Id
     /// </summary>
-    [DataMember(Name = "id", EmitDefaultValue = false)]
+    [JsonPropertyName("id")]
     public string Id { get; set; }
 
 
@@ -34,7 +34,7 @@ public partial class V2WebMessagingUndeliveredMessageTopicMessage : IEquatable<V
     /// <summary>
     /// Gets or Sets EventTimeMs
     /// </summary>
-    [DataMember(Name = "eventTimeMs", EmitDefaultValue = false)]
+    [JsonPropertyName("eventTimeMs")]
     public long? EventTimeMs { get; set; }
 
 

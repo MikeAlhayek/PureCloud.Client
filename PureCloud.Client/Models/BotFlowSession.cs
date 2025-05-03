@@ -7,14 +7,14 @@ namespace PureCloud.Client.Models;
 /// <summary>
 /// BotFlowSession
 /// </summary>
-[DataContract]
+
 public partial class BotFlowSession : IEquatable<BotFlowSession>
 {
     /// <summary>
     /// The reason for session termination.
     /// </summary>
     /// <value>The reason for session termination.</value>
-    [JsonConverter(typeof(JsonStringEnumConverter))]
+    
     public enum BotResultEnum
     {
         /// <summary>
@@ -95,7 +95,7 @@ public partial class BotFlowSession : IEquatable<BotFlowSession>
     /// The category of result for the session.
     /// </summary>
     /// <value>The category of result for the session.</value>
-    [JsonConverter(typeof(JsonStringEnumConverter))]
+    
     public enum BotResultCategoryEnum
     {
         /// <summary>
@@ -164,13 +164,13 @@ public partial class BotFlowSession : IEquatable<BotFlowSession>
     /// The reason for session termination.
     /// </summary>
     /// <value>The reason for session termination.</value>
-    [DataMember(Name = "botResult", EmitDefaultValue = false)]
+    [JsonPropertyName("botResult")]
     public BotResultEnum? BotResult { get; set; }
     /// <summary>
     /// The category of result for the session.
     /// </summary>
     /// <value>The category of result for the session.</value>
-    [DataMember(Name = "botResultCategory", EmitDefaultValue = false)]
+    [JsonPropertyName("botResultCategory")]
     public BotResultCategoryEnum? BotResultCategory { get; set; }
     /// <summary>
     /// Initializes a new instance of the <see cref="BotFlowSession" /> class.
@@ -204,7 +204,7 @@ public partial class BotFlowSession : IEquatable<BotFlowSession>
     /// The ID of the bot session.
     /// </summary>
     /// <value>The ID of the bot session.</value>
-    [DataMember(Name = "id", EmitDefaultValue = false)]
+    [JsonPropertyName("id")]
     public string Id { get; set; }
 
 
@@ -213,7 +213,7 @@ public partial class BotFlowSession : IEquatable<BotFlowSession>
     /// The flow associated to this bot session.
     /// </summary>
     /// <value>The flow associated to this bot session.</value>
-    [DataMember(Name = "flow", EmitDefaultValue = false)]
+    [JsonPropertyName("flow")]
     public Entity Flow { get; set; }
 
 
@@ -222,7 +222,7 @@ public partial class BotFlowSession : IEquatable<BotFlowSession>
     /// Channel-specific information that describes the message channel/provider.
     /// </summary>
     /// <value>Channel-specific information that describes the message channel/provider.</value>
-    [DataMember(Name = "channel", EmitDefaultValue = false)]
+    [JsonPropertyName("channel")]
     public BotChannel Channel { get; set; }
 
 
@@ -231,7 +231,7 @@ public partial class BotFlowSession : IEquatable<BotFlowSession>
     /// The initial language of operation for the session.
     /// </summary>
     /// <value>The initial language of operation for the session.</value>
-    [DataMember(Name = "language", EmitDefaultValue = false)]
+    [JsonPropertyName("language")]
     public string Language { get; set; }
 
 
@@ -240,7 +240,7 @@ public partial class BotFlowSession : IEquatable<BotFlowSession>
     /// The language of the session at the time the session ended
     /// </summary>
     /// <value>The language of the session at the time the session ended</value>
-    [DataMember(Name = "endLanguage", EmitDefaultValue = false)]
+    [JsonPropertyName("endLanguage")]
     public string EndLanguage { get; set; }
 
 
@@ -253,7 +253,7 @@ public partial class BotFlowSession : IEquatable<BotFlowSession>
     /// Timestamp indicating when the session was created. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z
     /// </summary>
     /// <value>Timestamp indicating when the session was created. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z</value>
-    [DataMember(Name = "dateCreated", EmitDefaultValue = false)]
+    [JsonPropertyName("dateCreated")]
     public DateTime? DateCreated { get; set; }
 
 
@@ -262,7 +262,7 @@ public partial class BotFlowSession : IEquatable<BotFlowSession>
     /// Timestamp indicating when the session was completed. Note: The &#39;interval&#39; query param uses this timestamp to filter the output. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z
     /// </summary>
     /// <value>Timestamp indicating when the session was completed. Note: The &#39;interval&#39; query param uses this timestamp to filter the output. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z</value>
-    [DataMember(Name = "dateCompleted", EmitDefaultValue = false)]
+    [JsonPropertyName("dateCompleted")]
     public DateTime? DateCompleted { get; set; }
 
 
@@ -271,7 +271,7 @@ public partial class BotFlowSession : IEquatable<BotFlowSession>
     /// The conversation details, across potentially multiple Bot Flow sessions.
     /// </summary>
     /// <value>The conversation details, across potentially multiple Bot Flow sessions.</value>
-    [DataMember(Name = "conversation", EmitDefaultValue = false)]
+    [JsonPropertyName("conversation")]
     public AddressableEntityRef Conversation { get; private set; }
 
 

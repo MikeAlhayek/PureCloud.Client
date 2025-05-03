@@ -1,4 +1,3 @@
-using System.Runtime.Serialization;
 using System.Text;
 using System.Text.Json.Serialization;
 
@@ -7,7 +6,7 @@ namespace PureCloud.Client.Models;
 /// <summary>
 /// PolicyTestPayload
 /// </summary>
-[DataContract]
+
 public partial class PolicyTestPayload : IEquatable<PolicyTestPayload>
 {
 
@@ -32,7 +31,7 @@ public partial class PolicyTestPayload : IEquatable<PolicyTestPayload>
     /// A map of attribute names to attribute type and string representation of value. All attributes returned by api/v2/authorization/policies/{policyId}/attributes are required
     /// </summary>
     /// <value>A map of attribute names to attribute type and string representation of value. All attributes returned by api/v2/authorization/policies/{policyId}/attributes are required</value>
-    [DataMember(Name = "attributeData", EmitDefaultValue = false)]
+    [JsonPropertyName("attributeData")]
     public Dictionary<string, TypedAttribute> AttributeData { get; set; }
 
 

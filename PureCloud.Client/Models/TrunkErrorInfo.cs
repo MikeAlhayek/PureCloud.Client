@@ -1,12 +1,12 @@
-using System.Runtime.Serialization;
 using System.Text;
+using System.Text.Json.Serialization;
 
 namespace PureCloud.Client.Models;
 
 /// <summary>
 /// TrunkErrorInfo
 /// </summary>
-[DataContract]
+
 public partial class TrunkErrorInfo : IEquatable<TrunkErrorInfo>
 {
     /// <summary>
@@ -28,7 +28,7 @@ public partial class TrunkErrorInfo : IEquatable<TrunkErrorInfo>
     /// <summary>
     /// Gets or Sets Text
     /// </summary>
-    [DataMember(Name = "text", EmitDefaultValue = false)]
+    [JsonPropertyName("text")]
     public string Text { get; set; }
 
 
@@ -36,7 +36,7 @@ public partial class TrunkErrorInfo : IEquatable<TrunkErrorInfo>
     /// <summary>
     /// Gets or Sets Code
     /// </summary>
-    [DataMember(Name = "code", EmitDefaultValue = false)]
+    [JsonPropertyName("code")]
     public string Code { get; set; }
 
 
@@ -44,7 +44,7 @@ public partial class TrunkErrorInfo : IEquatable<TrunkErrorInfo>
     /// <summary>
     /// Gets or Sets Details
     /// </summary>
-    [DataMember(Name = "details", EmitDefaultValue = false)]
+    [JsonPropertyName("details")]
     public TrunkErrorInfoDetails Details { get; set; }
 
 

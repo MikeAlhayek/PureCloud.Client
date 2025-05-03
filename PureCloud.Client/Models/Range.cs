@@ -7,14 +7,14 @@ namespace PureCloud.Client.Models;
 /// <summary>
 /// Range
 /// </summary>
-[DataContract]
+
 public partial class Range : IEquatable<Range>
 {
     /// <summary>
     /// Range type (NoEnd: without an end date. EndDate: with an end date. Numbered: with a specific number of occurrences)
     /// </summary>
     /// <value>Range type (NoEnd: without an end date. EndDate: with an end date. Numbered: with a specific number of occurrences)</value>
-    [JsonConverter(typeof(JsonStringEnumConverter))]
+    
     public enum TypeEnum
     {
         /// <summary>
@@ -47,7 +47,7 @@ public partial class Range : IEquatable<Range>
     /// Range type (NoEnd: without an end date. EndDate: with an end date. Numbered: with a specific number of occurrences)
     /// </summary>
     /// <value>Range type (NoEnd: without an end date. EndDate: with an end date. Numbered: with a specific number of occurrences)</value>
-    [DataMember(Name = "type", EmitDefaultValue = false)]
+    [JsonPropertyName("type")]
     public TypeEnum? Type { get; set; }
 
     /// <summary>
@@ -77,7 +77,7 @@ public partial class Range : IEquatable<Range>
     /// The end date time of the last occurrence of the range as an ISO-8601 string. Required for EndDate range type.
     /// </summary>
     /// <value>The end date time of the last occurrence of the range as an ISO-8601 string. Required for EndDate range type.</value>
-    [DataMember(Name = "end", EmitDefaultValue = false)]
+    [JsonPropertyName("end")]
     public string End { get; set; }
 
 
@@ -86,7 +86,7 @@ public partial class Range : IEquatable<Range>
     /// The number of times the schedule will be repeated, e.g: 2. Required to set for Numbered range type.
     /// </summary>
     /// <value>The number of times the schedule will be repeated, e.g: 2. Required to set for Numbered range type.</value>
-    [DataMember(Name = "numberOfOccurrences", EmitDefaultValue = false)]
+    [JsonPropertyName("numberOfOccurrences")]
     public int? NumberOfOccurrences { get; set; }
 
 

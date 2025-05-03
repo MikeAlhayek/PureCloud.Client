@@ -7,14 +7,14 @@ namespace PureCloud.Client.Models;
 /// <summary>
 /// ConsultTransferUpdate
 /// </summary>
-[DataContract]
+
 public partial class ConsultTransferUpdate : IEquatable<ConsultTransferUpdate>
 {
     /// <summary>
     /// Determines to whom the initiating participant is speaking.
     /// </summary>
     /// <value>Determines to whom the initiating participant is speaking.</value>
-    [JsonConverter(typeof(JsonStringEnumConverter))]
+    
     public enum SpeakToEnum
     {
         /// <summary>
@@ -53,7 +53,7 @@ public partial class ConsultTransferUpdate : IEquatable<ConsultTransferUpdate>
     /// Determines to whom the initiating participant is speaking.
     /// </summary>
     /// <value>Determines to whom the initiating participant is speaking.</value>
-    [DataMember(Name = "speakTo", EmitDefaultValue = false)]
+    [JsonPropertyName("speakTo")]
     public SpeakToEnum? SpeakTo { get; set; }
 
     /// <summary>
@@ -81,7 +81,7 @@ public partial class ConsultTransferUpdate : IEquatable<ConsultTransferUpdate>
     /// The user ID of the person who wants to talk before completing the transfer. Could be the same of the context user ID
     /// </summary>
     /// <value>The user ID of the person who wants to talk before completing the transfer. Could be the same of the context user ID</value>
-    [DataMember(Name = "consultingUserId", EmitDefaultValue = false)]
+    [JsonPropertyName("consultingUserId")]
     public string ConsultingUserId { get; set; }
 
 

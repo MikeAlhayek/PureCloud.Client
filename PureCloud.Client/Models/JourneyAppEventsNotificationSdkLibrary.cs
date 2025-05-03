@@ -1,12 +1,12 @@
-using System.Runtime.Serialization;
 using System.Text;
+using System.Text.Json.Serialization;
 
 namespace PureCloud.Client.Models;
 
 /// <summary>
 /// JourneyAppEventsNotificationSdkLibrary
 /// </summary>
-[DataContract]
+
 public partial class JourneyAppEventsNotificationSdkLibrary : IEquatable<JourneyAppEventsNotificationSdkLibrary>
 {
     /// <summary>
@@ -26,7 +26,7 @@ public partial class JourneyAppEventsNotificationSdkLibrary : IEquatable<Journey
     /// <summary>
     /// Gets or Sets Name
     /// </summary>
-    [DataMember(Name = "name", EmitDefaultValue = false)]
+    [JsonPropertyName("name")]
     public string Name { get; set; }
 
 
@@ -34,7 +34,7 @@ public partial class JourneyAppEventsNotificationSdkLibrary : IEquatable<Journey
     /// <summary>
     /// Gets or Sets Version
     /// </summary>
-    [DataMember(Name = "version", EmitDefaultValue = false)]
+    [JsonPropertyName("version")]
     public string Version { get; set; }
 
 

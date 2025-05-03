@@ -1,4 +1,3 @@
-using System.Runtime.Serialization;
 using System.Text;
 using System.Text.Json.Serialization;
 
@@ -7,7 +6,7 @@ namespace PureCloud.Client.Models;
 /// <summary>
 /// GenerateMeetingIdRequest
 /// </summary>
-[DataContract]
+
 public partial class GenerateMeetingIdRequest : IEquatable<GenerateMeetingIdRequest>
 {
 
@@ -36,7 +35,7 @@ public partial class GenerateMeetingIdRequest : IEquatable<GenerateMeetingIdRequ
     /// The conferenceId for which to generate a meetingId
     /// </summary>
     /// <value>The conferenceId for which to generate a meetingId</value>
-    [DataMember(Name = "conferenceId", EmitDefaultValue = false)]
+    [JsonPropertyName("conferenceId")]
     public string ConferenceId { get; set; }
 
 
@@ -45,7 +44,7 @@ public partial class GenerateMeetingIdRequest : IEquatable<GenerateMeetingIdRequ
     /// Boolean flag for ephemeral status of the created record
     /// </summary>
     /// <value>Boolean flag for ephemeral status of the created record</value>
-    [DataMember(Name = "ephemeral", EmitDefaultValue = false)]
+    [JsonPropertyName("ephemeral")]
     public bool? Ephemeral { get; set; }
 
 
@@ -54,7 +53,7 @@ public partial class GenerateMeetingIdRequest : IEquatable<GenerateMeetingIdRequ
     /// Number of days the meetingId record will remain active
     /// </summary>
     /// <value>Number of days the meetingId record will remain active</value>
-    [DataMember(Name = "expireTimeDays", EmitDefaultValue = false)]
+    [JsonPropertyName("expireTimeDays")]
     public int? ExpireTimeDays { get; set; }
 
 

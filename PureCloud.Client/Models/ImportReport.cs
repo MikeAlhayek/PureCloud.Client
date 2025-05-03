@@ -1,12 +1,12 @@
-using System.Runtime.Serialization;
 using System.Text;
+using System.Text.Json.Serialization;
 
 namespace PureCloud.Client.Models;
 
 /// <summary>
 /// ImportReport
 /// </summary>
-[DataContract]
+
 public partial class ImportReport : IEquatable<ImportReport>
 {
     /// <summary>
@@ -30,7 +30,7 @@ public partial class ImportReport : IEquatable<ImportReport>
     /// <summary>
     /// Gets or Sets Errors
     /// </summary>
-    [DataMember(Name = "errors", EmitDefaultValue = false)]
+    [JsonPropertyName("errors")]
     public List<ImportError> Errors { get; set; }
 
 
@@ -38,7 +38,7 @@ public partial class ImportReport : IEquatable<ImportReport>
     /// <summary>
     /// Gets or Sets Validated
     /// </summary>
-    [DataMember(Name = "validated", EmitDefaultValue = false)]
+    [JsonPropertyName("validated")]
     public ResultCounters Validated { get; set; }
 
 
@@ -46,7 +46,7 @@ public partial class ImportReport : IEquatable<ImportReport>
     /// <summary>
     /// Gets or Sets Imported
     /// </summary>
-    [DataMember(Name = "imported", EmitDefaultValue = false)]
+    [JsonPropertyName("imported")]
     public ResultCounters Imported { get; set; }
 
 
@@ -54,7 +54,7 @@ public partial class ImportReport : IEquatable<ImportReport>
     /// <summary>
     /// Gets or Sets TotalDocuments
     /// </summary>
-    [DataMember(Name = "totalDocuments", EmitDefaultValue = false)]
+    [JsonPropertyName("totalDocuments")]
     public int? TotalDocuments { get; set; }
 
 

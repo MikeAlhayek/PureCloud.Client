@@ -7,14 +7,14 @@ namespace PureCloud.Client.Models;
 /// <summary>
 /// RoutePathResponse
 /// </summary>
-[DataContract]
+
 public partial class RoutePathResponse : IEquatable<RoutePathResponse>
 {
     /// <summary>
     /// The media type of the given queue associated with the route path
     /// </summary>
     /// <value>The media type of the given queue associated with the route path</value>
-    [JsonConverter(typeof(JsonStringEnumConverter))]
+    
     public enum MediaTypeEnum
     {
         /// <summary>
@@ -65,7 +65,7 @@ public partial class RoutePathResponse : IEquatable<RoutePathResponse>
     /// The media type of the given queue associated with the route path
     /// </summary>
     /// <value>The media type of the given queue associated with the route path</value>
-    [DataMember(Name = "mediaType", EmitDefaultValue = false)]
+    [JsonPropertyName("mediaType")]
     public MediaTypeEnum? MediaType { get; set; }
     /// <summary>
     /// Initializes a new instance of the <see cref="RoutePathResponse" /> class.
@@ -89,7 +89,7 @@ public partial class RoutePathResponse : IEquatable<RoutePathResponse>
     /// The ID of the queue associated with the route path
     /// </summary>
     /// <value>The ID of the queue associated with the route path</value>
-    [DataMember(Name = "queue", EmitDefaultValue = false)]
+    [JsonPropertyName("queue")]
     public QueueReference Queue { get; set; }
 
 
@@ -100,7 +100,7 @@ public partial class RoutePathResponse : IEquatable<RoutePathResponse>
     /// The ID of the language associated with the route path
     /// </summary>
     /// <value>The ID of the language associated with the route path</value>
-    [DataMember(Name = "language", EmitDefaultValue = false)]
+    [JsonPropertyName("language")]
     public LanguageReference Language { get; set; }
 
 
@@ -109,7 +109,7 @@ public partial class RoutePathResponse : IEquatable<RoutePathResponse>
     /// The set of skills associated with the route path
     /// </summary>
     /// <value>The set of skills associated with the route path</value>
-    [DataMember(Name = "skills", EmitDefaultValue = false)]
+    [JsonPropertyName("skills")]
     public List<RoutingSkillReference> Skills { get; set; }
 
 

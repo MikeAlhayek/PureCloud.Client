@@ -7,14 +7,14 @@ namespace PureCloud.Client.Models;
 /// <summary>
 /// WebChatMemberInfo
 /// </summary>
-[DataContract]
+
 public partial class WebChatMemberInfo : IEquatable<WebChatMemberInfo>
 {
     /// <summary>
     /// The role of the member, one of [agent, customer, acd, workflow]
     /// </summary>
     /// <value>The role of the member, one of [agent, customer, acd, workflow]</value>
-    [JsonConverter(typeof(JsonStringEnumConverter))]
+    
     public enum RoleEnum
     {
         /// <summary>
@@ -53,7 +53,7 @@ public partial class WebChatMemberInfo : IEquatable<WebChatMemberInfo>
     /// The connection state of this member.
     /// </summary>
     /// <value>The connection state of this member.</value>
-    [JsonConverter(typeof(JsonStringEnumConverter))]
+    
     public enum StateEnum
     {
         /// <summary>
@@ -86,13 +86,13 @@ public partial class WebChatMemberInfo : IEquatable<WebChatMemberInfo>
     /// The role of the member, one of [agent, customer, acd, workflow]
     /// </summary>
     /// <value>The role of the member, one of [agent, customer, acd, workflow]</value>
-    [DataMember(Name = "role", EmitDefaultValue = false)]
+    [JsonPropertyName("role")]
     public RoleEnum? Role { get; set; }
     /// <summary>
     /// The connection state of this member.
     /// </summary>
     /// <value>The connection state of this member.</value>
-    [DataMember(Name = "state", EmitDefaultValue = false)]
+    [JsonPropertyName("state")]
     public StateEnum? State { get; set; }
 
     /// <summary>
@@ -140,7 +140,7 @@ public partial class WebChatMemberInfo : IEquatable<WebChatMemberInfo>
     /// The communicationId of this member.
     /// </summary>
     /// <value>The communicationId of this member.</value>
-    [DataMember(Name = "id", EmitDefaultValue = false)]
+    [JsonPropertyName("id")]
     public string Id { get; set; }
 
 
@@ -149,7 +149,7 @@ public partial class WebChatMemberInfo : IEquatable<WebChatMemberInfo>
     /// The display name of the member.
     /// </summary>
     /// <value>The display name of the member.</value>
-    [DataMember(Name = "displayName", EmitDefaultValue = false)]
+    [JsonPropertyName("displayName")]
     public string DisplayName { get; set; }
 
 
@@ -158,7 +158,7 @@ public partial class WebChatMemberInfo : IEquatable<WebChatMemberInfo>
     /// The first name of the member.
     /// </summary>
     /// <value>The first name of the member.</value>
-    [DataMember(Name = "firstName", EmitDefaultValue = false)]
+    [JsonPropertyName("firstName")]
     public string FirstName { get; set; }
 
 
@@ -167,7 +167,7 @@ public partial class WebChatMemberInfo : IEquatable<WebChatMemberInfo>
     /// The last name of the member.
     /// </summary>
     /// <value>The last name of the member.</value>
-    [DataMember(Name = "lastName", EmitDefaultValue = false)]
+    [JsonPropertyName("lastName")]
     public string LastName { get; set; }
 
 
@@ -176,7 +176,7 @@ public partial class WebChatMemberInfo : IEquatable<WebChatMemberInfo>
     /// The email address of the member.
     /// </summary>
     /// <value>The email address of the member.</value>
-    [DataMember(Name = "email", EmitDefaultValue = false)]
+    [JsonPropertyName("email")]
     public string Email { get; set; }
 
 
@@ -185,7 +185,7 @@ public partial class WebChatMemberInfo : IEquatable<WebChatMemberInfo>
     /// The phone number of the member.
     /// </summary>
     /// <value>The phone number of the member.</value>
-    [DataMember(Name = "phoneNumber", EmitDefaultValue = false)]
+    [JsonPropertyName("phoneNumber")]
     public string PhoneNumber { get; set; }
 
 
@@ -194,7 +194,7 @@ public partial class WebChatMemberInfo : IEquatable<WebChatMemberInfo>
     /// The url to the avatar image of the member.
     /// </summary>
     /// <value>The url to the avatar image of the member.</value>
-    [DataMember(Name = "avatarImageUrl", EmitDefaultValue = false)]
+    [JsonPropertyName("avatarImageUrl")]
     public string AvatarImageUrl { get; set; }
 
 
@@ -205,7 +205,7 @@ public partial class WebChatMemberInfo : IEquatable<WebChatMemberInfo>
     /// The time the member joined the conversation. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z
     /// </summary>
     /// <value>The time the member joined the conversation. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z</value>
-    [DataMember(Name = "joinDate", EmitDefaultValue = false)]
+    [JsonPropertyName("joinDate")]
     public DateTime? JoinDate { get; set; }
 
 
@@ -214,7 +214,7 @@ public partial class WebChatMemberInfo : IEquatable<WebChatMemberInfo>
     /// The time the member left the conversation, or null if the member is still active in the conversation. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z
     /// </summary>
     /// <value>The time the member left the conversation, or null if the member is still active in the conversation. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z</value>
-    [DataMember(Name = "leaveDate", EmitDefaultValue = false)]
+    [JsonPropertyName("leaveDate")]
     public DateTime? LeaveDate { get; set; }
 
 
@@ -223,7 +223,7 @@ public partial class WebChatMemberInfo : IEquatable<WebChatMemberInfo>
     /// If true, the guest member is an authenticated guest.
     /// </summary>
     /// <value>If true, the guest member is an authenticated guest.</value>
-    [DataMember(Name = "authenticatedGuest", EmitDefaultValue = false)]
+    [JsonPropertyName("authenticatedGuest")]
     public bool? AuthenticatedGuest { get; set; }
 
 
@@ -232,7 +232,7 @@ public partial class WebChatMemberInfo : IEquatable<WebChatMemberInfo>
     /// Any custom fields of information pertaining to this member.
     /// </summary>
     /// <value>Any custom fields of information pertaining to this member.</value>
-    [DataMember(Name = "customFields", EmitDefaultValue = false)]
+    [JsonPropertyName("customFields")]
     public Dictionary<string, string> CustomFields { get; set; }
 
 

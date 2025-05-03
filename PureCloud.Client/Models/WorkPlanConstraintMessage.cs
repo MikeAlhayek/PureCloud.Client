@@ -7,14 +7,14 @@ namespace PureCloud.Client.Models;
 /// <summary>
 /// WorkPlanConstraintMessage
 /// </summary>
-[DataContract]
+
 public partial class WorkPlanConstraintMessage : IEquatable<WorkPlanConstraintMessage>
 {
     /// <summary>
     /// Type of the work plan constraint in this message
     /// </summary>
     /// <value>Type of the work plan constraint in this message</value>
-    [JsonConverter(typeof(JsonStringEnumConverter))]
+    
     public enum TypeEnum
     {
         /// <summary>
@@ -251,7 +251,7 @@ public partial class WorkPlanConstraintMessage : IEquatable<WorkPlanConstraintMe
     /// Type of the work plan constraint in this message
     /// </summary>
     /// <value>Type of the work plan constraint in this message</value>
-    [DataMember(Name = "type", EmitDefaultValue = false)]
+    [JsonPropertyName("type")]
     public TypeEnum? Type { get; set; }
     /// <summary>
     /// Initializes a new instance of the <see cref="WorkPlanConstraintMessage" /> class.
@@ -273,7 +273,7 @@ public partial class WorkPlanConstraintMessage : IEquatable<WorkPlanConstraintMe
     /// Arguments of the message that provide information about the constraint that is being conflicted with, such as the value of the constraint
     /// </summary>
     /// <value>Arguments of the message that provide information about the constraint that is being conflicted with, such as the value of the constraint</value>
-    [DataMember(Name = "arguments", EmitDefaultValue = false)]
+    [JsonPropertyName("arguments")]
     public List<WorkPlanValidationMessageArgument> Arguments { get; set; }
 
 

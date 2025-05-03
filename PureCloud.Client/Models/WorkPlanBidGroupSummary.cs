@@ -1,4 +1,3 @@
-using System.Runtime.Serialization;
 using System.Text;
 using System.Text.Json.Serialization;
 
@@ -7,7 +6,7 @@ namespace PureCloud.Client.Models;
 /// <summary>
 /// WorkPlanBidGroupSummary
 /// </summary>
-[DataContract]
+
 public partial class WorkPlanBidGroupSummary : IEquatable<WorkPlanBidGroupSummary>
 {
 
@@ -40,7 +39,7 @@ public partial class WorkPlanBidGroupSummary : IEquatable<WorkPlanBidGroupSummar
     /// The globally unique identifier for the object.
     /// </summary>
     /// <value>The globally unique identifier for the object.</value>
-    [DataMember(Name = "id", EmitDefaultValue = false)]
+    [JsonPropertyName("id")]
     public string Id { get; private set; }
 
 
@@ -49,7 +48,7 @@ public partial class WorkPlanBidGroupSummary : IEquatable<WorkPlanBidGroupSummar
     /// The name assigned to this bid group
     /// </summary>
     /// <value>The name assigned to this bid group</value>
-    [DataMember(Name = "name", EmitDefaultValue = false)]
+    [JsonPropertyName("name")]
     public string Name { get; set; }
 
 
@@ -58,7 +57,7 @@ public partial class WorkPlanBidGroupSummary : IEquatable<WorkPlanBidGroupSummar
     /// The management unit this bid group belongs to
     /// </summary>
     /// <value>The management unit this bid group belongs to</value>
-    [DataMember(Name = "managementUnit", EmitDefaultValue = false)]
+    [JsonPropertyName("managementUnit")]
     public ManagementUnitReference ManagementUnit { get; set; }
 
 
@@ -67,7 +66,7 @@ public partial class WorkPlanBidGroupSummary : IEquatable<WorkPlanBidGroupSummar
     /// The number of agents in this bid group
     /// </summary>
     /// <value>The number of agents in this bid group</value>
-    [DataMember(Name = "agentCount", EmitDefaultValue = false)]
+    [JsonPropertyName("agentCount")]
     public int? AgentCount { get; set; }
 
 
@@ -76,7 +75,7 @@ public partial class WorkPlanBidGroupSummary : IEquatable<WorkPlanBidGroupSummar
     /// The number of work plans in this bid group
     /// </summary>
     /// <value>The number of work plans in this bid group</value>
-    [DataMember(Name = "workPlanCount", EmitDefaultValue = false)]
+    [JsonPropertyName("workPlanCount")]
     public int? WorkPlanCount { get; set; }
 
 
@@ -85,7 +84,7 @@ public partial class WorkPlanBidGroupSummary : IEquatable<WorkPlanBidGroupSummar
     /// The number of planning groups in this bid group
     /// </summary>
     /// <value>The number of planning groups in this bid group</value>
-    [DataMember(Name = "planningGroupCount", EmitDefaultValue = false)]
+    [JsonPropertyName("planningGroupCount")]
     public int? PlanningGroupCount { get; set; }
 
 
@@ -94,7 +93,7 @@ public partial class WorkPlanBidGroupSummary : IEquatable<WorkPlanBidGroupSummar
     /// The URI for this object
     /// </summary>
     /// <value>The URI for this object</value>
-    [DataMember(Name = "selfUri", EmitDefaultValue = false)]
+    [JsonPropertyName("selfUri")]
     public string SelfUri { get; private set; }
 
 

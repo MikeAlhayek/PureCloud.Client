@@ -7,13 +7,13 @@ namespace PureCloud.Client.Models;
 /// <summary>
 /// V2MobiusAlertsTopicConditionRulePredicate
 /// </summary>
-[DataContract]
+
 public partial class V2MobiusAlertsTopicConditionRulePredicate : IEquatable<V2MobiusAlertsTopicConditionRulePredicate>
 {
     /// <summary>
     /// Gets or Sets MetricType
     /// </summary>
-    [JsonConverter(typeof(JsonStringEnumConverter))]
+    
     public enum MetricTypeEnum
     {
         /// <summary>
@@ -45,7 +45,7 @@ public partial class V2MobiusAlertsTopicConditionRulePredicate : IEquatable<V2Mo
     /// <summary>
     /// Gets or Sets MetricValueType
     /// </summary>
-    [JsonConverter(typeof(JsonStringEnumConverter))]
+    
     public enum MetricValueTypeEnum
     {
         /// <summary>
@@ -107,7 +107,7 @@ public partial class V2MobiusAlertsTopicConditionRulePredicate : IEquatable<V2Mo
     /// <summary>
     /// Gets or Sets MediaType
     /// </summary>
-    [JsonConverter(typeof(JsonStringEnumConverter))]
+    
     public enum MediaTypeEnum
     {
         /// <summary>
@@ -169,7 +169,7 @@ public partial class V2MobiusAlertsTopicConditionRulePredicate : IEquatable<V2Mo
     /// <summary>
     /// Gets or Sets ComparisonOperator
     /// </summary>
-    [JsonConverter(typeof(JsonStringEnumConverter))]
+    
     public enum ComparisonOperatorEnum
     {
         /// <summary>
@@ -225,22 +225,22 @@ public partial class V2MobiusAlertsTopicConditionRulePredicate : IEquatable<V2Mo
     /// <summary>
     /// Gets or Sets MetricType
     /// </summary>
-    [DataMember(Name = "metricType", EmitDefaultValue = false)]
+    [JsonPropertyName("metricType")]
     public MetricTypeEnum? MetricType { get; set; }
     /// <summary>
     /// Gets or Sets MetricValueType
     /// </summary>
-    [DataMember(Name = "metricValueType", EmitDefaultValue = false)]
+    [JsonPropertyName("metricValueType")]
     public MetricValueTypeEnum? MetricValueType { get; set; }
     /// <summary>
     /// Gets or Sets MediaType
     /// </summary>
-    [DataMember(Name = "mediaType", EmitDefaultValue = false)]
+    [JsonPropertyName("mediaType")]
     public MediaTypeEnum? MediaType { get; set; }
     /// <summary>
     /// Gets or Sets ComparisonOperator
     /// </summary>
-    [DataMember(Name = "comparisonOperator", EmitDefaultValue = false)]
+    [JsonPropertyName("comparisonOperator")]
     public ComparisonOperatorEnum? ComparisonOperator { get; set; }
     /// <summary>
     /// Initializes a new instance of the <see cref="V2MobiusAlertsTopicConditionRulePredicate" /> class.
@@ -275,7 +275,7 @@ public partial class V2MobiusAlertsTopicConditionRulePredicate : IEquatable<V2Mo
     /// <summary>
     /// Gets or Sets Id
     /// </summary>
-    [DataMember(Name = "id", EmitDefaultValue = false)]
+    [JsonPropertyName("id")]
     public Guid? Id { get; set; }
 
 
@@ -283,7 +283,7 @@ public partial class V2MobiusAlertsTopicConditionRulePredicate : IEquatable<V2Mo
     /// <summary>
     /// Gets or Sets Entity
     /// </summary>
-    [DataMember(Name = "entity", EmitDefaultValue = false)]
+    [JsonPropertyName("entity")]
     public V2MobiusAlertsTopicEntityProperties Entity { get; set; }
 
 
@@ -291,7 +291,7 @@ public partial class V2MobiusAlertsTopicConditionRulePredicate : IEquatable<V2Mo
     /// <summary>
     /// Gets or Sets Metric
     /// </summary>
-    [DataMember(Name = "metric", EmitDefaultValue = false)]
+    [JsonPropertyName("metric")]
     public string Metric { get; set; }
 
 
@@ -303,7 +303,7 @@ public partial class V2MobiusAlertsTopicConditionRulePredicate : IEquatable<V2Mo
     /// <summary>
     /// Gets or Sets Value
     /// </summary>
-    [DataMember(Name = "value", EmitDefaultValue = false)]
+    [JsonPropertyName("value")]
     public double? Value { get; set; }
 
 
@@ -311,7 +311,7 @@ public partial class V2MobiusAlertsTopicConditionRulePredicate : IEquatable<V2Mo
     /// <summary>
     /// Gets or Sets Status
     /// </summary>
-    [DataMember(Name = "status", EmitDefaultValue = false)]
+    [JsonPropertyName("status")]
     public string Status { get; set; }
 
 
@@ -321,7 +321,7 @@ public partial class V2MobiusAlertsTopicConditionRulePredicate : IEquatable<V2Mo
     /// <summary>
     /// Gets or Sets Topic
     /// </summary>
-    [DataMember(Name = "topic", EmitDefaultValue = false)]
+    [JsonPropertyName("topic")]
     public string Topic { get; set; }
 
 

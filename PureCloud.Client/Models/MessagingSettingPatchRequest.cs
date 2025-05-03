@@ -1,12 +1,12 @@
-using System.Runtime.Serialization;
 using System.Text;
+using System.Text.Json.Serialization;
 
 namespace PureCloud.Client.Models;
 
 /// <summary>
 /// Messaging setting for messaging platform integrations
 /// </summary>
-[DataContract]
+
 public partial class MessagingSettingPatchRequest : IEquatable<MessagingSettingPatchRequest>
 {
     /// <summary>
@@ -29,7 +29,7 @@ public partial class MessagingSettingPatchRequest : IEquatable<MessagingSettingP
     /// The globally unique identifier for the object.
     /// </summary>
     /// <value>The globally unique identifier for the object.</value>
-    [DataMember(Name = "id", EmitDefaultValue = false)]
+    [JsonPropertyName("id")]
     public string Id { get; private set; }
 
 
@@ -38,7 +38,7 @@ public partial class MessagingSettingPatchRequest : IEquatable<MessagingSettingP
     /// The messaging Setting profile name
     /// </summary>
     /// <value>The messaging Setting profile name</value>
-    [DataMember(Name = "name", EmitDefaultValue = false)]
+    [JsonPropertyName("name")]
     public string Name { get; set; }
 
 
@@ -47,7 +47,7 @@ public partial class MessagingSettingPatchRequest : IEquatable<MessagingSettingP
     /// Settings relating to message contents
     /// </summary>
     /// <value>Settings relating to message contents</value>
-    [DataMember(Name = "content", EmitDefaultValue = false)]
+    [JsonPropertyName("content")]
     public ContentSetting Content { get; set; }
 
 
@@ -56,7 +56,7 @@ public partial class MessagingSettingPatchRequest : IEquatable<MessagingSettingP
     /// Settings relating to events which may occur
     /// </summary>
     /// <value>Settings relating to events which may occur</value>
-    [DataMember(Name = "event", EmitDefaultValue = false)]
+    [JsonPropertyName("event")]
     public EventSetting Event { get; set; }
 
 
@@ -65,7 +65,7 @@ public partial class MessagingSettingPatchRequest : IEquatable<MessagingSettingP
     /// The URI for this object
     /// </summary>
     /// <value>The URI for this object</value>
-    [DataMember(Name = "selfUri", EmitDefaultValue = false)]
+    [JsonPropertyName("selfUri")]
     public string SelfUri { get; private set; }
 
 

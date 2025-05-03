@@ -1,12 +1,12 @@
-using System.Runtime.Serialization;
 using System.Text;
+using System.Text.Json.Serialization;
 
 namespace PureCloud.Client.Models;
 
 /// <summary>
 /// PhoneChangeTopicEdgeReference
 /// </summary>
-[DataContract]
+
 public partial class PhoneChangeTopicEdgeReference : IEquatable<PhoneChangeTopicEdgeReference>
 {
     /// <summary>
@@ -28,7 +28,7 @@ public partial class PhoneChangeTopicEdgeReference : IEquatable<PhoneChangeTopic
     /// <summary>
     /// Gets or Sets Id
     /// </summary>
-    [DataMember(Name = "id", EmitDefaultValue = false)]
+    [JsonPropertyName("id")]
     public string Id { get; set; }
 
 
@@ -36,7 +36,7 @@ public partial class PhoneChangeTopicEdgeReference : IEquatable<PhoneChangeTopic
     /// <summary>
     /// Gets or Sets Name
     /// </summary>
-    [DataMember(Name = "name", EmitDefaultValue = false)]
+    [JsonPropertyName("name")]
     public string Name { get; set; }
 
 
@@ -44,7 +44,7 @@ public partial class PhoneChangeTopicEdgeReference : IEquatable<PhoneChangeTopic
     /// <summary>
     /// Gets or Sets SelfUri
     /// </summary>
-    [DataMember(Name = "selfUri", EmitDefaultValue = false)]
+    [JsonPropertyName("selfUri")]
     public string SelfUri { get; set; }
 
 

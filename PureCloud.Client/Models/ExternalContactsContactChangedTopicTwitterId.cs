@@ -1,12 +1,12 @@
-using System.Runtime.Serialization;
 using System.Text;
+using System.Text.Json.Serialization;
 
 namespace PureCloud.Client.Models;
 
 /// <summary>
 /// ExternalContactsContactChangedTopicTwitterId
 /// </summary>
-[DataContract]
+
 public partial class ExternalContactsContactChangedTopicTwitterId : IEquatable<ExternalContactsContactChangedTopicTwitterId>
 {
     /// <summary>
@@ -32,7 +32,7 @@ public partial class ExternalContactsContactChangedTopicTwitterId : IEquatable<E
     /// <summary>
     /// Gets or Sets Id
     /// </summary>
-    [DataMember(Name = "id", EmitDefaultValue = false)]
+    [JsonPropertyName("id")]
     public string Id { get; set; }
 
 
@@ -40,7 +40,7 @@ public partial class ExternalContactsContactChangedTopicTwitterId : IEquatable<E
     /// <summary>
     /// Gets or Sets Name
     /// </summary>
-    [DataMember(Name = "name", EmitDefaultValue = false)]
+    [JsonPropertyName("name")]
     public string Name { get; set; }
 
 
@@ -48,7 +48,7 @@ public partial class ExternalContactsContactChangedTopicTwitterId : IEquatable<E
     /// <summary>
     /// Gets or Sets ScreenName
     /// </summary>
-    [DataMember(Name = "screenName", EmitDefaultValue = false)]
+    [JsonPropertyName("screenName")]
     public string ScreenName { get; set; }
 
 
@@ -56,7 +56,7 @@ public partial class ExternalContactsContactChangedTopicTwitterId : IEquatable<E
     /// <summary>
     /// Gets or Sets Verified
     /// </summary>
-    [DataMember(Name = "verified", EmitDefaultValue = false)]
+    [JsonPropertyName("verified")]
     public bool? Verified { get; set; }
 
 
@@ -64,7 +64,7 @@ public partial class ExternalContactsContactChangedTopicTwitterId : IEquatable<E
     /// <summary>
     /// Gets or Sets ProfileUrl
     /// </summary>
-    [DataMember(Name = "profileUrl", EmitDefaultValue = false)]
+    [JsonPropertyName("profileUrl")]
     public string ProfileUrl { get; set; }
 
 

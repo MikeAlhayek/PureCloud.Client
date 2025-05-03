@@ -7,13 +7,13 @@ namespace PureCloud.Client.Models;
 /// <summary>
 /// WfmUserNotificationTopicAdherenceExplanationNotification
 /// </summary>
-[DataContract]
+
 public partial class WfmUserNotificationTopicAdherenceExplanationNotification : IEquatable<WfmUserNotificationTopicAdherenceExplanationNotification>
 {
     /// <summary>
     /// Gets or Sets Status
     /// </summary>
-    [JsonConverter(typeof(JsonStringEnumConverter))]
+    
     public enum StatusEnum
     {
         /// <summary>
@@ -45,7 +45,7 @@ public partial class WfmUserNotificationTopicAdherenceExplanationNotification : 
     /// <summary>
     /// Gets or Sets Type
     /// </summary>
-    [JsonConverter(typeof(JsonStringEnumConverter))]
+    
     public enum TypeEnum
     {
         /// <summary>
@@ -65,12 +65,12 @@ public partial class WfmUserNotificationTopicAdherenceExplanationNotification : 
     /// <summary>
     /// Gets or Sets Status
     /// </summary>
-    [DataMember(Name = "status", EmitDefaultValue = false)]
+    [JsonPropertyName("status")]
     public StatusEnum? Status { get; set; }
     /// <summary>
     /// Gets or Sets Type
     /// </summary>
-    [DataMember(Name = "type", EmitDefaultValue = false)]
+    [JsonPropertyName("type")]
     public TypeEnum? Type { get; set; }
     /// <summary>
     /// Initializes a new instance of the <see cref="WfmUserNotificationTopicAdherenceExplanationNotification" /> class.
@@ -103,7 +103,7 @@ public partial class WfmUserNotificationTopicAdherenceExplanationNotification : 
     /// <summary>
     /// Gets or Sets Id
     /// </summary>
-    [DataMember(Name = "id", EmitDefaultValue = false)]
+    [JsonPropertyName("id")]
     public string Id { get; set; }
 
 
@@ -111,7 +111,7 @@ public partial class WfmUserNotificationTopicAdherenceExplanationNotification : 
     /// <summary>
     /// Gets or Sets Agent
     /// </summary>
-    [DataMember(Name = "agent", EmitDefaultValue = false)]
+    [JsonPropertyName("agent")]
     public WfmUserNotificationTopicUserReference Agent { get; set; }
 
 
@@ -119,7 +119,7 @@ public partial class WfmUserNotificationTopicAdherenceExplanationNotification : 
     /// <summary>
     /// Gets or Sets ManagementUnit
     /// </summary>
-    [DataMember(Name = "managementUnit", EmitDefaultValue = false)]
+    [JsonPropertyName("managementUnit")]
     public WfmUserNotificationTopicManagementUnit ManagementUnit { get; set; }
 
 
@@ -127,7 +127,7 @@ public partial class WfmUserNotificationTopicAdherenceExplanationNotification : 
     /// <summary>
     /// Gets or Sets BusinessUnit
     /// </summary>
-    [DataMember(Name = "businessUnit", EmitDefaultValue = false)]
+    [JsonPropertyName("businessUnit")]
     public WfmUserNotificationTopicBusinessUnit BusinessUnit { get; set; }
 
 
@@ -135,7 +135,7 @@ public partial class WfmUserNotificationTopicAdherenceExplanationNotification : 
     /// <summary>
     /// Gets or Sets StartDate
     /// </summary>
-    [DataMember(Name = "startDate", EmitDefaultValue = false)]
+    [JsonPropertyName("startDate")]
     public DateTime? StartDate { get; set; }
 
 
@@ -143,7 +143,7 @@ public partial class WfmUserNotificationTopicAdherenceExplanationNotification : 
     /// <summary>
     /// Gets or Sets LengthMinutes
     /// </summary>
-    [DataMember(Name = "lengthMinutes", EmitDefaultValue = false)]
+    [JsonPropertyName("lengthMinutes")]
     public long? LengthMinutes { get; set; }
 
 
@@ -155,7 +155,7 @@ public partial class WfmUserNotificationTopicAdherenceExplanationNotification : 
     /// <summary>
     /// Gets or Sets Notes
     /// </summary>
-    [DataMember(Name = "notes", EmitDefaultValue = false)]
+    [JsonPropertyName("notes")]
     public string Notes { get; set; }
 
 

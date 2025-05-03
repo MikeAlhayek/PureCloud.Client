@@ -7,14 +7,14 @@ namespace PureCloud.Client.Models;
 /// <summary>
 /// SmsPhoneNumber
 /// </summary>
-[DataContract]
+
 public partial class SmsPhoneNumber : IEquatable<SmsPhoneNumber>
 {
     /// <summary>
     /// Type of the phone number provisioned.
     /// </summary>
     /// <value>Type of the phone number provisioned.</value>
-    [JsonConverter(typeof(JsonStringEnumConverter))]
+    
     public enum PhoneNumberTypeEnum
     {
         /// <summary>
@@ -59,7 +59,7 @@ public partial class SmsPhoneNumber : IEquatable<SmsPhoneNumber>
     /// Status of the provisioned phone number.
     /// </summary>
     /// <value>Status of the provisioned phone number.</value>
-    [JsonConverter(typeof(JsonStringEnumConverter))]
+    
     public enum PhoneNumberStatusEnum
     {
         /// <summary>
@@ -109,7 +109,7 @@ public partial class SmsPhoneNumber : IEquatable<SmsPhoneNumber>
     /// <summary>
     /// Gets or Sets Capabilities
     /// </summary>
-    [JsonConverter(typeof(JsonStringEnumConverter))]
+    
     public enum CapabilitiesEnum
     {
         /// <summary>
@@ -142,7 +142,7 @@ public partial class SmsPhoneNumber : IEquatable<SmsPhoneNumber>
     /// Renewal time period of this phone number, if the phoneNumberType is shortcode.
     /// </summary>
     /// <value>Renewal time period of this phone number, if the phoneNumberType is shortcode.</value>
-    [JsonConverter(typeof(JsonStringEnumConverter))]
+    
     public enum AutoRenewableEnum
     {
         /// <summary>
@@ -163,7 +163,7 @@ public partial class SmsPhoneNumber : IEquatable<SmsPhoneNumber>
     /// BillingType of this phone number, if the phoneNumberType is shortcode.
     /// </summary>
     /// <value>BillingType of this phone number, if the phoneNumberType is shortcode.</value>
-    [JsonConverter(typeof(JsonStringEnumConverter))]
+    
     public enum ShortCodeBillingTypeEnum
     {
         /// <summary>
@@ -190,25 +190,25 @@ public partial class SmsPhoneNumber : IEquatable<SmsPhoneNumber>
     /// Type of the phone number provisioned.
     /// </summary>
     /// <value>Type of the phone number provisioned.</value>
-    [DataMember(Name = "phoneNumberType", EmitDefaultValue = false)]
+    [JsonPropertyName("phoneNumberType")]
     public PhoneNumberTypeEnum? PhoneNumberType { get; private set; }
     /// <summary>
     /// Status of the provisioned phone number.
     /// </summary>
     /// <value>Status of the provisioned phone number.</value>
-    [DataMember(Name = "phoneNumberStatus", EmitDefaultValue = false)]
+    [JsonPropertyName("phoneNumberStatus")]
     public PhoneNumberStatusEnum? PhoneNumberStatus { get; set; }
     /// <summary>
     /// Renewal time period of this phone number, if the phoneNumberType is shortcode.
     /// </summary>
     /// <value>Renewal time period of this phone number, if the phoneNumberType is shortcode.</value>
-    [DataMember(Name = "autoRenewable", EmitDefaultValue = false)]
+    [JsonPropertyName("autoRenewable")]
     public AutoRenewableEnum? AutoRenewable { get; set; }
     /// <summary>
     /// BillingType of this phone number, if the phoneNumberType is shortcode.
     /// </summary>
     /// <value>BillingType of this phone number, if the phoneNumberType is shortcode.</value>
-    [DataMember(Name = "shortCodeBillingType", EmitDefaultValue = false)]
+    [JsonPropertyName("shortCodeBillingType")]
     public ShortCodeBillingTypeEnum? ShortCodeBillingType { get; set; }
 
     /// <summary>
@@ -276,7 +276,7 @@ public partial class SmsPhoneNumber : IEquatable<SmsPhoneNumber>
     /// The globally unique identifier for the object.
     /// </summary>
     /// <value>The globally unique identifier for the object.</value>
-    [DataMember(Name = "id", EmitDefaultValue = false)]
+    [JsonPropertyName("id")]
     public string Id { get; private set; }
 
 
@@ -284,7 +284,7 @@ public partial class SmsPhoneNumber : IEquatable<SmsPhoneNumber>
     /// <summary>
     /// Gets or Sets Name
     /// </summary>
-    [DataMember(Name = "name", EmitDefaultValue = false)]
+    [JsonPropertyName("name")]
     public string Name { get; set; }
 
 
@@ -293,7 +293,7 @@ public partial class SmsPhoneNumber : IEquatable<SmsPhoneNumber>
     /// A phone number provisioned for SMS communications.
     /// </summary>
     /// <value>A phone number provisioned for SMS communications.</value>
-    [DataMember(Name = "phoneNumber", EmitDefaultValue = false)]
+    [JsonPropertyName("phoneNumber")]
     public string PhoneNumber { get; set; }
 
 
@@ -304,7 +304,7 @@ public partial class SmsPhoneNumber : IEquatable<SmsPhoneNumber>
     /// Is set to false, if the phone number is provisioned through a SMS provider, outside of PureCloud
     /// </summary>
     /// <value>Is set to false, if the phone number is provisioned through a SMS provider, outside of PureCloud</value>
-    [DataMember(Name = "provisionedThroughPureCloud", EmitDefaultValue = false)]
+    [JsonPropertyName("provisionedThroughPureCloud")]
     public bool? ProvisionedThroughPureCloudEnvironment { get; set; }
 
 
@@ -315,7 +315,7 @@ public partial class SmsPhoneNumber : IEquatable<SmsPhoneNumber>
     /// The capabilities of the phone number available for provisioning.
     /// </summary>
     /// <value>The capabilities of the phone number available for provisioning.</value>
-    [DataMember(Name = "capabilities", EmitDefaultValue = false)]
+    [JsonPropertyName("capabilities")]
     public List<CapabilitiesEnum> Capabilities { get; private set; }
 
 
@@ -324,7 +324,7 @@ public partial class SmsPhoneNumber : IEquatable<SmsPhoneNumber>
     /// The ISO 3166-1 alpha-2 country code of the country this phone number is associated with.
     /// </summary>
     /// <value>The ISO 3166-1 alpha-2 country code of the country this phone number is associated with.</value>
-    [DataMember(Name = "countryCode", EmitDefaultValue = false)]
+    [JsonPropertyName("countryCode")]
     public string CountryCode { get; set; }
 
 
@@ -333,7 +333,7 @@ public partial class SmsPhoneNumber : IEquatable<SmsPhoneNumber>
     /// Date this phone number was provisioned. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z
     /// </summary>
     /// <value>Date this phone number was provisioned. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z</value>
-    [DataMember(Name = "dateCreated", EmitDefaultValue = false)]
+    [JsonPropertyName("dateCreated")]
     public DateTime? DateCreated { get; set; }
 
 
@@ -342,7 +342,7 @@ public partial class SmsPhoneNumber : IEquatable<SmsPhoneNumber>
     /// Date this phone number was modified. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z
     /// </summary>
     /// <value>Date this phone number was modified. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z</value>
-    [DataMember(Name = "dateModified", EmitDefaultValue = false)]
+    [JsonPropertyName("dateModified")]
     public DateTime? DateModified { get; set; }
 
 
@@ -351,7 +351,7 @@ public partial class SmsPhoneNumber : IEquatable<SmsPhoneNumber>
     /// User that provisioned this phone number
     /// </summary>
     /// <value>User that provisioned this phone number</value>
-    [DataMember(Name = "createdBy", EmitDefaultValue = false)]
+    [JsonPropertyName("createdBy")]
     public User CreatedBy { get; set; }
 
 
@@ -360,7 +360,7 @@ public partial class SmsPhoneNumber : IEquatable<SmsPhoneNumber>
     /// User that last modified this phone number
     /// </summary>
     /// <value>User that last modified this phone number</value>
-    [DataMember(Name = "modifiedBy", EmitDefaultValue = false)]
+    [JsonPropertyName("modifiedBy")]
     public User ModifiedBy { get; set; }
 
 
@@ -369,7 +369,7 @@ public partial class SmsPhoneNumber : IEquatable<SmsPhoneNumber>
     /// Version number required for updates.
     /// </summary>
     /// <value>Version number required for updates.</value>
-    [DataMember(Name = "version", EmitDefaultValue = false)]
+    [JsonPropertyName("version")]
     public int? Version { get; set; }
 
 
@@ -378,7 +378,7 @@ public partial class SmsPhoneNumber : IEquatable<SmsPhoneNumber>
     /// Date this phone number was purchased, if the phoneNumberType is shortcode. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z
     /// </summary>
     /// <value>Date this phone number was purchased, if the phoneNumberType is shortcode. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z</value>
-    [DataMember(Name = "purchaseDate", EmitDefaultValue = false)]
+    [JsonPropertyName("purchaseDate")]
     public DateTime? PurchaseDate { get; set; }
 
 
@@ -387,7 +387,7 @@ public partial class SmsPhoneNumber : IEquatable<SmsPhoneNumber>
     /// Contract end date of this phone number, if the phoneNumberType is shortcode. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z
     /// </summary>
     /// <value>Contract end date of this phone number, if the phoneNumberType is shortcode. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z</value>
-    [DataMember(Name = "cancellationDate", EmitDefaultValue = false)]
+    [JsonPropertyName("cancellationDate")]
     public DateTime? CancellationDate { get; set; }
 
 
@@ -396,7 +396,7 @@ public partial class SmsPhoneNumber : IEquatable<SmsPhoneNumber>
     /// Contract renewal date of this phone number, if the phoneNumberType is shortcode. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z
     /// </summary>
     /// <value>Contract renewal date of this phone number, if the phoneNumberType is shortcode. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z</value>
-    [DataMember(Name = "renewalDate", EmitDefaultValue = false)]
+    [JsonPropertyName("renewalDate")]
     public DateTime? RenewalDate { get; set; }
 
 
@@ -407,7 +407,7 @@ public partial class SmsPhoneNumber : IEquatable<SmsPhoneNumber>
     /// The id of an address attached to this phone number.
     /// </summary>
     /// <value>The id of an address attached to this phone number.</value>
-    [DataMember(Name = "addressId", EmitDefaultValue = false)]
+    [JsonPropertyName("addressId")]
     public SmsAddress AddressId { get; set; }
 
 
@@ -418,7 +418,7 @@ public partial class SmsPhoneNumber : IEquatable<SmsPhoneNumber>
     /// Status of latest asynchronous provisioning action
     /// </summary>
     /// <value>Status of latest asynchronous provisioning action</value>
-    [DataMember(Name = "provisioningStatus", EmitDefaultValue = false)]
+    [JsonPropertyName("provisioningStatus")]
     public SmsProvisioningStatus ProvisioningStatus { get; set; }
 
 
@@ -427,7 +427,7 @@ public partial class SmsPhoneNumber : IEquatable<SmsPhoneNumber>
     /// Localized country name for the country code this phone number belongs too
     /// </summary>
     /// <value>Localized country name for the country code this phone number belongs too</value>
-    [DataMember(Name = "country", EmitDefaultValue = false)]
+    [JsonPropertyName("country")]
     public string Country { get; set; }
 
 
@@ -436,7 +436,7 @@ public partial class SmsPhoneNumber : IEquatable<SmsPhoneNumber>
     /// Set to true if this phone number has the capability to support SMS
     /// </summary>
     /// <value>Set to true if this phone number has the capability to support SMS</value>
-    [DataMember(Name = "supportsSms", EmitDefaultValue = false)]
+    [JsonPropertyName("supportsSms")]
     public bool? SupportsSms { get; set; }
 
 
@@ -445,7 +445,7 @@ public partial class SmsPhoneNumber : IEquatable<SmsPhoneNumber>
     /// Set to true if this phone number has the capability to support MMS
     /// </summary>
     /// <value>Set to true if this phone number has the capability to support MMS</value>
-    [DataMember(Name = "supportsMms", EmitDefaultValue = false)]
+    [JsonPropertyName("supportsMms")]
     public bool? SupportsMms { get; set; }
 
 
@@ -454,7 +454,7 @@ public partial class SmsPhoneNumber : IEquatable<SmsPhoneNumber>
     /// Set to true if this phone number has the capability to support voice
     /// </summary>
     /// <value>Set to true if this phone number has the capability to support voice</value>
-    [DataMember(Name = "supportsVoice", EmitDefaultValue = false)]
+    [JsonPropertyName("supportsVoice")]
     public bool? SupportsVoice { get; set; }
 
 
@@ -463,7 +463,7 @@ public partial class SmsPhoneNumber : IEquatable<SmsPhoneNumber>
     /// The Genesys Cloud integration this phone number belongs to.
     /// </summary>
     /// <value>The Genesys Cloud integration this phone number belongs to.</value>
-    [DataMember(Name = "integration", EmitDefaultValue = false)]
+    [JsonPropertyName("integration")]
     public DomainEntityRef Integration { get; set; }
 
 
@@ -472,7 +472,7 @@ public partial class SmsPhoneNumber : IEquatable<SmsPhoneNumber>
     /// Compliance configuration for short codes, including help, stop and opt in.
     /// </summary>
     /// <value>Compliance configuration for short codes, including help, stop and opt in.</value>
-    [DataMember(Name = "compliance", EmitDefaultValue = false)]
+    [JsonPropertyName("compliance")]
     public Compliance Compliance { get; set; }
 
 
@@ -481,7 +481,7 @@ public partial class SmsPhoneNumber : IEquatable<SmsPhoneNumber>
     /// The URI for this object
     /// </summary>
     /// <value>The URI for this object</value>
-    [DataMember(Name = "selfUri", EmitDefaultValue = false)]
+    [JsonPropertyName("selfUri")]
     public string SelfUri { get; private set; }
 
 

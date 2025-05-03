@@ -1,4 +1,3 @@
-using System.Runtime.Serialization;
 using System.Text;
 using System.Text.Json.Serialization;
 
@@ -7,7 +6,7 @@ namespace PureCloud.Client.Models;
 /// <summary>
 /// Learning module preview get response
 /// </summary>
-[DataContract]
+
 public partial class LearningModulePreviewGetResponse : IEquatable<LearningModulePreviewGetResponse>
 {
 
@@ -44,7 +43,7 @@ public partial class LearningModulePreviewGetResponse : IEquatable<LearningModul
     /// The globally unique identifier for the object.
     /// </summary>
     /// <value>The globally unique identifier for the object.</value>
-    [DataMember(Name = "id", EmitDefaultValue = false)]
+    [JsonPropertyName("id")]
     public string Id { get; private set; }
 
 
@@ -53,7 +52,7 @@ public partial class LearningModulePreviewGetResponse : IEquatable<LearningModul
     /// The name of learning module
     /// </summary>
     /// <value>The name of learning module</value>
-    [DataMember(Name = "name", EmitDefaultValue = false)]
+    [JsonPropertyName("name")]
     public string Name { get; set; }
 
 
@@ -62,7 +61,7 @@ public partial class LearningModulePreviewGetResponse : IEquatable<LearningModul
     /// The description of learning module
     /// </summary>
     /// <value>The description of learning module</value>
-    [DataMember(Name = "description", EmitDefaultValue = false)]
+    [JsonPropertyName("description")]
     public string Description { get; set; }
 
 
@@ -71,7 +70,7 @@ public partial class LearningModulePreviewGetResponse : IEquatable<LearningModul
     /// The cover art for the learning module
     /// </summary>
     /// <value>The cover art for the learning module</value>
-    [DataMember(Name = "coverArt", EmitDefaultValue = false)]
+    [JsonPropertyName("coverArt")]
     public LearningModuleCoverArtResponse CoverArt { get; set; }
 
 
@@ -80,7 +79,7 @@ public partial class LearningModulePreviewGetResponse : IEquatable<LearningModul
     /// If true, learning module content should be viewed one by one in order
     /// </summary>
     /// <value>If true, learning module content should be viewed one by one in order</value>
-    [DataMember(Name = "enforceContentOrder", EmitDefaultValue = false)]
+    [JsonPropertyName("enforceContentOrder")]
     public bool? EnforceContentOrder { get; set; }
 
 
@@ -89,7 +88,7 @@ public partial class LearningModulePreviewGetResponse : IEquatable<LearningModul
     /// Allows to view Assessment results in detail
     /// </summary>
     /// <value>Allows to view Assessment results in detail</value>
-    [DataMember(Name = "reviewAssessmentResults", EmitDefaultValue = false)]
+    [JsonPropertyName("reviewAssessmentResults")]
     public ReviewAssessmentResults ReviewAssessmentResults { get; set; }
 
 
@@ -98,7 +97,7 @@ public partial class LearningModulePreviewGetResponse : IEquatable<LearningModul
     /// The assessment form for learning module
     /// </summary>
     /// <value>The assessment form for learning module</value>
-    [DataMember(Name = "assessmentForm", EmitDefaultValue = false)]
+    [JsonPropertyName("assessmentForm")]
     public AssessmentForm AssessmentForm { get; set; }
 
 
@@ -107,7 +106,7 @@ public partial class LearningModulePreviewGetResponse : IEquatable<LearningModul
     /// the assignment preview
     /// </summary>
     /// <value>the assignment preview</value>
-    [DataMember(Name = "assignment", EmitDefaultValue = false)]
+    [JsonPropertyName("assignment")]
     public LearningModulePreviewGetResponseAssignment Assignment { get; set; }
 
 
@@ -116,7 +115,7 @@ public partial class LearningModulePreviewGetResponse : IEquatable<LearningModul
     /// The URI for this object
     /// </summary>
     /// <value>The URI for this object</value>
-    [DataMember(Name = "selfUri", EmitDefaultValue = false)]
+    [JsonPropertyName("selfUri")]
     public string SelfUri { get; private set; }
 
 

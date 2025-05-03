@@ -1,12 +1,12 @@
-using System.Runtime.Serialization;
 using System.Text;
+using System.Text.Json.Serialization;
 
 namespace PureCloud.Client.Models;
 
 /// <summary>
 /// EvaluatorActivity
 /// </summary>
-[DataContract]
+
 public partial class EvaluatorActivity : IEquatable<EvaluatorActivity>
 {
     /// <summary>
@@ -41,7 +41,7 @@ public partial class EvaluatorActivity : IEquatable<EvaluatorActivity>
     /// The globally unique identifier for the object.
     /// </summary>
     /// <value>The globally unique identifier for the object.</value>
-    [DataMember(Name = "id", EmitDefaultValue = false)]
+    [JsonPropertyName("id")]
     public string Id { get; private set; }
 
 
@@ -49,7 +49,7 @@ public partial class EvaluatorActivity : IEquatable<EvaluatorActivity>
     /// <summary>
     /// Gets or Sets Name
     /// </summary>
-    [DataMember(Name = "name", EmitDefaultValue = false)]
+    [JsonPropertyName("name")]
     public string Name { get; set; }
 
 
@@ -57,7 +57,7 @@ public partial class EvaluatorActivity : IEquatable<EvaluatorActivity>
     /// <summary>
     /// Gets or Sets Evaluator
     /// </summary>
-    [DataMember(Name = "evaluator", EmitDefaultValue = false)]
+    [JsonPropertyName("evaluator")]
     public User Evaluator { get; set; }
 
 
@@ -65,7 +65,7 @@ public partial class EvaluatorActivity : IEquatable<EvaluatorActivity>
     /// <summary>
     /// Gets or Sets NumEvaluationsAssigned
     /// </summary>
-    [DataMember(Name = "numEvaluationsAssigned", EmitDefaultValue = false)]
+    [JsonPropertyName("numEvaluationsAssigned")]
     public int? NumEvaluationsAssigned { get; set; }
 
 
@@ -73,7 +73,7 @@ public partial class EvaluatorActivity : IEquatable<EvaluatorActivity>
     /// <summary>
     /// Gets or Sets NumEvaluationsStarted
     /// </summary>
-    [DataMember(Name = "numEvaluationsStarted", EmitDefaultValue = false)]
+    [JsonPropertyName("numEvaluationsStarted")]
     public int? NumEvaluationsStarted { get; set; }
 
 
@@ -81,7 +81,7 @@ public partial class EvaluatorActivity : IEquatable<EvaluatorActivity>
     /// <summary>
     /// Gets or Sets NumEvaluationsCompleted
     /// </summary>
-    [DataMember(Name = "numEvaluationsCompleted", EmitDefaultValue = false)]
+    [JsonPropertyName("numEvaluationsCompleted")]
     public int? NumEvaluationsCompleted { get; set; }
 
 
@@ -89,7 +89,7 @@ public partial class EvaluatorActivity : IEquatable<EvaluatorActivity>
     /// <summary>
     /// Gets or Sets NumCalibrationsAssigned
     /// </summary>
-    [DataMember(Name = "numCalibrationsAssigned", EmitDefaultValue = false)]
+    [JsonPropertyName("numCalibrationsAssigned")]
     public int? NumCalibrationsAssigned { get; set; }
 
 
@@ -97,7 +97,7 @@ public partial class EvaluatorActivity : IEquatable<EvaluatorActivity>
     /// <summary>
     /// Gets or Sets NumCalibrationsStarted
     /// </summary>
-    [DataMember(Name = "numCalibrationsStarted", EmitDefaultValue = false)]
+    [JsonPropertyName("numCalibrationsStarted")]
     public int? NumCalibrationsStarted { get; set; }
 
 
@@ -105,7 +105,7 @@ public partial class EvaluatorActivity : IEquatable<EvaluatorActivity>
     /// <summary>
     /// Gets or Sets NumCalibrationsCompleted
     /// </summary>
-    [DataMember(Name = "numCalibrationsCompleted", EmitDefaultValue = false)]
+    [JsonPropertyName("numCalibrationsCompleted")]
     public int? NumCalibrationsCompleted { get; set; }
 
 
@@ -113,7 +113,7 @@ public partial class EvaluatorActivity : IEquatable<EvaluatorActivity>
     /// <summary>
     /// Gets or Sets NumEvaluationsWithoutViewPermission
     /// </summary>
-    [DataMember(Name = "numEvaluationsWithoutViewPermission", EmitDefaultValue = false)]
+    [JsonPropertyName("numEvaluationsWithoutViewPermission")]
     public int? NumEvaluationsWithoutViewPermission { get; set; }
 
 
@@ -122,7 +122,7 @@ public partial class EvaluatorActivity : IEquatable<EvaluatorActivity>
     /// The URI for this object
     /// </summary>
     /// <value>The URI for this object</value>
-    [DataMember(Name = "selfUri", EmitDefaultValue = false)]
+    [JsonPropertyName("selfUri")]
     public string SelfUri { get; private set; }
 
 

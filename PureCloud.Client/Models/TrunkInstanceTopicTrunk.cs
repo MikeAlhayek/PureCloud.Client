@@ -1,12 +1,12 @@
-using System.Runtime.Serialization;
 using System.Text;
+using System.Text.Json.Serialization;
 
 namespace PureCloud.Client.Models;
 
 /// <summary>
 /// TrunkInstanceTopicTrunk
 /// </summary>
-[DataContract]
+
 public partial class TrunkInstanceTopicTrunk : IEquatable<TrunkInstanceTopicTrunk>
 {
     /// <summary>
@@ -32,7 +32,7 @@ public partial class TrunkInstanceTopicTrunk : IEquatable<TrunkInstanceTopicTrun
     /// <summary>
     /// Gets or Sets Id
     /// </summary>
-    [DataMember(Name = "id", EmitDefaultValue = false)]
+    [JsonPropertyName("id")]
     public string Id { get; set; }
 
 
@@ -40,7 +40,7 @@ public partial class TrunkInstanceTopicTrunk : IEquatable<TrunkInstanceTopicTrun
     /// <summary>
     /// Gets or Sets ConnectedStatus
     /// </summary>
-    [DataMember(Name = "connectedStatus", EmitDefaultValue = false)]
+    [JsonPropertyName("connectedStatus")]
     public TrunkInstanceTopicTrunkConnectedStatus ConnectedStatus { get; set; }
 
 
@@ -48,7 +48,7 @@ public partial class TrunkInstanceTopicTrunk : IEquatable<TrunkInstanceTopicTrun
     /// <summary>
     /// Gets or Sets OptionsStatus
     /// </summary>
-    [DataMember(Name = "optionsStatus", EmitDefaultValue = false)]
+    [JsonPropertyName("optionsStatus")]
     public List<TrunkInstanceTopicTrunkMetricsOptions> OptionsStatus { get; set; }
 
 
@@ -56,7 +56,7 @@ public partial class TrunkInstanceTopicTrunk : IEquatable<TrunkInstanceTopicTrun
     /// <summary>
     /// Gets or Sets RegistersStatus
     /// </summary>
-    [DataMember(Name = "registersStatus", EmitDefaultValue = false)]
+    [JsonPropertyName("registersStatus")]
     public List<TrunkInstanceTopicTrunkMetricsRegisters> RegistersStatus { get; set; }
 
 
@@ -64,7 +64,7 @@ public partial class TrunkInstanceTopicTrunk : IEquatable<TrunkInstanceTopicTrun
     /// <summary>
     /// Gets or Sets IpStatus
     /// </summary>
-    [DataMember(Name = "ipStatus", EmitDefaultValue = false)]
+    [JsonPropertyName("ipStatus")]
     public TrunkInstanceTopicTrunkMetricsNetworkTypeIp IpStatus { get; set; }
 
 

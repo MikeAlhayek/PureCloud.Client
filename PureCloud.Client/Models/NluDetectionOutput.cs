@@ -1,12 +1,12 @@
-using System.Runtime.Serialization;
 using System.Text;
+using System.Text.Json.Serialization;
 
 namespace PureCloud.Client.Models;
 
 /// <summary>
 /// NluDetectionOutput
 /// </summary>
-[DataContract]
+
 public partial class NluDetectionOutput : IEquatable<NluDetectionOutput>
 {
     /// <summary>
@@ -23,7 +23,7 @@ public partial class NluDetectionOutput : IEquatable<NluDetectionOutput>
     /// The detected intents.
     /// </summary>
     /// <value>The detected intents.</value>
-    [DataMember(Name = "intents", EmitDefaultValue = false)]
+    [JsonPropertyName("intents")]
     public List<DetectedIntent> Intents { get; private set; }
 
 
@@ -32,7 +32,7 @@ public partial class NluDetectionOutput : IEquatable<NluDetectionOutput>
     /// The detected dialog acts.
     /// </summary>
     /// <value>The detected dialog acts.</value>
-    [DataMember(Name = "dialogActs", EmitDefaultValue = false)]
+    [JsonPropertyName("dialogActs")]
     public List<DetectedDialogAct> DialogActs { get; private set; }
 
 

@@ -1,4 +1,3 @@
-using System.Runtime.Serialization;
 using System.Text;
 using System.Text.Json.Serialization;
 
@@ -7,7 +6,7 @@ namespace PureCloud.Client.Models;
 /// <summary>
 /// Open Event Messaging rich media message structure
 /// </summary>
-[DataContract]
+
 public partial class OpenInboundNormalizedEvent : IEquatable<OpenInboundNormalizedEvent>
 {
 
@@ -34,7 +33,7 @@ public partial class OpenInboundNormalizedEvent : IEquatable<OpenInboundNormaliz
     /// Channel-specific information that describes the message and the message channel/provider.
     /// </summary>
     /// <value>Channel-specific information that describes the message and the message channel/provider.</value>
-    [DataMember(Name = "channel", EmitDefaultValue = false)]
+    [JsonPropertyName("channel")]
     public OpenInboundMessagingChannel Channel { get; set; }
 
 
@@ -43,7 +42,7 @@ public partial class OpenInboundNormalizedEvent : IEquatable<OpenInboundNormaliz
     /// List of event elements.
     /// </summary>
     /// <value>List of event elements.</value>
-    [DataMember(Name = "events", EmitDefaultValue = false)]
+    [JsonPropertyName("events")]
     public List<OpenEvent> Events { get; set; }
 
 

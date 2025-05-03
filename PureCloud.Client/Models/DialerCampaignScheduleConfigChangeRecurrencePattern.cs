@@ -7,13 +7,13 @@ namespace PureCloud.Client.Models;
 /// <summary>
 /// the schedule pattern
 /// </summary>
-[DataContract]
+
 public partial class DialerCampaignScheduleConfigChangeRecurrencePattern : IEquatable<DialerCampaignScheduleConfigChangeRecurrencePattern>
 {
     /// <summary>
     /// Gets or Sets Type
     /// </summary>
-    [JsonConverter(typeof(JsonStringEnumConverter))]
+    
     public enum TypeEnum
     {
         /// <summary>
@@ -39,7 +39,7 @@ public partial class DialerCampaignScheduleConfigChangeRecurrencePattern : IEqua
     /// <summary>
     /// Gets or Sets Type
     /// </summary>
-    [DataMember(Name = "type", EmitDefaultValue = false)]
+    [JsonPropertyName("type")]
     public TypeEnum? Type { get; set; }
     /// <summary>
     /// Initializes a new instance of the <see cref="DialerCampaignScheduleConfigChangeRecurrencePattern" /> class.
@@ -65,7 +65,7 @@ public partial class DialerCampaignScheduleConfigChangeRecurrencePattern : IEqua
     /// the amount of time in between occurrences
     /// </summary>
     /// <value>the amount of time in between occurrences</value>
-    [DataMember(Name = "interval", EmitDefaultValue = false)]
+    [JsonPropertyName("interval")]
     public long? Interval { get; set; }
 
 
@@ -74,7 +74,7 @@ public partial class DialerCampaignScheduleConfigChangeRecurrencePattern : IEqua
     /// the day(s) of the week the occurrence happens
     /// </summary>
     /// <value>the day(s) of the week the occurrence happens</value>
-    [DataMember(Name = "daysOfWeek", EmitDefaultValue = false)]
+    [JsonPropertyName("daysOfWeek")]
     public List<string> DaysOfWeek { get; set; }
 
 
@@ -82,7 +82,7 @@ public partial class DialerCampaignScheduleConfigChangeRecurrencePattern : IEqua
     /// <summary>
     /// Gets or Sets AdditionalProperties
     /// </summary>
-    [DataMember(Name = "additionalProperties", EmitDefaultValue = false)]
+    [JsonPropertyName("additionalProperties")]
     public Dictionary<string, object> AdditionalProperties { get; set; }
 
 

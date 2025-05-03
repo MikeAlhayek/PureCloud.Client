@@ -7,14 +7,14 @@ namespace PureCloud.Client.Models;
 /// <summary>
 /// Story object.
 /// </summary>
-[DataContract]
+
 public partial class RecordingContentStory : IEquatable<RecordingContentStory>
 {
     /// <summary>
     /// Type of ephemeral story attachment.
     /// </summary>
     /// <value>Type of ephemeral story attachment.</value>
-    [JsonConverter(typeof(JsonStringEnumConverter))]
+    
     public enum TypeEnum
     {
         /// <summary>
@@ -41,7 +41,7 @@ public partial class RecordingContentStory : IEquatable<RecordingContentStory>
     /// Type of ephemeral story attachment.
     /// </summary>
     /// <value>Type of ephemeral story attachment.</value>
-    [DataMember(Name = "type", EmitDefaultValue = false)]
+    [JsonPropertyName("type")]
     public TypeEnum? Type { get; set; }
     /// <summary>
     /// Initializes a new instance of the <see cref="RecordingContentStory" /> class.
@@ -65,7 +65,7 @@ public partial class RecordingContentStory : IEquatable<RecordingContentStory>
     /// URL to the ephemeral story.
     /// </summary>
     /// <value>URL to the ephemeral story.</value>
-    [DataMember(Name = "url", EmitDefaultValue = false)]
+    [JsonPropertyName("url")]
     public string Url { get; set; }
 
 
@@ -74,7 +74,7 @@ public partial class RecordingContentStory : IEquatable<RecordingContentStory>
     /// ID of the ephemeral story being replied to.
     /// </summary>
     /// <value>ID of the ephemeral story being replied to.</value>
-    [DataMember(Name = "replyToId", EmitDefaultValue = false)]
+    [JsonPropertyName("replyToId")]
     public string ReplyToId { get; set; }
 
 

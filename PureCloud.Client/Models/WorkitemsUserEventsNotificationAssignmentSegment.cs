@@ -7,13 +7,13 @@ namespace PureCloud.Client.Models;
 /// <summary>
 /// WorkitemsUserEventsNotificationAssignmentSegment
 /// </summary>
-[DataContract]
+
 public partial class WorkitemsUserEventsNotificationAssignmentSegment : IEquatable<WorkitemsUserEventsNotificationAssignmentSegment>
 {
     /// <summary>
     /// Gets or Sets StartState
     /// </summary>
-    [JsonConverter(typeof(JsonStringEnumConverter))]
+    
     public enum StartStateEnum
     {
         /// <summary>
@@ -105,7 +105,7 @@ public partial class WorkitemsUserEventsNotificationAssignmentSegment : IEquatab
     /// <summary>
     /// Gets or Sets EndState
     /// </summary>
-    [JsonConverter(typeof(JsonStringEnumConverter))]
+    
     public enum EndStateEnum
     {
         /// <summary>
@@ -197,12 +197,12 @@ public partial class WorkitemsUserEventsNotificationAssignmentSegment : IEquatab
     /// <summary>
     /// Gets or Sets StartState
     /// </summary>
-    [DataMember(Name = "startState", EmitDefaultValue = false)]
+    [JsonPropertyName("startState")]
     public StartStateEnum? StartState { get; set; }
     /// <summary>
     /// Gets or Sets EndState
     /// </summary>
-    [DataMember(Name = "endState", EmitDefaultValue = false)]
+    [JsonPropertyName("endState")]
     public EndStateEnum? EndState { get; set; }
     /// <summary>
     /// Initializes a new instance of the <see cref="WorkitemsUserEventsNotificationAssignmentSegment" /> class.
@@ -227,7 +227,7 @@ public partial class WorkitemsUserEventsNotificationAssignmentSegment : IEquatab
     /// <summary>
     /// Gets or Sets DurationMs
     /// </summary>
-    [DataMember(Name = "durationMs", EmitDefaultValue = false)]
+    [JsonPropertyName("durationMs")]
     public long? DurationMs { get; set; }
 
 

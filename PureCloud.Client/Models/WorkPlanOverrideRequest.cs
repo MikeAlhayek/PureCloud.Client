@@ -7,14 +7,14 @@ namespace PureCloud.Client.Models;
 /// <summary>
 /// WorkPlanOverrideRequest
 /// </summary>
-[DataContract]
+
 public partial class WorkPlanOverrideRequest : IEquatable<WorkPlanOverrideRequest>
 {
     /// <summary>
     /// The action to perform on work plan override, defaults to add
     /// </summary>
     /// <value>The action to perform on work plan override, defaults to add</value>
-    [JsonConverter(typeof(JsonStringEnumConverter))]
+    
     public enum ActionEnum
     {
         /// <summary>
@@ -47,7 +47,7 @@ public partial class WorkPlanOverrideRequest : IEquatable<WorkPlanOverrideReques
     /// The action to perform on work plan override, defaults to add
     /// </summary>
     /// <value>The action to perform on work plan override, defaults to add</value>
-    [DataMember(Name = "action", EmitDefaultValue = false)]
+    [JsonPropertyName("action")]
     public ActionEnum? Action { get; set; }
 
     /// <summary>
@@ -79,7 +79,7 @@ public partial class WorkPlanOverrideRequest : IEquatable<WorkPlanOverrideReques
     /// The start date in yyyy-MM-dd format for the updated work plan. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd
     /// </summary>
     /// <value>The start date in yyyy-MM-dd format for the updated work plan. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd</value>
-    [DataMember(Name = "startDate", EmitDefaultValue = false)]
+    [JsonPropertyName("startDate")]
     public string StartDate { get; set; }
 
 
@@ -88,7 +88,7 @@ public partial class WorkPlanOverrideRequest : IEquatable<WorkPlanOverrideReques
     /// The week count of the updated work plan, required if action is Add or Update
     /// </summary>
     /// <value>The week count of the updated work plan, required if action is Add or Update</value>
-    [DataMember(Name = "weekCount", EmitDefaultValue = false)]
+    [JsonPropertyName("weekCount")]
     public int? WeekCount { get; set; }
 
 
@@ -97,7 +97,7 @@ public partial class WorkPlanOverrideRequest : IEquatable<WorkPlanOverrideReques
     /// The updated work plan id
     /// </summary>
     /// <value>The updated work plan id</value>
-    [DataMember(Name = "workPlanId", EmitDefaultValue = false)]
+    [JsonPropertyName("workPlanId")]
     public string WorkPlanId { get; set; }
 
 

@@ -7,14 +7,14 @@ namespace PureCloud.Client.Models;
 /// <summary>
 /// BuScheduleRun
 /// </summary>
-[DataContract]
+
 public partial class BuScheduleRun : IEquatable<BuScheduleRun>
 {
     /// <summary>
     /// The state of the generation run
     /// </summary>
     /// <value>The state of the generation run</value>
-    [JsonConverter(typeof(JsonStringEnumConverter))]
+    
     public enum StateEnum
     {
         /// <summary>
@@ -65,7 +65,7 @@ public partial class BuScheduleRun : IEquatable<BuScheduleRun>
     /// The state of the generation run
     /// </summary>
     /// <value>The state of the generation run</value>
-    [DataMember(Name = "state", EmitDefaultValue = false)]
+    [JsonPropertyName("state")]
     public StateEnum? State { get; set; }
     /// <summary>
     /// Initializes a new instance of the <see cref="BuScheduleRun" /> class.
@@ -113,7 +113,7 @@ public partial class BuScheduleRun : IEquatable<BuScheduleRun>
     /// The globally unique identifier for the object.
     /// </summary>
     /// <value>The globally unique identifier for the object.</value>
-    [DataMember(Name = "id", EmitDefaultValue = false)]
+    [JsonPropertyName("id")]
     public string Id { get; private set; }
 
 
@@ -122,7 +122,7 @@ public partial class BuScheduleRun : IEquatable<BuScheduleRun>
     /// The scheduler run ID.  Reference this value for support
     /// </summary>
     /// <value>The scheduler run ID.  Reference this value for support</value>
-    [DataMember(Name = "schedulerRunId", EmitDefaultValue = false)]
+    [JsonPropertyName("schedulerRunId")]
     public string SchedulerRunId { get; set; }
 
 
@@ -131,7 +131,7 @@ public partial class BuScheduleRun : IEquatable<BuScheduleRun>
     /// Whether this is an intraday rescheduling run
     /// </summary>
     /// <value>Whether this is an intraday rescheduling run</value>
-    [DataMember(Name = "intradayRescheduling", EmitDefaultValue = false)]
+    [JsonPropertyName("intradayRescheduling")]
     public bool? IntradayRescheduling { get; set; }
 
 
@@ -142,7 +142,7 @@ public partial class BuScheduleRun : IEquatable<BuScheduleRun>
     /// The number of weeks spanned by the schedule
     /// </summary>
     /// <value>The number of weeks spanned by the schedule</value>
-    [DataMember(Name = "weekCount", EmitDefaultValue = false)]
+    [JsonPropertyName("weekCount")]
     public int? WeekCount { get; set; }
 
 
@@ -151,7 +151,7 @@ public partial class BuScheduleRun : IEquatable<BuScheduleRun>
     /// Percent completion of the schedule run
     /// </summary>
     /// <value>Percent completion of the schedule run</value>
-    [DataMember(Name = "percentComplete", EmitDefaultValue = false)]
+    [JsonPropertyName("percentComplete")]
     public double? PercentComplete { get; set; }
 
 
@@ -160,7 +160,7 @@ public partial class BuScheduleRun : IEquatable<BuScheduleRun>
     /// The start date of the target week. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd
     /// </summary>
     /// <value>The start date of the target week. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd</value>
-    [DataMember(Name = "targetWeek", EmitDefaultValue = false)]
+    [JsonPropertyName("targetWeek")]
     public string TargetWeek { get; set; }
 
 
@@ -169,7 +169,7 @@ public partial class BuScheduleRun : IEquatable<BuScheduleRun>
     /// The generated schedule.  Null unless the schedule run is complete
     /// </summary>
     /// <value>The generated schedule.  Null unless the schedule run is complete</value>
-    [DataMember(Name = "schedule", EmitDefaultValue = false)]
+    [JsonPropertyName("schedule")]
     public BuScheduleReference Schedule { get; set; }
 
 
@@ -178,7 +178,7 @@ public partial class BuScheduleRun : IEquatable<BuScheduleRun>
     /// The description of the generated schedule
     /// </summary>
     /// <value>The description of the generated schedule</value>
-    [DataMember(Name = "scheduleDescription", EmitDefaultValue = false)]
+    [JsonPropertyName("scheduleDescription")]
     public string ScheduleDescription { get; set; }
 
 
@@ -187,7 +187,7 @@ public partial class BuScheduleRun : IEquatable<BuScheduleRun>
     /// When the schedule generation run started. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z
     /// </summary>
     /// <value>When the schedule generation run started. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z</value>
-    [DataMember(Name = "schedulingStartTime", EmitDefaultValue = false)]
+    [JsonPropertyName("schedulingStartTime")]
     public DateTime? SchedulingStartTime { get; set; }
 
 
@@ -196,7 +196,7 @@ public partial class BuScheduleRun : IEquatable<BuScheduleRun>
     /// The user who started the scheduling run
     /// </summary>
     /// <value>The user who started the scheduling run</value>
-    [DataMember(Name = "schedulingStartedBy", EmitDefaultValue = false)]
+    [JsonPropertyName("schedulingStartedBy")]
     public UserReference SchedulingStartedBy { get; set; }
 
 
@@ -205,7 +205,7 @@ public partial class BuScheduleRun : IEquatable<BuScheduleRun>
     /// The user who canceled the scheduling run, if applicable
     /// </summary>
     /// <value>The user who canceled the scheduling run, if applicable</value>
-    [DataMember(Name = "schedulingCanceledBy", EmitDefaultValue = false)]
+    [JsonPropertyName("schedulingCanceledBy")]
     public UserReference SchedulingCanceledBy { get; set; }
 
 
@@ -214,7 +214,7 @@ public partial class BuScheduleRun : IEquatable<BuScheduleRun>
     /// When the scheduling run was completed, if applicable. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z
     /// </summary>
     /// <value>When the scheduling run was completed, if applicable. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z</value>
-    [DataMember(Name = "schedulingCompletedTime", EmitDefaultValue = false)]
+    [JsonPropertyName("schedulingCompletedTime")]
     public DateTime? SchedulingCompletedTime { get; set; }
 
 
@@ -223,7 +223,7 @@ public partial class BuScheduleRun : IEquatable<BuScheduleRun>
     /// The number of schedule generation messages for this schedule generation run
     /// </summary>
     /// <value>The number of schedule generation messages for this schedule generation run</value>
-    [DataMember(Name = "messageCount", EmitDefaultValue = false)]
+    [JsonPropertyName("messageCount")]
     public int? MessageCount { get; set; }
 
 
@@ -232,7 +232,7 @@ public partial class BuScheduleRun : IEquatable<BuScheduleRun>
     /// The list of schedule generation message counts by severity for this schedule generation run
     /// </summary>
     /// <value>The list of schedule generation message counts by severity for this schedule generation run</value>
-    [DataMember(Name = "messageSeverityCounts", EmitDefaultValue = false)]
+    [JsonPropertyName("messageSeverityCounts")]
     public List<SchedulerMessageSeverityCount> MessageSeverityCounts { get; set; }
 
 
@@ -241,7 +241,7 @@ public partial class BuScheduleRun : IEquatable<BuScheduleRun>
     /// Rescheduling options for this run.  Null unless intradayRescheduling is true
     /// </summary>
     /// <value>Rescheduling options for this run.  Null unless intradayRescheduling is true</value>
-    [DataMember(Name = "reschedulingOptions", EmitDefaultValue = false)]
+    [JsonPropertyName("reschedulingOptions")]
     public ReschedulingOptionsRunResponse ReschedulingOptions { get; set; }
 
 
@@ -250,7 +250,7 @@ public partial class BuScheduleRun : IEquatable<BuScheduleRun>
     /// When the reschedule result will expire.  Null unless intradayRescheduling is true. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z
     /// </summary>
     /// <value>When the reschedule result will expire.  Null unless intradayRescheduling is true. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z</value>
-    [DataMember(Name = "reschedulingResultExpiration", EmitDefaultValue = false)]
+    [JsonPropertyName("reschedulingResultExpiration")]
     public DateTime? ReschedulingResultExpiration { get; set; }
 
 
@@ -259,7 +259,7 @@ public partial class BuScheduleRun : IEquatable<BuScheduleRun>
     /// The URI for this object
     /// </summary>
     /// <value>The URI for this object</value>
-    [DataMember(Name = "selfUri", EmitDefaultValue = false)]
+    [JsonPropertyName("selfUri")]
     public string SelfUri { get; private set; }
 
 

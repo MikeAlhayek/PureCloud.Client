@@ -7,14 +7,14 @@ namespace PureCloud.Client.Models;
 /// <summary>
 /// PredictorModel
 /// </summary>
-[DataContract]
+
 public partial class PredictorModel : IEquatable<PredictorModel>
 {
     /// <summary>
     /// The media type of the model.
     /// </summary>
     /// <value>The media type of the model.</value>
-    [JsonConverter(typeof(JsonStringEnumConverter))]
+    
     public enum MediaTypeEnum
     {
         /// <summary>
@@ -47,7 +47,7 @@ public partial class PredictorModel : IEquatable<PredictorModel>
     /// The media type of the model.
     /// </summary>
     /// <value>The media type of the model.</value>
-    [DataMember(Name = "mediaType", EmitDefaultValue = false)]
+    [JsonPropertyName("mediaType")]
     public MediaTypeEnum? MediaType { get; private set; }
     /// <summary>
     /// Initializes a new instance of the <see cref="PredictorModel" /> class.
@@ -65,7 +65,7 @@ public partial class PredictorModel : IEquatable<PredictorModel>
     /// The globally unique identifier for the object.
     /// </summary>
     /// <value>The globally unique identifier for the object.</value>
-    [DataMember(Name = "id", EmitDefaultValue = false)]
+    [JsonPropertyName("id")]
     public string Id { get; private set; }
 
 
@@ -74,7 +74,7 @@ public partial class PredictorModel : IEquatable<PredictorModel>
     /// The key performance indicator used in the model.
     /// </summary>
     /// <value>The key performance indicator used in the model.</value>
-    [DataMember(Name = "kpi", EmitDefaultValue = false)]
+    [JsonPropertyName("kpi")]
     public string Kpi { get; private set; }
 
 
@@ -83,7 +83,7 @@ public partial class PredictorModel : IEquatable<PredictorModel>
     /// The List of Queues that are assessed for Predictive Routing.
     /// </summary>
     /// <value>The List of Queues that are assessed for Predictive Routing.</value>
-    [DataMember(Name = "queues", EmitDefaultValue = false)]
+    [JsonPropertyName("queues")]
     public List<AddressableEntityRef> Queues { get; private set; }
 
 
@@ -92,7 +92,7 @@ public partial class PredictorModel : IEquatable<PredictorModel>
     /// DateTime indicating when the model was created. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z
     /// </summary>
     /// <value>DateTime indicating when the model was created. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z</value>
-    [DataMember(Name = "dateCreated", EmitDefaultValue = false)]
+    [JsonPropertyName("dateCreated")]
     public DateTime? DateCreated { get; private set; }
 
 
@@ -101,7 +101,7 @@ public partial class PredictorModel : IEquatable<PredictorModel>
     /// DateTime indicating when the model was last trained. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z
     /// </summary>
     /// <value>DateTime indicating when the model was last trained. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z</value>
-    [DataMember(Name = "dateTrained", EmitDefaultValue = false)]
+    [JsonPropertyName("dateTrained")]
     public DateTime? DateTrained { get; private set; }
 
 
@@ -111,7 +111,7 @@ public partial class PredictorModel : IEquatable<PredictorModel>
     /// <summary>
     /// Gets or Sets Features
     /// </summary>
-    [DataMember(Name = "features", EmitDefaultValue = false)]
+    [JsonPropertyName("features")]
     public List<PredictorModelFeature> Features { get; set; }
 
 

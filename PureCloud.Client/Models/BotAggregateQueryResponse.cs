@@ -1,12 +1,12 @@
-using System.Runtime.Serialization;
 using System.Text;
+using System.Text.Json.Serialization;
 
 namespace PureCloud.Client.Models;
 
 /// <summary>
 /// BotAggregateQueryResponse
 /// </summary>
-[DataContract]
+
 public partial class BotAggregateQueryResponse : IEquatable<BotAggregateQueryResponse>
 {
     /// <summary>
@@ -24,7 +24,7 @@ public partial class BotAggregateQueryResponse : IEquatable<BotAggregateQueryRes
     /// <summary>
     /// Gets or Sets Results
     /// </summary>
-    [DataMember(Name = "results", EmitDefaultValue = false)]
+    [JsonPropertyName("results")]
     public List<BotAggregateDataContainer> Results { get; set; }
 
 

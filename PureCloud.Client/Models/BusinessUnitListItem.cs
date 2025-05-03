@@ -1,12 +1,12 @@
-using System.Runtime.Serialization;
 using System.Text;
+using System.Text.Json.Serialization;
 
 namespace PureCloud.Client.Models;
 
 /// <summary>
 /// BusinessUnitListItem
 /// </summary>
-[DataContract]
+
 public partial class BusinessUnitListItem : IEquatable<BusinessUnitListItem>
 {
     /// <summary>
@@ -27,7 +27,7 @@ public partial class BusinessUnitListItem : IEquatable<BusinessUnitListItem>
     /// The globally unique identifier for the object.
     /// </summary>
     /// <value>The globally unique identifier for the object.</value>
-    [DataMember(Name = "id", EmitDefaultValue = false)]
+    [JsonPropertyName("id")]
     public string Id { get; private set; }
 
 
@@ -35,7 +35,7 @@ public partial class BusinessUnitListItem : IEquatable<BusinessUnitListItem>
     /// <summary>
     /// Gets or Sets Name
     /// </summary>
-    [DataMember(Name = "name", EmitDefaultValue = false)]
+    [JsonPropertyName("name")]
     public string Name { get; set; }
 
 
@@ -44,7 +44,7 @@ public partial class BusinessUnitListItem : IEquatable<BusinessUnitListItem>
     /// Whether the user has authorization to interact with this business unit
     /// </summary>
     /// <value>Whether the user has authorization to interact with this business unit</value>
-    [DataMember(Name = "authorized", EmitDefaultValue = false)]
+    [JsonPropertyName("authorized")]
     public bool? Authorized { get; private set; }
 
 
@@ -53,7 +53,7 @@ public partial class BusinessUnitListItem : IEquatable<BusinessUnitListItem>
     /// The division to which this entity belongs.
     /// </summary>
     /// <value>The division to which this entity belongs.</value>
-    [DataMember(Name = "division", EmitDefaultValue = false)]
+    [JsonPropertyName("division")]
     public DivisionReference Division { get; set; }
 
 
@@ -62,7 +62,7 @@ public partial class BusinessUnitListItem : IEquatable<BusinessUnitListItem>
     /// The URI for this object
     /// </summary>
     /// <value>The URI for this object</value>
-    [DataMember(Name = "selfUri", EmitDefaultValue = false)]
+    [JsonPropertyName("selfUri")]
     public string SelfUri { get; private set; }
 
 

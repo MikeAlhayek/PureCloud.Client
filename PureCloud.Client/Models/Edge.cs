@@ -7,14 +7,14 @@ namespace PureCloud.Client.Models;
 /// <summary>
 /// Edge
 /// </summary>
-[DataContract]
+
 public partial class Edge : IEquatable<Edge>
 {
     /// <summary>
     /// Indicates if the resource is active, inactive, or deleted.
     /// </summary>
     /// <value>Indicates if the resource is active, inactive, or deleted.</value>
-    [JsonConverter(typeof(JsonStringEnumConverter))]
+    
     public enum StateEnum
     {
         /// <summary>
@@ -47,7 +47,7 @@ public partial class Edge : IEquatable<Edge>
     /// The current status of the Edge.
     /// </summary>
     /// <value>The current status of the Edge.</value>
-    [JsonConverter(typeof(JsonStringEnumConverter))]
+    
     public enum StatusCodeEnum
     {
         /// <summary>
@@ -133,7 +133,7 @@ public partial class Edge : IEquatable<Edge>
     /// <summary>
     /// Gets or Sets OnlineStatus
     /// </summary>
-    [JsonConverter(typeof(JsonStringEnumConverter))]
+    
     public enum OnlineStatusEnum
     {
         /// <summary>
@@ -159,7 +159,7 @@ public partial class Edge : IEquatable<Edge>
     /// <summary>
     /// Gets or Sets EdgeDeploymentType
     /// </summary>
-    [JsonConverter(typeof(JsonStringEnumConverter))]
+    
     public enum EdgeDeploymentTypeEnum
     {
         /// <summary>
@@ -204,7 +204,7 @@ public partial class Edge : IEquatable<Edge>
     /// The type of certificate used to communicate with edge-proxy.
     /// </summary>
     /// <value>The type of certificate used to communicate with edge-proxy.</value>
-    [JsonConverter(typeof(JsonStringEnumConverter))]
+    
     public enum CertTypeEnum
     {
         /// <summary>
@@ -243,7 +243,7 @@ public partial class Edge : IEquatable<Edge>
     /// The current state of the Edge's call draining process before it can be safely rebooted or updated.
     /// </summary>
     /// <value>The current state of the Edge's call draining process before it can be safely rebooted or updated.</value>
-    [JsonConverter(typeof(JsonStringEnumConverter))]
+    
     public enum CallDrainingStateEnum
     {
         /// <summary>
@@ -288,35 +288,35 @@ public partial class Edge : IEquatable<Edge>
     /// Indicates if the resource is active, inactive, or deleted.
     /// </summary>
     /// <value>Indicates if the resource is active, inactive, or deleted.</value>
-    [DataMember(Name = "state", EmitDefaultValue = false)]
+    [JsonPropertyName("state")]
     public StateEnum? State { get; private set; }
     /// <summary>
     /// The current status of the Edge.
     /// </summary>
     /// <value>The current status of the Edge.</value>
-    [DataMember(Name = "statusCode", EmitDefaultValue = false)]
+    [JsonPropertyName("statusCode")]
     public StatusCodeEnum? StatusCode { get; set; }
     /// <summary>
     /// Gets or Sets OnlineStatus
     /// </summary>
-    [DataMember(Name = "onlineStatus", EmitDefaultValue = false)]
+    [JsonPropertyName("onlineStatus")]
     public OnlineStatusEnum? OnlineStatus { get; set; }
     /// <summary>
     /// Gets or Sets EdgeDeploymentType
     /// </summary>
-    [DataMember(Name = "edgeDeploymentType", EmitDefaultValue = false)]
+    [JsonPropertyName("edgeDeploymentType")]
     public EdgeDeploymentTypeEnum? EdgeDeploymentType { get; set; }
     /// <summary>
     /// The type of certificate used to communicate with edge-proxy.
     /// </summary>
     /// <value>The type of certificate used to communicate with edge-proxy.</value>
-    [DataMember(Name = "certType", EmitDefaultValue = false)]
+    [JsonPropertyName("certType")]
     public CertTypeEnum? CertType { get; set; }
     /// <summary>
     /// The current state of the Edge's call draining process before it can be safely rebooted or updated.
     /// </summary>
     /// <value>The current state of the Edge's call draining process before it can be safely rebooted or updated.</value>
-    [DataMember(Name = "callDrainingState", EmitDefaultValue = false)]
+    [JsonPropertyName("callDrainingState")]
     public CallDrainingStateEnum? CallDrainingState { get; private set; }
 
     /// <summary>
@@ -398,7 +398,7 @@ public partial class Edge : IEquatable<Edge>
     /// The globally unique identifier for the object.
     /// </summary>
     /// <value>The globally unique identifier for the object.</value>
-    [DataMember(Name = "id", EmitDefaultValue = false)]
+    [JsonPropertyName("id")]
     public string Id { get; private set; }
 
 
@@ -407,7 +407,7 @@ public partial class Edge : IEquatable<Edge>
     /// The name of the entity.
     /// </summary>
     /// <value>The name of the entity.</value>
-    [DataMember(Name = "name", EmitDefaultValue = false)]
+    [JsonPropertyName("name")]
     public string Name { get; set; }
 
 
@@ -416,7 +416,7 @@ public partial class Edge : IEquatable<Edge>
     /// The division to which this entity belongs.
     /// </summary>
     /// <value>The division to which this entity belongs.</value>
-    [DataMember(Name = "division", EmitDefaultValue = false)]
+    [JsonPropertyName("division")]
     public Division Division { get; set; }
 
 
@@ -425,7 +425,7 @@ public partial class Edge : IEquatable<Edge>
     /// The resource&#39;s description.
     /// </summary>
     /// <value>The resource&#39;s description.</value>
-    [DataMember(Name = "description", EmitDefaultValue = false)]
+    [JsonPropertyName("description")]
     public string Description { get; set; }
 
 
@@ -434,7 +434,7 @@ public partial class Edge : IEquatable<Edge>
     /// The current version of the resource.
     /// </summary>
     /// <value>The current version of the resource.</value>
-    [DataMember(Name = "version", EmitDefaultValue = false)]
+    [JsonPropertyName("version")]
     public int? Version { get; set; }
 
 
@@ -443,7 +443,7 @@ public partial class Edge : IEquatable<Edge>
     /// The date the resource was created. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z
     /// </summary>
     /// <value>The date the resource was created. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z</value>
-    [DataMember(Name = "dateCreated", EmitDefaultValue = false)]
+    [JsonPropertyName("dateCreated")]
     public DateTime? DateCreated { get; private set; }
 
 
@@ -452,7 +452,7 @@ public partial class Edge : IEquatable<Edge>
     /// The date of the last modification to the resource. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z
     /// </summary>
     /// <value>The date of the last modification to the resource. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z</value>
-    [DataMember(Name = "dateModified", EmitDefaultValue = false)]
+    [JsonPropertyName("dateModified")]
     public DateTime? DateModified { get; private set; }
 
 
@@ -461,7 +461,7 @@ public partial class Edge : IEquatable<Edge>
     /// The ID of the user that last modified the resource.
     /// </summary>
     /// <value>The ID of the user that last modified the resource.</value>
-    [DataMember(Name = "modifiedBy", EmitDefaultValue = false)]
+    [JsonPropertyName("modifiedBy")]
     public string ModifiedBy { get; private set; }
 
 
@@ -470,7 +470,7 @@ public partial class Edge : IEquatable<Edge>
     /// The ID of the user that created the resource.
     /// </summary>
     /// <value>The ID of the user that created the resource.</value>
-    [DataMember(Name = "createdBy", EmitDefaultValue = false)]
+    [JsonPropertyName("createdBy")]
     public string CreatedBy { get; private set; }
 
 
@@ -481,7 +481,7 @@ public partial class Edge : IEquatable<Edge>
     /// The application that last modified the resource.
     /// </summary>
     /// <value>The application that last modified the resource.</value>
-    [DataMember(Name = "modifiedByApp", EmitDefaultValue = false)]
+    [JsonPropertyName("modifiedByApp")]
     public string ModifiedByApp { get; private set; }
 
 
@@ -490,7 +490,7 @@ public partial class Edge : IEquatable<Edge>
     /// The application that created the resource.
     /// </summary>
     /// <value>The application that created the resource.</value>
-    [DataMember(Name = "createdByApp", EmitDefaultValue = false)]
+    [JsonPropertyName("createdByApp")]
     public string CreatedByApp { get; private set; }
 
 
@@ -499,7 +499,7 @@ public partial class Edge : IEquatable<Edge>
     /// The list of interfaces for the edge. (Deprecated) Replaced by configuring trunks/ip info on the logical interface instead
     /// </summary>
     /// <value>The list of interfaces for the edge. (Deprecated) Replaced by configuring trunks/ip info on the logical interface instead</value>
-    [DataMember(Name = "interfaces", EmitDefaultValue = false)]
+    [JsonPropertyName("interfaces")]
     public List<EdgeInterface> Interfaces { get; set; }
 
 
@@ -507,7 +507,7 @@ public partial class Edge : IEquatable<Edge>
     /// <summary>
     /// Gets or Sets Make
     /// </summary>
-    [DataMember(Name = "make", EmitDefaultValue = false)]
+    [JsonPropertyName("make")]
     public string Make { get; set; }
 
 
@@ -515,7 +515,7 @@ public partial class Edge : IEquatable<Edge>
     /// <summary>
     /// Gets or Sets Model
     /// </summary>
-    [DataMember(Name = "model", EmitDefaultValue = false)]
+    [JsonPropertyName("model")]
     public string Model { get; set; }
 
 
@@ -523,7 +523,7 @@ public partial class Edge : IEquatable<Edge>
     /// <summary>
     /// Gets or Sets ApiVersion
     /// </summary>
-    [DataMember(Name = "apiVersion", EmitDefaultValue = false)]
+    [JsonPropertyName("apiVersion")]
     public string ApiVersion { get; set; }
 
 
@@ -531,7 +531,7 @@ public partial class Edge : IEquatable<Edge>
     /// <summary>
     /// Gets or Sets SoftwareVersion
     /// </summary>
-    [DataMember(Name = "softwareVersion", EmitDefaultValue = false)]
+    [JsonPropertyName("softwareVersion")]
     public string SoftwareVersion { get; set; }
 
 
@@ -539,7 +539,7 @@ public partial class Edge : IEquatable<Edge>
     /// <summary>
     /// Gets or Sets SoftwareVersionTimestamp
     /// </summary>
-    [DataMember(Name = "softwareVersionTimestamp", EmitDefaultValue = false)]
+    [JsonPropertyName("softwareVersionTimestamp")]
     public string SoftwareVersionTimestamp { get; set; }
 
 
@@ -547,7 +547,7 @@ public partial class Edge : IEquatable<Edge>
     /// <summary>
     /// Gets or Sets SoftwareVersionPlatform
     /// </summary>
-    [DataMember(Name = "softwareVersionPlatform", EmitDefaultValue = false)]
+    [JsonPropertyName("softwareVersionPlatform")]
     public string SoftwareVersionPlatform { get; set; }
 
 
@@ -555,7 +555,7 @@ public partial class Edge : IEquatable<Edge>
     /// <summary>
     /// Gets or Sets SoftwareVersionConfiguration
     /// </summary>
-    [DataMember(Name = "softwareVersionConfiguration", EmitDefaultValue = false)]
+    [JsonPropertyName("softwareVersionConfiguration")]
     public string SoftwareVersionConfiguration { get; set; }
 
 
@@ -563,7 +563,7 @@ public partial class Edge : IEquatable<Edge>
     /// <summary>
     /// Gets or Sets FullSoftwareVersion
     /// </summary>
-    [DataMember(Name = "fullSoftwareVersion", EmitDefaultValue = false)]
+    [JsonPropertyName("fullSoftwareVersion")]
     public string FullSoftwareVersion { get; set; }
 
 
@@ -572,7 +572,7 @@ public partial class Edge : IEquatable<Edge>
     /// The pairing Id for a hardware Edge in the format: 00000-00000-00000-00000-00000. This field is only required when creating an Edge with a deployment type of HARDWARE.
     /// </summary>
     /// <value>The pairing Id for a hardware Edge in the format: 00000-00000-00000-00000-00000. This field is only required when creating an Edge with a deployment type of HARDWARE.</value>
-    [DataMember(Name = "pairingId", EmitDefaultValue = false)]
+    [JsonPropertyName("pairingId")]
     public string PairingId { get; set; }
 
 
@@ -580,7 +580,7 @@ public partial class Edge : IEquatable<Edge>
     /// <summary>
     /// Gets or Sets Fingerprint
     /// </summary>
-    [DataMember(Name = "fingerprint", EmitDefaultValue = false)]
+    [JsonPropertyName("fingerprint")]
     public string Fingerprint { get; set; }
 
 
@@ -588,7 +588,7 @@ public partial class Edge : IEquatable<Edge>
     /// <summary>
     /// Gets or Sets FingerprintHint
     /// </summary>
-    [DataMember(Name = "fingerprintHint", EmitDefaultValue = false)]
+    [JsonPropertyName("fingerprintHint")]
     public string FingerprintHint { get; set; }
 
 
@@ -596,7 +596,7 @@ public partial class Edge : IEquatable<Edge>
     /// <summary>
     /// Gets or Sets CurrentVersion
     /// </summary>
-    [DataMember(Name = "currentVersion", EmitDefaultValue = false)]
+    [JsonPropertyName("currentVersion")]
     public string CurrentVersion { get; set; }
 
 
@@ -604,7 +604,7 @@ public partial class Edge : IEquatable<Edge>
     /// <summary>
     /// Gets or Sets StagedVersion
     /// </summary>
-    [DataMember(Name = "stagedVersion", EmitDefaultValue = false)]
+    [JsonPropertyName("stagedVersion")]
     public string StagedVersion { get; set; }
 
 
@@ -612,7 +612,7 @@ public partial class Edge : IEquatable<Edge>
     /// <summary>
     /// Gets or Sets Patch
     /// </summary>
-    [DataMember(Name = "patch", EmitDefaultValue = false)]
+    [JsonPropertyName("patch")]
     public string Patch { get; set; }
 
 
@@ -622,7 +622,7 @@ public partial class Edge : IEquatable<Edge>
     /// <summary>
     /// Gets or Sets EdgeGroup
     /// </summary>
-    [DataMember(Name = "edgeGroup", EmitDefaultValue = false)]
+    [JsonPropertyName("edgeGroup")]
     public EdgeGroup EdgeGroup { get; set; }
 
 
@@ -631,7 +631,7 @@ public partial class Edge : IEquatable<Edge>
     /// The Site to which the Edge is assigned.
     /// </summary>
     /// <value>The Site to which the Edge is assigned.</value>
-    [DataMember(Name = "site", EmitDefaultValue = false)]
+    [JsonPropertyName("site")]
     public Site Site { get; set; }
 
 
@@ -640,7 +640,7 @@ public partial class Edge : IEquatable<Edge>
     /// Details about an in-progress or recently in-progress Edge software upgrade. This node appears only if a software upgrade was recently initiated for this Edge.
     /// </summary>
     /// <value>Details about an in-progress or recently in-progress Edge software upgrade. This node appears only if a software upgrade was recently initiated for this Edge.</value>
-    [DataMember(Name = "softwareStatus", EmitDefaultValue = false)]
+    [JsonPropertyName("softwareStatus")]
     public DomainEdgeSoftwareUpdateDto SoftwareStatus { get; set; }
 
 
@@ -650,7 +650,7 @@ public partial class Edge : IEquatable<Edge>
     /// <summary>
     /// Gets or Sets SerialNumber
     /// </summary>
-    [DataMember(Name = "serialNumber", EmitDefaultValue = false)]
+    [JsonPropertyName("serialNumber")]
     public string SerialNumber { get; set; }
 
 
@@ -658,7 +658,7 @@ public partial class Edge : IEquatable<Edge>
     /// <summary>
     /// Gets or Sets PhysicalEdge
     /// </summary>
-    [DataMember(Name = "physicalEdge", EmitDefaultValue = false)]
+    [JsonPropertyName("physicalEdge")]
     public bool? PhysicalEdge { get; set; }
 
 
@@ -666,7 +666,7 @@ public partial class Edge : IEquatable<Edge>
     /// <summary>
     /// Gets or Sets Managed
     /// </summary>
-    [DataMember(Name = "managed", EmitDefaultValue = false)]
+    [JsonPropertyName("managed")]
     public bool? Managed { get; set; }
 
 
@@ -681,7 +681,7 @@ public partial class Edge : IEquatable<Edge>
     /// The remaining number of conversations the Edge has to drain before it can be safely rebooted or updated. When an Edge is not draining conversations, this will be NULL or 0.
     /// </summary>
     /// <value>The remaining number of conversations the Edge has to drain before it can be safely rebooted or updated. When an Edge is not draining conversations, this will be NULL or 0.</value>
-    [DataMember(Name = "conversationCount", EmitDefaultValue = false)]
+    [JsonPropertyName("conversationCount")]
     public int? ConversationCount { get; private set; }
 
 
@@ -690,7 +690,7 @@ public partial class Edge : IEquatable<Edge>
     /// Edge HTTP proxy configuration for the WAN port. The field can be a hostname, FQDN, IPv4 or IPv6 address. If port is not included, port 80 is assumed.
     /// </summary>
     /// <value>Edge HTTP proxy configuration for the WAN port. The field can be a hostname, FQDN, IPv4 or IPv6 address. If port is not included, port 80 is assumed.</value>
-    [DataMember(Name = "proxy", EmitDefaultValue = false)]
+    [JsonPropertyName("proxy")]
     public string Proxy { get; set; }
 
 
@@ -699,7 +699,7 @@ public partial class Edge : IEquatable<Edge>
     /// True if the offline edge configuration endpoint has been called for this edge.
     /// </summary>
     /// <value>True if the offline edge configuration endpoint has been called for this edge.</value>
-    [DataMember(Name = "offlineConfigCalled", EmitDefaultValue = false)]
+    [JsonPropertyName("offlineConfigCalled")]
     public bool? OfflineConfigCalled { get; private set; }
 
 
@@ -708,7 +708,7 @@ public partial class Edge : IEquatable<Edge>
     /// The name provided by the operating system of the Edge.
     /// </summary>
     /// <value>The name provided by the operating system of the Edge.</value>
-    [DataMember(Name = "osName", EmitDefaultValue = false)]
+    [JsonPropertyName("osName")]
     public string OsName { get; private set; }
 
 
@@ -717,7 +717,7 @@ public partial class Edge : IEquatable<Edge>
     /// The URI for this object
     /// </summary>
     /// <value>The URI for this object</value>
-    [DataMember(Name = "selfUri", EmitDefaultValue = false)]
+    [JsonPropertyName("selfUri")]
     public string SelfUri { get; private set; }
 
 

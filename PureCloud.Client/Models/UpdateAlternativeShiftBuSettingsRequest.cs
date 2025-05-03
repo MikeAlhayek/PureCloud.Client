@@ -1,4 +1,3 @@
-using System.Runtime.Serialization;
 using System.Text;
 using System.Text.Json.Serialization;
 
@@ -7,7 +6,7 @@ namespace PureCloud.Client.Models;
 /// <summary>
 /// UpdateAlternativeShiftBuSettingsRequest
 /// </summary>
-[DataContract]
+
 public partial class UpdateAlternativeShiftBuSettingsRequest : IEquatable<UpdateAlternativeShiftBuSettingsRequest>
 {
 
@@ -38,7 +37,7 @@ public partial class UpdateAlternativeShiftBuSettingsRequest : IEquatable<Update
     /// The granularity at which alternative shifts is allowed. An empty list as the wrapped value will indicate alternative shifts is disabled
     /// </summary>
     /// <value>The granularity at which alternative shifts is allowed. An empty list as the wrapped value will indicate alternative shifts is disabled</value>
-    [DataMember(Name = "enabledGranularities", EmitDefaultValue = false)]
+    [JsonPropertyName("enabledGranularities")]
     public ListWrapperAlternativeShiftBuSettingsGranularity EnabledGranularities { get; set; }
 
 
@@ -47,7 +46,7 @@ public partial class UpdateAlternativeShiftBuSettingsRequest : IEquatable<Update
     /// The minimum number of minutes before the start of a shift that an alternative shift can be automatically approved
     /// </summary>
     /// <value>The minimum number of minutes before the start of a shift that an alternative shift can be automatically approved</value>
-    [DataMember(Name = "minMinutesBeforeStartTime", EmitDefaultValue = false)]
+    [JsonPropertyName("minMinutesBeforeStartTime")]
     public int? MinMinutesBeforeStartTime { get; set; }
 
 
@@ -56,7 +55,7 @@ public partial class UpdateAlternativeShiftBuSettingsRequest : IEquatable<Update
     /// Categories of activities that are required to remain at the same time slot for the alternative shifts offered. An empty list indicates no retained activities
     /// </summary>
     /// <value>Categories of activities that are required to remain at the same time slot for the alternative shifts offered. An empty list indicates no retained activities</value>
-    [DataMember(Name = "retainedActivityCategories", EmitDefaultValue = false)]
+    [JsonPropertyName("retainedActivityCategories")]
     public ListWrapperAlternativeShiftBuSettingsActivityCategory RetainedActivityCategories { get; set; }
 
 
@@ -65,7 +64,7 @@ public partial class UpdateAlternativeShiftBuSettingsRequest : IEquatable<Update
     /// Version metadata for this business unit&#39;s alternative shift settings
     /// </summary>
     /// <value>Version metadata for this business unit&#39;s alternative shift settings</value>
-    [DataMember(Name = "metadata", EmitDefaultValue = false)]
+    [JsonPropertyName("metadata")]
     public WfmVersionedEntityMetadata Metadata { get; set; }
 
 

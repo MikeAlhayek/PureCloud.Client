@@ -7,13 +7,13 @@ namespace PureCloud.Client.Models;
 /// <summary>
 /// V2MobiusAlertsTopicCondition
 /// </summary>
-[DataContract]
+
 public partial class V2MobiusAlertsTopicCondition : IEquatable<V2MobiusAlertsTopicCondition>
 {
     /// <summary>
     /// Gets or Sets Type
     /// </summary>
-    [JsonConverter(typeof(JsonStringEnumConverter))]
+    
     public enum TypeEnum
     {
         /// <summary>
@@ -51,7 +51,7 @@ public partial class V2MobiusAlertsTopicCondition : IEquatable<V2MobiusAlertsTop
     /// <summary>
     /// Gets or Sets Type
     /// </summary>
-    [DataMember(Name = "type", EmitDefaultValue = false)]
+    [JsonPropertyName("type")]
     public TypeEnum? Type { get; set; }
     /// <summary>
     /// Initializes a new instance of the <see cref="V2MobiusAlertsTopicCondition" /> class.
@@ -74,7 +74,7 @@ public partial class V2MobiusAlertsTopicCondition : IEquatable<V2MobiusAlertsTop
     /// <summary>
     /// Gets or Sets Id
     /// </summary>
-    [DataMember(Name = "id", EmitDefaultValue = false)]
+    [JsonPropertyName("id")]
     public Guid? Id { get; set; }
 
 
@@ -82,7 +82,7 @@ public partial class V2MobiusAlertsTopicCondition : IEquatable<V2MobiusAlertsTop
     /// <summary>
     /// Gets or Sets Clauses
     /// </summary>
-    [DataMember(Name = "clauses", EmitDefaultValue = false)]
+    [JsonPropertyName("clauses")]
     public List<V2MobiusAlertsTopicCondition> Clauses { get; set; }
 
 
@@ -90,7 +90,7 @@ public partial class V2MobiusAlertsTopicCondition : IEquatable<V2MobiusAlertsTop
     /// <summary>
     /// Gets or Sets Predicates
     /// </summary>
-    [DataMember(Name = "predicates", EmitDefaultValue = false)]
+    [JsonPropertyName("predicates")]
     public List<V2MobiusAlertsTopicConditionRulePredicate> Predicates { get; set; }
 
 

@@ -1,12 +1,12 @@
-using System.Runtime.Serialization;
 using System.Text;
+using System.Text.Json.Serialization;
 
 namespace PureCloud.Client.Models;
 
 /// <summary>
 /// ConversationSummaryWrapupCode
 /// </summary>
-[DataContract]
+
 public partial class ConversationSummaryWrapupCode : IEquatable<ConversationSummaryWrapupCode>
 {
     /// <summary>
@@ -27,7 +27,7 @@ public partial class ConversationSummaryWrapupCode : IEquatable<ConversationSumm
     /// The name of the wrapup code.
     /// </summary>
     /// <value>The name of the wrapup code.</value>
-    [DataMember(Name = "name", EmitDefaultValue = false)]
+    [JsonPropertyName("name")]
     public string Name { get; set; }
 
 
@@ -36,7 +36,7 @@ public partial class ConversationSummaryWrapupCode : IEquatable<ConversationSumm
     /// The description of the wrapup code.
     /// </summary>
     /// <value>The description of the wrapup code.</value>
-    [DataMember(Name = "description", EmitDefaultValue = false)]
+    [JsonPropertyName("description")]
     public string Description { get; set; }
 
 
@@ -45,7 +45,7 @@ public partial class ConversationSummaryWrapupCode : IEquatable<ConversationSumm
     /// The URI for this object
     /// </summary>
     /// <value>The URI for this object</value>
-    [DataMember(Name = "selfUri", EmitDefaultValue = false)]
+    [JsonPropertyName("selfUri")]
     public string SelfUri { get; private set; }
 
 
@@ -54,7 +54,7 @@ public partial class ConversationSummaryWrapupCode : IEquatable<ConversationSumm
     /// The id of the wrapup code.
     /// </summary>
     /// <value>The id of the wrapup code.</value>
-    [DataMember(Name = "id", EmitDefaultValue = false)]
+    [JsonPropertyName("id")]
     public string Id { get; private set; }
 
 
@@ -63,7 +63,7 @@ public partial class ConversationSummaryWrapupCode : IEquatable<ConversationSumm
     /// The AI confidence value.
     /// </summary>
     /// <value>The AI confidence value.</value>
-    [DataMember(Name = "confidence", EmitDefaultValue = false)]
+    [JsonPropertyName("confidence")]
     public float? Confidence { get; private set; }
 
 

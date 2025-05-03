@@ -7,14 +7,14 @@ namespace PureCloud.Client.Models;
 /// <summary>
 /// TwitterDataIngestionRuleResponse
 /// </summary>
-[DataContract]
+
 public partial class TwitterDataIngestionRuleResponse : IEquatable<TwitterDataIngestionRuleResponse>
 {
     /// <summary>
     /// The status of the data ingestion rule.
     /// </summary>
     /// <value>The status of the data ingestion rule.</value>
-    [JsonConverter(typeof(JsonStringEnumConverter))]
+    
     public enum StatusEnum
     {
         /// <summary>
@@ -65,7 +65,7 @@ public partial class TwitterDataIngestionRuleResponse : IEquatable<TwitterDataIn
     /// The status of the data ingestion rule.
     /// </summary>
     /// <value>The status of the data ingestion rule.</value>
-    [DataMember(Name = "status", EmitDefaultValue = false)]
+    [JsonPropertyName("status")]
     public StatusEnum? Status { get; set; }
     /// <summary>
     /// Initializes a new instance of the <see cref="TwitterDataIngestionRuleResponse" /> class.
@@ -95,7 +95,7 @@ public partial class TwitterDataIngestionRuleResponse : IEquatable<TwitterDataIn
     /// ID of the data ingestion rule.
     /// </summary>
     /// <value>ID of the data ingestion rule.</value>
-    [DataMember(Name = "id", EmitDefaultValue = false)]
+    [JsonPropertyName("id")]
     public string Id { get; set; }
 
 
@@ -104,7 +104,7 @@ public partial class TwitterDataIngestionRuleResponse : IEquatable<TwitterDataIn
     /// The name of the data ingestion rule.
     /// </summary>
     /// <value>The name of the data ingestion rule.</value>
-    [DataMember(Name = "name", EmitDefaultValue = false)]
+    [JsonPropertyName("name")]
     public string Name { get; set; }
 
 
@@ -113,7 +113,7 @@ public partial class TwitterDataIngestionRuleResponse : IEquatable<TwitterDataIn
     /// A description of the data ingestion rule.
     /// </summary>
     /// <value>A description of the data ingestion rule.</value>
-    [DataMember(Name = "description", EmitDefaultValue = false)]
+    [JsonPropertyName("description")]
     public string Description { get; set; }
 
 
@@ -124,7 +124,7 @@ public partial class TwitterDataIngestionRuleResponse : IEquatable<TwitterDataIn
     /// The version number of the data ingestion rule.
     /// </summary>
     /// <value>The version number of the data ingestion rule.</value>
-    [DataMember(Name = "version", EmitDefaultValue = false)]
+    [JsonPropertyName("version")]
     public int? Version { get; set; }
 
 
@@ -133,7 +133,7 @@ public partial class TwitterDataIngestionRuleResponse : IEquatable<TwitterDataIn
     /// Timestamp indicating when the data ingestion rule was created. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z
     /// </summary>
     /// <value>Timestamp indicating when the data ingestion rule was created. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z</value>
-    [DataMember(Name = "dateCreated", EmitDefaultValue = false)]
+    [JsonPropertyName("dateCreated")]
     public DateTime? DateCreated { get; private set; }
 
 
@@ -142,7 +142,7 @@ public partial class TwitterDataIngestionRuleResponse : IEquatable<TwitterDataIn
     /// Timestamp indicating when the data ingestion rule was last updated. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z
     /// </summary>
     /// <value>Timestamp indicating when the data ingestion rule was last updated. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z</value>
-    [DataMember(Name = "dateModified", EmitDefaultValue = false)]
+    [JsonPropertyName("dateModified")]
     public DateTime? DateModified { get; private set; }
 
 
@@ -151,7 +151,7 @@ public partial class TwitterDataIngestionRuleResponse : IEquatable<TwitterDataIn
     /// The platform of the data ingestion rule.
     /// </summary>
     /// <value>The platform of the data ingestion rule.</value>
-    [DataMember(Name = "platform", EmitDefaultValue = false)]
+    [JsonPropertyName("platform")]
     public string Platform { get; private set; }
 
 
@@ -160,7 +160,7 @@ public partial class TwitterDataIngestionRuleResponse : IEquatable<TwitterDataIn
     /// Search terms for X (formally Twitter).
     /// </summary>
     /// <value>Search terms for X (formally Twitter).</value>
-    [DataMember(Name = "searchTerms", EmitDefaultValue = false)]
+    [JsonPropertyName("searchTerms")]
     public string SearchTerms { get; set; }
 
 
@@ -169,7 +169,7 @@ public partial class TwitterDataIngestionRuleResponse : IEquatable<TwitterDataIn
     /// ISO 3166-1 alpha-2 country codes where Data Ingestion Rules should apply. Defaults to worldwide.
     /// </summary>
     /// <value>ISO 3166-1 alpha-2 country codes where Data Ingestion Rules should apply. Defaults to worldwide.</value>
-    [DataMember(Name = "countries", EmitDefaultValue = false)]
+    [JsonPropertyName("countries")]
     public List<string> Countries { get; set; }
 
 
@@ -178,7 +178,7 @@ public partial class TwitterDataIngestionRuleResponse : IEquatable<TwitterDataIn
     /// The URI for this object
     /// </summary>
     /// <value>The URI for this object</value>
-    [DataMember(Name = "selfUri", EmitDefaultValue = false)]
+    [JsonPropertyName("selfUri")]
     public string SelfUri { get; private set; }
 
 

@@ -1,12 +1,12 @@
-using System.Runtime.Serialization;
 using System.Text;
+using System.Text.Json.Serialization;
 
 namespace PureCloud.Client.Models;
 
 /// <summary>
 /// DomainPhysicalCapabilities
 /// </summary>
-[DataContract]
+
 public partial class DomainPhysicalCapabilities : IEquatable<DomainPhysicalCapabilities>
 {
     /// <summary>
@@ -26,7 +26,7 @@ public partial class DomainPhysicalCapabilities : IEquatable<DomainPhysicalCapab
     /// <summary>
     /// Gets or Sets Vlan
     /// </summary>
-    [DataMember(Name = "vlan", EmitDefaultValue = false)]
+    [JsonPropertyName("vlan")]
     public bool? Vlan { get; set; }
 
 
@@ -34,7 +34,7 @@ public partial class DomainPhysicalCapabilities : IEquatable<DomainPhysicalCapab
     /// <summary>
     /// Gets or Sets Team
     /// </summary>
-    [DataMember(Name = "team", EmitDefaultValue = false)]
+    [JsonPropertyName("team")]
     public bool? Team { get; set; }
 
 

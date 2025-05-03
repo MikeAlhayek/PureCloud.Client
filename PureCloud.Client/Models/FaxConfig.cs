@@ -1,4 +1,3 @@
-using System.Runtime.Serialization;
 using System.Text;
 using System.Text.Json.Serialization;
 
@@ -7,7 +6,7 @@ namespace PureCloud.Client.Models;
 /// <summary>
 /// FaxConfig
 /// </summary>
-[DataContract]
+
 public partial class FaxConfig : IEquatable<FaxConfig>
 {
 
@@ -34,7 +33,7 @@ public partial class FaxConfig : IEquatable<FaxConfig>
     /// Whether to enable email notifications for this organization
     /// </summary>
     /// <value>Whether to enable email notifications for this organization</value>
-    [DataMember(Name = "sendEmailNotifications", EmitDefaultValue = false)]
+    [JsonPropertyName("sendEmailNotifications")]
     public bool? SendEmailNotifications { get; set; }
 
 
@@ -43,7 +42,7 @@ public partial class FaxConfig : IEquatable<FaxConfig>
     /// Whether to disable PII for email notifications
     /// </summary>
     /// <value>Whether to disable PII for email notifications</value>
-    [DataMember(Name = "disableEmailPii", EmitDefaultValue = false)]
+    [JsonPropertyName("disableEmailPii")]
     public bool? DisableEmailPii { get; set; }
 
 

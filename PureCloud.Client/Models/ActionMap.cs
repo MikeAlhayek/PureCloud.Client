@@ -1,4 +1,3 @@
-using System.Runtime.Serialization;
 using System.Text;
 using System.Text.Json.Serialization;
 
@@ -8,7 +7,7 @@ namespace PureCloud.Client.Models;
 /// <summary>
 /// ActionMap
 /// </summary>
-[DataContract]
+
 public partial class ActionMap : IEquatable<ActionMap>
 {
 
@@ -67,7 +66,7 @@ public partial class ActionMap : IEquatable<ActionMap>
     /// The globally unique identifier for the object.
     /// </summary>
     /// <value>The globally unique identifier for the object.</value>
-    [DataMember(Name = "id", EmitDefaultValue = false)]
+    [JsonPropertyName("id")]
     public string Id { get; private set; }
 
 
@@ -76,7 +75,7 @@ public partial class ActionMap : IEquatable<ActionMap>
     /// The version of the action map.
     /// </summary>
     /// <value>The version of the action map.</value>
-    [DataMember(Name = "version", EmitDefaultValue = false)]
+    [JsonPropertyName("version")]
     public int? Version { get; set; }
 
 
@@ -85,7 +84,7 @@ public partial class ActionMap : IEquatable<ActionMap>
     /// Whether the action map is active.
     /// </summary>
     /// <value>Whether the action map is active.</value>
-    [DataMember(Name = "isActive", EmitDefaultValue = false)]
+    [JsonPropertyName("isActive")]
     public bool? IsActive { get; set; }
 
 
@@ -94,7 +93,7 @@ public partial class ActionMap : IEquatable<ActionMap>
     /// Display name of the action map.
     /// </summary>
     /// <value>Display name of the action map.</value>
-    [DataMember(Name = "displayName", EmitDefaultValue = false)]
+    [JsonPropertyName("displayName")]
     public string DisplayName { get; set; }
 
 
@@ -103,7 +102,7 @@ public partial class ActionMap : IEquatable<ActionMap>
     /// Trigger action map if any segment in the list is assigned to a given customer.
     /// </summary>
     /// <value>Trigger action map if any segment in the list is assigned to a given customer.</value>
-    [DataMember(Name = "triggerWithSegments", EmitDefaultValue = false)]
+    [JsonPropertyName("triggerWithSegments")]
     public List<string> TriggerWithSegments { get; set; }
 
 
@@ -112,7 +111,7 @@ public partial class ActionMap : IEquatable<ActionMap>
     /// List of event conditions that must be satisfied to trigger the action map.
     /// </summary>
     /// <value>List of event conditions that must be satisfied to trigger the action map.</value>
-    [DataMember(Name = "triggerWithEventConditions", EmitDefaultValue = false)]
+    [JsonPropertyName("triggerWithEventConditions")]
     public List<EventCondition> TriggerWithEventConditions { get; set; }
 
 
@@ -121,7 +120,7 @@ public partial class ActionMap : IEquatable<ActionMap>
     /// (deprecated - use triggerWithOutcomeQuantileConditions instead) Probability conditions for outcomes that must be satisfied to trigger the action map.
     /// </summary>
     /// <value>(deprecated - use triggerWithOutcomeQuantileConditions instead) Probability conditions for outcomes that must be satisfied to trigger the action map.</value>
-    [DataMember(Name = "triggerWithOutcomeProbabilityConditions", EmitDefaultValue = false)]
+    [JsonPropertyName("triggerWithOutcomeProbabilityConditions")]
     public List<OutcomeProbabilityCondition> TriggerWithOutcomeProbabilityConditions { get; set; }
 
 
@@ -130,7 +129,7 @@ public partial class ActionMap : IEquatable<ActionMap>
     /// (deprecated - use triggerWithOutcomeQuantileConditions instead) Percentile conditions for outcomes that must be satisfied to trigger the action map.
     /// </summary>
     /// <value>(deprecated - use triggerWithOutcomeQuantileConditions instead) Percentile conditions for outcomes that must be satisfied to trigger the action map.</value>
-    [DataMember(Name = "triggerWithOutcomePercentileConditions", EmitDefaultValue = false)]
+    [JsonPropertyName("triggerWithOutcomePercentileConditions")]
     public List<OutcomePercentileCondition> TriggerWithOutcomePercentileConditions { get; set; }
 
 
@@ -139,7 +138,7 @@ public partial class ActionMap : IEquatable<ActionMap>
     /// Quantile conditions for outcomes that must be satisfied to trigger the action map.
     /// </summary>
     /// <value>Quantile conditions for outcomes that must be satisfied to trigger the action map.</value>
-    [DataMember(Name = "triggerWithOutcomeQuantileConditions", EmitDefaultValue = false)]
+    [JsonPropertyName("triggerWithOutcomeQuantileConditions")]
     public List<OutcomeQuantileCondition> TriggerWithOutcomeQuantileConditions { get; set; }
 
 
@@ -148,7 +147,7 @@ public partial class ActionMap : IEquatable<ActionMap>
     /// URL conditions that a page must match for web actions to be displayable.
     /// </summary>
     /// <value>URL conditions that a page must match for web actions to be displayable.</value>
-    [DataMember(Name = "pageUrlConditions", EmitDefaultValue = false)]
+    [JsonPropertyName("pageUrlConditions")]
     public List<UrlCondition> PageUrlConditions { get; set; }
 
 
@@ -157,7 +156,7 @@ public partial class ActionMap : IEquatable<ActionMap>
     /// Type of activation.
     /// </summary>
     /// <value>Type of activation.</value>
-    [DataMember(Name = "activation", EmitDefaultValue = false)]
+    [JsonPropertyName("activation")]
     public Activation Activation { get; set; }
 
 
@@ -166,7 +165,7 @@ public partial class ActionMap : IEquatable<ActionMap>
     /// Weight of the action map with higher number denoting higher weight.
     /// </summary>
     /// <value>Weight of the action map with higher number denoting higher weight.</value>
-    [DataMember(Name = "weight", EmitDefaultValue = false)]
+    [JsonPropertyName("weight")]
     public int? Weight { get; set; }
 
 
@@ -175,7 +174,7 @@ public partial class ActionMap : IEquatable<ActionMap>
     /// The action that will be executed if this action map is triggered.
     /// </summary>
     /// <value>The action that will be executed if this action map is triggered.</value>
-    [DataMember(Name = "action", EmitDefaultValue = false)]
+    [JsonPropertyName("action")]
     public ActionMapAction Action { get; set; }
 
 
@@ -184,7 +183,7 @@ public partial class ActionMap : IEquatable<ActionMap>
     /// The action map&#39;s associated schedule groups.
     /// </summary>
     /// <value>The action map&#39;s associated schedule groups.</value>
-    [DataMember(Name = "actionMapScheduleGroups", EmitDefaultValue = false)]
+    [JsonPropertyName("actionMapScheduleGroups")]
     public ActionMapScheduleGroups ActionMapScheduleGroups { get; set; }
 
 
@@ -193,7 +192,7 @@ public partial class ActionMap : IEquatable<ActionMap>
     /// Override organization-level frequency cap and always offer web engagements from this action map.
     /// </summary>
     /// <value>Override organization-level frequency cap and always offer web engagements from this action map.</value>
-    [DataMember(Name = "ignoreFrequencyCap", EmitDefaultValue = false)]
+    [JsonPropertyName("ignoreFrequencyCap")]
     public bool? IgnoreFrequencyCap { get; set; }
 
 
@@ -202,7 +201,7 @@ public partial class ActionMap : IEquatable<ActionMap>
     /// The URI for this object
     /// </summary>
     /// <value>The URI for this object</value>
-    [DataMember(Name = "selfUri", EmitDefaultValue = false)]
+    [JsonPropertyName("selfUri")]
     public string SelfUri { get; private set; }
 
 
@@ -211,7 +210,7 @@ public partial class ActionMap : IEquatable<ActionMap>
     /// Timestamp indicating when the action map was created. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z
     /// </summary>
     /// <value>Timestamp indicating when the action map was created. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z</value>
-    [DataMember(Name = "createdDate", EmitDefaultValue = false)]
+    [JsonPropertyName("createdDate")]
     public DateTime? CreatedDate { get; set; }
 
 
@@ -220,7 +219,7 @@ public partial class ActionMap : IEquatable<ActionMap>
     /// Timestamp indicating when the action map was last updated. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z
     /// </summary>
     /// <value>Timestamp indicating when the action map was last updated. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z</value>
-    [DataMember(Name = "modifiedDate", EmitDefaultValue = false)]
+    [JsonPropertyName("modifiedDate")]
     public DateTime? ModifiedDate { get; set; }
 
 
@@ -229,7 +228,7 @@ public partial class ActionMap : IEquatable<ActionMap>
     /// Timestamp at which the action map is scheduled to start firing. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z
     /// </summary>
     /// <value>Timestamp at which the action map is scheduled to start firing. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z</value>
-    [DataMember(Name = "startDate", EmitDefaultValue = false)]
+    [JsonPropertyName("startDate")]
     public DateTime? StartDate { get; set; }
 
 
@@ -238,7 +237,7 @@ public partial class ActionMap : IEquatable<ActionMap>
     /// Timestamp at which the action map is scheduled to stop firing. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z
     /// </summary>
     /// <value>Timestamp at which the action map is scheduled to stop firing. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z</value>
-    [DataMember(Name = "endDate", EmitDefaultValue = false)]
+    [JsonPropertyName("endDate")]
     public DateTime? EndDate { get; set; }
 
 

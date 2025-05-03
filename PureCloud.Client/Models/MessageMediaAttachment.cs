@@ -7,14 +7,14 @@ namespace PureCloud.Client.Models;
 /// <summary>
 /// MessageMediaAttachment
 /// </summary>
-[DataContract]
+
 public partial class MessageMediaAttachment : IEquatable<MessageMediaAttachment>
 {
     /// <summary>
     /// The optional internet media type of the the media object.If null then the media type should be dictated by the url.
     /// </summary>
     /// <value>The optional internet media type of the the media object.If null then the media type should be dictated by the url.</value>
-    [JsonConverter(typeof(JsonStringEnumConverter))]
+    
     public enum MediaTypeEnum
     {
         /// <summary>
@@ -47,7 +47,7 @@ public partial class MessageMediaAttachment : IEquatable<MessageMediaAttachment>
     /// The optional internet media type of the the media object.If null then the media type should be dictated by the url.
     /// </summary>
     /// <value>The optional internet media type of the the media object.If null then the media type should be dictated by the url.</value>
-    [DataMember(Name = "mediaType", EmitDefaultValue = false)]
+    [JsonPropertyName("mediaType")]
     public MediaTypeEnum? MediaType { get; set; }
     /// <summary>
     /// Initializes a new instance of the <see cref="MessageMediaAttachment" /> class.
@@ -73,7 +73,7 @@ public partial class MessageMediaAttachment : IEquatable<MessageMediaAttachment>
     /// The location of the media, useful for retrieving it
     /// </summary>
     /// <value>The location of the media, useful for retrieving it</value>
-    [DataMember(Name = "url", EmitDefaultValue = false)]
+    [JsonPropertyName("url")]
     public string Url { get; set; }
 
 
@@ -84,7 +84,7 @@ public partial class MessageMediaAttachment : IEquatable<MessageMediaAttachment>
     /// The optional content length of the the media object, in bytes.
     /// </summary>
     /// <value>The optional content length of the the media object, in bytes.</value>
-    [DataMember(Name = "contentLength", EmitDefaultValue = false)]
+    [JsonPropertyName("contentLength")]
     public long? ContentLength { get; set; }
 
 
@@ -93,7 +93,7 @@ public partial class MessageMediaAttachment : IEquatable<MessageMediaAttachment>
     /// The name of the media object.
     /// </summary>
     /// <value>The name of the media object.</value>
-    [DataMember(Name = "name", EmitDefaultValue = false)]
+    [JsonPropertyName("name")]
     public string Name { get; set; }
 
 
@@ -102,7 +102,7 @@ public partial class MessageMediaAttachment : IEquatable<MessageMediaAttachment>
     /// A globally unique identifier for the media object.
     /// </summary>
     /// <value>A globally unique identifier for the media object.</value>
-    [DataMember(Name = "id", EmitDefaultValue = false)]
+    [JsonPropertyName("id")]
     public string Id { get; set; }
 
 

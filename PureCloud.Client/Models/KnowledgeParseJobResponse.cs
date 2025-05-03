@@ -7,14 +7,14 @@ namespace PureCloud.Client.Models;
 /// <summary>
 /// KnowledgeParseJobResponse
 /// </summary>
-[DataContract]
+
 public partial class KnowledgeParseJobResponse : IEquatable<KnowledgeParseJobResponse>
 {
     /// <summary>
     /// Status of the parse job
     /// </summary>
     /// <value>Status of the parse job</value>
-    [JsonConverter(typeof(JsonStringEnumConverter))]
+    
     public enum StatusEnum
     {
         /// <summary>
@@ -77,7 +77,7 @@ public partial class KnowledgeParseJobResponse : IEquatable<KnowledgeParseJobRes
     /// Status of the parse job
     /// </summary>
     /// <value>Status of the parse job</value>
-    [DataMember(Name = "status", EmitDefaultValue = false)]
+    [JsonPropertyName("status")]
     public StatusEnum? Status { get; private set; }
     /// <summary>
     /// Initializes a new instance of the <see cref="KnowledgeParseJobResponse" /> class.
@@ -99,7 +99,7 @@ public partial class KnowledgeParseJobResponse : IEquatable<KnowledgeParseJobRes
     /// Id of the parse job
     /// </summary>
     /// <value>Id of the parse job</value>
-    [DataMember(Name = "id", EmitDefaultValue = false)]
+    [JsonPropertyName("id")]
     public string Id { get; private set; }
 
 
@@ -108,7 +108,7 @@ public partial class KnowledgeParseJobResponse : IEquatable<KnowledgeParseJobRes
     /// The URL of the location at which the caller can download the original html file.
     /// </summary>
     /// <value>The URL of the location at which the caller can download the original html file.</value>
-    [DataMember(Name = "downloadURL", EmitDefaultValue = false)]
+    [JsonPropertyName("downloadURL")]
     public string DownloadURL { get; set; }
 
 
@@ -117,7 +117,7 @@ public partial class KnowledgeParseJobResponse : IEquatable<KnowledgeParseJobRes
     /// Hinted titles for the parser.
     /// </summary>
     /// <value>Hinted titles for the parser.</value>
-    [DataMember(Name = "hints", EmitDefaultValue = false)]
+    [JsonPropertyName("hints")]
     public List<string> Hints { get; set; }
 
 
@@ -128,7 +128,7 @@ public partial class KnowledgeParseJobResponse : IEquatable<KnowledgeParseJobRes
     /// Results of the parse
     /// </summary>
     /// <value>Results of the parse</value>
-    [DataMember(Name = "parseResults", EmitDefaultValue = false)]
+    [JsonPropertyName("parseResults")]
     public List<KnowledgeParseRecord> ParseResults { get; private set; }
 
 
@@ -137,7 +137,7 @@ public partial class KnowledgeParseJobResponse : IEquatable<KnowledgeParseJobRes
     /// Result of the import phase
     /// </summary>
     /// <value>Result of the import phase</value>
-    [DataMember(Name = "importResult", EmitDefaultValue = false)]
+    [JsonPropertyName("importResult")]
     public KnowledgeParseImportResult ImportResult { get; private set; }
 
 
@@ -146,7 +146,7 @@ public partial class KnowledgeParseJobResponse : IEquatable<KnowledgeParseJobRes
     /// The user who created the operation
     /// </summary>
     /// <value>The user who created the operation</value>
-    [DataMember(Name = "createdBy", EmitDefaultValue = false)]
+    [JsonPropertyName("createdBy")]
     public UserReference CreatedBy { get; set; }
 
 
@@ -155,7 +155,7 @@ public partial class KnowledgeParseJobResponse : IEquatable<KnowledgeParseJobRes
     /// Created date. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z
     /// </summary>
     /// <value>Created date. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z</value>
-    [DataMember(Name = "dateCreated", EmitDefaultValue = false)]
+    [JsonPropertyName("dateCreated")]
     public DateTime? DateCreated { get; private set; }
 
 
@@ -164,7 +164,7 @@ public partial class KnowledgeParseJobResponse : IEquatable<KnowledgeParseJobRes
     /// Last modified date. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z
     /// </summary>
     /// <value>Last modified date. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z</value>
-    [DataMember(Name = "dateModified", EmitDefaultValue = false)]
+    [JsonPropertyName("dateModified")]
     public DateTime? DateModified { get; private set; }
 
 
@@ -173,7 +173,7 @@ public partial class KnowledgeParseJobResponse : IEquatable<KnowledgeParseJobRes
     /// The URI for this object
     /// </summary>
     /// <value>The URI for this object</value>
-    [DataMember(Name = "selfUri", EmitDefaultValue = false)]
+    [JsonPropertyName("selfUri")]
     public string SelfUri { get; private set; }
 
 

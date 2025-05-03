@@ -7,13 +7,13 @@ namespace PureCloud.Client.Models;
 /// <summary>
 /// FlowHealthIntentUtterance
 /// </summary>
-[DataContract]
+
 public partial class FlowHealthIntentUtterance : IEquatable<FlowHealthIntentUtterance>
 {
     /// <summary>
     /// Gets or Sets StaticValidationResults
     /// </summary>
-    [JsonConverter(typeof(JsonStringEnumConverter))]
+    
     public enum StaticValidationResultsEnum
     {
         /// <summary>
@@ -72,7 +72,7 @@ public partial class FlowHealthIntentUtterance : IEquatable<FlowHealthIntentUtte
     /// The globally unique identifier for the object.
     /// </summary>
     /// <value>The globally unique identifier for the object.</value>
-    [DataMember(Name = "id", EmitDefaultValue = false)]
+    [JsonPropertyName("id")]
     public string Id { get; private set; }
 
 
@@ -81,7 +81,7 @@ public partial class FlowHealthIntentUtterance : IEquatable<FlowHealthIntentUtte
     /// Utterance Text.
     /// </summary>
     /// <value>Utterance Text.</value>
-    [DataMember(Name = "text", EmitDefaultValue = false)]
+    [JsonPropertyName("text")]
     public string Text { get; set; }
 
 
@@ -90,7 +90,7 @@ public partial class FlowHealthIntentUtterance : IEquatable<FlowHealthIntentUtte
     /// Number of issues found for this utterance.
     /// </summary>
     /// <value>Number of issues found for this utterance.</value>
-    [DataMember(Name = "issueCount", EmitDefaultValue = false)]
+    [JsonPropertyName("issueCount")]
     public long? IssueCount { get; set; }
 
 
@@ -99,7 +99,7 @@ public partial class FlowHealthIntentUtterance : IEquatable<FlowHealthIntentUtte
     /// Validation results for this utterance.
     /// </summary>
     /// <value>Validation results for this utterance.</value>
-    [DataMember(Name = "staticValidationResults", EmitDefaultValue = false)]
+    [JsonPropertyName("staticValidationResults")]
     public List<StaticValidationResultsEnum> StaticValidationResults { get; set; }
 
 
@@ -108,7 +108,7 @@ public partial class FlowHealthIntentUtterance : IEquatable<FlowHealthIntentUtte
     /// Details about this utterance being an outlier or not.
     /// </summary>
     /// <value>Details about this utterance being an outlier or not.</value>
-    [DataMember(Name = "outlierInfo", EmitDefaultValue = false)]
+    [JsonPropertyName("outlierInfo")]
     public OutlierInfo OutlierInfo { get; set; }
 
 
@@ -117,7 +117,7 @@ public partial class FlowHealthIntentUtterance : IEquatable<FlowHealthIntentUtte
     /// Confusion details with other utterances.
     /// </summary>
     /// <value>Confusion details with other utterances.</value>
-    [DataMember(Name = "confusionInfo", EmitDefaultValue = false)]
+    [JsonPropertyName("confusionInfo")]
     public ConfusionInfo ConfusionInfo { get; set; }
 
 

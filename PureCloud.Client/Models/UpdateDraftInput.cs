@@ -1,4 +1,3 @@
-using System.Runtime.Serialization;
 using System.Text;
 using System.Text.Json.Serialization;
 
@@ -7,7 +6,7 @@ namespace PureCloud.Client.Models;
 /// <summary>
 /// Definition of an Action Draft to be created or updated.
 /// </summary>
-[DataContract]
+
 public partial class UpdateDraftInput : IEquatable<UpdateDraftInput>
 {
 
@@ -42,7 +41,7 @@ public partial class UpdateDraftInput : IEquatable<UpdateDraftInput>
     /// Category of action, Can be up to 256 characters long
     /// </summary>
     /// <value>Category of action, Can be up to 256 characters long</value>
-    [DataMember(Name = "category", EmitDefaultValue = false)]
+    [JsonPropertyName("category")]
     public string Category { get; set; }
 
 
@@ -51,7 +50,7 @@ public partial class UpdateDraftInput : IEquatable<UpdateDraftInput>
     /// Name of action, Can be up to 256 characters long
     /// </summary>
     /// <value>Name of action, Can be up to 256 characters long</value>
-    [DataMember(Name = "name", EmitDefaultValue = false)]
+    [JsonPropertyName("name")]
     public string Name { get; set; }
 
 
@@ -60,7 +59,7 @@ public partial class UpdateDraftInput : IEquatable<UpdateDraftInput>
     /// Configuration to support request and response processing
     /// </summary>
     /// <value>Configuration to support request and response processing</value>
-    [DataMember(Name = "config", EmitDefaultValue = false)]
+    [JsonPropertyName("config")]
     public ActionConfig Config { get; set; }
 
 
@@ -69,7 +68,7 @@ public partial class UpdateDraftInput : IEquatable<UpdateDraftInput>
     /// Action contract
     /// </summary>
     /// <value>Action contract</value>
-    [DataMember(Name = "contract", EmitDefaultValue = false)]
+    [JsonPropertyName("contract")]
     public ActionContractInput Contract { get; set; }
 
 
@@ -78,7 +77,7 @@ public partial class UpdateDraftInput : IEquatable<UpdateDraftInput>
     /// Indication of whether or not the action is designed to accept sensitive data
     /// </summary>
     /// <value>Indication of whether or not the action is designed to accept sensitive data</value>
-    [DataMember(Name = "secure", EmitDefaultValue = false)]
+    [JsonPropertyName("secure")]
     public bool? Secure { get; set; }
 
 
@@ -87,7 +86,7 @@ public partial class UpdateDraftInput : IEquatable<UpdateDraftInput>
     /// Version of current Draft
     /// </summary>
     /// <value>Version of current Draft</value>
-    [DataMember(Name = "version", EmitDefaultValue = false)]
+    [JsonPropertyName("version")]
     public int? Version { get; set; }
 
 

@@ -1,12 +1,12 @@
-using System.Runtime.Serialization;
 using System.Text;
+using System.Text.Json.Serialization;
 
 namespace PureCloud.Client.Models;
 
 /// <summary>
 /// KnowledgeSyncJobStatistics
 /// </summary>
-[DataContract]
+
 public partial class KnowledgeSyncJobStatistics : IEquatable<KnowledgeSyncJobStatistics>
 {
     /// <summary>
@@ -55,7 +55,7 @@ public partial class KnowledgeSyncJobStatistics : IEquatable<KnowledgeSyncJobSta
     /// Number of documents will be created by the sync.
     /// </summary>
     /// <value>Number of documents will be created by the sync.</value>
-    [DataMember(Name = "countDocumentImportActivityCreate", EmitDefaultValue = false)]
+    [JsonPropertyName("countDocumentImportActivityCreate")]
     public int? CountDocumentImportActivityCreate { get; set; }
 
 
@@ -64,7 +64,7 @@ public partial class KnowledgeSyncJobStatistics : IEquatable<KnowledgeSyncJobSta
     /// Number of documents will be updated by the sync.
     /// </summary>
     /// <value>Number of documents will be updated by the sync.</value>
-    [DataMember(Name = "countDocumentImportActivityUpdate", EmitDefaultValue = false)]
+    [JsonPropertyName("countDocumentImportActivityUpdate")]
     public int? CountDocumentImportActivityUpdate { get; set; }
 
 
@@ -73,7 +73,7 @@ public partial class KnowledgeSyncJobStatistics : IEquatable<KnowledgeSyncJobSta
     /// Number of documents will be imported as draft.
     /// </summary>
     /// <value>Number of documents will be imported as draft.</value>
-    [DataMember(Name = "countDocumentStateDraft", EmitDefaultValue = false)]
+    [JsonPropertyName("countDocumentStateDraft")]
     public int? CountDocumentStateDraft { get; set; }
 
 
@@ -82,7 +82,7 @@ public partial class KnowledgeSyncJobStatistics : IEquatable<KnowledgeSyncJobSta
     /// Number of documents will be imported as published.
     /// </summary>
     /// <value>Number of documents will be imported as published.</value>
-    [DataMember(Name = "countDocumentStatePublished", EmitDefaultValue = false)]
+    [JsonPropertyName("countDocumentStatePublished")]
     public int? CountDocumentStatePublished { get; set; }
 
 
@@ -91,7 +91,7 @@ public partial class KnowledgeSyncJobStatistics : IEquatable<KnowledgeSyncJobSta
     /// Number of imported documents.
     /// </summary>
     /// <value>Number of imported documents.</value>
-    [DataMember(Name = "countDocumentImportSuccess", EmitDefaultValue = false)]
+    [JsonPropertyName("countDocumentImportSuccess")]
     public int? CountDocumentImportSuccess { get; set; }
 
 
@@ -100,7 +100,7 @@ public partial class KnowledgeSyncJobStatistics : IEquatable<KnowledgeSyncJobSta
     /// Number of documents failed to import.
     /// </summary>
     /// <value>Number of documents failed to import.</value>
-    [DataMember(Name = "countDocumentImportFailure", EmitDefaultValue = false)]
+    [JsonPropertyName("countDocumentImportFailure")]
     public int? CountDocumentImportFailure { get; set; }
 
 
@@ -109,7 +109,7 @@ public partial class KnowledgeSyncJobStatistics : IEquatable<KnowledgeSyncJobSta
     /// Number of imported categories.
     /// </summary>
     /// <value>Number of imported categories.</value>
-    [DataMember(Name = "countCategoryImportSuccess", EmitDefaultValue = false)]
+    [JsonPropertyName("countCategoryImportSuccess")]
     public int? CountCategoryImportSuccess { get; set; }
 
 
@@ -118,7 +118,7 @@ public partial class KnowledgeSyncJobStatistics : IEquatable<KnowledgeSyncJobSta
     /// Number of categories failed to import.
     /// </summary>
     /// <value>Number of categories failed to import.</value>
-    [DataMember(Name = "countCategoryImportFailure", EmitDefaultValue = false)]
+    [JsonPropertyName("countCategoryImportFailure")]
     public int? CountCategoryImportFailure { get; set; }
 
 
@@ -127,7 +127,7 @@ public partial class KnowledgeSyncJobStatistics : IEquatable<KnowledgeSyncJobSta
     /// Number of imported labels.
     /// </summary>
     /// <value>Number of imported labels.</value>
-    [DataMember(Name = "countLabelImportSuccess", EmitDefaultValue = false)]
+    [JsonPropertyName("countLabelImportSuccess")]
     public int? CountLabelImportSuccess { get; set; }
 
 
@@ -136,7 +136,7 @@ public partial class KnowledgeSyncJobStatistics : IEquatable<KnowledgeSyncJobSta
     /// Number of labels failed to import.
     /// </summary>
     /// <value>Number of labels failed to import.</value>
-    [DataMember(Name = "countLabelImportFailure", EmitDefaultValue = false)]
+    [JsonPropertyName("countLabelImportFailure")]
     public int? CountLabelImportFailure { get; set; }
 
 
@@ -145,7 +145,7 @@ public partial class KnowledgeSyncJobStatistics : IEquatable<KnowledgeSyncJobSta
     /// Number of documents will be deleted by the sync.
     /// </summary>
     /// <value>Number of documents will be deleted by the sync.</value>
-    [DataMember(Name = "countDocumentDeleteSuccess", EmitDefaultValue = false)]
+    [JsonPropertyName("countDocumentDeleteSuccess")]
     public int? CountDocumentDeleteSuccess { get; set; }
 
 
@@ -154,7 +154,7 @@ public partial class KnowledgeSyncJobStatistics : IEquatable<KnowledgeSyncJobSta
     /// Number of documents failed to delete.
     /// </summary>
     /// <value>Number of documents failed to delete.</value>
-    [DataMember(Name = "countDocumentDeleteFailure", EmitDefaultValue = false)]
+    [JsonPropertyName("countDocumentDeleteFailure")]
     public int? CountDocumentDeleteFailure { get; set; }
 
 
@@ -163,7 +163,7 @@ public partial class KnowledgeSyncJobStatistics : IEquatable<KnowledgeSyncJobSta
     /// Number of successfully deleted categories.
     /// </summary>
     /// <value>Number of successfully deleted categories.</value>
-    [DataMember(Name = "countCategoryDeleteSuccess", EmitDefaultValue = false)]
+    [JsonPropertyName("countCategoryDeleteSuccess")]
     public int? CountCategoryDeleteSuccess { get; set; }
 
 
@@ -172,7 +172,7 @@ public partial class KnowledgeSyncJobStatistics : IEquatable<KnowledgeSyncJobSta
     /// Number of categories failed to delete.
     /// </summary>
     /// <value>Number of categories failed to delete.</value>
-    [DataMember(Name = "countCategoryDeleteFailure", EmitDefaultValue = false)]
+    [JsonPropertyName("countCategoryDeleteFailure")]
     public int? CountCategoryDeleteFailure { get; set; }
 
 
@@ -181,7 +181,7 @@ public partial class KnowledgeSyncJobStatistics : IEquatable<KnowledgeSyncJobSta
     /// Number of successfully deleted labels.
     /// </summary>
     /// <value>Number of successfully deleted labels.</value>
-    [DataMember(Name = "countLabelDeleteSuccess", EmitDefaultValue = false)]
+    [JsonPropertyName("countLabelDeleteSuccess")]
     public int? CountLabelDeleteSuccess { get; set; }
 
 
@@ -190,7 +190,7 @@ public partial class KnowledgeSyncJobStatistics : IEquatable<KnowledgeSyncJobSta
     /// Number of labels failed to delete.
     /// </summary>
     /// <value>Number of labels failed to delete.</value>
-    [DataMember(Name = "countLabelDeleteFailure", EmitDefaultValue = false)]
+    [JsonPropertyName("countLabelDeleteFailure")]
     public int? CountLabelDeleteFailure { get; set; }
 
 

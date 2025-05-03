@@ -7,14 +7,14 @@ namespace PureCloud.Client.Models;
 /// <summary>
 /// Line
 /// </summary>
-[DataContract]
+
 public partial class Line : IEquatable<Line>
 {
     /// <summary>
     /// Indicates if the resource is active, inactive, or deleted.
     /// </summary>
     /// <value>Indicates if the resource is active, inactive, or deleted.</value>
-    [JsonConverter(typeof(JsonStringEnumConverter))]
+    
     public enum StateEnum
     {
         /// <summary>
@@ -47,7 +47,7 @@ public partial class Line : IEquatable<Line>
     /// Indicates if the resource is active, inactive, or deleted.
     /// </summary>
     /// <value>Indicates if the resource is active, inactive, or deleted.</value>
-    [DataMember(Name = "state", EmitDefaultValue = false)]
+    [JsonPropertyName("state")]
     public StateEnum? State { get; private set; }
 
     /// <summary>
@@ -95,7 +95,7 @@ public partial class Line : IEquatable<Line>
     /// The globally unique identifier for the object.
     /// </summary>
     /// <value>The globally unique identifier for the object.</value>
-    [DataMember(Name = "id", EmitDefaultValue = false)]
+    [JsonPropertyName("id")]
     public string Id { get; private set; }
 
 
@@ -104,7 +104,7 @@ public partial class Line : IEquatable<Line>
     /// The name of the entity.
     /// </summary>
     /// <value>The name of the entity.</value>
-    [DataMember(Name = "name", EmitDefaultValue = false)]
+    [JsonPropertyName("name")]
     public string Name { get; set; }
 
 
@@ -113,7 +113,7 @@ public partial class Line : IEquatable<Line>
     /// The division to which this entity belongs.
     /// </summary>
     /// <value>The division to which this entity belongs.</value>
-    [DataMember(Name = "division", EmitDefaultValue = false)]
+    [JsonPropertyName("division")]
     public Division Division { get; set; }
 
 
@@ -122,7 +122,7 @@ public partial class Line : IEquatable<Line>
     /// The resource&#39;s description.
     /// </summary>
     /// <value>The resource&#39;s description.</value>
-    [DataMember(Name = "description", EmitDefaultValue = false)]
+    [JsonPropertyName("description")]
     public string Description { get; set; }
 
 
@@ -131,7 +131,7 @@ public partial class Line : IEquatable<Line>
     /// The current version of the resource.
     /// </summary>
     /// <value>The current version of the resource.</value>
-    [DataMember(Name = "version", EmitDefaultValue = false)]
+    [JsonPropertyName("version")]
     public int? Version { get; set; }
 
 
@@ -140,7 +140,7 @@ public partial class Line : IEquatable<Line>
     /// The date the resource was created. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z
     /// </summary>
     /// <value>The date the resource was created. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z</value>
-    [DataMember(Name = "dateCreated", EmitDefaultValue = false)]
+    [JsonPropertyName("dateCreated")]
     public DateTime? DateCreated { get; private set; }
 
 
@@ -149,7 +149,7 @@ public partial class Line : IEquatable<Line>
     /// The date of the last modification to the resource. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z
     /// </summary>
     /// <value>The date of the last modification to the resource. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z</value>
-    [DataMember(Name = "dateModified", EmitDefaultValue = false)]
+    [JsonPropertyName("dateModified")]
     public DateTime? DateModified { get; private set; }
 
 
@@ -158,7 +158,7 @@ public partial class Line : IEquatable<Line>
     /// The ID of the user that last modified the resource.
     /// </summary>
     /// <value>The ID of the user that last modified the resource.</value>
-    [DataMember(Name = "modifiedBy", EmitDefaultValue = false)]
+    [JsonPropertyName("modifiedBy")]
     public string ModifiedBy { get; private set; }
 
 
@@ -167,7 +167,7 @@ public partial class Line : IEquatable<Line>
     /// The ID of the user that created the resource.
     /// </summary>
     /// <value>The ID of the user that created the resource.</value>
-    [DataMember(Name = "createdBy", EmitDefaultValue = false)]
+    [JsonPropertyName("createdBy")]
     public string CreatedBy { get; private set; }
 
 
@@ -178,7 +178,7 @@ public partial class Line : IEquatable<Line>
     /// The application that last modified the resource.
     /// </summary>
     /// <value>The application that last modified the resource.</value>
-    [DataMember(Name = "modifiedByApp", EmitDefaultValue = false)]
+    [JsonPropertyName("modifiedByApp")]
     public string ModifiedByApp { get; private set; }
 
 
@@ -187,7 +187,7 @@ public partial class Line : IEquatable<Line>
     /// The application that created the resource.
     /// </summary>
     /// <value>The application that created the resource.</value>
-    [DataMember(Name = "createdByApp", EmitDefaultValue = false)]
+    [JsonPropertyName("createdByApp")]
     public string CreatedByApp { get; private set; }
 
 
@@ -195,7 +195,7 @@ public partial class Line : IEquatable<Line>
     /// <summary>
     /// Gets or Sets Properties
     /// </summary>
-    [DataMember(Name = "properties", EmitDefaultValue = false)]
+    [JsonPropertyName("properties")]
     public Dictionary<string, object> Properties { get; set; }
 
 
@@ -204,7 +204,7 @@ public partial class Line : IEquatable<Line>
     /// The edge group associated with the line. (Deprecated)
     /// </summary>
     /// <value>The edge group associated with the line. (Deprecated)</value>
-    [DataMember(Name = "edgeGroup", EmitDefaultValue = false)]
+    [JsonPropertyName("edgeGroup")]
     public DomainEntityRef EdgeGroup { get; set; }
 
 
@@ -212,7 +212,7 @@ public partial class Line : IEquatable<Line>
     /// <summary>
     /// Gets or Sets Template
     /// </summary>
-    [DataMember(Name = "template", EmitDefaultValue = false)]
+    [JsonPropertyName("template")]
     public DomainEntityRef Template { get; set; }
 
 
@@ -220,7 +220,7 @@ public partial class Line : IEquatable<Line>
     /// <summary>
     /// Gets or Sets Site
     /// </summary>
-    [DataMember(Name = "site", EmitDefaultValue = false)]
+    [JsonPropertyName("site")]
     public DomainEntityRef Site { get; set; }
 
 
@@ -228,7 +228,7 @@ public partial class Line : IEquatable<Line>
     /// <summary>
     /// Gets or Sets LineBaseSettings
     /// </summary>
-    [DataMember(Name = "lineBaseSettings", EmitDefaultValue = false)]
+    [JsonPropertyName("lineBaseSettings")]
     public DomainEntityRef LineBaseSettings { get; set; }
 
 
@@ -237,7 +237,7 @@ public partial class Line : IEquatable<Line>
     /// The primary edge associated to the line. (Deprecated)
     /// </summary>
     /// <value>The primary edge associated to the line. (Deprecated)</value>
-    [DataMember(Name = "primaryEdge", EmitDefaultValue = false)]
+    [JsonPropertyName("primaryEdge")]
     public Edge PrimaryEdge { get; set; }
 
 
@@ -246,7 +246,7 @@ public partial class Line : IEquatable<Line>
     /// The secondary edge associated to the line. (Deprecated)
     /// </summary>
     /// <value>The secondary edge associated to the line. (Deprecated)</value>
-    [DataMember(Name = "secondaryEdge", EmitDefaultValue = false)]
+    [JsonPropertyName("secondaryEdge")]
     public Edge SecondaryEdge { get; set; }
 
 
@@ -254,7 +254,7 @@ public partial class Line : IEquatable<Line>
     /// <summary>
     /// Gets or Sets LoggedInUser
     /// </summary>
-    [DataMember(Name = "loggedInUser", EmitDefaultValue = false)]
+    [JsonPropertyName("loggedInUser")]
     public DomainEntityRef LoggedInUser { get; set; }
 
 
@@ -262,7 +262,7 @@ public partial class Line : IEquatable<Line>
     /// <summary>
     /// Gets or Sets DefaultForUser
     /// </summary>
-    [DataMember(Name = "defaultForUser", EmitDefaultValue = false)]
+    [JsonPropertyName("defaultForUser")]
     public DomainEntityRef DefaultForUser { get; set; }
 
 
@@ -271,7 +271,7 @@ public partial class Line : IEquatable<Line>
     /// The URI for this object
     /// </summary>
     /// <value>The URI for this object</value>
-    [DataMember(Name = "selfUri", EmitDefaultValue = false)]
+    [JsonPropertyName("selfUri")]
     public string SelfUri { get; private set; }
 
 

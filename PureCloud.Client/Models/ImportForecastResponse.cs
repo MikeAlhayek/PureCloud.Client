@@ -7,14 +7,14 @@ namespace PureCloud.Client.Models;
 /// <summary>
 /// ImportForecastResponse
 /// </summary>
-[DataContract]
+
 public partial class ImportForecastResponse : IEquatable<ImportForecastResponse>
 {
     /// <summary>
     /// The status of the operation
     /// </summary>
     /// <value>The status of the operation</value>
-    [JsonConverter(typeof(JsonStringEnumConverter))]
+    
     public enum StatusEnum
     {
         /// <summary>
@@ -53,7 +53,7 @@ public partial class ImportForecastResponse : IEquatable<ImportForecastResponse>
     /// The status of the operation
     /// </summary>
     /// <value>The status of the operation</value>
-    [DataMember(Name = "status", EmitDefaultValue = false)]
+    [JsonPropertyName("status")]
     public StatusEnum? Status { get; set; }
     /// <summary>
     /// Initializes a new instance of the <see cref="ImportForecastResponse" /> class.
@@ -77,7 +77,7 @@ public partial class ImportForecastResponse : IEquatable<ImportForecastResponse>
     /// The ID for the operation
     /// </summary>
     /// <value>The ID for the operation</value>
-    [DataMember(Name = "operationId", EmitDefaultValue = false)]
+    [JsonPropertyName("operationId")]
     public string OperationId { get; set; }
 
 
@@ -86,7 +86,7 @@ public partial class ImportForecastResponse : IEquatable<ImportForecastResponse>
     /// The result of the operation. Always null, result will come via notification
     /// </summary>
     /// <value>The result of the operation. Always null, result will come via notification</value>
-    [DataMember(Name = "result", EmitDefaultValue = false)]
+    [JsonPropertyName("result")]
     public BuShortTermForecast Result { get; set; }
 
 

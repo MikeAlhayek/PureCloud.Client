@@ -1,12 +1,12 @@
-using System.Runtime.Serialization;
 using System.Text;
+using System.Text.Json.Serialization;
 
 namespace PureCloud.Client.Models;
 
 /// <summary>
 /// InvalidAssignment
 /// </summary>
-[DataContract]
+
 public partial class InvalidAssignment : IEquatable<InvalidAssignment>
 {
     /// <summary>
@@ -27,7 +27,7 @@ public partial class InvalidAssignment : IEquatable<InvalidAssignment>
     /// Invalid user for validation
     /// </summary>
     /// <value>Invalid user for validation</value>
-    [DataMember(Name = "user", EmitDefaultValue = false)]
+    [JsonPropertyName("user")]
     public UserReference User { get; set; }
 
 
@@ -36,7 +36,7 @@ public partial class InvalidAssignment : IEquatable<InvalidAssignment>
     /// The reason for the invalid input for validation
     /// </summary>
     /// <value>The reason for the invalid input for validation</value>
-    [DataMember(Name = "message", EmitDefaultValue = false)]
+    [JsonPropertyName("message")]
     public string Message { get; set; }
 
 

@@ -7,14 +7,14 @@ namespace PureCloud.Client.Models;
 /// <summary>
 /// WhatsAppIntegration
 /// </summary>
-[DataContract]
+
 public partial class WhatsAppIntegration : IEquatable<WhatsAppIntegration>
 {
     /// <summary>
     /// The status of the WhatsApp Integration
     /// </summary>
     /// <value>The status of the WhatsApp Integration</value>
-    [JsonConverter(typeof(JsonStringEnumConverter))]
+    
     public enum StatusEnum
     {
         /// <summary>
@@ -77,7 +77,7 @@ public partial class WhatsAppIntegration : IEquatable<WhatsAppIntegration>
     /// The status code of WhatsApp Integration activation process
     /// </summary>
     /// <value>The status code of WhatsApp Integration activation process</value>
-    [JsonConverter(typeof(JsonStringEnumConverter))]
+    
     public enum ActivationStatusCodeEnum
     {
         /// <summary>
@@ -128,7 +128,7 @@ public partial class WhatsAppIntegration : IEquatable<WhatsAppIntegration>
     /// Status of asynchronous create operation
     /// </summary>
     /// <value>Status of asynchronous create operation</value>
-    [JsonConverter(typeof(JsonStringEnumConverter))]
+    
     public enum CreateStatusEnum
     {
         /// <summary>
@@ -161,19 +161,19 @@ public partial class WhatsAppIntegration : IEquatable<WhatsAppIntegration>
     /// The status of the WhatsApp Integration
     /// </summary>
     /// <value>The status of the WhatsApp Integration</value>
-    [DataMember(Name = "status", EmitDefaultValue = false)]
+    [JsonPropertyName("status")]
     public StatusEnum? Status { get; set; }
     /// <summary>
     /// The status code of WhatsApp Integration activation process
     /// </summary>
     /// <value>The status code of WhatsApp Integration activation process</value>
-    [DataMember(Name = "activationStatusCode", EmitDefaultValue = false)]
+    [JsonPropertyName("activationStatusCode")]
     public ActivationStatusCodeEnum? ActivationStatusCode { get; private set; }
     /// <summary>
     /// Status of asynchronous create operation
     /// </summary>
     /// <value>Status of asynchronous create operation</value>
-    [DataMember(Name = "createStatus", EmitDefaultValue = false)]
+    [JsonPropertyName("createStatus")]
     public CreateStatusEnum? CreateStatus { get; private set; }
 
     /// <summary>
@@ -215,7 +215,7 @@ public partial class WhatsAppIntegration : IEquatable<WhatsAppIntegration>
     /// A unique Integration Id.
     /// </summary>
     /// <value>A unique Integration Id.</value>
-    [DataMember(Name = "id", EmitDefaultValue = false)]
+    [JsonPropertyName("id")]
     public string Id { get; private set; }
 
 
@@ -224,7 +224,7 @@ public partial class WhatsAppIntegration : IEquatable<WhatsAppIntegration>
     /// The name of the WhatsApp integration.
     /// </summary>
     /// <value>The name of the WhatsApp integration.</value>
-    [DataMember(Name = "name", EmitDefaultValue = false)]
+    [JsonPropertyName("name")]
     public string Name { get; set; }
 
 
@@ -233,7 +233,7 @@ public partial class WhatsAppIntegration : IEquatable<WhatsAppIntegration>
     /// Defines the SupportedContent profile configured for an integration
     /// </summary>
     /// <value>Defines the SupportedContent profile configured for an integration</value>
-    [DataMember(Name = "supportedContent", EmitDefaultValue = false)]
+    [JsonPropertyName("supportedContent")]
     public SupportedContentReference SupportedContent { get; set; }
 
 
@@ -241,7 +241,7 @@ public partial class WhatsAppIntegration : IEquatable<WhatsAppIntegration>
     /// <summary>
     /// Gets or Sets MessagingSetting
     /// </summary>
-    [DataMember(Name = "messagingSetting", EmitDefaultValue = false)]
+    [JsonPropertyName("messagingSetting")]
     public MessagingSettingReference MessagingSetting { get; set; }
 
 
@@ -250,7 +250,7 @@ public partial class WhatsAppIntegration : IEquatable<WhatsAppIntegration>
     /// The phone number associated to the WhatsApp integration.
     /// </summary>
     /// <value>The phone number associated to the WhatsApp integration.</value>
-    [DataMember(Name = "phoneNumber", EmitDefaultValue = false)]
+    [JsonPropertyName("phoneNumber")]
     public string PhoneNumber { get; set; }
 
 
@@ -259,7 +259,7 @@ public partial class WhatsAppIntegration : IEquatable<WhatsAppIntegration>
     /// The list of available WhatsApp phone numbers for this account. Please select one phone number from this list to use with the created integration.
     /// </summary>
     /// <value>The list of available WhatsApp phone numbers for this account. Please select one phone number from this list to use with the created integration.</value>
-    [DataMember(Name = "availablePhoneNumbers", EmitDefaultValue = false)]
+    [JsonPropertyName("availablePhoneNumbers")]
     public WhatsAppAvailablePhoneNumberDetailsListing AvailablePhoneNumbers { get; private set; }
 
 
@@ -270,7 +270,7 @@ public partial class WhatsAppIntegration : IEquatable<WhatsAppIntegration>
     /// The recipient associated to the WhatsApp Integration. This recipient is used to associate a flow to an integration
     /// </summary>
     /// <value>The recipient associated to the WhatsApp Integration. This recipient is used to associate a flow to an integration</value>
-    [DataMember(Name = "recipient", EmitDefaultValue = false)]
+    [JsonPropertyName("recipient")]
     public DomainEntityRef Recipient { get; private set; }
 
 
@@ -279,7 +279,7 @@ public partial class WhatsAppIntegration : IEquatable<WhatsAppIntegration>
     /// Date this Integration was created. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z
     /// </summary>
     /// <value>Date this Integration was created. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z</value>
-    [DataMember(Name = "dateCreated", EmitDefaultValue = false)]
+    [JsonPropertyName("dateCreated")]
     public DateTime? DateCreated { get; set; }
 
 
@@ -288,7 +288,7 @@ public partial class WhatsAppIntegration : IEquatable<WhatsAppIntegration>
     /// Date this Integration was last modified. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z
     /// </summary>
     /// <value>Date this Integration was last modified. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z</value>
-    [DataMember(Name = "dateModified", EmitDefaultValue = false)]
+    [JsonPropertyName("dateModified")]
     public DateTime? DateModified { get; set; }
 
 
@@ -297,7 +297,7 @@ public partial class WhatsAppIntegration : IEquatable<WhatsAppIntegration>
     /// User reference that created this Integration
     /// </summary>
     /// <value>User reference that created this Integration</value>
-    [DataMember(Name = "createdBy", EmitDefaultValue = false)]
+    [JsonPropertyName("createdBy")]
     public DomainEntityRef CreatedBy { get; set; }
 
 
@@ -306,7 +306,7 @@ public partial class WhatsAppIntegration : IEquatable<WhatsAppIntegration>
     /// User reference that last modified this Integration
     /// </summary>
     /// <value>User reference that last modified this Integration</value>
-    [DataMember(Name = "modifiedBy", EmitDefaultValue = false)]
+    [JsonPropertyName("modifiedBy")]
     public DomainEntityRef ModifiedBy { get; set; }
 
 
@@ -315,7 +315,7 @@ public partial class WhatsAppIntegration : IEquatable<WhatsAppIntegration>
     /// Version number required for updates.
     /// </summary>
     /// <value>Version number required for updates.</value>
-    [DataMember(Name = "version", EmitDefaultValue = false)]
+    [JsonPropertyName("version")]
     public int? Version { get; set; }
 
 
@@ -326,7 +326,7 @@ public partial class WhatsAppIntegration : IEquatable<WhatsAppIntegration>
     /// The error information of WhatsApp Integration activation process
     /// </summary>
     /// <value>The error information of WhatsApp Integration activation process</value>
-    [DataMember(Name = "activationErrorInfo", EmitDefaultValue = false)]
+    [JsonPropertyName("activationErrorInfo")]
     public ErrorBody ActivationErrorInfo { get; private set; }
 
 
@@ -337,7 +337,7 @@ public partial class WhatsAppIntegration : IEquatable<WhatsAppIntegration>
     /// Error information returned, if createStatus is set to Error
     /// </summary>
     /// <value>Error information returned, if createStatus is set to Error</value>
-    [DataMember(Name = "createError", EmitDefaultValue = false)]
+    [JsonPropertyName("createError")]
     public ErrorBody CreateError { get; private set; }
 
 
@@ -346,7 +346,7 @@ public partial class WhatsAppIntegration : IEquatable<WhatsAppIntegration>
     /// The URI for this object
     /// </summary>
     /// <value>The URI for this object</value>
-    [DataMember(Name = "selfUri", EmitDefaultValue = false)]
+    [JsonPropertyName("selfUri")]
     public string SelfUri { get; private set; }
 
 

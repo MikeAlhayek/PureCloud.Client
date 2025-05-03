@@ -1,12 +1,12 @@
-using System.Runtime.Serialization;
 using System.Text;
+using System.Text.Json.Serialization;
 
 namespace PureCloud.Client.Models;
 
 /// <summary>
 /// CallRecord
 /// </summary>
-[DataContract]
+
 public partial class CallRecord : IEquatable<CallRecord>
 {
     /// <summary>
@@ -23,7 +23,7 @@ public partial class CallRecord : IEquatable<CallRecord>
     /// Timestamp of the last attempt to reach this number. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z
     /// </summary>
     /// <value>Timestamp of the last attempt to reach this number. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z</value>
-    [DataMember(Name = "lastAttempt", EmitDefaultValue = false)]
+    [JsonPropertyName("lastAttempt")]
     public DateTime? LastAttempt { get; private set; }
 
 
@@ -32,7 +32,7 @@ public partial class CallRecord : IEquatable<CallRecord>
     /// Result of the last attempt to reach this number
     /// </summary>
     /// <value>Result of the last attempt to reach this number</value>
-    [DataMember(Name = "lastResult", EmitDefaultValue = false)]
+    [JsonPropertyName("lastResult")]
     public string LastResult { get; private set; }
 
 

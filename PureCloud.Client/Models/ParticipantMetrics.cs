@@ -1,12 +1,12 @@
-using System.Runtime.Serialization;
 using System.Text;
+using System.Text.Json.Serialization;
 
 namespace PureCloud.Client.Models;
 
 /// <summary>
 /// ParticipantMetrics
 /// </summary>
-[DataContract]
+
 public partial class ParticipantMetrics : IEquatable<ParticipantMetrics>
 {
     /// <summary>
@@ -39,7 +39,7 @@ public partial class ParticipantMetrics : IEquatable<ParticipantMetrics>
     /// Percentage of Agent duration in the conversation
     /// </summary>
     /// <value>Percentage of Agent duration in the conversation</value>
-    [DataMember(Name = "agentDurationPercentage", EmitDefaultValue = false)]
+    [JsonPropertyName("agentDurationPercentage")]
     public double? AgentDurationPercentage { get; set; }
 
 
@@ -48,7 +48,7 @@ public partial class ParticipantMetrics : IEquatable<ParticipantMetrics>
     /// Percentage of Customer duration in the conversation
     /// </summary>
     /// <value>Percentage of Customer duration in the conversation</value>
-    [DataMember(Name = "customerDurationPercentage", EmitDefaultValue = false)]
+    [JsonPropertyName("customerDurationPercentage")]
     public double? CustomerDurationPercentage { get; set; }
 
 
@@ -57,7 +57,7 @@ public partial class ParticipantMetrics : IEquatable<ParticipantMetrics>
     /// Percentage of Silence duration in the conversation
     /// </summary>
     /// <value>Percentage of Silence duration in the conversation</value>
-    [DataMember(Name = "silenceDurationPercentage", EmitDefaultValue = false)]
+    [JsonPropertyName("silenceDurationPercentage")]
     public double? SilenceDurationPercentage { get; set; }
 
 
@@ -66,7 +66,7 @@ public partial class ParticipantMetrics : IEquatable<ParticipantMetrics>
     /// Percentage of IVR duration in the conversation
     /// </summary>
     /// <value>Percentage of IVR duration in the conversation</value>
-    [DataMember(Name = "ivrDurationPercentage", EmitDefaultValue = false)]
+    [JsonPropertyName("ivrDurationPercentage")]
     public double? IvrDurationPercentage { get; set; }
 
 
@@ -75,7 +75,7 @@ public partial class ParticipantMetrics : IEquatable<ParticipantMetrics>
     /// Percentage of ACD duration in the conversation
     /// </summary>
     /// <value>Percentage of ACD duration in the conversation</value>
-    [DataMember(Name = "acdDurationPercentage", EmitDefaultValue = false)]
+    [JsonPropertyName("acdDurationPercentage")]
     public double? AcdDurationPercentage { get; set; }
 
 
@@ -84,7 +84,7 @@ public partial class ParticipantMetrics : IEquatable<ParticipantMetrics>
     /// Percentage of Overtalk duration in the conversation
     /// </summary>
     /// <value>Percentage of Overtalk duration in the conversation</value>
-    [DataMember(Name = "overtalkDurationPercentage", EmitDefaultValue = false)]
+    [JsonPropertyName("overtalkDurationPercentage")]
     public double? OvertalkDurationPercentage { get; set; }
 
 
@@ -93,7 +93,7 @@ public partial class ParticipantMetrics : IEquatable<ParticipantMetrics>
     /// Percentage of Other events duration in the conversation
     /// </summary>
     /// <value>Percentage of Other events duration in the conversation</value>
-    [DataMember(Name = "otherDurationPercentage", EmitDefaultValue = false)]
+    [JsonPropertyName("otherDurationPercentage")]
     public double? OtherDurationPercentage { get; set; }
 
 
@@ -102,7 +102,7 @@ public partial class ParticipantMetrics : IEquatable<ParticipantMetrics>
     /// Number of Overtalks in the conversation
     /// </summary>
     /// <value>Number of Overtalks in the conversation</value>
-    [DataMember(Name = "overtalkCount", EmitDefaultValue = false)]
+    [JsonPropertyName("overtalkCount")]
     public int? OvertalkCount { get; set; }
 
 

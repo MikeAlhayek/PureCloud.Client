@@ -1,4 +1,3 @@
-using System.Runtime.Serialization;
 using System.Text;
 using System.Text.Json.Serialization;
 
@@ -7,7 +6,7 @@ namespace PureCloud.Client.Models;
 /// <summary>
 /// Draft to be published
 /// </summary>
-[DataContract]
+
 public partial class PublishDraftInput : IEquatable<PublishDraftInput>
 {
 
@@ -32,7 +31,7 @@ public partial class PublishDraftInput : IEquatable<PublishDraftInput>
     /// The current draft version.
     /// </summary>
     /// <value>The current draft version.</value>
-    [DataMember(Name = "version", EmitDefaultValue = false)]
+    [JsonPropertyName("version")]
     public int? Version { get; set; }
 
 

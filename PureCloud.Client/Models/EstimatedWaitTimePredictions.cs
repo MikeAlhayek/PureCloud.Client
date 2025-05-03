@@ -1,4 +1,3 @@
-using System.Runtime.Serialization;
 using System.Text;
 using System.Text.Json.Serialization;
 
@@ -7,7 +6,7 @@ namespace PureCloud.Client.Models;
 /// <summary>
 /// EstimatedWaitTimePredictions
 /// </summary>
-[DataContract]
+
 public partial class EstimatedWaitTimePredictions : IEquatable<EstimatedWaitTimePredictions>
 {
 
@@ -32,7 +31,7 @@ public partial class EstimatedWaitTimePredictions : IEquatable<EstimatedWaitTime
     /// Returned upon a successful estimated wait time request.
     /// </summary>
     /// <value>Returned upon a successful estimated wait time request.</value>
-    [DataMember(Name = "results", EmitDefaultValue = false)]
+    [JsonPropertyName("results")]
     public List<PredictionResults> Results { get; set; }
 
 

@@ -1,12 +1,12 @@
-using System.Runtime.Serialization;
 using System.Text;
+using System.Text.Json.Serialization;
 
 namespace PureCloud.Client.Models;
 
 /// <summary>
 /// RecordingEventRecording
 /// </summary>
-[DataContract]
+
 public partial class RecordingEventRecording : IEquatable<RecordingEventRecording>
 {
     /// <summary>
@@ -34,7 +34,7 @@ public partial class RecordingEventRecording : IEquatable<RecordingEventRecordin
     /// <summary>
     /// Gets or Sets Id
     /// </summary>
-    [DataMember(Name = "id", EmitDefaultValue = false)]
+    [JsonPropertyName("id")]
     public string Id { get; set; }
 
 
@@ -42,7 +42,7 @@ public partial class RecordingEventRecording : IEquatable<RecordingEventRecordin
     /// <summary>
     /// Gets or Sets ConversationId
     /// </summary>
-    [DataMember(Name = "conversationId", EmitDefaultValue = false)]
+    [JsonPropertyName("conversationId")]
     public string ConversationId { get; set; }
 
 
@@ -50,7 +50,7 @@ public partial class RecordingEventRecording : IEquatable<RecordingEventRecordin
     /// <summary>
     /// Gets or Sets FileState
     /// </summary>
-    [DataMember(Name = "fileState", EmitDefaultValue = false)]
+    [JsonPropertyName("fileState")]
     public string FileState { get; set; }
 
 
@@ -58,7 +58,7 @@ public partial class RecordingEventRecording : IEquatable<RecordingEventRecordin
     /// <summary>
     /// Gets or Sets MediaUris
     /// </summary>
-    [DataMember(Name = "mediaUris", EmitDefaultValue = false)]
+    [JsonPropertyName("mediaUris")]
     public List<RecordingEventMediaResult> MediaUris { get; set; }
 
 
@@ -66,7 +66,7 @@ public partial class RecordingEventRecording : IEquatable<RecordingEventRecordin
     /// <summary>
     /// Gets or Sets EstimatedTranscodeTimeMs
     /// </summary>
-    [DataMember(Name = "estimatedTranscodeTimeMs", EmitDefaultValue = false)]
+    [JsonPropertyName("estimatedTranscodeTimeMs")]
     public long? EstimatedTranscodeTimeMs { get; set; }
 
 
@@ -74,7 +74,7 @@ public partial class RecordingEventRecording : IEquatable<RecordingEventRecordin
     /// <summary>
     /// Gets or Sets ActualTranscodeTimeMs
     /// </summary>
-    [DataMember(Name = "actualTranscodeTimeMs", EmitDefaultValue = false)]
+    [JsonPropertyName("actualTranscodeTimeMs")]
     public long? ActualTranscodeTimeMs { get; set; }
 
 

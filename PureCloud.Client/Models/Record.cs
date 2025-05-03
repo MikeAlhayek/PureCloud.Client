@@ -1,4 +1,3 @@
-using System.Runtime.Serialization;
 using System.Text;
 using System.Text.Json.Serialization;
 
@@ -7,7 +6,7 @@ namespace PureCloud.Client.Models;
 /// <summary>
 /// Record
 /// </summary>
-[DataContract]
+
 public partial class Record : IEquatable<Record>
 {
 
@@ -36,7 +35,7 @@ public partial class Record : IEquatable<Record>
     /// The name of the record.
     /// </summary>
     /// <value>The name of the record.</value>
-    [DataMember(Name = "name", EmitDefaultValue = false)]
+    [JsonPropertyName("name")]
     public string Name { get; set; }
 
 
@@ -45,7 +44,7 @@ public partial class Record : IEquatable<Record>
     /// The type of the record. (Example values:  MX, TXT, CNAME)
     /// </summary>
     /// <value>The type of the record. (Example values:  MX, TXT, CNAME)</value>
-    [DataMember(Name = "type", EmitDefaultValue = false)]
+    [JsonPropertyName("type")]
     public string Type { get; set; }
 
 
@@ -54,7 +53,7 @@ public partial class Record : IEquatable<Record>
     /// The value of the record.
     /// </summary>
     /// <value>The value of the record.</value>
-    [DataMember(Name = "value", EmitDefaultValue = false)]
+    [JsonPropertyName("value")]
     public string Value { get; set; }
 
 

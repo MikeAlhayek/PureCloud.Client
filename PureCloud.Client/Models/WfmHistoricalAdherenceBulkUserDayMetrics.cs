@@ -1,12 +1,12 @@
-using System.Runtime.Serialization;
 using System.Text;
+using System.Text.Json.Serialization;
 
 namespace PureCloud.Client.Models;
 
 /// <summary>
 /// WfmHistoricalAdherenceBulkUserDayMetrics
 /// </summary>
-[DataContract]
+
 public partial class WfmHistoricalAdherenceBulkUserDayMetrics : IEquatable<WfmHistoricalAdherenceBulkUserDayMetrics>
 {
     /// <summary>
@@ -45,7 +45,7 @@ public partial class WfmHistoricalAdherenceBulkUserDayMetrics : IEquatable<WfmHi
     /// Start of day offset in seconds relative to query start time
     /// </summary>
     /// <value>Start of day offset in seconds relative to query start time</value>
-    [DataMember(Name = "dayStartOffsetSeconds", EmitDefaultValue = false)]
+    [JsonPropertyName("dayStartOffsetSeconds")]
     public int? DayStartOffsetSeconds { get; set; }
 
 
@@ -54,7 +54,7 @@ public partial class WfmHistoricalAdherenceBulkUserDayMetrics : IEquatable<WfmHi
     /// Duration of schedule in seconds included for adherence percentage calculation
     /// </summary>
     /// <value>Duration of schedule in seconds included for adherence percentage calculation</value>
-    [DataMember(Name = "adherenceScheduleSeconds", EmitDefaultValue = false)]
+    [JsonPropertyName("adherenceScheduleSeconds")]
     public int? AdherenceScheduleSeconds { get; set; }
 
 
@@ -63,7 +63,7 @@ public partial class WfmHistoricalAdherenceBulkUserDayMetrics : IEquatable<WfmHi
     /// Total scheduled duration in seconds for OnQueue activities
     /// </summary>
     /// <value>Total scheduled duration in seconds for OnQueue activities</value>
-    [DataMember(Name = "conformanceScheduleSeconds", EmitDefaultValue = false)]
+    [JsonPropertyName("conformanceScheduleSeconds")]
     public int? ConformanceScheduleSeconds { get; set; }
 
 
@@ -72,7 +72,7 @@ public partial class WfmHistoricalAdherenceBulkUserDayMetrics : IEquatable<WfmHi
     /// Total actually worked duration in seconds for OnQueue activities
     /// </summary>
     /// <value>Total actually worked duration in seconds for OnQueue activities</value>
-    [DataMember(Name = "conformanceActualSeconds", EmitDefaultValue = false)]
+    [JsonPropertyName("conformanceActualSeconds")]
     public int? ConformanceActualSeconds { get; set; }
 
 
@@ -81,7 +81,7 @@ public partial class WfmHistoricalAdherenceBulkUserDayMetrics : IEquatable<WfmHi
     /// Total number of adherence exceptions for this user
     /// </summary>
     /// <value>Total number of adherence exceptions for this user</value>
-    [DataMember(Name = "exceptionCount", EmitDefaultValue = false)]
+    [JsonPropertyName("exceptionCount")]
     public int? ExceptionCount { get; set; }
 
 
@@ -90,7 +90,7 @@ public partial class WfmHistoricalAdherenceBulkUserDayMetrics : IEquatable<WfmHi
     /// Total duration in seconds of adherence exceptions for this user
     /// </summary>
     /// <value>Total duration in seconds of adherence exceptions for this user</value>
-    [DataMember(Name = "exceptionDurationSeconds", EmitDefaultValue = false)]
+    [JsonPropertyName("exceptionDurationSeconds")]
     public int? ExceptionDurationSeconds { get; set; }
 
 
@@ -99,7 +99,7 @@ public partial class WfmHistoricalAdherenceBulkUserDayMetrics : IEquatable<WfmHi
     /// The impact duration in seconds of current adherence state for this user
     /// </summary>
     /// <value>The impact duration in seconds of current adherence state for this user</value>
-    [DataMember(Name = "impactSeconds", EmitDefaultValue = false)]
+    [JsonPropertyName("impactSeconds")]
     public int? ImpactSeconds { get; set; }
 
 
@@ -108,7 +108,7 @@ public partial class WfmHistoricalAdherenceBulkUserDayMetrics : IEquatable<WfmHi
     /// Total duration in seconds for all scheduled activities
     /// </summary>
     /// <value>Total duration in seconds for all scheduled activities</value>
-    [DataMember(Name = "scheduleLengthSeconds", EmitDefaultValue = false)]
+    [JsonPropertyName("scheduleLengthSeconds")]
     public int? ScheduleLengthSeconds { get; set; }
 
 
@@ -117,7 +117,7 @@ public partial class WfmHistoricalAdherenceBulkUserDayMetrics : IEquatable<WfmHi
     /// Total duration in seconds for all actually worked activities
     /// </summary>
     /// <value>Total duration in seconds for all actually worked activities</value>
-    [DataMember(Name = "actualLengthSeconds", EmitDefaultValue = false)]
+    [JsonPropertyName("actualLengthSeconds")]
     public int? ActualLengthSeconds { get; set; }
 
 
@@ -126,7 +126,7 @@ public partial class WfmHistoricalAdherenceBulkUserDayMetrics : IEquatable<WfmHi
     /// Total adherence percentage for this user, in the scale of 0 - 100
     /// </summary>
     /// <value>Total adherence percentage for this user, in the scale of 0 - 100</value>
-    [DataMember(Name = "adherencePercentage", EmitDefaultValue = false)]
+    [JsonPropertyName("adherencePercentage")]
     public double? AdherencePercentage { get; set; }
 
 
@@ -135,7 +135,7 @@ public partial class WfmHistoricalAdherenceBulkUserDayMetrics : IEquatable<WfmHi
     /// Total conformance percentage for this user, in the scale of 0 - 100. Conformance percentage can be greater than 100 when the actual on queue time is greater than the scheduled on queue time for the same period.
     /// </summary>
     /// <value>Total conformance percentage for this user, in the scale of 0 - 100. Conformance percentage can be greater than 100 when the actual on queue time is greater than the scheduled on queue time for the same period.</value>
-    [DataMember(Name = "conformancePercentage", EmitDefaultValue = false)]
+    [JsonPropertyName("conformancePercentage")]
     public double? ConformancePercentage { get; set; }
 
 

@@ -1,12 +1,12 @@
-using System.Runtime.Serialization;
 using System.Text;
+using System.Text.Json.Serialization;
 
 namespace PureCloud.Client.Models;
 
 /// <summary>
 /// SegmentUrl
 /// </summary>
-[DataContract]
+
 public partial class SegmentUrl : IEquatable<SegmentUrl>
 {
     /// <summary>
@@ -27,7 +27,7 @@ public partial class SegmentUrl : IEquatable<SegmentUrl>
     /// The Recording Reference
     /// </summary>
     /// <value>The Recording Reference</value>
-    [DataMember(Name = "recording", EmitDefaultValue = false)]
+    [JsonPropertyName("recording")]
     public AddressableEntityRef Recording { get; set; }
 
 
@@ -36,7 +36,7 @@ public partial class SegmentUrl : IEquatable<SegmentUrl>
     /// The pre-signed S3 URL of the transcript
     /// </summary>
     /// <value>The pre-signed S3 URL of the transcript</value>
-    [DataMember(Name = "url", EmitDefaultValue = false)]
+    [JsonPropertyName("url")]
     public string Url { get; set; }
 
 

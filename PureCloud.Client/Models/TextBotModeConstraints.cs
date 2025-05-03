@@ -1,12 +1,12 @@
-using System.Runtime.Serialization;
 using System.Text;
+using System.Text.Json.Serialization;
 
 namespace PureCloud.Client.Models;
 
 /// <summary>
 /// Mode constraints to observe when operating on a bot flow.
 /// </summary>
-[DataContract]
+
 public partial class TextBotModeConstraints : IEquatable<TextBotModeConstraints>
 {
     /// <summary>
@@ -25,7 +25,7 @@ public partial class TextBotModeConstraints : IEquatable<TextBotModeConstraints>
     /// Mode constraints that apply to text scenarios.
     /// </summary>
     /// <value>Mode constraints that apply to text scenarios.</value>
-    [DataMember(Name = "text", EmitDefaultValue = false)]
+    [JsonPropertyName("text")]
     public TextBotTextModeConstraints Text { get; set; }
 
 

@@ -1,12 +1,12 @@
-using System.Runtime.Serialization;
 using System.Text;
+using System.Text.Json.Serialization;
 
 namespace PureCloud.Client.Models;
 
 /// <summary>
 /// EdgeMetricsTopicEdgeMetricProcessor
 /// </summary>
-[DataContract]
+
 public partial class EdgeMetricsTopicEdgeMetricProcessor : IEquatable<EdgeMetricsTopicEdgeMetricProcessor>
 {
     /// <summary>
@@ -32,7 +32,7 @@ public partial class EdgeMetricsTopicEdgeMetricProcessor : IEquatable<EdgeMetric
     /// <summary>
     /// Gets or Sets CpuId
     /// </summary>
-    [DataMember(Name = "cpuId", EmitDefaultValue = false)]
+    [JsonPropertyName("cpuId")]
     public string CpuId { get; set; }
 
 
@@ -40,7 +40,7 @@ public partial class EdgeMetricsTopicEdgeMetricProcessor : IEquatable<EdgeMetric
     /// <summary>
     /// Gets or Sets IdleTimePct
     /// </summary>
-    [DataMember(Name = "idleTimePct", EmitDefaultValue = false)]
+    [JsonPropertyName("idleTimePct")]
     public long? IdleTimePct { get; set; }
 
 
@@ -48,7 +48,7 @@ public partial class EdgeMetricsTopicEdgeMetricProcessor : IEquatable<EdgeMetric
     /// <summary>
     /// Gets or Sets ActiveTimePct
     /// </summary>
-    [DataMember(Name = "activeTimePct", EmitDefaultValue = false)]
+    [JsonPropertyName("activeTimePct")]
     public long? ActiveTimePct { get; set; }
 
 
@@ -56,7 +56,7 @@ public partial class EdgeMetricsTopicEdgeMetricProcessor : IEquatable<EdgeMetric
     /// <summary>
     /// Gets or Sets PrivilegedTimePct
     /// </summary>
-    [DataMember(Name = "privilegedTimePct", EmitDefaultValue = false)]
+    [JsonPropertyName("privilegedTimePct")]
     public long? PrivilegedTimePct { get; set; }
 
 
@@ -64,7 +64,7 @@ public partial class EdgeMetricsTopicEdgeMetricProcessor : IEquatable<EdgeMetric
     /// <summary>
     /// Gets or Sets UserTimePct
     /// </summary>
-    [DataMember(Name = "userTimePct", EmitDefaultValue = false)]
+    [JsonPropertyName("userTimePct")]
     public long? UserTimePct { get; set; }
 
 

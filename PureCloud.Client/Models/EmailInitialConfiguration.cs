@@ -1,4 +1,3 @@
-using System.Runtime.Serialization;
 using System.Text;
 using System.Text.Json.Serialization;
 
@@ -7,7 +6,7 @@ namespace PureCloud.Client.Models;
 /// <summary>
 /// EmailInitialConfiguration
 /// </summary>
-[DataContract]
+
 public partial class EmailInitialConfiguration : IEquatable<EmailInitialConfiguration>
 {
 
@@ -52,7 +51,7 @@ public partial class EmailInitialConfiguration : IEquatable<EmailInitialConfigur
     /// An email address that this email is to.
     /// </summary>
     /// <value>An email address that this email is to.</value>
-    [DataMember(Name = "to", EmitDefaultValue = false)]
+    [JsonPropertyName("to")]
     public string To { get; set; }
 
 
@@ -61,7 +60,7 @@ public partial class EmailInitialConfiguration : IEquatable<EmailInitialConfigur
     /// An email address that this email is from.
     /// </summary>
     /// <value>An email address that this email is from.</value>
-    [DataMember(Name = "from", EmitDefaultValue = false)]
+    [JsonPropertyName("from")]
     public string From { get; set; }
 
 
@@ -70,7 +69,7 @@ public partial class EmailInitialConfiguration : IEquatable<EmailInitialConfigur
     /// An email addresses that this email is carbon copied to.
     /// </summary>
     /// <value>An email addresses that this email is carbon copied to.</value>
-    [DataMember(Name = "cc", EmitDefaultValue = false)]
+    [JsonPropertyName("cc")]
     public List<string> Cc { get; set; }
 
 
@@ -79,7 +78,7 @@ public partial class EmailInitialConfiguration : IEquatable<EmailInitialConfigur
     /// An email addresses that this email is blind carbon copied to.
     /// </summary>
     /// <value>An email addresses that this email is blind carbon copied to.</value>
-    [DataMember(Name = "bcc", EmitDefaultValue = false)]
+    [JsonPropertyName("bcc")]
     public List<string> Bcc { get; set; }
 
 
@@ -88,7 +87,7 @@ public partial class EmailInitialConfiguration : IEquatable<EmailInitialConfigur
     /// The subject for this email.
     /// </summary>
     /// <value>The subject for this email.</value>
-    [DataMember(Name = "subject", EmitDefaultValue = false)]
+    [JsonPropertyName("subject")]
     public string Subject { get; set; }
 
 
@@ -97,7 +96,7 @@ public partial class EmailInitialConfiguration : IEquatable<EmailInitialConfigur
     /// UUID identifying the most recent previous email communication ID from the same participant on this email conversation. Will be null if this is a new participant.
     /// </summary>
     /// <value>UUID identifying the most recent previous email communication ID from the same participant on this email conversation. Will be null if this is a new participant.</value>
-    [DataMember(Name = "previousEmailId", EmitDefaultValue = false)]
+    [JsonPropertyName("previousEmailId")]
     public string PreviousEmailId { get; set; }
 
 
@@ -106,7 +105,7 @@ public partial class EmailInitialConfiguration : IEquatable<EmailInitialConfigur
     /// Indicates that this communication&#39;s initial state is held.
     /// </summary>
     /// <value>Indicates that this communication&#39;s initial state is held.</value>
-    [DataMember(Name = "held", EmitDefaultValue = false)]
+    [JsonPropertyName("held")]
     public bool? Held { get; set; }
 
 
@@ -115,7 +114,7 @@ public partial class EmailInitialConfiguration : IEquatable<EmailInitialConfigur
     /// Indicates that this communication&#39;s initial state is alerting. If false, the communication started in a connected state.
     /// </summary>
     /// <value>Indicates that this communication&#39;s initial state is alerting. If false, the communication started in a connected state.</value>
-    [DataMember(Name = "alerting", EmitDefaultValue = false)]
+    [JsonPropertyName("alerting")]
     public bool? Alerting { get; set; }
 
 
@@ -124,7 +123,7 @@ public partial class EmailInitialConfiguration : IEquatable<EmailInitialConfigur
     /// Indicates the direction of this communication with respect to the contact center. &#x60;true&#x60; means the communication is INBOUND. &#x60;false&#x60; means the communication is OUTBOUND.
     /// </summary>
     /// <value>Indicates the direction of this communication with respect to the contact center. &#x60;true&#x60; means the communication is INBOUND. &#x60;false&#x60; means the communication is OUTBOUND.</value>
-    [DataMember(Name = "inbound", EmitDefaultValue = false)]
+    [JsonPropertyName("inbound")]
     public bool? Inbound { get; set; }
 
 
@@ -133,7 +132,7 @@ public partial class EmailInitialConfiguration : IEquatable<EmailInitialConfigur
     /// The id of the communication (the \&quot;peer\&quot;) that \&quot;invited\&quot; this communication, if this occurred.
     /// </summary>
     /// <value>The id of the communication (the \&quot;peer\&quot;) that \&quot;invited\&quot; this communication, if this occurred.</value>
-    [DataMember(Name = "invitedBy", EmitDefaultValue = false)]
+    [JsonPropertyName("invitedBy")]
     public string InvitedBy { get; set; }
 
 
@@ -142,7 +141,7 @@ public partial class EmailInitialConfiguration : IEquatable<EmailInitialConfigur
     /// Additional metadata about this session which should be recorded by the platform but which will not be indexed or searchable. Primarily for diagnostic value. Any information that needs to be accessible through other components like Analytics should be moved to dedicated fields.
     /// </summary>
     /// <value>Additional metadata about this session which should be recorded by the platform but which will not be indexed or searchable. Primarily for diagnostic value. Any information that needs to be accessible through other components like Analytics should be moved to dedicated fields.</value>
-    [DataMember(Name = "additionalInfo", EmitDefaultValue = false)]
+    [JsonPropertyName("additionalInfo")]
     public Dictionary<string, string> AdditionalInfo { get; set; }
 
 

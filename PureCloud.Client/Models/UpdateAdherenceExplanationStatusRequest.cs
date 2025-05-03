@@ -7,14 +7,14 @@ namespace PureCloud.Client.Models;
 /// <summary>
 /// UpdateAdherenceExplanationStatusRequest
 /// </summary>
-[DataContract]
+
 public partial class UpdateAdherenceExplanationStatusRequest : IEquatable<UpdateAdherenceExplanationStatusRequest>
 {
     /// <summary>
     /// The status of the adherence explanation
     /// </summary>
     /// <value>The status of the adherence explanation</value>
-    [JsonConverter(typeof(JsonStringEnumConverter))]
+    
     public enum StatusEnum
     {
         /// <summary>
@@ -47,7 +47,7 @@ public partial class UpdateAdherenceExplanationStatusRequest : IEquatable<Update
     /// The status of the adherence explanation
     /// </summary>
     /// <value>The status of the adherence explanation</value>
-    [DataMember(Name = "status", EmitDefaultValue = false)]
+    [JsonPropertyName("status")]
     public StatusEnum? Status { get; set; }
     /// <summary>
     /// Initializes a new instance of the <see cref="UpdateAdherenceExplanationStatusRequest" /> class.

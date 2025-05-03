@@ -1,12 +1,12 @@
-using System.Runtime.Serialization;
 using System.Text;
+using System.Text.Json.Serialization;
 
 namespace PureCloud.Client.Models;
 
 /// <summary>
 /// WorkdayMetricListing
 /// </summary>
-[DataContract]
+
 public partial class WorkdayMetricListing : IEquatable<WorkdayMetricListing>
 {
     /// <summary>
@@ -24,7 +24,7 @@ public partial class WorkdayMetricListing : IEquatable<WorkdayMetricListing>
     /// <summary>
     /// Gets or Sets Entities
     /// </summary>
-    [DataMember(Name = "entities", EmitDefaultValue = false)]
+    [JsonPropertyName("entities")]
     public List<WorkdayMetric> Entities { get; set; }
 
 

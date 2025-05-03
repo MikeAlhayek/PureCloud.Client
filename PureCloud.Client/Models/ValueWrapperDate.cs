@@ -1,12 +1,12 @@
-using System.Runtime.Serialization;
 using System.Text;
+using System.Text.Json.Serialization;
 
 namespace PureCloud.Client.Models;
 
 /// <summary>
 /// ValueWrapperDate
 /// </summary>
-[DataContract]
+
 public partial class ValueWrapperDate : IEquatable<ValueWrapperDate>
 {
     /// <summary>
@@ -25,7 +25,7 @@ public partial class ValueWrapperDate : IEquatable<ValueWrapperDate>
     /// The value for the associated field. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z
     /// </summary>
     /// <value>The value for the associated field. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z</value>
-    [DataMember(Name = "value", EmitDefaultValue = false)]
+    [JsonPropertyName("value")]
     public DateTime? Value { get; set; }
 
 

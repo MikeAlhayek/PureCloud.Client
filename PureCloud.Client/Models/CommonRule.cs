@@ -7,14 +7,14 @@ namespace PureCloud.Client.Models;
 /// <summary>
 /// CommonRule
 /// </summary>
-[DataContract]
+
 public partial class CommonRule : IEquatable<CommonRule>
 {
     /// <summary>
     /// The type of the rule.
     /// </summary>
     /// <value>The type of the rule.</value>
-    [JsonConverter(typeof(JsonStringEnumConverter))]
+    
     public enum TypeEnum
     {
         /// <summary>
@@ -59,7 +59,7 @@ public partial class CommonRule : IEquatable<CommonRule>
     /// The type of the rule.
     /// </summary>
     /// <value>The type of the rule.</value>
-    [DataMember(Name = "type", EmitDefaultValue = false)]
+    [JsonPropertyName("type")]
     public TypeEnum? Type { get; set; }
 
     /// <summary>
@@ -107,7 +107,7 @@ public partial class CommonRule : IEquatable<CommonRule>
     /// The globally unique identifier for the object.
     /// </summary>
     /// <value>The globally unique identifier for the object.</value>
-    [DataMember(Name = "id", EmitDefaultValue = false)]
+    [JsonPropertyName("id")]
     public string Id { get; private set; }
 
 
@@ -116,7 +116,7 @@ public partial class CommonRule : IEquatable<CommonRule>
     /// Name of the rule
     /// </summary>
     /// <value>Name of the rule</value>
-    [DataMember(Name = "name", EmitDefaultValue = false)]
+    [JsonPropertyName("name")]
     public string Name { get; set; }
 
 
@@ -125,7 +125,7 @@ public partial class CommonRule : IEquatable<CommonRule>
     /// The description of the rule.
     /// </summary>
     /// <value>The description of the rule.</value>
-    [DataMember(Name = "description", EmitDefaultValue = false)]
+    [JsonPropertyName("description")]
     public string Description { get; set; }
 
 
@@ -134,7 +134,7 @@ public partial class CommonRule : IEquatable<CommonRule>
     /// Indicates if the rule is enabled.
     /// </summary>
     /// <value>Indicates if the rule is enabled.</value>
-    [DataMember(Name = "enabled", EmitDefaultValue = false)]
+    [JsonPropertyName("enabled")]
     public bool? Enabled { get; set; }
 
 
@@ -143,7 +143,7 @@ public partial class CommonRule : IEquatable<CommonRule>
     /// The alert notification types to trigger when alarm state changes as well as the users they will be sent to.
     /// </summary>
     /// <value>The alert notification types to trigger when alarm state changes as well as the users they will be sent to.</value>
-    [DataMember(Name = "notifications", EmitDefaultValue = false)]
+    [JsonPropertyName("notifications")]
     public List<AlertNotification> Notifications { get; set; }
 
 
@@ -152,7 +152,7 @@ public partial class CommonRule : IEquatable<CommonRule>
     /// Indicates if the alert will send a notification when it is closed.
     /// </summary>
     /// <value>Indicates if the alert will send a notification when it is closed.</value>
-    [DataMember(Name = "sendExitingAlarmNotifications", EmitDefaultValue = false)]
+    [JsonPropertyName("sendExitingAlarmNotifications")]
     public bool? SendExitingAlarmNotifications { get; set; }
 
 
@@ -161,7 +161,7 @@ public partial class CommonRule : IEquatable<CommonRule>
     /// The amount of time in milliseconds to wait between notification.
     /// </summary>
     /// <value>The amount of time in milliseconds to wait between notification.</value>
-    [DataMember(Name = "waitBetweenNotificationMs", EmitDefaultValue = false)]
+    [JsonPropertyName("waitBetweenNotificationMs")]
     public long? WaitBetweenNotificationMs { get; set; }
 
 
@@ -170,7 +170,7 @@ public partial class CommonRule : IEquatable<CommonRule>
     /// The set of metric conditions that would trigger an alert.
     /// </summary>
     /// <value>The set of metric conditions that would trigger an alert.</value>
-    [DataMember(Name = "conditions", EmitDefaultValue = false)]
+    [JsonPropertyName("conditions")]
     public CommonRuleConditions Conditions { get; set; }
 
 
@@ -181,7 +181,7 @@ public partial class CommonRule : IEquatable<CommonRule>
     /// Indicates if the rule is in alarm state.
     /// </summary>
     /// <value>Indicates if the rule is in alarm state.</value>
-    [DataMember(Name = "inAlarm", EmitDefaultValue = false)]
+    [JsonPropertyName("inAlarm")]
     public bool? InAlarm { get; set; }
 
 
@@ -190,7 +190,7 @@ public partial class CommonRule : IEquatable<CommonRule>
     /// The entity that created the rule.
     /// </summary>
     /// <value>The entity that created the rule.</value>
-    [DataMember(Name = "user", EmitDefaultValue = false)]
+    [JsonPropertyName("user")]
     public UserReference User { get; set; }
 
 
@@ -199,7 +199,7 @@ public partial class CommonRule : IEquatable<CommonRule>
     /// The current version number of the rule.
     /// </summary>
     /// <value>The current version number of the rule.</value>
-    [DataMember(Name = "version", EmitDefaultValue = false)]
+    [JsonPropertyName("version")]
     public int? Version { get; set; }
 
 
@@ -208,7 +208,7 @@ public partial class CommonRule : IEquatable<CommonRule>
     /// The creation date of the rule when the rule was created. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z
     /// </summary>
     /// <value>The creation date of the rule when the rule was created. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z</value>
-    [DataMember(Name = "dateCreated", EmitDefaultValue = false)]
+    [JsonPropertyName("dateCreated")]
     public DateTime? DateCreated { get; set; }
 
 
@@ -217,7 +217,7 @@ public partial class CommonRule : IEquatable<CommonRule>
     /// The timestamp of the last update to the rule. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z
     /// </summary>
     /// <value>The timestamp of the last update to the rule. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z</value>
-    [DataMember(Name = "dateLastModified", EmitDefaultValue = false)]
+    [JsonPropertyName("dateLastModified")]
     public DateTime? DateLastModified { get; set; }
 
 
@@ -226,7 +226,7 @@ public partial class CommonRule : IEquatable<CommonRule>
     /// The URI for this object
     /// </summary>
     /// <value>The URI for this object</value>
-    [DataMember(Name = "selfUri", EmitDefaultValue = false)]
+    [JsonPropertyName("selfUri")]
     public string SelfUri { get; private set; }
 
 

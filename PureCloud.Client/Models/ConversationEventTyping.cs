@@ -7,14 +7,14 @@ namespace PureCloud.Client.Models;
 /// <summary>
 /// A Typing event.
 /// </summary>
-[DataContract]
+
 public partial class ConversationEventTyping : IEquatable<ConversationEventTyping>
 {
     /// <summary>
     /// Describes the type of Typing event.
     /// </summary>
     /// <value>Describes the type of Typing event.</value>
-    [JsonConverter(typeof(JsonStringEnumConverter))]
+    
     public enum TypeEnum
     {
         /// <summary>
@@ -35,7 +35,7 @@ public partial class ConversationEventTyping : IEquatable<ConversationEventTypin
     /// Describes the type of Typing event.
     /// </summary>
     /// <value>Describes the type of Typing event.</value>
-    [DataMember(Name = "type", EmitDefaultValue = false)]
+    [JsonPropertyName("type")]
     public TypeEnum? Type { get; set; }
 
     /// <summary>
@@ -63,7 +63,7 @@ public partial class ConversationEventTyping : IEquatable<ConversationEventTypin
     /// The duration of the Typing event in milliseconds.
     /// </summary>
     /// <value>The duration of the Typing event in milliseconds.</value>
-    [DataMember(Name = "duration", EmitDefaultValue = false)]
+    [JsonPropertyName("duration")]
     public long? Duration { get; set; }
 
 

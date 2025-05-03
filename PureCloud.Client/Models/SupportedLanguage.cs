@@ -1,12 +1,12 @@
-using System.Runtime.Serialization;
 using System.Text;
+using System.Text.Json.Serialization;
 
 namespace PureCloud.Client.Models;
 
 /// <summary>
 /// SupportedLanguage
 /// </summary>
-[DataContract]
+
 public partial class SupportedLanguage : IEquatable<SupportedLanguage>
 {
     /// <summary>
@@ -23,7 +23,7 @@ public partial class SupportedLanguage : IEquatable<SupportedLanguage>
     /// Architect supported language tag, e.g. en-us, es-us
     /// </summary>
     /// <value>Architect supported language tag, e.g. en-us, es-us</value>
-    [DataMember(Name = "language", EmitDefaultValue = false)]
+    [JsonPropertyName("language")]
     public string Language { get; private set; }
 
 
@@ -32,7 +32,7 @@ public partial class SupportedLanguage : IEquatable<SupportedLanguage>
     /// Whether or not this language is the default language
     /// </summary>
     /// <value>Whether or not this language is the default language</value>
-    [DataMember(Name = "isDefault", EmitDefaultValue = false)]
+    [JsonPropertyName("isDefault")]
     public bool? IsDefault { get; private set; }
 
 

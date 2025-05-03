@@ -1,12 +1,12 @@
-using System.Runtime.Serialization;
 using System.Text;
+using System.Text.Json.Serialization;
 
 namespace PureCloud.Client.Models;
 
 /// <summary>
 /// GrammarLanguage
 /// </summary>
-[DataContract]
+
 public partial class GrammarLanguage : IEquatable<GrammarLanguage>
 {
     /// <summary>
@@ -31,7 +31,7 @@ public partial class GrammarLanguage : IEquatable<GrammarLanguage>
     /// The globally unique identifier for the object.
     /// </summary>
     /// <value>The globally unique identifier for the object.</value>
-    [DataMember(Name = "id", EmitDefaultValue = false)]
+    [JsonPropertyName("id")]
     public string Id { get; private set; }
 
 
@@ -40,7 +40,7 @@ public partial class GrammarLanguage : IEquatable<GrammarLanguage>
     /// The ID of the grammar associated with this grammar language
     /// </summary>
     /// <value>The ID of the grammar associated with this grammar language</value>
-    [DataMember(Name = "grammarId", EmitDefaultValue = false)]
+    [JsonPropertyName("grammarId")]
     public string GrammarId { get; set; }
 
 
@@ -48,7 +48,7 @@ public partial class GrammarLanguage : IEquatable<GrammarLanguage>
     /// <summary>
     /// Gets or Sets Language
     /// </summary>
-    [DataMember(Name = "language", EmitDefaultValue = false)]
+    [JsonPropertyName("language")]
     public string Language { get; set; }
 
 
@@ -57,7 +57,7 @@ public partial class GrammarLanguage : IEquatable<GrammarLanguage>
     /// The URL to the voice mode file associated with this grammar language
     /// </summary>
     /// <value>The URL to the voice mode file associated with this grammar language</value>
-    [DataMember(Name = "voiceFileUrl", EmitDefaultValue = false)]
+    [JsonPropertyName("voiceFileUrl")]
     public string VoiceFileUrl { get; private set; }
 
 
@@ -66,7 +66,7 @@ public partial class GrammarLanguage : IEquatable<GrammarLanguage>
     /// The URL to the DTMF mode file associated with this grammar language
     /// </summary>
     /// <value>The URL to the DTMF mode file associated with this grammar language</value>
-    [DataMember(Name = "dtmfFileUrl", EmitDefaultValue = false)]
+    [JsonPropertyName("dtmfFileUrl")]
     public string DtmfFileUrl { get; private set; }
 
 
@@ -75,7 +75,7 @@ public partial class GrammarLanguage : IEquatable<GrammarLanguage>
     /// Additional information about the associated voice file
     /// </summary>
     /// <value>Additional information about the associated voice file</value>
-    [DataMember(Name = "voiceFileMetadata", EmitDefaultValue = false)]
+    [JsonPropertyName("voiceFileMetadata")]
     public GrammarLanguageFileMetadata VoiceFileMetadata { get; set; }
 
 
@@ -84,7 +84,7 @@ public partial class GrammarLanguage : IEquatable<GrammarLanguage>
     /// Additional information about the associated dtmf file
     /// </summary>
     /// <value>Additional information about the associated dtmf file</value>
-    [DataMember(Name = "dtmfFileMetadata", EmitDefaultValue = false)]
+    [JsonPropertyName("dtmfFileMetadata")]
     public GrammarLanguageFileMetadata DtmfFileMetadata { get; set; }
 
 
@@ -93,7 +93,7 @@ public partial class GrammarLanguage : IEquatable<GrammarLanguage>
     /// The URI for this object
     /// </summary>
     /// <value>The URI for this object</value>
-    [DataMember(Name = "selfUri", EmitDefaultValue = false)]
+    [JsonPropertyName("selfUri")]
     public string SelfUri { get; private set; }
 
 

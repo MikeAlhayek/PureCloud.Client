@@ -7,14 +7,14 @@ namespace PureCloud.Client.Models;
 /// <summary>
 /// InsightsRankings
 /// </summary>
-[DataContract]
+
 public partial class InsightsRankings : IEquatable<InsightsRankings>
 {
     /// <summary>
     /// Granularity
     /// </summary>
     /// <value>Granularity</value>
-    [JsonConverter(typeof(JsonStringEnumConverter))]
+    
     public enum GranularityEnum
     {
         /// <summary>
@@ -47,7 +47,7 @@ public partial class InsightsRankings : IEquatable<InsightsRankings>
     /// Granularity
     /// </summary>
     /// <value>Granularity</value>
-    [DataMember(Name = "granularity", EmitDefaultValue = false)]
+    [JsonPropertyName("granularity")]
     public GranularityEnum? Granularity { get; set; }
     /// <summary>
     /// Initializes a new instance of the <see cref="InsightsRankings" /> class.
@@ -77,7 +77,7 @@ public partial class InsightsRankings : IEquatable<InsightsRankings>
     /// The performance profile
     /// </summary>
     /// <value>The performance profile</value>
-    [DataMember(Name = "performanceProfile", EmitDefaultValue = false)]
+    [JsonPropertyName("performanceProfile")]
     public AddressableEntityRef PerformanceProfile { get; set; }
 
 
@@ -86,7 +86,7 @@ public partial class InsightsRankings : IEquatable<InsightsRankings>
     /// The division
     /// </summary>
     /// <value>The division</value>
-    [DataMember(Name = "division", EmitDefaultValue = false)]
+    [JsonPropertyName("division")]
     public DivisionReference Division { get; set; }
 
 
@@ -97,7 +97,7 @@ public partial class InsightsRankings : IEquatable<InsightsRankings>
     /// The comparative period work day date range
     /// </summary>
     /// <value>The comparative period work day date range</value>
-    [DataMember(Name = "comparativePeriod", EmitDefaultValue = false)]
+    [JsonPropertyName("comparativePeriod")]
     public WorkdayPeriod ComparativePeriod { get; set; }
 
 
@@ -106,7 +106,7 @@ public partial class InsightsRankings : IEquatable<InsightsRankings>
     /// The primary period work day date range
     /// </summary>
     /// <value>The primary period work day date range</value>
-    [DataMember(Name = "primaryPeriod", EmitDefaultValue = false)]
+    [JsonPropertyName("primaryPeriod")]
     public WorkdayPeriod PrimaryPeriod { get; set; }
 
 
@@ -115,7 +115,7 @@ public partial class InsightsRankings : IEquatable<InsightsRankings>
     /// The leaders users
     /// </summary>
     /// <value>The leaders users</value>
-    [DataMember(Name = "leaders", EmitDefaultValue = false)]
+    [JsonPropertyName("leaders")]
     public List<InsightsSummaryUserItem> Leaders { get; set; }
 
 
@@ -124,7 +124,7 @@ public partial class InsightsRankings : IEquatable<InsightsRankings>
     /// The trailing users
     /// </summary>
     /// <value>The trailing users</value>
-    [DataMember(Name = "trailers", EmitDefaultValue = false)]
+    [JsonPropertyName("trailers")]
     public List<InsightsSummaryUserItem> Trailers { get; set; }
 
 

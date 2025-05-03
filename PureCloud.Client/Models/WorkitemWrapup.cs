@@ -1,12 +1,12 @@
-using System.Runtime.Serialization;
 using System.Text;
+using System.Text.Json.Serialization;
 
 namespace PureCloud.Client.Models;
 
 /// <summary>
 /// WorkitemWrapup
 /// </summary>
-[DataContract]
+
 public partial class WorkitemWrapup : IEquatable<WorkitemWrapup>
 {
     /// <summary>
@@ -33,7 +33,7 @@ public partial class WorkitemWrapup : IEquatable<WorkitemWrapup>
     /// Workitem that the wrapup code has been added to.
     /// </summary>
     /// <value>Workitem that the wrapup code has been added to.</value>
-    [DataMember(Name = "workitem", EmitDefaultValue = false)]
+    [JsonPropertyName("workitem")]
     public WorkitemReference Workitem { get; set; }
 
 
@@ -42,7 +42,7 @@ public partial class WorkitemWrapup : IEquatable<WorkitemWrapup>
     /// The wrapup code used in the workitem.
     /// </summary>
     /// <value>The wrapup code used in the workitem.</value>
-    [DataMember(Name = "wrapupCode", EmitDefaultValue = false)]
+    [JsonPropertyName("wrapupCode")]
     public WrapupIdReference WrapupCode { get; set; }
 
 
@@ -51,7 +51,7 @@ public partial class WorkitemWrapup : IEquatable<WorkitemWrapup>
     /// The user who added the wrapup code to the workitem.
     /// </summary>
     /// <value>The user who added the wrapup code to the workitem.</value>
-    [DataMember(Name = "modifiedBy", EmitDefaultValue = false)]
+    [JsonPropertyName("modifiedBy")]
     public UserReference ModifiedBy { get; set; }
 
 
@@ -60,7 +60,7 @@ public partial class WorkitemWrapup : IEquatable<WorkitemWrapup>
     /// The user for whom wrapup code was added. This may be the same as modifiedBy.
     /// </summary>
     /// <value>The user for whom wrapup code was added. This may be the same as modifiedBy.</value>
-    [DataMember(Name = "user", EmitDefaultValue = false)]
+    [JsonPropertyName("user")]
     public UserReference User { get; set; }
 
 
@@ -69,7 +69,7 @@ public partial class WorkitemWrapup : IEquatable<WorkitemWrapup>
     /// The modified date of the Workitem when the wrapup code was added. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z
     /// </summary>
     /// <value>The modified date of the Workitem when the wrapup code was added. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z</value>
-    [DataMember(Name = "dateModified", EmitDefaultValue = false)]
+    [JsonPropertyName("dateModified")]
     public DateTime? DateModified { get; set; }
 
 

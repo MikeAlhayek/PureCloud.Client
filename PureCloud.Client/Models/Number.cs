@@ -1,12 +1,12 @@
-using System.Runtime.Serialization;
 using System.Text;
+using System.Text.Json.Serialization;
 
 namespace PureCloud.Client.Models;
 
 /// <summary>
 /// Number
 /// </summary>
-[DataContract]
+
 public partial class Number : IEquatable<Number>
 {
     /// <summary>
@@ -26,7 +26,7 @@ public partial class Number : IEquatable<Number>
     /// <summary>
     /// Gets or Sets Start
     /// </summary>
-    [DataMember(Name = "start", EmitDefaultValue = false)]
+    [JsonPropertyName("start")]
     public string Start { get; set; }
 
 
@@ -34,7 +34,7 @@ public partial class Number : IEquatable<Number>
     /// <summary>
     /// Gets or Sets End
     /// </summary>
-    [DataMember(Name = "end", EmitDefaultValue = false)]
+    [JsonPropertyName("end")]
     public string End { get; set; }
 
 

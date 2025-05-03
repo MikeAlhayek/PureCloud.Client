@@ -1,5 +1,3 @@
-using System.Runtime.Serialization;
-using System.Text;
 using System.Text.Json.Serialization;
 
 namespace PureCloud.Client.Models;
@@ -7,7 +5,6 @@ namespace PureCloud.Client.Models;
 /// <summary>
 /// Identity of a CX infrastructure as code accelerator to be run and its inputs
 /// </summary>
-[DataContract]
 public partial class AcceleratorInput : IEquatable<AcceleratorInput>
 {
 
@@ -19,60 +16,31 @@ public partial class AcceleratorInput : IEquatable<AcceleratorInput>
     /// <summary>
     /// Initializes a new instance of the <see cref="AcceleratorInput" /> class.
     /// </summary>
-    /// <param name="DryRun">Set this true to test the job without making any changes. Defaults to false..</param>
-    /// <param name="AcceleratorId">Accelerator ID (required).</param>
-    /// <param name="Parameters">Parameters required for this accelerator.</param>
-    public AcceleratorInput(bool? DryRun = null, string AcceleratorId = null, List<AcceleratorParameter> Parameters = null)
+    /// <param name="dryRun">Set this true to test the job without making any changes. Defaults to false..</param>
+    /// <param name="acceleratorId">Accelerator ID (required).</param>
+    /// <param name="parameters">Parameters required for this accelerator.</param>
+    public AcceleratorInput(bool? dryRun = null, string acceleratorId = null, List<AcceleratorParameter> parameters = null)
     {
-        this.DryRun = DryRun;
-        this.AcceleratorId = AcceleratorId;
-        this.Parameters = Parameters;
-
+        this.DryRun = dryRun;
+        this.AcceleratorId = acceleratorId;
+        this.Parameters = parameters;
     }
-
-
 
     /// <summary>
     /// Set this true to test the job without making any changes. Defaults to false.
     /// </summary>
-    /// <value>Set this true to test the job without making any changes. Defaults to false.</value>
-    [DataMember(Name = "dryRun", EmitDefaultValue = false)]
     public bool? DryRun { get; set; }
-
-
 
     /// <summary>
     /// Accelerator ID
     /// </summary>
-    /// <value>Accelerator ID</value>
-    [DataMember(Name = "acceleratorId", EmitDefaultValue = false)]
     public string AcceleratorId { get; set; }
-
-
 
     /// <summary>
     /// Parameters required for this accelerator
     /// </summary>
-    /// <value>Parameters required for this accelerator</value>
-    [DataMember(Name = "parameters", EmitDefaultValue = false)]
     public List<AcceleratorParameter> Parameters { get; set; }
 
-
-    /// <summary>
-    /// Returns the string presentation of the object
-    /// </summary>
-    /// <returns>String presentation of the object</returns>
-    public override string ToString()
-    {
-        var sb = new StringBuilder();
-        sb.Append("class AcceleratorInput {\n");
-
-        sb.Append("  DryRun: ").Append(DryRun).Append("\n");
-        sb.Append("  AcceleratorId: ").Append(AcceleratorId).Append("\n");
-        sb.Append("  Parameters: ").Append(Parameters).Append("\n");
-        sb.Append("}\n");
-        return sb.ToString();
-    }
 
     /// <summary>
     /// Returns true if objects are equal

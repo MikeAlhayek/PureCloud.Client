@@ -7,14 +7,14 @@ namespace PureCloud.Client.Models;
 /// <summary>
 /// DialerRulesetConfigChangeRule
 /// </summary>
-[DataContract]
+
 public partial class DialerRulesetConfigChangeRule : IEquatable<DialerRulesetConfigChangeRule>
 {
     /// <summary>
     /// The category of the rule
     /// </summary>
     /// <value>The category of the rule</value>
-    [JsonConverter(typeof(JsonStringEnumConverter))]
+    
     public enum CategoryEnum
     {
         /// <summary>
@@ -41,7 +41,7 @@ public partial class DialerRulesetConfigChangeRule : IEquatable<DialerRulesetCon
     /// The category of the rule
     /// </summary>
     /// <value>The category of the rule</value>
-    [DataMember(Name = "category", EmitDefaultValue = false)]
+    [JsonPropertyName("category")]
     public CategoryEnum? Category { get; set; }
     /// <summary>
     /// Initializes a new instance of the <see cref="DialerRulesetConfigChangeRule" /> class.
@@ -71,7 +71,7 @@ public partial class DialerRulesetConfigChangeRule : IEquatable<DialerRulesetCon
     /// The list of rule conditions; all must evaluate to true to trigger the rule actions
     /// </summary>
     /// <value>The list of rule conditions; all must evaluate to true to trigger the rule actions</value>
-    [DataMember(Name = "conditions", EmitDefaultValue = false)]
+    [JsonPropertyName("conditions")]
     public List<DialerRulesetConfigChangeCondition> Conditions { get; set; }
 
 
@@ -79,7 +79,7 @@ public partial class DialerRulesetConfigChangeRule : IEquatable<DialerRulesetCon
     /// <summary>
     /// Gets or Sets AdditionalProperties
     /// </summary>
-    [DataMember(Name = "additionalProperties", EmitDefaultValue = false)]
+    [JsonPropertyName("additionalProperties")]
     public Dictionary<string, object> AdditionalProperties { get; set; }
 
 
@@ -88,7 +88,7 @@ public partial class DialerRulesetConfigChangeRule : IEquatable<DialerRulesetCon
     /// The identifier of the rule
     /// </summary>
     /// <value>The identifier of the rule</value>
-    [DataMember(Name = "id", EmitDefaultValue = false)]
+    [JsonPropertyName("id")]
     public string Id { get; set; }
 
 
@@ -97,7 +97,7 @@ public partial class DialerRulesetConfigChangeRule : IEquatable<DialerRulesetCon
     /// The name of the rule
     /// </summary>
     /// <value>The name of the rule</value>
-    [DataMember(Name = "name", EmitDefaultValue = false)]
+    [JsonPropertyName("name")]
     public string Name { get; set; }
 
 
@@ -106,7 +106,7 @@ public partial class DialerRulesetConfigChangeRule : IEquatable<DialerRulesetCon
     /// The ranked order of the rule; rules are processed from lowest number to highest
     /// </summary>
     /// <value>The ranked order of the rule; rules are processed from lowest number to highest</value>
-    [DataMember(Name = "order", EmitDefaultValue = false)]
+    [JsonPropertyName("order")]
     public long? Order { get; set; }
 
 
@@ -117,7 +117,7 @@ public partial class DialerRulesetConfigChangeRule : IEquatable<DialerRulesetCon
     /// The list of rule actions to be taken if the conditions are true
     /// </summary>
     /// <value>The list of rule actions to be taken if the conditions are true</value>
-    [DataMember(Name = "actions", EmitDefaultValue = false)]
+    [JsonPropertyName("actions")]
     public List<DialerRulesetConfigChangeAction> Actions { get; set; }
 
 

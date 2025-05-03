@@ -1,4 +1,3 @@
-using System.Runtime.Serialization;
 using System.Text;
 using System.Text.Json.Serialization;
 
@@ -7,7 +6,7 @@ namespace PureCloud.Client.Models;
 /// <summary>
 /// FacebookIntegrationRequest
 /// </summary>
-[DataContract]
+
 public partial class FacebookIntegrationRequest : IEquatable<FacebookIntegrationRequest>
 {
 
@@ -46,7 +45,7 @@ public partial class FacebookIntegrationRequest : IEquatable<FacebookIntegration
     /// The globally unique identifier for the object.
     /// </summary>
     /// <value>The globally unique identifier for the object.</value>
-    [DataMember(Name = "id", EmitDefaultValue = false)]
+    [JsonPropertyName("id")]
     public string Id { get; private set; }
 
 
@@ -55,7 +54,7 @@ public partial class FacebookIntegrationRequest : IEquatable<FacebookIntegration
     /// The name of the Facebook Integration
     /// </summary>
     /// <value>The name of the Facebook Integration</value>
-    [DataMember(Name = "name", EmitDefaultValue = false)]
+    [JsonPropertyName("name")]
     public string Name { get; set; }
 
 
@@ -64,7 +63,7 @@ public partial class FacebookIntegrationRequest : IEquatable<FacebookIntegration
     /// Defines the SupportedContent profile configured for an integration
     /// </summary>
     /// <value>Defines the SupportedContent profile configured for an integration</value>
-    [DataMember(Name = "supportedContent", EmitDefaultValue = false)]
+    [JsonPropertyName("supportedContent")]
     public SupportedContentReference SupportedContent { get; set; }
 
 
@@ -73,7 +72,7 @@ public partial class FacebookIntegrationRequest : IEquatable<FacebookIntegration
     /// Defines the message settings to be applied for this integration
     /// </summary>
     /// <value>Defines the message settings to be applied for this integration</value>
-    [DataMember(Name = "messagingSetting", EmitDefaultValue = false)]
+    [JsonPropertyName("messagingSetting")]
     public MessagingSettingRequestReference MessagingSetting { get; set; }
 
 
@@ -82,7 +81,7 @@ public partial class FacebookIntegrationRequest : IEquatable<FacebookIntegration
     /// The long-lived Page Access Token of Facebook page.  See https://developers.facebook.com/docs/facebook-login/access-tokens.  When a pageAccessToken is provided, pageId and userAccessToken are not required.
     /// </summary>
     /// <value>The long-lived Page Access Token of Facebook page.  See https://developers.facebook.com/docs/facebook-login/access-tokens.  When a pageAccessToken is provided, pageId and userAccessToken are not required.</value>
-    [DataMember(Name = "pageAccessToken", EmitDefaultValue = false)]
+    [JsonPropertyName("pageAccessToken")]
     public string PageAccessToken { get; set; }
 
 
@@ -91,7 +90,7 @@ public partial class FacebookIntegrationRequest : IEquatable<FacebookIntegration
     /// The short-lived User Access Token of the Facebook user logged into the Facebook app.  See https://developers.facebook.com/docs/facebook-login/access-tokens.  When userAccessToken is provided, pageId is mandatory.  When userAccessToken/pageId combination is provided, pageAccessToken is not required.
     /// </summary>
     /// <value>The short-lived User Access Token of the Facebook user logged into the Facebook app.  See https://developers.facebook.com/docs/facebook-login/access-tokens.  When userAccessToken is provided, pageId is mandatory.  When userAccessToken/pageId combination is provided, pageAccessToken is not required.</value>
-    [DataMember(Name = "userAccessToken", EmitDefaultValue = false)]
+    [JsonPropertyName("userAccessToken")]
     public string UserAccessToken { get; set; }
 
 
@@ -100,7 +99,7 @@ public partial class FacebookIntegrationRequest : IEquatable<FacebookIntegration
     /// The page Id of Facebook page. The pageId is required when userAccessToken is provided.
     /// </summary>
     /// <value>The page Id of Facebook page. The pageId is required when userAccessToken is provided.</value>
-    [DataMember(Name = "pageId", EmitDefaultValue = false)]
+    [JsonPropertyName("pageId")]
     public string PageId { get; set; }
 
 
@@ -109,7 +108,7 @@ public partial class FacebookIntegrationRequest : IEquatable<FacebookIntegration
     /// The app Id of Facebook app. The appId is required when a customer wants to use their own approved Facebook app.
     /// </summary>
     /// <value>The app Id of Facebook app. The appId is required when a customer wants to use their own approved Facebook app.</value>
-    [DataMember(Name = "appId", EmitDefaultValue = false)]
+    [JsonPropertyName("appId")]
     public string AppId { get; set; }
 
 
@@ -118,7 +117,7 @@ public partial class FacebookIntegrationRequest : IEquatable<FacebookIntegration
     /// The app Secret of Facebook app. The appSecret is required when appId is provided.
     /// </summary>
     /// <value>The app Secret of Facebook app. The appSecret is required when appId is provided.</value>
-    [DataMember(Name = "appSecret", EmitDefaultValue = false)]
+    [JsonPropertyName("appSecret")]
     public string AppSecret { get; set; }
 
 
@@ -127,7 +126,7 @@ public partial class FacebookIntegrationRequest : IEquatable<FacebookIntegration
     /// The URI for this object
     /// </summary>
     /// <value>The URI for this object</value>
-    [DataMember(Name = "selfUri", EmitDefaultValue = false)]
+    [JsonPropertyName("selfUri")]
     public string SelfUri { get; private set; }
 
 

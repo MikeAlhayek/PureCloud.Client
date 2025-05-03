@@ -7,14 +7,14 @@ namespace PureCloud.Client.Models;
 /// <summary>
 /// DynamicGroupSkillCondition
 /// </summary>
-[DataContract]
+
 public partial class DynamicGroupSkillCondition : IEquatable<DynamicGroupSkillCondition>
 {
     /// <summary>
     /// Operator that will be applied to the conditions
     /// </summary>
     /// <value>Operator that will be applied to the conditions</value>
-    [JsonConverter(typeof(JsonStringEnumConverter))]
+    
     public enum OperationEnum
     {
         /// <summary>
@@ -47,7 +47,7 @@ public partial class DynamicGroupSkillCondition : IEquatable<DynamicGroupSkillCo
     /// Operator that will be applied to the conditions
     /// </summary>
     /// <value>Operator that will be applied to the conditions</value>
-    [DataMember(Name = "operation", EmitDefaultValue = false)]
+    [JsonPropertyName("operation")]
     public OperationEnum? Operation { get; set; }
 
     /// <summary>
@@ -75,7 +75,7 @@ public partial class DynamicGroupSkillCondition : IEquatable<DynamicGroupSkillCo
     /// Routing skill conditions that will be used for building the query
     /// </summary>
     /// <value>Routing skill conditions that will be used for building the query</value>
-    [DataMember(Name = "routingSkillConditions", EmitDefaultValue = false)]
+    [JsonPropertyName("routingSkillConditions")]
     public List<DynamicGroupRoutingSkillCondition> RoutingSkillConditions { get; set; }
 
 
@@ -84,7 +84,7 @@ public partial class DynamicGroupSkillCondition : IEquatable<DynamicGroupSkillCo
     /// Routing skill conditions that will be used for building the query
     /// </summary>
     /// <value>Routing skill conditions that will be used for building the query</value>
-    [DataMember(Name = "languageSkillConditions", EmitDefaultValue = false)]
+    [JsonPropertyName("languageSkillConditions")]
     public List<DynamicGroupLanguageSkillCondition> LanguageSkillConditions { get; set; }
 
 

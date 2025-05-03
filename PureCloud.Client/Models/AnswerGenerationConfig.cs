@@ -1,4 +1,3 @@
-using System.Runtime.Serialization;
 using System.Text;
 using System.Text.Json.Serialization;
 
@@ -7,7 +6,7 @@ namespace PureCloud.Client.Models;
 /// <summary>
 /// AnswerGenerationConfig
 /// </summary>
-[DataContract]
+
 public partial class AnswerGenerationConfig : IEquatable<AnswerGenerationConfig>
 {
 
@@ -32,7 +31,7 @@ public partial class AnswerGenerationConfig : IEquatable<AnswerGenerationConfig>
     /// Answer generation is enabled.
     /// </summary>
     /// <value>Answer generation is enabled.</value>
-    [DataMember(Name = "enabled", EmitDefaultValue = false)]
+    [JsonPropertyName("enabled")]
     public bool? Enabled { get; set; }
 
 

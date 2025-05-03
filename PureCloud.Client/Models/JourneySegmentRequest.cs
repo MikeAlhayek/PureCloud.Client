@@ -7,14 +7,14 @@ namespace PureCloud.Client.Models;
 /// <summary>
 /// JourneySegmentRequest
 /// </summary>
-[DataContract]
+
 public partial class JourneySegmentRequest : IEquatable<JourneySegmentRequest>
 {
     /// <summary>
     /// The target entity that a segment applies to.
     /// </summary>
     /// <value>The target entity that a segment applies to.</value>
-    [JsonConverter(typeof(JsonStringEnumConverter))]
+    
     public enum ScopeEnum
     {
         /// <summary>
@@ -41,7 +41,7 @@ public partial class JourneySegmentRequest : IEquatable<JourneySegmentRequest>
     /// The target entity that a segment applies to.
     /// </summary>
     /// <value>The target entity that a segment applies to.</value>
-    [DataMember(Name = "scope", EmitDefaultValue = false)]
+    [JsonPropertyName("scope")]
     public ScopeEnum? Scope { get; set; }
 
     /// <summary>
@@ -85,7 +85,7 @@ public partial class JourneySegmentRequest : IEquatable<JourneySegmentRequest>
     /// Whether or not the segment is active.
     /// </summary>
     /// <value>Whether or not the segment is active.</value>
-    [DataMember(Name = "isActive", EmitDefaultValue = false)]
+    [JsonPropertyName("isActive")]
     public bool? IsActive { get; set; }
 
 
@@ -94,7 +94,7 @@ public partial class JourneySegmentRequest : IEquatable<JourneySegmentRequest>
     /// The display name of the segment.
     /// </summary>
     /// <value>The display name of the segment.</value>
-    [DataMember(Name = "displayName", EmitDefaultValue = false)]
+    [JsonPropertyName("displayName")]
     public string DisplayName { get; set; }
 
 
@@ -103,7 +103,7 @@ public partial class JourneySegmentRequest : IEquatable<JourneySegmentRequest>
     /// The version of the segment.
     /// </summary>
     /// <value>The version of the segment.</value>
-    [DataMember(Name = "version", EmitDefaultValue = false)]
+    [JsonPropertyName("version")]
     public int? Version { get; set; }
 
 
@@ -112,7 +112,7 @@ public partial class JourneySegmentRequest : IEquatable<JourneySegmentRequest>
     /// A description of the segment.
     /// </summary>
     /// <value>A description of the segment.</value>
-    [DataMember(Name = "description", EmitDefaultValue = false)]
+    [JsonPropertyName("description")]
     public string Description { get; set; }
 
 
@@ -121,7 +121,7 @@ public partial class JourneySegmentRequest : IEquatable<JourneySegmentRequest>
     /// The hexadecimal color value of the segment.
     /// </summary>
     /// <value>The hexadecimal color value of the segment.</value>
-    [DataMember(Name = "color", EmitDefaultValue = false)]
+    [JsonPropertyName("color")]
     public string Color { get; set; }
 
 
@@ -132,7 +132,7 @@ public partial class JourneySegmentRequest : IEquatable<JourneySegmentRequest>
     /// Whether or not the segment should be displayed to agent/supervisor users.
     /// </summary>
     /// <value>Whether or not the segment should be displayed to agent/supervisor users.</value>
-    [DataMember(Name = "shouldDisplayToAgent", EmitDefaultValue = false)]
+    [JsonPropertyName("shouldDisplayToAgent")]
     public bool? ShouldDisplayToAgent { get; set; }
 
 
@@ -141,7 +141,7 @@ public partial class JourneySegmentRequest : IEquatable<JourneySegmentRequest>
     /// The context of the segment.
     /// </summary>
     /// <value>The context of the segment.</value>
-    [DataMember(Name = "context", EmitDefaultValue = false)]
+    [JsonPropertyName("context")]
     public RequestContext Context { get; set; }
 
 
@@ -150,7 +150,7 @@ public partial class JourneySegmentRequest : IEquatable<JourneySegmentRequest>
     /// The pattern of rules defining the segment.
     /// </summary>
     /// <value>The pattern of rules defining the segment.</value>
-    [DataMember(Name = "journey", EmitDefaultValue = false)]
+    [JsonPropertyName("journey")]
     public RequestJourney Journey { get; set; }
 
 
@@ -159,7 +159,7 @@ public partial class JourneySegmentRequest : IEquatable<JourneySegmentRequest>
     /// Details of an entity corresponding to this segment in an external system.
     /// </summary>
     /// <value>Details of an entity corresponding to this segment in an external system.</value>
-    [DataMember(Name = "externalSegment", EmitDefaultValue = false)]
+    [JsonPropertyName("externalSegment")]
     public RequestExternalSegment ExternalSegment { get; set; }
 
 
@@ -168,7 +168,7 @@ public partial class JourneySegmentRequest : IEquatable<JourneySegmentRequest>
     /// Time, in days, from when the segment is assigned until it is automatically unassigned.
     /// </summary>
     /// <value>Time, in days, from when the segment is assigned until it is automatically unassigned.</value>
-    [DataMember(Name = "assignmentExpirationDays", EmitDefaultValue = false)]
+    [JsonPropertyName("assignmentExpirationDays")]
     public int? AssignmentExpirationDays { get; set; }
 
 

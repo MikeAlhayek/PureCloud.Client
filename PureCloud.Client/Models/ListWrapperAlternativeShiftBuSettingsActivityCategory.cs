@@ -7,13 +7,13 @@ namespace PureCloud.Client.Models;
 /// <summary>
 /// ListWrapperAlternativeShiftBuSettingsActivityCategory
 /// </summary>
-[DataContract]
+
 public partial class ListWrapperAlternativeShiftBuSettingsActivityCategory : IEquatable<ListWrapperAlternativeShiftBuSettingsActivityCategory>
 {
     /// <summary>
     /// Gets or Sets Values
     /// </summary>
-    [JsonConverter(typeof(JsonStringEnumConverter))]
+    
     public enum ValuesEnum
     {
         /// <summary>
@@ -81,7 +81,7 @@ public partial class ListWrapperAlternativeShiftBuSettingsActivityCategory : IEq
     /// <summary>
     /// Gets or Sets Values
     /// </summary>
-    [DataMember(Name = "values", EmitDefaultValue = false)]
+    [JsonPropertyName("values")]
     public List<ValuesEnum> Values { get; set; }
 
 

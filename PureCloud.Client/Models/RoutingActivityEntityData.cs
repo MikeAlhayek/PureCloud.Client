@@ -1,4 +1,3 @@
-using System.Runtime.Serialization;
 using System.Text;
 using System.Text.Json.Serialization;
 
@@ -7,7 +6,7 @@ namespace PureCloud.Client.Models;
 /// <summary>
 /// RoutingActivityEntityData
 /// </summary>
-[DataContract]
+
 public partial class RoutingActivityEntityData : IEquatable<RoutingActivityEntityData>
 {
 
@@ -50,7 +49,7 @@ public partial class RoutingActivityEntityData : IEquatable<RoutingActivityEntit
     /// The time at which the activity was observed. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z
     /// </summary>
     /// <value>The time at which the activity was observed. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z</value>
-    [DataMember(Name = "activityDate", EmitDefaultValue = false)]
+    [JsonPropertyName("activityDate")]
     public DateTime? ActivityDate { get; set; }
 
 
@@ -59,7 +58,7 @@ public partial class RoutingActivityEntityData : IEquatable<RoutingActivityEntit
     /// Organization presence identifier
     /// </summary>
     /// <value>Organization presence identifier</value>
-    [DataMember(Name = "organizationPresenceId", EmitDefaultValue = false)]
+    [JsonPropertyName("organizationPresenceId")]
     public string OrganizationPresenceId { get; set; }
 
 
@@ -68,7 +67,7 @@ public partial class RoutingActivityEntityData : IEquatable<RoutingActivityEntit
     /// Date of the latest presence change. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z
     /// </summary>
     /// <value>Date of the latest presence change. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z</value>
-    [DataMember(Name = "presenceDate", EmitDefaultValue = false)]
+    [JsonPropertyName("presenceDate")]
     public DateTime? PresenceDate { get; set; }
 
 
@@ -77,7 +76,7 @@ public partial class RoutingActivityEntityData : IEquatable<RoutingActivityEntit
     /// Queue identifier
     /// </summary>
     /// <value>Queue identifier</value>
-    [DataMember(Name = "queueId", EmitDefaultValue = false)]
+    [JsonPropertyName("queueId")]
     public string QueueId { get; set; }
 
 
@@ -86,7 +85,7 @@ public partial class RoutingActivityEntityData : IEquatable<RoutingActivityEntit
     /// Queue membership status (e.g. active or inactive)
     /// </summary>
     /// <value>Queue membership status (e.g. active or inactive)</value>
-    [DataMember(Name = "queueMembershipStatus", EmitDefaultValue = false)]
+    [JsonPropertyName("queueMembershipStatus")]
     public string QueueMembershipStatus { get; set; }
 
 
@@ -95,7 +94,7 @@ public partial class RoutingActivityEntityData : IEquatable<RoutingActivityEntit
     /// Agent routing status
     /// </summary>
     /// <value>Agent routing status</value>
-    [DataMember(Name = "routingStatus", EmitDefaultValue = false)]
+    [JsonPropertyName("routingStatus")]
     public string RoutingStatus { get; set; }
 
 
@@ -104,7 +103,7 @@ public partial class RoutingActivityEntityData : IEquatable<RoutingActivityEntit
     /// Date of the latest routing status change. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z
     /// </summary>
     /// <value>Date of the latest routing status change. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z</value>
-    [DataMember(Name = "routingStatusDate", EmitDefaultValue = false)]
+    [JsonPropertyName("routingStatusDate")]
     public DateTime? RoutingStatusDate { get; set; }
 
 
@@ -113,7 +112,7 @@ public partial class RoutingActivityEntityData : IEquatable<RoutingActivityEntit
     /// System presence
     /// </summary>
     /// <value>System presence</value>
-    [DataMember(Name = "systemPresence", EmitDefaultValue = false)]
+    [JsonPropertyName("systemPresence")]
     public string SystemPresence { get; set; }
 
 
@@ -122,7 +121,7 @@ public partial class RoutingActivityEntityData : IEquatable<RoutingActivityEntit
     /// The team ID the user is a member of
     /// </summary>
     /// <value>The team ID the user is a member of</value>
-    [DataMember(Name = "teamId", EmitDefaultValue = false)]
+    [JsonPropertyName("teamId")]
     public string TeamId { get; set; }
 
 
@@ -131,7 +130,7 @@ public partial class RoutingActivityEntityData : IEquatable<RoutingActivityEntit
     /// Unique identifier for the user
     /// </summary>
     /// <value>Unique identifier for the user</value>
-    [DataMember(Name = "userId", EmitDefaultValue = false)]
+    [JsonPropertyName("userId")]
     public string UserId { get; set; }
 
 

@@ -1,4 +1,3 @@
-using System.Runtime.Serialization;
 using System.Text;
 using System.Text.Json.Serialization;
 
@@ -7,7 +6,7 @@ namespace PureCloud.Client.Models;
 /// <summary>
 /// FlowMilestone
 /// </summary>
-[DataContract]
+
 public partial class FlowMilestone : IEquatable<FlowMilestone>
 {
 
@@ -36,7 +35,7 @@ public partial class FlowMilestone : IEquatable<FlowMilestone>
     /// The flow milestone identifier
     /// </summary>
     /// <value>The flow milestone identifier</value>
-    [DataMember(Name = "id", EmitDefaultValue = false)]
+    [JsonPropertyName("id")]
     public string Id { get; private set; }
 
 
@@ -45,7 +44,7 @@ public partial class FlowMilestone : IEquatable<FlowMilestone>
     /// The flow milestone name.
     /// </summary>
     /// <value>The flow milestone name.</value>
-    [DataMember(Name = "name", EmitDefaultValue = false)]
+    [JsonPropertyName("name")]
     public string Name { get; set; }
 
 
@@ -54,7 +53,7 @@ public partial class FlowMilestone : IEquatable<FlowMilestone>
     /// The division to which this entity belongs.
     /// </summary>
     /// <value>The division to which this entity belongs.</value>
-    [DataMember(Name = "division", EmitDefaultValue = false)]
+    [JsonPropertyName("division")]
     public WritableDivision Division { get; set; }
 
 
@@ -63,7 +62,7 @@ public partial class FlowMilestone : IEquatable<FlowMilestone>
     /// The flow milestone description.
     /// </summary>
     /// <value>The flow milestone description.</value>
-    [DataMember(Name = "description", EmitDefaultValue = false)]
+    [JsonPropertyName("description")]
     public string Description { get; set; }
 
 
@@ -72,7 +71,7 @@ public partial class FlowMilestone : IEquatable<FlowMilestone>
     /// The URI for this object
     /// </summary>
     /// <value>The URI for this object</value>
-    [DataMember(Name = "selfUri", EmitDefaultValue = false)]
+    [JsonPropertyName("selfUri")]
     public string SelfUri { get; private set; }
 
 

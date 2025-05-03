@@ -1,12 +1,12 @@
-using System.Runtime.Serialization;
 using System.Text;
+using System.Text.Json.Serialization;
 
 namespace PureCloud.Client.Models;
 
 /// <summary>
 /// TimeInterval
 /// </summary>
-[DataContract]
+
 public partial class TimeInterval : IEquatable<TimeInterval>
 {
     /// <summary>
@@ -30,7 +30,7 @@ public partial class TimeInterval : IEquatable<TimeInterval>
     /// <summary>
     /// Gets or Sets Months
     /// </summary>
-    [DataMember(Name = "months", EmitDefaultValue = false)]
+    [JsonPropertyName("months")]
     public int? Months { get; set; }
 
 
@@ -38,7 +38,7 @@ public partial class TimeInterval : IEquatable<TimeInterval>
     /// <summary>
     /// Gets or Sets Weeks
     /// </summary>
-    [DataMember(Name = "weeks", EmitDefaultValue = false)]
+    [JsonPropertyName("weeks")]
     public int? Weeks { get; set; }
 
 
@@ -46,7 +46,7 @@ public partial class TimeInterval : IEquatable<TimeInterval>
     /// <summary>
     /// Gets or Sets Days
     /// </summary>
-    [DataMember(Name = "days", EmitDefaultValue = false)]
+    [JsonPropertyName("days")]
     public int? Days { get; set; }
 
 
@@ -54,7 +54,7 @@ public partial class TimeInterval : IEquatable<TimeInterval>
     /// <summary>
     /// Gets or Sets Hours
     /// </summary>
-    [DataMember(Name = "hours", EmitDefaultValue = false)]
+    [JsonPropertyName("hours")]
     public int? Hours { get; set; }
 
 

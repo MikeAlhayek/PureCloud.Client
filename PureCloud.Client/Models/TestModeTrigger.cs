@@ -1,12 +1,12 @@
-using System.Runtime.Serialization;
 using System.Text;
+using System.Text.Json.Serialization;
 
 namespace PureCloud.Client.Models;
 
 /// <summary>
 /// Basic identifying information about a trigger
 /// </summary>
-[DataContract]
+
 public partial class TestModeTrigger : IEquatable<TestModeTrigger>
 {
     /// <summary>
@@ -27,7 +27,7 @@ public partial class TestModeTrigger : IEquatable<TestModeTrigger>
     /// The globally unique identifier for the object.
     /// </summary>
     /// <value>The globally unique identifier for the object.</value>
-    [DataMember(Name = "id", EmitDefaultValue = false)]
+    [JsonPropertyName("id")]
     public string Id { get; private set; }
 
 
@@ -36,7 +36,7 @@ public partial class TestModeTrigger : IEquatable<TestModeTrigger>
     /// The name of the trigger
     /// </summary>
     /// <value>The name of the trigger</value>
-    [DataMember(Name = "name", EmitDefaultValue = false)]
+    [JsonPropertyName("name")]
     public string Name { get; set; }
 
 
@@ -45,7 +45,7 @@ public partial class TestModeTrigger : IEquatable<TestModeTrigger>
     /// Whether or not the trigger is enabled
     /// </summary>
     /// <value>Whether or not the trigger is enabled</value>
-    [DataMember(Name = "enabled", EmitDefaultValue = false)]
+    [JsonPropertyName("enabled")]
     public bool? Enabled { get; set; }
 
 
@@ -54,7 +54,7 @@ public partial class TestModeTrigger : IEquatable<TestModeTrigger>
     /// The URI for this object
     /// </summary>
     /// <value>The URI for this object</value>
-    [DataMember(Name = "selfUri", EmitDefaultValue = false)]
+    [JsonPropertyName("selfUri")]
     public string SelfUri { get; private set; }
 
 

@@ -1,12 +1,12 @@
-using System.Runtime.Serialization;
 using System.Text;
+using System.Text.Json.Serialization;
 
 namespace PureCloud.Client.Models;
 
 /// <summary>
 /// V2WemEngagementCelebrationUpdatesTopicContestWinners
 /// </summary>
-[DataContract]
+
 public partial class V2WemEngagementCelebrationUpdatesTopicContestWinners : IEquatable<V2WemEngagementCelebrationUpdatesTopicContestWinners>
 {
     /// <summary>
@@ -30,7 +30,7 @@ public partial class V2WemEngagementCelebrationUpdatesTopicContestWinners : IEqu
     /// <summary>
     /// Gets or Sets Tier
     /// </summary>
-    [DataMember(Name = "tier", EmitDefaultValue = false)]
+    [JsonPropertyName("tier")]
     public long? Tier { get; set; }
 
 
@@ -38,7 +38,7 @@ public partial class V2WemEngagementCelebrationUpdatesTopicContestWinners : IEqu
     /// <summary>
     /// Gets or Sets WinnersCount
     /// </summary>
-    [DataMember(Name = "winnersCount", EmitDefaultValue = false)]
+    [JsonPropertyName("winnersCount")]
     public long? WinnersCount { get; set; }
 
 
@@ -46,7 +46,7 @@ public partial class V2WemEngagementCelebrationUpdatesTopicContestWinners : IEqu
     /// <summary>
     /// Gets or Sets ContestScore
     /// </summary>
-    [DataMember(Name = "contestScore", EmitDefaultValue = false)]
+    [JsonPropertyName("contestScore")]
     public V2WemEngagementCelebrationUpdatesTopicContestWinnersScore ContestScore { get; set; }
 
 
@@ -54,7 +54,7 @@ public partial class V2WemEngagementCelebrationUpdatesTopicContestWinners : IEqu
     /// <summary>
     /// Gets or Sets Users
     /// </summary>
-    [DataMember(Name = "users", EmitDefaultValue = false)]
+    [JsonPropertyName("users")]
     public List<V2WemEngagementCelebrationUpdatesTopicContestWinnersUsers> Users { get; set; }
 
 

@@ -7,14 +7,14 @@ namespace PureCloud.Client.Models;
 /// <summary>
 /// This is a table of settings per a loglevel that define what will be logged in executionData when enabled (true)
 /// </summary>
-[DataContract]
+
 public partial class FlowLogLevel : IEquatable<FlowLogLevel>
 {
     /// <summary>
     /// The logLevel for this characteristics set
     /// </summary>
     /// <value>The logLevel for this characteristics set</value>
-    [JsonConverter(typeof(JsonStringEnumConverter))]
+    
     public enum LevelEnum
     {
         /// <summary>
@@ -65,7 +65,7 @@ public partial class FlowLogLevel : IEquatable<FlowLogLevel>
     /// The logLevel for this characteristics set
     /// </summary>
     /// <value>The logLevel for this characteristics set</value>
-    [DataMember(Name = "level", EmitDefaultValue = false)]
+    [JsonPropertyName("level")]
     public LevelEnum? Level { get; set; }
     /// <summary>
     /// Initializes a new instance of the <see cref="FlowLogLevel" /> class.
@@ -87,7 +87,7 @@ public partial class FlowLogLevel : IEquatable<FlowLogLevel>
     /// Shows what characteristics are enabled for this log level
     /// </summary>
     /// <value>Shows what characteristics are enabled for this log level</value>
-    [DataMember(Name = "characteristics", EmitDefaultValue = false)]
+    [JsonPropertyName("characteristics")]
     public FlowCharacteristics Characteristics { get; set; }
 
 

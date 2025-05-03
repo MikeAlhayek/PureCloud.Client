@@ -1,4 +1,3 @@
-using System.Runtime.Serialization;
 using System.Text;
 using System.Text.Json.Serialization;
 
@@ -7,7 +6,7 @@ namespace PureCloud.Client.Models;
 /// <summary>
 /// ForecastPlanningGroupData
 /// </summary>
-[DataContract]
+
 public partial class ForecastPlanningGroupData : IEquatable<ForecastPlanningGroupData>
 {
 
@@ -36,7 +35,7 @@ public partial class ForecastPlanningGroupData : IEquatable<ForecastPlanningGrou
     /// The ID of the planning group to which this data applies. Note this is a snapshot of the planning group at the time of forecast creation and may not correspond to the current configuration
     /// </summary>
     /// <value>The ID of the planning group to which this data applies. Note this is a snapshot of the planning group at the time of forecast creation and may not correspond to the current configuration</value>
-    [DataMember(Name = "planningGroupId", EmitDefaultValue = false)]
+    [JsonPropertyName("planningGroupId")]
     public string PlanningGroupId { get; set; }
 
 
@@ -45,7 +44,7 @@ public partial class ForecastPlanningGroupData : IEquatable<ForecastPlanningGrou
     /// Forecast offered counts per 15 minute interval for this week of the forecast
     /// </summary>
     /// <value>Forecast offered counts per 15 minute interval for this week of the forecast</value>
-    [DataMember(Name = "offeredPerInterval", EmitDefaultValue = false)]
+    [JsonPropertyName("offeredPerInterval")]
     public List<double?> OfferedPerInterval { get; set; }
 
 
@@ -54,7 +53,7 @@ public partial class ForecastPlanningGroupData : IEquatable<ForecastPlanningGrou
     /// Forecast average handle time per 15 minute interval in seconds
     /// </summary>
     /// <value>Forecast average handle time per 15 minute interval in seconds</value>
-    [DataMember(Name = "averageHandleTimeSecondsPerInterval", EmitDefaultValue = false)]
+    [JsonPropertyName("averageHandleTimeSecondsPerInterval")]
     public List<double?> AverageHandleTimeSecondsPerInterval { get; set; }
 
 

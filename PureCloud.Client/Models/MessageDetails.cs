@@ -7,14 +7,14 @@ namespace PureCloud.Client.Models;
 /// <summary>
 /// MessageDetails
 /// </summary>
-[DataContract]
+
 public partial class MessageDetails : IEquatable<MessageDetails>
 {
     /// <summary>
     /// Indicates the delivery status of the message.
     /// </summary>
     /// <value>Indicates the delivery status of the message.</value>
-    [JsonConverter(typeof(JsonStringEnumConverter))]
+    
     public enum MessageStatusEnum
     {
         /// <summary>
@@ -83,7 +83,7 @@ public partial class MessageDetails : IEquatable<MessageDetails>
     /// For social media messages, the visibility of the message in the originating social platform
     /// </summary>
     /// <value>For social media messages, the visibility of the message in the originating social platform</value>
-    [JsonConverter(typeof(JsonStringEnumConverter))]
+    
     public enum SocialVisibilityEnum
     {
         /// <summary>
@@ -110,13 +110,13 @@ public partial class MessageDetails : IEquatable<MessageDetails>
     /// Indicates the delivery status of the message.
     /// </summary>
     /// <value>Indicates the delivery status of the message.</value>
-    [DataMember(Name = "messageStatus", EmitDefaultValue = false)]
+    [JsonPropertyName("messageStatus")]
     public MessageStatusEnum? MessageStatus { get; set; }
     /// <summary>
     /// For social media messages, the visibility of the message in the originating social platform
     /// </summary>
     /// <value>For social media messages, the visibility of the message in the originating social platform</value>
-    [DataMember(Name = "socialVisibility", EmitDefaultValue = false)]
+    [JsonPropertyName("socialVisibility")]
     public SocialVisibilityEnum? SocialVisibility { get; set; }
     /// <summary>
     /// Initializes a new instance of the <see cref="MessageDetails" /> class.
@@ -152,7 +152,7 @@ public partial class MessageDetails : IEquatable<MessageDetails>
     /// UUID identifying the message media.
     /// </summary>
     /// <value>UUID identifying the message media.</value>
-    [DataMember(Name = "messageId", EmitDefaultValue = false)]
+    [JsonPropertyName("messageId")]
     public string MessageId { get; set; }
 
 
@@ -161,7 +161,7 @@ public partial class MessageDetails : IEquatable<MessageDetails>
     /// A URI for this message entity.
     /// </summary>
     /// <value>A URI for this message entity.</value>
-    [DataMember(Name = "messageURI", EmitDefaultValue = false)]
+    [JsonPropertyName("messageURI")]
     public string MessageURI { get; set; }
 
 
@@ -172,7 +172,7 @@ public partial class MessageDetails : IEquatable<MessageDetails>
     /// The message segment count, greater than 1 if the message content was split into multiple parts for this message type, e.g. SMS character limits.
     /// </summary>
     /// <value>The message segment count, greater than 1 if the message content was split into multiple parts for this message type, e.g. SMS character limits.</value>
-    [DataMember(Name = "messageSegmentCount", EmitDefaultValue = false)]
+    [JsonPropertyName("messageSegmentCount")]
     public int? MessageSegmentCount { get; set; }
 
 
@@ -181,7 +181,7 @@ public partial class MessageDetails : IEquatable<MessageDetails>
     /// The time when the message was sent or received. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z
     /// </summary>
     /// <value>The time when the message was sent or received. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z</value>
-    [DataMember(Name = "messageTime", EmitDefaultValue = false)]
+    [JsonPropertyName("messageTime")]
     public DateTime? MessageTime { get; set; }
 
 
@@ -190,7 +190,7 @@ public partial class MessageDetails : IEquatable<MessageDetails>
     /// The media (images, files, etc) associated with this message, if any
     /// </summary>
     /// <value>The media (images, files, etc) associated with this message, if any</value>
-    [DataMember(Name = "media", EmitDefaultValue = false)]
+    [JsonPropertyName("media")]
     public List<MessageMedia> Media { get; set; }
 
 
@@ -199,7 +199,7 @@ public partial class MessageDetails : IEquatable<MessageDetails>
     /// One or more stickers associated with this message, if any
     /// </summary>
     /// <value>One or more stickers associated with this message, if any</value>
-    [DataMember(Name = "stickers", EmitDefaultValue = false)]
+    [JsonPropertyName("stickers")]
     public List<MessageSticker> Stickers { get; set; }
 
 
@@ -208,7 +208,7 @@ public partial class MessageDetails : IEquatable<MessageDetails>
     /// Information that describes the content of the message, if any
     /// </summary>
     /// <value>Information that describes the content of the message, if any</value>
-    [DataMember(Name = "messageMetadata", EmitDefaultValue = false)]
+    [JsonPropertyName("messageMetadata")]
     public ConversationMessageMetadata MessageMetadata { get; set; }
 
 
@@ -219,7 +219,7 @@ public partial class MessageDetails : IEquatable<MessageDetails>
     /// Provider specific error information for a communication.
     /// </summary>
     /// <value>Provider specific error information for a communication.</value>
-    [DataMember(Name = "errorInfo", EmitDefaultValue = false)]
+    [JsonPropertyName("errorInfo")]
     public ErrorBody ErrorInfo { get; set; }
 
 

@@ -1,12 +1,12 @@
-using System.Runtime.Serialization;
 using System.Text;
+using System.Text.Json.Serialization;
 
 namespace PureCloud.Client.Models;
 
 /// <summary>
 /// UserObservationQueryResponse
 /// </summary>
-[DataContract]
+
 public partial class UserObservationQueryResponse : IEquatable<UserObservationQueryResponse>
 {
     /// <summary>
@@ -24,7 +24,7 @@ public partial class UserObservationQueryResponse : IEquatable<UserObservationQu
     /// <summary>
     /// Gets or Sets Results
     /// </summary>
-    [DataMember(Name = "results", EmitDefaultValue = false)]
+    [JsonPropertyName("results")]
     public List<UserObservationDataContainer> Results { get; set; }
 
 

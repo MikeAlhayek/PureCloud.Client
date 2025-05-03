@@ -1,12 +1,12 @@
-using System.Runtime.Serialization;
 using System.Text;
+using System.Text.Json.Serialization;
 
 namespace PureCloud.Client.Models;
 
 /// <summary>
 /// JourneyOutcomeEventsNotificationMktCampaign
 /// </summary>
-[DataContract]
+
 public partial class JourneyOutcomeEventsNotificationMktCampaign : IEquatable<JourneyOutcomeEventsNotificationMktCampaign>
 {
     /// <summary>
@@ -36,7 +36,7 @@ public partial class JourneyOutcomeEventsNotificationMktCampaign : IEquatable<Jo
     /// <summary>
     /// Gets or Sets Content
     /// </summary>
-    [DataMember(Name = "content", EmitDefaultValue = false)]
+    [JsonPropertyName("content")]
     public string Content { get; set; }
 
 
@@ -44,7 +44,7 @@ public partial class JourneyOutcomeEventsNotificationMktCampaign : IEquatable<Jo
     /// <summary>
     /// Gets or Sets Medium
     /// </summary>
-    [DataMember(Name = "medium", EmitDefaultValue = false)]
+    [JsonPropertyName("medium")]
     public string Medium { get; set; }
 
 
@@ -52,7 +52,7 @@ public partial class JourneyOutcomeEventsNotificationMktCampaign : IEquatable<Jo
     /// <summary>
     /// Gets or Sets Name
     /// </summary>
-    [DataMember(Name = "name", EmitDefaultValue = false)]
+    [JsonPropertyName("name")]
     public string Name { get; set; }
 
 
@@ -60,7 +60,7 @@ public partial class JourneyOutcomeEventsNotificationMktCampaign : IEquatable<Jo
     /// <summary>
     /// Gets or Sets Source
     /// </summary>
-    [DataMember(Name = "source", EmitDefaultValue = false)]
+    [JsonPropertyName("source")]
     public string Source { get; set; }
 
 
@@ -68,7 +68,7 @@ public partial class JourneyOutcomeEventsNotificationMktCampaign : IEquatable<Jo
     /// <summary>
     /// Gets or Sets Term
     /// </summary>
-    [DataMember(Name = "term", EmitDefaultValue = false)]
+    [JsonPropertyName("term")]
     public string Term { get; set; }
 
 
@@ -76,7 +76,7 @@ public partial class JourneyOutcomeEventsNotificationMktCampaign : IEquatable<Jo
     /// <summary>
     /// Gets or Sets ClickId
     /// </summary>
-    [DataMember(Name = "clickId", EmitDefaultValue = false)]
+    [JsonPropertyName("clickId")]
     public string ClickId { get; set; }
 
 
@@ -84,7 +84,7 @@ public partial class JourneyOutcomeEventsNotificationMktCampaign : IEquatable<Jo
     /// <summary>
     /// Gets or Sets Network
     /// </summary>
-    [DataMember(Name = "network", EmitDefaultValue = false)]
+    [JsonPropertyName("network")]
     public string Network { get; set; }
 
 

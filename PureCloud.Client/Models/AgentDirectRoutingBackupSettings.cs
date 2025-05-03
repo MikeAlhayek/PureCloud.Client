@@ -1,12 +1,12 @@
-using System.Runtime.Serialization;
 using System.Text;
+using System.Text.Json.Serialization;
 
 namespace PureCloud.Client.Models;
 
 /// <summary>
 /// AgentDirectRoutingBackupSettings
 /// </summary>
-[DataContract]
+
 public partial class AgentDirectRoutingBackupSettings : IEquatable<AgentDirectRoutingBackupSettings>
 {
     /// <summary>
@@ -31,7 +31,7 @@ public partial class AgentDirectRoutingBackupSettings : IEquatable<AgentDirectRo
     /// ID of queue to be used as backup. If queueId and userId are both specified, queue behaves as secondary backup.
     /// </summary>
     /// <value>ID of queue to be used as backup. If queueId and userId are both specified, queue behaves as secondary backup.</value>
-    [DataMember(Name = "queueId", EmitDefaultValue = false)]
+    [JsonPropertyName("queueId")]
     public string QueueId { get; set; }
 
 
@@ -40,7 +40,7 @@ public partial class AgentDirectRoutingBackupSettings : IEquatable<AgentDirectRo
     /// ID of user to be used as backup. If queueId and userId are both specified, user behaves as primary backup.
     /// </summary>
     /// <value>ID of user to be used as backup. If queueId and userId are both specified, user behaves as primary backup.</value>
-    [DataMember(Name = "userId", EmitDefaultValue = false)]
+    [JsonPropertyName("userId")]
     public string UserId { get; set; }
 
 
@@ -49,7 +49,7 @@ public partial class AgentDirectRoutingBackupSettings : IEquatable<AgentDirectRo
     /// Flag indicating if Direct Routing interactions should wait for Direct Routing agent or go immediately to selected backup.
     /// </summary>
     /// <value>Flag indicating if Direct Routing interactions should wait for Direct Routing agent or go immediately to selected backup.</value>
-    [DataMember(Name = "waitForAgent", EmitDefaultValue = false)]
+    [JsonPropertyName("waitForAgent")]
     public bool? WaitForAgent { get; set; }
 
 
@@ -58,7 +58,7 @@ public partial class AgentDirectRoutingBackupSettings : IEquatable<AgentDirectRo
     /// Time (in seconds) that a Direct Routing interaction will wait for Direct Routing agent before going to selected backup. Valid range [60, 864000].
     /// </summary>
     /// <value>Time (in seconds) that a Direct Routing interaction will wait for Direct Routing agent before going to selected backup. Valid range [60, 864000].</value>
-    [DataMember(Name = "agentWaitSeconds", EmitDefaultValue = false)]
+    [JsonPropertyName("agentWaitSeconds")]
     public int? AgentWaitSeconds { get; set; }
 
 
@@ -67,7 +67,7 @@ public partial class AgentDirectRoutingBackupSettings : IEquatable<AgentDirectRo
     /// Set of users that this user is a backup for.
     /// </summary>
     /// <value>Set of users that this user is a backup for.</value>
-    [DataMember(Name = "backedUpUsers", EmitDefaultValue = false)]
+    [JsonPropertyName("backedUpUsers")]
     public List<string> BackedUpUsers { get; private set; }
 
 

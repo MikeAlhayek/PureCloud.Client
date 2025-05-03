@@ -1,12 +1,12 @@
-using System.Runtime.Serialization;
 using System.Text;
+using System.Text.Json.Serialization;
 
 namespace PureCloud.Client.Models;
 
 /// <summary>
 /// Presence from a given source for a user
 /// </summary>
-[DataContract]
+
 public partial class UcUserPresence : IEquatable<UcUserPresence>
 {
     /// <summary>
@@ -37,7 +37,7 @@ public partial class UcUserPresence : IEquatable<UcUserPresence>
     /// The globally unique identifier for the object.
     /// </summary>
     /// <value>The globally unique identifier for the object.</value>
-    [DataMember(Name = "id", EmitDefaultValue = false)]
+    [JsonPropertyName("id")]
     public string Id { get; private set; }
 
 
@@ -45,7 +45,7 @@ public partial class UcUserPresence : IEquatable<UcUserPresence>
     /// <summary>
     /// Gets or Sets Name
     /// </summary>
-    [DataMember(Name = "name", EmitDefaultValue = false)]
+    [JsonPropertyName("name")]
     public string Name { get; set; }
 
 
@@ -54,7 +54,7 @@ public partial class UcUserPresence : IEquatable<UcUserPresence>
     /// User ID of the associated Genesys Cloud user.
     /// </summary>
     /// <value>User ID of the associated Genesys Cloud user.</value>
-    [DataMember(Name = "userId", EmitDefaultValue = false)]
+    [JsonPropertyName("userId")]
     public string UserId { get; set; }
 
 
@@ -63,7 +63,7 @@ public partial class UcUserPresence : IEquatable<UcUserPresence>
     /// Deprecated - The sourceID field should be used as a replacement.
     /// </summary>
     /// <value>Deprecated - The sourceID field should be used as a replacement.</value>
-    [DataMember(Name = "source", EmitDefaultValue = false)]
+    [JsonPropertyName("source")]
     public string Source { get; set; }
 
 
@@ -72,7 +72,7 @@ public partial class UcUserPresence : IEquatable<UcUserPresence>
     /// The registered source ID from where the presence was set
     /// </summary>
     /// <value>The registered source ID from where the presence was set</value>
-    [DataMember(Name = "sourceId", EmitDefaultValue = false)]
+    [JsonPropertyName("sourceId")]
     public string SourceId { get; set; }
 
 
@@ -80,7 +80,7 @@ public partial class UcUserPresence : IEquatable<UcUserPresence>
     /// <summary>
     /// Gets or Sets PresenceDefinition
     /// </summary>
-    [DataMember(Name = "presenceDefinition", EmitDefaultValue = false)]
+    [JsonPropertyName("presenceDefinition")]
     public PresenceDefinition PresenceDefinition { get; set; }
 
 
@@ -88,7 +88,7 @@ public partial class UcUserPresence : IEquatable<UcUserPresence>
     /// <summary>
     /// Gets or Sets Message
     /// </summary>
-    [DataMember(Name = "message", EmitDefaultValue = false)]
+    [JsonPropertyName("message")]
     public string Message { get; set; }
 
 
@@ -97,7 +97,7 @@ public partial class UcUserPresence : IEquatable<UcUserPresence>
     /// Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z
     /// </summary>
     /// <value>Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z</value>
-    [DataMember(Name = "modifiedDate", EmitDefaultValue = false)]
+    [JsonPropertyName("modifiedDate")]
     public DateTime? ModifiedDate { get; set; }
 
 
@@ -106,7 +106,7 @@ public partial class UcUserPresence : IEquatable<UcUserPresence>
     /// The URI for this object
     /// </summary>
     /// <value>The URI for this object</value>
-    [DataMember(Name = "selfUri", EmitDefaultValue = false)]
+    [JsonPropertyName("selfUri")]
     public string SelfUri { get; private set; }
 
 

@@ -7,13 +7,13 @@ namespace PureCloud.Client.Models;
 /// <summary>
 /// LearningAssignmentTopicLearningAssignmentNotification
 /// </summary>
-[DataContract]
+
 public partial class LearningAssignmentTopicLearningAssignmentNotification : IEquatable<LearningAssignmentTopicLearningAssignmentNotification>
 {
     /// <summary>
     /// Gets or Sets State
     /// </summary>
-    [JsonConverter(typeof(JsonStringEnumConverter))]
+    
     public enum StateEnum
     {
         /// <summary>
@@ -63,7 +63,7 @@ public partial class LearningAssignmentTopicLearningAssignmentNotification : IEq
     /// <summary>
     /// Gets or Sets Type
     /// </summary>
-    [JsonConverter(typeof(JsonStringEnumConverter))]
+    
     public enum TypeEnum
     {
         /// <summary>
@@ -95,12 +95,12 @@ public partial class LearningAssignmentTopicLearningAssignmentNotification : IEq
     /// <summary>
     /// Gets or Sets State
     /// </summary>
-    [DataMember(Name = "state", EmitDefaultValue = false)]
+    [JsonPropertyName("state")]
     public StateEnum? State { get; set; }
     /// <summary>
     /// Gets or Sets Type
     /// </summary>
-    [DataMember(Name = "type", EmitDefaultValue = false)]
+    [JsonPropertyName("type")]
     public TypeEnum? Type { get; set; }
     /// <summary>
     /// Initializes a new instance of the <see cref="LearningAssignmentTopicLearningAssignmentNotification" /> class.
@@ -145,7 +145,7 @@ public partial class LearningAssignmentTopicLearningAssignmentNotification : IEq
     /// <summary>
     /// Gets or Sets Id
     /// </summary>
-    [DataMember(Name = "id", EmitDefaultValue = false)]
+    [JsonPropertyName("id")]
     public string Id { get; set; }
 
 
@@ -153,7 +153,7 @@ public partial class LearningAssignmentTopicLearningAssignmentNotification : IEq
     /// <summary>
     /// Gets or Sets User
     /// </summary>
-    [DataMember(Name = "user", EmitDefaultValue = false)]
+    [JsonPropertyName("user")]
     public LearningAssignmentTopicUserReference User { get; set; }
 
 
@@ -161,7 +161,7 @@ public partial class LearningAssignmentTopicLearningAssignmentNotification : IEq
     /// <summary>
     /// Gets or Sets Module
     /// </summary>
-    [DataMember(Name = "module", EmitDefaultValue = false)]
+    [JsonPropertyName("module")]
     public LearningAssignmentTopicLearningModuleReference Module { get; set; }
 
 
@@ -169,7 +169,7 @@ public partial class LearningAssignmentTopicLearningAssignmentNotification : IEq
     /// <summary>
     /// Gets or Sets Version
     /// </summary>
-    [DataMember(Name = "version", EmitDefaultValue = false)]
+    [JsonPropertyName("version")]
     public long? Version { get; set; }
 
 
@@ -179,7 +179,7 @@ public partial class LearningAssignmentTopicLearningAssignmentNotification : IEq
     /// <summary>
     /// Gets or Sets DateRecommendedForCompletion
     /// </summary>
-    [DataMember(Name = "dateRecommendedForCompletion", EmitDefaultValue = false)]
+    [JsonPropertyName("dateRecommendedForCompletion")]
     public DateTime? DateRecommendedForCompletion { get; set; }
 
 
@@ -187,7 +187,7 @@ public partial class LearningAssignmentTopicLearningAssignmentNotification : IEq
     /// <summary>
     /// Gets or Sets CreatedBy
     /// </summary>
-    [DataMember(Name = "createdBy", EmitDefaultValue = false)]
+    [JsonPropertyName("createdBy")]
     public LearningAssignmentTopicUserReference CreatedBy { get; set; }
 
 
@@ -195,7 +195,7 @@ public partial class LearningAssignmentTopicLearningAssignmentNotification : IEq
     /// <summary>
     /// Gets or Sets DateCreated
     /// </summary>
-    [DataMember(Name = "dateCreated", EmitDefaultValue = false)]
+    [JsonPropertyName("dateCreated")]
     public DateTime? DateCreated { get; set; }
 
 
@@ -203,7 +203,7 @@ public partial class LearningAssignmentTopicLearningAssignmentNotification : IEq
     /// <summary>
     /// Gets or Sets ModifiedBy
     /// </summary>
-    [DataMember(Name = "modifiedBy", EmitDefaultValue = false)]
+    [JsonPropertyName("modifiedBy")]
     public LearningAssignmentTopicUserReference ModifiedBy { get; set; }
 
 
@@ -211,7 +211,7 @@ public partial class LearningAssignmentTopicLearningAssignmentNotification : IEq
     /// <summary>
     /// Gets or Sets DateModified
     /// </summary>
-    [DataMember(Name = "dateModified", EmitDefaultValue = false)]
+    [JsonPropertyName("dateModified")]
     public DateTime? DateModified { get; set; }
 
 
@@ -219,7 +219,7 @@ public partial class LearningAssignmentTopicLearningAssignmentNotification : IEq
     /// <summary>
     /// Gets or Sets IsOverdue
     /// </summary>
-    [DataMember(Name = "isOverdue", EmitDefaultValue = false)]
+    [JsonPropertyName("isOverdue")]
     public bool? IsOverdue { get; set; }
 
 
@@ -227,7 +227,7 @@ public partial class LearningAssignmentTopicLearningAssignmentNotification : IEq
     /// <summary>
     /// Gets or Sets LengthInMinutes
     /// </summary>
-    [DataMember(Name = "lengthInMinutes", EmitDefaultValue = false)]
+    [JsonPropertyName("lengthInMinutes")]
     public long? LengthInMinutes { get; set; }
 
 
@@ -235,7 +235,7 @@ public partial class LearningAssignmentTopicLearningAssignmentNotification : IEq
     /// <summary>
     /// Gets or Sets PercentageScore
     /// </summary>
-    [DataMember(Name = "percentageScore", EmitDefaultValue = false)]
+    [JsonPropertyName("percentageScore")]
     public double? PercentageScore { get; set; }
 
 
@@ -243,7 +243,7 @@ public partial class LearningAssignmentTopicLearningAssignmentNotification : IEq
     /// <summary>
     /// Gets or Sets IsPassed
     /// </summary>
-    [DataMember(Name = "isPassed", EmitDefaultValue = false)]
+    [JsonPropertyName("isPassed")]
     public bool? IsPassed { get; set; }
 
 

@@ -7,13 +7,13 @@ namespace PureCloud.Client.Models;
 /// <summary>
 /// ListWrapperAgentWorkPlanField
 /// </summary>
-[DataContract]
+
 public partial class ListWrapperAgentWorkPlanField : IEquatable<ListWrapperAgentWorkPlanField>
 {
     /// <summary>
     /// Gets or Sets Values
     /// </summary>
-    [JsonConverter(typeof(JsonStringEnumConverter))]
+    
     public enum ValuesEnum
     {
         /// <summary>
@@ -51,7 +51,7 @@ public partial class ListWrapperAgentWorkPlanField : IEquatable<ListWrapperAgent
     /// <summary>
     /// Gets or Sets Values
     /// </summary>
-    [DataMember(Name = "values", EmitDefaultValue = false)]
+    [JsonPropertyName("values")]
     public List<ValuesEnum> Values { get; set; }
 
 

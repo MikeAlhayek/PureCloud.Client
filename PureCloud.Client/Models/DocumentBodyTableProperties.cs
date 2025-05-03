@@ -7,14 +7,14 @@ namespace PureCloud.Client.Models;
 /// <summary>
 /// DocumentBodyTableProperties
 /// </summary>
-[DataContract]
+
 public partial class DocumentBodyTableProperties : IEquatable<DocumentBodyTableProperties>
 {
     /// <summary>
     /// The alignment for the table.
     /// </summary>
     /// <value>The alignment for the table.</value>
-    [JsonConverter(typeof(JsonStringEnumConverter))]
+    
     public enum AlignmentEnum
     {
         /// <summary>
@@ -47,7 +47,7 @@ public partial class DocumentBodyTableProperties : IEquatable<DocumentBodyTableP
     /// The border style for the table.
     /// </summary>
     /// <value>The border style for the table.</value>
-    [JsonConverter(typeof(JsonStringEnumConverter))]
+    
     public enum BorderStyleEnum
     {
         /// <summary>
@@ -122,13 +122,13 @@ public partial class DocumentBodyTableProperties : IEquatable<DocumentBodyTableP
     /// The alignment for the table.
     /// </summary>
     /// <value>The alignment for the table.</value>
-    [DataMember(Name = "alignment", EmitDefaultValue = false)]
+    [JsonPropertyName("alignment")]
     public AlignmentEnum? Alignment { get; set; }
     /// <summary>
     /// The border style for the table.
     /// </summary>
     /// <value>The border style for the table.</value>
-    [DataMember(Name = "borderStyle", EmitDefaultValue = false)]
+    [JsonPropertyName("borderStyle")]
     public BorderStyleEnum? BorderStyle { get; set; }
     /// <summary>
     /// Initializes a new instance of the <see cref="DocumentBodyTableProperties" /> class.
@@ -166,7 +166,7 @@ public partial class DocumentBodyTableProperties : IEquatable<DocumentBodyTableP
     /// The width of the table converted to em unit.
     /// </summary>
     /// <value>The width of the table converted to em unit.</value>
-    [DataMember(Name = "width", EmitDefaultValue = false)]
+    [JsonPropertyName("width")]
     public float? Width { get; set; }
 
 
@@ -175,7 +175,7 @@ public partial class DocumentBodyTableProperties : IEquatable<DocumentBodyTableP
     /// The width of the table in the specified unit.
     /// </summary>
     /// <value>The width of the table in the specified unit.</value>
-    [DataMember(Name = "widthWithUnit", EmitDefaultValue = false)]
+    [JsonPropertyName("widthWithUnit")]
     public DocumentElementLength WidthWithUnit { get; set; }
 
 
@@ -184,7 +184,7 @@ public partial class DocumentBodyTableProperties : IEquatable<DocumentBodyTableP
     /// The height for the table.
     /// </summary>
     /// <value>The height for the table.</value>
-    [DataMember(Name = "height", EmitDefaultValue = false)]
+    [JsonPropertyName("height")]
     public float? Height { get; set; }
 
 
@@ -193,7 +193,7 @@ public partial class DocumentBodyTableProperties : IEquatable<DocumentBodyTableP
     /// The cell spacing for the table. The valid values in &#39;em&#39;.
     /// </summary>
     /// <value>The cell spacing for the table. The valid values in &#39;em&#39;.</value>
-    [DataMember(Name = "cellSpacing", EmitDefaultValue = false)]
+    [JsonPropertyName("cellSpacing")]
     public float? CellSpacing { get; set; }
 
 
@@ -202,7 +202,7 @@ public partial class DocumentBodyTableProperties : IEquatable<DocumentBodyTableP
     /// The cell padding for the table. The valid values in &#39;em&#39;.
     /// </summary>
     /// <value>The cell padding for the table. The valid values in &#39;em&#39;.</value>
-    [DataMember(Name = "cellPadding", EmitDefaultValue = false)]
+    [JsonPropertyName("cellPadding")]
     public float? CellPadding { get; set; }
 
 
@@ -211,7 +211,7 @@ public partial class DocumentBodyTableProperties : IEquatable<DocumentBodyTableP
     /// The border width for the table. The valid values in &#39;em&#39;
     /// </summary>
     /// <value>The border width for the table. The valid values in &#39;em&#39;</value>
-    [DataMember(Name = "borderWidth", EmitDefaultValue = false)]
+    [JsonPropertyName("borderWidth")]
     public float? BorderWidth { get; set; }
 
 
@@ -224,7 +224,7 @@ public partial class DocumentBodyTableProperties : IEquatable<DocumentBodyTableP
     /// The border color for the table. The valid values in hex color code representation. For example black color - #000000
     /// </summary>
     /// <value>The border color for the table. The valid values in hex color code representation. For example black color - #000000</value>
-    [DataMember(Name = "borderColor", EmitDefaultValue = false)]
+    [JsonPropertyName("borderColor")]
     public string BorderColor { get; set; }
 
 
@@ -233,7 +233,7 @@ public partial class DocumentBodyTableProperties : IEquatable<DocumentBodyTableP
     /// The background color for the table. The valid values in hex color code representation. For example black color - #000000
     /// </summary>
     /// <value>The background color for the table. The valid values in hex color code representation. For example black color - #000000</value>
-    [DataMember(Name = "backgroundColor", EmitDefaultValue = false)]
+    [JsonPropertyName("backgroundColor")]
     public string BackgroundColor { get; set; }
 
 
@@ -242,7 +242,7 @@ public partial class DocumentBodyTableProperties : IEquatable<DocumentBodyTableP
     /// The caption for the table. The valid values in hex color code representation. For example black color - #000000
     /// </summary>
     /// <value>The caption for the table. The valid values in hex color code representation. For example black color - #000000</value>
-    [DataMember(Name = "caption", EmitDefaultValue = false)]
+    [JsonPropertyName("caption")]
     public DocumentBodyTableCaptionBlock Caption { get; set; }
 
 

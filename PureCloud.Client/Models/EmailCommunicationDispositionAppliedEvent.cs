@@ -1,4 +1,3 @@
-using System.Runtime.Serialization;
 using System.Text;
 using System.Text.Json.Serialization;
 
@@ -7,7 +6,7 @@ namespace PureCloud.Client.Models;
 /// <summary>
 /// EmailCommunicationDispositionAppliedEvent
 /// </summary>
-[DataContract]
+
 public partial class EmailCommunicationDispositionAppliedEvent : IEquatable<EmailCommunicationDispositionAppliedEvent>
 {
 
@@ -44,7 +43,7 @@ public partial class EmailCommunicationDispositionAppliedEvent : IEquatable<Emai
     /// A unique (V4 UUID) eventId for this event
     /// </summary>
     /// <value>A unique (V4 UUID) eventId for this event</value>
-    [DataMember(Name = "eventId", EmitDefaultValue = false)]
+    [JsonPropertyName("eventId")]
     public string EventId { get; set; }
 
 
@@ -53,7 +52,7 @@ public partial class EmailCommunicationDispositionAppliedEvent : IEquatable<Emai
     /// A Date Time representing the time this event occurred. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z
     /// </summary>
     /// <value>A Date Time representing the time this event occurred. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z</value>
-    [DataMember(Name = "eventDateTime", EmitDefaultValue = false)]
+    [JsonPropertyName("eventDateTime")]
     public DateTime? EventDateTime { get; set; }
 
 
@@ -62,7 +61,7 @@ public partial class EmailCommunicationDispositionAppliedEvent : IEquatable<Emai
     /// A unique Id (V4 UUID) identifying this conversation
     /// </summary>
     /// <value>A unique Id (V4 UUID) identifying this conversation</value>
-    [DataMember(Name = "conversationId", EmitDefaultValue = false)]
+    [JsonPropertyName("conversationId")]
     public string ConversationId { get; set; }
 
 
@@ -71,7 +70,7 @@ public partial class EmailCommunicationDispositionAppliedEvent : IEquatable<Emai
     /// A unique Id (V4 UUID) identifying this communication
     /// </summary>
     /// <value>A unique Id (V4 UUID) identifying this communication</value>
-    [DataMember(Name = "communicationId", EmitDefaultValue = false)]
+    [JsonPropertyName("communicationId")]
     public string CommunicationId { get; set; }
 
 
@@ -80,7 +79,7 @@ public partial class EmailCommunicationDispositionAppliedEvent : IEquatable<Emai
     /// The wrapup-code (V4 UUID) used to disposition this interaction. If this value is not provided the disposition is considered skipped.
     /// </summary>
     /// <value>The wrapup-code (V4 UUID) used to disposition this interaction. If this value is not provided the disposition is considered skipped.</value>
-    [DataMember(Name = "code", EmitDefaultValue = false)]
+    [JsonPropertyName("code")]
     public string Code { get; set; }
 
 
@@ -89,7 +88,7 @@ public partial class EmailCommunicationDispositionAppliedEvent : IEquatable<Emai
     /// Text entered by the agent to describe the interaction or disposition. Ignored if the disposition is considered skipped.
     /// </summary>
     /// <value>Text entered by the agent to describe the interaction or disposition. Ignored if the disposition is considered skipped.</value>
-    [DataMember(Name = "notes", EmitDefaultValue = false)]
+    [JsonPropertyName("notes")]
     public string Notes { get; set; }
 
 
@@ -98,7 +97,7 @@ public partial class EmailCommunicationDispositionAppliedEvent : IEquatable<Emai
     /// The list of tags selected by the agent to describe the interaction or disposition. Ignored if the disposition is considered skipped.
     /// </summary>
     /// <value>The list of tags selected by the agent to describe the interaction or disposition. Ignored if the disposition is considered skipped.</value>
-    [DataMember(Name = "tags", EmitDefaultValue = false)]
+    [JsonPropertyName("tags")]
     public List<string> Tags { get; set; }
 
 

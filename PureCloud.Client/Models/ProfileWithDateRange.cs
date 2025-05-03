@@ -1,12 +1,12 @@
-using System.Runtime.Serialization;
 using System.Text;
+using System.Text.Json.Serialization;
 
 namespace PureCloud.Client.Models;
 
 /// <summary>
 /// ProfileWithDateRange
 /// </summary>
-[DataContract]
+
 public partial class ProfileWithDateRange : IEquatable<ProfileWithDateRange>
 {
     /// <summary>
@@ -33,7 +33,7 @@ public partial class ProfileWithDateRange : IEquatable<ProfileWithDateRange>
     /// Profile ID
     /// </summary>
     /// <value>Profile ID</value>
-    [DataMember(Name = "id", EmitDefaultValue = false)]
+    [JsonPropertyName("id")]
     public string Id { get; set; }
 
 
@@ -41,7 +41,7 @@ public partial class ProfileWithDateRange : IEquatable<ProfileWithDateRange>
     /// <summary>
     /// Gets or Sets Name
     /// </summary>
-    [DataMember(Name = "name", EmitDefaultValue = false)]
+    [JsonPropertyName("name")]
     public string Name { get; set; }
 
 
@@ -50,7 +50,7 @@ public partial class ProfileWithDateRange : IEquatable<ProfileWithDateRange>
     /// The division to which this entity belongs.
     /// </summary>
     /// <value>The division to which this entity belongs.</value>
-    [DataMember(Name = "division", EmitDefaultValue = false)]
+    [JsonPropertyName("division")]
     public Division Division { get; set; }
 
 
@@ -59,7 +59,7 @@ public partial class ProfileWithDateRange : IEquatable<ProfileWithDateRange>
     /// Start workday used as the date range. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd
     /// </summary>
     /// <value>Start workday used as the date range. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd</value>
-    [DataMember(Name = "dateStartWorkday", EmitDefaultValue = false)]
+    [JsonPropertyName("dateStartWorkday")]
     public string DateStartWorkday { get; set; }
 
 
@@ -68,7 +68,7 @@ public partial class ProfileWithDateRange : IEquatable<ProfileWithDateRange>
     /// End workday used as the date range. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd
     /// </summary>
     /// <value>End workday used as the date range. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd</value>
-    [DataMember(Name = "dateEndWorkday", EmitDefaultValue = false)]
+    [JsonPropertyName("dateEndWorkday")]
     public string DateEndWorkday { get; set; }
 
 
@@ -77,7 +77,7 @@ public partial class ProfileWithDateRange : IEquatable<ProfileWithDateRange>
     /// The URI for this object
     /// </summary>
     /// <value>The URI for this object</value>
-    [DataMember(Name = "selfUri", EmitDefaultValue = false)]
+    [JsonPropertyName("selfUri")]
     public string SelfUri { get; private set; }
 
 

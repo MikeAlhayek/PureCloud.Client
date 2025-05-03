@@ -1,12 +1,12 @@
-using System.Runtime.Serialization;
 using System.Text;
+using System.Text.Json.Serialization;
 
 namespace PureCloud.Client.Models;
 
 /// <summary>
 /// WorkitemStatusUpdate
 /// </summary>
-[DataContract]
+
 public partial class WorkitemStatusUpdate : IEquatable<WorkitemStatusUpdate>
 {
     /// <summary>
@@ -37,7 +37,7 @@ public partial class WorkitemStatusUpdate : IEquatable<WorkitemStatusUpdate>
     /// The name of the Status. Valid length between 3 and 256 characters.
     /// </summary>
     /// <value>The name of the Status. Valid length between 3 and 256 characters.</value>
-    [DataMember(Name = "name", EmitDefaultValue = false)]
+    [JsonPropertyName("name")]
     public string Name { get; set; }
 
 
@@ -46,7 +46,7 @@ public partial class WorkitemStatusUpdate : IEquatable<WorkitemStatusUpdate>
     /// A list of destination Statuses where a Workitem with this Status can transition to. If the list is empty Workitems with this Status can transition to all other Statuses defined on the Worktype. A Status can have a maximum of 24 destinations.
     /// </summary>
     /// <value>A list of destination Statuses where a Workitem with this Status can transition to. If the list is empty Workitems with this Status can transition to all other Statuses defined on the Worktype. A Status can have a maximum of 24 destinations.</value>
-    [DataMember(Name = "destinationStatusIds", EmitDefaultValue = false)]
+    [JsonPropertyName("destinationStatusIds")]
     public List<string> DestinationStatusIds { get; set; }
 
 
@@ -55,7 +55,7 @@ public partial class WorkitemStatusUpdate : IEquatable<WorkitemStatusUpdate>
     /// The description of the Status. Maximum length of 512 characters.
     /// </summary>
     /// <value>The description of the Status. Maximum length of 512 characters.</value>
-    [DataMember(Name = "description", EmitDefaultValue = false)]
+    [JsonPropertyName("description")]
     public string Description { get; set; }
 
 
@@ -64,7 +64,7 @@ public partial class WorkitemStatusUpdate : IEquatable<WorkitemStatusUpdate>
     /// Default destination status to which this Status will transition to if auto status transition enabled.
     /// </summary>
     /// <value>Default destination status to which this Status will transition to if auto status transition enabled.</value>
-    [DataMember(Name = "defaultDestinationStatusId", EmitDefaultValue = false)]
+    [JsonPropertyName("defaultDestinationStatusId")]
     public string DefaultDestinationStatusId { get; set; }
 
 
@@ -73,7 +73,7 @@ public partial class WorkitemStatusUpdate : IEquatable<WorkitemStatusUpdate>
     /// Delay in seconds for auto status transition. Required if defaultDestinationStatusId is provided.
     /// </summary>
     /// <value>Delay in seconds for auto status transition. Required if defaultDestinationStatusId is provided.</value>
-    [DataMember(Name = "statusTransitionDelaySeconds", EmitDefaultValue = false)]
+    [JsonPropertyName("statusTransitionDelaySeconds")]
     public int? StatusTransitionDelaySeconds { get; set; }
 
 
@@ -82,7 +82,7 @@ public partial class WorkitemStatusUpdate : IEquatable<WorkitemStatusUpdate>
     /// Time is represented as an ISO-8601 string without a timezone. For example: HH:mm:ss.SSS
     /// </summary>
     /// <value>Time is represented as an ISO-8601 string without a timezone. For example: HH:mm:ss.SSS</value>
-    [DataMember(Name = "statusTransitionTime", EmitDefaultValue = false)]
+    [JsonPropertyName("statusTransitionTime")]
     public string StatusTransitionTime { get; set; }
 
 
@@ -91,7 +91,7 @@ public partial class WorkitemStatusUpdate : IEquatable<WorkitemStatusUpdate>
     /// Terminate workitem on selection of status. Applicable only for statuses in the Closed category.
     /// </summary>
     /// <value>Terminate workitem on selection of status. Applicable only for statuses in the Closed category.</value>
-    [DataMember(Name = "autoTerminateWorkitem", EmitDefaultValue = false)]
+    [JsonPropertyName("autoTerminateWorkitem")]
     public bool? AutoTerminateWorkitem { get; set; }
 
 

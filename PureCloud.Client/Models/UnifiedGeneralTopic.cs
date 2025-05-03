@@ -7,13 +7,13 @@ namespace PureCloud.Client.Models;
 /// <summary>
 /// UnifiedGeneralTopic
 /// </summary>
-[DataContract]
+
 public partial class UnifiedGeneralTopic : IEquatable<UnifiedGeneralTopic>
 {
     /// <summary>
     /// Gets or Sets Status
     /// </summary>
-    [JsonConverter(typeof(JsonStringEnumConverter))]
+    
     public enum StatusEnum
     {
         /// <summary>
@@ -63,7 +63,7 @@ public partial class UnifiedGeneralTopic : IEquatable<UnifiedGeneralTopic>
     /// <summary>
     /// Gets or Sets Status
     /// </summary>
-    [DataMember(Name = "status", EmitDefaultValue = false)]
+    [JsonPropertyName("status")]
     public StatusEnum? Status { get; set; }
     /// <summary>
     /// Initializes a new instance of the <see cref="UnifiedGeneralTopic" /> class.
@@ -82,7 +82,7 @@ public partial class UnifiedGeneralTopic : IEquatable<UnifiedGeneralTopic>
     /// <summary>
     /// Gets or Sets Name
     /// </summary>
-    [DataMember(Name = "name", EmitDefaultValue = false)]
+    [JsonPropertyName("name")]
     public string Name { get; set; }
 
 

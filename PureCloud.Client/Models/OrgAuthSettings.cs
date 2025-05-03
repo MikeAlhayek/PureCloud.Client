@@ -1,12 +1,12 @@
-using System.Runtime.Serialization;
 using System.Text;
+using System.Text.Json.Serialization;
 
 namespace PureCloud.Client.Models;
 
 /// <summary>
 /// OrgAuthSettings
 /// </summary>
-[DataContract]
+
 public partial class OrgAuthSettings : IEquatable<OrgAuthSettings>
 {
     /// <summary>
@@ -35,7 +35,7 @@ public partial class OrgAuthSettings : IEquatable<OrgAuthSettings>
     /// Indicates whether multi-factor authentication is required.
     /// </summary>
     /// <value>Indicates whether multi-factor authentication is required.</value>
-    [DataMember(Name = "multifactorAuthenticationRequired", EmitDefaultValue = false)]
+    [JsonPropertyName("multifactorAuthenticationRequired")]
     public bool? MultifactorAuthenticationRequired { get; set; }
 
 
@@ -44,7 +44,7 @@ public partial class OrgAuthSettings : IEquatable<OrgAuthSettings>
     /// Indicates whether the domain allowlist is enabled.
     /// </summary>
     /// <value>Indicates whether the domain allowlist is enabled.</value>
-    [DataMember(Name = "domainAllowlistEnabled", EmitDefaultValue = false)]
+    [JsonPropertyName("domainAllowlistEnabled")]
     public bool? DomainAllowlistEnabled { get; set; }
 
 
@@ -53,7 +53,7 @@ public partial class OrgAuthSettings : IEquatable<OrgAuthSettings>
     /// The list of domains that will be allowed to embed Genesys Cloud applications.
     /// </summary>
     /// <value>The list of domains that will be allowed to embed Genesys Cloud applications.</value>
-    [DataMember(Name = "domainAllowlist", EmitDefaultValue = false)]
+    [JsonPropertyName("domainAllowlist")]
     public List<string> DomainAllowlist { get; set; }
 
 
@@ -62,7 +62,7 @@ public partial class OrgAuthSettings : IEquatable<OrgAuthSettings>
     /// The list of IP addresses that will be allowed to authenticate with Genesys Cloud.
     /// </summary>
     /// <value>The list of IP addresses that will be allowed to authenticate with Genesys Cloud.</value>
-    [DataMember(Name = "ipAddressAllowlist", EmitDefaultValue = false)]
+    [JsonPropertyName("ipAddressAllowlist")]
     public List<string> IpAddressAllowlist { get; set; }
 
 
@@ -71,7 +71,7 @@ public partial class OrgAuthSettings : IEquatable<OrgAuthSettings>
     /// The password requirements for the organization.
     /// </summary>
     /// <value>The password requirements for the organization.</value>
-    [DataMember(Name = "passwordRequirements", EmitDefaultValue = false)]
+    [JsonPropertyName("passwordRequirements")]
     public PasswordRequirements PasswordRequirements { get; set; }
 
 
@@ -80,7 +80,7 @@ public partial class OrgAuthSettings : IEquatable<OrgAuthSettings>
     /// The list of exempt apis from inactivity timeout.
     /// </summary>
     /// <value>The list of exempt apis from inactivity timeout.</value>
-    [DataMember(Name = "inactivityTimeoutExclusions", EmitDefaultValue = false)]
+    [JsonPropertyName("inactivityTimeoutExclusions")]
     public List<string> InactivityTimeoutExclusions { get; set; }
 
 

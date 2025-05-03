@@ -7,14 +7,14 @@ namespace PureCloud.Client.Models;
 /// <summary>
 /// Trunk
 /// </summary>
-[DataContract]
+
 public partial class Trunk : IEquatable<Trunk>
 {
     /// <summary>
     /// Indicates if the resource is active, inactive, or deleted.
     /// </summary>
     /// <value>Indicates if the resource is active, inactive, or deleted.</value>
-    [JsonConverter(typeof(JsonStringEnumConverter))]
+    
     public enum StateEnum
     {
         /// <summary>
@@ -47,7 +47,7 @@ public partial class Trunk : IEquatable<Trunk>
     /// The type of this trunk.
     /// </summary>
     /// <value>The type of this trunk.</value>
-    [JsonConverter(typeof(JsonStringEnumConverter))]
+    
     public enum TrunkTypeEnum
     {
         /// <summary>
@@ -80,7 +80,7 @@ public partial class Trunk : IEquatable<Trunk>
     /// Returns Enabled when the trunk base supports the availability interval and it has a value greater than 0.
     /// </summary>
     /// <value>Returns Enabled when the trunk base supports the availability interval and it has a value greater than 0.</value>
-    [JsonConverter(typeof(JsonStringEnumConverter))]
+    
     public enum OptionsEnabledStatusEnum
     {
         /// <summary>
@@ -113,7 +113,7 @@ public partial class Trunk : IEquatable<Trunk>
     /// Returns Enabled when the trunk base supports the registration interval and it has a value greater than 0.
     /// </summary>
     /// <value>Returns Enabled when the trunk base supports the registration interval and it has a value greater than 0.</value>
-    [JsonConverter(typeof(JsonStringEnumConverter))]
+    
     public enum RegistersEnabledStatusEnum
     {
         /// <summary>
@@ -146,25 +146,25 @@ public partial class Trunk : IEquatable<Trunk>
     /// Indicates if the resource is active, inactive, or deleted.
     /// </summary>
     /// <value>Indicates if the resource is active, inactive, or deleted.</value>
-    [DataMember(Name = "state", EmitDefaultValue = false)]
+    [JsonPropertyName("state")]
     public StateEnum? State { get; private set; }
     /// <summary>
     /// The type of this trunk.
     /// </summary>
     /// <value>The type of this trunk.</value>
-    [DataMember(Name = "trunkType", EmitDefaultValue = false)]
+    [JsonPropertyName("trunkType")]
     public TrunkTypeEnum? TrunkType { get; set; }
     /// <summary>
     /// Returns Enabled when the trunk base supports the availability interval and it has a value greater than 0.
     /// </summary>
     /// <value>Returns Enabled when the trunk base supports the availability interval and it has a value greater than 0.</value>
-    [DataMember(Name = "optionsEnabledStatus", EmitDefaultValue = false)]
+    [JsonPropertyName("optionsEnabledStatus")]
     public OptionsEnabledStatusEnum? OptionsEnabledStatus { get; private set; }
     /// <summary>
     /// Returns Enabled when the trunk base supports the registration interval and it has a value greater than 0.
     /// </summary>
     /// <value>Returns Enabled when the trunk base supports the registration interval and it has a value greater than 0.</value>
-    [DataMember(Name = "registersEnabledStatus", EmitDefaultValue = false)]
+    [JsonPropertyName("registersEnabledStatus")]
     public RegistersEnabledStatusEnum? RegistersEnabledStatus { get; private set; }
 
     /// <summary>
@@ -206,7 +206,7 @@ public partial class Trunk : IEquatable<Trunk>
     /// The globally unique identifier for the object.
     /// </summary>
     /// <value>The globally unique identifier for the object.</value>
-    [DataMember(Name = "id", EmitDefaultValue = false)]
+    [JsonPropertyName("id")]
     public string Id { get; private set; }
 
 
@@ -215,7 +215,7 @@ public partial class Trunk : IEquatable<Trunk>
     /// The name of the entity.
     /// </summary>
     /// <value>The name of the entity.</value>
-    [DataMember(Name = "name", EmitDefaultValue = false)]
+    [JsonPropertyName("name")]
     public string Name { get; set; }
 
 
@@ -224,7 +224,7 @@ public partial class Trunk : IEquatable<Trunk>
     /// The division to which this entity belongs.
     /// </summary>
     /// <value>The division to which this entity belongs.</value>
-    [DataMember(Name = "division", EmitDefaultValue = false)]
+    [JsonPropertyName("division")]
     public Division Division { get; set; }
 
 
@@ -233,7 +233,7 @@ public partial class Trunk : IEquatable<Trunk>
     /// The resource&#39;s description.
     /// </summary>
     /// <value>The resource&#39;s description.</value>
-    [DataMember(Name = "description", EmitDefaultValue = false)]
+    [JsonPropertyName("description")]
     public string Description { get; set; }
 
 
@@ -242,7 +242,7 @@ public partial class Trunk : IEquatable<Trunk>
     /// The current version of the resource.
     /// </summary>
     /// <value>The current version of the resource.</value>
-    [DataMember(Name = "version", EmitDefaultValue = false)]
+    [JsonPropertyName("version")]
     public int? Version { get; set; }
 
 
@@ -251,7 +251,7 @@ public partial class Trunk : IEquatable<Trunk>
     /// The date the resource was created. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z
     /// </summary>
     /// <value>The date the resource was created. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z</value>
-    [DataMember(Name = "dateCreated", EmitDefaultValue = false)]
+    [JsonPropertyName("dateCreated")]
     public DateTime? DateCreated { get; private set; }
 
 
@@ -260,7 +260,7 @@ public partial class Trunk : IEquatable<Trunk>
     /// The date of the last modification to the resource. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z
     /// </summary>
     /// <value>The date of the last modification to the resource. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z</value>
-    [DataMember(Name = "dateModified", EmitDefaultValue = false)]
+    [JsonPropertyName("dateModified")]
     public DateTime? DateModified { get; private set; }
 
 
@@ -269,7 +269,7 @@ public partial class Trunk : IEquatable<Trunk>
     /// The ID of the user that last modified the resource.
     /// </summary>
     /// <value>The ID of the user that last modified the resource.</value>
-    [DataMember(Name = "modifiedBy", EmitDefaultValue = false)]
+    [JsonPropertyName("modifiedBy")]
     public string ModifiedBy { get; private set; }
 
 
@@ -278,7 +278,7 @@ public partial class Trunk : IEquatable<Trunk>
     /// The ID of the user that created the resource.
     /// </summary>
     /// <value>The ID of the user that created the resource.</value>
-    [DataMember(Name = "createdBy", EmitDefaultValue = false)]
+    [JsonPropertyName("createdBy")]
     public string CreatedBy { get; private set; }
 
 
@@ -289,7 +289,7 @@ public partial class Trunk : IEquatable<Trunk>
     /// The application that last modified the resource.
     /// </summary>
     /// <value>The application that last modified the resource.</value>
-    [DataMember(Name = "modifiedByApp", EmitDefaultValue = false)]
+    [JsonPropertyName("modifiedByApp")]
     public string ModifiedByApp { get; private set; }
 
 
@@ -298,7 +298,7 @@ public partial class Trunk : IEquatable<Trunk>
     /// The application that created the resource.
     /// </summary>
     /// <value>The application that created the resource.</value>
-    [DataMember(Name = "createdByApp", EmitDefaultValue = false)]
+    [JsonPropertyName("createdByApp")]
     public string CreatedByApp { get; private set; }
 
 
@@ -309,7 +309,7 @@ public partial class Trunk : IEquatable<Trunk>
     /// The Edge using this trunk.
     /// </summary>
     /// <value>The Edge using this trunk.</value>
-    [DataMember(Name = "edge", EmitDefaultValue = false)]
+    [JsonPropertyName("edge")]
     public DomainEntityRef Edge { get; set; }
 
 
@@ -318,7 +318,7 @@ public partial class Trunk : IEquatable<Trunk>
     /// The trunk base configuration used on this trunk.
     /// </summary>
     /// <value>The trunk base configuration used on this trunk.</value>
-    [DataMember(Name = "trunkBase", EmitDefaultValue = false)]
+    [JsonPropertyName("trunkBase")]
     public DomainEntityRef TrunkBase { get; set; }
 
 
@@ -327,7 +327,7 @@ public partial class Trunk : IEquatable<Trunk>
     /// The metabase used to create this trunk.
     /// </summary>
     /// <value>The metabase used to create this trunk.</value>
-    [DataMember(Name = "trunkMetabase", EmitDefaultValue = false)]
+    [JsonPropertyName("trunkMetabase")]
     public DomainEntityRef TrunkMetabase { get; set; }
 
 
@@ -336,7 +336,7 @@ public partial class Trunk : IEquatable<Trunk>
     /// The edge group associated with this trunk.
     /// </summary>
     /// <value>The edge group associated with this trunk.</value>
-    [DataMember(Name = "edgeGroup", EmitDefaultValue = false)]
+    [JsonPropertyName("edgeGroup")]
     public DomainEntityRef EdgeGroup { get; set; }
 
 
@@ -345,7 +345,7 @@ public partial class Trunk : IEquatable<Trunk>
     /// True if this trunk is in-service.  This comes from the trunk_enabled property of the referenced trunk base.
     /// </summary>
     /// <value>True if this trunk is in-service.  This comes from the trunk_enabled property of the referenced trunk base.</value>
-    [DataMember(Name = "inService", EmitDefaultValue = false)]
+    [JsonPropertyName("inService")]
     public bool? InService { get; private set; }
 
 
@@ -354,7 +354,7 @@ public partial class Trunk : IEquatable<Trunk>
     /// True if the Edge used by this trunk is in-service
     /// </summary>
     /// <value>True if the Edge used by this trunk is in-service</value>
-    [DataMember(Name = "enabled", EmitDefaultValue = false)]
+    [JsonPropertyName("enabled")]
     public bool? Enabled { get; set; }
 
 
@@ -363,7 +363,7 @@ public partial class Trunk : IEquatable<Trunk>
     /// The Logical Interface on the Edge to which the trunk is assigned.
     /// </summary>
     /// <value>The Logical Interface on the Edge to which the trunk is assigned.</value>
-    [DataMember(Name = "logicalInterface", EmitDefaultValue = false)]
+    [JsonPropertyName("logicalInterface")]
     public DomainEntityRef LogicalInterface { get; private set; }
 
 
@@ -372,7 +372,7 @@ public partial class Trunk : IEquatable<Trunk>
     /// The connected status of the trunk
     /// </summary>
     /// <value>The connected status of the trunk</value>
-    [DataMember(Name = "connectedStatus", EmitDefaultValue = false)]
+    [JsonPropertyName("connectedStatus")]
     public TrunkConnectedStatus ConnectedStatus { get; private set; }
 
 
@@ -381,7 +381,7 @@ public partial class Trunk : IEquatable<Trunk>
     /// The trunk optionsStatus
     /// </summary>
     /// <value>The trunk optionsStatus</value>
-    [DataMember(Name = "optionsStatus", EmitDefaultValue = false)]
+    [JsonPropertyName("optionsStatus")]
     public List<TrunkMetricsOptions> OptionsStatus { get; private set; }
 
 
@@ -390,7 +390,7 @@ public partial class Trunk : IEquatable<Trunk>
     /// The trunk registersStatus
     /// </summary>
     /// <value>The trunk registersStatus</value>
-    [DataMember(Name = "registersStatus", EmitDefaultValue = false)]
+    [JsonPropertyName("registersStatus")]
     public List<TrunkMetricsRegisters> RegistersStatus { get; private set; }
 
 
@@ -399,7 +399,7 @@ public partial class Trunk : IEquatable<Trunk>
     /// The trunk ipStatus
     /// </summary>
     /// <value>The trunk ipStatus</value>
-    [DataMember(Name = "ipStatus", EmitDefaultValue = false)]
+    [JsonPropertyName("ipStatus")]
     public TrunkMetricsNetworkTypeIp IpStatus { get; private set; }
 
 
@@ -412,7 +412,7 @@ public partial class Trunk : IEquatable<Trunk>
     /// The IP Network Family of the trunk
     /// </summary>
     /// <value>The IP Network Family of the trunk</value>
-    [DataMember(Name = "family", EmitDefaultValue = false)]
+    [JsonPropertyName("family")]
     public int? Family { get; private set; }
 
 
@@ -421,7 +421,7 @@ public partial class Trunk : IEquatable<Trunk>
     /// The list of proxy addresses (ports if provided) for the trunk
     /// </summary>
     /// <value>The list of proxy addresses (ports if provided) for the trunk</value>
-    [DataMember(Name = "proxyAddressList", EmitDefaultValue = false)]
+    [JsonPropertyName("proxyAddressList")]
     public List<string> ProxyAddressList { get; private set; }
 
 
@@ -430,7 +430,7 @@ public partial class Trunk : IEquatable<Trunk>
     /// The URI for this object
     /// </summary>
     /// <value>The URI for this object</value>
-    [DataMember(Name = "selfUri", EmitDefaultValue = false)]
+    [JsonPropertyName("selfUri")]
     public string SelfUri { get; private set; }
 
 

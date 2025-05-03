@@ -1,4 +1,3 @@
-using System.Runtime.Serialization;
 using System.Text;
 using System.Text.Json.Serialization;
 
@@ -7,7 +6,7 @@ namespace PureCloud.Client.Models;
 /// <summary>
 /// CopyWorkPlanRotationRequest
 /// </summary>
-[DataContract]
+
 public partial class CopyWorkPlanRotationRequest : IEquatable<CopyWorkPlanRotationRequest>
 {
 
@@ -32,7 +31,7 @@ public partial class CopyWorkPlanRotationRequest : IEquatable<CopyWorkPlanRotati
     /// Name to apply to the new copy of the work plan rotation
     /// </summary>
     /// <value>Name to apply to the new copy of the work plan rotation</value>
-    [DataMember(Name = "name", EmitDefaultValue = false)]
+    [JsonPropertyName("name")]
     public string Name { get; set; }
 
 

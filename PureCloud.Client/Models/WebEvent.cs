@@ -1,4 +1,3 @@
-using System.Runtime.Serialization;
 using System.Text;
 using System.Text.Json.Serialization;
 
@@ -7,7 +6,7 @@ namespace PureCloud.Client.Models;
 /// <summary>
 /// WebEvent
 /// </summary>
-[DataContract]
+
 public partial class WebEvent : IEquatable<WebEvent>
 {
 
@@ -62,7 +61,7 @@ public partial class WebEvent : IEquatable<WebEvent>
     /// Represents the action the customer performed. A good event name is typically an object followed by the action performed in past tense (e.g. page_viewed, order_completed, user_registered).
     /// </summary>
     /// <value>Represents the action the customer performed. A good event name is typically an object followed by the action performed in past tense (e.g. page_viewed, order_completed, user_registered).</value>
-    [DataMember(Name = "eventName", EmitDefaultValue = false)]
+    [JsonPropertyName("eventName")]
     public string EventName { get; set; }
 
 
@@ -71,7 +70,7 @@ public partial class WebEvent : IEquatable<WebEvent>
     /// The total count of events performed by the customer across all sessions.
     /// </summary>
     /// <value>The total count of events performed by the customer across all sessions.</value>
-    [DataMember(Name = "totalEventCount", EmitDefaultValue = false)]
+    [JsonPropertyName("totalEventCount")]
     public int? TotalEventCount { get; set; }
 
 
@@ -80,7 +79,7 @@ public partial class WebEvent : IEquatable<WebEvent>
     /// The total count of pageviews performed by the customer across all sessions.
     /// </summary>
     /// <value>The total count of pageviews performed by the customer across all sessions.</value>
-    [DataMember(Name = "totalPageviewCount", EmitDefaultValue = false)]
+    [JsonPropertyName("totalPageviewCount")]
     public int? TotalPageviewCount { get; set; }
 
 
@@ -89,7 +88,7 @@ public partial class WebEvent : IEquatable<WebEvent>
     /// The webpage where the user interaction occurred.
     /// </summary>
     /// <value>The webpage where the user interaction occurred.</value>
-    [DataMember(Name = "page", EmitDefaultValue = false)]
+    [JsonPropertyName("page")]
     public JourneyPage Page { get; set; }
 
 
@@ -98,7 +97,7 @@ public partial class WebEvent : IEquatable<WebEvent>
     /// HTTP User-Agent string (see https://tools.ietf.org/html/rfc1945#section-10.15).
     /// </summary>
     /// <value>HTTP User-Agent string (see https://tools.ietf.org/html/rfc1945#section-10.15).</value>
-    [DataMember(Name = "userAgentString", EmitDefaultValue = false)]
+    [JsonPropertyName("userAgentString")]
     public string UserAgentString { get; set; }
 
 
@@ -107,7 +106,7 @@ public partial class WebEvent : IEquatable<WebEvent>
     /// Customer&#39;s browser.
     /// </summary>
     /// <value>Customer&#39;s browser.</value>
-    [DataMember(Name = "browser", EmitDefaultValue = false)]
+    [JsonPropertyName("browser")]
     public Browser Browser { get; set; }
 
 
@@ -116,7 +115,7 @@ public partial class WebEvent : IEquatable<WebEvent>
     /// Customer&#39;s device.
     /// </summary>
     /// <value>Customer&#39;s device.</value>
-    [DataMember(Name = "device", EmitDefaultValue = false)]
+    [JsonPropertyName("device")]
     public Device Device { get; set; }
 
 
@@ -125,7 +124,7 @@ public partial class WebEvent : IEquatable<WebEvent>
     /// Customer&#39;s geolocation.
     /// </summary>
     /// <value>Customer&#39;s geolocation.</value>
-    [DataMember(Name = "geolocation", EmitDefaultValue = false)]
+    [JsonPropertyName("geolocation")]
     public JourneyGeolocation Geolocation { get; set; }
 
 
@@ -134,7 +133,7 @@ public partial class WebEvent : IEquatable<WebEvent>
     /// Customer&#39;s IP address. May be null if the business configures the tracker to not collect IP addresses.
     /// </summary>
     /// <value>Customer&#39;s IP address. May be null if the business configures the tracker to not collect IP addresses.</value>
-    [DataMember(Name = "ipAddress", EmitDefaultValue = false)]
+    [JsonPropertyName("ipAddress")]
     public string IpAddress { get; set; }
 
 
@@ -143,7 +142,7 @@ public partial class WebEvent : IEquatable<WebEvent>
     /// Customer&#39;s IP-based organization or ISP name.
     /// </summary>
     /// <value>Customer&#39;s IP-based organization or ISP name.</value>
-    [DataMember(Name = "ipOrganization", EmitDefaultValue = false)]
+    [JsonPropertyName("ipOrganization")]
     public string IpOrganization { get; set; }
 
 
@@ -152,7 +151,7 @@ public partial class WebEvent : IEquatable<WebEvent>
     /// Marketing / traffic source information.
     /// </summary>
     /// <value>Marketing / traffic source information.</value>
-    [DataMember(Name = "mktCampaign", EmitDefaultValue = false)]
+    [JsonPropertyName("mktCampaign")]
     public JourneyCampaign MktCampaign { get; set; }
 
 
@@ -161,7 +160,7 @@ public partial class WebEvent : IEquatable<WebEvent>
     /// Identifies the page URL that originally generated the request for the current page being viewed.
     /// </summary>
     /// <value>Identifies the page URL that originally generated the request for the current page being viewed.</value>
-    [DataMember(Name = "referrer", EmitDefaultValue = false)]
+    [JsonPropertyName("referrer")]
     public Referrer Referrer { get; set; }
 
 
@@ -170,7 +169,7 @@ public partial class WebEvent : IEquatable<WebEvent>
     /// User-defined attributes associated with a particular event.
     /// </summary>
     /// <value>User-defined attributes associated with a particular event.</value>
-    [DataMember(Name = "attributes", EmitDefaultValue = false)]
+    [JsonPropertyName("attributes")]
     public Dictionary<string, CustomEventAttribute> Attributes { get; set; }
 
 
@@ -179,7 +178,7 @@ public partial class WebEvent : IEquatable<WebEvent>
     /// User-defined traits associated with a particular event.
     /// </summary>
     /// <value>User-defined traits associated with a particular event.</value>
-    [DataMember(Name = "traits", EmitDefaultValue = false)]
+    [JsonPropertyName("traits")]
     public Dictionary<string, CustomEventAttribute> Traits { get; set; }
 
 
@@ -188,7 +187,7 @@ public partial class WebEvent : IEquatable<WebEvent>
     /// Represents the keywords in a customer search query.
     /// </summary>
     /// <value>Represents the keywords in a customer search query.</value>
-    [DataMember(Name = "searchQuery", EmitDefaultValue = false)]
+    [JsonPropertyName("searchQuery")]
     public string SearchQuery { get; set; }
 
 
@@ -197,7 +196,7 @@ public partial class WebEvent : IEquatable<WebEvent>
     /// Indicates whether the event was produced during an authenticated session.
     /// </summary>
     /// <value>Indicates whether the event was produced during an authenticated session.</value>
-    [DataMember(Name = "authenticated", EmitDefaultValue = false)]
+    [JsonPropertyName("authenticated")]
     public bool? Authenticated { get; set; }
 
 

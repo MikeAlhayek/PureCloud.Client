@@ -1,12 +1,12 @@
-using System.Runtime.Serialization;
 using System.Text;
+using System.Text.Json.Serialization;
 
 namespace PureCloud.Client.Models;
 
 /// <summary>
 /// BuHeadcountForecast
 /// </summary>
-[DataContract]
+
 public partial class BuHeadcountForecast : IEquatable<BuHeadcountForecast>
 {
     /// <summary>
@@ -26,7 +26,7 @@ public partial class BuHeadcountForecast : IEquatable<BuHeadcountForecast>
     /// <summary>
     /// Gets or Sets Entities
     /// </summary>
-    [DataMember(Name = "entities", EmitDefaultValue = false)]
+    [JsonPropertyName("entities")]
     public List<BuPlanningGroupHeadcountForecast> Entities { get; set; }
 
 
@@ -35,7 +35,7 @@ public partial class BuHeadcountForecast : IEquatable<BuHeadcountForecast>
     /// Reference start date for the interval values in each forecast entity. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z
     /// </summary>
     /// <value>Reference start date for the interval values in each forecast entity. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z</value>
-    [DataMember(Name = "referenceStartDate", EmitDefaultValue = false)]
+    [JsonPropertyName("referenceStartDate")]
     public DateTime? ReferenceStartDate { get; set; }
 
 

@@ -7,14 +7,14 @@ namespace PureCloud.Client.Models;
 /// <summary>
 /// PredictorModelRetrainingError
 /// </summary>
-[DataContract]
+
 public partial class PredictorModelRetrainingError : IEquatable<PredictorModelRetrainingError>
 {
     /// <summary>
     /// Error code describing model training failure.
     /// </summary>
     /// <value>Error code describing model training failure.</value>
-    [JsonConverter(typeof(JsonStringEnumConverter))]
+    
     public enum ErrorCodeEnum
     {
         /// <summary>
@@ -47,7 +47,7 @@ public partial class PredictorModelRetrainingError : IEquatable<PredictorModelRe
     /// Error code describing model training failure.
     /// </summary>
     /// <value>Error code describing model training failure.</value>
-    [DataMember(Name = "errorCode", EmitDefaultValue = false)]
+    [JsonPropertyName("errorCode")]
     public ErrorCodeEnum? ErrorCode { get; private set; }
     /// <summary>
     /// Initializes a new instance of the <see cref="PredictorModelRetrainingError" /> class.
@@ -63,7 +63,7 @@ public partial class PredictorModelRetrainingError : IEquatable<PredictorModelRe
     /// The globally unique identifier for the object.
     /// </summary>
     /// <value>The globally unique identifier for the object.</value>
-    [DataMember(Name = "id", EmitDefaultValue = false)]
+    [JsonPropertyName("id")]
     public string Id { get; private set; }
 
 
@@ -74,7 +74,7 @@ public partial class PredictorModelRetrainingError : IEquatable<PredictorModelRe
     /// Date when the first retraining failure happened. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z
     /// </summary>
     /// <value>Date when the first retraining failure happened. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z</value>
-    [DataMember(Name = "dateOfFirstOccurrence", EmitDefaultValue = false)]
+    [JsonPropertyName("dateOfFirstOccurrence")]
     public DateTime? DateOfFirstOccurrence { get; private set; }
 
 

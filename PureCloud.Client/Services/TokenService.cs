@@ -1,0 +1,139 @@
+using System.Net.Http.Headers;
+using System.Net.Http.Json;
+using System.Text;
+using Microsoft.Extensions.Options;
+using PureCloud.Client.Extensions;
+using PureCloud.Client.Models.Settings;
+
+namespace PureCloud.Client.Services;
+
+public class TokenService : ITokenService
+{
+    private readonly IHttpClientFactory _httpClientFactory;
+    private readonly PureCloudOptions _options;
+    private readonly ITokenStore _tokenStore;
+
+    // TODO, instead of using httpClientFactory, use OpenIddict library for authentication.
+    public TokenService(
+        IHttpClientFactory httpClientFactory,
+        IOptions<PureCloudOptions> options,
+        ITokenStore tokenStore)
+    {
+        _httpClientFactory = httpClientFactory;
+        _options = options.Value;
+        _tokenStore = tokenStore;
+    }
+
+    public async ValueTask<string> GetAccessTokenAsync()
+    {
+        var token = await _tokenStore.GetAsync();
+
+        if (string.IsNullOrEmpty(token?.AccessToken))
+        {
+            // get a new token;
+            var client = _httpClientFactory.CreateClient(PureCloudConstants.PureCloudAuthClientName);
+
+            client.DefaultRequestHeaders.TryAddWithoutValidation("purecloud-sdk", "231.1.0");
+            client.DefaultRequestHeaders.Accept.Add(new MediaTypeWithQualityHeaderValue("application/json"));
+
+            // Encoding.GetEncoding("ISO-8859-1")
+            var byteArray = Encoding.ASCII.GetBytes($"{_options.ClientId}:{_options.ClientSecret}");
+            client.DefaultRequestHeaders.Authorization = new AuthenticationHeaderValue("Basic", Convert.ToBase64String(byteArray));
+
+            // Accept JSON responses
+            client.DefaultRequestHeaders.Accept.Clear();
+            client.DefaultRequestHeaders.Accept.Add(new MediaTypeWithQualityHeaderValue("application/json"));
+
+            var data = new List<KeyValuePair<string, string>>();
+
+            if (_options.Scopes is not null && _options.Scopes.Count > 0)
+            {
+                data.Add(new KeyValuePair<string, string>("scope", string.Join(' ', _options.Scopes)));
+            }
+
+            if (!string.IsNullOrEmpty(_options.AuthorizationCode))
+            {
+                data.Add(new KeyValuePair<string, string>("grant_type", "authorization_code"));
+                data.Add(new KeyValuePair<string, string>("code", _options.AuthorizationCode));
+            }
+            else
+            {
+                data.Add(new KeyValuePair<string, string>("grant_type", "client_credentials"));
+            }
+
+            if (!string.IsNullOrEmpty(_options.RedirectUri))
+            {
+                data.Add(new KeyValuePair<string, string>("redirect_uri", _options.RedirectUri));
+            }
+
+            var response = await client.PostAsync("/oauth/token", new FormUrlEncodedContent(data));
+
+            var responseContent = await response.Content.ReadFromJsonAsync<AuthTokenInfo>();
+
+            token = responseContent;
+
+            await _tokenStore.SetAsync(token);
+        }
+
+        return token?.AccessToken;
+    }
+
+    public async ValueTask<string> GetRefreshTokenAsync()
+        => (await _tokenStore.GetAsync()).AccessToken;
+
+    public async ValueTask<string> RefreshTokenAsync()
+    {
+        var accessToken = await GetRefreshTokenAsync();
+
+        if (!string.IsNullOrEmpty(accessToken))
+        {
+            // get a new token;
+            // get a new token;
+            var client = _httpClientFactory.CreateClient(PureCloudConstants.PureCloudAuthClientName);
+
+            client.DefaultRequestHeaders.TryAddWithoutValidation("purecloud-sdk", "231.1.0");
+            client.DefaultRequestHeaders.Accept.Add(new MediaTypeWithQualityHeaderValue("application/json"));
+
+            // Encoding.GetEncoding("ISO-8859-1")
+            var byteArray = Encoding.ASCII.GetBytes($"{_options.ClientId}:{_options.ClientSecret}");
+            client.DefaultRequestHeaders.Authorization = new AuthenticationHeaderValue("Basic", Convert.ToBase64String(byteArray));
+
+            // Accept JSON responses
+            client.DefaultRequestHeaders.Accept.Clear();
+            client.DefaultRequestHeaders.Accept.Add(new MediaTypeWithQualityHeaderValue("application/json"));
+
+            var data = new List<KeyValuePair<string, string>>()
+            {
+                new KeyValuePair<string, string>("grant_type", "refresh_token"),
+            };
+
+            if (_options.Scopes is not null && _options.Scopes.Count > 0)
+            {
+                data.Add(new KeyValuePair<string, string>("scope", string.Join(' ', _options.Scopes)));
+            }
+
+            if (!string.IsNullOrEmpty(_options.AuthorizationCode))
+            {
+                data.Add(new KeyValuePair<string, string>("code", _options.AuthorizationCode));
+            }
+
+            if (!string.IsNullOrEmpty(_options.RedirectUri))
+            {
+                data.Add(new KeyValuePair<string, string>("redirect_uri", _options.RedirectUri));
+            }
+
+            var response = await client.PostAsync("/oauth/token", new FormUrlEncodedContent(data));
+
+            var responseContent = await response.Content.ReadFromJsonAsync<AuthTokenInfo>();
+
+            if (responseContent is not null)
+            {
+                accessToken = responseContent.AccessToken;
+
+                await _tokenStore.SetAsync(responseContent);
+            }
+        }
+
+        return accessToken;
+    }
+}

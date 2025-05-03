@@ -1,4 +1,3 @@
-using System.Runtime.Serialization;
 using System.Text;
 using System.Text.Json.Serialization;
 
@@ -7,7 +6,7 @@ namespace PureCloud.Client.Models;
 /// <summary>
 /// BillingUsage
 /// </summary>
-[DataContract]
+
 public partial class BillingUsage : IEquatable<BillingUsage>
 {
 
@@ -36,7 +35,7 @@ public partial class BillingUsage : IEquatable<BillingUsage>
     /// Identifies the billable usage.
     /// </summary>
     /// <value>Identifies the billable usage.</value>
-    [DataMember(Name = "name", EmitDefaultValue = false)]
+    [JsonPropertyName("name")]
     public string Name { get; set; }
 
 
@@ -45,7 +44,7 @@ public partial class BillingUsage : IEquatable<BillingUsage>
     /// The total amount of usage, expressed as a decimal number in string format.
     /// </summary>
     /// <value>The total amount of usage, expressed as a decimal number in string format.</value>
-    [DataMember(Name = "totalUsage", EmitDefaultValue = false)]
+    [JsonPropertyName("totalUsage")]
     public string TotalUsage { get; set; }
 
 
@@ -54,7 +53,7 @@ public partial class BillingUsage : IEquatable<BillingUsage>
     /// The resources for which usage was observed (e.g. license users, devices).
     /// </summary>
     /// <value>The resources for which usage was observed (e.g. license users, devices).</value>
-    [DataMember(Name = "resources", EmitDefaultValue = false)]
+    [JsonPropertyName("resources")]
     public List<BillingUsageResource> Resources { get; set; }
 
 

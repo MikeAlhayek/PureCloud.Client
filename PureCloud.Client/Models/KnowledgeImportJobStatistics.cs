@@ -1,12 +1,12 @@
-using System.Runtime.Serialization;
 using System.Text;
+using System.Text.Json.Serialization;
 
 namespace PureCloud.Client.Models;
 
 /// <summary>
 /// KnowledgeImportJobStatistics
 /// </summary>
-[DataContract]
+
 public partial class KnowledgeImportJobStatistics : IEquatable<KnowledgeImportJobStatistics>
 {
     /// <summary>
@@ -57,7 +57,7 @@ public partial class KnowledgeImportJobStatistics : IEquatable<KnowledgeImportJo
     /// Number of documents will be created by the import.
     /// </summary>
     /// <value>Number of documents will be created by the import.</value>
-    [DataMember(Name = "countDocumentImportActivityCreate", EmitDefaultValue = false)]
+    [JsonPropertyName("countDocumentImportActivityCreate")]
     public int? CountDocumentImportActivityCreate { get; set; }
 
 
@@ -66,7 +66,7 @@ public partial class KnowledgeImportJobStatistics : IEquatable<KnowledgeImportJo
     /// Number of documents will be updated by the import.
     /// </summary>
     /// <value>Number of documents will be updated by the import.</value>
-    [DataMember(Name = "countDocumentImportActivityUpdate", EmitDefaultValue = false)]
+    [JsonPropertyName("countDocumentImportActivityUpdate")]
     public int? CountDocumentImportActivityUpdate { get; set; }
 
 
@@ -75,7 +75,7 @@ public partial class KnowledgeImportJobStatistics : IEquatable<KnowledgeImportJo
     /// Number of documents will be imported as draft.
     /// </summary>
     /// <value>Number of documents will be imported as draft.</value>
-    [DataMember(Name = "countDocumentStateDraft", EmitDefaultValue = false)]
+    [JsonPropertyName("countDocumentStateDraft")]
     public int? CountDocumentStateDraft { get; set; }
 
 
@@ -84,7 +84,7 @@ public partial class KnowledgeImportJobStatistics : IEquatable<KnowledgeImportJo
     /// Number of documents will be imported as published.
     /// </summary>
     /// <value>Number of documents will be imported as published.</value>
-    [DataMember(Name = "countDocumentStatePublished", EmitDefaultValue = false)]
+    [JsonPropertyName("countDocumentStatePublished")]
     public int? CountDocumentStatePublished { get; set; }
 
 
@@ -93,7 +93,7 @@ public partial class KnowledgeImportJobStatistics : IEquatable<KnowledgeImportJo
     /// Number of documents that validated successfully for import.
     /// </summary>
     /// <value>Number of documents that validated successfully for import.</value>
-    [DataMember(Name = "countDocumentValidationSuccess", EmitDefaultValue = false)]
+    [JsonPropertyName("countDocumentValidationSuccess")]
     public int? CountDocumentValidationSuccess { get; set; }
 
 
@@ -102,7 +102,7 @@ public partial class KnowledgeImportJobStatistics : IEquatable<KnowledgeImportJo
     /// Number of documents that failed validation for import.
     /// </summary>
     /// <value>Number of documents that failed validation for import.</value>
-    [DataMember(Name = "countDocumentValidationFailure", EmitDefaultValue = false)]
+    [JsonPropertyName("countDocumentValidationFailure")]
     public int? CountDocumentValidationFailure { get; set; }
 
 
@@ -111,7 +111,7 @@ public partial class KnowledgeImportJobStatistics : IEquatable<KnowledgeImportJo
     /// Number of imported documents.
     /// </summary>
     /// <value>Number of imported documents.</value>
-    [DataMember(Name = "countDocumentImportSuccess", EmitDefaultValue = false)]
+    [JsonPropertyName("countDocumentImportSuccess")]
     public int? CountDocumentImportSuccess { get; set; }
 
 
@@ -120,7 +120,7 @@ public partial class KnowledgeImportJobStatistics : IEquatable<KnowledgeImportJo
     /// Number of documents failed to import.
     /// </summary>
     /// <value>Number of documents failed to import.</value>
-    [DataMember(Name = "countDocumentImportFailure", EmitDefaultValue = false)]
+    [JsonPropertyName("countDocumentImportFailure")]
     public int? CountDocumentImportFailure { get; set; }
 
 
@@ -129,7 +129,7 @@ public partial class KnowledgeImportJobStatistics : IEquatable<KnowledgeImportJo
     /// Number of categories that validated successfully for import.
     /// </summary>
     /// <value>Number of categories that validated successfully for import.</value>
-    [DataMember(Name = "countCategoryValidationSuccess", EmitDefaultValue = false)]
+    [JsonPropertyName("countCategoryValidationSuccess")]
     public int? CountCategoryValidationSuccess { get; set; }
 
 
@@ -138,7 +138,7 @@ public partial class KnowledgeImportJobStatistics : IEquatable<KnowledgeImportJo
     /// Number of categories that failed validation for import.
     /// </summary>
     /// <value>Number of categories that failed validation for import.</value>
-    [DataMember(Name = "countCategoryValidationFailure", EmitDefaultValue = false)]
+    [JsonPropertyName("countCategoryValidationFailure")]
     public int? CountCategoryValidationFailure { get; set; }
 
 
@@ -147,7 +147,7 @@ public partial class KnowledgeImportJobStatistics : IEquatable<KnowledgeImportJo
     /// Number of imported categories.
     /// </summary>
     /// <value>Number of imported categories.</value>
-    [DataMember(Name = "countCategoryImportSuccess", EmitDefaultValue = false)]
+    [JsonPropertyName("countCategoryImportSuccess")]
     public int? CountCategoryImportSuccess { get; set; }
 
 
@@ -156,7 +156,7 @@ public partial class KnowledgeImportJobStatistics : IEquatable<KnowledgeImportJo
     /// Number of categories failed to import.
     /// </summary>
     /// <value>Number of categories failed to import.</value>
-    [DataMember(Name = "countCategoryImportFailure", EmitDefaultValue = false)]
+    [JsonPropertyName("countCategoryImportFailure")]
     public int? CountCategoryImportFailure { get; set; }
 
 
@@ -165,7 +165,7 @@ public partial class KnowledgeImportJobStatistics : IEquatable<KnowledgeImportJo
     /// Number of labels that validated successfully for import.
     /// </summary>
     /// <value>Number of labels that validated successfully for import.</value>
-    [DataMember(Name = "countLabelValidationSuccess", EmitDefaultValue = false)]
+    [JsonPropertyName("countLabelValidationSuccess")]
     public int? CountLabelValidationSuccess { get; set; }
 
 
@@ -174,7 +174,7 @@ public partial class KnowledgeImportJobStatistics : IEquatable<KnowledgeImportJo
     /// Number of labels that failed validation for import.
     /// </summary>
     /// <value>Number of labels that failed validation for import.</value>
-    [DataMember(Name = "countLabelValidationFailure", EmitDefaultValue = false)]
+    [JsonPropertyName("countLabelValidationFailure")]
     public int? CountLabelValidationFailure { get; set; }
 
 
@@ -183,7 +183,7 @@ public partial class KnowledgeImportJobStatistics : IEquatable<KnowledgeImportJo
     /// Number of imported labels.
     /// </summary>
     /// <value>Number of imported labels.</value>
-    [DataMember(Name = "countLabelImportSuccess", EmitDefaultValue = false)]
+    [JsonPropertyName("countLabelImportSuccess")]
     public int? CountLabelImportSuccess { get; set; }
 
 
@@ -192,7 +192,7 @@ public partial class KnowledgeImportJobStatistics : IEquatable<KnowledgeImportJo
     /// Number of labels failed to import.
     /// </summary>
     /// <value>Number of labels failed to import.</value>
-    [DataMember(Name = "countLabelImportFailure", EmitDefaultValue = false)]
+    [JsonPropertyName("countLabelImportFailure")]
     public int? CountLabelImportFailure { get; set; }
 
 
@@ -201,7 +201,7 @@ public partial class KnowledgeImportJobStatistics : IEquatable<KnowledgeImportJo
     /// Shows whether the import treated as migration or not.
     /// </summary>
     /// <value>Shows whether the import treated as migration or not.</value>
-    [DataMember(Name = "migrationDetected", EmitDefaultValue = false)]
+    [JsonPropertyName("migrationDetected")]
     public bool? MigrationDetected { get; set; }
 
 

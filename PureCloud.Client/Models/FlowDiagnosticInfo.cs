@@ -1,12 +1,12 @@
-using System.Runtime.Serialization;
 using System.Text;
+using System.Text.Json.Serialization;
 
 namespace PureCloud.Client.Models;
 
 /// <summary>
 /// FlowDiagnosticInfo
 /// </summary>
-[DataContract]
+
 public partial class FlowDiagnosticInfo : IEquatable<FlowDiagnosticInfo>
 {
     /// <summary>
@@ -25,7 +25,7 @@ public partial class FlowDiagnosticInfo : IEquatable<FlowDiagnosticInfo>
     /// The step number of the survey invite flow where the error occurred.
     /// </summary>
     /// <value>The step number of the survey invite flow where the error occurred.</value>
-    [DataMember(Name = "lastActionId", EmitDefaultValue = false)]
+    [JsonPropertyName("lastActionId")]
     public int? LastActionId { get; set; }
 
 

@@ -1,12 +1,12 @@
-using System.Runtime.Serialization;
 using System.Text;
+using System.Text.Json.Serialization;
 
 namespace PureCloud.Client.Models;
 
 /// <summary>
 /// User information for a Line account
 /// </summary>
-[DataContract]
+
 public partial class LineId : IEquatable<LineId>
 {
     /// <summary>
@@ -27,7 +27,7 @@ public partial class LineId : IEquatable<LineId>
     /// The set of Line userIds that this person has. Each userId is specific to the Line channel that the user interacts with.
     /// </summary>
     /// <value>The set of Line userIds that this person has. Each userId is specific to the Line channel that the user interacts with.</value>
-    [DataMember(Name = "ids", EmitDefaultValue = false)]
+    [JsonPropertyName("ids")]
     public List<LineUserId> Ids { get; set; }
 
 
@@ -36,7 +36,7 @@ public partial class LineId : IEquatable<LineId>
     /// The displayName of this person&#39;s account in Line
     /// </summary>
     /// <value>The displayName of this person&#39;s account in Line</value>
-    [DataMember(Name = "displayName", EmitDefaultValue = false)]
+    [JsonPropertyName("displayName")]
     public string DisplayName { get; set; }
 
 

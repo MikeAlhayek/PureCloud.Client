@@ -7,13 +7,13 @@ namespace PureCloud.Client.Models;
 /// <summary>
 /// DependencyStatus
 /// </summary>
-[DataContract]
+
 public partial class DependencyStatus : IEquatable<DependencyStatus>
 {
     /// <summary>
     /// Gets or Sets Status
     /// </summary>
-    [JsonConverter(typeof(JsonStringEnumConverter))]
+    
     public enum StatusEnum
     {
         /// <summary>
@@ -63,7 +63,7 @@ public partial class DependencyStatus : IEquatable<DependencyStatus>
     /// <summary>
     /// Gets or Sets Status
     /// </summary>
-    [DataMember(Name = "status", EmitDefaultValue = false)]
+    [JsonPropertyName("status")]
     public StatusEnum? Status { get; set; }
     /// <summary>
     /// Initializes a new instance of the <see cref="DependencyStatus" /> class.
@@ -95,7 +95,7 @@ public partial class DependencyStatus : IEquatable<DependencyStatus>
     /// The globally unique identifier for the object.
     /// </summary>
     /// <value>The globally unique identifier for the object.</value>
-    [DataMember(Name = "id", EmitDefaultValue = false)]
+    [JsonPropertyName("id")]
     public string Id { get; private set; }
 
 
@@ -103,7 +103,7 @@ public partial class DependencyStatus : IEquatable<DependencyStatus>
     /// <summary>
     /// Gets or Sets Name
     /// </summary>
-    [DataMember(Name = "name", EmitDefaultValue = false)]
+    [JsonPropertyName("name")]
     public string Name { get; set; }
 
 
@@ -112,7 +112,7 @@ public partial class DependencyStatus : IEquatable<DependencyStatus>
     /// User that initiated the build.
     /// </summary>
     /// <value>User that initiated the build.</value>
-    [DataMember(Name = "user", EmitDefaultValue = false)]
+    [JsonPropertyName("user")]
     public User User { get; set; }
 
 
@@ -121,7 +121,7 @@ public partial class DependencyStatus : IEquatable<DependencyStatus>
     /// OAuth client that initiated the build.
     /// </summary>
     /// <value>OAuth client that initiated the build.</value>
-    [DataMember(Name = "client", EmitDefaultValue = false)]
+    [JsonPropertyName("client")]
     public DomainEntityRef Client { get; set; }
 
 
@@ -129,7 +129,7 @@ public partial class DependencyStatus : IEquatable<DependencyStatus>
     /// <summary>
     /// Gets or Sets BuildId
     /// </summary>
-    [DataMember(Name = "buildId", EmitDefaultValue = false)]
+    [JsonPropertyName("buildId")]
     public string BuildId { get; set; }
 
 
@@ -138,7 +138,7 @@ public partial class DependencyStatus : IEquatable<DependencyStatus>
     /// Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z
     /// </summary>
     /// <value>Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z</value>
-    [DataMember(Name = "dateStarted", EmitDefaultValue = false)]
+    [JsonPropertyName("dateStarted")]
     public DateTime? DateStarted { get; set; }
 
 
@@ -147,7 +147,7 @@ public partial class DependencyStatus : IEquatable<DependencyStatus>
     /// Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z
     /// </summary>
     /// <value>Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z</value>
-    [DataMember(Name = "dateCompleted", EmitDefaultValue = false)]
+    [JsonPropertyName("dateCompleted")]
     public DateTime? DateCompleted { get; set; }
 
 
@@ -157,7 +157,7 @@ public partial class DependencyStatus : IEquatable<DependencyStatus>
     /// <summary>
     /// Gets or Sets FailedObjects
     /// </summary>
-    [DataMember(Name = "failedObjects", EmitDefaultValue = false)]
+    [JsonPropertyName("failedObjects")]
     public List<FailedObject> FailedObjects { get; set; }
 
 
@@ -166,7 +166,7 @@ public partial class DependencyStatus : IEquatable<DependencyStatus>
     /// The URI for this object
     /// </summary>
     /// <value>The URI for this object</value>
-    [DataMember(Name = "selfUri", EmitDefaultValue = false)]
+    [JsonPropertyName("selfUri")]
     public string SelfUri { get; private set; }
 
 

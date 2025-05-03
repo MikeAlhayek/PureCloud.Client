@@ -1,12 +1,12 @@
-using System.Runtime.Serialization;
 using System.Text;
+using System.Text.Json.Serialization;
 
 namespace PureCloud.Client.Models;
 
 /// <summary>
 /// JourneyAppEventsNotificationNetworkConnectivity
 /// </summary>
-[DataContract]
+
 public partial class JourneyAppEventsNotificationNetworkConnectivity : IEquatable<JourneyAppEventsNotificationNetworkConnectivity>
 {
     /// <summary>
@@ -30,7 +30,7 @@ public partial class JourneyAppEventsNotificationNetworkConnectivity : IEquatabl
     /// <summary>
     /// Gets or Sets Carrier
     /// </summary>
-    [DataMember(Name = "carrier", EmitDefaultValue = false)]
+    [JsonPropertyName("carrier")]
     public string Carrier { get; set; }
 
 
@@ -38,7 +38,7 @@ public partial class JourneyAppEventsNotificationNetworkConnectivity : IEquatabl
     /// <summary>
     /// Gets or Sets BluetoothEnabled
     /// </summary>
-    [DataMember(Name = "bluetoothEnabled", EmitDefaultValue = false)]
+    [JsonPropertyName("bluetoothEnabled")]
     public bool? BluetoothEnabled { get; set; }
 
 
@@ -46,7 +46,7 @@ public partial class JourneyAppEventsNotificationNetworkConnectivity : IEquatabl
     /// <summary>
     /// Gets or Sets CellularEnabled
     /// </summary>
-    [DataMember(Name = "cellularEnabled", EmitDefaultValue = false)]
+    [JsonPropertyName("cellularEnabled")]
     public bool? CellularEnabled { get; set; }
 
 
@@ -54,7 +54,7 @@ public partial class JourneyAppEventsNotificationNetworkConnectivity : IEquatabl
     /// <summary>
     /// Gets or Sets WifiEnabled
     /// </summary>
-    [DataMember(Name = "wifiEnabled", EmitDefaultValue = false)]
+    [JsonPropertyName("wifiEnabled")]
     public bool? WifiEnabled { get; set; }
 
 

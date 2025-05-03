@@ -7,14 +7,14 @@ namespace PureCloud.Client.Models;
 /// <summary>
 /// Status information for an Integration.
 /// </summary>
-[DataContract]
+
 public partial class IntegrationStatusInfo : IEquatable<IntegrationStatusInfo>
 {
     /// <summary>
     /// Machine-readable status as reported by the integration.
     /// </summary>
     /// <value>Machine-readable status as reported by the integration.</value>
-    [JsonConverter(typeof(JsonStringEnumConverter))]
+    
     public enum CodeEnum
     {
         /// <summary>
@@ -59,7 +59,7 @@ public partial class IntegrationStatusInfo : IEquatable<IntegrationStatusInfo>
     /// Machine-readable status as reported by the integration.
     /// </summary>
     /// <value>Machine-readable status as reported by the integration.</value>
-    [DataMember(Name = "code", EmitDefaultValue = false)]
+    [JsonPropertyName("code")]
     public CodeEnum? Code { get; private set; }
     /// <summary>
     /// Initializes a new instance of the <see cref="IntegrationStatusInfo" /> class.
@@ -77,7 +77,7 @@ public partial class IntegrationStatusInfo : IEquatable<IntegrationStatusInfo>
     /// Localized, human-readable, effective status of the integration.
     /// </summary>
     /// <value>Localized, human-readable, effective status of the integration.</value>
-    [DataMember(Name = "effective", EmitDefaultValue = false)]
+    [JsonPropertyName("effective")]
     public string Effective { get; private set; }
 
 
@@ -86,7 +86,7 @@ public partial class IntegrationStatusInfo : IEquatable<IntegrationStatusInfo>
     /// Localizable status details for the integration.
     /// </summary>
     /// <value>Localizable status details for the integration.</value>
-    [DataMember(Name = "detail", EmitDefaultValue = false)]
+    [JsonPropertyName("detail")]
     public MessageInfo Detail { get; private set; }
 
 
@@ -95,7 +95,7 @@ public partial class IntegrationStatusInfo : IEquatable<IntegrationStatusInfo>
     /// Date and time (in UTC) when the integration status (i.e. the code field) was last updated. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z
     /// </summary>
     /// <value>Date and time (in UTC) when the integration status (i.e. the code field) was last updated. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z</value>
-    [DataMember(Name = "lastUpdated", EmitDefaultValue = false)]
+    [JsonPropertyName("lastUpdated")]
     public DateTime? LastUpdated { get; private set; }
 
 

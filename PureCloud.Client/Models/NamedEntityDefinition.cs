@@ -1,4 +1,3 @@
-using System.Runtime.Serialization;
 using System.Text;
 using System.Text.Json.Serialization;
 
@@ -7,7 +6,7 @@ namespace PureCloud.Client.Models;
 /// <summary>
 /// NamedEntityDefinition
 /// </summary>
-[DataContract]
+
 public partial class NamedEntityDefinition : IEquatable<NamedEntityDefinition>
 {
 
@@ -34,7 +33,7 @@ public partial class NamedEntityDefinition : IEquatable<NamedEntityDefinition>
     /// The name of the entity.
     /// </summary>
     /// <value>The name of the entity.</value>
-    [DataMember(Name = "name", EmitDefaultValue = false)]
+    [JsonPropertyName("name")]
     public string Name { get; set; }
 
 
@@ -43,7 +42,7 @@ public partial class NamedEntityDefinition : IEquatable<NamedEntityDefinition>
     /// The name of the entity type.
     /// </summary>
     /// <value>The name of the entity type.</value>
-    [DataMember(Name = "type", EmitDefaultValue = false)]
+    [JsonPropertyName("type")]
     public string Type { get; set; }
 
 

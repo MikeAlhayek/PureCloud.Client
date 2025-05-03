@@ -1,4 +1,3 @@
-using System.Runtime.Serialization;
 using System.Text;
 using System.Text.Json.Serialization;
 
@@ -7,7 +6,7 @@ namespace PureCloud.Client.Models;
 /// <summary>
 /// DocumentBodyTableRowBlockWithHighlight
 /// </summary>
-[DataContract]
+
 public partial class DocumentBodyTableRowBlockWithHighlight : IEquatable<DocumentBodyTableRowBlockWithHighlight>
 {
 
@@ -34,7 +33,7 @@ public partial class DocumentBodyTableRowBlockWithHighlight : IEquatable<Documen
     /// The properties for the table rows.
     /// </summary>
     /// <value>The properties for the table rows.</value>
-    [DataMember(Name = "properties", EmitDefaultValue = false)]
+    [JsonPropertyName("properties")]
     public DocumentBodyTableRowBlockProperties Properties { get; set; }
 
 
@@ -43,7 +42,7 @@ public partial class DocumentBodyTableRowBlockWithHighlight : IEquatable<Documen
     /// The list of cells for the table.
     /// </summary>
     /// <value>The list of cells for the table.</value>
-    [DataMember(Name = "cells", EmitDefaultValue = false)]
+    [JsonPropertyName("cells")]
     public List<DocumentBodyTableCellBlockWithHighlight> Cells { get; set; }
 
 

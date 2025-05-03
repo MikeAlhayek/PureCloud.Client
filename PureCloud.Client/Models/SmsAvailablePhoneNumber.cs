@@ -7,13 +7,13 @@ namespace PureCloud.Client.Models;
 /// <summary>
 /// SmsAvailablePhoneNumber
 /// </summary>
-[DataContract]
+
 public partial class SmsAvailablePhoneNumber : IEquatable<SmsAvailablePhoneNumber>
 {
     /// <summary>
     /// Gets or Sets Capabilities
     /// </summary>
-    [JsonConverter(typeof(JsonStringEnumConverter))]
+    
     public enum CapabilitiesEnum
     {
         /// <summary>
@@ -46,7 +46,7 @@ public partial class SmsAvailablePhoneNumber : IEquatable<SmsAvailablePhoneNumbe
     /// The type of phone number available for provisioning.
     /// </summary>
     /// <value>The type of phone number available for provisioning.</value>
-    [JsonConverter(typeof(JsonStringEnumConverter))]
+    
     public enum PhoneNumberTypeEnum
     {
         /// <summary>
@@ -91,7 +91,7 @@ public partial class SmsAvailablePhoneNumber : IEquatable<SmsAvailablePhoneNumbe
     /// The address requirement needed for provisioning this number. If there is a requirement, the address must be the residence or place of business of the individual or entity using the phone number.
     /// </summary>
     /// <value>The address requirement needed for provisioning this number. If there is a requirement, the address must be the residence or place of business of the individual or entity using the phone number.</value>
-    [JsonConverter(typeof(JsonStringEnumConverter))]
+    
     public enum AddressRequirementEnum
     {
         /// <summary>
@@ -130,13 +130,13 @@ public partial class SmsAvailablePhoneNumber : IEquatable<SmsAvailablePhoneNumbe
     /// The type of phone number available for provisioning.
     /// </summary>
     /// <value>The type of phone number available for provisioning.</value>
-    [DataMember(Name = "phoneNumberType", EmitDefaultValue = false)]
+    [JsonPropertyName("phoneNumberType")]
     public PhoneNumberTypeEnum? PhoneNumberType { get; set; }
     /// <summary>
     /// The address requirement needed for provisioning this number. If there is a requirement, the address must be the residence or place of business of the individual or entity using the phone number.
     /// </summary>
     /// <value>The address requirement needed for provisioning this number. If there is a requirement, the address must be the residence or place of business of the individual or entity using the phone number.</value>
-    [DataMember(Name = "addressRequirement", EmitDefaultValue = false)]
+    [JsonPropertyName("addressRequirement")]
     public AddressRequirementEnum? AddressRequirement { get; set; }
     /// <summary>
     /// Initializes a new instance of the <see cref="SmsAvailablePhoneNumber" /> class.
@@ -168,7 +168,7 @@ public partial class SmsAvailablePhoneNumber : IEquatable<SmsAvailablePhoneNumbe
     /// The globally unique identifier for the object.
     /// </summary>
     /// <value>The globally unique identifier for the object.</value>
-    [DataMember(Name = "id", EmitDefaultValue = false)]
+    [JsonPropertyName("id")]
     public string Id { get; private set; }
 
 
@@ -176,7 +176,7 @@ public partial class SmsAvailablePhoneNumber : IEquatable<SmsAvailablePhoneNumbe
     /// <summary>
     /// Gets or Sets Name
     /// </summary>
-    [DataMember(Name = "name", EmitDefaultValue = false)]
+    [JsonPropertyName("name")]
     public string Name { get; set; }
 
 
@@ -185,7 +185,7 @@ public partial class SmsAvailablePhoneNumber : IEquatable<SmsAvailablePhoneNumbe
     /// A phone number available for provisioning in E.164 format. E.g. +13175555555 or +34234234234
     /// </summary>
     /// <value>A phone number available for provisioning in E.164 format. E.g. +13175555555 or +34234234234</value>
-    [DataMember(Name = "phoneNumber", EmitDefaultValue = false)]
+    [JsonPropertyName("phoneNumber")]
     public string PhoneNumber { get; set; }
 
 
@@ -194,7 +194,7 @@ public partial class SmsAvailablePhoneNumber : IEquatable<SmsAvailablePhoneNumbe
     /// The ISO 3166-1 alpha-2 country code of the country this phone number is associated with.
     /// </summary>
     /// <value>The ISO 3166-1 alpha-2 country code of the country this phone number is associated with.</value>
-    [DataMember(Name = "countryCode", EmitDefaultValue = false)]
+    [JsonPropertyName("countryCode")]
     public string CountryCode { get; set; }
 
 
@@ -203,7 +203,7 @@ public partial class SmsAvailablePhoneNumber : IEquatable<SmsAvailablePhoneNumbe
     /// The region/province/state the phone number is associated with.
     /// </summary>
     /// <value>The region/province/state the phone number is associated with.</value>
-    [DataMember(Name = "region", EmitDefaultValue = false)]
+    [JsonPropertyName("region")]
     public string Region { get; set; }
 
 
@@ -212,7 +212,7 @@ public partial class SmsAvailablePhoneNumber : IEquatable<SmsAvailablePhoneNumbe
     /// The city the phone number is associated with.
     /// </summary>
     /// <value>The city the phone number is associated with.</value>
-    [DataMember(Name = "city", EmitDefaultValue = false)]
+    [JsonPropertyName("city")]
     public string City { get; set; }
 
 
@@ -221,7 +221,7 @@ public partial class SmsAvailablePhoneNumber : IEquatable<SmsAvailablePhoneNumbe
     /// The capabilities of the phone number available for provisioning.
     /// </summary>
     /// <value>The capabilities of the phone number available for provisioning.</value>
-    [DataMember(Name = "capabilities", EmitDefaultValue = false)]
+    [JsonPropertyName("capabilities")]
     public List<CapabilitiesEnum> Capabilities { get; set; }
 
 
@@ -234,7 +234,7 @@ public partial class SmsAvailablePhoneNumber : IEquatable<SmsAvailablePhoneNumbe
     /// The URI for this object
     /// </summary>
     /// <value>The URI for this object</value>
-    [DataMember(Name = "selfUri", EmitDefaultValue = false)]
+    [JsonPropertyName("selfUri")]
     public string SelfUri { get; private set; }
 
 

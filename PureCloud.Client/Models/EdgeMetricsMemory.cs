@@ -1,12 +1,12 @@
-using System.Runtime.Serialization;
 using System.Text;
+using System.Text.Json.Serialization;
 
 namespace PureCloud.Client.Models;
 
 /// <summary>
 /// EdgeMetricsMemory
 /// </summary>
-[DataContract]
+
 public partial class EdgeMetricsMemory : IEquatable<EdgeMetricsMemory>
 {
     /// <summary>
@@ -29,7 +29,7 @@ public partial class EdgeMetricsMemory : IEquatable<EdgeMetricsMemory>
     /// Available memory in bytes.
     /// </summary>
     /// <value>Available memory in bytes.</value>
-    [DataMember(Name = "availableBytes", EmitDefaultValue = false)]
+    [JsonPropertyName("availableBytes")]
     public double? AvailableBytes { get; set; }
 
 
@@ -38,7 +38,7 @@ public partial class EdgeMetricsMemory : IEquatable<EdgeMetricsMemory>
     /// Type of memory. Virtual or physical.
     /// </summary>
     /// <value>Type of memory. Virtual or physical.</value>
-    [DataMember(Name = "type", EmitDefaultValue = false)]
+    [JsonPropertyName("type")]
     public string Type { get; set; }
 
 
@@ -47,7 +47,7 @@ public partial class EdgeMetricsMemory : IEquatable<EdgeMetricsMemory>
     /// Total memory in bytes.
     /// </summary>
     /// <value>Total memory in bytes.</value>
-    [DataMember(Name = "totalBytes", EmitDefaultValue = false)]
+    [JsonPropertyName("totalBytes")]
     public double? TotalBytes { get; set; }
 
 

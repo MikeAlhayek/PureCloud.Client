@@ -1,12 +1,12 @@
-using System.Runtime.Serialization;
 using System.Text;
+using System.Text.Json.Serialization;
 
 namespace PureCloud.Client.Models;
 
 /// <summary>
 /// TaskManagementErrorDetails
 /// </summary>
-[DataContract]
+
 public partial class TaskManagementErrorDetails : IEquatable<TaskManagementErrorDetails>
 {
     /// <summary>
@@ -27,7 +27,7 @@ public partial class TaskManagementErrorDetails : IEquatable<TaskManagementError
     /// System defined error code for the error.
     /// </summary>
     /// <value>System defined error code for the error.</value>
-    [DataMember(Name = "code", EmitDefaultValue = false)]
+    [JsonPropertyName("code")]
     public string Code { get; set; }
 
 
@@ -36,7 +36,7 @@ public partial class TaskManagementErrorDetails : IEquatable<TaskManagementError
     /// Error message.
     /// </summary>
     /// <value>Error message.</value>
-    [DataMember(Name = "message", EmitDefaultValue = false)]
+    [JsonPropertyName("message")]
     public string Message { get; set; }
 
 

@@ -7,13 +7,13 @@ namespace PureCloud.Client.Models;
 /// <summary>
 /// QueueConversationSocialExpressionEventTopicSocialExpression
 /// </summary>
-[DataContract]
+
 public partial class QueueConversationSocialExpressionEventTopicSocialExpression : IEquatable<QueueConversationSocialExpressionEventTopicSocialExpression>
 {
     /// <summary>
     /// Gets or Sets State
     /// </summary>
-    [JsonConverter(typeof(JsonStringEnumConverter))]
+    
     public enum StateEnum
     {
         /// <summary>
@@ -75,7 +75,7 @@ public partial class QueueConversationSocialExpressionEventTopicSocialExpression
     /// <summary>
     /// Gets or Sets InitialState
     /// </summary>
-    [JsonConverter(typeof(JsonStringEnumConverter))]
+    
     public enum InitialStateEnum
     {
         /// <summary>
@@ -138,7 +138,7 @@ public partial class QueueConversationSocialExpressionEventTopicSocialExpression
     /// System defined string indicating what caused the communication to disconnect. Will be null until the communication disconnects.
     /// </summary>
     /// <value>System defined string indicating what caused the communication to disconnect. Will be null until the communication disconnects.</value>
-    [JsonConverter(typeof(JsonStringEnumConverter))]
+    
     public enum DisconnectTypeEnum
     {
         /// <summary>
@@ -260,18 +260,18 @@ public partial class QueueConversationSocialExpressionEventTopicSocialExpression
     /// <summary>
     /// Gets or Sets State
     /// </summary>
-    [DataMember(Name = "state", EmitDefaultValue = false)]
+    [JsonPropertyName("state")]
     public StateEnum? State { get; set; }
     /// <summary>
     /// Gets or Sets InitialState
     /// </summary>
-    [DataMember(Name = "initialState", EmitDefaultValue = false)]
+    [JsonPropertyName("initialState")]
     public InitialStateEnum? InitialState { get; set; }
     /// <summary>
     /// System defined string indicating what caused the communication to disconnect. Will be null until the communication disconnects.
     /// </summary>
     /// <value>System defined string indicating what caused the communication to disconnect. Will be null until the communication disconnects.</value>
-    [DataMember(Name = "disconnectType", EmitDefaultValue = false)]
+    [JsonPropertyName("disconnectType")]
     public DisconnectTypeEnum? DisconnectType { get; set; }
     /// <summary>
     /// Initializes a new instance of the <see cref="QueueConversationSocialExpressionEventTopicSocialExpression" /> class.
@@ -329,7 +329,7 @@ public partial class QueueConversationSocialExpressionEventTopicSocialExpression
     /// A globally unique identifier for this communication.
     /// </summary>
     /// <value>A globally unique identifier for this communication.</value>
-    [DataMember(Name = "id", EmitDefaultValue = false)]
+    [JsonPropertyName("id")]
     public string Id { get; set; }
 
 
@@ -338,7 +338,7 @@ public partial class QueueConversationSocialExpressionEventTopicSocialExpression
     /// A globally unique identifier for the social media.
     /// </summary>
     /// <value>A globally unique identifier for the social media.</value>
-    [DataMember(Name = "socialMediaId", EmitDefaultValue = false)]
+    [JsonPropertyName("socialMediaId")]
     public string SocialMediaId { get; set; }
 
 
@@ -347,7 +347,7 @@ public partial class QueueConversationSocialExpressionEventTopicSocialExpression
     /// The social network of the communication
     /// </summary>
     /// <value>The social network of the communication</value>
-    [DataMember(Name = "socialMediaHub", EmitDefaultValue = false)]
+    [JsonPropertyName("socialMediaHub")]
     public string SocialMediaHub { get; set; }
 
 
@@ -356,7 +356,7 @@ public partial class QueueConversationSocialExpressionEventTopicSocialExpression
     /// The social media user name of the communication
     /// </summary>
     /// <value>The social media user name of the communication</value>
-    [DataMember(Name = "socialUserName", EmitDefaultValue = false)]
+    [JsonPropertyName("socialUserName")]
     public string SocialUserName { get; set; }
 
 
@@ -365,7 +365,7 @@ public partial class QueueConversationSocialExpressionEventTopicSocialExpression
     /// The text preview of the communication contents
     /// </summary>
     /// <value>The text preview of the communication contents</value>
-    [DataMember(Name = "previewText", EmitDefaultValue = false)]
+    [JsonPropertyName("previewText")]
     public string PreviewText { get; set; }
 
 
@@ -374,7 +374,7 @@ public partial class QueueConversationSocialExpressionEventTopicSocialExpression
     /// A globally unique identifier for the recording associated with this chat.
     /// </summary>
     /// <value>A globally unique identifier for the recording associated with this chat.</value>
-    [DataMember(Name = "recordingId", EmitDefaultValue = false)]
+    [JsonPropertyName("recordingId")]
     public string RecordingId { get; set; }
 
 
@@ -383,7 +383,7 @@ public partial class QueueConversationSocialExpressionEventTopicSocialExpression
     /// True if this call is held and the person on this side hears silence.
     /// </summary>
     /// <value>True if this call is held and the person on this side hears silence.</value>
-    [DataMember(Name = "held", EmitDefaultValue = false)]
+    [JsonPropertyName("held")]
     public bool? Held { get; set; }
 
 
@@ -392,7 +392,7 @@ public partial class QueueConversationSocialExpressionEventTopicSocialExpression
     /// The source provider of the social expression.
     /// </summary>
     /// <value>The source provider of the social expression.</value>
-    [DataMember(Name = "provider", EmitDefaultValue = false)]
+    [JsonPropertyName("provider")]
     public string Provider { get; set; }
 
 
@@ -401,7 +401,7 @@ public partial class QueueConversationSocialExpressionEventTopicSocialExpression
     /// The UUID of the script to use.
     /// </summary>
     /// <value>The UUID of the script to use.</value>
-    [DataMember(Name = "scriptId", EmitDefaultValue = false)]
+    [JsonPropertyName("scriptId")]
     public string ScriptId { get; set; }
 
 
@@ -410,7 +410,7 @@ public partial class QueueConversationSocialExpressionEventTopicSocialExpression
     /// The id of the peer communication corresponding to a matching leg for this communication.
     /// </summary>
     /// <value>The id of the peer communication corresponding to a matching leg for this communication.</value>
-    [DataMember(Name = "peerId", EmitDefaultValue = false)]
+    [JsonPropertyName("peerId")]
     public string PeerId { get; set; }
 
 
@@ -421,7 +421,7 @@ public partial class QueueConversationSocialExpressionEventTopicSocialExpression
     /// The timestamp the chat was placed on hold in the cloud clock if the chat is currently on hold.
     /// </summary>
     /// <value>The timestamp the chat was placed on hold in the cloud clock if the chat is currently on hold.</value>
-    [DataMember(Name = "startHoldTime", EmitDefaultValue = false)]
+    [JsonPropertyName("startHoldTime")]
     public DateTime? StartHoldTime { get; set; }
 
 
@@ -430,7 +430,7 @@ public partial class QueueConversationSocialExpressionEventTopicSocialExpression
     /// The timestamp when this communication was connected in the cloud clock.
     /// </summary>
     /// <value>The timestamp when this communication was connected in the cloud clock.</value>
-    [DataMember(Name = "connectedTime", EmitDefaultValue = false)]
+    [JsonPropertyName("connectedTime")]
     public DateTime? ConnectedTime { get; set; }
 
 
@@ -439,7 +439,7 @@ public partial class QueueConversationSocialExpressionEventTopicSocialExpression
     /// The timestamp when this communication disconnected from the conversation in the provider clock.
     /// </summary>
     /// <value>The timestamp when this communication disconnected from the conversation in the provider clock.</value>
-    [DataMember(Name = "disconnectedTime", EmitDefaultValue = false)]
+    [JsonPropertyName("disconnectedTime")]
     public DateTime? DisconnectedTime { get; set; }
 
 
@@ -448,7 +448,7 @@ public partial class QueueConversationSocialExpressionEventTopicSocialExpression
     /// Call wrap up or disposition data.
     /// </summary>
     /// <value>Call wrap up or disposition data.</value>
-    [DataMember(Name = "wrapup", EmitDefaultValue = false)]
+    [JsonPropertyName("wrapup")]
     public QueueConversationSocialExpressionEventTopicWrapup Wrapup { get; set; }
 
 
@@ -457,7 +457,7 @@ public partial class QueueConversationSocialExpressionEventTopicSocialExpression
     /// A communication&#39;s after-call work data.
     /// </summary>
     /// <value>A communication&#39;s after-call work data.</value>
-    [DataMember(Name = "afterCallWork", EmitDefaultValue = false)]
+    [JsonPropertyName("afterCallWork")]
     public QueueConversationSocialExpressionEventTopicAfterCallWork AfterCallWork { get; set; }
 
 
@@ -466,7 +466,7 @@ public partial class QueueConversationSocialExpressionEventTopicSocialExpression
     /// Indicates if after-call is required for a communication. Only used when the ACW Setting is Agent Requested.
     /// </summary>
     /// <value>Indicates if after-call is required for a communication. Only used when the ACW Setting is Agent Requested.</value>
-    [DataMember(Name = "afterCallWorkRequired", EmitDefaultValue = false)]
+    [JsonPropertyName("afterCallWorkRequired")]
     public bool? AfterCallWorkRequired { get; set; }
 
 

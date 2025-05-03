@@ -1,12 +1,12 @@
-using System.Runtime.Serialization;
 using System.Text;
+using System.Text.Json.Serialization;
 
 namespace PureCloud.Client.Models;
 
 /// <summary>
 /// A datepicker available time that a user can take.
 /// </summary>
-[DataContract]
+
 public partial class ContentDatePickerAvailableTime : IEquatable<ContentDatePickerAvailableTime>
 {
     /// <summary>
@@ -27,7 +27,7 @@ public partial class ContentDatePickerAvailableTime : IEquatable<ContentDatePick
     /// The duration of the scheduling event in seconds.
     /// </summary>
     /// <value>The duration of the scheduling event in seconds.</value>
-    [DataMember(Name = "duration", EmitDefaultValue = false)]
+    [JsonPropertyName("duration")]
     public long? Duration { get; set; }
 
 
@@ -36,7 +36,7 @@ public partial class ContentDatePickerAvailableTime : IEquatable<ContentDatePick
     /// The date and times of the event being scheduled. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z
     /// </summary>
     /// <value>The date and times of the event being scheduled. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z</value>
-    [DataMember(Name = "dateTime", EmitDefaultValue = false)]
+    [JsonPropertyName("dateTime")]
     public DateTime? DateTime { get; set; }
 
 

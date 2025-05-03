@@ -7,14 +7,14 @@ namespace PureCloud.Client.Models;
 /// <summary>
 /// EvaluationFormResponse
 /// </summary>
-[DataContract]
+
 public partial class EvaluationFormResponse : IEquatable<EvaluationFormResponse>
 {
     /// <summary>
     /// Mode for evaluation form weight
     /// </summary>
     /// <value>Mode for evaluation form weight</value>
-    [JsonConverter(typeof(JsonStringEnumConverter))]
+    
     public enum WeightModeEnum
     {
         /// <summary>
@@ -41,7 +41,7 @@ public partial class EvaluationFormResponse : IEquatable<EvaluationFormResponse>
     /// Mode for evaluation form weight
     /// </summary>
     /// <value>Mode for evaluation form weight</value>
-    [DataMember(Name = "weightMode", EmitDefaultValue = false)]
+    [JsonPropertyName("weightMode")]
     public WeightModeEnum? WeightMode { get; set; }
 
     /// <summary>
@@ -79,7 +79,7 @@ public partial class EvaluationFormResponse : IEquatable<EvaluationFormResponse>
     /// The globally unique identifier for the object.
     /// </summary>
     /// <value>The globally unique identifier for the object.</value>
-    [DataMember(Name = "id", EmitDefaultValue = false)]
+    [JsonPropertyName("id")]
     public string Id { get; private set; }
 
 
@@ -88,7 +88,7 @@ public partial class EvaluationFormResponse : IEquatable<EvaluationFormResponse>
     /// The evaluation form name
     /// </summary>
     /// <value>The evaluation form name</value>
-    [DataMember(Name = "name", EmitDefaultValue = false)]
+    [JsonPropertyName("name")]
     public string Name { get; set; }
 
 
@@ -97,7 +97,7 @@ public partial class EvaluationFormResponse : IEquatable<EvaluationFormResponse>
     /// Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z
     /// </summary>
     /// <value>Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z</value>
-    [DataMember(Name = "modifiedDate", EmitDefaultValue = false)]
+    [JsonPropertyName("modifiedDate")]
     public DateTime? ModifiedDate { get; set; }
 
 
@@ -105,7 +105,7 @@ public partial class EvaluationFormResponse : IEquatable<EvaluationFormResponse>
     /// <summary>
     /// Gets or Sets Published
     /// </summary>
-    [DataMember(Name = "published", EmitDefaultValue = false)]
+    [JsonPropertyName("published")]
     public bool? Published { get; set; }
 
 
@@ -113,7 +113,7 @@ public partial class EvaluationFormResponse : IEquatable<EvaluationFormResponse>
     /// <summary>
     /// Gets or Sets ContextId
     /// </summary>
-    [DataMember(Name = "contextId", EmitDefaultValue = false)]
+    [JsonPropertyName("contextId")]
     public string ContextId { get; set; }
 
 
@@ -122,7 +122,7 @@ public partial class EvaluationFormResponse : IEquatable<EvaluationFormResponse>
     /// A list of question groups
     /// </summary>
     /// <value>A list of question groups</value>
-    [DataMember(Name = "questionGroups", EmitDefaultValue = false)]
+    [JsonPropertyName("questionGroups")]
     public List<EvaluationQuestionGroup> QuestionGroups { get; set; }
 
 
@@ -133,7 +133,7 @@ public partial class EvaluationFormResponse : IEquatable<EvaluationFormResponse>
     /// Settings for evaluations associated with this form
     /// </summary>
     /// <value>Settings for evaluations associated with this form</value>
-    [DataMember(Name = "evaluationSettings", EmitDefaultValue = false)]
+    [JsonPropertyName("evaluationSettings")]
     public EvaluationSettings EvaluationSettings { get; set; }
 
 
@@ -142,7 +142,7 @@ public partial class EvaluationFormResponse : IEquatable<EvaluationFormResponse>
     /// A list of the published versions of this form. Not populated by default, its availability depends on the endpoint. Use the &#39;expand&#x3D;publishHistory&#39; query parameter to retrieve this data where applicable (refer to the endpoint description to see if it is applicable).
     /// </summary>
     /// <value>A list of the published versions of this form. Not populated by default, its availability depends on the endpoint. Use the &#39;expand&#x3D;publishHistory&#39; query parameter to retrieve this data where applicable (refer to the endpoint description to see if it is applicable).</value>
-    [DataMember(Name = "publishedVersions", EmitDefaultValue = false)]
+    [JsonPropertyName("publishedVersions")]
     public DomainEntityListingEvaluationForm PublishedVersions { get; set; }
 
 
@@ -151,7 +151,7 @@ public partial class EvaluationFormResponse : IEquatable<EvaluationFormResponse>
     /// AI scoring settings for the evaluation form.
     /// </summary>
     /// <value>AI scoring settings for the evaluation form.</value>
-    [DataMember(Name = "aiScoring", EmitDefaultValue = false)]
+    [JsonPropertyName("aiScoring")]
     public AiScoringSettings AiScoring { get; private set; }
 
 
@@ -160,7 +160,7 @@ public partial class EvaluationFormResponse : IEquatable<EvaluationFormResponse>
     /// The URI for this object
     /// </summary>
     /// <value>The URI for this object</value>
-    [DataMember(Name = "selfUri", EmitDefaultValue = false)]
+    [JsonPropertyName("selfUri")]
     public string SelfUri { get; private set; }
 
 

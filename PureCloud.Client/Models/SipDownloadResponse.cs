@@ -1,12 +1,12 @@
-using System.Runtime.Serialization;
 using System.Text;
+using System.Text.Json.Serialization;
 
 namespace PureCloud.Client.Models;
 
 /// <summary>
 /// SipDownloadResponse
 /// </summary>
-[DataContract]
+
 public partial class SipDownloadResponse : IEquatable<SipDownloadResponse>
 {
     /// <summary>
@@ -27,7 +27,7 @@ public partial class SipDownloadResponse : IEquatable<SipDownloadResponse>
     /// unique id of the downloaded file
     /// </summary>
     /// <value>unique id of the downloaded file</value>
-    [DataMember(Name = "downloadId", EmitDefaultValue = false)]
+    [JsonPropertyName("downloadId")]
     public string DownloadId { get; set; }
 
 
@@ -36,7 +36,7 @@ public partial class SipDownloadResponse : IEquatable<SipDownloadResponse>
     /// Document id of pcap file
     /// </summary>
     /// <value>Document id of pcap file</value>
-    [DataMember(Name = "documentId", EmitDefaultValue = false)]
+    [JsonPropertyName("documentId")]
     public string DocumentId { get; set; }
 
 

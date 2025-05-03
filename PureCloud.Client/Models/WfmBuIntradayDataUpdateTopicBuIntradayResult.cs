@@ -7,13 +7,13 @@ namespace PureCloud.Client.Models;
 /// <summary>
 /// WfmBuIntradayDataUpdateTopicBuIntradayResult
 /// </summary>
-[DataContract]
+
 public partial class WfmBuIntradayDataUpdateTopicBuIntradayResult : IEquatable<WfmBuIntradayDataUpdateTopicBuIntradayResult>
 {
     /// <summary>
     /// Gets or Sets Categories
     /// </summary>
-    [JsonConverter(typeof(JsonStringEnumConverter))]
+    
     public enum CategoriesEnum
     {
         /// <summary>
@@ -71,7 +71,7 @@ public partial class WfmBuIntradayDataUpdateTopicBuIntradayResult : IEquatable<W
     /// <summary>
     /// Gets or Sets StartDate
     /// </summary>
-    [DataMember(Name = "startDate", EmitDefaultValue = false)]
+    [JsonPropertyName("startDate")]
     public DateTime? StartDate { get; set; }
 
 
@@ -79,7 +79,7 @@ public partial class WfmBuIntradayDataUpdateTopicBuIntradayResult : IEquatable<W
     /// <summary>
     /// Gets or Sets EndDate
     /// </summary>
-    [DataMember(Name = "endDate", EmitDefaultValue = false)]
+    [JsonPropertyName("endDate")]
     public DateTime? EndDate { get; set; }
 
 
@@ -87,7 +87,7 @@ public partial class WfmBuIntradayDataUpdateTopicBuIntradayResult : IEquatable<W
     /// <summary>
     /// Gets or Sets IntervalLengthMinutes
     /// </summary>
-    [DataMember(Name = "intervalLengthMinutes", EmitDefaultValue = false)]
+    [JsonPropertyName("intervalLengthMinutes")]
     public long? IntervalLengthMinutes { get; set; }
 
 
@@ -95,7 +95,7 @@ public partial class WfmBuIntradayDataUpdateTopicBuIntradayResult : IEquatable<W
     /// <summary>
     /// Gets or Sets IntradayDataGroupings
     /// </summary>
-    [DataMember(Name = "intradayDataGroupings", EmitDefaultValue = false)]
+    [JsonPropertyName("intradayDataGroupings")]
     public List<WfmBuIntradayDataUpdateTopicBuIntradayDataGroup> IntradayDataGroupings { get; set; }
 
 
@@ -103,7 +103,7 @@ public partial class WfmBuIntradayDataUpdateTopicBuIntradayResult : IEquatable<W
     /// <summary>
     /// Gets or Sets Categories
     /// </summary>
-    [DataMember(Name = "categories", EmitDefaultValue = false)]
+    [JsonPropertyName("categories")]
     public List<CategoriesEnum> Categories { get; set; }
 
 
@@ -111,7 +111,7 @@ public partial class WfmBuIntradayDataUpdateTopicBuIntradayResult : IEquatable<W
     /// <summary>
     /// Gets or Sets NoDataReason
     /// </summary>
-    [DataMember(Name = "noDataReason", EmitDefaultValue = false)]
+    [JsonPropertyName("noDataReason")]
     public string NoDataReason { get; set; }
 
 
@@ -119,7 +119,7 @@ public partial class WfmBuIntradayDataUpdateTopicBuIntradayResult : IEquatable<W
     /// <summary>
     /// Gets or Sets Schedule
     /// </summary>
-    [DataMember(Name = "schedule", EmitDefaultValue = false)]
+    [JsonPropertyName("schedule")]
     public WfmBuIntradayDataUpdateTopicBuScheduleReference Schedule { get; set; }
 
 
@@ -127,7 +127,7 @@ public partial class WfmBuIntradayDataUpdateTopicBuIntradayResult : IEquatable<W
     /// <summary>
     /// Gets or Sets ShortTermForecast
     /// </summary>
-    [DataMember(Name = "shortTermForecast", EmitDefaultValue = false)]
+    [JsonPropertyName("shortTermForecast")]
     public WfmBuIntradayDataUpdateTopicBuShortTermForecastReference ShortTermForecast { get; set; }
 
 

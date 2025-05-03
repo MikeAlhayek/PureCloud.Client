@@ -1,12 +1,12 @@
-using System.Runtime.Serialization;
 using System.Text;
+using System.Text.Json.Serialization;
 
 namespace PureCloud.Client.Models;
 
 /// <summary>
 /// TaskManagementAggregateQueryResponse
 /// </summary>
-[DataContract]
+
 public partial class TaskManagementAggregateQueryResponse : IEquatable<TaskManagementAggregateQueryResponse>
 {
     /// <summary>
@@ -24,7 +24,7 @@ public partial class TaskManagementAggregateQueryResponse : IEquatable<TaskManag
     /// <summary>
     /// Gets or Sets Results
     /// </summary>
-    [DataMember(Name = "results", EmitDefaultValue = false)]
+    [JsonPropertyName("results")]
     public List<TaskManagementAggregateDataContainer> Results { get; set; }
 
 

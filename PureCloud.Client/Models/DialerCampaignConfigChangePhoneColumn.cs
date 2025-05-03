@@ -1,12 +1,12 @@
-using System.Runtime.Serialization;
 using System.Text;
+using System.Text.Json.Serialization;
 
 namespace PureCloud.Client.Models;
 
 /// <summary>
 /// DialerCampaignConfigChangePhoneColumn
 /// </summary>
-[DataContract]
+
 public partial class DialerCampaignConfigChangePhoneColumn : IEquatable<DialerCampaignConfigChangePhoneColumn>
 {
     /// <summary>
@@ -29,7 +29,7 @@ public partial class DialerCampaignConfigChangePhoneColumn : IEquatable<DialerCa
     /// The name of the phone column
     /// </summary>
     /// <value>The name of the phone column</value>
-    [DataMember(Name = "columnName", EmitDefaultValue = false)]
+    [JsonPropertyName("columnName")]
     public string ColumnName { get; set; }
 
 
@@ -38,7 +38,7 @@ public partial class DialerCampaignConfigChangePhoneColumn : IEquatable<DialerCa
     /// The type of the phone column, for example, &#39;cell&#39; or &#39;home&#39;
     /// </summary>
     /// <value>The type of the phone column, for example, &#39;cell&#39; or &#39;home&#39;</value>
-    [DataMember(Name = "type", EmitDefaultValue = false)]
+    [JsonPropertyName("type")]
     public string Type { get; set; }
 
 
@@ -46,7 +46,7 @@ public partial class DialerCampaignConfigChangePhoneColumn : IEquatable<DialerCa
     /// <summary>
     /// Gets or Sets AdditionalProperties
     /// </summary>
-    [DataMember(Name = "additionalProperties", EmitDefaultValue = false)]
+    [JsonPropertyName("additionalProperties")]
     public Dictionary<string, object> AdditionalProperties { get; set; }
 
 

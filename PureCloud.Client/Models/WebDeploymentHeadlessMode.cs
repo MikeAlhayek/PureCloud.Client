@@ -1,12 +1,12 @@
-using System.Runtime.Serialization;
 using System.Text;
+using System.Text.Json.Serialization;
 
 namespace PureCloud.Client.Models;
 
 /// <summary>
 /// WebDeploymentHeadlessMode
 /// </summary>
-[DataContract]
+
 public partial class WebDeploymentHeadlessMode : IEquatable<WebDeploymentHeadlessMode>
 {
     /// <summary>
@@ -25,7 +25,7 @@ public partial class WebDeploymentHeadlessMode : IEquatable<WebDeploymentHeadles
     /// Whether or not Headless Mode is enabled
     /// </summary>
     /// <value>Whether or not Headless Mode is enabled</value>
-    [DataMember(Name = "enabled", EmitDefaultValue = false)]
+    [JsonPropertyName("enabled")]
     public bool? Enabled { get; set; }
 
 

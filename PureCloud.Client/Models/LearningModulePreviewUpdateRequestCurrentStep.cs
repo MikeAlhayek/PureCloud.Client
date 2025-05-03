@@ -1,12 +1,12 @@
-using System.Runtime.Serialization;
 using System.Text;
+using System.Text.Json.Serialization;
 
 namespace PureCloud.Client.Models;
 
 /// <summary>
 /// Learning module preview update request current step
 /// </summary>
-[DataContract]
+
 public partial class LearningModulePreviewUpdateRequestCurrentStep : IEquatable<LearningModulePreviewUpdateRequestCurrentStep>
 {
     /// <summary>
@@ -29,7 +29,7 @@ public partial class LearningModulePreviewUpdateRequestCurrentStep : IEquatable<
     /// The id of this step
     /// </summary>
     /// <value>The id of this step</value>
-    [DataMember(Name = "id", EmitDefaultValue = false)]
+    [JsonPropertyName("id")]
     public string Id { get; set; }
 
 
@@ -38,7 +38,7 @@ public partial class LearningModulePreviewUpdateRequestCurrentStep : IEquatable<
     /// The completion percentage for this step
     /// </summary>
     /// <value>The completion percentage for this step</value>
-    [DataMember(Name = "completionPercentage", EmitDefaultValue = false)]
+    [JsonPropertyName("completionPercentage")]
     public float? CompletionPercentage { get; set; }
 
 
@@ -47,7 +47,7 @@ public partial class LearningModulePreviewUpdateRequestCurrentStep : IEquatable<
     /// The SCO (Shareable Content Object) data
     /// </summary>
     /// <value>The SCO (Shareable Content Object) data</value>
-    [DataMember(Name = "shareableContentObject", EmitDefaultValue = false)]
+    [JsonPropertyName("shareableContentObject")]
     public LearningShareableContentObject ShareableContentObject { get; set; }
 
 

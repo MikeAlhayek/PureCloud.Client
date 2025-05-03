@@ -1,4 +1,3 @@
-using System.Runtime.Serialization;
 using System.Text;
 using System.Text.Json.Serialization;
 
@@ -7,7 +6,7 @@ namespace PureCloud.Client.Models;
 /// <summary>
 /// CsvUploadPreviewResponse
 /// </summary>
-[DataContract]
+
 public partial class CsvUploadPreviewResponse : IEquatable<CsvUploadPreviewResponse>
 {
 
@@ -36,7 +35,7 @@ public partial class CsvUploadPreviewResponse : IEquatable<CsvUploadPreviewRespo
     /// Id for the upload
     /// </summary>
     /// <value>Id for the upload</value>
-    [DataMember(Name = "uploadId", EmitDefaultValue = false)]
+    [JsonPropertyName("uploadId")]
     public string UploadId { get; set; }
 
 
@@ -45,7 +44,7 @@ public partial class CsvUploadPreviewResponse : IEquatable<CsvUploadPreviewRespo
     /// List of headers in the CSV
     /// </summary>
     /// <value>List of headers in the CSV</value>
-    [DataMember(Name = "headers", EmitDefaultValue = false)]
+    [JsonPropertyName("headers")]
     public List<string> Headers { get; set; }
 
 
@@ -54,7 +53,7 @@ public partial class CsvUploadPreviewResponse : IEquatable<CsvUploadPreviewRespo
     /// List of entries in the CSV
     /// </summary>
     /// <value>List of entries in the CSV</value>
-    [DataMember(Name = "entries", EmitDefaultValue = false)]
+    [JsonPropertyName("entries")]
     public List<List<string>> Entries { get; set; }
 
 

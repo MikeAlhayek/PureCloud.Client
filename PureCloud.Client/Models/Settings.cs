@@ -1,12 +1,12 @@
-using System.Runtime.Serialization;
 using System.Text;
+using System.Text.Json.Serialization;
 
 namespace PureCloud.Client.Models;
 
 /// <summary>
 /// Settings
 /// </summary>
-[DataContract]
+
 public partial class Settings : IEquatable<Settings>
 {
     /// <summary>
@@ -35,7 +35,7 @@ public partial class Settings : IEquatable<Settings>
     /// Communication Based ACW
     /// </summary>
     /// <value>Communication Based ACW</value>
-    [DataMember(Name = "communicationBasedACW", EmitDefaultValue = false)]
+    [JsonPropertyName("communicationBasedACW")]
     public bool? CommunicationBasedACW { get; set; }
 
 
@@ -44,7 +44,7 @@ public partial class Settings : IEquatable<Settings>
     /// Display communication summary
     /// </summary>
     /// <value>Display communication summary</value>
-    [DataMember(Name = "includeNonAgentConversationSummary", EmitDefaultValue = false)]
+    [JsonPropertyName("includeNonAgentConversationSummary")]
     public bool? IncludeNonAgentConversationSummary { get; set; }
 
 
@@ -53,7 +53,7 @@ public partial class Settings : IEquatable<Settings>
     /// Allow Callback Queue Selection
     /// </summary>
     /// <value>Allow Callback Queue Selection</value>
-    [DataMember(Name = "allowCallbackQueueSelection", EmitDefaultValue = false)]
+    [JsonPropertyName("allowCallbackQueueSelection")]
     public bool? AllowCallbackQueueSelection { get; set; }
 
 
@@ -62,7 +62,7 @@ public partial class Settings : IEquatable<Settings>
     /// Inherit callback routing data from inbound calls
     /// </summary>
     /// <value>Inherit callback routing data from inbound calls</value>
-    [DataMember(Name = "callbacksInheritRoutingFromInboundCall", EmitDefaultValue = false)]
+    [JsonPropertyName("callbacksInheritRoutingFromInboundCall")]
     public bool? CallbacksInheritRoutingFromInboundCall { get; set; }
 
 
@@ -71,7 +71,7 @@ public partial class Settings : IEquatable<Settings>
     /// Complete ACW When Agent Transitions Offline
     /// </summary>
     /// <value>Complete ACW When Agent Transitions Offline</value>
-    [DataMember(Name = "completeAcwWhenAgentTransitionsOffline", EmitDefaultValue = false)]
+    [JsonPropertyName("completeAcwWhenAgentTransitionsOffline")]
     public bool? CompleteAcwWhenAgentTransitionsOffline { get; set; }
 
 
@@ -80,7 +80,7 @@ public partial class Settings : IEquatable<Settings>
     /// Exclude the &#39;interacting&#39; duration from the handle calculations of callbacks
     /// </summary>
     /// <value>Exclude the &#39;interacting&#39; duration from the handle calculations of callbacks</value>
-    [DataMember(Name = "totalActiveCallback", EmitDefaultValue = false)]
+    [JsonPropertyName("totalActiveCallback")]
     public bool? TotalActiveCallback { get; set; }
 
 

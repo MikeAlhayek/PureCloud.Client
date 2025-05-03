@@ -1,4 +1,3 @@
-using System.Runtime.Serialization;
 using System.Text;
 using System.Text.Json.Serialization;
 
@@ -7,7 +6,7 @@ namespace PureCloud.Client.Models;
 /// <summary>
 /// OptInSettings
 /// </summary>
-[DataContract]
+
 public partial class OptInSettings : IEquatable<OptInSettings>
 {
 
@@ -34,7 +33,7 @@ public partial class OptInSettings : IEquatable<OptInSettings>
     /// List of keywords for compliance
     /// </summary>
     /// <value>List of keywords for compliance</value>
-    [DataMember(Name = "keyword", EmitDefaultValue = false)]
+    [JsonPropertyName("keyword")]
     public List<string> Keyword { get; set; }
 
 
@@ -43,7 +42,7 @@ public partial class OptInSettings : IEquatable<OptInSettings>
     /// The response configuration for the keywords
     /// </summary>
     /// <value>The response configuration for the keywords</value>
-    [DataMember(Name = "response", EmitDefaultValue = false)]
+    [JsonPropertyName("response")]
     public ComplianceResponse Response { get; set; }
 
 

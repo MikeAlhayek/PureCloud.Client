@@ -7,14 +7,14 @@ namespace PureCloud.Client.Models;
 /// <summary>
 /// AlertRuleProperties
 /// </summary>
-[DataContract]
+
 public partial class AlertRuleProperties : IEquatable<AlertRuleProperties>
 {
     /// <summary>
     /// The type of rule being alerted.
     /// </summary>
     /// <value>The type of rule being alerted.</value>
-    [JsonConverter(typeof(JsonStringEnumConverter))]
+    
     public enum TypeEnum
     {
         /// <summary>
@@ -59,7 +59,7 @@ public partial class AlertRuleProperties : IEquatable<AlertRuleProperties>
     /// The type of rule being alerted.
     /// </summary>
     /// <value>The type of rule being alerted.</value>
-    [DataMember(Name = "type", EmitDefaultValue = false)]
+    [JsonPropertyName("type")]
     public TypeEnum? Type { get; private set; }
     /// <summary>
     /// Initializes a new instance of the <see cref="AlertRuleProperties" /> class.
@@ -75,7 +75,7 @@ public partial class AlertRuleProperties : IEquatable<AlertRuleProperties>
     /// The globally unique identifier for the object.
     /// </summary>
     /// <value>The globally unique identifier for the object.</value>
-    [DataMember(Name = "id", EmitDefaultValue = false)]
+    [JsonPropertyName("id")]
     public string Id { get; private set; }
 
 
@@ -84,7 +84,7 @@ public partial class AlertRuleProperties : IEquatable<AlertRuleProperties>
     /// The name of the object.
     /// </summary>
     /// <value>The name of the object.</value>
-    [DataMember(Name = "name", EmitDefaultValue = false)]
+    [JsonPropertyName("name")]
     public string Name { get; private set; }
 
 

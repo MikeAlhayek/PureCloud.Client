@@ -1,12 +1,12 @@
-using System.Runtime.Serialization;
 using System.Text;
+using System.Text.Json.Serialization;
 
 namespace PureCloud.Client.Models;
 
 /// <summary>
 /// Configuration information for the integration
 /// </summary>
-[DataContract]
+
 public partial class UserAppConfigurationInfo : IEquatable<UserAppConfigurationInfo>
 {
     /// <summary>
@@ -23,7 +23,7 @@ public partial class UserAppConfigurationInfo : IEquatable<UserAppConfigurationI
     /// The current, active configuration for the integration.
     /// </summary>
     /// <value>The current, active configuration for the integration.</value>
-    [DataMember(Name = "current", EmitDefaultValue = false)]
+    [JsonPropertyName("current")]
     public IntegrationConfiguration Current { get; private set; }
 
 
@@ -32,7 +32,7 @@ public partial class UserAppConfigurationInfo : IEquatable<UserAppConfigurationI
     /// The effective configuration for the app, containing the integration specific configuration along with overrides specified in the integration type.
     /// </summary>
     /// <value>The effective configuration for the app, containing the integration specific configuration along with overrides specified in the integration type.</value>
-    [DataMember(Name = "effective", EmitDefaultValue = false)]
+    [JsonPropertyName("effective")]
     public EffectiveConfiguration Effective { get; private set; }
 
 

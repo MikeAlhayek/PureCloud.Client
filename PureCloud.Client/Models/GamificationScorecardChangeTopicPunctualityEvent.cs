@@ -1,12 +1,12 @@
-using System.Runtime.Serialization;
 using System.Text;
+using System.Text.Json.Serialization;
 
 namespace PureCloud.Client.Models;
 
 /// <summary>
 /// GamificationScorecardChangeTopicPunctualityEvent
 /// </summary>
-[DataContract]
+
 public partial class GamificationScorecardChangeTopicPunctualityEvent : IEquatable<GamificationScorecardChangeTopicPunctualityEvent>
 {
     /// <summary>
@@ -30,7 +30,7 @@ public partial class GamificationScorecardChangeTopicPunctualityEvent : IEquatab
     /// <summary>
     /// Gets or Sets DateStart
     /// </summary>
-    [DataMember(Name = "dateStart", EmitDefaultValue = false)]
+    [JsonPropertyName("dateStart")]
     public string DateStart { get; set; }
 
 
@@ -38,7 +38,7 @@ public partial class GamificationScorecardChangeTopicPunctualityEvent : IEquatab
     /// <summary>
     /// Gets or Sets DateScheduleStart
     /// </summary>
-    [DataMember(Name = "dateScheduleStart", EmitDefaultValue = false)]
+    [JsonPropertyName("dateScheduleStart")]
     public string DateScheduleStart { get; set; }
 
 
@@ -46,7 +46,7 @@ public partial class GamificationScorecardChangeTopicPunctualityEvent : IEquatab
     /// <summary>
     /// Gets or Sets ActivityCode
     /// </summary>
-    [DataMember(Name = "activityCode", EmitDefaultValue = false)]
+    [JsonPropertyName("activityCode")]
     public string ActivityCode { get; set; }
 
 
@@ -54,7 +54,7 @@ public partial class GamificationScorecardChangeTopicPunctualityEvent : IEquatab
     /// <summary>
     /// Gets or Sets Points
     /// </summary>
-    [DataMember(Name = "points", EmitDefaultValue = false)]
+    [JsonPropertyName("points")]
     public long? Points { get; set; }
 
 

@@ -7,13 +7,13 @@ namespace PureCloud.Client.Models;
 /// <summary>
 /// QueueConversationSocialExpressionEventTopicScreenshare
 /// </summary>
-[DataContract]
+
 public partial class QueueConversationSocialExpressionEventTopicScreenshare : IEquatable<QueueConversationSocialExpressionEventTopicScreenshare>
 {
     /// <summary>
     /// Gets or Sets State
     /// </summary>
-    [JsonConverter(typeof(JsonStringEnumConverter))]
+    
     public enum StateEnum
     {
         /// <summary>
@@ -75,7 +75,7 @@ public partial class QueueConversationSocialExpressionEventTopicScreenshare : IE
     /// <summary>
     /// Gets or Sets InitialState
     /// </summary>
-    [JsonConverter(typeof(JsonStringEnumConverter))]
+    
     public enum InitialStateEnum
     {
         /// <summary>
@@ -138,7 +138,7 @@ public partial class QueueConversationSocialExpressionEventTopicScreenshare : IE
     /// System defined string indicating what caused the communication to disconnect. Will be null until the communication disconnects.
     /// </summary>
     /// <value>System defined string indicating what caused the communication to disconnect. Will be null until the communication disconnects.</value>
-    [JsonConverter(typeof(JsonStringEnumConverter))]
+    
     public enum DisconnectTypeEnum
     {
         /// <summary>
@@ -260,18 +260,18 @@ public partial class QueueConversationSocialExpressionEventTopicScreenshare : IE
     /// <summary>
     /// Gets or Sets State
     /// </summary>
-    [DataMember(Name = "state", EmitDefaultValue = false)]
+    [JsonPropertyName("state")]
     public StateEnum? State { get; set; }
     /// <summary>
     /// Gets or Sets InitialState
     /// </summary>
-    [DataMember(Name = "initialState", EmitDefaultValue = false)]
+    [JsonPropertyName("initialState")]
     public InitialStateEnum? InitialState { get; set; }
     /// <summary>
     /// System defined string indicating what caused the communication to disconnect. Will be null until the communication disconnects.
     /// </summary>
     /// <value>System defined string indicating what caused the communication to disconnect. Will be null until the communication disconnects.</value>
-    [DataMember(Name = "disconnectType", EmitDefaultValue = false)]
+    [JsonPropertyName("disconnectType")]
     public DisconnectTypeEnum? DisconnectType { get; set; }
     /// <summary>
     /// Initializes a new instance of the <see cref="QueueConversationSocialExpressionEventTopicScreenshare" /> class.
@@ -325,7 +325,7 @@ public partial class QueueConversationSocialExpressionEventTopicScreenshare : IE
     /// Address and name data for a call endpoint.
     /// </summary>
     /// <value>Address and name data for a call endpoint.</value>
-    [DataMember(Name = "self", EmitDefaultValue = false)]
+    [JsonPropertyName("self")]
     public QueueConversationSocialExpressionEventTopicAddress Self { get; set; }
 
 
@@ -334,7 +334,7 @@ public partial class QueueConversationSocialExpressionEventTopicScreenshare : IE
     /// A globally unique identifier for this communication.
     /// </summary>
     /// <value>A globally unique identifier for this communication.</value>
-    [DataMember(Name = "id", EmitDefaultValue = false)]
+    [JsonPropertyName("id")]
     public string Id { get; set; }
 
 
@@ -343,7 +343,7 @@ public partial class QueueConversationSocialExpressionEventTopicScreenshare : IE
     /// The room id context (xmpp jid) for the conference session.
     /// </summary>
     /// <value>The room id context (xmpp jid) for the conference session.</value>
-    [DataMember(Name = "context", EmitDefaultValue = false)]
+    [JsonPropertyName("context")]
     public string Context { get; set; }
 
 
@@ -352,7 +352,7 @@ public partial class QueueConversationSocialExpressionEventTopicScreenshare : IE
     /// Indicates whether this participant is sharing their screen to the session.
     /// </summary>
     /// <value>Indicates whether this participant is sharing their screen to the session.</value>
-    [DataMember(Name = "sharing", EmitDefaultValue = false)]
+    [JsonPropertyName("sharing")]
     public bool? Sharing { get; set; }
 
 
@@ -361,7 +361,7 @@ public partial class QueueConversationSocialExpressionEventTopicScreenshare : IE
     /// The source provider of the screen share.
     /// </summary>
     /// <value>The source provider of the screen share.</value>
-    [DataMember(Name = "provider", EmitDefaultValue = false)]
+    [JsonPropertyName("provider")]
     public string Provider { get; set; }
 
 
@@ -370,7 +370,7 @@ public partial class QueueConversationSocialExpressionEventTopicScreenshare : IE
     /// The UUID of the script to use.
     /// </summary>
     /// <value>The UUID of the script to use.</value>
-    [DataMember(Name = "scriptId", EmitDefaultValue = false)]
+    [JsonPropertyName("scriptId")]
     public string ScriptId { get; set; }
 
 
@@ -379,7 +379,7 @@ public partial class QueueConversationSocialExpressionEventTopicScreenshare : IE
     /// The id of the peer communication corresponding to a matching leg for this communication.
     /// </summary>
     /// <value>The id of the peer communication corresponding to a matching leg for this communication.</value>
-    [DataMember(Name = "peerId", EmitDefaultValue = false)]
+    [JsonPropertyName("peerId")]
     public string PeerId { get; set; }
 
 
@@ -388,7 +388,7 @@ public partial class QueueConversationSocialExpressionEventTopicScreenshare : IE
     /// The number of peer participants from the perspective of the participant in the conference.
     /// </summary>
     /// <value>The number of peer participants from the perspective of the participant in the conference.</value>
-    [DataMember(Name = "peerCount", EmitDefaultValue = false)]
+    [JsonPropertyName("peerCount")]
     public object PeerCount { get; set; }
 
 
@@ -399,7 +399,7 @@ public partial class QueueConversationSocialExpressionEventTopicScreenshare : IE
     /// The timestamp when this communication was connected in the cloud clock.
     /// </summary>
     /// <value>The timestamp when this communication was connected in the cloud clock.</value>
-    [DataMember(Name = "connectedTime", EmitDefaultValue = false)]
+    [JsonPropertyName("connectedTime")]
     public DateTime? ConnectedTime { get; set; }
 
 
@@ -408,7 +408,7 @@ public partial class QueueConversationSocialExpressionEventTopicScreenshare : IE
     /// The timestamp when this communication disconnected from the conversation in the provider clock.
     /// </summary>
     /// <value>The timestamp when this communication disconnected from the conversation in the provider clock.</value>
-    [DataMember(Name = "disconnectedTime", EmitDefaultValue = false)]
+    [JsonPropertyName("disconnectedTime")]
     public DateTime? DisconnectedTime { get; set; }
 
 
@@ -417,7 +417,7 @@ public partial class QueueConversationSocialExpressionEventTopicScreenshare : IE
     /// Call wrap up or disposition data.
     /// </summary>
     /// <value>Call wrap up or disposition data.</value>
-    [DataMember(Name = "wrapup", EmitDefaultValue = false)]
+    [JsonPropertyName("wrapup")]
     public QueueConversationSocialExpressionEventTopicWrapup Wrapup { get; set; }
 
 
@@ -426,7 +426,7 @@ public partial class QueueConversationSocialExpressionEventTopicScreenshare : IE
     /// A communication&#39;s after-call work data.
     /// </summary>
     /// <value>A communication&#39;s after-call work data.</value>
-    [DataMember(Name = "afterCallWork", EmitDefaultValue = false)]
+    [JsonPropertyName("afterCallWork")]
     public QueueConversationSocialExpressionEventTopicAfterCallWork AfterCallWork { get; set; }
 
 
@@ -435,7 +435,7 @@ public partial class QueueConversationSocialExpressionEventTopicScreenshare : IE
     /// Indicates if after-call is required for a communication. Only used when the ACW Setting is Agent Requested.
     /// </summary>
     /// <value>Indicates if after-call is required for a communication. Only used when the ACW Setting is Agent Requested.</value>
-    [DataMember(Name = "afterCallWorkRequired", EmitDefaultValue = false)]
+    [JsonPropertyName("afterCallWorkRequired")]
     public bool? AfterCallWorkRequired { get; set; }
 
 
@@ -444,7 +444,7 @@ public partial class QueueConversationSocialExpressionEventTopicScreenshare : IE
     /// Represents the queue setting for this media.
     /// </summary>
     /// <value>Represents the queue setting for this media.</value>
-    [DataMember(Name = "queueMediaSettings", EmitDefaultValue = false)]
+    [JsonPropertyName("queueMediaSettings")]
     public QueueConversationSocialExpressionEventTopicQueueMediaSettings QueueMediaSettings { get; set; }
 
 

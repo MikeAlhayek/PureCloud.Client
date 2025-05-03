@@ -1,12 +1,12 @@
-using System.Runtime.Serialization;
 using System.Text;
+using System.Text.Json.Serialization;
 
 namespace PureCloud.Client.Models;
 
 /// <summary>
 /// TwitterDataHistoricalTweetResponse
 /// </summary>
-[DataContract]
+
 public partial class TwitterDataHistoricalTweetResponse : IEquatable<TwitterDataHistoricalTweetResponse>
 {
     /// <summary>
@@ -29,7 +29,7 @@ public partial class TwitterDataHistoricalTweetResponse : IEquatable<TwitterData
     /// The count of matching tweets using the searchTerms.
     /// </summary>
     /// <value>The count of matching tweets using the searchTerms.</value>
-    [DataMember(Name = "matchingTweets", EmitDefaultValue = false)]
+    [JsonPropertyName("matchingTweets")]
     public long? MatchingTweets { get; set; }
 
 
@@ -38,7 +38,7 @@ public partial class TwitterDataHistoricalTweetResponse : IEquatable<TwitterData
     /// The number of days used for the query
     /// </summary>
     /// <value>The number of days used for the query</value>
-    [DataMember(Name = "previousNumberOfDays", EmitDefaultValue = false)]
+    [JsonPropertyName("previousNumberOfDays")]
     public int? PreviousNumberOfDays { get; set; }
 
 
@@ -47,7 +47,7 @@ public partial class TwitterDataHistoricalTweetResponse : IEquatable<TwitterData
     /// The tweet usage of the org
     /// </summary>
     /// <value>The tweet usage of the org</value>
-    [DataMember(Name = "usageStatistics", EmitDefaultValue = false)]
+    [JsonPropertyName("usageStatistics")]
     public TweetUsage UsageStatistics { get; set; }
 
 

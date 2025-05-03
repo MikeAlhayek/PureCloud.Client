@@ -7,14 +7,14 @@ namespace PureCloud.Client.Models;
 /// <summary>
 /// BuIntradayDataGroup
 /// </summary>
-[DataContract]
+
 public partial class BuIntradayDataGroup : IEquatable<BuIntradayDataGroup>
 {
     /// <summary>
     /// The media type associated with this intraday group
     /// </summary>
     /// <value>The media type associated with this intraday group</value>
-    [JsonConverter(typeof(JsonStringEnumConverter))]
+    
     public enum MediaTypeEnum
     {
         /// <summary>
@@ -65,7 +65,7 @@ public partial class BuIntradayDataGroup : IEquatable<BuIntradayDataGroup>
     /// The media type associated with this intraday group
     /// </summary>
     /// <value>The media type associated with this intraday group</value>
-    [DataMember(Name = "mediaType", EmitDefaultValue = false)]
+    [JsonPropertyName("mediaType")]
     public MediaTypeEnum? MediaType { get; set; }
     /// <summary>
     /// Initializes a new instance of the <see cref="BuIntradayDataGroup" /> class.
@@ -97,7 +97,7 @@ public partial class BuIntradayDataGroup : IEquatable<BuIntradayDataGroup>
     /// Forecast data summary for this date range
     /// </summary>
     /// <value>Forecast data summary for this date range</value>
-    [DataMember(Name = "forecastDataSummary", EmitDefaultValue = false)]
+    [JsonPropertyName("forecastDataSummary")]
     public BuIntradayForecastData ForecastDataSummary { get; set; }
 
 
@@ -106,7 +106,7 @@ public partial class BuIntradayDataGroup : IEquatable<BuIntradayDataGroup>
     /// Forecast data per interval for this date range
     /// </summary>
     /// <value>Forecast data per interval for this date range</value>
-    [DataMember(Name = "forecastDataPerInterval", EmitDefaultValue = false)]
+    [JsonPropertyName("forecastDataPerInterval")]
     public List<BuIntradayForecastData> ForecastDataPerInterval { get; set; }
 
 
@@ -115,7 +115,7 @@ public partial class BuIntradayDataGroup : IEquatable<BuIntradayDataGroup>
     /// Schedule data summary for this date range
     /// </summary>
     /// <value>Schedule data summary for this date range</value>
-    [DataMember(Name = "scheduleDataSummary", EmitDefaultValue = false)]
+    [JsonPropertyName("scheduleDataSummary")]
     public BuIntradayScheduleData ScheduleDataSummary { get; set; }
 
 
@@ -124,7 +124,7 @@ public partial class BuIntradayDataGroup : IEquatable<BuIntradayDataGroup>
     /// Schedule data per interval for this date range
     /// </summary>
     /// <value>Schedule data per interval for this date range</value>
-    [DataMember(Name = "scheduleDataPerInterval", EmitDefaultValue = false)]
+    [JsonPropertyName("scheduleDataPerInterval")]
     public List<BuIntradayScheduleData> ScheduleDataPerInterval { get; set; }
 
 
@@ -133,7 +133,7 @@ public partial class BuIntradayDataGroup : IEquatable<BuIntradayDataGroup>
     /// Performance prediction data summary for this date range
     /// </summary>
     /// <value>Performance prediction data summary for this date range</value>
-    [DataMember(Name = "performancePredictionDataSummary", EmitDefaultValue = false)]
+    [JsonPropertyName("performancePredictionDataSummary")]
     public IntradayPerformancePredictionData PerformancePredictionDataSummary { get; set; }
 
 
@@ -142,7 +142,7 @@ public partial class BuIntradayDataGroup : IEquatable<BuIntradayDataGroup>
     /// Performance prediction data per interval for this date range
     /// </summary>
     /// <value>Performance prediction data per interval for this date range</value>
-    [DataMember(Name = "performancePredictionDataPerInterval", EmitDefaultValue = false)]
+    [JsonPropertyName("performancePredictionDataPerInterval")]
     public List<IntradayPerformancePredictionData> PerformancePredictionDataPerInterval { get; set; }
 
 

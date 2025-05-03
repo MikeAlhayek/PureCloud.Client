@@ -1,12 +1,12 @@
-using System.Runtime.Serialization;
 using System.Text;
+using System.Text.Json.Serialization;
 
 namespace PureCloud.Client.Models;
 
 /// <summary>
 /// JourneyAppEventsNotificationGeoLocation
 /// </summary>
-[DataContract]
+
 public partial class JourneyAppEventsNotificationGeoLocation : IEquatable<JourneyAppEventsNotificationGeoLocation>
 {
     /// <summary>
@@ -42,7 +42,7 @@ public partial class JourneyAppEventsNotificationGeoLocation : IEquatable<Journe
     /// <summary>
     /// Gets or Sets Country
     /// </summary>
-    [DataMember(Name = "country", EmitDefaultValue = false)]
+    [JsonPropertyName("country")]
     public string Country { get; set; }
 
 
@@ -50,7 +50,7 @@ public partial class JourneyAppEventsNotificationGeoLocation : IEquatable<Journe
     /// <summary>
     /// Gets or Sets CountryName
     /// </summary>
-    [DataMember(Name = "countryName", EmitDefaultValue = false)]
+    [JsonPropertyName("countryName")]
     public string CountryName { get; set; }
 
 
@@ -58,7 +58,7 @@ public partial class JourneyAppEventsNotificationGeoLocation : IEquatable<Journe
     /// <summary>
     /// Gets or Sets Latitude
     /// </summary>
-    [DataMember(Name = "latitude", EmitDefaultValue = false)]
+    [JsonPropertyName("latitude")]
     public double? Latitude { get; set; }
 
 
@@ -66,7 +66,7 @@ public partial class JourneyAppEventsNotificationGeoLocation : IEquatable<Journe
     /// <summary>
     /// Gets or Sets Longitude
     /// </summary>
-    [DataMember(Name = "longitude", EmitDefaultValue = false)]
+    [JsonPropertyName("longitude")]
     public double? Longitude { get; set; }
 
 
@@ -74,7 +74,7 @@ public partial class JourneyAppEventsNotificationGeoLocation : IEquatable<Journe
     /// <summary>
     /// Gets or Sets Locality
     /// </summary>
-    [DataMember(Name = "locality", EmitDefaultValue = false)]
+    [JsonPropertyName("locality")]
     public string Locality { get; set; }
 
 
@@ -82,7 +82,7 @@ public partial class JourneyAppEventsNotificationGeoLocation : IEquatable<Journe
     /// <summary>
     /// Gets or Sets PostalCode
     /// </summary>
-    [DataMember(Name = "postalCode", EmitDefaultValue = false)]
+    [JsonPropertyName("postalCode")]
     public string PostalCode { get; set; }
 
 
@@ -90,7 +90,7 @@ public partial class JourneyAppEventsNotificationGeoLocation : IEquatable<Journe
     /// <summary>
     /// Gets or Sets Region
     /// </summary>
-    [DataMember(Name = "region", EmitDefaultValue = false)]
+    [JsonPropertyName("region")]
     public string Region { get; set; }
 
 
@@ -98,7 +98,7 @@ public partial class JourneyAppEventsNotificationGeoLocation : IEquatable<Journe
     /// <summary>
     /// Gets or Sets RegionName
     /// </summary>
-    [DataMember(Name = "regionName", EmitDefaultValue = false)]
+    [JsonPropertyName("regionName")]
     public string RegionName { get; set; }
 
 
@@ -106,7 +106,7 @@ public partial class JourneyAppEventsNotificationGeoLocation : IEquatable<Journe
     /// <summary>
     /// Gets or Sets Timezone
     /// </summary>
-    [DataMember(Name = "timezone", EmitDefaultValue = false)]
+    [JsonPropertyName("timezone")]
     public string Timezone { get; set; }
 
 
@@ -114,7 +114,7 @@ public partial class JourneyAppEventsNotificationGeoLocation : IEquatable<Journe
     /// <summary>
     /// Gets or Sets Source
     /// </summary>
-    [DataMember(Name = "source", EmitDefaultValue = false)]
+    [JsonPropertyName("source")]
     public string Source { get; set; }
 
 

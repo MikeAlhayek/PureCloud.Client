@@ -7,14 +7,14 @@ namespace PureCloud.Client.Models;
 /// <summary>
 /// JourneyViewLinkTimeConstraint
 /// </summary>
-[DataContract]
+
 public partial class JourneyViewLinkTimeConstraint : IEquatable<JourneyViewLinkTimeConstraint>
 {
     /// <summary>
     /// The unit for the link's time constraint
     /// </summary>
     /// <value>The unit for the link's time constraint</value>
-    [JsonConverter(typeof(JsonStringEnumConverter))]
+    
     public enum UnitEnum
     {
         /// <summary>
@@ -65,7 +65,7 @@ public partial class JourneyViewLinkTimeConstraint : IEquatable<JourneyViewLinkT
     /// The unit for the link's time constraint
     /// </summary>
     /// <value>The unit for the link's time constraint</value>
-    [DataMember(Name = "unit", EmitDefaultValue = false)]
+    [JsonPropertyName("unit")]
     public UnitEnum? Unit { get; set; }
     /// <summary>
     /// Initializes a new instance of the <see cref="JourneyViewLinkTimeConstraint" /> class.
@@ -87,7 +87,7 @@ public partial class JourneyViewLinkTimeConstraint : IEquatable<JourneyViewLinkT
     /// The value for the link&#39;s time constraint
     /// </summary>
     /// <value>The value for the link&#39;s time constraint</value>
-    [DataMember(Name = "value", EmitDefaultValue = false)]
+    [JsonPropertyName("value")]
     public int? Value { get; set; }
 
 

@@ -1,12 +1,12 @@
-using System.Runtime.Serialization;
 using System.Text;
+using System.Text.Json.Serialization;
 
 namespace PureCloud.Client.Models;
 
 /// <summary>
 /// QueryResponseStats
 /// </summary>
-[DataContract]
+
 public partial class QueryResponseStats : IEquatable<QueryResponseStats>
 {
     /// <summary>
@@ -25,7 +25,7 @@ public partial class QueryResponseStats : IEquatable<QueryResponseStats>
     /// The count for this metric
     /// </summary>
     /// <value>The count for this metric</value>
-    [DataMember(Name = "count", EmitDefaultValue = false)]
+    [JsonPropertyName("count")]
     public int? Count { get; set; }
 
 

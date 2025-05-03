@@ -7,14 +7,14 @@ namespace PureCloud.Client.Models;
 /// <summary>
 /// UserActivityMetricValue
 /// </summary>
-[DataContract]
+
 public partial class UserActivityMetricValue : IEquatable<UserActivityMetricValue>
 {
     /// <summary>
     /// Metric
     /// </summary>
     /// <value>Metric</value>
-    [JsonConverter(typeof(JsonStringEnumConverter))]
+    
     public enum MetricEnum
     {
         /// <summary>
@@ -41,7 +41,7 @@ public partial class UserActivityMetricValue : IEquatable<UserActivityMetricValu
     /// Metric
     /// </summary>
     /// <value>Metric</value>
-    [DataMember(Name = "metric", EmitDefaultValue = false)]
+    [JsonPropertyName("metric")]
     public MetricEnum? Metric { get; set; }
     /// <summary>
     /// Initializes a new instance of the <see cref="UserActivityMetricValue" /> class.
@@ -67,7 +67,7 @@ public partial class UserActivityMetricValue : IEquatable<UserActivityMetricValu
     /// Metric qualifier
     /// </summary>
     /// <value>Metric qualifier</value>
-    [DataMember(Name = "qualifier", EmitDefaultValue = false)]
+    [JsonPropertyName("qualifier")]
     public string Qualifier { get; set; }
 
 
@@ -76,7 +76,7 @@ public partial class UserActivityMetricValue : IEquatable<UserActivityMetricValu
     /// Entity ids for matching entities if details were requested
     /// </summary>
     /// <value>Entity ids for matching entities if details were requested</value>
-    [DataMember(Name = "entityIds", EmitDefaultValue = false)]
+    [JsonPropertyName("entityIds")]
     public List<string> EntityIds { get; set; }
 
 
@@ -85,7 +85,7 @@ public partial class UserActivityMetricValue : IEquatable<UserActivityMetricValu
     /// Metric count
     /// </summary>
     /// <value>Metric count</value>
-    [DataMember(Name = "count", EmitDefaultValue = false)]
+    [JsonPropertyName("count")]
     public int? Count { get; set; }
 
 

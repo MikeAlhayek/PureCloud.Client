@@ -1,4 +1,3 @@
-using System.Runtime.Serialization;
 using System.Text;
 using System.Text.Json.Serialization;
 
@@ -7,7 +6,7 @@ namespace PureCloud.Client.Models;
 /// <summary>
 /// Details for an Integration
 /// </summary>
-[DataContract]
+
 public partial class CreateIntegrationRequest : IEquatable<CreateIntegrationRequest>
 {
 
@@ -34,7 +33,7 @@ public partial class CreateIntegrationRequest : IEquatable<CreateIntegrationRequ
     /// The globally unique identifier for the object.
     /// </summary>
     /// <value>The globally unique identifier for the object.</value>
-    [DataMember(Name = "id", EmitDefaultValue = false)]
+    [JsonPropertyName("id")]
     public string Id { get; private set; }
 
 
@@ -43,7 +42,7 @@ public partial class CreateIntegrationRequest : IEquatable<CreateIntegrationRequ
     /// The name of the integration, used to distinguish this integration from others of the same type.
     /// </summary>
     /// <value>The name of the integration, used to distinguish this integration from others of the same type.</value>
-    [DataMember(Name = "name", EmitDefaultValue = false)]
+    [JsonPropertyName("name")]
     public string Name { get; set; }
 
 
@@ -52,7 +51,7 @@ public partial class CreateIntegrationRequest : IEquatable<CreateIntegrationRequ
     /// Type of the integration to create.
     /// </summary>
     /// <value>Type of the integration to create.</value>
-    [DataMember(Name = "integrationType", EmitDefaultValue = false)]
+    [JsonPropertyName("integrationType")]
     public IntegrationType IntegrationType { get; set; }
 
 
@@ -61,7 +60,7 @@ public partial class CreateIntegrationRequest : IEquatable<CreateIntegrationRequ
     /// The URI for this object
     /// </summary>
     /// <value>The URI for this object</value>
-    [DataMember(Name = "selfUri", EmitDefaultValue = false)]
+    [JsonPropertyName("selfUri")]
     public string SelfUri { get; private set; }
 
 

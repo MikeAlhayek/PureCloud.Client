@@ -1,12 +1,12 @@
-using System.Runtime.Serialization;
 using System.Text;
+using System.Text.Json.Serialization;
 
 namespace PureCloud.Client.Models;
 
 /// <summary>
 /// ContestScoresAgentTrendList
 /// </summary>
-[DataContract]
+
 public partial class ContestScoresAgentTrendList : IEquatable<ContestScoresAgentTrendList>
 {
     /// <summary>
@@ -26,7 +26,7 @@ public partial class ContestScoresAgentTrendList : IEquatable<ContestScoresAgent
     /// <summary>
     /// Gets or Sets Entities
     /// </summary>
-    [DataMember(Name = "entities", EmitDefaultValue = false)]
+    [JsonPropertyName("entities")]
     public List<ContestScoresAgentTrend> Entities { get; set; }
 
 
@@ -35,7 +35,7 @@ public partial class ContestScoresAgentTrendList : IEquatable<ContestScoresAgent
     /// The Contest Scores Leaderboard user
     /// </summary>
     /// <value>The Contest Scores Leaderboard user</value>
-    [DataMember(Name = "user", EmitDefaultValue = false)]
+    [JsonPropertyName("user")]
     public UserReference User { get; set; }
 
 

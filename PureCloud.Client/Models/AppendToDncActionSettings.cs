@@ -7,14 +7,14 @@ namespace PureCloud.Client.Models;
 /// <summary>
 /// AppendToDncActionSettings
 /// </summary>
-[DataContract]
+
 public partial class AppendToDncActionSettings : IEquatable<AppendToDncActionSettings>
 {
     /// <summary>
     /// The Dnc List Type to append entries to
     /// </summary>
     /// <value>The Dnc List Type to append entries to</value>
-    [JsonConverter(typeof(JsonStringEnumConverter))]
+    
     public enum ListTypeEnum
     {
         /// <summary>
@@ -41,7 +41,7 @@ public partial class AppendToDncActionSettings : IEquatable<AppendToDncActionSet
     /// The Dnc List Type to append entries to
     /// </summary>
     /// <value>The Dnc List Type to append entries to</value>
-    [DataMember(Name = "listType", EmitDefaultValue = false)]
+    [JsonPropertyName("listType")]
     public ListTypeEnum? ListType { get; set; }
 
     /// <summary>
@@ -69,7 +69,7 @@ public partial class AppendToDncActionSettings : IEquatable<AppendToDncActionSet
     /// Whether to expire the record appended to the DNC list.
     /// </summary>
     /// <value>Whether to expire the record appended to the DNC list.</value>
-    [DataMember(Name = "expire", EmitDefaultValue = false)]
+    [JsonPropertyName("expire")]
     public bool? Expire { get; set; }
 
 
@@ -78,7 +78,7 @@ public partial class AppendToDncActionSettings : IEquatable<AppendToDncActionSet
     /// If &#39;expire&#39; is set to true, how long to keep the record.
     /// </summary>
     /// <value>If &#39;expire&#39; is set to true, how long to keep the record.</value>
-    [DataMember(Name = "expirationDuration", EmitDefaultValue = false)]
+    [JsonPropertyName("expirationDuration")]
     public string ExpirationDuration { get; set; }
 
 

@@ -1,4 +1,3 @@
-using System.Runtime.Serialization;
 using System.Text;
 using System.Text.Json.Serialization;
 
@@ -7,7 +6,7 @@ namespace PureCloud.Client.Models;
 /// <summary>
 /// KnowledgeDocumentBulkUpdateRequest
 /// </summary>
-[DataContract]
+
 public partial class KnowledgeDocumentBulkUpdateRequest : IEquatable<KnowledgeDocumentBulkUpdateRequest>
 {
 
@@ -32,7 +31,7 @@ public partial class KnowledgeDocumentBulkUpdateRequest : IEquatable<KnowledgeDo
     /// List of unique identifiers referencing documents that are to be updated
     /// </summary>
     /// <value>List of unique identifiers referencing documents that are to be updated</value>
-    [DataMember(Name = "entities", EmitDefaultValue = false)]
+    [JsonPropertyName("entities")]
     public List<KnowledgeDocumentBulkUpdateEntity> Entities { get; set; }
 
 

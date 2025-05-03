@@ -7,14 +7,14 @@ namespace PureCloud.Client.Models;
 /// <summary>
 /// TwitterIntegration
 /// </summary>
-[DataContract]
+
 public partial class TwitterIntegration : IEquatable<TwitterIntegration>
 {
     /// <summary>
     /// Status of asynchronous create operation
     /// </summary>
     /// <value>Status of asynchronous create operation</value>
-    [JsonConverter(typeof(JsonStringEnumConverter))]
+    
     public enum CreateStatusEnum
     {
         /// <summary>
@@ -47,7 +47,7 @@ public partial class TwitterIntegration : IEquatable<TwitterIntegration>
     /// Status of asynchronous create operation
     /// </summary>
     /// <value>Status of asynchronous create operation</value>
-    [DataMember(Name = "createStatus", EmitDefaultValue = false)]
+    [JsonPropertyName("createStatus")]
     public CreateStatusEnum? CreateStatus { get; private set; }
 
     /// <summary>
@@ -87,7 +87,7 @@ public partial class TwitterIntegration : IEquatable<TwitterIntegration>
     /// A unique Integration ID
     /// </summary>
     /// <value>A unique Integration ID</value>
-    [DataMember(Name = "id", EmitDefaultValue = false)]
+    [JsonPropertyName("id")]
     public string Id { get; private set; }
 
 
@@ -96,7 +96,7 @@ public partial class TwitterIntegration : IEquatable<TwitterIntegration>
     /// The name of the Twitter Integration
     /// </summary>
     /// <value>The name of the Twitter Integration</value>
-    [DataMember(Name = "name", EmitDefaultValue = false)]
+    [JsonPropertyName("name")]
     public string Name { get; set; }
 
 
@@ -105,7 +105,7 @@ public partial class TwitterIntegration : IEquatable<TwitterIntegration>
     /// Defines the SupportedContent profile configured for an integration
     /// </summary>
     /// <value>Defines the SupportedContent profile configured for an integration</value>
-    [DataMember(Name = "supportedContent", EmitDefaultValue = false)]
+    [JsonPropertyName("supportedContent")]
     public SupportedContentReference SupportedContent { get; set; }
 
 
@@ -113,7 +113,7 @@ public partial class TwitterIntegration : IEquatable<TwitterIntegration>
     /// <summary>
     /// Gets or Sets MessagingSetting
     /// </summary>
-    [DataMember(Name = "messagingSetting", EmitDefaultValue = false)]
+    [JsonPropertyName("messagingSetting")]
     public MessagingSettingReference MessagingSetting { get; set; }
 
 
@@ -122,7 +122,7 @@ public partial class TwitterIntegration : IEquatable<TwitterIntegration>
     /// The status of the Twitter Integration
     /// </summary>
     /// <value>The status of the Twitter Integration</value>
-    [DataMember(Name = "status", EmitDefaultValue = false)]
+    [JsonPropertyName("status")]
     public string Status { get; set; }
 
 
@@ -131,7 +131,7 @@ public partial class TwitterIntegration : IEquatable<TwitterIntegration>
     /// The recipient reference associated with the Twitter Integration This recipient is used to associate a flow to an integration
     /// </summary>
     /// <value>The recipient reference associated with the Twitter Integration This recipient is used to associate a flow to an integration</value>
-    [DataMember(Name = "recipient", EmitDefaultValue = false)]
+    [JsonPropertyName("recipient")]
     public DomainEntityRef Recipient { get; private set; }
 
 
@@ -140,7 +140,7 @@ public partial class TwitterIntegration : IEquatable<TwitterIntegration>
     /// Date this Integration was created. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z
     /// </summary>
     /// <value>Date this Integration was created. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z</value>
-    [DataMember(Name = "dateCreated", EmitDefaultValue = false)]
+    [JsonPropertyName("dateCreated")]
     public DateTime? DateCreated { get; set; }
 
 
@@ -149,7 +149,7 @@ public partial class TwitterIntegration : IEquatable<TwitterIntegration>
     /// Date this Integration was modified. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z
     /// </summary>
     /// <value>Date this Integration was modified. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z</value>
-    [DataMember(Name = "dateModified", EmitDefaultValue = false)]
+    [JsonPropertyName("dateModified")]
     public DateTime? DateModified { get; set; }
 
 
@@ -158,7 +158,7 @@ public partial class TwitterIntegration : IEquatable<TwitterIntegration>
     /// User reference that created this Integration
     /// </summary>
     /// <value>User reference that created this Integration</value>
-    [DataMember(Name = "createdBy", EmitDefaultValue = false)]
+    [JsonPropertyName("createdBy")]
     public DomainEntityRef CreatedBy { get; set; }
 
 
@@ -167,7 +167,7 @@ public partial class TwitterIntegration : IEquatable<TwitterIntegration>
     /// User reference that last modified this Integration
     /// </summary>
     /// <value>User reference that last modified this Integration</value>
-    [DataMember(Name = "modifiedBy", EmitDefaultValue = false)]
+    [JsonPropertyName("modifiedBy")]
     public DomainEntityRef ModifiedBy { get; set; }
 
 
@@ -176,7 +176,7 @@ public partial class TwitterIntegration : IEquatable<TwitterIntegration>
     /// Version number required for updates
     /// </summary>
     /// <value>Version number required for updates</value>
-    [DataMember(Name = "version", EmitDefaultValue = false)]
+    [JsonPropertyName("version")]
     public int? Version { get; set; }
 
 
@@ -187,7 +187,7 @@ public partial class TwitterIntegration : IEquatable<TwitterIntegration>
     /// Error information returned, if createStatus is set to Error
     /// </summary>
     /// <value>Error information returned, if createStatus is set to Error</value>
-    [DataMember(Name = "createError", EmitDefaultValue = false)]
+    [JsonPropertyName("createError")]
     public ErrorBody CreateError { get; private set; }
 
 
@@ -196,7 +196,7 @@ public partial class TwitterIntegration : IEquatable<TwitterIntegration>
     /// The URI for this object
     /// </summary>
     /// <value>The URI for this object</value>
-    [DataMember(Name = "selfUri", EmitDefaultValue = false)]
+    [JsonPropertyName("selfUri")]
     public string SelfUri { get; private set; }
 
 

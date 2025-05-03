@@ -7,13 +7,13 @@ namespace PureCloud.Client.Models;
 /// <summary>
 /// CoachingAppointmentAggregateRequest
 /// </summary>
-[DataContract]
+
 public partial class CoachingAppointmentAggregateRequest : IEquatable<CoachingAppointmentAggregateRequest>
 {
     /// <summary>
     /// Gets or Sets Metrics
     /// </summary>
-    [JsonConverter(typeof(JsonStringEnumConverter))]
+    
     public enum MetricsEnum
     {
         /// <summary>
@@ -63,7 +63,7 @@ public partial class CoachingAppointmentAggregateRequest : IEquatable<CoachingAp
     /// <summary>
     /// Gets or Sets GroupBy
     /// </summary>
-    [JsonConverter(typeof(JsonStringEnumConverter))]
+    
     public enum GroupByEnum
     {
         /// <summary>
@@ -108,7 +108,7 @@ public partial class CoachingAppointmentAggregateRequest : IEquatable<CoachingAp
     /// Interval to aggregate across. End date is not inclusive. Intervals are represented as an ISO-8601 string. For example: YYYY-MM-DDThh:mm:ss/YYYY-MM-DDThh:mm:ss
     /// </summary>
     /// <value>Interval to aggregate across. End date is not inclusive. Intervals are represented as an ISO-8601 string. For example: YYYY-MM-DDThh:mm:ss/YYYY-MM-DDThh:mm:ss</value>
-    [DataMember(Name = "interval", EmitDefaultValue = false)]
+    [JsonPropertyName("interval")]
     public string Interval { get; set; }
 
 
@@ -117,7 +117,7 @@ public partial class CoachingAppointmentAggregateRequest : IEquatable<CoachingAp
     /// A list of metrics to aggregate.  If omitted, all metrics are returned.
     /// </summary>
     /// <value>A list of metrics to aggregate.  If omitted, all metrics are returned.</value>
-    [DataMember(Name = "metrics", EmitDefaultValue = false)]
+    [JsonPropertyName("metrics")]
     public List<MetricsEnum> Metrics { get; set; }
 
 
@@ -126,7 +126,7 @@ public partial class CoachingAppointmentAggregateRequest : IEquatable<CoachingAp
     /// An optional list of items by which to group the result data.
     /// </summary>
     /// <value>An optional list of items by which to group the result data.</value>
-    [DataMember(Name = "groupBy", EmitDefaultValue = false)]
+    [JsonPropertyName("groupBy")]
     public List<GroupByEnum> GroupBy { get; set; }
 
 
@@ -135,7 +135,7 @@ public partial class CoachingAppointmentAggregateRequest : IEquatable<CoachingAp
     /// The filter applied to the data
     /// </summary>
     /// <value>The filter applied to the data</value>
-    [DataMember(Name = "filter", EmitDefaultValue = false)]
+    [JsonPropertyName("filter")]
     public QueryRequestFilter Filter { get; set; }
 
 

@@ -1,12 +1,12 @@
-using System.Runtime.Serialization;
 using System.Text;
+using System.Text.Json.Serialization;
 
 namespace PureCloud.Client.Models;
 
 /// <summary>
 /// MessageMediaPolicy
 /// </summary>
-[DataContract]
+
 public partial class MessageMediaPolicy : IEquatable<MessageMediaPolicy>
 {
     /// <summary>
@@ -27,7 +27,7 @@ public partial class MessageMediaPolicy : IEquatable<MessageMediaPolicy>
     /// Actions applied when specified conditions are met
     /// </summary>
     /// <value>Actions applied when specified conditions are met</value>
-    [DataMember(Name = "actions", EmitDefaultValue = false)]
+    [JsonPropertyName("actions")]
     public PolicyActions Actions { get; set; }
 
 
@@ -36,7 +36,7 @@ public partial class MessageMediaPolicy : IEquatable<MessageMediaPolicy>
     /// Conditions for when actions should be applied
     /// </summary>
     /// <value>Conditions for when actions should be applied</value>
-    [DataMember(Name = "conditions", EmitDefaultValue = false)]
+    [JsonPropertyName("conditions")]
     public MessageMediaPolicyConditions Conditions { get; set; }
 
 

@@ -1,12 +1,12 @@
-using System.Runtime.Serialization;
 using System.Text;
+using System.Text.Json.Serialization;
 
 namespace PureCloud.Client.Models;
 
 /// <summary>
 /// Defines components of the Action Config.
 /// </summary>
-[DataContract]
+
 public partial class ActionConfig : IEquatable<ActionConfig>
 {
     /// <summary>
@@ -29,7 +29,7 @@ public partial class ActionConfig : IEquatable<ActionConfig>
     /// Optional 1-60 second timeout enforced on the execution or test of this action. This setting is invalid for Custom Authentication Actions.
     /// </summary>
     /// <value>Optional 1-60 second timeout enforced on the execution or test of this action. This setting is invalid for Custom Authentication Actions.</value>
-    [DataMember(Name = "timeoutSeconds", EmitDefaultValue = false)]
+    [JsonPropertyName("timeoutSeconds")]
     public int? TimeoutSeconds { get; set; }
 
 
@@ -38,7 +38,7 @@ public partial class ActionConfig : IEquatable<ActionConfig>
     /// Configuration of outbound request.
     /// </summary>
     /// <value>Configuration of outbound request.</value>
-    [DataMember(Name = "request", EmitDefaultValue = false)]
+    [JsonPropertyName("request")]
     public RequestConfig Request { get; set; }
 
 
@@ -47,7 +47,7 @@ public partial class ActionConfig : IEquatable<ActionConfig>
     /// Configuration of response processing.
     /// </summary>
     /// <value>Configuration of response processing.</value>
-    [DataMember(Name = "response", EmitDefaultValue = false)]
+    [JsonPropertyName("response")]
     public ResponseConfig Response { get; set; }
 
 

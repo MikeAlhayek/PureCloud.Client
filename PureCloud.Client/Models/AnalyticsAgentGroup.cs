@@ -7,14 +7,14 @@ namespace PureCloud.Client.Models;
 /// <summary>
 /// AnalyticsAgentGroup
 /// </summary>
-[DataContract]
+
 public partial class AnalyticsAgentGroup : IEquatable<AnalyticsAgentGroup>
 {
     /// <summary>
     /// Conditional group routing agent group type
     /// </summary>
     /// <value>Conditional group routing agent group type</value>
-    [JsonConverter(typeof(JsonStringEnumConverter))]
+    
     public enum AgentGroupTypeEnum
     {
         /// <summary>
@@ -47,7 +47,7 @@ public partial class AnalyticsAgentGroup : IEquatable<AnalyticsAgentGroup>
     /// Conditional group routing agent group type
     /// </summary>
     /// <value>Conditional group routing agent group type</value>
-    [DataMember(Name = "agentGroupType", EmitDefaultValue = false)]
+    [JsonPropertyName("agentGroupType")]
     public AgentGroupTypeEnum? AgentGroupType { get; set; }
     /// <summary>
     /// Initializes a new instance of the <see cref="AnalyticsAgentGroup" /> class.
@@ -67,7 +67,7 @@ public partial class AnalyticsAgentGroup : IEquatable<AnalyticsAgentGroup>
     /// Conditional group routing agent group identifier
     /// </summary>
     /// <value>Conditional group routing agent group identifier</value>
-    [DataMember(Name = "agentGroupId", EmitDefaultValue = false)]
+    [JsonPropertyName("agentGroupId")]
     public string AgentGroupId { get; set; }
 
 

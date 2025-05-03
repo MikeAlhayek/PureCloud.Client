@@ -7,14 +7,14 @@ namespace PureCloud.Client.Models;
 /// <summary>
 /// KnowledgeSyncJobResponse
 /// </summary>
-[DataContract]
+
 public partial class KnowledgeSyncJobResponse : IEquatable<KnowledgeSyncJobResponse>
 {
     /// <summary>
     /// The status of the export job.
     /// </summary>
     /// <value>The status of the export job.</value>
-    [JsonConverter(typeof(JsonStringEnumConverter))]
+    
     public enum StatusEnum
     {
         /// <summary>
@@ -95,7 +95,7 @@ public partial class KnowledgeSyncJobResponse : IEquatable<KnowledgeSyncJobRespo
     /// The status of the export job.
     /// </summary>
     /// <value>The status of the export job.</value>
-    [DataMember(Name = "status", EmitDefaultValue = false)]
+    [JsonPropertyName("status")]
     public StatusEnum? Status { get; set; }
     /// <summary>
     /// Initializes a new instance of the <see cref="KnowledgeSyncJobResponse" /> class.
@@ -133,7 +133,7 @@ public partial class KnowledgeSyncJobResponse : IEquatable<KnowledgeSyncJobRespo
     /// Id of the sync job.
     /// </summary>
     /// <value>Id of the sync job.</value>
-    [DataMember(Name = "id", EmitDefaultValue = false)]
+    [JsonPropertyName("id")]
     public string Id { get; set; }
 
 
@@ -141,7 +141,7 @@ public partial class KnowledgeSyncJobResponse : IEquatable<KnowledgeSyncJobRespo
     /// <summary>
     /// Gets or Sets UploadKey
     /// </summary>
-    [DataMember(Name = "uploadKey", EmitDefaultValue = false)]
+    [JsonPropertyName("uploadKey")]
     public string UploadKey { get; set; }
 
 
@@ -152,7 +152,7 @@ public partial class KnowledgeSyncJobResponse : IEquatable<KnowledgeSyncJobRespo
     /// Report of the sync job
     /// </summary>
     /// <value>Report of the sync job</value>
-    [DataMember(Name = "report", EmitDefaultValue = false)]
+    [JsonPropertyName("report")]
     public KnowledgeSyncJobReport Report { get; set; }
 
 
@@ -161,7 +161,7 @@ public partial class KnowledgeSyncJobResponse : IEquatable<KnowledgeSyncJobRespo
     /// Knowledge base which document export belongs to.
     /// </summary>
     /// <value>Knowledge base which document export belongs to.</value>
-    [DataMember(Name = "knowledgeBase", EmitDefaultValue = false)]
+    [JsonPropertyName("knowledgeBase")]
     public KnowledgeBaseReference KnowledgeBase { get; set; }
 
 
@@ -170,7 +170,7 @@ public partial class KnowledgeSyncJobResponse : IEquatable<KnowledgeSyncJobRespo
     /// The timestamp of when the export began. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z
     /// </summary>
     /// <value>The timestamp of when the export began. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z</value>
-    [DataMember(Name = "dateCreated", EmitDefaultValue = false)]
+    [JsonPropertyName("dateCreated")]
     public DateTime? DateCreated { get; set; }
 
 
@@ -179,7 +179,7 @@ public partial class KnowledgeSyncJobResponse : IEquatable<KnowledgeSyncJobRespo
     /// The timestamp of when the export stopped. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z
     /// </summary>
     /// <value>The timestamp of when the export stopped. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z</value>
-    [DataMember(Name = "dateModified", EmitDefaultValue = false)]
+    [JsonPropertyName("dateModified")]
     public DateTime? DateModified { get; set; }
 
 
@@ -188,7 +188,7 @@ public partial class KnowledgeSyncJobResponse : IEquatable<KnowledgeSyncJobRespo
     /// The user who created the operation
     /// </summary>
     /// <value>The user who created the operation</value>
-    [DataMember(Name = "createdBy", EmitDefaultValue = false)]
+    [JsonPropertyName("createdBy")]
     public UserReference CreatedBy { get; set; }
 
 
@@ -197,7 +197,7 @@ public partial class KnowledgeSyncJobResponse : IEquatable<KnowledgeSyncJobRespo
     /// The URL of the location at which the caller can download the sync file, when available.
     /// </summary>
     /// <value>The URL of the location at which the caller can download the sync file, when available.</value>
-    [DataMember(Name = "downloadURL", EmitDefaultValue = false)]
+    [JsonPropertyName("downloadURL")]
     public string DownloadURL { get; set; }
 
 
@@ -206,7 +206,7 @@ public partial class KnowledgeSyncJobResponse : IEquatable<KnowledgeSyncJobRespo
     /// The URL of the location at which the caller can download the entities in json format that failed during the sync.
     /// </summary>
     /// <value>The URL of the location at which the caller can download the entities in json format that failed during the sync.</value>
-    [DataMember(Name = "failedEntitiesURL", EmitDefaultValue = false)]
+    [JsonPropertyName("failedEntitiesURL")]
     public string FailedEntitiesURL { get; set; }
 
 
@@ -215,7 +215,7 @@ public partial class KnowledgeSyncJobResponse : IEquatable<KnowledgeSyncJobRespo
     /// Source of the sync job.
     /// </summary>
     /// <value>Source of the sync job.</value>
-    [DataMember(Name = "source", EmitDefaultValue = false)]
+    [JsonPropertyName("source")]
     public KnowledgeOperationSource Source { get; set; }
 
 
@@ -224,7 +224,7 @@ public partial class KnowledgeSyncJobResponse : IEquatable<KnowledgeSyncJobRespo
     /// The URI for this object
     /// </summary>
     /// <value>The URI for this object</value>
-    [DataMember(Name = "selfUri", EmitDefaultValue = false)]
+    [JsonPropertyName("selfUri")]
     public string SelfUri { get; private set; }
 
 

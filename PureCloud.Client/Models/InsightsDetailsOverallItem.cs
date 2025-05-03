@@ -1,12 +1,12 @@
-using System.Runtime.Serialization;
 using System.Text;
+using System.Text.Json.Serialization;
 
 namespace PureCloud.Client.Models;
 
 /// <summary>
 /// InsightsDetailsOverallItem
 /// </summary>
-[DataContract]
+
 public partial class InsightsDetailsOverallItem : IEquatable<InsightsDetailsOverallItem>
 {
     /// <summary>
@@ -29,7 +29,7 @@ public partial class InsightsDetailsOverallItem : IEquatable<InsightsDetailsOver
     /// Insights data in the comparative period
     /// </summary>
     /// <value>Insights data in the comparative period</value>
-    [DataMember(Name = "comparativePeriod", EmitDefaultValue = false)]
+    [JsonPropertyName("comparativePeriod")]
     public InsightsDetailsOverallPeriodPoints ComparativePeriod { get; set; }
 
 
@@ -38,7 +38,7 @@ public partial class InsightsDetailsOverallItem : IEquatable<InsightsDetailsOver
     /// Insights data in the primary period
     /// </summary>
     /// <value>Insights data in the primary period</value>
-    [DataMember(Name = "primaryPeriod", EmitDefaultValue = false)]
+    [JsonPropertyName("primaryPeriod")]
     public InsightsDetailsOverallPeriodPoints PrimaryPeriod { get; set; }
 
 
@@ -47,7 +47,7 @@ public partial class InsightsDetailsOverallItem : IEquatable<InsightsDetailsOver
     /// Percent of goal change
     /// </summary>
     /// <value>Percent of goal change</value>
-    [DataMember(Name = "percentOfGoalChange", EmitDefaultValue = false)]
+    [JsonPropertyName("percentOfGoalChange")]
     public double? PercentOfGoalChange { get; set; }
 
 

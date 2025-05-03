@@ -1,12 +1,12 @@
-using System.Runtime.Serialization;
 using System.Text;
+using System.Text.Json.Serialization;
 
 namespace PureCloud.Client.Models;
 
 /// <summary>
 /// WfmMoveAgentsCompleteTopicWfmMoveAgentsComplete
 /// </summary>
-[DataContract]
+
 public partial class WfmMoveAgentsCompleteTopicWfmMoveAgentsComplete : IEquatable<WfmMoveAgentsCompleteTopicWfmMoveAgentsComplete>
 {
     /// <summary>
@@ -28,7 +28,7 @@ public partial class WfmMoveAgentsCompleteTopicWfmMoveAgentsComplete : IEquatabl
     /// <summary>
     /// Gets or Sets RequestingUser
     /// </summary>
-    [DataMember(Name = "requestingUser", EmitDefaultValue = false)]
+    [JsonPropertyName("requestingUser")]
     public WfmMoveAgentsCompleteTopicUserReference RequestingUser { get; set; }
 
 
@@ -36,7 +36,7 @@ public partial class WfmMoveAgentsCompleteTopicWfmMoveAgentsComplete : IEquatabl
     /// <summary>
     /// Gets or Sets DestinationManagementUnit
     /// </summary>
-    [DataMember(Name = "destinationManagementUnit", EmitDefaultValue = false)]
+    [JsonPropertyName("destinationManagementUnit")]
     public WfmMoveAgentsCompleteTopicManagementUnit DestinationManagementUnit { get; set; }
 
 
@@ -44,7 +44,7 @@ public partial class WfmMoveAgentsCompleteTopicWfmMoveAgentsComplete : IEquatabl
     /// <summary>
     /// Gets or Sets Results
     /// </summary>
-    [DataMember(Name = "results", EmitDefaultValue = false)]
+    [JsonPropertyName("results")]
     public List<WfmMoveAgentsCompleteTopicWfmMoveAgentData> Results { get; set; }
 
 

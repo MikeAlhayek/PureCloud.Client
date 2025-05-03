@@ -1,12 +1,12 @@
-using System.Runtime.Serialization;
 using System.Text;
+using System.Text.Json.Serialization;
 
 namespace PureCloud.Client.Models;
 
 /// <summary>
 /// MessengerHomeScreen
 /// </summary>
-[DataContract]
+
 public partial class MessengerHomeScreen : IEquatable<MessengerHomeScreen>
 {
     /// <summary>
@@ -27,7 +27,7 @@ public partial class MessengerHomeScreen : IEquatable<MessengerHomeScreen>
     /// whether or not homescreen is enabled
     /// </summary>
     /// <value>whether or not homescreen is enabled</value>
-    [DataMember(Name = "enabled", EmitDefaultValue = false)]
+    [JsonPropertyName("enabled")]
     public bool? Enabled { get; set; }
 
 
@@ -36,7 +36,7 @@ public partial class MessengerHomeScreen : IEquatable<MessengerHomeScreen>
     /// to capture uploaded company logoUrl
     /// </summary>
     /// <value>to capture uploaded company logoUrl</value>
-    [DataMember(Name = "logoUrl", EmitDefaultValue = false)]
+    [JsonPropertyName("logoUrl")]
     public string LogoUrl { get; set; }
 
 

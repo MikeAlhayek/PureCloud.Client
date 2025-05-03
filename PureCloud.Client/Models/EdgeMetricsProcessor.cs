@@ -1,12 +1,12 @@
-using System.Runtime.Serialization;
 using System.Text;
+using System.Text.Json.Serialization;
 
 namespace PureCloud.Client.Models;
 
 /// <summary>
 /// EdgeMetricsProcessor
 /// </summary>
-[DataContract]
+
 public partial class EdgeMetricsProcessor : IEquatable<EdgeMetricsProcessor>
 {
     /// <summary>
@@ -33,7 +33,7 @@ public partial class EdgeMetricsProcessor : IEquatable<EdgeMetricsProcessor>
     /// Percent time processor was active.
     /// </summary>
     /// <value>Percent time processor was active.</value>
-    [DataMember(Name = "activeTimePct", EmitDefaultValue = false)]
+    [JsonPropertyName("activeTimePct")]
     public double? ActiveTimePct { get; set; }
 
 
@@ -42,7 +42,7 @@ public partial class EdgeMetricsProcessor : IEquatable<EdgeMetricsProcessor>
     /// Machine CPU identifier. &#39;total&#39; will always be included in the array and is the total of all CPU resources.
     /// </summary>
     /// <value>Machine CPU identifier. &#39;total&#39; will always be included in the array and is the total of all CPU resources.</value>
-    [DataMember(Name = "cpuId", EmitDefaultValue = false)]
+    [JsonPropertyName("cpuId")]
     public string CpuId { get; set; }
 
 
@@ -51,7 +51,7 @@ public partial class EdgeMetricsProcessor : IEquatable<EdgeMetricsProcessor>
     /// Percent time processor was idle.
     /// </summary>
     /// <value>Percent time processor was idle.</value>
-    [DataMember(Name = "idleTimePct", EmitDefaultValue = false)]
+    [JsonPropertyName("idleTimePct")]
     public double? IdleTimePct { get; set; }
 
 
@@ -60,7 +60,7 @@ public partial class EdgeMetricsProcessor : IEquatable<EdgeMetricsProcessor>
     /// Percent time processor spent in privileged mode.
     /// </summary>
     /// <value>Percent time processor spent in privileged mode.</value>
-    [DataMember(Name = "privilegedTimePct", EmitDefaultValue = false)]
+    [JsonPropertyName("privilegedTimePct")]
     public double? PrivilegedTimePct { get; set; }
 
 
@@ -69,7 +69,7 @@ public partial class EdgeMetricsProcessor : IEquatable<EdgeMetricsProcessor>
     /// Percent time processor spent in user mode.
     /// </summary>
     /// <value>Percent time processor spent in user mode.</value>
-    [DataMember(Name = "userTimePct", EmitDefaultValue = false)]
+    [JsonPropertyName("userTimePct")]
     public double? UserTimePct { get; set; }
 
 

@@ -1,12 +1,12 @@
-using System.Runtime.Serialization;
 using System.Text;
+using System.Text.Json.Serialization;
 
 namespace PureCloud.Client.Models;
 
 /// <summary>
 /// ValidationLimits
 /// </summary>
-[DataContract]
+
 public partial class ValidationLimits : IEquatable<ValidationLimits>
 {
     /// <summary>
@@ -34,7 +34,7 @@ public partial class ValidationLimits : IEquatable<ValidationLimits>
     /// <summary>
     /// Gets or Sets MinLength
     /// </summary>
-    [DataMember(Name = "minLength", EmitDefaultValue = false)]
+    [JsonPropertyName("minLength")]
     public MinLength MinLength { get; set; }
 
 
@@ -42,7 +42,7 @@ public partial class ValidationLimits : IEquatable<ValidationLimits>
     /// <summary>
     /// Gets or Sets MaxLength
     /// </summary>
-    [DataMember(Name = "maxLength", EmitDefaultValue = false)]
+    [JsonPropertyName("maxLength")]
     public MaxLength MaxLength { get; set; }
 
 
@@ -50,7 +50,7 @@ public partial class ValidationLimits : IEquatable<ValidationLimits>
     /// <summary>
     /// Gets or Sets MinItems
     /// </summary>
-    [DataMember(Name = "minItems", EmitDefaultValue = false)]
+    [JsonPropertyName("minItems")]
     public MinLength MinItems { get; set; }
 
 
@@ -58,7 +58,7 @@ public partial class ValidationLimits : IEquatable<ValidationLimits>
     /// <summary>
     /// Gets or Sets MaxItems
     /// </summary>
-    [DataMember(Name = "maxItems", EmitDefaultValue = false)]
+    [JsonPropertyName("maxItems")]
     public MaxLength MaxItems { get; set; }
 
 
@@ -66,7 +66,7 @@ public partial class ValidationLimits : IEquatable<ValidationLimits>
     /// <summary>
     /// Gets or Sets Minimum
     /// </summary>
-    [DataMember(Name = "minimum", EmitDefaultValue = false)]
+    [JsonPropertyName("minimum")]
     public MinLength Minimum { get; set; }
 
 
@@ -74,7 +74,7 @@ public partial class ValidationLimits : IEquatable<ValidationLimits>
     /// <summary>
     /// Gets or Sets Maximum
     /// </summary>
-    [DataMember(Name = "maximum", EmitDefaultValue = false)]
+    [JsonPropertyName("maximum")]
     public MaxLength Maximum { get; set; }
 
 

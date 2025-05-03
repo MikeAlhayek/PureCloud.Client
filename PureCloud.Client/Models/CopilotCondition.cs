@@ -7,14 +7,14 @@ namespace PureCloud.Client.Models;
 /// <summary>
 /// CopilotCondition
 /// </summary>
-[DataContract]
+
 public partial class CopilotCondition : IEquatable<CopilotCondition>
 {
     /// <summary>
     /// Type of condition.
     /// </summary>
     /// <value>Type of condition.</value>
-    [JsonConverter(typeof(JsonStringEnumConverter))]
+    
     public enum ConditionTypeEnum
     {
         /// <summary>
@@ -53,7 +53,7 @@ public partial class CopilotCondition : IEquatable<CopilotCondition>
     /// Type of condition.
     /// </summary>
     /// <value>Type of condition.</value>
-    [DataMember(Name = "conditionType", EmitDefaultValue = false)]
+    [JsonPropertyName("conditionType")]
     public ConditionTypeEnum? ConditionType { get; set; }
 
     /// <summary>
@@ -81,7 +81,7 @@ public partial class CopilotCondition : IEquatable<CopilotCondition>
     /// Condition values.
     /// </summary>
     /// <value>Condition values.</value>
-    [DataMember(Name = "conditionValues", EmitDefaultValue = false)]
+    [JsonPropertyName("conditionValues")]
     public List<string> ConditionValues { get; set; }
 
 

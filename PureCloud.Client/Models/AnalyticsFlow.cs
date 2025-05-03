@@ -7,14 +7,14 @@ namespace PureCloud.Client.Models;
 /// <summary>
 /// AnalyticsFlow
 /// </summary>
-[DataContract]
+
 public partial class AnalyticsFlow : IEquatable<AnalyticsFlow>
 {
     /// <summary>
     /// The entry type for this flow, e.g. dnis, dialer, agent, flow, or direct
     /// </summary>
     /// <value>The entry type for this flow, e.g. dnis, dialer, agent, flow, or direct</value>
-    [JsonConverter(typeof(JsonStringEnumConverter))]
+    
     public enum EntryTypeEnum
     {
         /// <summary>
@@ -59,7 +59,7 @@ public partial class AnalyticsFlow : IEquatable<AnalyticsFlow>
     /// The type of this flow
     /// </summary>
     /// <value>The type of this flow</value>
-    [JsonConverter(typeof(JsonStringEnumConverter))]
+    
     public enum FlowTypeEnum
     {
         /// <summary>
@@ -188,13 +188,13 @@ public partial class AnalyticsFlow : IEquatable<AnalyticsFlow>
     /// The entry type for this flow, e.g. dnis, dialer, agent, flow, or direct
     /// </summary>
     /// <value>The entry type for this flow, e.g. dnis, dialer, agent, flow, or direct</value>
-    [DataMember(Name = "entryType", EmitDefaultValue = false)]
+    [JsonPropertyName("entryType")]
     public EntryTypeEnum? EntryType { get; set; }
     /// <summary>
     /// The type of this flow
     /// </summary>
     /// <value>The type of this flow</value>
-    [DataMember(Name = "flowType", EmitDefaultValue = false)]
+    [JsonPropertyName("flowType")]
     public FlowTypeEnum? FlowType { get; set; }
     /// <summary>
     /// Initializes a new instance of the <see cref="AnalyticsFlow" /> class.
@@ -240,7 +240,7 @@ public partial class AnalyticsFlow : IEquatable<AnalyticsFlow>
     /// Flow ending language, e.g. en-us
     /// </summary>
     /// <value>Flow ending language, e.g. en-us</value>
-    [DataMember(Name = "endingLanguage", EmitDefaultValue = false)]
+    [JsonPropertyName("endingLanguage")]
     public string EndingLanguage { get; set; }
 
 
@@ -249,7 +249,7 @@ public partial class AnalyticsFlow : IEquatable<AnalyticsFlow>
     /// The particular entry reason for this flow, e.g. an address, userId, or flowId
     /// </summary>
     /// <value>The particular entry reason for this flow, e.g. an address, userId, or flowId</value>
-    [DataMember(Name = "entryReason", EmitDefaultValue = false)]
+    [JsonPropertyName("entryReason")]
     public string EntryReason { get; set; }
 
 
@@ -260,7 +260,7 @@ public partial class AnalyticsFlow : IEquatable<AnalyticsFlow>
     /// The exit reason for this flow, e.g. DISCONNECT
     /// </summary>
     /// <value>The exit reason for this flow, e.g. DISCONNECT</value>
-    [DataMember(Name = "exitReason", EmitDefaultValue = false)]
+    [JsonPropertyName("exitReason")]
     public string ExitReason { get; set; }
 
 
@@ -269,7 +269,7 @@ public partial class AnalyticsFlow : IEquatable<AnalyticsFlow>
     /// The unique identifier of this flow
     /// </summary>
     /// <value>The unique identifier of this flow</value>
-    [DataMember(Name = "flowId", EmitDefaultValue = false)]
+    [JsonPropertyName("flowId")]
     public string FlowId { get; set; }
 
 
@@ -278,7 +278,7 @@ public partial class AnalyticsFlow : IEquatable<AnalyticsFlow>
     /// The name of this flow at the time of flow execution
     /// </summary>
     /// <value>The name of this flow at the time of flow execution</value>
-    [DataMember(Name = "flowName", EmitDefaultValue = false)]
+    [JsonPropertyName("flowName")]
     public string FlowName { get; set; }
 
 
@@ -289,7 +289,7 @@ public partial class AnalyticsFlow : IEquatable<AnalyticsFlow>
     /// The version of this flow
     /// </summary>
     /// <value>The version of this flow</value>
-    [DataMember(Name = "flowVersion", EmitDefaultValue = false)]
+    [JsonPropertyName("flowVersion")]
     public string FlowVersion { get; set; }
 
 
@@ -298,7 +298,7 @@ public partial class AnalyticsFlow : IEquatable<AnalyticsFlow>
     /// Flag indicating whether the flow issued a callback
     /// </summary>
     /// <value>Flag indicating whether the flow issued a callback</value>
-    [DataMember(Name = "issuedCallback", EmitDefaultValue = false)]
+    [JsonPropertyName("issuedCallback")]
     public bool? IssuedCallback { get; set; }
 
 
@@ -307,7 +307,7 @@ public partial class AnalyticsFlow : IEquatable<AnalyticsFlow>
     /// The recognition failure reason causing to exit/disconnect
     /// </summary>
     /// <value>The recognition failure reason causing to exit/disconnect</value>
-    [DataMember(Name = "recognitionFailureReason", EmitDefaultValue = false)]
+    [JsonPropertyName("recognitionFailureReason")]
     public string RecognitionFailureReason { get; set; }
 
 
@@ -316,7 +316,7 @@ public partial class AnalyticsFlow : IEquatable<AnalyticsFlow>
     /// Flow starting language, e.g. en-us
     /// </summary>
     /// <value>Flow starting language, e.g. en-us</value>
-    [DataMember(Name = "startingLanguage", EmitDefaultValue = false)]
+    [JsonPropertyName("startingLanguage")]
     public string StartingLanguage { get; set; }
 
 
@@ -325,7 +325,7 @@ public partial class AnalyticsFlow : IEquatable<AnalyticsFlow>
     /// The address of a flow transfer target, e.g. a phone number, an email address, or a queueId
     /// </summary>
     /// <value>The address of a flow transfer target, e.g. a phone number, an email address, or a queueId</value>
-    [DataMember(Name = "transferTargetAddress", EmitDefaultValue = false)]
+    [JsonPropertyName("transferTargetAddress")]
     public string TransferTargetAddress { get; set; }
 
 
@@ -334,7 +334,7 @@ public partial class AnalyticsFlow : IEquatable<AnalyticsFlow>
     /// The name of a flow transfer target
     /// </summary>
     /// <value>The name of a flow transfer target</value>
-    [DataMember(Name = "transferTargetName", EmitDefaultValue = false)]
+    [JsonPropertyName("transferTargetName")]
     public string TransferTargetName { get; set; }
 
 
@@ -343,7 +343,7 @@ public partial class AnalyticsFlow : IEquatable<AnalyticsFlow>
     /// The type of transfer for flows that ended with a transfer
     /// </summary>
     /// <value>The type of transfer for flows that ended with a transfer</value>
-    [DataMember(Name = "transferType", EmitDefaultValue = false)]
+    [JsonPropertyName("transferType")]
     public string TransferType { get; set; }
 
 
@@ -352,7 +352,7 @@ public partial class AnalyticsFlow : IEquatable<AnalyticsFlow>
     /// Flow outcomes
     /// </summary>
     /// <value>Flow outcomes</value>
-    [DataMember(Name = "outcomes", EmitDefaultValue = false)]
+    [JsonPropertyName("outcomes")]
     public List<AnalyticsFlowOutcome> Outcomes { get; set; }
 
 

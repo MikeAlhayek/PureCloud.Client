@@ -1,12 +1,12 @@
-using System.Runtime.Serialization;
 using System.Text;
+using System.Text.Json.Serialization;
 
 namespace PureCloud.Client.Models;
 
 /// <summary>
 /// KnowledgeAnswerDocumentsResponse
 /// </summary>
-[DataContract]
+
 public partial class KnowledgeAnswerDocumentsResponse : IEquatable<KnowledgeAnswerDocumentsResponse>
 {
     /// <summary>
@@ -27,7 +27,7 @@ public partial class KnowledgeAnswerDocumentsResponse : IEquatable<KnowledgeAnsw
     /// The results with answers if the answerMode request property is not set or contains \&quot;AnswerHighlight\&quot;. Empty array otherwise.
     /// </summary>
     /// <value>The results with answers if the answerMode request property is not set or contains \&quot;AnswerHighlight\&quot;. Empty array otherwise.</value>
-    [DataMember(Name = "results", EmitDefaultValue = false)]
+    [JsonPropertyName("results")]
     public List<KnowledgeAnswerDocumentResponse> Results { get; set; }
 
 
@@ -36,7 +36,7 @@ public partial class KnowledgeAnswerDocumentsResponse : IEquatable<KnowledgeAnsw
     /// The results with AI-generated answer if the answerMode request property contains \&quot;AnswerGeneration\&quot;.
     /// </summary>
     /// <value>The results with AI-generated answer if the answerMode request property contains \&quot;AnswerGeneration\&quot;.</value>
-    [DataMember(Name = "answerGeneration", EmitDefaultValue = false)]
+    [JsonPropertyName("answerGeneration")]
     public KnowledgeAnswerGenerationResponse AnswerGeneration { get; set; }
 
 

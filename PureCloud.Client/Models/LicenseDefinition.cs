@@ -1,12 +1,12 @@
-using System.Runtime.Serialization;
 using System.Text;
+using System.Text.Json.Serialization;
 
 namespace PureCloud.Client.Models;
 
 /// <summary>
 /// LicenseDefinition
 /// </summary>
-[DataContract]
+
 public partial class LicenseDefinition : IEquatable<LicenseDefinition>
 {
     /// <summary>
@@ -31,7 +31,7 @@ public partial class LicenseDefinition : IEquatable<LicenseDefinition>
     /// The globally unique identifier for the object.
     /// </summary>
     /// <value>The globally unique identifier for the object.</value>
-    [DataMember(Name = "id", EmitDefaultValue = false)]
+    [JsonPropertyName("id")]
     public string Id { get; private set; }
 
 
@@ -39,7 +39,7 @@ public partial class LicenseDefinition : IEquatable<LicenseDefinition>
     /// <summary>
     /// Gets or Sets Description
     /// </summary>
-    [DataMember(Name = "description", EmitDefaultValue = false)]
+    [JsonPropertyName("description")]
     public string Description { get; set; }
 
 
@@ -47,7 +47,7 @@ public partial class LicenseDefinition : IEquatable<LicenseDefinition>
     /// <summary>
     /// Gets or Sets Permissions
     /// </summary>
-    [DataMember(Name = "permissions", EmitDefaultValue = false)]
+    [JsonPropertyName("permissions")]
     public Permissions Permissions { get; set; }
 
 
@@ -55,7 +55,7 @@ public partial class LicenseDefinition : IEquatable<LicenseDefinition>
     /// <summary>
     /// Gets or Sets Prerequisites
     /// </summary>
-    [DataMember(Name = "prerequisites", EmitDefaultValue = false)]
+    [JsonPropertyName("prerequisites")]
     public List<AddressableLicenseDefinition> Prerequisites { get; set; }
 
 
@@ -63,7 +63,7 @@ public partial class LicenseDefinition : IEquatable<LicenseDefinition>
     /// <summary>
     /// Gets or Sets Comprises
     /// </summary>
-    [DataMember(Name = "comprises", EmitDefaultValue = false)]
+    [JsonPropertyName("comprises")]
     public List<LicenseDefinition> Comprises { get; set; }
 
 
@@ -72,7 +72,7 @@ public partial class LicenseDefinition : IEquatable<LicenseDefinition>
     /// The URI for this object
     /// </summary>
     /// <value>The URI for this object</value>
-    [DataMember(Name = "selfUri", EmitDefaultValue = false)]
+    [JsonPropertyName("selfUri")]
     public string SelfUri { get; private set; }
 
 

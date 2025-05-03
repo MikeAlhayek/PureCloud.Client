@@ -1,12 +1,12 @@
-using System.Runtime.Serialization;
 using System.Text;
+using System.Text.Json.Serialization;
 
 namespace PureCloud.Client.Models;
 
 /// <summary>
 /// AgentPossibleWorkShiftsResponse
 /// </summary>
-[DataContract]
+
 public partial class AgentPossibleWorkShiftsResponse : IEquatable<AgentPossibleWorkShiftsResponse>
 {
     /// <summary>
@@ -33,7 +33,7 @@ public partial class AgentPossibleWorkShiftsResponse : IEquatable<AgentPossibleW
     /// Start date of requested effective work plan. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd
     /// </summary>
     /// <value>Start date of requested effective work plan. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd</value>
-    [DataMember(Name = "weekStartDate", EmitDefaultValue = false)]
+    [JsonPropertyName("weekStartDate")]
     public string WeekStartDate { get; set; }
 
 
@@ -42,7 +42,7 @@ public partial class AgentPossibleWorkShiftsResponse : IEquatable<AgentPossibleW
     /// Each element is the ID of an effective work plan for a specific week
     /// </summary>
     /// <value>Each element is the ID of an effective work plan for a specific week</value>
-    [DataMember(Name = "pattern", EmitDefaultValue = false)]
+    [JsonPropertyName("pattern")]
     public List<int?> Pattern { get; set; }
 
 
@@ -51,7 +51,7 @@ public partial class AgentPossibleWorkShiftsResponse : IEquatable<AgentPossibleW
     /// Each element is a weekly effective work plan that can be used for multiple weeks
     /// </summary>
     /// <value>Each element is a weekly effective work plan that can be used for multiple weeks</value>
-    [DataMember(Name = "weeklyPossibleWorkShifts", EmitDefaultValue = false)]
+    [JsonPropertyName("weeklyPossibleWorkShifts")]
     public List<PossibleWorkShiftsForWeek> WeeklyPossibleWorkShifts { get; set; }
 
 
@@ -60,7 +60,7 @@ public partial class AgentPossibleWorkShiftsResponse : IEquatable<AgentPossibleW
     /// Number of minutes in each interval in the intervalScheduleProbabilities
     /// </summary>
     /// <value>Number of minutes in each interval in the intervalScheduleProbabilities</value>
-    [DataMember(Name = "schedulerIntervalLengthMinutes", EmitDefaultValue = false)]
+    [JsonPropertyName("schedulerIntervalLengthMinutes")]
     public int? SchedulerIntervalLengthMinutes { get; set; }
 
 
@@ -69,7 +69,7 @@ public partial class AgentPossibleWorkShiftsResponse : IEquatable<AgentPossibleW
     /// The time zone of the business unit
     /// </summary>
     /// <value>The time zone of the business unit</value>
-    [DataMember(Name = "timeZone", EmitDefaultValue = false)]
+    [JsonPropertyName("timeZone")]
     public string TimeZone { get; set; }
 
 

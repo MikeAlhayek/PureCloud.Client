@@ -1,4 +1,3 @@
-using System.Runtime.Serialization;
 using System.Text;
 using System.Text.Json.Serialization;
 
@@ -7,7 +6,7 @@ namespace PureCloud.Client.Models;
 /// <summary>
 /// UpdateAgentWorkPlanBiddingPreference
 /// </summary>
-[DataContract]
+
 public partial class UpdateAgentWorkPlanBiddingPreference : IEquatable<UpdateAgentWorkPlanBiddingPreference>
 {
 
@@ -34,7 +33,7 @@ public partial class UpdateAgentWorkPlanBiddingPreference : IEquatable<UpdateAge
     /// Whether the preference is submitted
     /// </summary>
     /// <value>Whether the preference is submitted</value>
-    [DataMember(Name = "submitted", EmitDefaultValue = false)]
+    [JsonPropertyName("submitted")]
     public bool? Submitted { get; set; }
 
 
@@ -43,7 +42,7 @@ public partial class UpdateAgentWorkPlanBiddingPreference : IEquatable<UpdateAge
     /// The list of work plan bidding preferences
     /// </summary>
     /// <value>The list of work plan bidding preferences</value>
-    [DataMember(Name = "agentWorkPlanBidPreferences", EmitDefaultValue = false)]
+    [JsonPropertyName("agentWorkPlanBidPreferences")]
     public List<AgentWorkPlanBiddingPreferenceRequest> AgentWorkPlanBidPreferences { get; set; }
 
 

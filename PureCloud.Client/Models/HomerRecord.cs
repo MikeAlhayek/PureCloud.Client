@@ -1,12 +1,12 @@
-using System.Runtime.Serialization;
 using System.Text;
+using System.Text.Json.Serialization;
 
 namespace PureCloud.Client.Models;
 
 /// <summary>
 /// HomerRecord
 /// </summary>
-[DataContract]
+
 public partial class HomerRecord : IEquatable<HomerRecord>
 {
     /// <summary>
@@ -121,7 +121,7 @@ public partial class HomerRecord : IEquatable<HomerRecord>
     /// The globally unique identifier for the object.
     /// </summary>
     /// <value>The globally unique identifier for the object.</value>
-    [DataMember(Name = "id", EmitDefaultValue = false)]
+    [JsonPropertyName("id")]
     public string Id { get; private set; }
 
 
@@ -129,7 +129,7 @@ public partial class HomerRecord : IEquatable<HomerRecord>
     /// <summary>
     /// Gets or Sets Name
     /// </summary>
-    [DataMember(Name = "name", EmitDefaultValue = false)]
+    [JsonPropertyName("name")]
     public string Name { get; set; }
 
 
@@ -138,7 +138,7 @@ public partial class HomerRecord : IEquatable<HomerRecord>
     /// metadata associated to the SIP calls. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z
     /// </summary>
     /// <value>metadata associated to the SIP calls. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z</value>
-    [DataMember(Name = "date", EmitDefaultValue = false)]
+    [JsonPropertyName("date")]
     public DateTime? Date { get; set; }
 
 
@@ -147,7 +147,7 @@ public partial class HomerRecord : IEquatable<HomerRecord>
     /// metadata associated to the SIP calls
     /// </summary>
     /// <value>metadata associated to the SIP calls</value>
-    [DataMember(Name = "milliTs", EmitDefaultValue = false)]
+    [JsonPropertyName("milliTs")]
     public string MilliTs { get; set; }
 
 
@@ -156,7 +156,7 @@ public partial class HomerRecord : IEquatable<HomerRecord>
     /// metadata associated to the SIP calls
     /// </summary>
     /// <value>metadata associated to the SIP calls</value>
-    [DataMember(Name = "microTs", EmitDefaultValue = false)]
+    [JsonPropertyName("microTs")]
     public string MicroTs { get; set; }
 
 
@@ -165,7 +165,7 @@ public partial class HomerRecord : IEquatable<HomerRecord>
     /// metadata associated to the SIP calls
     /// </summary>
     /// <value>metadata associated to the SIP calls</value>
-    [DataMember(Name = "method", EmitDefaultValue = false)]
+    [JsonPropertyName("method")]
     public string Method { get; set; }
 
 
@@ -174,7 +174,7 @@ public partial class HomerRecord : IEquatable<HomerRecord>
     /// metadata associated to the SIP calls
     /// </summary>
     /// <value>metadata associated to the SIP calls</value>
-    [DataMember(Name = "replyReason", EmitDefaultValue = false)]
+    [JsonPropertyName("replyReason")]
     public string ReplyReason { get; set; }
 
 
@@ -183,7 +183,7 @@ public partial class HomerRecord : IEquatable<HomerRecord>
     /// metadata associated to the SIP calls
     /// </summary>
     /// <value>metadata associated to the SIP calls</value>
-    [DataMember(Name = "ruri", EmitDefaultValue = false)]
+    [JsonPropertyName("ruri")]
     public string Ruri { get; set; }
 
 
@@ -192,7 +192,7 @@ public partial class HomerRecord : IEquatable<HomerRecord>
     /// metadata associated to the SIP calls
     /// </summary>
     /// <value>metadata associated to the SIP calls</value>
-    [DataMember(Name = "ruriUser", EmitDefaultValue = false)]
+    [JsonPropertyName("ruriUser")]
     public string RuriUser { get; set; }
 
 
@@ -201,7 +201,7 @@ public partial class HomerRecord : IEquatable<HomerRecord>
     /// metadata associated to the SIP calls
     /// </summary>
     /// <value>metadata associated to the SIP calls</value>
-    [DataMember(Name = "ruriDomain", EmitDefaultValue = false)]
+    [JsonPropertyName("ruriDomain")]
     public string RuriDomain { get; set; }
 
 
@@ -210,7 +210,7 @@ public partial class HomerRecord : IEquatable<HomerRecord>
     /// metadata associated to the SIP calls
     /// </summary>
     /// <value>metadata associated to the SIP calls</value>
-    [DataMember(Name = "fromUser", EmitDefaultValue = false)]
+    [JsonPropertyName("fromUser")]
     public string FromUser { get; set; }
 
 
@@ -219,7 +219,7 @@ public partial class HomerRecord : IEquatable<HomerRecord>
     /// metadata associated to the SIP calls
     /// </summary>
     /// <value>metadata associated to the SIP calls</value>
-    [DataMember(Name = "fromDomain", EmitDefaultValue = false)]
+    [JsonPropertyName("fromDomain")]
     public string FromDomain { get; set; }
 
 
@@ -228,7 +228,7 @@ public partial class HomerRecord : IEquatable<HomerRecord>
     /// metadata associated to the SIP calls
     /// </summary>
     /// <value>metadata associated to the SIP calls</value>
-    [DataMember(Name = "fromTag", EmitDefaultValue = false)]
+    [JsonPropertyName("fromTag")]
     public string FromTag { get; set; }
 
 
@@ -237,7 +237,7 @@ public partial class HomerRecord : IEquatable<HomerRecord>
     /// metadata associated to the SIP calls
     /// </summary>
     /// <value>metadata associated to the SIP calls</value>
-    [DataMember(Name = "toUser", EmitDefaultValue = false)]
+    [JsonPropertyName("toUser")]
     public string ToUser { get; set; }
 
 
@@ -246,7 +246,7 @@ public partial class HomerRecord : IEquatable<HomerRecord>
     /// metadata associated to the SIP calls
     /// </summary>
     /// <value>metadata associated to the SIP calls</value>
-    [DataMember(Name = "toDomain", EmitDefaultValue = false)]
+    [JsonPropertyName("toDomain")]
     public string ToDomain { get; set; }
 
 
@@ -255,7 +255,7 @@ public partial class HomerRecord : IEquatable<HomerRecord>
     /// metadata associated to the SIP calls
     /// </summary>
     /// <value>metadata associated to the SIP calls</value>
-    [DataMember(Name = "toTag", EmitDefaultValue = false)]
+    [JsonPropertyName("toTag")]
     public string ToTag { get; set; }
 
 
@@ -264,7 +264,7 @@ public partial class HomerRecord : IEquatable<HomerRecord>
     /// metadata associated to the SIP calls
     /// </summary>
     /// <value>metadata associated to the SIP calls</value>
-    [DataMember(Name = "pidUser", EmitDefaultValue = false)]
+    [JsonPropertyName("pidUser")]
     public string PidUser { get; set; }
 
 
@@ -273,7 +273,7 @@ public partial class HomerRecord : IEquatable<HomerRecord>
     /// metadata associated to the SIP calls
     /// </summary>
     /// <value>metadata associated to the SIP calls</value>
-    [DataMember(Name = "contactUser", EmitDefaultValue = false)]
+    [JsonPropertyName("contactUser")]
     public string ContactUser { get; set; }
 
 
@@ -282,7 +282,7 @@ public partial class HomerRecord : IEquatable<HomerRecord>
     /// metadata associated to the SIP calls
     /// </summary>
     /// <value>metadata associated to the SIP calls</value>
-    [DataMember(Name = "authUser", EmitDefaultValue = false)]
+    [JsonPropertyName("authUser")]
     public string AuthUser { get; set; }
 
 
@@ -291,7 +291,7 @@ public partial class HomerRecord : IEquatable<HomerRecord>
     /// metadata associated to the SIP calls
     /// </summary>
     /// <value>metadata associated to the SIP calls</value>
-    [DataMember(Name = "callid", EmitDefaultValue = false)]
+    [JsonPropertyName("callid")]
     public string Callid { get; set; }
 
 
@@ -300,7 +300,7 @@ public partial class HomerRecord : IEquatable<HomerRecord>
     /// metadata associated to the SIP calls
     /// </summary>
     /// <value>metadata associated to the SIP calls</value>
-    [DataMember(Name = "callidAleg", EmitDefaultValue = false)]
+    [JsonPropertyName("callidAleg")]
     public string CallidAleg { get; set; }
 
 
@@ -309,7 +309,7 @@ public partial class HomerRecord : IEquatable<HomerRecord>
     /// metadata associated to the SIP calls
     /// </summary>
     /// <value>metadata associated to the SIP calls</value>
-    [DataMember(Name = "via1", EmitDefaultValue = false)]
+    [JsonPropertyName("via1")]
     public string Via1 { get; set; }
 
 
@@ -318,7 +318,7 @@ public partial class HomerRecord : IEquatable<HomerRecord>
     /// metadata associated to the SIP calls
     /// </summary>
     /// <value>metadata associated to the SIP calls</value>
-    [DataMember(Name = "via1Branch", EmitDefaultValue = false)]
+    [JsonPropertyName("via1Branch")]
     public string Via1Branch { get; set; }
 
 
@@ -327,7 +327,7 @@ public partial class HomerRecord : IEquatable<HomerRecord>
     /// metadata associated to the SIP calls
     /// </summary>
     /// <value>metadata associated to the SIP calls</value>
-    [DataMember(Name = "cseq", EmitDefaultValue = false)]
+    [JsonPropertyName("cseq")]
     public string Cseq { get; set; }
 
 
@@ -336,7 +336,7 @@ public partial class HomerRecord : IEquatable<HomerRecord>
     /// metadata associated to the SIP calls
     /// </summary>
     /// <value>metadata associated to the SIP calls</value>
-    [DataMember(Name = "diversion", EmitDefaultValue = false)]
+    [JsonPropertyName("diversion")]
     public string Diversion { get; set; }
 
 
@@ -345,7 +345,7 @@ public partial class HomerRecord : IEquatable<HomerRecord>
     /// metadata associated to the SIP calls
     /// </summary>
     /// <value>metadata associated to the SIP calls</value>
-    [DataMember(Name = "reason", EmitDefaultValue = false)]
+    [JsonPropertyName("reason")]
     public string Reason { get; set; }
 
 
@@ -354,7 +354,7 @@ public partial class HomerRecord : IEquatable<HomerRecord>
     /// metadata associated to the SIP calls
     /// </summary>
     /// <value>metadata associated to the SIP calls</value>
-    [DataMember(Name = "contentType", EmitDefaultValue = false)]
+    [JsonPropertyName("contentType")]
     public string ContentType { get; set; }
 
 
@@ -363,7 +363,7 @@ public partial class HomerRecord : IEquatable<HomerRecord>
     /// metadata associated to the SIP calls
     /// </summary>
     /// <value>metadata associated to the SIP calls</value>
-    [DataMember(Name = "auth", EmitDefaultValue = false)]
+    [JsonPropertyName("auth")]
     public string Auth { get; set; }
 
 
@@ -372,7 +372,7 @@ public partial class HomerRecord : IEquatable<HomerRecord>
     /// metadata associated to the SIP calls
     /// </summary>
     /// <value>metadata associated to the SIP calls</value>
-    [DataMember(Name = "userAgent", EmitDefaultValue = false)]
+    [JsonPropertyName("userAgent")]
     public string UserAgent { get; set; }
 
 
@@ -381,7 +381,7 @@ public partial class HomerRecord : IEquatable<HomerRecord>
     /// metadata associated to the SIP calls
     /// </summary>
     /// <value>metadata associated to the SIP calls</value>
-    [DataMember(Name = "sourceIp", EmitDefaultValue = false)]
+    [JsonPropertyName("sourceIp")]
     public string SourceIp { get; set; }
 
 
@@ -390,7 +390,7 @@ public partial class HomerRecord : IEquatable<HomerRecord>
     /// metadata associated to the SIP calls
     /// </summary>
     /// <value>metadata associated to the SIP calls</value>
-    [DataMember(Name = "sourcePort", EmitDefaultValue = false)]
+    [JsonPropertyName("sourcePort")]
     public string SourcePort { get; set; }
 
 
@@ -399,7 +399,7 @@ public partial class HomerRecord : IEquatable<HomerRecord>
     /// metadata associated to the SIP calls
     /// </summary>
     /// <value>metadata associated to the SIP calls</value>
-    [DataMember(Name = "destinationIp", EmitDefaultValue = false)]
+    [JsonPropertyName("destinationIp")]
     public string DestinationIp { get; set; }
 
 
@@ -408,7 +408,7 @@ public partial class HomerRecord : IEquatable<HomerRecord>
     /// metadata associated to the SIP calls
     /// </summary>
     /// <value>metadata associated to the SIP calls</value>
-    [DataMember(Name = "destinationPort", EmitDefaultValue = false)]
+    [JsonPropertyName("destinationPort")]
     public string DestinationPort { get; set; }
 
 
@@ -417,7 +417,7 @@ public partial class HomerRecord : IEquatable<HomerRecord>
     /// metadata associated to the SIP calls
     /// </summary>
     /// <value>metadata associated to the SIP calls</value>
-    [DataMember(Name = "contactIp", EmitDefaultValue = false)]
+    [JsonPropertyName("contactIp")]
     public string ContactIp { get; set; }
 
 
@@ -426,7 +426,7 @@ public partial class HomerRecord : IEquatable<HomerRecord>
     /// metadata associated to the SIP calls
     /// </summary>
     /// <value>metadata associated to the SIP calls</value>
-    [DataMember(Name = "contactPort", EmitDefaultValue = false)]
+    [JsonPropertyName("contactPort")]
     public string ContactPort { get; set; }
 
 
@@ -435,7 +435,7 @@ public partial class HomerRecord : IEquatable<HomerRecord>
     /// metadata associated to the SIP calls
     /// </summary>
     /// <value>metadata associated to the SIP calls</value>
-    [DataMember(Name = "originatorIp", EmitDefaultValue = false)]
+    [JsonPropertyName("originatorIp")]
     public string OriginatorIp { get; set; }
 
 
@@ -444,7 +444,7 @@ public partial class HomerRecord : IEquatable<HomerRecord>
     /// metadata associated to the SIP calls
     /// </summary>
     /// <value>metadata associated to the SIP calls</value>
-    [DataMember(Name = "originatorPort", EmitDefaultValue = false)]
+    [JsonPropertyName("originatorPort")]
     public string OriginatorPort { get; set; }
 
 
@@ -453,7 +453,7 @@ public partial class HomerRecord : IEquatable<HomerRecord>
     /// metadata associated to the SIP calls
     /// </summary>
     /// <value>metadata associated to the SIP calls</value>
-    [DataMember(Name = "correlationId", EmitDefaultValue = false)]
+    [JsonPropertyName("correlationId")]
     public string CorrelationId { get; set; }
 
 
@@ -462,7 +462,7 @@ public partial class HomerRecord : IEquatable<HomerRecord>
     /// metadata associated to the SIP calls
     /// </summary>
     /// <value>metadata associated to the SIP calls</value>
-    [DataMember(Name = "proto", EmitDefaultValue = false)]
+    [JsonPropertyName("proto")]
     public string Proto { get; set; }
 
 
@@ -471,7 +471,7 @@ public partial class HomerRecord : IEquatable<HomerRecord>
     /// metadata associated to the SIP calls
     /// </summary>
     /// <value>metadata associated to the SIP calls</value>
-    [DataMember(Name = "family", EmitDefaultValue = false)]
+    [JsonPropertyName("family")]
     public string Family { get; set; }
 
 
@@ -480,7 +480,7 @@ public partial class HomerRecord : IEquatable<HomerRecord>
     /// metadata associated to the SIP calls
     /// </summary>
     /// <value>metadata associated to the SIP calls</value>
-    [DataMember(Name = "rtpStat", EmitDefaultValue = false)]
+    [JsonPropertyName("rtpStat")]
     public string RtpStat { get; set; }
 
 
@@ -489,7 +489,7 @@ public partial class HomerRecord : IEquatable<HomerRecord>
     /// metadata associated to the SIP calls
     /// </summary>
     /// <value>metadata associated to the SIP calls</value>
-    [DataMember(Name = "type", EmitDefaultValue = false)]
+    [JsonPropertyName("type")]
     public string Type { get; set; }
 
 
@@ -498,7 +498,7 @@ public partial class HomerRecord : IEquatable<HomerRecord>
     /// metadata associated to the SIP calls
     /// </summary>
     /// <value>metadata associated to the SIP calls</value>
-    [DataMember(Name = "node", EmitDefaultValue = false)]
+    [JsonPropertyName("node")]
     public string Node { get; set; }
 
 
@@ -507,7 +507,7 @@ public partial class HomerRecord : IEquatable<HomerRecord>
     /// metadata associated to the SIP calls
     /// </summary>
     /// <value>metadata associated to the SIP calls</value>
-    [DataMember(Name = "trans", EmitDefaultValue = false)]
+    [JsonPropertyName("trans")]
     public string Trans { get; set; }
 
 
@@ -516,7 +516,7 @@ public partial class HomerRecord : IEquatable<HomerRecord>
     /// metadata associated to the SIP calls
     /// </summary>
     /// <value>metadata associated to the SIP calls</value>
-    [DataMember(Name = "dbnode", EmitDefaultValue = false)]
+    [JsonPropertyName("dbnode")]
     public string Dbnode { get; set; }
 
 
@@ -525,7 +525,7 @@ public partial class HomerRecord : IEquatable<HomerRecord>
     /// metadata associated to the SIP calls
     /// </summary>
     /// <value>metadata associated to the SIP calls</value>
-    [DataMember(Name = "msg", EmitDefaultValue = false)]
+    [JsonPropertyName("msg")]
     public string Msg { get; set; }
 
 
@@ -534,7 +534,7 @@ public partial class HomerRecord : IEquatable<HomerRecord>
     /// metadata associated to the SIP calls
     /// </summary>
     /// <value>metadata associated to the SIP calls</value>
-    [DataMember(Name = "sourceAlias", EmitDefaultValue = false)]
+    [JsonPropertyName("sourceAlias")]
     public string SourceAlias { get; set; }
 
 
@@ -543,7 +543,7 @@ public partial class HomerRecord : IEquatable<HomerRecord>
     /// metadata associated to the SIP calls
     /// </summary>
     /// <value>metadata associated to the SIP calls</value>
-    [DataMember(Name = "destinationAlias", EmitDefaultValue = false)]
+    [JsonPropertyName("destinationAlias")]
     public string DestinationAlias { get; set; }
 
 
@@ -552,7 +552,7 @@ public partial class HomerRecord : IEquatable<HomerRecord>
     /// metadata associated to the SIP calls
     /// </summary>
     /// <value>metadata associated to the SIP calls</value>
-    [DataMember(Name = "conversationId", EmitDefaultValue = false)]
+    [JsonPropertyName("conversationId")]
     public string ConversationId { get; set; }
 
 
@@ -561,7 +561,7 @@ public partial class HomerRecord : IEquatable<HomerRecord>
     /// metadata associated to the SIP calls
     /// </summary>
     /// <value>metadata associated to the SIP calls</value>
-    [DataMember(Name = "participantId", EmitDefaultValue = false)]
+    [JsonPropertyName("participantId")]
     public string ParticipantId { get; set; }
 
 
@@ -570,7 +570,7 @@ public partial class HomerRecord : IEquatable<HomerRecord>
     /// The URI for this object
     /// </summary>
     /// <value>The URI for this object</value>
-    [DataMember(Name = "selfUri", EmitDefaultValue = false)]
+    [JsonPropertyName("selfUri")]
     public string SelfUri { get; private set; }
 
 

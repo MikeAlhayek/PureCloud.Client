@@ -1,12 +1,12 @@
-using System.Runtime.Serialization;
 using System.Text;
+using System.Text.Json.Serialization;
 
 namespace PureCloud.Client.Models;
 
 /// <summary>
 /// Schema
 /// </summary>
-[DataContract]
+
 public partial class Schema : IEquatable<Schema>
 {
     /// <summary>
@@ -23,7 +23,7 @@ public partial class Schema : IEquatable<Schema>
     /// A core type&#39;s title
     /// </summary>
     /// <value>A core type&#39;s title</value>
-    [DataMember(Name = "title", EmitDefaultValue = false)]
+    [JsonPropertyName("title")]
     public string Title { get; private set; }
 
 
@@ -32,7 +32,7 @@ public partial class Schema : IEquatable<Schema>
     /// A core type&#39;s description
     /// </summary>
     /// <value>A core type&#39;s description</value>
-    [DataMember(Name = "description", EmitDefaultValue = false)]
+    [JsonPropertyName("description")]
     public string Description { get; private set; }
 
 
@@ -41,7 +41,7 @@ public partial class Schema : IEquatable<Schema>
     /// An array of fundamental JSON Schema primitive types on which the core type is based
     /// </summary>
     /// <value>An array of fundamental JSON Schema primitive types on which the core type is based</value>
-    [DataMember(Name = "type", EmitDefaultValue = false)]
+    [JsonPropertyName("type")]
     public List<string> Type { get; private set; }
 
 
@@ -50,7 +50,7 @@ public partial class Schema : IEquatable<Schema>
     /// Denotes the type and pattern of the items in an enum core type
     /// </summary>
     /// <value>Denotes the type and pattern of the items in an enum core type</value>
-    [DataMember(Name = "items", EmitDefaultValue = false)]
+    [JsonPropertyName("items")]
     public Items Items { get; private set; }
 
 
@@ -59,7 +59,7 @@ public partial class Schema : IEquatable<Schema>
     /// For the \&quot;date\&quot; and \&quot;datetime\&quot; core types, denotes the regex prescribing the allowable date/datetime format
     /// </summary>
     /// <value>For the \&quot;date\&quot; and \&quot;datetime\&quot; core types, denotes the regex prescribing the allowable date/datetime format</value>
-    [DataMember(Name = "pattern", EmitDefaultValue = false)]
+    [JsonPropertyName("pattern")]
     public string Pattern { get; private set; }
 
 

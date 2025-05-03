@@ -1,4 +1,3 @@
-using System.Runtime.Serialization;
 using System.Text;
 using System.Text.Json.Serialization;
 
@@ -7,7 +6,7 @@ namespace PureCloud.Client.Models;
 /// <summary>
 /// CategoryReference
 /// </summary>
-[DataContract]
+
 public partial class CategoryReference : IEquatable<CategoryReference>
 {
 
@@ -36,7 +35,7 @@ public partial class CategoryReference : IEquatable<CategoryReference>
     /// The globally unique identifier for the category.
     /// </summary>
     /// <value>The globally unique identifier for the category.</value>
-    [DataMember(Name = "id", EmitDefaultValue = false)]
+    [JsonPropertyName("id")]
     public string Id { get; set; }
 
 
@@ -45,7 +44,7 @@ public partial class CategoryReference : IEquatable<CategoryReference>
     /// Category name.
     /// </summary>
     /// <value>Category name.</value>
-    [DataMember(Name = "name", EmitDefaultValue = false)]
+    [JsonPropertyName("name")]
     public string Name { get; set; }
 
 
@@ -54,7 +53,7 @@ public partial class CategoryReference : IEquatable<CategoryReference>
     /// The reference to category to which this category belongs to.
     /// </summary>
     /// <value>The reference to category to which this category belongs to.</value>
-    [DataMember(Name = "parentCategory", EmitDefaultValue = false)]
+    [JsonPropertyName("parentCategory")]
     public CategoryReference ParentCategory { get; set; }
 
 
@@ -63,7 +62,7 @@ public partial class CategoryReference : IEquatable<CategoryReference>
     /// The URI for this object
     /// </summary>
     /// <value>The URI for this object</value>
-    [DataMember(Name = "selfUri", EmitDefaultValue = false)]
+    [JsonPropertyName("selfUri")]
     public string SelfUri { get; private set; }
 
 

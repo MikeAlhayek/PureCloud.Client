@@ -1,4 +1,3 @@
-using System.Runtime.Serialization;
 using System.Text;
 using System.Text.Json.Serialization;
 
@@ -7,7 +6,7 @@ namespace PureCloud.Client.Models;
 /// <summary>
 /// KnowledgeCategoryRequest
 /// </summary>
-[DataContract]
+
 public partial class KnowledgeCategoryRequest : IEquatable<KnowledgeCategoryRequest>
 {
 
@@ -36,7 +35,7 @@ public partial class KnowledgeCategoryRequest : IEquatable<KnowledgeCategoryRequ
     /// The globally unique identifier for the object.
     /// </summary>
     /// <value>The globally unique identifier for the object.</value>
-    [DataMember(Name = "id", EmitDefaultValue = false)]
+    [JsonPropertyName("id")]
     public string Id { get; private set; }
 
 
@@ -45,7 +44,7 @@ public partial class KnowledgeCategoryRequest : IEquatable<KnowledgeCategoryRequ
     /// Category name
     /// </summary>
     /// <value>Category name</value>
-    [DataMember(Name = "name", EmitDefaultValue = false)]
+    [JsonPropertyName("name")]
     public string Name { get; set; }
 
 
@@ -54,7 +53,7 @@ public partial class KnowledgeCategoryRequest : IEquatable<KnowledgeCategoryRequ
     /// Category description
     /// </summary>
     /// <value>Category description</value>
-    [DataMember(Name = "description", EmitDefaultValue = false)]
+    [JsonPropertyName("description")]
     public string Description { get; set; }
 
 
@@ -63,7 +62,7 @@ public partial class KnowledgeCategoryRequest : IEquatable<KnowledgeCategoryRequ
     /// Category parent
     /// </summary>
     /// <value>Category parent</value>
-    [DataMember(Name = "parent", EmitDefaultValue = false)]
+    [JsonPropertyName("parent")]
     public DocumentCategoryInput Parent { get; set; }
 
 
@@ -72,7 +71,7 @@ public partial class KnowledgeCategoryRequest : IEquatable<KnowledgeCategoryRequ
     /// The URI for this object
     /// </summary>
     /// <value>The URI for this object</value>
-    [DataMember(Name = "selfUri", EmitDefaultValue = false)]
+    [JsonPropertyName("selfUri")]
     public string SelfUri { get; private set; }
 
 

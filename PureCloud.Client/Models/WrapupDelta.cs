@@ -7,13 +7,13 @@ namespace PureCloud.Client.Models;
 /// <summary>
 /// WrapupDelta
 /// </summary>
-[DataContract]
+
 public partial class WrapupDelta : IEquatable<WrapupDelta>
 {
     /// <summary>
     /// Gets or Sets Action
     /// </summary>
-    [JsonConverter(typeof(JsonStringEnumConverter))]
+    
     public enum ActionEnum
     {
         /// <summary>
@@ -39,7 +39,7 @@ public partial class WrapupDelta : IEquatable<WrapupDelta>
     /// <summary>
     /// Gets or Sets Action
     /// </summary>
-    [DataMember(Name = "action", EmitDefaultValue = false)]
+    [JsonPropertyName("action")]
     public ActionEnum? Action { get; set; }
     /// <summary>
     /// Initializes a new instance of the <see cref="WrapupDelta" /> class.
@@ -62,7 +62,7 @@ public partial class WrapupDelta : IEquatable<WrapupDelta>
     /// <summary>
     /// Gets or Sets Code
     /// </summary>
-    [DataMember(Name = "code", EmitDefaultValue = false)]
+    [JsonPropertyName("code")]
     public string Code { get; set; }
 
 
@@ -70,7 +70,7 @@ public partial class WrapupDelta : IEquatable<WrapupDelta>
     /// <summary>
     /// Gets or Sets UserId
     /// </summary>
-    [DataMember(Name = "userId", EmitDefaultValue = false)]
+    [JsonPropertyName("userId")]
     public string UserId { get; set; }
 
 

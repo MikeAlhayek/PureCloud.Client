@@ -1,12 +1,12 @@
-using System.Runtime.Serialization;
 using System.Text;
+using System.Text.Json.Serialization;
 
 namespace PureCloud.Client.Models;
 
 /// <summary>
 /// The settings for User Video
 /// </summary>
-[DataContract]
+
 public partial class UserVideoSettings : IEquatable<UserVideoSettings>
 {
     /// <summary>
@@ -27,7 +27,7 @@ public partial class UserVideoSettings : IEquatable<UserVideoSettings>
     /// whether or not user camera is allowed
     /// </summary>
     /// <value>whether or not user camera is allowed</value>
-    [DataMember(Name = "allowCamera", EmitDefaultValue = false)]
+    [JsonPropertyName("allowCamera")]
     public bool? AllowCamera { get; set; }
 
 
@@ -36,7 +36,7 @@ public partial class UserVideoSettings : IEquatable<UserVideoSettings>
     /// whether or not user screen share is allowed
     /// </summary>
     /// <value>whether or not user screen share is allowed</value>
-    [DataMember(Name = "allowScreenShare", EmitDefaultValue = false)]
+    [JsonPropertyName("allowScreenShare")]
     public bool? AllowScreenShare { get; set; }
 
 

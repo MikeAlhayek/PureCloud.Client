@@ -1,4 +1,3 @@
-using System.Runtime.Serialization;
 using System.Text;
 using System.Text.Json.Serialization;
 
@@ -7,7 +6,7 @@ namespace PureCloud.Client.Models;
 /// <summary>
 /// CreateSecureSession
 /// </summary>
-[DataContract]
+
 public partial class CreateSecureSession : IEquatable<CreateSecureSession>
 {
 
@@ -38,7 +37,7 @@ public partial class CreateSecureSession : IEquatable<CreateSecureSession>
     /// requesting participant
     /// </summary>
     /// <value>requesting participant</value>
-    [DataMember(Name = "sourceParticipantId", EmitDefaultValue = false)]
+    [JsonPropertyName("sourceParticipantId")]
     public string SourceParticipantId { get; set; }
 
 
@@ -47,7 +46,7 @@ public partial class CreateSecureSession : IEquatable<CreateSecureSession>
     /// the flow id to execute in the secure session
     /// </summary>
     /// <value>the flow id to execute in the secure session</value>
-    [DataMember(Name = "flowId", EmitDefaultValue = false)]
+    [JsonPropertyName("flowId")]
     public string FlowId { get; set; }
 
 
@@ -56,7 +55,7 @@ public partial class CreateSecureSession : IEquatable<CreateSecureSession>
     /// user data for the secure session
     /// </summary>
     /// <value>user data for the secure session</value>
-    [DataMember(Name = "userData", EmitDefaultValue = false)]
+    [JsonPropertyName("userData")]
     public string UserData { get; set; }
 
 
@@ -65,7 +64,7 @@ public partial class CreateSecureSession : IEquatable<CreateSecureSession>
     /// if true, disconnect the agent after creating the session
     /// </summary>
     /// <value>if true, disconnect the agent after creating the session</value>
-    [DataMember(Name = "disconnect", EmitDefaultValue = false)]
+    [JsonPropertyName("disconnect")]
     public bool? Disconnect { get; set; }
 
 

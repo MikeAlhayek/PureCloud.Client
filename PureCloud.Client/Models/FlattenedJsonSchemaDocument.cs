@@ -1,12 +1,12 @@
-using System.Runtime.Serialization;
 using System.Text;
+using System.Text.Json.Serialization;
 
 namespace PureCloud.Client.Models;
 
 /// <summary>
 /// JSON schema that defines the transformed result that will be sent back to the caller. The schema is transformed based on Architect&#39;s flattened format. If the &#39;flatten&#39; query parameter is supplied as true, this field will be returned.
 /// </summary>
-[DataContract]
+
 public partial class FlattenedJsonSchemaDocument : IEquatable<FlattenedJsonSchemaDocument>
 {
     /// <summary>
@@ -26,7 +26,7 @@ public partial class FlattenedJsonSchemaDocument : IEquatable<FlattenedJsonSchem
     /// <summary>
     /// Gets or Sets Schema
     /// </summary>
-    [DataMember(Name = "schema", EmitDefaultValue = false)]
+    [JsonPropertyName("schema")]
     public JsonSchemaDocument Schema { get; set; }
 
 
@@ -35,7 +35,7 @@ public partial class FlattenedJsonSchemaDocument : IEquatable<FlattenedJsonSchem
     /// Properties in the original document that were arrays
     /// </summary>
     /// <value>Properties in the original document that were arrays</value>
-    [DataMember(Name = "arrayProperties", EmitDefaultValue = false)]
+    [JsonPropertyName("arrayProperties")]
     public List<string> ArrayProperties { get; set; }
 
 

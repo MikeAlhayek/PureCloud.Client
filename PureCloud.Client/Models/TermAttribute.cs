@@ -7,13 +7,13 @@ namespace PureCloud.Client.Models;
 /// <summary>
 /// TermAttribute
 /// </summary>
-[DataContract]
+
 public partial class TermAttribute : IEquatable<TermAttribute>
 {
     /// <summary>
     /// Gets or Sets Type
     /// </summary>
-    [JsonConverter(typeof(JsonStringEnumConverter))]
+    
     public enum TypeEnum
     {
         /// <summary>
@@ -57,7 +57,7 @@ public partial class TermAttribute : IEquatable<TermAttribute>
     /// <summary>
     /// Gets or Sets Type
     /// </summary>
-    [DataMember(Name = "type", EmitDefaultValue = false)]
+    [JsonPropertyName("type")]
     public TypeEnum? Type { get; set; }
     /// <summary>
     /// Initializes a new instance of the <see cref="TermAttribute" /> class.
@@ -78,7 +78,7 @@ public partial class TermAttribute : IEquatable<TermAttribute>
     /// <summary>
     /// Gets or Sets Id
     /// </summary>
-    [DataMember(Name = "id", EmitDefaultValue = false)]
+    [JsonPropertyName("id")]
     public string Id { get; set; }
 
 
@@ -86,7 +86,7 @@ public partial class TermAttribute : IEquatable<TermAttribute>
     /// <summary>
     /// Gets or Sets Name
     /// </summary>
-    [DataMember(Name = "name", EmitDefaultValue = false)]
+    [JsonPropertyName("name")]
     public string Name { get; set; }
 
 

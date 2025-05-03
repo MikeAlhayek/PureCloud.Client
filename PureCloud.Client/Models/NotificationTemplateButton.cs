@@ -7,14 +7,14 @@ namespace PureCloud.Client.Models;
 /// <summary>
 /// Template button object
 /// </summary>
-[DataContract]
+
 public partial class NotificationTemplateButton : IEquatable<NotificationTemplateButton>
 {
     /// <summary>
     /// Specifies the type of the button.
     /// </summary>
     /// <value>Specifies the type of the button.</value>
-    [JsonConverter(typeof(JsonStringEnumConverter))]
+    
     public enum TypeEnum
     {
         /// <summary>
@@ -47,7 +47,7 @@ public partial class NotificationTemplateButton : IEquatable<NotificationTemplat
     /// Specifies the type of the button.
     /// </summary>
     /// <value>Specifies the type of the button.</value>
-    [DataMember(Name = "type", EmitDefaultValue = false)]
+    [JsonPropertyName("type")]
     public TypeEnum? Type { get; set; }
 
     /// <summary>
@@ -83,7 +83,7 @@ public partial class NotificationTemplateButton : IEquatable<NotificationTemplat
     /// Button text message.
     /// </summary>
     /// <value>Button text message.</value>
-    [DataMember(Name = "text", EmitDefaultValue = false)]
+    [JsonPropertyName("text")]
     public string Text { get; set; }
 
 
@@ -92,7 +92,7 @@ public partial class NotificationTemplateButton : IEquatable<NotificationTemplat
     /// index of the button in the list.
     /// </summary>
     /// <value>index of the button in the list.</value>
-    [DataMember(Name = "index", EmitDefaultValue = false)]
+    [JsonPropertyName("index")]
     public long? Index { get; set; }
 
 
@@ -101,7 +101,7 @@ public partial class NotificationTemplateButton : IEquatable<NotificationTemplat
     /// Button phone number.
     /// </summary>
     /// <value>Button phone number.</value>
-    [DataMember(Name = "phoneNumber", EmitDefaultValue = false)]
+    [JsonPropertyName("phoneNumber")]
     public string PhoneNumber { get; set; }
 
 
@@ -110,7 +110,7 @@ public partial class NotificationTemplateButton : IEquatable<NotificationTemplat
     /// Button URL link.
     /// </summary>
     /// <value>Button URL link.</value>
-    [DataMember(Name = "url", EmitDefaultValue = false)]
+    [JsonPropertyName("url")]
     public string Url { get; set; }
 
 
@@ -119,7 +119,7 @@ public partial class NotificationTemplateButton : IEquatable<NotificationTemplat
     /// Template parameters for placeholders in the button.
     /// </summary>
     /// <value>Template parameters for placeholders in the button.</value>
-    [DataMember(Name = "parameters", EmitDefaultValue = false)]
+    [JsonPropertyName("parameters")]
     public List<NotificationTemplateParameter> Parameters { get; set; }
 
 

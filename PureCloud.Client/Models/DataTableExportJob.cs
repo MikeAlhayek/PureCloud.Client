@@ -7,14 +7,14 @@ namespace PureCloud.Client.Models;
 /// <summary>
 /// State information for an export job of rows from a datatable
 /// </summary>
-[DataContract]
+
 public partial class DataTableExportJob : IEquatable<DataTableExportJob>
 {
     /// <summary>
     /// The status of the export job
     /// </summary>
     /// <value>The status of the export job</value>
-    [JsonConverter(typeof(JsonStringEnumConverter))]
+    
     public enum StatusEnum
     {
         /// <summary>
@@ -47,7 +47,7 @@ public partial class DataTableExportJob : IEquatable<DataTableExportJob>
     /// The status of the export job
     /// </summary>
     /// <value>The status of the export job</value>
-    [DataMember(Name = "status", EmitDefaultValue = false)]
+    [JsonPropertyName("status")]
     public StatusEnum? Status { get; set; }
 
     /// <summary>
@@ -85,7 +85,7 @@ public partial class DataTableExportJob : IEquatable<DataTableExportJob>
     /// The globally unique identifier for the object.
     /// </summary>
     /// <value>The globally unique identifier for the object.</value>
-    [DataMember(Name = "id", EmitDefaultValue = false)]
+    [JsonPropertyName("id")]
     public string Id { get; private set; }
 
 
@@ -93,7 +93,7 @@ public partial class DataTableExportJob : IEquatable<DataTableExportJob>
     /// <summary>
     /// Gets or Sets Name
     /// </summary>
-    [DataMember(Name = "name", EmitDefaultValue = false)]
+    [JsonPropertyName("name")]
     public string Name { get; set; }
 
 
@@ -102,7 +102,7 @@ public partial class DataTableExportJob : IEquatable<DataTableExportJob>
     /// The PureCloudEnvironment user who started the export job
     /// </summary>
     /// <value>The PureCloudEnvironment user who started the export job</value>
-    [DataMember(Name = "owner", EmitDefaultValue = false)]
+    [JsonPropertyName("owner")]
     public AddressableEntityRef Owner { get; set; }
 
 
@@ -113,7 +113,7 @@ public partial class DataTableExportJob : IEquatable<DataTableExportJob>
     /// The timestamp of when the export began. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z
     /// </summary>
     /// <value>The timestamp of when the export began. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z</value>
-    [DataMember(Name = "dateCreated", EmitDefaultValue = false)]
+    [JsonPropertyName("dateCreated")]
     public DateTime? DateCreated { get; set; }
 
 
@@ -122,7 +122,7 @@ public partial class DataTableExportJob : IEquatable<DataTableExportJob>
     /// The timestamp of when the export stopped (either successfully or unsuccessfully). Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z
     /// </summary>
     /// <value>The timestamp of when the export stopped (either successfully or unsuccessfully). Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z</value>
-    [DataMember(Name = "dateCompleted", EmitDefaultValue = false)]
+    [JsonPropertyName("dateCompleted")]
     public DateTime? DateCompleted { get; set; }
 
 
@@ -131,7 +131,7 @@ public partial class DataTableExportJob : IEquatable<DataTableExportJob>
     /// The URL of the location at which the caller can download the export file, when available
     /// </summary>
     /// <value>The URL of the location at which the caller can download the export file, when available</value>
-    [DataMember(Name = "downloadURI", EmitDefaultValue = false)]
+    [JsonPropertyName("downloadURI")]
     public string DownloadURI { get; set; }
 
 
@@ -140,7 +140,7 @@ public partial class DataTableExportJob : IEquatable<DataTableExportJob>
     /// Any error information, or null of the processing is not in an error state
     /// </summary>
     /// <value>Any error information, or null of the processing is not in an error state</value>
-    [DataMember(Name = "errorInformation", EmitDefaultValue = false)]
+    [JsonPropertyName("errorInformation")]
     public ErrorBody ErrorInformation { get; set; }
 
 
@@ -149,7 +149,7 @@ public partial class DataTableExportJob : IEquatable<DataTableExportJob>
     /// The current count of the number of records processed
     /// </summary>
     /// <value>The current count of the number of records processed</value>
-    [DataMember(Name = "countRecordsProcessed", EmitDefaultValue = false)]
+    [JsonPropertyName("countRecordsProcessed")]
     public int? CountRecordsProcessed { get; set; }
 
 
@@ -158,7 +158,7 @@ public partial class DataTableExportJob : IEquatable<DataTableExportJob>
     /// The URI for this object
     /// </summary>
     /// <value>The URI for this object</value>
-    [DataMember(Name = "selfUri", EmitDefaultValue = false)]
+    [JsonPropertyName("selfUri")]
     public string SelfUri { get; private set; }
 
 

@@ -1,12 +1,12 @@
-using System.Runtime.Serialization;
 using System.Text;
+using System.Text.Json.Serialization;
 
 namespace PureCloud.Client.Models;
 
 /// <summary>
 /// SupportedDialectsEntityListing
 /// </summary>
-[DataContract]
+
 public partial class SupportedDialectsEntityListing : IEquatable<SupportedDialectsEntityListing>
 {
     /// <summary>
@@ -24,7 +24,7 @@ public partial class SupportedDialectsEntityListing : IEquatable<SupportedDialec
     /// <summary>
     /// Gets or Sets Entities
     /// </summary>
-    [DataMember(Name = "entities", EmitDefaultValue = false)]
+    [JsonPropertyName("entities")]
     public List<SupportedDialectsTranscriptionEngine> Entities { get; set; }
 
 

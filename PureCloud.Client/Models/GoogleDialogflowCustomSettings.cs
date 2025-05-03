@@ -1,12 +1,12 @@
-using System.Runtime.Serialization;
 using System.Text;
+using System.Text.Json.Serialization;
 
 namespace PureCloud.Client.Models;
 
 /// <summary>
 /// GoogleDialogflowCustomSettings
 /// </summary>
-[DataContract]
+
 public partial class GoogleDialogflowCustomSettings : IEquatable<GoogleDialogflowCustomSettings>
 {
     /// <summary>
@@ -31,7 +31,7 @@ public partial class GoogleDialogflowCustomSettings : IEquatable<GoogleDialogflo
     /// If set this environment will be used to initiate the dialogflow bot, otherwise the default configuration will be used.  See https://cloud.google.com/dialogflow/docs/agents-versions
     /// </summary>
     /// <value>If set this environment will be used to initiate the dialogflow bot, otherwise the default configuration will be used.  See https://cloud.google.com/dialogflow/docs/agents-versions</value>
-    [DataMember(Name = "environment", EmitDefaultValue = false)]
+    [JsonPropertyName("environment")]
     public string Environment { get; set; }
 
 
@@ -40,7 +40,7 @@ public partial class GoogleDialogflowCustomSettings : IEquatable<GoogleDialogflo
     /// If set this eventName will be used to initiate the dialogflow bot rather than language processing on the input text.  See https://cloud.google.com/dialogflow/es/docs/events-overview
     /// </summary>
     /// <value>If set this eventName will be used to initiate the dialogflow bot rather than language processing on the input text.  See https://cloud.google.com/dialogflow/es/docs/events-overview</value>
-    [DataMember(Name = "eventName", EmitDefaultValue = false)]
+    [JsonPropertyName("eventName")]
     public string EventName { get; set; }
 
 
@@ -49,7 +49,7 @@ public partial class GoogleDialogflowCustomSettings : IEquatable<GoogleDialogflo
     /// Parameters passed to the fulfillment webhook of the bot (if any).
     /// </summary>
     /// <value>Parameters passed to the fulfillment webhook of the bot (if any).</value>
-    [DataMember(Name = "webhookQueryParameters", EmitDefaultValue = false)]
+    [JsonPropertyName("webhookQueryParameters")]
     public Dictionary<string, string> WebhookQueryParameters { get; set; }
 
 
@@ -58,7 +58,7 @@ public partial class GoogleDialogflowCustomSettings : IEquatable<GoogleDialogflo
     /// Parameters passed to the event input of the bot.
     /// </summary>
     /// <value>Parameters passed to the event input of the bot.</value>
-    [DataMember(Name = "eventInputParameters", EmitDefaultValue = false)]
+    [JsonPropertyName("eventInputParameters")]
     public Dictionary<string, string> EventInputParameters { get; set; }
 
 

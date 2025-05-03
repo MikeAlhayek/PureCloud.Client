@@ -1,12 +1,12 @@
-using System.Runtime.Serialization;
 using System.Text;
+using System.Text.Json.Serialization;
 
 namespace PureCloud.Client.Models;
 
 /// <summary>
 /// ValidationServiceAsyncResponse
 /// </summary>
-[DataContract]
+
 public partial class ValidationServiceAsyncResponse : IEquatable<ValidationServiceAsyncResponse>
 {
     /// <summary>
@@ -23,7 +23,7 @@ public partial class ValidationServiceAsyncResponse : IEquatable<ValidationServi
     /// Property denoting the job id of the import job
     /// </summary>
     /// <value>Property denoting the job id of the import job</value>
-    [DataMember(Name = "id", EmitDefaultValue = false)]
+    [JsonPropertyName("id")]
     public string Id { get; private set; }
 
 
@@ -32,7 +32,7 @@ public partial class ValidationServiceAsyncResponse : IEquatable<ValidationServi
     /// The URI for this object
     /// </summary>
     /// <value>The URI for this object</value>
-    [DataMember(Name = "selfUri", EmitDefaultValue = false)]
+    [JsonPropertyName("selfUri")]
     public string SelfUri { get; private set; }
 
 

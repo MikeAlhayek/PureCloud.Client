@@ -1,4 +1,3 @@
-using System.Runtime.Serialization;
 using System.Text;
 using System.Text.Json.Serialization;
 
@@ -7,7 +6,7 @@ namespace PureCloud.Client.Models;
 /// <summary>
 /// TtsSettings
 /// </summary>
-[DataContract]
+
 public partial class TtsSettings : IEquatable<TtsSettings>
 {
 
@@ -34,7 +33,7 @@ public partial class TtsSettings : IEquatable<TtsSettings>
     /// ID of the global default TTS engine
     /// </summary>
     /// <value>ID of the global default TTS engine</value>
-    [DataMember(Name = "defaultEngine", EmitDefaultValue = false)]
+    [JsonPropertyName("defaultEngine")]
     public string DefaultEngine { get; set; }
 
 
@@ -43,7 +42,7 @@ public partial class TtsSettings : IEquatable<TtsSettings>
     /// The list of default overrides for specific languages
     /// </summary>
     /// <value>The list of default overrides for specific languages</value>
-    [DataMember(Name = "languageOverrides", EmitDefaultValue = false)]
+    [JsonPropertyName("languageOverrides")]
     public List<LanguageOverride> LanguageOverrides { get; set; }
 
 

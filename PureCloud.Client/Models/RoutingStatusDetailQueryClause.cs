@@ -7,14 +7,14 @@ namespace PureCloud.Client.Models;
 /// <summary>
 /// RoutingStatusDetailQueryClause
 /// </summary>
-[DataContract]
+
 public partial class RoutingStatusDetailQueryClause : IEquatable<RoutingStatusDetailQueryClause>
 {
     /// <summary>
     /// Boolean operation to apply to the provided predicates
     /// </summary>
     /// <value>Boolean operation to apply to the provided predicates</value>
-    [JsonConverter(typeof(JsonStringEnumConverter))]
+    
     public enum TypeEnum
     {
         /// <summary>
@@ -41,7 +41,7 @@ public partial class RoutingStatusDetailQueryClause : IEquatable<RoutingStatusDe
     /// Boolean operation to apply to the provided predicates
     /// </summary>
     /// <value>Boolean operation to apply to the provided predicates</value>
-    [DataMember(Name = "type", EmitDefaultValue = false)]
+    [JsonPropertyName("type")]
     public TypeEnum? Type { get; set; }
 
     /// <summary>
@@ -69,7 +69,7 @@ public partial class RoutingStatusDetailQueryClause : IEquatable<RoutingStatusDe
     /// Like a three-word sentence: (attribute-name) (operator) (target-value).
     /// </summary>
     /// <value>Like a three-word sentence: (attribute-name) (operator) (target-value).</value>
-    [DataMember(Name = "predicates", EmitDefaultValue = false)]
+    [JsonPropertyName("predicates")]
     public List<RoutingStatusDetailQueryPredicate> Predicates { get; set; }
 
 

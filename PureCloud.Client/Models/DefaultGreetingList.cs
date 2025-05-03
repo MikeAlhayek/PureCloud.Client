@@ -7,13 +7,13 @@ namespace PureCloud.Client.Models;
 /// <summary>
 /// DefaultGreetingList
 /// </summary>
-[DataContract]
+
 public partial class DefaultGreetingList : IEquatable<DefaultGreetingList>
 {
     /// <summary>
     /// Gets or Sets OwnerType
     /// </summary>
-    [JsonConverter(typeof(JsonStringEnumConverter))]
+    
     public enum OwnerTypeEnum
     {
         /// <summary>
@@ -45,7 +45,7 @@ public partial class DefaultGreetingList : IEquatable<DefaultGreetingList>
     /// <summary>
     /// Gets or Sets OwnerType
     /// </summary>
-    [DataMember(Name = "ownerType", EmitDefaultValue = false)]
+    [JsonPropertyName("ownerType")]
     public OwnerTypeEnum? OwnerType { get; set; }
     /// <summary>
     /// Initializes a new instance of the <see cref="DefaultGreetingList" /> class.
@@ -77,7 +77,7 @@ public partial class DefaultGreetingList : IEquatable<DefaultGreetingList>
     /// The globally unique identifier for the object.
     /// </summary>
     /// <value>The globally unique identifier for the object.</value>
-    [DataMember(Name = "id", EmitDefaultValue = false)]
+    [JsonPropertyName("id")]
     public string Id { get; private set; }
 
 
@@ -85,7 +85,7 @@ public partial class DefaultGreetingList : IEquatable<DefaultGreetingList>
     /// <summary>
     /// Gets or Sets Name
     /// </summary>
-    [DataMember(Name = "name", EmitDefaultValue = false)]
+    [JsonPropertyName("name")]
     public string Name { get; set; }
 
 
@@ -93,7 +93,7 @@ public partial class DefaultGreetingList : IEquatable<DefaultGreetingList>
     /// <summary>
     /// Gets or Sets Owner
     /// </summary>
-    [DataMember(Name = "owner", EmitDefaultValue = false)]
+    [JsonPropertyName("owner")]
     public GreetingOwner Owner { get; set; }
 
 
@@ -103,7 +103,7 @@ public partial class DefaultGreetingList : IEquatable<DefaultGreetingList>
     /// <summary>
     /// Gets or Sets Greetings
     /// </summary>
-    [DataMember(Name = "greetings", EmitDefaultValue = false)]
+    [JsonPropertyName("greetings")]
     public Dictionary<string, Greeting> Greetings { get; set; }
 
 
@@ -112,7 +112,7 @@ public partial class DefaultGreetingList : IEquatable<DefaultGreetingList>
     /// Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z
     /// </summary>
     /// <value>Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z</value>
-    [DataMember(Name = "createdDate", EmitDefaultValue = false)]
+    [JsonPropertyName("createdDate")]
     public DateTime? CreatedDate { get; set; }
 
 
@@ -120,7 +120,7 @@ public partial class DefaultGreetingList : IEquatable<DefaultGreetingList>
     /// <summary>
     /// Gets or Sets CreatedBy
     /// </summary>
-    [DataMember(Name = "createdBy", EmitDefaultValue = false)]
+    [JsonPropertyName("createdBy")]
     public string CreatedBy { get; set; }
 
 
@@ -129,7 +129,7 @@ public partial class DefaultGreetingList : IEquatable<DefaultGreetingList>
     /// Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z
     /// </summary>
     /// <value>Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z</value>
-    [DataMember(Name = "modifiedDate", EmitDefaultValue = false)]
+    [JsonPropertyName("modifiedDate")]
     public DateTime? ModifiedDate { get; set; }
 
 
@@ -137,7 +137,7 @@ public partial class DefaultGreetingList : IEquatable<DefaultGreetingList>
     /// <summary>
     /// Gets or Sets ModifiedBy
     /// </summary>
-    [DataMember(Name = "modifiedBy", EmitDefaultValue = false)]
+    [JsonPropertyName("modifiedBy")]
     public string ModifiedBy { get; set; }
 
 
@@ -146,7 +146,7 @@ public partial class DefaultGreetingList : IEquatable<DefaultGreetingList>
     /// The URI for this object
     /// </summary>
     /// <value>The URI for this object</value>
-    [DataMember(Name = "selfUri", EmitDefaultValue = false)]
+    [JsonPropertyName("selfUri")]
     public string SelfUri { get; private set; }
 
 

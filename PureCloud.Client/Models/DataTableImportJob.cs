@@ -7,14 +7,14 @@ namespace PureCloud.Client.Models;
 /// <summary>
 /// State information for an import job of rows to a datatable
 /// </summary>
-[DataContract]
+
 public partial class DataTableImportJob : IEquatable<DataTableImportJob>
 {
     /// <summary>
     /// The status of the import job
     /// </summary>
     /// <value>The status of the import job</value>
-    [JsonConverter(typeof(JsonStringEnumConverter))]
+    
     public enum StatusEnum
     {
         /// <summary>
@@ -53,7 +53,7 @@ public partial class DataTableImportJob : IEquatable<DataTableImportJob>
     /// The indication of whether the processing should remove rows that don't appear in the import file
     /// </summary>
     /// <value>The indication of whether the processing should remove rows that don't appear in the import file</value>
-    [JsonConverter(typeof(JsonStringEnumConverter))]
+    
     public enum ImportModeEnum
     {
         /// <summary>
@@ -80,13 +80,13 @@ public partial class DataTableImportJob : IEquatable<DataTableImportJob>
     /// The status of the import job
     /// </summary>
     /// <value>The status of the import job</value>
-    [DataMember(Name = "status", EmitDefaultValue = false)]
+    [JsonPropertyName("status")]
     public StatusEnum? Status { get; set; }
     /// <summary>
     /// The indication of whether the processing should remove rows that don't appear in the import file
     /// </summary>
     /// <value>The indication of whether the processing should remove rows that don't appear in the import file</value>
-    [DataMember(Name = "importMode", EmitDefaultValue = false)]
+    [JsonPropertyName("importMode")]
     public ImportModeEnum? ImportMode { get; set; }
 
     /// <summary>
@@ -130,7 +130,7 @@ public partial class DataTableImportJob : IEquatable<DataTableImportJob>
     /// The globally unique identifier for the object.
     /// </summary>
     /// <value>The globally unique identifier for the object.</value>
-    [DataMember(Name = "id", EmitDefaultValue = false)]
+    [JsonPropertyName("id")]
     public string Id { get; private set; }
 
 
@@ -138,7 +138,7 @@ public partial class DataTableImportJob : IEquatable<DataTableImportJob>
     /// <summary>
     /// Gets or Sets Name
     /// </summary>
-    [DataMember(Name = "name", EmitDefaultValue = false)]
+    [JsonPropertyName("name")]
     public string Name { get; set; }
 
 
@@ -147,7 +147,7 @@ public partial class DataTableImportJob : IEquatable<DataTableImportJob>
     /// The PureCloudEnvironment user who started the import job
     /// </summary>
     /// <value>The PureCloudEnvironment user who started the import job</value>
-    [DataMember(Name = "owner", EmitDefaultValue = false)]
+    [JsonPropertyName("owner")]
     public AddressableEntityRef Owner { get; set; }
 
 
@@ -158,7 +158,7 @@ public partial class DataTableImportJob : IEquatable<DataTableImportJob>
     /// The timestamp of when the import began. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z
     /// </summary>
     /// <value>The timestamp of when the import began. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z</value>
-    [DataMember(Name = "dateCreated", EmitDefaultValue = false)]
+    [JsonPropertyName("dateCreated")]
     public DateTime? DateCreated { get; set; }
 
 
@@ -167,7 +167,7 @@ public partial class DataTableImportJob : IEquatable<DataTableImportJob>
     /// The timestamp of when the import stopped (either successfully or unsuccessfully). Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z
     /// </summary>
     /// <value>The timestamp of when the import stopped (either successfully or unsuccessfully). Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z</value>
-    [DataMember(Name = "dateCompleted", EmitDefaultValue = false)]
+    [JsonPropertyName("dateCompleted")]
     public DateTime? DateCompleted { get; set; }
 
 
@@ -176,7 +176,7 @@ public partial class DataTableImportJob : IEquatable<DataTableImportJob>
     /// The URL of the location at which the caller can upload the file to be imported
     /// </summary>
     /// <value>The URL of the location at which the caller can upload the file to be imported</value>
-    [DataMember(Name = "uploadURI", EmitDefaultValue = false)]
+    [JsonPropertyName("uploadURI")]
     public string UploadURI { get; set; }
 
 
@@ -187,7 +187,7 @@ public partial class DataTableImportJob : IEquatable<DataTableImportJob>
     /// Any error information, or null of the processing is not in an error state
     /// </summary>
     /// <value>Any error information, or null of the processing is not in an error state</value>
-    [DataMember(Name = "errorInformation", EmitDefaultValue = false)]
+    [JsonPropertyName("errorInformation")]
     public ErrorBody ErrorInformation { get; set; }
 
 
@@ -196,7 +196,7 @@ public partial class DataTableImportJob : IEquatable<DataTableImportJob>
     /// The current count of the number of records processed
     /// </summary>
     /// <value>The current count of the number of records processed</value>
-    [DataMember(Name = "countRecordsUpdated", EmitDefaultValue = false)]
+    [JsonPropertyName("countRecordsUpdated")]
     public int? CountRecordsUpdated { get; set; }
 
 
@@ -205,7 +205,7 @@ public partial class DataTableImportJob : IEquatable<DataTableImportJob>
     /// The current count of the number of records deleted
     /// </summary>
     /// <value>The current count of the number of records deleted</value>
-    [DataMember(Name = "countRecordsDeleted", EmitDefaultValue = false)]
+    [JsonPropertyName("countRecordsDeleted")]
     public int? CountRecordsDeleted { get; set; }
 
 
@@ -214,7 +214,7 @@ public partial class DataTableImportJob : IEquatable<DataTableImportJob>
     /// The current count of the number of records that failed to import
     /// </summary>
     /// <value>The current count of the number of records that failed to import</value>
-    [DataMember(Name = "countRecordsFailed", EmitDefaultValue = false)]
+    [JsonPropertyName("countRecordsFailed")]
     public int? CountRecordsFailed { get; set; }
 
 
@@ -223,7 +223,7 @@ public partial class DataTableImportJob : IEquatable<DataTableImportJob>
     /// Required headers when uploading a file through PUT request to the URL in the &#39;uploadURI&#39; field
     /// </summary>
     /// <value>Required headers when uploading a file through PUT request to the URL in the &#39;uploadURI&#39; field</value>
-    [DataMember(Name = "uploadHeaders", EmitDefaultValue = false)]
+    [JsonPropertyName("uploadHeaders")]
     public Dictionary<string, string> UploadHeaders { get; private set; }
 
 
@@ -232,7 +232,7 @@ public partial class DataTableImportJob : IEquatable<DataTableImportJob>
     /// The URI for this object
     /// </summary>
     /// <value>The URI for this object</value>
-    [DataMember(Name = "selfUri", EmitDefaultValue = false)]
+    [JsonPropertyName("selfUri")]
     public string SelfUri { get; private set; }
 
 

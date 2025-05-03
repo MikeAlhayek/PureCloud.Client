@@ -1,12 +1,12 @@
-using System.Runtime.Serialization;
 using System.Text;
+using System.Text.Json.Serialization;
 
 namespace PureCloud.Client.Models;
 
 /// <summary>
 /// Defines a SCIM schema.
 /// </summary>
-[DataContract]
+
 public partial class ScimV2SchemaDefinition : IEquatable<ScimV2SchemaDefinition>
 {
     /// <summary>
@@ -23,7 +23,7 @@ public partial class ScimV2SchemaDefinition : IEquatable<ScimV2SchemaDefinition>
     /// The ID of the SCIM resource. Set by the service provider. \&quot;caseExact\&quot; is set to \&quot;true\&quot;. \&quot;mutability\&quot; is set to \&quot;readOnly\&quot;. \&quot;returned\&quot; is set to \&quot;always\&quot;.
     /// </summary>
     /// <value>The ID of the SCIM resource. Set by the service provider. \&quot;caseExact\&quot; is set to \&quot;true\&quot;. \&quot;mutability\&quot; is set to \&quot;readOnly\&quot;. \&quot;returned\&quot; is set to \&quot;always\&quot;.</value>
-    [DataMember(Name = "id", EmitDefaultValue = false)]
+    [JsonPropertyName("id")]
     public string Id { get; private set; }
 
 
@@ -32,7 +32,7 @@ public partial class ScimV2SchemaDefinition : IEquatable<ScimV2SchemaDefinition>
     /// The name of the schema.
     /// </summary>
     /// <value>The name of the schema.</value>
-    [DataMember(Name = "name", EmitDefaultValue = false)]
+    [JsonPropertyName("name")]
     public string Name { get; private set; }
 
 
@@ -41,7 +41,7 @@ public partial class ScimV2SchemaDefinition : IEquatable<ScimV2SchemaDefinition>
     /// The description of the schema.
     /// </summary>
     /// <value>The description of the schema.</value>
-    [DataMember(Name = "description", EmitDefaultValue = false)]
+    [JsonPropertyName("description")]
     public string Description { get; private set; }
 
 
@@ -50,7 +50,7 @@ public partial class ScimV2SchemaDefinition : IEquatable<ScimV2SchemaDefinition>
     /// The list of service provider attributes.
     /// </summary>
     /// <value>The list of service provider attributes.</value>
-    [DataMember(Name = "attributes", EmitDefaultValue = false)]
+    [JsonPropertyName("attributes")]
     public List<ScimV2SchemaAttribute> Attributes { get; private set; }
 
 
@@ -59,7 +59,7 @@ public partial class ScimV2SchemaDefinition : IEquatable<ScimV2SchemaDefinition>
     /// The metadata of the SCIM resource. Only \&quot;location\&quot; and \&quot;resourceType\&quot; are set for \&quot;Schema\&quot; resources.
     /// </summary>
     /// <value>The metadata of the SCIM resource. Only \&quot;location\&quot; and \&quot;resourceType\&quot; are set for \&quot;Schema\&quot; resources.</value>
-    [DataMember(Name = "meta", EmitDefaultValue = false)]
+    [JsonPropertyName("meta")]
     public ScimMetadata Meta { get; private set; }
 
 

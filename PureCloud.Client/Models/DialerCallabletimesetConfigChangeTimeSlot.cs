@@ -1,12 +1,12 @@
-using System.Runtime.Serialization;
 using System.Text;
+using System.Text.Json.Serialization;
 
 namespace PureCloud.Client.Models;
 
 /// <summary>
 /// DialerCallabletimesetConfigChangeTimeSlot
 /// </summary>
-[DataContract]
+
 public partial class DialerCallabletimesetConfigChangeTimeSlot : IEquatable<DialerCallabletimesetConfigChangeTimeSlot>
 {
     /// <summary>
@@ -31,7 +31,7 @@ public partial class DialerCallabletimesetConfigChangeTimeSlot : IEquatable<Dial
     /// The start time of this time slot
     /// </summary>
     /// <value>The start time of this time slot</value>
-    [DataMember(Name = "startTime", EmitDefaultValue = false)]
+    [JsonPropertyName("startTime")]
     public string StartTime { get; set; }
 
 
@@ -40,7 +40,7 @@ public partial class DialerCallabletimesetConfigChangeTimeSlot : IEquatable<Dial
     /// The stop time of this time slot
     /// </summary>
     /// <value>The stop time of this time slot</value>
-    [DataMember(Name = "stopTime", EmitDefaultValue = false)]
+    [JsonPropertyName("stopTime")]
     public string StopTime { get; set; }
 
 
@@ -49,7 +49,7 @@ public partial class DialerCallabletimesetConfigChangeTimeSlot : IEquatable<Dial
     /// The day this time slot applies
     /// </summary>
     /// <value>The day this time slot applies</value>
-    [DataMember(Name = "day", EmitDefaultValue = false)]
+    [JsonPropertyName("day")]
     public long? Day { get; set; }
 
 
@@ -57,7 +57,7 @@ public partial class DialerCallabletimesetConfigChangeTimeSlot : IEquatable<Dial
     /// <summary>
     /// Gets or Sets AdditionalProperties
     /// </summary>
-    [DataMember(Name = "additionalProperties", EmitDefaultValue = false)]
+    [JsonPropertyName("additionalProperties")]
     public Dictionary<string, object> AdditionalProperties { get; set; }
 
 

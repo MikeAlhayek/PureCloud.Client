@@ -1,12 +1,12 @@
-using System.Runtime.Serialization;
 using System.Text;
+using System.Text.Json.Serialization;
 
 namespace PureCloud.Client.Models;
 
 /// <summary>
 /// KnowledgeGroupStatistics
 /// </summary>
-[DataContract]
+
 public partial class KnowledgeGroupStatistics : IEquatable<KnowledgeGroupStatistics>
 {
     /// <summary>
@@ -29,7 +29,7 @@ public partial class KnowledgeGroupStatistics : IEquatable<KnowledgeGroupStatist
     /// Knowledge Group unique phrase count
     /// </summary>
     /// <value>Knowledge Group unique phrase count</value>
-    [DataMember(Name = "unlinkedPhraseCount", EmitDefaultValue = false)]
+    [JsonPropertyName("unlinkedPhraseCount")]
     public int? UnlinkedPhraseCount { get; set; }
 
 
@@ -38,7 +38,7 @@ public partial class KnowledgeGroupStatistics : IEquatable<KnowledgeGroupStatist
     /// Knowledge Group unlinked phrases hit count
     /// </summary>
     /// <value>Knowledge Group unlinked phrases hit count</value>
-    [DataMember(Name = "unlinkedPhraseHitCount", EmitDefaultValue = false)]
+    [JsonPropertyName("unlinkedPhraseHitCount")]
     public int? UnlinkedPhraseHitCount { get; set; }
 
 
@@ -47,7 +47,7 @@ public partial class KnowledgeGroupStatistics : IEquatable<KnowledgeGroupStatist
     /// Total number of phrase hit counts of an unanswered group
     /// </summary>
     /// <value>Total number of phrase hit counts of an unanswered group</value>
-    [DataMember(Name = "totalPhraseHitCount", EmitDefaultValue = false)]
+    [JsonPropertyName("totalPhraseHitCount")]
     public int? TotalPhraseHitCount { get; set; }
 
 

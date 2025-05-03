@@ -1,12 +1,12 @@
-using System.Runtime.Serialization;
 using System.Text;
+using System.Text.Json.Serialization;
 
 namespace PureCloud.Client.Models;
 
 /// <summary>
 /// JourneyOutcomeEventsNotificationOutcomeAttributionMessage
 /// </summary>
-[DataContract]
+
 public partial class JourneyOutcomeEventsNotificationOutcomeAttributionMessage : IEquatable<JourneyOutcomeEventsNotificationOutcomeAttributionMessage>
 {
     /// <summary>
@@ -30,7 +30,7 @@ public partial class JourneyOutcomeEventsNotificationOutcomeAttributionMessage :
     /// <summary>
     /// Gets or Sets Outcome
     /// </summary>
-    [DataMember(Name = "outcome", EmitDefaultValue = false)]
+    [JsonPropertyName("outcome")]
     public JourneyOutcomeEventsNotificationOutcome Outcome { get; set; }
 
 
@@ -38,7 +38,7 @@ public partial class JourneyOutcomeEventsNotificationOutcomeAttributionMessage :
     /// <summary>
     /// Gets or Sets OutcomeTouchpoints
     /// </summary>
-    [DataMember(Name = "outcomeTouchpoints", EmitDefaultValue = false)]
+    [JsonPropertyName("outcomeTouchpoints")]
     public List<JourneyOutcomeEventsNotificationOutcomeTouchpoint> OutcomeTouchpoints { get; set; }
 
 
@@ -46,7 +46,7 @@ public partial class JourneyOutcomeEventsNotificationOutcomeAttributionMessage :
     /// <summary>
     /// Gets or Sets SegmentAssignments
     /// </summary>
-    [DataMember(Name = "segmentAssignments", EmitDefaultValue = false)]
+    [JsonPropertyName("segmentAssignments")]
     public List<JourneyOutcomeEventsNotificationSegment> SegmentAssignments { get; set; }
 
 
@@ -54,7 +54,7 @@ public partial class JourneyOutcomeEventsNotificationOutcomeAttributionMessage :
     /// <summary>
     /// Gets or Sets AssociatedValue
     /// </summary>
-    [DataMember(Name = "associatedValue", EmitDefaultValue = false)]
+    [JsonPropertyName("associatedValue")]
     public JourneyOutcomeEventsNotificationAssociatedValue AssociatedValue { get; set; }
 
 

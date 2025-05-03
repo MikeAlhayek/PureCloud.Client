@@ -1,12 +1,12 @@
-using System.Runtime.Serialization;
 using System.Text;
+using System.Text.Json.Serialization;
 
 namespace PureCloud.Client.Models;
 
 /// <summary>
 /// LocaleFlowVersionInfo
 /// </summary>
-[DataContract]
+
 public partial class LocaleFlowVersionInfo : IEquatable<LocaleFlowVersionInfo>
 {
     /// <summary>
@@ -25,7 +25,7 @@ public partial class LocaleFlowVersionInfo : IEquatable<LocaleFlowVersionInfo>
     /// NLU Version Info for this flow version.
     /// </summary>
     /// <value>NLU Version Info for this flow version.</value>
-    [DataMember(Name = "nluVersion", EmitDefaultValue = false)]
+    [JsonPropertyName("nluVersion")]
     public AddressableEntityRef NluVersion { get; set; }
 
 

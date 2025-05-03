@@ -7,14 +7,14 @@ namespace PureCloud.Client.Models;
 /// <summary>
 /// InternalMessage
 /// </summary>
-[DataContract]
+
 public partial class InternalMessage : IEquatable<InternalMessage>
 {
     /// <summary>
     /// The connection state of this communication.
     /// </summary>
     /// <value>The connection state of this communication.</value>
-    [JsonConverter(typeof(JsonStringEnumConverter))]
+    
     public enum StateEnum
     {
         /// <summary>
@@ -47,7 +47,7 @@ public partial class InternalMessage : IEquatable<InternalMessage>
     /// The initial connection state of this communication.
     /// </summary>
     /// <value>The initial connection state of this communication.</value>
-    [JsonConverter(typeof(JsonStringEnumConverter))]
+    
     public enum InitialStateEnum
     {
         /// <summary>
@@ -80,7 +80,7 @@ public partial class InternalMessage : IEquatable<InternalMessage>
     /// System defined string indicating what caused the communication to disconnect. Will be null until the communication disconnects.
     /// </summary>
     /// <value>System defined string indicating what caused the communication to disconnect. Will be null until the communication disconnects.</value>
-    [JsonConverter(typeof(JsonStringEnumConverter))]
+    
     public enum DisconnectTypeEnum
     {
         /// <summary>
@@ -119,19 +119,19 @@ public partial class InternalMessage : IEquatable<InternalMessage>
     /// The connection state of this communication.
     /// </summary>
     /// <value>The connection state of this communication.</value>
-    [DataMember(Name = "state", EmitDefaultValue = false)]
+    [JsonPropertyName("state")]
     public StateEnum? State { get; set; }
     /// <summary>
     /// The initial connection state of this communication.
     /// </summary>
     /// <value>The initial connection state of this communication.</value>
-    [DataMember(Name = "initialState", EmitDefaultValue = false)]
+    [JsonPropertyName("initialState")]
     public InitialStateEnum? InitialState { get; set; }
     /// <summary>
     /// System defined string indicating what caused the communication to disconnect. Will be null until the communication disconnects.
     /// </summary>
     /// <value>System defined string indicating what caused the communication to disconnect. Will be null until the communication disconnects.</value>
-    [DataMember(Name = "disconnectType", EmitDefaultValue = false)]
+    [JsonPropertyName("disconnectType")]
     public DisconnectTypeEnum? DisconnectType { get; set; }
     /// <summary>
     /// Initializes a new instance of the <see cref="InternalMessage" /> class.
@@ -179,7 +179,7 @@ public partial class InternalMessage : IEquatable<InternalMessage>
     /// A globally unique identifier for this communication.
     /// </summary>
     /// <value>A globally unique identifier for this communication.</value>
-    [DataMember(Name = "id", EmitDefaultValue = false)]
+    [JsonPropertyName("id")]
     public string Id { get; set; }
 
 
@@ -188,7 +188,7 @@ public partial class InternalMessage : IEquatable<InternalMessage>
     /// The time line of the participant&#39;s internal message, divided into activity segments.
     /// </summary>
     /// <value>The time line of the participant&#39;s internal message, divided into activity segments.</value>
-    [DataMember(Name = "segments", EmitDefaultValue = false)]
+    [JsonPropertyName("segments")]
     public List<Segment> Segments { get; set; }
 
 
@@ -199,7 +199,7 @@ public partial class InternalMessage : IEquatable<InternalMessage>
     /// The timestamp when this communication was connected in the cloud clock. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z
     /// </summary>
     /// <value>The timestamp when this communication was connected in the cloud clock. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z</value>
-    [DataMember(Name = "connectedTime", EmitDefaultValue = false)]
+    [JsonPropertyName("connectedTime")]
     public DateTime? ConnectedTime { get; set; }
 
 
@@ -208,7 +208,7 @@ public partial class InternalMessage : IEquatable<InternalMessage>
     /// The timestamp when this communication disconnected from the conversation in the provider clock. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z
     /// </summary>
     /// <value>The timestamp when this communication disconnected from the conversation in the provider clock. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z</value>
-    [DataMember(Name = "disconnectedTime", EmitDefaultValue = false)]
+    [JsonPropertyName("disconnectedTime")]
     public DateTime? DisconnectedTime { get; set; }
 
 
@@ -217,7 +217,7 @@ public partial class InternalMessage : IEquatable<InternalMessage>
     /// The source provider for the message.
     /// </summary>
     /// <value>The source provider for the message.</value>
-    [DataMember(Name = "provider", EmitDefaultValue = false)]
+    [JsonPropertyName("provider")]
     public string Provider { get; set; }
 
 
@@ -226,7 +226,7 @@ public partial class InternalMessage : IEquatable<InternalMessage>
     /// The id of the peer communication corresponding to a matching leg for this communication.
     /// </summary>
     /// <value>The id of the peer communication corresponding to a matching leg for this communication.</value>
-    [DataMember(Name = "peerId", EmitDefaultValue = false)]
+    [JsonPropertyName("peerId")]
     public string PeerId { get; set; }
 
 
@@ -235,7 +235,7 @@ public partial class InternalMessage : IEquatable<InternalMessage>
     /// The user ID for the participant on receiving side of the internal message conversation.
     /// </summary>
     /// <value>The user ID for the participant on receiving side of the internal message conversation.</value>
-    [DataMember(Name = "targetUserId", EmitDefaultValue = false)]
+    [JsonPropertyName("targetUserId")]
     public string TargetUserId { get; set; }
 
 
@@ -244,7 +244,7 @@ public partial class InternalMessage : IEquatable<InternalMessage>
     /// The user ID for the participant on sending side of the internal message conversation.
     /// </summary>
     /// <value>The user ID for the participant on sending side of the internal message conversation.</value>
-    [DataMember(Name = "sourceUserId", EmitDefaultValue = false)]
+    [JsonPropertyName("sourceUserId")]
     public string SourceUserId { get; set; }
 
 
@@ -253,7 +253,7 @@ public partial class InternalMessage : IEquatable<InternalMessage>
     /// Address for the participant on receiving side of the internal message communication.
     /// </summary>
     /// <value>Address for the participant on receiving side of the internal message communication.</value>
-    [DataMember(Name = "toAddress", EmitDefaultValue = false)]
+    [JsonPropertyName("toAddress")]
     public Address ToAddress { get; set; }
 
 
@@ -262,7 +262,7 @@ public partial class InternalMessage : IEquatable<InternalMessage>
     /// Address for the participant on the sending side of the internal message communication.
     /// </summary>
     /// <value>Address for the participant on the sending side of the internal message communication.</value>
-    [DataMember(Name = "fromAddress", EmitDefaultValue = false)]
+    [JsonPropertyName("fromAddress")]
     public Address FromAddress { get; set; }
 
 
@@ -271,7 +271,7 @@ public partial class InternalMessage : IEquatable<InternalMessage>
     /// The messages sent on this communication channel.
     /// </summary>
     /// <value>The messages sent on this communication channel.</value>
-    [DataMember(Name = "messages", EmitDefaultValue = false)]
+    [JsonPropertyName("messages")]
     public List<InternalMessageDetails> Messages { get; set; }
 
 

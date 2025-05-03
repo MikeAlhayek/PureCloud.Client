@@ -1,12 +1,12 @@
-using System.Runtime.Serialization;
 using System.Text;
+using System.Text.Json.Serialization;
 
 namespace PureCloud.Client.Models;
 
 /// <summary>
 /// MessageConversation
 /// </summary>
-[DataContract]
+
 public partial class MessageConversation : IEquatable<MessageConversation>
 {
     /// <summary>
@@ -35,7 +35,7 @@ public partial class MessageConversation : IEquatable<MessageConversation>
     /// The globally unique identifier for the object.
     /// </summary>
     /// <value>The globally unique identifier for the object.</value>
-    [DataMember(Name = "id", EmitDefaultValue = false)]
+    [JsonPropertyName("id")]
     public string Id { get; private set; }
 
 
@@ -43,7 +43,7 @@ public partial class MessageConversation : IEquatable<MessageConversation>
     /// <summary>
     /// Gets or Sets Name
     /// </summary>
-    [DataMember(Name = "name", EmitDefaultValue = false)]
+    [JsonPropertyName("name")]
     public string Name { get; set; }
 
 
@@ -52,7 +52,7 @@ public partial class MessageConversation : IEquatable<MessageConversation>
     /// The list of participants involved in the conversation.
     /// </summary>
     /// <value>The list of participants involved in the conversation.</value>
-    [DataMember(Name = "participants", EmitDefaultValue = false)]
+    [JsonPropertyName("participants")]
     public List<MessageMediaParticipant> Participants { get; set; }
 
 
@@ -61,7 +61,7 @@ public partial class MessageConversation : IEquatable<MessageConversation>
     /// The list of other media channels involved in the conversation.
     /// </summary>
     /// <value>The list of other media channels involved in the conversation.</value>
-    [DataMember(Name = "otherMediaUris", EmitDefaultValue = false)]
+    [JsonPropertyName("otherMediaUris")]
     public List<string> OtherMediaUris { get; set; }
 
 
@@ -70,7 +70,7 @@ public partial class MessageConversation : IEquatable<MessageConversation>
     /// The list of the most recent 20 transfer commands applied to this conversation.
     /// </summary>
     /// <value>The list of the most recent 20 transfer commands applied to this conversation.</value>
-    [DataMember(Name = "recentTransfers", EmitDefaultValue = false)]
+    [JsonPropertyName("recentTransfers")]
     public List<TransferResponse> RecentTransfers { get; set; }
 
 
@@ -79,7 +79,7 @@ public partial class MessageConversation : IEquatable<MessageConversation>
     /// An optional label that categorizes the conversation.  Max-utilization settings can be configured at a per-label level
     /// </summary>
     /// <value>An optional label that categorizes the conversation.  Max-utilization settings can be configured at a per-label level</value>
-    [DataMember(Name = "utilizationLabelId", EmitDefaultValue = false)]
+    [JsonPropertyName("utilizationLabelId")]
     public string UtilizationLabelId { get; set; }
 
 
@@ -88,7 +88,7 @@ public partial class MessageConversation : IEquatable<MessageConversation>
     /// Identifiers of divisions associated with this conversation.
     /// </summary>
     /// <value>Identifiers of divisions associated with this conversation.</value>
-    [DataMember(Name = "divisions", EmitDefaultValue = false)]
+    [JsonPropertyName("divisions")]
     public List<ConversationDivisionMembership> Divisions { get; set; }
 
 
@@ -97,7 +97,7 @@ public partial class MessageConversation : IEquatable<MessageConversation>
     /// The URI for this object
     /// </summary>
     /// <value>The URI for this object</value>
-    [DataMember(Name = "selfUri", EmitDefaultValue = false)]
+    [JsonPropertyName("selfUri")]
     public string SelfUri { get; private set; }
 
 

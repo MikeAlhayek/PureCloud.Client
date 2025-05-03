@@ -1,12 +1,12 @@
-using System.Runtime.Serialization;
 using System.Text;
+using System.Text.Json.Serialization;
 
 namespace PureCloud.Client.Models;
 
 /// <summary>
 /// ExportUri
 /// </summary>
-[DataContract]
+
 public partial class ExportUri : IEquatable<ExportUri>
 {
     /// <summary>
@@ -26,7 +26,7 @@ public partial class ExportUri : IEquatable<ExportUri>
     /// <summary>
     /// Gets or Sets Uri
     /// </summary>
-    [DataMember(Name = "uri", EmitDefaultValue = false)]
+    [JsonPropertyName("uri")]
     public string Uri { get; set; }
 
 
@@ -35,7 +35,7 @@ public partial class ExportUri : IEquatable<ExportUri>
     /// Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z
     /// </summary>
     /// <value>Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z</value>
-    [DataMember(Name = "exportTimestamp", EmitDefaultValue = false)]
+    [JsonPropertyName("exportTimestamp")]
     public DateTime? ExportTimestamp { get; set; }
 
 

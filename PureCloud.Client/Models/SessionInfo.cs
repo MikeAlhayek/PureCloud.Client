@@ -1,12 +1,12 @@
-using System.Runtime.Serialization;
 using System.Text;
+using System.Text.Json.Serialization;
 
 namespace PureCloud.Client.Models;
 
 /// <summary>
 /// SessionInfo
 /// </summary>
-[DataContract]
+
 public partial class SessionInfo : IEquatable<SessionInfo>
 {
     /// <summary>
@@ -33,7 +33,7 @@ public partial class SessionInfo : IEquatable<SessionInfo>
     /// Version of the continuous forecast session
     /// </summary>
     /// <value>Version of the continuous forecast session</value>
-    [DataMember(Name = "version", EmitDefaultValue = false)]
+    [JsonPropertyName("version")]
     public int? Version { get; set; }
 
 
@@ -42,7 +42,7 @@ public partial class SessionInfo : IEquatable<SessionInfo>
     /// Session ID of the continuous forecast session
     /// </summary>
     /// <value>Session ID of the continuous forecast session</value>
-    [DataMember(Name = "sessionId", EmitDefaultValue = false)]
+    [JsonPropertyName("sessionId")]
     public string SessionId { get; set; }
 
 
@@ -51,7 +51,7 @@ public partial class SessionInfo : IEquatable<SessionInfo>
     /// Business unit ID of the continuous forecast session
     /// </summary>
     /// <value>Business unit ID of the continuous forecast session</value>
-    [DataMember(Name = "businessUnitId", EmitDefaultValue = false)]
+    [JsonPropertyName("businessUnitId")]
     public string BusinessUnitId { get; set; }
 
 
@@ -60,7 +60,7 @@ public partial class SessionInfo : IEquatable<SessionInfo>
     /// Version of the planning groups
     /// </summary>
     /// <value>Version of the planning groups</value>
-    [DataMember(Name = "planningGroupsVersion", EmitDefaultValue = false)]
+    [JsonPropertyName("planningGroupsVersion")]
     public int? PlanningGroupsVersion { get; set; }
 
 
@@ -69,7 +69,7 @@ public partial class SessionInfo : IEquatable<SessionInfo>
     /// Date and Time of the Session. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z
     /// </summary>
     /// <value>Date and Time of the Session. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z</value>
-    [DataMember(Name = "dateOfSession", EmitDefaultValue = false)]
+    [JsonPropertyName("dateOfSession")]
     public DateTime? DateOfSession { get; set; }
 
 

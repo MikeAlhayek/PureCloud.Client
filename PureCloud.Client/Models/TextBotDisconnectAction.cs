@@ -7,14 +7,14 @@ namespace PureCloud.Client.Models;
 /// <summary>
 /// Settings for a next-action of disconnecting, including the reason code for the disconnect.
 /// </summary>
-[DataContract]
+
 public partial class TextBotDisconnectAction : IEquatable<TextBotDisconnectAction>
 {
     /// <summary>
     /// The reason for the disconnect.
     /// </summary>
     /// <value>The reason for the disconnect.</value>
-    [JsonConverter(typeof(JsonStringEnumConverter))]
+    
     public enum ReasonEnum
     {
         /// <summary>
@@ -59,7 +59,7 @@ public partial class TextBotDisconnectAction : IEquatable<TextBotDisconnectActio
     /// The reason for the disconnect.
     /// </summary>
     /// <value>The reason for the disconnect.</value>
-    [DataMember(Name = "reason", EmitDefaultValue = false)]
+    [JsonPropertyName("reason")]
     public ReasonEnum? Reason { get; set; }
 
     /// <summary>
@@ -91,7 +91,7 @@ public partial class TextBotDisconnectAction : IEquatable<TextBotDisconnectActio
     /// Extended information related to the reason, if available.
     /// </summary>
     /// <value>Extended information related to the reason, if available.</value>
-    [DataMember(Name = "reasonExtendedInfo", EmitDefaultValue = false)]
+    [JsonPropertyName("reasonExtendedInfo")]
     public string ReasonExtendedInfo { get; set; }
 
 
@@ -100,7 +100,7 @@ public partial class TextBotDisconnectAction : IEquatable<TextBotDisconnectActio
     /// Describes where in the Bot Flow the user was when the disconnect occurred.
     /// </summary>
     /// <value>Describes where in the Bot Flow the user was when the disconnect occurred.</value>
-    [DataMember(Name = "flowLocation", EmitDefaultValue = false)]
+    [JsonPropertyName("flowLocation")]
     public TextBotFlowLocation FlowLocation { get; set; }
 
 
@@ -109,7 +109,7 @@ public partial class TextBotDisconnectAction : IEquatable<TextBotDisconnectActio
     /// The list of Flow Outcomes for the bot flow and their details.
     /// </summary>
     /// <value>The list of Flow Outcomes for the bot flow and their details.</value>
-    [DataMember(Name = "flowOutcomes", EmitDefaultValue = false)]
+    [JsonPropertyName("flowOutcomes")]
     public List<TextBotFlowOutcome> FlowOutcomes { get; set; }
 
 

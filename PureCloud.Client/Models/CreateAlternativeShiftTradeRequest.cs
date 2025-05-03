@@ -7,14 +7,14 @@ namespace PureCloud.Client.Models;
 /// <summary>
 /// CreateAlternativeShiftTradeRequest
 /// </summary>
-[DataContract]
+
 public partial class CreateAlternativeShiftTradeRequest : IEquatable<CreateAlternativeShiftTradeRequest>
 {
     /// <summary>
     /// The granularity of alternative shifts to be traded
     /// </summary>
     /// <value>The granularity of alternative shifts to be traded</value>
-    [JsonConverter(typeof(JsonStringEnumConverter))]
+    
     public enum AlternativeShiftTradeGranularityEnum
     {
         /// <summary>
@@ -35,7 +35,7 @@ public partial class CreateAlternativeShiftTradeRequest : IEquatable<CreateAlter
     /// The granularity of alternative shifts to be traded
     /// </summary>
     /// <value>The granularity of alternative shifts to be traded</value>
-    [DataMember(Name = "alternativeShiftTradeGranularity", EmitDefaultValue = false)]
+    [JsonPropertyName("alternativeShiftTradeGranularity")]
     public AlternativeShiftTradeGranularityEnum? AlternativeShiftTradeGranularity { get; set; }
 
     /// <summary>
@@ -67,7 +67,7 @@ public partial class CreateAlternativeShiftTradeRequest : IEquatable<CreateAlter
     /// The ID of this alternative shift job
     /// </summary>
     /// <value>The ID of this alternative shift job</value>
-    [DataMember(Name = "jobId", EmitDefaultValue = false)]
+    [JsonPropertyName("jobId")]
     public string JobId { get; set; }
 
 
@@ -76,7 +76,7 @@ public partial class CreateAlternativeShiftTradeRequest : IEquatable<CreateAlter
     /// A list of offered shift reference keys an agent wants to drop
     /// </summary>
     /// <value>A list of offered shift reference keys an agent wants to drop</value>
-    [DataMember(Name = "dropShiftReferenceKeys", EmitDefaultValue = false)]
+    [JsonPropertyName("dropShiftReferenceKeys")]
     public List<string> DropShiftReferenceKeys { get; set; }
 
 
@@ -85,7 +85,7 @@ public partial class CreateAlternativeShiftTradeRequest : IEquatable<CreateAlter
     /// A list of offered shift reference keys an agent wants to pick up
     /// </summary>
     /// <value>A list of offered shift reference keys an agent wants to pick up</value>
-    [DataMember(Name = "pickupShiftReferenceKeys", EmitDefaultValue = false)]
+    [JsonPropertyName("pickupShiftReferenceKeys")]
     public List<string> PickupShiftReferenceKeys { get; set; }
 
 
@@ -96,7 +96,7 @@ public partial class CreateAlternativeShiftTradeRequest : IEquatable<CreateAlter
     /// The date when the trade will expire in ISO-8601 format. The trade cannot be approved after expiration
     /// </summary>
     /// <value>The date when the trade will expire in ISO-8601 format. The trade cannot be approved after expiration</value>
-    [DataMember(Name = "expirationDate", EmitDefaultValue = false)]
+    [JsonPropertyName("expirationDate")]
     public DateTime? ExpirationDate { get; set; }
 
 

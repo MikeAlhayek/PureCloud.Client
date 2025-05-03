@@ -7,14 +7,14 @@ namespace PureCloud.Client.Models;
 /// <summary>
 /// SupportedEntityTypeStatus
 /// </summary>
-[DataContract]
+
 public partial class SupportedEntityTypeStatus : IEquatable<SupportedEntityTypeStatus>
 {
     /// <summary>
     /// The configuration status of restricted lists
     /// </summary>
     /// <value>The configuration status of restricted lists</value>
-    [JsonConverter(typeof(JsonStringEnumConverter))]
+    
     public enum ListSlotTypeEnum
     {
         /// <summary>
@@ -47,7 +47,7 @@ public partial class SupportedEntityTypeStatus : IEquatable<SupportedEntityTypeS
     /// The configuration status of restricted lists
     /// </summary>
     /// <value>The configuration status of restricted lists</value>
-    [DataMember(Name = "listSlotType", EmitDefaultValue = false)]
+    [JsonPropertyName("listSlotType")]
     public ListSlotTypeEnum? ListSlotType { get; set; }
     /// <summary>
     /// Initializes a new instance of the <see cref="SupportedEntityTypeStatus" /> class.

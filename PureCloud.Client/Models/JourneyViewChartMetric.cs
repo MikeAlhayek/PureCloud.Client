@@ -7,14 +7,14 @@ namespace PureCloud.Client.Models;
 /// <summary>
 /// A metric to measure within the chart
 /// </summary>
-[DataContract]
+
 public partial class JourneyViewChartMetric : IEquatable<JourneyViewChartMetric>
 {
     /// <summary>
     /// How to aggregate the given element, defaults to CustomerCount
     /// </summary>
     /// <value>How to aggregate the given element, defaults to CustomerCount</value>
-    [JsonConverter(typeof(JsonStringEnumConverter))]
+    
     public enum AggregateEnum
     {
         /// <summary>
@@ -41,7 +41,7 @@ public partial class JourneyViewChartMetric : IEquatable<JourneyViewChartMetric>
     /// How to aggregate the given element, defaults to CustomerCount
     /// </summary>
     /// <value>How to aggregate the given element, defaults to CustomerCount</value>
-    [DataMember(Name = "aggregate", EmitDefaultValue = false)]
+    [JsonPropertyName("aggregate")]
     public AggregateEnum? Aggregate { get; set; }
 
     /// <summary>
@@ -71,7 +71,7 @@ public partial class JourneyViewChartMetric : IEquatable<JourneyViewChartMetric>
     /// The unique identifier of the metric within the chart
     /// </summary>
     /// <value>The unique identifier of the metric within the chart</value>
-    [DataMember(Name = "id", EmitDefaultValue = false)]
+    [JsonPropertyName("id")]
     public string Id { get; set; }
 
 
@@ -80,7 +80,7 @@ public partial class JourneyViewChartMetric : IEquatable<JourneyViewChartMetric>
     /// The element in the list of elements which the metric is measuring
     /// </summary>
     /// <value>The element in the list of elements which the metric is measuring</value>
-    [DataMember(Name = "elementId", EmitDefaultValue = false)]
+    [JsonPropertyName("elementId")]
     public string ElementId { get; set; }
 
 
@@ -91,7 +91,7 @@ public partial class JourneyViewChartMetric : IEquatable<JourneyViewChartMetric>
     /// A display label for the metric
     /// </summary>
     /// <value>A display label for the metric</value>
-    [DataMember(Name = "displayLabel", EmitDefaultValue = false)]
+    [JsonPropertyName("displayLabel")]
     public string DisplayLabel { get; set; }
 
 

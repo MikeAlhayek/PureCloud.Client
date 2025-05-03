@@ -7,14 +7,14 @@ namespace PureCloud.Client.Models;
 /// <summary>
 /// ObjectiveZone
 /// </summary>
-[DataContract]
+
 public partial class ObjectiveZone : IEquatable<ObjectiveZone>
 {
     /// <summary>
     /// direction type
     /// </summary>
     /// <value>direction type</value>
-    [JsonConverter(typeof(JsonStringEnumConverter))]
+    
     public enum DirectionTypeEnum
     {
         /// <summary>
@@ -47,7 +47,7 @@ public partial class ObjectiveZone : IEquatable<ObjectiveZone>
     /// zone type
     /// </summary>
     /// <value>zone type</value>
-    [JsonConverter(typeof(JsonStringEnumConverter))]
+    
     public enum ZoneTypeEnum
     {
         /// <summary>
@@ -86,13 +86,13 @@ public partial class ObjectiveZone : IEquatable<ObjectiveZone>
     /// direction type
     /// </summary>
     /// <value>direction type</value>
-    [DataMember(Name = "directionType", EmitDefaultValue = false)]
+    [JsonPropertyName("directionType")]
     public DirectionTypeEnum? DirectionType { get; set; }
     /// <summary>
     /// zone type
     /// </summary>
     /// <value>zone type</value>
-    [DataMember(Name = "zoneType", EmitDefaultValue = false)]
+    [JsonPropertyName("zoneType")]
     public ZoneTypeEnum? ZoneType { get; set; }
 
     /// <summary>
@@ -128,7 +128,7 @@ public partial class ObjectiveZone : IEquatable<ObjectiveZone>
     /// label
     /// </summary>
     /// <value>label</value>
-    [DataMember(Name = "label", EmitDefaultValue = false)]
+    [JsonPropertyName("label")]
     public string Label { get; set; }
 
 
@@ -141,7 +141,7 @@ public partial class ObjectiveZone : IEquatable<ObjectiveZone>
     /// upper limit points
     /// </summary>
     /// <value>upper limit points</value>
-    [DataMember(Name = "upperLimitPoints", EmitDefaultValue = false)]
+    [JsonPropertyName("upperLimitPoints")]
     public int? UpperLimitPoints { get; set; }
 
 
@@ -150,7 +150,7 @@ public partial class ObjectiveZone : IEquatable<ObjectiveZone>
     /// lower limit points
     /// </summary>
     /// <value>lower limit points</value>
-    [DataMember(Name = "lowerLimitPoints", EmitDefaultValue = false)]
+    [JsonPropertyName("lowerLimitPoints")]
     public int? LowerLimitPoints { get; set; }
 
 
@@ -159,7 +159,7 @@ public partial class ObjectiveZone : IEquatable<ObjectiveZone>
     /// upper limit value
     /// </summary>
     /// <value>upper limit value</value>
-    [DataMember(Name = "upperLimitValue", EmitDefaultValue = false)]
+    [JsonPropertyName("upperLimitValue")]
     public int? UpperLimitValue { get; set; }
 
 
@@ -168,7 +168,7 @@ public partial class ObjectiveZone : IEquatable<ObjectiveZone>
     /// lower limit value
     /// </summary>
     /// <value>lower limit value</value>
-    [DataMember(Name = "lowerLimitValue", EmitDefaultValue = false)]
+    [JsonPropertyName("lowerLimitValue")]
     public int? LowerLimitValue { get; set; }
 
 

@@ -7,14 +7,14 @@ namespace PureCloud.Client.Models;
 /// <summary>
 /// Message content element. If contentType &#x3D; \&quot;Attachment\&quot; only one item is allowed.
 /// </summary>
-[DataContract]
+
 public partial class MessageContent : IEquatable<MessageContent>
 {
     /// <summary>
     /// Type of this content element.
     /// </summary>
     /// <value>Type of this content element.</value>
-    [JsonConverter(typeof(JsonStringEnumConverter))]
+    
     public enum ContentTypeEnum
     {
         /// <summary>
@@ -125,7 +125,7 @@ public partial class MessageContent : IEquatable<MessageContent>
     /// Type of this content element.
     /// </summary>
     /// <value>Type of this content element.</value>
-    [DataMember(Name = "contentType", EmitDefaultValue = false)]
+    [JsonPropertyName("contentType")]
     public ContentTypeEnum? ContentType { get; set; }
 
     /// <summary>
@@ -183,7 +183,7 @@ public partial class MessageContent : IEquatable<MessageContent>
     /// Attachment content.
     /// </summary>
     /// <value>Attachment content.</value>
-    [DataMember(Name = "attachment", EmitDefaultValue = false)]
+    [JsonPropertyName("attachment")]
     public ContentAttachment Attachment { get; set; }
 
 
@@ -192,7 +192,7 @@ public partial class MessageContent : IEquatable<MessageContent>
     /// Quick reply content.
     /// </summary>
     /// <value>Quick reply content.</value>
-    [DataMember(Name = "quickReply", EmitDefaultValue = false)]
+    [JsonPropertyName("quickReply")]
     public ContentQuickReply QuickReply { get; set; }
 
 
@@ -201,7 +201,7 @@ public partial class MessageContent : IEquatable<MessageContent>
     /// Button response content.
     /// </summary>
     /// <value>Button response content.</value>
-    [DataMember(Name = "buttonResponse", EmitDefaultValue = false)]
+    [JsonPropertyName("buttonResponse")]
     public ContentButtonResponse ButtonResponse { get; set; }
 
 
@@ -210,7 +210,7 @@ public partial class MessageContent : IEquatable<MessageContent>
     /// Generic content (Deprecated).
     /// </summary>
     /// <value>Generic content (Deprecated).</value>
-    [DataMember(Name = "generic", EmitDefaultValue = false)]
+    [JsonPropertyName("generic")]
     public ContentGeneric Generic { get; set; }
 
 
@@ -219,7 +219,7 @@ public partial class MessageContent : IEquatable<MessageContent>
     /// List content (Deprecated).
     /// </summary>
     /// <value>List content (Deprecated).</value>
-    [DataMember(Name = "list", EmitDefaultValue = false)]
+    [JsonPropertyName("list")]
     public ContentList List { get; set; }
 
 
@@ -228,7 +228,7 @@ public partial class MessageContent : IEquatable<MessageContent>
     /// Template notification content.
     /// </summary>
     /// <value>Template notification content.</value>
-    [DataMember(Name = "template", EmitDefaultValue = false)]
+    [JsonPropertyName("template")]
     public ContentNotificationTemplate Template { get; set; }
 
 
@@ -237,7 +237,7 @@ public partial class MessageContent : IEquatable<MessageContent>
     /// A set of reactions to a message.
     /// </summary>
     /// <value>A set of reactions to a message.</value>
-    [DataMember(Name = "reactions", EmitDefaultValue = false)]
+    [JsonPropertyName("reactions")]
     public List<ContentReaction> Reactions { get; set; }
 
 
@@ -246,7 +246,7 @@ public partial class MessageContent : IEquatable<MessageContent>
     /// Mention content.
     /// </summary>
     /// <value>Mention content.</value>
-    [DataMember(Name = "mention", EmitDefaultValue = false)]
+    [JsonPropertyName("mention")]
     public MessagingRecipient Mention { get; set; }
 
 
@@ -255,7 +255,7 @@ public partial class MessageContent : IEquatable<MessageContent>
     /// Structured message postback (Deprecated).
     /// </summary>
     /// <value>Structured message postback (Deprecated).</value>
-    [DataMember(Name = "postback", EmitDefaultValue = false)]
+    [JsonPropertyName("postback")]
     public ContentPostback Postback { get; set; }
 
 
@@ -264,7 +264,7 @@ public partial class MessageContent : IEquatable<MessageContent>
     /// Ephemeral story content.
     /// </summary>
     /// <value>Ephemeral story content.</value>
-    [DataMember(Name = "story", EmitDefaultValue = false)]
+    [JsonPropertyName("story")]
     public ContentStory Story { get; set; }
 
 
@@ -273,7 +273,7 @@ public partial class MessageContent : IEquatable<MessageContent>
     /// Card content
     /// </summary>
     /// <value>Card content</value>
-    [DataMember(Name = "card", EmitDefaultValue = false)]
+    [JsonPropertyName("card")]
     public ContentCard Card { get; set; }
 
 
@@ -282,7 +282,7 @@ public partial class MessageContent : IEquatable<MessageContent>
     /// Carousel content
     /// </summary>
     /// <value>Carousel content</value>
-    [DataMember(Name = "carousel", EmitDefaultValue = false)]
+    [JsonPropertyName("carousel")]
     public ContentCarousel Carousel { get; set; }
 
 
@@ -291,7 +291,7 @@ public partial class MessageContent : IEquatable<MessageContent>
     /// Text content.
     /// </summary>
     /// <value>Text content.</value>
-    [DataMember(Name = "text", EmitDefaultValue = false)]
+    [JsonPropertyName("text")]
     public ContentText Text { get; set; }
 
 
@@ -300,7 +300,7 @@ public partial class MessageContent : IEquatable<MessageContent>
     /// Quick reply V2 content.
     /// </summary>
     /// <value>Quick reply V2 content.</value>
-    [DataMember(Name = "quickReplyV2", EmitDefaultValue = false)]
+    [JsonPropertyName("quickReplyV2")]
     public ContentQuickReplyV2 QuickReplyV2 { get; set; }
 
 
@@ -309,7 +309,7 @@ public partial class MessageContent : IEquatable<MessageContent>
     /// DatePicker content.
     /// </summary>
     /// <value>DatePicker content.</value>
-    [DataMember(Name = "datePicker", EmitDefaultValue = false)]
+    [JsonPropertyName("datePicker")]
     public ContentDatePicker DatePicker { get; set; }
 
 
@@ -318,7 +318,7 @@ public partial class MessageContent : IEquatable<MessageContent>
     /// Location content.
     /// </summary>
     /// <value>Location content.</value>
-    [DataMember(Name = "location", EmitDefaultValue = false)]
+    [JsonPropertyName("location")]
     public ContentLocation Location { get; set; }
 
 

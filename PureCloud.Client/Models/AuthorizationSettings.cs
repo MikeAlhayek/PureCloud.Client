@@ -1,12 +1,12 @@
-using System.Runtime.Serialization;
 using System.Text;
+using System.Text.Json.Serialization;
 
 namespace PureCloud.Client.Models;
 
 /// <summary>
 /// AuthorizationSettings
 /// </summary>
-[DataContract]
+
 public partial class AuthorizationSettings : IEquatable<AuthorizationSettings>
 {
     /// <summary>
@@ -27,7 +27,7 @@ public partial class AuthorizationSettings : IEquatable<AuthorizationSettings>
     /// The globally unique identifier for the object.
     /// </summary>
     /// <value>The globally unique identifier for the object.</value>
-    [DataMember(Name = "id", EmitDefaultValue = false)]
+    [JsonPropertyName("id")]
     public string Id { get; private set; }
 
 
@@ -36,7 +36,7 @@ public partial class AuthorizationSettings : IEquatable<AuthorizationSettings>
     /// Boolean showing if organization is opted in or not to unused role/perm analysis
     /// </summary>
     /// <value>Boolean showing if organization is opted in or not to unused role/perm analysis</value>
-    [DataMember(Name = "analysisEnabled", EmitDefaultValue = false)]
+    [JsonPropertyName("analysisEnabled")]
     public bool? AnalysisEnabled { get; set; }
 
 
@@ -45,7 +45,7 @@ public partial class AuthorizationSettings : IEquatable<AuthorizationSettings>
     /// Integer number of days to analyze user usage
     /// </summary>
     /// <value>Integer number of days to analyze user usage</value>
-    [DataMember(Name = "analysisDays", EmitDefaultValue = false)]
+    [JsonPropertyName("analysisDays")]
     public int? AnalysisDays { get; set; }
 
 
@@ -54,7 +54,7 @@ public partial class AuthorizationSettings : IEquatable<AuthorizationSettings>
     /// The date and time of the most recent unused role calculation. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z
     /// </summary>
     /// <value>The date and time of the most recent unused role calculation. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z</value>
-    [DataMember(Name = "dateLastCalculated", EmitDefaultValue = false)]
+    [JsonPropertyName("dateLastCalculated")]
     public DateTime? DateLastCalculated { get; private set; }
 
 
@@ -63,7 +63,7 @@ public partial class AuthorizationSettings : IEquatable<AuthorizationSettings>
     /// The date of the most recent org activity used for analysis. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd
     /// </summary>
     /// <value>The date of the most recent org activity used for analysis. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd</value>
-    [DataMember(Name = "dateLastActive", EmitDefaultValue = false)]
+    [JsonPropertyName("dateLastActive")]
     public string DateLastActive { get; private set; }
 
 
@@ -72,7 +72,7 @@ public partial class AuthorizationSettings : IEquatable<AuthorizationSettings>
     /// The URI for this object
     /// </summary>
     /// <value>The URI for this object</value>
-    [DataMember(Name = "selfUri", EmitDefaultValue = false)]
+    [JsonPropertyName("selfUri")]
     public string SelfUri { get; private set; }
 
 

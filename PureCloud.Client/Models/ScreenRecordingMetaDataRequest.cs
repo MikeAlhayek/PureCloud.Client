@@ -1,12 +1,12 @@
-using System.Runtime.Serialization;
 using System.Text;
+using System.Text.Json.Serialization;
 
 namespace PureCloud.Client.Models;
 
 /// <summary>
 /// ScreenRecordingMetaDataRequest
 /// </summary>
-[DataContract]
+
 public partial class ScreenRecordingMetaDataRequest : IEquatable<ScreenRecordingMetaDataRequest>
 {
     /// <summary>
@@ -28,7 +28,7 @@ public partial class ScreenRecordingMetaDataRequest : IEquatable<ScreenRecording
     /// <summary>
     /// Gets or Sets ParticipantJid
     /// </summary>
-    [DataMember(Name = "participantJid", EmitDefaultValue = false)]
+    [JsonPropertyName("participantJid")]
     public string ParticipantJid { get; set; }
 
 
@@ -36,7 +36,7 @@ public partial class ScreenRecordingMetaDataRequest : IEquatable<ScreenRecording
     /// <summary>
     /// Gets or Sets RoomId
     /// </summary>
-    [DataMember(Name = "roomId", EmitDefaultValue = false)]
+    [JsonPropertyName("roomId")]
     public string RoomId { get; set; }
 
 
@@ -44,7 +44,7 @@ public partial class ScreenRecordingMetaDataRequest : IEquatable<ScreenRecording
     /// <summary>
     /// Gets or Sets MetaData
     /// </summary>
-    [DataMember(Name = "metaData", EmitDefaultValue = false)]
+    [JsonPropertyName("metaData")]
     public List<ScreenRecordingMetaData> MetaData { get; set; }
 
 

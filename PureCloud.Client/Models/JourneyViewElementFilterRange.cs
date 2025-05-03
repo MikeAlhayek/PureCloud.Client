@@ -1,12 +1,12 @@
-using System.Runtime.Serialization;
 using System.Text;
+using System.Text.Json.Serialization;
 
 namespace PureCloud.Client.Models;
 
 /// <summary>
 /// the range of attribute values to filter on. At least one comparator must be defined
 /// </summary>
-[DataContract]
+
 public partial class JourneyViewElementFilterRange : IEquatable<JourneyViewElementFilterRange>
 {
     /// <summary>
@@ -35,7 +35,7 @@ public partial class JourneyViewElementFilterRange : IEquatable<JourneyViewEleme
     /// comparator: less than
     /// </summary>
     /// <value>comparator: less than</value>
-    [DataMember(Name = "lt", EmitDefaultValue = false)]
+    [JsonPropertyName("lt")]
     public JourneyViewElementFilterRangeData Lt { get; set; }
 
 
@@ -44,7 +44,7 @@ public partial class JourneyViewElementFilterRange : IEquatable<JourneyViewEleme
     /// comparator: less than or equal
     /// </summary>
     /// <value>comparator: less than or equal</value>
-    [DataMember(Name = "lte", EmitDefaultValue = false)]
+    [JsonPropertyName("lte")]
     public JourneyViewElementFilterRangeData Lte { get; set; }
 
 
@@ -53,7 +53,7 @@ public partial class JourneyViewElementFilterRange : IEquatable<JourneyViewEleme
     /// comparator: greater than
     /// </summary>
     /// <value>comparator: greater than</value>
-    [DataMember(Name = "gt", EmitDefaultValue = false)]
+    [JsonPropertyName("gt")]
     public JourneyViewElementFilterRangeData Gt { get; set; }
 
 
@@ -62,7 +62,7 @@ public partial class JourneyViewElementFilterRange : IEquatable<JourneyViewEleme
     /// comparator: greater than or equal
     /// </summary>
     /// <value>comparator: greater than or equal</value>
-    [DataMember(Name = "gte", EmitDefaultValue = false)]
+    [JsonPropertyName("gte")]
     public JourneyViewElementFilterRangeData Gte { get; set; }
 
 
@@ -71,7 +71,7 @@ public partial class JourneyViewElementFilterRange : IEquatable<JourneyViewEleme
     /// comparator: is equal to
     /// </summary>
     /// <value>comparator: is equal to</value>
-    [DataMember(Name = "eq", EmitDefaultValue = false)]
+    [JsonPropertyName("eq")]
     public JourneyViewElementFilterRangeData Eq { get; set; }
 
 
@@ -80,7 +80,7 @@ public partial class JourneyViewElementFilterRange : IEquatable<JourneyViewEleme
     /// comparator: is not equal to
     /// </summary>
     /// <value>comparator: is not equal to</value>
-    [DataMember(Name = "neq", EmitDefaultValue = false)]
+    [JsonPropertyName("neq")]
     public JourneyViewElementFilterRangeData Neq { get; set; }
 
 

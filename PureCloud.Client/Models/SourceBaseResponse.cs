@@ -7,14 +7,14 @@ namespace PureCloud.Client.Models;
 /// <summary>
 /// SourceBaseResponse
 /// </summary>
-[DataContract]
+
 public partial class SourceBaseResponse : IEquatable<SourceBaseResponse>
 {
     /// <summary>
     /// The source type.
     /// </summary>
     /// <value>The source type.</value>
-    [JsonConverter(typeof(JsonStringEnumConverter))]
+    
     public enum TypeEnum
     {
         /// <summary>
@@ -41,7 +41,7 @@ public partial class SourceBaseResponse : IEquatable<SourceBaseResponse>
     /// The source type.
     /// </summary>
     /// <value>The source type.</value>
-    [DataMember(Name = "type", EmitDefaultValue = false)]
+    [JsonPropertyName("type")]
     public TypeEnum? Type { get; set; }
     /// <summary>
     /// Initializes a new instance of the <see cref="SourceBaseResponse" /> class.
@@ -71,7 +71,7 @@ public partial class SourceBaseResponse : IEquatable<SourceBaseResponse>
     /// The globally unique identifier for the object.
     /// </summary>
     /// <value>The globally unique identifier for the object.</value>
-    [DataMember(Name = "id", EmitDefaultValue = false)]
+    [JsonPropertyName("id")]
     public string Id { get; private set; }
 
 
@@ -80,7 +80,7 @@ public partial class SourceBaseResponse : IEquatable<SourceBaseResponse>
     /// Name of the source.
     /// </summary>
     /// <value>Name of the source.</value>
-    [DataMember(Name = "name", EmitDefaultValue = false)]
+    [JsonPropertyName("name")]
     public string Name { get; set; }
 
 
@@ -89,7 +89,7 @@ public partial class SourceBaseResponse : IEquatable<SourceBaseResponse>
     /// Source creation date-time. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z
     /// </summary>
     /// <value>Source creation date-time. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z</value>
-    [DataMember(Name = "dateCreated", EmitDefaultValue = false)]
+    [JsonPropertyName("dateCreated")]
     public DateTime? DateCreated { get; set; }
 
 
@@ -98,7 +98,7 @@ public partial class SourceBaseResponse : IEquatable<SourceBaseResponse>
     /// Source last modification date-time. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z
     /// </summary>
     /// <value>Source last modification date-time. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z</value>
-    [DataMember(Name = "dateModified", EmitDefaultValue = false)]
+    [JsonPropertyName("dateModified")]
     public DateTime? DateModified { get; set; }
 
 
@@ -109,7 +109,7 @@ public partial class SourceBaseResponse : IEquatable<SourceBaseResponse>
     /// The reference to the integration associated with the source.
     /// </summary>
     /// <value>The reference to the integration associated with the source.</value>
-    [DataMember(Name = "integration", EmitDefaultValue = false)]
+    [JsonPropertyName("integration")]
     public KnowledgeIntegrationReference Integration { get; set; }
 
 
@@ -118,7 +118,7 @@ public partial class SourceBaseResponse : IEquatable<SourceBaseResponse>
     /// The schedule period of the source in hours.
     /// </summary>
     /// <value>The schedule period of the source in hours.</value>
-    [DataMember(Name = "schedulePeriod", EmitDefaultValue = false)]
+    [JsonPropertyName("schedulePeriod")]
     public int? SchedulePeriod { get; set; }
 
 
@@ -127,7 +127,7 @@ public partial class SourceBaseResponse : IEquatable<SourceBaseResponse>
     /// Additional information about the last synchronization of the source.
     /// </summary>
     /// <value>Additional information about the last synchronization of the source.</value>
-    [DataMember(Name = "lastSync", EmitDefaultValue = false)]
+    [JsonPropertyName("lastSync")]
     public SourceLastSync LastSync { get; set; }
 
 
@@ -136,7 +136,7 @@ public partial class SourceBaseResponse : IEquatable<SourceBaseResponse>
     /// The URI for this object
     /// </summary>
     /// <value>The URI for this object</value>
-    [DataMember(Name = "selfUri", EmitDefaultValue = false)]
+    [JsonPropertyName("selfUri")]
     public string SelfUri { get; private set; }
 
 

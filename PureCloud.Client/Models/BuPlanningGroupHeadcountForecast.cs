@@ -1,12 +1,12 @@
-using System.Runtime.Serialization;
 using System.Text;
+using System.Text.Json.Serialization;
 
 namespace PureCloud.Client.Models;
 
 /// <summary>
 /// BuPlanningGroupHeadcountForecast
 /// </summary>
-[DataContract]
+
 public partial class BuPlanningGroupHeadcountForecast : IEquatable<BuPlanningGroupHeadcountForecast>
 {
     /// <summary>
@@ -29,7 +29,7 @@ public partial class BuPlanningGroupHeadcountForecast : IEquatable<BuPlanningGro
     /// The planning group to which this portion of the headcount forecast applies
     /// </summary>
     /// <value>The planning group to which this portion of the headcount forecast applies</value>
-    [DataMember(Name = "planningGroup", EmitDefaultValue = false)]
+    [JsonPropertyName("planningGroup")]
     public PlanningGroupReference PlanningGroup { get; set; }
 
 
@@ -38,7 +38,7 @@ public partial class BuPlanningGroupHeadcountForecast : IEquatable<BuPlanningGro
     /// Required headcount per interval, referenced against the reference start date
     /// </summary>
     /// <value>Required headcount per interval, referenced against the reference start date</value>
-    [DataMember(Name = "requiredPerInterval", EmitDefaultValue = false)]
+    [JsonPropertyName("requiredPerInterval")]
     public List<double?> RequiredPerInterval { get; set; }
 
 
@@ -47,7 +47,7 @@ public partial class BuPlanningGroupHeadcountForecast : IEquatable<BuPlanningGro
     /// Required headcount per interval without accounting for shrinkage, referenced against the reference start date
     /// </summary>
     /// <value>Required headcount per interval without accounting for shrinkage, referenced against the reference start date</value>
-    [DataMember(Name = "requiredWithoutShrinkagePerInterval", EmitDefaultValue = false)]
+    [JsonPropertyName("requiredWithoutShrinkagePerInterval")]
     public List<double?> RequiredWithoutShrinkagePerInterval { get; set; }
 
 

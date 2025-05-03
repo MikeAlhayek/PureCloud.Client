@@ -7,14 +7,14 @@ namespace PureCloud.Client.Models;
 /// <summary>
 /// BatchDownloadJobStatusResult
 /// </summary>
-[DataContract]
+
 public partial class BatchDownloadJobStatusResult : IEquatable<BatchDownloadJobStatusResult>
 {
     /// <summary>
     /// Current status of the job. A job is considered completed when all the submitted requests have been processed and fulfilled.
     /// </summary>
     /// <value>Current status of the job. A job is considered completed when all the submitted requests have been processed and fulfilled.</value>
-    [JsonConverter(typeof(JsonStringEnumConverter))]
+    
     public enum StatusEnum
     {
         /// <summary>
@@ -41,7 +41,7 @@ public partial class BatchDownloadJobStatusResult : IEquatable<BatchDownloadJobS
     /// Current status of the job. A job is considered completed when all the submitted requests have been processed and fulfilled.
     /// </summary>
     /// <value>Current status of the job. A job is considered completed when all the submitted requests have been processed and fulfilled.</value>
-    [DataMember(Name = "status", EmitDefaultValue = false)]
+    [JsonPropertyName("status")]
     public StatusEnum? Status { get; set; }
     /// <summary>
     /// Initializes a new instance of the <see cref="BatchDownloadJobStatusResult" /> class.
@@ -69,7 +69,7 @@ public partial class BatchDownloadJobStatusResult : IEquatable<BatchDownloadJobS
     /// The globally unique identifier for the object.
     /// </summary>
     /// <value>The globally unique identifier for the object.</value>
-    [DataMember(Name = "id", EmitDefaultValue = false)]
+    [JsonPropertyName("id")]
     public string Id { get; private set; }
 
 
@@ -78,7 +78,7 @@ public partial class BatchDownloadJobStatusResult : IEquatable<BatchDownloadJobS
     /// JobId returned when job was initially submitted.
     /// </summary>
     /// <value>JobId returned when job was initially submitted.</value>
-    [DataMember(Name = "jobId", EmitDefaultValue = false)]
+    [JsonPropertyName("jobId")]
     public string JobId { get; set; }
 
 
@@ -87,7 +87,7 @@ public partial class BatchDownloadJobStatusResult : IEquatable<BatchDownloadJobS
     /// Number of results expected when job is completed, this includes both success and error results. This number could change as recordings are being discovered and processed.
     /// </summary>
     /// <value>Number of results expected when job is completed, this includes both success and error results. This number could change as recordings are being discovered and processed.</value>
-    [DataMember(Name = "expectedResultCount", EmitDefaultValue = false)]
+    [JsonPropertyName("expectedResultCount")]
     public int? ExpectedResultCount { get; set; }
 
 
@@ -96,7 +96,7 @@ public partial class BatchDownloadJobStatusResult : IEquatable<BatchDownloadJobS
     /// Current number of results available, this includes both success and error results.
     /// </summary>
     /// <value>Current number of results available, this includes both success and error results.</value>
-    [DataMember(Name = "resultCount", EmitDefaultValue = false)]
+    [JsonPropertyName("resultCount")]
     public int? ResultCount { get; set; }
 
 
@@ -105,7 +105,7 @@ public partial class BatchDownloadJobStatusResult : IEquatable<BatchDownloadJobS
     /// Current number of error results.
     /// </summary>
     /// <value>Current number of error results.</value>
-    [DataMember(Name = "errorCount", EmitDefaultValue = false)]
+    [JsonPropertyName("errorCount")]
     public int? ErrorCount { get; set; }
 
 
@@ -116,7 +116,7 @@ public partial class BatchDownloadJobStatusResult : IEquatable<BatchDownloadJobS
     /// Current set of results for the job.
     /// </summary>
     /// <value>Current set of results for the job.</value>
-    [DataMember(Name = "results", EmitDefaultValue = false)]
+    [JsonPropertyName("results")]
     public List<BatchDownloadJobResult> Results { get; set; }
 
 
@@ -125,7 +125,7 @@ public partial class BatchDownloadJobStatusResult : IEquatable<BatchDownloadJobS
     /// The URI for this object
     /// </summary>
     /// <value>The URI for this object</value>
-    [DataMember(Name = "selfUri", EmitDefaultValue = false)]
+    [JsonPropertyName("selfUri")]
     public string SelfUri { get; private set; }
 
 

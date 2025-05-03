@@ -1,12 +1,12 @@
-using System.Runtime.Serialization;
 using System.Text;
+using System.Text.Json.Serialization;
 
 namespace PureCloud.Client.Models;
 
 /// <summary>
 /// SchemaQuantityLimits
 /// </summary>
-[DataContract]
+
 public partial class SchemaQuantityLimits : IEquatable<SchemaQuantityLimits>
 {
     /// <summary>
@@ -25,7 +25,7 @@ public partial class SchemaQuantityLimits : IEquatable<SchemaQuantityLimits>
     /// The globally unique identifier for the object.
     /// </summary>
     /// <value>The globally unique identifier for the object.</value>
-    [DataMember(Name = "id", EmitDefaultValue = false)]
+    [JsonPropertyName("id")]
     public string Id { get; private set; }
 
 
@@ -33,7 +33,7 @@ public partial class SchemaQuantityLimits : IEquatable<SchemaQuantityLimits>
     /// <summary>
     /// Gets or Sets Name
     /// </summary>
-    [DataMember(Name = "name", EmitDefaultValue = false)]
+    [JsonPropertyName("name")]
     public string Name { get; set; }
 
 
@@ -42,7 +42,7 @@ public partial class SchemaQuantityLimits : IEquatable<SchemaQuantityLimits>
     /// The minimum number of schema field name characters allowed.
     /// </summary>
     /// <value>The minimum number of schema field name characters allowed.</value>
-    [DataMember(Name = "minFieldNameCharacters", EmitDefaultValue = false)]
+    [JsonPropertyName("minFieldNameCharacters")]
     public int? MinFieldNameCharacters { get; private set; }
 
 
@@ -51,7 +51,7 @@ public partial class SchemaQuantityLimits : IEquatable<SchemaQuantityLimits>
     /// The maximum number of schema field name characters allowed.
     /// </summary>
     /// <value>The maximum number of schema field name characters allowed.</value>
-    [DataMember(Name = "maxFieldNameCharacters", EmitDefaultValue = false)]
+    [JsonPropertyName("maxFieldNameCharacters")]
     public int? MaxFieldNameCharacters { get; private set; }
 
 
@@ -60,7 +60,7 @@ public partial class SchemaQuantityLimits : IEquatable<SchemaQuantityLimits>
     /// The minimum number of schema field description characters allowed.
     /// </summary>
     /// <value>The minimum number of schema field description characters allowed.</value>
-    [DataMember(Name = "minFieldDescriptionCharacters", EmitDefaultValue = false)]
+    [JsonPropertyName("minFieldDescriptionCharacters")]
     public int? MinFieldDescriptionCharacters { get; private set; }
 
 
@@ -69,7 +69,7 @@ public partial class SchemaQuantityLimits : IEquatable<SchemaQuantityLimits>
     /// The maximum number of schema field description characters allowed.
     /// </summary>
     /// <value>The maximum number of schema field description characters allowed.</value>
-    [DataMember(Name = "maxFieldDescriptionCharacters", EmitDefaultValue = false)]
+    [JsonPropertyName("maxFieldDescriptionCharacters")]
     public int? MaxFieldDescriptionCharacters { get; private set; }
 
 
@@ -78,7 +78,7 @@ public partial class SchemaQuantityLimits : IEquatable<SchemaQuantityLimits>
     /// The minimum number of schema name characters allowed.
     /// </summary>
     /// <value>The minimum number of schema name characters allowed.</value>
-    [DataMember(Name = "minSchemaNameCharacters", EmitDefaultValue = false)]
+    [JsonPropertyName("minSchemaNameCharacters")]
     public int? MinSchemaNameCharacters { get; private set; }
 
 
@@ -87,7 +87,7 @@ public partial class SchemaQuantityLimits : IEquatable<SchemaQuantityLimits>
     /// The maximum number of schema name characters allowed.
     /// </summary>
     /// <value>The maximum number of schema name characters allowed.</value>
-    [DataMember(Name = "maxSchemaNameCharacters", EmitDefaultValue = false)]
+    [JsonPropertyName("maxSchemaNameCharacters")]
     public int? MaxSchemaNameCharacters { get; private set; }
 
 
@@ -96,7 +96,7 @@ public partial class SchemaQuantityLimits : IEquatable<SchemaQuantityLimits>
     /// The minimum number of schema description characters allowed.
     /// </summary>
     /// <value>The minimum number of schema description characters allowed.</value>
-    [DataMember(Name = "minSchemaDescriptionCharacters", EmitDefaultValue = false)]
+    [JsonPropertyName("minSchemaDescriptionCharacters")]
     public int? MinSchemaDescriptionCharacters { get; private set; }
 
 
@@ -105,7 +105,7 @@ public partial class SchemaQuantityLimits : IEquatable<SchemaQuantityLimits>
     /// The maximum number of schema description characters allowed.
     /// </summary>
     /// <value>The maximum number of schema description characters allowed.</value>
-    [DataMember(Name = "maxSchemaDescriptionCharacters", EmitDefaultValue = false)]
+    [JsonPropertyName("maxSchemaDescriptionCharacters")]
     public int? MaxSchemaDescriptionCharacters { get; private set; }
 
 
@@ -114,7 +114,7 @@ public partial class SchemaQuantityLimits : IEquatable<SchemaQuantityLimits>
     /// The maximum number of schema allowed per org.
     /// </summary>
     /// <value>The maximum number of schema allowed per org.</value>
-    [DataMember(Name = "maxNumberOfSchemasPerOrg", EmitDefaultValue = false)]
+    [JsonPropertyName("maxNumberOfSchemasPerOrg")]
     public int? MaxNumberOfSchemasPerOrg { get; private set; }
 
 
@@ -123,7 +123,7 @@ public partial class SchemaQuantityLimits : IEquatable<SchemaQuantityLimits>
     /// The maximum number of schema fields allowed per schema.
     /// </summary>
     /// <value>The maximum number of schema fields allowed per schema.</value>
-    [DataMember(Name = "maxNumberOfFieldsPerSchema", EmitDefaultValue = false)]
+    [JsonPropertyName("maxNumberOfFieldsPerSchema")]
     public int? MaxNumberOfFieldsPerSchema { get; private set; }
 
 
@@ -132,7 +132,7 @@ public partial class SchemaQuantityLimits : IEquatable<SchemaQuantityLimits>
     /// The maximum number of schema fields allowed per organization across all of their schemas.
     /// </summary>
     /// <value>The maximum number of schema fields allowed per organization across all of their schemas.</value>
-    [DataMember(Name = "maxNumberOfFieldsPerOrg", EmitDefaultValue = false)]
+    [JsonPropertyName("maxNumberOfFieldsPerOrg")]
     public int? MaxNumberOfFieldsPerOrg { get; private set; }
 
 
@@ -141,7 +141,7 @@ public partial class SchemaQuantityLimits : IEquatable<SchemaQuantityLimits>
     /// The URI for this object
     /// </summary>
     /// <value>The URI for this object</value>
-    [DataMember(Name = "selfUri", EmitDefaultValue = false)]
+    [JsonPropertyName("selfUri")]
     public string SelfUri { get; private set; }
 
 

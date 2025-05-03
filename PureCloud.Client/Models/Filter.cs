@@ -1,4 +1,3 @@
-using System.Runtime.Serialization;
 using System.Text;
 using System.Text.Json.Serialization;
 
@@ -7,7 +6,7 @@ namespace PureCloud.Client.Models;
 /// <summary>
 /// Filter
 /// </summary>
-[DataContract]
+
 public partial class Filter : IEquatable<Filter>
 {
 
@@ -38,7 +37,7 @@ public partial class Filter : IEquatable<Filter>
     /// The name of the field by which to filter.
     /// </summary>
     /// <value>The name of the field by which to filter.</value>
-    [DataMember(Name = "name", EmitDefaultValue = false)]
+    [JsonPropertyName("name")]
     public string Name { get; set; }
 
 
@@ -47,7 +46,7 @@ public partial class Filter : IEquatable<Filter>
     /// The type of the filter, DATE or STRING.
     /// </summary>
     /// <value>The type of the filter, DATE or STRING.</value>
-    [DataMember(Name = "type", EmitDefaultValue = false)]
+    [JsonPropertyName("type")]
     public string Type { get; set; }
 
 
@@ -56,7 +55,7 @@ public partial class Filter : IEquatable<Filter>
     /// The operation that the filter performs.
     /// </summary>
     /// <value>The operation that the filter performs.</value>
-    [DataMember(Name = "operator", EmitDefaultValue = false)]
+    [JsonPropertyName("operator")]
     public string Operator { get; set; }
 
 
@@ -65,7 +64,7 @@ public partial class Filter : IEquatable<Filter>
     /// The values to make the filter comparison against.
     /// </summary>
     /// <value>The values to make the filter comparison against.</value>
-    [DataMember(Name = "values", EmitDefaultValue = false)]
+    [JsonPropertyName("values")]
     public List<string> Values { get; set; }
 
 

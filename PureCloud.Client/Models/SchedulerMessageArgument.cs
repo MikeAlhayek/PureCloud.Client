@@ -7,14 +7,14 @@ namespace PureCloud.Client.Models;
 /// <summary>
 /// SchedulerMessageArgument
 /// </summary>
-[DataContract]
+
 public partial class SchedulerMessageArgument : IEquatable<SchedulerMessageArgument>
 {
     /// <summary>
     /// The type of this message parameter
     /// </summary>
     /// <value>The type of this message parameter</value>
-    [JsonConverter(typeof(JsonStringEnumConverter))]
+    
     public enum TypeEnum
     {
         /// <summary>
@@ -41,7 +41,7 @@ public partial class SchedulerMessageArgument : IEquatable<SchedulerMessageArgum
     /// The type of this message parameter
     /// </summary>
     /// <value>The type of this message parameter</value>
-    [DataMember(Name = "type", EmitDefaultValue = false)]
+    [JsonPropertyName("type")]
     public TypeEnum? Type { get; set; }
     /// <summary>
     /// Initializes a new instance of the <see cref="SchedulerMessageArgument" /> class.
@@ -63,7 +63,7 @@ public partial class SchedulerMessageArgument : IEquatable<SchedulerMessageArgum
     /// The value of this message parameter
     /// </summary>
     /// <value>The value of this message parameter</value>
-    [DataMember(Name = "value", EmitDefaultValue = false)]
+    [JsonPropertyName("value")]
     public string Value { get; set; }
 
 

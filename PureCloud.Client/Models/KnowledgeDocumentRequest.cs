@@ -7,14 +7,14 @@ namespace PureCloud.Client.Models;
 /// <summary>
 /// KnowledgeDocumentRequest
 /// </summary>
-[DataContract]
+
 public partial class KnowledgeDocumentRequest : IEquatable<KnowledgeDocumentRequest>
 {
     /// <summary>
     /// Document type according to assigned template
     /// </summary>
     /// <value>Document type according to assigned template</value>
-    [JsonConverter(typeof(JsonStringEnumConverter))]
+    
     public enum TypeEnum
     {
         /// <summary>
@@ -41,7 +41,7 @@ public partial class KnowledgeDocumentRequest : IEquatable<KnowledgeDocumentRequ
     /// Document type according to assigned template
     /// </summary>
     /// <value>Document type according to assigned template</value>
-    [DataMember(Name = "type", EmitDefaultValue = false)]
+    [JsonPropertyName("type")]
     public TypeEnum? Type { get; set; }
 
     /// <summary>
@@ -75,7 +75,7 @@ public partial class KnowledgeDocumentRequest : IEquatable<KnowledgeDocumentRequ
     /// External Url to the document
     /// </summary>
     /// <value>External Url to the document</value>
-    [DataMember(Name = "externalUrl", EmitDefaultValue = false)]
+    [JsonPropertyName("externalUrl")]
     public string ExternalUrl { get; set; }
 
 
@@ -84,7 +84,7 @@ public partial class KnowledgeDocumentRequest : IEquatable<KnowledgeDocumentRequ
     /// Faq document details
     /// </summary>
     /// <value>Faq document details</value>
-    [DataMember(Name = "faq", EmitDefaultValue = false)]
+    [JsonPropertyName("faq")]
     public DocumentFaq Faq { get; set; }
 
 
@@ -93,7 +93,7 @@ public partial class KnowledgeDocumentRequest : IEquatable<KnowledgeDocumentRequ
     /// Document categories
     /// </summary>
     /// <value>Document categories</value>
-    [DataMember(Name = "categories", EmitDefaultValue = false)]
+    [JsonPropertyName("categories")]
     public List<DocumentCategoryInput> Categories { get; set; }
 
 
@@ -102,7 +102,7 @@ public partial class KnowledgeDocumentRequest : IEquatable<KnowledgeDocumentRequ
     /// Article details
     /// </summary>
     /// <value>Article details</value>
-    [DataMember(Name = "article", EmitDefaultValue = false)]
+    [JsonPropertyName("article")]
     public DocumentArticle Article { get; set; }
 
 

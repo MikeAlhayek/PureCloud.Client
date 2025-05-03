@@ -1,4 +1,3 @@
-using System.Runtime.Serialization;
 using System.Text;
 using System.Text.Json.Serialization;
 
@@ -7,7 +6,7 @@ namespace PureCloud.Client.Models;
 /// <summary>
 /// OutcomePredictorRequest
 /// </summary>
-[DataContract]
+
 public partial class OutcomePredictorRequest : IEquatable<OutcomePredictorRequest>
 {
 
@@ -32,7 +31,7 @@ public partial class OutcomePredictorRequest : IEquatable<OutcomePredictorReques
     /// The outcome for which this predictor will provide predictions.
     /// </summary>
     /// <value>The outcome for which this predictor will provide predictions.</value>
-    [DataMember(Name = "outcome", EmitDefaultValue = false)]
+    [JsonPropertyName("outcome")]
     public OutcomeRefRequest Outcome { get; set; }
 
 

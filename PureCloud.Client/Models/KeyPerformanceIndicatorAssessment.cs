@@ -7,14 +7,14 @@ namespace PureCloud.Client.Models;
 /// <summary>
 /// KeyPerformanceIndicatorAssessment
 /// </summary>
-[DataContract]
+
 public partial class KeyPerformanceIndicatorAssessment : IEquatable<KeyPerformanceIndicatorAssessment>
 {
     /// <summary>
     /// The overall result of the assessment for a key performance indicator.
     /// </summary>
     /// <value>The overall result of the assessment for a key performance indicator.</value>
-    [JsonConverter(typeof(JsonStringEnumConverter))]
+    
     public enum AssessmentResultEnum
     {
         /// <summary>
@@ -59,7 +59,7 @@ public partial class KeyPerformanceIndicatorAssessment : IEquatable<KeyPerforman
     /// The overall result of the assessment for a key performance indicator.
     /// </summary>
     /// <value>The overall result of the assessment for a key performance indicator.</value>
-    [DataMember(Name = "assessmentResult", EmitDefaultValue = false)]
+    [JsonPropertyName("assessmentResult")]
     public AssessmentResultEnum? AssessmentResult { get; private set; }
     /// <summary>
     /// Initializes a new instance of the <see cref="KeyPerformanceIndicatorAssessment" /> class.
@@ -75,7 +75,7 @@ public partial class KeyPerformanceIndicatorAssessment : IEquatable<KeyPerforman
     /// Name of the key performance indicator assessed.
     /// </summary>
     /// <value>Name of the key performance indicator assessed.</value>
-    [DataMember(Name = "kpi", EmitDefaultValue = false)]
+    [JsonPropertyName("kpi")]
     public string Kpi { get; private set; }
 
 
@@ -86,7 +86,7 @@ public partial class KeyPerformanceIndicatorAssessment : IEquatable<KeyPerforman
     /// Set of checks executed as part of an assessment.
     /// </summary>
     /// <value>Set of checks executed as part of an assessment.</value>
-    [DataMember(Name = "checks", EmitDefaultValue = false)]
+    [JsonPropertyName("checks")]
     public List<Check> Checks { get; private set; }
 
 

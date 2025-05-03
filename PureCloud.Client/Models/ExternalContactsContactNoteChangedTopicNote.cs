@@ -7,13 +7,13 @@ namespace PureCloud.Client.Models;
 /// <summary>
 /// ExternalContactsContactNoteChangedTopicNote
 /// </summary>
-[DataContract]
+
 public partial class ExternalContactsContactNoteChangedTopicNote : IEquatable<ExternalContactsContactNoteChangedTopicNote>
 {
     /// <summary>
     /// Gets or Sets EntityType
     /// </summary>
-    [JsonConverter(typeof(JsonStringEnumConverter))]
+    
     public enum EntityTypeEnum
     {
         /// <summary>
@@ -39,7 +39,7 @@ public partial class ExternalContactsContactNoteChangedTopicNote : IEquatable<Ex
     /// <summary>
     /// Gets or Sets EntityType
     /// </summary>
-    [DataMember(Name = "entityType", EmitDefaultValue = false)]
+    [JsonPropertyName("entityType")]
     public EntityTypeEnum? EntityType { get; set; }
     /// <summary>
     /// Initializes a new instance of the <see cref="ExternalContactsContactNoteChangedTopicNote" /> class.
@@ -70,7 +70,7 @@ public partial class ExternalContactsContactNoteChangedTopicNote : IEquatable<Ex
     /// <summary>
     /// Gets or Sets Id
     /// </summary>
-    [DataMember(Name = "id", EmitDefaultValue = false)]
+    [JsonPropertyName("id")]
     public string Id { get; set; }
 
 
@@ -78,7 +78,7 @@ public partial class ExternalContactsContactNoteChangedTopicNote : IEquatable<Ex
     /// <summary>
     /// Gets or Sets Division
     /// </summary>
-    [DataMember(Name = "division", EmitDefaultValue = false)]
+    [JsonPropertyName("division")]
     public ExternalContactsContactNoteChangedTopicDivision Division { get; set; }
 
 
@@ -86,7 +86,7 @@ public partial class ExternalContactsContactNoteChangedTopicNote : IEquatable<Ex
     /// <summary>
     /// Gets or Sets EntityId
     /// </summary>
-    [DataMember(Name = "entityId", EmitDefaultValue = false)]
+    [JsonPropertyName("entityId")]
     public string EntityId { get; set; }
 
 
@@ -96,7 +96,7 @@ public partial class ExternalContactsContactNoteChangedTopicNote : IEquatable<Ex
     /// <summary>
     /// Gets or Sets NoteText
     /// </summary>
-    [DataMember(Name = "noteText", EmitDefaultValue = false)]
+    [JsonPropertyName("noteText")]
     public string NoteText { get; set; }
 
 
@@ -104,7 +104,7 @@ public partial class ExternalContactsContactNoteChangedTopicNote : IEquatable<Ex
     /// <summary>
     /// Gets or Sets CreatedBy
     /// </summary>
-    [DataMember(Name = "createdBy", EmitDefaultValue = false)]
+    [JsonPropertyName("createdBy")]
     public ExternalContactsContactNoteChangedTopicUser CreatedBy { get; set; }
 
 
@@ -112,7 +112,7 @@ public partial class ExternalContactsContactNoteChangedTopicNote : IEquatable<Ex
     /// <summary>
     /// Gets or Sets CreateDate
     /// </summary>
-    [DataMember(Name = "createDate", EmitDefaultValue = false)]
+    [JsonPropertyName("createDate")]
     public DateTime? CreateDate { get; set; }
 
 
@@ -120,7 +120,7 @@ public partial class ExternalContactsContactNoteChangedTopicNote : IEquatable<Ex
     /// <summary>
     /// Gets or Sets ModifyDate
     /// </summary>
-    [DataMember(Name = "modifyDate", EmitDefaultValue = false)]
+    [JsonPropertyName("modifyDate")]
     public DateTime? ModifyDate { get; set; }
 
 

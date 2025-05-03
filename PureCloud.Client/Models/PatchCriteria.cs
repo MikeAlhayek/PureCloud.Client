@@ -7,14 +7,14 @@ namespace PureCloud.Client.Models;
 /// <summary>
 /// PatchCriteria
 /// </summary>
-[DataContract]
+
 public partial class PatchCriteria : IEquatable<PatchCriteria>
 {
     /// <summary>
     /// The comparison operator.
     /// </summary>
     /// <value>The comparison operator.</value>
-    [JsonConverter(typeof(JsonStringEnumConverter))]
+    
     public enum OperatorEnum
     {
         /// <summary>
@@ -101,7 +101,7 @@ public partial class PatchCriteria : IEquatable<PatchCriteria>
     /// The comparison operator.
     /// </summary>
     /// <value>The comparison operator.</value>
-    [DataMember(Name = "operator", EmitDefaultValue = false)]
+    [JsonPropertyName("operator")]
     public OperatorEnum? Operator { get; set; }
     /// <summary>
     /// Initializes a new instance of the <see cref="PatchCriteria" /> class.
@@ -125,7 +125,7 @@ public partial class PatchCriteria : IEquatable<PatchCriteria>
     /// The criteria key.
     /// </summary>
     /// <value>The criteria key.</value>
-    [DataMember(Name = "key", EmitDefaultValue = false)]
+    [JsonPropertyName("key")]
     public string Key { get; set; }
 
 
@@ -134,7 +134,7 @@ public partial class PatchCriteria : IEquatable<PatchCriteria>
     /// The criteria values.
     /// </summary>
     /// <value>The criteria values.</value>
-    [DataMember(Name = "values", EmitDefaultValue = false)]
+    [JsonPropertyName("values")]
     public List<string> Values { get; set; }
 
 
@@ -143,7 +143,7 @@ public partial class PatchCriteria : IEquatable<PatchCriteria>
     /// Should criteria be case insensitive.
     /// </summary>
     /// <value>Should criteria be case insensitive.</value>
-    [DataMember(Name = "shouldIgnoreCase", EmitDefaultValue = false)]
+    [JsonPropertyName("shouldIgnoreCase")]
     public bool? ShouldIgnoreCase { get; set; }
 
 

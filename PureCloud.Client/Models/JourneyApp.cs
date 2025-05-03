@@ -1,4 +1,3 @@
-using System.Runtime.Serialization;
 using System.Text;
 using System.Text.Json.Serialization;
 
@@ -7,7 +6,7 @@ namespace PureCloud.Client.Models;
 /// <summary>
 /// JourneyApp
 /// </summary>
-[DataContract]
+
 public partial class JourneyApp : IEquatable<JourneyApp>
 {
 
@@ -38,7 +37,7 @@ public partial class JourneyApp : IEquatable<JourneyApp>
     /// Name of the application (e.g. mybankingapp).
     /// </summary>
     /// <value>Name of the application (e.g. mybankingapp).</value>
-    [DataMember(Name = "name", EmitDefaultValue = false)]
+    [JsonPropertyName("name")]
     public string Name { get; set; }
 
 
@@ -47,7 +46,7 @@ public partial class JourneyApp : IEquatable<JourneyApp>
     /// Namespace of the application (e.g. com.genesys.bancodinero).
     /// </summary>
     /// <value>Namespace of the application (e.g. com.genesys.bancodinero).</value>
-    [DataMember(Name = "namespace", EmitDefaultValue = false)]
+    [JsonPropertyName("namespace")]
     public string Namespace { get; set; }
 
 
@@ -56,7 +55,7 @@ public partial class JourneyApp : IEquatable<JourneyApp>
     /// Version of the application (e.g. 5.9.27).
     /// </summary>
     /// <value>Version of the application (e.g. 5.9.27).</value>
-    [DataMember(Name = "version", EmitDefaultValue = false)]
+    [JsonPropertyName("version")]
     public string Version { get; set; }
 
 
@@ -65,7 +64,7 @@ public partial class JourneyApp : IEquatable<JourneyApp>
     /// Build number of the application (e.g. 701).
     /// </summary>
     /// <value>Build number of the application (e.g. 701).</value>
-    [DataMember(Name = "buildNumber", EmitDefaultValue = false)]
+    [JsonPropertyName("buildNumber")]
     public string BuildNumber { get; set; }
 
 

@@ -1,12 +1,12 @@
-using System.Runtime.Serialization;
 using System.Text;
+using System.Text.Json.Serialization;
 
 namespace PureCloud.Client.Models;
 
 /// <summary>
 /// AggregationResultEntry
 /// </summary>
-[DataContract]
+
 public partial class AggregationResultEntry : IEquatable<AggregationResultEntry>
 {
     /// <summary>
@@ -30,7 +30,7 @@ public partial class AggregationResultEntry : IEquatable<AggregationResultEntry>
     /// <summary>
     /// Gets or Sets Count
     /// </summary>
-    [DataMember(Name = "count", EmitDefaultValue = false)]
+    [JsonPropertyName("count")]
     public long? Count { get; set; }
 
 
@@ -39,7 +39,7 @@ public partial class AggregationResultEntry : IEquatable<AggregationResultEntry>
     /// For termFrequency aggregations
     /// </summary>
     /// <value>For termFrequency aggregations</value>
-    [DataMember(Name = "value", EmitDefaultValue = false)]
+    [JsonPropertyName("value")]
     public string Value { get; set; }
 
 
@@ -48,7 +48,7 @@ public partial class AggregationResultEntry : IEquatable<AggregationResultEntry>
     /// For numericRange aggregations
     /// </summary>
     /// <value>For numericRange aggregations</value>
-    [DataMember(Name = "gte", EmitDefaultValue = false)]
+    [JsonPropertyName("gte")]
     public double? Gte { get; set; }
 
 
@@ -57,7 +57,7 @@ public partial class AggregationResultEntry : IEquatable<AggregationResultEntry>
     /// For numericRange aggregations
     /// </summary>
     /// <value>For numericRange aggregations</value>
-    [DataMember(Name = "lt", EmitDefaultValue = false)]
+    [JsonPropertyName("lt")]
     public double? Lt { get; set; }
 
 

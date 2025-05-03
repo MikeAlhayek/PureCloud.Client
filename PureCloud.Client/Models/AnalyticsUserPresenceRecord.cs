@@ -7,14 +7,14 @@ namespace PureCloud.Client.Models;
 /// <summary>
 /// AnalyticsUserPresenceRecord
 /// </summary>
-[DataContract]
+
 public partial class AnalyticsUserPresenceRecord : IEquatable<AnalyticsUserPresenceRecord>
 {
     /// <summary>
     /// The user's system presence
     /// </summary>
     /// <value>The user's system presence</value>
-    [JsonConverter(typeof(JsonStringEnumConverter))]
+    
     public enum SystemPresenceEnum
     {
         /// <summary>
@@ -89,7 +89,7 @@ public partial class AnalyticsUserPresenceRecord : IEquatable<AnalyticsUserPrese
     /// The user's system presence
     /// </summary>
     /// <value>The user's system presence</value>
-    [DataMember(Name = "systemPresence", EmitDefaultValue = false)]
+    [JsonPropertyName("systemPresence")]
     public SystemPresenceEnum? SystemPresence { get; set; }
     /// <summary>
     /// Initializes a new instance of the <see cref="AnalyticsUserPresenceRecord" /> class.
@@ -113,7 +113,7 @@ public partial class AnalyticsUserPresenceRecord : IEquatable<AnalyticsUserPrese
     /// The start time of the record. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z
     /// </summary>
     /// <value>The start time of the record. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z</value>
-    [DataMember(Name = "startTime", EmitDefaultValue = false)]
+    [JsonPropertyName("startTime")]
     public DateTime? StartTime { get; set; }
 
 
@@ -122,7 +122,7 @@ public partial class AnalyticsUserPresenceRecord : IEquatable<AnalyticsUserPrese
     /// The end time of the record. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z
     /// </summary>
     /// <value>The end time of the record. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z</value>
-    [DataMember(Name = "endTime", EmitDefaultValue = false)]
+    [JsonPropertyName("endTime")]
     public DateTime? EndTime { get; set; }
 
 
@@ -133,7 +133,7 @@ public partial class AnalyticsUserPresenceRecord : IEquatable<AnalyticsUserPrese
     /// The identifier for the user&#39;s organization presence
     /// </summary>
     /// <value>The identifier for the user&#39;s organization presence</value>
-    [DataMember(Name = "organizationPresenceId", EmitDefaultValue = false)]
+    [JsonPropertyName("organizationPresenceId")]
     public string OrganizationPresenceId { get; set; }
 
 

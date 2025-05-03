@@ -7,13 +7,13 @@ namespace PureCloud.Client.Models;
 /// <summary>
 /// EdgeInterface
 /// </summary>
-[DataContract]
+
 public partial class EdgeInterface : IEquatable<EdgeInterface>
 {
     /// <summary>
     /// Gets or Sets LineTypes
     /// </summary>
-    [JsonConverter(typeof(JsonStringEnumConverter))]
+    
     public enum LineTypesEnum
     {
         /// <summary>
@@ -77,7 +77,7 @@ public partial class EdgeInterface : IEquatable<EdgeInterface>
     /// <summary>
     /// Gets or Sets Type
     /// </summary>
-    [DataMember(Name = "type", EmitDefaultValue = false)]
+    [JsonPropertyName("type")]
     public string Type { get; set; }
 
 
@@ -85,7 +85,7 @@ public partial class EdgeInterface : IEquatable<EdgeInterface>
     /// <summary>
     /// Gets or Sets IpAddress
     /// </summary>
-    [DataMember(Name = "ipAddress", EmitDefaultValue = false)]
+    [JsonPropertyName("ipAddress")]
     public string IpAddress { get; set; }
 
 
@@ -93,7 +93,7 @@ public partial class EdgeInterface : IEquatable<EdgeInterface>
     /// <summary>
     /// Gets or Sets Name
     /// </summary>
-    [DataMember(Name = "name", EmitDefaultValue = false)]
+    [JsonPropertyName("name")]
     public string Name { get; set; }
 
 
@@ -101,7 +101,7 @@ public partial class EdgeInterface : IEquatable<EdgeInterface>
     /// <summary>
     /// Gets or Sets MacAddress
     /// </summary>
-    [DataMember(Name = "macAddress", EmitDefaultValue = false)]
+    [JsonPropertyName("macAddress")]
     public string MacAddress { get; set; }
 
 
@@ -109,7 +109,7 @@ public partial class EdgeInterface : IEquatable<EdgeInterface>
     /// <summary>
     /// Gets or Sets IfName
     /// </summary>
-    [DataMember(Name = "ifName", EmitDefaultValue = false)]
+    [JsonPropertyName("ifName")]
     public string IfName { get; set; }
 
 
@@ -117,7 +117,7 @@ public partial class EdgeInterface : IEquatable<EdgeInterface>
     /// <summary>
     /// Gets or Sets Endpoints
     /// </summary>
-    [DataMember(Name = "endpoints", EmitDefaultValue = false)]
+    [JsonPropertyName("endpoints")]
     public List<DomainEntityRef> Endpoints { get; set; }
 
 
@@ -125,7 +125,7 @@ public partial class EdgeInterface : IEquatable<EdgeInterface>
     /// <summary>
     /// Gets or Sets LineTypes
     /// </summary>
-    [DataMember(Name = "lineTypes", EmitDefaultValue = false)]
+    [JsonPropertyName("lineTypes")]
     public List<LineTypesEnum> LineTypes { get; set; }
 
 
@@ -133,7 +133,7 @@ public partial class EdgeInterface : IEquatable<EdgeInterface>
     /// <summary>
     /// Gets or Sets AddressFamilyId
     /// </summary>
-    [DataMember(Name = "addressFamilyId", EmitDefaultValue = false)]
+    [JsonPropertyName("addressFamilyId")]
     public string AddressFamilyId { get; set; }
 
 

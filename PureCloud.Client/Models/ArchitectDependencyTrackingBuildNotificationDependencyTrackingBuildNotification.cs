@@ -1,12 +1,12 @@
-using System.Runtime.Serialization;
 using System.Text;
+using System.Text.Json.Serialization;
 
 namespace PureCloud.Client.Models;
 
 /// <summary>
 /// ArchitectDependencyTrackingBuildNotificationDependencyTrackingBuildNotification
 /// </summary>
-[DataContract]
+
 public partial class ArchitectDependencyTrackingBuildNotificationDependencyTrackingBuildNotification : IEquatable<ArchitectDependencyTrackingBuildNotificationDependencyTrackingBuildNotification>
 {
     /// <summary>
@@ -31,7 +31,7 @@ public partial class ArchitectDependencyTrackingBuildNotificationDependencyTrack
     /// The organization&#39;s new dependency tracking build status
     /// </summary>
     /// <value>The organization&#39;s new dependency tracking build status</value>
-    [DataMember(Name = "status", EmitDefaultValue = false)]
+    [JsonPropertyName("status")]
     public string Status { get; set; }
 
 
@@ -39,7 +39,7 @@ public partial class ArchitectDependencyTrackingBuildNotificationDependencyTrack
     /// <summary>
     /// Gets or Sets User
     /// </summary>
-    [DataMember(Name = "user", EmitDefaultValue = false)]
+    [JsonPropertyName("user")]
     public ArchitectDependencyTrackingBuildNotificationUser User { get; set; }
 
 
@@ -47,7 +47,7 @@ public partial class ArchitectDependencyTrackingBuildNotificationDependencyTrack
     /// <summary>
     /// Gets or Sets Client
     /// </summary>
-    [DataMember(Name = "client", EmitDefaultValue = false)]
+    [JsonPropertyName("client")]
     public ArchitectDependencyTrackingBuildNotificationClient Client { get; set; }
 
 
@@ -56,7 +56,7 @@ public partial class ArchitectDependencyTrackingBuildNotificationDependencyTrack
     /// The time the last build started, in ISO 8601 format
     /// </summary>
     /// <value>The time the last build started, in ISO 8601 format</value>
-    [DataMember(Name = "startTime", EmitDefaultValue = false)]
+    [JsonPropertyName("startTime")]
     public DateTime? StartTime { get; set; }
 
 

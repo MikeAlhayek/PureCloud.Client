@@ -7,14 +7,14 @@ namespace PureCloud.Client.Models;
 /// <summary>
 /// BuShortTermForecastListItem
 /// </summary>
-[DataContract]
+
 public partial class BuShortTermForecastListItem : IEquatable<BuShortTermForecastListItem>
 {
     /// <summary>
     /// The method by which this forecast was created
     /// </summary>
     /// <value>The method by which this forecast was created</value>
-    [JsonConverter(typeof(JsonStringEnumConverter))]
+    
     public enum CreationMethodEnum
     {
         /// <summary>
@@ -53,7 +53,7 @@ public partial class BuShortTermForecastListItem : IEquatable<BuShortTermForecas
     /// The method by which this forecast was created
     /// </summary>
     /// <value>The method by which this forecast was created</value>
-    [DataMember(Name = "creationMethod", EmitDefaultValue = false)]
+    [JsonPropertyName("creationMethod")]
     public CreationMethodEnum? CreationMethod { get; set; }
     /// <summary>
     /// Initializes a new instance of the <see cref="BuShortTermForecastListItem" /> class.
@@ -81,7 +81,7 @@ public partial class BuShortTermForecastListItem : IEquatable<BuShortTermForecas
     /// The globally unique identifier for the object.
     /// </summary>
     /// <value>The globally unique identifier for the object.</value>
-    [DataMember(Name = "id", EmitDefaultValue = false)]
+    [JsonPropertyName("id")]
     public string Id { get; private set; }
 
 
@@ -90,7 +90,7 @@ public partial class BuShortTermForecastListItem : IEquatable<BuShortTermForecas
     /// The start week date of this forecast in yyyy-MM-dd.  Must fall on the start day of week for the associated business unit. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd
     /// </summary>
     /// <value>The start week date of this forecast in yyyy-MM-dd.  Must fall on the start day of week for the associated business unit. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd</value>
-    [DataMember(Name = "weekDate", EmitDefaultValue = false)]
+    [JsonPropertyName("weekDate")]
     public string WeekDate { get; set; }
 
 
@@ -99,7 +99,7 @@ public partial class BuShortTermForecastListItem : IEquatable<BuShortTermForecas
     /// The number of weeks this forecast covers
     /// </summary>
     /// <value>The number of weeks this forecast covers</value>
-    [DataMember(Name = "weekCount", EmitDefaultValue = false)]
+    [JsonPropertyName("weekCount")]
     public int? WeekCount { get; set; }
 
 
@@ -110,7 +110,7 @@ public partial class BuShortTermForecastListItem : IEquatable<BuShortTermForecas
     /// The description of this forecast
     /// </summary>
     /// <value>The description of this forecast</value>
-    [DataMember(Name = "description", EmitDefaultValue = false)]
+    [JsonPropertyName("description")]
     public string Description { get; set; }
 
 
@@ -119,7 +119,7 @@ public partial class BuShortTermForecastListItem : IEquatable<BuShortTermForecas
     /// Whether this forecast contains modifications on legacy metrics
     /// </summary>
     /// <value>Whether this forecast contains modifications on legacy metrics</value>
-    [DataMember(Name = "legacy", EmitDefaultValue = false)]
+    [JsonPropertyName("legacy")]
     public bool? Legacy { get; private set; }
 
 
@@ -128,7 +128,7 @@ public partial class BuShortTermForecastListItem : IEquatable<BuShortTermForecas
     /// Metadata for this forecast
     /// </summary>
     /// <value>Metadata for this forecast</value>
-    [DataMember(Name = "metadata", EmitDefaultValue = false)]
+    [JsonPropertyName("metadata")]
     public WfmVersionedEntityMetadata Metadata { get; set; }
 
 
@@ -137,7 +137,7 @@ public partial class BuShortTermForecastListItem : IEquatable<BuShortTermForecas
     /// Whether this forecast can be used for scheduling
     /// </summary>
     /// <value>Whether this forecast can be used for scheduling</value>
-    [DataMember(Name = "canUseForScheduling", EmitDefaultValue = false)]
+    [JsonPropertyName("canUseForScheduling")]
     public bool? CanUseForScheduling { get; set; }
 
 
@@ -146,7 +146,7 @@ public partial class BuShortTermForecastListItem : IEquatable<BuShortTermForecas
     /// The URI for this object
     /// </summary>
     /// <value>The URI for this object</value>
-    [DataMember(Name = "selfUri", EmitDefaultValue = false)]
+    [JsonPropertyName("selfUri")]
     public string SelfUri { get; private set; }
 
 

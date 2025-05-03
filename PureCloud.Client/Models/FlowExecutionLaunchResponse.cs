@@ -1,12 +1,12 @@
-using System.Runtime.Serialization;
 using System.Text;
+using System.Text.Json.Serialization;
 
 namespace PureCloud.Client.Models;
 
 /// <summary>
 /// Response object from launching a flow.
 /// </summary>
-[DataContract]
+
 public partial class FlowExecutionLaunchResponse : IEquatable<FlowExecutionLaunchResponse>
 {
     /// <summary>
@@ -29,7 +29,7 @@ public partial class FlowExecutionLaunchResponse : IEquatable<FlowExecutionLaunc
     /// The flow execution ID
     /// </summary>
     /// <value>The flow execution ID</value>
-    [DataMember(Name = "id", EmitDefaultValue = false)]
+    [JsonPropertyName("id")]
     public string Id { get; set; }
 
 
@@ -38,7 +38,7 @@ public partial class FlowExecutionLaunchResponse : IEquatable<FlowExecutionLaunc
     /// The flow execution name.
     /// </summary>
     /// <value>The flow execution name.</value>
-    [DataMember(Name = "name", EmitDefaultValue = false)]
+    [JsonPropertyName("name")]
     public string Name { get; set; }
 
 
@@ -47,7 +47,7 @@ public partial class FlowExecutionLaunchResponse : IEquatable<FlowExecutionLaunc
     /// The version of the flow that launched
     /// </summary>
     /// <value>The version of the flow that launched</value>
-    [DataMember(Name = "flowVersion", EmitDefaultValue = false)]
+    [JsonPropertyName("flowVersion")]
     public DomainEntityRef FlowVersion { get; set; }
 
 
@@ -56,7 +56,7 @@ public partial class FlowExecutionLaunchResponse : IEquatable<FlowExecutionLaunc
     /// The URI for this object
     /// </summary>
     /// <value>The URI for this object</value>
-    [DataMember(Name = "selfUri", EmitDefaultValue = false)]
+    [JsonPropertyName("selfUri")]
     public string SelfUri { get; private set; }
 
 

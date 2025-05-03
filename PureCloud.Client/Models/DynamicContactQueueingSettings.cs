@@ -1,12 +1,12 @@
-using System.Runtime.Serialization;
 using System.Text;
+using System.Text.Json.Serialization;
 
 namespace PureCloud.Client.Models;
 
 /// <summary>
 /// DynamicContactQueueingSettings
 /// </summary>
-[DataContract]
+
 public partial class DynamicContactQueueingSettings : IEquatable<DynamicContactQueueingSettings>
 {
     /// <summary>
@@ -27,7 +27,7 @@ public partial class DynamicContactQueueingSettings : IEquatable<DynamicContactQ
     /// Whether to sort contacts dynamically
     /// </summary>
     /// <value>Whether to sort contacts dynamically</value>
-    [DataMember(Name = "sort", EmitDefaultValue = false)]
+    [JsonPropertyName("sort")]
     public bool? Sort { get; set; }
 
 
@@ -36,7 +36,7 @@ public partial class DynamicContactQueueingSettings : IEquatable<DynamicContactQ
     /// Whether to filter contacts dynamically
     /// </summary>
     /// <value>Whether to filter contacts dynamically</value>
-    [DataMember(Name = "filter", EmitDefaultValue = false)]
+    [JsonPropertyName("filter")]
     public bool? Filter { get; set; }
 
 

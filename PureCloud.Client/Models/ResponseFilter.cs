@@ -7,14 +7,14 @@ namespace PureCloud.Client.Models;
 /// <summary>
 /// Used to filter response queries
 /// </summary>
-[DataContract]
+
 public partial class ResponseFilter : IEquatable<ResponseFilter>
 {
     /// <summary>
     /// Filter operation: IN, EQUALS, NOTEQUALS.
     /// </summary>
     /// <value>Filter operation: IN, EQUALS, NOTEQUALS.</value>
-    [JsonConverter(typeof(JsonStringEnumConverter))]
+    
     public enum OperatorEnum
     {
         /// <summary>
@@ -47,7 +47,7 @@ public partial class ResponseFilter : IEquatable<ResponseFilter>
     /// Filter operation: IN, EQUALS, NOTEQUALS.
     /// </summary>
     /// <value>Filter operation: IN, EQUALS, NOTEQUALS.</value>
-    [DataMember(Name = "operator", EmitDefaultValue = false)]
+    [JsonPropertyName("operator")]
     public OperatorEnum? Operator { get; set; }
 
     /// <summary>
@@ -75,7 +75,7 @@ public partial class ResponseFilter : IEquatable<ResponseFilter>
     /// Field to filter on. Allowed values are &#39;name&#39;, &#39;libraryId&#39;, &#39;text.contentType&#39;, &#39;messagingTemplate&#39; and &#39;responseType&#39;
     /// </summary>
     /// <value>Field to filter on. Allowed values are &#39;name&#39;, &#39;libraryId&#39;, &#39;text.contentType&#39;, &#39;messagingTemplate&#39; and &#39;responseType&#39;</value>
-    [DataMember(Name = "name", EmitDefaultValue = false)]
+    [JsonPropertyName("name")]
     public string Name { get; set; }
 
 
@@ -86,7 +86,7 @@ public partial class ResponseFilter : IEquatable<ResponseFilter>
     /// Values to filter on. If name is &#39;responseType&#39; then allowed values are &#39;CampaignSmsTemplate&#39;, &#39;CampaignEmailTemplate&#39;, &#39;Footer&#39; and &#39;Signature&#39;
     /// </summary>
     /// <value>Values to filter on. If name is &#39;responseType&#39; then allowed values are &#39;CampaignSmsTemplate&#39;, &#39;CampaignEmailTemplate&#39;, &#39;Footer&#39; and &#39;Signature&#39;</value>
-    [DataMember(Name = "values", EmitDefaultValue = false)]
+    [JsonPropertyName("values")]
     public List<string> Values { get; set; }
 
 

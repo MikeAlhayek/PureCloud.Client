@@ -1,4 +1,3 @@
-using System.Runtime.Serialization;
 using System.Text;
 using System.Text.Json.Serialization;
 
@@ -7,7 +6,7 @@ namespace PureCloud.Client.Models;
 /// <summary>
 /// ChatMessageResponse
 /// </summary>
-[DataContract]
+
 public partial class ChatMessageResponse : IEquatable<ChatMessageResponse>
 {
 
@@ -60,7 +59,7 @@ public partial class ChatMessageResponse : IEquatable<ChatMessageResponse>
     /// The id of the message
     /// </summary>
     /// <value>The id of the message</value>
-    [DataMember(Name = "id", EmitDefaultValue = false)]
+    [JsonPropertyName("id")]
     public string Id { get; set; }
 
 
@@ -69,7 +68,7 @@ public partial class ChatMessageResponse : IEquatable<ChatMessageResponse>
     /// Message&#39;s created time. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z
     /// </summary>
     /// <value>Message&#39;s created time. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z</value>
-    [DataMember(Name = "dateCreated", EmitDefaultValue = false)]
+    [JsonPropertyName("dateCreated")]
     public DateTime? DateCreated { get; set; }
 
 
@@ -78,7 +77,7 @@ public partial class ChatMessageResponse : IEquatable<ChatMessageResponse>
     /// Message&#39;s last updated time. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z
     /// </summary>
     /// <value>Message&#39;s last updated time. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z</value>
-    [DataMember(Name = "dateModified", EmitDefaultValue = false)]
+    [JsonPropertyName("dateModified")]
     public DateTime? DateModified { get; set; }
 
 
@@ -87,7 +86,7 @@ public partial class ChatMessageResponse : IEquatable<ChatMessageResponse>
     /// Jid of message&#39;s recipient (roomJid or userJid)
     /// </summary>
     /// <value>Jid of message&#39;s recipient (roomJid or userJid)</value>
-    [DataMember(Name = "toJid", EmitDefaultValue = false)]
+    [JsonPropertyName("toJid")]
     public string ToJid { get; set; }
 
 
@@ -96,7 +95,7 @@ public partial class ChatMessageResponse : IEquatable<ChatMessageResponse>
     /// Jid of message&#39;s sender (userJid)
     /// </summary>
     /// <value>Jid of message&#39;s sender (userJid)</value>
-    [DataMember(Name = "jid", EmitDefaultValue = false)]
+    [JsonPropertyName("jid")]
     public string Jid { get; set; }
 
 
@@ -105,7 +104,7 @@ public partial class ChatMessageResponse : IEquatable<ChatMessageResponse>
     /// Message&#39;s body
     /// </summary>
     /// <value>Message&#39;s body</value>
-    [DataMember(Name = "body", EmitDefaultValue = false)]
+    [JsonPropertyName("body")]
     public string Body { get; set; }
 
 
@@ -114,7 +113,7 @@ public partial class ChatMessageResponse : IEquatable<ChatMessageResponse>
     /// Message&#39;s mentions
     /// </summary>
     /// <value>Message&#39;s mentions</value>
-    [DataMember(Name = "mentions", EmitDefaultValue = false)]
+    [JsonPropertyName("mentions")]
     public Dictionary<string, string> Mentions { get; set; }
 
 
@@ -123,7 +122,7 @@ public partial class ChatMessageResponse : IEquatable<ChatMessageResponse>
     /// If message was edited
     /// </summary>
     /// <value>If message was edited</value>
-    [DataMember(Name = "edited", EmitDefaultValue = false)]
+    [JsonPropertyName("edited")]
     public bool? Edited { get; set; }
 
 
@@ -132,7 +131,7 @@ public partial class ChatMessageResponse : IEquatable<ChatMessageResponse>
     /// If message&#39;s attachment was deleted
     /// </summary>
     /// <value>If message&#39;s attachment was deleted</value>
-    [DataMember(Name = "attachmentDeleted", EmitDefaultValue = false)]
+    [JsonPropertyName("attachmentDeleted")]
     public bool? AttachmentDeleted { get; set; }
 
 
@@ -141,7 +140,7 @@ public partial class ChatMessageResponse : IEquatable<ChatMessageResponse>
     /// URI of file attachment
     /// </summary>
     /// <value>URI of file attachment</value>
-    [DataMember(Name = "fileUri", EmitDefaultValue = false)]
+    [JsonPropertyName("fileUri")]
     public string FileUri { get; set; }
 
 
@@ -150,7 +149,7 @@ public partial class ChatMessageResponse : IEquatable<ChatMessageResponse>
     /// The id for a thread this message corresponds to
     /// </summary>
     /// <value>The id for a thread this message corresponds to</value>
-    [DataMember(Name = "thread", EmitDefaultValue = false)]
+    [JsonPropertyName("thread")]
     public Entity Thread { get; set; }
 
 
@@ -159,7 +158,7 @@ public partial class ChatMessageResponse : IEquatable<ChatMessageResponse>
     /// Parent thread id for thread replies
     /// </summary>
     /// <value>Parent thread id for thread replies</value>
-    [DataMember(Name = "parentThread", EmitDefaultValue = false)]
+    [JsonPropertyName("parentThread")]
     public Entity ParentThread { get; set; }
 
 
@@ -168,7 +167,7 @@ public partial class ChatMessageResponse : IEquatable<ChatMessageResponse>
     /// The user who sent the message
     /// </summary>
     /// <value>The user who sent the message</value>
-    [DataMember(Name = "user", EmitDefaultValue = false)]
+    [JsonPropertyName("user")]
     public AddressableEntityRef User { get; set; }
 
 
@@ -177,7 +176,7 @@ public partial class ChatMessageResponse : IEquatable<ChatMessageResponse>
     /// The receiving user of the message
     /// </summary>
     /// <value>The receiving user of the message</value>
-    [DataMember(Name = "toUser", EmitDefaultValue = false)]
+    [JsonPropertyName("toUser")]
     public AddressableEntityRef ToUser { get; set; }
 
 
@@ -186,7 +185,7 @@ public partial class ChatMessageResponse : IEquatable<ChatMessageResponse>
     /// The emoji reactions to this message
     /// </summary>
     /// <value>The emoji reactions to this message</value>
-    [DataMember(Name = "reactions", EmitDefaultValue = false)]
+    [JsonPropertyName("reactions")]
     public List<ChatReaction> Reactions { get; set; }
 
 

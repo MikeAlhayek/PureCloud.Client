@@ -1,12 +1,12 @@
-using System.Runtime.Serialization;
 using System.Text;
+using System.Text.Json.Serialization;
 
 namespace PureCloud.Client.Models;
 
 /// <summary>
 /// FeatureState
 /// </summary>
-[DataContract]
+
 public partial class FeatureState : IEquatable<FeatureState>
 {
     /// <summary>
@@ -24,7 +24,7 @@ public partial class FeatureState : IEquatable<FeatureState>
     /// <summary>
     /// Gets or Sets Enabled
     /// </summary>
-    [DataMember(Name = "enabled", EmitDefaultValue = false)]
+    [JsonPropertyName("enabled")]
     public bool? Enabled { get; set; }
 
 

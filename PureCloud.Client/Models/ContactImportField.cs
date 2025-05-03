@@ -1,4 +1,3 @@
-using System.Runtime.Serialization;
 using System.Text;
 using System.Text.Json.Serialization;
 
@@ -7,7 +6,7 @@ namespace PureCloud.Client.Models;
 /// <summary>
 /// ContactImportField
 /// </summary>
-[DataContract]
+
 public partial class ContactImportField : IEquatable<ContactImportField>
 {
 
@@ -34,7 +33,7 @@ public partial class ContactImportField : IEquatable<ContactImportField>
     /// Field name
     /// </summary>
     /// <value>Field name</value>
-    [DataMember(Name = "name", EmitDefaultValue = false)]
+    [JsonPropertyName("name")]
     public string Name { get; set; }
 
 
@@ -43,7 +42,7 @@ public partial class ContactImportField : IEquatable<ContactImportField>
     /// Should we import this field
     /// </summary>
     /// <value>Should we import this field</value>
-    [DataMember(Name = "included", EmitDefaultValue = false)]
+    [JsonPropertyName("included")]
     public bool? Included { get; set; }
 
 

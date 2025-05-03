@@ -1,12 +1,12 @@
-using System.Runtime.Serialization;
 using System.Text;
+using System.Text.Json.Serialization;
 
 namespace PureCloud.Client.Models;
 
 /// <summary>
 /// WorkbinVersionListing
 /// </summary>
-[DataContract]
+
 public partial class WorkbinVersionListing : IEquatable<WorkbinVersionListing>
 {
     /// <summary>
@@ -32,7 +32,7 @@ public partial class WorkbinVersionListing : IEquatable<WorkbinVersionListing>
     /// <summary>
     /// Gets or Sets Entities
     /// </summary>
-    [DataMember(Name = "entities", EmitDefaultValue = false)]
+    [JsonPropertyName("entities")]
     public List<WorkbinVersion> Entities { get; set; }
 
 
@@ -40,7 +40,7 @@ public partial class WorkbinVersionListing : IEquatable<WorkbinVersionListing>
     /// <summary>
     /// Gets or Sets NextUri
     /// </summary>
-    [DataMember(Name = "nextUri", EmitDefaultValue = false)]
+    [JsonPropertyName("nextUri")]
     public string NextUri { get; set; }
 
 
@@ -48,7 +48,7 @@ public partial class WorkbinVersionListing : IEquatable<WorkbinVersionListing>
     /// <summary>
     /// Gets or Sets SelfUri
     /// </summary>
-    [DataMember(Name = "selfUri", EmitDefaultValue = false)]
+    [JsonPropertyName("selfUri")]
     public string SelfUri { get; set; }
 
 
@@ -56,7 +56,7 @@ public partial class WorkbinVersionListing : IEquatable<WorkbinVersionListing>
     /// <summary>
     /// Gets or Sets PreviousUri
     /// </summary>
-    [DataMember(Name = "previousUri", EmitDefaultValue = false)]
+    [JsonPropertyName("previousUri")]
     public string PreviousUri { get; set; }
 
 
@@ -64,7 +64,7 @@ public partial class WorkbinVersionListing : IEquatable<WorkbinVersionListing>
     /// <summary>
     /// Gets or Sets After
     /// </summary>
-    [DataMember(Name = "after", EmitDefaultValue = false)]
+    [JsonPropertyName("after")]
     public string After { get; set; }
 
 

@@ -1,4 +1,3 @@
-using System.Runtime.Serialization;
 using System.Text;
 using System.Text.Json.Serialization;
 
@@ -7,7 +6,7 @@ namespace PureCloud.Client.Models;
 /// <summary>
 /// NamedEntityTypeItem
 /// </summary>
-[DataContract]
+
 public partial class NamedEntityTypeItem : IEquatable<NamedEntityTypeItem>
 {
 
@@ -36,7 +35,7 @@ public partial class NamedEntityTypeItem : IEquatable<NamedEntityTypeItem>
     /// A value for an named entity type definition.
     /// </summary>
     /// <value>A value for an named entity type definition.</value>
-    [DataMember(Name = "value", EmitDefaultValue = false)]
+    [JsonPropertyName("value")]
     public string Value { get; set; }
 
 
@@ -45,7 +44,7 @@ public partial class NamedEntityTypeItem : IEquatable<NamedEntityTypeItem>
     /// Synonyms for the given named entity value.
     /// </summary>
     /// <value>Synonyms for the given named entity value.</value>
-    [DataMember(Name = "synonyms", EmitDefaultValue = false)]
+    [JsonPropertyName("synonyms")]
     public List<string> Synonyms { get; set; }
 
 
@@ -54,7 +53,7 @@ public partial class NamedEntityTypeItem : IEquatable<NamedEntityTypeItem>
     /// Additional Language Synonyms for the given named entity value.
     /// </summary>
     /// <value>Additional Language Synonyms for the given named entity value.</value>
-    [DataMember(Name = "additionalLanguages", EmitDefaultValue = false)]
+    [JsonPropertyName("additionalLanguages")]
     public Dictionary<string, AdditionalLanguagesSynonyms> AdditionalLanguages { get; set; }
 
 

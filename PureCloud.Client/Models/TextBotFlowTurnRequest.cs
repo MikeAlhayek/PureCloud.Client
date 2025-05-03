@@ -7,14 +7,14 @@ namespace PureCloud.Client.Models;
 /// <summary>
 /// Settings for a turn request to a bot flow.
 /// </summary>
-[DataContract]
+
 public partial class TextBotFlowTurnRequest : IEquatable<TextBotFlowTurnRequest>
 {
     /// <summary>
     /// Indicates the type of input event being requested. If appropriate, fill out the matching user input object details on this request.
     /// </summary>
     /// <value>Indicates the type of input event being requested. If appropriate, fill out the matching user input object details on this request.</value>
-    [JsonConverter(typeof(JsonStringEnumConverter))]
+    
     public enum InputEventTypeEnum
     {
         /// <summary>
@@ -71,7 +71,7 @@ public partial class TextBotFlowTurnRequest : IEquatable<TextBotFlowTurnRequest>
     /// Indicates the type of input event being requested. If appropriate, fill out the matching user input object details on this request.
     /// </summary>
     /// <value>Indicates the type of input event being requested. If appropriate, fill out the matching user input object details on this request.</value>
-    [DataMember(Name = "inputEventType", EmitDefaultValue = false)]
+    [JsonPropertyName("inputEventType")]
     public InputEventTypeEnum? InputEventType { get; set; }
 
     /// <summary>
@@ -101,7 +101,7 @@ public partial class TextBotFlowTurnRequest : IEquatable<TextBotFlowTurnRequest>
     /// The reference to a previous turn if appropriate, used to avoid race conditions.
     /// </summary>
     /// <value>The reference to a previous turn if appropriate, used to avoid race conditions.</value>
-    [DataMember(Name = "previousTurn", EmitDefaultValue = false)]
+    [JsonPropertyName("previousTurn")]
     public TextBotTurnReference PreviousTurn { get; set; }
 
 
@@ -112,7 +112,7 @@ public partial class TextBotFlowTurnRequest : IEquatable<TextBotFlowTurnRequest>
     /// The data for the input event of this turn if it is a user input event. Only one inputEvent may be set.
     /// </summary>
     /// <value>The data for the input event of this turn if it is a user input event. Only one inputEvent may be set.</value>
-    [DataMember(Name = "inputEventUserInput", EmitDefaultValue = false)]
+    [JsonPropertyName("inputEventUserInput")]
     public TextBotUserInputEvent InputEventUserInput { get; set; }
 
 
@@ -121,7 +121,7 @@ public partial class TextBotFlowTurnRequest : IEquatable<TextBotFlowTurnRequest>
     /// The data for the input event of this turn if it is an error event. Only one inputEvent may be set.
     /// </summary>
     /// <value>The data for the input event of this turn if it is an error event. Only one inputEvent may be set.</value>
-    [DataMember(Name = "inputEventError", EmitDefaultValue = false)]
+    [JsonPropertyName("inputEventError")]
     public TextBotErrorInputEvent InputEventError { get; set; }
 
 

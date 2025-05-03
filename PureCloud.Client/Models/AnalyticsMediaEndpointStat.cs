@@ -1,12 +1,12 @@
-using System.Runtime.Serialization;
 using System.Text;
+using System.Text.Json.Serialization;
 
 namespace PureCloud.Client.Models;
 
 /// <summary>
 /// AnalyticsMediaEndpointStat
 /// </summary>
-[DataContract]
+
 public partial class AnalyticsMediaEndpointStat : IEquatable<AnalyticsMediaEndpointStat>
 {
     /// <summary>
@@ -45,7 +45,7 @@ public partial class AnalyticsMediaEndpointStat : IEquatable<AnalyticsMediaEndpo
     /// The MIME type(s) of the audio encodings used by the audio streams belonging to this endpoint
     /// </summary>
     /// <value>The MIME type(s) of the audio encodings used by the audio streams belonging to this endpoint</value>
-    [DataMember(Name = "codecs", EmitDefaultValue = false)]
+    [JsonPropertyName("codecs")]
     public List<string> Codecs { get; set; }
 
 
@@ -54,7 +54,7 @@ public partial class AnalyticsMediaEndpointStat : IEquatable<AnalyticsMediaEndpo
     /// The total number of packets received too late or too early, jitter queue overrun or underrun, for all audio streams belonging to this endpoint
     /// </summary>
     /// <value>The total number of packets received too late or too early, jitter queue overrun or underrun, for all audio streams belonging to this endpoint</value>
-    [DataMember(Name = "discardedPackets", EmitDefaultValue = false)]
+    [JsonPropertyName("discardedPackets")]
     public long? DiscardedPackets { get; set; }
 
 
@@ -63,7 +63,7 @@ public partial class AnalyticsMediaEndpointStat : IEquatable<AnalyticsMediaEndpo
     /// The total number of packets received with the same sequence number as another one recently received (window of 64 packets), for all audio streams belonging to this endpoint
     /// </summary>
     /// <value>The total number of packets received with the same sequence number as another one recently received (window of 64 packets), for all audio streams belonging to this endpoint</value>
-    [DataMember(Name = "duplicatePackets", EmitDefaultValue = false)]
+    [JsonPropertyName("duplicatePackets")]
     public long? DuplicatePackets { get; set; }
 
 
@@ -72,7 +72,7 @@ public partial class AnalyticsMediaEndpointStat : IEquatable<AnalyticsMediaEndpo
     /// Specifies when an event occurred. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z
     /// </summary>
     /// <value>Specifies when an event occurred. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z</value>
-    [DataMember(Name = "eventTime", EmitDefaultValue = false)]
+    [JsonPropertyName("eventTime")]
     public DateTime? EventTime { get; set; }
 
 
@@ -81,7 +81,7 @@ public partial class AnalyticsMediaEndpointStat : IEquatable<AnalyticsMediaEndpo
     /// The total number of malformed or not RTP packets, unknown payload type, or discarded probation packets for all audio streams belonging to this endpoint
     /// </summary>
     /// <value>The total number of malformed or not RTP packets, unknown payload type, or discarded probation packets for all audio streams belonging to this endpoint</value>
-    [DataMember(Name = "invalidPackets", EmitDefaultValue = false)]
+    [JsonPropertyName("invalidPackets")]
     public long? InvalidPackets { get; set; }
 
 
@@ -90,7 +90,7 @@ public partial class AnalyticsMediaEndpointStat : IEquatable<AnalyticsMediaEndpo
     /// The maximum latency experienced by any audio stream belonging to this endpoint, in milliseconds
     /// </summary>
     /// <value>The maximum latency experienced by any audio stream belonging to this endpoint, in milliseconds</value>
-    [DataMember(Name = "maxLatencyMs", EmitDefaultValue = false)]
+    [JsonPropertyName("maxLatencyMs")]
     public long? MaxLatencyMs { get; set; }
 
 
@@ -99,7 +99,7 @@ public partial class AnalyticsMediaEndpointStat : IEquatable<AnalyticsMediaEndpo
     /// The lowest estimated average MOS among all the audio streams belonging to this endpoint
     /// </summary>
     /// <value>The lowest estimated average MOS among all the audio streams belonging to this endpoint</value>
-    [DataMember(Name = "minMos", EmitDefaultValue = false)]
+    [JsonPropertyName("minMos")]
     public double? MinMos { get; set; }
 
 
@@ -108,7 +108,7 @@ public partial class AnalyticsMediaEndpointStat : IEquatable<AnalyticsMediaEndpo
     /// The lowest R-factor value among all of the audio streams belonging to this endpoint
     /// </summary>
     /// <value>The lowest R-factor value among all of the audio streams belonging to this endpoint</value>
-    [DataMember(Name = "minRFactor", EmitDefaultValue = false)]
+    [JsonPropertyName("minRFactor")]
     public double? MinRFactor { get; set; }
 
 
@@ -117,7 +117,7 @@ public partial class AnalyticsMediaEndpointStat : IEquatable<AnalyticsMediaEndpo
     /// The total number of packets for which there was no room in the jitter queue when it was received, for all audio streams belonging to this endpoint (also counted in discarded)
     /// </summary>
     /// <value>The total number of packets for which there was no room in the jitter queue when it was received, for all audio streams belonging to this endpoint (also counted in discarded)</value>
-    [DataMember(Name = "overrunPackets", EmitDefaultValue = false)]
+    [JsonPropertyName("overrunPackets")]
     public long? OverrunPackets { get; set; }
 
 
@@ -126,7 +126,7 @@ public partial class AnalyticsMediaEndpointStat : IEquatable<AnalyticsMediaEndpo
     /// The total number of packets received for all audio streams belonging to this endpoint (includes invalid, duplicate, and discarded packets)
     /// </summary>
     /// <value>The total number of packets received for all audio streams belonging to this endpoint (includes invalid, duplicate, and discarded packets)</value>
-    [DataMember(Name = "receivedPackets", EmitDefaultValue = false)]
+    [JsonPropertyName("receivedPackets")]
     public long? ReceivedPackets { get; set; }
 
 
@@ -135,7 +135,7 @@ public partial class AnalyticsMediaEndpointStat : IEquatable<AnalyticsMediaEndpo
     /// The total number of packets received after their timestamp/seqnum has been played out, for all audio streams belonging to this endpoint (also counted in discarded)
     /// </summary>
     /// <value>The total number of packets received after their timestamp/seqnum has been played out, for all audio streams belonging to this endpoint (also counted in discarded)</value>
-    [DataMember(Name = "underrunPackets", EmitDefaultValue = false)]
+    [JsonPropertyName("underrunPackets")]
     public long? UnderrunPackets { get; set; }
 
 

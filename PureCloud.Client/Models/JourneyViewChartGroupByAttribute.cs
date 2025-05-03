@@ -1,4 +1,3 @@
-using System.Runtime.Serialization;
 using System.Text;
 using System.Text.Json.Serialization;
 
@@ -7,7 +6,7 @@ namespace PureCloud.Client.Models;
 /// <summary>
 /// A journey element attribute to group by within the chart
 /// </summary>
-[DataContract]
+
 public partial class JourneyViewChartGroupByAttribute : IEquatable<JourneyViewChartGroupByAttribute>
 {
 
@@ -34,7 +33,7 @@ public partial class JourneyViewChartGroupByAttribute : IEquatable<JourneyViewCh
     /// The element in the list of elements which is being grouped by
     /// </summary>
     /// <value>The element in the list of elements which is being grouped by</value>
-    [DataMember(Name = "elementId", EmitDefaultValue = false)]
+    [JsonPropertyName("elementId")]
     public string ElementId { get; set; }
 
 
@@ -43,7 +42,7 @@ public partial class JourneyViewChartGroupByAttribute : IEquatable<JourneyViewCh
     /// The attribute of the element being grouped by
     /// </summary>
     /// <value>The attribute of the element being grouped by</value>
-    [DataMember(Name = "attribute", EmitDefaultValue = false)]
+    [JsonPropertyName("attribute")]
     public string Attribute { get; set; }
 
 

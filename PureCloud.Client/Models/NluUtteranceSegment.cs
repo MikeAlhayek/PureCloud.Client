@@ -1,4 +1,3 @@
-using System.Runtime.Serialization;
 using System.Text;
 using System.Text.Json.Serialization;
 
@@ -7,7 +6,7 @@ namespace PureCloud.Client.Models;
 /// <summary>
 /// NluUtteranceSegment
 /// </summary>
-[DataContract]
+
 public partial class NluUtteranceSegment : IEquatable<NluUtteranceSegment>
 {
 
@@ -34,7 +33,7 @@ public partial class NluUtteranceSegment : IEquatable<NluUtteranceSegment>
     /// The text of the segment.
     /// </summary>
     /// <value>The text of the segment.</value>
-    [DataMember(Name = "text", EmitDefaultValue = false)]
+    [JsonPropertyName("text")]
     public string Text { get; set; }
 
 
@@ -43,7 +42,7 @@ public partial class NluUtteranceSegment : IEquatable<NluUtteranceSegment>
     /// The entity annotation of the segment.
     /// </summary>
     /// <value>The entity annotation of the segment.</value>
-    [DataMember(Name = "entity", EmitDefaultValue = false)]
+    [JsonPropertyName("entity")]
     public NamedEntityAnnotation Entity { get; set; }
 
 

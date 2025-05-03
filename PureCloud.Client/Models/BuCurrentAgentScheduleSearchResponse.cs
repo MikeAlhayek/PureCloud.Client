@@ -1,12 +1,12 @@
-using System.Runtime.Serialization;
 using System.Text;
+using System.Text.Json.Serialization;
 
 namespace PureCloud.Client.Models;
 
 /// <summary>
 /// BuCurrentAgentScheduleSearchResponse
 /// </summary>
-[DataContract]
+
 public partial class BuCurrentAgentScheduleSearchResponse : IEquatable<BuCurrentAgentScheduleSearchResponse>
 {
     /// <summary>
@@ -35,7 +35,7 @@ public partial class BuCurrentAgentScheduleSearchResponse : IEquatable<BuCurrent
     /// The requested agent schedules
     /// </summary>
     /// <value>The requested agent schedules</value>
-    [DataMember(Name = "agentSchedules", EmitDefaultValue = false)]
+    [JsonPropertyName("agentSchedules")]
     public List<BuAgentScheduleSearchResponse> AgentSchedules { get; set; }
 
 
@@ -44,7 +44,7 @@ public partial class BuCurrentAgentScheduleSearchResponse : IEquatable<BuCurrent
     /// The time zone configured for the business unit to which this schedule applies
     /// </summary>
     /// <value>The time zone configured for the business unit to which this schedule applies</value>
-    [DataMember(Name = "businessUnitTimeZone", EmitDefaultValue = false)]
+    [JsonPropertyName("businessUnitTimeZone")]
     public string BusinessUnitTimeZone { get; set; }
 
 
@@ -53,7 +53,7 @@ public partial class BuCurrentAgentScheduleSearchResponse : IEquatable<BuCurrent
     /// References to all published week schedules overlapping the start/end date query parameters
     /// </summary>
     /// <value>References to all published week schedules overlapping the start/end date query parameters</value>
-    [DataMember(Name = "publishedSchedules", EmitDefaultValue = false)]
+    [JsonPropertyName("publishedSchedules")]
     public List<BuAgentSchedulePublishedScheduleReference> PublishedSchedules { get; set; }
 
 
@@ -62,7 +62,7 @@ public partial class BuCurrentAgentScheduleSearchResponse : IEquatable<BuCurrent
     /// The start date of the schedules. Only populated on notifications. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z
     /// </summary>
     /// <value>The start date of the schedules. Only populated on notifications. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z</value>
-    [DataMember(Name = "startDate", EmitDefaultValue = false)]
+    [JsonPropertyName("startDate")]
     public DateTime? StartDate { get; set; }
 
 
@@ -71,7 +71,7 @@ public partial class BuCurrentAgentScheduleSearchResponse : IEquatable<BuCurrent
     /// The end date of the schedules. Only populated on notifications. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z
     /// </summary>
     /// <value>The end date of the schedules. Only populated on notifications. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z</value>
-    [DataMember(Name = "endDate", EmitDefaultValue = false)]
+    [JsonPropertyName("endDate")]
     public DateTime? EndDate { get; set; }
 
 
@@ -80,7 +80,7 @@ public partial class BuCurrentAgentScheduleSearchResponse : IEquatable<BuCurrent
     /// The list of updates for the schedule. Only used in notifications
     /// </summary>
     /// <value>The list of updates for the schedule. Only used in notifications</value>
-    [DataMember(Name = "updates", EmitDefaultValue = false)]
+    [JsonPropertyName("updates")]
     public List<BuAgentScheduleUpdate> Updates { get; set; }
 
 

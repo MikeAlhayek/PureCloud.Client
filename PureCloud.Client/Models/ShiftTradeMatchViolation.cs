@@ -7,14 +7,14 @@ namespace PureCloud.Client.Models;
 /// <summary>
 /// ShiftTradeMatchViolation
 /// </summary>
-[DataContract]
+
 public partial class ShiftTradeMatchViolation : IEquatable<ShiftTradeMatchViolation>
 {
     /// <summary>
     /// The type of constraint violation
     /// </summary>
     /// <value>The type of constraint violation</value>
-    [JsonConverter(typeof(JsonStringEnumConverter))]
+    
     public enum TypeEnum
     {
         /// <summary>
@@ -251,7 +251,7 @@ public partial class ShiftTradeMatchViolation : IEquatable<ShiftTradeMatchViolat
     /// The type of constraint violation
     /// </summary>
     /// <value>The type of constraint violation</value>
-    [DataMember(Name = "type", EmitDefaultValue = false)]
+    [JsonPropertyName("type")]
     public TypeEnum? Type { get; set; }
     /// <summary>
     /// Initializes a new instance of the <see cref="ShiftTradeMatchViolation" /> class.
@@ -273,7 +273,7 @@ public partial class ShiftTradeMatchViolation : IEquatable<ShiftTradeMatchViolat
     /// Clarifying user params for constructing helpful error messages
     /// </summary>
     /// <value>Clarifying user params for constructing helpful error messages</value>
-    [DataMember(Name = "params", EmitDefaultValue = false)]
+    [JsonPropertyName("params")]
     public Dictionary<string, string> Params { get; set; }
 
 

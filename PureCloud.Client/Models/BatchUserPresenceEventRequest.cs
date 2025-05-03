@@ -1,12 +1,12 @@
-using System.Runtime.Serialization;
 using System.Text;
+using System.Text.Json.Serialization;
 
 namespace PureCloud.Client.Models;
 
 /// <summary>
 /// A maximum of 100 events are allowed per request
 /// </summary>
-[DataContract]
+
 public partial class BatchUserPresenceEventRequest : IEquatable<BatchUserPresenceEventRequest>
 {
     /// <summary>
@@ -25,7 +25,7 @@ public partial class BatchUserPresenceEventRequest : IEquatable<BatchUserPresenc
     /// UserPresence events for this batch
     /// </summary>
     /// <value>UserPresence events for this batch</value>
-    [DataMember(Name = "userPresenceEvents", EmitDefaultValue = false)]
+    [JsonPropertyName("userPresenceEvents")]
     public List<UserPresenceEvent> UserPresenceEvents { get; set; }
 
 

@@ -1,12 +1,12 @@
-using System.Runtime.Serialization;
 using System.Text;
+using System.Text.Json.Serialization;
 
 namespace PureCloud.Client.Models;
 
 /// <summary>
 /// WfmTimeOffBalanceJobTopicTimeOffBalance
 /// </summary>
-[DataContract]
+
 public partial class WfmTimeOffBalanceJobTopicTimeOffBalance : IEquatable<WfmTimeOffBalanceJobTopicTimeOffBalance>
 {
     /// <summary>
@@ -32,7 +32,7 @@ public partial class WfmTimeOffBalanceJobTopicTimeOffBalance : IEquatable<WfmTim
     /// <summary>
     /// Gets or Sets ActivityCodeId
     /// </summary>
-    [DataMember(Name = "activityCodeId", EmitDefaultValue = false)]
+    [JsonPropertyName("activityCodeId")]
     public string ActivityCodeId { get; set; }
 
 
@@ -40,7 +40,7 @@ public partial class WfmTimeOffBalanceJobTopicTimeOffBalance : IEquatable<WfmTim
     /// <summary>
     /// Gets or Sets HrisTimeOffTypeId
     /// </summary>
-    [DataMember(Name = "hrisTimeOffTypeId", EmitDefaultValue = false)]
+    [JsonPropertyName("hrisTimeOffTypeId")]
     public string HrisTimeOffTypeId { get; set; }
 
 
@@ -48,7 +48,7 @@ public partial class WfmTimeOffBalanceJobTopicTimeOffBalance : IEquatable<WfmTim
     /// <summary>
     /// Gets or Sets HrisTimeOffTypeSecondaryId
     /// </summary>
-    [DataMember(Name = "hrisTimeOffTypeSecondaryId", EmitDefaultValue = false)]
+    [JsonPropertyName("hrisTimeOffTypeSecondaryId")]
     public string HrisTimeOffTypeSecondaryId { get; set; }
 
 
@@ -56,7 +56,7 @@ public partial class WfmTimeOffBalanceJobTopicTimeOffBalance : IEquatable<WfmTim
     /// <summary>
     /// Gets or Sets StartDate
     /// </summary>
-    [DataMember(Name = "startDate", EmitDefaultValue = false)]
+    [JsonPropertyName("startDate")]
     public DateTime? StartDate { get; set; }
 
 
@@ -64,7 +64,7 @@ public partial class WfmTimeOffBalanceJobTopicTimeOffBalance : IEquatable<WfmTim
     /// <summary>
     /// Gets or Sets BalanceMinutesPerDay
     /// </summary>
-    [DataMember(Name = "balanceMinutesPerDay", EmitDefaultValue = false)]
+    [JsonPropertyName("balanceMinutesPerDay")]
     public List<long?> BalanceMinutesPerDay { get; set; }
 
 

@@ -7,14 +7,14 @@ namespace PureCloud.Client.Models;
 /// <summary>
 /// Model for a Nuance bot transfer node
 /// </summary>
-[DataContract]
+
 public partial class NuanceBotTransferNode : IEquatable<NuanceBotTransferNode>
 {
     /// <summary>
     /// The transfer node type
     /// </summary>
     /// <value>The transfer node type</value>
-    [JsonConverter(typeof(JsonStringEnumConverter))]
+    
     public enum TypeEnum
     {
         /// <summary>
@@ -41,7 +41,7 @@ public partial class NuanceBotTransferNode : IEquatable<NuanceBotTransferNode>
     /// The transfer node type
     /// </summary>
     /// <value>The transfer node type</value>
-    [DataMember(Name = "type", EmitDefaultValue = false)]
+    [JsonPropertyName("type")]
     public TypeEnum? Type { get; set; }
 
     /// <summary>
@@ -73,7 +73,7 @@ public partial class NuanceBotTransferNode : IEquatable<NuanceBotTransferNode>
     /// The transfer node ID
     /// </summary>
     /// <value>The transfer node ID</value>
-    [DataMember(Name = "id", EmitDefaultValue = false)]
+    [JsonPropertyName("id")]
     public string Id { get; set; }
 
 
@@ -82,7 +82,7 @@ public partial class NuanceBotTransferNode : IEquatable<NuanceBotTransferNode>
     /// The transfer node name
     /// </summary>
     /// <value>The transfer node name</value>
-    [DataMember(Name = "name", EmitDefaultValue = false)]
+    [JsonPropertyName("name")]
     public string Name { get; set; }
 
 
@@ -93,7 +93,7 @@ public partial class NuanceBotTransferNode : IEquatable<NuanceBotTransferNode>
     /// The transfer node description
     /// </summary>
     /// <value>The transfer node description</value>
-    [DataMember(Name = "description", EmitDefaultValue = false)]
+    [JsonPropertyName("description")]
     public string Description { get; set; }
 
 
@@ -102,7 +102,7 @@ public partial class NuanceBotTransferNode : IEquatable<NuanceBotTransferNode>
     /// List of variables associated with this transfer node
     /// </summary>
     /// <value>List of variables associated with this transfer node</value>
-    [DataMember(Name = "requestVariables", EmitDefaultValue = false)]
+    [JsonPropertyName("requestVariables")]
     public List<NuanceBotVariable> RequestVariables { get; set; }
 
 

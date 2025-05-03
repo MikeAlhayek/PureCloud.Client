@@ -1,4 +1,3 @@
-using System.Runtime.Serialization;
 using System.Text;
 using System.Text.Json.Serialization;
 
@@ -7,7 +6,7 @@ namespace PureCloud.Client.Models;
 /// <summary>
 /// SearchUpdateRequest
 /// </summary>
-[DataContract]
+
 public partial class SearchUpdateRequest : IEquatable<SearchUpdateRequest>
 {
 
@@ -34,7 +33,7 @@ public partial class SearchUpdateRequest : IEquatable<SearchUpdateRequest>
     /// The unique identifier of this session
     /// </summary>
     /// <value>The unique identifier of this session</value>
-    [DataMember(Name = "sessionId", EmitDefaultValue = false)]
+    [JsonPropertyName("sessionId")]
     public string SessionId { get; private set; }
 
 
@@ -43,7 +42,7 @@ public partial class SearchUpdateRequest : IEquatable<SearchUpdateRequest>
     /// Mark the search as answered/unanswered
     /// </summary>
     /// <value>Mark the search as answered/unanswered</value>
-    [DataMember(Name = "answered", EmitDefaultValue = false)]
+    [JsonPropertyName("answered")]
     public bool? Answered { get; set; }
 
 
@@ -52,7 +51,7 @@ public partial class SearchUpdateRequest : IEquatable<SearchUpdateRequest>
     /// The selected search result chosen as the answer.
     /// </summary>
     /// <value>The selected search result chosen as the answer.</value>
-    [DataMember(Name = "selectedAnswer", EmitDefaultValue = false)]
+    [JsonPropertyName("selectedAnswer")]
     public SelectedAnswer SelectedAnswer { get; set; }
 
 

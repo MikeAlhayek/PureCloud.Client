@@ -1,4 +1,3 @@
-using System.Runtime.Serialization;
 using System.Text;
 using System.Text.Json.Serialization;
 
@@ -7,7 +6,7 @@ namespace PureCloud.Client.Models;
 /// <summary>
 /// CalibrationCreate
 /// </summary>
-[DataContract]
+
 public partial class CalibrationCreate : IEquatable<CalibrationCreate>
 {
 
@@ -58,7 +57,7 @@ public partial class CalibrationCreate : IEquatable<CalibrationCreate>
     /// The globally unique identifier for the object.
     /// </summary>
     /// <value>The globally unique identifier for the object.</value>
-    [DataMember(Name = "id", EmitDefaultValue = false)]
+    [JsonPropertyName("id")]
     public string Id { get; private set; }
 
 
@@ -66,7 +65,7 @@ public partial class CalibrationCreate : IEquatable<CalibrationCreate>
     /// <summary>
     /// Gets or Sets Name
     /// </summary>
-    [DataMember(Name = "name", EmitDefaultValue = false)]
+    [JsonPropertyName("name")]
     public string Name { get; set; }
 
 
@@ -74,7 +73,7 @@ public partial class CalibrationCreate : IEquatable<CalibrationCreate>
     /// <summary>
     /// Gets or Sets Calibrator
     /// </summary>
-    [DataMember(Name = "calibrator", EmitDefaultValue = false)]
+    [JsonPropertyName("calibrator")]
     public User Calibrator { get; set; }
 
 
@@ -82,7 +81,7 @@ public partial class CalibrationCreate : IEquatable<CalibrationCreate>
     /// <summary>
     /// Gets or Sets Agent
     /// </summary>
-    [DataMember(Name = "agent", EmitDefaultValue = false)]
+    [JsonPropertyName("agent")]
     public User Agent { get; set; }
 
 
@@ -91,7 +90,7 @@ public partial class CalibrationCreate : IEquatable<CalibrationCreate>
     /// The conversation to use for the calibration.
     /// </summary>
     /// <value>The conversation to use for the calibration.</value>
-    [DataMember(Name = "conversation", EmitDefaultValue = false)]
+    [JsonPropertyName("conversation")]
     public ConversationReference Conversation { get; set; }
 
 
@@ -99,7 +98,7 @@ public partial class CalibrationCreate : IEquatable<CalibrationCreate>
     /// <summary>
     /// Gets or Sets EvaluationForm
     /// </summary>
-    [DataMember(Name = "evaluationForm", EmitDefaultValue = false)]
+    [JsonPropertyName("evaluationForm")]
     public EvaluationForm EvaluationForm { get; set; }
 
 
@@ -107,7 +106,7 @@ public partial class CalibrationCreate : IEquatable<CalibrationCreate>
     /// <summary>
     /// Gets or Sets ContextId
     /// </summary>
-    [DataMember(Name = "contextId", EmitDefaultValue = false)]
+    [JsonPropertyName("contextId")]
     public string ContextId { get; set; }
 
 
@@ -115,7 +114,7 @@ public partial class CalibrationCreate : IEquatable<CalibrationCreate>
     /// <summary>
     /// Gets or Sets AverageScore
     /// </summary>
-    [DataMember(Name = "averageScore", EmitDefaultValue = false)]
+    [JsonPropertyName("averageScore")]
     public int? AverageScore { get; set; }
 
 
@@ -123,7 +122,7 @@ public partial class CalibrationCreate : IEquatable<CalibrationCreate>
     /// <summary>
     /// Gets or Sets HighScore
     /// </summary>
-    [DataMember(Name = "highScore", EmitDefaultValue = false)]
+    [JsonPropertyName("highScore")]
     public int? HighScore { get; set; }
 
 
@@ -131,7 +130,7 @@ public partial class CalibrationCreate : IEquatable<CalibrationCreate>
     /// <summary>
     /// Gets or Sets LowScore
     /// </summary>
-    [DataMember(Name = "lowScore", EmitDefaultValue = false)]
+    [JsonPropertyName("lowScore")]
     public int? LowScore { get; set; }
 
 
@@ -140,7 +139,7 @@ public partial class CalibrationCreate : IEquatable<CalibrationCreate>
     /// Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z
     /// </summary>
     /// <value>Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z</value>
-    [DataMember(Name = "createdDate", EmitDefaultValue = false)]
+    [JsonPropertyName("createdDate")]
     public DateTime? CreatedDate { get; set; }
 
 
@@ -148,7 +147,7 @@ public partial class CalibrationCreate : IEquatable<CalibrationCreate>
     /// <summary>
     /// Gets or Sets Evaluations
     /// </summary>
-    [DataMember(Name = "evaluations", EmitDefaultValue = false)]
+    [JsonPropertyName("evaluations")]
     public List<Evaluation> Evaluations { get; set; }
 
 
@@ -156,7 +155,7 @@ public partial class CalibrationCreate : IEquatable<CalibrationCreate>
     /// <summary>
     /// Gets or Sets Evaluators
     /// </summary>
-    [DataMember(Name = "evaluators", EmitDefaultValue = false)]
+    [JsonPropertyName("evaluators")]
     public List<User> Evaluators { get; set; }
 
 
@@ -164,7 +163,7 @@ public partial class CalibrationCreate : IEquatable<CalibrationCreate>
     /// <summary>
     /// Gets or Sets ScoringIndex
     /// </summary>
-    [DataMember(Name = "scoringIndex", EmitDefaultValue = false)]
+    [JsonPropertyName("scoringIndex")]
     public Evaluation ScoringIndex { get; set; }
 
 
@@ -172,7 +171,7 @@ public partial class CalibrationCreate : IEquatable<CalibrationCreate>
     /// <summary>
     /// Gets or Sets ExpertEvaluator
     /// </summary>
-    [DataMember(Name = "expertEvaluator", EmitDefaultValue = false)]
+    [JsonPropertyName("expertEvaluator")]
     public User ExpertEvaluator { get; set; }
 
 
@@ -181,7 +180,7 @@ public partial class CalibrationCreate : IEquatable<CalibrationCreate>
     /// The URI for this object
     /// </summary>
     /// <value>The URI for this object</value>
-    [DataMember(Name = "selfUri", EmitDefaultValue = false)]
+    [JsonPropertyName("selfUri")]
     public string SelfUri { get; private set; }
 
 

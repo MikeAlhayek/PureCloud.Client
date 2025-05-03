@@ -7,14 +7,14 @@ namespace PureCloud.Client.Models;
 /// <summary>
 /// WorkitemUpdate
 /// </summary>
-[DataContract]
+
 public partial class WorkitemUpdate : IEquatable<WorkitemUpdate>
 {
     /// <summary>
     /// The assignment state of the Workitem.
     /// </summary>
     /// <value>The assignment state of the Workitem.</value>
-    [JsonConverter(typeof(JsonStringEnumConverter))]
+    
     public enum AssignmentStateEnum
     {
         /// <summary>
@@ -107,7 +107,7 @@ public partial class WorkitemUpdate : IEquatable<WorkitemUpdate>
     /// Set this value to AgentAssignmentAlerting and supply an 'assigneeId' to assign the workitem to an agent and alert the agent of the assignment. Set this value to QueueAssignmentAlerting and supply a 'queueId' to route the workitem to an agent who is a member of the queue and alert the agent.
     /// </summary>
     /// <value>Set this value to AgentAssignmentAlerting and supply an 'assigneeId' to assign the workitem to an agent and alert the agent of the assignment. Set this value to QueueAssignmentAlerting and supply a 'queueId' to route the workitem to an agent who is a member of the queue and alert the agent.</value>
-    [JsonConverter(typeof(JsonStringEnumConverter))]
+    
     public enum AssignmentOperationEnum
     {
         /// <summary>
@@ -134,13 +134,13 @@ public partial class WorkitemUpdate : IEquatable<WorkitemUpdate>
     /// The assignment state of the Workitem.
     /// </summary>
     /// <value>The assignment state of the Workitem.</value>
-    [DataMember(Name = "assignmentState", EmitDefaultValue = false)]
+    [JsonPropertyName("assignmentState")]
     public AssignmentStateEnum? AssignmentState { get; set; }
     /// <summary>
     /// Set this value to AgentAssignmentAlerting and supply an 'assigneeId' to assign the workitem to an agent and alert the agent of the assignment. Set this value to QueueAssignmentAlerting and supply a 'queueId' to route the workitem to an agent who is a member of the queue and alert the agent.
     /// </summary>
     /// <value>Set this value to AgentAssignmentAlerting and supply an 'assigneeId' to assign the workitem to an agent and alert the agent of the assignment. Set this value to QueueAssignmentAlerting and supply a 'queueId' to route the workitem to an agent who is a member of the queue and alert the agent.</value>
-    [DataMember(Name = "assignmentOperation", EmitDefaultValue = false)]
+    [JsonPropertyName("assignmentOperation")]
     public AssignmentOperationEnum? AssignmentOperation { get; set; }
     /// <summary>
     /// Initializes a new instance of the <see cref="WorkitemUpdate" /> class.
@@ -204,7 +204,7 @@ public partial class WorkitemUpdate : IEquatable<WorkitemUpdate>
     /// The name of the Workitem. Valid length between 3 and 256 characters.
     /// </summary>
     /// <value>The name of the Workitem. Valid length between 3 and 256 characters.</value>
-    [DataMember(Name = "name", EmitDefaultValue = false)]
+    [JsonPropertyName("name")]
     public string Name { get; set; }
 
 
@@ -213,7 +213,7 @@ public partial class WorkitemUpdate : IEquatable<WorkitemUpdate>
     /// The priority of the Workitem. The valid range is between -25,000,000 and 25,000,000.
     /// </summary>
     /// <value>The priority of the Workitem. The valid range is between -25,000,000 and 25,000,000.</value>
-    [DataMember(Name = "priority", EmitDefaultValue = false)]
+    [JsonPropertyName("priority")]
     public int? Priority { get; set; }
 
 
@@ -222,7 +222,7 @@ public partial class WorkitemUpdate : IEquatable<WorkitemUpdate>
     /// The due date of the Workitem. Can not be greater than 365 days from the current time. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z
     /// </summary>
     /// <value>The due date of the Workitem. Can not be greater than 365 days from the current time. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z</value>
-    [DataMember(Name = "dateDue", EmitDefaultValue = false)]
+    [JsonPropertyName("dateDue")]
     public DateTime? DateDue { get; set; }
 
 
@@ -231,7 +231,7 @@ public partial class WorkitemUpdate : IEquatable<WorkitemUpdate>
     /// The expiry date of the Workitem. Can not be greater than 365 days from the current time. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z
     /// </summary>
     /// <value>The expiry date of the Workitem. Can not be greater than 365 days from the current time. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z</value>
-    [DataMember(Name = "dateExpires", EmitDefaultValue = false)]
+    [JsonPropertyName("dateExpires")]
     public DateTime? DateExpires { get; set; }
 
 
@@ -240,7 +240,7 @@ public partial class WorkitemUpdate : IEquatable<WorkitemUpdate>
     /// The estimated duration in seconds to complete the Workitem. Maximum of 365 days.
     /// </summary>
     /// <value>The estimated duration in seconds to complete the Workitem. Maximum of 365 days.</value>
-    [DataMember(Name = "durationSeconds", EmitDefaultValue = false)]
+    [JsonPropertyName("durationSeconds")]
     public int? DurationSeconds { get; set; }
 
 
@@ -249,7 +249,7 @@ public partial class WorkitemUpdate : IEquatable<WorkitemUpdate>
     /// The epoch timestamp in seconds specifying the time to live for the Workitem. Can not be greater than 365 days from the current time.
     /// </summary>
     /// <value>The epoch timestamp in seconds specifying the time to live for the Workitem. Can not be greater than 365 days from the current time.</value>
-    [DataMember(Name = "ttl", EmitDefaultValue = false)]
+    [JsonPropertyName("ttl")]
     public int? Ttl { get; set; }
 
 
@@ -258,7 +258,7 @@ public partial class WorkitemUpdate : IEquatable<WorkitemUpdate>
     /// The ID of the Status of the Workitem.
     /// </summary>
     /// <value>The ID of the Status of the Workitem.</value>
-    [DataMember(Name = "statusId", EmitDefaultValue = false)]
+    [JsonPropertyName("statusId")]
     public string StatusId { get; set; }
 
 
@@ -267,7 +267,7 @@ public partial class WorkitemUpdate : IEquatable<WorkitemUpdate>
     /// The ID of Workbin that contains the Workitem.
     /// </summary>
     /// <value>The ID of Workbin that contains the Workitem.</value>
-    [DataMember(Name = "workbinId", EmitDefaultValue = false)]
+    [JsonPropertyName("workbinId")]
     public string WorkbinId { get; set; }
 
 
@@ -276,7 +276,7 @@ public partial class WorkitemUpdate : IEquatable<WorkitemUpdate>
     /// Set it to false to disable auto status transition. By default, it is enabled.
     /// </summary>
     /// <value>Set it to false to disable auto status transition. By default, it is enabled.</value>
-    [DataMember(Name = "autoStatusTransition", EmitDefaultValue = false)]
+    [JsonPropertyName("autoStatusTransition")]
     public bool? AutoStatusTransition { get; set; }
 
 
@@ -285,7 +285,7 @@ public partial class WorkitemUpdate : IEquatable<WorkitemUpdate>
     /// The description of the Workitem. Maximum length of 512 characters.
     /// </summary>
     /// <value>The description of the Workitem. Maximum length of 512 characters.</value>
-    [DataMember(Name = "description", EmitDefaultValue = false)]
+    [JsonPropertyName("description")]
     public string Description { get; set; }
 
 
@@ -294,7 +294,7 @@ public partial class WorkitemUpdate : IEquatable<WorkitemUpdate>
     /// The closed date of the Workitem. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z
     /// </summary>
     /// <value>The closed date of the Workitem. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z</value>
-    [DataMember(Name = "dateClosed", EmitDefaultValue = false)]
+    [JsonPropertyName("dateClosed")]
     public DateTime? DateClosed { get; set; }
 
 
@@ -307,7 +307,7 @@ public partial class WorkitemUpdate : IEquatable<WorkitemUpdate>
     /// Custom fields defined in the schema referenced by the worktype of the workitem. If set to {}, the existing keys and values will be removed.
     /// </summary>
     /// <value>Custom fields defined in the schema referenced by the worktype of the workitem. If set to {}, the existing keys and values will be removed.</value>
-    [DataMember(Name = "customFields", EmitDefaultValue = false)]
+    [JsonPropertyName("customFields")]
     public Dictionary<string, object> CustomFields { get; set; }
 
 
@@ -316,7 +316,7 @@ public partial class WorkitemUpdate : IEquatable<WorkitemUpdate>
     /// The ID of the Workitems queue. Must be a valid UUID.
     /// </summary>
     /// <value>The ID of the Workitems queue. Must be a valid UUID.</value>
-    [DataMember(Name = "queueId", EmitDefaultValue = false)]
+    [JsonPropertyName("queueId")]
     public string QueueId { get; set; }
 
 
@@ -325,7 +325,7 @@ public partial class WorkitemUpdate : IEquatable<WorkitemUpdate>
     /// The ID of the assignee of the Workitem. If supplied it must be a valid UUID.
     /// </summary>
     /// <value>The ID of the assignee of the Workitem. If supplied it must be a valid UUID.</value>
-    [DataMember(Name = "assigneeId", EmitDefaultValue = false)]
+    [JsonPropertyName("assigneeId")]
     public string AssigneeId { get; set; }
 
 
@@ -334,7 +334,7 @@ public partial class WorkitemUpdate : IEquatable<WorkitemUpdate>
     /// A list of scored agents for the Workitem. A workitem can have a maximum of 20 scored agents.
     /// </summary>
     /// <value>A list of scored agents for the Workitem. A workitem can have a maximum of 20 scored agents.</value>
-    [DataMember(Name = "scoredAgents", EmitDefaultValue = false)]
+    [JsonPropertyName("scoredAgents")]
     public List<WorkitemScoredAgentRequest> ScoredAgents { get; set; }
 
 
@@ -343,7 +343,7 @@ public partial class WorkitemUpdate : IEquatable<WorkitemUpdate>
     /// The ID of the external contact of the Workitem. Must be a valid UUID.
     /// </summary>
     /// <value>The ID of the external contact of the Workitem. Must be a valid UUID.</value>
-    [DataMember(Name = "externalContactId", EmitDefaultValue = false)]
+    [JsonPropertyName("externalContactId")]
     public string ExternalContactId { get; set; }
 
 
@@ -352,7 +352,7 @@ public partial class WorkitemUpdate : IEquatable<WorkitemUpdate>
     /// The external tag of the Workitem.
     /// </summary>
     /// <value>The external tag of the Workitem.</value>
-    [DataMember(Name = "externalTag", EmitDefaultValue = false)]
+    [JsonPropertyName("externalTag")]
     public string ExternalTag { get; set; }
 
 
@@ -361,7 +361,7 @@ public partial class WorkitemUpdate : IEquatable<WorkitemUpdate>
     /// The skill IDs of the Workitem. Must be valid UUIDs.
     /// </summary>
     /// <value>The skill IDs of the Workitem. Must be valid UUIDs.</value>
-    [DataMember(Name = "skillIds", EmitDefaultValue = false)]
+    [JsonPropertyName("skillIds")]
     public List<string> SkillIds { get; set; }
 
 
@@ -370,7 +370,7 @@ public partial class WorkitemUpdate : IEquatable<WorkitemUpdate>
     /// The ID of language of the Workitem. Must be a valid UUID.
     /// </summary>
     /// <value>The ID of language of the Workitem. Must be a valid UUID.</value>
-    [DataMember(Name = "languageId", EmitDefaultValue = false)]
+    [JsonPropertyName("languageId")]
     public string LanguageId { get; set; }
 
 
@@ -379,7 +379,7 @@ public partial class WorkitemUpdate : IEquatable<WorkitemUpdate>
     /// The ID of the utilization label of the Workitem. Must be a valid UUID.
     /// </summary>
     /// <value>The ID of the utilization label of the Workitem. Must be a valid UUID.</value>
-    [DataMember(Name = "utilizationLabelId", EmitDefaultValue = false)]
+    [JsonPropertyName("utilizationLabelId")]
     public string UtilizationLabelId { get; set; }
 
 
@@ -388,7 +388,7 @@ public partial class WorkitemUpdate : IEquatable<WorkitemUpdate>
     /// The preferred agent IDs of the Workitem. Must be valid UUIDs.
     /// </summary>
     /// <value>The preferred agent IDs of the Workitem. Must be valid UUIDs.</value>
-    [DataMember(Name = "preferredAgentIds", EmitDefaultValue = false)]
+    [JsonPropertyName("preferredAgentIds")]
     public List<string> PreferredAgentIds { get; set; }
 
 
@@ -397,7 +397,7 @@ public partial class WorkitemUpdate : IEquatable<WorkitemUpdate>
     /// The ID of the Workitems script. Must be a valid UUID.
     /// </summary>
     /// <value>The ID of the Workitems script. Must be a valid UUID.</value>
-    [DataMember(Name = "scriptId", EmitDefaultValue = false)]
+    [JsonPropertyName("scriptId")]
     public string ScriptId { get; set; }
 
 

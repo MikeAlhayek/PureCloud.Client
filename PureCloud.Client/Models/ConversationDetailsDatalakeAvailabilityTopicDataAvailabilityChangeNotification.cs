@@ -1,12 +1,12 @@
-using System.Runtime.Serialization;
 using System.Text;
+using System.Text.Json.Serialization;
 
 namespace PureCloud.Client.Models;
 
 /// <summary>
 /// ConversationDetailsDatalakeAvailabilityTopicDataAvailabilityChangeNotification
 /// </summary>
-[DataContract]
+
 public partial class ConversationDetailsDatalakeAvailabilityTopicDataAvailabilityChangeNotification : IEquatable<ConversationDetailsDatalakeAvailabilityTopicDataAvailabilityChangeNotification>
 {
     /// <summary>
@@ -25,7 +25,7 @@ public partial class ConversationDetailsDatalakeAvailabilityTopicDataAvailabilit
     /// Date and time before which data is guaranteed to be available in the datalake
     /// </summary>
     /// <value>Date and time before which data is guaranteed to be available in the datalake</value>
-    [DataMember(Name = "dataAvailabilityDate", EmitDefaultValue = false)]
+    [JsonPropertyName("dataAvailabilityDate")]
     public DateTime? DataAvailabilityDate { get; set; }
 
 

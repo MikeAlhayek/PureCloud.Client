@@ -7,14 +7,14 @@ namespace PureCloud.Client.Models;
 /// <summary>
 /// CallToAction
 /// </summary>
-[DataContract]
+
 public partial class CallToAction : IEquatable<CallToAction>
 {
     /// <summary>
     /// Where the URL should be opened when the user clicks on the call to action button.
     /// </summary>
     /// <value>Where the URL should be opened when the user clicks on the call to action button.</value>
-    [JsonConverter(typeof(JsonStringEnumConverter))]
+    
     public enum TargetEnum
     {
         /// <summary>
@@ -41,7 +41,7 @@ public partial class CallToAction : IEquatable<CallToAction>
     /// Where the URL should be opened when the user clicks on the call to action button.
     /// </summary>
     /// <value>Where the URL should be opened when the user clicks on the call to action button.</value>
-    [DataMember(Name = "target", EmitDefaultValue = false)]
+    [JsonPropertyName("target")]
     public TargetEnum? Target { get; set; }
 
     /// <summary>
@@ -69,7 +69,7 @@ public partial class CallToAction : IEquatable<CallToAction>
     /// Text displayed on the call to action button.
     /// </summary>
     /// <value>Text displayed on the call to action button.</value>
-    [DataMember(Name = "text", EmitDefaultValue = false)]
+    [JsonPropertyName("text")]
     public string Text { get; set; }
 
 
@@ -78,7 +78,7 @@ public partial class CallToAction : IEquatable<CallToAction>
     /// URL to open when user clicks on the call to action button.
     /// </summary>
     /// <value>URL to open when user clicks on the call to action button.</value>
-    [DataMember(Name = "url", EmitDefaultValue = false)]
+    [JsonPropertyName("url")]
     public string Url { get; set; }
 
 

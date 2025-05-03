@@ -1,12 +1,12 @@
-using System.Runtime.Serialization;
 using System.Text;
+using System.Text.Json.Serialization;
 
 namespace PureCloud.Client.Models;
 
 /// <summary>
 /// Information about the workflow.
 /// </summary>
-[DataContract]
+
 public partial class ConversationEventTopicWorkflow : IEquatable<ConversationEventTopicWorkflow>
 {
     /// <summary>
@@ -25,7 +25,7 @@ public partial class ConversationEventTopicWorkflow : IEquatable<ConversationEve
     /// The id of the workflow
     /// </summary>
     /// <value>The id of the workflow</value>
-    [DataMember(Name = "workflowId", EmitDefaultValue = false)]
+    [JsonPropertyName("workflowId")]
     public string WorkflowId { get; set; }
 
 

@@ -1,4 +1,3 @@
-using System.Runtime.Serialization;
 using System.Text;
 using System.Text.Json.Serialization;
 
@@ -7,7 +6,7 @@ namespace PureCloud.Client.Models;
 /// <summary>
 /// SetContentTemplateActionSettings
 /// </summary>
-[DataContract]
+
 public partial class SetContentTemplateActionSettings : IEquatable<SetContentTemplateActionSettings>
 {
 
@@ -34,7 +33,7 @@ public partial class SetContentTemplateActionSettings : IEquatable<SetContentTem
     /// A string of sms contentTemplateId.
     /// </summary>
     /// <value>A string of sms contentTemplateId.</value>
-    [DataMember(Name = "smsContentTemplateId", EmitDefaultValue = false)]
+    [JsonPropertyName("smsContentTemplateId")]
     public string SmsContentTemplateId { get; set; }
 
 
@@ -43,7 +42,7 @@ public partial class SetContentTemplateActionSettings : IEquatable<SetContentTem
     /// A string of email contentTemplateId.
     /// </summary>
     /// <value>A string of email contentTemplateId.</value>
-    [DataMember(Name = "emailContentTemplateId", EmitDefaultValue = false)]
+    [JsonPropertyName("emailContentTemplateId")]
     public string EmailContentTemplateId { get; set; }
 
 

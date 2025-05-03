@@ -1,4 +1,3 @@
-using System.Runtime.Serialization;
 using System.Text;
 using System.Text.Json.Serialization;
 
@@ -7,7 +6,7 @@ namespace PureCloud.Client.Models;
 /// <summary>
 /// Contract definition.
 /// </summary>
-[DataContract]
+
 public partial class ActionContractInput : IEquatable<ActionContractInput>
 {
 
@@ -34,7 +33,7 @@ public partial class ActionContractInput : IEquatable<ActionContractInput>
     /// Execution input contract
     /// </summary>
     /// <value>Execution input contract</value>
-    [DataMember(Name = "input", EmitDefaultValue = false)]
+    [JsonPropertyName("input")]
     public PostInputContract Input { get; set; }
 
 
@@ -43,7 +42,7 @@ public partial class ActionContractInput : IEquatable<ActionContractInput>
     /// Execution output contract
     /// </summary>
     /// <value>Execution output contract</value>
-    [DataMember(Name = "output", EmitDefaultValue = false)]
+    [JsonPropertyName("output")]
     public PostOutputContract Output { get; set; }
 
 

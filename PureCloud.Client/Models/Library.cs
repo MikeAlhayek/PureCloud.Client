@@ -7,14 +7,14 @@ namespace PureCloud.Client.Models;
 /// <summary>
 /// Library
 /// </summary>
-[DataContract]
+
 public partial class Library : IEquatable<Library>
 {
     /// <summary>
     /// This value is deprecated. Responses representing message templates may be added to any library.
     /// </summary>
     /// <value>This value is deprecated. Responses representing message templates may be added to any library.</value>
-    [JsonConverter(typeof(JsonStringEnumConverter))]
+    
     public enum ResponseTypeEnum
     {
         /// <summary>
@@ -53,7 +53,7 @@ public partial class Library : IEquatable<Library>
     /// This value is deprecated. Responses representing message templates may be added to any library.
     /// </summary>
     /// <value>This value is deprecated. Responses representing message templates may be added to any library.</value>
-    [DataMember(Name = "responseType", EmitDefaultValue = false)]
+    [JsonPropertyName("responseType")]
     public ResponseTypeEnum? ResponseType { get; set; }
 
     /// <summary>
@@ -81,7 +81,7 @@ public partial class Library : IEquatable<Library>
     /// The globally unique identifier for the object.
     /// </summary>
     /// <value>The globally unique identifier for the object.</value>
-    [DataMember(Name = "id", EmitDefaultValue = false)]
+    [JsonPropertyName("id")]
     public string Id { get; private set; }
 
 
@@ -90,7 +90,7 @@ public partial class Library : IEquatable<Library>
     /// The library name.
     /// </summary>
     /// <value>The library name.</value>
-    [DataMember(Name = "name", EmitDefaultValue = false)]
+    [JsonPropertyName("name")]
     public string Name { get; set; }
 
 
@@ -99,7 +99,7 @@ public partial class Library : IEquatable<Library>
     /// Current version for this resource.
     /// </summary>
     /// <value>Current version for this resource.</value>
-    [DataMember(Name = "version", EmitDefaultValue = false)]
+    [JsonPropertyName("version")]
     public int? Version { get; set; }
 
 
@@ -108,7 +108,7 @@ public partial class Library : IEquatable<Library>
     /// User that created the library.
     /// </summary>
     /// <value>User that created the library.</value>
-    [DataMember(Name = "createdBy", EmitDefaultValue = false)]
+    [JsonPropertyName("createdBy")]
     public User CreatedBy { get; private set; }
 
 
@@ -117,7 +117,7 @@ public partial class Library : IEquatable<Library>
     /// The date and time the response was created. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z
     /// </summary>
     /// <value>The date and time the response was created. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z</value>
-    [DataMember(Name = "dateCreated", EmitDefaultValue = false)]
+    [JsonPropertyName("dateCreated")]
     public DateTime? DateCreated { get; private set; }
 
 
@@ -128,7 +128,7 @@ public partial class Library : IEquatable<Library>
     /// The URI for this object
     /// </summary>
     /// <value>The URI for this object</value>
-    [DataMember(Name = "selfUri", EmitDefaultValue = false)]
+    [JsonPropertyName("selfUri")]
     public string SelfUri { get; private set; }
 
 

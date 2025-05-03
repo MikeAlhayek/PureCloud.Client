@@ -1,4 +1,3 @@
-using System.Runtime.Serialization;
 using System.Text;
 using System.Text.Json.Serialization;
 
@@ -7,7 +6,7 @@ namespace PureCloud.Client.Models;
 /// <summary>
 /// KnowledgeAnswerConfig
 /// </summary>
-[DataContract]
+
 public partial class KnowledgeAnswerConfig : IEquatable<KnowledgeAnswerConfig>
 {
 
@@ -32,7 +31,7 @@ public partial class KnowledgeAnswerConfig : IEquatable<KnowledgeAnswerConfig>
     /// Knowledge answer is enabled.
     /// </summary>
     /// <value>Knowledge answer is enabled.</value>
-    [DataMember(Name = "enabled", EmitDefaultValue = false)]
+    [JsonPropertyName("enabled")]
     public bool? Enabled { get; set; }
 
 

@@ -1,4 +1,3 @@
-using System.Runtime.Serialization;
 using System.Text;
 using System.Text.Json.Serialization;
 
@@ -7,7 +6,7 @@ namespace PureCloud.Client.Models;
 /// <summary>
 /// ActivityPlanAsaImpactOverride
 /// </summary>
-[DataContract]
+
 public partial class ActivityPlanAsaImpactOverride : IEquatable<ActivityPlanAsaImpactOverride>
 {
 
@@ -32,7 +31,7 @@ public partial class ActivityPlanAsaImpactOverride : IEquatable<ActivityPlanAsaI
     /// Allowed average speed of answer increase percent, from 0.0 to 100.0
     /// </summary>
     /// <value>Allowed average speed of answer increase percent, from 0.0 to 100.0</value>
-    [DataMember(Name = "increaseByPercent", EmitDefaultValue = false)]
+    [JsonPropertyName("increaseByPercent")]
     public double? IncreaseByPercent { get; set; }
 
 

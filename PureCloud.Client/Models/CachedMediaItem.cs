@@ -1,12 +1,12 @@
-using System.Runtime.Serialization;
 using System.Text;
+using System.Text.Json.Serialization;
 
 namespace PureCloud.Client.Models;
 
 /// <summary>
 /// Defines an external media that has been ingested and cached by Genesys Cloud for conversation messaging
 /// </summary>
-[DataContract]
+
 public partial class CachedMediaItem : IEquatable<CachedMediaItem>
 {
     /// <summary>
@@ -23,7 +23,7 @@ public partial class CachedMediaItem : IEquatable<CachedMediaItem>
     /// The unique identifier for the cached media.
     /// </summary>
     /// <value>The unique identifier for the cached media.</value>
-    [DataMember(Name = "id", EmitDefaultValue = false)]
+    [JsonPropertyName("id")]
     public string Id { get; private set; }
 
 
@@ -32,7 +32,7 @@ public partial class CachedMediaItem : IEquatable<CachedMediaItem>
     /// The URL that represents the external media that has been cached
     /// </summary>
     /// <value>The URL that represents the external media that has been cached</value>
-    [DataMember(Name = "url", EmitDefaultValue = false)]
+    [JsonPropertyName("url")]
     public string Url { get; private set; }
 
 
@@ -41,7 +41,7 @@ public partial class CachedMediaItem : IEquatable<CachedMediaItem>
     /// A URL to fetch the cached media
     /// </summary>
     /// <value>A URL to fetch the cached media</value>
-    [DataMember(Name = "downloadUrl", EmitDefaultValue = false)]
+    [JsonPropertyName("downloadUrl")]
     public string DownloadUrl { get; private set; }
 
 
@@ -50,7 +50,7 @@ public partial class CachedMediaItem : IEquatable<CachedMediaItem>
     /// The media type for the URL
     /// </summary>
     /// <value>The media type for the URL</value>
-    [DataMember(Name = "mediaType", EmitDefaultValue = false)]
+    [JsonPropertyName("mediaType")]
     public string MediaType { get; private set; }
 
 
@@ -59,7 +59,7 @@ public partial class CachedMediaItem : IEquatable<CachedMediaItem>
     /// The content length of the media represented by the URL, in bytes.
     /// </summary>
     /// <value>The content length of the media represented by the URL, in bytes.</value>
-    [DataMember(Name = "contentLengthBytes", EmitDefaultValue = false)]
+    [JsonPropertyName("contentLengthBytes")]
     public int? ContentLengthBytes { get; private set; }
 
 
@@ -68,7 +68,7 @@ public partial class CachedMediaItem : IEquatable<CachedMediaItem>
     /// The date the cached item was created. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z
     /// </summary>
     /// <value>The date the cached item was created. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z</value>
-    [DataMember(Name = "dateCreated", EmitDefaultValue = false)]
+    [JsonPropertyName("dateCreated")]
     public DateTime? DateCreated { get; private set; }
 
 
@@ -77,7 +77,7 @@ public partial class CachedMediaItem : IEquatable<CachedMediaItem>
     /// The date the cached item expires and will be removed from the cache. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z
     /// </summary>
     /// <value>The date the cached item expires and will be removed from the cache. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z</value>
-    [DataMember(Name = "dateExpires", EmitDefaultValue = false)]
+    [JsonPropertyName("dateExpires")]
     public DateTime? DateExpires { get; private set; }
 
 
@@ -86,7 +86,7 @@ public partial class CachedMediaItem : IEquatable<CachedMediaItem>
     /// The URI for this object
     /// </summary>
     /// <value>The URI for this object</value>
-    [DataMember(Name = "selfUri", EmitDefaultValue = false)]
+    [JsonPropertyName("selfUri")]
     public string SelfUri { get; private set; }
 
 

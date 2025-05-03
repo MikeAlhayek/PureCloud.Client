@@ -1,12 +1,12 @@
-using System.Runtime.Serialization;
 using System.Text;
+using System.Text.Json.Serialization;
 
 namespace PureCloud.Client.Models;
 
 /// <summary>
 /// KnowledgeImportJobError
 /// </summary>
-[DataContract]
+
 public partial class KnowledgeImportJobError : IEquatable<KnowledgeImportJobError>
 {
     /// <summary>
@@ -46,7 +46,7 @@ public partial class KnowledgeImportJobError : IEquatable<KnowledgeImportJobErro
     /// <summary>
     /// Gets or Sets Message
     /// </summary>
-    [DataMember(Name = "message", EmitDefaultValue = false)]
+    [JsonPropertyName("message")]
     public string Message { get; set; }
 
 
@@ -54,7 +54,7 @@ public partial class KnowledgeImportJobError : IEquatable<KnowledgeImportJobErro
     /// <summary>
     /// Gets or Sets Code
     /// </summary>
-    [DataMember(Name = "code", EmitDefaultValue = false)]
+    [JsonPropertyName("code")]
     public string Code { get; set; }
 
 
@@ -62,7 +62,7 @@ public partial class KnowledgeImportJobError : IEquatable<KnowledgeImportJobErro
     /// <summary>
     /// Gets or Sets Status
     /// </summary>
-    [DataMember(Name = "status", EmitDefaultValue = false)]
+    [JsonPropertyName("status")]
     public int? Status { get; set; }
 
 
@@ -70,7 +70,7 @@ public partial class KnowledgeImportJobError : IEquatable<KnowledgeImportJobErro
     /// <summary>
     /// Gets or Sets EntityId
     /// </summary>
-    [DataMember(Name = "entityId", EmitDefaultValue = false)]
+    [JsonPropertyName("entityId")]
     public string EntityId { get; set; }
 
 
@@ -78,7 +78,7 @@ public partial class KnowledgeImportJobError : IEquatable<KnowledgeImportJobErro
     /// <summary>
     /// Gets or Sets EntityName
     /// </summary>
-    [DataMember(Name = "entityName", EmitDefaultValue = false)]
+    [JsonPropertyName("entityName")]
     public string EntityName { get; set; }
 
 
@@ -86,7 +86,7 @@ public partial class KnowledgeImportJobError : IEquatable<KnowledgeImportJobErro
     /// <summary>
     /// Gets or Sets MessageWithParams
     /// </summary>
-    [DataMember(Name = "messageWithParams", EmitDefaultValue = false)]
+    [JsonPropertyName("messageWithParams")]
     public string MessageWithParams { get; set; }
 
 
@@ -94,7 +94,7 @@ public partial class KnowledgeImportJobError : IEquatable<KnowledgeImportJobErro
     /// <summary>
     /// Gets or Sets MessageParams
     /// </summary>
-    [DataMember(Name = "messageParams", EmitDefaultValue = false)]
+    [JsonPropertyName("messageParams")]
     public Dictionary<string, string> MessageParams { get; set; }
 
 
@@ -102,7 +102,7 @@ public partial class KnowledgeImportJobError : IEquatable<KnowledgeImportJobErro
     /// <summary>
     /// Gets or Sets ContextId
     /// </summary>
-    [DataMember(Name = "contextId", EmitDefaultValue = false)]
+    [JsonPropertyName("contextId")]
     public string ContextId { get; set; }
 
 
@@ -110,7 +110,7 @@ public partial class KnowledgeImportJobError : IEquatable<KnowledgeImportJobErro
     /// <summary>
     /// Gets or Sets Details
     /// </summary>
-    [DataMember(Name = "details", EmitDefaultValue = false)]
+    [JsonPropertyName("details")]
     public List<Detail> Details { get; set; }
 
 
@@ -118,7 +118,7 @@ public partial class KnowledgeImportJobError : IEquatable<KnowledgeImportJobErro
     /// <summary>
     /// Gets or Sets Errors
     /// </summary>
-    [DataMember(Name = "errors", EmitDefaultValue = false)]
+    [JsonPropertyName("errors")]
     public List<ErrorBody> Errors { get; set; }
 
 
@@ -126,7 +126,7 @@ public partial class KnowledgeImportJobError : IEquatable<KnowledgeImportJobErro
     /// <summary>
     /// Gets or Sets Limit
     /// </summary>
-    [DataMember(Name = "limit", EmitDefaultValue = false)]
+    [JsonPropertyName("limit")]
     public Limit Limit { get; set; }
 
 
@@ -135,7 +135,7 @@ public partial class KnowledgeImportJobError : IEquatable<KnowledgeImportJobErro
     /// Index of the faulty document.
     /// </summary>
     /// <value>Index of the faulty document.</value>
-    [DataMember(Name = "documentIndex", EmitDefaultValue = false)]
+    [JsonPropertyName("documentIndex")]
     public int? DocumentIndex { get; set; }
 
 

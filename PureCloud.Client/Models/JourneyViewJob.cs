@@ -7,14 +7,14 @@ namespace PureCloud.Client.Models;
 /// <summary>
 /// JourneyViewJob
 /// </summary>
-[DataContract]
+
 public partial class JourneyViewJob : IEquatable<JourneyViewJob>
 {
     /// <summary>
     /// The status of the job
     /// </summary>
     /// <value>The status of the job</value>
-    [JsonConverter(typeof(JsonStringEnumConverter))]
+    
     public enum StatusEnum
     {
         /// <summary>
@@ -59,7 +59,7 @@ public partial class JourneyViewJob : IEquatable<JourneyViewJob>
     /// The status of the job
     /// </summary>
     /// <value>The status of the job</value>
-    [DataMember(Name = "status", EmitDefaultValue = false)]
+    [JsonPropertyName("status")]
     public StatusEnum? Status { get; set; }
 
     /// <summary>
@@ -85,7 +85,7 @@ public partial class JourneyViewJob : IEquatable<JourneyViewJob>
     /// The globally unique identifier for the object.
     /// </summary>
     /// <value>The globally unique identifier for the object.</value>
-    [DataMember(Name = "id", EmitDefaultValue = false)]
+    [JsonPropertyName("id")]
     public string Id { get; private set; }
 
 
@@ -94,7 +94,7 @@ public partial class JourneyViewJob : IEquatable<JourneyViewJob>
     /// Timestamp of execution. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z
     /// </summary>
     /// <value>Timestamp of execution. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z</value>
-    [DataMember(Name = "dateCreated", EmitDefaultValue = false)]
+    [JsonPropertyName("dateCreated")]
     public DateTime? DateCreated { get; private set; }
 
 
@@ -103,7 +103,7 @@ public partial class JourneyViewJob : IEquatable<JourneyViewJob>
     /// Timestamp of completion. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z
     /// </summary>
     /// <value>Timestamp of completion. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z</value>
-    [DataMember(Name = "dateCompleted", EmitDefaultValue = false)]
+    [JsonPropertyName("dateCompleted")]
     public DateTime? DateCompleted { get; private set; }
 
 
@@ -114,7 +114,7 @@ public partial class JourneyViewJob : IEquatable<JourneyViewJob>
     /// The journey view for which the job is executed
     /// </summary>
     /// <value>The journey view for which the job is executed</value>
-    [DataMember(Name = "journeyView", EmitDefaultValue = false)]
+    [JsonPropertyName("journeyView")]
     public JourneyView JourneyView { get; set; }
 
 
@@ -123,7 +123,7 @@ public partial class JourneyViewJob : IEquatable<JourneyViewJob>
     /// Timestamp for the estimated time of completion. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z
     /// </summary>
     /// <value>Timestamp for the estimated time of completion. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z</value>
-    [DataMember(Name = "dateCompletionEstimated", EmitDefaultValue = false)]
+    [JsonPropertyName("dateCompletionEstimated")]
     public DateTime? DateCompletionEstimated { get; private set; }
 
 
@@ -132,7 +132,7 @@ public partial class JourneyViewJob : IEquatable<JourneyViewJob>
     /// The URI for this object
     /// </summary>
     /// <value>The URI for this object</value>
-    [DataMember(Name = "selfUri", EmitDefaultValue = false)]
+    [JsonPropertyName("selfUri")]
     public string SelfUri { get; private set; }
 
 

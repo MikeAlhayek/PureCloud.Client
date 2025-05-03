@@ -7,14 +7,14 @@ namespace PureCloud.Client.Models;
 /// <summary>
 /// Channel-specific information that describes the message and the message channel/provider.
 /// </summary>
-[DataContract]
+
 public partial class OpenMessagingChannel : IEquatable<OpenMessagingChannel>
 {
     /// <summary>
     /// The provider type.
     /// </summary>
     /// <value>The provider type.</value>
-    [JsonConverter(typeof(JsonStringEnumConverter))]
+    
     public enum PlatformEnum
     {
         /// <summary>
@@ -35,7 +35,7 @@ public partial class OpenMessagingChannel : IEquatable<OpenMessagingChannel>
     /// Specifies if this message is part of a private or public conversation.
     /// </summary>
     /// <value>Specifies if this message is part of a private or public conversation.</value>
-    [JsonConverter(typeof(JsonStringEnumConverter))]
+    
     public enum TypeEnum
     {
         /// <summary>
@@ -56,13 +56,13 @@ public partial class OpenMessagingChannel : IEquatable<OpenMessagingChannel>
     /// The provider type.
     /// </summary>
     /// <value>The provider type.</value>
-    [DataMember(Name = "platform", EmitDefaultValue = false)]
+    [JsonPropertyName("platform")]
     public PlatformEnum? Platform { get; private set; }
     /// <summary>
     /// Specifies if this message is part of a private or public conversation.
     /// </summary>
     /// <value>Specifies if this message is part of a private or public conversation.</value>
-    [DataMember(Name = "type", EmitDefaultValue = false)]
+    [JsonPropertyName("type")]
     public TypeEnum? Type { get; set; }
 
     /// <summary>
@@ -96,7 +96,7 @@ public partial class OpenMessagingChannel : IEquatable<OpenMessagingChannel>
     /// The Messaging Platform integration ID.
     /// </summary>
     /// <value>The Messaging Platform integration ID.</value>
-    [DataMember(Name = "id", EmitDefaultValue = false)]
+    [JsonPropertyName("id")]
     public string Id { get; private set; }
 
 
@@ -109,7 +109,7 @@ public partial class OpenMessagingChannel : IEquatable<OpenMessagingChannel>
     /// Unique provider ID of the message such as a Facebook message ID.
     /// </summary>
     /// <value>Unique provider ID of the message such as a Facebook message ID.</value>
-    [DataMember(Name = "messageId", EmitDefaultValue = false)]
+    [JsonPropertyName("messageId")]
     public string MessageId { get; set; }
 
 
@@ -118,7 +118,7 @@ public partial class OpenMessagingChannel : IEquatable<OpenMessagingChannel>
     /// Information about the recipient the message is sent to.
     /// </summary>
     /// <value>Information about the recipient the message is sent to.</value>
-    [DataMember(Name = "to", EmitDefaultValue = false)]
+    [JsonPropertyName("to")]
     public OpenMessagingToRecipient To { get; set; }
 
 
@@ -127,7 +127,7 @@ public partial class OpenMessagingChannel : IEquatable<OpenMessagingChannel>
     /// Information about the recipient the message is received from.
     /// </summary>
     /// <value>Information about the recipient the message is received from.</value>
-    [DataMember(Name = "from", EmitDefaultValue = false)]
+    [JsonPropertyName("from")]
     public OpenMessagingFromRecipient From { get; set; }
 
 
@@ -136,7 +136,7 @@ public partial class OpenMessagingChannel : IEquatable<OpenMessagingChannel>
     /// Original time of the event. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z
     /// </summary>
     /// <value>Original time of the event. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z</value>
-    [DataMember(Name = "time", EmitDefaultValue = false)]
+    [JsonPropertyName("time")]
     public DateTime? Time { get; set; }
 
 
@@ -145,7 +145,7 @@ public partial class OpenMessagingChannel : IEquatable<OpenMessagingChannel>
     /// Information about the channel.
     /// </summary>
     /// <value>Information about the channel.</value>
-    [DataMember(Name = "metadata", EmitDefaultValue = false)]
+    [JsonPropertyName("metadata")]
     public object Metadata { get; set; }
 
 

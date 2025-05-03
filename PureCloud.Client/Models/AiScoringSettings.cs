@@ -1,12 +1,12 @@
-using System.Runtime.Serialization;
 using System.Text;
+using System.Text.Json.Serialization;
 
 namespace PureCloud.Client.Models;
 
 /// <summary>
 /// AiScoringSettings
 /// </summary>
-[DataContract]
+
 public partial class AiScoringSettings : IEquatable<AiScoringSettings>
 {
     /// <summary>
@@ -25,7 +25,7 @@ public partial class AiScoringSettings : IEquatable<AiScoringSettings>
     /// The globally unique identifier for the object.
     /// </summary>
     /// <value>The globally unique identifier for the object.</value>
-    [DataMember(Name = "id", EmitDefaultValue = false)]
+    [JsonPropertyName("id")]
     public string Id { get; private set; }
 
 
@@ -33,7 +33,7 @@ public partial class AiScoringSettings : IEquatable<AiScoringSettings>
     /// <summary>
     /// Gets or Sets QuestionGroupSettings
     /// </summary>
-    [DataMember(Name = "questionGroupSettings", EmitDefaultValue = false)]
+    [JsonPropertyName("questionGroupSettings")]
     public List<QuestionGroupSettings> QuestionGroupSettings { get; set; }
 
 
@@ -42,7 +42,7 @@ public partial class AiScoringSettings : IEquatable<AiScoringSettings>
     /// The URI for this object
     /// </summary>
     /// <value>The URI for this object</value>
-    [DataMember(Name = "selfUri", EmitDefaultValue = false)]
+    [JsonPropertyName("selfUri")]
     public string SelfUri { get; private set; }
 
 

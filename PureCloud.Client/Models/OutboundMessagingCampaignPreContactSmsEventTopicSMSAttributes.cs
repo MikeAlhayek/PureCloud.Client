@@ -1,12 +1,12 @@
-using System.Runtime.Serialization;
 using System.Text;
+using System.Text.Json.Serialization;
 
 namespace PureCloud.Client.Models;
 
 /// <summary>
 /// OutboundMessagingCampaignPreContactSmsEventTopicSMSAttributes
 /// </summary>
-[DataContract]
+
 public partial class OutboundMessagingCampaignPreContactSmsEventTopicSMSAttributes : IEquatable<OutboundMessagingCampaignPreContactSmsEventTopicSMSAttributes>
 {
     /// <summary>
@@ -30,7 +30,7 @@ public partial class OutboundMessagingCampaignPreContactSmsEventTopicSMSAttribut
     /// <summary>
     /// Gets or Sets ContactPhoneNumber
     /// </summary>
-    [DataMember(Name = "contactPhoneNumber", EmitDefaultValue = false)]
+    [JsonPropertyName("contactPhoneNumber")]
     public string ContactPhoneNumber { get; set; }
 
 
@@ -38,7 +38,7 @@ public partial class OutboundMessagingCampaignPreContactSmsEventTopicSMSAttribut
     /// <summary>
     /// Gets or Sets ContactPhoneNumberColumnName
     /// </summary>
-    [DataMember(Name = "contactPhoneNumberColumnName", EmitDefaultValue = false)]
+    [JsonPropertyName("contactPhoneNumberColumnName")]
     public string ContactPhoneNumberColumnName { get; set; }
 
 
@@ -46,7 +46,7 @@ public partial class OutboundMessagingCampaignPreContactSmsEventTopicSMSAttribut
     /// <summary>
     /// Gets or Sets ConfiguredSenderPhoneNumber
     /// </summary>
-    [DataMember(Name = "configuredSenderPhoneNumber", EmitDefaultValue = false)]
+    [JsonPropertyName("configuredSenderPhoneNumber")]
     public string ConfiguredSenderPhoneNumber { get; set; }
 
 
@@ -54,7 +54,7 @@ public partial class OutboundMessagingCampaignPreContactSmsEventTopicSMSAttribut
     /// <summary>
     /// Gets or Sets SenderPhoneNumber
     /// </summary>
-    [DataMember(Name = "senderPhoneNumber", EmitDefaultValue = false)]
+    [JsonPropertyName("senderPhoneNumber")]
     public string SenderPhoneNumber { get; set; }
 
 

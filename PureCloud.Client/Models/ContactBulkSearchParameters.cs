@@ -1,12 +1,12 @@
-using System.Runtime.Serialization;
 using System.Text;
+using System.Text.Json.Serialization;
 
 namespace PureCloud.Client.Models;
 
 /// <summary>
 /// ContactBulkSearchParameters
 /// </summary>
-[DataContract]
+
 public partial class ContactBulkSearchParameters : IEquatable<ContactBulkSearchParameters>
 {
     /// <summary>
@@ -27,7 +27,7 @@ public partial class ContactBulkSearchParameters : IEquatable<ContactBulkSearchP
     /// Contact List Filter ID. Either this property or criteria is required.
     /// </summary>
     /// <value>Contact List Filter ID. Either this property or criteria is required.</value>
-    [DataMember(Name = "contactListFilterId", EmitDefaultValue = false)]
+    [JsonPropertyName("contactListFilterId")]
     public string ContactListFilterId { get; set; }
 
 
@@ -36,7 +36,7 @@ public partial class ContactBulkSearchParameters : IEquatable<ContactBulkSearchP
     /// Criteria to filter the contacts by. Either this property or contactListFilterId is required.
     /// </summary>
     /// <value>Criteria to filter the contacts by. Either this property or contactListFilterId is required.</value>
-    [DataMember(Name = "criteria", EmitDefaultValue = false)]
+    [JsonPropertyName("criteria")]
     public ContactBulkSearchCriteria Criteria { get; set; }
 
 

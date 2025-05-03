@@ -1,12 +1,12 @@
-using System.Runtime.Serialization;
 using System.Text;
+using System.Text.Json.Serialization;
 
 namespace PureCloud.Client.Models;
 
 /// <summary>
 /// ConversationProperties
 /// </summary>
-[DataContract]
+
 public partial class ConversationProperties : IEquatable<ConversationProperties>
 {
     /// <summary>
@@ -47,7 +47,7 @@ public partial class ConversationProperties : IEquatable<ConversationProperties>
     /// Indicates filtering for waiting
     /// </summary>
     /// <value>Indicates filtering for waiting</value>
-    [DataMember(Name = "isWaiting", EmitDefaultValue = false)]
+    [JsonPropertyName("isWaiting")]
     public bool? IsWaiting { get; set; }
 
 
@@ -56,7 +56,7 @@ public partial class ConversationProperties : IEquatable<ConversationProperties>
     /// Indicates filtering for active
     /// </summary>
     /// <value>Indicates filtering for active</value>
-    [DataMember(Name = "isActive", EmitDefaultValue = false)]
+    [JsonPropertyName("isActive")]
     public bool? IsActive { get; set; }
 
 
@@ -65,7 +65,7 @@ public partial class ConversationProperties : IEquatable<ConversationProperties>
     /// Indicates filtering for Acd
     /// </summary>
     /// <value>Indicates filtering for Acd</value>
-    [DataMember(Name = "isAcd", EmitDefaultValue = false)]
+    [JsonPropertyName("isAcd")]
     public bool? IsAcd { get; set; }
 
 
@@ -74,7 +74,7 @@ public partial class ConversationProperties : IEquatable<ConversationProperties>
     /// Indicates filtering for Preferred Agent Routing
     /// </summary>
     /// <value>Indicates filtering for Preferred Agent Routing</value>
-    [DataMember(Name = "isPreferred", EmitDefaultValue = false)]
+    [JsonPropertyName("isPreferred")]
     public bool? IsPreferred { get; set; }
 
 
@@ -83,7 +83,7 @@ public partial class ConversationProperties : IEquatable<ConversationProperties>
     /// Indicates filtering for screenshare
     /// </summary>
     /// <value>Indicates filtering for screenshare</value>
-    [DataMember(Name = "isScreenshare", EmitDefaultValue = false)]
+    [JsonPropertyName("isScreenshare")]
     public bool? IsScreenshare { get; set; }
 
 
@@ -92,7 +92,7 @@ public partial class ConversationProperties : IEquatable<ConversationProperties>
     /// Indicates filtering for Cobrowse
     /// </summary>
     /// <value>Indicates filtering for Cobrowse</value>
-    [DataMember(Name = "isCobrowse", EmitDefaultValue = false)]
+    [JsonPropertyName("isCobrowse")]
     public bool? IsCobrowse { get; set; }
 
 
@@ -101,7 +101,7 @@ public partial class ConversationProperties : IEquatable<ConversationProperties>
     /// Indicates filtering for Voice mail
     /// </summary>
     /// <value>Indicates filtering for Voice mail</value>
-    [DataMember(Name = "isVoicemail", EmitDefaultValue = false)]
+    [JsonPropertyName("isVoicemail")]
     public bool? IsVoicemail { get; set; }
 
 
@@ -110,7 +110,7 @@ public partial class ConversationProperties : IEquatable<ConversationProperties>
     /// Indicates filtering for flagged
     /// </summary>
     /// <value>Indicates filtering for flagged</value>
-    [DataMember(Name = "isFlagged", EmitDefaultValue = false)]
+    [JsonPropertyName("isFlagged")]
     public bool? IsFlagged { get; set; }
 
 
@@ -119,7 +119,7 @@ public partial class ConversationProperties : IEquatable<ConversationProperties>
     /// Indicates filtering for monitored
     /// </summary>
     /// <value>Indicates filtering for monitored</value>
-    [DataMember(Name = "isMonitored", EmitDefaultValue = false)]
+    [JsonPropertyName("isMonitored")]
     public bool? IsMonitored { get; set; }
 
 
@@ -128,7 +128,7 @@ public partial class ConversationProperties : IEquatable<ConversationProperties>
     /// Indicates filtering for screenMonitored
     /// </summary>
     /// <value>Indicates filtering for screenMonitored</value>
-    [DataMember(Name = "isScreenMonitored", EmitDefaultValue = false)]
+    [JsonPropertyName("isScreenMonitored")]
     public bool? IsScreenMonitored { get; set; }
 
 
@@ -137,7 +137,7 @@ public partial class ConversationProperties : IEquatable<ConversationProperties>
     /// Indicates filtering for WrapUpNotes
     /// </summary>
     /// <value>Indicates filtering for WrapUpNotes</value>
-    [DataMember(Name = "filterWrapUpNotes", EmitDefaultValue = false)]
+    [JsonPropertyName("filterWrapUpNotes")]
     public bool? FilterWrapUpNotes { get; set; }
 
 
@@ -146,7 +146,7 @@ public partial class ConversationProperties : IEquatable<ConversationProperties>
     /// Indicates comparison operation, TRUE indicates filters will use AND logic, FALSE indicates OR logic
     /// </summary>
     /// <value>Indicates comparison operation, TRUE indicates filters will use AND logic, FALSE indicates OR logic</value>
-    [DataMember(Name = "matchAll", EmitDefaultValue = false)]
+    [JsonPropertyName("matchAll")]
     public bool? MatchAll { get; set; }
 
 

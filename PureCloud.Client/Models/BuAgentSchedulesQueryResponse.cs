@@ -1,12 +1,12 @@
-using System.Runtime.Serialization;
 using System.Text;
+using System.Text.Json.Serialization;
 
 namespace PureCloud.Client.Models;
 
 /// <summary>
 /// BuAgentSchedulesQueryResponse
 /// </summary>
-[DataContract]
+
 public partial class BuAgentSchedulesQueryResponse : IEquatable<BuAgentSchedulesQueryResponse>
 {
     /// <summary>
@@ -27,7 +27,7 @@ public partial class BuAgentSchedulesQueryResponse : IEquatable<BuAgentSchedules
     /// The requested agent schedules
     /// </summary>
     /// <value>The requested agent schedules</value>
-    [DataMember(Name = "agentSchedules", EmitDefaultValue = false)]
+    [JsonPropertyName("agentSchedules")]
     public List<BuAgentScheduleQueryResponse> AgentSchedules { get; set; }
 
 
@@ -36,7 +36,7 @@ public partial class BuAgentSchedulesQueryResponse : IEquatable<BuAgentSchedules
     /// The time zone configured for the business unit to which these schedules apply
     /// </summary>
     /// <value>The time zone configured for the business unit to which these schedules apply</value>
-    [DataMember(Name = "businessUnitTimeZone", EmitDefaultValue = false)]
+    [JsonPropertyName("businessUnitTimeZone")]
     public string BusinessUnitTimeZone { get; set; }
 
 

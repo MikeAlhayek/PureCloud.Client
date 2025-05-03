@@ -1,4 +1,3 @@
-using System.Runtime.Serialization;
 using System.Text;
 using System.Text.Json.Serialization;
 
@@ -7,7 +6,7 @@ namespace PureCloud.Client.Models;
 /// <summary>
 /// Settings for authenticated webdeployments.
 /// </summary>
-[DataContract]
+
 public partial class AuthenticationSettings : IEquatable<AuthenticationSettings>
 {
 
@@ -36,7 +35,7 @@ public partial class AuthenticationSettings : IEquatable<AuthenticationSettings>
     /// Indicate if these auth is required for this deployment. If, for example, this flag is set to true then webmessaging sessions can not send messages unless the end-user is authenticated.
     /// </summary>
     /// <value>Indicate if these auth is required for this deployment. If, for example, this flag is set to true then webmessaging sessions can not send messages unless the end-user is authenticated.</value>
-    [DataMember(Name = "enabled", EmitDefaultValue = false)]
+    [JsonPropertyName("enabled")]
     public bool? Enabled { get; set; }
 
 
@@ -45,7 +44,7 @@ public partial class AuthenticationSettings : IEquatable<AuthenticationSettings>
     /// The integration identifier which contains the auth settings required on the deployment.
     /// </summary>
     /// <value>The integration identifier which contains the auth settings required on the deployment.</value>
-    [DataMember(Name = "integrationId", EmitDefaultValue = false)]
+    [JsonPropertyName("integrationId")]
     public string IntegrationId { get; set; }
 
 
@@ -54,7 +53,7 @@ public partial class AuthenticationSettings : IEquatable<AuthenticationSettings>
     /// Allow end-users to upgrade an anonymous session to authenticated conversation.
     /// </summary>
     /// <value>Allow end-users to upgrade an anonymous session to authenticated conversation.</value>
-    [DataMember(Name = "allowSessionUpgrade", EmitDefaultValue = false)]
+    [JsonPropertyName("allowSessionUpgrade")]
     public bool? AllowSessionUpgrade { get; set; }
 
 

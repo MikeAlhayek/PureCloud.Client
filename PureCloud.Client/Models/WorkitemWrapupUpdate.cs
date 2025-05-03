@@ -7,14 +7,14 @@ namespace PureCloud.Client.Models;
 /// <summary>
 /// WorkitemWrapupUpdate
 /// </summary>
-[DataContract]
+
 public partial class WorkitemWrapupUpdate : IEquatable<WorkitemWrapupUpdate>
 {
     /// <summary>
     /// Action to be performed for the wrapup code.
     /// </summary>
     /// <value>Action to be performed for the wrapup code.</value>
-    [JsonConverter(typeof(JsonStringEnumConverter))]
+    
     public enum ActionEnum
     {
         /// <summary>
@@ -41,7 +41,7 @@ public partial class WorkitemWrapupUpdate : IEquatable<WorkitemWrapupUpdate>
     /// Action to be performed for the wrapup code.
     /// </summary>
     /// <value>Action to be performed for the wrapup code.</value>
-    [DataMember(Name = "action", EmitDefaultValue = false)]
+    [JsonPropertyName("action")]
     public ActionEnum? Action { get; set; }
 
     /// <summary>
@@ -69,7 +69,7 @@ public partial class WorkitemWrapupUpdate : IEquatable<WorkitemWrapupUpdate>
     /// The wrapup code which will be added/removed.
     /// </summary>
     /// <value>The wrapup code which will be added/removed.</value>
-    [DataMember(Name = "wrapupCode", EmitDefaultValue = false)]
+    [JsonPropertyName("wrapupCode")]
     public string WrapupCode { get; set; }
 
 

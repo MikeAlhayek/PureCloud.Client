@@ -1,12 +1,12 @@
-using System.Runtime.Serialization;
 using System.Text;
+using System.Text.Json.Serialization;
 
 namespace PureCloud.Client.Models;
 
 /// <summary>
 /// BatchDownloadRequest
 /// </summary>
-[DataContract]
+
 public partial class BatchDownloadRequest : IEquatable<BatchDownloadRequest>
 {
     /// <summary>
@@ -27,7 +27,7 @@ public partial class BatchDownloadRequest : IEquatable<BatchDownloadRequest>
     /// Conversation id requested
     /// </summary>
     /// <value>Conversation id requested</value>
-    [DataMember(Name = "conversationId", EmitDefaultValue = false)]
+    [JsonPropertyName("conversationId")]
     public string ConversationId { get; set; }
 
 
@@ -36,7 +36,7 @@ public partial class BatchDownloadRequest : IEquatable<BatchDownloadRequest>
     /// Recording id requested, optional.  Leave null for all recordings on the conversation
     /// </summary>
     /// <value>Recording id requested, optional.  Leave null for all recordings on the conversation</value>
-    [DataMember(Name = "recordingId", EmitDefaultValue = false)]
+    [JsonPropertyName("recordingId")]
     public string RecordingId { get; set; }
 
 

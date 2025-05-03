@@ -7,14 +7,14 @@ namespace PureCloud.Client.Models;
 /// <summary>
 /// SchedulerMessageSeverityCount
 /// </summary>
-[DataContract]
+
 public partial class SchedulerMessageSeverityCount : IEquatable<SchedulerMessageSeverityCount>
 {
     /// <summary>
     /// The schedule message severity
     /// </summary>
     /// <value>The schedule message severity</value>
-    [JsonConverter(typeof(JsonStringEnumConverter))]
+    
     public enum SeverityEnum
     {
         /// <summary>
@@ -53,7 +53,7 @@ public partial class SchedulerMessageSeverityCount : IEquatable<SchedulerMessage
     /// The schedule message severity
     /// </summary>
     /// <value>The schedule message severity</value>
-    [DataMember(Name = "severity", EmitDefaultValue = false)]
+    [JsonPropertyName("severity")]
     public SeverityEnum? Severity { get; set; }
     /// <summary>
     /// Initializes a new instance of the <see cref="SchedulerMessageSeverityCount" /> class.
@@ -75,7 +75,7 @@ public partial class SchedulerMessageSeverityCount : IEquatable<SchedulerMessage
     /// The number of schedule messages with the given severity
     /// </summary>
     /// <value>The number of schedule messages with the given severity</value>
-    [DataMember(Name = "count", EmitDefaultValue = false)]
+    [JsonPropertyName("count")]
     public int? Count { get; set; }
 
 

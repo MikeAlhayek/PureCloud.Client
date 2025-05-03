@@ -1,12 +1,12 @@
-using System.Runtime.Serialization;
 using System.Text;
+using System.Text.Json.Serialization;
 
 namespace PureCloud.Client.Models;
 
 /// <summary>
 /// SearchShiftTradeResponse
 /// </summary>
-[DataContract]
+
 public partial class SearchShiftTradeResponse : IEquatable<SearchShiftTradeResponse>
 {
     /// <summary>
@@ -29,7 +29,7 @@ public partial class SearchShiftTradeResponse : IEquatable<SearchShiftTradeRespo
     /// A trade which matches search criteria
     /// </summary>
     /// <value>A trade which matches search criteria</value>
-    [DataMember(Name = "trade", EmitDefaultValue = false)]
+    [JsonPropertyName("trade")]
     public ShiftTradeResponse Trade { get; set; }
 
 
@@ -38,7 +38,7 @@ public partial class SearchShiftTradeResponse : IEquatable<SearchShiftTradeRespo
     /// IDs of shifts which match the search criteria
     /// </summary>
     /// <value>IDs of shifts which match the search criteria</value>
-    [DataMember(Name = "matchingReceivingShiftIds", EmitDefaultValue = false)]
+    [JsonPropertyName("matchingReceivingShiftIds")]
     public List<string> MatchingReceivingShiftIds { get; set; }
 
 
@@ -47,7 +47,7 @@ public partial class SearchShiftTradeResponse : IEquatable<SearchShiftTradeRespo
     /// A preview of what the shift trade would look like if matched
     /// </summary>
     /// <value>A preview of what the shift trade would look like if matched</value>
-    [DataMember(Name = "preview", EmitDefaultValue = false)]
+    [JsonPropertyName("preview")]
     public ShiftTradePreviewResponse Preview { get; set; }
 
 

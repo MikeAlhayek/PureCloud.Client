@@ -7,14 +7,14 @@ namespace PureCloud.Client.Models;
 /// <summary>
 /// OverallBestPointsItem
 /// </summary>
-[DataContract]
+
 public partial class OverallBestPointsItem : IEquatable<OverallBestPointsItem>
 {
     /// <summary>
     /// Best points aggregation interval granularity
     /// </summary>
     /// <value>Best points aggregation interval granularity</value>
-    [JsonConverter(typeof(JsonStringEnumConverter))]
+    
     public enum GranularityTypeEnum
     {
         /// <summary>
@@ -47,7 +47,7 @@ public partial class OverallBestPointsItem : IEquatable<OverallBestPointsItem>
     /// Best points aggregation interval granularity
     /// </summary>
     /// <value>Best points aggregation interval granularity</value>
-    [DataMember(Name = "granularityType", EmitDefaultValue = false)]
+    [JsonPropertyName("granularityType")]
     public GranularityTypeEnum? GranularityType { get; private set; }
     /// <summary>
     /// Initializes a new instance of the <see cref="OverallBestPointsItem" /> class.
@@ -65,7 +65,7 @@ public partial class OverallBestPointsItem : IEquatable<OverallBestPointsItem>
     /// List of associated users with the equal points.
     /// </summary>
     /// <value>List of associated users with the equal points.</value>
-    [DataMember(Name = "users", EmitDefaultValue = false)]
+    [JsonPropertyName("users")]
     public List<UserReference> Users { get; private set; }
 
 
@@ -74,7 +74,7 @@ public partial class OverallBestPointsItem : IEquatable<OverallBestPointsItem>
     /// The count of the user IDs in the list
     /// </summary>
     /// <value>The count of the user IDs in the list</value>
-    [DataMember(Name = "count", EmitDefaultValue = false)]
+    [JsonPropertyName("count")]
     public int? Count { get; private set; }
 
 
@@ -83,7 +83,7 @@ public partial class OverallBestPointsItem : IEquatable<OverallBestPointsItem>
     /// Gamification points
     /// </summary>
     /// <value>Gamification points</value>
-    [DataMember(Name = "points", EmitDefaultValue = false)]
+    [JsonPropertyName("points")]
     public int? Points { get; private set; }
 
 
@@ -92,7 +92,7 @@ public partial class OverallBestPointsItem : IEquatable<OverallBestPointsItem>
     /// Start workday of the best points aggregation interval. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd
     /// </summary>
     /// <value>Start workday of the best points aggregation interval. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd</value>
-    [DataMember(Name = "dateStartWorkday", EmitDefaultValue = false)]
+    [JsonPropertyName("dateStartWorkday")]
     public string DateStartWorkday { get; private set; }
 
 
@@ -101,7 +101,7 @@ public partial class OverallBestPointsItem : IEquatable<OverallBestPointsItem>
     /// End workday of the best points aggregation interval. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd
     /// </summary>
     /// <value>End workday of the best points aggregation interval. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd</value>
-    [DataMember(Name = "dateEndWorkday", EmitDefaultValue = false)]
+    [JsonPropertyName("dateEndWorkday")]
     public string DateEndWorkday { get; private set; }
 
 

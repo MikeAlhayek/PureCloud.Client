@@ -7,13 +7,13 @@ namespace PureCloud.Client.Models;
 /// <summary>
 /// WfmBuScheduleRunTopicBuScheduleRun
 /// </summary>
-[DataContract]
+
 public partial class WfmBuScheduleRunTopicBuScheduleRun : IEquatable<WfmBuScheduleRunTopicBuScheduleRun>
 {
     /// <summary>
     /// Gets or Sets State
     /// </summary>
-    [JsonConverter(typeof(JsonStringEnumConverter))]
+    
     public enum StateEnum
     {
         /// <summary>
@@ -63,7 +63,7 @@ public partial class WfmBuScheduleRunTopicBuScheduleRun : IEquatable<WfmBuSchedu
     /// <summary>
     /// Gets or Sets State
     /// </summary>
-    [DataMember(Name = "state", EmitDefaultValue = false)]
+    [JsonPropertyName("state")]
     public StateEnum? State { get; set; }
     /// <summary>
     /// Initializes a new instance of the <see cref="WfmBuScheduleRunTopicBuScheduleRun" /> class.
@@ -98,7 +98,7 @@ public partial class WfmBuScheduleRunTopicBuScheduleRun : IEquatable<WfmBuSchedu
     /// <summary>
     /// Gets or Sets Id
     /// </summary>
-    [DataMember(Name = "id", EmitDefaultValue = false)]
+    [JsonPropertyName("id")]
     public string Id { get; set; }
 
 
@@ -106,7 +106,7 @@ public partial class WfmBuScheduleRunTopicBuScheduleRun : IEquatable<WfmBuSchedu
     /// <summary>
     /// Gets or Sets PercentComplete
     /// </summary>
-    [DataMember(Name = "percentComplete", EmitDefaultValue = false)]
+    [JsonPropertyName("percentComplete")]
     public double? PercentComplete { get; set; }
 
 
@@ -114,7 +114,7 @@ public partial class WfmBuScheduleRunTopicBuScheduleRun : IEquatable<WfmBuSchedu
     /// <summary>
     /// Gets or Sets IntradayRescheduling
     /// </summary>
-    [DataMember(Name = "intradayRescheduling", EmitDefaultValue = false)]
+    [JsonPropertyName("intradayRescheduling")]
     public bool? IntradayRescheduling { get; set; }
 
 
@@ -124,7 +124,7 @@ public partial class WfmBuScheduleRunTopicBuScheduleRun : IEquatable<WfmBuSchedu
     /// <summary>
     /// Gets or Sets WeekCount
     /// </summary>
-    [DataMember(Name = "weekCount", EmitDefaultValue = false)]
+    [JsonPropertyName("weekCount")]
     public long? WeekCount { get; set; }
 
 
@@ -132,7 +132,7 @@ public partial class WfmBuScheduleRunTopicBuScheduleRun : IEquatable<WfmBuSchedu
     /// <summary>
     /// Gets or Sets Schedule
     /// </summary>
-    [DataMember(Name = "schedule", EmitDefaultValue = false)]
+    [JsonPropertyName("schedule")]
     public WfmBuScheduleRunTopicBuScheduleReference Schedule { get; set; }
 
 
@@ -140,7 +140,7 @@ public partial class WfmBuScheduleRunTopicBuScheduleRun : IEquatable<WfmBuSchedu
     /// <summary>
     /// Gets or Sets SchedulingCanceledBy
     /// </summary>
-    [DataMember(Name = "schedulingCanceledBy", EmitDefaultValue = false)]
+    [JsonPropertyName("schedulingCanceledBy")]
     public WfmBuScheduleRunTopicUserReference SchedulingCanceledBy { get; set; }
 
 
@@ -148,7 +148,7 @@ public partial class WfmBuScheduleRunTopicBuScheduleRun : IEquatable<WfmBuSchedu
     /// <summary>
     /// Gets or Sets SchedulingCompletedTime
     /// </summary>
-    [DataMember(Name = "schedulingCompletedTime", EmitDefaultValue = false)]
+    [JsonPropertyName("schedulingCompletedTime")]
     public string SchedulingCompletedTime { get; set; }
 
 
@@ -156,7 +156,7 @@ public partial class WfmBuScheduleRunTopicBuScheduleRun : IEquatable<WfmBuSchedu
     /// <summary>
     /// Gets or Sets MessageCount
     /// </summary>
-    [DataMember(Name = "messageCount", EmitDefaultValue = false)]
+    [JsonPropertyName("messageCount")]
     public long? MessageCount { get; set; }
 
 
@@ -164,7 +164,7 @@ public partial class WfmBuScheduleRunTopicBuScheduleRun : IEquatable<WfmBuSchedu
     /// <summary>
     /// Gets or Sets MessageSeverityCounts
     /// </summary>
-    [DataMember(Name = "messageSeverityCounts", EmitDefaultValue = false)]
+    [JsonPropertyName("messageSeverityCounts")]
     public List<WfmBuScheduleRunTopicSchedulerMessageSeverityCount> MessageSeverityCounts { get; set; }
 
 

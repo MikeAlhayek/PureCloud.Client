@@ -1,12 +1,12 @@
-using System.Runtime.Serialization;
 using System.Text;
+using System.Text.Json.Serialization;
 
 namespace PureCloud.Client.Models;
 
 /// <summary>
 /// TrunkMetricsTopicTrunkMetricsCalls
 /// </summary>
-[DataContract]
+
 public partial class TrunkMetricsTopicTrunkMetricsCalls : IEquatable<TrunkMetricsTopicTrunkMetricsCalls>
 {
     /// <summary>
@@ -26,7 +26,7 @@ public partial class TrunkMetricsTopicTrunkMetricsCalls : IEquatable<TrunkMetric
     /// <summary>
     /// Gets or Sets InboundCallCount
     /// </summary>
-    [DataMember(Name = "inboundCallCount", EmitDefaultValue = false)]
+    [JsonPropertyName("inboundCallCount")]
     public long? InboundCallCount { get; set; }
 
 
@@ -34,7 +34,7 @@ public partial class TrunkMetricsTopicTrunkMetricsCalls : IEquatable<TrunkMetric
     /// <summary>
     /// Gets or Sets OutboundCallCount
     /// </summary>
-    [DataMember(Name = "outboundCallCount", EmitDefaultValue = false)]
+    [JsonPropertyName("outboundCallCount")]
     public long? OutboundCallCount { get; set; }
 
 

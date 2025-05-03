@@ -7,14 +7,14 @@ namespace PureCloud.Client.Models;
 /// <summary>
 /// ChatMessage
 /// </summary>
-[DataContract]
+
 public partial class ChatMessage : IEquatable<ChatMessage>
 {
     /// <summary>
     /// Type of the message body (v2 chats only)
     /// </summary>
     /// <value>Type of the message body (v2 chats only)</value>
-    [JsonConverter(typeof(JsonStringEnumConverter))]
+    
     public enum BodyTypeEnum
     {
         /// <summary>
@@ -71,7 +71,7 @@ public partial class ChatMessage : IEquatable<ChatMessage>
     /// Type of the message body (v2 chats only)
     /// </summary>
     /// <value>Type of the message body (v2 chats only)</value>
-    [DataMember(Name = "bodyType", EmitDefaultValue = false)]
+    [JsonPropertyName("bodyType")]
     public BodyTypeEnum? BodyType { get; set; }
     /// <summary>
     /// Initializes a new instance of the <see cref="ChatMessage" /> class.
@@ -111,7 +111,7 @@ public partial class ChatMessage : IEquatable<ChatMessage>
     /// The message body
     /// </summary>
     /// <value>The message body</value>
-    [DataMember(Name = "body", EmitDefaultValue = false)]
+    [JsonPropertyName("body")]
     public string Body { get; set; }
 
 
@@ -119,7 +119,7 @@ public partial class ChatMessage : IEquatable<ChatMessage>
     /// <summary>
     /// Gets or Sets Id
     /// </summary>
-    [DataMember(Name = "id", EmitDefaultValue = false)]
+    [JsonPropertyName("id")]
     public string Id { get; set; }
 
 
@@ -128,7 +128,7 @@ public partial class ChatMessage : IEquatable<ChatMessage>
     /// The message recipient
     /// </summary>
     /// <value>The message recipient</value>
-    [DataMember(Name = "to", EmitDefaultValue = false)]
+    [JsonPropertyName("to")]
     public string To { get; set; }
 
 
@@ -137,7 +137,7 @@ public partial class ChatMessage : IEquatable<ChatMessage>
     /// The message sender
     /// </summary>
     /// <value>The message sender</value>
-    [DataMember(Name = "from", EmitDefaultValue = false)]
+    [JsonPropertyName("from")]
     public string From { get; set; }
 
 
@@ -145,7 +145,7 @@ public partial class ChatMessage : IEquatable<ChatMessage>
     /// <summary>
     /// Gets or Sets Utc
     /// </summary>
-    [DataMember(Name = "utc", EmitDefaultValue = false)]
+    [JsonPropertyName("utc")]
     public string Utc { get; set; }
 
 
@@ -154,7 +154,7 @@ public partial class ChatMessage : IEquatable<ChatMessage>
     /// The interaction id (if available)
     /// </summary>
     /// <value>The interaction id (if available)</value>
-    [DataMember(Name = "chat", EmitDefaultValue = false)]
+    [JsonPropertyName("chat")]
     public string Chat { get; set; }
 
 
@@ -163,7 +163,7 @@ public partial class ChatMessage : IEquatable<ChatMessage>
     /// The message id
     /// </summary>
     /// <value>The message id</value>
-    [DataMember(Name = "message", EmitDefaultValue = false)]
+    [JsonPropertyName("message")]
     public string Message { get; set; }
 
 
@@ -171,7 +171,7 @@ public partial class ChatMessage : IEquatable<ChatMessage>
     /// <summary>
     /// Gets or Sets Type
     /// </summary>
-    [DataMember(Name = "type", EmitDefaultValue = false)]
+    [JsonPropertyName("type")]
     public string Type { get; set; }
 
 
@@ -182,7 +182,7 @@ public partial class ChatMessage : IEquatable<ChatMessage>
     /// Communication of sender (v2 chats only)
     /// </summary>
     /// <value>Communication of sender (v2 chats only)</value>
-    [DataMember(Name = "senderCommunicationId", EmitDefaultValue = false)]
+    [JsonPropertyName("senderCommunicationId")]
     public string SenderCommunicationId { get; set; }
 
 
@@ -191,7 +191,7 @@ public partial class ChatMessage : IEquatable<ChatMessage>
     /// Participant purpose of sender (v2 chats only)
     /// </summary>
     /// <value>Participant purpose of sender (v2 chats only)</value>
-    [DataMember(Name = "participantPurpose", EmitDefaultValue = false)]
+    [JsonPropertyName("participantPurpose")]
     public string ParticipantPurpose { get; set; }
 
 
@@ -200,7 +200,7 @@ public partial class ChatMessage : IEquatable<ChatMessage>
     /// The user information for the sender (if available)
     /// </summary>
     /// <value>The user information for the sender (if available)</value>
-    [DataMember(Name = "user", EmitDefaultValue = false)]
+    [JsonPropertyName("user")]
     public ChatMessageUser User { get; set; }
 
 

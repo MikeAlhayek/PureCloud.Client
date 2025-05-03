@@ -1,4 +1,3 @@
-using System.Runtime.Serialization;
 using System.Text;
 using System.Text.Json.Serialization;
 
@@ -7,7 +6,7 @@ namespace PureCloud.Client.Models;
 /// <summary>
 /// AgentWorkPlanActivity
 /// </summary>
-[DataContract]
+
 public partial class AgentWorkPlanActivity : IEquatable<AgentWorkPlanActivity>
 {
 
@@ -34,7 +33,7 @@ public partial class AgentWorkPlanActivity : IEquatable<AgentWorkPlanActivity>
     /// Length of the activity in minutes
     /// </summary>
     /// <value>Length of the activity in minutes</value>
-    [DataMember(Name = "lengthMinutes", EmitDefaultValue = false)]
+    [JsonPropertyName("lengthMinutes")]
     public int? LengthMinutes { get; set; }
 
 
@@ -43,7 +42,7 @@ public partial class AgentWorkPlanActivity : IEquatable<AgentWorkPlanActivity>
     /// Whether the activity is paid
     /// </summary>
     /// <value>Whether the activity is paid</value>
-    [DataMember(Name = "countsAsPaidTime", EmitDefaultValue = false)]
+    [JsonPropertyName("countsAsPaidTime")]
     public bool? CountsAsPaidTime { get; set; }
 
 

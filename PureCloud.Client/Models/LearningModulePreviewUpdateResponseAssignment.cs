@@ -7,14 +7,14 @@ namespace PureCloud.Client.Models;
 /// <summary>
 /// Learning module preview update response assignment
 /// </summary>
-[DataContract]
+
 public partial class LearningModulePreviewUpdateResponseAssignment : IEquatable<LearningModulePreviewUpdateResponseAssignment>
 {
     /// <summary>
     /// The Learning Assignment state
     /// </summary>
     /// <value>The Learning Assignment state</value>
-    [JsonConverter(typeof(JsonStringEnumConverter))]
+    
     public enum StateEnum
     {
         /// <summary>
@@ -65,7 +65,7 @@ public partial class LearningModulePreviewUpdateResponseAssignment : IEquatable<
     /// The Learning Assignment state
     /// </summary>
     /// <value>The Learning Assignment state</value>
-    [DataMember(Name = "state", EmitDefaultValue = false)]
+    [JsonPropertyName("state")]
     public StateEnum? State { get; set; }
     /// <summary>
     /// Initializes a new instance of the <see cref="LearningModulePreviewUpdateResponseAssignment" /> class.
@@ -85,7 +85,7 @@ public partial class LearningModulePreviewUpdateResponseAssignment : IEquatable<
     /// The user&#39;s percentage score for this assignment
     /// </summary>
     /// <value>The user&#39;s percentage score for this assignment</value>
-    [DataMember(Name = "percentageScore", EmitDefaultValue = false)]
+    [JsonPropertyName("percentageScore")]
     public float? PercentageScore { get; private set; }
 
 
@@ -94,7 +94,7 @@ public partial class LearningModulePreviewUpdateResponseAssignment : IEquatable<
     /// The overall completion percentage of assignment
     /// </summary>
     /// <value>The overall completion percentage of assignment</value>
-    [DataMember(Name = "completionPercentage", EmitDefaultValue = false)]
+    [JsonPropertyName("completionPercentage")]
     public float? CompletionPercentage { get; private set; }
 
 
@@ -103,7 +103,7 @@ public partial class LearningModulePreviewUpdateResponseAssignment : IEquatable<
     /// The user&#39;s percentage score for this assignment&#39;s assessment
     /// </summary>
     /// <value>The user&#39;s percentage score for this assignment&#39;s assessment</value>
-    [DataMember(Name = "assessmentPercentageScore", EmitDefaultValue = false)]
+    [JsonPropertyName("assessmentPercentageScore")]
     public float? AssessmentPercentageScore { get; private set; }
 
 
@@ -112,7 +112,7 @@ public partial class LearningModulePreviewUpdateResponseAssignment : IEquatable<
     /// The assessment completion percentage of assignment
     /// </summary>
     /// <value>The assessment completion percentage of assignment</value>
-    [DataMember(Name = "assessmentCompletionPercentage", EmitDefaultValue = false)]
+    [JsonPropertyName("assessmentCompletionPercentage")]
     public float? AssessmentCompletionPercentage { get; private set; }
 
 
@@ -121,7 +121,7 @@ public partial class LearningModulePreviewUpdateResponseAssignment : IEquatable<
     /// True if the assessment was passed
     /// </summary>
     /// <value>True if the assessment was passed</value>
-    [DataMember(Name = "isPassed", EmitDefaultValue = false)]
+    [JsonPropertyName("isPassed")]
     public bool? IsPassed { get; private set; }
 
 
@@ -130,7 +130,7 @@ public partial class LearningModulePreviewUpdateResponseAssignment : IEquatable<
     /// The next assignment step
     /// </summary>
     /// <value>The next assignment step</value>
-    [DataMember(Name = "currentStep", EmitDefaultValue = false)]
+    [JsonPropertyName("currentStep")]
     public LearningModulePreviewUpdateResponseCurrentStep CurrentStep { get; private set; }
 
 
@@ -139,7 +139,7 @@ public partial class LearningModulePreviewUpdateResponseAssignment : IEquatable<
     /// List of assignment steps
     /// </summary>
     /// <value>List of assignment steps</value>
-    [DataMember(Name = "steps", EmitDefaultValue = false)]
+    [JsonPropertyName("steps")]
     public List<LearningModulePreviewUpdateStep> Steps { get; private set; }
 
 

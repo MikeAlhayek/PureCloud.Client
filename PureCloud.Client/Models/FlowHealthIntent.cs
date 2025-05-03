@@ -7,14 +7,14 @@ namespace PureCloud.Client.Models;
 /// <summary>
 /// FlowHealthIntent
 /// </summary>
-[DataContract]
+
 public partial class FlowHealthIntent : IEquatable<FlowHealthIntent>
 {
     /// <summary>
     /// Language provided for this intent's health.
     /// </summary>
     /// <value>Language provided for this intent's health.</value>
-    [JsonConverter(typeof(JsonStringEnumConverter))]
+    
     public enum LanguageEnum
     {
         /// <summary>
@@ -125,7 +125,7 @@ public partial class FlowHealthIntent : IEquatable<FlowHealthIntent>
     /// Language provided for this intent's health.
     /// </summary>
     /// <value>Language provided for this intent's health.</value>
-    [DataMember(Name = "language", EmitDefaultValue = false)]
+    [JsonPropertyName("language")]
     public LanguageEnum? Language { get; set; }
     /// <summary>
     /// Initializes a new instance of the <see cref="FlowHealthIntent" /> class.
@@ -149,7 +149,7 @@ public partial class FlowHealthIntent : IEquatable<FlowHealthIntent>
     /// The globally unique identifier for the object.
     /// </summary>
     /// <value>The globally unique identifier for the object.</value>
-    [DataMember(Name = "id", EmitDefaultValue = false)]
+    [JsonPropertyName("id")]
     public string Id { get; private set; }
 
 
@@ -157,7 +157,7 @@ public partial class FlowHealthIntent : IEquatable<FlowHealthIntent>
     /// <summary>
     /// Gets or Sets Name
     /// </summary>
-    [DataMember(Name = "name", EmitDefaultValue = false)]
+    [JsonPropertyName("name")]
     public string Name { get; set; }
 
 
@@ -166,7 +166,7 @@ public partial class FlowHealthIntent : IEquatable<FlowHealthIntent>
     /// Info about given flow version.
     /// </summary>
     /// <value>Info about given flow version.</value>
-    [DataMember(Name = "flowVersionInfo", EmitDefaultValue = false)]
+    [JsonPropertyName("flowVersionInfo")]
     public FlowHealthIntentVersionInfo FlowVersionInfo { get; set; }
 
 
@@ -177,7 +177,7 @@ public partial class FlowHealthIntent : IEquatable<FlowHealthIntent>
     /// Health computation details for given language.
     /// </summary>
     /// <value>Health computation details for given language.</value>
-    [DataMember(Name = "health", EmitDefaultValue = false)]
+    [JsonPropertyName("health")]
     public HealthInfo Health { get; set; }
 
 
@@ -186,7 +186,7 @@ public partial class FlowHealthIntent : IEquatable<FlowHealthIntent>
     /// The URI for this object
     /// </summary>
     /// <value>The URI for this object</value>
-    [DataMember(Name = "selfUri", EmitDefaultValue = false)]
+    [JsonPropertyName("selfUri")]
     public string SelfUri { get; private set; }
 
 

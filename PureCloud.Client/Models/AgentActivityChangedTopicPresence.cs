@@ -1,12 +1,12 @@
-using System.Runtime.Serialization;
 using System.Text;
+using System.Text.Json.Serialization;
 
 namespace PureCloud.Client.Models;
 
 /// <summary>
 /// AgentActivityChangedTopicPresence
 /// </summary>
-[DataContract]
+
 public partial class AgentActivityChangedTopicPresence : IEquatable<AgentActivityChangedTopicPresence>
 {
     /// <summary>
@@ -28,7 +28,7 @@ public partial class AgentActivityChangedTopicPresence : IEquatable<AgentActivit
     /// <summary>
     /// Gets or Sets PresenceDefinition
     /// </summary>
-    [DataMember(Name = "presenceDefinition", EmitDefaultValue = false)]
+    [JsonPropertyName("presenceDefinition")]
     public AgentActivityChangedTopicOrganizationPresence PresenceDefinition { get; set; }
 
 
@@ -36,7 +36,7 @@ public partial class AgentActivityChangedTopicPresence : IEquatable<AgentActivit
     /// <summary>
     /// Gets or Sets PresenceMessage
     /// </summary>
-    [DataMember(Name = "presenceMessage", EmitDefaultValue = false)]
+    [JsonPropertyName("presenceMessage")]
     public string PresenceMessage { get; set; }
 
 
@@ -44,7 +44,7 @@ public partial class AgentActivityChangedTopicPresence : IEquatable<AgentActivit
     /// <summary>
     /// Gets or Sets ModifiedDate
     /// </summary>
-    [DataMember(Name = "modifiedDate", EmitDefaultValue = false)]
+    [JsonPropertyName("modifiedDate")]
     public DateTime? ModifiedDate { get; set; }
 
 

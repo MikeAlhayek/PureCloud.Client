@@ -1,12 +1,12 @@
-using System.Runtime.Serialization;
 using System.Text;
+using System.Text.Json.Serialization;
 
 namespace PureCloud.Client.Models;
 
 /// <summary>
 /// DomainOrgRoleDifference
 /// </summary>
-[DataContract]
+
 public partial class DomainOrgRoleDifference : IEquatable<DomainOrgRoleDifference>
 {
     /// <summary>
@@ -32,7 +32,7 @@ public partial class DomainOrgRoleDifference : IEquatable<DomainOrgRoleDifferenc
     /// <summary>
     /// Gets or Sets RemovedPermissionPolicies
     /// </summary>
-    [DataMember(Name = "removedPermissionPolicies", EmitDefaultValue = false)]
+    [JsonPropertyName("removedPermissionPolicies")]
     public List<DomainPermissionPolicy> RemovedPermissionPolicies { get; set; }
 
 
@@ -40,7 +40,7 @@ public partial class DomainOrgRoleDifference : IEquatable<DomainOrgRoleDifferenc
     /// <summary>
     /// Gets or Sets AddedPermissionPolicies
     /// </summary>
-    [DataMember(Name = "addedPermissionPolicies", EmitDefaultValue = false)]
+    [JsonPropertyName("addedPermissionPolicies")]
     public List<DomainPermissionPolicy> AddedPermissionPolicies { get; set; }
 
 
@@ -48,7 +48,7 @@ public partial class DomainOrgRoleDifference : IEquatable<DomainOrgRoleDifferenc
     /// <summary>
     /// Gets or Sets SamePermissionPolicies
     /// </summary>
-    [DataMember(Name = "samePermissionPolicies", EmitDefaultValue = false)]
+    [JsonPropertyName("samePermissionPolicies")]
     public List<DomainPermissionPolicy> SamePermissionPolicies { get; set; }
 
 
@@ -56,7 +56,7 @@ public partial class DomainOrgRoleDifference : IEquatable<DomainOrgRoleDifferenc
     /// <summary>
     /// Gets or Sets UserOrgRole
     /// </summary>
-    [DataMember(Name = "userOrgRole", EmitDefaultValue = false)]
+    [JsonPropertyName("userOrgRole")]
     public DomainOrganizationRole UserOrgRole { get; set; }
 
 
@@ -64,7 +64,7 @@ public partial class DomainOrgRoleDifference : IEquatable<DomainOrgRoleDifferenc
     /// <summary>
     /// Gets or Sets RoleFromDefault
     /// </summary>
-    [DataMember(Name = "roleFromDefault", EmitDefaultValue = false)]
+    [JsonPropertyName("roleFromDefault")]
     public DomainOrganizationRole RoleFromDefault { get; set; }
 
 

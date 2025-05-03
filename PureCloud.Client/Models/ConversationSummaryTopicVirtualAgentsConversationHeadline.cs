@@ -1,12 +1,12 @@
-using System.Runtime.Serialization;
 using System.Text;
+using System.Text.Json.Serialization;
 
 namespace PureCloud.Client.Models;
 
 /// <summary>
 /// ConversationSummaryTopicVirtualAgentsConversationHeadline
 /// </summary>
-[DataContract]
+
 public partial class ConversationSummaryTopicVirtualAgentsConversationHeadline : IEquatable<ConversationSummaryTopicVirtualAgentsConversationHeadline>
 {
     /// <summary>
@@ -28,7 +28,7 @@ public partial class ConversationSummaryTopicVirtualAgentsConversationHeadline :
     /// <summary>
     /// Gets or Sets Text
     /// </summary>
-    [DataMember(Name = "text", EmitDefaultValue = false)]
+    [JsonPropertyName("text")]
     public string Text { get; set; }
 
 
@@ -36,7 +36,7 @@ public partial class ConversationSummaryTopicVirtualAgentsConversationHeadline :
     /// <summary>
     /// Gets or Sets Description
     /// </summary>
-    [DataMember(Name = "description", EmitDefaultValue = false)]
+    [JsonPropertyName("description")]
     public string Description { get; set; }
 
 
@@ -44,7 +44,7 @@ public partial class ConversationSummaryTopicVirtualAgentsConversationHeadline :
     /// <summary>
     /// Gets or Sets Score
     /// </summary>
-    [DataMember(Name = "score", EmitDefaultValue = false)]
+    [JsonPropertyName("score")]
     public double? Score { get; set; }
 
 

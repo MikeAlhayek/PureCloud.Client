@@ -1,12 +1,12 @@
-using System.Runtime.Serialization;
 using System.Text;
+using System.Text.Json.Serialization;
 
 namespace PureCloud.Client.Models;
 
 /// <summary>
 /// ContactListingResponse
 /// </summary>
-[DataContract]
+
 public partial class ContactListingResponse : IEquatable<ContactListingResponse>, IPagedResource<DialerContact>
 {
     /// <summary>
@@ -44,7 +44,7 @@ public partial class ContactListingResponse : IEquatable<ContactListingResponse>
     /// <summary>
     /// Gets or Sets Entities
     /// </summary>
-    [DataMember(Name = "entities", EmitDefaultValue = false)]
+    [JsonPropertyName("entities")]
     public List<DialerContact> Entities { get; set; }
 
 
@@ -52,7 +52,7 @@ public partial class ContactListingResponse : IEquatable<ContactListingResponse>
     /// <summary>
     /// Gets or Sets PageSize
     /// </summary>
-    [DataMember(Name = "pageSize", EmitDefaultValue = false)]
+    [JsonPropertyName("pageSize")]
     public int? PageSize { get; set; }
 
 
@@ -60,7 +60,7 @@ public partial class ContactListingResponse : IEquatable<ContactListingResponse>
     /// <summary>
     /// Gets or Sets PageNumber
     /// </summary>
-    [DataMember(Name = "pageNumber", EmitDefaultValue = false)]
+    [JsonPropertyName("pageNumber")]
     public int? PageNumber { get; set; }
 
 
@@ -68,7 +68,7 @@ public partial class ContactListingResponse : IEquatable<ContactListingResponse>
     /// <summary>
     /// Gets or Sets Total
     /// </summary>
-    [DataMember(Name = "total", EmitDefaultValue = false)]
+    [JsonPropertyName("total")]
     public long? Total { get; set; }
 
 
@@ -76,7 +76,7 @@ public partial class ContactListingResponse : IEquatable<ContactListingResponse>
     /// <summary>
     /// Gets or Sets ContactsCount
     /// </summary>
-    [DataMember(Name = "contactsCount", EmitDefaultValue = false)]
+    [JsonPropertyName("contactsCount")]
     public long? ContactsCount { get; set; }
 
 
@@ -84,7 +84,7 @@ public partial class ContactListingResponse : IEquatable<ContactListingResponse>
     /// <summary>
     /// Gets or Sets FirstUri
     /// </summary>
-    [DataMember(Name = "firstUri", EmitDefaultValue = false)]
+    [JsonPropertyName("firstUri")]
     public string FirstUri { get; set; }
 
 
@@ -92,7 +92,7 @@ public partial class ContactListingResponse : IEquatable<ContactListingResponse>
     /// <summary>
     /// Gets or Sets LastUri
     /// </summary>
-    [DataMember(Name = "lastUri", EmitDefaultValue = false)]
+    [JsonPropertyName("lastUri")]
     public string LastUri { get; set; }
 
 
@@ -100,7 +100,7 @@ public partial class ContactListingResponse : IEquatable<ContactListingResponse>
     /// <summary>
     /// Gets or Sets SelfUri
     /// </summary>
-    [DataMember(Name = "selfUri", EmitDefaultValue = false)]
+    [JsonPropertyName("selfUri")]
     public string SelfUri { get; set; }
 
 
@@ -108,7 +108,7 @@ public partial class ContactListingResponse : IEquatable<ContactListingResponse>
     /// <summary>
     /// Gets or Sets NextUri
     /// </summary>
-    [DataMember(Name = "nextUri", EmitDefaultValue = false)]
+    [JsonPropertyName("nextUri")]
     public string NextUri { get; set; }
 
 
@@ -116,7 +116,7 @@ public partial class ContactListingResponse : IEquatable<ContactListingResponse>
     /// <summary>
     /// Gets or Sets PreviousUri
     /// </summary>
-    [DataMember(Name = "previousUri", EmitDefaultValue = false)]
+    [JsonPropertyName("previousUri")]
     public string PreviousUri { get; set; }
 
 
@@ -124,7 +124,7 @@ public partial class ContactListingResponse : IEquatable<ContactListingResponse>
     /// <summary>
     /// Gets or Sets PageCount
     /// </summary>
-    [DataMember(Name = "pageCount", EmitDefaultValue = false)]
+    [JsonPropertyName("pageCount")]
     public int? PageCount { get; set; }
 
 

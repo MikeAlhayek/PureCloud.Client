@@ -1,12 +1,12 @@
-using System.Runtime.Serialization;
 using System.Text;
+using System.Text.Json.Serialization;
 
 namespace PureCloud.Client.Models;
 
 /// <summary>
 /// CampaignOutboundLinesAllocation
 /// </summary>
-[DataContract]
+
 public partial class CampaignOutboundLinesAllocation : IEquatable<CampaignOutboundLinesAllocation>
 {
     /// <summary>
@@ -31,7 +31,7 @@ public partial class CampaignOutboundLinesAllocation : IEquatable<CampaignOutbou
     /// The Campaign
     /// </summary>
     /// <value>The Campaign</value>
-    [DataMember(Name = "campaign", EmitDefaultValue = false)]
+    [JsonPropertyName("campaign")]
     public DomainEntityRef Campaign { get; set; }
 
 
@@ -40,7 +40,7 @@ public partial class CampaignOutboundLinesAllocation : IEquatable<CampaignOutbou
     /// The relative weight of the campaign
     /// </summary>
     /// <value>The relative weight of the campaign</value>
-    [DataMember(Name = "campaignWeight", EmitDefaultValue = false)]
+    [JsonPropertyName("campaignWeight")]
     public int? CampaignWeight { get; set; }
 
 
@@ -49,7 +49,7 @@ public partial class CampaignOutboundLinesAllocation : IEquatable<CampaignOutbou
     /// The number of lines dynamically assigned to the campaign
     /// </summary>
     /// <value>The number of lines dynamically assigned to the campaign</value>
-    [DataMember(Name = "linesAssigned", EmitDefaultValue = false)]
+    [JsonPropertyName("linesAssigned")]
     public int? LinesAssigned { get; set; }
 
 
@@ -58,7 +58,7 @@ public partial class CampaignOutboundLinesAllocation : IEquatable<CampaignOutbou
     /// true if relative weight of the campaign is not explicitly specified, false otherwise
     /// </summary>
     /// <value>true if relative weight of the campaign is not explicitly specified, false otherwise</value>
-    [DataMember(Name = "legacyWeight", EmitDefaultValue = false)]
+    [JsonPropertyName("legacyWeight")]
     public bool? LegacyWeight { get; set; }
 
 

@@ -7,14 +7,14 @@ namespace PureCloud.Client.Models;
 /// <summary>
 /// CoachingAppointmentStatusResponse
 /// </summary>
-[DataContract]
+
 public partial class CoachingAppointmentStatusResponse : IEquatable<CoachingAppointmentStatusResponse>
 {
     /// <summary>
     /// The status of the coaching appointment
     /// </summary>
     /// <value>The status of the coaching appointment</value>
-    [JsonConverter(typeof(JsonStringEnumConverter))]
+    
     public enum StatusEnum
     {
         /// <summary>
@@ -53,7 +53,7 @@ public partial class CoachingAppointmentStatusResponse : IEquatable<CoachingAppo
     /// The status of the coaching appointment
     /// </summary>
     /// <value>The status of the coaching appointment</value>
-    [DataMember(Name = "status", EmitDefaultValue = false)]
+    [JsonPropertyName("status")]
     public StatusEnum? Status { get; private set; }
     /// <summary>
     /// Initializes a new instance of the <see cref="CoachingAppointmentStatusResponse" /> class.
@@ -69,7 +69,7 @@ public partial class CoachingAppointmentStatusResponse : IEquatable<CoachingAppo
     /// The coaching appointment this status belongs to
     /// </summary>
     /// <value>The coaching appointment this status belongs to</value>
-    [DataMember(Name = "appointment", EmitDefaultValue = false)]
+    [JsonPropertyName("appointment")]
     public CoachingAppointmentReference Appointment { get; private set; }
 
 
@@ -78,7 +78,7 @@ public partial class CoachingAppointmentStatusResponse : IEquatable<CoachingAppo
     /// User who updated the status
     /// </summary>
     /// <value>User who updated the status</value>
-    [DataMember(Name = "createdBy", EmitDefaultValue = false)]
+    [JsonPropertyName("createdBy")]
     public UserReference CreatedBy { get; private set; }
 
 
@@ -87,7 +87,7 @@ public partial class CoachingAppointmentStatusResponse : IEquatable<CoachingAppo
     /// Creation time of the status. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z
     /// </summary>
     /// <value>Creation time of the status. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z</value>
-    [DataMember(Name = "dateCreated", EmitDefaultValue = false)]
+    [JsonPropertyName("dateCreated")]
     public DateTime? DateCreated { get; private set; }
 
 

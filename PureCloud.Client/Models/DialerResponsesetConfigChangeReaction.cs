@@ -7,13 +7,13 @@ namespace PureCloud.Client.Models;
 /// <summary>
 /// DialerResponsesetConfigChangeReaction
 /// </summary>
-[DataContract]
+
 public partial class DialerResponsesetConfigChangeReaction : IEquatable<DialerResponsesetConfigChangeReaction>
 {
     /// <summary>
     /// Gets or Sets ReactionType
     /// </summary>
-    [JsonConverter(typeof(JsonStringEnumConverter))]
+    
     public enum ReactionTypeEnum
     {
         /// <summary>
@@ -51,7 +51,7 @@ public partial class DialerResponsesetConfigChangeReaction : IEquatable<DialerRe
     /// <summary>
     /// Gets or Sets ReactionType
     /// </summary>
-    [DataMember(Name = "reactionType", EmitDefaultValue = false)]
+    [JsonPropertyName("reactionType")]
     public ReactionTypeEnum? ReactionType { get; set; }
     /// <summary>
     /// Initializes a new instance of the <see cref="DialerResponsesetConfigChangeReaction" /> class.
@@ -74,7 +74,7 @@ public partial class DialerResponsesetConfigChangeReaction : IEquatable<DialerRe
     /// <summary>
     /// Gets or Sets Data
     /// </summary>
-    [DataMember(Name = "data", EmitDefaultValue = false)]
+    [JsonPropertyName("data")]
     public string Data { get; set; }
 
 
@@ -82,7 +82,7 @@ public partial class DialerResponsesetConfigChangeReaction : IEquatable<DialerRe
     /// <summary>
     /// Gets or Sets Name
     /// </summary>
-    [DataMember(Name = "name", EmitDefaultValue = false)]
+    [JsonPropertyName("name")]
     public string Name { get; set; }
 
 
@@ -92,7 +92,7 @@ public partial class DialerResponsesetConfigChangeReaction : IEquatable<DialerRe
     /// <summary>
     /// Gets or Sets AdditionalProperties
     /// </summary>
-    [DataMember(Name = "additionalProperties", EmitDefaultValue = false)]
+    [JsonPropertyName("additionalProperties")]
     public Dictionary<string, object> AdditionalProperties { get; set; }
 
 

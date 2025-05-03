@@ -1,12 +1,12 @@
-using System.Runtime.Serialization;
 using System.Text;
+using System.Text.Json.Serialization;
 
 namespace PureCloud.Client.Models;
 
 /// <summary>
 /// A journey view result
 /// </summary>
-[DataContract]
+
 public partial class JourneyViewResult : IEquatable<JourneyViewResult>
 {
     /// <summary>
@@ -23,7 +23,7 @@ public partial class JourneyViewResult : IEquatable<JourneyViewResult>
     /// The elements within the journey view result
     /// </summary>
     /// <value>The elements within the journey view result</value>
-    [DataMember(Name = "elements", EmitDefaultValue = false)]
+    [JsonPropertyName("elements")]
     public List<JourneyViewResultElement> Elements { get; private set; }
 
 

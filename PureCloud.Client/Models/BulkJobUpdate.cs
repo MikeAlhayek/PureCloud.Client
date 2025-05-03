@@ -7,14 +7,14 @@ namespace PureCloud.Client.Models;
 /// <summary>
 /// BulkJobUpdate
 /// </summary>
-[DataContract]
+
 public partial class BulkJobUpdate : IEquatable<BulkJobUpdate>
 {
     /// <summary>
     /// The destination state of the bulk job.
     /// </summary>
     /// <value>The destination state of the bulk job.</value>
-    [JsonConverter(typeof(JsonStringEnumConverter))]
+    
     public enum StateEnum
     {
         /// <summary>
@@ -41,7 +41,7 @@ public partial class BulkJobUpdate : IEquatable<BulkJobUpdate>
     /// The destination state of the bulk job.
     /// </summary>
     /// <value>The destination state of the bulk job.</value>
-    [DataMember(Name = "state", EmitDefaultValue = false)]
+    [JsonPropertyName("state")]
     public StateEnum? State { get; set; }
 
     /// <summary>

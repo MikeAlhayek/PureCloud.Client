@@ -1,4 +1,3 @@
-using System.Runtime.Serialization;
 using System.Text;
 using System.Text.Json.Serialization;
 
@@ -7,7 +6,7 @@ namespace PureCloud.Client.Models;
 /// <summary>
 /// AdditionalMessage
 /// </summary>
-[DataContract]
+
 public partial class AdditionalMessage : IEquatable<AdditionalMessage>
 {
 
@@ -38,7 +37,7 @@ public partial class AdditionalMessage : IEquatable<AdditionalMessage>
     /// The body of the text message.  Maximum character counts are: SMS - 765 characters, other channels - 2000 characters.
     /// </summary>
     /// <value>The body of the text message.  Maximum character counts are: SMS - 765 characters, other channels - 2000 characters.</value>
-    [DataMember(Name = "textBody", EmitDefaultValue = false)]
+    [JsonPropertyName("textBody")]
     public string TextBody { get; set; }
 
 
@@ -47,7 +46,7 @@ public partial class AdditionalMessage : IEquatable<AdditionalMessage>
     /// The media ids associated with the text message. See https://developer.genesys.cloud/api/rest/v2/conversations/messaging-media-upload for example usage.
     /// </summary>
     /// <value>The media ids associated with the text message. See https://developer.genesys.cloud/api/rest/v2/conversations/messaging-media-upload for example usage.</value>
-    [DataMember(Name = "mediaIds", EmitDefaultValue = false)]
+    [JsonPropertyName("mediaIds")]
     public List<string> MediaIds { get; set; }
 
 
@@ -56,7 +55,7 @@ public partial class AdditionalMessage : IEquatable<AdditionalMessage>
     /// The sticker ids associated with the text message.
     /// </summary>
     /// <value>The sticker ids associated with the text message.</value>
-    [DataMember(Name = "stickerIds", EmitDefaultValue = false)]
+    [JsonPropertyName("stickerIds")]
     public List<string> StickerIds { get; set; }
 
 
@@ -65,7 +64,7 @@ public partial class AdditionalMessage : IEquatable<AdditionalMessage>
     /// The messaging template use to send a predefined canned response with the message
     /// </summary>
     /// <value>The messaging template use to send a predefined canned response with the message</value>
-    [DataMember(Name = "messagingTemplate", EmitDefaultValue = false)]
+    [JsonPropertyName("messagingTemplate")]
     public SendMessagingTemplateRequest MessagingTemplate { get; set; }
 
 

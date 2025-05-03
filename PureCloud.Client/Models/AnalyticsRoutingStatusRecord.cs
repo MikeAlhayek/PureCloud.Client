@@ -7,14 +7,14 @@ namespace PureCloud.Client.Models;
 /// <summary>
 /// AnalyticsRoutingStatusRecord
 /// </summary>
-[DataContract]
+
 public partial class AnalyticsRoutingStatusRecord : IEquatable<AnalyticsRoutingStatusRecord>
 {
     /// <summary>
     /// The user's ACD routing status
     /// </summary>
     /// <value>The user's ACD routing status</value>
-    [JsonConverter(typeof(JsonStringEnumConverter))]
+    
     public enum RoutingStatusEnum
     {
         /// <summary>
@@ -59,7 +59,7 @@ public partial class AnalyticsRoutingStatusRecord : IEquatable<AnalyticsRoutingS
     /// The user's ACD routing status
     /// </summary>
     /// <value>The user's ACD routing status</value>
-    [DataMember(Name = "routingStatus", EmitDefaultValue = false)]
+    [JsonPropertyName("routingStatus")]
     public RoutingStatusEnum? RoutingStatus { get; set; }
     /// <summary>
     /// Initializes a new instance of the <see cref="AnalyticsRoutingStatusRecord" /> class.
@@ -81,7 +81,7 @@ public partial class AnalyticsRoutingStatusRecord : IEquatable<AnalyticsRoutingS
     /// The start time of the record. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z
     /// </summary>
     /// <value>The start time of the record. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z</value>
-    [DataMember(Name = "startTime", EmitDefaultValue = false)]
+    [JsonPropertyName("startTime")]
     public DateTime? StartTime { get; set; }
 
 
@@ -90,7 +90,7 @@ public partial class AnalyticsRoutingStatusRecord : IEquatable<AnalyticsRoutingS
     /// The end time of the record. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z
     /// </summary>
     /// <value>The end time of the record. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z</value>
-    [DataMember(Name = "endTime", EmitDefaultValue = false)]
+    [JsonPropertyName("endTime")]
     public DateTime? EndTime { get; set; }
 
 

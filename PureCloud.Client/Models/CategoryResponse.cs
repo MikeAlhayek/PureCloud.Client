@@ -1,4 +1,3 @@
-using System.Runtime.Serialization;
 using System.Text;
 using System.Text.Json.Serialization;
 
@@ -7,7 +6,7 @@ namespace PureCloud.Client.Models;
 /// <summary>
 /// CategoryResponse
 /// </summary>
-[DataContract]
+
 public partial class CategoryResponse : IEquatable<CategoryResponse>
 {
 
@@ -46,7 +45,7 @@ public partial class CategoryResponse : IEquatable<CategoryResponse>
     /// The globally unique identifier for the object.
     /// </summary>
     /// <value>The globally unique identifier for the object.</value>
-    [DataMember(Name = "id", EmitDefaultValue = false)]
+    [JsonPropertyName("id")]
     public string Id { get; private set; }
 
 
@@ -55,7 +54,7 @@ public partial class CategoryResponse : IEquatable<CategoryResponse>
     /// The name of the category.
     /// </summary>
     /// <value>The name of the category.</value>
-    [DataMember(Name = "name", EmitDefaultValue = false)]
+    [JsonPropertyName("name")]
     public string Name { get; set; }
 
 
@@ -63,7 +62,7 @@ public partial class CategoryResponse : IEquatable<CategoryResponse>
     /// <summary>
     /// Gets or Sets Description
     /// </summary>
-    [DataMember(Name = "description", EmitDefaultValue = false)]
+    [JsonPropertyName("description")]
     public string Description { get; set; }
 
 
@@ -71,7 +70,7 @@ public partial class CategoryResponse : IEquatable<CategoryResponse>
     /// <summary>
     /// Gets or Sets ExternalId
     /// </summary>
-    [DataMember(Name = "externalId", EmitDefaultValue = false)]
+    [JsonPropertyName("externalId")]
     public string ExternalId { get; set; }
 
 
@@ -80,7 +79,7 @@ public partial class CategoryResponse : IEquatable<CategoryResponse>
     /// Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z
     /// </summary>
     /// <value>Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z</value>
-    [DataMember(Name = "dateCreated", EmitDefaultValue = false)]
+    [JsonPropertyName("dateCreated")]
     public DateTime? DateCreated { get; set; }
 
 
@@ -89,7 +88,7 @@ public partial class CategoryResponse : IEquatable<CategoryResponse>
     /// Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z
     /// </summary>
     /// <value>Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z</value>
-    [DataMember(Name = "dateModified", EmitDefaultValue = false)]
+    [JsonPropertyName("dateModified")]
     public DateTime? DateModified { get; set; }
 
 
@@ -98,7 +97,7 @@ public partial class CategoryResponse : IEquatable<CategoryResponse>
     /// The reference to category to which this category belongs to.
     /// </summary>
     /// <value>The reference to category to which this category belongs to.</value>
-    [DataMember(Name = "parentCategory", EmitDefaultValue = false)]
+    [JsonPropertyName("parentCategory")]
     public CategoryReference ParentCategory { get; set; }
 
 
@@ -107,7 +106,7 @@ public partial class CategoryResponse : IEquatable<CategoryResponse>
     /// Number of documents assigned to this category.
     /// </summary>
     /// <value>Number of documents assigned to this category.</value>
-    [DataMember(Name = "documentCount", EmitDefaultValue = false)]
+    [JsonPropertyName("documentCount")]
     public int? DocumentCount { get; set; }
 
 
@@ -116,7 +115,7 @@ public partial class CategoryResponse : IEquatable<CategoryResponse>
     /// The reference to knowledge base to which the category belongs to.
     /// </summary>
     /// <value>The reference to knowledge base to which the category belongs to.</value>
-    [DataMember(Name = "knowledgeBase", EmitDefaultValue = false)]
+    [JsonPropertyName("knowledgeBase")]
     public KnowledgeBaseReference KnowledgeBase { get; set; }
 
 
@@ -125,7 +124,7 @@ public partial class CategoryResponse : IEquatable<CategoryResponse>
     /// The URI for this object
     /// </summary>
     /// <value>The URI for this object</value>
-    [DataMember(Name = "selfUri", EmitDefaultValue = false)]
+    [JsonPropertyName("selfUri")]
     public string SelfUri { get; private set; }
 
 

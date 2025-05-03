@@ -1,12 +1,12 @@
-using System.Runtime.Serialization;
 using System.Text;
+using System.Text.Json.Serialization;
 
 namespace PureCloud.Client.Models;
 
 /// <summary>
 /// SocialTopicPatchRequest
 /// </summary>
-[DataContract]
+
 public partial class SocialTopicPatchRequest : IEquatable<SocialTopicPatchRequest>
 {
     /// <summary>
@@ -29,7 +29,7 @@ public partial class SocialTopicPatchRequest : IEquatable<SocialTopicPatchReques
     /// Name of the social topic.
     /// </summary>
     /// <value>Name of the social topic.</value>
-    [DataMember(Name = "name", EmitDefaultValue = false)]
+    [JsonPropertyName("name")]
     public string Name { get; set; }
 
 
@@ -38,7 +38,7 @@ public partial class SocialTopicPatchRequest : IEquatable<SocialTopicPatchReques
     /// A description of the social topic.
     /// </summary>
     /// <value>A description of the social topic.</value>
-    [DataMember(Name = "description", EmitDefaultValue = false)]
+    [JsonPropertyName("description")]
     public string Description { get; set; }
 
 
@@ -47,7 +47,7 @@ public partial class SocialTopicPatchRequest : IEquatable<SocialTopicPatchReques
     /// The ID of the division the social topic currently belongs to OR which it should be moved to.
     /// </summary>
     /// <value>The ID of the division the social topic currently belongs to OR which it should be moved to.</value>
-    [DataMember(Name = "divisionId", EmitDefaultValue = false)]
+    [JsonPropertyName("divisionId")]
     public string DivisionId { get; set; }
 
 

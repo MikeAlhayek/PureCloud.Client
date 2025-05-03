@@ -1,12 +1,12 @@
-using System.Runtime.Serialization;
 using System.Text;
+using System.Text.Json.Serialization;
 
 namespace PureCloud.Client.Models;
 
 /// <summary>
 /// A subset of the Journey System&#39;s customer data at a point-in-time (for external linkage and internal usage/context)
 /// </summary>
-[DataContract]
+
 public partial class QueueConversationEmailEventTopicJourneyCustomer : IEquatable<QueueConversationEmailEventTopicJourneyCustomer>
 {
     /// <summary>
@@ -27,7 +27,7 @@ public partial class QueueConversationEmailEventTopicJourneyCustomer : IEquatabl
     /// An ID of a customer within the Journey System at a point-in-time.  Note that a customer entity can have multiple customerIds based on the stitching process.  Depending on the context within the PureCloudEnvironment conversation, this may or may not be mutable.
     /// </summary>
     /// <value>An ID of a customer within the Journey System at a point-in-time.  Note that a customer entity can have multiple customerIds based on the stitching process.  Depending on the context within the PureCloudEnvironment conversation, this may or may not be mutable.</value>
-    [DataMember(Name = "id", EmitDefaultValue = false)]
+    [JsonPropertyName("id")]
     public string Id { get; set; }
 
 
@@ -36,7 +36,7 @@ public partial class QueueConversationEmailEventTopicJourneyCustomer : IEquatabl
     /// The type of the customerId within the Journey System (e.g. cookie).
     /// </summary>
     /// <value>The type of the customerId within the Journey System (e.g. cookie).</value>
-    [DataMember(Name = "idType", EmitDefaultValue = false)]
+    [JsonPropertyName("idType")]
     public string IdType { get; set; }
 
 

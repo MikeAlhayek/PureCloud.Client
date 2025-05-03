@@ -1,4 +1,3 @@
-using System.Runtime.Serialization;
 using System.Text;
 using System.Text.Json.Serialization;
 
@@ -7,7 +6,7 @@ namespace PureCloud.Client.Models;
 /// <summary>
 /// PhoneBaseSettings
 /// </summary>
-[DataContract]
+
 public partial class PhoneBaseSettings : IEquatable<PhoneBaseSettings>
 {
 
@@ -36,7 +35,7 @@ public partial class PhoneBaseSettings : IEquatable<PhoneBaseSettings>
     /// The globally unique identifier for this phone base settings
     /// </summary>
     /// <value>The globally unique identifier for this phone base settings</value>
-    [DataMember(Name = "id", EmitDefaultValue = false)]
+    [JsonPropertyName("id")]
     public string Id { get; set; }
 
 
@@ -44,7 +43,7 @@ public partial class PhoneBaseSettings : IEquatable<PhoneBaseSettings>
     /// <summary>
     /// Gets or Sets Name
     /// </summary>
-    [DataMember(Name = "name", EmitDefaultValue = false)]
+    [JsonPropertyName("name")]
     public string Name { get; set; }
 
 
@@ -52,7 +51,7 @@ public partial class PhoneBaseSettings : IEquatable<PhoneBaseSettings>
     /// <summary>
     /// Gets or Sets SelfUri
     /// </summary>
-    [DataMember(Name = "selfUri", EmitDefaultValue = false)]
+    [JsonPropertyName("selfUri")]
     public string SelfUri { get; set; }
 
 

@@ -1,4 +1,3 @@
-using System.Runtime.Serialization;
 using System.Text;
 using System.Text.Json.Serialization;
 
@@ -7,7 +6,7 @@ namespace PureCloud.Client.Models;
 /// <summary>
 /// ChatReactionUpdate
 /// </summary>
-[DataContract]
+
 public partial class ChatReactionUpdate : IEquatable<ChatReactionUpdate>
 {
 
@@ -32,7 +31,7 @@ public partial class ChatReactionUpdate : IEquatable<ChatReactionUpdate>
     /// Reactions to update
     /// </summary>
     /// <value>Reactions to update</value>
-    [DataMember(Name = "reactions", EmitDefaultValue = false)]
+    [JsonPropertyName("reactions")]
     public List<string> Reactions { get; set; }
 
 

@@ -7,14 +7,14 @@ namespace PureCloud.Client.Models;
 /// <summary>
 /// WebChatRoutingTarget
 /// </summary>
-[DataContract]
+
 public partial class WebChatRoutingTarget : IEquatable<WebChatRoutingTarget>
 {
     /// <summary>
     /// The target type of the routing target, such as 'QUEUE'.
     /// </summary>
     /// <value>The target type of the routing target, such as 'QUEUE'.</value>
-    [JsonConverter(typeof(JsonStringEnumConverter))]
+    
     public enum TargetTypeEnum
     {
         /// <summary>
@@ -35,7 +35,7 @@ public partial class WebChatRoutingTarget : IEquatable<WebChatRoutingTarget>
     /// The target type of the routing target, such as 'QUEUE'.
     /// </summary>
     /// <value>The target type of the routing target, such as 'QUEUE'.</value>
-    [DataMember(Name = "targetType", EmitDefaultValue = false)]
+    [JsonPropertyName("targetType")]
     public TargetTypeEnum? TargetType { get; set; }
 
     /// <summary>
@@ -69,7 +69,7 @@ public partial class WebChatRoutingTarget : IEquatable<WebChatRoutingTarget>
     /// The target of the route, in the format appropriate given the &#39;targetType&#39;.
     /// </summary>
     /// <value>The target of the route, in the format appropriate given the &#39;targetType&#39;.</value>
-    [DataMember(Name = "targetAddress", EmitDefaultValue = false)]
+    [JsonPropertyName("targetAddress")]
     public string TargetAddress { get; set; }
 
 
@@ -78,7 +78,7 @@ public partial class WebChatRoutingTarget : IEquatable<WebChatRoutingTarget>
     /// The list of skill names to use for routing.
     /// </summary>
     /// <value>The list of skill names to use for routing.</value>
-    [DataMember(Name = "skills", EmitDefaultValue = false)]
+    [JsonPropertyName("skills")]
     public List<string> Skills { get; set; }
 
 
@@ -87,7 +87,7 @@ public partial class WebChatRoutingTarget : IEquatable<WebChatRoutingTarget>
     /// The language name to use for routing.
     /// </summary>
     /// <value>The language name to use for routing.</value>
-    [DataMember(Name = "language", EmitDefaultValue = false)]
+    [JsonPropertyName("language")]
     public string Language { get; set; }
 
 
@@ -96,7 +96,7 @@ public partial class WebChatRoutingTarget : IEquatable<WebChatRoutingTarget>
     /// The priority to assign to the conversation for routing.
     /// </summary>
     /// <value>The priority to assign to the conversation for routing.</value>
-    [DataMember(Name = "priority", EmitDefaultValue = false)]
+    [JsonPropertyName("priority")]
     public long? Priority { get; set; }
 
 

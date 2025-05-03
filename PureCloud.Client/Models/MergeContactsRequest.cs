@@ -1,4 +1,3 @@
-using System.Runtime.Serialization;
 using System.Text;
 using System.Text.Json.Serialization;
 
@@ -7,7 +6,7 @@ namespace PureCloud.Client.Models;
 /// <summary>
 /// MergeContactsRequest
 /// </summary>
-[DataContract]
+
 public partial class MergeContactsRequest : IEquatable<MergeContactsRequest>
 {
 
@@ -34,7 +33,7 @@ public partial class MergeContactsRequest : IEquatable<MergeContactsRequest>
     /// The IDs of all contacts involved in the merge operation (must be between 2 and 25).
     /// </summary>
     /// <value>The IDs of all contacts involved in the merge operation (must be between 2 and 25).</value>
-    [DataMember(Name = "contactIds", EmitDefaultValue = false)]
+    [JsonPropertyName("contactIds")]
     public List<string> ContactIds { get; set; }
 
 
@@ -43,7 +42,7 @@ public partial class MergeContactsRequest : IEquatable<MergeContactsRequest>
     /// Override data to set for specific Contact fields after a merge. Any null fields in &#x60;valueOverride&#x60; will not replace existing data.
     /// </summary>
     /// <value>Override data to set for specific Contact fields after a merge. Any null fields in &#x60;valueOverride&#x60; will not replace existing data.</value>
-    [DataMember(Name = "valueOverride", EmitDefaultValue = false)]
+    [JsonPropertyName("valueOverride")]
     public ExternalContact ValueOverride { get; set; }
 
 

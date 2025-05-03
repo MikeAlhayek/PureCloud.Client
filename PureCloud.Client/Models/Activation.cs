@@ -1,4 +1,3 @@
-using System.Runtime.Serialization;
 using System.Text;
 using System.Text.Json.Serialization;
 
@@ -7,7 +6,7 @@ namespace PureCloud.Client.Models;
 /// <summary>
 /// Activation
 /// </summary>
-[DataContract]
+
 public partial class Activation : IEquatable<Activation>
 {
 
@@ -34,7 +33,7 @@ public partial class Activation : IEquatable<Activation>
     /// Type of activation.
     /// </summary>
     /// <value>Type of activation.</value>
-    [DataMember(Name = "type", EmitDefaultValue = false)]
+    [JsonPropertyName("type")]
     public string Type { get; set; }
 
 
@@ -43,7 +42,7 @@ public partial class Activation : IEquatable<Activation>
     /// Activation delay time amount.
     /// </summary>
     /// <value>Activation delay time amount.</value>
-    [DataMember(Name = "delayInSeconds", EmitDefaultValue = false)]
+    [JsonPropertyName("delayInSeconds")]
     public int? DelayInSeconds { get; set; }
 
 

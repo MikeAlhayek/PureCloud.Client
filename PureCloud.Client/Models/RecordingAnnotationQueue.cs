@@ -1,4 +1,3 @@
-using System.Runtime.Serialization;
 using System.Text;
 using System.Text.Json.Serialization;
 
@@ -7,7 +6,7 @@ namespace PureCloud.Client.Models;
 /// <summary>
 /// RecordingAnnotationQueue
 /// </summary>
-[DataContract]
+
 public partial class RecordingAnnotationQueue : IEquatable<RecordingAnnotationQueue>
 {
 
@@ -34,7 +33,7 @@ public partial class RecordingAnnotationQueue : IEquatable<RecordingAnnotationQu
     /// The queue name
     /// </summary>
     /// <value>The queue name</value>
-    [DataMember(Name = "name", EmitDefaultValue = false)]
+    [JsonPropertyName("name")]
     public string Name { get; set; }
 
 
@@ -43,7 +42,7 @@ public partial class RecordingAnnotationQueue : IEquatable<RecordingAnnotationQu
     /// The queue Id
     /// </summary>
     /// <value>The queue Id</value>
-    [DataMember(Name = "id", EmitDefaultValue = false)]
+    [JsonPropertyName("id")]
     public string Id { get; set; }
 
 

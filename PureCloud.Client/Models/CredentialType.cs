@@ -1,12 +1,12 @@
-using System.Runtime.Serialization;
 using System.Text;
+using System.Text.Json.Serialization;
 
 namespace PureCloud.Client.Models;
 
 /// <summary>
 /// CredentialType
 /// </summary>
-[DataContract]
+
 public partial class CredentialType : IEquatable<CredentialType>
 {
     /// <summary>
@@ -25,7 +25,7 @@ public partial class CredentialType : IEquatable<CredentialType>
     /// The globally unique identifier for the object.
     /// </summary>
     /// <value>The globally unique identifier for the object.</value>
-    [DataMember(Name = "id", EmitDefaultValue = false)]
+    [JsonPropertyName("id")]
     public string Id { get; private set; }
 
 
@@ -33,7 +33,7 @@ public partial class CredentialType : IEquatable<CredentialType>
     /// <summary>
     /// Gets or Sets Name
     /// </summary>
-    [DataMember(Name = "name", EmitDefaultValue = false)]
+    [JsonPropertyName("name")]
     public string Name { get; set; }
 
 
@@ -42,7 +42,7 @@ public partial class CredentialType : IEquatable<CredentialType>
     /// Properties describing credentials of this type.
     /// </summary>
     /// <value>Properties describing credentials of this type.</value>
-    [DataMember(Name = "properties", EmitDefaultValue = false)]
+    [JsonPropertyName("properties")]
     public object Properties { get; private set; }
 
 
@@ -51,7 +51,7 @@ public partial class CredentialType : IEquatable<CredentialType>
     /// Order in which properties should be displayed in the UI.
     /// </summary>
     /// <value>Order in which properties should be displayed in the UI.</value>
-    [DataMember(Name = "displayOrder", EmitDefaultValue = false)]
+    [JsonPropertyName("displayOrder")]
     public List<string> DisplayOrder { get; private set; }
 
 
@@ -60,7 +60,7 @@ public partial class CredentialType : IEquatable<CredentialType>
     /// Properties that are required fields.
     /// </summary>
     /// <value>Properties that are required fields.</value>
-    [DataMember(Name = "required", EmitDefaultValue = false)]
+    [JsonPropertyName("required")]
     public List<string> Required { get; private set; }
 
 

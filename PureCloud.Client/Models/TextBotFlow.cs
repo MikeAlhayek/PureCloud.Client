@@ -1,4 +1,3 @@
-using System.Runtime.Serialization;
 using System.Text;
 using System.Text.Json.Serialization;
 
@@ -7,7 +6,7 @@ namespace PureCloud.Client.Models;
 /// <summary>
 /// Description of the Bot Flow.
 /// </summary>
-[DataContract]
+
 public partial class TextBotFlow : IEquatable<TextBotFlow>
 {
 
@@ -32,7 +31,7 @@ public partial class TextBotFlow : IEquatable<TextBotFlow>
     /// The Bot Flow ID.
     /// </summary>
     /// <value>The Bot Flow ID.</value>
-    [DataMember(Name = "id", EmitDefaultValue = false)]
+    [JsonPropertyName("id")]
     public string Id { get; set; }
 
 

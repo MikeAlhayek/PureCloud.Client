@@ -1,4 +1,3 @@
-using System.Runtime.Serialization;
 using System.Text;
 using System.Text.Json.Serialization;
 
@@ -7,7 +6,7 @@ namespace PureCloud.Client.Models;
 /// <summary>
 /// ExternalSource
 /// </summary>
-[DataContract]
+
 public partial class ExternalSource : IEquatable<ExternalSource>
 {
 
@@ -38,7 +37,7 @@ public partial class ExternalSource : IEquatable<ExternalSource>
     /// The globally unique identifier for the object.
     /// </summary>
     /// <value>The globally unique identifier for the object.</value>
-    [DataMember(Name = "id", EmitDefaultValue = false)]
+    [JsonPropertyName("id")]
     public string Id { get; set; }
 
 
@@ -47,7 +46,7 @@ public partial class ExternalSource : IEquatable<ExternalSource>
     /// The name of the external source.
     /// </summary>
     /// <value>The name of the external source.</value>
-    [DataMember(Name = "name", EmitDefaultValue = false)]
+    [JsonPropertyName("name")]
     public string Name { get; set; }
 
 
@@ -55,7 +54,7 @@ public partial class ExternalSource : IEquatable<ExternalSource>
     /// <summary>
     /// Gets or Sets Active
     /// </summary>
-    [DataMember(Name = "active", EmitDefaultValue = false)]
+    [JsonPropertyName("active")]
     public bool? Active { get; set; }
 
 
@@ -63,7 +62,7 @@ public partial class ExternalSource : IEquatable<ExternalSource>
     /// <summary>
     /// Gets or Sets LinkConfiguration
     /// </summary>
-    [DataMember(Name = "linkConfiguration", EmitDefaultValue = false)]
+    [JsonPropertyName("linkConfiguration")]
     public LinkConfiguration LinkConfiguration { get; set; }
 
 
@@ -72,7 +71,7 @@ public partial class ExternalSource : IEquatable<ExternalSource>
     /// The URI for this object
     /// </summary>
     /// <value>The URI for this object</value>
-    [DataMember(Name = "selfUri", EmitDefaultValue = false)]
+    [JsonPropertyName("selfUri")]
     public string SelfUri { get; private set; }
 
 

@@ -1,12 +1,12 @@
-using System.Runtime.Serialization;
 using System.Text;
+using System.Text.Json.Serialization;
 
 namespace PureCloud.Client.Models;
 
 /// <summary>
 /// ConnectedEdge
 /// </summary>
-[DataContract]
+
 public partial class ConnectedEdge : IEquatable<ConnectedEdge>
 {
     /// <summary>
@@ -27,7 +27,7 @@ public partial class ConnectedEdge : IEquatable<ConnectedEdge>
     /// The globally unique identifier for the object.
     /// </summary>
     /// <value>The globally unique identifier for the object.</value>
-    [DataMember(Name = "id", EmitDefaultValue = false)]
+    [JsonPropertyName("id")]
     public string Id { get; private set; }
 
 
@@ -35,7 +35,7 @@ public partial class ConnectedEdge : IEquatable<ConnectedEdge>
     /// <summary>
     /// Gets or Sets Name
     /// </summary>
-    [DataMember(Name = "name", EmitDefaultValue = false)]
+    [JsonPropertyName("name")]
     public string Name { get; set; }
 
 
@@ -44,7 +44,7 @@ public partial class ConnectedEdge : IEquatable<ConnectedEdge>
     /// Edge interface name used for the connection
     /// </summary>
     /// <value>Edge interface name used for the connection</value>
-    [DataMember(Name = "interfaceName", EmitDefaultValue = false)]
+    [JsonPropertyName("interfaceName")]
     public string InterfaceName { get; private set; }
 
 
@@ -53,7 +53,7 @@ public partial class ConnectedEdge : IEquatable<ConnectedEdge>
     /// Edge interface IP address
     /// </summary>
     /// <value>Edge interface IP address</value>
-    [DataMember(Name = "interfaceIpAddress", EmitDefaultValue = false)]
+    [JsonPropertyName("interfaceIpAddress")]
     public string InterfaceIpAddress { get; private set; }
 
 
@@ -61,7 +61,7 @@ public partial class ConnectedEdge : IEquatable<ConnectedEdge>
     /// <summary>
     /// Gets or Sets EdgeConnectionList
     /// </summary>
-    [DataMember(Name = "edgeConnectionList", EmitDefaultValue = false)]
+    [JsonPropertyName("edgeConnectionList")]
     public List<EdgeConnectionInfo> EdgeConnectionList { get; set; }
 
 
@@ -70,7 +70,7 @@ public partial class ConnectedEdge : IEquatable<ConnectedEdge>
     /// The URI for this object
     /// </summary>
     /// <value>The URI for this object</value>
-    [DataMember(Name = "selfUri", EmitDefaultValue = false)]
+    [JsonPropertyName("selfUri")]
     public string SelfUri { get; private set; }
 
 

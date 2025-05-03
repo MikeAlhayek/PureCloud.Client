@@ -1,12 +1,12 @@
-using System.Runtime.Serialization;
 using System.Text;
+using System.Text.Json.Serialization;
 
 namespace PureCloud.Client.Models;
 
 /// <summary>
 /// CalendarUrlResponse
 /// </summary>
-[DataContract]
+
 public partial class CalendarUrlResponse : IEquatable<CalendarUrlResponse>
 {
     /// <summary>
@@ -25,7 +25,7 @@ public partial class CalendarUrlResponse : IEquatable<CalendarUrlResponse>
     /// The calendar url for the user to subscribe with supported clients
     /// </summary>
     /// <value>The calendar url for the user to subscribe with supported clients</value>
-    [DataMember(Name = "calendarUrl", EmitDefaultValue = false)]
+    [JsonPropertyName("calendarUrl")]
     public string CalendarUrl { get; set; }
 
 
@@ -34,7 +34,7 @@ public partial class CalendarUrlResponse : IEquatable<CalendarUrlResponse>
     /// The URI for this object
     /// </summary>
     /// <value>The URI for this object</value>
-    [DataMember(Name = "selfUri", EmitDefaultValue = false)]
+    [JsonPropertyName("selfUri")]
     public string SelfUri { get; private set; }
 
 

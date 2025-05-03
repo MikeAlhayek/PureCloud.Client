@@ -7,14 +7,14 @@ namespace PureCloud.Client.Models;
 /// <summary>
 /// LearningModuleRuleParts
 /// </summary>
-[DataContract]
+
 public partial class LearningModuleRuleParts : IEquatable<LearningModuleRuleParts>
 {
     /// <summary>
     /// The learning module rule operation
     /// </summary>
     /// <value>The learning module rule operation</value>
-    [JsonConverter(typeof(JsonStringEnumConverter))]
+    
     public enum OperationEnum
     {
         /// <summary>
@@ -41,7 +41,7 @@ public partial class LearningModuleRuleParts : IEquatable<LearningModuleRulePart
     /// The learning module rule selector
     /// </summary>
     /// <value>The learning module rule selector</value>
-    [JsonConverter(typeof(JsonStringEnumConverter))]
+    
     public enum SelectorEnum
     {
         /// <summary>
@@ -110,13 +110,13 @@ public partial class LearningModuleRuleParts : IEquatable<LearningModuleRulePart
     /// The learning module rule operation
     /// </summary>
     /// <value>The learning module rule operation</value>
-    [DataMember(Name = "operation", EmitDefaultValue = false)]
+    [JsonPropertyName("operation")]
     public OperationEnum? Operation { get; set; }
     /// <summary>
     /// The learning module rule selector
     /// </summary>
     /// <value>The learning module rule selector</value>
-    [DataMember(Name = "selector", EmitDefaultValue = false)]
+    [JsonPropertyName("selector")]
     public SelectorEnum? Selector { get; set; }
 
     /// <summary>
@@ -150,7 +150,7 @@ public partial class LearningModuleRuleParts : IEquatable<LearningModuleRulePart
     /// The value of rules
     /// </summary>
     /// <value>The value of rules</value>
-    [DataMember(Name = "value", EmitDefaultValue = false)]
+    [JsonPropertyName("value")]
     public List<string> Value { get; set; }
 
 
@@ -159,7 +159,7 @@ public partial class LearningModuleRuleParts : IEquatable<LearningModuleRulePart
     /// The order of rules in learning module rule
     /// </summary>
     /// <value>The order of rules in learning module rule</value>
-    [DataMember(Name = "order", EmitDefaultValue = false)]
+    [JsonPropertyName("order")]
     public int? Order { get; set; }
 
 

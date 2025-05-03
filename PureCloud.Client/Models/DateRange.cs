@@ -1,12 +1,12 @@
-using System.Runtime.Serialization;
 using System.Text;
+using System.Text.Json.Serialization;
 
 namespace PureCloud.Client.Models;
 
 /// <summary>
 /// DateRange
 /// </summary>
-[DataContract]
+
 public partial class DateRange : IEquatable<DateRange>
 {
     /// <summary>
@@ -27,7 +27,7 @@ public partial class DateRange : IEquatable<DateRange>
     /// The inclusive start of a date range in yyyy-MM-dd format. Should be interpreted in the management unit&#39;s configured time zone.
     /// </summary>
     /// <value>The inclusive start of a date range in yyyy-MM-dd format. Should be interpreted in the management unit&#39;s configured time zone.</value>
-    [DataMember(Name = "startDate", EmitDefaultValue = false)]
+    [JsonPropertyName("startDate")]
     public string StartDate { get; set; }
 
 
@@ -36,7 +36,7 @@ public partial class DateRange : IEquatable<DateRange>
     /// The inclusive end of a date range in yyyy-MM-dd format. Should be interpreted in the management unit&#39;s configured time zone.
     /// </summary>
     /// <value>The inclusive end of a date range in yyyy-MM-dd format. Should be interpreted in the management unit&#39;s configured time zone.</value>
-    [DataMember(Name = "endDate", EmitDefaultValue = false)]
+    [JsonPropertyName("endDate")]
     public string EndDate { get; set; }
 
 

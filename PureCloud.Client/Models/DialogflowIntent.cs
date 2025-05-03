@@ -1,4 +1,3 @@
-using System.Runtime.Serialization;
 using System.Text;
 using System.Text.Json.Serialization;
 
@@ -7,7 +6,7 @@ namespace PureCloud.Client.Models;
 /// <summary>
 /// DialogflowIntent
 /// </summary>
-[DataContract]
+
 public partial class DialogflowIntent : IEquatable<DialogflowIntent>
 {
 
@@ -34,7 +33,7 @@ public partial class DialogflowIntent : IEquatable<DialogflowIntent>
     /// The intent name
     /// </summary>
     /// <value>The intent name</value>
-    [DataMember(Name = "name", EmitDefaultValue = false)]
+    [JsonPropertyName("name")]
     public string Name { get; set; }
 
 
@@ -43,7 +42,7 @@ public partial class DialogflowIntent : IEquatable<DialogflowIntent>
     /// An object mapping parameter names to Parameter objects
     /// </summary>
     /// <value>An object mapping parameter names to Parameter objects</value>
-    [DataMember(Name = "parameters", EmitDefaultValue = false)]
+    [JsonPropertyName("parameters")]
     public Dictionary<string, DialogflowParameter> Parameters { get; set; }
 
 

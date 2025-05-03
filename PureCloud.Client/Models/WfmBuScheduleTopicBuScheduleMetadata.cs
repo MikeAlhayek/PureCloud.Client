@@ -1,12 +1,12 @@
-using System.Runtime.Serialization;
 using System.Text;
+using System.Text.Json.Serialization;
 
 namespace PureCloud.Client.Models;
 
 /// <summary>
 /// WfmBuScheduleTopicBuScheduleMetadata
 /// </summary>
-[DataContract]
+
 public partial class WfmBuScheduleTopicBuScheduleMetadata : IEquatable<WfmBuScheduleTopicBuScheduleMetadata>
 {
     /// <summary>
@@ -40,7 +40,7 @@ public partial class WfmBuScheduleTopicBuScheduleMetadata : IEquatable<WfmBuSche
     /// <summary>
     /// Gets or Sets Id
     /// </summary>
-    [DataMember(Name = "id", EmitDefaultValue = false)]
+    [JsonPropertyName("id")]
     public string Id { get; set; }
 
 
@@ -48,7 +48,7 @@ public partial class WfmBuScheduleTopicBuScheduleMetadata : IEquatable<WfmBuSche
     /// <summary>
     /// Gets or Sets WeekDate
     /// </summary>
-    [DataMember(Name = "weekDate", EmitDefaultValue = false)]
+    [JsonPropertyName("weekDate")]
     public DateTime? WeekDate { get; set; }
 
 
@@ -56,7 +56,7 @@ public partial class WfmBuScheduleTopicBuScheduleMetadata : IEquatable<WfmBuSche
     /// <summary>
     /// Gets or Sets WeekCount
     /// </summary>
-    [DataMember(Name = "weekCount", EmitDefaultValue = false)]
+    [JsonPropertyName("weekCount")]
     public long? WeekCount { get; set; }
 
 
@@ -64,7 +64,7 @@ public partial class WfmBuScheduleTopicBuScheduleMetadata : IEquatable<WfmBuSche
     /// <summary>
     /// Gets or Sets Description
     /// </summary>
-    [DataMember(Name = "description", EmitDefaultValue = false)]
+    [JsonPropertyName("description")]
     public string Description { get; set; }
 
 
@@ -72,7 +72,7 @@ public partial class WfmBuScheduleTopicBuScheduleMetadata : IEquatable<WfmBuSche
     /// <summary>
     /// Gets or Sets Published
     /// </summary>
-    [DataMember(Name = "published", EmitDefaultValue = false)]
+    [JsonPropertyName("published")]
     public bool? Published { get; set; }
 
 
@@ -80,7 +80,7 @@ public partial class WfmBuScheduleTopicBuScheduleMetadata : IEquatable<WfmBuSche
     /// <summary>
     /// Gets or Sets ShortTermForecast
     /// </summary>
-    [DataMember(Name = "shortTermForecast", EmitDefaultValue = false)]
+    [JsonPropertyName("shortTermForecast")]
     public WfmBuScheduleTopicBuShortTermForecastReference ShortTermForecast { get; set; }
 
 
@@ -88,7 +88,7 @@ public partial class WfmBuScheduleTopicBuScheduleMetadata : IEquatable<WfmBuSche
     /// <summary>
     /// Gets or Sets ManagementUnits
     /// </summary>
-    [DataMember(Name = "managementUnits", EmitDefaultValue = false)]
+    [JsonPropertyName("managementUnits")]
     public List<WfmBuScheduleTopicBuManagementUnitScheduleSummary> ManagementUnits { get; set; }
 
 
@@ -96,7 +96,7 @@ public partial class WfmBuScheduleTopicBuScheduleMetadata : IEquatable<WfmBuSche
     /// <summary>
     /// Gets or Sets GenerationResults
     /// </summary>
-    [DataMember(Name = "generationResults", EmitDefaultValue = false)]
+    [JsonPropertyName("generationResults")]
     public WfmBuScheduleTopicBuScheduleGenerationResultSummary GenerationResults { get; set; }
 
 
@@ -104,7 +104,7 @@ public partial class WfmBuScheduleTopicBuScheduleMetadata : IEquatable<WfmBuSche
     /// <summary>
     /// Gets or Sets Metadata
     /// </summary>
-    [DataMember(Name = "metadata", EmitDefaultValue = false)]
+    [JsonPropertyName("metadata")]
     public WfmBuScheduleTopicWfmVersionedEntityMetadata Metadata { get; set; }
 
 

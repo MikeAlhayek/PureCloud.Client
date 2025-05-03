@@ -1,4 +1,3 @@
-using System.Runtime.Serialization;
 using System.Text;
 using System.Text.Json.Serialization;
 
@@ -7,7 +6,7 @@ namespace PureCloud.Client.Models;
 /// <summary>
 /// SurveyAssignment
 /// </summary>
-[DataContract]
+
 public partial class SurveyAssignment : IEquatable<SurveyAssignment>
 {
 
@@ -40,7 +39,7 @@ public partial class SurveyAssignment : IEquatable<SurveyAssignment>
     /// The survey form used for this survey.
     /// </summary>
     /// <value>The survey form used for this survey.</value>
-    [DataMember(Name = "surveyForm", EmitDefaultValue = false)]
+    [JsonPropertyName("surveyForm")]
     public PublishedSurveyFormReference SurveyForm { get; set; }
 
 
@@ -49,7 +48,7 @@ public partial class SurveyAssignment : IEquatable<SurveyAssignment>
     /// The URI reference to the flow associated with this survey.
     /// </summary>
     /// <value>The URI reference to the flow associated with this survey.</value>
-    [DataMember(Name = "flow", EmitDefaultValue = false)]
+    [JsonPropertyName("flow")]
     public DomainEntityRef Flow { get; set; }
 
 
@@ -58,7 +57,7 @@ public partial class SurveyAssignment : IEquatable<SurveyAssignment>
     /// An ISO 8601 repeated interval consisting of the number of repetitions, the start datetime, and the interval (e.g. R2/2018-03-01T13:00:00Z/P1M10DT2H30M). Total duration must not exceed 90 days.
     /// </summary>
     /// <value>An ISO 8601 repeated interval consisting of the number of repetitions, the start datetime, and the interval (e.g. R2/2018-03-01T13:00:00Z/P1M10DT2H30M). Total duration must not exceed 90 days.</value>
-    [DataMember(Name = "inviteTimeInterval", EmitDefaultValue = false)]
+    [JsonPropertyName("inviteTimeInterval")]
     public string InviteTimeInterval { get; set; }
 
 
@@ -67,7 +66,7 @@ public partial class SurveyAssignment : IEquatable<SurveyAssignment>
     /// User together with sendingDomain used to send email, null to use no-reply
     /// </summary>
     /// <value>User together with sendingDomain used to send email, null to use no-reply</value>
-    [DataMember(Name = "sendingUser", EmitDefaultValue = false)]
+    [JsonPropertyName("sendingUser")]
     public string SendingUser { get; set; }
 
 
@@ -76,7 +75,7 @@ public partial class SurveyAssignment : IEquatable<SurveyAssignment>
     /// Validated email domain, required
     /// </summary>
     /// <value>Validated email domain, required</value>
-    [DataMember(Name = "sendingDomain", EmitDefaultValue = false)]
+    [JsonPropertyName("sendingDomain")]
     public string SendingDomain { get; set; }
 
 

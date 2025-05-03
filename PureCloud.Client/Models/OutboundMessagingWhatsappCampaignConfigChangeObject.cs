@@ -1,4 +1,3 @@
-using System.Runtime.Serialization;
 using System.Text;
 
 namespace PureCloud.Client.Models;
@@ -6,7 +5,7 @@ namespace PureCloud.Client.Models;
 /// <summary>
 /// OutboundMessagingWhatsappCampaignConfigChangeObject
 /// </summary>
-[DataContract]
+
 public partial class OutboundMessagingWhatsappCampaignConfigChangeObject : IEquatable<OutboundMessagingWhatsappCampaignConfigChangeObject>
 {
     /// <summary>

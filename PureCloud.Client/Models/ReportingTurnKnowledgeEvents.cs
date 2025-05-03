@@ -1,12 +1,12 @@
-using System.Runtime.Serialization;
 using System.Text;
+using System.Text.Json.Serialization;
 
 namespace PureCloud.Client.Models;
 
 /// <summary>
 /// ReportingTurnKnowledgeEvents
 /// </summary>
-[DataContract]
+
 public partial class ReportingTurnKnowledgeEvents : IEquatable<ReportingTurnKnowledgeEvents>
 {
     /// <summary>
@@ -27,7 +27,7 @@ public partial class ReportingTurnKnowledgeEvents : IEquatable<ReportingTurnKnow
     /// The knowledge search data captured during this reporting turn.
     /// </summary>
     /// <value>The knowledge search data captured during this reporting turn.</value>
-    [DataMember(Name = "search", EmitDefaultValue = false)]
+    [JsonPropertyName("search")]
     public List<ReportingTurnKnowledgeSearchEvent> Search { get; set; }
 
 
@@ -36,7 +36,7 @@ public partial class ReportingTurnKnowledgeEvents : IEquatable<ReportingTurnKnow
     /// The knowledge feedback data captured during this reporting turn.
     /// </summary>
     /// <value>The knowledge feedback data captured during this reporting turn.</value>
-    [DataMember(Name = "feedback", EmitDefaultValue = false)]
+    [JsonPropertyName("feedback")]
     public List<ReportingTurnKnowledgeFeedbackEvent> Feedback { get; set; }
 
 

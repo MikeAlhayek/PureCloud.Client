@@ -7,13 +7,13 @@ namespace PureCloud.Client.Models;
 /// <summary>
 /// FlowObservationQuery
 /// </summary>
-[DataContract]
+
 public partial class FlowObservationQuery : IEquatable<FlowObservationQuery>
 {
     /// <summary>
     /// Gets or Sets Metrics
     /// </summary>
-    [JsonConverter(typeof(JsonStringEnumConverter))]
+    
     public enum MetricsEnum
     {
         /// <summary>
@@ -33,7 +33,7 @@ public partial class FlowObservationQuery : IEquatable<FlowObservationQuery>
     /// <summary>
     /// Gets or Sets DetailMetrics
     /// </summary>
-    [JsonConverter(typeof(JsonStringEnumConverter))]
+    
     public enum DetailMetricsEnum
     {
         /// <summary>
@@ -76,7 +76,7 @@ public partial class FlowObservationQuery : IEquatable<FlowObservationQuery>
     /// Filter to return a subset of observations. Expresses boolean logical predicates as well as dimensional filters
     /// </summary>
     /// <value>Filter to return a subset of observations. Expresses boolean logical predicates as well as dimensional filters</value>
-    [DataMember(Name = "filter", EmitDefaultValue = false)]
+    [JsonPropertyName("filter")]
     public FlowObservationQueryFilter Filter { get; set; }
 
 
@@ -85,7 +85,7 @@ public partial class FlowObservationQuery : IEquatable<FlowObservationQuery>
     /// Behaves like a SQL SELECT clause. Only named metrics will be retrieved.
     /// </summary>
     /// <value>Behaves like a SQL SELECT clause. Only named metrics will be retrieved.</value>
-    [DataMember(Name = "metrics", EmitDefaultValue = false)]
+    [JsonPropertyName("metrics")]
     public List<MetricsEnum> Metrics { get; set; }
 
 
@@ -94,7 +94,7 @@ public partial class FlowObservationQuery : IEquatable<FlowObservationQuery>
     /// Metrics for which to include additional detailed observations
     /// </summary>
     /// <value>Metrics for which to include additional detailed observations</value>
-    [DataMember(Name = "detailMetrics", EmitDefaultValue = false)]
+    [JsonPropertyName("detailMetrics")]
     public List<DetailMetricsEnum> DetailMetrics { get; set; }
 
 

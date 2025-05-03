@@ -1,12 +1,12 @@
-using System.Runtime.Serialization;
 using System.Text;
+using System.Text.Json.Serialization;
 
 namespace PureCloud.Client.Models;
 
 /// <summary>
 /// ColumnStatus
 /// </summary>
-[DataContract]
+
 public partial class ColumnStatus : IEquatable<ColumnStatus>
 {
     /// <summary>
@@ -25,7 +25,7 @@ public partial class ColumnStatus : IEquatable<ColumnStatus>
     /// Indicates whether or not an individual contact method column is contactable.
     /// </summary>
     /// <value>Indicates whether or not an individual contact method column is contactable.</value>
-    [DataMember(Name = "contactable", EmitDefaultValue = false)]
+    [JsonPropertyName("contactable")]
     public bool? Contactable { get; set; }
 
 

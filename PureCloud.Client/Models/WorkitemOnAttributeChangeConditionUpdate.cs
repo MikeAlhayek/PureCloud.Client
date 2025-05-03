@@ -7,14 +7,14 @@ namespace PureCloud.Client.Models;
 /// <summary>
 /// WorkitemOnAttributeChangeConditionUpdate
 /// </summary>
-[DataContract]
+
 public partial class WorkitemOnAttributeChangeConditionUpdate : IEquatable<WorkitemOnAttributeChangeConditionUpdate>
 {
     /// <summary>
     /// The name of the workitem attribute whose change will be evaluated as part of the rule.
     /// </summary>
     /// <value>The name of the workitem attribute whose change will be evaluated as part of the rule.</value>
-    [JsonConverter(typeof(JsonStringEnumConverter))]
+    
     public enum AttributeEnum
     {
         /// <summary>
@@ -35,7 +35,7 @@ public partial class WorkitemOnAttributeChangeConditionUpdate : IEquatable<Worki
     /// The name of the workitem attribute whose change will be evaluated as part of the rule.
     /// </summary>
     /// <value>The name of the workitem attribute whose change will be evaluated as part of the rule.</value>
-    [DataMember(Name = "attribute", EmitDefaultValue = false)]
+    [JsonPropertyName("attribute")]
     public AttributeEnum? Attribute { get; set; }
 
     /// <summary>
@@ -65,7 +65,7 @@ public partial class WorkitemOnAttributeChangeConditionUpdate : IEquatable<Worki
     /// The new value of the attribute. If the attribute is updated to this value this part of the condition will be met.
     /// </summary>
     /// <value>The new value of the attribute. If the attribute is updated to this value this part of the condition will be met.</value>
-    [DataMember(Name = "newValue", EmitDefaultValue = false)]
+    [JsonPropertyName("newValue")]
     public string NewValue { get; set; }
 
 
@@ -74,7 +74,7 @@ public partial class WorkitemOnAttributeChangeConditionUpdate : IEquatable<Worki
     /// The old value of the attribute. If the attribute was updated from this value this part of the condition will be met.
     /// </summary>
     /// <value>The old value of the attribute. If the attribute was updated from this value this part of the condition will be met.</value>
-    [DataMember(Name = "oldValue", EmitDefaultValue = false)]
+    [JsonPropertyName("oldValue")]
     public string OldValue { get; set; }
 
 

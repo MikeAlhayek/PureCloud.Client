@@ -7,14 +7,14 @@ namespace PureCloud.Client.Models;
 /// <summary>
 /// Metadata information about a message content.
 /// </summary>
-[DataContract]
+
 public partial class ConversationMessageMetadataContent : IEquatable<ConversationMessageMetadataContent>
 {
     /// <summary>
     /// Type of this content element.
     /// </summary>
     /// <value>Type of this content element.</value>
-    [JsonConverter(typeof(JsonStringEnumConverter))]
+    
     public enum ContentTypeEnum
     {
         /// <summary>
@@ -119,7 +119,7 @@ public partial class ConversationMessageMetadataContent : IEquatable<Conversatio
     /// Content subtype
     /// </summary>
     /// <value>Content subtype</value>
-    [JsonConverter(typeof(JsonStringEnumConverter))]
+    
     public enum SubTypeEnum
     {
         /// <summary>
@@ -200,13 +200,13 @@ public partial class ConversationMessageMetadataContent : IEquatable<Conversatio
     /// Type of this content element.
     /// </summary>
     /// <value>Type of this content element.</value>
-    [DataMember(Name = "contentType", EmitDefaultValue = false)]
+    [JsonPropertyName("contentType")]
     public ContentTypeEnum? ContentType { get; set; }
     /// <summary>
     /// Content subtype
     /// </summary>
     /// <value>Content subtype</value>
-    [DataMember(Name = "subType", EmitDefaultValue = false)]
+    [JsonPropertyName("subType")]
     public SubTypeEnum? SubType { get; set; }
     /// <summary>
     /// Initializes a new instance of the <see cref="ConversationMessageMetadataContent" /> class.

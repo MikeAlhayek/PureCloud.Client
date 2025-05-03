@@ -7,14 +7,14 @@ namespace PureCloud.Client.Models;
 /// <summary>
 /// KnowledgeImport
 /// </summary>
-[DataContract]
+
 public partial class KnowledgeImport : IEquatable<KnowledgeImport>
 {
     /// <summary>
     /// file type of the document
     /// </summary>
     /// <value>file type of the document</value>
-    [JsonConverter(typeof(JsonStringEnumConverter))]
+    
     public enum FileTypeEnum
     {
         /// <summary>
@@ -41,7 +41,7 @@ public partial class KnowledgeImport : IEquatable<KnowledgeImport>
     /// Status of the operation
     /// </summary>
     /// <value>Status of the operation</value>
-    [JsonConverter(typeof(JsonStringEnumConverter))]
+    
     public enum StatusEnum
     {
         /// <summary>
@@ -122,7 +122,7 @@ public partial class KnowledgeImport : IEquatable<KnowledgeImport>
     /// Language code
     /// </summary>
     /// <value>Language code</value>
-    [JsonConverter(typeof(JsonStringEnumConverter))]
+    
     public enum LanguageCodeEnum
     {
         /// <summary>
@@ -413,19 +413,19 @@ public partial class KnowledgeImport : IEquatable<KnowledgeImport>
     /// file type of the document
     /// </summary>
     /// <value>file type of the document</value>
-    [DataMember(Name = "fileType", EmitDefaultValue = false)]
+    [JsonPropertyName("fileType")]
     public FileTypeEnum? FileType { get; set; }
     /// <summary>
     /// Status of the operation
     /// </summary>
     /// <value>Status of the operation</value>
-    [DataMember(Name = "status", EmitDefaultValue = false)]
+    [JsonPropertyName("status")]
     public StatusEnum? Status { get; private set; }
     /// <summary>
     /// Language code
     /// </summary>
     /// <value>Language code</value>
-    [DataMember(Name = "languageCode", EmitDefaultValue = false)]
+    [JsonPropertyName("languageCode")]
     public LanguageCodeEnum? LanguageCode { get; private set; }
 
     /// <summary>
@@ -455,7 +455,7 @@ public partial class KnowledgeImport : IEquatable<KnowledgeImport>
     /// Id of the import operation
     /// </summary>
     /// <value>Id of the import operation</value>
-    [DataMember(Name = "id", EmitDefaultValue = false)]
+    [JsonPropertyName("id")]
     public string Id { get; private set; }
 
 
@@ -464,7 +464,7 @@ public partial class KnowledgeImport : IEquatable<KnowledgeImport>
     /// Name of the import operation
     /// </summary>
     /// <value>Name of the import operation</value>
-    [DataMember(Name = "name", EmitDefaultValue = false)]
+    [JsonPropertyName("name")]
     public string Name { get; set; }
 
 
@@ -473,7 +473,7 @@ public partial class KnowledgeImport : IEquatable<KnowledgeImport>
     /// Upload key
     /// </summary>
     /// <value>Upload key</value>
-    [DataMember(Name = "uploadKey", EmitDefaultValue = false)]
+    [JsonPropertyName("uploadKey")]
     public string UploadKey { get; set; }
 
 
@@ -484,7 +484,7 @@ public partial class KnowledgeImport : IEquatable<KnowledgeImport>
     /// Ignore headers for the specified file
     /// </summary>
     /// <value>Ignore headers for the specified file</value>
-    [DataMember(Name = "ignoreHeaders", EmitDefaultValue = false)]
+    [JsonPropertyName("ignoreHeaders")]
     public bool? IgnoreHeaders { get; set; }
 
 
@@ -495,7 +495,7 @@ public partial class KnowledgeImport : IEquatable<KnowledgeImport>
     /// Report of the import operation
     /// </summary>
     /// <value>Report of the import operation</value>
-    [DataMember(Name = "report", EmitDefaultValue = false)]
+    [JsonPropertyName("report")]
     public ImportReport Report { get; private set; }
 
 
@@ -504,7 +504,7 @@ public partial class KnowledgeImport : IEquatable<KnowledgeImport>
     /// Knowledge base which document import does belong to
     /// </summary>
     /// <value>Knowledge base which document import does belong to</value>
-    [DataMember(Name = "knowledgeBase", EmitDefaultValue = false)]
+    [JsonPropertyName("knowledgeBase")]
     public KnowledgeBase KnowledgeBase { get; private set; }
 
 
@@ -515,7 +515,7 @@ public partial class KnowledgeImport : IEquatable<KnowledgeImport>
     /// Created date. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z
     /// </summary>
     /// <value>Created date. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z</value>
-    [DataMember(Name = "dateCreated", EmitDefaultValue = false)]
+    [JsonPropertyName("dateCreated")]
     public DateTime? DateCreated { get; private set; }
 
 
@@ -524,7 +524,7 @@ public partial class KnowledgeImport : IEquatable<KnowledgeImport>
     /// Last modified date. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z
     /// </summary>
     /// <value>Last modified date. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z</value>
-    [DataMember(Name = "dateModified", EmitDefaultValue = false)]
+    [JsonPropertyName("dateModified")]
     public DateTime? DateModified { get; private set; }
 
 
@@ -533,7 +533,7 @@ public partial class KnowledgeImport : IEquatable<KnowledgeImport>
     /// The URI for this object
     /// </summary>
     /// <value>The URI for this object</value>
-    [DataMember(Name = "selfUri", EmitDefaultValue = false)]
+    [JsonPropertyName("selfUri")]
     public string SelfUri { get; private set; }
 
 

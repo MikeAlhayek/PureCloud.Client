@@ -1,4 +1,3 @@
-using System.Runtime.Serialization;
 using System.Text;
 using System.Text.Json.Serialization;
 
@@ -7,7 +6,7 @@ namespace PureCloud.Client.Models;
 /// <summary>
 /// Settings for a next-action of waiting for additional user input and sending the data as an input action to the bot flow.
 /// </summary>
-[DataContract]
+
 public partial class TextBotWaitForInputAction : IEquatable<TextBotWaitForInputAction>
 {
 
@@ -32,7 +31,7 @@ public partial class TextBotWaitForInputAction : IEquatable<TextBotWaitForInputA
     /// The mode constraints for the user input.
     /// </summary>
     /// <value>The mode constraints for the user input.</value>
-    [DataMember(Name = "modeConstraints", EmitDefaultValue = false)]
+    [JsonPropertyName("modeConstraints")]
     public TextBotModeConstraints ModeConstraints { get; set; }
 
 

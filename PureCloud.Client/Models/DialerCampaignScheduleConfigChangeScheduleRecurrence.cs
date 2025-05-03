@@ -1,12 +1,12 @@
-using System.Runtime.Serialization;
 using System.Text;
+using System.Text.Json.Serialization;
 
 namespace PureCloud.Client.Models;
 
 /// <summary>
 /// DialerCampaignScheduleConfigChangeScheduleRecurrence
 /// </summary>
-[DataContract]
+
 public partial class DialerCampaignScheduleConfigChangeScheduleRecurrence : IEquatable<DialerCampaignScheduleConfigChangeScheduleRecurrence>
 {
     /// <summary>
@@ -39,7 +39,7 @@ public partial class DialerCampaignScheduleConfigChangeScheduleRecurrence : IEqu
     /// the recurrence id
     /// </summary>
     /// <value>the recurrence id</value>
-    [DataMember(Name = "id", EmitDefaultValue = false)]
+    [JsonPropertyName("id")]
     public string Id { get; set; }
 
 
@@ -48,7 +48,7 @@ public partial class DialerCampaignScheduleConfigChangeScheduleRecurrence : IEqu
     /// scheduled start time represented as an ISO-8601 string; for example, yyyy-MM-ddTHH:mm:ss.SSSZ
     /// </summary>
     /// <value>scheduled start time represented as an ISO-8601 string; for example, yyyy-MM-ddTHH:mm:ss.SSSZ</value>
-    [DataMember(Name = "start", EmitDefaultValue = false)]
+    [JsonPropertyName("start")]
     public string Start { get; set; }
 
 
@@ -57,7 +57,7 @@ public partial class DialerCampaignScheduleConfigChangeScheduleRecurrence : IEqu
     /// scheduled end time represented as an ISO-8601 string; for example, yyyy-MM-ddTHH:mm:ss.SSSZ
     /// </summary>
     /// <value>scheduled end time represented as an ISO-8601 string; for example, yyyy-MM-ddTHH:mm:ss.SSSZ</value>
-    [DataMember(Name = "end", EmitDefaultValue = false)]
+    [JsonPropertyName("end")]
     public string End { get; set; }
 
 
@@ -66,7 +66,7 @@ public partial class DialerCampaignScheduleConfigChangeScheduleRecurrence : IEqu
     /// the timezone the recurrence will use
     /// </summary>
     /// <value>the timezone the recurrence will use</value>
-    [DataMember(Name = "timeZone", EmitDefaultValue = false)]
+    [JsonPropertyName("timeZone")]
     public string TimeZone { get; set; }
 
 
@@ -74,7 +74,7 @@ public partial class DialerCampaignScheduleConfigChangeScheduleRecurrence : IEqu
     /// <summary>
     /// Gets or Sets Range
     /// </summary>
-    [DataMember(Name = "range", EmitDefaultValue = false)]
+    [JsonPropertyName("range")]
     public DialerCampaignScheduleConfigChangeRecurrenceRange Range { get; set; }
 
 
@@ -82,7 +82,7 @@ public partial class DialerCampaignScheduleConfigChangeScheduleRecurrence : IEqu
     /// <summary>
     /// Gets or Sets Pattern
     /// </summary>
-    [DataMember(Name = "pattern", EmitDefaultValue = false)]
+    [JsonPropertyName("pattern")]
     public DialerCampaignScheduleConfigChangeRecurrencePattern Pattern { get; set; }
 
 
@@ -91,7 +91,7 @@ public partial class DialerCampaignScheduleConfigChangeScheduleRecurrence : IEqu
     /// modifications to the original recurrence schedule
     /// </summary>
     /// <value>modifications to the original recurrence schedule</value>
-    [DataMember(Name = "alterations", EmitDefaultValue = false)]
+    [JsonPropertyName("alterations")]
     public List<DialerCampaignScheduleConfigChangeAlteration> Alterations { get; set; }
 
 
@@ -99,7 +99,7 @@ public partial class DialerCampaignScheduleConfigChangeScheduleRecurrence : IEqu
     /// <summary>
     /// Gets or Sets AdditionalProperties
     /// </summary>
-    [DataMember(Name = "additionalProperties", EmitDefaultValue = false)]
+    [JsonPropertyName("additionalProperties")]
     public Dictionary<string, object> AdditionalProperties { get; set; }
 
 

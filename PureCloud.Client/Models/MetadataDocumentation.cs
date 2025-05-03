@@ -1,12 +1,12 @@
-using System.Runtime.Serialization;
 using System.Text;
+using System.Text.Json.Serialization;
 
 namespace PureCloud.Client.Models;
 
 /// <summary>
 /// Additional documentation about an artifact
 /// </summary>
-[DataContract]
+
 public partial class MetadataDocumentation : IEquatable<MetadataDocumentation>
 {
     /// <summary>
@@ -23,7 +23,7 @@ public partial class MetadataDocumentation : IEquatable<MetadataDocumentation>
     /// description of the documentation
     /// </summary>
     /// <value>description of the documentation</value>
-    [DataMember(Name = "description", EmitDefaultValue = false)]
+    [JsonPropertyName("description")]
     public string Description { get; private set; }
 
 
@@ -32,7 +32,7 @@ public partial class MetadataDocumentation : IEquatable<MetadataDocumentation>
     /// location where the documentation can be accessed
     /// </summary>
     /// <value>location where the documentation can be accessed</value>
-    [DataMember(Name = "location", EmitDefaultValue = false)]
+    [JsonPropertyName("location")]
     public string Location { get; private set; }
 
 

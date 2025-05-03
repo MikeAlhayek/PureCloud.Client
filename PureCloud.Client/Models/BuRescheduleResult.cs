@@ -1,12 +1,12 @@
-using System.Runtime.Serialization;
 using System.Text;
+using System.Text.Json.Serialization;
 
 namespace PureCloud.Client.Models;
 
 /// <summary>
 /// BuRescheduleResult
 /// </summary>
-[DataContract]
+
 public partial class BuRescheduleResult : IEquatable<BuRescheduleResult>
 {
     /// <summary>
@@ -33,7 +33,7 @@ public partial class BuRescheduleResult : IEquatable<BuRescheduleResult>
     /// The generation results.  Note the result will always be delivered via the generationResultsDownloadUrl; however the schema is included for documentation
     /// </summary>
     /// <value>The generation results.  Note the result will always be delivered via the generationResultsDownloadUrl; however the schema is included for documentation</value>
-    [DataMember(Name = "generationResults", EmitDefaultValue = false)]
+    [JsonPropertyName("generationResults")]
     public ScheduleGenerationResult GenerationResults { get; set; }
 
 
@@ -42,7 +42,7 @@ public partial class BuRescheduleResult : IEquatable<BuRescheduleResult>
     /// The download URL from which to fetch the generation results for the rescheduling run
     /// </summary>
     /// <value>The download URL from which to fetch the generation results for the rescheduling run</value>
-    [DataMember(Name = "generationResultsDownloadUrl", EmitDefaultValue = false)]
+    [JsonPropertyName("generationResultsDownloadUrl")]
     public string GenerationResultsDownloadUrl { get; set; }
 
 
@@ -51,7 +51,7 @@ public partial class BuRescheduleResult : IEquatable<BuRescheduleResult>
     /// The headcount forecast.  Note the result will always be delivered via the headcountForecastDownloadUrl; however the schema is included for documentation
     /// </summary>
     /// <value>The headcount forecast.  Note the result will always be delivered via the headcountForecastDownloadUrl; however the schema is included for documentation</value>
-    [DataMember(Name = "headcountForecast", EmitDefaultValue = false)]
+    [JsonPropertyName("headcountForecast")]
     public BuHeadcountForecast HeadcountForecast { get; set; }
 
 
@@ -60,7 +60,7 @@ public partial class BuRescheduleResult : IEquatable<BuRescheduleResult>
     /// The download URL from which to fetch the headcount forecast for the rescheduling run
     /// </summary>
     /// <value>The download URL from which to fetch the headcount forecast for the rescheduling run</value>
-    [DataMember(Name = "headcountForecastDownloadUrl", EmitDefaultValue = false)]
+    [JsonPropertyName("headcountForecastDownloadUrl")]
     public string HeadcountForecastDownloadUrl { get; set; }
 
 
@@ -69,7 +69,7 @@ public partial class BuRescheduleResult : IEquatable<BuRescheduleResult>
     /// List of download links for agent schedules produced by the rescheduling run
     /// </summary>
     /// <value>List of download links for agent schedules produced by the rescheduling run</value>
-    [DataMember(Name = "agentSchedules", EmitDefaultValue = false)]
+    [JsonPropertyName("agentSchedules")]
     public List<BuRescheduleAgentScheduleResult> AgentSchedules { get; set; }
 
 

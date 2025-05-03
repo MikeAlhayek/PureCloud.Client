@@ -7,14 +7,14 @@ namespace PureCloud.Client.Models;
 /// <summary>
 /// CreateShareRequest
 /// </summary>
-[DataContract]
+
 public partial class CreateShareRequest : IEquatable<CreateShareRequest>
 {
     /// <summary>
     /// The share entity type
     /// </summary>
     /// <value>The share entity type</value>
-    [JsonConverter(typeof(JsonStringEnumConverter))]
+    
     public enum SharedEntityTypeEnum
     {
         /// <summary>
@@ -34,7 +34,7 @@ public partial class CreateShareRequest : IEquatable<CreateShareRequest>
     /// <summary>
     /// Gets or Sets MemberType
     /// </summary>
-    [JsonConverter(typeof(JsonStringEnumConverter))]
+    
     public enum MemberTypeEnum
     {
         /// <summary>
@@ -67,12 +67,12 @@ public partial class CreateShareRequest : IEquatable<CreateShareRequest>
     /// The share entity type
     /// </summary>
     /// <value>The share entity type</value>
-    [DataMember(Name = "sharedEntityType", EmitDefaultValue = false)]
+    [JsonPropertyName("sharedEntityType")]
     public SharedEntityTypeEnum? SharedEntityType { get; set; }
     /// <summary>
     /// Gets or Sets MemberType
     /// </summary>
-    [DataMember(Name = "memberType", EmitDefaultValue = false)]
+    [JsonPropertyName("memberType")]
     public MemberTypeEnum? MemberType { get; set; }
 
     /// <summary>
@@ -106,7 +106,7 @@ public partial class CreateShareRequest : IEquatable<CreateShareRequest>
     /// The entity that will be shared
     /// </summary>
     /// <value>The entity that will be shared</value>
-    [DataMember(Name = "sharedEntity", EmitDefaultValue = false)]
+    [JsonPropertyName("sharedEntity")]
     public SharedEntity SharedEntity { get; set; }
 
 
@@ -117,7 +117,7 @@ public partial class CreateShareRequest : IEquatable<CreateShareRequest>
     /// The member that will have access to this share. Only required if a list of members is not provided.
     /// </summary>
     /// <value>The member that will have access to this share. Only required if a list of members is not provided.</value>
-    [DataMember(Name = "member", EmitDefaultValue = false)]
+    [JsonPropertyName("member")]
     public SharedEntity Member { get; set; }
 
 
@@ -125,7 +125,7 @@ public partial class CreateShareRequest : IEquatable<CreateShareRequest>
     /// <summary>
     /// Gets or Sets Members
     /// </summary>
-    [DataMember(Name = "members", EmitDefaultValue = false)]
+    [JsonPropertyName("members")]
     public List<CreateShareRequestMember> Members { get; set; }
 
 

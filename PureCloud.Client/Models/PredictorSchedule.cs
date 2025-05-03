@@ -7,14 +7,14 @@ namespace PureCloud.Client.Models;
 /// <summary>
 /// PredictorSchedule
 /// </summary>
-[DataContract]
+
 public partial class PredictorSchedule : IEquatable<PredictorSchedule>
 {
     /// <summary>
     /// The predictor schedule type.
     /// </summary>
     /// <value>The predictor schedule type.</value>
-    [JsonConverter(typeof(JsonStringEnumConverter))]
+    
     public enum ScheduleTypeEnum
     {
         /// <summary>
@@ -41,7 +41,7 @@ public partial class PredictorSchedule : IEquatable<PredictorSchedule>
     /// The predictor schedule type.
     /// </summary>
     /// <value>The predictor schedule type.</value>
-    [DataMember(Name = "scheduleType", EmitDefaultValue = false)]
+    [JsonPropertyName("scheduleType")]
     public ScheduleTypeEnum? ScheduleType { get; set; }
 
     /// <summary>
@@ -67,7 +67,7 @@ public partial class PredictorSchedule : IEquatable<PredictorSchedule>
     /// DateTime indicating when the predictor schedule was started. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z
     /// </summary>
     /// <value>DateTime indicating when the predictor schedule was started. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z</value>
-    [DataMember(Name = "dateStarted", EmitDefaultValue = false)]
+    [JsonPropertyName("dateStarted")]
     public DateTime? DateStarted { get; private set; }
 
 

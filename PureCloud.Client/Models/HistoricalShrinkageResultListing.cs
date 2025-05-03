@@ -1,12 +1,12 @@
-using System.Runtime.Serialization;
 using System.Text;
+using System.Text.Json.Serialization;
 
 namespace PureCloud.Client.Models;
 
 /// <summary>
 /// HistoricalShrinkageResultListing
 /// </summary>
-[DataContract]
+
 public partial class HistoricalShrinkageResultListing : IEquatable<HistoricalShrinkageResultListing>
 {
     /// <summary>
@@ -24,7 +24,7 @@ public partial class HistoricalShrinkageResultListing : IEquatable<HistoricalShr
     /// <summary>
     /// Gets or Sets Entities
     /// </summary>
-    [DataMember(Name = "entities", EmitDefaultValue = false)]
+    [JsonPropertyName("entities")]
     public List<HistoricalShrinkageResult> Entities { get; set; }
 
 

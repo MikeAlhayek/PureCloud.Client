@@ -1,12 +1,12 @@
-using System.Runtime.Serialization;
 using System.Text;
+using System.Text.Json.Serialization;
 
 namespace PureCloud.Client.Models;
 
 /// <summary>
 /// ErrorDetails
 /// </summary>
-[DataContract]
+
 public partial class ErrorDetails : IEquatable<ErrorDetails>
 {
     /// <summary>
@@ -38,7 +38,7 @@ public partial class ErrorDetails : IEquatable<ErrorDetails>
     /// <summary>
     /// Gets or Sets Status
     /// </summary>
-    [DataMember(Name = "status", EmitDefaultValue = false)]
+    [JsonPropertyName("status")]
     public int? Status { get; set; }
 
 
@@ -46,7 +46,7 @@ public partial class ErrorDetails : IEquatable<ErrorDetails>
     /// <summary>
     /// Gets or Sets Message
     /// </summary>
-    [DataMember(Name = "message", EmitDefaultValue = false)]
+    [JsonPropertyName("message")]
     public string Message { get; set; }
 
 
@@ -54,7 +54,7 @@ public partial class ErrorDetails : IEquatable<ErrorDetails>
     /// <summary>
     /// Gets or Sets MessageWithParams
     /// </summary>
-    [DataMember(Name = "messageWithParams", EmitDefaultValue = false)]
+    [JsonPropertyName("messageWithParams")]
     public string MessageWithParams { get; set; }
 
 
@@ -62,7 +62,7 @@ public partial class ErrorDetails : IEquatable<ErrorDetails>
     /// <summary>
     /// Gets or Sets MessageParams
     /// </summary>
-    [DataMember(Name = "messageParams", EmitDefaultValue = false)]
+    [JsonPropertyName("messageParams")]
     public Dictionary<string, string> MessageParams { get; set; }
 
 
@@ -70,7 +70,7 @@ public partial class ErrorDetails : IEquatable<ErrorDetails>
     /// <summary>
     /// Gets or Sets Code
     /// </summary>
-    [DataMember(Name = "code", EmitDefaultValue = false)]
+    [JsonPropertyName("code")]
     public string Code { get; set; }
 
 
@@ -78,7 +78,7 @@ public partial class ErrorDetails : IEquatable<ErrorDetails>
     /// <summary>
     /// Gets or Sets ContextId
     /// </summary>
-    [DataMember(Name = "contextId", EmitDefaultValue = false)]
+    [JsonPropertyName("contextId")]
     public string ContextId { get; set; }
 
 
@@ -86,7 +86,7 @@ public partial class ErrorDetails : IEquatable<ErrorDetails>
     /// <summary>
     /// Gets or Sets Nested
     /// </summary>
-    [DataMember(Name = "nested", EmitDefaultValue = false)]
+    [JsonPropertyName("nested")]
     public ErrorDetails Nested { get; set; }
 
 
@@ -94,7 +94,7 @@ public partial class ErrorDetails : IEquatable<ErrorDetails>
     /// <summary>
     /// Gets or Sets Details
     /// </summary>
-    [DataMember(Name = "details", EmitDefaultValue = false)]
+    [JsonPropertyName("details")]
     public string Details { get; set; }
 
 

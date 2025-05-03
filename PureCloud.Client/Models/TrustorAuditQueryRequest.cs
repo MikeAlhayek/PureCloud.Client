@@ -1,4 +1,3 @@
-using System.Runtime.Serialization;
 using System.Text;
 using System.Text.Json.Serialization;
 
@@ -7,7 +6,7 @@ namespace PureCloud.Client.Models;
 /// <summary>
 /// TrustorAuditQueryRequest
 /// </summary>
-[DataContract]
+
 public partial class TrustorAuditQueryRequest : IEquatable<TrustorAuditQueryRequest>
 {
 
@@ -44,7 +43,7 @@ public partial class TrustorAuditQueryRequest : IEquatable<TrustorAuditQueryRequ
     /// Limit returned audits to this trustor organizationId.
     /// </summary>
     /// <value>Limit returned audits to this trustor organizationId.</value>
-    [DataMember(Name = "trustorOrganizationId", EmitDefaultValue = false)]
+    [JsonPropertyName("trustorOrganizationId")]
     public string TrustorOrganizationId { get; set; }
 
 
@@ -53,7 +52,7 @@ public partial class TrustorAuditQueryRequest : IEquatable<TrustorAuditQueryRequ
     /// Limit returned audits to these trustee userIds.
     /// </summary>
     /// <value>Limit returned audits to these trustee userIds.</value>
-    [DataMember(Name = "trusteeUserIds", EmitDefaultValue = false)]
+    [JsonPropertyName("trusteeUserIds")]
     public List<string> TrusteeUserIds { get; set; }
 
 
@@ -62,7 +61,7 @@ public partial class TrustorAuditQueryRequest : IEquatable<TrustorAuditQueryRequ
     /// Starting date/time for the audit search. ISO-8601 formatted date-time, UTC.
     /// </summary>
     /// <value>Starting date/time for the audit search. ISO-8601 formatted date-time, UTC.</value>
-    [DataMember(Name = "startDate", EmitDefaultValue = false)]
+    [JsonPropertyName("startDate")]
     public DateTime? StartDate { get; set; }
 
 
@@ -71,7 +70,7 @@ public partial class TrustorAuditQueryRequest : IEquatable<TrustorAuditQueryRequ
     /// Ending date/time for the audit search. ISO-8601 formatted date-time, UTC.
     /// </summary>
     /// <value>Ending date/time for the audit search. ISO-8601 formatted date-time, UTC.</value>
-    [DataMember(Name = "endDate", EmitDefaultValue = false)]
+    [JsonPropertyName("endDate")]
     public DateTime? EndDate { get; set; }
 
 
@@ -80,7 +79,7 @@ public partial class TrustorAuditQueryRequest : IEquatable<TrustorAuditQueryRequ
     /// Word or phrase to look for in audit bodies.
     /// </summary>
     /// <value>Word or phrase to look for in audit bodies.</value>
-    [DataMember(Name = "queryPhrase", EmitDefaultValue = false)]
+    [JsonPropertyName("queryPhrase")]
     public string QueryPhrase { get; set; }
 
 
@@ -89,7 +88,7 @@ public partial class TrustorAuditQueryRequest : IEquatable<TrustorAuditQueryRequ
     /// Facet information to be returned with the query results.
     /// </summary>
     /// <value>Facet information to be returned with the query results.</value>
-    [DataMember(Name = "facets", EmitDefaultValue = false)]
+    [JsonPropertyName("facets")]
     public List<Facet> Facets { get; set; }
 
 
@@ -98,7 +97,7 @@ public partial class TrustorAuditQueryRequest : IEquatable<TrustorAuditQueryRequ
     /// Additional custom filters to be applied to the query.
     /// </summary>
     /// <value>Additional custom filters to be applied to the query.</value>
-    [DataMember(Name = "filters", EmitDefaultValue = false)]
+    [JsonPropertyName("filters")]
     public List<Filter> Filters { get; set; }
 
 

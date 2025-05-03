@@ -7,14 +7,14 @@ namespace PureCloud.Client.Models;
 /// <summary>
 /// HistoricalShrinkageActivityCategoryResponse
 /// </summary>
-[DataContract]
+
 public partial class HistoricalShrinkageActivityCategoryResponse : IEquatable<HistoricalShrinkageActivityCategoryResponse>
 {
     /// <summary>
     /// Activity category for which shrinkage data is provided
     /// </summary>
     /// <value>Activity category for which shrinkage data is provided</value>
-    [JsonConverter(typeof(JsonStringEnumConverter))]
+    
     public enum ActivityCategoryEnum
     {
         /// <summary>
@@ -83,7 +83,7 @@ public partial class HistoricalShrinkageActivityCategoryResponse : IEquatable<Hi
     /// Activity category for which shrinkage data is provided
     /// </summary>
     /// <value>Activity category for which shrinkage data is provided</value>
-    [DataMember(Name = "activityCategory", EmitDefaultValue = false)]
+    [JsonPropertyName("activityCategory")]
     public ActivityCategoryEnum? ActivityCategory { get; set; }
     /// <summary>
     /// Initializes a new instance of the <see cref="HistoricalShrinkageActivityCategoryResponse" /> class.
@@ -107,7 +107,7 @@ public partial class HistoricalShrinkageActivityCategoryResponse : IEquatable<Hi
     /// Aggregated shrinkage data for the activity category
     /// </summary>
     /// <value>Aggregated shrinkage data for the activity category</value>
-    [DataMember(Name = "shrinkageForActivityCategory", EmitDefaultValue = false)]
+    [JsonPropertyName("shrinkageForActivityCategory")]
     public HistoricalShrinkageAggregateResponse ShrinkageForActivityCategory { get; set; }
 
 
@@ -116,7 +116,7 @@ public partial class HistoricalShrinkageActivityCategoryResponse : IEquatable<Hi
     /// Shrinkage for the activity codes under this activity category
     /// </summary>
     /// <value>Shrinkage for the activity codes under this activity category</value>
-    [DataMember(Name = "shrinkageForActivityCodes", EmitDefaultValue = false)]
+    [JsonPropertyName("shrinkageForActivityCodes")]
     public List<HistoricalShrinkageActivityCodeResponse> ShrinkageForActivityCodes { get; set; }
 
 

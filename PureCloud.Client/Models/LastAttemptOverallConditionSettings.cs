@@ -7,13 +7,13 @@ namespace PureCloud.Client.Models;
 /// <summary>
 /// LastAttemptOverallConditionSettings
 /// </summary>
-[DataContract]
+
 public partial class LastAttemptOverallConditionSettings : IEquatable<LastAttemptOverallConditionSettings>
 {
     /// <summary>
     /// Gets or Sets MediaTypes
     /// </summary>
-    [JsonConverter(typeof(JsonStringEnumConverter))]
+    
     public enum MediaTypesEnum
     {
         /// <summary>
@@ -52,7 +52,7 @@ public partial class LastAttemptOverallConditionSettings : IEquatable<LastAttemp
     /// The operator to use when comparing values.
     /// </summary>
     /// <value>The operator to use when comparing values.</value>
-    [JsonConverter(typeof(JsonStringEnumConverter))]
+    
     public enum OperatorEnum
     {
         /// <summary>
@@ -79,7 +79,7 @@ public partial class LastAttemptOverallConditionSettings : IEquatable<LastAttemp
     /// The operator to use when comparing values.
     /// </summary>
     /// <value>The operator to use when comparing values.</value>
-    [DataMember(Name = "operator", EmitDefaultValue = false)]
+    [JsonPropertyName("operator")]
     public OperatorEnum? Operator { get; set; }
 
     /// <summary>
@@ -107,7 +107,7 @@ public partial class LastAttemptOverallConditionSettings : IEquatable<LastAttemp
     /// A list of media types to evaluate.
     /// </summary>
     /// <value>A list of media types to evaluate.</value>
-    [DataMember(Name = "mediaTypes", EmitDefaultValue = false)]
+    [JsonPropertyName("mediaTypes")]
     public List<MediaTypesEnum> MediaTypes { get; set; }
 
 
@@ -118,7 +118,7 @@ public partial class LastAttemptOverallConditionSettings : IEquatable<LastAttemp
     /// The period value to compare against the contact&#39;s data.
     /// </summary>
     /// <value>The period value to compare against the contact&#39;s data.</value>
-    [DataMember(Name = "value", EmitDefaultValue = false)]
+    [JsonPropertyName("value")]
     public string Value { get; set; }
 
 

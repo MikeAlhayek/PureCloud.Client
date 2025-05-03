@@ -7,14 +7,14 @@ namespace PureCloud.Client.Models;
 /// <summary>
 /// ReportingExportJobRequest
 /// </summary>
-[DataContract]
+
 public partial class ReportingExportJobRequest : IEquatable<ReportingExportJobRequest>
 {
     /// <summary>
     /// The requested format of the exported data
     /// </summary>
     /// <value>The requested format of the exported data</value>
-    [JsonConverter(typeof(JsonStringEnumConverter))]
+    
     public enum ExportFormatEnum
     {
         /// <summary>
@@ -41,7 +41,7 @@ public partial class ReportingExportJobRequest : IEquatable<ReportingExportJobRe
     /// The type of view export job to be created
     /// </summary>
     /// <value>The type of view export job to be created</value>
-    [JsonConverter(typeof(JsonStringEnumConverter))]
+    
     public enum ViewTypeEnum
     {
         /// <summary>
@@ -782,7 +782,7 @@ public partial class ReportingExportJobRequest : IEquatable<ReportingExportJobRe
     /// The user supplied csv delimiter string value either of type 'comma' or 'semicolon' permitted for the export request
     /// </summary>
     /// <value>The user supplied csv delimiter string value either of type 'comma' or 'semicolon' permitted for the export request</value>
-    [JsonConverter(typeof(JsonStringEnumConverter))]
+    
     public enum CsvDelimiterEnum
     {
         /// <summary>
@@ -809,7 +809,7 @@ public partial class ReportingExportJobRequest : IEquatable<ReportingExportJobRe
     /// Indicates the duration format for the exports
     /// </summary>
     /// <value>Indicates the duration format for the exports</value>
-    [JsonConverter(typeof(JsonStringEnumConverter))]
+    
     public enum DurationFormatEnum
     {
         /// <summary>
@@ -848,25 +848,25 @@ public partial class ReportingExportJobRequest : IEquatable<ReportingExportJobRe
     /// The requested format of the exported data
     /// </summary>
     /// <value>The requested format of the exported data</value>
-    [DataMember(Name = "exportFormat", EmitDefaultValue = false)]
+    [JsonPropertyName("exportFormat")]
     public ExportFormatEnum? ExportFormat { get; set; }
     /// <summary>
     /// The type of view export job to be created
     /// </summary>
     /// <value>The type of view export job to be created</value>
-    [DataMember(Name = "viewType", EmitDefaultValue = false)]
+    [JsonPropertyName("viewType")]
     public ViewTypeEnum? ViewType { get; set; }
     /// <summary>
     /// The user supplied csv delimiter string value either of type 'comma' or 'semicolon' permitted for the export request
     /// </summary>
     /// <value>The user supplied csv delimiter string value either of type 'comma' or 'semicolon' permitted for the export request</value>
-    [DataMember(Name = "csvDelimiter", EmitDefaultValue = false)]
+    [JsonPropertyName("csvDelimiter")]
     public CsvDelimiterEnum? CsvDelimiter { get; set; }
     /// <summary>
     /// Indicates the duration format for the exports
     /// </summary>
     /// <value>Indicates the duration format for the exports</value>
-    [DataMember(Name = "durationFormat", EmitDefaultValue = false)]
+    [JsonPropertyName("durationFormat")]
     public DurationFormatEnum? DurationFormat { get; set; }
 
     /// <summary>
@@ -928,7 +928,7 @@ public partial class ReportingExportJobRequest : IEquatable<ReportingExportJobRe
     /// The user supplied name of the export request
     /// </summary>
     /// <value>The user supplied name of the export request</value>
-    [DataMember(Name = "name", EmitDefaultValue = false)]
+    [JsonPropertyName("name")]
     public string Name { get; set; }
 
 
@@ -937,7 +937,7 @@ public partial class ReportingExportJobRequest : IEquatable<ReportingExportJobRe
     /// The requested timezone of the exported data. Time zones are represented as a string of the zone name as found in the IANA time zone database. For example: UTC, Etc/UTC, or Europe/London
     /// </summary>
     /// <value>The requested timezone of the exported data. Time zones are represented as a string of the zone name as found in the IANA time zone database. For example: UTC, Etc/UTC, or Europe/London</value>
-    [DataMember(Name = "timeZone", EmitDefaultValue = false)]
+    [JsonPropertyName("timeZone")]
     public string TimeZone { get; set; }
 
 
@@ -948,7 +948,7 @@ public partial class ReportingExportJobRequest : IEquatable<ReportingExportJobRe
     /// The time period used to limit the the exported data. Intervals are represented as an ISO-8601 string. For example: YYYY-MM-DDThh:mm:ss/YYYY-MM-DDThh:mm:ss
     /// </summary>
     /// <value>The time period used to limit the the exported data. Intervals are represented as an ISO-8601 string. For example: YYYY-MM-DDThh:mm:ss/YYYY-MM-DDThh:mm:ss</value>
-    [DataMember(Name = "interval", EmitDefaultValue = false)]
+    [JsonPropertyName("interval")]
     public string Interval { get; set; }
 
 
@@ -957,7 +957,7 @@ public partial class ReportingExportJobRequest : IEquatable<ReportingExportJobRe
     /// The Period of the request in which to break down the intervals. Periods are represented as an ISO-8601 string. For example: P1D or P1DT12H
     /// </summary>
     /// <value>The Period of the request in which to break down the intervals. Periods are represented as an ISO-8601 string. For example: P1D or P1DT12H</value>
-    [DataMember(Name = "period", EmitDefaultValue = false)]
+    [JsonPropertyName("period")]
     public string Period { get; set; }
 
 
@@ -968,7 +968,7 @@ public partial class ReportingExportJobRequest : IEquatable<ReportingExportJobRe
     /// Filters to apply to create the view
     /// </summary>
     /// <value>Filters to apply to create the view</value>
-    [DataMember(Name = "filter", EmitDefaultValue = false)]
+    [JsonPropertyName("filter")]
     public ViewFilter Filter { get; set; }
 
 
@@ -977,7 +977,7 @@ public partial class ReportingExportJobRequest : IEquatable<ReportingExportJobRe
     /// Indicates if the request has been marked as read
     /// </summary>
     /// <value>Indicates if the request has been marked as read</value>
-    [DataMember(Name = "read", EmitDefaultValue = false)]
+    [JsonPropertyName("read")]
     public bool? Read { get; set; }
 
 
@@ -986,7 +986,7 @@ public partial class ReportingExportJobRequest : IEquatable<ReportingExportJobRe
     /// The locale used for localization of the exported data, i.e. en-US, es
     /// </summary>
     /// <value>The locale used for localization of the exported data, i.e. en-US, es</value>
-    [DataMember(Name = "locale", EmitDefaultValue = false)]
+    [JsonPropertyName("locale")]
     public string Locale { get; set; }
 
 
@@ -995,7 +995,7 @@ public partial class ReportingExportJobRequest : IEquatable<ReportingExportJobRe
     /// Indicates if durations are formatted in hh:mm:ss format instead of ms
     /// </summary>
     /// <value>Indicates if durations are formatted in hh:mm:ss format instead of ms</value>
-    [DataMember(Name = "hasFormatDurations", EmitDefaultValue = false)]
+    [JsonPropertyName("hasFormatDurations")]
     public bool? HasFormatDurations { get; set; }
 
 
@@ -1004,7 +1004,7 @@ public partial class ReportingExportJobRequest : IEquatable<ReportingExportJobRe
     /// Indicates if filters will be split in aggregate detail exports
     /// </summary>
     /// <value>Indicates if filters will be split in aggregate detail exports</value>
-    [DataMember(Name = "hasSplitFilters", EmitDefaultValue = false)]
+    [JsonPropertyName("hasSplitFilters")]
     public bool? HasSplitFilters { get; set; }
 
 
@@ -1013,7 +1013,7 @@ public partial class ReportingExportJobRequest : IEquatable<ReportingExportJobRe
     /// Excludes empty rows from the exports
     /// </summary>
     /// <value>Excludes empty rows from the exports</value>
-    [DataMember(Name = "excludeEmptyRows", EmitDefaultValue = false)]
+    [JsonPropertyName("excludeEmptyRows")]
     public bool? ExcludeEmptyRows { get; set; }
 
 
@@ -1022,7 +1022,7 @@ public partial class ReportingExportJobRequest : IEquatable<ReportingExportJobRe
     /// Indicates if media type will be split in aggregate detail exports
     /// </summary>
     /// <value>Indicates if media type will be split in aggregate detail exports</value>
-    [DataMember(Name = "hasSplitByMedia", EmitDefaultValue = false)]
+    [JsonPropertyName("hasSplitByMedia")]
     public bool? HasSplitByMedia { get; set; }
 
 
@@ -1031,7 +1031,7 @@ public partial class ReportingExportJobRequest : IEquatable<ReportingExportJobRe
     /// Indicates if summary row needs to be present in exports
     /// </summary>
     /// <value>Indicates if summary row needs to be present in exports</value>
-    [DataMember(Name = "hasSummaryRow", EmitDefaultValue = false)]
+    [JsonPropertyName("hasSummaryRow")]
     public bool? HasSummaryRow { get; set; }
 
 
@@ -1042,7 +1042,7 @@ public partial class ReportingExportJobRequest : IEquatable<ReportingExportJobRe
     /// The list of ordered selected columns from the export view by the user
     /// </summary>
     /// <value>The list of ordered selected columns from the export view by the user</value>
-    [DataMember(Name = "selectedColumns", EmitDefaultValue = false)]
+    [JsonPropertyName("selectedColumns")]
     public List<SelectedColumns> SelectedColumns { get; set; }
 
 
@@ -1051,7 +1051,7 @@ public partial class ReportingExportJobRequest : IEquatable<ReportingExportJobRe
     /// Indicates if custom participant attributes will be exported
     /// </summary>
     /// <value>Indicates if custom participant attributes will be exported</value>
-    [DataMember(Name = "hasCustomParticipantAttributes", EmitDefaultValue = false)]
+    [JsonPropertyName("hasCustomParticipantAttributes")]
     public bool? HasCustomParticipantAttributes { get; set; }
 
 
@@ -1060,7 +1060,7 @@ public partial class ReportingExportJobRequest : IEquatable<ReportingExportJobRe
     /// The list of email recipients for the exports
     /// </summary>
     /// <value>The list of email recipients for the exports</value>
-    [DataMember(Name = "recipientEmails", EmitDefaultValue = false)]
+    [JsonPropertyName("recipientEmails")]
     public List<string> RecipientEmails { get; set; }
 
 
@@ -1069,7 +1069,7 @@ public partial class ReportingExportJobRequest : IEquatable<ReportingExportJobRe
     /// Indicates whether to include selected duration format to the column headers
     /// </summary>
     /// <value>Indicates whether to include selected duration format to the column headers</value>
-    [DataMember(Name = "includeDurationFormatInHeader", EmitDefaultValue = false)]
+    [JsonPropertyName("includeDurationFormatInHeader")]
     public bool? IncludeDurationFormatInHeader { get; set; }
 
 

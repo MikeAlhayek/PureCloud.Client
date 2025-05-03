@@ -1,12 +1,12 @@
-using System.Runtime.Serialization;
 using System.Text;
+using System.Text.Json.Serialization;
 
 namespace PureCloud.Client.Models;
 
 /// <summary>
 /// TrustRequestCreate
 /// </summary>
-[DataContract]
+
 public partial class TrustRequestCreate : IEquatable<TrustRequestCreate>
 {
     /// <summary>
@@ -27,7 +27,7 @@ public partial class TrustRequestCreate : IEquatable<TrustRequestCreate>
     /// The list of trustee users that are requesting access. If no users are specified, at least one group is required.
     /// </summary>
     /// <value>The list of trustee users that are requesting access. If no users are specified, at least one group is required.</value>
-    [DataMember(Name = "userIds", EmitDefaultValue = false)]
+    [JsonPropertyName("userIds")]
     public List<string> UserIds { get; set; }
 
 
@@ -36,7 +36,7 @@ public partial class TrustRequestCreate : IEquatable<TrustRequestCreate>
     /// The list of trustee groups that are requesting access. If no groups are specified, at least one user is required.
     /// </summary>
     /// <value>The list of trustee groups that are requesting access. If no groups are specified, at least one user is required.</value>
-    [DataMember(Name = "groupIds", EmitDefaultValue = false)]
+    [JsonPropertyName("groupIds")]
     public List<string> GroupIds { get; set; }
 
 

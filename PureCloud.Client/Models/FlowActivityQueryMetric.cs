@@ -7,14 +7,14 @@ namespace PureCloud.Client.Models;
 /// <summary>
 /// FlowActivityQueryMetric
 /// </summary>
-[DataContract]
+
 public partial class FlowActivityQueryMetric : IEquatable<FlowActivityQueryMetric>
 {
     /// <summary>
     /// The requested metric
     /// </summary>
     /// <value>The requested metric</value>
-    [JsonConverter(typeof(JsonStringEnumConverter))]
+    
     public enum MetricEnum
     {
         /// <summary>
@@ -35,7 +35,7 @@ public partial class FlowActivityQueryMetric : IEquatable<FlowActivityQueryMetri
     /// The requested metric
     /// </summary>
     /// <value>The requested metric</value>
-    [DataMember(Name = "metric", EmitDefaultValue = false)]
+    [JsonPropertyName("metric")]
     public MetricEnum? Metric { get; set; }
 
     /// <summary>
@@ -63,7 +63,7 @@ public partial class FlowActivityQueryMetric : IEquatable<FlowActivityQueryMetri
     /// Flag for including observation details for this metric in the response
     /// </summary>
     /// <value>Flag for including observation details for this metric in the response</value>
-    [DataMember(Name = "details", EmitDefaultValue = false)]
+    [JsonPropertyName("details")]
     public bool? Details { get; set; }
 
 

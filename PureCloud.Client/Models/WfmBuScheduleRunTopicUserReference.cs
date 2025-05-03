@@ -1,12 +1,12 @@
-using System.Runtime.Serialization;
 using System.Text;
+using System.Text.Json.Serialization;
 
 namespace PureCloud.Client.Models;
 
 /// <summary>
 /// WfmBuScheduleRunTopicUserReference
 /// </summary>
-[DataContract]
+
 public partial class WfmBuScheduleRunTopicUserReference : IEquatable<WfmBuScheduleRunTopicUserReference>
 {
     /// <summary>
@@ -24,7 +24,7 @@ public partial class WfmBuScheduleRunTopicUserReference : IEquatable<WfmBuSchedu
     /// <summary>
     /// Gets or Sets Id
     /// </summary>
-    [DataMember(Name = "id", EmitDefaultValue = false)]
+    [JsonPropertyName("id")]
     public string Id { get; set; }
 
 

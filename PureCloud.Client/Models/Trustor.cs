@@ -1,4 +1,3 @@
-using System.Runtime.Serialization;
 using System.Text;
 using System.Text.Json.Serialization;
 
@@ -7,7 +6,7 @@ namespace PureCloud.Client.Models;
 /// <summary>
 /// Trustor
 /// </summary>
-[DataContract]
+
 public partial class Trustor : IEquatable<Trustor>
 {
 
@@ -32,7 +31,7 @@ public partial class Trustor : IEquatable<Trustor>
     /// Organization Id for this trust.
     /// </summary>
     /// <value>Organization Id for this trust.</value>
-    [DataMember(Name = "id", EmitDefaultValue = false)]
+    [JsonPropertyName("id")]
     public string Id { get; private set; }
 
 
@@ -41,7 +40,7 @@ public partial class Trustor : IEquatable<Trustor>
     /// If disabled no trustee user will have access, even if they were previously added.
     /// </summary>
     /// <value>If disabled no trustee user will have access, even if they were previously added.</value>
-    [DataMember(Name = "enabled", EmitDefaultValue = false)]
+    [JsonPropertyName("enabled")]
     public bool? Enabled { get; set; }
 
 
@@ -50,7 +49,7 @@ public partial class Trustor : IEquatable<Trustor>
     /// Date Trust was created. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z
     /// </summary>
     /// <value>Date Trust was created. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z</value>
-    [DataMember(Name = "dateCreated", EmitDefaultValue = false)]
+    [JsonPropertyName("dateCreated")]
     public DateTime? DateCreated { get; private set; }
 
 
@@ -59,7 +58,7 @@ public partial class Trustor : IEquatable<Trustor>
     /// User that created trust.
     /// </summary>
     /// <value>User that created trust.</value>
-    [DataMember(Name = "createdBy", EmitDefaultValue = false)]
+    [JsonPropertyName("createdBy")]
     public OrgUser CreatedBy { get; private set; }
 
 
@@ -68,7 +67,7 @@ public partial class Trustor : IEquatable<Trustor>
     /// Organization associated with this trust.
     /// </summary>
     /// <value>Organization associated with this trust.</value>
-    [DataMember(Name = "organization", EmitDefaultValue = false)]
+    [JsonPropertyName("organization")]
     public Organization Organization { get; private set; }
 
 
@@ -77,7 +76,7 @@ public partial class Trustor : IEquatable<Trustor>
     /// Authorization for the trustee user has in this trustor organization
     /// </summary>
     /// <value>Authorization for the trustee user has in this trustor organization</value>
-    [DataMember(Name = "authorization", EmitDefaultValue = false)]
+    [JsonPropertyName("authorization")]
     public TrusteeAuthorization Authorization { get; private set; }
 
 
@@ -86,7 +85,7 @@ public partial class Trustor : IEquatable<Trustor>
     /// The URI for this object
     /// </summary>
     /// <value>The URI for this object</value>
-    [DataMember(Name = "selfUri", EmitDefaultValue = false)]
+    [JsonPropertyName("selfUri")]
     public string SelfUri { get; private set; }
 
 

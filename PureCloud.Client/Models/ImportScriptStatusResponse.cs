@@ -1,12 +1,12 @@
-using System.Runtime.Serialization;
 using System.Text;
+using System.Text.Json.Serialization;
 
 namespace PureCloud.Client.Models;
 
 /// <summary>
 /// ImportScriptStatusResponse
 /// </summary>
-[DataContract]
+
 public partial class ImportScriptStatusResponse : IEquatable<ImportScriptStatusResponse>
 {
     /// <summary>
@@ -28,7 +28,7 @@ public partial class ImportScriptStatusResponse : IEquatable<ImportScriptStatusR
     /// <summary>
     /// Gets or Sets Url
     /// </summary>
-    [DataMember(Name = "url", EmitDefaultValue = false)]
+    [JsonPropertyName("url")]
     public string Url { get; set; }
 
 
@@ -36,7 +36,7 @@ public partial class ImportScriptStatusResponse : IEquatable<ImportScriptStatusR
     /// <summary>
     /// Gets or Sets Succeeded
     /// </summary>
-    [DataMember(Name = "succeeded", EmitDefaultValue = false)]
+    [JsonPropertyName("succeeded")]
     public bool? Succeeded { get; set; }
 
 
@@ -44,7 +44,7 @@ public partial class ImportScriptStatusResponse : IEquatable<ImportScriptStatusR
     /// <summary>
     /// Gets or Sets Message
     /// </summary>
-    [DataMember(Name = "message", EmitDefaultValue = false)]
+    [JsonPropertyName("message")]
     public string Message { get; set; }
 
 

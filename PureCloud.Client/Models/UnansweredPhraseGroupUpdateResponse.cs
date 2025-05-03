@@ -1,12 +1,12 @@
-using System.Runtime.Serialization;
 using System.Text;
+using System.Text.Json.Serialization;
 
 namespace PureCloud.Client.Models;
 
 /// <summary>
 /// UnansweredPhraseGroupUpdateResponse
 /// </summary>
-[DataContract]
+
 public partial class UnansweredPhraseGroupUpdateResponse : IEquatable<UnansweredPhraseGroupUpdateResponse>
 {
     /// <summary>
@@ -27,7 +27,7 @@ public partial class UnansweredPhraseGroupUpdateResponse : IEquatable<Unanswered
     /// List of phrases and documents linked in the patch request
     /// </summary>
     /// <value>List of phrases and documents linked in the patch request</value>
-    [DataMember(Name = "phraseAssociations", EmitDefaultValue = false)]
+    [JsonPropertyName("phraseAssociations")]
     public List<PhraseAssociations> PhraseAssociations { get; set; }
 
 
@@ -36,7 +36,7 @@ public partial class UnansweredPhraseGroupUpdateResponse : IEquatable<Unanswered
     /// Knowledge base unanswered group response
     /// </summary>
     /// <value>Knowledge base unanswered group response</value>
-    [DataMember(Name = "group", EmitDefaultValue = false)]
+    [JsonPropertyName("group")]
     public UnansweredGroup Group { get; set; }
 
 

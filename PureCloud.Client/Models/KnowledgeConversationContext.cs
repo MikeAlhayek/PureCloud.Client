@@ -7,14 +7,14 @@ namespace PureCloud.Client.Models;
 /// <summary>
 /// KnowledgeConversationContext
 /// </summary>
-[DataContract]
+
 public partial class KnowledgeConversationContext : IEquatable<KnowledgeConversationContext>
 {
     /// <summary>
     /// The media type of the conversation.
     /// </summary>
     /// <value>The media type of the conversation.</value>
-    [JsonConverter(typeof(JsonStringEnumConverter))]
+    
     public enum MediaTypeEnum
     {
         /// <summary>
@@ -83,7 +83,7 @@ public partial class KnowledgeConversationContext : IEquatable<KnowledgeConversa
     /// The media type of the conversation.
     /// </summary>
     /// <value>The media type of the conversation.</value>
-    [DataMember(Name = "mediaType", EmitDefaultValue = false)]
+    [JsonPropertyName("mediaType")]
     public MediaTypeEnum? MediaType { get; set; }
 
     /// <summary>
@@ -113,7 +113,7 @@ public partial class KnowledgeConversationContext : IEquatable<KnowledgeConversa
     /// The unique identifier of the conversation.
     /// </summary>
     /// <value>The unique identifier of the conversation.</value>
-    [DataMember(Name = "conversationId", EmitDefaultValue = false)]
+    [JsonPropertyName("conversationId")]
     public string ConversationId { get; set; }
 
 
@@ -124,7 +124,7 @@ public partial class KnowledgeConversationContext : IEquatable<KnowledgeConversa
     /// The unique identifier of the queue used to assign the interaction to the user.
     /// </summary>
     /// <value>The unique identifier of the queue used to assign the interaction to the user.</value>
-    [DataMember(Name = "queueId", EmitDefaultValue = false)]
+    [JsonPropertyName("queueId")]
     public string QueueId { get; set; }
 
 
@@ -133,7 +133,7 @@ public partial class KnowledgeConversationContext : IEquatable<KnowledgeConversa
     /// The external contact identifier of the end-user participant.
     /// </summary>
     /// <value>The external contact identifier of the end-user participant.</value>
-    [DataMember(Name = "externalContactId", EmitDefaultValue = false)]
+    [JsonPropertyName("externalContactId")]
     public string ExternalContactId { get; set; }
 
 

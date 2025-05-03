@@ -1,4 +1,3 @@
-using System.Runtime.Serialization;
 using System.Text;
 using System.Text.Json.Serialization;
 
@@ -7,7 +6,7 @@ namespace PureCloud.Client.Models;
 /// <summary>
 /// Data for a single bot flow transcript.
 /// </summary>
-[DataContract]
+
 public partial class TextBotTranscript : IEquatable<TextBotTranscript>
 {
 
@@ -34,7 +33,7 @@ public partial class TextBotTranscript : IEquatable<TextBotTranscript>
     /// The text of the transcript item.
     /// </summary>
     /// <value>The text of the transcript item.</value>
-    [DataMember(Name = "text", EmitDefaultValue = false)]
+    [JsonPropertyName("text")]
     public string Text { get; set; }
 
 
@@ -43,7 +42,7 @@ public partial class TextBotTranscript : IEquatable<TextBotTranscript>
     /// The confidence factor, expressed as a decimal between 0.0 and 1.0, of the transcript item.
     /// </summary>
     /// <value>The confidence factor, expressed as a decimal between 0.0 and 1.0, of the transcript item.</value>
-    [DataMember(Name = "confidence", EmitDefaultValue = false)]
+    [JsonPropertyName("confidence")]
     public float? Confidence { get; set; }
 
 

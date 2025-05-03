@@ -1,4 +1,3 @@
-using System.Runtime.Serialization;
 using System.Text;
 using System.Text.Json.Serialization;
 
@@ -7,7 +6,7 @@ namespace PureCloud.Client.Models;
 /// <summary>
 /// BuUpdateAgentScheduleUploadSchema
 /// </summary>
-[DataContract]
+
 public partial class BuUpdateAgentScheduleUploadSchema : IEquatable<BuUpdateAgentScheduleUploadSchema>
 {
 
@@ -44,7 +43,7 @@ public partial class BuUpdateAgentScheduleUploadSchema : IEquatable<BuUpdateAgen
     /// The ID of the user to whom this agent schedule applies
     /// </summary>
     /// <value>The ID of the user to whom this agent schedule applies</value>
-    [DataMember(Name = "userId", EmitDefaultValue = false)]
+    [JsonPropertyName("userId")]
     public string UserId { get; set; }
 
 
@@ -53,7 +52,7 @@ public partial class BuUpdateAgentScheduleUploadSchema : IEquatable<BuUpdateAgen
     /// The ID of the work plan for this user.  Mutually exclusive with workPlanIdsPerWeek
     /// </summary>
     /// <value>The ID of the work plan for this user.  Mutually exclusive with workPlanIdsPerWeek</value>
-    [DataMember(Name = "workPlanId", EmitDefaultValue = false)]
+    [JsonPropertyName("workPlanId")]
     public ValueWrapperString WorkPlanId { get; set; }
 
 
@@ -62,7 +61,7 @@ public partial class BuUpdateAgentScheduleUploadSchema : IEquatable<BuUpdateAgen
     /// The IDs of the work plans per week for this user.  Mutually exclusive with workPlanId
     /// </summary>
     /// <value>The IDs of the work plans per week for this user.  Mutually exclusive with workPlanId</value>
-    [DataMember(Name = "workPlanIdsPerWeek", EmitDefaultValue = false)]
+    [JsonPropertyName("workPlanIdsPerWeek")]
     public ListWrapperString WorkPlanIdsPerWeek { get; set; }
 
 
@@ -71,7 +70,7 @@ public partial class BuUpdateAgentScheduleUploadSchema : IEquatable<BuUpdateAgen
     /// The shift definitions for this agent schedule
     /// </summary>
     /// <value>The shift definitions for this agent schedule</value>
-    [DataMember(Name = "shifts", EmitDefaultValue = false)]
+    [JsonPropertyName("shifts")]
     public List<BuUpdateAgentScheduleShift> Shifts { get; set; }
 
 
@@ -80,7 +79,7 @@ public partial class BuUpdateAgentScheduleUploadSchema : IEquatable<BuUpdateAgen
     /// Any full day time off markers that apply to this agent schedule
     /// </summary>
     /// <value>Any full day time off markers that apply to this agent schedule</value>
-    [DataMember(Name = "fullDayTimeOffMarkers", EmitDefaultValue = false)]
+    [JsonPropertyName("fullDayTimeOffMarkers")]
     public List<BuFullDayTimeOffMarker> FullDayTimeOffMarkers { get; set; }
 
 
@@ -89,7 +88,7 @@ public partial class BuUpdateAgentScheduleUploadSchema : IEquatable<BuUpdateAgen
     /// Version metadata for this agent schedule. Required if updating or deleting an existing agent schedule, otherwise should be omitted
     /// </summary>
     /// <value>Version metadata for this agent schedule. Required if updating or deleting an existing agent schedule, otherwise should be omitted</value>
-    [DataMember(Name = "metadata", EmitDefaultValue = false)]
+    [JsonPropertyName("metadata")]
     public WfmVersionedEntityMetadata Metadata { get; set; }
 
 
@@ -98,7 +97,7 @@ public partial class BuUpdateAgentScheduleUploadSchema : IEquatable<BuUpdateAgen
     /// Whether to delete this agent&#39;s schedule. Defaults to false if not set
     /// </summary>
     /// <value>Whether to delete this agent&#39;s schedule. Defaults to false if not set</value>
-    [DataMember(Name = "delete", EmitDefaultValue = false)]
+    [JsonPropertyName("delete")]
     public bool? Delete { get; set; }
 
 

@@ -7,14 +7,14 @@ namespace PureCloud.Client.Models;
 /// <summary>
 /// Contains information about the text associated with a response.
 /// </summary>
-[DataContract]
+
 public partial class ResponseText : IEquatable<ResponseText>
 {
     /// <summary>
     /// Response text content type.
     /// </summary>
     /// <value>Response text content type.</value>
-    [JsonConverter(typeof(JsonStringEnumConverter))]
+    
     public enum ContentTypeEnum
     {
         /// <summary>
@@ -41,7 +41,7 @@ public partial class ResponseText : IEquatable<ResponseText>
     /// Response text type.
     /// </summary>
     /// <value>Response text type.</value>
-    [JsonConverter(typeof(JsonStringEnumConverter))]
+    
     public enum TypeEnum
     {
         /// <summary>
@@ -68,13 +68,13 @@ public partial class ResponseText : IEquatable<ResponseText>
     /// Response text content type.
     /// </summary>
     /// <value>Response text content type.</value>
-    [DataMember(Name = "contentType", EmitDefaultValue = false)]
+    [JsonPropertyName("contentType")]
     public ContentTypeEnum? ContentType { get; set; }
     /// <summary>
     /// Response text type.
     /// </summary>
     /// <value>Response text type.</value>
-    [DataMember(Name = "type", EmitDefaultValue = false)]
+    [JsonPropertyName("type")]
     public TypeEnum? Type { get; set; }
 
     /// <summary>
@@ -102,7 +102,7 @@ public partial class ResponseText : IEquatable<ResponseText>
     /// Response text content.
     /// </summary>
     /// <value>Response text content.</value>
-    [DataMember(Name = "content", EmitDefaultValue = false)]
+    [JsonPropertyName("content")]
     public string Content { get; set; }
 
 

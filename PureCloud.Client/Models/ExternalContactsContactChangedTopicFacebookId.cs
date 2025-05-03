@@ -1,12 +1,12 @@
-using System.Runtime.Serialization;
 using System.Text;
+using System.Text.Json.Serialization;
 
 namespace PureCloud.Client.Models;
 
 /// <summary>
 /// ExternalContactsContactChangedTopicFacebookId
 /// </summary>
-[DataContract]
+
 public partial class ExternalContactsContactChangedTopicFacebookId : IEquatable<ExternalContactsContactChangedTopicFacebookId>
 {
     /// <summary>
@@ -26,7 +26,7 @@ public partial class ExternalContactsContactChangedTopicFacebookId : IEquatable<
     /// <summary>
     /// Gets or Sets Ids
     /// </summary>
-    [DataMember(Name = "ids", EmitDefaultValue = false)]
+    [JsonPropertyName("ids")]
     public List<ExternalContactsContactChangedTopicFacebookScopedId> Ids { get; set; }
 
 
@@ -34,7 +34,7 @@ public partial class ExternalContactsContactChangedTopicFacebookId : IEquatable<
     /// <summary>
     /// Gets or Sets DisplayName
     /// </summary>
-    [DataMember(Name = "displayName", EmitDefaultValue = false)]
+    [JsonPropertyName("displayName")]
     public string DisplayName { get; set; }
 
 

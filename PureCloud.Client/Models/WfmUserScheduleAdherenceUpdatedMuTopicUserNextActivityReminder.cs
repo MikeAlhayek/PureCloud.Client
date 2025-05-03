@@ -1,12 +1,12 @@
-using System.Runtime.Serialization;
 using System.Text;
+using System.Text.Json.Serialization;
 
 namespace PureCloud.Client.Models;
 
 /// <summary>
 /// WfmUserScheduleAdherenceUpdatedMuTopicUserNextActivityReminder
 /// </summary>
-[DataContract]
+
 public partial class WfmUserScheduleAdherenceUpdatedMuTopicUserNextActivityReminder : IEquatable<WfmUserScheduleAdherenceUpdatedMuTopicUserNextActivityReminder>
 {
     /// <summary>
@@ -26,7 +26,7 @@ public partial class WfmUserScheduleAdherenceUpdatedMuTopicUserNextActivityRemin
     /// <summary>
     /// Gets or Sets ActivityCategory
     /// </summary>
-    [DataMember(Name = "activityCategory", EmitDefaultValue = false)]
+    [JsonPropertyName("activityCategory")]
     public string ActivityCategory { get; set; }
 
 
@@ -34,7 +34,7 @@ public partial class WfmUserScheduleAdherenceUpdatedMuTopicUserNextActivityRemin
     /// <summary>
     /// Gets or Sets StartDate
     /// </summary>
-    [DataMember(Name = "startDate", EmitDefaultValue = false)]
+    [JsonPropertyName("startDate")]
     public DateTime? StartDate { get; set; }
 
 

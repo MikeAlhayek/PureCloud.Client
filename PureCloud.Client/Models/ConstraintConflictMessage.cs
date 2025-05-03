@@ -1,12 +1,12 @@
-using System.Runtime.Serialization;
 using System.Text;
+using System.Text.Json.Serialization;
 
 namespace PureCloud.Client.Models;
 
 /// <summary>
 /// ConstraintConflictMessage
 /// </summary>
-[DataContract]
+
 public partial class ConstraintConflictMessage : IEquatable<ConstraintConflictMessage>
 {
     /// <summary>
@@ -27,7 +27,7 @@ public partial class ConstraintConflictMessage : IEquatable<ConstraintConflictMe
     /// Message for how to resolve a set of conflicted work plan constraints
     /// </summary>
     /// <value>Message for how to resolve a set of conflicted work plan constraints</value>
-    [DataMember(Name = "message", EmitDefaultValue = false)]
+    [JsonPropertyName("message")]
     public WorkPlanConstraintConflictMessage Message { get; set; }
 
 
@@ -36,7 +36,7 @@ public partial class ConstraintConflictMessage : IEquatable<ConstraintConflictMe
     /// Messages for the set of conflicted work plan constraints. Each element indicates the message of a work plan constraint that is conflicted in the set
     /// </summary>
     /// <value>Messages for the set of conflicted work plan constraints. Each element indicates the message of a work plan constraint that is conflicted in the set</value>
-    [DataMember(Name = "conflictedConstraintMessages", EmitDefaultValue = false)]
+    [JsonPropertyName("conflictedConstraintMessages")]
     public List<WorkPlanConstraintMessage> ConflictedConstraintMessages { get; set; }
 
 

@@ -1,4 +1,3 @@
-using System.Runtime.Serialization;
 using System.Text;
 using System.Text.Json.Serialization;
 
@@ -7,7 +6,7 @@ namespace PureCloud.Client.Models;
 /// <summary>
 /// PatchOutcome
 /// </summary>
-[DataContract]
+
 public partial class PatchOutcome : IEquatable<PatchOutcome>
 {
 
@@ -46,7 +45,7 @@ public partial class PatchOutcome : IEquatable<PatchOutcome>
     /// Whether or not the outcome is active.
     /// </summary>
     /// <value>Whether or not the outcome is active.</value>
-    [DataMember(Name = "isActive", EmitDefaultValue = false)]
+    [JsonPropertyName("isActive")]
     public bool? IsActive { get; set; }
 
 
@@ -55,7 +54,7 @@ public partial class PatchOutcome : IEquatable<PatchOutcome>
     /// The display name of the outcome.
     /// </summary>
     /// <value>The display name of the outcome.</value>
-    [DataMember(Name = "displayName", EmitDefaultValue = false)]
+    [JsonPropertyName("displayName")]
     public string DisplayName { get; set; }
 
 
@@ -64,7 +63,7 @@ public partial class PatchOutcome : IEquatable<PatchOutcome>
     /// The version of the outcome.
     /// </summary>
     /// <value>The version of the outcome.</value>
-    [DataMember(Name = "version", EmitDefaultValue = false)]
+    [JsonPropertyName("version")]
     public int? Version { get; set; }
 
 
@@ -73,7 +72,7 @@ public partial class PatchOutcome : IEquatable<PatchOutcome>
     /// A description of the outcome.
     /// </summary>
     /// <value>A description of the outcome.</value>
-    [DataMember(Name = "description", EmitDefaultValue = false)]
+    [JsonPropertyName("description")]
     public string Description { get; set; }
 
 
@@ -82,7 +81,7 @@ public partial class PatchOutcome : IEquatable<PatchOutcome>
     /// Whether or not the outcome is positive.
     /// </summary>
     /// <value>Whether or not the outcome is positive.</value>
-    [DataMember(Name = "isPositive", EmitDefaultValue = false)]
+    [JsonPropertyName("isPositive")]
     public bool? IsPositive { get; set; }
 
 
@@ -91,7 +90,7 @@ public partial class PatchOutcome : IEquatable<PatchOutcome>
     /// The context of the outcome.
     /// </summary>
     /// <value>The context of the outcome.</value>
-    [DataMember(Name = "context", EmitDefaultValue = false)]
+    [JsonPropertyName("context")]
     public PatchContext Context { get; set; }
 
 
@@ -100,7 +99,7 @@ public partial class PatchOutcome : IEquatable<PatchOutcome>
     /// The pattern of rules defining the filter of the outcome.
     /// </summary>
     /// <value>The pattern of rules defining the filter of the outcome.</value>
-    [DataMember(Name = "journey", EmitDefaultValue = false)]
+    [JsonPropertyName("journey")]
     public PatchJourney Journey { get; set; }
 
 
@@ -109,7 +108,7 @@ public partial class PatchOutcome : IEquatable<PatchOutcome>
     /// The field from the event indicating the associated value.
     /// </summary>
     /// <value>The field from the event indicating the associated value.</value>
-    [DataMember(Name = "associatedValueField", EmitDefaultValue = false)]
+    [JsonPropertyName("associatedValueField")]
     public PatchAssociatedValueField AssociatedValueField { get; set; }
 
 

@@ -1,4 +1,3 @@
-using System.Runtime.Serialization;
 using System.Text;
 using System.Text.Json.Serialization;
 
@@ -7,7 +6,7 @@ namespace PureCloud.Client.Models;
 /// <summary>
 /// MoveAgentsRequest
 /// </summary>
-[DataContract]
+
 public partial class MoveAgentsRequest : IEquatable<MoveAgentsRequest>
 {
 
@@ -34,7 +33,7 @@ public partial class MoveAgentsRequest : IEquatable<MoveAgentsRequest>
     /// The list of user ids to move
     /// </summary>
     /// <value>The list of user ids to move</value>
-    [DataMember(Name = "userIds", EmitDefaultValue = false)]
+    [JsonPropertyName("userIds")]
     public List<string> UserIds { get; set; }
 
 
@@ -43,7 +42,7 @@ public partial class MoveAgentsRequest : IEquatable<MoveAgentsRequest>
     /// The id of the management unit for which the move will be performed. To remove users from their management unit this should be set to null.
     /// </summary>
     /// <value>The id of the management unit for which the move will be performed. To remove users from their management unit this should be set to null.</value>
-    [DataMember(Name = "destinationManagementUnitId", EmitDefaultValue = false)]
+    [JsonPropertyName("destinationManagementUnitId")]
     public string DestinationManagementUnitId { get; set; }
 
 

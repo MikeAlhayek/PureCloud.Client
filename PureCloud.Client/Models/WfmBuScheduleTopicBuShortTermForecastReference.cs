@@ -1,12 +1,12 @@
-using System.Runtime.Serialization;
 using System.Text;
+using System.Text.Json.Serialization;
 
 namespace PureCloud.Client.Models;
 
 /// <summary>
 /// WfmBuScheduleTopicBuShortTermForecastReference
 /// </summary>
-[DataContract]
+
 public partial class WfmBuScheduleTopicBuShortTermForecastReference : IEquatable<WfmBuScheduleTopicBuShortTermForecastReference>
 {
     /// <summary>
@@ -28,7 +28,7 @@ public partial class WfmBuScheduleTopicBuShortTermForecastReference : IEquatable
     /// <summary>
     /// Gets or Sets Id
     /// </summary>
-    [DataMember(Name = "id", EmitDefaultValue = false)]
+    [JsonPropertyName("id")]
     public string Id { get; set; }
 
 
@@ -36,7 +36,7 @@ public partial class WfmBuScheduleTopicBuShortTermForecastReference : IEquatable
     /// <summary>
     /// Gets or Sets WeekDate
     /// </summary>
-    [DataMember(Name = "weekDate", EmitDefaultValue = false)]
+    [JsonPropertyName("weekDate")]
     public string WeekDate { get; set; }
 
 
@@ -44,7 +44,7 @@ public partial class WfmBuScheduleTopicBuShortTermForecastReference : IEquatable
     /// <summary>
     /// Gets or Sets Description
     /// </summary>
-    [DataMember(Name = "description", EmitDefaultValue = false)]
+    [JsonPropertyName("description")]
     public string Description { get; set; }
 
 

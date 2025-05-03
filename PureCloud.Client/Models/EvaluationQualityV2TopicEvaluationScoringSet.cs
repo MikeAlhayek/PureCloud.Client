@@ -1,12 +1,12 @@
-using System.Runtime.Serialization;
 using System.Text;
+using System.Text.Json.Serialization;
 
 namespace PureCloud.Client.Models;
 
 /// <summary>
 /// EvaluationQualityV2TopicEvaluationScoringSet
 /// </summary>
-[DataContract]
+
 public partial class EvaluationQualityV2TopicEvaluationScoringSet : IEquatable<EvaluationQualityV2TopicEvaluationScoringSet>
 {
     /// <summary>
@@ -26,7 +26,7 @@ public partial class EvaluationQualityV2TopicEvaluationScoringSet : IEquatable<E
     /// <summary>
     /// Gets or Sets TotalScore
     /// </summary>
-    [DataMember(Name = "totalScore", EmitDefaultValue = false)]
+    [JsonPropertyName("totalScore")]
     public long? TotalScore { get; set; }
 
 
@@ -34,7 +34,7 @@ public partial class EvaluationQualityV2TopicEvaluationScoringSet : IEquatable<E
     /// <summary>
     /// Gets or Sets TotalCriticalScore
     /// </summary>
-    [DataMember(Name = "totalCriticalScore", EmitDefaultValue = false)]
+    [JsonPropertyName("totalCriticalScore")]
     public long? TotalCriticalScore { get; set; }
 
 

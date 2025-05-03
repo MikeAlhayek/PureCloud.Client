@@ -7,13 +7,13 @@ namespace PureCloud.Client.Models;
 /// <summary>
 /// DependencyObject
 /// </summary>
-[DataContract]
+
 public partial class DependencyObject : IEquatable<DependencyObject>
 {
     /// <summary>
     /// Gets or Sets Type
     /// </summary>
-    [JsonConverter(typeof(JsonStringEnumConverter))]
+    
     public enum TypeEnum
     {
         /// <summary>
@@ -465,7 +465,7 @@ public partial class DependencyObject : IEquatable<DependencyObject>
     /// <summary>
     /// Gets or Sets Type
     /// </summary>
-    [DataMember(Name = "type", EmitDefaultValue = false)]
+    [JsonPropertyName("type")]
     public TypeEnum? Type { get; set; }
     /// <summary>
     /// Initializes a new instance of the <see cref="DependencyObject" /> class.
@@ -499,7 +499,7 @@ public partial class DependencyObject : IEquatable<DependencyObject>
     /// The dependency identifier
     /// </summary>
     /// <value>The dependency identifier</value>
-    [DataMember(Name = "id", EmitDefaultValue = false)]
+    [JsonPropertyName("id")]
     public string Id { get; set; }
 
 
@@ -507,7 +507,7 @@ public partial class DependencyObject : IEquatable<DependencyObject>
     /// <summary>
     /// Gets or Sets Name
     /// </summary>
-    [DataMember(Name = "name", EmitDefaultValue = false)]
+    [JsonPropertyName("name")]
     public string Name { get; set; }
 
 
@@ -515,7 +515,7 @@ public partial class DependencyObject : IEquatable<DependencyObject>
     /// <summary>
     /// Gets or Sets Version
     /// </summary>
-    [DataMember(Name = "version", EmitDefaultValue = false)]
+    [JsonPropertyName("version")]
     public string Version { get; set; }
 
 
@@ -525,7 +525,7 @@ public partial class DependencyObject : IEquatable<DependencyObject>
     /// <summary>
     /// Gets or Sets Deleted
     /// </summary>
-    [DataMember(Name = "deleted", EmitDefaultValue = false)]
+    [JsonPropertyName("deleted")]
     public bool? Deleted { get; set; }
 
 
@@ -533,7 +533,7 @@ public partial class DependencyObject : IEquatable<DependencyObject>
     /// <summary>
     /// Gets or Sets Updated
     /// </summary>
-    [DataMember(Name = "updated", EmitDefaultValue = false)]
+    [JsonPropertyName("updated")]
     public bool? Updated { get; set; }
 
 
@@ -541,7 +541,7 @@ public partial class DependencyObject : IEquatable<DependencyObject>
     /// <summary>
     /// Gets or Sets StateUnknown
     /// </summary>
-    [DataMember(Name = "stateUnknown", EmitDefaultValue = false)]
+    [JsonPropertyName("stateUnknown")]
     public bool? StateUnknown { get; set; }
 
 
@@ -549,7 +549,7 @@ public partial class DependencyObject : IEquatable<DependencyObject>
     /// <summary>
     /// Gets or Sets ConsumedResources
     /// </summary>
-    [DataMember(Name = "consumedResources", EmitDefaultValue = false)]
+    [JsonPropertyName("consumedResources")]
     public List<Dependency> ConsumedResources { get; set; }
 
 
@@ -557,7 +557,7 @@ public partial class DependencyObject : IEquatable<DependencyObject>
     /// <summary>
     /// Gets or Sets ConsumingResources
     /// </summary>
-    [DataMember(Name = "consumingResources", EmitDefaultValue = false)]
+    [JsonPropertyName("consumingResources")]
     public List<Dependency> ConsumingResources { get; set; }
 
 
@@ -566,7 +566,7 @@ public partial class DependencyObject : IEquatable<DependencyObject>
     /// The URI for this object
     /// </summary>
     /// <value>The URI for this object</value>
-    [DataMember(Name = "selfUri", EmitDefaultValue = false)]
+    [JsonPropertyName("selfUri")]
     public string SelfUri { get; private set; }
 
 

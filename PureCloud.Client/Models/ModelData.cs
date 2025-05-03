@@ -1,12 +1,12 @@
-using System.Runtime.Serialization;
 using System.Text;
+using System.Text.Json.Serialization;
 
 namespace PureCloud.Client.Models;
 
 /// <summary>
 /// ModelData
 /// </summary>
-[DataContract]
+
 public partial class ModelData : IEquatable<ModelData>
 {
     /// <summary>
@@ -27,7 +27,7 @@ public partial class ModelData : IEquatable<ModelData>
     /// List of URLs to fetch the results of the forecast model. This field is populated only if session state is Complete
     /// </summary>
     /// <value>List of URLs to fetch the results of the forecast model. This field is populated only if session state is Complete</value>
-    [DataMember(Name = "downloadUrls", EmitDefaultValue = false)]
+    [JsonPropertyName("downloadUrls")]
     public List<string> DownloadUrls { get; set; }
 
 
@@ -36,7 +36,7 @@ public partial class ModelData : IEquatable<ModelData>
     /// Result will always come via downloadUrls; however the schema is included for documentation
     /// </summary>
     /// <value>Result will always come via downloadUrls; however the schema is included for documentation</value>
-    [DataMember(Name = "downloadResult", EmitDefaultValue = false)]
+    [JsonPropertyName("downloadResult")]
     public List<PlanningGroupModel> DownloadResult { get; set; }
 
 

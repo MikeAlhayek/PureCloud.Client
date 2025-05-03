@@ -7,14 +7,14 @@ namespace PureCloud.Client.Models;
 /// <summary>
 /// QueryRequestPredicate
 /// </summary>
-[DataContract]
+
 public partial class QueryRequestPredicate : IEquatable<QueryRequestPredicate>
 {
     /// <summary>
     /// The dimension to be filtered
     /// </summary>
     /// <value>The dimension to be filtered</value>
-    [JsonConverter(typeof(JsonStringEnumConverter))]
+    
     public enum DimensionEnum
     {
         /// <summary>
@@ -47,7 +47,7 @@ public partial class QueryRequestPredicate : IEquatable<QueryRequestPredicate>
     /// The dimension to be filtered
     /// </summary>
     /// <value>The dimension to be filtered</value>
-    [DataMember(Name = "dimension", EmitDefaultValue = false)]
+    [JsonPropertyName("dimension")]
     public DimensionEnum? Dimension { get; set; }
 
     /// <summary>
@@ -75,7 +75,7 @@ public partial class QueryRequestPredicate : IEquatable<QueryRequestPredicate>
     /// The value to filter by
     /// </summary>
     /// <value>The value to filter by</value>
-    [DataMember(Name = "value", EmitDefaultValue = false)]
+    [JsonPropertyName("value")]
     public string Value { get; set; }
 
 

@@ -1,4 +1,3 @@
-using System.Runtime.Serialization;
 using System.Text;
 using System.Text.Json.Serialization;
 
@@ -7,7 +6,7 @@ namespace PureCloud.Client.Models;
 /// <summary>
 /// Open Messaging rich media message structure
 /// </summary>
-[DataContract]
+
 public partial class OpenInboundNormalizedMessage : IEquatable<OpenInboundNormalizedMessage>
 {
 
@@ -38,7 +37,7 @@ public partial class OpenInboundNormalizedMessage : IEquatable<OpenInboundNormal
     /// Channel-specific information that describes the message and the message channel/provider.
     /// </summary>
     /// <value>Channel-specific information that describes the message and the message channel/provider.</value>
-    [DataMember(Name = "channel", EmitDefaultValue = false)]
+    [JsonPropertyName("channel")]
     public OpenInboundMessageMessagingChannel Channel { get; set; }
 
 
@@ -47,7 +46,7 @@ public partial class OpenInboundNormalizedMessage : IEquatable<OpenInboundNormal
     /// Message text.
     /// </summary>
     /// <value>Message text.</value>
-    [DataMember(Name = "text", EmitDefaultValue = false)]
+    [JsonPropertyName("text")]
     public string Text { get; set; }
 
 
@@ -56,7 +55,7 @@ public partial class OpenInboundNormalizedMessage : IEquatable<OpenInboundNormal
     /// List of content elements.
     /// </summary>
     /// <value>List of content elements.</value>
-    [DataMember(Name = "content", EmitDefaultValue = false)]
+    [JsonPropertyName("content")]
     public List<OpenInboundMessageContent> Content { get; set; }
 
 
@@ -65,7 +64,7 @@ public partial class OpenInboundNormalizedMessage : IEquatable<OpenInboundNormal
     /// Additional metadata about this message to capture non-channel specific data.
     /// </summary>
     /// <value>Additional metadata about this message to capture non-channel specific data.</value>
-    [DataMember(Name = "metadata", EmitDefaultValue = false)]
+    [JsonPropertyName("metadata")]
     public Dictionary<string, string> Metadata { get; set; }
 
 

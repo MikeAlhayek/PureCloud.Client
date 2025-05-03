@@ -7,13 +7,13 @@ namespace PureCloud.Client.Models;
 /// <summary>
 /// The response for QueryCapabilities which contains the allowed criteria, flow types and action types for the organization.
 /// </summary>
-[DataContract]
+
 public partial class FlowsQueryCriteriaResponse : IEquatable<FlowsQueryCriteriaResponse>
 {
     /// <summary>
     /// Gets or Sets FlowTypes
     /// </summary>
-    [JsonConverter(typeof(JsonStringEnumConverter))]
+    
     public enum FlowTypesEnum
     {
         /// <summary>
@@ -135,7 +135,7 @@ public partial class FlowsQueryCriteriaResponse : IEquatable<FlowsQueryCriteriaR
     /// <summary>
     /// Gets or Sets ActionTypes
     /// </summary>
-    [JsonConverter(typeof(JsonStringEnumConverter))]
+    
     public enum ActionTypesEnum
     {
         /// <summary>
@@ -980,7 +980,7 @@ public partial class FlowsQueryCriteriaResponse : IEquatable<FlowsQueryCriteriaR
     /// The is a list of allowed criteria to query on.
     /// </summary>
     /// <value>The is a list of allowed criteria to query on.</value>
-    [DataMember(Name = "criteria", EmitDefaultValue = false)]
+    [JsonPropertyName("criteria")]
     public List<QueryCriteria> Criteria { get; set; }
 
 
@@ -989,7 +989,7 @@ public partial class FlowsQueryCriteriaResponse : IEquatable<FlowsQueryCriteriaR
     /// The is a list of flow types the organization has access to.
     /// </summary>
     /// <value>The is a list of flow types the organization has access to.</value>
-    [DataMember(Name = "flowTypes", EmitDefaultValue = false)]
+    [JsonPropertyName("flowTypes")]
     public List<FlowTypesEnum> FlowTypes { get; set; }
 
 
@@ -998,7 +998,7 @@ public partial class FlowsQueryCriteriaResponse : IEquatable<FlowsQueryCriteriaR
     /// The is a list of action types the organization has access to.
     /// </summary>
     /// <value>The is a list of action types the organization has access to.</value>
-    [DataMember(Name = "actionTypes", EmitDefaultValue = false)]
+    [JsonPropertyName("actionTypes")]
     public List<ActionTypesEnum> ActionTypes { get; set; }
 
 
@@ -1007,7 +1007,7 @@ public partial class FlowsQueryCriteriaResponse : IEquatable<FlowsQueryCriteriaR
     /// The is a list of potential error codes the organization may encounter.
     /// </summary>
     /// <value>The is a list of potential error codes the organization may encounter.</value>
-    [DataMember(Name = "errorCodes", EmitDefaultValue = false)]
+    [JsonPropertyName("errorCodes")]
     public List<string> ErrorCodes { get; set; }
 
 
@@ -1016,7 +1016,7 @@ public partial class FlowsQueryCriteriaResponse : IEquatable<FlowsQueryCriteriaR
     /// The is a list of potential warning codes the organization may encounter.
     /// </summary>
     /// <value>The is a list of potential warning codes the organization may encounter.</value>
-    [DataMember(Name = "warningCodes", EmitDefaultValue = false)]
+    [JsonPropertyName("warningCodes")]
     public List<string> WarningCodes { get; set; }
 
 

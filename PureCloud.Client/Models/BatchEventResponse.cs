@@ -1,12 +1,12 @@
-using System.Runtime.Serialization;
 using System.Text;
+using System.Text.Json.Serialization;
 
 namespace PureCloud.Client.Models;
 
 /// <summary>
 /// BatchEventResponse
 /// </summary>
-[DataContract]
+
 public partial class BatchEventResponse : IEquatable<BatchEventResponse>
 {
     /// <summary>
@@ -25,7 +25,7 @@ public partial class BatchEventResponse : IEquatable<BatchEventResponse>
     /// A list of validation or server errors that occurred for posted events.
     /// </summary>
     /// <value>A list of validation or server errors that occurred for posted events.</value>
-    [DataMember(Name = "errors", EmitDefaultValue = false)]
+    [JsonPropertyName("errors")]
     public List<EventError> Errors { get; set; }
 
 

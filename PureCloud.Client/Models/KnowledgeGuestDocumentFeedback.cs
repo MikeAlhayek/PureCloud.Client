@@ -7,14 +7,14 @@ namespace PureCloud.Client.Models;
 /// <summary>
 /// KnowledgeGuestDocumentFeedback
 /// </summary>
-[DataContract]
+
 public partial class KnowledgeGuestDocumentFeedback : IEquatable<KnowledgeGuestDocumentFeedback>
 {
     /// <summary>
     /// Feedback rating.
     /// </summary>
     /// <value>Feedback rating.</value>
-    [JsonConverter(typeof(JsonStringEnumConverter))]
+    
     public enum RatingEnum
     {
         /// <summary>
@@ -41,7 +41,7 @@ public partial class KnowledgeGuestDocumentFeedback : IEquatable<KnowledgeGuestD
     /// Feedback reason.
     /// </summary>
     /// <value>Feedback reason.</value>
-    [JsonConverter(typeof(JsonStringEnumConverter))]
+    
     public enum ReasonEnum
     {
         /// <summary>
@@ -68,7 +68,7 @@ public partial class KnowledgeGuestDocumentFeedback : IEquatable<KnowledgeGuestD
     /// The type of the query that surfaced the document on which the feedback was given.
     /// </summary>
     /// <value>The type of the query that surfaced the document on which the feedback was given.</value>
-    [JsonConverter(typeof(JsonStringEnumConverter))]
+    
     public enum QueryTypeEnum
     {
         /// <summary>
@@ -125,7 +125,7 @@ public partial class KnowledgeGuestDocumentFeedback : IEquatable<KnowledgeGuestD
     /// The method how knowledge was surfaced. Article: Full article was shown. Snippet: A snippet from the article was shown. Highlight: A highlighted answer in a snippet was shown.
     /// </summary>
     /// <value>The method how knowledge was surfaced. Article: Full article was shown. Snippet: A snippet from the article was shown. Highlight: A highlighted answer in a snippet was shown.</value>
-    [JsonConverter(typeof(JsonStringEnumConverter))]
+    
     public enum SurfacingMethodEnum
     {
         /// <summary>
@@ -164,7 +164,7 @@ public partial class KnowledgeGuestDocumentFeedback : IEquatable<KnowledgeGuestD
     /// The state of the feedback.
     /// </summary>
     /// <value>The state of the feedback.</value>
-    [JsonConverter(typeof(JsonStringEnumConverter))]
+    
     public enum StateEnum
     {
         /// <summary>
@@ -191,31 +191,31 @@ public partial class KnowledgeGuestDocumentFeedback : IEquatable<KnowledgeGuestD
     /// Feedback rating.
     /// </summary>
     /// <value>Feedback rating.</value>
-    [DataMember(Name = "rating", EmitDefaultValue = false)]
+    [JsonPropertyName("rating")]
     public RatingEnum? Rating { get; set; }
     /// <summary>
     /// Feedback reason.
     /// </summary>
     /// <value>Feedback reason.</value>
-    [DataMember(Name = "reason", EmitDefaultValue = false)]
+    [JsonPropertyName("reason")]
     public ReasonEnum? Reason { get; set; }
     /// <summary>
     /// The type of the query that surfaced the document on which the feedback was given.
     /// </summary>
     /// <value>The type of the query that surfaced the document on which the feedback was given.</value>
-    [DataMember(Name = "queryType", EmitDefaultValue = false)]
+    [JsonPropertyName("queryType")]
     public QueryTypeEnum? QueryType { get; set; }
     /// <summary>
     /// The method how knowledge was surfaced. Article: Full article was shown. Snippet: A snippet from the article was shown. Highlight: A highlighted answer in a snippet was shown.
     /// </summary>
     /// <value>The method how knowledge was surfaced. Article: Full article was shown. Snippet: A snippet from the article was shown. Highlight: A highlighted answer in a snippet was shown.</value>
-    [DataMember(Name = "surfacingMethod", EmitDefaultValue = false)]
+    [JsonPropertyName("surfacingMethod")]
     public SurfacingMethodEnum? SurfacingMethod { get; set; }
     /// <summary>
     /// The state of the feedback.
     /// </summary>
     /// <value>The state of the feedback.</value>
-    [DataMember(Name = "state", EmitDefaultValue = false)]
+    [JsonPropertyName("state")]
     public StateEnum? State { get; set; }
 
     /// <summary>
@@ -255,7 +255,7 @@ public partial class KnowledgeGuestDocumentFeedback : IEquatable<KnowledgeGuestD
     /// The globally unique identifier for the object.
     /// </summary>
     /// <value>The globally unique identifier for the object.</value>
-    [DataMember(Name = "id", EmitDefaultValue = false)]
+    [JsonPropertyName("id")]
     public string Id { get; private set; }
 
 
@@ -264,7 +264,7 @@ public partial class KnowledgeGuestDocumentFeedback : IEquatable<KnowledgeGuestD
     /// The variation of the document on which feedback was given.
     /// </summary>
     /// <value>The variation of the document on which feedback was given.</value>
-    [DataMember(Name = "documentVariation", EmitDefaultValue = false)]
+    [JsonPropertyName("documentVariation")]
     public EntityReference DocumentVariation { get; set; }
 
 
@@ -277,7 +277,7 @@ public partial class KnowledgeGuestDocumentFeedback : IEquatable<KnowledgeGuestD
     /// Free-text comment of the feedback. Maximum length: 2000 characters.
     /// </summary>
     /// <value>Free-text comment of the feedback. Maximum length: 2000 characters.</value>
-    [DataMember(Name = "comment", EmitDefaultValue = false)]
+    [JsonPropertyName("comment")]
     public string Comment { get; set; }
 
 
@@ -286,7 +286,7 @@ public partial class KnowledgeGuestDocumentFeedback : IEquatable<KnowledgeGuestD
     /// The search that surfaced the document on which feedback was given.
     /// </summary>
     /// <value>The search that surfaced the document on which feedback was given.</value>
-    [DataMember(Name = "search", EmitDefaultValue = false)]
+    [JsonPropertyName("search")]
     public EntityReference Search { get; set; }
 
 
@@ -295,7 +295,7 @@ public partial class KnowledgeGuestDocumentFeedback : IEquatable<KnowledgeGuestD
     /// Knowledge guest session ID.
     /// </summary>
     /// <value>Knowledge guest session ID.</value>
-    [DataMember(Name = "sessionId", EmitDefaultValue = false)]
+    [JsonPropertyName("sessionId")]
     public string SessionId { get; private set; }
 
 
@@ -304,7 +304,7 @@ public partial class KnowledgeGuestDocumentFeedback : IEquatable<KnowledgeGuestD
     /// The date and time of the feedback. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z
     /// </summary>
     /// <value>The date and time of the feedback. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z</value>
-    [DataMember(Name = "dateCreated", EmitDefaultValue = false)]
+    [JsonPropertyName("dateCreated")]
     public DateTime? DateCreated { get; private set; }
 
 
@@ -319,7 +319,7 @@ public partial class KnowledgeGuestDocumentFeedback : IEquatable<KnowledgeGuestD
     /// The document on which feedback was given.
     /// </summary>
     /// <value>The document on which feedback was given.</value>
-    [DataMember(Name = "document", EmitDefaultValue = false)]
+    [JsonPropertyName("document")]
     public KnowledgeGuestDocumentVersionReference Document { get; set; }
 
 
@@ -328,7 +328,7 @@ public partial class KnowledgeGuestDocumentFeedback : IEquatable<KnowledgeGuestD
     /// The client application from which feedback was given.
     /// </summary>
     /// <value>The client application from which feedback was given.</value>
-    [DataMember(Name = "application", EmitDefaultValue = false)]
+    [JsonPropertyName("application")]
     public KnowledgeGuestSearchClientApplication Application { get; private set; }
 
 

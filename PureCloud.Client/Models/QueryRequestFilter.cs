@@ -7,14 +7,14 @@ namespace PureCloud.Client.Models;
 /// <summary>
 /// QueryRequestFilter
 /// </summary>
-[DataContract]
+
 public partial class QueryRequestFilter : IEquatable<QueryRequestFilter>
 {
     /// <summary>
     /// The logic used to combine the clauses
     /// </summary>
     /// <value>The logic used to combine the clauses</value>
-    [JsonConverter(typeof(JsonStringEnumConverter))]
+    
     public enum TypeEnum
     {
         /// <summary>
@@ -41,7 +41,7 @@ public partial class QueryRequestFilter : IEquatable<QueryRequestFilter>
     /// The logic used to combine the clauses
     /// </summary>
     /// <value>The logic used to combine the clauses</value>
-    [DataMember(Name = "type", EmitDefaultValue = false)]
+    [JsonPropertyName("type")]
     public TypeEnum? Type { get; set; }
 
     /// <summary>
@@ -69,7 +69,7 @@ public partial class QueryRequestFilter : IEquatable<QueryRequestFilter>
     /// The list of clauses used to filter the data
     /// </summary>
     /// <value>The list of clauses used to filter the data</value>
-    [DataMember(Name = "clauses", EmitDefaultValue = false)]
+    [JsonPropertyName("clauses")]
     public List<QueryRequestClause> Clauses { get; set; }
 
 

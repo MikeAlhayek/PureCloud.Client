@@ -1,12 +1,12 @@
-using System.Runtime.Serialization;
 using System.Text;
+using System.Text.Json.Serialization;
 
 namespace PureCloud.Client.Models;
 
 /// <summary>
 /// OutboundMessagingEmailCampaignProgressEventCampaignProgress
 /// </summary>
-[DataContract]
+
 public partial class OutboundMessagingEmailCampaignProgressEventCampaignProgress : IEquatable<OutboundMessagingEmailCampaignProgressEventCampaignProgress>
 {
     /// <summary>
@@ -36,7 +36,7 @@ public partial class OutboundMessagingEmailCampaignProgressEventCampaignProgress
     /// <summary>
     /// Gets or Sets Campaign
     /// </summary>
-    [DataMember(Name = "campaign", EmitDefaultValue = false)]
+    [JsonPropertyName("campaign")]
     public OutboundMessagingEmailCampaignProgressEventUriReference Campaign { get; set; }
 
 
@@ -45,7 +45,7 @@ public partial class OutboundMessagingEmailCampaignProgressEventCampaignProgress
     /// The number of contacts that have been called so far
     /// </summary>
     /// <value>The number of contacts that have been called so far</value>
-    [DataMember(Name = "numberOfContactsCalled", EmitDefaultValue = false)]
+    [JsonPropertyName("numberOfContactsCalled")]
     public double? NumberOfContactsCalled { get; set; }
 
 
@@ -54,7 +54,7 @@ public partial class OutboundMessagingEmailCampaignProgressEventCampaignProgress
     /// The number of contacts that have been messaged so far
     /// </summary>
     /// <value>The number of contacts that have been messaged so far</value>
-    [DataMember(Name = "numberOfContactsMessaged", EmitDefaultValue = false)]
+    [JsonPropertyName("numberOfContactsMessaged")]
     public double? NumberOfContactsMessaged { get; set; }
 
 
@@ -63,7 +63,7 @@ public partial class OutboundMessagingEmailCampaignProgressEventCampaignProgress
     /// The total number of contacts in the contact list
     /// </summary>
     /// <value>The total number of contacts in the contact list</value>
-    [DataMember(Name = "totalNumberOfContacts", EmitDefaultValue = false)]
+    [JsonPropertyName("totalNumberOfContacts")]
     public double? TotalNumberOfContacts { get; set; }
 
 
@@ -72,7 +72,7 @@ public partial class OutboundMessagingEmailCampaignProgressEventCampaignProgress
     /// numberOfContactsContacted/totalNumberOfContacts*100
     /// </summary>
     /// <value>numberOfContactsContacted/totalNumberOfContacts*100</value>
-    [DataMember(Name = "percentage", EmitDefaultValue = false)]
+    [JsonPropertyName("percentage")]
     public long? Percentage { get; set; }
 
 
@@ -81,7 +81,7 @@ public partial class OutboundMessagingEmailCampaignProgressEventCampaignProgress
     /// A map of skipped reasons and the number of contacts associated with each.
     /// </summary>
     /// <value>A map of skipped reasons and the number of contacts associated with each.</value>
-    [DataMember(Name = "numberOfContactsSkipped", EmitDefaultValue = false)]
+    [JsonPropertyName("numberOfContactsSkipped")]
     public Dictionary<string, long?> NumberOfContactsSkipped { get; set; }
 
 
@@ -89,7 +89,7 @@ public partial class OutboundMessagingEmailCampaignProgressEventCampaignProgress
     /// <summary>
     /// Gets or Sets AdditionalProperties
     /// </summary>
-    [DataMember(Name = "additionalProperties", EmitDefaultValue = false)]
+    [JsonPropertyName("additionalProperties")]
     public Dictionary<string, object> AdditionalProperties { get; set; }
 
 

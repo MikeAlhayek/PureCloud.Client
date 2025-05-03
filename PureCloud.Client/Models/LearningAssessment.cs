@@ -7,14 +7,14 @@ namespace PureCloud.Client.Models;
 /// <summary>
 /// LearningAssessment
 /// </summary>
-[DataContract]
+
 public partial class LearningAssessment : IEquatable<LearningAssessment>
 {
     /// <summary>
     /// Status of the assessment
     /// </summary>
     /// <value>Status of the assessment</value>
-    [JsonConverter(typeof(JsonStringEnumConverter))]
+    
     public enum StatusEnum
     {
         /// <summary>
@@ -47,7 +47,7 @@ public partial class LearningAssessment : IEquatable<LearningAssessment>
     /// Status of the assessment
     /// </summary>
     /// <value>Status of the assessment</value>
-    [DataMember(Name = "status", EmitDefaultValue = false)]
+    [JsonPropertyName("status")]
     public StatusEnum? Status { get; private set; }
     /// <summary>
     /// Initializes a new instance of the <see cref="LearningAssessment" /> class.
@@ -65,7 +65,7 @@ public partial class LearningAssessment : IEquatable<LearningAssessment>
     /// The Id of the assessment
     /// </summary>
     /// <value>The Id of the assessment</value>
-    [DataMember(Name = "assessmentId", EmitDefaultValue = false)]
+    [JsonPropertyName("assessmentId")]
     public string AssessmentId { get; private set; }
 
 
@@ -74,7 +74,7 @@ public partial class LearningAssessment : IEquatable<LearningAssessment>
     /// The context Id of the related assessment form
     /// </summary>
     /// <value>The context Id of the related assessment form</value>
-    [DataMember(Name = "contextId", EmitDefaultValue = false)]
+    [JsonPropertyName("contextId")]
     public string ContextId { get; private set; }
 
 
@@ -83,7 +83,7 @@ public partial class LearningAssessment : IEquatable<LearningAssessment>
     /// The Id of the related assessment form
     /// </summary>
     /// <value>The Id of the related assessment form</value>
-    [DataMember(Name = "assessmentFormId", EmitDefaultValue = false)]
+    [JsonPropertyName("assessmentFormId")]
     public string AssessmentFormId { get; private set; }
 
 
@@ -94,7 +94,7 @@ public partial class LearningAssessment : IEquatable<LearningAssessment>
     /// Answers for the assessment
     /// </summary>
     /// <value>Answers for the assessment</value>
-    [DataMember(Name = "answers", EmitDefaultValue = false)]
+    [JsonPropertyName("answers")]
     public AssessmentScoringSet Answers { get; set; }
 
 
@@ -103,7 +103,7 @@ public partial class LearningAssessment : IEquatable<LearningAssessment>
     /// Date the assessment was created. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z
     /// </summary>
     /// <value>Date the assessment was created. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z</value>
-    [DataMember(Name = "dateCreated", EmitDefaultValue = false)]
+    [JsonPropertyName("dateCreated")]
     public DateTime? DateCreated { get; private set; }
 
 
@@ -112,7 +112,7 @@ public partial class LearningAssessment : IEquatable<LearningAssessment>
     /// Date the assessment was last updated. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z
     /// </summary>
     /// <value>Date the assessment was last updated. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z</value>
-    [DataMember(Name = "dateModified", EmitDefaultValue = false)]
+    [JsonPropertyName("dateModified")]
     public DateTime? DateModified { get; private set; }
 
 
@@ -121,7 +121,7 @@ public partial class LearningAssessment : IEquatable<LearningAssessment>
     /// Date the assessment was submitted. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z
     /// </summary>
     /// <value>Date the assessment was submitted. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z</value>
-    [DataMember(Name = "dateSubmitted", EmitDefaultValue = false)]
+    [JsonPropertyName("dateSubmitted")]
     public DateTime? DateSubmitted { get; private set; }
 
 

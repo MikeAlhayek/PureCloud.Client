@@ -7,14 +7,14 @@ namespace PureCloud.Client.Models;
 /// <summary>
 /// CoachingAnnotation
 /// </summary>
-[DataContract]
+
 public partial class CoachingAnnotation : IEquatable<CoachingAnnotation>
 {
     /// <summary>
     /// Determines the permissions required to view this item.
     /// </summary>
     /// <value>Determines the permissions required to view this item.</value>
-    [JsonConverter(typeof(JsonStringEnumConverter))]
+    
     public enum AccessTypeEnum
     {
         /// <summary>
@@ -41,7 +41,7 @@ public partial class CoachingAnnotation : IEquatable<CoachingAnnotation>
     /// Determines the permissions required to view this item.
     /// </summary>
     /// <value>Determines the permissions required to view this item.</value>
-    [DataMember(Name = "accessType", EmitDefaultValue = false)]
+    [JsonPropertyName("accessType")]
     public AccessTypeEnum? AccessType { get; private set; }
 
     /// <summary>
@@ -65,7 +65,7 @@ public partial class CoachingAnnotation : IEquatable<CoachingAnnotation>
     /// The globally unique identifier for the object.
     /// </summary>
     /// <value>The globally unique identifier for the object.</value>
-    [DataMember(Name = "id", EmitDefaultValue = false)]
+    [JsonPropertyName("id")]
     public string Id { get; private set; }
 
 
@@ -74,7 +74,7 @@ public partial class CoachingAnnotation : IEquatable<CoachingAnnotation>
     /// The user who created the annotation.
     /// </summary>
     /// <value>The user who created the annotation.</value>
-    [DataMember(Name = "createdBy", EmitDefaultValue = false)]
+    [JsonPropertyName("createdBy")]
     public UserReference CreatedBy { get; private set; }
 
 
@@ -83,7 +83,7 @@ public partial class CoachingAnnotation : IEquatable<CoachingAnnotation>
     /// The date/time the annotation was created. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z
     /// </summary>
     /// <value>The date/time the annotation was created. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z</value>
-    [DataMember(Name = "dateCreated", EmitDefaultValue = false)]
+    [JsonPropertyName("dateCreated")]
     public DateTime? DateCreated { get; private set; }
 
 
@@ -92,7 +92,7 @@ public partial class CoachingAnnotation : IEquatable<CoachingAnnotation>
     /// The last user to modify the annotation.
     /// </summary>
     /// <value>The last user to modify the annotation.</value>
-    [DataMember(Name = "modifiedBy", EmitDefaultValue = false)]
+    [JsonPropertyName("modifiedBy")]
     public UserReference ModifiedBy { get; private set; }
 
 
@@ -101,7 +101,7 @@ public partial class CoachingAnnotation : IEquatable<CoachingAnnotation>
     /// The date/time the annotation was last modified. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z
     /// </summary>
     /// <value>The date/time the annotation was last modified. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z</value>
-    [DataMember(Name = "dateModified", EmitDefaultValue = false)]
+    [JsonPropertyName("dateModified")]
     public DateTime? DateModified { get; private set; }
 
 
@@ -110,7 +110,7 @@ public partial class CoachingAnnotation : IEquatable<CoachingAnnotation>
     /// The text of the annotation.
     /// </summary>
     /// <value>The text of the annotation.</value>
-    [DataMember(Name = "text", EmitDefaultValue = false)]
+    [JsonPropertyName("text")]
     public string Text { get; set; }
 
 
@@ -119,7 +119,7 @@ public partial class CoachingAnnotation : IEquatable<CoachingAnnotation>
     /// Flag indicating whether the annotation is deleted.
     /// </summary>
     /// <value>Flag indicating whether the annotation is deleted.</value>
-    [DataMember(Name = "isDeleted", EmitDefaultValue = false)]
+    [JsonPropertyName("isDeleted")]
     public bool? IsDeleted { get; private set; }
 
 
@@ -130,7 +130,7 @@ public partial class CoachingAnnotation : IEquatable<CoachingAnnotation>
     /// The URI for this object
     /// </summary>
     /// <value>The URI for this object</value>
-    [DataMember(Name = "selfUri", EmitDefaultValue = false)]
+    [JsonPropertyName("selfUri")]
     public string SelfUri { get; private set; }
 
 

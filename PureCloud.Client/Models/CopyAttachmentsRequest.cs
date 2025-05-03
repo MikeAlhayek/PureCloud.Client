@@ -1,4 +1,3 @@
-using System.Runtime.Serialization;
 using System.Text;
 using System.Text.Json.Serialization;
 
@@ -7,7 +6,7 @@ namespace PureCloud.Client.Models;
 /// <summary>
 /// CopyAttachmentsRequest
 /// </summary>
-[DataContract]
+
 public partial class CopyAttachmentsRequest : IEquatable<CopyAttachmentsRequest>
 {
 
@@ -34,7 +33,7 @@ public partial class CopyAttachmentsRequest : IEquatable<CopyAttachmentsRequest>
     /// A reference to the email message within the current conversation that owns the attachments to be copied
     /// </summary>
     /// <value>A reference to the email message within the current conversation that owns the attachments to be copied</value>
-    [DataMember(Name = "sourceMessage", EmitDefaultValue = false)]
+    [JsonPropertyName("sourceMessage")]
     public DomainEntityRef SourceMessage { get; set; }
 
 
@@ -43,7 +42,7 @@ public partial class CopyAttachmentsRequest : IEquatable<CopyAttachmentsRequest>
     /// A list of attachments that will be copied from the source message to the current draft
     /// </summary>
     /// <value>A list of attachments that will be copied from the source message to the current draft</value>
-    [DataMember(Name = "attachments", EmitDefaultValue = false)]
+    [JsonPropertyName("attachments")]
     public List<Attachment> Attachments { get; set; }
 
 

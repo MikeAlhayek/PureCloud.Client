@@ -1,12 +1,12 @@
-using System.Runtime.Serialization;
 using System.Text;
+using System.Text.Json.Serialization;
 
 namespace PureCloud.Client.Models;
 
 /// <summary>
 /// AuditTopicPropertyChange
 /// </summary>
-[DataContract]
+
 public partial class AuditTopicPropertyChange : IEquatable<AuditTopicPropertyChange>
 {
     /// <summary>
@@ -28,7 +28,7 @@ public partial class AuditTopicPropertyChange : IEquatable<AuditTopicPropertyCha
     /// <summary>
     /// Gets or Sets Property
     /// </summary>
-    [DataMember(Name = "property", EmitDefaultValue = false)]
+    [JsonPropertyName("property")]
     public string Property { get; set; }
 
 
@@ -36,7 +36,7 @@ public partial class AuditTopicPropertyChange : IEquatable<AuditTopicPropertyCha
     /// <summary>
     /// Gets or Sets OldValues
     /// </summary>
-    [DataMember(Name = "oldValues", EmitDefaultValue = false)]
+    [JsonPropertyName("oldValues")]
     public List<string> OldValues { get; set; }
 
 
@@ -44,7 +44,7 @@ public partial class AuditTopicPropertyChange : IEquatable<AuditTopicPropertyCha
     /// <summary>
     /// Gets or Sets NewValues
     /// </summary>
-    [DataMember(Name = "newValues", EmitDefaultValue = false)]
+    [JsonPropertyName("newValues")]
     public List<string> NewValues { get; set; }
 
 

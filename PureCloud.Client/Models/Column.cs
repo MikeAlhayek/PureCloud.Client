@@ -1,12 +1,12 @@
-using System.Runtime.Serialization;
 using System.Text;
+using System.Text.Json.Serialization;
 
 namespace PureCloud.Client.Models;
 
 /// <summary>
 /// Column
 /// </summary>
-[DataContract]
+
 public partial class Column : IEquatable<Column>
 {
     /// <summary>
@@ -31,7 +31,7 @@ public partial class Column : IEquatable<Column>
     /// Column name. Mandatory for Fixed position/length file format.
     /// </summary>
     /// <value>Column name. Mandatory for Fixed position/length file format.</value>
-    [DataMember(Name = "columnName", EmitDefaultValue = false)]
+    [JsonPropertyName("columnName")]
     public string ColumnName { get; set; }
 
 
@@ -40,7 +40,7 @@ public partial class Column : IEquatable<Column>
     /// 0 based column number in delimited file format
     /// </summary>
     /// <value>0 based column number in delimited file format</value>
-    [DataMember(Name = "columnNumber", EmitDefaultValue = false)]
+    [JsonPropertyName("columnNumber")]
     public int? ColumnNumber { get; set; }
 
 
@@ -49,7 +49,7 @@ public partial class Column : IEquatable<Column>
     /// Zero-based position of the first column&#39;s character. Mandatory for Fixed position/length file format.
     /// </summary>
     /// <value>Zero-based position of the first column&#39;s character. Mandatory for Fixed position/length file format.</value>
-    [DataMember(Name = "startPosition", EmitDefaultValue = false)]
+    [JsonPropertyName("startPosition")]
     public int? StartPosition { get; set; }
 
 
@@ -58,7 +58,7 @@ public partial class Column : IEquatable<Column>
     /// Column width. Mandatory for Fixed position/length file format.
     /// </summary>
     /// <value>Column width. Mandatory for Fixed position/length file format.</value>
-    [DataMember(Name = "length", EmitDefaultValue = false)]
+    [JsonPropertyName("length")]
     public int? Length { get; set; }
 
 

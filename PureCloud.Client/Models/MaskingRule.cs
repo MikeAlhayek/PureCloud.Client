@@ -7,14 +7,14 @@ namespace PureCloud.Client.Models;
 /// <summary>
 /// MaskingRule
 /// </summary>
-[DataContract]
+
 public partial class MaskingRule : IEquatable<MaskingRule>
 {
     /// <summary>
     /// Masking rule type
     /// </summary>
     /// <value>Masking rule type</value>
-    [JsonConverter(typeof(JsonStringEnumConverter))]
+    
     public enum TypeEnum
     {
         /// <summary>
@@ -47,7 +47,7 @@ public partial class MaskingRule : IEquatable<MaskingRule>
     /// Masking rule type
     /// </summary>
     /// <value>Masking rule type</value>
-    [DataMember(Name = "type", EmitDefaultValue = false)]
+    [JsonPropertyName("type")]
     public TypeEnum? Type { get; set; }
 
     /// <summary>
@@ -83,7 +83,7 @@ public partial class MaskingRule : IEquatable<MaskingRule>
     /// The globally unique identifier for the object.
     /// </summary>
     /// <value>The globally unique identifier for the object.</value>
-    [DataMember(Name = "id", EmitDefaultValue = false)]
+    [JsonPropertyName("id")]
     public string Id { get; private set; }
 
 
@@ -92,7 +92,7 @@ public partial class MaskingRule : IEquatable<MaskingRule>
     /// Masking rule name.
     /// </summary>
     /// <value>Masking rule name.</value>
-    [DataMember(Name = "name", EmitDefaultValue = false)]
+    [JsonPropertyName("name")]
     public string Name { get; set; }
 
 
@@ -101,7 +101,7 @@ public partial class MaskingRule : IEquatable<MaskingRule>
     /// Description about masking rule.
     /// </summary>
     /// <value>Description about masking rule.</value>
-    [DataMember(Name = "description", EmitDefaultValue = false)]
+    [JsonPropertyName("description")]
     public string Description { get; set; }
 
 
@@ -110,7 +110,7 @@ public partial class MaskingRule : IEquatable<MaskingRule>
     /// Replacement character for masked text character.
     /// </summary>
     /// <value>Replacement character for masked text character.</value>
-    [DataMember(Name = "substituteCharacter", EmitDefaultValue = false)]
+    [JsonPropertyName("substituteCharacter")]
     public string SubstituteCharacter { get; set; }
 
 
@@ -119,7 +119,7 @@ public partial class MaskingRule : IEquatable<MaskingRule>
     /// Definition of masking rule (a valid regex or builtin AI based mask name).
     /// </summary>
     /// <value>Definition of masking rule (a valid regex or builtin AI based mask name).</value>
-    [DataMember(Name = "definition", EmitDefaultValue = false)]
+    [JsonPropertyName("definition")]
     public string Definition { get; set; }
 
 
@@ -128,7 +128,7 @@ public partial class MaskingRule : IEquatable<MaskingRule>
     /// True/False
     /// </summary>
     /// <value>True/False</value>
-    [DataMember(Name = "enabled", EmitDefaultValue = false)]
+    [JsonPropertyName("enabled")]
     public bool? Enabled { get; set; }
 
 
@@ -139,7 +139,7 @@ public partial class MaskingRule : IEquatable<MaskingRule>
     /// Associated integration channels
     /// </summary>
     /// <value>Associated integration channels</value>
-    [DataMember(Name = "integrations", EmitDefaultValue = false)]
+    [JsonPropertyName("integrations")]
     public List<string> Integrations { get; set; }
 
 
@@ -148,7 +148,7 @@ public partial class MaskingRule : IEquatable<MaskingRule>
     /// Date when the rule was created. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z
     /// </summary>
     /// <value>Date when the rule was created. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z</value>
-    [DataMember(Name = "dateCreated", EmitDefaultValue = false)]
+    [JsonPropertyName("dateCreated")]
     public DateTime? DateCreated { get; private set; }
 
 
@@ -157,7 +157,7 @@ public partial class MaskingRule : IEquatable<MaskingRule>
     /// Date when the rule was modified. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z
     /// </summary>
     /// <value>Date when the rule was modified. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z</value>
-    [DataMember(Name = "dateModified", EmitDefaultValue = false)]
+    [JsonPropertyName("dateModified")]
     public DateTime? DateModified { get; private set; }
 
 

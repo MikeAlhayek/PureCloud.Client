@@ -1,12 +1,12 @@
-using System.Runtime.Serialization;
 using System.Text;
+using System.Text.Json.Serialization;
 
 namespace PureCloud.Client.Models;
 
 /// <summary>
 /// CallForwardingEventCallForwarding
 /// </summary>
-[DataContract]
+
 public partial class CallForwardingEventCallForwarding : IEquatable<CallForwardingEventCallForwarding>
 {
     /// <summary>
@@ -32,7 +32,7 @@ public partial class CallForwardingEventCallForwarding : IEquatable<CallForwardi
     /// <summary>
     /// Gets or Sets User
     /// </summary>
-    [DataMember(Name = "user", EmitDefaultValue = false)]
+    [JsonPropertyName("user")]
     public CallForwardingEventUser User { get; set; }
 
 
@@ -40,7 +40,7 @@ public partial class CallForwardingEventCallForwarding : IEquatable<CallForwardi
     /// <summary>
     /// Gets or Sets Enabled
     /// </summary>
-    [DataMember(Name = "enabled", EmitDefaultValue = false)]
+    [JsonPropertyName("enabled")]
     public bool? Enabled { get; set; }
 
 
@@ -48,7 +48,7 @@ public partial class CallForwardingEventCallForwarding : IEquatable<CallForwardi
     /// <summary>
     /// Gets or Sets Calls
     /// </summary>
-    [DataMember(Name = "calls", EmitDefaultValue = false)]
+    [JsonPropertyName("calls")]
     public List<CallForwardingEventCall> Calls { get; set; }
 
 
@@ -56,7 +56,7 @@ public partial class CallForwardingEventCallForwarding : IEquatable<CallForwardi
     /// <summary>
     /// Gets or Sets Voicemail
     /// </summary>
-    [DataMember(Name = "voicemail", EmitDefaultValue = false)]
+    [JsonPropertyName("voicemail")]
     public string Voicemail { get; set; }
 
 
@@ -64,7 +64,7 @@ public partial class CallForwardingEventCallForwarding : IEquatable<CallForwardi
     /// <summary>
     /// Gets or Sets ModifiedDate
     /// </summary>
-    [DataMember(Name = "modifiedDate", EmitDefaultValue = false)]
+    [JsonPropertyName("modifiedDate")]
     public DateTime? ModifiedDate { get; set; }
 
 

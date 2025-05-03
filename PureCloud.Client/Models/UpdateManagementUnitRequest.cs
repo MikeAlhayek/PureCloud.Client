@@ -1,12 +1,12 @@
-using System.Runtime.Serialization;
 using System.Text;
+using System.Text.Json.Serialization;
 
 namespace PureCloud.Client.Models;
 
 /// <summary>
 /// UpdateManagementUnitRequest
 /// </summary>
-[DataContract]
+
 public partial class UpdateManagementUnitRequest : IEquatable<UpdateManagementUnitRequest>
 {
     /// <summary>
@@ -29,7 +29,7 @@ public partial class UpdateManagementUnitRequest : IEquatable<UpdateManagementUn
     /// The new name of the management unit
     /// </summary>
     /// <value>The new name of the management unit</value>
-    [DataMember(Name = "name", EmitDefaultValue = false)]
+    [JsonPropertyName("name")]
     public string Name { get; set; }
 
 
@@ -38,7 +38,7 @@ public partial class UpdateManagementUnitRequest : IEquatable<UpdateManagementUn
     /// The new division id for the management unit
     /// </summary>
     /// <value>The new division id for the management unit</value>
-    [DataMember(Name = "divisionId", EmitDefaultValue = false)]
+    [JsonPropertyName("divisionId")]
     public string DivisionId { get; set; }
 
 
@@ -47,7 +47,7 @@ public partial class UpdateManagementUnitRequest : IEquatable<UpdateManagementUn
     /// Updated settings for the management unit
     /// </summary>
     /// <value>Updated settings for the management unit</value>
-    [DataMember(Name = "settings", EmitDefaultValue = false)]
+    [JsonPropertyName("settings")]
     public ManagementUnitSettingsRequest Settings { get; set; }
 
 

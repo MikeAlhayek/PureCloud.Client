@@ -1,12 +1,12 @@
-using System.Runtime.Serialization;
 using System.Text;
+using System.Text.Json.Serialization;
 
 namespace PureCloud.Client.Models;
 
 /// <summary>
 /// BuQueryAdherenceExplanationsResponse
 /// </summary>
-[DataContract]
+
 public partial class BuQueryAdherenceExplanationsResponse : IEquatable<BuQueryAdherenceExplanationsResponse>
 {
     /// <summary>
@@ -29,7 +29,7 @@ public partial class BuQueryAdherenceExplanationsResponse : IEquatable<BuQueryAd
     /// The asynchronous job handling the query
     /// </summary>
     /// <value>The asynchronous job handling the query</value>
-    [DataMember(Name = "job", EmitDefaultValue = false)]
+    [JsonPropertyName("job")]
     public AdherenceExplanationJobReference Job { get; set; }
 
 
@@ -38,7 +38,7 @@ public partial class BuQueryAdherenceExplanationsResponse : IEquatable<BuQueryAd
     /// The result of the query. May come via notification
     /// </summary>
     /// <value>The result of the query. May come via notification</value>
-    [DataMember(Name = "result", EmitDefaultValue = false)]
+    [JsonPropertyName("result")]
     public AdherenceExplanationListingBuQueryResponse Result { get; set; }
 
 
@@ -47,7 +47,7 @@ public partial class BuQueryAdherenceExplanationsResponse : IEquatable<BuQueryAd
     /// The URL from which to download the result. May come via notification
     /// </summary>
     /// <value>The URL from which to download the result. May come via notification</value>
-    [DataMember(Name = "downloadUrl", EmitDefaultValue = false)]
+    [JsonPropertyName("downloadUrl")]
     public string DownloadUrl { get; set; }
 
 

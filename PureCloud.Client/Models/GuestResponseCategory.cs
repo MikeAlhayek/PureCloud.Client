@@ -1,12 +1,12 @@
-using System.Runtime.Serialization;
 using System.Text;
+using System.Text.Json.Serialization;
 
 namespace PureCloud.Client.Models;
 
 /// <summary>
 /// GuestResponseCategory
 /// </summary>
-[DataContract]
+
 public partial class GuestResponseCategory : IEquatable<GuestResponseCategory>
 {
     /// <summary>
@@ -33,7 +33,7 @@ public partial class GuestResponseCategory : IEquatable<GuestResponseCategory>
     /// The globally unique identifier for the object.
     /// </summary>
     /// <value>The globally unique identifier for the object.</value>
-    [DataMember(Name = "id", EmitDefaultValue = false)]
+    [JsonPropertyName("id")]
     public string Id { get; private set; }
 
 
@@ -41,7 +41,7 @@ public partial class GuestResponseCategory : IEquatable<GuestResponseCategory>
     /// <summary>
     /// Gets or Sets Name
     /// </summary>
-    [DataMember(Name = "name", EmitDefaultValue = false)]
+    [JsonPropertyName("name")]
     public string Name { get; set; }
 
 
@@ -49,7 +49,7 @@ public partial class GuestResponseCategory : IEquatable<GuestResponseCategory>
     /// <summary>
     /// Gets or Sets Description
     /// </summary>
-    [DataMember(Name = "description", EmitDefaultValue = false)]
+    [JsonPropertyName("description")]
     public string Description { get; set; }
 
 
@@ -57,7 +57,7 @@ public partial class GuestResponseCategory : IEquatable<GuestResponseCategory>
     /// <summary>
     /// Gets or Sets ExternalId
     /// </summary>
-    [DataMember(Name = "externalId", EmitDefaultValue = false)]
+    [JsonPropertyName("externalId")]
     public string ExternalId { get; set; }
 
 
@@ -66,7 +66,7 @@ public partial class GuestResponseCategory : IEquatable<GuestResponseCategory>
     /// Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z
     /// </summary>
     /// <value>Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z</value>
-    [DataMember(Name = "dateCreated", EmitDefaultValue = false)]
+    [JsonPropertyName("dateCreated")]
     public DateTime? DateCreated { get; set; }
 
 
@@ -75,7 +75,7 @@ public partial class GuestResponseCategory : IEquatable<GuestResponseCategory>
     /// Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z
     /// </summary>
     /// <value>Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z</value>
-    [DataMember(Name = "dateModified", EmitDefaultValue = false)]
+    [JsonPropertyName("dateModified")]
     public DateTime? DateModified { get; set; }
 
 
@@ -84,7 +84,7 @@ public partial class GuestResponseCategory : IEquatable<GuestResponseCategory>
     /// The reference to category to which this category belongs.
     /// </summary>
     /// <value>The reference to category to which this category belongs.</value>
-    [DataMember(Name = "parentCategory", EmitDefaultValue = false)]
+    [JsonPropertyName("parentCategory")]
     public GuestCategoryReference ParentCategory { get; private set; }
 
 
@@ -93,7 +93,7 @@ public partial class GuestResponseCategory : IEquatable<GuestResponseCategory>
     /// The URI for this object
     /// </summary>
     /// <value>The URI for this object</value>
-    [DataMember(Name = "selfUri", EmitDefaultValue = false)]
+    [JsonPropertyName("selfUri")]
     public string SelfUri { get; private set; }
 
 

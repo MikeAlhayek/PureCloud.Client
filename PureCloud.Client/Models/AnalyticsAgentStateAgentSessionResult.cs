@@ -7,14 +7,14 @@ namespace PureCloud.Client.Models;
 /// <summary>
 /// AnalyticsAgentStateAgentSessionResult
 /// </summary>
-[DataContract]
+
 public partial class AnalyticsAgentStateAgentSessionResult : IEquatable<AnalyticsAgentStateAgentSessionResult>
 {
     /// <summary>
     /// Segment type
     /// </summary>
     /// <value>Segment type</value>
-    [JsonConverter(typeof(JsonStringEnumConverter))]
+    
     public enum SegmentTypeEnum
     {
         /// <summary>
@@ -155,7 +155,7 @@ public partial class AnalyticsAgentStateAgentSessionResult : IEquatable<Analytic
     /// Originating direction
     /// </summary>
     /// <value>Originating direction</value>
-    [JsonConverter(typeof(JsonStringEnumConverter))]
+    
     public enum OriginatingDirectionEnum
     {
         /// <summary>
@@ -182,7 +182,7 @@ public partial class AnalyticsAgentStateAgentSessionResult : IEquatable<Analytic
     /// Media type
     /// </summary>
     /// <value>Media type</value>
-    [JsonConverter(typeof(JsonStringEnumConverter))]
+    
     public enum MediaTypeEnum
     {
         /// <summary>
@@ -257,19 +257,19 @@ public partial class AnalyticsAgentStateAgentSessionResult : IEquatable<Analytic
     /// Segment type
     /// </summary>
     /// <value>Segment type</value>
-    [DataMember(Name = "segmentType", EmitDefaultValue = false)]
+    [JsonPropertyName("segmentType")]
     public SegmentTypeEnum? SegmentType { get; set; }
     /// <summary>
     /// Originating direction
     /// </summary>
     /// <value>Originating direction</value>
-    [DataMember(Name = "originatingDirection", EmitDefaultValue = false)]
+    [JsonPropertyName("originatingDirection")]
     public OriginatingDirectionEnum? OriginatingDirection { get; set; }
     /// <summary>
     /// Media type
     /// </summary>
     /// <value>Media type</value>
-    [DataMember(Name = "mediaType", EmitDefaultValue = false)]
+    [JsonPropertyName("mediaType")]
     public MediaTypeEnum? MediaType { get; set; }
     /// <summary>
     /// Initializes a new instance of the <see cref="AnalyticsAgentStateAgentSessionResult" /> class.
@@ -305,7 +305,7 @@ public partial class AnalyticsAgentStateAgentSessionResult : IEquatable<Analytic
     /// Conversation Id
     /// </summary>
     /// <value>Conversation Id</value>
-    [DataMember(Name = "conversationId", EmitDefaultValue = false)]
+    [JsonPropertyName("conversationId")]
     public string ConversationId { get; set; }
 
 
@@ -314,7 +314,7 @@ public partial class AnalyticsAgentStateAgentSessionResult : IEquatable<Analytic
     /// Session Id
     /// </summary>
     /// <value>Session Id</value>
-    [DataMember(Name = "sessionId", EmitDefaultValue = false)]
+    [JsonPropertyName("sessionId")]
     public string SessionId { get; set; }
 
 
@@ -323,7 +323,7 @@ public partial class AnalyticsAgentStateAgentSessionResult : IEquatable<Analytic
     /// Session start datetime. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z
     /// </summary>
     /// <value>Session start datetime. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z</value>
-    [DataMember(Name = "sessionStart", EmitDefaultValue = false)]
+    [JsonPropertyName("sessionStart")]
     public DateTime? SessionStart { get; set; }
 
 
@@ -332,7 +332,7 @@ public partial class AnalyticsAgentStateAgentSessionResult : IEquatable<Analytic
     /// Segment start datetime. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z
     /// </summary>
     /// <value>Segment start datetime. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z</value>
-    [DataMember(Name = "segmentStart", EmitDefaultValue = false)]
+    [JsonPropertyName("segmentStart")]
     public DateTime? SegmentStart { get; set; }
 
 
@@ -343,7 +343,7 @@ public partial class AnalyticsAgentStateAgentSessionResult : IEquatable<Analytic
     /// Routed queue Id
     /// </summary>
     /// <value>Routed queue Id</value>
-    [DataMember(Name = "routedQueueId", EmitDefaultValue = false)]
+    [JsonPropertyName("routedQueueId")]
     public string RoutedQueueId { get; set; }
 
 
@@ -352,7 +352,7 @@ public partial class AnalyticsAgentStateAgentSessionResult : IEquatable<Analytic
     /// List of requested routing skill Id
     /// </summary>
     /// <value>List of requested routing skill Id</value>
-    [DataMember(Name = "requestedRoutingSkillIds", EmitDefaultValue = false)]
+    [JsonPropertyName("requestedRoutingSkillIds")]
     public List<string> RequestedRoutingSkillIds { get; set; }
 
 
@@ -361,7 +361,7 @@ public partial class AnalyticsAgentStateAgentSessionResult : IEquatable<Analytic
     /// Requested language Id
     /// </summary>
     /// <value>Requested language Id</value>
-    [DataMember(Name = "requestedLanguageId", EmitDefaultValue = false)]
+    [JsonPropertyName("requestedLanguageId")]
     public string RequestedLanguageId { get; set; }
 
 

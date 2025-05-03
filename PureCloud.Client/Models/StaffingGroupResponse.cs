@@ -1,4 +1,3 @@
-using System.Runtime.Serialization;
 using System.Text;
 using System.Text.Json.Serialization;
 
@@ -7,7 +6,7 @@ namespace PureCloud.Client.Models;
 /// <summary>
 /// StaffingGroupResponse
 /// </summary>
-[DataContract]
+
 public partial class StaffingGroupResponse : IEquatable<StaffingGroupResponse>
 {
 
@@ -38,7 +37,7 @@ public partial class StaffingGroupResponse : IEquatable<StaffingGroupResponse>
     /// The globally unique identifier for the object.
     /// </summary>
     /// <value>The globally unique identifier for the object.</value>
-    [DataMember(Name = "id", EmitDefaultValue = false)]
+    [JsonPropertyName("id")]
     public string Id { get; private set; }
 
 
@@ -47,7 +46,7 @@ public partial class StaffingGroupResponse : IEquatable<StaffingGroupResponse>
     /// The name of the staffing group
     /// </summary>
     /// <value>The name of the staffing group</value>
-    [DataMember(Name = "name", EmitDefaultValue = false)]
+    [JsonPropertyName("name")]
     public string Name { get; set; }
 
 
@@ -56,7 +55,7 @@ public partial class StaffingGroupResponse : IEquatable<StaffingGroupResponse>
     /// The list of users that belong to the staffing group
     /// </summary>
     /// <value>The list of users that belong to the staffing group</value>
-    [DataMember(Name = "users", EmitDefaultValue = false)]
+    [JsonPropertyName("users")]
     public List<UserReference> Users { get; set; }
 
 
@@ -65,7 +64,7 @@ public partial class StaffingGroupResponse : IEquatable<StaffingGroupResponse>
     /// The ID of the management unit to which the staffing group users belong. If undefined the staffing group can include users from the entire business unit
     /// </summary>
     /// <value>The ID of the management unit to which the staffing group users belong. If undefined the staffing group can include users from the entire business unit</value>
-    [DataMember(Name = "managementUnit", EmitDefaultValue = false)]
+    [JsonPropertyName("managementUnit")]
     public ManagementUnitReference ManagementUnit { get; set; }
 
 
@@ -74,7 +73,7 @@ public partial class StaffingGroupResponse : IEquatable<StaffingGroupResponse>
     /// Version metadata for the staffing group
     /// </summary>
     /// <value>Version metadata for the staffing group</value>
-    [DataMember(Name = "metadata", EmitDefaultValue = false)]
+    [JsonPropertyName("metadata")]
     public WfmVersionedEntityMetadata Metadata { get; set; }
 
 
@@ -83,7 +82,7 @@ public partial class StaffingGroupResponse : IEquatable<StaffingGroupResponse>
     /// The URI for this object
     /// </summary>
     /// <value>The URI for this object</value>
-    [DataMember(Name = "selfUri", EmitDefaultValue = false)]
+    [JsonPropertyName("selfUri")]
     public string SelfUri { get; private set; }
 
 

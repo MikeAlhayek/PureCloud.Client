@@ -7,14 +7,14 @@ namespace PureCloud.Client.Models;
 /// <summary>
 /// CampaignRuleAction
 /// </summary>
-[DataContract]
+
 public partial class CampaignRuleAction : IEquatable<CampaignRuleAction>
 {
     /// <summary>
     /// The action to take on the campaignRuleActionEntities.
     /// </summary>
     /// <value>The action to take on the campaignRuleActionEntities.</value>
-    [JsonConverter(typeof(JsonStringEnumConverter))]
+    
     public enum ActionTypeEnum
     {
         /// <summary>
@@ -113,7 +113,7 @@ public partial class CampaignRuleAction : IEquatable<CampaignRuleAction>
     /// The action to take on the campaignRuleActionEntities.
     /// </summary>
     /// <value>The action to take on the campaignRuleActionEntities.</value>
-    [DataMember(Name = "actionType", EmitDefaultValue = false)]
+    [JsonPropertyName("actionType")]
     public ActionTypeEnum? ActionType { get; set; }
 
     /// <summary>
@@ -142,7 +142,7 @@ public partial class CampaignRuleAction : IEquatable<CampaignRuleAction>
     /// <summary>
     /// Gets or Sets Id
     /// </summary>
-    [DataMember(Name = "id", EmitDefaultValue = false)]
+    [JsonPropertyName("id")]
     public string Id { get; set; }
 
 
@@ -151,7 +151,7 @@ public partial class CampaignRuleAction : IEquatable<CampaignRuleAction>
     /// The parameters for the CampaignRuleAction. Required for certain actionTypes.
     /// </summary>
     /// <value>The parameters for the CampaignRuleAction. Required for certain actionTypes.</value>
-    [DataMember(Name = "parameters", EmitDefaultValue = false)]
+    [JsonPropertyName("parameters")]
     public CampaignRuleParameters Parameters { get; set; }
 
 
@@ -162,7 +162,7 @@ public partial class CampaignRuleAction : IEquatable<CampaignRuleAction>
     /// The list of entities that this action will apply to.
     /// </summary>
     /// <value>The list of entities that this action will apply to.</value>
-    [DataMember(Name = "campaignRuleActionEntities", EmitDefaultValue = false)]
+    [JsonPropertyName("campaignRuleActionEntities")]
     public CampaignRuleActionEntities CampaignRuleActionEntities { get; set; }
 
 

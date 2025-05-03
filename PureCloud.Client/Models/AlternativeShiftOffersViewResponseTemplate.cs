@@ -1,4 +1,3 @@
-using System.Runtime.Serialization;
 using System.Text;
 using System.Text.Json.Serialization;
 
@@ -7,7 +6,7 @@ namespace PureCloud.Client.Models;
 /// <summary>
 /// AlternativeShiftOffersViewResponseTemplate
 /// </summary>
-[DataContract]
+
 public partial class AlternativeShiftOffersViewResponseTemplate : IEquatable<AlternativeShiftOffersViewResponseTemplate>
 {
 
@@ -46,7 +45,7 @@ public partial class AlternativeShiftOffersViewResponseTemplate : IEquatable<Alt
     /// The unique identifier of the async list job that created this file
     /// </summary>
     /// <value>The unique identifier of the async list job that created this file</value>
-    [DataMember(Name = "jobId", EmitDefaultValue = false)]
+    [JsonPropertyName("jobId")]
     public string JobId { get; set; }
 
 
@@ -55,7 +54,7 @@ public partial class AlternativeShiftOffersViewResponseTemplate : IEquatable<Alt
     /// The unique identifier of the business unit to which the user (agent) belongs at the time the offer is created
     /// </summary>
     /// <value>The unique identifier of the business unit to which the user (agent) belongs at the time the offer is created</value>
-    [DataMember(Name = "businessUnitId", EmitDefaultValue = false)]
+    [JsonPropertyName("businessUnitId")]
     public string BusinessUnitId { get; set; }
 
 
@@ -64,7 +63,7 @@ public partial class AlternativeShiftOffersViewResponseTemplate : IEquatable<Alt
     /// The unique identifier of the agent for whom the offer was made
     /// </summary>
     /// <value>The unique identifier of the agent for whom the offer was made</value>
-    [DataMember(Name = "agentId", EmitDefaultValue = false)]
+    [JsonPropertyName("agentId")]
     public string AgentId { get; set; }
 
 
@@ -73,7 +72,7 @@ public partial class AlternativeShiftOffersViewResponseTemplate : IEquatable<Alt
     /// The unique identifier of the management unit to which the user (agent) belongs at the time the offer is created
     /// </summary>
     /// <value>The unique identifier of the management unit to which the user (agent) belongs at the time the offer is created</value>
-    [DataMember(Name = "managementUnitId", EmitDefaultValue = false)]
+    [JsonPropertyName("managementUnitId")]
     public string ManagementUnitId { get; set; }
 
 
@@ -82,7 +81,7 @@ public partial class AlternativeShiftOffersViewResponseTemplate : IEquatable<Alt
     /// The existing schedule information associated with the offer
     /// </summary>
     /// <value>The existing schedule information associated with the offer</value>
-    [DataMember(Name = "schedule", EmitDefaultValue = false)]
+    [JsonPropertyName("schedule")]
     public AlternativeShiftScheduleLookup Schedule { get; set; }
 
 
@@ -91,7 +90,7 @@ public partial class AlternativeShiftOffersViewResponseTemplate : IEquatable<Alt
     /// The first date of the week for the schedule we are querying in yyyy-MM-dd format. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd
     /// </summary>
     /// <value>The first date of the week for the schedule we are querying in yyyy-MM-dd format. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd</value>
-    [DataMember(Name = "offerWeekDate", EmitDefaultValue = false)]
+    [JsonPropertyName("offerWeekDate")]
     public string OfferWeekDate { get; set; }
 
 
@@ -100,7 +99,7 @@ public partial class AlternativeShiftOffersViewResponseTemplate : IEquatable<Alt
     /// The shifts the agent is scheduled for at the time the offer is created
     /// </summary>
     /// <value>The shifts the agent is scheduled for at the time the offer is created</value>
-    [DataMember(Name = "shifts", EmitDefaultValue = false)]
+    [JsonPropertyName("shifts")]
     public List<AlternativeShiftAgentScheduledShift> Shifts { get; set; }
 
 
@@ -109,7 +108,7 @@ public partial class AlternativeShiftOffersViewResponseTemplate : IEquatable<Alt
     /// The offered alternative shift days in this week at the time the offer is created
     /// </summary>
     /// <value>The offered alternative shift days in this week at the time the offer is created</value>
-    [DataMember(Name = "alternativeDays", EmitDefaultValue = false)]
+    [JsonPropertyName("alternativeDays")]
     public List<AlternativeShiftAgentScheduledShift> AlternativeDays { get; set; }
 
 

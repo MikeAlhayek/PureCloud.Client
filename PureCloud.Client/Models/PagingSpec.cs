@@ -1,4 +1,3 @@
-using System.Runtime.Serialization;
 using System.Text;
 using System.Text.Json.Serialization;
 
@@ -7,7 +6,7 @@ namespace PureCloud.Client.Models;
 /// <summary>
 /// PagingSpec
 /// </summary>
-[DataContract]
+
 public partial class PagingSpec : IEquatable<PagingSpec>
 {
 
@@ -34,7 +33,7 @@ public partial class PagingSpec : IEquatable<PagingSpec>
     /// How many results per page
     /// </summary>
     /// <value>How many results per page</value>
-    [DataMember(Name = "pageSize", EmitDefaultValue = false)]
+    [JsonPropertyName("pageSize")]
     public int? PageSize { get; set; }
 
 
@@ -43,7 +42,7 @@ public partial class PagingSpec : IEquatable<PagingSpec>
     /// How many pages in
     /// </summary>
     /// <value>How many pages in</value>
-    [DataMember(Name = "pageNumber", EmitDefaultValue = false)]
+    [JsonPropertyName("pageNumber")]
     public int? PageNumber { get; set; }
 
 

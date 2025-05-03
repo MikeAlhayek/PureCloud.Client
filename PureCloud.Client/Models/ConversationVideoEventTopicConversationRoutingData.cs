@@ -1,12 +1,12 @@
-using System.Runtime.Serialization;
 using System.Text;
+using System.Text.Json.Serialization;
 
 namespace PureCloud.Client.Models;
 
 /// <summary>
 /// ConversationVideoEventTopicConversationRoutingData
 /// </summary>
-[DataContract]
+
 public partial class ConversationVideoEventTopicConversationRoutingData : IEquatable<ConversationVideoEventTopicConversationRoutingData>
 {
     /// <summary>
@@ -33,7 +33,7 @@ public partial class ConversationVideoEventTopicConversationRoutingData : IEquat
     /// A UriReference for a resource
     /// </summary>
     /// <value>A UriReference for a resource</value>
-    [DataMember(Name = "queue", EmitDefaultValue = false)]
+    [JsonPropertyName("queue")]
     public ConversationVideoEventTopicUriReference Queue { get; set; }
 
 
@@ -42,7 +42,7 @@ public partial class ConversationVideoEventTopicConversationRoutingData : IEquat
     /// A UriReference for a resource
     /// </summary>
     /// <value>A UriReference for a resource</value>
-    [DataMember(Name = "language", EmitDefaultValue = false)]
+    [JsonPropertyName("language")]
     public ConversationVideoEventTopicUriReference Language { get; set; }
 
 
@@ -51,7 +51,7 @@ public partial class ConversationVideoEventTopicConversationRoutingData : IEquat
     /// The priority of the conversation to use for routing decisions
     /// </summary>
     /// <value>The priority of the conversation to use for routing decisions</value>
-    [DataMember(Name = "priority", EmitDefaultValue = false)]
+    [JsonPropertyName("priority")]
     public long? Priority { get; set; }
 
 
@@ -60,7 +60,7 @@ public partial class ConversationVideoEventTopicConversationRoutingData : IEquat
     /// The skills to use for routing decisions
     /// </summary>
     /// <value>The skills to use for routing decisions</value>
-    [DataMember(Name = "skills", EmitDefaultValue = false)]
+    [JsonPropertyName("skills")]
     public List<ConversationVideoEventTopicUriReference> Skills { get; set; }
 
 
@@ -69,7 +69,7 @@ public partial class ConversationVideoEventTopicConversationRoutingData : IEquat
     /// A collection of agents and their assigned scores for this conversation (0 - 100, higher being better), for use in routing to preferred agents
     /// </summary>
     /// <value>A collection of agents and their assigned scores for this conversation (0 - 100, higher being better), for use in routing to preferred agents</value>
-    [DataMember(Name = "scoredAgents", EmitDefaultValue = false)]
+    [JsonPropertyName("scoredAgents")]
     public List<ConversationVideoEventTopicScoredAgent> ScoredAgents { get; set; }
 
 

@@ -7,14 +7,14 @@ namespace PureCloud.Client.Models;
 /// <summary>
 /// Widget
 /// </summary>
-[DataContract]
+
 public partial class Widget : IEquatable<Widget>
 {
     /// <summary>
     /// The type of dashboard widget configuration.
     /// </summary>
     /// <value>The type of dashboard widget configuration.</value>
-    [JsonConverter(typeof(JsonStringEnumConverter))]
+    
     public enum TypeEnum
     {
         /// <summary>
@@ -82,7 +82,7 @@ public partial class Widget : IEquatable<Widget>
     /// <summary>
     /// Gets or Sets Metrics
     /// </summary>
-    [JsonConverter(typeof(JsonStringEnumConverter))]
+    
     public enum MetricsEnum
     {
         /// <summary>
@@ -1417,7 +1417,7 @@ public partial class Widget : IEquatable<Widget>
     /// The sort order of the table.
     /// </summary>
     /// <value>The sort order of the table.</value>
-    [JsonConverter(typeof(JsonStringEnumConverter))]
+    
     public enum SortOrderEnum
     {
         /// <summary>
@@ -1444,7 +1444,7 @@ public partial class Widget : IEquatable<Widget>
     /// The sort key of the table.
     /// </summary>
     /// <value>The sort key of the table.</value>
-    [JsonConverter(typeof(JsonStringEnumConverter))]
+    
     public enum SortKeyEnum
     {
         /// <summary>
@@ -1470,7 +1470,7 @@ public partial class Widget : IEquatable<Widget>
     /// <summary>
     /// Gets or Sets Periods
     /// </summary>
-    [JsonConverter(typeof(JsonStringEnumConverter))]
+    
     public enum PeriodsEnum
     {
         /// <summary>
@@ -1562,7 +1562,7 @@ public partial class Widget : IEquatable<Widget>
     /// <summary>
     /// Gets or Sets MediaTypes
     /// </summary>
-    [JsonConverter(typeof(JsonStringEnumConverter))]
+    
     public enum MediaTypesEnum
     {
         /// <summary>
@@ -1636,7 +1636,7 @@ public partial class Widget : IEquatable<Widget>
     /// <summary>
     /// Gets or Sets SelectedStatuses
     /// </summary>
-    [JsonConverter(typeof(JsonStringEnumConverter))]
+    
     public enum SelectedStatusesEnum
     {
         /// <summary>
@@ -1746,7 +1746,7 @@ public partial class Widget : IEquatable<Widget>
     /// <summary>
     /// Gets or Sets SelectedSegmentTypes
     /// </summary>
-    [JsonConverter(typeof(JsonStringEnumConverter))]
+    
     public enum SelectedSegmentTypesEnum
     {
         /// <summary>
@@ -1887,7 +1887,7 @@ public partial class Widget : IEquatable<Widget>
     /// The sort order of the interactions in the agent status widget.
     /// </summary>
     /// <value>The sort order of the interactions in the agent status widget.</value>
-    [JsonConverter(typeof(JsonStringEnumConverter))]
+    
     public enum AgentInteractionSortOrderEnum
     {
         /// <summary>
@@ -1914,25 +1914,25 @@ public partial class Widget : IEquatable<Widget>
     /// The type of dashboard widget configuration.
     /// </summary>
     /// <value>The type of dashboard widget configuration.</value>
-    [DataMember(Name = "type", EmitDefaultValue = false)]
+    [JsonPropertyName("type")]
     public TypeEnum? Type { get; set; }
     /// <summary>
     /// The sort order of the table.
     /// </summary>
     /// <value>The sort order of the table.</value>
-    [DataMember(Name = "sortOrder", EmitDefaultValue = false)]
+    [JsonPropertyName("sortOrder")]
     public SortOrderEnum? SortOrder { get; set; }
     /// <summary>
     /// The sort key of the table.
     /// </summary>
     /// <value>The sort key of the table.</value>
-    [DataMember(Name = "sortKey", EmitDefaultValue = false)]
+    [JsonPropertyName("sortKey")]
     public SortKeyEnum? SortKey { get; set; }
     /// <summary>
     /// The sort order of the interactions in the agent status widget.
     /// </summary>
     /// <value>The sort order of the interactions in the agent status widget.</value>
-    [DataMember(Name = "agentInteractionSortOrder", EmitDefaultValue = false)]
+    [JsonPropertyName("agentInteractionSortOrder")]
     public AgentInteractionSortOrderEnum? AgentInteractionSortOrder { get; set; }
 
     /// <summary>
@@ -2012,7 +2012,7 @@ public partial class Widget : IEquatable<Widget>
     /// The row number for the specific dashboard widget configuration.
     /// </summary>
     /// <value>The row number for the specific dashboard widget configuration.</value>
-    [DataMember(Name = "row", EmitDefaultValue = false)]
+    [JsonPropertyName("row")]
     public int? Row { get; set; }
 
 
@@ -2021,7 +2021,7 @@ public partial class Widget : IEquatable<Widget>
     /// The column number for the specific dashboard widget configuration.
     /// </summary>
     /// <value>The column number for the specific dashboard widget configuration.</value>
-    [DataMember(Name = "column", EmitDefaultValue = false)]
+    [JsonPropertyName("column")]
     public int? Column { get; set; }
 
 
@@ -2030,7 +2030,7 @@ public partial class Widget : IEquatable<Widget>
     /// The title for the dashboard widget configuration.
     /// </summary>
     /// <value>The title for the dashboard widget configuration.</value>
-    [DataMember(Name = "title", EmitDefaultValue = false)]
+    [JsonPropertyName("title")]
     public string Title { get; set; }
 
 
@@ -2041,7 +2041,7 @@ public partial class Widget : IEquatable<Widget>
     /// The list of metrics for the dashboard widget configuration.
     /// </summary>
     /// <value>The list of metrics for the dashboard widget configuration.</value>
-    [DataMember(Name = "metrics", EmitDefaultValue = false)]
+    [JsonPropertyName("metrics")]
     public List<MetricsEnum> Metrics { get; set; }
 
 
@@ -2050,7 +2050,7 @@ public partial class Widget : IEquatable<Widget>
     /// The display text for the dashboard widget configuration.
     /// </summary>
     /// <value>The display text for the dashboard widget configuration.</value>
-    [DataMember(Name = "displayText", EmitDefaultValue = false)]
+    [JsonPropertyName("displayText")]
     public string DisplayText { get; set; }
 
 
@@ -2059,7 +2059,7 @@ public partial class Widget : IEquatable<Widget>
     /// The color of the display text for the dashboard widget configuration in RGB hexadecimal format (for example \&quot;#FF0000\&quot; represents red).
     /// </summary>
     /// <value>The color of the display text for the dashboard widget configuration in RGB hexadecimal format (for example \&quot;#FF0000\&quot; represents red).</value>
-    [DataMember(Name = "displayTextColor", EmitDefaultValue = false)]
+    [JsonPropertyName("displayTextColor")]
     public string DisplayTextColor { get; set; }
 
 
@@ -2068,7 +2068,7 @@ public partial class Widget : IEquatable<Widget>
     /// The external web URL for the dashboard widget configuration.
     /// </summary>
     /// <value>The external web URL for the dashboard widget configuration.</value>
-    [DataMember(Name = "webContentUrl", EmitDefaultValue = false)]
+    [JsonPropertyName("webContentUrl")]
     public string WebContentUrl { get; set; }
 
 
@@ -2077,7 +2077,7 @@ public partial class Widget : IEquatable<Widget>
     /// Indicates each filter to be displayed individually.
     /// </summary>
     /// <value>Indicates each filter to be displayed individually.</value>
-    [DataMember(Name = "splitFilters", EmitDefaultValue = false)]
+    [JsonPropertyName("splitFilters")]
     public bool? SplitFilters { get; set; }
 
 
@@ -2086,7 +2086,7 @@ public partial class Widget : IEquatable<Widget>
     /// Indicates that data for each media type should be shown individually.
     /// </summary>
     /// <value>Indicates that data for each media type should be shown individually.</value>
-    [DataMember(Name = "splitByMediaType", EmitDefaultValue = false)]
+    [JsonPropertyName("splitByMediaType")]
     public bool? SplitByMediaType { get; set; }
 
 
@@ -2095,7 +2095,7 @@ public partial class Widget : IEquatable<Widget>
     /// Indicates the display be the longest time.
     /// </summary>
     /// <value>Indicates the display be the longest time.</value>
-    [DataMember(Name = "showLongest", EmitDefaultValue = false)]
+    [JsonPropertyName("showLongest")]
     public bool? ShowLongest { get; set; }
 
 
@@ -2104,7 +2104,7 @@ public partial class Widget : IEquatable<Widget>
     /// Indicates the widget to be displayed as table.
     /// </summary>
     /// <value>Indicates the widget to be displayed as table.</value>
-    [DataMember(Name = "displayAsTable", EmitDefaultValue = false)]
+    [JsonPropertyName("displayAsTable")]
     public bool? DisplayAsTable { get; set; }
 
 
@@ -2113,7 +2113,7 @@ public partial class Widget : IEquatable<Widget>
     /// Indicates the display to include duration.
     /// </summary>
     /// <value>Indicates the display to include duration.</value>
-    [DataMember(Name = "showDuration", EmitDefaultValue = false)]
+    [JsonPropertyName("showDuration")]
     public bool? ShowDuration { get; set; }
 
 
@@ -2126,7 +2126,7 @@ public partial class Widget : IEquatable<Widget>
     /// Indicates the limit of displayed entities.
     /// </summary>
     /// <value>Indicates the limit of displayed entities.</value>
-    [DataMember(Name = "entityLimit", EmitDefaultValue = false)]
+    [JsonPropertyName("entityLimit")]
     public int? EntityLimit { get; set; }
 
 
@@ -2135,7 +2135,7 @@ public partial class Widget : IEquatable<Widget>
     /// Indicates whether to display aggregate across all entity and media type combination.
     /// </summary>
     /// <value>Indicates whether to display aggregate across all entity and media type combination.</value>
-    [DataMember(Name = "displayAggregates", EmitDefaultValue = false)]
+    [JsonPropertyName("displayAggregates")]
     public bool? DisplayAggregates { get; set; }
 
 
@@ -2144,7 +2144,7 @@ public partial class Widget : IEquatable<Widget>
     /// Indicates whether a widget should take the full width of a dashboard or be shown only in a single slot.
     /// </summary>
     /// <value>Indicates whether a widget should take the full width of a dashboard or be shown only in a single slot.</value>
-    [DataMember(Name = "isFullWidth", EmitDefaultValue = false)]
+    [JsonPropertyName("isFullWidth")]
     public bool? IsFullWidth { get; set; }
 
 
@@ -2153,7 +2153,7 @@ public partial class Widget : IEquatable<Widget>
     /// Indicates whether a widget should show the percentage diff between two values.
     /// </summary>
     /// <value>Indicates whether a widget should show the percentage diff between two values.</value>
-    [DataMember(Name = "showPercentageChange", EmitDefaultValue = false)]
+    [JsonPropertyName("showPercentageChange")]
     public bool? ShowPercentageChange { get; set; }
 
 
@@ -2162,7 +2162,7 @@ public partial class Widget : IEquatable<Widget>
     /// Indicates whether a widget should show the profile picture of an agent.
     /// </summary>
     /// <value>Indicates whether a widget should show the profile picture of an agent.</value>
-    [DataMember(Name = "showProfilePicture", EmitDefaultValue = false)]
+    [JsonPropertyName("showProfilePicture")]
     public bool? ShowProfilePicture { get; set; }
 
 
@@ -2171,7 +2171,7 @@ public partial class Widget : IEquatable<Widget>
     /// The filters to be applied for dashboard widget configuration
     /// </summary>
     /// <value>The filters to be applied for dashboard widget configuration</value>
-    [DataMember(Name = "filter", EmitDefaultValue = false)]
+    [JsonPropertyName("filter")]
     public ViewFilter Filter { get; set; }
 
 
@@ -2180,7 +2180,7 @@ public partial class Widget : IEquatable<Widget>
     /// The list of periods for the dashboard widget configuration
     /// </summary>
     /// <value>The list of periods for the dashboard widget configuration</value>
-    [DataMember(Name = "periods", EmitDefaultValue = false)]
+    [JsonPropertyName("periods")]
     public List<PeriodsEnum> Periods { get; set; }
 
 
@@ -2189,7 +2189,7 @@ public partial class Widget : IEquatable<Widget>
     /// The list of media types for the dashboard widget configuration
     /// </summary>
     /// <value>The list of media types for the dashboard widget configuration</value>
-    [DataMember(Name = "mediaTypes", EmitDefaultValue = false)]
+    [JsonPropertyName("mediaTypes")]
     public List<MediaTypesEnum> MediaTypes { get; set; }
 
 
@@ -2198,7 +2198,7 @@ public partial class Widget : IEquatable<Widget>
     /// List of warnings for dashboard widget configuration
     /// </summary>
     /// <value>List of warnings for dashboard widget configuration</value>
-    [DataMember(Name = "warnings", EmitDefaultValue = false)]
+    [JsonPropertyName("warnings")]
     public List<Warning> Warnings { get; set; }
 
 
@@ -2207,7 +2207,7 @@ public partial class Widget : IEquatable<Widget>
     /// Indicates the show time in status of a widget configuration.
     /// </summary>
     /// <value>Indicates the show time in status of a widget configuration.</value>
-    [DataMember(Name = "showTimeInStatus", EmitDefaultValue = false)]
+    [JsonPropertyName("showTimeInStatus")]
     public bool? ShowTimeInStatus { get; set; }
 
 
@@ -2216,7 +2216,7 @@ public partial class Widget : IEquatable<Widget>
     /// Indicates to show offline agent widget.
     /// </summary>
     /// <value>Indicates to show offline agent widget.</value>
-    [DataMember(Name = "showOfflineAgents", EmitDefaultValue = false)]
+    [JsonPropertyName("showOfflineAgents")]
     public bool? ShowOfflineAgents { get; set; }
 
 
@@ -2225,7 +2225,7 @@ public partial class Widget : IEquatable<Widget>
     /// Indicates the selected statuses used to filter the agent widget in the dashboard.
     /// </summary>
     /// <value>Indicates the selected statuses used to filter the agent widget in the dashboard.</value>
-    [DataMember(Name = "selectedStatuses", EmitDefaultValue = false)]
+    [JsonPropertyName("selectedStatuses")]
     public List<SelectedStatusesEnum> SelectedStatuses { get; set; }
 
 
@@ -2234,7 +2234,7 @@ public partial class Widget : IEquatable<Widget>
     /// Indicates the selected segment types used to filter the agent activity in the dashboard.
     /// </summary>
     /// <value>Indicates the selected segment types used to filter the agent activity in the dashboard.</value>
-    [DataMember(Name = "selectedSegmentTypes", EmitDefaultValue = false)]
+    [JsonPropertyName("selectedSegmentTypes")]
     public List<SelectedSegmentTypesEnum> SelectedSegmentTypes { get; set; }
 
 

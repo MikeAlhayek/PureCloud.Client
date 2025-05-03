@@ -1,12 +1,12 @@
-using System.Runtime.Serialization;
 using System.Text;
+using System.Text.Json.Serialization;
 
 namespace PureCloud.Client.Models;
 
 /// <summary>
 /// WebChatSettings
 /// </summary>
-[DataContract]
+
 public partial class WebChatSettings : IEquatable<WebChatSettings>
 {
     /// <summary>
@@ -24,7 +24,7 @@ public partial class WebChatSettings : IEquatable<WebChatSettings>
     /// <summary>
     /// Gets or Sets RequireDeployment
     /// </summary>
-    [DataMember(Name = "requireDeployment", EmitDefaultValue = false)]
+    [JsonPropertyName("requireDeployment")]
     public bool? RequireDeployment { get; set; }
 
 

@@ -7,13 +7,13 @@ namespace PureCloud.Client.Models;
 /// <summary>
 /// PublishProgramTestPhraseMatchedTranscript
 /// </summary>
-[DataContract]
+
 public partial class PublishProgramTestPhraseMatchedTranscript : IEquatable<PublishProgramTestPhraseMatchedTranscript>
 {
     /// <summary>
     /// Gets or Sets MediaType
     /// </summary>
-    [JsonConverter(typeof(JsonStringEnumConverter))]
+    
     public enum MediaTypeEnum
     {
         /// <summary>
@@ -69,7 +69,7 @@ public partial class PublishProgramTestPhraseMatchedTranscript : IEquatable<Publ
     /// <summary>
     /// Gets or Sets MediaType
     /// </summary>
-    [DataMember(Name = "mediaType", EmitDefaultValue = false)]
+    [JsonPropertyName("mediaType")]
     public MediaTypeEnum? MediaType { get; set; }
     /// <summary>
     /// Initializes a new instance of the <see cref="PublishProgramTestPhraseMatchedTranscript" /> class.
@@ -96,7 +96,7 @@ public partial class PublishProgramTestPhraseMatchedTranscript : IEquatable<Publ
     /// <summary>
     /// Gets or Sets Timestamp
     /// </summary>
-    [DataMember(Name = "timestamp", EmitDefaultValue = false)]
+    [JsonPropertyName("timestamp")]
     public long? Timestamp { get; set; }
 
 
@@ -104,7 +104,7 @@ public partial class PublishProgramTestPhraseMatchedTranscript : IEquatable<Publ
     /// <summary>
     /// Gets or Sets TranscriptId
     /// </summary>
-    [DataMember(Name = "transcriptId", EmitDefaultValue = false)]
+    [JsonPropertyName("transcriptId")]
     public string TranscriptId { get; set; }
 
 
@@ -112,7 +112,7 @@ public partial class PublishProgramTestPhraseMatchedTranscript : IEquatable<Publ
     /// <summary>
     /// Gets or Sets CommunicationId
     /// </summary>
-    [DataMember(Name = "communicationId", EmitDefaultValue = false)]
+    [JsonPropertyName("communicationId")]
     public string CommunicationId { get; set; }
 
 
@@ -120,7 +120,7 @@ public partial class PublishProgramTestPhraseMatchedTranscript : IEquatable<Publ
     /// <summary>
     /// Gets or Sets ConversationId
     /// </summary>
-    [DataMember(Name = "conversationId", EmitDefaultValue = false)]
+    [JsonPropertyName("conversationId")]
     public string ConversationId { get; set; }
 
 
@@ -130,7 +130,7 @@ public partial class PublishProgramTestPhraseMatchedTranscript : IEquatable<Publ
     /// <summary>
     /// Gets or Sets DetectedPhrases
     /// </summary>
-    [DataMember(Name = "detectedPhrases", EmitDefaultValue = false)]
+    [JsonPropertyName("detectedPhrases")]
     public List<PublishProgramTestPhraseDetectedPhrase> DetectedPhrases { get; set; }
 
 

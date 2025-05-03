@@ -1,12 +1,12 @@
-using System.Runtime.Serialization;
 using System.Text;
+using System.Text.Json.Serialization;
 
 namespace PureCloud.Client.Models;
 
 /// <summary>
 /// ReportingTurnKnowledgeDocument
 /// </summary>
-[DataContract]
+
 public partial class ReportingTurnKnowledgeDocument : IEquatable<ReportingTurnKnowledgeDocument>
 {
     /// <summary>
@@ -31,7 +31,7 @@ public partial class ReportingTurnKnowledgeDocument : IEquatable<ReportingTurnKn
     /// The ID of the knowledge document.
     /// </summary>
     /// <value>The ID of the knowledge document.</value>
-    [DataMember(Name = "id", EmitDefaultValue = false)]
+    [JsonPropertyName("id")]
     public string Id { get; set; }
 
 
@@ -40,7 +40,7 @@ public partial class ReportingTurnKnowledgeDocument : IEquatable<ReportingTurnKn
     /// The the question that was used to match against the search query.
     /// </summary>
     /// <value>The the question that was used to match against the search query.</value>
-    [DataMember(Name = "question", EmitDefaultValue = false)]
+    [JsonPropertyName("question")]
     public string Question { get; set; }
 
 
@@ -49,7 +49,7 @@ public partial class ReportingTurnKnowledgeDocument : IEquatable<ReportingTurnKn
     /// The corresponding answer to the question.
     /// </summary>
     /// <value>The corresponding answer to the question.</value>
-    [DataMember(Name = "answer", EmitDefaultValue = false)]
+    [JsonPropertyName("answer")]
     public string Answer { get; set; }
 
 
@@ -58,7 +58,7 @@ public partial class ReportingTurnKnowledgeDocument : IEquatable<ReportingTurnKn
     /// The confidence score of how well the question matched the search query.
     /// </summary>
     /// <value>The confidence score of how well the question matched the search query.</value>
-    [DataMember(Name = "confidence", EmitDefaultValue = false)]
+    [JsonPropertyName("confidence")]
     public double? Confidence { get; set; }
 
 

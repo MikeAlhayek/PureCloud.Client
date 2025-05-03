@@ -7,14 +7,14 @@ namespace PureCloud.Client.Models;
 /// <summary>
 /// Phrase
 /// </summary>
-[DataContract]
+
 public partial class Phrase : IEquatable<Phrase>
 {
     /// <summary>
     /// The phrase strictness, default value is null
     /// </summary>
     /// <value>The phrase strictness, default value is null</value>
-    [JsonConverter(typeof(JsonStringEnumConverter))]
+    
     public enum StrictnessEnum
     {
         /// <summary>
@@ -65,7 +65,7 @@ public partial class Phrase : IEquatable<Phrase>
     /// The phrase sentiment, default value is Unspecified. Note: Sentiment value for phrases is currently not in use and has no impact to the system.
     /// </summary>
     /// <value>The phrase sentiment, default value is Unspecified. Note: Sentiment value for phrases is currently not in use and has no impact to the system.</value>
-    [JsonConverter(typeof(JsonStringEnumConverter))]
+    
     public enum SentimentEnum
     {
         /// <summary>
@@ -104,13 +104,13 @@ public partial class Phrase : IEquatable<Phrase>
     /// The phrase strictness, default value is null
     /// </summary>
     /// <value>The phrase strictness, default value is null</value>
-    [DataMember(Name = "strictness", EmitDefaultValue = false)]
+    [JsonPropertyName("strictness")]
     public StrictnessEnum? Strictness { get; set; }
     /// <summary>
     /// The phrase sentiment, default value is Unspecified. Note: Sentiment value for phrases is currently not in use and has no impact to the system.
     /// </summary>
     /// <value>The phrase sentiment, default value is Unspecified. Note: Sentiment value for phrases is currently not in use and has no impact to the system.</value>
-    [DataMember(Name = "sentiment", EmitDefaultValue = false)]
+    [JsonPropertyName("sentiment")]
     public SentimentEnum? Sentiment { get; set; }
 
     /// <summary>
@@ -138,7 +138,7 @@ public partial class Phrase : IEquatable<Phrase>
     /// The phrase text
     /// </summary>
     /// <value>The phrase text</value>
-    [DataMember(Name = "text", EmitDefaultValue = false)]
+    [JsonPropertyName("text")]
     public string Text { get; set; }
 
 

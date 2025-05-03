@@ -1,12 +1,12 @@
-using System.Runtime.Serialization;
 using System.Text;
+using System.Text.Json.Serialization;
 
 namespace PureCloud.Client.Models;
 
 /// <summary>
 /// WfmBuShortTermForecastUpdateCompleteTopicWfmVersionedEntityMetadata
 /// </summary>
-[DataContract]
+
 public partial class WfmBuShortTermForecastUpdateCompleteTopicWfmVersionedEntityMetadata : IEquatable<WfmBuShortTermForecastUpdateCompleteTopicWfmVersionedEntityMetadata>
 {
     /// <summary>
@@ -28,7 +28,7 @@ public partial class WfmBuShortTermForecastUpdateCompleteTopicWfmVersionedEntity
     /// <summary>
     /// Gets or Sets Version
     /// </summary>
-    [DataMember(Name = "version", EmitDefaultValue = false)]
+    [JsonPropertyName("version")]
     public long? Version { get; set; }
 
 
@@ -36,7 +36,7 @@ public partial class WfmBuShortTermForecastUpdateCompleteTopicWfmVersionedEntity
     /// <summary>
     /// Gets or Sets ModifiedBy
     /// </summary>
-    [DataMember(Name = "modifiedBy", EmitDefaultValue = false)]
+    [JsonPropertyName("modifiedBy")]
     public WfmBuShortTermForecastUpdateCompleteTopicUserReference ModifiedBy { get; set; }
 
 
@@ -44,7 +44,7 @@ public partial class WfmBuShortTermForecastUpdateCompleteTopicWfmVersionedEntity
     /// <summary>
     /// Gets or Sets DateModified
     /// </summary>
-    [DataMember(Name = "dateModified", EmitDefaultValue = false)]
+    [JsonPropertyName("dateModified")]
     public DateTime? DateModified { get; set; }
 
 

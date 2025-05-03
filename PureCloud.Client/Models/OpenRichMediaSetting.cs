@@ -1,12 +1,12 @@
-using System.Runtime.Serialization;
 using System.Text;
+using System.Text.Json.Serialization;
 
 namespace PureCloud.Client.Models;
 
 /// <summary>
 /// OpenRichMediaSetting
 /// </summary>
-[DataContract]
+
 public partial class OpenRichMediaSetting : IEquatable<OpenRichMediaSetting>
 {
     /// <summary>
@@ -27,7 +27,7 @@ public partial class OpenRichMediaSetting : IEquatable<OpenRichMediaSetting>
     /// Setting relating to quick replies
     /// </summary>
     /// <value>Setting relating to quick replies</value>
-    [DataMember(Name = "quickReply", EmitDefaultValue = false)]
+    [JsonPropertyName("quickReply")]
     public OutboundOnlySetting QuickReply { get; set; }
 
 
@@ -36,7 +36,7 @@ public partial class OpenRichMediaSetting : IEquatable<OpenRichMediaSetting>
     /// Setting relating to cards
     /// </summary>
     /// <value>Setting relating to cards</value>
-    [DataMember(Name = "cards", EmitDefaultValue = false)]
+    [JsonPropertyName("cards")]
     public OutboundOnlySetting Cards { get; set; }
 
 

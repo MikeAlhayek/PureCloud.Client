@@ -1,12 +1,12 @@
-using System.Runtime.Serialization;
 using System.Text;
+using System.Text.Json.Serialization;
 
 namespace PureCloud.Client.Models;
 
 /// <summary>
 /// V2MobiusAlertsTopicAlertNotificationRecipient
 /// </summary>
-[DataContract]
+
 public partial class V2MobiusAlertsTopicAlertNotificationRecipient : IEquatable<V2MobiusAlertsTopicAlertNotificationRecipient>
 {
     /// <summary>
@@ -28,7 +28,7 @@ public partial class V2MobiusAlertsTopicAlertNotificationRecipient : IEquatable<
     /// <summary>
     /// Gets or Sets UserId
     /// </summary>
-    [DataMember(Name = "userId", EmitDefaultValue = false)]
+    [JsonPropertyName("userId")]
     public string UserId { get; set; }
 
 
@@ -36,7 +36,7 @@ public partial class V2MobiusAlertsTopicAlertNotificationRecipient : IEquatable<
     /// <summary>
     /// Gets or Sets DisplayName
     /// </summary>
-    [DataMember(Name = "displayName", EmitDefaultValue = false)]
+    [JsonPropertyName("displayName")]
     public string DisplayName { get; set; }
 
 
@@ -44,7 +44,7 @@ public partial class V2MobiusAlertsTopicAlertNotificationRecipient : IEquatable<
     /// <summary>
     /// Gets or Sets ContactAddress
     /// </summary>
-    [DataMember(Name = "contactAddress", EmitDefaultValue = false)]
+    [JsonPropertyName("contactAddress")]
     public string ContactAddress { get; set; }
 
 

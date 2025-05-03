@@ -7,13 +7,13 @@ namespace PureCloud.Client.Models;
 /// <summary>
 /// WfmBuShortTermForecastGenerateProgressTopicForecastSourceDayPointer
 /// </summary>
-[DataContract]
+
 public partial class WfmBuShortTermForecastGenerateProgressTopicForecastSourceDayPointer : IEquatable<WfmBuShortTermForecastGenerateProgressTopicForecastSourceDayPointer>
 {
     /// <summary>
     /// Gets or Sets DayOfWeek
     /// </summary>
-    [JsonConverter(typeof(JsonStringEnumConverter))]
+    
     public enum DayOfWeekEnum
     {
         /// <summary>
@@ -75,7 +75,7 @@ public partial class WfmBuShortTermForecastGenerateProgressTopicForecastSourceDa
     /// <summary>
     /// Gets or Sets DayOfWeek
     /// </summary>
-    [DataMember(Name = "dayOfWeek", EmitDefaultValue = false)]
+    [JsonPropertyName("dayOfWeek")]
     public DayOfWeekEnum? DayOfWeek { get; set; }
     /// <summary>
     /// Initializes a new instance of the <see cref="WfmBuShortTermForecastGenerateProgressTopicForecastSourceDayPointer" /> class.
@@ -102,7 +102,7 @@ public partial class WfmBuShortTermForecastGenerateProgressTopicForecastSourceDa
     /// <summary>
     /// Gets or Sets Weight
     /// </summary>
-    [DataMember(Name = "weight", EmitDefaultValue = false)]
+    [JsonPropertyName("weight")]
     public long? Weight { get; set; }
 
 
@@ -110,7 +110,7 @@ public partial class WfmBuShortTermForecastGenerateProgressTopicForecastSourceDa
     /// <summary>
     /// Gets or Sets Date
     /// </summary>
-    [DataMember(Name = "date", EmitDefaultValue = false)]
+    [JsonPropertyName("date")]
     public string Date { get; set; }
 
 
@@ -118,7 +118,7 @@ public partial class WfmBuShortTermForecastGenerateProgressTopicForecastSourceDa
     /// <summary>
     /// Gets or Sets FileName
     /// </summary>
-    [DataMember(Name = "fileName", EmitDefaultValue = false)]
+    [JsonPropertyName("fileName")]
     public string FileName { get; set; }
 
 
@@ -126,7 +126,7 @@ public partial class WfmBuShortTermForecastGenerateProgressTopicForecastSourceDa
     /// <summary>
     /// Gets or Sets DataKey
     /// </summary>
-    [DataMember(Name = "dataKey", EmitDefaultValue = false)]
+    [JsonPropertyName("dataKey")]
     public string DataKey { get; set; }
 
 

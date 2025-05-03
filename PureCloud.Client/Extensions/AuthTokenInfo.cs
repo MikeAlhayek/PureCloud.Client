@@ -1,12 +1,12 @@
-using System.Runtime.Serialization;
 using System.Text;
+using System.Text.Json.Serialization;
 
 namespace PureCloud.Client.Extensions;
 
 /// <summary>
 /// Contains information about the access token from the authorization code OAuth flow
 /// </summary>
-[DataContract]
+
 public partial class AuthTokenInfo : IEquatable<AuthTokenInfo>
 {
     /// <summary>
@@ -20,31 +20,31 @@ public partial class AuthTokenInfo : IEquatable<AuthTokenInfo>
     ///<Summary>
     /// Access Token
     ///</Summary>
-    [DataMember(Name = "access_token", EmitDefaultValue = false)]
+    [JsonPropertyName("access_token")]
     public string AccessToken { get; set; }
 
     ///<Summary>
     /// Refresh Token
     ///</Summary>
-    [DataMember(Name = "refresh_token", EmitDefaultValue = false)]
+    [JsonPropertyName("refresh_token")]
     public string RefreshToken { get; set; }
 
     ///<Summary>
     /// Token Type
     ///</Summary>
-    [DataMember(Name = "token_type", EmitDefaultValue = false)]
+    [JsonPropertyName("token_type")]
     public string TokenType { get; set; }
 
     ///<Summary>
     /// Token Expires In
     ///</Summary>
-    [DataMember(Name = "expires_in", EmitDefaultValue = false)]
+    [JsonPropertyName("expires_in")]
     public int? ExpiresIn { get; set; }
 
     ///<Summary>
     /// Error
     ///</Summary>
-    [DataMember(Name = "error", EmitDefaultValue = false)]
+    [JsonPropertyName("error")]
     public string Error { get; set; }
 
 

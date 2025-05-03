@@ -1,12 +1,12 @@
-using System.Runtime.Serialization;
 using System.Text;
+using System.Text.Json.Serialization;
 
 namespace PureCloud.Client.Models;
 
 /// <summary>
 /// TrusteeAuthorization
 /// </summary>
-[DataContract]
+
 public partial class TrusteeAuthorization : IEquatable<TrusteeAuthorization>
 {
     /// <summary>
@@ -23,7 +23,7 @@ public partial class TrusteeAuthorization : IEquatable<TrusteeAuthorization>
     /// Permissions that the trustee user has in the trustor organization
     /// </summary>
     /// <value>Permissions that the trustee user has in the trustor organization</value>
-    [DataMember(Name = "permissions", EmitDefaultValue = false)]
+    [JsonPropertyName("permissions")]
     public List<string> Permissions { get; private set; }
 
 

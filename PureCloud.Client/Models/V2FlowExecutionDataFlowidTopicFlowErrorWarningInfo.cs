@@ -1,12 +1,12 @@
-using System.Runtime.Serialization;
 using System.Text;
+using System.Text.Json.Serialization;
 
 namespace PureCloud.Client.Models;
 
 /// <summary>
 /// V2FlowExecutionDataFlowidTopicFlowErrorWarningInfo
 /// </summary>
-[DataContract]
+
 public partial class V2FlowExecutionDataFlowidTopicFlowErrorWarningInfo : IEquatable<V2FlowExecutionDataFlowidTopicFlowErrorWarningInfo>
 {
     /// <summary>
@@ -29,7 +29,7 @@ public partial class V2FlowExecutionDataFlowidTopicFlowErrorWarningInfo : IEquat
     /// The reason a executionItem encountered an error or warning.
     /// </summary>
     /// <value>The reason a executionItem encountered an error or warning.</value>
-    [DataMember(Name = "reason", EmitDefaultValue = false)]
+    [JsonPropertyName("reason")]
     public string Reason { get; set; }
 
 
@@ -38,7 +38,7 @@ public partial class V2FlowExecutionDataFlowidTopicFlowErrorWarningInfo : IEquat
     /// If applicable, the executionId for the executionItem that invoked the error or warning.
     /// </summary>
     /// <value>If applicable, the executionId for the executionItem that invoked the error or warning.</value>
-    [DataMember(Name = "executionId", EmitDefaultValue = false)]
+    [JsonPropertyName("executionId")]
     public string ExecutionId { get; set; }
 
 
@@ -47,7 +47,7 @@ public partial class V2FlowExecutionDataFlowidTopicFlowErrorWarningInfo : IEquat
     /// If applicable, the objectId for the executionItem that invoked the error or warning.
     /// </summary>
     /// <value>If applicable, the objectId for the executionItem that invoked the error or warning.</value>
-    [DataMember(Name = "objectId", EmitDefaultValue = false)]
+    [JsonPropertyName("objectId")]
     public string ObjectId { get; set; }
 
 

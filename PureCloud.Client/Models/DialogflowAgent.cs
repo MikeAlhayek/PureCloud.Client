@@ -1,12 +1,12 @@
-using System.Runtime.Serialization;
 using System.Text;
+using System.Text.Json.Serialization;
 
 namespace PureCloud.Client.Models;
 
 /// <summary>
 /// DialogflowAgent
 /// </summary>
-[DataContract]
+
 public partial class DialogflowAgent : IEquatable<DialogflowAgent>
 {
     /// <summary>
@@ -35,7 +35,7 @@ public partial class DialogflowAgent : IEquatable<DialogflowAgent>
     /// The globally unique identifier for the object.
     /// </summary>
     /// <value>The globally unique identifier for the object.</value>
-    [DataMember(Name = "id", EmitDefaultValue = false)]
+    [JsonPropertyName("id")]
     public string Id { get; private set; }
 
 
@@ -43,7 +43,7 @@ public partial class DialogflowAgent : IEquatable<DialogflowAgent>
     /// <summary>
     /// Gets or Sets Name
     /// </summary>
-    [DataMember(Name = "name", EmitDefaultValue = false)]
+    [JsonPropertyName("name")]
     public string Name { get; set; }
 
 
@@ -52,7 +52,7 @@ public partial class DialogflowAgent : IEquatable<DialogflowAgent>
     /// The project this Dialogflow agent belongs to
     /// </summary>
     /// <value>The project this Dialogflow agent belongs to</value>
-    [DataMember(Name = "project", EmitDefaultValue = false)]
+    [JsonPropertyName("project")]
     public DialogflowProject Project { get; set; }
 
 
@@ -61,7 +61,7 @@ public partial class DialogflowAgent : IEquatable<DialogflowAgent>
     /// The supported languages of the Dialogflow agent
     /// </summary>
     /// <value>The supported languages of the Dialogflow agent</value>
-    [DataMember(Name = "languages", EmitDefaultValue = false)]
+    [JsonPropertyName("languages")]
     public List<string> Languages { get; set; }
 
 
@@ -70,7 +70,7 @@ public partial class DialogflowAgent : IEquatable<DialogflowAgent>
     /// An array of Intents associated with this agent
     /// </summary>
     /// <value>An array of Intents associated with this agent</value>
-    [DataMember(Name = "intents", EmitDefaultValue = false)]
+    [JsonPropertyName("intents")]
     public List<DialogflowIntent> Intents { get; set; }
 
 
@@ -79,7 +79,7 @@ public partial class DialogflowAgent : IEquatable<DialogflowAgent>
     /// Available environments for this agent
     /// </summary>
     /// <value>Available environments for this agent</value>
-    [DataMember(Name = "environments", EmitDefaultValue = false)]
+    [JsonPropertyName("environments")]
     public List<string> Environments { get; set; }
 
 
@@ -88,7 +88,7 @@ public partial class DialogflowAgent : IEquatable<DialogflowAgent>
     /// The Integration this Dialogflow agent was referenced from.
     /// </summary>
     /// <value>The Integration this Dialogflow agent was referenced from.</value>
-    [DataMember(Name = "integration", EmitDefaultValue = false)]
+    [JsonPropertyName("integration")]
     public DomainEntityRef Integration { get; set; }
 
 
@@ -97,7 +97,7 @@ public partial class DialogflowAgent : IEquatable<DialogflowAgent>
     /// The URI for this object
     /// </summary>
     /// <value>The URI for this object</value>
-    [DataMember(Name = "selfUri", EmitDefaultValue = false)]
+    [JsonPropertyName("selfUri")]
     public string SelfUri { get; private set; }
 
 

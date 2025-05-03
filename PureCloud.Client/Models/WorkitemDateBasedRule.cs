@@ -7,14 +7,14 @@ namespace PureCloud.Client.Models;
 /// <summary>
 /// WorkitemDateBasedRule
 /// </summary>
-[DataContract]
+
 public partial class WorkitemDateBasedRule : IEquatable<WorkitemDateBasedRule>
 {
     /// <summary>
     /// The type of the rule.
     /// </summary>
     /// <value>The type of the rule.</value>
-    [JsonConverter(typeof(JsonStringEnumConverter))]
+    
     public enum TypeEnum
     {
         /// <summary>
@@ -47,7 +47,7 @@ public partial class WorkitemDateBasedRule : IEquatable<WorkitemDateBasedRule>
     /// The type of the rule.
     /// </summary>
     /// <value>The type of the rule.</value>
-    [DataMember(Name = "type", EmitDefaultValue = false)]
+    [JsonPropertyName("type")]
     public TypeEnum? Type { get; set; }
     /// <summary>
     /// Initializes a new instance of the <see cref="WorkitemDateBasedRule" /> class.
@@ -73,7 +73,7 @@ public partial class WorkitemDateBasedRule : IEquatable<WorkitemDateBasedRule>
     /// The globally unique identifier for the object.
     /// </summary>
     /// <value>The globally unique identifier for the object.</value>
-    [DataMember(Name = "id", EmitDefaultValue = false)]
+    [JsonPropertyName("id")]
     public string Id { get; private set; }
 
 
@@ -81,7 +81,7 @@ public partial class WorkitemDateBasedRule : IEquatable<WorkitemDateBasedRule>
     /// <summary>
     /// Gets or Sets Name
     /// </summary>
-    [DataMember(Name = "name", EmitDefaultValue = false)]
+    [JsonPropertyName("name")]
     public string Name { get; set; }
 
 
@@ -92,7 +92,7 @@ public partial class WorkitemDateBasedRule : IEquatable<WorkitemDateBasedRule>
     /// The rules action. If the condition criteria is met this action will be executed.
     /// </summary>
     /// <value>The rules action. If the condition criteria is met this action will be executed.</value>
-    [DataMember(Name = "action", EmitDefaultValue = false)]
+    [JsonPropertyName("action")]
     public WorkitemRuleAction Action { get; set; }
 
 
@@ -101,7 +101,7 @@ public partial class WorkitemDateBasedRule : IEquatable<WorkitemDateBasedRule>
     /// The Worktype containing the rule.
     /// </summary>
     /// <value>The Worktype containing the rule.</value>
-    [DataMember(Name = "worktype", EmitDefaultValue = false)]
+    [JsonPropertyName("worktype")]
     public WorktypeReference Worktype { get; set; }
 
 
@@ -110,7 +110,7 @@ public partial class WorkitemDateBasedRule : IEquatable<WorkitemDateBasedRule>
     /// The rules condition. If the condition criteria is met the rules action will be executed.
     /// </summary>
     /// <value>The rules condition. If the condition criteria is met the rules action will be executed.</value>
-    [DataMember(Name = "condition", EmitDefaultValue = false)]
+    [JsonPropertyName("condition")]
     public WorkitemDateBasedCondition Condition { get; set; }
 
 
@@ -119,7 +119,7 @@ public partial class WorkitemDateBasedRule : IEquatable<WorkitemDateBasedRule>
     /// The URI for this object
     /// </summary>
     /// <value>The URI for this object</value>
-    [DataMember(Name = "selfUri", EmitDefaultValue = false)]
+    [JsonPropertyName("selfUri")]
     public string SelfUri { get; private set; }
 
 

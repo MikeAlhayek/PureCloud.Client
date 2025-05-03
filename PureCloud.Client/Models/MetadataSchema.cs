@@ -1,12 +1,12 @@
-using System.Runtime.Serialization;
 using System.Text;
+using System.Text.Json.Serialization;
 
 namespace PureCloud.Client.Models;
 
 /// <summary>
 /// A description of the contents of a data gathering interface for an accelerator
 /// </summary>
-[DataContract]
+
 public partial class MetadataSchema : IEquatable<MetadataSchema>
 {
     /// <summary>
@@ -23,7 +23,7 @@ public partial class MetadataSchema : IEquatable<MetadataSchema>
     /// title for the data gathering page
     /// </summary>
     /// <value>title for the data gathering page</value>
-    [DataMember(Name = "title", EmitDefaultValue = false)]
+    [JsonPropertyName("title")]
     public string Title { get; private set; }
 
 
@@ -32,7 +32,7 @@ public partial class MetadataSchema : IEquatable<MetadataSchema>
     /// description of the data being gathered on this page
     /// </summary>
     /// <value>description of the data being gathered on this page</value>
-    [DataMember(Name = "description", EmitDefaultValue = false)]
+    [JsonPropertyName("description")]
     public string Description { get; private set; }
 
 
@@ -41,7 +41,7 @@ public partial class MetadataSchema : IEquatable<MetadataSchema>
     /// type of data being gathered
     /// </summary>
     /// <value>type of data being gathered</value>
-    [DataMember(Name = "type", EmitDefaultValue = false)]
+    [JsonPropertyName("type")]
     public string Type { get; private set; }
 
 
@@ -50,7 +50,7 @@ public partial class MetadataSchema : IEquatable<MetadataSchema>
     /// list of properties for which input is to be gathered, bother required and optional
     /// </summary>
     /// <value>list of properties for which input is to be gathered, bother required and optional</value>
-    [DataMember(Name = "properties", EmitDefaultValue = false)]
+    [JsonPropertyName("properties")]
     public List<Dictionary<string, MetadataProperty>> Properties { get; private set; }
 
 
@@ -59,7 +59,7 @@ public partial class MetadataSchema : IEquatable<MetadataSchema>
     /// list of required properties
     /// </summary>
     /// <value>list of required properties</value>
-    [DataMember(Name = "required", EmitDefaultValue = false)]
+    [JsonPropertyName("required")]
     public List<string> Required { get; private set; }
 
 

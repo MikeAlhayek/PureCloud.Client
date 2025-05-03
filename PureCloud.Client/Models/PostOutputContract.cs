@@ -1,4 +1,3 @@
-using System.Runtime.Serialization;
 using System.Text;
 using System.Text.Json.Serialization;
 
@@ -7,7 +6,7 @@ namespace PureCloud.Client.Models;
 /// <summary>
 /// The schemas defining all of the expected responses/outputs.
 /// </summary>
-[DataContract]
+
 public partial class PostOutputContract : IEquatable<PostOutputContract>
 {
 
@@ -32,7 +31,7 @@ public partial class PostOutputContract : IEquatable<PostOutputContract>
     /// JSON schema that defines the transformed, successful result that will be sent back to the caller.
     /// </summary>
     /// <value>JSON schema that defines the transformed, successful result that will be sent back to the caller.</value>
-    [DataMember(Name = "successSchema", EmitDefaultValue = false)]
+    [JsonPropertyName("successSchema")]
     public JsonSchemaDocument SuccessSchema { get; set; }
 
 

@@ -1,4 +1,3 @@
-using System.Runtime.Serialization;
 using System.Text;
 using System.Text.Json.Serialization;
 
@@ -7,7 +6,7 @@ namespace PureCloud.Client.Models;
 /// <summary>
 /// Used to return response query results
 /// </summary>
-[DataContract]
+
 public partial class ResponseQueryResults : IEquatable<ResponseQueryResults>
 {
 
@@ -32,7 +31,7 @@ public partial class ResponseQueryResults : IEquatable<ResponseQueryResults>
     /// Contains the query results
     /// </summary>
     /// <value>Contains the query results</value>
-    [DataMember(Name = "results", EmitDefaultValue = false)]
+    [JsonPropertyName("results")]
     public ResponseEntityList Results { get; set; }
 
 

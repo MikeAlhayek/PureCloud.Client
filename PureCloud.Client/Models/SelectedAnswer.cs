@@ -1,4 +1,3 @@
-using System.Runtime.Serialization;
 using System.Text;
 using System.Text.Json.Serialization;
 
@@ -7,7 +6,7 @@ namespace PureCloud.Client.Models;
 /// <summary>
 /// SelectedAnswer
 /// </summary>
-[DataContract]
+
 public partial class SelectedAnswer : IEquatable<SelectedAnswer>
 {
 
@@ -32,7 +31,7 @@ public partial class SelectedAnswer : IEquatable<SelectedAnswer>
     /// The search result document chosen as the answer.
     /// </summary>
     /// <value>The search result document chosen as the answer.</value>
-    [DataMember(Name = "document", EmitDefaultValue = false)]
+    [JsonPropertyName("document")]
     public AddressableEntityRef Document { get; set; }
 
 

@@ -1,4 +1,3 @@
-using System.Runtime.Serialization;
 using System.Text;
 using System.Text.Json.Serialization;
 
@@ -7,7 +6,7 @@ namespace PureCloud.Client.Models;
 /// <summary>
 /// PatchBuReschedulingOptionsManagementUnitRequest
 /// </summary>
-[DataContract]
+
 public partial class PatchBuReschedulingOptionsManagementUnitRequest : IEquatable<PatchBuReschedulingOptionsManagementUnitRequest>
 {
 
@@ -34,7 +33,7 @@ public partial class PatchBuReschedulingOptionsManagementUnitRequest : IEquatabl
     /// The management unit portion of the rescheduling run to update
     /// </summary>
     /// <value>The management unit portion of the rescheduling run to update</value>
-    [DataMember(Name = "managementUnitId", EmitDefaultValue = false)]
+    [JsonPropertyName("managementUnitId")]
     public string ManagementUnitId { get; set; }
 
 
@@ -43,7 +42,7 @@ public partial class PatchBuReschedulingOptionsManagementUnitRequest : IEquatabl
     /// Whether to mark the run as applied.  Only applies to reschedule runs.  Once applied, a run cannot be un-marked as applied
     /// </summary>
     /// <value>Whether to mark the run as applied.  Only applies to reschedule runs.  Once applied, a run cannot be un-marked as applied</value>
-    [DataMember(Name = "applied", EmitDefaultValue = false)]
+    [JsonPropertyName("applied")]
     public bool? Applied { get; set; }
 
 

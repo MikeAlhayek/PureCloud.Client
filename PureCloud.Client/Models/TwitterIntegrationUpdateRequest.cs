@@ -1,12 +1,12 @@
-using System.Runtime.Serialization;
 using System.Text;
+using System.Text.Json.Serialization;
 
 namespace PureCloud.Client.Models;
 
 /// <summary>
 /// TwitterIntegrationUpdateRequest
 /// </summary>
-[DataContract]
+
 public partial class TwitterIntegrationUpdateRequest : IEquatable<TwitterIntegrationUpdateRequest>
 {
     /// <summary>
@@ -35,7 +35,7 @@ public partial class TwitterIntegrationUpdateRequest : IEquatable<TwitterIntegra
     /// The globally unique identifier for the object.
     /// </summary>
     /// <value>The globally unique identifier for the object.</value>
-    [DataMember(Name = "id", EmitDefaultValue = false)]
+    [JsonPropertyName("id")]
     public string Id { get; private set; }
 
 
@@ -44,7 +44,7 @@ public partial class TwitterIntegrationUpdateRequest : IEquatable<TwitterIntegra
     /// The name of the Twitter messaging integration.
     /// </summary>
     /// <value>The name of the Twitter messaging integration.</value>
-    [DataMember(Name = "name", EmitDefaultValue = false)]
+    [JsonPropertyName("name")]
     public string Name { get; set; }
 
 
@@ -53,7 +53,7 @@ public partial class TwitterIntegrationUpdateRequest : IEquatable<TwitterIntegra
     /// Defines the SupportedContent profile configured for an integration
     /// </summary>
     /// <value>Defines the SupportedContent profile configured for an integration</value>
-    [DataMember(Name = "supportedContent", EmitDefaultValue = false)]
+    [JsonPropertyName("supportedContent")]
     public SupportedContentReference SupportedContent { get; set; }
 
 
@@ -62,7 +62,7 @@ public partial class TwitterIntegrationUpdateRequest : IEquatable<TwitterIntegra
     /// Defines the message settings to be applied for this integration
     /// </summary>
     /// <value>Defines the message settings to be applied for this integration</value>
-    [DataMember(Name = "messagingSetting", EmitDefaultValue = false)]
+    [JsonPropertyName("messagingSetting")]
     public MessagingSettingRequestReference MessagingSetting { get; set; }
 
 
@@ -71,7 +71,7 @@ public partial class TwitterIntegrationUpdateRequest : IEquatable<TwitterIntegra
     /// The authorization code returned from the signup flow to request access tokens later on
     /// </summary>
     /// <value>The authorization code returned from the signup flow to request access tokens later on</value>
-    [DataMember(Name = "signupCode", EmitDefaultValue = false)]
+    [JsonPropertyName("signupCode")]
     public string SignupCode { get; set; }
 
 
@@ -80,7 +80,7 @@ public partial class TwitterIntegrationUpdateRequest : IEquatable<TwitterIntegra
     /// The codeChallenge used during the signup flow
     /// </summary>
     /// <value>The codeChallenge used during the signup flow</value>
-    [DataMember(Name = "codeChallenge", EmitDefaultValue = false)]
+    [JsonPropertyName("codeChallenge")]
     public string CodeChallenge { get; set; }
 
 
@@ -89,7 +89,7 @@ public partial class TwitterIntegrationUpdateRequest : IEquatable<TwitterIntegra
     /// The redirectUri used during the signup flow
     /// </summary>
     /// <value>The redirectUri used during the signup flow</value>
-    [DataMember(Name = "redirectUri", EmitDefaultValue = false)]
+    [JsonPropertyName("redirectUri")]
     public string RedirectUri { get; set; }
 
 
@@ -98,7 +98,7 @@ public partial class TwitterIntegrationUpdateRequest : IEquatable<TwitterIntegra
     /// The URI for this object
     /// </summary>
     /// <value>The URI for this object</value>
-    [DataMember(Name = "selfUri", EmitDefaultValue = false)]
+    [JsonPropertyName("selfUri")]
     public string SelfUri { get; private set; }
 
 

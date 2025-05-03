@@ -7,13 +7,13 @@ namespace PureCloud.Client.Models;
 /// <summary>
 /// V2ConversationMessageTypingEventForUserTopicConversationEventTyping
 /// </summary>
-[DataContract]
+
 public partial class V2ConversationMessageTypingEventForUserTopicConversationEventTyping : IEquatable<V2ConversationMessageTypingEventForUserTopicConversationEventTyping>
 {
     /// <summary>
     /// Gets or Sets Type
     /// </summary>
-    [JsonConverter(typeof(JsonStringEnumConverter))]
+    
     public enum TypeEnum
     {
         /// <summary>
@@ -33,7 +33,7 @@ public partial class V2ConversationMessageTypingEventForUserTopicConversationEve
     /// <summary>
     /// Gets or Sets Type
     /// </summary>
-    [DataMember(Name = "type", EmitDefaultValue = false)]
+    [JsonPropertyName("type")]
     public TypeEnum? Type { get; set; }
     /// <summary>
     /// Initializes a new instance of the <see cref="V2ConversationMessageTypingEventForUserTopicConversationEventTyping" /> class.
@@ -54,7 +54,7 @@ public partial class V2ConversationMessageTypingEventForUserTopicConversationEve
     /// <summary>
     /// Gets or Sets Duration
     /// </summary>
-    [DataMember(Name = "duration", EmitDefaultValue = false)]
+    [JsonPropertyName("duration")]
     public long? Duration { get; set; }
 
 

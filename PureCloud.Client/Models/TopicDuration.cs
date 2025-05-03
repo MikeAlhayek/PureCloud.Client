@@ -1,12 +1,12 @@
-using System.Runtime.Serialization;
 using System.Text;
+using System.Text.Json.Serialization;
 
 namespace PureCloud.Client.Models;
 
 /// <summary>
 /// TopicDuration
 /// </summary>
-[DataContract]
+
 public partial class TopicDuration : IEquatable<TopicDuration>
 {
     /// <summary>
@@ -23,7 +23,7 @@ public partial class TopicDuration : IEquatable<TopicDuration>
     /// The total duration of the topic phrase within the conversation
     /// </summary>
     /// <value>The total duration of the topic phrase within the conversation</value>
-    [DataMember(Name = "totalMilliseconds", EmitDefaultValue = false)]
+    [JsonPropertyName("totalMilliseconds")]
     public long? TotalMilliseconds { get; private set; }
 
 

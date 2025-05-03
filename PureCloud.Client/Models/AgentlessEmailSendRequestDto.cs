@@ -7,14 +7,14 @@ namespace PureCloud.Client.Models;
 /// <summary>
 /// AgentlessEmailSendRequestDto
 /// </summary>
-[DataContract]
+
 public partial class AgentlessEmailSendRequestDto : IEquatable<AgentlessEmailSendRequestDto>
 {
     /// <summary>
     /// The direction of the message.
     /// </summary>
     /// <value>The direction of the message.</value>
-    [JsonConverter(typeof(JsonStringEnumConverter))]
+    
     public enum SenderTypeEnum
     {
         /// <summary>
@@ -47,7 +47,7 @@ public partial class AgentlessEmailSendRequestDto : IEquatable<AgentlessEmailSen
     /// The direction of the message.
     /// </summary>
     /// <value>The direction of the message.</value>
-    [DataMember(Name = "senderType", EmitDefaultValue = false)]
+    [JsonPropertyName("senderType")]
     public SenderTypeEnum? SenderType { get; set; }
 
     /// <summary>
@@ -87,7 +87,7 @@ public partial class AgentlessEmailSendRequestDto : IEquatable<AgentlessEmailSen
     /// The identifier of the conversation. This must be an email interaction.
     /// </summary>
     /// <value>The identifier of the conversation. This must be an email interaction.</value>
-    [DataMember(Name = "conversationId", EmitDefaultValue = false)]
+    [JsonPropertyName("conversationId")]
     public string ConversationId { get; set; }
 
 
@@ -96,7 +96,7 @@ public partial class AgentlessEmailSendRequestDto : IEquatable<AgentlessEmailSen
     /// The sender of the message.
     /// </summary>
     /// <value>The sender of the message.</value>
-    [DataMember(Name = "fromAddress", EmitDefaultValue = false)]
+    [JsonPropertyName("fromAddress")]
     public EmailAddress FromAddress { get; set; }
 
 
@@ -105,7 +105,7 @@ public partial class AgentlessEmailSendRequestDto : IEquatable<AgentlessEmailSen
     /// The recipient of the message. We currently support one recipient only.
     /// </summary>
     /// <value>The recipient of the message. We currently support one recipient only.</value>
-    [DataMember(Name = "toAddresses", EmitDefaultValue = false)]
+    [JsonPropertyName("toAddresses")]
     public List<EmailAddress> ToAddresses { get; set; }
 
 
@@ -114,7 +114,7 @@ public partial class AgentlessEmailSendRequestDto : IEquatable<AgentlessEmailSen
     /// The address to use for reply.
     /// </summary>
     /// <value>The address to use for reply.</value>
-    [DataMember(Name = "replyToAddress", EmitDefaultValue = false)]
+    [JsonPropertyName("replyToAddress")]
     public EmailAddress ReplyToAddress { get; set; }
 
 
@@ -123,7 +123,7 @@ public partial class AgentlessEmailSendRequestDto : IEquatable<AgentlessEmailSen
     /// The subject of the message.
     /// </summary>
     /// <value>The subject of the message.</value>
-    [DataMember(Name = "subject", EmitDefaultValue = false)]
+    [JsonPropertyName("subject")]
     public string Subject { get; set; }
 
 
@@ -132,7 +132,7 @@ public partial class AgentlessEmailSendRequestDto : IEquatable<AgentlessEmailSen
     /// The Content of the message, in plain text.
     /// </summary>
     /// <value>The Content of the message, in plain text.</value>
-    [DataMember(Name = "textBody", EmitDefaultValue = false)]
+    [JsonPropertyName("textBody")]
     public string TextBody { get; set; }
 
 
@@ -141,7 +141,7 @@ public partial class AgentlessEmailSendRequestDto : IEquatable<AgentlessEmailSen
     /// The Content of the message, in HTML. Links, images and styles are allowed
     /// </summary>
     /// <value>The Content of the message, in HTML. Links, images and styles are allowed</value>
-    [DataMember(Name = "htmlBody", EmitDefaultValue = false)]
+    [JsonPropertyName("htmlBody")]
     public string HtmlBody { get; set; }
 
 

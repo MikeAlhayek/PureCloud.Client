@@ -1,4 +1,3 @@
-using System.Runtime.Serialization;
 using System.Text;
 using System.Text.Json.Serialization;
 
@@ -7,7 +6,7 @@ namespace PureCloud.Client.Models;
 /// <summary>
 /// Facet
 /// </summary>
-[DataContract]
+
 public partial class Facet : IEquatable<Facet>
 {
 
@@ -34,7 +33,7 @@ public partial class Facet : IEquatable<Facet>
     /// The name of the field on which to facet.
     /// </summary>
     /// <value>The name of the field on which to facet.</value>
-    [DataMember(Name = "name", EmitDefaultValue = false)]
+    [JsonPropertyName("name")]
     public string Name { get; set; }
 
 
@@ -43,7 +42,7 @@ public partial class Facet : IEquatable<Facet>
     /// The type of the facet, DATE or STRING.
     /// </summary>
     /// <value>The type of the facet, DATE or STRING.</value>
-    [DataMember(Name = "type", EmitDefaultValue = false)]
+    [JsonPropertyName("type")]
     public string Type { get; set; }
 
 

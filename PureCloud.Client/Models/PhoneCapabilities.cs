@@ -7,13 +7,13 @@ namespace PureCloud.Client.Models;
 /// <summary>
 /// PhoneCapabilities
 /// </summary>
-[DataContract]
+
 public partial class PhoneCapabilities : IEquatable<PhoneCapabilities>
 {
     /// <summary>
     /// Gets or Sets MediaCodecs
     /// </summary>
-    [JsonConverter(typeof(JsonStringEnumConverter))]
+    
     public enum MediaCodecsEnum
     {
         /// <summary>
@@ -85,7 +85,7 @@ public partial class PhoneCapabilities : IEquatable<PhoneCapabilities>
     /// <summary>
     /// Gets or Sets Provisions
     /// </summary>
-    [DataMember(Name = "provisions", EmitDefaultValue = false)]
+    [JsonPropertyName("provisions")]
     public bool? Provisions { get; set; }
 
 
@@ -93,7 +93,7 @@ public partial class PhoneCapabilities : IEquatable<PhoneCapabilities>
     /// <summary>
     /// Gets or Sets Registers
     /// </summary>
-    [DataMember(Name = "registers", EmitDefaultValue = false)]
+    [JsonPropertyName("registers")]
     public bool? Registers { get; set; }
 
 
@@ -101,7 +101,7 @@ public partial class PhoneCapabilities : IEquatable<PhoneCapabilities>
     /// <summary>
     /// Gets or Sets DualRegisters
     /// </summary>
-    [DataMember(Name = "dualRegisters", EmitDefaultValue = false)]
+    [JsonPropertyName("dualRegisters")]
     public bool? DualRegisters { get; set; }
 
 
@@ -109,7 +109,7 @@ public partial class PhoneCapabilities : IEquatable<PhoneCapabilities>
     /// <summary>
     /// Gets or Sets HardwareIdType
     /// </summary>
-    [DataMember(Name = "hardwareIdType", EmitDefaultValue = false)]
+    [JsonPropertyName("hardwareIdType")]
     public string HardwareIdType { get; set; }
 
 
@@ -117,7 +117,7 @@ public partial class PhoneCapabilities : IEquatable<PhoneCapabilities>
     /// <summary>
     /// Gets or Sets AllowReboot
     /// </summary>
-    [DataMember(Name = "allowReboot", EmitDefaultValue = false)]
+    [JsonPropertyName("allowReboot")]
     public bool? AllowReboot { get; set; }
 
 
@@ -125,7 +125,7 @@ public partial class PhoneCapabilities : IEquatable<PhoneCapabilities>
     /// <summary>
     /// Gets or Sets NoRebalance
     /// </summary>
-    [DataMember(Name = "noRebalance", EmitDefaultValue = false)]
+    [JsonPropertyName("noRebalance")]
     public bool? NoRebalance { get; set; }
 
 
@@ -133,7 +133,7 @@ public partial class PhoneCapabilities : IEquatable<PhoneCapabilities>
     /// <summary>
     /// Gets or Sets NoCloudProvisioning
     /// </summary>
-    [DataMember(Name = "noCloudProvisioning", EmitDefaultValue = false)]
+    [JsonPropertyName("noCloudProvisioning")]
     public bool? NoCloudProvisioning { get; set; }
 
 
@@ -141,7 +141,7 @@ public partial class PhoneCapabilities : IEquatable<PhoneCapabilities>
     /// <summary>
     /// Gets or Sets MediaCodecs
     /// </summary>
-    [DataMember(Name = "mediaCodecs", EmitDefaultValue = false)]
+    [JsonPropertyName("mediaCodecs")]
     public List<MediaCodecsEnum> MediaCodecs { get; set; }
 
 
@@ -149,7 +149,7 @@ public partial class PhoneCapabilities : IEquatable<PhoneCapabilities>
     /// <summary>
     /// Gets or Sets Cdm
     /// </summary>
-    [DataMember(Name = "cdm", EmitDefaultValue = false)]
+    [JsonPropertyName("cdm")]
     public bool? Cdm { get; set; }
 
 

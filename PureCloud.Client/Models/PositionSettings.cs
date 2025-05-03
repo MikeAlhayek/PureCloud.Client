@@ -7,14 +7,14 @@ namespace PureCloud.Client.Models;
 /// <summary>
 /// Settings concerning position
 /// </summary>
-[DataContract]
+
 public partial class PositionSettings : IEquatable<PositionSettings>
 {
     /// <summary>
     /// The alignment for position
     /// </summary>
     /// <value>The alignment for position</value>
-    [JsonConverter(typeof(JsonStringEnumConverter))]
+    
     public enum AlignmentEnum
     {
         /// <summary>
@@ -47,7 +47,7 @@ public partial class PositionSettings : IEquatable<PositionSettings>
     /// The alignment for position
     /// </summary>
     /// <value>The alignment for position</value>
-    [DataMember(Name = "alignment", EmitDefaultValue = false)]
+    [JsonPropertyName("alignment")]
     public AlignmentEnum? Alignment { get; set; }
     /// <summary>
     /// Initializes a new instance of the <see cref="PositionSettings" /> class.
@@ -71,7 +71,7 @@ public partial class PositionSettings : IEquatable<PositionSettings>
     /// The sidespace value for position
     /// </summary>
     /// <value>The sidespace value for position</value>
-    [DataMember(Name = "sideSpace", EmitDefaultValue = false)]
+    [JsonPropertyName("sideSpace")]
     public int? SideSpace { get; set; }
 
 
@@ -80,7 +80,7 @@ public partial class PositionSettings : IEquatable<PositionSettings>
     /// The bottomspace value for position
     /// </summary>
     /// <value>The bottomspace value for position</value>
-    [DataMember(Name = "bottomSpace", EmitDefaultValue = false)]
+    [JsonPropertyName("bottomSpace")]
     public int? BottomSpace { get; set; }
 
 

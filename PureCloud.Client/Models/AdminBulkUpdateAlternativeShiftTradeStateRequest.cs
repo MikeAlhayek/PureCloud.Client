@@ -1,4 +1,3 @@
-using System.Runtime.Serialization;
 using System.Text;
 using System.Text.Json.Serialization;
 
@@ -7,7 +6,7 @@ namespace PureCloud.Client.Models;
 /// <summary>
 /// AdminBulkUpdateAlternativeShiftTradeStateRequest
 /// </summary>
-[DataContract]
+
 public partial class AdminBulkUpdateAlternativeShiftTradeStateRequest : IEquatable<AdminBulkUpdateAlternativeShiftTradeStateRequest>
 {
 
@@ -33,7 +32,7 @@ public partial class AdminBulkUpdateAlternativeShiftTradeStateRequest : IEquatab
     /// <summary>
     /// Gets or Sets Entities
     /// </summary>
-    [DataMember(Name = "entities", EmitDefaultValue = false)]
+    [JsonPropertyName("entities")]
     public List<AdminBulkUpdateAlternativeShiftTradeState> Entities { get; set; }
 
 
@@ -42,7 +41,7 @@ public partial class AdminBulkUpdateAlternativeShiftTradeStateRequest : IEquatab
     /// The ID of the management unit for this alternative shift bulk trade update
     /// </summary>
     /// <value>The ID of the management unit for this alternative shift bulk trade update</value>
-    [DataMember(Name = "managementUnitId", EmitDefaultValue = false)]
+    [JsonPropertyName("managementUnitId")]
     public string ManagementUnitId { get; set; }
 
 

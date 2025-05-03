@@ -7,14 +7,14 @@ namespace PureCloud.Client.Models;
 /// <summary>
 /// Recipient
 /// </summary>
-[DataContract]
+
 public partial class Recipient : IEquatable<Recipient>
 {
     /// <summary>
     /// The messenger type for this recipient
     /// </summary>
     /// <value>The messenger type for this recipient</value>
-    [JsonConverter(typeof(JsonStringEnumConverter))]
+    
     public enum MessengerTypeEnum
     {
         /// <summary>
@@ -77,7 +77,7 @@ public partial class Recipient : IEquatable<Recipient>
     /// The messenger type for this recipient
     /// </summary>
     /// <value>The messenger type for this recipient</value>
-    [DataMember(Name = "messengerType", EmitDefaultValue = false)]
+    [JsonPropertyName("messengerType")]
     public MessengerTypeEnum? MessengerType { get; set; }
     /// <summary>
     /// Initializes a new instance of the <see cref="Recipient" /> class.
@@ -107,7 +107,7 @@ public partial class Recipient : IEquatable<Recipient>
     /// The globally unique identifier for the object.
     /// </summary>
     /// <value>The globally unique identifier for the object.</value>
-    [DataMember(Name = "id", EmitDefaultValue = false)]
+    [JsonPropertyName("id")]
     public string Id { get; private set; }
 
 
@@ -115,7 +115,7 @@ public partial class Recipient : IEquatable<Recipient>
     /// <summary>
     /// Gets or Sets Name
     /// </summary>
-    [DataMember(Name = "name", EmitDefaultValue = false)]
+    [JsonPropertyName("name")]
     public string Name { get; set; }
 
 
@@ -124,7 +124,7 @@ public partial class Recipient : IEquatable<Recipient>
     /// An automate flow object which defines the set of actions to be taken, when a message is received by this recipient.
     /// </summary>
     /// <value>An automate flow object which defines the set of actions to be taken, when a message is received by this recipient.</value>
-    [DataMember(Name = "flow", EmitDefaultValue = false)]
+    [JsonPropertyName("flow")]
     public Flow Flow { get; set; }
 
 
@@ -133,7 +133,7 @@ public partial class Recipient : IEquatable<Recipient>
     /// Date this recipient was created. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z
     /// </summary>
     /// <value>Date this recipient was created. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z</value>
-    [DataMember(Name = "dateCreated", EmitDefaultValue = false)]
+    [JsonPropertyName("dateCreated")]
     public DateTime? DateCreated { get; set; }
 
 
@@ -142,7 +142,7 @@ public partial class Recipient : IEquatable<Recipient>
     /// Date this recipient was modified. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z
     /// </summary>
     /// <value>Date this recipient was modified. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z</value>
-    [DataMember(Name = "dateModified", EmitDefaultValue = false)]
+    [JsonPropertyName("dateModified")]
     public DateTime? DateModified { get; set; }
 
 
@@ -151,7 +151,7 @@ public partial class Recipient : IEquatable<Recipient>
     /// User that created this recipient
     /// </summary>
     /// <value>User that created this recipient</value>
-    [DataMember(Name = "createdBy", EmitDefaultValue = false)]
+    [JsonPropertyName("createdBy")]
     public User CreatedBy { get; set; }
 
 
@@ -160,7 +160,7 @@ public partial class Recipient : IEquatable<Recipient>
     /// User that modified this recipient
     /// </summary>
     /// <value>User that modified this recipient</value>
-    [DataMember(Name = "modifiedBy", EmitDefaultValue = false)]
+    [JsonPropertyName("modifiedBy")]
     public User ModifiedBy { get; set; }
 
 
@@ -171,7 +171,7 @@ public partial class Recipient : IEquatable<Recipient>
     /// The URI for this object
     /// </summary>
     /// <value>The URI for this object</value>
-    [DataMember(Name = "selfUri", EmitDefaultValue = false)]
+    [JsonPropertyName("selfUri")]
     public string SelfUri { get; private set; }
 
 

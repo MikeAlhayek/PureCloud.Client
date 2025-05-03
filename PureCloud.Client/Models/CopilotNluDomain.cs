@@ -1,4 +1,3 @@
-using System.Runtime.Serialization;
 using System.Text;
 using System.Text.Json.Serialization;
 
@@ -7,7 +6,7 @@ namespace PureCloud.Client.Models;
 /// <summary>
 /// CopilotNluDomain
 /// </summary>
-[DataContract]
+
 public partial class CopilotNluDomain : IEquatable<CopilotNluDomain>
 {
 
@@ -36,7 +35,7 @@ public partial class CopilotNluDomain : IEquatable<CopilotNluDomain>
     /// Id of the NLU domain.
     /// </summary>
     /// <value>Id of the NLU domain.</value>
-    [DataMember(Name = "id", EmitDefaultValue = false)]
+    [JsonPropertyName("id")]
     public string Id { get; set; }
 
 
@@ -45,7 +44,7 @@ public partial class CopilotNluDomain : IEquatable<CopilotNluDomain>
     /// Use the latest version of the NLU domain. If false, version is required.
     /// </summary>
     /// <value>Use the latest version of the NLU domain. If false, version is required.</value>
-    [DataMember(Name = "useLatestVersion", EmitDefaultValue = false)]
+    [JsonPropertyName("useLatestVersion")]
     public bool? UseLatestVersion { get; set; }
 
 
@@ -54,7 +53,7 @@ public partial class CopilotNluDomain : IEquatable<CopilotNluDomain>
     /// NLU domain version.
     /// </summary>
     /// <value>NLU domain version.</value>
-    [DataMember(Name = "version", EmitDefaultValue = false)]
+    [JsonPropertyName("version")]
     public CopilotNluDomainVersion Version { get; set; }
 
 
@@ -63,7 +62,7 @@ public partial class CopilotNluDomain : IEquatable<CopilotNluDomain>
     /// The URI for this object
     /// </summary>
     /// <value>The URI for this object</value>
-    [DataMember(Name = "selfUri", EmitDefaultValue = false)]
+    [JsonPropertyName("selfUri")]
     public string SelfUri { get; private set; }
 
 

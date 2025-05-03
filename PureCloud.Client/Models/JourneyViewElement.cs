@@ -1,4 +1,3 @@
-using System.Runtime.Serialization;
 using System.Text;
 using System.Text.Json.Serialization;
 
@@ -7,7 +6,7 @@ namespace PureCloud.Client.Models;
 /// <summary>
 /// An element within a journey view
 /// </summary>
-[DataContract]
+
 public partial class JourneyViewElement : IEquatable<JourneyViewElement>
 {
 
@@ -42,7 +41,7 @@ public partial class JourneyViewElement : IEquatable<JourneyViewElement>
     /// The unique identifier of the element within the elements list
     /// </summary>
     /// <value>The unique identifier of the element within the elements list</value>
-    [DataMember(Name = "id", EmitDefaultValue = false)]
+    [JsonPropertyName("id")]
     public string Id { get; set; }
 
 
@@ -51,7 +50,7 @@ public partial class JourneyViewElement : IEquatable<JourneyViewElement>
     /// The unique name of the element within the view
     /// </summary>
     /// <value>The unique name of the element within the view</value>
-    [DataMember(Name = "name", EmitDefaultValue = false)]
+    [JsonPropertyName("name")]
     public string Name { get; set; }
 
 
@@ -60,7 +59,7 @@ public partial class JourneyViewElement : IEquatable<JourneyViewElement>
     /// Required attributes of the element
     /// </summary>
     /// <value>Required attributes of the element</value>
-    [DataMember(Name = "attributes", EmitDefaultValue = false)]
+    [JsonPropertyName("attributes")]
     public JourneyViewElementAttributes Attributes { get; set; }
 
 
@@ -69,7 +68,7 @@ public partial class JourneyViewElement : IEquatable<JourneyViewElement>
     /// Attributes that defines the visualization of the element in the journey view
     /// </summary>
     /// <value>Attributes that defines the visualization of the element in the journey view</value>
-    [DataMember(Name = "displayAttributes", EmitDefaultValue = false)]
+    [JsonPropertyName("displayAttributes")]
     public JourneyViewElementDisplayAttributes DisplayAttributes { get; set; }
 
 
@@ -78,7 +77,7 @@ public partial class JourneyViewElement : IEquatable<JourneyViewElement>
     /// Any filters applied to this element
     /// </summary>
     /// <value>Any filters applied to this element</value>
-    [DataMember(Name = "filter", EmitDefaultValue = false)]
+    [JsonPropertyName("filter")]
     public JourneyViewElementFilter Filter { get; set; }
 
 
@@ -87,7 +86,7 @@ public partial class JourneyViewElement : IEquatable<JourneyViewElement>
     /// A list of JourneyViewLink objects, listing the elements downstream of this element
     /// </summary>
     /// <value>A list of JourneyViewLink objects, listing the elements downstream of this element</value>
-    [DataMember(Name = "followedBy", EmitDefaultValue = false)]
+    [JsonPropertyName("followedBy")]
     public List<JourneyViewLink> FollowedBy { get; set; }
 
 

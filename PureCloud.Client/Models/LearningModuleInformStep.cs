@@ -7,14 +7,14 @@ namespace PureCloud.Client.Models;
 /// <summary>
 /// LearningModuleInformStep
 /// </summary>
-[DataContract]
+
 public partial class LearningModuleInformStep : IEquatable<LearningModuleInformStep>
 {
     /// <summary>
     /// The learning module inform step type
     /// </summary>
     /// <value>The learning module inform step type</value>
-    [JsonConverter(typeof(JsonStringEnumConverter))]
+    
     public enum TypeEnum
     {
         /// <summary>
@@ -59,7 +59,7 @@ public partial class LearningModuleInformStep : IEquatable<LearningModuleInformS
     /// The learning module inform step type
     /// </summary>
     /// <value>The learning module inform step type</value>
-    [DataMember(Name = "type", EmitDefaultValue = false)]
+    [JsonPropertyName("type")]
     public TypeEnum? Type { get; set; }
 
     /// <summary>
@@ -99,7 +99,7 @@ public partial class LearningModuleInformStep : IEquatable<LearningModuleInformS
     /// The name of the inform step or content
     /// </summary>
     /// <value>The name of the inform step or content</value>
-    [DataMember(Name = "name", EmitDefaultValue = false)]
+    [JsonPropertyName("name")]
     public string Name { get; set; }
 
 
@@ -108,7 +108,7 @@ public partial class LearningModuleInformStep : IEquatable<LearningModuleInformS
     /// The value for inform step
     /// </summary>
     /// <value>The value for inform step</value>
-    [DataMember(Name = "value", EmitDefaultValue = false)]
+    [JsonPropertyName("value")]
     public string Value { get; set; }
 
 
@@ -117,7 +117,7 @@ public partial class LearningModuleInformStep : IEquatable<LearningModuleInformS
     /// The sharing uri for Content type inform step
     /// </summary>
     /// <value>The sharing uri for Content type inform step</value>
-    [DataMember(Name = "sharingUri", EmitDefaultValue = false)]
+    [JsonPropertyName("sharingUri")]
     public string SharingUri { get; set; }
 
 
@@ -126,7 +126,7 @@ public partial class LearningModuleInformStep : IEquatable<LearningModuleInformS
     /// The document type for Content type Inform step
     /// </summary>
     /// <value>The document type for Content type Inform step</value>
-    [DataMember(Name = "contentType", EmitDefaultValue = false)]
+    [JsonPropertyName("contentType")]
     public string ContentType { get; set; }
 
 
@@ -135,7 +135,7 @@ public partial class LearningModuleInformStep : IEquatable<LearningModuleInformS
     /// The order of inform step in a learning module
     /// </summary>
     /// <value>The order of inform step in a learning module</value>
-    [DataMember(Name = "order", EmitDefaultValue = false)]
+    [JsonPropertyName("order")]
     public int? Order { get; set; }
 
 
@@ -144,7 +144,7 @@ public partial class LearningModuleInformStep : IEquatable<LearningModuleInformS
     /// The display name for the inform step
     /// </summary>
     /// <value>The display name for the inform step</value>
-    [DataMember(Name = "displayName", EmitDefaultValue = false)]
+    [JsonPropertyName("displayName")]
     public string DisplayName { get; set; }
 
 
@@ -153,7 +153,7 @@ public partial class LearningModuleInformStep : IEquatable<LearningModuleInformS
     /// The description for the inform step
     /// </summary>
     /// <value>The description for the inform step</value>
-    [DataMember(Name = "description", EmitDefaultValue = false)]
+    [JsonPropertyName("description")]
     public string Description { get; set; }
 
 

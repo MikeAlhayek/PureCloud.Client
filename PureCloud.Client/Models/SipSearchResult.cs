@@ -1,12 +1,12 @@
-using System.Runtime.Serialization;
 using System.Text;
+using System.Text.Json.Serialization;
 
 namespace PureCloud.Client.Models;
 
 /// <summary>
 /// SipSearchResult
 /// </summary>
-[DataContract]
+
 public partial class SipSearchResult : IEquatable<SipSearchResult>
 {
     /// <summary>
@@ -35,7 +35,7 @@ public partial class SipSearchResult : IEquatable<SipSearchResult>
     /// The globally unique identifier for the object.
     /// </summary>
     /// <value>The globally unique identifier for the object.</value>
-    [DataMember(Name = "id", EmitDefaultValue = false)]
+    [JsonPropertyName("id")]
     public string Id { get; private set; }
 
 
@@ -44,7 +44,7 @@ public partial class SipSearchResult : IEquatable<SipSearchResult>
     /// Status of the search request
     /// </summary>
     /// <value>Status of the search request</value>
-    [DataMember(Name = "status", EmitDefaultValue = false)]
+    [JsonPropertyName("status")]
     public int? Status { get; set; }
 
 
@@ -53,7 +53,7 @@ public partial class SipSearchResult : IEquatable<SipSearchResult>
     /// Session id associated to the search request
     /// </summary>
     /// <value>Session id associated to the search request</value>
-    [DataMember(Name = "sid", EmitDefaultValue = false)]
+    [JsonPropertyName("sid")]
     public string Sid { get; set; }
 
 
@@ -62,7 +62,7 @@ public partial class SipSearchResult : IEquatable<SipSearchResult>
     /// Auth token used for this search request
     /// </summary>
     /// <value>Auth token used for this search request</value>
-    [DataMember(Name = "auth", EmitDefaultValue = false)]
+    [JsonPropertyName("auth")]
     public string Auth { get; set; }
 
 
@@ -71,7 +71,7 @@ public partial class SipSearchResult : IEquatable<SipSearchResult>
     /// Any messages returned from homer as part of the response
     /// </summary>
     /// <value>Any messages returned from homer as part of the response</value>
-    [DataMember(Name = "message", EmitDefaultValue = false)]
+    [JsonPropertyName("message")]
     public string Message { get; set; }
 
 
@@ -80,7 +80,7 @@ public partial class SipSearchResult : IEquatable<SipSearchResult>
     /// Homer search data that is returned
     /// </summary>
     /// <value>Homer search data that is returned</value>
-    [DataMember(Name = "data", EmitDefaultValue = false)]
+    [JsonPropertyName("data")]
     public List<HomerRecord> Data { get; set; }
 
 
@@ -89,7 +89,7 @@ public partial class SipSearchResult : IEquatable<SipSearchResult>
     /// Number of records returned
     /// </summary>
     /// <value>Number of records returned</value>
-    [DataMember(Name = "count", EmitDefaultValue = false)]
+    [JsonPropertyName("count")]
     public int? Count { get; set; }
 
 
@@ -98,7 +98,7 @@ public partial class SipSearchResult : IEquatable<SipSearchResult>
     /// The URI for this object
     /// </summary>
     /// <value>The URI for this object</value>
-    [DataMember(Name = "selfUri", EmitDefaultValue = false)]
+    [JsonPropertyName("selfUri")]
     public string SelfUri { get; private set; }
 
 

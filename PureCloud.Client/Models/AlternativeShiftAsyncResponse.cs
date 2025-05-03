@@ -1,4 +1,3 @@
-using System.Runtime.Serialization;
 using System.Text;
 using System.Text.Json.Serialization;
 
@@ -7,7 +6,7 @@ namespace PureCloud.Client.Models;
 /// <summary>
 /// AlternativeShiftAsyncResponse
 /// </summary>
-[DataContract]
+
 public partial class AlternativeShiftAsyncResponse : IEquatable<AlternativeShiftAsyncResponse>
 {
 
@@ -32,7 +31,7 @@ public partial class AlternativeShiftAsyncResponse : IEquatable<AlternativeShift
     /// The job related to the async request
     /// </summary>
     /// <value>The job related to the async request</value>
-    [DataMember(Name = "job", EmitDefaultValue = false)]
+    [JsonPropertyName("job")]
     public AlternativeShiftJobReference Job { get; set; }
 
 

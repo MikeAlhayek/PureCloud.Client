@@ -7,14 +7,14 @@ namespace PureCloud.Client.Models;
 /// <summary>
 /// CampaignInteraction
 /// </summary>
-[DataContract]
+
 public partial class CampaignInteraction : IEquatable<CampaignInteraction>
 {
     /// <summary>
     /// Describes what happened with call analysis for instance: disposition.classification.callable.person, disposition.classification.callable.noanswer
     /// </summary>
     /// <value>Describes what happened with call analysis for instance: disposition.classification.callable.person, disposition.classification.callable.noanswer</value>
-    [JsonConverter(typeof(JsonStringEnumConverter))]
+    
     public enum DispositionEnum
     {
         /// <summary>
@@ -77,7 +77,7 @@ public partial class CampaignInteraction : IEquatable<CampaignInteraction>
     /// Describes what happened with call analysis for instance: disposition.classification.callable.person, disposition.classification.callable.noanswer
     /// </summary>
     /// <value>Describes what happened with call analysis for instance: disposition.classification.callable.person, disposition.classification.callable.noanswer</value>
-    [DataMember(Name = "disposition", EmitDefaultValue = false)]
+    [JsonPropertyName("disposition")]
     public DispositionEnum? Disposition { get; set; }
     /// <summary>
     /// Initializes a new instance of the <see cref="CampaignInteraction" /> class.
@@ -134,7 +134,7 @@ public partial class CampaignInteraction : IEquatable<CampaignInteraction>
     /// <summary>
     /// Gets or Sets Id
     /// </summary>
-    [DataMember(Name = "id", EmitDefaultValue = false)]
+    [JsonPropertyName("id")]
     public string Id { get; set; }
 
 
@@ -142,7 +142,7 @@ public partial class CampaignInteraction : IEquatable<CampaignInteraction>
     /// <summary>
     /// Gets or Sets Campaign
     /// </summary>
-    [DataMember(Name = "campaign", EmitDefaultValue = false)]
+    [JsonPropertyName("campaign")]
     public DomainEntityRef Campaign { get; set; }
 
 
@@ -150,7 +150,7 @@ public partial class CampaignInteraction : IEquatable<CampaignInteraction>
     /// <summary>
     /// Gets or Sets Agent
     /// </summary>
-    [DataMember(Name = "agent", EmitDefaultValue = false)]
+    [JsonPropertyName("agent")]
     public DomainEntityRef Agent { get; set; }
 
 
@@ -158,7 +158,7 @@ public partial class CampaignInteraction : IEquatable<CampaignInteraction>
     /// <summary>
     /// Gets or Sets Contact
     /// </summary>
-    [DataMember(Name = "contact", EmitDefaultValue = false)]
+    [JsonPropertyName("contact")]
     public DomainEntityRef Contact { get; set; }
 
 
@@ -166,7 +166,7 @@ public partial class CampaignInteraction : IEquatable<CampaignInteraction>
     /// <summary>
     /// Gets or Sets DestinationAddress
     /// </summary>
-    [DataMember(Name = "destinationAddress", EmitDefaultValue = false)]
+    [JsonPropertyName("destinationAddress")]
     public string DestinationAddress { get; set; }
 
 
@@ -175,7 +175,7 @@ public partial class CampaignInteraction : IEquatable<CampaignInteraction>
     /// Boolean value if there is an active preview call on the interaction
     /// </summary>
     /// <value>Boolean value if there is an active preview call on the interaction</value>
-    [DataMember(Name = "activePreviewCall", EmitDefaultValue = false)]
+    [JsonPropertyName("activePreviewCall")]
     public bool? ActivePreviewCall { get; set; }
 
 
@@ -184,7 +184,7 @@ public partial class CampaignInteraction : IEquatable<CampaignInteraction>
     /// The time when the last preview of the interaction was wrapped up. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z
     /// </summary>
     /// <value>The time when the last preview of the interaction was wrapped up. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z</value>
-    [DataMember(Name = "lastActivePreviewWrapupTime", EmitDefaultValue = false)]
+    [JsonPropertyName("lastActivePreviewWrapupTime")]
     public DateTime? LastActivePreviewWrapupTime { get; set; }
 
 
@@ -193,7 +193,7 @@ public partial class CampaignInteraction : IEquatable<CampaignInteraction>
     /// The time when dialer created the interaction. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z
     /// </summary>
     /// <value>The time when dialer created the interaction. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z</value>
-    [DataMember(Name = "creationTime", EmitDefaultValue = false)]
+    [JsonPropertyName("creationTime")]
     public DateTime? CreationTime { get; set; }
 
 
@@ -202,7 +202,7 @@ public partial class CampaignInteraction : IEquatable<CampaignInteraction>
     /// The time when the agent or system places the call. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z
     /// </summary>
     /// <value>The time when the agent or system places the call. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z</value>
-    [DataMember(Name = "callPlacedTime", EmitDefaultValue = false)]
+    [JsonPropertyName("callPlacedTime")]
     public DateTime? CallPlacedTime { get; set; }
 
 
@@ -211,7 +211,7 @@ public partial class CampaignInteraction : IEquatable<CampaignInteraction>
     /// The time when the agent was connected to the call. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z
     /// </summary>
     /// <value>The time when the agent was connected to the call. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z</value>
-    [DataMember(Name = "callRoutedTime", EmitDefaultValue = false)]
+    [JsonPropertyName("callRoutedTime")]
     public DateTime? CallRoutedTime { get; set; }
 
 
@@ -220,7 +220,7 @@ public partial class CampaignInteraction : IEquatable<CampaignInteraction>
     /// The time when the customer and routing participant are connected. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z
     /// </summary>
     /// <value>The time when the customer and routing participant are connected. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z</value>
-    [DataMember(Name = "previewConnectedTime", EmitDefaultValue = false)]
+    [JsonPropertyName("previewConnectedTime")]
     public DateTime? PreviewConnectedTime { get; set; }
 
 
@@ -228,7 +228,7 @@ public partial class CampaignInteraction : IEquatable<CampaignInteraction>
     /// <summary>
     /// Gets or Sets Queue
     /// </summary>
-    [DataMember(Name = "queue", EmitDefaultValue = false)]
+    [JsonPropertyName("queue")]
     public DomainEntityRef Queue { get; set; }
 
 
@@ -236,7 +236,7 @@ public partial class CampaignInteraction : IEquatable<CampaignInteraction>
     /// <summary>
     /// Gets or Sets Script
     /// </summary>
-    [DataMember(Name = "script", EmitDefaultValue = false)]
+    [JsonPropertyName("script")]
     public DomainEntityRef Script { get; set; }
 
 
@@ -246,7 +246,7 @@ public partial class CampaignInteraction : IEquatable<CampaignInteraction>
     /// <summary>
     /// Gets or Sets CallerName
     /// </summary>
-    [DataMember(Name = "callerName", EmitDefaultValue = false)]
+    [JsonPropertyName("callerName")]
     public string CallerName { get; set; }
 
 
@@ -254,7 +254,7 @@ public partial class CampaignInteraction : IEquatable<CampaignInteraction>
     /// <summary>
     /// Gets or Sets CallerAddress
     /// </summary>
-    [DataMember(Name = "callerAddress", EmitDefaultValue = false)]
+    [JsonPropertyName("callerAddress")]
     public string CallerAddress { get; set; }
 
 
@@ -263,7 +263,7 @@ public partial class CampaignInteraction : IEquatable<CampaignInteraction>
     /// Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z
     /// </summary>
     /// <value>Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z</value>
-    [DataMember(Name = "previewPopDeliveredTime", EmitDefaultValue = false)]
+    [JsonPropertyName("previewPopDeliveredTime")]
     public DateTime? PreviewPopDeliveredTime { get; set; }
 
 
@@ -271,7 +271,7 @@ public partial class CampaignInteraction : IEquatable<CampaignInteraction>
     /// <summary>
     /// Gets or Sets Conversation
     /// </summary>
-    [DataMember(Name = "conversation", EmitDefaultValue = false)]
+    [JsonPropertyName("conversation")]
     public ConversationBasic Conversation { get; set; }
 
 
@@ -280,7 +280,7 @@ public partial class CampaignInteraction : IEquatable<CampaignInteraction>
     /// conversation participant id that is the dialer system participant to monitor the call from dialer perspective
     /// </summary>
     /// <value>conversation participant id that is the dialer system participant to monitor the call from dialer perspective</value>
-    [DataMember(Name = "dialerSystemParticipantId", EmitDefaultValue = false)]
+    [JsonPropertyName("dialerSystemParticipantId")]
     public string DialerSystemParticipantId { get; set; }
 
 
@@ -288,7 +288,7 @@ public partial class CampaignInteraction : IEquatable<CampaignInteraction>
     /// <summary>
     /// Gets or Sets DialingMode
     /// </summary>
-    [DataMember(Name = "dialingMode", EmitDefaultValue = false)]
+    [JsonPropertyName("dialingMode")]
     public string DialingMode { get; set; }
 
 
@@ -297,7 +297,7 @@ public partial class CampaignInteraction : IEquatable<CampaignInteraction>
     /// Any skills that are attached to the call for routing
     /// </summary>
     /// <value>Any skills that are attached to the call for routing</value>
-    [DataMember(Name = "skills", EmitDefaultValue = false)]
+    [JsonPropertyName("skills")]
     public List<DomainEntityRef> Skills { get; set; }
 
 

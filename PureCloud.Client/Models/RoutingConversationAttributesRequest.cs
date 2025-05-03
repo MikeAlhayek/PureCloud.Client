@@ -1,12 +1,12 @@
-using System.Runtime.Serialization;
 using System.Text;
+using System.Text.Json.Serialization;
 
 namespace PureCloud.Client.Models;
 
 /// <summary>
 /// RoutingConversationAttributesRequest
 /// </summary>
-[DataContract]
+
 public partial class RoutingConversationAttributesRequest : IEquatable<RoutingConversationAttributesRequest>
 {
     /// <summary>
@@ -33,7 +33,7 @@ public partial class RoutingConversationAttributesRequest : IEquatable<RoutingCo
     /// Priority for the conversation.  Each point of priority is equivalent to one minute of time in queue.  Range:[-25000000, 25000000].  To reset, specify 0.
     /// </summary>
     /// <value>Priority for the conversation.  Each point of priority is equivalent to one minute of time in queue.  Range:[-25000000, 25000000].  To reset, specify 0.</value>
-    [DataMember(Name = "priority", EmitDefaultValue = false)]
+    [JsonPropertyName("priority")]
     public int? Priority { get; set; }
 
 
@@ -42,7 +42,7 @@ public partial class RoutingConversationAttributesRequest : IEquatable<RoutingCo
     /// Skill requirements for the conversation.  To remove all skill requirements, specify an empty list, i.e. [].
     /// </summary>
     /// <value>Skill requirements for the conversation.  To remove all skill requirements, specify an empty list, i.e. [].</value>
-    [DataMember(Name = "skillIds", EmitDefaultValue = false)]
+    [JsonPropertyName("skillIds")]
     public List<string> SkillIds { get; set; }
 
 
@@ -51,7 +51,7 @@ public partial class RoutingConversationAttributesRequest : IEquatable<RoutingCo
     /// Language requirement for the conversation.  To remove the language requirement, specify an empty string, i.e., \&quot;\&quot;.
     /// </summary>
     /// <value>Language requirement for the conversation.  To remove the language requirement, specify an empty string, i.e., \&quot;\&quot;.</value>
-    [DataMember(Name = "languageId", EmitDefaultValue = false)]
+    [JsonPropertyName("languageId")]
     public string LanguageId { get; set; }
 
 
@@ -60,7 +60,7 @@ public partial class RoutingConversationAttributesRequest : IEquatable<RoutingCo
     /// Label requirement for the conversation.  To remove the label requirement (setting it to System Default Label), specify an empty string, i.e., \&quot;\&quot;.
     /// </summary>
     /// <value>Label requirement for the conversation.  To remove the label requirement (setting it to System Default Label), specify an empty string, i.e., \&quot;\&quot;.</value>
-    [DataMember(Name = "labelId", EmitDefaultValue = false)]
+    [JsonPropertyName("labelId")]
     public string LabelId { get; set; }
 
 
@@ -68,7 +68,7 @@ public partial class RoutingConversationAttributesRequest : IEquatable<RoutingCo
     /// <summary>
     /// Gets or Sets RequestScoredAgents
     /// </summary>
-    [DataMember(Name = "requestScoredAgents", EmitDefaultValue = false)]
+    [JsonPropertyName("requestScoredAgents")]
     public List<RequestScoredAgent> RequestScoredAgents { get; set; }
 
 

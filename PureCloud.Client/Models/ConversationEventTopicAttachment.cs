@@ -1,12 +1,12 @@
-using System.Runtime.Serialization;
 using System.Text;
+using System.Text.Json.Serialization;
 
 namespace PureCloud.Client.Models;
 
 /// <summary>
 /// ConversationEventTopicAttachment
 /// </summary>
-[DataContract]
+
 public partial class ConversationEventTopicAttachment : IEquatable<ConversationEventTopicAttachment>
 {
     /// <summary>
@@ -33,7 +33,7 @@ public partial class ConversationEventTopicAttachment : IEquatable<ConversationE
     /// The unique identifier for the attachment.
     /// </summary>
     /// <value>The unique identifier for the attachment.</value>
-    [DataMember(Name = "attachmentId", EmitDefaultValue = false)]
+    [JsonPropertyName("attachmentId")]
     public string AttachmentId { get; set; }
 
 
@@ -42,7 +42,7 @@ public partial class ConversationEventTopicAttachment : IEquatable<ConversationE
     /// The name of the attachment.
     /// </summary>
     /// <value>The name of the attachment.</value>
-    [DataMember(Name = "name", EmitDefaultValue = false)]
+    [JsonPropertyName("name")]
     public string Name { get; set; }
 
 
@@ -51,7 +51,7 @@ public partial class ConversationEventTopicAttachment : IEquatable<ConversationE
     /// The content uri of the attachment. If set, this is commonly a public api download location.
     /// </summary>
     /// <value>The content uri of the attachment. If set, this is commonly a public api download location.</value>
-    [DataMember(Name = "contentUri", EmitDefaultValue = false)]
+    [JsonPropertyName("contentUri")]
     public string ContentUri { get; set; }
 
 
@@ -60,7 +60,7 @@ public partial class ConversationEventTopicAttachment : IEquatable<ConversationE
     /// The type of file the attachment is.
     /// </summary>
     /// <value>The type of file the attachment is.</value>
-    [DataMember(Name = "contentType", EmitDefaultValue = false)]
+    [JsonPropertyName("contentType")]
     public string ContentType { get; set; }
 
 
@@ -69,7 +69,7 @@ public partial class ConversationEventTopicAttachment : IEquatable<ConversationE
     /// The length of the attachment file.
     /// </summary>
     /// <value>The length of the attachment file.</value>
-    [DataMember(Name = "contentLength", EmitDefaultValue = false)]
+    [JsonPropertyName("contentLength")]
     public long? ContentLength { get; set; }
 
 

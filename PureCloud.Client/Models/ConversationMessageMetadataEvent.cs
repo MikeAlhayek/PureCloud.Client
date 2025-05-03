@@ -7,14 +7,14 @@ namespace PureCloud.Client.Models;
 /// <summary>
 /// Metadata information about a message event.
 /// </summary>
-[DataContract]
+
 public partial class ConversationMessageMetadataEvent : IEquatable<ConversationMessageMetadataEvent>
 {
     /// <summary>
     /// Type of this event element
     /// </summary>
     /// <value>Type of this event element</value>
-    [JsonConverter(typeof(JsonStringEnumConverter))]
+    
     public enum EventTypeEnum
     {
         /// <summary>
@@ -59,7 +59,7 @@ public partial class ConversationMessageMetadataEvent : IEquatable<ConversationM
     /// Event subtype
     /// </summary>
     /// <value>Event subtype</value>
-    [JsonConverter(typeof(JsonStringEnumConverter))]
+    
     public enum SubTypeEnum
     {
         /// <summary>
@@ -140,13 +140,13 @@ public partial class ConversationMessageMetadataEvent : IEquatable<ConversationM
     /// Type of this event element
     /// </summary>
     /// <value>Type of this event element</value>
-    [DataMember(Name = "eventType", EmitDefaultValue = false)]
+    [JsonPropertyName("eventType")]
     public EventTypeEnum? EventType { get; set; }
     /// <summary>
     /// Event subtype
     /// </summary>
     /// <value>Event subtype</value>
-    [DataMember(Name = "subType", EmitDefaultValue = false)]
+    [JsonPropertyName("subType")]
     public SubTypeEnum? SubType { get; set; }
     /// <summary>
     /// Initializes a new instance of the <see cref="ConversationMessageMetadataEvent" /> class.

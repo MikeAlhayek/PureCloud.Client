@@ -1,4 +1,3 @@
-using System.Runtime.Serialization;
 using System.Text;
 using System.Text.Json.Serialization;
 
@@ -7,7 +6,7 @@ namespace PureCloud.Client.Models;
 /// <summary>
 /// RegisterArchitectExportJob
 /// </summary>
-[DataContract]
+
 public partial class RegisterArchitectExportJob : IEquatable<RegisterArchitectExportJob>
 {
 
@@ -32,7 +31,7 @@ public partial class RegisterArchitectExportJob : IEquatable<RegisterArchitectEx
     /// A list of the flows to be exported.
     /// </summary>
     /// <value>A list of the flows to be exported.</value>
-    [DataMember(Name = "flows", EmitDefaultValue = false)]
+    [JsonPropertyName("flows")]
     public List<ExportDetails> Flows { get; set; }
 
 

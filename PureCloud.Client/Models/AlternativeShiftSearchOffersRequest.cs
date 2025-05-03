@@ -1,4 +1,3 @@
-using System.Runtime.Serialization;
 using System.Text;
 using System.Text.Json.Serialization;
 
@@ -7,7 +6,7 @@ namespace PureCloud.Client.Models;
 /// <summary>
 /// AlternativeShiftSearchOffersRequest
 /// </summary>
-[DataContract]
+
 public partial class AlternativeShiftSearchOffersRequest : IEquatable<AlternativeShiftSearchOffersRequest>
 {
 
@@ -38,7 +37,7 @@ public partial class AlternativeShiftSearchOffersRequest : IEquatable<Alternativ
     /// The existing schedule being used to find alternative shift offers
     /// </summary>
     /// <value>The existing schedule being used to find alternative shift offers</value>
-    [DataMember(Name = "schedule", EmitDefaultValue = false)]
+    [JsonPropertyName("schedule")]
     public AlternativeShiftScheduleLookup Schedule { get; set; }
 
 
@@ -47,7 +46,7 @@ public partial class AlternativeShiftSearchOffersRequest : IEquatable<Alternativ
     /// The start date for the week in this schedule in yyyy-MM-dd format. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd
     /// </summary>
     /// <value>The start date for the week in this schedule in yyyy-MM-dd format. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd</value>
-    [DataMember(Name = "queryWeekDate", EmitDefaultValue = false)]
+    [JsonPropertyName("queryWeekDate")]
     public string QueryWeekDate { get; set; }
 
 
@@ -56,7 +55,7 @@ public partial class AlternativeShiftSearchOffersRequest : IEquatable<Alternativ
     /// The shift a user puts up for alternative shift offers
     /// </summary>
     /// <value>The shift a user puts up for alternative shift offers</value>
-    [DataMember(Name = "initiatingShift", EmitDefaultValue = false)]
+    [JsonPropertyName("initiatingShift")]
     public InitiatingAlternativeShift InitiatingShift { get; set; }
 
 
@@ -65,7 +64,7 @@ public partial class AlternativeShiftSearchOffersRequest : IEquatable<Alternativ
     /// The acceptable intervals in offers. Intervals are represented as an ISO-8601 string. For example: YYYY-MM-DDThh:mm:ss/YYYY-MM-DDThh:mm:ss
     /// </summary>
     /// <value>The acceptable intervals in offers. Intervals are represented as an ISO-8601 string. For example: YYYY-MM-DDThh:mm:ss/YYYY-MM-DDThh:mm:ss</value>
-    [DataMember(Name = "acceptableIntervals", EmitDefaultValue = false)]
+    [JsonPropertyName("acceptableIntervals")]
     public List<string> AcceptableIntervals { get; set; }
 
 

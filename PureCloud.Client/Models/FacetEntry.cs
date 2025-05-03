@@ -7,13 +7,13 @@ namespace PureCloud.Client.Models;
 /// <summary>
 /// FacetEntry
 /// </summary>
-[DataContract]
+
 public partial class FacetEntry : IEquatable<FacetEntry>
 {
     /// <summary>
     /// Gets or Sets TermType
     /// </summary>
-    [JsonConverter(typeof(JsonStringEnumConverter))]
+    
     public enum TermTypeEnum
     {
         /// <summary>
@@ -63,7 +63,7 @@ public partial class FacetEntry : IEquatable<FacetEntry>
     /// <summary>
     /// Gets or Sets TermType
     /// </summary>
-    [DataMember(Name = "termType", EmitDefaultValue = false)]
+    [JsonPropertyName("termType")]
     public TermTypeEnum? TermType { get; set; }
     /// <summary>
     /// Initializes a new instance of the <see cref="FacetEntry" /> class.
@@ -94,7 +94,7 @@ public partial class FacetEntry : IEquatable<FacetEntry>
     /// <summary>
     /// Gets or Sets Attribute
     /// </summary>
-    [DataMember(Name = "attribute", EmitDefaultValue = false)]
+    [JsonPropertyName("attribute")]
     public TermAttribute Attribute { get; set; }
 
 
@@ -102,7 +102,7 @@ public partial class FacetEntry : IEquatable<FacetEntry>
     /// <summary>
     /// Gets or Sets Statistics
     /// </summary>
-    [DataMember(Name = "statistics", EmitDefaultValue = false)]
+    [JsonPropertyName("statistics")]
     public FacetStatistics Statistics { get; set; }
 
 
@@ -110,7 +110,7 @@ public partial class FacetEntry : IEquatable<FacetEntry>
     /// <summary>
     /// Gets or Sets Other
     /// </summary>
-    [DataMember(Name = "other", EmitDefaultValue = false)]
+    [JsonPropertyName("other")]
     public long? Other { get; set; }
 
 
@@ -118,7 +118,7 @@ public partial class FacetEntry : IEquatable<FacetEntry>
     /// <summary>
     /// Gets or Sets Total
     /// </summary>
-    [DataMember(Name = "total", EmitDefaultValue = false)]
+    [JsonPropertyName("total")]
     public long? Total { get; set; }
 
 
@@ -126,7 +126,7 @@ public partial class FacetEntry : IEquatable<FacetEntry>
     /// <summary>
     /// Gets or Sets Missing
     /// </summary>
-    [DataMember(Name = "missing", EmitDefaultValue = false)]
+    [JsonPropertyName("missing")]
     public long? Missing { get; set; }
 
 
@@ -134,7 +134,7 @@ public partial class FacetEntry : IEquatable<FacetEntry>
     /// <summary>
     /// Gets or Sets TermCount
     /// </summary>
-    [DataMember(Name = "termCount", EmitDefaultValue = false)]
+    [JsonPropertyName("termCount")]
     public int? TermCount { get; set; }
 
 
@@ -144,7 +144,7 @@ public partial class FacetEntry : IEquatable<FacetEntry>
     /// <summary>
     /// Gets or Sets Terms
     /// </summary>
-    [DataMember(Name = "terms", EmitDefaultValue = false)]
+    [JsonPropertyName("terms")]
     public List<FacetTerm> Terms { get; set; }
 
 

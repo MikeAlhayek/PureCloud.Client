@@ -7,14 +7,14 @@ namespace PureCloud.Client.Models;
 /// <summary>
 /// DocumentBodyTableRowBlockProperties
 /// </summary>
-[DataContract]
+
 public partial class DocumentBodyTableRowBlockProperties : IEquatable<DocumentBodyTableRowBlockProperties>
 {
     /// <summary>
     /// The type of the table row.
     /// </summary>
     /// <value>The type of the table row.</value>
-    [JsonConverter(typeof(JsonStringEnumConverter))]
+    
     public enum RowTypeEnum
     {
         /// <summary>
@@ -47,7 +47,7 @@ public partial class DocumentBodyTableRowBlockProperties : IEquatable<DocumentBo
     /// The alignment for the table row.
     /// </summary>
     /// <value>The alignment for the table row.</value>
-    [JsonConverter(typeof(JsonStringEnumConverter))]
+    
     public enum AlignmentEnum
     {
         /// <summary>
@@ -80,7 +80,7 @@ public partial class DocumentBodyTableRowBlockProperties : IEquatable<DocumentBo
     /// The border style for the table row.
     /// </summary>
     /// <value>The border style for the table row.</value>
-    [JsonConverter(typeof(JsonStringEnumConverter))]
+    
     public enum BorderStyleEnum
     {
         /// <summary>
@@ -155,19 +155,19 @@ public partial class DocumentBodyTableRowBlockProperties : IEquatable<DocumentBo
     /// The type of the table row.
     /// </summary>
     /// <value>The type of the table row.</value>
-    [DataMember(Name = "rowType", EmitDefaultValue = false)]
+    [JsonPropertyName("rowType")]
     public RowTypeEnum? RowType { get; set; }
     /// <summary>
     /// The alignment for the table row.
     /// </summary>
     /// <value>The alignment for the table row.</value>
-    [DataMember(Name = "alignment", EmitDefaultValue = false)]
+    [JsonPropertyName("alignment")]
     public AlignmentEnum? Alignment { get; set; }
     /// <summary>
     /// The border style for the table row.
     /// </summary>
     /// <value>The border style for the table row.</value>
-    [DataMember(Name = "borderStyle", EmitDefaultValue = false)]
+    [JsonPropertyName("borderStyle")]
     public BorderStyleEnum? BorderStyle { get; set; }
     /// <summary>
     /// Initializes a new instance of the <see cref="DocumentBodyTableRowBlockProperties" /> class.
@@ -199,7 +199,7 @@ public partial class DocumentBodyTableRowBlockProperties : IEquatable<DocumentBo
     /// The height for the table row.
     /// </summary>
     /// <value>The height for the table row.</value>
-    [DataMember(Name = "height", EmitDefaultValue = false)]
+    [JsonPropertyName("height")]
     public float? Height { get; set; }
 
 
@@ -210,7 +210,7 @@ public partial class DocumentBodyTableRowBlockProperties : IEquatable<DocumentBo
     /// The border color for the table row. For example black color - #000000
     /// </summary>
     /// <value>The border color for the table row. For example black color - #000000</value>
-    [DataMember(Name = "borderColor", EmitDefaultValue = false)]
+    [JsonPropertyName("borderColor")]
     public string BorderColor { get; set; }
 
 
@@ -219,7 +219,7 @@ public partial class DocumentBodyTableRowBlockProperties : IEquatable<DocumentBo
     /// The background color for the table row. For example black color - #000000
     /// </summary>
     /// <value>The background color for the table row. For example black color - #000000</value>
-    [DataMember(Name = "backgroundColor", EmitDefaultValue = false)]
+    [JsonPropertyName("backgroundColor")]
     public string BackgroundColor { get; set; }
 
 

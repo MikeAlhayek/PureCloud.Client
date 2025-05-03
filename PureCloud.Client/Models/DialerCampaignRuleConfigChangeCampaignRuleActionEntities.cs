@@ -1,12 +1,12 @@
-using System.Runtime.Serialization;
 using System.Text;
+using System.Text.Json.Serialization;
 
 namespace PureCloud.Client.Models;
 
 /// <summary>
 /// the campaign/sequence entities that this action acts on
 /// </summary>
-[DataContract]
+
 public partial class DialerCampaignRuleConfigChangeCampaignRuleActionEntities : IEquatable<DialerCampaignRuleConfigChangeCampaignRuleActionEntities>
 {
     /// <summary>
@@ -31,7 +31,7 @@ public partial class DialerCampaignRuleConfigChangeCampaignRuleActionEntities : 
     /// Whether this action should act on the entity that triggered it
     /// </summary>
     /// <value>Whether this action should act on the entity that triggered it</value>
-    [DataMember(Name = "useTriggeringEntity", EmitDefaultValue = false)]
+    [JsonPropertyName("useTriggeringEntity")]
     public bool? UseTriggeringEntity { get; set; }
 
 
@@ -39,7 +39,7 @@ public partial class DialerCampaignRuleConfigChangeCampaignRuleActionEntities : 
     /// <summary>
     /// Gets or Sets AdditionalProperties
     /// </summary>
-    [DataMember(Name = "additionalProperties", EmitDefaultValue = false)]
+    [JsonPropertyName("additionalProperties")]
     public Dictionary<string, object> AdditionalProperties { get; set; }
 
 
@@ -48,7 +48,7 @@ public partial class DialerCampaignRuleConfigChangeCampaignRuleActionEntities : 
     /// A list of campaignIds to act on
     /// </summary>
     /// <value>A list of campaignIds to act on</value>
-    [DataMember(Name = "campaigns", EmitDefaultValue = false)]
+    [JsonPropertyName("campaigns")]
     public List<DialerCampaignRuleConfigChangeUriReference> Campaigns { get; set; }
 
 
@@ -57,7 +57,7 @@ public partial class DialerCampaignRuleConfigChangeCampaignRuleActionEntities : 
     /// A list of sequenceIds to act on
     /// </summary>
     /// <value>A list of sequenceIds to act on</value>
-    [DataMember(Name = "sequences", EmitDefaultValue = false)]
+    [JsonPropertyName("sequences")]
     public List<DialerCampaignRuleConfigChangeUriReference> Sequences { get; set; }
 
 

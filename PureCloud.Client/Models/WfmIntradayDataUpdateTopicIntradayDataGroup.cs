@@ -7,13 +7,13 @@ namespace PureCloud.Client.Models;
 /// <summary>
 /// WfmIntradayDataUpdateTopicIntradayDataGroup
 /// </summary>
-[DataContract]
+
 public partial class WfmIntradayDataUpdateTopicIntradayDataGroup : IEquatable<WfmIntradayDataUpdateTopicIntradayDataGroup>
 {
     /// <summary>
     /// Gets or Sets MediaType
     /// </summary>
-    [JsonConverter(typeof(JsonStringEnumConverter))]
+    
     public enum MediaTypeEnum
     {
         /// <summary>
@@ -63,7 +63,7 @@ public partial class WfmIntradayDataUpdateTopicIntradayDataGroup : IEquatable<Wf
     /// <summary>
     /// Gets or Sets MediaType
     /// </summary>
-    [DataMember(Name = "mediaType", EmitDefaultValue = false)]
+    [JsonPropertyName("mediaType")]
     public MediaTypeEnum? MediaType { get; set; }
     /// <summary>
     /// Initializes a new instance of the <see cref="WfmIntradayDataUpdateTopicIntradayDataGroup" /> class.
@@ -94,7 +94,7 @@ public partial class WfmIntradayDataUpdateTopicIntradayDataGroup : IEquatable<Wf
     /// <summary>
     /// Gets or Sets ForecastDataPerInterval
     /// </summary>
-    [DataMember(Name = "forecastDataPerInterval", EmitDefaultValue = false)]
+    [JsonPropertyName("forecastDataPerInterval")]
     public List<WfmIntradayDataUpdateTopicIntradayForecastData> ForecastDataPerInterval { get; set; }
 
 
@@ -102,7 +102,7 @@ public partial class WfmIntradayDataUpdateTopicIntradayDataGroup : IEquatable<Wf
     /// <summary>
     /// Gets or Sets ScheduleDataPerInterval
     /// </summary>
-    [DataMember(Name = "scheduleDataPerInterval", EmitDefaultValue = false)]
+    [JsonPropertyName("scheduleDataPerInterval")]
     public List<WfmIntradayDataUpdateTopicIntradayScheduleData> ScheduleDataPerInterval { get; set; }
 
 
@@ -110,7 +110,7 @@ public partial class WfmIntradayDataUpdateTopicIntradayDataGroup : IEquatable<Wf
     /// <summary>
     /// Gets or Sets HistoricalAgentDataPerInterval
     /// </summary>
-    [DataMember(Name = "historicalAgentDataPerInterval", EmitDefaultValue = false)]
+    [JsonPropertyName("historicalAgentDataPerInterval")]
     public List<WfmIntradayDataUpdateTopicIntradayHistoricalAgentData> HistoricalAgentDataPerInterval { get; set; }
 
 
@@ -118,7 +118,7 @@ public partial class WfmIntradayDataUpdateTopicIntradayDataGroup : IEquatable<Wf
     /// <summary>
     /// Gets or Sets HistoricalQueueDataPerInterval
     /// </summary>
-    [DataMember(Name = "historicalQueueDataPerInterval", EmitDefaultValue = false)]
+    [JsonPropertyName("historicalQueueDataPerInterval")]
     public List<WfmIntradayDataUpdateTopicIntradayHistoricalQueueData> HistoricalQueueDataPerInterval { get; set; }
 
 
@@ -126,7 +126,7 @@ public partial class WfmIntradayDataUpdateTopicIntradayDataGroup : IEquatable<Wf
     /// <summary>
     /// Gets or Sets PerformancePredictionAgentDataPerInterval
     /// </summary>
-    [DataMember(Name = "performancePredictionAgentDataPerInterval", EmitDefaultValue = false)]
+    [JsonPropertyName("performancePredictionAgentDataPerInterval")]
     public List<WfmIntradayDataUpdateTopicIntradayPerformancePredictionAgentData> PerformancePredictionAgentDataPerInterval { get; set; }
 
 
@@ -134,7 +134,7 @@ public partial class WfmIntradayDataUpdateTopicIntradayDataGroup : IEquatable<Wf
     /// <summary>
     /// Gets or Sets PerformancePredictionQueueDataPerInterval
     /// </summary>
-    [DataMember(Name = "performancePredictionQueueDataPerInterval", EmitDefaultValue = false)]
+    [JsonPropertyName("performancePredictionQueueDataPerInterval")]
     public List<WfmIntradayDataUpdateTopicIntradayPerformancePredictionQueueData> PerformancePredictionQueueDataPerInterval { get; set; }
 
 

@@ -1,12 +1,12 @@
-using System.Runtime.Serialization;
 using System.Text;
+using System.Text.Json.Serialization;
 
 namespace PureCloud.Client.Models;
 
 /// <summary>
 /// TimeOffIntegrationStatusResponseListing
 /// </summary>
-[DataContract]
+
 public partial class TimeOffIntegrationStatusResponseListing : IEquatable<TimeOffIntegrationStatusResponseListing>
 {
     /// <summary>
@@ -24,7 +24,7 @@ public partial class TimeOffIntegrationStatusResponseListing : IEquatable<TimeOf
     /// <summary>
     /// Gets or Sets Entities
     /// </summary>
-    [DataMember(Name = "entities", EmitDefaultValue = false)]
+    [JsonPropertyName("entities")]
     public List<TimeOffIntegrationStatusResponse> Entities { get; set; }
 
 

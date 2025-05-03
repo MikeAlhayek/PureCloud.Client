@@ -7,14 +7,14 @@ namespace PureCloud.Client.Models;
 /// <summary>
 /// Recognition
 /// </summary>
-[DataContract]
+
 public partial class Recognition : IEquatable<Recognition>
 {
     /// <summary>
     /// The type of recognition
     /// </summary>
     /// <value>The type of recognition</value>
-    [JsonConverter(typeof(JsonStringEnumConverter))]
+    
     public enum TypeEnum
     {
         /// <summary>
@@ -53,7 +53,7 @@ public partial class Recognition : IEquatable<Recognition>
     /// The context type (optional)
     /// </summary>
     /// <value>The context type (optional)</value>
-    [JsonConverter(typeof(JsonStringEnumConverter))]
+    
     public enum ContextTypeEnum
     {
         /// <summary>
@@ -92,13 +92,13 @@ public partial class Recognition : IEquatable<Recognition>
     /// The type of recognition
     /// </summary>
     /// <value>The type of recognition</value>
-    [DataMember(Name = "type", EmitDefaultValue = false)]
+    [JsonPropertyName("type")]
     public TypeEnum? Type { get; set; }
     /// <summary>
     /// The context type (optional)
     /// </summary>
     /// <value>The context type (optional)</value>
-    [DataMember(Name = "contextType", EmitDefaultValue = false)]
+    [JsonPropertyName("contextType")]
     public ContextTypeEnum? ContextType { get; set; }
     /// <summary>
     /// Initializes a new instance of the <see cref="Recognition" /> class.
@@ -134,7 +134,7 @@ public partial class Recognition : IEquatable<Recognition>
     /// The globally unique identifier for the object.
     /// </summary>
     /// <value>The globally unique identifier for the object.</value>
-    [DataMember(Name = "id", EmitDefaultValue = false)]
+    [JsonPropertyName("id")]
     public string Id { get; private set; }
 
 
@@ -143,7 +143,7 @@ public partial class Recognition : IEquatable<Recognition>
     /// The recipient of the recognition
     /// </summary>
     /// <value>The recipient of the recognition</value>
-    [DataMember(Name = "recipient", EmitDefaultValue = false)]
+    [JsonPropertyName("recipient")]
     public UserReference Recipient { get; set; }
 
 
@@ -152,7 +152,7 @@ public partial class Recognition : IEquatable<Recognition>
     /// The creator of the recognition
     /// </summary>
     /// <value>The creator of the recognition</value>
-    [DataMember(Name = "createdBy", EmitDefaultValue = false)]
+    [JsonPropertyName("createdBy")]
     public UserReference CreatedBy { get; set; }
 
 
@@ -161,7 +161,7 @@ public partial class Recognition : IEquatable<Recognition>
     /// The creation date. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z
     /// </summary>
     /// <value>The creation date. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z</value>
-    [DataMember(Name = "dateCreated", EmitDefaultValue = false)]
+    [JsonPropertyName("dateCreated")]
     public DateTime? DateCreated { get; set; }
 
 
@@ -172,7 +172,7 @@ public partial class Recognition : IEquatable<Recognition>
     /// The recognition title
     /// </summary>
     /// <value>The recognition title</value>
-    [DataMember(Name = "title", EmitDefaultValue = false)]
+    [JsonPropertyName("title")]
     public string Title { get; set; }
 
 
@@ -181,7 +181,7 @@ public partial class Recognition : IEquatable<Recognition>
     /// The recognition note
     /// </summary>
     /// <value>The recognition note</value>
-    [DataMember(Name = "note", EmitDefaultValue = false)]
+    [JsonPropertyName("note")]
     public string Note { get; set; }
 
 
@@ -192,7 +192,7 @@ public partial class Recognition : IEquatable<Recognition>
     /// The context id (optional)
     /// </summary>
     /// <value>The context id (optional)</value>
-    [DataMember(Name = "contextId", EmitDefaultValue = false)]
+    [JsonPropertyName("contextId")]
     public string ContextId { get; set; }
 
 
@@ -201,7 +201,7 @@ public partial class Recognition : IEquatable<Recognition>
     /// The displayed date. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z
     /// </summary>
     /// <value>The displayed date. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z</value>
-    [DataMember(Name = "dateDisplayed", EmitDefaultValue = false)]
+    [JsonPropertyName("dateDisplayed")]
     public DateTime? DateDisplayed { get; set; }
 
 
@@ -210,7 +210,7 @@ public partial class Recognition : IEquatable<Recognition>
     /// The acknowledged date. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z
     /// </summary>
     /// <value>The acknowledged date. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z</value>
-    [DataMember(Name = "dateAcknowledged", EmitDefaultValue = false)]
+    [JsonPropertyName("dateAcknowledged")]
     public DateTime? DateAcknowledged { get; set; }
 
 
@@ -219,7 +219,7 @@ public partial class Recognition : IEquatable<Recognition>
     /// The URI for this object
     /// </summary>
     /// <value>The URI for this object</value>
-    [DataMember(Name = "selfUri", EmitDefaultValue = false)]
+    [JsonPropertyName("selfUri")]
     public string SelfUri { get; private set; }
 
 

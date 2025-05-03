@@ -7,13 +7,13 @@ namespace PureCloud.Client.Models;
 /// <summary>
 /// DialerSequenceConfigChangeCampaignSequence
 /// </summary>
-[DataContract]
+
 public partial class DialerSequenceConfigChangeCampaignSequence : IEquatable<DialerSequenceConfigChangeCampaignSequence>
 {
     /// <summary>
     /// Gets or Sets Status
     /// </summary>
-    [JsonConverter(typeof(JsonStringEnumConverter))]
+    
     public enum StatusEnum
     {
         /// <summary>
@@ -45,7 +45,7 @@ public partial class DialerSequenceConfigChangeCampaignSequence : IEquatable<Dia
     /// <summary>
     /// Gets or Sets Status
     /// </summary>
-    [DataMember(Name = "status", EmitDefaultValue = false)]
+    [JsonPropertyName("status")]
     public StatusEnum? Status { get; set; }
     /// <summary>
     /// Initializes a new instance of the <see cref="DialerSequenceConfigChangeCampaignSequence" /> class.
@@ -83,7 +83,7 @@ public partial class DialerSequenceConfigChangeCampaignSequence : IEquatable<Dia
     /// the ordered list of campaign identifiers
     /// </summary>
     /// <value>the ordered list of campaign identifiers</value>
-    [DataMember(Name = "campaigns", EmitDefaultValue = false)]
+    [JsonPropertyName("campaigns")]
     public List<DialerSequenceConfigChangeUriReference> Campaigns { get; set; }
 
 
@@ -92,7 +92,7 @@ public partial class DialerSequenceConfigChangeCampaignSequence : IEquatable<Dia
     /// the zero-based index of the current campaign in the campaigns list
     /// </summary>
     /// <value>the zero-based index of the current campaign in the campaigns list</value>
-    [DataMember(Name = "currentCampaign", EmitDefaultValue = false)]
+    [JsonPropertyName("currentCampaign")]
     public long? CurrentCampaign { get; set; }
 
 
@@ -103,7 +103,7 @@ public partial class DialerSequenceConfigChangeCampaignSequence : IEquatable<Dia
     /// if a sequence has unexpectedly stopped, this message provides the reason
     /// </summary>
     /// <value>if a sequence has unexpectedly stopped, this message provides the reason</value>
-    [DataMember(Name = "stopMessage", EmitDefaultValue = false)]
+    [JsonPropertyName("stopMessage")]
     public string StopMessage { get; set; }
 
 
@@ -112,7 +112,7 @@ public partial class DialerSequenceConfigChangeCampaignSequence : IEquatable<Dia
     /// indicates if a sequence is to repeat from the beginning after the last campaign completes; default is false
     /// </summary>
     /// <value>indicates if a sequence is to repeat from the beginning after the last campaign completes; default is false</value>
-    [DataMember(Name = "repeat", EmitDefaultValue = false)]
+    [JsonPropertyName("repeat")]
     public bool? Repeat { get; set; }
 
 
@@ -120,7 +120,7 @@ public partial class DialerSequenceConfigChangeCampaignSequence : IEquatable<Dia
     /// <summary>
     /// Gets or Sets AdditionalProperties
     /// </summary>
-    [DataMember(Name = "additionalProperties", EmitDefaultValue = false)]
+    [JsonPropertyName("additionalProperties")]
     public Dictionary<string, object> AdditionalProperties { get; set; }
 
 
@@ -129,7 +129,7 @@ public partial class DialerSequenceConfigChangeCampaignSequence : IEquatable<Dia
     /// The globally unique identifier for the object.
     /// </summary>
     /// <value>The globally unique identifier for the object.</value>
-    [DataMember(Name = "id", EmitDefaultValue = false)]
+    [JsonPropertyName("id")]
     public string Id { get; set; }
 
 
@@ -138,7 +138,7 @@ public partial class DialerSequenceConfigChangeCampaignSequence : IEquatable<Dia
     /// The UI-visible name of the object
     /// </summary>
     /// <value>The UI-visible name of the object</value>
-    [DataMember(Name = "name", EmitDefaultValue = false)]
+    [JsonPropertyName("name")]
     public string Name { get; set; }
 
 
@@ -147,7 +147,7 @@ public partial class DialerSequenceConfigChangeCampaignSequence : IEquatable<Dia
     /// Creation time of the entity
     /// </summary>
     /// <value>Creation time of the entity</value>
-    [DataMember(Name = "dateCreated", EmitDefaultValue = false)]
+    [JsonPropertyName("dateCreated")]
     public DateTime? DateCreated { get; set; }
 
 
@@ -156,7 +156,7 @@ public partial class DialerSequenceConfigChangeCampaignSequence : IEquatable<Dia
     /// Last modified time of the entity
     /// </summary>
     /// <value>Last modified time of the entity</value>
-    [DataMember(Name = "dateModified", EmitDefaultValue = false)]
+    [JsonPropertyName("dateModified")]
     public DateTime? DateModified { get; set; }
 
 
@@ -165,7 +165,7 @@ public partial class DialerSequenceConfigChangeCampaignSequence : IEquatable<Dia
     /// Required for updates, must match the version number of the most recent update
     /// </summary>
     /// <value>Required for updates, must match the version number of the most recent update</value>
-    [DataMember(Name = "version", EmitDefaultValue = false)]
+    [JsonPropertyName("version")]
     public long? Version { get; set; }
 
 

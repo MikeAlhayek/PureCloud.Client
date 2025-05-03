@@ -7,14 +7,14 @@ namespace PureCloud.Client.Models;
 /// <summary>
 /// QualityAuditLogMessage
 /// </summary>
-[DataContract]
+
 public partial class QualityAuditLogMessage : IEquatable<QualityAuditLogMessage>
 {
     /// <summary>
     /// Name of the service that logged this audit message.
     /// </summary>
     /// <value>Name of the service that logged this audit message.</value>
-    [JsonConverter(typeof(JsonStringEnumConverter))]
+    
     public enum ServiceNameEnum
     {
         /// <summary>
@@ -47,7 +47,7 @@ public partial class QualityAuditLogMessage : IEquatable<QualityAuditLogMessage>
     /// The level of this audit message.
     /// </summary>
     /// <value>The level of this audit message.</value>
-    [JsonConverter(typeof(JsonStringEnumConverter))]
+    
     public enum LevelEnum
     {
         /// <summary>
@@ -80,7 +80,7 @@ public partial class QualityAuditLogMessage : IEquatable<QualityAuditLogMessage>
     /// The status of the action of this audit message.
     /// </summary>
     /// <value>The status of the action of this audit message.</value>
-    [JsonConverter(typeof(JsonStringEnumConverter))]
+    
     public enum StatusEnum
     {
         /// <summary>
@@ -113,7 +113,7 @@ public partial class QualityAuditLogMessage : IEquatable<QualityAuditLogMessage>
     /// Action that took place.
     /// </summary>
     /// <value>Action that took place.</value>
-    [JsonConverter(typeof(JsonStringEnumConverter))]
+    
     public enum ActionEnum
     {
         /// <summary>
@@ -206,7 +206,7 @@ public partial class QualityAuditLogMessage : IEquatable<QualityAuditLogMessage>
     /// Type of the entity that was impacted.
     /// </summary>
     /// <value>Type of the entity that was impacted.</value>
-    [JsonConverter(typeof(JsonStringEnumConverter))]
+    
     public enum EntityTypeEnum
     {
         /// <summary>
@@ -257,31 +257,31 @@ public partial class QualityAuditLogMessage : IEquatable<QualityAuditLogMessage>
     /// Name of the service that logged this audit message.
     /// </summary>
     /// <value>Name of the service that logged this audit message.</value>
-    [DataMember(Name = "serviceName", EmitDefaultValue = false)]
+    [JsonPropertyName("serviceName")]
     public ServiceNameEnum? ServiceName { get; set; }
     /// <summary>
     /// The level of this audit message.
     /// </summary>
     /// <value>The level of this audit message.</value>
-    [DataMember(Name = "level", EmitDefaultValue = false)]
+    [JsonPropertyName("level")]
     public LevelEnum? Level { get; set; }
     /// <summary>
     /// The status of the action of this audit message.
     /// </summary>
     /// <value>The status of the action of this audit message.</value>
-    [DataMember(Name = "status", EmitDefaultValue = false)]
+    [JsonPropertyName("status")]
     public StatusEnum? Status { get; set; }
     /// <summary>
     /// Action that took place.
     /// </summary>
     /// <value>Action that took place.</value>
-    [DataMember(Name = "action", EmitDefaultValue = false)]
+    [JsonPropertyName("action")]
     public ActionEnum? Action { get; set; }
     /// <summary>
     /// Type of the entity that was impacted.
     /// </summary>
     /// <value>Type of the entity that was impacted.</value>
-    [DataMember(Name = "entityType", EmitDefaultValue = false)]
+    [JsonPropertyName("entityType")]
     public EntityTypeEnum? EntityType { get; set; }
     /// <summary>
     /// Initializes a new instance of the <see cref="QualityAuditLogMessage" /> class.
@@ -329,7 +329,7 @@ public partial class QualityAuditLogMessage : IEquatable<QualityAuditLogMessage>
     /// Id of the audit message.
     /// </summary>
     /// <value>Id of the audit message.</value>
-    [DataMember(Name = "id", EmitDefaultValue = false)]
+    [JsonPropertyName("id")]
     public string Id { get; set; }
 
 
@@ -338,7 +338,7 @@ public partial class QualityAuditLogMessage : IEquatable<QualityAuditLogMessage>
     /// Home Organization Id associated with this audit message.
     /// </summary>
     /// <value>Home Organization Id associated with this audit message.</value>
-    [DataMember(Name = "userHomeOrgId", EmitDefaultValue = false)]
+    [JsonPropertyName("userHomeOrgId")]
     public string UserHomeOrgId { get; set; }
 
 
@@ -347,7 +347,7 @@ public partial class QualityAuditLogMessage : IEquatable<QualityAuditLogMessage>
     /// Trustee Organization Id if this audit message is from trustee access.
     /// </summary>
     /// <value>Trustee Organization Id if this audit message is from trustee access.</value>
-    [DataMember(Name = "userTrusteeOrgId", EmitDefaultValue = false)]
+    [JsonPropertyName("userTrusteeOrgId")]
     public string UserTrusteeOrgId { get; set; }
 
 
@@ -356,7 +356,7 @@ public partial class QualityAuditLogMessage : IEquatable<QualityAuditLogMessage>
     /// User associated with this audit message.
     /// </summary>
     /// <value>User associated with this audit message.</value>
-    [DataMember(Name = "user", EmitDefaultValue = false)]
+    [JsonPropertyName("user")]
     public DomainEntityRef User { get; set; }
 
 
@@ -365,7 +365,7 @@ public partial class QualityAuditLogMessage : IEquatable<QualityAuditLogMessage>
     /// Client associated with this audit message.
     /// </summary>
     /// <value>Client associated with this audit message.</value>
-    [DataMember(Name = "client", EmitDefaultValue = false)]
+    [JsonPropertyName("client")]
     public AddressableEntityRef Client { get; set; }
 
 
@@ -374,7 +374,7 @@ public partial class QualityAuditLogMessage : IEquatable<QualityAuditLogMessage>
     /// List of IP addresses of systems that originated or handled the request.
     /// </summary>
     /// <value>List of IP addresses of systems that originated or handled the request.</value>
-    [DataMember(Name = "remoteIps", EmitDefaultValue = false)]
+    [JsonPropertyName("remoteIps")]
     public List<string> RemoteIps { get; set; }
 
 
@@ -389,7 +389,7 @@ public partial class QualityAuditLogMessage : IEquatable<QualityAuditLogMessage>
     /// Date and time of when the audit message was logged. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z
     /// </summary>
     /// <value>Date and time of when the audit message was logged. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z</value>
-    [DataMember(Name = "eventDate", EmitDefaultValue = false)]
+    [JsonPropertyName("eventDate")]
     public DateTime? EventDate { get; set; }
 
 
@@ -398,7 +398,7 @@ public partial class QualityAuditLogMessage : IEquatable<QualityAuditLogMessage>
     /// Message describing the event being audited.
     /// </summary>
     /// <value>Message describing the event being audited.</value>
-    [DataMember(Name = "messageInfo", EmitDefaultValue = false)]
+    [JsonPropertyName("messageInfo")]
     public MessageInfo MessageInfo { get; set; }
 
 
@@ -409,7 +409,7 @@ public partial class QualityAuditLogMessage : IEquatable<QualityAuditLogMessage>
     /// Entity that was impacted.
     /// </summary>
     /// <value>Entity that was impacted.</value>
-    [DataMember(Name = "entity", EmitDefaultValue = false)]
+    [JsonPropertyName("entity")]
     public DomainEntityRef Entity { get; set; }
 
 
@@ -420,7 +420,7 @@ public partial class QualityAuditLogMessage : IEquatable<QualityAuditLogMessage>
     /// List of properties that were changed and changes made to those properties.
     /// </summary>
     /// <value>List of properties that were changed and changes made to those properties.</value>
-    [DataMember(Name = "propertyChanges", EmitDefaultValue = false)]
+    [JsonPropertyName("propertyChanges")]
     public List<PropertyChange> PropertyChanges { get; set; }
 
 
@@ -429,7 +429,7 @@ public partial class QualityAuditLogMessage : IEquatable<QualityAuditLogMessage>
     /// Additional context for this message.
     /// </summary>
     /// <value>Additional context for this message.</value>
-    [DataMember(Name = "context", EmitDefaultValue = false)]
+    [JsonPropertyName("context")]
     public Dictionary<string, string> Context { get; set; }
 
 

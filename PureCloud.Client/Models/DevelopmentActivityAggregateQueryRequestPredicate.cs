@@ -7,14 +7,14 @@ namespace PureCloud.Client.Models;
 /// <summary>
 /// DevelopmentActivityAggregateQueryRequestPredicate
 /// </summary>
-[DataContract]
+
 public partial class DevelopmentActivityAggregateQueryRequestPredicate : IEquatable<DevelopmentActivityAggregateQueryRequestPredicate>
 {
     /// <summary>
     /// Each predicates specifies a dimension.
     /// </summary>
     /// <value>Each predicates specifies a dimension.</value>
-    [JsonConverter(typeof(JsonStringEnumConverter))]
+    
     public enum DimensionEnum
     {
         /// <summary>
@@ -53,7 +53,7 @@ public partial class DevelopmentActivityAggregateQueryRequestPredicate : IEquata
     /// Each predicates specifies a dimension.
     /// </summary>
     /// <value>Each predicates specifies a dimension.</value>
-    [DataMember(Name = "dimension", EmitDefaultValue = false)]
+    [JsonPropertyName("dimension")]
     public DimensionEnum? Dimension { get; set; }
 
     /// <summary>
@@ -81,7 +81,7 @@ public partial class DevelopmentActivityAggregateQueryRequestPredicate : IEquata
     /// Corresponding value for dimensions in predicates. If the dimension is type, Valid Values: Informational (deprecated), AssessedContent (deprecated), Assessment (deprecated), Coaching, External, Native
     /// </summary>
     /// <value>Corresponding value for dimensions in predicates. If the dimension is type, Valid Values: Informational (deprecated), AssessedContent (deprecated), Assessment (deprecated), Coaching, External, Native</value>
-    [DataMember(Name = "value", EmitDefaultValue = false)]
+    [JsonPropertyName("value")]
     public string Value { get; set; }
 
 

@@ -7,14 +7,14 @@ namespace PureCloud.Client.Models;
 /// <summary>
 /// The settings for the launcher button
 /// </summary>
-[DataContract]
+
 public partial class LauncherButtonSettings : IEquatable<LauncherButtonSettings>
 {
     /// <summary>
     /// The visibility settings for the button
     /// </summary>
     /// <value>The visibility settings for the button</value>
-    [JsonConverter(typeof(JsonStringEnumConverter))]
+    
     public enum VisibilityEnum
     {
         /// <summary>
@@ -47,7 +47,7 @@ public partial class LauncherButtonSettings : IEquatable<LauncherButtonSettings>
     /// The visibility settings for the button
     /// </summary>
     /// <value>The visibility settings for the button</value>
-    [DataMember(Name = "visibility", EmitDefaultValue = false)]
+    [JsonPropertyName("visibility")]
     public VisibilityEnum? Visibility { get; set; }
     /// <summary>
     /// Initializes a new instance of the <see cref="LauncherButtonSettings" /> class.

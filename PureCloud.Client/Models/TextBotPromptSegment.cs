@@ -7,14 +7,14 @@ namespace PureCloud.Client.Models;
 /// <summary>
 /// Data for a single bot flow prompt segment.
 /// </summary>
-[DataContract]
+
 public partial class TextBotPromptSegment : IEquatable<TextBotPromptSegment>
 {
     /// <summary>
     /// The segment type which describes any semantics about the 'text' and also indicates which other field might include additional relevant info.
     /// </summary>
     /// <value>The segment type which describes any semantics about the 'text' and also indicates which other field might include additional relevant info.</value>
-    [JsonConverter(typeof(JsonStringEnumConverter))]
+    
     public enum TypeEnum
     {
         /// <summary>
@@ -47,7 +47,7 @@ public partial class TextBotPromptSegment : IEquatable<TextBotPromptSegment>
     /// The segment type which describes any semantics about the 'text' and also indicates which other field might include additional relevant info.
     /// </summary>
     /// <value>The segment type which describes any semantics about the 'text' and also indicates which other field might include additional relevant info.</value>
-    [DataMember(Name = "type", EmitDefaultValue = false)]
+    [JsonPropertyName("type")]
     public TypeEnum? Type { get; set; }
 
     /// <summary>
@@ -77,7 +77,7 @@ public partial class TextBotPromptSegment : IEquatable<TextBotPromptSegment>
     /// The text of this prompt segment.
     /// </summary>
     /// <value>The text of this prompt segment.</value>
-    [DataMember(Name = "text", EmitDefaultValue = false)]
+    [JsonPropertyName("text")]
     public string Text { get; set; }
 
 
@@ -88,7 +88,7 @@ public partial class TextBotPromptSegment : IEquatable<TextBotPromptSegment>
     /// Additional details describing the segment’s contents, which the client should honour where possible.
     /// </summary>
     /// <value>Additional details describing the segment’s contents, which the client should honour where possible.</value>
-    [DataMember(Name = "format", EmitDefaultValue = false)]
+    [JsonPropertyName("format")]
     public Format Format { get; set; }
 
 
@@ -97,7 +97,7 @@ public partial class TextBotPromptSegment : IEquatable<TextBotPromptSegment>
     /// Details to display Rich Media content. This is only populated when the segment &#39;type&#39; is &#39;Rich Media&#39;.
     /// </summary>
     /// <value>Details to display Rich Media content. This is only populated when the segment &#39;type&#39; is &#39;Rich Media&#39;.</value>
-    [DataMember(Name = "content", EmitDefaultValue = false)]
+    [JsonPropertyName("content")]
     public List<MessageContent> Content { get; set; }
 
 

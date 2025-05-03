@@ -7,14 +7,14 @@ namespace PureCloud.Client.Models;
 /// <summary>
 /// DialerContactlistfilterConfigChangeFilterClause
 /// </summary>
-[DataContract]
+
 public partial class DialerContactlistfilterConfigChangeFilterClause : IEquatable<DialerContactlistfilterConfigChangeFilterClause>
 {
     /// <summary>
     /// Contact list filter type
     /// </summary>
     /// <value>Contact list filter type</value>
-    [JsonConverter(typeof(JsonStringEnumConverter))]
+    
     public enum FilterTypeEnum
     {
         /// <summary>
@@ -41,7 +41,7 @@ public partial class DialerContactlistfilterConfigChangeFilterClause : IEquatabl
     /// Contact list filter type
     /// </summary>
     /// <value>Contact list filter type</value>
-    [DataMember(Name = "filterType", EmitDefaultValue = false)]
+    [JsonPropertyName("filterType")]
     public FilterTypeEnum? FilterType { get; set; }
     /// <summary>
     /// Initializes a new instance of the <see cref="DialerContactlistfilterConfigChangeFilterClause" /> class.
@@ -65,7 +65,7 @@ public partial class DialerContactlistfilterConfigChangeFilterClause : IEquatabl
     /// The list of predicates in that clause
     /// </summary>
     /// <value>The list of predicates in that clause</value>
-    [DataMember(Name = "predicates", EmitDefaultValue = false)]
+    [JsonPropertyName("predicates")]
     public List<DialerContactlistfilterConfigChangeFilterPredicate> Predicates { get; set; }
 
 
@@ -73,7 +73,7 @@ public partial class DialerContactlistfilterConfigChangeFilterClause : IEquatabl
     /// <summary>
     /// Gets or Sets AdditionalProperties
     /// </summary>
-    [DataMember(Name = "additionalProperties", EmitDefaultValue = false)]
+    [JsonPropertyName("additionalProperties")]
     public Dictionary<string, object> AdditionalProperties { get; set; }
 
 

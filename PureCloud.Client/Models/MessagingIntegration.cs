@@ -7,14 +7,14 @@ namespace PureCloud.Client.Models;
 /// <summary>
 /// MessagingIntegration
 /// </summary>
-[DataContract]
+
 public partial class MessagingIntegration : IEquatable<MessagingIntegration>
 {
     /// <summary>
     /// The status of the Integration
     /// </summary>
     /// <value>The status of the Integration</value>
-    [JsonConverter(typeof(JsonStringEnumConverter))]
+    
     public enum StatusEnum
     {
         /// <summary>
@@ -77,7 +77,7 @@ public partial class MessagingIntegration : IEquatable<MessagingIntegration>
     /// The type of Messaging Integration
     /// </summary>
     /// <value>The type of Messaging Integration</value>
-    [JsonConverter(typeof(JsonStringEnumConverter))]
+    
     public enum MessengerTypeEnum
     {
         /// <summary>
@@ -140,13 +140,13 @@ public partial class MessagingIntegration : IEquatable<MessagingIntegration>
     /// The status of the Integration
     /// </summary>
     /// <value>The status of the Integration</value>
-    [DataMember(Name = "status", EmitDefaultValue = false)]
+    [JsonPropertyName("status")]
     public StatusEnum? Status { get; private set; }
     /// <summary>
     /// The type of Messaging Integration
     /// </summary>
     /// <value>The type of Messaging Integration</value>
-    [DataMember(Name = "messengerType", EmitDefaultValue = false)]
+    [JsonPropertyName("messengerType")]
     public MessengerTypeEnum? MessengerType { get; private set; }
     /// <summary>
     /// Initializes a new instance of the <see cref="MessagingIntegration" /> class.
@@ -166,7 +166,7 @@ public partial class MessagingIntegration : IEquatable<MessagingIntegration>
     /// A unique Integration Id
     /// </summary>
     /// <value>A unique Integration Id</value>
-    [DataMember(Name = "id", EmitDefaultValue = false)]
+    [JsonPropertyName("id")]
     public string Id { get; private set; }
 
 
@@ -175,7 +175,7 @@ public partial class MessagingIntegration : IEquatable<MessagingIntegration>
     /// The name of the Integration
     /// </summary>
     /// <value>The name of the Integration</value>
-    [DataMember(Name = "name", EmitDefaultValue = false)]
+    [JsonPropertyName("name")]
     public string Name { get; private set; }
 
 
@@ -184,7 +184,7 @@ public partial class MessagingIntegration : IEquatable<MessagingIntegration>
     /// Defines the SupportedContent profile configured for an integration
     /// </summary>
     /// <value>Defines the SupportedContent profile configured for an integration</value>
-    [DataMember(Name = "supportedContent", EmitDefaultValue = false)]
+    [JsonPropertyName("supportedContent")]
     public SupportedContentReference SupportedContent { get; set; }
 
 
@@ -192,7 +192,7 @@ public partial class MessagingIntegration : IEquatable<MessagingIntegration>
     /// <summary>
     /// Gets or Sets MessagingSetting
     /// </summary>
-    [DataMember(Name = "messagingSetting", EmitDefaultValue = false)]
+    [JsonPropertyName("messagingSetting")]
     public MessagingSettingReference MessagingSetting { get; set; }
 
 
@@ -205,7 +205,7 @@ public partial class MessagingIntegration : IEquatable<MessagingIntegration>
     /// The recipient associated to the Integration. This recipient is used to associate a flow to an integration
     /// </summary>
     /// <value>The recipient associated to the Integration. This recipient is used to associate a flow to an integration</value>
-    [DataMember(Name = "recipient", EmitDefaultValue = false)]
+    [JsonPropertyName("recipient")]
     public DomainEntityRef Recipient { get; private set; }
 
 
@@ -214,7 +214,7 @@ public partial class MessagingIntegration : IEquatable<MessagingIntegration>
     /// Date this Integration was created. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z
     /// </summary>
     /// <value>Date this Integration was created. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z</value>
-    [DataMember(Name = "dateCreated", EmitDefaultValue = false)]
+    [JsonPropertyName("dateCreated")]
     public DateTime? DateCreated { get; private set; }
 
 
@@ -223,7 +223,7 @@ public partial class MessagingIntegration : IEquatable<MessagingIntegration>
     /// Date this Integration was modified. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z
     /// </summary>
     /// <value>Date this Integration was modified. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z</value>
-    [DataMember(Name = "dateModified", EmitDefaultValue = false)]
+    [JsonPropertyName("dateModified")]
     public DateTime? DateModified { get; private set; }
 
 
@@ -232,7 +232,7 @@ public partial class MessagingIntegration : IEquatable<MessagingIntegration>
     /// User reference that created this Integration
     /// </summary>
     /// <value>User reference that created this Integration</value>
-    [DataMember(Name = "createdBy", EmitDefaultValue = false)]
+    [JsonPropertyName("createdBy")]
     public DomainEntityRef CreatedBy { get; private set; }
 
 
@@ -241,7 +241,7 @@ public partial class MessagingIntegration : IEquatable<MessagingIntegration>
     /// User reference that last modified this Integration
     /// </summary>
     /// <value>User reference that last modified this Integration</value>
-    [DataMember(Name = "modifiedBy", EmitDefaultValue = false)]
+    [JsonPropertyName("modifiedBy")]
     public DomainEntityRef ModifiedBy { get; private set; }
 
 
@@ -250,7 +250,7 @@ public partial class MessagingIntegration : IEquatable<MessagingIntegration>
     /// Version number required for updates.
     /// </summary>
     /// <value>Version number required for updates.</value>
-    [DataMember(Name = "version", EmitDefaultValue = false)]
+    [JsonPropertyName("version")]
     public int? Version { get; private set; }
 
 
@@ -259,7 +259,7 @@ public partial class MessagingIntegration : IEquatable<MessagingIntegration>
     /// The URI for this object
     /// </summary>
     /// <value>The URI for this object</value>
-    [DataMember(Name = "selfUri", EmitDefaultValue = false)]
+    [JsonPropertyName("selfUri")]
     public string SelfUri { get; private set; }
 
 

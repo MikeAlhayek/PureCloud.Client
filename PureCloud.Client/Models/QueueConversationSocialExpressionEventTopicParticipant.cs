@@ -7,14 +7,14 @@ namespace PureCloud.Client.Models;
 /// <summary>
 /// QueueConversationSocialExpressionEventTopicParticipant
 /// </summary>
-[DataContract]
+
 public partial class QueueConversationSocialExpressionEventTopicParticipant : IEquatable<QueueConversationSocialExpressionEventTopicParticipant>
 {
     /// <summary>
     /// The current screen recording state for this participant.
     /// </summary>
     /// <value>The current screen recording state for this participant.</value>
-    [JsonConverter(typeof(JsonStringEnumConverter))]
+    
     public enum ScreenRecordingStateEnum
     {
         /// <summary>
@@ -65,7 +65,7 @@ public partial class QueueConversationSocialExpressionEventTopicParticipant : IE
     /// The current screen recording state for this participant.
     /// </summary>
     /// <value>The current screen recording state for this participant.</value>
-    [DataMember(Name = "screenRecordingState", EmitDefaultValue = false)]
+    [JsonPropertyName("screenRecordingState")]
     public ScreenRecordingStateEnum? ScreenRecordingState { get; set; }
     /// <summary>
     /// Initializes a new instance of the <see cref="QueueConversationSocialExpressionEventTopicParticipant" /> class.
@@ -163,7 +163,7 @@ public partial class QueueConversationSocialExpressionEventTopicParticipant : IE
     /// A globally unique identifier for this conversation.
     /// </summary>
     /// <value>A globally unique identifier for this conversation.</value>
-    [DataMember(Name = "id", EmitDefaultValue = false)]
+    [JsonPropertyName("id")]
     public string Id { get; set; }
 
 
@@ -172,7 +172,7 @@ public partial class QueueConversationSocialExpressionEventTopicParticipant : IE
     /// The timestamp when this participant was connected to the conversation in the provider clock.
     /// </summary>
     /// <value>The timestamp when this participant was connected to the conversation in the provider clock.</value>
-    [DataMember(Name = "connectedTime", EmitDefaultValue = false)]
+    [JsonPropertyName("connectedTime")]
     public DateTime? ConnectedTime { get; set; }
 
 
@@ -181,7 +181,7 @@ public partial class QueueConversationSocialExpressionEventTopicParticipant : IE
     /// The timestamp when this participant disconnected from the conversation in the provider clock.
     /// </summary>
     /// <value>The timestamp when this participant disconnected from the conversation in the provider clock.</value>
-    [DataMember(Name = "endTime", EmitDefaultValue = false)]
+    [JsonPropertyName("endTime")]
     public DateTime? EndTime { get; set; }
 
 
@@ -190,7 +190,7 @@ public partial class QueueConversationSocialExpressionEventTopicParticipant : IE
     /// If this participant represents a user, then this will be the globally unique identifier for the user.
     /// </summary>
     /// <value>If this participant represents a user, then this will be the globally unique identifier for the user.</value>
-    [DataMember(Name = "userId", EmitDefaultValue = false)]
+    [JsonPropertyName("userId")]
     public string UserId { get; set; }
 
 
@@ -199,7 +199,7 @@ public partial class QueueConversationSocialExpressionEventTopicParticipant : IE
     /// If this participant represents an external contact, then this will be the globally unique identifier for the external contact.
     /// </summary>
     /// <value>If this participant represents an external contact, then this will be the globally unique identifier for the external contact.</value>
-    [DataMember(Name = "externalContactId", EmitDefaultValue = false)]
+    [JsonPropertyName("externalContactId")]
     public string ExternalContactId { get; set; }
 
 
@@ -208,7 +208,7 @@ public partial class QueueConversationSocialExpressionEventTopicParticipant : IE
     /// If this participant represents an external contact, then this will be the initial division for the external contact. This value will not be updated if the external contact is reassigned.
     /// </summary>
     /// <value>If this participant represents an external contact, then this will be the initial division for the external contact. This value will not be updated if the external contact is reassigned.</value>
-    [DataMember(Name = "externalContactInitialDivisionId", EmitDefaultValue = false)]
+    [JsonPropertyName("externalContactInitialDivisionId")]
     public string ExternalContactInitialDivisionId { get; set; }
 
 
@@ -217,7 +217,7 @@ public partial class QueueConversationSocialExpressionEventTopicParticipant : IE
     /// If this participant represents an external org, then this will be the globally unique identifier for the external org.
     /// </summary>
     /// <value>If this participant represents an external org, then this will be the globally unique identifier for the external org.</value>
-    [DataMember(Name = "externalOrganizationId", EmitDefaultValue = false)]
+    [JsonPropertyName("externalOrganizationId")]
     public string ExternalOrganizationId { get; set; }
 
 
@@ -226,7 +226,7 @@ public partial class QueueConversationSocialExpressionEventTopicParticipant : IE
     /// A human readable name identifying the participant.
     /// </summary>
     /// <value>A human readable name identifying the participant.</value>
-    [DataMember(Name = "name", EmitDefaultValue = false)]
+    [JsonPropertyName("name")]
     public string Name { get; set; }
 
 
@@ -235,7 +235,7 @@ public partial class QueueConversationSocialExpressionEventTopicParticipant : IE
     /// If present, the queue id that the communication channel came in on.
     /// </summary>
     /// <value>If present, the queue id that the communication channel came in on.</value>
-    [DataMember(Name = "queueId", EmitDefaultValue = false)]
+    [JsonPropertyName("queueId")]
     public string QueueId { get; set; }
 
 
@@ -244,7 +244,7 @@ public partial class QueueConversationSocialExpressionEventTopicParticipant : IE
     /// If present, the group id that the participant represents.
     /// </summary>
     /// <value>If present, the group id that the participant represents.</value>
-    [DataMember(Name = "groupId", EmitDefaultValue = false)]
+    [JsonPropertyName("groupId")]
     public string GroupId { get; set; }
 
 
@@ -253,7 +253,7 @@ public partial class QueueConversationSocialExpressionEventTopicParticipant : IE
     /// The team id that this participant is a member of when added to the conversation.
     /// </summary>
     /// <value>The team id that this participant is a member of when added to the conversation.</value>
-    [DataMember(Name = "teamId", EmitDefaultValue = false)]
+    [JsonPropertyName("teamId")]
     public string TeamId { get; set; }
 
 
@@ -262,7 +262,7 @@ public partial class QueueConversationSocialExpressionEventTopicParticipant : IE
     /// A well known string that specifies the purpose or type of this participant.
     /// </summary>
     /// <value>A well known string that specifies the purpose or type of this participant.</value>
-    [DataMember(Name = "purpose", EmitDefaultValue = false)]
+    [JsonPropertyName("purpose")]
     public string Purpose { get; set; }
 
 
@@ -271,7 +271,7 @@ public partial class QueueConversationSocialExpressionEventTopicParticipant : IE
     /// If this participant is part of a consult transfer, then this will be the participant id of the participant being transferred.
     /// </summary>
     /// <value>If this participant is part of a consult transfer, then this will be the participant id of the participant being transferred.</value>
-    [DataMember(Name = "consultParticipantId", EmitDefaultValue = false)]
+    [JsonPropertyName("consultParticipantId")]
     public string ConsultParticipantId { get; set; }
 
 
@@ -280,7 +280,7 @@ public partial class QueueConversationSocialExpressionEventTopicParticipant : IE
     /// The address for the this participant. For a phone call this will be the ANI.
     /// </summary>
     /// <value>The address for the this participant. For a phone call this will be the ANI.</value>
-    [DataMember(Name = "address", EmitDefaultValue = false)]
+    [JsonPropertyName("address")]
     public string Address { get; set; }
 
 
@@ -289,7 +289,7 @@ public partial class QueueConversationSocialExpressionEventTopicParticipant : IE
     /// True iff this participant is required to enter wrapup for this conversation.
     /// </summary>
     /// <value>True iff this participant is required to enter wrapup for this conversation.</value>
-    [DataMember(Name = "wrapupRequired", EmitDefaultValue = false)]
+    [JsonPropertyName("wrapupRequired")]
     public bool? WrapupRequired { get; set; }
 
 
@@ -298,7 +298,7 @@ public partial class QueueConversationSocialExpressionEventTopicParticipant : IE
     /// True when a participant is expected to enter a wrapup code once the call connects.
     /// </summary>
     /// <value>True when a participant is expected to enter a wrapup code once the call connects.</value>
-    [DataMember(Name = "wrapupExpected", EmitDefaultValue = false)]
+    [JsonPropertyName("wrapupExpected")]
     public bool? WrapupExpected { get; set; }
 
 
@@ -307,7 +307,7 @@ public partial class QueueConversationSocialExpressionEventTopicParticipant : IE
     /// This field controls how the UI prompts the agent for a wrapup.
     /// </summary>
     /// <value>This field controls how the UI prompts the agent for a wrapup.</value>
-    [DataMember(Name = "wrapupPrompt", EmitDefaultValue = false)]
+    [JsonPropertyName("wrapupPrompt")]
     public string WrapupPrompt { get; set; }
 
 
@@ -316,7 +316,7 @@ public partial class QueueConversationSocialExpressionEventTopicParticipant : IE
     /// Specifies how long a timed ACW session will last.
     /// </summary>
     /// <value>Specifies how long a timed ACW session will last.</value>
-    [DataMember(Name = "wrapupTimeoutMs", EmitDefaultValue = false)]
+    [JsonPropertyName("wrapupTimeoutMs")]
     public long? WrapupTimeoutMs { get; set; }
 
 
@@ -324,7 +324,7 @@ public partial class QueueConversationSocialExpressionEventTopicParticipant : IE
     /// <summary>
     /// Gets or Sets Wrapup
     /// </summary>
-    [DataMember(Name = "wrapup", EmitDefaultValue = false)]
+    [JsonPropertyName("wrapup")]
     public QueueConversationSocialExpressionEventTopicWrapup Wrapup { get; set; }
 
 
@@ -333,7 +333,7 @@ public partial class QueueConversationSocialExpressionEventTopicParticipant : IE
     /// The timestamp when this participant started after-call work.
     /// </summary>
     /// <value>The timestamp when this participant started after-call work.</value>
-    [DataMember(Name = "startAcwTime", EmitDefaultValue = false)]
+    [JsonPropertyName("startAcwTime")]
     public DateTime? StartAcwTime { get; set; }
 
 
@@ -342,7 +342,7 @@ public partial class QueueConversationSocialExpressionEventTopicParticipant : IE
     /// The timestamp when this participant ended after-call work.
     /// </summary>
     /// <value>The timestamp when this participant ended after-call work.</value>
-    [DataMember(Name = "endAcwTime", EmitDefaultValue = false)]
+    [JsonPropertyName("endAcwTime")]
     public DateTime? EndAcwTime { get; set; }
 
 
@@ -350,7 +350,7 @@ public partial class QueueConversationSocialExpressionEventTopicParticipant : IE
     /// <summary>
     /// Gets or Sets ConversationRoutingData
     /// </summary>
-    [DataMember(Name = "conversationRoutingData", EmitDefaultValue = false)]
+    [JsonPropertyName("conversationRoutingData")]
     public QueueConversationSocialExpressionEventTopicConversationRoutingData ConversationRoutingData { get; set; }
 
 
@@ -359,7 +359,7 @@ public partial class QueueConversationSocialExpressionEventTopicParticipant : IE
     /// Specifies how long the agent has to answer an interaction before being marked as not responding.
     /// </summary>
     /// <value>Specifies how long the agent has to answer an interaction before being marked as not responding.</value>
-    [DataMember(Name = "alertingTimeoutMs", EmitDefaultValue = false)]
+    [JsonPropertyName("alertingTimeoutMs")]
     public long? AlertingTimeoutMs { get; set; }
 
 
@@ -368,7 +368,7 @@ public partial class QueueConversationSocialExpressionEventTopicParticipant : IE
     /// If this participant is a monitor, then this will be the id of the participant that is being monitored.
     /// </summary>
     /// <value>If this participant is a monitor, then this will be the id of the participant that is being monitored.</value>
-    [DataMember(Name = "monitoredParticipantId", EmitDefaultValue = false)]
+    [JsonPropertyName("monitoredParticipantId")]
     public string MonitoredParticipantId { get; set; }
 
 
@@ -377,7 +377,7 @@ public partial class QueueConversationSocialExpressionEventTopicParticipant : IE
     /// If this participant is a coach, then this will be the id of the participant that is being coached.
     /// </summary>
     /// <value>If this participant is a coach, then this will be the id of the participant that is being coached.</value>
-    [DataMember(Name = "coachedParticipantId", EmitDefaultValue = false)]
+    [JsonPropertyName("coachedParticipantId")]
     public string CoachedParticipantId { get; set; }
 
 
@@ -386,7 +386,7 @@ public partial class QueueConversationSocialExpressionEventTopicParticipant : IE
     /// If this participant created a barge in conference, then this will be the id of the participant that is barged in.
     /// </summary>
     /// <value>If this participant created a barge in conference, then this will be the id of the participant that is barged in.</value>
-    [DataMember(Name = "bargedParticipantId", EmitDefaultValue = false)]
+    [JsonPropertyName("bargedParticipantId")]
     public string BargedParticipantId { get; set; }
 
 
@@ -395,7 +395,7 @@ public partial class QueueConversationSocialExpressionEventTopicParticipant : IE
     /// List of roles this participant&#39;s media has had on the conversation, ie monitor, coach, etc.
     /// </summary>
     /// <value>List of roles this participant&#39;s media has had on the conversation, ie monitor, coach, etc.</value>
-    [DataMember(Name = "mediaRoles", EmitDefaultValue = false)]
+    [JsonPropertyName("mediaRoles")]
     public List<string> MediaRoles { get; set; }
 
 
@@ -406,7 +406,7 @@ public partial class QueueConversationSocialExpressionEventTopicParticipant : IE
     /// If this participant has flagged the conversation, the reason code given.
     /// </summary>
     /// <value>If this participant has flagged the conversation, the reason code given.</value>
-    [DataMember(Name = "flaggedReason", EmitDefaultValue = false)]
+    [JsonPropertyName("flaggedReason")]
     public string FlaggedReason { get; set; }
 
 
@@ -415,7 +415,7 @@ public partial class QueueConversationSocialExpressionEventTopicParticipant : IE
     /// Additional participant attributes
     /// </summary>
     /// <value>Additional participant attributes</value>
-    [DataMember(Name = "attributes", EmitDefaultValue = false)]
+    [JsonPropertyName("attributes")]
     public Dictionary<string, string> Attributes { get; set; }
 
 
@@ -423,7 +423,7 @@ public partial class QueueConversationSocialExpressionEventTopicParticipant : IE
     /// <summary>
     /// Gets or Sets Calls
     /// </summary>
-    [DataMember(Name = "calls", EmitDefaultValue = false)]
+    [JsonPropertyName("calls")]
     public List<QueueConversationSocialExpressionEventTopicCall> Calls { get; set; }
 
 
@@ -431,7 +431,7 @@ public partial class QueueConversationSocialExpressionEventTopicParticipant : IE
     /// <summary>
     /// Gets or Sets Callbacks
     /// </summary>
-    [DataMember(Name = "callbacks", EmitDefaultValue = false)]
+    [JsonPropertyName("callbacks")]
     public List<QueueConversationSocialExpressionEventTopicCallback> Callbacks { get; set; }
 
 
@@ -439,7 +439,7 @@ public partial class QueueConversationSocialExpressionEventTopicParticipant : IE
     /// <summary>
     /// Gets or Sets Chats
     /// </summary>
-    [DataMember(Name = "chats", EmitDefaultValue = false)]
+    [JsonPropertyName("chats")]
     public List<QueueConversationSocialExpressionEventTopicChat> Chats { get; set; }
 
 
@@ -447,7 +447,7 @@ public partial class QueueConversationSocialExpressionEventTopicParticipant : IE
     /// <summary>
     /// Gets or Sets Cobrowsesessions
     /// </summary>
-    [DataMember(Name = "cobrowsesessions", EmitDefaultValue = false)]
+    [JsonPropertyName("cobrowsesessions")]
     public List<QueueConversationSocialExpressionEventTopicCobrowse> Cobrowsesessions { get; set; }
 
 
@@ -455,7 +455,7 @@ public partial class QueueConversationSocialExpressionEventTopicParticipant : IE
     /// <summary>
     /// Gets or Sets Emails
     /// </summary>
-    [DataMember(Name = "emails", EmitDefaultValue = false)]
+    [JsonPropertyName("emails")]
     public List<QueueConversationSocialExpressionEventTopicEmail> Emails { get; set; }
 
 
@@ -463,7 +463,7 @@ public partial class QueueConversationSocialExpressionEventTopicParticipant : IE
     /// <summary>
     /// Gets or Sets Messages
     /// </summary>
-    [DataMember(Name = "messages", EmitDefaultValue = false)]
+    [JsonPropertyName("messages")]
     public List<QueueConversationSocialExpressionEventTopicMessage> Messages { get; set; }
 
 
@@ -471,7 +471,7 @@ public partial class QueueConversationSocialExpressionEventTopicParticipant : IE
     /// <summary>
     /// Gets or Sets InternalMessages
     /// </summary>
-    [DataMember(Name = "internalMessages", EmitDefaultValue = false)]
+    [JsonPropertyName("internalMessages")]
     public List<QueueConversationSocialExpressionEventTopicInternalMessage> InternalMessages { get; set; }
 
 
@@ -479,7 +479,7 @@ public partial class QueueConversationSocialExpressionEventTopicParticipant : IE
     /// <summary>
     /// Gets or Sets Screenshares
     /// </summary>
-    [DataMember(Name = "screenshares", EmitDefaultValue = false)]
+    [JsonPropertyName("screenshares")]
     public List<QueueConversationSocialExpressionEventTopicScreenshare> Screenshares { get; set; }
 
 
@@ -487,7 +487,7 @@ public partial class QueueConversationSocialExpressionEventTopicParticipant : IE
     /// <summary>
     /// Gets or Sets SocialExpressions
     /// </summary>
-    [DataMember(Name = "socialExpressions", EmitDefaultValue = false)]
+    [JsonPropertyName("socialExpressions")]
     public List<QueueConversationSocialExpressionEventTopicSocialExpression> SocialExpressions { get; set; }
 
 
@@ -495,7 +495,7 @@ public partial class QueueConversationSocialExpressionEventTopicParticipant : IE
     /// <summary>
     /// Gets or Sets Videos
     /// </summary>
-    [DataMember(Name = "videos", EmitDefaultValue = false)]
+    [JsonPropertyName("videos")]
     public List<QueueConversationSocialExpressionEventTopicVideo> Videos { get; set; }
 
 
@@ -503,7 +503,7 @@ public partial class QueueConversationSocialExpressionEventTopicParticipant : IE
     /// <summary>
     /// Gets or Sets Workflow
     /// </summary>
-    [DataMember(Name = "workflow", EmitDefaultValue = false)]
+    [JsonPropertyName("workflow")]
     public QueueConversationSocialExpressionEventTopicWorkflow Workflow { get; set; }
 
 

@@ -7,14 +7,14 @@ namespace PureCloud.Client.Models;
 /// <summary>
 /// Session
 /// </summary>
-[DataContract]
+
 public partial class Session : IEquatable<Session>
 {
     /// <summary>
     /// The original direction of the conversation.
     /// </summary>
     /// <value>The original direction of the conversation.</value>
-    [JsonConverter(typeof(JsonStringEnumConverter))]
+    
     public enum OriginatingDirectionEnum
     {
         /// <summary>
@@ -47,7 +47,7 @@ public partial class Session : IEquatable<Session>
     /// Disconnect reason for the last user connected to the conversation.
     /// </summary>
     /// <value>Disconnect reason for the last user connected to the conversation.</value>
-    [JsonConverter(typeof(JsonStringEnumConverter))]
+    
     public enum LastUserDisconnectTypeEnum
     {
         /// <summary>
@@ -176,7 +176,7 @@ public partial class Session : IEquatable<Session>
     /// Last ACD outcome for the conversation.
     /// </summary>
     /// <value>Last ACD outcome for the conversation.</value>
-    [JsonConverter(typeof(JsonStringEnumConverter))]
+    
     public enum LastAcdOutcomeEnum
     {
         /// <summary>
@@ -215,19 +215,19 @@ public partial class Session : IEquatable<Session>
     /// The original direction of the conversation.
     /// </summary>
     /// <value>The original direction of the conversation.</value>
-    [DataMember(Name = "originatingDirection", EmitDefaultValue = false)]
+    [JsonPropertyName("originatingDirection")]
     public OriginatingDirectionEnum? OriginatingDirection { get; set; }
     /// <summary>
     /// Disconnect reason for the last user connected to the conversation.
     /// </summary>
     /// <value>Disconnect reason for the last user connected to the conversation.</value>
-    [DataMember(Name = "lastUserDisconnectType", EmitDefaultValue = false)]
+    [JsonPropertyName("lastUserDisconnectType")]
     public LastUserDisconnectTypeEnum? LastUserDisconnectType { get; set; }
     /// <summary>
     /// Last ACD outcome for the conversation.
     /// </summary>
     /// <value>Last ACD outcome for the conversation.</value>
-    [DataMember(Name = "lastAcdOutcome", EmitDefaultValue = false)]
+    [JsonPropertyName("lastAcdOutcome")]
     public LastAcdOutcomeEnum? LastAcdOutcome { get; set; }
 
     /// <summary>
@@ -337,7 +337,7 @@ public partial class Session : IEquatable<Session>
     /// The ID of the session.
     /// </summary>
     /// <value>The ID of the session.</value>
-    [DataMember(Name = "id", EmitDefaultValue = false)]
+    [JsonPropertyName("id")]
     public string Id { get; set; }
 
 
@@ -346,7 +346,7 @@ public partial class Session : IEquatable<Session>
     /// Primary identifier of the customer in the source where the events for the session originate from.
     /// </summary>
     /// <value>Primary identifier of the customer in the source where the events for the session originate from.</value>
-    [DataMember(Name = "customerId", EmitDefaultValue = false)]
+    [JsonPropertyName("customerId")]
     public string CustomerId { get; set; }
 
 
@@ -355,7 +355,7 @@ public partial class Session : IEquatable<Session>
     /// Type of source customer identifier (e.g. cookie, email, phone).
     /// </summary>
     /// <value>Type of source customer identifier (e.g. cookie, email, phone).</value>
-    [DataMember(Name = "customerIdType", EmitDefaultValue = false)]
+    [JsonPropertyName("customerIdType")]
     public string CustomerIdType { get; set; }
 
 
@@ -364,7 +364,7 @@ public partial class Session : IEquatable<Session>
     /// Session types indicate the type or category of sessions (e.g. web, app).
     /// </summary>
     /// <value>Session types indicate the type or category of sessions (e.g. web, app).</value>
-    [DataMember(Name = "type", EmitDefaultValue = false)]
+    [JsonPropertyName("type")]
     public string Type { get; set; }
 
 
@@ -373,7 +373,7 @@ public partial class Session : IEquatable<Session>
     /// Unique identifier in the external system where the events for the session originate from.
     /// </summary>
     /// <value>Unique identifier in the external system where the events for the session originate from.</value>
-    [DataMember(Name = "externalId", EmitDefaultValue = false)]
+    [JsonPropertyName("externalId")]
     public string ExternalId { get; set; }
 
 
@@ -382,7 +382,7 @@ public partial class Session : IEquatable<Session>
     /// A URL that identifies an external system-of-record resource that may have more detailed information on the session.
     /// </summary>
     /// <value>A URL that identifies an external system-of-record resource that may have more detailed information on the session.</value>
-    [DataMember(Name = "externalUrl", EmitDefaultValue = false)]
+    [JsonPropertyName("externalUrl")]
     public string ExternalUrl { get; set; }
 
 
@@ -391,7 +391,7 @@ public partial class Session : IEquatable<Session>
     /// Shortened numeric identifier of 4-6 digits.
     /// </summary>
     /// <value>Shortened numeric identifier of 4-6 digits.</value>
-    [DataMember(Name = "shortId", EmitDefaultValue = false)]
+    [JsonPropertyName("shortId")]
     public string ShortId { get; set; }
 
 
@@ -400,7 +400,7 @@ public partial class Session : IEquatable<Session>
     /// List of the outcome achievements by the customer in this session.
     /// </summary>
     /// <value>List of the outcome achievements by the customer in this session.</value>
-    [DataMember(Name = "outcomeAchievements", EmitDefaultValue = false)]
+    [JsonPropertyName("outcomeAchievements")]
     public List<OutcomeAchievement> OutcomeAchievements { get; set; }
 
 
@@ -409,7 +409,7 @@ public partial class Session : IEquatable<Session>
     /// List of the segment assignments to the customer in this session.
     /// </summary>
     /// <value>List of the segment assignments to the customer in this session.</value>
-    [DataMember(Name = "segmentAssignments", EmitDefaultValue = false)]
+    [JsonPropertyName("segmentAssignments")]
     public List<SessionSegmentAssignment> SegmentAssignments { get; set; }
 
 
@@ -418,7 +418,7 @@ public partial class Session : IEquatable<Session>
     /// Attributes projected from the session&#39;s event stream.
     /// </summary>
     /// <value>Attributes projected from the session&#39;s event stream.</value>
-    [DataMember(Name = "attributes", EmitDefaultValue = false)]
+    [JsonPropertyName("attributes")]
     public Dictionary<string, CustomEventAttribute> Attributes { get; set; }
 
 
@@ -427,7 +427,7 @@ public partial class Session : IEquatable<Session>
     /// List-type attributes projected from the session&#39;s event stream.
     /// </summary>
     /// <value>List-type attributes projected from the session&#39;s event stream.</value>
-    [DataMember(Name = "attributeLists", EmitDefaultValue = false)]
+    [JsonPropertyName("attributeLists")]
     public Dictionary<string, CustomEventAttributeList> AttributeLists { get; set; }
 
 
@@ -436,7 +436,7 @@ public partial class Session : IEquatable<Session>
     /// Customer&#39;s browser.
     /// </summary>
     /// <value>Customer&#39;s browser.</value>
-    [DataMember(Name = "browser", EmitDefaultValue = false)]
+    [JsonPropertyName("browser")]
     public Browser Browser { get; set; }
 
 
@@ -445,7 +445,7 @@ public partial class Session : IEquatable<Session>
     /// Customer&#39;s device.
     /// </summary>
     /// <value>Customer&#39;s device.</value>
-    [DataMember(Name = "device", EmitDefaultValue = false)]
+    [JsonPropertyName("device")]
     public Device Device { get; set; }
 
 
@@ -454,7 +454,7 @@ public partial class Session : IEquatable<Session>
     /// Customer&#39;s geolocation.
     /// </summary>
     /// <value>Customer&#39;s geolocation.</value>
-    [DataMember(Name = "geolocation", EmitDefaultValue = false)]
+    [JsonPropertyName("geolocation")]
     public JourneyGeolocation Geolocation { get; set; }
 
 
@@ -463,7 +463,7 @@ public partial class Session : IEquatable<Session>
     /// Customer&#39;s IP address.
     /// </summary>
     /// <value>Customer&#39;s IP address.</value>
-    [DataMember(Name = "ipAddress", EmitDefaultValue = false)]
+    [JsonPropertyName("ipAddress")]
     public string IpAddress { get; set; }
 
 
@@ -472,7 +472,7 @@ public partial class Session : IEquatable<Session>
     /// Customer&#39;s IP-based organization or ISP name.
     /// </summary>
     /// <value>Customer&#39;s IP-based organization or ISP name.</value>
-    [DataMember(Name = "ipOrganization", EmitDefaultValue = false)]
+    [JsonPropertyName("ipOrganization")]
     public string IpOrganization { get; set; }
 
 
@@ -481,7 +481,7 @@ public partial class Session : IEquatable<Session>
     /// The webpage where the customer&#39;s last web interaction occurred.
     /// </summary>
     /// <value>The webpage where the customer&#39;s last web interaction occurred.</value>
-    [DataMember(Name = "lastPage", EmitDefaultValue = false)]
+    [JsonPropertyName("lastPage")]
     public JourneyPage LastPage { get; set; }
 
 
@@ -490,7 +490,7 @@ public partial class Session : IEquatable<Session>
     /// Marketing / traffic source information.
     /// </summary>
     /// <value>Marketing / traffic source information.</value>
-    [DataMember(Name = "mktCampaign", EmitDefaultValue = false)]
+    [JsonPropertyName("mktCampaign")]
     public JourneyCampaign MktCampaign { get; set; }
 
 
@@ -499,7 +499,7 @@ public partial class Session : IEquatable<Session>
     /// Identifies the page URL that originally generated the request for the current page being viewed.
     /// </summary>
     /// <value>Identifies the page URL that originally generated the request for the current page being viewed.</value>
-    [DataMember(Name = "referrer", EmitDefaultValue = false)]
+    [JsonPropertyName("referrer")]
     public Referrer Referrer { get; set; }
 
 
@@ -508,7 +508,7 @@ public partial class Session : IEquatable<Session>
     /// Application that the customer is interacting with (for app sessions).
     /// </summary>
     /// <value>Application that the customer is interacting with (for app sessions).</value>
-    [DataMember(Name = "app", EmitDefaultValue = false)]
+    [JsonPropertyName("app")]
     public JourneyApp App { get; set; }
 
 
@@ -517,7 +517,7 @@ public partial class Session : IEquatable<Session>
     /// SDK library used to generate the events for the session (for app and web sessions).
     /// </summary>
     /// <value>SDK library used to generate the events for the session (for app and web sessions).</value>
-    [DataMember(Name = "sdkLibrary", EmitDefaultValue = false)]
+    [JsonPropertyName("sdkLibrary")]
     public SdkLibrary SdkLibrary { get; set; }
 
 
@@ -526,7 +526,7 @@ public partial class Session : IEquatable<Session>
     /// Information relating to the device&#39;s network connectivity (for app sessions).
     /// </summary>
     /// <value>Information relating to the device&#39;s network connectivity (for app sessions).</value>
-    [DataMember(Name = "networkConnectivity", EmitDefaultValue = false)]
+    [JsonPropertyName("networkConnectivity")]
     public NetworkConnectivity NetworkConnectivity { get; set; }
 
 
@@ -535,7 +535,7 @@ public partial class Session : IEquatable<Session>
     /// Search terms associated with the session.
     /// </summary>
     /// <value>Search terms associated with the session.</value>
-    [DataMember(Name = "searchTerms", EmitDefaultValue = false)]
+    [JsonPropertyName("searchTerms")]
     public List<string> SearchTerms { get; set; }
 
 
@@ -544,7 +544,7 @@ public partial class Session : IEquatable<Session>
     /// String identifying the user agent.
     /// </summary>
     /// <value>String identifying the user agent.</value>
-    [DataMember(Name = "userAgentString", EmitDefaultValue = false)]
+    [JsonPropertyName("userAgentString")]
     public string UserAgentString { get; set; }
 
 
@@ -553,7 +553,7 @@ public partial class Session : IEquatable<Session>
     /// Indicates how long the session has been active (valid for an individual device).
     /// </summary>
     /// <value>Indicates how long the session has been active (valid for an individual device).</value>
-    [DataMember(Name = "durationInSeconds", EmitDefaultValue = false)]
+    [JsonPropertyName("durationInSeconds")]
     public int? DurationInSeconds { get; set; }
 
 
@@ -562,7 +562,7 @@ public partial class Session : IEquatable<Session>
     /// The count of all events performed during the session.
     /// </summary>
     /// <value>The count of all events performed during the session.</value>
-    [DataMember(Name = "eventCount", EmitDefaultValue = false)]
+    [JsonPropertyName("eventCount")]
     public int? EventCount { get; set; }
 
 
@@ -571,7 +571,7 @@ public partial class Session : IEquatable<Session>
     /// The count of all pageviews performed during the session.
     /// </summary>
     /// <value>The count of all pageviews performed during the session.</value>
-    [DataMember(Name = "pageviewCount", EmitDefaultValue = false)]
+    [JsonPropertyName("pageviewCount")]
     public int? PageviewCount { get; set; }
 
 
@@ -580,7 +580,7 @@ public partial class Session : IEquatable<Session>
     /// The count of all screenviews performed during the session.
     /// </summary>
     /// <value>The count of all screenviews performed during the session.</value>
-    [DataMember(Name = "screenviewCount", EmitDefaultValue = false)]
+    [JsonPropertyName("screenviewCount")]
     public int? ScreenviewCount { get; set; }
 
 
@@ -589,7 +589,7 @@ public partial class Session : IEquatable<Session>
     /// Information about the most recent event in this session.
     /// </summary>
     /// <value>Information about the most recent event in this session.</value>
-    [DataMember(Name = "lastEvent", EmitDefaultValue = false)]
+    [JsonPropertyName("lastEvent")]
     public SessionLastEvent LastEvent { get; set; }
 
 
@@ -598,7 +598,7 @@ public partial class Session : IEquatable<Session>
     /// The last queue connected to this session.
     /// </summary>
     /// <value>The last queue connected to this session.</value>
-    [DataMember(Name = "lastConnectedQueue", EmitDefaultValue = false)]
+    [JsonPropertyName("lastConnectedQueue")]
     public ConnectedQueue LastConnectedQueue { get; set; }
 
 
@@ -607,7 +607,7 @@ public partial class Session : IEquatable<Session>
     /// The last user connected to this session.
     /// </summary>
     /// <value>The last user connected to this session.</value>
-    [DataMember(Name = "lastConnectedUser", EmitDefaultValue = false)]
+    [JsonPropertyName("lastConnectedUser")]
     public ConnectedUser LastConnectedUser { get; set; }
 
 
@@ -616,7 +616,7 @@ public partial class Session : IEquatable<Session>
     /// The last user disposition connected to this session.
     /// </summary>
     /// <value>The last user disposition connected to this session.</value>
-    [DataMember(Name = "lastUserDisposition", EmitDefaultValue = false)]
+    [JsonPropertyName("lastUserDisposition")]
     public ConversationUserDisposition LastUserDisposition { get; set; }
 
 
@@ -625,7 +625,7 @@ public partial class Session : IEquatable<Session>
     /// Represents the channels used for this conversation.
     /// </summary>
     /// <value>Represents the channels used for this conversation.</value>
-    [DataMember(Name = "conversationChannels", EmitDefaultValue = false)]
+    [JsonPropertyName("conversationChannels")]
     public List<ConversationChannel> ConversationChannels { get; set; }
 
 
@@ -636,7 +636,7 @@ public partial class Session : IEquatable<Session>
     /// The subject for the conversation, for example an email subject.
     /// </summary>
     /// <value>The subject for the conversation, for example an email subject.</value>
-    [DataMember(Name = "conversationSubject", EmitDefaultValue = false)]
+    [JsonPropertyName("conversationSubject")]
     public string ConversationSubject { get; set; }
 
 
@@ -649,7 +649,7 @@ public partial class Session : IEquatable<Session>
     /// Indicates whether or not the session is authenticated.
     /// </summary>
     /// <value>Indicates whether or not the session is authenticated.</value>
-    [DataMember(Name = "authenticated", EmitDefaultValue = false)]
+    [JsonPropertyName("authenticated")]
     public bool? Authenticated { get; set; }
 
 
@@ -658,7 +658,7 @@ public partial class Session : IEquatable<Session>
     /// List of division IDs associated with the session.
     /// </summary>
     /// <value>List of division IDs associated with the session.</value>
-    [DataMember(Name = "divisionIds", EmitDefaultValue = false)]
+    [JsonPropertyName("divisionIds")]
     public List<string> DivisionIds { get; set; }
 
 
@@ -667,7 +667,7 @@ public partial class Session : IEquatable<Session>
     /// The app screen name where the customer&#39;s last app interaction occurred.
     /// </summary>
     /// <value>The app screen name where the customer&#39;s last app interaction occurred.</value>
-    [DataMember(Name = "lastScreen", EmitDefaultValue = false)]
+    [JsonPropertyName("lastScreen")]
     public string LastScreen { get; set; }
 
 
@@ -676,7 +676,7 @@ public partial class Session : IEquatable<Session>
     /// The URI for this object
     /// </summary>
     /// <value>The URI for this object</value>
-    [DataMember(Name = "selfUri", EmitDefaultValue = false)]
+    [JsonPropertyName("selfUri")]
     public string SelfUri { get; private set; }
 
 
@@ -685,7 +685,7 @@ public partial class Session : IEquatable<Session>
     /// Timestamp indicating when the session was created. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z
     /// </summary>
     /// <value>Timestamp indicating when the session was created. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z</value>
-    [DataMember(Name = "createdDate", EmitDefaultValue = false)]
+    [JsonPropertyName("createdDate")]
     public DateTime? CreatedDate { get; set; }
 
 
@@ -694,7 +694,7 @@ public partial class Session : IEquatable<Session>
     /// Timestamp indicating when the session was ended. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z
     /// </summary>
     /// <value>Timestamp indicating when the session was ended. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z</value>
-    [DataMember(Name = "endedDate", EmitDefaultValue = false)]
+    [JsonPropertyName("endedDate")]
     public DateTime? EndedDate { get; set; }
 
 
@@ -703,7 +703,7 @@ public partial class Session : IEquatable<Session>
     /// The external contact associated with this session.
     /// </summary>
     /// <value>The external contact associated with this session.</value>
-    [DataMember(Name = "externalContact", EmitDefaultValue = false)]
+    [JsonPropertyName("externalContact")]
     public AddressableEntityRef ExternalContact { get; private set; }
 
 
@@ -712,7 +712,7 @@ public partial class Session : IEquatable<Session>
     /// Timestamp indicating when the visitor should be considered as away. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z
     /// </summary>
     /// <value>Timestamp indicating when the visitor should be considered as away. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z</value>
-    [DataMember(Name = "awayDate", EmitDefaultValue = false)]
+    [JsonPropertyName("awayDate")]
     public DateTime? AwayDate { get; set; }
 
 
@@ -721,7 +721,7 @@ public partial class Session : IEquatable<Session>
     /// Timestamp indicating when the visitor should be considered as idle. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z
     /// </summary>
     /// <value>Timestamp indicating when the visitor should be considered as idle. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z</value>
-    [DataMember(Name = "idleDate", EmitDefaultValue = false)]
+    [JsonPropertyName("idleDate")]
     public DateTime? IdleDate { get; set; }
 
 
@@ -730,7 +730,7 @@ public partial class Session : IEquatable<Session>
     /// The conversation for this session.
     /// </summary>
     /// <value>The conversation for this session.</value>
-    [DataMember(Name = "conversation", EmitDefaultValue = false)]
+    [JsonPropertyName("conversation")]
     public AddressableEntityRef Conversation { get; private set; }
 
 

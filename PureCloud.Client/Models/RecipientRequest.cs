@@ -1,12 +1,12 @@
-using System.Runtime.Serialization;
 using System.Text;
+using System.Text.Json.Serialization;
 
 namespace PureCloud.Client.Models;
 
 /// <summary>
 /// RecipientRequest
 /// </summary>
-[DataContract]
+
 public partial class RecipientRequest : IEquatable<RecipientRequest>
 {
     /// <summary>
@@ -25,7 +25,7 @@ public partial class RecipientRequest : IEquatable<RecipientRequest>
     /// An automate flow object which defines the set of actions to be taken, when a message is received by this recipient.
     /// </summary>
     /// <value>An automate flow object which defines the set of actions to be taken, when a message is received by this recipient.</value>
-    [DataMember(Name = "flow", EmitDefaultValue = false)]
+    [JsonPropertyName("flow")]
     public RecipientFlow Flow { get; set; }
 
 

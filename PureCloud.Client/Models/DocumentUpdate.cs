@@ -1,4 +1,3 @@
-using System.Runtime.Serialization;
 using System.Text;
 using System.Text.Json.Serialization;
 
@@ -7,7 +6,7 @@ namespace PureCloud.Client.Models;
 /// <summary>
 /// DocumentUpdate
 /// </summary>
-[DataContract]
+
 public partial class DocumentUpdate : IEquatable<DocumentUpdate>
 {
 
@@ -47,7 +46,7 @@ public partial class DocumentUpdate : IEquatable<DocumentUpdate>
     /// <summary>
     /// Gets or Sets ChangeNumber
     /// </summary>
-    [DataMember(Name = "changeNumber", EmitDefaultValue = false)]
+    [JsonPropertyName("changeNumber")]
     public int? ChangeNumber { get; set; }
 
 
@@ -56,7 +55,7 @@ public partial class DocumentUpdate : IEquatable<DocumentUpdate>
     /// The name of the document
     /// </summary>
     /// <value>The name of the document</value>
-    [DataMember(Name = "name", EmitDefaultValue = false)]
+    [JsonPropertyName("name")]
     public string Name { get; set; }
 
 
@@ -64,7 +63,7 @@ public partial class DocumentUpdate : IEquatable<DocumentUpdate>
     /// <summary>
     /// Gets or Sets Read
     /// </summary>
-    [DataMember(Name = "read", EmitDefaultValue = false)]
+    [JsonPropertyName("read")]
     public bool? Read { get; set; }
 
 
@@ -72,7 +71,7 @@ public partial class DocumentUpdate : IEquatable<DocumentUpdate>
     /// <summary>
     /// Gets or Sets AddTags
     /// </summary>
-    [DataMember(Name = "addTags", EmitDefaultValue = false)]
+    [JsonPropertyName("addTags")]
     public List<string> AddTags { get; set; }
 
 
@@ -80,7 +79,7 @@ public partial class DocumentUpdate : IEquatable<DocumentUpdate>
     /// <summary>
     /// Gets or Sets RemoveTags
     /// </summary>
-    [DataMember(Name = "removeTags", EmitDefaultValue = false)]
+    [JsonPropertyName("removeTags")]
     public List<string> RemoveTags { get; set; }
 
 
@@ -88,7 +87,7 @@ public partial class DocumentUpdate : IEquatable<DocumentUpdate>
     /// <summary>
     /// Gets or Sets AddTagIds
     /// </summary>
-    [DataMember(Name = "addTagIds", EmitDefaultValue = false)]
+    [JsonPropertyName("addTagIds")]
     public List<string> AddTagIds { get; set; }
 
 
@@ -96,7 +95,7 @@ public partial class DocumentUpdate : IEquatable<DocumentUpdate>
     /// <summary>
     /// Gets or Sets RemoveTagIds
     /// </summary>
-    [DataMember(Name = "removeTagIds", EmitDefaultValue = false)]
+    [JsonPropertyName("removeTagIds")]
     public List<string> RemoveTagIds { get; set; }
 
 
@@ -104,7 +103,7 @@ public partial class DocumentUpdate : IEquatable<DocumentUpdate>
     /// <summary>
     /// Gets or Sets UpdateAttributes
     /// </summary>
-    [DataMember(Name = "updateAttributes", EmitDefaultValue = false)]
+    [JsonPropertyName("updateAttributes")]
     public List<DocumentAttribute> UpdateAttributes { get; set; }
 
 
@@ -112,7 +111,7 @@ public partial class DocumentUpdate : IEquatable<DocumentUpdate>
     /// <summary>
     /// Gets or Sets RemoveAttributes
     /// </summary>
-    [DataMember(Name = "removeAttributes", EmitDefaultValue = false)]
+    [JsonPropertyName("removeAttributes")]
     public List<string> RemoveAttributes { get; set; }
 
 

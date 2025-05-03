@@ -1,4 +1,3 @@
-using System.Runtime.Serialization;
 using System.Text;
 using System.Text.Json.Serialization;
 
@@ -7,7 +6,7 @@ namespace PureCloud.Client.Models;
 /// <summary>
 /// DocumentCategoryInput
 /// </summary>
-[DataContract]
+
 public partial class DocumentCategoryInput : IEquatable<DocumentCategoryInput>
 {
 
@@ -32,7 +31,7 @@ public partial class DocumentCategoryInput : IEquatable<DocumentCategoryInput>
     /// KnowledgeBase Category ID
     /// </summary>
     /// <value>KnowledgeBase Category ID</value>
-    [DataMember(Name = "id", EmitDefaultValue = false)]
+    [JsonPropertyName("id")]
     public string Id { get; set; }
 
 

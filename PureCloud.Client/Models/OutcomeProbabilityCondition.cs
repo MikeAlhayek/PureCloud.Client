@@ -1,4 +1,3 @@
-using System.Runtime.Serialization;
 using System.Text;
 using System.Text.Json.Serialization;
 
@@ -7,7 +6,7 @@ namespace PureCloud.Client.Models;
 /// <summary>
 /// OutcomeProbabilityCondition
 /// </summary>
-[DataContract]
+
 public partial class OutcomeProbabilityCondition : IEquatable<OutcomeProbabilityCondition>
 {
 
@@ -36,7 +35,7 @@ public partial class OutcomeProbabilityCondition : IEquatable<OutcomeProbability
     /// The outcome ID.
     /// </summary>
     /// <value>The outcome ID.</value>
-    [DataMember(Name = "outcomeId", EmitDefaultValue = false)]
+    [JsonPropertyName("outcomeId")]
     public string OutcomeId { get; set; }
 
 
@@ -45,7 +44,7 @@ public partial class OutcomeProbabilityCondition : IEquatable<OutcomeProbability
     /// Probability value for the selected outcome at or above which the action map will trigger.
     /// </summary>
     /// <value>Probability value for the selected outcome at or above which the action map will trigger.</value>
-    [DataMember(Name = "maximumProbability", EmitDefaultValue = false)]
+    [JsonPropertyName("maximumProbability")]
     public float? MaximumProbability { get; set; }
 
 
@@ -54,7 +53,7 @@ public partial class OutcomeProbabilityCondition : IEquatable<OutcomeProbability
     /// Additional probability condition, where if set, the action map will trigger if the current outcome probability is lower or equal to the value.
     /// </summary>
     /// <value>Additional probability condition, where if set, the action map will trigger if the current outcome probability is lower or equal to the value.</value>
-    [DataMember(Name = "probability", EmitDefaultValue = false)]
+    [JsonPropertyName("probability")]
     public float? Probability { get; set; }
 
 

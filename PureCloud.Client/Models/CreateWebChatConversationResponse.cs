@@ -1,12 +1,12 @@
-using System.Runtime.Serialization;
 using System.Text;
+using System.Text.Json.Serialization;
 
 namespace PureCloud.Client.Models;
 
 /// <summary>
 /// CreateWebChatConversationResponse
 /// </summary>
-[DataContract]
+
 public partial class CreateWebChatConversationResponse : IEquatable<CreateWebChatConversationResponse>
 {
     /// <summary>
@@ -31,7 +31,7 @@ public partial class CreateWebChatConversationResponse : IEquatable<CreateWebCha
     /// Chat Conversation identifier
     /// </summary>
     /// <value>Chat Conversation identifier</value>
-    [DataMember(Name = "id", EmitDefaultValue = false)]
+    [JsonPropertyName("id")]
     public string Id { get; set; }
 
 
@@ -40,7 +40,7 @@ public partial class CreateWebChatConversationResponse : IEquatable<CreateWebCha
     /// The JWT that you can use to identify subsequent calls on this conversation
     /// </summary>
     /// <value>The JWT that you can use to identify subsequent calls on this conversation</value>
-    [DataMember(Name = "jwt", EmitDefaultValue = false)]
+    [JsonPropertyName("jwt")]
     public string Jwt { get; set; }
 
 
@@ -49,7 +49,7 @@ public partial class CreateWebChatConversationResponse : IEquatable<CreateWebCha
     /// The URI which provides the conversation event stream.
     /// </summary>
     /// <value>The URI which provides the conversation event stream.</value>
-    [DataMember(Name = "eventStreamUri", EmitDefaultValue = false)]
+    [JsonPropertyName("eventStreamUri")]
     public string EventStreamUri { get; set; }
 
 
@@ -58,7 +58,7 @@ public partial class CreateWebChatConversationResponse : IEquatable<CreateWebCha
     /// Chat Member
     /// </summary>
     /// <value>Chat Member</value>
-    [DataMember(Name = "member", EmitDefaultValue = false)]
+    [JsonPropertyName("member")]
     public WebChatMemberInfo Member { get; set; }
 
 

@@ -1,12 +1,12 @@
-using System.Runtime.Serialization;
 using System.Text;
+using System.Text.Json.Serialization;
 
 namespace PureCloud.Client.Models;
 
 /// <summary>
 /// ImportError
 /// </summary>
-[DataContract]
+
 public partial class ImportError : IEquatable<ImportError>
 {
     /// <summary>
@@ -26,7 +26,7 @@ public partial class ImportError : IEquatable<ImportError>
     /// <summary>
     /// Gets or Sets Message
     /// </summary>
-    [DataMember(Name = "message", EmitDefaultValue = false)]
+    [JsonPropertyName("message")]
     public string Message { get; set; }
 
 
@@ -34,7 +34,7 @@ public partial class ImportError : IEquatable<ImportError>
     /// <summary>
     /// Gets or Sets Line
     /// </summary>
-    [DataMember(Name = "line", EmitDefaultValue = false)]
+    [JsonPropertyName("line")]
     public int? Line { get; set; }
 
 

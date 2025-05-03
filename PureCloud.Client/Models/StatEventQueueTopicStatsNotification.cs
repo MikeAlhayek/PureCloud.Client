@@ -1,12 +1,12 @@
-using System.Runtime.Serialization;
 using System.Text;
+using System.Text.Json.Serialization;
 
 namespace PureCloud.Client.Models;
 
 /// <summary>
 /// StatEventQueueTopicStatsNotification
 /// </summary>
-[DataContract]
+
 public partial class StatEventQueueTopicStatsNotification : IEquatable<StatEventQueueTopicStatsNotification>
 {
     /// <summary>
@@ -26,7 +26,7 @@ public partial class StatEventQueueTopicStatsNotification : IEquatable<StatEvent
     /// <summary>
     /// Gets or Sets Group
     /// </summary>
-    [DataMember(Name = "group", EmitDefaultValue = false)]
+    [JsonPropertyName("group")]
     public Dictionary<string, string> Group { get; set; }
 
 
@@ -34,7 +34,7 @@ public partial class StatEventQueueTopicStatsNotification : IEquatable<StatEvent
     /// <summary>
     /// Gets or Sets Data
     /// </summary>
-    [DataMember(Name = "data", EmitDefaultValue = false)]
+    [JsonPropertyName("data")]
     public List<StatEventQueueTopicIntervalMetrics> Data { get; set; }
 
 

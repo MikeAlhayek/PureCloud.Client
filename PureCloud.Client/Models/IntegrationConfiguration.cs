@@ -1,4 +1,3 @@
-using System.Runtime.Serialization;
 using System.Text;
 using System.Text.Json.Serialization;
 
@@ -7,7 +6,7 @@ namespace PureCloud.Client.Models;
 /// <summary>
 /// Configuration for an Integration
 /// </summary>
-[DataContract]
+
 public partial class IntegrationConfiguration : IEquatable<IntegrationConfiguration>
 {
 
@@ -42,7 +41,7 @@ public partial class IntegrationConfiguration : IEquatable<IntegrationConfigurat
     /// The globally unique identifier for the object.
     /// </summary>
     /// <value>The globally unique identifier for the object.</value>
-    [DataMember(Name = "id", EmitDefaultValue = false)]
+    [JsonPropertyName("id")]
     public string Id { get; private set; }
 
 
@@ -51,7 +50,7 @@ public partial class IntegrationConfiguration : IEquatable<IntegrationConfigurat
     /// The name of the integration, used to distinguish this integration from others of the same type.
     /// </summary>
     /// <value>The name of the integration, used to distinguish this integration from others of the same type.</value>
-    [DataMember(Name = "name", EmitDefaultValue = false)]
+    [JsonPropertyName("name")]
     public string Name { get; set; }
 
 
@@ -60,7 +59,7 @@ public partial class IntegrationConfiguration : IEquatable<IntegrationConfigurat
     /// Version number required for updates.
     /// </summary>
     /// <value>Version number required for updates.</value>
-    [DataMember(Name = "version", EmitDefaultValue = false)]
+    [JsonPropertyName("version")]
     public int? Version { get; set; }
 
 
@@ -69,7 +68,7 @@ public partial class IntegrationConfiguration : IEquatable<IntegrationConfigurat
     /// Key-value configuration settings described by the schema in the propertiesSchemaUri field.
     /// </summary>
     /// <value>Key-value configuration settings described by the schema in the propertiesSchemaUri field.</value>
-    [DataMember(Name = "properties", EmitDefaultValue = false)]
+    [JsonPropertyName("properties")]
     public object Properties { get; set; }
 
 
@@ -78,7 +77,7 @@ public partial class IntegrationConfiguration : IEquatable<IntegrationConfigurat
     /// Advanced configuration described by the schema in the advancedSchemaUri field.
     /// </summary>
     /// <value>Advanced configuration described by the schema in the advancedSchemaUri field.</value>
-    [DataMember(Name = "advanced", EmitDefaultValue = false)]
+    [JsonPropertyName("advanced")]
     public object Advanced { get; set; }
 
 
@@ -87,7 +86,7 @@ public partial class IntegrationConfiguration : IEquatable<IntegrationConfigurat
     /// Notes about the integration.
     /// </summary>
     /// <value>Notes about the integration.</value>
-    [DataMember(Name = "notes", EmitDefaultValue = false)]
+    [JsonPropertyName("notes")]
     public string Notes { get; set; }
 
 
@@ -96,7 +95,7 @@ public partial class IntegrationConfiguration : IEquatable<IntegrationConfigurat
     /// Credentials required by the integration. The required keys are indicated in the credentials property of the Integration Type
     /// </summary>
     /// <value>Credentials required by the integration. The required keys are indicated in the credentials property of the Integration Type</value>
-    [DataMember(Name = "credentials", EmitDefaultValue = false)]
+    [JsonPropertyName("credentials")]
     public Dictionary<string, CredentialInfo> Credentials { get; set; }
 
 
@@ -105,7 +104,7 @@ public partial class IntegrationConfiguration : IEquatable<IntegrationConfigurat
     /// The URI for this object
     /// </summary>
     /// <value>The URI for this object</value>
-    [DataMember(Name = "selfUri", EmitDefaultValue = false)]
+    [JsonPropertyName("selfUri")]
     public string SelfUri { get; private set; }
 
 

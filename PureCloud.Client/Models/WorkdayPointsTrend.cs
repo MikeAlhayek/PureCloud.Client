@@ -7,14 +7,14 @@ namespace PureCloud.Client.Models;
 /// <summary>
 /// WorkdayPointsTrend
 /// </summary>
-[DataContract]
+
 public partial class WorkdayPointsTrend : IEquatable<WorkdayPointsTrend>
 {
     /// <summary>
     /// Aggregated for same day comparison
     /// </summary>
     /// <value>Aggregated for same day comparison</value>
-    [JsonConverter(typeof(JsonStringEnumConverter))]
+    
     public enum DayOfWeekEnum
     {
         /// <summary>
@@ -71,7 +71,7 @@ public partial class WorkdayPointsTrend : IEquatable<WorkdayPointsTrend>
     /// Aggregated for same day comparison
     /// </summary>
     /// <value>Aggregated for same day comparison</value>
-    [DataMember(Name = "dayOfWeek", EmitDefaultValue = false)]
+    [JsonPropertyName("dayOfWeek")]
     public DayOfWeekEnum? DayOfWeek { get; private set; }
     /// <summary>
     /// Initializes a new instance of the <see cref="WorkdayPointsTrend" /> class.
@@ -87,7 +87,7 @@ public partial class WorkdayPointsTrend : IEquatable<WorkdayPointsTrend>
     /// The start workday for the query range for the gamification points trend. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd
     /// </summary>
     /// <value>The start workday for the query range for the gamification points trend. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd</value>
-    [DataMember(Name = "dateStartWorkday", EmitDefaultValue = false)]
+    [JsonPropertyName("dateStartWorkday")]
     public string DateStartWorkday { get; private set; }
 
 
@@ -96,7 +96,7 @@ public partial class WorkdayPointsTrend : IEquatable<WorkdayPointsTrend>
     /// The end workday for the query range for the gamification points trend. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd
     /// </summary>
     /// <value>The end workday for the query range for the gamification points trend. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd</value>
-    [DataMember(Name = "dateEndWorkday", EmitDefaultValue = false)]
+    [JsonPropertyName("dateEndWorkday")]
     public string DateEndWorkday { get; private set; }
 
 
@@ -105,7 +105,7 @@ public partial class WorkdayPointsTrend : IEquatable<WorkdayPointsTrend>
     /// The targeted user for the query
     /// </summary>
     /// <value>The targeted user for the query</value>
-    [DataMember(Name = "user", EmitDefaultValue = false)]
+    [JsonPropertyName("user")]
     public UserReference User { get; private set; }
 
 
@@ -116,7 +116,7 @@ public partial class WorkdayPointsTrend : IEquatable<WorkdayPointsTrend>
     /// The total average points
     /// </summary>
     /// <value>The total average points</value>
-    [DataMember(Name = "averagePoints", EmitDefaultValue = false)]
+    [JsonPropertyName("averagePoints")]
     public double? AveragePoints { get; private set; }
 
 
@@ -125,7 +125,7 @@ public partial class WorkdayPointsTrend : IEquatable<WorkdayPointsTrend>
     /// Daily points trends
     /// </summary>
     /// <value>Daily points trends</value>
-    [DataMember(Name = "trend", EmitDefaultValue = false)]
+    [JsonPropertyName("trend")]
     public List<WorkdayPointsTrendItem> Trend { get; private set; }
 
 

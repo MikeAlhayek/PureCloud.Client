@@ -7,13 +7,13 @@ namespace PureCloud.Client.Models;
 /// <summary>
 /// Station
 /// </summary>
-[DataContract]
+
 public partial class Station : IEquatable<Station>
 {
     /// <summary>
     /// Gets or Sets Status
     /// </summary>
-    [JsonConverter(typeof(JsonStringEnumConverter))]
+    
     public enum StatusEnum
     {
         /// <summary>
@@ -39,7 +39,7 @@ public partial class Station : IEquatable<Station>
     /// <summary>
     /// Gets or Sets Status
     /// </summary>
-    [DataMember(Name = "status", EmitDefaultValue = false)]
+    [JsonPropertyName("status")]
     public StatusEnum? Status { get; set; }
     /// <summary>
     /// Initializes a new instance of the <see cref="Station" /> class.
@@ -73,7 +73,7 @@ public partial class Station : IEquatable<Station>
     /// The globally unique identifier for the object.
     /// </summary>
     /// <value>The globally unique identifier for the object.</value>
-    [DataMember(Name = "id", EmitDefaultValue = false)]
+    [JsonPropertyName("id")]
     public string Id { get; private set; }
 
 
@@ -81,7 +81,7 @@ public partial class Station : IEquatable<Station>
     /// <summary>
     /// Gets or Sets Name
     /// </summary>
-    [DataMember(Name = "name", EmitDefaultValue = false)]
+    [JsonPropertyName("name")]
     public string Name { get; set; }
 
 
@@ -89,7 +89,7 @@ public partial class Station : IEquatable<Station>
     /// <summary>
     /// Gets or Sets Description
     /// </summary>
-    [DataMember(Name = "description", EmitDefaultValue = false)]
+    [JsonPropertyName("description")]
     public string Description { get; set; }
 
 
@@ -100,7 +100,7 @@ public partial class Station : IEquatable<Station>
     /// The Id of the user currently logged in and associated with the station.
     /// </summary>
     /// <value>The Id of the user currently logged in and associated with the station.</value>
-    [DataMember(Name = "userId", EmitDefaultValue = false)]
+    [JsonPropertyName("userId")]
     public string UserId { get; set; }
 
 
@@ -109,7 +109,7 @@ public partial class Station : IEquatable<Station>
     /// The Id of the user configured for the station if it is of type inin_webrtc_softphone. Empty if station type is not inin_webrtc_softphone.
     /// </summary>
     /// <value>The Id of the user configured for the station if it is of type inin_webrtc_softphone. Empty if station type is not inin_webrtc_softphone.</value>
-    [DataMember(Name = "webRtcUserId", EmitDefaultValue = false)]
+    [JsonPropertyName("webRtcUserId")]
     public string WebRtcUserId { get; set; }
 
 
@@ -117,7 +117,7 @@ public partial class Station : IEquatable<Station>
     /// <summary>
     /// Gets or Sets PrimaryEdge
     /// </summary>
-    [DataMember(Name = "primaryEdge", EmitDefaultValue = false)]
+    [JsonPropertyName("primaryEdge")]
     public DomainEntityRef PrimaryEdge { get; set; }
 
 
@@ -125,7 +125,7 @@ public partial class Station : IEquatable<Station>
     /// <summary>
     /// Gets or Sets SecondaryEdge
     /// </summary>
-    [DataMember(Name = "secondaryEdge", EmitDefaultValue = false)]
+    [JsonPropertyName("secondaryEdge")]
     public DomainEntityRef SecondaryEdge { get; set; }
 
 
@@ -133,7 +133,7 @@ public partial class Station : IEquatable<Station>
     /// <summary>
     /// Gets or Sets Type
     /// </summary>
-    [DataMember(Name = "type", EmitDefaultValue = false)]
+    [JsonPropertyName("type")]
     public string Type { get; set; }
 
 
@@ -141,7 +141,7 @@ public partial class Station : IEquatable<Station>
     /// <summary>
     /// Gets or Sets LineAppearanceId
     /// </summary>
-    [DataMember(Name = "lineAppearanceId", EmitDefaultValue = false)]
+    [JsonPropertyName("lineAppearanceId")]
     public string LineAppearanceId { get; set; }
 
 
@@ -150,7 +150,7 @@ public partial class Station : IEquatable<Station>
     /// The default or configured value of media dscp for the station. Empty if station type is not inin_webrtc_softphone.
     /// </summary>
     /// <value>The default or configured value of media dscp for the station. Empty if station type is not inin_webrtc_softphone.</value>
-    [DataMember(Name = "webRtcMediaDscp", EmitDefaultValue = false)]
+    [JsonPropertyName("webRtcMediaDscp")]
     public int? WebRtcMediaDscp { get; private set; }
 
 
@@ -159,7 +159,7 @@ public partial class Station : IEquatable<Station>
     /// The default or configured value of persistent connection setting for the station. Empty if station type is not inin_webrtc_softphone.
     /// </summary>
     /// <value>The default or configured value of persistent connection setting for the station. Empty if station type is not inin_webrtc_softphone.</value>
-    [DataMember(Name = "webRtcPersistentEnabled", EmitDefaultValue = false)]
+    [JsonPropertyName("webRtcPersistentEnabled")]
     public bool? WebRtcPersistentEnabled { get; private set; }
 
 
@@ -168,7 +168,7 @@ public partial class Station : IEquatable<Station>
     /// Whether the station is configured to require TURN for routing WebRTC calls. Empty if station type is not inin_webrtc_softphone.
     /// </summary>
     /// <value>Whether the station is configured to require TURN for routing WebRTC calls. Empty if station type is not inin_webrtc_softphone.</value>
-    [DataMember(Name = "webRtcForceTurn", EmitDefaultValue = false)]
+    [JsonPropertyName("webRtcForceTurn")]
     public bool? WebRtcForceTurn { get; private set; }
 
 
@@ -177,7 +177,7 @@ public partial class Station : IEquatable<Station>
     /// The number of call appearances on the station.
     /// </summary>
     /// <value>The number of call appearances on the station.</value>
-    [DataMember(Name = "webRtcCallAppearances", EmitDefaultValue = false)]
+    [JsonPropertyName("webRtcCallAppearances")]
     public int? WebRtcCallAppearances { get; private set; }
 
 
@@ -186,7 +186,7 @@ public partial class Station : IEquatable<Station>
     /// True when the media helper required.
     /// </summary>
     /// <value>True when the media helper required.</value>
-    [DataMember(Name = "webRtcRequireMediaHelper", EmitDefaultValue = false)]
+    [JsonPropertyName("webRtcRequireMediaHelper")]
     public bool? WebRtcRequireMediaHelper { get; private set; }
 
 
@@ -195,7 +195,7 @@ public partial class Station : IEquatable<Station>
     /// The URI for this object
     /// </summary>
     /// <value>The URI for this object</value>
-    [DataMember(Name = "selfUri", EmitDefaultValue = false)]
+    [JsonPropertyName("selfUri")]
     public string SelfUri { get; private set; }
 
 

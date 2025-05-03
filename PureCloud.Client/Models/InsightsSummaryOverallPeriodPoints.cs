@@ -1,12 +1,12 @@
-using System.Runtime.Serialization;
 using System.Text;
+using System.Text.Json.Serialization;
 
 namespace PureCloud.Client.Models;
 
 /// <summary>
 /// InsightsSummaryOverallPeriodPoints
 /// </summary>
-[DataContract]
+
 public partial class InsightsSummaryOverallPeriodPoints : IEquatable<InsightsSummaryOverallPeriodPoints>
 {
     /// <summary>
@@ -31,7 +31,7 @@ public partial class InsightsSummaryOverallPeriodPoints : IEquatable<InsightsSum
     /// Points scored
     /// </summary>
     /// <value>Points scored</value>
-    [DataMember(Name = "points", EmitDefaultValue = false)]
+    [JsonPropertyName("points")]
     public int? Points { get; set; }
 
 
@@ -40,7 +40,7 @@ public partial class InsightsSummaryOverallPeriodPoints : IEquatable<InsightsSum
     /// Max possible points
     /// </summary>
     /// <value>Max possible points</value>
-    [DataMember(Name = "maxPoints", EmitDefaultValue = false)]
+    [JsonPropertyName("maxPoints")]
     public int? MaxPoints { get; set; }
 
 
@@ -49,7 +49,7 @@ public partial class InsightsSummaryOverallPeriodPoints : IEquatable<InsightsSum
     /// Number of data points
     /// </summary>
     /// <value>Number of data points</value>
-    [DataMember(Name = "dataPointCount", EmitDefaultValue = false)]
+    [JsonPropertyName("dataPointCount")]
     public int? DataPointCount { get; set; }
 
 
@@ -58,7 +58,7 @@ public partial class InsightsSummaryOverallPeriodPoints : IEquatable<InsightsSum
     /// Percentage of the goal
     /// </summary>
     /// <value>Percentage of the goal</value>
-    [DataMember(Name = "percentOfGoal", EmitDefaultValue = false)]
+    [JsonPropertyName("percentOfGoal")]
     public double? PercentOfGoal { get; set; }
 
 

@@ -1,12 +1,12 @@
-using System.Runtime.Serialization;
 using System.Text;
+using System.Text.Json.Serialization;
 
 namespace PureCloud.Client.Models;
 
 /// <summary>
 /// MatchShiftTradeResponse
 /// </summary>
-[DataContract]
+
 public partial class MatchShiftTradeResponse : IEquatable<MatchShiftTradeResponse>
 {
     /// <summary>
@@ -29,7 +29,7 @@ public partial class MatchShiftTradeResponse : IEquatable<MatchShiftTradeRespons
     /// The associated shift trade
     /// </summary>
     /// <value>The associated shift trade</value>
-    [DataMember(Name = "trade", EmitDefaultValue = false)]
+    [JsonPropertyName("trade")]
     public ShiftTradeResponse Trade { get; set; }
 
 
@@ -38,7 +38,7 @@ public partial class MatchShiftTradeResponse : IEquatable<MatchShiftTradeRespons
     /// Constraint violations which disallow this shift trade
     /// </summary>
     /// <value>Constraint violations which disallow this shift trade</value>
-    [DataMember(Name = "violations", EmitDefaultValue = false)]
+    [JsonPropertyName("violations")]
     public List<ShiftTradeMatchViolation> Violations { get; set; }
 
 
@@ -47,7 +47,7 @@ public partial class MatchShiftTradeResponse : IEquatable<MatchShiftTradeRespons
     /// Constraint violations for this shift trade which require shift trade administrator review
     /// </summary>
     /// <value>Constraint violations for this shift trade which require shift trade administrator review</value>
-    [DataMember(Name = "adminReviewViolations", EmitDefaultValue = false)]
+    [JsonPropertyName("adminReviewViolations")]
     public List<ShiftTradeMatchViolation> AdminReviewViolations { get; set; }
 
 

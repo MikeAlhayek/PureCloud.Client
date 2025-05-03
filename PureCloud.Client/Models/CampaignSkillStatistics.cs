@@ -1,12 +1,12 @@
-using System.Runtime.Serialization;
 using System.Text;
+using System.Text.Json.Serialization;
 
 namespace PureCloud.Client.Models;
 
 /// <summary>
 /// CampaignSkillStatistics
 /// </summary>
-[DataContract]
+
 public partial class CampaignSkillStatistics : IEquatable<CampaignSkillStatistics>
 {
     /// <summary>
@@ -23,7 +23,7 @@ public partial class CampaignSkillStatistics : IEquatable<CampaignSkillStatistic
     /// Number of available skill combinations for the campaign
     /// </summary>
     /// <value>Number of available skill combinations for the campaign</value>
-    [DataMember(Name = "skillCombinations", EmitDefaultValue = false)]
+    [JsonPropertyName("skillCombinations")]
     public int? SkillCombinations { get; private set; }
 
 
@@ -32,7 +32,7 @@ public partial class CampaignSkillStatistics : IEquatable<CampaignSkillStatistic
     /// Number of eligible agents with skills for campaign
     /// </summary>
     /// <value>Number of eligible agents with skills for campaign</value>
-    [DataMember(Name = "eligibleSkilledAgents", EmitDefaultValue = false)]
+    [JsonPropertyName("eligibleSkilledAgents")]
     public int? EligibleSkilledAgents { get; private set; }
 
 

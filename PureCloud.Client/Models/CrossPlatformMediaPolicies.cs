@@ -1,12 +1,12 @@
-using System.Runtime.Serialization;
 using System.Text;
+using System.Text.Json.Serialization;
 
 namespace PureCloud.Client.Models;
 
 /// <summary>
 /// CrossPlatformMediaPolicies
 /// </summary>
-[DataContract]
+
 public partial class CrossPlatformMediaPolicies : IEquatable<CrossPlatformMediaPolicies>
 {
     /// <summary>
@@ -31,7 +31,7 @@ public partial class CrossPlatformMediaPolicies : IEquatable<CrossPlatformMediaP
     /// Conditions and actions for calls
     /// </summary>
     /// <value>Conditions and actions for calls</value>
-    [DataMember(Name = "callPolicy", EmitDefaultValue = false)]
+    [JsonPropertyName("callPolicy")]
     public CrossPlatformCallMediaPolicy CallPolicy { get; set; }
 
 
@@ -40,7 +40,7 @@ public partial class CrossPlatformMediaPolicies : IEquatable<CrossPlatformMediaP
     /// Conditions and actions for chats
     /// </summary>
     /// <value>Conditions and actions for chats</value>
-    [DataMember(Name = "chatPolicy", EmitDefaultValue = false)]
+    [JsonPropertyName("chatPolicy")]
     public CrossPlatformChatMediaPolicy ChatPolicy { get; set; }
 
 
@@ -49,7 +49,7 @@ public partial class CrossPlatformMediaPolicies : IEquatable<CrossPlatformMediaP
     /// Conditions and actions for emails
     /// </summary>
     /// <value>Conditions and actions for emails</value>
-    [DataMember(Name = "emailPolicy", EmitDefaultValue = false)]
+    [JsonPropertyName("emailPolicy")]
     public CrossPlatformEmailMediaPolicy EmailPolicy { get; set; }
 
 
@@ -58,7 +58,7 @@ public partial class CrossPlatformMediaPolicies : IEquatable<CrossPlatformMediaP
     /// Conditions and actions for messages
     /// </summary>
     /// <value>Conditions and actions for messages</value>
-    [DataMember(Name = "messagePolicy", EmitDefaultValue = false)]
+    [JsonPropertyName("messagePolicy")]
     public CrossPlatformMessageMediaPolicy MessagePolicy { get; set; }
 
 

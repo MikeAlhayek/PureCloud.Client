@@ -1,4 +1,3 @@
-using System.Runtime.Serialization;
 using System.Text;
 using System.Text.Json.Serialization;
 
@@ -7,7 +6,7 @@ namespace PureCloud.Client.Models;
 /// <summary>
 /// CategoryCreateRequest
 /// </summary>
-[DataContract]
+
 public partial class CategoryCreateRequest : IEquatable<CategoryCreateRequest>
 {
 
@@ -38,7 +37,7 @@ public partial class CategoryCreateRequest : IEquatable<CategoryCreateRequest>
     /// The globally unique identifier for the object.
     /// </summary>
     /// <value>The globally unique identifier for the object.</value>
-    [DataMember(Name = "id", EmitDefaultValue = false)]
+    [JsonPropertyName("id")]
     public string Id { get; private set; }
 
 
@@ -47,7 +46,7 @@ public partial class CategoryCreateRequest : IEquatable<CategoryCreateRequest>
     /// The name of the category.
     /// </summary>
     /// <value>The name of the category.</value>
-    [DataMember(Name = "name", EmitDefaultValue = false)]
+    [JsonPropertyName("name")]
     public string Name { get; set; }
 
 
@@ -55,7 +54,7 @@ public partial class CategoryCreateRequest : IEquatable<CategoryCreateRequest>
     /// <summary>
     /// Gets or Sets ParentCategoryId
     /// </summary>
-    [DataMember(Name = "parentCategoryId", EmitDefaultValue = false)]
+    [JsonPropertyName("parentCategoryId")]
     public string ParentCategoryId { get; set; }
 
 
@@ -64,7 +63,7 @@ public partial class CategoryCreateRequest : IEquatable<CategoryCreateRequest>
     /// The description for the category.
     /// </summary>
     /// <value>The description for the category.</value>
-    [DataMember(Name = "description", EmitDefaultValue = false)]
+    [JsonPropertyName("description")]
     public string Description { get; set; }
 
 
@@ -73,7 +72,7 @@ public partial class CategoryCreateRequest : IEquatable<CategoryCreateRequest>
     /// The external id associated with the category.
     /// </summary>
     /// <value>The external id associated with the category.</value>
-    [DataMember(Name = "externalId", EmitDefaultValue = false)]
+    [JsonPropertyName("externalId")]
     public string ExternalId { get; set; }
 
 
@@ -82,7 +81,7 @@ public partial class CategoryCreateRequest : IEquatable<CategoryCreateRequest>
     /// The URI for this object
     /// </summary>
     /// <value>The URI for this object</value>
-    [DataMember(Name = "selfUri", EmitDefaultValue = false)]
+    [JsonPropertyName("selfUri")]
     public string SelfUri { get; private set; }
 
 

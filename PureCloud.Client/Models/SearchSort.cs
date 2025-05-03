@@ -1,153 +1,16 @@
-using System.Runtime.Serialization;
-using System.Text;
-using System.Text.Json.Serialization;
-
 namespace PureCloud.Client.Models;
 
-/// <summary>
-/// SearchSort
-/// </summary>
-[DataContract]
-public partial class SearchSort : IEquatable<SearchSort>
+public sealed class SearchSort
 {
     /// <summary>
     /// The sort order for results
     /// </summary>
     /// <value>The sort order for results</value>
-    [JsonConverter(typeof(JsonStringEnumConverter))]
-    public enum SortOrderEnum
-    {
-        /// <summary>
-        /// Your SDK version is out of date and an unknown enum value was encountered. 
-        /// Please upgrade the SDK using the command "Upgrade-Package PureCloudApiSdk" 
-        /// in the Package Manager Console
-        /// </summary>
-        [EnumMember(Value = "OUTDATED_SDK_VERSION")]
-        OutdatedSdkVersion,
-
-        /// <summary>
-        /// Enum Asc for "ASC"
-        /// </summary>
-        [EnumMember(Value = "ASC")]
-        Asc,
-
-        /// <summary>
-        /// Enum Desc for "DESC"
-        /// </summary>
-        [EnumMember(Value = "DESC")]
-        Desc,
-
-        /// <summary>
-        /// Enum Score for "SCORE"
-        /// </summary>
-        [EnumMember(Value = "SCORE")]
-        Score
-    }
-    /// <summary>
-    /// The sort order for results
-    /// </summary>
-    /// <value>The sort order for results</value>
-    [DataMember(Name = "sortOrder", EmitDefaultValue = false)]
-    public SortOrderEnum? SortOrder { get; set; }
-    /// <summary>
-    /// Initializes a new instance of the <see cref="SearchSort" /> class.
-    /// </summary>
-    /// <param name="SortOrder">The sort order for results.</param>
-    /// <param name="SortBy">The field in the resource that you want to sort the results by.</param>
-    public SearchSort(SortOrderEnum? SortOrder = null, string SortBy = null)
-    {
-        this.SortOrder = SortOrder;
-        this.SortBy = SortBy;
-
-    }
-
-
-
-
+    public SortOrderType? SortOrder { get; set; }
 
     /// <summary>
     /// The field in the resource that you want to sort the results by
     /// </summary>
     /// <value>The field in the resource that you want to sort the results by</value>
-    [DataMember(Name = "sortBy", EmitDefaultValue = false)]
     public string SortBy { get; set; }
-
-
-    /// <summary>
-    /// Returns the string presentation of the object
-    /// </summary>
-    /// <returns>String presentation of the object</returns>
-    public override string ToString()
-    {
-        var sb = new StringBuilder();
-        sb.Append("class SearchSort {\n");
-
-        sb.Append("  SortOrder: ").Append(SortOrder).Append("\n");
-        sb.Append("  SortBy: ").Append(SortBy).Append("\n");
-        sb.Append("}\n");
-        return sb.ToString();
-    }
-
-
-    /// <summary>
-    /// Returns true if objects are equal
-    /// </summary>
-    /// <param name="obj">Object to be compared</param>
-    /// <returns>Boolean</returns>
-    public override bool Equals(object obj)
-    {
-        // credit: http://stackoverflow.com/a/10454552/677735
-        return Equals(obj as SearchSort);
-    }
-
-    /// <summary>
-    /// Returns true if SearchSort instances are equal
-    /// </summary>
-    /// <param name="other">Instance of SearchSort to be compared</param>
-    /// <returns>Boolean</returns>
-    public bool Equals(SearchSort other)
-    {
-        // credit: http://stackoverflow.com/a/10454552/677735
-        if (other == null)
-        {
-            return false;
-        }
-
-        return true &&
-            (
-                SortOrder == other.SortOrder ||
-                SortOrder != null &&
-                SortOrder.Equals(other.SortOrder)
-            ) &&
-            (
-                SortBy == other.SortBy ||
-                SortBy != null &&
-                SortBy.Equals(other.SortBy)
-            );
-    }
-
-    /// <summary>
-    /// Gets the hash code
-    /// </summary>
-    /// <returns>Hash code</returns>
-    public override int GetHashCode()
-    {
-        // credit: http://stackoverflow.com/a/263416/677735
-        unchecked // Overflow is fine, just wrap
-        {
-            int hash = 41;
-            // Suitable nullity checks etc, of course :)
-            if (SortOrder != null)
-            {
-                hash = hash * 59 + SortOrder.GetHashCode();
-            }
-
-            if (SortBy != null)
-            {
-                hash = hash * 59 + SortBy.GetHashCode();
-            }
-
-            return hash;
-        }
-    }
 }

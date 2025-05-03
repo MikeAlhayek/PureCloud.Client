@@ -1,12 +1,12 @@
-using System.Runtime.Serialization;
 using System.Text;
+using System.Text.Json.Serialization;
 
 namespace PureCloud.Client.Models;
 
 /// <summary>
 /// NluDetectionContext
 /// </summary>
-[DataContract]
+
 public partial class NluDetectionContext : IEquatable<NluDetectionContext>
 {
     /// <summary>
@@ -27,7 +27,7 @@ public partial class NluDetectionContext : IEquatable<NluDetectionContext>
     /// Restrict detection to this intent.
     /// </summary>
     /// <value>Restrict detection to this intent.</value>
-    [DataMember(Name = "intent", EmitDefaultValue = false)]
+    [JsonPropertyName("intent")]
     public ContextIntent Intent { get; set; }
 
 
@@ -36,7 +36,7 @@ public partial class NluDetectionContext : IEquatable<NluDetectionContext>
     /// Use this entity to restrict detection.
     /// </summary>
     /// <value>Use this entity to restrict detection.</value>
-    [DataMember(Name = "entity", EmitDefaultValue = false)]
+    [JsonPropertyName("entity")]
     public ContextEntity Entity { get; set; }
 
 

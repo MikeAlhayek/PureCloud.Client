@@ -7,14 +7,14 @@ namespace PureCloud.Client.Models;
 /// <summary>
 /// BulkJob
 /// </summary>
-[DataContract]
+
 public partial class BulkJob : IEquatable<BulkJob>
 {
     /// <summary>
     /// The bulk job state.
     /// </summary>
     /// <value>The bulk job state.</value>
-    [JsonConverter(typeof(JsonStringEnumConverter))]
+    
     public enum StateEnum
     {
         /// <summary>
@@ -71,7 +71,7 @@ public partial class BulkJob : IEquatable<BulkJob>
     /// The bulk job action. This determines what the bulk job does, for example, terminate workitems.
     /// </summary>
     /// <value>The bulk job action. This determines what the bulk job does, for example, terminate workitems.</value>
-    [JsonConverter(typeof(JsonStringEnumConverter))]
+    
     public enum ActionEnum
     {
         /// <summary>
@@ -98,13 +98,13 @@ public partial class BulkJob : IEquatable<BulkJob>
     /// The bulk job state.
     /// </summary>
     /// <value>The bulk job state.</value>
-    [DataMember(Name = "state", EmitDefaultValue = false)]
+    [JsonPropertyName("state")]
     public StateEnum? State { get; set; }
     /// <summary>
     /// The bulk job action. This determines what the bulk job does, for example, terminate workitems.
     /// </summary>
     /// <value>The bulk job action. This determines what the bulk job does, for example, terminate workitems.</value>
-    [DataMember(Name = "action", EmitDefaultValue = false)]
+    [JsonPropertyName("action")]
     public ActionEnum? Action { get; set; }
     /// <summary>
     /// Initializes a new instance of the <see cref="BulkJob" /> class.
@@ -136,7 +136,7 @@ public partial class BulkJob : IEquatable<BulkJob>
     /// The globally unique identifier for the object.
     /// </summary>
     /// <value>The globally unique identifier for the object.</value>
-    [DataMember(Name = "id", EmitDefaultValue = false)]
+    [JsonPropertyName("id")]
     public string Id { get; private set; }
 
 
@@ -149,7 +149,7 @@ public partial class BulkJob : IEquatable<BulkJob>
     /// Total count of items to be processed in the bulk job.
     /// </summary>
     /// <value>Total count of items to be processed in the bulk job.</value>
-    [DataMember(Name = "totalCount", EmitDefaultValue = false)]
+    [JsonPropertyName("totalCount")]
     public int? TotalCount { get; set; }
 
 
@@ -158,7 +158,7 @@ public partial class BulkJob : IEquatable<BulkJob>
     /// Count of successfully processed items in the bulk job.
     /// </summary>
     /// <value>Count of successfully processed items in the bulk job.</value>
-    [DataMember(Name = "successfulCount", EmitDefaultValue = false)]
+    [JsonPropertyName("successfulCount")]
     public int? SuccessfulCount { get; set; }
 
 
@@ -167,7 +167,7 @@ public partial class BulkJob : IEquatable<BulkJob>
     /// Count of failed processed items in the bulk job.
     /// </summary>
     /// <value>Count of failed processed items in the bulk job.</value>
-    [DataMember(Name = "failedCount", EmitDefaultValue = false)]
+    [JsonPropertyName("failedCount")]
     public int? FailedCount { get; set; }
 
 
@@ -176,7 +176,7 @@ public partial class BulkJob : IEquatable<BulkJob>
     /// The bulk job start date. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z
     /// </summary>
     /// <value>The bulk job start date. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z</value>
-    [DataMember(Name = "dateStarted", EmitDefaultValue = false)]
+    [JsonPropertyName("dateStarted")]
     public DateTime? DateStarted { get; set; }
 
 
@@ -185,7 +185,7 @@ public partial class BulkJob : IEquatable<BulkJob>
     /// The bulk job finished date. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z
     /// </summary>
     /// <value>The bulk job finished date. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z</value>
-    [DataMember(Name = "dateFinished", EmitDefaultValue = false)]
+    [JsonPropertyName("dateFinished")]
     public DateTime? DateFinished { get; set; }
 
 
@@ -194,7 +194,7 @@ public partial class BulkJob : IEquatable<BulkJob>
     /// The bulk job modification date. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z
     /// </summary>
     /// <value>The bulk job modification date. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z</value>
-    [DataMember(Name = "dateModified", EmitDefaultValue = false)]
+    [JsonPropertyName("dateModified")]
     public DateTime? DateModified { get; set; }
 
 
@@ -203,7 +203,7 @@ public partial class BulkJob : IEquatable<BulkJob>
     /// The URI for this object
     /// </summary>
     /// <value>The URI for this object</value>
-    [DataMember(Name = "selfUri", EmitDefaultValue = false)]
+    [JsonPropertyName("selfUri")]
     public string SelfUri { get; private set; }
 
 

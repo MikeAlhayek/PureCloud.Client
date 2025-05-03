@@ -7,14 +7,14 @@ namespace PureCloud.Client.Models;
 /// <summary>
 /// RealTimeAdherenceExplanation
 /// </summary>
-[DataContract]
+
 public partial class RealTimeAdherenceExplanation : IEquatable<RealTimeAdherenceExplanation>
 {
     /// <summary>
     /// The status of the adherence explanation
     /// </summary>
     /// <value>The status of the adherence explanation</value>
-    [JsonConverter(typeof(JsonStringEnumConverter))]
+    
     public enum StatusEnum
     {
         /// <summary>
@@ -47,7 +47,7 @@ public partial class RealTimeAdherenceExplanation : IEquatable<RealTimeAdherence
     /// The status of the adherence explanation
     /// </summary>
     /// <value>The status of the adherence explanation</value>
-    [DataMember(Name = "status", EmitDefaultValue = false)]
+    [JsonPropertyName("status")]
     public StatusEnum? Status { get; set; }
     /// <summary>
     /// Initializes a new instance of the <see cref="RealTimeAdherenceExplanation" /> class.
@@ -69,7 +69,7 @@ public partial class RealTimeAdherenceExplanation : IEquatable<RealTimeAdherence
     /// The globally unique identifier for the object.
     /// </summary>
     /// <value>The globally unique identifier for the object.</value>
-    [DataMember(Name = "id", EmitDefaultValue = false)]
+    [JsonPropertyName("id")]
     public string Id { get; private set; }
 
 
@@ -78,7 +78,7 @@ public partial class RealTimeAdherenceExplanation : IEquatable<RealTimeAdherence
     /// The start timestamp of the adherence explanation in ISO-8601 format
     /// </summary>
     /// <value>The start timestamp of the adherence explanation in ISO-8601 format</value>
-    [DataMember(Name = "startDate", EmitDefaultValue = false)]
+    [JsonPropertyName("startDate")]
     public DateTime? StartDate { get; set; }
 
 
@@ -87,7 +87,7 @@ public partial class RealTimeAdherenceExplanation : IEquatable<RealTimeAdherence
     /// The length of the adherence explanation in minutes
     /// </summary>
     /// <value>The length of the adherence explanation in minutes</value>
-    [DataMember(Name = "lengthMinutes", EmitDefaultValue = false)]
+    [JsonPropertyName("lengthMinutes")]
     public int? LengthMinutes { get; set; }
 
 
@@ -98,7 +98,7 @@ public partial class RealTimeAdherenceExplanation : IEquatable<RealTimeAdherence
     /// The URI for this object
     /// </summary>
     /// <value>The URI for this object</value>
-    [DataMember(Name = "selfUri", EmitDefaultValue = false)]
+    [JsonPropertyName("selfUri")]
     public string SelfUri { get; private set; }
 
 

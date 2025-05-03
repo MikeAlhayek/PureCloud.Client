@@ -7,14 +7,14 @@ namespace PureCloud.Client.Models;
 /// <summary>
 /// An ephemeral story.
 /// </summary>
-[DataContract]
+
 public partial class ContentStory : IEquatable<ContentStory>
 {
     /// <summary>
     /// Type of ephemeral story attachment.
     /// </summary>
     /// <value>Type of ephemeral story attachment.</value>
-    [JsonConverter(typeof(JsonStringEnumConverter))]
+    
     public enum TypeEnum
     {
         /// <summary>
@@ -41,7 +41,7 @@ public partial class ContentStory : IEquatable<ContentStory>
     /// Type of ephemeral story attachment.
     /// </summary>
     /// <value>Type of ephemeral story attachment.</value>
-    [DataMember(Name = "type", EmitDefaultValue = false)]
+    [JsonPropertyName("type")]
     public TypeEnum? Type { get; set; }
 
     /// <summary>
@@ -71,7 +71,7 @@ public partial class ContentStory : IEquatable<ContentStory>
     /// URL to the ephemeral story.
     /// </summary>
     /// <value>URL to the ephemeral story.</value>
-    [DataMember(Name = "url", EmitDefaultValue = false)]
+    [JsonPropertyName("url")]
     public string Url { get; set; }
 
 
@@ -80,7 +80,7 @@ public partial class ContentStory : IEquatable<ContentStory>
     /// ID of the ephemeral story being replied to.
     /// </summary>
     /// <value>ID of the ephemeral story being replied to.</value>
-    [DataMember(Name = "replyToId", EmitDefaultValue = false)]
+    [JsonPropertyName("replyToId")]
     public string ReplyToId { get; set; }
 
 

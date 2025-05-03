@@ -1,12 +1,12 @@
-using System.Runtime.Serialization;
 using System.Text;
+using System.Text.Json.Serialization;
 
 namespace PureCloud.Client.Models;
 
 /// <summary>
 /// MinerTopic
 /// </summary>
-[DataContract]
+
 public partial class MinerTopic : IEquatable<MinerTopic>
 {
     /// <summary>
@@ -27,7 +27,7 @@ public partial class MinerTopic : IEquatable<MinerTopic>
     /// The globally unique identifier for the object.
     /// </summary>
     /// <value>The globally unique identifier for the object.</value>
-    [DataMember(Name = "id", EmitDefaultValue = false)]
+    [JsonPropertyName("id")]
     public string Id { get; private set; }
 
 
@@ -36,7 +36,7 @@ public partial class MinerTopic : IEquatable<MinerTopic>
     /// Topic name.
     /// </summary>
     /// <value>Topic name.</value>
-    [DataMember(Name = "name", EmitDefaultValue = false)]
+    [JsonPropertyName("name")]
     public string Name { get; set; }
 
 
@@ -45,7 +45,7 @@ public partial class MinerTopic : IEquatable<MinerTopic>
     /// The miner to which the topic belongs.
     /// </summary>
     /// <value>The miner to which the topic belongs.</value>
-    [DataMember(Name = "miner", EmitDefaultValue = false)]
+    [JsonPropertyName("miner")]
     public Miner Miner { get; private set; }
 
 
@@ -54,7 +54,7 @@ public partial class MinerTopic : IEquatable<MinerTopic>
     /// Number of conversations where a topic has occurred.
     /// </summary>
     /// <value>Number of conversations where a topic has occurred.</value>
-    [DataMember(Name = "conversationCount", EmitDefaultValue = false)]
+    [JsonPropertyName("conversationCount")]
     public int? ConversationCount { get; private set; }
 
 
@@ -63,7 +63,7 @@ public partial class MinerTopic : IEquatable<MinerTopic>
     /// Percentage of conversations where a topic has occurred.
     /// </summary>
     /// <value>Percentage of conversations where a topic has occurred.</value>
-    [DataMember(Name = "conversationPercent", EmitDefaultValue = false)]
+    [JsonPropertyName("conversationPercent")]
     public float? ConversationPercent { get; private set; }
 
 
@@ -72,7 +72,7 @@ public partial class MinerTopic : IEquatable<MinerTopic>
     /// Number of unique utterances where a topic has occurred.
     /// </summary>
     /// <value>Number of unique utterances where a topic has occurred.</value>
-    [DataMember(Name = "utteranceCount", EmitDefaultValue = false)]
+    [JsonPropertyName("utteranceCount")]
     public int? UtteranceCount { get; private set; }
 
 
@@ -81,7 +81,7 @@ public partial class MinerTopic : IEquatable<MinerTopic>
     /// Number of unique phrases (sub-utterances) where a topic has occurred.
     /// </summary>
     /// <value>Number of unique phrases (sub-utterances) where a topic has occurred.</value>
-    [DataMember(Name = "phraseCount", EmitDefaultValue = false)]
+    [JsonPropertyName("phraseCount")]
     public int? PhraseCount { get; private set; }
 
 
@@ -90,7 +90,7 @@ public partial class MinerTopic : IEquatable<MinerTopic>
     /// Phrases associated with a topic.
     /// </summary>
     /// <value>Phrases associated with a topic.</value>
-    [DataMember(Name = "phrases", EmitDefaultValue = false)]
+    [JsonPropertyName("phrases")]
     public List<TopicPhrase> Phrases { get; set; }
 
 
@@ -99,7 +99,7 @@ public partial class MinerTopic : IEquatable<MinerTopic>
     /// The URI for this object
     /// </summary>
     /// <value>The URI for this object</value>
-    [DataMember(Name = "selfUri", EmitDefaultValue = false)]
+    [JsonPropertyName("selfUri")]
     public string SelfUri { get; private set; }
 
 

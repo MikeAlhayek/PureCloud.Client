@@ -7,14 +7,14 @@ namespace PureCloud.Client.Models;
 /// <summary>
 /// A set of filters on an element within a journey view
 /// </summary>
-[DataContract]
+
 public partial class JourneyViewElementFilter : IEquatable<JourneyViewElementFilter>
 {
     /// <summary>
     /// Boolean operation to apply to the provided predicates and clauses. Valid values: And
     /// </summary>
     /// <value>Boolean operation to apply to the provided predicates and clauses. Valid values: And</value>
-    [JsonConverter(typeof(JsonStringEnumConverter))]
+    
     public enum TypeEnum
     {
         /// <summary>
@@ -35,7 +35,7 @@ public partial class JourneyViewElementFilter : IEquatable<JourneyViewElementFil
     /// Boolean operation to apply to the provided predicates and clauses. Valid values: And
     /// </summary>
     /// <value>Boolean operation to apply to the provided predicates and clauses. Valid values: And</value>
-    [DataMember(Name = "type", EmitDefaultValue = false)]
+    [JsonPropertyName("type")]
     public TypeEnum? Type { get; set; }
 
     /// <summary>
@@ -65,7 +65,7 @@ public partial class JourneyViewElementFilter : IEquatable<JourneyViewElementFil
     /// predicates
     /// </summary>
     /// <value>predicates</value>
-    [DataMember(Name = "predicates", EmitDefaultValue = false)]
+    [JsonPropertyName("predicates")]
     public List<JourneyViewElementFilterPredicate> Predicates { get; set; }
 
 
@@ -74,7 +74,7 @@ public partial class JourneyViewElementFilter : IEquatable<JourneyViewElementFil
     /// numberPredicates
     /// </summary>
     /// <value>numberPredicates</value>
-    [DataMember(Name = "numberPredicates", EmitDefaultValue = false)]
+    [JsonPropertyName("numberPredicates")]
     public List<JourneyViewElementFilterNumberPredicate> NumberPredicates { get; set; }
 
 

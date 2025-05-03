@@ -1,4 +1,3 @@
-using System.Runtime.Serialization;
 using System.Text;
 using System.Text.Json.Serialization;
 
@@ -7,7 +6,7 @@ namespace PureCloud.Client.Models;
 /// <summary>
 /// AssessmentQuestionGroupScore
 /// </summary>
-[DataContract]
+
 public partial class AssessmentQuestionGroupScore : IEquatable<AssessmentQuestionGroupScore>
 {
 
@@ -38,7 +37,7 @@ public partial class AssessmentQuestionGroupScore : IEquatable<AssessmentQuestio
     /// The ID of the question group
     /// </summary>
     /// <value>The ID of the question group</value>
-    [DataMember(Name = "questionGroupId", EmitDefaultValue = false)]
+    [JsonPropertyName("questionGroupId")]
     public string QuestionGroupId { get; set; }
 
 
@@ -47,7 +46,7 @@ public partial class AssessmentQuestionGroupScore : IEquatable<AssessmentQuestio
     /// The total score for the questions
     /// </summary>
     /// <value>The total score for the questions</value>
-    [DataMember(Name = "totalScore", EmitDefaultValue = false)]
+    [JsonPropertyName("totalScore")]
     public float? TotalScore { get; private set; }
 
 
@@ -56,7 +55,7 @@ public partial class AssessmentQuestionGroupScore : IEquatable<AssessmentQuestio
     /// The maximum total score for the questions
     /// </summary>
     /// <value>The maximum total score for the questions</value>
-    [DataMember(Name = "maxTotalScore", EmitDefaultValue = false)]
+    [JsonPropertyName("maxTotalScore")]
     public float? MaxTotalScore { get; private set; }
 
 
@@ -65,7 +64,7 @@ public partial class AssessmentQuestionGroupScore : IEquatable<AssessmentQuestio
     /// True if this question group is marked NA
     /// </summary>
     /// <value>True if this question group is marked NA</value>
-    [DataMember(Name = "markedNA", EmitDefaultValue = false)]
+    [JsonPropertyName("markedNA")]
     public bool? MarkedNA { get; set; }
 
 
@@ -74,7 +73,7 @@ public partial class AssessmentQuestionGroupScore : IEquatable<AssessmentQuestio
     /// If markedNA is true, systemMarkedNA indicates whether it was marked by a user or by the system due to visibility conditions. Always false if markedNA is false.
     /// </summary>
     /// <value>If markedNA is true, systemMarkedNA indicates whether it was marked by a user or by the system due to visibility conditions. Always false if markedNA is false.</value>
-    [DataMember(Name = "systemMarkedNA", EmitDefaultValue = false)]
+    [JsonPropertyName("systemMarkedNA")]
     public bool? SystemMarkedNA { get; set; }
 
 
@@ -83,7 +82,7 @@ public partial class AssessmentQuestionGroupScore : IEquatable<AssessmentQuestio
     /// The total score for the critical questions
     /// </summary>
     /// <value>The total score for the critical questions</value>
-    [DataMember(Name = "totalCriticalScore", EmitDefaultValue = false)]
+    [JsonPropertyName("totalCriticalScore")]
     public float? TotalCriticalScore { get; private set; }
 
 
@@ -92,7 +91,7 @@ public partial class AssessmentQuestionGroupScore : IEquatable<AssessmentQuestio
     /// The maximum total score for the critical questions
     /// </summary>
     /// <value>The maximum total score for the critical questions</value>
-    [DataMember(Name = "maxTotalCriticalScore", EmitDefaultValue = false)]
+    [JsonPropertyName("maxTotalCriticalScore")]
     public float? MaxTotalCriticalScore { get; private set; }
 
 
@@ -101,7 +100,7 @@ public partial class AssessmentQuestionGroupScore : IEquatable<AssessmentQuestio
     /// The total score for the non-critical questions
     /// </summary>
     /// <value>The total score for the non-critical questions</value>
-    [DataMember(Name = "totalNonCriticalScore", EmitDefaultValue = false)]
+    [JsonPropertyName("totalNonCriticalScore")]
     public float? TotalNonCriticalScore { get; private set; }
 
 
@@ -110,7 +109,7 @@ public partial class AssessmentQuestionGroupScore : IEquatable<AssessmentQuestio
     /// The maximum total score for the non-critical questions
     /// </summary>
     /// <value>The maximum total score for the non-critical questions</value>
-    [DataMember(Name = "maxTotalNonCriticalScore", EmitDefaultValue = false)]
+    [JsonPropertyName("maxTotalNonCriticalScore")]
     public float? MaxTotalNonCriticalScore { get; private set; }
 
 
@@ -119,7 +118,7 @@ public partial class AssessmentQuestionGroupScore : IEquatable<AssessmentQuestio
     /// The unweighted total score for this question group
     /// </summary>
     /// <value>The unweighted total score for this question group</value>
-    [DataMember(Name = "totalScoreUnweighted", EmitDefaultValue = false)]
+    [JsonPropertyName("totalScoreUnweighted")]
     public float? TotalScoreUnweighted { get; private set; }
 
 
@@ -128,7 +127,7 @@ public partial class AssessmentQuestionGroupScore : IEquatable<AssessmentQuestio
     /// The maximum unweighted total score for this question group
     /// </summary>
     /// <value>The maximum unweighted total score for this question group</value>
-    [DataMember(Name = "maxTotalScoreUnweighted", EmitDefaultValue = false)]
+    [JsonPropertyName("maxTotalScoreUnweighted")]
     public float? MaxTotalScoreUnweighted { get; private set; }
 
 
@@ -137,7 +136,7 @@ public partial class AssessmentQuestionGroupScore : IEquatable<AssessmentQuestio
     /// The unweighted total score for the critical questions
     /// </summary>
     /// <value>The unweighted total score for the critical questions</value>
-    [DataMember(Name = "totalCriticalScoreUnweighted", EmitDefaultValue = false)]
+    [JsonPropertyName("totalCriticalScoreUnweighted")]
     public float? TotalCriticalScoreUnweighted { get; private set; }
 
 
@@ -146,7 +145,7 @@ public partial class AssessmentQuestionGroupScore : IEquatable<AssessmentQuestio
     /// The maximum unweighted total score for the critical questions
     /// </summary>
     /// <value>The maximum unweighted total score for the critical questions</value>
-    [DataMember(Name = "maxTotalCriticalScoreUnweighted", EmitDefaultValue = false)]
+    [JsonPropertyName("maxTotalCriticalScoreUnweighted")]
     public float? MaxTotalCriticalScoreUnweighted { get; private set; }
 
 
@@ -155,7 +154,7 @@ public partial class AssessmentQuestionGroupScore : IEquatable<AssessmentQuestio
     /// The total unweighted score for the non-critical questions
     /// </summary>
     /// <value>The total unweighted score for the non-critical questions</value>
-    [DataMember(Name = "totalNonCriticalScoreUnweighted", EmitDefaultValue = false)]
+    [JsonPropertyName("totalNonCriticalScoreUnweighted")]
     public float? TotalNonCriticalScoreUnweighted { get; private set; }
 
 
@@ -164,7 +163,7 @@ public partial class AssessmentQuestionGroupScore : IEquatable<AssessmentQuestio
     /// The maximum unweighted total score for the non-critical questions
     /// </summary>
     /// <value>The maximum unweighted total score for the non-critical questions</value>
-    [DataMember(Name = "maxTotalNonCriticalScoreUnweighted", EmitDefaultValue = false)]
+    [JsonPropertyName("maxTotalNonCriticalScoreUnweighted")]
     public float? MaxTotalNonCriticalScoreUnweighted { get; private set; }
 
 
@@ -173,7 +172,7 @@ public partial class AssessmentQuestionGroupScore : IEquatable<AssessmentQuestio
     /// The individual question scores
     /// </summary>
     /// <value>The individual question scores</value>
-    [DataMember(Name = "questionScores", EmitDefaultValue = false)]
+    [JsonPropertyName("questionScores")]
     public List<AssessmentQuestionScore> QuestionScores { get; set; }
 
 

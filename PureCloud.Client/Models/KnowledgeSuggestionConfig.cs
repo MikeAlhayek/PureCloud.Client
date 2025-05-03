@@ -7,14 +7,14 @@ namespace PureCloud.Client.Models;
 /// <summary>
 /// KnowledgeSuggestionConfig
 /// </summary>
-[DataContract]
+
 public partial class KnowledgeSuggestionConfig : IEquatable<KnowledgeSuggestionConfig>
 {
     /// <summary>
     /// The name of vendor used for knowledge suggestions.
     /// </summary>
     /// <value>The name of vendor used for knowledge suggestions.</value>
-    [JsonConverter(typeof(JsonStringEnumConverter))]
+    
     public enum VendorNameEnum
     {
         /// <summary>
@@ -47,7 +47,7 @@ public partial class KnowledgeSuggestionConfig : IEquatable<KnowledgeSuggestionC
     /// The name of vendor used for knowledge suggestions.
     /// </summary>
     /// <value>The name of vendor used for knowledge suggestions.</value>
-    [DataMember(Name = "vendorName", EmitDefaultValue = false)]
+    [JsonPropertyName("vendorName")]
     public VendorNameEnum? VendorName { get; set; }
 
     /// <summary>
@@ -77,7 +77,7 @@ public partial class KnowledgeSuggestionConfig : IEquatable<KnowledgeSuggestionC
     /// The ID of knowledge base to query when Genesys is the knowledge suggestions provider.
     /// </summary>
     /// <value>The ID of knowledge base to query when Genesys is the knowledge suggestions provider.</value>
-    [DataMember(Name = "knowledgeBase", EmitDefaultValue = false)]
+    [JsonPropertyName("knowledgeBase")]
     public KnowledgeBaseReference KnowledgeBase { get; set; }
 
 
@@ -86,7 +86,7 @@ public partial class KnowledgeSuggestionConfig : IEquatable<KnowledgeSuggestionC
     /// The knowledge bases to query based on dialect, when Genesys is the knowledge suggestions provider.
     /// </summary>
     /// <value>The knowledge bases to query based on dialect, when Genesys is the knowledge suggestions provider.</value>
-    [DataMember(Name = "knowledgeBases", EmitDefaultValue = false)]
+    [JsonPropertyName("knowledgeBases")]
     public List<KnowledgeBaseWithDialectReference> KnowledgeBases { get; set; }
 
 

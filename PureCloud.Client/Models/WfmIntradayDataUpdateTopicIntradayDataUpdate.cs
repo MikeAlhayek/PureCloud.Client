@@ -1,12 +1,12 @@
-using System.Runtime.Serialization;
 using System.Text;
+using System.Text.Json.Serialization;
 
 namespace PureCloud.Client.Models;
 
 /// <summary>
 /// WfmIntradayDataUpdateTopicIntradayDataUpdate
 /// </summary>
-[DataContract]
+
 public partial class WfmIntradayDataUpdateTopicIntradayDataUpdate : IEquatable<WfmIntradayDataUpdateTopicIntradayDataUpdate>
 {
     /// <summary>
@@ -36,7 +36,7 @@ public partial class WfmIntradayDataUpdateTopicIntradayDataUpdate : IEquatable<W
     /// <summary>
     /// Gets or Sets StartDate
     /// </summary>
-    [DataMember(Name = "startDate", EmitDefaultValue = false)]
+    [JsonPropertyName("startDate")]
     public DateTime? StartDate { get; set; }
 
 
@@ -44,7 +44,7 @@ public partial class WfmIntradayDataUpdateTopicIntradayDataUpdate : IEquatable<W
     /// <summary>
     /// Gets or Sets EndDate
     /// </summary>
-    [DataMember(Name = "endDate", EmitDefaultValue = false)]
+    [JsonPropertyName("endDate")]
     public DateTime? EndDate { get; set; }
 
 
@@ -52,7 +52,7 @@ public partial class WfmIntradayDataUpdateTopicIntradayDataUpdate : IEquatable<W
     /// <summary>
     /// Gets or Sets IntervalLengthMinutes
     /// </summary>
-    [DataMember(Name = "intervalLengthMinutes", EmitDefaultValue = false)]
+    [JsonPropertyName("intervalLengthMinutes")]
     public long? IntervalLengthMinutes { get; set; }
 
 
@@ -60,7 +60,7 @@ public partial class WfmIntradayDataUpdateTopicIntradayDataUpdate : IEquatable<W
     /// <summary>
     /// Gets or Sets NumberOfIntervals
     /// </summary>
-    [DataMember(Name = "numberOfIntervals", EmitDefaultValue = false)]
+    [JsonPropertyName("numberOfIntervals")]
     public long? NumberOfIntervals { get; set; }
 
 
@@ -68,7 +68,7 @@ public partial class WfmIntradayDataUpdateTopicIntradayDataUpdate : IEquatable<W
     /// <summary>
     /// Gets or Sets Metrics
     /// </summary>
-    [DataMember(Name = "metrics", EmitDefaultValue = false)]
+    [JsonPropertyName("metrics")]
     public List<WfmIntradayDataUpdateTopicIntradayMetric> Metrics { get; set; }
 
 
@@ -76,7 +76,7 @@ public partial class WfmIntradayDataUpdateTopicIntradayDataUpdate : IEquatable<W
     /// <summary>
     /// Gets or Sets QueueIds
     /// </summary>
-    [DataMember(Name = "queueIds", EmitDefaultValue = false)]
+    [JsonPropertyName("queueIds")]
     public List<string> QueueIds { get; set; }
 
 
@@ -84,7 +84,7 @@ public partial class WfmIntradayDataUpdateTopicIntradayDataUpdate : IEquatable<W
     /// <summary>
     /// Gets or Sets IntradayDataGroupings
     /// </summary>
-    [DataMember(Name = "intradayDataGroupings", EmitDefaultValue = false)]
+    [JsonPropertyName("intradayDataGroupings")]
     public List<WfmIntradayDataUpdateTopicIntradayDataGroup> IntradayDataGroupings { get; set; }
 
 

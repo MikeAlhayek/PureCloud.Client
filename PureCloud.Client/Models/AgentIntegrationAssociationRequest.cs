@@ -1,4 +1,3 @@
-using System.Runtime.Serialization;
 using System.Text;
 using System.Text.Json.Serialization;
 
@@ -7,7 +6,7 @@ namespace PureCloud.Client.Models;
 /// <summary>
 /// AgentIntegrationAssociationRequest
 /// </summary>
-[DataContract]
+
 public partial class AgentIntegrationAssociationRequest : IEquatable<AgentIntegrationAssociationRequest>
 {
 
@@ -36,7 +35,7 @@ public partial class AgentIntegrationAssociationRequest : IEquatable<AgentIntegr
     /// The ID of the agent in external system
     /// </summary>
     /// <value>The ID of the agent in external system</value>
-    [DataMember(Name = "agentExternalId", EmitDefaultValue = false)]
+    [JsonPropertyName("agentExternalId")]
     public string AgentExternalId { get; set; }
 
 
@@ -45,7 +44,7 @@ public partial class AgentIntegrationAssociationRequest : IEquatable<AgentIntegr
     /// The ID of the integration associated with the agent
     /// </summary>
     /// <value>The ID of the integration associated with the agent</value>
-    [DataMember(Name = "integrationId", EmitDefaultValue = false)]
+    [JsonPropertyName("integrationId")]
     public string IntegrationId { get; set; }
 
 
@@ -54,7 +53,7 @@ public partial class AgentIntegrationAssociationRequest : IEquatable<AgentIntegr
     /// Whether agentExternalId should be protected from update by automatic processes
     /// </summary>
     /// <value>Whether agentExternalId should be protected from update by automatic processes</value>
-    [DataMember(Name = "locked", EmitDefaultValue = false)]
+    [JsonPropertyName("locked")]
     public bool? Locked { get; set; }
 
 

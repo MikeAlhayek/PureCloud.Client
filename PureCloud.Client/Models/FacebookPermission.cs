@@ -7,14 +7,14 @@ namespace PureCloud.Client.Models;
 /// <summary>
 /// Facebook Permissions Model
 /// </summary>
-[DataContract]
+
 public partial class FacebookPermission : IEquatable<FacebookPermission>
 {
     /// <summary>
     /// Facebook permission type
     /// </summary>
     /// <value>Facebook permission type</value>
-    [JsonConverter(typeof(JsonStringEnumConverter))]
+    
     public enum TypeEnum
     {
         /// <summary>
@@ -59,7 +59,7 @@ public partial class FacebookPermission : IEquatable<FacebookPermission>
     /// Facebook permission type
     /// </summary>
     /// <value>Facebook permission type</value>
-    [DataMember(Name = "type", EmitDefaultValue = false)]
+    [JsonPropertyName("type")]
     public TypeEnum? Type { get; private set; }
     /// <summary>
     /// Initializes a new instance of the <see cref="FacebookPermission" /> class.
@@ -75,7 +75,7 @@ public partial class FacebookPermission : IEquatable<FacebookPermission>
     /// Facebook permission name
     /// </summary>
     /// <value>Facebook permission name</value>
-    [DataMember(Name = "name", EmitDefaultValue = false)]
+    [JsonPropertyName("name")]
     public string Name { get; private set; }
 
 

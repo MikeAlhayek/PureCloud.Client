@@ -1,4 +1,3 @@
-using System.Runtime.Serialization;
 using System.Text;
 using System.Text.Json.Serialization;
 
@@ -7,7 +6,7 @@ namespace PureCloud.Client.Models;
 /// <summary>
 /// SendMessageBody
 /// </summary>
-[DataContract]
+
 public partial class SendMessageBody : IEquatable<SendMessageBody>
 {
 
@@ -36,7 +35,7 @@ public partial class SendMessageBody : IEquatable<SendMessageBody>
     /// The body of the message
     /// </summary>
     /// <value>The body of the message</value>
-    [DataMember(Name = "message", EmitDefaultValue = false)]
+    [JsonPropertyName("message")]
     public string Message { get; set; }
 
 
@@ -45,7 +44,7 @@ public partial class SendMessageBody : IEquatable<SendMessageBody>
     /// user ids to be notified
     /// </summary>
     /// <value>user ids to be notified</value>
-    [DataMember(Name = "mentions", EmitDefaultValue = false)]
+    [JsonPropertyName("mentions")]
     public List<string> Mentions { get; set; }
 
 
@@ -54,7 +53,7 @@ public partial class SendMessageBody : IEquatable<SendMessageBody>
     /// The thread id of the message
     /// </summary>
     /// <value>The thread id of the message</value>
-    [DataMember(Name = "threadId", EmitDefaultValue = false)]
+    [JsonPropertyName("threadId")]
     public string ThreadId { get; set; }
 
 

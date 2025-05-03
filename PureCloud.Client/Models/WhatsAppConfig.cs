@@ -1,4 +1,3 @@
-using System.Runtime.Serialization;
 using System.Text;
 using System.Text.Json.Serialization;
 
@@ -7,7 +6,7 @@ namespace PureCloud.Client.Models;
 /// <summary>
 /// WhatsAppConfig
 /// </summary>
-[DataContract]
+
 public partial class WhatsAppConfig : IEquatable<WhatsAppConfig>
 {
 
@@ -36,7 +35,7 @@ public partial class WhatsAppConfig : IEquatable<WhatsAppConfig>
     /// The contact list columns specifying the WhatsApp address(es) of the contact.
     /// </summary>
     /// <value>The contact list columns specifying the WhatsApp address(es) of the contact.</value>
-    [DataMember(Name = "whatsAppColumns", EmitDefaultValue = false)]
+    [JsonPropertyName("whatsAppColumns")]
     public List<string> WhatsAppColumns { get; set; }
 
 
@@ -45,7 +44,7 @@ public partial class WhatsAppConfig : IEquatable<WhatsAppConfig>
     /// The WhatsApp integration used to send message to the contact.
     /// </summary>
     /// <value>The WhatsApp integration used to send message to the contact.</value>
-    [DataMember(Name = "whatsAppIntegration", EmitDefaultValue = false)]
+    [JsonPropertyName("whatsAppIntegration")]
     public AddressableEntityRef WhatsAppIntegration { get; set; }
 
 
@@ -54,7 +53,7 @@ public partial class WhatsAppConfig : IEquatable<WhatsAppConfig>
     /// The content template used to formulate the WhatsApp message to send to the contact.
     /// </summary>
     /// <value>The content template used to formulate the WhatsApp message to send to the contact.</value>
-    [DataMember(Name = "contentTemplate", EmitDefaultValue = false)]
+    [JsonPropertyName("contentTemplate")]
     public DomainEntityRef ContentTemplate { get; set; }
 
 

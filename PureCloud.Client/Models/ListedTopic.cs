@@ -7,13 +7,13 @@ namespace PureCloud.Client.Models;
 /// <summary>
 /// ListedTopic
 /// </summary>
-[DataContract]
+
 public partial class ListedTopic : IEquatable<ListedTopic>
 {
     /// <summary>
     /// Gets or Sets Strictness
     /// </summary>
-    [JsonConverter(typeof(JsonStringEnumConverter))]
+    
     public enum StrictnessEnum
     {
         /// <summary>
@@ -63,7 +63,7 @@ public partial class ListedTopic : IEquatable<ListedTopic>
     /// <summary>
     /// Gets or Sets Participants
     /// </summary>
-    [JsonConverter(typeof(JsonStringEnumConverter))]
+    
     public enum ParticipantsEnum
     {
         /// <summary>
@@ -95,12 +95,12 @@ public partial class ListedTopic : IEquatable<ListedTopic>
     /// <summary>
     /// Gets or Sets Strictness
     /// </summary>
-    [DataMember(Name = "strictness", EmitDefaultValue = false)]
+    [JsonPropertyName("strictness")]
     public StrictnessEnum? Strictness { get; set; }
     /// <summary>
     /// Gets or Sets Participants
     /// </summary>
-    [DataMember(Name = "participants", EmitDefaultValue = false)]
+    [JsonPropertyName("participants")]
     public ParticipantsEnum? Participants { get; set; }
     /// <summary>
     /// Initializes a new instance of the <see cref="ListedTopic" /> class.
@@ -138,7 +138,7 @@ public partial class ListedTopic : IEquatable<ListedTopic>
     /// The globally unique identifier for the object.
     /// </summary>
     /// <value>The globally unique identifier for the object.</value>
-    [DataMember(Name = "id", EmitDefaultValue = false)]
+    [JsonPropertyName("id")]
     public string Id { get; private set; }
 
 
@@ -146,7 +146,7 @@ public partial class ListedTopic : IEquatable<ListedTopic>
     /// <summary>
     /// Gets or Sets Name
     /// </summary>
-    [DataMember(Name = "name", EmitDefaultValue = false)]
+    [JsonPropertyName("name")]
     public string Name { get; set; }
 
 
@@ -154,7 +154,7 @@ public partial class ListedTopic : IEquatable<ListedTopic>
     /// <summary>
     /// Gets or Sets Description
     /// </summary>
-    [DataMember(Name = "description", EmitDefaultValue = false)]
+    [JsonPropertyName("description")]
     public string Description { get; set; }
 
 
@@ -162,7 +162,7 @@ public partial class ListedTopic : IEquatable<ListedTopic>
     /// <summary>
     /// Gets or Sets Published
     /// </summary>
-    [DataMember(Name = "published", EmitDefaultValue = false)]
+    [JsonPropertyName("published")]
     public bool? Published { get; set; }
 
 
@@ -172,7 +172,7 @@ public partial class ListedTopic : IEquatable<ListedTopic>
     /// <summary>
     /// Gets or Sets ProgramsCount
     /// </summary>
-    [DataMember(Name = "programsCount", EmitDefaultValue = false)]
+    [JsonPropertyName("programsCount")]
     public int? ProgramsCount { get; set; }
 
 
@@ -180,7 +180,7 @@ public partial class ListedTopic : IEquatable<ListedTopic>
     /// <summary>
     /// Gets or Sets Tags
     /// </summary>
-    [DataMember(Name = "tags", EmitDefaultValue = false)]
+    [JsonPropertyName("tags")]
     public List<string> Tags { get; set; }
 
 
@@ -188,7 +188,7 @@ public partial class ListedTopic : IEquatable<ListedTopic>
     /// <summary>
     /// Gets or Sets Dialect
     /// </summary>
-    [DataMember(Name = "dialect", EmitDefaultValue = false)]
+    [JsonPropertyName("dialect")]
     public string Dialect { get; set; }
 
 
@@ -198,7 +198,7 @@ public partial class ListedTopic : IEquatable<ListedTopic>
     /// <summary>
     /// Gets or Sets PhrasesCount
     /// </summary>
-    [DataMember(Name = "phrasesCount", EmitDefaultValue = false)]
+    [JsonPropertyName("phrasesCount")]
     public int? PhrasesCount { get; set; }
 
 
@@ -206,7 +206,7 @@ public partial class ListedTopic : IEquatable<ListedTopic>
     /// <summary>
     /// Gets or Sets ModifiedBy
     /// </summary>
-    [DataMember(Name = "modifiedBy", EmitDefaultValue = false)]
+    [JsonPropertyName("modifiedBy")]
     public AddressableEntityRef ModifiedBy { get; set; }
 
 
@@ -215,7 +215,7 @@ public partial class ListedTopic : IEquatable<ListedTopic>
     /// Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z
     /// </summary>
     /// <value>Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z</value>
-    [DataMember(Name = "dateModified", EmitDefaultValue = false)]
+    [JsonPropertyName("dateModified")]
     public DateTime? DateModified { get; set; }
 
 
@@ -224,7 +224,7 @@ public partial class ListedTopic : IEquatable<ListedTopic>
     /// The URI for this object
     /// </summary>
     /// <value>The URI for this object</value>
-    [DataMember(Name = "selfUri", EmitDefaultValue = false)]
+    [JsonPropertyName("selfUri")]
     public string SelfUri { get; private set; }
 
 

@@ -1,12 +1,12 @@
-using System.Runtime.Serialization;
 using System.Text;
+using System.Text.Json.Serialization;
 
 namespace PureCloud.Client.Models;
 
 /// <summary>
 /// ChatSettings
 /// </summary>
-[DataContract]
+
 public partial class ChatSettings : IEquatable<ChatSettings>
 {
     /// <summary>
@@ -27,7 +27,7 @@ public partial class ChatSettings : IEquatable<ChatSettings>
     /// Retention time for messages in days, expressed as int in the range [10,3650]
     /// </summary>
     /// <value>Retention time for messages in days, expressed as int in the range [10,3650]</value>
-    [DataMember(Name = "messageRetentionPeriodDays", EmitDefaultValue = false)]
+    [JsonPropertyName("messageRetentionPeriodDays")]
     public int? MessageRetentionPeriodDays { get; set; }
 
 
@@ -36,7 +36,7 @@ public partial class ChatSettings : IEquatable<ChatSettings>
     /// Reactions enabled for org
     /// </summary>
     /// <value>Reactions enabled for org</value>
-    [DataMember(Name = "reactionsEnabled", EmitDefaultValue = false)]
+    [JsonPropertyName("reactionsEnabled")]
     public bool? ReactionsEnabled { get; set; }
 
 

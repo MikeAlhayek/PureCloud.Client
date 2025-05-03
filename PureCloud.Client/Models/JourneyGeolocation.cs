@@ -1,12 +1,12 @@
-using System.Runtime.Serialization;
 using System.Text;
+using System.Text.Json.Serialization;
 
 namespace PureCloud.Client.Models;
 
 /// <summary>
 /// JourneyGeolocation
 /// </summary>
-[DataContract]
+
 public partial class JourneyGeolocation : IEquatable<JourneyGeolocation>
 {
     /// <summary>
@@ -43,7 +43,7 @@ public partial class JourneyGeolocation : IEquatable<JourneyGeolocation>
     /// Geolocation&#39;s ISO 3166-1 alpha-2 country code.
     /// </summary>
     /// <value>Geolocation&#39;s ISO 3166-1 alpha-2 country code.</value>
-    [DataMember(Name = "country", EmitDefaultValue = false)]
+    [JsonPropertyName("country")]
     public string Country { get; set; }
 
 
@@ -52,7 +52,7 @@ public partial class JourneyGeolocation : IEquatable<JourneyGeolocation>
     /// Geolocation&#39;s country name.
     /// </summary>
     /// <value>Geolocation&#39;s country name.</value>
-    [DataMember(Name = "countryName", EmitDefaultValue = false)]
+    [JsonPropertyName("countryName")]
     public string CountryName { get; set; }
 
 
@@ -61,7 +61,7 @@ public partial class JourneyGeolocation : IEquatable<JourneyGeolocation>
     /// Geolocation&#39;s latitude.
     /// </summary>
     /// <value>Geolocation&#39;s latitude.</value>
-    [DataMember(Name = "latitude", EmitDefaultValue = false)]
+    [JsonPropertyName("latitude")]
     public double? Latitude { get; set; }
 
 
@@ -70,7 +70,7 @@ public partial class JourneyGeolocation : IEquatable<JourneyGeolocation>
     /// Geolocation&#39;s longitude.
     /// </summary>
     /// <value>Geolocation&#39;s longitude.</value>
-    [DataMember(Name = "longitude", EmitDefaultValue = false)]
+    [JsonPropertyName("longitude")]
     public double? Longitude { get; set; }
 
 
@@ -79,7 +79,7 @@ public partial class JourneyGeolocation : IEquatable<JourneyGeolocation>
     /// Geolocation&#39;s locality or city.
     /// </summary>
     /// <value>Geolocation&#39;s locality or city.</value>
-    [DataMember(Name = "locality", EmitDefaultValue = false)]
+    [JsonPropertyName("locality")]
     public string Locality { get; set; }
 
 
@@ -88,7 +88,7 @@ public partial class JourneyGeolocation : IEquatable<JourneyGeolocation>
     /// Geolocation&#39;s postal code or ZIP code.
     /// </summary>
     /// <value>Geolocation&#39;s postal code or ZIP code.</value>
-    [DataMember(Name = "postalCode", EmitDefaultValue = false)]
+    [JsonPropertyName("postalCode")]
     public string PostalCode { get; set; }
 
 
@@ -97,7 +97,7 @@ public partial class JourneyGeolocation : IEquatable<JourneyGeolocation>
     /// Geolocation&#39;s ISO-3166-2 region code.
     /// </summary>
     /// <value>Geolocation&#39;s ISO-3166-2 region code.</value>
-    [DataMember(Name = "region", EmitDefaultValue = false)]
+    [JsonPropertyName("region")]
     public string Region { get; set; }
 
 
@@ -106,7 +106,7 @@ public partial class JourneyGeolocation : IEquatable<JourneyGeolocation>
     /// Geolocation&#39;s region name.
     /// </summary>
     /// <value>Geolocation&#39;s region name.</value>
-    [DataMember(Name = "regionName", EmitDefaultValue = false)]
+    [JsonPropertyName("regionName")]
     public string RegionName { get; set; }
 
 
@@ -115,7 +115,7 @@ public partial class JourneyGeolocation : IEquatable<JourneyGeolocation>
     /// The source that was used to determine the geolocation information.
     /// </summary>
     /// <value>The source that was used to determine the geolocation information.</value>
-    [DataMember(Name = "source", EmitDefaultValue = false)]
+    [JsonPropertyName("source")]
     public string Source { get; set; }
 
 
@@ -124,7 +124,7 @@ public partial class JourneyGeolocation : IEquatable<JourneyGeolocation>
     /// Geolocation&#39;s timezone.
     /// </summary>
     /// <value>Geolocation&#39;s timezone.</value>
-    [DataMember(Name = "timezone", EmitDefaultValue = false)]
+    [JsonPropertyName("timezone")]
     public string Timezone { get; set; }
 
 

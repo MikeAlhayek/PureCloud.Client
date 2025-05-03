@@ -1,12 +1,12 @@
-using System.Runtime.Serialization;
 using System.Text;
+using System.Text.Json.Serialization;
 
 namespace PureCloud.Client.Models;
 
 /// <summary>
 /// KnowledgeParseRecord
 /// </summary>
-[DataContract]
+
 public partial class KnowledgeParseRecord : IEquatable<KnowledgeParseRecord>
 {
     /// <summary>
@@ -29,7 +29,7 @@ public partial class KnowledgeParseRecord : IEquatable<KnowledgeParseRecord>
     /// Unique id for the parsed data.
     /// </summary>
     /// <value>Unique id for the parsed data.</value>
-    [DataMember(Name = "id", EmitDefaultValue = false)]
+    [JsonPropertyName("id")]
     public string Id { get; set; }
 
 
@@ -38,7 +38,7 @@ public partial class KnowledgeParseRecord : IEquatable<KnowledgeParseRecord>
     /// Parsed article title.
     /// </summary>
     /// <value>Parsed article title.</value>
-    [DataMember(Name = "title", EmitDefaultValue = false)]
+    [JsonPropertyName("title")]
     public string Title { get; set; }
 
 
@@ -47,7 +47,7 @@ public partial class KnowledgeParseRecord : IEquatable<KnowledgeParseRecord>
     /// Parsed article content.
     /// </summary>
     /// <value>Parsed article content.</value>
-    [DataMember(Name = "body", EmitDefaultValue = false)]
+    [JsonPropertyName("body")]
     public DocumentBody Body { get; set; }
 
 

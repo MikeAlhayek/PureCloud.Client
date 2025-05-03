@@ -7,13 +7,13 @@ namespace PureCloud.Client.Models;
 /// <summary>
 /// CreateObjective
 /// </summary>
-[DataContract]
+
 public partial class CreateObjective : IEquatable<CreateObjective>
 {
     /// <summary>
     /// Gets or Sets MediaTypes
     /// </summary>
-    [JsonConverter(typeof(JsonStringEnumConverter))]
+    
     public enum MediaTypesEnum
     {
         /// <summary>
@@ -88,7 +88,7 @@ public partial class CreateObjective : IEquatable<CreateObjective>
     /// A filter type for topic Ids. It's only used for objectives with topicIds. Default filter behavior is \"or\".
     /// </summary>
     /// <value>A filter type for topic Ids. It's only used for objectives with topicIds. Default filter behavior is \"or\".</value>
-    [JsonConverter(typeof(JsonStringEnumConverter))]
+    
     public enum TopicIdsFilterTypeEnum
     {
         /// <summary>
@@ -115,7 +115,7 @@ public partial class CreateObjective : IEquatable<CreateObjective>
     /// The initial direction to filter on
     /// </summary>
     /// <value>The initial direction to filter on</value>
-    [JsonConverter(typeof(JsonStringEnumConverter))]
+    
     public enum InitialDirectionEnum
     {
         /// <summary>
@@ -142,13 +142,13 @@ public partial class CreateObjective : IEquatable<CreateObjective>
     /// A filter type for topic Ids. It's only used for objectives with topicIds. Default filter behavior is \"or\".
     /// </summary>
     /// <value>A filter type for topic Ids. It's only used for objectives with topicIds. Default filter behavior is \"or\".</value>
-    [DataMember(Name = "topicIdsFilterType", EmitDefaultValue = false)]
+    [JsonPropertyName("topicIdsFilterType")]
     public TopicIdsFilterTypeEnum? TopicIdsFilterType { get; set; }
     /// <summary>
     /// The initial direction to filter on
     /// </summary>
     /// <value>The initial direction to filter on</value>
-    [DataMember(Name = "initialDirection", EmitDefaultValue = false)]
+    [JsonPropertyName("initialDirection")]
     public InitialDirectionEnum? InitialDirection { get; set; }
     /// <summary>
     /// Initializes a new instance of the <see cref="CreateObjective" /> class.
@@ -184,7 +184,7 @@ public partial class CreateObjective : IEquatable<CreateObjective>
     /// The globally unique identifier for the object.
     /// </summary>
     /// <value>The globally unique identifier for the object.</value>
-    [DataMember(Name = "id", EmitDefaultValue = false)]
+    [JsonPropertyName("id")]
     public string Id { get; private set; }
 
 
@@ -193,7 +193,7 @@ public partial class CreateObjective : IEquatable<CreateObjective>
     /// The id of this objective&#39;s base template
     /// </summary>
     /// <value>The id of this objective&#39;s base template</value>
-    [DataMember(Name = "templateId", EmitDefaultValue = false)]
+    [JsonPropertyName("templateId")]
     public string TemplateId { get; set; }
 
 
@@ -202,7 +202,7 @@ public partial class CreateObjective : IEquatable<CreateObjective>
     /// Objective zone specifies min,max points and values for the associated metric
     /// </summary>
     /// <value>Objective zone specifies min,max points and values for the associated metric</value>
-    [DataMember(Name = "zones", EmitDefaultValue = false)]
+    [JsonPropertyName("zones")]
     public List<ObjectiveZone> Zones { get; set; }
 
 
@@ -211,7 +211,7 @@ public partial class CreateObjective : IEquatable<CreateObjective>
     /// A flag for whether this objective is enabled for the related metric
     /// </summary>
     /// <value>A flag for whether this objective is enabled for the related metric</value>
-    [DataMember(Name = "enabled", EmitDefaultValue = false)]
+    [JsonPropertyName("enabled")]
     public bool? Enabled { get; set; }
 
 
@@ -220,7 +220,7 @@ public partial class CreateObjective : IEquatable<CreateObjective>
     /// A list of topic ids for detected topic metrics
     /// </summary>
     /// <value>A list of topic ids for detected topic metrics</value>
-    [DataMember(Name = "topicIds", EmitDefaultValue = false)]
+    [JsonPropertyName("topicIds")]
     public List<string> TopicIds { get; set; }
 
 
@@ -229,7 +229,7 @@ public partial class CreateObjective : IEquatable<CreateObjective>
     /// A list of media types for the metric
     /// </summary>
     /// <value>A list of media types for the metric</value>
-    [DataMember(Name = "mediaTypes", EmitDefaultValue = false)]
+    [JsonPropertyName("mediaTypes")]
     public List<MediaTypesEnum> MediaTypes { get; set; }
 
 
@@ -238,7 +238,7 @@ public partial class CreateObjective : IEquatable<CreateObjective>
     /// A list of queue ids for the metric
     /// </summary>
     /// <value>A list of queue ids for the metric</value>
-    [DataMember(Name = "queueIds", EmitDefaultValue = false)]
+    [JsonPropertyName("queueIds")]
     public List<string> QueueIds { get; set; }
 
 
@@ -249,7 +249,7 @@ public partial class CreateObjective : IEquatable<CreateObjective>
     /// The ids of associated evaluation form context, for Quality Evaluation Score metrics
     /// </summary>
     /// <value>The ids of associated evaluation form context, for Quality Evaluation Score metrics</value>
-    [DataMember(Name = "evaluationFormContextIds", EmitDefaultValue = false)]
+    [JsonPropertyName("evaluationFormContextIds")]
     public List<string> EvaluationFormContextIds { get; set; }
 
 
@@ -260,7 +260,7 @@ public partial class CreateObjective : IEquatable<CreateObjective>
     /// start date of the objective. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd
     /// </summary>
     /// <value>start date of the objective. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd</value>
-    [DataMember(Name = "dateStart", EmitDefaultValue = false)]
+    [JsonPropertyName("dateStart")]
     public string DateStart { get; set; }
 
 

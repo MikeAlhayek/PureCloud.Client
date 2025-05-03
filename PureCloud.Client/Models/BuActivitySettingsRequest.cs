@@ -1,12 +1,12 @@
-using System.Runtime.Serialization;
 using System.Text;
+using System.Text.Json.Serialization;
 
 namespace PureCloud.Client.Models;
 
 /// <summary>
 /// BuActivitySettingsRequest
 /// </summary>
-[DataContract]
+
 public partial class BuActivitySettingsRequest : IEquatable<BuActivitySettingsRequest>
 {
     /// <summary>
@@ -25,7 +25,7 @@ public partial class BuActivitySettingsRequest : IEquatable<BuActivitySettingsRe
     /// The ID of the activity code. This is the activity code that will be used by default for agent development activities added to the schedule
     /// </summary>
     /// <value>The ID of the activity code. This is the activity code that will be used by default for agent development activities added to the schedule</value>
-    [DataMember(Name = "defaultActivityCodeId", EmitDefaultValue = false)]
+    [JsonPropertyName("defaultActivityCodeId")]
     public string DefaultActivityCodeId { get; set; }
 
 

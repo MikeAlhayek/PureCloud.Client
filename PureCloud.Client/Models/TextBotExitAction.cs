@@ -7,14 +7,14 @@ namespace PureCloud.Client.Models;
 /// <summary>
 /// Settings for a next-action of exiting the bot flow. Any output variables are available in the details.
 /// </summary>
-[DataContract]
+
 public partial class TextBotExitAction : IEquatable<TextBotExitAction>
 {
     /// <summary>
     /// The reason for the exit.
     /// </summary>
     /// <value>The reason for the exit.</value>
-    [JsonConverter(typeof(JsonStringEnumConverter))]
+    
     public enum ReasonEnum
     {
         /// <summary>
@@ -59,7 +59,7 @@ public partial class TextBotExitAction : IEquatable<TextBotExitAction>
     /// The reason for the exit.
     /// </summary>
     /// <value>The reason for the exit.</value>
-    [DataMember(Name = "reason", EmitDefaultValue = false)]
+    [JsonPropertyName("reason")]
     public ReasonEnum? Reason { get; set; }
 
     /// <summary>
@@ -95,7 +95,7 @@ public partial class TextBotExitAction : IEquatable<TextBotExitAction>
     /// Extended information related to the reason, if available.
     /// </summary>
     /// <value>Extended information related to the reason, if available.</value>
-    [DataMember(Name = "reasonExtendedInfo", EmitDefaultValue = false)]
+    [JsonPropertyName("reasonExtendedInfo")]
     public string ReasonExtendedInfo { get; set; }
 
 
@@ -104,7 +104,7 @@ public partial class TextBotExitAction : IEquatable<TextBotExitAction>
     /// The active intent at the time of the exit.
     /// </summary>
     /// <value>The active intent at the time of the exit.</value>
-    [DataMember(Name = "activeIntent", EmitDefaultValue = false)]
+    [JsonPropertyName("activeIntent")]
     public string ActiveIntent { get; set; }
 
 
@@ -113,7 +113,7 @@ public partial class TextBotExitAction : IEquatable<TextBotExitAction>
     /// Describes where in the Bot Flow the user was when the exit occurred.
     /// </summary>
     /// <value>Describes where in the Bot Flow the user was when the exit occurred.</value>
-    [DataMember(Name = "flowLocation", EmitDefaultValue = false)]
+    [JsonPropertyName("flowLocation")]
     public TextBotFlowLocation FlowLocation { get; set; }
 
 
@@ -122,7 +122,7 @@ public partial class TextBotExitAction : IEquatable<TextBotExitAction>
     /// The output data for the bot flow.
     /// </summary>
     /// <value>The output data for the bot flow.</value>
-    [DataMember(Name = "outputData", EmitDefaultValue = false)]
+    [JsonPropertyName("outputData")]
     public TextBotInputOutputData OutputData { get; set; }
 
 
@@ -131,7 +131,7 @@ public partial class TextBotExitAction : IEquatable<TextBotExitAction>
     /// The list of Flow Outcomes for the bot flow and their details.
     /// </summary>
     /// <value>The list of Flow Outcomes for the bot flow and their details.</value>
-    [DataMember(Name = "flowOutcomes", EmitDefaultValue = false)]
+    [JsonPropertyName("flowOutcomes")]
     public List<TextBotFlowOutcome> FlowOutcomes { get; set; }
 
 

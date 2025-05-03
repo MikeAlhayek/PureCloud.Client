@@ -7,14 +7,14 @@ namespace PureCloud.Client.Models;
 /// <summary>
 /// The settings for Agent Video
 /// </summary>
-[DataContract]
+
 public partial class AgentVideoSettings : IEquatable<AgentVideoSettings>
 {
     /// <summary>
     /// background for agent
     /// </summary>
     /// <value>background for agent</value>
-    [JsonConverter(typeof(JsonStringEnumConverter))]
+    
     public enum BackgroundEnum
     {
         /// <summary>
@@ -47,7 +47,7 @@ public partial class AgentVideoSettings : IEquatable<AgentVideoSettings>
     /// background for agent
     /// </summary>
     /// <value>background for agent</value>
-    [DataMember(Name = "background", EmitDefaultValue = false)]
+    [JsonPropertyName("background")]
     public BackgroundEnum? Background { get; set; }
     /// <summary>
     /// Initializes a new instance of the <see cref="AgentVideoSettings" /> class.
@@ -71,7 +71,7 @@ public partial class AgentVideoSettings : IEquatable<AgentVideoSettings>
     /// whether or not agent camera is allowed
     /// </summary>
     /// <value>whether or not agent camera is allowed</value>
-    [DataMember(Name = "allowCamera", EmitDefaultValue = false)]
+    [JsonPropertyName("allowCamera")]
     public bool? AllowCamera { get; set; }
 
 
@@ -80,7 +80,7 @@ public partial class AgentVideoSettings : IEquatable<AgentVideoSettings>
     /// whether or not agent screen share is allowed
     /// </summary>
     /// <value>whether or not agent screen share is allowed</value>
-    [DataMember(Name = "allowScreenShare", EmitDefaultValue = false)]
+    [JsonPropertyName("allowScreenShare")]
     public bool? AllowScreenShare { get; set; }
 
 
@@ -91,7 +91,7 @@ public partial class AgentVideoSettings : IEquatable<AgentVideoSettings>
     /// background image settings for agent
     /// </summary>
     /// <value>background image settings for agent</value>
-    [DataMember(Name = "backgroundImage", EmitDefaultValue = false)]
+    [JsonPropertyName("backgroundImage")]
     public BackgroundImageSettings BackgroundImage { get; set; }
 
 

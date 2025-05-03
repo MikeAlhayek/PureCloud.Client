@@ -7,13 +7,13 @@ namespace PureCloud.Client.Models;
 /// <summary>
 /// TimeOffRequestQueryBody
 /// </summary>
-[DataContract]
+
 public partial class TimeOffRequestQueryBody : IEquatable<TimeOffRequestQueryBody>
 {
     /// <summary>
     /// Gets or Sets Statuses
     /// </summary>
-    [JsonConverter(typeof(JsonStringEnumConverter))]
+    
     public enum StatusesEnum
     {
         /// <summary>
@@ -33,7 +33,7 @@ public partial class TimeOffRequestQueryBody : IEquatable<TimeOffRequestQueryBod
     /// <summary>
     /// Gets or Sets Substatuses
     /// </summary>
-    [JsonConverter(typeof(JsonStringEnumConverter))]
+    
     public enum SubstatusesEnum
     {
         /// <summary>
@@ -116,7 +116,7 @@ public partial class TimeOffRequestQueryBody : IEquatable<TimeOffRequestQueryBod
     /// The set of ids to filter time off requests
     /// </summary>
     /// <value>The set of ids to filter time off requests</value>
-    [DataMember(Name = "ids", EmitDefaultValue = false)]
+    [JsonPropertyName("ids")]
     public List<string> Ids { get; set; }
 
 
@@ -125,7 +125,7 @@ public partial class TimeOffRequestQueryBody : IEquatable<TimeOffRequestQueryBod
     /// The set of user ids to filter time off requests
     /// </summary>
     /// <value>The set of user ids to filter time off requests</value>
-    [DataMember(Name = "userIds", EmitDefaultValue = false)]
+    [JsonPropertyName("userIds")]
     public List<string> UserIds { get; set; }
 
 
@@ -134,7 +134,7 @@ public partial class TimeOffRequestQueryBody : IEquatable<TimeOffRequestQueryBod
     /// The set of statuses to filter time off requests
     /// </summary>
     /// <value>The set of statuses to filter time off requests</value>
-    [DataMember(Name = "statuses", EmitDefaultValue = false)]
+    [JsonPropertyName("statuses")]
     public List<StatusesEnum> Statuses { get; set; }
 
 
@@ -143,7 +143,7 @@ public partial class TimeOffRequestQueryBody : IEquatable<TimeOffRequestQueryBod
     /// The set of substatuses to filter time off requests
     /// </summary>
     /// <value>The set of substatuses to filter time off requests</value>
-    [DataMember(Name = "substatuses", EmitDefaultValue = false)]
+    [JsonPropertyName("substatuses")]
     public List<SubstatusesEnum> Substatuses { get; set; }
 
 
@@ -152,7 +152,7 @@ public partial class TimeOffRequestQueryBody : IEquatable<TimeOffRequestQueryBod
     /// The inclusive range of dates to filter time off requests
     /// </summary>
     /// <value>The inclusive range of dates to filter time off requests</value>
-    [DataMember(Name = "dateRange", EmitDefaultValue = false)]
+    [JsonPropertyName("dateRange")]
     public DateRange DateRange { get; set; }
 
 

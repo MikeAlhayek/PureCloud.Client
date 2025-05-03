@@ -1,4 +1,3 @@
-using System.Runtime.Serialization;
 using System.Text;
 using System.Text.Json.Serialization;
 
@@ -7,7 +6,7 @@ namespace PureCloud.Client.Models;
 /// <summary>
 /// UserSchedule
 /// </summary>
-[DataContract]
+
 public partial class UserSchedule : IEquatable<UserSchedule>
 {
 
@@ -38,7 +37,7 @@ public partial class UserSchedule : IEquatable<UserSchedule>
     /// The shifts that belong to this schedule
     /// </summary>
     /// <value>The shifts that belong to this schedule</value>
-    [DataMember(Name = "shifts", EmitDefaultValue = false)]
+    [JsonPropertyName("shifts")]
     public List<UserScheduleShift> Shifts { get; set; }
 
 
@@ -47,7 +46,7 @@ public partial class UserSchedule : IEquatable<UserSchedule>
     /// Markers to indicate a full day time off request, relative to the management unit time zone
     /// </summary>
     /// <value>Markers to indicate a full day time off request, relative to the management unit time zone</value>
-    [DataMember(Name = "fullDayTimeOffMarkers", EmitDefaultValue = false)]
+    [JsonPropertyName("fullDayTimeOffMarkers")]
     public List<UserScheduleFullDayTimeOffMarker> FullDayTimeOffMarkers { get; set; }
 
 
@@ -56,7 +55,7 @@ public partial class UserSchedule : IEquatable<UserSchedule>
     /// If marked true for updating an existing user schedule, it will be deleted
     /// </summary>
     /// <value>If marked true for updating an existing user schedule, it will be deleted</value>
-    [DataMember(Name = "delete", EmitDefaultValue = false)]
+    [JsonPropertyName("delete")]
     public bool? Delete { get; set; }
 
 
@@ -65,7 +64,7 @@ public partial class UserSchedule : IEquatable<UserSchedule>
     /// Version metadata for this schedule
     /// </summary>
     /// <value>Version metadata for this schedule</value>
-    [DataMember(Name = "metadata", EmitDefaultValue = false)]
+    [JsonPropertyName("metadata")]
     public WfmVersionedEntityMetadata Metadata { get; set; }
 
 
@@ -74,7 +73,7 @@ public partial class UserSchedule : IEquatable<UserSchedule>
     /// ID of the work plan associated with the user during schedule creation
     /// </summary>
     /// <value>ID of the work plan associated with the user during schedule creation</value>
-    [DataMember(Name = "workPlanId", EmitDefaultValue = false)]
+    [JsonPropertyName("workPlanId")]
     public string WorkPlanId { get; private set; }
 
 

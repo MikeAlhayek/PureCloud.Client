@@ -7,13 +7,13 @@ namespace PureCloud.Client.Models;
 /// <summary>
 /// JourneyWebActionEventsNotificationWebActionEventsNotification
 /// </summary>
-[DataContract]
+
 public partial class JourneyWebActionEventsNotificationWebActionEventsNotification : IEquatable<JourneyWebActionEventsNotificationWebActionEventsNotification>
 {
     /// <summary>
     /// Gets or Sets EventType
     /// </summary>
-    [JsonConverter(typeof(JsonStringEnumConverter))]
+    
     public enum EventTypeEnum
     {
         /// <summary>
@@ -39,7 +39,7 @@ public partial class JourneyWebActionEventsNotificationWebActionEventsNotificati
     /// <summary>
     /// Gets or Sets EventType
     /// </summary>
-    [DataMember(Name = "eventType", EmitDefaultValue = false)]
+    [JsonPropertyName("eventType")]
     public EventTypeEnum? EventType { get; set; }
     /// <summary>
     /// Initializes a new instance of the <see cref="JourneyWebActionEventsNotificationWebActionEventsNotification" /> class.
@@ -74,7 +74,7 @@ public partial class JourneyWebActionEventsNotificationWebActionEventsNotificati
     /// <summary>
     /// Gets or Sets Id
     /// </summary>
-    [DataMember(Name = "id", EmitDefaultValue = false)]
+    [JsonPropertyName("id")]
     public string Id { get; set; }
 
 
@@ -82,7 +82,7 @@ public partial class JourneyWebActionEventsNotificationWebActionEventsNotificati
     /// <summary>
     /// Gets or Sets CorrelationId
     /// </summary>
-    [DataMember(Name = "correlationId", EmitDefaultValue = false)]
+    [JsonPropertyName("correlationId")]
     public string CorrelationId { get; set; }
 
 
@@ -90,7 +90,7 @@ public partial class JourneyWebActionEventsNotificationWebActionEventsNotificati
     /// <summary>
     /// Gets or Sets ExternalContact
     /// </summary>
-    [DataMember(Name = "externalContact", EmitDefaultValue = false)]
+    [JsonPropertyName("externalContact")]
     public JourneyWebActionEventsNotificationExternalContact ExternalContact { get; set; }
 
 
@@ -98,7 +98,7 @@ public partial class JourneyWebActionEventsNotificationWebActionEventsNotificati
     /// <summary>
     /// Gets or Sets CreatedDate
     /// </summary>
-    [DataMember(Name = "createdDate", EmitDefaultValue = false)]
+    [JsonPropertyName("createdDate")]
     public DateTime? CreatedDate { get; set; }
 
 
@@ -106,7 +106,7 @@ public partial class JourneyWebActionEventsNotificationWebActionEventsNotificati
     /// <summary>
     /// Gets or Sets CustomerId
     /// </summary>
-    [DataMember(Name = "customerId", EmitDefaultValue = false)]
+    [JsonPropertyName("customerId")]
     public string CustomerId { get; set; }
 
 
@@ -114,7 +114,7 @@ public partial class JourneyWebActionEventsNotificationWebActionEventsNotificati
     /// <summary>
     /// Gets or Sets CustomerIdType
     /// </summary>
-    [DataMember(Name = "customerIdType", EmitDefaultValue = false)]
+    [JsonPropertyName("customerIdType")]
     public string CustomerIdType { get; set; }
 
 
@@ -122,7 +122,7 @@ public partial class JourneyWebActionEventsNotificationWebActionEventsNotificati
     /// <summary>
     /// Gets or Sets Session
     /// </summary>
-    [DataMember(Name = "session", EmitDefaultValue = false)]
+    [JsonPropertyName("session")]
     public JourneyWebActionEventsNotificationSession Session { get; set; }
 
 
@@ -132,7 +132,7 @@ public partial class JourneyWebActionEventsNotificationWebActionEventsNotificati
     /// <summary>
     /// Gets or Sets WebActionEvent
     /// </summary>
-    [DataMember(Name = "webActionEvent", EmitDefaultValue = false)]
+    [JsonPropertyName("webActionEvent")]
     public JourneyWebActionEventsNotificationWebActionMessage WebActionEvent { get; set; }
 
 
@@ -140,7 +140,7 @@ public partial class JourneyWebActionEventsNotificationWebActionEventsNotificati
     /// <summary>
     /// Gets or Sets BlockedWebActionOfferEvent
     /// </summary>
-    [DataMember(Name = "blockedWebActionOfferEvent", EmitDefaultValue = false)]
+    [JsonPropertyName("blockedWebActionOfferEvent")]
     public JourneyWebActionEventsNotificationBlockedWebActionOfferMessage BlockedWebActionOfferEvent { get; set; }
 
 

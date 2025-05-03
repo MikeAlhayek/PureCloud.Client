@@ -1,12 +1,12 @@
-using System.Runtime.Serialization;
 using System.Text;
+using System.Text.Json.Serialization;
 
 namespace PureCloud.Client.Models;
 
 /// <summary>
 /// Information about trigger test mode execution
 /// </summary>
-[DataContract]
+
 public partial class TestModeResults : IEquatable<TestModeResults>
 {
     /// <summary>
@@ -31,7 +31,7 @@ public partial class TestModeResults : IEquatable<TestModeResults>
     /// Information about the validation of the schema of the event body passed in to test mode
     /// </summary>
     /// <value>Information about the validation of the schema of the event body passed in to test mode</value>
-    [DataMember(Name = "schemaValidation", EmitDefaultValue = false)]
+    [JsonPropertyName("schemaValidation")]
     public TestSchemaOperation SchemaValidation { get; set; }
 
 
@@ -40,7 +40,7 @@ public partial class TestModeResults : IEquatable<TestModeResults>
     /// Information about the validation of the trigger target
     /// </summary>
     /// <value>Information about the validation of the trigger target</value>
-    [DataMember(Name = "targetValidation", EmitDefaultValue = false)]
+    [JsonPropertyName("targetValidation")]
     public TestTargetOperation TargetValidation { get; set; }
 
 
@@ -49,7 +49,7 @@ public partial class TestModeResults : IEquatable<TestModeResults>
     /// Information about the json path matching criteria
     /// </summary>
     /// <value>Information about the json path matching criteria</value>
-    [DataMember(Name = "jsonPathValidation", EmitDefaultValue = false)]
+    [JsonPropertyName("jsonPathValidation")]
     public TestMatchesOperation JsonPathValidation { get; set; }
 
 
@@ -58,7 +58,7 @@ public partial class TestModeResults : IEquatable<TestModeResults>
     /// Whether the trigger would have matched on the provided event body
     /// </summary>
     /// <value>Whether the trigger would have matched on the provided event body</value>
-    [DataMember(Name = "triggerMatches", EmitDefaultValue = false)]
+    [JsonPropertyName("triggerMatches")]
     public bool? TriggerMatches { get; set; }
 
 

@@ -7,14 +7,14 @@ namespace PureCloud.Client.Models;
 /// <summary>
 /// DocumentListContentBlock
 /// </summary>
-[DataContract]
+
 public partial class DocumentListContentBlock : IEquatable<DocumentListContentBlock>
 {
     /// <summary>
     /// The type of the list block.
     /// </summary>
     /// <value>The type of the list block.</value>
-    [JsonConverter(typeof(JsonStringEnumConverter))]
+    
     public enum TypeEnum
     {
         /// <summary>
@@ -59,7 +59,7 @@ public partial class DocumentListContentBlock : IEquatable<DocumentListContentBl
     /// The type of the list block.
     /// </summary>
     /// <value>The type of the list block.</value>
-    [DataMember(Name = "type", EmitDefaultValue = false)]
+    [JsonPropertyName("type")]
     public TypeEnum? Type { get; set; }
 
     /// <summary>
@@ -93,7 +93,7 @@ public partial class DocumentListContentBlock : IEquatable<DocumentListContentBl
     /// Text. It must contain a value if the type of the block is Text.
     /// </summary>
     /// <value>Text. It must contain a value if the type of the block is Text.</value>
-    [DataMember(Name = "text", EmitDefaultValue = false)]
+    [JsonPropertyName("text")]
     public DocumentText Text { get; set; }
 
 
@@ -102,7 +102,7 @@ public partial class DocumentListContentBlock : IEquatable<DocumentListContentBl
     /// Image. It must contain a value if the type of the block is Image.
     /// </summary>
     /// <value>Image. It must contain a value if the type of the block is Image.</value>
-    [DataMember(Name = "image", EmitDefaultValue = false)]
+    [JsonPropertyName("image")]
     public DocumentBodyImage Image { get; set; }
 
 
@@ -111,7 +111,7 @@ public partial class DocumentListContentBlock : IEquatable<DocumentListContentBl
     /// Video. It must contain a value if the type of the block is Video.
     /// </summary>
     /// <value>Video. It must contain a value if the type of the block is Video.</value>
-    [DataMember(Name = "video", EmitDefaultValue = false)]
+    [JsonPropertyName("video")]
     public DocumentBodyVideo Video { get; set; }
 
 
@@ -120,7 +120,7 @@ public partial class DocumentListContentBlock : IEquatable<DocumentListContentBl
     /// List. It must contain a value if the type of the block is UnorderedList or OrderedList.
     /// </summary>
     /// <value>List. It must contain a value if the type of the block is UnorderedList or OrderedList.</value>
-    [DataMember(Name = "list", EmitDefaultValue = false)]
+    [JsonPropertyName("list")]
     public DocumentBodyList List { get; set; }
 
 

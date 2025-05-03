@@ -7,14 +7,14 @@ namespace PureCloud.Client.Models;
 /// <summary>
 /// TimeOffRequestNotification
 /// </summary>
-[DataContract]
+
 public partial class TimeOffRequestNotification : IEquatable<TimeOffRequestNotification>
 {
     /// <summary>
     /// The status of this time off request
     /// </summary>
     /// <value>The status of this time off request</value>
-    [JsonConverter(typeof(JsonStringEnumConverter))]
+    
     public enum StatusEnum
     {
         /// <summary>
@@ -53,7 +53,7 @@ public partial class TimeOffRequestNotification : IEquatable<TimeOffRequestNotif
     /// The status of this time off request
     /// </summary>
     /// <value>The status of this time off request</value>
-    [DataMember(Name = "status", EmitDefaultValue = false)]
+    [JsonPropertyName("status")]
     public StatusEnum? Status { get; set; }
     /// <summary>
     /// Initializes a new instance of the <see cref="TimeOffRequestNotification" /> class.
@@ -81,7 +81,7 @@ public partial class TimeOffRequestNotification : IEquatable<TimeOffRequestNotif
     /// The ID of this time off request
     /// </summary>
     /// <value>The ID of this time off request</value>
-    [DataMember(Name = "timeOffRequestId", EmitDefaultValue = false)]
+    [JsonPropertyName("timeOffRequestId")]
     public string TimeOffRequestId { get; set; }
 
 
@@ -90,7 +90,7 @@ public partial class TimeOffRequestNotification : IEquatable<TimeOffRequestNotif
     /// The user associated with this time off request
     /// </summary>
     /// <value>The user associated with this time off request</value>
-    [DataMember(Name = "user", EmitDefaultValue = false)]
+    [JsonPropertyName("user")]
     public UserReference User { get; set; }
 
 
@@ -99,7 +99,7 @@ public partial class TimeOffRequestNotification : IEquatable<TimeOffRequestNotif
     /// Whether this is a full day request (false means partial day)
     /// </summary>
     /// <value>Whether this is a full day request (false means partial day)</value>
-    [DataMember(Name = "isFullDayRequest", EmitDefaultValue = false)]
+    [JsonPropertyName("isFullDayRequest")]
     public bool? IsFullDayRequest { get; set; }
 
 
@@ -110,7 +110,7 @@ public partial class TimeOffRequestNotification : IEquatable<TimeOffRequestNotif
     /// A set of start date-times in ISO-8601 format for partial day requests.  Will be not empty if isFullDayRequest &#x3D;&#x3D; false
     /// </summary>
     /// <value>A set of start date-times in ISO-8601 format for partial day requests.  Will be not empty if isFullDayRequest &#x3D;&#x3D; false</value>
-    [DataMember(Name = "partialDayStartDateTimes", EmitDefaultValue = false)]
+    [JsonPropertyName("partialDayStartDateTimes")]
     public List<DateTime?> PartialDayStartDateTimes { get; set; }
 
 
@@ -119,7 +119,7 @@ public partial class TimeOffRequestNotification : IEquatable<TimeOffRequestNotif
     /// A set of dates in yyyy-MM-dd format.  Should be interpreted in the management unit&#39;s configured time zone.  Will be not empty if isFullDayRequest &#x3D;&#x3D; true
     /// </summary>
     /// <value>A set of dates in yyyy-MM-dd format.  Should be interpreted in the management unit&#39;s configured time zone.  Will be not empty if isFullDayRequest &#x3D;&#x3D; true</value>
-    [DataMember(Name = "fullDayManagementUnitDates", EmitDefaultValue = false)]
+    [JsonPropertyName("fullDayManagementUnitDates")]
     public List<string> FullDayManagementUnitDates { get; set; }
 
 

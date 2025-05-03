@@ -1,4 +1,3 @@
-using System.Runtime.Serialization;
 using System.Text;
 using System.Text.Json.Serialization;
 
@@ -7,7 +6,7 @@ namespace PureCloud.Client.Models;
 /// <summary>
 /// OpenActionFields
 /// </summary>
-[DataContract]
+
 public partial class OpenActionFields : IEquatable<OpenActionFields>
 {
 
@@ -34,7 +33,7 @@ public partial class OpenActionFields : IEquatable<OpenActionFields>
     /// The specific type of the open action.
     /// </summary>
     /// <value>The specific type of the open action.</value>
-    [DataMember(Name = "openAction", EmitDefaultValue = false)]
+    [JsonPropertyName("openAction")]
     public DomainEntityRef OpenAction { get; set; }
 
 
@@ -43,7 +42,7 @@ public partial class OpenActionFields : IEquatable<OpenActionFields>
     /// Custom fields defined in the schema referenced by the open action type selected.
     /// </summary>
     /// <value>Custom fields defined in the schema referenced by the open action type selected.</value>
-    [DataMember(Name = "configurationFields", EmitDefaultValue = false)]
+    [JsonPropertyName("configurationFields")]
     public Dictionary<string, object> ConfigurationFields { get; set; }
 
 

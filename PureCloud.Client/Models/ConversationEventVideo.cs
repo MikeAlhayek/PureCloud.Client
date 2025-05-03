@@ -7,14 +7,14 @@ namespace PureCloud.Client.Models;
 /// <summary>
 /// A Video event.
 /// </summary>
-[DataContract]
+
 public partial class ConversationEventVideo : IEquatable<ConversationEventVideo>
 {
     /// <summary>
     /// Describes the type of Video event.
     /// </summary>
     /// <value>Describes the type of Video event.</value>
-    [JsonConverter(typeof(JsonStringEnumConverter))]
+    
     public enum TypeEnum
     {
         /// <summary>
@@ -53,7 +53,7 @@ public partial class ConversationEventVideo : IEquatable<ConversationEventVideo>
     /// Describes the type of Video event.
     /// </summary>
     /// <value>Describes the type of Video event.</value>
-    [DataMember(Name = "type", EmitDefaultValue = false)]
+    [JsonPropertyName("type")]
     public TypeEnum? Type { get; set; }
 
     /// <summary>
@@ -83,7 +83,7 @@ public partial class ConversationEventVideo : IEquatable<ConversationEventVideo>
     /// The Video offering ID.
     /// </summary>
     /// <value>The Video offering ID.</value>
-    [DataMember(Name = "offeringId", EmitDefaultValue = false)]
+    [JsonPropertyName("offeringId")]
     public string OfferingId { get; set; }
 
 
@@ -92,7 +92,7 @@ public partial class ConversationEventVideo : IEquatable<ConversationEventVideo>
     /// The Video offering JWT token.
     /// </summary>
     /// <value>The Video offering JWT token.</value>
-    [DataMember(Name = "jwt", EmitDefaultValue = false)]
+    [JsonPropertyName("jwt")]
     public string Jwt { get; set; }
 
 

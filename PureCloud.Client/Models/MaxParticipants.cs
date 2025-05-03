@@ -1,12 +1,12 @@
-using System.Runtime.Serialization;
 using System.Text;
+using System.Text.Json.Serialization;
 
 namespace PureCloud.Client.Models;
 
 /// <summary>
 /// MaxParticipants
 /// </summary>
-[DataContract]
+
 public partial class MaxParticipants : IEquatable<MaxParticipants>
 {
     /// <summary>
@@ -25,7 +25,7 @@ public partial class MaxParticipants : IEquatable<MaxParticipants>
     /// The maximum number of participants that are allowed on a conversation.
     /// </summary>
     /// <value>The maximum number of participants that are allowed on a conversation.</value>
-    [DataMember(Name = "maxParticipants", EmitDefaultValue = false)]
+    [JsonPropertyName("maxParticipants")]
     public int? _MaxParticipants { get; set; }
 
 

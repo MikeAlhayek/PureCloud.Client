@@ -7,14 +7,14 @@ namespace PureCloud.Client.Models;
 /// <summary>
 /// MediaParticipantRequest
 /// </summary>
-[DataContract]
+
 public partial class MediaParticipantRequest : IEquatable<MediaParticipantRequest>
 {
     /// <summary>
     /// The state to update to set for this participant's communications.  Possible values are: 'connected' and 'disconnected'.
     /// </summary>
     /// <value>The state to update to set for this participant's communications.  Possible values are: 'connected' and 'disconnected'.</value>
-    [JsonConverter(typeof(JsonStringEnumConverter))]
+    
     public enum StateEnum
     {
         /// <summary>
@@ -101,7 +101,7 @@ public partial class MediaParticipantRequest : IEquatable<MediaParticipantReques
     /// The state to update to set for this participant's communications.  Possible values are: 'connected' and 'disconnected'.
     /// </summary>
     /// <value>The state to update to set for this participant's communications.  Possible values are: 'connected' and 'disconnected'.</value>
-    [DataMember(Name = "state", EmitDefaultValue = false)]
+    [JsonPropertyName("state")]
     public StateEnum? State { get; set; }
     /// <summary>
     /// Initializes a new instance of the <see cref="MediaParticipantRequest" /> class.
@@ -131,7 +131,7 @@ public partial class MediaParticipantRequest : IEquatable<MediaParticipantReques
     /// Wrap-up to assign to this participant.
     /// </summary>
     /// <value>Wrap-up to assign to this participant.</value>
-    [DataMember(Name = "wrapup", EmitDefaultValue = false)]
+    [JsonPropertyName("wrapup")]
     public WrapupInput Wrapup { get; set; }
 
 
@@ -142,7 +142,7 @@ public partial class MediaParticipantRequest : IEquatable<MediaParticipantReques
     /// True to enable recording of this participant, otherwise false to disable recording.
     /// </summary>
     /// <value>True to enable recording of this participant, otherwise false to disable recording.</value>
-    [DataMember(Name = "recording", EmitDefaultValue = false)]
+    [JsonPropertyName("recording")]
     public bool? Recording { get; set; }
 
 
@@ -151,7 +151,7 @@ public partial class MediaParticipantRequest : IEquatable<MediaParticipantReques
     /// True to mute this conversation participant.
     /// </summary>
     /// <value>True to mute this conversation participant.</value>
-    [DataMember(Name = "muted", EmitDefaultValue = false)]
+    [JsonPropertyName("muted")]
     public bool? Muted { get; set; }
 
 
@@ -160,7 +160,7 @@ public partial class MediaParticipantRequest : IEquatable<MediaParticipantReques
     /// True to confine this conversation participant.  Should only be used for ad-hoc conferences
     /// </summary>
     /// <value>True to confine this conversation participant.  Should only be used for ad-hoc conferences</value>
-    [DataMember(Name = "confined", EmitDefaultValue = false)]
+    [JsonPropertyName("confined")]
     public bool? Confined { get; set; }
 
 
@@ -169,7 +169,7 @@ public partial class MediaParticipantRequest : IEquatable<MediaParticipantReques
     /// True to hold this conversation participant.
     /// </summary>
     /// <value>True to hold this conversation participant.</value>
-    [DataMember(Name = "held", EmitDefaultValue = false)]
+    [JsonPropertyName("held")]
     public bool? Held { get; set; }
 
 
@@ -178,7 +178,7 @@ public partial class MediaParticipantRequest : IEquatable<MediaParticipantReques
     /// True to skip wrap-up for this participant.
     /// </summary>
     /// <value>True to skip wrap-up for this participant.</value>
-    [DataMember(Name = "wrapupSkipped", EmitDefaultValue = false)]
+    [JsonPropertyName("wrapupSkipped")]
     public bool? WrapupSkipped { get; set; }
 
 

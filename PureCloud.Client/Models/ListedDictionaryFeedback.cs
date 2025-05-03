@@ -7,14 +7,14 @@ namespace PureCloud.Client.Models;
 /// <summary>
 /// ListedDictionaryFeedback
 /// </summary>
-[DataContract]
+
 public partial class ListedDictionaryFeedback : IEquatable<ListedDictionaryFeedback>
 {
     /// <summary>
     /// The source of the given dictionary feedback
     /// </summary>
     /// <value>The source of the given dictionary feedback</value>
-    [JsonConverter(typeof(JsonStringEnumConverter))]
+    
     public enum SourceEnum
     {
         /// <summary>
@@ -35,7 +35,7 @@ public partial class ListedDictionaryFeedback : IEquatable<ListedDictionaryFeedb
     /// The source of the given dictionary feedback
     /// </summary>
     /// <value>The source of the given dictionary feedback</value>
-    [DataMember(Name = "source", EmitDefaultValue = false)]
+    [JsonPropertyName("source")]
     public SourceEnum? Source { get; private set; }
 
     /// <summary>
@@ -63,7 +63,7 @@ public partial class ListedDictionaryFeedback : IEquatable<ListedDictionaryFeedb
     /// The globally unique identifier for the object.
     /// </summary>
     /// <value>The globally unique identifier for the object.</value>
-    [DataMember(Name = "id", EmitDefaultValue = false)]
+    [JsonPropertyName("id")]
     public string Id { get; private set; }
 
 
@@ -72,7 +72,7 @@ public partial class ListedDictionaryFeedback : IEquatable<ListedDictionaryFeedb
     /// The dictionary term which needs to be added to dictionary feedback system
     /// </summary>
     /// <value>The dictionary term which needs to be added to dictionary feedback system</value>
-    [DataMember(Name = "term", EmitDefaultValue = false)]
+    [JsonPropertyName("term")]
     public string Term { get; set; }
 
 
@@ -81,7 +81,7 @@ public partial class ListedDictionaryFeedback : IEquatable<ListedDictionaryFeedb
     /// The dialect for the given term, dialect format is {language}-{country} where language follows ISO 639-1 standard and country follows ISO 3166-1 alpha 2 standard
     /// </summary>
     /// <value>The dialect for the given term, dialect format is {language}-{country} where language follows ISO 639-1 standard and country follows ISO 3166-1 alpha 2 standard</value>
-    [DataMember(Name = "dialect", EmitDefaultValue = false)]
+    [JsonPropertyName("dialect")]
     public string Dialect { get; set; }
 
 
@@ -90,7 +90,7 @@ public partial class ListedDictionaryFeedback : IEquatable<ListedDictionaryFeedb
     /// A weighted value assigned to a phrase. The higher the value, the higher the likelihood that the system will choose the word or phrase from the possible alternatives. Boost range is from 1.0 to 10.0. Default is 2.0
     /// </summary>
     /// <value>A weighted value assigned to a phrase. The higher the value, the higher the likelihood that the system will choose the word or phrase from the possible alternatives. Boost range is from 1.0 to 10.0. Default is 2.0</value>
-    [DataMember(Name = "boostValue", EmitDefaultValue = false)]
+    [JsonPropertyName("boostValue")]
     public float? BoostValue { get; set; }
 
 
@@ -101,7 +101,7 @@ public partial class ListedDictionaryFeedback : IEquatable<ListedDictionaryFeedb
     /// The Timestamp when dictionary feedback created. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z
     /// </summary>
     /// <value>The Timestamp when dictionary feedback created. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z</value>
-    [DataMember(Name = "dateCreated", EmitDefaultValue = false)]
+    [JsonPropertyName("dateCreated")]
     public DateTime? DateCreated { get; private set; }
 
 
@@ -110,7 +110,7 @@ public partial class ListedDictionaryFeedback : IEquatable<ListedDictionaryFeedb
     /// The Id of the user who created the dictionary feedback
     /// </summary>
     /// <value>The Id of the user who created the dictionary feedback</value>
-    [DataMember(Name = "createdBy", EmitDefaultValue = false)]
+    [JsonPropertyName("createdBy")]
     public UserReference CreatedBy { get; private set; }
 
 
@@ -119,7 +119,7 @@ public partial class ListedDictionaryFeedback : IEquatable<ListedDictionaryFeedb
     /// The Timestamp when dictionary feedback modified. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z
     /// </summary>
     /// <value>The Timestamp when dictionary feedback modified. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z</value>
-    [DataMember(Name = "dateModified", EmitDefaultValue = false)]
+    [JsonPropertyName("dateModified")]
     public DateTime? DateModified { get; private set; }
 
 
@@ -128,7 +128,7 @@ public partial class ListedDictionaryFeedback : IEquatable<ListedDictionaryFeedb
     /// The Id of the user who modified the dictionary feedback
     /// </summary>
     /// <value>The Id of the user who modified the dictionary feedback</value>
-    [DataMember(Name = "modifiedBy", EmitDefaultValue = false)]
+    [JsonPropertyName("modifiedBy")]
     public UserReference ModifiedBy { get; private set; }
 
 
@@ -137,7 +137,7 @@ public partial class ListedDictionaryFeedback : IEquatable<ListedDictionaryFeedb
     /// The URI for this object
     /// </summary>
     /// <value>The URI for this object</value>
-    [DataMember(Name = "selfUri", EmitDefaultValue = false)]
+    [JsonPropertyName("selfUri")]
     public string SelfUri { get; private set; }
 
 

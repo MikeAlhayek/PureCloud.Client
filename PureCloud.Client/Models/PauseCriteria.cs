@@ -7,13 +7,13 @@ namespace PureCloud.Client.Models;
 /// <summary>
 /// PauseCriteria
 /// </summary>
-[DataContract]
+
 public partial class PauseCriteria : IEquatable<PauseCriteria>
 {
     /// <summary>
     /// Gets or Sets Condition
     /// </summary>
-    [JsonConverter(typeof(JsonStringEnumConverter))]
+    
     public enum ConditionEnum
     {
         /// <summary>
@@ -57,7 +57,7 @@ public partial class PauseCriteria : IEquatable<PauseCriteria>
     /// <summary>
     /// Gets or Sets Condition
     /// </summary>
-    [DataMember(Name = "condition", EmitDefaultValue = false)]
+    [JsonPropertyName("condition")]
     public ConditionEnum? Condition { get; set; }
     /// <summary>
     /// Initializes a new instance of the <see cref="PauseCriteria" /> class.
@@ -76,7 +76,7 @@ public partial class PauseCriteria : IEquatable<PauseCriteria>
     /// <summary>
     /// Gets or Sets UrlFragment
     /// </summary>
-    [DataMember(Name = "urlFragment", EmitDefaultValue = false)]
+    [JsonPropertyName("urlFragment")]
     public string UrlFragment { get; set; }
 
 

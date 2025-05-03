@@ -1,4 +1,3 @@
-using System.Runtime.Serialization;
 using System.Text;
 
 namespace PureCloud.Client.Models;
@@ -6,7 +5,7 @@ namespace PureCloud.Client.Models;
 /// <summary>
 /// DnclistDownloadReadyObject
 /// </summary>
-[DataContract]
+
 public partial class DnclistDownloadReadyObject : IEquatable<DnclistDownloadReadyObject>
 {
     /// <summary>

@@ -7,14 +7,14 @@ namespace PureCloud.Client.Models;
 /// <summary>
 /// DnsRecordEntry
 /// </summary>
-[DataContract]
+
 public partial class DnsRecordEntry : IEquatable<DnsRecordEntry>
 {
     /// <summary>
     /// the current status of the related verification process
     /// </summary>
     /// <value>the current status of the related verification process</value>
-    [JsonConverter(typeof(JsonStringEnumConverter))]
+    
     public enum VerificationStatusEnum
     {
         /// <summary>
@@ -53,7 +53,7 @@ public partial class DnsRecordEntry : IEquatable<DnsRecordEntry>
     /// the current status of the related verification process
     /// </summary>
     /// <value>the current status of the related verification process</value>
-    [DataMember(Name = "verificationStatus", EmitDefaultValue = false)]
+    [JsonPropertyName("verificationStatus")]
     public VerificationStatusEnum? VerificationStatus { get; set; }
     /// <summary>
     /// Initializes a new instance of the <see cref="DnsRecordEntry" /> class.
@@ -75,7 +75,7 @@ public partial class DnsRecordEntry : IEquatable<DnsRecordEntry>
     /// the hostname of the DNS entry
     /// </summary>
     /// <value>the hostname of the DNS entry</value>
-    [DataMember(Name = "host", EmitDefaultValue = false)]
+    [JsonPropertyName("host")]
     public string Host { get; set; }
 
 
@@ -84,7 +84,7 @@ public partial class DnsRecordEntry : IEquatable<DnsRecordEntry>
     /// the payload of the DNS entry
     /// </summary>
     /// <value>the payload of the DNS entry</value>
-    [DataMember(Name = "recordContents", EmitDefaultValue = false)]
+    [JsonPropertyName("recordContents")]
     public string RecordContents { get; set; }
 
 

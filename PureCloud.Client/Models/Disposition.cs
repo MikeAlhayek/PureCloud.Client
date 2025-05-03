@@ -1,4 +1,3 @@
-using System.Runtime.Serialization;
 using System.Text;
 using System.Text.Json.Serialization;
 
@@ -7,7 +6,7 @@ namespace PureCloud.Client.Models;
 /// <summary>
 /// Disposition
 /// </summary>
-[DataContract]
+
 public partial class Disposition : IEquatable<Disposition>
 {
 
@@ -40,7 +39,7 @@ public partial class Disposition : IEquatable<Disposition>
     /// Name of the disposition. Either a platform predefined value, or the name of the disposition in the disposition table..
     /// </summary>
     /// <value>Name of the disposition. Either a platform predefined value, or the name of the disposition in the disposition table..</value>
-    [DataMember(Name = "name", EmitDefaultValue = false)]
+    [JsonPropertyName("name")]
     public string Name { get; set; }
 
 
@@ -49,7 +48,7 @@ public partial class Disposition : IEquatable<Disposition>
     /// The final media analyzer result that triggered the disposition result, if any.
     /// </summary>
     /// <value>The final media analyzer result that triggered the disposition result, if any.</value>
-    [DataMember(Name = "analyzer", EmitDefaultValue = false)]
+    [JsonPropertyName("analyzer")]
     public string Analyzer { get; set; }
 
 
@@ -58,7 +57,7 @@ public partial class Disposition : IEquatable<Disposition>
     /// Contains various parameters related to call analysis.
     /// </summary>
     /// <value>Contains various parameters related to call analysis.</value>
-    [DataMember(Name = "dispositionParameters", EmitDefaultValue = false)]
+    [JsonPropertyName("dispositionParameters")]
     public DispositionParameters DispositionParameters { get; set; }
 
 
@@ -67,7 +66,7 @@ public partial class Disposition : IEquatable<Disposition>
     /// Absolute time when the speech started. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z
     /// </summary>
     /// <value>Absolute time when the speech started. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z</value>
-    [DataMember(Name = "detectedSpeechStart", EmitDefaultValue = false)]
+    [JsonPropertyName("detectedSpeechStart")]
     public DateTime? DetectedSpeechStart { get; set; }
 
 
@@ -76,7 +75,7 @@ public partial class Disposition : IEquatable<Disposition>
     /// Absolute time when the speech ended. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z
     /// </summary>
     /// <value>Absolute time when the speech ended. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z</value>
-    [DataMember(Name = "detectedSpeechEnd", EmitDefaultValue = false)]
+    [JsonPropertyName("detectedSpeechEnd")]
     public DateTime? DetectedSpeechEnd { get; set; }
 
 

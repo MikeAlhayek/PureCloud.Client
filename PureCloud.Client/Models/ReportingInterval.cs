@@ -7,14 +7,14 @@ namespace PureCloud.Client.Models;
 /// <summary>
 /// ReportingInterval
 /// </summary>
-[DataContract]
+
 public partial class ReportingInterval : IEquatable<ReportingInterval>
 {
     /// <summary>
     /// The granularity of the reporting interval period
     /// </summary>
     /// <value>The granularity of the reporting interval period</value>
-    [JsonConverter(typeof(JsonStringEnumConverter))]
+    
     public enum IntervalTypeEnum
     {
         /// <summary>
@@ -47,7 +47,7 @@ public partial class ReportingInterval : IEquatable<ReportingInterval>
     /// The granularity of the reporting interval period
     /// </summary>
     /// <value>The granularity of the reporting interval period</value>
-    [DataMember(Name = "intervalType", EmitDefaultValue = false)]
+    [JsonPropertyName("intervalType")]
     public IntervalTypeEnum? IntervalType { get; set; }
 
     /// <summary>
@@ -75,7 +75,7 @@ public partial class ReportingInterval : IEquatable<ReportingInterval>
     /// The value of the reporting interval period for a given interval type
     /// </summary>
     /// <value>The value of the reporting interval period for a given interval type</value>
-    [DataMember(Name = "intervalValue", EmitDefaultValue = false)]
+    [JsonPropertyName("intervalValue")]
     public int? IntervalValue { get; set; }
 
 

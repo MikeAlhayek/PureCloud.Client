@@ -7,14 +7,14 @@ namespace PureCloud.Client.Models;
 /// <summary>
 /// ImportTemplate
 /// </summary>
-[DataContract]
+
 public partial class ImportTemplate : IEquatable<ImportTemplate>
 {
     /// <summary>
     /// The list name format for target ContactLists. When Custom is provided, customListNameFormatValue is required.
     /// </summary>
     /// <value>The list name format for target ContactLists. When Custom is provided, customListNameFormatValue is required.</value>
-    [JsonConverter(typeof(JsonStringEnumConverter))]
+    
     public enum ListNameFormatEnum
     {
         /// <summary>
@@ -71,7 +71,7 @@ public partial class ImportTemplate : IEquatable<ImportTemplate>
     /// The list name format for target ContactLists. When Custom is provided, customListNameFormatValue is required.
     /// </summary>
     /// <value>The list name format for target ContactLists. When Custom is provided, customListNameFormatValue is required.</value>
-    [DataMember(Name = "listNameFormat", EmitDefaultValue = false)]
+    [JsonPropertyName("listNameFormat")]
     public ListNameFormatEnum? ListNameFormat { get; set; }
 
     /// <summary>
@@ -109,7 +109,7 @@ public partial class ImportTemplate : IEquatable<ImportTemplate>
     /// The globally unique identifier for the object.
     /// </summary>
     /// <value>The globally unique identifier for the object.</value>
-    [DataMember(Name = "id", EmitDefaultValue = false)]
+    [JsonPropertyName("id")]
     public string Id { get; private set; }
 
 
@@ -118,7 +118,7 @@ public partial class ImportTemplate : IEquatable<ImportTemplate>
     /// The name of the import template.
     /// </summary>
     /// <value>The name of the import template.</value>
-    [DataMember(Name = "name", EmitDefaultValue = false)]
+    [JsonPropertyName("name")]
     public string Name { get; set; }
 
 
@@ -127,7 +127,7 @@ public partial class ImportTemplate : IEquatable<ImportTemplate>
     /// Creation time of the entity. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z
     /// </summary>
     /// <value>Creation time of the entity. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z</value>
-    [DataMember(Name = "dateCreated", EmitDefaultValue = false)]
+    [JsonPropertyName("dateCreated")]
     public DateTime? DateCreated { get; private set; }
 
 
@@ -136,7 +136,7 @@ public partial class ImportTemplate : IEquatable<ImportTemplate>
     /// Last modified time of the entity. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z
     /// </summary>
     /// <value>Last modified time of the entity. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z</value>
-    [DataMember(Name = "dateModified", EmitDefaultValue = false)]
+    [JsonPropertyName("dateModified")]
     public DateTime? DateModified { get; private set; }
 
 
@@ -145,7 +145,7 @@ public partial class ImportTemplate : IEquatable<ImportTemplate>
     /// Required for updates, must match the version number of the most recent update
     /// </summary>
     /// <value>Required for updates, must match the version number of the most recent update</value>
-    [DataMember(Name = "version", EmitDefaultValue = false)]
+    [JsonPropertyName("version")]
     public int? Version { get; set; }
 
 
@@ -154,7 +154,7 @@ public partial class ImportTemplate : IEquatable<ImportTemplate>
     /// ContactListTemplate for this ImportTemplate.
     /// </summary>
     /// <value>ContactListTemplate for this ImportTemplate.</value>
-    [DataMember(Name = "contactListTemplate", EmitDefaultValue = false)]
+    [JsonPropertyName("contactListTemplate")]
     public DomainEntityRef ContactListTemplate { get; set; }
 
 
@@ -163,7 +163,7 @@ public partial class ImportTemplate : IEquatable<ImportTemplate>
     /// ContactListFilter for this ImportTemplate.
     /// </summary>
     /// <value>ContactListFilter for this ImportTemplate.</value>
-    [DataMember(Name = "contactListFilter", EmitDefaultValue = false)]
+    [JsonPropertyName("contactListFilter")]
     public DomainEntityRef ContactListFilter { get; set; }
 
 
@@ -172,7 +172,7 @@ public partial class ImportTemplate : IEquatable<ImportTemplate>
     /// Whether or not to use splitting criteria. Default is false.
     /// </summary>
     /// <value>Whether or not to use splitting criteria. Default is false.</value>
-    [DataMember(Name = "useSplittingCriteria", EmitDefaultValue = false)]
+    [JsonPropertyName("useSplittingCriteria")]
     public bool? UseSplittingCriteria { get; set; }
 
 
@@ -181,7 +181,7 @@ public partial class ImportTemplate : IEquatable<ImportTemplate>
     /// How to split contact records, required if useSplittingCriteria is true.
     /// </summary>
     /// <value>How to split contact records, required if useSplittingCriteria is true.</value>
-    [DataMember(Name = "splittingInformation", EmitDefaultValue = false)]
+    [JsonPropertyName("splittingInformation")]
     public SplittingInformation SplittingInformation { get; set; }
 
 
@@ -192,7 +192,7 @@ public partial class ImportTemplate : IEquatable<ImportTemplate>
     /// Custom value for the list name format, at least %N is required. Any character other than the specified tokens will be used as is. Available tokens: %N: ListNamePrefix; %P: Part number; %F: Filter name; %C: Column value; YYYY: year; MM: month; DD: day; hh: hour; mm: minute; ss: second.
     /// </summary>
     /// <value>Custom value for the list name format, at least %N is required. Any character other than the specified tokens will be used as is. Available tokens: %N: ListNamePrefix; %P: Part number; %F: Filter name; %C: Column value; YYYY: year; MM: month; DD: day; hh: hour; mm: minute; ss: second.</value>
-    [DataMember(Name = "customListNameFormatValue", EmitDefaultValue = false)]
+    [JsonPropertyName("customListNameFormatValue")]
     public string CustomListNameFormatValue { get; set; }
 
 
@@ -201,7 +201,7 @@ public partial class ImportTemplate : IEquatable<ImportTemplate>
     /// The status of the import process.
     /// </summary>
     /// <value>The status of the import process.</value>
-    [DataMember(Name = "importStatus", EmitDefaultValue = false)]
+    [JsonPropertyName("importStatus")]
     public ImportStatus ImportStatus { get; private set; }
 
 
@@ -210,7 +210,7 @@ public partial class ImportTemplate : IEquatable<ImportTemplate>
     /// The URI for this object
     /// </summary>
     /// <value>The URI for this object</value>
-    [DataMember(Name = "selfUri", EmitDefaultValue = false)]
+    [JsonPropertyName("selfUri")]
     public string SelfUri { get; private set; }
 
 

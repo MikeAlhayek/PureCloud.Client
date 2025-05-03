@@ -1,12 +1,12 @@
-using System.Runtime.Serialization;
 using System.Text;
+using System.Text.Json.Serialization;
 
 namespace PureCloud.Client.Models;
 
 /// <summary>
 /// OperatorPosition
 /// </summary>
-[DataContract]
+
 public partial class OperatorPosition : IEquatable<OperatorPosition>
 {
     /// <summary>
@@ -27,7 +27,7 @@ public partial class OperatorPosition : IEquatable<OperatorPosition>
     /// Number of seconds (for voice interactions) from operand match
     /// </summary>
     /// <value>Number of seconds (for voice interactions) from operand match</value>
-    [DataMember(Name = "voiceSecondsPosition", EmitDefaultValue = false)]
+    [JsonPropertyName("voiceSecondsPosition")]
     public int? VoiceSecondsPosition { get; set; }
 
 
@@ -36,7 +36,7 @@ public partial class OperatorPosition : IEquatable<OperatorPosition>
     /// Number of words (for digital interactions) from operand match
     /// </summary>
     /// <value>Number of words (for digital interactions) from operand match</value>
-    [DataMember(Name = "digitalWordsPosition", EmitDefaultValue = false)]
+    [JsonPropertyName("digitalWordsPosition")]
     public int? DigitalWordsPosition { get; set; }
 
 

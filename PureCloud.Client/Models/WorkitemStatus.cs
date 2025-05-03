@@ -7,14 +7,14 @@ namespace PureCloud.Client.Models;
 /// <summary>
 /// WorkitemStatus
 /// </summary>
-[DataContract]
+
 public partial class WorkitemStatus : IEquatable<WorkitemStatus>
 {
     /// <summary>
     /// The Category of the Status.
     /// </summary>
     /// <value>The Category of the Status.</value>
-    [JsonConverter(typeof(JsonStringEnumConverter))]
+    
     public enum CategoryEnum
     {
         /// <summary>
@@ -59,7 +59,7 @@ public partial class WorkitemStatus : IEquatable<WorkitemStatus>
     /// The Category of the Status.
     /// </summary>
     /// <value>The Category of the Status.</value>
-    [DataMember(Name = "category", EmitDefaultValue = false)]
+    [JsonPropertyName("category")]
     public CategoryEnum? Category { get; set; }
     /// <summary>
     /// Initializes a new instance of the <see cref="WorkitemStatus" /> class.
@@ -93,7 +93,7 @@ public partial class WorkitemStatus : IEquatable<WorkitemStatus>
     /// The globally unique identifier for the object.
     /// </summary>
     /// <value>The globally unique identifier for the object.</value>
-    [DataMember(Name = "id", EmitDefaultValue = false)]
+    [JsonPropertyName("id")]
     public string Id { get; private set; }
 
 
@@ -101,7 +101,7 @@ public partial class WorkitemStatus : IEquatable<WorkitemStatus>
     /// <summary>
     /// Gets or Sets Name
     /// </summary>
-    [DataMember(Name = "name", EmitDefaultValue = false)]
+    [JsonPropertyName("name")]
     public string Name { get; set; }
 
 
@@ -112,7 +112,7 @@ public partial class WorkitemStatus : IEquatable<WorkitemStatus>
     /// The Statuses the Status can transition to.
     /// </summary>
     /// <value>The Statuses the Status can transition to.</value>
-    [DataMember(Name = "destinationStatuses", EmitDefaultValue = false)]
+    [JsonPropertyName("destinationStatuses")]
     public List<WorkitemStatusReference> DestinationStatuses { get; set; }
 
 
@@ -121,7 +121,7 @@ public partial class WorkitemStatus : IEquatable<WorkitemStatus>
     /// The description of the Status.
     /// </summary>
     /// <value>The description of the Status.</value>
-    [DataMember(Name = "description", EmitDefaultValue = false)]
+    [JsonPropertyName("description")]
     public string Description { get; set; }
 
 
@@ -130,7 +130,7 @@ public partial class WorkitemStatus : IEquatable<WorkitemStatus>
     /// Default destination status to which this Status will transition to if auto status transition enabled.
     /// </summary>
     /// <value>Default destination status to which this Status will transition to if auto status transition enabled.</value>
-    [DataMember(Name = "defaultDestinationStatus", EmitDefaultValue = false)]
+    [JsonPropertyName("defaultDestinationStatus")]
     public WorkitemStatusReference DefaultDestinationStatus { get; set; }
 
 
@@ -139,7 +139,7 @@ public partial class WorkitemStatus : IEquatable<WorkitemStatus>
     /// Delay in seconds for auto status transition
     /// </summary>
     /// <value>Delay in seconds for auto status transition</value>
-    [DataMember(Name = "statusTransitionDelaySeconds", EmitDefaultValue = false)]
+    [JsonPropertyName("statusTransitionDelaySeconds")]
     public int? StatusTransitionDelaySeconds { get; set; }
 
 
@@ -148,7 +148,7 @@ public partial class WorkitemStatus : IEquatable<WorkitemStatus>
     /// Time is represented as an ISO-8601 string without a timezone. For example: HH:mm:ss.SSS
     /// </summary>
     /// <value>Time is represented as an ISO-8601 string without a timezone. For example: HH:mm:ss.SSS</value>
-    [DataMember(Name = "statusTransitionTime", EmitDefaultValue = false)]
+    [JsonPropertyName("statusTransitionTime")]
     public string StatusTransitionTime { get; set; }
 
 
@@ -157,7 +157,7 @@ public partial class WorkitemStatus : IEquatable<WorkitemStatus>
     /// The Worktype containing the Status.
     /// </summary>
     /// <value>The Worktype containing the Status.</value>
-    [DataMember(Name = "worktype", EmitDefaultValue = false)]
+    [JsonPropertyName("worktype")]
     public WorktypeReference Worktype { get; set; }
 
 
@@ -166,7 +166,7 @@ public partial class WorkitemStatus : IEquatable<WorkitemStatus>
     /// Terminate workitem on selection of status. Applicable only for statuses in the Closed category.
     /// </summary>
     /// <value>Terminate workitem on selection of status. Applicable only for statuses in the Closed category.</value>
-    [DataMember(Name = "autoTerminateWorkitem", EmitDefaultValue = false)]
+    [JsonPropertyName("autoTerminateWorkitem")]
     public bool? AutoTerminateWorkitem { get; set; }
 
 
@@ -175,7 +175,7 @@ public partial class WorkitemStatus : IEquatable<WorkitemStatus>
     /// The URI for this object
     /// </summary>
     /// <value>The URI for this object</value>
-    [DataMember(Name = "selfUri", EmitDefaultValue = false)]
+    [JsonPropertyName("selfUri")]
     public string SelfUri { get; private set; }
 
 

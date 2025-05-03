@@ -7,14 +7,14 @@ namespace PureCloud.Client.Models;
 /// <summary>
 /// Additional identifiers for describing messaging recipient.
 /// </summary>
-[DataContract]
+
 public partial class ConversationRecipientAdditionalIdentifier : IEquatable<ConversationRecipientAdditionalIdentifier>
 {
     /// <summary>
     /// Type of the Identifier
     /// </summary>
     /// <value>Type of the Identifier</value>
-    [JsonConverter(typeof(JsonStringEnumConverter))]
+    
     public enum TypeEnum
     {
         /// <summary>
@@ -65,7 +65,7 @@ public partial class ConversationRecipientAdditionalIdentifier : IEquatable<Conv
     /// Type of the Identifier
     /// </summary>
     /// <value>Type of the Identifier</value>
-    [DataMember(Name = "type", EmitDefaultValue = false)]
+    [JsonPropertyName("type")]
     public TypeEnum? Type { get; private set; }
     /// <summary>
     /// Initializes a new instance of the <see cref="ConversationRecipientAdditionalIdentifier" /> class.
@@ -83,7 +83,7 @@ public partial class ConversationRecipientAdditionalIdentifier : IEquatable<Conv
     /// The Identifier value.
     /// </summary>
     /// <value>The Identifier value.</value>
-    [DataMember(Name = "value", EmitDefaultValue = false)]
+    [JsonPropertyName("value")]
     public string Value { get; private set; }
 
 

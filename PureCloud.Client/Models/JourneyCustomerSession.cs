@@ -1,4 +1,3 @@
-using System.Runtime.Serialization;
 using System.Text;
 using System.Text.Json.Serialization;
 
@@ -7,7 +6,7 @@ namespace PureCloud.Client.Models;
 /// <summary>
 /// JourneyCustomerSession
 /// </summary>
-[DataContract]
+
 public partial class JourneyCustomerSession : IEquatable<JourneyCustomerSession>
 {
 
@@ -34,7 +33,7 @@ public partial class JourneyCustomerSession : IEquatable<JourneyCustomerSession>
     /// An ID of a Customer/User&#39;s session within the Journey System at a point-in-time
     /// </summary>
     /// <value>An ID of a Customer/User&#39;s session within the Journey System at a point-in-time</value>
-    [DataMember(Name = "id", EmitDefaultValue = false)]
+    [JsonPropertyName("id")]
     public string Id { get; set; }
 
 
@@ -43,7 +42,7 @@ public partial class JourneyCustomerSession : IEquatable<JourneyCustomerSession>
     /// The type of the Customer/User&#39;s session within the Journey System (e.g. web, app)
     /// </summary>
     /// <value>The type of the Customer/User&#39;s session within the Journey System (e.g. web, app)</value>
-    [DataMember(Name = "type", EmitDefaultValue = false)]
+    [JsonPropertyName("type")]
     public string Type { get; set; }
 
 

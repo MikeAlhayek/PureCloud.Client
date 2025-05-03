@@ -7,14 +7,14 @@ namespace PureCloud.Client.Models;
 /// <summary>
 /// SetTimeOffIntegrationStatusRequest
 /// </summary>
-[DataContract]
+
 public partial class SetTimeOffIntegrationStatusRequest : IEquatable<SetTimeOffIntegrationStatusRequest>
 {
     /// <summary>
     /// The integration status value for the time off request
     /// </summary>
     /// <value>The integration status value for the time off request</value>
-    [JsonConverter(typeof(JsonStringEnumConverter))]
+    
     public enum IntegrationStatusEnum
     {
         /// <summary>
@@ -53,7 +53,7 @@ public partial class SetTimeOffIntegrationStatusRequest : IEquatable<SetTimeOffI
     /// The integration status value for the time off request
     /// </summary>
     /// <value>The integration status value for the time off request</value>
-    [DataMember(Name = "integrationStatus", EmitDefaultValue = false)]
+    [JsonPropertyName("integrationStatus")]
     public IntegrationStatusEnum? IntegrationStatus { get; set; }
 
     /// <summary>

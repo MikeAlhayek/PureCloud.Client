@@ -1,12 +1,12 @@
-using System.Runtime.Serialization;
 using System.Text;
+using System.Text.Json.Serialization;
 
 namespace PureCloud.Client.Models;
 
 /// <summary>
 /// QueryResponseGroupedData
 /// </summary>
-[DataContract]
+
 public partial class QueryResponseGroupedData : IEquatable<QueryResponseGroupedData>
 {
     /// <summary>
@@ -27,7 +27,7 @@ public partial class QueryResponseGroupedData : IEquatable<QueryResponseGroupedD
     /// The group values for this data
     /// </summary>
     /// <value>The group values for this data</value>
-    [DataMember(Name = "group", EmitDefaultValue = false)]
+    [JsonPropertyName("group")]
     public Dictionary<string, string> Group { get; set; }
 
 
@@ -36,7 +36,7 @@ public partial class QueryResponseGroupedData : IEquatable<QueryResponseGroupedD
     /// The metrics in this group
     /// </summary>
     /// <value>The metrics in this group</value>
-    [DataMember(Name = "data", EmitDefaultValue = false)]
+    [JsonPropertyName("data")]
     public List<QueryResponseData> Data { get; set; }
 
 

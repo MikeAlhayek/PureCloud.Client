@@ -1,4 +1,3 @@
-using System.Runtime.Serialization;
 using System.Text;
 using System.Text.Json.Serialization;
 
@@ -7,7 +6,7 @@ namespace PureCloud.Client.Models;
 /// <summary>
 /// ContactCallbackRequest
 /// </summary>
-[DataContract]
+
 public partial class ContactCallbackRequest : IEquatable<ContactCallbackRequest>
 {
 
@@ -40,7 +39,7 @@ public partial class ContactCallbackRequest : IEquatable<ContactCallbackRequest>
     /// Campaign identifier
     /// </summary>
     /// <value>Campaign identifier</value>
-    [DataMember(Name = "campaignId", EmitDefaultValue = false)]
+    [JsonPropertyName("campaignId")]
     public string CampaignId { get; set; }
 
 
@@ -49,7 +48,7 @@ public partial class ContactCallbackRequest : IEquatable<ContactCallbackRequest>
     /// Contact list identifier
     /// </summary>
     /// <value>Contact list identifier</value>
-    [DataMember(Name = "contactListId", EmitDefaultValue = false)]
+    [JsonPropertyName("contactListId")]
     public string ContactListId { get; set; }
 
 
@@ -58,7 +57,7 @@ public partial class ContactCallbackRequest : IEquatable<ContactCallbackRequest>
     /// Contact identifier
     /// </summary>
     /// <value>Contact identifier</value>
-    [DataMember(Name = "contactId", EmitDefaultValue = false)]
+    [JsonPropertyName("contactId")]
     public string ContactId { get; set; }
 
 
@@ -67,7 +66,7 @@ public partial class ContactCallbackRequest : IEquatable<ContactCallbackRequest>
     /// Name of the phone column containing the number to be called
     /// </summary>
     /// <value>Name of the phone column containing the number to be called</value>
-    [DataMember(Name = "phoneColumn", EmitDefaultValue = false)]
+    [JsonPropertyName("phoneColumn")]
     public string PhoneColumn { get; set; }
 
 
@@ -76,7 +75,7 @@ public partial class ContactCallbackRequest : IEquatable<ContactCallbackRequest>
     /// The scheduled time for the callback as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss.SSSZ\&quot;, example &#x3D; \&quot;2016-01-02T16:59:59\&quot;
     /// </summary>
     /// <value>The scheduled time for the callback as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss.SSSZ\&quot;, example &#x3D; \&quot;2016-01-02T16:59:59\&quot;</value>
-    [DataMember(Name = "schedule", EmitDefaultValue = false)]
+    [JsonPropertyName("schedule")]
     public string Schedule { get; set; }
 
 

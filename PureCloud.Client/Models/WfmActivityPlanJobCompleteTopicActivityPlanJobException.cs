@@ -7,13 +7,13 @@ namespace PureCloud.Client.Models;
 /// <summary>
 /// WfmActivityPlanJobCompleteTopicActivityPlanJobException
 /// </summary>
-[DataContract]
+
 public partial class WfmActivityPlanJobCompleteTopicActivityPlanJobException : IEquatable<WfmActivityPlanJobCompleteTopicActivityPlanJobException>
 {
     /// <summary>
     /// Gets or Sets ExceptionType
     /// </summary>
-    [JsonConverter(typeof(JsonStringEnumConverter))]
+    
     public enum ExceptionTypeEnum
     {
         /// <summary>
@@ -39,7 +39,7 @@ public partial class WfmActivityPlanJobCompleteTopicActivityPlanJobException : I
     /// <summary>
     /// Gets or Sets ExceptionType
     /// </summary>
-    [DataMember(Name = "exceptionType", EmitDefaultValue = false)]
+    [JsonPropertyName("exceptionType")]
     public ExceptionTypeEnum? ExceptionType { get; set; }
     /// <summary>
     /// Initializes a new instance of the <see cref="WfmActivityPlanJobCompleteTopicActivityPlanJobException" /> class.
@@ -60,7 +60,7 @@ public partial class WfmActivityPlanJobCompleteTopicActivityPlanJobException : I
     /// <summary>
     /// Gets or Sets Occurrences
     /// </summary>
-    [DataMember(Name = "occurrences", EmitDefaultValue = false)]
+    [JsonPropertyName("occurrences")]
     public List<WfmActivityPlanJobCompleteTopicActivityPlanOccurrenceReference> Occurrences { get; set; }
 
 

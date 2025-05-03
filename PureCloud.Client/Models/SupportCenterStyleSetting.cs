@@ -1,4 +1,3 @@
-using System.Runtime.Serialization;
 using System.Text;
 using System.Text.Json.Serialization;
 
@@ -7,7 +6,7 @@ namespace PureCloud.Client.Models;
 /// <summary>
 /// SupportCenterStyleSetting
 /// </summary>
-[DataContract]
+
 public partial class SupportCenterStyleSetting : IEquatable<SupportCenterStyleSetting>
 {
 
@@ -34,7 +33,7 @@ public partial class SupportCenterStyleSetting : IEquatable<SupportCenterStyleSe
     /// Knowledge portal (previously support center) hero customizations
     /// </summary>
     /// <value>Knowledge portal (previously support center) hero customizations</value>
-    [DataMember(Name = "heroStyle", EmitDefaultValue = false)]
+    [JsonPropertyName("heroStyle")]
     public SupportCenterHeroStyle HeroStyle { get; set; }
 
 
@@ -43,7 +42,7 @@ public partial class SupportCenterStyleSetting : IEquatable<SupportCenterStyleSe
     /// Knowledge portal (previously support center) global customizations
     /// </summary>
     /// <value>Knowledge portal (previously support center) global customizations</value>
-    [DataMember(Name = "globalStyle", EmitDefaultValue = false)]
+    [JsonPropertyName("globalStyle")]
     public SupportCenterGlobalStyle GlobalStyle { get; set; }
 
 

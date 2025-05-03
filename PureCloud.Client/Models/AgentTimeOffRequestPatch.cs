@@ -7,14 +7,14 @@ namespace PureCloud.Client.Models;
 /// <summary>
 /// AgentTimeOffRequestPatch
 /// </summary>
-[DataContract]
+
 public partial class AgentTimeOffRequestPatch : IEquatable<AgentTimeOffRequestPatch>
 {
     /// <summary>
     /// The status of this time off request. Can only be canceled if the requested date has not already passed
     /// </summary>
     /// <value>The status of this time off request. Can only be canceled if the requested date has not already passed</value>
-    [JsonConverter(typeof(JsonStringEnumConverter))]
+    
     public enum StatusEnum
     {
         /// <summary>
@@ -35,7 +35,7 @@ public partial class AgentTimeOffRequestPatch : IEquatable<AgentTimeOffRequestPa
     /// The status of this time off request. Can only be canceled if the requested date has not already passed
     /// </summary>
     /// <value>The status of this time off request. Can only be canceled if the requested date has not already passed</value>
-    [DataMember(Name = "status", EmitDefaultValue = false)]
+    [JsonPropertyName("status")]
     public StatusEnum? Status { get; set; }
     /// <summary>
     /// Initializes a new instance of the <see cref="AgentTimeOffRequestPatch" /> class.
@@ -57,7 +57,7 @@ public partial class AgentTimeOffRequestPatch : IEquatable<AgentTimeOffRequestPa
     /// Whether this request has been read by the agent
     /// </summary>
     /// <value>Whether this request has been read by the agent</value>
-    [DataMember(Name = "markedAsRead", EmitDefaultValue = false)]
+    [JsonPropertyName("markedAsRead")]
     public bool? MarkedAsRead { get; set; }
 
 
@@ -68,7 +68,7 @@ public partial class AgentTimeOffRequestPatch : IEquatable<AgentTimeOffRequestPa
     /// Notes about the time off request. Can only be edited while the request is still pending
     /// </summary>
     /// <value>Notes about the time off request. Can only be edited while the request is still pending</value>
-    [DataMember(Name = "notes", EmitDefaultValue = false)]
+    [JsonPropertyName("notes")]
     public string Notes { get; set; }
 
 

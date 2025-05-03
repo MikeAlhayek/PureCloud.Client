@@ -1,12 +1,12 @@
-using System.Runtime.Serialization;
 using System.Text;
+using System.Text.Json.Serialization;
 
 namespace PureCloud.Client.Models;
 
 /// <summary>
 /// QueueConversationScreenShareEventTopicWrapup
 /// </summary>
-[DataContract]
+
 public partial class QueueConversationScreenShareEventTopicWrapup : IEquatable<QueueConversationScreenShareEventTopicWrapup>
 {
     /// <summary>
@@ -33,7 +33,7 @@ public partial class QueueConversationScreenShareEventTopicWrapup : IEquatable<Q
     /// The user configured wrap up code name.
     /// </summary>
     /// <value>The user configured wrap up code name.</value>
-    [DataMember(Name = "code", EmitDefaultValue = false)]
+    [JsonPropertyName("code")]
     public string Code { get; set; }
 
 
@@ -42,7 +42,7 @@ public partial class QueueConversationScreenShareEventTopicWrapup : IEquatable<Q
     /// Text entered by the agent to describe the call or disposition.
     /// </summary>
     /// <value>Text entered by the agent to describe the call or disposition.</value>
-    [DataMember(Name = "notes", EmitDefaultValue = false)]
+    [JsonPropertyName("notes")]
     public string Notes { get; set; }
 
 
@@ -51,7 +51,7 @@ public partial class QueueConversationScreenShareEventTopicWrapup : IEquatable<Q
     /// List of tags selected by the agent to describe the call or disposition.
     /// </summary>
     /// <value>List of tags selected by the agent to describe the call or disposition.</value>
-    [DataMember(Name = "tags", EmitDefaultValue = false)]
+    [JsonPropertyName("tags")]
     public List<string> Tags { get; set; }
 
 
@@ -60,7 +60,7 @@ public partial class QueueConversationScreenShareEventTopicWrapup : IEquatable<Q
     /// The length of time in seconds that the agent spent doing after call work., Note, the format of utc-millisec should be ignored, our code generator needs it to generate a Long for us internally
     /// </summary>
     /// <value>The length of time in seconds that the agent spent doing after call work., Note, the format of utc-millisec should be ignored, our code generator needs it to generate a Long for us internally</value>
-    [DataMember(Name = "durationSeconds", EmitDefaultValue = false)]
+    [JsonPropertyName("durationSeconds")]
     public long? DurationSeconds { get; set; }
 
 
@@ -69,7 +69,7 @@ public partial class QueueConversationScreenShareEventTopicWrapup : IEquatable<Q
     /// The timestamp when the wrapup was finished.
     /// </summary>
     /// <value>The timestamp when the wrapup was finished.</value>
-    [DataMember(Name = "endTime", EmitDefaultValue = false)]
+    [JsonPropertyName("endTime")]
     public DateTime? EndTime { get; set; }
 
 

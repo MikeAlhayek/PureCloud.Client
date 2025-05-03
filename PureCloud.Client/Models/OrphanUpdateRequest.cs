@@ -1,12 +1,12 @@
-using System.Runtime.Serialization;
 using System.Text;
+using System.Text.Json.Serialization;
 
 namespace PureCloud.Client.Models;
 
 /// <summary>
 /// OrphanUpdateRequest
 /// </summary>
-[DataContract]
+
 public partial class OrphanUpdateRequest : IEquatable<OrphanUpdateRequest>
 {
     /// <summary>
@@ -33,7 +33,7 @@ public partial class OrphanUpdateRequest : IEquatable<OrphanUpdateRequest>
     /// The orphan recording&#39;s archive date. Must be greater than 1 day from now if set. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z
     /// </summary>
     /// <value>The orphan recording&#39;s archive date. Must be greater than 1 day from now if set. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z</value>
-    [DataMember(Name = "archiveDate", EmitDefaultValue = false)]
+    [JsonPropertyName("archiveDate")]
     public DateTime? ArchiveDate { get; set; }
 
 
@@ -42,7 +42,7 @@ public partial class OrphanUpdateRequest : IEquatable<OrphanUpdateRequest>
     /// The orphan recording&#39;s delete date. Must be greater than archiveDate and exportDate if set, otherwise one day from now. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z
     /// </summary>
     /// <value>The orphan recording&#39;s delete date. Must be greater than archiveDate and exportDate if set, otherwise one day from now. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z</value>
-    [DataMember(Name = "deleteDate", EmitDefaultValue = false)]
+    [JsonPropertyName("deleteDate")]
     public DateTime? DeleteDate { get; set; }
 
 
@@ -51,7 +51,7 @@ public partial class OrphanUpdateRequest : IEquatable<OrphanUpdateRequest>
     /// The orphan recording&#39;s export date. Must be greater than 1 day from now if set. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z
     /// </summary>
     /// <value>The orphan recording&#39;s export date. Must be greater than 1 day from now if set. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z</value>
-    [DataMember(Name = "exportDate", EmitDefaultValue = false)]
+    [JsonPropertyName("exportDate")]
     public DateTime? ExportDate { get; set; }
 
 
@@ -60,7 +60,7 @@ public partial class OrphanUpdateRequest : IEquatable<OrphanUpdateRequest>
     /// IntegrationId to access AWS S3 bucket for export. This field is required if exportDate is set.
     /// </summary>
     /// <value>IntegrationId to access AWS S3 bucket for export. This field is required if exportDate is set.</value>
-    [DataMember(Name = "integrationId", EmitDefaultValue = false)]
+    [JsonPropertyName("integrationId")]
     public string IntegrationId { get; set; }
 
 
@@ -69,7 +69,7 @@ public partial class OrphanUpdateRequest : IEquatable<OrphanUpdateRequest>
     /// A conversation Id that this orphan&#39;s recording is to be attached to. If not present, the conversationId will be deduced from the recording media.
     /// </summary>
     /// <value>A conversation Id that this orphan&#39;s recording is to be attached to. If not present, the conversationId will be deduced from the recording media.</value>
-    [DataMember(Name = "conversationId", EmitDefaultValue = false)]
+    [JsonPropertyName("conversationId")]
     public string ConversationId { get; set; }
 
 

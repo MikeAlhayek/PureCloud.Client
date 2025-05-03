@@ -1,12 +1,12 @@
-using System.Runtime.Serialization;
 using System.Text;
+using System.Text.Json.Serialization;
 
 namespace PureCloud.Client.Models;
 
 /// <summary>
 /// IntradayPerformancePredictionData
 /// </summary>
-[DataContract]
+
 public partial class IntradayPerformancePredictionData : IEquatable<IntradayPerformancePredictionData>
 {
     /// <summary>
@@ -29,7 +29,7 @@ public partial class IntradayPerformancePredictionData : IEquatable<IntradayPerf
     /// Percentage of interactions that meets service level target as defined in the matching service goal templates
     /// </summary>
     /// <value>Percentage of interactions that meets service level target as defined in the matching service goal templates</value>
-    [DataMember(Name = "serviceLevelPercent", EmitDefaultValue = false)]
+    [JsonPropertyName("serviceLevelPercent")]
     public double? ServiceLevelPercent { get; set; }
 
 
@@ -38,7 +38,7 @@ public partial class IntradayPerformancePredictionData : IEquatable<IntradayPerf
     /// Predicted average time in seconds it takes to answer an interaction once the interaction becomes available to be routed
     /// </summary>
     /// <value>Predicted average time in seconds it takes to answer an interaction once the interaction becomes available to be routed</value>
-    [DataMember(Name = "averageSpeedOfAnswerSeconds", EmitDefaultValue = false)]
+    [JsonPropertyName("averageSpeedOfAnswerSeconds")]
     public double? AverageSpeedOfAnswerSeconds { get; set; }
 
 
@@ -47,7 +47,7 @@ public partial class IntradayPerformancePredictionData : IEquatable<IntradayPerf
     /// Percentage of on-queue time for all agents in this group that are occupied handling interactions
     /// </summary>
     /// <value>Percentage of on-queue time for all agents in this group that are occupied handling interactions</value>
-    [DataMember(Name = "occupancyPercent", EmitDefaultValue = false)]
+    [JsonPropertyName("occupancyPercent")]
     public double? OccupancyPercent { get; set; }
 
 

@@ -1,4 +1,3 @@
-using System.Runtime.Serialization;
 using System.Text;
 using System.Text.Json.Serialization;
 
@@ -7,7 +6,7 @@ namespace PureCloud.Client.Models;
 /// <summary>
 /// AgentQueueTimeRequest
 /// </summary>
-[DataContract]
+
 public partial class AgentQueueTimeRequest : IEquatable<AgentQueueTimeRequest>
 {
 
@@ -36,7 +35,7 @@ public partial class AgentQueueTimeRequest : IEquatable<AgentQueueTimeRequest>
     /// ID of the agent
     /// </summary>
     /// <value>ID of the agent</value>
-    [DataMember(Name = "agentId", EmitDefaultValue = false)]
+    [JsonPropertyName("agentId")]
     public string AgentId { get; set; }
 
 
@@ -45,7 +44,7 @@ public partial class AgentQueueTimeRequest : IEquatable<AgentQueueTimeRequest>
     /// List of offsets in minutes from calculationStartDate
     /// </summary>
     /// <value>List of offsets in minutes from calculationStartDate</value>
-    [DataMember(Name = "startOffsetMinutes", EmitDefaultValue = false)]
+    [JsonPropertyName("startOffsetMinutes")]
     public List<int?> StartOffsetMinutes { get; set; }
 
 
@@ -54,7 +53,7 @@ public partial class AgentQueueTimeRequest : IEquatable<AgentQueueTimeRequest>
     /// List of on queue time lengths in minutes per interval of elements in startOffsetMinutes
     /// </summary>
     /// <value>List of on queue time lengths in minutes per interval of elements in startOffsetMinutes</value>
-    [DataMember(Name = "onQueueLengthMinutesPerInterval", EmitDefaultValue = false)]
+    [JsonPropertyName("onQueueLengthMinutesPerInterval")]
     public List<int?> OnQueueLengthMinutesPerInterval { get; set; }
 
 

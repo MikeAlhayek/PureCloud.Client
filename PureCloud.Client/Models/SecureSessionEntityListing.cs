@@ -1,12 +1,12 @@
-using System.Runtime.Serialization;
 using System.Text;
+using System.Text.Json.Serialization;
 
 namespace PureCloud.Client.Models;
 
 /// <summary>
 /// SecureSessionEntityListing
 /// </summary>
-[DataContract]
+
 public partial class SecureSessionEntityListing : IEquatable<SecureSessionEntityListing>
 {
     /// <summary>
@@ -24,7 +24,7 @@ public partial class SecureSessionEntityListing : IEquatable<SecureSessionEntity
     /// <summary>
     /// Gets or Sets Entities
     /// </summary>
-    [DataMember(Name = "entities", EmitDefaultValue = false)]
+    [JsonPropertyName("entities")]
     public List<SecureSession> Entities { get; set; }
 
 

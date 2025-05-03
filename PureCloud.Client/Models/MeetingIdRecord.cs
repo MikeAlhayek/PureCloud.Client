@@ -1,4 +1,3 @@
-using System.Runtime.Serialization;
 using System.Text;
 using System.Text.Json.Serialization;
 
@@ -7,7 +6,7 @@ namespace PureCloud.Client.Models;
 /// <summary>
 /// MeetingIdRecord
 /// </summary>
-[DataContract]
+
 public partial class MeetingIdRecord : IEquatable<MeetingIdRecord>
 {
 
@@ -36,7 +35,7 @@ public partial class MeetingIdRecord : IEquatable<MeetingIdRecord>
     /// The globally unique identifier for the object.
     /// </summary>
     /// <value>The globally unique identifier for the object.</value>
-    [DataMember(Name = "id", EmitDefaultValue = false)]
+    [JsonPropertyName("id")]
     public string Id { get; private set; }
 
 
@@ -45,7 +44,7 @@ public partial class MeetingIdRecord : IEquatable<MeetingIdRecord>
     /// Boolean flag for ephemeral status of the created record
     /// </summary>
     /// <value>Boolean flag for ephemeral status of the created record</value>
-    [DataMember(Name = "ephemeral", EmitDefaultValue = false)]
+    [JsonPropertyName("ephemeral")]
     public bool? Ephemeral { get; set; }
 
 
@@ -54,7 +53,7 @@ public partial class MeetingIdRecord : IEquatable<MeetingIdRecord>
     /// The conferenceId used to generate a meetingId
     /// </summary>
     /// <value>The conferenceId used to generate a meetingId</value>
-    [DataMember(Name = "conferenceId", EmitDefaultValue = false)]
+    [JsonPropertyName("conferenceId")]
     public string ConferenceId { get; set; }
 
 
@@ -63,7 +62,7 @@ public partial class MeetingIdRecord : IEquatable<MeetingIdRecord>
     /// Instant at which the meetingId record will no longer be considered active. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z
     /// </summary>
     /// <value>Instant at which the meetingId record will no longer be considered active. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z</value>
-    [DataMember(Name = "dateExpired", EmitDefaultValue = false)]
+    [JsonPropertyName("dateExpired")]
     public DateTime? DateExpired { get; set; }
 
 
@@ -72,7 +71,7 @@ public partial class MeetingIdRecord : IEquatable<MeetingIdRecord>
     /// The URI for this object
     /// </summary>
     /// <value>The URI for this object</value>
-    [DataMember(Name = "selfUri", EmitDefaultValue = false)]
+    [JsonPropertyName("selfUri")]
     public string SelfUri { get; private set; }
 
 

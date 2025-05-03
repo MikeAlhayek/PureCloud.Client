@@ -1,12 +1,12 @@
-using System.Runtime.Serialization;
 using System.Text;
+using System.Text.Json.Serialization;
 
 namespace PureCloud.Client.Models;
 
 /// <summary>
 /// Message content element.
 /// </summary>
-[DataContract]
+
 public partial class OpenInboundMessageContent : IEquatable<OpenInboundMessageContent>
 {
     /// <summary>
@@ -25,7 +25,7 @@ public partial class OpenInboundMessageContent : IEquatable<OpenInboundMessageCo
     /// Attachment content.
     /// </summary>
     /// <value>Attachment content.</value>
-    [DataMember(Name = "attachment", EmitDefaultValue = false)]
+    [JsonPropertyName("attachment")]
     public OpenContentAttachment Attachment { get; set; }
 
 

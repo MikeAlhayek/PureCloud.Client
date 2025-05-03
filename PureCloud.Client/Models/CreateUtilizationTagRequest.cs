@@ -1,4 +1,3 @@
-using System.Runtime.Serialization;
 using System.Text;
 using System.Text.Json.Serialization;
 
@@ -7,7 +6,7 @@ namespace PureCloud.Client.Models;
 /// <summary>
 /// CreateUtilizationTagRequest
 /// </summary>
-[DataContract]
+
 public partial class CreateUtilizationTagRequest : IEquatable<CreateUtilizationTagRequest>
 {
 
@@ -32,7 +31,7 @@ public partial class CreateUtilizationTagRequest : IEquatable<CreateUtilizationT
     /// The utilization tag name.
     /// </summary>
     /// <value>The utilization tag name.</value>
-    [DataMember(Name = "name", EmitDefaultValue = false)]
+    [JsonPropertyName("name")]
     public string Name { get; set; }
 
 

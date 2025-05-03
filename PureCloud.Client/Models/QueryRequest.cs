@@ -1,12 +1,12 @@
-using System.Runtime.Serialization;
 using System.Text;
+using System.Text.Json.Serialization;
 
 namespace PureCloud.Client.Models;
 
 /// <summary>
 /// QueryRequest
 /// </summary>
-[DataContract]
+
 public partial class QueryRequest : IEquatable<QueryRequest>
 {
     /// <summary>
@@ -38,7 +38,7 @@ public partial class QueryRequest : IEquatable<QueryRequest>
     /// <summary>
     /// Gets or Sets QueryPhrase
     /// </summary>
-    [DataMember(Name = "queryPhrase", EmitDefaultValue = false)]
+    [JsonPropertyName("queryPhrase")]
     public string QueryPhrase { get; set; }
 
 
@@ -46,7 +46,7 @@ public partial class QueryRequest : IEquatable<QueryRequest>
     /// <summary>
     /// Gets or Sets PageNumber
     /// </summary>
-    [DataMember(Name = "pageNumber", EmitDefaultValue = false)]
+    [JsonPropertyName("pageNumber")]
     public int? PageNumber { get; set; }
 
 
@@ -54,7 +54,7 @@ public partial class QueryRequest : IEquatable<QueryRequest>
     /// <summary>
     /// Gets or Sets PageSize
     /// </summary>
-    [DataMember(Name = "pageSize", EmitDefaultValue = false)]
+    [JsonPropertyName("pageSize")]
     public int? PageSize { get; set; }
 
 
@@ -62,7 +62,7 @@ public partial class QueryRequest : IEquatable<QueryRequest>
     /// <summary>
     /// Gets or Sets FacetNameRequests
     /// </summary>
-    [DataMember(Name = "facetNameRequests", EmitDefaultValue = false)]
+    [JsonPropertyName("facetNameRequests")]
     public List<string> FacetNameRequests { get; set; }
 
 
@@ -70,7 +70,7 @@ public partial class QueryRequest : IEquatable<QueryRequest>
     /// <summary>
     /// Gets or Sets Sort
     /// </summary>
-    [DataMember(Name = "sort", EmitDefaultValue = false)]
+    [JsonPropertyName("sort")]
     public List<SortItem> Sort { get; set; }
 
 
@@ -78,7 +78,7 @@ public partial class QueryRequest : IEquatable<QueryRequest>
     /// <summary>
     /// Gets or Sets Filters
     /// </summary>
-    [DataMember(Name = "filters", EmitDefaultValue = false)]
+    [JsonPropertyName("filters")]
     public List<ContentFilterItem> Filters { get; set; }
 
 
@@ -86,7 +86,7 @@ public partial class QueryRequest : IEquatable<QueryRequest>
     /// <summary>
     /// Gets or Sets AttributeFilters
     /// </summary>
-    [DataMember(Name = "attributeFilters", EmitDefaultValue = false)]
+    [JsonPropertyName("attributeFilters")]
     public List<AttributeFilterItem> AttributeFilters { get; set; }
 
 
@@ -94,7 +94,7 @@ public partial class QueryRequest : IEquatable<QueryRequest>
     /// <summary>
     /// Gets or Sets IncludeShares
     /// </summary>
-    [DataMember(Name = "includeShares", EmitDefaultValue = false)]
+    [JsonPropertyName("includeShares")]
     public bool? IncludeShares { get; set; }
 
 

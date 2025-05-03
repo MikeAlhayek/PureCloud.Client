@@ -1,12 +1,12 @@
-using System.Runtime.Serialization;
 using System.Text;
+using System.Text.Json.Serialization;
 
 namespace PureCloud.Client.Models;
 
 /// <summary>
 /// PatchContext
 /// </summary>
-[DataContract]
+
 public partial class PatchContext : IEquatable<PatchContext>
 {
     /// <summary>
@@ -25,7 +25,7 @@ public partial class PatchContext : IEquatable<PatchContext>
     /// A list of one or more patterns to match.
     /// </summary>
     /// <value>A list of one or more patterns to match.</value>
-    [DataMember(Name = "patterns", EmitDefaultValue = false)]
+    [JsonPropertyName("patterns")]
     public List<PatchContextPattern> Patterns { get; set; }
 
 

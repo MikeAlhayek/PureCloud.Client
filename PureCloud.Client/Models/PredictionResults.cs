@@ -7,14 +7,14 @@ namespace PureCloud.Client.Models;
 /// <summary>
 /// PredictionResults
 /// </summary>
-[DataContract]
+
 public partial class PredictionResults : IEquatable<PredictionResults>
 {
     /// <summary>
     /// Indicates the media type scope of this estimated wait time
     /// </summary>
     /// <value>Indicates the media type scope of this estimated wait time</value>
-    [JsonConverter(typeof(JsonStringEnumConverter))]
+    
     public enum IntentEnum
     {
         /// <summary>
@@ -77,7 +77,7 @@ public partial class PredictionResults : IEquatable<PredictionResults>
     /// Indicates the estimated wait time Formula
     /// </summary>
     /// <value>Indicates the estimated wait time Formula</value>
-    [JsonConverter(typeof(JsonStringEnumConverter))]
+    
     public enum FormulaEnum
     {
         /// <summary>
@@ -116,13 +116,13 @@ public partial class PredictionResults : IEquatable<PredictionResults>
     /// Indicates the media type scope of this estimated wait time
     /// </summary>
     /// <value>Indicates the media type scope of this estimated wait time</value>
-    [DataMember(Name = "intent", EmitDefaultValue = false)]
+    [JsonPropertyName("intent")]
     public IntentEnum? Intent { get; set; }
     /// <summary>
     /// Indicates the estimated wait time Formula
     /// </summary>
     /// <value>Indicates the estimated wait time Formula</value>
-    [DataMember(Name = "formula", EmitDefaultValue = false)]
+    [JsonPropertyName("formula")]
     public FormulaEnum? Formula { get; set; }
 
     /// <summary>
@@ -156,7 +156,7 @@ public partial class PredictionResults : IEquatable<PredictionResults>
     /// Estimated wait time in seconds
     /// </summary>
     /// <value>Estimated wait time in seconds</value>
-    [DataMember(Name = "estimatedWaitTimeSeconds", EmitDefaultValue = false)]
+    [JsonPropertyName("estimatedWaitTimeSeconds")]
     public int? EstimatedWaitTimeSeconds { get; set; }
 
 
@@ -165,7 +165,7 @@ public partial class PredictionResults : IEquatable<PredictionResults>
     /// This specifies the interaction label scoped to this estimated wait time calculation
     /// </summary>
     /// <value>This specifies the interaction label scoped to this estimated wait time calculation</value>
-    [DataMember(Name = "label", EmitDefaultValue = false)]
+    [JsonPropertyName("label")]
     public AddressableEntityRef Label { get; set; }
 
 

@@ -1,12 +1,12 @@
-using System.Runtime.Serialization;
 using System.Text;
+using System.Text.Json.Serialization;
 
 namespace PureCloud.Client.Models;
 
 /// <summary>
 /// UnansweredGroup
 /// </summary>
-[DataContract]
+
 public partial class UnansweredGroup : IEquatable<UnansweredGroup>
 {
     /// <summary>
@@ -31,7 +31,7 @@ public partial class UnansweredGroup : IEquatable<UnansweredGroup>
     /// The globally unique identifier for the object.
     /// </summary>
     /// <value>The globally unique identifier for the object.</value>
-    [DataMember(Name = "id", EmitDefaultValue = false)]
+    [JsonPropertyName("id")]
     public string Id { get; private set; }
 
 
@@ -40,7 +40,7 @@ public partial class UnansweredGroup : IEquatable<UnansweredGroup>
     /// Knowledge base unanswered group label
     /// </summary>
     /// <value>Knowledge base unanswered group label</value>
-    [DataMember(Name = "label", EmitDefaultValue = false)]
+    [JsonPropertyName("label")]
     public string Label { get; set; }
 
 
@@ -49,7 +49,7 @@ public partial class UnansweredGroup : IEquatable<UnansweredGroup>
     /// Represents a list of phrase groups inside an unanswered group
     /// </summary>
     /// <value>Represents a list of phrase groups inside an unanswered group</value>
-    [DataMember(Name = "phraseGroups", EmitDefaultValue = false)]
+    [JsonPropertyName("phraseGroups")]
     public List<UnansweredPhraseGroup> PhraseGroups { get; set; }
 
 
@@ -58,7 +58,7 @@ public partial class UnansweredGroup : IEquatable<UnansweredGroup>
     /// Represents a list of documents that may be linked to an unanswered group
     /// </summary>
     /// <value>Represents a list of documents that may be linked to an unanswered group</value>
-    [DataMember(Name = "suggestedDocuments", EmitDefaultValue = false)]
+    [JsonPropertyName("suggestedDocuments")]
     public List<UnansweredGroupSuggestedDocument> SuggestedDocuments { get; set; }
 
 
@@ -67,7 +67,7 @@ public partial class UnansweredGroup : IEquatable<UnansweredGroup>
     /// Statistics object containing the various hit counts for an unanswered group
     /// </summary>
     /// <value>Statistics object containing the various hit counts for an unanswered group</value>
-    [DataMember(Name = "statistics", EmitDefaultValue = false)]
+    [JsonPropertyName("statistics")]
     public KnowledgeGroupStatistics Statistics { get; set; }
 
 
@@ -76,7 +76,7 @@ public partial class UnansweredGroup : IEquatable<UnansweredGroup>
     /// The URI for this object
     /// </summary>
     /// <value>The URI for this object</value>
-    [DataMember(Name = "selfUri", EmitDefaultValue = false)]
+    [JsonPropertyName("selfUri")]
     public string SelfUri { get; private set; }
 
 

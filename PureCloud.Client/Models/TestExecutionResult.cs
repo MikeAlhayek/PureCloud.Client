@@ -1,12 +1,12 @@
-using System.Runtime.Serialization;
 using System.Text;
+using System.Text.Json.Serialization;
 
 namespace PureCloud.Client.Models;
 
 /// <summary>
 /// TestExecutionResult
 /// </summary>
-[DataContract]
+
 public partial class TestExecutionResult : IEquatable<TestExecutionResult>
 {
     /// <summary>
@@ -31,7 +31,7 @@ public partial class TestExecutionResult : IEquatable<TestExecutionResult>
     /// Execution operations performed as part of the test
     /// </summary>
     /// <value>Execution operations performed as part of the test</value>
-    [DataMember(Name = "operations", EmitDefaultValue = false)]
+    [JsonPropertyName("operations")]
     public List<TestExecutionOperationResult> Operations { get; set; }
 
 
@@ -40,7 +40,7 @@ public partial class TestExecutionResult : IEquatable<TestExecutionResult>
     /// The final error encountered during the test that resulted in test failure
     /// </summary>
     /// <value>The final error encountered during the test that resulted in test failure</value>
-    [DataMember(Name = "error", EmitDefaultValue = false)]
+    [JsonPropertyName("error")]
     public ErrorBody Error { get; set; }
 
 
@@ -49,7 +49,7 @@ public partial class TestExecutionResult : IEquatable<TestExecutionResult>
     /// The final result of the test. This is the response that would be returned during normal action execution
     /// </summary>
     /// <value>The final result of the test. This is the response that would be returned during normal action execution</value>
-    [DataMember(Name = "finalResult", EmitDefaultValue = false)]
+    [JsonPropertyName("finalResult")]
     public object FinalResult { get; set; }
 
 
@@ -58,7 +58,7 @@ public partial class TestExecutionResult : IEquatable<TestExecutionResult>
     /// Indicates whether or not the test was a success
     /// </summary>
     /// <value>Indicates whether or not the test was a success</value>
-    [DataMember(Name = "success", EmitDefaultValue = false)]
+    [JsonPropertyName("success")]
     public bool? Success { get; set; }
 
 

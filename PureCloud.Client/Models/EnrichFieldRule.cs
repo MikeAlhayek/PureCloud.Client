@@ -7,14 +7,14 @@ namespace PureCloud.Client.Models;
 /// <summary>
 /// EnrichFieldRule
 /// </summary>
-[DataContract]
+
 public partial class EnrichFieldRule : IEquatable<EnrichFieldRule>
 {
     /// <summary>
     /// The behavior for how to combine data from the request body and the database.
     /// </summary>
     /// <value>The behavior for how to combine data from the request body and the database.</value>
-    [JsonConverter(typeof(JsonStringEnumConverter))]
+    
     public enum ActionEnum
     {
         /// <summary>
@@ -47,7 +47,7 @@ public partial class EnrichFieldRule : IEquatable<EnrichFieldRule>
     /// The behavior for how to combine items in array field from the request body and the database.
     /// </summary>
     /// <value>The behavior for how to combine items in array field from the request body and the database.</value>
-    [JsonConverter(typeof(JsonStringEnumConverter))]
+    
     public enum ArrayActionEnum
     {
         /// <summary>
@@ -80,13 +80,13 @@ public partial class EnrichFieldRule : IEquatable<EnrichFieldRule>
     /// The behavior for how to combine data from the request body and the database.
     /// </summary>
     /// <value>The behavior for how to combine data from the request body and the database.</value>
-    [DataMember(Name = "action", EmitDefaultValue = false)]
+    [JsonPropertyName("action")]
     public ActionEnum? Action { get; set; }
     /// <summary>
     /// The behavior for how to combine items in array field from the request body and the database.
     /// </summary>
     /// <value>The behavior for how to combine items in array field from the request body and the database.</value>
-    [DataMember(Name = "arrayAction", EmitDefaultValue = false)]
+    [JsonPropertyName("arrayAction")]
     public ArrayActionEnum? ArrayAction { get; set; }
     /// <summary>
     /// Initializes a new instance of the <see cref="EnrichFieldRule" /> class.
@@ -108,7 +108,7 @@ public partial class EnrichFieldRule : IEquatable<EnrichFieldRule>
     /// A restricted JSONPath naming the specific field this combining behavior should apply to. You may use dot-notation for named fields, and array indexing for lists, but nothing more sophisticated (e.g. wildcards, sublists, filter expressions, etc). For example, to target the &#x60;firstName&#x60; field of a Contact, this should be \&quot;$.firstName\&quot;.
     /// </summary>
     /// <value>A restricted JSONPath naming the specific field this combining behavior should apply to. You may use dot-notation for named fields, and array indexing for lists, but nothing more sophisticated (e.g. wildcards, sublists, filter expressions, etc). For example, to target the &#x60;firstName&#x60; field of a Contact, this should be \&quot;$.firstName\&quot;.</value>
-    [DataMember(Name = "field", EmitDefaultValue = false)]
+    [JsonPropertyName("field")]
     public string Field { get; set; }
 
 

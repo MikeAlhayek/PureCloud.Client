@@ -1,12 +1,12 @@
-using System.Runtime.Serialization;
 using System.Text;
+using System.Text.Json.Serialization;
 
 namespace PureCloud.Client.Models;
 
 /// <summary>
 /// Details for a UserApp
 /// </summary>
-[DataContract]
+
 public partial class UserApp : IEquatable<UserApp>
 {
     /// <summary>
@@ -25,7 +25,7 @@ public partial class UserApp : IEquatable<UserApp>
     /// The globally unique identifier for the object.
     /// </summary>
     /// <value>The globally unique identifier for the object.</value>
-    [DataMember(Name = "id", EmitDefaultValue = false)]
+    [JsonPropertyName("id")]
     public string Id { get; private set; }
 
 
@@ -34,7 +34,7 @@ public partial class UserApp : IEquatable<UserApp>
     /// The name of the userApp, used to distinguish this userApp from others of the same type.
     /// </summary>
     /// <value>The name of the userApp, used to distinguish this userApp from others of the same type.</value>
-    [DataMember(Name = "name", EmitDefaultValue = false)]
+    [JsonPropertyName("name")]
     public string Name { get; private set; }
 
 
@@ -43,7 +43,7 @@ public partial class UserApp : IEquatable<UserApp>
     /// Integration Type for the userApp
     /// </summary>
     /// <value>Integration Type for the userApp</value>
-    [DataMember(Name = "integrationType", EmitDefaultValue = false)]
+    [JsonPropertyName("integrationType")]
     public IntegrationType IntegrationType { get; private set; }
 
 
@@ -51,7 +51,7 @@ public partial class UserApp : IEquatable<UserApp>
     /// <summary>
     /// Gets or Sets Config
     /// </summary>
-    [DataMember(Name = "config", EmitDefaultValue = false)]
+    [JsonPropertyName("config")]
     public UserAppConfigurationInfo Config { get; set; }
 
 
@@ -60,7 +60,7 @@ public partial class UserApp : IEquatable<UserApp>
     /// The URI for this object
     /// </summary>
     /// <value>The URI for this object</value>
-    [DataMember(Name = "selfUri", EmitDefaultValue = false)]
+    [JsonPropertyName("selfUri")]
     public string SelfUri { get; private set; }
 
 

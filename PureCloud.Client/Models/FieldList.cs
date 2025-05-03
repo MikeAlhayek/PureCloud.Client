@@ -1,12 +1,12 @@
-using System.Runtime.Serialization;
 using System.Text;
+using System.Text.Json.Serialization;
 
 namespace PureCloud.Client.Models;
 
 /// <summary>
 /// FieldList
 /// </summary>
-[DataContract]
+
 public partial class FieldList : IEquatable<FieldList>
 {
     /// <summary>
@@ -42,7 +42,7 @@ public partial class FieldList : IEquatable<FieldList>
     /// <summary>
     /// Gets or Sets CustomLabels
     /// </summary>
-    [DataMember(Name = "customLabels", EmitDefaultValue = false)]
+    [JsonPropertyName("customLabels")]
     public bool? CustomLabels { get; set; }
 
 
@@ -50,7 +50,7 @@ public partial class FieldList : IEquatable<FieldList>
     /// <summary>
     /// Gets or Sets InstructionText
     /// </summary>
-    [DataMember(Name = "instructionText", EmitDefaultValue = false)]
+    [JsonPropertyName("instructionText")]
     public string InstructionText { get; set; }
 
 
@@ -58,7 +58,7 @@ public partial class FieldList : IEquatable<FieldList>
     /// <summary>
     /// Gets or Sets Key
     /// </summary>
-    [DataMember(Name = "key", EmitDefaultValue = false)]
+    [JsonPropertyName("key")]
     public string Key { get; set; }
 
 
@@ -66,7 +66,7 @@ public partial class FieldList : IEquatable<FieldList>
     /// <summary>
     /// Gets or Sets LabelKeys
     /// </summary>
-    [DataMember(Name = "labelKeys", EmitDefaultValue = false)]
+    [JsonPropertyName("labelKeys")]
     public List<string> LabelKeys { get; set; }
 
 
@@ -74,7 +74,7 @@ public partial class FieldList : IEquatable<FieldList>
     /// <summary>
     /// Gets or Sets Params
     /// </summary>
-    [DataMember(Name = "params", EmitDefaultValue = false)]
+    [JsonPropertyName("params")]
     public Dictionary<string, object> Params { get; set; }
 
 
@@ -82,7 +82,7 @@ public partial class FieldList : IEquatable<FieldList>
     /// <summary>
     /// Gets or Sets Repeatable
     /// </summary>
-    [DataMember(Name = "repeatable", EmitDefaultValue = false)]
+    [JsonPropertyName("repeatable")]
     public bool? Repeatable { get; set; }
 
 
@@ -90,7 +90,7 @@ public partial class FieldList : IEquatable<FieldList>
     /// <summary>
     /// Gets or Sets State
     /// </summary>
-    [DataMember(Name = "state", EmitDefaultValue = false)]
+    [JsonPropertyName("state")]
     public string State { get; set; }
 
 
@@ -98,7 +98,7 @@ public partial class FieldList : IEquatable<FieldList>
     /// <summary>
     /// Gets or Sets Type
     /// </summary>
-    [DataMember(Name = "type", EmitDefaultValue = false)]
+    [JsonPropertyName("type")]
     public string Type { get; set; }
 
 
@@ -106,7 +106,7 @@ public partial class FieldList : IEquatable<FieldList>
     /// <summary>
     /// Gets or Sets Required
     /// </summary>
-    [DataMember(Name = "required", EmitDefaultValue = false)]
+    [JsonPropertyName("required")]
     public bool? Required { get; set; }
 
 
@@ -114,7 +114,7 @@ public partial class FieldList : IEquatable<FieldList>
     /// <summary>
     /// Gets or Sets Gdpr
     /// </summary>
-    [DataMember(Name = "gdpr", EmitDefaultValue = false)]
+    [JsonPropertyName("gdpr")]
     public bool? Gdpr { get; set; }
 
 

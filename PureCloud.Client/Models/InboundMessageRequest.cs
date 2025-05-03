@@ -1,4 +1,3 @@
-using System.Runtime.Serialization;
 using System.Text;
 using System.Text.Json.Serialization;
 
@@ -7,7 +6,7 @@ namespace PureCloud.Client.Models;
 /// <summary>
 /// InboundMessageRequest
 /// </summary>
-[DataContract]
+
 public partial class InboundMessageRequest : IEquatable<InboundMessageRequest>
 {
 
@@ -54,7 +53,7 @@ public partial class InboundMessageRequest : IEquatable<InboundMessageRequest>
     /// The ID of the queue to use for routing the email conversation. This field is mutually exclusive with flowId
     /// </summary>
     /// <value>The ID of the queue to use for routing the email conversation. This field is mutually exclusive with flowId</value>
-    [DataMember(Name = "queueId", EmitDefaultValue = false)]
+    [JsonPropertyName("queueId")]
     public string QueueId { get; set; }
 
 
@@ -63,7 +62,7 @@ public partial class InboundMessageRequest : IEquatable<InboundMessageRequest>
     /// The ID of the flow to use for routing email conversation. This field is mutually exclusive with queueId
     /// </summary>
     /// <value>The ID of the flow to use for routing email conversation. This field is mutually exclusive with queueId</value>
-    [DataMember(Name = "flowId", EmitDefaultValue = false)]
+    [JsonPropertyName("flowId")]
     public string FlowId { get; set; }
 
 
@@ -72,7 +71,7 @@ public partial class InboundMessageRequest : IEquatable<InboundMessageRequest>
     /// The name of the provider that is sourcing the email such as Oracle, Salesforce, etc.
     /// </summary>
     /// <value>The name of the provider that is sourcing the email such as Oracle, Salesforce, etc.</value>
-    [DataMember(Name = "provider", EmitDefaultValue = false)]
+    [JsonPropertyName("provider")]
     public string Provider { get; set; }
 
 
@@ -81,7 +80,7 @@ public partial class InboundMessageRequest : IEquatable<InboundMessageRequest>
     /// The list of skill ID&#39;s to use for routing.
     /// </summary>
     /// <value>The list of skill ID&#39;s to use for routing.</value>
-    [DataMember(Name = "skillIds", EmitDefaultValue = false)]
+    [JsonPropertyName("skillIds")]
     public List<string> SkillIds { get; set; }
 
 
@@ -90,7 +89,7 @@ public partial class InboundMessageRequest : IEquatable<InboundMessageRequest>
     /// The ID of the language to use for routing.
     /// </summary>
     /// <value>The ID of the language to use for routing.</value>
-    [DataMember(Name = "languageId", EmitDefaultValue = false)]
+    [JsonPropertyName("languageId")]
     public string LanguageId { get; set; }
 
 
@@ -99,7 +98,7 @@ public partial class InboundMessageRequest : IEquatable<InboundMessageRequest>
     /// The priority to assign to the conversation for routing.
     /// </summary>
     /// <value>The priority to assign to the conversation for routing.</value>
-    [DataMember(Name = "priority", EmitDefaultValue = false)]
+    [JsonPropertyName("priority")]
     public int? Priority { get; set; }
 
 
@@ -108,7 +107,7 @@ public partial class InboundMessageRequest : IEquatable<InboundMessageRequest>
     /// The list of attributes to associate with the customer participant.
     /// </summary>
     /// <value>The list of attributes to associate with the customer participant.</value>
-    [DataMember(Name = "attributes", EmitDefaultValue = false)]
+    [JsonPropertyName("attributes")]
     public Dictionary<string, string> Attributes { get; set; }
 
 
@@ -117,7 +116,7 @@ public partial class InboundMessageRequest : IEquatable<InboundMessageRequest>
     /// The email address of the recipient of the email.
     /// </summary>
     /// <value>The email address of the recipient of the email.</value>
-    [DataMember(Name = "toAddress", EmitDefaultValue = false)]
+    [JsonPropertyName("toAddress")]
     public string ToAddress { get; set; }
 
 
@@ -126,7 +125,7 @@ public partial class InboundMessageRequest : IEquatable<InboundMessageRequest>
     /// The name of the recipient of the email.
     /// </summary>
     /// <value>The name of the recipient of the email.</value>
-    [DataMember(Name = "toName", EmitDefaultValue = false)]
+    [JsonPropertyName("toName")]
     public string ToName { get; set; }
 
 
@@ -135,7 +134,7 @@ public partial class InboundMessageRequest : IEquatable<InboundMessageRequest>
     /// The email address of the sender of the email.
     /// </summary>
     /// <value>The email address of the sender of the email.</value>
-    [DataMember(Name = "fromAddress", EmitDefaultValue = false)]
+    [JsonPropertyName("fromAddress")]
     public string FromAddress { get; set; }
 
 
@@ -144,7 +143,7 @@ public partial class InboundMessageRequest : IEquatable<InboundMessageRequest>
     /// The name of the sender of the email.
     /// </summary>
     /// <value>The name of the sender of the email.</value>
-    [DataMember(Name = "fromName", EmitDefaultValue = false)]
+    [JsonPropertyName("fromName")]
     public string FromName { get; set; }
 
 
@@ -153,7 +152,7 @@ public partial class InboundMessageRequest : IEquatable<InboundMessageRequest>
     /// The subject of the email
     /// </summary>
     /// <value>The subject of the email</value>
-    [DataMember(Name = "subject", EmitDefaultValue = false)]
+    [JsonPropertyName("subject")]
     public string Subject { get; set; }
 
 

@@ -1,4 +1,3 @@
-using System.Runtime.Serialization;
 using System.Text;
 using System.Text.Json.Serialization;
 
@@ -7,7 +6,7 @@ namespace PureCloud.Client.Models;
 /// <summary>
 /// SchedulingPeriod
 /// </summary>
-[DataContract]
+
 public partial class SchedulingPeriod : IEquatable<SchedulingPeriod>
 {
 
@@ -34,7 +33,7 @@ public partial class SchedulingPeriod : IEquatable<SchedulingPeriod>
     /// The earliest date the associated activity plan can begin, in YYYY-MM-DD format. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd
     /// </summary>
     /// <value>The earliest date the associated activity plan can begin, in YYYY-MM-DD format. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd</value>
-    [DataMember(Name = "earliestStartDate", EmitDefaultValue = false)]
+    [JsonPropertyName("earliestStartDate")]
     public string EarliestStartDate { get; set; }
 
 
@@ -43,7 +42,7 @@ public partial class SchedulingPeriod : IEquatable<SchedulingPeriod>
     /// The latest date the associated activity plan can end, in YYYY-MM-DD format. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd
     /// </summary>
     /// <value>The latest date the associated activity plan can end, in YYYY-MM-DD format. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd</value>
-    [DataMember(Name = "latestEndDate", EmitDefaultValue = false)]
+    [JsonPropertyName("latestEndDate")]
     public string LatestEndDate { get; set; }
 
 

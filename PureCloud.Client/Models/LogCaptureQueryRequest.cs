@@ -7,14 +7,14 @@ namespace PureCloud.Client.Models;
 /// <summary>
 /// LogCaptureQueryRequest
 /// </summary>
-[DataContract]
+
 public partial class LogCaptureQueryRequest : IEquatable<LogCaptureQueryRequest>
 {
     /// <summary>
     /// Order of results. Default order is ASC.
     /// </summary>
     /// <value>Order of results. Default order is ASC.</value>
-    [JsonConverter(typeof(JsonStringEnumConverter))]
+    
     public enum SortOrderEnum
     {
         /// <summary>
@@ -41,7 +41,7 @@ public partial class LogCaptureQueryRequest : IEquatable<LogCaptureQueryRequest>
     /// Order of results. Default order is ASC.
     /// </summary>
     /// <value>Order of results. Default order is ASC.</value>
-    [DataMember(Name = "sortOrder", EmitDefaultValue = false)]
+    [JsonPropertyName("sortOrder")]
     public SortOrderEnum? SortOrder { get; set; }
 
     /// <summary>
@@ -69,7 +69,7 @@ public partial class LogCaptureQueryRequest : IEquatable<LogCaptureQueryRequest>
     /// Date and time range to query. Intervals are represented as an ISO-8601 string. For example: YYYY-MM-DDThh:mm:ss/YYYY-MM-DDThh:mm:ss
     /// </summary>
     /// <value>Date and time range to query. Intervals are represented as an ISO-8601 string. For example: YYYY-MM-DDThh:mm:ss/YYYY-MM-DDThh:mm:ss</value>
-    [DataMember(Name = "interval", EmitDefaultValue = false)]
+    [JsonPropertyName("interval")]
     public string Interval { get; set; }
 
 
@@ -78,7 +78,7 @@ public partial class LogCaptureQueryRequest : IEquatable<LogCaptureQueryRequest>
     /// Id of the user to query.
     /// </summary>
     /// <value>Id of the user to query.</value>
-    [DataMember(Name = "userId", EmitDefaultValue = false)]
+    [JsonPropertyName("userId")]
     public string UserId { get; set; }
 
 

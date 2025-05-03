@@ -1,12 +1,12 @@
-using System.Runtime.Serialization;
 using System.Text;
+using System.Text.Json.Serialization;
 
 namespace PureCloud.Client.Models;
 
 /// <summary>
 /// WeekScheduleGenerationResult
 /// </summary>
-[DataContract]
+
 public partial class WeekScheduleGenerationResult : IEquatable<WeekScheduleGenerationResult>
 {
     /// <summary>
@@ -31,7 +31,7 @@ public partial class WeekScheduleGenerationResult : IEquatable<WeekScheduleGener
     /// Whether the schedule generation failed
     /// </summary>
     /// <value>Whether the schedule generation failed</value>
-    [DataMember(Name = "failed", EmitDefaultValue = false)]
+    [JsonPropertyName("failed")]
     public bool? Failed { get; set; }
 
 
@@ -40,7 +40,7 @@ public partial class WeekScheduleGenerationResult : IEquatable<WeekScheduleGener
     /// ID of the schedule run
     /// </summary>
     /// <value>ID of the schedule run</value>
-    [DataMember(Name = "runId", EmitDefaultValue = false)]
+    [JsonPropertyName("runId")]
     public string RunId { get; set; }
 
 
@@ -49,7 +49,7 @@ public partial class WeekScheduleGenerationResult : IEquatable<WeekScheduleGener
     /// Warning messages from the schedule run. This will be available only when requesting information for a single week schedule
     /// </summary>
     /// <value>Warning messages from the schedule run. This will be available only when requesting information for a single week schedule</value>
-    [DataMember(Name = "agentWarnings", EmitDefaultValue = false)]
+    [JsonPropertyName("agentWarnings")]
     public List<ScheduleGenerationWarning> AgentWarnings { get; set; }
 
 
@@ -58,7 +58,7 @@ public partial class WeekScheduleGenerationResult : IEquatable<WeekScheduleGener
     /// Count of warning messages from the schedule run. This will be available only when requesting multiple week schedules
     /// </summary>
     /// <value>Count of warning messages from the schedule run. This will be available only when requesting multiple week schedules</value>
-    [DataMember(Name = "agentWarningCount", EmitDefaultValue = false)]
+    [JsonPropertyName("agentWarningCount")]
     public int? AgentWarningCount { get; set; }
 
 

@@ -1,4 +1,3 @@
-using System.Runtime.Serialization;
 using System.Text;
 using System.Text.Json.Serialization;
 
@@ -7,7 +6,7 @@ namespace PureCloud.Client.Models;
 /// <summary>
 /// AuditRealtimeRelatedRequest
 /// </summary>
-[DataContract]
+
 public partial class AuditRealtimeRelatedRequest : IEquatable<AuditRealtimeRelatedRequest>
 {
 
@@ -36,7 +35,7 @@ public partial class AuditRealtimeRelatedRequest : IEquatable<AuditRealtimeRelat
     /// The id of the audit of which related audits will be retrieved.
     /// </summary>
     /// <value>The id of the audit of which related audits will be retrieved.</value>
-    [DataMember(Name = "auditId", EmitDefaultValue = false)]
+    [JsonPropertyName("auditId")]
     public string AuditId { get; set; }
 
 
@@ -45,7 +44,7 @@ public partial class AuditRealtimeRelatedRequest : IEquatable<AuditRealtimeRelat
     /// The id of the trustor org to which the audit belongs. Used when searching for audits performed by a trustee user within a trustor org.
     /// </summary>
     /// <value>The id of the trustor org to which the audit belongs. Used when searching for audits performed by a trustee user within a trustor org.</value>
-    [DataMember(Name = "trustorOrgId", EmitDefaultValue = false)]
+    [JsonPropertyName("trustorOrgId")]
     public string TrustorOrgId { get; set; }
 
 
@@ -54,7 +53,7 @@ public partial class AuditRealtimeRelatedRequest : IEquatable<AuditRealtimeRelat
     /// Sort parameter for the query.
     /// </summary>
     /// <value>Sort parameter for the query.</value>
-    [DataMember(Name = "sort", EmitDefaultValue = false)]
+    [JsonPropertyName("sort")]
     public List<AuditQuerySort> Sort { get; set; }
 
 

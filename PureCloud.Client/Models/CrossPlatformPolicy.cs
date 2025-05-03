@@ -1,12 +1,12 @@
-using System.Runtime.Serialization;
 using System.Text;
+using System.Text.Json.Serialization;
 
 namespace PureCloud.Client.Models;
 
 /// <summary>
 /// CrossPlatformPolicy
 /// </summary>
-[DataContract]
+
 public partial class CrossPlatformPolicy : IEquatable<CrossPlatformPolicy>
 {
     /// <summary>
@@ -43,7 +43,7 @@ public partial class CrossPlatformPolicy : IEquatable<CrossPlatformPolicy>
     /// The globally unique identifier for the object.
     /// </summary>
     /// <value>The globally unique identifier for the object.</value>
-    [DataMember(Name = "id", EmitDefaultValue = false)]
+    [JsonPropertyName("id")]
     public string Id { get; private set; }
 
 
@@ -51,7 +51,7 @@ public partial class CrossPlatformPolicy : IEquatable<CrossPlatformPolicy>
     /// <summary>
     /// Gets or Sets Name
     /// </summary>
-    [DataMember(Name = "name", EmitDefaultValue = false)]
+    [JsonPropertyName("name")]
     public string Name { get; set; }
 
 
@@ -60,7 +60,7 @@ public partial class CrossPlatformPolicy : IEquatable<CrossPlatformPolicy>
     /// Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z
     /// </summary>
     /// <value>Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z</value>
-    [DataMember(Name = "modifiedDate", EmitDefaultValue = false)]
+    [JsonPropertyName("modifiedDate")]
     public DateTime? ModifiedDate { get; set; }
 
 
@@ -69,7 +69,7 @@ public partial class CrossPlatformPolicy : IEquatable<CrossPlatformPolicy>
     /// Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z
     /// </summary>
     /// <value>Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z</value>
-    [DataMember(Name = "createdDate", EmitDefaultValue = false)]
+    [JsonPropertyName("createdDate")]
     public DateTime? CreatedDate { get; set; }
 
 
@@ -77,7 +77,7 @@ public partial class CrossPlatformPolicy : IEquatable<CrossPlatformPolicy>
     /// <summary>
     /// Gets or Sets Order
     /// </summary>
-    [DataMember(Name = "order", EmitDefaultValue = false)]
+    [JsonPropertyName("order")]
     public int? Order { get; set; }
 
 
@@ -85,7 +85,7 @@ public partial class CrossPlatformPolicy : IEquatable<CrossPlatformPolicy>
     /// <summary>
     /// Gets or Sets Description
     /// </summary>
-    [DataMember(Name = "description", EmitDefaultValue = false)]
+    [JsonPropertyName("description")]
     public string Description { get; set; }
 
 
@@ -93,7 +93,7 @@ public partial class CrossPlatformPolicy : IEquatable<CrossPlatformPolicy>
     /// <summary>
     /// Gets or Sets Enabled
     /// </summary>
-    [DataMember(Name = "enabled", EmitDefaultValue = false)]
+    [JsonPropertyName("enabled")]
     public bool? Enabled { get; set; }
 
 
@@ -102,7 +102,7 @@ public partial class CrossPlatformPolicy : IEquatable<CrossPlatformPolicy>
     /// Conditions and actions per media type
     /// </summary>
     /// <value>Conditions and actions per media type</value>
-    [DataMember(Name = "mediaPolicies", EmitDefaultValue = false)]
+    [JsonPropertyName("mediaPolicies")]
     public CrossPlatformMediaPolicies MediaPolicies { get; set; }
 
 
@@ -111,7 +111,7 @@ public partial class CrossPlatformPolicy : IEquatable<CrossPlatformPolicy>
     /// Conditions
     /// </summary>
     /// <value>Conditions</value>
-    [DataMember(Name = "conditions", EmitDefaultValue = false)]
+    [JsonPropertyName("conditions")]
     public PolicyConditions Conditions { get; set; }
 
 
@@ -120,7 +120,7 @@ public partial class CrossPlatformPolicy : IEquatable<CrossPlatformPolicy>
     /// Actions
     /// </summary>
     /// <value>Actions</value>
-    [DataMember(Name = "actions", EmitDefaultValue = false)]
+    [JsonPropertyName("actions")]
     public CrossPlatformPolicyActions Actions { get; set; }
 
 
@@ -128,7 +128,7 @@ public partial class CrossPlatformPolicy : IEquatable<CrossPlatformPolicy>
     /// <summary>
     /// Gets or Sets PolicyErrors
     /// </summary>
-    [DataMember(Name = "policyErrors", EmitDefaultValue = false)]
+    [JsonPropertyName("policyErrors")]
     public PolicyErrors PolicyErrors { get; set; }
 
 
@@ -137,7 +137,7 @@ public partial class CrossPlatformPolicy : IEquatable<CrossPlatformPolicy>
     /// The URI for this object
     /// </summary>
     /// <value>The URI for this object</value>
-    [DataMember(Name = "selfUri", EmitDefaultValue = false)]
+    [JsonPropertyName("selfUri")]
     public string SelfUri { get; private set; }
 
 

@@ -1,4 +1,3 @@
-using System.Runtime.Serialization;
 using System.Text;
 using System.Text.Json.Serialization;
 
@@ -7,7 +6,7 @@ namespace PureCloud.Client.Models;
 /// <summary>
 /// UnansweredPhraseGroupPatchRequestBody
 /// </summary>
-[DataContract]
+
 public partial class UnansweredPhraseGroupPatchRequestBody : IEquatable<UnansweredPhraseGroupPatchRequestBody>
 {
 
@@ -36,7 +35,7 @@ public partial class UnansweredPhraseGroupPatchRequestBody : IEquatable<Unanswer
     /// List of phrases and documents to be linked
     /// </summary>
     /// <value>List of phrases and documents to be linked</value>
-    [DataMember(Name = "phraseAssociations", EmitDefaultValue = false)]
+    [JsonPropertyName("phraseAssociations")]
     public List<PhraseAssociations> PhraseAssociations { get; set; }
 
 
@@ -45,7 +44,7 @@ public partial class UnansweredPhraseGroupPatchRequestBody : IEquatable<Unanswer
     /// The start date to be used for filtering phrases. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd
     /// </summary>
     /// <value>The start date to be used for filtering phrases. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd</value>
-    [DataMember(Name = "dateStart", EmitDefaultValue = false)]
+    [JsonPropertyName("dateStart")]
     public string DateStart { get; set; }
 
 
@@ -54,7 +53,7 @@ public partial class UnansweredPhraseGroupPatchRequestBody : IEquatable<Unanswer
     /// The end date to be used for filtering phrases. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd
     /// </summary>
     /// <value>The end date to be used for filtering phrases. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd</value>
-    [DataMember(Name = "dateEnd", EmitDefaultValue = false)]
+    [JsonPropertyName("dateEnd")]
     public string DateEnd { get; set; }
 
 

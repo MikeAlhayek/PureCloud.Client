@@ -1,12 +1,12 @@
-using System.Runtime.Serialization;
 using System.Text;
+using System.Text.Json.Serialization;
 
 namespace PureCloud.Client.Models;
 
 /// <summary>
 /// ContestUserRank
 /// </summary>
-[DataContract]
+
 public partial class ContestUserRank : IEquatable<ContestUserRank>
 {
     /// <summary>
@@ -27,7 +27,7 @@ public partial class ContestUserRank : IEquatable<ContestUserRank>
     /// The globally unique identifier for the object.
     /// </summary>
     /// <value>The globally unique identifier for the object.</value>
-    [DataMember(Name = "id", EmitDefaultValue = false)]
+    [JsonPropertyName("id")]
     public string Id { get; set; }
 
 
@@ -36,7 +36,7 @@ public partial class ContestUserRank : IEquatable<ContestUserRank>
     /// The user&#39;s rank in contest, a lower rank is better (1 is the best)
     /// </summary>
     /// <value>The user&#39;s rank in contest, a lower rank is better (1 is the best)</value>
-    [DataMember(Name = "rank", EmitDefaultValue = false)]
+    [JsonPropertyName("rank")]
     public int? Rank { get; set; }
 
 
@@ -45,7 +45,7 @@ public partial class ContestUserRank : IEquatable<ContestUserRank>
     /// The URI for this object
     /// </summary>
     /// <value>The URI for this object</value>
-    [DataMember(Name = "selfUri", EmitDefaultValue = false)]
+    [JsonPropertyName("selfUri")]
     public string SelfUri { get; private set; }
 
 

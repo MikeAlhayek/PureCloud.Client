@@ -7,13 +7,13 @@ namespace PureCloud.Client.Models;
 /// <summary>
 /// AssistantQueue
 /// </summary>
-[DataContract]
+
 public partial class AssistantQueue : IEquatable<AssistantQueue>
 {
     /// <summary>
     /// Gets or Sets MediaTypes
     /// </summary>
-    [JsonConverter(typeof(JsonStringEnumConverter))]
+    
     public enum MediaTypesEnum
     {
         /// <summary>
@@ -66,7 +66,7 @@ public partial class AssistantQueue : IEquatable<AssistantQueue>
     /// The globally unique identifier for the queue.
     /// </summary>
     /// <value>The globally unique identifier for the queue.</value>
-    [DataMember(Name = "id", EmitDefaultValue = false)]
+    [JsonPropertyName("id")]
     public string Id { get; set; }
 
 
@@ -75,7 +75,7 @@ public partial class AssistantQueue : IEquatable<AssistantQueue>
     /// List of media Types in which the assistant is activated for this queue.
     /// </summary>
     /// <value>List of media Types in which the assistant is activated for this queue.</value>
-    [DataMember(Name = "mediaTypes", EmitDefaultValue = false)]
+    [JsonPropertyName("mediaTypes")]
     public List<MediaTypesEnum> MediaTypes { get; set; }
 
 
@@ -84,7 +84,7 @@ public partial class AssistantQueue : IEquatable<AssistantQueue>
     /// Assistant to which the queue is assigned.
     /// </summary>
     /// <value>Assistant to which the queue is assigned.</value>
-    [DataMember(Name = "assistant", EmitDefaultValue = false)]
+    [JsonPropertyName("assistant")]
     public Assistant Assistant { get; private set; }
 
 
@@ -93,7 +93,7 @@ public partial class AssistantQueue : IEquatable<AssistantQueue>
     /// Date when the assistant queue was created. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z
     /// </summary>
     /// <value>Date when the assistant queue was created. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z</value>
-    [DataMember(Name = "dateCreated", EmitDefaultValue = false)]
+    [JsonPropertyName("dateCreated")]
     public DateTime? DateCreated { get; private set; }
 
 
@@ -102,7 +102,7 @@ public partial class AssistantQueue : IEquatable<AssistantQueue>
     /// Date when the assistant queue was last modified. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z
     /// </summary>
     /// <value>Date when the assistant queue was last modified. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z</value>
-    [DataMember(Name = "dateModified", EmitDefaultValue = false)]
+    [JsonPropertyName("dateModified")]
     public DateTime? DateModified { get; private set; }
 
 
@@ -111,7 +111,7 @@ public partial class AssistantQueue : IEquatable<AssistantQueue>
     /// The URI for this object
     /// </summary>
     /// <value>The URI for this object</value>
-    [DataMember(Name = "selfUri", EmitDefaultValue = false)]
+    [JsonPropertyName("selfUri")]
     public string SelfUri { get; private set; }
 
 

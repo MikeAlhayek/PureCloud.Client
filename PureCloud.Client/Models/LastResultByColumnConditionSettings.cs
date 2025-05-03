@@ -1,12 +1,12 @@
-using System.Runtime.Serialization;
 using System.Text;
+using System.Text.Json.Serialization;
 
 namespace PureCloud.Client.Models;
 
 /// <summary>
 /// LastResultByColumnConditionSettings
 /// </summary>
-[DataContract]
+
 public partial class LastResultByColumnConditionSettings : IEquatable<LastResultByColumnConditionSettings>
 {
     /// <summary>
@@ -31,7 +31,7 @@ public partial class LastResultByColumnConditionSettings : IEquatable<LastResult
     /// The name of the contact column to evaluate for Email.
     /// </summary>
     /// <value>The name of the contact column to evaluate for Email.</value>
-    [DataMember(Name = "emailColumnName", EmitDefaultValue = false)]
+    [JsonPropertyName("emailColumnName")]
     public string EmailColumnName { get; set; }
 
 
@@ -40,7 +40,7 @@ public partial class LastResultByColumnConditionSettings : IEquatable<LastResult
     /// A list of wrapup code identifiers to match for Email.
     /// </summary>
     /// <value>A list of wrapup code identifiers to match for Email.</value>
-    [DataMember(Name = "emailWrapupCodes", EmitDefaultValue = false)]
+    [JsonPropertyName("emailWrapupCodes")]
     public List<string> EmailWrapupCodes { get; set; }
 
 
@@ -49,7 +49,7 @@ public partial class LastResultByColumnConditionSettings : IEquatable<LastResult
     /// The name of the contact column to evaluate for SMS.
     /// </summary>
     /// <value>The name of the contact column to evaluate for SMS.</value>
-    [DataMember(Name = "smsColumnName", EmitDefaultValue = false)]
+    [JsonPropertyName("smsColumnName")]
     public string SmsColumnName { get; set; }
 
 
@@ -58,7 +58,7 @@ public partial class LastResultByColumnConditionSettings : IEquatable<LastResult
     /// A list of wrapup code identifiers to match for SMS.
     /// </summary>
     /// <value>A list of wrapup code identifiers to match for SMS.</value>
-    [DataMember(Name = "smsWrapupCodes", EmitDefaultValue = false)]
+    [JsonPropertyName("smsWrapupCodes")]
     public List<string> SmsWrapupCodes { get; set; }
 
 

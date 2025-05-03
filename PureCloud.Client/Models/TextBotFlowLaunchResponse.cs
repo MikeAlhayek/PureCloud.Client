@@ -1,4 +1,3 @@
-using System.Runtime.Serialization;
 using System.Text;
 using System.Text.Json.Serialization;
 
@@ -7,7 +6,7 @@ namespace PureCloud.Client.Models;
 /// <summary>
 /// Information related to a successful launch of a bot flow. The ID will be used in subsequent turn requests of the bot flow.
 /// </summary>
-[DataContract]
+
 public partial class TextBotFlowLaunchResponse : IEquatable<TextBotFlowLaunchResponse>
 {
 
@@ -32,7 +31,7 @@ public partial class TextBotFlowLaunchResponse : IEquatable<TextBotFlowLaunchRes
     /// The session ID of the bot flow, used to send to subsequent turn requests
     /// </summary>
     /// <value>The session ID of the bot flow, used to send to subsequent turn requests</value>
-    [DataMember(Name = "id", EmitDefaultValue = false)]
+    [JsonPropertyName("id")]
     public string Id { get; set; }
 
 

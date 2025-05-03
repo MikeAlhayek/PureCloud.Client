@@ -7,13 +7,13 @@ namespace PureCloud.Client.Models;
 /// <summary>
 /// WorkitemsQueueEventsNotificationSession
 /// </summary>
-[DataContract]
+
 public partial class WorkitemsQueueEventsNotificationSession : IEquatable<WorkitemsQueueEventsNotificationSession>
 {
     /// <summary>
     /// Gets or Sets Type
     /// </summary>
-    [JsonConverter(typeof(JsonStringEnumConverter))]
+    
     public enum TypeEnum
     {
         /// <summary>
@@ -57,7 +57,7 @@ public partial class WorkitemsQueueEventsNotificationSession : IEquatable<Workit
     /// <summary>
     /// Gets or Sets Status
     /// </summary>
-    [JsonConverter(typeof(JsonStringEnumConverter))]
+    
     public enum StatusEnum
     {
         /// <summary>
@@ -89,12 +89,12 @@ public partial class WorkitemsQueueEventsNotificationSession : IEquatable<Workit
     /// <summary>
     /// Gets or Sets Type
     /// </summary>
-    [DataMember(Name = "type", EmitDefaultValue = false)]
+    [JsonPropertyName("type")]
     public TypeEnum? Type { get; set; }
     /// <summary>
     /// Gets or Sets Status
     /// </summary>
-    [DataMember(Name = "status", EmitDefaultValue = false)]
+    [JsonPropertyName("status")]
     public StatusEnum? Status { get; set; }
     /// <summary>
     /// Initializes a new instance of the <see cref="WorkitemsQueueEventsNotificationSession" /> class.
@@ -123,7 +123,7 @@ public partial class WorkitemsQueueEventsNotificationSession : IEquatable<Workit
     /// <summary>
     /// Gets or Sets Id
     /// </summary>
-    [DataMember(Name = "id", EmitDefaultValue = false)]
+    [JsonPropertyName("id")]
     public Guid? Id { get; set; }
 
 
@@ -133,7 +133,7 @@ public partial class WorkitemsQueueEventsNotificationSession : IEquatable<Workit
     /// <summary>
     /// Gets or Sets DateSessionStart
     /// </summary>
-    [DataMember(Name = "dateSessionStart", EmitDefaultValue = false)]
+    [JsonPropertyName("dateSessionStart")]
     public string DateSessionStart { get; set; }
 
 
@@ -141,7 +141,7 @@ public partial class WorkitemsQueueEventsNotificationSession : IEquatable<Workit
     /// <summary>
     /// Gets or Sets DateSessionEnd
     /// </summary>
-    [DataMember(Name = "dateSessionEnd", EmitDefaultValue = false)]
+    [JsonPropertyName("dateSessionEnd")]
     public string DateSessionEnd { get; set; }
 
 
@@ -149,7 +149,7 @@ public partial class WorkitemsQueueEventsNotificationSession : IEquatable<Workit
     /// <summary>
     /// Gets or Sets AssignmentSegments
     /// </summary>
-    [DataMember(Name = "assignmentSegments", EmitDefaultValue = false)]
+    [JsonPropertyName("assignmentSegments")]
     public List<WorkitemsQueueEventsNotificationAssignmentSegment> AssignmentSegments { get; set; }
 
 

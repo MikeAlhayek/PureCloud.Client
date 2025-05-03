@@ -1,4 +1,3 @@
-using System.Runtime.Serialization;
 using System.Text;
 using System.Text.Json.Serialization;
 
@@ -7,7 +6,7 @@ namespace PureCloud.Client.Models;
 /// <summary>
 /// BatchDownloadJobSubmission
 /// </summary>
-[DataContract]
+
 public partial class BatchDownloadJobSubmission : IEquatable<BatchDownloadJobSubmission>
 {
 
@@ -32,7 +31,7 @@ public partial class BatchDownloadJobSubmission : IEquatable<BatchDownloadJobSub
     /// List of up to 100 items requested
     /// </summary>
     /// <value>List of up to 100 items requested</value>
-    [DataMember(Name = "batchDownloadRequestList", EmitDefaultValue = false)]
+    [JsonPropertyName("batchDownloadRequestList")]
     public List<BatchDownloadRequest> BatchDownloadRequestList { get; set; }
 
 

@@ -7,14 +7,14 @@ namespace PureCloud.Client.Models;
 /// <summary>
 /// SendAgentlessOutboundMessageResponse
 /// </summary>
-[DataContract]
+
 public partial class SendAgentlessOutboundMessageResponse : IEquatable<SendAgentlessOutboundMessageResponse>
 {
     /// <summary>
     /// Type of messenger.
     /// </summary>
     /// <value>Type of messenger.</value>
-    [JsonConverter(typeof(JsonStringEnumConverter))]
+    
     public enum MessengerTypeEnum
     {
         /// <summary>
@@ -47,7 +47,7 @@ public partial class SendAgentlessOutboundMessageResponse : IEquatable<SendAgent
     /// Type of messenger.
     /// </summary>
     /// <value>Type of messenger.</value>
-    [DataMember(Name = "messengerType", EmitDefaultValue = false)]
+    [JsonPropertyName("messengerType")]
     public MessengerTypeEnum? MessengerType { get; set; }
     /// <summary>
     /// Initializes a new instance of the <see cref="SendAgentlessOutboundMessageResponse" /> class.
@@ -81,7 +81,7 @@ public partial class SendAgentlessOutboundMessageResponse : IEquatable<SendAgent
     /// The globally unique identifier for the object.
     /// </summary>
     /// <value>The globally unique identifier for the object.</value>
-    [DataMember(Name = "id", EmitDefaultValue = false)]
+    [JsonPropertyName("id")]
     public string Id { get; private set; }
 
 
@@ -90,7 +90,7 @@ public partial class SendAgentlessOutboundMessageResponse : IEquatable<SendAgent
     /// The identifier of the conversation.
     /// </summary>
     /// <value>The identifier of the conversation.</value>
-    [DataMember(Name = "conversationId", EmitDefaultValue = false)]
+    [JsonPropertyName("conversationId")]
     public string ConversationId { get; set; }
 
 
@@ -99,7 +99,7 @@ public partial class SendAgentlessOutboundMessageResponse : IEquatable<SendAgent
     /// The sender of the message.
     /// </summary>
     /// <value>The sender of the message.</value>
-    [DataMember(Name = "fromAddress", EmitDefaultValue = false)]
+    [JsonPropertyName("fromAddress")]
     public string FromAddress { get; set; }
 
 
@@ -108,7 +108,7 @@ public partial class SendAgentlessOutboundMessageResponse : IEquatable<SendAgent
     /// The recipient of the message.
     /// </summary>
     /// <value>The recipient of the message.</value>
-    [DataMember(Name = "toAddress", EmitDefaultValue = false)]
+    [JsonPropertyName("toAddress")]
     public string ToAddress { get; set; }
 
 
@@ -119,7 +119,7 @@ public partial class SendAgentlessOutboundMessageResponse : IEquatable<SendAgent
     /// The body of the text message. (Deprecated - Instead use message.normalizedMessage.text)
     /// </summary>
     /// <value>The body of the text message. (Deprecated - Instead use message.normalizedMessage.text)</value>
-    [DataMember(Name = "textBody", EmitDefaultValue = false)]
+    [JsonPropertyName("textBody")]
     public string TextBody { get; set; }
 
 
@@ -128,7 +128,7 @@ public partial class SendAgentlessOutboundMessageResponse : IEquatable<SendAgent
     /// The messaging template sent. (Deprecated - Instead use message.normalizedMessage.content[#].template)
     /// </summary>
     /// <value>The messaging template sent. (Deprecated - Instead use message.normalizedMessage.content[#].template)</value>
-    [DataMember(Name = "messagingTemplate", EmitDefaultValue = false)]
+    [JsonPropertyName("messagingTemplate")]
     public SendMessagingTemplateRequest MessagingTemplate { get; set; }
 
 
@@ -137,7 +137,7 @@ public partial class SendAgentlessOutboundMessageResponse : IEquatable<SendAgent
     /// Use an existing active conversation to send the agentless outbound message. Set this parameter to &#39;true&#39; to use active conversation. Default value: false
     /// </summary>
     /// <value>Use an existing active conversation to send the agentless outbound message. Set this parameter to &#39;true&#39; to use active conversation. Default value: false</value>
-    [DataMember(Name = "useExistingActiveConversation", EmitDefaultValue = false)]
+    [JsonPropertyName("useExistingActiveConversation")]
     public bool? UseExistingActiveConversation { get; set; }
 
 
@@ -146,7 +146,7 @@ public partial class SendAgentlessOutboundMessageResponse : IEquatable<SendAgent
     /// Sent agentless outbound message in normalized format
     /// </summary>
     /// <value>Sent agentless outbound message in normalized format</value>
-    [DataMember(Name = "message", EmitDefaultValue = false)]
+    [JsonPropertyName("message")]
     public MessageData Message { get; set; }
 
 
@@ -155,7 +155,7 @@ public partial class SendAgentlessOutboundMessageResponse : IEquatable<SendAgent
     /// The time when the message was sent. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z
     /// </summary>
     /// <value>The time when the message was sent. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z</value>
-    [DataMember(Name = "timestamp", EmitDefaultValue = false)]
+    [JsonPropertyName("timestamp")]
     public DateTime? Timestamp { get; set; }
 
 
@@ -164,7 +164,7 @@ public partial class SendAgentlessOutboundMessageResponse : IEquatable<SendAgent
     /// The URI for this object
     /// </summary>
     /// <value>The URI for this object</value>
-    [DataMember(Name = "selfUri", EmitDefaultValue = false)]
+    [JsonPropertyName("selfUri")]
     public string SelfUri { get; private set; }
 
 
@@ -173,7 +173,7 @@ public partial class SendAgentlessOutboundMessageResponse : IEquatable<SendAgent
     /// Details of the user created the job
     /// </summary>
     /// <value>Details of the user created the job</value>
-    [DataMember(Name = "user", EmitDefaultValue = false)]
+    [JsonPropertyName("user")]
     public AddressableEntityRef User { get; private set; }
 
 

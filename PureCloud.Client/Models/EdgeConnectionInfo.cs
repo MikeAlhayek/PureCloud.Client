@@ -1,12 +1,12 @@
-using System.Runtime.Serialization;
 using System.Text;
+using System.Text.Json.Serialization;
 
 namespace PureCloud.Client.Models;
 
 /// <summary>
 /// EdgeConnectionInfo
 /// </summary>
-[DataContract]
+
 public partial class EdgeConnectionInfo : IEquatable<EdgeConnectionInfo>
 {
     /// <summary>
@@ -27,7 +27,7 @@ public partial class EdgeConnectionInfo : IEquatable<EdgeConnectionInfo>
     /// The globally unique identifier for the object.
     /// </summary>
     /// <value>The globally unique identifier for the object.</value>
-    [DataMember(Name = "id", EmitDefaultValue = false)]
+    [JsonPropertyName("id")]
     public string Id { get; private set; }
 
 
@@ -35,7 +35,7 @@ public partial class EdgeConnectionInfo : IEquatable<EdgeConnectionInfo>
     /// <summary>
     /// Gets or Sets Name
     /// </summary>
-    [DataMember(Name = "name", EmitDefaultValue = false)]
+    [JsonPropertyName("name")]
     public string Name { get; set; }
 
 
@@ -44,7 +44,7 @@ public partial class EdgeConnectionInfo : IEquatable<EdgeConnectionInfo>
     /// Interface used for the connection on the edge
     /// </summary>
     /// <value>Interface used for the connection on the edge</value>
-    [DataMember(Name = "interfaceName", EmitDefaultValue = false)]
+    [JsonPropertyName("interfaceName")]
     public string InterfaceName { get; private set; }
 
 
@@ -53,7 +53,7 @@ public partial class EdgeConnectionInfo : IEquatable<EdgeConnectionInfo>
     /// IP address of the interface
     /// </summary>
     /// <value>IP address of the interface</value>
-    [DataMember(Name = "interfaceIpAddress", EmitDefaultValue = false)]
+    [JsonPropertyName("interfaceIpAddress")]
     public string InterfaceIpAddress { get; private set; }
 
 
@@ -62,7 +62,7 @@ public partial class EdgeConnectionInfo : IEquatable<EdgeConnectionInfo>
     /// Connection errors
     /// </summary>
     /// <value>Connection errors</value>
-    [DataMember(Name = "connectionErrors", EmitDefaultValue = false)]
+    [JsonPropertyName("connectionErrors")]
     public List<string> ConnectionErrors { get; private set; }
 
 
@@ -70,7 +70,7 @@ public partial class EdgeConnectionInfo : IEquatable<EdgeConnectionInfo>
     /// <summary>
     /// Gets or Sets Site
     /// </summary>
-    [DataMember(Name = "site", EmitDefaultValue = false)]
+    [JsonPropertyName("site")]
     public AddressableEntityRef Site { get; set; }
 
 
@@ -79,7 +79,7 @@ public partial class EdgeConnectionInfo : IEquatable<EdgeConnectionInfo>
     /// The URI for this object
     /// </summary>
     /// <value>The URI for this object</value>
-    [DataMember(Name = "selfUri", EmitDefaultValue = false)]
+    [JsonPropertyName("selfUri")]
     public string SelfUri { get; private set; }
 
 

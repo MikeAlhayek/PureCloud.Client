@@ -1,12 +1,12 @@
-using System.Runtime.Serialization;
 using System.Text;
+using System.Text.Json.Serialization;
 
 namespace PureCloud.Client.Models;
 
 /// <summary>
 /// LastResultOverallConditionSettings
 /// </summary>
-[DataContract]
+
 public partial class LastResultOverallConditionSettings : IEquatable<LastResultOverallConditionSettings>
 {
     /// <summary>
@@ -27,7 +27,7 @@ public partial class LastResultOverallConditionSettings : IEquatable<LastResultO
     /// A list of wrapup code identifiers to match for Email.
     /// </summary>
     /// <value>A list of wrapup code identifiers to match for Email.</value>
-    [DataMember(Name = "emailWrapupCodes", EmitDefaultValue = false)]
+    [JsonPropertyName("emailWrapupCodes")]
     public List<string> EmailWrapupCodes { get; set; }
 
 
@@ -36,7 +36,7 @@ public partial class LastResultOverallConditionSettings : IEquatable<LastResultO
     /// A list of wrapup code identifiers to match for SMS.
     /// </summary>
     /// <value>A list of wrapup code identifiers to match for SMS.</value>
-    [DataMember(Name = "smsWrapupCodes", EmitDefaultValue = false)]
+    [JsonPropertyName("smsWrapupCodes")]
     public List<string> SmsWrapupCodes { get; set; }
 
 

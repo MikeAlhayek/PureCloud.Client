@@ -7,14 +7,14 @@ namespace PureCloud.Client.Models;
 /// <summary>
 /// CoachingAppointmentStatusRequest
 /// </summary>
-[DataContract]
+
 public partial class CoachingAppointmentStatusRequest : IEquatable<CoachingAppointmentStatusRequest>
 {
     /// <summary>
     /// The status of the coaching appointment
     /// </summary>
     /// <value>The status of the coaching appointment</value>
-    [JsonConverter(typeof(JsonStringEnumConverter))]
+    
     public enum StatusEnum
     {
         /// <summary>
@@ -47,7 +47,7 @@ public partial class CoachingAppointmentStatusRequest : IEquatable<CoachingAppoi
     /// The status of the coaching appointment
     /// </summary>
     /// <value>The status of the coaching appointment</value>
-    [DataMember(Name = "status", EmitDefaultValue = false)]
+    [JsonPropertyName("status")]
     public StatusEnum? Status { get; set; }
 
     /// <summary>

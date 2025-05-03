@@ -1,12 +1,12 @@
-using System.Runtime.Serialization;
 using System.Text;
+using System.Text.Json.Serialization;
 
 namespace PureCloud.Client.Models;
 
 /// <summary>
 /// EdgeVersionInformation
 /// </summary>
-[DataContract]
+
 public partial class EdgeVersionInformation : IEquatable<EdgeVersionInformation>
 {
     /// <summary>
@@ -24,7 +24,7 @@ public partial class EdgeVersionInformation : IEquatable<EdgeVersionInformation>
     /// <summary>
     /// Gets or Sets SoftwareVersion
     /// </summary>
-    [DataMember(Name = "softwareVersion", EmitDefaultValue = false)]
+    [JsonPropertyName("softwareVersion")]
     public string SoftwareVersion { get; set; }
 
 

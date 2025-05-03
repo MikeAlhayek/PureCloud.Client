@@ -1,12 +1,12 @@
-using System.Runtime.Serialization;
 using System.Text;
+using System.Text.Json.Serialization;
 
 namespace PureCloud.Client.Models;
 
 /// <summary>
 /// DialerContactId
 /// </summary>
-[DataContract]
+
 public partial class DialerContactId : IEquatable<DialerContactId>
 {
     /// <summary>
@@ -26,7 +26,7 @@ public partial class DialerContactId : IEquatable<DialerContactId>
     /// <summary>
     /// Gets or Sets Id
     /// </summary>
-    [DataMember(Name = "id", EmitDefaultValue = false)]
+    [JsonPropertyName("id")]
     public string Id { get; set; }
 
 
@@ -34,7 +34,7 @@ public partial class DialerContactId : IEquatable<DialerContactId>
     /// <summary>
     /// Gets or Sets ContactListId
     /// </summary>
-    [DataMember(Name = "contactListId", EmitDefaultValue = false)]
+    [JsonPropertyName("contactListId")]
     public string ContactListId { get; set; }
 
 

@@ -7,14 +7,14 @@ namespace PureCloud.Client.Models;
 /// <summary>
 /// AnalyticsProperty
 /// </summary>
-[DataContract]
+
 public partial class AnalyticsProperty : IEquatable<AnalyticsProperty>
 {
     /// <summary>
     /// Indicates what the data type is (e.g. integer vs string) and therefore how to evaluate what would constitute a match
     /// </summary>
     /// <value>Indicates what the data type is (e.g. integer vs string) and therefore how to evaluate what would constitute a match</value>
-    [JsonConverter(typeof(JsonStringEnumConverter))]
+    
     public enum PropertyTypeEnum
     {
         /// <summary>
@@ -65,7 +65,7 @@ public partial class AnalyticsProperty : IEquatable<AnalyticsProperty>
     /// Indicates what the data type is (e.g. integer vs string) and therefore how to evaluate what would constitute a match
     /// </summary>
     /// <value>Indicates what the data type is (e.g. integer vs string) and therefore how to evaluate what would constitute a match</value>
-    [DataMember(Name = "propertyType", EmitDefaultValue = false)]
+    [JsonPropertyName("propertyType")]
     public PropertyTypeEnum? PropertyType { get; set; }
     /// <summary>
     /// Initializes a new instance of the <see cref="AnalyticsProperty" /> class.
@@ -87,7 +87,7 @@ public partial class AnalyticsProperty : IEquatable<AnalyticsProperty>
     /// User-defined rather than intrinsic system-observed values. These are tagged onto segments by other components within PureCloudEnvironment or by API users directly.  This is the name of the user-defined property.
     /// </summary>
     /// <value>User-defined rather than intrinsic system-observed values. These are tagged onto segments by other components within PureCloudEnvironment or by API users directly.  This is the name of the user-defined property.</value>
-    [DataMember(Name = "property", EmitDefaultValue = false)]
+    [JsonPropertyName("property")]
     public string Property { get; set; }
 
 
@@ -98,7 +98,7 @@ public partial class AnalyticsProperty : IEquatable<AnalyticsProperty>
     /// What property value to match against
     /// </summary>
     /// <value>What property value to match against</value>
-    [DataMember(Name = "value", EmitDefaultValue = false)]
+    [JsonPropertyName("value")]
     public string Value { get; set; }
 
 

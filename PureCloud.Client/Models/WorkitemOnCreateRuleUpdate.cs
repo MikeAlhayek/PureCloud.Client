@@ -1,12 +1,12 @@
-using System.Runtime.Serialization;
 using System.Text;
+using System.Text.Json.Serialization;
 
 namespace PureCloud.Client.Models;
 
 /// <summary>
 /// WorkitemOnCreateRuleUpdate
 /// </summary>
-[DataContract]
+
 public partial class WorkitemOnCreateRuleUpdate : IEquatable<WorkitemOnCreateRuleUpdate>
 {
     /// <summary>
@@ -25,7 +25,7 @@ public partial class WorkitemOnCreateRuleUpdate : IEquatable<WorkitemOnCreateRul
     /// The name of the rule.
     /// </summary>
     /// <value>The name of the rule.</value>
-    [DataMember(Name = "name", EmitDefaultValue = false)]
+    [JsonPropertyName("name")]
     public string Name { get; set; }
 
 

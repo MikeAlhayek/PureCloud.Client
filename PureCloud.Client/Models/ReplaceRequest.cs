@@ -1,12 +1,12 @@
-using System.Runtime.Serialization;
 using System.Text;
+using System.Text.Json.Serialization;
 
 namespace PureCloud.Client.Models;
 
 /// <summary>
 /// ReplaceRequest
 /// </summary>
-[DataContract]
+
 public partial class ReplaceRequest : IEquatable<ReplaceRequest>
 {
     /// <summary>
@@ -28,7 +28,7 @@ public partial class ReplaceRequest : IEquatable<ReplaceRequest>
     /// <summary>
     /// Gets or Sets ChangeNumber
     /// </summary>
-    [DataMember(Name = "changeNumber", EmitDefaultValue = false)]
+    [JsonPropertyName("changeNumber")]
     public int? ChangeNumber { get; set; }
 
 
@@ -36,7 +36,7 @@ public partial class ReplaceRequest : IEquatable<ReplaceRequest>
     /// <summary>
     /// Gets or Sets Name
     /// </summary>
-    [DataMember(Name = "name", EmitDefaultValue = false)]
+    [JsonPropertyName("name")]
     public string Name { get; set; }
 
 
@@ -44,7 +44,7 @@ public partial class ReplaceRequest : IEquatable<ReplaceRequest>
     /// <summary>
     /// Gets or Sets AuthToken
     /// </summary>
-    [DataMember(Name = "authToken", EmitDefaultValue = false)]
+    [JsonPropertyName("authToken")]
     public string AuthToken { get; set; }
 
 

@@ -1,12 +1,12 @@
-using System.Runtime.Serialization;
 using System.Text;
+using System.Text.Json.Serialization;
 
 namespace PureCloud.Client.Models;
 
 /// <summary>
 /// An emergency flow associates a call flow to use in an emergency with the ivr(s) to route to it.
 /// </summary>
-[DataContract]
+
 public partial class EmergencyCallFlow : IEquatable<EmergencyCallFlow>
 {
     /// <summary>
@@ -27,7 +27,7 @@ public partial class EmergencyCallFlow : IEquatable<EmergencyCallFlow>
     /// The call flow to execute in an emergency.
     /// </summary>
     /// <value>The call flow to execute in an emergency.</value>
-    [DataMember(Name = "emergencyFlow", EmitDefaultValue = false)]
+    [JsonPropertyName("emergencyFlow")]
     public DomainEntityRef EmergencyFlow { get; set; }
 
 
@@ -36,7 +36,7 @@ public partial class EmergencyCallFlow : IEquatable<EmergencyCallFlow>
     /// The IVR(s) to route to the call flow during an emergency.
     /// </summary>
     /// <value>The IVR(s) to route to the call flow during an emergency.</value>
-    [DataMember(Name = "ivrs", EmitDefaultValue = false)]
+    [JsonPropertyName("ivrs")]
     public List<DomainEntityRef> Ivrs { get; set; }
 
 

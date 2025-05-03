@@ -1,12 +1,12 @@
-using System.Runtime.Serialization;
 using System.Text;
+using System.Text.Json.Serialization;
 
 namespace PureCloud.Client.Models;
 
 /// <summary>
 /// SelectedColumns
 /// </summary>
-[DataContract]
+
 public partial class SelectedColumns : IEquatable<SelectedColumns>
 {
     /// <summary>
@@ -27,7 +27,7 @@ public partial class SelectedColumns : IEquatable<SelectedColumns>
     /// Indicates the order/position of the selected column
     /// </summary>
     /// <value>Indicates the order/position of the selected column</value>
-    [DataMember(Name = "columnOrder", EmitDefaultValue = false)]
+    [JsonPropertyName("columnOrder")]
     public int? ColumnOrder { get; set; }
 
 
@@ -36,7 +36,7 @@ public partial class SelectedColumns : IEquatable<SelectedColumns>
     /// Indicates enum name of the column from the export view
     /// </summary>
     /// <value>Indicates enum name of the column from the export view</value>
-    [DataMember(Name = "columnName", EmitDefaultValue = false)]
+    [JsonPropertyName("columnName")]
     public string ColumnName { get; set; }
 
 

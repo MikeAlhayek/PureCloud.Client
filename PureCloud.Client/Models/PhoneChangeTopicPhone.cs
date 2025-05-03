@@ -1,12 +1,12 @@
-using System.Runtime.Serialization;
 using System.Text;
+using System.Text.Json.Serialization;
 
 namespace PureCloud.Client.Models;
 
 /// <summary>
 /// PhoneChangeTopicPhone
 /// </summary>
-[DataContract]
+
 public partial class PhoneChangeTopicPhone : IEquatable<PhoneChangeTopicPhone>
 {
     /// <summary>
@@ -30,7 +30,7 @@ public partial class PhoneChangeTopicPhone : IEquatable<PhoneChangeTopicPhone>
     /// <summary>
     /// Gets or Sets UserAgentInfo
     /// </summary>
-    [DataMember(Name = "userAgentInfo", EmitDefaultValue = false)]
+    [JsonPropertyName("userAgentInfo")]
     public PhoneChangeTopicUserAgentInfo UserAgentInfo { get; set; }
 
 
@@ -38,7 +38,7 @@ public partial class PhoneChangeTopicPhone : IEquatable<PhoneChangeTopicPhone>
     /// <summary>
     /// Gets or Sets Id
     /// </summary>
-    [DataMember(Name = "id", EmitDefaultValue = false)]
+    [JsonPropertyName("id")]
     public string Id { get; set; }
 
 
@@ -46,7 +46,7 @@ public partial class PhoneChangeTopicPhone : IEquatable<PhoneChangeTopicPhone>
     /// <summary>
     /// Gets or Sets Status
     /// </summary>
-    [DataMember(Name = "status", EmitDefaultValue = false)]
+    [JsonPropertyName("status")]
     public PhoneChangeTopicPhoneStatus Status { get; set; }
 
 
@@ -54,7 +54,7 @@ public partial class PhoneChangeTopicPhone : IEquatable<PhoneChangeTopicPhone>
     /// <summary>
     /// Gets or Sets SecondaryStatus
     /// </summary>
-    [DataMember(Name = "secondaryStatus", EmitDefaultValue = false)]
+    [JsonPropertyName("secondaryStatus")]
     public PhoneChangeTopicPhoneStatus SecondaryStatus { get; set; }
 
 

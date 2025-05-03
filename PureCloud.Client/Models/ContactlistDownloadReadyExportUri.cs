@@ -1,12 +1,12 @@
-using System.Runtime.Serialization;
 using System.Text;
+using System.Text.Json.Serialization;
 
 namespace PureCloud.Client.Models;
 
 /// <summary>
 /// ContactlistDownloadReadyExportUri
 /// </summary>
-[DataContract]
+
 public partial class ContactlistDownloadReadyExportUri : IEquatable<ContactlistDownloadReadyExportUri>
 {
     /// <summary>
@@ -28,7 +28,7 @@ public partial class ContactlistDownloadReadyExportUri : IEquatable<ContactlistD
     /// <summary>
     /// Gets or Sets Uri
     /// </summary>
-    [DataMember(Name = "uri", EmitDefaultValue = false)]
+    [JsonPropertyName("uri")]
     public string Uri { get; set; }
 
 
@@ -36,7 +36,7 @@ public partial class ContactlistDownloadReadyExportUri : IEquatable<ContactlistD
     /// <summary>
     /// Gets or Sets ExportTimestamp
     /// </summary>
-    [DataMember(Name = "exportTimestamp", EmitDefaultValue = false)]
+    [JsonPropertyName("exportTimestamp")]
     public string ExportTimestamp { get; set; }
 
 
@@ -44,7 +44,7 @@ public partial class ContactlistDownloadReadyExportUri : IEquatable<ContactlistD
     /// <summary>
     /// Gets or Sets AdditionalProperties
     /// </summary>
-    [DataMember(Name = "additionalProperties", EmitDefaultValue = false)]
+    [JsonPropertyName("additionalProperties")]
     public Dictionary<string, object> AdditionalProperties { get; set; }
 
 

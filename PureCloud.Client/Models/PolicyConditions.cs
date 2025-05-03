@@ -7,13 +7,13 @@ namespace PureCloud.Client.Models;
 /// <summary>
 /// PolicyConditions
 /// </summary>
-[DataContract]
+
 public partial class PolicyConditions : IEquatable<PolicyConditions>
 {
     /// <summary>
     /// Gets or Sets Directions
     /// </summary>
-    [JsonConverter(typeof(JsonStringEnumConverter))]
+    
     public enum DirectionsEnum
     {
         /// <summary>
@@ -39,7 +39,7 @@ public partial class PolicyConditions : IEquatable<PolicyConditions>
     /// <summary>
     /// Gets or Sets MediaTypes
     /// </summary>
-    [JsonConverter(typeof(JsonStringEnumConverter))]
+    
     public enum MediaTypesEnum
     {
         /// <summary>
@@ -66,7 +66,7 @@ public partial class PolicyConditions : IEquatable<PolicyConditions>
     /// This condition is to filter out conversation with and without customer participation.
     /// </summary>
     /// <value>This condition is to filter out conversation with and without customer participation.</value>
-    [JsonConverter(typeof(JsonStringEnumConverter))]
+    
     public enum CustomerParticipationEnum
     {
         /// <summary>
@@ -93,7 +93,7 @@ public partial class PolicyConditions : IEquatable<PolicyConditions>
     /// This condition is to filter out conversation with and without customer participation.
     /// </summary>
     /// <value>This condition is to filter out conversation with and without customer participation.</value>
-    [DataMember(Name = "customerParticipation", EmitDefaultValue = false)]
+    [JsonPropertyName("customerParticipation")]
     public CustomerParticipationEnum? CustomerParticipation { get; set; }
     /// <summary>
     /// Initializes a new instance of the <see cref="PolicyConditions" /> class.
@@ -128,7 +128,7 @@ public partial class PolicyConditions : IEquatable<PolicyConditions>
     /// <summary>
     /// Gets or Sets ForUsers
     /// </summary>
-    [DataMember(Name = "forUsers", EmitDefaultValue = false)]
+    [JsonPropertyName("forUsers")]
     public List<User> ForUsers { get; set; }
 
 
@@ -136,7 +136,7 @@ public partial class PolicyConditions : IEquatable<PolicyConditions>
     /// <summary>
     /// Gets or Sets Directions
     /// </summary>
-    [DataMember(Name = "directions", EmitDefaultValue = false)]
+    [JsonPropertyName("directions")]
     public List<DirectionsEnum> Directions { get; set; }
 
 
@@ -144,7 +144,7 @@ public partial class PolicyConditions : IEquatable<PolicyConditions>
     /// <summary>
     /// Gets or Sets DateRanges
     /// </summary>
-    [DataMember(Name = "dateRanges", EmitDefaultValue = false)]
+    [JsonPropertyName("dateRanges")]
     public List<string> DateRanges { get; set; }
 
 
@@ -152,7 +152,7 @@ public partial class PolicyConditions : IEquatable<PolicyConditions>
     /// <summary>
     /// Gets or Sets MediaTypes
     /// </summary>
-    [DataMember(Name = "mediaTypes", EmitDefaultValue = false)]
+    [JsonPropertyName("mediaTypes")]
     public List<MediaTypesEnum> MediaTypes { get; set; }
 
 
@@ -160,7 +160,7 @@ public partial class PolicyConditions : IEquatable<PolicyConditions>
     /// <summary>
     /// Gets or Sets ForQueues
     /// </summary>
-    [DataMember(Name = "forQueues", EmitDefaultValue = false)]
+    [JsonPropertyName("forQueues")]
     public List<Queue> ForQueues { get; set; }
 
 
@@ -168,7 +168,7 @@ public partial class PolicyConditions : IEquatable<PolicyConditions>
     /// <summary>
     /// Gets or Sets Duration
     /// </summary>
-    [DataMember(Name = "duration", EmitDefaultValue = false)]
+    [JsonPropertyName("duration")]
     public DurationCondition Duration { get; set; }
 
 
@@ -176,7 +176,7 @@ public partial class PolicyConditions : IEquatable<PolicyConditions>
     /// <summary>
     /// Gets or Sets WrapupCodes
     /// </summary>
-    [DataMember(Name = "wrapupCodes", EmitDefaultValue = false)]
+    [JsonPropertyName("wrapupCodes")]
     public List<WrapupCode> WrapupCodes { get; set; }
 
 
@@ -184,7 +184,7 @@ public partial class PolicyConditions : IEquatable<PolicyConditions>
     /// <summary>
     /// Gets or Sets TimeAllowed
     /// </summary>
-    [DataMember(Name = "timeAllowed", EmitDefaultValue = false)]
+    [JsonPropertyName("timeAllowed")]
     public TimeAllowed TimeAllowed { get; set; }
 
 
@@ -193,7 +193,7 @@ public partial class PolicyConditions : IEquatable<PolicyConditions>
     /// Teams to match conversations against
     /// </summary>
     /// <value>Teams to match conversations against</value>
-    [DataMember(Name = "teams", EmitDefaultValue = false)]
+    [JsonPropertyName("teams")]
     public List<Team> Teams { get; set; }
 
 

@@ -1,12 +1,12 @@
-using System.Runtime.Serialization;
 using System.Text;
+using System.Text.Json.Serialization;
 
 namespace PureCloud.Client.Models;
 
 /// <summary>
 /// EdgeMetricsNetwork
 /// </summary>
-[DataContract]
+
 public partial class EdgeMetricsNetwork : IEquatable<EdgeMetricsNetwork>
 {
     /// <summary>
@@ -33,7 +33,7 @@ public partial class EdgeMetricsNetwork : IEquatable<EdgeMetricsNetwork>
     /// Identifier for the network adapter.
     /// </summary>
     /// <value>Identifier for the network adapter.</value>
-    [DataMember(Name = "ifname", EmitDefaultValue = false)]
+    [JsonPropertyName("ifname")]
     public string Ifname { get; set; }
 
 
@@ -42,7 +42,7 @@ public partial class EdgeMetricsNetwork : IEquatable<EdgeMetricsNetwork>
     /// Number of byes sent per second.
     /// </summary>
     /// <value>Number of byes sent per second.</value>
-    [DataMember(Name = "sentBytesPerSec", EmitDefaultValue = false)]
+    [JsonPropertyName("sentBytesPerSec")]
     public int? SentBytesPerSec { get; set; }
 
 
@@ -51,7 +51,7 @@ public partial class EdgeMetricsNetwork : IEquatable<EdgeMetricsNetwork>
     /// Number of byes received per second.
     /// </summary>
     /// <value>Number of byes received per second.</value>
-    [DataMember(Name = "receivedBytesPerSec", EmitDefaultValue = false)]
+    [JsonPropertyName("receivedBytesPerSec")]
     public int? ReceivedBytesPerSec { get; set; }
 
 
@@ -60,7 +60,7 @@ public partial class EdgeMetricsNetwork : IEquatable<EdgeMetricsNetwork>
     /// Total bandwidth of the adapter in bits per second.
     /// </summary>
     /// <value>Total bandwidth of the adapter in bits per second.</value>
-    [DataMember(Name = "bandwidthBitsPerSec", EmitDefaultValue = false)]
+    [JsonPropertyName("bandwidthBitsPerSec")]
     public double? BandwidthBitsPerSec { get; set; }
 
 
@@ -69,7 +69,7 @@ public partial class EdgeMetricsNetwork : IEquatable<EdgeMetricsNetwork>
     /// Percent utilization of the network adapter.
     /// </summary>
     /// <value>Percent utilization of the network adapter.</value>
-    [DataMember(Name = "utilizationPct", EmitDefaultValue = false)]
+    [JsonPropertyName("utilizationPct")]
     public double? UtilizationPct { get; set; }
 
 

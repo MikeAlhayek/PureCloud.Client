@@ -7,14 +7,14 @@ namespace PureCloud.Client.Models;
 /// <summary>
 /// TrustGroup
 /// </summary>
-[DataContract]
+
 public partial class TrustGroup : IEquatable<TrustGroup>
 {
     /// <summary>
     /// Active, inactive, or deleted state.
     /// </summary>
     /// <value>Active, inactive, or deleted state.</value>
-    [JsonConverter(typeof(JsonStringEnumConverter))]
+    
     public enum StateEnum
     {
         /// <summary>
@@ -47,7 +47,7 @@ public partial class TrustGroup : IEquatable<TrustGroup>
     /// Type of group.
     /// </summary>
     /// <value>Type of group.</value>
-    [JsonConverter(typeof(JsonStringEnumConverter))]
+    
     public enum TypeEnum
     {
         /// <summary>
@@ -74,7 +74,7 @@ public partial class TrustGroup : IEquatable<TrustGroup>
     /// Who can view this group
     /// </summary>
     /// <value>Who can view this group</value>
-    [JsonConverter(typeof(JsonStringEnumConverter))]
+    
     public enum VisibilityEnum
     {
         /// <summary>
@@ -107,19 +107,19 @@ public partial class TrustGroup : IEquatable<TrustGroup>
     /// Active, inactive, or deleted state.
     /// </summary>
     /// <value>Active, inactive, or deleted state.</value>
-    [DataMember(Name = "state", EmitDefaultValue = false)]
+    [JsonPropertyName("state")]
     public StateEnum? State { get; private set; }
     /// <summary>
     /// Type of group.
     /// </summary>
     /// <value>Type of group.</value>
-    [DataMember(Name = "type", EmitDefaultValue = false)]
+    [JsonPropertyName("type")]
     public TypeEnum? Type { get; set; }
     /// <summary>
     /// Who can view this group
     /// </summary>
     /// <value>Who can view this group</value>
-    [DataMember(Name = "visibility", EmitDefaultValue = false)]
+    [JsonPropertyName("visibility")]
     public VisibilityEnum? Visibility { get; set; }
 
     /// <summary>
@@ -163,7 +163,7 @@ public partial class TrustGroup : IEquatable<TrustGroup>
     /// The globally unique identifier for the object.
     /// </summary>
     /// <value>The globally unique identifier for the object.</value>
-    [DataMember(Name = "id", EmitDefaultValue = false)]
+    [JsonPropertyName("id")]
     public string Id { get; private set; }
 
 
@@ -172,7 +172,7 @@ public partial class TrustGroup : IEquatable<TrustGroup>
     /// The group name.
     /// </summary>
     /// <value>The group name.</value>
-    [DataMember(Name = "name", EmitDefaultValue = false)]
+    [JsonPropertyName("name")]
     public string Name { get; set; }
 
 
@@ -180,7 +180,7 @@ public partial class TrustGroup : IEquatable<TrustGroup>
     /// <summary>
     /// Gets or Sets Description
     /// </summary>
-    [DataMember(Name = "description", EmitDefaultValue = false)]
+    [JsonPropertyName("description")]
     public string Description { get; set; }
 
 
@@ -189,7 +189,7 @@ public partial class TrustGroup : IEquatable<TrustGroup>
     /// Last modified date/time. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z
     /// </summary>
     /// <value>Last modified date/time. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z</value>
-    [DataMember(Name = "dateModified", EmitDefaultValue = false)]
+    [JsonPropertyName("dateModified")]
     public DateTime? DateModified { get; private set; }
 
 
@@ -198,7 +198,7 @@ public partial class TrustGroup : IEquatable<TrustGroup>
     /// Number of members.
     /// </summary>
     /// <value>Number of members.</value>
-    [DataMember(Name = "memberCount", EmitDefaultValue = false)]
+    [JsonPropertyName("memberCount")]
     public long? MemberCount { get; private set; }
 
 
@@ -209,7 +209,7 @@ public partial class TrustGroup : IEquatable<TrustGroup>
     /// Current version for this resource.
     /// </summary>
     /// <value>Current version for this resource.</value>
-    [DataMember(Name = "version", EmitDefaultValue = false)]
+    [JsonPropertyName("version")]
     public int? Version { get; private set; }
 
 
@@ -219,7 +219,7 @@ public partial class TrustGroup : IEquatable<TrustGroup>
     /// <summary>
     /// Gets or Sets Images
     /// </summary>
-    [DataMember(Name = "images", EmitDefaultValue = false)]
+    [JsonPropertyName("images")]
     public List<Image> Images { get; set; }
 
 
@@ -227,7 +227,7 @@ public partial class TrustGroup : IEquatable<TrustGroup>
     /// <summary>
     /// Gets or Sets Addresses
     /// </summary>
-    [DataMember(Name = "addresses", EmitDefaultValue = false)]
+    [JsonPropertyName("addresses")]
     public List<GroupContact> Addresses { get; set; }
 
 
@@ -236,7 +236,7 @@ public partial class TrustGroup : IEquatable<TrustGroup>
     /// Are membership rules visible to the person requesting to view the group
     /// </summary>
     /// <value>Are membership rules visible to the person requesting to view the group</value>
-    [DataMember(Name = "rulesVisible", EmitDefaultValue = false)]
+    [JsonPropertyName("rulesVisible")]
     public bool? RulesVisible { get; set; }
 
 
@@ -247,7 +247,7 @@ public partial class TrustGroup : IEquatable<TrustGroup>
     /// Allow roles to be assigned to this group
     /// </summary>
     /// <value>Allow roles to be assigned to this group</value>
-    [DataMember(Name = "rolesEnabled", EmitDefaultValue = false)]
+    [JsonPropertyName("rolesEnabled")]
     public bool? RolesEnabled { get; set; }
 
 
@@ -256,7 +256,7 @@ public partial class TrustGroup : IEquatable<TrustGroup>
     /// Allow owners to be included as members of the group
     /// </summary>
     /// <value>Allow owners to be included as members of the group</value>
-    [DataMember(Name = "includeOwners", EmitDefaultValue = false)]
+    [JsonPropertyName("includeOwners")]
     public bool? IncludeOwners { get; set; }
 
 
@@ -265,7 +265,7 @@ public partial class TrustGroup : IEquatable<TrustGroup>
     /// Allow calls to be placed to this group.
     /// </summary>
     /// <value>Allow calls to be placed to this group.</value>
-    [DataMember(Name = "callsEnabled", EmitDefaultValue = false)]
+    [JsonPropertyName("callsEnabled")]
     public bool? CallsEnabled { get; set; }
 
 
@@ -274,7 +274,7 @@ public partial class TrustGroup : IEquatable<TrustGroup>
     /// Owners of the group
     /// </summary>
     /// <value>Owners of the group</value>
-    [DataMember(Name = "owners", EmitDefaultValue = false)]
+    [JsonPropertyName("owners")]
     public List<User> Owners { get; set; }
 
 
@@ -283,7 +283,7 @@ public partial class TrustGroup : IEquatable<TrustGroup>
     /// The date on which the trusted group was added. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z
     /// </summary>
     /// <value>The date on which the trusted group was added. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z</value>
-    [DataMember(Name = "dateCreated", EmitDefaultValue = false)]
+    [JsonPropertyName("dateCreated")]
     public DateTime? DateCreated { get; private set; }
 
 
@@ -292,7 +292,7 @@ public partial class TrustGroup : IEquatable<TrustGroup>
     /// The user that added trusted group.
     /// </summary>
     /// <value>The user that added trusted group.</value>
-    [DataMember(Name = "createdBy", EmitDefaultValue = false)]
+    [JsonPropertyName("createdBy")]
     public OrgUser CreatedBy { get; private set; }
 
 

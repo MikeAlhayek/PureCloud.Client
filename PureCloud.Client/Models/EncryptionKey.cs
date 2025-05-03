@@ -7,14 +7,14 @@ namespace PureCloud.Client.Models;
 /// <summary>
 /// EncryptionKey
 /// </summary>
-[DataContract]
+
 public partial class EncryptionKey : IEquatable<EncryptionKey>
 {
     /// <summary>
     /// Key type used in this configuration
     /// </summary>
     /// <value>Key type used in this configuration</value>
-    [JsonConverter(typeof(JsonStringEnumConverter))]
+    
     public enum KeyConfigurationTypeEnum
     {
         /// <summary>
@@ -53,7 +53,7 @@ public partial class EncryptionKey : IEquatable<EncryptionKey>
     /// Key type used in this configuration
     /// </summary>
     /// <value>Key type used in this configuration</value>
-    [DataMember(Name = "keyConfigurationType", EmitDefaultValue = false)]
+    [JsonPropertyName("keyConfigurationType")]
     public KeyConfigurationTypeEnum? KeyConfigurationType { get; set; }
     /// <summary>
     /// Initializes a new instance of the <see cref="EncryptionKey" /> class.
@@ -83,7 +83,7 @@ public partial class EncryptionKey : IEquatable<EncryptionKey>
     /// The globally unique identifier for the object.
     /// </summary>
     /// <value>The globally unique identifier for the object.</value>
-    [DataMember(Name = "id", EmitDefaultValue = false)]
+    [JsonPropertyName("id")]
     public string Id { get; private set; }
 
 
@@ -91,7 +91,7 @@ public partial class EncryptionKey : IEquatable<EncryptionKey>
     /// <summary>
     /// Gets or Sets Name
     /// </summary>
-    [DataMember(Name = "name", EmitDefaultValue = false)]
+    [JsonPropertyName("name")]
     public string Name { get; set; }
 
 
@@ -100,7 +100,7 @@ public partial class EncryptionKey : IEquatable<EncryptionKey>
     /// create date of the key pair. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z
     /// </summary>
     /// <value>create date of the key pair. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z</value>
-    [DataMember(Name = "createDate", EmitDefaultValue = false)]
+    [JsonPropertyName("createDate")]
     public DateTime? CreateDate { get; set; }
 
 
@@ -109,7 +109,7 @@ public partial class EncryptionKey : IEquatable<EncryptionKey>
     /// key data summary (base 64 encoded public key)
     /// </summary>
     /// <value>key data summary (base 64 encoded public key)</value>
-    [DataMember(Name = "keydataSummary", EmitDefaultValue = false)]
+    [JsonPropertyName("keydataSummary")]
     public string KeydataSummary { get; set; }
 
 
@@ -118,7 +118,7 @@ public partial class EncryptionKey : IEquatable<EncryptionKey>
     /// user that requested generation of public key
     /// </summary>
     /// <value>user that requested generation of public key</value>
-    [DataMember(Name = "user", EmitDefaultValue = false)]
+    [JsonPropertyName("user")]
     public User User { get; set; }
 
 
@@ -127,7 +127,7 @@ public partial class EncryptionKey : IEquatable<EncryptionKey>
     /// Local configuration
     /// </summary>
     /// <value>Local configuration</value>
-    [DataMember(Name = "localEncryptionConfiguration", EmitDefaultValue = false)]
+    [JsonPropertyName("localEncryptionConfiguration")]
     public LocalEncryptionConfiguration LocalEncryptionConfiguration { get; set; }
 
 
@@ -138,7 +138,7 @@ public partial class EncryptionKey : IEquatable<EncryptionKey>
     /// ARN of internal key to be wrapped by AWS KMS Symmetric key
     /// </summary>
     /// <value>ARN of internal key to be wrapped by AWS KMS Symmetric key</value>
-    [DataMember(Name = "kmsKeyArn", EmitDefaultValue = false)]
+    [JsonPropertyName("kmsKeyArn")]
     public string KmsKeyArn { get; set; }
 
 
@@ -147,7 +147,7 @@ public partial class EncryptionKey : IEquatable<EncryptionKey>
     /// The URI for this object
     /// </summary>
     /// <value>The URI for this object</value>
-    [DataMember(Name = "selfUri", EmitDefaultValue = false)]
+    [JsonPropertyName("selfUri")]
     public string SelfUri { get; private set; }
 
 

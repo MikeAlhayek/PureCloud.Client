@@ -7,13 +7,13 @@ namespace PureCloud.Client.Models;
 /// <summary>
 /// LocaleHealth
 /// </summary>
-[DataContract]
+
 public partial class LocaleHealth : IEquatable<LocaleHealth>
 {
     /// <summary>
     /// Gets or Sets StaticValidationResults
     /// </summary>
-    [JsonConverter(typeof(JsonStringEnumConverter))]
+    
     public enum StaticValidationResultsEnum
     {
         /// <summary>
@@ -68,7 +68,7 @@ public partial class LocaleHealth : IEquatable<LocaleHealth>
     /// Overall health score for the intent.
     /// </summary>
     /// <value>Overall health score for the intent.</value>
-    [DataMember(Name = "overallScore", EmitDefaultValue = false)]
+    [JsonPropertyName("overallScore")]
     public float? OverallScore { get; set; }
 
 
@@ -77,7 +77,7 @@ public partial class LocaleHealth : IEquatable<LocaleHealth>
     /// Number of issues found in the intent.
     /// </summary>
     /// <value>Number of issues found in the intent.</value>
-    [DataMember(Name = "issueCount", EmitDefaultValue = false)]
+    [JsonPropertyName("issueCount")]
     public long? IssueCount { get; set; }
 
 
@@ -86,7 +86,7 @@ public partial class LocaleHealth : IEquatable<LocaleHealth>
     /// Validation results for the intent.
     /// </summary>
     /// <value>Validation results for the intent.</value>
-    [DataMember(Name = "staticValidationResults", EmitDefaultValue = false)]
+    [JsonPropertyName("staticValidationResults")]
     public List<StaticValidationResultsEnum> StaticValidationResults { get; set; }
 
 

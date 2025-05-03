@@ -1,12 +1,12 @@
-using System.Runtime.Serialization;
 using System.Text;
+using System.Text.Json.Serialization;
 
 namespace PureCloud.Client.Models;
 
 /// <summary>
 /// UnansweredPhrase
 /// </summary>
-[DataContract]
+
 public partial class UnansweredPhrase : IEquatable<UnansweredPhrase>
 {
     /// <summary>
@@ -29,7 +29,7 @@ public partial class UnansweredPhrase : IEquatable<UnansweredPhrase>
     /// Id of an unanswered phrase
     /// </summary>
     /// <value>Id of an unanswered phrase</value>
-    [DataMember(Name = "id", EmitDefaultValue = false)]
+    [JsonPropertyName("id")]
     public string Id { get; set; }
 
 
@@ -38,7 +38,7 @@ public partial class UnansweredPhrase : IEquatable<UnansweredPhrase>
     /// Phrase text of an unanswered phrase
     /// </summary>
     /// <value>Phrase text of an unanswered phrase</value>
-    [DataMember(Name = "text", EmitDefaultValue = false)]
+    [JsonPropertyName("text")]
     public string Text { get; set; }
 
 
@@ -47,7 +47,7 @@ public partial class UnansweredPhrase : IEquatable<UnansweredPhrase>
     /// Hit count of an unlinked phrase
     /// </summary>
     /// <value>Hit count of an unlinked phrase</value>
-    [DataMember(Name = "unlinkedPhraseHitCount", EmitDefaultValue = false)]
+    [JsonPropertyName("unlinkedPhraseHitCount")]
     public int? UnlinkedPhraseHitCount { get; set; }
 
 

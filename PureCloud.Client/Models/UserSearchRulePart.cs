@@ -7,14 +7,14 @@ namespace PureCloud.Client.Models;
 /// <summary>
 /// UserSearchRulePart
 /// </summary>
-[DataContract]
+
 public partial class UserSearchRulePart : IEquatable<UserSearchRulePart>
 {
     /// <summary>
     /// The operation for this part
     /// </summary>
     /// <value>The operation for this part</value>
-    [JsonConverter(typeof(JsonStringEnumConverter))]
+    
     public enum OperationEnum
     {
         /// <summary>
@@ -41,7 +41,7 @@ public partial class UserSearchRulePart : IEquatable<UserSearchRulePart>
     /// The type of item being selected by this part
     /// </summary>
     /// <value>The type of item being selected by this part</value>
-    [JsonConverter(typeof(JsonStringEnumConverter))]
+    
     public enum SelectorEnum
     {
         /// <summary>
@@ -92,13 +92,13 @@ public partial class UserSearchRulePart : IEquatable<UserSearchRulePart>
     /// The operation for this part
     /// </summary>
     /// <value>The operation for this part</value>
-    [DataMember(Name = "operation", EmitDefaultValue = false)]
+    [JsonPropertyName("operation")]
     public OperationEnum? Operation { get; set; }
     /// <summary>
     /// The type of item being selected by this part
     /// </summary>
     /// <value>The type of item being selected by this part</value>
-    [DataMember(Name = "selector", EmitDefaultValue = false)]
+    [JsonPropertyName("selector")]
     public SelectorEnum? Selector { get; set; }
 
     /// <summary>
@@ -130,7 +130,7 @@ public partial class UserSearchRulePart : IEquatable<UserSearchRulePart>
     /// The ids for the selector; the results of these are ORed together
     /// </summary>
     /// <value>The ids for the selector; the results of these are ORed together</value>
-    [DataMember(Name = "ids", EmitDefaultValue = false)]
+    [JsonPropertyName("ids")]
     public List<string> Ids { get; set; }
 
 

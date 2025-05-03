@@ -1,4 +1,3 @@
-using System.Runtime.Serialization;
 using System.Text;
 using System.Text.Json.Serialization;
 
@@ -7,7 +6,7 @@ namespace PureCloud.Client.Models;
 /// <summary>
 /// QueryTimeOffLimitValuesRequest
 /// </summary>
-[DataContract]
+
 public partial class QueryTimeOffLimitValuesRequest : IEquatable<QueryTimeOffLimitValuesRequest>
 {
 
@@ -36,7 +35,7 @@ public partial class QueryTimeOffLimitValuesRequest : IEquatable<QueryTimeOffLim
     /// The time off limit object id to retrieve values for. Required if activityCodeId is not specified
     /// </summary>
     /// <value>The time off limit object id to retrieve values for. Required if activityCodeId is not specified</value>
-    [DataMember(Name = "timeOffLimitId", EmitDefaultValue = false)]
+    [JsonPropertyName("timeOffLimitId")]
     public string TimeOffLimitId { get; set; }
 
 
@@ -45,7 +44,7 @@ public partial class QueryTimeOffLimitValuesRequest : IEquatable<QueryTimeOffLim
     /// The activity code id to filter the affected limit objects by. Required if timeOffLimitId is not specified
     /// </summary>
     /// <value>The activity code id to filter the affected limit objects by. Required if timeOffLimitId is not specified</value>
-    [DataMember(Name = "activityCodeId", EmitDefaultValue = false)]
+    [JsonPropertyName("activityCodeId")]
     public string ActivityCodeId { get; set; }
 
 
@@ -54,7 +53,7 @@ public partial class QueryTimeOffLimitValuesRequest : IEquatable<QueryTimeOffLim
     /// The list of the date ranges to return time off limit, allocated and waitlisted minutes. The valid number of date ranges is between 1 and 30. Maximum total number of days in all ranges in 366.
     /// </summary>
     /// <value>The list of the date ranges to return time off limit, allocated and waitlisted minutes. The valid number of date ranges is between 1 and 30. Maximum total number of days in all ranges in 366.</value>
-    [DataMember(Name = "dateRanges", EmitDefaultValue = false)]
+    [JsonPropertyName("dateRanges")]
     public List<LocalDateRange> DateRanges { get; set; }
 
 

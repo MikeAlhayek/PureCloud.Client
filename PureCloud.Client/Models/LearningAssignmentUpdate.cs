@@ -7,14 +7,14 @@ namespace PureCloud.Client.Models;
 /// <summary>
 /// LearningAssignmentUpdate
 /// </summary>
-[DataContract]
+
 public partial class LearningAssignmentUpdate : IEquatable<LearningAssignmentUpdate>
 {
     /// <summary>
     /// The Learning Assignment state
     /// </summary>
     /// <value>The Learning Assignment state</value>
-    [JsonConverter(typeof(JsonStringEnumConverter))]
+    
     public enum StateEnum
     {
         /// <summary>
@@ -65,7 +65,7 @@ public partial class LearningAssignmentUpdate : IEquatable<LearningAssignmentUpd
     /// The Learning Assignment state
     /// </summary>
     /// <value>The Learning Assignment state</value>
-    [DataMember(Name = "state", EmitDefaultValue = false)]
+    [JsonPropertyName("state")]
     public StateEnum? State { get; set; }
     /// <summary>
     /// Initializes a new instance of the <see cref="LearningAssignmentUpdate" /> class.
@@ -87,7 +87,7 @@ public partial class LearningAssignmentUpdate : IEquatable<LearningAssignmentUpd
     /// An updated Assessment
     /// </summary>
     /// <value>An updated Assessment</value>
-    [DataMember(Name = "assessment", EmitDefaultValue = false)]
+    [JsonPropertyName("assessment")]
     public LearningAssessment Assessment { get; set; }
 
 

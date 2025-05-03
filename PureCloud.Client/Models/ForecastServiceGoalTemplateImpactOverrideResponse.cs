@@ -1,12 +1,12 @@
-using System.Runtime.Serialization;
 using System.Text;
+using System.Text.Json.Serialization;
 
 namespace PureCloud.Client.Models;
 
 /// <summary>
 /// ForecastServiceGoalTemplateImpactOverrideResponse
 /// </summary>
-[DataContract]
+
 public partial class ForecastServiceGoalTemplateImpactOverrideResponse : IEquatable<ForecastServiceGoalTemplateImpactOverrideResponse>
 {
     /// <summary>
@@ -29,7 +29,7 @@ public partial class ForecastServiceGoalTemplateImpactOverrideResponse : IEquata
     /// Allowed service level percent increase and decrease; undefined if the goal is not enabled
     /// </summary>
     /// <value>Allowed service level percent increase and decrease; undefined if the goal is not enabled</value>
-    [DataMember(Name = "serviceLevel", EmitDefaultValue = false)]
+    [JsonPropertyName("serviceLevel")]
     public WfmServiceGoalImpact ServiceLevel { get; set; }
 
 
@@ -38,7 +38,7 @@ public partial class ForecastServiceGoalTemplateImpactOverrideResponse : IEquata
     /// Allowed average speed of answer percent increase and decrease; undefined if the goal is not enabled
     /// </summary>
     /// <value>Allowed average speed of answer percent increase and decrease; undefined if the goal is not enabled</value>
-    [DataMember(Name = "averageSpeedOfAnswer", EmitDefaultValue = false)]
+    [JsonPropertyName("averageSpeedOfAnswer")]
     public WfmServiceGoalImpact AverageSpeedOfAnswer { get; set; }
 
 
@@ -47,7 +47,7 @@ public partial class ForecastServiceGoalTemplateImpactOverrideResponse : IEquata
     /// Allowed abandon rate percent increase and decrease; undefined if the goal is not enabled
     /// </summary>
     /// <value>Allowed abandon rate percent increase and decrease; undefined if the goal is not enabled</value>
-    [DataMember(Name = "abandonRate", EmitDefaultValue = false)]
+    [JsonPropertyName("abandonRate")]
     public WfmServiceGoalImpact AbandonRate { get; set; }
 
 

@@ -1,12 +1,12 @@
-using System.Runtime.Serialization;
 using System.Text;
+using System.Text.Json.Serialization;
 
 namespace PureCloud.Client.Models;
 
 /// <summary>
 /// UserScheduleActivity
 /// </summary>
-[DataContract]
+
 public partial class UserScheduleActivity : IEquatable<UserScheduleActivity>
 {
     /// <summary>
@@ -37,7 +37,7 @@ public partial class UserScheduleActivity : IEquatable<UserScheduleActivity>
     /// The id for the activity code.  Look up a map of activity codes with the activities route
     /// </summary>
     /// <value>The id for the activity code.  Look up a map of activity codes with the activities route</value>
-    [DataMember(Name = "activityCodeId", EmitDefaultValue = false)]
+    [JsonPropertyName("activityCodeId")]
     public string ActivityCodeId { get; set; }
 
 
@@ -46,7 +46,7 @@ public partial class UserScheduleActivity : IEquatable<UserScheduleActivity>
     /// Start time in UTC for this activity, in ISO-8601 format
     /// </summary>
     /// <value>Start time in UTC for this activity, in ISO-8601 format</value>
-    [DataMember(Name = "startDate", EmitDefaultValue = false)]
+    [JsonPropertyName("startDate")]
     public DateTime? StartDate { get; set; }
 
 
@@ -55,7 +55,7 @@ public partial class UserScheduleActivity : IEquatable<UserScheduleActivity>
     /// Length in minutes for this activity
     /// </summary>
     /// <value>Length in minutes for this activity</value>
-    [DataMember(Name = "lengthInMinutes", EmitDefaultValue = false)]
+    [JsonPropertyName("lengthInMinutes")]
     public int? LengthInMinutes { get; set; }
 
 
@@ -64,7 +64,7 @@ public partial class UserScheduleActivity : IEquatable<UserScheduleActivity>
     /// Description for this activity
     /// </summary>
     /// <value>Description for this activity</value>
-    [DataMember(Name = "description", EmitDefaultValue = false)]
+    [JsonPropertyName("description")]
     public string Description { get; set; }
 
 
@@ -73,7 +73,7 @@ public partial class UserScheduleActivity : IEquatable<UserScheduleActivity>
     /// Whether this activity is paid
     /// </summary>
     /// <value>Whether this activity is paid</value>
-    [DataMember(Name = "countsAsPaidTime", EmitDefaultValue = false)]
+    [JsonPropertyName("countsAsPaidTime")]
     public bool? CountsAsPaidTime { get; set; }
 
 
@@ -82,7 +82,7 @@ public partial class UserScheduleActivity : IEquatable<UserScheduleActivity>
     /// Whether this activity spans a DST fallback
     /// </summary>
     /// <value>Whether this activity spans a DST fallback</value>
-    [DataMember(Name = "isDstFallback", EmitDefaultValue = false)]
+    [JsonPropertyName("isDstFallback")]
     public bool? IsDstFallback { get; set; }
 
 
@@ -91,7 +91,7 @@ public partial class UserScheduleActivity : IEquatable<UserScheduleActivity>
     /// Time off request id of this activity
     /// </summary>
     /// <value>Time off request id of this activity</value>
-    [DataMember(Name = "timeOffRequestId", EmitDefaultValue = false)]
+    [JsonPropertyName("timeOffRequestId")]
     public string TimeOffRequestId { get; set; }
 
 

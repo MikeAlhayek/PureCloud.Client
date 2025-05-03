@@ -1,4 +1,3 @@
-using System.Runtime.Serialization;
 using System.Text;
 using System.Text.Json.Serialization;
 
@@ -7,7 +6,7 @@ namespace PureCloud.Client.Models;
 /// <summary>
 /// WorkPlanPatternRequest
 /// </summary>
-[DataContract]
+
 public partial class WorkPlanPatternRequest : IEquatable<WorkPlanPatternRequest>
 {
 
@@ -32,7 +31,7 @@ public partial class WorkPlanPatternRequest : IEquatable<WorkPlanPatternRequest>
     /// List of work plan IDs in order of rotation on a weekly basis. Values in the list cannot be null or empty
     /// </summary>
     /// <value>List of work plan IDs in order of rotation on a weekly basis. Values in the list cannot be null or empty</value>
-    [DataMember(Name = "workPlanIds", EmitDefaultValue = false)]
+    [JsonPropertyName("workPlanIds")]
     public List<string> WorkPlanIds { get; set; }
 
 

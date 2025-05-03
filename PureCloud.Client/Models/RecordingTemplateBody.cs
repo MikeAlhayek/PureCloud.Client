@@ -1,12 +1,12 @@
-using System.Runtime.Serialization;
 using System.Text;
+using System.Text.Json.Serialization;
 
 namespace PureCloud.Client.Models;
 
 /// <summary>
 /// RecordingTemplateBody
 /// </summary>
-[DataContract]
+
 public partial class RecordingTemplateBody : IEquatable<RecordingTemplateBody>
 {
     /// <summary>
@@ -25,7 +25,7 @@ public partial class RecordingTemplateBody : IEquatable<RecordingTemplateBody>
     /// Template parameters for placeholders in template.
     /// </summary>
     /// <value>Template parameters for placeholders in template.</value>
-    [DataMember(Name = "text", EmitDefaultValue = false)]
+    [JsonPropertyName("text")]
     public string Text { get; set; }
 
 

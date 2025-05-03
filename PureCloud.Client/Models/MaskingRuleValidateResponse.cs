@@ -1,12 +1,12 @@
-using System.Runtime.Serialization;
 using System.Text;
+using System.Text.Json.Serialization;
 
 namespace PureCloud.Client.Models;
 
 /// <summary>
 /// MaskingRuleValidateResponse
 /// </summary>
-[DataContract]
+
 public partial class MaskingRuleValidateResponse : IEquatable<MaskingRuleValidateResponse>
 {
     /// <summary>
@@ -23,7 +23,7 @@ public partial class MaskingRuleValidateResponse : IEquatable<MaskingRuleValidat
     /// is masking rule definition valid?
     /// </summary>
     /// <value>is masking rule definition valid?</value>
-    [DataMember(Name = "valid", EmitDefaultValue = false)]
+    [JsonPropertyName("valid")]
     public bool? Valid { get; private set; }
 
 
@@ -32,7 +32,7 @@ public partial class MaskingRuleValidateResponse : IEquatable<MaskingRuleValidat
     /// Validation message.
     /// </summary>
     /// <value>Validation message.</value>
-    [DataMember(Name = "validationMessage", EmitDefaultValue = false)]
+    [JsonPropertyName("validationMessage")]
     public string ValidationMessage { get; private set; }
 
 
@@ -41,7 +41,7 @@ public partial class MaskingRuleValidateResponse : IEquatable<MaskingRuleValidat
     /// Masked text.
     /// </summary>
     /// <value>Masked text.</value>
-    [DataMember(Name = "maskedText", EmitDefaultValue = false)]
+    [JsonPropertyName("maskedText")]
     public string MaskedText { get; private set; }
 
 

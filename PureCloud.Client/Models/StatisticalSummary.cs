@@ -1,12 +1,12 @@
-using System.Runtime.Serialization;
 using System.Text;
+using System.Text.Json.Serialization;
 
 namespace PureCloud.Client.Models;
 
 /// <summary>
 /// StatisticalSummary
 /// </summary>
-[DataContract]
+
 public partial class StatisticalSummary : IEquatable<StatisticalSummary>
 {
     /// <summary>
@@ -48,7 +48,7 @@ public partial class StatisticalSummary : IEquatable<StatisticalSummary>
     /// <summary>
     /// Gets or Sets Max
     /// </summary>
-    [DataMember(Name = "max", EmitDefaultValue = false)]
+    [JsonPropertyName("max")]
     public double? Max { get; set; }
 
 
@@ -56,7 +56,7 @@ public partial class StatisticalSummary : IEquatable<StatisticalSummary>
     /// <summary>
     /// Gets or Sets Min
     /// </summary>
-    [DataMember(Name = "min", EmitDefaultValue = false)]
+    [JsonPropertyName("min")]
     public double? Min { get; set; }
 
 
@@ -64,7 +64,7 @@ public partial class StatisticalSummary : IEquatable<StatisticalSummary>
     /// <summary>
     /// Gets or Sets Count
     /// </summary>
-    [DataMember(Name = "count", EmitDefaultValue = false)]
+    [JsonPropertyName("count")]
     public long? Count { get; set; }
 
 
@@ -72,7 +72,7 @@ public partial class StatisticalSummary : IEquatable<StatisticalSummary>
     /// <summary>
     /// Gets or Sets CountNegative
     /// </summary>
-    [DataMember(Name = "countNegative", EmitDefaultValue = false)]
+    [JsonPropertyName("countNegative")]
     public long? CountNegative { get; set; }
 
 
@@ -80,7 +80,7 @@ public partial class StatisticalSummary : IEquatable<StatisticalSummary>
     /// <summary>
     /// Gets or Sets CountPositive
     /// </summary>
-    [DataMember(Name = "countPositive", EmitDefaultValue = false)]
+    [JsonPropertyName("countPositive")]
     public long? CountPositive { get; set; }
 
 
@@ -88,7 +88,7 @@ public partial class StatisticalSummary : IEquatable<StatisticalSummary>
     /// <summary>
     /// Gets or Sets Sum
     /// </summary>
-    [DataMember(Name = "sum", EmitDefaultValue = false)]
+    [JsonPropertyName("sum")]
     public double? Sum { get; set; }
 
 
@@ -96,7 +96,7 @@ public partial class StatisticalSummary : IEquatable<StatisticalSummary>
     /// <summary>
     /// Gets or Sets Current
     /// </summary>
-    [DataMember(Name = "current", EmitDefaultValue = false)]
+    [JsonPropertyName("current")]
     public double? Current { get; set; }
 
 
@@ -104,7 +104,7 @@ public partial class StatisticalSummary : IEquatable<StatisticalSummary>
     /// <summary>
     /// Gets or Sets Ratio
     /// </summary>
-    [DataMember(Name = "ratio", EmitDefaultValue = false)]
+    [JsonPropertyName("ratio")]
     public double? Ratio { get; set; }
 
 
@@ -112,7 +112,7 @@ public partial class StatisticalSummary : IEquatable<StatisticalSummary>
     /// <summary>
     /// Gets or Sets Numerator
     /// </summary>
-    [DataMember(Name = "numerator", EmitDefaultValue = false)]
+    [JsonPropertyName("numerator")]
     public double? Numerator { get; set; }
 
 
@@ -120,7 +120,7 @@ public partial class StatisticalSummary : IEquatable<StatisticalSummary>
     /// <summary>
     /// Gets or Sets Denominator
     /// </summary>
-    [DataMember(Name = "denominator", EmitDefaultValue = false)]
+    [JsonPropertyName("denominator")]
     public double? Denominator { get; set; }
 
 
@@ -128,7 +128,7 @@ public partial class StatisticalSummary : IEquatable<StatisticalSummary>
     /// <summary>
     /// Gets or Sets Target
     /// </summary>
-    [DataMember(Name = "target", EmitDefaultValue = false)]
+    [JsonPropertyName("target")]
     public double? Target { get; set; }
 
 
@@ -136,7 +136,7 @@ public partial class StatisticalSummary : IEquatable<StatisticalSummary>
     /// <summary>
     /// Gets or Sets P95
     /// </summary>
-    [DataMember(Name = "p95", EmitDefaultValue = false)]
+    [JsonPropertyName("p95")]
     public long? P95 { get; set; }
 
 
@@ -144,7 +144,7 @@ public partial class StatisticalSummary : IEquatable<StatisticalSummary>
     /// <summary>
     /// Gets or Sets P99
     /// </summary>
-    [DataMember(Name = "p99", EmitDefaultValue = false)]
+    [JsonPropertyName("p99")]
     public long? P99 { get; set; }
 
 

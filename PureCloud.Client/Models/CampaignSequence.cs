@@ -7,14 +7,14 @@ namespace PureCloud.Client.Models;
 /// <summary>
 /// CampaignSequence
 /// </summary>
-[DataContract]
+
 public partial class CampaignSequence : IEquatable<CampaignSequence>
 {
     /// <summary>
     /// The current status of the CampaignSequence. A CampaignSequence can be turned 'on' or 'off'.
     /// </summary>
     /// <value>The current status of the CampaignSequence. A CampaignSequence can be turned 'on' or 'off'.</value>
-    [JsonConverter(typeof(JsonStringEnumConverter))]
+    
     public enum StatusEnum
     {
         /// <summary>
@@ -47,7 +47,7 @@ public partial class CampaignSequence : IEquatable<CampaignSequence>
     /// The current status of the CampaignSequence. A CampaignSequence can be turned 'on' or 'off'.
     /// </summary>
     /// <value>The current status of the CampaignSequence. A CampaignSequence can be turned 'on' or 'off'.</value>
-    [DataMember(Name = "status", EmitDefaultValue = false)]
+    [JsonPropertyName("status")]
     public StatusEnum? Status { get; set; }
 
     /// <summary>
@@ -79,7 +79,7 @@ public partial class CampaignSequence : IEquatable<CampaignSequence>
     /// The globally unique identifier for the object.
     /// </summary>
     /// <value>The globally unique identifier for the object.</value>
-    [DataMember(Name = "id", EmitDefaultValue = false)]
+    [JsonPropertyName("id")]
     public string Id { get; private set; }
 
 
@@ -87,7 +87,7 @@ public partial class CampaignSequence : IEquatable<CampaignSequence>
     /// <summary>
     /// Gets or Sets Name
     /// </summary>
-    [DataMember(Name = "name", EmitDefaultValue = false)]
+    [JsonPropertyName("name")]
     public string Name { get; set; }
 
 
@@ -96,7 +96,7 @@ public partial class CampaignSequence : IEquatable<CampaignSequence>
     /// Creation time of the entity. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z
     /// </summary>
     /// <value>Creation time of the entity. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z</value>
-    [DataMember(Name = "dateCreated", EmitDefaultValue = false)]
+    [JsonPropertyName("dateCreated")]
     public DateTime? DateCreated { get; private set; }
 
 
@@ -105,7 +105,7 @@ public partial class CampaignSequence : IEquatable<CampaignSequence>
     /// Last modified time of the entity. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z
     /// </summary>
     /// <value>Last modified time of the entity. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z</value>
-    [DataMember(Name = "dateModified", EmitDefaultValue = false)]
+    [JsonPropertyName("dateModified")]
     public DateTime? DateModified { get; private set; }
 
 
@@ -114,7 +114,7 @@ public partial class CampaignSequence : IEquatable<CampaignSequence>
     /// Required for updates, must match the version number of the most recent update
     /// </summary>
     /// <value>Required for updates, must match the version number of the most recent update</value>
-    [DataMember(Name = "version", EmitDefaultValue = false)]
+    [JsonPropertyName("version")]
     public int? Version { get; set; }
 
 
@@ -123,7 +123,7 @@ public partial class CampaignSequence : IEquatable<CampaignSequence>
     /// The ordered list of Campaigns that this CampaignSequence will run.
     /// </summary>
     /// <value>The ordered list of Campaigns that this CampaignSequence will run.</value>
-    [DataMember(Name = "campaigns", EmitDefaultValue = false)]
+    [JsonPropertyName("campaigns")]
     public List<DomainEntityRef> Campaigns { get; set; }
 
 
@@ -132,7 +132,7 @@ public partial class CampaignSequence : IEquatable<CampaignSequence>
     /// A zero-based index indicating which Campaign this CampaignSequence is currently on.
     /// </summary>
     /// <value>A zero-based index indicating which Campaign this CampaignSequence is currently on.</value>
-    [DataMember(Name = "currentCampaign", EmitDefaultValue = false)]
+    [JsonPropertyName("currentCampaign")]
     public int? CurrentCampaign { get; private set; }
 
 
@@ -143,7 +143,7 @@ public partial class CampaignSequence : IEquatable<CampaignSequence>
     /// A message indicating if and why a CampaignSequence has stopped unexpectedly.
     /// </summary>
     /// <value>A message indicating if and why a CampaignSequence has stopped unexpectedly.</value>
-    [DataMember(Name = "stopMessage", EmitDefaultValue = false)]
+    [JsonPropertyName("stopMessage")]
     public string StopMessage { get; private set; }
 
 
@@ -152,7 +152,7 @@ public partial class CampaignSequence : IEquatable<CampaignSequence>
     /// Indicates if a sequence should repeat from the beginning after the last campaign completes. Default is false.
     /// </summary>
     /// <value>Indicates if a sequence should repeat from the beginning after the last campaign completes. Default is false.</value>
-    [DataMember(Name = "repeat", EmitDefaultValue = false)]
+    [JsonPropertyName("repeat")]
     public bool? Repeat { get; set; }
 
 
@@ -161,7 +161,7 @@ public partial class CampaignSequence : IEquatable<CampaignSequence>
     /// The URI for this object
     /// </summary>
     /// <value>The URI for this object</value>
-    [DataMember(Name = "selfUri", EmitDefaultValue = false)]
+    [JsonPropertyName("selfUri")]
     public string SelfUri { get; private set; }
 
 

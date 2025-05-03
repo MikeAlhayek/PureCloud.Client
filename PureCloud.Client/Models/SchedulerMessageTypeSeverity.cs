@@ -7,14 +7,14 @@ namespace PureCloud.Client.Models;
 /// <summary>
 /// SchedulerMessageTypeSeverity
 /// </summary>
-[DataContract]
+
 public partial class SchedulerMessageTypeSeverity : IEquatable<SchedulerMessageTypeSeverity>
 {
     /// <summary>
     /// The type of the message
     /// </summary>
     /// <value>The type of the message</value>
-    [JsonConverter(typeof(JsonStringEnumConverter))]
+    
     public enum TypeEnum
     {
         /// <summary>
@@ -317,7 +317,7 @@ public partial class SchedulerMessageTypeSeverity : IEquatable<SchedulerMessageT
     /// The severity of the message
     /// </summary>
     /// <value>The severity of the message</value>
-    [JsonConverter(typeof(JsonStringEnumConverter))]
+    
     public enum SeverityEnum
     {
         /// <summary>
@@ -356,13 +356,13 @@ public partial class SchedulerMessageTypeSeverity : IEquatable<SchedulerMessageT
     /// The type of the message
     /// </summary>
     /// <value>The type of the message</value>
-    [DataMember(Name = "type", EmitDefaultValue = false)]
+    [JsonPropertyName("type")]
     public TypeEnum? Type { get; set; }
     /// <summary>
     /// The severity of the message
     /// </summary>
     /// <value>The severity of the message</value>
-    [DataMember(Name = "severity", EmitDefaultValue = false)]
+    [JsonPropertyName("severity")]
     public SeverityEnum? Severity { get; set; }
     /// <summary>
     /// Initializes a new instance of the <see cref="SchedulerMessageTypeSeverity" /> class.

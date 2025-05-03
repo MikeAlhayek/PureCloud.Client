@@ -1,4 +1,3 @@
-using System.Runtime.Serialization;
 using System.Text;
 using System.Text.Json.Serialization;
 
@@ -7,7 +6,7 @@ namespace PureCloud.Client.Models;
 /// <summary>
 /// AgentWorkPlanShift
 /// </summary>
-[DataContract]
+
 public partial class AgentWorkPlanShift : IEquatable<AgentWorkPlanShift>
 {
 
@@ -56,7 +55,7 @@ public partial class AgentWorkPlanShift : IEquatable<AgentWorkPlanShift>
     /// Days of the week applicable for this shift
     /// </summary>
     /// <value>Days of the week applicable for this shift</value>
-    [DataMember(Name = "days", EmitDefaultValue = false)]
+    [JsonPropertyName("days")]
     public SetWrapperDayOfWeek Days { get; set; }
 
 
@@ -65,7 +64,7 @@ public partial class AgentWorkPlanShift : IEquatable<AgentWorkPlanShift>
     /// Whether the start time of the shift is flexible
     /// </summary>
     /// <value>Whether the start time of the shift is flexible</value>
-    [DataMember(Name = "flexibleStartTime", EmitDefaultValue = false)]
+    [JsonPropertyName("flexibleStartTime")]
     public bool? FlexibleStartTime { get; set; }
 
 
@@ -74,7 +73,7 @@ public partial class AgentWorkPlanShift : IEquatable<AgentWorkPlanShift>
     /// Exact start time of the shift defined as offset minutes from midnight. Used if flexibleStartTime &#x3D;&#x3D; false
     /// </summary>
     /// <value>Exact start time of the shift defined as offset minutes from midnight. Used if flexibleStartTime &#x3D;&#x3D; false</value>
-    [DataMember(Name = "exactStartTimeMinutesFromMidnight", EmitDefaultValue = false)]
+    [JsonPropertyName("exactStartTimeMinutesFromMidnight")]
     public int? ExactStartTimeMinutesFromMidnight { get; set; }
 
 
@@ -83,7 +82,7 @@ public partial class AgentWorkPlanShift : IEquatable<AgentWorkPlanShift>
     /// Earliest start time of the shift defined as offset minutes from midnight. Used if flexibleStartTime &#x3D;&#x3D; true
     /// </summary>
     /// <value>Earliest start time of the shift defined as offset minutes from midnight. Used if flexibleStartTime &#x3D;&#x3D; true</value>
-    [DataMember(Name = "earliestStartTimeMinutesFromMidnight", EmitDefaultValue = false)]
+    [JsonPropertyName("earliestStartTimeMinutesFromMidnight")]
     public int? EarliestStartTimeMinutesFromMidnight { get; set; }
 
 
@@ -92,7 +91,7 @@ public partial class AgentWorkPlanShift : IEquatable<AgentWorkPlanShift>
     /// Latest start time of the shift defined as offset minutes from midnight. Used if flexibleStartTime &#x3D;&#x3D; true
     /// </summary>
     /// <value>Latest start time of the shift defined as offset minutes from midnight. Used if flexibleStartTime &#x3D;&#x3D; true</value>
-    [DataMember(Name = "latestStartTimeMinutesFromMidnight", EmitDefaultValue = false)]
+    [JsonPropertyName("latestStartTimeMinutesFromMidnight")]
     public int? LatestStartTimeMinutesFromMidnight { get; set; }
 
 
@@ -101,7 +100,7 @@ public partial class AgentWorkPlanShift : IEquatable<AgentWorkPlanShift>
     /// This is the earliest time a shift can end
     /// </summary>
     /// <value>This is the earliest time a shift can end</value>
-    [DataMember(Name = "earliestStopTimeMinutesFromMidnight", EmitDefaultValue = false)]
+    [JsonPropertyName("earliestStopTimeMinutesFromMidnight")]
     public int? EarliestStopTimeMinutesFromMidnight { get; set; }
 
 
@@ -110,7 +109,7 @@ public partial class AgentWorkPlanShift : IEquatable<AgentWorkPlanShift>
     /// Whether the latest stop time constraint for the shift is enabled
     /// </summary>
     /// <value>Whether the latest stop time constraint for the shift is enabled</value>
-    [DataMember(Name = "constrainLatestStopTime", EmitDefaultValue = false)]
+    [JsonPropertyName("constrainLatestStopTime")]
     public bool? ConstrainLatestStopTime { get; set; }
 
 
@@ -119,7 +118,7 @@ public partial class AgentWorkPlanShift : IEquatable<AgentWorkPlanShift>
     /// Latest stop time of the shift defined as offset minutes from midnight. Used if constrainStopTime &#x3D;&#x3D; true
     /// </summary>
     /// <value>Latest stop time of the shift defined as offset minutes from midnight. Used if constrainStopTime &#x3D;&#x3D; true</value>
-    [DataMember(Name = "latestStopTimeMinutesFromMidnight", EmitDefaultValue = false)]
+    [JsonPropertyName("latestStopTimeMinutesFromMidnight")]
     public int? LatestStopTimeMinutesFromMidnight { get; set; }
 
 
@@ -128,7 +127,7 @@ public partial class AgentWorkPlanShift : IEquatable<AgentWorkPlanShift>
     /// Whether the paid time setting for the shift is flexible
     /// </summary>
     /// <value>Whether the paid time setting for the shift is flexible</value>
-    [DataMember(Name = "flexiblePaidTime", EmitDefaultValue = false)]
+    [JsonPropertyName("flexiblePaidTime")]
     public bool? FlexiblePaidTime { get; set; }
 
 
@@ -137,7 +136,7 @@ public partial class AgentWorkPlanShift : IEquatable<AgentWorkPlanShift>
     /// Exact paid time in minutes configured for the shift. Used if flexiblePaidTime &#x3D;&#x3D; false
     /// </summary>
     /// <value>Exact paid time in minutes configured for the shift. Used if flexiblePaidTime &#x3D;&#x3D; false</value>
-    [DataMember(Name = "exactPaidTimeMinutes", EmitDefaultValue = false)]
+    [JsonPropertyName("exactPaidTimeMinutes")]
     public int? ExactPaidTimeMinutes { get; set; }
 
 
@@ -146,7 +145,7 @@ public partial class AgentWorkPlanShift : IEquatable<AgentWorkPlanShift>
     /// Minimum paid time in minutes configured for the shift. Used if flexiblePaidTime &#x3D;&#x3D; true
     /// </summary>
     /// <value>Minimum paid time in minutes configured for the shift. Used if flexiblePaidTime &#x3D;&#x3D; true</value>
-    [DataMember(Name = "minimumPaidTimeMinutes", EmitDefaultValue = false)]
+    [JsonPropertyName("minimumPaidTimeMinutes")]
     public int? MinimumPaidTimeMinutes { get; set; }
 
 
@@ -155,7 +154,7 @@ public partial class AgentWorkPlanShift : IEquatable<AgentWorkPlanShift>
     /// Maximum paid time in minutes configured for the shift. Used if flexiblePaidTime &#x3D;&#x3D; true
     /// </summary>
     /// <value>Maximum paid time in minutes configured for the shift. Used if flexiblePaidTime &#x3D;&#x3D; true</value>
-    [DataMember(Name = "maximumPaidTimeMinutes", EmitDefaultValue = false)]
+    [JsonPropertyName("maximumPaidTimeMinutes")]
     public int? MaximumPaidTimeMinutes { get; set; }
 
 
@@ -164,7 +163,7 @@ public partial class AgentWorkPlanShift : IEquatable<AgentWorkPlanShift>
     /// Activities configured for this shift
     /// </summary>
     /// <value>Activities configured for this shift</value>
-    [DataMember(Name = "activities", EmitDefaultValue = false)]
+    [JsonPropertyName("activities")]
     public List<AgentWorkPlanActivity> Activities { get; set; }
 
 

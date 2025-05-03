@@ -7,14 +7,14 @@ namespace PureCloud.Client.Models;
 /// <summary>
 /// KnowledgeBase
 /// </summary>
-[DataContract]
+
 public partial class KnowledgeBase : IEquatable<KnowledgeBase>
 {
     /// <summary>
     /// Core language for knowledge base in which initial content must be created, language codes [en-US, en-UK, en-AU, de-DE] are supported currently. However, the new DX knowledge will support all these language codes, along with 'early preview' language codes [ca-ES, tr-TR, sv-SE, fi-FI, nb-NO, da-DK, ja-JP, ar-AE, zh-CN, zh-TW, zh-HK, ko-KR, pl-PL, hi-IN, th-TH, hu-HU, vi-VN, uk-UA] which might have a lower accuracy.
     /// </summary>
     /// <value>Core language for knowledge base in which initial content must be created, language codes [en-US, en-UK, en-AU, de-DE] are supported currently. However, the new DX knowledge will support all these language codes, along with 'early preview' language codes [ca-ES, tr-TR, sv-SE, fi-FI, nb-NO, da-DK, ja-JP, ar-AE, zh-CN, zh-TW, zh-HK, ko-KR, pl-PL, hi-IN, th-TH, hu-HU, vi-VN, uk-UA] which might have a lower accuracy.</value>
-    [JsonConverter(typeof(JsonStringEnumConverter))]
+    
     public enum CoreLanguageEnum
     {
         /// <summary>
@@ -305,7 +305,7 @@ public partial class KnowledgeBase : IEquatable<KnowledgeBase>
     /// Core language for knowledge base in which initial content must be created, language codes [en-US, en-UK, en-AU, de-DE] are supported currently. However, the new DX knowledge will support all these language codes, along with 'early preview' language codes [ca-ES, tr-TR, sv-SE, fi-FI, nb-NO, da-DK, ja-JP, ar-AE, zh-CN, zh-TW, zh-HK, ko-KR, pl-PL, hi-IN, th-TH, hu-HU, vi-VN, uk-UA] which might have a lower accuracy.
     /// </summary>
     /// <value>Core language for knowledge base in which initial content must be created, language codes [en-US, en-UK, en-AU, de-DE] are supported currently. However, the new DX knowledge will support all these language codes, along with 'early preview' language codes [ca-ES, tr-TR, sv-SE, fi-FI, nb-NO, da-DK, ja-JP, ar-AE, zh-CN, zh-TW, zh-HK, ko-KR, pl-PL, hi-IN, th-TH, hu-HU, vi-VN, uk-UA] which might have a lower accuracy.</value>
-    [DataMember(Name = "coreLanguage", EmitDefaultValue = false)]
+    [JsonPropertyName("coreLanguage")]
     public CoreLanguageEnum? CoreLanguage { get; set; }
 
     /// <summary>
@@ -333,7 +333,7 @@ public partial class KnowledgeBase : IEquatable<KnowledgeBase>
     /// The globally unique identifier for the object.
     /// </summary>
     /// <value>The globally unique identifier for the object.</value>
-    [DataMember(Name = "id", EmitDefaultValue = false)]
+    [JsonPropertyName("id")]
     public string Id { get; private set; }
 
 
@@ -341,7 +341,7 @@ public partial class KnowledgeBase : IEquatable<KnowledgeBase>
     /// <summary>
     /// Gets or Sets Name
     /// </summary>
-    [DataMember(Name = "name", EmitDefaultValue = false)]
+    [JsonPropertyName("name")]
     public string Name { get; set; }
 
 
@@ -350,7 +350,7 @@ public partial class KnowledgeBase : IEquatable<KnowledgeBase>
     /// Knowledge base description
     /// </summary>
     /// <value>Knowledge base description</value>
-    [DataMember(Name = "description", EmitDefaultValue = false)]
+    [JsonPropertyName("description")]
     public string Description { get; set; }
 
 
@@ -361,7 +361,7 @@ public partial class KnowledgeBase : IEquatable<KnowledgeBase>
     /// Knowledge base creation date-time. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z
     /// </summary>
     /// <value>Knowledge base creation date-time. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z</value>
-    [DataMember(Name = "dateCreated", EmitDefaultValue = false)]
+    [JsonPropertyName("dateCreated")]
     public DateTime? DateCreated { get; private set; }
 
 
@@ -370,7 +370,7 @@ public partial class KnowledgeBase : IEquatable<KnowledgeBase>
     /// Knowledge base last modification date-time. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z
     /// </summary>
     /// <value>Knowledge base last modification date-time. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z</value>
-    [DataMember(Name = "dateModified", EmitDefaultValue = false)]
+    [JsonPropertyName("dateModified")]
     public DateTime? DateModified { get; private set; }
 
 
@@ -379,7 +379,7 @@ public partial class KnowledgeBase : IEquatable<KnowledgeBase>
     /// The count representing the number of documents of type FAQ in the KnowledgeBase
     /// </summary>
     /// <value>The count representing the number of documents of type FAQ in the KnowledgeBase</value>
-    [DataMember(Name = "faqCount", EmitDefaultValue = false)]
+    [JsonPropertyName("faqCount")]
     public int? FaqCount { get; private set; }
 
 
@@ -388,7 +388,7 @@ public partial class KnowledgeBase : IEquatable<KnowledgeBase>
     /// The date representing when the last document is modified. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z
     /// </summary>
     /// <value>The date representing when the last document is modified. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z</value>
-    [DataMember(Name = "dateDocumentLastModified", EmitDefaultValue = false)]
+    [JsonPropertyName("dateDocumentLastModified")]
     public DateTime? DateDocumentLastModified { get; private set; }
 
 
@@ -397,7 +397,7 @@ public partial class KnowledgeBase : IEquatable<KnowledgeBase>
     /// The count representing the number of documents of type Article in the KnowledgeBase
     /// </summary>
     /// <value>The count representing the number of documents of type Article in the KnowledgeBase</value>
-    [DataMember(Name = "articleCount", EmitDefaultValue = false)]
+    [JsonPropertyName("articleCount")]
     public int? ArticleCount { get; private set; }
 
 
@@ -406,7 +406,7 @@ public partial class KnowledgeBase : IEquatable<KnowledgeBase>
     /// Flag that indicates the knowledge base is published
     /// </summary>
     /// <value>Flag that indicates the knowledge base is published</value>
-    [DataMember(Name = "published", EmitDefaultValue = false)]
+    [JsonPropertyName("published")]
     public bool? Published { get; private set; }
 
 
@@ -415,7 +415,7 @@ public partial class KnowledgeBase : IEquatable<KnowledgeBase>
     /// The URI for this object
     /// </summary>
     /// <value>The URI for this object</value>
-    [DataMember(Name = "selfUri", EmitDefaultValue = false)]
+    [JsonPropertyName("selfUri")]
     public string SelfUri { get; private set; }
 
 

@@ -1,12 +1,12 @@
-using System.Runtime.Serialization;
 using System.Text;
+using System.Text.Json.Serialization;
 
 namespace PureCloud.Client.Models;
 
 /// <summary>
 /// BidGroupWorkPlanResponse
 /// </summary>
-[DataContract]
+
 public partial class BidGroupWorkPlanResponse : IEquatable<BidGroupWorkPlanResponse>
 {
     /// <summary>
@@ -27,7 +27,7 @@ public partial class BidGroupWorkPlanResponse : IEquatable<BidGroupWorkPlanRespo
     /// The globally unique identifier for the object.
     /// </summary>
     /// <value>The globally unique identifier for the object.</value>
-    [DataMember(Name = "id", EmitDefaultValue = false)]
+    [JsonPropertyName("id")]
     public string Id { get; private set; }
 
 
@@ -36,7 +36,7 @@ public partial class BidGroupWorkPlanResponse : IEquatable<BidGroupWorkPlanRespo
     /// The management unit to which this work plan belongs.  Nullable in some routes
     /// </summary>
     /// <value>The management unit to which this work plan belongs.  Nullable in some routes</value>
-    [DataMember(Name = "managementUnit", EmitDefaultValue = false)]
+    [JsonPropertyName("managementUnit")]
     public ManagementUnitReference ManagementUnit { get; set; }
 
 
@@ -45,7 +45,7 @@ public partial class BidGroupWorkPlanResponse : IEquatable<BidGroupWorkPlanRespo
     /// The modified agent count for this work plan
     /// </summary>
     /// <value>The modified agent count for this work plan</value>
-    [DataMember(Name = "overrideAgentCount", EmitDefaultValue = false)]
+    [JsonPropertyName("overrideAgentCount")]
     public int? OverrideAgentCount { get; set; }
 
 
@@ -54,7 +54,7 @@ public partial class BidGroupWorkPlanResponse : IEquatable<BidGroupWorkPlanRespo
     /// The number of agents needed for this work plan to produce the optimal schedule
     /// </summary>
     /// <value>The number of agents needed for this work plan to produce the optimal schedule</value>
-    [DataMember(Name = "suggestedAgentCount", EmitDefaultValue = false)]
+    [JsonPropertyName("suggestedAgentCount")]
     public int? SuggestedAgentCount { get; private set; }
 
 
@@ -63,7 +63,7 @@ public partial class BidGroupWorkPlanResponse : IEquatable<BidGroupWorkPlanRespo
     /// The range of agent slot count per work plan. The suggested slot count must be in agent count range
     /// </summary>
     /// <value>The range of agent slot count per work plan. The suggested slot count must be in agent count range</value>
-    [DataMember(Name = "agentCountRange", EmitDefaultValue = false)]
+    [JsonPropertyName("agentCountRange")]
     public AgentCountRange AgentCountRange { get; private set; }
 
 
@@ -72,7 +72,7 @@ public partial class BidGroupWorkPlanResponse : IEquatable<BidGroupWorkPlanRespo
     /// The URI for this object
     /// </summary>
     /// <value>The URI for this object</value>
-    [DataMember(Name = "selfUri", EmitDefaultValue = false)]
+    [JsonPropertyName("selfUri")]
     public string SelfUri { get; private set; }
 
 

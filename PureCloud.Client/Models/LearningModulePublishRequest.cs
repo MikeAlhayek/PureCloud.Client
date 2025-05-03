@@ -1,12 +1,12 @@
-using System.Runtime.Serialization;
 using System.Text;
+using System.Text.Json.Serialization;
 
 namespace PureCloud.Client.Models;
 
 /// <summary>
 /// Learning module publish request
 /// </summary>
-[DataContract]
+
 public partial class LearningModulePublishRequest : IEquatable<LearningModulePublishRequest>
 {
     /// <summary>
@@ -25,7 +25,7 @@ public partial class LearningModulePublishRequest : IEquatable<LearningModulePub
     /// Whether the terms and conditions were accepted
     /// </summary>
     /// <value>Whether the terms and conditions were accepted</value>
-    [DataMember(Name = "termsAndConditionsAccepted", EmitDefaultValue = false)]
+    [JsonPropertyName("termsAndConditionsAccepted")]
     public bool? TermsAndConditionsAccepted { get; set; }
 
 

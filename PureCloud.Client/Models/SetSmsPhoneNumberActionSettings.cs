@@ -1,4 +1,3 @@
-using System.Runtime.Serialization;
 using System.Text;
 using System.Text.Json.Serialization;
 
@@ -7,7 +6,7 @@ namespace PureCloud.Client.Models;
 /// <summary>
 /// SetSmsPhoneNumberActionSettings
 /// </summary>
-[DataContract]
+
 public partial class SetSmsPhoneNumberActionSettings : IEquatable<SetSmsPhoneNumberActionSettings>
 {
 
@@ -32,7 +31,7 @@ public partial class SetSmsPhoneNumberActionSettings : IEquatable<SetSmsPhoneNum
     /// The string address for the sms phone number.
     /// </summary>
     /// <value>The string address for the sms phone number.</value>
-    [DataMember(Name = "senderSmsPhoneNumber", EmitDefaultValue = false)]
+    [JsonPropertyName("senderSmsPhoneNumber")]
     public string SenderSmsPhoneNumber { get; set; }
 
 

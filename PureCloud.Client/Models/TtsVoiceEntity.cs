@@ -1,4 +1,3 @@
-using System.Runtime.Serialization;
 using System.Text;
 using System.Text.Json.Serialization;
 
@@ -7,7 +6,7 @@ namespace PureCloud.Client.Models;
 /// <summary>
 /// TtsVoiceEntity
 /// </summary>
-[DataContract]
+
 public partial class TtsVoiceEntity : IEquatable<TtsVoiceEntity>
 {
 
@@ -40,7 +39,7 @@ public partial class TtsVoiceEntity : IEquatable<TtsVoiceEntity>
     /// The globally unique identifier for the object.
     /// </summary>
     /// <value>The globally unique identifier for the object.</value>
-    [DataMember(Name = "id", EmitDefaultValue = false)]
+    [JsonPropertyName("id")]
     public string Id { get; private set; }
 
 
@@ -48,7 +47,7 @@ public partial class TtsVoiceEntity : IEquatable<TtsVoiceEntity>
     /// <summary>
     /// Gets or Sets Name
     /// </summary>
-    [DataMember(Name = "name", EmitDefaultValue = false)]
+    [JsonPropertyName("name")]
     public string Name { get; set; }
 
 
@@ -57,7 +56,7 @@ public partial class TtsVoiceEntity : IEquatable<TtsVoiceEntity>
     /// The gender of the TTS voice
     /// </summary>
     /// <value>The gender of the TTS voice</value>
-    [DataMember(Name = "gender", EmitDefaultValue = false)]
+    [JsonPropertyName("gender")]
     public string Gender { get; set; }
 
 
@@ -66,7 +65,7 @@ public partial class TtsVoiceEntity : IEquatable<TtsVoiceEntity>
     /// The language supported by the TTS voice
     /// </summary>
     /// <value>The language supported by the TTS voice</value>
-    [DataMember(Name = "language", EmitDefaultValue = false)]
+    [JsonPropertyName("language")]
     public string Language { get; set; }
 
 
@@ -75,7 +74,7 @@ public partial class TtsVoiceEntity : IEquatable<TtsVoiceEntity>
     /// Ths TTS engine this voice belongs to
     /// </summary>
     /// <value>Ths TTS engine this voice belongs to</value>
-    [DataMember(Name = "engine", EmitDefaultValue = false)]
+    [JsonPropertyName("engine")]
     public TtsEngineEntity Engine { get; set; }
 
 
@@ -84,7 +83,7 @@ public partial class TtsVoiceEntity : IEquatable<TtsVoiceEntity>
     /// The voice is the default voice for its language
     /// </summary>
     /// <value>The voice is the default voice for its language</value>
-    [DataMember(Name = "isDefault", EmitDefaultValue = false)]
+    [JsonPropertyName("isDefault")]
     public bool? IsDefault { get; set; }
 
 
@@ -93,7 +92,7 @@ public partial class TtsVoiceEntity : IEquatable<TtsVoiceEntity>
     /// The URI for this object
     /// </summary>
     /// <value>The URI for this object</value>
-    [DataMember(Name = "selfUri", EmitDefaultValue = false)]
+    [JsonPropertyName("selfUri")]
     public string SelfUri { get; private set; }
 
 

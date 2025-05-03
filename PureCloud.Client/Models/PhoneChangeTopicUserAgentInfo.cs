@@ -1,12 +1,12 @@
-using System.Runtime.Serialization;
 using System.Text;
+using System.Text.Json.Serialization;
 
 namespace PureCloud.Client.Models;
 
 /// <summary>
 /// PhoneChangeTopicUserAgentInfo
 /// </summary>
-[DataContract]
+
 public partial class PhoneChangeTopicUserAgentInfo : IEquatable<PhoneChangeTopicUserAgentInfo>
 {
     /// <summary>
@@ -28,7 +28,7 @@ public partial class PhoneChangeTopicUserAgentInfo : IEquatable<PhoneChangeTopic
     /// <summary>
     /// Gets or Sets FirmwareVersion
     /// </summary>
-    [DataMember(Name = "firmwareVersion", EmitDefaultValue = false)]
+    [JsonPropertyName("firmwareVersion")]
     public string FirmwareVersion { get; set; }
 
 
@@ -36,7 +36,7 @@ public partial class PhoneChangeTopicUserAgentInfo : IEquatable<PhoneChangeTopic
     /// <summary>
     /// Gets or Sets Manufacturer
     /// </summary>
-    [DataMember(Name = "manufacturer", EmitDefaultValue = false)]
+    [JsonPropertyName("manufacturer")]
     public string Manufacturer { get; set; }
 
 
@@ -44,7 +44,7 @@ public partial class PhoneChangeTopicUserAgentInfo : IEquatable<PhoneChangeTopic
     /// <summary>
     /// Gets or Sets Model
     /// </summary>
-    [DataMember(Name = "model", EmitDefaultValue = false)]
+    [JsonPropertyName("model")]
     public string Model { get; set; }
 
 

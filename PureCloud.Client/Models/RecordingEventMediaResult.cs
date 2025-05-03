@@ -1,12 +1,12 @@
-using System.Runtime.Serialization;
 using System.Text;
+using System.Text.Json.Serialization;
 
 namespace PureCloud.Client.Models;
 
 /// <summary>
 /// RecordingEventMediaResult
 /// </summary>
-[DataContract]
+
 public partial class RecordingEventMediaResult : IEquatable<RecordingEventMediaResult>
 {
     /// <summary>
@@ -30,7 +30,7 @@ public partial class RecordingEventMediaResult : IEquatable<RecordingEventMediaR
     /// <summary>
     /// Gets or Sets ChannelId
     /// </summary>
-    [DataMember(Name = "channelId", EmitDefaultValue = false)]
+    [JsonPropertyName("channelId")]
     public string ChannelId { get; set; }
 
 
@@ -38,7 +38,7 @@ public partial class RecordingEventMediaResult : IEquatable<RecordingEventMediaR
     /// <summary>
     /// Gets or Sets WaveUri
     /// </summary>
-    [DataMember(Name = "waveUri", EmitDefaultValue = false)]
+    [JsonPropertyName("waveUri")]
     public string WaveUri { get; set; }
 
 
@@ -46,7 +46,7 @@ public partial class RecordingEventMediaResult : IEquatable<RecordingEventMediaR
     /// <summary>
     /// Gets or Sets MediaUri
     /// </summary>
-    [DataMember(Name = "mediaUri", EmitDefaultValue = false)]
+    [JsonPropertyName("mediaUri")]
     public string MediaUri { get; set; }
 
 
@@ -54,7 +54,7 @@ public partial class RecordingEventMediaResult : IEquatable<RecordingEventMediaR
     /// <summary>
     /// Gets or Sets WaveformData
     /// </summary>
-    [DataMember(Name = "waveformData", EmitDefaultValue = false)]
+    [JsonPropertyName("waveformData")]
     public List<double?> WaveformData { get; set; }
 
 

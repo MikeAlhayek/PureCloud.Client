@@ -1,12 +1,12 @@
-using System.Runtime.Serialization;
 using System.Text;
+using System.Text.Json.Serialization;
 
 namespace PureCloud.Client.Models;
 
 /// <summary>
 /// QueueConversationMessageEventTopicDivisionEntityRef
 /// </summary>
-[DataContract]
+
 public partial class QueueConversationMessageEventTopicDivisionEntityRef : IEquatable<QueueConversationMessageEventTopicDivisionEntityRef>
 {
     /// <summary>
@@ -28,7 +28,7 @@ public partial class QueueConversationMessageEventTopicDivisionEntityRef : IEqua
     /// <summary>
     /// Gets or Sets Id
     /// </summary>
-    [DataMember(Name = "id", EmitDefaultValue = false)]
+    [JsonPropertyName("id")]
     public string Id { get; set; }
 
 
@@ -36,7 +36,7 @@ public partial class QueueConversationMessageEventTopicDivisionEntityRef : IEqua
     /// <summary>
     /// Gets or Sets SelfUri
     /// </summary>
-    [DataMember(Name = "selfUri", EmitDefaultValue = false)]
+    [JsonPropertyName("selfUri")]
     public string SelfUri { get; set; }
 
 
@@ -45,7 +45,7 @@ public partial class QueueConversationMessageEventTopicDivisionEntityRef : IEqua
     /// The time the entity division was last updated.
     /// </summary>
     /// <value>The time the entity division was last updated.</value>
-    [DataMember(Name = "dateDivisionUpdated", EmitDefaultValue = false)]
+    [JsonPropertyName("dateDivisionUpdated")]
     public DateTime? DateDivisionUpdated { get; set; }
 
 

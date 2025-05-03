@@ -1,12 +1,12 @@
-using System.Runtime.Serialization;
 using System.Text;
+using System.Text.Json.Serialization;
 
 namespace PureCloud.Client.Models;
 
 /// <summary>
 /// WebDeploymentsJourneyContext
 /// </summary>
-[DataContract]
+
 public partial class WebDeploymentsJourneyContext : IEquatable<WebDeploymentsJourneyContext>
 {
     /// <summary>
@@ -29,7 +29,7 @@ public partial class WebDeploymentsJourneyContext : IEquatable<WebDeploymentsJou
     /// A subset of the Journey System&#39;s action data relevant to a part of a conversation (for external linkage and internal usage/context)
     /// </summary>
     /// <value>A subset of the Journey System&#39;s action data relevant to a part of a conversation (for external linkage and internal usage/context)</value>
-    [DataMember(Name = "journeyAction", EmitDefaultValue = false)]
+    [JsonPropertyName("journeyAction")]
     public JourneyAction JourneyAction { get; set; }
 
 
@@ -38,7 +38,7 @@ public partial class WebDeploymentsJourneyContext : IEquatable<WebDeploymentsJou
     /// Journey customer information. Used for linking the authenticated customer with the journey. 
     /// </summary>
     /// <value>Journey customer information. Used for linking the authenticated customer with the journey. </value>
-    [DataMember(Name = "customer", EmitDefaultValue = false)]
+    [JsonPropertyName("customer")]
     public JourneyCustomer Customer { get; set; }
 
 
@@ -47,7 +47,7 @@ public partial class WebDeploymentsJourneyContext : IEquatable<WebDeploymentsJou
     /// Contains the Journey System&#39;s customer session details.
     /// </summary>
     /// <value>Contains the Journey System&#39;s customer session details.</value>
-    [DataMember(Name = "customerSession", EmitDefaultValue = false)]
+    [JsonPropertyName("customerSession")]
     public JourneyCustomerSession CustomerSession { get; set; }
 
 

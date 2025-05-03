@@ -1,4 +1,3 @@
-using System.Runtime.Serialization;
 using System.Text;
 using System.Text.Json.Serialization;
 
@@ -7,7 +6,7 @@ namespace PureCloud.Client.Models;
 /// <summary>
 /// ExecutionDataSettingsRequest
 /// </summary>
-[DataContract]
+
 public partial class ExecutionDataSettingsRequest : IEquatable<ExecutionDataSettingsRequest>
 {
 
@@ -32,7 +31,7 @@ public partial class ExecutionDataSettingsRequest : IEquatable<ExecutionDataSett
     /// whether or not the setting is enabled.
     /// </summary>
     /// <value>whether or not the setting is enabled.</value>
-    [DataMember(Name = "enabled", EmitDefaultValue = false)]
+    [JsonPropertyName("enabled")]
     public bool? Enabled { get; set; }
 
 

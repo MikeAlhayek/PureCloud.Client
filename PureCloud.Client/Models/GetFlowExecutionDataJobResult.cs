@@ -7,14 +7,14 @@ namespace PureCloud.Client.Models;
 /// <summary>
 /// This is a list of executionData links that can be used to download the complete executionData
 /// </summary>
-[DataContract]
+
 public partial class GetFlowExecutionDataJobResult : IEquatable<GetFlowExecutionDataJobResult>
 {
     /// <summary>
     /// The state of the backend process to prep the files for download.
     /// </summary>
     /// <value>The state of the backend process to prep the files for download.</value>
-    [JsonConverter(typeof(JsonStringEnumConverter))]
+    
     public enum JobStateEnum
     {
         /// <summary>
@@ -53,7 +53,7 @@ public partial class GetFlowExecutionDataJobResult : IEquatable<GetFlowExecution
     /// The state of the backend process to prep the files for download.
     /// </summary>
     /// <value>The state of the backend process to prep the files for download.</value>
-    [DataMember(Name = "jobState", EmitDefaultValue = false)]
+    [JsonPropertyName("jobState")]
     public JobStateEnum? JobState { get; set; }
     /// <summary>
     /// Initializes a new instance of the <see cref="GetFlowExecutionDataJobResult" /> class.
@@ -75,7 +75,7 @@ public partial class GetFlowExecutionDataJobResult : IEquatable<GetFlowExecution
     /// The globally unique identifier for the object.
     /// </summary>
     /// <value>The globally unique identifier for the object.</value>
-    [DataMember(Name = "id", EmitDefaultValue = false)]
+    [JsonPropertyName("id")]
     public string Id { get; private set; }
 
 
@@ -83,7 +83,7 @@ public partial class GetFlowExecutionDataJobResult : IEquatable<GetFlowExecution
     /// <summary>
     /// Gets or Sets Name
     /// </summary>
-    [DataMember(Name = "name", EmitDefaultValue = false)]
+    [JsonPropertyName("name")]
     public string Name { get; set; }
 
 
@@ -92,7 +92,7 @@ public partial class GetFlowExecutionDataJobResult : IEquatable<GetFlowExecution
     /// On jobState &#x3D; Success this field will be populated with the list of results of files for download.
     /// </summary>
     /// <value>On jobState &#x3D; Success this field will be populated with the list of results of files for download.</value>
-    [DataMember(Name = "entities", EmitDefaultValue = false)]
+    [JsonPropertyName("entities")]
     public List<ExecutionDataEntity> Entities { get; set; }
 
 
@@ -103,7 +103,7 @@ public partial class GetFlowExecutionDataJobResult : IEquatable<GetFlowExecution
     /// The URI for this object
     /// </summary>
     /// <value>The URI for this object</value>
-    [DataMember(Name = "selfUri", EmitDefaultValue = false)]
+    [JsonPropertyName("selfUri")]
     public string SelfUri { get; private set; }
 
 

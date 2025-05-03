@@ -7,14 +7,14 @@ namespace PureCloud.Client.Models;
 /// <summary>
 /// Condition
 /// </summary>
-[DataContract]
+
 public partial class Condition : IEquatable<Condition>
 {
     /// <summary>
     /// The type of the condition.
     /// </summary>
     /// <value>The type of the condition.</value>
-    [JsonConverter(typeof(JsonStringEnumConverter))]
+    
     public enum TypeEnum
     {
         /// <summary>
@@ -83,7 +83,7 @@ public partial class Condition : IEquatable<Condition>
     /// The type of the value associated with this Condition. Not used for a DataActionCondition.
     /// </summary>
     /// <value>The type of the value associated with this Condition. Not used for a DataActionCondition.</value>
-    [JsonConverter(typeof(JsonStringEnumConverter))]
+    
     public enum ValueTypeEnum
     {
         /// <summary>
@@ -122,7 +122,7 @@ public partial class Condition : IEquatable<Condition>
     /// An operation with which to evaluate the Condition. Not used for a DataActionCondition.
     /// </summary>
     /// <value>An operation with which to evaluate the Condition. Not used for a DataActionCondition.</value>
-    [JsonConverter(typeof(JsonStringEnumConverter))]
+    
     public enum OperatorEnum
     {
         /// <summary>
@@ -209,7 +209,7 @@ public partial class Condition : IEquatable<Condition>
     /// The type of the property associated with this Condition. Required for a contactPropertyCondition.
     /// </summary>
     /// <value>The type of the property associated with this Condition. Required for a contactPropertyCondition.</value>
-    [JsonConverter(typeof(JsonStringEnumConverter))]
+    
     public enum PropertyTypeEnum
     {
         /// <summary>
@@ -248,25 +248,25 @@ public partial class Condition : IEquatable<Condition>
     /// The type of the condition.
     /// </summary>
     /// <value>The type of the condition.</value>
-    [DataMember(Name = "type", EmitDefaultValue = false)]
+    [JsonPropertyName("type")]
     public TypeEnum? Type { get; set; }
     /// <summary>
     /// The type of the value associated with this Condition. Not used for a DataActionCondition.
     /// </summary>
     /// <value>The type of the value associated with this Condition. Not used for a DataActionCondition.</value>
-    [DataMember(Name = "valueType", EmitDefaultValue = false)]
+    [JsonPropertyName("valueType")]
     public ValueTypeEnum? ValueType { get; set; }
     /// <summary>
     /// An operation with which to evaluate the Condition. Not used for a DataActionCondition.
     /// </summary>
     /// <value>An operation with which to evaluate the Condition. Not used for a DataActionCondition.</value>
-    [DataMember(Name = "operator", EmitDefaultValue = false)]
+    [JsonPropertyName("operator")]
     public OperatorEnum? Operator { get; set; }
     /// <summary>
     /// The type of the property associated with this Condition. Required for a contactPropertyCondition.
     /// </summary>
     /// <value>The type of the property associated with this Condition. Required for a contactPropertyCondition.</value>
-    [DataMember(Name = "propertyType", EmitDefaultValue = false)]
+    [JsonPropertyName("propertyType")]
     public PropertyTypeEnum? PropertyType { get; set; }
     /// <summary>
     /// Initializes a new instance of the <see cref="Condition" /> class.
@@ -316,7 +316,7 @@ public partial class Condition : IEquatable<Condition>
     /// If true, inverts the result of evaluating this Condition. Default is false.
     /// </summary>
     /// <value>If true, inverts the result of evaluating this Condition. Default is false.</value>
-    [DataMember(Name = "inverted", EmitDefaultValue = false)]
+    [JsonPropertyName("inverted")]
     public bool? Inverted { get; set; }
 
 
@@ -325,7 +325,7 @@ public partial class Condition : IEquatable<Condition>
     /// An attribute name associated with this Condition. Required for a contactAttributeCondition.
     /// </summary>
     /// <value>An attribute name associated with this Condition. Required for a contactAttributeCondition.</value>
-    [DataMember(Name = "attributeName", EmitDefaultValue = false)]
+    [JsonPropertyName("attributeName")]
     public string AttributeName { get; set; }
 
 
@@ -334,7 +334,7 @@ public partial class Condition : IEquatable<Condition>
     /// A value associated with this Condition. This could be text, a number, or a relative time. Not used for a DataActionCondition.
     /// </summary>
     /// <value>A value associated with this Condition. This could be text, a number, or a relative time. Not used for a DataActionCondition.</value>
-    [DataMember(Name = "value", EmitDefaultValue = false)]
+    [JsonPropertyName("value")]
     public string Value { get; set; }
 
 
@@ -347,7 +347,7 @@ public partial class Condition : IEquatable<Condition>
     /// List of wrap-up code identifiers. Required for a wrapupCondition.
     /// </summary>
     /// <value>List of wrap-up code identifiers. Required for a wrapupCondition.</value>
-    [DataMember(Name = "codes", EmitDefaultValue = false)]
+    [JsonPropertyName("codes")]
     public List<string> Codes { get; set; }
 
 
@@ -356,7 +356,7 @@ public partial class Condition : IEquatable<Condition>
     /// A value associated with the property type of this Condition. Required for a contactPropertyCondition.
     /// </summary>
     /// <value>A value associated with the property type of this Condition. Required for a contactPropertyCondition.</value>
-    [DataMember(Name = "property", EmitDefaultValue = false)]
+    [JsonPropertyName("property")]
     public string Property { get; set; }
 
 
@@ -367,7 +367,7 @@ public partial class Condition : IEquatable<Condition>
     /// The Data Action to use for this condition. Required for a dataActionCondition.
     /// </summary>
     /// <value>The Data Action to use for this condition. Required for a dataActionCondition.</value>
-    [DataMember(Name = "dataAction", EmitDefaultValue = false)]
+    [JsonPropertyName("dataAction")]
     public DomainEntityRef DataAction { get; set; }
 
 
@@ -376,7 +376,7 @@ public partial class Condition : IEquatable<Condition>
     /// The result of this condition if the data action returns a result indicating there was no data. Required for a DataActionCondition.
     /// </summary>
     /// <value>The result of this condition if the data action returns a result indicating there was no data. Required for a DataActionCondition.</value>
-    [DataMember(Name = "dataNotFoundResolution", EmitDefaultValue = false)]
+    [JsonPropertyName("dataNotFoundResolution")]
     public bool? DataNotFoundResolution { get; set; }
 
 
@@ -385,7 +385,7 @@ public partial class Condition : IEquatable<Condition>
     /// The input field from the data action that the contactId will be passed to for this condition. Valid for a dataActionCondition.
     /// </summary>
     /// <value>The input field from the data action that the contactId will be passed to for this condition. Valid for a dataActionCondition.</value>
-    [DataMember(Name = "contactIdField", EmitDefaultValue = false)]
+    [JsonPropertyName("contactIdField")]
     public string ContactIdField { get; set; }
 
 
@@ -394,7 +394,7 @@ public partial class Condition : IEquatable<Condition>
     /// The input field from the data action that the callAnalysisResult will be passed to for this condition. Valid for a wrapup dataActionCondition.
     /// </summary>
     /// <value>The input field from the data action that the callAnalysisResult will be passed to for this condition. Valid for a wrapup dataActionCondition.</value>
-    [DataMember(Name = "callAnalysisResultField", EmitDefaultValue = false)]
+    [JsonPropertyName("callAnalysisResultField")]
     public string CallAnalysisResultField { get; set; }
 
 
@@ -403,7 +403,7 @@ public partial class Condition : IEquatable<Condition>
     /// The input field from the data action that the agentWrapup will be passed to for this condition. Valid for a wrapup dataActionCondition.
     /// </summary>
     /// <value>The input field from the data action that the agentWrapup will be passed to for this condition. Valid for a wrapup dataActionCondition.</value>
-    [DataMember(Name = "agentWrapupField", EmitDefaultValue = false)]
+    [JsonPropertyName("agentWrapupField")]
     public string AgentWrapupField { get; set; }
 
 
@@ -412,7 +412,7 @@ public partial class Condition : IEquatable<Condition>
     /// A list of mappings defining which contact data fields will be passed to which data action input fields for this condition. Valid for a dataActionCondition.
     /// </summary>
     /// <value>A list of mappings defining which contact data fields will be passed to which data action input fields for this condition. Valid for a dataActionCondition.</value>
-    [DataMember(Name = "contactColumnToDataActionFieldMappings", EmitDefaultValue = false)]
+    [JsonPropertyName("contactColumnToDataActionFieldMappings")]
     public List<ContactColumnToDataActionFieldMapping> ContactColumnToDataActionFieldMappings { get; set; }
 
 
@@ -421,7 +421,7 @@ public partial class Condition : IEquatable<Condition>
     /// A list of predicates defining the comparisons to use for this condition. Required for a dataActionCondition.
     /// </summary>
     /// <value>A list of predicates defining the comparisons to use for this condition. Required for a dataActionCondition.</value>
-    [DataMember(Name = "predicates", EmitDefaultValue = false)]
+    [JsonPropertyName("predicates")]
     public List<DataActionConditionPredicate> Predicates { get; set; }
 
 

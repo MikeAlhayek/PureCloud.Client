@@ -1,12 +1,12 @@
-using System.Runtime.Serialization;
 using System.Text;
+using System.Text.Json.Serialization;
 
 namespace PureCloud.Client.Models;
 
 /// <summary>
 /// SharedResponse
 /// </summary>
-[DataContract]
+
 public partial class SharedResponse : IEquatable<SharedResponse>
 {
     /// <summary>
@@ -32,7 +32,7 @@ public partial class SharedResponse : IEquatable<SharedResponse>
     /// <summary>
     /// Gets or Sets Id
     /// </summary>
-    [DataMember(Name = "id", EmitDefaultValue = false)]
+    [JsonPropertyName("id")]
     public string Id { get; set; }
 
 
@@ -40,7 +40,7 @@ public partial class SharedResponse : IEquatable<SharedResponse>
     /// <summary>
     /// Gets or Sets DownloadUri
     /// </summary>
-    [DataMember(Name = "downloadUri", EmitDefaultValue = false)]
+    [JsonPropertyName("downloadUri")]
     public string DownloadUri { get; set; }
 
 
@@ -48,7 +48,7 @@ public partial class SharedResponse : IEquatable<SharedResponse>
     /// <summary>
     /// Gets or Sets ViewUri
     /// </summary>
-    [DataMember(Name = "viewUri", EmitDefaultValue = false)]
+    [JsonPropertyName("viewUri")]
     public string ViewUri { get; set; }
 
 
@@ -56,7 +56,7 @@ public partial class SharedResponse : IEquatable<SharedResponse>
     /// <summary>
     /// Gets or Sets Document
     /// </summary>
-    [DataMember(Name = "document", EmitDefaultValue = false)]
+    [JsonPropertyName("document")]
     public Document Document { get; set; }
 
 
@@ -64,7 +64,7 @@ public partial class SharedResponse : IEquatable<SharedResponse>
     /// <summary>
     /// Gets or Sets Share
     /// </summary>
-    [DataMember(Name = "share", EmitDefaultValue = false)]
+    [JsonPropertyName("share")]
     public Share Share { get; set; }
 
 

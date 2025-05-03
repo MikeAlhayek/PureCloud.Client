@@ -1,12 +1,12 @@
-using System.Runtime.Serialization;
 using System.Text;
+using System.Text.Json.Serialization;
 
 namespace PureCloud.Client.Models;
 
 /// <summary>
 /// PatchIntegrationAction
 /// </summary>
-[DataContract]
+
 public partial class PatchIntegrationAction : IEquatable<PatchIntegrationAction>
 {
     /// <summary>
@@ -25,7 +25,7 @@ public partial class PatchIntegrationAction : IEquatable<PatchIntegrationAction>
     /// ID of the integration action to be invoked.
     /// </summary>
     /// <value>ID of the integration action to be invoked.</value>
-    [DataMember(Name = "id", EmitDefaultValue = false)]
+    [JsonPropertyName("id")]
     public string Id { get; set; }
 
 

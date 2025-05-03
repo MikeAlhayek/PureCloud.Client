@@ -1,4 +1,3 @@
-using System.Runtime.Serialization;
 using System.Text;
 using System.Text.Json.Serialization;
 
@@ -7,7 +6,7 @@ namespace PureCloud.Client.Models;
 /// <summary>
 /// ProcessScheduleUpdateUploadRequest
 /// </summary>
-[DataContract]
+
 public partial class ProcessScheduleUpdateUploadRequest : IEquatable<ProcessScheduleUpdateUploadRequest>
 {
 
@@ -36,7 +35,7 @@ public partial class ProcessScheduleUpdateUploadRequest : IEquatable<ProcessSche
     /// The uploadKey provided by the request to get an upload URL
     /// </summary>
     /// <value>The uploadKey provided by the request to get an upload URL</value>
-    [DataMember(Name = "uploadKey", EmitDefaultValue = false)]
+    [JsonPropertyName("uploadKey")]
     public string UploadKey { get; set; }
 
 
@@ -45,7 +44,7 @@ public partial class ProcessScheduleUpdateUploadRequest : IEquatable<ProcessSche
     /// The list of teams to which the users being modified belong. Only required if the requesting user has conditional permission to wfm:schedule:edit
     /// </summary>
     /// <value>The list of teams to which the users being modified belong. Only required if the requesting user has conditional permission to wfm:schedule:edit</value>
-    [DataMember(Name = "teamIds", EmitDefaultValue = false)]
+    [JsonPropertyName("teamIds")]
     public List<string> TeamIds { get; set; }
 
 
@@ -54,7 +53,7 @@ public partial class ProcessScheduleUpdateUploadRequest : IEquatable<ProcessSche
     /// The set of muIds to which agents belong if agents are being newly added to the schedule, if the requesting user has conditional permission to wfm:schedule:edit
     /// </summary>
     /// <value>The set of muIds to which agents belong if agents are being newly added to the schedule, if the requesting user has conditional permission to wfm:schedule:edit</value>
-    [DataMember(Name = "managementUnitIdsForAddedTeamUsers", EmitDefaultValue = false)]
+    [JsonPropertyName("managementUnitIdsForAddedTeamUsers")]
     public List<string> ManagementUnitIdsForAddedTeamUsers { get; set; }
 
 

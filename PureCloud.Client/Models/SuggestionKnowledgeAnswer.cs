@@ -1,12 +1,12 @@
-using System.Runtime.Serialization;
 using System.Text;
+using System.Text.Json.Serialization;
 
 namespace PureCloud.Client.Models;
 
 /// <summary>
 /// SuggestionKnowledgeAnswer
 /// </summary>
-[DataContract]
+
 public partial class SuggestionKnowledgeAnswer : IEquatable<SuggestionKnowledgeAnswer>
 {
     /// <summary>
@@ -23,7 +23,7 @@ public partial class SuggestionKnowledgeAnswer : IEquatable<SuggestionKnowledgeA
     /// The most relevant answer
     /// </summary>
     /// <value>The most relevant answer</value>
-    [DataMember(Name = "answer", EmitDefaultValue = false)]
+    [JsonPropertyName("answer")]
     public string Answer { get; private set; }
 
 
@@ -32,7 +32,7 @@ public partial class SuggestionKnowledgeAnswer : IEquatable<SuggestionKnowledgeA
     /// The start index of the answer
     /// </summary>
     /// <value>The start index of the answer</value>
-    [DataMember(Name = "startIndex", EmitDefaultValue = false)]
+    [JsonPropertyName("startIndex")]
     public int? StartIndex { get; private set; }
 
 
@@ -41,7 +41,7 @@ public partial class SuggestionKnowledgeAnswer : IEquatable<SuggestionKnowledgeA
     /// The end index of the answer
     /// </summary>
     /// <value>The end index of the answer</value>
-    [DataMember(Name = "endIndex", EmitDefaultValue = false)]
+    [JsonPropertyName("endIndex")]
     public int? EndIndex { get; private set; }
 
 

@@ -7,14 +7,14 @@ namespace PureCloud.Client.Models;
 /// <summary>
 /// Attachment object.
 /// </summary>
-[DataContract]
+
 public partial class OpenContentAttachment : IEquatable<OpenContentAttachment>
 {
     /// <summary>
     /// The type of attachment this instance represents.
     /// </summary>
     /// <value>The type of attachment this instance represents.</value>
-    [JsonConverter(typeof(JsonStringEnumConverter))]
+    
     public enum MediaTypeEnum
     {
         /// <summary>
@@ -59,7 +59,7 @@ public partial class OpenContentAttachment : IEquatable<OpenContentAttachment>
     /// The type of attachment this instance represents.
     /// </summary>
     /// <value>The type of attachment this instance represents.</value>
-    [DataMember(Name = "mediaType", EmitDefaultValue = false)]
+    [JsonPropertyName("mediaType")]
     public MediaTypeEnum? MediaType { get; set; }
 
     /// <summary>
@@ -95,7 +95,7 @@ public partial class OpenContentAttachment : IEquatable<OpenContentAttachment>
     /// Provider specific ID for attachment. For example, middleware media UUID.
     /// </summary>
     /// <value>Provider specific ID for attachment. For example, middleware media UUID.</value>
-    [DataMember(Name = "id", EmitDefaultValue = false)]
+    [JsonPropertyName("id")]
     public string Id { get; set; }
 
 
@@ -106,7 +106,7 @@ public partial class OpenContentAttachment : IEquatable<OpenContentAttachment>
     /// URL of the attachment.
     /// </summary>
     /// <value>URL of the attachment.</value>
-    [DataMember(Name = "url", EmitDefaultValue = false)]
+    [JsonPropertyName("url")]
     public string Url { get; set; }
 
 
@@ -115,7 +115,7 @@ public partial class OpenContentAttachment : IEquatable<OpenContentAttachment>
     /// Attachment mime type (https://www.iana.org/assignments/media-types/media-types.xhtml).
     /// </summary>
     /// <value>Attachment mime type (https://www.iana.org/assignments/media-types/media-types.xhtml).</value>
-    [DataMember(Name = "mime", EmitDefaultValue = false)]
+    [JsonPropertyName("mime")]
     public string Mime { get; set; }
 
 
@@ -124,7 +124,7 @@ public partial class OpenContentAttachment : IEquatable<OpenContentAttachment>
     /// Text associated with attachment such as an image caption.
     /// </summary>
     /// <value>Text associated with attachment such as an image caption.</value>
-    [DataMember(Name = "text", EmitDefaultValue = false)]
+    [JsonPropertyName("text")]
     public string Text { get; set; }
 
 
@@ -133,7 +133,7 @@ public partial class OpenContentAttachment : IEquatable<OpenContentAttachment>
     /// Secure hash of the attachment content.
     /// </summary>
     /// <value>Secure hash of the attachment content.</value>
-    [DataMember(Name = "sha256", EmitDefaultValue = false)]
+    [JsonPropertyName("sha256")]
     public string Sha256 { get; set; }
 
 
@@ -142,7 +142,7 @@ public partial class OpenContentAttachment : IEquatable<OpenContentAttachment>
     /// Suggested file name for attachment.
     /// </summary>
     /// <value>Suggested file name for attachment.</value>
-    [DataMember(Name = "filename", EmitDefaultValue = false)]
+    [JsonPropertyName("filename")]
     public string Filename { get; set; }
 
 

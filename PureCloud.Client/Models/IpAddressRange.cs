@@ -7,13 +7,13 @@ namespace PureCloud.Client.Models;
 /// <summary>
 /// IpAddressRange
 /// </summary>
-[DataContract]
+
 public partial class IpAddressRange : IEquatable<IpAddressRange>
 {
     /// <summary>
     /// Gets or Sets Service
     /// </summary>
-    [JsonConverter(typeof(JsonStringEnumConverter))]
+    
     public enum ServiceEnum
     {
         /// <summary>
@@ -93,7 +93,7 @@ public partial class IpAddressRange : IEquatable<IpAddressRange>
     /// <summary>
     /// Gets or Sets Service
     /// </summary>
-    [DataMember(Name = "service", EmitDefaultValue = false)]
+    [JsonPropertyName("service")]
     public ServiceEnum? Service { get; set; }
     /// <summary>
     /// Initializes a new instance of the <see cref="IpAddressRange" /> class.
@@ -114,7 +114,7 @@ public partial class IpAddressRange : IEquatable<IpAddressRange>
     /// <summary>
     /// Gets or Sets Cidr
     /// </summary>
-    [DataMember(Name = "cidr", EmitDefaultValue = false)]
+    [JsonPropertyName("cidr")]
     public string Cidr { get; set; }
 
 
@@ -124,7 +124,7 @@ public partial class IpAddressRange : IEquatable<IpAddressRange>
     /// <summary>
     /// Gets or Sets Region
     /// </summary>
-    [DataMember(Name = "region", EmitDefaultValue = false)]
+    [JsonPropertyName("region")]
     public string Region { get; set; }
 
 

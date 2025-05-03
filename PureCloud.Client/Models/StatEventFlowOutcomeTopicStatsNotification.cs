@@ -1,12 +1,12 @@
-using System.Runtime.Serialization;
 using System.Text;
+using System.Text.Json.Serialization;
 
 namespace PureCloud.Client.Models;
 
 /// <summary>
 /// StatEventFlowOutcomeTopicStatsNotification
 /// </summary>
-[DataContract]
+
 public partial class StatEventFlowOutcomeTopicStatsNotification : IEquatable<StatEventFlowOutcomeTopicStatsNotification>
 {
     /// <summary>
@@ -26,7 +26,7 @@ public partial class StatEventFlowOutcomeTopicStatsNotification : IEquatable<Sta
     /// <summary>
     /// Gets or Sets Group
     /// </summary>
-    [DataMember(Name = "group", EmitDefaultValue = false)]
+    [JsonPropertyName("group")]
     public Dictionary<string, string> Group { get; set; }
 
 
@@ -34,7 +34,7 @@ public partial class StatEventFlowOutcomeTopicStatsNotification : IEquatable<Sta
     /// <summary>
     /// Gets or Sets Data
     /// </summary>
-    [DataMember(Name = "data", EmitDefaultValue = false)]
+    [JsonPropertyName("data")]
     public List<StatEventFlowOutcomeTopicIntervalMetrics> Data { get; set; }
 
 

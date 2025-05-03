@@ -7,14 +7,14 @@ namespace PureCloud.Client.Models;
 /// <summary>
 /// WorkdayValuesMetricItem
 /// </summary>
-[DataContract]
+
 public partial class WorkdayValuesMetricItem : IEquatable<WorkdayValuesMetricItem>
 {
     /// <summary>
     /// The unit type of the metric value
     /// </summary>
     /// <value>The unit type of the metric value</value>
-    [JsonConverter(typeof(JsonStringEnumConverter))]
+    
     public enum UnitTypeEnum
     {
         /// <summary>
@@ -71,7 +71,7 @@ public partial class WorkdayValuesMetricItem : IEquatable<WorkdayValuesMetricIte
     /// The unit type of the metric value
     /// </summary>
     /// <value>The unit type of the metric value</value>
-    [DataMember(Name = "unitType", EmitDefaultValue = false)]
+    [JsonPropertyName("unitType")]
     public UnitTypeEnum? UnitType { get; private set; }
     /// <summary>
     /// Initializes a new instance of the <see cref="WorkdayValuesMetricItem" /> class.
@@ -87,7 +87,7 @@ public partial class WorkdayValuesMetricItem : IEquatable<WorkdayValuesMetricIte
     /// Gamification metric for the average and the trend
     /// </summary>
     /// <value>Gamification metric for the average and the trend</value>
-    [DataMember(Name = "metric", EmitDefaultValue = false)]
+    [JsonPropertyName("metric")]
     public AddressableEntityRef Metric { get; private set; }
 
 
@@ -96,7 +96,7 @@ public partial class WorkdayValuesMetricItem : IEquatable<WorkdayValuesMetricIte
     /// Gamification metric definition for the average and the trend
     /// </summary>
     /// <value>Gamification metric definition for the average and the trend</value>
-    [DataMember(Name = "metricDefinition", EmitDefaultValue = false)]
+    [JsonPropertyName("metricDefinition")]
     public DomainEntityRef MetricDefinition { get; private set; }
 
 
@@ -105,7 +105,7 @@ public partial class WorkdayValuesMetricItem : IEquatable<WorkdayValuesMetricIte
     /// The average value of the metric
     /// </summary>
     /// <value>The average value of the metric</value>
-    [DataMember(Name = "average", EmitDefaultValue = false)]
+    [JsonPropertyName("average")]
     public double? Average { get; private set; }
 
 
@@ -116,7 +116,7 @@ public partial class WorkdayValuesMetricItem : IEquatable<WorkdayValuesMetricIte
     /// The metric value trend
     /// </summary>
     /// <value>The metric value trend</value>
-    [DataMember(Name = "trend", EmitDefaultValue = false)]
+    [JsonPropertyName("trend")]
     public List<WorkdayValuesTrendItem> Trend { get; private set; }
 
 

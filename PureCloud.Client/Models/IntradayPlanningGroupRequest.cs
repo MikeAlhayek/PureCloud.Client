@@ -7,13 +7,13 @@ namespace PureCloud.Client.Models;
 /// <summary>
 /// IntradayPlanningGroupRequest
 /// </summary>
-[DataContract]
+
 public partial class IntradayPlanningGroupRequest : IEquatable<IntradayPlanningGroupRequest>
 {
     /// <summary>
     /// Gets or Sets Categories
     /// </summary>
-    [JsonConverter(typeof(JsonStringEnumConverter))]
+    
     public enum CategoriesEnum
     {
         /// <summary>
@@ -70,7 +70,7 @@ public partial class IntradayPlanningGroupRequest : IEquatable<IntradayPlanningG
     /// Requested date in yyyy-MM-dd format. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd
     /// </summary>
     /// <value>Requested date in yyyy-MM-dd format. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd</value>
-    [DataMember(Name = "businessUnitDate", EmitDefaultValue = false)]
+    [JsonPropertyName("businessUnitDate")]
     public string BusinessUnitDate { get; set; }
 
 
@@ -79,7 +79,7 @@ public partial class IntradayPlanningGroupRequest : IEquatable<IntradayPlanningG
     /// The metric categories
     /// </summary>
     /// <value>The metric categories</value>
-    [DataMember(Name = "categories", EmitDefaultValue = false)]
+    [JsonPropertyName("categories")]
     public List<CategoriesEnum> Categories { get; set; }
 
 
@@ -88,7 +88,7 @@ public partial class IntradayPlanningGroupRequest : IEquatable<IntradayPlanningG
     /// The IDs of the planning groups for which to fetch data.  Omitting or passing an empty list will return all available planning groups
     /// </summary>
     /// <value>The IDs of the planning groups for which to fetch data.  Omitting or passing an empty list will return all available planning groups</value>
-    [DataMember(Name = "planningGroupIds", EmitDefaultValue = false)]
+    [JsonPropertyName("planningGroupIds")]
     public List<string> PlanningGroupIds { get; set; }
 
 
@@ -97,7 +97,7 @@ public partial class IntradayPlanningGroupRequest : IEquatable<IntradayPlanningG
     /// The period/interval in minutes for which to aggregate the data. Required, defaults to 15
     /// </summary>
     /// <value>The period/interval in minutes for which to aggregate the data. Required, defaults to 15</value>
-    [DataMember(Name = "intervalLengthMinutes", EmitDefaultValue = false)]
+    [JsonPropertyName("intervalLengthMinutes")]
     public int? IntervalLengthMinutes { get; set; }
 
 

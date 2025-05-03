@@ -1,4 +1,3 @@
-using System.Runtime.Serialization;
 using System.Text;
 using System.Text.Json.Serialization;
 
@@ -7,7 +6,7 @@ namespace PureCloud.Client.Models;
 /// <summary>
 /// AppEvent
 /// </summary>
-[DataContract]
+
 public partial class AppEvent : IEquatable<AppEvent>
 {
 
@@ -56,7 +55,7 @@ public partial class AppEvent : IEquatable<AppEvent>
     /// Represents the action the customer performed. A good event name is typically an object followed by the action performed in past tense (e.g. screen_viewed, order_completed, user_registered).
     /// </summary>
     /// <value>Represents the action the customer performed. A good event name is typically an object followed by the action performed in past tense (e.g. screen_viewed, order_completed, user_registered).</value>
-    [DataMember(Name = "eventName", EmitDefaultValue = false)]
+    [JsonPropertyName("eventName")]
     public string EventName { get; set; }
 
 
@@ -65,7 +64,7 @@ public partial class AppEvent : IEquatable<AppEvent>
     /// The name of the screen in the app that the event took place.
     /// </summary>
     /// <value>The name of the screen in the app that the event took place.</value>
-    [DataMember(Name = "screenName", EmitDefaultValue = false)]
+    [JsonPropertyName("screenName")]
     public string ScreenName { get; set; }
 
 
@@ -74,7 +73,7 @@ public partial class AppEvent : IEquatable<AppEvent>
     /// Application that the customer is interacting with.
     /// </summary>
     /// <value>Application that the customer is interacting with.</value>
-    [DataMember(Name = "app", EmitDefaultValue = false)]
+    [JsonPropertyName("app")]
     public JourneyApp App { get; set; }
 
 
@@ -83,7 +82,7 @@ public partial class AppEvent : IEquatable<AppEvent>
     /// Customer&#39;s device.
     /// </summary>
     /// <value>Customer&#39;s device.</value>
-    [DataMember(Name = "device", EmitDefaultValue = false)]
+    [JsonPropertyName("device")]
     public Device Device { get; set; }
 
 
@@ -92,7 +91,7 @@ public partial class AppEvent : IEquatable<AppEvent>
     /// Customer&#39;s IP address. May be null if the business configures the tracker to not collect IP addresses.
     /// </summary>
     /// <value>Customer&#39;s IP address. May be null if the business configures the tracker to not collect IP addresses.</value>
-    [DataMember(Name = "ipAddress", EmitDefaultValue = false)]
+    [JsonPropertyName("ipAddress")]
     public string IpAddress { get; set; }
 
 
@@ -101,7 +100,7 @@ public partial class AppEvent : IEquatable<AppEvent>
     /// Customer&#39;s IP-based organization or ISP name.
     /// </summary>
     /// <value>Customer&#39;s IP-based organization or ISP name.</value>
-    [DataMember(Name = "ipOrganization", EmitDefaultValue = false)]
+    [JsonPropertyName("ipOrganization")]
     public string IpOrganization { get; set; }
 
 
@@ -110,7 +109,7 @@ public partial class AppEvent : IEquatable<AppEvent>
     /// Customer&#39;s geolocation.
     /// </summary>
     /// <value>Customer&#39;s geolocation.</value>
-    [DataMember(Name = "geolocation", EmitDefaultValue = false)]
+    [JsonPropertyName("geolocation")]
     public JourneyGeolocation Geolocation { get; set; }
 
 
@@ -119,7 +118,7 @@ public partial class AppEvent : IEquatable<AppEvent>
     /// SDK library used to generate the event.
     /// </summary>
     /// <value>SDK library used to generate the event.</value>
-    [DataMember(Name = "sdkLibrary", EmitDefaultValue = false)]
+    [JsonPropertyName("sdkLibrary")]
     public SdkLibrary SdkLibrary { get; set; }
 
 
@@ -128,7 +127,7 @@ public partial class AppEvent : IEquatable<AppEvent>
     /// Information relating to the device&#39;s network connectivity.
     /// </summary>
     /// <value>Information relating to the device&#39;s network connectivity.</value>
-    [DataMember(Name = "networkConnectivity", EmitDefaultValue = false)]
+    [JsonPropertyName("networkConnectivity")]
     public NetworkConnectivity NetworkConnectivity { get; set; }
 
 
@@ -137,7 +136,7 @@ public partial class AppEvent : IEquatable<AppEvent>
     /// Marketing / traffic source information.
     /// </summary>
     /// <value>Marketing / traffic source information.</value>
-    [DataMember(Name = "mktCampaign", EmitDefaultValue = false)]
+    [JsonPropertyName("mktCampaign")]
     public JourneyCampaign MktCampaign { get; set; }
 
 
@@ -146,7 +145,7 @@ public partial class AppEvent : IEquatable<AppEvent>
     /// Represents the keywords in a customer search query.
     /// </summary>
     /// <value>Represents the keywords in a customer search query.</value>
-    [DataMember(Name = "searchQuery", EmitDefaultValue = false)]
+    [JsonPropertyName("searchQuery")]
     public string SearchQuery { get; set; }
 
 
@@ -155,7 +154,7 @@ public partial class AppEvent : IEquatable<AppEvent>
     /// User-defined attributes associated with a particular event.
     /// </summary>
     /// <value>User-defined attributes associated with a particular event.</value>
-    [DataMember(Name = "attributes", EmitDefaultValue = false)]
+    [JsonPropertyName("attributes")]
     public Dictionary<string, CustomEventAttribute> Attributes { get; set; }
 
 
@@ -164,7 +163,7 @@ public partial class AppEvent : IEquatable<AppEvent>
     /// Traits are attributes intrinsic to the customer that may be sent in selected events. Examples are email, name, phone.
     /// </summary>
     /// <value>Traits are attributes intrinsic to the customer that may be sent in selected events. Examples are email, name, phone.</value>
-    [DataMember(Name = "traits", EmitDefaultValue = false)]
+    [JsonPropertyName("traits")]
     public Dictionary<string, CustomEventAttribute> Traits { get; set; }
 
 

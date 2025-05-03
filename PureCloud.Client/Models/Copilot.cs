@@ -7,14 +7,14 @@ namespace PureCloud.Client.Models;
 /// <summary>
 /// Copilot
 /// </summary>
-[DataContract]
+
 public partial class Copilot : IEquatable<Copilot>
 {
     /// <summary>
     /// Language understanding engine type.
     /// </summary>
     /// <value>Language understanding engine type.</value>
-    [JsonConverter(typeof(JsonStringEnumConverter))]
+    
     public enum NluEngineTypeEnum
     {
         /// <summary>
@@ -35,7 +35,7 @@ public partial class Copilot : IEquatable<Copilot>
     /// Language understanding engine type.
     /// </summary>
     /// <value>Language understanding engine type.</value>
-    [DataMember(Name = "nluEngineType", EmitDefaultValue = false)]
+    [JsonPropertyName("nluEngineType")]
     public NluEngineTypeEnum? NluEngineType { get; set; }
 
     /// <summary>
@@ -75,7 +75,7 @@ public partial class Copilot : IEquatable<Copilot>
     /// Copilot is enabled.
     /// </summary>
     /// <value>Copilot is enabled.</value>
-    [DataMember(Name = "enabled", EmitDefaultValue = false)]
+    [JsonPropertyName("enabled")]
     public bool? Enabled { get; private set; }
 
 
@@ -84,7 +84,7 @@ public partial class Copilot : IEquatable<Copilot>
     /// Copilot is live on selected queue.
     /// </summary>
     /// <value>Copilot is live on selected queue.</value>
-    [DataMember(Name = "liveOnQueue", EmitDefaultValue = false)]
+    [JsonPropertyName("liveOnQueue")]
     public bool? LiveOnQueue { get; set; }
 
 
@@ -93,7 +93,7 @@ public partial class Copilot : IEquatable<Copilot>
     /// Copilot default language, e.g. [en-US, es-US, es-ES]. Once set, it can not be modified.
     /// </summary>
     /// <value>Copilot default language, e.g. [en-US, es-US, es-ES]. Once set, it can not be modified.</value>
-    [DataMember(Name = "defaultLanguage", EmitDefaultValue = false)]
+    [JsonPropertyName("defaultLanguage")]
     public string DefaultLanguage { get; set; }
 
 
@@ -102,7 +102,7 @@ public partial class Copilot : IEquatable<Copilot>
     /// Knowledge answer configuration.
     /// </summary>
     /// <value>Knowledge answer configuration.</value>
-    [DataMember(Name = "knowledgeAnswerConfig", EmitDefaultValue = false)]
+    [JsonPropertyName("knowledgeAnswerConfig")]
     public KnowledgeAnswerConfig KnowledgeAnswerConfig { get; set; }
 
 
@@ -111,7 +111,7 @@ public partial class Copilot : IEquatable<Copilot>
     /// Copilot generated summary configuration.
     /// </summary>
     /// <value>Copilot generated summary configuration.</value>
-    [DataMember(Name = "summaryGenerationConfig", EmitDefaultValue = false)]
+    [JsonPropertyName("summaryGenerationConfig")]
     public SummaryGenerationConfig SummaryGenerationConfig { get; set; }
 
 
@@ -120,7 +120,7 @@ public partial class Copilot : IEquatable<Copilot>
     /// Copilot generated wrapup code prediction configuration.
     /// </summary>
     /// <value>Copilot generated wrapup code prediction configuration.</value>
-    [DataMember(Name = "wrapupCodePredictionConfig", EmitDefaultValue = false)]
+    [JsonPropertyName("wrapupCodePredictionConfig")]
     public WrapupCodePredictionConfig WrapupCodePredictionConfig { get; set; }
 
 
@@ -129,7 +129,7 @@ public partial class Copilot : IEquatable<Copilot>
     /// Answer generation configuration.
     /// </summary>
     /// <value>Answer generation configuration.</value>
-    [DataMember(Name = "answerGenerationConfig", EmitDefaultValue = false)]
+    [JsonPropertyName("answerGenerationConfig")]
     public AnswerGenerationConfig AnswerGenerationConfig { get; set; }
 
 
@@ -140,7 +140,7 @@ public partial class Copilot : IEquatable<Copilot>
     /// NLU configuration.
     /// </summary>
     /// <value>NLU configuration.</value>
-    [DataMember(Name = "nluConfig", EmitDefaultValue = false)]
+    [JsonPropertyName("nluConfig")]
     public NluConfig NluConfig { get; set; }
 
 
@@ -149,7 +149,7 @@ public partial class Copilot : IEquatable<Copilot>
     /// Rule engine configuration.
     /// </summary>
     /// <value>Rule engine configuration.</value>
-    [DataMember(Name = "ruleEngineConfig", EmitDefaultValue = false)]
+    [JsonPropertyName("ruleEngineConfig")]
     public RuleEngineConfig RuleEngineConfig { get; set; }
 
 
@@ -158,7 +158,7 @@ public partial class Copilot : IEquatable<Copilot>
     /// The URI for this object
     /// </summary>
     /// <value>The URI for this object</value>
-    [DataMember(Name = "selfUri", EmitDefaultValue = false)]
+    [JsonPropertyName("selfUri")]
     public string SelfUri { get; private set; }
 
 

@@ -1,4 +1,3 @@
-using System.Runtime.Serialization;
 using System.Text;
 using System.Text.Json.Serialization;
 
@@ -7,7 +6,7 @@ namespace PureCloud.Client.Models;
 /// <summary>
 /// LearningAssessmentScoringRequest
 /// </summary>
-[DataContract]
+
 public partial class LearningAssessmentScoringRequest : IEquatable<LearningAssessmentScoringRequest>
 {
 
@@ -34,7 +33,7 @@ public partial class LearningAssessmentScoringRequest : IEquatable<LearningAsses
     /// The assessment form to score against
     /// </summary>
     /// <value>The assessment form to score against</value>
-    [DataMember(Name = "assessmentForm", EmitDefaultValue = false)]
+    [JsonPropertyName("assessmentForm")]
     public AssessmentForm AssessmentForm { get; set; }
 
 
@@ -43,7 +42,7 @@ public partial class LearningAssessmentScoringRequest : IEquatable<LearningAsses
     /// The answers to score
     /// </summary>
     /// <value>The answers to score</value>
-    [DataMember(Name = "answers", EmitDefaultValue = false)]
+    [JsonPropertyName("answers")]
     public AssessmentScoringSet Answers { get; set; }
 
 

@@ -7,14 +7,14 @@ namespace PureCloud.Client.Models;
 /// <summary>
 /// KpiResult
 /// </summary>
-[DataContract]
+
 public partial class KpiResult : IEquatable<KpiResult>
 {
     /// <summary>
     /// Media type used for the KPI
     /// </summary>
     /// <value>Media type used for the KPI</value>
-    [JsonConverter(typeof(JsonStringEnumConverter))]
+    
     public enum MediaTypeEnum
     {
         /// <summary>
@@ -47,7 +47,7 @@ public partial class KpiResult : IEquatable<KpiResult>
     /// Media type used for the KPI
     /// </summary>
     /// <value>Media type used for the KPI</value>
-    [DataMember(Name = "mediaType", EmitDefaultValue = false)]
+    [JsonPropertyName("mediaType")]
     public MediaTypeEnum? MediaType { get; private set; }
     /// <summary>
     /// Initializes a new instance of the <see cref="KpiResult" /> class.
@@ -63,7 +63,7 @@ public partial class KpiResult : IEquatable<KpiResult>
     /// Absolute metric (in which the KPI is based) total for the interactions handled by predictive routing (GPR was on)
     /// </summary>
     /// <value>Absolute metric (in which the KPI is based) total for the interactions handled by predictive routing (GPR was on)</value>
-    [DataMember(Name = "kpiTotalOn", EmitDefaultValue = false)]
+    [JsonPropertyName("kpiTotalOn")]
     public long? KpiTotalOn { get; private set; }
 
 
@@ -72,7 +72,7 @@ public partial class KpiResult : IEquatable<KpiResult>
     /// Absolute metric (in which the KPI is based) total for the interactions not routed by predictive routing (GPR was off)
     /// </summary>
     /// <value>Absolute metric (in which the KPI is based) total for the interactions not routed by predictive routing (GPR was off)</value>
-    [DataMember(Name = "kpiTotalOff", EmitDefaultValue = false)]
+    [JsonPropertyName("kpiTotalOff")]
     public long? KpiTotalOff { get; private set; }
 
 
@@ -81,7 +81,7 @@ public partial class KpiResult : IEquatable<KpiResult>
     /// Total interactions handled by predictive routing (GPR was on)
     /// </summary>
     /// <value>Total interactions handled by predictive routing (GPR was on)</value>
-    [DataMember(Name = "interactionCountOn", EmitDefaultValue = false)]
+    [JsonPropertyName("interactionCountOn")]
     public long? InteractionCountOn { get; private set; }
 
 
@@ -90,7 +90,7 @@ public partial class KpiResult : IEquatable<KpiResult>
     /// Total interactions not routed by predictive routing (GPR was off)
     /// </summary>
     /// <value>Total interactions not routed by predictive routing (GPR was off)</value>
-    [DataMember(Name = "interactionCountOff", EmitDefaultValue = false)]
+    [JsonPropertyName("interactionCountOff")]
     public long? InteractionCountOff { get; private set; }
 
 
@@ -101,7 +101,7 @@ public partial class KpiResult : IEquatable<KpiResult>
     /// The percentage benefit for this media type for the duration of the comparison period
     /// </summary>
     /// <value>The percentage benefit for this media type for the duration of the comparison period</value>
-    [DataMember(Name = "percentageBenefit", EmitDefaultValue = false)]
+    [JsonPropertyName("percentageBenefit")]
     public double? PercentageBenefit { get; private set; }
 
 

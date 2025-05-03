@@ -7,14 +7,14 @@ namespace PureCloud.Client.Models;
 /// <summary>
 /// SmsProvisioningStatus
 /// </summary>
-[DataContract]
+
 public partial class SmsProvisioningStatus : IEquatable<SmsProvisioningStatus>
 {
     /// <summary>
     /// Provisioning action
     /// </summary>
     /// <value>Provisioning action</value>
-    [JsonConverter(typeof(JsonStringEnumConverter))]
+    
     public enum ActionEnum
     {
         /// <summary>
@@ -53,7 +53,7 @@ public partial class SmsProvisioningStatus : IEquatable<SmsProvisioningStatus>
     /// Provisioning state
     /// </summary>
     /// <value>Provisioning state</value>
-    [JsonConverter(typeof(JsonStringEnumConverter))]
+    
     public enum StateEnum
     {
         /// <summary>
@@ -86,13 +86,13 @@ public partial class SmsProvisioningStatus : IEquatable<SmsProvisioningStatus>
     /// Provisioning action
     /// </summary>
     /// <value>Provisioning action</value>
-    [DataMember(Name = "action", EmitDefaultValue = false)]
+    [JsonPropertyName("action")]
     public ActionEnum? Action { get; set; }
     /// <summary>
     /// Provisioning state
     /// </summary>
     /// <value>Provisioning state</value>
-    [DataMember(Name = "state", EmitDefaultValue = false)]
+    [JsonPropertyName("state")]
     public StateEnum? State { get; set; }
     /// <summary>
     /// Initializes a new instance of the <see cref="SmsProvisioningStatus" /> class.
@@ -120,7 +120,7 @@ public partial class SmsProvisioningStatus : IEquatable<SmsProvisioningStatus>
     /// Any error associated with a Failed state
     /// </summary>
     /// <value>Any error associated with a Failed state</value>
-    [DataMember(Name = "error", EmitDefaultValue = false)]
+    [JsonPropertyName("error")]
     public ErrorBody Error { get; set; }
 
 
@@ -129,7 +129,7 @@ public partial class SmsProvisioningStatus : IEquatable<SmsProvisioningStatus>
     /// The phone number version associated with the provisioning action
     /// </summary>
     /// <value>The phone number version associated with the provisioning action</value>
-    [DataMember(Name = "version", EmitDefaultValue = false)]
+    [JsonPropertyName("version")]
     public long? Version { get; set; }
 
 

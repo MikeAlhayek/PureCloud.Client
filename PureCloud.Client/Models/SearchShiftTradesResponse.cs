@@ -1,12 +1,12 @@
-using System.Runtime.Serialization;
 using System.Text;
+using System.Text.Json.Serialization;
 
 namespace PureCloud.Client.Models;
 
 /// <summary>
 /// SearchShiftTradesResponse
 /// </summary>
-[DataContract]
+
 public partial class SearchShiftTradesResponse : IEquatable<SearchShiftTradesResponse>
 {
     /// <summary>
@@ -27,7 +27,7 @@ public partial class SearchShiftTradesResponse : IEquatable<SearchShiftTradesRes
     /// The shift trades that match the search criteria
     /// </summary>
     /// <value>The shift trades that match the search criteria</value>
-    [DataMember(Name = "trades", EmitDefaultValue = false)]
+    [JsonPropertyName("trades")]
     public List<SearchShiftTradeResponse> Trades { get; set; }
 
 
@@ -36,7 +36,7 @@ public partial class SearchShiftTradesResponse : IEquatable<SearchShiftTradesRes
     /// URL from which to fetch results for requests with a large result set. If populated, the downloaded data will conform to the same schema as would normally be returned, excepting downloaded data will never itself contain a downloadUrl
     /// </summary>
     /// <value>URL from which to fetch results for requests with a large result set. If populated, the downloaded data will conform to the same schema as would normally be returned, excepting downloaded data will never itself contain a downloadUrl</value>
-    [DataMember(Name = "downloadUrl", EmitDefaultValue = false)]
+    [JsonPropertyName("downloadUrl")]
     public string DownloadUrl { get; set; }
 
 

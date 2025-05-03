@@ -1,4 +1,3 @@
-using System.Runtime.Serialization;
 using System.Text;
 using System.Text.Json.Serialization;
 
@@ -7,7 +6,7 @@ namespace PureCloud.Client.Models;
 /// <summary>
 /// Represents an organization skill assigned to a user. When assigning to a user specify the organization skill id as the id.
 /// </summary>
-[DataContract]
+
 public partial class UserRoutingSkillPost : IEquatable<UserRoutingSkillPost>
 {
 
@@ -34,7 +33,7 @@ public partial class UserRoutingSkillPost : IEquatable<UserRoutingSkillPost>
     /// The id of the existing routing skill to add to the user
     /// </summary>
     /// <value>The id of the existing routing skill to add to the user</value>
-    [DataMember(Name = "id", EmitDefaultValue = false)]
+    [JsonPropertyName("id")]
     public string Id { get; set; }
 
 
@@ -43,7 +42,7 @@ public partial class UserRoutingSkillPost : IEquatable<UserRoutingSkillPost>
     /// Proficiency is a rating from 0.0 to 5.0 on how competent an agent is for a particular skill. It is used when a queue is set to \&quot;Best available skills\&quot; mode to allow acd interactions to target agents with higher proficiency ratings.
     /// </summary>
     /// <value>Proficiency is a rating from 0.0 to 5.0 on how competent an agent is for a particular skill. It is used when a queue is set to \&quot;Best available skills\&quot; mode to allow acd interactions to target agents with higher proficiency ratings.</value>
-    [DataMember(Name = "proficiency", EmitDefaultValue = false)]
+    [JsonPropertyName("proficiency")]
     public double? Proficiency { get; set; }
 
 
@@ -52,7 +51,7 @@ public partial class UserRoutingSkillPost : IEquatable<UserRoutingSkillPost>
     /// URI to the organization skill used by this user skill.
     /// </summary>
     /// <value>URI to the organization skill used by this user skill.</value>
-    [DataMember(Name = "skillUri", EmitDefaultValue = false)]
+    [JsonPropertyName("skillUri")]
     public string SkillUri { get; private set; }
 
 
@@ -61,7 +60,7 @@ public partial class UserRoutingSkillPost : IEquatable<UserRoutingSkillPost>
     /// The URI for this object
     /// </summary>
     /// <value>The URI for this object</value>
-    [DataMember(Name = "selfUri", EmitDefaultValue = false)]
+    [JsonPropertyName("selfUri")]
     public string SelfUri { get; private set; }
 
 

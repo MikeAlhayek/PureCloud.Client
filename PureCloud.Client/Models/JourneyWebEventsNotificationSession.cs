@@ -1,12 +1,12 @@
-using System.Runtime.Serialization;
 using System.Text;
+using System.Text.Json.Serialization;
 
 namespace PureCloud.Client.Models;
 
 /// <summary>
 /// JourneyWebEventsNotificationSession
 /// </summary>
-[DataContract]
+
 public partial class JourneyWebEventsNotificationSession : IEquatable<JourneyWebEventsNotificationSession>
 {
     /// <summary>
@@ -28,7 +28,7 @@ public partial class JourneyWebEventsNotificationSession : IEquatable<JourneyWeb
     /// <summary>
     /// Gets or Sets Id
     /// </summary>
-    [DataMember(Name = "id", EmitDefaultValue = false)]
+    [JsonPropertyName("id")]
     public string Id { get; set; }
 
 
@@ -36,7 +36,7 @@ public partial class JourneyWebEventsNotificationSession : IEquatable<JourneyWeb
     /// <summary>
     /// Gets or Sets SelfUri
     /// </summary>
-    [DataMember(Name = "selfUri", EmitDefaultValue = false)]
+    [JsonPropertyName("selfUri")]
     public string SelfUri { get; set; }
 
 
@@ -44,7 +44,7 @@ public partial class JourneyWebEventsNotificationSession : IEquatable<JourneyWeb
     /// <summary>
     /// Gets or Sets Type
     /// </summary>
-    [DataMember(Name = "type", EmitDefaultValue = false)]
+    [JsonPropertyName("type")]
     public string Type { get; set; }
 
 

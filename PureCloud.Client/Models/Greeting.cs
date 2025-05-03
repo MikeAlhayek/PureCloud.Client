@@ -7,14 +7,14 @@ namespace PureCloud.Client.Models;
 /// <summary>
 /// Greeting
 /// </summary>
-[DataContract]
+
 public partial class Greeting : IEquatable<Greeting>
 {
     /// <summary>
     /// Greeting type
     /// </summary>
     /// <value>Greeting type</value>
-    [JsonConverter(typeof(JsonStringEnumConverter))]
+    
     public enum TypeEnum
     {
         /// <summary>
@@ -47,7 +47,7 @@ public partial class Greeting : IEquatable<Greeting>
     /// Greeting owner type
     /// </summary>
     /// <value>Greeting owner type</value>
-    [JsonConverter(typeof(JsonStringEnumConverter))]
+    
     public enum OwnerTypeEnum
     {
         /// <summary>
@@ -80,13 +80,13 @@ public partial class Greeting : IEquatable<Greeting>
     /// Greeting type
     /// </summary>
     /// <value>Greeting type</value>
-    [DataMember(Name = "type", EmitDefaultValue = false)]
+    [JsonPropertyName("type")]
     public TypeEnum? Type { get; set; }
     /// <summary>
     /// Greeting owner type
     /// </summary>
     /// <value>Greeting owner type</value>
-    [DataMember(Name = "ownerType", EmitDefaultValue = false)]
+    [JsonPropertyName("ownerType")]
     public OwnerTypeEnum? OwnerType { get; set; }
 
     /// <summary>
@@ -128,7 +128,7 @@ public partial class Greeting : IEquatable<Greeting>
     /// The globally unique identifier for the object.
     /// </summary>
     /// <value>The globally unique identifier for the object.</value>
-    [DataMember(Name = "id", EmitDefaultValue = false)]
+    [JsonPropertyName("id")]
     public string Id { get; private set; }
 
 
@@ -136,7 +136,7 @@ public partial class Greeting : IEquatable<Greeting>
     /// <summary>
     /// Gets or Sets Name
     /// </summary>
-    [DataMember(Name = "name", EmitDefaultValue = false)]
+    [JsonPropertyName("name")]
     public string Name { get; set; }
 
 
@@ -149,7 +149,7 @@ public partial class Greeting : IEquatable<Greeting>
     /// Greeting owner
     /// </summary>
     /// <value>Greeting owner</value>
-    [DataMember(Name = "owner", EmitDefaultValue = false)]
+    [JsonPropertyName("owner")]
     public DomainEntity Owner { get; set; }
 
 
@@ -157,7 +157,7 @@ public partial class Greeting : IEquatable<Greeting>
     /// <summary>
     /// Gets or Sets AudioFile
     /// </summary>
-    [DataMember(Name = "audioFile", EmitDefaultValue = false)]
+    [JsonPropertyName("audioFile")]
     public GreetingAudioFile AudioFile { get; set; }
 
 
@@ -165,7 +165,7 @@ public partial class Greeting : IEquatable<Greeting>
     /// <summary>
     /// Gets or Sets AudioTTS
     /// </summary>
-    [DataMember(Name = "audioTTS", EmitDefaultValue = false)]
+    [JsonPropertyName("audioTTS")]
     public string AudioTTS { get; set; }
 
 
@@ -174,7 +174,7 @@ public partial class Greeting : IEquatable<Greeting>
     /// Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z
     /// </summary>
     /// <value>Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z</value>
-    [DataMember(Name = "createdDate", EmitDefaultValue = false)]
+    [JsonPropertyName("createdDate")]
     public DateTime? CreatedDate { get; set; }
 
 
@@ -182,7 +182,7 @@ public partial class Greeting : IEquatable<Greeting>
     /// <summary>
     /// Gets or Sets CreatedBy
     /// </summary>
-    [DataMember(Name = "createdBy", EmitDefaultValue = false)]
+    [JsonPropertyName("createdBy")]
     public string CreatedBy { get; set; }
 
 
@@ -191,7 +191,7 @@ public partial class Greeting : IEquatable<Greeting>
     /// Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z
     /// </summary>
     /// <value>Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z</value>
-    [DataMember(Name = "modifiedDate", EmitDefaultValue = false)]
+    [JsonPropertyName("modifiedDate")]
     public DateTime? ModifiedDate { get; set; }
 
 
@@ -199,7 +199,7 @@ public partial class Greeting : IEquatable<Greeting>
     /// <summary>
     /// Gets or Sets ModifiedBy
     /// </summary>
-    [DataMember(Name = "modifiedBy", EmitDefaultValue = false)]
+    [JsonPropertyName("modifiedBy")]
     public string ModifiedBy { get; set; }
 
 
@@ -208,7 +208,7 @@ public partial class Greeting : IEquatable<Greeting>
     /// The URI for this object
     /// </summary>
     /// <value>The URI for this object</value>
-    [DataMember(Name = "selfUri", EmitDefaultValue = false)]
+    [JsonPropertyName("selfUri")]
     public string SelfUri { get; private set; }
 
 

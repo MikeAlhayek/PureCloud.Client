@@ -1,4 +1,3 @@
-using System.Runtime.Serialization;
 using System.Text;
 using System.Text.Json.Serialization;
 
@@ -7,7 +6,7 @@ namespace PureCloud.Client.Models;
 /// <summary>
 /// MergeRequest
 /// </summary>
-[DataContract]
+
 public partial class MergeRequest : IEquatable<MergeRequest>
 {
 
@@ -34,7 +33,7 @@ public partial class MergeRequest : IEquatable<MergeRequest>
     /// The ID of the source contact for the merge operation
     /// </summary>
     /// <value>The ID of the source contact for the merge operation</value>
-    [DataMember(Name = "sourceContactId", EmitDefaultValue = false)]
+    [JsonPropertyName("sourceContactId")]
     public string SourceContactId { get; set; }
 
 
@@ -43,7 +42,7 @@ public partial class MergeRequest : IEquatable<MergeRequest>
     /// The ID of the target contact for the merge operation
     /// </summary>
     /// <value>The ID of the target contact for the merge operation</value>
-    [DataMember(Name = "targetContactId", EmitDefaultValue = false)]
+    [JsonPropertyName("targetContactId")]
     public string TargetContactId { get; set; }
 
 

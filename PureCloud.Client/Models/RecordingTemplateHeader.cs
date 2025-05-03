@@ -7,14 +7,14 @@ namespace PureCloud.Client.Models;
 /// <summary>
 /// RecordingTemplateHeader
 /// </summary>
-[DataContract]
+
 public partial class RecordingTemplateHeader : IEquatable<RecordingTemplateHeader>
 {
     /// <summary>
     /// Template header type.
     /// </summary>
     /// <value>Template header type.</value>
-    [JsonConverter(typeof(JsonStringEnumConverter))]
+    
     public enum TypeEnum
     {
         /// <summary>
@@ -41,7 +41,7 @@ public partial class RecordingTemplateHeader : IEquatable<RecordingTemplateHeade
     /// Template header type.
     /// </summary>
     /// <value>Template header type.</value>
-    [DataMember(Name = "type", EmitDefaultValue = false)]
+    [JsonPropertyName("type")]
     public TypeEnum? Type { get; set; }
     /// <summary>
     /// Initializes a new instance of the <see cref="RecordingTemplateHeader" /> class.
@@ -65,7 +65,7 @@ public partial class RecordingTemplateHeader : IEquatable<RecordingTemplateHeade
     /// Header text.
     /// </summary>
     /// <value>Header text.</value>
-    [DataMember(Name = "text", EmitDefaultValue = false)]
+    [JsonPropertyName("text")]
     public string Text { get; set; }
 
 
@@ -74,7 +74,7 @@ public partial class RecordingTemplateHeader : IEquatable<RecordingTemplateHeade
     /// Media template header image.
     /// </summary>
     /// <value>Media template header image.</value>
-    [DataMember(Name = "media", EmitDefaultValue = false)]
+    [JsonPropertyName("media")]
     public RecordingAttachment Media { get; set; }
 
 

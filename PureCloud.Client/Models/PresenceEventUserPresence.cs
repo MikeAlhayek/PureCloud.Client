@@ -1,12 +1,12 @@
-using System.Runtime.Serialization;
 using System.Text;
+using System.Text.Json.Serialization;
 
 namespace PureCloud.Client.Models;
 
 /// <summary>
 /// PresenceEventUserPresence
 /// </summary>
-[DataContract]
+
 public partial class PresenceEventUserPresence : IEquatable<PresenceEventUserPresence>
 {
     /// <summary>
@@ -32,7 +32,7 @@ public partial class PresenceEventUserPresence : IEquatable<PresenceEventUserPre
     /// <summary>
     /// Gets or Sets Source
     /// </summary>
-    [DataMember(Name = "source", EmitDefaultValue = false)]
+    [JsonPropertyName("source")]
     public string Source { get; set; }
 
 
@@ -40,7 +40,7 @@ public partial class PresenceEventUserPresence : IEquatable<PresenceEventUserPre
     /// <summary>
     /// Gets or Sets PresenceDefinition
     /// </summary>
-    [DataMember(Name = "presenceDefinition", EmitDefaultValue = false)]
+    [JsonPropertyName("presenceDefinition")]
     public PresenceEventOrganizationPresence PresenceDefinition { get; set; }
 
 
@@ -48,7 +48,7 @@ public partial class PresenceEventUserPresence : IEquatable<PresenceEventUserPre
     /// <summary>
     /// Gets or Sets Primary
     /// </summary>
-    [DataMember(Name = "primary", EmitDefaultValue = false)]
+    [JsonPropertyName("primary")]
     public bool? Primary { get; set; }
 
 
@@ -56,7 +56,7 @@ public partial class PresenceEventUserPresence : IEquatable<PresenceEventUserPre
     /// <summary>
     /// Gets or Sets Message
     /// </summary>
-    [DataMember(Name = "message", EmitDefaultValue = false)]
+    [JsonPropertyName("message")]
     public string Message { get; set; }
 
 
@@ -64,7 +64,7 @@ public partial class PresenceEventUserPresence : IEquatable<PresenceEventUserPre
     /// <summary>
     /// Gets or Sets ModifiedDate
     /// </summary>
-    [DataMember(Name = "modifiedDate", EmitDefaultValue = false)]
+    [JsonPropertyName("modifiedDate")]
     public DateTime? ModifiedDate { get; set; }
 
 

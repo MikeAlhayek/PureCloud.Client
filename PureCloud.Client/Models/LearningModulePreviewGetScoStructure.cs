@@ -7,14 +7,14 @@ namespace PureCloud.Client.Models;
 /// <summary>
 /// Learning module preview get SCO structure
 /// </summary>
-[DataContract]
+
 public partial class LearningModulePreviewGetScoStructure : IEquatable<LearningModulePreviewGetScoStructure>
 {
     /// <summary>
     /// The success status of this SCO
     /// </summary>
     /// <value>The success status of this SCO</value>
-    [JsonConverter(typeof(JsonStringEnumConverter))]
+    
     public enum SuccessStatusEnum
     {
         /// <summary>
@@ -47,7 +47,7 @@ public partial class LearningModulePreviewGetScoStructure : IEquatable<LearningM
     /// The completion status of this SCO
     /// </summary>
     /// <value>The completion status of this SCO</value>
-    [JsonConverter(typeof(JsonStringEnumConverter))]
+    
     public enum CompletionStatusEnum
     {
         /// <summary>
@@ -86,13 +86,13 @@ public partial class LearningModulePreviewGetScoStructure : IEquatable<LearningM
     /// The success status of this SCO
     /// </summary>
     /// <value>The success status of this SCO</value>
-    [DataMember(Name = "successStatus", EmitDefaultValue = false)]
+    [JsonPropertyName("successStatus")]
     public SuccessStatusEnum? SuccessStatus { get; private set; }
     /// <summary>
     /// The completion status of this SCO
     /// </summary>
     /// <value>The completion status of this SCO</value>
-    [DataMember(Name = "completionStatus", EmitDefaultValue = false)]
+    [JsonPropertyName("completionStatus")]
     public CompletionStatusEnum? CompletionStatus { get; private set; }
     /// <summary>
     /// Initializes a new instance of the <see cref="LearningModulePreviewGetScoStructure" /> class.
@@ -110,7 +110,7 @@ public partial class LearningModulePreviewGetScoStructure : IEquatable<LearningM
     /// The id of this SCO in the course manifest
     /// </summary>
     /// <value>The id of this SCO in the course manifest</value>
-    [DataMember(Name = "id", EmitDefaultValue = false)]
+    [JsonPropertyName("id")]
     public string Id { get; private set; }
 
 
@@ -119,7 +119,7 @@ public partial class LearningModulePreviewGetScoStructure : IEquatable<LearningM
     /// The name of this SCO in the course manifest
     /// </summary>
     /// <value>The name of this SCO in the course manifest</value>
-    [DataMember(Name = "name", EmitDefaultValue = false)]
+    [JsonPropertyName("name")]
     public string Name { get; private set; }
 
 
@@ -132,7 +132,7 @@ public partial class LearningModulePreviewGetScoStructure : IEquatable<LearningM
     /// Percentage Score
     /// </summary>
     /// <value>Percentage Score</value>
-    [DataMember(Name = "percentageScore", EmitDefaultValue = false)]
+    [JsonPropertyName("percentageScore")]
     public float? PercentageScore { get; private set; }
 
 
@@ -141,7 +141,7 @@ public partial class LearningModulePreviewGetScoStructure : IEquatable<LearningM
     /// The SCO (Shareable Content Object) data
     /// </summary>
     /// <value>The SCO (Shareable Content Object) data</value>
-    [DataMember(Name = "shareableContentObject", EmitDefaultValue = false)]
+    [JsonPropertyName("shareableContentObject")]
     public LearningShareableContentObject ShareableContentObject { get; set; }
 
 
@@ -150,7 +150,7 @@ public partial class LearningModulePreviewGetScoStructure : IEquatable<LearningM
     /// Child items belonging to this SCO in the course manifest
     /// </summary>
     /// <value>Child items belonging to this SCO in the course manifest</value>
-    [DataMember(Name = "children", EmitDefaultValue = false)]
+    [JsonPropertyName("children")]
     public List<LearningModulePreviewGetScoStructure> Children { get; private set; }
 
 

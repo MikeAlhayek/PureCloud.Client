@@ -7,13 +7,13 @@ namespace PureCloud.Client.Models;
 /// <summary>
 /// CreateShareResponse
 /// </summary>
-[DataContract]
+
 public partial class CreateShareResponse : IEquatable<CreateShareResponse>
 {
     /// <summary>
     /// Gets or Sets SharedEntityType
     /// </summary>
-    [JsonConverter(typeof(JsonStringEnumConverter))]
+    
     public enum SharedEntityTypeEnum
     {
         /// <summary>
@@ -33,7 +33,7 @@ public partial class CreateShareResponse : IEquatable<CreateShareResponse>
     /// <summary>
     /// Gets or Sets MemberType
     /// </summary>
-    [JsonConverter(typeof(JsonStringEnumConverter))]
+    
     public enum MemberTypeEnum
     {
         /// <summary>
@@ -65,12 +65,12 @@ public partial class CreateShareResponse : IEquatable<CreateShareResponse>
     /// <summary>
     /// Gets or Sets SharedEntityType
     /// </summary>
-    [DataMember(Name = "sharedEntityType", EmitDefaultValue = false)]
+    [JsonPropertyName("sharedEntityType")]
     public SharedEntityTypeEnum? SharedEntityType { get; set; }
     /// <summary>
     /// Gets or Sets MemberType
     /// </summary>
-    [DataMember(Name = "memberType", EmitDefaultValue = false)]
+    [JsonPropertyName("memberType")]
     public MemberTypeEnum? MemberType { get; set; }
     /// <summary>
     /// Initializes a new instance of the <see cref="CreateShareResponse" /> class.
@@ -104,7 +104,7 @@ public partial class CreateShareResponse : IEquatable<CreateShareResponse>
     /// The globally unique identifier for the object.
     /// </summary>
     /// <value>The globally unique identifier for the object.</value>
-    [DataMember(Name = "id", EmitDefaultValue = false)]
+    [JsonPropertyName("id")]
     public string Id { get; private set; }
 
 
@@ -112,7 +112,7 @@ public partial class CreateShareResponse : IEquatable<CreateShareResponse>
     /// <summary>
     /// Gets or Sets Name
     /// </summary>
-    [DataMember(Name = "name", EmitDefaultValue = false)]
+    [JsonPropertyName("name")]
     public string Name { get; set; }
 
 
@@ -122,7 +122,7 @@ public partial class CreateShareResponse : IEquatable<CreateShareResponse>
     /// <summary>
     /// Gets or Sets SharedEntity
     /// </summary>
-    [DataMember(Name = "sharedEntity", EmitDefaultValue = false)]
+    [JsonPropertyName("sharedEntity")]
     public DomainEntityRef SharedEntity { get; set; }
 
 
@@ -132,7 +132,7 @@ public partial class CreateShareResponse : IEquatable<CreateShareResponse>
     /// <summary>
     /// Gets or Sets Member
     /// </summary>
-    [DataMember(Name = "member", EmitDefaultValue = false)]
+    [JsonPropertyName("member")]
     public DomainEntityRef Member { get; set; }
 
 
@@ -140,7 +140,7 @@ public partial class CreateShareResponse : IEquatable<CreateShareResponse>
     /// <summary>
     /// Gets or Sets SharedBy
     /// </summary>
-    [DataMember(Name = "sharedBy", EmitDefaultValue = false)]
+    [JsonPropertyName("sharedBy")]
     public DomainEntityRef SharedBy { get; set; }
 
 
@@ -148,7 +148,7 @@ public partial class CreateShareResponse : IEquatable<CreateShareResponse>
     /// <summary>
     /// Gets or Sets Workspace
     /// </summary>
-    [DataMember(Name = "workspace", EmitDefaultValue = false)]
+    [JsonPropertyName("workspace")]
     public DomainEntityRef Workspace { get; set; }
 
 
@@ -156,7 +156,7 @@ public partial class CreateShareResponse : IEquatable<CreateShareResponse>
     /// <summary>
     /// Gets or Sets Succeeded
     /// </summary>
-    [DataMember(Name = "succeeded", EmitDefaultValue = false)]
+    [JsonPropertyName("succeeded")]
     public List<Share> Succeeded { get; set; }
 
 
@@ -164,7 +164,7 @@ public partial class CreateShareResponse : IEquatable<CreateShareResponse>
     /// <summary>
     /// Gets or Sets Failed
     /// </summary>
-    [DataMember(Name = "failed", EmitDefaultValue = false)]
+    [JsonPropertyName("failed")]
     public List<Share> Failed { get; set; }
 
 
@@ -173,7 +173,7 @@ public partial class CreateShareResponse : IEquatable<CreateShareResponse>
     /// The URI for this object
     /// </summary>
     /// <value>The URI for this object</value>
-    [DataMember(Name = "selfUri", EmitDefaultValue = false)]
+    [JsonPropertyName("selfUri")]
     public string SelfUri { get; private set; }
 
 

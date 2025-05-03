@@ -1,12 +1,12 @@
-using System.Runtime.Serialization;
 using System.Text;
+using System.Text.Json.Serialization;
 
 namespace PureCloud.Client.Models;
 
 /// <summary>
 /// AuthzDivisionGrantEntityListing
 /// </summary>
-[DataContract]
+
 public partial class AuthzDivisionGrantEntityListing : IEquatable<AuthzDivisionGrantEntityListing>
 {
     /// <summary>
@@ -32,7 +32,7 @@ public partial class AuthzDivisionGrantEntityListing : IEquatable<AuthzDivisionG
     /// <summary>
     /// Gets or Sets Entities
     /// </summary>
-    [DataMember(Name = "entities", EmitDefaultValue = false)]
+    [JsonPropertyName("entities")]
     public List<AuthzGrant> Entities { get; set; }
 
 
@@ -40,7 +40,7 @@ public partial class AuthzDivisionGrantEntityListing : IEquatable<AuthzDivisionG
     /// <summary>
     /// Gets or Sets PageSize
     /// </summary>
-    [DataMember(Name = "pageSize", EmitDefaultValue = false)]
+    [JsonPropertyName("pageSize")]
     public int? PageSize { get; set; }
 
 
@@ -48,7 +48,7 @@ public partial class AuthzDivisionGrantEntityListing : IEquatable<AuthzDivisionG
     /// <summary>
     /// Gets or Sets PageNumber
     /// </summary>
-    [DataMember(Name = "pageNumber", EmitDefaultValue = false)]
+    [JsonPropertyName("pageNumber")]
     public int? PageNumber { get; set; }
 
 
@@ -56,7 +56,7 @@ public partial class AuthzDivisionGrantEntityListing : IEquatable<AuthzDivisionG
     /// <summary>
     /// Gets or Sets Total
     /// </summary>
-    [DataMember(Name = "total", EmitDefaultValue = false)]
+    [JsonPropertyName("total")]
     public long? Total { get; set; }
 
 
@@ -64,7 +64,7 @@ public partial class AuthzDivisionGrantEntityListing : IEquatable<AuthzDivisionG
     /// <summary>
     /// Gets or Sets PageCount
     /// </summary>
-    [DataMember(Name = "pageCount", EmitDefaultValue = false)]
+    [JsonPropertyName("pageCount")]
     public int? PageCount { get; set; }
 
 

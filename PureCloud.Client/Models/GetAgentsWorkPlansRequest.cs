@@ -1,4 +1,3 @@
-using System.Runtime.Serialization;
 using System.Text;
 using System.Text.Json.Serialization;
 
@@ -7,7 +6,7 @@ namespace PureCloud.Client.Models;
 /// <summary>
 /// GetAgentsWorkPlansRequest
 /// </summary>
-[DataContract]
+
 public partial class GetAgentsWorkPlansRequest : IEquatable<GetAgentsWorkPlansRequest>
 {
 
@@ -36,7 +35,7 @@ public partial class GetAgentsWorkPlansRequest : IEquatable<GetAgentsWorkPlansRe
     /// The list of agent IDs
     /// </summary>
     /// <value>The list of agent IDs</value>
-    [DataMember(Name = "agentIds", EmitDefaultValue = false)]
+    [JsonPropertyName("agentIds")]
     public List<string> AgentIds { get; set; }
 
 
@@ -45,7 +44,7 @@ public partial class GetAgentsWorkPlansRequest : IEquatable<GetAgentsWorkPlansRe
     /// The start of a date in yyyy-MM-dd format. Response contains values rolled back to nearest BU start day of week. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd
     /// </summary>
     /// <value>The start of a date in yyyy-MM-dd format. Response contains values rolled back to nearest BU start day of week. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd</value>
-    [DataMember(Name = "startDate", EmitDefaultValue = false)]
+    [JsonPropertyName("startDate")]
     public string StartDate { get; set; }
 
 
@@ -54,7 +53,7 @@ public partial class GetAgentsWorkPlansRequest : IEquatable<GetAgentsWorkPlansRe
     /// The number of weeks to query
     /// </summary>
     /// <value>The number of weeks to query</value>
-    [DataMember(Name = "weekCount", EmitDefaultValue = false)]
+    [JsonPropertyName("weekCount")]
     public int? WeekCount { get; set; }
 
 

@@ -7,14 +7,14 @@ namespace PureCloud.Client.Models;
 /// <summary>
 /// DncList
 /// </summary>
-[DataContract]
+
 public partial class DncList : IEquatable<DncList>
 {
     /// <summary>
     /// The type of the DncList.
     /// </summary>
     /// <value>The type of the DncList.</value>
-    [JsonConverter(typeof(JsonStringEnumConverter))]
+    
     public enum DncSourceTypeEnum
     {
         /// <summary>
@@ -53,7 +53,7 @@ public partial class DncList : IEquatable<DncList>
     /// The contact method. Required if dncSourceType is rds.
     /// </summary>
     /// <value>The contact method. Required if dncSourceType is rds.</value>
-    [JsonConverter(typeof(JsonStringEnumConverter))]
+    
     public enum ContactMethodEnum
     {
         /// <summary>
@@ -92,13 +92,13 @@ public partial class DncList : IEquatable<DncList>
     /// The type of the DncList.
     /// </summary>
     /// <value>The type of the DncList.</value>
-    [DataMember(Name = "dncSourceType", EmitDefaultValue = false)]
+    [JsonPropertyName("dncSourceType")]
     public DncSourceTypeEnum? DncSourceType { get; private set; }
     /// <summary>
     /// The contact method. Required if dncSourceType is rds.
     /// </summary>
     /// <value>The contact method. Required if dncSourceType is rds.</value>
-    [DataMember(Name = "contactMethod", EmitDefaultValue = false)]
+    [JsonPropertyName("contactMethod")]
     public ContactMethodEnum? ContactMethod { get; set; }
 
     /// <summary>
@@ -138,7 +138,7 @@ public partial class DncList : IEquatable<DncList>
     /// The globally unique identifier for the object.
     /// </summary>
     /// <value>The globally unique identifier for the object.</value>
-    [DataMember(Name = "id", EmitDefaultValue = false)]
+    [JsonPropertyName("id")]
     public string Id { get; private set; }
 
 
@@ -147,7 +147,7 @@ public partial class DncList : IEquatable<DncList>
     /// The name of the DncList.
     /// </summary>
     /// <value>The name of the DncList.</value>
-    [DataMember(Name = "name", EmitDefaultValue = false)]
+    [JsonPropertyName("name")]
     public string Name { get; set; }
 
 
@@ -156,7 +156,7 @@ public partial class DncList : IEquatable<DncList>
     /// Creation time of the entity. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z
     /// </summary>
     /// <value>Creation time of the entity. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z</value>
-    [DataMember(Name = "dateCreated", EmitDefaultValue = false)]
+    [JsonPropertyName("dateCreated")]
     public DateTime? DateCreated { get; private set; }
 
 
@@ -165,7 +165,7 @@ public partial class DncList : IEquatable<DncList>
     /// Last modified time of the entity. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z
     /// </summary>
     /// <value>Last modified time of the entity. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z</value>
-    [DataMember(Name = "dateModified", EmitDefaultValue = false)]
+    [JsonPropertyName("dateModified")]
     public DateTime? DateModified { get; private set; }
 
 
@@ -174,7 +174,7 @@ public partial class DncList : IEquatable<DncList>
     /// Required for updates, must match the version number of the most recent update
     /// </summary>
     /// <value>Required for updates, must match the version number of the most recent update</value>
-    [DataMember(Name = "version", EmitDefaultValue = false)]
+    [JsonPropertyName("version")]
     public int? Version { get; set; }
 
 
@@ -183,7 +183,7 @@ public partial class DncList : IEquatable<DncList>
     /// The status of the import process
     /// </summary>
     /// <value>The status of the import process</value>
-    [DataMember(Name = "importStatus", EmitDefaultValue = false)]
+    [JsonPropertyName("importStatus")]
     public ImportStatus ImportStatus { get; private set; }
 
 
@@ -192,7 +192,7 @@ public partial class DncList : IEquatable<DncList>
     /// The total number of phone numbers in the DncList.
     /// </summary>
     /// <value>The total number of phone numbers in the DncList.</value>
-    [DataMember(Name = "size", EmitDefaultValue = false)]
+    [JsonPropertyName("size")]
     public long? Size { get; private set; }
 
 
@@ -205,7 +205,7 @@ public partial class DncList : IEquatable<DncList>
     /// A dnc.com loginId. Required if the dncSourceType is dnc.com.
     /// </summary>
     /// <value>A dnc.com loginId. Required if the dncSourceType is dnc.com.</value>
-    [DataMember(Name = "loginId", EmitDefaultValue = false)]
+    [JsonPropertyName("loginId")]
     public string LoginId { get; set; }
 
 
@@ -214,7 +214,7 @@ public partial class DncList : IEquatable<DncList>
     /// A dnc.com campaignId. Optional if the dncSourceType is dnc.com.
     /// </summary>
     /// <value>A dnc.com campaignId. Optional if the dncSourceType is dnc.com.</value>
-    [DataMember(Name = "campaignId", EmitDefaultValue = false)]
+    [JsonPropertyName("campaignId")]
     public string CampaignId { get; set; }
 
 
@@ -223,7 +223,7 @@ public partial class DncList : IEquatable<DncList>
     /// The list of dnc.com codes to be treated as DNC. Required if the dncSourceType is dnc.com.
     /// </summary>
     /// <value>The list of dnc.com codes to be treated as DNC. Required if the dncSourceType is dnc.com.</value>
-    [DataMember(Name = "dncCodes", EmitDefaultValue = false)]
+    [JsonPropertyName("dncCodes")]
     public List<string> DncCodes { get; set; }
 
 
@@ -232,7 +232,7 @@ public partial class DncList : IEquatable<DncList>
     /// A gryphon license number. Required if the dncSourceType is gryphon.
     /// </summary>
     /// <value>A gryphon license number. Required if the dncSourceType is gryphon.</value>
-    [DataMember(Name = "licenseId", EmitDefaultValue = false)]
+    [JsonPropertyName("licenseId")]
     public string LicenseId { get; set; }
 
 
@@ -241,7 +241,7 @@ public partial class DncList : IEquatable<DncList>
     /// The division this DncList belongs to.
     /// </summary>
     /// <value>The division this DncList belongs to.</value>
-    [DataMember(Name = "division", EmitDefaultValue = false)]
+    [JsonPropertyName("division")]
     public DomainEntityRef Division { get; set; }
 
 
@@ -250,7 +250,7 @@ public partial class DncList : IEquatable<DncList>
     /// The column to evaluate exclusion against. Required if the dncSourceType is rds_custom.
     /// </summary>
     /// <value>The column to evaluate exclusion against. Required if the dncSourceType is rds_custom.</value>
-    [DataMember(Name = "customExclusionColumn", EmitDefaultValue = false)]
+    [JsonPropertyName("customExclusionColumn")]
     public string CustomExclusionColumn { get; set; }
 
 
@@ -259,7 +259,7 @@ public partial class DncList : IEquatable<DncList>
     /// The URI for this object
     /// </summary>
     /// <value>The URI for this object</value>
-    [DataMember(Name = "selfUri", EmitDefaultValue = false)]
+    [JsonPropertyName("selfUri")]
     public string SelfUri { get; private set; }
 
 

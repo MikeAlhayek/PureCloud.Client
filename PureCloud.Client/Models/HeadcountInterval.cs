@@ -1,4 +1,3 @@
-using System.Runtime.Serialization;
 using System.Text;
 using System.Text.Json.Serialization;
 
@@ -7,7 +6,7 @@ namespace PureCloud.Client.Models;
 /// <summary>
 /// HeadcountInterval
 /// </summary>
-[DataContract]
+
 public partial class HeadcountInterval : IEquatable<HeadcountInterval>
 {
 
@@ -34,7 +33,7 @@ public partial class HeadcountInterval : IEquatable<HeadcountInterval>
     /// The start date-time for this headcount interval in ISO-8601 format, must be within the 8 day schedule
     /// </summary>
     /// <value>The start date-time for this headcount interval in ISO-8601 format, must be within the 8 day schedule</value>
-    [DataMember(Name = "interval", EmitDefaultValue = false)]
+    [JsonPropertyName("interval")]
     public DateTime? Interval { get; set; }
 
 
@@ -43,7 +42,7 @@ public partial class HeadcountInterval : IEquatable<HeadcountInterval>
     /// Headcount value for this interval
     /// </summary>
     /// <value>Headcount value for this interval</value>
-    [DataMember(Name = "value", EmitDefaultValue = false)]
+    [JsonPropertyName("value")]
     public double? Value { get; set; }
 
 

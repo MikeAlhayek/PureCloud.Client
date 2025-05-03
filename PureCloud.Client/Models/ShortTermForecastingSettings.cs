@@ -1,12 +1,12 @@
-using System.Runtime.Serialization;
 using System.Text;
+using System.Text.Json.Serialization;
 
 namespace PureCloud.Client.Models;
 
 /// <summary>
 /// ShortTermForecastingSettings
 /// </summary>
-[DataContract]
+
 public partial class ShortTermForecastingSettings : IEquatable<ShortTermForecastingSettings>
 {
     /// <summary>
@@ -25,7 +25,7 @@ public partial class ShortTermForecastingSettings : IEquatable<ShortTermForecast
     /// The number of weeks to consider by default when generating a volume forecast
     /// </summary>
     /// <value>The number of weeks to consider by default when generating a volume forecast</value>
-    [DataMember(Name = "defaultHistoryWeeks", EmitDefaultValue = false)]
+    [JsonPropertyName("defaultHistoryWeeks")]
     public int? DefaultHistoryWeeks { get; set; }
 
 

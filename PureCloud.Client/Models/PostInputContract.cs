@@ -1,4 +1,3 @@
-using System.Runtime.Serialization;
 using System.Text;
 using System.Text.Json.Serialization;
 
@@ -7,7 +6,7 @@ namespace PureCloud.Client.Models;
 /// <summary>
 /// The schemas defining all of the expected requests/inputs.
 /// </summary>
-[DataContract]
+
 public partial class PostInputContract : IEquatable<PostInputContract>
 {
 
@@ -32,7 +31,7 @@ public partial class PostInputContract : IEquatable<PostInputContract>
     /// JSON Schema that defines the body of the request that the client (edge/architect/postman) is sending to the service, on the /execute path.
     /// </summary>
     /// <value>JSON Schema that defines the body of the request that the client (edge/architect/postman) is sending to the service, on the /execute path.</value>
-    [DataMember(Name = "inputSchema", EmitDefaultValue = false)]
+    [JsonPropertyName("inputSchema")]
     public JsonSchemaDocument InputSchema { get; set; }
 
 

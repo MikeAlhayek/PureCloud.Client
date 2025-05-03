@@ -1,4 +1,3 @@
-using System.Runtime.Serialization;
 using System.Text;
 using System.Text.Json.Serialization;
 
@@ -7,7 +6,7 @@ namespace PureCloud.Client.Models;
 /// <summary>
 /// A schedule group.
 /// </summary>
-[DataContract]
+
 public partial class ScheduleGroupDivisionView : IEquatable<ScheduleGroupDivisionView>
 {
 
@@ -36,7 +35,7 @@ public partial class ScheduleGroupDivisionView : IEquatable<ScheduleGroupDivisio
     /// The schedule group identifier
     /// </summary>
     /// <value>The schedule group identifier</value>
-    [DataMember(Name = "id", EmitDefaultValue = false)]
+    [JsonPropertyName("id")]
     public string Id { get; set; }
 
 
@@ -45,7 +44,7 @@ public partial class ScheduleGroupDivisionView : IEquatable<ScheduleGroupDivisio
     /// The schedule group name
     /// </summary>
     /// <value>The schedule group name</value>
-    [DataMember(Name = "name", EmitDefaultValue = false)]
+    [JsonPropertyName("name")]
     public string Name { get; set; }
 
 
@@ -54,7 +53,7 @@ public partial class ScheduleGroupDivisionView : IEquatable<ScheduleGroupDivisio
     /// The division to which this entity belongs.
     /// </summary>
     /// <value>The division to which this entity belongs.</value>
-    [DataMember(Name = "division", EmitDefaultValue = false)]
+    [JsonPropertyName("division")]
     public WritableDivision Division { get; set; }
 
 
@@ -63,7 +62,7 @@ public partial class ScheduleGroupDivisionView : IEquatable<ScheduleGroupDivisio
     /// The URI for this object
     /// </summary>
     /// <value>The URI for this object</value>
-    [DataMember(Name = "selfUri", EmitDefaultValue = false)]
+    [JsonPropertyName("selfUri")]
     public string SelfUri { get; private set; }
 
 

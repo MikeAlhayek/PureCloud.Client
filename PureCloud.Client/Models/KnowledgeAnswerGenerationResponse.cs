@@ -1,12 +1,12 @@
-using System.Runtime.Serialization;
 using System.Text;
+using System.Text.Json.Serialization;
 
 namespace PureCloud.Client.Models;
 
 /// <summary>
 /// KnowledgeAnswerGenerationResponse
 /// </summary>
-[DataContract]
+
 public partial class KnowledgeAnswerGenerationResponse : IEquatable<KnowledgeAnswerGenerationResponse>
 {
     /// <summary>
@@ -27,7 +27,7 @@ public partial class KnowledgeAnswerGenerationResponse : IEquatable<KnowledgeAns
     /// The AI-generated answer.
     /// </summary>
     /// <value>The AI-generated answer.</value>
-    [DataMember(Name = "answer", EmitDefaultValue = false)]
+    [JsonPropertyName("answer")]
     public string Answer { get; set; }
 
 
@@ -36,7 +36,7 @@ public partial class KnowledgeAnswerGenerationResponse : IEquatable<KnowledgeAns
     /// The documents used for answer generation.
     /// </summary>
     /// <value>The documents used for answer generation.</value>
-    [DataMember(Name = "documents", EmitDefaultValue = false)]
+    [JsonPropertyName("documents")]
     public List<AnswerGenerationDocument> Documents { get; set; }
 
 

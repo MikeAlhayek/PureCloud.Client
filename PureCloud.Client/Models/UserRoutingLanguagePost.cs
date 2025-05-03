@@ -1,4 +1,3 @@
-using System.Runtime.Serialization;
 using System.Text;
 using System.Text.Json.Serialization;
 
@@ -7,7 +6,7 @@ namespace PureCloud.Client.Models;
 /// <summary>
 /// Represents an organization language assigned to a user. When assigning to a user specify the organization langauge id as the id.
 /// </summary>
-[DataContract]
+
 public partial class UserRoutingLanguagePost : IEquatable<UserRoutingLanguagePost>
 {
 
@@ -34,7 +33,7 @@ public partial class UserRoutingLanguagePost : IEquatable<UserRoutingLanguagePos
     /// The id of the existing routing language to add to the user
     /// </summary>
     /// <value>The id of the existing routing language to add to the user</value>
-    [DataMember(Name = "id", EmitDefaultValue = false)]
+    [JsonPropertyName("id")]
     public string Id { get; set; }
 
 
@@ -43,7 +42,7 @@ public partial class UserRoutingLanguagePost : IEquatable<UserRoutingLanguagePos
     /// Proficiency is a rating from 0.0 to 5.0 on how competent an agent is for a particular language. It is used when a queue is set to \&quot;Best available language\&quot; mode to allow acd interactions to target agents with higher proficiency ratings.
     /// </summary>
     /// <value>Proficiency is a rating from 0.0 to 5.0 on how competent an agent is for a particular language. It is used when a queue is set to \&quot;Best available language\&quot; mode to allow acd interactions to target agents with higher proficiency ratings.</value>
-    [DataMember(Name = "proficiency", EmitDefaultValue = false)]
+    [JsonPropertyName("proficiency")]
     public double? Proficiency { get; set; }
 
 
@@ -52,7 +51,7 @@ public partial class UserRoutingLanguagePost : IEquatable<UserRoutingLanguagePos
     /// URI to the organization language used by this user language.
     /// </summary>
     /// <value>URI to the organization language used by this user language.</value>
-    [DataMember(Name = "languageUri", EmitDefaultValue = false)]
+    [JsonPropertyName("languageUri")]
     public string LanguageUri { get; private set; }
 
 
@@ -61,7 +60,7 @@ public partial class UserRoutingLanguagePost : IEquatable<UserRoutingLanguagePos
     /// The URI for this object
     /// </summary>
     /// <value>The URI for this object</value>
-    [DataMember(Name = "selfUri", EmitDefaultValue = false)]
+    [JsonPropertyName("selfUri")]
     public string SelfUri { get; private set; }
 
 

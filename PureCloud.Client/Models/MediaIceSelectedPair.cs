@@ -1,12 +1,12 @@
-using System.Runtime.Serialization;
 using System.Text;
+using System.Text.Json.Serialization;
 
 namespace PureCloud.Client.Models;
 
 /// <summary>
 /// MediaIceSelectedPair
 /// </summary>
-[DataContract]
+
 public partial class MediaIceSelectedPair : IEquatable<MediaIceSelectedPair>
 {
     /// <summary>
@@ -29,7 +29,7 @@ public partial class MediaIceSelectedPair : IEquatable<MediaIceSelectedPair>
     /// The remote candidate that was chosen
     /// </summary>
     /// <value>The remote candidate that was chosen</value>
-    [DataMember(Name = "client", EmitDefaultValue = false)]
+    [JsonPropertyName("client")]
     public MediaIceSelectedCandidate Client { get; set; }
 
 
@@ -38,7 +38,7 @@ public partial class MediaIceSelectedPair : IEquatable<MediaIceSelectedPair>
     /// The local candidate that was chosen
     /// </summary>
     /// <value>The local candidate that was chosen</value>
-    [DataMember(Name = "server", EmitDefaultValue = false)]
+    [JsonPropertyName("server")]
     public MediaIceSelectedCandidate Server { get; set; }
 
 
@@ -47,7 +47,7 @@ public partial class MediaIceSelectedPair : IEquatable<MediaIceSelectedPair>
     /// Relative milliseconds since creation of endpoint when this ICE candidate pair has been selected
     /// </summary>
     /// <value>Relative milliseconds since creation of endpoint when this ICE candidate pair has been selected</value>
-    [DataMember(Name = "candidatePairSelectedMilliseconds", EmitDefaultValue = false)]
+    [JsonPropertyName("candidatePairSelectedMilliseconds")]
     public long? CandidatePairSelectedMilliseconds { get; set; }
 
 

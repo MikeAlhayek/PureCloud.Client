@@ -1,4 +1,3 @@
-using System.Runtime.Serialization;
 using System.Text;
 using System.Text.Json.Serialization;
 
@@ -7,7 +6,7 @@ namespace PureCloud.Client.Models;
 /// <summary>
 /// NluDetectionRequest
 /// </summary>
-[DataContract]
+
 public partial class NluDetectionRequest : IEquatable<NluDetectionRequest>
 {
 
@@ -34,7 +33,7 @@ public partial class NluDetectionRequest : IEquatable<NluDetectionRequest>
     /// The input subject to NLU detection.
     /// </summary>
     /// <value>The input subject to NLU detection.</value>
-    [DataMember(Name = "input", EmitDefaultValue = false)]
+    [JsonPropertyName("input")]
     public NluDetectionInput Input { get; set; }
 
 
@@ -43,7 +42,7 @@ public partial class NluDetectionRequest : IEquatable<NluDetectionRequest>
     /// The context for the input to NLU detection.
     /// </summary>
     /// <value>The context for the input to NLU detection.</value>
-    [DataMember(Name = "context", EmitDefaultValue = false)]
+    [JsonPropertyName("context")]
     public NluDetectionContext Context { get; set; }
 
 

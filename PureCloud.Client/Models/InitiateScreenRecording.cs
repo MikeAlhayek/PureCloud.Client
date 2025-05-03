@@ -1,12 +1,12 @@
-using System.Runtime.Serialization;
 using System.Text;
+using System.Text.Json.Serialization;
 
 namespace PureCloud.Client.Models;
 
 /// <summary>
 /// InitiateScreenRecording
 /// </summary>
-[DataContract]
+
 public partial class InitiateScreenRecording : IEquatable<InitiateScreenRecording>
 {
     /// <summary>
@@ -28,7 +28,7 @@ public partial class InitiateScreenRecording : IEquatable<InitiateScreenRecordin
     /// <summary>
     /// Gets or Sets RecordACW
     /// </summary>
-    [DataMember(Name = "recordACW", EmitDefaultValue = false)]
+    [JsonPropertyName("recordACW")]
     public bool? RecordACW { get; set; }
 
 
@@ -36,7 +36,7 @@ public partial class InitiateScreenRecording : IEquatable<InitiateScreenRecordin
     /// <summary>
     /// Gets or Sets ArchiveRetention
     /// </summary>
-    [DataMember(Name = "archiveRetention", EmitDefaultValue = false)]
+    [JsonPropertyName("archiveRetention")]
     public ArchiveRetention ArchiveRetention { get; set; }
 
 
@@ -44,7 +44,7 @@ public partial class InitiateScreenRecording : IEquatable<InitiateScreenRecordin
     /// <summary>
     /// Gets or Sets DeleteRetention
     /// </summary>
-    [DataMember(Name = "deleteRetention", EmitDefaultValue = false)]
+    [JsonPropertyName("deleteRetention")]
     public DeleteRetention DeleteRetention { get; set; }
 
 

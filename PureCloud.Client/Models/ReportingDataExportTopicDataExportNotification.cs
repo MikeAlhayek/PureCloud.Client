@@ -7,13 +7,13 @@ namespace PureCloud.Client.Models;
 /// <summary>
 /// ReportingDataExportTopicDataExportNotification
 /// </summary>
-[DataContract]
+
 public partial class ReportingDataExportTopicDataExportNotification : IEquatable<ReportingDataExportTopicDataExportNotification>
 {
     /// <summary>
     /// Gets or Sets Status
     /// </summary>
-    [JsonConverter(typeof(JsonStringEnumConverter))]
+    
     public enum StatusEnum
     {
         /// <summary>
@@ -69,7 +69,7 @@ public partial class ReportingDataExportTopicDataExportNotification : IEquatable
     /// <summary>
     /// Gets or Sets ExportFormat
     /// </summary>
-    [JsonConverter(typeof(JsonStringEnumConverter))]
+    
     public enum ExportFormatEnum
     {
         /// <summary>
@@ -95,7 +95,7 @@ public partial class ReportingDataExportTopicDataExportNotification : IEquatable
     /// <summary>
     /// Gets or Sets ViewType
     /// </summary>
-    [JsonConverter(typeof(JsonStringEnumConverter))]
+    
     public enum ViewTypeEnum
     {
         /// <summary>
@@ -661,7 +661,7 @@ public partial class ReportingDataExportTopicDataExportNotification : IEquatable
     /// <summary>
     /// Gets or Sets ExportErrorMessagesType
     /// </summary>
-    [JsonConverter(typeof(JsonStringEnumConverter))]
+    
     public enum ExportErrorMessagesTypeEnum
     {
         /// <summary>
@@ -783,7 +783,7 @@ public partial class ReportingDataExportTopicDataExportNotification : IEquatable
     /// <summary>
     /// Gets or Sets Inner
     /// </summary>
-    [JsonConverter(typeof(JsonStringEnumConverter))]
+    
     public enum InnerEnum
     {
         /// <summary>
@@ -815,22 +815,22 @@ public partial class ReportingDataExportTopicDataExportNotification : IEquatable
     /// <summary>
     /// Gets or Sets Status
     /// </summary>
-    [DataMember(Name = "status", EmitDefaultValue = false)]
+    [JsonPropertyName("status")]
     public StatusEnum? Status { get; set; }
     /// <summary>
     /// Gets or Sets ExportFormat
     /// </summary>
-    [DataMember(Name = "exportFormat", EmitDefaultValue = false)]
+    [JsonPropertyName("exportFormat")]
     public ExportFormatEnum? ExportFormat { get; set; }
     /// <summary>
     /// Gets or Sets ViewType
     /// </summary>
-    [DataMember(Name = "viewType", EmitDefaultValue = false)]
+    [JsonPropertyName("viewType")]
     public ViewTypeEnum? ViewType { get; set; }
     /// <summary>
     /// Gets or Sets ExportErrorMessagesType
     /// </summary>
-    [DataMember(Name = "exportErrorMessagesType", EmitDefaultValue = false)]
+    [JsonPropertyName("exportErrorMessagesType")]
     public ExportErrorMessagesTypeEnum? ExportErrorMessagesType { get; set; }
     /// <summary>
     /// Initializes a new instance of the <see cref="ReportingDataExportTopicDataExportNotification" /> class.
@@ -879,7 +879,7 @@ public partial class ReportingDataExportTopicDataExportNotification : IEquatable
     /// <summary>
     /// Gets or Sets Id
     /// </summary>
-    [DataMember(Name = "id", EmitDefaultValue = false)]
+    [JsonPropertyName("id")]
     public Guid? Id { get; set; }
 
 
@@ -887,7 +887,7 @@ public partial class ReportingDataExportTopicDataExportNotification : IEquatable
     /// <summary>
     /// Gets or Sets RunId
     /// </summary>
-    [DataMember(Name = "runId", EmitDefaultValue = false)]
+    [JsonPropertyName("runId")]
     public Guid? RunId { get; set; }
 
 
@@ -895,7 +895,7 @@ public partial class ReportingDataExportTopicDataExportNotification : IEquatable
     /// <summary>
     /// Gets or Sets Name
     /// </summary>
-    [DataMember(Name = "name", EmitDefaultValue = false)]
+    [JsonPropertyName("name")]
     public string Name { get; set; }
 
 
@@ -907,7 +907,7 @@ public partial class ReportingDataExportTopicDataExportNotification : IEquatable
     /// <summary>
     /// Gets or Sets DownloadUrl
     /// </summary>
-    [DataMember(Name = "downloadUrl", EmitDefaultValue = false)]
+    [JsonPropertyName("downloadUrl")]
     public string DownloadUrl { get; set; }
 
 
@@ -919,7 +919,7 @@ public partial class ReportingDataExportTopicDataExportNotification : IEquatable
     /// <summary>
     /// Gets or Sets Read
     /// </summary>
-    [DataMember(Name = "read", EmitDefaultValue = false)]
+    [JsonPropertyName("read")]
     public bool? Read { get; set; }
 
 
@@ -927,7 +927,7 @@ public partial class ReportingDataExportTopicDataExportNotification : IEquatable
     /// <summary>
     /// Gets or Sets CreatedDateTime
     /// </summary>
-    [DataMember(Name = "createdDateTime", EmitDefaultValue = false)]
+    [JsonPropertyName("createdDateTime")]
     public DateTime? CreatedDateTime { get; set; }
 
 
@@ -935,7 +935,7 @@ public partial class ReportingDataExportTopicDataExportNotification : IEquatable
     /// <summary>
     /// Gets or Sets ModifiedDateTime
     /// </summary>
-    [DataMember(Name = "modifiedDateTime", EmitDefaultValue = false)]
+    [JsonPropertyName("modifiedDateTime")]
     public DateTime? ModifiedDateTime { get; set; }
 
 
@@ -943,7 +943,7 @@ public partial class ReportingDataExportTopicDataExportNotification : IEquatable
     /// <summary>
     /// Gets or Sets PercentageComplete
     /// </summary>
-    [DataMember(Name = "percentageComplete", EmitDefaultValue = false)]
+    [JsonPropertyName("percentageComplete")]
     public double? PercentageComplete { get; set; }
 
 
@@ -951,7 +951,7 @@ public partial class ReportingDataExportTopicDataExportNotification : IEquatable
     /// <summary>
     /// Gets or Sets EmailStatuses
     /// </summary>
-    [DataMember(Name = "emailStatuses", EmitDefaultValue = false)]
+    [JsonPropertyName("emailStatuses")]
     public Dictionary<string, string> EmailStatuses { get; set; }
 
 
@@ -959,7 +959,7 @@ public partial class ReportingDataExportTopicDataExportNotification : IEquatable
     /// <summary>
     /// Gets or Sets EmailErrorDescription
     /// </summary>
-    [DataMember(Name = "emailErrorDescription", EmitDefaultValue = false)]
+    [JsonPropertyName("emailErrorDescription")]
     public string EmailErrorDescription { get; set; }
 
 
@@ -967,7 +967,7 @@ public partial class ReportingDataExportTopicDataExportNotification : IEquatable
     /// <summary>
     /// Gets or Sets ScheduleExpression
     /// </summary>
-    [DataMember(Name = "scheduleExpression", EmitDefaultValue = false)]
+    [JsonPropertyName("scheduleExpression")]
     public string ScheduleExpression { get; set; }
 
 
@@ -975,7 +975,7 @@ public partial class ReportingDataExportTopicDataExportNotification : IEquatable
     /// <summary>
     /// Gets or Sets ScheduleStaticLinkUrl
     /// </summary>
-    [DataMember(Name = "scheduleStaticLinkUrl", EmitDefaultValue = false)]
+    [JsonPropertyName("scheduleStaticLinkUrl")]
     public string ScheduleStaticLinkUrl { get; set; }
 
 
@@ -983,7 +983,7 @@ public partial class ReportingDataExportTopicDataExportNotification : IEquatable
     /// <summary>
     /// Gets or Sets ExportAllowedToRerun
     /// </summary>
-    [DataMember(Name = "exportAllowedToRerun", EmitDefaultValue = false)]
+    [JsonPropertyName("exportAllowedToRerun")]
     public bool? ExportAllowedToRerun { get; set; }
 
 

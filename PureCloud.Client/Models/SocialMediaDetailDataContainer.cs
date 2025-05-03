@@ -1,12 +1,12 @@
-using System.Runtime.Serialization;
 using System.Text;
+using System.Text.Json.Serialization;
 
 namespace PureCloud.Client.Models;
 
 /// <summary>
 /// SocialMediaDetailDataContainer
 /// </summary>
-[DataContract]
+
 public partial class SocialMediaDetailDataContainer : IEquatable<SocialMediaDetailDataContainer>
 {
     /// <summary>
@@ -26,7 +26,7 @@ public partial class SocialMediaDetailDataContainer : IEquatable<SocialMediaDeta
     /// <summary>
     /// Gets or Sets Interval
     /// </summary>
-    [DataMember(Name = "interval", EmitDefaultValue = false)]
+    [JsonPropertyName("interval")]
     public string Interval { get; set; }
 
 
@@ -34,7 +34,7 @@ public partial class SocialMediaDetailDataContainer : IEquatable<SocialMediaDeta
     /// <summary>
     /// Gets or Sets Messages
     /// </summary>
-    [DataMember(Name = "messages", EmitDefaultValue = false)]
+    [JsonPropertyName("messages")]
     public List<SocialMediaDetailMessageContainer> Messages { get; set; }
 
 

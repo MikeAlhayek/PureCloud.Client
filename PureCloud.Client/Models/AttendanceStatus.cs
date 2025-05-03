@@ -7,14 +7,14 @@ namespace PureCloud.Client.Models;
 /// <summary>
 /// AttendanceStatus
 /// </summary>
-[DataContract]
+
 public partial class AttendanceStatus : IEquatable<AttendanceStatus>
 {
     /// <summary>
     /// the attendance status
     /// </summary>
     /// <value>the attendance status</value>
-    [JsonConverter(typeof(JsonStringEnumConverter))]
+    
     public enum AttendanceStatusTypeEnum
     {
         /// <summary>
@@ -59,7 +59,7 @@ public partial class AttendanceStatus : IEquatable<AttendanceStatus>
     /// the quality evaluation score status
     /// </summary>
     /// <value>the quality evaluation score status</value>
-    [JsonConverter(typeof(JsonStringEnumConverter))]
+    
     public enum HasEvaluationEnum
     {
         /// <summary>
@@ -86,13 +86,13 @@ public partial class AttendanceStatus : IEquatable<AttendanceStatus>
     /// the attendance status
     /// </summary>
     /// <value>the attendance status</value>
-    [DataMember(Name = "attendanceStatusType", EmitDefaultValue = false)]
+    [JsonPropertyName("attendanceStatusType")]
     public AttendanceStatusTypeEnum? AttendanceStatusType { get; private set; }
     /// <summary>
     /// the quality evaluation score status
     /// </summary>
     /// <value>the quality evaluation score status</value>
-    [DataMember(Name = "hasEvaluation", EmitDefaultValue = false)]
+    [JsonPropertyName("hasEvaluation")]
     public HasEvaluationEnum? HasEvaluation { get; private set; }
     /// <summary>
     /// Initializes a new instance of the <see cref="AttendanceStatus" /> class.
@@ -108,7 +108,7 @@ public partial class AttendanceStatus : IEquatable<AttendanceStatus>
     /// the workday date of this attendance status. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd
     /// </summary>
     /// <value>the workday date of this attendance status. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd</value>
-    [DataMember(Name = "dateWorkday", EmitDefaultValue = false)]
+    [JsonPropertyName("dateWorkday")]
     public string DateWorkday { get; private set; }
 
 

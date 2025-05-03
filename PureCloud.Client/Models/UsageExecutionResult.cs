@@ -1,12 +1,12 @@
-using System.Runtime.Serialization;
 using System.Text;
+using System.Text.Json.Serialization;
 
 namespace PureCloud.Client.Models;
 
 /// <summary>
 /// UsageExecutionResult
 /// </summary>
-[DataContract]
+
 public partial class UsageExecutionResult : IEquatable<UsageExecutionResult>
 {
     /// <summary>
@@ -27,7 +27,7 @@ public partial class UsageExecutionResult : IEquatable<UsageExecutionResult>
     /// The id of the query execution
     /// </summary>
     /// <value>The id of the query execution</value>
-    [DataMember(Name = "executionId", EmitDefaultValue = false)]
+    [JsonPropertyName("executionId")]
     public string ExecutionId { get; set; }
 
 
@@ -36,7 +36,7 @@ public partial class UsageExecutionResult : IEquatable<UsageExecutionResult>
     /// URI where the query results can be retrieved
     /// </summary>
     /// <value>URI where the query results can be retrieved</value>
-    [DataMember(Name = "resultsUri", EmitDefaultValue = false)]
+    [JsonPropertyName("resultsUri")]
     public string ResultsUri { get; set; }
 
 

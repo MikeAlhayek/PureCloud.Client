@@ -1,12 +1,12 @@
-using System.Runtime.Serialization;
 using System.Text;
+using System.Text.Json.Serialization;
 
 namespace PureCloud.Client.Models;
 
 /// <summary>
 /// TrunkBaseAssignment
 /// </summary>
-[DataContract]
+
 public partial class TrunkBaseAssignment : IEquatable<TrunkBaseAssignment>
 {
     /// <summary>
@@ -27,7 +27,7 @@ public partial class TrunkBaseAssignment : IEquatable<TrunkBaseAssignment>
     /// The address family to use with the trunk base settings. 2&#x3D;IPv4, 23&#x3D;IPv6
     /// </summary>
     /// <value>The address family to use with the trunk base settings. 2&#x3D;IPv4, 23&#x3D;IPv6</value>
-    [DataMember(Name = "family", EmitDefaultValue = false)]
+    [JsonPropertyName("family")]
     public int? Family { get; set; }
 
 
@@ -36,7 +36,7 @@ public partial class TrunkBaseAssignment : IEquatable<TrunkBaseAssignment>
     /// A trunk base settings reference.
     /// </summary>
     /// <value>A trunk base settings reference.</value>
-    [DataMember(Name = "trunkBase", EmitDefaultValue = false)]
+    [JsonPropertyName("trunkBase")]
     public TrunkBase TrunkBase { get; set; }
 
 

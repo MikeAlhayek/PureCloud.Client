@@ -1,12 +1,12 @@
-using System.Runtime.Serialization;
 using System.Text;
+using System.Text.Json.Serialization;
 
 namespace PureCloud.Client.Models;
 
 /// <summary>
 /// MessengerStyles
 /// </summary>
-[DataContract]
+
 public partial class MessengerStyles : IEquatable<MessengerStyles>
 {
     /// <summary>
@@ -25,7 +25,7 @@ public partial class MessengerStyles : IEquatable<MessengerStyles>
     /// The primary color of messenger in hexadecimal
     /// </summary>
     /// <value>The primary color of messenger in hexadecimal</value>
-    [DataMember(Name = "primaryColor", EmitDefaultValue = false)]
+    [JsonPropertyName("primaryColor")]
     public string PrimaryColor { get; set; }
 
 

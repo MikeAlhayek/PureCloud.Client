@@ -7,14 +7,14 @@ namespace PureCloud.Client.Models;
 /// <summary>
 /// UserNextActivityReminder
 /// </summary>
-[DataContract]
+
 public partial class UserNextActivityReminder : IEquatable<UserNextActivityReminder>
 {
     /// <summary>
     /// Upcoming activity for which the user is scheduled
     /// </summary>
     /// <value>Upcoming activity for which the user is scheduled</value>
-    [JsonConverter(typeof(JsonStringEnumConverter))]
+    
     public enum ActivityCategoryEnum
     {
         /// <summary>
@@ -83,7 +83,7 @@ public partial class UserNextActivityReminder : IEquatable<UserNextActivityRemin
     /// Upcoming activity for which the user is scheduled
     /// </summary>
     /// <value>Upcoming activity for which the user is scheduled</value>
-    [DataMember(Name = "activityCategory", EmitDefaultValue = false)]
+    [JsonPropertyName("activityCategory")]
     public ActivityCategoryEnum? ActivityCategory { get; private set; }
     /// <summary>
     /// Initializes a new instance of the <see cref="UserNextActivityReminder" /> class.
@@ -101,7 +101,7 @@ public partial class UserNextActivityReminder : IEquatable<UserNextActivityRemin
     /// The start timestamp of the scheduled activity in ISO-8601 format
     /// </summary>
     /// <value>The start timestamp of the scheduled activity in ISO-8601 format</value>
-    [DataMember(Name = "startDate", EmitDefaultValue = false)]
+    [JsonPropertyName("startDate")]
     public DateTime? StartDate { get; private set; }
 
 

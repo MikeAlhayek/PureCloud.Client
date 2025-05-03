@@ -1,4 +1,3 @@
-using System.Runtime.Serialization;
 using System.Text;
 using System.Text.Json.Serialization;
 
@@ -7,7 +6,7 @@ namespace PureCloud.Client.Models;
 /// <summary>
 /// SessionSegmentAssignment
 /// </summary>
-[DataContract]
+
 public partial class SessionSegmentAssignment : IEquatable<SessionSegmentAssignment>
 {
 
@@ -34,7 +33,7 @@ public partial class SessionSegmentAssignment : IEquatable<SessionSegmentAssignm
     /// The segment that was assigned.
     /// </summary>
     /// <value>The segment that was assigned.</value>
-    [DataMember(Name = "segment", EmitDefaultValue = false)]
+    [JsonPropertyName("segment")]
     public AssignedSegment Segment { get; set; }
 
 
@@ -43,7 +42,7 @@ public partial class SessionSegmentAssignment : IEquatable<SessionSegmentAssignm
     /// Timestamp indicating when the segment was assigned. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z
     /// </summary>
     /// <value>Timestamp indicating when the segment was assigned. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z</value>
-    [DataMember(Name = "assignedDate", EmitDefaultValue = false)]
+    [JsonPropertyName("assignedDate")]
     public DateTime? AssignedDate { get; set; }
 
 

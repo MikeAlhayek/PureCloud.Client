@@ -7,14 +7,14 @@ namespace PureCloud.Client.Models;
 /// <summary>
 /// ExternalOrganizationEnrichRequest
 /// </summary>
-[DataContract]
+
 public partial class ExternalOrganizationEnrichRequest : IEquatable<ExternalOrganizationEnrichRequest>
 {
     /// <summary>
     /// The action that should be taken based on any External Organization found by `matchingIdentifiers`.
     /// </summary>
     /// <value>The action that should be taken based on any External Organization found by `matchingIdentifiers`.</value>
-    [JsonConverter(typeof(JsonStringEnumConverter))]
+    
     public enum ActionEnum
     {
         /// <summary>
@@ -47,7 +47,7 @@ public partial class ExternalOrganizationEnrichRequest : IEquatable<ExternalOrga
     /// The action that should be taken based on any External Organization found by `matchingIdentifiers`.
     /// </summary>
     /// <value>The action that should be taken based on any External Organization found by `matchingIdentifiers`.</value>
-    [DataMember(Name = "action", EmitDefaultValue = false)]
+    [JsonPropertyName("action")]
     public ActionEnum? Action { get; set; }
     /// <summary>
     /// Initializes a new instance of the <see cref="ExternalOrganizationEnrichRequest" /> class.
@@ -75,7 +75,7 @@ public partial class ExternalOrganizationEnrichRequest : IEquatable<ExternalOrga
     /// A user-specified tracker string, only useful in the Bulk-Enrich API. If one Bulk-Enrich operation in a request fails, the requested operation will be repeated in the Bulk API response, including this id field, allowing associating request and response operations.
     /// </summary>
     /// <value>A user-specified tracker string, only useful in the Bulk-Enrich API. If one Bulk-Enrich operation in a request fails, the requested operation will be repeated in the Bulk API response, including this id field, allowing associating request and response operations.</value>
-    [DataMember(Name = "id", EmitDefaultValue = false)]
+    [JsonPropertyName("id")]
     public string Id { get; set; }
 
 
@@ -84,7 +84,7 @@ public partial class ExternalOrganizationEnrichRequest : IEquatable<ExternalOrga
     /// The division to which this entity belongs.
     /// </summary>
     /// <value>The division to which this entity belongs.</value>
-    [DataMember(Name = "division", EmitDefaultValue = false)]
+    [JsonPropertyName("division")]
     public WritableStarrableDivision Division { get; set; }
 
 
@@ -93,7 +93,7 @@ public partial class ExternalOrganizationEnrichRequest : IEquatable<ExternalOrga
     /// An ordered list of one or more Identifiers which might each be claimed by an External Organization. &#x60;action&#x60; describes what to do with any possibly matching External Organization. Identifier lookups will occur in the order specified here.
     /// </summary>
     /// <value>An ordered list of one or more Identifiers which might each be claimed by an External Organization. &#x60;action&#x60; describes what to do with any possibly matching External Organization. Identifier lookups will occur in the order specified here.</value>
-    [DataMember(Name = "matchingIdentifiers", EmitDefaultValue = false)]
+    [JsonPropertyName("matchingIdentifiers")]
     public List<ExternalOrganizationIdentifier> MatchingIdentifiers { get; set; }
 
 
@@ -104,7 +104,7 @@ public partial class ExternalOrganizationEnrichRequest : IEquatable<ExternalOrga
     /// Data to be added, either as an update to an existing External Organization or the body of a new External Organization. Omitting a field in this contract means that it will be treated as null in the &#x60;fieldRules&#x60; logic.
     /// </summary>
     /// <value>Data to be added, either as an update to an existing External Organization or the body of a new External Organization. Omitting a field in this contract means that it will be treated as null in the &#x60;fieldRules&#x60; logic.</value>
-    [DataMember(Name = "externalOrganization", EmitDefaultValue = false)]
+    [JsonPropertyName("externalOrganization")]
     public ExternalOrganization ExternalOrganization { get; set; }
 
 
@@ -113,7 +113,7 @@ public partial class ExternalOrganizationEnrichRequest : IEquatable<ExternalOrga
     /// Logic describing how to combine data from the submitted request with data found in the database.
     /// </summary>
     /// <value>Logic describing how to combine data from the submitted request with data found in the database.</value>
-    [DataMember(Name = "fieldRules", EmitDefaultValue = false)]
+    [JsonPropertyName("fieldRules")]
     public EnrichFieldRules FieldRules { get; set; }
 
 
@@ -122,7 +122,7 @@ public partial class ExternalOrganizationEnrichRequest : IEquatable<ExternalOrga
     /// The URI for this object
     /// </summary>
     /// <value>The URI for this object</value>
-    [DataMember(Name = "selfUri", EmitDefaultValue = false)]
+    [JsonPropertyName("selfUri")]
     public string SelfUri { get; private set; }
 
 

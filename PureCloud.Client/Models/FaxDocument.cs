@@ -1,12 +1,12 @@
-using System.Runtime.Serialization;
 using System.Text;
+using System.Text.Json.Serialization;
 
 namespace PureCloud.Client.Models;
 
 /// <summary>
 /// FaxDocument
 /// </summary>
-[DataContract]
+
 public partial class FaxDocument : IEquatable<FaxDocument>
 {
     /// <summary>
@@ -55,7 +55,7 @@ public partial class FaxDocument : IEquatable<FaxDocument>
     /// The globally unique identifier for the object.
     /// </summary>
     /// <value>The globally unique identifier for the object.</value>
-    [DataMember(Name = "id", EmitDefaultValue = false)]
+    [JsonPropertyName("id")]
     public string Id { get; private set; }
 
 
@@ -63,7 +63,7 @@ public partial class FaxDocument : IEquatable<FaxDocument>
     /// <summary>
     /// Gets or Sets Name
     /// </summary>
-    [DataMember(Name = "name", EmitDefaultValue = false)]
+    [JsonPropertyName("name")]
     public string Name { get; set; }
 
 
@@ -72,7 +72,7 @@ public partial class FaxDocument : IEquatable<FaxDocument>
     /// Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z
     /// </summary>
     /// <value>Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z</value>
-    [DataMember(Name = "dateCreated", EmitDefaultValue = false)]
+    [JsonPropertyName("dateCreated")]
     public DateTime? DateCreated { get; set; }
 
 
@@ -81,7 +81,7 @@ public partial class FaxDocument : IEquatable<FaxDocument>
     /// Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z
     /// </summary>
     /// <value>Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z</value>
-    [DataMember(Name = "dateModified", EmitDefaultValue = false)]
+    [JsonPropertyName("dateModified")]
     public DateTime? DateModified { get; set; }
 
 
@@ -89,7 +89,7 @@ public partial class FaxDocument : IEquatable<FaxDocument>
     /// <summary>
     /// Gets or Sets ContentUri
     /// </summary>
-    [DataMember(Name = "contentUri", EmitDefaultValue = false)]
+    [JsonPropertyName("contentUri")]
     public string ContentUri { get; set; }
 
 
@@ -97,7 +97,7 @@ public partial class FaxDocument : IEquatable<FaxDocument>
     /// <summary>
     /// Gets or Sets Workspace
     /// </summary>
-    [DataMember(Name = "workspace", EmitDefaultValue = false)]
+    [JsonPropertyName("workspace")]
     public DomainEntityRef Workspace { get; set; }
 
 
@@ -105,7 +105,7 @@ public partial class FaxDocument : IEquatable<FaxDocument>
     /// <summary>
     /// Gets or Sets CreatedBy
     /// </summary>
-    [DataMember(Name = "createdBy", EmitDefaultValue = false)]
+    [JsonPropertyName("createdBy")]
     public DomainEntityRef CreatedBy { get; set; }
 
 
@@ -113,7 +113,7 @@ public partial class FaxDocument : IEquatable<FaxDocument>
     /// <summary>
     /// Gets or Sets SharingUri
     /// </summary>
-    [DataMember(Name = "sharingUri", EmitDefaultValue = false)]
+    [JsonPropertyName("sharingUri")]
     public string SharingUri { get; set; }
 
 
@@ -121,7 +121,7 @@ public partial class FaxDocument : IEquatable<FaxDocument>
     /// <summary>
     /// Gets or Sets ContentType
     /// </summary>
-    [DataMember(Name = "contentType", EmitDefaultValue = false)]
+    [JsonPropertyName("contentType")]
     public string ContentType { get; set; }
 
 
@@ -129,7 +129,7 @@ public partial class FaxDocument : IEquatable<FaxDocument>
     /// <summary>
     /// Gets or Sets ContentLength
     /// </summary>
-    [DataMember(Name = "contentLength", EmitDefaultValue = false)]
+    [JsonPropertyName("contentLength")]
     public long? ContentLength { get; set; }
 
 
@@ -137,7 +137,7 @@ public partial class FaxDocument : IEquatable<FaxDocument>
     /// <summary>
     /// Gets or Sets Filename
     /// </summary>
-    [DataMember(Name = "filename", EmitDefaultValue = false)]
+    [JsonPropertyName("filename")]
     public string Filename { get; set; }
 
 
@@ -145,7 +145,7 @@ public partial class FaxDocument : IEquatable<FaxDocument>
     /// <summary>
     /// Gets or Sets Read
     /// </summary>
-    [DataMember(Name = "read", EmitDefaultValue = false)]
+    [JsonPropertyName("read")]
     public bool? Read { get; set; }
 
 
@@ -153,7 +153,7 @@ public partial class FaxDocument : IEquatable<FaxDocument>
     /// <summary>
     /// Gets or Sets PageCount
     /// </summary>
-    [DataMember(Name = "pageCount", EmitDefaultValue = false)]
+    [JsonPropertyName("pageCount")]
     public long? PageCount { get; set; }
 
 
@@ -161,7 +161,7 @@ public partial class FaxDocument : IEquatable<FaxDocument>
     /// <summary>
     /// Gets or Sets CallerAddress
     /// </summary>
-    [DataMember(Name = "callerAddress", EmitDefaultValue = false)]
+    [JsonPropertyName("callerAddress")]
     public string CallerAddress { get; set; }
 
 
@@ -169,7 +169,7 @@ public partial class FaxDocument : IEquatable<FaxDocument>
     /// <summary>
     /// Gets or Sets ReceiverAddress
     /// </summary>
-    [DataMember(Name = "receiverAddress", EmitDefaultValue = false)]
+    [JsonPropertyName("receiverAddress")]
     public string ReceiverAddress { get; set; }
 
 
@@ -177,7 +177,7 @@ public partial class FaxDocument : IEquatable<FaxDocument>
     /// <summary>
     /// Gets or Sets Thumbnails
     /// </summary>
-    [DataMember(Name = "thumbnails", EmitDefaultValue = false)]
+    [JsonPropertyName("thumbnails")]
     public List<DocumentThumbnail> Thumbnails { get; set; }
 
 
@@ -185,7 +185,7 @@ public partial class FaxDocument : IEquatable<FaxDocument>
     /// <summary>
     /// Gets or Sets DownloadSharingUri
     /// </summary>
-    [DataMember(Name = "downloadSharingUri", EmitDefaultValue = false)]
+    [JsonPropertyName("downloadSharingUri")]
     public string DownloadSharingUri { get; set; }
 
 
@@ -194,7 +194,7 @@ public partial class FaxDocument : IEquatable<FaxDocument>
     /// The URI for this object
     /// </summary>
     /// <value>The URI for this object</value>
-    [DataMember(Name = "selfUri", EmitDefaultValue = false)]
+    [JsonPropertyName("selfUri")]
     public string SelfUri { get; private set; }
 
 

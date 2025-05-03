@@ -1,4 +1,3 @@
-using System.Runtime.Serialization;
 using System.Text;
 using System.Text.Json.Serialization;
 
@@ -7,7 +6,7 @@ namespace PureCloud.Client.Models;
 /// <summary>
 /// Detected language of this message.
 /// </summary>
-[DataContract]
+
 public partial class ConversationEnrichmentLanguage : IEquatable<ConversationEnrichmentLanguage>
 {
 
@@ -32,7 +31,7 @@ public partial class ConversationEnrichmentLanguage : IEquatable<ConversationEnr
     /// The IETF detected language code of this message.
     /// </summary>
     /// <value>The IETF detected language code of this message.</value>
-    [DataMember(Name = "language", EmitDefaultValue = false)]
+    [JsonPropertyName("language")]
     public string Language { get; set; }
 
 

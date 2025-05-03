@@ -1,4 +1,3 @@
-using System.Runtime.Serialization;
 using System.Text;
 using System.Text.Json.Serialization;
 
@@ -7,7 +6,7 @@ namespace PureCloud.Client.Models;
 /// <summary>
 /// ContactPhoneNumberColumn
 /// </summary>
-[DataContract]
+
 public partial class ContactPhoneNumberColumn : IEquatable<ContactPhoneNumberColumn>
 {
 
@@ -36,7 +35,7 @@ public partial class ContactPhoneNumberColumn : IEquatable<ContactPhoneNumberCol
     /// The name of the phone column.
     /// </summary>
     /// <value>The name of the phone column.</value>
-    [DataMember(Name = "columnName", EmitDefaultValue = false)]
+    [JsonPropertyName("columnName")]
     public string ColumnName { get; set; }
 
 
@@ -45,7 +44,7 @@ public partial class ContactPhoneNumberColumn : IEquatable<ContactPhoneNumberCol
     /// Indicates the type of the phone column. For example, &#39;cell&#39; or &#39;home&#39;.
     /// </summary>
     /// <value>Indicates the type of the phone column. For example, &#39;cell&#39; or &#39;home&#39;.</value>
-    [DataMember(Name = "type", EmitDefaultValue = false)]
+    [JsonPropertyName("type")]
     public string Type { get; set; }
 
 
@@ -54,7 +53,7 @@ public partial class ContactPhoneNumberColumn : IEquatable<ContactPhoneNumberCol
     /// A column that indicates the timezone to use for a given contact when checking callable times. Not allowed if &#39;automaticTimeZoneMapping&#39; is set to true.
     /// </summary>
     /// <value>A column that indicates the timezone to use for a given contact when checking callable times. Not allowed if &#39;automaticTimeZoneMapping&#39; is set to true.</value>
-    [DataMember(Name = "callableTimeColumn", EmitDefaultValue = false)]
+    [JsonPropertyName("callableTimeColumn")]
     public string CallableTimeColumn { get; set; }
 
 

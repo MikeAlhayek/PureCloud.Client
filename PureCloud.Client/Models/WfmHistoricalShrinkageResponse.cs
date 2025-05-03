@@ -7,14 +7,14 @@ namespace PureCloud.Client.Models;
 /// <summary>
 /// WfmHistoricalShrinkageResponse
 /// </summary>
-[DataContract]
+
 public partial class WfmHistoricalShrinkageResponse : IEquatable<WfmHistoricalShrinkageResponse>
 {
     /// <summary>
     /// The state of the shrinkage query
     /// </summary>
     /// <value>The state of the shrinkage query</value>
-    [JsonConverter(typeof(JsonStringEnumConverter))]
+    
     public enum StateEnum
     {
         /// <summary>
@@ -47,7 +47,7 @@ public partial class WfmHistoricalShrinkageResponse : IEquatable<WfmHistoricalSh
     /// The state of the shrinkage query
     /// </summary>
     /// <value>The state of the shrinkage query</value>
-    [DataMember(Name = "state", EmitDefaultValue = false)]
+    [JsonPropertyName("state")]
     public StateEnum? State { get; set; }
     /// <summary>
     /// Initializes a new instance of the <see cref="WfmHistoricalShrinkageResponse" /> class.
@@ -71,7 +71,7 @@ public partial class WfmHistoricalShrinkageResponse : IEquatable<WfmHistoricalSh
     /// The operationId for which to listen
     /// </summary>
     /// <value>The operationId for which to listen</value>
-    [DataMember(Name = "operationId", EmitDefaultValue = false)]
+    [JsonPropertyName("operationId")]
     public string OperationId { get; set; }
 
 
@@ -80,7 +80,7 @@ public partial class WfmHistoricalShrinkageResponse : IEquatable<WfmHistoricalSh
     /// The url list to GET the results of the Historical Shrinkage query. This field is populated only if query state is Complete
     /// </summary>
     /// <value>The url list to GET the results of the Historical Shrinkage query. This field is populated only if query state is Complete</value>
-    [DataMember(Name = "downloadUrls", EmitDefaultValue = false)]
+    [JsonPropertyName("downloadUrls")]
     public List<string> DownloadUrls { get; set; }
 
 
@@ -89,7 +89,7 @@ public partial class WfmHistoricalShrinkageResponse : IEquatable<WfmHistoricalSh
     /// Result will always come via downloadUrls; however the schema is included for documentation
     /// </summary>
     /// <value>Result will always come via downloadUrls; however the schema is included for documentation</value>
-    [DataMember(Name = "downloadResult", EmitDefaultValue = false)]
+    [JsonPropertyName("downloadResult")]
     public HistoricalShrinkageResultListing DownloadResult { get; set; }
 
 

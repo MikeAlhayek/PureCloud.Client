@@ -1,12 +1,12 @@
-using System.Runtime.Serialization;
 using System.Text;
+using System.Text.Json.Serialization;
 
 namespace PureCloud.Client.Models;
 
 /// <summary>
 /// TranscriptionTopicTranscriptWord
 /// </summary>
-[DataContract]
+
 public partial class TranscriptionTopicTranscriptWord : IEquatable<TranscriptionTopicTranscriptWord>
 {
     /// <summary>
@@ -32,7 +32,7 @@ public partial class TranscriptionTopicTranscriptWord : IEquatable<Transcription
     /// <summary>
     /// Gets or Sets Confidence
     /// </summary>
-    [DataMember(Name = "confidence", EmitDefaultValue = false)]
+    [JsonPropertyName("confidence")]
     public double? Confidence { get; set; }
 
 
@@ -40,7 +40,7 @@ public partial class TranscriptionTopicTranscriptWord : IEquatable<Transcription
     /// <summary>
     /// Gets or Sets StartTimeMs
     /// </summary>
-    [DataMember(Name = "startTimeMs", EmitDefaultValue = false)]
+    [JsonPropertyName("startTimeMs")]
     public long? StartTimeMs { get; set; }
 
 
@@ -48,7 +48,7 @@ public partial class TranscriptionTopicTranscriptWord : IEquatable<Transcription
     /// <summary>
     /// Gets or Sets OffsetMs
     /// </summary>
-    [DataMember(Name = "offsetMs", EmitDefaultValue = false)]
+    [JsonPropertyName("offsetMs")]
     public long? OffsetMs { get; set; }
 
 
@@ -56,7 +56,7 @@ public partial class TranscriptionTopicTranscriptWord : IEquatable<Transcription
     /// <summary>
     /// Gets or Sets DurationMs
     /// </summary>
-    [DataMember(Name = "durationMs", EmitDefaultValue = false)]
+    [JsonPropertyName("durationMs")]
     public long? DurationMs { get; set; }
 
 
@@ -64,7 +64,7 @@ public partial class TranscriptionTopicTranscriptWord : IEquatable<Transcription
     /// <summary>
     /// Gets or Sets Word
     /// </summary>
-    [DataMember(Name = "word", EmitDefaultValue = false)]
+    [JsonPropertyName("word")]
     public string Word { get; set; }
 
 

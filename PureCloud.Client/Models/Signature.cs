@@ -7,14 +7,14 @@ namespace PureCloud.Client.Models;
 /// <summary>
 /// Signature
 /// </summary>
-[DataContract]
+
 public partial class Signature : IEquatable<Signature>
 {
     /// <summary>
     /// The configuration to indicate when the signature of a conversation has to be included
     /// </summary>
     /// <value>The configuration to indicate when the signature of a conversation has to be included</value>
-    [JsonConverter(typeof(JsonStringEnumConverter))]
+    
     public enum InclusionTypeEnum
     {
         /// <summary>
@@ -47,7 +47,7 @@ public partial class Signature : IEquatable<Signature>
     /// The configuration to indicate when the signature of a conversation has to be included
     /// </summary>
     /// <value>The configuration to indicate when the signature of a conversation has to be included</value>
-    [DataMember(Name = "inclusionType", EmitDefaultValue = false)]
+    [JsonPropertyName("inclusionType")]
     public InclusionTypeEnum? InclusionType { get; set; }
     /// <summary>
     /// Initializes a new instance of the <see cref="Signature" /> class.
@@ -71,7 +71,7 @@ public partial class Signature : IEquatable<Signature>
     /// A toggle to enable the signature on email send.
     /// </summary>
     /// <value>A toggle to enable the signature on email send.</value>
-    [DataMember(Name = "enabled", EmitDefaultValue = false)]
+    [JsonPropertyName("enabled")]
     public bool? Enabled { get; set; }
 
 
@@ -80,7 +80,7 @@ public partial class Signature : IEquatable<Signature>
     /// The identifier referring to an email signature canned response.
     /// </summary>
     /// <value>The identifier referring to an email signature canned response.</value>
-    [DataMember(Name = "cannedResponseId", EmitDefaultValue = false)]
+    [JsonPropertyName("cannedResponseId")]
     public string CannedResponseId { get; set; }
 
 
@@ -89,7 +89,7 @@ public partial class Signature : IEquatable<Signature>
     /// A toggle that defines if a signature is always included or only set on the first email in an email chain.
     /// </summary>
     /// <value>A toggle that defines if a signature is always included or only set on the first email in an email chain.</value>
-    [DataMember(Name = "alwaysIncluded", EmitDefaultValue = false)]
+    [JsonPropertyName("alwaysIncluded")]
     public bool? AlwaysIncluded { get; set; }
 
 

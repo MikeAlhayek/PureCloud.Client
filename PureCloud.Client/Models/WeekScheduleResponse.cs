@@ -1,12 +1,12 @@
-using System.Runtime.Serialization;
 using System.Text;
+using System.Text.Json.Serialization;
 
 namespace PureCloud.Client.Models;
 
 /// <summary>
 /// WeekScheduleResponse
 /// </summary>
-[DataContract]
+
 public partial class WeekScheduleResponse : IEquatable<WeekScheduleResponse>
 {
     /// <summary>
@@ -27,7 +27,7 @@ public partial class WeekScheduleResponse : IEquatable<WeekScheduleResponse>
     /// The result of the request. The value will be null if response is large
     /// </summary>
     /// <value>The result of the request. The value will be null if response is large</value>
-    [DataMember(Name = "result", EmitDefaultValue = false)]
+    [JsonPropertyName("result")]
     public WeekSchedule Result { get; set; }
 
 
@@ -36,7 +36,7 @@ public partial class WeekScheduleResponse : IEquatable<WeekScheduleResponse>
     /// The url to fetch the result for large responses. The value is null if result contains the data
     /// </summary>
     /// <value>The url to fetch the result for large responses. The value is null if result contains the data</value>
-    [DataMember(Name = "downloadUrl", EmitDefaultValue = false)]
+    [JsonPropertyName("downloadUrl")]
     public string DownloadUrl { get; set; }
 
 

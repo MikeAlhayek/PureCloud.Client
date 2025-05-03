@@ -1,12 +1,12 @@
-using System.Runtime.Serialization;
 using System.Text;
+using System.Text.Json.Serialization;
 
 namespace PureCloud.Client.Models;
 
 /// <summary>
 /// AnalyticsReportingSettings
 /// </summary>
-[DataContract]
+
 public partial class AnalyticsReportingSettings : IEquatable<AnalyticsReportingSettings>
 {
     /// <summary>
@@ -29,7 +29,7 @@ public partial class AnalyticsReportingSettings : IEquatable<AnalyticsReportingS
     /// Indication of whether or not personal data is masked in data export and the Analytics/Reporting UI
     /// </summary>
     /// <value>Indication of whether or not personal data is masked in data export and the Analytics/Reporting UI</value>
-    [DataMember(Name = "piiMaskingEnabled", EmitDefaultValue = false)]
+    [JsonPropertyName("piiMaskingEnabled")]
     public bool? PiiMaskingEnabled { get; set; }
 
 
@@ -38,7 +38,7 @@ public partial class AnalyticsReportingSettings : IEquatable<AnalyticsReportingS
     /// Indication of whether or not to obfuscate export data from the Queue Agent Details view based on User ACL
     /// </summary>
     /// <value>Indication of whether or not to obfuscate export data from the Queue Agent Details view based on User ACL</value>
-    [DataMember(Name = "queueAgentAccessObfuscation", EmitDefaultValue = false)]
+    [JsonPropertyName("queueAgentAccessObfuscation")]
     public bool? QueueAgentAccessObfuscation { get; set; }
 
 
@@ -47,7 +47,7 @@ public partial class AnalyticsReportingSettings : IEquatable<AnalyticsReportingS
     /// Indicates whether PII data is masked in My Interaction export and the Analytics/Reporting UI
     /// </summary>
     /// <value>Indicates whether PII data is masked in My Interaction export and the Analytics/Reporting UI</value>
-    [DataMember(Name = "myInteractionsPiiMaskingEnabled", EmitDefaultValue = false)]
+    [JsonPropertyName("myInteractionsPiiMaskingEnabled")]
     public bool? MyInteractionsPiiMaskingEnabled { get; set; }
 
 

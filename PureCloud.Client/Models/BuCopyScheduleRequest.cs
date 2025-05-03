@@ -1,4 +1,3 @@
-using System.Runtime.Serialization;
 using System.Text;
 using System.Text.Json.Serialization;
 
@@ -7,7 +6,7 @@ namespace PureCloud.Client.Models;
 /// <summary>
 /// BuCopyScheduleRequest
 /// </summary>
-[DataContract]
+
 public partial class BuCopyScheduleRequest : IEquatable<BuCopyScheduleRequest>
 {
 
@@ -34,7 +33,7 @@ public partial class BuCopyScheduleRequest : IEquatable<BuCopyScheduleRequest>
     /// The description for the new schedule
     /// </summary>
     /// <value>The description for the new schedule</value>
-    [DataMember(Name = "description", EmitDefaultValue = false)]
+    [JsonPropertyName("description")]
     public string Description { get; set; }
 
 
@@ -43,7 +42,7 @@ public partial class BuCopyScheduleRequest : IEquatable<BuCopyScheduleRequest>
     /// The start weekDate for the new copy of the schedule. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd
     /// </summary>
     /// <value>The start weekDate for the new copy of the schedule. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd</value>
-    [DataMember(Name = "weekDate", EmitDefaultValue = false)]
+    [JsonPropertyName("weekDate")]
     public string WeekDate { get; set; }
 
 

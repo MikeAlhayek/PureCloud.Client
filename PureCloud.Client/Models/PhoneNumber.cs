@@ -1,12 +1,12 @@
-using System.Runtime.Serialization;
 using System.Text;
+using System.Text.Json.Serialization;
 
 namespace PureCloud.Client.Models;
 
 /// <summary>
 /// PhoneNumber
 /// </summary>
-[DataContract]
+
 public partial class PhoneNumber : IEquatable<PhoneNumber>
 {
     /// <summary>
@@ -37,7 +37,7 @@ public partial class PhoneNumber : IEquatable<PhoneNumber>
     /// The displayed form of the phone number string. Users should input the phone number in this field, but it will be altered by the API on write. If the phone number can be read as E164, the value will be replaced with international formatted-version of the number. If the number cannot be read as E164, the value will be preserved as-is. In both cases, the provided input string will be copied to the userInput field.
     /// </summary>
     /// <value>The displayed form of the phone number string. Users should input the phone number in this field, but it will be altered by the API on write. If the phone number can be read as E164, the value will be replaced with international formatted-version of the number. If the number cannot be read as E164, the value will be preserved as-is. In both cases, the provided input string will be copied to the userInput field.</value>
-    [DataMember(Name = "display", EmitDefaultValue = false)]
+    [JsonPropertyName("display")]
     public string Display { get; set; }
 
 
@@ -46,7 +46,7 @@ public partial class PhoneNumber : IEquatable<PhoneNumber>
     /// An optional extension for the provided phone number.
     /// </summary>
     /// <value>An optional extension for the provided phone number.</value>
-    [DataMember(Name = "extension", EmitDefaultValue = false)]
+    [JsonPropertyName("extension")]
     public long? Extension { get; set; }
 
 
@@ -55,7 +55,7 @@ public partial class PhoneNumber : IEquatable<PhoneNumber>
     /// Whether this phone number can accept SMS messages.
     /// </summary>
     /// <value>Whether this phone number can accept SMS messages.</value>
-    [DataMember(Name = "acceptsSMS", EmitDefaultValue = false)]
+    [JsonPropertyName("acceptsSMS")]
     public bool? AcceptsSMS { get; set; }
 
 
@@ -64,7 +64,7 @@ public partial class PhoneNumber : IEquatable<PhoneNumber>
     /// The country code that will be used for E164 conversion of a provided phone number. If the country code is omitted from the provided phone number, the country code provided in this field will be used during the E164 conversion attempt. If this field is left empty, the default country code for any provided phone number that does not explicitly include a country code is assumed to be +1 (North America).
     /// </summary>
     /// <value>The country code that will be used for E164 conversion of a provided phone number. If the country code is omitted from the provided phone number, the country code provided in this field will be used during the E164 conversion attempt. If this field is left empty, the default country code for any provided phone number that does not explicitly include a country code is assumed to be +1 (North America).</value>
-    [DataMember(Name = "normalizationCountryCode", EmitDefaultValue = false)]
+    [JsonPropertyName("normalizationCountryCode")]
     public string NormalizationCountryCode { get; set; }
 
 
@@ -73,7 +73,7 @@ public partial class PhoneNumber : IEquatable<PhoneNumber>
     /// The user-inputted phone number string that was provided to the display field on write. This field is not user-writeable and will always be set by the system.
     /// </summary>
     /// <value>The user-inputted phone number string that was provided to the display field on write. This field is not user-writeable and will always be set by the system.</value>
-    [DataMember(Name = "userInput", EmitDefaultValue = false)]
+    [JsonPropertyName("userInput")]
     public string UserInput { get; set; }
 
 
@@ -82,7 +82,7 @@ public partial class PhoneNumber : IEquatable<PhoneNumber>
     /// The E164-formatted form of the provided phone number. This field is not user-writeable and will only be set when the provided phone number could be read as E164.
     /// </summary>
     /// <value>The E164-formatted form of the provided phone number. This field is not user-writeable and will only be set when the provided phone number could be read as E164.</value>
-    [DataMember(Name = "e164", EmitDefaultValue = false)]
+    [JsonPropertyName("e164")]
     public string E164 { get; set; }
 
 
@@ -91,7 +91,7 @@ public partial class PhoneNumber : IEquatable<PhoneNumber>
     /// The detected country code from the provided phone number. This field is not user-writeable and will only be set when the provided phone number could be read as E164.
     /// </summary>
     /// <value>The detected country code from the provided phone number. This field is not user-writeable and will only be set when the provided phone number could be read as E164.</value>
-    [DataMember(Name = "countryCode", EmitDefaultValue = false)]
+    [JsonPropertyName("countryCode")]
     public string CountryCode { get; set; }
 
 

@@ -1,12 +1,12 @@
-using System.Runtime.Serialization;
 using System.Text;
+using System.Text.Json.Serialization;
 
 namespace PureCloud.Client.Models;
 
 /// <summary>
 /// QueueUserEventTopicQueueMember
 /// </summary>
-[DataContract]
+
 public partial class QueueUserEventTopicQueueMember : IEquatable<QueueUserEventTopicQueueMember>
 {
     /// <summary>
@@ -32,7 +32,7 @@ public partial class QueueUserEventTopicQueueMember : IEquatable<QueueUserEventT
     /// <summary>
     /// Gets or Sets Id
     /// </summary>
-    [DataMember(Name = "id", EmitDefaultValue = false)]
+    [JsonPropertyName("id")]
     public string Id { get; set; }
 
 
@@ -40,7 +40,7 @@ public partial class QueueUserEventTopicQueueMember : IEquatable<QueueUserEventT
     /// <summary>
     /// Gets or Sets User
     /// </summary>
-    [DataMember(Name = "user", EmitDefaultValue = false)]
+    [JsonPropertyName("user")]
     public QueueUserEventTopicUserReference User { get; set; }
 
 
@@ -48,7 +48,7 @@ public partial class QueueUserEventTopicQueueMember : IEquatable<QueueUserEventT
     /// <summary>
     /// Gets or Sets QueueId
     /// </summary>
-    [DataMember(Name = "queueId", EmitDefaultValue = false)]
+    [JsonPropertyName("queueId")]
     public string QueueId { get; set; }
 
 
@@ -56,7 +56,7 @@ public partial class QueueUserEventTopicQueueMember : IEquatable<QueueUserEventT
     /// <summary>
     /// Gets or Sets Joined
     /// </summary>
-    [DataMember(Name = "joined", EmitDefaultValue = false)]
+    [JsonPropertyName("joined")]
     public bool? Joined { get; set; }
 
 
@@ -64,7 +64,7 @@ public partial class QueueUserEventTopicQueueMember : IEquatable<QueueUserEventT
     /// <summary>
     /// Gets or Sets AdditionalProperties
     /// </summary>
-    [DataMember(Name = "additionalProperties", EmitDefaultValue = false)]
+    [JsonPropertyName("additionalProperties")]
     public Dictionary<string, object> AdditionalProperties { get; set; }
 
 

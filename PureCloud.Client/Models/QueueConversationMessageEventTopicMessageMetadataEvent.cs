@@ -1,12 +1,12 @@
-using System.Runtime.Serialization;
 using System.Text;
+using System.Text.Json.Serialization;
 
 namespace PureCloud.Client.Models;
 
 /// <summary>
 /// QueueConversationMessageEventTopicMessageMetadataEvent
 /// </summary>
-[DataContract]
+
 public partial class QueueConversationMessageEventTopicMessageMetadataEvent : IEquatable<QueueConversationMessageEventTopicMessageMetadataEvent>
 {
     /// <summary>
@@ -27,7 +27,7 @@ public partial class QueueConversationMessageEventTopicMessageMetadataEvent : IE
     /// Type of this event element.
     /// </summary>
     /// <value>Type of this event element.</value>
-    [DataMember(Name = "eventType", EmitDefaultValue = false)]
+    [JsonPropertyName("eventType")]
     public string EventType { get; set; }
 
 
@@ -36,7 +36,7 @@ public partial class QueueConversationMessageEventTopicMessageMetadataEvent : IE
     /// Event subtype, if any
     /// </summary>
     /// <value>Event subtype, if any</value>
-    [DataMember(Name = "subType", EmitDefaultValue = false)]
+    [JsonPropertyName("subType")]
     public string SubType { get; set; }
 
 

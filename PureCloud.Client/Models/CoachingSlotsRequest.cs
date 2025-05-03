@@ -1,4 +1,3 @@
-using System.Runtime.Serialization;
 using System.Text;
 using System.Text.Json.Serialization;
 
@@ -7,7 +6,7 @@ namespace PureCloud.Client.Models;
 /// <summary>
 /// CoachingSlotsRequest
 /// </summary>
-[DataContract]
+
 public partial class CoachingSlotsRequest : IEquatable<CoachingSlotsRequest>
 {
 
@@ -40,7 +39,7 @@ public partial class CoachingSlotsRequest : IEquatable<CoachingSlotsRequest>
     /// Range of time to get slots for scheduling coaching appointments. Intervals are represented as an ISO-8601 string. For example: YYYY-MM-DDThh:mm:ss/YYYY-MM-DDThh:mm:ss
     /// </summary>
     /// <value>Range of time to get slots for scheduling coaching appointments. Intervals are represented as an ISO-8601 string. For example: YYYY-MM-DDThh:mm:ss/YYYY-MM-DDThh:mm:ss</value>
-    [DataMember(Name = "interval", EmitDefaultValue = false)]
+    [JsonPropertyName("interval")]
     public string Interval { get; set; }
 
 
@@ -49,7 +48,7 @@ public partial class CoachingSlotsRequest : IEquatable<CoachingSlotsRequest>
     /// The duration of coaching appointment to schedule in 15 minutes granularity up to maximum of 60 minutes
     /// </summary>
     /// <value>The duration of coaching appointment to schedule in 15 minutes granularity up to maximum of 60 minutes</value>
-    [DataMember(Name = "lengthInMinutes", EmitDefaultValue = false)]
+    [JsonPropertyName("lengthInMinutes")]
     public int? LengthInMinutes { get; set; }
 
 
@@ -58,7 +57,7 @@ public partial class CoachingSlotsRequest : IEquatable<CoachingSlotsRequest>
     /// List of attendees to determine coaching appointment slots
     /// </summary>
     /// <value>List of attendees to determine coaching appointment slots</value>
-    [DataMember(Name = "attendeeIds", EmitDefaultValue = false)]
+    [JsonPropertyName("attendeeIds")]
     public List<string> AttendeeIds { get; set; }
 
 
@@ -67,7 +66,7 @@ public partial class CoachingSlotsRequest : IEquatable<CoachingSlotsRequest>
     /// List of facilitators to determine coaching appointment slots
     /// </summary>
     /// <value>List of facilitators to determine coaching appointment slots</value>
-    [DataMember(Name = "facilitatorIds", EmitDefaultValue = false)]
+    [JsonPropertyName("facilitatorIds")]
     public List<string> FacilitatorIds { get; set; }
 
 
@@ -76,7 +75,7 @@ public partial class CoachingSlotsRequest : IEquatable<CoachingSlotsRequest>
     /// List of appointment ids to exclude from consideration when determining blocked slots
     /// </summary>
     /// <value>List of appointment ids to exclude from consideration when determining blocked slots</value>
-    [DataMember(Name = "interruptibleAppointmentIds", EmitDefaultValue = false)]
+    [JsonPropertyName("interruptibleAppointmentIds")]
     public List<string> InterruptibleAppointmentIds { get; set; }
 
 

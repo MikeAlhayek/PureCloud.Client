@@ -7,14 +7,14 @@ namespace PureCloud.Client.Models;
 /// <summary>
 /// AddAdherenceExplanationAdminRequest
 /// </summary>
-[DataContract]
+
 public partial class AddAdherenceExplanationAdminRequest : IEquatable<AddAdherenceExplanationAdminRequest>
 {
     /// <summary>
     /// The type of the adherence explanation
     /// </summary>
     /// <value>The type of the adherence explanation</value>
-    [JsonConverter(typeof(JsonStringEnumConverter))]
+    
     public enum TypeEnum
     {
         /// <summary>
@@ -35,7 +35,7 @@ public partial class AddAdherenceExplanationAdminRequest : IEquatable<AddAdheren
     /// The status of the adherence explanation
     /// </summary>
     /// <value>The status of the adherence explanation</value>
-    [JsonConverter(typeof(JsonStringEnumConverter))]
+    
     public enum StatusEnum
     {
         /// <summary>
@@ -68,13 +68,13 @@ public partial class AddAdherenceExplanationAdminRequest : IEquatable<AddAdheren
     /// The type of the adherence explanation
     /// </summary>
     /// <value>The type of the adherence explanation</value>
-    [DataMember(Name = "type", EmitDefaultValue = false)]
+    [JsonPropertyName("type")]
     public TypeEnum? Type { get; set; }
     /// <summary>
     /// The status of the adherence explanation
     /// </summary>
     /// <value>The status of the adherence explanation</value>
-    [DataMember(Name = "status", EmitDefaultValue = false)]
+    [JsonPropertyName("status")]
     public StatusEnum? Status { get; set; }
 
     /// <summary>
@@ -108,7 +108,7 @@ public partial class AddAdherenceExplanationAdminRequest : IEquatable<AddAdheren
     /// The start timestamp of the adherence explanation in ISO-8601 format
     /// </summary>
     /// <value>The start timestamp of the adherence explanation in ISO-8601 format</value>
-    [DataMember(Name = "startDate", EmitDefaultValue = false)]
+    [JsonPropertyName("startDate")]
     public DateTime? StartDate { get; set; }
 
 
@@ -117,7 +117,7 @@ public partial class AddAdherenceExplanationAdminRequest : IEquatable<AddAdheren
     /// The length of the adherence explanation in minutes
     /// </summary>
     /// <value>The length of the adherence explanation in minutes</value>
-    [DataMember(Name = "lengthMinutes", EmitDefaultValue = false)]
+    [JsonPropertyName("lengthMinutes")]
     public int? LengthMinutes { get; set; }
 
 
@@ -126,7 +126,7 @@ public partial class AddAdherenceExplanationAdminRequest : IEquatable<AddAdheren
     /// Notes about the adherence explanation
     /// </summary>
     /// <value>Notes about the adherence explanation</value>
-    [DataMember(Name = "notes", EmitDefaultValue = false)]
+    [JsonPropertyName("notes")]
     public string Notes { get; set; }
 
 

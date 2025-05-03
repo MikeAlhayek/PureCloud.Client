@@ -7,13 +7,13 @@ namespace PureCloud.Client.Models;
 /// <summary>
 /// ScheduleGenerationWarning
 /// </summary>
-[DataContract]
+
 public partial class ScheduleGenerationWarning : IEquatable<ScheduleGenerationWarning>
 {
     /// <summary>
     /// Gets or Sets UnableToScheduleRequiredDays
     /// </summary>
-    [JsonConverter(typeof(JsonStringEnumConverter))]
+    
     public enum UnableToScheduleRequiredDaysEnum
     {
         /// <summary>
@@ -69,7 +69,7 @@ public partial class ScheduleGenerationWarning : IEquatable<ScheduleGenerationWa
     /// <summary>
     /// Gets or Sets NoNeedDays
     /// </summary>
-    [JsonConverter(typeof(JsonStringEnumConverter))]
+    
     public enum NoNeedDaysEnum
     {
         /// <summary>
@@ -152,7 +152,7 @@ public partial class ScheduleGenerationWarning : IEquatable<ScheduleGenerationWa
     /// ID of the user in the warning
     /// </summary>
     /// <value>ID of the user in the warning</value>
-    [DataMember(Name = "userId", EmitDefaultValue = false)]
+    [JsonPropertyName("userId")]
     public string UserId { get; set; }
 
 
@@ -161,7 +161,7 @@ public partial class ScheduleGenerationWarning : IEquatable<ScheduleGenerationWa
     /// Whether the user does not have the appropriate license to be scheduled
     /// </summary>
     /// <value>Whether the user does not have the appropriate license to be scheduled</value>
-    [DataMember(Name = "userNotLicensed", EmitDefaultValue = false)]
+    [JsonPropertyName("userNotLicensed")]
     public bool? UserNotLicensed { get; set; }
 
 
@@ -170,7 +170,7 @@ public partial class ScheduleGenerationWarning : IEquatable<ScheduleGenerationWa
     /// Whether the number of scheduled days exceeded the maximum days to schedule defined in the agent work plan
     /// </summary>
     /// <value>Whether the number of scheduled days exceeded the maximum days to schedule defined in the agent work plan</value>
-    [DataMember(Name = "unableToMeetMaxDays", EmitDefaultValue = false)]
+    [JsonPropertyName("unableToMeetMaxDays")]
     public bool? UnableToMeetMaxDays { get; set; }
 
 
@@ -179,7 +179,7 @@ public partial class ScheduleGenerationWarning : IEquatable<ScheduleGenerationWa
     /// Days indicated as required to work in agent work plan where no viable shift was found to schedule
     /// </summary>
     /// <value>Days indicated as required to work in agent work plan where no viable shift was found to schedule</value>
-    [DataMember(Name = "unableToScheduleRequiredDays", EmitDefaultValue = false)]
+    [JsonPropertyName("unableToScheduleRequiredDays")]
     public List<UnableToScheduleRequiredDaysEnum> UnableToScheduleRequiredDays { get; set; }
 
 
@@ -188,7 +188,7 @@ public partial class ScheduleGenerationWarning : IEquatable<ScheduleGenerationWa
     /// Whether the schedule did not meet the minimum paid time for the week defined in the agent work plan
     /// </summary>
     /// <value>Whether the schedule did not meet the minimum paid time for the week defined in the agent work plan</value>
-    [DataMember(Name = "unableToMeetMinPaidForTheWeek", EmitDefaultValue = false)]
+    [JsonPropertyName("unableToMeetMinPaidForTheWeek")]
     public bool? UnableToMeetMinPaidForTheWeek { get; set; }
 
 
@@ -197,7 +197,7 @@ public partial class ScheduleGenerationWarning : IEquatable<ScheduleGenerationWa
     /// Whether the schedule exceeded the maximum paid time for the week defined in the agent work plan
     /// </summary>
     /// <value>Whether the schedule exceeded the maximum paid time for the week defined in the agent work plan</value>
-    [DataMember(Name = "unableToMeetMaxPaidForTheWeek", EmitDefaultValue = false)]
+    [JsonPropertyName("unableToMeetMaxPaidForTheWeek")]
     public bool? UnableToMeetMaxPaidForTheWeek { get; set; }
 
 
@@ -206,7 +206,7 @@ public partial class ScheduleGenerationWarning : IEquatable<ScheduleGenerationWa
     /// Days agent was scheduled but there was no need to meet. The scheduled days have no effect on service levels
     /// </summary>
     /// <value>Days agent was scheduled but there was no need to meet. The scheduled days have no effect on service levels</value>
-    [DataMember(Name = "noNeedDays", EmitDefaultValue = false)]
+    [JsonPropertyName("noNeedDays")]
     public List<NoNeedDaysEnum> NoNeedDays { get; set; }
 
 
@@ -215,7 +215,7 @@ public partial class ScheduleGenerationWarning : IEquatable<ScheduleGenerationWa
     /// Whether the schedule did not meet the minimum time between shifts defined in the agent work plan
     /// </summary>
     /// <value>Whether the schedule did not meet the minimum time between shifts defined in the agent work plan</value>
-    [DataMember(Name = "shiftsTooCloseTogether", EmitDefaultValue = false)]
+    [JsonPropertyName("shiftsTooCloseTogether")]
     public bool? ShiftsTooCloseTogether { get; set; }
 
 

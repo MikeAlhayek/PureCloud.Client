@@ -1,12 +1,12 @@
-using System.Runtime.Serialization;
 using System.Text;
+using System.Text.Json.Serialization;
 
 namespace PureCloud.Client.Models;
 
 /// <summary>
 /// JourneyOutcomeEventsNotificationOutcomeAchievedMessage
 /// </summary>
-[DataContract]
+
 public partial class JourneyOutcomeEventsNotificationOutcomeAchievedMessage : IEquatable<JourneyOutcomeEventsNotificationOutcomeAchievedMessage>
 {
     /// <summary>
@@ -44,7 +44,7 @@ public partial class JourneyOutcomeEventsNotificationOutcomeAchievedMessage : IE
     /// <summary>
     /// Gets or Sets Outcome
     /// </summary>
-    [DataMember(Name = "outcome", EmitDefaultValue = false)]
+    [JsonPropertyName("outcome")]
     public JourneyOutcomeEventsNotificationOutcome Outcome { get; set; }
 
 
@@ -52,7 +52,7 @@ public partial class JourneyOutcomeEventsNotificationOutcomeAchievedMessage : IE
     /// <summary>
     /// Gets or Sets Browser
     /// </summary>
-    [DataMember(Name = "browser", EmitDefaultValue = false)]
+    [JsonPropertyName("browser")]
     public JourneyOutcomeEventsNotificationBrowser Browser { get; set; }
 
 
@@ -60,7 +60,7 @@ public partial class JourneyOutcomeEventsNotificationOutcomeAchievedMessage : IE
     /// <summary>
     /// Gets or Sets VisitCreatedDate
     /// </summary>
-    [DataMember(Name = "visitCreatedDate", EmitDefaultValue = false)]
+    [JsonPropertyName("visitCreatedDate")]
     public DateTime? VisitCreatedDate { get; set; }
 
 
@@ -68,7 +68,7 @@ public partial class JourneyOutcomeEventsNotificationOutcomeAchievedMessage : IE
     /// <summary>
     /// Gets or Sets IpAddress
     /// </summary>
-    [DataMember(Name = "ipAddress", EmitDefaultValue = false)]
+    [JsonPropertyName("ipAddress")]
     public string IpAddress { get; set; }
 
 
@@ -76,7 +76,7 @@ public partial class JourneyOutcomeEventsNotificationOutcomeAchievedMessage : IE
     /// <summary>
     /// Gets or Sets IpOrganization
     /// </summary>
-    [DataMember(Name = "ipOrganization", EmitDefaultValue = false)]
+    [JsonPropertyName("ipOrganization")]
     public string IpOrganization { get; set; }
 
 
@@ -84,7 +84,7 @@ public partial class JourneyOutcomeEventsNotificationOutcomeAchievedMessage : IE
     /// <summary>
     /// Gets or Sets UserAgentString
     /// </summary>
-    [DataMember(Name = "userAgentString", EmitDefaultValue = false)]
+    [JsonPropertyName("userAgentString")]
     public string UserAgentString { get; set; }
 
 
@@ -92,7 +92,7 @@ public partial class JourneyOutcomeEventsNotificationOutcomeAchievedMessage : IE
     /// <summary>
     /// Gets or Sets Device
     /// </summary>
-    [DataMember(Name = "device", EmitDefaultValue = false)]
+    [JsonPropertyName("device")]
     public JourneyOutcomeEventsNotificationDevice Device { get; set; }
 
 
@@ -100,7 +100,7 @@ public partial class JourneyOutcomeEventsNotificationOutcomeAchievedMessage : IE
     /// <summary>
     /// Gets or Sets Geolocation
     /// </summary>
-    [DataMember(Name = "geolocation", EmitDefaultValue = false)]
+    [JsonPropertyName("geolocation")]
     public JourneyOutcomeEventsNotificationGeoLocation Geolocation { get; set; }
 
 
@@ -108,7 +108,7 @@ public partial class JourneyOutcomeEventsNotificationOutcomeAchievedMessage : IE
     /// <summary>
     /// Gets or Sets MktCampaign
     /// </summary>
-    [DataMember(Name = "mktCampaign", EmitDefaultValue = false)]
+    [JsonPropertyName("mktCampaign")]
     public JourneyOutcomeEventsNotificationMktCampaign MktCampaign { get; set; }
 
 
@@ -116,7 +116,7 @@ public partial class JourneyOutcomeEventsNotificationOutcomeAchievedMessage : IE
     /// <summary>
     /// Gets or Sets VisitReferrer
     /// </summary>
-    [DataMember(Name = "visitReferrer", EmitDefaultValue = false)]
+    [JsonPropertyName("visitReferrer")]
     public JourneyOutcomeEventsNotificationReferrer VisitReferrer { get; set; }
 
 
@@ -124,7 +124,7 @@ public partial class JourneyOutcomeEventsNotificationOutcomeAchievedMessage : IE
     /// <summary>
     /// Gets or Sets AssociatedValue
     /// </summary>
-    [DataMember(Name = "associatedValue", EmitDefaultValue = false)]
+    [JsonPropertyName("associatedValue")]
     public JourneyOutcomeEventsNotificationAssociatedValue AssociatedValue { get; set; }
 
 

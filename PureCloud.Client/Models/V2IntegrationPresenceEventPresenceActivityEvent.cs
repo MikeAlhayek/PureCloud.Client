@@ -7,13 +7,13 @@ namespace PureCloud.Client.Models;
 /// <summary>
 /// V2IntegrationPresenceEventPresenceActivityEvent
 /// </summary>
-[DataContract]
+
 public partial class V2IntegrationPresenceEventPresenceActivityEvent : IEquatable<V2IntegrationPresenceEventPresenceActivityEvent>
 {
     /// <summary>
     /// Gets or Sets EventType
     /// </summary>
-    [JsonConverter(typeof(JsonStringEnumConverter))]
+    
     public enum EventTypeEnum
     {
         /// <summary>
@@ -39,7 +39,7 @@ public partial class V2IntegrationPresenceEventPresenceActivityEvent : IEquatabl
     /// <summary>
     /// Gets or Sets EventType
     /// </summary>
-    [DataMember(Name = "eventType", EmitDefaultValue = false)]
+    [JsonPropertyName("eventType")]
     public EventTypeEnum? EventType { get; set; }
     /// <summary>
     /// Initializes a new instance of the <see cref="V2IntegrationPresenceEventPresenceActivityEvent" /> class.
@@ -70,7 +70,7 @@ public partial class V2IntegrationPresenceEventPresenceActivityEvent : IEquatabl
     /// <summary>
     /// Gets or Sets UserId
     /// </summary>
-    [DataMember(Name = "userId", EmitDefaultValue = false)]
+    [JsonPropertyName("userId")]
     public Guid? UserId { get; set; }
 
 
@@ -80,7 +80,7 @@ public partial class V2IntegrationPresenceEventPresenceActivityEvent : IEquatabl
     /// <summary>
     /// Gets or Sets Source
     /// </summary>
-    [DataMember(Name = "source", EmitDefaultValue = false)]
+    [JsonPropertyName("source")]
     public string Source { get; set; }
 
 
@@ -88,7 +88,7 @@ public partial class V2IntegrationPresenceEventPresenceActivityEvent : IEquatabl
     /// <summary>
     /// Gets or Sets ModifiedDate
     /// </summary>
-    [DataMember(Name = "modifiedDate", EmitDefaultValue = false)]
+    [JsonPropertyName("modifiedDate")]
     public DateTime? ModifiedDate { get; set; }
 
 
@@ -96,7 +96,7 @@ public partial class V2IntegrationPresenceEventPresenceActivityEvent : IEquatabl
     /// <summary>
     /// Gets or Sets PresenceDefinition
     /// </summary>
-    [DataMember(Name = "presenceDefinition", EmitDefaultValue = false)]
+    [JsonPropertyName("presenceDefinition")]
     public V2IntegrationPresenceEventOrganizationPresence PresenceDefinition { get; set; }
 
 
@@ -104,7 +104,7 @@ public partial class V2IntegrationPresenceEventPresenceActivityEvent : IEquatabl
     /// <summary>
     /// Gets or Sets Message
     /// </summary>
-    [DataMember(Name = "message", EmitDefaultValue = false)]
+    [JsonPropertyName("message")]
     public string Message { get; set; }
 
 
@@ -112,7 +112,7 @@ public partial class V2IntegrationPresenceEventPresenceActivityEvent : IEquatabl
     /// <summary>
     /// Gets or Sets CurrentDisplaySourceId
     /// </summary>
-    [DataMember(Name = "currentDisplaySourceId", EmitDefaultValue = false)]
+    [JsonPropertyName("currentDisplaySourceId")]
     public Guid? CurrentDisplaySourceId { get; set; }
 
 
@@ -120,7 +120,7 @@ public partial class V2IntegrationPresenceEventPresenceActivityEvent : IEquatabl
     /// <summary>
     /// Gets or Sets PreviousDisplaySourceId
     /// </summary>
-    [DataMember(Name = "previousDisplaySourceId", EmitDefaultValue = false)]
+    [JsonPropertyName("previousDisplaySourceId")]
     public Guid? PreviousDisplaySourceId { get; set; }
 
 

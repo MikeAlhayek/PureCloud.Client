@@ -1,12 +1,12 @@
-using System.Runtime.Serialization;
 using System.Text;
+using System.Text.Json.Serialization;
 
 namespace PureCloud.Client.Models;
 
 /// <summary>
 /// TopicOffset
 /// </summary>
-[DataContract]
+
 public partial class TopicOffset : IEquatable<TopicOffset>
 {
     /// <summary>
@@ -23,7 +23,7 @@ public partial class TopicOffset : IEquatable<TopicOffset>
     /// Count of words before the topic 
     /// </summary>
     /// <value>Count of words before the topic </value>
-    [DataMember(Name = "wordCount", EmitDefaultValue = false)]
+    [JsonPropertyName("wordCount")]
     public long? WordCount { get; private set; }
 
 
@@ -32,7 +32,7 @@ public partial class TopicOffset : IEquatable<TopicOffset>
     /// Count of characters before the topic 
     /// </summary>
     /// <value>Count of characters before the topic </value>
-    [DataMember(Name = "characterCount", EmitDefaultValue = false)]
+    [JsonPropertyName("characterCount")]
     public long? CharacterCount { get; private set; }
 
 

@@ -7,13 +7,13 @@ namespace PureCloud.Client.Models;
 /// <summary>
 /// JourneyWebActionEventsNotificationActionMapPageUrlCondition
 /// </summary>
-[DataContract]
+
 public partial class JourneyWebActionEventsNotificationActionMapPageUrlCondition : IEquatable<JourneyWebActionEventsNotificationActionMapPageUrlCondition>
 {
     /// <summary>
     /// Gets or Sets Operator
     /// </summary>
-    [JsonConverter(typeof(JsonStringEnumConverter))]
+    
     public enum OperatorEnum
     {
         /// <summary>
@@ -117,7 +117,7 @@ public partial class JourneyWebActionEventsNotificationActionMapPageUrlCondition
     /// <summary>
     /// Gets or Sets Operator
     /// </summary>
-    [DataMember(Name = "operator", EmitDefaultValue = false)]
+    [JsonPropertyName("operator")]
     public OperatorEnum? Operator { get; set; }
     /// <summary>
     /// Initializes a new instance of the <see cref="JourneyWebActionEventsNotificationActionMapPageUrlCondition" /> class.
@@ -136,7 +136,7 @@ public partial class JourneyWebActionEventsNotificationActionMapPageUrlCondition
     /// <summary>
     /// Gets or Sets Values
     /// </summary>
-    [DataMember(Name = "values", EmitDefaultValue = false)]
+    [JsonPropertyName("values")]
     public List<string> Values { get; set; }
 
 

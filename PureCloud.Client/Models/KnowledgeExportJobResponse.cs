@@ -7,14 +7,14 @@ namespace PureCloud.Client.Models;
 /// <summary>
 /// KnowledgeExportJobResponse
 /// </summary>
-[DataContract]
+
 public partial class KnowledgeExportJobResponse : IEquatable<KnowledgeExportJobResponse>
 {
     /// <summary>
     /// File type of the document
     /// </summary>
     /// <value>File type of the document</value>
-    [JsonConverter(typeof(JsonStringEnumConverter))]
+    
     public enum FileTypeEnum
     {
         /// <summary>
@@ -47,7 +47,7 @@ public partial class KnowledgeExportJobResponse : IEquatable<KnowledgeExportJobR
     /// The status of the export job.
     /// </summary>
     /// <value>The status of the export job.</value>
-    [JsonConverter(typeof(JsonStringEnumConverter))]
+    
     public enum StatusEnum
     {
         /// <summary>
@@ -128,13 +128,13 @@ public partial class KnowledgeExportJobResponse : IEquatable<KnowledgeExportJobR
     /// File type of the document
     /// </summary>
     /// <value>File type of the document</value>
-    [DataMember(Name = "fileType", EmitDefaultValue = false)]
+    [JsonPropertyName("fileType")]
     public FileTypeEnum? FileType { get; set; }
     /// <summary>
     /// The status of the export job.
     /// </summary>
     /// <value>The status of the export job.</value>
-    [DataMember(Name = "status", EmitDefaultValue = false)]
+    [JsonPropertyName("status")]
     public StatusEnum? Status { get; set; }
 
     /// <summary>
@@ -182,7 +182,7 @@ public partial class KnowledgeExportJobResponse : IEquatable<KnowledgeExportJobR
     /// Id of the export job.
     /// </summary>
     /// <value>Id of the export job.</value>
-    [DataMember(Name = "id", EmitDefaultValue = false)]
+    [JsonPropertyName("id")]
     public string Id { get; set; }
 
 
@@ -191,7 +191,7 @@ public partial class KnowledgeExportJobResponse : IEquatable<KnowledgeExportJobR
     /// The URL of the location at which the caller can download the export file, when available.
     /// </summary>
     /// <value>The URL of the location at which the caller can download the export file, when available.</value>
-    [DataMember(Name = "downloadURL", EmitDefaultValue = false)]
+    [JsonPropertyName("downloadURL")]
     public string DownloadURL { get; set; }
 
 
@@ -202,7 +202,7 @@ public partial class KnowledgeExportJobResponse : IEquatable<KnowledgeExportJobR
     /// Requested version of the exported json file.
     /// </summary>
     /// <value>Requested version of the exported json file.</value>
-    [DataMember(Name = "jsonFileVersion", EmitDefaultValue = false)]
+    [JsonPropertyName("jsonFileVersion")]
     public int? JsonFileVersion { get; set; }
 
 
@@ -211,7 +211,7 @@ public partial class KnowledgeExportJobResponse : IEquatable<KnowledgeExportJobR
     /// The current count of the number of records processed.
     /// </summary>
     /// <value>The current count of the number of records processed.</value>
-    [DataMember(Name = "countDocumentProcessed", EmitDefaultValue = false)]
+    [JsonPropertyName("countDocumentProcessed")]
     public int? CountDocumentProcessed { get; set; }
 
 
@@ -220,7 +220,7 @@ public partial class KnowledgeExportJobResponse : IEquatable<KnowledgeExportJobR
     /// Filters to narrow down what to export.
     /// </summary>
     /// <value>Filters to narrow down what to export.</value>
-    [DataMember(Name = "exportFilter", EmitDefaultValue = false)]
+    [JsonPropertyName("exportFilter")]
     public KnowledgeExportJobFilter ExportFilter { get; set; }
 
 
@@ -231,7 +231,7 @@ public partial class KnowledgeExportJobResponse : IEquatable<KnowledgeExportJobR
     /// Knowledge base which document export belongs to.
     /// </summary>
     /// <value>Knowledge base which document export belongs to.</value>
-    [DataMember(Name = "knowledgeBase", EmitDefaultValue = false)]
+    [JsonPropertyName("knowledgeBase")]
     public KnowledgeBase KnowledgeBase { get; set; }
 
 
@@ -240,7 +240,7 @@ public partial class KnowledgeExportJobResponse : IEquatable<KnowledgeExportJobR
     /// The user who created the operation
     /// </summary>
     /// <value>The user who created the operation</value>
-    [DataMember(Name = "createdBy", EmitDefaultValue = false)]
+    [JsonPropertyName("createdBy")]
     public UserReference CreatedBy { get; set; }
 
 
@@ -249,7 +249,7 @@ public partial class KnowledgeExportJobResponse : IEquatable<KnowledgeExportJobR
     /// The timestamp of when the export began. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z
     /// </summary>
     /// <value>The timestamp of when the export began. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z</value>
-    [DataMember(Name = "dateCreated", EmitDefaultValue = false)]
+    [JsonPropertyName("dateCreated")]
     public DateTime? DateCreated { get; set; }
 
 
@@ -258,7 +258,7 @@ public partial class KnowledgeExportJobResponse : IEquatable<KnowledgeExportJobR
     /// The timestamp of when the export stopped. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z
     /// </summary>
     /// <value>The timestamp of when the export stopped. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z</value>
-    [DataMember(Name = "dateModified", EmitDefaultValue = false)]
+    [JsonPropertyName("dateModified")]
     public DateTime? DateModified { get; set; }
 
 
@@ -267,7 +267,7 @@ public partial class KnowledgeExportJobResponse : IEquatable<KnowledgeExportJobR
     /// Any error information, or null of the processing is not in failed state.
     /// </summary>
     /// <value>Any error information, or null of the processing is not in failed state.</value>
-    [DataMember(Name = "errorInformation", EmitDefaultValue = false)]
+    [JsonPropertyName("errorInformation")]
     public ErrorBody ErrorInformation { get; set; }
 
 
@@ -276,7 +276,7 @@ public partial class KnowledgeExportJobResponse : IEquatable<KnowledgeExportJobR
     /// Source of the export job.
     /// </summary>
     /// <value>Source of the export job.</value>
-    [DataMember(Name = "source", EmitDefaultValue = false)]
+    [JsonPropertyName("source")]
     public KnowledgeOperationSource Source { get; set; }
 
 
@@ -285,7 +285,7 @@ public partial class KnowledgeExportJobResponse : IEquatable<KnowledgeExportJobR
     /// The URI for this object
     /// </summary>
     /// <value>The URI for this object</value>
-    [DataMember(Name = "selfUri", EmitDefaultValue = false)]
+    [JsonPropertyName("selfUri")]
     public string SelfUri { get; private set; }
 
 

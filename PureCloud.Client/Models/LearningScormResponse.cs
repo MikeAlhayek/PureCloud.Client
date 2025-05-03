@@ -7,14 +7,14 @@ namespace PureCloud.Client.Models;
 /// <summary>
 /// Learning SCORM package
 /// </summary>
-[DataContract]
+
 public partial class LearningScormResponse : IEquatable<LearningScormResponse>
 {
     /// <summary>
     /// The status of the SCORM package
     /// </summary>
     /// <value>The status of the SCORM package</value>
-    [JsonConverter(typeof(JsonStringEnumConverter))]
+    
     public enum StatusEnum
     {
         /// <summary>
@@ -53,7 +53,7 @@ public partial class LearningScormResponse : IEquatable<LearningScormResponse>
     /// The status of the SCORM package
     /// </summary>
     /// <value>The status of the SCORM package</value>
-    [DataMember(Name = "status", EmitDefaultValue = false)]
+    [JsonPropertyName("status")]
     public StatusEnum? Status { get; set; }
     /// <summary>
     /// Initializes a new instance of the <see cref="LearningScormResponse" /> class.
@@ -77,7 +77,7 @@ public partial class LearningScormResponse : IEquatable<LearningScormResponse>
     /// The globally unique identifier for the object.
     /// </summary>
     /// <value>The globally unique identifier for the object.</value>
-    [DataMember(Name = "id", EmitDefaultValue = false)]
+    [JsonPropertyName("id")]
     public string Id { get; private set; }
 
 
@@ -88,7 +88,7 @@ public partial class LearningScormResponse : IEquatable<LearningScormResponse>
     /// The error code of the SCORM package (on failure)
     /// </summary>
     /// <value>The error code of the SCORM package (on failure)</value>
-    [DataMember(Name = "errorCode", EmitDefaultValue = false)]
+    [JsonPropertyName("errorCode")]
     public string ErrorCode { get; set; }
 
 
@@ -97,7 +97,7 @@ public partial class LearningScormResponse : IEquatable<LearningScormResponse>
     /// The error message associated with the error code
     /// </summary>
     /// <value>The error message associated with the error code</value>
-    [DataMember(Name = "errorMessage", EmitDefaultValue = false)]
+    [JsonPropertyName("errorMessage")]
     public string ErrorMessage { get; set; }
 
 
@@ -106,7 +106,7 @@ public partial class LearningScormResponse : IEquatable<LearningScormResponse>
     /// The percentage of the SCORM package that has been unpacked
     /// </summary>
     /// <value>The percentage of the SCORM package that has been unpacked</value>
-    [DataMember(Name = "percentageUnpacked", EmitDefaultValue = false)]
+    [JsonPropertyName("percentageUnpacked")]
     public float? PercentageUnpacked { get; set; }
 
 
@@ -115,7 +115,7 @@ public partial class LearningScormResponse : IEquatable<LearningScormResponse>
     /// The URI for this object
     /// </summary>
     /// <value>The URI for this object</value>
-    [DataMember(Name = "selfUri", EmitDefaultValue = false)]
+    [JsonPropertyName("selfUri")]
     public string SelfUri { get; private set; }
 
 

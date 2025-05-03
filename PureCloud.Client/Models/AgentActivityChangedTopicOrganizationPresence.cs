@@ -1,12 +1,12 @@
-using System.Runtime.Serialization;
 using System.Text;
+using System.Text.Json.Serialization;
 
 namespace PureCloud.Client.Models;
 
 /// <summary>
 /// AgentActivityChangedTopicOrganizationPresence
 /// </summary>
-[DataContract]
+
 public partial class AgentActivityChangedTopicOrganizationPresence : IEquatable<AgentActivityChangedTopicOrganizationPresence>
 {
     /// <summary>
@@ -26,7 +26,7 @@ public partial class AgentActivityChangedTopicOrganizationPresence : IEquatable<
     /// <summary>
     /// Gets or Sets Id
     /// </summary>
-    [DataMember(Name = "id", EmitDefaultValue = false)]
+    [JsonPropertyName("id")]
     public string Id { get; set; }
 
 
@@ -34,7 +34,7 @@ public partial class AgentActivityChangedTopicOrganizationPresence : IEquatable<
     /// <summary>
     /// Gets or Sets SystemPresence
     /// </summary>
-    [DataMember(Name = "systemPresence", EmitDefaultValue = false)]
+    [JsonPropertyName("systemPresence")]
     public string SystemPresence { get; set; }
 
 

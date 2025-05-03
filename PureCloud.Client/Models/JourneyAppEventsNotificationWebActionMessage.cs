@@ -1,12 +1,12 @@
-using System.Runtime.Serialization;
 using System.Text;
+using System.Text.Json.Serialization;
 
 namespace PureCloud.Client.Models;
 
 /// <summary>
 /// JourneyAppEventsNotificationWebActionMessage
 /// </summary>
-[DataContract]
+
 public partial class JourneyAppEventsNotificationWebActionMessage : IEquatable<JourneyAppEventsNotificationWebActionMessage>
 {
     /// <summary>
@@ -50,7 +50,7 @@ public partial class JourneyAppEventsNotificationWebActionMessage : IEquatable<J
     /// <summary>
     /// Gets or Sets Action
     /// </summary>
-    [DataMember(Name = "action", EmitDefaultValue = false)]
+    [JsonPropertyName("action")]
     public JourneyAppEventsNotificationEventAction Action { get; set; }
 
 
@@ -58,7 +58,7 @@ public partial class JourneyAppEventsNotificationWebActionMessage : IEquatable<J
     /// <summary>
     /// Gets or Sets ActionTarget
     /// </summary>
-    [DataMember(Name = "actionTarget", EmitDefaultValue = false)]
+    [JsonPropertyName("actionTarget")]
     public JourneyAppEventsNotificationActionTarget ActionTarget { get; set; }
 
 
@@ -66,7 +66,7 @@ public partial class JourneyAppEventsNotificationWebActionMessage : IEquatable<J
     /// <summary>
     /// Gets or Sets ActionMap
     /// </summary>
-    [DataMember(Name = "actionMap", EmitDefaultValue = false)]
+    [JsonPropertyName("actionMap")]
     public JourneyAppEventsNotificationActionMap ActionMap { get; set; }
 
 
@@ -74,7 +74,7 @@ public partial class JourneyAppEventsNotificationWebActionMessage : IEquatable<J
     /// <summary>
     /// Gets or Sets ErrorCode
     /// </summary>
-    [DataMember(Name = "errorCode", EmitDefaultValue = false)]
+    [JsonPropertyName("errorCode")]
     public string ErrorCode { get; set; }
 
 
@@ -82,7 +82,7 @@ public partial class JourneyAppEventsNotificationWebActionMessage : IEquatable<J
     /// <summary>
     /// Gets or Sets ErrorMessage
     /// </summary>
-    [DataMember(Name = "errorMessage", EmitDefaultValue = false)]
+    [JsonPropertyName("errorMessage")]
     public string ErrorMessage { get; set; }
 
 
@@ -90,7 +90,7 @@ public partial class JourneyAppEventsNotificationWebActionMessage : IEquatable<J
     /// <summary>
     /// Gets or Sets UserAgentString
     /// </summary>
-    [DataMember(Name = "userAgentString", EmitDefaultValue = false)]
+    [JsonPropertyName("userAgentString")]
     public string UserAgentString { get; set; }
 
 
@@ -98,7 +98,7 @@ public partial class JourneyAppEventsNotificationWebActionMessage : IEquatable<J
     /// <summary>
     /// Gets or Sets IpAddress
     /// </summary>
-    [DataMember(Name = "ipAddress", EmitDefaultValue = false)]
+    [JsonPropertyName("ipAddress")]
     public string IpAddress { get; set; }
 
 
@@ -106,7 +106,7 @@ public partial class JourneyAppEventsNotificationWebActionMessage : IEquatable<J
     /// <summary>
     /// Gets or Sets IpOrganization
     /// </summary>
-    [DataMember(Name = "ipOrganization", EmitDefaultValue = false)]
+    [JsonPropertyName("ipOrganization")]
     public string IpOrganization { get; set; }
 
 
@@ -114,7 +114,7 @@ public partial class JourneyAppEventsNotificationWebActionMessage : IEquatable<J
     /// <summary>
     /// Gets or Sets Browser
     /// </summary>
-    [DataMember(Name = "browser", EmitDefaultValue = false)]
+    [JsonPropertyName("browser")]
     public JourneyAppEventsNotificationBrowser Browser { get; set; }
 
 
@@ -122,7 +122,7 @@ public partial class JourneyAppEventsNotificationWebActionMessage : IEquatable<J
     /// <summary>
     /// Gets or Sets Device
     /// </summary>
-    [DataMember(Name = "device", EmitDefaultValue = false)]
+    [JsonPropertyName("device")]
     public JourneyAppEventsNotificationDevice Device { get; set; }
 
 
@@ -130,7 +130,7 @@ public partial class JourneyAppEventsNotificationWebActionMessage : IEquatable<J
     /// <summary>
     /// Gets or Sets Geolocation
     /// </summary>
-    [DataMember(Name = "geolocation", EmitDefaultValue = false)]
+    [JsonPropertyName("geolocation")]
     public JourneyAppEventsNotificationGeoLocation Geolocation { get; set; }
 
 
@@ -138,7 +138,7 @@ public partial class JourneyAppEventsNotificationWebActionMessage : IEquatable<J
     /// <summary>
     /// Gets or Sets MktCampaign
     /// </summary>
-    [DataMember(Name = "mktCampaign", EmitDefaultValue = false)]
+    [JsonPropertyName("mktCampaign")]
     public JourneyAppEventsNotificationMktCampaign MktCampaign { get; set; }
 
 
@@ -146,7 +146,7 @@ public partial class JourneyAppEventsNotificationWebActionMessage : IEquatable<J
     /// <summary>
     /// Gets or Sets VisitReferrer
     /// </summary>
-    [DataMember(Name = "visitReferrer", EmitDefaultValue = false)]
+    [JsonPropertyName("visitReferrer")]
     public JourneyAppEventsNotificationReferrer VisitReferrer { get; set; }
 
 
@@ -154,7 +154,7 @@ public partial class JourneyAppEventsNotificationWebActionMessage : IEquatable<J
     /// <summary>
     /// Gets or Sets TimeToDisposition
     /// </summary>
-    [DataMember(Name = "timeToDisposition", EmitDefaultValue = false)]
+    [JsonPropertyName("timeToDisposition")]
     public long? TimeToDisposition { get; set; }
 
 

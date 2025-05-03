@@ -7,14 +7,14 @@ namespace PureCloud.Client.Models;
 /// <summary>
 /// FaxSendRequest
 /// </summary>
-[DataContract]
+
 public partial class FaxSendRequest : IEquatable<FaxSendRequest>
 {
     /// <summary>
     /// The content type that is going to be uploaded. If Content Management document is used for faxing, contentType will be ignored
     /// </summary>
     /// <value>The content type that is going to be uploaded. If Content Management document is used for faxing, contentType will be ignored</value>
-    [JsonConverter(typeof(JsonStringEnumConverter))]
+    
     public enum ContentTypeEnum
     {
         /// <summary>
@@ -59,7 +59,7 @@ public partial class FaxSendRequest : IEquatable<FaxSendRequest>
     /// The content type that is going to be uploaded. If Content Management document is used for faxing, contentType will be ignored
     /// </summary>
     /// <value>The content type that is going to be uploaded. If Content Management document is used for faxing, contentType will be ignored</value>
-    [DataMember(Name = "contentType", EmitDefaultValue = false)]
+    [JsonPropertyName("contentType")]
     public ContentTypeEnum? ContentType { get; set; }
 
     /// <summary>
@@ -95,7 +95,7 @@ public partial class FaxSendRequest : IEquatable<FaxSendRequest>
     /// The globally unique identifier for the object.
     /// </summary>
     /// <value>The globally unique identifier for the object.</value>
-    [DataMember(Name = "id", EmitDefaultValue = false)]
+    [JsonPropertyName("id")]
     public string Id { get; private set; }
 
 
@@ -103,7 +103,7 @@ public partial class FaxSendRequest : IEquatable<FaxSendRequest>
     /// <summary>
     /// Gets or Sets Name
     /// </summary>
-    [DataMember(Name = "name", EmitDefaultValue = false)]
+    [JsonPropertyName("name")]
     public string Name { get; set; }
 
 
@@ -112,7 +112,7 @@ public partial class FaxSendRequest : IEquatable<FaxSendRequest>
     /// A list of outbound fax dialing addresses. E.g. +13175555555 or 3175555555
     /// </summary>
     /// <value>A list of outbound fax dialing addresses. E.g. +13175555555 or 3175555555</value>
-    [DataMember(Name = "addresses", EmitDefaultValue = false)]
+    [JsonPropertyName("addresses")]
     public List<string> Addresses { get; set; }
 
 
@@ -121,7 +121,7 @@ public partial class FaxSendRequest : IEquatable<FaxSendRequest>
     /// DocumentId of Content Management artifact. If Content Management document is not used for faxing, documentId should be null
     /// </summary>
     /// <value>DocumentId of Content Management artifact. If Content Management document is not used for faxing, documentId should be null</value>
-    [DataMember(Name = "documentId", EmitDefaultValue = false)]
+    [JsonPropertyName("documentId")]
     public string DocumentId { get; set; }
 
 
@@ -132,7 +132,7 @@ public partial class FaxSendRequest : IEquatable<FaxSendRequest>
     /// Workspace in which the document should be stored. If Content Management document is used for faxing, workspace will be ignored
     /// </summary>
     /// <value>Workspace in which the document should be stored. If Content Management document is used for faxing, workspace will be ignored</value>
-    [DataMember(Name = "workspace", EmitDefaultValue = false)]
+    [JsonPropertyName("workspace")]
     public Workspace Workspace { get; set; }
 
 
@@ -141,7 +141,7 @@ public partial class FaxSendRequest : IEquatable<FaxSendRequest>
     /// Data for coversheet generation.
     /// </summary>
     /// <value>Data for coversheet generation.</value>
-    [DataMember(Name = "coverSheet", EmitDefaultValue = false)]
+    [JsonPropertyName("coverSheet")]
     public CoverSheet CoverSheet { get; set; }
 
 
@@ -150,7 +150,7 @@ public partial class FaxSendRequest : IEquatable<FaxSendRequest>
     /// Time zone offset minutes from GMT
     /// </summary>
     /// <value>Time zone offset minutes from GMT</value>
-    [DataMember(Name = "timeZoneOffsetMinutes", EmitDefaultValue = false)]
+    [JsonPropertyName("timeZoneOffsetMinutes")]
     public int? TimeZoneOffsetMinutes { get; set; }
 
 
@@ -159,7 +159,7 @@ public partial class FaxSendRequest : IEquatable<FaxSendRequest>
     /// The URI for this object
     /// </summary>
     /// <value>The URI for this object</value>
-    [DataMember(Name = "selfUri", EmitDefaultValue = false)]
+    [JsonPropertyName("selfUri")]
     public string SelfUri { get; private set; }
 
 

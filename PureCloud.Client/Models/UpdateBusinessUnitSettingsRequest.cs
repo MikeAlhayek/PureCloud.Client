@@ -7,14 +7,14 @@ namespace PureCloud.Client.Models;
 /// <summary>
 /// UpdateBusinessUnitSettingsRequest
 /// </summary>
-[DataContract]
+
 public partial class UpdateBusinessUnitSettingsRequest : IEquatable<UpdateBusinessUnitSettingsRequest>
 {
     /// <summary>
     /// The start day of week for this business unit
     /// </summary>
     /// <value>The start day of week for this business unit</value>
-    [JsonConverter(typeof(JsonStringEnumConverter))]
+    
     public enum StartDayOfWeekEnum
     {
         /// <summary>
@@ -71,7 +71,7 @@ public partial class UpdateBusinessUnitSettingsRequest : IEquatable<UpdateBusine
     /// The start day of week for this business unit
     /// </summary>
     /// <value>The start day of week for this business unit</value>
-    [DataMember(Name = "startDayOfWeek", EmitDefaultValue = false)]
+    [JsonPropertyName("startDayOfWeek")]
     public StartDayOfWeekEnum? StartDayOfWeek { get; private set; }
 
     /// <summary>
@@ -103,7 +103,7 @@ public partial class UpdateBusinessUnitSettingsRequest : IEquatable<UpdateBusine
     /// The time zone for this business unit, using the Olsen tz database format
     /// </summary>
     /// <value>The time zone for this business unit, using the Olsen tz database format</value>
-    [DataMember(Name = "timeZone", EmitDefaultValue = false)]
+    [JsonPropertyName("timeZone")]
     public string TimeZone { get; private set; }
 
 
@@ -112,7 +112,7 @@ public partial class UpdateBusinessUnitSettingsRequest : IEquatable<UpdateBusine
     /// Short term forecasting settings
     /// </summary>
     /// <value>Short term forecasting settings</value>
-    [DataMember(Name = "shortTermForecasting", EmitDefaultValue = false)]
+    [JsonPropertyName("shortTermForecasting")]
     public BuShortTermForecastingSettings ShortTermForecasting { get; set; }
 
 
@@ -121,7 +121,7 @@ public partial class UpdateBusinessUnitSettingsRequest : IEquatable<UpdateBusine
     /// Scheduling settings
     /// </summary>
     /// <value>Scheduling settings</value>
-    [DataMember(Name = "scheduling", EmitDefaultValue = false)]
+    [JsonPropertyName("scheduling")]
     public BuSchedulingSettingsRequest Scheduling { get; set; }
 
 
@@ -130,7 +130,7 @@ public partial class UpdateBusinessUnitSettingsRequest : IEquatable<UpdateBusine
     /// Notification settings
     /// </summary>
     /// <value>Notification settings</value>
-    [DataMember(Name = "notifications", EmitDefaultValue = false)]
+    [JsonPropertyName("notifications")]
     public BuNotificationSettingsRequest Notifications { get; set; }
 
 
@@ -139,7 +139,7 @@ public partial class UpdateBusinessUnitSettingsRequest : IEquatable<UpdateBusine
     /// Version metadata for this business unit
     /// </summary>
     /// <value>Version metadata for this business unit</value>
-    [DataMember(Name = "metadata", EmitDefaultValue = false)]
+    [JsonPropertyName("metadata")]
     public WfmVersionedEntityMetadata Metadata { get; set; }
 
 

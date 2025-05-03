@@ -7,14 +7,14 @@ namespace PureCloud.Client.Models;
 /// <summary>
 /// ContactsExportFieldFilter
 /// </summary>
-[DataContract]
+
 public partial class ContactsExportFieldFilter : IEquatable<ContactsExportFieldFilter>
 {
     /// <summary>
     /// Field name to apply the filter
     /// </summary>
     /// <value>Field name to apply the filter</value>
-    [JsonConverter(typeof(JsonStringEnumConverter))]
+    
     public enum FieldEnum
     {
         /// <summary>
@@ -47,7 +47,7 @@ public partial class ContactsExportFieldFilter : IEquatable<ContactsExportFieldF
     /// Field name to apply the filter
     /// </summary>
     /// <value>Field name to apply the filter</value>
-    [DataMember(Name = "field", EmitDefaultValue = false)]
+    [JsonPropertyName("field")]
     public FieldEnum? Field { get; set; }
 
     /// <summary>
@@ -75,7 +75,7 @@ public partial class ContactsExportFieldFilter : IEquatable<ContactsExportFieldF
     /// Value to check field&#39;s value against
     /// </summary>
     /// <value>Value to check field&#39;s value against</value>
-    [DataMember(Name = "value", EmitDefaultValue = false)]
+    [JsonPropertyName("value")]
     public string Value { get; set; }
 
 

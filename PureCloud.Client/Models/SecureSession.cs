@@ -7,14 +7,14 @@ namespace PureCloud.Client.Models;
 /// <summary>
 /// SecureSession
 /// </summary>
-[DataContract]
+
 public partial class SecureSession : IEquatable<SecureSession>
 {
     /// <summary>
     /// The current state of a secure session
     /// </summary>
     /// <value>The current state of a secure session</value>
-    [JsonConverter(typeof(JsonStringEnumConverter))]
+    
     public enum StateEnum
     {
         /// <summary>
@@ -47,7 +47,7 @@ public partial class SecureSession : IEquatable<SecureSession>
     /// The current state of a secure session
     /// </summary>
     /// <value>The current state of a secure session</value>
-    [DataMember(Name = "state", EmitDefaultValue = false)]
+    [JsonPropertyName("state")]
     public StateEnum? State { get; set; }
 
     /// <summary>
@@ -79,7 +79,7 @@ public partial class SecureSession : IEquatable<SecureSession>
     /// The globally unique identifier for the object.
     /// </summary>
     /// <value>The globally unique identifier for the object.</value>
-    [DataMember(Name = "id", EmitDefaultValue = false)]
+    [JsonPropertyName("id")]
     public string Id { get; private set; }
 
 
@@ -88,7 +88,7 @@ public partial class SecureSession : IEquatable<SecureSession>
     /// The flow to execute securely
     /// </summary>
     /// <value>The flow to execute securely</value>
-    [DataMember(Name = "flow", EmitDefaultValue = false)]
+    [JsonPropertyName("flow")]
     public DomainEntityRef Flow { get; set; }
 
 
@@ -97,7 +97,7 @@ public partial class SecureSession : IEquatable<SecureSession>
     /// Customer-provided data
     /// </summary>
     /// <value>Customer-provided data</value>
-    [DataMember(Name = "userData", EmitDefaultValue = false)]
+    [JsonPropertyName("userData")]
     public string UserData { get; set; }
 
 
@@ -108,7 +108,7 @@ public partial class SecureSession : IEquatable<SecureSession>
     /// Unique identifier for the participant initiating the secure session.
     /// </summary>
     /// <value>Unique identifier for the participant initiating the secure session.</value>
-    [DataMember(Name = "sourceParticipantId", EmitDefaultValue = false)]
+    [JsonPropertyName("sourceParticipantId")]
     public string SourceParticipantId { get; set; }
 
 
@@ -117,7 +117,7 @@ public partial class SecureSession : IEquatable<SecureSession>
     /// If true, disconnect the agent after creating the session
     /// </summary>
     /// <value>If true, disconnect the agent after creating the session</value>
-    [DataMember(Name = "disconnect", EmitDefaultValue = false)]
+    [JsonPropertyName("disconnect")]
     public bool? Disconnect { get; set; }
 
 
@@ -126,7 +126,7 @@ public partial class SecureSession : IEquatable<SecureSession>
     /// The URI for this object
     /// </summary>
     /// <value>The URI for this object</value>
-    [DataMember(Name = "selfUri", EmitDefaultValue = false)]
+    [JsonPropertyName("selfUri")]
     public string SelfUri { get; private set; }
 
 

@@ -1,12 +1,12 @@
-using System.Runtime.Serialization;
 using System.Text;
+using System.Text.Json.Serialization;
 
 namespace PureCloud.Client.Models;
 
 /// <summary>
 /// KnowledgeIntegrationFilterValue
 /// </summary>
-[DataContract]
+
 public partial class KnowledgeIntegrationFilterValue : IEquatable<KnowledgeIntegrationFilterValue>
 {
     /// <summary>
@@ -27,7 +27,7 @@ public partial class KnowledgeIntegrationFilterValue : IEquatable<KnowledgeInteg
     /// The key that can be used as a value of a filter setting in a knowledge source.
     /// </summary>
     /// <value>The key that can be used as a value of a filter setting in a knowledge source.</value>
-    [DataMember(Name = "key", EmitDefaultValue = false)]
+    [JsonPropertyName("key")]
     public string Key { get; set; }
 
 
@@ -36,7 +36,7 @@ public partial class KnowledgeIntegrationFilterValue : IEquatable<KnowledgeInteg
     /// The display label of the filter value.
     /// </summary>
     /// <value>The display label of the filter value.</value>
-    [DataMember(Name = "value", EmitDefaultValue = false)]
+    [JsonPropertyName("value")]
     public string Value { get; set; }
 
 

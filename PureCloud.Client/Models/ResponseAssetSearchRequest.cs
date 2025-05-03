@@ -7,14 +7,14 @@ namespace PureCloud.Client.Models;
 /// <summary>
 /// ResponseAssetSearchRequest
 /// </summary>
-[DataContract]
+
 public partial class ResponseAssetSearchRequest : IEquatable<ResponseAssetSearchRequest>
 {
     /// <summary>
     /// The sort order for results
     /// </summary>
     /// <value>The sort order for results</value>
-    [JsonConverter(typeof(JsonStringEnumConverter))]
+    
     public enum SortOrderEnum
     {
         /// <summary>
@@ -41,7 +41,7 @@ public partial class ResponseAssetSearchRequest : IEquatable<ResponseAssetSearch
     /// The sort order for results
     /// </summary>
     /// <value>The sort order for results</value>
-    [DataMember(Name = "sortOrder", EmitDefaultValue = false)]
+    [JsonPropertyName("sortOrder")]
     public SortOrderEnum? SortOrder { get; set; }
 
     /// <summary>
@@ -73,7 +73,7 @@ public partial class ResponseAssetSearchRequest : IEquatable<ResponseAssetSearch
     /// The number of results per page. Default: 25, Maximum: 100.
     /// </summary>
     /// <value>The number of results per page. Default: 25, Maximum: 100.</value>
-    [DataMember(Name = "pageSize", EmitDefaultValue = false)]
+    [JsonPropertyName("pageSize")]
     public int? PageSize { get; set; }
 
 
@@ -82,7 +82,7 @@ public partial class ResponseAssetSearchRequest : IEquatable<ResponseAssetSearch
     /// The page of resources you want to retrieve
     /// </summary>
     /// <value>The page of resources you want to retrieve</value>
-    [DataMember(Name = "pageNumber", EmitDefaultValue = false)]
+    [JsonPropertyName("pageNumber")]
     public int? PageNumber { get; set; }
 
 
@@ -93,7 +93,7 @@ public partial class ResponseAssetSearchRequest : IEquatable<ResponseAssetSearch
     /// The field in the resource that you want to sort the results by
     /// </summary>
     /// <value>The field in the resource that you want to sort the results by</value>
-    [DataMember(Name = "sortBy", EmitDefaultValue = false)]
+    [JsonPropertyName("sortBy")]
     public string SortBy { get; set; }
 
 
@@ -102,7 +102,7 @@ public partial class ResponseAssetSearchRequest : IEquatable<ResponseAssetSearch
     /// Filter the query results.
     /// </summary>
     /// <value>Filter the query results.</value>
-    [DataMember(Name = "query", EmitDefaultValue = false)]
+    [JsonPropertyName("query")]
     public List<ResponseAssetFilter> Query { get; set; }
 
 

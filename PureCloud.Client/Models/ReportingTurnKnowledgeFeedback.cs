@@ -1,12 +1,12 @@
-using System.Runtime.Serialization;
 using System.Text;
+using System.Text.Json.Serialization;
 
 namespace PureCloud.Client.Models;
 
 /// <summary>
 /// ReportingTurnKnowledgeFeedback
 /// </summary>
-[DataContract]
+
 public partial class ReportingTurnKnowledgeFeedback : IEquatable<ReportingTurnKnowledgeFeedback>
 {
     /// <summary>
@@ -29,7 +29,7 @@ public partial class ReportingTurnKnowledgeFeedback : IEquatable<ReportingTurnKn
     /// The ID of the original knowledge search that this feedback relates to.
     /// </summary>
     /// <value>The ID of the original knowledge search that this feedback relates to.</value>
-    [DataMember(Name = "searchId", EmitDefaultValue = false)]
+    [JsonPropertyName("searchId")]
     public string SearchId { get; set; }
 
 
@@ -38,7 +38,7 @@ public partial class ReportingTurnKnowledgeFeedback : IEquatable<ReportingTurnKn
     /// The feedback rating for the search (1.0 - 5.0). 1 &#x3D; Negative, 5 &#x3D; Positive.
     /// </summary>
     /// <value>The feedback rating for the search (1.0 - 5.0). 1 &#x3D; Negative, 5 &#x3D; Positive.</value>
-    [DataMember(Name = "rating", EmitDefaultValue = false)]
+    [JsonPropertyName("rating")]
     public int? Rating { get; set; }
 
 
@@ -47,7 +47,7 @@ public partial class ReportingTurnKnowledgeFeedback : IEquatable<ReportingTurnKn
     /// The list of search documents that the feedback applies to.
     /// </summary>
     /// <value>The list of search documents that the feedback applies to.</value>
-    [DataMember(Name = "documents", EmitDefaultValue = false)]
+    [JsonPropertyName("documents")]
     public List<ReportingTurnKnowledgeDocument> Documents { get; set; }
 
 

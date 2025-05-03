@@ -7,13 +7,13 @@ namespace PureCloud.Client.Models;
 /// <summary>
 /// PersistentConnectionChangeTopicPersistentConnectionChangeEvent
 /// </summary>
-[DataContract]
+
 public partial class PersistentConnectionChangeTopicPersistentConnectionChangeEvent : IEquatable<PersistentConnectionChangeTopicPersistentConnectionChangeEvent>
 {
     /// <summary>
     /// Gets or Sets PersistentState
     /// </summary>
-    [JsonConverter(typeof(JsonStringEnumConverter))]
+    
     public enum PersistentStateEnum
     {
         /// <summary>
@@ -57,7 +57,7 @@ public partial class PersistentConnectionChangeTopicPersistentConnectionChangeEv
     /// <summary>
     /// Gets or Sets PersistentState
     /// </summary>
-    [DataMember(Name = "persistentState", EmitDefaultValue = false)]
+    [JsonPropertyName("persistentState")]
     public PersistentStateEnum? PersistentState { get; set; }
     /// <summary>
     /// Initializes a new instance of the <see cref="PersistentConnectionChangeTopicPersistentConnectionChangeEvent" /> class.
@@ -82,7 +82,7 @@ public partial class PersistentConnectionChangeTopicPersistentConnectionChangeEv
     /// <summary>
     /// Gets or Sets ErrorInfo
     /// </summary>
-    [DataMember(Name = "errorInfo", EmitDefaultValue = false)]
+    [JsonPropertyName("errorInfo")]
     public PersistentConnectionChangeTopicErrorInfo ErrorInfo { get; set; }
 
 
@@ -90,7 +90,7 @@ public partial class PersistentConnectionChangeTopicPersistentConnectionChangeEv
     /// <summary>
     /// Gets or Sets StationId
     /// </summary>
-    [DataMember(Name = "stationId", EmitDefaultValue = false)]
+    [JsonPropertyName("stationId")]
     public string StationId { get; set; }
 
 
@@ -98,7 +98,7 @@ public partial class PersistentConnectionChangeTopicPersistentConnectionChangeEv
     /// <summary>
     /// Gets or Sets UserId
     /// </summary>
-    [DataMember(Name = "userId", EmitDefaultValue = false)]
+    [JsonPropertyName("userId")]
     public string UserId { get; set; }
 
 
@@ -108,7 +108,7 @@ public partial class PersistentConnectionChangeTopicPersistentConnectionChangeEv
     /// <summary>
     /// Gets or Sets EventTime
     /// </summary>
-    [DataMember(Name = "eventTime", EmitDefaultValue = false)]
+    [JsonPropertyName("eventTime")]
     public DateTime? EventTime { get; set; }
 
 

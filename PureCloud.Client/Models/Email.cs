@@ -7,14 +7,14 @@ namespace PureCloud.Client.Models;
 /// <summary>
 /// Email
 /// </summary>
-[DataContract]
+
 public partial class Email : IEquatable<Email>
 {
     /// <summary>
     /// The connection state of this communication.
     /// </summary>
     /// <value>The connection state of this communication.</value>
-    [JsonConverter(typeof(JsonStringEnumConverter))]
+    
     public enum StateEnum
     {
         /// <summary>
@@ -65,7 +65,7 @@ public partial class Email : IEquatable<Email>
     /// The initial connection state of this communication.
     /// </summary>
     /// <value>The initial connection state of this communication.</value>
-    [JsonConverter(typeof(JsonStringEnumConverter))]
+    
     public enum InitialStateEnum
     {
         /// <summary>
@@ -116,7 +116,7 @@ public partial class Email : IEquatable<Email>
     /// The direction of the email
     /// </summary>
     /// <value>The direction of the email</value>
-    [JsonConverter(typeof(JsonStringEnumConverter))]
+    
     public enum DirectionEnum
     {
         /// <summary>
@@ -143,7 +143,7 @@ public partial class Email : IEquatable<Email>
     /// System defined string indicating what caused the communication to disconnect. Will be null until the communication disconnects.
     /// </summary>
     /// <value>System defined string indicating what caused the communication to disconnect. Will be null until the communication disconnects.</value>
-    [JsonConverter(typeof(JsonStringEnumConverter))]
+    
     public enum DisconnectTypeEnum
     {
         /// <summary>
@@ -254,25 +254,25 @@ public partial class Email : IEquatable<Email>
     /// The connection state of this communication.
     /// </summary>
     /// <value>The connection state of this communication.</value>
-    [DataMember(Name = "state", EmitDefaultValue = false)]
+    [JsonPropertyName("state")]
     public StateEnum? State { get; set; }
     /// <summary>
     /// The initial connection state of this communication.
     /// </summary>
     /// <value>The initial connection state of this communication.</value>
-    [DataMember(Name = "initialState", EmitDefaultValue = false)]
+    [JsonPropertyName("initialState")]
     public InitialStateEnum? InitialState { get; set; }
     /// <summary>
     /// The direction of the email
     /// </summary>
     /// <value>The direction of the email</value>
-    [DataMember(Name = "direction", EmitDefaultValue = false)]
+    [JsonPropertyName("direction")]
     public DirectionEnum? Direction { get; set; }
     /// <summary>
     /// System defined string indicating what caused the communication to disconnect. Will be null until the communication disconnects.
     /// </summary>
     /// <value>System defined string indicating what caused the communication to disconnect. Will be null until the communication disconnects.</value>
-    [DataMember(Name = "disconnectType", EmitDefaultValue = false)]
+    [JsonPropertyName("disconnectType")]
     public DisconnectTypeEnum? DisconnectType { get; set; }
     /// <summary>
     /// Initializes a new instance of the <see cref="Email" /> class.
@@ -346,7 +346,7 @@ public partial class Email : IEquatable<Email>
     /// A globally unique identifier for this communication.
     /// </summary>
     /// <value>A globally unique identifier for this communication.</value>
-    [DataMember(Name = "id", EmitDefaultValue = false)]
+    [JsonPropertyName("id")]
     public string Id { get; set; }
 
 
@@ -355,7 +355,7 @@ public partial class Email : IEquatable<Email>
     /// True if this call is held and the person on this side hears silence.
     /// </summary>
     /// <value>True if this call is held and the person on this side hears silence.</value>
-    [DataMember(Name = "held", EmitDefaultValue = false)]
+    [JsonPropertyName("held")]
     public bool? Held { get; set; }
 
 
@@ -364,7 +364,7 @@ public partial class Email : IEquatable<Email>
     /// The subject for the initial email that started this conversation.
     /// </summary>
     /// <value>The subject for the initial email that started this conversation.</value>
-    [DataMember(Name = "subject", EmitDefaultValue = false)]
+    [JsonPropertyName("subject")]
     public string Subject { get; set; }
 
 
@@ -373,7 +373,7 @@ public partial class Email : IEquatable<Email>
     /// The number of email messages sent by this participant.
     /// </summary>
     /// <value>The number of email messages sent by this participant.</value>
-    [DataMember(Name = "messagesSent", EmitDefaultValue = false)]
+    [JsonPropertyName("messagesSent")]
     public int? MessagesSent { get; set; }
 
 
@@ -382,7 +382,7 @@ public partial class Email : IEquatable<Email>
     /// The time line of the participant&#39;s email, divided into activity segments.
     /// </summary>
     /// <value>The time line of the participant&#39;s email, divided into activity segments.</value>
-    [DataMember(Name = "segments", EmitDefaultValue = false)]
+    [JsonPropertyName("segments")]
     public List<Segment> Segments { get; set; }
 
 
@@ -393,7 +393,7 @@ public partial class Email : IEquatable<Email>
     /// A globally unique identifier for the recording associated with this call.
     /// </summary>
     /// <value>A globally unique identifier for the recording associated with this call.</value>
-    [DataMember(Name = "recordingId", EmitDefaultValue = false)]
+    [JsonPropertyName("recordingId")]
     public string RecordingId { get; set; }
 
 
@@ -401,7 +401,7 @@ public partial class Email : IEquatable<Email>
     /// <summary>
     /// Gets or Sets ErrorInfo
     /// </summary>
-    [DataMember(Name = "errorInfo", EmitDefaultValue = false)]
+    [JsonPropertyName("errorInfo")]
     public ErrorBody ErrorInfo { get; set; }
 
 
@@ -412,7 +412,7 @@ public partial class Email : IEquatable<Email>
     /// The timestamp the email was placed on hold in the cloud clock if the email is currently on hold. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z
     /// </summary>
     /// <value>The timestamp the email was placed on hold in the cloud clock if the email is currently on hold. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z</value>
-    [DataMember(Name = "startHoldTime", EmitDefaultValue = false)]
+    [JsonPropertyName("startHoldTime")]
     public DateTime? StartHoldTime { get; set; }
 
 
@@ -421,7 +421,7 @@ public partial class Email : IEquatable<Email>
     /// The timestamp the communication has when it is first put into an alerting state. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z
     /// </summary>
     /// <value>The timestamp the communication has when it is first put into an alerting state. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z</value>
-    [DataMember(Name = "startAlertingTime", EmitDefaultValue = false)]
+    [JsonPropertyName("startAlertingTime")]
     public DateTime? StartAlertingTime { get; set; }
 
 
@@ -430,7 +430,7 @@ public partial class Email : IEquatable<Email>
     /// The timestamp when this communication was connected in the cloud clock. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z
     /// </summary>
     /// <value>The timestamp when this communication was connected in the cloud clock. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z</value>
-    [DataMember(Name = "connectedTime", EmitDefaultValue = false)]
+    [JsonPropertyName("connectedTime")]
     public DateTime? ConnectedTime { get; set; }
 
 
@@ -439,7 +439,7 @@ public partial class Email : IEquatable<Email>
     /// The timestamp when this communication disconnected from the conversation in the provider clock. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z
     /// </summary>
     /// <value>The timestamp when this communication disconnected from the conversation in the provider clock. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z</value>
-    [DataMember(Name = "disconnectedTime", EmitDefaultValue = false)]
+    [JsonPropertyName("disconnectedTime")]
     public DateTime? DisconnectedTime { get; set; }
 
 
@@ -448,7 +448,7 @@ public partial class Email : IEquatable<Email>
     /// Indicates that the email was auto-generated like an Out of Office reply.
     /// </summary>
     /// <value>Indicates that the email was auto-generated like an Out of Office reply.</value>
-    [DataMember(Name = "autoGenerated", EmitDefaultValue = false)]
+    [JsonPropertyName("autoGenerated")]
     public bool? AutoGenerated { get; set; }
 
 
@@ -457,7 +457,7 @@ public partial class Email : IEquatable<Email>
     /// The source provider for the email.
     /// </summary>
     /// <value>The source provider for the email.</value>
-    [DataMember(Name = "provider", EmitDefaultValue = false)]
+    [JsonPropertyName("provider")]
     public string Provider { get; set; }
 
 
@@ -466,7 +466,7 @@ public partial class Email : IEquatable<Email>
     /// The UUID of the script to use.
     /// </summary>
     /// <value>The UUID of the script to use.</value>
-    [DataMember(Name = "scriptId", EmitDefaultValue = false)]
+    [JsonPropertyName("scriptId")]
     public string ScriptId { get; set; }
 
 
@@ -475,7 +475,7 @@ public partial class Email : IEquatable<Email>
     /// The id of the peer communication corresponding to a matching leg for this communication.
     /// </summary>
     /// <value>The id of the peer communication corresponding to a matching leg for this communication.</value>
-    [DataMember(Name = "peerId", EmitDefaultValue = false)]
+    [JsonPropertyName("peerId")]
     public string PeerId { get; set; }
 
 
@@ -484,7 +484,7 @@ public partial class Email : IEquatable<Email>
     /// A globally unique identifier for the stored content of this communication.
     /// </summary>
     /// <value>A globally unique identifier for the stored content of this communication.</value>
-    [DataMember(Name = "messageId", EmitDefaultValue = false)]
+    [JsonPropertyName("messageId")]
     public string MessageId { get; set; }
 
 
@@ -493,7 +493,7 @@ public partial class Email : IEquatable<Email>
     /// A list of uploaded attachments on the email draft.
     /// </summary>
     /// <value>A list of uploaded attachments on the email draft.</value>
-    [DataMember(Name = "draftAttachments", EmitDefaultValue = false)]
+    [JsonPropertyName("draftAttachments")]
     public List<Attachment> DraftAttachments { get; set; }
 
 
@@ -502,7 +502,7 @@ public partial class Email : IEquatable<Email>
     /// Indicates if the inbound email was marked as spam.
     /// </summary>
     /// <value>Indicates if the inbound email was marked as spam.</value>
-    [DataMember(Name = "spam", EmitDefaultValue = false)]
+    [JsonPropertyName("spam")]
     public bool? Spam { get; set; }
 
 
@@ -511,7 +511,7 @@ public partial class Email : IEquatable<Email>
     /// Call wrap up or disposition data.
     /// </summary>
     /// <value>Call wrap up or disposition data.</value>
-    [DataMember(Name = "wrapup", EmitDefaultValue = false)]
+    [JsonPropertyName("wrapup")]
     public Wrapup Wrapup { get; set; }
 
 
@@ -520,7 +520,7 @@ public partial class Email : IEquatable<Email>
     /// After-call work for the communication.
     /// </summary>
     /// <value>After-call work for the communication.</value>
-    [DataMember(Name = "afterCallWork", EmitDefaultValue = false)]
+    [JsonPropertyName("afterCallWork")]
     public AfterCallWork AfterCallWork { get; set; }
 
 
@@ -529,7 +529,7 @@ public partial class Email : IEquatable<Email>
     /// Indicates if after-call work is required for a communication. Only used when the ACW Setting is Agent Requested.
     /// </summary>
     /// <value>Indicates if after-call work is required for a communication. Only used when the ACW Setting is Agent Requested.</value>
-    [DataMember(Name = "afterCallWorkRequired", EmitDefaultValue = false)]
+    [JsonPropertyName("afterCallWorkRequired")]
     public bool? AfterCallWorkRequired { get; set; }
 
 
@@ -538,7 +538,7 @@ public partial class Email : IEquatable<Email>
     /// Represents the queue settings for this media type.
     /// </summary>
     /// <value>Represents the queue settings for this media type.</value>
-    [DataMember(Name = "queueMediaSettings", EmitDefaultValue = false)]
+    [JsonPropertyName("queueMediaSettings")]
     public ConversationQueueMediaSettings QueueMediaSettings { get; set; }
 
 
@@ -547,7 +547,7 @@ public partial class Email : IEquatable<Email>
     /// Represents the time when an email was put into parked state. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z
     /// </summary>
     /// <value>Represents the time when an email was put into parked state. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z</value>
-    [DataMember(Name = "parkTime", EmitDefaultValue = false)]
+    [JsonPropertyName("parkTime")]
     public DateTime? ParkTime { get; set; }
 
 

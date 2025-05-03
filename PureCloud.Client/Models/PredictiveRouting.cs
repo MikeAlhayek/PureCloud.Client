@@ -1,12 +1,12 @@
-using System.Runtime.Serialization;
 using System.Text;
+using System.Text.Json.Serialization;
 
 namespace PureCloud.Client.Models;
 
 /// <summary>
 /// PredictiveRouting
 /// </summary>
-[DataContract]
+
 public partial class PredictiveRouting : IEquatable<PredictiveRouting>
 {
     /// <summary>
@@ -27,7 +27,7 @@ public partial class PredictiveRouting : IEquatable<PredictiveRouting>
     /// A switch used to determine if agent skills will be considered.
     /// </summary>
     /// <value>A switch used to determine if agent skills will be considered.</value>
-    [DataMember(Name = "respectSkills", EmitDefaultValue = false)]
+    [JsonPropertyName("respectSkills")]
     public bool? RespectSkills { get; set; }
 
 
@@ -36,7 +36,7 @@ public partial class PredictiveRouting : IEquatable<PredictiveRouting>
     /// A switch used to determine if conversations are weighted by conversation score when the system attempts to assign an agent a new conversation.
     /// </summary>
     /// <value>A switch used to determine if conversations are weighted by conversation score when the system attempts to assign an agent a new conversation.</value>
-    [DataMember(Name = "enableConversationScoreBiasing", EmitDefaultValue = false)]
+    [JsonPropertyName("enableConversationScoreBiasing")]
     public bool? EnableConversationScoreBiasing { get; set; }
 
 

@@ -1,4 +1,3 @@
-using System.Runtime.Serialization;
 using System.Text;
 using System.Text.Json.Serialization;
 
@@ -7,7 +6,7 @@ namespace PureCloud.Client.Models;
 /// <summary>
 /// KnowledgeDocumentSuggestionRequest
 /// </summary>
-[DataContract]
+
 public partial class KnowledgeDocumentSuggestionRequest : IEquatable<KnowledgeDocumentSuggestionRequest>
 {
 
@@ -40,7 +39,7 @@ public partial class KnowledgeDocumentSuggestionRequest : IEquatable<KnowledgeDo
     /// Query to get autocomplete suggestions for the matching knowledge documents.
     /// </summary>
     /// <value>Query to get autocomplete suggestions for the matching knowledge documents.</value>
-    [DataMember(Name = "query", EmitDefaultValue = false)]
+    [JsonPropertyName("query")]
     public string Query { get; set; }
 
 
@@ -49,7 +48,7 @@ public partial class KnowledgeDocumentSuggestionRequest : IEquatable<KnowledgeDo
     /// Page size of the returned results.
     /// </summary>
     /// <value>Page size of the returned results.</value>
-    [DataMember(Name = "pageSize", EmitDefaultValue = false)]
+    [JsonPropertyName("pageSize")]
     public int? PageSize { get; set; }
 
 
@@ -58,7 +57,7 @@ public partial class KnowledgeDocumentSuggestionRequest : IEquatable<KnowledgeDo
     /// Indicates whether the suggestion results would also include draft documents.
     /// </summary>
     /// <value>Indicates whether the suggestion results would also include draft documents.</value>
-    [DataMember(Name = "includeDraftDocuments", EmitDefaultValue = false)]
+    [JsonPropertyName("includeDraftDocuments")]
     public bool? IncludeDraftDocuments { get; set; }
 
 
@@ -67,7 +66,7 @@ public partial class KnowledgeDocumentSuggestionRequest : IEquatable<KnowledgeDo
     /// Retrieves the documents created/modified/published in specified date and time range.
     /// </summary>
     /// <value>Retrieves the documents created/modified/published in specified date and time range.</value>
-    [DataMember(Name = "interval", EmitDefaultValue = false)]
+    [JsonPropertyName("interval")]
     public DocumentQueryInterval Interval { get; set; }
 
 
@@ -76,7 +75,7 @@ public partial class KnowledgeDocumentSuggestionRequest : IEquatable<KnowledgeDo
     /// Filter for the document suggestions.
     /// </summary>
     /// <value>Filter for the document suggestions.</value>
-    [DataMember(Name = "filter", EmitDefaultValue = false)]
+    [JsonPropertyName("filter")]
     public DocumentQuery Filter { get; set; }
 
 

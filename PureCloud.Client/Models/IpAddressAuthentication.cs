@@ -1,12 +1,12 @@
-using System.Runtime.Serialization;
 using System.Text;
+using System.Text.Json.Serialization;
 
 namespace PureCloud.Client.Models;
 
 /// <summary>
 /// IpAddressAuthentication
 /// </summary>
-[DataContract]
+
 public partial class IpAddressAuthentication : IEquatable<IpAddressAuthentication>
 {
     /// <summary>
@@ -24,7 +24,7 @@ public partial class IpAddressAuthentication : IEquatable<IpAddressAuthenticatio
     /// <summary>
     /// Gets or Sets NetworkWhitelist
     /// </summary>
-    [DataMember(Name = "networkWhitelist", EmitDefaultValue = false)]
+    [JsonPropertyName("networkWhitelist")]
     public List<string> NetworkWhitelist { get; set; }
 
 

@@ -1,12 +1,12 @@
-using System.Runtime.Serialization;
 using System.Text;
+using System.Text.Json.Serialization;
 
 namespace PureCloud.Client.Models;
 
 /// <summary>
 /// LearningAssignmentAggregateResponse
 /// </summary>
-[DataContract]
+
 public partial class LearningAssignmentAggregateResponse : IEquatable<LearningAssignmentAggregateResponse>
 {
     /// <summary>
@@ -25,7 +25,7 @@ public partial class LearningAssignmentAggregateResponse : IEquatable<LearningAs
     /// The results of the query
     /// </summary>
     /// <value>The results of the query</value>
-    [DataMember(Name = "results", EmitDefaultValue = false)]
+    [JsonPropertyName("results")]
     public List<LearningAssignmentAggregateQueryResponseGroupedData> Results { get; set; }
 
 

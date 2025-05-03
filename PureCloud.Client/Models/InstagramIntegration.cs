@@ -7,14 +7,14 @@ namespace PureCloud.Client.Models;
 /// <summary>
 /// InstagramIntegration
 /// </summary>
-[DataContract]
+
 public partial class InstagramIntegration : IEquatable<InstagramIntegration>
 {
     /// <summary>
     /// Status of asynchronous create operation
     /// </summary>
     /// <value>Status of asynchronous create operation</value>
-    [JsonConverter(typeof(JsonStringEnumConverter))]
+    
     public enum CreateStatusEnum
     {
         /// <summary>
@@ -47,7 +47,7 @@ public partial class InstagramIntegration : IEquatable<InstagramIntegration>
     /// Status of asynchronous create operation
     /// </summary>
     /// <value>Status of asynchronous create operation</value>
-    [DataMember(Name = "createStatus", EmitDefaultValue = false)]
+    [JsonPropertyName("createStatus")]
     public CreateStatusEnum? CreateStatus { get; private set; }
 
     /// <summary>
@@ -99,7 +99,7 @@ public partial class InstagramIntegration : IEquatable<InstagramIntegration>
     /// A unique Integration ID.
     /// </summary>
     /// <value>A unique Integration ID.</value>
-    [DataMember(Name = "id", EmitDefaultValue = false)]
+    [JsonPropertyName("id")]
     public string Id { get; private set; }
 
 
@@ -108,7 +108,7 @@ public partial class InstagramIntegration : IEquatable<InstagramIntegration>
     /// The name of the Instagram Integration
     /// </summary>
     /// <value>The name of the Instagram Integration</value>
-    [DataMember(Name = "name", EmitDefaultValue = false)]
+    [JsonPropertyName("name")]
     public string Name { get; set; }
 
 
@@ -117,7 +117,7 @@ public partial class InstagramIntegration : IEquatable<InstagramIntegration>
     /// Defines the SupportedContent profile configured for an integration
     /// </summary>
     /// <value>Defines the SupportedContent profile configured for an integration</value>
-    [DataMember(Name = "supportedContent", EmitDefaultValue = false)]
+    [JsonPropertyName("supportedContent")]
     public SupportedContentReference SupportedContent { get; set; }
 
 
@@ -125,7 +125,7 @@ public partial class InstagramIntegration : IEquatable<InstagramIntegration>
     /// <summary>
     /// Gets or Sets MessagingSetting
     /// </summary>
-    [DataMember(Name = "messagingSetting", EmitDefaultValue = false)]
+    [JsonPropertyName("messagingSetting")]
     public MessagingSettingReference MessagingSetting { get; set; }
 
 
@@ -134,7 +134,7 @@ public partial class InstagramIntegration : IEquatable<InstagramIntegration>
     /// The App ID from Facebook
     /// </summary>
     /// <value>The App ID from Facebook</value>
-    [DataMember(Name = "appId", EmitDefaultValue = false)]
+    [JsonPropertyName("appId")]
     public string AppId { get; set; }
 
 
@@ -143,7 +143,7 @@ public partial class InstagramIntegration : IEquatable<InstagramIntegration>
     /// The Page ID from Instagram messenger
     /// </summary>
     /// <value>The Page ID from Instagram messenger</value>
-    [DataMember(Name = "pageId", EmitDefaultValue = false)]
+    [JsonPropertyName("pageId")]
     public string PageId { get; set; }
 
 
@@ -152,7 +152,7 @@ public partial class InstagramIntegration : IEquatable<InstagramIntegration>
     /// The ID from Instagram messenger
     /// </summary>
     /// <value>The ID from Instagram messenger</value>
-    [DataMember(Name = "instagramId", EmitDefaultValue = false)]
+    [JsonPropertyName("instagramId")]
     public string InstagramId { get; set; }
 
 
@@ -161,7 +161,7 @@ public partial class InstagramIntegration : IEquatable<InstagramIntegration>
     /// The Username from Instagram messenger
     /// </summary>
     /// <value>The Username from Instagram messenger</value>
-    [DataMember(Name = "instagramUsername", EmitDefaultValue = false)]
+    [JsonPropertyName("instagramUsername")]
     public string InstagramUsername { get; set; }
 
 
@@ -170,7 +170,7 @@ public partial class InstagramIntegration : IEquatable<InstagramIntegration>
     /// The name from Instagram messenger
     /// </summary>
     /// <value>The name from Instagram messenger</value>
-    [DataMember(Name = "instagramName", EmitDefaultValue = false)]
+    [JsonPropertyName("instagramName")]
     public string InstagramName { get; set; }
 
 
@@ -179,7 +179,7 @@ public partial class InstagramIntegration : IEquatable<InstagramIntegration>
     /// The url of the profile image from Instagram messenger
     /// </summary>
     /// <value>The url of the profile image from Instagram messenger</value>
-    [DataMember(Name = "instagramProfileImageUrl", EmitDefaultValue = false)]
+    [JsonPropertyName("instagramProfileImageUrl")]
     public string InstagramProfileImageUrl { get; set; }
 
 
@@ -188,7 +188,7 @@ public partial class InstagramIntegration : IEquatable<InstagramIntegration>
     /// The status of the Instagram Integration
     /// </summary>
     /// <value>The status of the Instagram Integration</value>
-    [DataMember(Name = "status", EmitDefaultValue = false)]
+    [JsonPropertyName("status")]
     public string Status { get; set; }
 
 
@@ -197,7 +197,7 @@ public partial class InstagramIntegration : IEquatable<InstagramIntegration>
     /// The recipient reference associated to the Instagram Integration. This recipient is used to associate a flow to an integration
     /// </summary>
     /// <value>The recipient reference associated to the Instagram Integration. This recipient is used to associate a flow to an integration</value>
-    [DataMember(Name = "recipient", EmitDefaultValue = false)]
+    [JsonPropertyName("recipient")]
     public DomainEntityRef Recipient { get; private set; }
 
 
@@ -206,7 +206,7 @@ public partial class InstagramIntegration : IEquatable<InstagramIntegration>
     /// Date this Integration was created. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z
     /// </summary>
     /// <value>Date this Integration was created. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z</value>
-    [DataMember(Name = "dateCreated", EmitDefaultValue = false)]
+    [JsonPropertyName("dateCreated")]
     public DateTime? DateCreated { get; set; }
 
 
@@ -215,7 +215,7 @@ public partial class InstagramIntegration : IEquatable<InstagramIntegration>
     /// Date this Integration was modified. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z
     /// </summary>
     /// <value>Date this Integration was modified. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z</value>
-    [DataMember(Name = "dateModified", EmitDefaultValue = false)]
+    [JsonPropertyName("dateModified")]
     public DateTime? DateModified { get; set; }
 
 
@@ -224,7 +224,7 @@ public partial class InstagramIntegration : IEquatable<InstagramIntegration>
     /// User reference that created this Integration
     /// </summary>
     /// <value>User reference that created this Integration</value>
-    [DataMember(Name = "createdBy", EmitDefaultValue = false)]
+    [JsonPropertyName("createdBy")]
     public DomainEntityRef CreatedBy { get; set; }
 
 
@@ -233,7 +233,7 @@ public partial class InstagramIntegration : IEquatable<InstagramIntegration>
     /// User reference that last modified this Integration
     /// </summary>
     /// <value>User reference that last modified this Integration</value>
-    [DataMember(Name = "modifiedBy", EmitDefaultValue = false)]
+    [JsonPropertyName("modifiedBy")]
     public DomainEntityRef ModifiedBy { get; set; }
 
 
@@ -242,7 +242,7 @@ public partial class InstagramIntegration : IEquatable<InstagramIntegration>
     /// Version number required for updates.
     /// </summary>
     /// <value>Version number required for updates.</value>
-    [DataMember(Name = "version", EmitDefaultValue = false)]
+    [JsonPropertyName("version")]
     public int? Version { get; set; }
 
 
@@ -253,7 +253,7 @@ public partial class InstagramIntegration : IEquatable<InstagramIntegration>
     /// Error information returned, if createStatus is set to Error
     /// </summary>
     /// <value>Error information returned, if createStatus is set to Error</value>
-    [DataMember(Name = "createError", EmitDefaultValue = false)]
+    [JsonPropertyName("createError")]
     public ErrorBody CreateError { get; private set; }
 
 
@@ -262,7 +262,7 @@ public partial class InstagramIntegration : IEquatable<InstagramIntegration>
     /// The URI for this object
     /// </summary>
     /// <value>The URI for this object</value>
-    [DataMember(Name = "selfUri", EmitDefaultValue = false)]
+    [JsonPropertyName("selfUri")]
     public string SelfUri { get; private set; }
 
 

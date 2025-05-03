@@ -1,12 +1,12 @@
-using System.Runtime.Serialization;
 using System.Text;
+using System.Text.Json.Serialization;
 
 namespace PureCloud.Client.Models;
 
 /// <summary>
 /// MoveAgentsResponse
 /// </summary>
-[DataContract]
+
 public partial class MoveAgentsResponse : IEquatable<MoveAgentsResponse>
 {
     /// <summary>
@@ -29,7 +29,7 @@ public partial class MoveAgentsResponse : IEquatable<MoveAgentsResponse>
     /// The user that made the request
     /// </summary>
     /// <value>The user that made the request</value>
-    [DataMember(Name = "requestingUser", EmitDefaultValue = false)]
+    [JsonPropertyName("requestingUser")]
     public UserReference RequestingUser { get; set; }
 
 
@@ -38,7 +38,7 @@ public partial class MoveAgentsResponse : IEquatable<MoveAgentsResponse>
     /// The management unit specified on the request
     /// </summary>
     /// <value>The management unit specified on the request</value>
-    [DataMember(Name = "destinationManagementUnit", EmitDefaultValue = false)]
+    [JsonPropertyName("destinationManagementUnit")]
     public ManagementUnitReference DestinationManagementUnit { get; set; }
 
 
@@ -47,7 +47,7 @@ public partial class MoveAgentsResponse : IEquatable<MoveAgentsResponse>
     /// The list containing the agent and result of the move operation
     /// </summary>
     /// <value>The list containing the agent and result of the move operation</value>
-    [DataMember(Name = "results", EmitDefaultValue = false)]
+    [JsonPropertyName("results")]
     public List<MoveAgentResponse> Results { get; set; }
 
 

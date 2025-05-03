@@ -1,12 +1,12 @@
-using System.Runtime.Serialization;
 using System.Text;
+using System.Text.Json.Serialization;
 
 namespace PureCloud.Client.Models;
 
 /// <summary>
 /// WorkPlanOverrideListWrapperWorkPlanOverrideRequest
 /// </summary>
-[DataContract]
+
 public partial class WorkPlanOverrideListWrapperWorkPlanOverrideRequest : IEquatable<WorkPlanOverrideListWrapperWorkPlanOverrideRequest>
 {
     /// <summary>
@@ -26,7 +26,7 @@ public partial class WorkPlanOverrideListWrapperWorkPlanOverrideRequest : IEquat
     /// <summary>
     /// Gets or Sets Values
     /// </summary>
-    [DataMember(Name = "values", EmitDefaultValue = false)]
+    [JsonPropertyName("values")]
     public List<WorkPlanOverrideRequest> Values { get; set; }
 
 
@@ -35,7 +35,7 @@ public partial class WorkPlanOverrideListWrapperWorkPlanOverrideRequest : IEquat
     /// if true, should delete all existing overrides for the agent and update the given overrides
     /// </summary>
     /// <value>if true, should delete all existing overrides for the agent and update the given overrides</value>
-    [DataMember(Name = "deleteAll", EmitDefaultValue = false)]
+    [JsonPropertyName("deleteAll")]
     public bool? DeleteAll { get; set; }
 
 

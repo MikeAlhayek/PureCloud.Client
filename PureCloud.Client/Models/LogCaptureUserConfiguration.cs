@@ -7,14 +7,14 @@ namespace PureCloud.Client.Models;
 /// <summary>
 /// LogCaptureUserConfiguration
 /// </summary>
-[DataContract]
+
 public partial class LogCaptureUserConfiguration : IEquatable<LogCaptureUserConfiguration>
 {
     /// <summary>
     /// Indicates the method by which the logs were captured.
     /// </summary>
     /// <value>Indicates the method by which the logs were captured.</value>
-    [JsonConverter(typeof(JsonStringEnumConverter))]
+    
     public enum CaptureMethodEnum
     {
         /// <summary>
@@ -41,7 +41,7 @@ public partial class LogCaptureUserConfiguration : IEquatable<LogCaptureUserConf
     /// Indicates the method by which the logs were captured.
     /// </summary>
     /// <value>Indicates the method by which the logs were captured.</value>
-    [DataMember(Name = "captureMethod", EmitDefaultValue = false)]
+    [JsonPropertyName("captureMethod")]
     public CaptureMethodEnum? CaptureMethod { get; private set; }
 
     /// <summary>
@@ -65,7 +65,7 @@ public partial class LogCaptureUserConfiguration : IEquatable<LogCaptureUserConf
     /// The globally unique identifier for the object.
     /// </summary>
     /// <value>The globally unique identifier for the object.</value>
-    [DataMember(Name = "id", EmitDefaultValue = false)]
+    [JsonPropertyName("id")]
     public string Id { get; private set; }
 
 
@@ -74,7 +74,7 @@ public partial class LogCaptureUserConfiguration : IEquatable<LogCaptureUserConf
     /// Indicates when log capture was enabled for the user. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z
     /// </summary>
     /// <value>Indicates when log capture was enabled for the user. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z</value>
-    [DataMember(Name = "dateStarted", EmitDefaultValue = false)]
+    [JsonPropertyName("dateStarted")]
     public DateTime? DateStarted { get; private set; }
 
 
@@ -83,7 +83,7 @@ public partial class LogCaptureUserConfiguration : IEquatable<LogCaptureUserConf
     /// Indicates when log capture will be turned off for the user. (Must be within 24 hours). Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z
     /// </summary>
     /// <value>Indicates when log capture will be turned off for the user. (Must be within 24 hours). Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z</value>
-    [DataMember(Name = "dateExpired", EmitDefaultValue = false)]
+    [JsonPropertyName("dateExpired")]
     public DateTime? DateExpired { get; set; }
 
 
@@ -94,7 +94,7 @@ public partial class LogCaptureUserConfiguration : IEquatable<LogCaptureUserConf
     /// The URI for this object
     /// </summary>
     /// <value>The URI for this object</value>
-    [DataMember(Name = "selfUri", EmitDefaultValue = false)]
+    [JsonPropertyName("selfUri")]
     public string SelfUri { get; private set; }
 
 

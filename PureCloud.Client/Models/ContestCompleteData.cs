@@ -7,14 +7,14 @@ namespace PureCloud.Client.Models;
 /// <summary>
 /// ContestCompleteData
 /// </summary>
-[DataContract]
+
 public partial class ContestCompleteData : IEquatable<ContestCompleteData>
 {
     /// <summary>
     /// Anonymization of the contest
     /// </summary>
     /// <value>Anonymization of the contest</value>
-    [JsonConverter(typeof(JsonStringEnumConverter))]
+    
     public enum AnonymizationEnum
     {
         /// <summary>
@@ -47,7 +47,7 @@ public partial class ContestCompleteData : IEquatable<ContestCompleteData>
     /// Anonymization of the contest
     /// </summary>
     /// <value>Anonymization of the contest</value>
-    [DataMember(Name = "anonymization", EmitDefaultValue = false)]
+    [JsonPropertyName("anonymization")]
     public AnonymizationEnum? Anonymization { get; set; }
     /// <summary>
     /// Initializes a new instance of the <see cref="ContestCompleteData" /> class.
@@ -73,7 +73,7 @@ public partial class ContestCompleteData : IEquatable<ContestCompleteData>
     /// End date of the contest. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd
     /// </summary>
     /// <value>End date of the contest. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd</value>
-    [DataMember(Name = "dateEnd", EmitDefaultValue = false)]
+    [JsonPropertyName("dateEnd")]
     public string DateEnd { get; set; }
 
 
@@ -84,7 +84,7 @@ public partial class ContestCompleteData : IEquatable<ContestCompleteData>
     /// Metrics of the contest
     /// </summary>
     /// <value>Metrics of the contest</value>
-    [DataMember(Name = "metrics", EmitDefaultValue = false)]
+    [JsonPropertyName("metrics")]
     public List<ContestDataMetrics> Metrics { get; set; }
 
 
@@ -93,7 +93,7 @@ public partial class ContestCompleteData : IEquatable<ContestCompleteData>
     /// Prizes of the contest
     /// </summary>
     /// <value>Prizes of the contest</value>
-    [DataMember(Name = "prizes", EmitDefaultValue = false)]
+    [JsonPropertyName("prizes")]
     public List<ContestDataPrizes> Prizes { get; set; }
 
 
@@ -102,7 +102,7 @@ public partial class ContestCompleteData : IEquatable<ContestCompleteData>
     /// Winners of the contest
     /// </summary>
     /// <value>Winners of the contest</value>
-    [DataMember(Name = "winners", EmitDefaultValue = false)]
+    [JsonPropertyName("winners")]
     public List<ContestDataWinners> Winners { get; set; }
 
 

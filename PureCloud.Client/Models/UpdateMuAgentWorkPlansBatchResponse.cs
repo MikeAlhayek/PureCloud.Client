@@ -1,4 +1,3 @@
-using System.Runtime.Serialization;
 using System.Text;
 using System.Text.Json.Serialization;
 
@@ -7,7 +6,7 @@ namespace PureCloud.Client.Models;
 /// <summary>
 /// UpdateMuAgentWorkPlansBatchResponse
 /// </summary>
-[DataContract]
+
 public partial class UpdateMuAgentWorkPlansBatchResponse : IEquatable<UpdateMuAgentWorkPlansBatchResponse>
 {
 
@@ -32,7 +31,7 @@ public partial class UpdateMuAgentWorkPlansBatchResponse : IEquatable<UpdateMuAg
     /// The work plan update failures
     /// </summary>
     /// <value>The work plan update failures</value>
-    [DataMember(Name = "failures", EmitDefaultValue = false)]
+    [JsonPropertyName("failures")]
     public List<UpdateMuAgentWorkPlanFailureResponse> Failures { get; set; }
 
 

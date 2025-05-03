@@ -1,4 +1,3 @@
-using System.Runtime.Serialization;
 using System.Text;
 using System.Text.Json.Serialization;
 
@@ -7,7 +6,7 @@ namespace PureCloud.Client.Models;
 /// <summary>
 /// ContactImportJobRequest
 /// </summary>
-[DataContract]
+
 public partial class ContactImportJobRequest : IEquatable<ContactImportJobRequest>
 {
 
@@ -32,7 +31,7 @@ public partial class ContactImportJobRequest : IEquatable<ContactImportJobReques
     /// Settings id
     /// </summary>
     /// <value>Settings id</value>
-    [DataMember(Name = "settingsId", EmitDefaultValue = false)]
+    [JsonPropertyName("settingsId")]
     public string SettingsId { get; set; }
 
 

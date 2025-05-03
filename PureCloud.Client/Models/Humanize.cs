@@ -1,12 +1,12 @@
-using System.Runtime.Serialization;
 using System.Text;
+using System.Text.Json.Serialization;
 
 namespace PureCloud.Client.Models;
 
 /// <summary>
 /// Humanize
 /// </summary>
-[DataContract]
+
 public partial class Humanize : IEquatable<Humanize>
 {
     /// <summary>
@@ -27,7 +27,7 @@ public partial class Humanize : IEquatable<Humanize>
     /// Whether or not humanize conversations setting is enabled
     /// </summary>
     /// <value>Whether or not humanize conversations setting is enabled</value>
-    [DataMember(Name = "enabled", EmitDefaultValue = false)]
+    [JsonPropertyName("enabled")]
     public bool? Enabled { get; set; }
 
 
@@ -36,7 +36,7 @@ public partial class Humanize : IEquatable<Humanize>
     /// Bot messenger profile setting
     /// </summary>
     /// <value>Bot messenger profile setting</value>
-    [DataMember(Name = "bot", EmitDefaultValue = false)]
+    [JsonPropertyName("bot")]
     public BotMessengerProfile Bot { get; set; }
 
 

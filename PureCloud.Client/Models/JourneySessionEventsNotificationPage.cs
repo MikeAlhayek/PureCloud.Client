@@ -1,12 +1,12 @@
-using System.Runtime.Serialization;
 using System.Text;
+using System.Text.Json.Serialization;
 
 namespace PureCloud.Client.Models;
 
 /// <summary>
 /// JourneySessionEventsNotificationPage
 /// </summary>
-[DataContract]
+
 public partial class JourneySessionEventsNotificationPage : IEquatable<JourneySessionEventsNotificationPage>
 {
     /// <summary>
@@ -42,7 +42,7 @@ public partial class JourneySessionEventsNotificationPage : IEquatable<JourneySe
     /// <summary>
     /// Gets or Sets Url
     /// </summary>
-    [DataMember(Name = "url", EmitDefaultValue = false)]
+    [JsonPropertyName("url")]
     public string Url { get; set; }
 
 
@@ -50,7 +50,7 @@ public partial class JourneySessionEventsNotificationPage : IEquatable<JourneySe
     /// <summary>
     /// Gets or Sets Title
     /// </summary>
-    [DataMember(Name = "title", EmitDefaultValue = false)]
+    [JsonPropertyName("title")]
     public string Title { get; set; }
 
 
@@ -58,7 +58,7 @@ public partial class JourneySessionEventsNotificationPage : IEquatable<JourneySe
     /// <summary>
     /// Gets or Sets Domain
     /// </summary>
-    [DataMember(Name = "domain", EmitDefaultValue = false)]
+    [JsonPropertyName("domain")]
     public string Domain { get; set; }
 
 
@@ -66,7 +66,7 @@ public partial class JourneySessionEventsNotificationPage : IEquatable<JourneySe
     /// <summary>
     /// Gets or Sets Fragment
     /// </summary>
-    [DataMember(Name = "fragment", EmitDefaultValue = false)]
+    [JsonPropertyName("fragment")]
     public string Fragment { get; set; }
 
 
@@ -74,7 +74,7 @@ public partial class JourneySessionEventsNotificationPage : IEquatable<JourneySe
     /// <summary>
     /// Gets or Sets Hostname
     /// </summary>
-    [DataMember(Name = "hostname", EmitDefaultValue = false)]
+    [JsonPropertyName("hostname")]
     public string Hostname { get; set; }
 
 
@@ -82,7 +82,7 @@ public partial class JourneySessionEventsNotificationPage : IEquatable<JourneySe
     /// <summary>
     /// Gets or Sets Keywords
     /// </summary>
-    [DataMember(Name = "keywords", EmitDefaultValue = false)]
+    [JsonPropertyName("keywords")]
     public string Keywords { get; set; }
 
 
@@ -90,7 +90,7 @@ public partial class JourneySessionEventsNotificationPage : IEquatable<JourneySe
     /// <summary>
     /// Gets or Sets Lang
     /// </summary>
-    [DataMember(Name = "lang", EmitDefaultValue = false)]
+    [JsonPropertyName("lang")]
     public string Lang { get; set; }
 
 
@@ -98,7 +98,7 @@ public partial class JourneySessionEventsNotificationPage : IEquatable<JourneySe
     /// <summary>
     /// Gets or Sets Pathname
     /// </summary>
-    [DataMember(Name = "pathname", EmitDefaultValue = false)]
+    [JsonPropertyName("pathname")]
     public string Pathname { get; set; }
 
 
@@ -106,7 +106,7 @@ public partial class JourneySessionEventsNotificationPage : IEquatable<JourneySe
     /// <summary>
     /// Gets or Sets QueryString
     /// </summary>
-    [DataMember(Name = "queryString", EmitDefaultValue = false)]
+    [JsonPropertyName("queryString")]
     public string QueryString { get; set; }
 
 
@@ -114,7 +114,7 @@ public partial class JourneySessionEventsNotificationPage : IEquatable<JourneySe
     /// <summary>
     /// Gets or Sets Breadcrumb
     /// </summary>
-    [DataMember(Name = "breadcrumb", EmitDefaultValue = false)]
+    [JsonPropertyName("breadcrumb")]
     public List<string> Breadcrumb { get; set; }
 
 

@@ -7,13 +7,13 @@ namespace PureCloud.Client.Models;
 /// <summary>
 /// PerformancePredictionRecalculationCompleteEventTopicPerformancePredictionUserRecalculationNotification
 /// </summary>
-[DataContract]
+
 public partial class PerformancePredictionRecalculationCompleteEventTopicPerformancePredictionUserRecalculationNotification : IEquatable<PerformancePredictionRecalculationCompleteEventTopicPerformancePredictionUserRecalculationNotification>
 {
     /// <summary>
     /// Gets or Sets State
     /// </summary>
-    [JsonConverter(typeof(JsonStringEnumConverter))]
+    
     public enum StateEnum
     {
         /// <summary>
@@ -51,7 +51,7 @@ public partial class PerformancePredictionRecalculationCompleteEventTopicPerform
     /// <summary>
     /// Gets or Sets State
     /// </summary>
-    [DataMember(Name = "state", EmitDefaultValue = false)]
+    [JsonPropertyName("state")]
     public StateEnum? State { get; set; }
     /// <summary>
     /// Initializes a new instance of the <see cref="PerformancePredictionRecalculationCompleteEventTopicPerformancePredictionUserRecalculationNotification" /> class.
@@ -74,7 +74,7 @@ public partial class PerformancePredictionRecalculationCompleteEventTopicPerform
     /// <summary>
     /// Gets or Sets OperationId
     /// </summary>
-    [DataMember(Name = "operationId", EmitDefaultValue = false)]
+    [JsonPropertyName("operationId")]
     public string OperationId { get; set; }
 
 
@@ -82,7 +82,7 @@ public partial class PerformancePredictionRecalculationCompleteEventTopicPerform
     /// <summary>
     /// Gets or Sets DownloadUrl
     /// </summary>
-    [DataMember(Name = "downloadUrl", EmitDefaultValue = false)]
+    [JsonPropertyName("downloadUrl")]
     public string DownloadUrl { get; set; }
 
 
@@ -92,7 +92,7 @@ public partial class PerformancePredictionRecalculationCompleteEventTopicPerform
     /// <summary>
     /// Gets or Sets Error
     /// </summary>
-    [DataMember(Name = "error", EmitDefaultValue = false)]
+    [JsonPropertyName("error")]
     public PerformancePredictionRecalculationCompleteEventTopicErrorBody Error { get; set; }
 
 

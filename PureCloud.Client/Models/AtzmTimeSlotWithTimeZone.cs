@@ -1,12 +1,12 @@
-using System.Runtime.Serialization;
 using System.Text;
+using System.Text.Json.Serialization;
 
 namespace PureCloud.Client.Models;
 
 /// <summary>
 /// AtzmTimeSlotWithTimeZone
 /// </summary>
-[DataContract]
+
 public partial class AtzmTimeSlotWithTimeZone : IEquatable<AtzmTimeSlotWithTimeZone>
 {
     /// <summary>
@@ -29,7 +29,7 @@ public partial class AtzmTimeSlotWithTimeZone : IEquatable<AtzmTimeSlotWithTimeZ
     /// The earliest time to dial a contact. Valid format is HH:mm
     /// </summary>
     /// <value>The earliest time to dial a contact. Valid format is HH:mm</value>
-    [DataMember(Name = "earliestCallableTime", EmitDefaultValue = false)]
+    [JsonPropertyName("earliestCallableTime")]
     public string EarliestCallableTime { get; set; }
 
 
@@ -38,7 +38,7 @@ public partial class AtzmTimeSlotWithTimeZone : IEquatable<AtzmTimeSlotWithTimeZ
     /// The latest time to dial a contact. Valid format is HH:mm
     /// </summary>
     /// <value>The latest time to dial a contact. Valid format is HH:mm</value>
-    [DataMember(Name = "latestCallableTime", EmitDefaultValue = false)]
+    [JsonPropertyName("latestCallableTime")]
     public string LatestCallableTime { get; set; }
 
 
@@ -47,7 +47,7 @@ public partial class AtzmTimeSlotWithTimeZone : IEquatable<AtzmTimeSlotWithTimeZ
     /// The time zone to use for contacts that cannot be mapped.
     /// </summary>
     /// <value>The time zone to use for contacts that cannot be mapped.</value>
-    [DataMember(Name = "timeZoneId", EmitDefaultValue = false)]
+    [JsonPropertyName("timeZoneId")]
     public string TimeZoneId { get; set; }
 
 

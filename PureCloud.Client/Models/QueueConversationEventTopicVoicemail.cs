@@ -7,14 +7,14 @@ namespace PureCloud.Client.Models;
 /// <summary>
 /// The voicemail data to be used when this callback is an ACD voicemail.
 /// </summary>
-[DataContract]
+
 public partial class QueueConversationEventTopicVoicemail : IEquatable<QueueConversationEventTopicVoicemail>
 {
     /// <summary>
     /// current state of the voicemail upload
     /// </summary>
     /// <value>current state of the voicemail upload</value>
-    [JsonConverter(typeof(JsonStringEnumConverter))]
+    
     public enum UploadStatusEnum
     {
         /// <summary>
@@ -59,7 +59,7 @@ public partial class QueueConversationEventTopicVoicemail : IEquatable<QueueConv
     /// current state of the voicemail upload
     /// </summary>
     /// <value>current state of the voicemail upload</value>
-    [DataMember(Name = "uploadStatus", EmitDefaultValue = false)]
+    [JsonPropertyName("uploadStatus")]
     public UploadStatusEnum? UploadStatus { get; set; }
     /// <summary>
     /// Initializes a new instance of the <see cref="QueueConversationEventTopicVoicemail" /> class.
@@ -79,7 +79,7 @@ public partial class QueueConversationEventTopicVoicemail : IEquatable<QueueConv
     /// The voicemail id
     /// </summary>
     /// <value>The voicemail id</value>
-    [DataMember(Name = "id", EmitDefaultValue = false)]
+    [JsonPropertyName("id")]
     public string Id { get; set; }
 
 

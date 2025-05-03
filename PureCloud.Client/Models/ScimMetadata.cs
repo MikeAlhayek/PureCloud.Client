@@ -7,14 +7,14 @@ namespace PureCloud.Client.Models;
 /// <summary>
 /// Defines the SCIM metadata.
 /// </summary>
-[DataContract]
+
 public partial class ScimMetadata : IEquatable<ScimMetadata>
 {
     /// <summary>
     /// The type of SCIM resource.
     /// </summary>
     /// <value>The type of SCIM resource.</value>
-    [JsonConverter(typeof(JsonStringEnumConverter))]
+    
     public enum ResourceTypeEnum
     {
         /// <summary>
@@ -59,7 +59,7 @@ public partial class ScimMetadata : IEquatable<ScimMetadata>
     /// The type of SCIM resource.
     /// </summary>
     /// <value>The type of SCIM resource.</value>
-    [DataMember(Name = "resourceType", EmitDefaultValue = false)]
+    [JsonPropertyName("resourceType")]
     public ResourceTypeEnum? ResourceType { get; private set; }
     /// <summary>
     /// Initializes a new instance of the <see cref="ScimMetadata" /> class.
@@ -77,7 +77,7 @@ public partial class ScimMetadata : IEquatable<ScimMetadata>
     /// The last time that the resource was modified. Date time is represented as an \&quot;ISO-8601 string\&quot;, for example, yyyy-MM-ddTHH:mm:ss.SSSZ. Not included with \&quot;Schema\&quot; and \&quot;ResourceType\&quot; resources.
     /// </summary>
     /// <value>The last time that the resource was modified. Date time is represented as an \&quot;ISO-8601 string\&quot;, for example, yyyy-MM-ddTHH:mm:ss.SSSZ. Not included with \&quot;Schema\&quot; and \&quot;ResourceType\&quot; resources.</value>
-    [DataMember(Name = "lastModified", EmitDefaultValue = false)]
+    [JsonPropertyName("lastModified")]
     public DateTime? LastModified { get; private set; }
 
 
@@ -86,7 +86,7 @@ public partial class ScimMetadata : IEquatable<ScimMetadata>
     /// The URI of the resource.
     /// </summary>
     /// <value>The URI of the resource.</value>
-    [DataMember(Name = "location", EmitDefaultValue = false)]
+    [JsonPropertyName("location")]
     public string Location { get; private set; }
 
 
@@ -95,7 +95,7 @@ public partial class ScimMetadata : IEquatable<ScimMetadata>
     /// The version of the resource. Matches the ETag HTTP response header. Not included with \&quot;Schema\&quot; and \&quot;ResourceType\&quot; resources.
     /// </summary>
     /// <value>The version of the resource. Matches the ETag HTTP response header. Not included with \&quot;Schema\&quot; and \&quot;ResourceType\&quot; resources.</value>
-    [DataMember(Name = "version", EmitDefaultValue = false)]
+    [JsonPropertyName("version")]
     public string Version { get; private set; }
 
 

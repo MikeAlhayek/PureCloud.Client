@@ -1,4 +1,3 @@
-using System.Runtime.Serialization;
 using System.Text;
 using System.Text.Json.Serialization;
 
@@ -7,7 +6,7 @@ namespace PureCloud.Client.Models;
 /// <summary>
 /// Settings for launching an instance of a bot flow.
 /// </summary>
-[DataContract]
+
 public partial class TextBotFlowLaunchRequest : IEquatable<TextBotFlowLaunchRequest>
 {
 
@@ -42,7 +41,7 @@ public partial class TextBotFlowLaunchRequest : IEquatable<TextBotFlowLaunchRequ
     /// Specifies which Bot Flow to launch.
     /// </summary>
     /// <value>Specifies which Bot Flow to launch.</value>
-    [DataMember(Name = "flow", EmitDefaultValue = false)]
+    [JsonPropertyName("flow")]
     public TextBotFlow Flow { get; set; }
 
 
@@ -51,7 +50,7 @@ public partial class TextBotFlowLaunchRequest : IEquatable<TextBotFlowLaunchRequ
     /// The ID of the external session that is associated with the bot flow.
     /// </summary>
     /// <value>The ID of the external session that is associated with the bot flow.</value>
-    [DataMember(Name = "externalSessionId", EmitDefaultValue = false)]
+    [JsonPropertyName("externalSessionId")]
     public string ExternalSessionId { get; set; }
 
 
@@ -60,7 +59,7 @@ public partial class TextBotFlowLaunchRequest : IEquatable<TextBotFlowLaunchRequ
     /// A conversation ID to associate with the bot flow, if available.
     /// </summary>
     /// <value>A conversation ID to associate with the bot flow, if available.</value>
-    [DataMember(Name = "conversationId", EmitDefaultValue = false)]
+    [JsonPropertyName("conversationId")]
     public string ConversationId { get; set; }
 
 
@@ -69,7 +68,7 @@ public partial class TextBotFlowLaunchRequest : IEquatable<TextBotFlowLaunchRequ
     /// Input values to the flow. Valid values are defined by the flow&#39;s input JSON schema.
     /// </summary>
     /// <value>Input values to the flow. Valid values are defined by the flow&#39;s input JSON schema.</value>
-    [DataMember(Name = "inputData", EmitDefaultValue = false)]
+    [JsonPropertyName("inputData")]
     public TextBotInputOutputData InputData { get; set; }
 
 
@@ -78,7 +77,7 @@ public partial class TextBotFlowLaunchRequest : IEquatable<TextBotFlowLaunchRequ
     /// Channel information relevant to the bot flow.
     /// </summary>
     /// <value>Channel information relevant to the bot flow.</value>
-    [DataMember(Name = "channel", EmitDefaultValue = false)]
+    [JsonPropertyName("channel")]
     public TextBotChannel Channel { get; set; }
 
 
@@ -87,7 +86,7 @@ public partial class TextBotFlowLaunchRequest : IEquatable<TextBotFlowLaunchRequ
     /// The language that the bot will use in the session. Validated against list of supported languages and if the value is omitted or is invalid, the default language will be used.
     /// </summary>
     /// <value>The language that the bot will use in the session. Validated against list of supported languages and if the value is omitted or is invalid, the default language will be used.</value>
-    [DataMember(Name = "language", EmitDefaultValue = false)]
+    [JsonPropertyName("language")]
     public string Language { get; set; }
 
 

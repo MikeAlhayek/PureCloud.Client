@@ -1,12 +1,12 @@
-using System.Runtime.Serialization;
 using System.Text;
+using System.Text.Json.Serialization;
 
 namespace PureCloud.Client.Models;
 
 /// <summary>
 /// ExternalOrganizationTrustorLink
 /// </summary>
-[DataContract]
+
 public partial class ExternalOrganizationTrustorLink : IEquatable<ExternalOrganizationTrustorLink>
 {
     /// <summary>
@@ -31,7 +31,7 @@ public partial class ExternalOrganizationTrustorLink : IEquatable<ExternalOrgani
     /// The globally unique identifier for the object.
     /// </summary>
     /// <value>The globally unique identifier for the object.</value>
-    [DataMember(Name = "id", EmitDefaultValue = false)]
+    [JsonPropertyName("id")]
     public string Id { get; private set; }
 
 
@@ -40,7 +40,7 @@ public partial class ExternalOrganizationTrustorLink : IEquatable<ExternalOrgani
     /// The division to which this entity belongs.
     /// </summary>
     /// <value>The division to which this entity belongs.</value>
-    [DataMember(Name = "division", EmitDefaultValue = false)]
+    [JsonPropertyName("division")]
     public WritableStarrableDivision Division { get; set; }
 
 
@@ -49,7 +49,7 @@ public partial class ExternalOrganizationTrustorLink : IEquatable<ExternalOrgani
     /// The id of a PureCloudEnvironment External Organization entity in the External Contacts system that will be used to represent the trustor org
     /// </summary>
     /// <value>The id of a PureCloudEnvironment External Organization entity in the External Contacts system that will be used to represent the trustor org</value>
-    [DataMember(Name = "externalOrganizationId", EmitDefaultValue = false)]
+    [JsonPropertyName("externalOrganizationId")]
     public string ExternalOrganizationId { get; set; }
 
 
@@ -58,7 +58,7 @@ public partial class ExternalOrganizationTrustorLink : IEquatable<ExternalOrgani
     /// The id of a PureCloudEnvironment organization that has granted trust to this PureCloudEnvironment organization
     /// </summary>
     /// <value>The id of a PureCloudEnvironment organization that has granted trust to this PureCloudEnvironment organization</value>
-    [DataMember(Name = "trustorOrgId", EmitDefaultValue = false)]
+    [JsonPropertyName("trustorOrgId")]
     public string TrustorOrgId { get; set; }
 
 
@@ -67,7 +67,7 @@ public partial class ExternalOrganizationTrustorLink : IEquatable<ExternalOrgani
     /// Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z
     /// </summary>
     /// <value>Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z</value>
-    [DataMember(Name = "dateCreated", EmitDefaultValue = false)]
+    [JsonPropertyName("dateCreated")]
     public DateTime? DateCreated { get; set; }
 
 
@@ -76,7 +76,7 @@ public partial class ExternalOrganizationTrustorLink : IEquatable<ExternalOrgani
     /// The URI for the External Organization that is linked to the trustor org
     /// </summary>
     /// <value>The URI for the External Organization that is linked to the trustor org</value>
-    [DataMember(Name = "externalOrganizationUri", EmitDefaultValue = false)]
+    [JsonPropertyName("externalOrganizationUri")]
     public string ExternalOrganizationUri { get; private set; }
 
 
@@ -85,7 +85,7 @@ public partial class ExternalOrganizationTrustorLink : IEquatable<ExternalOrgani
     /// The URI for this object
     /// </summary>
     /// <value>The URI for this object</value>
-    [DataMember(Name = "selfUri", EmitDefaultValue = false)]
+    [JsonPropertyName("selfUri")]
     public string SelfUri { get; private set; }
 
 

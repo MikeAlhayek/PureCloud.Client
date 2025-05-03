@@ -1,4 +1,3 @@
-using System.Runtime.Serialization;
 using System.Text;
 using System.Text.Json.Serialization;
 
@@ -7,7 +6,7 @@ namespace PureCloud.Client.Models;
 /// <summary>
 /// ProgramRequest
 /// </summary>
-[DataContract]
+
 public partial class ProgramRequest : IEquatable<ProgramRequest>
 {
 
@@ -38,7 +37,7 @@ public partial class ProgramRequest : IEquatable<ProgramRequest>
     /// The program name
     /// </summary>
     /// <value>The program name</value>
-    [DataMember(Name = "name", EmitDefaultValue = false)]
+    [JsonPropertyName("name")]
     public string Name { get; set; }
 
 
@@ -47,7 +46,7 @@ public partial class ProgramRequest : IEquatable<ProgramRequest>
     /// The program description
     /// </summary>
     /// <value>The program description</value>
-    [DataMember(Name = "description", EmitDefaultValue = false)]
+    [JsonPropertyName("description")]
     public string Description { get; set; }
 
 
@@ -56,7 +55,7 @@ public partial class ProgramRequest : IEquatable<ProgramRequest>
     /// The ids of topics associated to the program
     /// </summary>
     /// <value>The ids of topics associated to the program</value>
-    [DataMember(Name = "topicIds", EmitDefaultValue = false)]
+    [JsonPropertyName("topicIds")]
     public List<string> TopicIds { get; set; }
 
 
@@ -65,7 +64,7 @@ public partial class ProgramRequest : IEquatable<ProgramRequest>
     /// The program tags
     /// </summary>
     /// <value>The program tags</value>
-    [DataMember(Name = "tags", EmitDefaultValue = false)]
+    [JsonPropertyName("tags")]
     public List<string> Tags { get; set; }
 
 

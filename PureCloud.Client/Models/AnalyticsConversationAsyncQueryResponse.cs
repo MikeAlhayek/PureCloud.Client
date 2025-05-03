@@ -1,12 +1,12 @@
-using System.Runtime.Serialization;
 using System.Text;
+using System.Text.Json.Serialization;
 
 namespace PureCloud.Client.Models;
 
 /// <summary>
 /// AnalyticsConversationAsyncQueryResponse
 /// </summary>
-[DataContract]
+
 public partial class AnalyticsConversationAsyncQueryResponse : IEquatable<AnalyticsConversationAsyncQueryResponse>
 {
     /// <summary>
@@ -28,7 +28,7 @@ public partial class AnalyticsConversationAsyncQueryResponse : IEquatable<Analyt
     /// <summary>
     /// Gets or Sets Conversations
     /// </summary>
-    [DataMember(Name = "conversations", EmitDefaultValue = false)]
+    [JsonPropertyName("conversations")]
     public List<AnalyticsConversation> Conversations { get; set; }
 
 
@@ -37,7 +37,7 @@ public partial class AnalyticsConversationAsyncQueryResponse : IEquatable<Analyt
     /// Optional cursor to indicate where to resume the results
     /// </summary>
     /// <value>Optional cursor to indicate where to resume the results</value>
-    [DataMember(Name = "cursor", EmitDefaultValue = false)]
+    [JsonPropertyName("cursor")]
     public string Cursor { get; set; }
 
 
@@ -46,7 +46,7 @@ public partial class AnalyticsConversationAsyncQueryResponse : IEquatable<Analyt
     /// Data available up to at least this datetime. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z
     /// </summary>
     /// <value>Data available up to at least this datetime. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z</value>
-    [DataMember(Name = "dataAvailabilityDate", EmitDefaultValue = false)]
+    [JsonPropertyName("dataAvailabilityDate")]
     public DateTime? DataAvailabilityDate { get; set; }
 
 

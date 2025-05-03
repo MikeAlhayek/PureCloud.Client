@@ -1,12 +1,12 @@
-using System.Runtime.Serialization;
 using System.Text;
+using System.Text.Json.Serialization;
 
 namespace PureCloud.Client.Models;
 
 /// <summary>
 /// Timeseries
 /// </summary>
-[DataContract]
+
 public partial class Timeseries : IEquatable<Timeseries>
 {
     /// <summary>
@@ -27,7 +27,7 @@ public partial class Timeseries : IEquatable<Timeseries>
     /// The planning group ID
     /// </summary>
     /// <value>The planning group ID</value>
-    [DataMember(Name = "planningGroup", EmitDefaultValue = false)]
+    [JsonPropertyName("planningGroup")]
     public string PlanningGroup { get; set; }
 
 
@@ -36,7 +36,7 @@ public partial class Timeseries : IEquatable<Timeseries>
     /// List of data for each week
     /// </summary>
     /// <value>List of data for each week</value>
-    [DataMember(Name = "weeks", EmitDefaultValue = false)]
+    [JsonPropertyName("weeks")]
     public List<Weeks> Weeks { get; set; }
 
 

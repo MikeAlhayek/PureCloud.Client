@@ -7,14 +7,14 @@ namespace PureCloud.Client.Models;
 /// <summary>
 /// MailFromResult
 /// </summary>
-[DataContract]
+
 public partial class MailFromResult : IEquatable<MailFromResult>
 {
     /// <summary>
     /// The verification status.
     /// </summary>
     /// <value>The verification status.</value>
-    [JsonConverter(typeof(JsonStringEnumConverter))]
+    
     public enum StatusEnum
     {
         /// <summary>
@@ -53,7 +53,7 @@ public partial class MailFromResult : IEquatable<MailFromResult>
     /// The verification status.
     /// </summary>
     /// <value>The verification status.</value>
-    [DataMember(Name = "status", EmitDefaultValue = false)]
+    [JsonPropertyName("status")]
     public StatusEnum? Status { get; set; }
 
     /// <summary>
@@ -83,7 +83,7 @@ public partial class MailFromResult : IEquatable<MailFromResult>
     /// The list of DNS records that pertain that need to exist for verification.
     /// </summary>
     /// <value>The list of DNS records that pertain that need to exist for verification.</value>
-    [DataMember(Name = "records", EmitDefaultValue = false)]
+    [JsonPropertyName("records")]
     public List<Record> Records { get; set; }
 
 
@@ -92,7 +92,7 @@ public partial class MailFromResult : IEquatable<MailFromResult>
     /// The custom MAIL FROM domain.
     /// </summary>
     /// <value>The custom MAIL FROM domain.</value>
-    [DataMember(Name = "mailFromDomain", EmitDefaultValue = false)]
+    [JsonPropertyName("mailFromDomain")]
     public string MailFromDomain { get; set; }
 
 

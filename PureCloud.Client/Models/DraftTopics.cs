@@ -1,4 +1,3 @@
-using System.Runtime.Serialization;
 using System.Text;
 using System.Text.Json.Serialization;
 
@@ -7,7 +6,7 @@ namespace PureCloud.Client.Models;
 /// <summary>
 /// DraftTopics
 /// </summary>
-[DataContract]
+
 public partial class DraftTopics : IEquatable<DraftTopics>
 {
 
@@ -36,7 +35,7 @@ public partial class DraftTopics : IEquatable<DraftTopics>
     /// Id for a topic.
     /// </summary>
     /// <value>Id for a topic.</value>
-    [DataMember(Name = "id", EmitDefaultValue = false)]
+    [JsonPropertyName("id")]
     public string Id { get; set; }
 
 
@@ -45,7 +44,7 @@ public partial class DraftTopics : IEquatable<DraftTopics>
     /// Topic name.
     /// </summary>
     /// <value>Topic name.</value>
-    [DataMember(Name = "name", EmitDefaultValue = false)]
+    [JsonPropertyName("name")]
     public string Name { get; set; }
 
 
@@ -54,7 +53,7 @@ public partial class DraftTopics : IEquatable<DraftTopics>
     /// The miner to which the topic belongs.
     /// </summary>
     /// <value>The miner to which the topic belongs.</value>
-    [DataMember(Name = "miner", EmitDefaultValue = false)]
+    [JsonPropertyName("miner")]
     public Miner Miner { get; private set; }
 
 
@@ -63,7 +62,7 @@ public partial class DraftTopics : IEquatable<DraftTopics>
     /// Number of conversations where a topic has occurred.
     /// </summary>
     /// <value>Number of conversations where a topic has occurred.</value>
-    [DataMember(Name = "conversationCount", EmitDefaultValue = false)]
+    [JsonPropertyName("conversationCount")]
     public int? ConversationCount { get; private set; }
 
 
@@ -72,7 +71,7 @@ public partial class DraftTopics : IEquatable<DraftTopics>
     /// Percentage of conversations where a topic has occurred.
     /// </summary>
     /// <value>Percentage of conversations where a topic has occurred.</value>
-    [DataMember(Name = "conversationPercent", EmitDefaultValue = false)]
+    [JsonPropertyName("conversationPercent")]
     public float? ConversationPercent { get; private set; }
 
 
@@ -81,7 +80,7 @@ public partial class DraftTopics : IEquatable<DraftTopics>
     /// Number of unique utterances where a topic has occurred.
     /// </summary>
     /// <value>Number of unique utterances where a topic has occurred.</value>
-    [DataMember(Name = "utteranceCount", EmitDefaultValue = false)]
+    [JsonPropertyName("utteranceCount")]
     public int? UtteranceCount { get; private set; }
 
 
@@ -90,7 +89,7 @@ public partial class DraftTopics : IEquatable<DraftTopics>
     /// Number of unique phrases (sub-utterances) where a topic has occurred.
     /// </summary>
     /// <value>Number of unique phrases (sub-utterances) where a topic has occurred.</value>
-    [DataMember(Name = "phraseCount", EmitDefaultValue = false)]
+    [JsonPropertyName("phraseCount")]
     public int? PhraseCount { get; private set; }
 
 
@@ -99,7 +98,7 @@ public partial class DraftTopics : IEquatable<DraftTopics>
     /// The phrases that are extracted for a topic.
     /// </summary>
     /// <value>The phrases that are extracted for a topic.</value>
-    [DataMember(Name = "phrases", EmitDefaultValue = false)]
+    [JsonPropertyName("phrases")]
     public List<string> Phrases { get; set; }
 
 
@@ -108,7 +107,7 @@ public partial class DraftTopics : IEquatable<DraftTopics>
     /// The URI for this object
     /// </summary>
     /// <value>The URI for this object</value>
-    [DataMember(Name = "selfUri", EmitDefaultValue = false)]
+    [JsonPropertyName("selfUri")]
     public string SelfUri { get; private set; }
 
 

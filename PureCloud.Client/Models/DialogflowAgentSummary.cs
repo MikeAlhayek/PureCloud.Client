@@ -1,12 +1,12 @@
-using System.Runtime.Serialization;
 using System.Text;
+using System.Text.Json.Serialization;
 
 namespace PureCloud.Client.Models;
 
 /// <summary>
 /// DialogflowAgentSummary
 /// </summary>
-[DataContract]
+
 public partial class DialogflowAgentSummary : IEquatable<DialogflowAgentSummary>
 {
     /// <summary>
@@ -31,7 +31,7 @@ public partial class DialogflowAgentSummary : IEquatable<DialogflowAgentSummary>
     /// The globally unique identifier for the object.
     /// </summary>
     /// <value>The globally unique identifier for the object.</value>
-    [DataMember(Name = "id", EmitDefaultValue = false)]
+    [JsonPropertyName("id")]
     public string Id { get; private set; }
 
 
@@ -39,7 +39,7 @@ public partial class DialogflowAgentSummary : IEquatable<DialogflowAgentSummary>
     /// <summary>
     /// Gets or Sets Name
     /// </summary>
-    [DataMember(Name = "name", EmitDefaultValue = false)]
+    [JsonPropertyName("name")]
     public string Name { get; set; }
 
 
@@ -48,7 +48,7 @@ public partial class DialogflowAgentSummary : IEquatable<DialogflowAgentSummary>
     /// The project this Dialogflow agent belongs to.
     /// </summary>
     /// <value>The project this Dialogflow agent belongs to.</value>
-    [DataMember(Name = "project", EmitDefaultValue = false)]
+    [JsonPropertyName("project")]
     public DialogflowProject Project { get; set; }
 
 
@@ -57,7 +57,7 @@ public partial class DialogflowAgentSummary : IEquatable<DialogflowAgentSummary>
     /// A description of the Dialogflow agent.
     /// </summary>
     /// <value>A description of the Dialogflow agent.</value>
-    [DataMember(Name = "description", EmitDefaultValue = false)]
+    [JsonPropertyName("description")]
     public string Description { get; set; }
 
 
@@ -66,7 +66,7 @@ public partial class DialogflowAgentSummary : IEquatable<DialogflowAgentSummary>
     /// The Integration this Dialogflow agent was referenced from.
     /// </summary>
     /// <value>The Integration this Dialogflow agent was referenced from.</value>
-    [DataMember(Name = "integration", EmitDefaultValue = false)]
+    [JsonPropertyName("integration")]
     public DomainEntityRef Integration { get; set; }
 
 
@@ -75,7 +75,7 @@ public partial class DialogflowAgentSummary : IEquatable<DialogflowAgentSummary>
     /// The URI for this object
     /// </summary>
     /// <value>The URI for this object</value>
-    [DataMember(Name = "selfUri", EmitDefaultValue = false)]
+    [JsonPropertyName("selfUri")]
     public string SelfUri { get; private set; }
 
 

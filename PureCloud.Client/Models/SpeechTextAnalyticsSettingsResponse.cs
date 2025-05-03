@@ -1,12 +1,12 @@
-using System.Runtime.Serialization;
 using System.Text;
+using System.Text.Json.Serialization;
 
 namespace PureCloud.Client.Models;
 
 /// <summary>
 /// SpeechTextAnalyticsSettingsResponse
 /// </summary>
-[DataContract]
+
 public partial class SpeechTextAnalyticsSettingsResponse : IEquatable<SpeechTextAnalyticsSettingsResponse>
 {
     /// <summary>
@@ -31,7 +31,7 @@ public partial class SpeechTextAnalyticsSettingsResponse : IEquatable<SpeechText
     /// Setting to choose name for the default program for topic detection
     /// </summary>
     /// <value>Setting to choose name for the default program for topic detection</value>
-    [DataMember(Name = "defaultProgram", EmitDefaultValue = false)]
+    [JsonPropertyName("defaultProgram")]
     public AddressableEntityRef DefaultProgram { get; set; }
 
 
@@ -40,7 +40,7 @@ public partial class SpeechTextAnalyticsSettingsResponse : IEquatable<SpeechText
     /// Setting to choose expected dialects
     /// </summary>
     /// <value>Setting to choose expected dialects</value>
-    [DataMember(Name = "expectedDialects", EmitDefaultValue = false)]
+    [JsonPropertyName("expectedDialects")]
     public List<string> ExpectedDialects { get; set; }
 
 
@@ -49,7 +49,7 @@ public partial class SpeechTextAnalyticsSettingsResponse : IEquatable<SpeechText
     /// Setting to enable/disable text analytics
     /// </summary>
     /// <value>Setting to enable/disable text analytics</value>
-    [DataMember(Name = "textAnalyticsEnabled", EmitDefaultValue = false)]
+    [JsonPropertyName("textAnalyticsEnabled")]
     public bool? TextAnalyticsEnabled { get; set; }
 
 
@@ -58,7 +58,7 @@ public partial class SpeechTextAnalyticsSettingsResponse : IEquatable<SpeechText
     /// Setting to enable/disable Agent Empathy setting
     /// </summary>
     /// <value>Setting to enable/disable Agent Empathy setting</value>
-    [DataMember(Name = "agentEmpathyEnabled", EmitDefaultValue = false)]
+    [JsonPropertyName("agentEmpathyEnabled")]
     public bool? AgentEmpathyEnabled { get; set; }
 
 

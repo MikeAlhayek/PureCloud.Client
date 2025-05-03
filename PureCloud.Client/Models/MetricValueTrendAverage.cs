@@ -1,12 +1,12 @@
-using System.Runtime.Serialization;
 using System.Text;
+using System.Text.Json.Serialization;
 
 namespace PureCloud.Client.Models;
 
 /// <summary>
 /// MetricValueTrendAverage
 /// </summary>
-[DataContract]
+
 public partial class MetricValueTrendAverage : IEquatable<MetricValueTrendAverage>
 {
     /// <summary>
@@ -23,7 +23,7 @@ public partial class MetricValueTrendAverage : IEquatable<MetricValueTrendAverag
     /// The targeted start workday. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd
     /// </summary>
     /// <value>The targeted start workday. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd</value>
-    [DataMember(Name = "dateStartWorkday", EmitDefaultValue = false)]
+    [JsonPropertyName("dateStartWorkday")]
     public string DateStartWorkday { get; private set; }
 
 
@@ -32,7 +32,7 @@ public partial class MetricValueTrendAverage : IEquatable<MetricValueTrendAverag
     /// The targeted end workday. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd
     /// </summary>
     /// <value>The targeted end workday. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd</value>
-    [DataMember(Name = "dateEndWorkday", EmitDefaultValue = false)]
+    [JsonPropertyName("dateEndWorkday")]
     public string DateEndWorkday { get; private set; }
 
 
@@ -41,7 +41,7 @@ public partial class MetricValueTrendAverage : IEquatable<MetricValueTrendAverag
     /// The targeted reference workday. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd
     /// </summary>
     /// <value>The targeted reference workday. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd</value>
-    [DataMember(Name = "dateReferenceWorkday", EmitDefaultValue = false)]
+    [JsonPropertyName("dateReferenceWorkday")]
     public string DateReferenceWorkday { get; private set; }
 
 
@@ -50,7 +50,7 @@ public partial class MetricValueTrendAverage : IEquatable<MetricValueTrendAverag
     /// The targeted division for the metrics
     /// </summary>
     /// <value>The targeted division for the metrics</value>
-    [DataMember(Name = "division", EmitDefaultValue = false)]
+    [JsonPropertyName("division")]
     public Division Division { get; private set; }
 
 
@@ -59,7 +59,7 @@ public partial class MetricValueTrendAverage : IEquatable<MetricValueTrendAverag
     /// The targeted user for the metrics
     /// </summary>
     /// <value>The targeted user for the metrics</value>
-    [DataMember(Name = "user", EmitDefaultValue = false)]
+    [JsonPropertyName("user")]
     public UserReference User { get; private set; }
 
 
@@ -68,7 +68,7 @@ public partial class MetricValueTrendAverage : IEquatable<MetricValueTrendAverag
     /// The time zone used for aggregating metric values
     /// </summary>
     /// <value>The time zone used for aggregating metric values</value>
-    [DataMember(Name = "timezone", EmitDefaultValue = false)]
+    [JsonPropertyName("timezone")]
     public string Timezone { get; private set; }
 
 
@@ -77,7 +77,7 @@ public partial class MetricValueTrendAverage : IEquatable<MetricValueTrendAverag
     /// The metric value trend and average
     /// </summary>
     /// <value>The metric value trend and average</value>
-    [DataMember(Name = "result", EmitDefaultValue = false)]
+    [JsonPropertyName("result")]
     public WorkdayValuesMetricItem Result { get; private set; }
 
 
@@ -86,7 +86,7 @@ public partial class MetricValueTrendAverage : IEquatable<MetricValueTrendAverag
     /// The targeted performance profile for the average points
     /// </summary>
     /// <value>The targeted performance profile for the average points</value>
-    [DataMember(Name = "performanceProfile", EmitDefaultValue = false)]
+    [JsonPropertyName("performanceProfile")]
     public AddressableEntityRef PerformanceProfile { get; private set; }
 
 
@@ -95,7 +95,7 @@ public partial class MetricValueTrendAverage : IEquatable<MetricValueTrendAverag
     /// The targeted performance profile for the average points
     /// </summary>
     /// <value>The targeted performance profile for the average points</value>
-    [DataMember(Name = "metric", EmitDefaultValue = false)]
+    [JsonPropertyName("metric")]
     public AddressableEntityRef Metric { get; private set; }
 
 

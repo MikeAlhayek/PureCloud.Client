@@ -1,12 +1,12 @@
-using System.Runtime.Serialization;
 using System.Text;
+using System.Text.Json.Serialization;
 
 namespace PureCloud.Client.Models;
 
 /// <summary>
 /// EvaluationQuestionGroup
 /// </summary>
-[DataContract]
+
 public partial class EvaluationQuestionGroup : IEquatable<EvaluationQuestionGroup>
 {
     /// <summary>
@@ -42,7 +42,7 @@ public partial class EvaluationQuestionGroup : IEquatable<EvaluationQuestionGrou
     /// <summary>
     /// Gets or Sets Id
     /// </summary>
-    [DataMember(Name = "id", EmitDefaultValue = false)]
+    [JsonPropertyName("id")]
     public string Id { get; set; }
 
 
@@ -51,7 +51,7 @@ public partial class EvaluationQuestionGroup : IEquatable<EvaluationQuestionGrou
     /// An identifier for this question group that stays the same across versions of the form.
     /// </summary>
     /// <value>An identifier for this question group that stays the same across versions of the form.</value>
-    [DataMember(Name = "contextId", EmitDefaultValue = false)]
+    [JsonPropertyName("contextId")]
     public string ContextId { get; private set; }
 
 
@@ -59,7 +59,7 @@ public partial class EvaluationQuestionGroup : IEquatable<EvaluationQuestionGrou
     /// <summary>
     /// Gets or Sets Name
     /// </summary>
-    [DataMember(Name = "name", EmitDefaultValue = false)]
+    [JsonPropertyName("name")]
     public string Name { get; set; }
 
 
@@ -67,7 +67,7 @@ public partial class EvaluationQuestionGroup : IEquatable<EvaluationQuestionGrou
     /// <summary>
     /// Gets or Sets Type
     /// </summary>
-    [DataMember(Name = "type", EmitDefaultValue = false)]
+    [JsonPropertyName("type")]
     public string Type { get; set; }
 
 
@@ -75,7 +75,7 @@ public partial class EvaluationQuestionGroup : IEquatable<EvaluationQuestionGrou
     /// <summary>
     /// Gets or Sets DefaultAnswersToHighest
     /// </summary>
-    [DataMember(Name = "defaultAnswersToHighest", EmitDefaultValue = false)]
+    [JsonPropertyName("defaultAnswersToHighest")]
     public bool? DefaultAnswersToHighest { get; set; }
 
 
@@ -83,7 +83,7 @@ public partial class EvaluationQuestionGroup : IEquatable<EvaluationQuestionGrou
     /// <summary>
     /// Gets or Sets DefaultAnswersToNA
     /// </summary>
-    [DataMember(Name = "defaultAnswersToNA", EmitDefaultValue = false)]
+    [JsonPropertyName("defaultAnswersToNA")]
     public bool? DefaultAnswersToNA { get; set; }
 
 
@@ -91,7 +91,7 @@ public partial class EvaluationQuestionGroup : IEquatable<EvaluationQuestionGrou
     /// <summary>
     /// Gets or Sets NaEnabled
     /// </summary>
-    [DataMember(Name = "naEnabled", EmitDefaultValue = false)]
+    [JsonPropertyName("naEnabled")]
     public bool? NaEnabled { get; set; }
 
 
@@ -99,7 +99,7 @@ public partial class EvaluationQuestionGroup : IEquatable<EvaluationQuestionGrou
     /// <summary>
     /// Gets or Sets Weight
     /// </summary>
-    [DataMember(Name = "weight", EmitDefaultValue = false)]
+    [JsonPropertyName("weight")]
     public float? Weight { get; set; }
 
 
@@ -107,7 +107,7 @@ public partial class EvaluationQuestionGroup : IEquatable<EvaluationQuestionGrou
     /// <summary>
     /// Gets or Sets ManualWeight
     /// </summary>
-    [DataMember(Name = "manualWeight", EmitDefaultValue = false)]
+    [JsonPropertyName("manualWeight")]
     public bool? ManualWeight { get; set; }
 
 
@@ -115,7 +115,7 @@ public partial class EvaluationQuestionGroup : IEquatable<EvaluationQuestionGrou
     /// <summary>
     /// Gets or Sets Questions
     /// </summary>
-    [DataMember(Name = "questions", EmitDefaultValue = false)]
+    [JsonPropertyName("questions")]
     public List<EvaluationQuestion> Questions { get; set; }
 
 
@@ -123,7 +123,7 @@ public partial class EvaluationQuestionGroup : IEquatable<EvaluationQuestionGrou
     /// <summary>
     /// Gets or Sets VisibilityCondition
     /// </summary>
-    [DataMember(Name = "visibilityCondition", EmitDefaultValue = false)]
+    [JsonPropertyName("visibilityCondition")]
     public VisibilityCondition VisibilityCondition { get; set; }
 
 

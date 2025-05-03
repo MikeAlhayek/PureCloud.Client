@@ -7,14 +7,14 @@ namespace PureCloud.Client.Models;
 /// <summary>
 /// AlertSummary
 /// </summary>
-[DataContract]
+
 public partial class AlertSummary : IEquatable<AlertSummary>
 {
     /// <summary>
     /// The metric type that is monitored.
     /// </summary>
     /// <value>The metric type that is monitored.</value>
-    [JsonConverter(typeof(JsonStringEnumConverter))]
+    
     public enum MetricTypeEnum
     {
         /// <summary>
@@ -41,7 +41,7 @@ public partial class AlertSummary : IEquatable<AlertSummary>
     /// The metric type that is monitored.
     /// </summary>
     /// <value>The metric type that is monitored.</value>
-    [DataMember(Name = "metricType", EmitDefaultValue = false)]
+    [JsonPropertyName("metricType")]
     public MetricTypeEnum? MetricType { get; set; }
 
     /// <summary>
@@ -71,7 +71,7 @@ public partial class AlertSummary : IEquatable<AlertSummary>
     /// The entities who violated the rule condition over the duration of the alert.
     /// </summary>
     /// <value>The entities who violated the rule condition over the duration of the alert.</value>
-    [DataMember(Name = "entities", EmitDefaultValue = false)]
+    [JsonPropertyName("entities")]
     public List<AlertSummaryEntity> Entities { get; set; }
 
 
@@ -80,7 +80,7 @@ public partial class AlertSummary : IEquatable<AlertSummary>
     /// The id of the conversation that triggered the alert.  Only used for alerts based on instance-based conversation metrics.
     /// </summary>
     /// <value>The id of the conversation that triggered the alert.  Only used for alerts based on instance-based conversation metrics.</value>
-    [DataMember(Name = "conversation", EmitDefaultValue = false)]
+    [JsonPropertyName("conversation")]
     public AddressableEntityRef Conversation { get; set; }
 
 
@@ -91,7 +91,7 @@ public partial class AlertSummary : IEquatable<AlertSummary>
     /// Flag that indicated whether or not the alert is for a rule with a condition for all members of a team.
     /// </summary>
     /// <value>Flag that indicated whether or not the alert is for a rule with a condition for all members of a team.</value>
-    [DataMember(Name = "entitiesAreTeamMembers", EmitDefaultValue = false)]
+    [JsonPropertyName("entitiesAreTeamMembers")]
     public bool? EntitiesAreTeamMembers { get; set; }
 
 

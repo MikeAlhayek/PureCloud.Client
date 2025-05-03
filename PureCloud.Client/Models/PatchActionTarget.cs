@@ -1,12 +1,12 @@
-using System.Runtime.Serialization;
 using System.Text;
+using System.Text.Json.Serialization;
 
 namespace PureCloud.Client.Models;
 
 /// <summary>
 /// PatchActionTarget
 /// </summary>
-[DataContract]
+
 public partial class PatchActionTarget : IEquatable<PatchActionTarget>
 {
     /// <summary>
@@ -29,7 +29,7 @@ public partial class PatchActionTarget : IEquatable<PatchActionTarget>
     /// The globally unique identifier for the object.
     /// </summary>
     /// <value>The globally unique identifier for the object.</value>
-    [DataMember(Name = "id", EmitDefaultValue = false)]
+    [JsonPropertyName("id")]
     public string Id { get; private set; }
 
 
@@ -37,7 +37,7 @@ public partial class PatchActionTarget : IEquatable<PatchActionTarget>
     /// <summary>
     /// Gets or Sets Name
     /// </summary>
-    [DataMember(Name = "name", EmitDefaultValue = false)]
+    [JsonPropertyName("name")]
     public string Name { get; set; }
 
 
@@ -46,7 +46,7 @@ public partial class PatchActionTarget : IEquatable<PatchActionTarget>
     /// Service Level of the action target. Chat offers for the target will be throttled with the aim of achieving this service level.
     /// </summary>
     /// <value>Service Level of the action target. Chat offers for the target will be throttled with the aim of achieving this service level.</value>
-    [DataMember(Name = "serviceLevel", EmitDefaultValue = false)]
+    [JsonPropertyName("serviceLevel")]
     public ServiceLevel ServiceLevel { get; set; }
 
 
@@ -55,7 +55,7 @@ public partial class PatchActionTarget : IEquatable<PatchActionTarget>
     /// Indicates the non-default short abandon threshold
     /// </summary>
     /// <value>Indicates the non-default short abandon threshold</value>
-    [DataMember(Name = "shortAbandonThreshold", EmitDefaultValue = false)]
+    [JsonPropertyName("shortAbandonThreshold")]
     public int? ShortAbandonThreshold { get; set; }
 
 
@@ -64,7 +64,7 @@ public partial class PatchActionTarget : IEquatable<PatchActionTarget>
     /// The URI for this object
     /// </summary>
     /// <value>The URI for this object</value>
-    [DataMember(Name = "selfUri", EmitDefaultValue = false)]
+    [JsonPropertyName("selfUri")]
     public string SelfUri { get; private set; }
 
 

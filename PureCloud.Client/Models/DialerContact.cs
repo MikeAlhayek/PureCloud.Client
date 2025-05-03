@@ -1,4 +1,3 @@
-using System.Runtime.Serialization;
 using System.Text;
 using System.Text.Json.Serialization;
 
@@ -7,7 +6,7 @@ namespace PureCloud.Client.Models;
 /// <summary>
 /// DialerContact
 /// </summary>
-[DataContract]
+
 public partial class DialerContact : IEquatable<DialerContact>
 {
 
@@ -44,7 +43,7 @@ public partial class DialerContact : IEquatable<DialerContact>
     /// The globally unique identifier for the object.
     /// </summary>
     /// <value>The globally unique identifier for the object.</value>
-    [DataMember(Name = "id", EmitDefaultValue = false)]
+    [JsonPropertyName("id")]
     public string Id { get; private set; }
 
 
@@ -52,7 +51,7 @@ public partial class DialerContact : IEquatable<DialerContact>
     /// <summary>
     /// Gets or Sets Name
     /// </summary>
-    [DataMember(Name = "name", EmitDefaultValue = false)]
+    [JsonPropertyName("name")]
     public string Name { get; set; }
 
 
@@ -61,7 +60,7 @@ public partial class DialerContact : IEquatable<DialerContact>
     /// The identifier of the contact list containing this contact.
     /// </summary>
     /// <value>The identifier of the contact list containing this contact.</value>
-    [DataMember(Name = "contactListId", EmitDefaultValue = false)]
+    [JsonPropertyName("contactListId")]
     public string ContactListId { get; set; }
 
 
@@ -70,7 +69,7 @@ public partial class DialerContact : IEquatable<DialerContact>
     /// An ordered map of the contact&#39;s columns and corresponding values.
     /// </summary>
     /// <value>An ordered map of the contact&#39;s columns and corresponding values.</value>
-    [DataMember(Name = "data", EmitDefaultValue = false)]
+    [JsonPropertyName("data")]
     public Dictionary<string, string> Data { get; set; }
 
 
@@ -79,7 +78,7 @@ public partial class DialerContact : IEquatable<DialerContact>
     /// A map of call records for the contact phone columns.
     /// </summary>
     /// <value>A map of call records for the contact phone columns.</value>
-    [DataMember(Name = "callRecords", EmitDefaultValue = false)]
+    [JsonPropertyName("callRecords")]
     public Dictionary<string, CallRecord> CallRecords { get; private set; }
 
 
@@ -88,7 +87,7 @@ public partial class DialerContact : IEquatable<DialerContact>
     /// A map of SMS records for the contact phone columns.
     /// </summary>
     /// <value>A map of SMS records for the contact phone columns.</value>
-    [DataMember(Name = "latestSmsEvaluations", EmitDefaultValue = false)]
+    [JsonPropertyName("latestSmsEvaluations")]
     public Dictionary<string, MessageEvaluation> LatestSmsEvaluations { get; private set; }
 
 
@@ -97,7 +96,7 @@ public partial class DialerContact : IEquatable<DialerContact>
     /// A map of email records for the contact email columns.
     /// </summary>
     /// <value>A map of email records for the contact email columns.</value>
-    [DataMember(Name = "latestEmailEvaluations", EmitDefaultValue = false)]
+    [JsonPropertyName("latestEmailEvaluations")]
     public Dictionary<string, MessageEvaluation> LatestEmailEvaluations { get; private set; }
 
 
@@ -106,7 +105,7 @@ public partial class DialerContact : IEquatable<DialerContact>
     /// A map of whatsapp records for the contact whatsapp columns.
     /// </summary>
     /// <value>A map of whatsapp records for the contact whatsapp columns.</value>
-    [DataMember(Name = "latestWhatsAppEvaluations", EmitDefaultValue = false)]
+    [JsonPropertyName("latestWhatsAppEvaluations")]
     public Dictionary<string, MessageEvaluation> LatestWhatsAppEvaluations { get; set; }
 
 
@@ -115,7 +114,7 @@ public partial class DialerContact : IEquatable<DialerContact>
     /// Indicates whether or not the contact can be called.
     /// </summary>
     /// <value>Indicates whether or not the contact can be called.</value>
-    [DataMember(Name = "callable", EmitDefaultValue = false)]
+    [JsonPropertyName("callable")]
     public bool? Callable { get; set; }
 
 
@@ -124,7 +123,7 @@ public partial class DialerContact : IEquatable<DialerContact>
     /// A map of phone number columns to PhoneNumberStatuses, which indicate if the phone number is callable or not.
     /// </summary>
     /// <value>A map of phone number columns to PhoneNumberStatuses, which indicate if the phone number is callable or not.</value>
-    [DataMember(Name = "phoneNumberStatus", EmitDefaultValue = false)]
+    [JsonPropertyName("phoneNumberStatus")]
     public Dictionary<string, PhoneNumberStatus> PhoneNumberStatus { get; set; }
 
 
@@ -133,7 +132,7 @@ public partial class DialerContact : IEquatable<DialerContact>
     /// A map of media types (Voice, SMS and Email) to ContactableStatus, which indicates if the contact can be contacted using the specified media type.
     /// </summary>
     /// <value>A map of media types (Voice, SMS and Email) to ContactableStatus, which indicates if the contact can be contacted using the specified media type.</value>
-    [DataMember(Name = "contactableStatus", EmitDefaultValue = false)]
+    [JsonPropertyName("contactableStatus")]
     public Dictionary<string, ContactableStatus> ContactableStatus { get; set; }
 
 
@@ -142,7 +141,7 @@ public partial class DialerContact : IEquatable<DialerContact>
     /// Map containing data about the timezone the contact is mapped to. This will only be populated if the contact list has automatic timezone mapping turned on. The key is the column name. The value is the timezone it mapped to and the type of column: Phone or Zip
     /// </summary>
     /// <value>Map containing data about the timezone the contact is mapped to. This will only be populated if the contact list has automatic timezone mapping turned on. The key is the column name. The value is the timezone it mapped to and the type of column: Phone or Zip</value>
-    [DataMember(Name = "contactColumnTimeZones", EmitDefaultValue = false)]
+    [JsonPropertyName("contactColumnTimeZones")]
     public Dictionary<string, ContactColumnTimeZone> ContactColumnTimeZones { get; private set; }
 
 
@@ -151,7 +150,7 @@ public partial class DialerContact : IEquatable<DialerContact>
     /// the priority property within ConfigurationOverides indicates whether or not the contact to be placed in front of the queue or at the end of the queue
     /// </summary>
     /// <value>the priority property within ConfigurationOverides indicates whether or not the contact to be placed in front of the queue or at the end of the queue</value>
-    [DataMember(Name = "configurationOverrides", EmitDefaultValue = false)]
+    [JsonPropertyName("configurationOverrides")]
     public ConfigurationOverrides ConfigurationOverrides { get; private set; }
 
 
@@ -160,7 +159,7 @@ public partial class DialerContact : IEquatable<DialerContact>
     /// Timestamp for when the contact was added. Contacts added prior to 2023 September 1 may be missing this value. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z
     /// </summary>
     /// <value>Timestamp for when the contact was added. Contacts added prior to 2023 September 1 may be missing this value. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z</value>
-    [DataMember(Name = "dateCreated", EmitDefaultValue = false)]
+    [JsonPropertyName("dateCreated")]
     public DateTime? DateCreated { get; private set; }
 
 
@@ -169,7 +168,7 @@ public partial class DialerContact : IEquatable<DialerContact>
     /// The URI for this object
     /// </summary>
     /// <value>The URI for this object</value>
-    [DataMember(Name = "selfUri", EmitDefaultValue = false)]
+    [JsonPropertyName("selfUri")]
     public string SelfUri { get; private set; }
 
 

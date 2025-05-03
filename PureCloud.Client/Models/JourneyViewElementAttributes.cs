@@ -7,14 +7,14 @@ namespace PureCloud.Client.Models;
 /// <summary>
 /// Attributes on an element in a journey view
 /// </summary>
-[DataContract]
+
 public partial class JourneyViewElementAttributes : IEquatable<JourneyViewElementAttributes>
 {
     /// <summary>
     /// The type of the element (e.g. Event)
     /// </summary>
     /// <value>The type of the element (e.g. Event)</value>
-    [JsonConverter(typeof(JsonStringEnumConverter))]
+    
     public enum TypeEnum
     {
         /// <summary>
@@ -35,7 +35,7 @@ public partial class JourneyViewElementAttributes : IEquatable<JourneyViewElemen
     /// The type of the element (e.g. Event)
     /// </summary>
     /// <value>The type of the element (e.g. Event)</value>
-    [DataMember(Name = "type", EmitDefaultValue = false)]
+    [JsonPropertyName("type")]
     public TypeEnum? Type { get; set; }
 
     /// <summary>
@@ -65,7 +65,7 @@ public partial class JourneyViewElementAttributes : IEquatable<JourneyViewElemen
     /// The identifier for the element based on its type
     /// </summary>
     /// <value>The identifier for the element based on its type</value>
-    [DataMember(Name = "id", EmitDefaultValue = false)]
+    [JsonPropertyName("id")]
     public string Id { get; set; }
 
 
@@ -74,7 +74,7 @@ public partial class JourneyViewElementAttributes : IEquatable<JourneyViewElemen
     /// The source for the element (e.g. IVR, Voice, Chat). Used for informational purposes only
     /// </summary>
     /// <value>The source for the element (e.g. IVR, Voice, Chat). Used for informational purposes only</value>
-    [DataMember(Name = "source", EmitDefaultValue = false)]
+    [JsonPropertyName("source")]
     public string Source { get; set; }
 
 

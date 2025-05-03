@@ -1,12 +1,12 @@
-using System.Runtime.Serialization;
 using System.Text;
+using System.Text.Json.Serialization;
 
 namespace PureCloud.Client.Models;
 
 /// <summary>
 /// OccurrenceDetails
 /// </summary>
-[DataContract]
+
 public partial class OccurrenceDetails : IEquatable<OccurrenceDetails>
 {
     /// <summary>
@@ -27,7 +27,7 @@ public partial class OccurrenceDetails : IEquatable<OccurrenceDetails>
     /// The date of the next start or end occurrence for the recurrence as an ISO-8601 string
     /// </summary>
     /// <value>The date of the next start or end occurrence for the recurrence as an ISO-8601 string</value>
-    [DataMember(Name = "dateOfNextOccurrence", EmitDefaultValue = false)]
+    [JsonPropertyName("dateOfNextOccurrence")]
     public DateTime? DateOfNextOccurrence { get; set; }
 
 
@@ -36,7 +36,7 @@ public partial class OccurrenceDetails : IEquatable<OccurrenceDetails>
     /// The number of start or end occurrences that have been processed for the recurrence.
     /// </summary>
     /// <value>The number of start or end occurrences that have been processed for the recurrence.</value>
-    [DataMember(Name = "numberOfOccurrences", EmitDefaultValue = false)]
+    [JsonPropertyName("numberOfOccurrences")]
     public int? NumberOfOccurrences { get; set; }
 
 

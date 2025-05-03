@@ -1,12 +1,12 @@
-using System.Runtime.Serialization;
 using System.Text;
+using System.Text.Json.Serialization;
 
 namespace PureCloud.Client.Models;
 
 /// <summary>
 /// ActivityCodesReference
 /// </summary>
-[DataContract]
+
 public partial class ActivityCodesReference : IEquatable<ActivityCodesReference>
 {
     /// <summary>
@@ -25,7 +25,7 @@ public partial class ActivityCodesReference : IEquatable<ActivityCodesReference>
     /// The IDs of activity codes
     /// </summary>
     /// <value>The IDs of activity codes</value>
-    [DataMember(Name = "ids", EmitDefaultValue = false)]
+    [JsonPropertyName("ids")]
     public List<string> Ids { get; set; }
 
 
@@ -34,7 +34,7 @@ public partial class ActivityCodesReference : IEquatable<ActivityCodesReference>
     /// The URI for this object
     /// </summary>
     /// <value>The URI for this object</value>
-    [DataMember(Name = "selfUri", EmitDefaultValue = false)]
+    [JsonPropertyName("selfUri")]
     public string SelfUri { get; private set; }
 
 

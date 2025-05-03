@@ -1,12 +1,12 @@
-using System.Runtime.Serialization;
 using System.Text;
+using System.Text.Json.Serialization;
 
 namespace PureCloud.Client.Models;
 
 /// <summary>
 /// HistoricalAdherenceDayMetrics
 /// </summary>
-[DataContract]
+
 public partial class HistoricalAdherenceDayMetrics : IEquatable<HistoricalAdherenceDayMetrics>
 {
     /// <summary>
@@ -45,7 +45,7 @@ public partial class HistoricalAdherenceDayMetrics : IEquatable<HistoricalAdhere
     /// Start of day offset in seconds relative to query start time
     /// </summary>
     /// <value>Start of day offset in seconds relative to query start time</value>
-    [DataMember(Name = "dayStartOffsetSecs", EmitDefaultValue = false)]
+    [JsonPropertyName("dayStartOffsetSecs")]
     public int? DayStartOffsetSecs { get; set; }
 
 
@@ -54,7 +54,7 @@ public partial class HistoricalAdherenceDayMetrics : IEquatable<HistoricalAdhere
     /// Duration of schedule in seconds included for adherence percentage calculation
     /// </summary>
     /// <value>Duration of schedule in seconds included for adherence percentage calculation</value>
-    [DataMember(Name = "adherenceScheduleSecs", EmitDefaultValue = false)]
+    [JsonPropertyName("adherenceScheduleSecs")]
     public int? AdherenceScheduleSecs { get; set; }
 
 
@@ -63,7 +63,7 @@ public partial class HistoricalAdherenceDayMetrics : IEquatable<HistoricalAdhere
     /// Total scheduled duration in seconds for OnQueue activities
     /// </summary>
     /// <value>Total scheduled duration in seconds for OnQueue activities</value>
-    [DataMember(Name = "conformanceScheduleSecs", EmitDefaultValue = false)]
+    [JsonPropertyName("conformanceScheduleSecs")]
     public int? ConformanceScheduleSecs { get; set; }
 
 
@@ -72,7 +72,7 @@ public partial class HistoricalAdherenceDayMetrics : IEquatable<HistoricalAdhere
     /// Total actually worked duration in seconds for OnQueue activities
     /// </summary>
     /// <value>Total actually worked duration in seconds for OnQueue activities</value>
-    [DataMember(Name = "conformanceActualSecs", EmitDefaultValue = false)]
+    [JsonPropertyName("conformanceActualSecs")]
     public int? ConformanceActualSecs { get; set; }
 
 
@@ -81,7 +81,7 @@ public partial class HistoricalAdherenceDayMetrics : IEquatable<HistoricalAdhere
     /// Total number of adherence exceptions for this user
     /// </summary>
     /// <value>Total number of adherence exceptions for this user</value>
-    [DataMember(Name = "exceptionCount", EmitDefaultValue = false)]
+    [JsonPropertyName("exceptionCount")]
     public int? ExceptionCount { get; set; }
 
 
@@ -90,7 +90,7 @@ public partial class HistoricalAdherenceDayMetrics : IEquatable<HistoricalAdhere
     /// Total duration in seconds of adherence exceptions for this user
     /// </summary>
     /// <value>Total duration in seconds of adherence exceptions for this user</value>
-    [DataMember(Name = "exceptionDurationSecs", EmitDefaultValue = false)]
+    [JsonPropertyName("exceptionDurationSecs")]
     public int? ExceptionDurationSecs { get; set; }
 
 
@@ -99,7 +99,7 @@ public partial class HistoricalAdherenceDayMetrics : IEquatable<HistoricalAdhere
     /// The impact duration in seconds of current adherence state for this user
     /// </summary>
     /// <value>The impact duration in seconds of current adherence state for this user</value>
-    [DataMember(Name = "impactSeconds", EmitDefaultValue = false)]
+    [JsonPropertyName("impactSeconds")]
     public int? ImpactSeconds { get; set; }
 
 
@@ -108,7 +108,7 @@ public partial class HistoricalAdherenceDayMetrics : IEquatable<HistoricalAdhere
     /// Total duration in seconds for all scheduled activities
     /// </summary>
     /// <value>Total duration in seconds for all scheduled activities</value>
-    [DataMember(Name = "scheduleLengthSecs", EmitDefaultValue = false)]
+    [JsonPropertyName("scheduleLengthSecs")]
     public int? ScheduleLengthSecs { get; set; }
 
 
@@ -117,7 +117,7 @@ public partial class HistoricalAdherenceDayMetrics : IEquatable<HistoricalAdhere
     /// Total duration in seconds for all actually worked activities
     /// </summary>
     /// <value>Total duration in seconds for all actually worked activities</value>
-    [DataMember(Name = "actualLengthSecs", EmitDefaultValue = false)]
+    [JsonPropertyName("actualLengthSecs")]
     public int? ActualLengthSecs { get; set; }
 
 
@@ -126,7 +126,7 @@ public partial class HistoricalAdherenceDayMetrics : IEquatable<HistoricalAdhere
     /// Total adherence percentage for this user, in the scale of 0 - 100
     /// </summary>
     /// <value>Total adherence percentage for this user, in the scale of 0 - 100</value>
-    [DataMember(Name = "adherencePercentage", EmitDefaultValue = false)]
+    [JsonPropertyName("adherencePercentage")]
     public double? AdherencePercentage { get; set; }
 
 
@@ -135,7 +135,7 @@ public partial class HistoricalAdherenceDayMetrics : IEquatable<HistoricalAdhere
     /// Total conformance percentage for this user, in the scale of 0 - 100. Conformance percentage can be greater than 100 when the actual on queue time is greater than the scheduled on queue time for the same period.
     /// </summary>
     /// <value>Total conformance percentage for this user, in the scale of 0 - 100. Conformance percentage can be greater than 100 when the actual on queue time is greater than the scheduled on queue time for the same period.</value>
-    [DataMember(Name = "conformancePercentage", EmitDefaultValue = false)]
+    [JsonPropertyName("conformancePercentage")]
     public double? ConformancePercentage { get; set; }
 
 

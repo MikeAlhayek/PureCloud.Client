@@ -1,12 +1,12 @@
-using System.Runtime.Serialization;
 using System.Text;
+using System.Text.Json.Serialization;
 
 namespace PureCloud.Client.Models;
 
 /// <summary>
 /// ReportingTurnKnowledgeSearch
 /// </summary>
-[DataContract]
+
 public partial class ReportingTurnKnowledgeSearch : IEquatable<ReportingTurnKnowledgeSearch>
 {
     /// <summary>
@@ -29,7 +29,7 @@ public partial class ReportingTurnKnowledgeSearch : IEquatable<ReportingTurnKnow
     /// The ID of this knowledge search.
     /// </summary>
     /// <value>The ID of this knowledge search.</value>
-    [DataMember(Name = "searchId", EmitDefaultValue = false)]
+    [JsonPropertyName("searchId")]
     public string SearchId { get; set; }
 
 
@@ -38,7 +38,7 @@ public partial class ReportingTurnKnowledgeSearch : IEquatable<ReportingTurnKnow
     /// The list of search documents captured during this reporting turn.
     /// </summary>
     /// <value>The list of search documents captured during this reporting turn.</value>
-    [DataMember(Name = "documents", EmitDefaultValue = false)]
+    [JsonPropertyName("documents")]
     public List<ReportingTurnKnowledgeDocument> Documents { get; set; }
 
 
@@ -47,7 +47,7 @@ public partial class ReportingTurnKnowledgeSearch : IEquatable<ReportingTurnKnow
     /// The search query that was used to search the Knowledge Base documents for a matching question.
     /// </summary>
     /// <value>The search query that was used to search the Knowledge Base documents for a matching question.</value>
-    [DataMember(Name = "query", EmitDefaultValue = false)]
+    [JsonPropertyName("query")]
     public string Query { get; set; }
 
 

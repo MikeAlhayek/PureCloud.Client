@@ -1,12 +1,12 @@
-using System.Runtime.Serialization;
 using System.Text;
+using System.Text.Json.Serialization;
 
 namespace PureCloud.Client.Models;
 
 /// <summary>
 /// UserInsightsTrends
 /// </summary>
-[DataContract]
+
 public partial class UserInsightsTrends : IEquatable<UserInsightsTrends>
 {
     /// <summary>
@@ -27,7 +27,7 @@ public partial class UserInsightsTrends : IEquatable<UserInsightsTrends>
     /// List of trend data in the comparative period
     /// </summary>
     /// <value>List of trend data in the comparative period</value>
-    [DataMember(Name = "comparativePeriod", EmitDefaultValue = false)]
+    [JsonPropertyName("comparativePeriod")]
     public List<UserTrendData> ComparativePeriod { get; set; }
 
 
@@ -36,7 +36,7 @@ public partial class UserInsightsTrends : IEquatable<UserInsightsTrends>
     /// List of trend data in the primary period
     /// </summary>
     /// <value>List of trend data in the primary period</value>
-    [DataMember(Name = "primaryPeriod", EmitDefaultValue = false)]
+    [JsonPropertyName("primaryPeriod")]
     public List<UserTrendData> PrimaryPeriod { get; set; }
 
 

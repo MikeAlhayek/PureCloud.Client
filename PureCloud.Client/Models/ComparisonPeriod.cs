@@ -1,12 +1,12 @@
-using System.Runtime.Serialization;
 using System.Text;
+using System.Text.Json.Serialization;
 
 namespace PureCloud.Client.Models;
 
 /// <summary>
 /// ComparisonPeriod
 /// </summary>
-[DataContract]
+
 public partial class ComparisonPeriod : IEquatable<ComparisonPeriod>
 {
     /// <summary>
@@ -23,7 +23,7 @@ public partial class ComparisonPeriod : IEquatable<ComparisonPeriod>
     /// The globally unique identifier for the object.
     /// </summary>
     /// <value>The globally unique identifier for the object.</value>
-    [DataMember(Name = "id", EmitDefaultValue = false)]
+    [JsonPropertyName("id")]
     public string Id { get; private set; }
 
 
@@ -32,7 +32,7 @@ public partial class ComparisonPeriod : IEquatable<ComparisonPeriod>
     /// Key Performance Indicator optimised during the comparison period.
     /// </summary>
     /// <value>Key Performance Indicator optimised during the comparison period.</value>
-    [DataMember(Name = "kpi", EmitDefaultValue = false)]
+    [JsonPropertyName("kpi")]
     public string Kpi { get; private set; }
 
 
@@ -41,7 +41,7 @@ public partial class ComparisonPeriod : IEquatable<ComparisonPeriod>
     /// Start date of the comparison period. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z
     /// </summary>
     /// <value>Start date of the comparison period. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z</value>
-    [DataMember(Name = "dateStarted", EmitDefaultValue = false)]
+    [JsonPropertyName("dateStarted")]
     public DateTime? DateStarted { get; private set; }
 
 
@@ -50,7 +50,7 @@ public partial class ComparisonPeriod : IEquatable<ComparisonPeriod>
     /// End date of the comparison period. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z
     /// </summary>
     /// <value>End date of the comparison period. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z</value>
-    [DataMember(Name = "dateEnded", EmitDefaultValue = false)]
+    [JsonPropertyName("dateEnded")]
     public DateTime? DateEnded { get; private set; }
 
 
@@ -59,7 +59,7 @@ public partial class ComparisonPeriod : IEquatable<ComparisonPeriod>
     /// The percentage benefit on this queue for the duration of the comparison period
     /// </summary>
     /// <value>The percentage benefit on this queue for the duration of the comparison period</value>
-    [DataMember(Name = "percentageBenefit", EmitDefaultValue = false)]
+    [JsonPropertyName("percentageBenefit")]
     public double? PercentageBenefit { get; private set; }
 
 
@@ -68,7 +68,7 @@ public partial class ComparisonPeriod : IEquatable<ComparisonPeriod>
     /// KPI results for each metric
     /// </summary>
     /// <value>KPI results for each metric</value>
-    [DataMember(Name = "kpiResults", EmitDefaultValue = false)]
+    [JsonPropertyName("kpiResults")]
     public List<KpiResult> KpiResults { get; private set; }
 
 
@@ -77,7 +77,7 @@ public partial class ComparisonPeriod : IEquatable<ComparisonPeriod>
     /// The URI for this object
     /// </summary>
     /// <value>The URI for this object</value>
-    [DataMember(Name = "selfUri", EmitDefaultValue = false)]
+    [JsonPropertyName("selfUri")]
     public string SelfUri { get; private set; }
 
 

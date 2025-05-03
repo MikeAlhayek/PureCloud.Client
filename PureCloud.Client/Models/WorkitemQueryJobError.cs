@@ -1,12 +1,12 @@
-using System.Runtime.Serialization;
 using System.Text;
+using System.Text.Json.Serialization;
 
 namespace PureCloud.Client.Models;
 
 /// <summary>
 /// WorkitemQueryJobError
 /// </summary>
-[DataContract]
+
 public partial class WorkitemQueryJobError : IEquatable<WorkitemQueryJobError>
 {
     /// <summary>
@@ -27,7 +27,7 @@ public partial class WorkitemQueryJobError : IEquatable<WorkitemQueryJobError>
     /// System defined error code for the error.
     /// </summary>
     /// <value>System defined error code for the error.</value>
-    [DataMember(Name = "code", EmitDefaultValue = false)]
+    [JsonPropertyName("code")]
     public string Code { get; set; }
 
 
@@ -36,7 +36,7 @@ public partial class WorkitemQueryJobError : IEquatable<WorkitemQueryJobError>
     /// Error message for the failed job.
     /// </summary>
     /// <value>Error message for the failed job.</value>
-    [DataMember(Name = "message", EmitDefaultValue = false)]
+    [JsonPropertyName("message")]
     public string Message { get; set; }
 
 

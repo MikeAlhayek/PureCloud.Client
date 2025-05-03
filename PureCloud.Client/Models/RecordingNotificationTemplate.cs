@@ -1,12 +1,12 @@
-using System.Runtime.Serialization;
 using System.Text;
+using System.Text.Json.Serialization;
 
 namespace PureCloud.Client.Models;
 
 /// <summary>
 /// RecordingNotificationTemplate
 /// </summary>
-[DataContract]
+
 public partial class RecordingNotificationTemplate : IEquatable<RecordingNotificationTemplate>
 {
     /// <summary>
@@ -33,7 +33,7 @@ public partial class RecordingNotificationTemplate : IEquatable<RecordingNotific
     /// The globally unique identifier for the object.
     /// </summary>
     /// <value>The globally unique identifier for the object.</value>
-    [DataMember(Name = "id", EmitDefaultValue = false)]
+    [JsonPropertyName("id")]
     public string Id { get; private set; }
 
 
@@ -42,7 +42,7 @@ public partial class RecordingNotificationTemplate : IEquatable<RecordingNotific
     /// Template language.
     /// </summary>
     /// <value>Template language.</value>
-    [DataMember(Name = "language", EmitDefaultValue = false)]
+    [JsonPropertyName("language")]
     public string Language { get; set; }
 
 
@@ -51,7 +51,7 @@ public partial class RecordingNotificationTemplate : IEquatable<RecordingNotific
     /// The template header.
     /// </summary>
     /// <value>The template header.</value>
-    [DataMember(Name = "header", EmitDefaultValue = false)]
+    [JsonPropertyName("header")]
     public RecordingTemplateHeader Header { get; set; }
 
 
@@ -60,7 +60,7 @@ public partial class RecordingNotificationTemplate : IEquatable<RecordingNotific
     /// The template body.
     /// </summary>
     /// <value>The template body.</value>
-    [DataMember(Name = "body", EmitDefaultValue = false)]
+    [JsonPropertyName("body")]
     public RecordingTemplateBody Body { get; set; }
 
 
@@ -69,7 +69,7 @@ public partial class RecordingNotificationTemplate : IEquatable<RecordingNotific
     /// Template buttons
     /// </summary>
     /// <value>Template buttons</value>
-    [DataMember(Name = "buttons", EmitDefaultValue = false)]
+    [JsonPropertyName("buttons")]
     public List<RecordingTemplateButton> Buttons { get; set; }
 
 
@@ -78,7 +78,7 @@ public partial class RecordingNotificationTemplate : IEquatable<RecordingNotific
     /// The template footer.
     /// </summary>
     /// <value>The template footer.</value>
-    [DataMember(Name = "footer", EmitDefaultValue = false)]
+    [JsonPropertyName("footer")]
     public RecordingTemplateFooter Footer { get; set; }
 
 

@@ -7,14 +7,14 @@ namespace PureCloud.Client.Models;
 /// <summary>
 /// MediaIceSelectedCandidate
 /// </summary>
-[DataContract]
+
 public partial class MediaIceSelectedCandidate : IEquatable<MediaIceSelectedCandidate>
 {
     /// <summary>
     /// Type of the selected candidate
     /// </summary>
     /// <value>Type of the selected candidate</value>
-    [JsonConverter(typeof(JsonStringEnumConverter))]
+    
     public enum TypeEnum
     {
         /// <summary>
@@ -53,7 +53,7 @@ public partial class MediaIceSelectedCandidate : IEquatable<MediaIceSelectedCand
     /// Type of the selected candidate
     /// </summary>
     /// <value>Type of the selected candidate</value>
-    [DataMember(Name = "type", EmitDefaultValue = false)]
+    [JsonPropertyName("type")]
     public TypeEnum? Type { get; set; }
     /// <summary>
     /// Initializes a new instance of the <see cref="MediaIceSelectedCandidate" /> class.
@@ -73,7 +73,7 @@ public partial class MediaIceSelectedCandidate : IEquatable<MediaIceSelectedCand
     /// IP address and port of the candidate
     /// </summary>
     /// <value>IP address and port of the candidate</value>
-    [DataMember(Name = "address", EmitDefaultValue = false)]
+    [JsonPropertyName("address")]
     public string Address { get; set; }
 
 

@@ -1,12 +1,12 @@
-using System.Runtime.Serialization;
 using System.Text;
+using System.Text.Json.Serialization;
 
 namespace PureCloud.Client.Models;
 
 /// <summary>
 /// Represents the details of a parsed certificate.
 /// </summary>
-[DataContract]
+
 public partial class CertificateDetails : IEquatable<CertificateDetails>
 {
     /// <summary>
@@ -37,7 +37,7 @@ public partial class CertificateDetails : IEquatable<CertificateDetails>
     /// Information about the issuer of the certificate.  The value of this property is a comma separated key&#x3D;value format.  Each key is one of the attribute names supported by X.500.
     /// </summary>
     /// <value>Information about the issuer of the certificate.  The value of this property is a comma separated key&#x3D;value format.  Each key is one of the attribute names supported by X.500.</value>
-    [DataMember(Name = "issuer", EmitDefaultValue = false)]
+    [JsonPropertyName("issuer")]
     public string Issuer { get; set; }
 
 
@@ -46,7 +46,7 @@ public partial class CertificateDetails : IEquatable<CertificateDetails>
     /// Information about the subject of the certificate.  The value of this property is a comma separated key&#x3D;value format.  Each key is one of the attribute names supported by X.500.
     /// </summary>
     /// <value>Information about the subject of the certificate.  The value of this property is a comma separated key&#x3D;value format.  Each key is one of the attribute names supported by X.500.</value>
-    [DataMember(Name = "subject", EmitDefaultValue = false)]
+    [JsonPropertyName("subject")]
     public string Subject { get; set; }
 
 
@@ -55,7 +55,7 @@ public partial class CertificateDetails : IEquatable<CertificateDetails>
     /// The expiration date of the certificate. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z
     /// </summary>
     /// <value>The expiration date of the certificate. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z</value>
-    [DataMember(Name = "expirationDate", EmitDefaultValue = false)]
+    [JsonPropertyName("expirationDate")]
     public DateTime? ExpirationDate { get; set; }
 
 
@@ -64,7 +64,7 @@ public partial class CertificateDetails : IEquatable<CertificateDetails>
     /// The issue date of the certificate. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z
     /// </summary>
     /// <value>The issue date of the certificate. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z</value>
-    [DataMember(Name = "issueDate", EmitDefaultValue = false)]
+    [JsonPropertyName("issueDate")]
     public DateTime? IssueDate { get; set; }
 
 
@@ -73,7 +73,7 @@ public partial class CertificateDetails : IEquatable<CertificateDetails>
     /// True if the certificate is expired, false otherwise.
     /// </summary>
     /// <value>True if the certificate is expired, false otherwise.</value>
-    [DataMember(Name = "expired", EmitDefaultValue = false)]
+    [JsonPropertyName("expired")]
     public bool? Expired { get; set; }
 
 
@@ -81,7 +81,7 @@ public partial class CertificateDetails : IEquatable<CertificateDetails>
     /// <summary>
     /// Gets or Sets SignatureValid
     /// </summary>
-    [DataMember(Name = "signatureValid", EmitDefaultValue = false)]
+    [JsonPropertyName("signatureValid")]
     public bool? SignatureValid { get; set; }
 
 
@@ -89,7 +89,7 @@ public partial class CertificateDetails : IEquatable<CertificateDetails>
     /// <summary>
     /// Gets or Sets Valid
     /// </summary>
-    [DataMember(Name = "valid", EmitDefaultValue = false)]
+    [JsonPropertyName("valid")]
     public bool? Valid { get; set; }
 
 

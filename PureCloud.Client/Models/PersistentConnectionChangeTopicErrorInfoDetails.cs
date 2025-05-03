@@ -1,12 +1,12 @@
-using System.Runtime.Serialization;
 using System.Text;
+using System.Text.Json.Serialization;
 
 namespace PureCloud.Client.Models;
 
 /// <summary>
 /// PersistentConnectionChangeTopicErrorInfoDetails
 /// </summary>
-[DataContract]
+
 public partial class PersistentConnectionChangeTopicErrorInfoDetails : IEquatable<PersistentConnectionChangeTopicErrorInfoDetails>
 {
     /// <summary>
@@ -32,7 +32,7 @@ public partial class PersistentConnectionChangeTopicErrorInfoDetails : IEquatabl
     /// <summary>
     /// Gets or Sets Code
     /// </summary>
-    [DataMember(Name = "code", EmitDefaultValue = false)]
+    [JsonPropertyName("code")]
     public string Code { get; set; }
 
 
@@ -40,7 +40,7 @@ public partial class PersistentConnectionChangeTopicErrorInfoDetails : IEquatabl
     /// <summary>
     /// Gets or Sets UserMessage
     /// </summary>
-    [DataMember(Name = "userMessage", EmitDefaultValue = false)]
+    [JsonPropertyName("userMessage")]
     public string UserMessage { get; set; }
 
 
@@ -48,7 +48,7 @@ public partial class PersistentConnectionChangeTopicErrorInfoDetails : IEquatabl
     /// <summary>
     /// Gets or Sets UserParams
     /// </summary>
-    [DataMember(Name = "userParams", EmitDefaultValue = false)]
+    [JsonPropertyName("userParams")]
     public Dictionary<string, string> UserParams { get; set; }
 
 
@@ -56,7 +56,7 @@ public partial class PersistentConnectionChangeTopicErrorInfoDetails : IEquatabl
     /// <summary>
     /// Gets or Sets Hostname
     /// </summary>
-    [DataMember(Name = "hostname", EmitDefaultValue = false)]
+    [JsonPropertyName("hostname")]
     public string Hostname { get; set; }
 
 
@@ -64,7 +64,7 @@ public partial class PersistentConnectionChangeTopicErrorInfoDetails : IEquatabl
     /// <summary>
     /// Gets or Sets Location
     /// </summary>
-    [DataMember(Name = "location", EmitDefaultValue = false)]
+    [JsonPropertyName("location")]
     public PersistentConnectionChangeTopicErrorLocation Location { get; set; }
 
 

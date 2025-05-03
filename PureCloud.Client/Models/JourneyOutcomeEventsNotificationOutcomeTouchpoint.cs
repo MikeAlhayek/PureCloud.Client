@@ -1,12 +1,12 @@
-using System.Runtime.Serialization;
 using System.Text;
+using System.Text.Json.Serialization;
 
 namespace PureCloud.Client.Models;
 
 /// <summary>
 /// JourneyOutcomeEventsNotificationOutcomeTouchpoint
 /// </summary>
-[DataContract]
+
 public partial class JourneyOutcomeEventsNotificationOutcomeTouchpoint : IEquatable<JourneyOutcomeEventsNotificationOutcomeTouchpoint>
 {
     /// <summary>
@@ -30,7 +30,7 @@ public partial class JourneyOutcomeEventsNotificationOutcomeTouchpoint : IEquata
     /// <summary>
     /// Gets or Sets Id
     /// </summary>
-    [DataMember(Name = "id", EmitDefaultValue = false)]
+    [JsonPropertyName("id")]
     public string Id { get; set; }
 
 
@@ -38,7 +38,7 @@ public partial class JourneyOutcomeEventsNotificationOutcomeTouchpoint : IEquata
     /// <summary>
     /// Gets or Sets Channels
     /// </summary>
-    [DataMember(Name = "channels", EmitDefaultValue = false)]
+    [JsonPropertyName("channels")]
     public List<JourneyOutcomeEventsNotificationOutcomeTouchpointChannel> Channels { get; set; }
 
 
@@ -46,7 +46,7 @@ public partial class JourneyOutcomeEventsNotificationOutcomeTouchpoint : IEquata
     /// <summary>
     /// Gets or Sets CreatedDate
     /// </summary>
-    [DataMember(Name = "createdDate", EmitDefaultValue = false)]
+    [JsonPropertyName("createdDate")]
     public DateTime? CreatedDate { get; set; }
 
 
@@ -54,7 +54,7 @@ public partial class JourneyOutcomeEventsNotificationOutcomeTouchpoint : IEquata
     /// <summary>
     /// Gets or Sets ActionMap
     /// </summary>
-    [DataMember(Name = "actionMap", EmitDefaultValue = false)]
+    [JsonPropertyName("actionMap")]
     public JourneyOutcomeEventsNotificationActionMap ActionMap { get; set; }
 
 

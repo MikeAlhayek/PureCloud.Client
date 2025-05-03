@@ -1,12 +1,12 @@
-using System.Runtime.Serialization;
 using System.Text;
+using System.Text.Json.Serialization;
 
 namespace PureCloud.Client.Models;
 
 /// <summary>
 /// DomainCapabilities
 /// </summary>
-[DataContract]
+
 public partial class DomainCapabilities : IEquatable<DomainCapabilities>
 {
     /// <summary>
@@ -33,7 +33,7 @@ public partial class DomainCapabilities : IEquatable<DomainCapabilities>
     /// True if this address family on the interface is enabled.
     /// </summary>
     /// <value>True if this address family on the interface is enabled.</value>
-    [DataMember(Name = "enabled", EmitDefaultValue = false)]
+    [JsonPropertyName("enabled")]
     public bool? Enabled { get; set; }
 
 
@@ -42,7 +42,7 @@ public partial class DomainCapabilities : IEquatable<DomainCapabilities>
     /// True if this address family on the interface is using DHCP.
     /// </summary>
     /// <value>True if this address family on the interface is using DHCP.</value>
-    [DataMember(Name = "dhcp", EmitDefaultValue = false)]
+    [JsonPropertyName("dhcp")]
     public bool? Dhcp { get; set; }
 
 
@@ -51,7 +51,7 @@ public partial class DomainCapabilities : IEquatable<DomainCapabilities>
     /// The metric being used for the address family on this interface. Lower values will have a higher priority. If autoMetric is true, this value will be the automatically calculated metric. To set this value be sure autoMetric is false. If no value is returned, metric configuration is not supported on this Edge.
     /// </summary>
     /// <value>The metric being used for the address family on this interface. Lower values will have a higher priority. If autoMetric is true, this value will be the automatically calculated metric. To set this value be sure autoMetric is false. If no value is returned, metric configuration is not supported on this Edge.</value>
-    [DataMember(Name = "metric", EmitDefaultValue = false)]
+    [JsonPropertyName("metric")]
     public int? Metric { get; set; }
 
 
@@ -60,7 +60,7 @@ public partial class DomainCapabilities : IEquatable<DomainCapabilities>
     /// True if the metric is being calculated automatically for the address family on this interface.
     /// </summary>
     /// <value>True if the metric is being calculated automatically for the address family on this interface.</value>
-    [DataMember(Name = "autoMetric", EmitDefaultValue = false)]
+    [JsonPropertyName("autoMetric")]
     public bool? AutoMetric { get; set; }
 
 
@@ -69,7 +69,7 @@ public partial class DomainCapabilities : IEquatable<DomainCapabilities>
     /// True if metric configuration is supported.
     /// </summary>
     /// <value>True if metric configuration is supported.</value>
-    [DataMember(Name = "supportsMetric", EmitDefaultValue = false)]
+    [JsonPropertyName("supportsMetric")]
     public bool? SupportsMetric { get; private set; }
 
 
@@ -78,7 +78,7 @@ public partial class DomainCapabilities : IEquatable<DomainCapabilities>
     /// Set to true to enable this address family on this interface to respond to ping requests.
     /// </summary>
     /// <value>Set to true to enable this address family on this interface to respond to ping requests.</value>
-    [DataMember(Name = "pingEnabled", EmitDefaultValue = false)]
+    [JsonPropertyName("pingEnabled")]
     public bool? PingEnabled { get; set; }
 
 

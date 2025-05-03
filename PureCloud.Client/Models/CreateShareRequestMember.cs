@@ -7,13 +7,13 @@ namespace PureCloud.Client.Models;
 /// <summary>
 /// CreateShareRequestMember
 /// </summary>
-[DataContract]
+
 public partial class CreateShareRequestMember : IEquatable<CreateShareRequestMember>
 {
     /// <summary>
     /// Gets or Sets MemberType
     /// </summary>
-    [JsonConverter(typeof(JsonStringEnumConverter))]
+    
     public enum MemberTypeEnum
     {
         /// <summary>
@@ -45,7 +45,7 @@ public partial class CreateShareRequestMember : IEquatable<CreateShareRequestMem
     /// <summary>
     /// Gets or Sets MemberType
     /// </summary>
-    [DataMember(Name = "memberType", EmitDefaultValue = false)]
+    [JsonPropertyName("memberType")]
     public MemberTypeEnum? MemberType { get; set; }
     /// <summary>
     /// Initializes a new instance of the <see cref="CreateShareRequestMember" /> class.
@@ -66,7 +66,7 @@ public partial class CreateShareRequestMember : IEquatable<CreateShareRequestMem
     /// <summary>
     /// Gets or Sets Member
     /// </summary>
-    [DataMember(Name = "member", EmitDefaultValue = false)]
+    [JsonPropertyName("member")]
     public MemberEntity Member { get; set; }
 
 

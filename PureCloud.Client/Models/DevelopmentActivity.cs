@@ -7,14 +7,14 @@ namespace PureCloud.Client.Models;
 /// <summary>
 /// Development Activity object
 /// </summary>
-[DataContract]
+
 public partial class DevelopmentActivity : IEquatable<DevelopmentActivity>
 {
     /// <summary>
     /// Module archive type
     /// </summary>
     /// <value>Module archive type</value>
-    [JsonConverter(typeof(JsonStringEnumConverter))]
+    
     public enum ArchivalModeEnum
     {
         /// <summary>
@@ -41,7 +41,7 @@ public partial class DevelopmentActivity : IEquatable<DevelopmentActivity>
     /// The type of activity
     /// </summary>
     /// <value>The type of activity</value>
-    [JsonConverter(typeof(JsonStringEnumConverter))]
+    
     public enum TypeEnum
     {
         /// <summary>
@@ -92,7 +92,7 @@ public partial class DevelopmentActivity : IEquatable<DevelopmentActivity>
     /// The status of the activity
     /// </summary>
     /// <value>The status of the activity</value>
-    [JsonConverter(typeof(JsonStringEnumConverter))]
+    
     public enum StatusEnum
     {
         /// <summary>
@@ -137,19 +137,19 @@ public partial class DevelopmentActivity : IEquatable<DevelopmentActivity>
     /// Module archive type
     /// </summary>
     /// <value>Module archive type</value>
-    [DataMember(Name = "archivalMode", EmitDefaultValue = false)]
+    [JsonPropertyName("archivalMode")]
     public ArchivalModeEnum? ArchivalMode { get; set; }
     /// <summary>
     /// The type of activity
     /// </summary>
     /// <value>The type of activity</value>
-    [DataMember(Name = "type", EmitDefaultValue = false)]
+    [JsonPropertyName("type")]
     public TypeEnum? Type { get; set; }
     /// <summary>
     /// The status of the activity
     /// </summary>
     /// <value>The status of the activity</value>
-    [DataMember(Name = "status", EmitDefaultValue = false)]
+    [JsonPropertyName("status")]
     public StatusEnum? Status { get; set; }
     /// <summary>
     /// Initializes a new instance of the <see cref="DevelopmentActivity" /> class.
@@ -185,7 +185,7 @@ public partial class DevelopmentActivity : IEquatable<DevelopmentActivity>
     /// The globally unique identifier for the object.
     /// </summary>
     /// <value>The globally unique identifier for the object.</value>
-    [DataMember(Name = "id", EmitDefaultValue = false)]
+    [JsonPropertyName("id")]
     public string Id { get; private set; }
 
 
@@ -194,7 +194,7 @@ public partial class DevelopmentActivity : IEquatable<DevelopmentActivity>
     /// Date that activity was completed. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z
     /// </summary>
     /// <value>Date that activity was completed. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z</value>
-    [DataMember(Name = "dateCompleted", EmitDefaultValue = false)]
+    [JsonPropertyName("dateCompleted")]
     public DateTime? DateCompleted { get; private set; }
 
 
@@ -203,7 +203,7 @@ public partial class DevelopmentActivity : IEquatable<DevelopmentActivity>
     /// User that created activity
     /// </summary>
     /// <value>User that created activity</value>
-    [DataMember(Name = "createdBy", EmitDefaultValue = false)]
+    [JsonPropertyName("createdBy")]
     public UserReference CreatedBy { get; private set; }
 
 
@@ -212,7 +212,7 @@ public partial class DevelopmentActivity : IEquatable<DevelopmentActivity>
     /// Date activity was created. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z
     /// </summary>
     /// <value>Date activity was created. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z</value>
-    [DataMember(Name = "dateCreated", EmitDefaultValue = false)]
+    [JsonPropertyName("dateCreated")]
     public DateTime? DateCreated { get; private set; }
 
 
@@ -221,7 +221,7 @@ public partial class DevelopmentActivity : IEquatable<DevelopmentActivity>
     /// The user&#39;s percentage score for this activity
     /// </summary>
     /// <value>The user&#39;s percentage score for this activity</value>
-    [DataMember(Name = "percentageScore", EmitDefaultValue = false)]
+    [JsonPropertyName("percentageScore")]
     public float? PercentageScore { get; private set; }
 
 
@@ -230,7 +230,7 @@ public partial class DevelopmentActivity : IEquatable<DevelopmentActivity>
     /// True if the activity was passed
     /// </summary>
     /// <value>True if the activity was passed</value>
-    [DataMember(Name = "isPassed", EmitDefaultValue = false)]
+    [JsonPropertyName("isPassed")]
     public bool? IsPassed { get; private set; }
 
 
@@ -239,7 +239,7 @@ public partial class DevelopmentActivity : IEquatable<DevelopmentActivity>
     /// True if this is the latest version of assignment assigned to the user
     /// </summary>
     /// <value>True if this is the latest version of assignment assigned to the user</value>
-    [DataMember(Name = "isLatest", EmitDefaultValue = false)]
+    [JsonPropertyName("isLatest")]
     public bool? IsLatest { get; set; }
 
 
@@ -248,7 +248,7 @@ public partial class DevelopmentActivity : IEquatable<DevelopmentActivity>
     /// True if the associated module is archived
     /// </summary>
     /// <value>True if the associated module is archived</value>
-    [DataMember(Name = "isModuleArchived", EmitDefaultValue = false)]
+    [JsonPropertyName("isModuleArchived")]
     public bool? IsModuleArchived { get; set; }
 
 
@@ -259,7 +259,7 @@ public partial class DevelopmentActivity : IEquatable<DevelopmentActivity>
     /// The URI for this object
     /// </summary>
     /// <value>The URI for this object</value>
-    [DataMember(Name = "selfUri", EmitDefaultValue = false)]
+    [JsonPropertyName("selfUri")]
     public string SelfUri { get; private set; }
 
 
@@ -268,7 +268,7 @@ public partial class DevelopmentActivity : IEquatable<DevelopmentActivity>
     /// The name of the activity
     /// </summary>
     /// <value>The name of the activity</value>
-    [DataMember(Name = "name", EmitDefaultValue = false)]
+    [JsonPropertyName("name")]
     public string Name { get; set; }
 
 
@@ -281,7 +281,7 @@ public partial class DevelopmentActivity : IEquatable<DevelopmentActivity>
     /// Due date for completion of the activity. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z
     /// </summary>
     /// <value>Due date for completion of the activity. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z</value>
-    [DataMember(Name = "dateDue", EmitDefaultValue = false)]
+    [JsonPropertyName("dateDue")]
     public DateTime? DateDue { get; set; }
 
 
@@ -290,7 +290,7 @@ public partial class DevelopmentActivity : IEquatable<DevelopmentActivity>
     /// Facilitator of the activity
     /// </summary>
     /// <value>Facilitator of the activity</value>
-    [DataMember(Name = "facilitator", EmitDefaultValue = false)]
+    [JsonPropertyName("facilitator")]
     public UserReference Facilitator { get; set; }
 
 
@@ -299,7 +299,7 @@ public partial class DevelopmentActivity : IEquatable<DevelopmentActivity>
     /// List of users attending the activity
     /// </summary>
     /// <value>List of users attending the activity</value>
-    [DataMember(Name = "attendees", EmitDefaultValue = false)]
+    [JsonPropertyName("attendees")]
     public List<UserReference> Attendees { get; set; }
 
 
@@ -308,7 +308,7 @@ public partial class DevelopmentActivity : IEquatable<DevelopmentActivity>
     /// Indicates if the activity is overdue
     /// </summary>
     /// <value>Indicates if the activity is overdue</value>
-    [DataMember(Name = "isOverdue", EmitDefaultValue = false)]
+    [JsonPropertyName("isOverdue")]
     public bool? IsOverdue { get; set; }
 
 

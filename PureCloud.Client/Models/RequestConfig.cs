@@ -1,12 +1,12 @@
-using System.Runtime.Serialization;
 using System.Text;
+using System.Text.Json.Serialization;
 
 namespace PureCloud.Client.Models;
 
 /// <summary>
 /// Defines response components of the Action Request.
 /// </summary>
-[DataContract]
+
 public partial class RequestConfig : IEquatable<RequestConfig>
 {
     /// <summary>
@@ -33,7 +33,7 @@ public partial class RequestConfig : IEquatable<RequestConfig>
     /// URL that may include placeholders for requests to 3rd party service. This value is read only for Function Integrations and will be set when a draft is created.
     /// </summary>
     /// <value>URL that may include placeholders for requests to 3rd party service. This value is read only for Function Integrations and will be set when a draft is created.</value>
-    [DataMember(Name = "requestUrlTemplate", EmitDefaultValue = false)]
+    [JsonPropertyName("requestUrlTemplate")]
     public string RequestUrlTemplate { get; set; }
 
 
@@ -42,7 +42,7 @@ public partial class RequestConfig : IEquatable<RequestConfig>
     /// Velocity template to define request body sent to 3rd party service.
     /// </summary>
     /// <value>Velocity template to define request body sent to 3rd party service.</value>
-    [DataMember(Name = "requestTemplate", EmitDefaultValue = false)]
+    [JsonPropertyName("requestTemplate")]
     public string RequestTemplate { get; set; }
 
 
@@ -51,7 +51,7 @@ public partial class RequestConfig : IEquatable<RequestConfig>
     /// URI to retrieve requestTemplate
     /// </summary>
     /// <value>URI to retrieve requestTemplate</value>
-    [DataMember(Name = "requestTemplateUri", EmitDefaultValue = false)]
+    [JsonPropertyName("requestTemplateUri")]
     public string RequestTemplateUri { get; set; }
 
 
@@ -60,7 +60,7 @@ public partial class RequestConfig : IEquatable<RequestConfig>
     /// HTTP method to use for request
     /// </summary>
     /// <value>HTTP method to use for request</value>
-    [DataMember(Name = "requestType", EmitDefaultValue = false)]
+    [JsonPropertyName("requestType")]
     public string RequestType { get; set; }
 
 
@@ -69,7 +69,7 @@ public partial class RequestConfig : IEquatable<RequestConfig>
     /// Headers to include in request in (Header Name, Value) pairs.
     /// </summary>
     /// <value>Headers to include in request in (Header Name, Value) pairs.</value>
-    [DataMember(Name = "headers", EmitDefaultValue = false)]
+    [JsonPropertyName("headers")]
     public Dictionary<string, string> Headers { get; set; }
 
 

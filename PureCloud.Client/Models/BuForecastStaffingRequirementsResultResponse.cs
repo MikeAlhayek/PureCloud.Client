@@ -7,14 +7,14 @@ namespace PureCloud.Client.Models;
 /// <summary>
 /// BuForecastStaffingRequirementsResultResponse
 /// </summary>
-[DataContract]
+
 public partial class BuForecastStaffingRequirementsResultResponse : IEquatable<BuForecastStaffingRequirementsResultResponse>
 {
     /// <summary>
     /// The state of the staffing requirements generation
     /// </summary>
     /// <value>The state of the staffing requirements generation</value>
-    [JsonConverter(typeof(JsonStringEnumConverter))]
+    
     public enum StateEnum
     {
         /// <summary>
@@ -47,7 +47,7 @@ public partial class BuForecastStaffingRequirementsResultResponse : IEquatable<B
     /// The state of the staffing requirements generation
     /// </summary>
     /// <value>The state of the staffing requirements generation</value>
-    [DataMember(Name = "state", EmitDefaultValue = false)]
+    [JsonPropertyName("state")]
     public StateEnum? State { get; set; }
 
     /// <summary>
@@ -83,7 +83,7 @@ public partial class BuForecastStaffingRequirementsResultResponse : IEquatable<B
     /// The ID of the business unit to which the forecast staffing requirements belongs
     /// </summary>
     /// <value>The ID of the business unit to which the forecast staffing requirements belongs</value>
-    [DataMember(Name = "businessUnitId", EmitDefaultValue = false)]
+    [JsonPropertyName("businessUnitId")]
     public string BusinessUnitId { get; set; }
 
 
@@ -92,7 +92,7 @@ public partial class BuForecastStaffingRequirementsResultResponse : IEquatable<B
     /// The forecast reference
     /// </summary>
     /// <value>The forecast reference</value>
-    [DataMember(Name = "forecast", EmitDefaultValue = false)]
+    [JsonPropertyName("forecast")]
     public BuShortTermForecastReference Forecast { get; set; }
 
 
@@ -101,7 +101,7 @@ public partial class BuForecastStaffingRequirementsResultResponse : IEquatable<B
     /// The reference start date for interval-based data for this forecast as an ISO-8601 string
     /// </summary>
     /// <value>The reference start date for interval-based data for this forecast as an ISO-8601 string</value>
-    [DataMember(Name = "referenceStartDate", EmitDefaultValue = false)]
+    [JsonPropertyName("referenceStartDate")]
     public DateTime? ReferenceStartDate { get; set; }
 
 
@@ -110,7 +110,7 @@ public partial class BuForecastStaffingRequirementsResultResponse : IEquatable<B
     /// The number of weeks in this forecast
     /// </summary>
     /// <value>The number of weeks in this forecast</value>
-    [DataMember(Name = "weekCount", EmitDefaultValue = false)]
+    [JsonPropertyName("weekCount")]
     public int? WeekCount { get; set; }
 
 
@@ -119,7 +119,7 @@ public partial class BuForecastStaffingRequirementsResultResponse : IEquatable<B
     /// The period/interval in minutes for which to aggregate the data
     /// </summary>
     /// <value>The period/interval in minutes for which to aggregate the data</value>
-    [DataMember(Name = "intervalLengthMinutes", EmitDefaultValue = false)]
+    [JsonPropertyName("intervalLengthMinutes")]
     public int? IntervalLengthMinutes { get; set; }
 
 
@@ -130,7 +130,7 @@ public partial class BuForecastStaffingRequirementsResultResponse : IEquatable<B
     /// The forecast staffing requirement results, Will be populated when state &#x3D;&#x3D; &#39;Complete&#39;
     /// </summary>
     /// <value>The forecast staffing requirement results, Will be populated when state &#x3D;&#x3D; &#39;Complete&#39;</value>
-    [DataMember(Name = "results", EmitDefaultValue = false)]
+    [JsonPropertyName("results")]
     public List<BuForecastStaffingRequirementsResult> Results { get; set; }
 
 

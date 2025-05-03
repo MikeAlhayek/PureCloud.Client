@@ -7,14 +7,14 @@ namespace PureCloud.Client.Models;
 /// <summary>
 /// EmailCommunicationEndedEvent
 /// </summary>
-[DataContract]
+
 public partial class EmailCommunicationEndedEvent : IEquatable<EmailCommunicationEndedEvent>
 {
     /// <summary>
     /// Indicates how this communication was ended.
     /// </summary>
     /// <value>Indicates how this communication was ended.</value>
-    [JsonConverter(typeof(JsonStringEnumConverter))]
+    
     public enum DisconnectTypeEnum
     {
         /// <summary>
@@ -83,7 +83,7 @@ public partial class EmailCommunicationEndedEvent : IEquatable<EmailCommunicatio
     /// Indicates how this communication was ended.
     /// </summary>
     /// <value>Indicates how this communication was ended.</value>
-    [DataMember(Name = "disconnectType", EmitDefaultValue = false)]
+    [JsonPropertyName("disconnectType")]
     public DisconnectTypeEnum? DisconnectType { get; set; }
 
     /// <summary>
@@ -115,7 +115,7 @@ public partial class EmailCommunicationEndedEvent : IEquatable<EmailCommunicatio
     /// A unique (V4 UUID) eventId for this event
     /// </summary>
     /// <value>A unique (V4 UUID) eventId for this event</value>
-    [DataMember(Name = "eventId", EmitDefaultValue = false)]
+    [JsonPropertyName("eventId")]
     public string EventId { get; set; }
 
 
@@ -124,7 +124,7 @@ public partial class EmailCommunicationEndedEvent : IEquatable<EmailCommunicatio
     /// A Date Time representing the time this event occurred. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z
     /// </summary>
     /// <value>A Date Time representing the time this event occurred. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z</value>
-    [DataMember(Name = "eventDateTime", EmitDefaultValue = false)]
+    [JsonPropertyName("eventDateTime")]
     public DateTime? EventDateTime { get; set; }
 
 
@@ -133,7 +133,7 @@ public partial class EmailCommunicationEndedEvent : IEquatable<EmailCommunicatio
     /// A unique Id (V4 UUID) identifying this conversation
     /// </summary>
     /// <value>A unique Id (V4 UUID) identifying this conversation</value>
-    [DataMember(Name = "conversationId", EmitDefaultValue = false)]
+    [JsonPropertyName("conversationId")]
     public string ConversationId { get; set; }
 
 
@@ -142,7 +142,7 @@ public partial class EmailCommunicationEndedEvent : IEquatable<EmailCommunicatio
     /// A unique Id (V4 UUID) identifying this communication.
     /// </summary>
     /// <value>A unique Id (V4 UUID) identifying this communication.</value>
-    [DataMember(Name = "communicationId", EmitDefaultValue = false)]
+    [JsonPropertyName("communicationId")]
     public string CommunicationId { get; set; }
 
 

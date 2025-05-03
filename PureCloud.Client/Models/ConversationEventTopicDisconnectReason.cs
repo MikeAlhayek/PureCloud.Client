@@ -7,14 +7,14 @@ namespace PureCloud.Client.Models;
 /// <summary>
 /// ConversationEventTopicDisconnectReason
 /// </summary>
-[DataContract]
+
 public partial class ConversationEventTopicDisconnectReason : IEquatable<ConversationEventTopicDisconnectReason>
 {
     /// <summary>
     /// Disconnect reason protocol type.
     /// </summary>
     /// <value>Disconnect reason protocol type.</value>
-    [JsonConverter(typeof(JsonStringEnumConverter))]
+    
     public enum TypeEnum
     {
         /// <summary>
@@ -41,7 +41,7 @@ public partial class ConversationEventTopicDisconnectReason : IEquatable<Convers
     /// Disconnect reason protocol type.
     /// </summary>
     /// <value>Disconnect reason protocol type.</value>
-    [DataMember(Name = "type", EmitDefaultValue = false)]
+    [JsonPropertyName("type")]
     public TypeEnum? Type { get; set; }
     /// <summary>
     /// Initializes a new instance of the <see cref="ConversationEventTopicDisconnectReason" /> class.
@@ -65,7 +65,7 @@ public partial class ConversationEventTopicDisconnectReason : IEquatable<Convers
     /// Protocol specific reason code. See the Q.850 and SIP specs.
     /// </summary>
     /// <value>Protocol specific reason code. See the Q.850 and SIP specs.</value>
-    [DataMember(Name = "code", EmitDefaultValue = false)]
+    [JsonPropertyName("code")]
     public long? Code { get; set; }
 
 
@@ -74,7 +74,7 @@ public partial class ConversationEventTopicDisconnectReason : IEquatable<Convers
     /// Human readable English description of the disconnect reason.
     /// </summary>
     /// <value>Human readable English description of the disconnect reason.</value>
-    [DataMember(Name = "phrase", EmitDefaultValue = false)]
+    [JsonPropertyName("phrase")]
     public string Phrase { get; set; }
 
 

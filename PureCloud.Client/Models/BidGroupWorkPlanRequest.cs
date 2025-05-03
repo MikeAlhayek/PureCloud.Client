@@ -1,4 +1,3 @@
-using System.Runtime.Serialization;
 using System.Text;
 using System.Text.Json.Serialization;
 
@@ -7,7 +6,7 @@ namespace PureCloud.Client.Models;
 /// <summary>
 /// BidGroupWorkPlanRequest
 /// </summary>
-[DataContract]
+
 public partial class BidGroupWorkPlanRequest : IEquatable<BidGroupWorkPlanRequest>
 {
 
@@ -34,7 +33,7 @@ public partial class BidGroupWorkPlanRequest : IEquatable<BidGroupWorkPlanReques
     /// The ID of the work plan used in the bid group
     /// </summary>
     /// <value>The ID of the work plan used in the bid group</value>
-    [DataMember(Name = "workPlanId", EmitDefaultValue = false)]
+    [JsonPropertyName("workPlanId")]
     public string WorkPlanId { get; set; }
 
 
@@ -43,7 +42,7 @@ public partial class BidGroupWorkPlanRequest : IEquatable<BidGroupWorkPlanReques
     /// The modified agent count for this work plan
     /// </summary>
     /// <value>The modified agent count for this work plan</value>
-    [DataMember(Name = "overrideAgentCount", EmitDefaultValue = false)]
+    [JsonPropertyName("overrideAgentCount")]
     public int? OverrideAgentCount { get; set; }
 
 
@@ -52,7 +51,7 @@ public partial class BidGroupWorkPlanRequest : IEquatable<BidGroupWorkPlanReques
     /// The number of agents needed for this work plan to produce the optimal schedule
     /// </summary>
     /// <value>The number of agents needed for this work plan to produce the optimal schedule</value>
-    [DataMember(Name = "suggestedAgentCount", EmitDefaultValue = false)]
+    [JsonPropertyName("suggestedAgentCount")]
     public int? SuggestedAgentCount { get; private set; }
 
 
@@ -61,7 +60,7 @@ public partial class BidGroupWorkPlanRequest : IEquatable<BidGroupWorkPlanReques
     /// The range of agent slot count per work plan. The suggested slot count must be in agent count range
     /// </summary>
     /// <value>The range of agent slot count per work plan. The suggested slot count must be in agent count range</value>
-    [DataMember(Name = "agentCountRange", EmitDefaultValue = false)]
+    [JsonPropertyName("agentCountRange")]
     public AgentCountRange AgentCountRange { get; private set; }
 
 

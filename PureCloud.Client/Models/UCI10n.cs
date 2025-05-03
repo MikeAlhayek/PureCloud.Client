@@ -1,12 +1,12 @@
-using System.Runtime.Serialization;
 using System.Text;
+using System.Text.Json.Serialization;
 
 namespace PureCloud.Client.Models;
 
 /// <summary>
 /// UCI10n
 /// </summary>
-[DataContract]
+
 public partial class UCI10n : IEquatable<UCI10n>
 {
     /// <summary>
@@ -24,7 +24,7 @@ public partial class UCI10n : IEquatable<UCI10n>
     /// <summary>
     /// Gets or Sets Name
     /// </summary>
-    [DataMember(Name = "name", EmitDefaultValue = false)]
+    [JsonPropertyName("name")]
     public string Name { get; set; }
 
 

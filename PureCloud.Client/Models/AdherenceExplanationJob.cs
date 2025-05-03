@@ -7,14 +7,14 @@ namespace PureCloud.Client.Models;
 /// <summary>
 /// AdherenceExplanationJob
 /// </summary>
-[DataContract]
+
 public partial class AdherenceExplanationJob : IEquatable<AdherenceExplanationJob>
 {
     /// <summary>
     /// The type of the adherence explanation job
     /// </summary>
     /// <value>The type of the adherence explanation job</value>
-    [JsonConverter(typeof(JsonStringEnumConverter))]
+    
     public enum TypeEnum
     {
         /// <summary>
@@ -53,7 +53,7 @@ public partial class AdherenceExplanationJob : IEquatable<AdherenceExplanationJo
     /// The status of the adherence explanation job
     /// </summary>
     /// <value>The status of the adherence explanation job</value>
-    [JsonConverter(typeof(JsonStringEnumConverter))]
+    
     public enum StatusEnum
     {
         /// <summary>
@@ -86,13 +86,13 @@ public partial class AdherenceExplanationJob : IEquatable<AdherenceExplanationJo
     /// The type of the adherence explanation job
     /// </summary>
     /// <value>The type of the adherence explanation job</value>
-    [DataMember(Name = "type", EmitDefaultValue = false)]
+    [JsonPropertyName("type")]
     public TypeEnum? Type { get; set; }
     /// <summary>
     /// The status of the adherence explanation job
     /// </summary>
     /// <value>The status of the adherence explanation job</value>
-    [DataMember(Name = "status", EmitDefaultValue = false)]
+    [JsonPropertyName("status")]
     public StatusEnum? Status { get; set; }
     /// <summary>
     /// Initializes a new instance of the <see cref="AdherenceExplanationJob" /> class.
@@ -122,7 +122,7 @@ public partial class AdherenceExplanationJob : IEquatable<AdherenceExplanationJo
     /// The globally unique identifier for the object.
     /// </summary>
     /// <value>The globally unique identifier for the object.</value>
-    [DataMember(Name = "id", EmitDefaultValue = false)]
+    [JsonPropertyName("id")]
     public string Id { get; private set; }
 
 
@@ -135,7 +135,7 @@ public partial class AdherenceExplanationJob : IEquatable<AdherenceExplanationJo
     /// The adherence explanation added or modified by the job once complete; may be null if status &#x3D;&#x3D; &#39;Error&#39;. Used if type is in [ &#39;AddExplanation&#39;, &#39;UpdateExplanation&#39; ]
     /// </summary>
     /// <value>The adherence explanation added or modified by the job once complete; may be null if status &#x3D;&#x3D; &#39;Error&#39;. Used if type is in [ &#39;AddExplanation&#39;, &#39;UpdateExplanation&#39; ]</value>
-    [DataMember(Name = "adherenceExplanation", EmitDefaultValue = false)]
+    [JsonPropertyName("adherenceExplanation")]
     public AdherenceExplanationResponse AdherenceExplanation { get; set; }
 
 
@@ -144,7 +144,7 @@ public partial class AdherenceExplanationJob : IEquatable<AdherenceExplanationJo
     /// A URL to fetch results of the job. Only set if status &#x3D;&#x3D; &#39;Complete&#39; and type is in [ &#39;QueryAgentExplanations&#39;, &#39;QueryBuExplanations&#39; ]
     /// </summary>
     /// <value>A URL to fetch results of the job. Only set if status &#x3D;&#x3D; &#39;Complete&#39; and type is in [ &#39;QueryAgentExplanations&#39;, &#39;QueryBuExplanations&#39; ]</value>
-    [DataMember(Name = "downloadUrl", EmitDefaultValue = false)]
+    [JsonPropertyName("downloadUrl")]
     public string DownloadUrl { get; set; }
 
 
@@ -153,7 +153,7 @@ public partial class AdherenceExplanationJob : IEquatable<AdherenceExplanationJo
     /// Error details if status &#x3D;&#x3D; &#39;Error&#39;
     /// </summary>
     /// <value>Error details if status &#x3D;&#x3D; &#39;Error&#39;</value>
-    [DataMember(Name = "error", EmitDefaultValue = false)]
+    [JsonPropertyName("error")]
     public ErrorBody Error { get; set; }
 
 
@@ -162,7 +162,7 @@ public partial class AdherenceExplanationJob : IEquatable<AdherenceExplanationJo
     /// Schema template for deserializing data returned from the downloadUrl. Use if type &#x3D;&#x3D; &#39;QueryAgentExplanations&#39;
     /// </summary>
     /// <value>Schema template for deserializing data returned from the downloadUrl. Use if type &#x3D;&#x3D; &#39;QueryAgentExplanations&#39;</value>
-    [DataMember(Name = "agentQueryResponseTemplate", EmitDefaultValue = false)]
+    [JsonPropertyName("agentQueryResponseTemplate")]
     public AdherenceExplanationListingAgentQueryResponse AgentQueryResponseTemplate { get; set; }
 
 
@@ -171,7 +171,7 @@ public partial class AdherenceExplanationJob : IEquatable<AdherenceExplanationJo
     /// Schema template for deserializing data returned from the downloadUrl. Use if type &#x3D;&#x3D; &#39;QueryBuExplanations&#39;
     /// </summary>
     /// <value>Schema template for deserializing data returned from the downloadUrl. Use if type &#x3D;&#x3D; &#39;QueryBuExplanations&#39;</value>
-    [DataMember(Name = "buQueryResponseTemplate", EmitDefaultValue = false)]
+    [JsonPropertyName("buQueryResponseTemplate")]
     public AdherenceExplanationListingBuQueryResponse BuQueryResponseTemplate { get; set; }
 
 
@@ -180,7 +180,7 @@ public partial class AdherenceExplanationJob : IEquatable<AdherenceExplanationJo
     /// The URI for this object
     /// </summary>
     /// <value>The URI for this object</value>
-    [DataMember(Name = "selfUri", EmitDefaultValue = false)]
+    [JsonPropertyName("selfUri")]
     public string SelfUri { get; private set; }
 
 

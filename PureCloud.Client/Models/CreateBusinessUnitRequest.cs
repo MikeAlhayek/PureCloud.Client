@@ -1,4 +1,3 @@
-using System.Runtime.Serialization;
 using System.Text;
 using System.Text.Json.Serialization;
 
@@ -7,7 +6,7 @@ namespace PureCloud.Client.Models;
 /// <summary>
 /// CreateBusinessUnitRequest
 /// </summary>
-[DataContract]
+
 public partial class CreateBusinessUnitRequest : IEquatable<CreateBusinessUnitRequest>
 {
 
@@ -36,7 +35,7 @@ public partial class CreateBusinessUnitRequest : IEquatable<CreateBusinessUnitRe
     /// The name of the business unit
     /// </summary>
     /// <value>The name of the business unit</value>
-    [DataMember(Name = "name", EmitDefaultValue = false)]
+    [JsonPropertyName("name")]
     public string Name { get; set; }
 
 
@@ -45,7 +44,7 @@ public partial class CreateBusinessUnitRequest : IEquatable<CreateBusinessUnitRe
     /// The ID of the division to which the business unit should be added
     /// </summary>
     /// <value>The ID of the division to which the business unit should be added</value>
-    [DataMember(Name = "divisionId", EmitDefaultValue = false)]
+    [JsonPropertyName("divisionId")]
     public string DivisionId { get; set; }
 
 
@@ -54,7 +53,7 @@ public partial class CreateBusinessUnitRequest : IEquatable<CreateBusinessUnitRe
     /// Configuration for the business unit
     /// </summary>
     /// <value>Configuration for the business unit</value>
-    [DataMember(Name = "settings", EmitDefaultValue = false)]
+    [JsonPropertyName("settings")]
     public CreateBusinessUnitSettingsRequest Settings { get; set; }
 
 

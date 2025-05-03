@@ -1,12 +1,12 @@
-using System.Runtime.Serialization;
 using System.Text;
+using System.Text.Json.Serialization;
 
 namespace PureCloud.Client.Models;
 
 /// <summary>
 /// BulkIdsRequest
 /// </summary>
-[DataContract]
+
 public partial class BulkIdsRequest : IEquatable<BulkIdsRequest>
 {
     /// <summary>
@@ -24,7 +24,7 @@ public partial class BulkIdsRequest : IEquatable<BulkIdsRequest>
     /// <summary>
     /// Gets or Sets Entities
     /// </summary>
-    [DataMember(Name = "entities", EmitDefaultValue = false)]
+    [JsonPropertyName("entities")]
     public List<ExternalContactsEntity> Entities { get; set; }
 
 

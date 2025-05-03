@@ -1,12 +1,12 @@
-using System.Runtime.Serialization;
 using System.Text;
+using System.Text.Json.Serialization;
 
 namespace PureCloud.Client.Models;
 
 /// <summary>
 /// DashboardsSharedWith
 /// </summary>
-[DataContract]
+
 public partial class DashboardsSharedWith : IEquatable<DashboardsSharedWith>
 {
     /// <summary>
@@ -27,7 +27,7 @@ public partial class DashboardsSharedWith : IEquatable<DashboardsSharedWith>
     /// The list of user ids to share the dashboard with
     /// </summary>
     /// <value>The list of user ids to share the dashboard with</value>
-    [DataMember(Name = "userIds", EmitDefaultValue = false)]
+    [JsonPropertyName("userIds")]
     public List<string> UserIds { get; set; }
 
 
@@ -36,7 +36,7 @@ public partial class DashboardsSharedWith : IEquatable<DashboardsSharedWith>
     /// The list of team ids to share the dashboard with
     /// </summary>
     /// <value>The list of team ids to share the dashboard with</value>
-    [DataMember(Name = "teamIds", EmitDefaultValue = false)]
+    [JsonPropertyName("teamIds")]
     public List<string> TeamIds { get; set; }
 
 

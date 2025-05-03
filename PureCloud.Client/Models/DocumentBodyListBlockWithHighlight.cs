@@ -7,14 +7,14 @@ namespace PureCloud.Client.Models;
 /// <summary>
 /// DocumentBodyListBlockWithHighlight
 /// </summary>
-[DataContract]
+
 public partial class DocumentBodyListBlockWithHighlight : IEquatable<DocumentBodyListBlockWithHighlight>
 {
     /// <summary>
     /// The type of the list block.
     /// </summary>
     /// <value>The type of the list block.</value>
-    [JsonConverter(typeof(JsonStringEnumConverter))]
+    
     public enum TypeEnum
     {
         /// <summary>
@@ -35,7 +35,7 @@ public partial class DocumentBodyListBlockWithHighlight : IEquatable<DocumentBod
     /// The type of the list block.
     /// </summary>
     /// <value>The type of the list block.</value>
-    [DataMember(Name = "type", EmitDefaultValue = false)]
+    [JsonPropertyName("type")]
     public TypeEnum? Type { get; set; }
 
     /// <summary>
@@ -65,7 +65,7 @@ public partial class DocumentBodyListBlockWithHighlight : IEquatable<DocumentBod
     /// The properties for the list block.
     /// </summary>
     /// <value>The properties for the list block.</value>
-    [DataMember(Name = "properties", EmitDefaultValue = false)]
+    [JsonPropertyName("properties")]
     public DocumentBodyListItemProperties Properties { get; set; }
 
 
@@ -74,7 +74,7 @@ public partial class DocumentBodyListBlockWithHighlight : IEquatable<DocumentBod
     /// The list of items for an OrderedList or an UnorderedList.
     /// </summary>
     /// <value>The list of items for an OrderedList or an UnorderedList.</value>
-    [DataMember(Name = "blocks", EmitDefaultValue = false)]
+    [JsonPropertyName("blocks")]
     public List<DocumentListContentBlockWithHighlight> Blocks { get; set; }
 
 

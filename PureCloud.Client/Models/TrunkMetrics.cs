@@ -1,12 +1,12 @@
-using System.Runtime.Serialization;
 using System.Text;
+using System.Text.Json.Serialization;
 
 namespace PureCloud.Client.Models;
 
 /// <summary>
 /// TrunkMetrics
 /// </summary>
-[DataContract]
+
 public partial class TrunkMetrics : IEquatable<TrunkMetrics>
 {
     /// <summary>
@@ -33,7 +33,7 @@ public partial class TrunkMetrics : IEquatable<TrunkMetrics>
     /// Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z
     /// </summary>
     /// <value>Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z</value>
-    [DataMember(Name = "eventTime", EmitDefaultValue = false)]
+    [JsonPropertyName("eventTime")]
     public DateTime? EventTime { get; set; }
 
 
@@ -41,7 +41,7 @@ public partial class TrunkMetrics : IEquatable<TrunkMetrics>
     /// <summary>
     /// Gets or Sets LogicalInterface
     /// </summary>
-    [DataMember(Name = "logicalInterface", EmitDefaultValue = false)]
+    [JsonPropertyName("logicalInterface")]
     public DomainEntityRef LogicalInterface { get; set; }
 
 
@@ -49,7 +49,7 @@ public partial class TrunkMetrics : IEquatable<TrunkMetrics>
     /// <summary>
     /// Gets or Sets Trunk
     /// </summary>
-    [DataMember(Name = "trunk", EmitDefaultValue = false)]
+    [JsonPropertyName("trunk")]
     public DomainEntityRef Trunk { get; set; }
 
 
@@ -57,7 +57,7 @@ public partial class TrunkMetrics : IEquatable<TrunkMetrics>
     /// <summary>
     /// Gets or Sets Calls
     /// </summary>
-    [DataMember(Name = "calls", EmitDefaultValue = false)]
+    [JsonPropertyName("calls")]
     public TrunkMetricsCalls Calls { get; set; }
 
 
@@ -65,7 +65,7 @@ public partial class TrunkMetrics : IEquatable<TrunkMetrics>
     /// <summary>
     /// Gets or Sets Qos
     /// </summary>
-    [DataMember(Name = "qos", EmitDefaultValue = false)]
+    [JsonPropertyName("qos")]
     public TrunkMetricsQoS Qos { get; set; }
 
 

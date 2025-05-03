@@ -1,12 +1,12 @@
-using System.Runtime.Serialization;
 using System.Text;
+using System.Text.Json.Serialization;
 
 namespace PureCloud.Client.Models;
 
 /// <summary>
 /// Cursors
 /// </summary>
-[DataContract]
+
 public partial class Cursors : IEquatable<Cursors>
 {
     /// <summary>
@@ -26,7 +26,7 @@ public partial class Cursors : IEquatable<Cursors>
     /// <summary>
     /// Gets or Sets Before
     /// </summary>
-    [DataMember(Name = "before", EmitDefaultValue = false)]
+    [JsonPropertyName("before")]
     public string Before { get; set; }
 
 
@@ -34,7 +34,7 @@ public partial class Cursors : IEquatable<Cursors>
     /// <summary>
     /// Gets or Sets After
     /// </summary>
-    [DataMember(Name = "after", EmitDefaultValue = false)]
+    [JsonPropertyName("after")]
     public string After { get; set; }
 
 

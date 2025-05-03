@@ -7,14 +7,14 @@ namespace PureCloud.Client.Models;
 /// <summary>
 /// Learning assignment step
 /// </summary>
-[DataContract]
+
 public partial class LearningAssignmentStep : IEquatable<LearningAssignmentStep>
 {
     /// <summary>
     /// The success status of this step
     /// </summary>
     /// <value>The success status of this step</value>
-    [JsonConverter(typeof(JsonStringEnumConverter))]
+    
     public enum SuccessStatusEnum
     {
         /// <summary>
@@ -47,7 +47,7 @@ public partial class LearningAssignmentStep : IEquatable<LearningAssignmentStep>
     /// The completion status of the assignment step
     /// </summary>
     /// <value>The completion status of the assignment step</value>
-    [JsonConverter(typeof(JsonStringEnumConverter))]
+    
     public enum CompletionStatusEnum
     {
         /// <summary>
@@ -86,13 +86,13 @@ public partial class LearningAssignmentStep : IEquatable<LearningAssignmentStep>
     /// The success status of this step
     /// </summary>
     /// <value>The success status of this step</value>
-    [DataMember(Name = "successStatus", EmitDefaultValue = false)]
+    [JsonPropertyName("successStatus")]
     public SuccessStatusEnum? SuccessStatus { get; private set; }
     /// <summary>
     /// The completion status of the assignment step
     /// </summary>
     /// <value>The completion status of the assignment step</value>
-    [DataMember(Name = "completionStatus", EmitDefaultValue = false)]
+    [JsonPropertyName("completionStatus")]
     public CompletionStatusEnum? CompletionStatus { get; private set; }
     /// <summary>
     /// Initializes a new instance of the <see cref="LearningAssignmentStep" /> class.
@@ -112,7 +112,7 @@ public partial class LearningAssignmentStep : IEquatable<LearningAssignmentStep>
     /// The ID of the learning assignment step
     /// </summary>
     /// <value>The ID of the learning assignment step</value>
-    [DataMember(Name = "id", EmitDefaultValue = false)]
+    [JsonPropertyName("id")]
     public string Id { get; private set; }
 
 
@@ -121,7 +121,7 @@ public partial class LearningAssignmentStep : IEquatable<LearningAssignmentStep>
     /// The module step data for this step
     /// </summary>
     /// <value>The module step data for this step</value>
-    [DataMember(Name = "moduleStep", EmitDefaultValue = false)]
+    [JsonPropertyName("moduleStep")]
     public LearningModuleInformStep ModuleStep { get; private set; }
 
 
@@ -130,7 +130,7 @@ public partial class LearningAssignmentStep : IEquatable<LearningAssignmentStep>
     /// The structure for any SCO associated with this step
     /// </summary>
     /// <value>The structure for any SCO associated with this step</value>
-    [DataMember(Name = "structure", EmitDefaultValue = false)]
+    [JsonPropertyName("structure")]
     public List<LearningAssignmentStepScoStructure> Structure { get; private set; }
 
 
@@ -143,7 +143,7 @@ public partial class LearningAssignmentStep : IEquatable<LearningAssignmentStep>
     /// The completion percentage for this step
     /// </summary>
     /// <value>The completion percentage for this step</value>
-    [DataMember(Name = "completionPercentage", EmitDefaultValue = false)]
+    [JsonPropertyName("completionPercentage")]
     public float? CompletionPercentage { get; set; }
 
 
@@ -152,7 +152,7 @@ public partial class LearningAssignmentStep : IEquatable<LearningAssignmentStep>
     /// The percentage score for this step
     /// </summary>
     /// <value>The percentage score for this step</value>
-    [DataMember(Name = "percentageScore", EmitDefaultValue = false)]
+    [JsonPropertyName("percentageScore")]
     public float? PercentageScore { get; private set; }
 
 
@@ -161,7 +161,7 @@ public partial class LearningAssignmentStep : IEquatable<LearningAssignmentStep>
     /// The SCO (Shareable Content Object) data
     /// </summary>
     /// <value>The SCO (Shareable Content Object) data</value>
-    [DataMember(Name = "shareableContentObject", EmitDefaultValue = false)]
+    [JsonPropertyName("shareableContentObject")]
     public LearningShareableContentObject ShareableContentObject { get; set; }
 
 
@@ -170,7 +170,7 @@ public partial class LearningAssignmentStep : IEquatable<LearningAssignmentStep>
     /// The signed cookie information needed to access the content of this step (if required)
     /// </summary>
     /// <value>The signed cookie information needed to access the content of this step (if required)</value>
-    [DataMember(Name = "signedCookie", EmitDefaultValue = false)]
+    [JsonPropertyName("signedCookie")]
     public LearningAssignmentStepSignedCookie SignedCookie { get; private set; }
 
 
@@ -179,7 +179,7 @@ public partial class LearningAssignmentStep : IEquatable<LearningAssignmentStep>
     /// The URI for this object
     /// </summary>
     /// <value>The URI for this object</value>
-    [DataMember(Name = "selfUri", EmitDefaultValue = false)]
+    [JsonPropertyName("selfUri")]
     public string SelfUri { get; private set; }
 
 

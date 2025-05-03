@@ -7,14 +7,14 @@ namespace PureCloud.Client.Models;
 /// <summary>
 /// CobrowseWebMessagingSession
 /// </summary>
-[DataContract]
+
 public partial class CobrowseWebMessagingSession : IEquatable<CobrowseWebMessagingSession>
 {
     /// <summary>
     /// CommunicationType for Cobrowse Session
     /// </summary>
     /// <value>CommunicationType for Cobrowse Session</value>
-    [JsonConverter(typeof(JsonStringEnumConverter))]
+    
     public enum CommunicationTypeEnum
     {
         /// <summary>
@@ -47,7 +47,7 @@ public partial class CobrowseWebMessagingSession : IEquatable<CobrowseWebMessagi
     /// CommunicationType for Cobrowse Session
     /// </summary>
     /// <value>CommunicationType for Cobrowse Session</value>
-    [DataMember(Name = "communicationType", EmitDefaultValue = false)]
+    [JsonPropertyName("communicationType")]
     public CommunicationTypeEnum? CommunicationType { get; private set; }
     /// <summary>
     /// Initializes a new instance of the <see cref="CobrowseWebMessagingSession" /> class.
@@ -65,7 +65,7 @@ public partial class CobrowseWebMessagingSession : IEquatable<CobrowseWebMessagi
     /// The globally unique identifier for the object.
     /// </summary>
     /// <value>The globally unique identifier for the object.</value>
-    [DataMember(Name = "id", EmitDefaultValue = false)]
+    [JsonPropertyName("id")]
     public string Id { get; private set; }
 
 
@@ -73,7 +73,7 @@ public partial class CobrowseWebMessagingSession : IEquatable<CobrowseWebMessagi
     /// <summary>
     /// Gets or Sets Name
     /// </summary>
-    [DataMember(Name = "name", EmitDefaultValue = false)]
+    [JsonPropertyName("name")]
     public string Name { get; set; }
 
 
@@ -82,7 +82,7 @@ public partial class CobrowseWebMessagingSession : IEquatable<CobrowseWebMessagi
     /// Cobrowse session join code
     /// </summary>
     /// <value>Cobrowse session join code</value>
-    [DataMember(Name = "joinCode", EmitDefaultValue = false)]
+    [JsonPropertyName("joinCode")]
     public string JoinCode { get; private set; }
 
 
@@ -91,7 +91,7 @@ public partial class CobrowseWebMessagingSession : IEquatable<CobrowseWebMessagi
     /// WebSocket URL for the JS client
     /// </summary>
     /// <value>WebSocket URL for the JS client</value>
-    [DataMember(Name = "websocketUrl", EmitDefaultValue = false)]
+    [JsonPropertyName("websocketUrl")]
     public string WebsocketUrl { get; private set; }
 
 
@@ -100,7 +100,7 @@ public partial class CobrowseWebMessagingSession : IEquatable<CobrowseWebMessagi
     /// Date when Cobrowse Offer Expires. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z
     /// </summary>
     /// <value>Date when Cobrowse Offer Expires. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z</value>
-    [DataMember(Name = "dateOfferEnds", EmitDefaultValue = false)]
+    [JsonPropertyName("dateOfferEnds")]
     public DateTime? DateOfferEnds { get; private set; }
 
 
@@ -111,7 +111,7 @@ public partial class CobrowseWebMessagingSession : IEquatable<CobrowseWebMessagi
     /// The URI for this object
     /// </summary>
     /// <value>The URI for this object</value>
-    [DataMember(Name = "selfUri", EmitDefaultValue = false)]
+    [JsonPropertyName("selfUri")]
     public string SelfUri { get; private set; }
 
 

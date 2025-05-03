@@ -7,14 +7,14 @@ namespace PureCloud.Client.Models;
 /// <summary>
 /// Touchpoint
 /// </summary>
-[DataContract]
+
 public partial class Touchpoint : IEquatable<Touchpoint>
 {
     /// <summary>
     /// Media Type of the touchpoint; allowed values are Email, Message and Voice.
     /// </summary>
     /// <value>Media Type of the touchpoint; allowed values are Email, Message and Voice.</value>
-    [JsonConverter(typeof(JsonStringEnumConverter))]
+    
     public enum MediaTypeEnum
     {
         /// <summary>
@@ -47,7 +47,7 @@ public partial class Touchpoint : IEquatable<Touchpoint>
     /// Media Type of the touchpoint; allowed values are Email, Message and Voice.
     /// </summary>
     /// <value>Media Type of the touchpoint; allowed values are Email, Message and Voice.</value>
-    [DataMember(Name = "mediaType", EmitDefaultValue = false)]
+    [JsonPropertyName("mediaType")]
     public MediaTypeEnum? MediaType { get; set; }
 
     /// <summary>
@@ -79,7 +79,7 @@ public partial class Touchpoint : IEquatable<Touchpoint>
     /// ID of conversation.
     /// </summary>
     /// <value>ID of conversation.</value>
-    [DataMember(Name = "conversationId", EmitDefaultValue = false)]
+    [JsonPropertyName("conversationId")]
     public string ConversationId { get; set; }
 
 
@@ -88,7 +88,7 @@ public partial class Touchpoint : IEquatable<Touchpoint>
     /// ID of agent.
     /// </summary>
     /// <value>ID of agent.</value>
-    [DataMember(Name = "agentId", EmitDefaultValue = false)]
+    [JsonPropertyName("agentId")]
     public string AgentId { get; set; }
 
 
@@ -97,7 +97,7 @@ public partial class Touchpoint : IEquatable<Touchpoint>
     /// The value attributed to this touchpoint.
     /// </summary>
     /// <value>The value attributed to this touchpoint.</value>
-    [DataMember(Name = "associatedValue", EmitDefaultValue = false)]
+    [JsonPropertyName("associatedValue")]
     public double? AssociatedValue { get; set; }
 
 
@@ -108,7 +108,7 @@ public partial class Touchpoint : IEquatable<Touchpoint>
     /// Date conversation happened. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z
     /// </summary>
     /// <value>Date conversation happened. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z</value>
-    [DataMember(Name = "createdDate", EmitDefaultValue = false)]
+    [JsonPropertyName("createdDate")]
     public DateTime? CreatedDate { get; set; }
 
 

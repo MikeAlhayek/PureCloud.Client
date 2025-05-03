@@ -7,14 +7,14 @@ namespace PureCloud.Client.Models;
 /// <summary>
 /// RequestJourneyPattern
 /// </summary>
-[DataContract]
+
 public partial class RequestJourneyPattern : IEquatable<RequestJourneyPattern>
 {
     /// <summary>
     /// The stream type for which this pattern can be matched on.
     /// </summary>
     /// <value>The stream type for which this pattern can be matched on.</value>
-    [JsonConverter(typeof(JsonStringEnumConverter))]
+    
     public enum StreamTypeEnum
     {
         /// <summary>
@@ -53,7 +53,7 @@ public partial class RequestJourneyPattern : IEquatable<RequestJourneyPattern>
     /// The stream type for which this pattern can be matched on.
     /// </summary>
     /// <value>The stream type for which this pattern can be matched on.</value>
-    [DataMember(Name = "streamType", EmitDefaultValue = false)]
+    [JsonPropertyName("streamType")]
     public StreamTypeEnum? StreamType { get; set; }
 
     /// <summary>
@@ -85,7 +85,7 @@ public partial class RequestJourneyPattern : IEquatable<RequestJourneyPattern>
     /// A list of one or more criteria to satisfy.
     /// </summary>
     /// <value>A list of one or more criteria to satisfy.</value>
-    [DataMember(Name = "criteria", EmitDefaultValue = false)]
+    [JsonPropertyName("criteria")]
     public List<RequestCriteria> Criteria { get; set; }
 
 
@@ -94,7 +94,7 @@ public partial class RequestJourneyPattern : IEquatable<RequestJourneyPattern>
     /// The number of times the pattern must match.
     /// </summary>
     /// <value>The number of times the pattern must match.</value>
-    [DataMember(Name = "count", EmitDefaultValue = false)]
+    [JsonPropertyName("count")]
     public int? Count { get; set; }
 
 
@@ -105,7 +105,7 @@ public partial class RequestJourneyPattern : IEquatable<RequestJourneyPattern>
     /// The session type for which this pattern can be matched on.
     /// </summary>
     /// <value>The session type for which this pattern can be matched on.</value>
-    [DataMember(Name = "sessionType", EmitDefaultValue = false)]
+    [JsonPropertyName("sessionType")]
     public string SessionType { get; set; }
 
 
@@ -114,7 +114,7 @@ public partial class RequestJourneyPattern : IEquatable<RequestJourneyPattern>
     /// The name of the event for which this pattern can be matched on.
     /// </summary>
     /// <value>The name of the event for which this pattern can be matched on.</value>
-    [DataMember(Name = "eventName", EmitDefaultValue = false)]
+    [JsonPropertyName("eventName")]
     public string EventName { get; set; }
 
 

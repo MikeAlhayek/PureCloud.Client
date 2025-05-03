@@ -1,12 +1,12 @@
-using System.Runtime.Serialization;
 using System.Text;
+using System.Text.Json.Serialization;
 
 namespace PureCloud.Client.Models;
 
 /// <summary>
 /// AgentManagementUnitReference
 /// </summary>
-[DataContract]
+
 public partial class AgentManagementUnitReference : IEquatable<AgentManagementUnitReference>
 {
     /// <summary>
@@ -29,7 +29,7 @@ public partial class AgentManagementUnitReference : IEquatable<AgentManagementUn
     /// The user (agent) for whom the management unit was requested
     /// </summary>
     /// <value>The user (agent) for whom the management unit was requested</value>
-    [DataMember(Name = "user", EmitDefaultValue = false)]
+    [JsonPropertyName("user")]
     public UserReference User { get; set; }
 
 
@@ -38,7 +38,7 @@ public partial class AgentManagementUnitReference : IEquatable<AgentManagementUn
     /// The management to which the user (agent) belongs
     /// </summary>
     /// <value>The management to which the user (agent) belongs</value>
-    [DataMember(Name = "managementUnit", EmitDefaultValue = false)]
+    [JsonPropertyName("managementUnit")]
     public ManagementUnitReference ManagementUnit { get; set; }
 
 
@@ -47,7 +47,7 @@ public partial class AgentManagementUnitReference : IEquatable<AgentManagementUn
     /// The business unit to which the user (agent) belongs. Populate with expand&#x3D;businessUnit
     /// </summary>
     /// <value>The business unit to which the user (agent) belongs. Populate with expand&#x3D;businessUnit</value>
-    [DataMember(Name = "businessUnit", EmitDefaultValue = false)]
+    [JsonPropertyName("businessUnit")]
     public BusinessUnitReference BusinessUnit { get; set; }
 
 

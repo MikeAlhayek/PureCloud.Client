@@ -1,12 +1,12 @@
-using System.Runtime.Serialization;
 using System.Text;
+using System.Text.Json.Serialization;
 
 namespace PureCloud.Client.Models;
 
 /// <summary>
 /// PresenceSettings
 /// </summary>
-[DataContract]
+
 public partial class PresenceSettings : IEquatable<PresenceSettings>
 {
     /// <summary>
@@ -27,7 +27,7 @@ public partial class PresenceSettings : IEquatable<PresenceSettings>
     /// The globally unique identifier for the object.
     /// </summary>
     /// <value>The globally unique identifier for the object.</value>
-    [DataMember(Name = "id", EmitDefaultValue = false)]
+    [JsonPropertyName("id")]
     public string Id { get; private set; }
 
 
@@ -35,7 +35,7 @@ public partial class PresenceSettings : IEquatable<PresenceSettings>
     /// <summary>
     /// Gets or Sets Name
     /// </summary>
-    [DataMember(Name = "name", EmitDefaultValue = false)]
+    [JsonPropertyName("name")]
     public string Name { get; set; }
 
 
@@ -44,7 +44,7 @@ public partial class PresenceSettings : IEquatable<PresenceSettings>
     /// The settings for the restore presence feature
     /// </summary>
     /// <value>The settings for the restore presence feature</value>
-    [DataMember(Name = "restorePresenceSettings", EmitDefaultValue = false)]
+    [JsonPropertyName("restorePresenceSettings")]
     public RestorePresenceSettings RestorePresenceSettings { get; set; }
 
 
@@ -53,7 +53,7 @@ public partial class PresenceSettings : IEquatable<PresenceSettings>
     /// The URI for this object
     /// </summary>
     /// <value>The URI for this object</value>
-    [DataMember(Name = "selfUri", EmitDefaultValue = false)]
+    [JsonPropertyName("selfUri")]
     public string SelfUri { get; private set; }
 
 

@@ -1,4 +1,3 @@
-using System.Runtime.Serialization;
 using System.Text;
 using System.Text.Json.Serialization;
 
@@ -7,7 +6,7 @@ namespace PureCloud.Client.Models;
 /// <summary>
 /// TwitterDataHistoricalTweetRequest
 /// </summary>
-[DataContract]
+
 public partial class TwitterDataHistoricalTweetRequest : IEquatable<TwitterDataHistoricalTweetRequest>
 {
 
@@ -34,7 +33,7 @@ public partial class TwitterDataHistoricalTweetRequest : IEquatable<TwitterDataH
     /// Search terms to use in the query
     /// </summary>
     /// <value>Search terms to use in the query</value>
-    [DataMember(Name = "searchTerms", EmitDefaultValue = false)]
+    [JsonPropertyName("searchTerms")]
     public string SearchTerms { get; set; }
 
 
@@ -43,7 +42,7 @@ public partial class TwitterDataHistoricalTweetRequest : IEquatable<TwitterDataH
     /// ISO 3166-1 alpha-2 country codes to use for the search. Defaults to worldwide.
     /// </summary>
     /// <value>ISO 3166-1 alpha-2 country codes to use for the search. Defaults to worldwide.</value>
-    [DataMember(Name = "countries", EmitDefaultValue = false)]
+    [JsonPropertyName("countries")]
     public List<string> Countries { get; set; }
 
 

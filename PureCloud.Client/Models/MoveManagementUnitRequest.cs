@@ -1,4 +1,3 @@
-using System.Runtime.Serialization;
 using System.Text;
 using System.Text.Json.Serialization;
 
@@ -7,7 +6,7 @@ namespace PureCloud.Client.Models;
 /// <summary>
 /// MoveManagementUnitRequest
 /// </summary>
-[DataContract]
+
 public partial class MoveManagementUnitRequest : IEquatable<MoveManagementUnitRequest>
 {
 
@@ -32,7 +31,7 @@ public partial class MoveManagementUnitRequest : IEquatable<MoveManagementUnitRe
     /// The ID of the business unit to which to move the management unit
     /// </summary>
     /// <value>The ID of the business unit to which to move the management unit</value>
-    [DataMember(Name = "businessUnitId", EmitDefaultValue = false)]
+    [JsonPropertyName("businessUnitId")]
     public string BusinessUnitId { get; set; }
 
 

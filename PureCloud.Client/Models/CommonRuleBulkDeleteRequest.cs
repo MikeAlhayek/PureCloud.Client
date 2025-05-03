@@ -1,4 +1,3 @@
-using System.Runtime.Serialization;
 using System.Text;
 using System.Text.Json.Serialization;
 
@@ -7,7 +6,7 @@ namespace PureCloud.Client.Models;
 /// <summary>
 /// CommonRuleBulkDeleteRequest
 /// </summary>
-[DataContract]
+
 public partial class CommonRuleBulkDeleteRequest : IEquatable<CommonRuleBulkDeleteRequest>
 {
 
@@ -32,7 +31,7 @@ public partial class CommonRuleBulkDeleteRequest : IEquatable<CommonRuleBulkDele
     /// The user supplied rule ids to be deleted
     /// </summary>
     /// <value>The user supplied rule ids to be deleted</value>
-    [DataMember(Name = "ruleIds", EmitDefaultValue = false)]
+    [JsonPropertyName("ruleIds")]
     public List<string> RuleIds { get; set; }
 
 

@@ -7,14 +7,14 @@ namespace PureCloud.Client.Models;
 /// <summary>
 /// WorkitemQueryJobSort
 /// </summary>
-[DataContract]
+
 public partial class WorkitemQueryJobSort : IEquatable<WorkitemQueryJobSort>
 {
     /// <summary>
     /// Specify an attribute for sorting.
     /// </summary>
     /// <value>Specify an attribute for sorting.</value>
-    [JsonConverter(typeof(JsonStringEnumConverter))]
+    
     public enum NameEnum
     {
         /// <summary>
@@ -47,7 +47,7 @@ public partial class WorkitemQueryJobSort : IEquatable<WorkitemQueryJobSort>
     /// Specify an attribute for sorting.
     /// </summary>
     /// <value>Specify an attribute for sorting.</value>
-    [DataMember(Name = "name", EmitDefaultValue = false)]
+    [JsonPropertyName("name")]
     public NameEnum? Name { get; set; }
     /// <summary>
     /// Initializes a new instance of the <see cref="WorkitemQueryJobSort" /> class.
@@ -69,7 +69,7 @@ public partial class WorkitemQueryJobSort : IEquatable<WorkitemQueryJobSort>
     /// Sort Ascending
     /// </summary>
     /// <value>Sort Ascending</value>
-    [DataMember(Name = "ascending", EmitDefaultValue = false)]
+    [JsonPropertyName("ascending")]
     public bool? Ascending { get; set; }
 
 

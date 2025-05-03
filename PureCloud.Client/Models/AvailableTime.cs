@@ -7,14 +7,14 @@ namespace PureCloud.Client.Models;
 /// <summary>
 /// AvailableTime
 /// </summary>
-[DataContract]
+
 public partial class AvailableTime : IEquatable<AvailableTime>
 {
     /// <summary>
     /// Workforce Management activity category for this availability period
     /// </summary>
     /// <value>Workforce Management activity category for this availability period</value>
-    [JsonConverter(typeof(JsonStringEnumConverter))]
+    
     public enum ActivityCategoryEnum
     {
         /// <summary>
@@ -77,7 +77,7 @@ public partial class AvailableTime : IEquatable<AvailableTime>
     /// Workforce Management activity category for this availability period
     /// </summary>
     /// <value>Workforce Management activity category for this availability period</value>
-    [DataMember(Name = "activityCategory", EmitDefaultValue = false)]
+    [JsonPropertyName("activityCategory")]
     public ActivityCategoryEnum? ActivityCategory { get; private set; }
     /// <summary>
     /// Initializes a new instance of the <see cref="AvailableTime" /> class.
@@ -93,7 +93,7 @@ public partial class AvailableTime : IEquatable<AvailableTime>
     /// Start of the availability period. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z
     /// </summary>
     /// <value>Start of the availability period. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z</value>
-    [DataMember(Name = "dateStart", EmitDefaultValue = false)]
+    [JsonPropertyName("dateStart")]
     public DateTime? DateStart { get; private set; }
 
 
@@ -102,7 +102,7 @@ public partial class AvailableTime : IEquatable<AvailableTime>
     /// Length of availability period in minutes
     /// </summary>
     /// <value>Length of availability period in minutes</value>
-    [DataMember(Name = "lengthInMinutes", EmitDefaultValue = false)]
+    [JsonPropertyName("lengthInMinutes")]
     public int? LengthInMinutes { get; private set; }
 
 
@@ -111,7 +111,7 @@ public partial class AvailableTime : IEquatable<AvailableTime>
     /// Indicates if this availability period is paid in Workforce Management schedule
     /// </summary>
     /// <value>Indicates if this availability period is paid in Workforce Management schedule</value>
-    [DataMember(Name = "isPaid", EmitDefaultValue = false)]
+    [JsonPropertyName("isPaid")]
     public bool? IsPaid { get; private set; }
 
 
@@ -122,7 +122,7 @@ public partial class AvailableTime : IEquatable<AvailableTime>
     /// Workforce Management schedule information associated with the available time
     /// </summary>
     /// <value>Workforce Management schedule information associated with the available time</value>
-    [DataMember(Name = "wfmSchedule", EmitDefaultValue = false)]
+    [JsonPropertyName("wfmSchedule")]
     public WfmScheduleReference WfmSchedule { get; private set; }
 
 

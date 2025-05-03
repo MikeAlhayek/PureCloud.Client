@@ -1,12 +1,12 @@
-using System.Runtime.Serialization;
 using System.Text;
+using System.Text.Json.Serialization;
 
 namespace PureCloud.Client.Models;
 
 /// <summary>
 /// User information for a twitter account
 /// </summary>
-[DataContract]
+
 public partial class TwitterId : IEquatable<TwitterId>
 {
     /// <summary>
@@ -29,7 +29,7 @@ public partial class TwitterId : IEquatable<TwitterId>
     /// twitter user.id_str
     /// </summary>
     /// <value>twitter user.id_str</value>
-    [DataMember(Name = "id", EmitDefaultValue = false)]
+    [JsonPropertyName("id")]
     public string Id { get; set; }
 
 
@@ -38,7 +38,7 @@ public partial class TwitterId : IEquatable<TwitterId>
     /// twitter user.name
     /// </summary>
     /// <value>twitter user.name</value>
-    [DataMember(Name = "name", EmitDefaultValue = false)]
+    [JsonPropertyName("name")]
     public string Name { get; set; }
 
 
@@ -47,7 +47,7 @@ public partial class TwitterId : IEquatable<TwitterId>
     /// twitter user.screen_name
     /// </summary>
     /// <value>twitter user.screen_name</value>
-    [DataMember(Name = "screenName", EmitDefaultValue = false)]
+    [JsonPropertyName("screenName")]
     public string ScreenName { get; set; }
 
 
@@ -56,7 +56,7 @@ public partial class TwitterId : IEquatable<TwitterId>
     /// whether this data has been verified using the twitter API
     /// </summary>
     /// <value>whether this data has been verified using the twitter API</value>
-    [DataMember(Name = "verified", EmitDefaultValue = false)]
+    [JsonPropertyName("verified")]
     public bool? Verified { get; private set; }
 
 
@@ -65,7 +65,7 @@ public partial class TwitterId : IEquatable<TwitterId>
     /// url of user&#39;s twitter profile
     /// </summary>
     /// <value>url of user&#39;s twitter profile</value>
-    [DataMember(Name = "profileUrl", EmitDefaultValue = false)]
+    [JsonPropertyName("profileUrl")]
     public string ProfileUrl { get; private set; }
 
 

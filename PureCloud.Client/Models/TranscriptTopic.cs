@@ -1,12 +1,12 @@
-using System.Runtime.Serialization;
 using System.Text;
+using System.Text.Json.Serialization;
 
 namespace PureCloud.Client.Models;
 
 /// <summary>
 /// TranscriptTopic
 /// </summary>
-[DataContract]
+
 public partial class TranscriptTopic : IEquatable<TranscriptTopic>
 {
     /// <summary>
@@ -25,7 +25,7 @@ public partial class TranscriptTopic : IEquatable<TranscriptTopic>
     /// The globally unique identifier for the object.
     /// </summary>
     /// <value>The globally unique identifier for the object.</value>
-    [DataMember(Name = "id", EmitDefaultValue = false)]
+    [JsonPropertyName("id")]
     public string Id { get; private set; }
 
 
@@ -34,7 +34,7 @@ public partial class TranscriptTopic : IEquatable<TranscriptTopic>
     /// The name of the object.
     /// </summary>
     /// <value>The name of the object.</value>
-    [DataMember(Name = "name", EmitDefaultValue = false)]
+    [JsonPropertyName("name")]
     public string Name { get; private set; }
 
 
@@ -43,7 +43,7 @@ public partial class TranscriptTopic : IEquatable<TranscriptTopic>
     /// The phrase which detected the topic. 
     /// </summary>
     /// <value>The phrase which detected the topic. </value>
-    [DataMember(Name = "topicPhrase", EmitDefaultValue = false)]
+    [JsonPropertyName("topicPhrase")]
     public string TopicPhrase { get; private set; }
 
 
@@ -52,7 +52,7 @@ public partial class TranscriptTopic : IEquatable<TranscriptTopic>
     /// The transcript phrase which detected the topic.
     /// </summary>
     /// <value>The transcript phrase which detected the topic.</value>
-    [DataMember(Name = "transcriptPhrase", EmitDefaultValue = false)]
+    [JsonPropertyName("transcriptPhrase")]
     public string TranscriptPhrase { get; private set; }
 
 
@@ -61,7 +61,7 @@ public partial class TranscriptTopic : IEquatable<TranscriptTopic>
     /// The detection confidence of the topic.
     /// </summary>
     /// <value>The detection confidence of the topic.</value>
-    [DataMember(Name = "confidence", EmitDefaultValue = false)]
+    [JsonPropertyName("confidence")]
     public int? Confidence { get; private set; }
 
 
@@ -70,7 +70,7 @@ public partial class TranscriptTopic : IEquatable<TranscriptTopic>
     /// The start time of the topic phrase.
     /// </summary>
     /// <value>The start time of the topic phrase.</value>
-    [DataMember(Name = "startTimeMilliseconds", EmitDefaultValue = false)]
+    [JsonPropertyName("startTimeMilliseconds")]
     public long? StartTimeMilliseconds { get; private set; }
 
 
@@ -78,7 +78,7 @@ public partial class TranscriptTopic : IEquatable<TranscriptTopic>
     /// <summary>
     /// Gets or Sets Duration
     /// </summary>
-    [DataMember(Name = "duration", EmitDefaultValue = false)]
+    [JsonPropertyName("duration")]
     public TopicDuration Duration { get; set; }
 
 
@@ -87,7 +87,7 @@ public partial class TranscriptTopic : IEquatable<TranscriptTopic>
     /// Location of the phrase
     /// </summary>
     /// <value>Location of the phrase</value>
-    [DataMember(Name = "offset", EmitDefaultValue = false)]
+    [JsonPropertyName("offset")]
     public TopicOffset Offset { get; private set; }
 
 
@@ -96,7 +96,7 @@ public partial class TranscriptTopic : IEquatable<TranscriptTopic>
     /// Location of the phrase in the recording in milliseconds
     /// </summary>
     /// <value>Location of the phrase in the recording in milliseconds</value>
-    [DataMember(Name = "recordingLocation", EmitDefaultValue = false)]
+    [JsonPropertyName("recordingLocation")]
     public long? RecordingLocation { get; private set; }
 
 

@@ -7,13 +7,13 @@ namespace PureCloud.Client.Models;
 /// <summary>
 /// ConversationSummaryTopicVirtualAgentsConversationSummaryEvent
 /// </summary>
-[DataContract]
+
 public partial class ConversationSummaryTopicVirtualAgentsConversationSummaryEvent : IEquatable<ConversationSummaryTopicVirtualAgentsConversationSummaryEvent>
 {
     /// <summary>
     /// Gets or Sets MessageType
     /// </summary>
-    [JsonConverter(typeof(JsonStringEnumConverter))]
+    
     public enum MessageTypeEnum
     {
         /// <summary>
@@ -87,7 +87,7 @@ public partial class ConversationSummaryTopicVirtualAgentsConversationSummaryEve
     /// <summary>
     /// Gets or Sets MediaType
     /// </summary>
-    [JsonConverter(typeof(JsonStringEnumConverter))]
+    
     public enum MediaTypeEnum
     {
         /// <summary>
@@ -125,7 +125,7 @@ public partial class ConversationSummaryTopicVirtualAgentsConversationSummaryEve
     /// <summary>
     /// Gets or Sets ErrorType
     /// </summary>
-    [JsonConverter(typeof(JsonStringEnumConverter))]
+    
     public enum ErrorTypeEnum
     {
         /// <summary>
@@ -163,17 +163,17 @@ public partial class ConversationSummaryTopicVirtualAgentsConversationSummaryEve
     /// <summary>
     /// Gets or Sets MessageType
     /// </summary>
-    [DataMember(Name = "messageType", EmitDefaultValue = false)]
+    [JsonPropertyName("messageType")]
     public MessageTypeEnum? MessageType { get; set; }
     /// <summary>
     /// Gets or Sets MediaType
     /// </summary>
-    [DataMember(Name = "mediaType", EmitDefaultValue = false)]
+    [JsonPropertyName("mediaType")]
     public MediaTypeEnum? MediaType { get; set; }
     /// <summary>
     /// Gets or Sets ErrorType
     /// </summary>
-    [DataMember(Name = "errorType", EmitDefaultValue = false)]
+    [JsonPropertyName("errorType")]
     public ErrorTypeEnum? ErrorType { get; set; }
     /// <summary>
     /// Initializes a new instance of the <see cref="ConversationSummaryTopicVirtualAgentsConversationSummaryEvent" /> class.
@@ -224,7 +224,7 @@ public partial class ConversationSummaryTopicVirtualAgentsConversationSummaryEve
     /// <summary>
     /// Gets or Sets ConversationId
     /// </summary>
-    [DataMember(Name = "conversationId", EmitDefaultValue = false)]
+    [JsonPropertyName("conversationId")]
     public Guid? ConversationId { get; set; }
 
 
@@ -232,7 +232,7 @@ public partial class ConversationSummaryTopicVirtualAgentsConversationSummaryEve
     /// <summary>
     /// Gets or Sets QueueId
     /// </summary>
-    [DataMember(Name = "queueId", EmitDefaultValue = false)]
+    [JsonPropertyName("queueId")]
     public Guid? QueueId { get; set; }
 
 
@@ -240,7 +240,7 @@ public partial class ConversationSummaryTopicVirtualAgentsConversationSummaryEve
     /// <summary>
     /// Gets or Sets Participants
     /// </summary>
-    [DataMember(Name = "participants", EmitDefaultValue = false)]
+    [JsonPropertyName("participants")]
     public List<ConversationSummaryTopicVirtualAgentsConversationSummaryParticipant> Participants { get; set; }
 
 
@@ -248,7 +248,7 @@ public partial class ConversationSummaryTopicVirtualAgentsConversationSummaryEve
     /// <summary>
     /// Gets or Sets CommunicationIds
     /// </summary>
-    [DataMember(Name = "communicationIds", EmitDefaultValue = false)]
+    [JsonPropertyName("communicationIds")]
     public List<string> CommunicationIds { get; set; }
 
 
@@ -256,7 +256,7 @@ public partial class ConversationSummaryTopicVirtualAgentsConversationSummaryEve
     /// <summary>
     /// Gets or Sets CreatedDate
     /// </summary>
-    [DataMember(Name = "createdDate", EmitDefaultValue = false)]
+    [JsonPropertyName("createdDate")]
     public DateTime? CreatedDate { get; set; }
 
 
@@ -268,7 +268,7 @@ public partial class ConversationSummaryTopicVirtualAgentsConversationSummaryEve
     /// <summary>
     /// Gets or Sets SummaryId
     /// </summary>
-    [DataMember(Name = "summaryId", EmitDefaultValue = false)]
+    [JsonPropertyName("summaryId")]
     public Guid? SummaryId { get; set; }
 
 
@@ -276,7 +276,7 @@ public partial class ConversationSummaryTopicVirtualAgentsConversationSummaryEve
     /// <summary>
     /// Gets or Sets Language
     /// </summary>
-    [DataMember(Name = "language", EmitDefaultValue = false)]
+    [JsonPropertyName("language")]
     public string Language { get; set; }
 
 
@@ -284,7 +284,7 @@ public partial class ConversationSummaryTopicVirtualAgentsConversationSummaryEve
     /// <summary>
     /// Gets or Sets Summary
     /// </summary>
-    [DataMember(Name = "summary", EmitDefaultValue = false)]
+    [JsonPropertyName("summary")]
     public ConversationSummaryTopicVirtualAgentsConversationSummary Summary { get; set; }
 
 
@@ -292,7 +292,7 @@ public partial class ConversationSummaryTopicVirtualAgentsConversationSummaryEve
     /// <summary>
     /// Gets or Sets Headline
     /// </summary>
-    [DataMember(Name = "headline", EmitDefaultValue = false)]
+    [JsonPropertyName("headline")]
     public ConversationSummaryTopicVirtualAgentsConversationHeadline Headline { get; set; }
 
 
@@ -300,7 +300,7 @@ public partial class ConversationSummaryTopicVirtualAgentsConversationSummaryEve
     /// <summary>
     /// Gets or Sets Reason
     /// </summary>
-    [DataMember(Name = "reason", EmitDefaultValue = false)]
+    [JsonPropertyName("reason")]
     public ConversationSummaryTopicVirtualAgentsConversationReason Reason { get; set; }
 
 
@@ -308,7 +308,7 @@ public partial class ConversationSummaryTopicVirtualAgentsConversationSummaryEve
     /// <summary>
     /// Gets or Sets Resolution
     /// </summary>
-    [DataMember(Name = "resolution", EmitDefaultValue = false)]
+    [JsonPropertyName("resolution")]
     public ConversationSummaryTopicVirtualAgentsConversationResolution Resolution { get; set; }
 
 
@@ -316,7 +316,7 @@ public partial class ConversationSummaryTopicVirtualAgentsConversationSummaryEve
     /// <summary>
     /// Gets or Sets WrapUpCodes
     /// </summary>
-    [DataMember(Name = "wrapUpCodes", EmitDefaultValue = false)]
+    [JsonPropertyName("wrapUpCodes")]
     public List<ConversationSummaryTopicVirtualAgentsConversationWrapUpCode> WrapUpCodes { get; set; }
 
 
@@ -324,7 +324,7 @@ public partial class ConversationSummaryTopicVirtualAgentsConversationSummaryEve
     /// <summary>
     /// Gets or Sets TriggerSource
     /// </summary>
-    [DataMember(Name = "triggerSource", EmitDefaultValue = false)]
+    [JsonPropertyName("triggerSource")]
     public ConversationSummaryTopicVirtualAgentsTriggerSource TriggerSource { get; set; }
 
 
@@ -332,7 +332,7 @@ public partial class ConversationSummaryTopicVirtualAgentsConversationSummaryEve
     /// <summary>
     /// Gets or Sets LastEditedBy
     /// </summary>
-    [DataMember(Name = "lastEditedBy", EmitDefaultValue = false)]
+    [JsonPropertyName("lastEditedBy")]
     public ConversationSummaryTopicVirtualAgentsConversationSummaryParticipant LastEditedBy { get; set; }
 
 
@@ -342,7 +342,7 @@ public partial class ConversationSummaryTopicVirtualAgentsConversationSummaryEve
     /// <summary>
     /// Gets or Sets DurationMs
     /// </summary>
-    [DataMember(Name = "durationMs", EmitDefaultValue = false)]
+    [JsonPropertyName("durationMs")]
     public long? DurationMs { get; set; }
 
 

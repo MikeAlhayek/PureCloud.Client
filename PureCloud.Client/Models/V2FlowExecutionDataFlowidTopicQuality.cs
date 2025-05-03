@@ -1,12 +1,12 @@
-using System.Runtime.Serialization;
 using System.Text;
+using System.Text.Json.Serialization;
 
 namespace PureCloud.Client.Models;
 
 /// <summary>
 /// The quality context that invoked this.
 /// </summary>
-[DataContract]
+
 public partial class V2FlowExecutionDataFlowidTopicQuality : IEquatable<V2FlowExecutionDataFlowidTopicQuality>
 {
     /// <summary>
@@ -27,7 +27,7 @@ public partial class V2FlowExecutionDataFlowidTopicQuality : IEquatable<V2FlowEx
     /// The identifier of the quality policy that invoked this flow.
     /// </summary>
     /// <value>The identifier of the quality policy that invoked this flow.</value>
-    [DataMember(Name = "policyId", EmitDefaultValue = false)]
+    [JsonPropertyName("policyId")]
     public string PolicyId { get; set; }
 
 
@@ -36,7 +36,7 @@ public partial class V2FlowExecutionDataFlowidTopicQuality : IEquatable<V2FlowEx
     /// The name of the quality policy that invoked this flow.
     /// </summary>
     /// <value>The name of the quality policy that invoked this flow.</value>
-    [DataMember(Name = "policyName", EmitDefaultValue = false)]
+    [JsonPropertyName("policyName")]
     public string PolicyName { get; set; }
 
 

@@ -1,12 +1,12 @@
-using System.Runtime.Serialization;
 using System.Text;
+using System.Text.Json.Serialization;
 
 namespace PureCloud.Client.Models;
 
 /// <summary>
 /// BuNotificationSettingsRequest
 /// </summary>
-[DataContract]
+
 public partial class BuNotificationSettingsRequest : IEquatable<BuNotificationSettingsRequest>
 {
     /// <summary>
@@ -25,7 +25,7 @@ public partial class BuNotificationSettingsRequest : IEquatable<BuNotificationSe
     /// Schedule notification settings
     /// </summary>
     /// <value>Schedule notification settings</value>
-    [DataMember(Name = "scheduling", EmitDefaultValue = false)]
+    [JsonPropertyName("scheduling")]
     public BuScheduleNotificationsSettingsRequest Scheduling { get; set; }
 
 

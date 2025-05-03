@@ -1,4 +1,3 @@
-using System.Runtime.Serialization;
 using System.Text;
 using System.Text.Json.Serialization;
 
@@ -7,7 +6,7 @@ namespace PureCloud.Client.Models;
 /// <summary>
 /// KnowledgeDocumentBulkRemoveRequest
 /// </summary>
-[DataContract]
+
 public partial class KnowledgeDocumentBulkRemoveRequest : IEquatable<KnowledgeDocumentBulkRemoveRequest>
 {
 
@@ -32,7 +31,7 @@ public partial class KnowledgeDocumentBulkRemoveRequest : IEquatable<KnowledgeDo
     /// List of unique identifiers referencing documents that are to be deleted
     /// </summary>
     /// <value>List of unique identifiers referencing documents that are to be deleted</value>
-    [DataMember(Name = "entities", EmitDefaultValue = false)]
+    [JsonPropertyName("entities")]
     public List<WritableEntity> Entities { get; set; }
 
 

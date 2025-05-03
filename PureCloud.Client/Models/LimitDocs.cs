@@ -1,12 +1,12 @@
-using System.Runtime.Serialization;
 using System.Text;
+using System.Text.Json.Serialization;
 
 namespace PureCloud.Client.Models;
 
 /// <summary>
 /// LimitDocs
 /// </summary>
-[DataContract]
+
 public partial class LimitDocs : IEquatable<LimitDocs>
 {
     /// <summary>
@@ -34,7 +34,7 @@ public partial class LimitDocs : IEquatable<LimitDocs>
     /// <summary>
     /// Gets or Sets Key
     /// </summary>
-    [DataMember(Name = "key", EmitDefaultValue = false)]
+    [JsonPropertyName("key")]
     public string Key { get; set; }
 
 
@@ -42,7 +42,7 @@ public partial class LimitDocs : IEquatable<LimitDocs>
     /// <summary>
     /// Gets or Sets DefaultValue
     /// </summary>
-    [DataMember(Name = "defaultValue", EmitDefaultValue = false)]
+    [JsonPropertyName("defaultValue")]
     public long? DefaultValue { get; set; }
 
 
@@ -50,7 +50,7 @@ public partial class LimitDocs : IEquatable<LimitDocs>
     /// <summary>
     /// Gets or Sets Description
     /// </summary>
-    [DataMember(Name = "description", EmitDefaultValue = false)]
+    [JsonPropertyName("description")]
     public string Description { get; set; }
 
 
@@ -58,7 +58,7 @@ public partial class LimitDocs : IEquatable<LimitDocs>
     /// <summary>
     /// Gets or Sets Resource
     /// </summary>
-    [DataMember(Name = "resource", EmitDefaultValue = false)]
+    [JsonPropertyName("resource")]
     public string Resource { get; set; }
 
 
@@ -66,7 +66,7 @@ public partial class LimitDocs : IEquatable<LimitDocs>
     /// <summary>
     /// Gets or Sets Configurable
     /// </summary>
-    [DataMember(Name = "configurable", EmitDefaultValue = false)]
+    [JsonPropertyName("configurable")]
     public bool? Configurable { get; set; }
 
 
@@ -74,7 +74,7 @@ public partial class LimitDocs : IEquatable<LimitDocs>
     /// <summary>
     /// Gets or Sets Trackable
     /// </summary>
-    [DataMember(Name = "trackable", EmitDefaultValue = false)]
+    [JsonPropertyName("trackable")]
     public bool? Trackable { get; set; }
 
 

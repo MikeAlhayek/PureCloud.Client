@@ -1,12 +1,12 @@
-using System.Runtime.Serialization;
 using System.Text;
+using System.Text.Json.Serialization;
 
 namespace PureCloud.Client.Models;
 
 /// <summary>
 /// KnowledgeBaseUpdateRequest
 /// </summary>
-[DataContract]
+
 public partial class KnowledgeBaseUpdateRequest : IEquatable<KnowledgeBaseUpdateRequest>
 {
     /// <summary>
@@ -27,7 +27,7 @@ public partial class KnowledgeBaseUpdateRequest : IEquatable<KnowledgeBaseUpdate
     /// Knowledge base name
     /// </summary>
     /// <value>Knowledge base name</value>
-    [DataMember(Name = "name", EmitDefaultValue = false)]
+    [JsonPropertyName("name")]
     public string Name { get; set; }
 
 
@@ -36,7 +36,7 @@ public partial class KnowledgeBaseUpdateRequest : IEquatable<KnowledgeBaseUpdate
     /// Knowledge base description
     /// </summary>
     /// <value>Knowledge base description</value>
-    [DataMember(Name = "description", EmitDefaultValue = false)]
+    [JsonPropertyName("description")]
     public string Description { get; set; }
 
 

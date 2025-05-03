@@ -1,12 +1,12 @@
-using System.Runtime.Serialization;
 using System.Text;
+using System.Text.Json.Serialization;
 
 namespace PureCloud.Client.Models;
 
 /// <summary>
 /// ContentManagementWorkspaceDocumentsTopicDocumentDataV2
 /// </summary>
-[DataContract]
+
 public partial class ContentManagementWorkspaceDocumentsTopicDocumentDataV2 : IEquatable<ContentManagementWorkspaceDocumentsTopicDocumentDataV2>
 {
     /// <summary>
@@ -50,7 +50,7 @@ public partial class ContentManagementWorkspaceDocumentsTopicDocumentDataV2 : IE
     /// <summary>
     /// Gets or Sets Id
     /// </summary>
-    [DataMember(Name = "id", EmitDefaultValue = false)]
+    [JsonPropertyName("id")]
     public string Id { get; set; }
 
 
@@ -58,7 +58,7 @@ public partial class ContentManagementWorkspaceDocumentsTopicDocumentDataV2 : IE
     /// <summary>
     /// Gets or Sets Name
     /// </summary>
-    [DataMember(Name = "name", EmitDefaultValue = false)]
+    [JsonPropertyName("name")]
     public string Name { get; set; }
 
 
@@ -66,7 +66,7 @@ public partial class ContentManagementWorkspaceDocumentsTopicDocumentDataV2 : IE
     /// <summary>
     /// Gets or Sets DateCreated
     /// </summary>
-    [DataMember(Name = "dateCreated", EmitDefaultValue = false)]
+    [JsonPropertyName("dateCreated")]
     public DateTime? DateCreated { get; set; }
 
 
@@ -74,7 +74,7 @@ public partial class ContentManagementWorkspaceDocumentsTopicDocumentDataV2 : IE
     /// <summary>
     /// Gets or Sets DateModified
     /// </summary>
-    [DataMember(Name = "dateModified", EmitDefaultValue = false)]
+    [JsonPropertyName("dateModified")]
     public DateTime? DateModified { get; set; }
 
 
@@ -82,7 +82,7 @@ public partial class ContentManagementWorkspaceDocumentsTopicDocumentDataV2 : IE
     /// <summary>
     /// Gets or Sets Workspace
     /// </summary>
-    [DataMember(Name = "workspace", EmitDefaultValue = false)]
+    [JsonPropertyName("workspace")]
     public ContentManagementWorkspaceDocumentsTopicWorkspaceData Workspace { get; set; }
 
 
@@ -90,7 +90,7 @@ public partial class ContentManagementWorkspaceDocumentsTopicDocumentDataV2 : IE
     /// <summary>
     /// Gets or Sets CreatedBy
     /// </summary>
-    [DataMember(Name = "createdBy", EmitDefaultValue = false)]
+    [JsonPropertyName("createdBy")]
     public ContentManagementWorkspaceDocumentsTopicUserData CreatedBy { get; set; }
 
 
@@ -98,7 +98,7 @@ public partial class ContentManagementWorkspaceDocumentsTopicDocumentDataV2 : IE
     /// <summary>
     /// Gets or Sets ContentType
     /// </summary>
-    [DataMember(Name = "contentType", EmitDefaultValue = false)]
+    [JsonPropertyName("contentType")]
     public string ContentType { get; set; }
 
 
@@ -106,7 +106,7 @@ public partial class ContentManagementWorkspaceDocumentsTopicDocumentDataV2 : IE
     /// <summary>
     /// Gets or Sets ContentLength
     /// </summary>
-    [DataMember(Name = "contentLength", EmitDefaultValue = false)]
+    [JsonPropertyName("contentLength")]
     public long? ContentLength { get; set; }
 
 
@@ -114,7 +114,7 @@ public partial class ContentManagementWorkspaceDocumentsTopicDocumentDataV2 : IE
     /// <summary>
     /// Gets or Sets Filename
     /// </summary>
-    [DataMember(Name = "filename", EmitDefaultValue = false)]
+    [JsonPropertyName("filename")]
     public string Filename { get; set; }
 
 
@@ -122,7 +122,7 @@ public partial class ContentManagementWorkspaceDocumentsTopicDocumentDataV2 : IE
     /// <summary>
     /// Gets or Sets ChangeNumber
     /// </summary>
-    [DataMember(Name = "changeNumber", EmitDefaultValue = false)]
+    [JsonPropertyName("changeNumber")]
     public long? ChangeNumber { get; set; }
 
 
@@ -130,7 +130,7 @@ public partial class ContentManagementWorkspaceDocumentsTopicDocumentDataV2 : IE
     /// <summary>
     /// Gets or Sets DateUploaded
     /// </summary>
-    [DataMember(Name = "dateUploaded", EmitDefaultValue = false)]
+    [JsonPropertyName("dateUploaded")]
     public DateTime? DateUploaded { get; set; }
 
 
@@ -138,7 +138,7 @@ public partial class ContentManagementWorkspaceDocumentsTopicDocumentDataV2 : IE
     /// <summary>
     /// Gets or Sets UploadedBy
     /// </summary>
-    [DataMember(Name = "uploadedBy", EmitDefaultValue = false)]
+    [JsonPropertyName("uploadedBy")]
     public ContentManagementWorkspaceDocumentsTopicUserData UploadedBy { get; set; }
 
 
@@ -146,7 +146,7 @@ public partial class ContentManagementWorkspaceDocumentsTopicDocumentDataV2 : IE
     /// <summary>
     /// Gets or Sets LockInfo
     /// </summary>
-    [DataMember(Name = "lockInfo", EmitDefaultValue = false)]
+    [JsonPropertyName("lockInfo")]
     public ContentManagementWorkspaceDocumentsTopicLockData LockInfo { get; set; }
 
 
@@ -154,7 +154,7 @@ public partial class ContentManagementWorkspaceDocumentsTopicDocumentDataV2 : IE
     /// <summary>
     /// Gets or Sets SelfUri
     /// </summary>
-    [DataMember(Name = "selfUri", EmitDefaultValue = false)]
+    [JsonPropertyName("selfUri")]
     public string SelfUri { get; set; }
 
 

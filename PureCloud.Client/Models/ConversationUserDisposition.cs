@@ -1,4 +1,3 @@
-using System.Runtime.Serialization;
 using System.Text;
 using System.Text.Json.Serialization;
 
@@ -7,7 +6,7 @@ namespace PureCloud.Client.Models;
 /// <summary>
 /// ConversationUserDisposition
 /// </summary>
-[DataContract]
+
 public partial class ConversationUserDisposition : IEquatable<ConversationUserDisposition>
 {
 
@@ -34,7 +33,7 @@ public partial class ConversationUserDisposition : IEquatable<ConversationUserDi
     /// User-defined wrap-up code for the conversation.
     /// </summary>
     /// <value>User-defined wrap-up code for the conversation.</value>
-    [DataMember(Name = "code", EmitDefaultValue = false)]
+    [JsonPropertyName("code")]
     public string Code { get; set; }
 
 
@@ -43,7 +42,7 @@ public partial class ConversationUserDisposition : IEquatable<ConversationUserDi
     /// Text entered by the user to describe the call or disposition.
     /// </summary>
     /// <value>Text entered by the user to describe the call or disposition.</value>
-    [DataMember(Name = "notes", EmitDefaultValue = false)]
+    [JsonPropertyName("notes")]
     public string Notes { get; set; }
 
 
@@ -52,7 +51,7 @@ public partial class ConversationUserDisposition : IEquatable<ConversationUserDi
     /// The user that wrapped up the conversation.
     /// </summary>
     /// <value>The user that wrapped up the conversation.</value>
-    [DataMember(Name = "user", EmitDefaultValue = false)]
+    [JsonPropertyName("user")]
     public AddressableEntityRef User { get; private set; }
 
 

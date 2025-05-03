@@ -7,14 +7,14 @@ namespace PureCloud.Client.Models;
 /// <summary>
 /// PatchActionTemplate
 /// </summary>
-[DataContract]
+
 public partial class PatchActionTemplate : IEquatable<PatchActionTemplate>
 {
     /// <summary>
     /// Media type of action described by the action template.
     /// </summary>
     /// <value>Media type of action described by the action template.</value>
-    [JsonConverter(typeof(JsonStringEnumConverter))]
+    
     public enum MediaTypeEnum
     {
         /// <summary>
@@ -65,7 +65,7 @@ public partial class PatchActionTemplate : IEquatable<PatchActionTemplate>
     /// Whether the action template is currently active, inactive or deleted.
     /// </summary>
     /// <value>Whether the action template is currently active, inactive or deleted.</value>
-    [JsonConverter(typeof(JsonStringEnumConverter))]
+    
     public enum StateEnum
     {
         /// <summary>
@@ -98,13 +98,13 @@ public partial class PatchActionTemplate : IEquatable<PatchActionTemplate>
     /// Media type of action described by the action template.
     /// </summary>
     /// <value>Media type of action described by the action template.</value>
-    [DataMember(Name = "mediaType", EmitDefaultValue = false)]
+    [JsonPropertyName("mediaType")]
     public MediaTypeEnum? MediaType { get; set; }
     /// <summary>
     /// Whether the action template is currently active, inactive or deleted.
     /// </summary>
     /// <value>Whether the action template is currently active, inactive or deleted.</value>
-    [DataMember(Name = "state", EmitDefaultValue = false)]
+    [JsonPropertyName("state")]
     public StateEnum? State { get; set; }
 
     /// <summary>
@@ -138,7 +138,7 @@ public partial class PatchActionTemplate : IEquatable<PatchActionTemplate>
     /// Name of the action template.
     /// </summary>
     /// <value>Name of the action template.</value>
-    [DataMember(Name = "name", EmitDefaultValue = false)]
+    [JsonPropertyName("name")]
     public string Name { get; set; }
 
 
@@ -147,7 +147,7 @@ public partial class PatchActionTemplate : IEquatable<PatchActionTemplate>
     /// Description of the action template&#39;s functionality.
     /// </summary>
     /// <value>Description of the action template&#39;s functionality.</value>
-    [DataMember(Name = "description", EmitDefaultValue = false)]
+    [JsonPropertyName("description")]
     public string Description { get; set; }
 
 
@@ -156,7 +156,7 @@ public partial class PatchActionTemplate : IEquatable<PatchActionTemplate>
     /// The version of the action template.
     /// </summary>
     /// <value>The version of the action template.</value>
-    [DataMember(Name = "version", EmitDefaultValue = false)]
+    [JsonPropertyName("version")]
     public int? Version { get; set; }
 
 
@@ -169,7 +169,7 @@ public partial class PatchActionTemplate : IEquatable<PatchActionTemplate>
     /// Properties used to configure an action of type content offer
     /// </summary>
     /// <value>Properties used to configure an action of type content offer</value>
-    [DataMember(Name = "contentOffer", EmitDefaultValue = false)]
+    [JsonPropertyName("contentOffer")]
     public PatchContentOffer ContentOffer { get; set; }
 
 

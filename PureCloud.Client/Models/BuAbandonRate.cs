@@ -1,4 +1,3 @@
-using System.Runtime.Serialization;
 using System.Text;
 using System.Text.Json.Serialization;
 
@@ -7,7 +6,7 @@ namespace PureCloud.Client.Models;
 /// <summary>
 /// BuAbandonRate
 /// </summary>
-[DataContract]
+
 public partial class BuAbandonRate : IEquatable<BuAbandonRate>
 {
 
@@ -34,7 +33,7 @@ public partial class BuAbandonRate : IEquatable<BuAbandonRate>
     /// Whether to include abandon rate in the associated configuration
     /// </summary>
     /// <value>Whether to include abandon rate in the associated configuration</value>
-    [DataMember(Name = "include", EmitDefaultValue = false)]
+    [JsonPropertyName("include")]
     public bool? Include { get; set; }
 
 
@@ -43,7 +42,7 @@ public partial class BuAbandonRate : IEquatable<BuAbandonRate>
     /// Abandon rate percent goal. Required if include &#x3D;&#x3D; true
     /// </summary>
     /// <value>Abandon rate percent goal. Required if include &#x3D;&#x3D; true</value>
-    [DataMember(Name = "percent", EmitDefaultValue = false)]
+    [JsonPropertyName("percent")]
     public int? Percent { get; set; }
 
 

@@ -1,12 +1,12 @@
-using System.Runtime.Serialization;
 using System.Text;
+using System.Text.Json.Serialization;
 
 namespace PureCloud.Client.Models;
 
 /// <summary>
 /// The settings to Agent Video background image
 /// </summary>
-[DataContract]
+
 public partial class BackgroundImageSettings : IEquatable<BackgroundImageSettings>
 {
     /// <summary>
@@ -25,7 +25,7 @@ public partial class BackgroundImageSettings : IEquatable<BackgroundImageSetting
     /// BackgroundImage URL for agent video settings
     /// </summary>
     /// <value>BackgroundImage URL for agent video settings</value>
-    [DataMember(Name = "url", EmitDefaultValue = false)]
+    [JsonPropertyName("url")]
     public string Url { get; set; }
 
 

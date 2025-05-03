@@ -1,12 +1,12 @@
-using System.Runtime.Serialization;
 using System.Text;
+using System.Text.Json.Serialization;
 
 namespace PureCloud.Client.Models;
 
 /// <summary>
 /// WorkdayMetric
 /// </summary>
-[DataContract]
+
 public partial class WorkdayMetric : IEquatable<WorkdayMetric>
 {
     /// <summary>
@@ -23,7 +23,7 @@ public partial class WorkdayMetric : IEquatable<WorkdayMetric>
     /// Gamification metric
     /// </summary>
     /// <value>Gamification metric</value>
-    [DataMember(Name = "metric", EmitDefaultValue = false)]
+    [JsonPropertyName("metric")]
     public Metric Metric { get; private set; }
 
 
@@ -32,7 +32,7 @@ public partial class WorkdayMetric : IEquatable<WorkdayMetric>
     /// Current objective for this metric
     /// </summary>
     /// <value>Current objective for this metric</value>
-    [DataMember(Name = "objective", EmitDefaultValue = false)]
+    [JsonPropertyName("objective")]
     public Objective Objective { get; private set; }
 
 
@@ -41,7 +41,7 @@ public partial class WorkdayMetric : IEquatable<WorkdayMetric>
     /// Gamification points earned for this metric
     /// </summary>
     /// <value>Gamification points earned for this metric</value>
-    [DataMember(Name = "points", EmitDefaultValue = false)]
+    [JsonPropertyName("points")]
     public int? Points { get; private set; }
 
 
@@ -50,7 +50,7 @@ public partial class WorkdayMetric : IEquatable<WorkdayMetric>
     /// The maximum Gamification points a user may earn for this metric
     /// </summary>
     /// <value>The maximum Gamification points a user may earn for this metric</value>
-    [DataMember(Name = "maxPoints", EmitDefaultValue = false)]
+    [JsonPropertyName("maxPoints")]
     public int? MaxPoints { get; private set; }
 
 
@@ -59,7 +59,7 @@ public partial class WorkdayMetric : IEquatable<WorkdayMetric>
     /// Value of this metric
     /// </summary>
     /// <value>Value of this metric</value>
-    [DataMember(Name = "value", EmitDefaultValue = false)]
+    [JsonPropertyName("value")]
     public double? Value { get; private set; }
 
 
@@ -68,7 +68,7 @@ public partial class WorkdayMetric : IEquatable<WorkdayMetric>
     /// List of schedule activity events for punctuality metrics
     /// </summary>
     /// <value>List of schedule activity events for punctuality metrics</value>
-    [DataMember(Name = "punctualityEvents", EmitDefaultValue = false)]
+    [JsonPropertyName("punctualityEvents")]
     public List<PunctualityEvent> PunctualityEvents { get; private set; }
 
 
@@ -77,7 +77,7 @@ public partial class WorkdayMetric : IEquatable<WorkdayMetric>
     /// List of evaluations for quality evaluation score metrics
     /// </summary>
     /// <value>List of evaluations for quality evaluation score metrics</value>
-    [DataMember(Name = "evaluationDetails", EmitDefaultValue = false)]
+    [JsonPropertyName("evaluationDetails")]
     public List<QualityEvaluationScoreItem> EvaluationDetails { get; private set; }
 
 

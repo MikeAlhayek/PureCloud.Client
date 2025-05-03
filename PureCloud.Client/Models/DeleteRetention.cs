@@ -1,12 +1,12 @@
-using System.Runtime.Serialization;
 using System.Text;
+using System.Text.Json.Serialization;
 
 namespace PureCloud.Client.Models;
 
 /// <summary>
 /// DeleteRetention
 /// </summary>
-[DataContract]
+
 public partial class DeleteRetention : IEquatable<DeleteRetention>
 {
     /// <summary>
@@ -24,7 +24,7 @@ public partial class DeleteRetention : IEquatable<DeleteRetention>
     /// <summary>
     /// Gets or Sets Days
     /// </summary>
-    [DataMember(Name = "days", EmitDefaultValue = false)]
+    [JsonPropertyName("days")]
     public int? Days { get; set; }
 
 

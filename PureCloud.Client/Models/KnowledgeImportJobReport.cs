@@ -1,12 +1,12 @@
-using System.Runtime.Serialization;
 using System.Text;
+using System.Text.Json.Serialization;
 
 namespace PureCloud.Client.Models;
 
 /// <summary>
 /// KnowledgeImportJobReport
 /// </summary>
-[DataContract]
+
 public partial class KnowledgeImportJobReport : IEquatable<KnowledgeImportJobReport>
 {
     /// <summary>
@@ -27,7 +27,7 @@ public partial class KnowledgeImportJobReport : IEquatable<KnowledgeImportJobRep
     /// List of errors occurred during processing import.
     /// </summary>
     /// <value>List of errors occurred during processing import.</value>
-    [DataMember(Name = "errors", EmitDefaultValue = false)]
+    [JsonPropertyName("errors")]
     public List<KnowledgeImportJobError> Errors { get; set; }
 
 
@@ -36,7 +36,7 @@ public partial class KnowledgeImportJobReport : IEquatable<KnowledgeImportJobRep
     /// Statistics related to the import job.
     /// </summary>
     /// <value>Statistics related to the import job.</value>
-    [DataMember(Name = "statistics", EmitDefaultValue = false)]
+    [JsonPropertyName("statistics")]
     public KnowledgeImportJobStatistics Statistics { get; set; }
 
 

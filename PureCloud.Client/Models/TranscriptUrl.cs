@@ -1,12 +1,12 @@
-using System.Runtime.Serialization;
 using System.Text;
+using System.Text.Json.Serialization;
 
 namespace PureCloud.Client.Models;
 
 /// <summary>
 /// TranscriptUrl
 /// </summary>
-[DataContract]
+
 public partial class TranscriptUrl : IEquatable<TranscriptUrl>
 {
     /// <summary>
@@ -25,7 +25,7 @@ public partial class TranscriptUrl : IEquatable<TranscriptUrl>
     /// The pre-signed S3 URL of the transcript
     /// </summary>
     /// <value>The pre-signed S3 URL of the transcript</value>
-    [DataMember(Name = "url", EmitDefaultValue = false)]
+    [JsonPropertyName("url")]
     public string Url { get; set; }
 
 

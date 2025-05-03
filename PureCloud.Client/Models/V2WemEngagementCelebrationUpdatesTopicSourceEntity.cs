@@ -7,13 +7,13 @@ namespace PureCloud.Client.Models;
 /// <summary>
 /// V2WemEngagementCelebrationUpdatesTopicSourceEntity
 /// </summary>
-[DataContract]
+
 public partial class V2WemEngagementCelebrationUpdatesTopicSourceEntity : IEquatable<V2WemEngagementCelebrationUpdatesTopicSourceEntity>
 {
     /// <summary>
     /// Gets or Sets Type
     /// </summary>
-    [JsonConverter(typeof(JsonStringEnumConverter))]
+    
     public enum TypeEnum
     {
         /// <summary>
@@ -81,7 +81,7 @@ public partial class V2WemEngagementCelebrationUpdatesTopicSourceEntity : IEquat
     /// <summary>
     /// Gets or Sets Type
     /// </summary>
-    [DataMember(Name = "type", EmitDefaultValue = false)]
+    [JsonPropertyName("type")]
     public TypeEnum? Type { get; set; }
     /// <summary>
     /// Initializes a new instance of the <see cref="V2WemEngagementCelebrationUpdatesTopicSourceEntity" /> class.
@@ -102,7 +102,7 @@ public partial class V2WemEngagementCelebrationUpdatesTopicSourceEntity : IEquat
     /// <summary>
     /// Gets or Sets Id
     /// </summary>
-    [DataMember(Name = "id", EmitDefaultValue = false)]
+    [JsonPropertyName("id")]
     public Guid? Id { get; set; }
 
 
@@ -112,7 +112,7 @@ public partial class V2WemEngagementCelebrationUpdatesTopicSourceEntity : IEquat
     /// <summary>
     /// Gets or Sets ContestCompleteData
     /// </summary>
-    [DataMember(Name = "contestCompleteData", EmitDefaultValue = false)]
+    [JsonPropertyName("contestCompleteData")]
     public V2WemEngagementCelebrationUpdatesTopicContestCompleteData ContestCompleteData { get; set; }
 
 

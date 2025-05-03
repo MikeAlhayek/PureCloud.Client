@@ -1,12 +1,12 @@
-using System.Runtime.Serialization;
 using System.Text;
+using System.Text.Json.Serialization;
 
 namespace PureCloud.Client.Models;
 
 /// <summary>
 /// DivisionEntityRef
 /// </summary>
-[DataContract]
+
 public partial class DivisionEntityRef : IEquatable<DivisionEntityRef>
 {
     /// <summary>
@@ -30,7 +30,7 @@ public partial class DivisionEntityRef : IEquatable<DivisionEntityRef>
     /// <summary>
     /// Gets or Sets Id
     /// </summary>
-    [DataMember(Name = "id", EmitDefaultValue = false)]
+    [JsonPropertyName("id")]
     public string Id { get; set; }
 
 
@@ -38,7 +38,7 @@ public partial class DivisionEntityRef : IEquatable<DivisionEntityRef>
     /// <summary>
     /// Gets or Sets Name
     /// </summary>
-    [DataMember(Name = "name", EmitDefaultValue = false)]
+    [JsonPropertyName("name")]
     public string Name { get; set; }
 
 
@@ -46,7 +46,7 @@ public partial class DivisionEntityRef : IEquatable<DivisionEntityRef>
     /// <summary>
     /// Gets or Sets SelfUri
     /// </summary>
-    [DataMember(Name = "selfUri", EmitDefaultValue = false)]
+    [JsonPropertyName("selfUri")]
     public string SelfUri { get; set; }
 
 
@@ -55,7 +55,7 @@ public partial class DivisionEntityRef : IEquatable<DivisionEntityRef>
     /// The time the entity division was last updated. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z
     /// </summary>
     /// <value>The time the entity division was last updated. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z</value>
-    [DataMember(Name = "dateDivisionUpdated", EmitDefaultValue = false)]
+    [JsonPropertyName("dateDivisionUpdated")]
     public DateTime? DateDivisionUpdated { get; set; }
 
 

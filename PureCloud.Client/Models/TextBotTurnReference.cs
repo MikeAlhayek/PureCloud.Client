@@ -1,4 +1,3 @@
-using System.Runtime.Serialization;
 using System.Text;
 using System.Text.Json.Serialization;
 
@@ -7,7 +6,7 @@ namespace PureCloud.Client.Models;
 /// <summary>
 /// A reference to a bot flow turn.
 /// </summary>
-[DataContract]
+
 public partial class TextBotTurnReference : IEquatable<TextBotTurnReference>
 {
 
@@ -32,7 +31,7 @@ public partial class TextBotTurnReference : IEquatable<TextBotTurnReference>
     /// The id of the turn.
     /// </summary>
     /// <value>The id of the turn.</value>
-    [DataMember(Name = "id", EmitDefaultValue = false)]
+    [JsonPropertyName("id")]
     public string Id { get; set; }
 
 

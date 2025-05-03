@@ -1,4 +1,3 @@
-using System.Runtime.Serialization;
 using System.Text;
 using System.Text.Json.Serialization;
 
@@ -7,7 +6,7 @@ namespace PureCloud.Client.Models;
 /// <summary>
 /// ExternalOrganization
 /// </summary>
-[DataContract]
+
 public partial class ExternalOrganization : IEquatable<ExternalOrganization>
 {
 
@@ -70,7 +69,7 @@ public partial class ExternalOrganization : IEquatable<ExternalOrganization>
     /// The globally unique identifier for the object.
     /// </summary>
     /// <value>The globally unique identifier for the object.</value>
-    [DataMember(Name = "id", EmitDefaultValue = false)]
+    [JsonPropertyName("id")]
     public string Id { get; set; }
 
 
@@ -79,7 +78,7 @@ public partial class ExternalOrganization : IEquatable<ExternalOrganization>
     /// The name of the company.
     /// </summary>
     /// <value>The name of the company.</value>
-    [DataMember(Name = "name", EmitDefaultValue = false)]
+    [JsonPropertyName("name")]
     public string Name { get; set; }
 
 
@@ -88,7 +87,7 @@ public partial class ExternalOrganization : IEquatable<ExternalOrganization>
     /// The division to which this entity belongs.
     /// </summary>
     /// <value>The division to which this entity belongs.</value>
-    [DataMember(Name = "division", EmitDefaultValue = false)]
+    [JsonPropertyName("division")]
     public WritableStarrableDivision Division { get; set; }
 
 
@@ -96,7 +95,7 @@ public partial class ExternalOrganization : IEquatable<ExternalOrganization>
     /// <summary>
     /// Gets or Sets CompanyType
     /// </summary>
-    [DataMember(Name = "companyType", EmitDefaultValue = false)]
+    [JsonPropertyName("companyType")]
     public string CompanyType { get; set; }
 
 
@@ -104,7 +103,7 @@ public partial class ExternalOrganization : IEquatable<ExternalOrganization>
     /// <summary>
     /// Gets or Sets Industry
     /// </summary>
-    [DataMember(Name = "industry", EmitDefaultValue = false)]
+    [JsonPropertyName("industry")]
     public string Industry { get; set; }
 
 
@@ -112,7 +111,7 @@ public partial class ExternalOrganization : IEquatable<ExternalOrganization>
     /// <summary>
     /// Gets or Sets Address
     /// </summary>
-    [DataMember(Name = "address", EmitDefaultValue = false)]
+    [JsonPropertyName("address")]
     public ContactAddress Address { get; set; }
 
 
@@ -120,7 +119,7 @@ public partial class ExternalOrganization : IEquatable<ExternalOrganization>
     /// <summary>
     /// Gets or Sets PhoneNumber
     /// </summary>
-    [DataMember(Name = "phoneNumber", EmitDefaultValue = false)]
+    [JsonPropertyName("phoneNumber")]
     public PhoneNumber PhoneNumber { get; set; }
 
 
@@ -128,7 +127,7 @@ public partial class ExternalOrganization : IEquatable<ExternalOrganization>
     /// <summary>
     /// Gets or Sets FaxNumber
     /// </summary>
-    [DataMember(Name = "faxNumber", EmitDefaultValue = false)]
+    [JsonPropertyName("faxNumber")]
     public PhoneNumber FaxNumber { get; set; }
 
 
@@ -136,7 +135,7 @@ public partial class ExternalOrganization : IEquatable<ExternalOrganization>
     /// <summary>
     /// Gets or Sets EmployeeCount
     /// </summary>
-    [DataMember(Name = "employeeCount", EmitDefaultValue = false)]
+    [JsonPropertyName("employeeCount")]
     public long? EmployeeCount { get; set; }
 
 
@@ -144,7 +143,7 @@ public partial class ExternalOrganization : IEquatable<ExternalOrganization>
     /// <summary>
     /// Gets or Sets Revenue
     /// </summary>
-    [DataMember(Name = "revenue", EmitDefaultValue = false)]
+    [JsonPropertyName("revenue")]
     public long? Revenue { get; set; }
 
 
@@ -152,7 +151,7 @@ public partial class ExternalOrganization : IEquatable<ExternalOrganization>
     /// <summary>
     /// Gets or Sets Tags
     /// </summary>
-    [DataMember(Name = "tags", EmitDefaultValue = false)]
+    [JsonPropertyName("tags")]
     public List<string> Tags { get; set; }
 
 
@@ -160,7 +159,7 @@ public partial class ExternalOrganization : IEquatable<ExternalOrganization>
     /// <summary>
     /// Gets or Sets Websites
     /// </summary>
-    [DataMember(Name = "websites", EmitDefaultValue = false)]
+    [JsonPropertyName("websites")]
     public List<string> Websites { get; set; }
 
 
@@ -168,7 +167,7 @@ public partial class ExternalOrganization : IEquatable<ExternalOrganization>
     /// <summary>
     /// Gets or Sets Tickers
     /// </summary>
-    [DataMember(Name = "tickers", EmitDefaultValue = false)]
+    [JsonPropertyName("tickers")]
     public List<Ticker> Tickers { get; set; }
 
 
@@ -176,7 +175,7 @@ public partial class ExternalOrganization : IEquatable<ExternalOrganization>
     /// <summary>
     /// Gets or Sets TwitterId
     /// </summary>
-    [DataMember(Name = "twitterId", EmitDefaultValue = false)]
+    [JsonPropertyName("twitterId")]
     public TwitterId TwitterId { get; set; }
 
 
@@ -185,7 +184,7 @@ public partial class ExternalOrganization : IEquatable<ExternalOrganization>
     /// A string that identifies an external system-of-record resource that may have more detailed information on the organization. It should be a valid URL (including the http/https protocol, port, and path [if any]). The value is automatically trimmed of any leading and trailing whitespace.
     /// </summary>
     /// <value>A string that identifies an external system-of-record resource that may have more detailed information on the organization. It should be a valid URL (including the http/https protocol, port, and path [if any]). The value is automatically trimmed of any leading and trailing whitespace.</value>
-    [DataMember(Name = "externalSystemUrl", EmitDefaultValue = false)]
+    [JsonPropertyName("externalSystemUrl")]
     public string ExternalSystemUrl { get; set; }
 
 
@@ -194,7 +193,7 @@ public partial class ExternalOrganization : IEquatable<ExternalOrganization>
     /// Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z
     /// </summary>
     /// <value>Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z</value>
-    [DataMember(Name = "modifyDate", EmitDefaultValue = false)]
+    [JsonPropertyName("modifyDate")]
     public DateTime? ModifyDate { get; set; }
 
 
@@ -203,7 +202,7 @@ public partial class ExternalOrganization : IEquatable<ExternalOrganization>
     /// Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z
     /// </summary>
     /// <value>Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z</value>
-    [DataMember(Name = "createDate", EmitDefaultValue = false)]
+    [JsonPropertyName("createDate")]
     public DateTime? CreateDate { get; set; }
 
 
@@ -211,7 +210,7 @@ public partial class ExternalOrganization : IEquatable<ExternalOrganization>
     /// <summary>
     /// Gets or Sets Trustor
     /// </summary>
-    [DataMember(Name = "trustor", EmitDefaultValue = false)]
+    [JsonPropertyName("trustor")]
     public Trustor Trustor { get; set; }
 
 
@@ -220,7 +219,7 @@ public partial class ExternalOrganization : IEquatable<ExternalOrganization>
     /// The schema defining custom fields for this contact
     /// </summary>
     /// <value>The schema defining custom fields for this contact</value>
-    [DataMember(Name = "schema", EmitDefaultValue = false)]
+    [JsonPropertyName("schema")]
     public DataSchema Schema { get; set; }
 
 
@@ -229,7 +228,7 @@ public partial class ExternalOrganization : IEquatable<ExternalOrganization>
     /// Custom fields defined in the schema referenced by schemaId and schemaVersion.
     /// </summary>
     /// <value>Custom fields defined in the schema referenced by schemaId and schemaVersion.</value>
-    [DataMember(Name = "customFields", EmitDefaultValue = false)]
+    [JsonPropertyName("customFields")]
     public Dictionary<string, object> CustomFields { get; set; }
 
 
@@ -238,7 +237,7 @@ public partial class ExternalOrganization : IEquatable<ExternalOrganization>
     /// Links to the sources of data (e.g. one source might be a CRM) that contributed data to this record.  Read-only, and only populated when requested via expand param.
     /// </summary>
     /// <value>Links to the sources of data (e.g. one source might be a CRM) that contributed data to this record.  Read-only, and only populated when requested via expand param.</value>
-    [DataMember(Name = "externalDataSources", EmitDefaultValue = false)]
+    [JsonPropertyName("externalDataSources")]
     public List<ExternalDataSource> ExternalDataSources { get; private set; }
 
 
@@ -247,7 +246,7 @@ public partial class ExternalOrganization : IEquatable<ExternalOrganization>
     /// The URI for this object
     /// </summary>
     /// <value>The URI for this object</value>
-    [DataMember(Name = "selfUri", EmitDefaultValue = false)]
+    [JsonPropertyName("selfUri")]
     public string SelfUri { get; private set; }
 
 

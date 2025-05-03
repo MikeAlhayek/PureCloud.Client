@@ -1,12 +1,12 @@
-using System.Runtime.Serialization;
 using System.Text;
+using System.Text.Json.Serialization;
 
 namespace PureCloud.Client.Models;
 
 /// <summary>
 /// SystemPrompt
 /// </summary>
-[DataContract]
+
 public partial class SystemPrompt : IEquatable<SystemPrompt>
 {
     /// <summary>
@@ -31,7 +31,7 @@ public partial class SystemPrompt : IEquatable<SystemPrompt>
     /// The system prompt identifier
     /// </summary>
     /// <value>The system prompt identifier</value>
-    [DataMember(Name = "id", EmitDefaultValue = false)]
+    [JsonPropertyName("id")]
     public string Id { get; set; }
 
 
@@ -39,7 +39,7 @@ public partial class SystemPrompt : IEquatable<SystemPrompt>
     /// <summary>
     /// Gets or Sets Name
     /// </summary>
-    [DataMember(Name = "name", EmitDefaultValue = false)]
+    [JsonPropertyName("name")]
     public string Name { get; set; }
 
 
@@ -47,7 +47,7 @@ public partial class SystemPrompt : IEquatable<SystemPrompt>
     /// <summary>
     /// Gets or Sets Description
     /// </summary>
-    [DataMember(Name = "description", EmitDefaultValue = false)]
+    [JsonPropertyName("description")]
     public string Description { get; set; }
 
 
@@ -55,7 +55,7 @@ public partial class SystemPrompt : IEquatable<SystemPrompt>
     /// <summary>
     /// Gets or Sets Resources
     /// </summary>
-    [DataMember(Name = "resources", EmitDefaultValue = false)]
+    [JsonPropertyName("resources")]
     public List<SystemPromptAsset> Resources { get; set; }
 
 
@@ -64,7 +64,7 @@ public partial class SystemPrompt : IEquatable<SystemPrompt>
     /// The URI for this object
     /// </summary>
     /// <value>The URI for this object</value>
-    [DataMember(Name = "selfUri", EmitDefaultValue = false)]
+    [JsonPropertyName("selfUri")]
     public string SelfUri { get; private set; }
 
 

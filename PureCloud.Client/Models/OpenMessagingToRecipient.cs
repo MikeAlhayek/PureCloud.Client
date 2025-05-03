@@ -7,14 +7,14 @@ namespace PureCloud.Client.Models;
 /// <summary>
 /// Information about the recipient the message is sent to.
 /// </summary>
-[DataContract]
+
 public partial class OpenMessagingToRecipient : IEquatable<OpenMessagingToRecipient>
 {
     /// <summary>
     /// The recipient ID type. This is used to indicate the format used for the ID.
     /// </summary>
     /// <value>The recipient ID type. This is used to indicate the format used for the ID.</value>
-    [JsonConverter(typeof(JsonStringEnumConverter))]
+    
     public enum IdTypeEnum
     {
         /// <summary>
@@ -47,7 +47,7 @@ public partial class OpenMessagingToRecipient : IEquatable<OpenMessagingToRecipi
     /// The recipient ID type. This is used to indicate the format used for the ID.
     /// </summary>
     /// <value>The recipient ID type. This is used to indicate the format used for the ID.</value>
-    [DataMember(Name = "idType", EmitDefaultValue = false)]
+    [JsonPropertyName("idType")]
     public IdTypeEnum? IdType { get; private set; }
 
     /// <summary>
@@ -73,7 +73,7 @@ public partial class OpenMessagingToRecipient : IEquatable<OpenMessagingToRecipi
     /// Nickname or display name of the recipient.
     /// </summary>
     /// <value>Nickname or display name of the recipient.</value>
-    [DataMember(Name = "nickname", EmitDefaultValue = false)]
+    [JsonPropertyName("nickname")]
     public string Nickname { get; private set; }
 
 
@@ -82,7 +82,7 @@ public partial class OpenMessagingToRecipient : IEquatable<OpenMessagingToRecipi
     /// The recipient ID specific to the provider.
     /// </summary>
     /// <value>The recipient ID specific to the provider.</value>
-    [DataMember(Name = "id", EmitDefaultValue = false)]
+    [JsonPropertyName("id")]
     public string Id { get; set; }
 
 
@@ -93,7 +93,7 @@ public partial class OpenMessagingToRecipient : IEquatable<OpenMessagingToRecipi
     /// First name of the recipient.
     /// </summary>
     /// <value>First name of the recipient.</value>
-    [DataMember(Name = "firstName", EmitDefaultValue = false)]
+    [JsonPropertyName("firstName")]
     public string FirstName { get; private set; }
 
 
@@ -102,7 +102,7 @@ public partial class OpenMessagingToRecipient : IEquatable<OpenMessagingToRecipi
     /// Last name of the recipient.
     /// </summary>
     /// <value>Last name of the recipient.</value>
-    [DataMember(Name = "lastName", EmitDefaultValue = false)]
+    [JsonPropertyName("lastName")]
     public string LastName { get; private set; }
 
 
@@ -111,7 +111,7 @@ public partial class OpenMessagingToRecipient : IEquatable<OpenMessagingToRecipi
     /// URL of an image that represents the recipient.
     /// </summary>
     /// <value>URL of an image that represents the recipient.</value>
-    [DataMember(Name = "image", EmitDefaultValue = false)]
+    [JsonPropertyName("image")]
     public string Image { get; private set; }
 
 
@@ -120,7 +120,7 @@ public partial class OpenMessagingToRecipient : IEquatable<OpenMessagingToRecipi
     /// E-mail address of the recipient.
     /// </summary>
     /// <value>E-mail address of the recipient.</value>
-    [DataMember(Name = "email", EmitDefaultValue = false)]
+    [JsonPropertyName("email")]
     public string Email { get; set; }
 
 

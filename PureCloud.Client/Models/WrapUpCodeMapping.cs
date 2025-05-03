@@ -7,13 +7,13 @@ namespace PureCloud.Client.Models;
 /// <summary>
 /// WrapUpCodeMapping
 /// </summary>
-[DataContract]
+
 public partial class WrapUpCodeMapping : IEquatable<WrapUpCodeMapping>
 {
     /// <summary>
     /// Gets or Sets DefaultSet
     /// </summary>
-    [JsonConverter(typeof(JsonStringEnumConverter))]
+    
     public enum DefaultSetEnum
     {
         /// <summary>
@@ -82,7 +82,7 @@ public partial class WrapUpCodeMapping : IEquatable<WrapUpCodeMapping>
     /// The globally unique identifier for the object.
     /// </summary>
     /// <value>The globally unique identifier for the object.</value>
-    [DataMember(Name = "id", EmitDefaultValue = false)]
+    [JsonPropertyName("id")]
     public string Id { get; private set; }
 
 
@@ -90,7 +90,7 @@ public partial class WrapUpCodeMapping : IEquatable<WrapUpCodeMapping>
     /// <summary>
     /// Gets or Sets Name
     /// </summary>
-    [DataMember(Name = "name", EmitDefaultValue = false)]
+    [JsonPropertyName("name")]
     public string Name { get; set; }
 
 
@@ -99,7 +99,7 @@ public partial class WrapUpCodeMapping : IEquatable<WrapUpCodeMapping>
     /// Creation time of the entity. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z
     /// </summary>
     /// <value>Creation time of the entity. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z</value>
-    [DataMember(Name = "dateCreated", EmitDefaultValue = false)]
+    [JsonPropertyName("dateCreated")]
     public DateTime? DateCreated { get; private set; }
 
 
@@ -108,7 +108,7 @@ public partial class WrapUpCodeMapping : IEquatable<WrapUpCodeMapping>
     /// Last modified time of the entity. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z
     /// </summary>
     /// <value>Last modified time of the entity. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z</value>
-    [DataMember(Name = "dateModified", EmitDefaultValue = false)]
+    [JsonPropertyName("dateModified")]
     public DateTime? DateModified { get; private set; }
 
 
@@ -117,7 +117,7 @@ public partial class WrapUpCodeMapping : IEquatable<WrapUpCodeMapping>
     /// Required for updates, must match the version number of the most recent update
     /// </summary>
     /// <value>Required for updates, must match the version number of the most recent update</value>
-    [DataMember(Name = "version", EmitDefaultValue = false)]
+    [JsonPropertyName("version")]
     public int? Version { get; set; }
 
 
@@ -126,7 +126,7 @@ public partial class WrapUpCodeMapping : IEquatable<WrapUpCodeMapping>
     /// The default set of wrap-up flags. These will be used if there is no entry for a given wrap-up code in the mapping.
     /// </summary>
     /// <value>The default set of wrap-up flags. These will be used if there is no entry for a given wrap-up code in the mapping.</value>
-    [DataMember(Name = "defaultSet", EmitDefaultValue = false)]
+    [JsonPropertyName("defaultSet")]
     public List<DefaultSetEnum> DefaultSet { get; set; }
 
 
@@ -135,7 +135,7 @@ public partial class WrapUpCodeMapping : IEquatable<WrapUpCodeMapping>
     /// A map from wrap-up code identifiers to a set of wrap-up flags.
     /// </summary>
     /// <value>A map from wrap-up code identifiers to a set of wrap-up flags.</value>
-    [DataMember(Name = "mapping", EmitDefaultValue = false)]
+    [JsonPropertyName("mapping")]
     public Dictionary<string, List<string>> Mapping { get; set; }
 
 
@@ -144,7 +144,7 @@ public partial class WrapUpCodeMapping : IEquatable<WrapUpCodeMapping>
     /// The URI for this object
     /// </summary>
     /// <value>The URI for this object</value>
-    [DataMember(Name = "selfUri", EmitDefaultValue = false)]
+    [JsonPropertyName("selfUri")]
     public string SelfUri { get; private set; }
 
 

@@ -1,12 +1,12 @@
-using System.Runtime.Serialization;
 using System.Text;
+using System.Text.Json.Serialization;
 
 namespace PureCloud.Client.Models;
 
 /// <summary>
 /// JourneyWebEventsNotificationSegmentAssignmentMessage
 /// </summary>
-[DataContract]
+
 public partial class JourneyWebEventsNotificationSegmentAssignmentMessage : IEquatable<JourneyWebEventsNotificationSegmentAssignmentMessage>
 {
     /// <summary>
@@ -24,7 +24,7 @@ public partial class JourneyWebEventsNotificationSegmentAssignmentMessage : IEqu
     /// <summary>
     /// Gets or Sets Segment
     /// </summary>
-    [DataMember(Name = "segment", EmitDefaultValue = false)]
+    [JsonPropertyName("segment")]
     public JourneyWebEventsNotificationSegment Segment { get; set; }
 
 

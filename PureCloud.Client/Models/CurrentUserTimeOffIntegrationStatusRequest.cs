@@ -1,4 +1,3 @@
-using System.Runtime.Serialization;
 using System.Text;
 using System.Text.Json.Serialization;
 
@@ -7,7 +6,7 @@ namespace PureCloud.Client.Models;
 /// <summary>
 /// CurrentUserTimeOffIntegrationStatusRequest
 /// </summary>
-[DataContract]
+
 public partial class CurrentUserTimeOffIntegrationStatusRequest : IEquatable<CurrentUserTimeOffIntegrationStatusRequest>
 {
 
@@ -32,7 +31,7 @@ public partial class CurrentUserTimeOffIntegrationStatusRequest : IEquatable<Cur
     /// A list of time off request IDs
     /// </summary>
     /// <value>A list of time off request IDs</value>
-    [DataMember(Name = "timeOffRequestIds", EmitDefaultValue = false)]
+    [JsonPropertyName("timeOffRequestIds")]
     public List<string> TimeOffRequestIds { get; set; }
 
 

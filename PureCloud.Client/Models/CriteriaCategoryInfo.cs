@@ -1,12 +1,12 @@
-using System.Runtime.Serialization;
 using System.Text;
+using System.Text.Json.Serialization;
 
 namespace PureCloud.Client.Models;
 
 /// <summary>
 /// CriteriaCategoryInfo
 /// </summary>
-[DataContract]
+
 public partial class CriteriaCategoryInfo : IEquatable<CriteriaCategoryInfo>
 {
     /// <summary>
@@ -26,7 +26,7 @@ public partial class CriteriaCategoryInfo : IEquatable<CriteriaCategoryInfo>
     /// <summary>
     /// Gets or Sets CategoryId
     /// </summary>
-    [DataMember(Name = "categoryId", EmitDefaultValue = false)]
+    [JsonPropertyName("categoryId")]
     public string CategoryId { get; set; }
 
 
@@ -34,7 +34,7 @@ public partial class CriteriaCategoryInfo : IEquatable<CriteriaCategoryInfo>
     /// <summary>
     /// Gets or Sets DisplayOrder
     /// </summary>
-    [DataMember(Name = "displayOrder", EmitDefaultValue = false)]
+    [JsonPropertyName("displayOrder")]
     public int? DisplayOrder { get; set; }
 
 

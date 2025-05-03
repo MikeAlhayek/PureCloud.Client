@@ -7,14 +7,14 @@ namespace PureCloud.Client.Models;
 /// <summary>
 /// AdminBulkUpdateAlternativeShiftTradeState
 /// </summary>
-[DataContract]
+
 public partial class AdminBulkUpdateAlternativeShiftTradeState : IEquatable<AdminBulkUpdateAlternativeShiftTradeState>
 {
     /// <summary>
     /// The new alternative shift trade state
     /// </summary>
     /// <value>The new alternative shift trade state</value>
-    [JsonConverter(typeof(JsonStringEnumConverter))]
+    
     public enum StateEnum
     {
         /// <summary>
@@ -41,7 +41,7 @@ public partial class AdminBulkUpdateAlternativeShiftTradeState : IEquatable<Admi
     /// The new alternative shift trade state
     /// </summary>
     /// <value>The new alternative shift trade state</value>
-    [DataMember(Name = "state", EmitDefaultValue = false)]
+    [JsonPropertyName("state")]
     public StateEnum? State { get; set; }
 
     /// <summary>
@@ -69,7 +69,7 @@ public partial class AdminBulkUpdateAlternativeShiftTradeState : IEquatable<Admi
     /// The ID of the trade for this alternative shift trade
     /// </summary>
     /// <value>The ID of the trade for this alternative shift trade</value>
-    [DataMember(Name = "tradeId", EmitDefaultValue = false)]
+    [JsonPropertyName("tradeId")]
     public string TradeId { get; set; }
 
 
@@ -80,7 +80,7 @@ public partial class AdminBulkUpdateAlternativeShiftTradeState : IEquatable<Admi
     /// Version metadata for this alternative shift trade
     /// </summary>
     /// <value>Version metadata for this alternative shift trade</value>
-    [DataMember(Name = "metadata", EmitDefaultValue = false)]
+    [JsonPropertyName("metadata")]
     public WfmVersionedEntityMetadata Metadata { get; set; }
 
 

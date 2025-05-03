@@ -7,14 +7,14 @@ namespace PureCloud.Client.Models;
 /// <summary>
 /// EventCondition
 /// </summary>
-[DataContract]
+
 public partial class EventCondition : IEquatable<EventCondition>
 {
     /// <summary>
     /// The comparison operator.
     /// </summary>
     /// <value>The comparison operator.</value>
-    [JsonConverter(typeof(JsonStringEnumConverter))]
+    
     public enum OperatorEnum
     {
         /// <summary>
@@ -101,7 +101,7 @@ public partial class EventCondition : IEquatable<EventCondition>
     /// The stream type for which this condition can be satisfied.
     /// </summary>
     /// <value>The stream type for which this condition can be satisfied.</value>
-    [JsonConverter(typeof(JsonStringEnumConverter))]
+    
     public enum StreamTypeEnum
     {
         /// <summary>
@@ -140,13 +140,13 @@ public partial class EventCondition : IEquatable<EventCondition>
     /// The comparison operator.
     /// </summary>
     /// <value>The comparison operator.</value>
-    [DataMember(Name = "operator", EmitDefaultValue = false)]
+    [JsonPropertyName("operator")]
     public OperatorEnum? Operator { get; set; }
     /// <summary>
     /// The stream type for which this condition can be satisfied.
     /// </summary>
     /// <value>The stream type for which this condition can be satisfied.</value>
-    [DataMember(Name = "streamType", EmitDefaultValue = false)]
+    [JsonPropertyName("streamType")]
     public StreamTypeEnum? StreamType { get; set; }
 
     /// <summary>
@@ -180,7 +180,7 @@ public partial class EventCondition : IEquatable<EventCondition>
     /// The event key.
     /// </summary>
     /// <value>The event key.</value>
-    [DataMember(Name = "key", EmitDefaultValue = false)]
+    [JsonPropertyName("key")]
     public string Key { get; set; }
 
 
@@ -189,7 +189,7 @@ public partial class EventCondition : IEquatable<EventCondition>
     /// The event values.
     /// </summary>
     /// <value>The event values.</value>
-    [DataMember(Name = "values", EmitDefaultValue = false)]
+    [JsonPropertyName("values")]
     public List<string> Values { get; set; }
 
 
@@ -202,7 +202,7 @@ public partial class EventCondition : IEquatable<EventCondition>
     /// The session type for which this condition can be satisfied.
     /// </summary>
     /// <value>The session type for which this condition can be satisfied.</value>
-    [DataMember(Name = "sessionType", EmitDefaultValue = false)]
+    [JsonPropertyName("sessionType")]
     public string SessionType { get; set; }
 
 
@@ -211,7 +211,7 @@ public partial class EventCondition : IEquatable<EventCondition>
     /// The name of the event for which this condition can be satisfied.
     /// </summary>
     /// <value>The name of the event for which this condition can be satisfied.</value>
-    [DataMember(Name = "eventName", EmitDefaultValue = false)]
+    [JsonPropertyName("eventName")]
     public string EventName { get; set; }
 
 

@@ -1,4 +1,3 @@
-using System.Runtime.Serialization;
 using System.Text;
 using System.Text.Json.Serialization;
 
@@ -7,7 +6,7 @@ namespace PureCloud.Client.Models;
 /// <summary>
 /// Details about an idle event trigger
 /// </summary>
-[DataContract]
+
 public partial class IdleEventTrigger : IEquatable<IdleEventTrigger>
 {
 
@@ -34,7 +33,7 @@ public partial class IdleEventTrigger : IEquatable<IdleEventTrigger>
     /// Name of event triggered after period of inactivity.
     /// </summary>
     /// <value>Name of event triggered after period of inactivity.</value>
-    [DataMember(Name = "eventName", EmitDefaultValue = false)]
+    [JsonPropertyName("eventName")]
     public string EventName { get; set; }
 
 
@@ -43,7 +42,7 @@ public partial class IdleEventTrigger : IEquatable<IdleEventTrigger>
     /// Number of seconds of inactivity before an event is triggered.
     /// </summary>
     /// <value>Number of seconds of inactivity before an event is triggered.</value>
-    [DataMember(Name = "idleAfterSeconds", EmitDefaultValue = false)]
+    [JsonPropertyName("idleAfterSeconds")]
     public long? IdleAfterSeconds { get; set; }
 
 

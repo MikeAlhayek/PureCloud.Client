@@ -7,14 +7,14 @@ namespace PureCloud.Client.Models;
 /// <summary>
 /// ConversationInsight
 /// </summary>
-[DataContract]
+
 public partial class ConversationInsight : IEquatable<ConversationInsight>
 {
     /// <summary>
     /// The type of insight
     /// </summary>
     /// <value>The type of insight</value>
-    [JsonConverter(typeof(JsonStringEnumConverter))]
+    
     public enum TypeEnum
     {
         /// <summary>
@@ -47,7 +47,7 @@ public partial class ConversationInsight : IEquatable<ConversationInsight>
     /// The type of insight
     /// </summary>
     /// <value>The type of insight</value>
-    [DataMember(Name = "type", EmitDefaultValue = false)]
+    [JsonPropertyName("type")]
     public TypeEnum? Type { get; set; }
     /// <summary>
     /// Initializes a new instance of the <see cref="ConversationInsight" /> class.
@@ -73,7 +73,7 @@ public partial class ConversationInsight : IEquatable<ConversationInsight>
     /// The reason for contact, resolution for the interaction, or follow-up action item
     /// </summary>
     /// <value>The reason for contact, resolution for the interaction, or follow-up action item</value>
-    [DataMember(Name = "title", EmitDefaultValue = false)]
+    [JsonPropertyName("title")]
     public string Title { get; set; }
 
 
@@ -82,7 +82,7 @@ public partial class ConversationInsight : IEquatable<ConversationInsight>
     /// Reasoning for the given insight
     /// </summary>
     /// <value>Reasoning for the given insight</value>
-    [DataMember(Name = "description", EmitDefaultValue = false)]
+    [JsonPropertyName("description")]
     public string Description { get; set; }
 
 
@@ -91,7 +91,7 @@ public partial class ConversationInsight : IEquatable<ConversationInsight>
     /// The outcome of a given resolution insight
     /// </summary>
     /// <value>The outcome of a given resolution insight</value>
-    [DataMember(Name = "outcome", EmitDefaultValue = false)]
+    [JsonPropertyName("outcome")]
     public string Outcome { get; set; }
 
 

@@ -1,12 +1,12 @@
-using System.Runtime.Serialization;
 using System.Text;
+using System.Text.Json.Serialization;
 
 namespace PureCloud.Client.Models;
 
 /// <summary>
 /// TranscriptUrls
 /// </summary>
-[DataContract]
+
 public partial class TranscriptUrls : IEquatable<TranscriptUrls>
 {
     /// <summary>
@@ -29,7 +29,7 @@ public partial class TranscriptUrls : IEquatable<TranscriptUrls>
     /// The Conversation Reference
     /// </summary>
     /// <value>The Conversation Reference</value>
-    [DataMember(Name = "conversation", EmitDefaultValue = false)]
+    [JsonPropertyName("conversation")]
     public AddressableEntityRef Conversation { get; set; }
 
 
@@ -38,7 +38,7 @@ public partial class TranscriptUrls : IEquatable<TranscriptUrls>
     /// The Communication ID
     /// </summary>
     /// <value>The Communication ID</value>
-    [DataMember(Name = "communicationId", EmitDefaultValue = false)]
+    [JsonPropertyName("communicationId")]
     public string CommunicationId { get; set; }
 
 
@@ -47,7 +47,7 @@ public partial class TranscriptUrls : IEquatable<TranscriptUrls>
     /// List of Transcript URLs
     /// </summary>
     /// <value>List of Transcript URLs</value>
-    [DataMember(Name = "urls", EmitDefaultValue = false)]
+    [JsonPropertyName("urls")]
     public List<SegmentUrl> Urls { get; set; }
 
 

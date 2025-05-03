@@ -7,14 +7,14 @@ namespace PureCloud.Client.Models;
 /// <summary>
 /// Message event element.  Examples include: system messages, typing indicators, cobrowse offerings.
 /// </summary>
-[DataContract]
+
 public partial class WebMessagingEvent : IEquatable<WebMessagingEvent>
 {
     /// <summary>
     /// Type of this event element
     /// </summary>
     /// <value>Type of this event element</value>
-    [JsonConverter(typeof(JsonStringEnumConverter))]
+    
     public enum EventTypeEnum
     {
         /// <summary>
@@ -41,7 +41,7 @@ public partial class WebMessagingEvent : IEquatable<WebMessagingEvent>
     /// Type of this event element
     /// </summary>
     /// <value>Type of this event element</value>
-    [DataMember(Name = "eventType", EmitDefaultValue = false)]
+    [JsonPropertyName("eventType")]
     public EventTypeEnum? EventType { get; set; }
 
     /// <summary>
@@ -71,7 +71,7 @@ public partial class WebMessagingEvent : IEquatable<WebMessagingEvent>
     /// Cobrowse event.
     /// </summary>
     /// <value>Cobrowse event.</value>
-    [DataMember(Name = "coBrowse", EmitDefaultValue = false)]
+    [JsonPropertyName("coBrowse")]
     public WebMessagingEventCoBrowse CoBrowse { get; set; }
 
 
@@ -80,7 +80,7 @@ public partial class WebMessagingEvent : IEquatable<WebMessagingEvent>
     /// Presence event.
     /// </summary>
     /// <value>Presence event.</value>
-    [DataMember(Name = "presence", EmitDefaultValue = false)]
+    [JsonPropertyName("presence")]
     public WebMessagingEventPresence Presence { get; set; }
 
 

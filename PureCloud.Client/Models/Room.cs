@@ -7,14 +7,14 @@ namespace PureCloud.Client.Models;
 /// <summary>
 /// Room
 /// </summary>
-[DataContract]
+
 public partial class Room : IEquatable<Room>
 {
     /// <summary>
     /// The type of room
     /// </summary>
     /// <value>The type of room</value>
-    [JsonConverter(typeof(JsonStringEnumConverter))]
+    
     public enum RoomTypeEnum
     {
         /// <summary>
@@ -59,7 +59,7 @@ public partial class Room : IEquatable<Room>
     /// The type of room
     /// </summary>
     /// <value>The type of room</value>
-    [DataMember(Name = "roomType", EmitDefaultValue = false)]
+    [JsonPropertyName("roomType")]
     public RoomTypeEnum? RoomType { get; set; }
     /// <summary>
     /// Initializes a new instance of the <see cref="Room" /> class.
@@ -93,7 +93,7 @@ public partial class Room : IEquatable<Room>
     /// The jid of the room if adhoc, the id of the group for group rooms
     /// </summary>
     /// <value>The jid of the room if adhoc, the id of the group for group rooms</value>
-    [DataMember(Name = "id", EmitDefaultValue = false)]
+    [JsonPropertyName("id")]
     public string Id { get; private set; }
 
 
@@ -101,7 +101,7 @@ public partial class Room : IEquatable<Room>
     /// <summary>
     /// Gets or Sets Name
     /// </summary>
-    [DataMember(Name = "name", EmitDefaultValue = false)]
+    [JsonPropertyName("name")]
     public string Name { get; set; }
 
 
@@ -110,7 +110,7 @@ public partial class Room : IEquatable<Room>
     /// Room&#39;s created time. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z
     /// </summary>
     /// <value>Room&#39;s created time. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z</value>
-    [DataMember(Name = "dateCreated", EmitDefaultValue = false)]
+    [JsonPropertyName("dateCreated")]
     public DateTime? DateCreated { get; set; }
 
 
@@ -121,7 +121,7 @@ public partial class Room : IEquatable<Room>
     /// Room&#39;s description
     /// </summary>
     /// <value>Room&#39;s description</value>
-    [DataMember(Name = "description", EmitDefaultValue = false)]
+    [JsonPropertyName("description")]
     public string Description { get; set; }
 
 
@@ -130,7 +130,7 @@ public partial class Room : IEquatable<Room>
     /// Room&#39;s subject
     /// </summary>
     /// <value>Room&#39;s subject</value>
-    [DataMember(Name = "subject", EmitDefaultValue = false)]
+    [JsonPropertyName("subject")]
     public string Subject { get; set; }
 
 
@@ -139,7 +139,7 @@ public partial class Room : IEquatable<Room>
     /// Room&#39;s size limit
     /// </summary>
     /// <value>Room&#39;s size limit</value>
-    [DataMember(Name = "participantLimit", EmitDefaultValue = false)]
+    [JsonPropertyName("participantLimit")]
     public int? ParticipantLimit { get; set; }
 
 
@@ -148,7 +148,7 @@ public partial class Room : IEquatable<Room>
     /// Room&#39;s owners
     /// </summary>
     /// <value>Room&#39;s owners</value>
-    [DataMember(Name = "owners", EmitDefaultValue = false)]
+    [JsonPropertyName("owners")]
     public List<UserReference> Owners { get; set; }
 
 
@@ -157,7 +157,7 @@ public partial class Room : IEquatable<Room>
     /// Room&#39;s pinned messages
     /// </summary>
     /// <value>Room&#39;s pinned messages</value>
-    [DataMember(Name = "pinnedMessages", EmitDefaultValue = false)]
+    [JsonPropertyName("pinnedMessages")]
     public List<AddressableEntityRef> PinnedMessages { get; set; }
 
 
@@ -166,7 +166,7 @@ public partial class Room : IEquatable<Room>
     /// The jid of the room
     /// </summary>
     /// <value>The jid of the room</value>
-    [DataMember(Name = "jid", EmitDefaultValue = false)]
+    [JsonPropertyName("jid")]
     public string Jid { get; set; }
 
 
@@ -175,7 +175,7 @@ public partial class Room : IEquatable<Room>
     /// The URI for this object
     /// </summary>
     /// <value>The URI for this object</value>
-    [DataMember(Name = "selfUri", EmitDefaultValue = false)]
+    [JsonPropertyName("selfUri")]
     public string SelfUri { get; private set; }
 
 

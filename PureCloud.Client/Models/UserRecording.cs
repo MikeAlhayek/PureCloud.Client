@@ -1,12 +1,12 @@
-using System.Runtime.Serialization;
 using System.Text;
+using System.Text.Json.Serialization;
 
 namespace PureCloud.Client.Models;
 
 /// <summary>
 /// UserRecording
 /// </summary>
-[DataContract]
+
 public partial class UserRecording : IEquatable<UserRecording>
 {
     /// <summary>
@@ -45,7 +45,7 @@ public partial class UserRecording : IEquatable<UserRecording>
     /// The globally unique identifier for the object.
     /// </summary>
     /// <value>The globally unique identifier for the object.</value>
-    [DataMember(Name = "id", EmitDefaultValue = false)]
+    [JsonPropertyName("id")]
     public string Id { get; private set; }
 
 
@@ -53,7 +53,7 @@ public partial class UserRecording : IEquatable<UserRecording>
     /// <summary>
     /// Gets or Sets Name
     /// </summary>
-    [DataMember(Name = "name", EmitDefaultValue = false)]
+    [JsonPropertyName("name")]
     public string Name { get; set; }
 
 
@@ -62,7 +62,7 @@ public partial class UserRecording : IEquatable<UserRecording>
     /// Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z
     /// </summary>
     /// <value>Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z</value>
-    [DataMember(Name = "dateCreated", EmitDefaultValue = false)]
+    [JsonPropertyName("dateCreated")]
     public DateTime? DateCreated { get; set; }
 
 
@@ -71,7 +71,7 @@ public partial class UserRecording : IEquatable<UserRecording>
     /// Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z
     /// </summary>
     /// <value>Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z</value>
-    [DataMember(Name = "dateModified", EmitDefaultValue = false)]
+    [JsonPropertyName("dateModified")]
     public DateTime? DateModified { get; set; }
 
 
@@ -79,7 +79,7 @@ public partial class UserRecording : IEquatable<UserRecording>
     /// <summary>
     /// Gets or Sets ContentUri
     /// </summary>
-    [DataMember(Name = "contentUri", EmitDefaultValue = false)]
+    [JsonPropertyName("contentUri")]
     public string ContentUri { get; set; }
 
 
@@ -87,7 +87,7 @@ public partial class UserRecording : IEquatable<UserRecording>
     /// <summary>
     /// Gets or Sets Workspace
     /// </summary>
-    [DataMember(Name = "workspace", EmitDefaultValue = false)]
+    [JsonPropertyName("workspace")]
     public DomainEntityRef Workspace { get; set; }
 
 
@@ -95,7 +95,7 @@ public partial class UserRecording : IEquatable<UserRecording>
     /// <summary>
     /// Gets or Sets CreatedBy
     /// </summary>
-    [DataMember(Name = "createdBy", EmitDefaultValue = false)]
+    [JsonPropertyName("createdBy")]
     public DomainEntityRef CreatedBy { get; set; }
 
 
@@ -103,7 +103,7 @@ public partial class UserRecording : IEquatable<UserRecording>
     /// <summary>
     /// Gets or Sets Conversation
     /// </summary>
-    [DataMember(Name = "conversation", EmitDefaultValue = false)]
+    [JsonPropertyName("conversation")]
     public Conversation Conversation { get; set; }
 
 
@@ -111,7 +111,7 @@ public partial class UserRecording : IEquatable<UserRecording>
     /// <summary>
     /// Gets or Sets ContentLength
     /// </summary>
-    [DataMember(Name = "contentLength", EmitDefaultValue = false)]
+    [JsonPropertyName("contentLength")]
     public long? ContentLength { get; set; }
 
 
@@ -119,7 +119,7 @@ public partial class UserRecording : IEquatable<UserRecording>
     /// <summary>
     /// Gets or Sets DurationMilliseconds
     /// </summary>
-    [DataMember(Name = "durationMilliseconds", EmitDefaultValue = false)]
+    [JsonPropertyName("durationMilliseconds")]
     public long? DurationMilliseconds { get; set; }
 
 
@@ -127,7 +127,7 @@ public partial class UserRecording : IEquatable<UserRecording>
     /// <summary>
     /// Gets or Sets Thumbnails
     /// </summary>
-    [DataMember(Name = "thumbnails", EmitDefaultValue = false)]
+    [JsonPropertyName("thumbnails")]
     public List<DocumentThumbnail> Thumbnails { get; set; }
 
 
@@ -135,7 +135,7 @@ public partial class UserRecording : IEquatable<UserRecording>
     /// <summary>
     /// Gets or Sets Read
     /// </summary>
-    [DataMember(Name = "read", EmitDefaultValue = false)]
+    [JsonPropertyName("read")]
     public bool? Read { get; set; }
 
 
@@ -144,7 +144,7 @@ public partial class UserRecording : IEquatable<UserRecording>
     /// The URI for this object
     /// </summary>
     /// <value>The URI for this object</value>
-    [DataMember(Name = "selfUri", EmitDefaultValue = false)]
+    [JsonPropertyName("selfUri")]
     public string SelfUri { get; private set; }
 
 

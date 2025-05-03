@@ -1,12 +1,12 @@
-using System.Runtime.Serialization;
 using System.Text;
+using System.Text.Json.Serialization;
 
 namespace PureCloud.Client.Models;
 
 /// <summary>
 /// RestErrorDetail
 /// </summary>
-[DataContract]
+
 public partial class RestErrorDetail : IEquatable<RestErrorDetail>
 {
     /// <summary>
@@ -23,7 +23,7 @@ public partial class RestErrorDetail : IEquatable<RestErrorDetail>
     /// name of the error
     /// </summary>
     /// <value>name of the error</value>
-    [DataMember(Name = "error", EmitDefaultValue = false)]
+    [JsonPropertyName("error")]
     public string Error { get; private set; }
 
 
@@ -32,7 +32,7 @@ public partial class RestErrorDetail : IEquatable<RestErrorDetail>
     /// additional information regarding the error
     /// </summary>
     /// <value>additional information regarding the error</value>
-    [DataMember(Name = "details", EmitDefaultValue = false)]
+    [JsonPropertyName("details")]
     public string Details { get; private set; }
 
 

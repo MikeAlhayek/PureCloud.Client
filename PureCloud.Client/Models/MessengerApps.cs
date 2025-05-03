@@ -1,12 +1,12 @@
-using System.Runtime.Serialization;
 using System.Text;
+using System.Text.Json.Serialization;
 
 namespace PureCloud.Client.Models;
 
 /// <summary>
 /// The apps embedded in the messenger
 /// </summary>
-[DataContract]
+
 public partial class MessengerApps : IEquatable<MessengerApps>
 {
     /// <summary>
@@ -27,7 +27,7 @@ public partial class MessengerApps : IEquatable<MessengerApps>
     /// The conversation settings that handles chats within the messenger
     /// </summary>
     /// <value>The conversation settings that handles chats within the messenger</value>
-    [DataMember(Name = "conversations", EmitDefaultValue = false)]
+    [JsonPropertyName("conversations")]
     public ConversationAppSettings Conversations { get; set; }
 
 
@@ -36,7 +36,7 @@ public partial class MessengerApps : IEquatable<MessengerApps>
     /// The knowledge base config for messenger
     /// </summary>
     /// <value>The knowledge base config for messenger</value>
-    [DataMember(Name = "knowledge", EmitDefaultValue = false)]
+    [JsonPropertyName("knowledge")]
     public Knowledge Knowledge { get; set; }
 
 

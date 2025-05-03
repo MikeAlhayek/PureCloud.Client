@@ -7,14 +7,14 @@ namespace PureCloud.Client.Models;
 /// <summary>
 /// DashboardConfigurationQueryRequest
 /// </summary>
-[DataContract]
+
 public partial class DashboardConfigurationQueryRequest : IEquatable<DashboardConfigurationQueryRequest>
 {
     /// <summary>
     /// The order in which response will be sorted
     /// </summary>
     /// <value>The order in which response will be sorted</value>
-    [JsonConverter(typeof(JsonStringEnumConverter))]
+    
     public enum SortByEnum
     {
         /// <summary>
@@ -41,7 +41,7 @@ public partial class DashboardConfigurationQueryRequest : IEquatable<DashboardCo
     /// The order in which response will be sorted
     /// </summary>
     /// <value>The order in which response will be sorted</value>
-    [DataMember(Name = "sortBy", EmitDefaultValue = false)]
+    [JsonPropertyName("sortBy")]
     public SortByEnum? SortBy { get; set; }
 
     /// <summary>
@@ -71,7 +71,7 @@ public partial class DashboardConfigurationQueryRequest : IEquatable<DashboardCo
     /// The user supplied dashboard configuration ids
     /// </summary>
     /// <value>The user supplied dashboard configuration ids</value>
-    [DataMember(Name = "dashboardConfigurationIds", EmitDefaultValue = false)]
+    [JsonPropertyName("dashboardConfigurationIds")]
     public List<string> DashboardConfigurationIds { get; set; }
 
 
@@ -80,7 +80,7 @@ public partial class DashboardConfigurationQueryRequest : IEquatable<DashboardCo
     /// The page number of the queried response
     /// </summary>
     /// <value>The page number of the queried response</value>
-    [DataMember(Name = "pageNumber", EmitDefaultValue = false)]
+    [JsonPropertyName("pageNumber")]
     public int? PageNumber { get; set; }
 
 
@@ -89,7 +89,7 @@ public partial class DashboardConfigurationQueryRequest : IEquatable<DashboardCo
     /// The number of entities to return of the queried response. The max is 25
     /// </summary>
     /// <value>The number of entities to return of the queried response. The max is 25</value>
-    [DataMember(Name = "pageSize", EmitDefaultValue = false)]
+    [JsonPropertyName("pageSize")]
     public int? PageSize { get; set; }
 
 

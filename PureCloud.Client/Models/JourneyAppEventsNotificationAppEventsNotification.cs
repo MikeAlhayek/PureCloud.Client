@@ -7,13 +7,13 @@ namespace PureCloud.Client.Models;
 /// <summary>
 /// JourneyAppEventsNotificationAppEventsNotification
 /// </summary>
-[DataContract]
+
 public partial class JourneyAppEventsNotificationAppEventsNotification : IEquatable<JourneyAppEventsNotificationAppEventsNotification>
 {
     /// <summary>
     /// Gets or Sets EventType
     /// </summary>
-    [JsonConverter(typeof(JsonStringEnumConverter))]
+    
     public enum EventTypeEnum
     {
         /// <summary>
@@ -51,7 +51,7 @@ public partial class JourneyAppEventsNotificationAppEventsNotification : IEquata
     /// <summary>
     /// Gets or Sets EventType
     /// </summary>
-    [DataMember(Name = "eventType", EmitDefaultValue = false)]
+    [JsonPropertyName("eventType")]
     public EventTypeEnum? EventType { get; set; }
     /// <summary>
     /// Initializes a new instance of the <see cref="JourneyAppEventsNotificationAppEventsNotification" /> class.
@@ -90,7 +90,7 @@ public partial class JourneyAppEventsNotificationAppEventsNotification : IEquata
     /// <summary>
     /// Gets or Sets Id
     /// </summary>
-    [DataMember(Name = "id", EmitDefaultValue = false)]
+    [JsonPropertyName("id")]
     public string Id { get; set; }
 
 
@@ -98,7 +98,7 @@ public partial class JourneyAppEventsNotificationAppEventsNotification : IEquata
     /// <summary>
     /// Gets or Sets CorrelationId
     /// </summary>
-    [DataMember(Name = "correlationId", EmitDefaultValue = false)]
+    [JsonPropertyName("correlationId")]
     public string CorrelationId { get; set; }
 
 
@@ -106,7 +106,7 @@ public partial class JourneyAppEventsNotificationAppEventsNotification : IEquata
     /// <summary>
     /// Gets or Sets ExternalContact
     /// </summary>
-    [DataMember(Name = "externalContact", EmitDefaultValue = false)]
+    [JsonPropertyName("externalContact")]
     public JourneyAppEventsNotificationExternalContact ExternalContact { get; set; }
 
 
@@ -114,7 +114,7 @@ public partial class JourneyAppEventsNotificationAppEventsNotification : IEquata
     /// <summary>
     /// Gets or Sets CreatedDate
     /// </summary>
-    [DataMember(Name = "createdDate", EmitDefaultValue = false)]
+    [JsonPropertyName("createdDate")]
     public DateTime? CreatedDate { get; set; }
 
 
@@ -122,7 +122,7 @@ public partial class JourneyAppEventsNotificationAppEventsNotification : IEquata
     /// <summary>
     /// Gets or Sets CustomerId
     /// </summary>
-    [DataMember(Name = "customerId", EmitDefaultValue = false)]
+    [JsonPropertyName("customerId")]
     public string CustomerId { get; set; }
 
 
@@ -130,7 +130,7 @@ public partial class JourneyAppEventsNotificationAppEventsNotification : IEquata
     /// <summary>
     /// Gets or Sets CustomerIdType
     /// </summary>
-    [DataMember(Name = "customerIdType", EmitDefaultValue = false)]
+    [JsonPropertyName("customerIdType")]
     public string CustomerIdType { get; set; }
 
 
@@ -138,7 +138,7 @@ public partial class JourneyAppEventsNotificationAppEventsNotification : IEquata
     /// <summary>
     /// Gets or Sets Session
     /// </summary>
-    [DataMember(Name = "session", EmitDefaultValue = false)]
+    [JsonPropertyName("session")]
     public JourneyAppEventsNotificationSession Session { get; set; }
 
 
@@ -148,7 +148,7 @@ public partial class JourneyAppEventsNotificationAppEventsNotification : IEquata
     /// <summary>
     /// Gets or Sets AppEvent
     /// </summary>
-    [DataMember(Name = "appEvent", EmitDefaultValue = false)]
+    [JsonPropertyName("appEvent")]
     public JourneyAppEventsNotificationAppMessage AppEvent { get; set; }
 
 
@@ -156,7 +156,7 @@ public partial class JourneyAppEventsNotificationAppEventsNotification : IEquata
     /// <summary>
     /// Gets or Sets OutcomeAchievedEvent
     /// </summary>
-    [DataMember(Name = "outcomeAchievedEvent", EmitDefaultValue = false)]
+    [JsonPropertyName("outcomeAchievedEvent")]
     public JourneyAppEventsNotificationOutcomeAchievedMessage OutcomeAchievedEvent { get; set; }
 
 
@@ -164,7 +164,7 @@ public partial class JourneyAppEventsNotificationAppEventsNotification : IEquata
     /// <summary>
     /// Gets or Sets SegmentAssignmentEvent
     /// </summary>
-    [DataMember(Name = "segmentAssignmentEvent", EmitDefaultValue = false)]
+    [JsonPropertyName("segmentAssignmentEvent")]
     public JourneyAppEventsNotificationSegmentAssignmentMessage SegmentAssignmentEvent { get; set; }
 
 
@@ -172,7 +172,7 @@ public partial class JourneyAppEventsNotificationAppEventsNotification : IEquata
     /// <summary>
     /// Gets or Sets WebActionEvent
     /// </summary>
-    [DataMember(Name = "webActionEvent", EmitDefaultValue = false)]
+    [JsonPropertyName("webActionEvent")]
     public JourneyAppEventsNotificationWebActionMessage WebActionEvent { get; set; }
 
 

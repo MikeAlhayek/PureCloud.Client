@@ -1,12 +1,12 @@
-using System.Runtime.Serialization;
 using System.Text;
+using System.Text.Json.Serialization;
 
 namespace PureCloud.Client.Models;
 
 /// <summary>
 /// CursorContactListing
 /// </summary>
-[DataContract]
+
 public partial class CursorContactListing : IEquatable<CursorContactListing>
 {
     /// <summary>
@@ -32,7 +32,7 @@ public partial class CursorContactListing : IEquatable<CursorContactListing>
     /// <summary>
     /// Gets or Sets Entities
     /// </summary>
-    [DataMember(Name = "entities", EmitDefaultValue = false)]
+    [JsonPropertyName("entities")]
     public List<ExternalContact> Entities { get; set; }
 
 
@@ -40,7 +40,7 @@ public partial class CursorContactListing : IEquatable<CursorContactListing>
     /// <summary>
     /// Gets or Sets NextUri
     /// </summary>
-    [DataMember(Name = "nextUri", EmitDefaultValue = false)]
+    [JsonPropertyName("nextUri")]
     public string NextUri { get; set; }
 
 
@@ -48,7 +48,7 @@ public partial class CursorContactListing : IEquatable<CursorContactListing>
     /// <summary>
     /// Gets or Sets SelfUri
     /// </summary>
-    [DataMember(Name = "selfUri", EmitDefaultValue = false)]
+    [JsonPropertyName("selfUri")]
     public string SelfUri { get; set; }
 
 
@@ -56,7 +56,7 @@ public partial class CursorContactListing : IEquatable<CursorContactListing>
     /// <summary>
     /// Gets or Sets PreviousUri
     /// </summary>
-    [DataMember(Name = "previousUri", EmitDefaultValue = false)]
+    [JsonPropertyName("previousUri")]
     public string PreviousUri { get; set; }
 
 
@@ -65,7 +65,7 @@ public partial class CursorContactListing : IEquatable<CursorContactListing>
     /// The cursor that points to the next set of entities being returned.
     /// </summary>
     /// <value>The cursor that points to the next set of entities being returned.</value>
-    [DataMember(Name = "cursors", EmitDefaultValue = false)]
+    [JsonPropertyName("cursors")]
     public Cursors Cursors { get; set; }
 
 

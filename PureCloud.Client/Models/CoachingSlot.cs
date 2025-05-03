@@ -7,14 +7,14 @@ namespace PureCloud.Client.Models;
 /// <summary>
 /// CoachingSlot
 /// </summary>
-[DataContract]
+
 public partial class CoachingSlot : IEquatable<CoachingSlot>
 {
     /// <summary>
     /// Rating based on the staffing difference for scheduled slot
     /// </summary>
     /// <value>Rating based on the staffing difference for scheduled slot</value>
-    [JsonConverter(typeof(JsonStringEnumConverter))]
+    
     public enum DifferenceRatingEnum
     {
         /// <summary>
@@ -47,7 +47,7 @@ public partial class CoachingSlot : IEquatable<CoachingSlot>
     /// Rating based on the staffing difference for scheduled slot
     /// </summary>
     /// <value>Rating based on the staffing difference for scheduled slot</value>
-    [DataMember(Name = "differenceRating", EmitDefaultValue = false)]
+    [JsonPropertyName("differenceRating")]
     public DifferenceRatingEnum? DifferenceRating { get; private set; }
     /// <summary>
     /// Initializes a new instance of the <see cref="CoachingSlot" /> class.
@@ -63,7 +63,7 @@ public partial class CoachingSlot : IEquatable<CoachingSlot>
     /// Start date and time of scheduled coaching appointment slot. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z
     /// </summary>
     /// <value>Start date and time of scheduled coaching appointment slot. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z</value>
-    [DataMember(Name = "dateStart", EmitDefaultValue = false)]
+    [JsonPropertyName("dateStart")]
     public DateTime? DateStart { get; private set; }
 
 
@@ -72,7 +72,7 @@ public partial class CoachingSlot : IEquatable<CoachingSlot>
     /// Length of coaching appointment slot in minutes
     /// </summary>
     /// <value>Length of coaching appointment slot in minutes</value>
-    [DataMember(Name = "lengthInMinutes", EmitDefaultValue = false)]
+    [JsonPropertyName("lengthInMinutes")]
     public int? LengthInMinutes { get; private set; }
 
 
@@ -81,7 +81,7 @@ public partial class CoachingSlot : IEquatable<CoachingSlot>
     /// Difference between scheduled and forecast headcount for this slot after scheduling the coaching appointment
     /// </summary>
     /// <value>Difference between scheduled and forecast headcount for this slot after scheduling the coaching appointment</value>
-    [DataMember(Name = "staffingDifference", EmitDefaultValue = false)]
+    [JsonPropertyName("staffingDifference")]
     public double? StaffingDifference { get; private set; }
 
 
@@ -92,7 +92,7 @@ public partial class CoachingSlot : IEquatable<CoachingSlot>
     /// Workforce Management schedule information associated with the slot
     /// </summary>
     /// <value>Workforce Management schedule information associated with the slot</value>
-    [DataMember(Name = "wfmSchedule", EmitDefaultValue = false)]
+    [JsonPropertyName("wfmSchedule")]
     public WfmScheduleReference WfmSchedule { get; private set; }
 
 

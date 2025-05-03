@@ -7,14 +7,14 @@ namespace PureCloud.Client.Models;
 /// <summary>
 /// KnowledgeDocumentResponse
 /// </summary>
-[DataContract]
+
 public partial class KnowledgeDocumentResponse : IEquatable<KnowledgeDocumentResponse>
 {
     /// <summary>
     /// State of the document.
     /// </summary>
     /// <value>State of the document.</value>
-    [JsonConverter(typeof(JsonStringEnumConverter))]
+    
     public enum StateEnum
     {
         /// <summary>
@@ -47,7 +47,7 @@ public partial class KnowledgeDocumentResponse : IEquatable<KnowledgeDocumentRes
     /// State of the document.
     /// </summary>
     /// <value>State of the document.</value>
-    [DataMember(Name = "state", EmitDefaultValue = false)]
+    [JsonPropertyName("state")]
     public StateEnum? State { get; set; }
     /// <summary>
     /// Initializes a new instance of the <see cref="KnowledgeDocumentResponse" /> class.
@@ -99,7 +99,7 @@ public partial class KnowledgeDocumentResponse : IEquatable<KnowledgeDocumentRes
     /// The globally unique identifier for the object.
     /// </summary>
     /// <value>The globally unique identifier for the object.</value>
-    [DataMember(Name = "id", EmitDefaultValue = false)]
+    [JsonPropertyName("id")]
     public string Id { get; private set; }
 
 
@@ -108,7 +108,7 @@ public partial class KnowledgeDocumentResponse : IEquatable<KnowledgeDocumentRes
     /// Document title, having a limit of 500 words.
     /// </summary>
     /// <value>Document title, having a limit of 500 words.</value>
-    [DataMember(Name = "title", EmitDefaultValue = false)]
+    [JsonPropertyName("title")]
     public string Title { get; set; }
 
 
@@ -117,7 +117,7 @@ public partial class KnowledgeDocumentResponse : IEquatable<KnowledgeDocumentRes
     /// Indicates if the knowledge document should be included in search results.
     /// </summary>
     /// <value>Indicates if the knowledge document should be included in search results.</value>
-    [DataMember(Name = "visible", EmitDefaultValue = false)]
+    [JsonPropertyName("visible")]
     public bool? Visible { get; set; }
 
 
@@ -126,7 +126,7 @@ public partial class KnowledgeDocumentResponse : IEquatable<KnowledgeDocumentRes
     /// List of alternate phrases related to the title which improves search results.
     /// </summary>
     /// <value>List of alternate phrases related to the title which improves search results.</value>
-    [DataMember(Name = "alternatives", EmitDefaultValue = false)]
+    [JsonPropertyName("alternatives")]
     public List<KnowledgeDocumentAlternative> Alternatives { get; set; }
 
 
@@ -137,7 +137,7 @@ public partial class KnowledgeDocumentResponse : IEquatable<KnowledgeDocumentRes
     /// Document creation date-time. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z
     /// </summary>
     /// <value>Document creation date-time. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z</value>
-    [DataMember(Name = "dateCreated", EmitDefaultValue = false)]
+    [JsonPropertyName("dateCreated")]
     public DateTime? DateCreated { get; set; }
 
 
@@ -146,7 +146,7 @@ public partial class KnowledgeDocumentResponse : IEquatable<KnowledgeDocumentRes
     /// Document last modification date-time. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z
     /// </summary>
     /// <value>Document last modification date-time. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z</value>
-    [DataMember(Name = "dateModified", EmitDefaultValue = false)]
+    [JsonPropertyName("dateModified")]
     public DateTime? DateModified { get; set; }
 
 
@@ -155,7 +155,7 @@ public partial class KnowledgeDocumentResponse : IEquatable<KnowledgeDocumentRes
     /// Document import date-time, or null if was not imported. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z
     /// </summary>
     /// <value>Document import date-time, or null if was not imported. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z</value>
-    [DataMember(Name = "dateImported", EmitDefaultValue = false)]
+    [JsonPropertyName("dateImported")]
     public DateTime? DateImported { get; set; }
 
 
@@ -164,7 +164,7 @@ public partial class KnowledgeDocumentResponse : IEquatable<KnowledgeDocumentRes
     /// The last published version number of the document.
     /// </summary>
     /// <value>The last published version number of the document.</value>
-    [DataMember(Name = "lastPublishedVersionNumber", EmitDefaultValue = false)]
+    [JsonPropertyName("lastPublishedVersionNumber")]
     public int? LastPublishedVersionNumber { get; set; }
 
 
@@ -173,7 +173,7 @@ public partial class KnowledgeDocumentResponse : IEquatable<KnowledgeDocumentRes
     /// The date on which the document was last published. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z
     /// </summary>
     /// <value>The date on which the document was last published. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z</value>
-    [DataMember(Name = "datePublished", EmitDefaultValue = false)]
+    [JsonPropertyName("datePublished")]
     public DateTime? DatePublished { get; set; }
 
 
@@ -182,7 +182,7 @@ public partial class KnowledgeDocumentResponse : IEquatable<KnowledgeDocumentRes
     /// The user who created the document.
     /// </summary>
     /// <value>The user who created the document.</value>
-    [DataMember(Name = "createdBy", EmitDefaultValue = false)]
+    [JsonPropertyName("createdBy")]
     public UserReference CreatedBy { get; private set; }
 
 
@@ -191,7 +191,7 @@ public partial class KnowledgeDocumentResponse : IEquatable<KnowledgeDocumentRes
     /// The user who modified the document.
     /// </summary>
     /// <value>The user who modified the document.</value>
-    [DataMember(Name = "modifiedBy", EmitDefaultValue = false)]
+    [JsonPropertyName("modifiedBy")]
     public UserReference ModifiedBy { get; private set; }
 
 
@@ -200,7 +200,7 @@ public partial class KnowledgeDocumentResponse : IEquatable<KnowledgeDocumentRes
     /// The version of the document.
     /// </summary>
     /// <value>The version of the document.</value>
-    [DataMember(Name = "documentVersion", EmitDefaultValue = false)]
+    [JsonPropertyName("documentVersion")]
     public AddressableEntityRef DocumentVersion { get; set; }
 
 
@@ -209,7 +209,7 @@ public partial class KnowledgeDocumentResponse : IEquatable<KnowledgeDocumentRes
     /// The reference to category associated with the document.
     /// </summary>
     /// <value>The reference to category associated with the document.</value>
-    [DataMember(Name = "category", EmitDefaultValue = false)]
+    [JsonPropertyName("category")]
     public CategoryResponse Category { get; set; }
 
 
@@ -218,7 +218,7 @@ public partial class KnowledgeDocumentResponse : IEquatable<KnowledgeDocumentRes
     /// The references to labels associated with the document.
     /// </summary>
     /// <value>The references to labels associated with the document.</value>
-    [DataMember(Name = "labels", EmitDefaultValue = false)]
+    [JsonPropertyName("labels")]
     public List<LabelResponse> Labels { get; set; }
 
 
@@ -227,7 +227,7 @@ public partial class KnowledgeDocumentResponse : IEquatable<KnowledgeDocumentRes
     /// Knowledge base to which the document belongs to.
     /// </summary>
     /// <value>Knowledge base to which the document belongs to.</value>
-    [DataMember(Name = "knowledgeBase", EmitDefaultValue = false)]
+    [JsonPropertyName("knowledgeBase")]
     public KnowledgeBaseReference KnowledgeBase { get; set; }
 
 
@@ -236,7 +236,7 @@ public partial class KnowledgeDocumentResponse : IEquatable<KnowledgeDocumentRes
     /// The reference to external id associated with the document.
     /// </summary>
     /// <value>The reference to external id associated with the document.</value>
-    [DataMember(Name = "externalId", EmitDefaultValue = false)]
+    [JsonPropertyName("externalId")]
     public string ExternalId { get; set; }
 
 
@@ -245,7 +245,7 @@ public partial class KnowledgeDocumentResponse : IEquatable<KnowledgeDocumentRes
     /// The URL to external document.
     /// </summary>
     /// <value>The URL to external document.</value>
-    [DataMember(Name = "externalUrl", EmitDefaultValue = false)]
+    [JsonPropertyName("externalUrl")]
     public string ExternalUrl { get; set; }
 
 
@@ -254,7 +254,7 @@ public partial class KnowledgeDocumentResponse : IEquatable<KnowledgeDocumentRes
     /// The reference to source associated with the document.
     /// </summary>
     /// <value>The reference to source associated with the document.</value>
-    [DataMember(Name = "source", EmitDefaultValue = false)]
+    [JsonPropertyName("source")]
     public AddressableEntityRef Source { get; set; }
 
 
@@ -263,7 +263,7 @@ public partial class KnowledgeDocumentResponse : IEquatable<KnowledgeDocumentRes
     /// Whether the document is read-only.
     /// </summary>
     /// <value>Whether the document is read-only.</value>
-    [DataMember(Name = "readonly", EmitDefaultValue = false)]
+    [JsonPropertyName("readonly")]
     public bool? Readonly { get; set; }
 
 
@@ -272,7 +272,7 @@ public partial class KnowledgeDocumentResponse : IEquatable<KnowledgeDocumentRes
     /// Variations of the document.
     /// </summary>
     /// <value>Variations of the document.</value>
-    [DataMember(Name = "variations", EmitDefaultValue = false)]
+    [JsonPropertyName("variations")]
     public List<DocumentVariationResponse> Variations { get; set; }
 
 
@@ -281,7 +281,7 @@ public partial class KnowledgeDocumentResponse : IEquatable<KnowledgeDocumentRes
     /// The URI for this object
     /// </summary>
     /// <value>The URI for this object</value>
-    [DataMember(Name = "selfUri", EmitDefaultValue = false)]
+    [JsonPropertyName("selfUri")]
     public string SelfUri { get; private set; }
 
 

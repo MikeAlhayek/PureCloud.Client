@@ -7,13 +7,13 @@ namespace PureCloud.Client.Models;
 /// <summary>
 /// AlertablePresences
 /// </summary>
-[DataContract]
+
 public partial class AlertablePresences : IEquatable<AlertablePresences>
 {
     /// <summary>
     /// Gets or Sets AlertablePresences
     /// </summary>
-    [JsonConverter(typeof(JsonStringEnumConverter))]
+    
     public enum AlertablePresencesEnum
     {
         /// <summary>
@@ -106,7 +106,7 @@ public partial class AlertablePresences : IEquatable<AlertablePresences>
     /// The list of alertable system presences.
     /// </summary>
     /// <value>The list of alertable system presences.</value>
-    [DataMember(Name = "alertablePresences", EmitDefaultValue = false)]
+    [JsonPropertyName("alertablePresences")]
     public List<AlertablePresencesEnum> _AlertablePresences { get; set; }
 
 

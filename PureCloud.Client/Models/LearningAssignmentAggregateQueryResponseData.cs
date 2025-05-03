@@ -1,12 +1,12 @@
-using System.Runtime.Serialization;
 using System.Text;
+using System.Text.Json.Serialization;
 
 namespace PureCloud.Client.Models;
 
 /// <summary>
 /// LearningAssignmentAggregateQueryResponseData
 /// </summary>
-[DataContract]
+
 public partial class LearningAssignmentAggregateQueryResponseData : IEquatable<LearningAssignmentAggregateQueryResponseData>
 {
     /// <summary>
@@ -27,7 +27,7 @@ public partial class LearningAssignmentAggregateQueryResponseData : IEquatable<L
     /// Specifies the range of due dates to be used for filtering. A maximum of 1 year can be specified in the range. Intervals are represented as an ISO-8601 string. For example: YYYY-MM-DDThh:mm:ss/YYYY-MM-DDThh:mm:ss
     /// </summary>
     /// <value>Specifies the range of due dates to be used for filtering. A maximum of 1 year can be specified in the range. Intervals are represented as an ISO-8601 string. For example: YYYY-MM-DDThh:mm:ss/YYYY-MM-DDThh:mm:ss</value>
-    [DataMember(Name = "interval", EmitDefaultValue = false)]
+    [JsonPropertyName("interval")]
     public string Interval { get; set; }
 
 
@@ -36,7 +36,7 @@ public partial class LearningAssignmentAggregateQueryResponseData : IEquatable<L
     /// The list of aggregated metrics
     /// </summary>
     /// <value>The list of aggregated metrics</value>
-    [DataMember(Name = "metrics", EmitDefaultValue = false)]
+    [JsonPropertyName("metrics")]
     public List<LearningAssignmentAggregateQueryResponseMetric> Metrics { get; set; }
 
 

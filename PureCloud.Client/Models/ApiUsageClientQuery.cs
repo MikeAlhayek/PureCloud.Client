@@ -7,14 +7,14 @@ namespace PureCloud.Client.Models;
 /// <summary>
 /// ApiUsageClientQuery
 /// </summary>
-[DataContract]
+
 public partial class ApiUsageClientQuery : IEquatable<ApiUsageClientQuery>
 {
     /// <summary>
     /// Date granularity of the results
     /// </summary>
     /// <value>Date granularity of the results</value>
-    [JsonConverter(typeof(JsonStringEnumConverter))]
+    
     public enum GranularityEnum
     {
         /// <summary>
@@ -46,7 +46,7 @@ public partial class ApiUsageClientQuery : IEquatable<ApiUsageClientQuery>
     /// <summary>
     /// Gets or Sets Metrics
     /// </summary>
-    [JsonConverter(typeof(JsonStringEnumConverter))]
+    
     public enum MetricsEnum
     {
         /// <summary>
@@ -96,7 +96,7 @@ public partial class ApiUsageClientQuery : IEquatable<ApiUsageClientQuery>
     /// <summary>
     /// Gets or Sets GroupBy
     /// </summary>
-    [JsonConverter(typeof(JsonStringEnumConverter))]
+    
     public enum GroupByEnum
     {
         /// <summary>
@@ -135,7 +135,7 @@ public partial class ApiUsageClientQuery : IEquatable<ApiUsageClientQuery>
     /// Date granularity of the results
     /// </summary>
     /// <value>Date granularity of the results</value>
-    [DataMember(Name = "granularity", EmitDefaultValue = false)]
+    [JsonPropertyName("granularity")]
     public GranularityEnum? Granularity { get; set; }
 
     /// <summary>
@@ -165,7 +165,7 @@ public partial class ApiUsageClientQuery : IEquatable<ApiUsageClientQuery>
     /// Behaves like one clause in a SQL WHERE. Specifies the date and time range of data being queried. Intervals are represented as an ISO-8601 string. For example: YYYY-MM-DDThh:mm:ss/YYYY-MM-DDThh:mm:ss
     /// </summary>
     /// <value>Behaves like one clause in a SQL WHERE. Specifies the date and time range of data being queried. Intervals are represented as an ISO-8601 string. For example: YYYY-MM-DDThh:mm:ss/YYYY-MM-DDThh:mm:ss</value>
-    [DataMember(Name = "interval", EmitDefaultValue = false)]
+    [JsonPropertyName("interval")]
     public string Interval { get; set; }
 
 
@@ -176,7 +176,7 @@ public partial class ApiUsageClientQuery : IEquatable<ApiUsageClientQuery>
     /// Behaves like a SQL SELECT clause. Enables retrieving only named metrics. If omitted, all metrics that are available will be returned (like SELECT *).
     /// </summary>
     /// <value>Behaves like a SQL SELECT clause. Enables retrieving only named metrics. If omitted, all metrics that are available will be returned (like SELECT *).</value>
-    [DataMember(Name = "metrics", EmitDefaultValue = false)]
+    [JsonPropertyName("metrics")]
     public List<MetricsEnum> Metrics { get; set; }
 
 
@@ -185,7 +185,7 @@ public partial class ApiUsageClientQuery : IEquatable<ApiUsageClientQuery>
     /// Behaves like a SQL GROUPBY. Allows for multiple levels of grouping as a list of dimensions. Partitions resulting aggregate computations into distinct named subgroups rather than across the entire result set as if it were one group.
     /// </summary>
     /// <value>Behaves like a SQL GROUPBY. Allows for multiple levels of grouping as a list of dimensions. Partitions resulting aggregate computations into distinct named subgroups rather than across the entire result set as if it were one group.</value>
-    [DataMember(Name = "groupBy", EmitDefaultValue = false)]
+    [JsonPropertyName("groupBy")]
     public List<GroupByEnum> GroupBy { get; set; }
 
 

@@ -1,4 +1,3 @@
-using System.Runtime.Serialization;
 using System.Text;
 using System.Text.Json.Serialization;
 
@@ -7,7 +6,7 @@ namespace PureCloud.Client.Models;
 /// <summary>
 /// Used to retrieve executionData based upon certain criteria
 /// </summary>
-[DataContract]
+
 public partial class CriteriaQuery : IEquatable<CriteriaQuery>
 {
 
@@ -32,7 +31,7 @@ public partial class CriteriaQuery : IEquatable<CriteriaQuery>
     /// A list of CriteriaGroups which will be AND&#39;d together to generate a result set.
     /// </summary>
     /// <value>A list of CriteriaGroups which will be AND&#39;d together to generate a result set.</value>
-    [DataMember(Name = "query", EmitDefaultValue = false)]
+    [JsonPropertyName("query")]
     public List<CriteriaGroup> Query { get; set; }
 
 

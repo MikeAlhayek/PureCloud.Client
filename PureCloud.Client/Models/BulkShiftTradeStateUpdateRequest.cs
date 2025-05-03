@@ -1,4 +1,3 @@
-using System.Runtime.Serialization;
 using System.Text;
 using System.Text.Json.Serialization;
 
@@ -7,7 +6,7 @@ namespace PureCloud.Client.Models;
 /// <summary>
 /// BulkShiftTradeStateUpdateRequest
 /// </summary>
-[DataContract]
+
 public partial class BulkShiftTradeStateUpdateRequest : IEquatable<BulkShiftTradeStateUpdateRequest>
 {
 
@@ -32,7 +31,7 @@ public partial class BulkShiftTradeStateUpdateRequest : IEquatable<BulkShiftTrad
     /// The shift trades to update
     /// </summary>
     /// <value>The shift trades to update</value>
-    [DataMember(Name = "entities", EmitDefaultValue = false)]
+    [JsonPropertyName("entities")]
     public List<BulkUpdateShiftTradeStateRequestItem> Entities { get; set; }
 
 

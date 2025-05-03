@@ -7,14 +7,14 @@ namespace PureCloud.Client.Models;
 /// <summary>
 /// DeploymentWebAction
 /// </summary>
-[DataContract]
+
 public partial class DeploymentWebAction : IEquatable<DeploymentWebAction>
 {
     /// <summary>
     /// Action media type used to deliver the action.
     /// </summary>
     /// <value>Action media type used to deliver the action.</value>
-    [JsonConverter(typeof(JsonStringEnumConverter))]
+    
     public enum MediaTypeEnum
     {
         /// <summary>
@@ -65,7 +65,7 @@ public partial class DeploymentWebAction : IEquatable<DeploymentWebAction>
     /// Action media type used to deliver the action.
     /// </summary>
     /// <value>Action media type used to deliver the action.</value>
-    [DataMember(Name = "mediaType", EmitDefaultValue = false)]
+    [JsonPropertyName("mediaType")]
     public MediaTypeEnum? MediaType { get; set; }
 
     /// <summary>
@@ -107,7 +107,7 @@ public partial class DeploymentWebAction : IEquatable<DeploymentWebAction>
     /// System-generated UUID for the action.
     /// </summary>
     /// <value>System-generated UUID for the action.</value>
-    [DataMember(Name = "id", EmitDefaultValue = false)]
+    [JsonPropertyName("id")]
     public string Id { get; set; }
 
 
@@ -118,7 +118,7 @@ public partial class DeploymentWebAction : IEquatable<DeploymentWebAction>
     /// ID string of the customer that the action was triggered for.
     /// </summary>
     /// <value>ID string of the customer that the action was triggered for.</value>
-    [DataMember(Name = "customerId", EmitDefaultValue = false)]
+    [JsonPropertyName("customerId")]
     public string CustomerId { get; set; }
 
 
@@ -127,7 +127,7 @@ public partial class DeploymentWebAction : IEquatable<DeploymentWebAction>
     /// Type of the customer ID that the action was triggered for.
     /// </summary>
     /// <value>Type of the customer ID that the action was triggered for.</value>
-    [DataMember(Name = "customerIdType", EmitDefaultValue = false)]
+    [JsonPropertyName("customerIdType")]
     public string CustomerIdType { get; set; }
 
 
@@ -136,7 +136,7 @@ public partial class DeploymentWebAction : IEquatable<DeploymentWebAction>
     /// ID of the action map that triggered the action.
     /// </summary>
     /// <value>ID of the action map that triggered the action.</value>
-    [DataMember(Name = "actionMapId", EmitDefaultValue = false)]
+    [JsonPropertyName("actionMapId")]
     public string ActionMapId { get; set; }
 
 
@@ -145,7 +145,7 @@ public partial class DeploymentWebAction : IEquatable<DeploymentWebAction>
     /// Version of the action map that triggered the action.
     /// </summary>
     /// <value>Version of the action map that triggered the action.</value>
-    [DataMember(Name = "actionMapVersion", EmitDefaultValue = false)]
+    [JsonPropertyName("actionMapVersion")]
     public int? ActionMapVersion { get; set; }
 
 
@@ -154,7 +154,7 @@ public partial class DeploymentWebAction : IEquatable<DeploymentWebAction>
     /// ID of the session that the action was triggered for.
     /// </summary>
     /// <value>ID of the session that the action was triggered for.</value>
-    [DataMember(Name = "sessionId", EmitDefaultValue = false)]
+    [JsonPropertyName("sessionId")]
     public string SessionId { get; set; }
 
 
@@ -163,7 +163,7 @@ public partial class DeploymentWebAction : IEquatable<DeploymentWebAction>
     /// Web messaging offer specific properties.
     /// </summary>
     /// <value>Web messaging offer specific properties.</value>
-    [DataMember(Name = "webMessagingOfferProperties", EmitDefaultValue = false)]
+    [JsonPropertyName("webMessagingOfferProperties")]
     public WebMessagingOfferProperties WebMessagingOfferProperties { get; set; }
 
 
@@ -172,7 +172,7 @@ public partial class DeploymentWebAction : IEquatable<DeploymentWebAction>
     /// Content offer specific properties.
     /// </summary>
     /// <value>Content offer specific properties.</value>
-    [DataMember(Name = "contentOfferProperties", EmitDefaultValue = false)]
+    [JsonPropertyName("contentOfferProperties")]
     public ContentOffer ContentOfferProperties { get; set; }
 
 
@@ -181,7 +181,7 @@ public partial class DeploymentWebAction : IEquatable<DeploymentWebAction>
     /// Open action specific properties.
     /// </summary>
     /// <value>Open action specific properties.</value>
-    [DataMember(Name = "openActionProperties", EmitDefaultValue = false)]
+    [JsonPropertyName("openActionProperties")]
     public OpenActionProperties OpenActionProperties { get; set; }
 
 

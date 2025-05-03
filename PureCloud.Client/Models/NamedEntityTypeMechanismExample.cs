@@ -1,4 +1,3 @@
-using System.Runtime.Serialization;
 using System.Text;
 using System.Text.Json.Serialization;
 
@@ -7,7 +6,7 @@ namespace PureCloud.Client.Models;
 /// <summary>
 /// NamedEntityTypeMechanismExample
 /// </summary>
-[DataContract]
+
 public partial class NamedEntityTypeMechanismExample : IEquatable<NamedEntityTypeMechanismExample>
 {
 
@@ -34,7 +33,7 @@ public partial class NamedEntityTypeMechanismExample : IEquatable<NamedEntityTyp
     /// Example input text
     /// </summary>
     /// <value>Example input text</value>
-    [DataMember(Name = "text", EmitDefaultValue = false)]
+    [JsonPropertyName("text")]
     public string Text { get; set; }
 
 
@@ -43,7 +42,7 @@ public partial class NamedEntityTypeMechanismExample : IEquatable<NamedEntityTyp
     /// Resolved entity value
     /// </summary>
     /// <value>Resolved entity value</value>
-    [DataMember(Name = "resolvedValue", EmitDefaultValue = false)]
+    [JsonPropertyName("resolvedValue")]
     public string ResolvedValue { get; set; }
 
 

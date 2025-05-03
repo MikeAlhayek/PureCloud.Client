@@ -1,12 +1,12 @@
-using System.Runtime.Serialization;
 using System.Text;
+using System.Text.Json.Serialization;
 
 namespace PureCloud.Client.Models;
 
 /// <summary>
 /// QueueConversationChatEventTopicScoredAgent
 /// </summary>
-[DataContract]
+
 public partial class QueueConversationChatEventTopicScoredAgent : IEquatable<QueueConversationChatEventTopicScoredAgent>
 {
     /// <summary>
@@ -27,7 +27,7 @@ public partial class QueueConversationChatEventTopicScoredAgent : IEquatable<Que
     /// A UriReference for a resource
     /// </summary>
     /// <value>A UriReference for a resource</value>
-    [DataMember(Name = "agent", EmitDefaultValue = false)]
+    [JsonPropertyName("agent")]
     public QueueConversationChatEventTopicUriReference Agent { get; set; }
 
 
@@ -36,7 +36,7 @@ public partial class QueueConversationChatEventTopicScoredAgent : IEquatable<Que
     /// Agent&#39;s score for the current conversation, from 0 - 100, higher being better
     /// </summary>
     /// <value>Agent&#39;s score for the current conversation, from 0 - 100, higher being better</value>
-    [DataMember(Name = "score", EmitDefaultValue = false)]
+    [JsonPropertyName("score")]
     public long? Score { get; set; }
 
 

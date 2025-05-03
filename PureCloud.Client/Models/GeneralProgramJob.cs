@@ -7,13 +7,13 @@ namespace PureCloud.Client.Models;
 /// <summary>
 /// GeneralProgramJob
 /// </summary>
-[DataContract]
+
 public partial class GeneralProgramJob : IEquatable<GeneralProgramJob>
 {
     /// <summary>
     /// Gets or Sets State
     /// </summary>
-    [JsonConverter(typeof(JsonStringEnumConverter))]
+    
     public enum StateEnum
     {
         /// <summary>
@@ -45,7 +45,7 @@ public partial class GeneralProgramJob : IEquatable<GeneralProgramJob>
     /// <summary>
     /// Gets or Sets State
     /// </summary>
-    [DataMember(Name = "state", EmitDefaultValue = false)]
+    [JsonPropertyName("state")]
     public StateEnum? State { get; set; }
     /// <summary>
     /// Initializes a new instance of the <see cref="GeneralProgramJob" /> class.
@@ -69,7 +69,7 @@ public partial class GeneralProgramJob : IEquatable<GeneralProgramJob>
     /// The globally unique identifier for the object.
     /// </summary>
     /// <value>The globally unique identifier for the object.</value>
-    [DataMember(Name = "id", EmitDefaultValue = false)]
+    [JsonPropertyName("id")]
     public string Id { get; private set; }
 
 
@@ -79,7 +79,7 @@ public partial class GeneralProgramJob : IEquatable<GeneralProgramJob>
     /// <summary>
     /// Gets or Sets CreatedBy
     /// </summary>
-    [DataMember(Name = "createdBy", EmitDefaultValue = false)]
+    [JsonPropertyName("createdBy")]
     public AddressableEntityRef CreatedBy { get; set; }
 
 
@@ -88,7 +88,7 @@ public partial class GeneralProgramJob : IEquatable<GeneralProgramJob>
     /// Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z
     /// </summary>
     /// <value>Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z</value>
-    [DataMember(Name = "dateCreated", EmitDefaultValue = false)]
+    [JsonPropertyName("dateCreated")]
     public DateTime? DateCreated { get; set; }
 
 
@@ -97,7 +97,7 @@ public partial class GeneralProgramJob : IEquatable<GeneralProgramJob>
     /// Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z
     /// </summary>
     /// <value>Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z</value>
-    [DataMember(Name = "dateModified", EmitDefaultValue = false)]
+    [JsonPropertyName("dateModified")]
     public DateTime? DateModified { get; set; }
 
 
@@ -106,7 +106,7 @@ public partial class GeneralProgramJob : IEquatable<GeneralProgramJob>
     /// The URI for this object
     /// </summary>
     /// <value>The URI for this object</value>
-    [DataMember(Name = "selfUri", EmitDefaultValue = false)]
+    [JsonPropertyName("selfUri")]
     public string SelfUri { get; private set; }
 
 

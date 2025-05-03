@@ -1,12 +1,12 @@
-using System.Runtime.Serialization;
 using System.Text;
+using System.Text.Json.Serialization;
 
 namespace PureCloud.Client.Models;
 
 /// <summary>
 /// WorkitemScoredAgent
 /// </summary>
-[DataContract]
+
 public partial class WorkitemScoredAgent : IEquatable<WorkitemScoredAgent>
 {
     /// <summary>
@@ -27,7 +27,7 @@ public partial class WorkitemScoredAgent : IEquatable<WorkitemScoredAgent>
     /// The agent
     /// </summary>
     /// <value>The agent</value>
-    [DataMember(Name = "agent", EmitDefaultValue = false)]
+    [JsonPropertyName("agent")]
     public UserReference Agent { get; set; }
 
 
@@ -36,7 +36,7 @@ public partial class WorkitemScoredAgent : IEquatable<WorkitemScoredAgent>
     /// Agent&#39;s score for the workitem, from 0 - 100, higher being better
     /// </summary>
     /// <value>Agent&#39;s score for the workitem, from 0 - 100, higher being better</value>
-    [DataMember(Name = "score", EmitDefaultValue = false)]
+    [JsonPropertyName("score")]
     public int? Score { get; set; }
 
 

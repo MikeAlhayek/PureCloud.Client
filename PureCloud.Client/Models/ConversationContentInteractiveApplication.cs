@@ -1,12 +1,12 @@
-using System.Runtime.Serialization;
 using System.Text;
+using System.Text.Json.Serialization;
 
 namespace PureCloud.Client.Models;
 
 /// <summary>
 /// InteractiveApplication content object.
 /// </summary>
-[DataContract]
+
 public partial class ConversationContentInteractiveApplication : IEquatable<ConversationContentInteractiveApplication>
 {
     /// <summary>
@@ -31,7 +31,7 @@ public partial class ConversationContentInteractiveApplication : IEquatable<Conv
     /// The name of the message app.
     /// </summary>
     /// <value>The name of the message app.</value>
-    [DataMember(Name = "name", EmitDefaultValue = false)]
+    [JsonPropertyName("name")]
     public string Name { get; set; }
 
 
@@ -40,7 +40,7 @@ public partial class ConversationContentInteractiveApplication : IEquatable<Conv
     /// Contains the data that is sent to the message app.
     /// </summary>
     /// <value>Contains the data that is sent to the message app.</value>
-    [DataMember(Name = "url", EmitDefaultValue = false)]
+    [JsonPropertyName("url")]
     public string Url { get; set; }
 
 
@@ -49,7 +49,7 @@ public partial class ConversationContentInteractiveApplication : IEquatable<Conv
     /// The message displayed in the received message bubble.
     /// </summary>
     /// <value>The message displayed in the received message bubble.</value>
-    [DataMember(Name = "receivedMessage", EmitDefaultValue = false)]
+    [JsonPropertyName("receivedMessage")]
     public ConversationContentReceivedReplyMessage ReceivedMessage { get; set; }
 
 
@@ -58,7 +58,7 @@ public partial class ConversationContentInteractiveApplication : IEquatable<Conv
     /// The message displayed in the reply message bubble.
     /// </summary>
     /// <value>The message displayed in the reply message bubble.</value>
-    [DataMember(Name = "replyMessage", EmitDefaultValue = false)]
+    [JsonPropertyName("replyMessage")]
     public ConversationContentReceivedReplyMessage ReplyMessage { get; set; }
 
 

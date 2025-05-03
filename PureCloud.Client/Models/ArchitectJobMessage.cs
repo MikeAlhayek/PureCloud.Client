@@ -7,14 +7,14 @@ namespace PureCloud.Client.Models;
 /// <summary>
 /// ArchitectJobMessage
 /// </summary>
-[DataContract]
+
 public partial class ArchitectJobMessage : IEquatable<ArchitectJobMessage>
 {
     /// <summary>
     /// The message type.
     /// </summary>
     /// <value>The message type.</value>
-    [JsonConverter(typeof(JsonStringEnumConverter))]
+    
     public enum TypeEnum
     {
         /// <summary>
@@ -41,7 +41,7 @@ public partial class ArchitectJobMessage : IEquatable<ArchitectJobMessage>
     /// The message type.
     /// </summary>
     /// <value>The message type.</value>
-    [DataMember(Name = "type", EmitDefaultValue = false)]
+    [JsonPropertyName("type")]
     public TypeEnum? Type { get; set; }
     /// <summary>
     /// Initializes a new instance of the <see cref="ArchitectJobMessage" /> class.
@@ -63,7 +63,7 @@ public partial class ArchitectJobMessage : IEquatable<ArchitectJobMessage>
     /// The DateTime when the message was generated. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z
     /// </summary>
     /// <value>The DateTime when the message was generated. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z</value>
-    [DataMember(Name = "dateTime", EmitDefaultValue = false)]
+    [JsonPropertyName("dateTime")]
     public DateTime? DateTime { get; set; }
 
 
@@ -74,7 +74,7 @@ public partial class ArchitectJobMessage : IEquatable<ArchitectJobMessage>
     /// The text of the message.
     /// </summary>
     /// <value>The text of the message.</value>
-    [DataMember(Name = "text", EmitDefaultValue = false)]
+    [JsonPropertyName("text")]
     public string Text { get; set; }
 
 

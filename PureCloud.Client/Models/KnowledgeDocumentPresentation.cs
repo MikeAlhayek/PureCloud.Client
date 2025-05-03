@@ -7,14 +7,14 @@ namespace PureCloud.Client.Models;
 /// <summary>
 /// KnowledgeDocumentPresentation
 /// </summary>
-[DataContract]
+
 public partial class KnowledgeDocumentPresentation : IEquatable<KnowledgeDocumentPresentation>
 {
     /// <summary>
     /// The type of the query that surfaced the documents.
     /// </summary>
     /// <value>The type of the query that surfaced the documents.</value>
-    [JsonConverter(typeof(JsonStringEnumConverter))]
+    
     public enum QueryTypeEnum
     {
         /// <summary>
@@ -71,7 +71,7 @@ public partial class KnowledgeDocumentPresentation : IEquatable<KnowledgeDocumen
     /// The method how knowledge was surfaced. Article: Full article was shown. Snippet: A snippet from the article was shown. Highlight: A highlighted answer in a snippet was shown.
     /// </summary>
     /// <value>The method how knowledge was surfaced. Article: Full article was shown. Snippet: A snippet from the article was shown. Highlight: A highlighted answer in a snippet was shown.</value>
-    [JsonConverter(typeof(JsonStringEnumConverter))]
+    
     public enum SurfacingMethodEnum
     {
         /// <summary>
@@ -110,13 +110,13 @@ public partial class KnowledgeDocumentPresentation : IEquatable<KnowledgeDocumen
     /// The type of the query that surfaced the documents.
     /// </summary>
     /// <value>The type of the query that surfaced the documents.</value>
-    [DataMember(Name = "queryType", EmitDefaultValue = false)]
+    [JsonPropertyName("queryType")]
     public QueryTypeEnum? QueryType { get; set; }
     /// <summary>
     /// The method how knowledge was surfaced. Article: Full article was shown. Snippet: A snippet from the article was shown. Highlight: A highlighted answer in a snippet was shown.
     /// </summary>
     /// <value>The method how knowledge was surfaced. Article: Full article was shown. Snippet: A snippet from the article was shown. Highlight: A highlighted answer in a snippet was shown.</value>
-    [DataMember(Name = "surfacingMethod", EmitDefaultValue = false)]
+    [JsonPropertyName("surfacingMethod")]
     public SurfacingMethodEnum? SurfacingMethod { get; set; }
 
     /// <summary>
@@ -150,7 +150,7 @@ public partial class KnowledgeDocumentPresentation : IEquatable<KnowledgeDocumen
     /// The presented documents
     /// </summary>
     /// <value>The presented documents</value>
-    [DataMember(Name = "documents", EmitDefaultValue = false)]
+    [JsonPropertyName("documents")]
     public List<PresentedKnowledgeDocument> Documents { get; set; }
 
 
@@ -159,7 +159,7 @@ public partial class KnowledgeDocumentPresentation : IEquatable<KnowledgeDocumen
     /// The search that surfaced the documents that were presented.
     /// </summary>
     /// <value>The search that surfaced the documents that were presented.</value>
-    [DataMember(Name = "searchId", EmitDefaultValue = false)]
+    [JsonPropertyName("searchId")]
     public string SearchId { get; set; }
 
 
@@ -172,7 +172,7 @@ public partial class KnowledgeDocumentPresentation : IEquatable<KnowledgeDocumen
     /// Knowledge session ID.
     /// </summary>
     /// <value>Knowledge session ID.</value>
-    [DataMember(Name = "sessionId", EmitDefaultValue = false)]
+    [JsonPropertyName("sessionId")]
     public string SessionId { get; private set; }
 
 
@@ -181,7 +181,7 @@ public partial class KnowledgeDocumentPresentation : IEquatable<KnowledgeDocumen
     /// Conversation context information if the documents were presented in the context of a conversation.
     /// </summary>
     /// <value>Conversation context information if the documents were presented in the context of a conversation.</value>
-    [DataMember(Name = "conversationContext", EmitDefaultValue = false)]
+    [JsonPropertyName("conversationContext")]
     public KnowledgeConversationContext ConversationContext { get; set; }
 
 
@@ -190,7 +190,7 @@ public partial class KnowledgeDocumentPresentation : IEquatable<KnowledgeDocumen
     /// The client application in which the documents were presented.
     /// </summary>
     /// <value>The client application in which the documents were presented.</value>
-    [DataMember(Name = "application", EmitDefaultValue = false)]
+    [JsonPropertyName("application")]
     public KnowledgeSearchClientApplication Application { get; set; }
 
 

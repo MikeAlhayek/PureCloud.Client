@@ -1,4 +1,3 @@
-using System.Runtime.Serialization;
 using System.Text;
 using System.Text.Json.Serialization;
 
@@ -7,7 +6,7 @@ namespace PureCloud.Client.Models;
 /// <summary>
 /// WfmHistoricalAdherenceQueryForUsers
 /// </summary>
-[DataContract]
+
 public partial class WfmHistoricalAdherenceQueryForUsers : IEquatable<WfmHistoricalAdherenceQueryForUsers>
 {
 
@@ -40,7 +39,7 @@ public partial class WfmHistoricalAdherenceQueryForUsers : IEquatable<WfmHistori
     /// Beginning of the date range to query in ISO-8601 format
     /// </summary>
     /// <value>Beginning of the date range to query in ISO-8601 format</value>
-    [DataMember(Name = "startDate", EmitDefaultValue = false)]
+    [JsonPropertyName("startDate")]
     public DateTime? StartDate { get; set; }
 
 
@@ -49,7 +48,7 @@ public partial class WfmHistoricalAdherenceQueryForUsers : IEquatable<WfmHistori
     /// End of the date range to query in ISO-8601 format. If it is not set, end date will be set to current time
     /// </summary>
     /// <value>End of the date range to query in ISO-8601 format. If it is not set, end date will be set to current time</value>
-    [DataMember(Name = "endDate", EmitDefaultValue = false)]
+    [JsonPropertyName("endDate")]
     public DateTime? EndDate { get; set; }
 
 
@@ -58,7 +57,7 @@ public partial class WfmHistoricalAdherenceQueryForUsers : IEquatable<WfmHistori
     /// The time zone, in olson format, to use in defining days when computing adherence. The results will be returned as UTC timestamps regardless of the time zone input.
     /// </summary>
     /// <value>The time zone, in olson format, to use in defining days when computing adherence. The results will be returned as UTC timestamps regardless of the time zone input.</value>
-    [DataMember(Name = "timeZone", EmitDefaultValue = false)]
+    [JsonPropertyName("timeZone")]
     public string TimeZone { get; set; }
 
 
@@ -67,7 +66,7 @@ public partial class WfmHistoricalAdherenceQueryForUsers : IEquatable<WfmHistori
     /// The userIds to report on
     /// </summary>
     /// <value>The userIds to report on</value>
-    [DataMember(Name = "userIds", EmitDefaultValue = false)]
+    [JsonPropertyName("userIds")]
     public List<string> UserIds { get; set; }
 
 
@@ -76,7 +75,7 @@ public partial class WfmHistoricalAdherenceQueryForUsers : IEquatable<WfmHistori
     /// Whether user exceptions should be returned as part of the results
     /// </summary>
     /// <value>Whether user exceptions should be returned as part of the results</value>
-    [DataMember(Name = "includeExceptions", EmitDefaultValue = false)]
+    [JsonPropertyName("includeExceptions")]
     public bool? IncludeExceptions { get; set; }
 
 

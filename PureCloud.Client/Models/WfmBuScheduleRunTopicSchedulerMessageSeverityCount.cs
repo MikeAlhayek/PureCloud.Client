@@ -7,13 +7,13 @@ namespace PureCloud.Client.Models;
 /// <summary>
 /// WfmBuScheduleRunTopicSchedulerMessageSeverityCount
 /// </summary>
-[DataContract]
+
 public partial class WfmBuScheduleRunTopicSchedulerMessageSeverityCount : IEquatable<WfmBuScheduleRunTopicSchedulerMessageSeverityCount>
 {
     /// <summary>
     /// Gets or Sets Severity
     /// </summary>
-    [JsonConverter(typeof(JsonStringEnumConverter))]
+    
     public enum SeverityEnum
     {
         /// <summary>
@@ -51,7 +51,7 @@ public partial class WfmBuScheduleRunTopicSchedulerMessageSeverityCount : IEquat
     /// <summary>
     /// Gets or Sets Severity
     /// </summary>
-    [DataMember(Name = "severity", EmitDefaultValue = false)]
+    [JsonPropertyName("severity")]
     public SeverityEnum? Severity { get; set; }
     /// <summary>
     /// Initializes a new instance of the <see cref="WfmBuScheduleRunTopicSchedulerMessageSeverityCount" /> class.
@@ -72,7 +72,7 @@ public partial class WfmBuScheduleRunTopicSchedulerMessageSeverityCount : IEquat
     /// <summary>
     /// Gets or Sets Count
     /// </summary>
-    [DataMember(Name = "count", EmitDefaultValue = false)]
+    [JsonPropertyName("count")]
     public long? Count { get; set; }
 
 

@@ -1,4 +1,3 @@
-using System.Runtime.Serialization;
 using System.Text;
 using System.Text.Json.Serialization;
 
@@ -7,7 +6,7 @@ namespace PureCloud.Client.Models;
 /// <summary>
 /// UserPresenceEvent
 /// </summary>
-[DataContract]
+
 public partial class UserPresenceEvent : IEquatable<UserPresenceEvent>
 {
 
@@ -42,7 +41,7 @@ public partial class UserPresenceEvent : IEquatable<UserPresenceEvent>
     /// A unique (V4 UUID) eventId for this event
     /// </summary>
     /// <value>A unique (V4 UUID) eventId for this event</value>
-    [DataMember(Name = "eventId", EmitDefaultValue = false)]
+    [JsonPropertyName("eventId")]
     public string EventId { get; set; }
 
 
@@ -51,7 +50,7 @@ public partial class UserPresenceEvent : IEquatable<UserPresenceEvent>
     /// A Date Time representing the time this event occurred. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z
     /// </summary>
     /// <value>A Date Time representing the time this event occurred. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z</value>
-    [DataMember(Name = "eventDateTime", EmitDefaultValue = false)]
+    [JsonPropertyName("eventDateTime")]
     public DateTime? EventDateTime { get; set; }
 
 
@@ -60,7 +59,7 @@ public partial class UserPresenceEvent : IEquatable<UserPresenceEvent>
     /// The User ID of the user associated with this UserPresence
     /// </summary>
     /// <value>The User ID of the user associated with this UserPresence</value>
-    [DataMember(Name = "userId", EmitDefaultValue = false)]
+    [JsonPropertyName("userId")]
     public string UserId { get; set; }
 
 
@@ -69,7 +68,7 @@ public partial class UserPresenceEvent : IEquatable<UserPresenceEvent>
     /// The id (V4 UUID) of the presence source being updated
     /// </summary>
     /// <value>The id (V4 UUID) of the presence source being updated</value>
-    [DataMember(Name = "sourceId", EmitDefaultValue = false)]
+    [JsonPropertyName("sourceId")]
     public string SourceId { get; set; }
 
 
@@ -78,7 +77,7 @@ public partial class UserPresenceEvent : IEquatable<UserPresenceEvent>
     /// The id (UUID) of the presence definition that the user presence is associated with
     /// </summary>
     /// <value>The id (UUID) of the presence definition that the user presence is associated with</value>
-    [DataMember(Name = "presenceDefinitionId", EmitDefaultValue = false)]
+    [JsonPropertyName("presenceDefinitionId")]
     public string PresenceDefinitionId { get; set; }
 
 
@@ -87,7 +86,7 @@ public partial class UserPresenceEvent : IEquatable<UserPresenceEvent>
     /// The message associated with the presence
     /// </summary>
     /// <value>The message associated with the presence</value>
-    [DataMember(Name = "message", EmitDefaultValue = false)]
+    [JsonPropertyName("message")]
     public string Message { get; set; }
 
 

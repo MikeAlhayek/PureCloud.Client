@@ -1,4 +1,3 @@
-using System.Runtime.Serialization;
 using System.Text;
 using System.Text.Json.Serialization;
 
@@ -7,7 +6,7 @@ namespace PureCloud.Client.Models;
 /// <summary>
 /// SubscriptionOverviewUsage
 /// </summary>
-[DataContract]
+
 public partial class SubscriptionOverviewUsage : IEquatable<SubscriptionOverviewUsage>
 {
 
@@ -54,7 +53,7 @@ public partial class SubscriptionOverviewUsage : IEquatable<SubscriptionOverview
     /// Product charge name
     /// </summary>
     /// <value>Product charge name</value>
-    [DataMember(Name = "name", EmitDefaultValue = false)]
+    [JsonPropertyName("name")]
     public string Name { get; set; }
 
 
@@ -63,7 +62,7 @@ public partial class SubscriptionOverviewUsage : IEquatable<SubscriptionOverview
     /// Product part number
     /// </summary>
     /// <value>Product part number</value>
-    [DataMember(Name = "partNumber", EmitDefaultValue = false)]
+    [JsonPropertyName("partNumber")]
     public string PartNumber { get; set; }
 
 
@@ -72,7 +71,7 @@ public partial class SubscriptionOverviewUsage : IEquatable<SubscriptionOverview
     /// UI grouping key
     /// </summary>
     /// <value>UI grouping key</value>
-    [DataMember(Name = "grouping", EmitDefaultValue = false)]
+    [JsonPropertyName("grouping")]
     public string Grouping { get; set; }
 
 
@@ -81,7 +80,7 @@ public partial class SubscriptionOverviewUsage : IEquatable<SubscriptionOverview
     /// UI unit of measure
     /// </summary>
     /// <value>UI unit of measure</value>
-    [DataMember(Name = "unitOfMeasureType", EmitDefaultValue = false)]
+    [JsonPropertyName("unitOfMeasureType")]
     public string UnitOfMeasureType { get; set; }
 
 
@@ -90,7 +89,7 @@ public partial class SubscriptionOverviewUsage : IEquatable<SubscriptionOverview
     /// Usage count for specified period
     /// </summary>
     /// <value>Usage count for specified period</value>
-    [DataMember(Name = "usageQuantity", EmitDefaultValue = false)]
+    [JsonPropertyName("usageQuantity")]
     public string UsageQuantity { get; set; }
 
 
@@ -99,7 +98,7 @@ public partial class SubscriptionOverviewUsage : IEquatable<SubscriptionOverview
     /// Price for usage / overage charge
     /// </summary>
     /// <value>Price for usage / overage charge</value>
-    [DataMember(Name = "overagePrice", EmitDefaultValue = false)]
+    [JsonPropertyName("overagePrice")]
     public string OveragePrice { get; set; }
 
 
@@ -108,7 +107,7 @@ public partial class SubscriptionOverviewUsage : IEquatable<SubscriptionOverview
     /// Items prepaid for specified period
     /// </summary>
     /// <value>Items prepaid for specified period</value>
-    [DataMember(Name = "prepayQuantity", EmitDefaultValue = false)]
+    [JsonPropertyName("prepayQuantity")]
     public string PrepayQuantity { get; set; }
 
 
@@ -117,7 +116,7 @@ public partial class SubscriptionOverviewUsage : IEquatable<SubscriptionOverview
     /// Price for prepay charge
     /// </summary>
     /// <value>Price for prepay charge</value>
-    [DataMember(Name = "prepayPrice", EmitDefaultValue = false)]
+    [JsonPropertyName("prepayPrice")]
     public string PrepayPrice { get; set; }
 
 
@@ -126,7 +125,7 @@ public partial class SubscriptionOverviewUsage : IEquatable<SubscriptionOverview
     /// Notes about the usage/charge item
     /// </summary>
     /// <value>Notes about the usage/charge item</value>
-    [DataMember(Name = "usageNotes", EmitDefaultValue = false)]
+    [JsonPropertyName("usageNotes")]
     public string UsageNotes { get; set; }
 
 
@@ -135,7 +134,7 @@ public partial class SubscriptionOverviewUsage : IEquatable<SubscriptionOverview
     /// Indicates whether the item is cancellable
     /// </summary>
     /// <value>Indicates whether the item is cancellable</value>
-    [DataMember(Name = "isCancellable", EmitDefaultValue = false)]
+    [JsonPropertyName("isCancellable")]
     public bool? IsCancellable { get; set; }
 
 
@@ -144,7 +143,7 @@ public partial class SubscriptionOverviewUsage : IEquatable<SubscriptionOverview
     /// Quantity multiplier for this charge
     /// </summary>
     /// <value>Quantity multiplier for this charge</value>
-    [DataMember(Name = "bundleQuantity", EmitDefaultValue = false)]
+    [JsonPropertyName("bundleQuantity")]
     public string BundleQuantity { get; set; }
 
 
@@ -153,7 +152,7 @@ public partial class SubscriptionOverviewUsage : IEquatable<SubscriptionOverview
     /// A charge from a third party entity
     /// </summary>
     /// <value>A charge from a third party entity</value>
-    [DataMember(Name = "isThirdParty", EmitDefaultValue = false)]
+    [JsonPropertyName("isThirdParty")]
     public bool? IsThirdParty { get; set; }
 
 

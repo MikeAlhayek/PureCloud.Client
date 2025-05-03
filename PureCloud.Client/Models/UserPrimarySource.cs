@@ -1,12 +1,12 @@
-using System.Runtime.Serialization;
 using System.Text;
+using System.Text.Json.Serialization;
 
 namespace PureCloud.Client.Models;
 
 /// <summary>
 /// UserPrimarySource
 /// </summary>
-[DataContract]
+
 public partial class UserPrimarySource : IEquatable<UserPrimarySource>
 {
     /// <summary>
@@ -29,7 +29,7 @@ public partial class UserPrimarySource : IEquatable<UserPrimarySource>
     /// The globally unique identifier for the object.
     /// </summary>
     /// <value>The globally unique identifier for the object.</value>
-    [DataMember(Name = "id", EmitDefaultValue = false)]
+    [JsonPropertyName("id")]
     public string Id { get; private set; }
 
 
@@ -37,7 +37,7 @@ public partial class UserPrimarySource : IEquatable<UserPrimarySource>
     /// <summary>
     /// Gets or Sets Name
     /// </summary>
-    [DataMember(Name = "name", EmitDefaultValue = false)]
+    [JsonPropertyName("name")]
     public string Name { get; set; }
 
 
@@ -46,7 +46,7 @@ public partial class UserPrimarySource : IEquatable<UserPrimarySource>
     /// The id of the source
     /// </summary>
     /// <value>The id of the source</value>
-    [DataMember(Name = "sourceId", EmitDefaultValue = false)]
+    [JsonPropertyName("sourceId")]
     public string SourceId { get; set; }
 
 
@@ -55,7 +55,7 @@ public partial class UserPrimarySource : IEquatable<UserPrimarySource>
     /// Whether or not the source is registered
     /// </summary>
     /// <value>Whether or not the source is registered</value>
-    [DataMember(Name = "registered", EmitDefaultValue = false)]
+    [JsonPropertyName("registered")]
     public bool? Registered { get; set; }
 
 
@@ -64,7 +64,7 @@ public partial class UserPrimarySource : IEquatable<UserPrimarySource>
     /// The URI for this object
     /// </summary>
     /// <value>The URI for this object</value>
-    [DataMember(Name = "selfUri", EmitDefaultValue = false)]
+    [JsonPropertyName("selfUri")]
     public string SelfUri { get; private set; }
 
 

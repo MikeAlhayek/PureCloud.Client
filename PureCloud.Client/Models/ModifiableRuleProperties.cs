@@ -1,4 +1,3 @@
-using System.Runtime.Serialization;
 using System.Text;
 using System.Text.Json.Serialization;
 
@@ -7,7 +6,7 @@ namespace PureCloud.Client.Models;
 /// <summary>
 /// ModifiableRuleProperties
 /// </summary>
-[DataContract]
+
 public partial class ModifiableRuleProperties : IEquatable<ModifiableRuleProperties>
 {
 
@@ -44,7 +43,7 @@ public partial class ModifiableRuleProperties : IEquatable<ModifiableRulePropert
     /// The globally unique identifier for the object.
     /// </summary>
     /// <value>The globally unique identifier for the object.</value>
-    [DataMember(Name = "id", EmitDefaultValue = false)]
+    [JsonPropertyName("id")]
     public string Id { get; private set; }
 
 
@@ -53,7 +52,7 @@ public partial class ModifiableRuleProperties : IEquatable<ModifiableRulePropert
     /// Name of the rule
     /// </summary>
     /// <value>Name of the rule</value>
-    [DataMember(Name = "name", EmitDefaultValue = false)]
+    [JsonPropertyName("name")]
     public string Name { get; set; }
 
 
@@ -62,7 +61,7 @@ public partial class ModifiableRuleProperties : IEquatable<ModifiableRulePropert
     /// The description of the rule.
     /// </summary>
     /// <value>The description of the rule.</value>
-    [DataMember(Name = "description", EmitDefaultValue = false)]
+    [JsonPropertyName("description")]
     public string Description { get; set; }
 
 
@@ -71,7 +70,7 @@ public partial class ModifiableRuleProperties : IEquatable<ModifiableRulePropert
     /// Indicates if the rule is enabled.
     /// </summary>
     /// <value>Indicates if the rule is enabled.</value>
-    [DataMember(Name = "enabled", EmitDefaultValue = false)]
+    [JsonPropertyName("enabled")]
     public bool? Enabled { get; set; }
 
 
@@ -80,7 +79,7 @@ public partial class ModifiableRuleProperties : IEquatable<ModifiableRulePropert
     /// The alert notification types to trigger when alarm state changes as well as the users they will be sent to.
     /// </summary>
     /// <value>The alert notification types to trigger when alarm state changes as well as the users they will be sent to.</value>
-    [DataMember(Name = "notifications", EmitDefaultValue = false)]
+    [JsonPropertyName("notifications")]
     public List<AlertNotification> Notifications { get; set; }
 
 
@@ -89,7 +88,7 @@ public partial class ModifiableRuleProperties : IEquatable<ModifiableRulePropert
     /// Indicates if the alert will send a notification when it is closed.
     /// </summary>
     /// <value>Indicates if the alert will send a notification when it is closed.</value>
-    [DataMember(Name = "sendExitingAlarmNotifications", EmitDefaultValue = false)]
+    [JsonPropertyName("sendExitingAlarmNotifications")]
     public bool? SendExitingAlarmNotifications { get; set; }
 
 
@@ -98,7 +97,7 @@ public partial class ModifiableRuleProperties : IEquatable<ModifiableRulePropert
     /// The amount of time in milliseconds to wait between notification.
     /// </summary>
     /// <value>The amount of time in milliseconds to wait between notification.</value>
-    [DataMember(Name = "waitBetweenNotificationMs", EmitDefaultValue = false)]
+    [JsonPropertyName("waitBetweenNotificationMs")]
     public long? WaitBetweenNotificationMs { get; set; }
 
 
@@ -107,7 +106,7 @@ public partial class ModifiableRuleProperties : IEquatable<ModifiableRulePropert
     /// The set of metric conditions that would trigger an alert.
     /// </summary>
     /// <value>The set of metric conditions that would trigger an alert.</value>
-    [DataMember(Name = "conditions", EmitDefaultValue = false)]
+    [JsonPropertyName("conditions")]
     public CommonRuleConditions Conditions { get; set; }
 
 
@@ -116,7 +115,7 @@ public partial class ModifiableRuleProperties : IEquatable<ModifiableRulePropert
     /// The URI for this object
     /// </summary>
     /// <value>The URI for this object</value>
-    [DataMember(Name = "selfUri", EmitDefaultValue = false)]
+    [JsonPropertyName("selfUri")]
     public string SelfUri { get; private set; }
 
 

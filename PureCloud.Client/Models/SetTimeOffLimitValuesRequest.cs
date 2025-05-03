@@ -1,4 +1,3 @@
-using System.Runtime.Serialization;
 using System.Text;
 using System.Text.Json.Serialization;
 
@@ -7,7 +6,7 @@ namespace PureCloud.Client.Models;
 /// <summary>
 /// SetTimeOffLimitValuesRequest
 /// </summary>
-[DataContract]
+
 public partial class SetTimeOffLimitValuesRequest : IEquatable<SetTimeOffLimitValuesRequest>
 {
 
@@ -33,7 +32,7 @@ public partial class SetTimeOffLimitValuesRequest : IEquatable<SetTimeOffLimitVa
     /// <summary>
     /// Gets or Sets Values
     /// </summary>
-    [DataMember(Name = "values", EmitDefaultValue = false)]
+    [JsonPropertyName("values")]
     public List<TimeOffLimitRange> Values { get; set; }
 
 
@@ -42,7 +41,7 @@ public partial class SetTimeOffLimitValuesRequest : IEquatable<SetTimeOffLimitVa
     /// Version metadata for the time off limit
     /// </summary>
     /// <value>Version metadata for the time off limit</value>
-    [DataMember(Name = "metadata", EmitDefaultValue = false)]
+    [JsonPropertyName("metadata")]
     public WfmVersionedEntityMetadata Metadata { get; set; }
 
 

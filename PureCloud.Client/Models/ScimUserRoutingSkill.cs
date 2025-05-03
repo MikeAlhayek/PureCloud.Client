@@ -1,4 +1,3 @@
-using System.Runtime.Serialization;
 using System.Text;
 using System.Text.Json.Serialization;
 
@@ -7,7 +6,7 @@ namespace PureCloud.Client.Models;
 /// <summary>
 /// The routing skill assigned to a user.
 /// </summary>
-[DataContract]
+
 public partial class ScimUserRoutingSkill : IEquatable<ScimUserRoutingSkill>
 {
 
@@ -34,7 +33,7 @@ public partial class ScimUserRoutingSkill : IEquatable<ScimUserRoutingSkill>
     /// The case-sensitive name of a routing skill configured in Genesys Cloud.
     /// </summary>
     /// <value>The case-sensitive name of a routing skill configured in Genesys Cloud.</value>
-    [DataMember(Name = "name", EmitDefaultValue = false)]
+    [JsonPropertyName("name")]
     public string Name { get; set; }
 
 
@@ -43,7 +42,7 @@ public partial class ScimUserRoutingSkill : IEquatable<ScimUserRoutingSkill>
     /// A rating from 0.0 to 5.0 that indicates how adept an agent is at a particular skill. When \&quot;Best available skills\&quot; is enabled for a queue in Genesys Cloud, ACD interactions in that queue are routed to agents with higher proficiency ratings.
     /// </summary>
     /// <value>A rating from 0.0 to 5.0 that indicates how adept an agent is at a particular skill. When \&quot;Best available skills\&quot; is enabled for a queue in Genesys Cloud, ACD interactions in that queue are routed to agents with higher proficiency ratings.</value>
-    [DataMember(Name = "proficiency", EmitDefaultValue = false)]
+    [JsonPropertyName("proficiency")]
     public double? Proficiency { get; set; }
 
 

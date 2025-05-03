@@ -1,4 +1,3 @@
-using System.Runtime.Serialization;
 using System.Text;
 using System.Text.Json.Serialization;
 
@@ -7,7 +6,7 @@ namespace PureCloud.Client.Models;
 /// <summary>
 /// A version description for a botConnector bot.
 /// </summary>
-[DataContract]
+
 public partial class BotConnectorBotVersion : IEquatable<BotConnectorBotVersion>
 {
 
@@ -36,7 +35,7 @@ public partial class BotConnectorBotVersion : IEquatable<BotConnectorBotVersion>
     /// The name of the version. This can be up to 100 characters long and must be comprised of displayable characters without leading or trailing whitespace
     /// </summary>
     /// <value>The name of the version. This can be up to 100 characters long and must be comprised of displayable characters without leading or trailing whitespace</value>
-    [DataMember(Name = "version", EmitDefaultValue = false)]
+    [JsonPropertyName("version")]
     public string Version { get; set; }
 
 
@@ -45,7 +44,7 @@ public partial class BotConnectorBotVersion : IEquatable<BotConnectorBotVersion>
     /// The supported languages for this bot. EG &#39;en-us&#39; or &#39;es&#39;, etc; These language codes are W3C language identification tags (ISO 639-1 for the language name and ISO 3166 for the country code)
     /// </summary>
     /// <value>The supported languages for this bot. EG &#39;en-us&#39; or &#39;es&#39;, etc; These language codes are W3C language identification tags (ISO 639-1 for the language name and ISO 3166 for the country code)</value>
-    [DataMember(Name = "supportedLanguages", EmitDefaultValue = false)]
+    [JsonPropertyName("supportedLanguages")]
     public List<string> SupportedLanguages { get; set; }
 
 
@@ -54,7 +53,7 @@ public partial class BotConnectorBotVersion : IEquatable<BotConnectorBotVersion>
     /// A list of potential intents this bot will return, limit of 50
     /// </summary>
     /// <value>A list of potential intents this bot will return, limit of 50</value>
-    [DataMember(Name = "intents", EmitDefaultValue = false)]
+    [JsonPropertyName("intents")]
     public List<BotIntent> Intents { get; set; }
 
 

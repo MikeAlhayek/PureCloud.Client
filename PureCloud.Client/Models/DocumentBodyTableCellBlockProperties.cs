@@ -7,14 +7,14 @@ namespace PureCloud.Client.Models;
 /// <summary>
 /// DocumentBodyTableCellBlockProperties
 /// </summary>
-[DataContract]
+
 public partial class DocumentBodyTableCellBlockProperties : IEquatable<DocumentBodyTableCellBlockProperties>
 {
     /// <summary>
     /// The type of the table cell.
     /// </summary>
     /// <value>The type of the table cell.</value>
-    [JsonConverter(typeof(JsonStringEnumConverter))]
+    
     public enum CellTypeEnum
     {
         /// <summary>
@@ -41,7 +41,7 @@ public partial class DocumentBodyTableCellBlockProperties : IEquatable<DocumentB
     /// The horizontal alignment for the table cell.
     /// </summary>
     /// <value>The horizontal alignment for the table cell.</value>
-    [JsonConverter(typeof(JsonStringEnumConverter))]
+    
     public enum HorizontalAlignEnum
     {
         /// <summary>
@@ -74,7 +74,7 @@ public partial class DocumentBodyTableCellBlockProperties : IEquatable<DocumentB
     /// The vertical alignment for the table cell.
     /// </summary>
     /// <value>The vertical alignment for the table cell.</value>
-    [JsonConverter(typeof(JsonStringEnumConverter))]
+    
     public enum VerticalAlignEnum
     {
         /// <summary>
@@ -107,7 +107,7 @@ public partial class DocumentBodyTableCellBlockProperties : IEquatable<DocumentB
     /// The border style for the table cell.
     /// </summary>
     /// <value>The border style for the table cell.</value>
-    [JsonConverter(typeof(JsonStringEnumConverter))]
+    
     public enum BorderStyleEnum
     {
         /// <summary>
@@ -182,7 +182,7 @@ public partial class DocumentBodyTableCellBlockProperties : IEquatable<DocumentB
     /// The scope for the table cell.
     /// </summary>
     /// <value>The scope for the table cell.</value>
-    [JsonConverter(typeof(JsonStringEnumConverter))]
+    
     public enum ScopeEnum
     {
         /// <summary>
@@ -227,31 +227,31 @@ public partial class DocumentBodyTableCellBlockProperties : IEquatable<DocumentB
     /// The type of the table cell.
     /// </summary>
     /// <value>The type of the table cell.</value>
-    [DataMember(Name = "cellType", EmitDefaultValue = false)]
+    [JsonPropertyName("cellType")]
     public CellTypeEnum? CellType { get; set; }
     /// <summary>
     /// The horizontal alignment for the table cell.
     /// </summary>
     /// <value>The horizontal alignment for the table cell.</value>
-    [DataMember(Name = "horizontalAlign", EmitDefaultValue = false)]
+    [JsonPropertyName("horizontalAlign")]
     public HorizontalAlignEnum? HorizontalAlign { get; set; }
     /// <summary>
     /// The vertical alignment for the table cell.
     /// </summary>
     /// <value>The vertical alignment for the table cell.</value>
-    [DataMember(Name = "verticalAlign", EmitDefaultValue = false)]
+    [JsonPropertyName("verticalAlign")]
     public VerticalAlignEnum? VerticalAlign { get; set; }
     /// <summary>
     /// The border style for the table cell.
     /// </summary>
     /// <value>The border style for the table cell.</value>
-    [DataMember(Name = "borderStyle", EmitDefaultValue = false)]
+    [JsonPropertyName("borderStyle")]
     public BorderStyleEnum? BorderStyle { get; set; }
     /// <summary>
     /// The scope for the table cell.
     /// </summary>
     /// <value>The scope for the table cell.</value>
-    [DataMember(Name = "scope", EmitDefaultValue = false)]
+    [JsonPropertyName("scope")]
     public ScopeEnum? Scope { get; set; }
     /// <summary>
     /// Initializes a new instance of the <see cref="DocumentBodyTableCellBlockProperties" /> class.
@@ -295,7 +295,7 @@ public partial class DocumentBodyTableCellBlockProperties : IEquatable<DocumentB
     /// The width of the table cell converted to em unit.
     /// </summary>
     /// <value>The width of the table cell converted to em unit.</value>
-    [DataMember(Name = "width", EmitDefaultValue = false)]
+    [JsonPropertyName("width")]
     public float? Width { get; set; }
 
 
@@ -304,7 +304,7 @@ public partial class DocumentBodyTableCellBlockProperties : IEquatable<DocumentB
     /// The width of the table cell in the specified unit.
     /// </summary>
     /// <value>The width of the table cell in the specified unit.</value>
-    [DataMember(Name = "widthWithUnit", EmitDefaultValue = false)]
+    [JsonPropertyName("widthWithUnit")]
     public DocumentElementLength WidthWithUnit { get; set; }
 
 
@@ -313,7 +313,7 @@ public partial class DocumentBodyTableCellBlockProperties : IEquatable<DocumentB
     /// The height for the table cell.
     /// </summary>
     /// <value>The height for the table cell.</value>
-    [DataMember(Name = "height", EmitDefaultValue = false)]
+    [JsonPropertyName("height")]
     public float? Height { get; set; }
 
 
@@ -326,7 +326,7 @@ public partial class DocumentBodyTableCellBlockProperties : IEquatable<DocumentB
     /// The border width for the table cell. The valid values in &#39;em&#39;
     /// </summary>
     /// <value>The border width for the table cell. The valid values in &#39;em&#39;</value>
-    [DataMember(Name = "borderWidth", EmitDefaultValue = false)]
+    [JsonPropertyName("borderWidth")]
     public float? BorderWidth { get; set; }
 
 
@@ -337,7 +337,7 @@ public partial class DocumentBodyTableCellBlockProperties : IEquatable<DocumentB
     /// The border color for the table cell. For example black color - #000000
     /// </summary>
     /// <value>The border color for the table cell. For example black color - #000000</value>
-    [DataMember(Name = "borderColor", EmitDefaultValue = false)]
+    [JsonPropertyName("borderColor")]
     public string BorderColor { get; set; }
 
 
@@ -346,7 +346,7 @@ public partial class DocumentBodyTableCellBlockProperties : IEquatable<DocumentB
     /// The background color for the table cell. For example black color - #000000
     /// </summary>
     /// <value>The background color for the table cell. For example black color - #000000</value>
-    [DataMember(Name = "backgroundColor", EmitDefaultValue = false)]
+    [JsonPropertyName("backgroundColor")]
     public string BackgroundColor { get; set; }
 
 
@@ -357,7 +357,7 @@ public partial class DocumentBodyTableCellBlockProperties : IEquatable<DocumentB
     /// The colSpan for the table cell.
     /// </summary>
     /// <value>The colSpan for the table cell.</value>
-    [DataMember(Name = "colSpan", EmitDefaultValue = false)]
+    [JsonPropertyName("colSpan")]
     public int? ColSpan { get; set; }
 
 
@@ -366,7 +366,7 @@ public partial class DocumentBodyTableCellBlockProperties : IEquatable<DocumentB
     /// The rowSpan for the table cell.
     /// </summary>
     /// <value>The rowSpan for the table cell.</value>
-    [DataMember(Name = "rowSpan", EmitDefaultValue = false)]
+    [JsonPropertyName("rowSpan")]
     public int? RowSpan { get; set; }
 
 

@@ -7,14 +7,14 @@ namespace PureCloud.Client.Models;
 /// <summary>
 /// ConsultTransfer
 /// </summary>
-[DataContract]
+
 public partial class ConsultTransfer : IEquatable<ConsultTransfer>
 {
     /// <summary>
     /// Determines to whom the initiating participant is requesting to speak. Defaults to DESTINATION
     /// </summary>
     /// <value>Determines to whom the initiating participant is requesting to speak. Defaults to DESTINATION</value>
-    [JsonConverter(typeof(JsonStringEnumConverter))]
+    
     public enum SpeakToEnum
     {
         /// <summary>
@@ -53,7 +53,7 @@ public partial class ConsultTransfer : IEquatable<ConsultTransfer>
     /// Determines to whom the initiating participant is requesting to speak. Defaults to DESTINATION
     /// </summary>
     /// <value>Determines to whom the initiating participant is requesting to speak. Defaults to DESTINATION</value>
-    [DataMember(Name = "speakTo", EmitDefaultValue = false)]
+    [JsonPropertyName("speakTo")]
     public SpeakToEnum? SpeakTo { get; set; }
 
     /// <summary>
@@ -83,7 +83,7 @@ public partial class ConsultTransfer : IEquatable<ConsultTransfer>
     /// The user ID of the person who wants to talk before completing the transfer. Could be the same of the context user ID
     /// </summary>
     /// <value>The user ID of the person who wants to talk before completing the transfer. Could be the same of the context user ID</value>
-    [DataMember(Name = "consultingUserId", EmitDefaultValue = false)]
+    [JsonPropertyName("consultingUserId")]
     public string ConsultingUserId { get; set; }
 
 
@@ -92,7 +92,7 @@ public partial class ConsultTransfer : IEquatable<ConsultTransfer>
     /// Destination. Specify one and only one parameter from the list below.
     /// </summary>
     /// <value>Destination. Specify one and only one parameter from the list below.</value>
-    [DataMember(Name = "destination", EmitDefaultValue = false)]
+    [JsonPropertyName("destination")]
     public Destination Destination { get; set; }
 
 

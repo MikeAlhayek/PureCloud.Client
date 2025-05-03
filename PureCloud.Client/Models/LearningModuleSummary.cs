@@ -1,12 +1,12 @@
-using System.Runtime.Serialization;
 using System.Text;
+using System.Text.Json.Serialization;
 
 namespace PureCloud.Client.Models;
 
 /// <summary>
 /// Learning module summary data
 /// </summary>
-[DataContract]
+
 public partial class LearningModuleSummary : IEquatable<LearningModuleSummary>
 {
     /// <summary>
@@ -31,7 +31,7 @@ public partial class LearningModuleSummary : IEquatable<LearningModuleSummary>
     /// The total number of assignments assigned for a learning module
     /// </summary>
     /// <value>The total number of assignments assigned for a learning module</value>
-    [DataMember(Name = "assignedCount", EmitDefaultValue = false)]
+    [JsonPropertyName("assignedCount")]
     public int? AssignedCount { get; set; }
 
 
@@ -40,7 +40,7 @@ public partial class LearningModuleSummary : IEquatable<LearningModuleSummary>
     /// The number of assignments completed for a learning module
     /// </summary>
     /// <value>The number of assignments completed for a learning module</value>
-    [DataMember(Name = "completedCount", EmitDefaultValue = false)]
+    [JsonPropertyName("completedCount")]
     public int? CompletedCount { get; set; }
 
 
@@ -49,7 +49,7 @@ public partial class LearningModuleSummary : IEquatable<LearningModuleSummary>
     /// The number of assignments passed for a learning module
     /// </summary>
     /// <value>The number of assignments passed for a learning module</value>
-    [DataMember(Name = "passedCount", EmitDefaultValue = false)]
+    [JsonPropertyName("passedCount")]
     public int? PassedCount { get; set; }
 
 
@@ -58,7 +58,7 @@ public partial class LearningModuleSummary : IEquatable<LearningModuleSummary>
     /// The sum of assignment scores for a learning module
     /// </summary>
     /// <value>The sum of assignment scores for a learning module</value>
-    [DataMember(Name = "completedSum", EmitDefaultValue = false)]
+    [JsonPropertyName("completedSum")]
     public float? CompletedSum { get; set; }
 
 

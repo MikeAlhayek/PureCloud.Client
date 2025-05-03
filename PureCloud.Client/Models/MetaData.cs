@@ -1,12 +1,12 @@
-using System.Runtime.Serialization;
 using System.Text;
+using System.Text.Json.Serialization;
 
 namespace PureCloud.Client.Models;
 
 /// <summary>
 /// MetaData
 /// </summary>
-[DataContract]
+
 public partial class MetaData : IEquatable<MetaData>
 {
     /// <summary>
@@ -28,7 +28,7 @@ public partial class MetaData : IEquatable<MetaData>
     /// <summary>
     /// Gets or Sets PairingToken
     /// </summary>
-    [DataMember(Name = "pairing-token", EmitDefaultValue = false)]
+    [JsonPropertyName("pairing-token")]
     public string PairingToken { get; set; }
 
 
@@ -36,7 +36,7 @@ public partial class MetaData : IEquatable<MetaData>
     /// <summary>
     /// Gets or Sets PairingTrust
     /// </summary>
-    [DataMember(Name = "pairing-trust", EmitDefaultValue = false)]
+    [JsonPropertyName("pairing-trust")]
     public List<string> PairingTrust { get; set; }
 
 
@@ -44,7 +44,7 @@ public partial class MetaData : IEquatable<MetaData>
     /// <summary>
     /// Gets or Sets PairingUrl
     /// </summary>
-    [DataMember(Name = "pairing-url", EmitDefaultValue = false)]
+    [JsonPropertyName("pairing-url")]
     public string PairingUrl { get; set; }
 
 

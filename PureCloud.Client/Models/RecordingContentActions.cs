@@ -1,12 +1,12 @@
-using System.Runtime.Serialization;
 using System.Text;
+using System.Text.Json.Serialization;
 
 namespace PureCloud.Client.Models;
 
 /// <summary>
 /// User actions available on the content. All actions are optional and all actions are executed simultaneously.
 /// </summary>
-[DataContract]
+
 public partial class RecordingContentActions : IEquatable<RecordingContentActions>
 {
     /// <summary>
@@ -29,7 +29,7 @@ public partial class RecordingContentActions : IEquatable<RecordingContentAction
     /// A URL of a web page to direct the user to.
     /// </summary>
     /// <value>A URL of a web page to direct the user to.</value>
-    [DataMember(Name = "url", EmitDefaultValue = false)]
+    [JsonPropertyName("url")]
     public string Url { get; set; }
 
 
@@ -38,7 +38,7 @@ public partial class RecordingContentActions : IEquatable<RecordingContentAction
     /// The target window in which to open the URL. If empty will open a blank page or tab.
     /// </summary>
     /// <value>The target window in which to open the URL. If empty will open a blank page or tab.</value>
-    [DataMember(Name = "urlTarget", EmitDefaultValue = false)]
+    [JsonPropertyName("urlTarget")]
     public string UrlTarget { get; set; }
 
 
@@ -47,7 +47,7 @@ public partial class RecordingContentActions : IEquatable<RecordingContentAction
     /// Text to be sent back in reply when the item is selected.
     /// </summary>
     /// <value>Text to be sent back in reply when the item is selected.</value>
-    [DataMember(Name = "textback", EmitDefaultValue = false)]
+    [JsonPropertyName("textback")]
     public string Textback { get; set; }
 
 

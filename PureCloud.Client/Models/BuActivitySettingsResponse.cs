@@ -1,12 +1,12 @@
-using System.Runtime.Serialization;
 using System.Text;
+using System.Text.Json.Serialization;
 
 namespace PureCloud.Client.Models;
 
 /// <summary>
 /// BuActivitySettingsResponse
 /// </summary>
-[DataContract]
+
 public partial class BuActivitySettingsResponse : IEquatable<BuActivitySettingsResponse>
 {
     /// <summary>
@@ -25,7 +25,7 @@ public partial class BuActivitySettingsResponse : IEquatable<BuActivitySettingsR
     /// Default Activity Code settings
     /// </summary>
     /// <value>Default Activity Code settings</value>
-    [DataMember(Name = "defaultActivityCode", EmitDefaultValue = false)]
+    [JsonPropertyName("defaultActivityCode")]
     public ActivityCodeReference DefaultActivityCode { get; set; }
 
 

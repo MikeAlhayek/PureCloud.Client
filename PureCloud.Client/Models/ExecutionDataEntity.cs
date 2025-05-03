@@ -1,12 +1,12 @@
-using System.Runtime.Serialization;
 using System.Text;
+using System.Text.Json.Serialization;
 
 namespace PureCloud.Client.Models;
 
 /// <summary>
 /// Represents an individual result of an execution data lookup
 /// </summary>
-[DataContract]
+
 public partial class ExecutionDataEntity : IEquatable<ExecutionDataEntity>
 {
     /// <summary>
@@ -31,7 +31,7 @@ public partial class ExecutionDataEntity : IEquatable<ExecutionDataEntity>
     /// The id of the execution requested
     /// </summary>
     /// <value>The id of the execution requested</value>
-    [DataMember(Name = "id", EmitDefaultValue = false)]
+    [JsonPropertyName("id")]
     public string Id { get; set; }
 
 
@@ -40,7 +40,7 @@ public partial class ExecutionDataEntity : IEquatable<ExecutionDataEntity>
     /// A downloadable link to the execution data file.
     /// </summary>
     /// <value>A downloadable link to the execution data file.</value>
-    [DataMember(Name = "downloadUri", EmitDefaultValue = false)]
+    [JsonPropertyName("downloadUri")]
     public string DownloadUri { get; set; }
 
 
@@ -49,7 +49,7 @@ public partial class ExecutionDataEntity : IEquatable<ExecutionDataEntity>
     /// If the retrieval failed (not found, no permission, etc;), this will be set true.
     /// </summary>
     /// <value>If the retrieval failed (not found, no permission, etc;), this will be set true.</value>
-    [DataMember(Name = "failed", EmitDefaultValue = false)]
+    [JsonPropertyName("failed")]
     public bool? Failed { get; set; }
 
 
@@ -58,7 +58,7 @@ public partial class ExecutionDataEntity : IEquatable<ExecutionDataEntity>
     /// This will contain the http status code for the failure
     /// </summary>
     /// <value>This will contain the http status code for the failure</value>
-    [DataMember(Name = "statusCode", EmitDefaultValue = false)]
+    [JsonPropertyName("statusCode")]
     public string StatusCode { get; set; }
 
 

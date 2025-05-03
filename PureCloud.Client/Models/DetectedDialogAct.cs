@@ -1,12 +1,12 @@
-using System.Runtime.Serialization;
 using System.Text;
+using System.Text.Json.Serialization;
 
 namespace PureCloud.Client.Models;
 
 /// <summary>
 /// DetectedDialogAct
 /// </summary>
-[DataContract]
+
 public partial class DetectedDialogAct : IEquatable<DetectedDialogAct>
 {
     /// <summary>
@@ -23,7 +23,7 @@ public partial class DetectedDialogAct : IEquatable<DetectedDialogAct>
     /// The name of the detected dialog act.
     /// </summary>
     /// <value>The name of the detected dialog act.</value>
-    [DataMember(Name = "name", EmitDefaultValue = false)]
+    [JsonPropertyName("name")]
     public string Name { get; private set; }
 
 
@@ -32,7 +32,7 @@ public partial class DetectedDialogAct : IEquatable<DetectedDialogAct>
     /// The probability of the detected dialog act.
     /// </summary>
     /// <value>The probability of the detected dialog act.</value>
-    [DataMember(Name = "probability", EmitDefaultValue = false)]
+    [JsonPropertyName("probability")]
     public double? Probability { get; private set; }
 
 

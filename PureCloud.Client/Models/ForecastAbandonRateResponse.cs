@@ -1,12 +1,12 @@
-using System.Runtime.Serialization;
 using System.Text;
+using System.Text.Json.Serialization;
 
 namespace PureCloud.Client.Models;
 
 /// <summary>
 /// ForecastAbandonRateResponse
 /// </summary>
-[DataContract]
+
 public partial class ForecastAbandonRateResponse : IEquatable<ForecastAbandonRateResponse>
 {
     /// <summary>
@@ -25,7 +25,7 @@ public partial class ForecastAbandonRateResponse : IEquatable<ForecastAbandonRat
     /// The target percent abandon rate goal
     /// </summary>
     /// <value>The target percent abandon rate goal</value>
-    [DataMember(Name = "percent", EmitDefaultValue = false)]
+    [JsonPropertyName("percent")]
     public int? Percent { get; set; }
 
 

@@ -1,12 +1,12 @@
-using System.Runtime.Serialization;
 using System.Text;
+using System.Text.Json.Serialization;
 
 namespace PureCloud.Client.Models;
 
 /// <summary>
 /// ReschedulingManagementUnitResponse
 /// </summary>
-[DataContract]
+
 public partial class ReschedulingManagementUnitResponse : IEquatable<ReschedulingManagementUnitResponse>
 {
     /// <summary>
@@ -27,7 +27,7 @@ public partial class ReschedulingManagementUnitResponse : IEquatable<Reschedulin
     /// The management unit
     /// </summary>
     /// <value>The management unit</value>
-    [DataMember(Name = "managementUnit", EmitDefaultValue = false)]
+    [JsonPropertyName("managementUnit")]
     public ManagementUnitReference ManagementUnit { get; set; }
 
 
@@ -36,7 +36,7 @@ public partial class ReschedulingManagementUnitResponse : IEquatable<Reschedulin
     /// Whether the rescheduling run is applied for the given management unit
     /// </summary>
     /// <value>Whether the rescheduling run is applied for the given management unit</value>
-    [DataMember(Name = "applied", EmitDefaultValue = false)]
+    [JsonPropertyName("applied")]
     public bool? Applied { get; set; }
 
 

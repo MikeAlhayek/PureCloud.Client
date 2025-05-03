@@ -7,13 +7,13 @@ namespace PureCloud.Client.Models;
 /// <summary>
 /// SupportedDialectsTranscriptionEngine
 /// </summary>
-[DataContract]
+
 public partial class SupportedDialectsTranscriptionEngine : IEquatable<SupportedDialectsTranscriptionEngine>
 {
     /// <summary>
     /// Gets or Sets Engine
     /// </summary>
-    [JsonConverter(typeof(JsonStringEnumConverter))]
+    
     public enum EngineEnum
     {
         /// <summary>
@@ -45,7 +45,7 @@ public partial class SupportedDialectsTranscriptionEngine : IEquatable<Supported
     /// <summary>
     /// Gets or Sets Engine
     /// </summary>
-    [DataMember(Name = "engine", EmitDefaultValue = false)]
+    [JsonPropertyName("engine")]
     public EngineEnum? Engine { get; set; }
     /// <summary>
     /// Initializes a new instance of the <see cref="SupportedDialectsTranscriptionEngine" /> class.
@@ -68,7 +68,7 @@ public partial class SupportedDialectsTranscriptionEngine : IEquatable<Supported
     /// <summary>
     /// Gets or Sets Dialects
     /// </summary>
-    [DataMember(Name = "dialects", EmitDefaultValue = false)]
+    [JsonPropertyName("dialects")]
     public List<string> Dialects { get; set; }
 
 
@@ -76,7 +76,7 @@ public partial class SupportedDialectsTranscriptionEngine : IEquatable<Supported
     /// <summary>
     /// Gets or Sets EngineIntegration
     /// </summary>
-    [DataMember(Name = "engineIntegration", EmitDefaultValue = false)]
+    [JsonPropertyName("engineIntegration")]
     public EngineIntegration EngineIntegration { get; set; }
 
 

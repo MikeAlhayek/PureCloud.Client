@@ -1,4 +1,3 @@
-using System.Runtime.Serialization;
 using System.Text;
 using System.Text.Json.Serialization;
 
@@ -7,7 +6,7 @@ namespace PureCloud.Client.Models;
 /// <summary>
 /// UnreadFields
 /// </summary>
-[DataContract]
+
 public partial class UnreadFields : IEquatable<UnreadFields>
 {
 
@@ -32,7 +31,7 @@ public partial class UnreadFields : IEquatable<UnreadFields>
     /// The new unread state of the alert
     /// </summary>
     /// <value>The new unread state of the alert</value>
-    [DataMember(Name = "state", EmitDefaultValue = false)]
+    [JsonPropertyName("state")]
     public bool? State { get; set; }
 
 

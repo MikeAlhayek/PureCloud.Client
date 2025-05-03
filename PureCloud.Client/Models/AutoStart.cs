@@ -1,12 +1,12 @@
-using System.Runtime.Serialization;
 using System.Text;
+using System.Text.Json.Serialization;
 
 namespace PureCloud.Client.Models;
 
 /// <summary>
 /// AutoStart
 /// </summary>
-[DataContract]
+
 public partial class AutoStart : IEquatable<AutoStart>
 {
     /// <summary>
@@ -25,7 +25,7 @@ public partial class AutoStart : IEquatable<AutoStart>
     /// whether or not auto start is enabled
     /// </summary>
     /// <value>whether or not auto start is enabled</value>
-    [DataMember(Name = "enabled", EmitDefaultValue = false)]
+    [JsonPropertyName("enabled")]
     public bool? Enabled { get; set; }
 
 

@@ -7,13 +7,13 @@ namespace PureCloud.Client.Models;
 /// <summary>
 /// Evaluation
 /// </summary>
-[DataContract]
+
 public partial class Evaluation : IEquatable<Evaluation>
 {
     /// <summary>
     /// Gets or Sets Status
     /// </summary>
-    [JsonConverter(typeof(JsonStringEnumConverter))]
+    
     public enum StatusEnum
     {
         /// <summary>
@@ -57,7 +57,7 @@ public partial class Evaluation : IEquatable<Evaluation>
     /// <summary>
     /// Gets or Sets MediaType
     /// </summary>
-    [JsonConverter(typeof(JsonStringEnumConverter))]
+    
     public enum MediaTypeEnum
     {
         /// <summary>
@@ -132,7 +132,7 @@ public partial class Evaluation : IEquatable<Evaluation>
     /// The type of resource. Only used for email evaluations. Will be null for evaluations on all other resources.
     /// </summary>
     /// <value>The type of resource. Only used for email evaluations. Will be null for evaluations on all other resources.</value>
-    [JsonConverter(typeof(JsonStringEnumConverter))]
+    
     public enum ResourceTypeEnum
     {
         /// <summary>
@@ -152,13 +152,13 @@ public partial class Evaluation : IEquatable<Evaluation>
     /// <summary>
     /// Gets or Sets Status
     /// </summary>
-    [DataMember(Name = "status", EmitDefaultValue = false)]
+    [JsonPropertyName("status")]
     public StatusEnum? Status { get; set; }
     /// <summary>
     /// The type of resource. Only used for email evaluations. Will be null for evaluations on all other resources.
     /// </summary>
     /// <value>The type of resource. Only used for email evaluations. Will be null for evaluations on all other resources.</value>
-    [DataMember(Name = "resourceType", EmitDefaultValue = false)]
+    [JsonPropertyName("resourceType")]
     public ResourceTypeEnum? ResourceType { get; set; }
     /// <summary>
     /// Initializes a new instance of the <see cref="Evaluation" /> class.
@@ -234,7 +234,7 @@ public partial class Evaluation : IEquatable<Evaluation>
     /// The globally unique identifier for the object.
     /// </summary>
     /// <value>The globally unique identifier for the object.</value>
-    [DataMember(Name = "id", EmitDefaultValue = false)]
+    [JsonPropertyName("id")]
     public string Id { get; private set; }
 
 
@@ -242,7 +242,7 @@ public partial class Evaluation : IEquatable<Evaluation>
     /// <summary>
     /// Gets or Sets Name
     /// </summary>
-    [DataMember(Name = "name", EmitDefaultValue = false)]
+    [JsonPropertyName("name")]
     public string Name { get; set; }
 
 
@@ -250,7 +250,7 @@ public partial class Evaluation : IEquatable<Evaluation>
     /// <summary>
     /// Gets or Sets Conversation
     /// </summary>
-    [DataMember(Name = "conversation", EmitDefaultValue = false)]
+    [JsonPropertyName("conversation")]
     public ConversationReference Conversation { get; set; }
 
 
@@ -259,7 +259,7 @@ public partial class Evaluation : IEquatable<Evaluation>
     /// Evaluation form used for evaluation.
     /// </summary>
     /// <value>Evaluation form used for evaluation.</value>
-    [DataMember(Name = "evaluationForm", EmitDefaultValue = false)]
+    [JsonPropertyName("evaluationForm")]
     public EvaluationForm EvaluationForm { get; set; }
 
 
@@ -267,7 +267,7 @@ public partial class Evaluation : IEquatable<Evaluation>
     /// <summary>
     /// Gets or Sets Evaluator
     /// </summary>
-    [DataMember(Name = "evaluator", EmitDefaultValue = false)]
+    [JsonPropertyName("evaluator")]
     public User Evaluator { get; set; }
 
 
@@ -275,7 +275,7 @@ public partial class Evaluation : IEquatable<Evaluation>
     /// <summary>
     /// Gets or Sets Agent
     /// </summary>
-    [DataMember(Name = "agent", EmitDefaultValue = false)]
+    [JsonPropertyName("agent")]
     public User Agent { get; set; }
 
 
@@ -283,7 +283,7 @@ public partial class Evaluation : IEquatable<Evaluation>
     /// <summary>
     /// Gets or Sets Calibration
     /// </summary>
-    [DataMember(Name = "calibration", EmitDefaultValue = false)]
+    [JsonPropertyName("calibration")]
     public Calibration Calibration { get; set; }
 
 
@@ -293,7 +293,7 @@ public partial class Evaluation : IEquatable<Evaluation>
     /// <summary>
     /// Gets or Sets Answers
     /// </summary>
-    [DataMember(Name = "answers", EmitDefaultValue = false)]
+    [JsonPropertyName("answers")]
     public EvaluationScoringSet Answers { get; set; }
 
 
@@ -301,7 +301,7 @@ public partial class Evaluation : IEquatable<Evaluation>
     /// <summary>
     /// Gets or Sets AgentHasRead
     /// </summary>
-    [DataMember(Name = "agentHasRead", EmitDefaultValue = false)]
+    [JsonPropertyName("agentHasRead")]
     public bool? AgentHasRead { get; set; }
 
 
@@ -309,7 +309,7 @@ public partial class Evaluation : IEquatable<Evaluation>
     /// <summary>
     /// Gets or Sets Assignee
     /// </summary>
-    [DataMember(Name = "assignee", EmitDefaultValue = false)]
+    [JsonPropertyName("assignee")]
     public User Assignee { get; set; }
 
 
@@ -318,7 +318,7 @@ public partial class Evaluation : IEquatable<Evaluation>
     /// Indicates whether an assignee is applicable for the evaluation. Set to false when assignee is not applicable.
     /// </summary>
     /// <value>Indicates whether an assignee is applicable for the evaluation. Set to false when assignee is not applicable.</value>
-    [DataMember(Name = "assigneeApplicable", EmitDefaultValue = false)]
+    [JsonPropertyName("assigneeApplicable")]
     public bool? AssigneeApplicable { get; set; }
 
 
@@ -327,7 +327,7 @@ public partial class Evaluation : IEquatable<Evaluation>
     /// Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z
     /// </summary>
     /// <value>Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z</value>
-    [DataMember(Name = "releaseDate", EmitDefaultValue = false)]
+    [JsonPropertyName("releaseDate")]
     public DateTime? ReleaseDate { get; set; }
 
 
@@ -336,7 +336,7 @@ public partial class Evaluation : IEquatable<Evaluation>
     /// Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z
     /// </summary>
     /// <value>Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z</value>
-    [DataMember(Name = "assignedDate", EmitDefaultValue = false)]
+    [JsonPropertyName("assignedDate")]
     public DateTime? AssignedDate { get; set; }
 
 
@@ -345,7 +345,7 @@ public partial class Evaluation : IEquatable<Evaluation>
     /// Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z
     /// </summary>
     /// <value>Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z</value>
-    [DataMember(Name = "changedDate", EmitDefaultValue = false)]
+    [JsonPropertyName("changedDate")]
     public DateTime? ChangedDate { get; set; }
 
 
@@ -354,7 +354,7 @@ public partial class Evaluation : IEquatable<Evaluation>
     /// Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z
     /// </summary>
     /// <value>Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z</value>
-    [DataMember(Name = "revisionCreatedDate", EmitDefaultValue = false)]
+    [JsonPropertyName("revisionCreatedDate")]
     public DateTime? RevisionCreatedDate { get; set; }
 
 
@@ -362,7 +362,7 @@ public partial class Evaluation : IEquatable<Evaluation>
     /// <summary>
     /// Gets or Sets Queue
     /// </summary>
-    [DataMember(Name = "queue", EmitDefaultValue = false)]
+    [JsonPropertyName("queue")]
     public Queue Queue { get; set; }
 
 
@@ -371,7 +371,7 @@ public partial class Evaluation : IEquatable<Evaluation>
     /// List of different communication types used in conversation.
     /// </summary>
     /// <value>List of different communication types used in conversation.</value>
-    [DataMember(Name = "mediaType", EmitDefaultValue = false)]
+    [JsonPropertyName("mediaType")]
     public List<MediaTypeEnum> MediaType { get; set; }
 
 
@@ -380,7 +380,7 @@ public partial class Evaluation : IEquatable<Evaluation>
     /// Is only true when evaluation is re-scored.
     /// </summary>
     /// <value>Is only true when evaluation is re-scored.</value>
-    [DataMember(Name = "rescore", EmitDefaultValue = false)]
+    [JsonPropertyName("rescore")]
     public bool? Rescore { get; set; }
 
 
@@ -389,7 +389,7 @@ public partial class Evaluation : IEquatable<Evaluation>
     /// Date of conversation. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z
     /// </summary>
     /// <value>Date of conversation. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z</value>
-    [DataMember(Name = "conversationDate", EmitDefaultValue = false)]
+    [JsonPropertyName("conversationDate")]
     public DateTime? ConversationDate { get; set; }
 
 
@@ -398,7 +398,7 @@ public partial class Evaluation : IEquatable<Evaluation>
     /// End date of conversation if it had completed before evaluation creation. Null if created before the conversation ended. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z
     /// </summary>
     /// <value>End date of conversation if it had completed before evaluation creation. Null if created before the conversation ended. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z</value>
-    [DataMember(Name = "conversationEndDate", EmitDefaultValue = false)]
+    [JsonPropertyName("conversationEndDate")]
     public DateTime? ConversationEndDate { get; set; }
 
 
@@ -407,7 +407,7 @@ public partial class Evaluation : IEquatable<Evaluation>
     /// Signifies if the evaluation is never to be released. This cannot be set true if release date is also set.
     /// </summary>
     /// <value>Signifies if the evaluation is never to be released. This cannot be set true if release date is also set.</value>
-    [DataMember(Name = "neverRelease", EmitDefaultValue = false)]
+    [JsonPropertyName("neverRelease")]
     public bool? NeverRelease { get; set; }
 
 
@@ -416,7 +416,7 @@ public partial class Evaluation : IEquatable<Evaluation>
     /// Set to false to unassign the evaluation. This cannot be set to false when assignee is also set.
     /// </summary>
     /// <value>Set to false to unassign the evaluation. This cannot be set to false when assignee is also set.</value>
-    [DataMember(Name = "assigned", EmitDefaultValue = false)]
+    [JsonPropertyName("assigned")]
     public bool? Assigned { get; set; }
 
 
@@ -425,7 +425,7 @@ public partial class Evaluation : IEquatable<Evaluation>
     /// Date when the assignee was last changed. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z
     /// </summary>
     /// <value>Date when the assignee was last changed. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z</value>
-    [DataMember(Name = "dateAssigneeChanged", EmitDefaultValue = false)]
+    [JsonPropertyName("dateAssigneeChanged")]
     public DateTime? DateAssigneeChanged { get; set; }
 
 
@@ -434,7 +434,7 @@ public partial class Evaluation : IEquatable<Evaluation>
     /// Only used for email evaluations. Will be null for all other evaluations.
     /// </summary>
     /// <value>Only used for email evaluations. Will be null for all other evaluations.</value>
-    [DataMember(Name = "resourceId", EmitDefaultValue = false)]
+    [JsonPropertyName("resourceId")]
     public string ResourceId { get; set; }
 
 
@@ -445,7 +445,7 @@ public partial class Evaluation : IEquatable<Evaluation>
     /// Is only true when the user making the request does not have sufficient permissions to see evaluation
     /// </summary>
     /// <value>Is only true when the user making the request does not have sufficient permissions to see evaluation</value>
-    [DataMember(Name = "redacted", EmitDefaultValue = false)]
+    [JsonPropertyName("redacted")]
     public bool? Redacted { get; set; }
 
 
@@ -454,7 +454,7 @@ public partial class Evaluation : IEquatable<Evaluation>
     /// Team of the evaluation agent
     /// </summary>
     /// <value>Team of the evaluation agent</value>
-    [DataMember(Name = "agentTeam", EmitDefaultValue = false)]
+    [JsonPropertyName("agentTeam")]
     public Team AgentTeam { get; set; }
 
 
@@ -462,7 +462,7 @@ public partial class Evaluation : IEquatable<Evaluation>
     /// <summary>
     /// Gets or Sets IsScoringIndex
     /// </summary>
-    [DataMember(Name = "isScoringIndex", EmitDefaultValue = false)]
+    [JsonPropertyName("isScoringIndex")]
     public bool? IsScoringIndex { get; set; }
 
 
@@ -471,7 +471,7 @@ public partial class Evaluation : IEquatable<Evaluation>
     /// List of user authorized actions on evaluation. Possible values: assign, edit, editScore, editAgentSignoff, delete, release, viewAudit
     /// </summary>
     /// <value>List of user authorized actions on evaluation. Possible values: assign, edit, editScore, editAgentSignoff, delete, release, viewAudit</value>
-    [DataMember(Name = "authorizedActions", EmitDefaultValue = false)]
+    [JsonPropertyName("authorizedActions")]
     public List<string> AuthorizedActions { get; set; }
 
 
@@ -480,7 +480,7 @@ public partial class Evaluation : IEquatable<Evaluation>
     /// Is true when evaluation assistance didn&#39;t execute successfully
     /// </summary>
     /// <value>Is true when evaluation assistance didn&#39;t execute successfully</value>
-    [DataMember(Name = "hasAssistanceFailed", EmitDefaultValue = false)]
+    [JsonPropertyName("hasAssistanceFailed")]
     public bool? HasAssistanceFailed { get; set; }
 
 
@@ -489,7 +489,7 @@ public partial class Evaluation : IEquatable<Evaluation>
     /// The source that created the evaluation.
     /// </summary>
     /// <value>The source that created the evaluation.</value>
-    [DataMember(Name = "evaluationSource", EmitDefaultValue = false)]
+    [JsonPropertyName("evaluationSource")]
     public EvaluationSource EvaluationSource { get; private set; }
 
 
@@ -498,7 +498,7 @@ public partial class Evaluation : IEquatable<Evaluation>
     /// AI scoring details for the evaluation.
     /// </summary>
     /// <value>AI scoring details for the evaluation.</value>
-    [DataMember(Name = "aiScoring", EmitDefaultValue = false)]
+    [JsonPropertyName("aiScoring")]
     public AiScoring AiScoring { get; private set; }
 
 
@@ -507,7 +507,7 @@ public partial class Evaluation : IEquatable<Evaluation>
     /// The URI for this object
     /// </summary>
     /// <value>The URI for this object</value>
-    [DataMember(Name = "selfUri", EmitDefaultValue = false)]
+    [JsonPropertyName("selfUri")]
     public string SelfUri { get; private set; }
 
 

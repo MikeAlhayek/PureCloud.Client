@@ -1,12 +1,12 @@
-using System.Runtime.Serialization;
 using System.Text;
+using System.Text.Json.Serialization;
 
 namespace PureCloud.Client.Models;
 
 /// <summary>
 /// OneOnOne
 /// </summary>
-[DataContract]
+
 public partial class OneOnOne : IEquatable<OneOnOne>
 {
     /// <summary>
@@ -25,7 +25,7 @@ public partial class OneOnOne : IEquatable<OneOnOne>
     /// Room&#39;s pinned messages
     /// </summary>
     /// <value>Room&#39;s pinned messages</value>
-    [DataMember(Name = "pinnedMessages", EmitDefaultValue = false)]
+    [JsonPropertyName("pinnedMessages")]
     public List<AddressableEntityRef> PinnedMessages { get; set; }
 
 

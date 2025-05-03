@@ -7,14 +7,14 @@ namespace PureCloud.Client.Models;
 /// <summary>
 /// CommonAllAlertUpdateRequest
 /// </summary>
-[DataContract]
+
 public partial class CommonAllAlertUpdateRequest : IEquatable<CommonAllAlertUpdateRequest>
 {
     /// <summary>
     /// The action to take
     /// </summary>
     /// <value>The action to take</value>
-    [JsonConverter(typeof(JsonStringEnumConverter))]
+    
     public enum TypeEnum
     {
         /// <summary>
@@ -47,7 +47,7 @@ public partial class CommonAllAlertUpdateRequest : IEquatable<CommonAllAlertUpda
     /// The action to take
     /// </summary>
     /// <value>The action to take</value>
-    [DataMember(Name = "type", EmitDefaultValue = false)]
+    [JsonPropertyName("type")]
     public TypeEnum? Type { get; set; }
 
     /// <summary>
@@ -75,7 +75,7 @@ public partial class CommonAllAlertUpdateRequest : IEquatable<CommonAllAlertUpda
     /// The fields need for an unread update requests
     /// </summary>
     /// <value>The fields need for an unread update requests</value>
-    [DataMember(Name = "unread", EmitDefaultValue = false)]
+    [JsonPropertyName("unread")]
     public UnreadFields Unread { get; set; }
 
 

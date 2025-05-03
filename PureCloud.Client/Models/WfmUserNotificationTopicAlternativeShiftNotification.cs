@@ -7,13 +7,13 @@ namespace PureCloud.Client.Models;
 /// <summary>
 /// WfmUserNotificationTopicAlternativeShiftNotification
 /// </summary>
-[DataContract]
+
 public partial class WfmUserNotificationTopicAlternativeShiftNotification : IEquatable<WfmUserNotificationTopicAlternativeShiftNotification>
 {
     /// <summary>
     /// Gets or Sets Granularity
     /// </summary>
-    [JsonConverter(typeof(JsonStringEnumConverter))]
+    
     public enum GranularityEnum
     {
         /// <summary>
@@ -39,7 +39,7 @@ public partial class WfmUserNotificationTopicAlternativeShiftNotification : IEqu
     /// <summary>
     /// Gets or Sets NewState
     /// </summary>
-    [JsonConverter(typeof(JsonStringEnumConverter))]
+    
     public enum NewStateEnum
     {
         /// <summary>
@@ -83,12 +83,12 @@ public partial class WfmUserNotificationTopicAlternativeShiftNotification : IEqu
     /// <summary>
     /// Gets or Sets Granularity
     /// </summary>
-    [DataMember(Name = "granularity", EmitDefaultValue = false)]
+    [JsonPropertyName("granularity")]
     public GranularityEnum? Granularity { get; set; }
     /// <summary>
     /// Gets or Sets NewState
     /// </summary>
-    [DataMember(Name = "newState", EmitDefaultValue = false)]
+    [JsonPropertyName("newState")]
     public NewStateEnum? NewState { get; set; }
     /// <summary>
     /// Initializes a new instance of the <see cref="WfmUserNotificationTopicAlternativeShiftNotification" /> class.
@@ -119,7 +119,7 @@ public partial class WfmUserNotificationTopicAlternativeShiftNotification : IEqu
     /// <summary>
     /// Gets or Sets Id
     /// </summary>
-    [DataMember(Name = "id", EmitDefaultValue = false)]
+    [JsonPropertyName("id")]
     public string Id { get; set; }
 
 
@@ -127,7 +127,7 @@ public partial class WfmUserNotificationTopicAlternativeShiftNotification : IEqu
     /// <summary>
     /// Gets or Sets WeekDate
     /// </summary>
-    [DataMember(Name = "weekDate", EmitDefaultValue = false)]
+    [JsonPropertyName("weekDate")]
     public DateTime? WeekDate { get; set; }
 
 
@@ -139,7 +139,7 @@ public partial class WfmUserNotificationTopicAlternativeShiftNotification : IEqu
     /// <summary>
     /// Gets or Sets InitiatingUser
     /// </summary>
-    [DataMember(Name = "initiatingUser", EmitDefaultValue = false)]
+    [JsonPropertyName("initiatingUser")]
     public WfmUserNotificationTopicUserReference InitiatingUser { get; set; }
 
 
@@ -147,7 +147,7 @@ public partial class WfmUserNotificationTopicAlternativeShiftNotification : IEqu
     /// <summary>
     /// Gets or Sets InitiatingShiftDate
     /// </summary>
-    [DataMember(Name = "initiatingShiftDate", EmitDefaultValue = false)]
+    [JsonPropertyName("initiatingShiftDate")]
     public DateTime? InitiatingShiftDate { get; set; }
 
 
@@ -155,7 +155,7 @@ public partial class WfmUserNotificationTopicAlternativeShiftNotification : IEqu
     /// <summary>
     /// Gets or Sets ReceivingUser
     /// </summary>
-    [DataMember(Name = "receivingUser", EmitDefaultValue = false)]
+    [JsonPropertyName("receivingUser")]
     public WfmUserNotificationTopicUserReference ReceivingUser { get; set; }
 
 
@@ -163,7 +163,7 @@ public partial class WfmUserNotificationTopicAlternativeShiftNotification : IEqu
     /// <summary>
     /// Gets or Sets ReceivingShiftDate
     /// </summary>
-    [DataMember(Name = "receivingShiftDate", EmitDefaultValue = false)]
+    [JsonPropertyName("receivingShiftDate")]
     public DateTime? ReceivingShiftDate { get; set; }
 
 

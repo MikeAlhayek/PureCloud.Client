@@ -1,12 +1,12 @@
-using System.Runtime.Serialization;
 using System.Text;
+using System.Text.Json.Serialization;
 
 namespace PureCloud.Client.Models;
 
 /// <summary>
 /// RoutingSettings
 /// </summary>
-[DataContract]
+
 public partial class RoutingSettings : IEquatable<RoutingSettings>
 {
     /// <summary>
@@ -25,7 +25,7 @@ public partial class RoutingSettings : IEquatable<RoutingSettings>
     /// Reset agent score when agent presence changes from off-queue to on-queue
     /// </summary>
     /// <value>Reset agent score when agent presence changes from off-queue to on-queue</value>
-    [DataMember(Name = "resetAgentScoreOnPresenceChange", EmitDefaultValue = false)]
+    [JsonPropertyName("resetAgentScoreOnPresenceChange")]
     public bool? ResetAgentScoreOnPresenceChange { get; set; }
 
 

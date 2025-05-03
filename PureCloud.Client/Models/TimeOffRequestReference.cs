@@ -1,12 +1,12 @@
-using System.Runtime.Serialization;
 using System.Text;
+using System.Text.Json.Serialization;
 
 namespace PureCloud.Client.Models;
 
 /// <summary>
 /// TimeOffRequestReference
 /// </summary>
-[DataContract]
+
 public partial class TimeOffRequestReference : IEquatable<TimeOffRequestReference>
 {
     /// <summary>
@@ -25,7 +25,7 @@ public partial class TimeOffRequestReference : IEquatable<TimeOffRequestReferenc
     /// The id of the time off request
     /// </summary>
     /// <value>The id of the time off request</value>
-    [DataMember(Name = "id", EmitDefaultValue = false)]
+    [JsonPropertyName("id")]
     public string Id { get; set; }
 
 
@@ -34,7 +34,7 @@ public partial class TimeOffRequestReference : IEquatable<TimeOffRequestReferenc
     /// The URI for this object
     /// </summary>
     /// <value>The URI for this object</value>
-    [DataMember(Name = "selfUri", EmitDefaultValue = false)]
+    [JsonPropertyName("selfUri")]
     public string SelfUri { get; private set; }
 
 

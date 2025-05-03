@@ -7,13 +7,13 @@ namespace PureCloud.Client.Models;
 /// <summary>
 /// Format
 /// </summary>
-[DataContract]
+
 public partial class Format : IEquatable<Format>
 {
     /// <summary>
     /// Gets or Sets Flags
     /// </summary>
-    [JsonConverter(typeof(JsonStringEnumConverter))]
+    
     public enum FlagsEnum
     {
         /// <summary>
@@ -304,7 +304,7 @@ public partial class Format : IEquatable<Format>
     /// The Set of prompt segment format flags i.e. each entry is a part of describing the overall format. E.g. \&quot;format\&quot;: { \&quot;flags\&quot;: [StringPlayChars] }
     /// </summary>
     /// <value>The Set of prompt segment format flags i.e. each entry is a part of describing the overall format. E.g. \&quot;format\&quot;: { \&quot;flags\&quot;: [StringPlayChars] }</value>
-    [DataMember(Name = "flags", EmitDefaultValue = false)]
+    [JsonPropertyName("flags")]
     public List<FlagsEnum> Flags { get; set; }
 
 

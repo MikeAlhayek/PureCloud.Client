@@ -7,13 +7,13 @@ namespace PureCloud.Client.Models;
 /// <summary>
 /// DocumentText
 /// </summary>
-[DataContract]
+
 public partial class DocumentText : IEquatable<DocumentText>
 {
     /// <summary>
     /// Gets or Sets Marks
     /// </summary>
-    [JsonConverter(typeof(JsonStringEnumConverter))]
+    
     public enum MarksEnum
     {
         /// <summary>
@@ -88,7 +88,7 @@ public partial class DocumentText : IEquatable<DocumentText>
     /// Text.
     /// </summary>
     /// <value>Text.</value>
-    [DataMember(Name = "text", EmitDefaultValue = false)]
+    [JsonPropertyName("text")]
     public string Text { get; set; }
 
 
@@ -97,7 +97,7 @@ public partial class DocumentText : IEquatable<DocumentText>
     /// The unique list of marks (whether it is bold and/or underlined etc.) for the text.
     /// </summary>
     /// <value>The unique list of marks (whether it is bold and/or underlined etc.) for the text.</value>
-    [DataMember(Name = "marks", EmitDefaultValue = false)]
+    [JsonPropertyName("marks")]
     public List<MarksEnum> Marks { get; set; }
 
 
@@ -106,7 +106,7 @@ public partial class DocumentText : IEquatable<DocumentText>
     /// The URL of the page OR an email OR the reference to the knowledge article that the hyperlink goes to. Possible URL value types are https://&lt;url link&gt; | mailto:&lt;email&gt; | grn:knowledge:::documentVariation/&lt;knowledgeBaseId&gt;/&lt;documentId&gt;/&lt;variationId&gt; | grn:knowledge:::document/&lt;knowledgeBaseId&gt;/&lt;documentId&gt; | grn:knowledge:::category/&lt;knowledgeBaseId&gt;/&lt;categoryId&gt; | grn:knowledge:::label/&lt;knowledgeBaseId&gt;/&lt;labelId&gt;
     /// </summary>
     /// <value>The URL of the page OR an email OR the reference to the knowledge article that the hyperlink goes to. Possible URL value types are https://&lt;url link&gt; | mailto:&lt;email&gt; | grn:knowledge:::documentVariation/&lt;knowledgeBaseId&gt;/&lt;documentId&gt;/&lt;variationId&gt; | grn:knowledge:::document/&lt;knowledgeBaseId&gt;/&lt;documentId&gt; | grn:knowledge:::category/&lt;knowledgeBaseId&gt;/&lt;categoryId&gt; | grn:knowledge:::label/&lt;knowledgeBaseId&gt;/&lt;labelId&gt;</value>
-    [DataMember(Name = "hyperlink", EmitDefaultValue = false)]
+    [JsonPropertyName("hyperlink")]
     public string Hyperlink { get; set; }
 
 
@@ -115,7 +115,7 @@ public partial class DocumentText : IEquatable<DocumentText>
     /// The properties for the text.
     /// </summary>
     /// <value>The properties for the text.</value>
-    [DataMember(Name = "properties", EmitDefaultValue = false)]
+    [JsonPropertyName("properties")]
     public DocumentTextProperties Properties { get; set; }
 
 

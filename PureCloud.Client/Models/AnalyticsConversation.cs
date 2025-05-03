@@ -7,14 +7,14 @@ namespace PureCloud.Client.Models;
 /// <summary>
 /// AnalyticsConversation
 /// </summary>
-[DataContract]
+
 public partial class AnalyticsConversation : IEquatable<AnalyticsConversation>
 {
     /// <summary>
     /// Indicates the participant purpose of the participant initiating a message conversation
     /// </summary>
     /// <value>Indicates the participant purpose of the participant initiating a message conversation</value>
-    [JsonConverter(typeof(JsonStringEnumConverter))]
+    
     public enum ConversationInitiatorEnum
     {
         /// <summary>
@@ -143,7 +143,7 @@ public partial class AnalyticsConversation : IEquatable<AnalyticsConversation>
     /// The original direction of the conversation
     /// </summary>
     /// <value>The original direction of the conversation</value>
-    [JsonConverter(typeof(JsonStringEnumConverter))]
+    
     public enum OriginatingDirectionEnum
     {
         /// <summary>
@@ -170,13 +170,13 @@ public partial class AnalyticsConversation : IEquatable<AnalyticsConversation>
     /// Indicates the participant purpose of the participant initiating a message conversation
     /// </summary>
     /// <value>Indicates the participant purpose of the participant initiating a message conversation</value>
-    [DataMember(Name = "conversationInitiator", EmitDefaultValue = false)]
+    [JsonPropertyName("conversationInitiator")]
     public ConversationInitiatorEnum? ConversationInitiator { get; set; }
     /// <summary>
     /// The original direction of the conversation
     /// </summary>
     /// <value>The original direction of the conversation</value>
-    [DataMember(Name = "originatingDirection", EmitDefaultValue = false)]
+    [JsonPropertyName("originatingDirection")]
     public OriginatingDirectionEnum? OriginatingDirection { get; set; }
     /// <summary>
     /// Initializes a new instance of the <see cref="AnalyticsConversation" /> class.
@@ -226,7 +226,7 @@ public partial class AnalyticsConversation : IEquatable<AnalyticsConversation>
     /// The start time of a conference call. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z
     /// </summary>
     /// <value>The start time of a conference call. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z</value>
-    [DataMember(Name = "conferenceStart", EmitDefaultValue = false)]
+    [JsonPropertyName("conferenceStart")]
     public DateTime? ConferenceStart { get; set; }
 
 
@@ -235,7 +235,7 @@ public partial class AnalyticsConversation : IEquatable<AnalyticsConversation>
     /// The end time of a conversation. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z
     /// </summary>
     /// <value>The end time of a conversation. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z</value>
-    [DataMember(Name = "conversationEnd", EmitDefaultValue = false)]
+    [JsonPropertyName("conversationEnd")]
     public DateTime? ConversationEnd { get; set; }
 
 
@@ -244,7 +244,7 @@ public partial class AnalyticsConversation : IEquatable<AnalyticsConversation>
     /// Unique identifier for the conversation
     /// </summary>
     /// <value>Unique identifier for the conversation</value>
-    [DataMember(Name = "conversationId", EmitDefaultValue = false)]
+    [JsonPropertyName("conversationId")]
     public string ConversationId { get; set; }
 
 
@@ -255,7 +255,7 @@ public partial class AnalyticsConversation : IEquatable<AnalyticsConversation>
     /// The start time of a conversation. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z
     /// </summary>
     /// <value>The start time of a conversation. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z</value>
-    [DataMember(Name = "conversationStart", EmitDefaultValue = false)]
+    [JsonPropertyName("conversationStart")]
     public DateTime? ConversationStart { get; set; }
 
 
@@ -264,7 +264,7 @@ public partial class AnalyticsConversation : IEquatable<AnalyticsConversation>
     /// Indicates a messaging conversation in which the customer participated by sending at least one message
     /// </summary>
     /// <value>Indicates a messaging conversation in which the customer participated by sending at least one message</value>
-    [DataMember(Name = "customerParticipation", EmitDefaultValue = false)]
+    [JsonPropertyName("customerParticipation")]
     public bool? CustomerParticipation { get; set; }
 
 
@@ -273,7 +273,7 @@ public partial class AnalyticsConversation : IEquatable<AnalyticsConversation>
     /// Identifier(s) of division(s) associated with a conversation
     /// </summary>
     /// <value>Identifier(s) of division(s) associated with a conversation</value>
-    [DataMember(Name = "divisionIds", EmitDefaultValue = false)]
+    [JsonPropertyName("divisionIds")]
     public List<string> DivisionIds { get; set; }
 
 
@@ -282,7 +282,7 @@ public partial class AnalyticsConversation : IEquatable<AnalyticsConversation>
     /// External tag for the conversation
     /// </summary>
     /// <value>External tag for the conversation</value>
-    [DataMember(Name = "externalTag", EmitDefaultValue = false)]
+    [JsonPropertyName("externalTag")]
     public string ExternalTag { get; set; }
 
 
@@ -291,7 +291,7 @@ public partial class AnalyticsConversation : IEquatable<AnalyticsConversation>
     /// The unique identifier(s) of the knowledge base(s) used
     /// </summary>
     /// <value>The unique identifier(s) of the knowledge base(s) used</value>
-    [DataMember(Name = "knowledgeBaseIds", EmitDefaultValue = false)]
+    [JsonPropertyName("knowledgeBaseIds")]
     public List<string> KnowledgeBaseIds { get; set; }
 
 
@@ -300,7 +300,7 @@ public partial class AnalyticsConversation : IEquatable<AnalyticsConversation>
     /// The lowest estimated average MOS among all the audio streams belonging to this conversation
     /// </summary>
     /// <value>The lowest estimated average MOS among all the audio streams belonging to this conversation</value>
-    [DataMember(Name = "mediaStatsMinConversationMos", EmitDefaultValue = false)]
+    [JsonPropertyName("mediaStatsMinConversationMos")]
     public double? MediaStatsMinConversationMos { get; set; }
 
 
@@ -309,7 +309,7 @@ public partial class AnalyticsConversation : IEquatable<AnalyticsConversation>
     /// The lowest R-factor value among all of the audio streams belonging to this conversation
     /// </summary>
     /// <value>The lowest R-factor value among all of the audio streams belonging to this conversation</value>
-    [DataMember(Name = "mediaStatsMinConversationRFactor", EmitDefaultValue = false)]
+    [JsonPropertyName("mediaStatsMinConversationRFactor")]
     public double? MediaStatsMinConversationRFactor { get; set; }
 
 
@@ -320,7 +320,7 @@ public partial class AnalyticsConversation : IEquatable<AnalyticsConversation>
     /// Indicates whether all flow sessions were self serviced
     /// </summary>
     /// <value>Indicates whether all flow sessions were self serviced</value>
-    [DataMember(Name = "selfServed", EmitDefaultValue = false)]
+    [JsonPropertyName("selfServed")]
     public bool? SelfServed { get; set; }
 
 
@@ -329,7 +329,7 @@ public partial class AnalyticsConversation : IEquatable<AnalyticsConversation>
     /// Evaluations associated with this conversation
     /// </summary>
     /// <value>Evaluations associated with this conversation</value>
-    [DataMember(Name = "evaluations", EmitDefaultValue = false)]
+    [JsonPropertyName("evaluations")]
     public List<AnalyticsEvaluation> Evaluations { get; set; }
 
 
@@ -338,7 +338,7 @@ public partial class AnalyticsConversation : IEquatable<AnalyticsConversation>
     /// Surveys associated with this conversation
     /// </summary>
     /// <value>Surveys associated with this conversation</value>
-    [DataMember(Name = "surveys", EmitDefaultValue = false)]
+    [JsonPropertyName("surveys")]
     public List<AnalyticsSurvey> Surveys { get; set; }
 
 
@@ -347,7 +347,7 @@ public partial class AnalyticsConversation : IEquatable<AnalyticsConversation>
     /// Resolutions associated with this conversation
     /// </summary>
     /// <value>Resolutions associated with this conversation</value>
-    [DataMember(Name = "resolutions", EmitDefaultValue = false)]
+    [JsonPropertyName("resolutions")]
     public List<AnalyticsResolution> Resolutions { get; set; }
 
 
@@ -356,7 +356,7 @@ public partial class AnalyticsConversation : IEquatable<AnalyticsConversation>
     /// Participants in the conversation
     /// </summary>
     /// <value>Participants in the conversation</value>
-    [DataMember(Name = "participants", EmitDefaultValue = false)]
+    [JsonPropertyName("participants")]
     public List<AnalyticsParticipant> Participants { get; set; }
 
 

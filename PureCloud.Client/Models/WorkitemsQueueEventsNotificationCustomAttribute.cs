@@ -7,13 +7,13 @@ namespace PureCloud.Client.Models;
 /// <summary>
 /// WorkitemsQueueEventsNotificationCustomAttribute
 /// </summary>
-[DataContract]
+
 public partial class WorkitemsQueueEventsNotificationCustomAttribute : IEquatable<WorkitemsQueueEventsNotificationCustomAttribute>
 {
     /// <summary>
     /// Gets or Sets DataType
     /// </summary>
-    [JsonConverter(typeof(JsonStringEnumConverter))]
+    
     public enum DataTypeEnum
     {
         /// <summary>
@@ -57,7 +57,7 @@ public partial class WorkitemsQueueEventsNotificationCustomAttribute : IEquatabl
     /// <summary>
     /// Gets or Sets DataType
     /// </summary>
-    [DataMember(Name = "dataType", EmitDefaultValue = false)]
+    [JsonPropertyName("dataType")]
     public DataTypeEnum? DataType { get; set; }
     /// <summary>
     /// Initializes a new instance of the <see cref="WorkitemsQueueEventsNotificationCustomAttribute" /> class.
@@ -78,7 +78,7 @@ public partial class WorkitemsQueueEventsNotificationCustomAttribute : IEquatabl
     /// <summary>
     /// Gets or Sets Value
     /// </summary>
-    [DataMember(Name = "value", EmitDefaultValue = false)]
+    [JsonPropertyName("value")]
     public string Value { get; set; }
 
 

@@ -7,14 +7,14 @@ namespace PureCloud.Client.Models;
 /// <summary>
 /// HealthInfo
 /// </summary>
-[DataContract]
+
 public partial class HealthInfo : IEquatable<HealthInfo>
 {
     /// <summary>
     /// Status of health computation for this intent.
     /// </summary>
     /// <value>Status of health computation for this intent.</value>
-    [JsonConverter(typeof(JsonStringEnumConverter))]
+    
     public enum StatusEnum
     {
         /// <summary>
@@ -46,7 +46,7 @@ public partial class HealthInfo : IEquatable<HealthInfo>
     /// <summary>
     /// Gets or Sets StaticValidationResults
     /// </summary>
-    [JsonConverter(typeof(JsonStringEnumConverter))]
+    
     public enum StaticValidationResultsEnum
     {
         /// <summary>
@@ -85,7 +85,7 @@ public partial class HealthInfo : IEquatable<HealthInfo>
     /// Status of health computation for this intent.
     /// </summary>
     /// <value>Status of health computation for this intent.</value>
-    [DataMember(Name = "status", EmitDefaultValue = false)]
+    [JsonPropertyName("status")]
     public StatusEnum? Status { get; set; }
     /// <summary>
     /// Initializes a new instance of the <see cref="HealthInfo" /> class.
@@ -115,7 +115,7 @@ public partial class HealthInfo : IEquatable<HealthInfo>
     /// Error details for the intent, if any.
     /// </summary>
     /// <value>Error details for the intent, if any.</value>
-    [DataMember(Name = "errorInfo", EmitDefaultValue = false)]
+    [JsonPropertyName("errorInfo")]
     public FlowHealthErrorInfo ErrorInfo { get; set; }
 
 
@@ -124,7 +124,7 @@ public partial class HealthInfo : IEquatable<HealthInfo>
     /// Overall health score for the intent ranged between 0 and 100 as 100 is the perfect health score.
     /// </summary>
     /// <value>Overall health score for the intent ranged between 0 and 100 as 100 is the perfect health score.</value>
-    [DataMember(Name = "overallScore", EmitDefaultValue = false)]
+    [JsonPropertyName("overallScore")]
     public float? OverallScore { get; set; }
 
 
@@ -133,7 +133,7 @@ public partial class HealthInfo : IEquatable<HealthInfo>
     /// Number of issues found in the intent.
     /// </summary>
     /// <value>Number of issues found in the intent.</value>
-    [DataMember(Name = "issueCount", EmitDefaultValue = false)]
+    [JsonPropertyName("issueCount")]
     public long? IssueCount { get; set; }
 
 
@@ -142,7 +142,7 @@ public partial class HealthInfo : IEquatable<HealthInfo>
     /// Validation results for the intent.
     /// </summary>
     /// <value>Validation results for the intent.</value>
-    [DataMember(Name = "staticValidationResults", EmitDefaultValue = false)]
+    [JsonPropertyName("staticValidationResults")]
     public List<StaticValidationResultsEnum> StaticValidationResults { get; set; }
 
 
@@ -151,7 +151,7 @@ public partial class HealthInfo : IEquatable<HealthInfo>
     /// Utterances for this intent.
     /// </summary>
     /// <value>Utterances for this intent.</value>
-    [DataMember(Name = "utterances", EmitDefaultValue = false)]
+    [JsonPropertyName("utterances")]
     public List<FlowHealthIntentUtterance> Utterances { get; set; }
 
 

@@ -1,12 +1,12 @@
-using System.Runtime.Serialization;
 using System.Text;
+using System.Text.Json.Serialization;
 
 namespace PureCloud.Client.Models;
 
 /// <summary>
 /// ConversationClearSettings
 /// </summary>
-[DataContract]
+
 public partial class ConversationClearSettings : IEquatable<ConversationClearSettings>
 {
     /// <summary>
@@ -25,7 +25,7 @@ public partial class ConversationClearSettings : IEquatable<ConversationClearSet
     /// whether or not conversation clear setting is enabled
     /// </summary>
     /// <value>whether or not conversation clear setting is enabled</value>
-    [DataMember(Name = "enabled", EmitDefaultValue = false)]
+    [JsonPropertyName("enabled")]
     public bool? Enabled { get; set; }
 
 

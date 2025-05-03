@@ -1,12 +1,12 @@
-using System.Runtime.Serialization;
 using System.Text;
+using System.Text.Json.Serialization;
 
 namespace PureCloud.Client.Models;
 
 /// <summary>
 /// ContestDataPrizes
 /// </summary>
-[DataContract]
+
 public partial class ContestDataPrizes : IEquatable<ContestDataPrizes>
 {
     /// <summary>
@@ -29,7 +29,7 @@ public partial class ContestDataPrizes : IEquatable<ContestDataPrizes>
     /// Tier of the prize
     /// </summary>
     /// <value>Tier of the prize</value>
-    [DataMember(Name = "tier", EmitDefaultValue = false)]
+    [JsonPropertyName("tier")]
     public int? Tier { get; set; }
 
 
@@ -38,7 +38,7 @@ public partial class ContestDataPrizes : IEquatable<ContestDataPrizes>
     /// Name of the prize
     /// </summary>
     /// <value>Name of the prize</value>
-    [DataMember(Name = "name", EmitDefaultValue = false)]
+    [JsonPropertyName("name")]
     public string Name { get; set; }
 
 
@@ -47,7 +47,7 @@ public partial class ContestDataPrizes : IEquatable<ContestDataPrizes>
     /// Id of the prize image
     /// </summary>
     /// <value>Id of the prize image</value>
-    [DataMember(Name = "imageId", EmitDefaultValue = false)]
+    [JsonPropertyName("imageId")]
     public string ImageId { get; set; }
 
 

@@ -7,14 +7,14 @@ namespace PureCloud.Client.Models;
 /// <summary>
 /// Sentiment analysis of this message.
 /// </summary>
-[DataContract]
+
 public partial class ConversationEnrichmentSentimentV2 : IEquatable<ConversationEnrichmentSentimentV2>
 {
     /// <summary>
     /// Detected Sentiment tag
     /// </summary>
     /// <value>Detected Sentiment tag</value>
-    [JsonConverter(typeof(JsonStringEnumConverter))]
+    
     public enum TagEnum
     {
         /// <summary>
@@ -53,7 +53,7 @@ public partial class ConversationEnrichmentSentimentV2 : IEquatable<Conversation
     /// Detected Sentiment tag
     /// </summary>
     /// <value>Detected Sentiment tag</value>
-    [DataMember(Name = "tag", EmitDefaultValue = false)]
+    [JsonPropertyName("tag")]
     public TagEnum? Tag { get; set; }
 
     /// <summary>

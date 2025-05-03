@@ -1,4 +1,3 @@
-using System.Runtime.Serialization;
 using System.Text;
 using System.Text.Json.Serialization;
 
@@ -7,7 +6,7 @@ namespace PureCloud.Client.Models;
 /// <summary>
 /// Create coaching appointment request
 /// </summary>
-[DataContract]
+
 public partial class CreateCoachingAppointmentRequest : IEquatable<CreateCoachingAppointmentRequest>
 {
 
@@ -54,7 +53,7 @@ public partial class CreateCoachingAppointmentRequest : IEquatable<CreateCoachin
     /// The name of coaching appointment.
     /// </summary>
     /// <value>The name of coaching appointment.</value>
-    [DataMember(Name = "name", EmitDefaultValue = false)]
+    [JsonPropertyName("name")]
     public string Name { get; set; }
 
 
@@ -63,7 +62,7 @@ public partial class CreateCoachingAppointmentRequest : IEquatable<CreateCoachin
     /// The description of coaching appointment.
     /// </summary>
     /// <value>The description of coaching appointment.</value>
-    [DataMember(Name = "description", EmitDefaultValue = false)]
+    [JsonPropertyName("description")]
     public string Description { get; set; }
 
 
@@ -72,7 +71,7 @@ public partial class CreateCoachingAppointmentRequest : IEquatable<CreateCoachin
     /// The date/time the coaching appointment starts. Times will be rounded down to the minute. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z
     /// </summary>
     /// <value>The date/time the coaching appointment starts. Times will be rounded down to the minute. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z</value>
-    [DataMember(Name = "dateStart", EmitDefaultValue = false)]
+    [JsonPropertyName("dateStart")]
     public DateTime? DateStart { get; set; }
 
 
@@ -81,7 +80,7 @@ public partial class CreateCoachingAppointmentRequest : IEquatable<CreateCoachin
     /// The duration of coaching appointment in minutes.
     /// </summary>
     /// <value>The duration of coaching appointment in minutes.</value>
-    [DataMember(Name = "lengthInMinutes", EmitDefaultValue = false)]
+    [JsonPropertyName("lengthInMinutes")]
     public int? LengthInMinutes { get; set; }
 
 
@@ -90,7 +89,7 @@ public partial class CreateCoachingAppointmentRequest : IEquatable<CreateCoachin
     /// The facilitator ID of coaching appointment.
     /// </summary>
     /// <value>The facilitator ID of coaching appointment.</value>
-    [DataMember(Name = "facilitatorId", EmitDefaultValue = false)]
+    [JsonPropertyName("facilitatorId")]
     public string FacilitatorId { get; set; }
 
 
@@ -99,7 +98,7 @@ public partial class CreateCoachingAppointmentRequest : IEquatable<CreateCoachin
     /// IDs of attendees in the coaching appointment.
     /// </summary>
     /// <value>IDs of attendees in the coaching appointment.</value>
-    [DataMember(Name = "attendeeIds", EmitDefaultValue = false)]
+    [JsonPropertyName("attendeeIds")]
     public List<string> AttendeeIds { get; set; }
 
 
@@ -108,7 +107,7 @@ public partial class CreateCoachingAppointmentRequest : IEquatable<CreateCoachin
     /// IDs of conversations associated with this coaching appointment.
     /// </summary>
     /// <value>IDs of conversations associated with this coaching appointment.</value>
-    [DataMember(Name = "conversationIds", EmitDefaultValue = false)]
+    [JsonPropertyName("conversationIds")]
     public List<string> ConversationIds { get; set; }
 
 
@@ -117,7 +116,7 @@ public partial class CreateCoachingAppointmentRequest : IEquatable<CreateCoachin
     /// IDs of documents associated with this coaching appointment.
     /// </summary>
     /// <value>IDs of documents associated with this coaching appointment.</value>
-    [DataMember(Name = "documentIds", EmitDefaultValue = false)]
+    [JsonPropertyName("documentIds")]
     public List<string> DocumentIds { get; set; }
 
 
@@ -126,7 +125,7 @@ public partial class CreateCoachingAppointmentRequest : IEquatable<CreateCoachin
     /// The Workforce Management schedule the appointment is associated with.
     /// </summary>
     /// <value>The Workforce Management schedule the appointment is associated with.</value>
-    [DataMember(Name = "wfmSchedule", EmitDefaultValue = false)]
+    [JsonPropertyName("wfmSchedule")]
     public WfmScheduleReference WfmSchedule { get; set; }
 
 
@@ -135,7 +134,7 @@ public partial class CreateCoachingAppointmentRequest : IEquatable<CreateCoachin
     /// The list of external links related to the appointment
     /// </summary>
     /// <value>The list of external links related to the appointment</value>
-    [DataMember(Name = "externalLinks", EmitDefaultValue = false)]
+    [JsonPropertyName("externalLinks")]
     public List<string> ExternalLinks { get; set; }
 
 
@@ -144,7 +143,7 @@ public partial class CreateCoachingAppointmentRequest : IEquatable<CreateCoachin
     /// The location of the appointment
     /// </summary>
     /// <value>The location of the appointment</value>
-    [DataMember(Name = "location", EmitDefaultValue = false)]
+    [JsonPropertyName("location")]
     public string Location { get; set; }
 
 
@@ -153,7 +152,7 @@ public partial class CreateCoachingAppointmentRequest : IEquatable<CreateCoachin
     /// Whether to share the insight data
     /// </summary>
     /// <value>Whether to share the insight data</value>
-    [DataMember(Name = "shareInsightsData", EmitDefaultValue = false)]
+    [JsonPropertyName("shareInsightsData")]
     public bool? ShareInsightsData { get; set; }
 
 

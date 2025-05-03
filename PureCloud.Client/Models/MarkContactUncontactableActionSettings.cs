@@ -7,13 +7,13 @@ namespace PureCloud.Client.Models;
 /// <summary>
 /// MarkContactUncontactableActionSettings
 /// </summary>
-[DataContract]
+
 public partial class MarkContactUncontactableActionSettings : IEquatable<MarkContactUncontactableActionSettings>
 {
     /// <summary>
     /// Gets or Sets MediaTypes
     /// </summary>
-    [JsonConverter(typeof(JsonStringEnumConverter))]
+    
     public enum MediaTypesEnum
     {
         /// <summary>
@@ -70,7 +70,7 @@ public partial class MarkContactUncontactableActionSettings : IEquatable<MarkCon
     /// A list of media types to evaluate.
     /// </summary>
     /// <value>A list of media types to evaluate.</value>
-    [DataMember(Name = "mediaTypes", EmitDefaultValue = false)]
+    [JsonPropertyName("mediaTypes")]
     public List<MediaTypesEnum> MediaTypes { get; set; }
 
 

@@ -1,12 +1,12 @@
-using System.Runtime.Serialization;
 using System.Text;
+using System.Text.Json.Serialization;
 
 namespace PureCloud.Client.Models;
 
 /// <summary>
 /// StatEventQueueTopicIntervalMetrics
 /// </summary>
-[DataContract]
+
 public partial class StatEventQueueTopicIntervalMetrics : IEquatable<StatEventQueueTopicIntervalMetrics>
 {
     /// <summary>
@@ -26,7 +26,7 @@ public partial class StatEventQueueTopicIntervalMetrics : IEquatable<StatEventQu
     /// <summary>
     /// Gets or Sets Interval
     /// </summary>
-    [DataMember(Name = "interval", EmitDefaultValue = false)]
+    [JsonPropertyName("interval")]
     public string Interval { get; set; }
 
 
@@ -34,7 +34,7 @@ public partial class StatEventQueueTopicIntervalMetrics : IEquatable<StatEventQu
     /// <summary>
     /// Gets or Sets Metrics
     /// </summary>
-    [DataMember(Name = "metrics", EmitDefaultValue = false)]
+    [JsonPropertyName("metrics")]
     public List<StatEventQueueTopicMetricStats> Metrics { get; set; }
 
 

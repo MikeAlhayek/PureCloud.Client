@@ -1,4 +1,3 @@
-using System.Runtime.Serialization;
 using System.Text;
 using System.Text.Json.Serialization;
 
@@ -7,7 +6,7 @@ namespace PureCloud.Client.Models;
 /// <summary>
 /// OpenIntegrationRequest
 /// </summary>
-[DataContract]
+
 public partial class OpenIntegrationRequest : IEquatable<OpenIntegrationRequest>
 {
 
@@ -42,7 +41,7 @@ public partial class OpenIntegrationRequest : IEquatable<OpenIntegrationRequest>
     /// The globally unique identifier for the object.
     /// </summary>
     /// <value>The globally unique identifier for the object.</value>
-    [DataMember(Name = "id", EmitDefaultValue = false)]
+    [JsonPropertyName("id")]
     public string Id { get; private set; }
 
 
@@ -51,7 +50,7 @@ public partial class OpenIntegrationRequest : IEquatable<OpenIntegrationRequest>
     /// The name of the Open messaging integration.
     /// </summary>
     /// <value>The name of the Open messaging integration.</value>
-    [DataMember(Name = "name", EmitDefaultValue = false)]
+    [JsonPropertyName("name")]
     public string Name { get; set; }
 
 
@@ -60,7 +59,7 @@ public partial class OpenIntegrationRequest : IEquatable<OpenIntegrationRequest>
     /// Defines the SupportedContent profile configured for an integration
     /// </summary>
     /// <value>Defines the SupportedContent profile configured for an integration</value>
-    [DataMember(Name = "supportedContent", EmitDefaultValue = false)]
+    [JsonPropertyName("supportedContent")]
     public SupportedContentReference SupportedContent { get; set; }
 
 
@@ -69,7 +68,7 @@ public partial class OpenIntegrationRequest : IEquatable<OpenIntegrationRequest>
     /// Defines the message settings to be applied for this integration
     /// </summary>
     /// <value>Defines the message settings to be applied for this integration</value>
-    [DataMember(Name = "messagingSetting", EmitDefaultValue = false)]
+    [JsonPropertyName("messagingSetting")]
     public MessagingSettingRequestReference MessagingSetting { get; set; }
 
 
@@ -78,7 +77,7 @@ public partial class OpenIntegrationRequest : IEquatable<OpenIntegrationRequest>
     /// The outbound notification webhook URL for the Open messaging integration.
     /// </summary>
     /// <value>The outbound notification webhook URL for the Open messaging integration.</value>
-    [DataMember(Name = "outboundNotificationWebhookUrl", EmitDefaultValue = false)]
+    [JsonPropertyName("outboundNotificationWebhookUrl")]
     public string OutboundNotificationWebhookUrl { get; set; }
 
 
@@ -87,7 +86,7 @@ public partial class OpenIntegrationRequest : IEquatable<OpenIntegrationRequest>
     /// The outbound notification webhook signature secret token. This token must be longer than 15 characters.
     /// </summary>
     /// <value>The outbound notification webhook signature secret token. This token must be longer than 15 characters.</value>
-    [DataMember(Name = "outboundNotificationWebhookSignatureSecretToken", EmitDefaultValue = false)]
+    [JsonPropertyName("outboundNotificationWebhookSignatureSecretToken")]
     public string OutboundNotificationWebhookSignatureSecretToken { get; set; }
 
 
@@ -96,7 +95,7 @@ public partial class OpenIntegrationRequest : IEquatable<OpenIntegrationRequest>
     /// The user specified headers for the Open messaging integration.
     /// </summary>
     /// <value>The user specified headers for the Open messaging integration.</value>
-    [DataMember(Name = "webhookHeaders", EmitDefaultValue = false)]
+    [JsonPropertyName("webhookHeaders")]
     public Dictionary<string, string> WebhookHeaders { get; set; }
 
 
@@ -105,7 +104,7 @@ public partial class OpenIntegrationRequest : IEquatable<OpenIntegrationRequest>
     /// The URI for this object
     /// </summary>
     /// <value>The URI for this object</value>
-    [DataMember(Name = "selfUri", EmitDefaultValue = false)]
+    [JsonPropertyName("selfUri")]
     public string SelfUri { get; private set; }
 
 

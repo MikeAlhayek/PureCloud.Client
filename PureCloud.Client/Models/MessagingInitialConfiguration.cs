@@ -7,14 +7,14 @@ namespace PureCloud.Client.Models;
 /// <summary>
 /// MessagingInitialConfiguration
 /// </summary>
-[DataContract]
+
 public partial class MessagingInitialConfiguration : IEquatable<MessagingInitialConfiguration>
 {
     /// <summary>
     /// The type of message platform from which the message originated.
     /// </summary>
     /// <value>The type of message platform from which the message originated.</value>
-    [JsonConverter(typeof(JsonStringEnumConverter))]
+    
     public enum MessageTypeEnum
     {
         /// <summary>
@@ -83,7 +83,7 @@ public partial class MessagingInitialConfiguration : IEquatable<MessagingInitial
     /// The type of message platform from which the message originated.
     /// </summary>
     /// <value>The type of message platform from which the message originated.</value>
-    [DataMember(Name = "messageType", EmitDefaultValue = false)]
+    [JsonPropertyName("messageType")]
     public MessageTypeEnum? MessageType { get; set; }
 
     /// <summary>
@@ -121,7 +121,7 @@ public partial class MessagingInitialConfiguration : IEquatable<MessagingInitial
     /// Address for the participant on receiving side of the message conversation. If the address is a phone number, E.164 format is recommended.
     /// </summary>
     /// <value>Address for the participant on receiving side of the message conversation. If the address is a phone number, E.164 format is recommended.</value>
-    [DataMember(Name = "toAddress", EmitDefaultValue = false)]
+    [JsonPropertyName("toAddress")]
     public string ToAddress { get; set; }
 
 
@@ -130,7 +130,7 @@ public partial class MessagingInitialConfiguration : IEquatable<MessagingInitial
     /// Address for the participant on the sending side of the message conversation. If the address is a phone number, E.164 format is recommended.
     /// </summary>
     /// <value>Address for the participant on the sending side of the message conversation. If the address is a phone number, E.164 format is recommended.</value>
-    [DataMember(Name = "fromAddress", EmitDefaultValue = false)]
+    [JsonPropertyName("fromAddress")]
     public string FromAddress { get; set; }
 
 
@@ -141,7 +141,7 @@ public partial class MessagingInitialConfiguration : IEquatable<MessagingInitial
     /// Indicates that this communication&#39;s initial state is held.
     /// </summary>
     /// <value>Indicates that this communication&#39;s initial state is held.</value>
-    [DataMember(Name = "held", EmitDefaultValue = false)]
+    [JsonPropertyName("held")]
     public bool? Held { get; set; }
 
 
@@ -150,7 +150,7 @@ public partial class MessagingInitialConfiguration : IEquatable<MessagingInitial
     /// Indicates that this communication&#39;s initial state is alerting. If false, the communication started in a connected state.
     /// </summary>
     /// <value>Indicates that this communication&#39;s initial state is alerting. If false, the communication started in a connected state.</value>
-    [DataMember(Name = "alerting", EmitDefaultValue = false)]
+    [JsonPropertyName("alerting")]
     public bool? Alerting { get; set; }
 
 
@@ -159,7 +159,7 @@ public partial class MessagingInitialConfiguration : IEquatable<MessagingInitial
     /// Indicates the direction of this communication with respect to the contact center. &#x60;true&#x60; means the communication is INBOUND. &#x60;false&#x60; means the communication is OUTBOUND.
     /// </summary>
     /// <value>Indicates the direction of this communication with respect to the contact center. &#x60;true&#x60; means the communication is INBOUND. &#x60;false&#x60; means the communication is OUTBOUND.</value>
-    [DataMember(Name = "inbound", EmitDefaultValue = false)]
+    [JsonPropertyName("inbound")]
     public bool? Inbound { get; set; }
 
 
@@ -168,7 +168,7 @@ public partial class MessagingInitialConfiguration : IEquatable<MessagingInitial
     /// The id of the communication (the \&quot;peer\&quot;) that \&quot;invited\&quot; this communication, if this occurred.
     /// </summary>
     /// <value>The id of the communication (the \&quot;peer\&quot;) that \&quot;invited\&quot; this communication, if this occurred.</value>
-    [DataMember(Name = "invitedBy", EmitDefaultValue = false)]
+    [JsonPropertyName("invitedBy")]
     public string InvitedBy { get; set; }
 
 
@@ -177,7 +177,7 @@ public partial class MessagingInitialConfiguration : IEquatable<MessagingInitial
     /// Additional metadata about this session which should be recorded by the platform but which will not be indexed or searchable. Primarily for diagnostic value. Any information that needs to be accessible through other components like Analytics should be moved to dedicated fields.
     /// </summary>
     /// <value>Additional metadata about this session which should be recorded by the platform but which will not be indexed or searchable. Primarily for diagnostic value. Any information that needs to be accessible through other components like Analytics should be moved to dedicated fields.</value>
-    [DataMember(Name = "additionalInfo", EmitDefaultValue = false)]
+    [JsonPropertyName("additionalInfo")]
     public Dictionary<string, string> AdditionalInfo { get; set; }
 
 

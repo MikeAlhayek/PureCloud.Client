@@ -1,4 +1,3 @@
-using System.Runtime.Serialization;
 using System.Text;
 using System.Text.Json.Serialization;
 
@@ -7,7 +6,7 @@ namespace PureCloud.Client.Models;
 /// <summary>
 /// SIPSearchPublicRequest
 /// </summary>
-[DataContract]
+
 public partial class SIPSearchPublicRequest : IEquatable<SIPSearchPublicRequest>
 {
 
@@ -46,7 +45,7 @@ public partial class SIPSearchPublicRequest : IEquatable<SIPSearchPublicRequest>
     /// The globally unique identifier for the object.
     /// </summary>
     /// <value>The globally unique identifier for the object.</value>
-    [DataMember(Name = "id", EmitDefaultValue = false)]
+    [JsonPropertyName("id")]
     public string Id { get; private set; }
 
 
@@ -54,7 +53,7 @@ public partial class SIPSearchPublicRequest : IEquatable<SIPSearchPublicRequest>
     /// <summary>
     /// Gets or Sets Name
     /// </summary>
-    [DataMember(Name = "name", EmitDefaultValue = false)]
+    [JsonPropertyName("name")]
     public string Name { get; set; }
 
 
@@ -63,7 +62,7 @@ public partial class SIPSearchPublicRequest : IEquatable<SIPSearchPublicRequest>
     /// unique identification of the placed call
     /// </summary>
     /// <value>unique identification of the placed call</value>
-    [DataMember(Name = "callId", EmitDefaultValue = false)]
+    [JsonPropertyName("callId")]
     public string CallId { get; set; }
 
 
@@ -72,7 +71,7 @@ public partial class SIPSearchPublicRequest : IEquatable<SIPSearchPublicRequest>
     /// SIP user to who the call was placed
     /// </summary>
     /// <value>SIP user to who the call was placed</value>
-    [DataMember(Name = "toUser", EmitDefaultValue = false)]
+    [JsonPropertyName("toUser")]
     public string ToUser { get; set; }
 
 
@@ -81,7 +80,7 @@ public partial class SIPSearchPublicRequest : IEquatable<SIPSearchPublicRequest>
     /// SIP user who placed the call
     /// </summary>
     /// <value>SIP user who placed the call</value>
-    [DataMember(Name = "fromUser", EmitDefaultValue = false)]
+    [JsonPropertyName("fromUser")]
     public string FromUser { get; set; }
 
 
@@ -90,7 +89,7 @@ public partial class SIPSearchPublicRequest : IEquatable<SIPSearchPublicRequest>
     /// Unique identification of the conversation
     /// </summary>
     /// <value>Unique identification of the conversation</value>
-    [DataMember(Name = "conversationId", EmitDefaultValue = false)]
+    [JsonPropertyName("conversationId")]
     public string ConversationId { get; set; }
 
 
@@ -99,7 +98,7 @@ public partial class SIPSearchPublicRequest : IEquatable<SIPSearchPublicRequest>
     /// Unique identification of the participant
     /// </summary>
     /// <value>Unique identification of the participant</value>
-    [DataMember(Name = "participantId", EmitDefaultValue = false)]
+    [JsonPropertyName("participantId")]
     public string ParticipantId { get; set; }
 
 
@@ -108,7 +107,7 @@ public partial class SIPSearchPublicRequest : IEquatable<SIPSearchPublicRequest>
     /// Start date of the search. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z
     /// </summary>
     /// <value>Start date of the search. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z</value>
-    [DataMember(Name = "dateStart", EmitDefaultValue = false)]
+    [JsonPropertyName("dateStart")]
     public DateTime? DateStart { get; set; }
 
 
@@ -117,7 +116,7 @@ public partial class SIPSearchPublicRequest : IEquatable<SIPSearchPublicRequest>
     /// End date of the search. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z
     /// </summary>
     /// <value>End date of the search. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z</value>
-    [DataMember(Name = "dateEnd", EmitDefaultValue = false)]
+    [JsonPropertyName("dateEnd")]
     public DateTime? DateEnd { get; set; }
 
 
@@ -126,7 +125,7 @@ public partial class SIPSearchPublicRequest : IEquatable<SIPSearchPublicRequest>
     /// The URI for this object
     /// </summary>
     /// <value>The URI for this object</value>
-    [DataMember(Name = "selfUri", EmitDefaultValue = false)]
+    [JsonPropertyName("selfUri")]
     public string SelfUri { get; private set; }
 
 

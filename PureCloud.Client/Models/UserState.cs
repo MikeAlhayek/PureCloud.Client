@@ -7,14 +7,14 @@ namespace PureCloud.Client.Models;
 /// <summary>
 /// UserState
 /// </summary>
-[DataContract]
+
 public partial class UserState : IEquatable<UserState>
 {
     /// <summary>
     /// User's current state.
     /// </summary>
     /// <value>User's current state.</value>
-    [JsonConverter(typeof(JsonStringEnumConverter))]
+    
     public enum StateEnum
     {
         /// <summary>
@@ -47,7 +47,7 @@ public partial class UserState : IEquatable<UserState>
     /// Reason for a change in the user's state.
     /// </summary>
     /// <value>Reason for a change in the user's state.</value>
-    [JsonConverter(typeof(JsonStringEnumConverter))]
+    
     public enum StateChangeReasonEnum
     {
         /// <summary>
@@ -98,13 +98,13 @@ public partial class UserState : IEquatable<UserState>
     /// User's current state.
     /// </summary>
     /// <value>User's current state.</value>
-    [DataMember(Name = "state", EmitDefaultValue = false)]
+    [JsonPropertyName("state")]
     public StateEnum? State { get; set; }
     /// <summary>
     /// Reason for a change in the user's state.
     /// </summary>
     /// <value>Reason for a change in the user's state.</value>
-    [DataMember(Name = "stateChangeReason", EmitDefaultValue = false)]
+    [JsonPropertyName("stateChangeReason")]
     public StateChangeReasonEnum? StateChangeReason { get; set; }
     /// <summary>
     /// Initializes a new instance of the <see cref="UserState" /> class.
@@ -128,7 +128,7 @@ public partial class UserState : IEquatable<UserState>
     /// Version of this user.
     /// </summary>
     /// <value>Version of this user.</value>
-    [DataMember(Name = "version", EmitDefaultValue = false)]
+    [JsonPropertyName("version")]
     public int? Version { get; set; }
 
 
@@ -139,7 +139,7 @@ public partial class UserState : IEquatable<UserState>
     /// Date that the state was last changed. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z
     /// </summary>
     /// <value>Date that the state was last changed. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z</value>
-    [DataMember(Name = "stateChangeDate", EmitDefaultValue = false)]
+    [JsonPropertyName("stateChangeDate")]
     public DateTime? StateChangeDate { get; private set; }
 
 

@@ -7,13 +7,13 @@ namespace PureCloud.Client.Models;
 /// <summary>
 /// WfmHistoricalDataUploadRequestStatusTopicHistoricalDataUploadRequestUpdate
 /// </summary>
-[DataContract]
+
 public partial class WfmHistoricalDataUploadRequestStatusTopicHistoricalDataUploadRequestUpdate : IEquatable<WfmHistoricalDataUploadRequestStatusTopicHistoricalDataUploadRequestUpdate>
 {
     /// <summary>
     /// Gets or Sets Status
     /// </summary>
-    [JsonConverter(typeof(JsonStringEnumConverter))]
+    
     public enum StatusEnum
     {
         /// <summary>
@@ -75,7 +75,7 @@ public partial class WfmHistoricalDataUploadRequestStatusTopicHistoricalDataUplo
     /// <summary>
     /// Gets or Sets Type
     /// </summary>
-    [JsonConverter(typeof(JsonStringEnumConverter))]
+    
     public enum TypeEnum
     {
         /// <summary>
@@ -101,12 +101,12 @@ public partial class WfmHistoricalDataUploadRequestStatusTopicHistoricalDataUplo
     /// <summary>
     /// Gets or Sets Status
     /// </summary>
-    [DataMember(Name = "status", EmitDefaultValue = false)]
+    [JsonPropertyName("status")]
     public StatusEnum? Status { get; set; }
     /// <summary>
     /// Gets or Sets Type
     /// </summary>
-    [DataMember(Name = "type", EmitDefaultValue = false)]
+    [JsonPropertyName("type")]
     public TypeEnum? Type { get; set; }
     /// <summary>
     /// Initializes a new instance of the <see cref="WfmHistoricalDataUploadRequestStatusTopicHistoricalDataUploadRequestUpdate" /> class.
@@ -143,7 +143,7 @@ public partial class WfmHistoricalDataUploadRequestStatusTopicHistoricalDataUplo
     /// <summary>
     /// Gets or Sets RequestId
     /// </summary>
-    [DataMember(Name = "requestId", EmitDefaultValue = false)]
+    [JsonPropertyName("requestId")]
     public string RequestId { get; set; }
 
 
@@ -151,7 +151,7 @@ public partial class WfmHistoricalDataUploadRequestStatusTopicHistoricalDataUplo
     /// <summary>
     /// Gets or Sets DateImportStarted
     /// </summary>
-    [DataMember(Name = "dateImportStarted", EmitDefaultValue = false)]
+    [JsonPropertyName("dateImportStarted")]
     public DateTime? DateImportStarted { get; set; }
 
 
@@ -159,7 +159,7 @@ public partial class WfmHistoricalDataUploadRequestStatusTopicHistoricalDataUplo
     /// <summary>
     /// Gets or Sets DateImportEnded
     /// </summary>
-    [DataMember(Name = "dateImportEnded", EmitDefaultValue = false)]
+    [JsonPropertyName("dateImportEnded")]
     public DateTime? DateImportEnded { get; set; }
 
 
@@ -167,7 +167,7 @@ public partial class WfmHistoricalDataUploadRequestStatusTopicHistoricalDataUplo
     /// <summary>
     /// Gets or Sets DateCreated
     /// </summary>
-    [DataMember(Name = "dateCreated", EmitDefaultValue = false)]
+    [JsonPropertyName("dateCreated")]
     public DateTime? DateCreated { get; set; }
 
 
@@ -175,7 +175,7 @@ public partial class WfmHistoricalDataUploadRequestStatusTopicHistoricalDataUplo
     /// <summary>
     /// Gets or Sets DateModified
     /// </summary>
-    [DataMember(Name = "dateModified", EmitDefaultValue = false)]
+    [JsonPropertyName("dateModified")]
     public DateTime? DateModified { get; set; }
 
 
@@ -185,7 +185,7 @@ public partial class WfmHistoricalDataUploadRequestStatusTopicHistoricalDataUplo
     /// <summary>
     /// Gets or Sets Error
     /// </summary>
-    [DataMember(Name = "error", EmitDefaultValue = false)]
+    [JsonPropertyName("error")]
     public string Error { get; set; }
 
 
@@ -193,7 +193,7 @@ public partial class WfmHistoricalDataUploadRequestStatusTopicHistoricalDataUplo
     /// <summary>
     /// Gets or Sets Active
     /// </summary>
-    [DataMember(Name = "active", EmitDefaultValue = false)]
+    [JsonPropertyName("active")]
     public bool? Active { get; set; }
 
 
@@ -203,7 +203,7 @@ public partial class WfmHistoricalDataUploadRequestStatusTopicHistoricalDataUplo
     /// <summary>
     /// Gets or Sets FileName
     /// </summary>
-    [DataMember(Name = "fileName", EmitDefaultValue = false)]
+    [JsonPropertyName("fileName")]
     public string FileName { get; set; }
 
 
@@ -211,7 +211,7 @@ public partial class WfmHistoricalDataUploadRequestStatusTopicHistoricalDataUplo
     /// <summary>
     /// Gets or Sets FileSize
     /// </summary>
-    [DataMember(Name = "fileSize", EmitDefaultValue = false)]
+    [JsonPropertyName("fileSize")]
     public long? FileSize { get; set; }
 
 

@@ -7,14 +7,14 @@ namespace PureCloud.Client.Models;
 /// <summary>
 /// Referrer
 /// </summary>
-[DataContract]
+
 public partial class Referrer : IEquatable<Referrer>
 {
     /// <summary>
     /// Type of referrer (e.g. search, social).
     /// </summary>
     /// <value>Type of referrer (e.g. search, social).</value>
-    [JsonConverter(typeof(JsonStringEnumConverter))]
+    
     public enum MediumEnum
     {
         /// <summary>
@@ -65,7 +65,7 @@ public partial class Referrer : IEquatable<Referrer>
     /// Type of referrer (e.g. search, social).
     /// </summary>
     /// <value>Type of referrer (e.g. search, social).</value>
-    [DataMember(Name = "medium", EmitDefaultValue = false)]
+    [JsonPropertyName("medium")]
     public MediumEnum? Medium { get; set; }
 
     /// <summary>
@@ -105,7 +105,7 @@ public partial class Referrer : IEquatable<Referrer>
     /// Referrer URL.
     /// </summary>
     /// <value>Referrer URL.</value>
-    [DataMember(Name = "url", EmitDefaultValue = false)]
+    [JsonPropertyName("url")]
     public string Url { get; set; }
 
 
@@ -114,7 +114,7 @@ public partial class Referrer : IEquatable<Referrer>
     /// Referrer URL domain.
     /// </summary>
     /// <value>Referrer URL domain.</value>
-    [DataMember(Name = "domain", EmitDefaultValue = false)]
+    [JsonPropertyName("domain")]
     public string Domain { get; set; }
 
 
@@ -123,7 +123,7 @@ public partial class Referrer : IEquatable<Referrer>
     /// Referrer URL hostname.
     /// </summary>
     /// <value>Referrer URL hostname.</value>
-    [DataMember(Name = "hostname", EmitDefaultValue = false)]
+    [JsonPropertyName("hostname")]
     public string Hostname { get; set; }
 
 
@@ -132,7 +132,7 @@ public partial class Referrer : IEquatable<Referrer>
     /// Referrer keywords.
     /// </summary>
     /// <value>Referrer keywords.</value>
-    [DataMember(Name = "keywords", EmitDefaultValue = false)]
+    [JsonPropertyName("keywords")]
     public string Keywords { get; set; }
 
 
@@ -141,7 +141,7 @@ public partial class Referrer : IEquatable<Referrer>
     /// Referrer URL pathname.
     /// </summary>
     /// <value>Referrer URL pathname.</value>
-    [DataMember(Name = "pathname", EmitDefaultValue = false)]
+    [JsonPropertyName("pathname")]
     public string Pathname { get; set; }
 
 
@@ -150,7 +150,7 @@ public partial class Referrer : IEquatable<Referrer>
     /// Referrer URL querystring.
     /// </summary>
     /// <value>Referrer URL querystring.</value>
-    [DataMember(Name = "queryString", EmitDefaultValue = false)]
+    [JsonPropertyName("queryString")]
     public string QueryString { get; set; }
 
 
@@ -159,7 +159,7 @@ public partial class Referrer : IEquatable<Referrer>
     /// Referrer URL fragment.
     /// </summary>
     /// <value>Referrer URL fragment.</value>
-    [DataMember(Name = "fragment", EmitDefaultValue = false)]
+    [JsonPropertyName("fragment")]
     public string Fragment { get; set; }
 
 
@@ -168,7 +168,7 @@ public partial class Referrer : IEquatable<Referrer>
     /// Name of referrer (e.g. Yahoo!, Google, InfoSpace).
     /// </summary>
     /// <value>Name of referrer (e.g. Yahoo!, Google, InfoSpace).</value>
-    [DataMember(Name = "name", EmitDefaultValue = false)]
+    [JsonPropertyName("name")]
     public string Name { get; set; }
 
 

@@ -7,14 +7,14 @@ namespace PureCloud.Client.Models;
 /// <summary>
 /// UserScheduleAdherence
 /// </summary>
-[DataContract]
+
 public partial class UserScheduleAdherence : IEquatable<UserScheduleAdherence>
 {
     /// <summary>
     /// Activity for which the user is scheduled
     /// </summary>
     /// <value>Activity for which the user is scheduled</value>
-    [JsonConverter(typeof(JsonStringEnumConverter))]
+    
     public enum ScheduledActivityCategoryEnum
     {
         /// <summary>
@@ -83,7 +83,7 @@ public partial class UserScheduleAdherence : IEquatable<UserScheduleAdherence>
     /// Actual underlying system presence value
     /// </summary>
     /// <value>Actual underlying system presence value</value>
-    [JsonConverter(typeof(JsonStringEnumConverter))]
+    
     public enum SystemPresenceEnum
     {
         /// <summary>
@@ -158,7 +158,7 @@ public partial class UserScheduleAdherence : IEquatable<UserScheduleAdherence>
     /// Actual underlying routing status, used to determine whether a user is actually in adherence when OnQueue
     /// </summary>
     /// <value>Actual underlying routing status, used to determine whether a user is actually in adherence when OnQueue</value>
-    [JsonConverter(typeof(JsonStringEnumConverter))]
+    
     public enum RoutingStatusEnum
     {
         /// <summary>
@@ -203,7 +203,7 @@ public partial class UserScheduleAdherence : IEquatable<UserScheduleAdherence>
     /// Activity in which the user is actually engaged
     /// </summary>
     /// <value>Activity in which the user is actually engaged</value>
-    [JsonConverter(typeof(JsonStringEnumConverter))]
+    
     public enum ActualActivityCategoryEnum
     {
         /// <summary>
@@ -272,7 +272,7 @@ public partial class UserScheduleAdherence : IEquatable<UserScheduleAdherence>
     /// The user's current adherence state
     /// </summary>
     /// <value>The user's current adherence state</value>
-    [JsonConverter(typeof(JsonStringEnumConverter))]
+    
     public enum AdherenceStateEnum
     {
         /// <summary>
@@ -323,7 +323,7 @@ public partial class UserScheduleAdherence : IEquatable<UserScheduleAdherence>
     /// The impact of the user's current adherenceState
     /// </summary>
     /// <value>The impact of the user's current adherenceState</value>
-    [JsonConverter(typeof(JsonStringEnumConverter))]
+    
     public enum ImpactEnum
     {
         /// <summary>
@@ -362,37 +362,37 @@ public partial class UserScheduleAdherence : IEquatable<UserScheduleAdherence>
     /// Activity for which the user is scheduled
     /// </summary>
     /// <value>Activity for which the user is scheduled</value>
-    [DataMember(Name = "scheduledActivityCategory", EmitDefaultValue = false)]
+    [JsonPropertyName("scheduledActivityCategory")]
     public ScheduledActivityCategoryEnum? ScheduledActivityCategory { get; private set; }
     /// <summary>
     /// Actual underlying system presence value
     /// </summary>
     /// <value>Actual underlying system presence value</value>
-    [DataMember(Name = "systemPresence", EmitDefaultValue = false)]
+    [JsonPropertyName("systemPresence")]
     public SystemPresenceEnum? SystemPresence { get; private set; }
     /// <summary>
     /// Actual underlying routing status, used to determine whether a user is actually in adherence when OnQueue
     /// </summary>
     /// <value>Actual underlying routing status, used to determine whether a user is actually in adherence when OnQueue</value>
-    [DataMember(Name = "routingStatus", EmitDefaultValue = false)]
+    [JsonPropertyName("routingStatus")]
     public RoutingStatusEnum? RoutingStatus { get; private set; }
     /// <summary>
     /// Activity in which the user is actually engaged
     /// </summary>
     /// <value>Activity in which the user is actually engaged</value>
-    [DataMember(Name = "actualActivityCategory", EmitDefaultValue = false)]
+    [JsonPropertyName("actualActivityCategory")]
     public ActualActivityCategoryEnum? ActualActivityCategory { get; private set; }
     /// <summary>
     /// The user's current adherence state
     /// </summary>
     /// <value>The user's current adherence state</value>
-    [DataMember(Name = "adherenceState", EmitDefaultValue = false)]
+    [JsonPropertyName("adherenceState")]
     public AdherenceStateEnum? AdherenceState { get; private set; }
     /// <summary>
     /// The impact of the user's current adherenceState
     /// </summary>
     /// <value>The impact of the user's current adherenceState</value>
-    [DataMember(Name = "impact", EmitDefaultValue = false)]
+    [JsonPropertyName("impact")]
     public ImpactEnum? Impact { get; private set; }
     /// <summary>
     /// Initializes a new instance of the <see cref="UserScheduleAdherence" /> class.
@@ -410,7 +410,7 @@ public partial class UserScheduleAdherence : IEquatable<UserScheduleAdherence>
     /// The globally unique identifier for the object.
     /// </summary>
     /// <value>The globally unique identifier for the object.</value>
-    [DataMember(Name = "id", EmitDefaultValue = false)]
+    [JsonPropertyName("id")]
     public string Id { get; private set; }
 
 
@@ -418,7 +418,7 @@ public partial class UserScheduleAdherence : IEquatable<UserScheduleAdherence>
     /// <summary>
     /// Gets or Sets Name
     /// </summary>
-    [DataMember(Name = "name", EmitDefaultValue = false)]
+    [JsonPropertyName("name")]
     public string Name { get; set; }
 
 
@@ -427,7 +427,7 @@ public partial class UserScheduleAdherence : IEquatable<UserScheduleAdherence>
     /// The user for whom this status applies
     /// </summary>
     /// <value>The user for whom this status applies</value>
-    [DataMember(Name = "user", EmitDefaultValue = false)]
+    [JsonPropertyName("user")]
     public UserReference User { get; private set; }
 
 
@@ -436,7 +436,7 @@ public partial class UserScheduleAdherence : IEquatable<UserScheduleAdherence>
     /// The business unit to which this user belongs
     /// </summary>
     /// <value>The business unit to which this user belongs</value>
-    [DataMember(Name = "businessUnit", EmitDefaultValue = false)]
+    [JsonPropertyName("businessUnit")]
     public BusinessUnitReference BusinessUnit { get; private set; }
 
 
@@ -445,7 +445,7 @@ public partial class UserScheduleAdherence : IEquatable<UserScheduleAdherence>
     /// The management unit to which this user belongs
     /// </summary>
     /// <value>The management unit to which this user belongs</value>
-    [DataMember(Name = "managementUnit", EmitDefaultValue = false)]
+    [JsonPropertyName("managementUnit")]
     public ManagementUnitReference ManagementUnit { get; private set; }
 
 
@@ -454,7 +454,7 @@ public partial class UserScheduleAdherence : IEquatable<UserScheduleAdherence>
     /// The team to which this user belongs
     /// </summary>
     /// <value>The team to which this user belongs</value>
-    [DataMember(Name = "team", EmitDefaultValue = false)]
+    [JsonPropertyName("team")]
     public TeamReference Team { get; private set; }
 
 
@@ -465,7 +465,7 @@ public partial class UserScheduleAdherence : IEquatable<UserScheduleAdherence>
     /// Activity code for which the user is currently scheduled
     /// </summary>
     /// <value>Activity code for which the user is currently scheduled</value>
-    [DataMember(Name = "scheduledActivityCode", EmitDefaultValue = false)]
+    [JsonPropertyName("scheduledActivityCode")]
     public ActivityCodeSummary ScheduledActivityCode { get; private set; }
 
 
@@ -476,7 +476,7 @@ public partial class UserScheduleAdherence : IEquatable<UserScheduleAdherence>
     /// Organization Secondary Presence Id.
     /// </summary>
     /// <value>Organization Secondary Presence Id.</value>
-    [DataMember(Name = "organizationSecondaryPresenceId", EmitDefaultValue = false)]
+    [JsonPropertyName("organizationSecondaryPresenceId")]
     public string OrganizationSecondaryPresenceId { get; private set; }
 
 
@@ -489,7 +489,7 @@ public partial class UserScheduleAdherence : IEquatable<UserScheduleAdherence>
     /// Whether the user is marked OutOfOffice
     /// </summary>
     /// <value>Whether the user is marked OutOfOffice</value>
-    [DataMember(Name = "isOutOfOffice", EmitDefaultValue = false)]
+    [JsonPropertyName("isOutOfOffice")]
     public bool? IsOutOfOffice { get; private set; }
 
 
@@ -502,7 +502,7 @@ public partial class UserScheduleAdherence : IEquatable<UserScheduleAdherence>
     /// Currently applicable explanation for the adherence state
     /// </summary>
     /// <value>Currently applicable explanation for the adherence state</value>
-    [DataMember(Name = "adherenceExplanation", EmitDefaultValue = false)]
+    [JsonPropertyName("adherenceExplanation")]
     public RealTimeAdherenceExplanation AdherenceExplanation { get; private set; }
 
 
@@ -511,7 +511,7 @@ public partial class UserScheduleAdherence : IEquatable<UserScheduleAdherence>
     /// Time when the user entered the current adherenceState in ISO-8601 format
     /// </summary>
     /// <value>Time when the user entered the current adherenceState in ISO-8601 format</value>
-    [DataMember(Name = "timeOfAdherenceChange", EmitDefaultValue = false)]
+    [JsonPropertyName("timeOfAdherenceChange")]
     public DateTime? TimeOfAdherenceChange { get; private set; }
 
 
@@ -520,7 +520,7 @@ public partial class UserScheduleAdherence : IEquatable<UserScheduleAdherence>
     /// Time when presence was last updated. Used to calculate time in current status. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z
     /// </summary>
     /// <value>Time when presence was last updated. Used to calculate time in current status. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z</value>
-    [DataMember(Name = "presenceUpdateTime", EmitDefaultValue = false)]
+    [JsonPropertyName("presenceUpdateTime")]
     public DateTime? PresenceUpdateTime { get; private set; }
 
 
@@ -529,7 +529,7 @@ public partial class UserScheduleAdherence : IEquatable<UserScheduleAdherence>
     /// The list of queues to which this user is joined
     /// </summary>
     /// <value>The list of queues to which this user is joined</value>
-    [DataMember(Name = "activeQueues", EmitDefaultValue = false)]
+    [JsonPropertyName("activeQueues")]
     public List<QueueReference> ActiveQueues { get; private set; }
 
 
@@ -538,7 +538,7 @@ public partial class UserScheduleAdherence : IEquatable<UserScheduleAdherence>
     /// Time when the list of active queues for this user was last updated. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z
     /// </summary>
     /// <value>Time when the list of active queues for this user was last updated. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z</value>
-    [DataMember(Name = "activeQueuesModifiedTime", EmitDefaultValue = false)]
+    [JsonPropertyName("activeQueuesModifiedTime")]
     public DateTime? ActiveQueuesModifiedTime { get; private set; }
 
 
@@ -547,7 +547,7 @@ public partial class UserScheduleAdherence : IEquatable<UserScheduleAdherence>
     /// For notification purposes. Used to indicate that a user was removed from the management unit
     /// </summary>
     /// <value>For notification purposes. Used to indicate that a user was removed from the management unit</value>
-    [DataMember(Name = "removedFromManagementUnit", EmitDefaultValue = false)]
+    [JsonPropertyName("removedFromManagementUnit")]
     public bool? RemovedFromManagementUnit { get; private set; }
 
 
@@ -556,7 +556,7 @@ public partial class UserScheduleAdherence : IEquatable<UserScheduleAdherence>
     /// A list of upcoming activities for which the user is scheduled
     /// </summary>
     /// <value>A list of upcoming activities for which the user is scheduled</value>
-    [DataMember(Name = "nextActivityReminders", EmitDefaultValue = false)]
+    [JsonPropertyName("nextActivityReminders")]
     public List<UserNextActivityReminder> NextActivityReminders { get; private set; }
 
 
@@ -565,7 +565,7 @@ public partial class UserScheduleAdherence : IEquatable<UserScheduleAdherence>
     /// Indicates whether the on-time adherence notification should be suppressed for the user
     /// </summary>
     /// <value>Indicates whether the on-time adherence notification should be suppressed for the user</value>
-    [DataMember(Name = "suppressOnTimeReminder", EmitDefaultValue = false)]
+    [JsonPropertyName("suppressOnTimeReminder")]
     public bool? SuppressOnTimeReminder { get; private set; }
 
 
@@ -574,7 +574,7 @@ public partial class UserScheduleAdherence : IEquatable<UserScheduleAdherence>
     /// The URI for this object
     /// </summary>
     /// <value>The URI for this object</value>
-    [DataMember(Name = "selfUri", EmitDefaultValue = false)]
+    [JsonPropertyName("selfUri")]
     public string SelfUri { get; private set; }
 
 

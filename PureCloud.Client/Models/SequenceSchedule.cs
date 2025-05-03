@@ -1,4 +1,3 @@
-using System.Runtime.Serialization;
 using System.Text;
 using System.Text.Json.Serialization;
 
@@ -7,7 +6,7 @@ namespace PureCloud.Client.Models;
 /// <summary>
 /// SequenceSchedule
 /// </summary>
-[DataContract]
+
 public partial class SequenceSchedule : IEquatable<SequenceSchedule>
 {
 
@@ -42,7 +41,7 @@ public partial class SequenceSchedule : IEquatable<SequenceSchedule>
     /// The globally unique identifier for the object.
     /// </summary>
     /// <value>The globally unique identifier for the object.</value>
-    [DataMember(Name = "id", EmitDefaultValue = false)]
+    [JsonPropertyName("id")]
     public string Id { get; private set; }
 
 
@@ -50,7 +49,7 @@ public partial class SequenceSchedule : IEquatable<SequenceSchedule>
     /// <summary>
     /// Gets or Sets Name
     /// </summary>
-    [DataMember(Name = "name", EmitDefaultValue = false)]
+    [JsonPropertyName("name")]
     public string Name { get; set; }
 
 
@@ -59,7 +58,7 @@ public partial class SequenceSchedule : IEquatable<SequenceSchedule>
     /// Creation time of the entity. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z
     /// </summary>
     /// <value>Creation time of the entity. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z</value>
-    [DataMember(Name = "dateCreated", EmitDefaultValue = false)]
+    [JsonPropertyName("dateCreated")]
     public DateTime? DateCreated { get; private set; }
 
 
@@ -68,7 +67,7 @@ public partial class SequenceSchedule : IEquatable<SequenceSchedule>
     /// Last modified time of the entity. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z
     /// </summary>
     /// <value>Last modified time of the entity. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z</value>
-    [DataMember(Name = "dateModified", EmitDefaultValue = false)]
+    [JsonPropertyName("dateModified")]
     public DateTime? DateModified { get; private set; }
 
 
@@ -77,7 +76,7 @@ public partial class SequenceSchedule : IEquatable<SequenceSchedule>
     /// Required for updates, must match the version number of the most recent update
     /// </summary>
     /// <value>Required for updates, must match the version number of the most recent update</value>
-    [DataMember(Name = "version", EmitDefaultValue = false)]
+    [JsonPropertyName("version")]
     public int? Version { get; set; }
 
 
@@ -86,7 +85,7 @@ public partial class SequenceSchedule : IEquatable<SequenceSchedule>
     /// A list of intervals during which to run the associated CampaignSequence.
     /// </summary>
     /// <value>A list of intervals during which to run the associated CampaignSequence.</value>
-    [DataMember(Name = "intervals", EmitDefaultValue = false)]
+    [JsonPropertyName("intervals")]
     public List<ScheduleInterval> Intervals { get; set; }
 
 
@@ -95,7 +94,7 @@ public partial class SequenceSchedule : IEquatable<SequenceSchedule>
     /// Recurring schedules of the campaign
     /// </summary>
     /// <value>Recurring schedules of the campaign</value>
-    [DataMember(Name = "recurrences", EmitDefaultValue = false)]
+    [JsonPropertyName("recurrences")]
     public List<Reoccurrence> Recurrences { get; set; }
 
 
@@ -104,7 +103,7 @@ public partial class SequenceSchedule : IEquatable<SequenceSchedule>
     /// The time zone for this SequenceSchedule. Defaults to UTC if empty or not provided. See here for a list of valid time zones https://www.iana.org/time-zones
     /// </summary>
     /// <value>The time zone for this SequenceSchedule. Defaults to UTC if empty or not provided. See here for a list of valid time zones https://www.iana.org/time-zones</value>
-    [DataMember(Name = "timeZone", EmitDefaultValue = false)]
+    [JsonPropertyName("timeZone")]
     public string TimeZone { get; set; }
 
 
@@ -113,7 +112,7 @@ public partial class SequenceSchedule : IEquatable<SequenceSchedule>
     /// The CampaignSequence that this SequenceSchedule is for.
     /// </summary>
     /// <value>The CampaignSequence that this SequenceSchedule is for.</value>
-    [DataMember(Name = "sequence", EmitDefaultValue = false)]
+    [JsonPropertyName("sequence")]
     public DomainEntityRef Sequence { get; set; }
 
 
@@ -122,7 +121,7 @@ public partial class SequenceSchedule : IEquatable<SequenceSchedule>
     /// The URI for this object
     /// </summary>
     /// <value>The URI for this object</value>
-    [DataMember(Name = "selfUri", EmitDefaultValue = false)]
+    [JsonPropertyName("selfUri")]
     public string SelfUri { get; private set; }
 
 

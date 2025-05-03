@@ -1,12 +1,12 @@
-using System.Runtime.Serialization;
 using System.Text;
+using System.Text.Json.Serialization;
 
 namespace PureCloud.Client.Models;
 
 /// <summary>
 /// MediaEndpointStatistics
 /// </summary>
-[DataContract]
+
 public partial class MediaEndpointStatistics : IEquatable<MediaEndpointStatistics>
 {
     /// <summary>
@@ -35,7 +35,7 @@ public partial class MediaEndpointStatistics : IEquatable<MediaEndpointStatistic
     /// Trunk information utilized when creating the media endpoint
     /// </summary>
     /// <value>Trunk information utilized when creating the media endpoint</value>
-    [DataMember(Name = "trunk", EmitDefaultValue = false)]
+    [JsonPropertyName("trunk")]
     public MediaStatisticsTrunkInfo Trunk { get; set; }
 
 
@@ -44,7 +44,7 @@ public partial class MediaEndpointStatistics : IEquatable<MediaEndpointStatistic
     /// Station information associated with media endpoint
     /// </summary>
     /// <value>Station information associated with media endpoint</value>
-    [DataMember(Name = "station", EmitDefaultValue = false)]
+    [JsonPropertyName("station")]
     public NamedEntity Station { get; set; }
 
 
@@ -53,7 +53,7 @@ public partial class MediaEndpointStatistics : IEquatable<MediaEndpointStatistic
     /// User information associated media endpoint
     /// </summary>
     /// <value>User information associated media endpoint</value>
-    [DataMember(Name = "user", EmitDefaultValue = false)]
+    [JsonPropertyName("user")]
     public NamedEntity User { get; set; }
 
 
@@ -62,7 +62,7 @@ public partial class MediaEndpointStatistics : IEquatable<MediaEndpointStatistic
     /// The ICE protocol statistics and details. Reference: https://www.rfc-editor.org/rfc/rfc5245
     /// </summary>
     /// <value>The ICE protocol statistics and details. Reference: https://www.rfc-editor.org/rfc/rfc5245</value>
-    [DataMember(Name = "ice", EmitDefaultValue = false)]
+    [JsonPropertyName("ice")]
     public MediaIceStatistics Ice { get; set; }
 
 
@@ -71,7 +71,7 @@ public partial class MediaEndpointStatistics : IEquatable<MediaEndpointStatistic
     /// Statistics of sent and received RTP. Reference: https://www.rfc-editor.org/rfc/rfc3550
     /// </summary>
     /// <value>Statistics of sent and received RTP. Reference: https://www.rfc-editor.org/rfc/rfc3550</value>
-    [DataMember(Name = "rtp", EmitDefaultValue = false)]
+    [JsonPropertyName("rtp")]
     public MediaRtpStatistics Rtp { get; set; }
 
 
@@ -80,7 +80,7 @@ public partial class MediaEndpointStatistics : IEquatable<MediaEndpointStatistic
     /// Media reconnect attempt count
     /// </summary>
     /// <value>Media reconnect attempt count</value>
-    [DataMember(Name = "reconnectAttemptCount", EmitDefaultValue = false)]
+    [JsonPropertyName("reconnectAttemptCount")]
     public int? ReconnectAttemptCount { get; set; }
 
 

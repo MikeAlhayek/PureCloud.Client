@@ -7,14 +7,14 @@ namespace PureCloud.Client.Models;
 /// <summary>
 /// ContactEnrichRequest
 /// </summary>
-[DataContract]
+
 public partial class ContactEnrichRequest : IEquatable<ContactEnrichRequest>
 {
     /// <summary>
     /// The action that should be taken based on any Contacts found by `matchingIdentifiers`.
     /// </summary>
     /// <value>The action that should be taken based on any Contacts found by `matchingIdentifiers`.</value>
-    [JsonConverter(typeof(JsonStringEnumConverter))]
+    
     public enum ActionEnum
     {
         /// <summary>
@@ -53,7 +53,7 @@ public partial class ContactEnrichRequest : IEquatable<ContactEnrichRequest>
     /// The action that should be taken based on any Contacts found by `matchingIdentifiers`.
     /// </summary>
     /// <value>The action that should be taken based on any Contacts found by `matchingIdentifiers`.</value>
-    [DataMember(Name = "action", EmitDefaultValue = false)]
+    [JsonPropertyName("action")]
     public ActionEnum? Action { get; set; }
 
     /// <summary>
@@ -89,7 +89,7 @@ public partial class ContactEnrichRequest : IEquatable<ContactEnrichRequest>
     /// A user-specified tracker string, only useful in the Bulk-Enrich API. If one Bulk-Enrich operation in a request fails, the requested operation will be repeated in the Bulk API response, including this id field, allowing associating of request and response operations.
     /// </summary>
     /// <value>A user-specified tracker string, only useful in the Bulk-Enrich API. If one Bulk-Enrich operation in a request fails, the requested operation will be repeated in the Bulk API response, including this id field, allowing associating of request and response operations.</value>
-    [DataMember(Name = "id", EmitDefaultValue = false)]
+    [JsonPropertyName("id")]
     public string Id { get; set; }
 
 
@@ -98,7 +98,7 @@ public partial class ContactEnrichRequest : IEquatable<ContactEnrichRequest>
     /// The division to which this entity belongs.
     /// </summary>
     /// <value>The division to which this entity belongs.</value>
-    [DataMember(Name = "division", EmitDefaultValue = false)]
+    [JsonPropertyName("division")]
     public WritableStarrableDivision Division { get; set; }
 
 
@@ -107,7 +107,7 @@ public partial class ContactEnrichRequest : IEquatable<ContactEnrichRequest>
     /// An ordered list of one or more Identifiers which might each be claimed by a Contact. &#x60;action&#x60; describes what to do with any possibly matching Contacts. Identifier lookups will occur in the order specified here.
     /// </summary>
     /// <value>An ordered list of one or more Identifiers which might each be claimed by a Contact. &#x60;action&#x60; describes what to do with any possibly matching Contacts. Identifier lookups will occur in the order specified here.</value>
-    [DataMember(Name = "matchingIdentifiers", EmitDefaultValue = false)]
+    [JsonPropertyName("matchingIdentifiers")]
     public List<ContactIdentifier> MatchingIdentifiers { get; set; }
 
 
@@ -118,7 +118,7 @@ public partial class ContactEnrichRequest : IEquatable<ContactEnrichRequest>
     /// Data to be added, either as an update to an existing Contact or the body of a new Contact. Omitting a field in this contract means that it will be treated as null in the &#x60;fieldRules&#x60; logic.
     /// </summary>
     /// <value>Data to be added, either as an update to an existing Contact or the body of a new Contact. Omitting a field in this contract means that it will be treated as null in the &#x60;fieldRules&#x60; logic.</value>
-    [DataMember(Name = "contact", EmitDefaultValue = false)]
+    [JsonPropertyName("contact")]
     public ExternalContact Contact { get; set; }
 
 
@@ -127,7 +127,7 @@ public partial class ContactEnrichRequest : IEquatable<ContactEnrichRequest>
     /// Logic describing how to combine data from the submitted request with data found in the database.
     /// </summary>
     /// <value>Logic describing how to combine data from the submitted request with data found in the database.</value>
-    [DataMember(Name = "fieldRules", EmitDefaultValue = false)]
+    [JsonPropertyName("fieldRules")]
     public EnrichFieldRules FieldRules { get; set; }
 
 
@@ -136,7 +136,7 @@ public partial class ContactEnrichRequest : IEquatable<ContactEnrichRequest>
     /// Additional options modifying the behavior of the API operation.
     /// </summary>
     /// <value>Additional options modifying the behavior of the API operation.</value>
-    [DataMember(Name = "options", EmitDefaultValue = false)]
+    [JsonPropertyName("options")]
     public ContactEnrichOptions Options { get; set; }
 
 

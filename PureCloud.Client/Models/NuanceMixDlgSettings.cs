@@ -1,12 +1,12 @@
-using System.Runtime.Serialization;
 using System.Text;
+using System.Text.Json.Serialization;
 
 namespace PureCloud.Client.Models;
 
 /// <summary>
 /// NuanceMixDlgSettings
 /// </summary>
-[DataContract]
+
 public partial class NuanceMixDlgSettings : IEquatable<NuanceMixDlgSettings>
 {
     /// <summary>
@@ -27,7 +27,7 @@ public partial class NuanceMixDlgSettings : IEquatable<NuanceMixDlgSettings>
     /// The Nuance channel ID to use when launching the Nuance bot, which must one of the code names of the bot&#39;s registered input channels.
     /// </summary>
     /// <value>The Nuance channel ID to use when launching the Nuance bot, which must one of the code names of the bot&#39;s registered input channels.</value>
-    [DataMember(Name = "channelId", EmitDefaultValue = false)]
+    [JsonPropertyName("channelId")]
     public string ChannelId { get; set; }
 
 
@@ -36,7 +36,7 @@ public partial class NuanceMixDlgSettings : IEquatable<NuanceMixDlgSettings>
     /// Name/value pairs of input variables to be sent to the Nuance bot. The values must be in the appropriate format for the variable&#39;s type (see https://docs.mix.nuance.com/dialog-grpc/v1/#simple-variable-types for help)
     /// </summary>
     /// <value>Name/value pairs of input variables to be sent to the Nuance bot. The values must be in the appropriate format for the variable&#39;s type (see https://docs.mix.nuance.com/dialog-grpc/v1/#simple-variable-types for help)</value>
-    [DataMember(Name = "inputParameters", EmitDefaultValue = false)]
+    [JsonPropertyName("inputParameters")]
     public Dictionary<string, object> InputParameters { get; set; }
 
 

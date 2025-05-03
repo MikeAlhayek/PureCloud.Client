@@ -1,12 +1,12 @@
-using System.Runtime.Serialization;
 using System.Text;
+using System.Text.Json.Serialization;
 
 namespace PureCloud.Client.Models;
 
 /// <summary>
 /// QuestionGroupSettings
 /// </summary>
-[DataContract]
+
 public partial class QuestionGroupSettings : IEquatable<QuestionGroupSettings>
 {
     /// <summary>
@@ -27,7 +27,7 @@ public partial class QuestionGroupSettings : IEquatable<QuestionGroupSettings>
     /// The context id of the question group in the form.
     /// </summary>
     /// <value>The context id of the question group in the form.</value>
-    [DataMember(Name = "questionGroupContextId", EmitDefaultValue = false)]
+    [JsonPropertyName("questionGroupContextId")]
     public string QuestionGroupContextId { get; set; }
 
 
@@ -35,7 +35,7 @@ public partial class QuestionGroupSettings : IEquatable<QuestionGroupSettings>
     /// <summary>
     /// Gets or Sets QuestionSettings
     /// </summary>
-    [DataMember(Name = "questionSettings", EmitDefaultValue = false)]
+    [JsonPropertyName("questionSettings")]
     public List<QuestionSettings> QuestionSettings { get; set; }
 
 

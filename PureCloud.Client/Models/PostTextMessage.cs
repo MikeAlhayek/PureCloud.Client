@@ -7,14 +7,14 @@ namespace PureCloud.Client.Models;
 /// <summary>
 /// PostTextMessage
 /// </summary>
-[DataContract]
+
 public partial class PostTextMessage : IEquatable<PostTextMessage>
 {
     /// <summary>
     /// Message type
     /// </summary>
     /// <value>Message type</value>
-    [JsonConverter(typeof(JsonStringEnumConverter))]
+    
     public enum TypeEnum
     {
         /// <summary>
@@ -65,7 +65,7 @@ public partial class PostTextMessage : IEquatable<PostTextMessage>
     /// Message type
     /// </summary>
     /// <value>Message type</value>
-    [DataMember(Name = "type", EmitDefaultValue = false)]
+    [JsonPropertyName("type")]
     public TypeEnum? Type { get; set; }
 
     /// <summary>
@@ -95,7 +95,7 @@ public partial class PostTextMessage : IEquatable<PostTextMessage>
     /// Message text. If type is structured, used as fallback for clients that do not support particular structured content
     /// </summary>
     /// <value>Message text. If type is structured, used as fallback for clients that do not support particular structured content</value>
-    [DataMember(Name = "text", EmitDefaultValue = false)]
+    [JsonPropertyName("text")]
     public string Text { get; set; }
 
 
@@ -104,7 +104,7 @@ public partial class PostTextMessage : IEquatable<PostTextMessage>
     /// A list of content elements in message
     /// </summary>
     /// <value>A list of content elements in message</value>
-    [DataMember(Name = "content", EmitDefaultValue = false)]
+    [JsonPropertyName("content")]
     public List<ConversationMessageContent> Content { get; set; }
 
 

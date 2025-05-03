@@ -1,12 +1,12 @@
-using System.Runtime.Serialization;
 using System.Text;
+using System.Text.Json.Serialization;
 
 namespace PureCloud.Client.Models;
 
 /// <summary>
 /// SurveyQuestionGroupScore
 /// </summary>
-[DataContract]
+
 public partial class SurveyQuestionGroupScore : IEquatable<SurveyQuestionGroupScore>
 {
     /// <summary>
@@ -34,7 +34,7 @@ public partial class SurveyQuestionGroupScore : IEquatable<SurveyQuestionGroupSc
     /// <summary>
     /// Gets or Sets QuestionGroupId
     /// </summary>
-    [DataMember(Name = "questionGroupId", EmitDefaultValue = false)]
+    [JsonPropertyName("questionGroupId")]
     public string QuestionGroupId { get; set; }
 
 
@@ -43,7 +43,7 @@ public partial class SurveyQuestionGroupScore : IEquatable<SurveyQuestionGroupSc
     /// Score of all questions in the group
     /// </summary>
     /// <value>Score of all questions in the group</value>
-    [DataMember(Name = "totalScore", EmitDefaultValue = false)]
+    [JsonPropertyName("totalScore")]
     public float? TotalScore { get; set; }
 
 
@@ -52,7 +52,7 @@ public partial class SurveyQuestionGroupScore : IEquatable<SurveyQuestionGroupSc
     /// Maximum possible score of all questions in the group
     /// </summary>
     /// <value>Maximum possible score of all questions in the group</value>
-    [DataMember(Name = "maxTotalScore", EmitDefaultValue = false)]
+    [JsonPropertyName("maxTotalScore")]
     public float? MaxTotalScore { get; set; }
 
 
@@ -61,7 +61,7 @@ public partial class SurveyQuestionGroupScore : IEquatable<SurveyQuestionGroupSc
     /// True when the evaluation is submitted with a question group that does not have any answers. Only allowed when naEnabled is true or if set by the system
     /// </summary>
     /// <value>True when the evaluation is submitted with a question group that does not have any answers. Only allowed when naEnabled is true or if set by the system</value>
-    [DataMember(Name = "markedNA", EmitDefaultValue = false)]
+    [JsonPropertyName("markedNA")]
     public bool? MarkedNA { get; set; }
 
 
@@ -70,7 +70,7 @@ public partial class SurveyQuestionGroupScore : IEquatable<SurveyQuestionGroupSc
     /// If markedNA is true, systemMarkedNA indicates whether it was marked by a user or by the system due to visibility conditions. Always false if markedNA is false.
     /// </summary>
     /// <value>If markedNA is true, systemMarkedNA indicates whether it was marked by a user or by the system due to visibility conditions. Always false if markedNA is false.</value>
-    [DataMember(Name = "systemMarkedNA", EmitDefaultValue = false)]
+    [JsonPropertyName("systemMarkedNA")]
     public bool? SystemMarkedNA { get; set; }
 
 
@@ -78,7 +78,7 @@ public partial class SurveyQuestionGroupScore : IEquatable<SurveyQuestionGroupSc
     /// <summary>
     /// Gets or Sets QuestionScores
     /// </summary>
-    [DataMember(Name = "questionScores", EmitDefaultValue = false)]
+    [JsonPropertyName("questionScores")]
     public List<SurveyQuestionScore> QuestionScores { get; set; }
 
 

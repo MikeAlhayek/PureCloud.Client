@@ -1,4 +1,3 @@
-using System.Runtime.Serialization;
 using System.Text;
 using System.Text.Json.Serialization;
 
@@ -7,7 +6,7 @@ namespace PureCloud.Client.Models;
 /// <summary>
 /// WfmProcessUploadRequest
 /// </summary>
-[DataContract]
+
 public partial class WfmProcessUploadRequest : IEquatable<WfmProcessUploadRequest>
 {
 
@@ -32,7 +31,7 @@ public partial class WfmProcessUploadRequest : IEquatable<WfmProcessUploadReques
     /// The uploadKey provided by the request to get an upload URL
     /// </summary>
     /// <value>The uploadKey provided by the request to get an upload URL</value>
-    [DataMember(Name = "uploadKey", EmitDefaultValue = false)]
+    [JsonPropertyName("uploadKey")]
     public string UploadKey { get; set; }
 
 

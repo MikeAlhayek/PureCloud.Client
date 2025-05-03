@@ -1,12 +1,12 @@
-using System.Runtime.Serialization;
 using System.Text;
+using System.Text.Json.Serialization;
 
 namespace PureCloud.Client.Models;
 
 /// <summary>
 /// UserConversationsEventUserConversationSummary
 /// </summary>
-[DataContract]
+
 public partial class UserConversationsEventUserConversationSummary : IEquatable<UserConversationsEventUserConversationSummary>
 {
     /// <summary>
@@ -38,7 +38,7 @@ public partial class UserConversationsEventUserConversationSummary : IEquatable<
     /// <summary>
     /// Gets or Sets UserId
     /// </summary>
-    [DataMember(Name = "userId", EmitDefaultValue = false)]
+    [JsonPropertyName("userId")]
     public string UserId { get; set; }
 
 
@@ -46,7 +46,7 @@ public partial class UserConversationsEventUserConversationSummary : IEquatable<
     /// <summary>
     /// Gets or Sets Call
     /// </summary>
-    [DataMember(Name = "call", EmitDefaultValue = false)]
+    [JsonPropertyName("call")]
     public UserConversationsEventMediaSummary Call { get; set; }
 
 
@@ -54,7 +54,7 @@ public partial class UserConversationsEventUserConversationSummary : IEquatable<
     /// <summary>
     /// Gets or Sets Callback
     /// </summary>
-    [DataMember(Name = "callback", EmitDefaultValue = false)]
+    [JsonPropertyName("callback")]
     public UserConversationsEventMediaSummary Callback { get; set; }
 
 
@@ -62,7 +62,7 @@ public partial class UserConversationsEventUserConversationSummary : IEquatable<
     /// <summary>
     /// Gets or Sets Email
     /// </summary>
-    [DataMember(Name = "email", EmitDefaultValue = false)]
+    [JsonPropertyName("email")]
     public UserConversationsEventMediaSummary Email { get; set; }
 
 
@@ -70,7 +70,7 @@ public partial class UserConversationsEventUserConversationSummary : IEquatable<
     /// <summary>
     /// Gets or Sets Message
     /// </summary>
-    [DataMember(Name = "message", EmitDefaultValue = false)]
+    [JsonPropertyName("message")]
     public UserConversationsEventMediaSummary Message { get; set; }
 
 
@@ -78,7 +78,7 @@ public partial class UserConversationsEventUserConversationSummary : IEquatable<
     /// <summary>
     /// Gets or Sets Chat
     /// </summary>
-    [DataMember(Name = "chat", EmitDefaultValue = false)]
+    [JsonPropertyName("chat")]
     public UserConversationsEventMediaSummary Chat { get; set; }
 
 
@@ -86,7 +86,7 @@ public partial class UserConversationsEventUserConversationSummary : IEquatable<
     /// <summary>
     /// Gets or Sets SocialExpression
     /// </summary>
-    [DataMember(Name = "socialExpression", EmitDefaultValue = false)]
+    [JsonPropertyName("socialExpression")]
     public UserConversationsEventMediaSummary SocialExpression { get; set; }
 
 
@@ -94,7 +94,7 @@ public partial class UserConversationsEventUserConversationSummary : IEquatable<
     /// <summary>
     /// Gets or Sets Video
     /// </summary>
-    [DataMember(Name = "video", EmitDefaultValue = false)]
+    [JsonPropertyName("video")]
     public UserConversationsEventMediaSummary Video { get; set; }
 
 

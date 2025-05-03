@@ -1,4 +1,3 @@
-using System.Runtime.Serialization;
 using System.Text;
 using System.Text.Json.Serialization;
 
@@ -7,7 +6,7 @@ namespace PureCloud.Client.Models;
 /// <summary>
 /// NluDomainVersionQualityReport
 /// </summary>
-[DataContract]
+
 public partial class NluDomainVersionQualityReport : IEquatable<NluDomainVersionQualityReport>
 {
 
@@ -36,7 +35,7 @@ public partial class NluDomainVersionQualityReport : IEquatable<NluDomainVersion
     /// The domain and version details of the quality report
     /// </summary>
     /// <value>The domain and version details of the quality report</value>
-    [DataMember(Name = "version", EmitDefaultValue = false)]
+    [JsonPropertyName("version")]
     public NluDomainVersion Version { get; set; }
 
 
@@ -45,7 +44,7 @@ public partial class NluDomainVersionQualityReport : IEquatable<NluDomainVersion
     /// The confusion matrix for the Domain Version
     /// </summary>
     /// <value>The confusion matrix for the Domain Version</value>
-    [DataMember(Name = "confusionMatrix", EmitDefaultValue = false)]
+    [JsonPropertyName("confusionMatrix")]
     public List<NluConfusionMatrixRow> ConfusionMatrix { get; set; }
 
 
@@ -54,7 +53,7 @@ public partial class NluDomainVersionQualityReport : IEquatable<NluDomainVersion
     /// The quality report summary for the Domain Version
     /// </summary>
     /// <value>The quality report summary for the Domain Version</value>
-    [DataMember(Name = "summary", EmitDefaultValue = false)]
+    [JsonPropertyName("summary")]
     public NluQualityReportSummary Summary { get; set; }
 
 

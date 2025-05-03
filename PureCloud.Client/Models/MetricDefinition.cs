@@ -7,14 +7,14 @@ namespace PureCloud.Client.Models;
 /// <summary>
 /// MetricDefinition
 /// </summary>
-[DataContract]
+
 public partial class MetricDefinition : IEquatable<MetricDefinition>
 {
     /// <summary>
     /// The type of associated metric unit
     /// </summary>
     /// <value>The type of associated metric unit</value>
-    [JsonConverter(typeof(JsonStringEnumConverter))]
+    
     public enum UnitTypeEnum
     {
         /// <summary>
@@ -71,7 +71,7 @@ public partial class MetricDefinition : IEquatable<MetricDefinition>
     /// The type of associated metric unit
     /// </summary>
     /// <value>The type of associated metric unit</value>
-    [DataMember(Name = "unitType", EmitDefaultValue = false)]
+    [JsonPropertyName("unitType")]
     public UnitTypeEnum? UnitType { get; set; }
     /// <summary>
     /// Initializes a new instance of the <see cref="MetricDefinition" /> class.
@@ -107,7 +107,7 @@ public partial class MetricDefinition : IEquatable<MetricDefinition>
     /// The globally unique identifier for the object.
     /// </summary>
     /// <value>The globally unique identifier for the object.</value>
-    [DataMember(Name = "id", EmitDefaultValue = false)]
+    [JsonPropertyName("id")]
     public string Id { get; private set; }
 
 
@@ -115,7 +115,7 @@ public partial class MetricDefinition : IEquatable<MetricDefinition>
     /// <summary>
     /// Gets or Sets Name
     /// </summary>
-    [DataMember(Name = "name", EmitDefaultValue = false)]
+    [JsonPropertyName("name")]
     public string Name { get; set; }
 
 
@@ -126,7 +126,7 @@ public partial class MetricDefinition : IEquatable<MetricDefinition>
     /// An alternate name for this metric definition, often abbreviation
     /// </summary>
     /// <value>An alternate name for this metric definition, often abbreviation</value>
-    [DataMember(Name = "shortName", EmitDefaultValue = false)]
+    [JsonPropertyName("shortName")]
     public string ShortName { get; set; }
 
 
@@ -135,7 +135,7 @@ public partial class MetricDefinition : IEquatable<MetricDefinition>
     /// Metric names used as dividend
     /// </summary>
     /// <value>Metric names used as dividend</value>
-    [DataMember(Name = "dividendMetrics", EmitDefaultValue = false)]
+    [JsonPropertyName("dividendMetrics")]
     public List<string> DividendMetrics { get; set; }
 
 
@@ -144,7 +144,7 @@ public partial class MetricDefinition : IEquatable<MetricDefinition>
     /// Metric names used as divisor
     /// </summary>
     /// <value>Metric names used as divisor</value>
-    [DataMember(Name = "divisorMetrics", EmitDefaultValue = false)]
+    [JsonPropertyName("divisorMetrics")]
     public List<string> DivisorMetrics { get; set; }
 
 
@@ -153,7 +153,7 @@ public partial class MetricDefinition : IEquatable<MetricDefinition>
     /// A predefined default objective for this metric
     /// </summary>
     /// <value>A predefined default objective for this metric</value>
-    [DataMember(Name = "defaultObjective", EmitDefaultValue = false)]
+    [JsonPropertyName("defaultObjective")]
     public DefaultObjective DefaultObjective { get; set; }
 
 
@@ -162,7 +162,7 @@ public partial class MetricDefinition : IEquatable<MetricDefinition>
     /// An optional field to specify if this metric definition is locked to certain template. e.g. punctuality
     /// </summary>
     /// <value>An optional field to specify if this metric definition is locked to certain template. e.g. punctuality</value>
-    [DataMember(Name = "lockTemplateId", EmitDefaultValue = false)]
+    [JsonPropertyName("lockTemplateId")]
     public string LockTemplateId { get; set; }
 
 
@@ -171,7 +171,7 @@ public partial class MetricDefinition : IEquatable<MetricDefinition>
     /// Flag to indicate if this metricDefinition allows filter based on media types
     /// </summary>
     /// <value>Flag to indicate if this metricDefinition allows filter based on media types</value>
-    [DataMember(Name = "mediaTypeFilteringAllowed", EmitDefaultValue = false)]
+    [JsonPropertyName("mediaTypeFilteringAllowed")]
     public bool? MediaTypeFilteringAllowed { get; set; }
 
 
@@ -180,7 +180,7 @@ public partial class MetricDefinition : IEquatable<MetricDefinition>
     /// Flag to indicate if this metricDefinition allows filter based on initial direction
     /// </summary>
     /// <value>Flag to indicate if this metricDefinition allows filter based on initial direction</value>
-    [DataMember(Name = "initialDirectionFilteringAllowed", EmitDefaultValue = false)]
+    [JsonPropertyName("initialDirectionFilteringAllowed")]
     public bool? InitialDirectionFilteringAllowed { get; set; }
 
 
@@ -189,7 +189,7 @@ public partial class MetricDefinition : IEquatable<MetricDefinition>
     /// Flag to indicate if this metricDefinition allows filter based on queues
     /// </summary>
     /// <value>Flag to indicate if this metricDefinition allows filter based on queues</value>
-    [DataMember(Name = "queueFilteringAllowed", EmitDefaultValue = false)]
+    [JsonPropertyName("queueFilteringAllowed")]
     public bool? QueueFilteringAllowed { get; set; }
 
 
@@ -198,7 +198,7 @@ public partial class MetricDefinition : IEquatable<MetricDefinition>
     /// The URI for this object
     /// </summary>
     /// <value>The URI for this object</value>
-    [DataMember(Name = "selfUri", EmitDefaultValue = false)]
+    [JsonPropertyName("selfUri")]
     public string SelfUri { get; private set; }
 
 

@@ -7,14 +7,14 @@ namespace PureCloud.Client.Models;
 /// <summary>
 /// AuditQueryExecutionStatusResponse
 /// </summary>
-[DataContract]
+
 public partial class AuditQueryExecutionStatusResponse : IEquatable<AuditQueryExecutionStatusResponse>
 {
     /// <summary>
     /// Status of the audit query execution request.
     /// </summary>
     /// <value>Status of the audit query execution request.</value>
-    [JsonConverter(typeof(JsonStringEnumConverter))]
+    
     public enum StateEnum
     {
         /// <summary>
@@ -59,7 +59,7 @@ public partial class AuditQueryExecutionStatusResponse : IEquatable<AuditQueryEx
     /// Status of the audit query execution request.
     /// </summary>
     /// <value>Status of the audit query execution request.</value>
-    [DataMember(Name = "state", EmitDefaultValue = false)]
+    [JsonPropertyName("state")]
     public StateEnum? State { get; set; }
     /// <summary>
     /// Initializes a new instance of the <see cref="AuditQueryExecutionStatusResponse" /> class.
@@ -89,7 +89,7 @@ public partial class AuditQueryExecutionStatusResponse : IEquatable<AuditQueryEx
     /// Id of the audit query execution request.
     /// </summary>
     /// <value>Id of the audit query execution request.</value>
-    [DataMember(Name = "id", EmitDefaultValue = false)]
+    [JsonPropertyName("id")]
     public string Id { get; set; }
 
 
@@ -100,7 +100,7 @@ public partial class AuditQueryExecutionStatusResponse : IEquatable<AuditQueryEx
     /// Start date and time of the audit query execution. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z
     /// </summary>
     /// <value>Start date and time of the audit query execution. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z</value>
-    [DataMember(Name = "startDate", EmitDefaultValue = false)]
+    [JsonPropertyName("startDate")]
     public DateTime? StartDate { get; set; }
 
 
@@ -109,7 +109,7 @@ public partial class AuditQueryExecutionStatusResponse : IEquatable<AuditQueryEx
     /// Interval for the audit query. Intervals are represented as an ISO-8601 string. For example: YYYY-MM-DDThh:mm:ss/YYYY-MM-DDThh:mm:ss
     /// </summary>
     /// <value>Interval for the audit query. Intervals are represented as an ISO-8601 string. For example: YYYY-MM-DDThh:mm:ss/YYYY-MM-DDThh:mm:ss</value>
-    [DataMember(Name = "interval", EmitDefaultValue = false)]
+    [JsonPropertyName("interval")]
     public string Interval { get; set; }
 
 
@@ -118,7 +118,7 @@ public partial class AuditQueryExecutionStatusResponse : IEquatable<AuditQueryEx
     /// Service name for the audit query.
     /// </summary>
     /// <value>Service name for the audit query.</value>
-    [DataMember(Name = "serviceName", EmitDefaultValue = false)]
+    [JsonPropertyName("serviceName")]
     public string ServiceName { get; set; }
 
 
@@ -127,7 +127,7 @@ public partial class AuditQueryExecutionStatusResponse : IEquatable<AuditQueryEx
     /// Filters for the audit query.
     /// </summary>
     /// <value>Filters for the audit query.</value>
-    [DataMember(Name = "filters", EmitDefaultValue = false)]
+    [JsonPropertyName("filters")]
     public List<AuditQueryFilter> Filters { get; set; }
 
 
@@ -136,7 +136,7 @@ public partial class AuditQueryExecutionStatusResponse : IEquatable<AuditQueryEx
     /// Sort parameter for the audit query.
     /// </summary>
     /// <value>Sort parameter for the audit query.</value>
-    [DataMember(Name = "sort", EmitDefaultValue = false)]
+    [JsonPropertyName("sort")]
     public List<AuditQuerySort> Sort { get; set; }
 
 

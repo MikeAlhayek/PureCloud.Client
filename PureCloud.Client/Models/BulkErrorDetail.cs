@@ -1,12 +1,12 @@
-using System.Runtime.Serialization;
 using System.Text;
+using System.Text.Json.Serialization;
 
 namespace PureCloud.Client.Models;
 
 /// <summary>
 /// BulkErrorDetail
 /// </summary>
-[DataContract]
+
 public partial class BulkErrorDetail : IEquatable<BulkErrorDetail>
 {
     /// <summary>
@@ -29,7 +29,7 @@ public partial class BulkErrorDetail : IEquatable<BulkErrorDetail>
     /// The name of the field which experienced an error.
     /// </summary>
     /// <value>The name of the field which experienced an error.</value>
-    [DataMember(Name = "fieldName", EmitDefaultValue = false)]
+    [JsonPropertyName("fieldName")]
     public string FieldName { get; set; }
 
 
@@ -38,7 +38,7 @@ public partial class BulkErrorDetail : IEquatable<BulkErrorDetail>
     /// The field value from the request which caused the error.
     /// </summary>
     /// <value>The field value from the request which caused the error.</value>
-    [DataMember(Name = "value", EmitDefaultValue = false)]
+    [JsonPropertyName("value")]
     public string Value { get; set; }
 
 
@@ -47,7 +47,7 @@ public partial class BulkErrorDetail : IEquatable<BulkErrorDetail>
     /// A field-specific error message describing why this operation was rejected.
     /// </summary>
     /// <value>A field-specific error message describing why this operation was rejected.</value>
-    [DataMember(Name = "message", EmitDefaultValue = false)]
+    [JsonPropertyName("message")]
     public string Message { get; set; }
 
 

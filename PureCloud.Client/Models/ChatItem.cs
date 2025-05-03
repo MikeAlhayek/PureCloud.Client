@@ -7,14 +7,14 @@ namespace PureCloud.Client.Models;
 /// <summary>
 /// ChatItem
 /// </summary>
-[DataContract]
+
 public partial class ChatItem : IEquatable<ChatItem>
 {
     /// <summary>
     /// The type of chat
     /// </summary>
     /// <value>The type of chat</value>
-    [JsonConverter(typeof(JsonStringEnumConverter))]
+    
     public enum ChatTypeEnum
     {
         /// <summary>
@@ -59,7 +59,7 @@ public partial class ChatItem : IEquatable<ChatItem>
     /// The type of chat
     /// </summary>
     /// <value>The type of chat</value>
-    [DataMember(Name = "chatType", EmitDefaultValue = false)]
+    [JsonPropertyName("chatType")]
     public ChatTypeEnum? ChatType { get; set; }
 
     /// <summary>
@@ -99,7 +99,7 @@ public partial class ChatItem : IEquatable<ChatItem>
     /// The globally unique identifier for the object.
     /// </summary>
     /// <value>The globally unique identifier for the object.</value>
-    [DataMember(Name = "id", EmitDefaultValue = false)]
+    [JsonPropertyName("id")]
     public string Id { get; private set; }
 
 
@@ -107,7 +107,7 @@ public partial class ChatItem : IEquatable<ChatItem>
     /// <summary>
     /// Gets or Sets Name
     /// </summary>
-    [DataMember(Name = "name", EmitDefaultValue = false)]
+    [JsonPropertyName("name")]
     public string Name { get; set; }
 
 
@@ -116,7 +116,7 @@ public partial class ChatItem : IEquatable<ChatItem>
     /// If the chat is open
     /// </summary>
     /// <value>If the chat is open</value>
-    [DataMember(Name = "open", EmitDefaultValue = false)]
+    [JsonPropertyName("open")]
     public bool? Open { get; set; }
 
 
@@ -125,7 +125,7 @@ public partial class ChatItem : IEquatable<ChatItem>
     /// The favorite entity for the chat, only appears if the chat is favorited
     /// </summary>
     /// <value>The favorite entity for the chat, only appears if the chat is favorited</value>
-    [DataMember(Name = "favorite", EmitDefaultValue = false)]
+    [JsonPropertyName("favorite")]
     public ChatFavorite Favorite { get; set; }
 
 
@@ -134,7 +134,7 @@ public partial class ChatItem : IEquatable<ChatItem>
     /// Avatar images for the chat
     /// </summary>
     /// <value>Avatar images for the chat</value>
-    [DataMember(Name = "images", EmitDefaultValue = false)]
+    [JsonPropertyName("images")]
     public List<Image> Images { get; set; }
 
 
@@ -143,7 +143,7 @@ public partial class ChatItem : IEquatable<ChatItem>
     /// The date of the last message. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z
     /// </summary>
     /// <value>The date of the last message. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z</value>
-    [DataMember(Name = "dateLastMessage", EmitDefaultValue = false)]
+    [JsonPropertyName("dateLastMessage")]
     public DateTime? DateLastMessage { get; set; }
 
 
@@ -152,7 +152,7 @@ public partial class ChatItem : IEquatable<ChatItem>
     /// The date the chat was closed. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z
     /// </summary>
     /// <value>The date the chat was closed. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z</value>
-    [DataMember(Name = "dateClosed", EmitDefaultValue = false)]
+    [JsonPropertyName("dateClosed")]
     public DateTime? DateClosed { get; set; }
 
 
@@ -161,7 +161,7 @@ public partial class ChatItem : IEquatable<ChatItem>
     /// The other 1on1 user
     /// </summary>
     /// <value>The other 1on1 user</value>
-    [DataMember(Name = "user", EmitDefaultValue = false)]
+    [JsonPropertyName("user")]
     public ChatUserRef User { get; set; }
 
 
@@ -170,7 +170,7 @@ public partial class ChatItem : IEquatable<ChatItem>
     /// The room of the chat
     /// </summary>
     /// <value>The room of the chat</value>
-    [DataMember(Name = "room", EmitDefaultValue = false)]
+    [JsonPropertyName("room")]
     public Room Room { get; set; }
 
 
@@ -181,7 +181,7 @@ public partial class ChatItem : IEquatable<ChatItem>
     /// The URI for this object
     /// </summary>
     /// <value>The URI for this object</value>
-    [DataMember(Name = "selfUri", EmitDefaultValue = false)]
+    [JsonPropertyName("selfUri")]
     public string SelfUri { get; private set; }
 
 

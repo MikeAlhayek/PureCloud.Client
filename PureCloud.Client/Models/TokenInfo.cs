@@ -1,12 +1,12 @@
-using System.Runtime.Serialization;
 using System.Text;
+using System.Text.Json.Serialization;
 
 namespace PureCloud.Client.Models;
 
 /// <summary>
 /// TokenInfo
 /// </summary>
-[DataContract]
+
 public partial class TokenInfo : IEquatable<TokenInfo>
 {
     /// <summary>
@@ -25,7 +25,7 @@ public partial class TokenInfo : IEquatable<TokenInfo>
     /// The current organization
     /// </summary>
     /// <value>The current organization</value>
-    [DataMember(Name = "organization", EmitDefaultValue = false)]
+    [JsonPropertyName("organization")]
     public NamedEntity Organization { get; private set; }
 
 
@@ -34,7 +34,7 @@ public partial class TokenInfo : IEquatable<TokenInfo>
     /// The token&#39;s home organization
     /// </summary>
     /// <value>The token&#39;s home organization</value>
-    [DataMember(Name = "homeOrganization", EmitDefaultValue = false)]
+    [JsonPropertyName("homeOrganization")]
     public NamedEntity HomeOrganization { get; private set; }
 
 
@@ -43,7 +43,7 @@ public partial class TokenInfo : IEquatable<TokenInfo>
     /// The list of scopes authorized for the OAuth client
     /// </summary>
     /// <value>The list of scopes authorized for the OAuth client</value>
-    [DataMember(Name = "authorizedScope", EmitDefaultValue = false)]
+    [JsonPropertyName("authorizedScope")]
     public List<string> AuthorizedScope { get; private set; }
 
 
@@ -52,7 +52,7 @@ public partial class TokenInfo : IEquatable<TokenInfo>
     /// Only present when a user is a clone of trustee user in the trustor org.
     /// </summary>
     /// <value>Only present when a user is a clone of trustee user in the trustor org.</value>
-    [DataMember(Name = "clonedUser", EmitDefaultValue = false)]
+    [JsonPropertyName("clonedUser")]
     public TokenInfoClonedUser ClonedUser { get; private set; }
 
 
@@ -60,7 +60,7 @@ public partial class TokenInfo : IEquatable<TokenInfo>
     /// <summary>
     /// Gets or Sets OAuthClient
     /// </summary>
-    [DataMember(Name = "OAuthClient", EmitDefaultValue = false)]
+    [JsonPropertyName("OAuthClient")]
     public OrgOAuthClient OAuthClient { get; set; }
 
 

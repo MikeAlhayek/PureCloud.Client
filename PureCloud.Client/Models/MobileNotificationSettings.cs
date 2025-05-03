@@ -7,14 +7,14 @@ namespace PureCloud.Client.Models;
 /// <summary>
 /// Settings for a user&#39;s mobile notifications
 /// </summary>
-[DataContract]
+
 public partial class MobileNotificationSettings : IEquatable<MobileNotificationSettings>
 {
     /// <summary>
     /// When the user should receive notifications
     /// </summary>
     /// <value>When the user should receive notifications</value>
-    [JsonConverter(typeof(JsonStringEnumConverter))]
+    
     public enum WhenEnum
     {
         /// <summary>
@@ -41,7 +41,7 @@ public partial class MobileNotificationSettings : IEquatable<MobileNotificationS
     /// When the user should receive notifications
     /// </summary>
     /// <value>When the user should receive notifications</value>
-    [DataMember(Name = "when", EmitDefaultValue = false)]
+    [JsonPropertyName("when")]
     public WhenEnum? When { get; set; }
 
     /// <summary>

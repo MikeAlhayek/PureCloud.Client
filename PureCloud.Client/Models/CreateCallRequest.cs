@@ -1,12 +1,12 @@
-using System.Runtime.Serialization;
 using System.Text;
+using System.Text.Json.Serialization;
 
 namespace PureCloud.Client.Models;
 
 /// <summary>
 /// CreateCallRequest
 /// </summary>
-[DataContract]
+
 public partial class CreateCallRequest : IEquatable<CreateCallRequest>
 {
     /// <summary>
@@ -53,7 +53,7 @@ public partial class CreateCallRequest : IEquatable<CreateCallRequest>
     /// The phone number to dial.
     /// </summary>
     /// <value>The phone number to dial.</value>
-    [DataMember(Name = "phoneNumber", EmitDefaultValue = false)]
+    [JsonPropertyName("phoneNumber")]
     public string PhoneNumber { get; set; }
 
 
@@ -62,7 +62,7 @@ public partial class CreateCallRequest : IEquatable<CreateCallRequest>
     /// The caller id phone number for this outbound call.
     /// </summary>
     /// <value>The caller id phone number for this outbound call.</value>
-    [DataMember(Name = "callerId", EmitDefaultValue = false)]
+    [JsonPropertyName("callerId")]
     public string CallerId { get; set; }
 
 
@@ -71,7 +71,7 @@ public partial class CreateCallRequest : IEquatable<CreateCallRequest>
     /// The caller id name for this outbound call.
     /// </summary>
     /// <value>The caller id name for this outbound call.</value>
-    [DataMember(Name = "callerIdName", EmitDefaultValue = false)]
+    [JsonPropertyName("callerIdName")]
     public string CallerIdName { get; set; }
 
 
@@ -80,7 +80,7 @@ public partial class CreateCallRequest : IEquatable<CreateCallRequest>
     /// The queue ID to call on behalf of.
     /// </summary>
     /// <value>The queue ID to call on behalf of.</value>
-    [DataMember(Name = "callFromQueueId", EmitDefaultValue = false)]
+    [JsonPropertyName("callFromQueueId")]
     public string CallFromQueueId { get; set; }
 
 
@@ -89,7 +89,7 @@ public partial class CreateCallRequest : IEquatable<CreateCallRequest>
     /// The queue ID to call.
     /// </summary>
     /// <value>The queue ID to call.</value>
-    [DataMember(Name = "callQueueId", EmitDefaultValue = false)]
+    [JsonPropertyName("callQueueId")]
     public string CallQueueId { get; set; }
 
 
@@ -98,7 +98,7 @@ public partial class CreateCallRequest : IEquatable<CreateCallRequest>
     /// The user ID to call.
     /// </summary>
     /// <value>The user ID to call.</value>
-    [DataMember(Name = "callUserId", EmitDefaultValue = false)]
+    [JsonPropertyName("callUserId")]
     public string CallUserId { get; set; }
 
 
@@ -107,7 +107,7 @@ public partial class CreateCallRequest : IEquatable<CreateCallRequest>
     /// The priority to assign to this call (if calling a queue).
     /// </summary>
     /// <value>The priority to assign to this call (if calling a queue).</value>
-    [DataMember(Name = "priority", EmitDefaultValue = false)]
+    [JsonPropertyName("priority")]
     public int? Priority { get; set; }
 
 
@@ -116,7 +116,7 @@ public partial class CreateCallRequest : IEquatable<CreateCallRequest>
     /// The list of attributes to associate with the customer participant.
     /// </summary>
     /// <value>The list of attributes to associate with the customer participant.</value>
-    [DataMember(Name = "attributes", EmitDefaultValue = false)]
+    [JsonPropertyName("attributes")]
     public Dictionary<string, string> Attributes { get; set; }
 
 
@@ -125,7 +125,7 @@ public partial class CreateCallRequest : IEquatable<CreateCallRequest>
     /// The language skill ID to use for routing this call (if calling a queue).
     /// </summary>
     /// <value>The language skill ID to use for routing this call (if calling a queue).</value>
-    [DataMember(Name = "languageId", EmitDefaultValue = false)]
+    [JsonPropertyName("languageId")]
     public string LanguageId { get; set; }
 
 
@@ -134,7 +134,7 @@ public partial class CreateCallRequest : IEquatable<CreateCallRequest>
     /// The skill ID&#39;s to use for routing this call (if calling a queue).
     /// </summary>
     /// <value>The skill ID&#39;s to use for routing this call (if calling a queue).</value>
-    [DataMember(Name = "routingSkillsIds", EmitDefaultValue = false)]
+    [JsonPropertyName("routingSkillsIds")]
     public List<string> RoutingSkillsIds { get; set; }
 
 
@@ -143,7 +143,7 @@ public partial class CreateCallRequest : IEquatable<CreateCallRequest>
     /// The list of existing call conversations to merge into a new ad-hoc conference.
     /// </summary>
     /// <value>The list of existing call conversations to merge into a new ad-hoc conference.</value>
-    [DataMember(Name = "conversationIds", EmitDefaultValue = false)]
+    [JsonPropertyName("conversationIds")]
     public List<string> ConversationIds { get; set; }
 
 
@@ -152,7 +152,7 @@ public partial class CreateCallRequest : IEquatable<CreateCallRequest>
     /// The list of participants to call to create a new ad-hoc conference.
     /// </summary>
     /// <value>The list of participants to call to create a new ad-hoc conference.</value>
-    [DataMember(Name = "participants", EmitDefaultValue = false)]
+    [JsonPropertyName("participants")]
     public List<Destination> Participants { get; set; }
 
 
@@ -161,7 +161,7 @@ public partial class CreateCallRequest : IEquatable<CreateCallRequest>
     /// User to User Information (UUI) data managed by SIP session application.
     /// </summary>
     /// <value>User to User Information (UUI) data managed by SIP session application.</value>
-    [DataMember(Name = "uuiData", EmitDefaultValue = false)]
+    [JsonPropertyName("uuiData")]
     public string UuiData { get; set; }
 
 
@@ -170,7 +170,7 @@ public partial class CreateCallRequest : IEquatable<CreateCallRequest>
     /// The external contact with which to associate the call.
     /// </summary>
     /// <value>The external contact with which to associate the call.</value>
-    [DataMember(Name = "externalContactId", EmitDefaultValue = false)]
+    [JsonPropertyName("externalContactId")]
     public string ExternalContactId { get; set; }
 
 
@@ -179,7 +179,7 @@ public partial class CreateCallRequest : IEquatable<CreateCallRequest>
     /// An optional label that categorizes the conversation.  Max-utilization settings can be configured at a per-label level
     /// </summary>
     /// <value>An optional label that categorizes the conversation.  Max-utilization settings can be configured at a per-label level</value>
-    [DataMember(Name = "label", EmitDefaultValue = false)]
+    [JsonPropertyName("label")]
     public string Label { get; set; }
 
 

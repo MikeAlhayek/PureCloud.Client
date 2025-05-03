@@ -1,12 +1,12 @@
-using System.Runtime.Serialization;
 using System.Text;
+using System.Text.Json.Serialization;
 
 namespace PureCloud.Client.Models;
 
 /// <summary>
 /// ContactListFilterRange
 /// </summary>
-[DataContract]
+
 public partial class ContactListFilterRange : IEquatable<ContactListFilterRange>
 {
     /// <summary>
@@ -33,7 +33,7 @@ public partial class ContactListFilterRange : IEquatable<ContactListFilterRange>
     /// The minimum value of the range. Required for the operator BETWEEN.
     /// </summary>
     /// <value>The minimum value of the range. Required for the operator BETWEEN.</value>
-    [DataMember(Name = "min", EmitDefaultValue = false)]
+    [JsonPropertyName("min")]
     public string Min { get; set; }
 
 
@@ -42,7 +42,7 @@ public partial class ContactListFilterRange : IEquatable<ContactListFilterRange>
     /// The maximum value of the range. Required for the operator BETWEEN.
     /// </summary>
     /// <value>The maximum value of the range. Required for the operator BETWEEN.</value>
-    [DataMember(Name = "max", EmitDefaultValue = false)]
+    [JsonPropertyName("max")]
     public string Max { get; set; }
 
 
@@ -51,7 +51,7 @@ public partial class ContactListFilterRange : IEquatable<ContactListFilterRange>
     /// Whether or not to include the minimum in the range.
     /// </summary>
     /// <value>Whether or not to include the minimum in the range.</value>
-    [DataMember(Name = "minInclusive", EmitDefaultValue = false)]
+    [JsonPropertyName("minInclusive")]
     public bool? MinInclusive { get; set; }
 
 
@@ -60,7 +60,7 @@ public partial class ContactListFilterRange : IEquatable<ContactListFilterRange>
     /// Whether or not to include the maximum in the range.
     /// </summary>
     /// <value>Whether or not to include the maximum in the range.</value>
-    [DataMember(Name = "maxInclusive", EmitDefaultValue = false)]
+    [JsonPropertyName("maxInclusive")]
     public bool? MaxInclusive { get; set; }
 
 
@@ -69,7 +69,7 @@ public partial class ContactListFilterRange : IEquatable<ContactListFilterRange>
     /// A set of values that the contact data should be in. Required for the IN operator.
     /// </summary>
     /// <value>A set of values that the contact data should be in. Required for the IN operator.</value>
-    [DataMember(Name = "inSet", EmitDefaultValue = false)]
+    [JsonPropertyName("inSet")]
     public List<string> InSet { get; set; }
 
 

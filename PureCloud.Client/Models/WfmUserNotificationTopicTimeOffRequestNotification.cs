@@ -7,13 +7,13 @@ namespace PureCloud.Client.Models;
 /// <summary>
 /// WfmUserNotificationTopicTimeOffRequestNotification
 /// </summary>
-[DataContract]
+
 public partial class WfmUserNotificationTopicTimeOffRequestNotification : IEquatable<WfmUserNotificationTopicTimeOffRequestNotification>
 {
     /// <summary>
     /// Gets or Sets Status
     /// </summary>
-    [JsonConverter(typeof(JsonStringEnumConverter))]
+    
     public enum StatusEnum
     {
         /// <summary>
@@ -51,7 +51,7 @@ public partial class WfmUserNotificationTopicTimeOffRequestNotification : IEquat
     /// <summary>
     /// Gets or Sets Status
     /// </summary>
-    [DataMember(Name = "status", EmitDefaultValue = false)]
+    [JsonPropertyName("status")]
     public StatusEnum? Status { get; set; }
     /// <summary>
     /// Initializes a new instance of the <see cref="WfmUserNotificationTopicTimeOffRequestNotification" /> class.
@@ -78,7 +78,7 @@ public partial class WfmUserNotificationTopicTimeOffRequestNotification : IEquat
     /// <summary>
     /// Gets or Sets TimeOffRequestId
     /// </summary>
-    [DataMember(Name = "timeOffRequestId", EmitDefaultValue = false)]
+    [JsonPropertyName("timeOffRequestId")]
     public string TimeOffRequestId { get; set; }
 
 
@@ -86,7 +86,7 @@ public partial class WfmUserNotificationTopicTimeOffRequestNotification : IEquat
     /// <summary>
     /// Gets or Sets User
     /// </summary>
-    [DataMember(Name = "user", EmitDefaultValue = false)]
+    [JsonPropertyName("user")]
     public WfmUserNotificationTopicUserReference User { get; set; }
 
 
@@ -94,7 +94,7 @@ public partial class WfmUserNotificationTopicTimeOffRequestNotification : IEquat
     /// <summary>
     /// Gets or Sets IsFullDayRequest
     /// </summary>
-    [DataMember(Name = "isFullDayRequest", EmitDefaultValue = false)]
+    [JsonPropertyName("isFullDayRequest")]
     public bool? IsFullDayRequest { get; set; }
 
 
@@ -104,7 +104,7 @@ public partial class WfmUserNotificationTopicTimeOffRequestNotification : IEquat
     /// <summary>
     /// Gets or Sets PartialDayStartDateTimes
     /// </summary>
-    [DataMember(Name = "partialDayStartDateTimes", EmitDefaultValue = false)]
+    [JsonPropertyName("partialDayStartDateTimes")]
     public List<DateTime?> PartialDayStartDateTimes { get; set; }
 
 
@@ -112,7 +112,7 @@ public partial class WfmUserNotificationTopicTimeOffRequestNotification : IEquat
     /// <summary>
     /// Gets or Sets FullDayManagementUnitDates
     /// </summary>
-    [DataMember(Name = "fullDayManagementUnitDates", EmitDefaultValue = false)]
+    [JsonPropertyName("fullDayManagementUnitDates")]
     public List<string> FullDayManagementUnitDates { get; set; }
 
 

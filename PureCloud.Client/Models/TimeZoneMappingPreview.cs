@@ -1,12 +1,12 @@
-using System.Runtime.Serialization;
 using System.Text;
+using System.Text.Json.Serialization;
 
 namespace PureCloud.Client.Models;
 
 /// <summary>
 /// TimeZoneMappingPreview
 /// </summary>
-[DataContract]
+
 public partial class TimeZoneMappingPreview : IEquatable<TimeZoneMappingPreview>
 {
     /// <summary>
@@ -41,7 +41,7 @@ public partial class TimeZoneMappingPreview : IEquatable<TimeZoneMappingPreview>
     /// The associated ContactList
     /// </summary>
     /// <value>The associated ContactList</value>
-    [DataMember(Name = "contactList", EmitDefaultValue = false)]
+    [JsonPropertyName("contactList")]
     public DomainEntityRef ContactList { get; set; }
 
 
@@ -50,7 +50,7 @@ public partial class TimeZoneMappingPreview : IEquatable<TimeZoneMappingPreview>
     /// The number of contacts per time zone that mapped to only that time zone
     /// </summary>
     /// <value>The number of contacts per time zone that mapped to only that time zone</value>
-    [DataMember(Name = "contactsPerTimeZone", EmitDefaultValue = false)]
+    [JsonPropertyName("contactsPerTimeZone")]
     public Dictionary<string, long?> ContactsPerTimeZone { get; set; }
 
 
@@ -59,7 +59,7 @@ public partial class TimeZoneMappingPreview : IEquatable<TimeZoneMappingPreview>
     /// The number of contacts per time zone that mapped to only that time zone and were mapped using the zip code column
     /// </summary>
     /// <value>The number of contacts per time zone that mapped to only that time zone and were mapped using the zip code column</value>
-    [DataMember(Name = "contactsMappedUsingZipCode", EmitDefaultValue = false)]
+    [JsonPropertyName("contactsMappedUsingZipCode")]
     public Dictionary<string, long?> ContactsMappedUsingZipCode { get; set; }
 
 
@@ -68,7 +68,7 @@ public partial class TimeZoneMappingPreview : IEquatable<TimeZoneMappingPreview>
     /// The total number of contacts that mapped to a single time zone
     /// </summary>
     /// <value>The total number of contacts that mapped to a single time zone</value>
-    [DataMember(Name = "contactsMappedToASingleZone", EmitDefaultValue = false)]
+    [JsonPropertyName("contactsMappedToASingleZone")]
     public long? ContactsMappedToASingleZone { get; set; }
 
 
@@ -77,7 +77,7 @@ public partial class TimeZoneMappingPreview : IEquatable<TimeZoneMappingPreview>
     /// The total number of contacts that mapped to a single time zone and were mapped using the zip code column
     /// </summary>
     /// <value>The total number of contacts that mapped to a single time zone and were mapped using the zip code column</value>
-    [DataMember(Name = "contactsMappedToASingleZoneUsingZipCode", EmitDefaultValue = false)]
+    [JsonPropertyName("contactsMappedToASingleZoneUsingZipCode")]
     public long? ContactsMappedToASingleZoneUsingZipCode { get; set; }
 
 
@@ -86,7 +86,7 @@ public partial class TimeZoneMappingPreview : IEquatable<TimeZoneMappingPreview>
     /// The total number of contacts that mapped to multiple time zones
     /// </summary>
     /// <value>The total number of contacts that mapped to multiple time zones</value>
-    [DataMember(Name = "contactsMappedToMultipleZones", EmitDefaultValue = false)]
+    [JsonPropertyName("contactsMappedToMultipleZones")]
     public long? ContactsMappedToMultipleZones { get; set; }
 
 
@@ -95,7 +95,7 @@ public partial class TimeZoneMappingPreview : IEquatable<TimeZoneMappingPreview>
     /// The total number of contacts that mapped to multiple time zones and were mapped using the zip code column
     /// </summary>
     /// <value>The total number of contacts that mapped to multiple time zones and were mapped using the zip code column</value>
-    [DataMember(Name = "contactsMappedToMultipleZonesUsingZipCode", EmitDefaultValue = false)]
+    [JsonPropertyName("contactsMappedToMultipleZonesUsingZipCode")]
     public long? ContactsMappedToMultipleZonesUsingZipCode { get; set; }
 
 
@@ -104,7 +104,7 @@ public partial class TimeZoneMappingPreview : IEquatable<TimeZoneMappingPreview>
     /// The total number of contacts that will be dialed during the default window
     /// </summary>
     /// <value>The total number of contacts that will be dialed during the default window</value>
-    [DataMember(Name = "contactsInDefaultWindow", EmitDefaultValue = false)]
+    [JsonPropertyName("contactsInDefaultWindow")]
     public long? ContactsInDefaultWindow { get; set; }
 
 
@@ -113,7 +113,7 @@ public partial class TimeZoneMappingPreview : IEquatable<TimeZoneMappingPreview>
     /// The total number of contacts in the contact list
     /// </summary>
     /// <value>The total number of contacts in the contact list</value>
-    [DataMember(Name = "contactListSize", EmitDefaultValue = false)]
+    [JsonPropertyName("contactListSize")]
     public long? ContactListSize { get; set; }
 
 

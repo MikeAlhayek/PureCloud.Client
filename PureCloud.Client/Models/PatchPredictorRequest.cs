@@ -1,12 +1,12 @@
-using System.Runtime.Serialization;
 using System.Text;
+using System.Text.Json.Serialization;
 
 namespace PureCloud.Client.Models;
 
 /// <summary>
 /// PatchPredictorRequest
 /// </summary>
-[DataContract]
+
 public partial class PatchPredictorRequest : IEquatable<PatchPredictorRequest>
 {
     /// <summary>
@@ -29,7 +29,7 @@ public partial class PatchPredictorRequest : IEquatable<PatchPredictorRequest>
     /// Number of seconds allocated to predictive routing before attempting a different routing method. This is a value between 12 and 900 seconds.
     /// </summary>
     /// <value>Number of seconds allocated to predictive routing before attempting a different routing method. This is a value between 12 and 900 seconds.</value>
-    [DataMember(Name = "routingTimeoutSeconds", EmitDefaultValue = false)]
+    [JsonPropertyName("routingTimeoutSeconds")]
     public int? RoutingTimeoutSeconds { get; set; }
 
 
@@ -38,7 +38,7 @@ public partial class PatchPredictorRequest : IEquatable<PatchPredictorRequest>
     /// The predictor schedule that determines when the predictor is used for routing interactions.
     /// </summary>
     /// <value>The predictor schedule that determines when the predictor is used for routing interactions.</value>
-    [DataMember(Name = "schedule", EmitDefaultValue = false)]
+    [JsonPropertyName("schedule")]
     public PredictorSchedule Schedule { get; set; }
 
 
@@ -47,7 +47,7 @@ public partial class PatchPredictorRequest : IEquatable<PatchPredictorRequest>
     /// The predictor balancing configuration to enable workload balancing
     /// </summary>
     /// <value>The predictor balancing configuration to enable workload balancing</value>
-    [DataMember(Name = "workloadBalancingConfig", EmitDefaultValue = false)]
+    [JsonPropertyName("workloadBalancingConfig")]
     public PredictorWorkloadBalancing WorkloadBalancingConfig { get; set; }
 
 

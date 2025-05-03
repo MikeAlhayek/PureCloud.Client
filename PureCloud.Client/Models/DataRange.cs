@@ -1,12 +1,12 @@
-using System.Runtime.Serialization;
 using System.Text;
+using System.Text.Json.Serialization;
 
 namespace PureCloud.Client.Models;
 
 /// <summary>
 /// DataRange
 /// </summary>
-[DataContract]
+
 public partial class DataRange : IEquatable<DataRange>
 {
     /// <summary>
@@ -23,7 +23,7 @@ public partial class DataRange : IEquatable<DataRange>
     /// The first event timestamp found. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z
     /// </summary>
     /// <value>The first event timestamp found. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z</value>
-    [DataMember(Name = "dateMin", EmitDefaultValue = false)]
+    [JsonPropertyName("dateMin")]
     public DateTime? DateMin { get; private set; }
 
 
@@ -32,7 +32,7 @@ public partial class DataRange : IEquatable<DataRange>
     /// The last event timestamp found. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z
     /// </summary>
     /// <value>The last event timestamp found. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z</value>
-    [DataMember(Name = "dateMax", EmitDefaultValue = false)]
+    [JsonPropertyName("dateMax")]
     public DateTime? DateMax { get; private set; }
 
 

@@ -7,14 +7,14 @@ namespace PureCloud.Client.Models;
 /// <summary>
 /// Warning
 /// </summary>
-[DataContract]
+
 public partial class Warning : IEquatable<Warning>
 {
     /// <summary>
     /// The range type for the warning configuration.
     /// </summary>
     /// <value>The range type for the warning configuration.</value>
-    [JsonConverter(typeof(JsonStringEnumConverter))]
+    
     public enum RangeTypeEnum
     {
         /// <summary>
@@ -47,7 +47,7 @@ public partial class Warning : IEquatable<Warning>
     /// The range type for the warning configuration.
     /// </summary>
     /// <value>The range type for the warning configuration.</value>
-    [DataMember(Name = "rangeType", EmitDefaultValue = false)]
+    [JsonPropertyName("rangeType")]
     public RangeTypeEnum? RangeType { get; set; }
     /// <summary>
     /// Initializes a new instance of the <see cref="Warning" /> class.
@@ -69,7 +69,7 @@ public partial class Warning : IEquatable<Warning>
     /// The value for the warning configuration.
     /// </summary>
     /// <value>The value for the warning configuration.</value>
-    [DataMember(Name = "value", EmitDefaultValue = false)]
+    [JsonPropertyName("value")]
     public int? Value { get; set; }
 
 
@@ -80,7 +80,7 @@ public partial class Warning : IEquatable<Warning>
     /// The color for the warning configuration in RGB hexadecimal format (for example \&quot;#FF0000\&quot; represents red).
     /// </summary>
     /// <value>The color for the warning configuration in RGB hexadecimal format (for example \&quot;#FF0000\&quot; represents red).</value>
-    [DataMember(Name = "color", EmitDefaultValue = false)]
+    [JsonPropertyName("color")]
     public string Color { get; set; }
 
 

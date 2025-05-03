@@ -1,4 +1,3 @@
-using System.Runtime.Serialization;
 using System.Text;
 using System.Text.Json.Serialization;
 
@@ -7,7 +6,7 @@ namespace PureCloud.Client.Models;
 /// <summary>
 /// Prompt information related to a bot flow turn.
 /// </summary>
-[DataContract]
+
 public partial class TextBotOutputPrompts : IEquatable<TextBotOutputPrompts>
 {
 
@@ -34,7 +33,7 @@ public partial class TextBotOutputPrompts : IEquatable<TextBotOutputPrompts>
     /// The ISO code of the output language for this prompt item.
     /// </summary>
     /// <value>The ISO code of the output language for this prompt item.</value>
-    [DataMember(Name = "outputLanguage", EmitDefaultValue = false)]
+    [JsonPropertyName("outputLanguage")]
     public string OutputLanguage { get; set; }
 
 
@@ -43,7 +42,7 @@ public partial class TextBotOutputPrompts : IEquatable<TextBotOutputPrompts>
     /// Text output prompts, if any.
     /// </summary>
     /// <value>Text output prompts, if any.</value>
-    [DataMember(Name = "textPrompts", EmitDefaultValue = false)]
+    [JsonPropertyName("textPrompts")]
     public TextBotModeOutputPrompts TextPrompts { get; set; }
 
 

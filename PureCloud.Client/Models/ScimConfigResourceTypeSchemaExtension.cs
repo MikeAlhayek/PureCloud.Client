@@ -1,12 +1,12 @@
-using System.Runtime.Serialization;
 using System.Text;
+using System.Text.Json.Serialization;
 
 namespace PureCloud.Client.Models;
 
 /// <summary>
 /// Defines a SCIM resource type&#39;s schema extension.
 /// </summary>
-[DataContract]
+
 public partial class ScimConfigResourceTypeSchemaExtension : IEquatable<ScimConfigResourceTypeSchemaExtension>
 {
     /// <summary>
@@ -23,7 +23,7 @@ public partial class ScimConfigResourceTypeSchemaExtension : IEquatable<ScimConf
     /// The URI of an extended schema, for example, \&quot;urn:edu:2.0:Staff\&quot;. Must be equal to the \&quot;id\&quot; attribute of a schema.
     /// </summary>
     /// <value>The URI of an extended schema, for example, \&quot;urn:edu:2.0:Staff\&quot;. Must be equal to the \&quot;id\&quot; attribute of a schema.</value>
-    [DataMember(Name = "schema", EmitDefaultValue = false)]
+    [JsonPropertyName("schema")]
     public string Schema { get; private set; }
 
 
@@ -32,7 +32,7 @@ public partial class ScimConfigResourceTypeSchemaExtension : IEquatable<ScimConf
     /// Indicates whether a schema extension is required.
     /// </summary>
     /// <value>Indicates whether a schema extension is required.</value>
-    [DataMember(Name = "required", EmitDefaultValue = false)]
+    [JsonPropertyName("required")]
     public bool? Required { get; private set; }
 
 

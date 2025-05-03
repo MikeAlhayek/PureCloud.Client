@@ -1,12 +1,12 @@
-using System.Runtime.Serialization;
 using System.Text;
+using System.Text.Json.Serialization;
 
 namespace PureCloud.Client.Models;
 
 /// <summary>
 /// ConversationSummaryTopicConversationResolution
 /// </summary>
-[DataContract]
+
 public partial class ConversationSummaryTopicConversationResolution : IEquatable<ConversationSummaryTopicConversationResolution>
 {
     /// <summary>
@@ -30,7 +30,7 @@ public partial class ConversationSummaryTopicConversationResolution : IEquatable
     /// <summary>
     /// Gets or Sets Text
     /// </summary>
-    [DataMember(Name = "text", EmitDefaultValue = false)]
+    [JsonPropertyName("text")]
     public string Text { get; set; }
 
 
@@ -38,7 +38,7 @@ public partial class ConversationSummaryTopicConversationResolution : IEquatable
     /// <summary>
     /// Gets or Sets Description
     /// </summary>
-    [DataMember(Name = "description", EmitDefaultValue = false)]
+    [JsonPropertyName("description")]
     public string Description { get; set; }
 
 
@@ -46,7 +46,7 @@ public partial class ConversationSummaryTopicConversationResolution : IEquatable
     /// <summary>
     /// Gets or Sets ResolutionValue
     /// </summary>
-    [DataMember(Name = "resolutionValue", EmitDefaultValue = false)]
+    [JsonPropertyName("resolutionValue")]
     public string ResolutionValue { get; set; }
 
 
@@ -54,7 +54,7 @@ public partial class ConversationSummaryTopicConversationResolution : IEquatable
     /// <summary>
     /// Gets or Sets Score
     /// </summary>
-    [DataMember(Name = "score", EmitDefaultValue = false)]
+    [JsonPropertyName("score")]
     public double? Score { get; set; }
 
 

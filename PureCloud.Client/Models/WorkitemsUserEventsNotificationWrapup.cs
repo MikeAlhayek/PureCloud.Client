@@ -7,13 +7,13 @@ namespace PureCloud.Client.Models;
 /// <summary>
 /// WorkitemsUserEventsNotificationWrapup
 /// </summary>
-[DataContract]
+
 public partial class WorkitemsUserEventsNotificationWrapup : IEquatable<WorkitemsUserEventsNotificationWrapup>
 {
     /// <summary>
     /// Gets or Sets Op
     /// </summary>
-    [JsonConverter(typeof(JsonStringEnumConverter))]
+    
     public enum OpEnum
     {
         /// <summary>
@@ -45,7 +45,7 @@ public partial class WorkitemsUserEventsNotificationWrapup : IEquatable<Workitem
     /// <summary>
     /// Gets or Sets Action
     /// </summary>
-    [JsonConverter(typeof(JsonStringEnumConverter))]
+    
     public enum ActionEnum
     {
         /// <summary>
@@ -77,12 +77,12 @@ public partial class WorkitemsUserEventsNotificationWrapup : IEquatable<Workitem
     /// <summary>
     /// Gets or Sets Op
     /// </summary>
-    [DataMember(Name = "op", EmitDefaultValue = false)]
+    [JsonPropertyName("op")]
     public OpEnum? Op { get; set; }
     /// <summary>
     /// Gets or Sets Action
     /// </summary>
-    [DataMember(Name = "action", EmitDefaultValue = false)]
+    [JsonPropertyName("action")]
     public ActionEnum? Action { get; set; }
     /// <summary>
     /// Initializes a new instance of the <see cref="WorkitemsUserEventsNotificationWrapup" /> class.
@@ -105,7 +105,7 @@ public partial class WorkitemsUserEventsNotificationWrapup : IEquatable<Workitem
     /// <summary>
     /// Gets or Sets Code
     /// </summary>
-    [DataMember(Name = "code", EmitDefaultValue = false)]
+    [JsonPropertyName("code")]
     public string Code { get; set; }
 
 
@@ -113,7 +113,7 @@ public partial class WorkitemsUserEventsNotificationWrapup : IEquatable<Workitem
     /// <summary>
     /// Gets or Sets UserId
     /// </summary>
-    [DataMember(Name = "userId", EmitDefaultValue = false)]
+    [JsonPropertyName("userId")]
     public Guid? UserId { get; set; }
 
 

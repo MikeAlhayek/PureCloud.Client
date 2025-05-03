@@ -7,13 +7,13 @@ namespace PureCloud.Client.Models;
 /// <summary>
 /// WfmIntegrationsHrisTimeOffTypesJobTopicHrisTimeOffTypesJobNotification
 /// </summary>
-[DataContract]
+
 public partial class WfmIntegrationsHrisTimeOffTypesJobTopicHrisTimeOffTypesJobNotification : IEquatable<WfmIntegrationsHrisTimeOffTypesJobTopicHrisTimeOffTypesJobNotification>
 {
     /// <summary>
     /// Gets or Sets Status
     /// </summary>
-    [JsonConverter(typeof(JsonStringEnumConverter))]
+    
     public enum StatusEnum
     {
         /// <summary>
@@ -45,7 +45,7 @@ public partial class WfmIntegrationsHrisTimeOffTypesJobTopicHrisTimeOffTypesJobN
     /// <summary>
     /// Gets or Sets Status
     /// </summary>
-    [DataMember(Name = "status", EmitDefaultValue = false)]
+    [JsonPropertyName("status")]
     public StatusEnum? Status { get; set; }
     /// <summary>
     /// Initializes a new instance of the <see cref="WfmIntegrationsHrisTimeOffTypesJobTopicHrisTimeOffTypesJobNotification" /> class.
@@ -68,7 +68,7 @@ public partial class WfmIntegrationsHrisTimeOffTypesJobTopicHrisTimeOffTypesJobN
     /// <summary>
     /// Gets or Sets Id
     /// </summary>
-    [DataMember(Name = "id", EmitDefaultValue = false)]
+    [JsonPropertyName("id")]
     public string Id { get; set; }
 
 
@@ -76,7 +76,7 @@ public partial class WfmIntegrationsHrisTimeOffTypesJobTopicHrisTimeOffTypesJobN
     /// <summary>
     /// Gets or Sets Entities
     /// </summary>
-    [DataMember(Name = "entities", EmitDefaultValue = false)]
+    [JsonPropertyName("entities")]
     public List<WfmIntegrationsHrisTimeOffTypesJobTopicHrisTimeOffType> Entities { get; set; }
 
 
@@ -86,7 +86,7 @@ public partial class WfmIntegrationsHrisTimeOffTypesJobTopicHrisTimeOffTypesJobN
     /// <summary>
     /// Gets or Sets Error
     /// </summary>
-    [DataMember(Name = "error", EmitDefaultValue = false)]
+    [JsonPropertyName("error")]
     public WfmIntegrationsHrisTimeOffTypesJobTopicErrorBody Error { get; set; }
 
 

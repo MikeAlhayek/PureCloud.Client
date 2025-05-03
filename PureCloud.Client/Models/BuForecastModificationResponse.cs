@@ -7,14 +7,14 @@ namespace PureCloud.Client.Models;
 /// <summary>
 /// BuForecastModificationResponse
 /// </summary>
-[DataContract]
+
 public partial class BuForecastModificationResponse : IEquatable<BuForecastModificationResponse>
 {
     /// <summary>
     /// The type of the modification
     /// </summary>
     /// <value>The type of the modification</value>
-    [JsonConverter(typeof(JsonStringEnumConverter))]
+    
     public enum TypeEnum
     {
         /// <summary>
@@ -83,7 +83,7 @@ public partial class BuForecastModificationResponse : IEquatable<BuForecastModif
     /// The metric to which this modification applies
     /// </summary>
     /// <value>The metric to which this modification applies</value>
-    [JsonConverter(typeof(JsonStringEnumConverter))]
+    
     public enum MetricEnum
     {
         /// <summary>
@@ -110,7 +110,7 @@ public partial class BuForecastModificationResponse : IEquatable<BuForecastModif
     /// The legacy metric to which this modification applies if applicable
     /// </summary>
     /// <value>The legacy metric to which this modification applies if applicable</value>
-    [JsonConverter(typeof(JsonStringEnumConverter))]
+    
     public enum LegacyMetricEnum
     {
         /// <summary>
@@ -149,19 +149,19 @@ public partial class BuForecastModificationResponse : IEquatable<BuForecastModif
     /// The type of the modification
     /// </summary>
     /// <value>The type of the modification</value>
-    [DataMember(Name = "type", EmitDefaultValue = false)]
+    [JsonPropertyName("type")]
     public TypeEnum? Type { get; set; }
     /// <summary>
     /// The metric to which this modification applies
     /// </summary>
     /// <value>The metric to which this modification applies</value>
-    [DataMember(Name = "metric", EmitDefaultValue = false)]
+    [JsonPropertyName("metric")]
     public MetricEnum? Metric { get; set; }
     /// <summary>
     /// The legacy metric to which this modification applies if applicable
     /// </summary>
     /// <value>The legacy metric to which this modification applies if applicable</value>
-    [DataMember(Name = "legacyMetric", EmitDefaultValue = false)]
+    [JsonPropertyName("legacyMetric")]
     public LegacyMetricEnum? LegacyMetric { get; set; }
 
     /// <summary>
@@ -211,7 +211,7 @@ public partial class BuForecastModificationResponse : IEquatable<BuForecastModif
     /// The number of intervals past referenceStartDate representing the first interval to which this modification applies
     /// </summary>
     /// <value>The number of intervals past referenceStartDate representing the first interval to which this modification applies</value>
-    [DataMember(Name = "startIntervalIndex", EmitDefaultValue = false)]
+    [JsonPropertyName("startIntervalIndex")]
     public int? StartIntervalIndex { get; set; }
 
 
@@ -220,7 +220,7 @@ public partial class BuForecastModificationResponse : IEquatable<BuForecastModif
     /// The number of intervals past referenceStartDate representing the last interval to which this modification applies
     /// </summary>
     /// <value>The number of intervals past referenceStartDate representing the last interval to which this modification applies</value>
-    [DataMember(Name = "endIntervalIndex", EmitDefaultValue = false)]
+    [JsonPropertyName("endIntervalIndex")]
     public int? EndIntervalIndex { get; set; }
 
 
@@ -233,7 +233,7 @@ public partial class BuForecastModificationResponse : IEquatable<BuForecastModif
     /// The value of the modification
     /// </summary>
     /// <value>The value of the modification</value>
-    [DataMember(Name = "value", EmitDefaultValue = false)]
+    [JsonPropertyName("value")]
     public double? Value { get; set; }
 
 
@@ -242,7 +242,7 @@ public partial class BuForecastModificationResponse : IEquatable<BuForecastModif
     /// The list of modification values. Only applicable for grid-type modifications
     /// </summary>
     /// <value>The list of modification values. Only applicable for grid-type modifications</value>
-    [DataMember(Name = "values", EmitDefaultValue = false)]
+    [JsonPropertyName("values")]
     public List<WfmForecastModificationIntervalOffsetValue> Values { get; set; }
 
 
@@ -251,7 +251,7 @@ public partial class BuForecastModificationResponse : IEquatable<BuForecastModif
     /// The list of modification secondary values. Only applicable for multi granularity modifications
     /// </summary>
     /// <value>The list of modification secondary values. Only applicable for multi granularity modifications</value>
-    [DataMember(Name = "secondaryValues", EmitDefaultValue = false)]
+    [JsonPropertyName("secondaryValues")]
     public List<WfmForecastModificationIntervalOffsetValue> SecondaryValues { get; set; }
 
 
@@ -260,7 +260,7 @@ public partial class BuForecastModificationResponse : IEquatable<BuForecastModif
     /// The client side display granularity of the modification, expressed in the ISO-8601 duration format. Periods are represented as an ISO-8601 string. For example: P1D or P1DT12H
     /// </summary>
     /// <value>The client side display granularity of the modification, expressed in the ISO-8601 duration format. Periods are represented as an ISO-8601 string. For example: P1D or P1DT12H</value>
-    [DataMember(Name = "displayGranularity", EmitDefaultValue = false)]
+    [JsonPropertyName("displayGranularity")]
     public string DisplayGranularity { get; set; }
 
 
@@ -269,7 +269,7 @@ public partial class BuForecastModificationResponse : IEquatable<BuForecastModif
     /// The actual granularity of the modification as stored behind the scenes, expressed in the ISO-8601 duration format. Periods are represented as an ISO-8601 string. For example: P1D or P1DT12H
     /// </summary>
     /// <value>The actual granularity of the modification as stored behind the scenes, expressed in the ISO-8601 duration format. Periods are represented as an ISO-8601 string. For example: P1D or P1DT12H</value>
-    [DataMember(Name = "granularity", EmitDefaultValue = false)]
+    [JsonPropertyName("granularity")]
     public string Granularity { get; set; }
 
 
@@ -278,7 +278,7 @@ public partial class BuForecastModificationResponse : IEquatable<BuForecastModif
     /// The granularity of the &#39;secondaryValues&#39; modification as stored behind the scenes, expressed in the ISO-8601 duration format. Periods are represented as an ISO-8601 string. For example: P1D or P1DT12H
     /// </summary>
     /// <value>The granularity of the &#39;secondaryValues&#39; modification as stored behind the scenes, expressed in the ISO-8601 duration format. Periods are represented as an ISO-8601 string. For example: P1D or P1DT12H</value>
-    [DataMember(Name = "secondaryGranularity", EmitDefaultValue = false)]
+    [JsonPropertyName("secondaryGranularity")]
     public string SecondaryGranularity { get; set; }
 
 
@@ -287,7 +287,7 @@ public partial class BuForecastModificationResponse : IEquatable<BuForecastModif
     /// Whether the modification is enabled for the forecast
     /// </summary>
     /// <value>Whether the modification is enabled for the forecast</value>
-    [DataMember(Name = "enabled", EmitDefaultValue = false)]
+    [JsonPropertyName("enabled")]
     public bool? Enabled { get; set; }
 
 
@@ -296,7 +296,7 @@ public partial class BuForecastModificationResponse : IEquatable<BuForecastModif
     /// The IDs of the planning groups to which this forecast modification applies
     /// </summary>
     /// <value>The IDs of the planning groups to which this forecast modification applies</value>
-    [DataMember(Name = "planningGroupIds", EmitDefaultValue = false)]
+    [JsonPropertyName("planningGroupIds")]
     public List<string> PlanningGroupIds { get; set; }
 
 

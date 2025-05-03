@@ -7,14 +7,14 @@ namespace PureCloud.Client.Models;
 /// <summary>
 /// DIDPool
 /// </summary>
-[DataContract]
+
 public partial class DIDPool : IEquatable<DIDPool>
 {
     /// <summary>
     /// Indicates if the resource is active, inactive, or deleted.
     /// </summary>
     /// <value>Indicates if the resource is active, inactive, or deleted.</value>
-    [JsonConverter(typeof(JsonStringEnumConverter))]
+    
     public enum StateEnum
     {
         /// <summary>
@@ -47,7 +47,7 @@ public partial class DIDPool : IEquatable<DIDPool>
     /// The provider for this DID pool
     /// </summary>
     /// <value>The provider for this DID pool</value>
-    [JsonConverter(typeof(JsonStringEnumConverter))]
+    
     public enum ProviderEnum
     {
         /// <summary>
@@ -74,13 +74,13 @@ public partial class DIDPool : IEquatable<DIDPool>
     /// Indicates if the resource is active, inactive, or deleted.
     /// </summary>
     /// <value>Indicates if the resource is active, inactive, or deleted.</value>
-    [DataMember(Name = "state", EmitDefaultValue = false)]
+    [JsonPropertyName("state")]
     public StateEnum? State { get; private set; }
     /// <summary>
     /// The provider for this DID pool
     /// </summary>
     /// <value>The provider for this DID pool</value>
-    [DataMember(Name = "provider", EmitDefaultValue = false)]
+    [JsonPropertyName("provider")]
     public ProviderEnum? Provider { get; set; }
 
     /// <summary>
@@ -118,7 +118,7 @@ public partial class DIDPool : IEquatable<DIDPool>
     /// The globally unique identifier for the object.
     /// </summary>
     /// <value>The globally unique identifier for the object.</value>
-    [DataMember(Name = "id", EmitDefaultValue = false)]
+    [JsonPropertyName("id")]
     public string Id { get; private set; }
 
 
@@ -127,7 +127,7 @@ public partial class DIDPool : IEquatable<DIDPool>
     /// The name of the entity.
     /// </summary>
     /// <value>The name of the entity.</value>
-    [DataMember(Name = "name", EmitDefaultValue = false)]
+    [JsonPropertyName("name")]
     public string Name { get; set; }
 
 
@@ -136,7 +136,7 @@ public partial class DIDPool : IEquatable<DIDPool>
     /// The division to which this entity belongs.
     /// </summary>
     /// <value>The division to which this entity belongs.</value>
-    [DataMember(Name = "division", EmitDefaultValue = false)]
+    [JsonPropertyName("division")]
     public Division Division { get; set; }
 
 
@@ -145,7 +145,7 @@ public partial class DIDPool : IEquatable<DIDPool>
     /// The resource&#39;s description.
     /// </summary>
     /// <value>The resource&#39;s description.</value>
-    [DataMember(Name = "description", EmitDefaultValue = false)]
+    [JsonPropertyName("description")]
     public string Description { get; set; }
 
 
@@ -154,7 +154,7 @@ public partial class DIDPool : IEquatable<DIDPool>
     /// The current version of the resource.
     /// </summary>
     /// <value>The current version of the resource.</value>
-    [DataMember(Name = "version", EmitDefaultValue = false)]
+    [JsonPropertyName("version")]
     public int? Version { get; set; }
 
 
@@ -163,7 +163,7 @@ public partial class DIDPool : IEquatable<DIDPool>
     /// The date the resource was created. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z
     /// </summary>
     /// <value>The date the resource was created. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z</value>
-    [DataMember(Name = "dateCreated", EmitDefaultValue = false)]
+    [JsonPropertyName("dateCreated")]
     public DateTime? DateCreated { get; private set; }
 
 
@@ -172,7 +172,7 @@ public partial class DIDPool : IEquatable<DIDPool>
     /// The date of the last modification to the resource. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z
     /// </summary>
     /// <value>The date of the last modification to the resource. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z</value>
-    [DataMember(Name = "dateModified", EmitDefaultValue = false)]
+    [JsonPropertyName("dateModified")]
     public DateTime? DateModified { get; private set; }
 
 
@@ -181,7 +181,7 @@ public partial class DIDPool : IEquatable<DIDPool>
     /// The ID of the user that last modified the resource.
     /// </summary>
     /// <value>The ID of the user that last modified the resource.</value>
-    [DataMember(Name = "modifiedBy", EmitDefaultValue = false)]
+    [JsonPropertyName("modifiedBy")]
     public string ModifiedBy { get; private set; }
 
 
@@ -190,7 +190,7 @@ public partial class DIDPool : IEquatable<DIDPool>
     /// The ID of the user that created the resource.
     /// </summary>
     /// <value>The ID of the user that created the resource.</value>
-    [DataMember(Name = "createdBy", EmitDefaultValue = false)]
+    [JsonPropertyName("createdBy")]
     public string CreatedBy { get; private set; }
 
 
@@ -201,7 +201,7 @@ public partial class DIDPool : IEquatable<DIDPool>
     /// The application that last modified the resource.
     /// </summary>
     /// <value>The application that last modified the resource.</value>
-    [DataMember(Name = "modifiedByApp", EmitDefaultValue = false)]
+    [JsonPropertyName("modifiedByApp")]
     public string ModifiedByApp { get; private set; }
 
 
@@ -210,7 +210,7 @@ public partial class DIDPool : IEquatable<DIDPool>
     /// The application that created the resource.
     /// </summary>
     /// <value>The application that created the resource.</value>
-    [DataMember(Name = "createdByApp", EmitDefaultValue = false)]
+    [JsonPropertyName("createdByApp")]
     public string CreatedByApp { get; private set; }
 
 
@@ -219,7 +219,7 @@ public partial class DIDPool : IEquatable<DIDPool>
     /// The starting phone number for the range of this DID pool. Must be in E.164 format
     /// </summary>
     /// <value>The starting phone number for the range of this DID pool. Must be in E.164 format</value>
-    [DataMember(Name = "startPhoneNumber", EmitDefaultValue = false)]
+    [JsonPropertyName("startPhoneNumber")]
     public string StartPhoneNumber { get; set; }
 
 
@@ -228,7 +228,7 @@ public partial class DIDPool : IEquatable<DIDPool>
     /// The ending phone number for the range of this DID pool. Must be in E.164 format
     /// </summary>
     /// <value>The ending phone number for the range of this DID pool. Must be in E.164 format</value>
-    [DataMember(Name = "endPhoneNumber", EmitDefaultValue = false)]
+    [JsonPropertyName("endPhoneNumber")]
     public string EndPhoneNumber { get; set; }
 
 
@@ -236,7 +236,7 @@ public partial class DIDPool : IEquatable<DIDPool>
     /// <summary>
     /// Gets or Sets Comments
     /// </summary>
-    [DataMember(Name = "comments", EmitDefaultValue = false)]
+    [JsonPropertyName("comments")]
     public string Comments { get; set; }
 
 
@@ -247,7 +247,7 @@ public partial class DIDPool : IEquatable<DIDPool>
     /// The URI for this object
     /// </summary>
     /// <value>The URI for this object</value>
-    [DataMember(Name = "selfUri", EmitDefaultValue = false)]
+    [JsonPropertyName("selfUri")]
     public string SelfUri { get; private set; }
 
 

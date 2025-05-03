@@ -1,4 +1,3 @@
-using System.Runtime.Serialization;
 using System.Text;
 using System.Text.Json.Serialization;
 
@@ -7,7 +6,7 @@ namespace PureCloud.Client.Models;
 /// <summary>
 /// PublishScriptRequestData
 /// </summary>
-[DataContract]
+
 public partial class PublishScriptRequestData : IEquatable<PublishScriptRequestData>
 {
 
@@ -34,7 +33,7 @@ public partial class PublishScriptRequestData : IEquatable<PublishScriptRequestD
     /// The id of the script to publish
     /// </summary>
     /// <value>The id of the script to publish</value>
-    [DataMember(Name = "scriptId", EmitDefaultValue = false)]
+    [JsonPropertyName("scriptId")]
     public string ScriptId { get; set; }
 
 
@@ -42,7 +41,7 @@ public partial class PublishScriptRequestData : IEquatable<PublishScriptRequestD
     /// <summary>
     /// Gets or Sets VersionId
     /// </summary>
-    [DataMember(Name = "versionId", EmitDefaultValue = false)]
+    [JsonPropertyName("versionId")]
     public string VersionId { get; set; }
 
 

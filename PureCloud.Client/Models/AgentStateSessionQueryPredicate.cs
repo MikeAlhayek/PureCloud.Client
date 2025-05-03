@@ -7,14 +7,14 @@ namespace PureCloud.Client.Models;
 /// <summary>
 /// AgentStateSessionQueryPredicate
 /// </summary>
-[DataContract]
+
 public partial class AgentStateSessionQueryPredicate : IEquatable<AgentStateSessionQueryPredicate>
 {
     /// <summary>
     /// Left hand side for dimension predicates
     /// </summary>
     /// <value>Left hand side for dimension predicates</value>
-    [JsonConverter(typeof(JsonStringEnumConverter))]
+    
     public enum DimensionEnum
     {
         /// <summary>
@@ -65,7 +65,7 @@ public partial class AgentStateSessionQueryPredicate : IEquatable<AgentStateSess
     /// Left hand side for dimension predicates
     /// </summary>
     /// <value>Left hand side for dimension predicates</value>
-    [DataMember(Name = "dimension", EmitDefaultValue = false)]
+    [JsonPropertyName("dimension")]
     public DimensionEnum? Dimension { get; set; }
 
     /// <summary>
@@ -93,7 +93,7 @@ public partial class AgentStateSessionQueryPredicate : IEquatable<AgentStateSess
     /// Right hand side for dimension predicates
     /// </summary>
     /// <value>Right hand side for dimension predicates</value>
-    [DataMember(Name = "value", EmitDefaultValue = false)]
+    [JsonPropertyName("value")]
     public string Value { get; set; }
 
 

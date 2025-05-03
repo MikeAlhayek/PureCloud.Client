@@ -1,12 +1,12 @@
-using System.Runtime.Serialization;
 using System.Text;
+using System.Text.Json.Serialization;
 
 namespace PureCloud.Client.Models;
 
 /// <summary>
 /// TimeOffSettingsResponse
 /// </summary>
-[DataContract]
+
 public partial class TimeOffSettingsResponse : IEquatable<TimeOffSettingsResponse>
 {
     /// <summary>
@@ -29,7 +29,7 @@ public partial class TimeOffSettingsResponse : IEquatable<TimeOffSettingsRespons
     /// Whether to enforce a submission range for agent time off requests
     /// </summary>
     /// <value>Whether to enforce a submission range for agent time off requests</value>
-    [DataMember(Name = "submissionRangeEnforced", EmitDefaultValue = false)]
+    [JsonPropertyName("submissionRangeEnforced")]
     public bool? SubmissionRangeEnforced { get; set; }
 
 
@@ -38,7 +38,7 @@ public partial class TimeOffSettingsResponse : IEquatable<TimeOffSettingsRespons
     /// The earliest number of days from now for which an agent can submit a time off request.  Use negative numbers to indicate days in the past
     /// </summary>
     /// <value>The earliest number of days from now for which an agent can submit a time off request.  Use negative numbers to indicate days in the past</value>
-    [DataMember(Name = "submissionEarliestDaysFromNow", EmitDefaultValue = false)]
+    [JsonPropertyName("submissionEarliestDaysFromNow")]
     public int? SubmissionEarliestDaysFromNow { get; set; }
 
 
@@ -47,7 +47,7 @@ public partial class TimeOffSettingsResponse : IEquatable<TimeOffSettingsRespons
     /// The latest number of days from now for which an agent can submit a time off request
     /// </summary>
     /// <value>The latest number of days from now for which an agent can submit a time off request</value>
-    [DataMember(Name = "submissionLatestDaysFromNow", EmitDefaultValue = false)]
+    [JsonPropertyName("submissionLatestDaysFromNow")]
     public int? SubmissionLatestDaysFromNow { get; set; }
 
 

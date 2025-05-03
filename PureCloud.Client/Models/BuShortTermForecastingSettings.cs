@@ -1,12 +1,12 @@
-using System.Runtime.Serialization;
 using System.Text;
+using System.Text.Json.Serialization;
 
 namespace PureCloud.Client.Models;
 
 /// <summary>
 /// BuShortTermForecastingSettings
 /// </summary>
-[DataContract]
+
 public partial class BuShortTermForecastingSettings : IEquatable<BuShortTermForecastingSettings>
 {
     /// <summary>
@@ -25,7 +25,7 @@ public partial class BuShortTermForecastingSettings : IEquatable<BuShortTermFore
     /// The number of historical weeks to consider when creating a forecast. This setting is only used for legacy weighted average forecasts
     /// </summary>
     /// <value>The number of historical weeks to consider when creating a forecast. This setting is only used for legacy weighted average forecasts</value>
-    [DataMember(Name = "defaultHistoryWeeks", EmitDefaultValue = false)]
+    [JsonPropertyName("defaultHistoryWeeks")]
     public int? DefaultHistoryWeeks { get; set; }
 
 

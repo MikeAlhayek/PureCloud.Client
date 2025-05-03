@@ -1,12 +1,12 @@
-using System.Runtime.Serialization;
 using System.Text;
+using System.Text.Json.Serialization;
 
 namespace PureCloud.Client.Models;
 
 /// <summary>
 /// AuditQueryServiceMapping
 /// </summary>
-[DataContract]
+
 public partial class AuditQueryServiceMapping : IEquatable<AuditQueryServiceMapping>
 {
     /// <summary>
@@ -25,7 +25,7 @@ public partial class AuditQueryServiceMapping : IEquatable<AuditQueryServiceMapp
     /// List of Services
     /// </summary>
     /// <value>List of Services</value>
-    [DataMember(Name = "services", EmitDefaultValue = false)]
+    [JsonPropertyName("services")]
     public List<AuditQueryService> Services { get; set; }
 
 

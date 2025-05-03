@@ -1,12 +1,12 @@
-using System.Runtime.Serialization;
 using System.Text;
+using System.Text.Json.Serialization;
 
 namespace PureCloud.Client.Models;
 
 /// <summary>
 /// HistoricalShrinkageResult
 /// </summary>
-[DataContract]
+
 public partial class HistoricalShrinkageResult : IEquatable<HistoricalShrinkageResult>
 {
     /// <summary>
@@ -37,7 +37,7 @@ public partial class HistoricalShrinkageResult : IEquatable<HistoricalShrinkageR
     /// Beginning of the date range that was queried, in ISO-8601 format
     /// </summary>
     /// <value>Beginning of the date range that was queried, in ISO-8601 format</value>
-    [DataMember(Name = "startDate", EmitDefaultValue = false)]
+    [JsonPropertyName("startDate")]
     public DateTime? StartDate { get; set; }
 
 
@@ -46,7 +46,7 @@ public partial class HistoricalShrinkageResult : IEquatable<HistoricalShrinkageR
     /// End of the date range that was queried, in ISO-8601 format. If it was not set, end date will be set to the queried time
     /// </summary>
     /// <value>End of the date range that was queried, in ISO-8601 format. If it was not set, end date will be set to the queried time</value>
-    [DataMember(Name = "endDate", EmitDefaultValue = false)]
+    [JsonPropertyName("endDate")]
     public DateTime? EndDate { get; set; }
 
 
@@ -55,7 +55,7 @@ public partial class HistoricalShrinkageResult : IEquatable<HistoricalShrinkageR
     /// Total duration in seconds for which agents in the management unit are scheduled
     /// </summary>
     /// <value>Total duration in seconds for which agents in the management unit are scheduled</value>
-    [DataMember(Name = "totalScheduledDurationSeconds", EmitDefaultValue = false)]
+    [JsonPropertyName("totalScheduledDurationSeconds")]
     public int? TotalScheduledDurationSeconds { get; set; }
 
 
@@ -64,7 +64,7 @@ public partial class HistoricalShrinkageResult : IEquatable<HistoricalShrinkageR
     /// Total duration in seconds for which agents in the management unit are actually logged-in
     /// </summary>
     /// <value>Total duration in seconds for which agents in the management unit are actually logged-in</value>
-    [DataMember(Name = "totalLoggedInDurationSeconds", EmitDefaultValue = false)]
+    [JsonPropertyName("totalLoggedInDurationSeconds")]
     public int? TotalLoggedInDurationSeconds { get; set; }
 
 
@@ -73,7 +73,7 @@ public partial class HistoricalShrinkageResult : IEquatable<HistoricalShrinkageR
     /// Aggregated shrinkage data for all the activity categories
     /// </summary>
     /// <value>Aggregated shrinkage data for all the activity categories</value>
-    [DataMember(Name = "aggregatedShrinkage", EmitDefaultValue = false)]
+    [JsonPropertyName("aggregatedShrinkage")]
     public HistoricalShrinkageAggregateResponse AggregatedShrinkage { get; set; }
 
 
@@ -82,7 +82,7 @@ public partial class HistoricalShrinkageResult : IEquatable<HistoricalShrinkageR
     /// Shrinkage for activity categories
     /// </summary>
     /// <value>Shrinkage for activity categories</value>
-    [DataMember(Name = "shrinkageForActivityCategories", EmitDefaultValue = false)]
+    [JsonPropertyName("shrinkageForActivityCategories")]
     public List<HistoricalShrinkageActivityCategoryResponse> ShrinkageForActivityCategories { get; set; }
 
 
@@ -91,7 +91,7 @@ public partial class HistoricalShrinkageResult : IEquatable<HistoricalShrinkageR
     /// List of all business units of all the agents in response
     /// </summary>
     /// <value>List of all business units of all the agents in response</value>
-    [DataMember(Name = "businessUnitIds", EmitDefaultValue = false)]
+    [JsonPropertyName("businessUnitIds")]
     public List<string> BusinessUnitIds { get; set; }
 
 

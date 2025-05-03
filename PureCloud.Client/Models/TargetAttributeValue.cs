@@ -1,12 +1,12 @@
-using System.Runtime.Serialization;
 using System.Text;
+using System.Text.Json.Serialization;
 
 namespace PureCloud.Client.Models;
 
 /// <summary>
 /// TargetAttributeValue
 /// </summary>
-[DataContract]
+
 public partial class TargetAttributeValue : IEquatable<TargetAttributeValue>
 {
     /// <summary>
@@ -26,7 +26,7 @@ public partial class TargetAttributeValue : IEquatable<TargetAttributeValue>
     /// <summary>
     /// Gets or Sets Description
     /// </summary>
-    [DataMember(Name = "description", EmitDefaultValue = false)]
+    [JsonPropertyName("description")]
     public string Description { get; set; }
 
 
@@ -34,7 +34,7 @@ public partial class TargetAttributeValue : IEquatable<TargetAttributeValue>
     /// <summary>
     /// Gets or Sets PolicyAttributes
     /// </summary>
-    [DataMember(Name = "policyAttributes", EmitDefaultValue = false)]
+    [JsonPropertyName("policyAttributes")]
     public List<PolicyAttribute> PolicyAttributes { get; set; }
 
 

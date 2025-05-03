@@ -7,14 +7,14 @@ namespace PureCloud.Client.Models;
 /// <summary>
 /// StatusChange
 /// </summary>
-[DataContract]
+
 public partial class StatusChange : IEquatable<StatusChange>
 {
     /// <summary>
     /// The status the change request transitioned to
     /// </summary>
     /// <value>The status the change request transitioned to</value>
-    [JsonConverter(typeof(JsonStringEnumConverter))]
+    
     public enum StatusEnum
     {
         /// <summary>
@@ -107,7 +107,7 @@ public partial class StatusChange : IEquatable<StatusChange>
     /// The status the change request transitioned from
     /// </summary>
     /// <value>The status the change request transitioned from</value>
-    [JsonConverter(typeof(JsonStringEnumConverter))]
+    
     public enum PreviousStatusEnum
     {
         /// <summary>
@@ -200,7 +200,7 @@ public partial class StatusChange : IEquatable<StatusChange>
     /// The namespace for the status change
     /// </summary>
     /// <value>The namespace for the status change</value>
-    [JsonConverter(typeof(JsonStringEnumConverter))]
+    
     public enum NamespaceEnum
     {
         /// <summary>
@@ -665,7 +665,7 @@ public partial class StatusChange : IEquatable<StatusChange>
     /// The reason for rejecting the limit override request
     /// </summary>
     /// <value>The reason for rejecting the limit override request</value>
-    [JsonConverter(typeof(JsonStringEnumConverter))]
+    
     public enum RejectReasonEnum
     {
         /// <summary>
@@ -710,25 +710,25 @@ public partial class StatusChange : IEquatable<StatusChange>
     /// The status the change request transitioned to
     /// </summary>
     /// <value>The status the change request transitioned to</value>
-    [DataMember(Name = "status", EmitDefaultValue = false)]
+    [JsonPropertyName("status")]
     public StatusEnum? Status { get; private set; }
     /// <summary>
     /// The status the change request transitioned from
     /// </summary>
     /// <value>The status the change request transitioned from</value>
-    [DataMember(Name = "previousStatus", EmitDefaultValue = false)]
+    [JsonPropertyName("previousStatus")]
     public PreviousStatusEnum? PreviousStatus { get; private set; }
     /// <summary>
     /// The namespace for the status change
     /// </summary>
     /// <value>The namespace for the status change</value>
-    [DataMember(Name = "namespace", EmitDefaultValue = false)]
+    [JsonPropertyName("namespace")]
     public NamespaceEnum? Namespace { get; private set; }
     /// <summary>
     /// The reason for rejecting the limit override request
     /// </summary>
     /// <value>The reason for rejecting the limit override request</value>
-    [DataMember(Name = "rejectReason", EmitDefaultValue = false)]
+    [JsonPropertyName("rejectReason")]
     public RejectReasonEnum? RejectReason { get; private set; }
     /// <summary>
     /// Initializes a new instance of the <see cref="StatusChange" /> class.
@@ -744,7 +744,7 @@ public partial class StatusChange : IEquatable<StatusChange>
     /// The date of this status change. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z
     /// </summary>
     /// <value>The date of this status change. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z</value>
-    [DataMember(Name = "dateStatusChanged", EmitDefaultValue = false)]
+    [JsonPropertyName("dateStatusChanged")]
     public DateTime? DateStatusChanged { get; private set; }
 
 
@@ -759,7 +759,7 @@ public partial class StatusChange : IEquatable<StatusChange>
     /// A short message describing the status change
     /// </summary>
     /// <value>A short message describing the status change</value>
-    [DataMember(Name = "message", EmitDefaultValue = false)]
+    [JsonPropertyName("message")]
     public string Message { get; private set; }
 
 

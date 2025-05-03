@@ -7,14 +7,14 @@ namespace PureCloud.Client.Models;
 /// <summary>
 /// QualityAuditQueryExecutionStatusResponse
 /// </summary>
-[DataContract]
+
 public partial class QualityAuditQueryExecutionStatusResponse : IEquatable<QualityAuditQueryExecutionStatusResponse>
 {
     /// <summary>
     /// Status of the audit query execution request.
     /// </summary>
     /// <value>Status of the audit query execution request.</value>
-    [JsonConverter(typeof(JsonStringEnumConverter))]
+    
     public enum StateEnum
     {
         /// <summary>
@@ -59,7 +59,7 @@ public partial class QualityAuditQueryExecutionStatusResponse : IEquatable<Quali
     /// Status of the audit query execution request.
     /// </summary>
     /// <value>Status of the audit query execution request.</value>
-    [DataMember(Name = "state", EmitDefaultValue = false)]
+    [JsonPropertyName("state")]
     public StateEnum? State { get; set; }
     /// <summary>
     /// Initializes a new instance of the <see cref="QualityAuditQueryExecutionStatusResponse" /> class.
@@ -87,7 +87,7 @@ public partial class QualityAuditQueryExecutionStatusResponse : IEquatable<Quali
     /// Id of the audit query execution request.
     /// </summary>
     /// <value>Id of the audit query execution request.</value>
-    [DataMember(Name = "id", EmitDefaultValue = false)]
+    [JsonPropertyName("id")]
     public string Id { get; set; }
 
 
@@ -98,7 +98,7 @@ public partial class QualityAuditQueryExecutionStatusResponse : IEquatable<Quali
     /// Start date and time of the audit query execution. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z
     /// </summary>
     /// <value>Start date and time of the audit query execution. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z</value>
-    [DataMember(Name = "dateStart", EmitDefaultValue = false)]
+    [JsonPropertyName("dateStart")]
     public DateTime? DateStart { get; set; }
 
 
@@ -107,7 +107,7 @@ public partial class QualityAuditQueryExecutionStatusResponse : IEquatable<Quali
     /// Interval for the audit query. Intervals are represented as an ISO-8601 string. For example: YYYY-MM-DDThh:mm:ss/YYYY-MM-DDThh:mm:ss
     /// </summary>
     /// <value>Interval for the audit query. Intervals are represented as an ISO-8601 string. For example: YYYY-MM-DDThh:mm:ss/YYYY-MM-DDThh:mm:ss</value>
-    [DataMember(Name = "interval", EmitDefaultValue = false)]
+    [JsonPropertyName("interval")]
     public string Interval { get; set; }
 
 
@@ -116,7 +116,7 @@ public partial class QualityAuditQueryExecutionStatusResponse : IEquatable<Quali
     /// Filters for the audit query.
     /// </summary>
     /// <value>Filters for the audit query.</value>
-    [DataMember(Name = "filters", EmitDefaultValue = false)]
+    [JsonPropertyName("filters")]
     public List<QualityAuditQueryFilter> Filters { get; set; }
 
 
@@ -125,7 +125,7 @@ public partial class QualityAuditQueryExecutionStatusResponse : IEquatable<Quali
     /// Sort parameter for the audit query.
     /// </summary>
     /// <value>Sort parameter for the audit query.</value>
-    [DataMember(Name = "sort", EmitDefaultValue = false)]
+    [JsonPropertyName("sort")]
     public List<AuditQuerySort> Sort { get; set; }
 
 

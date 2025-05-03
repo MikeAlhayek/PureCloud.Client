@@ -90,6 +90,8 @@ public static class AuthExtensions
         {
             formParams.Add("grant_type",
                 string.IsNullOrEmpty(authorizationCode) ? "client_credentials" : "authorization_code");
+
+
             if (!string.IsNullOrEmpty(authorizationCode))
             {
                 formParams.Add("code", apiClient.ParameterToString(authorizationCode));

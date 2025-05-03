@@ -1,12 +1,12 @@
-using System.Runtime.Serialization;
 using System.Text;
+using System.Text.Json.Serialization;
 
 namespace PureCloud.Client.Models;
 
 /// <summary>
 /// ObservationMetricData
 /// </summary>
-[DataContract]
+
 public partial class ObservationMetricData : IEquatable<ObservationMetricData>
 {
     /// <summary>
@@ -32,7 +32,7 @@ public partial class ObservationMetricData : IEquatable<ObservationMetricData>
     /// <summary>
     /// Gets or Sets Metric
     /// </summary>
-    [DataMember(Name = "metric", EmitDefaultValue = false)]
+    [JsonPropertyName("metric")]
     public string Metric { get; set; }
 
 
@@ -40,7 +40,7 @@ public partial class ObservationMetricData : IEquatable<ObservationMetricData>
     /// <summary>
     /// Gets or Sets Qualifier
     /// </summary>
-    [DataMember(Name = "qualifier", EmitDefaultValue = false)]
+    [JsonPropertyName("qualifier")]
     public string Qualifier { get; set; }
 
 
@@ -48,7 +48,7 @@ public partial class ObservationMetricData : IEquatable<ObservationMetricData>
     /// <summary>
     /// Gets or Sets Stats
     /// </summary>
-    [DataMember(Name = "stats", EmitDefaultValue = false)]
+    [JsonPropertyName("stats")]
     public StatisticalSummary Stats { get; set; }
 
 
@@ -57,7 +57,7 @@ public partial class ObservationMetricData : IEquatable<ObservationMetricData>
     /// Flag for a truncated list of observations. If truncated, the first half of the list of observations will contain the oldest observations and the second half the newest observations.
     /// </summary>
     /// <value>Flag for a truncated list of observations. If truncated, the first half of the list of observations will contain the oldest observations and the second half the newest observations.</value>
-    [DataMember(Name = "truncated", EmitDefaultValue = false)]
+    [JsonPropertyName("truncated")]
     public bool? Truncated { get; set; }
 
 
@@ -66,7 +66,7 @@ public partial class ObservationMetricData : IEquatable<ObservationMetricData>
     /// List of observations sorted by timestamp in ascending order. This list may be truncated.
     /// </summary>
     /// <value>List of observations sorted by timestamp in ascending order. This list may be truncated.</value>
-    [DataMember(Name = "observations", EmitDefaultValue = false)]
+    [JsonPropertyName("observations")]
     public List<ObservationValue> Observations { get; set; }
 
 

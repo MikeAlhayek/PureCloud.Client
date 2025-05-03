@@ -1,12 +1,12 @@
-using System.Runtime.Serialization;
 using System.Text;
+using System.Text.Json.Serialization;
 
 namespace PureCloud.Client.Models;
 
 /// <summary>
 /// SingleWorkdayAveragePoints
 /// </summary>
-[DataContract]
+
 public partial class SingleWorkdayAveragePoints : IEquatable<SingleWorkdayAveragePoints>
 {
     /// <summary>
@@ -23,7 +23,7 @@ public partial class SingleWorkdayAveragePoints : IEquatable<SingleWorkdayAverag
     /// Queried target workday. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd
     /// </summary>
     /// <value>Queried target workday. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd</value>
-    [DataMember(Name = "dateWorkday", EmitDefaultValue = false)]
+    [JsonPropertyName("dateWorkday")]
     public string DateWorkday { get; private set; }
 
 
@@ -32,7 +32,7 @@ public partial class SingleWorkdayAveragePoints : IEquatable<SingleWorkdayAverag
     /// The targeted division for the average points
     /// </summary>
     /// <value>The targeted division for the average points</value>
-    [DataMember(Name = "division", EmitDefaultValue = false)]
+    [JsonPropertyName("division")]
     public Division Division { get; private set; }
 
 
@@ -41,7 +41,7 @@ public partial class SingleWorkdayAveragePoints : IEquatable<SingleWorkdayAverag
     /// The average points per agent earned within the division
     /// </summary>
     /// <value>The average points per agent earned within the division</value>
-    [DataMember(Name = "averagePoints", EmitDefaultValue = false)]
+    [JsonPropertyName("averagePoints")]
     public double? AveragePoints { get; private set; }
 
 
@@ -50,7 +50,7 @@ public partial class SingleWorkdayAveragePoints : IEquatable<SingleWorkdayAverag
     /// The targeted performance profile for the average points
     /// </summary>
     /// <value>The targeted performance profile for the average points</value>
-    [DataMember(Name = "performanceProfile", EmitDefaultValue = false)]
+    [JsonPropertyName("performanceProfile")]
     public AddressableEntityRef PerformanceProfile { get; private set; }
 
 

@@ -7,14 +7,14 @@ namespace PureCloud.Client.Models;
 /// <summary>
 /// WfmIntradayPlanningGroupListing
 /// </summary>
-[DataContract]
+
 public partial class WfmIntradayPlanningGroupListing : IEquatable<WfmIntradayPlanningGroupListing>
 {
     /// <summary>
     /// The reason there was no data for the request
     /// </summary>
     /// <value>The reason there was no data for the request</value>
-    [JsonConverter(typeof(JsonStringEnumConverter))]
+    
     public enum NoDataReasonEnum
     {
         /// <summary>
@@ -41,7 +41,7 @@ public partial class WfmIntradayPlanningGroupListing : IEquatable<WfmIntradayPla
     /// The reason there was no data for the request
     /// </summary>
     /// <value>The reason there was no data for the request</value>
-    [DataMember(Name = "noDataReason", EmitDefaultValue = false)]
+    [JsonPropertyName("noDataReason")]
     public NoDataReasonEnum? NoDataReason { get; set; }
     /// <summary>
     /// Initializes a new instance of the <see cref="WfmIntradayPlanningGroupListing" /> class.
@@ -60,7 +60,7 @@ public partial class WfmIntradayPlanningGroupListing : IEquatable<WfmIntradayPla
     /// <summary>
     /// Gets or Sets Entities
     /// </summary>
-    [DataMember(Name = "entities", EmitDefaultValue = false)]
+    [JsonPropertyName("entities")]
     public List<ForecastPlanningGroupResponse> Entities { get; set; }
 
 

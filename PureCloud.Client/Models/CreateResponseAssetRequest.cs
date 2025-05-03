@@ -1,4 +1,3 @@
-using System.Runtime.Serialization;
 using System.Text;
 using System.Text.Json.Serialization;
 
@@ -7,7 +6,7 @@ namespace PureCloud.Client.Models;
 /// <summary>
 /// CreateResponseAssetRequest
 /// </summary>
-[DataContract]
+
 public partial class CreateResponseAssetRequest : IEquatable<CreateResponseAssetRequest>
 {
 
@@ -36,7 +35,7 @@ public partial class CreateResponseAssetRequest : IEquatable<CreateResponseAsset
     /// Name of the file to upload. It must not start with a dot and not end with a forward slash. Whitespace and the following characters are not allowed: \\{^}%&#x60;]\&quot;&gt;[~&lt;#|
     /// </summary>
     /// <value>Name of the file to upload. It must not start with a dot and not end with a forward slash. Whitespace and the following characters are not allowed: \\{^}%&#x60;]\&quot;&gt;[~&lt;#|</value>
-    [DataMember(Name = "name", EmitDefaultValue = false)]
+    [JsonPropertyName("name")]
     public string Name { get; set; }
 
 
@@ -45,7 +44,7 @@ public partial class CreateResponseAssetRequest : IEquatable<CreateResponseAsset
     /// Division to associate to this asset. Can only be used with this division.
     /// </summary>
     /// <value>Division to associate to this asset. Can only be used with this division.</value>
-    [DataMember(Name = "divisionId", EmitDefaultValue = false)]
+    [JsonPropertyName("divisionId")]
     public string DivisionId { get; set; }
 
 
@@ -54,7 +53,7 @@ public partial class CreateResponseAssetRequest : IEquatable<CreateResponseAsset
     /// Content MD-5 of the file to upload
     /// </summary>
     /// <value>Content MD-5 of the file to upload</value>
-    [DataMember(Name = "contentMd5", EmitDefaultValue = false)]
+    [JsonPropertyName("contentMd5")]
     public string ContentMd5 { get; set; }
 
 

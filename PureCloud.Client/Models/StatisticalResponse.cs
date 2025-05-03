@@ -1,12 +1,12 @@
-using System.Runtime.Serialization;
 using System.Text;
+using System.Text.Json.Serialization;
 
 namespace PureCloud.Client.Models;
 
 /// <summary>
 /// StatisticalResponse
 /// </summary>
-[DataContract]
+
 public partial class StatisticalResponse : IEquatable<StatisticalResponse>
 {
     /// <summary>
@@ -28,7 +28,7 @@ public partial class StatisticalResponse : IEquatable<StatisticalResponse>
     /// <summary>
     /// Gets or Sets Interval
     /// </summary>
-    [DataMember(Name = "interval", EmitDefaultValue = false)]
+    [JsonPropertyName("interval")]
     public string Interval { get; set; }
 
 
@@ -36,7 +36,7 @@ public partial class StatisticalResponse : IEquatable<StatisticalResponse>
     /// <summary>
     /// Gets or Sets Metrics
     /// </summary>
-    [DataMember(Name = "metrics", EmitDefaultValue = false)]
+    [JsonPropertyName("metrics")]
     public List<AggregateMetricData> Metrics { get; set; }
 
 
@@ -44,7 +44,7 @@ public partial class StatisticalResponse : IEquatable<StatisticalResponse>
     /// <summary>
     /// Gets or Sets Views
     /// </summary>
-    [DataMember(Name = "views", EmitDefaultValue = false)]
+    [JsonPropertyName("views")]
     public List<AggregateViewData> Views { get; set; }
 
 

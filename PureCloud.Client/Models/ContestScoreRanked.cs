@@ -1,12 +1,12 @@
-using System.Runtime.Serialization;
 using System.Text;
+using System.Text.Json.Serialization;
 
 namespace PureCloud.Client.Models;
 
 /// <summary>
 /// ContestScoreRanked
 /// </summary>
-[DataContract]
+
 public partial class ContestScoreRanked : IEquatable<ContestScoreRanked>
 {
     /// <summary>
@@ -33,7 +33,7 @@ public partial class ContestScoreRanked : IEquatable<ContestScoreRanked>
     /// The Contest score
     /// </summary>
     /// <value>The Contest score</value>
-    [DataMember(Name = "score", EmitDefaultValue = false)]
+    [JsonPropertyName("score")]
     public double? Score { get; set; }
 
 
@@ -42,7 +42,7 @@ public partial class ContestScoreRanked : IEquatable<ContestScoreRanked>
     /// The Contest totalPoints
     /// </summary>
     /// <value>The Contest totalPoints</value>
-    [DataMember(Name = "totalPoints", EmitDefaultValue = false)]
+    [JsonPropertyName("totalPoints")]
     public double? TotalPoints { get; set; }
 
 
@@ -51,7 +51,7 @@ public partial class ContestScoreRanked : IEquatable<ContestScoreRanked>
     /// The Contest percentOfGoal
     /// </summary>
     /// <value>The Contest percentOfGoal</value>
-    [DataMember(Name = "percentOfGoal", EmitDefaultValue = false)]
+    [JsonPropertyName("percentOfGoal")]
     public double? PercentOfGoal { get; set; }
 
 
@@ -60,7 +60,7 @@ public partial class ContestScoreRanked : IEquatable<ContestScoreRanked>
     /// The Contest Score rank
     /// </summary>
     /// <value>The Contest Score rank</value>
-    [DataMember(Name = "rank", EmitDefaultValue = false)]
+    [JsonPropertyName("rank")]
     public int? Rank { get; set; }
 
 
@@ -69,7 +69,7 @@ public partial class ContestScoreRanked : IEquatable<ContestScoreRanked>
     /// The Contest Score tier
     /// </summary>
     /// <value>The Contest Score tier</value>
-    [DataMember(Name = "tier", EmitDefaultValue = false)]
+    [JsonPropertyName("tier")]
     public int? Tier { get; set; }
 
 

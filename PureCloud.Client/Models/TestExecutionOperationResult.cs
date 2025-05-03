@@ -1,12 +1,12 @@
-using System.Runtime.Serialization;
 using System.Text;
+using System.Text.Json.Serialization;
 
 namespace PureCloud.Client.Models;
 
 /// <summary>
 /// TestExecutionOperationResult
 /// </summary>
-[DataContract]
+
 public partial class TestExecutionOperationResult : IEquatable<TestExecutionOperationResult>
 {
     /// <summary>
@@ -33,7 +33,7 @@ public partial class TestExecutionOperationResult : IEquatable<TestExecutionOper
     /// The step number to indicate the order in which the operation was performed
     /// </summary>
     /// <value>The step number to indicate the order in which the operation was performed</value>
-    [DataMember(Name = "step", EmitDefaultValue = false)]
+    [JsonPropertyName("step")]
     public int? Step { get; set; }
 
 
@@ -42,7 +42,7 @@ public partial class TestExecutionOperationResult : IEquatable<TestExecutionOper
     /// Name of the operation performed
     /// </summary>
     /// <value>Name of the operation performed</value>
-    [DataMember(Name = "name", EmitDefaultValue = false)]
+    [JsonPropertyName("name")]
     public string Name { get; set; }
 
 
@@ -51,7 +51,7 @@ public partial class TestExecutionOperationResult : IEquatable<TestExecutionOper
     /// Indicated whether or not the operation was successful
     /// </summary>
     /// <value>Indicated whether or not the operation was successful</value>
-    [DataMember(Name = "success", EmitDefaultValue = false)]
+    [JsonPropertyName("success")]
     public bool? Success { get; set; }
 
 
@@ -60,7 +60,7 @@ public partial class TestExecutionOperationResult : IEquatable<TestExecutionOper
     /// The result of the operation
     /// </summary>
     /// <value>The result of the operation</value>
-    [DataMember(Name = "result", EmitDefaultValue = false)]
+    [JsonPropertyName("result")]
     public object Result { get; set; }
 
 
@@ -69,7 +69,7 @@ public partial class TestExecutionOperationResult : IEquatable<TestExecutionOper
     /// Error that occurred during the operation
     /// </summary>
     /// <value>Error that occurred during the operation</value>
-    [DataMember(Name = "error", EmitDefaultValue = false)]
+    [JsonPropertyName("error")]
     public ErrorBody Error { get; set; }
 
 

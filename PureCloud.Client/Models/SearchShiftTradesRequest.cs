@@ -1,4 +1,3 @@
-using System.Runtime.Serialization;
 using System.Text;
 using System.Text.Json.Serialization;
 
@@ -7,7 +6,7 @@ namespace PureCloud.Client.Models;
 /// <summary>
 /// SearchShiftTradesRequest
 /// </summary>
-[DataContract]
+
 public partial class SearchShiftTradesRequest : IEquatable<SearchShiftTradesRequest>
 {
 
@@ -34,7 +33,7 @@ public partial class SearchShiftTradesRequest : IEquatable<SearchShiftTradesRequ
     /// The ID of the schedule for which to search for available shift trades
     /// </summary>
     /// <value>The ID of the schedule for which to search for available shift trades</value>
-    [DataMember(Name = "receivingScheduleId", EmitDefaultValue = false)]
+    [JsonPropertyName("receivingScheduleId")]
     public string ReceivingScheduleId { get; set; }
 
 
@@ -43,7 +42,7 @@ public partial class SearchShiftTradesRequest : IEquatable<SearchShiftTradesRequ
     /// The IDs of shifts that the receiving user would potentially be willing to trade. If empty, only returns one sided trades (pick up a shift)
     /// </summary>
     /// <value>The IDs of shifts that the receiving user would potentially be willing to trade. If empty, only returns one sided trades (pick up a shift)</value>
-    [DataMember(Name = "receivingShiftIds", EmitDefaultValue = false)]
+    [JsonPropertyName("receivingShiftIds")]
     public List<string> ReceivingShiftIds { get; set; }
 
 

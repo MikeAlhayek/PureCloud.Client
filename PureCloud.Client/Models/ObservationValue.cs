@@ -7,14 +7,14 @@ namespace PureCloud.Client.Models;
 /// <summary>
 /// ObservationValue
 /// </summary>
-[DataContract]
+
 public partial class ObservationValue : IEquatable<ObservationValue>
 {
     /// <summary>
     /// The direction of the communication
     /// </summary>
     /// <value>The direction of the communication</value>
-    [JsonConverter(typeof(JsonStringEnumConverter))]
+    
     public enum DirectionEnum
     {
         /// <summary>
@@ -40,7 +40,7 @@ public partial class ObservationValue : IEquatable<ObservationValue>
     /// <summary>
     /// Gets or Sets RequestedRoutings
     /// </summary>
-    [JsonConverter(typeof(JsonStringEnumConverter))]
+    
     public enum RequestedRoutingsEnum
     {
         /// <summary>
@@ -109,7 +109,7 @@ public partial class ObservationValue : IEquatable<ObservationValue>
     /// Complete routing method
     /// </summary>
     /// <value>Complete routing method</value>
-    [JsonConverter(typeof(JsonStringEnumConverter))]
+    
     public enum UsedRoutingEnum
     {
         /// <summary>
@@ -178,13 +178,13 @@ public partial class ObservationValue : IEquatable<ObservationValue>
     /// The direction of the communication
     /// </summary>
     /// <value>The direction of the communication</value>
-    [DataMember(Name = "direction", EmitDefaultValue = false)]
+    [JsonPropertyName("direction")]
     public DirectionEnum? Direction { get; set; }
     /// <summary>
     /// Complete routing method
     /// </summary>
     /// <value>Complete routing method</value>
-    [DataMember(Name = "usedRouting", EmitDefaultValue = false)]
+    [JsonPropertyName("usedRouting")]
     public UsedRoutingEnum? UsedRouting { get; set; }
 
     /// <summary>
@@ -244,7 +244,7 @@ public partial class ObservationValue : IEquatable<ObservationValue>
     /// The time at which the observation occurred. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z
     /// </summary>
     /// <value>The time at which the observation occurred. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z</value>
-    [DataMember(Name = "observationDate", EmitDefaultValue = false)]
+    [JsonPropertyName("observationDate")]
     public DateTime? ObservationDate { get; set; }
 
 
@@ -253,7 +253,7 @@ public partial class ObservationValue : IEquatable<ObservationValue>
     /// Unique identifier for the conversation
     /// </summary>
     /// <value>Unique identifier for the conversation</value>
-    [DataMember(Name = "conversationId", EmitDefaultValue = false)]
+    [JsonPropertyName("conversationId")]
     public string ConversationId { get; set; }
 
 
@@ -262,7 +262,7 @@ public partial class ObservationValue : IEquatable<ObservationValue>
     /// The unique identifier of this session
     /// </summary>
     /// <value>The unique identifier of this session</value>
-    [DataMember(Name = "sessionId", EmitDefaultValue = false)]
+    [JsonPropertyName("sessionId")]
     public string SessionId { get; set; }
 
 
@@ -271,7 +271,7 @@ public partial class ObservationValue : IEquatable<ObservationValue>
     /// Unique identifier for a skill requested for an interaction
     /// </summary>
     /// <value>Unique identifier for a skill requested for an interaction</value>
-    [DataMember(Name = "requestedRoutingSkillIds", EmitDefaultValue = false)]
+    [JsonPropertyName("requestedRoutingSkillIds")]
     public List<string> RequestedRoutingSkillIds { get; set; }
 
 
@@ -280,7 +280,7 @@ public partial class ObservationValue : IEquatable<ObservationValue>
     /// Unique identifier for the language requested for an interaction
     /// </summary>
     /// <value>Unique identifier for the language requested for an interaction</value>
-    [DataMember(Name = "requestedLanguageId", EmitDefaultValue = false)]
+    [JsonPropertyName("requestedLanguageId")]
     public string RequestedLanguageId { get; set; }
 
 
@@ -289,7 +289,7 @@ public partial class ObservationValue : IEquatable<ObservationValue>
     /// Routing priority for the current interaction
     /// </summary>
     /// <value>Routing priority for the current interaction</value>
-    [DataMember(Name = "routingPriority", EmitDefaultValue = false)]
+    [JsonPropertyName("routingPriority")]
     public long? RoutingPriority { get; set; }
 
 
@@ -298,7 +298,7 @@ public partial class ObservationValue : IEquatable<ObservationValue>
     /// A human readable name identifying the participant
     /// </summary>
     /// <value>A human readable name identifying the participant</value>
-    [DataMember(Name = "participantName", EmitDefaultValue = false)]
+    [JsonPropertyName("participantName")]
     public string ParticipantName { get; set; }
 
 
@@ -307,7 +307,7 @@ public partial class ObservationValue : IEquatable<ObservationValue>
     /// Unique identifier for the user
     /// </summary>
     /// <value>Unique identifier for the user</value>
-    [DataMember(Name = "userId", EmitDefaultValue = false)]
+    [JsonPropertyName("userId")]
     public string UserId { get; set; }
 
 
@@ -318,7 +318,7 @@ public partial class ObservationValue : IEquatable<ObservationValue>
     /// Session media type that was converted from in case of a media type conversion
     /// </summary>
     /// <value>Session media type that was converted from in case of a media type conversion</value>
-    [DataMember(Name = "convertedFrom", EmitDefaultValue = false)]
+    [JsonPropertyName("convertedFrom")]
     public string ConvertedFrom { get; set; }
 
 
@@ -327,7 +327,7 @@ public partial class ObservationValue : IEquatable<ObservationValue>
     /// Session media type that was converted to in case of a media type conversion
     /// </summary>
     /// <value>Session media type that was converted to in case of a media type conversion</value>
-    [DataMember(Name = "convertedTo", EmitDefaultValue = false)]
+    [JsonPropertyName("convertedTo")]
     public string ConvertedTo { get; set; }
 
 
@@ -336,7 +336,7 @@ public partial class ObservationValue : IEquatable<ObservationValue>
     /// The address that initiated an action
     /// </summary>
     /// <value>The address that initiated an action</value>
-    [DataMember(Name = "addressFrom", EmitDefaultValue = false)]
+    [JsonPropertyName("addressFrom")]
     public string AddressFrom { get; set; }
 
 
@@ -345,7 +345,7 @@ public partial class ObservationValue : IEquatable<ObservationValue>
     /// The address receiving an action
     /// </summary>
     /// <value>The address receiving an action</value>
-    [DataMember(Name = "addressTo", EmitDefaultValue = false)]
+    [JsonPropertyName("addressTo")]
     public string AddressTo { get; set; }
 
 
@@ -354,7 +354,7 @@ public partial class ObservationValue : IEquatable<ObservationValue>
     /// Automatic Number Identification (caller&#39;s number)
     /// </summary>
     /// <value>Automatic Number Identification (caller&#39;s number)</value>
-    [DataMember(Name = "ani", EmitDefaultValue = false)]
+    [JsonPropertyName("ani")]
     public string Ani { get; set; }
 
 
@@ -363,7 +363,7 @@ public partial class ObservationValue : IEquatable<ObservationValue>
     /// Dialed number identification service (number dialed by the calling party)
     /// </summary>
     /// <value>Dialed number identification service (number dialed by the calling party)</value>
-    [DataMember(Name = "dnis", EmitDefaultValue = false)]
+    [JsonPropertyName("dnis")]
     public string Dnis { get; set; }
 
 
@@ -372,7 +372,7 @@ public partial class ObservationValue : IEquatable<ObservationValue>
     /// The team id the user is a member of
     /// </summary>
     /// <value>The team id the user is a member of</value>
-    [DataMember(Name = "teamId", EmitDefaultValue = false)]
+    [JsonPropertyName("teamId")]
     public string TeamId { get; set; }
 
 
@@ -381,7 +381,7 @@ public partial class ObservationValue : IEquatable<ObservationValue>
     /// All routing types for requested/attempted routing methods
     /// </summary>
     /// <value>All routing types for requested/attempted routing methods</value>
-    [DataMember(Name = "requestedRoutings", EmitDefaultValue = false)]
+    [JsonPropertyName("requestedRoutings")]
     public List<RequestedRoutingsEnum> RequestedRoutings { get; set; }
 
 
@@ -391,7 +391,7 @@ public partial class ObservationValue : IEquatable<ObservationValue>
     /// <summary>
     /// Gets or Sets ScoredAgents
     /// </summary>
-    [DataMember(Name = "scoredAgents", EmitDefaultValue = false)]
+    [JsonPropertyName("scoredAgents")]
     public List<AnalyticsScoredAgent> ScoredAgents { get; set; }
 
 

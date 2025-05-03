@@ -7,14 +7,14 @@ namespace PureCloud.Client.Models;
 /// <summary>
 /// MoveManagementUnitResponse
 /// </summary>
-[DataContract]
+
 public partial class MoveManagementUnitResponse : IEquatable<MoveManagementUnitResponse>
 {
     /// <summary>
     /// The status of the move.  Will always be 'Processing' unless the Management Unit is already in the requested Business Unit in which case it will be 'Complete'
     /// </summary>
     /// <value>The status of the move.  Will always be 'Processing' unless the Management Unit is already in the requested Business Unit in which case it will be 'Complete'</value>
-    [JsonConverter(typeof(JsonStringEnumConverter))]
+    
     public enum StatusEnum
     {
         /// <summary>
@@ -53,7 +53,7 @@ public partial class MoveManagementUnitResponse : IEquatable<MoveManagementUnitR
     /// The status of the move.  Will always be 'Processing' unless the Management Unit is already in the requested Business Unit in which case it will be 'Complete'
     /// </summary>
     /// <value>The status of the move.  Will always be 'Processing' unless the Management Unit is already in the requested Business Unit in which case it will be 'Complete'</value>
-    [DataMember(Name = "status", EmitDefaultValue = false)]
+    [JsonPropertyName("status")]
     public StatusEnum? Status { get; set; }
     /// <summary>
     /// Initializes a new instance of the <see cref="MoveManagementUnitResponse" /> class.
@@ -73,7 +73,7 @@ public partial class MoveManagementUnitResponse : IEquatable<MoveManagementUnitR
     /// The new business unit
     /// </summary>
     /// <value>The new business unit</value>
-    [DataMember(Name = "businessUnit", EmitDefaultValue = false)]
+    [JsonPropertyName("businessUnit")]
     public BusinessUnitReference BusinessUnit { get; set; }
 
 

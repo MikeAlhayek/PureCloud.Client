@@ -1,12 +1,12 @@
-using System.Runtime.Serialization;
 using System.Text;
+using System.Text.Json.Serialization;
 
 namespace PureCloud.Client.Models;
 
 /// <summary>
 /// WorkitemTerminate
 /// </summary>
-[DataContract]
+
 public partial class WorkitemTerminate : IEquatable<WorkitemTerminate>
 {
     /// <summary>
@@ -25,7 +25,7 @@ public partial class WorkitemTerminate : IEquatable<WorkitemTerminate>
     /// The ID of the status the workitem should be updated to when terminating. The status must be a &#39;Closed&#39; category status.
     /// </summary>
     /// <value>The ID of the status the workitem should be updated to when terminating. The status must be a &#39;Closed&#39; category status.</value>
-    [DataMember(Name = "statusId", EmitDefaultValue = false)]
+    [JsonPropertyName("statusId")]
     public string StatusId { get; set; }
 
 

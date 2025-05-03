@@ -7,14 +7,14 @@ namespace PureCloud.Client.Models;
 /// <summary>
 /// AgentUpdateAlternativeShiftTradeRequest
 /// </summary>
-[DataContract]
+
 public partial class AgentUpdateAlternativeShiftTradeRequest : IEquatable<AgentUpdateAlternativeShiftTradeRequest>
 {
     /// <summary>
     /// The new state of this alternative shift trade
     /// </summary>
     /// <value>The new state of this alternative shift trade</value>
-    [JsonConverter(typeof(JsonStringEnumConverter))]
+    
     public enum StateEnum
     {
         /// <summary>
@@ -35,7 +35,7 @@ public partial class AgentUpdateAlternativeShiftTradeRequest : IEquatable<AgentU
     /// The new state of this alternative shift trade
     /// </summary>
     /// <value>The new state of this alternative shift trade</value>
-    [DataMember(Name = "state", EmitDefaultValue = false)]
+    [JsonPropertyName("state")]
     public StateEnum? State { get; set; }
 
     /// <summary>
@@ -63,7 +63,7 @@ public partial class AgentUpdateAlternativeShiftTradeRequest : IEquatable<AgentU
     /// Version metadata for this alternative shift trade
     /// </summary>
     /// <value>Version metadata for this alternative shift trade</value>
-    [DataMember(Name = "metadata", EmitDefaultValue = false)]
+    [JsonPropertyName("metadata")]
     public WfmVersionedEntityMetadata Metadata { get; set; }
 
 

@@ -1,12 +1,12 @@
-using System.Runtime.Serialization;
 using System.Text;
+using System.Text.Json.Serialization;
 
 namespace PureCloud.Client.Models;
 
 /// <summary>
 /// TweetUsage
 /// </summary>
-[DataContract]
+
 public partial class TweetUsage : IEquatable<TweetUsage>
 {
     /// <summary>
@@ -29,7 +29,7 @@ public partial class TweetUsage : IEquatable<TweetUsage>
     /// Ingestion limit
     /// </summary>
     /// <value>Ingestion limit</value>
-    [DataMember(Name = "ingestionLimit", EmitDefaultValue = false)]
+    [JsonPropertyName("ingestionLimit")]
     public long? IngestionLimit { get; set; }
 
 
@@ -38,7 +38,7 @@ public partial class TweetUsage : IEquatable<TweetUsage>
     /// The number of tweets consumed
     /// </summary>
     /// <value>The number of tweets consumed</value>
-    [DataMember(Name = "tweetCount", EmitDefaultValue = false)]
+    [JsonPropertyName("tweetCount")]
     public long? TweetCount { get; set; }
 
 
@@ -47,7 +47,7 @@ public partial class TweetUsage : IEquatable<TweetUsage>
     /// The start of the usage period for the currently consumed tweets. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z
     /// </summary>
     /// <value>The start of the usage period for the currently consumed tweets. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z</value>
-    [DataMember(Name = "dateStart", EmitDefaultValue = false)]
+    [JsonPropertyName("dateStart")]
     public DateTime? DateStart { get; set; }
 
 

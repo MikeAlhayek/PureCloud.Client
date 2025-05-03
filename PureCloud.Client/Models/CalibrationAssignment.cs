@@ -1,12 +1,12 @@
-using System.Runtime.Serialization;
 using System.Text;
+using System.Text.Json.Serialization;
 
 namespace PureCloud.Client.Models;
 
 /// <summary>
 /// CalibrationAssignment
 /// </summary>
-[DataContract]
+
 public partial class CalibrationAssignment : IEquatable<CalibrationAssignment>
 {
     /// <summary>
@@ -30,7 +30,7 @@ public partial class CalibrationAssignment : IEquatable<CalibrationAssignment>
     /// <summary>
     /// Gets or Sets Calibrator
     /// </summary>
-    [DataMember(Name = "calibrator", EmitDefaultValue = false)]
+    [JsonPropertyName("calibrator")]
     public User Calibrator { get; set; }
 
 
@@ -38,7 +38,7 @@ public partial class CalibrationAssignment : IEquatable<CalibrationAssignment>
     /// <summary>
     /// Gets or Sets Evaluators
     /// </summary>
-    [DataMember(Name = "evaluators", EmitDefaultValue = false)]
+    [JsonPropertyName("evaluators")]
     public List<User> Evaluators { get; set; }
 
 
@@ -46,7 +46,7 @@ public partial class CalibrationAssignment : IEquatable<CalibrationAssignment>
     /// <summary>
     /// Gets or Sets EvaluationForm
     /// </summary>
-    [DataMember(Name = "evaluationForm", EmitDefaultValue = false)]
+    [JsonPropertyName("evaluationForm")]
     public EvaluationForm EvaluationForm { get; set; }
 
 
@@ -54,7 +54,7 @@ public partial class CalibrationAssignment : IEquatable<CalibrationAssignment>
     /// <summary>
     /// Gets or Sets ExpertEvaluator
     /// </summary>
-    [DataMember(Name = "expertEvaluator", EmitDefaultValue = false)]
+    [JsonPropertyName("expertEvaluator")]
     public User ExpertEvaluator { get; set; }
 
 

@@ -1,12 +1,12 @@
-using System.Runtime.Serialization;
 using System.Text;
+using System.Text.Json.Serialization;
 
 namespace PureCloud.Client.Models;
 
 /// <summary>
 /// PatchContentOfferStylingConfiguration
 /// </summary>
-[DataContract]
+
 public partial class PatchContentOfferStylingConfiguration : IEquatable<PatchContentOfferStylingConfiguration>
 {
     /// <summary>
@@ -37,7 +37,7 @@ public partial class PatchContentOfferStylingConfiguration : IEquatable<PatchCon
     /// Properties for customizing the positioning of the content offer.
     /// </summary>
     /// <value>Properties for customizing the positioning of the content offer.</value>
-    [DataMember(Name = "position", EmitDefaultValue = false)]
+    [JsonPropertyName("position")]
     public PatchContentPositionProperties Position { get; set; }
 
 
@@ -46,7 +46,7 @@ public partial class PatchContentOfferStylingConfiguration : IEquatable<PatchCon
     /// Properties for customizing the appearance of the content offer.
     /// </summary>
     /// <value>Properties for customizing the appearance of the content offer.</value>
-    [DataMember(Name = "offer", EmitDefaultValue = false)]
+    [JsonPropertyName("offer")]
     public PatchContentOfferStyleProperties Offer { get; set; }
 
 
@@ -55,7 +55,7 @@ public partial class PatchContentOfferStylingConfiguration : IEquatable<PatchCon
     /// Properties for customizing the appearance of the close button.
     /// </summary>
     /// <value>Properties for customizing the appearance of the close button.</value>
-    [DataMember(Name = "closeButton", EmitDefaultValue = false)]
+    [JsonPropertyName("closeButton")]
     public PatchCloseButtonStyleProperties CloseButton { get; set; }
 
 
@@ -64,7 +64,7 @@ public partial class PatchContentOfferStylingConfiguration : IEquatable<PatchCon
     /// Properties for customizing the appearance of the CTA button.
     /// </summary>
     /// <value>Properties for customizing the appearance of the CTA button.</value>
-    [DataMember(Name = "ctaButton", EmitDefaultValue = false)]
+    [JsonPropertyName("ctaButton")]
     public PatchCtaButtonStyleProperties CtaButton { get; set; }
 
 
@@ -73,7 +73,7 @@ public partial class PatchContentOfferStylingConfiguration : IEquatable<PatchCon
     /// Properties for customizing the appearance of the title text.
     /// </summary>
     /// <value>Properties for customizing the appearance of the title text.</value>
-    [DataMember(Name = "title", EmitDefaultValue = false)]
+    [JsonPropertyName("title")]
     public PatchTextStyleProperties Title { get; set; }
 
 
@@ -82,7 +82,7 @@ public partial class PatchContentOfferStylingConfiguration : IEquatable<PatchCon
     /// Properties for customizing the appearance of the headline text.
     /// </summary>
     /// <value>Properties for customizing the appearance of the headline text.</value>
-    [DataMember(Name = "headline", EmitDefaultValue = false)]
+    [JsonPropertyName("headline")]
     public PatchTextStyleProperties Headline { get; set; }
 
 
@@ -91,7 +91,7 @@ public partial class PatchContentOfferStylingConfiguration : IEquatable<PatchCon
     /// Properties for customizing the appearance of the body text.
     /// </summary>
     /// <value>Properties for customizing the appearance of the body text.</value>
-    [DataMember(Name = "body", EmitDefaultValue = false)]
+    [JsonPropertyName("body")]
     public PatchTextStyleProperties Body { get; set; }
 
 

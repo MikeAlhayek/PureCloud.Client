@@ -7,14 +7,14 @@ namespace PureCloud.Client.Models;
 /// <summary>
 /// Site
 /// </summary>
-[DataContract]
+
 public partial class Site : IEquatable<Site>
 {
     /// <summary>
     /// Indicates if the resource is active, inactive, or deleted.
     /// </summary>
     /// <value>Indicates if the resource is active, inactive, or deleted.</value>
-    [JsonConverter(typeof(JsonStringEnumConverter))]
+    
     public enum StateEnum
     {
         /// <summary>
@@ -47,7 +47,7 @@ public partial class Site : IEquatable<Site>
     /// Media model for the site
     /// </summary>
     /// <value>Media model for the site</value>
-    [JsonConverter(typeof(JsonStringEnumConverter))]
+    
     public enum MediaModelEnum
     {
         /// <summary>
@@ -74,13 +74,13 @@ public partial class Site : IEquatable<Site>
     /// Indicates if the resource is active, inactive, or deleted.
     /// </summary>
     /// <value>Indicates if the resource is active, inactive, or deleted.</value>
-    [DataMember(Name = "state", EmitDefaultValue = false)]
+    [JsonPropertyName("state")]
     public StateEnum? State { get; private set; }
     /// <summary>
     /// Media model for the site
     /// </summary>
     /// <value>Media model for the site</value>
-    [DataMember(Name = "mediaModel", EmitDefaultValue = false)]
+    [JsonPropertyName("mediaModel")]
     public MediaModelEnum? MediaModel { get; set; }
 
     /// <summary>
@@ -146,7 +146,7 @@ public partial class Site : IEquatable<Site>
     /// The globally unique identifier for the object.
     /// </summary>
     /// <value>The globally unique identifier for the object.</value>
-    [DataMember(Name = "id", EmitDefaultValue = false)]
+    [JsonPropertyName("id")]
     public string Id { get; private set; }
 
 
@@ -155,7 +155,7 @@ public partial class Site : IEquatable<Site>
     /// The name of the entity.
     /// </summary>
     /// <value>The name of the entity.</value>
-    [DataMember(Name = "name", EmitDefaultValue = false)]
+    [JsonPropertyName("name")]
     public string Name { get; set; }
 
 
@@ -164,7 +164,7 @@ public partial class Site : IEquatable<Site>
     /// The division to which this entity belongs.
     /// </summary>
     /// <value>The division to which this entity belongs.</value>
-    [DataMember(Name = "division", EmitDefaultValue = false)]
+    [JsonPropertyName("division")]
     public Division Division { get; set; }
 
 
@@ -173,7 +173,7 @@ public partial class Site : IEquatable<Site>
     /// The resource&#39;s description.
     /// </summary>
     /// <value>The resource&#39;s description.</value>
-    [DataMember(Name = "description", EmitDefaultValue = false)]
+    [JsonPropertyName("description")]
     public string Description { get; set; }
 
 
@@ -182,7 +182,7 @@ public partial class Site : IEquatable<Site>
     /// The current version of the resource.
     /// </summary>
     /// <value>The current version of the resource.</value>
-    [DataMember(Name = "version", EmitDefaultValue = false)]
+    [JsonPropertyName("version")]
     public int? Version { get; set; }
 
 
@@ -191,7 +191,7 @@ public partial class Site : IEquatable<Site>
     /// The date the resource was created. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z
     /// </summary>
     /// <value>The date the resource was created. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z</value>
-    [DataMember(Name = "dateCreated", EmitDefaultValue = false)]
+    [JsonPropertyName("dateCreated")]
     public DateTime? DateCreated { get; private set; }
 
 
@@ -200,7 +200,7 @@ public partial class Site : IEquatable<Site>
     /// The date of the last modification to the resource. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z
     /// </summary>
     /// <value>The date of the last modification to the resource. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z</value>
-    [DataMember(Name = "dateModified", EmitDefaultValue = false)]
+    [JsonPropertyName("dateModified")]
     public DateTime? DateModified { get; private set; }
 
 
@@ -209,7 +209,7 @@ public partial class Site : IEquatable<Site>
     /// The ID of the user that last modified the resource.
     /// </summary>
     /// <value>The ID of the user that last modified the resource.</value>
-    [DataMember(Name = "modifiedBy", EmitDefaultValue = false)]
+    [JsonPropertyName("modifiedBy")]
     public string ModifiedBy { get; private set; }
 
 
@@ -218,7 +218,7 @@ public partial class Site : IEquatable<Site>
     /// The ID of the user that created the resource.
     /// </summary>
     /// <value>The ID of the user that created the resource.</value>
-    [DataMember(Name = "createdBy", EmitDefaultValue = false)]
+    [JsonPropertyName("createdBy")]
     public string CreatedBy { get; private set; }
 
 
@@ -229,7 +229,7 @@ public partial class Site : IEquatable<Site>
     /// The application that last modified the resource.
     /// </summary>
     /// <value>The application that last modified the resource.</value>
-    [DataMember(Name = "modifiedByApp", EmitDefaultValue = false)]
+    [JsonPropertyName("modifiedByApp")]
     public string ModifiedByApp { get; private set; }
 
 
@@ -238,7 +238,7 @@ public partial class Site : IEquatable<Site>
     /// The application that created the resource.
     /// </summary>
     /// <value>The application that created the resource.</value>
-    [DataMember(Name = "createdByApp", EmitDefaultValue = false)]
+    [JsonPropertyName("createdByApp")]
     public string CreatedByApp { get; private set; }
 
 
@@ -246,7 +246,7 @@ public partial class Site : IEquatable<Site>
     /// <summary>
     /// Gets or Sets PrimarySites
     /// </summary>
-    [DataMember(Name = "primarySites", EmitDefaultValue = false)]
+    [JsonPropertyName("primarySites")]
     public List<DomainEntityRef> PrimarySites { get; set; }
 
 
@@ -254,7 +254,7 @@ public partial class Site : IEquatable<Site>
     /// <summary>
     /// Gets or Sets SecondarySites
     /// </summary>
-    [DataMember(Name = "secondarySites", EmitDefaultValue = false)]
+    [JsonPropertyName("secondarySites")]
     public List<DomainEntityRef> SecondarySites { get; set; }
 
 
@@ -262,7 +262,7 @@ public partial class Site : IEquatable<Site>
     /// <summary>
     /// Gets or Sets PrimaryEdges
     /// </summary>
-    [DataMember(Name = "primaryEdges", EmitDefaultValue = false)]
+    [JsonPropertyName("primaryEdges")]
     public List<Edge> PrimaryEdges { get; set; }
 
 
@@ -270,7 +270,7 @@ public partial class Site : IEquatable<Site>
     /// <summary>
     /// Gets or Sets SecondaryEdges
     /// </summary>
-    [DataMember(Name = "secondaryEdges", EmitDefaultValue = false)]
+    [JsonPropertyName("secondaryEdges")]
     public List<Edge> SecondaryEdges { get; set; }
 
 
@@ -278,7 +278,7 @@ public partial class Site : IEquatable<Site>
     /// <summary>
     /// Gets or Sets Addresses
     /// </summary>
-    [DataMember(Name = "addresses", EmitDefaultValue = false)]
+    [JsonPropertyName("addresses")]
     public List<Contact> Addresses { get; set; }
 
 
@@ -286,7 +286,7 @@ public partial class Site : IEquatable<Site>
     /// <summary>
     /// Gets or Sets Edges
     /// </summary>
-    [DataMember(Name = "edges", EmitDefaultValue = false)]
+    [JsonPropertyName("edges")]
     public List<Edge> Edges { get; set; }
 
 
@@ -295,7 +295,7 @@ public partial class Site : IEquatable<Site>
     /// Recurrance rule, time zone, and start/end settings for automatic edge updates for this site
     /// </summary>
     /// <value>Recurrance rule, time zone, and start/end settings for automatic edge updates for this site</value>
-    [DataMember(Name = "edgeAutoUpdateConfig", EmitDefaultValue = false)]
+    [JsonPropertyName("edgeAutoUpdateConfig")]
     public EdgeAutoUpdateConfig EdgeAutoUpdateConfig { get; set; }
 
 
@@ -303,7 +303,7 @@ public partial class Site : IEquatable<Site>
     /// <summary>
     /// Gets or Sets MediaRegionsUseLatencyBased
     /// </summary>
-    [DataMember(Name = "mediaRegionsUseLatencyBased", EmitDefaultValue = false)]
+    [JsonPropertyName("mediaRegionsUseLatencyBased")]
     public bool? MediaRegionsUseLatencyBased { get; set; }
 
 
@@ -312,7 +312,7 @@ public partial class Site : IEquatable<Site>
     /// Location
     /// </summary>
     /// <value>Location</value>
-    [DataMember(Name = "location", EmitDefaultValue = false)]
+    [JsonPropertyName("location")]
     public LocationDefinition Location { get; set; }
 
 
@@ -320,7 +320,7 @@ public partial class Site : IEquatable<Site>
     /// <summary>
     /// Gets or Sets Managed
     /// </summary>
-    [DataMember(Name = "managed", EmitDefaultValue = false)]
+    [JsonPropertyName("managed")]
     public bool? Managed { get; set; }
 
 
@@ -329,7 +329,7 @@ public partial class Site : IEquatable<Site>
     /// Network Time Protocol settings for the site
     /// </summary>
     /// <value>Network Time Protocol settings for the site</value>
-    [DataMember(Name = "ntpSettings", EmitDefaultValue = false)]
+    [JsonPropertyName("ntpSettings")]
     public NTPSettings NtpSettings { get; set; }
 
 
@@ -340,7 +340,7 @@ public partial class Site : IEquatable<Site>
     /// Is this site a core site
     /// </summary>
     /// <value>Is this site a core site</value>
-    [DataMember(Name = "coreSite", EmitDefaultValue = false)]
+    [JsonPropertyName("coreSite")]
     public bool? CoreSite { get; set; }
 
 
@@ -349,7 +349,7 @@ public partial class Site : IEquatable<Site>
     /// The site connections
     /// </summary>
     /// <value>The site connections</value>
-    [DataMember(Name = "siteConnections", EmitDefaultValue = false)]
+    [JsonPropertyName("siteConnections")]
     public List<SiteConnection> SiteConnections { get; set; }
 
 
@@ -358,7 +358,7 @@ public partial class Site : IEquatable<Site>
     /// The ordered list of AWS regions through which media can stream.
     /// </summary>
     /// <value>The ordered list of AWS regions through which media can stream.</value>
-    [DataMember(Name = "mediaRegions", EmitDefaultValue = false)]
+    [JsonPropertyName("mediaRegions")]
     public List<string> MediaRegions { get; set; }
 
 
@@ -367,7 +367,7 @@ public partial class Site : IEquatable<Site>
     /// The caller ID value for the site.
     /// </summary>
     /// <value>The caller ID value for the site.</value>
-    [DataMember(Name = "callerId", EmitDefaultValue = false)]
+    [JsonPropertyName("callerId")]
     public string CallerId { get; set; }
 
 
@@ -376,7 +376,7 @@ public partial class Site : IEquatable<Site>
     /// The caller name for the site.
     /// </summary>
     /// <value>The caller name for the site.</value>
-    [DataMember(Name = "callerName", EmitDefaultValue = false)]
+    [JsonPropertyName("callerName")]
     public string CallerName { get; set; }
 
 
@@ -385,7 +385,7 @@ public partial class Site : IEquatable<Site>
     /// Enables premises Edge Force Turn 
     /// </summary>
     /// <value>Enables premises Edge Force Turn </value>
-    [DataMember(Name = "cloudProxyForceTurn", EmitDefaultValue = false)]
+    [JsonPropertyName("cloudProxyForceTurn")]
     public bool? CloudProxyForceTurn { get; set; }
 
 
@@ -394,7 +394,7 @@ public partial class Site : IEquatable<Site>
     /// The URI for this object
     /// </summary>
     /// <value>The URI for this object</value>
-    [DataMember(Name = "selfUri", EmitDefaultValue = false)]
+    [JsonPropertyName("selfUri")]
     public string SelfUri { get; private set; }
 
 

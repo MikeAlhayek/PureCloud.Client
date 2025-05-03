@@ -1,12 +1,12 @@
-using System.Runtime.Serialization;
 using System.Text;
+using System.Text.Json.Serialization;
 
 namespace PureCloud.Client.Models;
 
 /// <summary>
 /// FacetStatistics
 /// </summary>
-[DataContract]
+
 public partial class FacetStatistics : IEquatable<FacetStatistics>
 {
     /// <summary>
@@ -36,7 +36,7 @@ public partial class FacetStatistics : IEquatable<FacetStatistics>
     /// <summary>
     /// Gets or Sets Count
     /// </summary>
-    [DataMember(Name = "count", EmitDefaultValue = false)]
+    [JsonPropertyName("count")]
     public long? Count { get; set; }
 
 
@@ -44,7 +44,7 @@ public partial class FacetStatistics : IEquatable<FacetStatistics>
     /// <summary>
     /// Gets or Sets Min
     /// </summary>
-    [DataMember(Name = "min", EmitDefaultValue = false)]
+    [JsonPropertyName("min")]
     public double? Min { get; set; }
 
 
@@ -52,7 +52,7 @@ public partial class FacetStatistics : IEquatable<FacetStatistics>
     /// <summary>
     /// Gets or Sets Max
     /// </summary>
-    [DataMember(Name = "max", EmitDefaultValue = false)]
+    [JsonPropertyName("max")]
     public double? Max { get; set; }
 
 
@@ -60,7 +60,7 @@ public partial class FacetStatistics : IEquatable<FacetStatistics>
     /// <summary>
     /// Gets or Sets Mean
     /// </summary>
-    [DataMember(Name = "mean", EmitDefaultValue = false)]
+    [JsonPropertyName("mean")]
     public double? Mean { get; set; }
 
 
@@ -68,7 +68,7 @@ public partial class FacetStatistics : IEquatable<FacetStatistics>
     /// <summary>
     /// Gets or Sets StdDeviation
     /// </summary>
-    [DataMember(Name = "stdDeviation", EmitDefaultValue = false)]
+    [JsonPropertyName("stdDeviation")]
     public double? StdDeviation { get; set; }
 
 
@@ -77,7 +77,7 @@ public partial class FacetStatistics : IEquatable<FacetStatistics>
     /// Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z
     /// </summary>
     /// <value>Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z</value>
-    [DataMember(Name = "dateMin", EmitDefaultValue = false)]
+    [JsonPropertyName("dateMin")]
     public DateTime? DateMin { get; set; }
 
 
@@ -86,7 +86,7 @@ public partial class FacetStatistics : IEquatable<FacetStatistics>
     /// Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z
     /// </summary>
     /// <value>Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z</value>
-    [DataMember(Name = "dateMax", EmitDefaultValue = false)]
+    [JsonPropertyName("dateMax")]
     public DateTime? DateMax { get; set; }
 
 

@@ -1,12 +1,12 @@
-using System.Runtime.Serialization;
 using System.Text;
+using System.Text.Json.Serialization;
 
 namespace PureCloud.Client.Models;
 
 /// <summary>
 /// InsightsDetailsMetricPeriodPoints
 /// </summary>
-[DataContract]
+
 public partial class InsightsDetailsMetricPeriodPoints : IEquatable<InsightsDetailsMetricPeriodPoints>
 {
     /// <summary>
@@ -37,7 +37,7 @@ public partial class InsightsDetailsMetricPeriodPoints : IEquatable<InsightsDeta
     /// Points scored
     /// </summary>
     /// <value>Points scored</value>
-    [DataMember(Name = "points", EmitDefaultValue = false)]
+    [JsonPropertyName("points")]
     public int? Points { get; set; }
 
 
@@ -46,7 +46,7 @@ public partial class InsightsDetailsMetricPeriodPoints : IEquatable<InsightsDeta
     /// Max possible points
     /// </summary>
     /// <value>Max possible points</value>
-    [DataMember(Name = "maxPoints", EmitDefaultValue = false)]
+    [JsonPropertyName("maxPoints")]
     public int? MaxPoints { get; set; }
 
 
@@ -55,7 +55,7 @@ public partial class InsightsDetailsMetricPeriodPoints : IEquatable<InsightsDeta
     /// Number of data points
     /// </summary>
     /// <value>Number of data points</value>
-    [DataMember(Name = "dataPointCount", EmitDefaultValue = false)]
+    [JsonPropertyName("dataPointCount")]
     public int? DataPointCount { get; set; }
 
 
@@ -64,7 +64,7 @@ public partial class InsightsDetailsMetricPeriodPoints : IEquatable<InsightsDeta
     /// Percentage of the goal
     /// </summary>
     /// <value>Percentage of the goal</value>
-    [DataMember(Name = "percentOfGoal", EmitDefaultValue = false)]
+    [JsonPropertyName("percentOfGoal")]
     public double? PercentOfGoal { get; set; }
 
 
@@ -73,7 +73,7 @@ public partial class InsightsDetailsMetricPeriodPoints : IEquatable<InsightsDeta
     /// The agent&#39;s rank in leader board for points on this metric
     /// </summary>
     /// <value>The agent&#39;s rank in leader board for points on this metric</value>
-    [DataMember(Name = "rankTotalPoints", EmitDefaultValue = false)]
+    [JsonPropertyName("rankTotalPoints")]
     public int? RankTotalPoints { get; set; }
 
 
@@ -82,7 +82,7 @@ public partial class InsightsDetailsMetricPeriodPoints : IEquatable<InsightsDeta
     /// The agent&#39;s rank in leader board for percentage on this metric
     /// </summary>
     /// <value>The agent&#39;s rank in leader board for percentage on this metric</value>
-    [DataMember(Name = "rankPercentagePoints", EmitDefaultValue = false)]
+    [JsonPropertyName("rankPercentagePoints")]
     public int? RankPercentagePoints { get; set; }
 
 
@@ -91,7 +91,7 @@ public partial class InsightsDetailsMetricPeriodPoints : IEquatable<InsightsDeta
     /// Average value
     /// </summary>
     /// <value>Average value</value>
-    [DataMember(Name = "value", EmitDefaultValue = false)]
+    [JsonPropertyName("value")]
     public double? Value { get; set; }
 
 

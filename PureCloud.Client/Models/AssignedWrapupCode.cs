@@ -1,12 +1,12 @@
-using System.Runtime.Serialization;
 using System.Text;
+using System.Text.Json.Serialization;
 
 namespace PureCloud.Client.Models;
 
 /// <summary>
 /// AssignedWrapupCode
 /// </summary>
-[DataContract]
+
 public partial class AssignedWrapupCode : IEquatable<AssignedWrapupCode>
 {
     /// <summary>
@@ -33,7 +33,7 @@ public partial class AssignedWrapupCode : IEquatable<AssignedWrapupCode>
     /// The user configured wrap up code id.
     /// </summary>
     /// <value>The user configured wrap up code id.</value>
-    [DataMember(Name = "code", EmitDefaultValue = false)]
+    [JsonPropertyName("code")]
     public string Code { get; set; }
 
 
@@ -42,7 +42,7 @@ public partial class AssignedWrapupCode : IEquatable<AssignedWrapupCode>
     /// Text entered by the agent to describe the call or disposition.
     /// </summary>
     /// <value>Text entered by the agent to describe the call or disposition.</value>
-    [DataMember(Name = "notes", EmitDefaultValue = false)]
+    [JsonPropertyName("notes")]
     public string Notes { get; set; }
 
 
@@ -51,7 +51,7 @@ public partial class AssignedWrapupCode : IEquatable<AssignedWrapupCode>
     /// List of tags selected by the agent to describe the call or disposition.
     /// </summary>
     /// <value>List of tags selected by the agent to describe the call or disposition.</value>
-    [DataMember(Name = "tags", EmitDefaultValue = false)]
+    [JsonPropertyName("tags")]
     public List<string> Tags { get; set; }
 
 
@@ -60,7 +60,7 @@ public partial class AssignedWrapupCode : IEquatable<AssignedWrapupCode>
     /// The duration in seconds of the wrap-up segment.
     /// </summary>
     /// <value>The duration in seconds of the wrap-up segment.</value>
-    [DataMember(Name = "durationSeconds", EmitDefaultValue = false)]
+    [JsonPropertyName("durationSeconds")]
     public int? DurationSeconds { get; set; }
 
 
@@ -69,7 +69,7 @@ public partial class AssignedWrapupCode : IEquatable<AssignedWrapupCode>
     /// The timestamp when the wrap-up segment ended. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z
     /// </summary>
     /// <value>The timestamp when the wrap-up segment ended. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z</value>
-    [DataMember(Name = "endTime", EmitDefaultValue = false)]
+    [JsonPropertyName("endTime")]
     public DateTime? EndTime { get; set; }
 
 

@@ -7,14 +7,14 @@ namespace PureCloud.Client.Models;
 /// <summary>
 /// QueueRequest
 /// </summary>
-[DataContract]
+
 public partial class QueueRequest : IEquatable<QueueRequest>
 {
     /// <summary>
     /// The Scoring Method for the queue.
     /// </summary>
     /// <value>The Scoring Method for the queue.</value>
-    [JsonConverter(typeof(JsonStringEnumConverter))]
+    
     public enum ScoringMethodEnum
     {
         /// <summary>
@@ -41,7 +41,7 @@ public partial class QueueRequest : IEquatable<QueueRequest>
     /// The Last Agent Routing Mode for the queue.
     /// </summary>
     /// <value>The Last Agent Routing Mode for the queue.</value>
-    [JsonConverter(typeof(JsonStringEnumConverter))]
+    
     public enum LastAgentRoutingModeEnum
     {
         /// <summary>
@@ -74,7 +74,7 @@ public partial class QueueRequest : IEquatable<QueueRequest>
     /// The skill evaluation method to use when routing conversations.
     /// </summary>
     /// <value>The skill evaluation method to use when routing conversations.</value>
-    [JsonConverter(typeof(JsonStringEnumConverter))]
+    
     public enum SkillEvaluationMethodEnum
     {
         /// <summary>
@@ -107,19 +107,19 @@ public partial class QueueRequest : IEquatable<QueueRequest>
     /// The Scoring Method for the queue.
     /// </summary>
     /// <value>The Scoring Method for the queue.</value>
-    [DataMember(Name = "scoringMethod", EmitDefaultValue = false)]
+    [JsonPropertyName("scoringMethod")]
     public ScoringMethodEnum? ScoringMethod { get; set; }
     /// <summary>
     /// The Last Agent Routing Mode for the queue.
     /// </summary>
     /// <value>The Last Agent Routing Mode for the queue.</value>
-    [DataMember(Name = "lastAgentRoutingMode", EmitDefaultValue = false)]
+    [JsonPropertyName("lastAgentRoutingMode")]
     public LastAgentRoutingModeEnum? LastAgentRoutingMode { get; set; }
     /// <summary>
     /// The skill evaluation method to use when routing conversations.
     /// </summary>
     /// <value>The skill evaluation method to use when routing conversations.</value>
-    [DataMember(Name = "skillEvaluationMethod", EmitDefaultValue = false)]
+    [JsonPropertyName("skillEvaluationMethod")]
     public SkillEvaluationMethodEnum? SkillEvaluationMethod { get; set; }
 
     /// <summary>
@@ -211,7 +211,7 @@ public partial class QueueRequest : IEquatable<QueueRequest>
     /// The globally unique identifier for the object.
     /// </summary>
     /// <value>The globally unique identifier for the object.</value>
-    [DataMember(Name = "id", EmitDefaultValue = false)]
+    [JsonPropertyName("id")]
     public string Id { get; private set; }
 
 
@@ -220,7 +220,7 @@ public partial class QueueRequest : IEquatable<QueueRequest>
     /// The queue name
     /// </summary>
     /// <value>The queue name</value>
-    [DataMember(Name = "name", EmitDefaultValue = false)]
+    [JsonPropertyName("name")]
     public string Name { get; set; }
 
 
@@ -229,7 +229,7 @@ public partial class QueueRequest : IEquatable<QueueRequest>
     /// The division to which this entity belongs.
     /// </summary>
     /// <value>The division to which this entity belongs.</value>
-    [DataMember(Name = "division", EmitDefaultValue = false)]
+    [JsonPropertyName("division")]
     public WritableDivision Division { get; set; }
 
 
@@ -238,7 +238,7 @@ public partial class QueueRequest : IEquatable<QueueRequest>
     /// The queue description.
     /// </summary>
     /// <value>The queue description.</value>
-    [DataMember(Name = "description", EmitDefaultValue = false)]
+    [JsonPropertyName("description")]
     public string Description { get; set; }
 
 
@@ -247,7 +247,7 @@ public partial class QueueRequest : IEquatable<QueueRequest>
     /// The date the queue was created. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z
     /// </summary>
     /// <value>The date the queue was created. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z</value>
-    [DataMember(Name = "dateCreated", EmitDefaultValue = false)]
+    [JsonPropertyName("dateCreated")]
     public DateTime? DateCreated { get; set; }
 
 
@@ -256,7 +256,7 @@ public partial class QueueRequest : IEquatable<QueueRequest>
     /// The date of the last modification to the queue. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z
     /// </summary>
     /// <value>The date of the last modification to the queue. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z</value>
-    [DataMember(Name = "dateModified", EmitDefaultValue = false)]
+    [JsonPropertyName("dateModified")]
     public DateTime? DateModified { get; set; }
 
 
@@ -265,7 +265,7 @@ public partial class QueueRequest : IEquatable<QueueRequest>
     /// The ID of the user that last modified the queue.
     /// </summary>
     /// <value>The ID of the user that last modified the queue.</value>
-    [DataMember(Name = "modifiedBy", EmitDefaultValue = false)]
+    [JsonPropertyName("modifiedBy")]
     public string ModifiedBy { get; set; }
 
 
@@ -274,7 +274,7 @@ public partial class QueueRequest : IEquatable<QueueRequest>
     /// The ID of the user that created the queue.
     /// </summary>
     /// <value>The ID of the user that created the queue.</value>
-    [DataMember(Name = "createdBy", EmitDefaultValue = false)]
+    [JsonPropertyName("createdBy")]
     public string CreatedBy { get; set; }
 
 
@@ -283,7 +283,7 @@ public partial class QueueRequest : IEquatable<QueueRequest>
     /// The total number of members in the queue.
     /// </summary>
     /// <value>The total number of members in the queue.</value>
-    [DataMember(Name = "memberCount", EmitDefaultValue = false)]
+    [JsonPropertyName("memberCount")]
     public int? MemberCount { get; private set; }
 
 
@@ -292,7 +292,7 @@ public partial class QueueRequest : IEquatable<QueueRequest>
     /// The number of user members (i.e., non-group members) in the queue.
     /// </summary>
     /// <value>The number of user members (i.e., non-group members) in the queue.</value>
-    [DataMember(Name = "userMemberCount", EmitDefaultValue = false)]
+    [JsonPropertyName("userMemberCount")]
     public int? UserMemberCount { get; private set; }
 
 
@@ -301,7 +301,7 @@ public partial class QueueRequest : IEquatable<QueueRequest>
     /// The number of joined members in the queue.
     /// </summary>
     /// <value>The number of joined members in the queue.</value>
-    [DataMember(Name = "joinedMemberCount", EmitDefaultValue = false)]
+    [JsonPropertyName("joinedMemberCount")]
     public int? JoinedMemberCount { get; private set; }
 
 
@@ -310,7 +310,7 @@ public partial class QueueRequest : IEquatable<QueueRequest>
     /// The media settings for the queue.
     /// </summary>
     /// <value>The media settings for the queue.</value>
-    [DataMember(Name = "mediaSettings", EmitDefaultValue = false)]
+    [JsonPropertyName("mediaSettings")]
     public QueueMediaSettings MediaSettings { get; set; }
 
 
@@ -319,7 +319,7 @@ public partial class QueueRequest : IEquatable<QueueRequest>
     /// The routing rules for the queue, used for Preferred Agent Routing.
     /// </summary>
     /// <value>The routing rules for the queue, used for Preferred Agent Routing.</value>
-    [DataMember(Name = "routingRules", EmitDefaultValue = false)]
+    [JsonPropertyName("routingRules")]
     public List<RoutingRule> RoutingRules { get; set; }
 
 
@@ -328,7 +328,7 @@ public partial class QueueRequest : IEquatable<QueueRequest>
     /// The Conditional Group Routing settings for the queue.
     /// </summary>
     /// <value>The Conditional Group Routing settings for the queue.</value>
-    [DataMember(Name = "conditionalGroupRouting", EmitDefaultValue = false)]
+    [JsonPropertyName("conditionalGroupRouting")]
     public ConditionalGroupRouting ConditionalGroupRouting { get; set; }
 
 
@@ -337,7 +337,7 @@ public partial class QueueRequest : IEquatable<QueueRequest>
     /// The bullseye settings for the queue.
     /// </summary>
     /// <value>The bullseye settings for the queue.</value>
-    [DataMember(Name = "bullseye", EmitDefaultValue = false)]
+    [JsonPropertyName("bullseye")]
     public Bullseye Bullseye { get; set; }
 
 
@@ -350,7 +350,7 @@ public partial class QueueRequest : IEquatable<QueueRequest>
     /// The ACW settings for the queue.
     /// </summary>
     /// <value>The ACW settings for the queue.</value>
-    [DataMember(Name = "acwSettings", EmitDefaultValue = false)]
+    [JsonPropertyName("acwSettings")]
     public AcwSettings AcwSettings { get; set; }
 
 
@@ -361,7 +361,7 @@ public partial class QueueRequest : IEquatable<QueueRequest>
     /// The groups of agents associated with the queue, if any.  Queue membership will update to match group membership changes.
     /// </summary>
     /// <value>The groups of agents associated with the queue, if any.  Queue membership will update to match group membership changes.</value>
-    [DataMember(Name = "memberGroups", EmitDefaultValue = false)]
+    [JsonPropertyName("memberGroups")]
     public List<MemberGroup> MemberGroups { get; set; }
 
 
@@ -370,7 +370,7 @@ public partial class QueueRequest : IEquatable<QueueRequest>
     /// The in-queue flow to use for call conversations waiting in queue.
     /// </summary>
     /// <value>The in-queue flow to use for call conversations waiting in queue.</value>
-    [DataMember(Name = "queueFlow", EmitDefaultValue = false)]
+    [JsonPropertyName("queueFlow")]
     public DomainEntityRef QueueFlow { get; set; }
 
 
@@ -379,7 +379,7 @@ public partial class QueueRequest : IEquatable<QueueRequest>
     /// The in-queue flow to use for email conversations waiting in queue.
     /// </summary>
     /// <value>The in-queue flow to use for email conversations waiting in queue.</value>
-    [DataMember(Name = "emailInQueueFlow", EmitDefaultValue = false)]
+    [JsonPropertyName("emailInQueueFlow")]
     public DomainEntityRef EmailInQueueFlow { get; set; }
 
 
@@ -388,7 +388,7 @@ public partial class QueueRequest : IEquatable<QueueRequest>
     /// The in-queue flow to use for message conversations waiting in queue.
     /// </summary>
     /// <value>The in-queue flow to use for message conversations waiting in queue.</value>
-    [DataMember(Name = "messageInQueueFlow", EmitDefaultValue = false)]
+    [JsonPropertyName("messageInQueueFlow")]
     public DomainEntityRef MessageInQueueFlow { get; set; }
 
 
@@ -397,7 +397,7 @@ public partial class QueueRequest : IEquatable<QueueRequest>
     /// The prompt used for whisper on the queue, if configured.
     /// </summary>
     /// <value>The prompt used for whisper on the queue, if configured.</value>
-    [DataMember(Name = "whisperPrompt", EmitDefaultValue = false)]
+    [JsonPropertyName("whisperPrompt")]
     public DomainEntityRef WhisperPrompt { get; set; }
 
 
@@ -406,7 +406,7 @@ public partial class QueueRequest : IEquatable<QueueRequest>
     /// The audio to be played when calls on this queue are on hold. If not configured, the default on-hold music will play.
     /// </summary>
     /// <value>The audio to be played when calls on this queue are on hold. If not configured, the default on-hold music will play.</value>
-    [DataMember(Name = "onHoldPrompt", EmitDefaultValue = false)]
+    [JsonPropertyName("onHoldPrompt")]
     public DomainEntityRef OnHoldPrompt { get; set; }
 
 
@@ -415,7 +415,7 @@ public partial class QueueRequest : IEquatable<QueueRequest>
     /// Specifies whether the configured whisper should play for all ACD calls, or only for those which are auto-answered.
     /// </summary>
     /// <value>Specifies whether the configured whisper should play for all ACD calls, or only for those which are auto-answered.</value>
-    [DataMember(Name = "autoAnswerOnly", EmitDefaultValue = false)]
+    [JsonPropertyName("autoAnswerOnly")]
     public bool? AutoAnswerOnly { get; set; }
 
 
@@ -424,7 +424,7 @@ public partial class QueueRequest : IEquatable<QueueRequest>
     /// Canned response library IDs and mode with which they are associated with the queue
     /// </summary>
     /// <value>Canned response library IDs and mode with which they are associated with the queue</value>
-    [DataMember(Name = "cannedResponseLibraries", EmitDefaultValue = false)]
+    [JsonPropertyName("cannedResponseLibraries")]
     public CannedResponseLibraries CannedResponseLibraries { get; set; }
 
 
@@ -433,7 +433,7 @@ public partial class QueueRequest : IEquatable<QueueRequest>
     /// Indicates whether voice transcription is enabled for this queue.
     /// </summary>
     /// <value>Indicates whether voice transcription is enabled for this queue.</value>
-    [DataMember(Name = "enableTranscription", EmitDefaultValue = false)]
+    [JsonPropertyName("enableTranscription")]
     public bool? EnableTranscription { get; set; }
 
 
@@ -442,7 +442,7 @@ public partial class QueueRequest : IEquatable<QueueRequest>
     /// Indicates whether audio monitoring is enabled for this queue.
     /// </summary>
     /// <value>Indicates whether audio monitoring is enabled for this queue.</value>
-    [DataMember(Name = "enableAudioMonitoring", EmitDefaultValue = false)]
+    [JsonPropertyName("enableAudioMonitoring")]
     public bool? EnableAudioMonitoring { get; set; }
 
 
@@ -451,7 +451,7 @@ public partial class QueueRequest : IEquatable<QueueRequest>
     /// Indicates whether manual assignment is enabled for this queue.
     /// </summary>
     /// <value>Indicates whether manual assignment is enabled for this queue.</value>
-    [DataMember(Name = "enableManualAssignment", EmitDefaultValue = false)]
+    [JsonPropertyName("enableManualAssignment")]
     public bool? EnableManualAssignment { get; set; }
 
 
@@ -460,7 +460,7 @@ public partial class QueueRequest : IEquatable<QueueRequest>
     /// The Agent Owned Routing settings for the queue
     /// </summary>
     /// <value>The Agent Owned Routing settings for the queue</value>
-    [DataMember(Name = "agentOwnedRouting", EmitDefaultValue = false)]
+    [JsonPropertyName("agentOwnedRouting")]
     public AgentOwnedRouting AgentOwnedRouting { get; set; }
 
 
@@ -469,7 +469,7 @@ public partial class QueueRequest : IEquatable<QueueRequest>
     /// The Direct Routing settings for the queue
     /// </summary>
     /// <value>The Direct Routing settings for the queue</value>
-    [DataMember(Name = "directRouting", EmitDefaultValue = false)]
+    [JsonPropertyName("directRouting")]
     public DirectRouting DirectRouting { get; set; }
 
 
@@ -478,7 +478,7 @@ public partial class QueueRequest : IEquatable<QueueRequest>
     /// The name to use for caller identification for outbound calls from this queue.
     /// </summary>
     /// <value>The name to use for caller identification for outbound calls from this queue.</value>
-    [DataMember(Name = "callingPartyName", EmitDefaultValue = false)]
+    [JsonPropertyName("callingPartyName")]
     public string CallingPartyName { get; set; }
 
 
@@ -487,7 +487,7 @@ public partial class QueueRequest : IEquatable<QueueRequest>
     /// The phone number to use for caller identification for outbound calls from this queue.
     /// </summary>
     /// <value>The phone number to use for caller identification for outbound calls from this queue.</value>
-    [DataMember(Name = "callingPartyNumber", EmitDefaultValue = false)]
+    [JsonPropertyName("callingPartyNumber")]
     public string CallingPartyNumber { get; set; }
 
 
@@ -496,7 +496,7 @@ public partial class QueueRequest : IEquatable<QueueRequest>
     /// The default script Ids for the communication types.
     /// </summary>
     /// <value>The default script Ids for the communication types.</value>
-    [DataMember(Name = "defaultScripts", EmitDefaultValue = false)]
+    [JsonPropertyName("defaultScripts")]
     public Dictionary<string, Script> DefaultScripts { get; set; }
 
 
@@ -505,7 +505,7 @@ public partial class QueueRequest : IEquatable<QueueRequest>
     /// The messaging addresses for the queue.
     /// </summary>
     /// <value>The messaging addresses for the queue.</value>
-    [DataMember(Name = "outboundMessagingAddresses", EmitDefaultValue = false)]
+    [JsonPropertyName("outboundMessagingAddresses")]
     public QueueMessagingAddresses OutboundMessagingAddresses { get; set; }
 
 
@@ -514,7 +514,7 @@ public partial class QueueRequest : IEquatable<QueueRequest>
     /// The default email address to use for outbound email from this queue.
     /// </summary>
     /// <value>The default email address to use for outbound email from this queue.</value>
-    [DataMember(Name = "outboundEmailAddress", EmitDefaultValue = false)]
+    [JsonPropertyName("outboundEmailAddress")]
     public QueueEmailAddress OutboundEmailAddress { get; set; }
 
 
@@ -523,7 +523,7 @@ public partial class QueueRequest : IEquatable<QueueRequest>
     /// The ID of an associated external queue.
     /// </summary>
     /// <value>The ID of an associated external queue.</value>
-    [DataMember(Name = "peerId", EmitDefaultValue = false)]
+    [JsonPropertyName("peerId")]
     public string PeerId { get; set; }
 
 
@@ -532,7 +532,7 @@ public partial class QueueRequest : IEquatable<QueueRequest>
     /// Indicates whether recording in-queue calls is suppressed for this queue.
     /// </summary>
     /// <value>Indicates whether recording in-queue calls is suppressed for this queue.</value>
-    [DataMember(Name = "suppressInQueueCallRecording", EmitDefaultValue = false)]
+    [JsonPropertyName("suppressInQueueCallRecording")]
     public bool? SuppressInQueueCallRecording { get; set; }
 
 
@@ -541,7 +541,7 @@ public partial class QueueRequest : IEquatable<QueueRequest>
     /// The URI for this object
     /// </summary>
     /// <value>The URI for this object</value>
-    [DataMember(Name = "selfUri", EmitDefaultValue = false)]
+    [JsonPropertyName("selfUri")]
     public string SelfUri { get; private set; }
 
 

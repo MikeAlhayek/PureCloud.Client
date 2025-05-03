@@ -1,4 +1,3 @@
-using System.Runtime.Serialization;
 using System.Text;
 using System.Text.Json.Serialization;
 
@@ -7,7 +6,7 @@ namespace PureCloud.Client.Models;
 /// <summary>
 /// DocumentationResult
 /// </summary>
-[DataContract]
+
 public partial class DocumentationResult : IEquatable<DocumentationResult>
 {
 
@@ -70,7 +69,7 @@ public partial class DocumentationResult : IEquatable<DocumentationResult>
     /// The globally unique identifier for the object.
     /// </summary>
     /// <value>The globally unique identifier for the object.</value>
-    [DataMember(Name = "id", EmitDefaultValue = false)]
+    [JsonPropertyName("id")]
     public int? Id { get; set; }
 
 
@@ -79,7 +78,7 @@ public partial class DocumentationResult : IEquatable<DocumentationResult>
     /// The category of the documentation entity. Will be returned in responses for certain entities.
     /// </summary>
     /// <value>The category of the documentation entity. Will be returned in responses for certain entities.</value>
-    [DataMember(Name = "categories", EmitDefaultValue = false)]
+    [JsonPropertyName("categories")]
     public List<int?> Categories { get; set; }
 
 
@@ -88,7 +87,7 @@ public partial class DocumentationResult : IEquatable<DocumentationResult>
     /// The description of the documentation entity. Will be returned in responses for certain entities.
     /// </summary>
     /// <value>The description of the documentation entity. Will be returned in responses for certain entities.</value>
-    [DataMember(Name = "description", EmitDefaultValue = false)]
+    [JsonPropertyName("description")]
     public string Description { get; set; }
 
 
@@ -97,7 +96,7 @@ public partial class DocumentationResult : IEquatable<DocumentationResult>
     /// The text or html content for the documentation entity. Will be returned in responses for certain entities.
     /// </summary>
     /// <value>The text or html content for the documentation entity. Will be returned in responses for certain entities.</value>
-    [DataMember(Name = "content", EmitDefaultValue = false)]
+    [JsonPropertyName("content")]
     public string Content { get; set; }
 
 
@@ -106,7 +105,7 @@ public partial class DocumentationResult : IEquatable<DocumentationResult>
     /// The excerpt of the documentation entity. Will be returned in responses for certain entities.
     /// </summary>
     /// <value>The excerpt of the documentation entity. Will be returned in responses for certain entities.</value>
-    [DataMember(Name = "excerpt", EmitDefaultValue = false)]
+    [JsonPropertyName("excerpt")]
     public string Excerpt { get; set; }
 
 
@@ -115,7 +114,7 @@ public partial class DocumentationResult : IEquatable<DocumentationResult>
     /// URL link for the documentation entity. Will be returned in responses for certain entities.
     /// </summary>
     /// <value>URL link for the documentation entity. Will be returned in responses for certain entities.</value>
-    [DataMember(Name = "link", EmitDefaultValue = false)]
+    [JsonPropertyName("link")]
     public string Link { get; set; }
 
 
@@ -124,7 +123,7 @@ public partial class DocumentationResult : IEquatable<DocumentationResult>
     /// The modified date for the documentation entity. Will be returned in responses for certain entities. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z
     /// </summary>
     /// <value>The modified date for the documentation entity. Will be returned in responses for certain entities. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z</value>
-    [DataMember(Name = "modified", EmitDefaultValue = false)]
+    [JsonPropertyName("modified")]
     public DateTime? Modified { get; set; }
 
 
@@ -133,7 +132,7 @@ public partial class DocumentationResult : IEquatable<DocumentationResult>
     /// The name of the documentation entity. Will be returned in responses for certain entities.
     /// </summary>
     /// <value>The name of the documentation entity. Will be returned in responses for certain entities.</value>
-    [DataMember(Name = "name", EmitDefaultValue = false)]
+    [JsonPropertyName("name")]
     public string Name { get; set; }
 
 
@@ -142,7 +141,7 @@ public partial class DocumentationResult : IEquatable<DocumentationResult>
     /// The service of the documentation entity. Will be returned in responses for certain entities.
     /// </summary>
     /// <value>The service of the documentation entity. Will be returned in responses for certain entities.</value>
-    [DataMember(Name = "service", EmitDefaultValue = false)]
+    [JsonPropertyName("service")]
     public List<int?> Service { get; set; }
 
 
@@ -151,7 +150,7 @@ public partial class DocumentationResult : IEquatable<DocumentationResult>
     /// The slug of the documentation entity. Will be returned in responses for certain entities.
     /// </summary>
     /// <value>The slug of the documentation entity. Will be returned in responses for certain entities.</value>
-    [DataMember(Name = "slug", EmitDefaultValue = false)]
+    [JsonPropertyName("slug")]
     public string Slug { get; set; }
 
 
@@ -160,7 +159,7 @@ public partial class DocumentationResult : IEquatable<DocumentationResult>
     /// The title of the documentation entity. Will be returned in responses for certain entities.
     /// </summary>
     /// <value>The title of the documentation entity. Will be returned in responses for certain entities.</value>
-    [DataMember(Name = "title", EmitDefaultValue = false)]
+    [JsonPropertyName("title")]
     public string Title { get; set; }
 
 
@@ -169,7 +168,7 @@ public partial class DocumentationResult : IEquatable<DocumentationResult>
     /// The search type. Will be returned in responses for certain entities.
     /// </summary>
     /// <value>The search type. Will be returned in responses for certain entities.</value>
-    [DataMember(Name = "get_type", EmitDefaultValue = false)]
+    [JsonPropertyName("get_type")]
     public string GetTheType { get; set; }
 
 
@@ -178,7 +177,7 @@ public partial class DocumentationResult : IEquatable<DocumentationResult>
     /// The facet feature of the documentation entity. Will be returned in responses for certain entities.
     /// </summary>
     /// <value>The facet feature of the documentation entity. Will be returned in responses for certain entities.</value>
-    [DataMember(Name = "facet_feature", EmitDefaultValue = false)]
+    [JsonPropertyName("facet_feature")]
     public List<int?> FacetFeature { get; set; }
 
 
@@ -187,7 +186,7 @@ public partial class DocumentationResult : IEquatable<DocumentationResult>
     /// The facet role of the documentation entity. Will be returned in responses for certain entities.
     /// </summary>
     /// <value>The facet role of the documentation entity. Will be returned in responses for certain entities.</value>
-    [DataMember(Name = "facet_role", EmitDefaultValue = false)]
+    [JsonPropertyName("facet_role")]
     public List<int?> FacetRole { get; set; }
 
 
@@ -196,7 +195,7 @@ public partial class DocumentationResult : IEquatable<DocumentationResult>
     /// The facet service of the documentation entity. Will be returned in responses for certain entities.
     /// </summary>
     /// <value>The facet service of the documentation entity. Will be returned in responses for certain entities.</value>
-    [DataMember(Name = "facet_service", EmitDefaultValue = false)]
+    [JsonPropertyName("facet_service")]
     public List<int?> FacetService { get; set; }
 
 
@@ -205,7 +204,7 @@ public partial class DocumentationResult : IEquatable<DocumentationResult>
     /// The faq categories of the documentation entity. Will be returned in responses for certain entities.
     /// </summary>
     /// <value>The faq categories of the documentation entity. Will be returned in responses for certain entities.</value>
-    [DataMember(Name = "faq_categories", EmitDefaultValue = false)]
+    [JsonPropertyName("faq_categories")]
     public List<int?> FaqCategories { get; set; }
 
 
@@ -214,7 +213,7 @@ public partial class DocumentationResult : IEquatable<DocumentationResult>
     /// The releasenote category of the documentation entity. Will be returned in responses for certain entities.
     /// </summary>
     /// <value>The releasenote category of the documentation entity. Will be returned in responses for certain entities.</value>
-    [DataMember(Name = "releasenote_category", EmitDefaultValue = false)]
+    [JsonPropertyName("releasenote_category")]
     public List<int?> ReleasenoteCategory { get; set; }
 
 
@@ -223,7 +222,7 @@ public partial class DocumentationResult : IEquatable<DocumentationResult>
     /// The releasenote tag of the documentation entity. Will be returned in responses for certain entities.
     /// </summary>
     /// <value>The releasenote tag of the documentation entity. Will be returned in responses for certain entities.</value>
-    [DataMember(Name = "releasenote_tag", EmitDefaultValue = false)]
+    [JsonPropertyName("releasenote_tag")]
     public List<int?> ReleasenoteTag { get; set; }
 
 
@@ -232,7 +231,7 @@ public partial class DocumentationResult : IEquatable<DocumentationResult>
     /// The service area of the documentation entity. Will be returned in responses for certain entities.
     /// </summary>
     /// <value>The service area of the documentation entity. Will be returned in responses for certain entities.</value>
-    [DataMember(Name = "service-area", EmitDefaultValue = false)]
+    [JsonPropertyName("service-area")]
     public List<int?> ServiceArea { get; set; }
 
 
@@ -241,7 +240,7 @@ public partial class DocumentationResult : IEquatable<DocumentationResult>
     /// The video categories of the documentation entity. Will be returned in responses for certain entities.
     /// </summary>
     /// <value>The video categories of the documentation entity. Will be returned in responses for certain entities.</value>
-    [DataMember(Name = "video_categories", EmitDefaultValue = false)]
+    [JsonPropertyName("video_categories")]
     public List<int?> VideoCategories { get; set; }
 
 

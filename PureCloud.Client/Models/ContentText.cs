@@ -7,14 +7,14 @@ namespace PureCloud.Client.Models;
 /// <summary>
 /// Message content element containing text only.
 /// </summary>
-[DataContract]
+
 public partial class ContentText : IEquatable<ContentText>
 {
     /// <summary>
     /// Type of text content.
     /// </summary>
     /// <value>Type of text content.</value>
-    [JsonConverter(typeof(JsonStringEnumConverter))]
+    
     public enum TypeEnum
     {
         /// <summary>
@@ -35,7 +35,7 @@ public partial class ContentText : IEquatable<ContentText>
     /// Type of text content.
     /// </summary>
     /// <value>Type of text content.</value>
-    [DataMember(Name = "type", EmitDefaultValue = false)]
+    [JsonPropertyName("type")]
     public TypeEnum? Type { get; set; }
 
     /// <summary>
@@ -63,7 +63,7 @@ public partial class ContentText : IEquatable<ContentText>
     /// Text to be shown for this content element.
     /// </summary>
     /// <value>Text to be shown for this content element.</value>
-    [DataMember(Name = "body", EmitDefaultValue = false)]
+    [JsonPropertyName("body")]
     public string Body { get; set; }
 
 

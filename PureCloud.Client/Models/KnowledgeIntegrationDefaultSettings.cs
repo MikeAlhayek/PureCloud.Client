@@ -1,12 +1,12 @@
-using System.Runtime.Serialization;
 using System.Text;
+using System.Text.Json.Serialization;
 
 namespace PureCloud.Client.Models;
 
 /// <summary>
 /// KnowledgeIntegrationDefaultSettings
 /// </summary>
-[DataContract]
+
 public partial class KnowledgeIntegrationDefaultSettings : IEquatable<KnowledgeIntegrationDefaultSettings>
 {
     /// <summary>
@@ -25,7 +25,7 @@ public partial class KnowledgeIntegrationDefaultSettings : IEquatable<KnowledgeI
     /// The default base URL setting for the integration.
     /// </summary>
     /// <value>The default base URL setting for the integration.</value>
-    [DataMember(Name = "baseUrl", EmitDefaultValue = false)]
+    [JsonPropertyName("baseUrl")]
     public string BaseUrl { get; set; }
 
 

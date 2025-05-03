@@ -7,14 +7,14 @@ namespace PureCloud.Client.Models;
 /// <summary>
 /// ConversationProfile
 /// </summary>
-[DataContract]
+
 public partial class ConversationProfile : IEquatable<ConversationProfile>
 {
     /// <summary>
     /// The language code supported by the conversation profile belonging to a particular project for Dialogflow.
     /// </summary>
     /// <value>The language code supported by the conversation profile belonging to a particular project for Dialogflow.</value>
-    [JsonConverter(typeof(JsonStringEnumConverter))]
+    
     public enum LanguageCodeEnum
     {
         /// <summary>
@@ -65,7 +65,7 @@ public partial class ConversationProfile : IEquatable<ConversationProfile>
     /// The language code supported by the conversation profile belonging to a particular project for Dialogflow.
     /// </summary>
     /// <value>The language code supported by the conversation profile belonging to a particular project for Dialogflow.</value>
-    [DataMember(Name = "languageCode", EmitDefaultValue = false)]
+    [JsonPropertyName("languageCode")]
     public LanguageCodeEnum? LanguageCode { get; set; }
 
     /// <summary>
@@ -93,7 +93,7 @@ public partial class ConversationProfile : IEquatable<ConversationProfile>
     /// The name of the conversation profile belonging to a particular project for Dialogflow
     /// </summary>
     /// <value>The name of the conversation profile belonging to a particular project for Dialogflow</value>
-    [DataMember(Name = "name", EmitDefaultValue = false)]
+    [JsonPropertyName("name")]
     public string Name { get; set; }
 
 

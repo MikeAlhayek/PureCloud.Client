@@ -1,12 +1,12 @@
-using System.Runtime.Serialization;
 using System.Text;
+using System.Text.Json.Serialization;
 
 namespace PureCloud.Client.Models;
 
 /// <summary>
 /// This contains contextual information about an invoking entity.
 /// </summary>
-[DataContract]
+
 public partial class V2FlowExecutionDataFlowidTopicJourneyActionMap : IEquatable<V2FlowExecutionDataFlowidTopicJourneyActionMap>
 {
     /// <summary>
@@ -27,7 +27,7 @@ public partial class V2FlowExecutionDataFlowidTopicJourneyActionMap : IEquatable
     /// The identifier of the journey action map that invoked this flow.
     /// </summary>
     /// <value>The identifier of the journey action map that invoked this flow.</value>
-    [DataMember(Name = "actionMapId", EmitDefaultValue = false)]
+    [JsonPropertyName("actionMapId")]
     public string ActionMapId { get; set; }
 
 
@@ -36,7 +36,7 @@ public partial class V2FlowExecutionDataFlowidTopicJourneyActionMap : IEquatable
     /// The identifier of the specific action map instance that invoked this flow.
     /// </summary>
     /// <value>The identifier of the specific action map instance that invoked this flow.</value>
-    [DataMember(Name = "actionId", EmitDefaultValue = false)]
+    [JsonPropertyName("actionId")]
     public string ActionId { get; set; }
 
 

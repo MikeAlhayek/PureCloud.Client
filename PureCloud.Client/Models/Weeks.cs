@@ -1,12 +1,12 @@
-using System.Runtime.Serialization;
 using System.Text;
+using System.Text.Json.Serialization;
 
 namespace PureCloud.Client.Models;
 
 /// <summary>
 /// Weeks
 /// </summary>
-[DataContract]
+
 public partial class Weeks : IEquatable<Weeks>
 {
     /// <summary>
@@ -27,7 +27,7 @@ public partial class Weeks : IEquatable<Weeks>
     /// The week offset from data start date
     /// </summary>
     /// <value>The week offset from data start date</value>
-    [DataMember(Name = "weekOffset", EmitDefaultValue = false)]
+    [JsonPropertyName("weekOffset")]
     public int? WeekOffset { get; set; }
 
 
@@ -36,7 +36,7 @@ public partial class Weeks : IEquatable<Weeks>
     /// data per interval (daily or quarter hour) for this week. The value could be double or null
     /// </summary>
     /// <value>data per interval (daily or quarter hour) for this week. The value could be double or null</value>
-    [DataMember(Name = "values", EmitDefaultValue = false)]
+    [JsonPropertyName("values")]
     public List<double?> Values { get; set; }
 
 

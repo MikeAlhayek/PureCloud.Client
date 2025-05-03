@@ -7,14 +7,14 @@ namespace PureCloud.Client.Models;
 /// <summary>
 /// OutcomeAttributionResultsResponse
 /// </summary>
-[DataContract]
+
 public partial class OutcomeAttributionResultsResponse : IEquatable<OutcomeAttributionResultsResponse>
 {
     /// <summary>
     /// State of the Outcome Attribution entity.
     /// </summary>
     /// <value>State of the Outcome Attribution entity.</value>
-    [JsonConverter(typeof(JsonStringEnumConverter))]
+    
     public enum StateEnum
     {
         /// <summary>
@@ -53,7 +53,7 @@ public partial class OutcomeAttributionResultsResponse : IEquatable<OutcomeAttri
     /// State of the Outcome Attribution entity.
     /// </summary>
     /// <value>State of the Outcome Attribution entity.</value>
-    [DataMember(Name = "state", EmitDefaultValue = false)]
+    [JsonPropertyName("state")]
     public StateEnum? State { get; set; }
 
     /// <summary>
@@ -91,7 +91,7 @@ public partial class OutcomeAttributionResultsResponse : IEquatable<OutcomeAttri
     /// ID of Outcome.
     /// </summary>
     /// <value>ID of Outcome.</value>
-    [DataMember(Name = "outcomeId", EmitDefaultValue = false)]
+    [JsonPropertyName("outcomeId")]
     public string OutcomeId { get; set; }
 
 
@@ -100,7 +100,7 @@ public partial class OutcomeAttributionResultsResponse : IEquatable<OutcomeAttri
     /// The index/position of the OutcomeAttribution in the original POST request.
     /// </summary>
     /// <value>The index/position of the OutcomeAttribution in the original POST request.</value>
-    [DataMember(Name = "index", EmitDefaultValue = false)]
+    [JsonPropertyName("index")]
     public int? Index { get; set; }
 
 
@@ -109,7 +109,7 @@ public partial class OutcomeAttributionResultsResponse : IEquatable<OutcomeAttri
     /// The external contact ID of the customer who achieved the outcome.
     /// </summary>
     /// <value>The external contact ID of the customer who achieved the outcome.</value>
-    [DataMember(Name = "externalContactId", EmitDefaultValue = false)]
+    [JsonPropertyName("externalContactId")]
     public string ExternalContactId { get; set; }
 
 
@@ -118,7 +118,7 @@ public partial class OutcomeAttributionResultsResponse : IEquatable<OutcomeAttri
     /// The total value associated with the customer&#39;s outcome.
     /// </summary>
     /// <value>The total value associated with the customer&#39;s outcome.</value>
-    [DataMember(Name = "associatedValue", EmitDefaultValue = false)]
+    [JsonPropertyName("associatedValue")]
     public double? AssociatedValue { get; set; }
 
 
@@ -129,7 +129,7 @@ public partial class OutcomeAttributionResultsResponse : IEquatable<OutcomeAttri
     /// Additional information on the state of the Outcome Attribution entity.
     /// </summary>
     /// <value>Additional information on the state of the Outcome Attribution entity.</value>
-    [DataMember(Name = "message", EmitDefaultValue = false)]
+    [JsonPropertyName("message")]
     public string Message { get; set; }
 
 
@@ -138,7 +138,7 @@ public partial class OutcomeAttributionResultsResponse : IEquatable<OutcomeAttri
     /// List of interactions that led to this outcome being achieved.
     /// </summary>
     /// <value>List of interactions that led to this outcome being achieved.</value>
-    [DataMember(Name = "touchpoints", EmitDefaultValue = false)]
+    [JsonPropertyName("touchpoints")]
     public List<TouchpointResponse> Touchpoints { get; set; }
 
 
@@ -147,7 +147,7 @@ public partial class OutcomeAttributionResultsResponse : IEquatable<OutcomeAttri
     /// Date outcome was achieved. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z
     /// </summary>
     /// <value>Date outcome was achieved. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z</value>
-    [DataMember(Name = "createdDate", EmitDefaultValue = false)]
+    [JsonPropertyName("createdDate")]
     public DateTime? CreatedDate { get; set; }
 
 

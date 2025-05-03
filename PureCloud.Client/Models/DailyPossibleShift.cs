@@ -7,14 +7,14 @@ namespace PureCloud.Client.Models;
 /// <summary>
 /// DailyPossibleShift
 /// </summary>
-[DataContract]
+
 public partial class DailyPossibleShift : IEquatable<DailyPossibleShift>
 {
     /// <summary>
     /// Day of the shift
     /// </summary>
     /// <value>Day of the shift</value>
-    [JsonConverter(typeof(JsonStringEnumConverter))]
+    
     public enum DayOfWeekEnum
     {
         /// <summary>
@@ -71,7 +71,7 @@ public partial class DailyPossibleShift : IEquatable<DailyPossibleShift>
     /// Day of the shift
     /// </summary>
     /// <value>Day of the shift</value>
-    [DataMember(Name = "dayOfWeek", EmitDefaultValue = false)]
+    [JsonPropertyName("dayOfWeek")]
     public DayOfWeekEnum? DayOfWeek { get; set; }
     /// <summary>
     /// Initializes a new instance of the <see cref="DailyPossibleShift" /> class.
@@ -101,7 +101,7 @@ public partial class DailyPossibleShift : IEquatable<DailyPossibleShift>
     /// Minutes of the earliest shift start from midnight. Note that midnight is 12:00 am in the time zone specified in the timeZone field (in the top level of the response)
     /// </summary>
     /// <value>Minutes of the earliest shift start from midnight. Note that midnight is 12:00 am in the time zone specified in the timeZone field (in the top level of the response)</value>
-    [DataMember(Name = "earliestShiftStartMinutesFromMidnight", EmitDefaultValue = false)]
+    [JsonPropertyName("earliestShiftStartMinutesFromMidnight")]
     public int? EarliestShiftStartMinutesFromMidnight { get; set; }
 
 
@@ -110,7 +110,7 @@ public partial class DailyPossibleShift : IEquatable<DailyPossibleShift>
     /// Whether this is a required shift
     /// </summary>
     /// <value>Whether this is a required shift</value>
-    [DataMember(Name = "required", EmitDefaultValue = false)]
+    [JsonPropertyName("required")]
     public bool? Required { get; set; }
 
 
@@ -119,7 +119,7 @@ public partial class DailyPossibleShift : IEquatable<DailyPossibleShift>
     /// Minimum paid time in minutes of this daily shift
     /// </summary>
     /// <value>Minimum paid time in minutes of this daily shift</value>
-    [DataMember(Name = "minimumPaidTimeMinutes", EmitDefaultValue = false)]
+    [JsonPropertyName("minimumPaidTimeMinutes")]
     public int? MinimumPaidTimeMinutes { get; set; }
 
 
@@ -128,7 +128,7 @@ public partial class DailyPossibleShift : IEquatable<DailyPossibleShift>
     /// Maximum paid time in minutes of this daily shift
     /// </summary>
     /// <value>Maximum paid time in minutes of this daily shift</value>
-    [DataMember(Name = "maximumPaidTimeMinutes", EmitDefaultValue = false)]
+    [JsonPropertyName("maximumPaidTimeMinutes")]
     public int? MaximumPaidTimeMinutes { get; set; }
 
 
@@ -137,7 +137,7 @@ public partial class DailyPossibleShift : IEquatable<DailyPossibleShift>
     /// The percentage of being scheduled in each interval between the earliest shift start and latest shift end. Range of the values: [0, 100].
     /// </summary>
     /// <value>The percentage of being scheduled in each interval between the earliest shift start and latest shift end. Range of the values: [0, 100].</value>
-    [DataMember(Name = "intervalScheduleProbabilities", EmitDefaultValue = false)]
+    [JsonPropertyName("intervalScheduleProbabilities")]
     public List<int?> IntervalScheduleProbabilities { get; set; }
 
 

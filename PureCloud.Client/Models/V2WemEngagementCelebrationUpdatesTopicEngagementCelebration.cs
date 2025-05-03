@@ -7,13 +7,13 @@ namespace PureCloud.Client.Models;
 /// <summary>
 /// V2WemEngagementCelebrationUpdatesTopicEngagementCelebration
 /// </summary>
-[DataContract]
+
 public partial class V2WemEngagementCelebrationUpdatesTopicEngagementCelebration : IEquatable<V2WemEngagementCelebrationUpdatesTopicEngagementCelebration>
 {
     /// <summary>
     /// Gets or Sets Type
     /// </summary>
-    [JsonConverter(typeof(JsonStringEnumConverter))]
+    
     public enum TypeEnum
     {
         /// <summary>
@@ -45,7 +45,7 @@ public partial class V2WemEngagementCelebrationUpdatesTopicEngagementCelebration
     /// <summary>
     /// Gets or Sets Type
     /// </summary>
-    [DataMember(Name = "type", EmitDefaultValue = false)]
+    [JsonPropertyName("type")]
     public TypeEnum? Type { get; set; }
     /// <summary>
     /// Initializes a new instance of the <see cref="V2WemEngagementCelebrationUpdatesTopicEngagementCelebration" /> class.
@@ -76,7 +76,7 @@ public partial class V2WemEngagementCelebrationUpdatesTopicEngagementCelebration
     /// <summary>
     /// Gets or Sets Id
     /// </summary>
-    [DataMember(Name = "id", EmitDefaultValue = false)]
+    [JsonPropertyName("id")]
     public Guid? Id { get; set; }
 
 
@@ -84,7 +84,7 @@ public partial class V2WemEngagementCelebrationUpdatesTopicEngagementCelebration
     /// <summary>
     /// Gets or Sets Recipient
     /// </summary>
-    [DataMember(Name = "recipient", EmitDefaultValue = false)]
+    [JsonPropertyName("recipient")]
     public V2WemEngagementCelebrationUpdatesTopicUserId Recipient { get; set; }
 
 
@@ -92,7 +92,7 @@ public partial class V2WemEngagementCelebrationUpdatesTopicEngagementCelebration
     /// <summary>
     /// Gets or Sets CreatedBy
     /// </summary>
-    [DataMember(Name = "createdBy", EmitDefaultValue = false)]
+    [JsonPropertyName("createdBy")]
     public V2WemEngagementCelebrationUpdatesTopicUserId CreatedBy { get; set; }
 
 
@@ -100,7 +100,7 @@ public partial class V2WemEngagementCelebrationUpdatesTopicEngagementCelebration
     /// <summary>
     /// Gets or Sets DateCreated
     /// </summary>
-    [DataMember(Name = "dateCreated", EmitDefaultValue = false)]
+    [JsonPropertyName("dateCreated")]
     public string DateCreated { get; set; }
 
 
@@ -110,7 +110,7 @@ public partial class V2WemEngagementCelebrationUpdatesTopicEngagementCelebration
     /// <summary>
     /// Gets or Sets Title
     /// </summary>
-    [DataMember(Name = "title", EmitDefaultValue = false)]
+    [JsonPropertyName("title")]
     public string Title { get; set; }
 
 
@@ -118,7 +118,7 @@ public partial class V2WemEngagementCelebrationUpdatesTopicEngagementCelebration
     /// <summary>
     /// Gets or Sets Note
     /// </summary>
-    [DataMember(Name = "note", EmitDefaultValue = false)]
+    [JsonPropertyName("note")]
     public string Note { get; set; }
 
 
@@ -126,7 +126,7 @@ public partial class V2WemEngagementCelebrationUpdatesTopicEngagementCelebration
     /// <summary>
     /// Gets or Sets SourceEntity
     /// </summary>
-    [DataMember(Name = "sourceEntity", EmitDefaultValue = false)]
+    [JsonPropertyName("sourceEntity")]
     public V2WemEngagementCelebrationUpdatesTopicSourceEntity SourceEntity { get; set; }
 
 

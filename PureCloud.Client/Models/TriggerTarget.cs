@@ -7,14 +7,14 @@ namespace PureCloud.Client.Models;
 /// <summary>
 /// The target of a trigger invocation
 /// </summary>
-[DataContract]
+
 public partial class TriggerTarget : IEquatable<TriggerTarget>
 {
     /// <summary>
     /// The entity type to target
     /// </summary>
     /// <value>The entity type to target</value>
-    [JsonConverter(typeof(JsonStringEnumConverter))]
+    
     public enum TypeEnum
     {
         /// <summary>
@@ -35,7 +35,7 @@ public partial class TriggerTarget : IEquatable<TriggerTarget>
     /// The entity type to target
     /// </summary>
     /// <value>The entity type to target</value>
-    [DataMember(Name = "type", EmitDefaultValue = false)]
+    [JsonPropertyName("type")]
     public TypeEnum? Type { get; set; }
     /// <summary>
     /// Initializes a new instance of the <see cref="TriggerTarget" /> class.
@@ -59,7 +59,7 @@ public partial class TriggerTarget : IEquatable<TriggerTarget>
     /// The ID of the entity to target
     /// </summary>
     /// <value>The ID of the entity to target</value>
-    [DataMember(Name = "id", EmitDefaultValue = false)]
+    [JsonPropertyName("id")]
     public string Id { get; set; }
 
 
@@ -68,7 +68,7 @@ public partial class TriggerTarget : IEquatable<TriggerTarget>
     /// Optional config for the target.
     /// </summary>
     /// <value>Optional config for the target.</value>
-    [DataMember(Name = "workflowTargetSettings", EmitDefaultValue = false)]
+    [JsonPropertyName("workflowTargetSettings")]
     public WorkflowTargetSettings WorkflowTargetSettings { get; set; }
 
 

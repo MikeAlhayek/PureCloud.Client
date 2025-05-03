@@ -1,4 +1,3 @@
-using System.Runtime.Serialization;
 using System.Text;
 using System.Text.Json.Serialization;
 
@@ -7,7 +6,7 @@ namespace PureCloud.Client.Models;
 /// <summary>
 /// UserSearchRule
 /// </summary>
-[DataContract]
+
 public partial class UserSearchRule : IEquatable<UserSearchRule>
 {
 
@@ -32,7 +31,7 @@ public partial class UserSearchRule : IEquatable<UserSearchRule>
     /// The parts of this rule; the results of these are ANDed together.
     /// </summary>
     /// <value>The parts of this rule; the results of these are ANDed together.</value>
-    [DataMember(Name = "parts", EmitDefaultValue = false)]
+    [JsonPropertyName("parts")]
     public List<UserSearchRulePart> Parts { get; set; }
 
 

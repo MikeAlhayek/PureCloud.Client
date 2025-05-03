@@ -1,12 +1,12 @@
-using System.Runtime.Serialization;
 using System.Text;
+using System.Text.Json.Serialization;
 
 namespace PureCloud.Client.Models;
 
 /// <summary>
 /// DocumentAttribute
 /// </summary>
-[DataContract]
+
 public partial class DocumentAttribute : IEquatable<DocumentAttribute>
 {
     /// <summary>
@@ -24,13 +24,13 @@ public partial class DocumentAttribute : IEquatable<DocumentAttribute>
     /// <summary>
     /// Gets or Sets Attribute
     /// </summary>
-    [DataMember(Name = "attribute", EmitDefaultValue = false)]
+    [JsonPropertyName("attribute")]
     public Models.Attribute Attribute { get; set; }
 
     /// <summary>
     /// Gets or Sets Values
     /// </summary>
-    [DataMember(Name = "values", EmitDefaultValue = false)]
+    [JsonPropertyName("values")]
     public List<string> Values { get; set; }
 
 

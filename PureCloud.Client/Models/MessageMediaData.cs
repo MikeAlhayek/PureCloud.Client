@@ -7,14 +7,14 @@ namespace PureCloud.Client.Models;
 /// <summary>
 /// MessageMediaData
 /// </summary>
-[DataContract]
+
 public partial class MessageMediaData : IEquatable<MessageMediaData>
 {
     /// <summary>
     /// The status of the media, indicates if the media is in the process of uploading. If the upload fails, the media becomes invalid
     /// </summary>
     /// <value>The status of the media, indicates if the media is in the process of uploading. If the upload fails, the media becomes invalid</value>
-    [JsonConverter(typeof(JsonStringEnumConverter))]
+    
     public enum StatusEnum
     {
         /// <summary>
@@ -47,7 +47,7 @@ public partial class MessageMediaData : IEquatable<MessageMediaData>
     /// The status of the media, indicates if the media is in the process of uploading. If the upload fails, the media becomes invalid
     /// </summary>
     /// <value>The status of the media, indicates if the media is in the process of uploading. If the upload fails, the media becomes invalid</value>
-    [DataMember(Name = "status", EmitDefaultValue = false)]
+    [JsonPropertyName("status")]
     public StatusEnum? Status { get; private set; }
     /// <summary>
     /// Initializes a new instance of the <see cref="MessageMediaData" /> class.
@@ -73,7 +73,7 @@ public partial class MessageMediaData : IEquatable<MessageMediaData>
     /// The globally unique identifier for the object.
     /// </summary>
     /// <value>The globally unique identifier for the object.</value>
-    [DataMember(Name = "id", EmitDefaultValue = false)]
+    [JsonPropertyName("id")]
     public string Id { get; private set; }
 
 
@@ -81,7 +81,7 @@ public partial class MessageMediaData : IEquatable<MessageMediaData>
     /// <summary>
     /// Gets or Sets Name
     /// </summary>
-    [DataMember(Name = "name", EmitDefaultValue = false)]
+    [JsonPropertyName("name")]
     public string Name { get; set; }
 
 
@@ -90,7 +90,7 @@ public partial class MessageMediaData : IEquatable<MessageMediaData>
     /// The location of the media, useful for retrieving it
     /// </summary>
     /// <value>The location of the media, useful for retrieving it</value>
-    [DataMember(Name = "url", EmitDefaultValue = false)]
+    [JsonPropertyName("url")]
     public string Url { get; set; }
 
 
@@ -99,7 +99,7 @@ public partial class MessageMediaData : IEquatable<MessageMediaData>
     /// The detected internet media type of the the media object.  If null then the media type should be dictated by the url.
     /// </summary>
     /// <value>The detected internet media type of the the media object.  If null then the media type should be dictated by the url.</value>
-    [DataMember(Name = "mediaType", EmitDefaultValue = false)]
+    [JsonPropertyName("mediaType")]
     public string MediaType { get; set; }
 
 
@@ -108,7 +108,7 @@ public partial class MessageMediaData : IEquatable<MessageMediaData>
     /// The optional content length of the the media object, in bytes.
     /// </summary>
     /// <value>The optional content length of the the media object, in bytes.</value>
-    [DataMember(Name = "contentLengthBytes", EmitDefaultValue = false)]
+    [JsonPropertyName("contentLengthBytes")]
     public int? ContentLengthBytes { get; set; }
 
 
@@ -117,7 +117,7 @@ public partial class MessageMediaData : IEquatable<MessageMediaData>
     /// The URL returned to upload an attachment
     /// </summary>
     /// <value>The URL returned to upload an attachment</value>
-    [DataMember(Name = "uploadUrl", EmitDefaultValue = false)]
+    [JsonPropertyName("uploadUrl")]
     public string UploadUrl { get; set; }
 
 
@@ -128,7 +128,7 @@ public partial class MessageMediaData : IEquatable<MessageMediaData>
     /// The URI for this object
     /// </summary>
     /// <value>The URI for this object</value>
-    [DataMember(Name = "selfUri", EmitDefaultValue = false)]
+    [JsonPropertyName("selfUri")]
     public string SelfUri { get; private set; }
 
 

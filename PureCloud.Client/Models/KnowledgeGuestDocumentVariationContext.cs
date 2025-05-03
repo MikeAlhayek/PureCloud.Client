@@ -1,4 +1,3 @@
-using System.Runtime.Serialization;
 using System.Text;
 using System.Text.Json.Serialization;
 
@@ -7,7 +6,7 @@ namespace PureCloud.Client.Models;
 /// <summary>
 /// KnowledgeGuestDocumentVariationContext
 /// </summary>
-[DataContract]
+
 public partial class KnowledgeGuestDocumentVariationContext : IEquatable<KnowledgeGuestDocumentVariationContext>
 {
 
@@ -34,7 +33,7 @@ public partial class KnowledgeGuestDocumentVariationContext : IEquatable<Knowled
     /// The knowledge context associated with the variation.
     /// </summary>
     /// <value>The knowledge context associated with the variation.</value>
-    [DataMember(Name = "context", EmitDefaultValue = false)]
+    [JsonPropertyName("context")]
     public AddressableEntityRef Context { get; set; }
 
 
@@ -43,7 +42,7 @@ public partial class KnowledgeGuestDocumentVariationContext : IEquatable<Knowled
     /// The list of knowledge context values associated with the variation.
     /// </summary>
     /// <value>The list of knowledge context values associated with the variation.</value>
-    [DataMember(Name = "values", EmitDefaultValue = false)]
+    [JsonPropertyName("values")]
     public List<AddressableEntityRef> Values { get; set; }
 
 

@@ -1,12 +1,12 @@
-using System.Runtime.Serialization;
 using System.Text;
+using System.Text.Json.Serialization;
 
 namespace PureCloud.Client.Models;
 
 /// <summary>
 /// Template footer object.
 /// </summary>
-[DataContract]
+
 public partial class ConversationNotificationTemplateFooter : IEquatable<ConversationNotificationTemplateFooter>
 {
     /// <summary>
@@ -25,7 +25,7 @@ public partial class ConversationNotificationTemplateFooter : IEquatable<Convers
     /// Footer text. For WhatsApp, ignored.
     /// </summary>
     /// <value>Footer text. For WhatsApp, ignored.</value>
-    [DataMember(Name = "text", EmitDefaultValue = false)]
+    [JsonPropertyName("text")]
     public string Text { get; set; }
 
 

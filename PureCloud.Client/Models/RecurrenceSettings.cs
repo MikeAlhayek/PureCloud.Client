@@ -1,4 +1,3 @@
-using System.Runtime.Serialization;
 using System.Text;
 using System.Text.Json.Serialization;
 
@@ -7,7 +6,7 @@ namespace PureCloud.Client.Models;
 /// <summary>
 /// RecurrenceSettings
 /// </summary>
-[DataContract]
+
 public partial class RecurrenceSettings : IEquatable<RecurrenceSettings>
 {
 
@@ -36,7 +35,7 @@ public partial class RecurrenceSettings : IEquatable<RecurrenceSettings>
     /// The recurrence period of the activity plan
     /// </summary>
     /// <value>The recurrence period of the activity plan</value>
-    [DataMember(Name = "recurrencePeriod", EmitDefaultValue = false)]
+    [JsonPropertyName("recurrencePeriod")]
     public RecurrencePeriod RecurrencePeriod { get; set; }
 
 
@@ -45,7 +44,7 @@ public partial class RecurrenceSettings : IEquatable<RecurrenceSettings>
     /// Constraint indicating the minimum time in hours between recurrences of the activity plan
     /// </summary>
     /// <value>Constraint indicating the minimum time in hours between recurrences of the activity plan</value>
-    [DataMember(Name = "minimumTimeBetweenOccurrences", EmitDefaultValue = false)]
+    [JsonPropertyName("minimumTimeBetweenOccurrences")]
     public RecurrencePeriod MinimumTimeBetweenOccurrences { get; set; }
 
 
@@ -54,7 +53,7 @@ public partial class RecurrenceSettings : IEquatable<RecurrenceSettings>
     /// Settings controlling when to end the recurrence for the activity plan
     /// </summary>
     /// <value>Settings controlling when to end the recurrence for the activity plan</value>
-    [DataMember(Name = "endAfter", EmitDefaultValue = false)]
+    [JsonPropertyName("endAfter")]
     public RecurrenceEndSettings EndAfter { get; set; }
 
 

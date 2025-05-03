@@ -7,14 +7,14 @@ namespace PureCloud.Client.Models;
 /// <summary>
 /// SchedulingSettingsRequest
 /// </summary>
-[DataContract]
+
 public partial class SchedulingSettingsRequest : IEquatable<SchedulingSettingsRequest>
 {
     /// <summary>
     /// Start day of weekend for scheduling
     /// </summary>
     /// <value>Start day of weekend for scheduling</value>
-    [JsonConverter(typeof(JsonStringEnumConverter))]
+    
     public enum StartDayOfWeekendEnum
     {
         /// <summary>
@@ -71,7 +71,7 @@ public partial class SchedulingSettingsRequest : IEquatable<SchedulingSettingsRe
     /// Start day of weekend for scheduling
     /// </summary>
     /// <value>Start day of weekend for scheduling</value>
-    [DataMember(Name = "startDayOfWeekend", EmitDefaultValue = false)]
+    [JsonPropertyName("startDayOfWeekend")]
     public StartDayOfWeekendEnum? StartDayOfWeekend { get; set; }
     /// <summary>
     /// Initializes a new instance of the <see cref="SchedulingSettingsRequest" /> class.
@@ -99,7 +99,7 @@ public partial class SchedulingSettingsRequest : IEquatable<SchedulingSettingsRe
     /// Max occupancy percent for deferred work
     /// </summary>
     /// <value>Max occupancy percent for deferred work</value>
-    [DataMember(Name = "maxOccupancyPercentForDeferredWork", EmitDefaultValue = false)]
+    [JsonPropertyName("maxOccupancyPercentForDeferredWork")]
     public int? MaxOccupancyPercentForDeferredWork { get; set; }
 
 
@@ -108,7 +108,7 @@ public partial class SchedulingSettingsRequest : IEquatable<SchedulingSettingsRe
     /// Default shrinkage percent for scheduling
     /// </summary>
     /// <value>Default shrinkage percent for scheduling</value>
-    [DataMember(Name = "defaultShrinkagePercent", EmitDefaultValue = false)]
+    [JsonPropertyName("defaultShrinkagePercent")]
     public double? DefaultShrinkagePercent { get; set; }
 
 
@@ -117,7 +117,7 @@ public partial class SchedulingSettingsRequest : IEquatable<SchedulingSettingsRe
     /// Shrinkage overrides for scheduling
     /// </summary>
     /// <value>Shrinkage overrides for scheduling</value>
-    [DataMember(Name = "shrinkageOverrides", EmitDefaultValue = false)]
+    [JsonPropertyName("shrinkageOverrides")]
     public ShrinkageOverrides ShrinkageOverrides { get; set; }
 
 
@@ -126,7 +126,7 @@ public partial class SchedulingSettingsRequest : IEquatable<SchedulingSettingsRe
     /// Planning period settings for scheduling. Only one of planningPeriod or monthlyPlanningPeriod may be defined
     /// </summary>
     /// <value>Planning period settings for scheduling. Only one of planningPeriod or monthlyPlanningPeriod may be defined</value>
-    [DataMember(Name = "planningPeriod", EmitDefaultValue = false)]
+    [JsonPropertyName("planningPeriod")]
     public ValueWrapperPlanningPeriodSettings PlanningPeriod { get; set; }
 
 
@@ -135,7 +135,7 @@ public partial class SchedulingSettingsRequest : IEquatable<SchedulingSettingsRe
     /// Monthly planning period setting for scheduling. Only one of planningPeriod or monthlyPlanningPeriod may be defined
     /// </summary>
     /// <value>Monthly planning period setting for scheduling. Only one of planningPeriod or monthlyPlanningPeriod may be defined</value>
-    [DataMember(Name = "monthlyPlanningPeriod", EmitDefaultValue = false)]
+    [JsonPropertyName("monthlyPlanningPeriod")]
     public ValueWrapperMonthlyPlanningPeriodSettings MonthlyPlanningPeriod { get; set; }
 
 

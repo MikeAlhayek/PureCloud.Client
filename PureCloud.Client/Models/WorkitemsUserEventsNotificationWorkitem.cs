@@ -7,13 +7,13 @@ namespace PureCloud.Client.Models;
 /// <summary>
 /// WorkitemsUserEventsNotificationWorkitem
 /// </summary>
-[DataContract]
+
 public partial class WorkitemsUserEventsNotificationWorkitem : IEquatable<WorkitemsUserEventsNotificationWorkitem>
 {
     /// <summary>
     /// Gets or Sets StatusCategory
     /// </summary>
-    [JsonConverter(typeof(JsonStringEnumConverter))]
+    
     public enum StatusCategoryEnum
     {
         /// <summary>
@@ -57,7 +57,7 @@ public partial class WorkitemsUserEventsNotificationWorkitem : IEquatable<Workit
     /// <summary>
     /// Gets or Sets Operation
     /// </summary>
-    [JsonConverter(typeof(JsonStringEnumConverter))]
+    
     public enum OperationEnum
     {
         /// <summary>
@@ -191,7 +191,7 @@ public partial class WorkitemsUserEventsNotificationWorkitem : IEquatable<Workit
     /// <summary>
     /// Gets or Sets AssignmentState
     /// </summary>
-    [JsonConverter(typeof(JsonStringEnumConverter))]
+    
     public enum AssignmentStateEnum
     {
         /// <summary>
@@ -283,17 +283,17 @@ public partial class WorkitemsUserEventsNotificationWorkitem : IEquatable<Workit
     /// <summary>
     /// Gets or Sets StatusCategory
     /// </summary>
-    [DataMember(Name = "statusCategory", EmitDefaultValue = false)]
+    [JsonPropertyName("statusCategory")]
     public StatusCategoryEnum? StatusCategory { get; set; }
     /// <summary>
     /// Gets or Sets Operation
     /// </summary>
-    [DataMember(Name = "operation", EmitDefaultValue = false)]
+    [JsonPropertyName("operation")]
     public OperationEnum? Operation { get; set; }
     /// <summary>
     /// Gets or Sets AssignmentState
     /// </summary>
-    [DataMember(Name = "assignmentState", EmitDefaultValue = false)]
+    [JsonPropertyName("assignmentState")]
     public AssignmentStateEnum? AssignmentState { get; set; }
     /// <summary>
     /// Initializes a new instance of the <see cref="WorkitemsUserEventsNotificationWorkitem" /> class.
@@ -376,7 +376,7 @@ public partial class WorkitemsUserEventsNotificationWorkitem : IEquatable<Workit
     /// <summary>
     /// Gets or Sets Id
     /// </summary>
-    [DataMember(Name = "id", EmitDefaultValue = false)]
+    [JsonPropertyName("id")]
     public string Id { get; set; }
 
 
@@ -384,7 +384,7 @@ public partial class WorkitemsUserEventsNotificationWorkitem : IEquatable<Workit
     /// <summary>
     /// Gets or Sets Name
     /// </summary>
-    [DataMember(Name = "name", EmitDefaultValue = false)]
+    [JsonPropertyName("name")]
     public string Name { get; set; }
 
 
@@ -392,7 +392,7 @@ public partial class WorkitemsUserEventsNotificationWorkitem : IEquatable<Workit
     /// <summary>
     /// Gets or Sets TypeId
     /// </summary>
-    [DataMember(Name = "typeId", EmitDefaultValue = false)]
+    [JsonPropertyName("typeId")]
     public string TypeId { get; set; }
 
 
@@ -400,7 +400,7 @@ public partial class WorkitemsUserEventsNotificationWorkitem : IEquatable<Workit
     /// <summary>
     /// Gets or Sets Description
     /// </summary>
-    [DataMember(Name = "description", EmitDefaultValue = false)]
+    [JsonPropertyName("description")]
     public string Description { get; set; }
 
 
@@ -408,7 +408,7 @@ public partial class WorkitemsUserEventsNotificationWorkitem : IEquatable<Workit
     /// <summary>
     /// Gets or Sets LanguageId
     /// </summary>
-    [DataMember(Name = "languageId", EmitDefaultValue = false)]
+    [JsonPropertyName("languageId")]
     public string LanguageId { get; set; }
 
 
@@ -416,7 +416,7 @@ public partial class WorkitemsUserEventsNotificationWorkitem : IEquatable<Workit
     /// <summary>
     /// Gets or Sets Priority
     /// </summary>
-    [DataMember(Name = "priority", EmitDefaultValue = false)]
+    [JsonPropertyName("priority")]
     public long? Priority { get; set; }
 
 
@@ -424,7 +424,7 @@ public partial class WorkitemsUserEventsNotificationWorkitem : IEquatable<Workit
     /// <summary>
     /// Gets or Sets DateCreated
     /// </summary>
-    [DataMember(Name = "dateCreated", EmitDefaultValue = false)]
+    [JsonPropertyName("dateCreated")]
     public string DateCreated { get; set; }
 
 
@@ -432,7 +432,7 @@ public partial class WorkitemsUserEventsNotificationWorkitem : IEquatable<Workit
     /// <summary>
     /// Gets or Sets DateModified
     /// </summary>
-    [DataMember(Name = "dateModified", EmitDefaultValue = false)]
+    [JsonPropertyName("dateModified")]
     public string DateModified { get; set; }
 
 
@@ -440,7 +440,7 @@ public partial class WorkitemsUserEventsNotificationWorkitem : IEquatable<Workit
     /// <summary>
     /// Gets or Sets DateDue
     /// </summary>
-    [DataMember(Name = "dateDue", EmitDefaultValue = false)]
+    [JsonPropertyName("dateDue")]
     public string DateDue { get; set; }
 
 
@@ -448,7 +448,7 @@ public partial class WorkitemsUserEventsNotificationWorkitem : IEquatable<Workit
     /// <summary>
     /// Gets or Sets DateExpires
     /// </summary>
-    [DataMember(Name = "dateExpires", EmitDefaultValue = false)]
+    [JsonPropertyName("dateExpires")]
     public string DateExpires { get; set; }
 
 
@@ -456,7 +456,7 @@ public partial class WorkitemsUserEventsNotificationWorkitem : IEquatable<Workit
     /// <summary>
     /// Gets or Sets DateAssignmentStateChanged
     /// </summary>
-    [DataMember(Name = "dateAssignmentStateChanged", EmitDefaultValue = false)]
+    [JsonPropertyName("dateAssignmentStateChanged")]
     public string DateAssignmentStateChanged { get; set; }
 
 
@@ -464,7 +464,7 @@ public partial class WorkitemsUserEventsNotificationWorkitem : IEquatable<Workit
     /// <summary>
     /// Gets or Sets DurationSeconds
     /// </summary>
-    [DataMember(Name = "durationSeconds", EmitDefaultValue = false)]
+    [JsonPropertyName("durationSeconds")]
     public long? DurationSeconds { get; set; }
 
 
@@ -472,7 +472,7 @@ public partial class WorkitemsUserEventsNotificationWorkitem : IEquatable<Workit
     /// <summary>
     /// Gets or Sets Ttl
     /// </summary>
-    [DataMember(Name = "ttl", EmitDefaultValue = false)]
+    [JsonPropertyName("ttl")]
     public long? Ttl { get; set; }
 
 
@@ -480,7 +480,7 @@ public partial class WorkitemsUserEventsNotificationWorkitem : IEquatable<Workit
     /// <summary>
     /// Gets or Sets StatusId
     /// </summary>
-    [DataMember(Name = "statusId", EmitDefaultValue = false)]
+    [JsonPropertyName("statusId")]
     public string StatusId { get; set; }
 
 
@@ -490,7 +490,7 @@ public partial class WorkitemsUserEventsNotificationWorkitem : IEquatable<Workit
     /// <summary>
     /// Gets or Sets DateClosed
     /// </summary>
-    [DataMember(Name = "dateClosed", EmitDefaultValue = false)]
+    [JsonPropertyName("dateClosed")]
     public string DateClosed { get; set; }
 
 
@@ -498,7 +498,7 @@ public partial class WorkitemsUserEventsNotificationWorkitem : IEquatable<Workit
     /// <summary>
     /// Gets or Sets WorkbinId
     /// </summary>
-    [DataMember(Name = "workbinId", EmitDefaultValue = false)]
+    [JsonPropertyName("workbinId")]
     public string WorkbinId { get; set; }
 
 
@@ -506,7 +506,7 @@ public partial class WorkitemsUserEventsNotificationWorkitem : IEquatable<Workit
     /// <summary>
     /// Gets or Sets ReporterId
     /// </summary>
-    [DataMember(Name = "reporterId", EmitDefaultValue = false)]
+    [JsonPropertyName("reporterId")]
     public string ReporterId { get; set; }
 
 
@@ -514,7 +514,7 @@ public partial class WorkitemsUserEventsNotificationWorkitem : IEquatable<Workit
     /// <summary>
     /// Gets or Sets AssigneeId
     /// </summary>
-    [DataMember(Name = "assigneeId", EmitDefaultValue = false)]
+    [JsonPropertyName("assigneeId")]
     public string AssigneeId { get; set; }
 
 
@@ -522,7 +522,7 @@ public partial class WorkitemsUserEventsNotificationWorkitem : IEquatable<Workit
     /// <summary>
     /// Gets or Sets ExternalContactId
     /// </summary>
-    [DataMember(Name = "externalContactId", EmitDefaultValue = false)]
+    [JsonPropertyName("externalContactId")]
     public string ExternalContactId { get; set; }
 
 
@@ -530,7 +530,7 @@ public partial class WorkitemsUserEventsNotificationWorkitem : IEquatable<Workit
     /// <summary>
     /// Gets or Sets ExternalTag
     /// </summary>
-    [DataMember(Name = "externalTag", EmitDefaultValue = false)]
+    [JsonPropertyName("externalTag")]
     public string ExternalTag { get; set; }
 
 
@@ -538,7 +538,7 @@ public partial class WorkitemsUserEventsNotificationWorkitem : IEquatable<Workit
     /// <summary>
     /// Gets or Sets WrapupId
     /// </summary>
-    [DataMember(Name = "wrapupId", EmitDefaultValue = false)]
+    [JsonPropertyName("wrapupId")]
     public string WrapupId { get; set; }
 
 
@@ -546,7 +546,7 @@ public partial class WorkitemsUserEventsNotificationWorkitem : IEquatable<Workit
     /// <summary>
     /// Gets or Sets ModifiedBy
     /// </summary>
-    [DataMember(Name = "modifiedBy", EmitDefaultValue = false)]
+    [JsonPropertyName("modifiedBy")]
     public string ModifiedBy { get; set; }
 
 
@@ -556,7 +556,7 @@ public partial class WorkitemsUserEventsNotificationWorkitem : IEquatable<Workit
     /// <summary>
     /// Gets or Sets Changes
     /// </summary>
-    [DataMember(Name = "changes", EmitDefaultValue = false)]
+    [JsonPropertyName("changes")]
     public List<WorkitemsUserEventsNotificationDelta> Changes { get; set; }
 
 
@@ -566,7 +566,7 @@ public partial class WorkitemsUserEventsNotificationWorkitem : IEquatable<Workit
     /// <summary>
     /// Gets or Sets AssignmentId
     /// </summary>
-    [DataMember(Name = "assignmentId", EmitDefaultValue = false)]
+    [JsonPropertyName("assignmentId")]
     public string AssignmentId { get; set; }
 
 
@@ -574,7 +574,7 @@ public partial class WorkitemsUserEventsNotificationWorkitem : IEquatable<Workit
     /// <summary>
     /// Gets or Sets AlertTimeoutSeconds
     /// </summary>
-    [DataMember(Name = "alertTimeoutSeconds", EmitDefaultValue = false)]
+    [JsonPropertyName("alertTimeoutSeconds")]
     public long? AlertTimeoutSeconds { get; set; }
 
 
@@ -582,7 +582,7 @@ public partial class WorkitemsUserEventsNotificationWorkitem : IEquatable<Workit
     /// <summary>
     /// Gets or Sets QueueId
     /// </summary>
-    [DataMember(Name = "queueId", EmitDefaultValue = false)]
+    [JsonPropertyName("queueId")]
     public string QueueId { get; set; }
 
 
@@ -590,7 +590,7 @@ public partial class WorkitemsUserEventsNotificationWorkitem : IEquatable<Workit
     /// <summary>
     /// Gets or Sets CustomFields
     /// </summary>
-    [DataMember(Name = "customFields", EmitDefaultValue = false)]
+    [JsonPropertyName("customFields")]
     public Dictionary<string, WorkitemsUserEventsNotificationCustomAttribute> CustomFields { get; set; }
 
 
@@ -598,7 +598,7 @@ public partial class WorkitemsUserEventsNotificationWorkitem : IEquatable<Workit
     /// <summary>
     /// Gets or Sets Wrapup
     /// </summary>
-    [DataMember(Name = "wrapup", EmitDefaultValue = false)]
+    [JsonPropertyName("wrapup")]
     public WorkitemsUserEventsNotificationWrapup Wrapup { get; set; }
 
 
@@ -606,7 +606,7 @@ public partial class WorkitemsUserEventsNotificationWorkitem : IEquatable<Workit
     /// <summary>
     /// Gets or Sets Sessions
     /// </summary>
-    [DataMember(Name = "sessions", EmitDefaultValue = false)]
+    [JsonPropertyName("sessions")]
     public List<WorkitemsUserEventsNotificationSession> Sessions { get; set; }
 
 
@@ -614,7 +614,7 @@ public partial class WorkitemsUserEventsNotificationWorkitem : IEquatable<Workit
     /// <summary>
     /// Gets or Sets SkillIds
     /// </summary>
-    [DataMember(Name = "skillIds", EmitDefaultValue = false)]
+    [JsonPropertyName("skillIds")]
     public List<Guid?> SkillIds { get; set; }
 
 
@@ -622,7 +622,7 @@ public partial class WorkitemsUserEventsNotificationWorkitem : IEquatable<Workit
     /// <summary>
     /// Gets or Sets ScriptId
     /// </summary>
-    [DataMember(Name = "scriptId", EmitDefaultValue = false)]
+    [JsonPropertyName("scriptId")]
     public string ScriptId { get; set; }
 
 

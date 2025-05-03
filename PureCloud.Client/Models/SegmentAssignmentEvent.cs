@@ -1,4 +1,3 @@
-using System.Runtime.Serialization;
 using System.Text;
 using System.Text.Json.Serialization;
 
@@ -7,7 +6,7 @@ namespace PureCloud.Client.Models;
 /// <summary>
 /// SegmentAssignmentEvent
 /// </summary>
-[DataContract]
+
 public partial class SegmentAssignmentEvent : IEquatable<SegmentAssignmentEvent>
 {
 
@@ -32,7 +31,7 @@ public partial class SegmentAssignmentEvent : IEquatable<SegmentAssignmentEvent>
     /// The segment which was assigned.
     /// </summary>
     /// <value>The segment which was assigned.</value>
-    [DataMember(Name = "segment", EmitDefaultValue = false)]
+    [JsonPropertyName("segment")]
     public AddressableEntityRef Segment { get; set; }
 
 

@@ -1,12 +1,12 @@
-using System.Runtime.Serialization;
 using System.Text;
+using System.Text.Json.Serialization;
 
 namespace PureCloud.Client.Models;
 
 /// <summary>
 /// MediaResult
 /// </summary>
-[DataContract]
+
 public partial class MediaResult : IEquatable<MediaResult>
 {
     /// <summary>
@@ -26,7 +26,7 @@ public partial class MediaResult : IEquatable<MediaResult>
     /// <summary>
     /// Gets or Sets MediaUri
     /// </summary>
-    [DataMember(Name = "mediaUri", EmitDefaultValue = false)]
+    [JsonPropertyName("mediaUri")]
     public string MediaUri { get; set; }
 
 
@@ -34,7 +34,7 @@ public partial class MediaResult : IEquatable<MediaResult>
     /// <summary>
     /// Gets or Sets WaveformData
     /// </summary>
-    [DataMember(Name = "waveformData", EmitDefaultValue = false)]
+    [JsonPropertyName("waveformData")]
     public List<float?> WaveformData { get; set; }
 
 

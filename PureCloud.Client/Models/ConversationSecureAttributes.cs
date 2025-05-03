@@ -1,12 +1,12 @@
-using System.Runtime.Serialization;
 using System.Text;
+using System.Text.Json.Serialization;
 
 namespace PureCloud.Client.Models;
 
 /// <summary>
 /// ConversationSecureAttributes
 /// </summary>
-[DataContract]
+
 public partial class ConversationSecureAttributes : IEquatable<ConversationSecureAttributes>
 {
     /// <summary>
@@ -27,7 +27,7 @@ public partial class ConversationSecureAttributes : IEquatable<ConversationSecur
     /// The map of attribute keys to values.
     /// </summary>
     /// <value>The map of attribute keys to values.</value>
-    [DataMember(Name = "attributes", EmitDefaultValue = false)]
+    [JsonPropertyName("attributes")]
     public Dictionary<string, string> Attributes { get; set; }
 
 
@@ -36,7 +36,7 @@ public partial class ConversationSecureAttributes : IEquatable<ConversationSecur
     /// The version used to detect conflicting updates when using PUT. Not used for PATCH.
     /// </summary>
     /// <value>The version used to detect conflicting updates when using PUT. Not used for PATCH.</value>
-    [DataMember(Name = "version", EmitDefaultValue = false)]
+    [JsonPropertyName("version")]
     public int? Version { get; set; }
 
 

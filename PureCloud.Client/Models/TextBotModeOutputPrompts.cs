@@ -1,4 +1,3 @@
-using System.Runtime.Serialization;
 using System.Text;
 using System.Text.Json.Serialization;
 
@@ -7,7 +6,7 @@ namespace PureCloud.Client.Models;
 /// <summary>
 /// Prompt information related to a bot flow turn.
 /// </summary>
-[DataContract]
+
 public partial class TextBotModeOutputPrompts : IEquatable<TextBotModeOutputPrompts>
 {
 
@@ -32,7 +31,7 @@ public partial class TextBotModeOutputPrompts : IEquatable<TextBotModeOutputProm
     /// The list of prompt segments.
     /// </summary>
     /// <value>The list of prompt segments.</value>
-    [DataMember(Name = "segments", EmitDefaultValue = false)]
+    [JsonPropertyName("segments")]
     public List<TextBotPromptSegment> Segments { get; set; }
 
 

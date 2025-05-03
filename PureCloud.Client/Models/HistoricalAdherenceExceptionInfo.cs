@@ -7,14 +7,14 @@ namespace PureCloud.Client.Models;
 /// <summary>
 /// HistoricalAdherenceExceptionInfo
 /// </summary>
-[DataContract]
+
 public partial class HistoricalAdherenceExceptionInfo : IEquatable<HistoricalAdherenceExceptionInfo>
 {
     /// <summary>
     /// Activity for which the user is scheduled
     /// </summary>
     /// <value>Activity for which the user is scheduled</value>
-    [JsonConverter(typeof(JsonStringEnumConverter))]
+    
     public enum ScheduledActivityCategoryEnum
     {
         /// <summary>
@@ -83,7 +83,7 @@ public partial class HistoricalAdherenceExceptionInfo : IEquatable<HistoricalAdh
     /// Activity for which the user is actually engaged
     /// </summary>
     /// <value>Activity for which the user is actually engaged</value>
-    [JsonConverter(typeof(JsonStringEnumConverter))]
+    
     public enum ActualActivityCategoryEnum
     {
         /// <summary>
@@ -152,7 +152,7 @@ public partial class HistoricalAdherenceExceptionInfo : IEquatable<HistoricalAdh
     /// Actual underlying system presence value
     /// </summary>
     /// <value>Actual underlying system presence value</value>
-    [JsonConverter(typeof(JsonStringEnumConverter))]
+    
     public enum SystemPresenceEnum
     {
         /// <summary>
@@ -227,7 +227,7 @@ public partial class HistoricalAdherenceExceptionInfo : IEquatable<HistoricalAdh
     /// Actual underlying routing status, used to determine whether a user is actually in adherence when OnQueue
     /// </summary>
     /// <value>Actual underlying routing status, used to determine whether a user is actually in adherence when OnQueue</value>
-    [JsonConverter(typeof(JsonStringEnumConverter))]
+    
     public enum RoutingStatusEnum
     {
         /// <summary>
@@ -272,7 +272,7 @@ public partial class HistoricalAdherenceExceptionInfo : IEquatable<HistoricalAdh
     /// The impact of the current adherence state for this user
     /// </summary>
     /// <value>The impact of the current adherence state for this user</value>
-    [JsonConverter(typeof(JsonStringEnumConverter))]
+    
     public enum ImpactEnum
     {
         /// <summary>
@@ -311,31 +311,31 @@ public partial class HistoricalAdherenceExceptionInfo : IEquatable<HistoricalAdh
     /// Activity for which the user is scheduled
     /// </summary>
     /// <value>Activity for which the user is scheduled</value>
-    [DataMember(Name = "scheduledActivityCategory", EmitDefaultValue = false)]
+    [JsonPropertyName("scheduledActivityCategory")]
     public ScheduledActivityCategoryEnum? ScheduledActivityCategory { get; set; }
     /// <summary>
     /// Activity for which the user is actually engaged
     /// </summary>
     /// <value>Activity for which the user is actually engaged</value>
-    [DataMember(Name = "actualActivityCategory", EmitDefaultValue = false)]
+    [JsonPropertyName("actualActivityCategory")]
     public ActualActivityCategoryEnum? ActualActivityCategory { get; set; }
     /// <summary>
     /// Actual underlying system presence value
     /// </summary>
     /// <value>Actual underlying system presence value</value>
-    [DataMember(Name = "systemPresence", EmitDefaultValue = false)]
+    [JsonPropertyName("systemPresence")]
     public SystemPresenceEnum? SystemPresence { get; set; }
     /// <summary>
     /// Actual underlying routing status, used to determine whether a user is actually in adherence when OnQueue
     /// </summary>
     /// <value>Actual underlying routing status, used to determine whether a user is actually in adherence when OnQueue</value>
-    [DataMember(Name = "routingStatus", EmitDefaultValue = false)]
+    [JsonPropertyName("routingStatus")]
     public RoutingStatusEnum? RoutingStatus { get; set; }
     /// <summary>
     /// The impact of the current adherence state for this user
     /// </summary>
     /// <value>The impact of the current adherence state for this user</value>
-    [DataMember(Name = "impact", EmitDefaultValue = false)]
+    [JsonPropertyName("impact")]
     public ImpactEnum? Impact { get; set; }
     /// <summary>
     /// Initializes a new instance of the <see cref="HistoricalAdherenceExceptionInfo" /> class.
@@ -373,7 +373,7 @@ public partial class HistoricalAdherenceExceptionInfo : IEquatable<HistoricalAdh
     /// Exception start offset in seconds relative to query start time
     /// </summary>
     /// <value>Exception start offset in seconds relative to query start time</value>
-    [DataMember(Name = "startOffsetSeconds", EmitDefaultValue = false)]
+    [JsonPropertyName("startOffsetSeconds")]
     public int? StartOffsetSeconds { get; set; }
 
 
@@ -382,7 +382,7 @@ public partial class HistoricalAdherenceExceptionInfo : IEquatable<HistoricalAdh
     /// Exception end offset in seconds relative to query start time
     /// </summary>
     /// <value>Exception end offset in seconds relative to query start time</value>
-    [DataMember(Name = "endOffsetSeconds", EmitDefaultValue = false)]
+    [JsonPropertyName("endOffsetSeconds")]
     public int? EndOffsetSeconds { get; set; }
 
 
@@ -391,7 +391,7 @@ public partial class HistoricalAdherenceExceptionInfo : IEquatable<HistoricalAdh
     /// The ID of the scheduled activity code for this user
     /// </summary>
     /// <value>The ID of the scheduled activity code for this user</value>
-    [DataMember(Name = "scheduledActivityCodeId", EmitDefaultValue = false)]
+    [JsonPropertyName("scheduledActivityCodeId")]
     public string ScheduledActivityCodeId { get; set; }
 
 
@@ -402,7 +402,7 @@ public partial class HistoricalAdherenceExceptionInfo : IEquatable<HistoricalAdh
     /// The lookup IDs used to retrieve the scheduled secondary statuses from map of lookup ID to corresponding secondary presence ID
     /// </summary>
     /// <value>The lookup IDs used to retrieve the scheduled secondary statuses from map of lookup ID to corresponding secondary presence ID</value>
-    [DataMember(Name = "scheduledSecondaryPresenceLookupIds", EmitDefaultValue = false)]
+    [JsonPropertyName("scheduledSecondaryPresenceLookupIds")]
     public List<string> ScheduledSecondaryPresenceLookupIds { get; set; }
 
 
@@ -411,7 +411,7 @@ public partial class HistoricalAdherenceExceptionInfo : IEquatable<HistoricalAdh
     /// The ID of the actual activity code for this user
     /// </summary>
     /// <value>The ID of the actual activity code for this user</value>
-    [DataMember(Name = "actualActivityCodeId", EmitDefaultValue = false)]
+    [JsonPropertyName("actualActivityCodeId")]
     public string ActualActivityCodeId { get; set; }
 
 
@@ -428,7 +428,7 @@ public partial class HistoricalAdherenceExceptionInfo : IEquatable<HistoricalAdh
     /// The lookup ID used to retrieve the actual secondary status from map of lookup ID to corresponding secondary presence ID
     /// </summary>
     /// <value>The lookup ID used to retrieve the actual secondary status from map of lookup ID to corresponding secondary presence ID</value>
-    [DataMember(Name = "secondaryPresenceLookupId", EmitDefaultValue = false)]
+    [JsonPropertyName("secondaryPresenceLookupId")]
     public string SecondaryPresenceLookupId { get; set; }
 
 

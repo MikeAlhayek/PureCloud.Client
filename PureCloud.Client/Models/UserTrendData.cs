@@ -1,12 +1,12 @@
-using System.Runtime.Serialization;
 using System.Text;
+using System.Text.Json.Serialization;
 
 namespace PureCloud.Client.Models;
 
 /// <summary>
 /// UserTrendData
 /// </summary>
-[DataContract]
+
 public partial class UserTrendData : IEquatable<UserTrendData>
 {
     /// <summary>
@@ -35,7 +35,7 @@ public partial class UserTrendData : IEquatable<UserTrendData>
     /// Start workday used as the date range. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd
     /// </summary>
     /// <value>Start workday used as the date range. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd</value>
-    [DataMember(Name = "dateStartWorkday", EmitDefaultValue = false)]
+    [JsonPropertyName("dateStartWorkday")]
     public string DateStartWorkday { get; set; }
 
 
@@ -44,7 +44,7 @@ public partial class UserTrendData : IEquatable<UserTrendData>
     /// End workday used as the date range. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd
     /// </summary>
     /// <value>End workday used as the date range. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd</value>
-    [DataMember(Name = "dateEndWorkday", EmitDefaultValue = false)]
+    [JsonPropertyName("dateEndWorkday")]
     public string DateEndWorkday { get; set; }
 
 
@@ -53,7 +53,7 @@ public partial class UserTrendData : IEquatable<UserTrendData>
     /// Percent of goal
     /// </summary>
     /// <value>Percent of goal</value>
-    [DataMember(Name = "percentOfGoal", EmitDefaultValue = false)]
+    [JsonPropertyName("percentOfGoal")]
     public double? PercentOfGoal { get; set; }
 
 
@@ -62,7 +62,7 @@ public partial class UserTrendData : IEquatable<UserTrendData>
     /// Average metric value
     /// </summary>
     /// <value>Average metric value</value>
-    [DataMember(Name = "averageValue", EmitDefaultValue = false)]
+    [JsonPropertyName("averageValue")]
     public double? AverageValue { get; set; }
 
 
@@ -71,7 +71,7 @@ public partial class UserTrendData : IEquatable<UserTrendData>
     /// Rank, ordered by total points
     /// </summary>
     /// <value>Rank, ordered by total points</value>
-    [DataMember(Name = "rankTotalPoints", EmitDefaultValue = false)]
+    [JsonPropertyName("rankTotalPoints")]
     public int? RankTotalPoints { get; set; }
 
 
@@ -80,7 +80,7 @@ public partial class UserTrendData : IEquatable<UserTrendData>
     /// Rank, ordered by percentage of points
     /// </summary>
     /// <value>Rank, ordered by percentage of points</value>
-    [DataMember(Name = "rankPercentagePoints", EmitDefaultValue = false)]
+    [JsonPropertyName("rankPercentagePoints")]
     public int? RankPercentagePoints { get; set; }
 
 

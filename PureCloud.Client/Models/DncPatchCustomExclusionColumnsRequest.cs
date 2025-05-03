@@ -7,14 +7,14 @@ namespace PureCloud.Client.Models;
 /// <summary>
 /// DncPatchCustomExclusionColumnsRequest
 /// </summary>
-[DataContract]
+
 public partial class DncPatchCustomExclusionColumnsRequest : IEquatable<DncPatchCustomExclusionColumnsRequest>
 {
     /// <summary>
     /// The action to perform
     /// </summary>
     /// <value>The action to perform</value>
-    [JsonConverter(typeof(JsonStringEnumConverter))]
+    
     public enum ActionEnum
     {
         /// <summary>
@@ -41,7 +41,7 @@ public partial class DncPatchCustomExclusionColumnsRequest : IEquatable<DncPatch
     /// The action to perform
     /// </summary>
     /// <value>The action to perform</value>
-    [DataMember(Name = "action", EmitDefaultValue = false)]
+    [JsonPropertyName("action")]
     public ActionEnum? Action { get; set; }
     /// <summary>
     /// Initializes a new instance of the <see cref="DncPatchCustomExclusionColumnsRequest" /> class.
@@ -65,7 +65,7 @@ public partial class DncPatchCustomExclusionColumnsRequest : IEquatable<DncPatch
     /// The list of custom exclusion column entries to Add to / Remove from the DNC list 
     /// </summary>
     /// <value>The list of custom exclusion column entries to Add to / Remove from the DNC list </value>
-    [DataMember(Name = "customExclusionColumnEntries", EmitDefaultValue = false)]
+    [JsonPropertyName("customExclusionColumnEntries")]
     public List<string> CustomExclusionColumnEntries { get; set; }
 
 
@@ -74,7 +74,7 @@ public partial class DncPatchCustomExclusionColumnsRequest : IEquatable<DncPatch
     /// Expiration date for DNC customExclusionColumnEntries in yyyy-MM-ddTHH:mmZ format
     /// </summary>
     /// <value>Expiration date for DNC customExclusionColumnEntries in yyyy-MM-ddTHH:mmZ format</value>
-    [DataMember(Name = "expirationDateTime", EmitDefaultValue = false)]
+    [JsonPropertyName("expirationDateTime")]
     public string ExpirationDateTime { get; set; }
 
 

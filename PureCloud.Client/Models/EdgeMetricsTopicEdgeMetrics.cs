@@ -1,12 +1,12 @@
-using System.Runtime.Serialization;
 using System.Text;
+using System.Text.Json.Serialization;
 
 namespace PureCloud.Client.Models;
 
 /// <summary>
 /// EdgeMetricsTopicEdgeMetrics
 /// </summary>
-[DataContract]
+
 public partial class EdgeMetricsTopicEdgeMetrics : IEquatable<EdgeMetricsTopicEdgeMetrics>
 {
     /// <summary>
@@ -38,7 +38,7 @@ public partial class EdgeMetricsTopicEdgeMetrics : IEquatable<EdgeMetricsTopicEd
     /// <summary>
     /// Gets or Sets Edge
     /// </summary>
-    [DataMember(Name = "edge", EmitDefaultValue = false)]
+    [JsonPropertyName("edge")]
     public EdgeMetricsTopicUriReference Edge { get; set; }
 
 
@@ -46,7 +46,7 @@ public partial class EdgeMetricsTopicEdgeMetrics : IEquatable<EdgeMetricsTopicEd
     /// <summary>
     /// Gets or Sets EventTime
     /// </summary>
-    [DataMember(Name = "eventTime", EmitDefaultValue = false)]
+    [JsonPropertyName("eventTime")]
     public DateTime? EventTime { get; set; }
 
 
@@ -54,7 +54,7 @@ public partial class EdgeMetricsTopicEdgeMetrics : IEquatable<EdgeMetricsTopicEd
     /// <summary>
     /// Gets or Sets UpTimeMsec
     /// </summary>
-    [DataMember(Name = "upTimeMsec", EmitDefaultValue = false)]
+    [JsonPropertyName("upTimeMsec")]
     public long? UpTimeMsec { get; set; }
 
 
@@ -62,7 +62,7 @@ public partial class EdgeMetricsTopicEdgeMetrics : IEquatable<EdgeMetricsTopicEd
     /// <summary>
     /// Gets or Sets Processors
     /// </summary>
-    [DataMember(Name = "processors", EmitDefaultValue = false)]
+    [JsonPropertyName("processors")]
     public List<EdgeMetricsTopicEdgeMetricProcessor> Processors { get; set; }
 
 
@@ -70,7 +70,7 @@ public partial class EdgeMetricsTopicEdgeMetrics : IEquatable<EdgeMetricsTopicEd
     /// <summary>
     /// Gets or Sets Memory
     /// </summary>
-    [DataMember(Name = "memory", EmitDefaultValue = false)]
+    [JsonPropertyName("memory")]
     public List<EdgeMetricsTopicEdgeMetricMemory> Memory { get; set; }
 
 
@@ -78,7 +78,7 @@ public partial class EdgeMetricsTopicEdgeMetrics : IEquatable<EdgeMetricsTopicEd
     /// <summary>
     /// Gets or Sets Disks
     /// </summary>
-    [DataMember(Name = "disks", EmitDefaultValue = false)]
+    [JsonPropertyName("disks")]
     public List<EdgeMetricsTopicEdgeMetricDisk> Disks { get; set; }
 
 
@@ -86,7 +86,7 @@ public partial class EdgeMetricsTopicEdgeMetrics : IEquatable<EdgeMetricsTopicEd
     /// <summary>
     /// Gets or Sets Subsystems
     /// </summary>
-    [DataMember(Name = "subsystems", EmitDefaultValue = false)]
+    [JsonPropertyName("subsystems")]
     public List<EdgeMetricsTopicEdgeMetricSubsystem> Subsystems { get; set; }
 
 
@@ -94,7 +94,7 @@ public partial class EdgeMetricsTopicEdgeMetrics : IEquatable<EdgeMetricsTopicEd
     /// <summary>
     /// Gets or Sets Networks
     /// </summary>
-    [DataMember(Name = "networks", EmitDefaultValue = false)]
+    [JsonPropertyName("networks")]
     public List<EdgeMetricsTopicEdgeMetricNetworks> Networks { get; set; }
 
 

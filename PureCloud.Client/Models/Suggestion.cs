@@ -7,14 +7,14 @@ namespace PureCloud.Client.Models;
 /// <summary>
 /// Suggestion
 /// </summary>
-[DataContract]
+
 public partial class Suggestion : IEquatable<Suggestion>
 {
     /// <summary>
     /// The type of the documents for which the suggestion is.
     /// </summary>
     /// <value>The type of the documents for which the suggestion is.</value>
-    [JsonConverter(typeof(JsonStringEnumConverter))]
+    
     public enum TypeEnum
     {
         /// <summary>
@@ -65,7 +65,7 @@ public partial class Suggestion : IEquatable<Suggestion>
     /// The trigger type of the suggestion.
     /// </summary>
     /// <value>The trigger type of the suggestion.</value>
-    [JsonConverter(typeof(JsonStringEnumConverter))]
+    
     public enum TriggerTypeEnum
     {
         /// <summary>
@@ -116,7 +116,7 @@ public partial class Suggestion : IEquatable<Suggestion>
     /// The state of the suggestion.
     /// </summary>
     /// <value>The state of the suggestion.</value>
-    [JsonConverter(typeof(JsonStringEnumConverter))]
+    
     public enum StateEnum
     {
         /// <summary>
@@ -161,19 +161,19 @@ public partial class Suggestion : IEquatable<Suggestion>
     /// The type of the documents for which the suggestion is.
     /// </summary>
     /// <value>The type of the documents for which the suggestion is.</value>
-    [DataMember(Name = "type", EmitDefaultValue = false)]
+    [JsonPropertyName("type")]
     public TypeEnum? Type { get; private set; }
     /// <summary>
     /// The trigger type of the suggestion.
     /// </summary>
     /// <value>The trigger type of the suggestion.</value>
-    [DataMember(Name = "triggerType", EmitDefaultValue = false)]
+    [JsonPropertyName("triggerType")]
     public TriggerTypeEnum? TriggerType { get; private set; }
     /// <summary>
     /// The state of the suggestion.
     /// </summary>
     /// <value>The state of the suggestion.</value>
-    [DataMember(Name = "state", EmitDefaultValue = false)]
+    [JsonPropertyName("state")]
     public StateEnum? State { get; private set; }
     /// <summary>
     /// Initializes a new instance of the <see cref="Suggestion" /> class.
@@ -189,7 +189,7 @@ public partial class Suggestion : IEquatable<Suggestion>
     /// The globally unique identifier for the object.
     /// </summary>
     /// <value>The globally unique identifier for the object.</value>
-    [DataMember(Name = "id", EmitDefaultValue = false)]
+    [JsonPropertyName("id")]
     public string Id { get; private set; }
 
 
@@ -200,7 +200,7 @@ public partial class Suggestion : IEquatable<Suggestion>
     /// The Faq from the knowledgebase that was provided as the suggestion.
     /// </summary>
     /// <value>The Faq from the knowledgebase that was provided as the suggestion.</value>
-    [DataMember(Name = "faq", EmitDefaultValue = false)]
+    [JsonPropertyName("faq")]
     public Faq Faq { get; private set; }
 
 
@@ -209,7 +209,7 @@ public partial class Suggestion : IEquatable<Suggestion>
     /// The article from the knowledgebase that was provided as the suggestion.
     /// </summary>
     /// <value>The article from the knowledgebase that was provided as the suggestion.</value>
-    [DataMember(Name = "article", EmitDefaultValue = false)]
+    [JsonPropertyName("article")]
     public Article Article { get; private set; }
 
 
@@ -218,7 +218,7 @@ public partial class Suggestion : IEquatable<Suggestion>
     /// Date when the suggestion was created. For example: yyyy-MM-ddTHH:mm:ss.SSZ. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z
     /// </summary>
     /// <value>Date when the suggestion was created. For example: yyyy-MM-ddTHH:mm:ss.SSZ. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z</value>
-    [DataMember(Name = "dateCreated", EmitDefaultValue = false)]
+    [JsonPropertyName("dateCreated")]
     public DateTime? DateCreated { get; private set; }
 
 
@@ -227,7 +227,7 @@ public partial class Suggestion : IEquatable<Suggestion>
     /// The ID of the knowledge search that provided the suggestion.
     /// </summary>
     /// <value>The ID of the knowledge search that provided the suggestion.</value>
-    [DataMember(Name = "answerRecordId", EmitDefaultValue = false)]
+    [JsonPropertyName("answerRecordId")]
     public string AnswerRecordId { get; private set; }
 
 
@@ -238,7 +238,7 @@ public partial class Suggestion : IEquatable<Suggestion>
     /// The conversation context in which the suggestion was raised.
     /// </summary>
     /// <value>The conversation context in which the suggestion was raised.</value>
-    [DataMember(Name = "context", EmitDefaultValue = false)]
+    [JsonPropertyName("context")]
     public SuggestionContext Context { get; private set; }
 
 
@@ -249,7 +249,7 @@ public partial class Suggestion : IEquatable<Suggestion>
     /// The suggested knowledge search result that was provided as the suggestion.
     /// </summary>
     /// <value>The suggested knowledge search result that was provided as the suggestion.</value>
-    [DataMember(Name = "knowledgeSearch", EmitDefaultValue = false)]
+    [JsonPropertyName("knowledgeSearch")]
     public SuggestionKnowledgeSearch KnowledgeSearch { get; private set; }
 
 
@@ -258,7 +258,7 @@ public partial class Suggestion : IEquatable<Suggestion>
     /// The suggested knowledge article that was provided as the suggestion.
     /// </summary>
     /// <value>The suggested knowledge article that was provided as the suggestion.</value>
-    [DataMember(Name = "knowledgeArticle", EmitDefaultValue = false)]
+    [JsonPropertyName("knowledgeArticle")]
     public SuggestionKnowledgeArticle KnowledgeArticle { get; private set; }
 
 
@@ -267,7 +267,7 @@ public partial class Suggestion : IEquatable<Suggestion>
     /// The suggested canned response that was provided as the suggestion.
     /// </summary>
     /// <value>The suggested canned response that was provided as the suggestion.</value>
-    [DataMember(Name = "cannedResponse", EmitDefaultValue = false)]
+    [JsonPropertyName("cannedResponse")]
     public SuggestionCannedResponse CannedResponse { get; private set; }
 
 
@@ -276,7 +276,7 @@ public partial class Suggestion : IEquatable<Suggestion>
     /// The suggested script that was provided as the suggestion.
     /// </summary>
     /// <value>The suggested script that was provided as the suggestion.</value>
-    [DataMember(Name = "script", EmitDefaultValue = false)]
+    [JsonPropertyName("script")]
     public SuggestionScript Script { get; private set; }
 
 
@@ -285,7 +285,7 @@ public partial class Suggestion : IEquatable<Suggestion>
     /// The URI for this object
     /// </summary>
     /// <value>The URI for this object</value>
-    [DataMember(Name = "selfUri", EmitDefaultValue = false)]
+    [JsonPropertyName("selfUri")]
     public string SelfUri { get; private set; }
 
 
@@ -294,7 +294,7 @@ public partial class Suggestion : IEquatable<Suggestion>
     /// The conversation that the suggestions correspond to.
     /// </summary>
     /// <value>The conversation that the suggestions correspond to.</value>
-    [DataMember(Name = "conversation", EmitDefaultValue = false)]
+    [JsonPropertyName("conversation")]
     public AddressableEntityRef Conversation { get; private set; }
 
 
@@ -303,7 +303,7 @@ public partial class Suggestion : IEquatable<Suggestion>
     /// The assistant that was used to provide the suggestions.
     /// </summary>
     /// <value>The assistant that was used to provide the suggestions.</value>
-    [DataMember(Name = "assistant", EmitDefaultValue = false)]
+    [JsonPropertyName("assistant")]
     public AddressableEntityRef Assistant { get; private set; }
 
 

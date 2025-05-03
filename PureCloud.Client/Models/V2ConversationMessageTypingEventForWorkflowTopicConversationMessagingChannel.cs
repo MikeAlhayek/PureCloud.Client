@@ -7,13 +7,13 @@ namespace PureCloud.Client.Models;
 /// <summary>
 /// V2ConversationMessageTypingEventForWorkflowTopicConversationMessagingChannel
 /// </summary>
-[DataContract]
+
 public partial class V2ConversationMessageTypingEventForWorkflowTopicConversationMessagingChannel : IEquatable<V2ConversationMessageTypingEventForWorkflowTopicConversationMessagingChannel>
 {
     /// <summary>
     /// Gets or Sets Platform
     /// </summary>
-    [JsonConverter(typeof(JsonStringEnumConverter))]
+    
     public enum PlatformEnum
     {
         /// <summary>
@@ -81,7 +81,7 @@ public partial class V2ConversationMessageTypingEventForWorkflowTopicConversatio
     /// <summary>
     /// Gets or Sets Platform
     /// </summary>
-    [DataMember(Name = "platform", EmitDefaultValue = false)]
+    [JsonPropertyName("platform")]
     public PlatformEnum? Platform { get; set; }
     /// <summary>
     /// Initializes a new instance of the <see cref="V2ConversationMessageTypingEventForWorkflowTopicConversationMessagingChannel" /> class.
@@ -106,7 +106,7 @@ public partial class V2ConversationMessageTypingEventForWorkflowTopicConversatio
     /// <summary>
     /// Gets or Sets Id
     /// </summary>
-    [DataMember(Name = "id", EmitDefaultValue = false)]
+    [JsonPropertyName("id")]
     public string Id { get; set; }
 
 
@@ -116,7 +116,7 @@ public partial class V2ConversationMessageTypingEventForWorkflowTopicConversatio
     /// <summary>
     /// Gets or Sets To
     /// </summary>
-    [DataMember(Name = "to", EmitDefaultValue = false)]
+    [JsonPropertyName("to")]
     public V2ConversationMessageTypingEventForWorkflowTopicConversationMessagingToRecipient To { get; set; }
 
 
@@ -124,7 +124,7 @@ public partial class V2ConversationMessageTypingEventForWorkflowTopicConversatio
     /// <summary>
     /// Gets or Sets From
     /// </summary>
-    [DataMember(Name = "from", EmitDefaultValue = false)]
+    [JsonPropertyName("from")]
     public V2ConversationMessageTypingEventForWorkflowTopicConversationMessagingFromRecipient From { get; set; }
 
 
@@ -132,7 +132,7 @@ public partial class V2ConversationMessageTypingEventForWorkflowTopicConversatio
     /// <summary>
     /// Gets or Sets Time
     /// </summary>
-    [DataMember(Name = "time", EmitDefaultValue = false)]
+    [JsonPropertyName("time")]
     public DateTime? Time { get; set; }
 
 

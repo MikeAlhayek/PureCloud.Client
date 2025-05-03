@@ -7,13 +7,13 @@ namespace PureCloud.Client.Models;
 /// <summary>
 /// DurationCondition
 /// </summary>
-[DataContract]
+
 public partial class DurationCondition : IEquatable<DurationCondition>
 {
     /// <summary>
     /// Gets or Sets DurationTarget
     /// </summary>
-    [JsonConverter(typeof(JsonStringEnumConverter))]
+    
     public enum DurationTargetEnum
     {
         /// <summary>
@@ -39,7 +39,7 @@ public partial class DurationCondition : IEquatable<DurationCondition>
     /// <summary>
     /// Gets or Sets DurationMode
     /// </summary>
-    [JsonConverter(typeof(JsonStringEnumConverter))]
+    
     public enum DurationModeEnum
     {
         /// <summary>
@@ -71,12 +71,12 @@ public partial class DurationCondition : IEquatable<DurationCondition>
     /// <summary>
     /// Gets or Sets DurationTarget
     /// </summary>
-    [DataMember(Name = "durationTarget", EmitDefaultValue = false)]
+    [JsonPropertyName("durationTarget")]
     public DurationTargetEnum? DurationTarget { get; set; }
     /// <summary>
     /// Gets or Sets DurationMode
     /// </summary>
-    [DataMember(Name = "durationMode", EmitDefaultValue = false)]
+    [JsonPropertyName("durationMode")]
     public DurationModeEnum? DurationMode { get; set; }
     /// <summary>
     /// Initializes a new instance of the <see cref="DurationCondition" /> class.
@@ -101,7 +101,7 @@ public partial class DurationCondition : IEquatable<DurationCondition>
     /// <summary>
     /// Gets or Sets DurationOperator
     /// </summary>
-    [DataMember(Name = "durationOperator", EmitDefaultValue = false)]
+    [JsonPropertyName("durationOperator")]
     public string DurationOperator { get; set; }
 
 
@@ -109,7 +109,7 @@ public partial class DurationCondition : IEquatable<DurationCondition>
     /// <summary>
     /// Gets or Sets DurationRange
     /// </summary>
-    [DataMember(Name = "durationRange", EmitDefaultValue = false)]
+    [JsonPropertyName("durationRange")]
     public string DurationRange { get; set; }
 
 

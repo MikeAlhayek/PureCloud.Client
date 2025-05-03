@@ -1,4 +1,3 @@
-using System.Runtime.Serialization;
 using System.Text;
 using System.Text.Json.Serialization;
 
@@ -7,7 +6,7 @@ namespace PureCloud.Client.Models;
 /// <summary>
 /// CopyWorkPlan
 /// </summary>
-[DataContract]
+
 public partial class CopyWorkPlan : IEquatable<CopyWorkPlan>
 {
 
@@ -32,7 +31,7 @@ public partial class CopyWorkPlan : IEquatable<CopyWorkPlan>
     /// Name of the copied work plan
     /// </summary>
     /// <value>Name of the copied work plan</value>
-    [DataMember(Name = "name", EmitDefaultValue = false)]
+    [JsonPropertyName("name")]
     public string Name { get; set; }
 
 

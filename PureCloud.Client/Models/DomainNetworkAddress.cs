@@ -7,14 +7,14 @@ namespace PureCloud.Client.Models;
 /// <summary>
 /// DomainNetworkAddress
 /// </summary>
-[DataContract]
+
 public partial class DomainNetworkAddress : IEquatable<DomainNetworkAddress>
 {
     /// <summary>
     /// The type of address.
     /// </summary>
     /// <value>The type of address.</value>
-    [JsonConverter(typeof(JsonStringEnumConverter))]
+    
     public enum TypeEnum
     {
         /// <summary>
@@ -53,7 +53,7 @@ public partial class DomainNetworkAddress : IEquatable<DomainNetworkAddress>
     /// The address family for this address.
     /// </summary>
     /// <value>The address family for this address.</value>
-    [JsonConverter(typeof(JsonStringEnumConverter))]
+    
     public enum FamilyEnum
     {
         /// <summary>
@@ -80,13 +80,13 @@ public partial class DomainNetworkAddress : IEquatable<DomainNetworkAddress>
     /// The type of address.
     /// </summary>
     /// <value>The type of address.</value>
-    [DataMember(Name = "type", EmitDefaultValue = false)]
+    [JsonPropertyName("type")]
     public TypeEnum? Type { get; set; }
     /// <summary>
     /// The address family for this address.
     /// </summary>
     /// <value>The address family for this address.</value>
-    [DataMember(Name = "family", EmitDefaultValue = false)]
+    [JsonPropertyName("family")]
     public FamilyEnum? Family { get; set; }
     /// <summary>
     /// Initializes a new instance of the <see cref="DomainNetworkAddress" /> class.
@@ -112,7 +112,7 @@ public partial class DomainNetworkAddress : IEquatable<DomainNetworkAddress>
     /// An IPv4 or IPv6 IP address. When specifying an address of type \&quot;ip\&quot;, use CIDR format for the subnet mask.
     /// </summary>
     /// <value>An IPv4 or IPv6 IP address. When specifying an address of type \&quot;ip\&quot;, use CIDR format for the subnet mask.</value>
-    [DataMember(Name = "address", EmitDefaultValue = false)]
+    [JsonPropertyName("address")]
     public string Address { get; set; }
 
 
@@ -121,7 +121,7 @@ public partial class DomainNetworkAddress : IEquatable<DomainNetworkAddress>
     /// True if this address will persist on Edge restart.  Addresses assigned by DHCP will be returned as false.
     /// </summary>
     /// <value>True if this address will persist on Edge restart.  Addresses assigned by DHCP will be returned as false.</value>
-    [DataMember(Name = "persistent", EmitDefaultValue = false)]
+    [JsonPropertyName("persistent")]
     public bool? Persistent { get; set; }
 
 

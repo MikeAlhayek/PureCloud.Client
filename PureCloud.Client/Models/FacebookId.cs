@@ -1,12 +1,12 @@
-using System.Runtime.Serialization;
 using System.Text;
+using System.Text.Json.Serialization;
 
 namespace PureCloud.Client.Models;
 
 /// <summary>
 /// User information for a Facebook user interacting with a page or app
 /// </summary>
-[DataContract]
+
 public partial class FacebookId : IEquatable<FacebookId>
 {
     /// <summary>
@@ -27,7 +27,7 @@ public partial class FacebookId : IEquatable<FacebookId>
     /// The set of scopedIds that this person has. Each scopedId is specific to a page or app that the user interacts with.
     /// </summary>
     /// <value>The set of scopedIds that this person has. Each scopedId is specific to a page or app that the user interacts with.</value>
-    [DataMember(Name = "ids", EmitDefaultValue = false)]
+    [JsonPropertyName("ids")]
     public List<FacebookScopedId> Ids { get; set; }
 
 
@@ -36,7 +36,7 @@ public partial class FacebookId : IEquatable<FacebookId>
     /// The displayName of this person&#39;s Facebook account. Roughly translates to user.first_name + &#39; &#39; + user.last_name in the Facebook API.
     /// </summary>
     /// <value>The displayName of this person&#39;s Facebook account. Roughly translates to user.first_name + &#39; &#39; + user.last_name in the Facebook API.</value>
-    [DataMember(Name = "displayName", EmitDefaultValue = false)]
+    [JsonPropertyName("displayName")]
     public string DisplayName { get; set; }
 
 

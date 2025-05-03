@@ -1,4 +1,3 @@
-using System.Runtime.Serialization;
 using System.Text;
 using System.Text.Json.Serialization;
 
@@ -7,7 +6,7 @@ namespace PureCloud.Client.Models;
 /// <summary>
 /// UploadUrlRequestBody
 /// </summary>
-[DataContract]
+
 public partial class UploadUrlRequestBody : IEquatable<UploadUrlRequestBody>
 {
 
@@ -32,7 +31,7 @@ public partial class UploadUrlRequestBody : IEquatable<UploadUrlRequestBody>
     /// The expected content length (in bytes) of the gzip-encoded data that will be PUT to the returned signed URL
     /// </summary>
     /// <value>The expected content length (in bytes) of the gzip-encoded data that will be PUT to the returned signed URL</value>
-    [DataMember(Name = "contentLengthBytes", EmitDefaultValue = false)]
+    [JsonPropertyName("contentLengthBytes")]
     public long? ContentLengthBytes { get; set; }
 
 

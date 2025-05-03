@@ -7,13 +7,13 @@ namespace PureCloud.Client.Models;
 /// <summary>
 /// V2MobiusAlertsTopicEntityProperties
 /// </summary>
-[DataContract]
+
 public partial class V2MobiusAlertsTopicEntityProperties : IEquatable<V2MobiusAlertsTopicEntityProperties>
 {
     /// <summary>
     /// Gets or Sets EntityType
     /// </summary>
-    [JsonConverter(typeof(JsonStringEnumConverter))]
+    
     public enum EntityTypeEnum
     {
         /// <summary>
@@ -69,7 +69,7 @@ public partial class V2MobiusAlertsTopicEntityProperties : IEquatable<V2MobiusAl
     /// <summary>
     /// Gets or Sets EntityType
     /// </summary>
-    [DataMember(Name = "entityType", EmitDefaultValue = false)]
+    [JsonPropertyName("entityType")]
     public EntityTypeEnum? EntityType { get; set; }
     /// <summary>
     /// Initializes a new instance of the <see cref="V2MobiusAlertsTopicEntityProperties" /> class.
@@ -96,7 +96,7 @@ public partial class V2MobiusAlertsTopicEntityProperties : IEquatable<V2MobiusAl
     /// <summary>
     /// Gets or Sets User
     /// </summary>
-    [DataMember(Name = "user", EmitDefaultValue = false)]
+    [JsonPropertyName("user")]
     public V2MobiusAlertsTopicAlertingAddressableEntityRef User { get; set; }
 
 
@@ -104,7 +104,7 @@ public partial class V2MobiusAlertsTopicEntityProperties : IEquatable<V2MobiusAl
     /// <summary>
     /// Gets or Sets Group
     /// </summary>
-    [DataMember(Name = "group", EmitDefaultValue = false)]
+    [JsonPropertyName("group")]
     public V2MobiusAlertsTopicAlertingAddressableEntityRef Group { get; set; }
 
 
@@ -112,7 +112,7 @@ public partial class V2MobiusAlertsTopicEntityProperties : IEquatable<V2MobiusAl
     /// <summary>
     /// Gets or Sets Queue
     /// </summary>
-    [DataMember(Name = "queue", EmitDefaultValue = false)]
+    [JsonPropertyName("queue")]
     public V2MobiusAlertsTopicAlertingAddressableEntityRef Queue { get; set; }
 
 
@@ -120,7 +120,7 @@ public partial class V2MobiusAlertsTopicEntityProperties : IEquatable<V2MobiusAl
     /// <summary>
     /// Gets or Sets Team
     /// </summary>
-    [DataMember(Name = "team", EmitDefaultValue = false)]
+    [JsonPropertyName("team")]
     public V2MobiusAlertsTopicAlertingAddressableEntityRef Team { get; set; }
 
 

@@ -1,4 +1,3 @@
-using System.Runtime.Serialization;
 using System.Text;
 using System.Text.Json.Serialization;
 
@@ -7,7 +6,7 @@ namespace PureCloud.Client.Models;
 /// <summary>
 /// WebEventBrowser
 /// </summary>
-[DataContract]
+
 public partial class WebEventBrowser : IEquatable<WebEventBrowser>
 {
 
@@ -36,7 +35,7 @@ public partial class WebEventBrowser : IEquatable<WebEventBrowser>
     /// Browser family (e.g. Chrome, Safari, Firefox).
     /// </summary>
     /// <value>Browser family (e.g. Chrome, Safari, Firefox).</value>
-    [DataMember(Name = "family", EmitDefaultValue = false)]
+    [JsonPropertyName("family")]
     public string Family { get; set; }
 
 
@@ -45,7 +44,7 @@ public partial class WebEventBrowser : IEquatable<WebEventBrowser>
     /// Browser version (e.g. 68.0.3440.84).
     /// </summary>
     /// <value>Browser version (e.g. 68.0.3440.84).</value>
-    [DataMember(Name = "version", EmitDefaultValue = false)]
+    [JsonPropertyName("version")]
     public string Version { get; set; }
 
 
@@ -54,7 +53,7 @@ public partial class WebEventBrowser : IEquatable<WebEventBrowser>
     /// Language the browser is set to. Must conform to BCP 47.
     /// </summary>
     /// <value>Language the browser is set to. Must conform to BCP 47.</value>
-    [DataMember(Name = "lang", EmitDefaultValue = false)]
+    [JsonPropertyName("lang")]
     public string Lang { get; set; }
 
 

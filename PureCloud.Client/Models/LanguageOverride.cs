@@ -1,4 +1,3 @@
-using System.Runtime.Serialization;
 using System.Text;
 using System.Text.Json.Serialization;
 
@@ -7,7 +6,7 @@ namespace PureCloud.Client.Models;
 /// <summary>
 /// LanguageOverride
 /// </summary>
-[DataContract]
+
 public partial class LanguageOverride : IEquatable<LanguageOverride>
 {
 
@@ -36,7 +35,7 @@ public partial class LanguageOverride : IEquatable<LanguageOverride>
     /// The language code of the language being overridden
     /// </summary>
     /// <value>The language code of the language being overridden</value>
-    [DataMember(Name = "language", EmitDefaultValue = false)]
+    [JsonPropertyName("language")]
     public string Language { get; set; }
 
 
@@ -45,7 +44,7 @@ public partial class LanguageOverride : IEquatable<LanguageOverride>
     /// The ID of the TTS engine to use for this language override
     /// </summary>
     /// <value>The ID of the TTS engine to use for this language override</value>
-    [DataMember(Name = "engine", EmitDefaultValue = false)]
+    [JsonPropertyName("engine")]
     public string Engine { get; set; }
 
 
@@ -54,7 +53,7 @@ public partial class LanguageOverride : IEquatable<LanguageOverride>
     /// The ID of the voice to use for this language override. The voice must be supported by the chosen engine.
     /// </summary>
     /// <value>The ID of the voice to use for this language override. The voice must be supported by the chosen engine.</value>
-    [DataMember(Name = "voice", EmitDefaultValue = false)]
+    [JsonPropertyName("voice")]
     public string Voice { get; set; }
 
 

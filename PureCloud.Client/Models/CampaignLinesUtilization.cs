@@ -1,12 +1,12 @@
-using System.Runtime.Serialization;
 using System.Text;
+using System.Text.Json.Serialization;
 
 namespace PureCloud.Client.Models;
 
 /// <summary>
 /// CampaignLinesUtilization
 /// </summary>
-[DataContract]
+
 public partial class CampaignLinesUtilization : IEquatable<CampaignLinesUtilization>
 {
     /// <summary>
@@ -27,7 +27,7 @@ public partial class CampaignLinesUtilization : IEquatable<CampaignLinesUtilizat
     /// Number of outbound lines assigned to the campaign
     /// </summary>
     /// <value>Number of outbound lines assigned to the campaign</value>
-    [DataMember(Name = "assignedOutboundLines", EmitDefaultValue = false)]
+    [JsonPropertyName("assignedOutboundLines")]
     public int? AssignedOutboundLines { get; set; }
 
 
@@ -36,7 +36,7 @@ public partial class CampaignLinesUtilization : IEquatable<CampaignLinesUtilizat
     /// Total number of available outbound lines in Campaign&#39;s Edge Group or Site
     /// </summary>
     /// <value>Total number of available outbound lines in Campaign&#39;s Edge Group or Site</value>
-    [DataMember(Name = "totalAvailableOutboundLines", EmitDefaultValue = false)]
+    [JsonPropertyName("totalAvailableOutboundLines")]
     public int? TotalAvailableOutboundLines { get; set; }
 
 

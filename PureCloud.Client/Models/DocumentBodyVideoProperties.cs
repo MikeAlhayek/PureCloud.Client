@@ -7,14 +7,14 @@ namespace PureCloud.Client.Models;
 /// <summary>
 /// DocumentBodyVideoProperties
 /// </summary>
-[DataContract]
+
 public partial class DocumentBodyVideoProperties : IEquatable<DocumentBodyVideoProperties>
 {
     /// <summary>
     /// The align type for the video.
     /// </summary>
     /// <value>The align type for the video.</value>
-    [JsonConverter(typeof(JsonStringEnumConverter))]
+    
     public enum AlignEnum
     {
         /// <summary>
@@ -53,7 +53,7 @@ public partial class DocumentBodyVideoProperties : IEquatable<DocumentBodyVideoP
     /// The align type for the video.
     /// </summary>
     /// <value>The align type for the video.</value>
-    [DataMember(Name = "align", EmitDefaultValue = false)]
+    [JsonPropertyName("align")]
     public AlignEnum? Align { get; set; }
     /// <summary>
     /// Initializes a new instance of the <see cref="DocumentBodyVideoProperties" /> class.
@@ -79,7 +79,7 @@ public partial class DocumentBodyVideoProperties : IEquatable<DocumentBodyVideoP
     /// The background color for the video. The valid values in hex color code representation. For example black color - #000000
     /// </summary>
     /// <value>The background color for the video. The valid values in hex color code representation. For example black color - #000000</value>
-    [DataMember(Name = "backgroundColor", EmitDefaultValue = false)]
+    [JsonPropertyName("backgroundColor")]
     public string BackgroundColor { get; set; }
 
 
@@ -90,7 +90,7 @@ public partial class DocumentBodyVideoProperties : IEquatable<DocumentBodyVideoP
     /// The indentation for the video. The valid values in &#39;em&#39;.
     /// </summary>
     /// <value>The indentation for the video. The valid values in &#39;em&#39;.</value>
-    [DataMember(Name = "indentation", EmitDefaultValue = false)]
+    [JsonPropertyName("indentation")]
     public float? Indentation { get; set; }
 
 
@@ -99,7 +99,7 @@ public partial class DocumentBodyVideoProperties : IEquatable<DocumentBodyVideoP
     /// The width of the video in the specified unit.
     /// </summary>
     /// <value>The width of the video in the specified unit.</value>
-    [DataMember(Name = "width", EmitDefaultValue = false)]
+    [JsonPropertyName("width")]
     public DocumentElementLength Width { get; set; }
 
 
@@ -108,7 +108,7 @@ public partial class DocumentBodyVideoProperties : IEquatable<DocumentBodyVideoP
     /// The height of the video in the specified unit.
     /// </summary>
     /// <value>The height of the video in the specified unit.</value>
-    [DataMember(Name = "height", EmitDefaultValue = false)]
+    [JsonPropertyName("height")]
     public DocumentElementLength Height { get; set; }
 
 

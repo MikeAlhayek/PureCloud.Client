@@ -1,12 +1,12 @@
-using System.Runtime.Serialization;
 using System.Text;
+using System.Text.Json.Serialization;
 
 namespace PureCloud.Client.Models;
 
 /// <summary>
 /// TrunkMetricsOptions
 /// </summary>
-[DataContract]
+
 public partial class TrunkMetricsOptions : IEquatable<TrunkMetricsOptions>
 {
     /// <summary>
@@ -31,7 +31,7 @@ public partial class TrunkMetricsOptions : IEquatable<TrunkMetricsOptions>
     /// Server proxy address that this options array element represents.
     /// </summary>
     /// <value>Server proxy address that this options array element represents.</value>
-    [DataMember(Name = "proxyAddress", EmitDefaultValue = false)]
+    [JsonPropertyName("proxyAddress")]
     public string ProxyAddress { get; set; }
 
 
@@ -39,7 +39,7 @@ public partial class TrunkMetricsOptions : IEquatable<TrunkMetricsOptions>
     /// <summary>
     /// Gets or Sets OptionState
     /// </summary>
-    [DataMember(Name = "optionState", EmitDefaultValue = false)]
+    [JsonPropertyName("optionState")]
     public bool? OptionState { get; set; }
 
 
@@ -48,7 +48,7 @@ public partial class TrunkMetricsOptions : IEquatable<TrunkMetricsOptions>
     /// ISO 8601 format UTC absolute date &amp; time of the last change of the option state.
     /// </summary>
     /// <value>ISO 8601 format UTC absolute date &amp; time of the last change of the option state.</value>
-    [DataMember(Name = "optionStateTime", EmitDefaultValue = false)]
+    [JsonPropertyName("optionStateTime")]
     public DateTime? OptionStateTime { get; set; }
 
 
@@ -56,7 +56,7 @@ public partial class TrunkMetricsOptions : IEquatable<TrunkMetricsOptions>
     /// <summary>
     /// Gets or Sets ErrorInfo
     /// </summary>
-    [DataMember(Name = "errorInfo", EmitDefaultValue = false)]
+    [JsonPropertyName("errorInfo")]
     public TrunkErrorInfo ErrorInfo { get; set; }
 
 

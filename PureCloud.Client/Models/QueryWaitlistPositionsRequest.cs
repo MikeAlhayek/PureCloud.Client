@@ -1,4 +1,3 @@
-using System.Runtime.Serialization;
 using System.Text;
 using System.Text.Json.Serialization;
 
@@ -7,7 +6,7 @@ namespace PureCloud.Client.Models;
 /// <summary>
 /// QueryWaitlistPositionsRequest
 /// </summary>
-[DataContract]
+
 public partial class QueryWaitlistPositionsRequest : IEquatable<QueryWaitlistPositionsRequest>
 {
 
@@ -32,7 +31,7 @@ public partial class QueryWaitlistPositionsRequest : IEquatable<QueryWaitlistPos
     /// The list of the time off request ids for which to fetch the daily waitlist positions
     /// </summary>
     /// <value>The list of the time off request ids for which to fetch the daily waitlist positions</value>
-    [DataMember(Name = "timeOffRequests", EmitDefaultValue = false)]
+    [JsonPropertyName("timeOffRequests")]
     public List<UserTimeOffRequestReference> TimeOffRequests { get; set; }
 
 

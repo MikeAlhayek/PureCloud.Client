@@ -7,14 +7,14 @@ namespace PureCloud.Client.Models;
 /// <summary>
 /// TranscriptSearchCriteria
 /// </summary>
-[DataContract]
+
 public partial class TranscriptSearchCriteria : IEquatable<TranscriptSearchCriteria>
 {
     /// <summary>
     /// How to apply this search criteria against other criteria
     /// </summary>
     /// <value>How to apply this search criteria against other criteria</value>
-    [JsonConverter(typeof(JsonStringEnumConverter))]
+    
     public enum OperatorEnum
     {
         /// <summary>
@@ -46,7 +46,7 @@ public partial class TranscriptSearchCriteria : IEquatable<TranscriptSearchCrite
     /// <summary>
     /// Gets or Sets Type
     /// </summary>
-    [JsonConverter(typeof(JsonStringEnumConverter))]
+    
     public enum TypeEnum
     {
         /// <summary>
@@ -103,12 +103,12 @@ public partial class TranscriptSearchCriteria : IEquatable<TranscriptSearchCrite
     /// How to apply this search criteria against other criteria
     /// </summary>
     /// <value>How to apply this search criteria against other criteria</value>
-    [DataMember(Name = "operator", EmitDefaultValue = false)]
+    [JsonPropertyName("operator")]
     public OperatorEnum? Operator { get; set; }
     /// <summary>
     /// Gets or Sets Type
     /// </summary>
-    [DataMember(Name = "type", EmitDefaultValue = false)]
+    [JsonPropertyName("type")]
     public TypeEnum? Type { get; set; }
     /// <summary>
     /// Initializes a new instance of the <see cref="TranscriptSearchCriteria" /> class.
@@ -142,7 +142,7 @@ public partial class TranscriptSearchCriteria : IEquatable<TranscriptSearchCrite
     /// The end value of the range. This field is used for range search types.
     /// </summary>
     /// <value>The end value of the range. This field is used for range search types.</value>
-    [DataMember(Name = "endValue", EmitDefaultValue = false)]
+    [JsonPropertyName("endValue")]
     public string EndValue { get; set; }
 
 
@@ -151,7 +151,7 @@ public partial class TranscriptSearchCriteria : IEquatable<TranscriptSearchCrite
     /// A list of values for the search to match against
     /// </summary>
     /// <value>A list of values for the search to match against</value>
-    [DataMember(Name = "values", EmitDefaultValue = false)]
+    [JsonPropertyName("values")]
     public List<string> Values { get; set; }
 
 
@@ -160,7 +160,7 @@ public partial class TranscriptSearchCriteria : IEquatable<TranscriptSearchCrite
     /// The start value of the range. This field is used for range search types.
     /// </summary>
     /// <value>The start value of the range. This field is used for range search types.</value>
-    [DataMember(Name = "startValue", EmitDefaultValue = false)]
+    [JsonPropertyName("startValue")]
     public string StartValue { get; set; }
 
 
@@ -169,7 +169,7 @@ public partial class TranscriptSearchCriteria : IEquatable<TranscriptSearchCrite
     /// A value for the search to match against
     /// </summary>
     /// <value>A value for the search to match against</value>
-    [DataMember(Name = "value", EmitDefaultValue = false)]
+    [JsonPropertyName("value")]
     public string Value { get; set; }
 
 
@@ -180,7 +180,7 @@ public partial class TranscriptSearchCriteria : IEquatable<TranscriptSearchCrite
     /// Groups multiple conditions
     /// </summary>
     /// <value>Groups multiple conditions</value>
-    [DataMember(Name = "group", EmitDefaultValue = false)]
+    [JsonPropertyName("group")]
     public List<TranscriptSearchCriteria> Group { get; set; }
 
 
@@ -189,7 +189,7 @@ public partial class TranscriptSearchCriteria : IEquatable<TranscriptSearchCrite
     /// Set date format for criteria values when using date range search type.  Supports Java date format syntax, example yyyy-MM-dd&#39;T&#39;HH:mm:ss.SSSX.
     /// </summary>
     /// <value>Set date format for criteria values when using date range search type.  Supports Java date format syntax, example yyyy-MM-dd&#39;T&#39;HH:mm:ss.SSSX.</value>
-    [DataMember(Name = "dateFormat", EmitDefaultValue = false)]
+    [JsonPropertyName("dateFormat")]
     public string DateFormat { get; set; }
 
 
@@ -200,7 +200,7 @@ public partial class TranscriptSearchCriteria : IEquatable<TranscriptSearchCrite
     /// Field names to search against
     /// </summary>
     /// <value>Field names to search against</value>
-    [DataMember(Name = "fields", EmitDefaultValue = false)]
+    [JsonPropertyName("fields")]
     public List<string> Fields { get; set; }
 
 

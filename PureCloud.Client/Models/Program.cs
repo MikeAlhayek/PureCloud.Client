@@ -1,12 +1,12 @@
-using System.Runtime.Serialization;
 using System.Text;
+using System.Text.Json.Serialization;
 
 namespace PureCloud.Client.Models;
 
 /// <summary>
 /// Program
 /// </summary>
-[DataContract]
+
 public partial class Program : IEquatable<Program>
 {
     /// <summary>
@@ -43,7 +43,7 @@ public partial class Program : IEquatable<Program>
     /// The globally unique identifier for the object.
     /// </summary>
     /// <value>The globally unique identifier for the object.</value>
-    [DataMember(Name = "id", EmitDefaultValue = false)]
+    [JsonPropertyName("id")]
     public string Id { get; private set; }
 
 
@@ -51,7 +51,7 @@ public partial class Program : IEquatable<Program>
     /// <summary>
     /// Gets or Sets Name
     /// </summary>
-    [DataMember(Name = "name", EmitDefaultValue = false)]
+    [JsonPropertyName("name")]
     public string Name { get; set; }
 
 
@@ -59,7 +59,7 @@ public partial class Program : IEquatable<Program>
     /// <summary>
     /// Gets or Sets Description
     /// </summary>
-    [DataMember(Name = "description", EmitDefaultValue = false)]
+    [JsonPropertyName("description")]
     public string Description { get; set; }
 
 
@@ -67,7 +67,7 @@ public partial class Program : IEquatable<Program>
     /// <summary>
     /// Gets or Sets Published
     /// </summary>
-    [DataMember(Name = "published", EmitDefaultValue = false)]
+    [JsonPropertyName("published")]
     public bool? Published { get; set; }
 
 
@@ -75,7 +75,7 @@ public partial class Program : IEquatable<Program>
     /// <summary>
     /// Gets or Sets Topics
     /// </summary>
-    [DataMember(Name = "topics", EmitDefaultValue = false)]
+    [JsonPropertyName("topics")]
     public List<BaseTopicEntitiy> Topics { get; set; }
 
 
@@ -83,7 +83,7 @@ public partial class Program : IEquatable<Program>
     /// <summary>
     /// Gets or Sets Tags
     /// </summary>
-    [DataMember(Name = "tags", EmitDefaultValue = false)]
+    [JsonPropertyName("tags")]
     public List<string> Tags { get; set; }
 
 
@@ -91,7 +91,7 @@ public partial class Program : IEquatable<Program>
     /// <summary>
     /// Gets or Sets ModifiedBy
     /// </summary>
-    [DataMember(Name = "modifiedBy", EmitDefaultValue = false)]
+    [JsonPropertyName("modifiedBy")]
     public AddressableEntityRef ModifiedBy { get; set; }
 
 
@@ -100,7 +100,7 @@ public partial class Program : IEquatable<Program>
     /// Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z
     /// </summary>
     /// <value>Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z</value>
-    [DataMember(Name = "dateModified", EmitDefaultValue = false)]
+    [JsonPropertyName("dateModified")]
     public DateTime? DateModified { get; set; }
 
 
@@ -108,7 +108,7 @@ public partial class Program : IEquatable<Program>
     /// <summary>
     /// Gets or Sets PublishedBy
     /// </summary>
-    [DataMember(Name = "publishedBy", EmitDefaultValue = false)]
+    [JsonPropertyName("publishedBy")]
     public AddressableEntityRef PublishedBy { get; set; }
 
 
@@ -117,7 +117,7 @@ public partial class Program : IEquatable<Program>
     /// Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z
     /// </summary>
     /// <value>Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z</value>
-    [DataMember(Name = "datePublished", EmitDefaultValue = false)]
+    [JsonPropertyName("datePublished")]
     public DateTime? DatePublished { get; set; }
 
 
@@ -125,7 +125,7 @@ public partial class Program : IEquatable<Program>
     /// <summary>
     /// Gets or Sets TopicLinksJob
     /// </summary>
-    [DataMember(Name = "topicLinksJob", EmitDefaultValue = false)]
+    [JsonPropertyName("topicLinksJob")]
     public AddressableEntityRef TopicLinksJob { get; set; }
 
 
@@ -134,7 +134,7 @@ public partial class Program : IEquatable<Program>
     /// The URI for this object
     /// </summary>
     /// <value>The URI for this object</value>
-    [DataMember(Name = "selfUri", EmitDefaultValue = false)]
+    [JsonPropertyName("selfUri")]
     public string SelfUri { get; private set; }
 
 

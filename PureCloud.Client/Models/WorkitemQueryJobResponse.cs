@@ -7,14 +7,14 @@ namespace PureCloud.Client.Models;
 /// <summary>
 /// WorkitemQueryJobResponse
 /// </summary>
-[DataContract]
+
 public partial class WorkitemQueryJobResponse : IEquatable<WorkitemQueryJobResponse>
 {
     /// <summary>
     /// The state of the query job
     /// </summary>
     /// <value>The state of the query job</value>
-    [JsonConverter(typeof(JsonStringEnumConverter))]
+    
     public enum StateEnum
     {
         /// <summary>
@@ -53,7 +53,7 @@ public partial class WorkitemQueryJobResponse : IEquatable<WorkitemQueryJobRespo
     /// The state of the query job
     /// </summary>
     /// <value>The state of the query job</value>
-    [DataMember(Name = "state", EmitDefaultValue = false)]
+    [JsonPropertyName("state")]
     public StateEnum? State { get; set; }
     /// <summary>
     /// Initializes a new instance of the <see cref="WorkitemQueryJobResponse" /> class.
@@ -77,7 +77,7 @@ public partial class WorkitemQueryJobResponse : IEquatable<WorkitemQueryJobRespo
     /// The globally unique identifier for the object.
     /// </summary>
     /// <value>The globally unique identifier for the object.</value>
-    [DataMember(Name = "id", EmitDefaultValue = false)]
+    [JsonPropertyName("id")]
     public string Id { get; private set; }
 
 
@@ -88,7 +88,7 @@ public partial class WorkitemQueryJobResponse : IEquatable<WorkitemQueryJobRespo
     /// The date the job was started. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z
     /// </summary>
     /// <value>The date the job was started. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z</value>
-    [DataMember(Name = "dateStarted", EmitDefaultValue = false)]
+    [JsonPropertyName("dateStarted")]
     public DateTime? DateStarted { get; set; }
 
 
@@ -97,7 +97,7 @@ public partial class WorkitemQueryJobResponse : IEquatable<WorkitemQueryJobRespo
     /// The date the job finished. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z
     /// </summary>
     /// <value>The date the job finished. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z</value>
-    [DataMember(Name = "dateFinished", EmitDefaultValue = false)]
+    [JsonPropertyName("dateFinished")]
     public DateTime? DateFinished { get; set; }
 
 
@@ -106,7 +106,7 @@ public partial class WorkitemQueryJobResponse : IEquatable<WorkitemQueryJobRespo
     /// The error associated with the query job, if the state is Failed
     /// </summary>
     /// <value>The error associated with the query job, if the state is Failed</value>
-    [DataMember(Name = "error", EmitDefaultValue = false)]
+    [JsonPropertyName("error")]
     public WorkitemQueryJobError Error { get; set; }
 
 
@@ -115,7 +115,7 @@ public partial class WorkitemQueryJobResponse : IEquatable<WorkitemQueryJobRespo
     /// The URI for this object
     /// </summary>
     /// <value>The URI for this object</value>
-    [DataMember(Name = "selfUri", EmitDefaultValue = false)]
+    [JsonPropertyName("selfUri")]
     public string SelfUri { get; private set; }
 
 

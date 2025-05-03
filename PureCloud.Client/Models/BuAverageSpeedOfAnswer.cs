@@ -1,4 +1,3 @@
-using System.Runtime.Serialization;
 using System.Text;
 using System.Text.Json.Serialization;
 
@@ -7,7 +6,7 @@ namespace PureCloud.Client.Models;
 /// <summary>
 /// BuAverageSpeedOfAnswer
 /// </summary>
-[DataContract]
+
 public partial class BuAverageSpeedOfAnswer : IEquatable<BuAverageSpeedOfAnswer>
 {
 
@@ -34,7 +33,7 @@ public partial class BuAverageSpeedOfAnswer : IEquatable<BuAverageSpeedOfAnswer>
     /// Whether to include average speed of answer (ASA) in the associated configuration
     /// </summary>
     /// <value>Whether to include average speed of answer (ASA) in the associated configuration</value>
-    [DataMember(Name = "include", EmitDefaultValue = false)]
+    [JsonPropertyName("include")]
     public bool? Include { get; set; }
 
 
@@ -43,7 +42,7 @@ public partial class BuAverageSpeedOfAnswer : IEquatable<BuAverageSpeedOfAnswer>
     /// The target average speed of answer (ASA) in seconds. Required if include &#x3D;&#x3D; true
     /// </summary>
     /// <value>The target average speed of answer (ASA) in seconds. Required if include &#x3D;&#x3D; true</value>
-    [DataMember(Name = "seconds", EmitDefaultValue = false)]
+    [JsonPropertyName("seconds")]
     public int? Seconds { get; set; }
 
 

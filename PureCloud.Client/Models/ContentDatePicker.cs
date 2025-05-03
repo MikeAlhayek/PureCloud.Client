@@ -1,4 +1,3 @@
-using System.Runtime.Serialization;
 using System.Text;
 using System.Text.Json.Serialization;
 
@@ -7,7 +6,7 @@ namespace PureCloud.Client.Models;
 /// <summary>
 /// DatePicker content object.
 /// </summary>
-[DataContract]
+
 public partial class ContentDatePicker : IEquatable<ContentDatePicker>
 {
 
@@ -42,7 +41,7 @@ public partial class ContentDatePicker : IEquatable<ContentDatePicker>
     /// Text to show in the title.
     /// </summary>
     /// <value>Text to show in the title.</value>
-    [DataMember(Name = "title", EmitDefaultValue = false)]
+    [JsonPropertyName("title")]
     public string Title { get; set; }
 
 
@@ -51,7 +50,7 @@ public partial class ContentDatePicker : IEquatable<ContentDatePicker>
     /// Text to show in the description.
     /// </summary>
     /// <value>Text to show in the description.</value>
-    [DataMember(Name = "subtitle", EmitDefaultValue = false)]
+    [JsonPropertyName("subtitle")]
     public string Subtitle { get; set; }
 
 
@@ -60,7 +59,7 @@ public partial class ContentDatePicker : IEquatable<ContentDatePicker>
     /// URL of an image
     /// </summary>
     /// <value>URL of an image</value>
-    [DataMember(Name = "imageUrl", EmitDefaultValue = false)]
+    [JsonPropertyName("imageUrl")]
     public string ImageUrl { get; set; }
 
 
@@ -69,7 +68,7 @@ public partial class ContentDatePicker : IEquatable<ContentDatePicker>
     /// The minimum Date Enabled in the datepicker calendar. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z
     /// </summary>
     /// <value>The minimum Date Enabled in the datepicker calendar. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z</value>
-    [DataMember(Name = "dateMinimum", EmitDefaultValue = false)]
+    [JsonPropertyName("dateMinimum")]
     public DateTime? DateMinimum { get; set; }
 
 
@@ -78,7 +77,7 @@ public partial class ContentDatePicker : IEquatable<ContentDatePicker>
     /// The maximum Date Enabled in the datepicker calendar. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z
     /// </summary>
     /// <value>The maximum Date Enabled in the datepicker calendar. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z</value>
-    [DataMember(Name = "dateMaximum", EmitDefaultValue = false)]
+    [JsonPropertyName("dateMaximum")]
     public DateTime? DateMaximum { get; set; }
 
 
@@ -87,7 +86,7 @@ public partial class ContentDatePicker : IEquatable<ContentDatePicker>
     /// An array of available times objects.
     /// </summary>
     /// <value>An array of available times objects.</value>
-    [DataMember(Name = "availableTimes", EmitDefaultValue = false)]
+    [JsonPropertyName("availableTimes")]
     public List<ContentDatePickerAvailableTime> AvailableTimes { get; set; }
 
 

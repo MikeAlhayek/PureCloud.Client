@@ -1,12 +1,12 @@
-using System.Runtime.Serialization;
 using System.Text;
+using System.Text.Json.Serialization;
 
 namespace PureCloud.Client.Models;
 
 /// <summary>
 /// ContactableStatus
 /// </summary>
-[DataContract]
+
 public partial class ContactableStatus : IEquatable<ContactableStatus>
 {
     /// <summary>
@@ -27,7 +27,7 @@ public partial class ContactableStatus : IEquatable<ContactableStatus>
     /// Indicates whether or not the entire contact is contactable for the associated media type.
     /// </summary>
     /// <value>Indicates whether or not the entire contact is contactable for the associated media type.</value>
-    [DataMember(Name = "contactable", EmitDefaultValue = false)]
+    [JsonPropertyName("contactable")]
     public bool? Contactable { get; set; }
 
 
@@ -36,7 +36,7 @@ public partial class ContactableStatus : IEquatable<ContactableStatus>
     /// A map of individual contact method columns to whether the individual column is contactable for the associated media type.
     /// </summary>
     /// <value>A map of individual contact method columns to whether the individual column is contactable for the associated media type.</value>
-    [DataMember(Name = "columnStatus", EmitDefaultValue = false)]
+    [JsonPropertyName("columnStatus")]
     public Dictionary<string, ColumnStatus> ColumnStatus { get; set; }
 
 

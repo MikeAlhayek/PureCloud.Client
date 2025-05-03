@@ -1,4 +1,3 @@
-using System.Runtime.Serialization;
 using System.Text;
 using System.Text.Json.Serialization;
 
@@ -7,7 +6,7 @@ namespace PureCloud.Client.Models;
 /// <summary>
 /// Details about a selector event trigger
 /// </summary>
-[DataContract]
+
 public partial class SelectorEventTrigger : IEquatable<SelectorEventTrigger>
 {
 
@@ -34,7 +33,7 @@ public partial class SelectorEventTrigger : IEquatable<SelectorEventTrigger>
     /// Element that triggers event.
     /// </summary>
     /// <value>Element that triggers event.</value>
-    [DataMember(Name = "selector", EmitDefaultValue = false)]
+    [JsonPropertyName("selector")]
     public string Selector { get; set; }
 
 
@@ -43,7 +42,7 @@ public partial class SelectorEventTrigger : IEquatable<SelectorEventTrigger>
     /// Name of event triggered when element matching selector is interacted with.
     /// </summary>
     /// <value>Name of event triggered when element matching selector is interacted with.</value>
-    [DataMember(Name = "eventName", EmitDefaultValue = false)]
+    [JsonPropertyName("eventName")]
     public string EventName { get; set; }
 
 

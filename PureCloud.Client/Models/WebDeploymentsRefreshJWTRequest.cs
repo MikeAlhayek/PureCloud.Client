@@ -1,4 +1,3 @@
-using System.Runtime.Serialization;
 using System.Text;
 using System.Text.Json.Serialization;
 
@@ -7,7 +6,7 @@ namespace PureCloud.Client.Models;
 /// <summary>
 /// WebDeploymentsRefreshJWTRequest
 /// </summary>
-[DataContract]
+
 public partial class WebDeploymentsRefreshJWTRequest : IEquatable<WebDeploymentsRefreshJWTRequest>
 {
 
@@ -34,7 +33,7 @@ public partial class WebDeploymentsRefreshJWTRequest : IEquatable<WebDeployments
     /// Refresh token used to issue a new JWT.
     /// </summary>
     /// <value>Refresh token used to issue a new JWT.</value>
-    [DataMember(Name = "refreshToken", EmitDefaultValue = false)]
+    [JsonPropertyName("refreshToken")]
     public string RefreshToken { get; set; }
 
 
@@ -43,7 +42,7 @@ public partial class WebDeploymentsRefreshJWTRequest : IEquatable<WebDeployments
     /// The WebDeployment ID
     /// </summary>
     /// <value>The WebDeployment ID</value>
-    [DataMember(Name = "deploymentId", EmitDefaultValue = false)]
+    [JsonPropertyName("deploymentId")]
     public string DeploymentId { get; set; }
 
 

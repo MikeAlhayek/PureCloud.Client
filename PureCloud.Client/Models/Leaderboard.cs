@@ -1,12 +1,12 @@
-using System.Runtime.Serialization;
 using System.Text;
+using System.Text.Json.Serialization;
 
 namespace PureCloud.Client.Models;
 
 /// <summary>
 /// Leaderboard
 /// </summary>
-[DataContract]
+
 public partial class Leaderboard : IEquatable<Leaderboard>
 {
     /// <summary>
@@ -23,7 +23,7 @@ public partial class Leaderboard : IEquatable<Leaderboard>
     /// The targeted division for this leaderboard
     /// </summary>
     /// <value>The targeted division for this leaderboard</value>
-    [DataMember(Name = "division", EmitDefaultValue = false)]
+    [JsonPropertyName("division")]
     public Division Division { get; private set; }
 
 
@@ -32,7 +32,7 @@ public partial class Leaderboard : IEquatable<Leaderboard>
     /// The metric id if the leaderboard is about a specific metric
     /// </summary>
     /// <value>The metric id if the leaderboard is about a specific metric</value>
-    [DataMember(Name = "metric", EmitDefaultValue = false)]
+    [JsonPropertyName("metric")]
     public AddressableEntityRef Metric { get; private set; }
 
 
@@ -41,7 +41,7 @@ public partial class Leaderboard : IEquatable<Leaderboard>
     /// Start workday used as the date range. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd
     /// </summary>
     /// <value>Start workday used as the date range. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd</value>
-    [DataMember(Name = "dateStartWorkday", EmitDefaultValue = false)]
+    [JsonPropertyName("dateStartWorkday")]
     public string DateStartWorkday { get; private set; }
 
 
@@ -50,7 +50,7 @@ public partial class Leaderboard : IEquatable<Leaderboard>
     /// End workday used as the date range. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd
     /// </summary>
     /// <value>End workday used as the date range. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd</value>
-    [DataMember(Name = "dateEndWorkday", EmitDefaultValue = false)]
+    [JsonPropertyName("dateEndWorkday")]
     public string DateEndWorkday { get; private set; }
 
 
@@ -59,7 +59,7 @@ public partial class Leaderboard : IEquatable<Leaderboard>
     /// The list of leaders generated.
     /// </summary>
     /// <value>The list of leaders generated.</value>
-    [DataMember(Name = "leaders", EmitDefaultValue = false)]
+    [JsonPropertyName("leaders")]
     public List<LeaderboardItem> Leaders { get; private set; }
 
 
@@ -68,7 +68,7 @@ public partial class Leaderboard : IEquatable<Leaderboard>
     /// The requesting user&#39;s rank
     /// </summary>
     /// <value>The requesting user&#39;s rank</value>
-    [DataMember(Name = "userRank", EmitDefaultValue = false)]
+    [JsonPropertyName("userRank")]
     public LeaderboardItem UserRank { get; private set; }
 
 
@@ -77,7 +77,7 @@ public partial class Leaderboard : IEquatable<Leaderboard>
     /// The targeted performance profile for the average points
     /// </summary>
     /// <value>The targeted performance profile for the average points</value>
-    [DataMember(Name = "performanceProfile", EmitDefaultValue = false)]
+    [JsonPropertyName("performanceProfile")]
     public AddressableEntityRef PerformanceProfile { get; private set; }
 
 

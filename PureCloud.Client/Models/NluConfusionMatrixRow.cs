@@ -1,4 +1,3 @@
-using System.Runtime.Serialization;
 using System.Text;
 using System.Text.Json.Serialization;
 
@@ -7,7 +6,7 @@ namespace PureCloud.Client.Models;
 /// <summary>
 /// NluConfusionMatrixRow
 /// </summary>
-[DataContract]
+
 public partial class NluConfusionMatrixRow : IEquatable<NluConfusionMatrixRow>
 {
 
@@ -34,7 +33,7 @@ public partial class NluConfusionMatrixRow : IEquatable<NluConfusionMatrixRow>
     /// The name of the intent for the row.
     /// </summary>
     /// <value>The name of the intent for the row.</value>
-    [DataMember(Name = "name", EmitDefaultValue = false)]
+    [JsonPropertyName("name")]
     public string Name { get; set; }
 
 
@@ -43,7 +42,7 @@ public partial class NluConfusionMatrixRow : IEquatable<NluConfusionMatrixRow>
     /// The columns of confusion matrix for the intent
     /// </summary>
     /// <value>The columns of confusion matrix for the intent</value>
-    [DataMember(Name = "columns", EmitDefaultValue = false)]
+    [JsonPropertyName("columns")]
     public List<NluConfusionMatrixColumn> Columns { get; set; }
 
 

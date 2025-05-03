@@ -7,14 +7,14 @@ namespace PureCloud.Client.Models;
 /// <summary>
 /// ContactSort
 /// </summary>
-[DataContract]
+
 public partial class ContactSort : IEquatable<ContactSort>
 {
     /// <summary>
     /// The direction in which to sort contacts.
     /// </summary>
     /// <value>The direction in which to sort contacts.</value>
-    [JsonConverter(typeof(JsonStringEnumConverter))]
+    
     public enum DirectionEnum
     {
         /// <summary>
@@ -41,7 +41,7 @@ public partial class ContactSort : IEquatable<ContactSort>
     /// The direction in which to sort contacts.
     /// </summary>
     /// <value>The direction in which to sort contacts.</value>
-    [DataMember(Name = "direction", EmitDefaultValue = false)]
+    [JsonPropertyName("direction")]
     public DirectionEnum? Direction { get; set; }
     /// <summary>
     /// Initializes a new instance of the <see cref="ContactSort" /> class.
@@ -62,7 +62,7 @@ public partial class ContactSort : IEquatable<ContactSort>
     /// <summary>
     /// Gets or Sets FieldName
     /// </summary>
-    [DataMember(Name = "fieldName", EmitDefaultValue = false)]
+    [JsonPropertyName("fieldName")]
     public string FieldName { get; set; }
 
 
@@ -73,7 +73,7 @@ public partial class ContactSort : IEquatable<ContactSort>
     /// Whether or not the column contains numeric data.
     /// </summary>
     /// <value>Whether or not the column contains numeric data.</value>
-    [DataMember(Name = "numeric", EmitDefaultValue = false)]
+    [JsonPropertyName("numeric")]
     public bool? Numeric { get; set; }
 
 

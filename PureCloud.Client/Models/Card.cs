@@ -1,12 +1,12 @@
-using System.Runtime.Serialization;
 using System.Text;
+using System.Text.Json.Serialization;
 
 namespace PureCloud.Client.Models;
 
 /// <summary>
 /// Card
 /// </summary>
-[DataContract]
+
 public partial class Card : IEquatable<Card>
 {
     /// <summary>
@@ -33,7 +33,7 @@ public partial class Card : IEquatable<Card>
     /// Text to show in the title.
     /// </summary>
     /// <value>Text to show in the title.</value>
-    [DataMember(Name = "title", EmitDefaultValue = false)]
+    [JsonPropertyName("title")]
     public string Title { get; set; }
 
 
@@ -42,7 +42,7 @@ public partial class Card : IEquatable<Card>
     /// Text to show in the description.
     /// </summary>
     /// <value>Text to show in the description.</value>
-    [DataMember(Name = "description", EmitDefaultValue = false)]
+    [JsonPropertyName("description")]
     public string Description { get; set; }
 
 
@@ -51,7 +51,7 @@ public partial class Card : IEquatable<Card>
     /// URL of an image.
     /// </summary>
     /// <value>URL of an image.</value>
-    [DataMember(Name = "url", EmitDefaultValue = false)]
+    [JsonPropertyName("url")]
     public string Url { get; set; }
 
 
@@ -60,7 +60,7 @@ public partial class Card : IEquatable<Card>
     /// The default action to be taken.
     /// </summary>
     /// <value>The default action to be taken.</value>
-    [DataMember(Name = "defaultAction", EmitDefaultValue = false)]
+    [JsonPropertyName("defaultAction")]
     public CardAction DefaultAction { get; set; }
 
 
@@ -69,7 +69,7 @@ public partial class Card : IEquatable<Card>
     /// List of possible action objects.
     /// </summary>
     /// <value>List of possible action objects.</value>
-    [DataMember(Name = "actions", EmitDefaultValue = false)]
+    [JsonPropertyName("actions")]
     public List<CardAction> Actions { get; set; }
 
 

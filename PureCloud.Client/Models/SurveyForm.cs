@@ -1,4 +1,3 @@
-using System.Runtime.Serialization;
 using System.Text;
 using System.Text.Json.Serialization;
 
@@ -7,7 +6,7 @@ namespace PureCloud.Client.Models;
 /// <summary>
 /// SurveyForm
 /// </summary>
-[DataContract]
+
 public partial class SurveyForm : IEquatable<SurveyForm>
 {
 
@@ -44,7 +43,7 @@ public partial class SurveyForm : IEquatable<SurveyForm>
     /// The globally unique identifier for the object.
     /// </summary>
     /// <value>The globally unique identifier for the object.</value>
-    [DataMember(Name = "id", EmitDefaultValue = false)]
+    [JsonPropertyName("id")]
     public string Id { get; private set; }
 
 
@@ -53,7 +52,7 @@ public partial class SurveyForm : IEquatable<SurveyForm>
     /// The survey form name
     /// </summary>
     /// <value>The survey form name</value>
-    [DataMember(Name = "name", EmitDefaultValue = false)]
+    [JsonPropertyName("name")]
     public string Name { get; set; }
 
 
@@ -62,7 +61,7 @@ public partial class SurveyForm : IEquatable<SurveyForm>
     /// Last modified date. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z
     /// </summary>
     /// <value>Last modified date. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z</value>
-    [DataMember(Name = "modifiedDate", EmitDefaultValue = false)]
+    [JsonPropertyName("modifiedDate")]
     public DateTime? ModifiedDate { get; private set; }
 
 
@@ -71,7 +70,7 @@ public partial class SurveyForm : IEquatable<SurveyForm>
     /// Is this form published
     /// </summary>
     /// <value>Is this form published</value>
-    [DataMember(Name = "published", EmitDefaultValue = false)]
+    [JsonPropertyName("published")]
     public bool? Published { get; set; }
 
 
@@ -80,7 +79,7 @@ public partial class SurveyForm : IEquatable<SurveyForm>
     /// Is this form disabled
     /// </summary>
     /// <value>Is this form disabled</value>
-    [DataMember(Name = "disabled", EmitDefaultValue = false)]
+    [JsonPropertyName("disabled")]
     public bool? Disabled { get; set; }
 
 
@@ -89,7 +88,7 @@ public partial class SurveyForm : IEquatable<SurveyForm>
     /// Unique Id for all versions of this form
     /// </summary>
     /// <value>Unique Id for all versions of this form</value>
-    [DataMember(Name = "contextId", EmitDefaultValue = false)]
+    [JsonPropertyName("contextId")]
     public string ContextId { get; private set; }
 
 
@@ -98,7 +97,7 @@ public partial class SurveyForm : IEquatable<SurveyForm>
     /// Language for survey viewer localization. Currently localized languages: da, de, en-US, es, fi, fr, it, ja, ko, nl, no, pl, pt-BR, sv, th, tr, zh-CH, zh-TW
     /// </summary>
     /// <value>Language for survey viewer localization. Currently localized languages: da, de, en-US, es, fi, fr, it, ja, ko, nl, no, pl, pt-BR, sv, th, tr, zh-CH, zh-TW</value>
-    [DataMember(Name = "language", EmitDefaultValue = false)]
+    [JsonPropertyName("language")]
     public string Language { get; set; }
 
 
@@ -107,7 +106,7 @@ public partial class SurveyForm : IEquatable<SurveyForm>
     /// Markdown text for the top of the form.
     /// </summary>
     /// <value>Markdown text for the top of the form.</value>
-    [DataMember(Name = "header", EmitDefaultValue = false)]
+    [JsonPropertyName("header")]
     public string Header { get; set; }
 
 
@@ -116,7 +115,7 @@ public partial class SurveyForm : IEquatable<SurveyForm>
     /// Markdown text for the bottom of the form.
     /// </summary>
     /// <value>Markdown text for the bottom of the form.</value>
-    [DataMember(Name = "footer", EmitDefaultValue = false)]
+    [JsonPropertyName("footer")]
     public string Footer { get; set; }
 
 
@@ -125,7 +124,7 @@ public partial class SurveyForm : IEquatable<SurveyForm>
     /// A list of question groups
     /// </summary>
     /// <value>A list of question groups</value>
-    [DataMember(Name = "questionGroups", EmitDefaultValue = false)]
+    [JsonPropertyName("questionGroups")]
     public List<SurveyQuestionGroup> QuestionGroups { get; set; }
 
 
@@ -134,7 +133,7 @@ public partial class SurveyForm : IEquatable<SurveyForm>
     /// List of published version of this form
     /// </summary>
     /// <value>List of published version of this form</value>
-    [DataMember(Name = "publishedVersions", EmitDefaultValue = false)]
+    [JsonPropertyName("publishedVersions")]
     public DomainEntityListingSurveyForm PublishedVersions { get; private set; }
 
 
@@ -143,7 +142,7 @@ public partial class SurveyForm : IEquatable<SurveyForm>
     /// The URI for this object
     /// </summary>
     /// <value>The URI for this object</value>
-    [DataMember(Name = "selfUri", EmitDefaultValue = false)]
+    [JsonPropertyName("selfUri")]
     public string SelfUri { get; private set; }
 
 

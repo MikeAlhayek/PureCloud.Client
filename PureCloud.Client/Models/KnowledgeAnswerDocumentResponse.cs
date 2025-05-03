@@ -1,12 +1,12 @@
-using System.Runtime.Serialization;
 using System.Text;
+using System.Text.Json.Serialization;
 
 namespace PureCloud.Client.Models;
 
 /// <summary>
 /// KnowledgeAnswerDocumentResponse
 /// </summary>
-[DataContract]
+
 public partial class KnowledgeAnswerDocumentResponse : IEquatable<KnowledgeAnswerDocumentResponse>
 {
     /// <summary>
@@ -31,7 +31,7 @@ public partial class KnowledgeAnswerDocumentResponse : IEquatable<KnowledgeAnswe
     /// The document id.
     /// </summary>
     /// <value>The document id.</value>
-    [DataMember(Name = "id", EmitDefaultValue = false)]
+    [JsonPropertyName("id")]
     public string Id { get; set; }
 
 
@@ -40,7 +40,7 @@ public partial class KnowledgeAnswerDocumentResponse : IEquatable<KnowledgeAnswe
     /// The document title.
     /// </summary>
     /// <value>The document title.</value>
-    [DataMember(Name = "title", EmitDefaultValue = false)]
+    [JsonPropertyName("title")]
     public string Title { get; set; }
 
 
@@ -49,7 +49,7 @@ public partial class KnowledgeAnswerDocumentResponse : IEquatable<KnowledgeAnswe
     /// The answer found inside a variationContent.
     /// </summary>
     /// <value>The answer found inside a variationContent.</value>
-    [DataMember(Name = "answer", EmitDefaultValue = false)]
+    [JsonPropertyName("answer")]
     public string Answer { get; set; }
 
 
@@ -58,7 +58,7 @@ public partial class KnowledgeAnswerDocumentResponse : IEquatable<KnowledgeAnswe
     /// The variation with the answer&#39;s highlight data.
     /// </summary>
     /// <value>The variation with the answer&#39;s highlight data.</value>
-    [DataMember(Name = "variation", EmitDefaultValue = false)]
+    [JsonPropertyName("variation")]
     public DocumentVariationAnswer Variation { get; set; }
 
 

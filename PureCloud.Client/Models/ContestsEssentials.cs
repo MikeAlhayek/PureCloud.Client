@@ -7,14 +7,14 @@ namespace PureCloud.Client.Models;
 /// <summary>
 /// ContestsEssentials
 /// </summary>
-[DataContract]
+
 public partial class ContestsEssentials : IEquatable<ContestsEssentials>
 {
     /// <summary>
     /// The Contest status
     /// </summary>
     /// <value>The Contest status</value>
-    [JsonConverter(typeof(JsonStringEnumConverter))]
+    
     public enum StatusEnum
     {
         /// <summary>
@@ -65,7 +65,7 @@ public partial class ContestsEssentials : IEquatable<ContestsEssentials>
     /// The Contest status
     /// </summary>
     /// <value>The Contest status</value>
-    [DataMember(Name = "status", EmitDefaultValue = false)]
+    [JsonPropertyName("status")]
     public StatusEnum? Status { get; set; }
 
     /// <summary>
@@ -113,7 +113,7 @@ public partial class ContestsEssentials : IEquatable<ContestsEssentials>
     /// The globally unique identifier for the object.
     /// </summary>
     /// <value>The globally unique identifier for the object.</value>
-    [DataMember(Name = "id", EmitDefaultValue = false)]
+    [JsonPropertyName("id")]
     public string Id { get; private set; }
 
 
@@ -122,7 +122,7 @@ public partial class ContestsEssentials : IEquatable<ContestsEssentials>
     /// The Contest title
     /// </summary>
     /// <value>The Contest title</value>
-    [DataMember(Name = "title", EmitDefaultValue = false)]
+    [JsonPropertyName("title")]
     public string Title { get; set; }
 
 
@@ -133,7 +133,7 @@ public partial class ContestsEssentials : IEquatable<ContestsEssentials>
     /// Start date of the contest. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd
     /// </summary>
     /// <value>Start date of the contest. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd</value>
-    [DataMember(Name = "dateStart", EmitDefaultValue = false)]
+    [JsonPropertyName("dateStart")]
     public string DateStart { get; set; }
 
 
@@ -142,7 +142,7 @@ public partial class ContestsEssentials : IEquatable<ContestsEssentials>
     /// End date of the contest. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd
     /// </summary>
     /// <value>End date of the contest. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd</value>
-    [DataMember(Name = "dateEnd", EmitDefaultValue = false)]
+    [JsonPropertyName("dateEnd")]
     public string DateEnd { get; set; }
 
 
@@ -151,7 +151,7 @@ public partial class ContestsEssentials : IEquatable<ContestsEssentials>
     /// The performance profile
     /// </summary>
     /// <value>The performance profile</value>
-    [DataMember(Name = "profile", EmitDefaultValue = false)]
+    [JsonPropertyName("profile")]
     public ContestProfile Profile { get; set; }
 
 
@@ -160,7 +160,7 @@ public partial class ContestsEssentials : IEquatable<ContestsEssentials>
     /// The Number of participants in the contest
     /// </summary>
     /// <value>The Number of participants in the contest</value>
-    [DataMember(Name = "participantCount", EmitDefaultValue = false)]
+    [JsonPropertyName("participantCount")]
     public int? ParticipantCount { get; set; }
 
 
@@ -169,7 +169,7 @@ public partial class ContestsEssentials : IEquatable<ContestsEssentials>
     /// The Contest&#39;s Announcement datetime. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z
     /// </summary>
     /// <value>The Contest&#39;s Announcement datetime. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z</value>
-    [DataMember(Name = "dateAnnounced", EmitDefaultValue = false)]
+    [JsonPropertyName("dateAnnounced")]
     public DateTime? DateAnnounced { get; set; }
 
 
@@ -178,7 +178,7 @@ public partial class ContestsEssentials : IEquatable<ContestsEssentials>
     /// The Contest&#39;s finalize datetime, returned when a contest is complete. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z
     /// </summary>
     /// <value>The Contest&#39;s finalize datetime, returned when a contest is complete. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z</value>
-    [DataMember(Name = "dateFinalized", EmitDefaultValue = false)]
+    [JsonPropertyName("dateFinalized")]
     public DateTime? DateFinalized { get; set; }
 
 
@@ -187,7 +187,7 @@ public partial class ContestsEssentials : IEquatable<ContestsEssentials>
     /// The Contest&#39;s cancelled datetime, returned when a contest is complete. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z
     /// </summary>
     /// <value>The Contest&#39;s cancelled datetime, returned when a contest is complete. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z</value>
-    [DataMember(Name = "dateCancelled", EmitDefaultValue = false)]
+    [JsonPropertyName("dateCancelled")]
     public DateTime? DateCancelled { get; set; }
 
 
@@ -196,7 +196,7 @@ public partial class ContestsEssentials : IEquatable<ContestsEssentials>
     /// The Contest&#39;s last modified datetime. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z
     /// </summary>
     /// <value>The Contest&#39;s last modified datetime. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z</value>
-    [DataMember(Name = "dateModified", EmitDefaultValue = false)]
+    [JsonPropertyName("dateModified")]
     public DateTime? DateModified { get; set; }
 
 
@@ -205,7 +205,7 @@ public partial class ContestsEssentials : IEquatable<ContestsEssentials>
     /// The datetime the contest scores were last updated. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z
     /// </summary>
     /// <value>The datetime the contest scores were last updated. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z</value>
-    [DataMember(Name = "dateScoresModified", EmitDefaultValue = false)]
+    [JsonPropertyName("dateScoresModified")]
     public DateTime? DateScoresModified { get; set; }
 
 
@@ -214,7 +214,7 @@ public partial class ContestsEssentials : IEquatable<ContestsEssentials>
     /// The Contest&#39;s Metrics
     /// </summary>
     /// <value>The Contest&#39;s Metrics</value>
-    [DataMember(Name = "metrics", EmitDefaultValue = false)]
+    [JsonPropertyName("metrics")]
     public List<ContestMetrics> Metrics { get; set; }
 
 
@@ -223,7 +223,7 @@ public partial class ContestsEssentials : IEquatable<ContestsEssentials>
     /// The Most Recent Contest Info for the requesting participant
     /// </summary>
     /// <value>The Most Recent Contest Info for the requesting participant</value>
-    [DataMember(Name = "requestingParticipantContestInfo", EmitDefaultValue = false)]
+    [JsonPropertyName("requestingParticipantContestInfo")]
     public ContestRequesingParticipantDailyInfo RequestingParticipantContestInfo { get; set; }
 
 
@@ -232,7 +232,7 @@ public partial class ContestsEssentials : IEquatable<ContestsEssentials>
     /// The URI for this object
     /// </summary>
     /// <value>The URI for this object</value>
-    [DataMember(Name = "selfUri", EmitDefaultValue = false)]
+    [JsonPropertyName("selfUri")]
     public string SelfUri { get; private set; }
 
 

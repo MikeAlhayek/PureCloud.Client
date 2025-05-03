@@ -1,4 +1,3 @@
-using System.Runtime.Serialization;
 using System.Text;
 using System.Text.Json.Serialization;
 
@@ -7,7 +6,7 @@ namespace PureCloud.Client.Models;
 /// <summary>
 /// MessageTypingEventRequest
 /// </summary>
-[DataContract]
+
 public partial class MessageTypingEventRequest : IEquatable<MessageTypingEventRequest>
 {
 
@@ -34,7 +33,7 @@ public partial class MessageTypingEventRequest : IEquatable<MessageTypingEventRe
     /// Typing event
     /// </summary>
     /// <value>Typing event</value>
-    [DataMember(Name = "typing", EmitDefaultValue = false)]
+    [JsonPropertyName("typing")]
     public ConversationEventTyping Typing { get; set; }
 
 
@@ -43,7 +42,7 @@ public partial class MessageTypingEventRequest : IEquatable<MessageTypingEventRe
     /// The time when the message typing event was sent. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z
     /// </summary>
     /// <value>The time when the message typing event was sent. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z</value>
-    [DataMember(Name = "dateSent", EmitDefaultValue = false)]
+    [JsonPropertyName("dateSent")]
     public DateTime? DateSent { get; set; }
 
 

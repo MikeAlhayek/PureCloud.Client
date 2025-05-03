@@ -1,12 +1,12 @@
-using System.Runtime.Serialization;
 using System.Text;
+using System.Text.Json.Serialization;
 
 namespace PureCloud.Client.Models;
 
 /// <summary>
 /// The settings for automatic time zone mapping
 /// </summary>
-[DataContract]
+
 public partial class DialerOutboundSettingsConfigChangeAutomaticTimeZoneMappingSettings : IEquatable<DialerOutboundSettingsConfigChangeAutomaticTimeZoneMappingSettings>
 {
     /// <summary>
@@ -25,7 +25,7 @@ public partial class DialerOutboundSettingsConfigChangeAutomaticTimeZoneMappingS
     /// The time intervals to use for automatic time zone mapping
     /// </summary>
     /// <value>The time intervals to use for automatic time zone mapping</value>
-    [DataMember(Name = "callableWindows", EmitDefaultValue = false)]
+    [JsonPropertyName("callableWindows")]
     public List<DialerOutboundSettingsConfigChangeCallableWindow> CallableWindows { get; set; }
 
 

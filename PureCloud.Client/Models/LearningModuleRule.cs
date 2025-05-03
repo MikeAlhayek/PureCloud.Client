@@ -1,4 +1,3 @@
-using System.Runtime.Serialization;
 using System.Text;
 using System.Text.Json.Serialization;
 
@@ -7,7 +6,7 @@ namespace PureCloud.Client.Models;
 /// <summary>
 /// LearningModuleRule
 /// </summary>
-[DataContract]
+
 public partial class LearningModuleRule : IEquatable<LearningModuleRule>
 {
 
@@ -34,7 +33,7 @@ public partial class LearningModuleRule : IEquatable<LearningModuleRule>
     /// The globally unique identifier for the object.
     /// </summary>
     /// <value>The globally unique identifier for the object.</value>
-    [DataMember(Name = "id", EmitDefaultValue = false)]
+    [JsonPropertyName("id")]
     public string Id { get; private set; }
 
 
@@ -43,7 +42,7 @@ public partial class LearningModuleRule : IEquatable<LearningModuleRule>
     /// If true, rule is active
     /// </summary>
     /// <value>If true, rule is active</value>
-    [DataMember(Name = "isActive", EmitDefaultValue = false)]
+    [JsonPropertyName("isActive")]
     public bool? IsActive { get; set; }
 
 
@@ -52,7 +51,7 @@ public partial class LearningModuleRule : IEquatable<LearningModuleRule>
     /// The parts of a learning module rule
     /// </summary>
     /// <value>The parts of a learning module rule</value>
-    [DataMember(Name = "parts", EmitDefaultValue = false)]
+    [JsonPropertyName("parts")]
     public List<LearningModuleRuleParts> Parts { get; set; }
 
 
@@ -61,7 +60,7 @@ public partial class LearningModuleRule : IEquatable<LearningModuleRule>
     /// The URI for this object
     /// </summary>
     /// <value>The URI for this object</value>
-    [DataMember(Name = "selfUri", EmitDefaultValue = false)]
+    [JsonPropertyName("selfUri")]
     public string SelfUri { get; private set; }
 
 

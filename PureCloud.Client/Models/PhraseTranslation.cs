@@ -1,4 +1,3 @@
-using System.Runtime.Serialization;
 using System.Text;
 using System.Text.Json.Serialization;
 
@@ -7,7 +6,7 @@ namespace PureCloud.Client.Models;
 /// <summary>
 /// PhraseTranslation
 /// </summary>
-[DataContract]
+
 public partial class PhraseTranslation : IEquatable<PhraseTranslation>
 {
 
@@ -36,7 +35,7 @@ public partial class PhraseTranslation : IEquatable<PhraseTranslation>
     /// Epoch start time of the phrase
     /// </summary>
     /// <value>Epoch start time of the phrase</value>
-    [DataMember(Name = "startTimeMs", EmitDefaultValue = false)]
+    [JsonPropertyName("startTimeMs")]
     public long? StartTimeMs { get; set; }
 
 
@@ -45,7 +44,7 @@ public partial class PhraseTranslation : IEquatable<PhraseTranslation>
     /// Purpose of the participant associated with the phrase
     /// </summary>
     /// <value>Purpose of the participant associated with the phrase</value>
-    [DataMember(Name = "participantPurpose", EmitDefaultValue = false)]
+    [JsonPropertyName("participantPurpose")]
     public string ParticipantPurpose { get; set; }
 
 
@@ -54,7 +53,7 @@ public partial class PhraseTranslation : IEquatable<PhraseTranslation>
     /// Translation of the phrase
     /// </summary>
     /// <value>Translation of the phrase</value>
-    [DataMember(Name = "translatedText", EmitDefaultValue = false)]
+    [JsonPropertyName("translatedText")]
     public string TranslatedText { get; set; }
 
 

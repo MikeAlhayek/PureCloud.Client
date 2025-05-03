@@ -7,14 +7,14 @@ namespace PureCloud.Client.Models;
 /// <summary>
 /// UserDetailsQuery
 /// </summary>
-[DataContract]
+
 public partial class UserDetailsQuery : IEquatable<UserDetailsQuery>
 {
     /// <summary>
     /// Sort the result set in ascending/descending order. Default is ascending
     /// </summary>
     /// <value>Sort the result set in ascending/descending order. Default is ascending</value>
-    [JsonConverter(typeof(JsonStringEnumConverter))]
+    
     public enum OrderEnum
     {
         /// <summary>
@@ -47,7 +47,7 @@ public partial class UserDetailsQuery : IEquatable<UserDetailsQuery>
     /// Sort the result set in ascending/descending order. Default is ascending
     /// </summary>
     /// <value>Sort the result set in ascending/descending order. Default is ascending</value>
-    [DataMember(Name = "order", EmitDefaultValue = false)]
+    [JsonPropertyName("order")]
     public OrderEnum? Order { get; set; }
 
     /// <summary>
@@ -85,7 +85,7 @@ public partial class UserDetailsQuery : IEquatable<UserDetailsQuery>
     /// Specifies the date and time range of data being queried. Conversations MUST have started within this time range to potentially be included within the result set. Intervals are represented as an ISO-8601 string. For example: YYYY-MM-DDThh:mm:ss/YYYY-MM-DDThh:mm:ss
     /// </summary>
     /// <value>Specifies the date and time range of data being queried. Conversations MUST have started within this time range to potentially be included within the result set. Intervals are represented as an ISO-8601 string. For example: YYYY-MM-DDThh:mm:ss/YYYY-MM-DDThh:mm:ss</value>
-    [DataMember(Name = "interval", EmitDefaultValue = false)]
+    [JsonPropertyName("interval")]
     public string Interval { get; set; }
 
 
@@ -94,7 +94,7 @@ public partial class UserDetailsQuery : IEquatable<UserDetailsQuery>
     /// Filters that target the users to retrieve data for
     /// </summary>
     /// <value>Filters that target the users to retrieve data for</value>
-    [DataMember(Name = "userFilters", EmitDefaultValue = false)]
+    [JsonPropertyName("userFilters")]
     public List<UserDetailQueryFilter> UserFilters { get; set; }
 
 
@@ -103,7 +103,7 @@ public partial class UserDetailsQuery : IEquatable<UserDetailsQuery>
     /// Filters that target system and organization presence-level data
     /// </summary>
     /// <value>Filters that target system and organization presence-level data</value>
-    [DataMember(Name = "presenceFilters", EmitDefaultValue = false)]
+    [JsonPropertyName("presenceFilters")]
     public List<PresenceDetailQueryFilter> PresenceFilters { get; set; }
 
 
@@ -112,7 +112,7 @@ public partial class UserDetailsQuery : IEquatable<UserDetailsQuery>
     /// Filters that target agent routing status-level data
     /// </summary>
     /// <value>Filters that target agent routing status-level data</value>
-    [DataMember(Name = "routingStatusFilters", EmitDefaultValue = false)]
+    [JsonPropertyName("routingStatusFilters")]
     public List<RoutingStatusDetailQueryFilter> RoutingStatusFilters { get; set; }
 
 
@@ -123,7 +123,7 @@ public partial class UserDetailsQuery : IEquatable<UserDetailsQuery>
     /// Include faceted search and aggregate roll-ups of presence data in your search results. This does not function as a filter, but rather, summary data about the presence results matching your filters
     /// </summary>
     /// <value>Include faceted search and aggregate roll-ups of presence data in your search results. This does not function as a filter, but rather, summary data about the presence results matching your filters</value>
-    [DataMember(Name = "presenceAggregations", EmitDefaultValue = false)]
+    [JsonPropertyName("presenceAggregations")]
     public List<AnalyticsQueryAggregation> PresenceAggregations { get; set; }
 
 
@@ -132,7 +132,7 @@ public partial class UserDetailsQuery : IEquatable<UserDetailsQuery>
     /// Include faceted search and aggregate roll-ups of agent routing status data in your search results. This does not function as a filter, but rather, summary data about the agent routing status results matching your filters
     /// </summary>
     /// <value>Include faceted search and aggregate roll-ups of agent routing status data in your search results. This does not function as a filter, but rather, summary data about the agent routing status results matching your filters</value>
-    [DataMember(Name = "routingStatusAggregations", EmitDefaultValue = false)]
+    [JsonPropertyName("routingStatusAggregations")]
     public List<AnalyticsQueryAggregation> RoutingStatusAggregations { get; set; }
 
 
@@ -141,7 +141,7 @@ public partial class UserDetailsQuery : IEquatable<UserDetailsQuery>
     /// Page size and number to control iterating through large result sets. Default page size is 25
     /// </summary>
     /// <value>Page size and number to control iterating through large result sets. Default page size is 25</value>
-    [DataMember(Name = "paging", EmitDefaultValue = false)]
+    [JsonPropertyName("paging")]
     public PagingSpec Paging { get; set; }
 
 

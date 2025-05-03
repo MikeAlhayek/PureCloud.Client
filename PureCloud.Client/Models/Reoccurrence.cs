@@ -1,4 +1,3 @@
-using System.Runtime.Serialization;
 using System.Text;
 using System.Text.Json.Serialization;
 
@@ -7,7 +6,7 @@ namespace PureCloud.Client.Models;
 /// <summary>
 /// Reoccurrence
 /// </summary>
-[DataContract]
+
 public partial class Reoccurrence : IEquatable<Reoccurrence>
 {
 
@@ -43,7 +42,7 @@ public partial class Reoccurrence : IEquatable<Reoccurrence>
     /// <summary>
     /// Gets or Sets Id
     /// </summary>
-    [DataMember(Name = "id", EmitDefaultValue = false)]
+    [JsonPropertyName("id")]
     public string Id { get; set; }
 
 
@@ -52,7 +51,7 @@ public partial class Reoccurrence : IEquatable<Reoccurrence>
     /// The start date time of the initial occurrence as an ISO-8601 string in the format YYYY-MM-DDThh:mm:ss
     /// </summary>
     /// <value>The start date time of the initial occurrence as an ISO-8601 string in the format YYYY-MM-DDThh:mm:ss</value>
-    [DataMember(Name = "start", EmitDefaultValue = false)]
+    [JsonPropertyName("start")]
     public string Start { get; set; }
 
 
@@ -61,7 +60,7 @@ public partial class Reoccurrence : IEquatable<Reoccurrence>
     /// The end date time of the initial occurrence as an ISO-8601 string in the format YYYY-MM-DDThh:mm:ss
     /// </summary>
     /// <value>The end date time of the initial occurrence as an ISO-8601 string in the format YYYY-MM-DDThh:mm:ss</value>
-    [DataMember(Name = "end", EmitDefaultValue = false)]
+    [JsonPropertyName("end")]
     public string End { get; set; }
 
 
@@ -70,7 +69,7 @@ public partial class Reoccurrence : IEquatable<Reoccurrence>
     /// The time zone for the recurrence. The time zone of the recurrence is determined by prioritizing the recurrence&#39;s time zone if specified, then the schedule&#39;s time zone if set, and finally defaulting to UTC if neither defines a time zone. See here for a list of valid time zones https://www.iana.org/time-zones
     /// </summary>
     /// <value>The time zone for the recurrence. The time zone of the recurrence is determined by prioritizing the recurrence&#39;s time zone if specified, then the schedule&#39;s time zone if set, and finally defaulting to UTC if neither defines a time zone. See here for a list of valid time zones https://www.iana.org/time-zones</value>
-    [DataMember(Name = "timeZone", EmitDefaultValue = false)]
+    [JsonPropertyName("timeZone")]
     public string TimeZone { get; set; }
 
 
@@ -79,7 +78,7 @@ public partial class Reoccurrence : IEquatable<Reoccurrence>
     /// The schedule pattern e.g.: Daily/Weekly
     /// </summary>
     /// <value>The schedule pattern e.g.: Daily/Weekly</value>
-    [DataMember(Name = "pattern", EmitDefaultValue = false)]
+    [JsonPropertyName("pattern")]
     public Pattern Pattern { get; set; }
 
 
@@ -88,7 +87,7 @@ public partial class Reoccurrence : IEquatable<Reoccurrence>
     /// The schedule range e.g.: EndDate/NoEnd/Numbered
     /// </summary>
     /// <value>The schedule range e.g.: EndDate/NoEnd/Numbered</value>
-    [DataMember(Name = "range", EmitDefaultValue = false)]
+    [JsonPropertyName("range")]
     public Range Range { get; set; }
 
 
@@ -97,7 +96,7 @@ public partial class Reoccurrence : IEquatable<Reoccurrence>
     /// Modifications to the original recurrence schedule (Exclusions/Inclusions)
     /// </summary>
     /// <value>Modifications to the original recurrence schedule (Exclusions/Inclusions)</value>
-    [DataMember(Name = "alterations", EmitDefaultValue = false)]
+    [JsonPropertyName("alterations")]
     public List<Alteration> Alterations { get; set; }
 
 
@@ -106,7 +105,7 @@ public partial class Reoccurrence : IEquatable<Reoccurrence>
     /// The next occurrence details for the next start and end occurrences for the recurrence
     /// </summary>
     /// <value>The next occurrence details for the next start and end occurrences for the recurrence</value>
-    [DataMember(Name = "nextOccurrenceDetails", EmitDefaultValue = false)]
+    [JsonPropertyName("nextOccurrenceDetails")]
     public NextOccurrenceDetails NextOccurrenceDetails { get; private set; }
 
 

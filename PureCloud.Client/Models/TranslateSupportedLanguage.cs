@@ -1,4 +1,3 @@
-using System.Runtime.Serialization;
 using System.Text;
 using System.Text.Json.Serialization;
 
@@ -7,7 +6,7 @@ namespace PureCloud.Client.Models;
 /// <summary>
 /// TranslateSupportedLanguage
 /// </summary>
-[DataContract]
+
 public partial class TranslateSupportedLanguage : IEquatable<TranslateSupportedLanguage>
 {
 
@@ -34,7 +33,7 @@ public partial class TranslateSupportedLanguage : IEquatable<TranslateSupportedL
     /// Supported translation language name, natively spelled (ex. Español)
     /// </summary>
     /// <value>Supported translation language name, natively spelled (ex. Español)</value>
-    [DataMember(Name = "languageName", EmitDefaultValue = false)]
+    [JsonPropertyName("languageName")]
     public string LanguageName { get; set; }
 
 
@@ -43,7 +42,7 @@ public partial class TranslateSupportedLanguage : IEquatable<TranslateSupportedL
     /// Supported translation language code. See - https://docs.aws.amazon.com/translate/latest/dg/what-is-languages.html#what-is-languages-supported
     /// </summary>
     /// <value>Supported translation language code. See - https://docs.aws.amazon.com/translate/latest/dg/what-is-languages.html#what-is-languages-supported</value>
-    [DataMember(Name = "languageCode", EmitDefaultValue = false)]
+    [JsonPropertyName("languageCode")]
     public string LanguageCode { get; set; }
 
 

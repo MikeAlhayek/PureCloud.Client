@@ -1,12 +1,12 @@
-using System.Runtime.Serialization;
 using System.Text;
+using System.Text.Json.Serialization;
 
 namespace PureCloud.Client.Models;
 
 /// <summary>
 /// ExternalContactsContactChangedTopicInstagramId
 /// </summary>
-[DataContract]
+
 public partial class ExternalContactsContactChangedTopicInstagramId : IEquatable<ExternalContactsContactChangedTopicInstagramId>
 {
     /// <summary>
@@ -28,7 +28,7 @@ public partial class ExternalContactsContactChangedTopicInstagramId : IEquatable
     /// <summary>
     /// Gets or Sets Ids
     /// </summary>
-    [DataMember(Name = "ids", EmitDefaultValue = false)]
+    [JsonPropertyName("ids")]
     public List<ExternalContactsContactChangedTopicInstagramScopedId> Ids { get; set; }
 
 
@@ -36,7 +36,7 @@ public partial class ExternalContactsContactChangedTopicInstagramId : IEquatable
     /// <summary>
     /// Gets or Sets DisplayName
     /// </summary>
-    [DataMember(Name = "displayName", EmitDefaultValue = false)]
+    [JsonPropertyName("displayName")]
     public string DisplayName { get; set; }
 
 
@@ -44,7 +44,7 @@ public partial class ExternalContactsContactChangedTopicInstagramId : IEquatable
     /// <summary>
     /// Gets or Sets Handle
     /// </summary>
-    [DataMember(Name = "handle", EmitDefaultValue = false)]
+    [JsonPropertyName("handle")]
     public string Handle { get; set; }
 
 

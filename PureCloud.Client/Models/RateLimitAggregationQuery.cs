@@ -7,13 +7,13 @@ namespace PureCloud.Client.Models;
 /// <summary>
 /// RateLimitAggregationQuery
 /// </summary>
-[DataContract]
+
 public partial class RateLimitAggregationQuery : IEquatable<RateLimitAggregationQuery>
 {
     /// <summary>
     /// Gets or Sets GroupBy
     /// </summary>
-    [JsonConverter(typeof(JsonStringEnumConverter))]
+    
     public enum GroupByEnum
     {
         /// <summary>
@@ -69,7 +69,7 @@ public partial class RateLimitAggregationQuery : IEquatable<RateLimitAggregation
     /// <summary>
     /// Gets or Sets Metrics
     /// </summary>
-    [JsonConverter(typeof(JsonStringEnumConverter))]
+    
     public enum MetricsEnum
     {
         /// <summary>
@@ -90,7 +90,7 @@ public partial class RateLimitAggregationQuery : IEquatable<RateLimitAggregation
     /// Dimension to use as the alternative timestamp for data in the aggregate.  Choosing \"eventTime\" uses the actual time of the data event.
     /// </summary>
     /// <value>Dimension to use as the alternative timestamp for data in the aggregate.  Choosing \"eventTime\" uses the actual time of the data event.</value>
-    [JsonConverter(typeof(JsonStringEnumConverter))]
+    
     public enum AlternateTimeDimensionEnum
     {
         /// <summary>
@@ -111,7 +111,7 @@ public partial class RateLimitAggregationQuery : IEquatable<RateLimitAggregation
     /// Dimension to use as the alternative timestamp for data in the aggregate.  Choosing \"eventTime\" uses the actual time of the data event.
     /// </summary>
     /// <value>Dimension to use as the alternative timestamp for data in the aggregate.  Choosing \"eventTime\" uses the actual time of the data event.</value>
-    [DataMember(Name = "alternateTimeDimension", EmitDefaultValue = false)]
+    [JsonPropertyName("alternateTimeDimension")]
     public AlternateTimeDimensionEnum? AlternateTimeDimension { get; set; }
 
     /// <summary>
@@ -151,7 +151,7 @@ public partial class RateLimitAggregationQuery : IEquatable<RateLimitAggregation
     /// Behaves like one clause in a SQL WHERE. Specifies the date and time range of data being queried. Intervals are represented as an ISO-8601 string. For example: YYYY-MM-DDThh:mm:ss/YYYY-MM-DDThh:mm:ss
     /// </summary>
     /// <value>Behaves like one clause in a SQL WHERE. Specifies the date and time range of data being queried. Intervals are represented as an ISO-8601 string. For example: YYYY-MM-DDThh:mm:ss/YYYY-MM-DDThh:mm:ss</value>
-    [DataMember(Name = "interval", EmitDefaultValue = false)]
+    [JsonPropertyName("interval")]
     public string Interval { get; set; }
 
 
@@ -160,7 +160,7 @@ public partial class RateLimitAggregationQuery : IEquatable<RateLimitAggregation
     /// Granularity aggregates metrics into subpartitions within the time interval specified. The default granularity is the same duration as the interval. Periods are represented as an ISO-8601 string. For example: P1D or P1DT12H
     /// </summary>
     /// <value>Granularity aggregates metrics into subpartitions within the time interval specified. The default granularity is the same duration as the interval. Periods are represented as an ISO-8601 string. For example: P1D or P1DT12H</value>
-    [DataMember(Name = "granularity", EmitDefaultValue = false)]
+    [JsonPropertyName("granularity")]
     public string Granularity { get; set; }
 
 
@@ -169,7 +169,7 @@ public partial class RateLimitAggregationQuery : IEquatable<RateLimitAggregation
     /// Time zone context used to calculate response intervals (this allows resolving DST changes). The interval offset is used even when timeZone is specified. Default is UTC. Time zones are represented as a string of the zone name as found in the IANA time zone database. For example: UTC, Etc/UTC, or Europe/London
     /// </summary>
     /// <value>Time zone context used to calculate response intervals (this allows resolving DST changes). The interval offset is used even when timeZone is specified. Default is UTC. Time zones are represented as a string of the zone name as found in the IANA time zone database. For example: UTC, Etc/UTC, or Europe/London</value>
-    [DataMember(Name = "timeZone", EmitDefaultValue = false)]
+    [JsonPropertyName("timeZone")]
     public string TimeZone { get; set; }
 
 
@@ -178,7 +178,7 @@ public partial class RateLimitAggregationQuery : IEquatable<RateLimitAggregation
     /// Behaves like a SQL GROUPBY. Allows for multiple levels of grouping as a list of dimensions. Partitions resulting aggregate computations into distinct named subgroups rather than across the entire result set as if it were one group.
     /// </summary>
     /// <value>Behaves like a SQL GROUPBY. Allows for multiple levels of grouping as a list of dimensions. Partitions resulting aggregate computations into distinct named subgroups rather than across the entire result set as if it were one group.</value>
-    [DataMember(Name = "groupBy", EmitDefaultValue = false)]
+    [JsonPropertyName("groupBy")]
     public List<GroupByEnum> GroupBy { get; set; }
 
 
@@ -187,7 +187,7 @@ public partial class RateLimitAggregationQuery : IEquatable<RateLimitAggregation
     /// Behaves like a SQL WHERE clause. This is ANDed with the interval parameter. Expresses boolean logical predicates as well as dimensional filters
     /// </summary>
     /// <value>Behaves like a SQL WHERE clause. This is ANDed with the interval parameter. Expresses boolean logical predicates as well as dimensional filters</value>
-    [DataMember(Name = "filter", EmitDefaultValue = false)]
+    [JsonPropertyName("filter")]
     public RateLimitAggregateQueryFilter Filter { get; set; }
 
 
@@ -196,7 +196,7 @@ public partial class RateLimitAggregationQuery : IEquatable<RateLimitAggregation
     /// Behaves like a SQL SELECT clause. Only named metrics will be retrieved.
     /// </summary>
     /// <value>Behaves like a SQL SELECT clause. Only named metrics will be retrieved.</value>
-    [DataMember(Name = "metrics", EmitDefaultValue = false)]
+    [JsonPropertyName("metrics")]
     public List<MetricsEnum> Metrics { get; set; }
 
 
@@ -205,7 +205,7 @@ public partial class RateLimitAggregationQuery : IEquatable<RateLimitAggregation
     /// Flattens any multivalued dimensions used in response groups (e.g. [&#39;a&#39;,&#39;b&#39;,&#39;c&#39;]-&gt;&#39;a,b,c&#39;)
     /// </summary>
     /// <value>Flattens any multivalued dimensions used in response groups (e.g. [&#39;a&#39;,&#39;b&#39;,&#39;c&#39;]-&gt;&#39;a,b,c&#39;)</value>
-    [DataMember(Name = "flattenMultivaluedDimensions", EmitDefaultValue = false)]
+    [JsonPropertyName("flattenMultivaluedDimensions")]
     public bool? FlattenMultivaluedDimensions { get; set; }
 
 
@@ -214,7 +214,7 @@ public partial class RateLimitAggregationQuery : IEquatable<RateLimitAggregation
     /// Custom derived metric views
     /// </summary>
     /// <value>Custom derived metric views</value>
-    [DataMember(Name = "views", EmitDefaultValue = false)]
+    [JsonPropertyName("views")]
     public List<RateLimitAggregationView> Views { get; set; }
 
 

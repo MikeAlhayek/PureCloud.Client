@@ -1,4 +1,3 @@
-using System.Runtime.Serialization;
 using System.Text;
 using System.Text.Json.Serialization;
 
@@ -7,7 +6,7 @@ namespace PureCloud.Client.Models;
 /// <summary>
 /// RoleDivisionPair
 /// </summary>
-[DataContract]
+
 public partial class RoleDivisionPair : IEquatable<RoleDivisionPair>
 {
 
@@ -34,7 +33,7 @@ public partial class RoleDivisionPair : IEquatable<RoleDivisionPair>
     /// The ID of the role
     /// </summary>
     /// <value>The ID of the role</value>
-    [DataMember(Name = "roleId", EmitDefaultValue = false)]
+    [JsonPropertyName("roleId")]
     public string RoleId { get; set; }
 
 
@@ -43,7 +42,7 @@ public partial class RoleDivisionPair : IEquatable<RoleDivisionPair>
     /// The ID of the division
     /// </summary>
     /// <value>The ID of the division</value>
-    [DataMember(Name = "divisionId", EmitDefaultValue = false)]
+    [JsonPropertyName("divisionId")]
     public string DivisionId { get; set; }
 
 

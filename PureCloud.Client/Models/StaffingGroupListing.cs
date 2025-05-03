@@ -1,12 +1,12 @@
-using System.Runtime.Serialization;
 using System.Text;
+using System.Text.Json.Serialization;
 
 namespace PureCloud.Client.Models;
 
 /// <summary>
 /// StaffingGroupListing
 /// </summary>
-[DataContract]
+
 public partial class StaffingGroupListing : IEquatable<StaffingGroupListing>
 {
     /// <summary>
@@ -24,7 +24,7 @@ public partial class StaffingGroupListing : IEquatable<StaffingGroupListing>
     /// <summary>
     /// Gets or Sets Entities
     /// </summary>
-    [DataMember(Name = "entities", EmitDefaultValue = false)]
+    [JsonPropertyName("entities")]
     public List<StaffingGroupResponse> Entities { get; set; }
 
 

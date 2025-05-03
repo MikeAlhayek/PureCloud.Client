@@ -1,12 +1,12 @@
-using System.Runtime.Serialization;
 using System.Text;
+using System.Text.Json.Serialization;
 
 namespace PureCloud.Client.Models;
 
 /// <summary>
 /// PhoneChangeTopicLineStatus
 /// </summary>
-[DataContract]
+
 public partial class PhoneChangeTopicLineStatus : IEquatable<PhoneChangeTopicLineStatus>
 {
     /// <summary>
@@ -32,7 +32,7 @@ public partial class PhoneChangeTopicLineStatus : IEquatable<PhoneChangeTopicLin
     /// <summary>
     /// Gets or Sets Id
     /// </summary>
-    [DataMember(Name = "id", EmitDefaultValue = false)]
+    [JsonPropertyName("id")]
     public string Id { get; set; }
 
 
@@ -40,7 +40,7 @@ public partial class PhoneChangeTopicLineStatus : IEquatable<PhoneChangeTopicLin
     /// <summary>
     /// Gets or Sets Reachable
     /// </summary>
-    [DataMember(Name = "reachable", EmitDefaultValue = false)]
+    [JsonPropertyName("reachable")]
     public bool? Reachable { get; set; }
 
 
@@ -48,7 +48,7 @@ public partial class PhoneChangeTopicLineStatus : IEquatable<PhoneChangeTopicLin
     /// <summary>
     /// Gets or Sets AddressOfRecord
     /// </summary>
-    [DataMember(Name = "addressOfRecord", EmitDefaultValue = false)]
+    [JsonPropertyName("addressOfRecord")]
     public string AddressOfRecord { get; set; }
 
 
@@ -56,7 +56,7 @@ public partial class PhoneChangeTopicLineStatus : IEquatable<PhoneChangeTopicLin
     /// <summary>
     /// Gets or Sets ContactAddresses
     /// </summary>
-    [DataMember(Name = "contactAddresses", EmitDefaultValue = false)]
+    [JsonPropertyName("contactAddresses")]
     public List<string> ContactAddresses { get; set; }
 
 
@@ -64,7 +64,7 @@ public partial class PhoneChangeTopicLineStatus : IEquatable<PhoneChangeTopicLin
     /// <summary>
     /// Gets or Sets ReachableStateTime
     /// </summary>
-    [DataMember(Name = "reachableStateTime", EmitDefaultValue = false)]
+    [JsonPropertyName("reachableStateTime")]
     public DateTime? ReachableStateTime { get; set; }
 
 

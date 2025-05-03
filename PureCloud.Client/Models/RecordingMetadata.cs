@@ -7,14 +7,14 @@ namespace PureCloud.Client.Models;
 /// <summary>
 /// RecordingMetadata
 /// </summary>
-[DataContract]
+
 public partial class RecordingMetadata : IEquatable<RecordingMetadata>
 {
     /// <summary>
     /// The recording media subtype.
     /// </summary>
     /// <value>The recording media subtype.</value>
-    [JsonConverter(typeof(JsonStringEnumConverter))]
+    
     public enum MediaSubtypeEnum
     {
         /// <summary>
@@ -53,7 +53,7 @@ public partial class RecordingMetadata : IEquatable<RecordingMetadata>
     /// Represents the current file state for a recording. Examples: Uploading, Archived, etc
     /// </summary>
     /// <value>Represents the current file state for a recording. Examples: Uploading, Archived, etc</value>
-    [JsonConverter(typeof(JsonStringEnumConverter))]
+    
     public enum FileStateEnum
     {
         /// <summary>
@@ -110,7 +110,7 @@ public partial class RecordingMetadata : IEquatable<RecordingMetadata>
     /// The type of archive medium used. Example: CloudArchive
     /// </summary>
     /// <value>The type of archive medium used. Example: CloudArchive</value>
-    [JsonConverter(typeof(JsonStringEnumConverter))]
+    
     public enum ArchiveMediumEnum
     {
         /// <summary>
@@ -131,19 +131,19 @@ public partial class RecordingMetadata : IEquatable<RecordingMetadata>
     /// The recording media subtype.
     /// </summary>
     /// <value>The recording media subtype.</value>
-    [DataMember(Name = "mediaSubtype", EmitDefaultValue = false)]
+    [JsonPropertyName("mediaSubtype")]
     public MediaSubtypeEnum? MediaSubtype { get; set; }
     /// <summary>
     /// Represents the current file state for a recording. Examples: Uploading, Archived, etc
     /// </summary>
     /// <value>Represents the current file state for a recording. Examples: Uploading, Archived, etc</value>
-    [DataMember(Name = "fileState", EmitDefaultValue = false)]
+    [JsonPropertyName("fileState")]
     public FileStateEnum? FileState { get; set; }
     /// <summary>
     /// The type of archive medium used. Example: CloudArchive
     /// </summary>
     /// <value>The type of archive medium used. Example: CloudArchive</value>
-    [DataMember(Name = "archiveMedium", EmitDefaultValue = false)]
+    [JsonPropertyName("archiveMedium")]
     public ArchiveMediumEnum? ArchiveMedium { get; set; }
     /// <summary>
     /// Initializes a new instance of the <see cref="RecordingMetadata" /> class.
@@ -197,7 +197,7 @@ public partial class RecordingMetadata : IEquatable<RecordingMetadata>
     /// The globally unique identifier for the object.
     /// </summary>
     /// <value>The globally unique identifier for the object.</value>
-    [DataMember(Name = "id", EmitDefaultValue = false)]
+    [JsonPropertyName("id")]
     public string Id { get; private set; }
 
 
@@ -205,7 +205,7 @@ public partial class RecordingMetadata : IEquatable<RecordingMetadata>
     /// <summary>
     /// Gets or Sets Name
     /// </summary>
-    [DataMember(Name = "name", EmitDefaultValue = false)]
+    [JsonPropertyName("name")]
     public string Name { get; set; }
 
 
@@ -213,7 +213,7 @@ public partial class RecordingMetadata : IEquatable<RecordingMetadata>
     /// <summary>
     /// Gets or Sets ConversationId
     /// </summary>
-    [DataMember(Name = "conversationId", EmitDefaultValue = false)]
+    [JsonPropertyName("conversationId")]
     public string ConversationId { get; set; }
 
 
@@ -221,7 +221,7 @@ public partial class RecordingMetadata : IEquatable<RecordingMetadata>
     /// <summary>
     /// Gets or Sets Path
     /// </summary>
-    [DataMember(Name = "path", EmitDefaultValue = false)]
+    [JsonPropertyName("path")]
     public string Path { get; set; }
 
 
@@ -230,7 +230,7 @@ public partial class RecordingMetadata : IEquatable<RecordingMetadata>
     /// The start time of the recording for screen recordings. Null for other types.
     /// </summary>
     /// <value>The start time of the recording for screen recordings. Null for other types.</value>
-    [DataMember(Name = "startTime", EmitDefaultValue = false)]
+    [JsonPropertyName("startTime")]
     public string StartTime { get; set; }
 
 
@@ -238,7 +238,7 @@ public partial class RecordingMetadata : IEquatable<RecordingMetadata>
     /// <summary>
     /// Gets or Sets EndTime
     /// </summary>
-    [DataMember(Name = "endTime", EmitDefaultValue = false)]
+    [JsonPropertyName("endTime")]
     public string EndTime { get; set; }
 
 
@@ -247,7 +247,7 @@ public partial class RecordingMetadata : IEquatable<RecordingMetadata>
     /// The type of media that the recording is. At the moment that could be audio, chat, email, or message.
     /// </summary>
     /// <value>The type of media that the recording is. At the moment that could be audio, chat, email, or message.</value>
-    [DataMember(Name = "media", EmitDefaultValue = false)]
+    [JsonPropertyName("media")]
     public string Media { get; set; }
 
 
@@ -258,7 +258,7 @@ public partial class RecordingMetadata : IEquatable<RecordingMetadata>
     /// The recording media subject.
     /// </summary>
     /// <value>The recording media subject.</value>
-    [DataMember(Name = "mediaSubject", EmitDefaultValue = false)]
+    [JsonPropertyName("mediaSubject")]
     public string MediaSubject { get; set; }
 
 
@@ -267,7 +267,7 @@ public partial class RecordingMetadata : IEquatable<RecordingMetadata>
     /// Annotations that belong to the recording. Populated when recording filestate is AVAILABLE.
     /// </summary>
     /// <value>Annotations that belong to the recording. Populated when recording filestate is AVAILABLE.</value>
-    [DataMember(Name = "annotations", EmitDefaultValue = false)]
+    [JsonPropertyName("annotations")]
     public List<Annotation> Annotations { get; set; }
 
 
@@ -278,7 +278,7 @@ public partial class RecordingMetadata : IEquatable<RecordingMetadata>
     /// The amount of time a restored recording will remain restored before being archived again. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z
     /// </summary>
     /// <value>The amount of time a restored recording will remain restored before being archived again. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z</value>
-    [DataMember(Name = "restoreExpirationTime", EmitDefaultValue = false)]
+    [JsonPropertyName("restoreExpirationTime")]
     public DateTime? RestoreExpirationTime { get; set; }
 
 
@@ -287,7 +287,7 @@ public partial class RecordingMetadata : IEquatable<RecordingMetadata>
     /// The date the recording will be archived. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z
     /// </summary>
     /// <value>The date the recording will be archived. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z</value>
-    [DataMember(Name = "archiveDate", EmitDefaultValue = false)]
+    [JsonPropertyName("archiveDate")]
     public DateTime? ArchiveDate { get; set; }
 
 
@@ -298,7 +298,7 @@ public partial class RecordingMetadata : IEquatable<RecordingMetadata>
     /// The date the recording will be deleted. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z
     /// </summary>
     /// <value>The date the recording will be deleted. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z</value>
-    [DataMember(Name = "deleteDate", EmitDefaultValue = false)]
+    [JsonPropertyName("deleteDate")]
     public DateTime? DeleteDate { get; set; }
 
 
@@ -307,7 +307,7 @@ public partial class RecordingMetadata : IEquatable<RecordingMetadata>
     /// The date the recording will be exported. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z
     /// </summary>
     /// <value>The date the recording will be exported. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z</value>
-    [DataMember(Name = "exportDate", EmitDefaultValue = false)]
+    [JsonPropertyName("exportDate")]
     public DateTime? ExportDate { get; set; }
 
 
@@ -316,7 +316,7 @@ public partial class RecordingMetadata : IEquatable<RecordingMetadata>
     /// The date the recording was exported. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z
     /// </summary>
     /// <value>The date the recording was exported. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z</value>
-    [DataMember(Name = "exportedDate", EmitDefaultValue = false)]
+    [JsonPropertyName("exportedDate")]
     public DateTime? ExportedDate { get; set; }
 
 
@@ -325,7 +325,7 @@ public partial class RecordingMetadata : IEquatable<RecordingMetadata>
     /// How many archive restorations the organization is allowed to have.
     /// </summary>
     /// <value>How many archive restorations the organization is allowed to have.</value>
-    [DataMember(Name = "maxAllowedRestorationsForOrg", EmitDefaultValue = false)]
+    [JsonPropertyName("maxAllowedRestorationsForOrg")]
     public int? MaxAllowedRestorationsForOrg { get; set; }
 
 
@@ -334,7 +334,7 @@ public partial class RecordingMetadata : IEquatable<RecordingMetadata>
     /// The remaining archive restorations the organization has.
     /// </summary>
     /// <value>The remaining archive restorations the organization has.</value>
-    [DataMember(Name = "remainingRestorationsAllowedForOrg", EmitDefaultValue = false)]
+    [JsonPropertyName("remainingRestorationsAllowedForOrg")]
     public int? RemainingRestorationsAllowedForOrg { get; set; }
 
 
@@ -343,7 +343,7 @@ public partial class RecordingMetadata : IEquatable<RecordingMetadata>
     /// The session id represents an external resource id, such as email, call, chat, etc
     /// </summary>
     /// <value>The session id represents an external resource id, such as email, call, chat, etc</value>
-    [DataMember(Name = "sessionId", EmitDefaultValue = false)]
+    [JsonPropertyName("sessionId")]
     public string SessionId { get; set; }
 
 
@@ -352,7 +352,7 @@ public partial class RecordingMetadata : IEquatable<RecordingMetadata>
     /// The URI for this object
     /// </summary>
     /// <value>The URI for this object</value>
-    [DataMember(Name = "selfUri", EmitDefaultValue = false)]
+    [JsonPropertyName("selfUri")]
     public string SelfUri { get; private set; }
 
 

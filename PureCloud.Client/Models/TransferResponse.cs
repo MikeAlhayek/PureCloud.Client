@@ -7,14 +7,14 @@ namespace PureCloud.Client.Models;
 /// <summary>
 /// TransferResponse
 /// </summary>
-[DataContract]
+
 public partial class TransferResponse : IEquatable<TransferResponse>
 {
     /// <summary>
     /// The state of the command.
     /// </summary>
     /// <value>The state of the command.</value>
-    [JsonConverter(typeof(JsonStringEnumConverter))]
+    
     public enum StateEnum
     {
         /// <summary>
@@ -71,7 +71,7 @@ public partial class TransferResponse : IEquatable<TransferResponse>
     /// The type of transfer to perform.
     /// </summary>
     /// <value>The type of transfer to perform.</value>
-    [JsonConverter(typeof(JsonStringEnumConverter))]
+    
     public enum TransferTypeEnum
     {
         /// <summary>
@@ -98,13 +98,13 @@ public partial class TransferResponse : IEquatable<TransferResponse>
     /// The state of the command.
     /// </summary>
     /// <value>The state of the command.</value>
-    [DataMember(Name = "state", EmitDefaultValue = false)]
+    [JsonPropertyName("state")]
     public StateEnum? State { get; set; }
     /// <summary>
     /// The type of transfer to perform.
     /// </summary>
     /// <value>The type of transfer to perform.</value>
-    [DataMember(Name = "transferType", EmitDefaultValue = false)]
+    [JsonPropertyName("transferType")]
     public TransferTypeEnum? TransferType { get; set; }
     /// <summary>
     /// Initializes a new instance of the <see cref="TransferResponse" /> class.
@@ -134,7 +134,7 @@ public partial class TransferResponse : IEquatable<TransferResponse>
     /// The id of the command.
     /// </summary>
     /// <value>The id of the command.</value>
-    [DataMember(Name = "id", EmitDefaultValue = false)]
+    [JsonPropertyName("id")]
     public string Id { get; set; }
 
 
@@ -145,7 +145,7 @@ public partial class TransferResponse : IEquatable<TransferResponse>
     /// The date/time that this command was issued. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z
     /// </summary>
     /// <value>The date/time that this command was issued. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z</value>
-    [DataMember(Name = "dateIssued", EmitDefaultValue = false)]
+    [JsonPropertyName("dateIssued")]
     public DateTime? DateIssued { get; set; }
 
 
@@ -154,7 +154,7 @@ public partial class TransferResponse : IEquatable<TransferResponse>
     /// The initiator of the command.
     /// </summary>
     /// <value>The initiator of the command.</value>
-    [DataMember(Name = "initiator", EmitDefaultValue = false)]
+    [JsonPropertyName("initiator")]
     public TransferInitiator Initiator { get; set; }
 
 
@@ -163,7 +163,7 @@ public partial class TransferResponse : IEquatable<TransferResponse>
     /// The user or entity that modified the command.
     /// </summary>
     /// <value>The user or entity that modified the command.</value>
-    [DataMember(Name = "modifiedBy", EmitDefaultValue = false)]
+    [JsonPropertyName("modifiedBy")]
     public TransferResponseModifiedBy ModifiedBy { get; set; }
 
 
@@ -172,7 +172,7 @@ public partial class TransferResponse : IEquatable<TransferResponse>
     /// The destination of the command.
     /// </summary>
     /// <value>The destination of the command.</value>
-    [DataMember(Name = "destination", EmitDefaultValue = false)]
+    [JsonPropertyName("destination")]
     public TransferDestination Destination { get; set; }
 
 

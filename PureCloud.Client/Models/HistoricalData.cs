@@ -1,12 +1,12 @@
-using System.Runtime.Serialization;
 using System.Text;
+using System.Text.Json.Serialization;
 
 namespace PureCloud.Client.Models;
 
 /// <summary>
 /// HistoricalData
 /// </summary>
-[DataContract]
+
 public partial class HistoricalData : IEquatable<HistoricalData>
 {
     /// <summary>
@@ -27,7 +27,7 @@ public partial class HistoricalData : IEquatable<HistoricalData>
     /// Daily time series for historical data
     /// </summary>
     /// <value>Daily time series for historical data</value>
-    [DataMember(Name = "daily", EmitDefaultValue = false)]
+    [JsonPropertyName("daily")]
     public Daily Daily { get; set; }
 
 
@@ -36,7 +36,7 @@ public partial class HistoricalData : IEquatable<HistoricalData>
     /// Quarter hour time series for historical data
     /// </summary>
     /// <value>Quarter hour time series for historical data</value>
-    [DataMember(Name = "quarterHour", EmitDefaultValue = false)]
+    [JsonPropertyName("quarterHour")]
     public QuarterHourly QuarterHour { get; set; }
 
 

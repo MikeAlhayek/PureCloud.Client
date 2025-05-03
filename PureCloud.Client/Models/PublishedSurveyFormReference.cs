@@ -1,12 +1,12 @@
-using System.Runtime.Serialization;
 using System.Text;
+using System.Text.Json.Serialization;
 
 namespace PureCloud.Client.Models;
 
 /// <summary>
 /// PublishedSurveyFormReference
 /// </summary>
-[DataContract]
+
 public partial class PublishedSurveyFormReference : IEquatable<PublishedSurveyFormReference>
 {
     /// <summary>
@@ -27,7 +27,7 @@ public partial class PublishedSurveyFormReference : IEquatable<PublishedSurveyFo
     /// The globally unique identifier for the object.
     /// </summary>
     /// <value>The globally unique identifier for the object.</value>
-    [DataMember(Name = "id", EmitDefaultValue = false)]
+    [JsonPropertyName("id")]
     public string Id { get; private set; }
 
 
@@ -35,7 +35,7 @@ public partial class PublishedSurveyFormReference : IEquatable<PublishedSurveyFo
     /// <summary>
     /// Gets or Sets Name
     /// </summary>
-    [DataMember(Name = "name", EmitDefaultValue = false)]
+    [JsonPropertyName("name")]
     public string Name { get; set; }
 
 
@@ -44,7 +44,7 @@ public partial class PublishedSurveyFormReference : IEquatable<PublishedSurveyFo
     /// The context id of this form.
     /// </summary>
     /// <value>The context id of this form.</value>
-    [DataMember(Name = "contextId", EmitDefaultValue = false)]
+    [JsonPropertyName("contextId")]
     public string ContextId { get; set; }
 
 
@@ -53,7 +53,7 @@ public partial class PublishedSurveyFormReference : IEquatable<PublishedSurveyFo
     /// The URI for this object
     /// </summary>
     /// <value>The URI for this object</value>
-    [DataMember(Name = "selfUri", EmitDefaultValue = false)]
+    [JsonPropertyName("selfUri")]
     public string SelfUri { get; private set; }
 
 

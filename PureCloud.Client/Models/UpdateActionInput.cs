@@ -1,4 +1,3 @@
-using System.Runtime.Serialization;
 using System.Text;
 using System.Text.Json.Serialization;
 
@@ -7,7 +6,7 @@ namespace PureCloud.Client.Models;
 /// <summary>
 /// UpdateActionInput
 /// </summary>
-[DataContract]
+
 public partial class UpdateActionInput : IEquatable<UpdateActionInput>
 {
 
@@ -38,7 +37,7 @@ public partial class UpdateActionInput : IEquatable<UpdateActionInput>
     /// Category of action, Can be up to 256 characters long
     /// </summary>
     /// <value>Category of action, Can be up to 256 characters long</value>
-    [DataMember(Name = "category", EmitDefaultValue = false)]
+    [JsonPropertyName("category")]
     public string Category { get; set; }
 
 
@@ -47,7 +46,7 @@ public partial class UpdateActionInput : IEquatable<UpdateActionInput>
     /// Name of action, Can be up to 256 characters long
     /// </summary>
     /// <value>Name of action, Can be up to 256 characters long</value>
-    [DataMember(Name = "name", EmitDefaultValue = false)]
+    [JsonPropertyName("name")]
     public string Name { get; set; }
 
 
@@ -56,7 +55,7 @@ public partial class UpdateActionInput : IEquatable<UpdateActionInput>
     /// Configuration to support request and response processing
     /// </summary>
     /// <value>Configuration to support request and response processing</value>
-    [DataMember(Name = "config", EmitDefaultValue = false)]
+    [JsonPropertyName("config")]
     public ActionConfig Config { get; set; }
 
 
@@ -65,7 +64,7 @@ public partial class UpdateActionInput : IEquatable<UpdateActionInput>
     /// Version of this action
     /// </summary>
     /// <value>Version of this action</value>
-    [DataMember(Name = "version", EmitDefaultValue = false)]
+    [JsonPropertyName("version")]
     public int? Version { get; set; }
 
 

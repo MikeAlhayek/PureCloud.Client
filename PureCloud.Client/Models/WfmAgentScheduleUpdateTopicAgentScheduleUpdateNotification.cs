@@ -1,12 +1,12 @@
-using System.Runtime.Serialization;
 using System.Text;
+using System.Text.Json.Serialization;
 
 namespace PureCloud.Client.Models;
 
 /// <summary>
 /// WfmAgentScheduleUpdateTopicAgentScheduleUpdateNotification
 /// </summary>
-[DataContract]
+
 public partial class WfmAgentScheduleUpdateTopicAgentScheduleUpdateNotification : IEquatable<WfmAgentScheduleUpdateTopicAgentScheduleUpdateNotification>
 {
     /// <summary>
@@ -30,7 +30,7 @@ public partial class WfmAgentScheduleUpdateTopicAgentScheduleUpdateNotification 
     /// <summary>
     /// Gets or Sets User
     /// </summary>
-    [DataMember(Name = "user", EmitDefaultValue = false)]
+    [JsonPropertyName("user")]
     public WfmAgentScheduleUpdateTopicUserReference User { get; set; }
 
 
@@ -38,7 +38,7 @@ public partial class WfmAgentScheduleUpdateTopicAgentScheduleUpdateNotification 
     /// <summary>
     /// Gets or Sets StartDate
     /// </summary>
-    [DataMember(Name = "startDate", EmitDefaultValue = false)]
+    [JsonPropertyName("startDate")]
     public DateTime? StartDate { get; set; }
 
 
@@ -46,7 +46,7 @@ public partial class WfmAgentScheduleUpdateTopicAgentScheduleUpdateNotification 
     /// <summary>
     /// Gets or Sets EndDate
     /// </summary>
-    [DataMember(Name = "endDate", EmitDefaultValue = false)]
+    [JsonPropertyName("endDate")]
     public DateTime? EndDate { get; set; }
 
 
@@ -54,7 +54,7 @@ public partial class WfmAgentScheduleUpdateTopicAgentScheduleUpdateNotification 
     /// <summary>
     /// Gets or Sets Updates
     /// </summary>
-    [DataMember(Name = "updates", EmitDefaultValue = false)]
+    [JsonPropertyName("updates")]
     public List<WfmAgentScheduleUpdateTopicAgentScheduleShiftUpdate> Updates { get; set; }
 
 

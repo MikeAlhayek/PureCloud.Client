@@ -1,4 +1,3 @@
-using System.Runtime.Serialization;
 using System.Text;
 using System.Text.Json.Serialization;
 
@@ -7,7 +6,7 @@ namespace PureCloud.Client.Models;
 /// <summary>
 /// ExternalMetricDataWriteRequest
 /// </summary>
-[DataContract]
+
 public partial class ExternalMetricDataWriteRequest : IEquatable<ExternalMetricDataWriteRequest>
 {
 
@@ -32,7 +31,7 @@ public partial class ExternalMetricDataWriteRequest : IEquatable<ExternalMetricD
     /// A list of external metric data items. A maximum of 100 items are allowed.
     /// </summary>
     /// <value>A list of external metric data items. A maximum of 100 items are allowed.</value>
-    [DataMember(Name = "items", EmitDefaultValue = false)]
+    [JsonPropertyName("items")]
     public List<ExternalMetricDataItem> Items { get; set; }
 
 

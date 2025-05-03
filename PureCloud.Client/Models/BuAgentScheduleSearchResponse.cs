@@ -1,12 +1,12 @@
-using System.Runtime.Serialization;
 using System.Text;
+using System.Text.Json.Serialization;
 
 namespace PureCloud.Client.Models;
 
 /// <summary>
 /// BuAgentScheduleSearchResponse
 /// </summary>
-[DataContract]
+
 public partial class BuAgentScheduleSearchResponse : IEquatable<BuAgentScheduleSearchResponse>
 {
     /// <summary>
@@ -29,7 +29,7 @@ public partial class BuAgentScheduleSearchResponse : IEquatable<BuAgentScheduleS
     /// The user to whom this agent schedule applies
     /// </summary>
     /// <value>The user to whom this agent schedule applies</value>
-    [DataMember(Name = "user", EmitDefaultValue = false)]
+    [JsonPropertyName("user")]
     public UserReference User { get; set; }
 
 
@@ -38,7 +38,7 @@ public partial class BuAgentScheduleSearchResponse : IEquatable<BuAgentScheduleS
     /// The shift definitions for this agent schedule
     /// </summary>
     /// <value>The shift definitions for this agent schedule</value>
-    [DataMember(Name = "shifts", EmitDefaultValue = false)]
+    [JsonPropertyName("shifts")]
     public List<BuAgentScheduleShift> Shifts { get; set; }
 
 
@@ -47,7 +47,7 @@ public partial class BuAgentScheduleSearchResponse : IEquatable<BuAgentScheduleS
     /// Full day time off markers which apply to this agent schedule
     /// </summary>
     /// <value>Full day time off markers which apply to this agent schedule</value>
-    [DataMember(Name = "fullDayTimeOffMarkers", EmitDefaultValue = false)]
+    [JsonPropertyName("fullDayTimeOffMarkers")]
     public List<BuFullDayTimeOffMarker> FullDayTimeOffMarkers { get; set; }
 
 

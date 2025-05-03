@@ -7,14 +7,14 @@ namespace PureCloud.Client.Models;
 /// <summary>
 /// Defines the phone numbers, operating hours, and the Architect flows to execute for an IVR.
 /// </summary>
-[DataContract]
+
 public partial class IVR : IEquatable<IVR>
 {
     /// <summary>
     /// Indicates if the resource is active, inactive, or deleted.
     /// </summary>
     /// <value>Indicates if the resource is active, inactive, or deleted.</value>
-    [JsonConverter(typeof(JsonStringEnumConverter))]
+    
     public enum StateEnum
     {
         /// <summary>
@@ -47,7 +47,7 @@ public partial class IVR : IEquatable<IVR>
     /// Indicates if the resource is active, inactive, or deleted.
     /// </summary>
     /// <value>Indicates if the resource is active, inactive, or deleted.</value>
-    [DataMember(Name = "state", EmitDefaultValue = false)]
+    [JsonPropertyName("state")]
     public StateEnum? State { get; private set; }
 
     /// <summary>
@@ -87,7 +87,7 @@ public partial class IVR : IEquatable<IVR>
     /// The globally unique identifier for the object.
     /// </summary>
     /// <value>The globally unique identifier for the object.</value>
-    [DataMember(Name = "id", EmitDefaultValue = false)]
+    [JsonPropertyName("id")]
     public string Id { get; private set; }
 
 
@@ -96,7 +96,7 @@ public partial class IVR : IEquatable<IVR>
     /// The name of the entity.
     /// </summary>
     /// <value>The name of the entity.</value>
-    [DataMember(Name = "name", EmitDefaultValue = false)]
+    [JsonPropertyName("name")]
     public string Name { get; set; }
 
 
@@ -105,7 +105,7 @@ public partial class IVR : IEquatable<IVR>
     /// The division to which this entity belongs.
     /// </summary>
     /// <value>The division to which this entity belongs.</value>
-    [DataMember(Name = "division", EmitDefaultValue = false)]
+    [JsonPropertyName("division")]
     public WritableDivision Division { get; set; }
 
 
@@ -114,7 +114,7 @@ public partial class IVR : IEquatable<IVR>
     /// The resource&#39;s description.
     /// </summary>
     /// <value>The resource&#39;s description.</value>
-    [DataMember(Name = "description", EmitDefaultValue = false)]
+    [JsonPropertyName("description")]
     public string Description { get; set; }
 
 
@@ -123,7 +123,7 @@ public partial class IVR : IEquatable<IVR>
     /// The current version of the resource.
     /// </summary>
     /// <value>The current version of the resource.</value>
-    [DataMember(Name = "version", EmitDefaultValue = false)]
+    [JsonPropertyName("version")]
     public int? Version { get; set; }
 
 
@@ -132,7 +132,7 @@ public partial class IVR : IEquatable<IVR>
     /// The date the resource was created. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z
     /// </summary>
     /// <value>The date the resource was created. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z</value>
-    [DataMember(Name = "dateCreated", EmitDefaultValue = false)]
+    [JsonPropertyName("dateCreated")]
     public DateTime? DateCreated { get; private set; }
 
 
@@ -141,7 +141,7 @@ public partial class IVR : IEquatable<IVR>
     /// The date of the last modification to the resource. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z
     /// </summary>
     /// <value>The date of the last modification to the resource. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z</value>
-    [DataMember(Name = "dateModified", EmitDefaultValue = false)]
+    [JsonPropertyName("dateModified")]
     public DateTime? DateModified { get; private set; }
 
 
@@ -150,7 +150,7 @@ public partial class IVR : IEquatable<IVR>
     /// The ID of the user that last modified the resource.
     /// </summary>
     /// <value>The ID of the user that last modified the resource.</value>
-    [DataMember(Name = "modifiedBy", EmitDefaultValue = false)]
+    [JsonPropertyName("modifiedBy")]
     public string ModifiedBy { get; private set; }
 
 
@@ -159,7 +159,7 @@ public partial class IVR : IEquatable<IVR>
     /// The ID of the user that created the resource.
     /// </summary>
     /// <value>The ID of the user that created the resource.</value>
-    [DataMember(Name = "createdBy", EmitDefaultValue = false)]
+    [JsonPropertyName("createdBy")]
     public string CreatedBy { get; private set; }
 
 
@@ -170,7 +170,7 @@ public partial class IVR : IEquatable<IVR>
     /// The application that last modified the resource.
     /// </summary>
     /// <value>The application that last modified the resource.</value>
-    [DataMember(Name = "modifiedByApp", EmitDefaultValue = false)]
+    [JsonPropertyName("modifiedByApp")]
     public string ModifiedByApp { get; private set; }
 
 
@@ -179,7 +179,7 @@ public partial class IVR : IEquatable<IVR>
     /// The application that created the resource.
     /// </summary>
     /// <value>The application that created the resource.</value>
-    [DataMember(Name = "createdByApp", EmitDefaultValue = false)]
+    [JsonPropertyName("createdByApp")]
     public string CreatedByApp { get; private set; }
 
 
@@ -188,7 +188,7 @@ public partial class IVR : IEquatable<IVR>
     /// The phone number(s) to contact the IVR by.  Each phone number must be unique and not in use by another resource.  For example, a user and an iVR cannot have the same phone number.
     /// </summary>
     /// <value>The phone number(s) to contact the IVR by.  Each phone number must be unique and not in use by another resource.  For example, a user and an iVR cannot have the same phone number.</value>
-    [DataMember(Name = "dnis", EmitDefaultValue = false)]
+    [JsonPropertyName("dnis")]
     public List<string> Dnis { get; set; }
 
 
@@ -197,7 +197,7 @@ public partial class IVR : IEquatable<IVR>
     /// The Architect flow to execute during the hours an organization is open.
     /// </summary>
     /// <value>The Architect flow to execute during the hours an organization is open.</value>
-    [DataMember(Name = "openHoursFlow", EmitDefaultValue = false)]
+    [JsonPropertyName("openHoursFlow")]
     public DomainEntityRef OpenHoursFlow { get; set; }
 
 
@@ -206,7 +206,7 @@ public partial class IVR : IEquatable<IVR>
     /// The Architect flow to execute during the hours an organization is closed.
     /// </summary>
     /// <value>The Architect flow to execute during the hours an organization is closed.</value>
-    [DataMember(Name = "closedHoursFlow", EmitDefaultValue = false)]
+    [JsonPropertyName("closedHoursFlow")]
     public DomainEntityRef ClosedHoursFlow { get; set; }
 
 
@@ -215,7 +215,7 @@ public partial class IVR : IEquatable<IVR>
     /// The Architect flow to execute during an organization&#39;s holiday hours.
     /// </summary>
     /// <value>The Architect flow to execute during an organization&#39;s holiday hours.</value>
-    [DataMember(Name = "holidayHoursFlow", EmitDefaultValue = false)]
+    [JsonPropertyName("holidayHoursFlow")]
     public DomainEntityRef HolidayHoursFlow { get; set; }
 
 
@@ -224,7 +224,7 @@ public partial class IVR : IEquatable<IVR>
     /// The schedule group defining the open and closed hours for an organization.  If this is provided, an open flow and a closed flow must be specified as well.
     /// </summary>
     /// <value>The schedule group defining the open and closed hours for an organization.  If this is provided, an open flow and a closed flow must be specified as well.</value>
-    [DataMember(Name = "scheduleGroup", EmitDefaultValue = false)]
+    [JsonPropertyName("scheduleGroup")]
     public DomainEntityRef ScheduleGroup { get; set; }
 
 
@@ -233,7 +233,7 @@ public partial class IVR : IEquatable<IVR>
     /// The URI for this object
     /// </summary>
     /// <value>The URI for this object</value>
-    [DataMember(Name = "selfUri", EmitDefaultValue = false)]
+    [JsonPropertyName("selfUri")]
     public string SelfUri { get; private set; }
 
 

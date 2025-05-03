@@ -7,13 +7,13 @@ namespace PureCloud.Client.Models;
 /// <summary>
 /// DomainEdgeSoftwareUpdateDto
 /// </summary>
-[DataContract]
+
 public partial class DomainEdgeSoftwareUpdateDto : IEquatable<DomainEdgeSoftwareUpdateDto>
 {
     /// <summary>
     /// Gets or Sets Status
     /// </summary>
-    [JsonConverter(typeof(JsonStringEnumConverter))]
+    
     public enum StatusEnum
     {
         /// <summary>
@@ -81,7 +81,7 @@ public partial class DomainEdgeSoftwareUpdateDto : IEquatable<DomainEdgeSoftware
     /// <summary>
     /// Gets or Sets Status
     /// </summary>
-    [DataMember(Name = "status", EmitDefaultValue = false)]
+    [JsonPropertyName("status")]
     public StatusEnum? Status { get; set; }
 
     /// <summary>
@@ -123,7 +123,7 @@ public partial class DomainEdgeSoftwareUpdateDto : IEquatable<DomainEdgeSoftware
     /// Version
     /// </summary>
     /// <value>Version</value>
-    [DataMember(Name = "version", EmitDefaultValue = false)]
+    [JsonPropertyName("version")]
     public DomainEdgeSoftwareVersionDto Version { get; set; }
 
 
@@ -131,7 +131,7 @@ public partial class DomainEdgeSoftwareUpdateDto : IEquatable<DomainEdgeSoftware
     /// <summary>
     /// Gets or Sets MaxDownloadRate
     /// </summary>
-    [DataMember(Name = "maxDownloadRate", EmitDefaultValue = false)]
+    [JsonPropertyName("maxDownloadRate")]
     public int? MaxDownloadRate { get; set; }
 
 
@@ -140,7 +140,7 @@ public partial class DomainEdgeSoftwareUpdateDto : IEquatable<DomainEdgeSoftware
     /// Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z
     /// </summary>
     /// <value>Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z</value>
-    [DataMember(Name = "downloadStartTime", EmitDefaultValue = false)]
+    [JsonPropertyName("downloadStartTime")]
     public DateTime? DownloadStartTime { get; set; }
 
 
@@ -149,7 +149,7 @@ public partial class DomainEdgeSoftwareUpdateDto : IEquatable<DomainEdgeSoftware
     /// Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z
     /// </summary>
     /// <value>Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z</value>
-    [DataMember(Name = "executeStartTime", EmitDefaultValue = false)]
+    [JsonPropertyName("executeStartTime")]
     public DateTime? ExecuteStartTime { get; set; }
 
 
@@ -158,7 +158,7 @@ public partial class DomainEdgeSoftwareUpdateDto : IEquatable<DomainEdgeSoftware
     /// Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z
     /// </summary>
     /// <value>Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z</value>
-    [DataMember(Name = "executeStopTime", EmitDefaultValue = false)]
+    [JsonPropertyName("executeStopTime")]
     public DateTime? ExecuteStopTime { get; set; }
 
 
@@ -166,7 +166,7 @@ public partial class DomainEdgeSoftwareUpdateDto : IEquatable<DomainEdgeSoftware
     /// <summary>
     /// Gets or Sets ExecuteOnIdle
     /// </summary>
-    [DataMember(Name = "executeOnIdle", EmitDefaultValue = false)]
+    [JsonPropertyName("executeOnIdle")]
     public bool? ExecuteOnIdle { get; set; }
 
 
@@ -176,7 +176,7 @@ public partial class DomainEdgeSoftwareUpdateDto : IEquatable<DomainEdgeSoftware
     /// <summary>
     /// Gets or Sets EdgeUri
     /// </summary>
-    [DataMember(Name = "edgeUri", EmitDefaultValue = false)]
+    [JsonPropertyName("edgeUri")]
     public string EdgeUri { get; set; }
 
 
@@ -184,7 +184,7 @@ public partial class DomainEdgeSoftwareUpdateDto : IEquatable<DomainEdgeSoftware
     /// <summary>
     /// Gets or Sets CallDrainingWaitTimeSeconds
     /// </summary>
-    [DataMember(Name = "callDrainingWaitTimeSeconds", EmitDefaultValue = false)]
+    [JsonPropertyName("callDrainingWaitTimeSeconds")]
     public long? CallDrainingWaitTimeSeconds { get; set; }
 
 
@@ -192,7 +192,7 @@ public partial class DomainEdgeSoftwareUpdateDto : IEquatable<DomainEdgeSoftware
     /// <summary>
     /// Gets or Sets Current
     /// </summary>
-    [DataMember(Name = "current", EmitDefaultValue = false)]
+    [JsonPropertyName("current")]
     public bool? Current { get; set; }
 
 

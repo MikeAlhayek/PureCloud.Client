@@ -7,13 +7,13 @@ namespace PureCloud.Client.Models;
 /// <summary>
 /// WfmBulkShiftTradeStateUpdateNotificationTopicBulkShiftTradeStateUpdateNotification
 /// </summary>
-[DataContract]
+
 public partial class WfmBulkShiftTradeStateUpdateNotificationTopicBulkShiftTradeStateUpdateNotification : IEquatable<WfmBulkShiftTradeStateUpdateNotificationTopicBulkShiftTradeStateUpdateNotification>
 {
     /// <summary>
     /// Gets or Sets Status
     /// </summary>
-    [JsonConverter(typeof(JsonStringEnumConverter))]
+    
     public enum StatusEnum
     {
         /// <summary>
@@ -51,7 +51,7 @@ public partial class WfmBulkShiftTradeStateUpdateNotificationTopicBulkShiftTrade
     /// <summary>
     /// Gets or Sets Status
     /// </summary>
-    [DataMember(Name = "status", EmitDefaultValue = false)]
+    [JsonPropertyName("status")]
     public StatusEnum? Status { get; set; }
     /// <summary>
     /// Initializes a new instance of the <see cref="WfmBulkShiftTradeStateUpdateNotificationTopicBulkShiftTradeStateUpdateNotification" /> class.
@@ -76,7 +76,7 @@ public partial class WfmBulkShiftTradeStateUpdateNotificationTopicBulkShiftTrade
     /// <summary>
     /// Gets or Sets OperationId
     /// </summary>
-    [DataMember(Name = "operationId", EmitDefaultValue = false)]
+    [JsonPropertyName("operationId")]
     public string OperationId { get; set; }
 
 
@@ -84,7 +84,7 @@ public partial class WfmBulkShiftTradeStateUpdateNotificationTopicBulkShiftTrade
     /// <summary>
     /// Gets or Sets Result
     /// </summary>
-    [DataMember(Name = "result", EmitDefaultValue = false)]
+    [JsonPropertyName("result")]
     public WfmBulkShiftTradeStateUpdateNotificationTopicBulkShiftTradeStateUpdateResultListing Result { get; set; }
 
 
@@ -92,7 +92,7 @@ public partial class WfmBulkShiftTradeStateUpdateNotificationTopicBulkShiftTrade
     /// <summary>
     /// Gets or Sets WeekDate
     /// </summary>
-    [DataMember(Name = "weekDate", EmitDefaultValue = false)]
+    [JsonPropertyName("weekDate")]
     public DateTime? WeekDate { get; set; }
 
 

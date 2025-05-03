@@ -1,12 +1,12 @@
-using System.Runtime.Serialization;
 using System.Text;
+using System.Text.Json.Serialization;
 
 namespace PureCloud.Client.Models;
 
 /// <summary>
 /// WfmBuScheduleQueryResultTopicBuScheduleSearchResultNotification
 /// </summary>
-[DataContract]
+
 public partial class WfmBuScheduleQueryResultTopicBuScheduleSearchResultNotification : IEquatable<WfmBuScheduleQueryResultTopicBuScheduleSearchResultNotification>
 {
     /// <summary>
@@ -28,7 +28,7 @@ public partial class WfmBuScheduleQueryResultTopicBuScheduleSearchResultNotifica
     /// <summary>
     /// Gets or Sets OperationId
     /// </summary>
-    [DataMember(Name = "operationId", EmitDefaultValue = false)]
+    [JsonPropertyName("operationId")]
     public string OperationId { get; set; }
 
 
@@ -36,7 +36,7 @@ public partial class WfmBuScheduleQueryResultTopicBuScheduleSearchResultNotifica
     /// <summary>
     /// Gets or Sets BusinessUnitId
     /// </summary>
-    [DataMember(Name = "businessUnitId", EmitDefaultValue = false)]
+    [JsonPropertyName("businessUnitId")]
     public string BusinessUnitId { get; set; }
 
 
@@ -44,7 +44,7 @@ public partial class WfmBuScheduleQueryResultTopicBuScheduleSearchResultNotifica
     /// <summary>
     /// Gets or Sets DownloadUrl
     /// </summary>
-    [DataMember(Name = "downloadUrl", EmitDefaultValue = false)]
+    [JsonPropertyName("downloadUrl")]
     public string DownloadUrl { get; set; }
 
 

@@ -1,4 +1,3 @@
-using System.Runtime.Serialization;
 using System.Text;
 using System.Text.Json.Serialization;
 
@@ -7,7 +6,7 @@ namespace PureCloud.Client.Models;
 /// <summary>
 /// DashboardConfigurationBulkRequest
 /// </summary>
-[DataContract]
+
 public partial class DashboardConfigurationBulkRequest : IEquatable<DashboardConfigurationBulkRequest>
 {
 
@@ -32,7 +31,7 @@ public partial class DashboardConfigurationBulkRequest : IEquatable<DashboardCon
     /// The user supplied dashboard configuration ids
     /// </summary>
     /// <value>The user supplied dashboard configuration ids</value>
-    [DataMember(Name = "dashboardConfigurationIds", EmitDefaultValue = false)]
+    [JsonPropertyName("dashboardConfigurationIds")]
     public List<string> DashboardConfigurationIds { get; set; }
 
 

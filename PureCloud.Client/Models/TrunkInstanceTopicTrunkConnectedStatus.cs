@@ -1,12 +1,12 @@
-using System.Runtime.Serialization;
 using System.Text;
+using System.Text.Json.Serialization;
 
 namespace PureCloud.Client.Models;
 
 /// <summary>
 /// TrunkInstanceTopicTrunkConnectedStatus
 /// </summary>
-[DataContract]
+
 public partial class TrunkInstanceTopicTrunkConnectedStatus : IEquatable<TrunkInstanceTopicTrunkConnectedStatus>
 {
     /// <summary>
@@ -26,7 +26,7 @@ public partial class TrunkInstanceTopicTrunkConnectedStatus : IEquatable<TrunkIn
     /// <summary>
     /// Gets or Sets Connected
     /// </summary>
-    [DataMember(Name = "connected", EmitDefaultValue = false)]
+    [JsonPropertyName("connected")]
     public bool? Connected { get; set; }
 
 
@@ -34,7 +34,7 @@ public partial class TrunkInstanceTopicTrunkConnectedStatus : IEquatable<TrunkIn
     /// <summary>
     /// Gets or Sets ConnectedStateTime
     /// </summary>
-    [DataMember(Name = "connectedStateTime", EmitDefaultValue = false)]
+    [JsonPropertyName("connectedStateTime")]
     public DateTime? ConnectedStateTime { get; set; }
 
 

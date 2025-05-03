@@ -7,14 +7,14 @@ namespace PureCloud.Client.Models;
 /// <summary>
 /// WfmUserNotification
 /// </summary>
-[DataContract]
+
 public partial class WfmUserNotification : IEquatable<WfmUserNotification>
 {
     /// <summary>
     /// The type of this notification
     /// </summary>
     /// <value>The type of this notification</value>
-    [JsonConverter(typeof(JsonStringEnumConverter))]
+    
     public enum TypeEnum
     {
         /// <summary>
@@ -53,7 +53,7 @@ public partial class WfmUserNotification : IEquatable<WfmUserNotification>
     /// The type of this notification
     /// </summary>
     /// <value>The type of this notification</value>
-    [DataMember(Name = "type", EmitDefaultValue = false)]
+    [JsonPropertyName("type")]
     public TypeEnum? Type { get; private set; }
 
     /// <summary>
@@ -81,7 +81,7 @@ public partial class WfmUserNotification : IEquatable<WfmUserNotification>
     /// The immutable globally unique identifier for the object.
     /// </summary>
     /// <value>The immutable globally unique identifier for the object.</value>
-    [DataMember(Name = "id", EmitDefaultValue = false)]
+    [JsonPropertyName("id")]
     public string Id { get; set; }
 
 
@@ -90,7 +90,7 @@ public partial class WfmUserNotification : IEquatable<WfmUserNotification>
     /// The group ID of the notification (mutable, may change  on update)
     /// </summary>
     /// <value>The group ID of the notification (mutable, may change  on update)</value>
-    [DataMember(Name = "mutableGroupId", EmitDefaultValue = false)]
+    [JsonPropertyName("mutableGroupId")]
     public string MutableGroupId { get; set; }
 
 
@@ -99,7 +99,7 @@ public partial class WfmUserNotification : IEquatable<WfmUserNotification>
     /// The timestamp for this notification. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z
     /// </summary>
     /// <value>The timestamp for this notification. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z</value>
-    [DataMember(Name = "timestamp", EmitDefaultValue = false)]
+    [JsonPropertyName("timestamp")]
     public DateTime? Timestamp { get; private set; }
 
 
@@ -110,7 +110,7 @@ public partial class WfmUserNotification : IEquatable<WfmUserNotification>
     /// A shift trade notification.  Only set if type &#x3D;&#x3D; ShiftTrade
     /// </summary>
     /// <value>A shift trade notification.  Only set if type &#x3D;&#x3D; ShiftTrade</value>
-    [DataMember(Name = "shiftTrade", EmitDefaultValue = false)]
+    [JsonPropertyName("shiftTrade")]
     public ShiftTradeNotification ShiftTrade { get; private set; }
 
 
@@ -119,7 +119,7 @@ public partial class WfmUserNotification : IEquatable<WfmUserNotification>
     /// A time off request notification.  Only set if type &#x3D;&#x3D; TimeOffRequest
     /// </summary>
     /// <value>A time off request notification.  Only set if type &#x3D;&#x3D; TimeOffRequest</value>
-    [DataMember(Name = "timeOffRequest", EmitDefaultValue = false)]
+    [JsonPropertyName("timeOffRequest")]
     public TimeOffRequestNotification TimeOffRequest { get; private set; }
 
 
@@ -128,7 +128,7 @@ public partial class WfmUserNotification : IEquatable<WfmUserNotification>
     /// An adherence explanation notification.  Only set if type &#x3D;&#x3D; AdherenceExplanation
     /// </summary>
     /// <value>An adherence explanation notification.  Only set if type &#x3D;&#x3D; AdherenceExplanation</value>
-    [DataMember(Name = "adherenceExplanation", EmitDefaultValue = false)]
+    [JsonPropertyName("adherenceExplanation")]
     public AdherenceExplanationNotification AdherenceExplanation { get; private set; }
 
 
@@ -137,7 +137,7 @@ public partial class WfmUserNotification : IEquatable<WfmUserNotification>
     /// An alternative shift trade notification.  Only set if type &#x3D;&#x3D; AlternativeShift
     /// </summary>
     /// <value>An alternative shift trade notification.  Only set if type &#x3D;&#x3D; AlternativeShift</value>
-    [DataMember(Name = "alternativeShift", EmitDefaultValue = false)]
+    [JsonPropertyName("alternativeShift")]
     public AlternativeShiftNotification AlternativeShift { get; private set; }
 
 
@@ -146,7 +146,7 @@ public partial class WfmUserNotification : IEquatable<WfmUserNotification>
     /// Whether this notification has been marked \&quot;read\&quot;
     /// </summary>
     /// <value>Whether this notification has been marked \&quot;read\&quot;</value>
-    [DataMember(Name = "markedAsRead", EmitDefaultValue = false)]
+    [JsonPropertyName("markedAsRead")]
     public bool? MarkedAsRead { get; set; }
 
 
@@ -155,7 +155,7 @@ public partial class WfmUserNotification : IEquatable<WfmUserNotification>
     /// Whether this notification is for an agent
     /// </summary>
     /// <value>Whether this notification is for an agent</value>
-    [DataMember(Name = "agentNotification", EmitDefaultValue = false)]
+    [JsonPropertyName("agentNotification")]
     public bool? AgentNotification { get; private set; }
 
 
@@ -164,7 +164,7 @@ public partial class WfmUserNotification : IEquatable<WfmUserNotification>
     /// Other notification IDs in group.  This field is only populated in real-time notifications
     /// </summary>
     /// <value>Other notification IDs in group.  This field is only populated in real-time notifications</value>
-    [DataMember(Name = "otherNotificationIdsInGroup", EmitDefaultValue = false)]
+    [JsonPropertyName("otherNotificationIdsInGroup")]
     public List<string> OtherNotificationIdsInGroup { get; private set; }
 
 

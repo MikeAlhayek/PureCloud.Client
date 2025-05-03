@@ -7,14 +7,14 @@ namespace PureCloud.Client.Models;
 /// <summary>
 /// BulkUpdateShiftTradeStateResultItem
 /// </summary>
-[DataContract]
+
 public partial class BulkUpdateShiftTradeStateResultItem : IEquatable<BulkUpdateShiftTradeStateResultItem>
 {
     /// <summary>
     /// The state of the shift trade after the update request is processed
     /// </summary>
     /// <value>The state of the shift trade after the update request is processed</value>
-    [JsonConverter(typeof(JsonStringEnumConverter))]
+    
     public enum StateEnum
     {
         /// <summary>
@@ -65,7 +65,7 @@ public partial class BulkUpdateShiftTradeStateResultItem : IEquatable<BulkUpdate
     /// The reason the update failed, if applicable
     /// </summary>
     /// <value>The reason the update failed, if applicable</value>
-    [JsonConverter(typeof(JsonStringEnumConverter))]
+    
     public enum FailureReasonEnum
     {
         /// <summary>
@@ -134,13 +134,13 @@ public partial class BulkUpdateShiftTradeStateResultItem : IEquatable<BulkUpdate
     /// The state of the shift trade after the update request is processed
     /// </summary>
     /// <value>The state of the shift trade after the update request is processed</value>
-    [DataMember(Name = "state", EmitDefaultValue = false)]
+    [JsonPropertyName("state")]
     public StateEnum? State { get; set; }
     /// <summary>
     /// The reason the update failed, if applicable
     /// </summary>
     /// <value>The reason the update failed, if applicable</value>
-    [DataMember(Name = "failureReason", EmitDefaultValue = false)]
+    [JsonPropertyName("failureReason")]
     public FailureReasonEnum? FailureReason { get; set; }
     /// <summary>
     /// Initializes a new instance of the <see cref="BulkUpdateShiftTradeStateResultItem" /> class.
@@ -166,7 +166,7 @@ public partial class BulkUpdateShiftTradeStateResultItem : IEquatable<BulkUpdate
     /// The globally unique identifier for the object.
     /// </summary>
     /// <value>The globally unique identifier for the object.</value>
-    [DataMember(Name = "id", EmitDefaultValue = false)]
+    [JsonPropertyName("id")]
     public string Id { get; private set; }
 
 
@@ -177,7 +177,7 @@ public partial class BulkUpdateShiftTradeStateResultItem : IEquatable<BulkUpdate
     /// The user who reviewed the request, if applicable. The id may be &#39;System&#39; if it was an automated process
     /// </summary>
     /// <value>The user who reviewed the request, if applicable. The id may be &#39;System&#39; if it was an automated process</value>
-    [DataMember(Name = "reviewedBy", EmitDefaultValue = false)]
+    [JsonPropertyName("reviewedBy")]
     public UserReference ReviewedBy { get; set; }
 
 
@@ -186,7 +186,7 @@ public partial class BulkUpdateShiftTradeStateResultItem : IEquatable<BulkUpdate
     /// The date the request was reviewed, if applicable. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z
     /// </summary>
     /// <value>The date the request was reviewed, if applicable. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z</value>
-    [DataMember(Name = "reviewedDate", EmitDefaultValue = false)]
+    [JsonPropertyName("reviewedDate")]
     public DateTime? ReviewedDate { get; set; }
 
 
@@ -197,7 +197,7 @@ public partial class BulkUpdateShiftTradeStateResultItem : IEquatable<BulkUpdate
     /// Version metadata for the shift trade
     /// </summary>
     /// <value>Version metadata for the shift trade</value>
-    [DataMember(Name = "metadata", EmitDefaultValue = false)]
+    [JsonPropertyName("metadata")]
     public WfmVersionedEntityMetadata Metadata { get; set; }
 
 

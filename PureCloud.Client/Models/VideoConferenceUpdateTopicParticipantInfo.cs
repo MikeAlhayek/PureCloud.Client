@@ -1,12 +1,12 @@
-using System.Runtime.Serialization;
 using System.Text;
+using System.Text.Json.Serialization;
 
 namespace PureCloud.Client.Models;
 
 /// <summary>
 /// VideoConferenceUpdateTopicParticipantInfo
 /// </summary>
-[DataContract]
+
 public partial class VideoConferenceUpdateTopicParticipantInfo : IEquatable<VideoConferenceUpdateTopicParticipantInfo>
 {
     /// <summary>
@@ -26,7 +26,7 @@ public partial class VideoConferenceUpdateTopicParticipantInfo : IEquatable<Vide
     /// <summary>
     /// Gets or Sets ActiveParticipantCount
     /// </summary>
-    [DataMember(Name = "activeParticipantCount", EmitDefaultValue = false)]
+    [JsonPropertyName("activeParticipantCount")]
     public long? ActiveParticipantCount { get; set; }
 
 
@@ -34,7 +34,7 @@ public partial class VideoConferenceUpdateTopicParticipantInfo : IEquatable<Vide
     /// <summary>
     /// Gets or Sets Version
     /// </summary>
-    [DataMember(Name = "version", EmitDefaultValue = false)]
+    [JsonPropertyName("version")]
     public long? Version { get; set; }
 
 

@@ -1,4 +1,3 @@
-using System.Runtime.Serialization;
 using System.Text;
 using System.Text.Json.Serialization;
 
@@ -7,7 +6,7 @@ namespace PureCloud.Client.Models;
 /// <summary>
 /// External Identifiers of user. The external identifier must be unique within the organization and the &#39;authority&#39;
 /// </summary>
-[DataContract]
+
 public partial class ScimGenesysUserExternalId : IEquatable<ScimGenesysUserExternalId>
 {
 
@@ -34,7 +33,7 @@ public partial class ScimGenesysUserExternalId : IEquatable<ScimGenesysUserExter
     /// Authority, or scope, of \&quot;externalId\&quot;. Allows multiple external identifiers to be defined. Represents the source of the external identifier.
     /// </summary>
     /// <value>Authority, or scope, of \&quot;externalId\&quot;. Allows multiple external identifiers to be defined. Represents the source of the external identifier.</value>
-    [DataMember(Name = "authority", EmitDefaultValue = false)]
+    [JsonPropertyName("authority")]
     public string Authority { get; set; }
 
 
@@ -43,7 +42,7 @@ public partial class ScimGenesysUserExternalId : IEquatable<ScimGenesysUserExter
     /// Identifier of the user in an external system.
     /// </summary>
     /// <value>Identifier of the user in an external system.</value>
-    [DataMember(Name = "value", EmitDefaultValue = false)]
+    [JsonPropertyName("value")]
     public string Value { get; set; }
 
 

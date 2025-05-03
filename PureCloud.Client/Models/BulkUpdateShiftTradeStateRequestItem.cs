@@ -7,14 +7,14 @@ namespace PureCloud.Client.Models;
 /// <summary>
 /// BulkUpdateShiftTradeStateRequestItem
 /// </summary>
-[DataContract]
+
 public partial class BulkUpdateShiftTradeStateRequestItem : IEquatable<BulkUpdateShiftTradeStateRequestItem>
 {
     /// <summary>
     /// The new state to set on the shift trade
     /// </summary>
     /// <value>The new state to set on the shift trade</value>
-    [JsonConverter(typeof(JsonStringEnumConverter))]
+    
     public enum StateEnum
     {
         /// <summary>
@@ -65,7 +65,7 @@ public partial class BulkUpdateShiftTradeStateRequestItem : IEquatable<BulkUpdat
     /// The new state to set on the shift trade
     /// </summary>
     /// <value>The new state to set on the shift trade</value>
-    [DataMember(Name = "state", EmitDefaultValue = false)]
+    [JsonPropertyName("state")]
     public StateEnum? State { get; set; }
 
     /// <summary>
@@ -93,7 +93,7 @@ public partial class BulkUpdateShiftTradeStateRequestItem : IEquatable<BulkUpdat
     /// The globally unique identifier for the object.
     /// </summary>
     /// <value>The globally unique identifier for the object.</value>
-    [DataMember(Name = "id", EmitDefaultValue = false)]
+    [JsonPropertyName("id")]
     public string Id { get; set; }
 
 
@@ -104,7 +104,7 @@ public partial class BulkUpdateShiftTradeStateRequestItem : IEquatable<BulkUpdat
     /// Version metadata for the shift trade
     /// </summary>
     /// <value>Version metadata for the shift trade</value>
-    [DataMember(Name = "metadata", EmitDefaultValue = false)]
+    [JsonPropertyName("metadata")]
     public WfmVersionedEntityMetadata Metadata { get; set; }
 
 

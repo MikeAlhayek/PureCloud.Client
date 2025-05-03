@@ -7,14 +7,14 @@ namespace PureCloud.Client.Models;
 /// <summary>
 /// SourceSyncResponse
 /// </summary>
-[DataContract]
+
 public partial class SourceSyncResponse : IEquatable<SourceSyncResponse>
 {
     /// <summary>
     /// Sync state.
     /// </summary>
     /// <value>Sync state.</value>
-    [JsonConverter(typeof(JsonStringEnumConverter))]
+    
     public enum StateEnum
     {
         /// <summary>
@@ -53,7 +53,7 @@ public partial class SourceSyncResponse : IEquatable<SourceSyncResponse>
     /// Sync state.
     /// </summary>
     /// <value>Sync state.</value>
-    [DataMember(Name = "state", EmitDefaultValue = false)]
+    [JsonPropertyName("state")]
     public StateEnum? State { get; set; }
     /// <summary>
     /// Initializes a new instance of the <see cref="SourceSyncResponse" /> class.
@@ -83,7 +83,7 @@ public partial class SourceSyncResponse : IEquatable<SourceSyncResponse>
     /// Sync error.
     /// </summary>
     /// <value>Sync error.</value>
-    [DataMember(Name = "error", EmitDefaultValue = false)]
+    [JsonPropertyName("error")]
     public ErrorBody Error { get; set; }
 
 
@@ -92,7 +92,7 @@ public partial class SourceSyncResponse : IEquatable<SourceSyncResponse>
     /// Synchronization creation date-time for this source. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z
     /// </summary>
     /// <value>Synchronization creation date-time for this source. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z</value>
-    [DataMember(Name = "dateCreated", EmitDefaultValue = false)]
+    [JsonPropertyName("dateCreated")]
     public DateTime? DateCreated { get; set; }
 
 
@@ -101,7 +101,7 @@ public partial class SourceSyncResponse : IEquatable<SourceSyncResponse>
     /// Synchronization last modification date-time for this source. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z
     /// </summary>
     /// <value>Synchronization last modification date-time for this source. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z</value>
-    [DataMember(Name = "dateModified", EmitDefaultValue = false)]
+    [JsonPropertyName("dateModified")]
     public DateTime? DateModified { get; set; }
 
 
@@ -110,7 +110,7 @@ public partial class SourceSyncResponse : IEquatable<SourceSyncResponse>
     /// Knowledge base to which this synchronization belongs.
     /// </summary>
     /// <value>Knowledge base to which this synchronization belongs.</value>
-    [DataMember(Name = "knowledgeBase", EmitDefaultValue = false)]
+    [JsonPropertyName("knowledgeBase")]
     public AddressableEntityRef KnowledgeBase { get; set; }
 
 
@@ -119,7 +119,7 @@ public partial class SourceSyncResponse : IEquatable<SourceSyncResponse>
     /// Source to which this synchronization belongs.
     /// </summary>
     /// <value>Source to which this synchronization belongs.</value>
-    [DataMember(Name = "source", EmitDefaultValue = false)]
+    [JsonPropertyName("source")]
     public AddressableEntityRef Source { get; set; }
 
 

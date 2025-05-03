@@ -1,4 +1,3 @@
-using System.Runtime.Serialization;
 using System.Text;
 using System.Text.Json.Serialization;
 
@@ -7,7 +6,7 @@ namespace PureCloud.Client.Models;
 /// <summary>
 /// ContactListingRequest
 /// </summary>
-[DataContract]
+
 public partial class ContactListingRequest : IEquatable<ContactListingRequest>
 {
 
@@ -40,7 +39,7 @@ public partial class ContactListingRequest : IEquatable<ContactListingRequest>
     /// Contact List Filter ID.
     /// </summary>
     /// <value>Contact List Filter ID.</value>
-    [DataMember(Name = "contactListFilterId", EmitDefaultValue = false)]
+    [JsonPropertyName("contactListFilterId")]
     public string ContactListFilterId { get; set; }
 
 
@@ -49,7 +48,7 @@ public partial class ContactListingRequest : IEquatable<ContactListingRequest>
     /// Criteria to filter the contacts by.
     /// </summary>
     /// <value>Criteria to filter the contacts by.</value>
-    [DataMember(Name = "criteria", EmitDefaultValue = false)]
+    [JsonPropertyName("criteria")]
     public ContactBulkSearchCriteria Criteria { get; set; }
 
 
@@ -58,7 +57,7 @@ public partial class ContactListingRequest : IEquatable<ContactListingRequest>
     /// Page number.
     /// </summary>
     /// <value>Page number.</value>
-    [DataMember(Name = "pageNumber", EmitDefaultValue = false)]
+    [JsonPropertyName("pageNumber")]
     public int? PageNumber { get; set; }
 
 
@@ -67,7 +66,7 @@ public partial class ContactListingRequest : IEquatable<ContactListingRequest>
     /// Page size. The max that will be returned is 100.
     /// </summary>
     /// <value>Page size. The max that will be returned is 100.</value>
-    [DataMember(Name = "pageSize", EmitDefaultValue = false)]
+    [JsonPropertyName("pageSize")]
     public int? PageSize { get; set; }
 
 
@@ -76,7 +75,7 @@ public partial class ContactListingRequest : IEquatable<ContactListingRequest>
     /// The order in which to sort contacts.
     /// </summary>
     /// <value>The order in which to sort contacts.</value>
-    [DataMember(Name = "contactSorts", EmitDefaultValue = false)]
+    [JsonPropertyName("contactSorts")]
     public List<ContactSort> ContactSorts { get; set; }
 
 

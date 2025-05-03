@@ -1,4 +1,3 @@
-using System.Runtime.Serialization;
 using System.Text;
 using System.Text.Json.Serialization;
 
@@ -7,7 +6,7 @@ namespace PureCloud.Client.Models;
 /// <summary>
 /// ShrinkageOverride
 /// </summary>
-[DataContract]
+
 public partial class ShrinkageOverride : IEquatable<ShrinkageOverride>
 {
 
@@ -34,7 +33,7 @@ public partial class ShrinkageOverride : IEquatable<ShrinkageOverride>
     /// Index of shrinkage override interval. Starting index is 0 and indexes are based on 15 minute intervals for a 7 day week
     /// </summary>
     /// <value>Index of shrinkage override interval. Starting index is 0 and indexes are based on 15 minute intervals for a 7 day week</value>
-    [DataMember(Name = "intervalIndex", EmitDefaultValue = false)]
+    [JsonPropertyName("intervalIndex")]
     public int? IntervalIndex { get; set; }
 
 
@@ -43,7 +42,7 @@ public partial class ShrinkageOverride : IEquatable<ShrinkageOverride>
     /// Shrinkage override percent. Setting a null value will reset the interval to the default
     /// </summary>
     /// <value>Shrinkage override percent. Setting a null value will reset the interval to the default</value>
-    [DataMember(Name = "shrinkagePercent", EmitDefaultValue = false)]
+    [JsonPropertyName("shrinkagePercent")]
     public double? ShrinkagePercent { get; set; }
 
 

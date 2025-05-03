@@ -1,4 +1,3 @@
-using System.Runtime.Serialization;
 using System.Text;
 using System.Text.Json.Serialization;
 
@@ -7,7 +6,7 @@ namespace PureCloud.Client.Models;
 /// <summary>
 /// LearningScheduleSlotsQueryRequest
 /// </summary>
-[DataContract]
+
 public partial class LearningScheduleSlotsQueryRequest : IEquatable<LearningScheduleSlotsQueryRequest>
 {
 
@@ -38,7 +37,7 @@ public partial class LearningScheduleSlotsQueryRequest : IEquatable<LearningSche
     /// Range of time to get slots for scheduling learning activities. Intervals are represented as an ISO-8601 string. For example: YYYY-MM-DDThh:mm:ss/YYYY-MM-DDThh:mm:ss
     /// </summary>
     /// <value>Range of time to get slots for scheduling learning activities. Intervals are represented as an ISO-8601 string. For example: YYYY-MM-DDThh:mm:ss/YYYY-MM-DDThh:mm:ss</value>
-    [DataMember(Name = "interval", EmitDefaultValue = false)]
+    [JsonPropertyName("interval")]
     public string Interval { get; set; }
 
 
@@ -47,7 +46,7 @@ public partial class LearningScheduleSlotsQueryRequest : IEquatable<LearningSche
     /// The duration of Learning Assignment to schedule in 15 minutes granularity
     /// </summary>
     /// <value>The duration of Learning Assignment to schedule in 15 minutes granularity</value>
-    [DataMember(Name = "lengthInMinutes", EmitDefaultValue = false)]
+    [JsonPropertyName("lengthInMinutes")]
     public int? LengthInMinutes { get; set; }
 
 
@@ -56,7 +55,7 @@ public partial class LearningScheduleSlotsQueryRequest : IEquatable<LearningSche
     /// The user IDs for which to fetch schedules. Must be only 1.
     /// </summary>
     /// <value>The user IDs for which to fetch schedules. Must be only 1.</value>
-    [DataMember(Name = "userIds", EmitDefaultValue = false)]
+    [JsonPropertyName("userIds")]
     public List<string> UserIds { get; set; }
 
 
@@ -65,7 +64,7 @@ public partial class LearningScheduleSlotsQueryRequest : IEquatable<LearningSche
     /// Assignment ID to exclude from consideration when determining blocked slots
     /// </summary>
     /// <value>Assignment ID to exclude from consideration when determining blocked slots</value>
-    [DataMember(Name = "interruptibleAssignmentId", EmitDefaultValue = false)]
+    [JsonPropertyName("interruptibleAssignmentId")]
     public string InterruptibleAssignmentId { get; set; }
 
 

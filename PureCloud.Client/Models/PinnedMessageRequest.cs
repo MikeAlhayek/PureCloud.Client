@@ -1,4 +1,3 @@
-using System.Runtime.Serialization;
 using System.Text;
 using System.Text.Json.Serialization;
 
@@ -7,7 +6,7 @@ namespace PureCloud.Client.Models;
 /// <summary>
 /// PinnedMessageRequest
 /// </summary>
-[DataContract]
+
 public partial class PinnedMessageRequest : IEquatable<PinnedMessageRequest>
 {
 
@@ -32,7 +31,7 @@ public partial class PinnedMessageRequest : IEquatable<PinnedMessageRequest>
     /// Ids of the messages to pin
     /// </summary>
     /// <value>Ids of the messages to pin</value>
-    [DataMember(Name = "pinnedMessageIds", EmitDefaultValue = false)]
+    [JsonPropertyName("pinnedMessageIds")]
     public List<string> PinnedMessageIds { get; set; }
 
 

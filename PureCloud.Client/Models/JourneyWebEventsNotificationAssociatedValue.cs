@@ -7,13 +7,13 @@ namespace PureCloud.Client.Models;
 /// <summary>
 /// JourneyWebEventsNotificationAssociatedValue
 /// </summary>
-[DataContract]
+
 public partial class JourneyWebEventsNotificationAssociatedValue : IEquatable<JourneyWebEventsNotificationAssociatedValue>
 {
     /// <summary>
     /// Gets or Sets DataType
     /// </summary>
-    [JsonConverter(typeof(JsonStringEnumConverter))]
+    
     public enum DataTypeEnum
     {
         /// <summary>
@@ -39,7 +39,7 @@ public partial class JourneyWebEventsNotificationAssociatedValue : IEquatable<Jo
     /// <summary>
     /// Gets or Sets DataType
     /// </summary>
-    [DataMember(Name = "dataType", EmitDefaultValue = false)]
+    [JsonPropertyName("dataType")]
     public DataTypeEnum? DataType { get; set; }
     /// <summary>
     /// Initializes a new instance of the <see cref="JourneyWebEventsNotificationAssociatedValue" /> class.
@@ -60,7 +60,7 @@ public partial class JourneyWebEventsNotificationAssociatedValue : IEquatable<Jo
     /// <summary>
     /// Gets or Sets Value
     /// </summary>
-    [DataMember(Name = "value", EmitDefaultValue = false)]
+    [JsonPropertyName("value")]
     public double? Value { get; set; }
 
 

@@ -1,12 +1,12 @@
-using System.Runtime.Serialization;
 using System.Text;
+using System.Text.Json.Serialization;
 
 namespace PureCloud.Client.Models;
 
 /// <summary>
 /// EvaluationAssignment
 /// </summary>
-[DataContract]
+
 public partial class EvaluationAssignment : IEquatable<EvaluationAssignment>
 {
     /// <summary>
@@ -26,7 +26,7 @@ public partial class EvaluationAssignment : IEquatable<EvaluationAssignment>
     /// <summary>
     /// Gets or Sets EvaluationForm
     /// </summary>
-    [DataMember(Name = "evaluationForm", EmitDefaultValue = false)]
+    [JsonPropertyName("evaluationForm")]
     public EvaluationForm EvaluationForm { get; set; }
 
 
@@ -34,7 +34,7 @@ public partial class EvaluationAssignment : IEquatable<EvaluationAssignment>
     /// <summary>
     /// Gets or Sets User
     /// </summary>
-    [DataMember(Name = "user", EmitDefaultValue = false)]
+    [JsonPropertyName("user")]
     public User User { get; set; }
 
 

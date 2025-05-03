@@ -1,12 +1,12 @@
-using System.Runtime.Serialization;
 using System.Text;
+using System.Text.Json.Serialization;
 
 namespace PureCloud.Client.Models;
 
 /// <summary>
 /// SelectedCustomCalculationColumns
 /// </summary>
-[DataContract]
+
 public partial class SelectedCustomCalculationColumns : IEquatable<SelectedCustomCalculationColumns>
 {
     /// <summary>
@@ -29,7 +29,7 @@ public partial class SelectedCustomCalculationColumns : IEquatable<SelectedCusto
     /// Custom calculation added as a column
     /// </summary>
     /// <value>Custom calculation added as a column</value>
-    [DataMember(Name = "customCalculation", EmitDefaultValue = false)]
+    [JsonPropertyName("customCalculation")]
     public AddressableEntityRef CustomCalculation { get; set; }
 
 
@@ -38,7 +38,7 @@ public partial class SelectedCustomCalculationColumns : IEquatable<SelectedCusto
     /// Indicates if selected custom calculation column is deleted or access revoked for the user
     /// </summary>
     /// <value>Indicates if selected custom calculation column is deleted or access revoked for the user</value>
-    [DataMember(Name = "restricted", EmitDefaultValue = false)]
+    [JsonPropertyName("restricted")]
     public bool? Restricted { get; set; }
 
 
@@ -47,7 +47,7 @@ public partial class SelectedCustomCalculationColumns : IEquatable<SelectedCusto
     /// Is selected custom calculation column soft deleted
     /// </summary>
     /// <value>Is selected custom calculation column soft deleted</value>
-    [DataMember(Name = "softDeleted", EmitDefaultValue = false)]
+    [JsonPropertyName("softDeleted")]
     public bool? SoftDeleted { get; set; }
 
 

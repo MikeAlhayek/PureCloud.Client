@@ -1,4 +1,3 @@
-using System.Runtime.Serialization;
 using System.Text;
 using System.Text.Json.Serialization;
 
@@ -7,7 +6,7 @@ namespace PureCloud.Client.Models;
 /// <summary>
 /// ProgramMappingsRequest
 /// </summary>
-[DataContract]
+
 public partial class ProgramMappingsRequest : IEquatable<ProgramMappingsRequest>
 {
 
@@ -34,7 +33,7 @@ public partial class ProgramMappingsRequest : IEquatable<ProgramMappingsRequest>
     /// The program queues
     /// </summary>
     /// <value>The program queues</value>
-    [DataMember(Name = "queueIds", EmitDefaultValue = false)]
+    [JsonPropertyName("queueIds")]
     public List<string> QueueIds { get; set; }
 
 
@@ -43,7 +42,7 @@ public partial class ProgramMappingsRequest : IEquatable<ProgramMappingsRequest>
     /// The program flows
     /// </summary>
     /// <value>The program flows</value>
-    [DataMember(Name = "flowIds", EmitDefaultValue = false)]
+    [JsonPropertyName("flowIds")]
     public List<string> FlowIds { get; set; }
 
 

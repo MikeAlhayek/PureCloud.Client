@@ -7,13 +7,13 @@ namespace PureCloud.Client.Models;
 /// <summary>
 /// EmailOutboundDomainResult
 /// </summary>
-[DataContract]
+
 public partial class EmailOutboundDomainResult : IEquatable<EmailOutboundDomainResult>
 {
     /// <summary>
     /// Gets or Sets SenderStatus
     /// </summary>
-    [JsonConverter(typeof(JsonStringEnumConverter))]
+    
     public enum SenderStatusEnum
     {
         /// <summary>
@@ -57,7 +57,7 @@ public partial class EmailOutboundDomainResult : IEquatable<EmailOutboundDomainR
     /// <summary>
     /// Gets or Sets SenderType
     /// </summary>
-    [JsonConverter(typeof(JsonStringEnumConverter))]
+    
     public enum SenderTypeEnum
     {
         /// <summary>
@@ -89,12 +89,12 @@ public partial class EmailOutboundDomainResult : IEquatable<EmailOutboundDomainR
     /// <summary>
     /// Gets or Sets SenderStatus
     /// </summary>
-    [DataMember(Name = "senderStatus", EmitDefaultValue = false)]
+    [JsonPropertyName("senderStatus")]
     public SenderStatusEnum? SenderStatus { get; set; }
     /// <summary>
     /// Gets or Sets SenderType
     /// </summary>
-    [DataMember(Name = "senderType", EmitDefaultValue = false)]
+    [JsonPropertyName("senderType")]
     public SenderTypeEnum? SenderType { get; set; }
     /// <summary>
     /// Initializes a new instance of the <see cref="EmailOutboundDomainResult" /> class.
@@ -119,7 +119,7 @@ public partial class EmailOutboundDomainResult : IEquatable<EmailOutboundDomainR
     /// <summary>
     /// Gets or Sets DnsCnameBounceRecord
     /// </summary>
-    [DataMember(Name = "dnsCnameBounceRecord", EmitDefaultValue = false)]
+    [JsonPropertyName("dnsCnameBounceRecord")]
     public DnsRecordEntry DnsCnameBounceRecord { get; set; }
 
 
@@ -127,7 +127,7 @@ public partial class EmailOutboundDomainResult : IEquatable<EmailOutboundDomainR
     /// <summary>
     /// Gets or Sets DnsTxtSendingRecord
     /// </summary>
-    [DataMember(Name = "dnsTxtSendingRecord", EmitDefaultValue = false)]
+    [JsonPropertyName("dnsTxtSendingRecord")]
     public DnsRecordEntry DnsTxtSendingRecord { get; set; }
 
 
@@ -135,7 +135,7 @@ public partial class EmailOutboundDomainResult : IEquatable<EmailOutboundDomainR
     /// <summary>
     /// Gets or Sets DomainName
     /// </summary>
-    [DataMember(Name = "domainName", EmitDefaultValue = false)]
+    [JsonPropertyName("domainName")]
     public string DomainName { get; set; }
 
 

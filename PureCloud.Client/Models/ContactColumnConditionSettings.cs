@@ -7,14 +7,14 @@ namespace PureCloud.Client.Models;
 /// <summary>
 /// ContactColumnConditionSettings
 /// </summary>
-[DataContract]
+
 public partial class ContactColumnConditionSettings : IEquatable<ContactColumnConditionSettings>
 {
     /// <summary>
     /// The operator to use when comparing values.
     /// </summary>
     /// <value>The operator to use when comparing values.</value>
-    [JsonConverter(typeof(JsonStringEnumConverter))]
+    
     public enum OperatorEnum
     {
         /// <summary>
@@ -89,7 +89,7 @@ public partial class ContactColumnConditionSettings : IEquatable<ContactColumnCo
     /// The data type the value should be treated as.
     /// </summary>
     /// <value>The data type the value should be treated as.</value>
-    [JsonConverter(typeof(JsonStringEnumConverter))]
+    
     public enum ValueTypeEnum
     {
         /// <summary>
@@ -128,13 +128,13 @@ public partial class ContactColumnConditionSettings : IEquatable<ContactColumnCo
     /// The operator to use when comparing values.
     /// </summary>
     /// <value>The operator to use when comparing values.</value>
-    [DataMember(Name = "operator", EmitDefaultValue = false)]
+    [JsonPropertyName("operator")]
     public OperatorEnum? Operator { get; set; }
     /// <summary>
     /// The data type the value should be treated as.
     /// </summary>
     /// <value>The data type the value should be treated as.</value>
-    [DataMember(Name = "valueType", EmitDefaultValue = false)]
+    [JsonPropertyName("valueType")]
     public ValueTypeEnum? ValueType { get; set; }
 
     /// <summary>
@@ -164,7 +164,7 @@ public partial class ContactColumnConditionSettings : IEquatable<ContactColumnCo
     /// The name of the contact list column to evaluate.
     /// </summary>
     /// <value>The name of the contact list column to evaluate.</value>
-    [DataMember(Name = "columnName", EmitDefaultValue = false)]
+    [JsonPropertyName("columnName")]
     public string ColumnName { get; set; }
 
 
@@ -175,7 +175,7 @@ public partial class ContactColumnConditionSettings : IEquatable<ContactColumnCo
     /// The value to compare against the contact&#39;s data.
     /// </summary>
     /// <value>The value to compare against the contact&#39;s data.</value>
-    [DataMember(Name = "value", EmitDefaultValue = false)]
+    [JsonPropertyName("value")]
     public string Value { get; set; }
 
 

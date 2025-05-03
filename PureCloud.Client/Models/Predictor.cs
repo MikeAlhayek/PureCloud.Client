@@ -7,14 +7,14 @@ namespace PureCloud.Client.Models;
 /// <summary>
 /// Predictor
 /// </summary>
-[DataContract]
+
 public partial class Predictor : IEquatable<Predictor>
 {
     /// <summary>
     /// The predictor state.
     /// </summary>
     /// <value>The predictor state.</value>
-    [JsonConverter(typeof(JsonStringEnumConverter))]
+    
     public enum StateEnum
     {
         /// <summary>
@@ -47,7 +47,7 @@ public partial class Predictor : IEquatable<Predictor>
     /// The predictor state.
     /// </summary>
     /// <value>The predictor state.</value>
-    [DataMember(Name = "state", EmitDefaultValue = false)]
+    [JsonPropertyName("state")]
     public StateEnum? State { get; private set; }
 
     /// <summary>
@@ -79,7 +79,7 @@ public partial class Predictor : IEquatable<Predictor>
     /// The globally unique identifier for the object.
     /// </summary>
     /// <value>The globally unique identifier for the object.</value>
-    [DataMember(Name = "id", EmitDefaultValue = false)]
+    [JsonPropertyName("id")]
     public string Id { get; private set; }
 
 
@@ -88,7 +88,7 @@ public partial class Predictor : IEquatable<Predictor>
     /// The queue IDs associated with the predictor.
     /// </summary>
     /// <value>The queue IDs associated with the predictor.</value>
-    [DataMember(Name = "queues", EmitDefaultValue = false)]
+    [JsonPropertyName("queues")]
     public List<AddressableEntityRef> Queues { get; set; }
 
 
@@ -97,7 +97,7 @@ public partial class Predictor : IEquatable<Predictor>
     /// The KPI that the predictor attempts to maximize/minimize.
     /// </summary>
     /// <value>The KPI that the predictor attempts to maximize/minimize.</value>
-    [DataMember(Name = "kpi", EmitDefaultValue = false)]
+    [JsonPropertyName("kpi")]
     public string Kpi { get; set; }
 
 
@@ -106,7 +106,7 @@ public partial class Predictor : IEquatable<Predictor>
     /// Number of seconds allocated to predictive routing before attempting a different routing method. This is a value between 12 and 900 seconds.
     /// </summary>
     /// <value>Number of seconds allocated to predictive routing before attempting a different routing method. This is a value between 12 and 900 seconds.</value>
-    [DataMember(Name = "routingTimeoutSeconds", EmitDefaultValue = false)]
+    [JsonPropertyName("routingTimeoutSeconds")]
     public int? RoutingTimeoutSeconds { get; set; }
 
 
@@ -115,7 +115,7 @@ public partial class Predictor : IEquatable<Predictor>
     /// The predictor schedule that determines when the predictor is used for routing interactions.
     /// </summary>
     /// <value>The predictor schedule that determines when the predictor is used for routing interactions.</value>
-    [DataMember(Name = "schedule", EmitDefaultValue = false)]
+    [JsonPropertyName("schedule")]
     public PredictorSchedule Schedule { get; set; }
 
 
@@ -126,7 +126,7 @@ public partial class Predictor : IEquatable<Predictor>
     /// DateTime indicating when the predictor was created. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z
     /// </summary>
     /// <value>DateTime indicating when the predictor was created. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z</value>
-    [DataMember(Name = "dateCreated", EmitDefaultValue = false)]
+    [JsonPropertyName("dateCreated")]
     public DateTime? DateCreated { get; private set; }
 
 
@@ -135,7 +135,7 @@ public partial class Predictor : IEquatable<Predictor>
     /// DateTime indicating when the predictor was last updated. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z
     /// </summary>
     /// <value>DateTime indicating when the predictor was last updated. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z</value>
-    [DataMember(Name = "dateModified", EmitDefaultValue = false)]
+    [JsonPropertyName("dateModified")]
     public DateTime? DateModified { get; private set; }
 
 
@@ -144,7 +144,7 @@ public partial class Predictor : IEquatable<Predictor>
     /// The predictor balancing configuration to enable workload balancing.
     /// </summary>
     /// <value>The predictor balancing configuration to enable workload balancing.</value>
-    [DataMember(Name = "workloadBalancingConfig", EmitDefaultValue = false)]
+    [JsonPropertyName("workloadBalancingConfig")]
     public PredictorWorkloadBalancing WorkloadBalancingConfig { get; set; }
 
 
@@ -153,7 +153,7 @@ public partial class Predictor : IEquatable<Predictor>
     /// Predictor error code - optional details on why the predictor went into error state.
     /// </summary>
     /// <value>Predictor error code - optional details on why the predictor went into error state.</value>
-    [DataMember(Name = "errorCode", EmitDefaultValue = false)]
+    [JsonPropertyName("errorCode")]
     public string ErrorCode { get; private set; }
 
 
@@ -162,7 +162,7 @@ public partial class Predictor : IEquatable<Predictor>
     /// Predictor&#39;s models
     /// </summary>
     /// <value>Predictor&#39;s models</value>
-    [DataMember(Name = "models", EmitDefaultValue = false)]
+    [JsonPropertyName("models")]
     public List<PredictorModelBrief> Models { get; private set; }
 
 
@@ -171,7 +171,7 @@ public partial class Predictor : IEquatable<Predictor>
     /// The URI for this object
     /// </summary>
     /// <value>The URI for this object</value>
-    [DataMember(Name = "selfUri", EmitDefaultValue = false)]
+    [JsonPropertyName("selfUri")]
     public string SelfUri { get; private set; }
 
 

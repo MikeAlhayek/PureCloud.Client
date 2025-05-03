@@ -7,14 +7,14 @@ namespace PureCloud.Client.Models;
 /// <summary>
 /// DashboardConfiguration
 /// </summary>
-[DataContract]
+
 public partial class DashboardConfiguration : IEquatable<DashboardConfiguration>
 {
     /// <summary>
     /// The layout type of the dashboard
     /// </summary>
     /// <value>The layout type of the dashboard</value>
-    [JsonConverter(typeof(JsonStringEnumConverter))]
+    
     public enum LayoutTypeEnum
     {
         /// <summary>
@@ -41,7 +41,7 @@ public partial class DashboardConfiguration : IEquatable<DashboardConfiguration>
     /// The layout type of the dashboard
     /// </summary>
     /// <value>The layout type of the dashboard</value>
-    [DataMember(Name = "layoutType", EmitDefaultValue = false)]
+    [JsonPropertyName("layoutType")]
     public LayoutTypeEnum? LayoutType { get; set; }
 
     /// <summary>
@@ -87,7 +87,7 @@ public partial class DashboardConfiguration : IEquatable<DashboardConfiguration>
     /// The globally unique identifier for the object.
     /// </summary>
     /// <value>The globally unique identifier for the object.</value>
-    [DataMember(Name = "id", EmitDefaultValue = false)]
+    [JsonPropertyName("id")]
     public string Id { get; private set; }
 
 
@@ -96,7 +96,7 @@ public partial class DashboardConfiguration : IEquatable<DashboardConfiguration>
     /// The name of dashboard configuration.
     /// </summary>
     /// <value>The name of dashboard configuration.</value>
-    [DataMember(Name = "name", EmitDefaultValue = false)]
+    [JsonPropertyName("name")]
     public string Name { get; set; }
 
 
@@ -105,7 +105,7 @@ public partial class DashboardConfiguration : IEquatable<DashboardConfiguration>
     /// The count of rows for the specific dashboard configuration.
     /// </summary>
     /// <value>The count of rows for the specific dashboard configuration.</value>
-    [DataMember(Name = "rows", EmitDefaultValue = false)]
+    [JsonPropertyName("rows")]
     public int? Rows { get; set; }
 
 
@@ -114,7 +114,7 @@ public partial class DashboardConfiguration : IEquatable<DashboardConfiguration>
     /// The count of columns for the specific dashboard.
     /// </summary>
     /// <value>The count of columns for the specific dashboard.</value>
-    [DataMember(Name = "columns", EmitDefaultValue = false)]
+    [JsonPropertyName("columns")]
     public int? Columns { get; set; }
 
 
@@ -123,7 +123,7 @@ public partial class DashboardConfiguration : IEquatable<DashboardConfiguration>
     /// List of widgets for dashboard configuration.
     /// </summary>
     /// <value>List of widgets for dashboard configuration.</value>
-    [DataMember(Name = "widgets", EmitDefaultValue = false)]
+    [JsonPropertyName("widgets")]
     public List<Widget> Widgets { get; set; }
 
 
@@ -132,7 +132,7 @@ public partial class DashboardConfiguration : IEquatable<DashboardConfiguration>
     /// The flag indicates if the dashboard is favorited by the user
     /// </summary>
     /// <value>The flag indicates if the dashboard is favorited by the user</value>
-    [DataMember(Name = "favorite", EmitDefaultValue = false)]
+    [JsonPropertyName("favorite")]
     public bool? Favorite { get; set; }
 
 
@@ -141,7 +141,7 @@ public partial class DashboardConfiguration : IEquatable<DashboardConfiguration>
     /// The flag to indicate if the dashboard is published by an user
     /// </summary>
     /// <value>The flag to indicate if the dashboard is published by an user</value>
-    [DataMember(Name = "publicDashboard", EmitDefaultValue = false)]
+    [JsonPropertyName("publicDashboard")]
     public bool? PublicDashboard { get; set; }
 
 
@@ -150,7 +150,7 @@ public partial class DashboardConfiguration : IEquatable<DashboardConfiguration>
     /// The flag to indicate if the dashboard has any restricted data for that user
     /// </summary>
     /// <value>The flag to indicate if the dashboard has any restricted data for that user</value>
-    [DataMember(Name = "restricted", EmitDefaultValue = false)]
+    [JsonPropertyName("restricted")]
     public bool? Restricted { get; private set; }
 
 
@@ -161,7 +161,7 @@ public partial class DashboardConfiguration : IEquatable<DashboardConfiguration>
     /// The created date of the dashboard. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z
     /// </summary>
     /// <value>The created date of the dashboard. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z</value>
-    [DataMember(Name = "dateCreated", EmitDefaultValue = false)]
+    [JsonPropertyName("dateCreated")]
     public DateTime? DateCreated { get; set; }
 
 
@@ -170,7 +170,7 @@ public partial class DashboardConfiguration : IEquatable<DashboardConfiguration>
     /// The last modified date of the dashboard. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z
     /// </summary>
     /// <value>The last modified date of the dashboard. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z</value>
-    [DataMember(Name = "dateModified", EmitDefaultValue = false)]
+    [JsonPropertyName("dateModified")]
     public DateTime? DateModified { get; set; }
 
 
@@ -179,7 +179,7 @@ public partial class DashboardConfiguration : IEquatable<DashboardConfiguration>
     /// The deleted date of the dashboard. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z
     /// </summary>
     /// <value>The deleted date of the dashboard. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z</value>
-    [DataMember(Name = "dateDeleted", EmitDefaultValue = false)]
+    [JsonPropertyName("dateDeleted")]
     public DateTime? DateDeleted { get; set; }
 
 
@@ -188,7 +188,7 @@ public partial class DashboardConfiguration : IEquatable<DashboardConfiguration>
     /// The id of user who created the dashboard
     /// </summary>
     /// <value>The id of user who created the dashboard</value>
-    [DataMember(Name = "createdBy", EmitDefaultValue = false)]
+    [JsonPropertyName("createdBy")]
     public AddressableEntityRef CreatedBy { get; private set; }
 
 
@@ -197,7 +197,7 @@ public partial class DashboardConfiguration : IEquatable<DashboardConfiguration>
     /// The flag to indicate if the dashboard is shared
     /// </summary>
     /// <value>The flag to indicate if the dashboard is shared</value>
-    [DataMember(Name = "shared", EmitDefaultValue = false)]
+    [JsonPropertyName("shared")]
     public bool? Shared { get; set; }
 
 
@@ -206,7 +206,7 @@ public partial class DashboardConfiguration : IEquatable<DashboardConfiguration>
     /// The list of users and teams the dashboard is shared with
     /// </summary>
     /// <value>The list of users and teams the dashboard is shared with</value>
-    [DataMember(Name = "dashboardsSharedWith", EmitDefaultValue = false)]
+    [JsonPropertyName("dashboardsSharedWith")]
     public DashboardsSharedWith DashboardsSharedWith { get; set; }
 
 
@@ -215,7 +215,7 @@ public partial class DashboardConfiguration : IEquatable<DashboardConfiguration>
     /// The URI for this object
     /// </summary>
     /// <value>The URI for this object</value>
-    [DataMember(Name = "selfUri", EmitDefaultValue = false)]
+    [JsonPropertyName("selfUri")]
     public string SelfUri { get; private set; }
 
 

@@ -7,13 +7,13 @@ namespace PureCloud.Client.Models;
 /// <summary>
 /// LockInfo
 /// </summary>
-[DataContract]
+
 public partial class LockInfo : IEquatable<LockInfo>
 {
     /// <summary>
     /// Gets or Sets Action
     /// </summary>
-    [JsonConverter(typeof(JsonStringEnumConverter))]
+    
     public enum ActionEnum
     {
         /// <summary>
@@ -69,7 +69,7 @@ public partial class LockInfo : IEquatable<LockInfo>
     /// <summary>
     /// Gets or Sets Action
     /// </summary>
-    [DataMember(Name = "action", EmitDefaultValue = false)]
+    [JsonPropertyName("action")]
     public ActionEnum? Action { get; set; }
     /// <summary>
     /// Initializes a new instance of the <see cref="LockInfo" /> class.
@@ -92,7 +92,7 @@ public partial class LockInfo : IEquatable<LockInfo>
     /// <summary>
     /// Gets or Sets LockedBy
     /// </summary>
-    [DataMember(Name = "lockedBy", EmitDefaultValue = false)]
+    [JsonPropertyName("lockedBy")]
     public DomainEntityRef LockedBy { get; set; }
 
 
@@ -101,7 +101,7 @@ public partial class LockInfo : IEquatable<LockInfo>
     /// Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z
     /// </summary>
     /// <value>Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z</value>
-    [DataMember(Name = "dateCreated", EmitDefaultValue = false)]
+    [JsonPropertyName("dateCreated")]
     public DateTime? DateCreated { get; set; }
 
 
@@ -110,7 +110,7 @@ public partial class LockInfo : IEquatable<LockInfo>
     /// Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z
     /// </summary>
     /// <value>Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z</value>
-    [DataMember(Name = "dateExpires", EmitDefaultValue = false)]
+    [JsonPropertyName("dateExpires")]
     public DateTime? DateExpires { get; set; }
 
 

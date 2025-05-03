@@ -7,13 +7,13 @@ namespace PureCloud.Client.Models;
 /// <summary>
 /// V2ConversationMessageTypingEventForUserTopicConversationMessagingToRecipient
 /// </summary>
-[DataContract]
+
 public partial class V2ConversationMessageTypingEventForUserTopicConversationMessagingToRecipient : IEquatable<V2ConversationMessageTypingEventForUserTopicConversationMessagingToRecipient>
 {
     /// <summary>
     /// Gets or Sets IdType
     /// </summary>
-    [JsonConverter(typeof(JsonStringEnumConverter))]
+    
     public enum IdTypeEnum
     {
         /// <summary>
@@ -45,7 +45,7 @@ public partial class V2ConversationMessageTypingEventForUserTopicConversationMes
     /// <summary>
     /// Gets or Sets IdType
     /// </summary>
-    [DataMember(Name = "idType", EmitDefaultValue = false)]
+    [JsonPropertyName("idType")]
     public IdTypeEnum? IdType { get; set; }
     /// <summary>
     /// Initializes a new instance of the <see cref="V2ConversationMessageTypingEventForUserTopicConversationMessagingToRecipient" /> class.
@@ -76,7 +76,7 @@ public partial class V2ConversationMessageTypingEventForUserTopicConversationMes
     /// <summary>
     /// Gets or Sets Nickname
     /// </summary>
-    [DataMember(Name = "nickname", EmitDefaultValue = false)]
+    [JsonPropertyName("nickname")]
     public string Nickname { get; set; }
 
 
@@ -84,7 +84,7 @@ public partial class V2ConversationMessageTypingEventForUserTopicConversationMes
     /// <summary>
     /// Gets or Sets Id
     /// </summary>
-    [DataMember(Name = "id", EmitDefaultValue = false)]
+    [JsonPropertyName("id")]
     public string Id { get; set; }
 
 
@@ -94,7 +94,7 @@ public partial class V2ConversationMessageTypingEventForUserTopicConversationMes
     /// <summary>
     /// Gets or Sets Image
     /// </summary>
-    [DataMember(Name = "image", EmitDefaultValue = false)]
+    [JsonPropertyName("image")]
     public string Image { get; set; }
 
 
@@ -102,7 +102,7 @@ public partial class V2ConversationMessageTypingEventForUserTopicConversationMes
     /// <summary>
     /// Gets or Sets FirstName
     /// </summary>
-    [DataMember(Name = "firstName", EmitDefaultValue = false)]
+    [JsonPropertyName("firstName")]
     public string FirstName { get; set; }
 
 
@@ -110,7 +110,7 @@ public partial class V2ConversationMessageTypingEventForUserTopicConversationMes
     /// <summary>
     /// Gets or Sets LastName
     /// </summary>
-    [DataMember(Name = "lastName", EmitDefaultValue = false)]
+    [JsonPropertyName("lastName")]
     public string LastName { get; set; }
 
 
@@ -118,7 +118,7 @@ public partial class V2ConversationMessageTypingEventForUserTopicConversationMes
     /// <summary>
     /// Gets or Sets Email
     /// </summary>
-    [DataMember(Name = "email", EmitDefaultValue = false)]
+    [JsonPropertyName("email")]
     public string Email { get; set; }
 
 
@@ -126,7 +126,7 @@ public partial class V2ConversationMessageTypingEventForUserTopicConversationMes
     /// <summary>
     /// Gets or Sets AdditionalIds
     /// </summary>
-    [DataMember(Name = "additionalIds", EmitDefaultValue = false)]
+    [JsonPropertyName("additionalIds")]
     public List<V2ConversationMessageTypingEventForUserTopicConversationRecipientAdditionalIdentifier> AdditionalIds { get; set; }
 
 

@@ -1,12 +1,12 @@
-using System.Runtime.Serialization;
 using System.Text;
+using System.Text.Json.Serialization;
 
 namespace PureCloud.Client.Models;
 
 /// <summary>
 /// V2WemEngagementCelebrationUpdatesTopicContestPrizes
 /// </summary>
-[DataContract]
+
 public partial class V2WemEngagementCelebrationUpdatesTopicContestPrizes : IEquatable<V2WemEngagementCelebrationUpdatesTopicContestPrizes>
 {
     /// <summary>
@@ -28,7 +28,7 @@ public partial class V2WemEngagementCelebrationUpdatesTopicContestPrizes : IEqua
     /// <summary>
     /// Gets or Sets Tier
     /// </summary>
-    [DataMember(Name = "tier", EmitDefaultValue = false)]
+    [JsonPropertyName("tier")]
     public long? Tier { get; set; }
 
 
@@ -36,7 +36,7 @@ public partial class V2WemEngagementCelebrationUpdatesTopicContestPrizes : IEqua
     /// <summary>
     /// Gets or Sets Name
     /// </summary>
-    [DataMember(Name = "name", EmitDefaultValue = false)]
+    [JsonPropertyName("name")]
     public string Name { get; set; }
 
 
@@ -44,7 +44,7 @@ public partial class V2WemEngagementCelebrationUpdatesTopicContestPrizes : IEqua
     /// <summary>
     /// Gets or Sets ImageId
     /// </summary>
-    [DataMember(Name = "imageId", EmitDefaultValue = false)]
+    [JsonPropertyName("imageId")]
     public string ImageId { get; set; }
 
 

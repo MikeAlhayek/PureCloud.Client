@@ -7,14 +7,14 @@ namespace PureCloud.Client.Models;
 /// <summary>
 /// TranscriptAggregationView
 /// </summary>
-[DataContract]
+
 public partial class TranscriptAggregationView : IEquatable<TranscriptAggregationView>
 {
     /// <summary>
     /// Target metric name
     /// </summary>
     /// <value>Target metric name</value>
-    [JsonConverter(typeof(JsonStringEnumConverter))]
+    
     public enum TargetEnum
     {
         /// <summary>
@@ -89,7 +89,7 @@ public partial class TranscriptAggregationView : IEquatable<TranscriptAggregatio
     /// Type of view you wish to create
     /// </summary>
     /// <value>Type of view you wish to create</value>
-    [JsonConverter(typeof(JsonStringEnumConverter))]
+    
     public enum FunctionEnum
     {
         /// <summary>
@@ -110,13 +110,13 @@ public partial class TranscriptAggregationView : IEquatable<TranscriptAggregatio
     /// Target metric name
     /// </summary>
     /// <value>Target metric name</value>
-    [DataMember(Name = "target", EmitDefaultValue = false)]
+    [JsonPropertyName("target")]
     public TargetEnum? Target { get; set; }
     /// <summary>
     /// Type of view you wish to create
     /// </summary>
     /// <value>Type of view you wish to create</value>
-    [DataMember(Name = "function", EmitDefaultValue = false)]
+    [JsonPropertyName("function")]
     public FunctionEnum? Function { get; set; }
 
     /// <summary>
@@ -148,7 +148,7 @@ public partial class TranscriptAggregationView : IEquatable<TranscriptAggregatio
     /// A unique name for this view. Must be distinct from other views and built-in metric names.
     /// </summary>
     /// <value>A unique name for this view. Must be distinct from other views and built-in metric names.</value>
-    [DataMember(Name = "name", EmitDefaultValue = false)]
+    [JsonPropertyName("name")]
     public string Name { get; set; }
 
 
@@ -159,7 +159,7 @@ public partial class TranscriptAggregationView : IEquatable<TranscriptAggregatio
     /// Range of numbers for slicing up data
     /// </summary>
     /// <value>Range of numbers for slicing up data</value>
-    [DataMember(Name = "range", EmitDefaultValue = false)]
+    [JsonPropertyName("range")]
     public AggregationRange Range { get; set; }
 
 

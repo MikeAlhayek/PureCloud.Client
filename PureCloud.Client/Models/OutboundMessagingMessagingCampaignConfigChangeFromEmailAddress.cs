@@ -1,12 +1,12 @@
-using System.Runtime.Serialization;
 using System.Text;
+using System.Text.Json.Serialization;
 
 namespace PureCloud.Client.Models;
 
 /// <summary>
 /// An outbound-messaging messaging campaign email address
 /// </summary>
-[DataContract]
+
 public partial class OutboundMessagingMessagingCampaignConfigChangeFromEmailAddress : IEquatable<OutboundMessagingMessagingCampaignConfigChangeFromEmailAddress>
 {
     /// <summary>
@@ -29,7 +29,7 @@ public partial class OutboundMessagingMessagingCampaignConfigChangeFromEmailAddr
     /// The friendly name of the email address.
     /// </summary>
     /// <value>The friendly name of the email address.</value>
-    [DataMember(Name = "friendlyName", EmitDefaultValue = false)]
+    [JsonPropertyName("friendlyName")]
     public string FriendlyName { get; set; }
 
 
@@ -38,7 +38,7 @@ public partial class OutboundMessagingMessagingCampaignConfigChangeFromEmailAddr
     /// The local part of the email address.
     /// </summary>
     /// <value>The local part of the email address.</value>
-    [DataMember(Name = "localPart", EmitDefaultValue = false)]
+    [JsonPropertyName("localPart")]
     public string LocalPart { get; set; }
 
 
@@ -47,7 +47,7 @@ public partial class OutboundMessagingMessagingCampaignConfigChangeFromEmailAddr
     /// A UriReference for a resource
     /// </summary>
     /// <value>A UriReference for a resource</value>
-    [DataMember(Name = "domain", EmitDefaultValue = false)]
+    [JsonPropertyName("domain")]
     public OutboundMessagingMessagingCampaignConfigChangeUriReference Domain { get; set; }
 
 

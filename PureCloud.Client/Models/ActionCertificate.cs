@@ -7,14 +7,14 @@ namespace PureCloud.Client.Models;
 /// <summary>
 /// Details for an mTLS certificate
 /// </summary>
-[DataContract]
+
 public partial class ActionCertificate : IEquatable<ActionCertificate>
 {
     /// <summary>
     /// The Signing Authority for the certificate
     /// </summary>
     /// <value>The Signing Authority for the certificate</value>
-    [JsonConverter(typeof(JsonStringEnumConverter))]
+    
     public enum SigningAuthorityEnum
     {
         /// <summary>
@@ -41,7 +41,7 @@ public partial class ActionCertificate : IEquatable<ActionCertificate>
     /// The certificate status
     /// </summary>
     /// <value>The certificate status</value>
-    [JsonConverter(typeof(JsonStringEnumConverter))]
+    
     public enum StatusEnum
     {
         /// <summary>
@@ -68,7 +68,7 @@ public partial class ActionCertificate : IEquatable<ActionCertificate>
     /// The certificate type
     /// </summary>
     /// <value>The certificate type</value>
-    [JsonConverter(typeof(JsonStringEnumConverter))]
+    
     public enum TypeEnum
     {
         /// <summary>
@@ -89,19 +89,19 @@ public partial class ActionCertificate : IEquatable<ActionCertificate>
     /// The Signing Authority for the certificate
     /// </summary>
     /// <value>The Signing Authority for the certificate</value>
-    [DataMember(Name = "signingAuthority", EmitDefaultValue = false)]
+    [JsonPropertyName("signingAuthority")]
     public SigningAuthorityEnum? SigningAuthority { get; set; }
     /// <summary>
     /// The certificate status
     /// </summary>
     /// <value>The certificate status</value>
-    [DataMember(Name = "status", EmitDefaultValue = false)]
+    [JsonPropertyName("status")]
     public StatusEnum? Status { get; set; }
     /// <summary>
     /// The certificate type
     /// </summary>
     /// <value>The certificate type</value>
-    [DataMember(Name = "type", EmitDefaultValue = false)]
+    [JsonPropertyName("type")]
     public TypeEnum? Type { get; set; }
     /// <summary>
     /// Initializes a new instance of the <see cref="ActionCertificate" /> class.
@@ -127,7 +127,7 @@ public partial class ActionCertificate : IEquatable<ActionCertificate>
     /// The certificate string
     /// </summary>
     /// <value>The certificate string</value>
-    [DataMember(Name = "certificate", EmitDefaultValue = false)]
+    [JsonPropertyName("certificate")]
     public string Certificate { get; set; }
 
 

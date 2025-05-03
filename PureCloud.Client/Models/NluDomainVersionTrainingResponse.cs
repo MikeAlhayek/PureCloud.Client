@@ -1,12 +1,12 @@
-using System.Runtime.Serialization;
 using System.Text;
+using System.Text.Json.Serialization;
 
 namespace PureCloud.Client.Models;
 
 /// <summary>
 /// NluDomainVersionTrainingResponse
 /// </summary>
-[DataContract]
+
 public partial class NluDomainVersionTrainingResponse : IEquatable<NluDomainVersionTrainingResponse>
 {
     /// <summary>
@@ -25,7 +25,7 @@ public partial class NluDomainVersionTrainingResponse : IEquatable<NluDomainVers
     /// A message indicating result of the action.
     /// </summary>
     /// <value>A message indicating result of the action.</value>
-    [DataMember(Name = "message", EmitDefaultValue = false)]
+    [JsonPropertyName("message")]
     public string Message { get; private set; }
 
 
@@ -33,7 +33,7 @@ public partial class NluDomainVersionTrainingResponse : IEquatable<NluDomainVers
     /// <summary>
     /// Gets or Sets Version
     /// </summary>
-    [DataMember(Name = "version", EmitDefaultValue = false)]
+    [JsonPropertyName("version")]
     public NluDomainVersion Version { get; set; }
 
 

@@ -7,14 +7,14 @@ namespace PureCloud.Client.Models;
 /// <summary>
 /// DictionaryFeedbackExamplePhrase
 /// </summary>
-[DataContract]
+
 public partial class DictionaryFeedbackExamplePhrase : IEquatable<DictionaryFeedbackExamplePhrase>
 {
     /// <summary>
     /// The source of the given Example Phrase
     /// </summary>
     /// <value>The source of the given Example Phrase</value>
-    [JsonConverter(typeof(JsonStringEnumConverter))]
+    
     public enum SourceEnum
     {
         /// <summary>
@@ -35,7 +35,7 @@ public partial class DictionaryFeedbackExamplePhrase : IEquatable<DictionaryFeed
     /// The source of the given Example Phrase
     /// </summary>
     /// <value>The source of the given Example Phrase</value>
-    [DataMember(Name = "source", EmitDefaultValue = false)]
+    [JsonPropertyName("source")]
     public SourceEnum? Source { get; set; }
 
     /// <summary>
@@ -61,7 +61,7 @@ public partial class DictionaryFeedbackExamplePhrase : IEquatable<DictionaryFeed
     /// The Example Phrase text. At least 3 words and up to 20 words
     /// </summary>
     /// <value>The Example Phrase text. At least 3 words and up to 20 words</value>
-    [DataMember(Name = "phrase", EmitDefaultValue = false)]
+    [JsonPropertyName("phrase")]
     public string Phrase { get; set; }
 
 

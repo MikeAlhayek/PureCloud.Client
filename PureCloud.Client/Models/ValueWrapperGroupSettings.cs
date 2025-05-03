@@ -1,12 +1,12 @@
-using System.Runtime.Serialization;
 using System.Text;
+using System.Text.Json.Serialization;
 
 namespace PureCloud.Client.Models;
 
 /// <summary>
 /// ValueWrapperGroupSettings
 /// </summary>
-[DataContract]
+
 public partial class ValueWrapperGroupSettings : IEquatable<ValueWrapperGroupSettings>
 {
     /// <summary>
@@ -25,7 +25,7 @@ public partial class ValueWrapperGroupSettings : IEquatable<ValueWrapperGroupSet
     /// The value for the associated field
     /// </summary>
     /// <value>The value for the associated field</value>
-    [DataMember(Name = "value", EmitDefaultValue = false)]
+    [JsonPropertyName("value")]
     public GroupSettings Value { get; set; }
 
 

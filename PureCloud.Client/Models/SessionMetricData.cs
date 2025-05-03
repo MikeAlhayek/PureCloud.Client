@@ -1,12 +1,12 @@
-using System.Runtime.Serialization;
 using System.Text;
+using System.Text.Json.Serialization;
 
 namespace PureCloud.Client.Models;
 
 /// <summary>
 /// SessionMetricData
 /// </summary>
-[DataContract]
+
 public partial class SessionMetricData : IEquatable<SessionMetricData>
 {
     /// <summary>
@@ -31,7 +31,7 @@ public partial class SessionMetricData : IEquatable<SessionMetricData>
     /// Model to be used for internal evaluation purposes
     /// </summary>
     /// <value>Model to be used for internal evaluation purposes</value>
-    [DataMember(Name = "model", EmitDefaultValue = false)]
+    [JsonPropertyName("model")]
     public ModelData Model { get; set; }
 
 
@@ -40,7 +40,7 @@ public partial class SessionMetricData : IEquatable<SessionMetricData>
     /// Forecasted data for the requested session
     /// </summary>
     /// <value>Forecasted data for the requested session</value>
-    [DataMember(Name = "computed", EmitDefaultValue = false)]
+    [JsonPropertyName("computed")]
     public ComputedData Computed { get; set; }
 
 
@@ -49,7 +49,7 @@ public partial class SessionMetricData : IEquatable<SessionMetricData>
     /// Historical data for the requested session
     /// </summary>
     /// <value>Historical data for the requested session</value>
-    [DataMember(Name = "historical", EmitDefaultValue = false)]
+    [JsonPropertyName("historical")]
     public HistoricalData Historical { get; set; }
 
 
@@ -58,7 +58,7 @@ public partial class SessionMetricData : IEquatable<SessionMetricData>
     /// Contains forecast meta data
     /// </summary>
     /// <value>Contains forecast meta data</value>
-    [DataMember(Name = "modelMetaData", EmitDefaultValue = false)]
+    [JsonPropertyName("modelMetaData")]
     public ModelMetaData ModelMetaData { get; set; }
 
 

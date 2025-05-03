@@ -1,4 +1,3 @@
-using System.Runtime.Serialization;
 using System.Text;
 using System.Text.Json.Serialization;
 
@@ -7,7 +6,7 @@ namespace PureCloud.Client.Models;
 /// <summary>
 /// BuServiceLevel
 /// </summary>
-[DataContract]
+
 public partial class BuServiceLevel : IEquatable<BuServiceLevel>
 {
 
@@ -36,7 +35,7 @@ public partial class BuServiceLevel : IEquatable<BuServiceLevel>
     /// Whether to include service level targets in the associated configuration
     /// </summary>
     /// <value>Whether to include service level targets in the associated configuration</value>
-    [DataMember(Name = "include", EmitDefaultValue = false)]
+    [JsonPropertyName("include")]
     public bool? Include { get; set; }
 
 
@@ -45,7 +44,7 @@ public partial class BuServiceLevel : IEquatable<BuServiceLevel>
     /// Service level target percent answered. Required if include &#x3D;&#x3D; true
     /// </summary>
     /// <value>Service level target percent answered. Required if include &#x3D;&#x3D; true</value>
-    [DataMember(Name = "percent", EmitDefaultValue = false)]
+    [JsonPropertyName("percent")]
     public int? Percent { get; set; }
 
 
@@ -54,7 +53,7 @@ public partial class BuServiceLevel : IEquatable<BuServiceLevel>
     /// Service level target answer time. Required if include &#x3D;&#x3D; true
     /// </summary>
     /// <value>Service level target answer time. Required if include &#x3D;&#x3D; true</value>
-    [DataMember(Name = "seconds", EmitDefaultValue = false)]
+    [JsonPropertyName("seconds")]
     public int? Seconds { get; set; }
 
 

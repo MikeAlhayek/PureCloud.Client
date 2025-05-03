@@ -7,13 +7,13 @@ namespace PureCloud.Client.Models;
 /// <summary>
 /// DocumentQueryPredicate
 /// </summary>
-[DataContract]
+
 public partial class DocumentQueryPredicate : IEquatable<DocumentQueryPredicate>
 {
     /// <summary>
     /// Gets or Sets Fields
     /// </summary>
-    [JsonConverter(typeof(JsonStringEnumConverter))]
+    
     public enum FieldsEnum
     {
         /// <summary>
@@ -112,7 +112,7 @@ public partial class DocumentQueryPredicate : IEquatable<DocumentQueryPredicate>
     /// Specifies the matching criteria between the fields and values.
     /// </summary>
     /// <value>Specifies the matching criteria between the fields and values.</value>
-    [JsonConverter(typeof(JsonStringEnumConverter))]
+    
     public enum TypeEnum
     {
         /// <summary>
@@ -157,7 +157,7 @@ public partial class DocumentQueryPredicate : IEquatable<DocumentQueryPredicate>
     /// Specifies the matching criteria between the fields and values.
     /// </summary>
     /// <value>Specifies the matching criteria between the fields and values.</value>
-    [DataMember(Name = "type", EmitDefaultValue = false)]
+    [JsonPropertyName("type")]
     public TypeEnum? Type { get; set; }
 
     /// <summary>
@@ -185,7 +185,7 @@ public partial class DocumentQueryPredicate : IEquatable<DocumentQueryPredicate>
     /// Specifies the document fields to be matched against.
     /// </summary>
     /// <value>Specifies the document fields to be matched against.</value>
-    [DataMember(Name = "fields", EmitDefaultValue = false)]
+    [JsonPropertyName("fields")]
     public List<FieldsEnum> Fields { get; set; }
 
 
@@ -194,7 +194,7 @@ public partial class DocumentQueryPredicate : IEquatable<DocumentQueryPredicate>
     /// Specifies the values of the fields to be matched against.
     /// </summary>
     /// <value>Specifies the values of the fields to be matched against.</value>
-    [DataMember(Name = "values", EmitDefaultValue = false)]
+    [JsonPropertyName("values")]
     public List<string> Values { get; set; }
 
 

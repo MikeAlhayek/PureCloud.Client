@@ -1,4 +1,3 @@
-using System.Runtime.Serialization;
 using System.Text;
 using System.Text.Json.Serialization;
 
@@ -7,7 +6,7 @@ namespace PureCloud.Client.Models;
 /// <summary>
 /// KeyValue
 /// </summary>
-[DataContract]
+
 public partial class KeyValue : IEquatable<KeyValue>
 {
 
@@ -34,7 +33,7 @@ public partial class KeyValue : IEquatable<KeyValue>
     /// Key for free-form data.
     /// </summary>
     /// <value>Key for free-form data.</value>
-    [DataMember(Name = "key", EmitDefaultValue = false)]
+    [JsonPropertyName("key")]
     public string Key { get; set; }
 
 
@@ -43,7 +42,7 @@ public partial class KeyValue : IEquatable<KeyValue>
     /// Value for free-form data.
     /// </summary>
     /// <value>Value for free-form data.</value>
-    [DataMember(Name = "value", EmitDefaultValue = false)]
+    [JsonPropertyName("value")]
     public string Value { get; set; }
 
 

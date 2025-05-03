@@ -7,14 +7,14 @@ namespace PureCloud.Client.Models;
 /// <summary>
 /// Note
 /// </summary>
-[DataContract]
+
 public partial class Note : IEquatable<Note>
 {
     /// <summary>
     /// This is only need to be set when using Bulk API. Using any other value than contact or organization will result in null being used.
     /// </summary>
     /// <value>This is only need to be set when using Bulk API. Using any other value than contact or organization will result in null being used.</value>
-    [JsonConverter(typeof(JsonStringEnumConverter))]
+    
     public enum EntityTypeEnum
     {
         /// <summary>
@@ -41,7 +41,7 @@ public partial class Note : IEquatable<Note>
     /// This is only need to be set when using Bulk API. Using any other value than contact or organization will result in null being used.
     /// </summary>
     /// <value>This is only need to be set when using Bulk API. Using any other value than contact or organization will result in null being used.</value>
-    [DataMember(Name = "entityType", EmitDefaultValue = false)]
+    [JsonPropertyName("entityType")]
     public EntityTypeEnum? EntityType { get; set; }
 
     /// <summary>
@@ -77,7 +77,7 @@ public partial class Note : IEquatable<Note>
     /// The globally unique identifier for the object.
     /// </summary>
     /// <value>The globally unique identifier for the object.</value>
-    [DataMember(Name = "id", EmitDefaultValue = false)]
+    [JsonPropertyName("id")]
     public string Id { get; private set; }
 
 
@@ -86,7 +86,7 @@ public partial class Note : IEquatable<Note>
     /// The division to which this entity belongs.
     /// </summary>
     /// <value>The division to which this entity belongs.</value>
-    [DataMember(Name = "division", EmitDefaultValue = false)]
+    [JsonPropertyName("division")]
     public WritableStarrableDivision Division { get; set; }
 
 
@@ -95,7 +95,7 @@ public partial class Note : IEquatable<Note>
     /// The id of the contact or organization to which this note refers. This only needs to be set for input when using the Bulk APIs.
     /// </summary>
     /// <value>The id of the contact or organization to which this note refers. This only needs to be set for input when using the Bulk APIs.</value>
-    [DataMember(Name = "entityId", EmitDefaultValue = false)]
+    [JsonPropertyName("entityId")]
     public string EntityId { get; set; }
 
 
@@ -105,7 +105,7 @@ public partial class Note : IEquatable<Note>
     /// <summary>
     /// Gets or Sets NoteText
     /// </summary>
-    [DataMember(Name = "noteText", EmitDefaultValue = false)]
+    [JsonPropertyName("noteText")]
     public string NoteText { get; set; }
 
 
@@ -114,7 +114,7 @@ public partial class Note : IEquatable<Note>
     /// Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z
     /// </summary>
     /// <value>Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z</value>
-    [DataMember(Name = "modifyDate", EmitDefaultValue = false)]
+    [JsonPropertyName("modifyDate")]
     public DateTime? ModifyDate { get; set; }
 
 
@@ -123,7 +123,7 @@ public partial class Note : IEquatable<Note>
     /// Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z
     /// </summary>
     /// <value>Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z</value>
-    [DataMember(Name = "createDate", EmitDefaultValue = false)]
+    [JsonPropertyName("createDate")]
     public DateTime? CreateDate { get; set; }
 
 
@@ -132,7 +132,7 @@ public partial class Note : IEquatable<Note>
     /// When creating or updating a note, only User.id is required. User object is fully populated when expanding a note.
     /// </summary>
     /// <value>When creating or updating a note, only User.id is required. User object is fully populated when expanding a note.</value>
-    [DataMember(Name = "createdBy", EmitDefaultValue = false)]
+    [JsonPropertyName("createdBy")]
     public User CreatedBy { get; set; }
 
 
@@ -141,7 +141,7 @@ public partial class Note : IEquatable<Note>
     /// Links to the sources of data (e.g. one source might be a CRM) that contributed data to this record.  Read-only, and only populated when requested via expand param.
     /// </summary>
     /// <value>Links to the sources of data (e.g. one source might be a CRM) that contributed data to this record.  Read-only, and only populated when requested via expand param.</value>
-    [DataMember(Name = "externalDataSources", EmitDefaultValue = false)]
+    [JsonPropertyName("externalDataSources")]
     public List<ExternalDataSource> ExternalDataSources { get; private set; }
 
 
@@ -150,7 +150,7 @@ public partial class Note : IEquatable<Note>
     /// The URI for this object
     /// </summary>
     /// <value>The URI for this object</value>
-    [DataMember(Name = "selfUri", EmitDefaultValue = false)]
+    [JsonPropertyName("selfUri")]
     public string SelfUri { get; private set; }
 
 

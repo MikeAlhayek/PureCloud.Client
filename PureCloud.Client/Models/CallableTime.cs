@@ -1,4 +1,3 @@
-using System.Runtime.Serialization;
 using System.Text;
 using System.Text.Json.Serialization;
 
@@ -7,7 +6,7 @@ namespace PureCloud.Client.Models;
 /// <summary>
 /// CallableTime
 /// </summary>
-[DataContract]
+
 public partial class CallableTime : IEquatable<CallableTime>
 {
 
@@ -34,7 +33,7 @@ public partial class CallableTime : IEquatable<CallableTime>
     /// The time intervals for which it is acceptable to place outbound calls.
     /// </summary>
     /// <value>The time intervals for which it is acceptable to place outbound calls.</value>
-    [DataMember(Name = "timeSlots", EmitDefaultValue = false)]
+    [JsonPropertyName("timeSlots")]
     public List<CampaignTimeSlot> TimeSlots { get; set; }
 
 
@@ -43,7 +42,7 @@ public partial class CallableTime : IEquatable<CallableTime>
     /// The time zone for the time slots; for example, Africa/Abidjan
     /// </summary>
     /// <value>The time zone for the time slots; for example, Africa/Abidjan</value>
-    [DataMember(Name = "timeZoneId", EmitDefaultValue = false)]
+    [JsonPropertyName("timeZoneId")]
     public string TimeZoneId { get; set; }
 
 

@@ -1,4 +1,3 @@
-using System.Runtime.Serialization;
 using System.Text;
 using System.Text.Json.Serialization;
 
@@ -7,7 +6,7 @@ namespace PureCloud.Client.Models;
 /// <summary>
 /// MaxLength
 /// </summary>
-[DataContract]
+
 public partial class MaxLength : IEquatable<MaxLength>
 {
 
@@ -34,7 +33,7 @@ public partial class MaxLength : IEquatable<MaxLength>
     /// A non-negative integer for a text-based schema field denoting the minimum largest length string the field can contain for a schema instance.
     /// </summary>
     /// <value>A non-negative integer for a text-based schema field denoting the minimum largest length string the field can contain for a schema instance.</value>
-    [DataMember(Name = "min", EmitDefaultValue = false)]
+    [JsonPropertyName("min")]
     public long? Min { get; set; }
 
 
@@ -43,7 +42,7 @@ public partial class MaxLength : IEquatable<MaxLength>
     /// A non-negative integer for a text-based schema field denoting the maximum largest string the field can contain for a schema instance.
     /// </summary>
     /// <value>A non-negative integer for a text-based schema field denoting the maximum largest string the field can contain for a schema instance.</value>
-    [DataMember(Name = "max", EmitDefaultValue = false)]
+    [JsonPropertyName("max")]
     public long? Max { get; set; }
 
 

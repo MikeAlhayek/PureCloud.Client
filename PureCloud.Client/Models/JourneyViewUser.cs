@@ -1,12 +1,12 @@
-using System.Runtime.Serialization;
 using System.Text;
+using System.Text.Json.Serialization;
 
 namespace PureCloud.Client.Models;
 
 /// <summary>
 /// JourneyViewUser
 /// </summary>
-[DataContract]
+
 public partial class JourneyViewUser : IEquatable<JourneyViewUser>
 {
     /// <summary>
@@ -23,7 +23,7 @@ public partial class JourneyViewUser : IEquatable<JourneyViewUser>
     /// The globally unique identifier for the object.
     /// </summary>
     /// <value>The globally unique identifier for the object.</value>
-    [DataMember(Name = "id", EmitDefaultValue = false)]
+    [JsonPropertyName("id")]
     public string Id { get; private set; }
 
 
@@ -32,7 +32,7 @@ public partial class JourneyViewUser : IEquatable<JourneyViewUser>
     /// Email address of the user
     /// </summary>
     /// <value>Email address of the user</value>
-    [DataMember(Name = "emailAddress", EmitDefaultValue = false)]
+    [JsonPropertyName("emailAddress")]
     public string EmailAddress { get; private set; }
 
 
@@ -41,7 +41,7 @@ public partial class JourneyViewUser : IEquatable<JourneyViewUser>
     /// The URI for this object
     /// </summary>
     /// <value>The URI for this object</value>
-    [DataMember(Name = "selfUri", EmitDefaultValue = false)]
+    [JsonPropertyName("selfUri")]
     public string SelfUri { get; private set; }
 
 

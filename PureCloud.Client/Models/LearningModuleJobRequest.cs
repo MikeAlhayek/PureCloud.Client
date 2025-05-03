@@ -7,14 +7,14 @@ namespace PureCloud.Client.Models;
 /// <summary>
 /// Learning module job request
 /// </summary>
-[DataContract]
+
 public partial class LearningModuleJobRequest : IEquatable<LearningModuleJobRequest>
 {
     /// <summary>
     /// The type for the learning module job
     /// </summary>
     /// <value>The type for the learning module job</value>
-    [JsonConverter(typeof(JsonStringEnumConverter))]
+    
     public enum ActionEnum
     {
         /// <summary>
@@ -53,7 +53,7 @@ public partial class LearningModuleJobRequest : IEquatable<LearningModuleJobRequ
     /// The type for the learning module job
     /// </summary>
     /// <value>The type for the learning module job</value>
-    [DataMember(Name = "action", EmitDefaultValue = false)]
+    [JsonPropertyName("action")]
     public ActionEnum? Action { get; set; }
 
     /// <summary>

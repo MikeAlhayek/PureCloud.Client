@@ -7,14 +7,14 @@ namespace PureCloud.Client.Models;
 /// <summary>
 /// SupportCenterScreen
 /// </summary>
-[DataContract]
+
 public partial class SupportCenterScreen : IEquatable<SupportCenterScreen>
 {
     /// <summary>
     /// The type of the screen
     /// </summary>
     /// <value>The type of the screen</value>
-    [JsonConverter(typeof(JsonStringEnumConverter))]
+    
     public enum TypeEnum
     {
         /// <summary>
@@ -53,7 +53,7 @@ public partial class SupportCenterScreen : IEquatable<SupportCenterScreen>
     /// The type of the screen
     /// </summary>
     /// <value>The type of the screen</value>
-    [DataMember(Name = "type", EmitDefaultValue = false)]
+    [JsonPropertyName("type")]
     public TypeEnum? Type { get; set; }
 
     /// <summary>
@@ -81,7 +81,7 @@ public partial class SupportCenterScreen : IEquatable<SupportCenterScreen>
     /// Module settings for the screen, valid modules for each screenType: Home: Search, Categories, TopViewedArticles; Category: Search, Categories; SearchResults: Search, Results; Article: Search, Article;
     /// </summary>
     /// <value>Module settings for the screen, valid modules for each screenType: Home: Search, Categories, TopViewedArticles; Category: Search, Categories; SearchResults: Search, Results; Article: Search, Article;</value>
-    [DataMember(Name = "moduleSettings", EmitDefaultValue = false)]
+    [JsonPropertyName("moduleSettings")]
     public List<SupportCenterModuleSetting> ModuleSettings { get; set; }
 
 

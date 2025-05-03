@@ -1,12 +1,12 @@
-using System.Runtime.Serialization;
 using System.Text;
+using System.Text.Json.Serialization;
 
 namespace PureCloud.Client.Models;
 
 /// <summary>
 /// ServiceGoalTemplateList
 /// </summary>
-[DataContract]
+
 public partial class ServiceGoalTemplateList : IEquatable<ServiceGoalTemplateList>
 {
     /// <summary>
@@ -26,7 +26,7 @@ public partial class ServiceGoalTemplateList : IEquatable<ServiceGoalTemplateLis
     /// <summary>
     /// Gets or Sets Entities
     /// </summary>
-    [DataMember(Name = "entities", EmitDefaultValue = false)]
+    [JsonPropertyName("entities")]
     public List<ServiceGoalTemplate> Entities { get; set; }
 
 
@@ -35,7 +35,7 @@ public partial class ServiceGoalTemplateList : IEquatable<ServiceGoalTemplateLis
     /// Version metadata for the service goal templates
     /// </summary>
     /// <value>Version metadata for the service goal templates</value>
-    [DataMember(Name = "metadata", EmitDefaultValue = false)]
+    [JsonPropertyName("metadata")]
     public WfmVersionedEntityMetadata Metadata { get; set; }
 
 

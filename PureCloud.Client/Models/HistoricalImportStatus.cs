@@ -7,14 +7,14 @@ namespace PureCloud.Client.Models;
 /// <summary>
 /// HistoricalImportStatus
 /// </summary>
-[DataContract]
+
 public partial class HistoricalImportStatus : IEquatable<HistoricalImportStatus>
 {
     /// <summary>
     /// Status of the historical import in the organization.
     /// </summary>
     /// <value>Status of the historical import in the organization.</value>
-    [JsonConverter(typeof(JsonStringEnumConverter))]
+    
     public enum StatusEnum
     {
         /// <summary>
@@ -77,7 +77,7 @@ public partial class HistoricalImportStatus : IEquatable<HistoricalImportStatus>
     /// Whether this historical import is of type csv or json
     /// </summary>
     /// <value>Whether this historical import is of type csv or json</value>
-    [JsonConverter(typeof(JsonStringEnumConverter))]
+    
     public enum TypeEnum
     {
         /// <summary>
@@ -104,13 +104,13 @@ public partial class HistoricalImportStatus : IEquatable<HistoricalImportStatus>
     /// Status of the historical import in the organization.
     /// </summary>
     /// <value>Status of the historical import in the organization.</value>
-    [DataMember(Name = "status", EmitDefaultValue = false)]
+    [JsonPropertyName("status")]
     public StatusEnum? Status { get; private set; }
     /// <summary>
     /// Whether this historical import is of type csv or json
     /// </summary>
     /// <value>Whether this historical import is of type csv or json</value>
-    [DataMember(Name = "type", EmitDefaultValue = false)]
+    [JsonPropertyName("type")]
     public TypeEnum? Type { get; private set; }
     /// <summary>
     /// Initializes a new instance of the <see cref="HistoricalImportStatus" /> class.
@@ -126,7 +126,7 @@ public partial class HistoricalImportStatus : IEquatable<HistoricalImportStatus>
     /// Request id of the historical import in the organization
     /// </summary>
     /// <value>Request id of the historical import in the organization</value>
-    [DataMember(Name = "requestId", EmitDefaultValue = false)]
+    [JsonPropertyName("requestId")]
     public string RequestId { get; private set; }
 
 
@@ -135,7 +135,7 @@ public partial class HistoricalImportStatus : IEquatable<HistoricalImportStatus>
     /// The last day of the data you are importing. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z
     /// </summary>
     /// <value>The last day of the data you are importing. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z</value>
-    [DataMember(Name = "dateImportEnded", EmitDefaultValue = false)]
+    [JsonPropertyName("dateImportEnded")]
     public DateTime? DateImportEnded { get; private set; }
 
 
@@ -144,7 +144,7 @@ public partial class HistoricalImportStatus : IEquatable<HistoricalImportStatus>
     /// The first day of the data you are importing. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z
     /// </summary>
     /// <value>The first day of the data you are importing. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z</value>
-    [DataMember(Name = "dateImportStarted", EmitDefaultValue = false)]
+    [JsonPropertyName("dateImportStarted")]
     public DateTime? DateImportStarted { get; private set; }
 
 
@@ -155,7 +155,7 @@ public partial class HistoricalImportStatus : IEquatable<HistoricalImportStatus>
     /// Error occured if the status of the import is failed
     /// </summary>
     /// <value>Error occured if the status of the import is failed</value>
-    [DataMember(Name = "error", EmitDefaultValue = false)]
+    [JsonPropertyName("error")]
     public string Error { get; private set; }
 
 
@@ -164,7 +164,7 @@ public partial class HistoricalImportStatus : IEquatable<HistoricalImportStatus>
     /// Date in which the historical import is initiated. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z
     /// </summary>
     /// <value>Date in which the historical import is initiated. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z</value>
-    [DataMember(Name = "dateCreated", EmitDefaultValue = false)]
+    [JsonPropertyName("dateCreated")]
     public DateTime? DateCreated { get; private set; }
 
 
@@ -173,7 +173,7 @@ public partial class HistoricalImportStatus : IEquatable<HistoricalImportStatus>
     /// Date in which the historical import is modified. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z
     /// </summary>
     /// <value>Date in which the historical import is modified. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z</value>
-    [DataMember(Name = "dateModified", EmitDefaultValue = false)]
+    [JsonPropertyName("dateModified")]
     public DateTime? DateModified { get; private set; }
 
 
@@ -182,7 +182,7 @@ public partial class HistoricalImportStatus : IEquatable<HistoricalImportStatus>
     /// Whether this historical import is active or not
     /// </summary>
     /// <value>Whether this historical import is active or not</value>
-    [DataMember(Name = "active", EmitDefaultValue = false)]
+    [JsonPropertyName("active")]
     public bool? Active { get; private set; }
 
 
@@ -193,7 +193,7 @@ public partial class HistoricalImportStatus : IEquatable<HistoricalImportStatus>
     /// Name of the file that you are importing.
     /// </summary>
     /// <value>Name of the file that you are importing.</value>
-    [DataMember(Name = "fileName", EmitDefaultValue = false)]
+    [JsonPropertyName("fileName")]
     public string FileName { get; private set; }
 
 
@@ -202,7 +202,7 @@ public partial class HistoricalImportStatus : IEquatable<HistoricalImportStatus>
     /// Size of the file that you are importing.
     /// </summary>
     /// <value>Size of the file that you are importing.</value>
-    [DataMember(Name = "fileSize", EmitDefaultValue = false)]
+    [JsonPropertyName("fileSize")]
     public long? FileSize { get; private set; }
 
 

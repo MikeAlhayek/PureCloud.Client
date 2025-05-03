@@ -1,12 +1,12 @@
-using System.Runtime.Serialization;
 using System.Text;
+using System.Text.Json.Serialization;
 
 namespace PureCloud.Client.Models;
 
 /// <summary>
 /// AllTimePoints
 /// </summary>
-[DataContract]
+
 public partial class AllTimePoints : IEquatable<AllTimePoints>
 {
     /// <summary>
@@ -23,7 +23,7 @@ public partial class AllTimePoints : IEquatable<AllTimePoints>
     /// Queried user
     /// </summary>
     /// <value>Queried user</value>
-    [DataMember(Name = "user", EmitDefaultValue = false)]
+    [JsonPropertyName("user")]
     public UserReference User { get; private set; }
 
 
@@ -32,7 +32,7 @@ public partial class AllTimePoints : IEquatable<AllTimePoints>
     /// Queried end workday for all time points to be collected. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd
     /// </summary>
     /// <value>Queried end workday for all time points to be collected. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd</value>
-    [DataMember(Name = "dateEndWorkday", EmitDefaultValue = false)]
+    [JsonPropertyName("dateEndWorkday")]
     public string DateEndWorkday { get; private set; }
 
 
@@ -41,7 +41,7 @@ public partial class AllTimePoints : IEquatable<AllTimePoints>
     /// All time point collected bt the user
     /// </summary>
     /// <value>All time point collected bt the user</value>
-    [DataMember(Name = "allTimePoints", EmitDefaultValue = false)]
+    [JsonPropertyName("allTimePoints")]
     public long? _AllTimePoints { get; private set; }
 
 

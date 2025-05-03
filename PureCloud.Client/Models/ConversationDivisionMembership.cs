@@ -1,12 +1,12 @@
-using System.Runtime.Serialization;
 using System.Text;
+using System.Text.Json.Serialization;
 
 namespace PureCloud.Client.Models;
 
 /// <summary>
 /// ConversationDivisionMembership
 /// </summary>
-[DataContract]
+
 public partial class ConversationDivisionMembership : IEquatable<ConversationDivisionMembership>
 {
     /// <summary>
@@ -27,7 +27,7 @@ public partial class ConversationDivisionMembership : IEquatable<ConversationDiv
     /// A division the conversation belongs to.
     /// </summary>
     /// <value>A division the conversation belongs to.</value>
-    [DataMember(Name = "division", EmitDefaultValue = false)]
+    [JsonPropertyName("division")]
     public DomainEntityRef Division { get; set; }
 
 
@@ -36,7 +36,7 @@ public partial class ConversationDivisionMembership : IEquatable<ConversationDiv
     /// The entities on the conversation within the division. These are the users, queues, work flows, etc. that can be on conversations and and be assigned to different divisions.
     /// </summary>
     /// <value>The entities on the conversation within the division. These are the users, queues, work flows, etc. that can be on conversations and and be assigned to different divisions.</value>
-    [DataMember(Name = "entities", EmitDefaultValue = false)]
+    [JsonPropertyName("entities")]
     public List<DivisionEntityRef> Entities { get; set; }
 
 

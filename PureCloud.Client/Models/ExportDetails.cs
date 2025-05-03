@@ -7,14 +7,14 @@ namespace PureCloud.Client.Models;
 /// <summary>
 /// ExportDetails
 /// </summary>
-[DataContract]
+
 public partial class ExportDetails : IEquatable<ExportDetails>
 {
     /// <summary>
     /// The export type for the flow. Default: 'Yaml'.
     /// </summary>
     /// <value>The export type for the flow. Default: 'Yaml'.</value>
-    [JsonConverter(typeof(JsonStringEnumConverter))]
+    
     public enum ExportTypeEnum
     {
         /// <summary>
@@ -41,7 +41,7 @@ public partial class ExportDetails : IEquatable<ExportDetails>
     /// The export type for the flow. Default: 'Yaml'.
     /// </summary>
     /// <value>The export type for the flow. Default: 'Yaml'.</value>
-    [DataMember(Name = "exportType", EmitDefaultValue = false)]
+    [JsonPropertyName("exportType")]
     public ExportTypeEnum? ExportType { get; set; }
 
     /// <summary>
@@ -69,7 +69,7 @@ public partial class ExportDetails : IEquatable<ExportDetails>
     /// The flow to export. If you do not provide the flow ID, you must provide both the name and type.
     /// </summary>
     /// <value>The flow to export. If you do not provide the flow ID, you must provide both the name and type.</value>
-    [DataMember(Name = "flow", EmitDefaultValue = false)]
+    [JsonPropertyName("flow")]
     public ArchitectFlowReference Flow { get; set; }
 
 
@@ -78,7 +78,7 @@ public partial class ExportDetails : IEquatable<ExportDetails>
     /// Name to assign to the file after download. The extension will be automatically appended based on desired export type. Must contain only alphanumeric characters, underscores, or hyphens.
     /// </summary>
     /// <value>Name to assign to the file after download. The extension will be automatically appended based on desired export type. Must contain only alphanumeric characters, underscores, or hyphens.</value>
-    [DataMember(Name = "fileName", EmitDefaultValue = false)]
+    [JsonPropertyName("fileName")]
     public string FileName { get; set; }
 
 

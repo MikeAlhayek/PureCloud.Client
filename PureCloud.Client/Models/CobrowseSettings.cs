@@ -7,13 +7,13 @@ namespace PureCloud.Client.Models;
 /// <summary>
 /// Settings concerning cobrowse
 /// </summary>
-[DataContract]
+
 public partial class CobrowseSettings : IEquatable<CobrowseSettings>
 {
     /// <summary>
     /// Gets or Sets Channels
     /// </summary>
-    [JsonConverter(typeof(JsonStringEnumConverter))]
+    
     public enum ChannelsEnum
     {
         /// <summary>
@@ -66,7 +66,7 @@ public partial class CobrowseSettings : IEquatable<CobrowseSettings>
     /// Whether or not cobrowse is enabled
     /// </summary>
     /// <value>Whether or not cobrowse is enabled</value>
-    [DataMember(Name = "enabled", EmitDefaultValue = false)]
+    [JsonPropertyName("enabled")]
     public bool? Enabled { get; set; }
 
 
@@ -75,7 +75,7 @@ public partial class CobrowseSettings : IEquatable<CobrowseSettings>
     /// Whether the viewer should have option to request control
     /// </summary>
     /// <value>Whether the viewer should have option to request control</value>
-    [DataMember(Name = "allowAgentControl", EmitDefaultValue = false)]
+    [JsonPropertyName("allowAgentControl")]
     public bool? AllowAgentControl { get; set; }
 
 
@@ -84,7 +84,7 @@ public partial class CobrowseSettings : IEquatable<CobrowseSettings>
     /// Whether the viewer should have option to request navigation
     /// </summary>
     /// <value>Whether the viewer should have option to request navigation</value>
-    [DataMember(Name = "allowAgentNavigation", EmitDefaultValue = false)]
+    [JsonPropertyName("allowAgentNavigation")]
     public bool? AllowAgentNavigation { get; set; }
 
 
@@ -93,7 +93,7 @@ public partial class CobrowseSettings : IEquatable<CobrowseSettings>
     /// Should cobrowse draw be enabled
     /// </summary>
     /// <value>Should cobrowse draw be enabled</value>
-    [DataMember(Name = "allowDraw", EmitDefaultValue = false)]
+    [JsonPropertyName("allowDraw")]
     public bool? AllowDraw { get; set; }
 
 
@@ -102,7 +102,7 @@ public partial class CobrowseSettings : IEquatable<CobrowseSettings>
     /// Mask patterns that will apply to pages being shared
     /// </summary>
     /// <value>Mask patterns that will apply to pages being shared</value>
-    [DataMember(Name = "maskSelectors", EmitDefaultValue = false)]
+    [JsonPropertyName("maskSelectors")]
     public List<string> MaskSelectors { get; set; }
 
 
@@ -111,7 +111,7 @@ public partial class CobrowseSettings : IEquatable<CobrowseSettings>
     /// Cobrowse channels for web messenger
     /// </summary>
     /// <value>Cobrowse channels for web messenger</value>
-    [DataMember(Name = "channels", EmitDefaultValue = false)]
+    [JsonPropertyName("channels")]
     public List<ChannelsEnum> Channels { get; set; }
 
 
@@ -120,7 +120,7 @@ public partial class CobrowseSettings : IEquatable<CobrowseSettings>
     /// Readonly patterns that will apply to pages being shared
     /// </summary>
     /// <value>Readonly patterns that will apply to pages being shared</value>
-    [DataMember(Name = "readonlySelectors", EmitDefaultValue = false)]
+    [JsonPropertyName("readonlySelectors")]
     public List<string> ReadonlySelectors { get; set; }
 
 
@@ -129,7 +129,7 @@ public partial class CobrowseSettings : IEquatable<CobrowseSettings>
     /// Pause criteria that will pause cobrowse if some of them are met in the user&#39;s URL
     /// </summary>
     /// <value>Pause criteria that will pause cobrowse if some of them are met in the user&#39;s URL</value>
-    [DataMember(Name = "pauseCriteria", EmitDefaultValue = false)]
+    [JsonPropertyName("pauseCriteria")]
     public List<PauseCriteria> PauseCriteria { get; set; }
 
 

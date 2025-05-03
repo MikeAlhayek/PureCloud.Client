@@ -1,12 +1,12 @@
-using System.Runtime.Serialization;
 using System.Text;
+using System.Text.Json.Serialization;
 
 namespace PureCloud.Client.Models;
 
 /// <summary>
 /// ValidationErrorResponse
 /// </summary>
-[DataContract]
+
 public partial class ValidationErrorResponse : IEquatable<ValidationErrorResponse>
 {
     /// <summary>
@@ -29,7 +29,7 @@ public partial class ValidationErrorResponse : IEquatable<ValidationErrorRespons
     /// Message string of the validation error.
     /// </summary>
     /// <value>Message string of the validation error.</value>
-    [DataMember(Name = "message", EmitDefaultValue = false)]
+    [JsonPropertyName("message")]
     public string Message { get; set; }
 
 
@@ -38,7 +38,7 @@ public partial class ValidationErrorResponse : IEquatable<ValidationErrorRespons
     /// Type of validation errror.
     /// </summary>
     /// <value>Type of validation errror.</value>
-    [DataMember(Name = "errorType", EmitDefaultValue = false)]
+    [JsonPropertyName("errorType")]
     public string ErrorType { get; set; }
 
 
@@ -47,7 +47,7 @@ public partial class ValidationErrorResponse : IEquatable<ValidationErrorRespons
     /// Map of argument names to corresponding values. Used for localization.
     /// </summary>
     /// <value>Map of argument names to corresponding values. Used for localization.</value>
-    [DataMember(Name = "arguments", EmitDefaultValue = false)]
+    [JsonPropertyName("arguments")]
     public Dictionary<string, string> Arguments { get; set; }
 
 

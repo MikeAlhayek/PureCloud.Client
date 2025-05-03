@@ -7,14 +7,14 @@ namespace PureCloud.Client.Models;
 /// <summary>
 /// OperandPosition
 /// </summary>
-[DataContract]
+
 public partial class OperandPosition : IEquatable<OperandPosition>
 {
     /// <summary>
     /// Dictates starting position directionality
     /// </summary>
     /// <value>Dictates starting position directionality</value>
-    [JsonConverter(typeof(JsonStringEnumConverter))]
+    
     public enum StartingPositionDirectionEnum
     {
         /// <summary>
@@ -41,7 +41,7 @@ public partial class OperandPosition : IEquatable<OperandPosition>
     /// Dictates ending position directionality
     /// </summary>
     /// <value>Dictates ending position directionality</value>
-    [JsonConverter(typeof(JsonStringEnumConverter))]
+    
     public enum EndingPositionDirectionEnum
     {
         /// <summary>
@@ -68,13 +68,13 @@ public partial class OperandPosition : IEquatable<OperandPosition>
     /// Dictates starting position directionality
     /// </summary>
     /// <value>Dictates starting position directionality</value>
-    [DataMember(Name = "startingPositionDirection", EmitDefaultValue = false)]
+    [JsonPropertyName("startingPositionDirection")]
     public StartingPositionDirectionEnum? StartingPositionDirection { get; set; }
     /// <summary>
     /// Dictates ending position directionality
     /// </summary>
     /// <value>Dictates ending position directionality</value>
-    [DataMember(Name = "endingPositionDirection", EmitDefaultValue = false)]
+    [JsonPropertyName("endingPositionDirection")]
     public EndingPositionDirectionEnum? EndingPositionDirection { get; set; }
     /// <summary>
     /// Initializes a new instance of the <see cref="OperandPosition" /> class.
@@ -98,7 +98,7 @@ public partial class OperandPosition : IEquatable<OperandPosition>
     /// Defines starting point of a position range - number of seconds or words from the start or from the end of the interaction
     /// </summary>
     /// <value>Defines starting point of a position range - number of seconds or words from the start or from the end of the interaction</value>
-    [DataMember(Name = "startingPositionValue", EmitDefaultValue = false)]
+    [JsonPropertyName("startingPositionValue")]
     public int? StartingPositionValue { get; set; }
 
 
@@ -109,7 +109,7 @@ public partial class OperandPosition : IEquatable<OperandPosition>
     /// Defines ending point of a position range - number of seconds or words from the start or from the end of the interaction
     /// </summary>
     /// <value>Defines ending point of a position range - number of seconds or words from the start or from the end of the interaction</value>
-    [DataMember(Name = "endingPositionValue", EmitDefaultValue = false)]
+    [JsonPropertyName("endingPositionValue")]
     public int? EndingPositionValue { get; set; }
 
 

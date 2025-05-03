@@ -1,12 +1,12 @@
-using System.Runtime.Serialization;
 using System.Text;
+using System.Text.Json.Serialization;
 
 namespace PureCloud.Client.Models;
 
 /// <summary>
 /// TemplateParameter
 /// </summary>
-[DataContract]
+
 public partial class TemplateParameter : IEquatable<TemplateParameter>
 {
     /// <summary>
@@ -27,7 +27,7 @@ public partial class TemplateParameter : IEquatable<TemplateParameter>
     /// Response substitution identifier
     /// </summary>
     /// <value>Response substitution identifier</value>
-    [DataMember(Name = "id", EmitDefaultValue = false)]
+    [JsonPropertyName("id")]
     public string Id { get; set; }
 
 
@@ -36,7 +36,7 @@ public partial class TemplateParameter : IEquatable<TemplateParameter>
     /// Response substitution value
     /// </summary>
     /// <value>Response substitution value</value>
-    [DataMember(Name = "value", EmitDefaultValue = false)]
+    [JsonPropertyName("value")]
     public string Value { get; set; }
 
 

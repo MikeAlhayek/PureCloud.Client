@@ -7,14 +7,14 @@ namespace PureCloud.Client.Models;
 /// <summary>
 /// Operand
 /// </summary>
-[DataContract]
+
 public partial class Operand : IEquatable<Operand>
 {
     /// <summary>
     /// The Operand type of the category
     /// </summary>
     /// <value>The Operand type of the category</value>
-    [JsonConverter(typeof(JsonStringEnumConverter))]
+    
     public enum TypeEnum
     {
         /// <summary>
@@ -47,7 +47,7 @@ public partial class Operand : IEquatable<Operand>
     /// The Operand type of the category
     /// </summary>
     /// <value>The Operand type of the category</value>
-    [DataMember(Name = "type", EmitDefaultValue = false)]
+    [JsonPropertyName("type")]
     public TypeEnum? Type { get; set; }
 
     /// <summary>
@@ -89,7 +89,7 @@ public partial class Operand : IEquatable<Operand>
     /// The minimum number of occurrences of the defined operand type
     /// </summary>
     /// <value>The minimum number of occurrences of the defined operand type</value>
-    [DataMember(Name = "occurrence", EmitDefaultValue = false)]
+    [JsonPropertyName("occurrence")]
     public int? Occurrence { get; set; }
 
 
@@ -98,7 +98,7 @@ public partial class Operand : IEquatable<Operand>
     /// Applies a NOT modifier to the operand group
     /// </summary>
     /// <value>Applies a NOT modifier to the operand group</value>
-    [DataMember(Name = "inverted", EmitDefaultValue = false)]
+    [JsonPropertyName("inverted")]
     public bool? Inverted { get; set; }
 
 
@@ -107,7 +107,7 @@ public partial class Operand : IEquatable<Operand>
     /// Filter interaction by word(s)
     /// </summary>
     /// <value>Filter interaction by word(s)</value>
-    [DataMember(Name = "term", EmitDefaultValue = false)]
+    [JsonPropertyName("term")]
     public Term Term { get; set; }
 
 
@@ -116,7 +116,7 @@ public partial class Operand : IEquatable<Operand>
     /// Filter interaction by topic ID
     /// </summary>
     /// <value>Filter interaction by topic ID</value>
-    [DataMember(Name = "topicId", EmitDefaultValue = false)]
+    [JsonPropertyName("topicId")]
     public string TopicId { get; set; }
 
 
@@ -125,7 +125,7 @@ public partial class Operand : IEquatable<Operand>
     /// Dictates when the operand must occur in a voice interaction
     /// </summary>
     /// <value>Dictates when the operand must occur in a voice interaction</value>
-    [DataMember(Name = "voiceSecondsPosition", EmitDefaultValue = false)]
+    [JsonPropertyName("voiceSecondsPosition")]
     public OperandPosition VoiceSecondsPosition { get; set; }
 
 
@@ -134,7 +134,7 @@ public partial class Operand : IEquatable<Operand>
     /// Dictates when the operand must occur in a digital interaction
     /// </summary>
     /// <value>Dictates when the operand must occur in a digital interaction</value>
-    [DataMember(Name = "digitalWordsPosition", EmitDefaultValue = false)]
+    [JsonPropertyName("digitalWordsPosition")]
     public OperandPosition DigitalWordsPosition { get; set; }
 
 
@@ -143,7 +143,7 @@ public partial class Operand : IEquatable<Operand>
     /// Defines a logical operation that is applied on the current operand, against the following operand
     /// </summary>
     /// <value>Defines a logical operation that is applied on the current operand, against the following operand</value>
-    [DataMember(Name = "infixOperator", EmitDefaultValue = false)]
+    [JsonPropertyName("infixOperator")]
     public InfixOperator InfixOperator { get; set; }
 
 
@@ -152,7 +152,7 @@ public partial class Operand : IEquatable<Operand>
     /// Contains a new level of operands
     /// </summary>
     /// <value>Contains a new level of operands</value>
-    [DataMember(Name = "operands", EmitDefaultValue = false)]
+    [JsonPropertyName("operands")]
     public List<Operand> Operands { get; set; }
 
 

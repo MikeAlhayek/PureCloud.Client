@@ -1,12 +1,12 @@
-using System.Runtime.Serialization;
 using System.Text;
+using System.Text.Json.Serialization;
 
 namespace PureCloud.Client.Models;
 
 /// <summary>
 /// ForecastPlanningGroupsResponse
 /// </summary>
-[DataContract]
+
 public partial class ForecastPlanningGroupsResponse : IEquatable<ForecastPlanningGroupsResponse>
 {
     /// <summary>
@@ -26,7 +26,7 @@ public partial class ForecastPlanningGroupsResponse : IEquatable<ForecastPlannin
     /// <summary>
     /// Gets or Sets Entities
     /// </summary>
-    [DataMember(Name = "entities", EmitDefaultValue = false)]
+    [JsonPropertyName("entities")]
     public List<ForecastPlanningGroupResponse> Entities { get; set; }
 
 
@@ -35,7 +35,7 @@ public partial class ForecastPlanningGroupsResponse : IEquatable<ForecastPlannin
     /// A snapshot of a business unit’s service goal impact settings taken at forecast generation time.
     /// </summary>
     /// <value>A snapshot of a business unit’s service goal impact settings taken at forecast generation time.</value>
-    [DataMember(Name = "businessUnitServiceGoalImpact", EmitDefaultValue = false)]
+    [JsonPropertyName("businessUnitServiceGoalImpact")]
     public WfmServiceGoalImpactSettings BusinessUnitServiceGoalImpact { get; set; }
 
 

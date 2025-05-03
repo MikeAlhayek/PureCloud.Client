@@ -1,12 +1,12 @@
-using System.Runtime.Serialization;
 using System.Text;
+using System.Text.Json.Serialization;
 
 namespace PureCloud.Client.Models;
 
 /// <summary>
 /// A set of available characteristic definitions
 /// </summary>
-[DataContract]
+
 public partial class FlowLogLevelCharacteristicsDefinitions : IEquatable<FlowLogLevelCharacteristicsDefinitions>
 {
     /// <summary>
@@ -23,7 +23,7 @@ public partial class FlowLogLevelCharacteristicsDefinitions : IEquatable<FlowLog
     /// A list of flow log levels available to the organization.
     /// </summary>
     /// <value>A list of flow log levels available to the organization.</value>
-    [DataMember(Name = "logLevels", EmitDefaultValue = false)]
+    [JsonPropertyName("logLevels")]
     public List<FlowLogLevel> LogLevels { get; private set; }
 
 
@@ -32,7 +32,7 @@ public partial class FlowLogLevelCharacteristicsDefinitions : IEquatable<FlowLog
     /// A list of characteristics that the loglevels will have that are available to the organization..
     /// </summary>
     /// <value>A list of characteristics that the loglevels will have that are available to the organization..</value>
-    [DataMember(Name = "characteristics", EmitDefaultValue = false)]
+    [JsonPropertyName("characteristics")]
     public List<FlowLogLevelCharacteristicsDefinition> Characteristics { get; private set; }
 
 

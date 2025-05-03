@@ -1,4 +1,3 @@
-using System.Runtime.Serialization;
 using System.Text;
 using System.Text.Json.Serialization;
 
@@ -7,7 +6,7 @@ namespace PureCloud.Client.Models;
 /// <summary>
 /// KnowledgeGuestDocumentVariationAnswer
 /// </summary>
-[DataContract]
+
 public partial class KnowledgeGuestDocumentVariationAnswer : IEquatable<KnowledgeGuestDocumentVariationAnswer>
 {
 
@@ -36,7 +35,7 @@ public partial class KnowledgeGuestDocumentVariationAnswer : IEquatable<Knowledg
     /// The globally unique identifier for the variation.
     /// </summary>
     /// <value>The globally unique identifier for the variation.</value>
-    [DataMember(Name = "id", EmitDefaultValue = false)]
+    [JsonPropertyName("id")]
     public string Id { get; private set; }
 
 
@@ -45,7 +44,7 @@ public partial class KnowledgeGuestDocumentVariationAnswer : IEquatable<Knowledg
     /// The creation date-time for the document variation. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z
     /// </summary>
     /// <value>The creation date-time for the document variation. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z</value>
-    [DataMember(Name = "dateCreated", EmitDefaultValue = false)]
+    [JsonPropertyName("dateCreated")]
     public DateTime? DateCreated { get; private set; }
 
 
@@ -54,7 +53,7 @@ public partial class KnowledgeGuestDocumentVariationAnswer : IEquatable<Knowledg
     /// The last modification date-time for the document variation. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z
     /// </summary>
     /// <value>The last modification date-time for the document variation. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z</value>
-    [DataMember(Name = "dateModified", EmitDefaultValue = false)]
+    [JsonPropertyName("dateModified")]
     public DateTime? DateModified { get; private set; }
 
 
@@ -63,7 +62,7 @@ public partial class KnowledgeGuestDocumentVariationAnswer : IEquatable<Knowledg
     /// The version of the document.
     /// </summary>
     /// <value>The version of the document.</value>
-    [DataMember(Name = "documentVersion", EmitDefaultValue = false)]
+    [JsonPropertyName("documentVersion")]
     public AddressableEntityRef DocumentVersion { get; set; }
 
 
@@ -72,7 +71,7 @@ public partial class KnowledgeGuestDocumentVariationAnswer : IEquatable<Knowledg
     /// The context values associated with the variation.
     /// </summary>
     /// <value>The context values associated with the variation.</value>
-    [DataMember(Name = "contexts", EmitDefaultValue = false)]
+    [JsonPropertyName("contexts")]
     public List<KnowledgeGuestDocumentVariationContext> Contexts { get; set; }
 
 
@@ -81,7 +80,7 @@ public partial class KnowledgeGuestDocumentVariationAnswer : IEquatable<Knowledg
     /// The reference to document to which the variation is associated.
     /// </summary>
     /// <value>The reference to document to which the variation is associated.</value>
-    [DataMember(Name = "document", EmitDefaultValue = false)]
+    [JsonPropertyName("document")]
     public AddressableEntityRef Document { get; private set; }
 
 
@@ -90,7 +89,7 @@ public partial class KnowledgeGuestDocumentVariationAnswer : IEquatable<Knowledg
     /// The content for the variation.
     /// </summary>
     /// <value>The content for the variation.</value>
-    [DataMember(Name = "body", EmitDefaultValue = false)]
+    [JsonPropertyName("body")]
     public DocumentBodyWithHighlight Body { get; set; }
 
 
@@ -99,7 +98,7 @@ public partial class KnowledgeGuestDocumentVariationAnswer : IEquatable<Knowledg
     /// The URI for this object
     /// </summary>
     /// <value>The URI for this object</value>
-    [DataMember(Name = "selfUri", EmitDefaultValue = false)]
+    [JsonPropertyName("selfUri")]
     public string SelfUri { get; private set; }
 
 

@@ -7,13 +7,13 @@ namespace PureCloud.Client.Models;
 /// <summary>
 /// MediaTranscription
 /// </summary>
-[DataContract]
+
 public partial class MediaTranscription : IEquatable<MediaTranscription>
 {
     /// <summary>
     /// Gets or Sets TranscriptionProvider
     /// </summary>
-    [JsonConverter(typeof(JsonStringEnumConverter))]
+    
     public enum TranscriptionProviderEnum
     {
         /// <summary>
@@ -39,7 +39,7 @@ public partial class MediaTranscription : IEquatable<MediaTranscription>
     /// <summary>
     /// Gets or Sets TranscriptionProvider
     /// </summary>
-    [DataMember(Name = "transcriptionProvider", EmitDefaultValue = false)]
+    [JsonPropertyName("transcriptionProvider")]
     public TranscriptionProviderEnum? TranscriptionProvider { get; set; }
     /// <summary>
     /// Initializes a new instance of the <see cref="MediaTranscription" /> class.
@@ -60,7 +60,7 @@ public partial class MediaTranscription : IEquatable<MediaTranscription>
     /// <summary>
     /// Gets or Sets DisplayName
     /// </summary>
-    [DataMember(Name = "displayName", EmitDefaultValue = false)]
+    [JsonPropertyName("displayName")]
     public string DisplayName { get; set; }
 
 
@@ -70,7 +70,7 @@ public partial class MediaTranscription : IEquatable<MediaTranscription>
     /// <summary>
     /// Gets or Sets IntegrationId
     /// </summary>
-    [DataMember(Name = "integrationId", EmitDefaultValue = false)]
+    [JsonPropertyName("integrationId")]
     public string IntegrationId { get; set; }
 
 

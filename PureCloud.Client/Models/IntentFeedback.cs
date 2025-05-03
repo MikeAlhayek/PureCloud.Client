@@ -7,14 +7,14 @@ namespace PureCloud.Client.Models;
 /// <summary>
 /// IntentFeedback
 /// </summary>
-[DataContract]
+
 public partial class IntentFeedback : IEquatable<IntentFeedback>
 {
     /// <summary>
     /// The assessment on the detection for feedback text.
     /// </summary>
     /// <value>The assessment on the detection for feedback text.</value>
-    [JsonConverter(typeof(JsonStringEnumConverter))]
+    
     public enum AssessmentEnum
     {
         /// <summary>
@@ -53,7 +53,7 @@ public partial class IntentFeedback : IEquatable<IntentFeedback>
     /// The assessment on the detection for feedback text.
     /// </summary>
     /// <value>The assessment on the detection for feedback text.</value>
-    [DataMember(Name = "assessment", EmitDefaultValue = false)]
+    [JsonPropertyName("assessment")]
     public AssessmentEnum? Assessment { get; set; }
     /// <summary>
     /// Initializes a new instance of the <see cref="IntentFeedback" /> class.
@@ -71,7 +71,7 @@ public partial class IntentFeedback : IEquatable<IntentFeedback>
     /// The name of the detected intent.
     /// </summary>
     /// <value>The name of the detected intent.</value>
-    [DataMember(Name = "name", EmitDefaultValue = false)]
+    [JsonPropertyName("name")]
     public string Name { get; private set; }
 
 
@@ -80,7 +80,7 @@ public partial class IntentFeedback : IEquatable<IntentFeedback>
     /// The probability of the detected intent.
     /// </summary>
     /// <value>The probability of the detected intent.</value>
-    [DataMember(Name = "probability", EmitDefaultValue = false)]
+    [JsonPropertyName("probability")]
     public double? Probability { get; private set; }
 
 
@@ -89,7 +89,7 @@ public partial class IntentFeedback : IEquatable<IntentFeedback>
     /// The collection of named entities detected.
     /// </summary>
     /// <value>The collection of named entities detected.</value>
-    [DataMember(Name = "entities", EmitDefaultValue = false)]
+    [JsonPropertyName("entities")]
     public List<DetectedNamedEntity> Entities { get; private set; }
 
 

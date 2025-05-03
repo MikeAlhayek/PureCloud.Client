@@ -1,12 +1,12 @@
-using System.Runtime.Serialization;
 using System.Text;
+using System.Text.Json.Serialization;
 
 namespace PureCloud.Client.Models;
 
 /// <summary>
 /// UserRoutingStatusUserRoutingStatus
 /// </summary>
-[DataContract]
+
 public partial class UserRoutingStatusUserRoutingStatus : IEquatable<UserRoutingStatusUserRoutingStatus>
 {
     /// <summary>
@@ -29,7 +29,7 @@ public partial class UserRoutingStatusUserRoutingStatus : IEquatable<UserRouting
     /// The unique identifier of the user.
     /// </summary>
     /// <value>The unique identifier of the user.</value>
-    [DataMember(Name = "id", EmitDefaultValue = false)]
+    [JsonPropertyName("id")]
     public string Id { get; set; }
 
 
@@ -37,7 +37,7 @@ public partial class UserRoutingStatusUserRoutingStatus : IEquatable<UserRouting
     /// <summary>
     /// Gets or Sets RoutingStatus
     /// </summary>
-    [DataMember(Name = "routingStatus", EmitDefaultValue = false)]
+    [JsonPropertyName("routingStatus")]
     public UserRoutingStatusRoutingStatus RoutingStatus { get; set; }
 
 
@@ -45,7 +45,7 @@ public partial class UserRoutingStatusUserRoutingStatus : IEquatable<UserRouting
     /// <summary>
     /// Gets or Sets ErrorInfo
     /// </summary>
-    [DataMember(Name = "errorInfo", EmitDefaultValue = false)]
+    [JsonPropertyName("errorInfo")]
     public UserRoutingStatusErrorInfo ErrorInfo { get; set; }
 
 

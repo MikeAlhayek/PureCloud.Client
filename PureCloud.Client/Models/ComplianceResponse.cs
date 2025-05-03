@@ -1,4 +1,3 @@
-using System.Runtime.Serialization;
 using System.Text;
 using System.Text.Json.Serialization;
 
@@ -7,7 +6,7 @@ namespace PureCloud.Client.Models;
 /// <summary>
 /// ComplianceResponse
 /// </summary>
-[DataContract]
+
 public partial class ComplianceResponse : IEquatable<ComplianceResponse>
 {
 
@@ -32,7 +31,7 @@ public partial class ComplianceResponse : IEquatable<ComplianceResponse>
     /// Message response
     /// </summary>
     /// <value>Message response</value>
-    [DataMember(Name = "message", EmitDefaultValue = false)]
+    [JsonPropertyName("message")]
     public string Message { get; set; }
 
 

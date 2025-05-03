@@ -1,12 +1,12 @@
-using System.Runtime.Serialization;
 using System.Text;
+using System.Text.Json.Serialization;
 
 namespace PureCloud.Client.Models;
 
 /// <summary>
 /// ChatBadgeTopicBadgeEntity
 /// </summary>
-[DataContract]
+
 public partial class ChatBadgeTopicBadgeEntity : IEquatable<ChatBadgeTopicBadgeEntity>
 {
     /// <summary>
@@ -24,7 +24,7 @@ public partial class ChatBadgeTopicBadgeEntity : IEquatable<ChatBadgeTopicBadgeE
     /// <summary>
     /// Gets or Sets JabberId
     /// </summary>
-    [DataMember(Name = "jabberId", EmitDefaultValue = false)]
+    [JsonPropertyName("jabberId")]
     public string JabberId { get; set; }
 
 

@@ -1,12 +1,12 @@
-using System.Runtime.Serialization;
 using System.Text;
+using System.Text.Json.Serialization;
 
 namespace PureCloud.Client.Models;
 
 /// <summary>
 /// DispositionParameters
 /// </summary>
-[DataContract]
+
 public partial class DispositionParameters : IEquatable<DispositionParameters>
 {
     /// <summary>
@@ -25,7 +25,7 @@ public partial class DispositionParameters : IEquatable<DispositionParameters>
     /// ALSD evaluation inputs and output (isPersonalLikely) of the ALSD detector the last time it ran on the call (could be multiple times)
     /// </summary>
     /// <value>ALSD evaluation inputs and output (isPersonalLikely) of the ALSD detector the last time it ran on the call (could be multiple times)</value>
-    [DataMember(Name = "adjustableLiveSpeakerDetection", EmitDefaultValue = false)]
+    [JsonPropertyName("adjustableLiveSpeakerDetection")]
     public AdjustableLiveSpeakerDetection AdjustableLiveSpeakerDetection { get; set; }
 
 

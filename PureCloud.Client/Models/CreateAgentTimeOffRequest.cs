@@ -1,4 +1,3 @@
-using System.Runtime.Serialization;
 using System.Text;
 using System.Text.Json.Serialization;
 
@@ -7,7 +6,7 @@ namespace PureCloud.Client.Models;
 /// <summary>
 /// CreateAgentTimeOffRequest
 /// </summary>
-[DataContract]
+
 public partial class CreateAgentTimeOffRequest : IEquatable<CreateAgentTimeOffRequest>
 {
 
@@ -44,7 +43,7 @@ public partial class CreateAgentTimeOffRequest : IEquatable<CreateAgentTimeOffRe
     /// The ID of the activity code associated with this time off request. Activity code must be of the TimeOff category
     /// </summary>
     /// <value>The ID of the activity code associated with this time off request. Activity code must be of the TimeOff category</value>
-    [DataMember(Name = "activityCodeId", EmitDefaultValue = false)]
+    [JsonPropertyName("activityCodeId")]
     public string ActivityCodeId { get; set; }
 
 
@@ -53,7 +52,7 @@ public partial class CreateAgentTimeOffRequest : IEquatable<CreateAgentTimeOffRe
     /// Notes about the time off request
     /// </summary>
     /// <value>Notes about the time off request</value>
-    [DataMember(Name = "notes", EmitDefaultValue = false)]
+    [JsonPropertyName("notes")]
     public string Notes { get; set; }
 
 
@@ -62,7 +61,7 @@ public partial class CreateAgentTimeOffRequest : IEquatable<CreateAgentTimeOffRe
     /// A set of dates in yyyy-MM-dd format.  Should be interpreted in the management unit&#39;s configured time zone.
     /// </summary>
     /// <value>A set of dates in yyyy-MM-dd format.  Should be interpreted in the management unit&#39;s configured time zone.</value>
-    [DataMember(Name = "fullDayManagementUnitDates", EmitDefaultValue = false)]
+    [JsonPropertyName("fullDayManagementUnitDates")]
     public List<string> FullDayManagementUnitDates { get; set; }
 
 
@@ -71,7 +70,7 @@ public partial class CreateAgentTimeOffRequest : IEquatable<CreateAgentTimeOffRe
     /// A set of start date-times in ISO-8601 format for partial day requests.
     /// </summary>
     /// <value>A set of start date-times in ISO-8601 format for partial day requests.</value>
-    [DataMember(Name = "partialDayStartDateTimes", EmitDefaultValue = false)]
+    [JsonPropertyName("partialDayStartDateTimes")]
     public List<DateTime?> PartialDayStartDateTimes { get; set; }
 
 
@@ -80,7 +79,7 @@ public partial class CreateAgentTimeOffRequest : IEquatable<CreateAgentTimeOffRe
     /// The daily duration of this time off request in minutes
     /// </summary>
     /// <value>The daily duration of this time off request in minutes</value>
-    [DataMember(Name = "dailyDurationMinutes", EmitDefaultValue = false)]
+    [JsonPropertyName("dailyDurationMinutes")]
     public int? DailyDurationMinutes { get; set; }
 
 
@@ -89,7 +88,7 @@ public partial class CreateAgentTimeOffRequest : IEquatable<CreateAgentTimeOffRe
     /// Daily durations for each day of this time off request in minutes
     /// </summary>
     /// <value>Daily durations for each day of this time off request in minutes</value>
-    [DataMember(Name = "durationMinutes", EmitDefaultValue = false)]
+    [JsonPropertyName("durationMinutes")]
     public List<int?> DurationMinutes { get; set; }
 
 
@@ -98,7 +97,7 @@ public partial class CreateAgentTimeOffRequest : IEquatable<CreateAgentTimeOffRe
     /// Payable minutes for each day of this time off request
     /// </summary>
     /// <value>Payable minutes for each day of this time off request</value>
-    [DataMember(Name = "payableMinutes", EmitDefaultValue = false)]
+    [JsonPropertyName("payableMinutes")]
     public List<int?> PayableMinutes { get; set; }
 
 

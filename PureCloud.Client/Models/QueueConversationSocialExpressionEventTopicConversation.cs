@@ -1,12 +1,12 @@
-using System.Runtime.Serialization;
 using System.Text;
+using System.Text.Json.Serialization;
 
 namespace PureCloud.Client.Models;
 
 /// <summary>
 /// QueueConversationSocialExpressionEventTopicConversation
 /// </summary>
-[DataContract]
+
 public partial class QueueConversationSocialExpressionEventTopicConversation : IEquatable<QueueConversationSocialExpressionEventTopicConversation>
 {
     /// <summary>
@@ -42,7 +42,7 @@ public partial class QueueConversationSocialExpressionEventTopicConversation : I
     /// <summary>
     /// Gets or Sets Id
     /// </summary>
-    [DataMember(Name = "id", EmitDefaultValue = false)]
+    [JsonPropertyName("id")]
     public string Id { get; set; }
 
 
@@ -50,7 +50,7 @@ public partial class QueueConversationSocialExpressionEventTopicConversation : I
     /// <summary>
     /// Gets or Sets MaxParticipants
     /// </summary>
-    [DataMember(Name = "maxParticipants", EmitDefaultValue = false)]
+    [JsonPropertyName("maxParticipants")]
     public long? MaxParticipants { get; set; }
 
 
@@ -58,7 +58,7 @@ public partial class QueueConversationSocialExpressionEventTopicConversation : I
     /// <summary>
     /// Gets or Sets Participants
     /// </summary>
-    [DataMember(Name = "participants", EmitDefaultValue = false)]
+    [JsonPropertyName("participants")]
     public List<QueueConversationSocialExpressionEventTopicParticipant> Participants { get; set; }
 
 
@@ -66,7 +66,7 @@ public partial class QueueConversationSocialExpressionEventTopicConversation : I
     /// <summary>
     /// Gets or Sets RecentTransfers
     /// </summary>
-    [DataMember(Name = "recentTransfers", EmitDefaultValue = false)]
+    [JsonPropertyName("recentTransfers")]
     public List<QueueConversationSocialExpressionEventTopicTransferResponse> RecentTransfers { get; set; }
 
 
@@ -74,7 +74,7 @@ public partial class QueueConversationSocialExpressionEventTopicConversation : I
     /// <summary>
     /// Gets or Sets RecordingState
     /// </summary>
-    [DataMember(Name = "recordingState", EmitDefaultValue = false)]
+    [JsonPropertyName("recordingState")]
     public string RecordingState { get; set; }
 
 
@@ -82,7 +82,7 @@ public partial class QueueConversationSocialExpressionEventTopicConversation : I
     /// <summary>
     /// Gets or Sets Address
     /// </summary>
-    [DataMember(Name = "address", EmitDefaultValue = false)]
+    [JsonPropertyName("address")]
     public string Address { get; set; }
 
 
@@ -90,7 +90,7 @@ public partial class QueueConversationSocialExpressionEventTopicConversation : I
     /// <summary>
     /// Gets or Sets ExternalTag
     /// </summary>
-    [DataMember(Name = "externalTag", EmitDefaultValue = false)]
+    [JsonPropertyName("externalTag")]
     public string ExternalTag { get; set; }
 
 
@@ -98,7 +98,7 @@ public partial class QueueConversationSocialExpressionEventTopicConversation : I
     /// <summary>
     /// Gets or Sets UtilizationLabelId
     /// </summary>
-    [DataMember(Name = "utilizationLabelId", EmitDefaultValue = false)]
+    [JsonPropertyName("utilizationLabelId")]
     public string UtilizationLabelId { get; set; }
 
 
@@ -106,7 +106,7 @@ public partial class QueueConversationSocialExpressionEventTopicConversation : I
     /// <summary>
     /// Gets or Sets SecurePause
     /// </summary>
-    [DataMember(Name = "securePause", EmitDefaultValue = false)]
+    [JsonPropertyName("securePause")]
     public bool? SecurePause { get; set; }
 
 
@@ -114,7 +114,7 @@ public partial class QueueConversationSocialExpressionEventTopicConversation : I
     /// <summary>
     /// Gets or Sets Divisions
     /// </summary>
-    [DataMember(Name = "divisions", EmitDefaultValue = false)]
+    [JsonPropertyName("divisions")]
     public List<QueueConversationSocialExpressionEventTopicConversationDivisionMembership> Divisions { get; set; }
 
 

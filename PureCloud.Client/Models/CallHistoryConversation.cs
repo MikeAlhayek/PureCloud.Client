@@ -7,14 +7,14 @@ namespace PureCloud.Client.Models;
 /// <summary>
 /// CallHistoryConversation
 /// </summary>
-[DataContract]
+
 public partial class CallHistoryConversation : IEquatable<CallHistoryConversation>
 {
     /// <summary>
     /// The direction of the call relating to the current user
     /// </summary>
     /// <value>The direction of the call relating to the current user</value>
-    [JsonConverter(typeof(JsonStringEnumConverter))]
+    
     public enum DirectionEnum
     {
         /// <summary>
@@ -41,7 +41,7 @@ public partial class CallHistoryConversation : IEquatable<CallHistoryConversatio
     /// The direction of the call relating to the current user
     /// </summary>
     /// <value>The direction of the call relating to the current user</value>
-    [DataMember(Name = "direction", EmitDefaultValue = false)]
+    [JsonPropertyName("direction")]
     public DirectionEnum? Direction { get; set; }
     /// <summary>
     /// Initializes a new instance of the <see cref="CallHistoryConversation" /> class.
@@ -79,7 +79,7 @@ public partial class CallHistoryConversation : IEquatable<CallHistoryConversatio
     /// The globally unique identifier for the object.
     /// </summary>
     /// <value>The globally unique identifier for the object.</value>
-    [DataMember(Name = "id", EmitDefaultValue = false)]
+    [JsonPropertyName("id")]
     public string Id { get; private set; }
 
 
@@ -87,7 +87,7 @@ public partial class CallHistoryConversation : IEquatable<CallHistoryConversatio
     /// <summary>
     /// Gets or Sets Name
     /// </summary>
-    [DataMember(Name = "name", EmitDefaultValue = false)]
+    [JsonPropertyName("name")]
     public string Name { get; set; }
 
 
@@ -96,7 +96,7 @@ public partial class CallHistoryConversation : IEquatable<CallHistoryConversatio
     /// The list of participants involved in the conversation.
     /// </summary>
     /// <value>The list of participants involved in the conversation.</value>
-    [DataMember(Name = "participants", EmitDefaultValue = false)]
+    [JsonPropertyName("participants")]
     public List<CallHistoryParticipant> Participants { get; set; }
 
 
@@ -107,7 +107,7 @@ public partial class CallHistoryConversation : IEquatable<CallHistoryConversatio
     /// Did the call end in the current user&#39;s voicemail
     /// </summary>
     /// <value>Did the call end in the current user&#39;s voicemail</value>
-    [DataMember(Name = "wentToVoicemail", EmitDefaultValue = false)]
+    [JsonPropertyName("wentToVoicemail")]
     public bool? WentToVoicemail { get; set; }
 
 
@@ -116,7 +116,7 @@ public partial class CallHistoryConversation : IEquatable<CallHistoryConversatio
     /// Did the user not answer this conversation
     /// </summary>
     /// <value>Did the user not answer this conversation</value>
-    [DataMember(Name = "missedCall", EmitDefaultValue = false)]
+    [JsonPropertyName("missedCall")]
     public bool? MissedCall { get; set; }
 
 
@@ -125,7 +125,7 @@ public partial class CallHistoryConversation : IEquatable<CallHistoryConversatio
     /// The time the user joined the conversation. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z
     /// </summary>
     /// <value>The time the user joined the conversation. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z</value>
-    [DataMember(Name = "startTime", EmitDefaultValue = false)]
+    [JsonPropertyName("startTime")]
     public DateTime? StartTime { get; set; }
 
 
@@ -134,7 +134,7 @@ public partial class CallHistoryConversation : IEquatable<CallHistoryConversatio
     /// Was this conversation a conference
     /// </summary>
     /// <value>Was this conversation a conference</value>
-    [DataMember(Name = "wasConference", EmitDefaultValue = false)]
+    [JsonPropertyName("wasConference")]
     public bool? WasConference { get; set; }
 
 
@@ -143,7 +143,7 @@ public partial class CallHistoryConversation : IEquatable<CallHistoryConversatio
     /// Was this conversation a callback
     /// </summary>
     /// <value>Was this conversation a callback</value>
-    [DataMember(Name = "wasCallback", EmitDefaultValue = false)]
+    [JsonPropertyName("wasCallback")]
     public bool? WasCallback { get; set; }
 
 
@@ -152,7 +152,7 @@ public partial class CallHistoryConversation : IEquatable<CallHistoryConversatio
     /// Did this conversation have a screen share session
     /// </summary>
     /// <value>Did this conversation have a screen share session</value>
-    [DataMember(Name = "hadScreenShare", EmitDefaultValue = false)]
+    [JsonPropertyName("hadScreenShare")]
     public bool? HadScreenShare { get; set; }
 
 
@@ -161,7 +161,7 @@ public partial class CallHistoryConversation : IEquatable<CallHistoryConversatio
     /// Did this conversation have a cobrowse session
     /// </summary>
     /// <value>Did this conversation have a cobrowse session</value>
-    [DataMember(Name = "hadCobrowse", EmitDefaultValue = false)]
+    [JsonPropertyName("hadCobrowse")]
     public bool? HadCobrowse { get; set; }
 
 
@@ -170,7 +170,7 @@ public partial class CallHistoryConversation : IEquatable<CallHistoryConversatio
     /// Was this conversation associated with an outbound campaign
     /// </summary>
     /// <value>Was this conversation associated with an outbound campaign</value>
-    [DataMember(Name = "wasOutboundCampaign", EmitDefaultValue = false)]
+    [JsonPropertyName("wasOutboundCampaign")]
     public bool? WasOutboundCampaign { get; set; }
 
 
@@ -179,7 +179,7 @@ public partial class CallHistoryConversation : IEquatable<CallHistoryConversatio
     /// The URI for this object
     /// </summary>
     /// <value>The URI for this object</value>
-    [DataMember(Name = "selfUri", EmitDefaultValue = false)]
+    [JsonPropertyName("selfUri")]
     public string SelfUri { get; private set; }
 
 

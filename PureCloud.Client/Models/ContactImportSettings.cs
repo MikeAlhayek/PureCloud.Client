@@ -7,13 +7,13 @@ namespace PureCloud.Client.Models;
 /// <summary>
 /// ContactImportSettings
 /// </summary>
-[DataContract]
+
 public partial class ContactImportSettings : IEquatable<ContactImportSettings>
 {
     /// <summary>
     /// Gets or Sets MatchingCriteria
     /// </summary>
-    [JsonConverter(typeof(JsonStringEnumConverter))]
+    
     public enum MatchingCriteriaEnum
     {
         /// <summary>
@@ -66,7 +66,7 @@ public partial class ContactImportSettings : IEquatable<ContactImportSettings>
     /// The globally unique identifier for the object.
     /// </summary>
     /// <value>The globally unique identifier for the object.</value>
-    [DataMember(Name = "id", EmitDefaultValue = false)]
+    [JsonPropertyName("id")]
     public string Id { get; private set; }
 
 
@@ -75,7 +75,7 @@ public partial class ContactImportSettings : IEquatable<ContactImportSettings>
     /// Display name for the settings
     /// </summary>
     /// <value>Display name for the settings</value>
-    [DataMember(Name = "name", EmitDefaultValue = false)]
+    [JsonPropertyName("name")]
     public string Name { get; set; }
 
 
@@ -84,7 +84,7 @@ public partial class ContactImportSettings : IEquatable<ContactImportSettings>
     /// Which fields you want to identity resolution based on. (e.g.: Email, Phone). It can be empty, populated only one of them or it can be both for now. The order of the items is important for identity resolution
     /// </summary>
     /// <value>Which fields you want to identity resolution based on. (e.g.: Email, Phone). It can be empty, populated only one of them or it can be both for now. The order of the items is important for identity resolution</value>
-    [DataMember(Name = "matchingCriteria", EmitDefaultValue = false)]
+    [JsonPropertyName("matchingCriteria")]
     public List<MatchingCriteriaEnum> MatchingCriteria { get; set; }
 
 
@@ -93,7 +93,7 @@ public partial class ContactImportSettings : IEquatable<ContactImportSettings>
     /// Decides what happens when a record already found in the system. Action will be Upsert or Merge
     /// </summary>
     /// <value>Decides what happens when a record already found in the system. Action will be Upsert or Merge</value>
-    [DataMember(Name = "mergeContacts", EmitDefaultValue = false)]
+    [JsonPropertyName("mergeContacts")]
     public bool? MergeContacts { get; set; }
 
 
@@ -102,7 +102,7 @@ public partial class ContactImportSettings : IEquatable<ContactImportSettings>
     /// Define the corresponding source system by the customer, the customer can have different externalId source, they can collect this id from contact service
     /// </summary>
     /// <value>Define the corresponding source system by the customer, the customer can have different externalId source, they can collect this id from contact service</value>
-    [DataMember(Name = "externalSourceId", EmitDefaultValue = false)]
+    [JsonPropertyName("externalSourceId")]
     public string ExternalSourceId { get; set; }
 
 
@@ -111,7 +111,7 @@ public partial class ContactImportSettings : IEquatable<ContactImportSettings>
     /// Decides which field we need to send towards contact service
     /// </summary>
     /// <value>Decides which field we need to send towards contact service</value>
-    [DataMember(Name = "importFields", EmitDefaultValue = false)]
+    [JsonPropertyName("importFields")]
     public List<ContactImportField> ImportFields { get; set; }
 
 
@@ -120,7 +120,7 @@ public partial class ContactImportSettings : IEquatable<ContactImportSettings>
     /// Creation date for the settings. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z
     /// </summary>
     /// <value>Creation date for the settings. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z</value>
-    [DataMember(Name = "dateCreated", EmitDefaultValue = false)]
+    [JsonPropertyName("dateCreated")]
     public DateTime? DateCreated { get; private set; }
 
 
@@ -129,7 +129,7 @@ public partial class ContactImportSettings : IEquatable<ContactImportSettings>
     /// The URI for this object
     /// </summary>
     /// <value>The URI for this object</value>
-    [DataMember(Name = "selfUri", EmitDefaultValue = false)]
+    [JsonPropertyName("selfUri")]
     public string SelfUri { get; private set; }
 
 

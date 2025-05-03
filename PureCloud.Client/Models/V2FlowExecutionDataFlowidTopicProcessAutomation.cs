@@ -1,12 +1,12 @@
-using System.Runtime.Serialization;
 using System.Text;
+using System.Text.Json.Serialization;
 
 namespace PureCloud.Client.Models;
 
 /// <summary>
 /// This contains contextual information about an invoking entity.
 /// </summary>
-[DataContract]
+
 public partial class V2FlowExecutionDataFlowidTopicProcessAutomation : IEquatable<V2FlowExecutionDataFlowidTopicProcessAutomation>
 {
     /// <summary>
@@ -27,7 +27,7 @@ public partial class V2FlowExecutionDataFlowidTopicProcessAutomation : IEquatabl
     /// The identifier of the process automation trigger that invoked this flow.
     /// </summary>
     /// <value>The identifier of the process automation trigger that invoked this flow.</value>
-    [DataMember(Name = "triggerId", EmitDefaultValue = false)]
+    [JsonPropertyName("triggerId")]
     public string TriggerId { get; set; }
 
 
@@ -36,7 +36,7 @@ public partial class V2FlowExecutionDataFlowidTopicProcessAutomation : IEquatabl
     /// The name of the process automation trigger that invoked this flow.
     /// </summary>
     /// <value>The name of the process automation trigger that invoked this flow.</value>
-    [DataMember(Name = "triggerName", EmitDefaultValue = false)]
+    [JsonPropertyName("triggerName")]
     public string TriggerName { get; set; }
 
 

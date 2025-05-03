@@ -7,14 +7,14 @@ namespace PureCloud.Client.Models;
 /// <summary>
 /// PresentedKnowledgeDocument
 /// </summary>
-[DataContract]
+
 public partial class PresentedKnowledgeDocument : IEquatable<PresentedKnowledgeDocument>
 {
     /// <summary>
     /// The method how knowledge was surfaced. Article: Full article was shown. Snippet: A snippet from the article was shown. Highlight: A highlighted answer in a snippet was shown.
     /// </summary>
     /// <value>The method how knowledge was surfaced. Article: Full article was shown. Snippet: A snippet from the article was shown. Highlight: A highlighted answer in a snippet was shown.</value>
-    [JsonConverter(typeof(JsonStringEnumConverter))]
+    
     public enum SurfacingMethodEnum
     {
         /// <summary>
@@ -53,7 +53,7 @@ public partial class PresentedKnowledgeDocument : IEquatable<PresentedKnowledgeD
     /// The method how knowledge was surfaced. Article: Full article was shown. Snippet: A snippet from the article was shown. Highlight: A highlighted answer in a snippet was shown.
     /// </summary>
     /// <value>The method how knowledge was surfaced. Article: Full article was shown. Snippet: A snippet from the article was shown. Highlight: A highlighted answer in a snippet was shown.</value>
-    [DataMember(Name = "surfacingMethod", EmitDefaultValue = false)]
+    [JsonPropertyName("surfacingMethod")]
     public SurfacingMethodEnum? SurfacingMethod { get; set; }
 
     /// <summary>
@@ -83,7 +83,7 @@ public partial class PresentedKnowledgeDocument : IEquatable<PresentedKnowledgeD
     /// The ID of the document.
     /// </summary>
     /// <value>The ID of the document.</value>
-    [DataMember(Name = "documentId", EmitDefaultValue = false)]
+    [JsonPropertyName("documentId")]
     public string DocumentId { get; set; }
 
 
@@ -92,7 +92,7 @@ public partial class PresentedKnowledgeDocument : IEquatable<PresentedKnowledgeD
     /// The variation of the document.
     /// </summary>
     /// <value>The variation of the document.</value>
-    [DataMember(Name = "documentVariationId", EmitDefaultValue = false)]
+    [JsonPropertyName("documentVariationId")]
     public string DocumentVariationId { get; set; }
 
 
@@ -101,7 +101,7 @@ public partial class PresentedKnowledgeDocument : IEquatable<PresentedKnowledgeD
     /// The version of the document.
     /// </summary>
     /// <value>The version of the document.</value>
-    [DataMember(Name = "documentVersionId", EmitDefaultValue = false)]
+    [JsonPropertyName("documentVersionId")]
     public string DocumentVersionId { get; set; }
 
 

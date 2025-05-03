@@ -1,12 +1,12 @@
-using System.Runtime.Serialization;
 using System.Text;
+using System.Text.Json.Serialization;
 
 namespace PureCloud.Client.Models;
 
 /// <summary>
 /// DomainEdgeSoftwareVersionDto
 /// </summary>
-[DataContract]
+
 public partial class DomainEdgeSoftwareVersionDto : IEquatable<DomainEdgeSoftwareVersionDto>
 {
     /// <summary>
@@ -35,7 +35,7 @@ public partial class DomainEdgeSoftwareVersionDto : IEquatable<DomainEdgeSoftwar
     /// The globally unique identifier for the object.
     /// </summary>
     /// <value>The globally unique identifier for the object.</value>
-    [DataMember(Name = "id", EmitDefaultValue = false)]
+    [JsonPropertyName("id")]
     public string Id { get; private set; }
 
 
@@ -43,7 +43,7 @@ public partial class DomainEdgeSoftwareVersionDto : IEquatable<DomainEdgeSoftwar
     /// <summary>
     /// Gets or Sets Name
     /// </summary>
-    [DataMember(Name = "name", EmitDefaultValue = false)]
+    [JsonPropertyName("name")]
     public string Name { get; set; }
 
 
@@ -51,7 +51,7 @@ public partial class DomainEdgeSoftwareVersionDto : IEquatable<DomainEdgeSoftwar
     /// <summary>
     /// Gets or Sets EdgeVersion
     /// </summary>
-    [DataMember(Name = "edgeVersion", EmitDefaultValue = false)]
+    [JsonPropertyName("edgeVersion")]
     public string EdgeVersion { get; set; }
 
 
@@ -60,7 +60,7 @@ public partial class DomainEdgeSoftwareVersionDto : IEquatable<DomainEdgeSoftwar
     /// Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z
     /// </summary>
     /// <value>Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z</value>
-    [DataMember(Name = "publishDate", EmitDefaultValue = false)]
+    [JsonPropertyName("publishDate")]
     public DateTime? PublishDate { get; set; }
 
 
@@ -68,7 +68,7 @@ public partial class DomainEdgeSoftwareVersionDto : IEquatable<DomainEdgeSoftwar
     /// <summary>
     /// Gets or Sets EdgeUri
     /// </summary>
-    [DataMember(Name = "edgeUri", EmitDefaultValue = false)]
+    [JsonPropertyName("edgeUri")]
     public string EdgeUri { get; set; }
 
 
@@ -76,7 +76,7 @@ public partial class DomainEdgeSoftwareVersionDto : IEquatable<DomainEdgeSoftwar
     /// <summary>
     /// Gets or Sets LatestRelease
     /// </summary>
-    [DataMember(Name = "latestRelease", EmitDefaultValue = false)]
+    [JsonPropertyName("latestRelease")]
     public bool? LatestRelease { get; set; }
 
 
@@ -84,7 +84,7 @@ public partial class DomainEdgeSoftwareVersionDto : IEquatable<DomainEdgeSoftwar
     /// <summary>
     /// Gets or Sets Current
     /// </summary>
-    [DataMember(Name = "current", EmitDefaultValue = false)]
+    [JsonPropertyName("current")]
     public bool? Current { get; set; }
 
 
@@ -93,7 +93,7 @@ public partial class DomainEdgeSoftwareVersionDto : IEquatable<DomainEdgeSoftwar
     /// The URI for this object
     /// </summary>
     /// <value>The URI for this object</value>
-    [DataMember(Name = "selfUri", EmitDefaultValue = false)]
+    [JsonPropertyName("selfUri")]
     public string SelfUri { get; private set; }
 
 

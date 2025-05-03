@@ -1,4 +1,3 @@
-using System.Runtime.Serialization;
 using System.Text;
 using System.Text.Json.Serialization;
 
@@ -7,7 +6,7 @@ namespace PureCloud.Client.Models;
 /// <summary>
 /// Messaging Setting for messaging platform integrations
 /// </summary>
-[DataContract]
+
 public partial class MessagingSettingRequestReference : IEquatable<MessagingSettingRequestReference>
 {
 
@@ -32,7 +31,7 @@ public partial class MessagingSettingRequestReference : IEquatable<MessagingSett
     /// The messaging Setting unique identifier associated with this integration
     /// </summary>
     /// <value>The messaging Setting unique identifier associated with this integration</value>
-    [DataMember(Name = "id", EmitDefaultValue = false)]
+    [JsonPropertyName("id")]
     public string Id { get; set; }
 
 

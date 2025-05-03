@@ -7,14 +7,14 @@ namespace PureCloud.Client.Models;
 /// <summary>
 /// BuAgentScheduleUpdate
 /// </summary>
-[DataContract]
+
 public partial class BuAgentScheduleUpdate : IEquatable<BuAgentScheduleUpdate>
 {
     /// <summary>
     /// The type of update
     /// </summary>
     /// <value>The type of update</value>
-    [JsonConverter(typeof(JsonStringEnumConverter))]
+    
     public enum TypeEnum
     {
         /// <summary>
@@ -47,7 +47,7 @@ public partial class BuAgentScheduleUpdate : IEquatable<BuAgentScheduleUpdate>
     /// The type of update
     /// </summary>
     /// <value>The type of update</value>
-    [DataMember(Name = "type", EmitDefaultValue = false)]
+    [JsonPropertyName("type")]
     public TypeEnum? Type { get; set; }
     /// <summary>
     /// Initializes a new instance of the <see cref="BuAgentScheduleUpdate" /> class.
@@ -69,7 +69,7 @@ public partial class BuAgentScheduleUpdate : IEquatable<BuAgentScheduleUpdate>
     /// The start date for the affected shifts
     /// </summary>
     /// <value>The start date for the affected shifts</value>
-    [DataMember(Name = "shiftStartDates", EmitDefaultValue = false)]
+    [JsonPropertyName("shiftStartDates")]
     public List<DateTime?> ShiftStartDates { get; set; }
 
 

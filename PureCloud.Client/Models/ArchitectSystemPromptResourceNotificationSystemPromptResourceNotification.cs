@@ -1,12 +1,12 @@
-using System.Runtime.Serialization;
 using System.Text;
+using System.Text.Json.Serialization;
 
 namespace PureCloud.Client.Models;
 
 /// <summary>
 /// ArchitectSystemPromptResourceNotificationSystemPromptResourceNotification
 /// </summary>
-[DataContract]
+
 public partial class ArchitectSystemPromptResourceNotificationSystemPromptResourceNotification : IEquatable<ArchitectSystemPromptResourceNotificationSystemPromptResourceNotification>
 {
     /// <summary>
@@ -35,7 +35,7 @@ public partial class ArchitectSystemPromptResourceNotificationSystemPromptResour
     /// Id of the prompt that this notification is for.
     /// </summary>
     /// <value>Id of the prompt that this notification is for.</value>
-    [DataMember(Name = "promptId", EmitDefaultValue = false)]
+    [JsonPropertyName("promptId")]
     public string PromptId { get; set; }
 
 
@@ -44,7 +44,7 @@ public partial class ArchitectSystemPromptResourceNotificationSystemPromptResour
     /// Id of the prompt resource that this notification is for.
     /// </summary>
     /// <value>Id of the prompt resource that this notification is for.</value>
-    [DataMember(Name = "id", EmitDefaultValue = false)]
+    [JsonPropertyName("id")]
     public string Id { get; set; }
 
 
@@ -53,7 +53,7 @@ public partial class ArchitectSystemPromptResourceNotificationSystemPromptResour
     /// Language resource that this notification is for.
     /// </summary>
     /// <value>Language resource that this notification is for.</value>
-    [DataMember(Name = "language", EmitDefaultValue = false)]
+    [JsonPropertyName("language")]
     public string Language { get; set; }
 
 
@@ -62,7 +62,7 @@ public partial class ArchitectSystemPromptResourceNotificationSystemPromptResour
     /// Uri to the file for this system prompt resource.
     /// </summary>
     /// <value>Uri to the file for this system prompt resource.</value>
-    [DataMember(Name = "mediaUri", EmitDefaultValue = false)]
+    [JsonPropertyName("mediaUri")]
     public string MediaUri { get; set; }
 
 
@@ -71,7 +71,7 @@ public partial class ArchitectSystemPromptResourceNotificationSystemPromptResour
     /// Current upload status of the prompt resource (created, uploaded, transcoded, transcodeFailed).
     /// </summary>
     /// <value>Current upload status of the prompt resource (created, uploaded, transcoded, transcodeFailed).</value>
-    [DataMember(Name = "uploadStatus", EmitDefaultValue = false)]
+    [JsonPropertyName("uploadStatus")]
     public string UploadStatus { get; set; }
 
 
@@ -80,7 +80,7 @@ public partial class ArchitectSystemPromptResourceNotificationSystemPromptResour
     /// Duration (in seconds) for the transcoded audio file.
     /// </summary>
     /// <value>Duration (in seconds) for the transcoded audio file.</value>
-    [DataMember(Name = "durationSeconds", EmitDefaultValue = false)]
+    [JsonPropertyName("durationSeconds")]
     public double? DurationSeconds { get; set; }
 
 

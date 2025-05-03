@@ -7,13 +7,13 @@ namespace PureCloud.Client.Models;
 /// <summary>
 /// JourneyAppEventsNotificationEventAction
 /// </summary>
-[DataContract]
+
 public partial class JourneyAppEventsNotificationEventAction : IEquatable<JourneyAppEventsNotificationEventAction>
 {
     /// <summary>
     /// Gets or Sets State
     /// </summary>
-    [JsonConverter(typeof(JsonStringEnumConverter))]
+    
     public enum StateEnum
     {
         /// <summary>
@@ -111,7 +111,7 @@ public partial class JourneyAppEventsNotificationEventAction : IEquatable<Journe
     /// <summary>
     /// Gets or Sets MediaType
     /// </summary>
-    [JsonConverter(typeof(JsonStringEnumConverter))]
+    
     public enum MediaTypeEnum
     {
         /// <summary>
@@ -149,12 +149,12 @@ public partial class JourneyAppEventsNotificationEventAction : IEquatable<Journe
     /// <summary>
     /// Gets or Sets State
     /// </summary>
-    [DataMember(Name = "state", EmitDefaultValue = false)]
+    [JsonPropertyName("state")]
     public StateEnum? State { get; set; }
     /// <summary>
     /// Gets or Sets MediaType
     /// </summary>
-    [DataMember(Name = "mediaType", EmitDefaultValue = false)]
+    [JsonPropertyName("mediaType")]
     public MediaTypeEnum? MediaType { get; set; }
     /// <summary>
     /// Initializes a new instance of the <see cref="JourneyAppEventsNotificationEventAction" /> class.
@@ -179,7 +179,7 @@ public partial class JourneyAppEventsNotificationEventAction : IEquatable<Journe
     /// <summary>
     /// Gets or Sets Id
     /// </summary>
-    [DataMember(Name = "id", EmitDefaultValue = false)]
+    [JsonPropertyName("id")]
     public string Id { get; set; }
 
 
@@ -187,7 +187,7 @@ public partial class JourneyAppEventsNotificationEventAction : IEquatable<Journe
     /// <summary>
     /// Gets or Sets CreatedDate
     /// </summary>
-    [DataMember(Name = "createdDate", EmitDefaultValue = false)]
+    [JsonPropertyName("createdDate")]
     public DateTime? CreatedDate { get; set; }
 
 
@@ -199,7 +199,7 @@ public partial class JourneyAppEventsNotificationEventAction : IEquatable<Journe
     /// <summary>
     /// Gets or Sets Prompt
     /// </summary>
-    [DataMember(Name = "prompt", EmitDefaultValue = false)]
+    [JsonPropertyName("prompt")]
     public string Prompt { get; set; }
 
 

@@ -1,12 +1,12 @@
-using System.Runtime.Serialization;
 using System.Text;
+using System.Text.Json.Serialization;
 
 namespace PureCloud.Client.Models;
 
 /// <summary>
 /// WorkPlanRotationResponse
 /// </summary>
-[DataContract]
+
 public partial class WorkPlanRotationResponse : IEquatable<WorkPlanRotationResponse>
 {
     /// <summary>
@@ -37,7 +37,7 @@ public partial class WorkPlanRotationResponse : IEquatable<WorkPlanRotationRespo
     /// The globally unique identifier for the object.
     /// </summary>
     /// <value>The globally unique identifier for the object.</value>
-    [DataMember(Name = "id", EmitDefaultValue = false)]
+    [JsonPropertyName("id")]
     public string Id { get; private set; }
 
 
@@ -45,7 +45,7 @@ public partial class WorkPlanRotationResponse : IEquatable<WorkPlanRotationRespo
     /// <summary>
     /// Gets or Sets Name
     /// </summary>
-    [DataMember(Name = "name", EmitDefaultValue = false)]
+    [JsonPropertyName("name")]
     public string Name { get; set; }
 
 
@@ -54,7 +54,7 @@ public partial class WorkPlanRotationResponse : IEquatable<WorkPlanRotationRespo
     /// Whether the work plan rotation is enabled for scheduling
     /// </summary>
     /// <value>Whether the work plan rotation is enabled for scheduling</value>
-    [DataMember(Name = "enabled", EmitDefaultValue = false)]
+    [JsonPropertyName("enabled")]
     public bool? Enabled { get; set; }
 
 
@@ -63,7 +63,7 @@ public partial class WorkPlanRotationResponse : IEquatable<WorkPlanRotationRespo
     /// The date range to which this work plan rotation applies
     /// </summary>
     /// <value>The date range to which this work plan rotation applies</value>
-    [DataMember(Name = "dateRange", EmitDefaultValue = false)]
+    [JsonPropertyName("dateRange")]
     public DateRangeWithOptionalEnd DateRange { get; set; }
 
 
@@ -72,7 +72,7 @@ public partial class WorkPlanRotationResponse : IEquatable<WorkPlanRotationRespo
     /// Pattern with ordered list of work plans that rotate on a weekly basis
     /// </summary>
     /// <value>Pattern with ordered list of work plans that rotate on a weekly basis</value>
-    [DataMember(Name = "pattern", EmitDefaultValue = false)]
+    [JsonPropertyName("pattern")]
     public WorkPlanPatternResponse Pattern { get; set; }
 
 
@@ -81,7 +81,7 @@ public partial class WorkPlanRotationResponse : IEquatable<WorkPlanRotationRespo
     /// Number of agents in this work plan rotation
     /// </summary>
     /// <value>Number of agents in this work plan rotation</value>
-    [DataMember(Name = "agentCount", EmitDefaultValue = false)]
+    [JsonPropertyName("agentCount")]
     public int? AgentCount { get; set; }
 
 
@@ -90,7 +90,7 @@ public partial class WorkPlanRotationResponse : IEquatable<WorkPlanRotationRespo
     /// Agents in this work plan rotation. Populate with expand&#x3D;agents for GET WorkPlanRotationsList (defaults to empty list)
     /// </summary>
     /// <value>Agents in this work plan rotation. Populate with expand&#x3D;agents for GET WorkPlanRotationsList (defaults to empty list)</value>
-    [DataMember(Name = "agents", EmitDefaultValue = false)]
+    [JsonPropertyName("agents")]
     public List<WorkPlanRotationAgentResponse> Agents { get; set; }
 
 
@@ -99,7 +99,7 @@ public partial class WorkPlanRotationResponse : IEquatable<WorkPlanRotationRespo
     /// Version metadata for this work plan rotation
     /// </summary>
     /// <value>Version metadata for this work plan rotation</value>
-    [DataMember(Name = "metadata", EmitDefaultValue = false)]
+    [JsonPropertyName("metadata")]
     public WfmVersionedEntityMetadata Metadata { get; set; }
 
 
@@ -108,7 +108,7 @@ public partial class WorkPlanRotationResponse : IEquatable<WorkPlanRotationRespo
     /// The URI for this object
     /// </summary>
     /// <value>The URI for this object</value>
-    [DataMember(Name = "selfUri", EmitDefaultValue = false)]
+    [JsonPropertyName("selfUri")]
     public string SelfUri { get; private set; }
 
 

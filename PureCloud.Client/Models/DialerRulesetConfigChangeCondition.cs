@@ -7,14 +7,14 @@ namespace PureCloud.Client.Models;
 /// <summary>
 /// DialerRulesetConfigChangeCondition
 /// </summary>
-[DataContract]
+
 public partial class DialerRulesetConfigChangeCondition : IEquatable<DialerRulesetConfigChangeCondition>
 {
     /// <summary>
     /// Determines the type of the value associated with the condition
     /// </summary>
     /// <value>Determines the type of the value associated with the condition</value>
-    [JsonConverter(typeof(JsonStringEnumConverter))]
+    
     public enum ValueTypeEnum
     {
         /// <summary>
@@ -53,7 +53,7 @@ public partial class DialerRulesetConfigChangeCondition : IEquatable<DialerRules
     /// An operation type for condition evaluation
     /// </summary>
     /// <value>An operation type for condition evaluation</value>
-    [JsonConverter(typeof(JsonStringEnumConverter))]
+    
     public enum OperatorEnum
     {
         /// <summary>
@@ -128,7 +128,7 @@ public partial class DialerRulesetConfigChangeCondition : IEquatable<DialerRules
     /// Determines the type of the property associated with the condition
     /// </summary>
     /// <value>Determines the type of the property associated with the condition</value>
-    [JsonConverter(typeof(JsonStringEnumConverter))]
+    
     public enum PropertyTypeEnum
     {
         /// <summary>
@@ -167,19 +167,19 @@ public partial class DialerRulesetConfigChangeCondition : IEquatable<DialerRules
     /// Determines the type of the value associated with the condition
     /// </summary>
     /// <value>Determines the type of the value associated with the condition</value>
-    [DataMember(Name = "valueType", EmitDefaultValue = false)]
+    [JsonPropertyName("valueType")]
     public ValueTypeEnum? ValueType { get; set; }
     /// <summary>
     /// An operation type for condition evaluation
     /// </summary>
     /// <value>An operation type for condition evaluation</value>
-    [DataMember(Name = "operator", EmitDefaultValue = false)]
+    [JsonPropertyName("operator")]
     public OperatorEnum? Operator { get; set; }
     /// <summary>
     /// Determines the type of the property associated with the condition
     /// </summary>
     /// <value>Determines the type of the property associated with the condition</value>
-    [DataMember(Name = "propertyType", EmitDefaultValue = false)]
+    [JsonPropertyName("propertyType")]
     public PropertyTypeEnum? PropertyType { get; set; }
     /// <summary>
     /// Initializes a new instance of the <see cref="DialerRulesetConfigChangeCondition" /> class.
@@ -229,7 +229,7 @@ public partial class DialerRulesetConfigChangeCondition : IEquatable<DialerRules
     /// A UriReference for a resource
     /// </summary>
     /// <value>A UriReference for a resource</value>
-    [DataMember(Name = "dataAction", EmitDefaultValue = false)]
+    [JsonPropertyName("dataAction")]
     public DialerRulesetConfigChangeUriReference DataAction { get; set; }
 
 
@@ -237,7 +237,7 @@ public partial class DialerRulesetConfigChangeCondition : IEquatable<DialerRules
     /// <summary>
     /// Gets or Sets AdditionalProperties
     /// </summary>
-    [DataMember(Name = "additionalProperties", EmitDefaultValue = false)]
+    [JsonPropertyName("additionalProperties")]
     public Dictionary<string, object> AdditionalProperties { get; set; }
 
 
@@ -246,7 +246,7 @@ public partial class DialerRulesetConfigChangeCondition : IEquatable<DialerRules
     /// The type of the condition
     /// </summary>
     /// <value>The type of the condition</value>
-    [DataMember(Name = "type", EmitDefaultValue = false)]
+    [JsonPropertyName("type")]
     public string Type { get; set; }
 
 
@@ -255,7 +255,7 @@ public partial class DialerRulesetConfigChangeCondition : IEquatable<DialerRules
     /// Indicates whether to evaluate for the opposite of the stated condition; default is false
     /// </summary>
     /// <value>Indicates whether to evaluate for the opposite of the stated condition; default is false</value>
-    [DataMember(Name = "inverted", EmitDefaultValue = false)]
+    [JsonPropertyName("inverted")]
     public bool? Inverted { get; set; }
 
 
@@ -264,7 +264,7 @@ public partial class DialerRulesetConfigChangeCondition : IEquatable<DialerRules
     /// An attribute name associated with the condition (applies only to certain rule conditions)
     /// </summary>
     /// <value>An attribute name associated with the condition (applies only to certain rule conditions)</value>
-    [DataMember(Name = "attributeName", EmitDefaultValue = false)]
+    [JsonPropertyName("attributeName")]
     public string AttributeName { get; set; }
 
 
@@ -273,7 +273,7 @@ public partial class DialerRulesetConfigChangeCondition : IEquatable<DialerRules
     /// A value associated with the condition
     /// </summary>
     /// <value>A value associated with the condition</value>
-    [DataMember(Name = "value", EmitDefaultValue = false)]
+    [JsonPropertyName("value")]
     public string Value { get; set; }
 
 
@@ -286,7 +286,7 @@ public partial class DialerRulesetConfigChangeCondition : IEquatable<DialerRules
     /// List of wrap-up code identifiers (used only in conditions of type &#39;wrapupCondition&#39;)
     /// </summary>
     /// <value>List of wrap-up code identifiers (used only in conditions of type &#39;wrapupCondition&#39;)</value>
-    [DataMember(Name = "codes", EmitDefaultValue = false)]
+    [JsonPropertyName("codes")]
     public List<string> Codes { get; set; }
 
 
@@ -297,7 +297,7 @@ public partial class DialerRulesetConfigChangeCondition : IEquatable<DialerRules
     /// A value associated with the property type of this condition
     /// </summary>
     /// <value>A value associated with the property type of this condition</value>
-    [DataMember(Name = "property", EmitDefaultValue = false)]
+    [JsonPropertyName("property")]
     public string Property { get; set; }
 
 
@@ -306,7 +306,7 @@ public partial class DialerRulesetConfigChangeCondition : IEquatable<DialerRules
     /// The result of this condition if the data action returns a result indicating there was no data. Required for a DataActionCondition.
     /// </summary>
     /// <value>The result of this condition if the data action returns a result indicating there was no data. Required for a DataActionCondition.</value>
-    [DataMember(Name = "dataNotFoundResolution", EmitDefaultValue = false)]
+    [JsonPropertyName("dataNotFoundResolution")]
     public bool? DataNotFoundResolution { get; set; }
 
 
@@ -315,7 +315,7 @@ public partial class DialerRulesetConfigChangeCondition : IEquatable<DialerRules
     /// The input field from the data action that the contactId will be passed to for this condition. Valid for a dataActionCondition.
     /// </summary>
     /// <value>The input field from the data action that the contactId will be passed to for this condition. Valid for a dataActionCondition.</value>
-    [DataMember(Name = "contactIdField", EmitDefaultValue = false)]
+    [JsonPropertyName("contactIdField")]
     public string ContactIdField { get; set; }
 
 
@@ -324,7 +324,7 @@ public partial class DialerRulesetConfigChangeCondition : IEquatable<DialerRules
     /// The input field from the data action that the callAnalysisResult will be passed to for this condition. Valid for a wrapup dataActionCondition.
     /// </summary>
     /// <value>The input field from the data action that the callAnalysisResult will be passed to for this condition. Valid for a wrapup dataActionCondition.</value>
-    [DataMember(Name = "callAnalysisResultField", EmitDefaultValue = false)]
+    [JsonPropertyName("callAnalysisResultField")]
     public string CallAnalysisResultField { get; set; }
 
 
@@ -333,7 +333,7 @@ public partial class DialerRulesetConfigChangeCondition : IEquatable<DialerRules
     /// The input field from the data action that the agentWrapup will be passed to for this condition. Valid for a wrapup dataActionCondition.
     /// </summary>
     /// <value>The input field from the data action that the agentWrapup will be passed to for this condition. Valid for a wrapup dataActionCondition.</value>
-    [DataMember(Name = "agentWrapupField", EmitDefaultValue = false)]
+    [JsonPropertyName("agentWrapupField")]
     public string AgentWrapupField { get; set; }
 
 
@@ -342,7 +342,7 @@ public partial class DialerRulesetConfigChangeCondition : IEquatable<DialerRules
     /// A list of mappings defining which contact data fields will be passed to which data action input fields for this condition. Valid for a dataActionCondition.
     /// </summary>
     /// <value>A list of mappings defining which contact data fields will be passed to which data action input fields for this condition. Valid for a dataActionCondition.</value>
-    [DataMember(Name = "contactColumnToDataActionFieldMappings", EmitDefaultValue = false)]
+    [JsonPropertyName("contactColumnToDataActionFieldMappings")]
     public List<DialerRulesetConfigChangeContactColumnToDataActionFieldMapping> ContactColumnToDataActionFieldMappings { get; set; }
 
 
@@ -351,7 +351,7 @@ public partial class DialerRulesetConfigChangeCondition : IEquatable<DialerRules
     /// A list of predicates defining the comparisons to use for this condition. Required for a dataActionCondition.
     /// </summary>
     /// <value>A list of predicates defining the comparisons to use for this condition. Required for a dataActionCondition.</value>
-    [DataMember(Name = "predicates", EmitDefaultValue = false)]
+    [JsonPropertyName("predicates")]
     public List<DialerRulesetConfigChangeDataActionConditionPredicate> Predicates { get; set; }
 
 

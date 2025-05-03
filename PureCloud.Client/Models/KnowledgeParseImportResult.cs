@@ -1,4 +1,3 @@
-using System.Runtime.Serialization;
 using System.Text;
 using System.Text.Json.Serialization;
 
@@ -7,7 +6,7 @@ namespace PureCloud.Client.Models;
 /// <summary>
 /// KnowledgeParseImportResult
 /// </summary>
-[DataContract]
+
 public partial class KnowledgeParseImportResult : IEquatable<KnowledgeParseImportResult>
 {
 
@@ -36,7 +35,7 @@ public partial class KnowledgeParseImportResult : IEquatable<KnowledgeParseImpor
     /// Number of imported articles.
     /// </summary>
     /// <value>Number of imported articles.</value>
-    [DataMember(Name = "success", EmitDefaultValue = false)]
+    [JsonPropertyName("success")]
     public int? Success { get; set; }
 
 
@@ -45,7 +44,7 @@ public partial class KnowledgeParseImportResult : IEquatable<KnowledgeParseImpor
     /// Number of articles failed to import.
     /// </summary>
     /// <value>Number of articles failed to import.</value>
-    [DataMember(Name = "failure", EmitDefaultValue = false)]
+    [JsonPropertyName("failure")]
     public int? Failure { get; set; }
 
 
@@ -54,7 +53,7 @@ public partial class KnowledgeParseImportResult : IEquatable<KnowledgeParseImpor
     /// Error information about the failures.
     /// </summary>
     /// <value>Error information about the failures.</value>
-    [DataMember(Name = "errors", EmitDefaultValue = false)]
+    [JsonPropertyName("errors")]
     public List<ErrorBody> Errors { get; set; }
 
 

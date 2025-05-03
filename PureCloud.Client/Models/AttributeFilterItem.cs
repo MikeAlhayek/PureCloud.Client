@@ -7,13 +7,13 @@ namespace PureCloud.Client.Models;
 /// <summary>
 /// AttributeFilterItem
 /// </summary>
-[DataContract]
+
 public partial class AttributeFilterItem : IEquatable<AttributeFilterItem>
 {
     /// <summary>
     /// Gets or Sets Operator
     /// </summary>
-    [JsonConverter(typeof(JsonStringEnumConverter))]
+    
     public enum OperatorEnum
     {
         /// <summary>
@@ -81,7 +81,7 @@ public partial class AttributeFilterItem : IEquatable<AttributeFilterItem>
     /// <summary>
     /// Gets or Sets Operator
     /// </summary>
-    [DataMember(Name = "operator", EmitDefaultValue = false)]
+    [JsonPropertyName("operator")]
     public OperatorEnum? Operator { get; set; }
     /// <summary>
     /// Initializes a new instance of the <see cref="AttributeFilterItem" /> class.
@@ -102,7 +102,7 @@ public partial class AttributeFilterItem : IEquatable<AttributeFilterItem>
     /// <summary>
     /// Gets or Sets Id
     /// </summary>
-    [DataMember(Name = "id", EmitDefaultValue = false)]
+    [JsonPropertyName("id")]
     public string Id { get; set; }
 
 
@@ -112,7 +112,7 @@ public partial class AttributeFilterItem : IEquatable<AttributeFilterItem>
     /// <summary>
     /// Gets or Sets Values
     /// </summary>
-    [DataMember(Name = "values", EmitDefaultValue = false)]
+    [JsonPropertyName("values")]
     public List<string> Values { get; set; }
 
 

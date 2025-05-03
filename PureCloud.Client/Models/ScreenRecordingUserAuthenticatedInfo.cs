@@ -1,4 +1,3 @@
-using System.Runtime.Serialization;
 using System.Text;
 using System.Text.Json.Serialization;
 
@@ -7,7 +6,7 @@ namespace PureCloud.Client.Models;
 /// <summary>
 /// ScreenRecordingUserAuthenticatedInfo
 /// </summary>
-[DataContract]
+
 public partial class ScreenRecordingUserAuthenticatedInfo : IEquatable<ScreenRecordingUserAuthenticatedInfo>
 {
 
@@ -32,7 +31,7 @@ public partial class ScreenRecordingUserAuthenticatedInfo : IEquatable<ScreenRec
     /// Id of Genesys Cloud Background Assistant
     /// </summary>
     /// <value>Id of Genesys Cloud Background Assistant</value>
-    [DataMember(Name = "backgroundAssistantId", EmitDefaultValue = false)]
+    [JsonPropertyName("backgroundAssistantId")]
     public string BackgroundAssistantId { get; set; }
 
 

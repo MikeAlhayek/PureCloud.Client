@@ -7,14 +7,14 @@ namespace PureCloud.Client.Models;
 /// <summary>
 /// RateLimitAggregateQueryPredicate
 /// </summary>
-[DataContract]
+
 public partial class RateLimitAggregateQueryPredicate : IEquatable<RateLimitAggregateQueryPredicate>
 {
     /// <summary>
     /// Optional type, can usually be inferred
     /// </summary>
     /// <value>Optional type, can usually be inferred</value>
-    [JsonConverter(typeof(JsonStringEnumConverter))]
+    
     public enum TypeEnum
     {
         /// <summary>
@@ -47,7 +47,7 @@ public partial class RateLimitAggregateQueryPredicate : IEquatable<RateLimitAggr
     /// Left hand side for dimension predicates
     /// </summary>
     /// <value>Left hand side for dimension predicates</value>
-    [JsonConverter(typeof(JsonStringEnumConverter))]
+    
     public enum DimensionEnum
     {
         /// <summary>
@@ -104,7 +104,7 @@ public partial class RateLimitAggregateQueryPredicate : IEquatable<RateLimitAggr
     /// Optional operator, default is matches
     /// </summary>
     /// <value>Optional operator, default is matches</value>
-    [JsonConverter(typeof(JsonStringEnumConverter))]
+    
     public enum OperatorEnum
     {
         /// <summary>
@@ -137,19 +137,19 @@ public partial class RateLimitAggregateQueryPredicate : IEquatable<RateLimitAggr
     /// Optional type, can usually be inferred
     /// </summary>
     /// <value>Optional type, can usually be inferred</value>
-    [DataMember(Name = "type", EmitDefaultValue = false)]
+    [JsonPropertyName("type")]
     public TypeEnum? Type { get; set; }
     /// <summary>
     /// Left hand side for dimension predicates
     /// </summary>
     /// <value>Left hand side for dimension predicates</value>
-    [DataMember(Name = "dimension", EmitDefaultValue = false)]
+    [JsonPropertyName("dimension")]
     public DimensionEnum? Dimension { get; set; }
     /// <summary>
     /// Optional operator, default is matches
     /// </summary>
     /// <value>Optional operator, default is matches</value>
-    [DataMember(Name = "operator", EmitDefaultValue = false)]
+    [JsonPropertyName("operator")]
     public OperatorEnum? Operator { get; set; }
     /// <summary>
     /// Initializes a new instance of the <see cref="RateLimitAggregateQueryPredicate" /> class.
@@ -181,7 +181,7 @@ public partial class RateLimitAggregateQueryPredicate : IEquatable<RateLimitAggr
     /// Right hand side for dimension predicates
     /// </summary>
     /// <value>Right hand side for dimension predicates</value>
-    [DataMember(Name = "value", EmitDefaultValue = false)]
+    [JsonPropertyName("value")]
     public string Value { get; set; }
 
 
@@ -190,7 +190,7 @@ public partial class RateLimitAggregateQueryPredicate : IEquatable<RateLimitAggr
     /// Right hand side for dimension predicates
     /// </summary>
     /// <value>Right hand side for dimension predicates</value>
-    [DataMember(Name = "range", EmitDefaultValue = false)]
+    [JsonPropertyName("range")]
     public NumericRange Range { get; set; }
 
 

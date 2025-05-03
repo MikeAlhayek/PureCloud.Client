@@ -7,14 +7,14 @@ namespace PureCloud.Client.Models;
 /// <summary>
 /// UserRoutingStatusEvent
 /// </summary>
-[DataContract]
+
 public partial class UserRoutingStatusEvent : IEquatable<UserRoutingStatusEvent>
 {
     /// <summary>
     /// The agent's current routing status.
     /// </summary>
     /// <value>The agent's current routing status.</value>
-    [JsonConverter(typeof(JsonStringEnumConverter))]
+    
     public enum StatusEnum
     {
         /// <summary>
@@ -59,7 +59,7 @@ public partial class UserRoutingStatusEvent : IEquatable<UserRoutingStatusEvent>
     /// The agent's current routing status.
     /// </summary>
     /// <value>The agent's current routing status.</value>
-    [DataMember(Name = "status", EmitDefaultValue = false)]
+    [JsonPropertyName("status")]
     public StatusEnum? Status { get; set; }
 
     /// <summary>
@@ -91,7 +91,7 @@ public partial class UserRoutingStatusEvent : IEquatable<UserRoutingStatusEvent>
     /// A unique (UUID) eventId for this event
     /// </summary>
     /// <value>A unique (UUID) eventId for this event</value>
-    [DataMember(Name = "eventId", EmitDefaultValue = false)]
+    [JsonPropertyName("eventId")]
     public string EventId { get; set; }
 
 
@@ -100,7 +100,7 @@ public partial class UserRoutingStatusEvent : IEquatable<UserRoutingStatusEvent>
     /// A timestamp as epoch representing the time this event occurred. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z
     /// </summary>
     /// <value>A timestamp as epoch representing the time this event occurred. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z</value>
-    [DataMember(Name = "eventDateTime", EmitDefaultValue = false)]
+    [JsonPropertyName("eventDateTime")]
     public DateTime? EventDateTime { get; set; }
 
 
@@ -109,7 +109,7 @@ public partial class UserRoutingStatusEvent : IEquatable<UserRoutingStatusEvent>
     /// Unique identifier of the agent.
     /// </summary>
     /// <value>Unique identifier of the agent.</value>
-    [DataMember(Name = "agentId", EmitDefaultValue = false)]
+    [JsonPropertyName("agentId")]
     public string AgentId { get; set; }
 
 
@@ -120,7 +120,7 @@ public partial class UserRoutingStatusEvent : IEquatable<UserRoutingStatusEvent>
     /// The agent&#39;s source platform Id.
     /// </summary>
     /// <value>The agent&#39;s source platform Id.</value>
-    [DataMember(Name = "sourceId", EmitDefaultValue = false)]
+    [JsonPropertyName("sourceId")]
     public string SourceId { get; set; }
 
 

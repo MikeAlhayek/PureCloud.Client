@@ -1,12 +1,12 @@
-using System.Runtime.Serialization;
 using System.Text;
+using System.Text.Json.Serialization;
 
 namespace PureCloud.Client.Models;
 
 /// <summary>
 /// A JSON Schema document.
 /// </summary>
-[DataContract]
+
 public partial class JsonSchemaDocument : IEquatable<JsonSchemaDocument>
 {
     /// <summary>
@@ -38,7 +38,7 @@ public partial class JsonSchemaDocument : IEquatable<JsonSchemaDocument>
     /// <summary>
     /// Gets or Sets Id
     /// </summary>
-    [DataMember(Name = "id", EmitDefaultValue = false)]
+    [JsonPropertyName("id")]
     public string Id { get; set; }
 
 
@@ -46,7 +46,7 @@ public partial class JsonSchemaDocument : IEquatable<JsonSchemaDocument>
     /// <summary>
     /// Gets or Sets Schema
     /// </summary>
-    [DataMember(Name = "$schema", EmitDefaultValue = false)]
+    [JsonPropertyName("$schema")]
     public string Schema { get; set; }
 
 
@@ -54,7 +54,7 @@ public partial class JsonSchemaDocument : IEquatable<JsonSchemaDocument>
     /// <summary>
     /// Gets or Sets Title
     /// </summary>
-    [DataMember(Name = "title", EmitDefaultValue = false)]
+    [JsonPropertyName("title")]
     public string Title { get; set; }
 
 
@@ -62,7 +62,7 @@ public partial class JsonSchemaDocument : IEquatable<JsonSchemaDocument>
     /// <summary>
     /// Gets or Sets Description
     /// </summary>
-    [DataMember(Name = "description", EmitDefaultValue = false)]
+    [JsonPropertyName("description")]
     public string Description { get; set; }
 
 
@@ -70,7 +70,7 @@ public partial class JsonSchemaDocument : IEquatable<JsonSchemaDocument>
     /// <summary>
     /// Gets or Sets Type
     /// </summary>
-    [DataMember(Name = "type", EmitDefaultValue = false)]
+    [JsonPropertyName("type")]
     public string Type { get; set; }
 
 
@@ -78,7 +78,7 @@ public partial class JsonSchemaDocument : IEquatable<JsonSchemaDocument>
     /// <summary>
     /// Gets or Sets Required
     /// </summary>
-    [DataMember(Name = "required", EmitDefaultValue = false)]
+    [JsonPropertyName("required")]
     public List<string> Required { get; set; }
 
 
@@ -86,7 +86,7 @@ public partial class JsonSchemaDocument : IEquatable<JsonSchemaDocument>
     /// <summary>
     /// Gets or Sets Properties
     /// </summary>
-    [DataMember(Name = "properties", EmitDefaultValue = false)]
+    [JsonPropertyName("properties")]
     public Dictionary<string, object> Properties { get; set; }
 
 
@@ -94,7 +94,7 @@ public partial class JsonSchemaDocument : IEquatable<JsonSchemaDocument>
     /// <summary>
     /// Gets or Sets AdditionalProperties
     /// </summary>
-    [DataMember(Name = "additionalProperties", EmitDefaultValue = false)]
+    [JsonPropertyName("additionalProperties")]
     public object AdditionalProperties { get; set; }
 
 

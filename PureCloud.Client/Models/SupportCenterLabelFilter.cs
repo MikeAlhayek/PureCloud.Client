@@ -1,12 +1,12 @@
-using System.Runtime.Serialization;
 using System.Text;
+using System.Text.Json.Serialization;
 
 namespace PureCloud.Client.Models;
 
 /// <summary>
 /// SupportCenterLabelFilter
 /// </summary>
-[DataContract]
+
 public partial class SupportCenterLabelFilter : IEquatable<SupportCenterLabelFilter>
 {
     /// <summary>
@@ -25,7 +25,7 @@ public partial class SupportCenterLabelFilter : IEquatable<SupportCenterLabelFil
     /// Labels to filter by.
     /// </summary>
     /// <value>Labels to filter by.</value>
-    [DataMember(Name = "labels", EmitDefaultValue = false)]
+    [JsonPropertyName("labels")]
     public List<AddressableEntityRef> Labels { get; set; }
 
 

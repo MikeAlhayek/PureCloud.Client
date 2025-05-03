@@ -7,14 +7,14 @@ namespace PureCloud.Client.Models;
 /// <summary>
 /// KnowledgeSearchRequest
 /// </summary>
-[DataContract]
+
 public partial class KnowledgeSearchRequest : IEquatable<KnowledgeSearchRequest>
 {
     /// <summary>
     /// Document type to be used while searching
     /// </summary>
     /// <value>Document type to be used while searching</value>
-    [JsonConverter(typeof(JsonStringEnumConverter))]
+    
     public enum DocumentTypeEnum
     {
         /// <summary>
@@ -41,7 +41,7 @@ public partial class KnowledgeSearchRequest : IEquatable<KnowledgeSearchRequest>
     /// Document type to be used while searching
     /// </summary>
     /// <value>Document type to be used while searching</value>
-    [DataMember(Name = "documentType", EmitDefaultValue = false)]
+    [JsonPropertyName("documentType")]
     public DocumentTypeEnum? DocumentType { get; set; }
 
     /// <summary>
@@ -75,7 +75,7 @@ public partial class KnowledgeSearchRequest : IEquatable<KnowledgeSearchRequest>
     /// Input query to search content in the knowledge base
     /// </summary>
     /// <value>Input query to search content in the knowledge base</value>
-    [DataMember(Name = "query", EmitDefaultValue = false)]
+    [JsonPropertyName("query")]
     public string Query { get; set; }
 
 
@@ -84,7 +84,7 @@ public partial class KnowledgeSearchRequest : IEquatable<KnowledgeSearchRequest>
     /// Page size of the returned results
     /// </summary>
     /// <value>Page size of the returned results</value>
-    [DataMember(Name = "pageSize", EmitDefaultValue = false)]
+    [JsonPropertyName("pageSize")]
     public int? PageSize { get; set; }
 
 
@@ -93,7 +93,7 @@ public partial class KnowledgeSearchRequest : IEquatable<KnowledgeSearchRequest>
     /// Page number of the returned results
     /// </summary>
     /// <value>Page number of the returned results</value>
-    [DataMember(Name = "pageNumber", EmitDefaultValue = false)]
+    [JsonPropertyName("pageNumber")]
     public int? PageNumber { get; set; }
 
 
@@ -104,7 +104,7 @@ public partial class KnowledgeSearchRequest : IEquatable<KnowledgeSearchRequest>
     /// query search for specific languageCode
     /// </summary>
     /// <value>query search for specific languageCode</value>
-    [DataMember(Name = "languageCode", EmitDefaultValue = false)]
+    [JsonPropertyName("languageCode")]
     public string LanguageCode { get; set; }
 
 
@@ -113,7 +113,7 @@ public partial class KnowledgeSearchRequest : IEquatable<KnowledgeSearchRequest>
     /// If true the search query will be executed on draft documents, else it will be on active documents
     /// </summary>
     /// <value>If true the search query will be executed on draft documents, else it will be on active documents</value>
-    [DataMember(Name = "searchOnDraftDocuments", EmitDefaultValue = false)]
+    [JsonPropertyName("searchOnDraftDocuments")]
     public bool? SearchOnDraftDocuments { get; set; }
 
 

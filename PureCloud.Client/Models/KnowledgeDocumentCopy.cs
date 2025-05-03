@@ -7,14 +7,14 @@ namespace PureCloud.Client.Models;
 /// <summary>
 /// KnowledgeDocumentCopy
 /// </summary>
-[DataContract]
+
 public partial class KnowledgeDocumentCopy : IEquatable<KnowledgeDocumentCopy>
 {
     /// <summary>
     /// The type of the query that surfaced the document.
     /// </summary>
     /// <value>The type of the query that surfaced the document.</value>
-    [JsonConverter(typeof(JsonStringEnumConverter))]
+    
     public enum QueryTypeEnum
     {
         /// <summary>
@@ -71,7 +71,7 @@ public partial class KnowledgeDocumentCopy : IEquatable<KnowledgeDocumentCopy>
     /// The method how knowledge was surfaced. Article: Full article was shown. Snippet: A snippet from the article was shown. Highlight: A highlighted answer in a snippet was shown.
     /// </summary>
     /// <value>The method how knowledge was surfaced. Article: Full article was shown. Snippet: A snippet from the article was shown. Highlight: A highlighted answer in a snippet was shown.</value>
-    [JsonConverter(typeof(JsonStringEnumConverter))]
+    
     public enum SurfacingMethodEnum
     {
         /// <summary>
@@ -110,13 +110,13 @@ public partial class KnowledgeDocumentCopy : IEquatable<KnowledgeDocumentCopy>
     /// The type of the query that surfaced the document.
     /// </summary>
     /// <value>The type of the query that surfaced the document.</value>
-    [DataMember(Name = "queryType", EmitDefaultValue = false)]
+    [JsonPropertyName("queryType")]
     public QueryTypeEnum? QueryType { get; set; }
     /// <summary>
     /// The method how knowledge was surfaced. Article: Full article was shown. Snippet: A snippet from the article was shown. Highlight: A highlighted answer in a snippet was shown.
     /// </summary>
     /// <value>The method how knowledge was surfaced. Article: Full article was shown. Snippet: A snippet from the article was shown. Highlight: A highlighted answer in a snippet was shown.</value>
-    [DataMember(Name = "surfacingMethod", EmitDefaultValue = false)]
+    [JsonPropertyName("surfacingMethod")]
     public SurfacingMethodEnum? SurfacingMethod { get; set; }
 
     /// <summary>
@@ -152,7 +152,7 @@ public partial class KnowledgeDocumentCopy : IEquatable<KnowledgeDocumentCopy>
     /// The variation of the document whose content was copied.
     /// </summary>
     /// <value>The variation of the document whose content was copied.</value>
-    [DataMember(Name = "documentVariationId", EmitDefaultValue = false)]
+    [JsonPropertyName("documentVariationId")]
     public string DocumentVariationId { get; set; }
 
 
@@ -161,7 +161,7 @@ public partial class KnowledgeDocumentCopy : IEquatable<KnowledgeDocumentCopy>
     /// The version of the document whose content was copied.
     /// </summary>
     /// <value>The version of the document whose content was copied.</value>
-    [DataMember(Name = "documentVersionId", EmitDefaultValue = false)]
+    [JsonPropertyName("documentVersionId")]
     public string DocumentVersionId { get; set; }
 
 
@@ -170,7 +170,7 @@ public partial class KnowledgeDocumentCopy : IEquatable<KnowledgeDocumentCopy>
     /// The search that surfaced the document whose content was copied.
     /// </summary>
     /// <value>The search that surfaced the document whose content was copied.</value>
-    [DataMember(Name = "searchId", EmitDefaultValue = false)]
+    [JsonPropertyName("searchId")]
     public string SearchId { get; set; }
 
 
@@ -183,7 +183,7 @@ public partial class KnowledgeDocumentCopy : IEquatable<KnowledgeDocumentCopy>
     /// Knowledge session ID.
     /// </summary>
     /// <value>Knowledge session ID.</value>
-    [DataMember(Name = "sessionId", EmitDefaultValue = false)]
+    [JsonPropertyName("sessionId")]
     public string SessionId { get; private set; }
 
 
@@ -192,7 +192,7 @@ public partial class KnowledgeDocumentCopy : IEquatable<KnowledgeDocumentCopy>
     /// Conversation context information, if the document content is copied in the context of a conversation.
     /// </summary>
     /// <value>Conversation context information, if the document content is copied in the context of a conversation.</value>
-    [DataMember(Name = "conversationContext", EmitDefaultValue = false)]
+    [JsonPropertyName("conversationContext")]
     public KnowledgeConversationContext ConversationContext { get; set; }
 
 
@@ -201,7 +201,7 @@ public partial class KnowledgeDocumentCopy : IEquatable<KnowledgeDocumentCopy>
     /// The client application in which the document content was copied.
     /// </summary>
     /// <value>The client application in which the document content was copied.</value>
-    [DataMember(Name = "application", EmitDefaultValue = false)]
+    [JsonPropertyName("application")]
     public KnowledgeSearchClientApplication Application { get; set; }
 
 

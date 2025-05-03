@@ -7,14 +7,14 @@ namespace PureCloud.Client.Models;
 /// <summary>
 /// CopilotFallbackAction
 /// </summary>
-[DataContract]
+
 public partial class CopilotFallbackAction : IEquatable<CopilotFallbackAction>
 {
     /// <summary>
     /// Type of action.
     /// </summary>
     /// <value>Type of action.</value>
-    [JsonConverter(typeof(JsonStringEnumConverter))]
+    
     public enum ActionTypeEnum
     {
         /// <summary>
@@ -53,7 +53,7 @@ public partial class CopilotFallbackAction : IEquatable<CopilotFallbackAction>
     /// Type of action.
     /// </summary>
     /// <value>Type of action.</value>
-    [DataMember(Name = "actionType", EmitDefaultValue = false)]
+    [JsonPropertyName("actionType")]
     public ActionTypeEnum? ActionType { get; set; }
 
     /// <summary>
@@ -81,7 +81,7 @@ public partial class CopilotFallbackAction : IEquatable<CopilotFallbackAction>
     /// Action specific attributes, if any. Maximum 100 of string key-value pair allowed.
     /// </summary>
     /// <value>Action specific attributes, if any. Maximum 100 of string key-value pair allowed.</value>
-    [DataMember(Name = "attributes", EmitDefaultValue = false)]
+    [JsonPropertyName("attributes")]
     public Dictionary<string, string> Attributes { get; set; }
 
 

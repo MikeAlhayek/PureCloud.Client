@@ -1,12 +1,12 @@
-using System.Runtime.Serialization;
 using System.Text;
+using System.Text.Json.Serialization;
 
 namespace PureCloud.Client.Models;
 
 /// <summary>
 /// ConfigurationOverrides
 /// </summary>
-[DataContract]
+
 public partial class ConfigurationOverrides : IEquatable<ConfigurationOverrides>
 {
     /// <summary>
@@ -25,7 +25,7 @@ public partial class ConfigurationOverrides : IEquatable<ConfigurationOverrides>
     /// Indicates whether or not the contact will be placed in front of the queue or at the end of the queue.
     /// </summary>
     /// <value>Indicates whether or not the contact will be placed in front of the queue or at the end of the queue.</value>
-    [DataMember(Name = "priority", EmitDefaultValue = false)]
+    [JsonPropertyName("priority")]
     public bool? Priority { get; set; }
 
 

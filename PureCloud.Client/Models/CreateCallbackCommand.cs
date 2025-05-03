@@ -1,4 +1,3 @@
-using System.Runtime.Serialization;
 using System.Text;
 using System.Text.Json.Serialization;
 
@@ -7,7 +6,7 @@ namespace PureCloud.Client.Models;
 /// <summary>
 /// CreateCallbackCommand
 /// </summary>
-[DataContract]
+
 public partial class CreateCallbackCommand : IEquatable<CreateCallbackCommand>
 {
 
@@ -52,7 +51,7 @@ public partial class CreateCallbackCommand : IEquatable<CreateCallbackCommand>
     /// The identifier of the script to be used for the callback
     /// </summary>
     /// <value>The identifier of the script to be used for the callback</value>
-    [DataMember(Name = "scriptId", EmitDefaultValue = false)]
+    [JsonPropertyName("scriptId")]
     public string ScriptId { get; set; }
 
 
@@ -61,7 +60,7 @@ public partial class CreateCallbackCommand : IEquatable<CreateCallbackCommand>
     /// The identifier of the queue to be used for the callback. Either queueId or routingData is required.
     /// </summary>
     /// <value>The identifier of the queue to be used for the callback. Either queueId or routingData is required.</value>
-    [DataMember(Name = "queueId", EmitDefaultValue = false)]
+    [JsonPropertyName("queueId")]
     public string QueueId { get; set; }
 
 
@@ -70,7 +69,7 @@ public partial class CreateCallbackCommand : IEquatable<CreateCallbackCommand>
     /// The routing data to be used for the callback. Either queueId or routingData is required.
     /// </summary>
     /// <value>The routing data to be used for the callback. Either queueId or routingData is required.</value>
-    [DataMember(Name = "routingData", EmitDefaultValue = false)]
+    [JsonPropertyName("routingData")]
     public RoutingData RoutingData { get; set; }
 
 
@@ -79,7 +78,7 @@ public partial class CreateCallbackCommand : IEquatable<CreateCallbackCommand>
     /// The name of the party to be called back.
     /// </summary>
     /// <value>The name of the party to be called back.</value>
-    [DataMember(Name = "callbackUserName", EmitDefaultValue = false)]
+    [JsonPropertyName("callbackUserName")]
     public string CallbackUserName { get; set; }
 
 
@@ -88,7 +87,7 @@ public partial class CreateCallbackCommand : IEquatable<CreateCallbackCommand>
     /// A list of phone numbers for the callback.
     /// </summary>
     /// <value>A list of phone numbers for the callback.</value>
-    [DataMember(Name = "callbackNumbers", EmitDefaultValue = false)]
+    [JsonPropertyName("callbackNumbers")]
     public List<string> CallbackNumbers { get; set; }
 
 
@@ -97,7 +96,7 @@ public partial class CreateCallbackCommand : IEquatable<CreateCallbackCommand>
     /// The scheduled date-time for the callback as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss.SSSZ
     /// </summary>
     /// <value>The scheduled date-time for the callback as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss.SSSZ</value>
-    [DataMember(Name = "callbackScheduledTime", EmitDefaultValue = false)]
+    [JsonPropertyName("callbackScheduledTime")]
     public DateTime? CallbackScheduledTime { get; set; }
 
 
@@ -106,7 +105,7 @@ public partial class CreateCallbackCommand : IEquatable<CreateCallbackCommand>
     /// The country code to be associated with the callback numbers.
     /// </summary>
     /// <value>The country code to be associated with the callback numbers.</value>
-    [DataMember(Name = "countryCode", EmitDefaultValue = false)]
+    [JsonPropertyName("countryCode")]
     public string CountryCode { get; set; }
 
 
@@ -115,7 +114,7 @@ public partial class CreateCallbackCommand : IEquatable<CreateCallbackCommand>
     /// Whether or not to validate the callback numbers for phone number format.
     /// </summary>
     /// <value>Whether or not to validate the callback numbers for phone number format.</value>
-    [DataMember(Name = "validateCallbackNumbers", EmitDefaultValue = false)]
+    [JsonPropertyName("validateCallbackNumbers")]
     public bool? ValidateCallbackNumbers { get; set; }
 
 
@@ -124,7 +123,7 @@ public partial class CreateCallbackCommand : IEquatable<CreateCallbackCommand>
     /// A map of key-value pairs containing additional data that can be associated to the callback. These values will appear in the attributes property on the conversation participant. Example: { \&quot;notes\&quot;: \&quot;ready to close the deal!\&quot;, \&quot;customerPreferredName\&quot;: \&quot;Doc\&quot; }
     /// </summary>
     /// <value>A map of key-value pairs containing additional data that can be associated to the callback. These values will appear in the attributes property on the conversation participant. Example: { \&quot;notes\&quot;: \&quot;ready to close the deal!\&quot;, \&quot;customerPreferredName\&quot;: \&quot;Doc\&quot; }</value>
-    [DataMember(Name = "data", EmitDefaultValue = false)]
+    [JsonPropertyName("data")]
     public Dictionary<string, string> Data { get; set; }
 
 
@@ -133,7 +132,7 @@ public partial class CreateCallbackCommand : IEquatable<CreateCallbackCommand>
     /// The phone number displayed to recipients when a phone call is placed as part of the callback. Must conform to the E.164 format. May be overridden by other settings in the system such as external trunk settings. Telco support for \&quot;callerId\&quot; varies.
     /// </summary>
     /// <value>The phone number displayed to recipients when a phone call is placed as part of the callback. Must conform to the E.164 format. May be overridden by other settings in the system such as external trunk settings. Telco support for \&quot;callerId\&quot; varies.</value>
-    [DataMember(Name = "callerId", EmitDefaultValue = false)]
+    [JsonPropertyName("callerId")]
     public string CallerId { get; set; }
 
 
@@ -142,7 +141,7 @@ public partial class CreateCallbackCommand : IEquatable<CreateCallbackCommand>
     /// The name displayed to recipients when a phone call is placed as part of the callback. May be overridden by other settings in the system such as external trunk settings. Telco support for \&quot;callerIdName\&quot; varies.
     /// </summary>
     /// <value>The name displayed to recipients when a phone call is placed as part of the callback. May be overridden by other settings in the system such as external trunk settings. Telco support for \&quot;callerIdName\&quot; varies.</value>
-    [DataMember(Name = "callerIdName", EmitDefaultValue = false)]
+    [JsonPropertyName("callerIdName")]
     public string CallerIdName { get; set; }
 
 

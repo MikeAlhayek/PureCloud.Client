@@ -7,13 +7,13 @@ namespace PureCloud.Client.Models;
 /// <summary>
 /// ContactImportJobStatusUpdateResponse
 /// </summary>
-[DataContract]
+
 public partial class ContactImportJobStatusUpdateResponse : IEquatable<ContactImportJobStatusUpdateResponse>
 {
     /// <summary>
     /// Gets or Sets Status
     /// </summary>
-    [JsonConverter(typeof(JsonStringEnumConverter))]
+    
     public enum StatusEnum
     {
         /// <summary>
@@ -45,7 +45,7 @@ public partial class ContactImportJobStatusUpdateResponse : IEquatable<ContactIm
     /// <summary>
     /// Gets or Sets Status
     /// </summary>
-    [DataMember(Name = "status", EmitDefaultValue = false)]
+    [JsonPropertyName("status")]
     public StatusEnum? Status { get; set; }
     /// <summary>
     /// Initializes a new instance of the <see cref="ContactImportJobStatusUpdateResponse" /> class.
@@ -64,7 +64,7 @@ public partial class ContactImportJobStatusUpdateResponse : IEquatable<ContactIm
     /// <summary>
     /// Gets or Sets JobId
     /// </summary>
-    [DataMember(Name = "jobId", EmitDefaultValue = false)]
+    [JsonPropertyName("jobId")]
     public string JobId { get; set; }
 
 

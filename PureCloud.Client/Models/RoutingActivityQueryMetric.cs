@@ -7,14 +7,14 @@ namespace PureCloud.Client.Models;
 /// <summary>
 /// RoutingActivityQueryMetric
 /// </summary>
-[DataContract]
+
 public partial class RoutingActivityQueryMetric : IEquatable<RoutingActivityQueryMetric>
 {
     /// <summary>
     /// The requested metric
     /// </summary>
     /// <value>The requested metric</value>
-    [JsonConverter(typeof(JsonStringEnumConverter))]
+    
     public enum MetricEnum
     {
         /// <summary>
@@ -65,7 +65,7 @@ public partial class RoutingActivityQueryMetric : IEquatable<RoutingActivityQuer
     /// The requested metric
     /// </summary>
     /// <value>The requested metric</value>
-    [DataMember(Name = "metric", EmitDefaultValue = false)]
+    [JsonPropertyName("metric")]
     public MetricEnum? Metric { get; set; }
 
     /// <summary>
@@ -93,7 +93,7 @@ public partial class RoutingActivityQueryMetric : IEquatable<RoutingActivityQuer
     /// Flag for including observation details for this metric in the response
     /// </summary>
     /// <value>Flag for including observation details for this metric in the response</value>
-    [DataMember(Name = "details", EmitDefaultValue = false)]
+    [JsonPropertyName("details")]
     public bool? Details { get; set; }
 
 

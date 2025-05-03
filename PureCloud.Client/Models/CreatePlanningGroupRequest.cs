@@ -1,4 +1,3 @@
-using System.Runtime.Serialization;
 using System.Text;
 using System.Text.Json.Serialization;
 
@@ -7,7 +6,7 @@ namespace PureCloud.Client.Models;
 /// <summary>
 /// CreatePlanningGroupRequest
 /// </summary>
-[DataContract]
+
 public partial class CreatePlanningGroupRequest : IEquatable<CreatePlanningGroupRequest>
 {
 
@@ -36,7 +35,7 @@ public partial class CreatePlanningGroupRequest : IEquatable<CreatePlanningGroup
     /// The name of the planning group
     /// </summary>
     /// <value>The name of the planning group</value>
-    [DataMember(Name = "name", EmitDefaultValue = false)]
+    [JsonPropertyName("name")]
     public string Name { get; set; }
 
 
@@ -45,7 +44,7 @@ public partial class CreatePlanningGroupRequest : IEquatable<CreatePlanningGroup
     /// Set of route paths to associate with the planning group
     /// </summary>
     /// <value>Set of route paths to associate with the planning group</value>
-    [DataMember(Name = "routePaths", EmitDefaultValue = false)]
+    [JsonPropertyName("routePaths")]
     public List<RoutePathRequest> RoutePaths { get; set; }
 
 
@@ -54,7 +53,7 @@ public partial class CreatePlanningGroupRequest : IEquatable<CreatePlanningGroup
     /// The ID of the service goal template to associate with this planning group
     /// </summary>
     /// <value>The ID of the service goal template to associate with this planning group</value>
-    [DataMember(Name = "serviceGoalTemplateId", EmitDefaultValue = false)]
+    [JsonPropertyName("serviceGoalTemplateId")]
     public string ServiceGoalTemplateId { get; set; }
 
 

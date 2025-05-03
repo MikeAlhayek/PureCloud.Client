@@ -1,12 +1,12 @@
-using System.Runtime.Serialization;
 using System.Text;
+using System.Text.Json.Serialization;
 
 namespace PureCloud.Client.Models;
 
 /// <summary>
 /// Adjacents
 /// </summary>
-[DataContract]
+
 public partial class Adjacents : IEquatable<Adjacents>
 {
     /// <summary>
@@ -28,7 +28,7 @@ public partial class Adjacents : IEquatable<Adjacents>
     /// <summary>
     /// Gets or Sets Superiors
     /// </summary>
-    [DataMember(Name = "superiors", EmitDefaultValue = false)]
+    [JsonPropertyName("superiors")]
     public List<User> Superiors { get; set; }
 
 
@@ -36,7 +36,7 @@ public partial class Adjacents : IEquatable<Adjacents>
     /// <summary>
     /// Gets or Sets Siblings
     /// </summary>
-    [DataMember(Name = "siblings", EmitDefaultValue = false)]
+    [JsonPropertyName("siblings")]
     public List<User> Siblings { get; set; }
 
 
@@ -44,7 +44,7 @@ public partial class Adjacents : IEquatable<Adjacents>
     /// <summary>
     /// Gets or Sets DirectReports
     /// </summary>
-    [DataMember(Name = "directReports", EmitDefaultValue = false)]
+    [JsonPropertyName("directReports")]
     public List<User> DirectReports { get; set; }
 
 

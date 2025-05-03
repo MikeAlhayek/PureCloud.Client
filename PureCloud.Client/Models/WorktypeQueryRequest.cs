@@ -7,14 +7,14 @@ namespace PureCloud.Client.Models;
 /// <summary>
 /// WorktypeQueryRequest
 /// </summary>
-[DataContract]
+
 public partial class WorktypeQueryRequest : IEquatable<WorktypeQueryRequest>
 {
     /// <summary>
     /// Specify the value 'Count' for this parameter in order to return only the record count.
     /// </summary>
     /// <value>Specify the value 'Count' for this parameter in order to return only the record count.</value>
-    [JsonConverter(typeof(JsonStringEnumConverter))]
+    
     public enum SelectEnum
     {
         /// <summary>
@@ -35,7 +35,7 @@ public partial class WorktypeQueryRequest : IEquatable<WorktypeQueryRequest>
     /// Specify the value 'Count' for this parameter in order to return only the record count.
     /// </summary>
     /// <value>Specify the value 'Count' for this parameter in order to return only the record count.</value>
-    [DataMember(Name = "select", EmitDefaultValue = false)]
+    [JsonPropertyName("select")]
     public SelectEnum? Select { get; set; }
 
     /// <summary>
@@ -69,7 +69,7 @@ public partial class WorktypeQueryRequest : IEquatable<WorktypeQueryRequest>
     /// Limit the number of entities to return. It is not guaranteed that the requested number of entities will be filled in a single request. If an &#x60;after&#x60; key is returned as part of the response it is possible that more entities that match the filter criteria exist. Maximum of 200.
     /// </summary>
     /// <value>Limit the number of entities to return. It is not guaranteed that the requested number of entities will be filled in a single request. If an &#x60;after&#x60; key is returned as part of the response it is possible that more entities that match the filter criteria exist. Maximum of 200.</value>
-    [DataMember(Name = "pageSize", EmitDefaultValue = false)]
+    [JsonPropertyName("pageSize")]
     public int? PageSize { get; set; }
 
 
@@ -80,7 +80,7 @@ public partial class WorktypeQueryRequest : IEquatable<WorktypeQueryRequest>
     /// List of filter objects to be used in the search.
     /// </summary>
     /// <value>List of filter objects to be used in the search.</value>
-    [DataMember(Name = "filters", EmitDefaultValue = false)]
+    [JsonPropertyName("filters")]
     public List<WorkitemFilter> Filters { get; set; }
 
 
@@ -89,7 +89,7 @@ public partial class WorktypeQueryRequest : IEquatable<WorktypeQueryRequest>
     /// List of entity attributes to be retrieved in the result.
     /// </summary>
     /// <value>List of entity attributes to be retrieved in the result.</value>
-    [DataMember(Name = "attributes", EmitDefaultValue = false)]
+    [JsonPropertyName("attributes")]
     public List<string> Attributes { get; set; }
 
 
@@ -98,7 +98,7 @@ public partial class WorktypeQueryRequest : IEquatable<WorktypeQueryRequest>
     /// The cursor that points to the end of the set of entities that has been returned.
     /// </summary>
     /// <value>The cursor that points to the end of the set of entities that has been returned.</value>
-    [DataMember(Name = "after", EmitDefaultValue = false)]
+    [JsonPropertyName("after")]
     public string After { get; set; }
 
 
@@ -107,7 +107,7 @@ public partial class WorktypeQueryRequest : IEquatable<WorktypeQueryRequest>
     /// Sort
     /// </summary>
     /// <value>Sort</value>
-    [DataMember(Name = "sort", EmitDefaultValue = false)]
+    [JsonPropertyName("sort")]
     public WorktypeQuerySort Sort { get; set; }
 
 

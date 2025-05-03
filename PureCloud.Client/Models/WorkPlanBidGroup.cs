@@ -1,4 +1,3 @@
-using System.Runtime.Serialization;
 using System.Text;
 using System.Text.Json.Serialization;
 
@@ -7,7 +6,7 @@ namespace PureCloud.Client.Models;
 /// <summary>
 /// WorkPlanBidGroup
 /// </summary>
-[DataContract]
+
 public partial class WorkPlanBidGroup : IEquatable<WorkPlanBidGroup>
 {
 
@@ -40,7 +39,7 @@ public partial class WorkPlanBidGroup : IEquatable<WorkPlanBidGroup>
     /// The name of the work plan bid group
     /// </summary>
     /// <value>The name of the work plan bid group</value>
-    [DataMember(Name = "name", EmitDefaultValue = false)]
+    [JsonPropertyName("name")]
     public string Name { get; set; }
 
 
@@ -49,7 +48,7 @@ public partial class WorkPlanBidGroup : IEquatable<WorkPlanBidGroup>
     /// The management unit this bid group belongs to
     /// </summary>
     /// <value>The management unit this bid group belongs to</value>
-    [DataMember(Name = "managementUnit", EmitDefaultValue = false)]
+    [JsonPropertyName("managementUnit")]
     public ManagementUnitReference ManagementUnit { get; set; }
 
 
@@ -58,7 +57,7 @@ public partial class WorkPlanBidGroup : IEquatable<WorkPlanBidGroup>
     /// The list of agents who participate in this bid group
     /// </summary>
     /// <value>The list of agents who participate in this bid group</value>
-    [DataMember(Name = "agents", EmitDefaultValue = false)]
+    [JsonPropertyName("agents")]
     public List<UserReference> Agents { get; set; }
 
 
@@ -67,7 +66,7 @@ public partial class WorkPlanBidGroup : IEquatable<WorkPlanBidGroup>
     /// The list of work plans used in this bid group
     /// </summary>
     /// <value>The list of work plans used in this bid group</value>
-    [DataMember(Name = "workPlans", EmitDefaultValue = false)]
+    [JsonPropertyName("workPlans")]
     public List<BidGroupWorkPlanResponse> WorkPlans { get; set; }
 
 
@@ -76,7 +75,7 @@ public partial class WorkPlanBidGroup : IEquatable<WorkPlanBidGroup>
     /// The list of planning groups selected in this bid group
     /// </summary>
     /// <value>The list of planning groups selected in this bid group</value>
-    [DataMember(Name = "planningGroups", EmitDefaultValue = false)]
+    [JsonPropertyName("planningGroups")]
     public List<PlanningGroupReference> PlanningGroups { get; set; }
 
 

@@ -1,4 +1,3 @@
-using System.Runtime.Serialization;
 using System.Text;
 using System.Text.Json.Serialization;
 
@@ -7,7 +6,7 @@ namespace PureCloud.Client.Models;
 /// <summary>
 /// Trustee
 /// </summary>
-[DataContract]
+
 public partial class Trustee : IEquatable<Trustee>
 {
 
@@ -40,7 +39,7 @@ public partial class Trustee : IEquatable<Trustee>
     /// Organization Id for this trust.
     /// </summary>
     /// <value>Organization Id for this trust.</value>
-    [DataMember(Name = "id", EmitDefaultValue = false)]
+    [JsonPropertyName("id")]
     public string Id { get; private set; }
 
 
@@ -49,7 +48,7 @@ public partial class Trustee : IEquatable<Trustee>
     /// If disabled no trustee user will have access, even if they were previously added.
     /// </summary>
     /// <value>If disabled no trustee user will have access, even if they were previously added.</value>
-    [DataMember(Name = "enabled", EmitDefaultValue = false)]
+    [JsonPropertyName("enabled")]
     public bool? Enabled { get; set; }
 
 
@@ -58,7 +57,7 @@ public partial class Trustee : IEquatable<Trustee>
     /// Denotes if trustee uses admin role by default.
     /// </summary>
     /// <value>Denotes if trustee uses admin role by default.</value>
-    [DataMember(Name = "usesDefaultRole", EmitDefaultValue = false)]
+    [JsonPropertyName("usesDefaultRole")]
     public bool? UsesDefaultRole { get; set; }
 
 
@@ -67,7 +66,7 @@ public partial class Trustee : IEquatable<Trustee>
     /// Denotes if trustee uses full access role by default.
     /// </summary>
     /// <value>Denotes if trustee uses full access role by default.</value>
-    [DataMember(Name = "hasFullAccess", EmitDefaultValue = false)]
+    [JsonPropertyName("hasFullAccess")]
     public bool? HasFullAccess { get; set; }
 
 
@@ -76,7 +75,7 @@ public partial class Trustee : IEquatable<Trustee>
     /// Denotes if trustee is given Trusted User access by default.
     /// </summary>
     /// <value>Denotes if trustee is given Trusted User access by default.</value>
-    [DataMember(Name = "isTrustedUser", EmitDefaultValue = false)]
+    [JsonPropertyName("isTrustedUser")]
     public bool? IsTrustedUser { get; set; }
 
 
@@ -85,7 +84,7 @@ public partial class Trustee : IEquatable<Trustee>
     /// Date Trust was created. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z
     /// </summary>
     /// <value>Date Trust was created. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z</value>
-    [DataMember(Name = "dateCreated", EmitDefaultValue = false)]
+    [JsonPropertyName("dateCreated")]
     public DateTime? DateCreated { get; private set; }
 
 
@@ -94,7 +93,7 @@ public partial class Trustee : IEquatable<Trustee>
     /// The expiration date of the trust. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z
     /// </summary>
     /// <value>The expiration date of the trust. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z</value>
-    [DataMember(Name = "dateExpired", EmitDefaultValue = false)]
+    [JsonPropertyName("dateExpired")]
     public DateTime? DateExpired { get; set; }
 
 
@@ -103,7 +102,7 @@ public partial class Trustee : IEquatable<Trustee>
     /// User that created trust.
     /// </summary>
     /// <value>User that created trust.</value>
-    [DataMember(Name = "createdBy", EmitDefaultValue = false)]
+    [JsonPropertyName("createdBy")]
     public OrgUser CreatedBy { get; private set; }
 
 
@@ -112,7 +111,7 @@ public partial class Trustee : IEquatable<Trustee>
     /// Organization associated with this trust.
     /// </summary>
     /// <value>Organization associated with this trust.</value>
-    [DataMember(Name = "organization", EmitDefaultValue = false)]
+    [JsonPropertyName("organization")]
     public Organization Organization { get; private set; }
 
 
@@ -121,7 +120,7 @@ public partial class Trustee : IEquatable<Trustee>
     /// The URI for this object
     /// </summary>
     /// <value>The URI for this object</value>
-    [DataMember(Name = "selfUri", EmitDefaultValue = false)]
+    [JsonPropertyName("selfUri")]
     public string SelfUri { get; private set; }
 
 

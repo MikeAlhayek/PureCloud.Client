@@ -1,4 +1,3 @@
-using System.Runtime.Serialization;
 using System.Text;
 using System.Text.Json.Serialization;
 
@@ -7,7 +6,7 @@ namespace PureCloud.Client.Models;
 /// <summary>
 /// OutcomeAchievement
 /// </summary>
-[DataContract]
+
 public partial class OutcomeAchievement : IEquatable<OutcomeAchievement>
 {
 
@@ -34,7 +33,7 @@ public partial class OutcomeAchievement : IEquatable<OutcomeAchievement>
     /// The outcome that was achieved.
     /// </summary>
     /// <value>The outcome that was achieved.</value>
-    [DataMember(Name = "outcome", EmitDefaultValue = false)]
+    [JsonPropertyName("outcome")]
     public AchievedOutcome Outcome { get; set; }
 
 
@@ -43,7 +42,7 @@ public partial class OutcomeAchievement : IEquatable<OutcomeAchievement>
     /// Timestamp indicating when the outcome was achieved. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z
     /// </summary>
     /// <value>Timestamp indicating when the outcome was achieved. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z</value>
-    [DataMember(Name = "achievedDate", EmitDefaultValue = false)]
+    [JsonPropertyName("achievedDate")]
     public DateTime? AchievedDate { get; set; }
 
 

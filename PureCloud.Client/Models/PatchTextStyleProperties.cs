@@ -7,14 +7,14 @@ namespace PureCloud.Client.Models;
 /// <summary>
 /// PatchTextStyleProperties
 /// </summary>
-[DataContract]
+
 public partial class PatchTextStyleProperties : IEquatable<PatchTextStyleProperties>
 {
     /// <summary>
     /// Text alignment.
     /// </summary>
     /// <value>Text alignment.</value>
-    [JsonConverter(typeof(JsonStringEnumConverter))]
+    
     public enum TextAlignEnum
     {
         /// <summary>
@@ -47,7 +47,7 @@ public partial class PatchTextStyleProperties : IEquatable<PatchTextStylePropert
     /// Text alignment.
     /// </summary>
     /// <value>Text alignment.</value>
-    [DataMember(Name = "textAlign", EmitDefaultValue = false)]
+    [JsonPropertyName("textAlign")]
     public TextAlignEnum? TextAlign { get; set; }
     /// <summary>
     /// Initializes a new instance of the <see cref="PatchTextStyleProperties" /> class.
@@ -71,7 +71,7 @@ public partial class PatchTextStyleProperties : IEquatable<PatchTextStylePropert
     /// Color of the text. (eg. #FFFFFF)
     /// </summary>
     /// <value>Color of the text. (eg. #FFFFFF)</value>
-    [DataMember(Name = "color", EmitDefaultValue = false)]
+    [JsonPropertyName("color")]
     public string Color { get; set; }
 
 
@@ -80,7 +80,7 @@ public partial class PatchTextStyleProperties : IEquatable<PatchTextStylePropert
     /// Font of the text. (eg. Helvetica)
     /// </summary>
     /// <value>Font of the text. (eg. Helvetica)</value>
-    [DataMember(Name = "font", EmitDefaultValue = false)]
+    [JsonPropertyName("font")]
     public string Font { get; set; }
 
 
@@ -89,7 +89,7 @@ public partial class PatchTextStyleProperties : IEquatable<PatchTextStylePropert
     /// Font size of the text. (eg. &#39;12&#39;)
     /// </summary>
     /// <value>Font size of the text. (eg. &#39;12&#39;)</value>
-    [DataMember(Name = "fontSize", EmitDefaultValue = false)]
+    [JsonPropertyName("fontSize")]
     public string FontSize { get; set; }
 
 

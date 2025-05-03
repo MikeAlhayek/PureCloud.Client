@@ -7,14 +7,14 @@ namespace PureCloud.Client.Models;
 /// <summary>
 /// PredictorModelFeature
 /// </summary>
-[DataContract]
+
 public partial class PredictorModelFeature : IEquatable<PredictorModelFeature>
 {
     /// <summary>
     /// The type of feature.
     /// </summary>
     /// <value>The type of feature.</value>
-    [JsonConverter(typeof(JsonStringEnumConverter))]
+    
     public enum TypeEnum
     {
         /// <summary>
@@ -47,7 +47,7 @@ public partial class PredictorModelFeature : IEquatable<PredictorModelFeature>
     /// The type of feature.
     /// </summary>
     /// <value>The type of feature.</value>
-    [DataMember(Name = "type", EmitDefaultValue = false)]
+    [JsonPropertyName("type")]
     public TypeEnum? Type { get; private set; }
     /// <summary>
     /// Initializes a new instance of the <see cref="PredictorModelFeature" /> class.
@@ -63,7 +63,7 @@ public partial class PredictorModelFeature : IEquatable<PredictorModelFeature>
     /// The globally unique identifier for the object.
     /// </summary>
     /// <value>The globally unique identifier for the object.</value>
-    [DataMember(Name = "id", EmitDefaultValue = false)]
+    [JsonPropertyName("id")]
     public string Id { get; private set; }
 
 
@@ -74,7 +74,7 @@ public partial class PredictorModelFeature : IEquatable<PredictorModelFeature>
     /// The percentage of how important a feature is in the model.
     /// </summary>
     /// <value>The percentage of how important a feature is in the model.</value>
-    [DataMember(Name = "percentageImportance", EmitDefaultValue = false)]
+    [JsonPropertyName("percentageImportance")]
     public double? PercentageImportance { get; private set; }
 
 

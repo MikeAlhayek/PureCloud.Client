@@ -1,12 +1,12 @@
-using System.Runtime.Serialization;
 using System.Text;
+using System.Text.Json.Serialization;
 
 namespace PureCloud.Client.Models;
 
 /// <summary>
 /// Assignment
 /// </summary>
-[DataContract]
+
 public partial class Assignment : IEquatable<Assignment>
 {
     /// <summary>
@@ -29,7 +29,7 @@ public partial class Assignment : IEquatable<Assignment>
     /// The list of users successfully assigned to the custom performance profile
     /// </summary>
     /// <value>The list of users successfully assigned to the custom performance profile</value>
-    [DataMember(Name = "assignedMembers", EmitDefaultValue = false)]
+    [JsonPropertyName("assignedMembers")]
     public List<UserReference> AssignedMembers { get; set; }
 
 
@@ -38,7 +38,7 @@ public partial class Assignment : IEquatable<Assignment>
     /// The list of users successfully removed from the custom performance profile
     /// </summary>
     /// <value>The list of users successfully removed from the custom performance profile</value>
-    [DataMember(Name = "removedMembers", EmitDefaultValue = false)]
+    [JsonPropertyName("removedMembers")]
     public List<UserReference> RemovedMembers { get; set; }
 
 
@@ -47,7 +47,7 @@ public partial class Assignment : IEquatable<Assignment>
     /// The list of users failed assignment or removal for the custom performance profile
     /// </summary>
     /// <value>The list of users failed assignment or removal for the custom performance profile</value>
-    [DataMember(Name = "assignmentErrors", EmitDefaultValue = false)]
+    [JsonPropertyName("assignmentErrors")]
     public List<AssignmentError> AssignmentErrors { get; set; }
 
 

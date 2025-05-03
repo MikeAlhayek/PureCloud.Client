@@ -7,14 +7,14 @@ namespace PureCloud.Client.Models;
 /// <summary>
 /// KnowledgeGuestSessionApp
 /// </summary>
-[DataContract]
+
 public partial class KnowledgeGuestSessionApp : IEquatable<KnowledgeGuestSessionApp>
 {
     /// <summary>
     /// App type.
     /// </summary>
     /// <value>App type.</value>
-    [JsonConverter(typeof(JsonStringEnumConverter))]
+    
     public enum TypeEnum
     {
         /// <summary>
@@ -41,7 +41,7 @@ public partial class KnowledgeGuestSessionApp : IEquatable<KnowledgeGuestSession
     /// App type.
     /// </summary>
     /// <value>App type.</value>
-    [DataMember(Name = "type", EmitDefaultValue = false)]
+    [JsonPropertyName("type")]
     public TypeEnum? Type { get; set; }
 
     /// <summary>
@@ -67,7 +67,7 @@ public partial class KnowledgeGuestSessionApp : IEquatable<KnowledgeGuestSession
     /// App deployment ID.
     /// </summary>
     /// <value>App deployment ID.</value>
-    [DataMember(Name = "deploymentId", EmitDefaultValue = false)]
+    [JsonPropertyName("deploymentId")]
     public string DeploymentId { get; set; }
 
 

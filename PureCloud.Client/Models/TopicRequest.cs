@@ -7,14 +7,14 @@ namespace PureCloud.Client.Models;
 /// <summary>
 /// TopicRequest
 /// </summary>
-[DataContract]
+
 public partial class TopicRequest : IEquatable<TopicRequest>
 {
     /// <summary>
     /// The topic strictness, default value is 72
     /// </summary>
     /// <value>The topic strictness, default value is 72</value>
-    [JsonConverter(typeof(JsonStringEnumConverter))]
+    
     public enum StrictnessEnum
     {
         /// <summary>
@@ -65,7 +65,7 @@ public partial class TopicRequest : IEquatable<TopicRequest>
     /// The topic participants, default value is All
     /// </summary>
     /// <value>The topic participants, default value is All</value>
-    [JsonConverter(typeof(JsonStringEnumConverter))]
+    
     public enum ParticipantsEnum
     {
         /// <summary>
@@ -98,13 +98,13 @@ public partial class TopicRequest : IEquatable<TopicRequest>
     /// The topic strictness, default value is 72
     /// </summary>
     /// <value>The topic strictness, default value is 72</value>
-    [DataMember(Name = "strictness", EmitDefaultValue = false)]
+    [JsonPropertyName("strictness")]
     public StrictnessEnum? Strictness { get; set; }
     /// <summary>
     /// The topic participants, default value is All
     /// </summary>
     /// <value>The topic participants, default value is All</value>
-    [DataMember(Name = "participants", EmitDefaultValue = false)]
+    [JsonPropertyName("participants")]
     public ParticipantsEnum? Participants { get; set; }
 
     /// <summary>
@@ -142,7 +142,7 @@ public partial class TopicRequest : IEquatable<TopicRequest>
     /// The topic name
     /// </summary>
     /// <value>The topic name</value>
-    [DataMember(Name = "name", EmitDefaultValue = false)]
+    [JsonPropertyName("name")]
     public string Name { get; set; }
 
 
@@ -151,7 +151,7 @@ public partial class TopicRequest : IEquatable<TopicRequest>
     /// The topic description
     /// </summary>
     /// <value>The topic description</value>
-    [DataMember(Name = "description", EmitDefaultValue = false)]
+    [JsonPropertyName("description")]
     public string Description { get; set; }
 
 
@@ -162,7 +162,7 @@ public partial class TopicRequest : IEquatable<TopicRequest>
     /// The ids of programs associated to the topic
     /// </summary>
     /// <value>The ids of programs associated to the topic</value>
-    [DataMember(Name = "programIds", EmitDefaultValue = false)]
+    [JsonPropertyName("programIds")]
     public List<string> ProgramIds { get; set; }
 
 
@@ -171,7 +171,7 @@ public partial class TopicRequest : IEquatable<TopicRequest>
     /// The topic tags
     /// </summary>
     /// <value>The topic tags</value>
-    [DataMember(Name = "tags", EmitDefaultValue = false)]
+    [JsonPropertyName("tags")]
     public List<string> Tags { get; set; }
 
 
@@ -180,7 +180,7 @@ public partial class TopicRequest : IEquatable<TopicRequest>
     /// The topic dialect
     /// </summary>
     /// <value>The topic dialect</value>
-    [DataMember(Name = "dialect", EmitDefaultValue = false)]
+    [JsonPropertyName("dialect")]
     public string Dialect { get; set; }
 
 
@@ -191,7 +191,7 @@ public partial class TopicRequest : IEquatable<TopicRequest>
     /// The topic phrases
     /// </summary>
     /// <value>The topic phrases</value>
-    [DataMember(Name = "phrases", EmitDefaultValue = false)]
+    [JsonPropertyName("phrases")]
     public List<Phrase> Phrases { get; set; }
 
 

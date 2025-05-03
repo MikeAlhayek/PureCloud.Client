@@ -1,4 +1,3 @@
-using System.Runtime.Serialization;
 using System.Text;
 using System.Text.Json.Serialization;
 
@@ -7,7 +6,7 @@ namespace PureCloud.Client.Models;
 /// <summary>
 /// OutcomeAchievedEvent
 /// </summary>
-[DataContract]
+
 public partial class OutcomeAchievedEvent : IEquatable<OutcomeAchievedEvent>
 {
 
@@ -50,7 +49,7 @@ public partial class OutcomeAchievedEvent : IEquatable<OutcomeAchievedEvent>
     /// The outcome achieved.
     /// </summary>
     /// <value>The outcome achieved.</value>
-    [DataMember(Name = "outcome", EmitDefaultValue = false)]
+    [JsonPropertyName("outcome")]
     public OutcomeAchievedEventOutcome Outcome { get; set; }
 
 
@@ -59,7 +58,7 @@ public partial class OutcomeAchievedEvent : IEquatable<OutcomeAchievedEvent>
     /// HTTP User-Agent string (see https://tools.ietf.org/html/rfc1945#section-10.15).
     /// </summary>
     /// <value>HTTP User-Agent string (see https://tools.ietf.org/html/rfc1945#section-10.15).</value>
-    [DataMember(Name = "userAgentString", EmitDefaultValue = false)]
+    [JsonPropertyName("userAgentString")]
     public string UserAgentString { get; set; }
 
 
@@ -68,7 +67,7 @@ public partial class OutcomeAchievedEvent : IEquatable<OutcomeAchievedEvent>
     /// Customer&#39;s browser.
     /// </summary>
     /// <value>Customer&#39;s browser.</value>
-    [DataMember(Name = "browser", EmitDefaultValue = false)]
+    [JsonPropertyName("browser")]
     public Browser Browser { get; set; }
 
 
@@ -77,7 +76,7 @@ public partial class OutcomeAchievedEvent : IEquatable<OutcomeAchievedEvent>
     /// Customer&#39;s device.
     /// </summary>
     /// <value>Customer&#39;s device.</value>
-    [DataMember(Name = "device", EmitDefaultValue = false)]
+    [JsonPropertyName("device")]
     public Device Device { get; set; }
 
 
@@ -86,7 +85,7 @@ public partial class OutcomeAchievedEvent : IEquatable<OutcomeAchievedEvent>
     /// Customer&#39;s geolocation.
     /// </summary>
     /// <value>Customer&#39;s geolocation.</value>
-    [DataMember(Name = "geolocation", EmitDefaultValue = false)]
+    [JsonPropertyName("geolocation")]
     public JourneyGeolocation Geolocation { get; set; }
 
 
@@ -95,7 +94,7 @@ public partial class OutcomeAchievedEvent : IEquatable<OutcomeAchievedEvent>
     /// Visitor&#39;s IP address.
     /// </summary>
     /// <value>Visitor&#39;s IP address.</value>
-    [DataMember(Name = "ipAddress", EmitDefaultValue = false)]
+    [JsonPropertyName("ipAddress")]
     public string IpAddress { get; set; }
 
 
@@ -104,7 +103,7 @@ public partial class OutcomeAchievedEvent : IEquatable<OutcomeAchievedEvent>
     /// Visitor&#39;s IP-based organization or ISP name.
     /// </summary>
     /// <value>Visitor&#39;s IP-based organization or ISP name.</value>
-    [DataMember(Name = "ipOrganization", EmitDefaultValue = false)]
+    [JsonPropertyName("ipOrganization")]
     public string IpOrganization { get; set; }
 
 
@@ -113,7 +112,7 @@ public partial class OutcomeAchievedEvent : IEquatable<OutcomeAchievedEvent>
     /// Marketing / traffic source information.
     /// </summary>
     /// <value>Marketing / traffic source information.</value>
-    [DataMember(Name = "mktCampaign", EmitDefaultValue = false)]
+    [JsonPropertyName("mktCampaign")]
     public JourneyCampaign MktCampaign { get; set; }
 
 
@@ -122,7 +121,7 @@ public partial class OutcomeAchievedEvent : IEquatable<OutcomeAchievedEvent>
     /// Visit&#39;s referrer.
     /// </summary>
     /// <value>Visit&#39;s referrer.</value>
-    [DataMember(Name = "visitReferrer", EmitDefaultValue = false)]
+    [JsonPropertyName("visitReferrer")]
     public Referrer VisitReferrer { get; set; }
 
 
@@ -131,7 +130,7 @@ public partial class OutcomeAchievedEvent : IEquatable<OutcomeAchievedEvent>
     /// When visit was created (e.g. timestamp of the first event in visit). Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z
     /// </summary>
     /// <value>When visit was created (e.g. timestamp of the first event in visit). Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z</value>
-    [DataMember(Name = "visitCreatedDate", EmitDefaultValue = false)]
+    [JsonPropertyName("visitCreatedDate")]
     public DateTime? VisitCreatedDate { get; set; }
 
 

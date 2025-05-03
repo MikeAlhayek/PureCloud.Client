@@ -1,12 +1,12 @@
-using System.Runtime.Serialization;
 using System.Text;
+using System.Text.Json.Serialization;
 
 namespace PureCloud.Client.Models;
 
 /// <summary>
 /// LinkConfiguration
 /// </summary>
-[DataContract]
+
 public partial class LinkConfiguration : IEquatable<LinkConfiguration>
 {
     /// <summary>
@@ -24,7 +24,7 @@ public partial class LinkConfiguration : IEquatable<LinkConfiguration>
     /// <summary>
     /// Gets or Sets UriTemplate
     /// </summary>
-    [DataMember(Name = "uriTemplate", EmitDefaultValue = false)]
+    [JsonPropertyName("uriTemplate")]
     public string UriTemplate { get; set; }
 
 

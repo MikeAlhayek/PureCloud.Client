@@ -7,13 +7,13 @@ namespace PureCloud.Client.Models;
 /// <summary>
 /// ChatPresence
 /// </summary>
-[DataContract]
+
 public partial class ChatPresence : IEquatable<ChatPresence>
 {
     /// <summary>
     /// Gets or Sets SystemPresence
     /// </summary>
-    [JsonConverter(typeof(JsonStringEnumConverter))]
+    
     public enum SystemPresenceEnum
     {
         /// <summary>
@@ -87,7 +87,7 @@ public partial class ChatPresence : IEquatable<ChatPresence>
     /// <summary>
     /// Gets or Sets SystemPresence
     /// </summary>
-    [DataMember(Name = "systemPresence", EmitDefaultValue = false)]
+    [JsonPropertyName("systemPresence")]
     public SystemPresenceEnum? SystemPresence { get; set; }
     /// <summary>
     /// Initializes a new instance of the <see cref="ChatPresence" /> class.
@@ -114,7 +114,7 @@ public partial class ChatPresence : IEquatable<ChatPresence>
     /// <summary>
     /// Gets or Sets Source
     /// </summary>
-    [DataMember(Name = "source", EmitDefaultValue = false)]
+    [JsonPropertyName("source")]
     public string Source { get; set; }
 
 
@@ -122,7 +122,7 @@ public partial class ChatPresence : IEquatable<ChatPresence>
     /// <summary>
     /// Gets or Sets OrganizationPresence
     /// </summary>
-    [DataMember(Name = "organizationPresence", EmitDefaultValue = false)]
+    [JsonPropertyName("organizationPresence")]
     public OrganizationPresence OrganizationPresence { get; set; }
 
 
@@ -132,7 +132,7 @@ public partial class ChatPresence : IEquatable<ChatPresence>
     /// <summary>
     /// Gets or Sets Message
     /// </summary>
-    [DataMember(Name = "message", EmitDefaultValue = false)]
+    [JsonPropertyName("message")]
     public string Message { get; set; }
 
 
@@ -141,7 +141,7 @@ public partial class ChatPresence : IEquatable<ChatPresence>
     /// Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z
     /// </summary>
     /// <value>Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z</value>
-    [DataMember(Name = "dateModified", EmitDefaultValue = false)]
+    [JsonPropertyName("dateModified")]
     public DateTime? DateModified { get; set; }
 
 
@@ -149,7 +149,7 @@ public partial class ChatPresence : IEquatable<ChatPresence>
     /// <summary>
     /// Gets or Sets OutOfOffice
     /// </summary>
-    [DataMember(Name = "outOfOffice", EmitDefaultValue = false)]
+    [JsonPropertyName("outOfOffice")]
     public OutOfOffice OutOfOffice { get; set; }
 
 

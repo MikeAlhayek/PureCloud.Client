@@ -1,12 +1,12 @@
-using System.Runtime.Serialization;
 using System.Text;
+using System.Text.Json.Serialization;
 
 namespace PureCloud.Client.Models;
 
 /// <summary>
 /// ScoredAgent
 /// </summary>
-[DataContract]
+
 public partial class ScoredAgent : IEquatable<ScoredAgent>
 {
     /// <summary>
@@ -27,7 +27,7 @@ public partial class ScoredAgent : IEquatable<ScoredAgent>
     /// The agent
     /// </summary>
     /// <value>The agent</value>
-    [DataMember(Name = "agent", EmitDefaultValue = false)]
+    [JsonPropertyName("agent")]
     public DomainEntityRef Agent { get; set; }
 
 
@@ -36,7 +36,7 @@ public partial class ScoredAgent : IEquatable<ScoredAgent>
     /// Agent&#39;s score for the current conversation, from 0 - 100, higher being better
     /// </summary>
     /// <value>Agent&#39;s score for the current conversation, from 0 - 100, higher being better</value>
-    [DataMember(Name = "score", EmitDefaultValue = false)]
+    [JsonPropertyName("score")]
     public int? Score { get; set; }
 
 

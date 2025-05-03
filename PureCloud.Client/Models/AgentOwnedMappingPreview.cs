@@ -1,12 +1,12 @@
-using System.Runtime.Serialization;
 using System.Text;
+using System.Text.Json.Serialization;
 
 namespace PureCloud.Client.Models;
 
 /// <summary>
 /// AgentOwnedMappingPreview
 /// </summary>
-[DataContract]
+
 public partial class AgentOwnedMappingPreview : IEquatable<AgentOwnedMappingPreview>
 {
     /// <summary>
@@ -23,7 +23,7 @@ public partial class AgentOwnedMappingPreview : IEquatable<AgentOwnedMappingPrev
     /// The raw value of the agent-owned column
     /// </summary>
     /// <value>The raw value of the agent-owned column</value>
-    [DataMember(Name = "agentOwnedColumn", EmitDefaultValue = false)]
+    [JsonPropertyName("agentOwnedColumn")]
     public string AgentOwnedColumn { get; private set; }
 
 
@@ -32,7 +32,7 @@ public partial class AgentOwnedMappingPreview : IEquatable<AgentOwnedMappingPrev
     /// The email address of the user, if it exists
     /// </summary>
     /// <value>The email address of the user, if it exists</value>
-    [DataMember(Name = "email", EmitDefaultValue = false)]
+    [JsonPropertyName("email")]
     public string Email { get; private set; }
 
 
@@ -41,7 +41,7 @@ public partial class AgentOwnedMappingPreview : IEquatable<AgentOwnedMappingPrev
     /// The id of the user, if it exists
     /// </summary>
     /// <value>The id of the user, if it exists</value>
-    [DataMember(Name = "userId", EmitDefaultValue = false)]
+    [JsonPropertyName("userId")]
     public string UserId { get; private set; }
 
 
@@ -50,7 +50,7 @@ public partial class AgentOwnedMappingPreview : IEquatable<AgentOwnedMappingPrev
     /// Whether the user exists
     /// </summary>
     /// <value>Whether the user exists</value>
-    [DataMember(Name = "exists", EmitDefaultValue = false)]
+    [JsonPropertyName("exists")]
     public bool? Exists { get; private set; }
 
 
@@ -59,7 +59,7 @@ public partial class AgentOwnedMappingPreview : IEquatable<AgentOwnedMappingPrev
     /// Whether the user is a member of the campaign&#39;s queue
     /// </summary>
     /// <value>Whether the user is a member of the campaign&#39;s queue</value>
-    [DataMember(Name = "isQueueMember", EmitDefaultValue = false)]
+    [JsonPropertyName("isQueueMember")]
     public bool? IsQueueMember { get; private set; }
 
 
@@ -68,7 +68,7 @@ public partial class AgentOwnedMappingPreview : IEquatable<AgentOwnedMappingPrev
     /// The number of contact records whose agent-owned column matches the raw value
     /// </summary>
     /// <value>The number of contact records whose agent-owned column matches the raw value</value>
-    [DataMember(Name = "recordCount", EmitDefaultValue = false)]
+    [JsonPropertyName("recordCount")]
     public int? RecordCount { get; private set; }
 
 

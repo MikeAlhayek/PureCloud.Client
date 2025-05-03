@@ -1,12 +1,12 @@
-using System.Runtime.Serialization;
 using System.Text;
+using System.Text.Json.Serialization;
 
 namespace PureCloud.Client.Models;
 
 /// <summary>
 /// CallableContactsDiagnostic
 /// </summary>
-[DataContract]
+
 public partial class CallableContactsDiagnostic : IEquatable<CallableContactsDiagnostic>
 {
     /// <summary>
@@ -23,7 +23,7 @@ public partial class CallableContactsDiagnostic : IEquatable<CallableContactsDia
     /// Attempt limits for the campaign&#39;s contact list
     /// </summary>
     /// <value>Attempt limits for the campaign&#39;s contact list</value>
-    [DataMember(Name = "attemptLimits", EmitDefaultValue = false)]
+    [JsonPropertyName("attemptLimits")]
     public DomainEntityRef AttemptLimits { get; private set; }
 
 
@@ -32,7 +32,7 @@ public partial class CallableContactsDiagnostic : IEquatable<CallableContactsDia
     /// Do not call lists for the campaign
     /// </summary>
     /// <value>Do not call lists for the campaign</value>
-    [DataMember(Name = "dncLists", EmitDefaultValue = false)]
+    [JsonPropertyName("dncLists")]
     public List<DomainEntityRef> DncLists { get; private set; }
 
 
@@ -41,7 +41,7 @@ public partial class CallableContactsDiagnostic : IEquatable<CallableContactsDia
     /// Callable time sets for the campaign
     /// </summary>
     /// <value>Callable time sets for the campaign</value>
-    [DataMember(Name = "callableTimeSet", EmitDefaultValue = false)]
+    [JsonPropertyName("callableTimeSet")]
     public DomainEntityRef CallableTimeSet { get; private set; }
 
 
@@ -50,7 +50,7 @@ public partial class CallableContactsDiagnostic : IEquatable<CallableContactsDia
     /// Rule sets for the campaign
     /// </summary>
     /// <value>Rule sets for the campaign</value>
-    [DataMember(Name = "ruleSets", EmitDefaultValue = false)]
+    [JsonPropertyName("ruleSets")]
     public List<DomainEntityRef> RuleSets { get; private set; }
 
 

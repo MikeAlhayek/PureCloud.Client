@@ -7,13 +7,13 @@ namespace PureCloud.Client.Models;
 /// <summary>
 /// JourneyWebEventsNotificationReferrer
 /// </summary>
-[DataContract]
+
 public partial class JourneyWebEventsNotificationReferrer : IEquatable<JourneyWebEventsNotificationReferrer>
 {
     /// <summary>
     /// Gets or Sets Medium
     /// </summary>
-    [JsonConverter(typeof(JsonStringEnumConverter))]
+    
     public enum MediumEnum
     {
         /// <summary>
@@ -63,7 +63,7 @@ public partial class JourneyWebEventsNotificationReferrer : IEquatable<JourneyWe
     /// <summary>
     /// Gets or Sets Medium
     /// </summary>
-    [DataMember(Name = "medium", EmitDefaultValue = false)]
+    [JsonPropertyName("medium")]
     public MediumEnum? Medium { get; set; }
     /// <summary>
     /// Initializes a new instance of the <see cref="JourneyWebEventsNotificationReferrer" /> class.
@@ -96,7 +96,7 @@ public partial class JourneyWebEventsNotificationReferrer : IEquatable<JourneyWe
     /// <summary>
     /// Gets or Sets Url
     /// </summary>
-    [DataMember(Name = "url", EmitDefaultValue = false)]
+    [JsonPropertyName("url")]
     public string Url { get; set; }
 
 
@@ -104,7 +104,7 @@ public partial class JourneyWebEventsNotificationReferrer : IEquatable<JourneyWe
     /// <summary>
     /// Gets or Sets Domain
     /// </summary>
-    [DataMember(Name = "domain", EmitDefaultValue = false)]
+    [JsonPropertyName("domain")]
     public string Domain { get; set; }
 
 
@@ -112,7 +112,7 @@ public partial class JourneyWebEventsNotificationReferrer : IEquatable<JourneyWe
     /// <summary>
     /// Gets or Sets Hostname
     /// </summary>
-    [DataMember(Name = "hostname", EmitDefaultValue = false)]
+    [JsonPropertyName("hostname")]
     public string Hostname { get; set; }
 
 
@@ -120,7 +120,7 @@ public partial class JourneyWebEventsNotificationReferrer : IEquatable<JourneyWe
     /// <summary>
     /// Gets or Sets Keywords
     /// </summary>
-    [DataMember(Name = "keywords", EmitDefaultValue = false)]
+    [JsonPropertyName("keywords")]
     public string Keywords { get; set; }
 
 
@@ -128,7 +128,7 @@ public partial class JourneyWebEventsNotificationReferrer : IEquatable<JourneyWe
     /// <summary>
     /// Gets or Sets Pathname
     /// </summary>
-    [DataMember(Name = "pathname", EmitDefaultValue = false)]
+    [JsonPropertyName("pathname")]
     public string Pathname { get; set; }
 
 
@@ -136,7 +136,7 @@ public partial class JourneyWebEventsNotificationReferrer : IEquatable<JourneyWe
     /// <summary>
     /// Gets or Sets QueryString
     /// </summary>
-    [DataMember(Name = "queryString", EmitDefaultValue = false)]
+    [JsonPropertyName("queryString")]
     public string QueryString { get; set; }
 
 
@@ -144,7 +144,7 @@ public partial class JourneyWebEventsNotificationReferrer : IEquatable<JourneyWe
     /// <summary>
     /// Gets or Sets Fragment
     /// </summary>
-    [DataMember(Name = "fragment", EmitDefaultValue = false)]
+    [JsonPropertyName("fragment")]
     public string Fragment { get; set; }
 
 
@@ -152,7 +152,7 @@ public partial class JourneyWebEventsNotificationReferrer : IEquatable<JourneyWe
     /// <summary>
     /// Gets or Sets Name
     /// </summary>
-    [DataMember(Name = "name", EmitDefaultValue = false)]
+    [JsonPropertyName("name")]
     public string Name { get; set; }
 
 

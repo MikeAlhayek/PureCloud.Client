@@ -1,12 +1,12 @@
-using System.Runtime.Serialization;
 using System.Text;
+using System.Text.Json.Serialization;
 
 namespace PureCloud.Client.Models;
 
 /// <summary>
 /// AuditTopicMessageInfo
 /// </summary>
-[DataContract]
+
 public partial class AuditTopicMessageInfo : IEquatable<AuditTopicMessageInfo>
 {
     /// <summary>
@@ -30,7 +30,7 @@ public partial class AuditTopicMessageInfo : IEquatable<AuditTopicMessageInfo>
     /// <summary>
     /// Gets or Sets LocalizableMessageCode
     /// </summary>
-    [DataMember(Name = "localizableMessageCode", EmitDefaultValue = false)]
+    [JsonPropertyName("localizableMessageCode")]
     public string LocalizableMessageCode { get; set; }
 
 
@@ -38,7 +38,7 @@ public partial class AuditTopicMessageInfo : IEquatable<AuditTopicMessageInfo>
     /// <summary>
     /// Gets or Sets Message
     /// </summary>
-    [DataMember(Name = "message", EmitDefaultValue = false)]
+    [JsonPropertyName("message")]
     public string Message { get; set; }
 
 
@@ -46,7 +46,7 @@ public partial class AuditTopicMessageInfo : IEquatable<AuditTopicMessageInfo>
     /// <summary>
     /// Gets or Sets MessageWithParams
     /// </summary>
-    [DataMember(Name = "messageWithParams", EmitDefaultValue = false)]
+    [JsonPropertyName("messageWithParams")]
     public string MessageWithParams { get; set; }
 
 
@@ -54,7 +54,7 @@ public partial class AuditTopicMessageInfo : IEquatable<AuditTopicMessageInfo>
     /// <summary>
     /// Gets or Sets MessageParams
     /// </summary>
-    [DataMember(Name = "messageParams", EmitDefaultValue = false)]
+    [JsonPropertyName("messageParams")]
     public Dictionary<string, string> MessageParams { get; set; }
 
 

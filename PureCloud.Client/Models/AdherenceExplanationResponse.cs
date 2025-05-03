@@ -7,14 +7,14 @@ namespace PureCloud.Client.Models;
 /// <summary>
 /// AdherenceExplanationResponse
 /// </summary>
-[DataContract]
+
 public partial class AdherenceExplanationResponse : IEquatable<AdherenceExplanationResponse>
 {
     /// <summary>
     /// The type of the adherence explanation
     /// </summary>
     /// <value>The type of the adherence explanation</value>
-    [JsonConverter(typeof(JsonStringEnumConverter))]
+    
     public enum TypeEnum
     {
         /// <summary>
@@ -35,7 +35,7 @@ public partial class AdherenceExplanationResponse : IEquatable<AdherenceExplanat
     /// The status of the adherence explanation
     /// </summary>
     /// <value>The status of the adherence explanation</value>
-    [JsonConverter(typeof(JsonStringEnumConverter))]
+    
     public enum StatusEnum
     {
         /// <summary>
@@ -68,13 +68,13 @@ public partial class AdherenceExplanationResponse : IEquatable<AdherenceExplanat
     /// The type of the adherence explanation
     /// </summary>
     /// <value>The type of the adherence explanation</value>
-    [DataMember(Name = "type", EmitDefaultValue = false)]
+    [JsonPropertyName("type")]
     public TypeEnum? Type { get; set; }
     /// <summary>
     /// The status of the adherence explanation
     /// </summary>
     /// <value>The status of the adherence explanation</value>
-    [DataMember(Name = "status", EmitDefaultValue = false)]
+    [JsonPropertyName("status")]
     public StatusEnum? Status { get; set; }
 
     /// <summary>
@@ -116,7 +116,7 @@ public partial class AdherenceExplanationResponse : IEquatable<AdherenceExplanat
     /// The globally unique identifier for the object.
     /// </summary>
     /// <value>The globally unique identifier for the object.</value>
-    [DataMember(Name = "id", EmitDefaultValue = false)]
+    [JsonPropertyName("id")]
     public string Id { get; private set; }
 
 
@@ -125,7 +125,7 @@ public partial class AdherenceExplanationResponse : IEquatable<AdherenceExplanat
     /// The agent to whom this adherence explanation applies
     /// </summary>
     /// <value>The agent to whom this adherence explanation applies</value>
-    [DataMember(Name = "agent", EmitDefaultValue = false)]
+    [JsonPropertyName("agent")]
     public UserReference Agent { get; set; }
 
 
@@ -134,7 +134,7 @@ public partial class AdherenceExplanationResponse : IEquatable<AdherenceExplanat
     /// The management unit to which the agent belonged at the time the adherence explanation was submitted
     /// </summary>
     /// <value>The management unit to which the agent belonged at the time the adherence explanation was submitted</value>
-    [DataMember(Name = "managementUnit", EmitDefaultValue = false)]
+    [JsonPropertyName("managementUnit")]
     public ManagementUnitReference ManagementUnit { get; set; }
 
 
@@ -143,7 +143,7 @@ public partial class AdherenceExplanationResponse : IEquatable<AdherenceExplanat
     /// The business unit to which the agent belonged at the time the adherence explanation was submitted
     /// </summary>
     /// <value>The business unit to which the agent belonged at the time the adherence explanation was submitted</value>
-    [DataMember(Name = "businessUnit", EmitDefaultValue = false)]
+    [JsonPropertyName("businessUnit")]
     public BusinessUnitReference BusinessUnit { get; set; }
 
 
@@ -156,7 +156,7 @@ public partial class AdherenceExplanationResponse : IEquatable<AdherenceExplanat
     /// The start timestamp of the adherence explanation in ISO-8601 format
     /// </summary>
     /// <value>The start timestamp of the adherence explanation in ISO-8601 format</value>
-    [DataMember(Name = "startDate", EmitDefaultValue = false)]
+    [JsonPropertyName("startDate")]
     public DateTime? StartDate { get; set; }
 
 
@@ -165,7 +165,7 @@ public partial class AdherenceExplanationResponse : IEquatable<AdherenceExplanat
     /// The length of the adherence explanation in minutes
     /// </summary>
     /// <value>The length of the adherence explanation in minutes</value>
-    [DataMember(Name = "lengthMinutes", EmitDefaultValue = false)]
+    [JsonPropertyName("lengthMinutes")]
     public int? LengthMinutes { get; set; }
 
 
@@ -174,7 +174,7 @@ public partial class AdherenceExplanationResponse : IEquatable<AdherenceExplanat
     /// Notes about the adherence explanation
     /// </summary>
     /// <value>Notes about the adherence explanation</value>
-    [DataMember(Name = "notes", EmitDefaultValue = false)]
+    [JsonPropertyName("notes")]
     public string Notes { get; set; }
 
 
@@ -183,7 +183,7 @@ public partial class AdherenceExplanationResponse : IEquatable<AdherenceExplanat
     /// The user who reviewed the adherence explanation, if applicable. The id may be &#39;System&#39; if it was an automated process
     /// </summary>
     /// <value>The user who reviewed the adherence explanation, if applicable. The id may be &#39;System&#39; if it was an automated process</value>
-    [DataMember(Name = "reviewedBy", EmitDefaultValue = false)]
+    [JsonPropertyName("reviewedBy")]
     public UserReference ReviewedBy { get; set; }
 
 
@@ -192,7 +192,7 @@ public partial class AdherenceExplanationResponse : IEquatable<AdherenceExplanat
     /// The timestamp for when the adherence explanation was reviewed, if applicable. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z
     /// </summary>
     /// <value>The timestamp for when the adherence explanation was reviewed, if applicable. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z</value>
-    [DataMember(Name = "reviewedDate", EmitDefaultValue = false)]
+    [JsonPropertyName("reviewedDate")]
     public DateTime? ReviewedDate { get; set; }
 
 
@@ -201,7 +201,7 @@ public partial class AdherenceExplanationResponse : IEquatable<AdherenceExplanat
     /// The URI for this object
     /// </summary>
     /// <value>The URI for this object</value>
-    [DataMember(Name = "selfUri", EmitDefaultValue = false)]
+    [JsonPropertyName("selfUri")]
     public string SelfUri { get; private set; }
 
 

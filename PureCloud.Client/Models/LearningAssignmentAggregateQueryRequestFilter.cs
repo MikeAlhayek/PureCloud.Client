@@ -7,14 +7,14 @@ namespace PureCloud.Client.Models;
 /// <summary>
 /// LearningAssignmentAggregateQueryRequestFilter
 /// </summary>
-[DataContract]
+
 public partial class LearningAssignmentAggregateQueryRequestFilter : IEquatable<LearningAssignmentAggregateQueryRequestFilter>
 {
     /// <summary>
     /// The logic used to combine the clauses
     /// </summary>
     /// <value>The logic used to combine the clauses</value>
-    [JsonConverter(typeof(JsonStringEnumConverter))]
+    
     public enum TypeEnum
     {
         /// <summary>
@@ -41,7 +41,7 @@ public partial class LearningAssignmentAggregateQueryRequestFilter : IEquatable<
     /// The logic used to combine the clauses
     /// </summary>
     /// <value>The logic used to combine the clauses</value>
-    [DataMember(Name = "type", EmitDefaultValue = false)]
+    [JsonPropertyName("type")]
     public TypeEnum? Type { get; set; }
 
     /// <summary>
@@ -69,7 +69,7 @@ public partial class LearningAssignmentAggregateQueryRequestFilter : IEquatable<
     /// The list of clauses used to filter the data. Note that clauses must filter by attendeeId and a maximum of 100 user IDs are allowed
     /// </summary>
     /// <value>The list of clauses used to filter the data. Note that clauses must filter by attendeeId and a maximum of 100 user IDs are allowed</value>
-    [DataMember(Name = "clauses", EmitDefaultValue = false)]
+    [JsonPropertyName("clauses")]
     public List<LearningAssignmentAggregateQueryRequestClause> Clauses { get; set; }
 
 

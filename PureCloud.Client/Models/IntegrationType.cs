@@ -1,4 +1,3 @@
-using System.Runtime.Serialization;
 using System.Text;
 using System.Text.Json.Serialization;
 
@@ -7,7 +6,7 @@ namespace PureCloud.Client.Models;
 /// <summary>
 /// Descriptor for a type of Integration.
 /// </summary>
-[DataContract]
+
 public partial class IntegrationType : IEquatable<IntegrationType>
 {
 
@@ -34,7 +33,7 @@ public partial class IntegrationType : IEquatable<IntegrationType>
     /// The ID of the integration type.
     /// </summary>
     /// <value>The ID of the integration type.</value>
-    [DataMember(Name = "id", EmitDefaultValue = false)]
+    [JsonPropertyName("id")]
     public string Id { get; set; }
 
 
@@ -42,7 +41,7 @@ public partial class IntegrationType : IEquatable<IntegrationType>
     /// <summary>
     /// Gets or Sets Name
     /// </summary>
-    [DataMember(Name = "name", EmitDefaultValue = false)]
+    [JsonPropertyName("name")]
     public string Name { get; set; }
 
 
@@ -51,7 +50,7 @@ public partial class IntegrationType : IEquatable<IntegrationType>
     /// Description of the integration type.
     /// </summary>
     /// <value>Description of the integration type.</value>
-    [DataMember(Name = "description", EmitDefaultValue = false)]
+    [JsonPropertyName("description")]
     public string Description { get; private set; }
 
 
@@ -60,7 +59,7 @@ public partial class IntegrationType : IEquatable<IntegrationType>
     /// PureCloudEnvironment provider of the integration type.
     /// </summary>
     /// <value>PureCloudEnvironment provider of the integration type.</value>
-    [DataMember(Name = "provider", EmitDefaultValue = false)]
+    [JsonPropertyName("provider")]
     public string Provider { get; private set; }
 
 
@@ -69,7 +68,7 @@ public partial class IntegrationType : IEquatable<IntegrationType>
     /// Category describing the integration type.
     /// </summary>
     /// <value>Category describing the integration type.</value>
-    [DataMember(Name = "category", EmitDefaultValue = false)]
+    [JsonPropertyName("category")]
     public string Category { get; private set; }
 
 
@@ -78,7 +77,7 @@ public partial class IntegrationType : IEquatable<IntegrationType>
     /// Collection of logos.
     /// </summary>
     /// <value>Collection of logos.</value>
-    [DataMember(Name = "images", EmitDefaultValue = false)]
+    [JsonPropertyName("images")]
     public List<Image> Images { get; private set; }
 
 
@@ -87,7 +86,7 @@ public partial class IntegrationType : IEquatable<IntegrationType>
     /// URI of the schema describing the key-value properties needed to configure an integration of this type.
     /// </summary>
     /// <value>URI of the schema describing the key-value properties needed to configure an integration of this type.</value>
-    [DataMember(Name = "configPropertiesSchemaUri", EmitDefaultValue = false)]
+    [JsonPropertyName("configPropertiesSchemaUri")]
     public string ConfigPropertiesSchemaUri { get; private set; }
 
 
@@ -96,7 +95,7 @@ public partial class IntegrationType : IEquatable<IntegrationType>
     /// URI of the schema describing the advanced JSON document needed to configure an integration of this type.
     /// </summary>
     /// <value>URI of the schema describing the advanced JSON document needed to configure an integration of this type.</value>
-    [DataMember(Name = "configAdvancedSchemaUri", EmitDefaultValue = false)]
+    [JsonPropertyName("configAdvancedSchemaUri")]
     public string ConfigAdvancedSchemaUri { get; private set; }
 
 
@@ -105,7 +104,7 @@ public partial class IntegrationType : IEquatable<IntegrationType>
     /// URI of a page with more information about the integration type
     /// </summary>
     /// <value>URI of a page with more information about the integration type</value>
-    [DataMember(Name = "helpUri", EmitDefaultValue = false)]
+    [JsonPropertyName("helpUri")]
     public string HelpUri { get; private set; }
 
 
@@ -114,7 +113,7 @@ public partial class IntegrationType : IEquatable<IntegrationType>
     /// URI of a page with terms and conditions for the integration type
     /// </summary>
     /// <value>URI of a page with terms and conditions for the integration type</value>
-    [DataMember(Name = "termsOfServiceUri", EmitDefaultValue = false)]
+    [JsonPropertyName("termsOfServiceUri")]
     public string TermsOfServiceUri { get; private set; }
 
 
@@ -123,7 +122,7 @@ public partial class IntegrationType : IEquatable<IntegrationType>
     /// Name of the vendor of this integration type
     /// </summary>
     /// <value>Name of the vendor of this integration type</value>
-    [DataMember(Name = "vendorName", EmitDefaultValue = false)]
+    [JsonPropertyName("vendorName")]
     public string VendorName { get; private set; }
 
 
@@ -132,7 +131,7 @@ public partial class IntegrationType : IEquatable<IntegrationType>
     /// URI of the vendor&#39;s website
     /// </summary>
     /// <value>URI of the vendor&#39;s website</value>
-    [DataMember(Name = "vendorWebsiteUri", EmitDefaultValue = false)]
+    [JsonPropertyName("vendorWebsiteUri")]
     public string VendorWebsiteUri { get; private set; }
 
 
@@ -141,7 +140,7 @@ public partial class IntegrationType : IEquatable<IntegrationType>
     /// URI of the marketplace listing for this integration type
     /// </summary>
     /// <value>URI of the marketplace listing for this integration type</value>
-    [DataMember(Name = "marketplaceUri", EmitDefaultValue = false)]
+    [JsonPropertyName("marketplaceUri")]
     public string MarketplaceUri { get; private set; }
 
 
@@ -150,7 +149,7 @@ public partial class IntegrationType : IEquatable<IntegrationType>
     /// URI of frequently asked questions about the integration type
     /// </summary>
     /// <value>URI of frequently asked questions about the integration type</value>
-    [DataMember(Name = "faqUri", EmitDefaultValue = false)]
+    [JsonPropertyName("faqUri")]
     public string FaqUri { get; private set; }
 
 
@@ -159,7 +158,7 @@ public partial class IntegrationType : IEquatable<IntegrationType>
     /// URI of a privacy policy for users of the integration type
     /// </summary>
     /// <value>URI of a privacy policy for users of the integration type</value>
-    [DataMember(Name = "privacyPolicyUri", EmitDefaultValue = false)]
+    [JsonPropertyName("privacyPolicyUri")]
     public string PrivacyPolicyUri { get; private set; }
 
 
@@ -168,7 +167,7 @@ public partial class IntegrationType : IEquatable<IntegrationType>
     /// URI for vendor support
     /// </summary>
     /// <value>URI for vendor support</value>
-    [DataMember(Name = "supportContactUri", EmitDefaultValue = false)]
+    [JsonPropertyName("supportContactUri")]
     public string SupportContactUri { get; private set; }
 
 
@@ -177,7 +176,7 @@ public partial class IntegrationType : IEquatable<IntegrationType>
     /// URI for vendor sales information
     /// </summary>
     /// <value>URI for vendor sales information</value>
-    [DataMember(Name = "salesContactUri", EmitDefaultValue = false)]
+    [JsonPropertyName("salesContactUri")]
     public string SalesContactUri { get; private set; }
 
 
@@ -186,7 +185,7 @@ public partial class IntegrationType : IEquatable<IntegrationType>
     /// List of links to additional help resources
     /// </summary>
     /// <value>List of links to additional help resources</value>
-    [DataMember(Name = "helpLinks", EmitDefaultValue = false)]
+    [JsonPropertyName("helpLinks")]
     public List<HelpLink> HelpLinks { get; private set; }
 
 
@@ -195,7 +194,7 @@ public partial class IntegrationType : IEquatable<IntegrationType>
     /// Map of credentials for integrations of this type. The key is the name of a credential that can be provided in the credentials property of the integration configuration.
     /// </summary>
     /// <value>Map of credentials for integrations of this type. The key is the name of a credential that can be provided in the credentials property of the integration configuration.</value>
-    [DataMember(Name = "credentials", EmitDefaultValue = false)]
+    [JsonPropertyName("credentials")]
     public Dictionary<string, CredentialSpecification> Credentials { get; private set; }
 
 
@@ -204,7 +203,7 @@ public partial class IntegrationType : IEquatable<IntegrationType>
     /// Indicates if the integration type is installable or not.
     /// </summary>
     /// <value>Indicates if the integration type is installable or not.</value>
-    [DataMember(Name = "nonInstallable", EmitDefaultValue = false)]
+    [JsonPropertyName("nonInstallable")]
     public bool? NonInstallable { get; private set; }
 
 
@@ -213,7 +212,7 @@ public partial class IntegrationType : IEquatable<IntegrationType>
     /// The maximum number of integration instances allowable for this integration type
     /// </summary>
     /// <value>The maximum number of integration instances allowable for this integration type</value>
-    [DataMember(Name = "maxInstances", EmitDefaultValue = false)]
+    [JsonPropertyName("maxInstances")]
     public int? MaxInstances { get; private set; }
 
 
@@ -222,7 +221,7 @@ public partial class IntegrationType : IEquatable<IntegrationType>
     /// List of permissions required to permit user access to the integration type.
     /// </summary>
     /// <value>List of permissions required to permit user access to the integration type.</value>
-    [DataMember(Name = "userPermissions", EmitDefaultValue = false)]
+    [JsonPropertyName("userPermissions")]
     public List<string> UserPermissions { get; private set; }
 
 
@@ -231,7 +230,7 @@ public partial class IntegrationType : IEquatable<IntegrationType>
     /// List of OAuth Client IDs that must be authorized when the integration is created.
     /// </summary>
     /// <value>List of OAuth Client IDs that must be authorized when the integration is created.</value>
-    [DataMember(Name = "vendorOAuthClientIds", EmitDefaultValue = false)]
+    [JsonPropertyName("vendorOAuthClientIds")]
     public List<string> VendorOAuthClientIds { get; private set; }
 
 
@@ -240,7 +239,7 @@ public partial class IntegrationType : IEquatable<IntegrationType>
     /// The URI for this object
     /// </summary>
     /// <value>The URI for this object</value>
-    [DataMember(Name = "selfUri", EmitDefaultValue = false)]
+    [JsonPropertyName("selfUri")]
     public string SelfUri { get; private set; }
 
 

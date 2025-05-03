@@ -1,12 +1,12 @@
-using System.Runtime.Serialization;
 using System.Text;
+using System.Text.Json.Serialization;
 
 namespace PureCloud.Client.Models;
 
 /// <summary>
 /// Details about the active configuration on a deployment
 /// </summary>
-[DataContract]
+
 public partial class WebDeploymentActiveConfigurationOnDeployment : IEquatable<WebDeploymentActiveConfigurationOnDeployment>
 {
     /// <summary>
@@ -27,7 +27,7 @@ public partial class WebDeploymentActiveConfigurationOnDeployment : IEquatable<W
     /// The active configuration on a deployment
     /// </summary>
     /// <value>The active configuration on a deployment</value>
-    [DataMember(Name = "configurationVersion", EmitDefaultValue = false)]
+    [JsonPropertyName("configurationVersion")]
     public WebDeploymentConfigurationVersion ConfigurationVersion { get; set; }
 
 
@@ -36,7 +36,7 @@ public partial class WebDeploymentActiveConfigurationOnDeployment : IEquatable<W
     /// The web deployment associated with the active configuration
     /// </summary>
     /// <value>The web deployment associated with the active configuration</value>
-    [DataMember(Name = "deployment", EmitDefaultValue = false)]
+    [JsonPropertyName("deployment")]
     public WebDeployment Deployment { get; set; }
 
 

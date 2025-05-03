@@ -1,12 +1,12 @@
-using System.Runtime.Serialization;
 using System.Text;
+using System.Text.Json.Serialization;
 
 namespace PureCloud.Client.Models;
 
 /// <summary>
 /// DocumentContentHighlightIndex
 /// </summary>
-[DataContract]
+
 public partial class DocumentContentHighlightIndex : IEquatable<DocumentContentHighlightIndex>
 {
     /// <summary>
@@ -27,7 +27,7 @@ public partial class DocumentContentHighlightIndex : IEquatable<DocumentContentH
     /// Highlight text start index.
     /// </summary>
     /// <value>Highlight text start index.</value>
-    [DataMember(Name = "startIndex", EmitDefaultValue = false)]
+    [JsonPropertyName("startIndex")]
     public int? StartIndex { get; set; }
 
 
@@ -36,7 +36,7 @@ public partial class DocumentContentHighlightIndex : IEquatable<DocumentContentH
     /// Highlight text end index.
     /// </summary>
     /// <value>Highlight text end index.</value>
-    [DataMember(Name = "endIndex", EmitDefaultValue = false)]
+    [JsonPropertyName("endIndex")]
     public int? EndIndex { get; set; }
 
 

@@ -7,14 +7,14 @@ namespace PureCloud.Client.Models;
 /// <summary>
 /// BuScheduleNotificationsCategorySettings
 /// </summary>
-[DataContract]
+
 public partial class BuScheduleNotificationsCategorySettings : IEquatable<BuScheduleNotificationsCategorySettings>
 {
     /// <summary>
     /// The activity category
     /// </summary>
     /// <value>The activity category</value>
-    [JsonConverter(typeof(JsonStringEnumConverter))]
+    
     public enum ActivityCategoryEnum
     {
         /// <summary>
@@ -83,7 +83,7 @@ public partial class BuScheduleNotificationsCategorySettings : IEquatable<BuSche
     /// The activity category
     /// </summary>
     /// <value>The activity category</value>
-    [DataMember(Name = "activityCategory", EmitDefaultValue = false)]
+    [JsonPropertyName("activityCategory")]
     public ActivityCategoryEnum? ActivityCategory { get; set; }
 
     /// <summary>
@@ -113,7 +113,7 @@ public partial class BuScheduleNotificationsCategorySettings : IEquatable<BuSche
     /// Indicates if agents should receive early schedule reminder notifications.
     /// </summary>
     /// <value>Indicates if agents should receive early schedule reminder notifications.</value>
-    [DataMember(Name = "earlyReminderEnabled", EmitDefaultValue = false)]
+    [JsonPropertyName("earlyReminderEnabled")]
     public bool? EarlyReminderEnabled { get; set; }
 
 
@@ -122,7 +122,7 @@ public partial class BuScheduleNotificationsCategorySettings : IEquatable<BuSche
     /// Indicates if agents should receive out of adherence notifications.
     /// </summary>
     /// <value>Indicates if agents should receive out of adherence notifications.</value>
-    [DataMember(Name = "onTimeReminderEnabled", EmitDefaultValue = false)]
+    [JsonPropertyName("onTimeReminderEnabled")]
     public bool? OnTimeReminderEnabled { get; set; }
 
 

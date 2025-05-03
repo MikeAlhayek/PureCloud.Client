@@ -7,14 +7,14 @@ namespace PureCloud.Client.Models;
 /// <summary>
 /// SchedulingOptionsRequest
 /// </summary>
-[DataContract]
+
 public partial class SchedulingOptionsRequest : IEquatable<SchedulingOptionsRequest>
 {
     /// <summary>
     /// Overrides the default BU level activity smoothing type for this schedule generation
     /// </summary>
     /// <value>Overrides the default BU level activity smoothing type for this schedule generation</value>
-    [JsonConverter(typeof(JsonStringEnumConverter))]
+    
     public enum ActivitySmoothingTypeEnum
     {
         /// <summary>
@@ -47,7 +47,7 @@ public partial class SchedulingOptionsRequest : IEquatable<SchedulingOptionsRequ
     /// Overrides the default BU level activity smoothing type for this schedule generation
     /// </summary>
     /// <value>Overrides the default BU level activity smoothing type for this schedule generation</value>
-    [DataMember(Name = "activitySmoothingType", EmitDefaultValue = false)]
+    [JsonPropertyName("activitySmoothingType")]
     public ActivitySmoothingTypeEnum? ActivitySmoothingType { get; set; }
     /// <summary>
     /// Initializes a new instance of the <see cref="SchedulingOptionsRequest" /> class.
@@ -69,7 +69,7 @@ public partial class SchedulingOptionsRequest : IEquatable<SchedulingOptionsRequ
     /// Schedule generation options to apply if no forecast is supplied
     /// </summary>
     /// <value>Schedule generation options to apply if no forecast is supplied</value>
-    [DataMember(Name = "noForecastOptions", EmitDefaultValue = false)]
+    [JsonPropertyName("noForecastOptions")]
     public SchedulingNoForecastOptionsRequest NoForecastOptions { get; set; }
 
 
@@ -80,7 +80,7 @@ public partial class SchedulingOptionsRequest : IEquatable<SchedulingOptionsRequ
     /// Overrides the default BU level induce schedule variability setting for this schedule generation
     /// </summary>
     /// <value>Overrides the default BU level induce schedule variability setting for this schedule generation</value>
-    [DataMember(Name = "induceScheduleVariability", EmitDefaultValue = false)]
+    [JsonPropertyName("induceScheduleVariability")]
     public bool? InduceScheduleVariability { get; set; }
 
 

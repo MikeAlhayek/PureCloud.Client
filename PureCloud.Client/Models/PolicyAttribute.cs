@@ -7,13 +7,13 @@ namespace PureCloud.Client.Models;
 /// <summary>
 /// PolicyAttribute
 /// </summary>
-[DataContract]
+
 public partial class PolicyAttribute : IEquatable<PolicyAttribute>
 {
     /// <summary>
     /// Gets or Sets Type
     /// </summary>
-    [JsonConverter(typeof(JsonStringEnumConverter))]
+    
     public enum TypeEnum
     {
         /// <summary>
@@ -87,7 +87,7 @@ public partial class PolicyAttribute : IEquatable<PolicyAttribute>
     /// <summary>
     /// Gets or Sets Type
     /// </summary>
-    [DataMember(Name = "type", EmitDefaultValue = false)]
+    [JsonPropertyName("type")]
     public TypeEnum? Type { get; set; }
     /// <summary>
     /// Initializes a new instance of the <see cref="PolicyAttribute" /> class.
@@ -110,7 +110,7 @@ public partial class PolicyAttribute : IEquatable<PolicyAttribute>
     /// <summary>
     /// Gets or Sets Name
     /// </summary>
-    [DataMember(Name = "name", EmitDefaultValue = false)]
+    [JsonPropertyName("name")]
     public string Name { get; set; }
 
 
@@ -120,7 +120,7 @@ public partial class PolicyAttribute : IEquatable<PolicyAttribute>
     /// <summary>
     /// Gets or Sets Description
     /// </summary>
-    [DataMember(Name = "description", EmitDefaultValue = false)]
+    [JsonPropertyName("description")]
     public string Description { get; set; }
 
 
@@ -128,7 +128,7 @@ public partial class PolicyAttribute : IEquatable<PolicyAttribute>
     /// <summary>
     /// Gets or Sets FeatureToggle
     /// </summary>
-    [DataMember(Name = "featureToggle", EmitDefaultValue = false)]
+    [JsonPropertyName("featureToggle")]
     public string FeatureToggle { get; set; }
 
 

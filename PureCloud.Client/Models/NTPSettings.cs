@@ -1,12 +1,12 @@
-using System.Runtime.Serialization;
 using System.Text;
+using System.Text.Json.Serialization;
 
 namespace PureCloud.Client.Models;
 
 /// <summary>
 /// NTPSettings
 /// </summary>
-[DataContract]
+
 public partial class NTPSettings : IEquatable<NTPSettings>
 {
     /// <summary>
@@ -25,7 +25,7 @@ public partial class NTPSettings : IEquatable<NTPSettings>
     /// List of NTP servers, in priority order
     /// </summary>
     /// <value>List of NTP servers, in priority order</value>
-    [DataMember(Name = "servers", EmitDefaultValue = false)]
+    [JsonPropertyName("servers")]
     public List<string> Servers { get; set; }
 
 

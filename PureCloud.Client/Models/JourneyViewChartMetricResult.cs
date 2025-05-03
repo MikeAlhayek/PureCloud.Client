@@ -1,12 +1,12 @@
-using System.Runtime.Serialization;
 using System.Text;
+using System.Text.Json.Serialization;
 
 namespace PureCloud.Client.Models;
 
 /// <summary>
 /// JourneyViewChartMetricResult
 /// </summary>
-[DataContract]
+
 public partial class JourneyViewChartMetricResult : IEquatable<JourneyViewChartMetricResult>
 {
     /// <summary>
@@ -23,7 +23,7 @@ public partial class JourneyViewChartMetricResult : IEquatable<JourneyViewChartM
     /// Id of the metric
     /// </summary>
     /// <value>Id of the metric</value>
-    [DataMember(Name = "id", EmitDefaultValue = false)]
+    [JsonPropertyName("id")]
     public string Id { get; private set; }
 
 
@@ -32,7 +32,7 @@ public partial class JourneyViewChartMetricResult : IEquatable<JourneyViewChartM
     /// Metric result values
     /// </summary>
     /// <value>Metric result values</value>
-    [DataMember(Name = "values", EmitDefaultValue = false)]
+    [JsonPropertyName("values")]
     public List<JourneyViewChartMetricResultValue> Values { get; private set; }
 
 

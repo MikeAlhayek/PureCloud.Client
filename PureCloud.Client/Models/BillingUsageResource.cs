@@ -1,4 +1,3 @@
-using System.Runtime.Serialization;
 using System.Text;
 using System.Text.Json.Serialization;
 
@@ -7,7 +6,7 @@ namespace PureCloud.Client.Models;
 /// <summary>
 /// BillingUsageResource
 /// </summary>
-[DataContract]
+
 public partial class BillingUsageResource : IEquatable<BillingUsageResource>
 {
 
@@ -34,7 +33,7 @@ public partial class BillingUsageResource : IEquatable<BillingUsageResource>
     /// Identifies the resource (e.g. license user, device).
     /// </summary>
     /// <value>Identifies the resource (e.g. license user, device).</value>
-    [DataMember(Name = "name", EmitDefaultValue = false)]
+    [JsonPropertyName("name")]
     public string Name { get; set; }
 
 
@@ -43,7 +42,7 @@ public partial class BillingUsageResource : IEquatable<BillingUsageResource>
     /// The date that the usage was first observed by the billing subsystem. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z
     /// </summary>
     /// <value>The date that the usage was first observed by the billing subsystem. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z</value>
-    [DataMember(Name = "date", EmitDefaultValue = false)]
+    [JsonPropertyName("date")]
     public DateTime? Date { get; set; }
 
 

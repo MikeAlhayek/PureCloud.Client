@@ -1,4 +1,3 @@
-using System.Runtime.Serialization;
 using System.Text;
 using System.Text.Json.Serialization;
 
@@ -7,7 +6,7 @@ namespace PureCloud.Client.Models;
 /// <summary>
 /// ValidationServiceRequest
 /// </summary>
-[DataContract]
+
 public partial class ValidationServiceRequest : IEquatable<ValidationServiceRequest>
 {
 
@@ -34,7 +33,7 @@ public partial class ValidationServiceRequest : IEquatable<ValidationServiceRequ
     /// The last day of the data you are importing. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z
     /// </summary>
     /// <value>The last day of the data you are importing. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z</value>
-    [DataMember(Name = "dateImportEnded", EmitDefaultValue = false)]
+    [JsonPropertyName("dateImportEnded")]
     public DateTime? DateImportEnded { get; set; }
 
 
@@ -43,7 +42,7 @@ public partial class ValidationServiceRequest : IEquatable<ValidationServiceRequ
     /// S3 key for the uploaded file
     /// </summary>
     /// <value>S3 key for the uploaded file</value>
-    [DataMember(Name = "uploadKey", EmitDefaultValue = false)]
+    [JsonPropertyName("uploadKey")]
     public string UploadKey { get; set; }
 
 

@@ -1,12 +1,12 @@
-using System.Runtime.Serialization;
 using System.Text;
+using System.Text.Json.Serialization;
 
 namespace PureCloud.Client.Models;
 
 /// <summary>
 /// A maximum of 100 events are allowed per request
 /// </summary>
-[DataContract]
+
 public partial class BatchUserRoutingStatusEventRequest : IEquatable<BatchUserRoutingStatusEventRequest>
 {
     /// <summary>
@@ -25,7 +25,7 @@ public partial class BatchUserRoutingStatusEventRequest : IEquatable<BatchUserRo
     /// UserRoutingStatus events for this batch
     /// </summary>
     /// <value>UserRoutingStatus events for this batch</value>
-    [DataMember(Name = "userRoutingStatusEvents", EmitDefaultValue = false)]
+    [JsonPropertyName("userRoutingStatusEvents")]
     public List<UserRoutingStatusEvent> UserRoutingStatusEvents { get; set; }
 
 

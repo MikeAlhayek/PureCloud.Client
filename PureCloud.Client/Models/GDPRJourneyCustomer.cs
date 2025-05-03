@@ -1,12 +1,12 @@
-using System.Runtime.Serialization;
 using System.Text;
+using System.Text.Json.Serialization;
 
 namespace PureCloud.Client.Models;
 
 /// <summary>
 /// GDPRJourneyCustomer
 /// </summary>
-[DataContract]
+
 public partial class GDPRJourneyCustomer : IEquatable<GDPRJourneyCustomer>
 {
     /// <summary>
@@ -27,7 +27,7 @@ public partial class GDPRJourneyCustomer : IEquatable<GDPRJourneyCustomer>
     /// The type of the customerId within the Journey System (e.g. cookie). Required if &#x60;id&#x60; is defined.
     /// </summary>
     /// <value>The type of the customerId within the Journey System (e.g. cookie). Required if &#x60;id&#x60; is defined.</value>
-    [DataMember(Name = "type", EmitDefaultValue = false)]
+    [JsonPropertyName("type")]
     public string Type { get; set; }
 
 
@@ -36,7 +36,7 @@ public partial class GDPRJourneyCustomer : IEquatable<GDPRJourneyCustomer>
     /// An ID of a customer within the Journey System at a point-in-time. Required if &#x60;type&#x60; is defined.
     /// </summary>
     /// <value>An ID of a customer within the Journey System at a point-in-time. Required if &#x60;type&#x60; is defined.</value>
-    [DataMember(Name = "id", EmitDefaultValue = false)]
+    [JsonPropertyName("id")]
     public string Id { get; set; }
 
 

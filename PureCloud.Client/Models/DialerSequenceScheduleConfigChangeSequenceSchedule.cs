@@ -1,12 +1,12 @@
-using System.Runtime.Serialization;
 using System.Text;
+using System.Text.Json.Serialization;
 
 namespace PureCloud.Client.Models;
 
 /// <summary>
 /// DialerSequenceScheduleConfigChangeSequenceSchedule
 /// </summary>
-[DataContract]
+
 public partial class DialerSequenceScheduleConfigChangeSequenceSchedule : IEquatable<DialerSequenceScheduleConfigChangeSequenceSchedule>
 {
     /// <summary>
@@ -43,7 +43,7 @@ public partial class DialerSequenceScheduleConfigChangeSequenceSchedule : IEquat
     /// a list of start and end times
     /// </summary>
     /// <value>a list of start and end times</value>
-    [DataMember(Name = "intervals", EmitDefaultValue = false)]
+    [JsonPropertyName("intervals")]
     public List<DialerSequenceScheduleConfigChangeScheduleInterval> Intervals { get; set; }
 
 
@@ -52,7 +52,7 @@ public partial class DialerSequenceScheduleConfigChangeSequenceSchedule : IEquat
     /// a list of recurrences for a schedule
     /// </summary>
     /// <value>a list of recurrences for a schedule</value>
-    [DataMember(Name = "recurrences", EmitDefaultValue = false)]
+    [JsonPropertyName("recurrences")]
     public List<DialerSequenceScheduleConfigChangeScheduleRecurrence> Recurrences { get; set; }
 
 
@@ -61,7 +61,7 @@ public partial class DialerSequenceScheduleConfigChangeSequenceSchedule : IEquat
     /// time zone identifier to be applied to the intervals; for example Africa/Abidjan
     /// </summary>
     /// <value>time zone identifier to be applied to the intervals; for example Africa/Abidjan</value>
-    [DataMember(Name = "timeZone", EmitDefaultValue = false)]
+    [JsonPropertyName("timeZone")]
     public string TimeZone { get; set; }
 
 
@@ -69,7 +69,7 @@ public partial class DialerSequenceScheduleConfigChangeSequenceSchedule : IEquat
     /// <summary>
     /// Gets or Sets Sequence
     /// </summary>
-    [DataMember(Name = "sequence", EmitDefaultValue = false)]
+    [JsonPropertyName("sequence")]
     public DialerSequenceScheduleConfigChangeUriReference Sequence { get; set; }
 
 
@@ -77,7 +77,7 @@ public partial class DialerSequenceScheduleConfigChangeSequenceSchedule : IEquat
     /// <summary>
     /// Gets or Sets AdditionalProperties
     /// </summary>
-    [DataMember(Name = "additionalProperties", EmitDefaultValue = false)]
+    [JsonPropertyName("additionalProperties")]
     public Dictionary<string, object> AdditionalProperties { get; set; }
 
 
@@ -86,7 +86,7 @@ public partial class DialerSequenceScheduleConfigChangeSequenceSchedule : IEquat
     /// The globally unique identifier for the object.
     /// </summary>
     /// <value>The globally unique identifier for the object.</value>
-    [DataMember(Name = "id", EmitDefaultValue = false)]
+    [JsonPropertyName("id")]
     public string Id { get; set; }
 
 
@@ -95,7 +95,7 @@ public partial class DialerSequenceScheduleConfigChangeSequenceSchedule : IEquat
     /// The UI-visible name of the object
     /// </summary>
     /// <value>The UI-visible name of the object</value>
-    [DataMember(Name = "name", EmitDefaultValue = false)]
+    [JsonPropertyName("name")]
     public string Name { get; set; }
 
 
@@ -104,7 +104,7 @@ public partial class DialerSequenceScheduleConfigChangeSequenceSchedule : IEquat
     /// Creation time of the entity
     /// </summary>
     /// <value>Creation time of the entity</value>
-    [DataMember(Name = "dateCreated", EmitDefaultValue = false)]
+    [JsonPropertyName("dateCreated")]
     public DateTime? DateCreated { get; set; }
 
 
@@ -113,7 +113,7 @@ public partial class DialerSequenceScheduleConfigChangeSequenceSchedule : IEquat
     /// Last modified time of the entity
     /// </summary>
     /// <value>Last modified time of the entity</value>
-    [DataMember(Name = "dateModified", EmitDefaultValue = false)]
+    [JsonPropertyName("dateModified")]
     public DateTime? DateModified { get; set; }
 
 
@@ -122,7 +122,7 @@ public partial class DialerSequenceScheduleConfigChangeSequenceSchedule : IEquat
     /// Required for updates, must match the version number of the most recent update
     /// </summary>
     /// <value>Required for updates, must match the version number of the most recent update</value>
-    [DataMember(Name = "version", EmitDefaultValue = false)]
+    [JsonPropertyName("version")]
     public long? Version { get; set; }
 
 

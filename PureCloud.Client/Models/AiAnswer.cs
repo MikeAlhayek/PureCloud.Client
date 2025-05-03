@@ -7,14 +7,14 @@ namespace PureCloud.Client.Models;
 /// <summary>
 /// AiAnswer
 /// </summary>
-[DataContract]
+
 public partial class AiAnswer : IEquatable<AiAnswer>
 {
     /// <summary>
     /// Describes the type of error associated with the AI answer.
     /// </summary>
     /// <value>Describes the type of error associated with the AI answer.</value>
-    [JsonConverter(typeof(JsonStringEnumConverter))]
+    
     public enum FailureTypeEnum
     {
         /// <summary>
@@ -53,7 +53,7 @@ public partial class AiAnswer : IEquatable<AiAnswer>
     /// Describes the type of error associated with the AI answer.
     /// </summary>
     /// <value>Describes the type of error associated with the AI answer.</value>
-    [DataMember(Name = "failureType", EmitDefaultValue = false)]
+    [JsonPropertyName("failureType")]
     public FailureTypeEnum? FailureType { get; set; }
     /// <summary>
     /// Initializes a new instance of the <see cref="AiAnswer" /> class.
@@ -75,7 +75,7 @@ public partial class AiAnswer : IEquatable<AiAnswer>
     /// The unique identifier of the suggested AI answer.
     /// </summary>
     /// <value>The unique identifier of the suggested AI answer.</value>
-    [DataMember(Name = "answerId", EmitDefaultValue = false)]
+    [JsonPropertyName("answerId")]
     public string AnswerId { get; set; }
 
 
@@ -84,7 +84,7 @@ public partial class AiAnswer : IEquatable<AiAnswer>
     /// An explanation providing the reasoning behind the suggested answer.
     /// </summary>
     /// <value>An explanation providing the reasoning behind the suggested answer.</value>
-    [DataMember(Name = "explanation", EmitDefaultValue = false)]
+    [JsonPropertyName("explanation")]
     public string Explanation { get; set; }
 
 

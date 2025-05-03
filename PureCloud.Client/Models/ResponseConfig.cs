@@ -1,12 +1,12 @@
-using System.Runtime.Serialization;
 using System.Text;
+using System.Text.Json.Serialization;
 
 namespace PureCloud.Client.Models;
 
 /// <summary>
 /// Defines response components of the Action Request.
 /// </summary>
-[DataContract]
+
 public partial class ResponseConfig : IEquatable<ResponseConfig>
 {
     /// <summary>
@@ -31,7 +31,7 @@ public partial class ResponseConfig : IEquatable<ResponseConfig>
     /// Map &#39;attribute name&#39; and &#39;JSON path&#39; pairs used to extract data from REST response.
     /// </summary>
     /// <value>Map &#39;attribute name&#39; and &#39;JSON path&#39; pairs used to extract data from REST response.</value>
-    [DataMember(Name = "translationMap", EmitDefaultValue = false)]
+    [JsonPropertyName("translationMap")]
     public Dictionary<string, string> TranslationMap { get; set; }
 
 
@@ -40,7 +40,7 @@ public partial class ResponseConfig : IEquatable<ResponseConfig>
     /// Map &#39;attribute name&#39; and &#39;default value&#39; pairs used as fallback values if JSON path extraction fails for specified key.
     /// </summary>
     /// <value>Map &#39;attribute name&#39; and &#39;default value&#39; pairs used as fallback values if JSON path extraction fails for specified key.</value>
-    [DataMember(Name = "translationMapDefaults", EmitDefaultValue = false)]
+    [JsonPropertyName("translationMapDefaults")]
     public Dictionary<string, string> TranslationMapDefaults { get; set; }
 
 
@@ -49,7 +49,7 @@ public partial class ResponseConfig : IEquatable<ResponseConfig>
     /// Velocity template to build response to return from Action.
     /// </summary>
     /// <value>Velocity template to build response to return from Action.</value>
-    [DataMember(Name = "successTemplate", EmitDefaultValue = false)]
+    [JsonPropertyName("successTemplate")]
     public string SuccessTemplate { get; set; }
 
 
@@ -58,7 +58,7 @@ public partial class ResponseConfig : IEquatable<ResponseConfig>
     /// URI to retrieve success template.
     /// </summary>
     /// <value>URI to retrieve success template.</value>
-    [DataMember(Name = "successTemplateUri", EmitDefaultValue = false)]
+    [JsonPropertyName("successTemplateUri")]
     public string SuccessTemplateUri { get; set; }
 
 

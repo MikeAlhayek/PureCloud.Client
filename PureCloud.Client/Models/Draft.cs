@@ -1,4 +1,3 @@
-using System.Runtime.Serialization;
 using System.Text;
 using System.Text.Json.Serialization;
 
@@ -7,7 +6,7 @@ namespace PureCloud.Client.Models;
 /// <summary>
 /// Draft
 /// </summary>
-[DataContract]
+
 public partial class Draft : IEquatable<Draft>
 {
 
@@ -32,7 +31,7 @@ public partial class Draft : IEquatable<Draft>
     /// The globally unique identifier for the object.
     /// </summary>
     /// <value>The globally unique identifier for the object.</value>
-    [DataMember(Name = "id", EmitDefaultValue = false)]
+    [JsonPropertyName("id")]
     public string Id { get; private set; }
 
 
@@ -41,7 +40,7 @@ public partial class Draft : IEquatable<Draft>
     /// Draft name
     /// </summary>
     /// <value>Draft name</value>
-    [DataMember(Name = "name", EmitDefaultValue = false)]
+    [JsonPropertyName("name")]
     public string Name { get; set; }
 
 
@@ -50,7 +49,7 @@ public partial class Draft : IEquatable<Draft>
     /// Miner to which the draft belongs.
     /// </summary>
     /// <value>Miner to which the draft belongs.</value>
-    [DataMember(Name = "miner", EmitDefaultValue = false)]
+    [JsonPropertyName("miner")]
     public Miner Miner { get; private set; }
 
 
@@ -59,7 +58,7 @@ public partial class Draft : IEquatable<Draft>
     /// Draft intent object.
     /// </summary>
     /// <value>Draft intent object.</value>
-    [DataMember(Name = "intents", EmitDefaultValue = false)]
+    [JsonPropertyName("intents")]
     public List<DraftIntents> Intents { get; private set; }
 
 
@@ -68,7 +67,7 @@ public partial class Draft : IEquatable<Draft>
     /// Draft topic object.
     /// </summary>
     /// <value>Draft topic object.</value>
-    [DataMember(Name = "topics", EmitDefaultValue = false)]
+    [JsonPropertyName("topics")]
     public List<DraftTopics> Topics { get; private set; }
 
 
@@ -77,7 +76,7 @@ public partial class Draft : IEquatable<Draft>
     /// Date when the draft was created. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z
     /// </summary>
     /// <value>Date when the draft was created. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z</value>
-    [DataMember(Name = "dateCreated", EmitDefaultValue = false)]
+    [JsonPropertyName("dateCreated")]
     public DateTime? DateCreated { get; private set; }
 
 
@@ -86,7 +85,7 @@ public partial class Draft : IEquatable<Draft>
     /// Date when the draft was updated. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z
     /// </summary>
     /// <value>Date when the draft was updated. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z</value>
-    [DataMember(Name = "dateModified", EmitDefaultValue = false)]
+    [JsonPropertyName("dateModified")]
     public DateTime? DateModified { get; private set; }
 
 
@@ -95,7 +94,7 @@ public partial class Draft : IEquatable<Draft>
     /// The URI for this object
     /// </summary>
     /// <value>The URI for this object</value>
-    [DataMember(Name = "selfUri", EmitDefaultValue = false)]
+    [JsonPropertyName("selfUri")]
     public string SelfUri { get; private set; }
 
 

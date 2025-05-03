@@ -1,4 +1,3 @@
-using System.Runtime.Serialization;
 using System.Text;
 using System.Text.Json.Serialization;
 
@@ -7,7 +6,7 @@ namespace PureCloud.Client.Models;
 /// <summary>
 /// SupportCenterDetailedCategoryModuleSidebar
 /// </summary>
-[DataContract]
+
 public partial class SupportCenterDetailedCategoryModuleSidebar : IEquatable<SupportCenterDetailedCategoryModuleSidebar>
 {
 
@@ -32,7 +31,7 @@ public partial class SupportCenterDetailedCategoryModuleSidebar : IEquatable<Sup
     /// Whether sidebar is enabled or not
     /// </summary>
     /// <value>Whether sidebar is enabled or not</value>
-    [DataMember(Name = "enabled", EmitDefaultValue = false)]
+    [JsonPropertyName("enabled")]
     public bool? Enabled { get; set; }
 
 

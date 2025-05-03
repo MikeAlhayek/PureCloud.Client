@@ -7,14 +7,14 @@ namespace PureCloud.Client.Models;
 /// <summary>
 /// ConsultTransferToExternal
 /// </summary>
-[DataContract]
+
 public partial class ConsultTransferToExternal : IEquatable<ConsultTransferToExternal>
 {
     /// <summary>
     /// Determines to whom the initiating participant is requesting to speak. Defaults to DESTINATION
     /// </summary>
     /// <value>Determines to whom the initiating participant is requesting to speak. Defaults to DESTINATION</value>
-    [JsonConverter(typeof(JsonStringEnumConverter))]
+    
     public enum SpeakToEnum
     {
         /// <summary>
@@ -53,7 +53,7 @@ public partial class ConsultTransferToExternal : IEquatable<ConsultTransferToExt
     /// Determines to whom the initiating participant is requesting to speak. Defaults to DESTINATION
     /// </summary>
     /// <value>Determines to whom the initiating participant is requesting to speak. Defaults to DESTINATION</value>
-    [DataMember(Name = "speakTo", EmitDefaultValue = false)]
+    [JsonPropertyName("speakTo")]
     public SpeakToEnum? SpeakTo { get; set; }
 
     /// <summary>
@@ -83,7 +83,7 @@ public partial class ConsultTransferToExternal : IEquatable<ConsultTransferToExt
     /// The user ID of the person who wants to talk before completing the transfer. Could be the same of the context user ID
     /// </summary>
     /// <value>The user ID of the person who wants to talk before completing the transfer. Could be the same of the context user ID</value>
-    [DataMember(Name = "consultingUserId", EmitDefaultValue = false)]
+    [JsonPropertyName("consultingUserId")]
     public string ConsultingUserId { get; set; }
 
 
@@ -92,7 +92,7 @@ public partial class ConsultTransferToExternal : IEquatable<ConsultTransferToExt
     /// The address (like phone number) of the external contact.
     /// </summary>
     /// <value>The address (like phone number) of the external contact.</value>
-    [DataMember(Name = "address", EmitDefaultValue = false)]
+    [JsonPropertyName("address")]
     public string Address { get; set; }
 
 

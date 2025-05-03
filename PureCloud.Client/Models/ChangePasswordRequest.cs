@@ -1,4 +1,3 @@
-using System.Runtime.Serialization;
 using System.Text;
 using System.Text.Json.Serialization;
 
@@ -7,7 +6,7 @@ namespace PureCloud.Client.Models;
 /// <summary>
 /// ChangePasswordRequest
 /// </summary>
-[DataContract]
+
 public partial class ChangePasswordRequest : IEquatable<ChangePasswordRequest>
 {
 
@@ -32,7 +31,7 @@ public partial class ChangePasswordRequest : IEquatable<ChangePasswordRequest>
     /// The new password
     /// </summary>
     /// <value>The new password</value>
-    [DataMember(Name = "newPassword", EmitDefaultValue = false)]
+    [JsonPropertyName("newPassword")]
     public string NewPassword { get; set; }
 
 

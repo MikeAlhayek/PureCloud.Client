@@ -1,4 +1,3 @@
-using System.Runtime.Serialization;
 using System.Text;
 using System.Text.Json.Serialization;
 
@@ -7,7 +6,7 @@ namespace PureCloud.Client.Models;
 /// <summary>
 /// Represents a certificate to parse.
 /// </summary>
-[DataContract]
+
 public partial class Certificate : IEquatable<Certificate>
 {
 
@@ -32,7 +31,7 @@ public partial class Certificate : IEquatable<Certificate>
     /// The certificate to parse.
     /// </summary>
     /// <value>The certificate to parse.</value>
-    [DataMember(Name = "certificate", EmitDefaultValue = false)]
+    [JsonPropertyName("certificate")]
     public string _Certificate { get; set; }
 
 

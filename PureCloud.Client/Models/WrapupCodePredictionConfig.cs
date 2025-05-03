@@ -1,4 +1,3 @@
-using System.Runtime.Serialization;
 using System.Text;
 using System.Text.Json.Serialization;
 
@@ -7,7 +6,7 @@ namespace PureCloud.Client.Models;
 /// <summary>
 /// WrapupCodePredictionConfig
 /// </summary>
-[DataContract]
+
 public partial class WrapupCodePredictionConfig : IEquatable<WrapupCodePredictionConfig>
 {
 
@@ -32,7 +31,7 @@ public partial class WrapupCodePredictionConfig : IEquatable<WrapupCodePredictio
     /// Copilot generated wrapup code prediction is enabled.
     /// </summary>
     /// <value>Copilot generated wrapup code prediction is enabled.</value>
-    [DataMember(Name = "enabled", EmitDefaultValue = false)]
+    [JsonPropertyName("enabled")]
     public bool? Enabled { get; set; }
 
 

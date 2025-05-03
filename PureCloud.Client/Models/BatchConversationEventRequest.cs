@@ -1,12 +1,12 @@
-using System.Runtime.Serialization;
 using System.Text;
+using System.Text.Json.Serialization;
 
 namespace PureCloud.Client.Models;
 
 /// <summary>
 /// A maximum of 100 events are allowed per request
 /// </summary>
-[DataContract]
+
 public partial class BatchConversationEventRequest : IEquatable<BatchConversationEventRequest>
 {
     /// <summary>
@@ -87,7 +87,7 @@ public partial class BatchConversationEventRequest : IEquatable<BatchConversatio
     /// Voice - EndTransfer events for this batch
     /// </summary>
     /// <value>Voice - EndTransfer events for this batch</value>
-    [DataMember(Name = "endTransferEvents", EmitDefaultValue = false)]
+    [JsonPropertyName("endTransferEvents")]
     public List<EndTransferEvent> EndTransferEvents { get; set; }
 
 
@@ -96,7 +96,7 @@ public partial class BatchConversationEventRequest : IEquatable<BatchConversatio
     /// Voice - PhoneTransfer events for this batch
     /// </summary>
     /// <value>Voice - PhoneTransfer events for this batch</value>
-    [DataMember(Name = "phoneTransferEvents", EmitDefaultValue = false)]
+    [JsonPropertyName("phoneTransferEvents")]
     public List<PhoneTransferEvent> PhoneTransferEvents { get; set; }
 
 
@@ -105,7 +105,7 @@ public partial class BatchConversationEventRequest : IEquatable<BatchConversatio
     /// Voice - ProgressTransfer events for this batch
     /// </summary>
     /// <value>Voice - ProgressTransfer events for this batch</value>
-    [DataMember(Name = "progressTransferEvents", EmitDefaultValue = false)]
+    [JsonPropertyName("progressTransferEvents")]
     public List<ProgressTransferEvent> ProgressTransferEvents { get; set; }
 
 
@@ -114,7 +114,7 @@ public partial class BatchConversationEventRequest : IEquatable<BatchConversatio
     /// Voice - RoutingTransfer events for this batch
     /// </summary>
     /// <value>Voice - RoutingTransfer events for this batch</value>
-    [DataMember(Name = "routingTransferEvents", EmitDefaultValue = false)]
+    [JsonPropertyName("routingTransferEvents")]
     public List<RoutingTransferEvent> RoutingTransferEvents { get; set; }
 
 
@@ -123,7 +123,7 @@ public partial class BatchConversationEventRequest : IEquatable<BatchConversatio
     /// Voice - UserTransfer events for this batch
     /// </summary>
     /// <value>Voice - UserTransfer events for this batch</value>
-    [DataMember(Name = "userTransferEvents", EmitDefaultValue = false)]
+    [JsonPropertyName("userTransferEvents")]
     public List<UserTransferEvent> UserTransferEvents { get; set; }
 
 
@@ -132,7 +132,7 @@ public partial class BatchConversationEventRequest : IEquatable<BatchConversatio
     /// Voice - CommunicationAnswered events for this batch
     /// </summary>
     /// <value>Voice - CommunicationAnswered events for this batch</value>
-    [DataMember(Name = "communicationAnsweredEvents", EmitDefaultValue = false)]
+    [JsonPropertyName("communicationAnsweredEvents")]
     public List<CommunicationAnsweredEvent> CommunicationAnsweredEvents { get; set; }
 
 
@@ -141,7 +141,7 @@ public partial class BatchConversationEventRequest : IEquatable<BatchConversatio
     /// Voice - CommunicationDispositionApplied events for this batch
     /// </summary>
     /// <value>Voice - CommunicationDispositionApplied events for this batch</value>
-    [DataMember(Name = "communicationDispositionAppliedEvents", EmitDefaultValue = false)]
+    [JsonPropertyName("communicationDispositionAppliedEvents")]
     public List<CommunicationDispositionAppliedEvent> CommunicationDispositionAppliedEvents { get; set; }
 
 
@@ -150,7 +150,7 @@ public partial class BatchConversationEventRequest : IEquatable<BatchConversatio
     /// Voice - HoldUpdated events for this batch
     /// </summary>
     /// <value>Voice - HoldUpdated events for this batch</value>
-    [DataMember(Name = "holdUpdatedEvents", EmitDefaultValue = false)]
+    [JsonPropertyName("holdUpdatedEvents")]
     public List<HoldUpdatedEvent> HoldUpdatedEvents { get; set; }
 
 
@@ -159,7 +159,7 @@ public partial class BatchConversationEventRequest : IEquatable<BatchConversatio
     /// Voice - ExternalEstablished events for this batch
     /// </summary>
     /// <value>Voice - ExternalEstablished events for this batch</value>
-    [DataMember(Name = "externalEstablishedEvents", EmitDefaultValue = false)]
+    [JsonPropertyName("externalEstablishedEvents")]
     public List<ExternalEstablishedEvent> ExternalEstablishedEvents { get; set; }
 
 
@@ -168,7 +168,7 @@ public partial class BatchConversationEventRequest : IEquatable<BatchConversatio
     /// Voice - IvrEstablished events for this batch
     /// </summary>
     /// <value>Voice - IvrEstablished events for this batch</value>
-    [DataMember(Name = "ivrEstablishedEvents", EmitDefaultValue = false)]
+    [JsonPropertyName("ivrEstablishedEvents")]
     public List<IvrEstablishedEvent> IvrEstablishedEvents { get; set; }
 
 
@@ -177,7 +177,7 @@ public partial class BatchConversationEventRequest : IEquatable<BatchConversatio
     /// Voice - PhoneEstablished events for this batch
     /// </summary>
     /// <value>Voice - PhoneEstablished events for this batch</value>
-    [DataMember(Name = "phoneEstablishedEvents", EmitDefaultValue = false)]
+    [JsonPropertyName("phoneEstablishedEvents")]
     public List<PhoneEstablishedEvent> PhoneEstablishedEvents { get; set; }
 
 
@@ -186,7 +186,7 @@ public partial class BatchConversationEventRequest : IEquatable<BatchConversatio
     /// Voice - RoutingEstablished events for this batch
     /// </summary>
     /// <value>Voice - RoutingEstablished events for this batch</value>
-    [DataMember(Name = "routingEstablishedEvents", EmitDefaultValue = false)]
+    [JsonPropertyName("routingEstablishedEvents")]
     public List<RoutingEstablishedEvent> RoutingEstablishedEvents { get; set; }
 
 
@@ -195,7 +195,7 @@ public partial class BatchConversationEventRequest : IEquatable<BatchConversatio
     /// Voice - UserEstablished events for this batch
     /// </summary>
     /// <value>Voice - UserEstablished events for this batch</value>
-    [DataMember(Name = "userEstablishedEvents", EmitDefaultValue = false)]
+    [JsonPropertyName("userEstablishedEvents")]
     public List<UserEstablishedEvent> UserEstablishedEvents { get; set; }
 
 
@@ -204,7 +204,7 @@ public partial class BatchConversationEventRequest : IEquatable<BatchConversatio
     /// Voice - AudioUpdated events for this batch
     /// </summary>
     /// <value>Voice - AudioUpdated events for this batch</value>
-    [DataMember(Name = "audioUpdatedEvents", EmitDefaultValue = false)]
+    [JsonPropertyName("audioUpdatedEvents")]
     public List<AudioUpdatedEvent> AudioUpdatedEvents { get; set; }
 
 
@@ -213,7 +213,7 @@ public partial class BatchConversationEventRequest : IEquatable<BatchConversatio
     /// Voice - CommunicationEnded events for this batch
     /// </summary>
     /// <value>Voice - CommunicationEnded events for this batch</value>
-    [DataMember(Name = "communicationEndedEvents", EmitDefaultValue = false)]
+    [JsonPropertyName("communicationEndedEvents")]
     public List<CommunicationEndedEvent> CommunicationEndedEvents { get; set; }
 
 
@@ -222,7 +222,7 @@ public partial class BatchConversationEventRequest : IEquatable<BatchConversatio
     /// Voice - ConsultTransfer events for this batch
     /// </summary>
     /// <value>Voice - ConsultTransfer events for this batch</value>
-    [DataMember(Name = "consultTransferEvents", EmitDefaultValue = false)]
+    [JsonPropertyName("consultTransferEvents")]
     public List<ConsultTransferEvent> ConsultTransferEvents { get; set; }
 
 
@@ -231,7 +231,7 @@ public partial class BatchConversationEventRequest : IEquatable<BatchConversatio
     /// Voice - ProgressConsultTransfer events for this batch
     /// </summary>
     /// <value>Voice - ProgressConsultTransfer events for this batch</value>
-    [DataMember(Name = "progressConsultTransferEvents", EmitDefaultValue = false)]
+    [JsonPropertyName("progressConsultTransferEvents")]
     public List<ProgressConsultTransferEvent> ProgressConsultTransferEvents { get; set; }
 
 
@@ -240,7 +240,7 @@ public partial class BatchConversationEventRequest : IEquatable<BatchConversatio
     /// Voice - EndConsultTransfer events for this batch
     /// </summary>
     /// <value>Voice - EndConsultTransfer events for this batch</value>
-    [DataMember(Name = "endConsultTransferEvents", EmitDefaultValue = false)]
+    [JsonPropertyName("endConsultTransferEvents")]
     public List<EndConsultTransferEvent> EndConsultTransferEvents { get; set; }
 
 
@@ -249,7 +249,7 @@ public partial class BatchConversationEventRequest : IEquatable<BatchConversatio
     /// Email - EmailBeginTransmittingEvent events for this batch
     /// </summary>
     /// <value>Email - EmailBeginTransmittingEvent events for this batch</value>
-    [DataMember(Name = "emailBeginTransmittingEvents", EmitDefaultValue = false)]
+    [JsonPropertyName("emailBeginTransmittingEvents")]
     public List<EmailBeginTransmittingEvent> EmailBeginTransmittingEvents { get; set; }
 
 
@@ -258,7 +258,7 @@ public partial class BatchConversationEventRequest : IEquatable<BatchConversatio
     /// Email - EmailCommunicationEndedEvent events for this batch
     /// </summary>
     /// <value>Email - EmailCommunicationEndedEvent events for this batch</value>
-    [DataMember(Name = "emailCommunicationEndedEvents", EmitDefaultValue = false)]
+    [JsonPropertyName("emailCommunicationEndedEvents")]
     public List<EmailCommunicationEndedEvent> EmailCommunicationEndedEvents { get; set; }
 
 
@@ -267,7 +267,7 @@ public partial class BatchConversationEventRequest : IEquatable<BatchConversatio
     /// Email - EmailExternalEstablishedEvent events for this batch
     /// </summary>
     /// <value>Email - EmailExternalEstablishedEvent events for this batch</value>
-    [DataMember(Name = "emailExternalEstablishedEvents", EmitDefaultValue = false)]
+    [JsonPropertyName("emailExternalEstablishedEvents")]
     public List<EmailExternalEstablishedEvent> EmailExternalEstablishedEvents { get; set; }
 
 
@@ -276,7 +276,7 @@ public partial class BatchConversationEventRequest : IEquatable<BatchConversatio
     /// Email - EmailFlowEstablishedEvent events for this batch
     /// </summary>
     /// <value>Email - EmailFlowEstablishedEvent events for this batch</value>
-    [DataMember(Name = "emailFlowEstablishedEvents", EmitDefaultValue = false)]
+    [JsonPropertyName("emailFlowEstablishedEvents")]
     public List<EmailFlowEstablishedEvent> EmailFlowEstablishedEvents { get; set; }
 
 
@@ -285,7 +285,7 @@ public partial class BatchConversationEventRequest : IEquatable<BatchConversatio
     /// Email - EmailRoutingEstablishedEvent events for this batch
     /// </summary>
     /// <value>Email - EmailRoutingEstablishedEvent events for this batch</value>
-    [DataMember(Name = "emailRoutingEstablishedEvents", EmitDefaultValue = false)]
+    [JsonPropertyName("emailRoutingEstablishedEvents")]
     public List<EmailRoutingEstablishedEvent> EmailRoutingEstablishedEvents { get; set; }
 
 
@@ -294,7 +294,7 @@ public partial class BatchConversationEventRequest : IEquatable<BatchConversatio
     /// Email - EmailUserEstablishedEvent events for this batch
     /// </summary>
     /// <value>Email - EmailUserEstablishedEvent events for this batch</value>
-    [DataMember(Name = "emailUserEstablishedEvents", EmitDefaultValue = false)]
+    [JsonPropertyName("emailUserEstablishedEvents")]
     public List<EmailUserEstablishedEvent> EmailUserEstablishedEvents { get; set; }
 
 
@@ -303,7 +303,7 @@ public partial class BatchConversationEventRequest : IEquatable<BatchConversatio
     /// Email - EmailCommunicationAnsweredEvent events for this batch
     /// </summary>
     /// <value>Email - EmailCommunicationAnsweredEvent events for this batch</value>
-    [DataMember(Name = "emailCommunicationAnsweredEvents", EmitDefaultValue = false)]
+    [JsonPropertyName("emailCommunicationAnsweredEvents")]
     public List<EmailCommunicationAnsweredEvent> EmailCommunicationAnsweredEvents { get; set; }
 
 
@@ -312,7 +312,7 @@ public partial class BatchConversationEventRequest : IEquatable<BatchConversatio
     /// Email - EmailCommunicationDispositionAppliedEvent events for this batch
     /// </summary>
     /// <value>Email - EmailCommunicationDispositionAppliedEvent events for this batch</value>
-    [DataMember(Name = "emailCommunicationDispositionAppliedEvents", EmitDefaultValue = false)]
+    [JsonPropertyName("emailCommunicationDispositionAppliedEvents")]
     public List<EmailCommunicationDispositionAppliedEvent> EmailCommunicationDispositionAppliedEvents { get; set; }
 
 
@@ -321,7 +321,7 @@ public partial class BatchConversationEventRequest : IEquatable<BatchConversatio
     /// Email - EmailCommunicationSentMessageEvent events for this batch
     /// </summary>
     /// <value>Email - EmailCommunicationSentMessageEvent events for this batch</value>
-    [DataMember(Name = "emailCommunicationSentMessageEvents", EmitDefaultValue = false)]
+    [JsonPropertyName("emailCommunicationSentMessageEvents")]
     public List<EmailCommunicationSentMessageEvent> EmailCommunicationSentMessageEvents { get; set; }
 
 
@@ -330,7 +330,7 @@ public partial class BatchConversationEventRequest : IEquatable<BatchConversatio
     /// Email - EmailHoldUpdatedEvent events for this batch
     /// </summary>
     /// <value>Email - EmailHoldUpdatedEvent events for this batch</value>
-    [DataMember(Name = "emailHoldUpdatedEvents", EmitDefaultValue = false)]
+    [JsonPropertyName("emailHoldUpdatedEvents")]
     public List<EmailHoldUpdatedEvent> EmailHoldUpdatedEvents { get; set; }
 
 
@@ -339,7 +339,7 @@ public partial class BatchConversationEventRequest : IEquatable<BatchConversatio
     /// Email - EmailEndTransferEvent events for this batch
     /// </summary>
     /// <value>Email - EmailEndTransferEvent events for this batch</value>
-    [DataMember(Name = "emailEndTransferEvents", EmitDefaultValue = false)]
+    [JsonPropertyName("emailEndTransferEvents")]
     public List<EmailEndTransferEvent> EmailEndTransferEvents { get; set; }
 
 
@@ -348,7 +348,7 @@ public partial class BatchConversationEventRequest : IEquatable<BatchConversatio
     /// Email - EmailProgressTransferEvent events for this batch
     /// </summary>
     /// <value>Email - EmailProgressTransferEvent events for this batch</value>
-    [DataMember(Name = "emailProgressTransferEvents", EmitDefaultValue = false)]
+    [JsonPropertyName("emailProgressTransferEvents")]
     public List<EmailProgressTransferEvent> EmailProgressTransferEvents { get; set; }
 
 
@@ -357,7 +357,7 @@ public partial class BatchConversationEventRequest : IEquatable<BatchConversatio
     /// Email - EmailRoutingTransferEvent events for this batch
     /// </summary>
     /// <value>Email - EmailRoutingTransferEvent events for this batch</value>
-    [DataMember(Name = "emailRoutingTransferEvents", EmitDefaultValue = false)]
+    [JsonPropertyName("emailRoutingTransferEvents")]
     public List<EmailRoutingTransferEvent> EmailRoutingTransferEvents { get; set; }
 
 
@@ -366,7 +366,7 @@ public partial class BatchConversationEventRequest : IEquatable<BatchConversatio
     /// Email - EmailUserTransferEvent events for this batch
     /// </summary>
     /// <value>Email - EmailUserTransferEvent events for this batch</value>
-    [DataMember(Name = "emailUserTransferEvents", EmitDefaultValue = false)]
+    [JsonPropertyName("emailUserTransferEvents")]
     public List<EmailUserTransferEvent> EmailUserTransferEvents { get; set; }
 
 

@@ -1,12 +1,12 @@
-using System.Runtime.Serialization;
 using System.Text;
+using System.Text.Json.Serialization;
 
 namespace PureCloud.Client.Models;
 
 /// <summary>
 /// User information for an Instagram account
 /// </summary>
-[DataContract]
+
 public partial class InstagramId : IEquatable<InstagramId>
 {
     /// <summary>
@@ -29,7 +29,7 @@ public partial class InstagramId : IEquatable<InstagramId>
     /// The set of scopedIds that this person has. Each scopedId is specific to an Instagram page or app that the user interacts with.
     /// </summary>
     /// <value>The set of scopedIds that this person has. Each scopedId is specific to an Instagram page or app that the user interacts with.</value>
-    [DataMember(Name = "ids", EmitDefaultValue = false)]
+    [JsonPropertyName("ids")]
     public List<InstagramScopedId> Ids { get; set; }
 
 
@@ -38,7 +38,7 @@ public partial class InstagramId : IEquatable<InstagramId>
     /// The displayName of the person who owns this Instagram account
     /// </summary>
     /// <value>The displayName of the person who owns this Instagram account</value>
-    [DataMember(Name = "displayName", EmitDefaultValue = false)]
+    [JsonPropertyName("displayName")]
     public string DisplayName { get; set; }
 
 
@@ -47,7 +47,7 @@ public partial class InstagramId : IEquatable<InstagramId>
     /// The handle of the person who owns this Instagram account
     /// </summary>
     /// <value>The handle of the person who owns this Instagram account</value>
-    [DataMember(Name = "handle", EmitDefaultValue = false)]
+    [JsonPropertyName("handle")]
     public string Handle { get; set; }
 
 

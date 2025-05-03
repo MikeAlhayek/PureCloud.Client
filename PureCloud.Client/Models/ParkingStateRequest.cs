@@ -7,14 +7,14 @@ namespace PureCloud.Client.Models;
 /// <summary>
 /// ParkingStateRequest
 /// </summary>
-[DataContract]
+
 public partial class ParkingStateRequest : IEquatable<ParkingStateRequest>
 {
     /// <summary>
     /// State to set the participant.
     /// </summary>
     /// <value>State to set the participant.</value>
-    [JsonConverter(typeof(JsonStringEnumConverter))]
+    
     public enum StateEnum
     {
         /// <summary>
@@ -101,7 +101,7 @@ public partial class ParkingStateRequest : IEquatable<ParkingStateRequest>
     /// State to set the participant.
     /// </summary>
     /// <value>State to set the participant.</value>
-    [DataMember(Name = "state", EmitDefaultValue = false)]
+    [JsonPropertyName("state")]
     public StateEnum? State { get; set; }
 
     /// <summary>

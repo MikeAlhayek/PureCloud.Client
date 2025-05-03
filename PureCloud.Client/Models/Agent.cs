@@ -1,12 +1,12 @@
-using System.Runtime.Serialization;
 using System.Text;
+using System.Text.Json.Serialization;
 
 namespace PureCloud.Client.Models;
 
 /// <summary>
 /// Agent
 /// </summary>
-[DataContract]
+
 public partial class Agent : IEquatable<Agent>
 {
     /// <summary>
@@ -25,7 +25,7 @@ public partial class Agent : IEquatable<Agent>
     /// The current stage for this agent
     /// </summary>
     /// <value>The current stage for this agent</value>
-    [DataMember(Name = "stage", EmitDefaultValue = false)]
+    [JsonPropertyName("stage")]
     public string Stage { get; set; }
 
 

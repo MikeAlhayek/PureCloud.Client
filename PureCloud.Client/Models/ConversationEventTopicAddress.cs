@@ -1,12 +1,12 @@
-using System.Runtime.Serialization;
 using System.Text;
+using System.Text.Json.Serialization;
 
 namespace PureCloud.Client.Models;
 
 /// <summary>
 /// Address and name data for a call endpoint.
 /// </summary>
-[DataContract]
+
 public partial class ConversationEventTopicAddress : IEquatable<ConversationEventTopicAddress>
 {
     /// <summary>
@@ -33,7 +33,7 @@ public partial class ConversationEventTopicAddress : IEquatable<ConversationEven
     /// This will be nameRaw if present, or a locality lookup of the address field otherwise.
     /// </summary>
     /// <value>This will be nameRaw if present, or a locality lookup of the address field otherwise.</value>
-    [DataMember(Name = "name", EmitDefaultValue = false)]
+    [JsonPropertyName("name")]
     public string Name { get; set; }
 
 
@@ -42,7 +42,7 @@ public partial class ConversationEventTopicAddress : IEquatable<ConversationEven
     /// The name as close to the bits on the wire as possible.
     /// </summary>
     /// <value>The name as close to the bits on the wire as possible.</value>
-    [DataMember(Name = "nameRaw", EmitDefaultValue = false)]
+    [JsonPropertyName("nameRaw")]
     public string NameRaw { get; set; }
 
 
@@ -51,7 +51,7 @@ public partial class ConversationEventTopicAddress : IEquatable<ConversationEven
     /// The normalized address. This field is acquired from the Address Normalization Table.  The addressRaw could have gone through some transformations, such as only using the numeric portion, before being run through the Address Normalization Table.
     /// </summary>
     /// <value>The normalized address. This field is acquired from the Address Normalization Table.  The addressRaw could have gone through some transformations, such as only using the numeric portion, before being run through the Address Normalization Table.</value>
-    [DataMember(Name = "addressNormalized", EmitDefaultValue = false)]
+    [JsonPropertyName("addressNormalized")]
     public string AddressNormalized { get; set; }
 
 
@@ -60,7 +60,7 @@ public partial class ConversationEventTopicAddress : IEquatable<ConversationEven
     /// The address as close to the bits on the wire as possible.
     /// </summary>
     /// <value>The address as close to the bits on the wire as possible.</value>
-    [DataMember(Name = "addressRaw", EmitDefaultValue = false)]
+    [JsonPropertyName("addressRaw")]
     public string AddressRaw { get; set; }
 
 
@@ -69,7 +69,7 @@ public partial class ConversationEventTopicAddress : IEquatable<ConversationEven
     /// The displayable address. This field is acquired from the Address Normalization Table.  The addressRaw could have gone through some transformations, such as only using the numeric portion, before being run through the Address Normalization Table.
     /// </summary>
     /// <value>The displayable address. This field is acquired from the Address Normalization Table.  The addressRaw could have gone through some transformations, such as only using the numeric portion, before being run through the Address Normalization Table.</value>
-    [DataMember(Name = "addressDisplayable", EmitDefaultValue = false)]
+    [JsonPropertyName("addressDisplayable")]
     public string AddressDisplayable { get; set; }
 
 

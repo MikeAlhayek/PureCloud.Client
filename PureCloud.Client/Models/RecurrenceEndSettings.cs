@@ -1,12 +1,12 @@
-using System.Runtime.Serialization;
 using System.Text;
+using System.Text.Json.Serialization;
 
 namespace PureCloud.Client.Models;
 
 /// <summary>
 /// RecurrenceEndSettings
 /// </summary>
-[DataContract]
+
 public partial class RecurrenceEndSettings : IEquatable<RecurrenceEndSettings>
 {
     /// <summary>
@@ -27,7 +27,7 @@ public partial class RecurrenceEndSettings : IEquatable<RecurrenceEndSettings>
     /// The end date of the recurrence for the activity plan, in ISO-8601 format. Only one of lastDate or noEndDate may be set
     /// </summary>
     /// <value>The end date of the recurrence for the activity plan, in ISO-8601 format. Only one of lastDate or noEndDate may be set</value>
-    [DataMember(Name = "lastDate", EmitDefaultValue = false)]
+    [JsonPropertyName("lastDate")]
     public DateTime? LastDate { get; set; }
 
 
@@ -36,7 +36,7 @@ public partial class RecurrenceEndSettings : IEquatable<RecurrenceEndSettings>
     /// Whether this activity plan should continue indefinitely. If set to true, lastDate must not be set
     /// </summary>
     /// <value>Whether this activity plan should continue indefinitely. If set to true, lastDate must not be set</value>
-    [DataMember(Name = "noEndDate", EmitDefaultValue = false)]
+    [JsonPropertyName("noEndDate")]
     public bool? NoEndDate { get; set; }
 
 

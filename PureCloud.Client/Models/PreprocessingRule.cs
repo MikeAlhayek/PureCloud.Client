@@ -1,12 +1,12 @@
-using System.Runtime.Serialization;
 using System.Text;
+using System.Text.Json.Serialization;
 
 namespace PureCloud.Client.Models;
 
 /// <summary>
 /// PreprocessingRule
 /// </summary>
-[DataContract]
+
 public partial class PreprocessingRule : IEquatable<PreprocessingRule>
 {
     /// <summary>
@@ -31,7 +31,7 @@ public partial class PreprocessingRule : IEquatable<PreprocessingRule>
     /// The regular expression to which file lines are to be matched.
     /// </summary>
     /// <value>The regular expression to which file lines are to be matched.</value>
-    [DataMember(Name = "find", EmitDefaultValue = false)]
+    [JsonPropertyName("find")]
     public string Find { get; set; }
 
 
@@ -40,7 +40,7 @@ public partial class PreprocessingRule : IEquatable<PreprocessingRule>
     /// The string to be substituted for each match.
     /// </summary>
     /// <value>The string to be substituted for each match.</value>
-    [DataMember(Name = "replaceWith", EmitDefaultValue = false)]
+    [JsonPropertyName("replaceWith")]
     public string ReplaceWith { get; set; }
 
 
@@ -49,7 +49,7 @@ public partial class PreprocessingRule : IEquatable<PreprocessingRule>
     /// Replaces all matching substrings in every line.
     /// </summary>
     /// <value>Replaces all matching substrings in every line.</value>
-    [DataMember(Name = "global", EmitDefaultValue = false)]
+    [JsonPropertyName("global")]
     public bool? Global { get; set; }
 
 
@@ -58,7 +58,7 @@ public partial class PreprocessingRule : IEquatable<PreprocessingRule>
     /// Enables case-insensitive matching
     /// </summary>
     /// <value>Enables case-insensitive matching</value>
-    [DataMember(Name = "ignoreCase", EmitDefaultValue = false)]
+    [JsonPropertyName("ignoreCase")]
     public bool? IgnoreCase { get; set; }
 
 

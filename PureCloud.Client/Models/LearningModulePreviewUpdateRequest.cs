@@ -7,14 +7,14 @@ namespace PureCloud.Client.Models;
 /// <summary>
 /// Learning module preview update request
 /// </summary>
-[DataContract]
+
 public partial class LearningModulePreviewUpdateRequest : IEquatable<LearningModulePreviewUpdateRequest>
 {
     /// <summary>
     /// The assignment State
     /// </summary>
     /// <value>The assignment State</value>
-    [JsonConverter(typeof(JsonStringEnumConverter))]
+    
     public enum StateEnum
     {
         /// <summary>
@@ -65,7 +65,7 @@ public partial class LearningModulePreviewUpdateRequest : IEquatable<LearningMod
     /// The assignment State
     /// </summary>
     /// <value>The assignment State</value>
-    [DataMember(Name = "state", EmitDefaultValue = false)]
+    [JsonPropertyName("state")]
     public StateEnum? State { get; set; }
     /// <summary>
     /// Initializes a new instance of the <see cref="LearningModulePreviewUpdateRequest" /> class.
@@ -93,7 +93,7 @@ public partial class LearningModulePreviewUpdateRequest : IEquatable<LearningMod
     /// The assignment current step
     /// </summary>
     /// <value>The assignment current step</value>
-    [DataMember(Name = "currentStep", EmitDefaultValue = false)]
+    [JsonPropertyName("currentStep")]
     public LearningModulePreviewUpdateRequestCurrentStep CurrentStep { get; set; }
 
 
@@ -102,7 +102,7 @@ public partial class LearningModulePreviewUpdateRequest : IEquatable<LearningMod
     /// The assignment Steps
     /// </summary>
     /// <value>The assignment Steps</value>
-    [DataMember(Name = "steps", EmitDefaultValue = false)]
+    [JsonPropertyName("steps")]
     public List<LearningModulePreviewUpdateStep> Steps { get; set; }
 
 
@@ -111,7 +111,7 @@ public partial class LearningModulePreviewUpdateRequest : IEquatable<LearningMod
     /// The assessment for learning module
     /// </summary>
     /// <value>The assessment for learning module</value>
-    [DataMember(Name = "assessment", EmitDefaultValue = false)]
+    [JsonPropertyName("assessment")]
     public LearningAssessment Assessment { get; set; }
 
 
@@ -120,7 +120,7 @@ public partial class LearningModulePreviewUpdateRequest : IEquatable<LearningMod
     /// The assessment form for learning module
     /// </summary>
     /// <value>The assessment form for learning module</value>
-    [DataMember(Name = "assessmentForm", EmitDefaultValue = false)]
+    [JsonPropertyName("assessmentForm")]
     public AssessmentForm AssessmentForm { get; set; }
 
 

@@ -1,12 +1,12 @@
-using System.Runtime.Serialization;
 using System.Text;
+using System.Text.Json.Serialization;
 
 namespace PureCloud.Client.Models;
 
 /// <summary>
 /// ConfusionInfo
 /// </summary>
-[DataContract]
+
 public partial class ConfusionInfo : IEquatable<ConfusionInfo>
 {
     /// <summary>
@@ -25,7 +25,7 @@ public partial class ConfusionInfo : IEquatable<ConfusionInfo>
     /// Confusion details between this utterance and other intents.
     /// </summary>
     /// <value>Confusion details between this utterance and other intents.</value>
-    [DataMember(Name = "intents", EmitDefaultValue = false)]
+    [JsonPropertyName("intents")]
     public List<ConfusionIntentInfo> Intents { get; set; }
 
 

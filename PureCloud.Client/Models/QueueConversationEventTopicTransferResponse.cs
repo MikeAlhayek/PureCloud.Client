@@ -7,13 +7,13 @@ namespace PureCloud.Client.Models;
 /// <summary>
 /// QueueConversationEventTopicTransferResponse
 /// </summary>
-[DataContract]
+
 public partial class QueueConversationEventTopicTransferResponse : IEquatable<QueueConversationEventTopicTransferResponse>
 {
     /// <summary>
     /// Gets or Sets State
     /// </summary>
-    [JsonConverter(typeof(JsonStringEnumConverter))]
+    
     public enum StateEnum
     {
         /// <summary>
@@ -70,7 +70,7 @@ public partial class QueueConversationEventTopicTransferResponse : IEquatable<Qu
     /// The type of transfer to perform.
     /// </summary>
     /// <value>The type of transfer to perform.</value>
-    [JsonConverter(typeof(JsonStringEnumConverter))]
+    
     public enum TransferTypeEnum
     {
         /// <summary>
@@ -96,13 +96,13 @@ public partial class QueueConversationEventTopicTransferResponse : IEquatable<Qu
     /// <summary>
     /// Gets or Sets State
     /// </summary>
-    [DataMember(Name = "state", EmitDefaultValue = false)]
+    [JsonPropertyName("state")]
     public StateEnum? State { get; set; }
     /// <summary>
     /// The type of transfer to perform.
     /// </summary>
     /// <value>The type of transfer to perform.</value>
-    [DataMember(Name = "transferType", EmitDefaultValue = false)]
+    [JsonPropertyName("transferType")]
     public TransferTypeEnum? TransferType { get; set; }
     /// <summary>
     /// Initializes a new instance of the <see cref="QueueConversationEventTopicTransferResponse" /> class.
@@ -132,7 +132,7 @@ public partial class QueueConversationEventTopicTransferResponse : IEquatable<Qu
     /// The id of the command.
     /// </summary>
     /// <value>The id of the command.</value>
-    [DataMember(Name = "id", EmitDefaultValue = false)]
+    [JsonPropertyName("id")]
     public string Id { get; set; }
 
 
@@ -143,7 +143,7 @@ public partial class QueueConversationEventTopicTransferResponse : IEquatable<Qu
     /// The date/time that this command was issued.
     /// </summary>
     /// <value>The date/time that this command was issued.</value>
-    [DataMember(Name = "dateIssued", EmitDefaultValue = false)]
+    [JsonPropertyName("dateIssued")]
     public DateTime? DateIssued { get; set; }
 
 
@@ -151,7 +151,7 @@ public partial class QueueConversationEventTopicTransferResponse : IEquatable<Qu
     /// <summary>
     /// Gets or Sets Initiator
     /// </summary>
-    [DataMember(Name = "initiator", EmitDefaultValue = false)]
+    [JsonPropertyName("initiator")]
     public QueueConversationEventTopicTransferInitiator Initiator { get; set; }
 
 
@@ -159,7 +159,7 @@ public partial class QueueConversationEventTopicTransferResponse : IEquatable<Qu
     /// <summary>
     /// Gets or Sets ModifiedBy
     /// </summary>
-    [DataMember(Name = "modifiedBy", EmitDefaultValue = false)]
+    [JsonPropertyName("modifiedBy")]
     public QueueConversationEventTopicTransferModifedBy ModifiedBy { get; set; }
 
 
@@ -167,7 +167,7 @@ public partial class QueueConversationEventTopicTransferResponse : IEquatable<Qu
     /// <summary>
     /// Gets or Sets Destination
     /// </summary>
-    [DataMember(Name = "destination", EmitDefaultValue = false)]
+    [JsonPropertyName("destination")]
     public QueueConversationEventTopicTransferDestination Destination { get; set; }
 
 

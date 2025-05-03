@@ -7,14 +7,14 @@ namespace PureCloud.Client.Models;
 /// <summary>
 /// WorkitemQueryJobQueryFiltersCriteria
 /// </summary>
-[DataContract]
+
 public partial class WorkitemQueryJobQueryFiltersCriteria : IEquatable<WorkitemQueryJobQueryFiltersCriteria>
 {
     /// <summary>
     /// Query filter logical operator to join predicates.
     /// </summary>
     /// <value>Query filter logical operator to join predicates.</value>
-    [JsonConverter(typeof(JsonStringEnumConverter))]
+    
     public enum OperatorEnum
     {
         /// <summary>
@@ -41,7 +41,7 @@ public partial class WorkitemQueryJobQueryFiltersCriteria : IEquatable<WorkitemQ
     /// Query filter logical operator to join predicates.
     /// </summary>
     /// <value>Query filter logical operator to join predicates.</value>
-    [DataMember(Name = "operator", EmitDefaultValue = false)]
+    [JsonPropertyName("operator")]
     public OperatorEnum? Operator { get; set; }
 
     /// <summary>
@@ -69,7 +69,7 @@ public partial class WorkitemQueryJobQueryFiltersCriteria : IEquatable<WorkitemQ
     /// Query filter predicates. Number of predicates within the query filter should be between 1 and 5.
     /// </summary>
     /// <value>Query filter predicates. Number of predicates within the query filter should be between 1 and 5.</value>
-    [DataMember(Name = "predicates", EmitDefaultValue = false)]
+    [JsonPropertyName("predicates")]
     public List<WorkitemQueryJobQueryFiltersPredicate> Predicates { get; set; }
 
 

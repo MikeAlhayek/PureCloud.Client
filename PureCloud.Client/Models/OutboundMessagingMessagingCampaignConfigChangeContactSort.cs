@@ -7,13 +7,13 @@ namespace PureCloud.Client.Models;
 /// <summary>
 /// OutboundMessagingMessagingCampaignConfigChangeContactSort
 /// </summary>
-[DataContract]
+
 public partial class OutboundMessagingMessagingCampaignConfigChangeContactSort : IEquatable<OutboundMessagingMessagingCampaignConfigChangeContactSort>
 {
     /// <summary>
     /// Gets or Sets Direction
     /// </summary>
-    [JsonConverter(typeof(JsonStringEnumConverter))]
+    
     public enum DirectionEnum
     {
         /// <summary>
@@ -39,7 +39,7 @@ public partial class OutboundMessagingMessagingCampaignConfigChangeContactSort :
     /// <summary>
     /// Gets or Sets Direction
     /// </summary>
-    [DataMember(Name = "direction", EmitDefaultValue = false)]
+    [JsonPropertyName("direction")]
     public DirectionEnum? Direction { get; set; }
     /// <summary>
     /// Initializes a new instance of the <see cref="OutboundMessagingMessagingCampaignConfigChangeContactSort" /> class.
@@ -62,7 +62,7 @@ public partial class OutboundMessagingMessagingCampaignConfigChangeContactSort :
     /// <summary>
     /// Gets or Sets FieldName
     /// </summary>
-    [DataMember(Name = "fieldName", EmitDefaultValue = false)]
+    [JsonPropertyName("fieldName")]
     public string FieldName { get; set; }
 
 
@@ -73,7 +73,7 @@ public partial class OutboundMessagingMessagingCampaignConfigChangeContactSort :
     /// Whether that column contains numeric data
     /// </summary>
     /// <value>Whether that column contains numeric data</value>
-    [DataMember(Name = "numeric", EmitDefaultValue = false)]
+    [JsonPropertyName("numeric")]
     public bool? Numeric { get; set; }
 
 
@@ -81,7 +81,7 @@ public partial class OutboundMessagingMessagingCampaignConfigChangeContactSort :
     /// <summary>
     /// Gets or Sets AdditionalProperties
     /// </summary>
-    [DataMember(Name = "additionalProperties", EmitDefaultValue = false)]
+    [JsonPropertyName("additionalProperties")]
     public Dictionary<string, object> AdditionalProperties { get; set; }
 
 

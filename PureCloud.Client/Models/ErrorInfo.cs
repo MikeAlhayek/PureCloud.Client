@@ -1,12 +1,12 @@
-using System.Runtime.Serialization;
 using System.Text;
+using System.Text.Json.Serialization;
 
 namespace PureCloud.Client.Models;
 
 /// <summary>
 /// ErrorInfo
 /// </summary>
-[DataContract]
+
 public partial class ErrorInfo : IEquatable<ErrorInfo>
 {
     /// <summary>
@@ -26,7 +26,7 @@ public partial class ErrorInfo : IEquatable<ErrorInfo>
     /// <summary>
     /// Gets or Sets Message
     /// </summary>
-    [DataMember(Name = "message", EmitDefaultValue = false)]
+    [JsonPropertyName("message")]
     public string Message { get; set; }
 
 
@@ -34,7 +34,7 @@ public partial class ErrorInfo : IEquatable<ErrorInfo>
     /// <summary>
     /// Gets or Sets Code
     /// </summary>
-    [DataMember(Name = "code", EmitDefaultValue = false)]
+    [JsonPropertyName("code")]
     public string Code { get; set; }
 
 

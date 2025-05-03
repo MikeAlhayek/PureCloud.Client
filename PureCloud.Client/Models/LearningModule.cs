@@ -7,14 +7,14 @@ namespace PureCloud.Client.Models;
 /// <summary>
 /// Learning module response
 /// </summary>
-[DataContract]
+
 public partial class LearningModule : IEquatable<LearningModule>
 {
     /// <summary>
     /// The source of the learning module
     /// </summary>
     /// <value>The source of the learning module</value>
-    [JsonConverter(typeof(JsonStringEnumConverter))]
+    
     public enum SourceEnum
     {
         /// <summary>
@@ -41,7 +41,7 @@ public partial class LearningModule : IEquatable<LearningModule>
     /// The type for the learning module
     /// </summary>
     /// <value>The type for the learning module</value>
-    [JsonConverter(typeof(JsonStringEnumConverter))]
+    
     public enum TypeEnum
     {
         /// <summary>
@@ -86,7 +86,7 @@ public partial class LearningModule : IEquatable<LearningModule>
     /// The mode of archival for learning module
     /// </summary>
     /// <value>The mode of archival for learning module</value>
-    [JsonConverter(typeof(JsonStringEnumConverter))]
+    
     public enum ArchivalModeEnum
     {
         /// <summary>
@@ -113,19 +113,19 @@ public partial class LearningModule : IEquatable<LearningModule>
     /// The source of the learning module
     /// </summary>
     /// <value>The source of the learning module</value>
-    [DataMember(Name = "source", EmitDefaultValue = false)]
+    [JsonPropertyName("source")]
     public SourceEnum? Source { get; private set; }
     /// <summary>
     /// The type for the learning module
     /// </summary>
     /// <value>The type for the learning module</value>
-    [DataMember(Name = "type", EmitDefaultValue = false)]
+    [JsonPropertyName("type")]
     public TypeEnum? Type { get; set; }
     /// <summary>
     /// The mode of archival for learning module
     /// </summary>
     /// <value>The mode of archival for learning module</value>
-    [DataMember(Name = "archivalMode", EmitDefaultValue = false)]
+    [JsonPropertyName("archivalMode")]
     public ArchivalModeEnum? ArchivalMode { get; set; }
 
     /// <summary>
@@ -175,7 +175,7 @@ public partial class LearningModule : IEquatable<LearningModule>
     /// The globally unique identifier for the object.
     /// </summary>
     /// <value>The globally unique identifier for the object.</value>
-    [DataMember(Name = "id", EmitDefaultValue = false)]
+    [JsonPropertyName("id")]
     public string Id { get; private set; }
 
 
@@ -184,7 +184,7 @@ public partial class LearningModule : IEquatable<LearningModule>
     /// The name of learning module
     /// </summary>
     /// <value>The name of learning module</value>
-    [DataMember(Name = "name", EmitDefaultValue = false)]
+    [JsonPropertyName("name")]
     public string Name { get; set; }
 
 
@@ -193,7 +193,7 @@ public partial class LearningModule : IEquatable<LearningModule>
     /// If true, learning module is excluded when retrieving modules for manual assignment
     /// </summary>
     /// <value>If true, learning module is excluded when retrieving modules for manual assignment</value>
-    [DataMember(Name = "excludedFromCatalog", EmitDefaultValue = false)]
+    [JsonPropertyName("excludedFromCatalog")]
     public bool? ExcludedFromCatalog { get; set; }
 
 
@@ -202,7 +202,7 @@ public partial class LearningModule : IEquatable<LearningModule>
     /// The user who created learning module
     /// </summary>
     /// <value>The user who created learning module</value>
-    [DataMember(Name = "createdBy", EmitDefaultValue = false)]
+    [JsonPropertyName("createdBy")]
     public UserReference CreatedBy { get; private set; }
 
 
@@ -211,7 +211,7 @@ public partial class LearningModule : IEquatable<LearningModule>
     /// The date/time learning module was created. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z
     /// </summary>
     /// <value>The date/time learning module was created. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z</value>
-    [DataMember(Name = "dateCreated", EmitDefaultValue = false)]
+    [JsonPropertyName("dateCreated")]
     public DateTime? DateCreated { get; private set; }
 
 
@@ -220,7 +220,7 @@ public partial class LearningModule : IEquatable<LearningModule>
     /// The user who modified learning module
     /// </summary>
     /// <value>The user who modified learning module</value>
-    [DataMember(Name = "modifiedBy", EmitDefaultValue = false)]
+    [JsonPropertyName("modifiedBy")]
     public UserReference ModifiedBy { get; private set; }
 
 
@@ -229,7 +229,7 @@ public partial class LearningModule : IEquatable<LearningModule>
     /// The date/time learning module was modified. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z
     /// </summary>
     /// <value>The date/time learning module was modified. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z</value>
-    [DataMember(Name = "dateModified", EmitDefaultValue = false)]
+    [JsonPropertyName("dateModified")]
     public DateTime? DateModified { get; private set; }
 
 
@@ -238,7 +238,7 @@ public partial class LearningModule : IEquatable<LearningModule>
     /// The version of published learning module
     /// </summary>
     /// <value>The version of published learning module</value>
-    [DataMember(Name = "version", EmitDefaultValue = false)]
+    [JsonPropertyName("version")]
     public int? Version { get; private set; }
 
 
@@ -247,7 +247,7 @@ public partial class LearningModule : IEquatable<LearningModule>
     /// The external ID of the learning module
     /// </summary>
     /// <value>The external ID of the learning module</value>
-    [DataMember(Name = "externalId", EmitDefaultValue = false)]
+    [JsonPropertyName("externalId")]
     public string ExternalId { get; private set; }
 
 
@@ -258,7 +258,7 @@ public partial class LearningModule : IEquatable<LearningModule>
     /// The rule for learning module; read-only, and only populated when requested via expand param.
     /// </summary>
     /// <value>The rule for learning module; read-only, and only populated when requested via expand param.</value>
-    [DataMember(Name = "rule", EmitDefaultValue = false)]
+    [JsonPropertyName("rule")]
     public LearningModuleRule Rule { get; private set; }
 
 
@@ -267,7 +267,7 @@ public partial class LearningModule : IEquatable<LearningModule>
     /// If true, learning module content should be viewed one by one in order
     /// </summary>
     /// <value>If true, learning module content should be viewed one by one in order</value>
-    [DataMember(Name = "enforceContentOrder", EmitDefaultValue = false)]
+    [JsonPropertyName("enforceContentOrder")]
     public bool? EnforceContentOrder { get; set; }
 
 
@@ -276,7 +276,7 @@ public partial class LearningModule : IEquatable<LearningModule>
     /// Allows to view Assessment results in detail
     /// </summary>
     /// <value>Allows to view Assessment results in detail</value>
-    [DataMember(Name = "reviewAssessmentResults", EmitDefaultValue = false)]
+    [JsonPropertyName("reviewAssessmentResults")]
     public ReviewAssessmentResults ReviewAssessmentResults { get; set; }
 
 
@@ -285,7 +285,7 @@ public partial class LearningModule : IEquatable<LearningModule>
     /// The URI for this object
     /// </summary>
     /// <value>The URI for this object</value>
-    [DataMember(Name = "selfUri", EmitDefaultValue = false)]
+    [JsonPropertyName("selfUri")]
     public string SelfUri { get; private set; }
 
 
@@ -294,7 +294,7 @@ public partial class LearningModule : IEquatable<LearningModule>
     /// If true, learning module is archived
     /// </summary>
     /// <value>If true, learning module is archived</value>
-    [DataMember(Name = "isArchived", EmitDefaultValue = false)]
+    [JsonPropertyName("isArchived")]
     public bool? IsArchived { get; private set; }
 
 
@@ -303,7 +303,7 @@ public partial class LearningModule : IEquatable<LearningModule>
     /// If true, learning module is published
     /// </summary>
     /// <value>If true, learning module is published</value>
-    [DataMember(Name = "isPublished", EmitDefaultValue = false)]
+    [JsonPropertyName("isPublished")]
     public bool? IsPublished { get; private set; }
 
 
@@ -312,7 +312,7 @@ public partial class LearningModule : IEquatable<LearningModule>
     /// The description of learning module
     /// </summary>
     /// <value>The description of learning module</value>
-    [DataMember(Name = "description", EmitDefaultValue = false)]
+    [JsonPropertyName("description")]
     public string Description { get; set; }
 
 
@@ -321,7 +321,7 @@ public partial class LearningModule : IEquatable<LearningModule>
     /// The completion time of learning module in days
     /// </summary>
     /// <value>The completion time of learning module in days</value>
-    [DataMember(Name = "completionTimeInDays", EmitDefaultValue = false)]
+    [JsonPropertyName("completionTimeInDays")]
     public int? CompletionTimeInDays { get; set; }
 
 
@@ -332,7 +332,7 @@ public partial class LearningModule : IEquatable<LearningModule>
     /// The list of inform steps in a learning module
     /// </summary>
     /// <value>The list of inform steps in a learning module</value>
-    [DataMember(Name = "informSteps", EmitDefaultValue = false)]
+    [JsonPropertyName("informSteps")]
     public List<LearningModuleInformStep> InformSteps { get; set; }
 
 
@@ -341,7 +341,7 @@ public partial class LearningModule : IEquatable<LearningModule>
     /// The assessment form for learning module
     /// </summary>
     /// <value>The assessment form for learning module</value>
-    [DataMember(Name = "assessmentForm", EmitDefaultValue = false)]
+    [JsonPropertyName("assessmentForm")]
     public AssessmentForm AssessmentForm { get; set; }
 
 
@@ -350,7 +350,7 @@ public partial class LearningModule : IEquatable<LearningModule>
     /// The learning module summary data
     /// </summary>
     /// <value>The learning module summary data</value>
-    [DataMember(Name = "summaryData", EmitDefaultValue = false)]
+    [JsonPropertyName("summaryData")]
     public LearningModuleSummary SummaryData { get; set; }
 
 
@@ -359,7 +359,7 @@ public partial class LearningModule : IEquatable<LearningModule>
     /// The learning module reassign summary data
     /// </summary>
     /// <value>The learning module reassign summary data</value>
-    [DataMember(Name = "reassignSummaryData", EmitDefaultValue = false)]
+    [JsonPropertyName("reassignSummaryData")]
     public LearningModuleReassignSummary ReassignSummaryData { get; set; }
 
 
@@ -368,7 +368,7 @@ public partial class LearningModule : IEquatable<LearningModule>
     /// The cover art for the learning module
     /// </summary>
     /// <value>The cover art for the learning module</value>
-    [DataMember(Name = "coverArt", EmitDefaultValue = false)]
+    [JsonPropertyName("coverArt")]
     public LearningModuleCoverArtResponse CoverArt { get; set; }
 
 
@@ -377,7 +377,7 @@ public partial class LearningModule : IEquatable<LearningModule>
     /// The recommended time in minutes to complete the module
     /// </summary>
     /// <value>The recommended time in minutes to complete the module</value>
-    [DataMember(Name = "lengthInMinutes", EmitDefaultValue = false)]
+    [JsonPropertyName("lengthInMinutes")]
     public int? LengthInMinutes { get; set; }
 
 

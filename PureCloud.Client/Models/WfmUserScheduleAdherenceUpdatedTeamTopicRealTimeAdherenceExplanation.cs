@@ -7,13 +7,13 @@ namespace PureCloud.Client.Models;
 /// <summary>
 /// WfmUserScheduleAdherenceUpdatedTeamTopicRealTimeAdherenceExplanation
 /// </summary>
-[DataContract]
+
 public partial class WfmUserScheduleAdherenceUpdatedTeamTopicRealTimeAdherenceExplanation : IEquatable<WfmUserScheduleAdherenceUpdatedTeamTopicRealTimeAdherenceExplanation>
 {
     /// <summary>
     /// Gets or Sets Status
     /// </summary>
-    [JsonConverter(typeof(JsonStringEnumConverter))]
+    
     public enum StatusEnum
     {
         /// <summary>
@@ -45,7 +45,7 @@ public partial class WfmUserScheduleAdherenceUpdatedTeamTopicRealTimeAdherenceEx
     /// <summary>
     /// Gets or Sets Status
     /// </summary>
-    [DataMember(Name = "status", EmitDefaultValue = false)]
+    [JsonPropertyName("status")]
     public StatusEnum? Status { get; set; }
     /// <summary>
     /// Initializes a new instance of the <see cref="WfmUserScheduleAdherenceUpdatedTeamTopicRealTimeAdherenceExplanation" /> class.
@@ -68,7 +68,7 @@ public partial class WfmUserScheduleAdherenceUpdatedTeamTopicRealTimeAdherenceEx
     /// <summary>
     /// Gets or Sets Id
     /// </summary>
-    [DataMember(Name = "id", EmitDefaultValue = false)]
+    [JsonPropertyName("id")]
     public string Id { get; set; }
 
 
@@ -76,7 +76,7 @@ public partial class WfmUserScheduleAdherenceUpdatedTeamTopicRealTimeAdherenceEx
     /// <summary>
     /// Gets or Sets StartDate
     /// </summary>
-    [DataMember(Name = "startDate", EmitDefaultValue = false)]
+    [JsonPropertyName("startDate")]
     public DateTime? StartDate { get; set; }
 
 
@@ -84,7 +84,7 @@ public partial class WfmUserScheduleAdherenceUpdatedTeamTopicRealTimeAdherenceEx
     /// <summary>
     /// Gets or Sets LengthMinutes
     /// </summary>
-    [DataMember(Name = "lengthMinutes", EmitDefaultValue = false)]
+    [JsonPropertyName("lengthMinutes")]
     public long? LengthMinutes { get; set; }
 
 

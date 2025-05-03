@@ -1,4 +1,3 @@
-using System.Runtime.Serialization;
 using System.Text;
 using System.Text.Json.Serialization;
 
@@ -7,7 +6,7 @@ namespace PureCloud.Client.Models;
 /// <summary>
 /// UpdateStaffingGroupRequest
 /// </summary>
-[DataContract]
+
 public partial class UpdateStaffingGroupRequest : IEquatable<UpdateStaffingGroupRequest>
 {
 
@@ -36,7 +35,7 @@ public partial class UpdateStaffingGroupRequest : IEquatable<UpdateStaffingGroup
     /// The name of the staffing group
     /// </summary>
     /// <value>The name of the staffing group</value>
-    [DataMember(Name = "name", EmitDefaultValue = false)]
+    [JsonPropertyName("name")]
     public string Name { get; set; }
 
 
@@ -45,7 +44,7 @@ public partial class UpdateStaffingGroupRequest : IEquatable<UpdateStaffingGroup
     /// The set of user Ids to associate with the staffing group
     /// </summary>
     /// <value>The set of user Ids to associate with the staffing group</value>
-    [DataMember(Name = "userIds", EmitDefaultValue = false)]
+    [JsonPropertyName("userIds")]
     public SetWrapperString UserIds { get; set; }
 
 
@@ -54,7 +53,7 @@ public partial class UpdateStaffingGroupRequest : IEquatable<UpdateStaffingGroup
     /// Version metadata for the staffing group
     /// </summary>
     /// <value>Version metadata for the staffing group</value>
-    [DataMember(Name = "metadata", EmitDefaultValue = false)]
+    [JsonPropertyName("metadata")]
     public WfmVersionedEntityMetadata Metadata { get; set; }
 
 

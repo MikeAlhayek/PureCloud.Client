@@ -7,14 +7,14 @@ namespace PureCloud.Client.Models;
 /// <summary>
 /// ActionEventRequest
 /// </summary>
-[DataContract]
+
 public partial class ActionEventRequest : IEquatable<ActionEventRequest>
 {
     /// <summary>
     /// State the action is transitioning to.
     /// </summary>
     /// <value>State the action is transitioning to.</value>
-    [JsonConverter(typeof(JsonStringEnumConverter))]
+    
     public enum ActionStateEnum
     {
         /// <summary>
@@ -113,7 +113,7 @@ public partial class ActionEventRequest : IEquatable<ActionEventRequest>
     /// State the action is transitioning to.
     /// </summary>
     /// <value>State the action is transitioning to.</value>
-    [DataMember(Name = "actionState", EmitDefaultValue = false)]
+    [JsonPropertyName("actionState")]
     public ActionStateEnum? ActionState { get; set; }
 
     /// <summary>
@@ -145,7 +145,7 @@ public partial class ActionEventRequest : IEquatable<ActionEventRequest>
     /// The globally unique identifier for the object.
     /// </summary>
     /// <value>The globally unique identifier for the object.</value>
-    [DataMember(Name = "id", EmitDefaultValue = false)]
+    [JsonPropertyName("id")]
     public string Id { get; private set; }
 
 
@@ -154,7 +154,7 @@ public partial class ActionEventRequest : IEquatable<ActionEventRequest>
     /// UUID of the customer session for this action.
     /// </summary>
     /// <value>UUID of the customer session for this action.</value>
-    [DataMember(Name = "sessionId", EmitDefaultValue = false)]
+    [JsonPropertyName("sessionId")]
     public string SessionId { get; set; }
 
 
@@ -163,7 +163,7 @@ public partial class ActionEventRequest : IEquatable<ActionEventRequest>
     /// UUID for the action, as returned by the Ping endpoint when the action was qualified.
     /// </summary>
     /// <value>UUID for the action, as returned by the Ping endpoint when the action was qualified.</value>
-    [DataMember(Name = "actionId", EmitDefaultValue = false)]
+    [JsonPropertyName("actionId")]
     public string ActionId { get; set; }
 
 
@@ -174,7 +174,7 @@ public partial class ActionEventRequest : IEquatable<ActionEventRequest>
     /// Client defined error code (when state transitions to errored)
     /// </summary>
     /// <value>Client defined error code (when state transitions to errored)</value>
-    [DataMember(Name = "errorCode", EmitDefaultValue = false)]
+    [JsonPropertyName("errorCode")]
     public string ErrorCode { get; set; }
 
 
@@ -183,7 +183,7 @@ public partial class ActionEventRequest : IEquatable<ActionEventRequest>
     /// Message of the error returned when the action fails (when state transitions to errored)
     /// </summary>
     /// <value>Message of the error returned when the action fails (when state transitions to errored)</value>
-    [DataMember(Name = "errorMessage", EmitDefaultValue = false)]
+    [JsonPropertyName("errorMessage")]
     public string ErrorMessage { get; set; }
 
 
@@ -192,7 +192,7 @@ public partial class ActionEventRequest : IEquatable<ActionEventRequest>
     /// The URI for this object
     /// </summary>
     /// <value>The URI for this object</value>
-    [DataMember(Name = "selfUri", EmitDefaultValue = false)]
+    [JsonPropertyName("selfUri")]
     public string SelfUri { get; private set; }
 
 

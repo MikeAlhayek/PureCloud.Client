@@ -7,14 +7,14 @@ namespace PureCloud.Client.Models;
 /// <summary>
 /// KnowledgeIntegrationFilter
 /// </summary>
-[DataContract]
+
 public partial class KnowledgeIntegrationFilter : IEquatable<KnowledgeIntegrationFilter>
 {
     /// <summary>
     /// Filter name, which is the name of a setting in a knowledge source.
     /// </summary>
     /// <value>Filter name, which is the name of a setting in a knowledge source.</value>
-    [JsonConverter(typeof(JsonStringEnumConverter))]
+    
     public enum NameEnum
     {
         /// <summary>
@@ -47,7 +47,7 @@ public partial class KnowledgeIntegrationFilter : IEquatable<KnowledgeIntegratio
     /// Filter type.
     /// </summary>
     /// <value>Filter type.</value>
-    [JsonConverter(typeof(JsonStringEnumConverter))]
+    
     public enum TypeEnum
     {
         /// <summary>
@@ -74,7 +74,7 @@ public partial class KnowledgeIntegrationFilter : IEquatable<KnowledgeIntegratio
     /// Filter action.
     /// </summary>
     /// <value>Filter action.</value>
-    [JsonConverter(typeof(JsonStringEnumConverter))]
+    
     public enum ActionEnum
     {
         /// <summary>
@@ -101,19 +101,19 @@ public partial class KnowledgeIntegrationFilter : IEquatable<KnowledgeIntegratio
     /// Filter name, which is the name of a setting in a knowledge source.
     /// </summary>
     /// <value>Filter name, which is the name of a setting in a knowledge source.</value>
-    [DataMember(Name = "name", EmitDefaultValue = false)]
+    [JsonPropertyName("name")]
     public NameEnum? Name { get; set; }
     /// <summary>
     /// Filter type.
     /// </summary>
     /// <value>Filter type.</value>
-    [DataMember(Name = "type", EmitDefaultValue = false)]
+    [JsonPropertyName("type")]
     public TypeEnum? Type { get; set; }
     /// <summary>
     /// Filter action.
     /// </summary>
     /// <value>Filter action.</value>
-    [DataMember(Name = "action", EmitDefaultValue = false)]
+    [JsonPropertyName("action")]
     public ActionEnum? Action { get; set; }
     /// <summary>
     /// Initializes a new instance of the <see cref="KnowledgeIntegrationFilter" /> class.
@@ -143,7 +143,7 @@ public partial class KnowledgeIntegrationFilter : IEquatable<KnowledgeIntegratio
     /// Available options of the filter setting.
     /// </summary>
     /// <value>Available options of the filter setting.</value>
-    [DataMember(Name = "values", EmitDefaultValue = false)]
+    [JsonPropertyName("values")]
     public List<KnowledgeIntegrationFilterValue> Values { get; set; }
 
 

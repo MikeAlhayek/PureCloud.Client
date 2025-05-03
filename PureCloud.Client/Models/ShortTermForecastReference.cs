@@ -1,4 +1,3 @@
-using System.Runtime.Serialization;
 using System.Text;
 using System.Text.Json.Serialization;
 
@@ -7,7 +6,7 @@ namespace PureCloud.Client.Models;
 /// <summary>
 /// ShortTermForecastReference
 /// </summary>
-[DataContract]
+
 public partial class ShortTermForecastReference : IEquatable<ShortTermForecastReference>
 {
 
@@ -34,7 +33,7 @@ public partial class ShortTermForecastReference : IEquatable<ShortTermForecastRe
     /// The globally unique identifier for the object.
     /// </summary>
     /// <value>The globally unique identifier for the object.</value>
-    [DataMember(Name = "id", EmitDefaultValue = false)]
+    [JsonPropertyName("id")]
     public string Id { get; private set; }
 
 
@@ -43,7 +42,7 @@ public partial class ShortTermForecastReference : IEquatable<ShortTermForecastRe
     /// The URI for this object
     /// </summary>
     /// <value>The URI for this object</value>
-    [DataMember(Name = "selfUri", EmitDefaultValue = false)]
+    [JsonPropertyName("selfUri")]
     public string SelfUri { get; private set; }
 
 
@@ -52,7 +51,7 @@ public partial class ShortTermForecastReference : IEquatable<ShortTermForecastRe
     /// The weekDate of the short term forecast in yyyy-MM-dd format
     /// </summary>
     /// <value>The weekDate of the short term forecast in yyyy-MM-dd format</value>
-    [DataMember(Name = "weekDate", EmitDefaultValue = false)]
+    [JsonPropertyName("weekDate")]
     public string WeekDate { get; set; }
 
 
@@ -61,7 +60,7 @@ public partial class ShortTermForecastReference : IEquatable<ShortTermForecastRe
     /// The description of the short term forecast
     /// </summary>
     /// <value>The description of the short term forecast</value>
-    [DataMember(Name = "description", EmitDefaultValue = false)]
+    [JsonPropertyName("description")]
     public string Description { get; set; }
 
 

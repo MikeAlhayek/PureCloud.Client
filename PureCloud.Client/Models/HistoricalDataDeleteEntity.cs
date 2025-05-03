@@ -7,13 +7,13 @@ namespace PureCloud.Client.Models;
 /// <summary>
 /// HistoricalDataDeleteEntity
 /// </summary>
-[DataContract]
+
 public partial class HistoricalDataDeleteEntity : IEquatable<HistoricalDataDeleteEntity>
 {
     /// <summary>
     /// Gets or Sets Status
     /// </summary>
-    [JsonConverter(typeof(JsonStringEnumConverter))]
+    
     public enum StatusEnum
     {
         /// <summary>
@@ -39,7 +39,7 @@ public partial class HistoricalDataDeleteEntity : IEquatable<HistoricalDataDelet
     /// <summary>
     /// Gets or Sets Status
     /// </summary>
-    [DataMember(Name = "status", EmitDefaultValue = false)]
+    [JsonPropertyName("status")]
     public StatusEnum? Status { get; set; }
     /// <summary>
     /// Initializes a new instance of the <see cref="HistoricalDataDeleteEntity" /> class.
@@ -58,7 +58,7 @@ public partial class HistoricalDataDeleteEntity : IEquatable<HistoricalDataDelet
     /// <summary>
     /// Gets or Sets RequestId
     /// </summary>
-    [DataMember(Name = "requestId", EmitDefaultValue = false)]
+    [JsonPropertyName("requestId")]
     public string RequestId { get; set; }
 
 

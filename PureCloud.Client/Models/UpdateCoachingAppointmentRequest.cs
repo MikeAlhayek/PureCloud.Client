@@ -7,14 +7,14 @@ namespace PureCloud.Client.Models;
 /// <summary>
 /// Update coaching appointment request
 /// </summary>
-[DataContract]
+
 public partial class UpdateCoachingAppointmentRequest : IEquatable<UpdateCoachingAppointmentRequest>
 {
     /// <summary>
     /// The status of the coaching appointment.
     /// </summary>
     /// <value>The status of the coaching appointment.</value>
-    [JsonConverter(typeof(JsonStringEnumConverter))]
+    
     public enum StatusEnum
     {
         /// <summary>
@@ -47,7 +47,7 @@ public partial class UpdateCoachingAppointmentRequest : IEquatable<UpdateCoachin
     /// The status of the coaching appointment.
     /// </summary>
     /// <value>The status of the coaching appointment.</value>
-    [DataMember(Name = "status", EmitDefaultValue = false)]
+    [JsonPropertyName("status")]
     public StatusEnum? Status { get; set; }
     /// <summary>
     /// Initializes a new instance of the <see cref="UpdateCoachingAppointmentRequest" /> class.
@@ -85,7 +85,7 @@ public partial class UpdateCoachingAppointmentRequest : IEquatable<UpdateCoachin
     /// The name of coaching appointment.
     /// </summary>
     /// <value>The name of coaching appointment.</value>
-    [DataMember(Name = "name", EmitDefaultValue = false)]
+    [JsonPropertyName("name")]
     public string Name { get; set; }
 
 
@@ -94,7 +94,7 @@ public partial class UpdateCoachingAppointmentRequest : IEquatable<UpdateCoachin
     /// The description of coaching appointment.
     /// </summary>
     /// <value>The description of coaching appointment.</value>
-    [DataMember(Name = "description", EmitDefaultValue = false)]
+    [JsonPropertyName("description")]
     public string Description { get; set; }
 
 
@@ -103,7 +103,7 @@ public partial class UpdateCoachingAppointmentRequest : IEquatable<UpdateCoachin
     /// The date/time the coaching appointment starts. Times will be rounded down to the minute. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z
     /// </summary>
     /// <value>The date/time the coaching appointment starts. Times will be rounded down to the minute. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z</value>
-    [DataMember(Name = "dateStart", EmitDefaultValue = false)]
+    [JsonPropertyName("dateStart")]
     public DateTime? DateStart { get; set; }
 
 
@@ -112,7 +112,7 @@ public partial class UpdateCoachingAppointmentRequest : IEquatable<UpdateCoachin
     /// The duration of coaching appointment in minutes.
     /// </summary>
     /// <value>The duration of coaching appointment in minutes.</value>
-    [DataMember(Name = "lengthInMinutes", EmitDefaultValue = false)]
+    [JsonPropertyName("lengthInMinutes")]
     public int? LengthInMinutes { get; set; }
 
 
@@ -121,7 +121,7 @@ public partial class UpdateCoachingAppointmentRequest : IEquatable<UpdateCoachin
     /// IDs of conversations associated with this coaching appointment.
     /// </summary>
     /// <value>IDs of conversations associated with this coaching appointment.</value>
-    [DataMember(Name = "conversationIds", EmitDefaultValue = false)]
+    [JsonPropertyName("conversationIds")]
     public List<string> ConversationIds { get; set; }
 
 
@@ -130,7 +130,7 @@ public partial class UpdateCoachingAppointmentRequest : IEquatable<UpdateCoachin
     /// IDs of documents associated with this coaching appointment.
     /// </summary>
     /// <value>IDs of documents associated with this coaching appointment.</value>
-    [DataMember(Name = "documentIds", EmitDefaultValue = false)]
+    [JsonPropertyName("documentIds")]
     public List<string> DocumentIds { get; set; }
 
 
@@ -141,7 +141,7 @@ public partial class UpdateCoachingAppointmentRequest : IEquatable<UpdateCoachin
     /// The Workforce Management schedule the appointment is associated with.
     /// </summary>
     /// <value>The Workforce Management schedule the appointment is associated with.</value>
-    [DataMember(Name = "wfmSchedule", EmitDefaultValue = false)]
+    [JsonPropertyName("wfmSchedule")]
     public WfmScheduleReference WfmSchedule { get; set; }
 
 
@@ -150,7 +150,7 @@ public partial class UpdateCoachingAppointmentRequest : IEquatable<UpdateCoachin
     /// The list of external links related to the appointment
     /// </summary>
     /// <value>The list of external links related to the appointment</value>
-    [DataMember(Name = "externalLinks", EmitDefaultValue = false)]
+    [JsonPropertyName("externalLinks")]
     public List<string> ExternalLinks { get; set; }
 
 
@@ -159,7 +159,7 @@ public partial class UpdateCoachingAppointmentRequest : IEquatable<UpdateCoachin
     /// The location of the appointment
     /// </summary>
     /// <value>The location of the appointment</value>
-    [DataMember(Name = "location", EmitDefaultValue = false)]
+    [JsonPropertyName("location")]
     public string Location { get; set; }
 
 
@@ -168,7 +168,7 @@ public partial class UpdateCoachingAppointmentRequest : IEquatable<UpdateCoachin
     /// Whether to share the insight data
     /// </summary>
     /// <value>Whether to share the insight data</value>
-    [DataMember(Name = "shareInsightsData", EmitDefaultValue = false)]
+    [JsonPropertyName("shareInsightsData")]
     public bool? ShareInsightsData { get; set; }
 
 

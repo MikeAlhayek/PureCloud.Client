@@ -1,4 +1,3 @@
-using System.Runtime.Serialization;
 using System.Text;
 using System.Text.Json.Serialization;
 
@@ -7,7 +6,7 @@ namespace PureCloud.Client.Models;
 /// <summary>
 /// EstimateAvailableTimeOffResponse
 /// </summary>
-[DataContract]
+
 public partial class EstimateAvailableTimeOffResponse : IEquatable<EstimateAvailableTimeOffResponse>
 {
 
@@ -40,7 +39,7 @@ public partial class EstimateAvailableTimeOffResponse : IEquatable<EstimateAvail
     /// Full day dates. partialDayDates must be empty if this field is populated
     /// </summary>
     /// <value>Full day dates. partialDayDates must be empty if this field is populated</value>
-    [DataMember(Name = "fullDayDates", EmitDefaultValue = false)]
+    [JsonPropertyName("fullDayDates")]
     public List<EstimateAvailableFullDayTimeOffResponse> FullDayDates { get; set; }
 
 
@@ -49,7 +48,7 @@ public partial class EstimateAvailableTimeOffResponse : IEquatable<EstimateAvail
     /// Partial day dates. fullDayDates must be empty if this field is populated
     /// </summary>
     /// <value>Partial day dates. fullDayDates must be empty if this field is populated</value>
-    [DataMember(Name = "partialDayDates", EmitDefaultValue = false)]
+    [JsonPropertyName("partialDayDates")]
     public List<EstimateAvailablePartialDayTimeOffResponse> PartialDayDates { get; set; }
 
 
@@ -58,7 +57,7 @@ public partial class EstimateAvailableTimeOffResponse : IEquatable<EstimateAvail
     /// The user to whom the time off request belongs
     /// </summary>
     /// <value>The user to whom the time off request belongs</value>
-    [DataMember(Name = "user", EmitDefaultValue = false)]
+    [JsonPropertyName("user")]
     public UserReference User { get; set; }
 
 
@@ -67,7 +66,7 @@ public partial class EstimateAvailableTimeOffResponse : IEquatable<EstimateAvail
     /// The ID of the activity code associated with the time off request. Activity code must be of the TimeOff category
     /// </summary>
     /// <value>The ID of the activity code associated with the time off request. Activity code must be of the TimeOff category</value>
-    [DataMember(Name = "activityCodeId", EmitDefaultValue = false)]
+    [JsonPropertyName("activityCodeId")]
     public string ActivityCodeId { get; set; }
 
 
@@ -76,7 +75,7 @@ public partial class EstimateAvailableTimeOffResponse : IEquatable<EstimateAvail
     /// Whether this estimate is for a paid time off request
     /// </summary>
     /// <value>Whether this estimate is for a paid time off request</value>
-    [DataMember(Name = "paid", EmitDefaultValue = false)]
+    [JsonPropertyName("paid")]
     public bool? Paid { get; set; }
 
 

@@ -1,12 +1,12 @@
-using System.Runtime.Serialization;
 using System.Text;
+using System.Text.Json.Serialization;
 
 namespace PureCloud.Client.Models;
 
 /// <summary>
 /// Information on how a communication should be routed to an agent.
 /// </summary>
-[DataContract]
+
 public partial class QueueConversationVideoEventTopicConversationRoutingData : IEquatable<QueueConversationVideoEventTopicConversationRoutingData>
 {
     /// <summary>
@@ -32,7 +32,7 @@ public partial class QueueConversationVideoEventTopicConversationRoutingData : I
     /// <summary>
     /// Gets or Sets Queue
     /// </summary>
-    [DataMember(Name = "queue", EmitDefaultValue = false)]
+    [JsonPropertyName("queue")]
     public QueueConversationVideoEventTopicUriReference Queue { get; set; }
 
 
@@ -41,7 +41,7 @@ public partial class QueueConversationVideoEventTopicConversationRoutingData : I
     /// A UriReference for a resource
     /// </summary>
     /// <value>A UriReference for a resource</value>
-    [DataMember(Name = "language", EmitDefaultValue = false)]
+    [JsonPropertyName("language")]
     public QueueConversationVideoEventTopicUriReference Language { get; set; }
 
 
@@ -50,7 +50,7 @@ public partial class QueueConversationVideoEventTopicConversationRoutingData : I
     /// The priority of the conversation to use for routing decisions
     /// </summary>
     /// <value>The priority of the conversation to use for routing decisions</value>
-    [DataMember(Name = "priority", EmitDefaultValue = false)]
+    [JsonPropertyName("priority")]
     public long? Priority { get; set; }
 
 
@@ -59,7 +59,7 @@ public partial class QueueConversationVideoEventTopicConversationRoutingData : I
     /// The skills to use for routing decisions
     /// </summary>
     /// <value>The skills to use for routing decisions</value>
-    [DataMember(Name = "skills", EmitDefaultValue = false)]
+    [JsonPropertyName("skills")]
     public List<QueueConversationVideoEventTopicUriReference> Skills { get; set; }
 
 
@@ -68,7 +68,7 @@ public partial class QueueConversationVideoEventTopicConversationRoutingData : I
     /// A collection of agents and their assigned scores for this conversation (0 - 100, higher being better), for use in routing to preferred agents
     /// </summary>
     /// <value>A collection of agents and their assigned scores for this conversation (0 - 100, higher being better), for use in routing to preferred agents</value>
-    [DataMember(Name = "scoredAgents", EmitDefaultValue = false)]
+    [JsonPropertyName("scoredAgents")]
     public List<QueueConversationVideoEventTopicScoredAgent> ScoredAgents { get; set; }
 
 

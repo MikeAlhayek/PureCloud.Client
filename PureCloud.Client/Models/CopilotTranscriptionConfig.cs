@@ -7,14 +7,14 @@ namespace PureCloud.Client.Models;
 /// <summary>
 /// CopilotTranscriptionConfig
 /// </summary>
-[DataContract]
+
 public partial class CopilotTranscriptionConfig : IEquatable<CopilotTranscriptionConfig>
 {
     /// <summary>
     /// The Transcription engine for Agent Copilot.
     /// </summary>
     /// <value>The Transcription engine for Agent Copilot.</value>
-    [JsonConverter(typeof(JsonStringEnumConverter))]
+    
     public enum EngineEnum
     {
         /// <summary>
@@ -41,7 +41,7 @@ public partial class CopilotTranscriptionConfig : IEquatable<CopilotTranscriptio
     /// The Transcription engine for Agent Copilot.
     /// </summary>
     /// <value>The Transcription engine for Agent Copilot.</value>
-    [DataMember(Name = "engine", EmitDefaultValue = false)]
+    [JsonPropertyName("engine")]
     public EngineEnum? Engine { get; set; }
 
     /// <summary>

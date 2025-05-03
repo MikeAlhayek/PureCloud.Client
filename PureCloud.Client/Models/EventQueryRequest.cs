@@ -7,14 +7,14 @@ namespace PureCloud.Client.Models;
 /// <summary>
 /// EventQueryRequest
 /// </summary>
-[DataContract]
+
 public partial class EventQueryRequest : IEquatable<EventQueryRequest>
 {
     /// <summary>
     /// Order of results. Default order is DESC.
     /// </summary>
     /// <value>Order of results. Default order is DESC.</value>
-    [JsonConverter(typeof(JsonStringEnumConverter))]
+    
     public enum SortOrderEnum
     {
         /// <summary>
@@ -41,7 +41,7 @@ public partial class EventQueryRequest : IEquatable<EventQueryRequest>
     /// Order of results. Default order is DESC.
     /// </summary>
     /// <value>Order of results. Default order is DESC.</value>
-    [DataMember(Name = "sortOrder", EmitDefaultValue = false)]
+    [JsonPropertyName("sortOrder")]
     public SortOrderEnum? SortOrder { get; set; }
 
     /// <summary>
@@ -71,7 +71,7 @@ public partial class EventQueryRequest : IEquatable<EventQueryRequest>
     /// Date and time range to query. Intervals are represented as an ISO-8601 string. For example: YYYY-MM-DDThh:mm:ss/YYYY-MM-DDThh:mm:ss
     /// </summary>
     /// <value>Date and time range to query. Intervals are represented as an ISO-8601 string. For example: YYYY-MM-DDThh:mm:ss/YYYY-MM-DDThh:mm:ss</value>
-    [DataMember(Name = "interval", EmitDefaultValue = false)]
+    [JsonPropertyName("interval")]
     public string Interval { get; set; }
 
 
@@ -80,7 +80,7 @@ public partial class EventQueryRequest : IEquatable<EventQueryRequest>
     /// Filter events by a list of event definition ids
     /// </summary>
     /// <value>Filter events by a list of event definition ids</value>
-    [DataMember(Name = "eventDefinitionIds", EmitDefaultValue = false)]
+    [JsonPropertyName("eventDefinitionIds")]
     public List<string> EventDefinitionIds { get; set; }
 
 
@@ -89,7 +89,7 @@ public partial class EventQueryRequest : IEquatable<EventQueryRequest>
     /// Only return events that contain the search term
     /// </summary>
     /// <value>Only return events that contain the search term</value>
-    [DataMember(Name = "searchTerm", EmitDefaultValue = false)]
+    [JsonPropertyName("searchTerm")]
     public string SearchTerm { get; set; }
 
 

@@ -1,12 +1,12 @@
-using System.Runtime.Serialization;
 using System.Text;
+using System.Text.Json.Serialization;
 
 namespace PureCloud.Client.Models;
 
 /// <summary>
 /// WorkPlanPatternResponse
 /// </summary>
-[DataContract]
+
 public partial class WorkPlanPatternResponse : IEquatable<WorkPlanPatternResponse>
 {
     /// <summary>
@@ -25,7 +25,7 @@ public partial class WorkPlanPatternResponse : IEquatable<WorkPlanPatternRespons
     /// List of work plans in order of rotation on a weekly basis
     /// </summary>
     /// <value>List of work plans in order of rotation on a weekly basis</value>
-    [DataMember(Name = "workPlans", EmitDefaultValue = false)]
+    [JsonPropertyName("workPlans")]
     public List<WorkPlanReference> WorkPlans { get; set; }
 
 

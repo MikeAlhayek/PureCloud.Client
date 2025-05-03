@@ -1,12 +1,12 @@
-using System.Runtime.Serialization;
 using System.Text;
+using System.Text.Json.Serialization;
 
 namespace PureCloud.Client.Models;
 
 /// <summary>
 /// Used to query for responses
 /// </summary>
-[DataContract]
+
 public partial class ResponseQueryRequest : IEquatable<ResponseQueryRequest>
 {
     /// <summary>
@@ -31,7 +31,7 @@ public partial class ResponseQueryRequest : IEquatable<ResponseQueryRequest>
     /// Query phrase to search response text and name. If not set will match all.
     /// </summary>
     /// <value>Query phrase to search response text and name. If not set will match all.</value>
-    [DataMember(Name = "queryPhrase", EmitDefaultValue = false)]
+    [JsonPropertyName("queryPhrase")]
     public string QueryPhrase { get; set; }
 
 
@@ -40,7 +40,7 @@ public partial class ResponseQueryRequest : IEquatable<ResponseQueryRequest>
     /// The maximum number of hits to return. Default: 25, Maximum: 500.
     /// </summary>
     /// <value>The maximum number of hits to return. Default: 25, Maximum: 500.</value>
-    [DataMember(Name = "pageSize", EmitDefaultValue = false)]
+    [JsonPropertyName("pageSize")]
     public int? PageSize { get; set; }
 
 
@@ -49,7 +49,7 @@ public partial class ResponseQueryRequest : IEquatable<ResponseQueryRequest>
     /// Page Number
     /// </summary>
     /// <value>Page Number</value>
-    [DataMember(Name = "pageNumber", EmitDefaultValue = false)]
+    [JsonPropertyName("pageNumber")]
     public int? PageNumber { get; set; }
 
 
@@ -58,7 +58,7 @@ public partial class ResponseQueryRequest : IEquatable<ResponseQueryRequest>
     /// Filter the query results.
     /// </summary>
     /// <value>Filter the query results.</value>
-    [DataMember(Name = "filters", EmitDefaultValue = false)]
+    [JsonPropertyName("filters")]
     public List<ResponseFilter> Filters { get; set; }
 
 

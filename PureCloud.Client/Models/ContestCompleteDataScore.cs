@@ -1,12 +1,12 @@
-using System.Runtime.Serialization;
 using System.Text;
+using System.Text.Json.Serialization;
 
 namespace PureCloud.Client.Models;
 
 /// <summary>
 /// ContestCompleteDataScore
 /// </summary>
-[DataContract]
+
 public partial class ContestCompleteDataScore : IEquatable<ContestCompleteDataScore>
 {
     /// <summary>
@@ -25,7 +25,7 @@ public partial class ContestCompleteDataScore : IEquatable<ContestCompleteDataSc
     /// The Contest score
     /// </summary>
     /// <value>The Contest score</value>
-    [DataMember(Name = "score", EmitDefaultValue = false)]
+    [JsonPropertyName("score")]
     public double? Score { get; set; }
 
 

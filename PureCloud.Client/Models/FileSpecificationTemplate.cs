@@ -7,14 +7,14 @@ namespace PureCloud.Client.Models;
 /// <summary>
 /// FileSpecificationTemplate
 /// </summary>
-[DataContract]
+
 public partial class FileSpecificationTemplate : IEquatable<FileSpecificationTemplate>
 {
     /// <summary>
     /// File format
     /// </summary>
     /// <value>File format</value>
-    [JsonConverter(typeof(JsonStringEnumConverter))]
+    
     public enum FormatEnum
     {
         /// <summary>
@@ -41,7 +41,7 @@ public partial class FileSpecificationTemplate : IEquatable<FileSpecificationTem
     /// Kind of delimiter
     /// </summary>
     /// <value>Kind of delimiter</value>
-    [JsonConverter(typeof(JsonStringEnumConverter))]
+    
     public enum DelimiterEnum
     {
         /// <summary>
@@ -92,13 +92,13 @@ public partial class FileSpecificationTemplate : IEquatable<FileSpecificationTem
     /// File format
     /// </summary>
     /// <value>File format</value>
-    [DataMember(Name = "format", EmitDefaultValue = false)]
+    [JsonPropertyName("format")]
     public FormatEnum? Format { get; set; }
     /// <summary>
     /// Kind of delimiter
     /// </summary>
     /// <value>Kind of delimiter</value>
-    [DataMember(Name = "delimiter", EmitDefaultValue = false)]
+    [JsonPropertyName("delimiter")]
     public DelimiterEnum? Delimiter { get; set; }
 
     /// <summary>
@@ -142,7 +142,7 @@ public partial class FileSpecificationTemplate : IEquatable<FileSpecificationTem
     /// The globally unique identifier for the object.
     /// </summary>
     /// <value>The globally unique identifier for the object.</value>
-    [DataMember(Name = "id", EmitDefaultValue = false)]
+    [JsonPropertyName("id")]
     public string Id { get; private set; }
 
 
@@ -151,7 +151,7 @@ public partial class FileSpecificationTemplate : IEquatable<FileSpecificationTem
     /// The name of the File Specification template.
     /// </summary>
     /// <value>The name of the File Specification template.</value>
-    [DataMember(Name = "name", EmitDefaultValue = false)]
+    [JsonPropertyName("name")]
     public string Name { get; set; }
 
 
@@ -160,7 +160,7 @@ public partial class FileSpecificationTemplate : IEquatable<FileSpecificationTem
     /// Creation time of the entity. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z
     /// </summary>
     /// <value>Creation time of the entity. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z</value>
-    [DataMember(Name = "dateCreated", EmitDefaultValue = false)]
+    [JsonPropertyName("dateCreated")]
     public DateTime? DateCreated { get; private set; }
 
 
@@ -169,7 +169,7 @@ public partial class FileSpecificationTemplate : IEquatable<FileSpecificationTem
     /// Last modified time of the entity. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z
     /// </summary>
     /// <value>Last modified time of the entity. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z</value>
-    [DataMember(Name = "dateModified", EmitDefaultValue = false)]
+    [JsonPropertyName("dateModified")]
     public DateTime? DateModified { get; private set; }
 
 
@@ -178,7 +178,7 @@ public partial class FileSpecificationTemplate : IEquatable<FileSpecificationTem
     /// Required for updates, must match the version number of the most recent update
     /// </summary>
     /// <value>Required for updates, must match the version number of the most recent update</value>
-    [DataMember(Name = "version", EmitDefaultValue = false)]
+    [JsonPropertyName("version")]
     public int? Version { get; set; }
 
 
@@ -187,7 +187,7 @@ public partial class FileSpecificationTemplate : IEquatable<FileSpecificationTem
     /// Description of the file specification template
     /// </summary>
     /// <value>Description of the file specification template</value>
-    [DataMember(Name = "description", EmitDefaultValue = false)]
+    [JsonPropertyName("description")]
     public string Description { get; set; }
 
 
@@ -198,7 +198,7 @@ public partial class FileSpecificationTemplate : IEquatable<FileSpecificationTem
     /// Number of heading lines to be skipped
     /// </summary>
     /// <value>Number of heading lines to be skipped</value>
-    [DataMember(Name = "numberOfHeadingLinesSkipped", EmitDefaultValue = false)]
+    [JsonPropertyName("numberOfHeadingLinesSkipped")]
     public int? NumberOfHeadingLinesSkipped { get; set; }
 
 
@@ -207,7 +207,7 @@ public partial class FileSpecificationTemplate : IEquatable<FileSpecificationTem
     /// Number of trailing lines to be skipped
     /// </summary>
     /// <value>Number of trailing lines to be skipped</value>
-    [DataMember(Name = "numberOfTrailingLinesSkipped", EmitDefaultValue = false)]
+    [JsonPropertyName("numberOfTrailingLinesSkipped")]
     public int? NumberOfTrailingLinesSkipped { get; set; }
 
 
@@ -216,7 +216,7 @@ public partial class FileSpecificationTemplate : IEquatable<FileSpecificationTem
     /// If true indicates that delimited file has a header row, which can provide column names
     /// </summary>
     /// <value>If true indicates that delimited file has a header row, which can provide column names</value>
-    [DataMember(Name = "header", EmitDefaultValue = false)]
+    [JsonPropertyName("header")]
     public bool? Header { get; set; }
 
 
@@ -227,7 +227,7 @@ public partial class FileSpecificationTemplate : IEquatable<FileSpecificationTem
     /// Delimiter character, used only when delimiter&#x3D;\&quot;Custom\&quot;
     /// </summary>
     /// <value>Delimiter character, used only when delimiter&#x3D;\&quot;Custom\&quot;</value>
-    [DataMember(Name = "delimiterValue", EmitDefaultValue = false)]
+    [JsonPropertyName("delimiterValue")]
     public string DelimiterValue { get; set; }
 
 
@@ -236,7 +236,7 @@ public partial class FileSpecificationTemplate : IEquatable<FileSpecificationTem
     /// Columns specification
     /// </summary>
     /// <value>Columns specification</value>
-    [DataMember(Name = "columnInformation", EmitDefaultValue = false)]
+    [JsonPropertyName("columnInformation")]
     public List<Column> ColumnInformation { get; set; }
 
 
@@ -245,7 +245,7 @@ public partial class FileSpecificationTemplate : IEquatable<FileSpecificationTem
     /// Preprocessing rules
     /// </summary>
     /// <value>Preprocessing rules</value>
-    [DataMember(Name = "preprocessingRules", EmitDefaultValue = false)]
+    [JsonPropertyName("preprocessingRules")]
     public List<PreprocessingRule> PreprocessingRules { get; set; }
 
 
@@ -254,7 +254,7 @@ public partial class FileSpecificationTemplate : IEquatable<FileSpecificationTem
     /// The URI for this object
     /// </summary>
     /// <value>The URI for this object</value>
-    [DataMember(Name = "selfUri", EmitDefaultValue = false)]
+    [JsonPropertyName("selfUri")]
     public string SelfUri { get; private set; }
 
 

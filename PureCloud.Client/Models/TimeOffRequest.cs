@@ -7,14 +7,14 @@ namespace PureCloud.Client.Models;
 /// <summary>
 /// TimeOffRequest
 /// </summary>
-[DataContract]
+
 public partial class TimeOffRequest : IEquatable<TimeOffRequest>
 {
     /// <summary>
     /// The status of this time off request
     /// </summary>
     /// <value>The status of this time off request</value>
-    [JsonConverter(typeof(JsonStringEnumConverter))]
+    
     public enum StatusEnum
     {
         /// <summary>
@@ -53,7 +53,7 @@ public partial class TimeOffRequest : IEquatable<TimeOffRequest>
     /// The substatus of this time off request
     /// </summary>
     /// <value>The substatus of this time off request</value>
-    [JsonConverter(typeof(JsonStringEnumConverter))]
+    
     public enum SubstatusEnum
     {
         /// <summary>
@@ -116,13 +116,13 @@ public partial class TimeOffRequest : IEquatable<TimeOffRequest>
     /// The status of this time off request
     /// </summary>
     /// <value>The status of this time off request</value>
-    [DataMember(Name = "status", EmitDefaultValue = false)]
+    [JsonPropertyName("status")]
     public StatusEnum? Status { get; set; }
     /// <summary>
     /// The substatus of this time off request
     /// </summary>
     /// <value>The substatus of this time off request</value>
-    [DataMember(Name = "substatus", EmitDefaultValue = false)]
+    [JsonPropertyName("substatus")]
     public SubstatusEnum? Substatus { get; set; }
 
     /// <summary>
@@ -184,7 +184,7 @@ public partial class TimeOffRequest : IEquatable<TimeOffRequest>
     /// The id of the time off request
     /// </summary>
     /// <value>The id of the time off request</value>
-    [DataMember(Name = "id", EmitDefaultValue = false)]
+    [JsonPropertyName("id")]
     public string Id { get; set; }
 
 
@@ -193,7 +193,7 @@ public partial class TimeOffRequest : IEquatable<TimeOffRequest>
     /// The user that the time off request belongs to
     /// </summary>
     /// <value>The user that the time off request belongs to</value>
-    [DataMember(Name = "user", EmitDefaultValue = false)]
+    [JsonPropertyName("user")]
     public UserReference User { get; set; }
 
 
@@ -202,7 +202,7 @@ public partial class TimeOffRequest : IEquatable<TimeOffRequest>
     /// Whether this is a full day request (false means partial day)
     /// </summary>
     /// <value>Whether this is a full day request (false means partial day)</value>
-    [DataMember(Name = "isFullDayRequest", EmitDefaultValue = false)]
+    [JsonPropertyName("isFullDayRequest")]
     public bool? IsFullDayRequest { get; set; }
 
 
@@ -211,7 +211,7 @@ public partial class TimeOffRequest : IEquatable<TimeOffRequest>
     /// Whether this request has been marked as read by the agent
     /// </summary>
     /// <value>Whether this request has been marked as read by the agent</value>
-    [DataMember(Name = "markedAsRead", EmitDefaultValue = false)]
+    [JsonPropertyName("markedAsRead")]
     public bool? MarkedAsRead { get; set; }
 
 
@@ -220,7 +220,7 @@ public partial class TimeOffRequest : IEquatable<TimeOffRequest>
     /// The ID of the activity code associated with this time off request. Activity code must be of the TimeOff category
     /// </summary>
     /// <value>The ID of the activity code associated with this time off request. Activity code must be of the TimeOff category</value>
-    [DataMember(Name = "activityCodeId", EmitDefaultValue = false)]
+    [JsonPropertyName("activityCodeId")]
     public string ActivityCodeId { get; set; }
 
 
@@ -229,7 +229,7 @@ public partial class TimeOffRequest : IEquatable<TimeOffRequest>
     /// Whether this is a paid time off request
     /// </summary>
     /// <value>Whether this is a paid time off request</value>
-    [DataMember(Name = "paid", EmitDefaultValue = false)]
+    [JsonPropertyName("paid")]
     public bool? Paid { get; set; }
 
 
@@ -242,7 +242,7 @@ public partial class TimeOffRequest : IEquatable<TimeOffRequest>
     /// A set of start date-times in ISO-8601 format for partial day requests.  Will be not empty if isFullDayRequest &#x3D;&#x3D; false
     /// </summary>
     /// <value>A set of start date-times in ISO-8601 format for partial day requests.  Will be not empty if isFullDayRequest &#x3D;&#x3D; false</value>
-    [DataMember(Name = "partialDayStartDateTimes", EmitDefaultValue = false)]
+    [JsonPropertyName("partialDayStartDateTimes")]
     public List<DateTime?> PartialDayStartDateTimes { get; set; }
 
 
@@ -251,7 +251,7 @@ public partial class TimeOffRequest : IEquatable<TimeOffRequest>
     /// A set of dates in yyyy-MM-dd format.  Should be interpreted in the management unit&#39;s configured time zone.  Will be not empty if isFullDayRequest &#x3D;&#x3D; true
     /// </summary>
     /// <value>A set of dates in yyyy-MM-dd format.  Should be interpreted in the management unit&#39;s configured time zone.  Will be not empty if isFullDayRequest &#x3D;&#x3D; true</value>
-    [DataMember(Name = "fullDayManagementUnitDates", EmitDefaultValue = false)]
+    [JsonPropertyName("fullDayManagementUnitDates")]
     public List<string> FullDayManagementUnitDates { get; set; }
 
 
@@ -260,7 +260,7 @@ public partial class TimeOffRequest : IEquatable<TimeOffRequest>
     /// The daily duration of this time off request in minutes
     /// </summary>
     /// <value>The daily duration of this time off request in minutes</value>
-    [DataMember(Name = "dailyDurationMinutes", EmitDefaultValue = false)]
+    [JsonPropertyName("dailyDurationMinutes")]
     public int? DailyDurationMinutes { get; set; }
 
 
@@ -269,7 +269,7 @@ public partial class TimeOffRequest : IEquatable<TimeOffRequest>
     /// Daily durations for each day of this time off request in minutes
     /// </summary>
     /// <value>Daily durations for each day of this time off request in minutes</value>
-    [DataMember(Name = "durationMinutes", EmitDefaultValue = false)]
+    [JsonPropertyName("durationMinutes")]
     public List<int?> DurationMinutes { get; set; }
 
 
@@ -278,7 +278,7 @@ public partial class TimeOffRequest : IEquatable<TimeOffRequest>
     /// Payable minutes for each day of this time off request
     /// </summary>
     /// <value>Payable minutes for each day of this time off request</value>
-    [DataMember(Name = "payableMinutes", EmitDefaultValue = false)]
+    [JsonPropertyName("payableMinutes")]
     public List<int?> PayableMinutes { get; set; }
 
 
@@ -287,7 +287,7 @@ public partial class TimeOffRequest : IEquatable<TimeOffRequest>
     /// Notes about the time off request
     /// </summary>
     /// <value>Notes about the time off request</value>
-    [DataMember(Name = "notes", EmitDefaultValue = false)]
+    [JsonPropertyName("notes")]
     public string Notes { get; set; }
 
 
@@ -296,7 +296,7 @@ public partial class TimeOffRequest : IEquatable<TimeOffRequest>
     /// The user who submitted this time off request. The id may be &#39;System&#39; if it was an automated process
     /// </summary>
     /// <value>The user who submitted this time off request. The id may be &#39;System&#39; if it was an automated process</value>
-    [DataMember(Name = "submittedBy", EmitDefaultValue = false)]
+    [JsonPropertyName("submittedBy")]
     public UserReference SubmittedBy { get; set; }
 
 
@@ -305,7 +305,7 @@ public partial class TimeOffRequest : IEquatable<TimeOffRequest>
     /// The timestamp when this request was submitted. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z
     /// </summary>
     /// <value>The timestamp when this request was submitted. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z</value>
-    [DataMember(Name = "submittedDate", EmitDefaultValue = false)]
+    [JsonPropertyName("submittedDate")]
     public DateTime? SubmittedDate { get; set; }
 
 
@@ -314,7 +314,7 @@ public partial class TimeOffRequest : IEquatable<TimeOffRequest>
     /// The user who reviewed this time off request. The id may be &#39;System&#39; if it was an automated process
     /// </summary>
     /// <value>The user who reviewed this time off request. The id may be &#39;System&#39; if it was an automated process</value>
-    [DataMember(Name = "reviewedBy", EmitDefaultValue = false)]
+    [JsonPropertyName("reviewedBy")]
     public UserReference ReviewedBy { get; set; }
 
 
@@ -323,7 +323,7 @@ public partial class TimeOffRequest : IEquatable<TimeOffRequest>
     /// The timestamp when this request was reviewed. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z
     /// </summary>
     /// <value>The timestamp when this request was reviewed. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z</value>
-    [DataMember(Name = "reviewedDate", EmitDefaultValue = false)]
+    [JsonPropertyName("reviewedDate")]
     public DateTime? ReviewedDate { get; set; }
 
 
@@ -332,7 +332,7 @@ public partial class TimeOffRequest : IEquatable<TimeOffRequest>
     /// The sync version of this time off request for which the scheduled activity is associated
     /// </summary>
     /// <value>The sync version of this time off request for which the scheduled activity is associated</value>
-    [DataMember(Name = "syncVersion", EmitDefaultValue = false)]
+    [JsonPropertyName("syncVersion")]
     public int? SyncVersion { get; set; }
 
 
@@ -341,7 +341,7 @@ public partial class TimeOffRequest : IEquatable<TimeOffRequest>
     /// The version metadata of the time off request
     /// </summary>
     /// <value>The version metadata of the time off request</value>
-    [DataMember(Name = "metadata", EmitDefaultValue = false)]
+    [JsonPropertyName("metadata")]
     public WfmVersionedEntityMetadata Metadata { get; set; }
 
 
@@ -350,7 +350,7 @@ public partial class TimeOffRequest : IEquatable<TimeOffRequest>
     /// The URI for this object
     /// </summary>
     /// <value>The URI for this object</value>
-    [DataMember(Name = "selfUri", EmitDefaultValue = false)]
+    [JsonPropertyName("selfUri")]
     public string SelfUri { get; private set; }
 
 

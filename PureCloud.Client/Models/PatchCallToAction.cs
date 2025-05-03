@@ -7,14 +7,14 @@ namespace PureCloud.Client.Models;
 /// <summary>
 /// PatchCallToAction
 /// </summary>
-[DataContract]
+
 public partial class PatchCallToAction : IEquatable<PatchCallToAction>
 {
     /// <summary>
     /// Where the URL should be opened when the user clicks on the call to action button.
     /// </summary>
     /// <value>Where the URL should be opened when the user clicks on the call to action button.</value>
-    [JsonConverter(typeof(JsonStringEnumConverter))]
+    
     public enum TargetEnum
     {
         /// <summary>
@@ -41,7 +41,7 @@ public partial class PatchCallToAction : IEquatable<PatchCallToAction>
     /// Where the URL should be opened when the user clicks on the call to action button.
     /// </summary>
     /// <value>Where the URL should be opened when the user clicks on the call to action button.</value>
-    [DataMember(Name = "target", EmitDefaultValue = false)]
+    [JsonPropertyName("target")]
     public TargetEnum? Target { get; set; }
     /// <summary>
     /// Initializes a new instance of the <see cref="PatchCallToAction" /> class.
@@ -63,7 +63,7 @@ public partial class PatchCallToAction : IEquatable<PatchCallToAction>
     /// Text displayed on the call to action button.
     /// </summary>
     /// <value>Text displayed on the call to action button.</value>
-    [DataMember(Name = "text", EmitDefaultValue = false)]
+    [JsonPropertyName("text")]
     public string Text { get; set; }
 
 
@@ -72,7 +72,7 @@ public partial class PatchCallToAction : IEquatable<PatchCallToAction>
     /// URL to open when user clicks on the call to action button.
     /// </summary>
     /// <value>URL to open when user clicks on the call to action button.</value>
-    [DataMember(Name = "url", EmitDefaultValue = false)]
+    [JsonPropertyName("url")]
     public string Url { get; set; }
 
 

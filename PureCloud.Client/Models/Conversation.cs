@@ -7,14 +7,14 @@ namespace PureCloud.Client.Models;
 /// <summary>
 /// Conversation
 /// </summary>
-[DataContract]
+
 public partial class Conversation : IEquatable<Conversation>
 {
     /// <summary>
     /// On update, 'paused' initiates a secure pause, 'active' resumes any paused recordings; otherwise indicates state of conversation recording.
     /// </summary>
     /// <value>On update, 'paused' initiates a secure pause, 'active' resumes any paused recordings; otherwise indicates state of conversation recording.</value>
-    [JsonConverter(typeof(JsonStringEnumConverter))]
+    
     public enum RecordingStateEnum
     {
         /// <summary>
@@ -47,7 +47,7 @@ public partial class Conversation : IEquatable<Conversation>
     /// The conversation's state
     /// </summary>
     /// <value>The conversation's state</value>
-    [JsonConverter(typeof(JsonStringEnumConverter))]
+    
     public enum StateEnum
     {
         /// <summary>
@@ -134,13 +134,13 @@ public partial class Conversation : IEquatable<Conversation>
     /// On update, 'paused' initiates a secure pause, 'active' resumes any paused recordings; otherwise indicates state of conversation recording.
     /// </summary>
     /// <value>On update, 'paused' initiates a secure pause, 'active' resumes any paused recordings; otherwise indicates state of conversation recording.</value>
-    [DataMember(Name = "recordingState", EmitDefaultValue = false)]
+    [JsonPropertyName("recordingState")]
     public RecordingStateEnum? RecordingState { get; set; }
     /// <summary>
     /// The conversation's state
     /// </summary>
     /// <value>The conversation's state</value>
-    [DataMember(Name = "state", EmitDefaultValue = false)]
+    [JsonPropertyName("state")]
     public StateEnum? State { get; set; }
 
     /// <summary>
@@ -190,7 +190,7 @@ public partial class Conversation : IEquatable<Conversation>
     /// The globally unique identifier for the object.
     /// </summary>
     /// <value>The globally unique identifier for the object.</value>
-    [DataMember(Name = "id", EmitDefaultValue = false)]
+    [JsonPropertyName("id")]
     public string Id { get; private set; }
 
 
@@ -198,7 +198,7 @@ public partial class Conversation : IEquatable<Conversation>
     /// <summary>
     /// Gets or Sets Name
     /// </summary>
-    [DataMember(Name = "name", EmitDefaultValue = false)]
+    [JsonPropertyName("name")]
     public string Name { get; set; }
 
 
@@ -207,7 +207,7 @@ public partial class Conversation : IEquatable<Conversation>
     /// The external tag associated with the conversation.
     /// </summary>
     /// <value>The external tag associated with the conversation.</value>
-    [DataMember(Name = "externalTag", EmitDefaultValue = false)]
+    [JsonPropertyName("externalTag")]
     public string ExternalTag { get; set; }
 
 
@@ -216,7 +216,7 @@ public partial class Conversation : IEquatable<Conversation>
     /// The time when the conversation started. This will be the time when the first participant joined the conversation. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z
     /// </summary>
     /// <value>The time when the conversation started. This will be the time when the first participant joined the conversation. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z</value>
-    [DataMember(Name = "startTime", EmitDefaultValue = false)]
+    [JsonPropertyName("startTime")]
     public DateTime? StartTime { get; set; }
 
 
@@ -225,7 +225,7 @@ public partial class Conversation : IEquatable<Conversation>
     /// The time when the conversation ended. This will be the time when the last participant left the conversation, or null when the conversation is still active. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z
     /// </summary>
     /// <value>The time when the conversation ended. This will be the time when the last participant left the conversation, or null when the conversation is still active. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z</value>
-    [DataMember(Name = "endTime", EmitDefaultValue = false)]
+    [JsonPropertyName("endTime")]
     public DateTime? EndTime { get; set; }
 
 
@@ -234,7 +234,7 @@ public partial class Conversation : IEquatable<Conversation>
     /// The address of the conversation as seen from an external participant. For phone calls this will be the DNIS for inbound calls and the ANI for outbound calls. For other media types this will be the address of the destination participant for inbound and the address of the initiating participant for outbound.
     /// </summary>
     /// <value>The address of the conversation as seen from an external participant. For phone calls this will be the DNIS for inbound calls and the ANI for outbound calls. For other media types this will be the address of the destination participant for inbound and the address of the initiating participant for outbound.</value>
-    [DataMember(Name = "address", EmitDefaultValue = false)]
+    [JsonPropertyName("address")]
     public string Address { get; set; }
 
 
@@ -243,7 +243,7 @@ public partial class Conversation : IEquatable<Conversation>
     /// The list of all participants in the conversation.
     /// </summary>
     /// <value>The list of all participants in the conversation.</value>
-    [DataMember(Name = "participants", EmitDefaultValue = false)]
+    [JsonPropertyName("participants")]
     public List<Participant> Participants { get; set; }
 
 
@@ -252,7 +252,7 @@ public partial class Conversation : IEquatable<Conversation>
     /// A list of conversations to merge into this conversation to create a conference. This field is null except when being used to create a conference.
     /// </summary>
     /// <value>A list of conversations to merge into this conversation to create a conference. This field is null except when being used to create a conference.</value>
-    [DataMember(Name = "conversationIds", EmitDefaultValue = false)]
+    [JsonPropertyName("conversationIds")]
     public List<string> ConversationIds { get; set; }
 
 
@@ -261,7 +261,7 @@ public partial class Conversation : IEquatable<Conversation>
     /// If this is a conference conversation, then this field indicates the maximum number of participants allowed to participant in the conference.
     /// </summary>
     /// <value>If this is a conference conversation, then this field indicates the maximum number of participants allowed to participant in the conference.</value>
-    [DataMember(Name = "maxParticipants", EmitDefaultValue = false)]
+    [JsonPropertyName("maxParticipants")]
     public int? MaxParticipants { get; set; }
 
 
@@ -274,7 +274,7 @@ public partial class Conversation : IEquatable<Conversation>
     /// Identifiers of divisions associated with this conversation
     /// </summary>
     /// <value>Identifiers of divisions associated with this conversation</value>
-    [DataMember(Name = "divisions", EmitDefaultValue = false)]
+    [JsonPropertyName("divisions")]
     public List<ConversationDivisionMembership> Divisions { get; set; }
 
 
@@ -283,7 +283,7 @@ public partial class Conversation : IEquatable<Conversation>
     /// The list of the most recent 20 transfer commands applied to this conversation.
     /// </summary>
     /// <value>The list of the most recent 20 transfer commands applied to this conversation.</value>
-    [DataMember(Name = "recentTransfers", EmitDefaultValue = false)]
+    [JsonPropertyName("recentTransfers")]
     public List<TransferResponse> RecentTransfers { get; set; }
 
 
@@ -292,7 +292,7 @@ public partial class Conversation : IEquatable<Conversation>
     /// True when the recording of this conversation is in secure pause status.
     /// </summary>
     /// <value>True when the recording of this conversation is in secure pause status.</value>
-    [DataMember(Name = "securePause", EmitDefaultValue = false)]
+    [JsonPropertyName("securePause")]
     public bool? SecurePause { get; set; }
 
 
@@ -301,7 +301,7 @@ public partial class Conversation : IEquatable<Conversation>
     /// An optional label that categorizes the conversation.  Max-utilization settings can be configured at a per-label level
     /// </summary>
     /// <value>An optional label that categorizes the conversation.  Max-utilization settings can be configured at a per-label level</value>
-    [DataMember(Name = "utilizationLabelId", EmitDefaultValue = false)]
+    [JsonPropertyName("utilizationLabelId")]
     public string UtilizationLabelId { get; set; }
 
 
@@ -310,7 +310,7 @@ public partial class Conversation : IEquatable<Conversation>
     /// The URI for this object
     /// </summary>
     /// <value>The URI for this object</value>
-    [DataMember(Name = "selfUri", EmitDefaultValue = false)]
+    [JsonPropertyName("selfUri")]
     public string SelfUri { get; private set; }
 
 

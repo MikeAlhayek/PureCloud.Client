@@ -1,12 +1,12 @@
-using System.Runtime.Serialization;
 using System.Text;
+using System.Text.Json.Serialization;
 
 namespace PureCloud.Client.Models;
 
 /// <summary>
 /// OperationalEventNotificationTopicOperationalEventNotification
 /// </summary>
-[DataContract]
+
 public partial class OperationalEventNotificationTopicOperationalEventNotification : IEquatable<OperationalEventNotificationTopicOperationalEventNotification>
 {
     /// <summary>
@@ -46,7 +46,7 @@ public partial class OperationalEventNotificationTopicOperationalEventNotificati
     /// <summary>
     /// Gets or Sets EventEntity
     /// </summary>
-    [DataMember(Name = "eventEntity", EmitDefaultValue = false)]
+    [JsonPropertyName("eventEntity")]
     public OperationalEventNotificationTopicEventEntity EventEntity { get; set; }
 
 
@@ -54,7 +54,7 @@ public partial class OperationalEventNotificationTopicOperationalEventNotificati
     /// <summary>
     /// Gets or Sets EntityId
     /// </summary>
-    [DataMember(Name = "entityId", EmitDefaultValue = false)]
+    [JsonPropertyName("entityId")]
     public Guid? EntityId { get; set; }
 
 
@@ -62,7 +62,7 @@ public partial class OperationalEventNotificationTopicOperationalEventNotificati
     /// <summary>
     /// Gets or Sets EntityName
     /// </summary>
-    [DataMember(Name = "entityName", EmitDefaultValue = false)]
+    [JsonPropertyName("entityName")]
     public string EntityName { get; set; }
 
 
@@ -70,7 +70,7 @@ public partial class OperationalEventNotificationTopicOperationalEventNotificati
     /// <summary>
     /// Gets or Sets PreviousValue
     /// </summary>
-    [DataMember(Name = "previousValue", EmitDefaultValue = false)]
+    [JsonPropertyName("previousValue")]
     public string PreviousValue { get; set; }
 
 
@@ -78,7 +78,7 @@ public partial class OperationalEventNotificationTopicOperationalEventNotificati
     /// <summary>
     /// Gets or Sets CurrentValue
     /// </summary>
-    [DataMember(Name = "currentValue", EmitDefaultValue = false)]
+    [JsonPropertyName("currentValue")]
     public string CurrentValue { get; set; }
 
 
@@ -86,7 +86,7 @@ public partial class OperationalEventNotificationTopicOperationalEventNotificati
     /// <summary>
     /// Gets or Sets ErrorCode
     /// </summary>
-    [DataMember(Name = "errorCode", EmitDefaultValue = false)]
+    [JsonPropertyName("errorCode")]
     public string ErrorCode { get; set; }
 
 
@@ -94,7 +94,7 @@ public partial class OperationalEventNotificationTopicOperationalEventNotificati
     /// <summary>
     /// Gets or Sets Version
     /// </summary>
-    [DataMember(Name = "version", EmitDefaultValue = false)]
+    [JsonPropertyName("version")]
     public string Version { get; set; }
 
 
@@ -102,7 +102,7 @@ public partial class OperationalEventNotificationTopicOperationalEventNotificati
     /// <summary>
     /// Gets or Sets ParentEntity
     /// </summary>
-    [DataMember(Name = "parentEntity", EmitDefaultValue = false)]
+    [JsonPropertyName("parentEntity")]
     public Guid? ParentEntity { get; set; }
 
 
@@ -110,7 +110,7 @@ public partial class OperationalEventNotificationTopicOperationalEventNotificati
     /// <summary>
     /// Gets or Sets EntityType
     /// </summary>
-    [DataMember(Name = "entityType", EmitDefaultValue = false)]
+    [JsonPropertyName("entityType")]
     public string EntityType { get; set; }
 
 
@@ -118,7 +118,7 @@ public partial class OperationalEventNotificationTopicOperationalEventNotificati
     /// <summary>
     /// Gets or Sets ConversationId
     /// </summary>
-    [DataMember(Name = "conversationId", EmitDefaultValue = false)]
+    [JsonPropertyName("conversationId")]
     public Guid? ConversationId { get; set; }
 
 
@@ -126,7 +126,7 @@ public partial class OperationalEventNotificationTopicOperationalEventNotificati
     /// <summary>
     /// Gets or Sets EntityToken
     /// </summary>
-    [DataMember(Name = "entityToken", EmitDefaultValue = false)]
+    [JsonPropertyName("entityToken")]
     public string EntityToken { get; set; }
 
 
@@ -134,7 +134,7 @@ public partial class OperationalEventNotificationTopicOperationalEventNotificati
     /// <summary>
     /// Gets or Sets Timestamp
     /// </summary>
-    [DataMember(Name = "timestamp", EmitDefaultValue = false)]
+    [JsonPropertyName("timestamp")]
     public long? Timestamp { get; set; }
 
 

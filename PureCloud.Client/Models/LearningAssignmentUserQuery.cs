@@ -1,4 +1,3 @@
-using System.Runtime.Serialization;
 using System.Text;
 using System.Text.Json.Serialization;
 
@@ -7,7 +6,7 @@ namespace PureCloud.Client.Models;
 /// <summary>
 /// Learning module users query request model
 /// </summary>
-[DataContract]
+
 public partial class LearningAssignmentUserQuery : IEquatable<LearningAssignmentUserQuery>
 {
 
@@ -34,7 +33,7 @@ public partial class LearningAssignmentUserQuery : IEquatable<LearningAssignment
     /// Learning module rule object
     /// </summary>
     /// <value>Learning module rule object</value>
-    [DataMember(Name = "rule", EmitDefaultValue = false)]
+    [JsonPropertyName("rule")]
     public LearningModuleRule Rule { get; set; }
 
 
@@ -43,7 +42,7 @@ public partial class LearningAssignmentUserQuery : IEquatable<LearningAssignment
     /// The user name to be searched for
     /// </summary>
     /// <value>The user name to be searched for</value>
-    [DataMember(Name = "searchTerm", EmitDefaultValue = false)]
+    [JsonPropertyName("searchTerm")]
     public string SearchTerm { get; set; }
 
 

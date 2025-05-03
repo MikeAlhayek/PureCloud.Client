@@ -1,12 +1,12 @@
-using System.Runtime.Serialization;
 using System.Text;
+using System.Text.Json.Serialization;
 
 namespace PureCloud.Client.Models;
 
 /// <summary>
 /// OverallBestPoints
 /// </summary>
-[DataContract]
+
 public partial class OverallBestPoints : IEquatable<OverallBestPoints>
 {
     /// <summary>
@@ -23,7 +23,7 @@ public partial class OverallBestPoints : IEquatable<OverallBestPoints>
     /// The requested division
     /// </summary>
     /// <value>The requested division</value>
-    [DataMember(Name = "division", EmitDefaultValue = false)]
+    [JsonPropertyName("division")]
     public Division Division { get; private set; }
 
 
@@ -32,7 +32,7 @@ public partial class OverallBestPoints : IEquatable<OverallBestPoints>
     /// List of gamification best point items
     /// </summary>
     /// <value>List of gamification best point items</value>
-    [DataMember(Name = "bestPoints", EmitDefaultValue = false)]
+    [JsonPropertyName("bestPoints")]
     public List<OverallBestPointsItem> BestPoints { get; private set; }
 
 
@@ -41,7 +41,7 @@ public partial class OverallBestPoints : IEquatable<OverallBestPoints>
     /// The targeted performance profile for the average points
     /// </summary>
     /// <value>The targeted performance profile for the average points</value>
-    [DataMember(Name = "performanceProfile", EmitDefaultValue = false)]
+    [JsonPropertyName("performanceProfile")]
     public AddressableEntityRef PerformanceProfile { get; private set; }
 
 

@@ -1,4 +1,3 @@
-using System.Runtime.Serialization;
 using System.Text;
 using System.Text.Json.Serialization;
 
@@ -7,7 +6,7 @@ namespace PureCloud.Client.Models;
 /// <summary>
 /// Relationship
 /// </summary>
-[DataContract]
+
 public partial class Relationship : IEquatable<Relationship>
 {
 
@@ -38,7 +37,7 @@ public partial class Relationship : IEquatable<Relationship>
     /// The globally unique identifier for the object.
     /// </summary>
     /// <value>The globally unique identifier for the object.</value>
-    [DataMember(Name = "id", EmitDefaultValue = false)]
+    [JsonPropertyName("id")]
     public string Id { get; private set; }
 
 
@@ -47,7 +46,7 @@ public partial class Relationship : IEquatable<Relationship>
     /// The division to which this entity belongs.
     /// </summary>
     /// <value>The division to which this entity belongs.</value>
-    [DataMember(Name = "division", EmitDefaultValue = false)]
+    [JsonPropertyName("division")]
     public WritableStarrableDivision Division { get; set; }
 
 
@@ -56,7 +55,7 @@ public partial class Relationship : IEquatable<Relationship>
     /// The user associated with the external organization. When creating or updating a relationship, only User.id is required. User object is fully populated when expanding a note.
     /// </summary>
     /// <value>The user associated with the external organization. When creating or updating a relationship, only User.id is required. User object is fully populated when expanding a note.</value>
-    [DataMember(Name = "user", EmitDefaultValue = false)]
+    [JsonPropertyName("user")]
     public User User { get; set; }
 
 
@@ -65,7 +64,7 @@ public partial class Relationship : IEquatable<Relationship>
     /// The external organization this relationship is attached to
     /// </summary>
     /// <value>The external organization this relationship is attached to</value>
-    [DataMember(Name = "externalOrganization", EmitDefaultValue = false)]
+    [JsonPropertyName("externalOrganization")]
     public ExternalOrganization ExternalOrganization { get; set; }
 
 
@@ -74,7 +73,7 @@ public partial class Relationship : IEquatable<Relationship>
     /// The relationship or role of the user to this external organization.Examples: Account Manager, Sales Engineer, Implementation Consultant
     /// </summary>
     /// <value>The relationship or role of the user to this external organization.Examples: Account Manager, Sales Engineer, Implementation Consultant</value>
-    [DataMember(Name = "relationship", EmitDefaultValue = false)]
+    [JsonPropertyName("relationship")]
     public string _Relationship { get; set; }
 
 
@@ -83,7 +82,7 @@ public partial class Relationship : IEquatable<Relationship>
     /// Links to the sources of data (e.g. one source might be a CRM) that contributed data to this record.  Read-only, and only populated when requested via expand param.
     /// </summary>
     /// <value>Links to the sources of data (e.g. one source might be a CRM) that contributed data to this record.  Read-only, and only populated when requested via expand param.</value>
-    [DataMember(Name = "externalDataSources", EmitDefaultValue = false)]
+    [JsonPropertyName("externalDataSources")]
     public List<ExternalDataSource> ExternalDataSources { get; private set; }
 
 
@@ -92,7 +91,7 @@ public partial class Relationship : IEquatable<Relationship>
     /// The URI for this object
     /// </summary>
     /// <value>The URI for this object</value>
-    [DataMember(Name = "selfUri", EmitDefaultValue = false)]
+    [JsonPropertyName("selfUri")]
     public string SelfUri { get; private set; }
 
 

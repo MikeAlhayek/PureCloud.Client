@@ -1,12 +1,12 @@
-using System.Runtime.Serialization;
 using System.Text;
+using System.Text.Json.Serialization;
 
 namespace PureCloud.Client.Models;
 
 /// <summary>
 /// Defines a SCIM service provider&#39;s configuration.
 /// </summary>
-[DataContract]
+
 public partial class ScimServiceProviderConfig : IEquatable<ScimServiceProviderConfig>
 {
     /// <summary>
@@ -23,7 +23,7 @@ public partial class ScimServiceProviderConfig : IEquatable<ScimServiceProviderC
     /// The list of supported schemas.
     /// </summary>
     /// <value>The list of supported schemas.</value>
-    [DataMember(Name = "schemas", EmitDefaultValue = false)]
+    [JsonPropertyName("schemas")]
     public List<string> Schemas { get; private set; }
 
 
@@ -32,7 +32,7 @@ public partial class ScimServiceProviderConfig : IEquatable<ScimServiceProviderC
     /// The HTTP-addressable URL that points to the service provider&#39;s documentation.
     /// </summary>
     /// <value>The HTTP-addressable URL that points to the service provider&#39;s documentation.</value>
-    [DataMember(Name = "documentationUri", EmitDefaultValue = false)]
+    [JsonPropertyName("documentationUri")]
     public string DocumentationUri { get; private set; }
 
 
@@ -41,7 +41,7 @@ public partial class ScimServiceProviderConfig : IEquatable<ScimServiceProviderC
     /// The \&quot;patch\&quot; configuration options.
     /// </summary>
     /// <value>The \&quot;patch\&quot; configuration options.</value>
-    [DataMember(Name = "patch", EmitDefaultValue = false)]
+    [JsonPropertyName("patch")]
     public ScimServiceProviderConfigSimpleFeature Patch { get; private set; }
 
 
@@ -50,7 +50,7 @@ public partial class ScimServiceProviderConfig : IEquatable<ScimServiceProviderC
     /// The \&quot;filter\&quot; configuration options.
     /// </summary>
     /// <value>The \&quot;filter\&quot; configuration options.</value>
-    [DataMember(Name = "filter", EmitDefaultValue = false)]
+    [JsonPropertyName("filter")]
     public ScimServiceProviderConfigFilterFeature Filter { get; private set; }
 
 
@@ -59,7 +59,7 @@ public partial class ScimServiceProviderConfig : IEquatable<ScimServiceProviderC
     /// The \&quot;etag\&quot; configuration options.
     /// </summary>
     /// <value>The \&quot;etag\&quot; configuration options.</value>
-    [DataMember(Name = "etag", EmitDefaultValue = false)]
+    [JsonPropertyName("etag")]
     public ScimServiceProviderConfigSimpleFeature Etag { get; private set; }
 
 
@@ -68,7 +68,7 @@ public partial class ScimServiceProviderConfig : IEquatable<ScimServiceProviderC
     /// The \&quot;sort\&quot; configuration options.
     /// </summary>
     /// <value>The \&quot;sort\&quot; configuration options.</value>
-    [DataMember(Name = "sort", EmitDefaultValue = false)]
+    [JsonPropertyName("sort")]
     public ScimServiceProviderConfigSimpleFeature Sort { get; private set; }
 
 
@@ -77,7 +77,7 @@ public partial class ScimServiceProviderConfig : IEquatable<ScimServiceProviderC
     /// The \&quot;bulk\&quot; configuration options.
     /// </summary>
     /// <value>The \&quot;bulk\&quot; configuration options.</value>
-    [DataMember(Name = "bulk", EmitDefaultValue = false)]
+    [JsonPropertyName("bulk")]
     public ScimServiceProviderConfigBulkFeature Bulk { get; private set; }
 
 
@@ -86,7 +86,7 @@ public partial class ScimServiceProviderConfig : IEquatable<ScimServiceProviderC
     /// The \&quot;changePassword\&quot; configuration options.
     /// </summary>
     /// <value>The \&quot;changePassword\&quot; configuration options.</value>
-    [DataMember(Name = "changePassword", EmitDefaultValue = false)]
+    [JsonPropertyName("changePassword")]
     public ScimServiceProviderConfigSimpleFeature ChangePassword { get; private set; }
 
 
@@ -95,7 +95,7 @@ public partial class ScimServiceProviderConfig : IEquatable<ScimServiceProviderC
     /// The list of supported authentication schemes.
     /// </summary>
     /// <value>The list of supported authentication schemes.</value>
-    [DataMember(Name = "authenticationSchemes", EmitDefaultValue = false)]
+    [JsonPropertyName("authenticationSchemes")]
     public List<ScimServiceProviderConfigAuthenticationScheme> AuthenticationSchemes { get; private set; }
 
 
@@ -104,7 +104,7 @@ public partial class ScimServiceProviderConfig : IEquatable<ScimServiceProviderC
     /// The metadata of the SCIM resource. Metadata is defined as immutable per SCIM RFC.
     /// </summary>
     /// <value>The metadata of the SCIM resource. Metadata is defined as immutable per SCIM RFC.</value>
-    [DataMember(Name = "meta", EmitDefaultValue = false)]
+    [JsonPropertyName("meta")]
     public ScimMetadata Meta { get; private set; }
 
 

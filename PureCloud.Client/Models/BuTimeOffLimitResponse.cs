@@ -1,4 +1,3 @@
-using System.Runtime.Serialization;
 using System.Text;
 using System.Text.Json.Serialization;
 
@@ -7,7 +6,7 @@ namespace PureCloud.Client.Models;
 /// <summary>
 /// BuTimeOffLimitResponse
 /// </summary>
-[DataContract]
+
 public partial class BuTimeOffLimitResponse : IEquatable<BuTimeOffLimitResponse>
 {
 
@@ -36,7 +35,7 @@ public partial class BuTimeOffLimitResponse : IEquatable<BuTimeOffLimitResponse>
     /// The globally unique identifier for the object.
     /// </summary>
     /// <value>The globally unique identifier for the object.</value>
-    [DataMember(Name = "id", EmitDefaultValue = false)]
+    [JsonPropertyName("id")]
     public string Id { get; private set; }
 
 
@@ -45,7 +44,7 @@ public partial class BuTimeOffLimitResponse : IEquatable<BuTimeOffLimitResponse>
     /// The staffing group to which this time-off limit is associated. If managementUnit is set, then the staffing group belongs to that management unit.Otherwise, if managementUnit is not set, it is a business unit level staffing group.At least one of managementUnit and staffingGroup must be set
     /// </summary>
     /// <value>The staffing group to which this time-off limit is associated. If managementUnit is set, then the staffing group belongs to that management unit.Otherwise, if managementUnit is not set, it is a business unit level staffing group.At least one of managementUnit and staffingGroup must be set</value>
-    [DataMember(Name = "staffingGroup", EmitDefaultValue = false)]
+    [JsonPropertyName("staffingGroup")]
     public StaffingGroupReference StaffingGroup { get; set; }
 
 
@@ -54,7 +53,7 @@ public partial class BuTimeOffLimitResponse : IEquatable<BuTimeOffLimitResponse>
     /// The management unit to which this time-off limit is associated. If staffingGroup is set, then the limit is associated with that staffing group, which belongs to this management unit.At least one of managementUnit and staffingGroup must be set
     /// </summary>
     /// <value>The management unit to which this time-off limit is associated. If staffingGroup is set, then the limit is associated with that staffing group, which belongs to this management unit.At least one of managementUnit and staffingGroup must be set</value>
-    [DataMember(Name = "managementUnit", EmitDefaultValue = false)]
+    [JsonPropertyName("managementUnit")]
     public ManagementUnitReference ManagementUnit { get; set; }
 
 
@@ -63,7 +62,7 @@ public partial class BuTimeOffLimitResponse : IEquatable<BuTimeOffLimitResponse>
     /// Version metadata for the time-off limit
     /// </summary>
     /// <value>Version metadata for the time-off limit</value>
-    [DataMember(Name = "metadata", EmitDefaultValue = false)]
+    [JsonPropertyName("metadata")]
     public WfmVersionedEntityMetadata Metadata { get; set; }
 
 
@@ -72,7 +71,7 @@ public partial class BuTimeOffLimitResponse : IEquatable<BuTimeOffLimitResponse>
     /// The URI for this object
     /// </summary>
     /// <value>The URI for this object</value>
-    [DataMember(Name = "selfUri", EmitDefaultValue = false)]
+    [JsonPropertyName("selfUri")]
     public string SelfUri { get; private set; }
 
 

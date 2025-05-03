@@ -1,12 +1,12 @@
-using System.Runtime.Serialization;
 using System.Text;
+using System.Text.Json.Serialization;
 
 namespace PureCloud.Client.Models;
 
 /// <summary>
 /// PunctualityEvent
 /// </summary>
-[DataContract]
+
 public partial class PunctualityEvent : IEquatable<PunctualityEvent>
 {
     /// <summary>
@@ -25,7 +25,7 @@ public partial class PunctualityEvent : IEquatable<PunctualityEvent>
     /// The scheduled activity start time. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z
     /// </summary>
     /// <value>The scheduled activity start time. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z</value>
-    [DataMember(Name = "dateScheduleStart", EmitDefaultValue = false)]
+    [JsonPropertyName("dateScheduleStart")]
     public DateTime? DateScheduleStart { get; private set; }
 
 
@@ -34,7 +34,7 @@ public partial class PunctualityEvent : IEquatable<PunctualityEvent>
     /// The time the user started the activity. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z
     /// </summary>
     /// <value>The time the user started the activity. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z</value>
-    [DataMember(Name = "dateStart", EmitDefaultValue = false)]
+    [JsonPropertyName("dateStart")]
     public DateTime? DateStart { get; private set; }
 
 
@@ -43,7 +43,7 @@ public partial class PunctualityEvent : IEquatable<PunctualityEvent>
     /// The length of the activity in minutes
     /// </summary>
     /// <value>The length of the activity in minutes</value>
-    [DataMember(Name = "lengthMinutes", EmitDefaultValue = false)]
+    [JsonPropertyName("lengthMinutes")]
     public int? LengthMinutes { get; private set; }
 
 
@@ -52,7 +52,7 @@ public partial class PunctualityEvent : IEquatable<PunctualityEvent>
     /// The description of the activity
     /// </summary>
     /// <value>The description of the activity</value>
-    [DataMember(Name = "description", EmitDefaultValue = false)]
+    [JsonPropertyName("description")]
     public string Description { get; private set; }
 
 
@@ -61,7 +61,7 @@ public partial class PunctualityEvent : IEquatable<PunctualityEvent>
     /// The ID of the activity code associated with this activity
     /// </summary>
     /// <value>The ID of the activity code associated with this activity</value>
-    [DataMember(Name = "activityCodeId", EmitDefaultValue = false)]
+    [JsonPropertyName("activityCodeId")]
     public string ActivityCodeId { get; private set; }
 
 
@@ -70,7 +70,7 @@ public partial class PunctualityEvent : IEquatable<PunctualityEvent>
     /// The activity code
     /// </summary>
     /// <value>The activity code</value>
-    [DataMember(Name = "activityCode", EmitDefaultValue = false)]
+    [JsonPropertyName("activityCode")]
     public string ActivityCode { get; private set; }
 
 
@@ -79,7 +79,7 @@ public partial class PunctualityEvent : IEquatable<PunctualityEvent>
     /// The activity name
     /// </summary>
     /// <value>The activity name</value>
-    [DataMember(Name = "activityName", EmitDefaultValue = false)]
+    [JsonPropertyName("activityName")]
     public string ActivityName { get; private set; }
 
 
@@ -88,7 +88,7 @@ public partial class PunctualityEvent : IEquatable<PunctualityEvent>
     /// The category for the activity
     /// </summary>
     /// <value>The category for the activity</value>
-    [DataMember(Name = "category", EmitDefaultValue = false)]
+    [JsonPropertyName("category")]
     public string Category { get; private set; }
 
 
@@ -97,7 +97,7 @@ public partial class PunctualityEvent : IEquatable<PunctualityEvent>
     /// The points earned for this activity
     /// </summary>
     /// <value>The points earned for this activity</value>
-    [DataMember(Name = "points", EmitDefaultValue = false)]
+    [JsonPropertyName("points")]
     public int? Points { get; private set; }
 
 
@@ -106,7 +106,7 @@ public partial class PunctualityEvent : IEquatable<PunctualityEvent>
     /// Difference between this activity and the last activity in seconds
     /// </summary>
     /// <value>Difference between this activity and the last activity in seconds</value>
-    [DataMember(Name = "delta", EmitDefaultValue = false)]
+    [JsonPropertyName("delta")]
     public double? Delta { get; private set; }
 
 
@@ -114,7 +114,7 @@ public partial class PunctualityEvent : IEquatable<PunctualityEvent>
     /// <summary>
     /// Gets or Sets Bullseye
     /// </summary>
-    [DataMember(Name = "bullseye", EmitDefaultValue = false)]
+    [JsonPropertyName("bullseye")]
     public bool? Bullseye { get; set; }
 
 

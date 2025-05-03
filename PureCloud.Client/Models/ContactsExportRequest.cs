@@ -1,12 +1,12 @@
-using System.Runtime.Serialization;
 using System.Text;
+using System.Text.Json.Serialization;
 
 namespace PureCloud.Client.Models;
 
 /// <summary>
 /// ContactsExportRequest
 /// </summary>
-[DataContract]
+
 public partial class ContactsExportRequest : IEquatable<ContactsExportRequest>
 {
     /// <summary>
@@ -29,7 +29,7 @@ public partial class ContactsExportRequest : IEquatable<ContactsExportRequest>
     /// Contact List Filter ID.
     /// </summary>
     /// <value>Contact List Filter ID.</value>
-    [DataMember(Name = "contactListFilterId", EmitDefaultValue = false)]
+    [JsonPropertyName("contactListFilterId")]
     public string ContactListFilterId { get; set; }
 
 
@@ -38,7 +38,7 @@ public partial class ContactsExportRequest : IEquatable<ContactsExportRequest>
     /// Criteria to filter the contacts by.
     /// </summary>
     /// <value>Criteria to filter the contacts by.</value>
-    [DataMember(Name = "criteria", EmitDefaultValue = false)]
+    [JsonPropertyName("criteria")]
     public ContactBulkSearchCriteria Criteria { get; set; }
 
 
@@ -47,7 +47,7 @@ public partial class ContactsExportRequest : IEquatable<ContactsExportRequest>
     /// Contact IDs to be exported.
     /// </summary>
     /// <value>Contact IDs to be exported.</value>
-    [DataMember(Name = "contactIds", EmitDefaultValue = false)]
+    [JsonPropertyName("contactIds")]
     public List<string> ContactIds { get; set; }
 
 

@@ -7,14 +7,14 @@ namespace PureCloud.Client.Models;
 /// <summary>
 /// ImapSettings
 /// </summary>
-[DataContract]
+
 public partial class ImapSettings : IEquatable<ImapSettings>
 {
     /// <summary>
     /// Imap Server Status
     /// </summary>
     /// <value>Imap Server Status</value>
-    [JsonConverter(typeof(JsonStringEnumConverter))]
+    
     public enum StatusEnum
     {
         /// <summary>
@@ -65,7 +65,7 @@ public partial class ImapSettings : IEquatable<ImapSettings>
     /// Imap Server Status
     /// </summary>
     /// <value>Imap Server Status</value>
-    [DataMember(Name = "status", EmitDefaultValue = false)]
+    [JsonPropertyName("status")]
     public StatusEnum? Status { get; private set; }
     /// <summary>
     /// Initializes a new instance of the <see cref="ImapSettings" /> class.
@@ -83,7 +83,7 @@ public partial class ImapSettings : IEquatable<ImapSettings>
     /// The IMAP server integration to use for ingesting emails.
     /// </summary>
     /// <value>The IMAP server integration to use for ingesting emails.</value>
-    [DataMember(Name = "integration", EmitDefaultValue = false)]
+    [JsonPropertyName("integration")]
     public DomainEntityRef Integration { get; set; }
 
 
@@ -94,7 +94,7 @@ public partial class ImapSettings : IEquatable<ImapSettings>
     /// Additional Imap Server error information
     /// </summary>
     /// <value>Additional Imap Server error information</value>
-    [DataMember(Name = "errorInfo", EmitDefaultValue = false)]
+    [JsonPropertyName("errorInfo")]
     public EmailErrorInfo ErrorInfo { get; private set; }
 
 

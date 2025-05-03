@@ -7,14 +7,14 @@ namespace PureCloud.Client.Models;
 /// <summary>
 /// DocumentBodyListItemProperties
 /// </summary>
-[DataContract]
+
 public partial class DocumentBodyListItemProperties : IEquatable<DocumentBodyListItemProperties>
 {
     /// <summary>
     /// The align type for the list item.
     /// </summary>
     /// <value>The align type for the list item.</value>
-    [JsonConverter(typeof(JsonStringEnumConverter))]
+    
     public enum AlignEnum
     {
         /// <summary>
@@ -53,7 +53,7 @@ public partial class DocumentBodyListItemProperties : IEquatable<DocumentBodyLis
     /// The font size for the list item. The valid values in 'em'.
     /// </summary>
     /// <value>The font size for the list item. The valid values in 'em'.</value>
-    [JsonConverter(typeof(JsonStringEnumConverter))]
+    
     public enum FontSizeEnum
     {
         /// <summary>
@@ -116,7 +116,7 @@ public partial class DocumentBodyListItemProperties : IEquatable<DocumentBodyLis
     /// The font type for the list item.
     /// </summary>
     /// <value>The font type for the list item.</value>
-    [JsonConverter(typeof(JsonStringEnumConverter))]
+    
     public enum FontTypeEnum
     {
         /// <summary>
@@ -179,7 +179,7 @@ public partial class DocumentBodyListItemProperties : IEquatable<DocumentBodyLis
     /// The type of icon for the unordered list.
     /// </summary>
     /// <value>The type of icon for the unordered list.</value>
-    [JsonConverter(typeof(JsonStringEnumConverter))]
+    
     public enum UnorderedTypeEnum
     {
         /// <summary>
@@ -218,7 +218,7 @@ public partial class DocumentBodyListItemProperties : IEquatable<DocumentBodyLis
     /// The type of icon for the ordered list.
     /// </summary>
     /// <value>The type of icon for the ordered list.</value>
-    [JsonConverter(typeof(JsonStringEnumConverter))]
+    
     public enum OrderedTypeEnum
     {
         /// <summary>
@@ -275,31 +275,31 @@ public partial class DocumentBodyListItemProperties : IEquatable<DocumentBodyLis
     /// The align type for the list item.
     /// </summary>
     /// <value>The align type for the list item.</value>
-    [DataMember(Name = "align", EmitDefaultValue = false)]
+    [JsonPropertyName("align")]
     public AlignEnum? Align { get; set; }
     /// <summary>
     /// The font size for the list item. The valid values in 'em'.
     /// </summary>
     /// <value>The font size for the list item. The valid values in 'em'.</value>
-    [DataMember(Name = "fontSize", EmitDefaultValue = false)]
+    [JsonPropertyName("fontSize")]
     public FontSizeEnum? FontSize { get; set; }
     /// <summary>
     /// The font type for the list item.
     /// </summary>
     /// <value>The font type for the list item.</value>
-    [DataMember(Name = "fontType", EmitDefaultValue = false)]
+    [JsonPropertyName("fontType")]
     public FontTypeEnum? FontType { get; set; }
     /// <summary>
     /// The type of icon for the unordered list.
     /// </summary>
     /// <value>The type of icon for the unordered list.</value>
-    [DataMember(Name = "unorderedType", EmitDefaultValue = false)]
+    [JsonPropertyName("unorderedType")]
     public UnorderedTypeEnum? UnorderedType { get; set; }
     /// <summary>
     /// The type of icon for the ordered list.
     /// </summary>
     /// <value>The type of icon for the ordered list.</value>
-    [DataMember(Name = "orderedType", EmitDefaultValue = false)]
+    [JsonPropertyName("orderedType")]
     public OrderedTypeEnum? OrderedType { get; set; }
     /// <summary>
     /// Initializes a new instance of the <see cref="DocumentBodyListItemProperties" /> class.
@@ -331,7 +331,7 @@ public partial class DocumentBodyListItemProperties : IEquatable<DocumentBodyLis
     /// The background color for the list item. The valid values in hex color code representation. For example black color - #000000
     /// </summary>
     /// <value>The background color for the list item. The valid values in hex color code representation. For example black color - #000000</value>
-    [DataMember(Name = "backgroundColor", EmitDefaultValue = false)]
+    [JsonPropertyName("backgroundColor")]
     public string BackgroundColor { get; set; }
 
 
@@ -342,7 +342,7 @@ public partial class DocumentBodyListItemProperties : IEquatable<DocumentBodyLis
     /// The indentation property for the list item. The valid values in &#39;em&#39;.
     /// </summary>
     /// <value>The indentation property for the list item. The valid values in &#39;em&#39;.</value>
-    [DataMember(Name = "indentation", EmitDefaultValue = false)]
+    [JsonPropertyName("indentation")]
     public float? Indentation { get; set; }
 
 
@@ -355,7 +355,7 @@ public partial class DocumentBodyListItemProperties : IEquatable<DocumentBodyLis
     /// The text color for the list item. The valid values in hex color code representation. For example black color - #000000
     /// </summary>
     /// <value>The text color for the list item. The valid values in hex color code representation. For example black color - #000000</value>
-    [DataMember(Name = "textColor", EmitDefaultValue = false)]
+    [JsonPropertyName("textColor")]
     public string TextColor { get; set; }
 
 

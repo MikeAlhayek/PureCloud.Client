@@ -1,12 +1,12 @@
-using System.Runtime.Serialization;
 using System.Text;
+using System.Text.Json.Serialization;
 
 namespace PureCloud.Client.Models;
 
 /// <summary>
 /// FreeTrialLimitDocs
 /// </summary>
-[DataContract]
+
 public partial class FreeTrialLimitDocs : IEquatable<FreeTrialLimitDocs>
 {
     /// <summary>
@@ -24,7 +24,7 @@ public partial class FreeTrialLimitDocs : IEquatable<FreeTrialLimitDocs>
     /// <summary>
     /// Gets or Sets Namespaces
     /// </summary>
-    [DataMember(Name = "namespaces", EmitDefaultValue = false)]
+    [JsonPropertyName("namespaces")]
     public List<FreeTrialNamespace> Namespaces { get; set; }
 
 

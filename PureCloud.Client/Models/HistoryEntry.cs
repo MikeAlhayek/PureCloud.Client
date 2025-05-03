@@ -7,14 +7,14 @@ namespace PureCloud.Client.Models;
 /// <summary>
 /// HistoryEntry
 /// </summary>
-[DataContract]
+
 public partial class HistoryEntry : IEquatable<HistoryEntry>
 {
     /// <summary>
     /// The action performed
     /// </summary>
     /// <value>The action performed</value>
-    [JsonConverter(typeof(JsonStringEnumConverter))]
+    
     public enum ActionEnum
     {
         /// <summary>
@@ -101,7 +101,7 @@ public partial class HistoryEntry : IEquatable<HistoryEntry>
     /// The action performed
     /// </summary>
     /// <value>The action performed</value>
-    [DataMember(Name = "action", EmitDefaultValue = false)]
+    [JsonPropertyName("action")]
     public ActionEnum? Action { get; set; }
     /// <summary>
     /// Initializes a new instance of the <see cref="HistoryEntry" /> class.
@@ -135,7 +135,7 @@ public partial class HistoryEntry : IEquatable<HistoryEntry>
     /// For actions performed not on the item itself, but on a sub-item, this field identifies the sub-item by name.  For example, for actions performed on prompt resources, this will be the prompt resource name.
     /// </summary>
     /// <value>For actions performed not on the item itself, but on a sub-item, this field identifies the sub-item by name.  For example, for actions performed on prompt resources, this will be the prompt resource name.</value>
-    [DataMember(Name = "resource", EmitDefaultValue = false)]
+    [JsonPropertyName("resource")]
     public string Resource { get; set; }
 
 
@@ -144,7 +144,7 @@ public partial class HistoryEntry : IEquatable<HistoryEntry>
     /// Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z
     /// </summary>
     /// <value>Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z</value>
-    [DataMember(Name = "timestamp", EmitDefaultValue = false)]
+    [JsonPropertyName("timestamp")]
     public DateTime? Timestamp { get; set; }
 
 
@@ -153,7 +153,7 @@ public partial class HistoryEntry : IEquatable<HistoryEntry>
     /// User associated with this entry.
     /// </summary>
     /// <value>User associated with this entry.</value>
-    [DataMember(Name = "user", EmitDefaultValue = false)]
+    [JsonPropertyName("user")]
     public User User { get; set; }
 
 
@@ -162,7 +162,7 @@ public partial class HistoryEntry : IEquatable<HistoryEntry>
     /// OAuth client associated with this entry.
     /// </summary>
     /// <value>OAuth client associated with this entry.</value>
-    [DataMember(Name = "client", EmitDefaultValue = false)]
+    [JsonPropertyName("client")]
     public DomainEntityRef Client { get; set; }
 
 
@@ -170,7 +170,7 @@ public partial class HistoryEntry : IEquatable<HistoryEntry>
     /// <summary>
     /// Gets or Sets Version
     /// </summary>
-    [DataMember(Name = "version", EmitDefaultValue = false)]
+    [JsonPropertyName("version")]
     public string Version { get; set; }
 
 
@@ -178,7 +178,7 @@ public partial class HistoryEntry : IEquatable<HistoryEntry>
     /// <summary>
     /// Gets or Sets Secure
     /// </summary>
-    [DataMember(Name = "secure", EmitDefaultValue = false)]
+    [JsonPropertyName("secure")]
     public bool? Secure { get; set; }
 
 
@@ -186,7 +186,7 @@ public partial class HistoryEntry : IEquatable<HistoryEntry>
     /// <summary>
     /// Gets or Sets VirtualAgentEnabled
     /// </summary>
-    [DataMember(Name = "virtualAgentEnabled", EmitDefaultValue = false)]
+    [JsonPropertyName("virtualAgentEnabled")]
     public bool? VirtualAgentEnabled { get; set; }
 
 

@@ -1,12 +1,12 @@
-using System.Runtime.Serialization;
 using System.Text;
+using System.Text.Json.Serialization;
 
 namespace PureCloud.Client.Models;
 
 /// <summary>
 /// User actions available on the content. All actions are optional and all actions are executed simultaneously.
 /// </summary>
-[DataContract]
+
 public partial class ContentActions : IEquatable<ContentActions>
 {
     /// <summary>
@@ -29,7 +29,7 @@ public partial class ContentActions : IEquatable<ContentActions>
     /// A URL of a web page to direct the user to.
     /// </summary>
     /// <value>A URL of a web page to direct the user to.</value>
-    [DataMember(Name = "url", EmitDefaultValue = false)]
+    [JsonPropertyName("url")]
     public string Url { get; set; }
 
 
@@ -38,7 +38,7 @@ public partial class ContentActions : IEquatable<ContentActions>
     /// The target window in which to open the URL. If empty will open a blank page or tab.
     /// </summary>
     /// <value>The target window in which to open the URL. If empty will open a blank page or tab.</value>
-    [DataMember(Name = "urlTarget", EmitDefaultValue = false)]
+    [JsonPropertyName("urlTarget")]
     public string UrlTarget { get; set; }
 
 
@@ -47,7 +47,7 @@ public partial class ContentActions : IEquatable<ContentActions>
     /// Text to be returned as the payload from a ButtonResponse when a button is clicked. The textback and title are a combination which will have to be unique across each card and carousel in order to determine which button was clicked in that card or carousel.
     /// </summary>
     /// <value>Text to be returned as the payload from a ButtonResponse when a button is clicked. The textback and title are a combination which will have to be unique across each card and carousel in order to determine which button was clicked in that card or carousel.</value>
-    [DataMember(Name = "textback", EmitDefaultValue = false)]
+    [JsonPropertyName("textback")]
     public string Textback { get; set; }
 
 

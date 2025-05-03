@@ -7,14 +7,14 @@ namespace PureCloud.Client.Models;
 /// <summary>
 /// Governs how the voicemail is retained
 /// </summary>
-[DataContract]
+
 public partial class VoicemailRetentionPolicy : IEquatable<VoicemailRetentionPolicy>
 {
     /// <summary>
     /// The retention policy type
     /// </summary>
     /// <value>The retention policy type</value>
-    [JsonConverter(typeof(JsonStringEnumConverter))]
+    
     public enum VoicemailRetentionPolicyTypeEnum
     {
         /// <summary>
@@ -47,7 +47,7 @@ public partial class VoicemailRetentionPolicy : IEquatable<VoicemailRetentionPol
     /// The retention policy type
     /// </summary>
     /// <value>The retention policy type</value>
-    [DataMember(Name = "voicemailRetentionPolicyType", EmitDefaultValue = false)]
+    [JsonPropertyName("voicemailRetentionPolicyType")]
     public VoicemailRetentionPolicyTypeEnum? VoicemailRetentionPolicyType { get; set; }
     /// <summary>
     /// Initializes a new instance of the <see cref="VoicemailRetentionPolicy" /> class.
@@ -69,7 +69,7 @@ public partial class VoicemailRetentionPolicy : IEquatable<VoicemailRetentionPol
     /// If retentionPolicyType &#x3D;&#x3D; RETAIN_WITH_TTL, then this value represents the number of days for the TTL
     /// </summary>
     /// <value>If retentionPolicyType &#x3D;&#x3D; RETAIN_WITH_TTL, then this value represents the number of days for the TTL</value>
-    [DataMember(Name = "numberOfDays", EmitDefaultValue = false)]
+    [JsonPropertyName("numberOfDays")]
     public int? NumberOfDays { get; set; }
 
 

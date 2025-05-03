@@ -7,13 +7,13 @@ namespace PureCloud.Client.Models;
 /// <summary>
 /// JourneySessionEventsNotificationSessionEvent
 /// </summary>
-[DataContract]
+
 public partial class JourneySessionEventsNotificationSessionEvent : IEquatable<JourneySessionEventsNotificationSessionEvent>
 {
     /// <summary>
     /// Gets or Sets OriginatingDirection
     /// </summary>
-    [JsonConverter(typeof(JsonStringEnumConverter))]
+    
     public enum OriginatingDirectionEnum
     {
         /// <summary>
@@ -45,7 +45,7 @@ public partial class JourneySessionEventsNotificationSessionEvent : IEquatable<J
     /// <summary>
     /// Gets or Sets LastUserDisconnectType
     /// </summary>
-    [JsonConverter(typeof(JsonStringEnumConverter))]
+    
     public enum LastUserDisconnectTypeEnum
     {
         /// <summary>
@@ -173,7 +173,7 @@ public partial class JourneySessionEventsNotificationSessionEvent : IEquatable<J
     /// <summary>
     /// Gets or Sets LastAcdOutcome
     /// </summary>
-    [JsonConverter(typeof(JsonStringEnumConverter))]
+    
     public enum LastAcdOutcomeEnum
     {
         /// <summary>
@@ -211,17 +211,17 @@ public partial class JourneySessionEventsNotificationSessionEvent : IEquatable<J
     /// <summary>
     /// Gets or Sets OriginatingDirection
     /// </summary>
-    [DataMember(Name = "originatingDirection", EmitDefaultValue = false)]
+    [JsonPropertyName("originatingDirection")]
     public OriginatingDirectionEnum? OriginatingDirection { get; set; }
     /// <summary>
     /// Gets or Sets LastUserDisconnectType
     /// </summary>
-    [DataMember(Name = "lastUserDisconnectType", EmitDefaultValue = false)]
+    [JsonPropertyName("lastUserDisconnectType")]
     public LastUserDisconnectTypeEnum? LastUserDisconnectType { get; set; }
     /// <summary>
     /// Gets or Sets LastAcdOutcome
     /// </summary>
-    [DataMember(Name = "lastAcdOutcome", EmitDefaultValue = false)]
+    [JsonPropertyName("lastAcdOutcome")]
     public LastAcdOutcomeEnum? LastAcdOutcome { get; set; }
     /// <summary>
     /// Initializes a new instance of the <see cref="JourneySessionEventsNotificationSessionEvent" /> class.
@@ -320,7 +320,7 @@ public partial class JourneySessionEventsNotificationSessionEvent : IEquatable<J
     /// <summary>
     /// Gets or Sets Id
     /// </summary>
-    [DataMember(Name = "id", EmitDefaultValue = false)]
+    [JsonPropertyName("id")]
     public Guid? Id { get; set; }
 
 
@@ -328,7 +328,7 @@ public partial class JourneySessionEventsNotificationSessionEvent : IEquatable<J
     /// <summary>
     /// Gets or Sets SelfUri
     /// </summary>
-    [DataMember(Name = "selfUri", EmitDefaultValue = false)]
+    [JsonPropertyName("selfUri")]
     public string SelfUri { get; set; }
 
 
@@ -336,7 +336,7 @@ public partial class JourneySessionEventsNotificationSessionEvent : IEquatable<J
     /// <summary>
     /// Gets or Sets CreatedDate
     /// </summary>
-    [DataMember(Name = "createdDate", EmitDefaultValue = false)]
+    [JsonPropertyName("createdDate")]
     public DateTime? CreatedDate { get; set; }
 
 
@@ -344,7 +344,7 @@ public partial class JourneySessionEventsNotificationSessionEvent : IEquatable<J
     /// <summary>
     /// Gets or Sets EndedDate
     /// </summary>
-    [DataMember(Name = "endedDate", EmitDefaultValue = false)]
+    [JsonPropertyName("endedDate")]
     public DateTime? EndedDate { get; set; }
 
 
@@ -352,7 +352,7 @@ public partial class JourneySessionEventsNotificationSessionEvent : IEquatable<J
     /// <summary>
     /// Gets or Sets ExternalContact
     /// </summary>
-    [DataMember(Name = "externalContact", EmitDefaultValue = false)]
+    [JsonPropertyName("externalContact")]
     public JourneySessionEventsNotificationExternalContact ExternalContact { get; set; }
 
 
@@ -360,7 +360,7 @@ public partial class JourneySessionEventsNotificationSessionEvent : IEquatable<J
     /// <summary>
     /// Gets or Sets CustomerId
     /// </summary>
-    [DataMember(Name = "customerId", EmitDefaultValue = false)]
+    [JsonPropertyName("customerId")]
     public string CustomerId { get; set; }
 
 
@@ -368,7 +368,7 @@ public partial class JourneySessionEventsNotificationSessionEvent : IEquatable<J
     /// <summary>
     /// Gets or Sets CustomerIdType
     /// </summary>
-    [DataMember(Name = "customerIdType", EmitDefaultValue = false)]
+    [JsonPropertyName("customerIdType")]
     public string CustomerIdType { get; set; }
 
 
@@ -376,7 +376,7 @@ public partial class JourneySessionEventsNotificationSessionEvent : IEquatable<J
     /// <summary>
     /// Gets or Sets Type
     /// </summary>
-    [DataMember(Name = "type", EmitDefaultValue = false)]
+    [JsonPropertyName("type")]
     public string Type { get; set; }
 
 
@@ -384,7 +384,7 @@ public partial class JourneySessionEventsNotificationSessionEvent : IEquatable<J
     /// <summary>
     /// Gets or Sets OutcomeAchievements
     /// </summary>
-    [DataMember(Name = "outcomeAchievements", EmitDefaultValue = false)]
+    [JsonPropertyName("outcomeAchievements")]
     public List<JourneySessionEventsNotificationOutcomeAchievement> OutcomeAchievements { get; set; }
 
 
@@ -392,7 +392,7 @@ public partial class JourneySessionEventsNotificationSessionEvent : IEquatable<J
     /// <summary>
     /// Gets or Sets SegmentAssignments
     /// </summary>
-    [DataMember(Name = "segmentAssignments", EmitDefaultValue = false)]
+    [JsonPropertyName("segmentAssignments")]
     public List<JourneySessionEventsNotificationSegmentAssignment> SegmentAssignments { get; set; }
 
 
@@ -400,7 +400,7 @@ public partial class JourneySessionEventsNotificationSessionEvent : IEquatable<J
     /// <summary>
     /// Gets or Sets AwayDate
     /// </summary>
-    [DataMember(Name = "awayDate", EmitDefaultValue = false)]
+    [JsonPropertyName("awayDate")]
     public DateTime? AwayDate { get; set; }
 
 
@@ -408,7 +408,7 @@ public partial class JourneySessionEventsNotificationSessionEvent : IEquatable<J
     /// <summary>
     /// Gets or Sets Browser
     /// </summary>
-    [DataMember(Name = "browser", EmitDefaultValue = false)]
+    [JsonPropertyName("browser")]
     public JourneySessionEventsNotificationBrowser Browser { get; set; }
 
 
@@ -416,7 +416,7 @@ public partial class JourneySessionEventsNotificationSessionEvent : IEquatable<J
     /// <summary>
     /// Gets or Sets Device
     /// </summary>
-    [DataMember(Name = "device", EmitDefaultValue = false)]
+    [JsonPropertyName("device")]
     public JourneySessionEventsNotificationDevice Device { get; set; }
 
 
@@ -424,7 +424,7 @@ public partial class JourneySessionEventsNotificationSessionEvent : IEquatable<J
     /// <summary>
     /// Gets or Sets Geolocation
     /// </summary>
-    [DataMember(Name = "geolocation", EmitDefaultValue = false)]
+    [JsonPropertyName("geolocation")]
     public JourneySessionEventsNotificationGeoLocation Geolocation { get; set; }
 
 
@@ -432,7 +432,7 @@ public partial class JourneySessionEventsNotificationSessionEvent : IEquatable<J
     /// <summary>
     /// Gets or Sets IdleDate
     /// </summary>
-    [DataMember(Name = "idleDate", EmitDefaultValue = false)]
+    [JsonPropertyName("idleDate")]
     public DateTime? IdleDate { get; set; }
 
 
@@ -440,7 +440,7 @@ public partial class JourneySessionEventsNotificationSessionEvent : IEquatable<J
     /// <summary>
     /// Gets or Sets IpAddress
     /// </summary>
-    [DataMember(Name = "ipAddress", EmitDefaultValue = false)]
+    [JsonPropertyName("ipAddress")]
     public string IpAddress { get; set; }
 
 
@@ -448,7 +448,7 @@ public partial class JourneySessionEventsNotificationSessionEvent : IEquatable<J
     /// <summary>
     /// Gets or Sets IpOrganization
     /// </summary>
-    [DataMember(Name = "ipOrganization", EmitDefaultValue = false)]
+    [JsonPropertyName("ipOrganization")]
     public string IpOrganization { get; set; }
 
 
@@ -456,7 +456,7 @@ public partial class JourneySessionEventsNotificationSessionEvent : IEquatable<J
     /// <summary>
     /// Gets or Sets LastPage
     /// </summary>
-    [DataMember(Name = "lastPage", EmitDefaultValue = false)]
+    [JsonPropertyName("lastPage")]
     public JourneySessionEventsNotificationPage LastPage { get; set; }
 
 
@@ -464,7 +464,7 @@ public partial class JourneySessionEventsNotificationSessionEvent : IEquatable<J
     /// <summary>
     /// Gets or Sets MktCampaign
     /// </summary>
-    [DataMember(Name = "mktCampaign", EmitDefaultValue = false)]
+    [JsonPropertyName("mktCampaign")]
     public JourneySessionEventsNotificationMktCampaign MktCampaign { get; set; }
 
 
@@ -472,7 +472,7 @@ public partial class JourneySessionEventsNotificationSessionEvent : IEquatable<J
     /// <summary>
     /// Gets or Sets Referrer
     /// </summary>
-    [DataMember(Name = "referrer", EmitDefaultValue = false)]
+    [JsonPropertyName("referrer")]
     public JourneySessionEventsNotificationReferrer Referrer { get; set; }
 
 
@@ -480,7 +480,7 @@ public partial class JourneySessionEventsNotificationSessionEvent : IEquatable<J
     /// <summary>
     /// Gets or Sets SearchTerms
     /// </summary>
-    [DataMember(Name = "searchTerms", EmitDefaultValue = false)]
+    [JsonPropertyName("searchTerms")]
     public List<string> SearchTerms { get; set; }
 
 
@@ -488,7 +488,7 @@ public partial class JourneySessionEventsNotificationSessionEvent : IEquatable<J
     /// <summary>
     /// Gets or Sets UserAgentString
     /// </summary>
-    [DataMember(Name = "userAgentString", EmitDefaultValue = false)]
+    [JsonPropertyName("userAgentString")]
     public string UserAgentString { get; set; }
 
 
@@ -496,7 +496,7 @@ public partial class JourneySessionEventsNotificationSessionEvent : IEquatable<J
     /// <summary>
     /// Gets or Sets DurationInSeconds
     /// </summary>
-    [DataMember(Name = "durationInSeconds", EmitDefaultValue = false)]
+    [JsonPropertyName("durationInSeconds")]
     public long? DurationInSeconds { get; set; }
 
 
@@ -504,7 +504,7 @@ public partial class JourneySessionEventsNotificationSessionEvent : IEquatable<J
     /// <summary>
     /// Gets or Sets EventCount
     /// </summary>
-    [DataMember(Name = "eventCount", EmitDefaultValue = false)]
+    [JsonPropertyName("eventCount")]
     public long? EventCount { get; set; }
 
 
@@ -512,7 +512,7 @@ public partial class JourneySessionEventsNotificationSessionEvent : IEquatable<J
     /// <summary>
     /// Gets or Sets PageviewCount
     /// </summary>
-    [DataMember(Name = "pageviewCount", EmitDefaultValue = false)]
+    [JsonPropertyName("pageviewCount")]
     public long? PageviewCount { get; set; }
 
 
@@ -520,7 +520,7 @@ public partial class JourneySessionEventsNotificationSessionEvent : IEquatable<J
     /// <summary>
     /// Gets or Sets ScreenviewCount
     /// </summary>
-    [DataMember(Name = "screenviewCount", EmitDefaultValue = false)]
+    [JsonPropertyName("screenviewCount")]
     public long? ScreenviewCount { get; set; }
 
 
@@ -528,7 +528,7 @@ public partial class JourneySessionEventsNotificationSessionEvent : IEquatable<J
     /// <summary>
     /// Gets or Sets LastEvent
     /// </summary>
-    [DataMember(Name = "lastEvent", EmitDefaultValue = false)]
+    [JsonPropertyName("lastEvent")]
     public JourneySessionEventsNotificationSessionLastEvent LastEvent { get; set; }
 
 
@@ -536,7 +536,7 @@ public partial class JourneySessionEventsNotificationSessionEvent : IEquatable<J
     /// <summary>
     /// Gets or Sets Conversation
     /// </summary>
-    [DataMember(Name = "conversation", EmitDefaultValue = false)]
+    [JsonPropertyName("conversation")]
     public JourneySessionEventsNotificationConversation Conversation { get; set; }
 
 
@@ -546,7 +546,7 @@ public partial class JourneySessionEventsNotificationSessionEvent : IEquatable<J
     /// <summary>
     /// Gets or Sets ConversationSubject
     /// </summary>
-    [DataMember(Name = "conversationSubject", EmitDefaultValue = false)]
+    [JsonPropertyName("conversationSubject")]
     public string ConversationSubject { get; set; }
 
 
@@ -554,7 +554,7 @@ public partial class JourneySessionEventsNotificationSessionEvent : IEquatable<J
     /// <summary>
     /// Gets or Sets LastUserDisposition
     /// </summary>
-    [DataMember(Name = "lastUserDisposition", EmitDefaultValue = false)]
+    [JsonPropertyName("lastUserDisposition")]
     public JourneySessionEventsNotificationConversationUserDisposition LastUserDisposition { get; set; }
 
 
@@ -562,7 +562,7 @@ public partial class JourneySessionEventsNotificationSessionEvent : IEquatable<J
     /// <summary>
     /// Gets or Sets LastConnectedUser
     /// </summary>
-    [DataMember(Name = "lastConnectedUser", EmitDefaultValue = false)]
+    [JsonPropertyName("lastConnectedUser")]
     public JourneySessionEventsNotificationUser LastConnectedUser { get; set; }
 
 
@@ -570,7 +570,7 @@ public partial class JourneySessionEventsNotificationSessionEvent : IEquatable<J
     /// <summary>
     /// Gets or Sets LastConnectedQueue
     /// </summary>
-    [DataMember(Name = "lastConnectedQueue", EmitDefaultValue = false)]
+    [JsonPropertyName("lastConnectedQueue")]
     public JourneySessionEventsNotificationConnectedQueue LastConnectedQueue { get; set; }
 
 
@@ -578,7 +578,7 @@ public partial class JourneySessionEventsNotificationSessionEvent : IEquatable<J
     /// <summary>
     /// Gets or Sets ConversationChannels
     /// </summary>
-    [DataMember(Name = "conversationChannels", EmitDefaultValue = false)]
+    [JsonPropertyName("conversationChannels")]
     public List<JourneySessionEventsNotificationConversationChannel> ConversationChannels { get; set; }
 
 
@@ -590,7 +590,7 @@ public partial class JourneySessionEventsNotificationSessionEvent : IEquatable<J
     /// <summary>
     /// Gets or Sets Authenticated
     /// </summary>
-    [DataMember(Name = "authenticated", EmitDefaultValue = false)]
+    [JsonPropertyName("authenticated")]
     public bool? Authenticated { get; set; }
 
 
@@ -598,7 +598,7 @@ public partial class JourneySessionEventsNotificationSessionEvent : IEquatable<J
     /// <summary>
     /// Gets or Sets App
     /// </summary>
-    [DataMember(Name = "app", EmitDefaultValue = false)]
+    [JsonPropertyName("app")]
     public JourneySessionEventsNotificationApp App { get; set; }
 
 
@@ -606,7 +606,7 @@ public partial class JourneySessionEventsNotificationSessionEvent : IEquatable<J
     /// <summary>
     /// Gets or Sets SdkLibrary
     /// </summary>
-    [DataMember(Name = "sdkLibrary", EmitDefaultValue = false)]
+    [JsonPropertyName("sdkLibrary")]
     public JourneySessionEventsNotificationSdkLibrary SdkLibrary { get; set; }
 
 
@@ -614,7 +614,7 @@ public partial class JourneySessionEventsNotificationSessionEvent : IEquatable<J
     /// <summary>
     /// Gets or Sets NetworkConnectivity
     /// </summary>
-    [DataMember(Name = "networkConnectivity", EmitDefaultValue = false)]
+    [JsonPropertyName("networkConnectivity")]
     public JourneySessionEventsNotificationNetworkConnectivity NetworkConnectivity { get; set; }
 
 
@@ -622,7 +622,7 @@ public partial class JourneySessionEventsNotificationSessionEvent : IEquatable<J
     /// <summary>
     /// Gets or Sets DivisionIds
     /// </summary>
-    [DataMember(Name = "divisionIds", EmitDefaultValue = false)]
+    [JsonPropertyName("divisionIds")]
     public List<string> DivisionIds { get; set; }
 
 
@@ -630,7 +630,7 @@ public partial class JourneySessionEventsNotificationSessionEvent : IEquatable<J
     /// <summary>
     /// Gets or Sets LastScreen
     /// </summary>
-    [DataMember(Name = "lastScreen", EmitDefaultValue = false)]
+    [JsonPropertyName("lastScreen")]
     public string LastScreen { get; set; }
 
 

@@ -7,13 +7,13 @@ namespace PureCloud.Client.Models;
 /// <summary>
 /// WebDeploymentsDeploymentTopicWebMessagingConfigChangeEventBody
 /// </summary>
-[DataContract]
+
 public partial class WebDeploymentsDeploymentTopicWebMessagingConfigChangeEventBody : IEquatable<WebDeploymentsDeploymentTopicWebMessagingConfigChangeEventBody>
 {
     /// <summary>
     /// Gets or Sets Status
     /// </summary>
-    [JsonConverter(typeof(JsonStringEnumConverter))]
+    
     public enum StatusEnum
     {
         /// <summary>
@@ -57,7 +57,7 @@ public partial class WebDeploymentsDeploymentTopicWebMessagingConfigChangeEventB
     /// <summary>
     /// Gets or Sets Status
     /// </summary>
-    [DataMember(Name = "status", EmitDefaultValue = false)]
+    [JsonPropertyName("status")]
     public StatusEnum? Status { get; set; }
     /// <summary>
     /// Initializes a new instance of the <see cref="WebDeploymentsDeploymentTopicWebMessagingConfigChangeEventBody" /> class.
@@ -78,7 +78,7 @@ public partial class WebDeploymentsDeploymentTopicWebMessagingConfigChangeEventB
     /// <summary>
     /// Gets or Sets Id
     /// </summary>
-    [DataMember(Name = "id", EmitDefaultValue = false)]
+    [JsonPropertyName("id")]
     public string Id { get; set; }
 
 
@@ -86,7 +86,7 @@ public partial class WebDeploymentsDeploymentTopicWebMessagingConfigChangeEventB
     /// <summary>
     /// Gets or Sets Version
     /// </summary>
-    [DataMember(Name = "version", EmitDefaultValue = false)]
+    [JsonPropertyName("version")]
     public string Version { get; set; }
 
 

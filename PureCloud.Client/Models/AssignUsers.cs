@@ -1,4 +1,3 @@
-using System.Runtime.Serialization;
 using System.Text;
 using System.Text.Json.Serialization;
 
@@ -7,7 +6,7 @@ namespace PureCloud.Client.Models;
 /// <summary>
 /// AssignUsers
 /// </summary>
-[DataContract]
+
 public partial class AssignUsers : IEquatable<AssignUsers>
 {
 
@@ -34,7 +33,7 @@ public partial class AssignUsers : IEquatable<AssignUsers>
     /// List of user ids to assign to a performance profile
     /// </summary>
     /// <value>List of user ids to assign to a performance profile</value>
-    [DataMember(Name = "membersToAssign", EmitDefaultValue = false)]
+    [JsonPropertyName("membersToAssign")]
     public List<string> MembersToAssign { get; set; }
 
 
@@ -43,7 +42,7 @@ public partial class AssignUsers : IEquatable<AssignUsers>
     /// List of user ids to remove from a performance profile
     /// </summary>
     /// <value>List of user ids to remove from a performance profile</value>
-    [DataMember(Name = "membersToRemove", EmitDefaultValue = false)]
+    [JsonPropertyName("membersToRemove")]
     public List<string> MembersToRemove { get; set; }
 
 

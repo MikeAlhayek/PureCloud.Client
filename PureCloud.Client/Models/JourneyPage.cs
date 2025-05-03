@@ -1,4 +1,3 @@
-using System.Runtime.Serialization;
 using System.Text;
 using System.Text.Json.Serialization;
 
@@ -7,7 +6,7 @@ namespace PureCloud.Client.Models;
 /// <summary>
 /// JourneyPage
 /// </summary>
-[DataContract]
+
 public partial class JourneyPage : IEquatable<JourneyPage>
 {
 
@@ -50,7 +49,7 @@ public partial class JourneyPage : IEquatable<JourneyPage>
     /// The page URL.
     /// </summary>
     /// <value>The page URL.</value>
-    [DataMember(Name = "url", EmitDefaultValue = false)]
+    [JsonPropertyName("url")]
     public string Url { get; set; }
 
 
@@ -59,7 +58,7 @@ public partial class JourneyPage : IEquatable<JourneyPage>
     /// Title of the page.
     /// </summary>
     /// <value>Title of the page.</value>
-    [DataMember(Name = "title", EmitDefaultValue = false)]
+    [JsonPropertyName("title")]
     public string Title { get; set; }
 
 
@@ -68,7 +67,7 @@ public partial class JourneyPage : IEquatable<JourneyPage>
     /// Domain of the page&#39;s URL.
     /// </summary>
     /// <value>Domain of the page&#39;s URL.</value>
-    [DataMember(Name = "domain", EmitDefaultValue = false)]
+    [JsonPropertyName("domain")]
     public string Domain { get; set; }
 
 
@@ -77,7 +76,7 @@ public partial class JourneyPage : IEquatable<JourneyPage>
     /// Fragment or hash of the page&#39;s URL.
     /// </summary>
     /// <value>Fragment or hash of the page&#39;s URL.</value>
-    [DataMember(Name = "fragment", EmitDefaultValue = false)]
+    [JsonPropertyName("fragment")]
     public string Fragment { get; set; }
 
 
@@ -86,7 +85,7 @@ public partial class JourneyPage : IEquatable<JourneyPage>
     /// Hostname of the page&#39;s URL.
     /// </summary>
     /// <value>Hostname of the page&#39;s URL.</value>
-    [DataMember(Name = "hostname", EmitDefaultValue = false)]
+    [JsonPropertyName("hostname")]
     public string Hostname { get; set; }
 
 
@@ -95,7 +94,7 @@ public partial class JourneyPage : IEquatable<JourneyPage>
     /// Keywords from the HTML {@code &lt;meta&gt;} tag of the page.
     /// </summary>
     /// <value>Keywords from the HTML {@code &lt;meta&gt;} tag of the page.</value>
-    [DataMember(Name = "keywords", EmitDefaultValue = false)]
+    [JsonPropertyName("keywords")]
     public string Keywords { get; set; }
 
 
@@ -104,7 +103,7 @@ public partial class JourneyPage : IEquatable<JourneyPage>
     /// ISO 639-1 language code for the page as defined in the {@code &lt;html&gt;} tag.
     /// </summary>
     /// <value>ISO 639-1 language code for the page as defined in the {@code &lt;html&gt;} tag.</value>
-    [DataMember(Name = "lang", EmitDefaultValue = false)]
+    [JsonPropertyName("lang")]
     public string Lang { get; set; }
 
 
@@ -113,7 +112,7 @@ public partial class JourneyPage : IEquatable<JourneyPage>
     /// Path name of the page for the event.
     /// </summary>
     /// <value>Path name of the page for the event.</value>
-    [DataMember(Name = "pathname", EmitDefaultValue = false)]
+    [JsonPropertyName("pathname")]
     public string Pathname { get; set; }
 
 
@@ -122,7 +121,7 @@ public partial class JourneyPage : IEquatable<JourneyPage>
     /// Query string that is passed to the page in the current event.
     /// </summary>
     /// <value>Query string that is passed to the page in the current event.</value>
-    [DataMember(Name = "queryString", EmitDefaultValue = false)]
+    [JsonPropertyName("queryString")]
     public string QueryString { get; set; }
 
 
@@ -131,7 +130,7 @@ public partial class JourneyPage : IEquatable<JourneyPage>
     /// Hierarchy of the current page in relation to the website&#39;s structure.
     /// </summary>
     /// <value>Hierarchy of the current page in relation to the website&#39;s structure.</value>
-    [DataMember(Name = "breadcrumb", EmitDefaultValue = false)]
+    [JsonPropertyName("breadcrumb")]
     public List<string> Breadcrumb { get; set; }
 
 

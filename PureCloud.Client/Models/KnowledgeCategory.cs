@@ -7,14 +7,14 @@ namespace PureCloud.Client.Models;
 /// <summary>
 /// KnowledgeCategory
 /// </summary>
-[DataContract]
+
 public partial class KnowledgeCategory : IEquatable<KnowledgeCategory>
 {
     /// <summary>
     /// Actual language of the category
     /// </summary>
     /// <value>Actual language of the category</value>
-    [JsonConverter(typeof(JsonStringEnumConverter))]
+    
     public enum LanguageCodeEnum
     {
         /// <summary>
@@ -305,7 +305,7 @@ public partial class KnowledgeCategory : IEquatable<KnowledgeCategory>
     /// Actual language of the category
     /// </summary>
     /// <value>Actual language of the category</value>
-    [DataMember(Name = "languageCode", EmitDefaultValue = false)]
+    [JsonPropertyName("languageCode")]
     public LanguageCodeEnum? LanguageCode { get; private set; }
 
     /// <summary>
@@ -331,7 +331,7 @@ public partial class KnowledgeCategory : IEquatable<KnowledgeCategory>
     /// The globally unique identifier for the object.
     /// </summary>
     /// <value>The globally unique identifier for the object.</value>
-    [DataMember(Name = "id", EmitDefaultValue = false)]
+    [JsonPropertyName("id")]
     public string Id { get; private set; }
 
 
@@ -340,7 +340,7 @@ public partial class KnowledgeCategory : IEquatable<KnowledgeCategory>
     /// Category name
     /// </summary>
     /// <value>Category name</value>
-    [DataMember(Name = "name", EmitDefaultValue = false)]
+    [JsonPropertyName("name")]
     public string Name { get; set; }
 
 
@@ -349,7 +349,7 @@ public partial class KnowledgeCategory : IEquatable<KnowledgeCategory>
     /// Category description
     /// </summary>
     /// <value>Category description</value>
-    [DataMember(Name = "description", EmitDefaultValue = false)]
+    [JsonPropertyName("description")]
     public string Description { get; set; }
 
 
@@ -358,7 +358,7 @@ public partial class KnowledgeCategory : IEquatable<KnowledgeCategory>
     /// Knowledge base which category does belong to
     /// </summary>
     /// <value>Knowledge base which category does belong to</value>
-    [DataMember(Name = "knowledgeBase", EmitDefaultValue = false)]
+    [JsonPropertyName("knowledgeBase")]
     public KnowledgeBase KnowledgeBase { get; private set; }
 
 
@@ -369,7 +369,7 @@ public partial class KnowledgeCategory : IEquatable<KnowledgeCategory>
     /// Category creation date-time. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z
     /// </summary>
     /// <value>Category creation date-time. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z</value>
-    [DataMember(Name = "dateCreated", EmitDefaultValue = false)]
+    [JsonPropertyName("dateCreated")]
     public DateTime? DateCreated { get; private set; }
 
 
@@ -378,7 +378,7 @@ public partial class KnowledgeCategory : IEquatable<KnowledgeCategory>
     /// Category last modification date-time. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z
     /// </summary>
     /// <value>Category last modification date-time. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z</value>
-    [DataMember(Name = "dateModified", EmitDefaultValue = false)]
+    [JsonPropertyName("dateModified")]
     public DateTime? DateModified { get; private set; }
 
 
@@ -387,7 +387,7 @@ public partial class KnowledgeCategory : IEquatable<KnowledgeCategory>
     /// The URI for this object
     /// </summary>
     /// <value>The URI for this object</value>
-    [DataMember(Name = "selfUri", EmitDefaultValue = false)]
+    [JsonPropertyName("selfUri")]
     public string SelfUri { get; private set; }
 
 

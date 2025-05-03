@@ -1,12 +1,12 @@
-using System.Runtime.Serialization;
 using System.Text;
+using System.Text.Json.Serialization;
 
 namespace PureCloud.Client.Models;
 
 /// <summary>
 /// TrunkMetricsTopicTrunkMetricsQoS
 /// </summary>
-[DataContract]
+
 public partial class TrunkMetricsTopicTrunkMetricsQoS : IEquatable<TrunkMetricsTopicTrunkMetricsQoS>
 {
     /// <summary>
@@ -24,7 +24,7 @@ public partial class TrunkMetricsTopicTrunkMetricsQoS : IEquatable<TrunkMetricsT
     /// <summary>
     /// Gets or Sets MismatchCount
     /// </summary>
-    [DataMember(Name = "mismatchCount", EmitDefaultValue = false)]
+    [JsonPropertyName("mismatchCount")]
     public long? MismatchCount { get; set; }
 
 

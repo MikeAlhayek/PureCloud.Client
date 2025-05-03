@@ -7,13 +7,13 @@ namespace PureCloud.Client.Models;
 /// <summary>
 /// QueueConversationEventTopicInternalMessage
 /// </summary>
-[DataContract]
+
 public partial class QueueConversationEventTopicInternalMessage : IEquatable<QueueConversationEventTopicInternalMessage>
 {
     /// <summary>
     /// Gets or Sets State
     /// </summary>
-    [JsonConverter(typeof(JsonStringEnumConverter))]
+    
     public enum StateEnum
     {
         /// <summary>
@@ -45,7 +45,7 @@ public partial class QueueConversationEventTopicInternalMessage : IEquatable<Que
     /// <summary>
     /// Gets or Sets InitialState
     /// </summary>
-    [JsonConverter(typeof(JsonStringEnumConverter))]
+    
     public enum InitialStateEnum
     {
         /// <summary>
@@ -78,7 +78,7 @@ public partial class QueueConversationEventTopicInternalMessage : IEquatable<Que
     /// System defined string indicating what caused the communication to disconnect. Will be null until the communication disconnects.
     /// </summary>
     /// <value>System defined string indicating what caused the communication to disconnect. Will be null until the communication disconnects.</value>
-    [JsonConverter(typeof(JsonStringEnumConverter))]
+    
     public enum DisconnectTypeEnum
     {
         /// <summary>
@@ -116,18 +116,18 @@ public partial class QueueConversationEventTopicInternalMessage : IEquatable<Que
     /// <summary>
     /// Gets or Sets State
     /// </summary>
-    [DataMember(Name = "state", EmitDefaultValue = false)]
+    [JsonPropertyName("state")]
     public StateEnum? State { get; set; }
     /// <summary>
     /// Gets or Sets InitialState
     /// </summary>
-    [DataMember(Name = "initialState", EmitDefaultValue = false)]
+    [JsonPropertyName("initialState")]
     public InitialStateEnum? InitialState { get; set; }
     /// <summary>
     /// System defined string indicating what caused the communication to disconnect. Will be null until the communication disconnects.
     /// </summary>
     /// <value>System defined string indicating what caused the communication to disconnect. Will be null until the communication disconnects.</value>
-    [DataMember(Name = "disconnectType", EmitDefaultValue = false)]
+    [JsonPropertyName("disconnectType")]
     public DisconnectTypeEnum? DisconnectType { get; set; }
     /// <summary>
     /// Initializes a new instance of the <see cref="QueueConversationEventTopicInternalMessage" /> class.
@@ -169,7 +169,7 @@ public partial class QueueConversationEventTopicInternalMessage : IEquatable<Que
     /// A globally unique identifier for this communication.
     /// </summary>
     /// <value>A globally unique identifier for this communication.</value>
-    [DataMember(Name = "id", EmitDefaultValue = false)]
+    [JsonPropertyName("id")]
     public string Id { get; set; }
 
 
@@ -182,7 +182,7 @@ public partial class QueueConversationEventTopicInternalMessage : IEquatable<Que
     /// The source provider of the message.
     /// </summary>
     /// <value>The source provider of the message.</value>
-    [DataMember(Name = "provider", EmitDefaultValue = false)]
+    [JsonPropertyName("provider")]
     public string Provider { get; set; }
 
 
@@ -191,7 +191,7 @@ public partial class QueueConversationEventTopicInternalMessage : IEquatable<Que
     /// The id of the peer communication corresponding to a matching leg for this communication.
     /// </summary>
     /// <value>The id of the peer communication corresponding to a matching leg for this communication.</value>
-    [DataMember(Name = "peerId", EmitDefaultValue = false)]
+    [JsonPropertyName("peerId")]
     public string PeerId { get; set; }
 
 
@@ -202,7 +202,7 @@ public partial class QueueConversationEventTopicInternalMessage : IEquatable<Que
     /// The timestamp when this communication was connected in the cloud clock.
     /// </summary>
     /// <value>The timestamp when this communication was connected in the cloud clock.</value>
-    [DataMember(Name = "connectedTime", EmitDefaultValue = false)]
+    [JsonPropertyName("connectedTime")]
     public DateTime? ConnectedTime { get; set; }
 
 
@@ -211,7 +211,7 @@ public partial class QueueConversationEventTopicInternalMessage : IEquatable<Que
     /// The timestamp when this communication disconnected from the conversation in the provider clock.
     /// </summary>
     /// <value>The timestamp when this communication disconnected from the conversation in the provider clock.</value>
-    [DataMember(Name = "disconnectedTime", EmitDefaultValue = false)]
+    [JsonPropertyName("disconnectedTime")]
     public DateTime? DisconnectedTime { get; set; }
 
 
@@ -220,7 +220,7 @@ public partial class QueueConversationEventTopicInternalMessage : IEquatable<Que
     /// The user ID for the participant on receiving side of the internal message conversation.
     /// </summary>
     /// <value>The user ID for the participant on receiving side of the internal message conversation.</value>
-    [DataMember(Name = "targetUserId", EmitDefaultValue = false)]
+    [JsonPropertyName("targetUserId")]
     public string TargetUserId { get; set; }
 
 
@@ -229,7 +229,7 @@ public partial class QueueConversationEventTopicInternalMessage : IEquatable<Que
     /// The user ID for the participant on sending side of the internal message conversation.
     /// </summary>
     /// <value>The user ID for the participant on sending side of the internal message conversation.</value>
-    [DataMember(Name = "sourceUserId", EmitDefaultValue = false)]
+    [JsonPropertyName("sourceUserId")]
     public string SourceUserId { get; set; }
 
 
@@ -238,7 +238,7 @@ public partial class QueueConversationEventTopicInternalMessage : IEquatable<Que
     /// Address and name data for a call endpoint.
     /// </summary>
     /// <value>Address and name data for a call endpoint.</value>
-    [DataMember(Name = "toAddress", EmitDefaultValue = false)]
+    [JsonPropertyName("toAddress")]
     public QueueConversationEventTopicAddress ToAddress { get; set; }
 
 
@@ -247,7 +247,7 @@ public partial class QueueConversationEventTopicInternalMessage : IEquatable<Que
     /// Address and name data for a call endpoint.
     /// </summary>
     /// <value>Address and name data for a call endpoint.</value>
-    [DataMember(Name = "fromAddress", EmitDefaultValue = false)]
+    [JsonPropertyName("fromAddress")]
     public QueueConversationEventTopicAddress FromAddress { get; set; }
 
 
@@ -256,7 +256,7 @@ public partial class QueueConversationEventTopicInternalMessage : IEquatable<Que
     /// The messages sent on this communication channel.
     /// </summary>
     /// <value>The messages sent on this communication channel.</value>
-    [DataMember(Name = "messages", EmitDefaultValue = false)]
+    [JsonPropertyName("messages")]
     public List<QueueConversationEventTopicInternalMessageDetails> Messages { get; set; }
 
 

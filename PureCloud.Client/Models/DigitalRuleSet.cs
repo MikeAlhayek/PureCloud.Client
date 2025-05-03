@@ -1,4 +1,3 @@
-using System.Runtime.Serialization;
 using System.Text;
 using System.Text.Json.Serialization;
 
@@ -7,7 +6,7 @@ namespace PureCloud.Client.Models;
 /// <summary>
 /// DigitalRuleSet
 /// </summary>
-[DataContract]
+
 public partial class DigitalRuleSet : IEquatable<DigitalRuleSet>
 {
 
@@ -38,7 +37,7 @@ public partial class DigitalRuleSet : IEquatable<DigitalRuleSet>
     /// The globally unique identifier for the object.
     /// </summary>
     /// <value>The globally unique identifier for the object.</value>
-    [DataMember(Name = "id", EmitDefaultValue = false)]
+    [JsonPropertyName("id")]
     public string Id { get; private set; }
 
 
@@ -46,7 +45,7 @@ public partial class DigitalRuleSet : IEquatable<DigitalRuleSet>
     /// <summary>
     /// Gets or Sets Name
     /// </summary>
-    [DataMember(Name = "name", EmitDefaultValue = false)]
+    [JsonPropertyName("name")]
     public string Name { get; set; }
 
 
@@ -55,7 +54,7 @@ public partial class DigitalRuleSet : IEquatable<DigitalRuleSet>
     /// Creation time of the entity. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z
     /// </summary>
     /// <value>Creation time of the entity. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z</value>
-    [DataMember(Name = "dateCreated", EmitDefaultValue = false)]
+    [JsonPropertyName("dateCreated")]
     public DateTime? DateCreated { get; private set; }
 
 
@@ -64,7 +63,7 @@ public partial class DigitalRuleSet : IEquatable<DigitalRuleSet>
     /// Last modified time of the entity. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z
     /// </summary>
     /// <value>Last modified time of the entity. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z</value>
-    [DataMember(Name = "dateModified", EmitDefaultValue = false)]
+    [JsonPropertyName("dateModified")]
     public DateTime? DateModified { get; private set; }
 
 
@@ -73,7 +72,7 @@ public partial class DigitalRuleSet : IEquatable<DigitalRuleSet>
     /// Required for updates, must match the version number of the most recent update
     /// </summary>
     /// <value>Required for updates, must match the version number of the most recent update</value>
-    [DataMember(Name = "version", EmitDefaultValue = false)]
+    [JsonPropertyName("version")]
     public int? Version { get; set; }
 
 
@@ -82,7 +81,7 @@ public partial class DigitalRuleSet : IEquatable<DigitalRuleSet>
     /// A ContactList to provide suggestions for contact columns on relevant conditions and actions.
     /// </summary>
     /// <value>A ContactList to provide suggestions for contact columns on relevant conditions and actions.</value>
-    [DataMember(Name = "contactList", EmitDefaultValue = false)]
+    [JsonPropertyName("contactList")]
     public DomainEntityRef ContactList { get; set; }
 
 
@@ -91,7 +90,7 @@ public partial class DigitalRuleSet : IEquatable<DigitalRuleSet>
     /// The list of rules.
     /// </summary>
     /// <value>The list of rules.</value>
-    [DataMember(Name = "rules", EmitDefaultValue = false)]
+    [JsonPropertyName("rules")]
     public List<DigitalRule> Rules { get; set; }
 
 
@@ -100,7 +99,7 @@ public partial class DigitalRuleSet : IEquatable<DigitalRuleSet>
     /// The URI for this object
     /// </summary>
     /// <value>The URI for this object</value>
-    [DataMember(Name = "selfUri", EmitDefaultValue = false)]
+    [JsonPropertyName("selfUri")]
     public string SelfUri { get; private set; }
 
 

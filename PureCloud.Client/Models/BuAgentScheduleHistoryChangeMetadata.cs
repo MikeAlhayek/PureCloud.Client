@@ -1,12 +1,12 @@
-using System.Runtime.Serialization;
 using System.Text;
+using System.Text.Json.Serialization;
 
 namespace PureCloud.Client.Models;
 
 /// <summary>
 /// BuAgentScheduleHistoryChangeMetadata
 /// </summary>
-[DataContract]
+
 public partial class BuAgentScheduleHistoryChangeMetadata : IEquatable<BuAgentScheduleHistoryChangeMetadata>
 {
     /// <summary>
@@ -27,7 +27,7 @@ public partial class BuAgentScheduleHistoryChangeMetadata : IEquatable<BuAgentSc
     /// The timestamp of the schedule change. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z
     /// </summary>
     /// <value>The timestamp of the schedule change. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z</value>
-    [DataMember(Name = "dateModified", EmitDefaultValue = false)]
+    [JsonPropertyName("dateModified")]
     public DateTime? DateModified { get; set; }
 
 
@@ -36,7 +36,7 @@ public partial class BuAgentScheduleHistoryChangeMetadata : IEquatable<BuAgentSc
     /// The user that made the schedule change. The id may be &#39;System&#39; if it was an automated process
     /// </summary>
     /// <value>The user that made the schedule change. The id may be &#39;System&#39; if it was an automated process</value>
-    [DataMember(Name = "modifiedBy", EmitDefaultValue = false)]
+    [JsonPropertyName("modifiedBy")]
     public UserReference ModifiedBy { get; set; }
 
 

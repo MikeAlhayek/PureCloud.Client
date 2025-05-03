@@ -1,12 +1,12 @@
-using System.Runtime.Serialization;
 using System.Text;
+using System.Text.Json.Serialization;
 
 namespace PureCloud.Client.Models;
 
 /// <summary>
 /// CampaignInteractions
 /// </summary>
-[DataContract]
+
 public partial class CampaignInteractions : IEquatable<CampaignInteractions>
 {
     /// <summary>
@@ -34,7 +34,7 @@ public partial class CampaignInteractions : IEquatable<CampaignInteractions>
     /// <summary>
     /// Gets or Sets Campaign
     /// </summary>
-    [DataMember(Name = "campaign", EmitDefaultValue = false)]
+    [JsonPropertyName("campaign")]
     public DomainEntityRef Campaign { get; set; }
 
 
@@ -42,7 +42,7 @@ public partial class CampaignInteractions : IEquatable<CampaignInteractions>
     /// <summary>
     /// Gets or Sets PendingInteractions
     /// </summary>
-    [DataMember(Name = "pendingInteractions", EmitDefaultValue = false)]
+    [JsonPropertyName("pendingInteractions")]
     public List<CampaignInteraction> PendingInteractions { get; set; }
 
 
@@ -50,7 +50,7 @@ public partial class CampaignInteractions : IEquatable<CampaignInteractions>
     /// <summary>
     /// Gets or Sets ProceedingInteractions
     /// </summary>
-    [DataMember(Name = "proceedingInteractions", EmitDefaultValue = false)]
+    [JsonPropertyName("proceedingInteractions")]
     public List<CampaignInteraction> ProceedingInteractions { get; set; }
 
 
@@ -58,7 +58,7 @@ public partial class CampaignInteractions : IEquatable<CampaignInteractions>
     /// <summary>
     /// Gets or Sets PreviewingInteractions
     /// </summary>
-    [DataMember(Name = "previewingInteractions", EmitDefaultValue = false)]
+    [JsonPropertyName("previewingInteractions")]
     public List<CampaignInteraction> PreviewingInteractions { get; set; }
 
 
@@ -66,7 +66,7 @@ public partial class CampaignInteractions : IEquatable<CampaignInteractions>
     /// <summary>
     /// Gets or Sets InteractingInteractions
     /// </summary>
-    [DataMember(Name = "interactingInteractions", EmitDefaultValue = false)]
+    [JsonPropertyName("interactingInteractions")]
     public List<CampaignInteraction> InteractingInteractions { get; set; }
 
 
@@ -74,7 +74,7 @@ public partial class CampaignInteractions : IEquatable<CampaignInteractions>
     /// <summary>
     /// Gets or Sets ScheduledInteractions
     /// </summary>
-    [DataMember(Name = "scheduledInteractions", EmitDefaultValue = false)]
+    [JsonPropertyName("scheduledInteractions")]
     public List<CampaignInteraction> ScheduledInteractions { get; set; }
 
 

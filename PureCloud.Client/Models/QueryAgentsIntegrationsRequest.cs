@@ -1,4 +1,3 @@
-using System.Runtime.Serialization;
 using System.Text;
 using System.Text.Json.Serialization;
 
@@ -7,7 +6,7 @@ namespace PureCloud.Client.Models;
 /// <summary>
 /// Query integrations for agents request
 /// </summary>
-[DataContract]
+
 public partial class QueryAgentsIntegrationsRequest : IEquatable<QueryAgentsIntegrationsRequest>
 {
 
@@ -32,7 +31,7 @@ public partial class QueryAgentsIntegrationsRequest : IEquatable<QueryAgentsInte
     /// The IDs of the agents to query associated integrations
     /// </summary>
     /// <value>The IDs of the agents to query associated integrations</value>
-    [DataMember(Name = "agentIds", EmitDefaultValue = false)]
+    [JsonPropertyName("agentIds")]
     public List<string> AgentIds { get; set; }
 
 

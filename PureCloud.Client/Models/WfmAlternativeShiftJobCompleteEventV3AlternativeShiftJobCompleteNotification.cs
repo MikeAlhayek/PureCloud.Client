@@ -7,13 +7,13 @@ namespace PureCloud.Client.Models;
 /// <summary>
 /// WfmAlternativeShiftJobCompleteEventV3AlternativeShiftJobCompleteNotification
 /// </summary>
-[DataContract]
+
 public partial class WfmAlternativeShiftJobCompleteEventV3AlternativeShiftJobCompleteNotification : IEquatable<WfmAlternativeShiftJobCompleteEventV3AlternativeShiftJobCompleteNotification>
 {
     /// <summary>
     /// Gets or Sets Type
     /// </summary>
-    [JsonConverter(typeof(JsonStringEnumConverter))]
+    
     public enum TypeEnum
     {
         /// <summary>
@@ -57,7 +57,7 @@ public partial class WfmAlternativeShiftJobCompleteEventV3AlternativeShiftJobCom
     /// <summary>
     /// Gets or Sets Status
     /// </summary>
-    [JsonConverter(typeof(JsonStringEnumConverter))]
+    
     public enum StatusEnum
     {
         /// <summary>
@@ -89,12 +89,12 @@ public partial class WfmAlternativeShiftJobCompleteEventV3AlternativeShiftJobCom
     /// <summary>
     /// Gets or Sets Type
     /// </summary>
-    [DataMember(Name = "type", EmitDefaultValue = false)]
+    [JsonPropertyName("type")]
     public TypeEnum? Type { get; set; }
     /// <summary>
     /// Gets or Sets Status
     /// </summary>
-    [DataMember(Name = "status", EmitDefaultValue = false)]
+    [JsonPropertyName("status")]
     public StatusEnum? Status { get; set; }
     /// <summary>
     /// Initializes a new instance of the <see cref="WfmAlternativeShiftJobCompleteEventV3AlternativeShiftJobCompleteNotification" /> class.
@@ -119,7 +119,7 @@ public partial class WfmAlternativeShiftJobCompleteEventV3AlternativeShiftJobCom
     /// <summary>
     /// Gets or Sets Id
     /// </summary>
-    [DataMember(Name = "id", EmitDefaultValue = false)]
+    [JsonPropertyName("id")]
     public string Id { get; set; }
 
 
@@ -131,7 +131,7 @@ public partial class WfmAlternativeShiftJobCompleteEventV3AlternativeShiftJobCom
     /// <summary>
     /// Gets or Sets DownloadUrl
     /// </summary>
-    [DataMember(Name = "downloadUrl", EmitDefaultValue = false)]
+    [JsonPropertyName("downloadUrl")]
     public string DownloadUrl { get; set; }
 
 
@@ -139,7 +139,7 @@ public partial class WfmAlternativeShiftJobCompleteEventV3AlternativeShiftJobCom
     /// <summary>
     /// Gets or Sets Error
     /// </summary>
-    [DataMember(Name = "error", EmitDefaultValue = false)]
+    [JsonPropertyName("error")]
     public WfmAlternativeShiftJobCompleteEventV3ErrorBody Error { get; set; }
 
 

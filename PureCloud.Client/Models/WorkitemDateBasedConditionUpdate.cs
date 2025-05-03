@@ -7,14 +7,14 @@ namespace PureCloud.Client.Models;
 /// <summary>
 /// WorkitemDateBasedConditionUpdate
 /// </summary>
-[DataContract]
+
 public partial class WorkitemDateBasedConditionUpdate : IEquatable<WorkitemDateBasedConditionUpdate>
 {
     /// <summary>
     /// The name of the workitem date attribute.
     /// </summary>
     /// <value>The name of the workitem date attribute.</value>
-    [JsonConverter(typeof(JsonStringEnumConverter))]
+    
     public enum AttributeEnum
     {
         /// <summary>
@@ -47,7 +47,7 @@ public partial class WorkitemDateBasedConditionUpdate : IEquatable<WorkitemDateB
     /// The name of the workitem date attribute.
     /// </summary>
     /// <value>The name of the workitem date attribute.</value>
-    [DataMember(Name = "attribute", EmitDefaultValue = false)]
+    [JsonPropertyName("attribute")]
     public AttributeEnum? Attribute { get; set; }
     /// <summary>
     /// Initializes a new instance of the <see cref="WorkitemDateBasedConditionUpdate" /> class.
@@ -69,7 +69,7 @@ public partial class WorkitemDateBasedConditionUpdate : IEquatable<WorkitemDateB
     /// The time in minutes before or after the date attribute.
     /// </summary>
     /// <value>The time in minutes before or after the date attribute.</value>
-    [DataMember(Name = "relativeMinutesToInvocation", EmitDefaultValue = false)]
+    [JsonPropertyName("relativeMinutesToInvocation")]
     public int? RelativeMinutesToInvocation { get; set; }
 
 

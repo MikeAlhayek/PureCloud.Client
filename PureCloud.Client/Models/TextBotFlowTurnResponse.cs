@@ -7,14 +7,14 @@ namespace PureCloud.Client.Models;
 /// <summary>
 /// Information related to a success bot flow turn request.
 /// </summary>
-[DataContract]
+
 public partial class TextBotFlowTurnResponse : IEquatable<TextBotFlowTurnResponse>
 {
     /// <summary>
     /// Indicates the suggested next action. If appropriate, the matching output event object includes additional information.
     /// </summary>
     /// <value>Indicates the suggested next action. If appropriate, the matching output event object includes additional information.</value>
-    [JsonConverter(typeof(JsonStringEnumConverter))]
+    
     public enum NextActionTypeEnum
     {
         /// <summary>
@@ -53,7 +53,7 @@ public partial class TextBotFlowTurnResponse : IEquatable<TextBotFlowTurnRespons
     /// Indicates the suggested next action. If appropriate, the matching output event object includes additional information.
     /// </summary>
     /// <value>Indicates the suggested next action. If appropriate, the matching output event object includes additional information.</value>
-    [DataMember(Name = "nextActionType", EmitDefaultValue = false)]
+    [JsonPropertyName("nextActionType")]
     public NextActionTypeEnum? NextActionType { get; set; }
 
     /// <summary>
@@ -89,7 +89,7 @@ public partial class TextBotFlowTurnResponse : IEquatable<TextBotFlowTurnRespons
     /// The ID of the bot flow turn. If additional turns are needed, supply this ID as the previous turn in your next turn request.
     /// </summary>
     /// <value>The ID of the bot flow turn. If additional turns are needed, supply this ID as the previous turn in your next turn request.</value>
-    [DataMember(Name = "id", EmitDefaultValue = false)]
+    [JsonPropertyName("id")]
     public string Id { get; set; }
 
 
@@ -98,7 +98,7 @@ public partial class TextBotFlowTurnResponse : IEquatable<TextBotFlowTurnRespons
     /// The reference to a previous turn, if applicable.
     /// </summary>
     /// <value>The reference to a previous turn, if applicable.</value>
-    [DataMember(Name = "previousTurn", EmitDefaultValue = false)]
+    [JsonPropertyName("previousTurn")]
     public TextBotTurnReference PreviousTurn { get; set; }
 
 
@@ -107,7 +107,7 @@ public partial class TextBotFlowTurnResponse : IEquatable<TextBotFlowTurnRespons
     /// The output prompts for this turn.
     /// </summary>
     /// <value>The output prompts for this turn.</value>
-    [DataMember(Name = "prompts", EmitDefaultValue = false)]
+    [JsonPropertyName("prompts")]
     public TextBotOutputPrompts Prompts { get; set; }
 
 
@@ -118,7 +118,7 @@ public partial class TextBotFlowTurnResponse : IEquatable<TextBotFlowTurnRespons
     /// The next action directive for this turn if it is a Disconnect type.
     /// </summary>
     /// <value>The next action directive for this turn if it is a Disconnect type.</value>
-    [DataMember(Name = "nextActionDisconnect", EmitDefaultValue = false)]
+    [JsonPropertyName("nextActionDisconnect")]
     public TextBotDisconnectAction NextActionDisconnect { get; set; }
 
 
@@ -127,7 +127,7 @@ public partial class TextBotFlowTurnResponse : IEquatable<TextBotFlowTurnRespons
     /// The next action directive for this turn if it is a WaitForInput type.
     /// </summary>
     /// <value>The next action directive for this turn if it is a WaitForInput type.</value>
-    [DataMember(Name = "nextActionWaitForInput", EmitDefaultValue = false)]
+    [JsonPropertyName("nextActionWaitForInput")]
     public TextBotWaitForInputAction NextActionWaitForInput { get; set; }
 
 
@@ -136,7 +136,7 @@ public partial class TextBotFlowTurnResponse : IEquatable<TextBotFlowTurnRespons
     /// The next action directive for this turn if it is an Exit type.
     /// </summary>
     /// <value>The next action directive for this turn if it is an Exit type.</value>
-    [DataMember(Name = "nextActionExit", EmitDefaultValue = false)]
+    [JsonPropertyName("nextActionExit")]
     public TextBotExitAction NextActionExit { get; set; }
 
 

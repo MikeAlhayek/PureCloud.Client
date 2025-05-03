@@ -1,4 +1,3 @@
-using System.Runtime.Serialization;
 using System.Text;
 using System.Text.Json.Serialization;
 
@@ -7,7 +6,7 @@ namespace PureCloud.Client.Models;
 /// <summary>
 /// NluConfig
 /// </summary>
-[DataContract]
+
 public partial class NluConfig : IEquatable<NluConfig>
 {
 
@@ -34,7 +33,7 @@ public partial class NluConfig : IEquatable<NluConfig>
     /// NLU domain.
     /// </summary>
     /// <value>NLU domain.</value>
-    [DataMember(Name = "domain", EmitDefaultValue = false)]
+    [JsonPropertyName("domain")]
     public CopilotNluDomain Domain { get; set; }
 
 
@@ -43,7 +42,7 @@ public partial class NluConfig : IEquatable<NluConfig>
     /// Minimum confidence value of accepting NLU intents, must be greater than 0 and less than 1.
     /// </summary>
     /// <value>Minimum confidence value of accepting NLU intents, must be greater than 0 and less than 1.</value>
-    [DataMember(Name = "intentConfidenceThreshold", EmitDefaultValue = false)]
+    [JsonPropertyName("intentConfidenceThreshold")]
     public float? IntentConfidenceThreshold { get; set; }
 
 

@@ -1,12 +1,12 @@
-using System.Runtime.Serialization;
 using System.Text;
+using System.Text.Json.Serialization;
 
 namespace PureCloud.Client.Models;
 
 /// <summary>
 /// ActionMapEstimateRequest
 /// </summary>
-[DataContract]
+
 public partial class ActionMapEstimateRequest : IEquatable<ActionMapEstimateRequest>
 {
     /// <summary>
@@ -27,7 +27,7 @@ public partial class ActionMapEstimateRequest : IEquatable<ActionMapEstimateRequ
     /// List of Segment IDs.
     /// </summary>
     /// <value>List of Segment IDs.</value>
-    [DataMember(Name = "segmentIds", EmitDefaultValue = false)]
+    [JsonPropertyName("segmentIds")]
     public List<string> SegmentIds { get; set; }
 
 
@@ -36,7 +36,7 @@ public partial class ActionMapEstimateRequest : IEquatable<ActionMapEstimateRequ
     /// Outcome Criteria containing outcomeId and probability thresholds.
     /// </summary>
     /// <value>Outcome Criteria containing outcomeId and probability thresholds.</value>
-    [DataMember(Name = "outcomeCriteria", EmitDefaultValue = false)]
+    [JsonPropertyName("outcomeCriteria")]
     public ActionMapEstimateOutcomeCriteria OutcomeCriteria { get; set; }
 
 

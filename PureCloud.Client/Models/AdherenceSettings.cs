@@ -1,12 +1,12 @@
-using System.Runtime.Serialization;
 using System.Text;
+using System.Text.Json.Serialization;
 
 namespace PureCloud.Client.Models;
 
 /// <summary>
 /// AdherenceSettings
 /// </summary>
-[DataContract]
+
 public partial class AdherenceSettings : IEquatable<AdherenceSettings>
 {
     /// <summary>
@@ -35,7 +35,7 @@ public partial class AdherenceSettings : IEquatable<AdherenceSettings>
     /// The threshold in minutes where an alert will be triggered when an agent is considered severely out of adherence
     /// </summary>
     /// <value>The threshold in minutes where an alert will be triggered when an agent is considered severely out of adherence</value>
-    [DataMember(Name = "severeAlertThresholdMinutes", EmitDefaultValue = false)]
+    [JsonPropertyName("severeAlertThresholdMinutes")]
     public int? SevereAlertThresholdMinutes { get; set; }
 
 
@@ -44,7 +44,7 @@ public partial class AdherenceSettings : IEquatable<AdherenceSettings>
     /// Target adherence percentage
     /// </summary>
     /// <value>Target adherence percentage</value>
-    [DataMember(Name = "adherenceTargetPercent", EmitDefaultValue = false)]
+    [JsonPropertyName("adherenceTargetPercent")]
     public int? AdherenceTargetPercent { get; set; }
 
 
@@ -53,7 +53,7 @@ public partial class AdherenceSettings : IEquatable<AdherenceSettings>
     /// The threshold in seconds for which agents should not be penalized for being momentarily out of adherence
     /// </summary>
     /// <value>The threshold in seconds for which agents should not be penalized for being momentarily out of adherence</value>
-    [DataMember(Name = "adherenceExceptionThresholdSeconds", EmitDefaultValue = false)]
+    [JsonPropertyName("adherenceExceptionThresholdSeconds")]
     public int? AdherenceExceptionThresholdSeconds { get; set; }
 
 
@@ -62,7 +62,7 @@ public partial class AdherenceSettings : IEquatable<AdherenceSettings>
     /// Whether to treat all non-on-queue activities as equivalent for adherence purposes
     /// </summary>
     /// <value>Whether to treat all non-on-queue activities as equivalent for adherence purposes</value>
-    [DataMember(Name = "nonOnQueueActivitiesEquivalent", EmitDefaultValue = false)]
+    [JsonPropertyName("nonOnQueueActivitiesEquivalent")]
     public bool? NonOnQueueActivitiesEquivalent { get; set; }
 
 
@@ -71,7 +71,7 @@ public partial class AdherenceSettings : IEquatable<AdherenceSettings>
     /// Whether to track on-queue activities
     /// </summary>
     /// <value>Whether to track on-queue activities</value>
-    [DataMember(Name = "trackOnQueueActivity", EmitDefaultValue = false)]
+    [JsonPropertyName("trackOnQueueActivity")]
     public bool? TrackOnQueueActivity { get; set; }
 
 
@@ -80,7 +80,7 @@ public partial class AdherenceSettings : IEquatable<AdherenceSettings>
     /// Activity categories that should be ignored for adherence purposes
     /// </summary>
     /// <value>Activity categories that should be ignored for adherence purposes</value>
-    [DataMember(Name = "ignoredActivityCategories", EmitDefaultValue = false)]
+    [JsonPropertyName("ignoredActivityCategories")]
     public IgnoredActivityCategories IgnoredActivityCategories { get; set; }
 
 

@@ -1,4 +1,3 @@
-using System.Runtime.Serialization;
 using System.Text;
 using System.Text.Json.Serialization;
 
@@ -7,7 +6,7 @@ namespace PureCloud.Client.Models;
 /// <summary>
 /// EdgeAutoUpdateConfig
 /// </summary>
-[DataContract]
+
 public partial class EdgeAutoUpdateConfig : IEquatable<EdgeAutoUpdateConfig>
 {
 
@@ -38,7 +37,7 @@ public partial class EdgeAutoUpdateConfig : IEquatable<EdgeAutoUpdateConfig>
     /// The timezone of the window in which any updates to the edges assigned to the site can be applied. The minimum size of the window is 2 hours.
     /// </summary>
     /// <value>The timezone of the window in which any updates to the edges assigned to the site can be applied. The minimum size of the window is 2 hours.</value>
-    [DataMember(Name = "timeZone", EmitDefaultValue = false)]
+    [JsonPropertyName("timeZone")]
     public string TimeZone { get; set; }
 
 
@@ -47,7 +46,7 @@ public partial class EdgeAutoUpdateConfig : IEquatable<EdgeAutoUpdateConfig>
     /// The recurrence rule for updating the Edges assigned to the site. The only supported frequencies are daily and weekly. Weekly frequencies require a day list with at least oneday specified. All other configurations are not supported.
     /// </summary>
     /// <value>The recurrence rule for updating the Edges assigned to the site. The only supported frequencies are daily and weekly. Weekly frequencies require a day list with at least oneday specified. All other configurations are not supported.</value>
-    [DataMember(Name = "rrule", EmitDefaultValue = false)]
+    [JsonPropertyName("rrule")]
     public string Rrule { get; set; }
 
 
@@ -56,7 +55,7 @@ public partial class EdgeAutoUpdateConfig : IEquatable<EdgeAutoUpdateConfig>
     /// Date time is represented as an ISO-8601 string without a timezone. For example: yyyy-MM-ddTHH:mm:ss.SSS
     /// </summary>
     /// <value>Date time is represented as an ISO-8601 string without a timezone. For example: yyyy-MM-ddTHH:mm:ss.SSS</value>
-    [DataMember(Name = "start", EmitDefaultValue = false)]
+    [JsonPropertyName("start")]
     public DateTime? Start { get; set; }
 
 
@@ -65,7 +64,7 @@ public partial class EdgeAutoUpdateConfig : IEquatable<EdgeAutoUpdateConfig>
     /// Date time is represented as an ISO-8601 string without a timezone. For example: yyyy-MM-ddTHH:mm:ss.SSS
     /// </summary>
     /// <value>Date time is represented as an ISO-8601 string without a timezone. For example: yyyy-MM-ddTHH:mm:ss.SSS</value>
-    [DataMember(Name = "end", EmitDefaultValue = false)]
+    [JsonPropertyName("end")]
     public DateTime? End { get; set; }
 
 

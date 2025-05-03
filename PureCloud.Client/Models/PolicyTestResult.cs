@@ -1,12 +1,12 @@
-using System.Runtime.Serialization;
 using System.Text;
+using System.Text.Json.Serialization;
 
 namespace PureCloud.Client.Models;
 
 /// <summary>
 /// PolicyTestResult
 /// </summary>
-[DataContract]
+
 public partial class PolicyTestResult : IEquatable<PolicyTestResult>
 {
     /// <summary>
@@ -31,7 +31,7 @@ public partial class PolicyTestResult : IEquatable<PolicyTestResult>
     /// The ID of the policy being tested.
     /// </summary>
     /// <value>The ID of the policy being tested.</value>
-    [DataMember(Name = "id", EmitDefaultValue = false)]
+    [JsonPropertyName("id")]
     public string Id { get; set; }
 
 
@@ -40,7 +40,7 @@ public partial class PolicyTestResult : IEquatable<PolicyTestResult>
     /// The name of the policy being tested.
     /// </summary>
     /// <value>The name of the policy being tested.</value>
-    [DataMember(Name = "name", EmitDefaultValue = false)]
+    [JsonPropertyName("name")]
     public string Name { get; set; }
 
 
@@ -49,7 +49,7 @@ public partial class PolicyTestResult : IEquatable<PolicyTestResult>
     /// The result of the evaluation against supplied test data.
     /// </summary>
     /// <value>The result of the evaluation against supplied test data.</value>
-    [DataMember(Name = "result", EmitDefaultValue = false)]
+    [JsonPropertyName("result")]
     public string Result { get; set; }
 
 
@@ -58,7 +58,7 @@ public partial class PolicyTestResult : IEquatable<PolicyTestResult>
     /// The results of conditions, with their boolean result.
     /// </summary>
     /// <value>The results of conditions, with their boolean result.</value>
-    [DataMember(Name = "policyConditionResults", EmitDefaultValue = false)]
+    [JsonPropertyName("policyConditionResults")]
     public List<PolicyConditionResult> PolicyConditionResults { get; set; }
 
 

@@ -1,4 +1,3 @@
-using System.Runtime.Serialization;
 using System.Text;
 using System.Text.Json.Serialization;
 
@@ -7,7 +6,7 @@ namespace PureCloud.Client.Models;
 /// <summary>
 /// OpenDataIngestionRuleRequest
 /// </summary>
-[DataContract]
+
 public partial class OpenDataIngestionRuleRequest : IEquatable<OpenDataIngestionRuleRequest>
 {
 
@@ -36,7 +35,7 @@ public partial class OpenDataIngestionRuleRequest : IEquatable<OpenDataIngestion
     /// The name of the data ingestion rule.
     /// </summary>
     /// <value>The name of the data ingestion rule.</value>
-    [DataMember(Name = "name", EmitDefaultValue = false)]
+    [JsonPropertyName("name")]
     public string Name { get; set; }
 
 
@@ -45,7 +44,7 @@ public partial class OpenDataIngestionRuleRequest : IEquatable<OpenDataIngestion
     /// A description of the data ingestion rule.
     /// </summary>
     /// <value>A description of the data ingestion rule.</value>
-    [DataMember(Name = "description", EmitDefaultValue = false)]
+    [JsonPropertyName("description")]
     public string Description { get; set; }
 
 
@@ -54,7 +53,7 @@ public partial class OpenDataIngestionRuleRequest : IEquatable<OpenDataIngestion
     /// The external source associated with this open data ingestion rule, which will be used when performing identity resolution
     /// </summary>
     /// <value>The external source associated with this open data ingestion rule, which will be used when performing identity resolution</value>
-    [DataMember(Name = "externalSource", EmitDefaultValue = false)]
+    [JsonPropertyName("externalSource")]
     public DomainEntityRef ExternalSource { get; set; }
 
 

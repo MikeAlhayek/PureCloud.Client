@@ -7,14 +7,14 @@ namespace PureCloud.Client.Models;
 /// <summary>
 /// LearningSlotScheduleActivity
 /// </summary>
-[DataContract]
+
 public partial class LearningSlotScheduleActivity : IEquatable<LearningSlotScheduleActivity>
 {
     /// <summary>
     /// The type of the external activity associated with this activity, if applicable
     /// </summary>
     /// <value>The type of the external activity associated with this activity, if applicable</value>
-    [JsonConverter(typeof(JsonStringEnumConverter))]
+    
     public enum ExternalActivityTypeEnum
     {
         /// <summary>
@@ -47,7 +47,7 @@ public partial class LearningSlotScheduleActivity : IEquatable<LearningSlotSched
     /// The type of the external activity associated with this activity, if applicable
     /// </summary>
     /// <value>The type of the external activity associated with this activity, if applicable</value>
-    [DataMember(Name = "externalActivityType", EmitDefaultValue = false)]
+    [JsonPropertyName("externalActivityType")]
     public ExternalActivityTypeEnum? ExternalActivityType { get; set; }
     /// <summary>
     /// Initializes a new instance of the <see cref="LearningSlotScheduleActivity" /> class.
@@ -79,7 +79,7 @@ public partial class LearningSlotScheduleActivity : IEquatable<LearningSlotSched
     /// The start date/time of this activity. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z
     /// </summary>
     /// <value>The start date/time of this activity. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z</value>
-    [DataMember(Name = "dateStart", EmitDefaultValue = false)]
+    [JsonPropertyName("dateStart")]
     public DateTime? DateStart { get; set; }
 
 
@@ -88,7 +88,7 @@ public partial class LearningSlotScheduleActivity : IEquatable<LearningSlotSched
     /// The length of this activity in minutes
     /// </summary>
     /// <value>The length of this activity in minutes</value>
-    [DataMember(Name = "lengthMinutes", EmitDefaultValue = false)]
+    [JsonPropertyName("lengthMinutes")]
     public int? LengthMinutes { get; set; }
 
 
@@ -97,7 +97,7 @@ public partial class LearningSlotScheduleActivity : IEquatable<LearningSlotSched
     /// The description of this activity
     /// </summary>
     /// <value>The description of this activity</value>
-    [DataMember(Name = "description", EmitDefaultValue = false)]
+    [JsonPropertyName("description")]
     public string Description { get; set; }
 
 
@@ -106,7 +106,7 @@ public partial class LearningSlotScheduleActivity : IEquatable<LearningSlotSched
     /// The ID of the activity code associated with this activity
     /// </summary>
     /// <value>The ID of the activity code associated with this activity</value>
-    [DataMember(Name = "activityCodeId", EmitDefaultValue = false)]
+    [JsonPropertyName("activityCodeId")]
     public string ActivityCodeId { get; set; }
 
 
@@ -115,7 +115,7 @@ public partial class LearningSlotScheduleActivity : IEquatable<LearningSlotSched
     /// Whether this activity is paid
     /// </summary>
     /// <value>Whether this activity is paid</value>
-    [DataMember(Name = "paid", EmitDefaultValue = false)]
+    [JsonPropertyName("paid")]
     public bool? Paid { get; set; }
 
 
@@ -124,7 +124,7 @@ public partial class LearningSlotScheduleActivity : IEquatable<LearningSlotSched
     /// The ID of the time off request associated with this activity, if applicable
     /// </summary>
     /// <value>The ID of the time off request associated with this activity, if applicable</value>
-    [DataMember(Name = "timeOffRequestId", EmitDefaultValue = false)]
+    [JsonPropertyName("timeOffRequestId")]
     public string TimeOffRequestId { get; set; }
 
 
@@ -133,7 +133,7 @@ public partial class LearningSlotScheduleActivity : IEquatable<LearningSlotSched
     /// The ID of the external activity associated with this activity, if applicable
     /// </summary>
     /// <value>The ID of the external activity associated with this activity, if applicable</value>
-    [DataMember(Name = "externalActivityId", EmitDefaultValue = false)]
+    [JsonPropertyName("externalActivityId")]
     public string ExternalActivityId { get; set; }
 
 

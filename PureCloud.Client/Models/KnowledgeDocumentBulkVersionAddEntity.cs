@@ -1,12 +1,12 @@
-using System.Runtime.Serialization;
 using System.Text;
+using System.Text.Json.Serialization;
 
 namespace PureCloud.Client.Models;
 
 /// <summary>
 /// KnowledgeDocumentBulkVersionAddEntity
 /// </summary>
-[DataContract]
+
 public partial class KnowledgeDocumentBulkVersionAddEntity : IEquatable<KnowledgeDocumentBulkVersionAddEntity>
 {
     /// <summary>
@@ -29,7 +29,7 @@ public partial class KnowledgeDocumentBulkVersionAddEntity : IEquatable<Knowledg
     /// The globally unique identifier for the object.
     /// </summary>
     /// <value>The globally unique identifier for the object.</value>
-    [DataMember(Name = "id", EmitDefaultValue = false)]
+    [JsonPropertyName("id")]
     public string Id { get; set; }
 
 
@@ -38,7 +38,7 @@ public partial class KnowledgeDocumentBulkVersionAddEntity : IEquatable<Knowledg
     /// The globally unique identifier for the document version. If the value is provided, the document is restored to the given version.
     /// </summary>
     /// <value>The globally unique identifier for the document version. If the value is provided, the document is restored to the given version.</value>
-    [DataMember(Name = "restoreFromVersionId", EmitDefaultValue = false)]
+    [JsonPropertyName("restoreFromVersionId")]
     public string RestoreFromVersionId { get; set; }
 
 
@@ -47,7 +47,7 @@ public partial class KnowledgeDocumentBulkVersionAddEntity : IEquatable<Knowledg
     /// Indicates if the document&#39;s previous version will be restored
     /// </summary>
     /// <value>Indicates if the document&#39;s previous version will be restored</value>
-    [DataMember(Name = "restorePrevious", EmitDefaultValue = false)]
+    [JsonPropertyName("restorePrevious")]
     public bool? RestorePrevious { get; set; }
 
 

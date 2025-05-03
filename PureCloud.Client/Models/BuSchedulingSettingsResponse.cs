@@ -7,13 +7,13 @@ namespace PureCloud.Client.Models;
 /// <summary>
 /// BuSchedulingSettingsResponse
 /// </summary>
-[DataContract]
+
 public partial class BuSchedulingSettingsResponse : IEquatable<BuSchedulingSettingsResponse>
 {
     /// <summary>
     /// Gets or Sets SyncTimeOffProperties
     /// </summary>
-    [JsonConverter(typeof(JsonStringEnumConverter))]
+    
     public enum SyncTimeOffPropertiesEnum
     {
         /// <summary>
@@ -34,7 +34,7 @@ public partial class BuSchedulingSettingsResponse : IEquatable<BuSchedulingSetti
     /// The activity smoothing type for schedule generation in this business unit
     /// </summary>
     /// <value>The activity smoothing type for schedule generation in this business unit</value>
-    [JsonConverter(typeof(JsonStringEnumConverter))]
+    
     public enum ActivitySmoothingTypeEnum
     {
         /// <summary>
@@ -67,7 +67,7 @@ public partial class BuSchedulingSettingsResponse : IEquatable<BuSchedulingSetti
     /// The activity smoothing type for schedule generation in this business unit
     /// </summary>
     /// <value>The activity smoothing type for schedule generation in this business unit</value>
-    [DataMember(Name = "activitySmoothingType", EmitDefaultValue = false)]
+    [JsonPropertyName("activitySmoothingType")]
     public ActivitySmoothingTypeEnum? ActivitySmoothingType { get; set; }
 
     /// <summary>
@@ -101,7 +101,7 @@ public partial class BuSchedulingSettingsResponse : IEquatable<BuSchedulingSetti
     /// Schedule generation message severity configuration
     /// </summary>
     /// <value>Schedule generation message severity configuration</value>
-    [DataMember(Name = "messageSeverities", EmitDefaultValue = false)]
+    [JsonPropertyName("messageSeverities")]
     public List<SchedulerMessageTypeSeverity> MessageSeverities { get; set; }
 
 
@@ -110,7 +110,7 @@ public partial class BuSchedulingSettingsResponse : IEquatable<BuSchedulingSetti
     /// Synchronize set of time off properties from scheduled activities to time off requests when the schedule is published.
     /// </summary>
     /// <value>Synchronize set of time off properties from scheduled activities to time off requests when the schedule is published.</value>
-    [DataMember(Name = "syncTimeOffProperties", EmitDefaultValue = false)]
+    [JsonPropertyName("syncTimeOffProperties")]
     public List<SyncTimeOffPropertiesEnum> SyncTimeOffProperties { get; set; }
 
 
@@ -119,7 +119,7 @@ public partial class BuSchedulingSettingsResponse : IEquatable<BuSchedulingSetti
     /// Configures the max percent increase and decrease of service goals for this business unit
     /// </summary>
     /// <value>Configures the max percent increase and decrease of service goals for this business unit</value>
-    [DataMember(Name = "serviceGoalImpact", EmitDefaultValue = false)]
+    [JsonPropertyName("serviceGoalImpact")]
     public WfmServiceGoalImpactSettings ServiceGoalImpact { get; set; }
 
 
@@ -128,7 +128,7 @@ public partial class BuSchedulingSettingsResponse : IEquatable<BuSchedulingSetti
     /// Indicates whether or not per minute granularity for scheduling will be enabled for this business unit. Defaults to false.
     /// </summary>
     /// <value>Indicates whether or not per minute granularity for scheduling will be enabled for this business unit. Defaults to false.</value>
-    [DataMember(Name = "allowWorkPlanPerMinuteGranularity", EmitDefaultValue = false)]
+    [JsonPropertyName("allowWorkPlanPerMinuteGranularity")]
     public bool? AllowWorkPlanPerMinuteGranularity { get; set; }
 
 
@@ -139,7 +139,7 @@ public partial class BuSchedulingSettingsResponse : IEquatable<BuSchedulingSetti
     /// Indicates whether to provide variability in schedule generation
     /// </summary>
     /// <value>Indicates whether to provide variability in schedule generation</value>
-    [DataMember(Name = "induceScheduleVariability", EmitDefaultValue = false)]
+    [JsonPropertyName("induceScheduleVariability")]
     public bool? InduceScheduleVariability { get; set; }
 
 

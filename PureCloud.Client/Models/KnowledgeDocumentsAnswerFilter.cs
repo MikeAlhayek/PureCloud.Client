@@ -7,14 +7,14 @@ namespace PureCloud.Client.Models;
 /// <summary>
 /// KnowledgeDocumentsAnswerFilter
 /// </summary>
-[DataContract]
+
 public partial class KnowledgeDocumentsAnswerFilter : IEquatable<KnowledgeDocumentsAnswerFilter>
 {
     /// <summary>
     /// The language of the documents.
     /// </summary>
     /// <value>The language of the documents.</value>
-    [JsonConverter(typeof(JsonStringEnumConverter))]
+    
     public enum LanguageEnum
     {
         /// <summary>
@@ -305,7 +305,7 @@ public partial class KnowledgeDocumentsAnswerFilter : IEquatable<KnowledgeDocume
     /// The appType
     /// </summary>
     /// <value>The appType</value>
-    [JsonConverter(typeof(JsonStringEnumConverter))]
+    
     public enum AppTypeEnum
     {
         /// <summary>
@@ -350,7 +350,7 @@ public partial class KnowledgeDocumentsAnswerFilter : IEquatable<KnowledgeDocume
     /// The query type
     /// </summary>
     /// <value>The query type</value>
-    [JsonConverter(typeof(JsonStringEnumConverter))]
+    
     public enum QueryTypeEnum
     {
         /// <summary>
@@ -406,7 +406,7 @@ public partial class KnowledgeDocumentsAnswerFilter : IEquatable<KnowledgeDocume
     /// <summary>
     /// Gets or Sets AnswerMode
     /// </summary>
-    [JsonConverter(typeof(JsonStringEnumConverter))]
+    
     public enum AnswerModeEnum
     {
         /// <summary>
@@ -433,19 +433,19 @@ public partial class KnowledgeDocumentsAnswerFilter : IEquatable<KnowledgeDocume
     /// The language of the documents.
     /// </summary>
     /// <value>The language of the documents.</value>
-    [DataMember(Name = "language", EmitDefaultValue = false)]
+    [JsonPropertyName("language")]
     public LanguageEnum? Language { get; set; }
     /// <summary>
     /// The appType
     /// </summary>
     /// <value>The appType</value>
-    [DataMember(Name = "appType", EmitDefaultValue = false)]
+    [JsonPropertyName("appType")]
     public AppTypeEnum? AppType { get; set; }
     /// <summary>
     /// The query type
     /// </summary>
     /// <value>The query type</value>
-    [DataMember(Name = "queryType", EmitDefaultValue = false)]
+    [JsonPropertyName("queryType")]
     public QueryTypeEnum? QueryType { get; set; }
 
     /// <summary>
@@ -483,7 +483,7 @@ public partial class KnowledgeDocumentsAnswerFilter : IEquatable<KnowledgeDocume
     /// The search query.
     /// </summary>
     /// <value>The search query.</value>
-    [DataMember(Name = "query", EmitDefaultValue = false)]
+    [JsonPropertyName("query")]
     public string Query { get; set; }
 
 
@@ -498,7 +498,7 @@ public partial class KnowledgeDocumentsAnswerFilter : IEquatable<KnowledgeDocume
     /// The search id.
     /// </summary>
     /// <value>The search id.</value>
-    [DataMember(Name = "searchId", EmitDefaultValue = false)]
+    [JsonPropertyName("searchId")]
     public string SearchId { get; set; }
 
 
@@ -507,7 +507,7 @@ public partial class KnowledgeDocumentsAnswerFilter : IEquatable<KnowledgeDocume
     /// If specified - insert highlight data into the variation content.
     /// </summary>
     /// <value>If specified - insert highlight data into the variation content.</value>
-    [DataMember(Name = "insertHighlightIntoVariationContent", EmitDefaultValue = false)]
+    [JsonPropertyName("insertHighlightIntoVariationContent")]
     public bool? InsertHighlightIntoVariationContent { get; set; }
 
 
@@ -516,7 +516,7 @@ public partial class KnowledgeDocumentsAnswerFilter : IEquatable<KnowledgeDocume
     /// Allows extracted answers from an article (AnswerHighlight) and/or AI-generated answers (AnswerGeneration). Default mode: AnswerHighlight
     /// </summary>
     /// <value>Allows extracted answers from an article (AnswerHighlight) and/or AI-generated answers (AnswerGeneration). Default mode: AnswerHighlight</value>
-    [DataMember(Name = "answerMode", EmitDefaultValue = false)]
+    [JsonPropertyName("answerMode")]
     public List<AnswerModeEnum> AnswerMode { get; set; }
 
 
@@ -525,7 +525,7 @@ public partial class KnowledgeDocumentsAnswerFilter : IEquatable<KnowledgeDocume
     /// The variation Ids to answer.
     /// </summary>
     /// <value>The variation Ids to answer.</value>
-    [DataMember(Name = "variationIds", EmitDefaultValue = false)]
+    [JsonPropertyName("variationIds")]
     public List<string> VariationIds { get; set; }
 
 

@@ -1,12 +1,12 @@
-using System.Runtime.Serialization;
 using System.Text;
+using System.Text.Json.Serialization;
 
 namespace PureCloud.Client.Models;
 
 /// <summary>
 /// The error message params, if the action failed
 /// </summary>
-[DataContract]
+
 public partial class ArchitectFlowNotificationErrorMessageParams : IEquatable<ArchitectFlowNotificationErrorMessageParams>
 {
     /// <summary>
@@ -24,7 +24,7 @@ public partial class ArchitectFlowNotificationErrorMessageParams : IEquatable<Ar
     /// <summary>
     /// Gets or Sets AdditionalProperties
     /// </summary>
-    [DataMember(Name = "additionalProperties", EmitDefaultValue = false)]
+    [JsonPropertyName("additionalProperties")]
     public Dictionary<string, string> AdditionalProperties { get; set; }
 
 

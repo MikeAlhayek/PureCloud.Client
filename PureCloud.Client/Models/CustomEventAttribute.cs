@@ -1,4 +1,3 @@
-using System.Runtime.Serialization;
 using System.Text;
 using System.Text.Json.Serialization;
 
@@ -7,7 +6,7 @@ namespace PureCloud.Client.Models;
 /// <summary>
 /// CustomEventAttribute
 /// </summary>
-[DataContract]
+
 public partial class CustomEventAttribute : IEquatable<CustomEventAttribute>
 {
 
@@ -34,7 +33,7 @@ public partial class CustomEventAttribute : IEquatable<CustomEventAttribute>
     /// The data type of the custom attribute.
     /// </summary>
     /// <value>The data type of the custom attribute.</value>
-    [DataMember(Name = "dataType", EmitDefaultValue = false)]
+    [JsonPropertyName("dataType")]
     public string DataType { get; set; }
 
 
@@ -43,7 +42,7 @@ public partial class CustomEventAttribute : IEquatable<CustomEventAttribute>
     /// The value of the custom attribute.
     /// </summary>
     /// <value>The value of the custom attribute.</value>
-    [DataMember(Name = "value", EmitDefaultValue = false)]
+    [JsonPropertyName("value")]
     public string Value { get; set; }
 
 

@@ -1,4 +1,3 @@
-using System.Runtime.Serialization;
 using System.Text;
 using System.Text.Json.Serialization;
 
@@ -7,7 +6,7 @@ namespace PureCloud.Client.Models;
 /// <summary>
 /// RuleConfig
 /// </summary>
-[DataContract]
+
 public partial class RuleConfig : IEquatable<RuleConfig>
 {
 
@@ -36,7 +35,7 @@ public partial class RuleConfig : IEquatable<RuleConfig>
     /// Rule ID.
     /// </summary>
     /// <value>Rule ID.</value>
-    [DataMember(Name = "id", EmitDefaultValue = false)]
+    [JsonPropertyName("id")]
     public string Id { get; set; }
 
 
@@ -45,7 +44,7 @@ public partial class RuleConfig : IEquatable<RuleConfig>
     /// Rule enabled.
     /// </summary>
     /// <value>Rule enabled.</value>
-    [DataMember(Name = "enabled", EmitDefaultValue = false)]
+    [JsonPropertyName("enabled")]
     public bool? Enabled { get; set; }
 
 
@@ -54,7 +53,7 @@ public partial class RuleConfig : IEquatable<RuleConfig>
     /// Rule configuration.
     /// </summary>
     /// <value>Rule configuration.</value>
-    [DataMember(Name = "rule", EmitDefaultValue = false)]
+    [JsonPropertyName("rule")]
     public CopilotRule Rule { get; set; }
 
 

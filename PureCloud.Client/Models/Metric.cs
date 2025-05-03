@@ -7,14 +7,14 @@ namespace PureCloud.Client.Models;
 /// <summary>
 /// Metric
 /// </summary>
-[DataContract]
+
 public partial class Metric : IEquatable<Metric>
 {
     /// <summary>
     /// The time unit in which the metric should be displayed - - this parameter is ignored when displaying non-time values
     /// </summary>
     /// <value>The time unit in which the metric should be displayed - - this parameter is ignored when displaying non-time values</value>
-    [JsonConverter(typeof(JsonStringEnumConverter))]
+    
     public enum TimeDisplayUnitEnum
     {
         /// <summary>
@@ -53,7 +53,7 @@ public partial class Metric : IEquatable<Metric>
     /// The time unit in which the metric should be displayed - - this parameter is ignored when displaying non-time values
     /// </summary>
     /// <value>The time unit in which the metric should be displayed - - this parameter is ignored when displaying non-time values</value>
-    [DataMember(Name = "timeDisplayUnit", EmitDefaultValue = false)]
+    [JsonPropertyName("timeDisplayUnit")]
     public TimeDisplayUnitEnum? TimeDisplayUnit { get; set; }
 
     /// <summary>
@@ -87,7 +87,7 @@ public partial class Metric : IEquatable<Metric>
     /// The globally unique identifier for the object.
     /// </summary>
     /// <value>The globally unique identifier for the object.</value>
-    [DataMember(Name = "id", EmitDefaultValue = false)]
+    [JsonPropertyName("id")]
     public string Id { get; private set; }
 
 
@@ -96,7 +96,7 @@ public partial class Metric : IEquatable<Metric>
     /// The name of this metric
     /// </summary>
     /// <value>The name of this metric</value>
-    [DataMember(Name = "name", EmitDefaultValue = false)]
+    [JsonPropertyName("name")]
     public string Name { get; set; }
 
 
@@ -105,7 +105,7 @@ public partial class Metric : IEquatable<Metric>
     /// The id of associated metric definition
     /// </summary>
     /// <value>The id of associated metric definition</value>
-    [DataMember(Name = "metricDefinitionId", EmitDefaultValue = false)]
+    [JsonPropertyName("metricDefinitionId")]
     public string MetricDefinitionId { get; set; }
 
 
@@ -114,7 +114,7 @@ public partial class Metric : IEquatable<Metric>
     /// The id of associated external metric definition
     /// </summary>
     /// <value>The id of associated external metric definition</value>
-    [DataMember(Name = "externalMetricDefinitionId", EmitDefaultValue = false)]
+    [JsonPropertyName("externalMetricDefinitionId")]
     public string ExternalMetricDefinitionId { get; set; }
 
 
@@ -123,7 +123,7 @@ public partial class Metric : IEquatable<Metric>
     /// Associated objective for this metric
     /// </summary>
     /// <value>Associated objective for this metric</value>
-    [DataMember(Name = "objective", EmitDefaultValue = false)]
+    [JsonPropertyName("objective")]
     public Objective Objective { get; set; }
 
 
@@ -132,7 +132,7 @@ public partial class Metric : IEquatable<Metric>
     /// Performance profile id of this metric
     /// </summary>
     /// <value>Performance profile id of this metric</value>
-    [DataMember(Name = "performanceProfileId", EmitDefaultValue = false)]
+    [JsonPropertyName("performanceProfileId")]
     public string PerformanceProfileId { get; set; }
 
 
@@ -141,7 +141,7 @@ public partial class Metric : IEquatable<Metric>
     /// The linked metric entity reference
     /// </summary>
     /// <value>The linked metric entity reference</value>
-    [DataMember(Name = "linkedMetric", EmitDefaultValue = false)]
+    [JsonPropertyName("linkedMetric")]
     public AddressableEntityRef LinkedMetric { get; private set; }
 
 
@@ -150,7 +150,7 @@ public partial class Metric : IEquatable<Metric>
     /// The created date of this metric. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z
     /// </summary>
     /// <value>The created date of this metric. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z</value>
-    [DataMember(Name = "dateCreated", EmitDefaultValue = false)]
+    [JsonPropertyName("dateCreated")]
     public DateTime? DateCreated { get; private set; }
 
 
@@ -159,7 +159,7 @@ public partial class Metric : IEquatable<Metric>
     /// The unlinked workday for this metric if this metric was ever unlinked. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd
     /// </summary>
     /// <value>The unlinked workday for this metric if this metric was ever unlinked. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd</value>
-    [DataMember(Name = "dateUnlinked", EmitDefaultValue = false)]
+    [JsonPropertyName("dateUnlinked")]
     public string DateUnlinked { get; private set; }
 
 
@@ -168,7 +168,7 @@ public partial class Metric : IEquatable<Metric>
     /// The precision of the metric, must be between 0 and 5
     /// </summary>
     /// <value>The precision of the metric, must be between 0 and 5</value>
-    [DataMember(Name = "precision", EmitDefaultValue = false)]
+    [JsonPropertyName("precision")]
     public int? Precision { get; private set; }
 
 
@@ -179,7 +179,7 @@ public partial class Metric : IEquatable<Metric>
     /// The source performance profile when this metric is linked
     /// </summary>
     /// <value>The source performance profile when this metric is linked</value>
-    [DataMember(Name = "sourcePerformanceProfile", EmitDefaultValue = false)]
+    [JsonPropertyName("sourcePerformanceProfile")]
     public PerformanceProfile SourcePerformanceProfile { get; private set; }
 
 
@@ -188,7 +188,7 @@ public partial class Metric : IEquatable<Metric>
     /// The URI for this object
     /// </summary>
     /// <value>The URI for this object</value>
-    [DataMember(Name = "selfUri", EmitDefaultValue = false)]
+    [JsonPropertyName("selfUri")]
     public string SelfUri { get; private set; }
 
 

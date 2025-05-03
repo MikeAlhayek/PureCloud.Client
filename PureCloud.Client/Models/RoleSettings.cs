@@ -1,12 +1,12 @@
-using System.Runtime.Serialization;
 using System.Text;
+using System.Text.Json.Serialization;
 
 namespace PureCloud.Client.Models;
 
 /// <summary>
 /// RoleSettings
 /// </summary>
-[DataContract]
+
 public partial class RoleSettings : IEquatable<RoleSettings>
 {
     /// <summary>
@@ -27,7 +27,7 @@ public partial class RoleSettings : IEquatable<RoleSettings>
     /// The globally unique identifier for the object.
     /// </summary>
     /// <value>The globally unique identifier for the object.</value>
-    [DataMember(Name = "id", EmitDefaultValue = false)]
+    [JsonPropertyName("id")]
     public string Id { get; private set; }
 
 
@@ -36,7 +36,7 @@ public partial class RoleSettings : IEquatable<RoleSettings>
     /// Boolean showing if organization is opted in or not to role backfills
     /// </summary>
     /// <value>Boolean showing if organization is opted in or not to role backfills</value>
-    [DataMember(Name = "backfillEnabled", EmitDefaultValue = false)]
+    [JsonPropertyName("backfillEnabled")]
     public bool? BackfillEnabled { get; set; }
 
 
@@ -45,7 +45,7 @@ public partial class RoleSettings : IEquatable<RoleSettings>
     /// Boolean enabling enforcement of division aware for authorization grant add and delete
     /// </summary>
     /// <value>Boolean enabling enforcement of division aware for authorization grant add and delete</value>
-    [DataMember(Name = "authorizationGrantDivisionAware", EmitDefaultValue = false)]
+    [JsonPropertyName("authorizationGrantDivisionAware")]
     public bool? AuthorizationGrantDivisionAware { get; set; }
 
 
@@ -54,7 +54,7 @@ public partial class RoleSettings : IEquatable<RoleSettings>
     /// The URI for this object
     /// </summary>
     /// <value>The URI for this object</value>
-    [DataMember(Name = "selfUri", EmitDefaultValue = false)]
+    [JsonPropertyName("selfUri")]
     public string SelfUri { get; private set; }
 
 

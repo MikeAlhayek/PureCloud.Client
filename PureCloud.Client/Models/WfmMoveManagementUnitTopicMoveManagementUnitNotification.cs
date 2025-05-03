@@ -7,13 +7,13 @@ namespace PureCloud.Client.Models;
 /// <summary>
 /// WfmMoveManagementUnitTopicMoveManagementUnitNotification
 /// </summary>
-[DataContract]
+
 public partial class WfmMoveManagementUnitTopicMoveManagementUnitNotification : IEquatable<WfmMoveManagementUnitTopicMoveManagementUnitNotification>
 {
     /// <summary>
     /// Gets or Sets Status
     /// </summary>
-    [JsonConverter(typeof(JsonStringEnumConverter))]
+    
     public enum StatusEnum
     {
         /// <summary>
@@ -51,7 +51,7 @@ public partial class WfmMoveManagementUnitTopicMoveManagementUnitNotification : 
     /// <summary>
     /// Gets or Sets Status
     /// </summary>
-    [DataMember(Name = "status", EmitDefaultValue = false)]
+    [JsonPropertyName("status")]
     public StatusEnum? Status { get; set; }
     /// <summary>
     /// Initializes a new instance of the <see cref="WfmMoveManagementUnitTopicMoveManagementUnitNotification" /> class.
@@ -70,7 +70,7 @@ public partial class WfmMoveManagementUnitTopicMoveManagementUnitNotification : 
     /// <summary>
     /// Gets or Sets BusinessUnit
     /// </summary>
-    [DataMember(Name = "businessUnit", EmitDefaultValue = false)]
+    [JsonPropertyName("businessUnit")]
     public WfmMoveManagementUnitTopicBusinessUnit BusinessUnit { get; set; }
 
 

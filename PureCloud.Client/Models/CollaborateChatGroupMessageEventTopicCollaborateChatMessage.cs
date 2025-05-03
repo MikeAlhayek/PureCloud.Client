@@ -7,13 +7,13 @@ namespace PureCloud.Client.Models;
 /// <summary>
 /// CollaborateChatGroupMessageEventTopicCollaborateChatMessage
 /// </summary>
-[DataContract]
+
 public partial class CollaborateChatGroupMessageEventTopicCollaborateChatMessage : IEquatable<CollaborateChatGroupMessageEventTopicCollaborateChatMessage>
 {
     /// <summary>
     /// Gets or Sets ActionType
     /// </summary>
-    [JsonConverter(typeof(JsonStringEnumConverter))]
+    
     public enum ActionTypeEnum
     {
         /// <summary>
@@ -45,7 +45,7 @@ public partial class CollaborateChatGroupMessageEventTopicCollaborateChatMessage
     /// <summary>
     /// Gets or Sets ActionType
     /// </summary>
-    [DataMember(Name = "actionType", EmitDefaultValue = false)]
+    [JsonPropertyName("actionType")]
     public ActionTypeEnum? ActionType { get; set; }
     /// <summary>
     /// Initializes a new instance of the <see cref="CollaborateChatGroupMessageEventTopicCollaborateChatMessage" /> class.
@@ -78,7 +78,7 @@ public partial class CollaborateChatGroupMessageEventTopicCollaborateChatMessage
     /// <summary>
     /// Gets or Sets MessageId
     /// </summary>
-    [DataMember(Name = "messageId", EmitDefaultValue = false)]
+    [JsonPropertyName("messageId")]
     public string MessageId { get; set; }
 
 
@@ -86,7 +86,7 @@ public partial class CollaborateChatGroupMessageEventTopicCollaborateChatMessage
     /// <summary>
     /// Gets or Sets Created
     /// </summary>
-    [DataMember(Name = "created", EmitDefaultValue = false)]
+    [JsonPropertyName("created")]
     public string Created { get; set; }
 
 
@@ -96,7 +96,7 @@ public partial class CollaborateChatGroupMessageEventTopicCollaborateChatMessage
     /// <summary>
     /// Gets or Sets Body
     /// </summary>
-    [DataMember(Name = "body", EmitDefaultValue = false)]
+    [JsonPropertyName("body")]
     public string Body { get; set; }
 
 
@@ -104,7 +104,7 @@ public partial class CollaborateChatGroupMessageEventTopicCollaborateChatMessage
     /// <summary>
     /// Gets or Sets From
     /// </summary>
-    [DataMember(Name = "from", EmitDefaultValue = false)]
+    [JsonPropertyName("from")]
     public CollaborateChatGroupMessageEventTopicCollaborateChatEntity From { get; set; }
 
 
@@ -112,7 +112,7 @@ public partial class CollaborateChatGroupMessageEventTopicCollaborateChatMessage
     /// <summary>
     /// Gets or Sets To
     /// </summary>
-    [DataMember(Name = "to", EmitDefaultValue = false)]
+    [JsonPropertyName("to")]
     public CollaborateChatGroupMessageEventTopicCollaborateChatEntity To { get; set; }
 
 
@@ -120,7 +120,7 @@ public partial class CollaborateChatGroupMessageEventTopicCollaborateChatMessage
     /// <summary>
     /// Gets or Sets Mentions
     /// </summary>
-    [DataMember(Name = "mentions", EmitDefaultValue = false)]
+    [JsonPropertyName("mentions")]
     public List<CollaborateChatGroupMessageEventTopicCollaborateChatEntity> Mentions { get; set; }
 
 
@@ -128,7 +128,7 @@ public partial class CollaborateChatGroupMessageEventTopicCollaborateChatMessage
     /// <summary>
     /// Gets or Sets NotifyAll
     /// </summary>
-    [DataMember(Name = "notifyAll", EmitDefaultValue = false)]
+    [JsonPropertyName("notifyAll")]
     public bool? NotifyAll { get; set; }
 
 
@@ -136,7 +136,7 @@ public partial class CollaborateChatGroupMessageEventTopicCollaborateChatMessage
     /// <summary>
     /// Gets or Sets Reactions
     /// </summary>
-    [DataMember(Name = "reactions", EmitDefaultValue = false)]
+    [JsonPropertyName("reactions")]
     public Dictionary<string, List<string>> Reactions { get; set; }
 
 

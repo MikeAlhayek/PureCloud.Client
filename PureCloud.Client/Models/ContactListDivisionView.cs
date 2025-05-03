@@ -1,4 +1,3 @@
-using System.Runtime.Serialization;
 using System.Text;
 using System.Text.Json.Serialization;
 
@@ -7,7 +6,7 @@ namespace PureCloud.Client.Models;
 /// <summary>
 /// ContactListDivisionView
 /// </summary>
-[DataContract]
+
 public partial class ContactListDivisionView : IEquatable<ContactListDivisionView>
 {
 
@@ -42,7 +41,7 @@ public partial class ContactListDivisionView : IEquatable<ContactListDivisionVie
     /// The globally unique identifier for the object.
     /// </summary>
     /// <value>The globally unique identifier for the object.</value>
-    [DataMember(Name = "id", EmitDefaultValue = false)]
+    [JsonPropertyName("id")]
     public string Id { get; private set; }
 
 
@@ -50,7 +49,7 @@ public partial class ContactListDivisionView : IEquatable<ContactListDivisionVie
     /// <summary>
     /// Gets or Sets Name
     /// </summary>
-    [DataMember(Name = "name", EmitDefaultValue = false)]
+    [JsonPropertyName("name")]
     public string Name { get; set; }
 
 
@@ -59,7 +58,7 @@ public partial class ContactListDivisionView : IEquatable<ContactListDivisionVie
     /// The division to which this entity belongs.
     /// </summary>
     /// <value>The division to which this entity belongs.</value>
-    [DataMember(Name = "division", EmitDefaultValue = false)]
+    [JsonPropertyName("division")]
     public Division Division { get; set; }
 
 
@@ -68,7 +67,7 @@ public partial class ContactListDivisionView : IEquatable<ContactListDivisionVie
     /// The names of the contact data columns.
     /// </summary>
     /// <value>The names of the contact data columns.</value>
-    [DataMember(Name = "columnNames", EmitDefaultValue = false)]
+    [JsonPropertyName("columnNames")]
     public List<string> ColumnNames { get; set; }
 
 
@@ -77,7 +76,7 @@ public partial class ContactListDivisionView : IEquatable<ContactListDivisionVie
     /// Indicates which columns are phone numbers.
     /// </summary>
     /// <value>Indicates which columns are phone numbers.</value>
-    [DataMember(Name = "phoneColumns", EmitDefaultValue = false)]
+    [JsonPropertyName("phoneColumns")]
     public List<ContactPhoneNumberColumn> PhoneColumns { get; set; }
 
 
@@ -86,7 +85,7 @@ public partial class ContactListDivisionView : IEquatable<ContactListDivisionVie
     /// Indicates which columns are email addresses.
     /// </summary>
     /// <value>Indicates which columns are email addresses.</value>
-    [DataMember(Name = "emailColumns", EmitDefaultValue = false)]
+    [JsonPropertyName("emailColumns")]
     public List<EmailColumn> EmailColumns { get; set; }
 
 
@@ -95,7 +94,7 @@ public partial class ContactListDivisionView : IEquatable<ContactListDivisionVie
     /// Indicates which columns are whatsApp contacts.
     /// </summary>
     /// <value>Indicates which columns are whatsApp contacts.</value>
-    [DataMember(Name = "whatsAppColumns", EmitDefaultValue = false)]
+    [JsonPropertyName("whatsAppColumns")]
     public List<WhatsAppColumn> WhatsAppColumns { get; set; }
 
 
@@ -104,7 +103,7 @@ public partial class ContactListDivisionView : IEquatable<ContactListDivisionVie
     /// The status of the import process.
     /// </summary>
     /// <value>The status of the import process.</value>
-    [DataMember(Name = "importStatus", EmitDefaultValue = false)]
+    [JsonPropertyName("importStatus")]
     public ImportStatus ImportStatus { get; private set; }
 
 
@@ -113,7 +112,7 @@ public partial class ContactListDivisionView : IEquatable<ContactListDivisionVie
     /// The number of contacts in the ContactList.
     /// </summary>
     /// <value>The number of contacts in the ContactList.</value>
-    [DataMember(Name = "size", EmitDefaultValue = false)]
+    [JsonPropertyName("size")]
     public long? Size { get; private set; }
 
 
@@ -122,7 +121,7 @@ public partial class ContactListDivisionView : IEquatable<ContactListDivisionVie
     /// The URI for this object
     /// </summary>
     /// <value>The URI for this object</value>
-    [DataMember(Name = "selfUri", EmitDefaultValue = false)]
+    [JsonPropertyName("selfUri")]
     public string SelfUri { get; private set; }
 
 

@@ -1,12 +1,12 @@
-using System.Runtime.Serialization;
 using System.Text;
+using System.Text.Json.Serialization;
 
 namespace PureCloud.Client.Models;
 
 /// <summary>
 /// DialerCallabletimesetConfigChangeCallableTime
 /// </summary>
-[DataContract]
+
 public partial class DialerCallabletimesetConfigChangeCallableTime : IEquatable<DialerCallabletimesetConfigChangeCallableTime>
 {
     /// <summary>
@@ -29,7 +29,7 @@ public partial class DialerCallabletimesetConfigChangeCallableTime : IEquatable<
     /// The time slots
     /// </summary>
     /// <value>The time slots</value>
-    [DataMember(Name = "timeSlots", EmitDefaultValue = false)]
+    [JsonPropertyName("timeSlots")]
     public List<DialerCallabletimesetConfigChangeTimeSlot> TimeSlots { get; set; }
 
 
@@ -38,7 +38,7 @@ public partial class DialerCallabletimesetConfigChangeCallableTime : IEquatable<
     /// The ISO ID for the timezone
     /// </summary>
     /// <value>The ISO ID for the timezone</value>
-    [DataMember(Name = "timeZoneId", EmitDefaultValue = false)]
+    [JsonPropertyName("timeZoneId")]
     public string TimeZoneId { get; set; }
 
 
@@ -46,7 +46,7 @@ public partial class DialerCallabletimesetConfigChangeCallableTime : IEquatable<
     /// <summary>
     /// Gets or Sets AdditionalProperties
     /// </summary>
-    [DataMember(Name = "additionalProperties", EmitDefaultValue = false)]
+    [JsonPropertyName("additionalProperties")]
     public Dictionary<string, object> AdditionalProperties { get; set; }
 
 

@@ -7,14 +7,14 @@ namespace PureCloud.Client.Models;
 /// <summary>
 /// BuTimeOffPlanResponse
 /// </summary>
-[DataContract]
+
 public partial class BuTimeOffPlanResponse : IEquatable<BuTimeOffPlanResponse>
 {
     /// <summary>
     /// Auto approval rule for this time-off plan
     /// </summary>
     /// <value>Auto approval rule for this time-off plan</value>
-    [JsonConverter(typeof(JsonStringEnumConverter))]
+    
     public enum AutoApprovalRuleEnum
     {
         /// <summary>
@@ -59,7 +59,7 @@ public partial class BuTimeOffPlanResponse : IEquatable<BuTimeOffPlanResponse>
     /// Auto approval rule for this time-off plan
     /// </summary>
     /// <value>Auto approval rule for this time-off plan</value>
-    [DataMember(Name = "autoApprovalRule", EmitDefaultValue = false)]
+    [JsonPropertyName("autoApprovalRule")]
     public AutoApprovalRuleEnum? AutoApprovalRule { get; set; }
 
     /// <summary>
@@ -103,7 +103,7 @@ public partial class BuTimeOffPlanResponse : IEquatable<BuTimeOffPlanResponse>
     /// The globally unique identifier for the object.
     /// </summary>
     /// <value>The globally unique identifier for the object.</value>
-    [DataMember(Name = "id", EmitDefaultValue = false)]
+    [JsonPropertyName("id")]
     public string Id { get; private set; }
 
 
@@ -112,7 +112,7 @@ public partial class BuTimeOffPlanResponse : IEquatable<BuTimeOffPlanResponse>
     /// The name of this time-off plan
     /// </summary>
     /// <value>The name of this time-off plan</value>
-    [DataMember(Name = "name", EmitDefaultValue = false)]
+    [JsonPropertyName("name")]
     public string Name { get; set; }
 
 
@@ -121,7 +121,7 @@ public partial class BuTimeOffPlanResponse : IEquatable<BuTimeOffPlanResponse>
     /// The IDs of activity codes associated with this time-off plan
     /// </summary>
     /// <value>The IDs of activity codes associated with this time-off plan</value>
-    [DataMember(Name = "activityCodeIds", EmitDefaultValue = false)]
+    [JsonPropertyName("activityCodeIds")]
     public List<string> ActivityCodeIds { get; set; }
 
 
@@ -130,7 +130,7 @@ public partial class BuTimeOffPlanResponse : IEquatable<BuTimeOffPlanResponse>
     /// The IDs of time-off limits associated with this time-off plan
     /// </summary>
     /// <value>The IDs of time-off limits associated with this time-off plan</value>
-    [DataMember(Name = "timeOffLimits", EmitDefaultValue = false)]
+    [JsonPropertyName("timeOffLimits")]
     public List<BuTimeOffLimitReference> TimeOffLimits { get; set; }
 
 
@@ -141,7 +141,7 @@ public partial class BuTimeOffPlanResponse : IEquatable<BuTimeOffPlanResponse>
     /// The number of days before the time-off request start date for when the request will be expired from the waitlist
     /// </summary>
     /// <value>The number of days before the time-off request start date for when the request will be expired from the waitlist</value>
-    [DataMember(Name = "daysBeforeStartToExpireFromWaitlist", EmitDefaultValue = false)]
+    [JsonPropertyName("daysBeforeStartToExpireFromWaitlist")]
     public int? DaysBeforeStartToExpireFromWaitlist { get; set; }
 
 
@@ -150,7 +150,7 @@ public partial class BuTimeOffPlanResponse : IEquatable<BuTimeOffPlanResponse>
     /// Time-off type, if this time-off plan is associated with the integration
     /// </summary>
     /// <value>Time-off type, if this time-off plan is associated with the integration</value>
-    [DataMember(Name = "hrisTimeOffType", EmitDefaultValue = false)]
+    [JsonPropertyName("hrisTimeOffType")]
     public HrisTimeOffType HrisTimeOffType { get; set; }
 
 
@@ -159,7 +159,7 @@ public partial class BuTimeOffPlanResponse : IEquatable<BuTimeOffPlanResponse>
     /// Whether this time-off plan is currently being used by agents
     /// </summary>
     /// <value>Whether this time-off plan is currently being used by agents</value>
-    [DataMember(Name = "enabled", EmitDefaultValue = false)]
+    [JsonPropertyName("enabled")]
     public bool? Enabled { get; set; }
 
 
@@ -168,7 +168,7 @@ public partial class BuTimeOffPlanResponse : IEquatable<BuTimeOffPlanResponse>
     /// Whether this time-off plan counts against time-off limits
     /// </summary>
     /// <value>Whether this time-off plan counts against time-off limits</value>
-    [DataMember(Name = "countAgainstTimeOffLimits", EmitDefaultValue = false)]
+    [JsonPropertyName("countAgainstTimeOffLimits")]
     public bool? CountAgainstTimeOffLimits { get; set; }
 
 
@@ -177,7 +177,7 @@ public partial class BuTimeOffPlanResponse : IEquatable<BuTimeOffPlanResponse>
     /// Business unit association, if the time-off plan belongs to a business unit. managementUnitAssociation must not be set if this is populated
     /// </summary>
     /// <value>Business unit association, if the time-off plan belongs to a business unit. managementUnitAssociation must not be set if this is populated</value>
-    [DataMember(Name = "businessUnitAssociation", EmitDefaultValue = false)]
+    [JsonPropertyName("businessUnitAssociation")]
     public TimeOffPlanBusinessUnitAssociation BusinessUnitAssociation { get; set; }
 
 
@@ -186,7 +186,7 @@ public partial class BuTimeOffPlanResponse : IEquatable<BuTimeOffPlanResponse>
     /// Management Unit association, if the time-off plan belongs to a management unit. businessUnitAssociation must not be set if this is populated
     /// </summary>
     /// <value>Management Unit association, if the time-off plan belongs to a management unit. businessUnitAssociation must not be set if this is populated</value>
-    [DataMember(Name = "managementUnitAssociation", EmitDefaultValue = false)]
+    [JsonPropertyName("managementUnitAssociation")]
     public TimeOffPlanManagementUnitAssociation ManagementUnitAssociation { get; set; }
 
 
@@ -195,7 +195,7 @@ public partial class BuTimeOffPlanResponse : IEquatable<BuTimeOffPlanResponse>
     /// Version metadata for the time-off plan
     /// </summary>
     /// <value>Version metadata for the time-off plan</value>
-    [DataMember(Name = "metadata", EmitDefaultValue = false)]
+    [JsonPropertyName("metadata")]
     public WfmVersionedEntityMetadata Metadata { get; set; }
 
 
@@ -204,7 +204,7 @@ public partial class BuTimeOffPlanResponse : IEquatable<BuTimeOffPlanResponse>
     /// The URI for this object
     /// </summary>
     /// <value>The URI for this object</value>
-    [DataMember(Name = "selfUri", EmitDefaultValue = false)]
+    [JsonPropertyName("selfUri")]
     public string SelfUri { get; private set; }
 
 

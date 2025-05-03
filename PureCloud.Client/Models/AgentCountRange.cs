@@ -1,4 +1,3 @@
-using System.Runtime.Serialization;
 using System.Text;
 using System.Text.Json.Serialization;
 
@@ -7,7 +6,7 @@ namespace PureCloud.Client.Models;
 /// <summary>
 /// AgentCountRange
 /// </summary>
-[DataContract]
+
 public partial class AgentCountRange : IEquatable<AgentCountRange>
 {
 
@@ -34,7 +33,7 @@ public partial class AgentCountRange : IEquatable<AgentCountRange>
     /// The minimum value of agent count per work plan
     /// </summary>
     /// <value>The minimum value of agent count per work plan</value>
-    [DataMember(Name = "minimum", EmitDefaultValue = false)]
+    [JsonPropertyName("minimum")]
     public int? Minimum { get; set; }
 
 
@@ -43,7 +42,7 @@ public partial class AgentCountRange : IEquatable<AgentCountRange>
     /// The maximum value of agent count per work plan
     /// </summary>
     /// <value>The maximum value of agent count per work plan</value>
-    [DataMember(Name = "maximum", EmitDefaultValue = false)]
+    [JsonPropertyName("maximum")]
     public int? Maximum { get; set; }
 
 

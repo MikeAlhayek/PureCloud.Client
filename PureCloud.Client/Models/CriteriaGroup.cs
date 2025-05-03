@@ -1,12 +1,12 @@
-using System.Runtime.Serialization;
 using System.Text;
+using System.Text.Json.Serialization;
 
 namespace PureCloud.Client.Models;
 
 /// <summary>
 /// A group of logical or a singular criteria used to create a query of executionData
 /// </summary>
-[DataContract]
+
 public partial class CriteriaGroup : IEquatable<CriteriaGroup>
 {
     /// <summary>
@@ -31,7 +31,7 @@ public partial class CriteriaGroup : IEquatable<CriteriaGroup>
     /// These criteriaItems will be AND&#39;d together to find a match.
     /// </summary>
     /// <value>These criteriaItems will be AND&#39;d together to find a match.</value>
-    [DataMember(Name = "and", EmitDefaultValue = false)]
+    [JsonPropertyName("and")]
     public List<CriteriaItem> And { get; set; }
 
 
@@ -40,7 +40,7 @@ public partial class CriteriaGroup : IEquatable<CriteriaGroup>
     /// These criteriaItems will be OR&#39;d together to find a match.
     /// </summary>
     /// <value>These criteriaItems will be OR&#39;d together to find a match.</value>
-    [DataMember(Name = "or", EmitDefaultValue = false)]
+    [JsonPropertyName("or")]
     public List<CriteriaItem> Or { get; set; }
 
 
@@ -49,7 +49,7 @@ public partial class CriteriaGroup : IEquatable<CriteriaGroup>
     /// These criteriaItems must all be false to find a match.
     /// </summary>
     /// <value>These criteriaItems must all be false to find a match.</value>
-    [DataMember(Name = "not", EmitDefaultValue = false)]
+    [JsonPropertyName("not")]
     public List<CriteriaItem> Not { get; set; }
 
 
@@ -58,7 +58,7 @@ public partial class CriteriaGroup : IEquatable<CriteriaGroup>
     /// A singular critieriaItem to match.
     /// </summary>
     /// <value>A singular critieriaItem to match.</value>
-    [DataMember(Name = "criteria", EmitDefaultValue = false)]
+    [JsonPropertyName("criteria")]
     public CriteriaItem Criteria { get; set; }
 
 

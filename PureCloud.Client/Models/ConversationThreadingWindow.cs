@@ -1,4 +1,3 @@
-using System.Runtime.Serialization;
 using System.Text;
 using System.Text.Json.Serialization;
 
@@ -7,7 +6,7 @@ namespace PureCloud.Client.Models;
 /// <summary>
 /// ConversationThreadingWindow
 /// </summary>
-[DataContract]
+
 public partial class ConversationThreadingWindow : IEquatable<ConversationThreadingWindow>
 {
 
@@ -32,7 +31,7 @@ public partial class ConversationThreadingWindow : IEquatable<ConversationThread
     /// The globally unique identifier for the object.
     /// </summary>
     /// <value>The globally unique identifier for the object.</value>
-    [DataMember(Name = "id", EmitDefaultValue = false)]
+    [JsonPropertyName("id")]
     public string Id { get; private set; }
 
 
@@ -41,7 +40,7 @@ public partial class ConversationThreadingWindow : IEquatable<ConversationThread
     /// The conversation threading window timeout (Minutes) for each messaging type
     /// </summary>
     /// <value>The conversation threading window timeout (Minutes) for each messaging type</value>
-    [DataMember(Name = "settings", EmitDefaultValue = false)]
+    [JsonPropertyName("settings")]
     public List<ConversationThreadingWindowSetting> Settings { get; set; }
 
 
@@ -50,7 +49,7 @@ public partial class ConversationThreadingWindow : IEquatable<ConversationThread
     /// The default conversation threading window timeout (Minutes)
     /// </summary>
     /// <value>The default conversation threading window timeout (Minutes)</value>
-    [DataMember(Name = "defaultTimeoutMinutes", EmitDefaultValue = false)]
+    [JsonPropertyName("defaultTimeoutMinutes")]
     public long? DefaultTimeoutMinutes { get; private set; }
 
 

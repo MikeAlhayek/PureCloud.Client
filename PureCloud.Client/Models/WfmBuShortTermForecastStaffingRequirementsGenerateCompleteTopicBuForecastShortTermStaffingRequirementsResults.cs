@@ -1,12 +1,12 @@
-using System.Runtime.Serialization;
 using System.Text;
+using System.Text.Json.Serialization;
 
 namespace PureCloud.Client.Models;
 
 /// <summary>
 /// WfmBuShortTermForecastStaffingRequirementsGenerateCompleteTopicBuForecastShortTermStaffingRequirementsResults
 /// </summary>
-[DataContract]
+
 public partial class WfmBuShortTermForecastStaffingRequirementsGenerateCompleteTopicBuForecastShortTermStaffingRequirementsResults : IEquatable<WfmBuShortTermForecastStaffingRequirementsGenerateCompleteTopicBuForecastShortTermStaffingRequirementsResults>
 {
     /// <summary>
@@ -28,7 +28,7 @@ public partial class WfmBuShortTermForecastStaffingRequirementsGenerateCompleteT
     /// <summary>
     /// Gets or Sets WeekNumber
     /// </summary>
-    [DataMember(Name = "weekNumber", EmitDefaultValue = false)]
+    [JsonPropertyName("weekNumber")]
     public long? WeekNumber { get; set; }
 
 
@@ -36,7 +36,7 @@ public partial class WfmBuShortTermForecastStaffingRequirementsGenerateCompleteT
     /// <summary>
     /// Gets or Sets DownloadUrl
     /// </summary>
-    [DataMember(Name = "downloadUrl", EmitDefaultValue = false)]
+    [JsonPropertyName("downloadUrl")]
     public string DownloadUrl { get; set; }
 
 
@@ -44,7 +44,7 @@ public partial class WfmBuShortTermForecastStaffingRequirementsGenerateCompleteT
     /// <summary>
     /// Gets or Sets DownloadUrlExpirationDate
     /// </summary>
-    [DataMember(Name = "downloadUrlExpirationDate", EmitDefaultValue = false)]
+    [JsonPropertyName("downloadUrlExpirationDate")]
     public DateTime? DownloadUrlExpirationDate { get; set; }
 
 

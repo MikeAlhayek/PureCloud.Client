@@ -1,4 +1,3 @@
-using System.Runtime.Serialization;
 using System.Text;
 using System.Text.Json.Serialization;
 
@@ -7,7 +6,7 @@ namespace PureCloud.Client.Models;
 /// <summary>
 /// Parameters for launching a flow.
 /// </summary>
-[DataContract]
+
 public partial class FlowExecutionLaunchRequest : IEquatable<FlowExecutionLaunchRequest>
 {
 
@@ -38,7 +37,7 @@ public partial class FlowExecutionLaunchRequest : IEquatable<FlowExecutionLaunch
     /// ID of the flow to launch.
     /// </summary>
     /// <value>ID of the flow to launch.</value>
-    [DataMember(Name = "flowId", EmitDefaultValue = false)]
+    [JsonPropertyName("flowId")]
     public string FlowId { get; set; }
 
 
@@ -47,7 +46,7 @@ public partial class FlowExecutionLaunchRequest : IEquatable<FlowExecutionLaunch
     /// The version of the flow to launch. Omit this value (or supply null/empty) to use the latest published version.
     /// </summary>
     /// <value>The version of the flow to launch. Omit this value (or supply null/empty) to use the latest published version.</value>
-    [DataMember(Name = "flowVersion", EmitDefaultValue = false)]
+    [JsonPropertyName("flowVersion")]
     public string FlowVersion { get; set; }
 
 
@@ -56,7 +55,7 @@ public partial class FlowExecutionLaunchRequest : IEquatable<FlowExecutionLaunch
     /// Input values to the flow. Valid values are defined by a flow&#39;s input JSON schema.
     /// </summary>
     /// <value>Input values to the flow. Valid values are defined by a flow&#39;s input JSON schema.</value>
-    [DataMember(Name = "inputData", EmitDefaultValue = false)]
+    [JsonPropertyName("inputData")]
     public Dictionary<string, object> InputData { get; set; }
 
 
@@ -65,7 +64,7 @@ public partial class FlowExecutionLaunchRequest : IEquatable<FlowExecutionLaunch
     /// A displayable name to assign to the new flow execution
     /// </summary>
     /// <value>A displayable name to assign to the new flow execution</value>
-    [DataMember(Name = "name", EmitDefaultValue = false)]
+    [JsonPropertyName("name")]
     public string Name { get; set; }
 
 

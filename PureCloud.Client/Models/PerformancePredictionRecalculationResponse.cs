@@ -7,14 +7,14 @@ namespace PureCloud.Client.Models;
 /// <summary>
 /// PerformancePredictionRecalculationResponse
 /// </summary>
-[DataContract]
+
 public partial class PerformancePredictionRecalculationResponse : IEquatable<PerformancePredictionRecalculationResponse>
 {
     /// <summary>
     /// The state of the performance prediction
     /// </summary>
     /// <value>The state of the performance prediction</value>
-    [JsonConverter(typeof(JsonStringEnumConverter))]
+    
     public enum StateEnum
     {
         /// <summary>
@@ -47,7 +47,7 @@ public partial class PerformancePredictionRecalculationResponse : IEquatable<Per
     /// The state of the performance prediction
     /// </summary>
     /// <value>The state of the performance prediction</value>
-    [DataMember(Name = "state", EmitDefaultValue = false)]
+    [JsonPropertyName("state")]
     public StateEnum? State { get; set; }
 
     /// <summary>
@@ -77,7 +77,7 @@ public partial class PerformancePredictionRecalculationResponse : IEquatable<Per
     /// The operationId for which to listen
     /// </summary>
     /// <value>The operationId for which to listen</value>
-    [DataMember(Name = "operationId", EmitDefaultValue = false)]
+    [JsonPropertyName("operationId")]
     public string OperationId { get; set; }
 
 
@@ -86,7 +86,7 @@ public partial class PerformancePredictionRecalculationResponse : IEquatable<Per
     /// The url to GET the results of the performance prediction. This field is populated only if query state is &#39;Complete&#39;
     /// </summary>
     /// <value>The url to GET the results of the performance prediction. This field is populated only if query state is &#39;Complete&#39;</value>
-    [DataMember(Name = "downloadUrl", EmitDefaultValue = false)]
+    [JsonPropertyName("downloadUrl")]
     public string DownloadUrl { get; set; }
 
 
@@ -95,7 +95,7 @@ public partial class PerformancePredictionRecalculationResponse : IEquatable<Per
     /// Result will always come via downloadUrls; however the schema is included for documentation
     /// </summary>
     /// <value>Result will always come via downloadUrls; however the schema is included for documentation</value>
-    [DataMember(Name = "downloadResult", EmitDefaultValue = false)]
+    [JsonPropertyName("downloadResult")]
     public PerformancePredictionOutputs DownloadResult { get; set; }
 
 

@@ -1,12 +1,12 @@
-using System.Runtime.Serialization;
 using System.Text;
+using System.Text.Json.Serialization;
 
 namespace PureCloud.Client.Models;
 
 /// <summary>
 /// Media type access definitions
 /// </summary>
-[DataContract]
+
 public partial class MediaTypeAccess : IEquatable<MediaTypeAccess>
 {
     /// <summary>
@@ -27,7 +27,7 @@ public partial class MediaTypeAccess : IEquatable<MediaTypeAccess>
     /// List of media types allowed for inbound messages from customers. If inbound messages from a customer contain media that is not in this list, the media will be dropped from the outbound message.
     /// </summary>
     /// <value>List of media types allowed for inbound messages from customers. If inbound messages from a customer contain media that is not in this list, the media will be dropped from the outbound message.</value>
-    [DataMember(Name = "inbound", EmitDefaultValue = false)]
+    [JsonPropertyName("inbound")]
     public List<MediaType> Inbound { get; set; }
 
 
@@ -36,7 +36,7 @@ public partial class MediaTypeAccess : IEquatable<MediaTypeAccess>
     /// List of media types allowed for outbound messages to customers. If an outbound message is sent that contains media that is not in this list, the message will not be sent.
     /// </summary>
     /// <value>List of media types allowed for outbound messages to customers. If an outbound message is sent that contains media that is not in this list, the message will not be sent.</value>
-    [DataMember(Name = "outbound", EmitDefaultValue = false)]
+    [JsonPropertyName("outbound")]
     public List<MediaType> Outbound { get; set; }
 
 

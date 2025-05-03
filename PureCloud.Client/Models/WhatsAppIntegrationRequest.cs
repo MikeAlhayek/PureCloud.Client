@@ -1,4 +1,3 @@
-using System.Runtime.Serialization;
 using System.Text;
 using System.Text.Json.Serialization;
 
@@ -7,7 +6,7 @@ namespace PureCloud.Client.Models;
 /// <summary>
 /// WhatsAppIntegrationRequest
 /// </summary>
-[DataContract]
+
 public partial class WhatsAppIntegrationRequest : IEquatable<WhatsAppIntegrationRequest>
 {
 
@@ -40,7 +39,7 @@ public partial class WhatsAppIntegrationRequest : IEquatable<WhatsAppIntegration
     /// The globally unique identifier for the object.
     /// </summary>
     /// <value>The globally unique identifier for the object.</value>
-    [DataMember(Name = "id", EmitDefaultValue = false)]
+    [JsonPropertyName("id")]
     public string Id { get; private set; }
 
 
@@ -49,7 +48,7 @@ public partial class WhatsAppIntegrationRequest : IEquatable<WhatsAppIntegration
     /// The name of the WhatsApp Integration
     /// </summary>
     /// <value>The name of the WhatsApp Integration</value>
-    [DataMember(Name = "name", EmitDefaultValue = false)]
+    [JsonPropertyName("name")]
     public string Name { get; set; }
 
 
@@ -58,7 +57,7 @@ public partial class WhatsAppIntegrationRequest : IEquatable<WhatsAppIntegration
     /// Defines the SupportedContent profile configured for an integration
     /// </summary>
     /// <value>Defines the SupportedContent profile configured for an integration</value>
-    [DataMember(Name = "supportedContent", EmitDefaultValue = false)]
+    [JsonPropertyName("supportedContent")]
     public SupportedContentReference SupportedContent { get; set; }
 
 
@@ -67,7 +66,7 @@ public partial class WhatsAppIntegrationRequest : IEquatable<WhatsAppIntegration
     /// Defines the message settings to be applied for this integration
     /// </summary>
     /// <value>Defines the message settings to be applied for this integration</value>
-    [DataMember(Name = "messagingSetting", EmitDefaultValue = false)]
+    [JsonPropertyName("messagingSetting")]
     public MessagingSettingRequestReference MessagingSetting { get; set; }
 
 
@@ -76,7 +75,7 @@ public partial class WhatsAppIntegrationRequest : IEquatable<WhatsAppIntegration
     /// The phone number associated to the whatsApp integration
     /// </summary>
     /// <value>The phone number associated to the whatsApp integration</value>
-    [DataMember(Name = "phoneNumber", EmitDefaultValue = false)]
+    [JsonPropertyName("phoneNumber")]
     public string PhoneNumber { get; set; }
 
 
@@ -85,7 +84,7 @@ public partial class WhatsAppIntegrationRequest : IEquatable<WhatsAppIntegration
     /// The waba(WhatsApp Business Manager) certificate associated to the WhatsApp integration phone number
     /// </summary>
     /// <value>The waba(WhatsApp Business Manager) certificate associated to the WhatsApp integration phone number</value>
-    [DataMember(Name = "wabaCertificate", EmitDefaultValue = false)]
+    [JsonPropertyName("wabaCertificate")]
     public string WabaCertificate { get; set; }
 
 
@@ -94,7 +93,7 @@ public partial class WhatsAppIntegrationRequest : IEquatable<WhatsAppIntegration
     /// The URI for this object
     /// </summary>
     /// <value>The URI for this object</value>
-    [DataMember(Name = "selfUri", EmitDefaultValue = false)]
+    [JsonPropertyName("selfUri")]
     public string SelfUri { get; private set; }
 
 

@@ -1,12 +1,12 @@
-using System.Runtime.Serialization;
 using System.Text;
+using System.Text.Json.Serialization;
 
 namespace PureCloud.Client.Models;
 
 /// <summary>
 /// BulkJobTerminateResult
 /// </summary>
-[DataContract]
+
 public partial class BulkJobTerminateResult : IEquatable<BulkJobTerminateResult>
 {
     /// <summary>
@@ -27,7 +27,7 @@ public partial class BulkJobTerminateResult : IEquatable<BulkJobTerminateResult>
     /// Error details if the operation failed.
     /// </summary>
     /// <value>Error details if the operation failed.</value>
-    [DataMember(Name = "error", EmitDefaultValue = false)]
+    [JsonPropertyName("error")]
     public BulkJobError Error { get; set; }
 
 
@@ -36,7 +36,7 @@ public partial class BulkJobTerminateResult : IEquatable<BulkJobTerminateResult>
     /// The result of the operation if it succeeded. For Workitem Bulk Terminate this is a summary.
     /// </summary>
     /// <value>The result of the operation if it succeeded. For Workitem Bulk Terminate this is a summary.</value>
-    [DataMember(Name = "entity", EmitDefaultValue = false)]
+    [JsonPropertyName("entity")]
     public BulkJobTerminateResultEntity Entity { get; set; }
 
 

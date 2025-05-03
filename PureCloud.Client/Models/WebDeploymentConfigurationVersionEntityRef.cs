@@ -1,4 +1,3 @@
-using System.Runtime.Serialization;
 using System.Text;
 using System.Text.Json.Serialization;
 
@@ -7,7 +6,7 @@ namespace PureCloud.Client.Models;
 /// <summary>
 /// WebDeploymentConfigurationVersionEntityRef
 /// </summary>
-[DataContract]
+
 public partial class WebDeploymentConfigurationVersionEntityRef : IEquatable<WebDeploymentConfigurationVersionEntityRef>
 {
 
@@ -38,7 +37,7 @@ public partial class WebDeploymentConfigurationVersionEntityRef : IEquatable<Web
     /// The configuration version ID
     /// </summary>
     /// <value>The configuration version ID</value>
-    [DataMember(Name = "id", EmitDefaultValue = false)]
+    [JsonPropertyName("id")]
     public string Id { get; set; }
 
 
@@ -47,7 +46,7 @@ public partial class WebDeploymentConfigurationVersionEntityRef : IEquatable<Web
     /// The configuration version name
     /// </summary>
     /// <value>The configuration version name</value>
-    [DataMember(Name = "name", EmitDefaultValue = false)]
+    [JsonPropertyName("name")]
     public string Name { get; set; }
 
 
@@ -55,7 +54,7 @@ public partial class WebDeploymentConfigurationVersionEntityRef : IEquatable<Web
     /// <summary>
     /// Gets or Sets SelfUri
     /// </summary>
-    [DataMember(Name = "selfUri", EmitDefaultValue = false)]
+    [JsonPropertyName("selfUri")]
     public string SelfUri { get; set; }
 
 
@@ -64,7 +63,7 @@ public partial class WebDeploymentConfigurationVersionEntityRef : IEquatable<Web
     /// The version of the configuration
     /// </summary>
     /// <value>The version of the configuration</value>
-    [DataMember(Name = "version", EmitDefaultValue = false)]
+    [JsonPropertyName("version")]
     public string Version { get; set; }
 
 

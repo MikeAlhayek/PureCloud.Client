@@ -7,13 +7,13 @@ namespace PureCloud.Client.Models;
 /// <summary>
 /// UploadUrlRequest
 /// </summary>
-[DataContract]
+
 public partial class UploadUrlRequest : IEquatable<UploadUrlRequest>
 {
     /// <summary>
     /// Gets or Sets ServerSideEncryption
     /// </summary>
-    [JsonConverter(typeof(JsonStringEnumConverter))]
+    
     public enum ServerSideEncryptionEnum
     {
         /// <summary>
@@ -33,7 +33,7 @@ public partial class UploadUrlRequest : IEquatable<UploadUrlRequest>
     /// <summary>
     /// Gets or Sets ServerSideEncryption
     /// </summary>
-    [DataMember(Name = "serverSideEncryption", EmitDefaultValue = false)]
+    [JsonPropertyName("serverSideEncryption")]
     public ServerSideEncryptionEnum? ServerSideEncryption { get; set; }
     /// <summary>
     /// Initializes a new instance of the <see cref="UploadUrlRequest" /> class.
@@ -59,7 +59,7 @@ public partial class UploadUrlRequest : IEquatable<UploadUrlRequest>
     /// Name of the file to upload. It must not start with a dot and not end with a forward slash. Whitespace and the following characters are not allowed: \\{^}%&#x60;]\&quot;&gt;[~&lt;#|
     /// </summary>
     /// <value>Name of the file to upload. It must not start with a dot and not end with a forward slash. Whitespace and the following characters are not allowed: \\{^}%&#x60;]\&quot;&gt;[~&lt;#|</value>
-    [DataMember(Name = "fileName", EmitDefaultValue = false)]
+    [JsonPropertyName("fileName")]
     public string FileName { get; set; }
 
 
@@ -68,7 +68,7 @@ public partial class UploadUrlRequest : IEquatable<UploadUrlRequest>
     /// Content MD5 of the file to upload
     /// </summary>
     /// <value>Content MD5 of the file to upload</value>
-    [DataMember(Name = "contentMd5", EmitDefaultValue = false)]
+    [JsonPropertyName("contentMd5")]
     public string ContentMd5 { get; set; }
 
 
@@ -77,7 +77,7 @@ public partial class UploadUrlRequest : IEquatable<UploadUrlRequest>
     /// The number of seconds the presigned URL is valid for (from 1 to 604800 seconds). If none provided, defaults to 600 seconds
     /// </summary>
     /// <value>The number of seconds the presigned URL is valid for (from 1 to 604800 seconds). If none provided, defaults to 600 seconds</value>
-    [DataMember(Name = "signedUrlTimeoutSeconds", EmitDefaultValue = false)]
+    [JsonPropertyName("signedUrlTimeoutSeconds")]
     public int? SignedUrlTimeoutSeconds { get; set; }
 
 
@@ -86,7 +86,7 @@ public partial class UploadUrlRequest : IEquatable<UploadUrlRequest>
     /// The content type of the file to upload. Allows all MIME types
     /// </summary>
     /// <value>The content type of the file to upload. Allows all MIME types</value>
-    [DataMember(Name = "contentType", EmitDefaultValue = false)]
+    [JsonPropertyName("contentType")]
     public string ContentType { get; set; }
 
 

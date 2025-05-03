@@ -1,12 +1,12 @@
-using System.Runtime.Serialization;
 using System.Text;
+using System.Text.Json.Serialization;
 
 namespace PureCloud.Client.Models;
 
 /// <summary>
 /// StatEventFlowOutcomeTopicMetricStats
 /// </summary>
-[DataContract]
+
 public partial class StatEventFlowOutcomeTopicMetricStats : IEquatable<StatEventFlowOutcomeTopicMetricStats>
 {
     /// <summary>
@@ -28,7 +28,7 @@ public partial class StatEventFlowOutcomeTopicMetricStats : IEquatable<StatEvent
     /// <summary>
     /// Gets or Sets Metric
     /// </summary>
-    [DataMember(Name = "metric", EmitDefaultValue = false)]
+    [JsonPropertyName("metric")]
     public string Metric { get; set; }
 
 
@@ -36,7 +36,7 @@ public partial class StatEventFlowOutcomeTopicMetricStats : IEquatable<StatEvent
     /// <summary>
     /// Gets or Sets Qualifier
     /// </summary>
-    [DataMember(Name = "qualifier", EmitDefaultValue = false)]
+    [JsonPropertyName("qualifier")]
     public string Qualifier { get; set; }
 
 
@@ -44,7 +44,7 @@ public partial class StatEventFlowOutcomeTopicMetricStats : IEquatable<StatEvent
     /// <summary>
     /// Gets or Sets Stats
     /// </summary>
-    [DataMember(Name = "stats", EmitDefaultValue = false)]
+    [JsonPropertyName("stats")]
     public Dictionary<string, double?> Stats { get; set; }
 
 

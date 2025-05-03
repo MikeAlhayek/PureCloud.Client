@@ -1,12 +1,12 @@
-using System.Runtime.Serialization;
 using System.Text;
+using System.Text.Json.Serialization;
 
 namespace PureCloud.Client.Models;
 
 /// <summary>
 /// UnansweredPhraseGroup
 /// </summary>
-[DataContract]
+
 public partial class UnansweredPhraseGroup : IEquatable<UnansweredPhraseGroup>
 {
     /// <summary>
@@ -31,7 +31,7 @@ public partial class UnansweredPhraseGroup : IEquatable<UnansweredPhraseGroup>
     /// The globally unique identifier for the object.
     /// </summary>
     /// <value>The globally unique identifier for the object.</value>
-    [DataMember(Name = "id", EmitDefaultValue = false)]
+    [JsonPropertyName("id")]
     public string Id { get; private set; }
 
 
@@ -40,7 +40,7 @@ public partial class UnansweredPhraseGroup : IEquatable<UnansweredPhraseGroup>
     /// Knowledge base phrase group label
     /// </summary>
     /// <value>Knowledge base phrase group label</value>
-    [DataMember(Name = "label", EmitDefaultValue = false)]
+    [JsonPropertyName("label")]
     public string Label { get; set; }
 
 
@@ -49,7 +49,7 @@ public partial class UnansweredPhraseGroup : IEquatable<UnansweredPhraseGroup>
     /// List of unanswered phrases in a phrase group
     /// </summary>
     /// <value>List of unanswered phrases in a phrase group</value>
-    [DataMember(Name = "phrases", EmitDefaultValue = false)]
+    [JsonPropertyName("phrases")]
     public List<UnansweredPhrase> Phrases { get; set; }
 
 
@@ -58,7 +58,7 @@ public partial class UnansweredPhraseGroup : IEquatable<UnansweredPhraseGroup>
     /// Hit count of the unlinked phrase group
     /// </summary>
     /// <value>Hit count of the unlinked phrase group</value>
-    [DataMember(Name = "unlinkedPhraseHitCount", EmitDefaultValue = false)]
+    [JsonPropertyName("unlinkedPhraseHitCount")]
     public int? UnlinkedPhraseHitCount { get; set; }
 
 
@@ -67,7 +67,7 @@ public partial class UnansweredPhraseGroup : IEquatable<UnansweredPhraseGroup>
     /// Unique phrase count of the unlinked phrase group
     /// </summary>
     /// <value>Unique phrase count of the unlinked phrase group</value>
-    [DataMember(Name = "unlinkedPhraseCount", EmitDefaultValue = false)]
+    [JsonPropertyName("unlinkedPhraseCount")]
     public int? UnlinkedPhraseCount { get; set; }
 
 
@@ -76,7 +76,7 @@ public partial class UnansweredPhraseGroup : IEquatable<UnansweredPhraseGroup>
     /// The URI for this object
     /// </summary>
     /// <value>The URI for this object</value>
-    [DataMember(Name = "selfUri", EmitDefaultValue = false)]
+    [JsonPropertyName("selfUri")]
     public string SelfUri { get; private set; }
 
 

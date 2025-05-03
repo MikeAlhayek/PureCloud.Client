@@ -1,12 +1,12 @@
-using System.Runtime.Serialization;
 using System.Text;
+using System.Text.Json.Serialization;
 
 namespace PureCloud.Client.Models;
 
 /// <summary>
 /// WfmHistoricalAdherenceResultWrapper
 /// </summary>
-[DataContract]
+
 public partial class WfmHistoricalAdherenceResultWrapper : IEquatable<WfmHistoricalAdherenceResultWrapper>
 {
     /// <summary>
@@ -29,7 +29,7 @@ public partial class WfmHistoricalAdherenceResultWrapper : IEquatable<WfmHistori
     /// The operation ID of the historical adherence query
     /// </summary>
     /// <value>The operation ID of the historical adherence query</value>
-    [DataMember(Name = "entityId", EmitDefaultValue = false)]
+    [JsonPropertyName("entityId")]
     public string EntityId { get; set; }
 
 
@@ -38,7 +38,7 @@ public partial class WfmHistoricalAdherenceResultWrapper : IEquatable<WfmHistori
     /// The list of historical adherence query results
     /// </summary>
     /// <value>The list of historical adherence query results</value>
-    [DataMember(Name = "data", EmitDefaultValue = false)]
+    [JsonPropertyName("data")]
     public List<HistoricalAdherenceQueryResult> Data { get; set; }
 
 
@@ -47,7 +47,7 @@ public partial class WfmHistoricalAdherenceResultWrapper : IEquatable<WfmHistori
     /// Map of secondary presence lookup ID to corresponding secondary presence ID
     /// </summary>
     /// <value>Map of secondary presence lookup ID to corresponding secondary presence ID</value>
-    [DataMember(Name = "lookupIdToSecondaryPresenceId", EmitDefaultValue = false)]
+    [JsonPropertyName("lookupIdToSecondaryPresenceId")]
     public Dictionary<string, string> LookupIdToSecondaryPresenceId { get; set; }
 
 

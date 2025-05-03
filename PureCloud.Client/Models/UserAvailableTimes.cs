@@ -1,12 +1,12 @@
-using System.Runtime.Serialization;
 using System.Text;
+using System.Text.Json.Serialization;
 
 namespace PureCloud.Client.Models;
 
 /// <summary>
 /// UserAvailableTimes
 /// </summary>
-[DataContract]
+
 public partial class UserAvailableTimes : IEquatable<UserAvailableTimes>
 {
     /// <summary>
@@ -23,7 +23,7 @@ public partial class UserAvailableTimes : IEquatable<UserAvailableTimes>
     /// User reference
     /// </summary>
     /// <value>User reference</value>
-    [DataMember(Name = "user", EmitDefaultValue = false)]
+    [JsonPropertyName("user")]
     public UserReference User { get; private set; }
 
 
@@ -32,7 +32,7 @@ public partial class UserAvailableTimes : IEquatable<UserAvailableTimes>
     /// Periods of availability to schedule coaching appointment for an user
     /// </summary>
     /// <value>Periods of availability to schedule coaching appointment for an user</value>
-    [DataMember(Name = "availableTimes", EmitDefaultValue = false)]
+    [JsonPropertyName("availableTimes")]
     public List<AvailableTime> AvailableTimes { get; private set; }
 
 

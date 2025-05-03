@@ -7,13 +7,13 @@ namespace PureCloud.Client.Models;
 /// <summary>
 /// V2MobiusRulesTopicRule
 /// </summary>
-[DataContract]
+
 public partial class V2MobiusRulesTopicRule : IEquatable<V2MobiusRulesTopicRule>
 {
     /// <summary>
     /// Gets or Sets Type
     /// </summary>
-    [JsonConverter(typeof(JsonStringEnumConverter))]
+    
     public enum TypeEnum
     {
         /// <summary>
@@ -57,7 +57,7 @@ public partial class V2MobiusRulesTopicRule : IEquatable<V2MobiusRulesTopicRule>
     /// <summary>
     /// Gets or Sets Action
     /// </summary>
-    [JsonConverter(typeof(JsonStringEnumConverter))]
+    
     public enum ActionEnum
     {
         /// <summary>
@@ -95,12 +95,12 @@ public partial class V2MobiusRulesTopicRule : IEquatable<V2MobiusRulesTopicRule>
     /// <summary>
     /// Gets or Sets Type
     /// </summary>
-    [DataMember(Name = "type", EmitDefaultValue = false)]
+    [JsonPropertyName("type")]
     public TypeEnum? Type { get; set; }
     /// <summary>
     /// Gets or Sets Action
     /// </summary>
-    [DataMember(Name = "action", EmitDefaultValue = false)]
+    [JsonPropertyName("action")]
     public ActionEnum? Action { get; set; }
     /// <summary>
     /// Initializes a new instance of the <see cref="V2MobiusRulesTopicRule" /> class.
@@ -139,7 +139,7 @@ public partial class V2MobiusRulesTopicRule : IEquatable<V2MobiusRulesTopicRule>
     /// <summary>
     /// Gets or Sets Id
     /// </summary>
-    [DataMember(Name = "id", EmitDefaultValue = false)]
+    [JsonPropertyName("id")]
     public Guid? Id { get; set; }
 
 
@@ -147,7 +147,7 @@ public partial class V2MobiusRulesTopicRule : IEquatable<V2MobiusRulesTopicRule>
     /// <summary>
     /// Gets or Sets UserId
     /// </summary>
-    [DataMember(Name = "userId", EmitDefaultValue = false)]
+    [JsonPropertyName("userId")]
     public Guid? UserId { get; set; }
 
 
@@ -155,7 +155,7 @@ public partial class V2MobiusRulesTopicRule : IEquatable<V2MobiusRulesTopicRule>
     /// <summary>
     /// Gets or Sets Name
     /// </summary>
-    [DataMember(Name = "name", EmitDefaultValue = false)]
+    [JsonPropertyName("name")]
     public string Name { get; set; }
 
 
@@ -165,7 +165,7 @@ public partial class V2MobiusRulesTopicRule : IEquatable<V2MobiusRulesTopicRule>
     /// <summary>
     /// Gets or Sets Notifications
     /// </summary>
-    [DataMember(Name = "notifications", EmitDefaultValue = false)]
+    [JsonPropertyName("notifications")]
     public List<V2MobiusRulesTopicAlertNotification> Notifications { get; set; }
 
 
@@ -173,7 +173,7 @@ public partial class V2MobiusRulesTopicRule : IEquatable<V2MobiusRulesTopicRule>
     /// <summary>
     /// Gets or Sets Conditions
     /// </summary>
-    [DataMember(Name = "conditions", EmitDefaultValue = false)]
+    [JsonPropertyName("conditions")]
     public V2MobiusRulesTopicCondition Conditions { get; set; }
 
 
@@ -181,7 +181,7 @@ public partial class V2MobiusRulesTopicRule : IEquatable<V2MobiusRulesTopicRule>
     /// <summary>
     /// Gets or Sets Enabled
     /// </summary>
-    [DataMember(Name = "enabled", EmitDefaultValue = false)]
+    [JsonPropertyName("enabled")]
     public bool? Enabled { get; set; }
 
 
@@ -189,7 +189,7 @@ public partial class V2MobiusRulesTopicRule : IEquatable<V2MobiusRulesTopicRule>
     /// <summary>
     /// Gets or Sets InAlarm
     /// </summary>
-    [DataMember(Name = "inAlarm", EmitDefaultValue = false)]
+    [JsonPropertyName("inAlarm")]
     public bool? InAlarm { get; set; }
 
 
@@ -199,7 +199,7 @@ public partial class V2MobiusRulesTopicRule : IEquatable<V2MobiusRulesTopicRule>
     /// <summary>
     /// Gets or Sets DateCreated
     /// </summary>
-    [DataMember(Name = "dateCreated", EmitDefaultValue = false)]
+    [JsonPropertyName("dateCreated")]
     public DateTime? DateCreated { get; set; }
 
 
@@ -207,7 +207,7 @@ public partial class V2MobiusRulesTopicRule : IEquatable<V2MobiusRulesTopicRule>
     /// <summary>
     /// Gets or Sets SendExitingAlarmNotification
     /// </summary>
-    [DataMember(Name = "sendExitingAlarmNotification", EmitDefaultValue = false)]
+    [JsonPropertyName("sendExitingAlarmNotification")]
     public bool? SendExitingAlarmNotification { get; set; }
 
 
@@ -215,7 +215,7 @@ public partial class V2MobiusRulesTopicRule : IEquatable<V2MobiusRulesTopicRule>
     /// <summary>
     /// Gets or Sets WaitBetweenNotificationMs
     /// </summary>
-    [DataMember(Name = "waitBetweenNotificationMs", EmitDefaultValue = false)]
+    [JsonPropertyName("waitBetweenNotificationMs")]
     public long? WaitBetweenNotificationMs { get; set; }
 
 

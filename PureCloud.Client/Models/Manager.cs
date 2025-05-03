@@ -1,12 +1,12 @@
-using System.Runtime.Serialization;
 using System.Text;
+using System.Text.Json.Serialization;
 
 namespace PureCloud.Client.Models;
 
 /// <summary>
 /// Defines a SCIM manager.
 /// </summary>
-[DataContract]
+
 public partial class Manager : IEquatable<Manager>
 {
     /// <summary>
@@ -25,7 +25,7 @@ public partial class Manager : IEquatable<Manager>
     /// The ID of the manager.
     /// </summary>
     /// <value>The ID of the manager.</value>
-    [DataMember(Name = "value", EmitDefaultValue = false)]
+    [JsonPropertyName("value")]
     public string Value { get; set; }
 
 
@@ -34,7 +34,7 @@ public partial class Manager : IEquatable<Manager>
     /// The reference URI of the manager&#39;s user record.
     /// </summary>
     /// <value>The reference URI of the manager&#39;s user record.</value>
-    [DataMember(Name = "$ref", EmitDefaultValue = false)]
+    [JsonPropertyName("$ref")]
     public string Ref { get; private set; }
 
 

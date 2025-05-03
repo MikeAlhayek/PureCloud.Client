@@ -1,12 +1,12 @@
-using System.Runtime.Serialization;
 using System.Text;
+using System.Text.Json.Serialization;
 
 namespace PureCloud.Client.Models;
 
 /// <summary>
 /// SnapshotInfo
 /// </summary>
-[DataContract]
+
 public partial class SnapshotInfo : IEquatable<SnapshotInfo>
 {
     /// <summary>
@@ -33,7 +33,7 @@ public partial class SnapshotInfo : IEquatable<SnapshotInfo>
     /// Version of the snapshot
     /// </summary>
     /// <value>Version of the snapshot</value>
-    [DataMember(Name = "version", EmitDefaultValue = false)]
+    [JsonPropertyName("version")]
     public int? Version { get; set; }
 
 
@@ -42,7 +42,7 @@ public partial class SnapshotInfo : IEquatable<SnapshotInfo>
     /// Snapshot Id of the continuous forecast session
     /// </summary>
     /// <value>Snapshot Id of the continuous forecast session</value>
-    [DataMember(Name = "snapshotId", EmitDefaultValue = false)]
+    [JsonPropertyName("snapshotId")]
     public string SnapshotId { get; set; }
 
 
@@ -51,7 +51,7 @@ public partial class SnapshotInfo : IEquatable<SnapshotInfo>
     /// Session Id of the continuous forecast session
     /// </summary>
     /// <value>Session Id of the continuous forecast session</value>
-    [DataMember(Name = "sessionId", EmitDefaultValue = false)]
+    [JsonPropertyName("sessionId")]
     public string SessionId { get; set; }
 
 
@@ -60,7 +60,7 @@ public partial class SnapshotInfo : IEquatable<SnapshotInfo>
     /// Business unit ID of the continuous forecast session
     /// </summary>
     /// <value>Business unit ID of the continuous forecast session</value>
-    [DataMember(Name = "businessUnitId", EmitDefaultValue = false)]
+    [JsonPropertyName("businessUnitId")]
     public string BusinessUnitId { get; set; }
 
 
@@ -69,7 +69,7 @@ public partial class SnapshotInfo : IEquatable<SnapshotInfo>
     /// Version of the planning groups
     /// </summary>
     /// <value>Version of the planning groups</value>
-    [DataMember(Name = "planningGroupsVersion", EmitDefaultValue = false)]
+    [JsonPropertyName("planningGroupsVersion")]
     public int? PlanningGroupsVersion { get; set; }
 
 

@@ -7,14 +7,14 @@ namespace PureCloud.Client.Models;
 /// <summary>
 /// ContactColumnTimeZone
 /// </summary>
-[DataContract]
+
 public partial class ContactColumnTimeZone : IEquatable<ContactColumnTimeZone>
 {
     /// <summary>
     /// Column Type will be either PHONE or ZIP
     /// </summary>
     /// <value>Column Type will be either PHONE or ZIP</value>
-    [JsonConverter(typeof(JsonStringEnumConverter))]
+    
     public enum ColumnTypeEnum
     {
         /// <summary>
@@ -41,7 +41,7 @@ public partial class ContactColumnTimeZone : IEquatable<ContactColumnTimeZone>
     /// Column Type will be either PHONE or ZIP
     /// </summary>
     /// <value>Column Type will be either PHONE or ZIP</value>
-    [DataMember(Name = "columnType", EmitDefaultValue = false)]
+    [JsonPropertyName("columnType")]
     public ColumnTypeEnum? ColumnType { get; private set; }
     /// <summary>
     /// Initializes a new instance of the <see cref="ContactColumnTimeZone" /> class.
@@ -59,7 +59,7 @@ public partial class ContactColumnTimeZone : IEquatable<ContactColumnTimeZone>
     /// Time zone that the column matched to. Time zones are represented as a string of the zone name as found in the IANA time zone database. For example: UTC, Etc/UTC, or Europe/London
     /// </summary>
     /// <value>Time zone that the column matched to. Time zones are represented as a string of the zone name as found in the IANA time zone database. For example: UTC, Etc/UTC, or Europe/London</value>
-    [DataMember(Name = "timeZone", EmitDefaultValue = false)]
+    [JsonPropertyName("timeZone")]
     public string TimeZone { get; set; }
 
 

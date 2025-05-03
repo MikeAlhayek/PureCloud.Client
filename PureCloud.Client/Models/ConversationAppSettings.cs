@@ -1,12 +1,12 @@
-using System.Runtime.Serialization;
 using System.Text;
+using System.Text.Json.Serialization;
 
 namespace PureCloud.Client.Models;
 
 /// <summary>
 /// Conversation settings that handles chats within the messenger
 /// </summary>
-[DataContract]
+
 public partial class ConversationAppSettings : IEquatable<ConversationAppSettings>
 {
     /// <summary>
@@ -41,7 +41,7 @@ public partial class ConversationAppSettings : IEquatable<ConversationAppSetting
     /// The toggle to enable or disable conversations
     /// </summary>
     /// <value>The toggle to enable or disable conversations</value>
-    [DataMember(Name = "enabled", EmitDefaultValue = false)]
+    [JsonPropertyName("enabled")]
     public bool? Enabled { get; set; }
 
 
@@ -50,7 +50,7 @@ public partial class ConversationAppSettings : IEquatable<ConversationAppSetting
     /// The toggle to enable or disable typing indicator for messenger
     /// </summary>
     /// <value>The toggle to enable or disable typing indicator for messenger</value>
-    [DataMember(Name = "showAgentTypingIndicator", EmitDefaultValue = false)]
+    [JsonPropertyName("showAgentTypingIndicator")]
     public bool? ShowAgentTypingIndicator { get; set; }
 
 
@@ -59,7 +59,7 @@ public partial class ConversationAppSettings : IEquatable<ConversationAppSetting
     /// The toggle to enable or disable typing indicator for messenger
     /// </summary>
     /// <value>The toggle to enable or disable typing indicator for messenger</value>
-    [DataMember(Name = "showUserTypingIndicator", EmitDefaultValue = false)]
+    [JsonPropertyName("showUserTypingIndicator")]
     public bool? ShowUserTypingIndicator { get; set; }
 
 
@@ -68,7 +68,7 @@ public partial class ConversationAppSettings : IEquatable<ConversationAppSetting
     /// The auto start for the messenger conversation
     /// </summary>
     /// <value>The auto start for the messenger conversation</value>
-    [DataMember(Name = "autoStart", EmitDefaultValue = false)]
+    [JsonPropertyName("autoStart")]
     public AutoStart AutoStart { get; set; }
 
 
@@ -77,7 +77,7 @@ public partial class ConversationAppSettings : IEquatable<ConversationAppSetting
     /// The markdown for the messenger app
     /// </summary>
     /// <value>The markdown for the messenger app</value>
-    [DataMember(Name = "markdown", EmitDefaultValue = false)]
+    [JsonPropertyName("markdown")]
     public Markdown Markdown { get; set; }
 
 
@@ -86,7 +86,7 @@ public partial class ConversationAppSettings : IEquatable<ConversationAppSetting
     /// The conversation disconnect settings for the messenger app
     /// </summary>
     /// <value>The conversation disconnect settings for the messenger app</value>
-    [DataMember(Name = "conversationDisconnect", EmitDefaultValue = false)]
+    [JsonPropertyName("conversationDisconnect")]
     public ConversationDisconnectSettings ConversationDisconnect { get; set; }
 
 
@@ -95,7 +95,7 @@ public partial class ConversationAppSettings : IEquatable<ConversationAppSetting
     /// The conversation clear settings for the messenger app
     /// </summary>
     /// <value>The conversation clear settings for the messenger app</value>
-    [DataMember(Name = "conversationClear", EmitDefaultValue = false)]
+    [JsonPropertyName("conversationClear")]
     public ConversationClearSettings ConversationClear { get; set; }
 
 
@@ -104,7 +104,7 @@ public partial class ConversationAppSettings : IEquatable<ConversationAppSetting
     /// The humanize conversations settings for the messenger app
     /// </summary>
     /// <value>The humanize conversations settings for the messenger app</value>
-    [DataMember(Name = "humanize", EmitDefaultValue = false)]
+    [JsonPropertyName("humanize")]
     public Humanize Humanize { get; set; }
 
 
@@ -113,7 +113,7 @@ public partial class ConversationAppSettings : IEquatable<ConversationAppSetting
     /// The notification settings for messenger apps
     /// </summary>
     /// <value>The notification settings for messenger apps</value>
-    [DataMember(Name = "notifications", EmitDefaultValue = false)]
+    [JsonPropertyName("notifications")]
     public NotificationsSettings Notifications { get; set; }
 
 

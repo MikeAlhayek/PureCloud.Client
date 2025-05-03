@@ -7,14 +7,14 @@ namespace PureCloud.Client.Models;
 /// <summary>
 /// OutboundSettings
 /// </summary>
-[DataContract]
+
 public partial class OutboundSettings : IEquatable<OutboundSettings>
 {
     /// <summary>
     /// The denominator to be used in determining the compliance abandon rate
     /// </summary>
     /// <value>The denominator to be used in determining the compliance abandon rate</value>
-    [JsonConverter(typeof(JsonStringEnumConverter))]
+    
     public enum ComplianceAbandonRateDenominatorEnum
     {
         /// <summary>
@@ -41,7 +41,7 @@ public partial class OutboundSettings : IEquatable<OutboundSettings>
     /// The denominator to be used in determining the compliance abandon rate
     /// </summary>
     /// <value>The denominator to be used in determining the compliance abandon rate</value>
-    [DataMember(Name = "complianceAbandonRateDenominator", EmitDefaultValue = false)]
+    [JsonPropertyName("complianceAbandonRateDenominator")]
     public ComplianceAbandonRateDenominatorEnum? ComplianceAbandonRateDenominator { get; set; }
     /// <summary>
     /// Initializes a new instance of the <see cref="OutboundSettings" /> class.
@@ -75,7 +75,7 @@ public partial class OutboundSettings : IEquatable<OutboundSettings>
     /// The globally unique identifier for the object.
     /// </summary>
     /// <value>The globally unique identifier for the object.</value>
-    [DataMember(Name = "id", EmitDefaultValue = false)]
+    [JsonPropertyName("id")]
     public string Id { get; private set; }
 
 
@@ -83,7 +83,7 @@ public partial class OutboundSettings : IEquatable<OutboundSettings>
     /// <summary>
     /// Gets or Sets Name
     /// </summary>
-    [DataMember(Name = "name", EmitDefaultValue = false)]
+    [JsonPropertyName("name")]
     public string Name { get; set; }
 
 
@@ -92,7 +92,7 @@ public partial class OutboundSettings : IEquatable<OutboundSettings>
     /// Creation time of the entity. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z
     /// </summary>
     /// <value>Creation time of the entity. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z</value>
-    [DataMember(Name = "dateCreated", EmitDefaultValue = false)]
+    [JsonPropertyName("dateCreated")]
     public DateTime? DateCreated { get; private set; }
 
 
@@ -101,7 +101,7 @@ public partial class OutboundSettings : IEquatable<OutboundSettings>
     /// Last modified time of the entity. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z
     /// </summary>
     /// <value>Last modified time of the entity. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z</value>
-    [DataMember(Name = "dateModified", EmitDefaultValue = false)]
+    [JsonPropertyName("dateModified")]
     public DateTime? DateModified { get; private set; }
 
 
@@ -110,7 +110,7 @@ public partial class OutboundSettings : IEquatable<OutboundSettings>
     /// Required for updates, must match the version number of the most recent update
     /// </summary>
     /// <value>Required for updates, must match the version number of the most recent update</value>
-    [DataMember(Name = "version", EmitDefaultValue = false)]
+    [JsonPropertyName("version")]
     public int? Version { get; set; }
 
 
@@ -119,7 +119,7 @@ public partial class OutboundSettings : IEquatable<OutboundSettings>
     /// The maximum number of calls that can be placed per agent on any campaign
     /// </summary>
     /// <value>The maximum number of calls that can be placed per agent on any campaign</value>
-    [DataMember(Name = "maxCallsPerAgent", EmitDefaultValue = false)]
+    [JsonPropertyName("maxCallsPerAgent")]
     public int? MaxCallsPerAgent { get; set; }
 
 
@@ -128,7 +128,7 @@ public partial class OutboundSettings : IEquatable<OutboundSettings>
     /// The maximum number of calls that can be placed per agent on any campaign with decimal precision
     /// </summary>
     /// <value>The maximum number of calls that can be placed per agent on any campaign with decimal precision</value>
-    [DataMember(Name = "maxCallsPerAgentDecimal", EmitDefaultValue = false)]
+    [JsonPropertyName("maxCallsPerAgentDecimal")]
     public double? MaxCallsPerAgentDecimal { get; set; }
 
 
@@ -137,7 +137,7 @@ public partial class OutboundSettings : IEquatable<OutboundSettings>
     /// The maximum number of calls that can be configured to be placed per agent on any campaign
     /// </summary>
     /// <value>The maximum number of calls that can be configured to be placed per agent on any campaign</value>
-    [DataMember(Name = "maxConfigurableCallsPerAgent", EmitDefaultValue = false)]
+    [JsonPropertyName("maxConfigurableCallsPerAgent")]
     public int? MaxConfigurableCallsPerAgent { get; private set; }
 
 
@@ -146,7 +146,7 @@ public partial class OutboundSettings : IEquatable<OutboundSettings>
     /// The maximum percentage of lines that should be used for Outbound, expressed as a decimal in the range [0.0, 1.0]
     /// </summary>
     /// <value>The maximum percentage of lines that should be used for Outbound, expressed as a decimal in the range [0.0, 1.0]</value>
-    [DataMember(Name = "maxLineUtilization", EmitDefaultValue = false)]
+    [JsonPropertyName("maxLineUtilization")]
     public double? MaxLineUtilization { get; set; }
 
 
@@ -155,7 +155,7 @@ public partial class OutboundSettings : IEquatable<OutboundSettings>
     /// The number of seconds used to determine if a call is abandoned
     /// </summary>
     /// <value>The number of seconds used to determine if a call is abandoned</value>
-    [DataMember(Name = "abandonSeconds", EmitDefaultValue = false)]
+    [JsonPropertyName("abandonSeconds")]
     public double? AbandonSeconds { get; set; }
 
 
@@ -166,7 +166,7 @@ public partial class OutboundSettings : IEquatable<OutboundSettings>
     /// The settings for automatic time zone mapping. Note that changing these settings will change them for both voice and messaging campaigns.
     /// </summary>
     /// <value>The settings for automatic time zone mapping. Note that changing these settings will change them for both voice and messaging campaigns.</value>
-    [DataMember(Name = "automaticTimeZoneMapping", EmitDefaultValue = false)]
+    [JsonPropertyName("automaticTimeZoneMapping")]
     public AutomaticTimeZoneMappingSettings AutomaticTimeZoneMapping { get; set; }
 
 
@@ -175,7 +175,7 @@ public partial class OutboundSettings : IEquatable<OutboundSettings>
     /// Whether or not to reschedule time-zone blocked contacts
     /// </summary>
     /// <value>Whether or not to reschedule time-zone blocked contacts</value>
-    [DataMember(Name = "rescheduleTimeZoneSkippedContacts", EmitDefaultValue = false)]
+    [JsonPropertyName("rescheduleTimeZoneSkippedContacts")]
     public bool? RescheduleTimeZoneSkippedContacts { get; set; }
 
 
@@ -184,7 +184,7 @@ public partial class OutboundSettings : IEquatable<OutboundSettings>
     /// The URI for this object
     /// </summary>
     /// <value>The URI for this object</value>
-    [DataMember(Name = "selfUri", EmitDefaultValue = false)]
+    [JsonPropertyName("selfUri")]
     public string SelfUri { get; private set; }
 
 

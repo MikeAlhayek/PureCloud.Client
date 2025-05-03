@@ -1,4 +1,3 @@
-using System.Runtime.Serialization;
 using System.Text;
 using System.Text.Json.Serialization;
 
@@ -7,7 +6,7 @@ namespace PureCloud.Client.Models;
 /// <summary>
 /// LibraryBatchRequest
 /// </summary>
-[DataContract]
+
 public partial class LibraryBatchRequest : IEquatable<LibraryBatchRequest>
 {
 
@@ -32,7 +31,7 @@ public partial class LibraryBatchRequest : IEquatable<LibraryBatchRequest>
     /// List of Library IDs
     /// </summary>
     /// <value>List of Library IDs</value>
-    [DataMember(Name = "libraryIds", EmitDefaultValue = false)]
+    [JsonPropertyName("libraryIds")]
     public List<string> LibraryIds { get; set; }
 
 

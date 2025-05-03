@@ -1,12 +1,12 @@
-using System.Runtime.Serialization;
 using System.Text;
+using System.Text.Json.Serialization;
 
 namespace PureCloud.Client.Models;
 
 /// <summary>
 /// SearchAlternativeShiftTradesRequest
 /// </summary>
-[DataContract]
+
 public partial class SearchAlternativeShiftTradesRequest : IEquatable<SearchAlternativeShiftTradesRequest>
 {
     /// <summary>
@@ -27,7 +27,7 @@ public partial class SearchAlternativeShiftTradesRequest : IEquatable<SearchAlte
     /// The list of management unit IDs for this alternative shift trade search. Either managementUnitIds or agentIds is required
     /// </summary>
     /// <value>The list of management unit IDs for this alternative shift trade search. Either managementUnitIds or agentIds is required</value>
-    [DataMember(Name = "managementUnitIds", EmitDefaultValue = false)]
+    [JsonPropertyName("managementUnitIds")]
     public List<string> ManagementUnitIds { get; set; }
 
 
@@ -36,7 +36,7 @@ public partial class SearchAlternativeShiftTradesRequest : IEquatable<SearchAlte
     /// The list of agent IDs for this alternative shift trade search. Either managementUnitIds or agentIds is required
     /// </summary>
     /// <value>The list of agent IDs for this alternative shift trade search. Either managementUnitIds or agentIds is required</value>
-    [DataMember(Name = "agentIds", EmitDefaultValue = false)]
+    [JsonPropertyName("agentIds")]
     public List<string> AgentIds { get; set; }
 
 

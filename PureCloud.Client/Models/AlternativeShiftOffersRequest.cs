@@ -1,4 +1,3 @@
-using System.Runtime.Serialization;
 using System.Text;
 using System.Text.Json.Serialization;
 
@@ -7,7 +6,7 @@ namespace PureCloud.Client.Models;
 /// <summary>
 /// AlternativeShiftOffersRequest
 /// </summary>
-[DataContract]
+
 public partial class AlternativeShiftOffersRequest : IEquatable<AlternativeShiftOffersRequest>
 {
 
@@ -34,7 +33,7 @@ public partial class AlternativeShiftOffersRequest : IEquatable<AlternativeShift
     /// The existing schedule being used to find alternative shift offers
     /// </summary>
     /// <value>The existing schedule being used to find alternative shift offers</value>
-    [DataMember(Name = "schedule", EmitDefaultValue = false)]
+    [JsonPropertyName("schedule")]
     public AlternativeShiftScheduleLookup Schedule { get; set; }
 
 
@@ -43,7 +42,7 @@ public partial class AlternativeShiftOffersRequest : IEquatable<AlternativeShift
     /// The start date for the week in this schedule in yyyy-MM-dd format. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd
     /// </summary>
     /// <value>The start date for the week in this schedule in yyyy-MM-dd format. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd</value>
-    [DataMember(Name = "queryWeekDate", EmitDefaultValue = false)]
+    [JsonPropertyName("queryWeekDate")]
     public string QueryWeekDate { get; set; }
 
 

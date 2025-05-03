@@ -7,14 +7,14 @@ namespace PureCloud.Client.Models;
 /// <summary>
 /// RecordingEncryptionConfiguration
 /// </summary>
-[DataContract]
+
 public partial class RecordingEncryptionConfiguration : IEquatable<RecordingEncryptionConfiguration>
 {
     /// <summary>
     /// Type should be LocalKeyManager or KmsSymmetric when create or update Key configurations; 'Native' for disabling configuration.
     /// </summary>
     /// <value>Type should be LocalKeyManager or KmsSymmetric when create or update Key configurations; 'Native' for disabling configuration.</value>
-    [JsonConverter(typeof(JsonStringEnumConverter))]
+    
     public enum KeyConfigurationTypeEnum
     {
         /// <summary>
@@ -53,7 +53,7 @@ public partial class RecordingEncryptionConfiguration : IEquatable<RecordingEncr
     /// Type should be LocalKeyManager or KmsSymmetric when create or update Key configurations; 'Native' for disabling configuration.
     /// </summary>
     /// <value>Type should be LocalKeyManager or KmsSymmetric when create or update Key configurations; 'Native' for disabling configuration.</value>
-    [DataMember(Name = "keyConfigurationType", EmitDefaultValue = false)]
+    [JsonPropertyName("keyConfigurationType")]
     public KeyConfigurationTypeEnum? KeyConfigurationType { get; set; }
 
     /// <summary>
@@ -85,7 +85,7 @@ public partial class RecordingEncryptionConfiguration : IEquatable<RecordingEncr
     /// The globally unique identifier for the object.
     /// </summary>
     /// <value>The globally unique identifier for the object.</value>
-    [DataMember(Name = "id", EmitDefaultValue = false)]
+    [JsonPropertyName("id")]
     public string Id { get; private set; }
 
 
@@ -94,7 +94,7 @@ public partial class RecordingEncryptionConfiguration : IEquatable<RecordingEncr
     /// When keyConfigurationType is LocalKeyManager, this should be the url for decryption and must specify the path to where GenesysCloud can requests decryption. When keyConfigurationType is KmsSymmetric, this should be the arn to the key alias for the master key
     /// </summary>
     /// <value>When keyConfigurationType is LocalKeyManager, this should be the url for decryption and must specify the path to where GenesysCloud can requests decryption. When keyConfigurationType is KmsSymmetric, this should be the arn to the key alias for the master key</value>
-    [DataMember(Name = "url", EmitDefaultValue = false)]
+    [JsonPropertyName("url")]
     public string Url { get; set; }
 
 
@@ -103,7 +103,7 @@ public partial class RecordingEncryptionConfiguration : IEquatable<RecordingEncr
     /// The api id for Hawk Authentication. Null if keyConfigurationType is KmsSymmetric
     /// </summary>
     /// <value>The api id for Hawk Authentication. Null if keyConfigurationType is KmsSymmetric</value>
-    [DataMember(Name = "apiId", EmitDefaultValue = false)]
+    [JsonPropertyName("apiId")]
     public string ApiId { get; set; }
 
 
@@ -112,7 +112,7 @@ public partial class RecordingEncryptionConfiguration : IEquatable<RecordingEncr
     /// The api shared symmetric key used for hawk authentication. Null if keyConfigurationType is KmsSymmetric
     /// </summary>
     /// <value>The api shared symmetric key used for hawk authentication. Null if keyConfigurationType is KmsSymmetric</value>
-    [DataMember(Name = "apiKey", EmitDefaultValue = false)]
+    [JsonPropertyName("apiKey")]
     public string ApiKey { get; set; }
 
 
@@ -123,7 +123,7 @@ public partial class RecordingEncryptionConfiguration : IEquatable<RecordingEncr
     /// The error message related to the configuration
     /// </summary>
     /// <value>The error message related to the configuration</value>
-    [DataMember(Name = "lastError", EmitDefaultValue = false)]
+    [JsonPropertyName("lastError")]
     public ErrorBody LastError { get; set; }
 
 
@@ -132,7 +132,7 @@ public partial class RecordingEncryptionConfiguration : IEquatable<RecordingEncr
     /// The URI for this object
     /// </summary>
     /// <value>The URI for this object</value>
-    [DataMember(Name = "selfUri", EmitDefaultValue = false)]
+    [JsonPropertyName("selfUri")]
     public string SelfUri { get; private set; }
 
 

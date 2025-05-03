@@ -1,12 +1,12 @@
-using System.Runtime.Serialization;
 using System.Text;
+using System.Text.Json.Serialization;
 
 namespace PureCloud.Client.Models;
 
 /// <summary>
 /// Fallback
 /// </summary>
-[DataContract]
+
 public partial class Fallback : IEquatable<Fallback>
 {
     /// <summary>
@@ -27,7 +27,7 @@ public partial class Fallback : IEquatable<Fallback>
     /// Fallback actions are enabled.
     /// </summary>
     /// <value>Fallback actions are enabled.</value>
-    [DataMember(Name = "enabled", EmitDefaultValue = false)]
+    [JsonPropertyName("enabled")]
     public bool? Enabled { get; set; }
 
 
@@ -36,7 +36,7 @@ public partial class Fallback : IEquatable<Fallback>
     /// Fallback actions.
     /// </summary>
     /// <value>Fallback actions.</value>
-    [DataMember(Name = "actions", EmitDefaultValue = false)]
+    [JsonPropertyName("actions")]
     public List<CopilotFallbackAction> Actions { get; set; }
 
 

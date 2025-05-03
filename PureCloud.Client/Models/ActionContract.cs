@@ -1,12 +1,12 @@
-using System.Runtime.Serialization;
 using System.Text;
+using System.Text.Json.Serialization;
 
 namespace PureCloud.Client.Models;
 
 /// <summary>
 /// This resource contains all of the schemas needed to define the inputs and outputs, of a single Action.
 /// </summary>
-[DataContract]
+
 public partial class ActionContract : IEquatable<ActionContract>
 {
     /// <summary>
@@ -27,7 +27,7 @@ public partial class ActionContract : IEquatable<ActionContract>
     /// The output to expect when executing this action.
     /// </summary>
     /// <value>The output to expect when executing this action.</value>
-    [DataMember(Name = "output", EmitDefaultValue = false)]
+    [JsonPropertyName("output")]
     public ActionOutput Output { get; set; }
 
 
@@ -36,7 +36,7 @@ public partial class ActionContract : IEquatable<ActionContract>
     /// The input required when executing this action.
     /// </summary>
     /// <value>The input required when executing this action.</value>
-    [DataMember(Name = "input", EmitDefaultValue = false)]
+    [JsonPropertyName("input")]
     public ActionInput Input { get; set; }
 
 

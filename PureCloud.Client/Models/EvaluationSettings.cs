@@ -1,12 +1,12 @@
-using System.Runtime.Serialization;
 using System.Text;
+using System.Text.Json.Serialization;
 
 namespace PureCloud.Client.Models;
 
 /// <summary>
 /// EvaluationSettings
 /// </summary>
-[DataContract]
+
 public partial class EvaluationSettings : IEquatable<EvaluationSettings>
 {
     /// <summary>
@@ -31,7 +31,7 @@ public partial class EvaluationSettings : IEquatable<EvaluationSettings>
     /// Whether revisions are allowed for evaluations. When enabled, rescoring creates a new version of the evaluation and retracts the existing evaluation version. Does not apply for calibration evaluations.
     /// </summary>
     /// <value>Whether revisions are allowed for evaluations. When enabled, rescoring creates a new version of the evaluation and retracts the existing evaluation version. Does not apply for calibration evaluations.</value>
-    [DataMember(Name = "revisionsEnabled", EmitDefaultValue = false)]
+    [JsonPropertyName("revisionsEnabled")]
     public bool? RevisionsEnabled { get; set; }
 
 
@@ -40,7 +40,7 @@ public partial class EvaluationSettings : IEquatable<EvaluationSettings>
     /// Whether disputes are allowed for evaluations. Does not apply for calibration evaluations.
     /// </summary>
     /// <value>Whether disputes are allowed for evaluations. Does not apply for calibration evaluations.</value>
-    [DataMember(Name = "disputesEnabled", EmitDefaultValue = false)]
+    [JsonPropertyName("disputesEnabled")]
     public bool? DisputesEnabled { get; set; }
 
 
@@ -49,7 +49,7 @@ public partial class EvaluationSettings : IEquatable<EvaluationSettings>
     /// The maximum number of disputes allowed for an evaluation.
     /// </summary>
     /// <value>The maximum number of disputes allowed for an evaluation.</value>
-    [DataMember(Name = "disputesAllowedPerEvaluation", EmitDefaultValue = false)]
+    [JsonPropertyName("disputesAllowedPerEvaluation")]
     public int? DisputesAllowedPerEvaluation { get; set; }
 
 
@@ -58,7 +58,7 @@ public partial class EvaluationSettings : IEquatable<EvaluationSettings>
     /// A list of assignees responsible for handling each dispute. This list size needs to be equal to disputesAllowedPerEvaluation.
     /// </summary>
     /// <value>A list of assignees responsible for handling each dispute. This list size needs to be equal to disputesAllowedPerEvaluation.</value>
-    [DataMember(Name = "disputesAssignees", EmitDefaultValue = false)]
+    [JsonPropertyName("disputesAssignees")]
     public List<EvaluationSettingsAssignee> DisputesAssignees { get; set; }
 
 

@@ -7,13 +7,13 @@ namespace PureCloud.Client.Models;
 /// <summary>
 /// QueueConversationSocialExpressionEventTopicMessage
 /// </summary>
-[DataContract]
+
 public partial class QueueConversationSocialExpressionEventTopicMessage : IEquatable<QueueConversationSocialExpressionEventTopicMessage>
 {
     /// <summary>
     /// Gets or Sets State
     /// </summary>
-    [JsonConverter(typeof(JsonStringEnumConverter))]
+    
     public enum StateEnum
     {
         /// <summary>
@@ -45,7 +45,7 @@ public partial class QueueConversationSocialExpressionEventTopicMessage : IEquat
     /// <summary>
     /// Gets or Sets InitialState
     /// </summary>
-    [JsonConverter(typeof(JsonStringEnumConverter))]
+    
     public enum InitialStateEnum
     {
         /// <summary>
@@ -78,7 +78,7 @@ public partial class QueueConversationSocialExpressionEventTopicMessage : IEquat
     /// Whether a message is inbound or outbound.
     /// </summary>
     /// <value>Whether a message is inbound or outbound.</value>
-    [JsonConverter(typeof(JsonStringEnumConverter))]
+    
     public enum DirectionEnum
     {
         /// <summary>
@@ -105,7 +105,7 @@ public partial class QueueConversationSocialExpressionEventTopicMessage : IEquat
     /// System defined string indicating what caused the communication to disconnect. Will be null until the communication disconnects.
     /// </summary>
     /// <value>System defined string indicating what caused the communication to disconnect. Will be null until the communication disconnects.</value>
-    [JsonConverter(typeof(JsonStringEnumConverter))]
+    
     public enum DisconnectTypeEnum
     {
         /// <summary>
@@ -228,7 +228,7 @@ public partial class QueueConversationSocialExpressionEventTopicMessage : IEquat
     /// Indicates the type of message platform from which the message originated.
     /// </summary>
     /// <value>Indicates the type of message platform from which the message originated.</value>
-    [JsonConverter(typeof(JsonStringEnumConverter))]
+    
     public enum TypeEnum
     {
         /// <summary>
@@ -326,30 +326,30 @@ public partial class QueueConversationSocialExpressionEventTopicMessage : IEquat
     /// <summary>
     /// Gets or Sets State
     /// </summary>
-    [DataMember(Name = "state", EmitDefaultValue = false)]
+    [JsonPropertyName("state")]
     public StateEnum? State { get; set; }
     /// <summary>
     /// Gets or Sets InitialState
     /// </summary>
-    [DataMember(Name = "initialState", EmitDefaultValue = false)]
+    [JsonPropertyName("initialState")]
     public InitialStateEnum? InitialState { get; set; }
     /// <summary>
     /// Whether a message is inbound or outbound.
     /// </summary>
     /// <value>Whether a message is inbound or outbound.</value>
-    [DataMember(Name = "direction", EmitDefaultValue = false)]
+    [JsonPropertyName("direction")]
     public DirectionEnum? Direction { get; set; }
     /// <summary>
     /// System defined string indicating what caused the communication to disconnect. Will be null until the communication disconnects.
     /// </summary>
     /// <value>System defined string indicating what caused the communication to disconnect. Will be null until the communication disconnects.</value>
-    [DataMember(Name = "disconnectType", EmitDefaultValue = false)]
+    [JsonPropertyName("disconnectType")]
     public DisconnectTypeEnum? DisconnectType { get; set; }
     /// <summary>
     /// Indicates the type of message platform from which the message originated.
     /// </summary>
     /// <value>Indicates the type of message platform from which the message originated.</value>
-    [DataMember(Name = "type", EmitDefaultValue = false)]
+    [JsonPropertyName("type")]
     public TypeEnum? Type { get; set; }
     /// <summary>
     /// Initializes a new instance of the <see cref="QueueConversationSocialExpressionEventTopicMessage" /> class.
@@ -419,7 +419,7 @@ public partial class QueueConversationSocialExpressionEventTopicMessage : IEquat
     /// A globally unique identifier for this communication.
     /// </summary>
     /// <value>A globally unique identifier for this communication.</value>
-    [DataMember(Name = "id", EmitDefaultValue = false)]
+    [JsonPropertyName("id")]
     public string Id { get; set; }
 
 
@@ -434,7 +434,7 @@ public partial class QueueConversationSocialExpressionEventTopicMessage : IEquat
     /// True if this call is held and the person on this side hears silence.
     /// </summary>
     /// <value>True if this call is held and the person on this side hears silence.</value>
-    [DataMember(Name = "held", EmitDefaultValue = false)]
+    [JsonPropertyName("held")]
     public bool? Held { get; set; }
 
 
@@ -443,7 +443,7 @@ public partial class QueueConversationSocialExpressionEventTopicMessage : IEquat
     /// Detailed information about an error response.
     /// </summary>
     /// <value>Detailed information about an error response.</value>
-    [DataMember(Name = "errorInfo", EmitDefaultValue = false)]
+    [JsonPropertyName("errorInfo")]
     public QueueConversationSocialExpressionEventTopicErrorDetails ErrorInfo { get; set; }
 
 
@@ -452,7 +452,7 @@ public partial class QueueConversationSocialExpressionEventTopicMessage : IEquat
     /// The source provider of the email.
     /// </summary>
     /// <value>The source provider of the email.</value>
-    [DataMember(Name = "provider", EmitDefaultValue = false)]
+    [JsonPropertyName("provider")]
     public string Provider { get; set; }
 
 
@@ -461,7 +461,7 @@ public partial class QueueConversationSocialExpressionEventTopicMessage : IEquat
     /// The UUID of the script to use.
     /// </summary>
     /// <value>The UUID of the script to use.</value>
-    [DataMember(Name = "scriptId", EmitDefaultValue = false)]
+    [JsonPropertyName("scriptId")]
     public string ScriptId { get; set; }
 
 
@@ -470,7 +470,7 @@ public partial class QueueConversationSocialExpressionEventTopicMessage : IEquat
     /// The id of the peer communication corresponding to a matching leg for this communication.
     /// </summary>
     /// <value>The id of the peer communication corresponding to a matching leg for this communication.</value>
-    [DataMember(Name = "peerId", EmitDefaultValue = false)]
+    [JsonPropertyName("peerId")]
     public string PeerId { get; set; }
 
 
@@ -481,7 +481,7 @@ public partial class QueueConversationSocialExpressionEventTopicMessage : IEquat
     /// The timestamp the email was placed on hold in the cloud clock if the email is currently on hold.
     /// </summary>
     /// <value>The timestamp the email was placed on hold in the cloud clock if the email is currently on hold.</value>
-    [DataMember(Name = "startHoldTime", EmitDefaultValue = false)]
+    [JsonPropertyName("startHoldTime")]
     public DateTime? StartHoldTime { get; set; }
 
 
@@ -490,7 +490,7 @@ public partial class QueueConversationSocialExpressionEventTopicMessage : IEquat
     /// The timestamp when this communication was connected in the cloud clock.
     /// </summary>
     /// <value>The timestamp when this communication was connected in the cloud clock.</value>
-    [DataMember(Name = "connectedTime", EmitDefaultValue = false)]
+    [JsonPropertyName("connectedTime")]
     public DateTime? ConnectedTime { get; set; }
 
 
@@ -499,7 +499,7 @@ public partial class QueueConversationSocialExpressionEventTopicMessage : IEquat
     /// The timestamp when this communication disconnected from the conversation in the provider clock.
     /// </summary>
     /// <value>The timestamp when this communication disconnected from the conversation in the provider clock.</value>
-    [DataMember(Name = "disconnectedTime", EmitDefaultValue = false)]
+    [JsonPropertyName("disconnectedTime")]
     public DateTime? DisconnectedTime { get; set; }
 
 
@@ -508,7 +508,7 @@ public partial class QueueConversationSocialExpressionEventTopicMessage : IEquat
     /// Address and name data for a call endpoint.
     /// </summary>
     /// <value>Address and name data for a call endpoint.</value>
-    [DataMember(Name = "toAddress", EmitDefaultValue = false)]
+    [JsonPropertyName("toAddress")]
     public QueueConversationSocialExpressionEventTopicAddress ToAddress { get; set; }
 
 
@@ -517,7 +517,7 @@ public partial class QueueConversationSocialExpressionEventTopicMessage : IEquat
     /// Address and name data for a call endpoint.
     /// </summary>
     /// <value>Address and name data for a call endpoint.</value>
-    [DataMember(Name = "fromAddress", EmitDefaultValue = false)]
+    [JsonPropertyName("fromAddress")]
     public QueueConversationSocialExpressionEventTopicAddress FromAddress { get; set; }
 
 
@@ -526,7 +526,7 @@ public partial class QueueConversationSocialExpressionEventTopicMessage : IEquat
     /// The messages sent on this communication channel.
     /// </summary>
     /// <value>The messages sent on this communication channel.</value>
-    [DataMember(Name = "messages", EmitDefaultValue = false)]
+    [JsonPropertyName("messages")]
     public List<QueueConversationSocialExpressionEventTopicMessageDetails> Messages { get; set; }
 
 
@@ -535,7 +535,7 @@ public partial class QueueConversationSocialExpressionEventTopicMessage : IEquat
     /// the messages transcript file uri.
     /// </summary>
     /// <value>the messages transcript file uri.</value>
-    [DataMember(Name = "messagesTranscriptUri", EmitDefaultValue = false)]
+    [JsonPropertyName("messagesTranscriptUri")]
     public string MessagesTranscriptUri { get; set; }
 
 
@@ -546,7 +546,7 @@ public partial class QueueConversationSocialExpressionEventTopicMessage : IEquat
     /// Indicates the country where the recipient is associated in ISO 3166-1 alpha-2 format.
     /// </summary>
     /// <value>Indicates the country where the recipient is associated in ISO 3166-1 alpha-2 format.</value>
-    [DataMember(Name = "recipientCountry", EmitDefaultValue = false)]
+    [JsonPropertyName("recipientCountry")]
     public string RecipientCountry { get; set; }
 
 
@@ -555,7 +555,7 @@ public partial class QueueConversationSocialExpressionEventTopicMessage : IEquat
     /// The type of the recipient. Eg: Provisioned phoneNumber is the recipient for sms message type.
     /// </summary>
     /// <value>The type of the recipient. Eg: Provisioned phoneNumber is the recipient for sms message type.</value>
-    [DataMember(Name = "recipientType", EmitDefaultValue = false)]
+    [JsonPropertyName("recipientType")]
     public string RecipientType { get; set; }
 
 
@@ -564,7 +564,7 @@ public partial class QueueConversationSocialExpressionEventTopicMessage : IEquat
     /// A subset of the Journey System&#39;s data relevant to a part of a conversation (for external linkage and internal usage/context).
     /// </summary>
     /// <value>A subset of the Journey System&#39;s data relevant to a part of a conversation (for external linkage and internal usage/context).</value>
-    [DataMember(Name = "journeyContext", EmitDefaultValue = false)]
+    [JsonPropertyName("journeyContext")]
     public QueueConversationSocialExpressionEventTopicJourneyContext JourneyContext { get; set; }
 
 
@@ -573,7 +573,7 @@ public partial class QueueConversationSocialExpressionEventTopicMessage : IEquat
     /// Call wrap up or disposition data.
     /// </summary>
     /// <value>Call wrap up or disposition data.</value>
-    [DataMember(Name = "wrapup", EmitDefaultValue = false)]
+    [JsonPropertyName("wrapup")]
     public QueueConversationSocialExpressionEventTopicWrapup Wrapup { get; set; }
 
 
@@ -582,7 +582,7 @@ public partial class QueueConversationSocialExpressionEventTopicMessage : IEquat
     /// A communication&#39;s after-call work data.
     /// </summary>
     /// <value>A communication&#39;s after-call work data.</value>
-    [DataMember(Name = "afterCallWork", EmitDefaultValue = false)]
+    [JsonPropertyName("afterCallWork")]
     public QueueConversationSocialExpressionEventTopicAfterCallWork AfterCallWork { get; set; }
 
 
@@ -591,7 +591,7 @@ public partial class QueueConversationSocialExpressionEventTopicMessage : IEquat
     /// Indicates if after-call is required for a communication. Only used when the ACW Setting is Agent Requested.
     /// </summary>
     /// <value>Indicates if after-call is required for a communication. Only used when the ACW Setting is Agent Requested.</value>
-    [DataMember(Name = "afterCallWorkRequired", EmitDefaultValue = false)]
+    [JsonPropertyName("afterCallWorkRequired")]
     public bool? AfterCallWorkRequired { get; set; }
 
 
@@ -600,7 +600,7 @@ public partial class QueueConversationSocialExpressionEventTopicMessage : IEquat
     /// UUID of virtual agent assistant that provide suggestions to the agent participant during the conversation.
     /// </summary>
     /// <value>UUID of virtual agent assistant that provide suggestions to the agent participant during the conversation.</value>
-    [DataMember(Name = "agentAssistantId", EmitDefaultValue = false)]
+    [JsonPropertyName("agentAssistantId")]
     public string AgentAssistantId { get; set; }
 
 
@@ -608,7 +608,7 @@ public partial class QueueConversationSocialExpressionEventTopicMessage : IEquat
     /// <summary>
     /// Gets or Sets ByoSmsIntegrationId
     /// </summary>
-    [DataMember(Name = "byoSmsIntegrationId", EmitDefaultValue = false)]
+    [JsonPropertyName("byoSmsIntegrationId")]
     public string ByoSmsIntegrationId { get; set; }
 
 
@@ -617,7 +617,7 @@ public partial class QueueConversationSocialExpressionEventTopicMessage : IEquat
     /// Represents the queue setting for this media.
     /// </summary>
     /// <value>Represents the queue setting for this media.</value>
-    [DataMember(Name = "queueMediaSettings", EmitDefaultValue = false)]
+    [JsonPropertyName("queueMediaSettings")]
     public QueueConversationSocialExpressionEventTopicQueueMediaSettings QueueMediaSettings { get; set; }
 
 

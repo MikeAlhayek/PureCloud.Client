@@ -7,14 +7,14 @@ namespace PureCloud.Client.Models;
 /// <summary>
 /// AdminTimeOffRequestPatch
 /// </summary>
-[DataContract]
+
 public partial class AdminTimeOffRequestPatch : IEquatable<AdminTimeOffRequestPatch>
 {
     /// <summary>
     /// The status of this time off request
     /// </summary>
     /// <value>The status of this time off request</value>
-    [JsonConverter(typeof(JsonStringEnumConverter))]
+    
     public enum StatusEnum
     {
         /// <summary>
@@ -47,7 +47,7 @@ public partial class AdminTimeOffRequestPatch : IEquatable<AdminTimeOffRequestPa
     /// The status of this time off request
     /// </summary>
     /// <value>The status of this time off request</value>
-    [DataMember(Name = "status", EmitDefaultValue = false)]
+    [JsonPropertyName("status")]
     public StatusEnum? Status { get; set; }
 
     /// <summary>
@@ -91,7 +91,7 @@ public partial class AdminTimeOffRequestPatch : IEquatable<AdminTimeOffRequestPa
     /// The ID of the activity code associated with this time off request. Activity code must be of the TimeOff category
     /// </summary>
     /// <value>The ID of the activity code associated with this time off request. Activity code must be of the TimeOff category</value>
-    [DataMember(Name = "activityCodeId", EmitDefaultValue = false)]
+    [JsonPropertyName("activityCodeId")]
     public string ActivityCodeId { get; set; }
 
 
@@ -100,7 +100,7 @@ public partial class AdminTimeOffRequestPatch : IEquatable<AdminTimeOffRequestPa
     /// Whether this is a paid time off request
     /// </summary>
     /// <value>Whether this is a paid time off request</value>
-    [DataMember(Name = "paid", EmitDefaultValue = false)]
+    [JsonPropertyName("paid")]
     public bool? Paid { get; set; }
 
 
@@ -109,7 +109,7 @@ public partial class AdminTimeOffRequestPatch : IEquatable<AdminTimeOffRequestPa
     /// Notes about the time off request
     /// </summary>
     /// <value>Notes about the time off request</value>
-    [DataMember(Name = "notes", EmitDefaultValue = false)]
+    [JsonPropertyName("notes")]
     public string Notes { get; set; }
 
 
@@ -118,7 +118,7 @@ public partial class AdminTimeOffRequestPatch : IEquatable<AdminTimeOffRequestPa
     /// A set of dates in yyyy-MM-dd format. Should be interpreted in the management unit&#39;s configured time zone.
     /// </summary>
     /// <value>A set of dates in yyyy-MM-dd format. Should be interpreted in the management unit&#39;s configured time zone.</value>
-    [DataMember(Name = "fullDayManagementUnitDates", EmitDefaultValue = false)]
+    [JsonPropertyName("fullDayManagementUnitDates")]
     public List<string> FullDayManagementUnitDates { get; set; }
 
 
@@ -127,7 +127,7 @@ public partial class AdminTimeOffRequestPatch : IEquatable<AdminTimeOffRequestPa
     /// A set of start date-times in ISO-8601 format for partial day requests.
     /// </summary>
     /// <value>A set of start date-times in ISO-8601 format for partial day requests.</value>
-    [DataMember(Name = "partialDayStartDateTimes", EmitDefaultValue = false)]
+    [JsonPropertyName("partialDayStartDateTimes")]
     public List<DateTime?> PartialDayStartDateTimes { get; set; }
 
 
@@ -136,7 +136,7 @@ public partial class AdminTimeOffRequestPatch : IEquatable<AdminTimeOffRequestPa
     /// The daily duration of this time off request in minutes
     /// </summary>
     /// <value>The daily duration of this time off request in minutes</value>
-    [DataMember(Name = "dailyDurationMinutes", EmitDefaultValue = false)]
+    [JsonPropertyName("dailyDurationMinutes")]
     public int? DailyDurationMinutes { get; set; }
 
 
@@ -145,7 +145,7 @@ public partial class AdminTimeOffRequestPatch : IEquatable<AdminTimeOffRequestPa
     /// Daily durations for each day of this time off request in minutes
     /// </summary>
     /// <value>Daily durations for each day of this time off request in minutes</value>
-    [DataMember(Name = "durationMinutes", EmitDefaultValue = false)]
+    [JsonPropertyName("durationMinutes")]
     public List<int?> DurationMinutes { get; set; }
 
 
@@ -154,7 +154,7 @@ public partial class AdminTimeOffRequestPatch : IEquatable<AdminTimeOffRequestPa
     /// Payable minutes for each day of this time off request
     /// </summary>
     /// <value>Payable minutes for each day of this time off request</value>
-    [DataMember(Name = "payableMinutes", EmitDefaultValue = false)]
+    [JsonPropertyName("payableMinutes")]
     public List<int?> PayableMinutes { get; set; }
 
 
@@ -163,7 +163,7 @@ public partial class AdminTimeOffRequestPatch : IEquatable<AdminTimeOffRequestPa
     /// Version metadata for the time off request
     /// </summary>
     /// <value>Version metadata for the time off request</value>
-    [DataMember(Name = "metadata", EmitDefaultValue = false)]
+    [JsonPropertyName("metadata")]
     public WfmVersionedEntityMetadata Metadata { get; set; }
 
 

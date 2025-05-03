@@ -1,12 +1,12 @@
-using System.Runtime.Serialization;
 using System.Text;
+using System.Text.Json.Serialization;
 
 namespace PureCloud.Client.Models;
 
 /// <summary>
 /// ContactCenterSettings
 /// </summary>
-[DataContract]
+
 public partial class ContactCenterSettings : IEquatable<ContactCenterSettings>
 {
     /// <summary>
@@ -25,7 +25,7 @@ public partial class ContactCenterSettings : IEquatable<ContactCenterSettings>
     /// Strip skills from transfer
     /// </summary>
     /// <value>Strip skills from transfer</value>
-    [DataMember(Name = "removeSkillsFromBlindTransfer", EmitDefaultValue = false)]
+    [JsonPropertyName("removeSkillsFromBlindTransfer")]
     public bool? RemoveSkillsFromBlindTransfer { get; set; }
 
 

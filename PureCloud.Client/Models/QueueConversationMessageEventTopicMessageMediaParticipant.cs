@@ -7,13 +7,13 @@ namespace PureCloud.Client.Models;
 /// <summary>
 /// QueueConversationMessageEventTopicMessageMediaParticipant
 /// </summary>
-[DataContract]
+
 public partial class QueueConversationMessageEventTopicMessageMediaParticipant : IEquatable<QueueConversationMessageEventTopicMessageMediaParticipant>
 {
     /// <summary>
     /// Gets or Sets State
     /// </summary>
-    [JsonConverter(typeof(JsonStringEnumConverter))]
+    
     public enum StateEnum
     {
         /// <summary>
@@ -105,7 +105,7 @@ public partial class QueueConversationMessageEventTopicMessageMediaParticipant :
     /// <summary>
     /// Gets or Sets InitialState
     /// </summary>
-    [JsonConverter(typeof(JsonStringEnumConverter))]
+    
     public enum InitialStateEnum
     {
         /// <summary>
@@ -197,7 +197,7 @@ public partial class QueueConversationMessageEventTopicMessageMediaParticipant :
     /// <summary>
     /// Gets or Sets Direction
     /// </summary>
-    [JsonConverter(typeof(JsonStringEnumConverter))]
+    
     public enum DirectionEnum
     {
         /// <summary>
@@ -223,7 +223,7 @@ public partial class QueueConversationMessageEventTopicMessageMediaParticipant :
     /// <summary>
     /// Gets or Sets DisconnectType
     /// </summary>
-    [JsonConverter(typeof(JsonStringEnumConverter))]
+    
     public enum DisconnectTypeEnum
     {
         /// <summary>
@@ -345,7 +345,7 @@ public partial class QueueConversationMessageEventTopicMessageMediaParticipant :
     /// <summary>
     /// Gets or Sets FlaggedReason
     /// </summary>
-    [JsonConverter(typeof(JsonStringEnumConverter))]
+    
     public enum FlaggedReasonEnum
     {
         /// <summary>
@@ -365,7 +365,7 @@ public partial class QueueConversationMessageEventTopicMessageMediaParticipant :
     /// <summary>
     /// Gets or Sets Type
     /// </summary>
-    [JsonConverter(typeof(JsonStringEnumConverter))]
+    
     public enum TypeEnum
     {
         /// <summary>
@@ -463,32 +463,32 @@ public partial class QueueConversationMessageEventTopicMessageMediaParticipant :
     /// <summary>
     /// Gets or Sets State
     /// </summary>
-    [DataMember(Name = "state", EmitDefaultValue = false)]
+    [JsonPropertyName("state")]
     public StateEnum? State { get; set; }
     /// <summary>
     /// Gets or Sets InitialState
     /// </summary>
-    [DataMember(Name = "initialState", EmitDefaultValue = false)]
+    [JsonPropertyName("initialState")]
     public InitialStateEnum? InitialState { get; set; }
     /// <summary>
     /// Gets or Sets Direction
     /// </summary>
-    [DataMember(Name = "direction", EmitDefaultValue = false)]
+    [JsonPropertyName("direction")]
     public DirectionEnum? Direction { get; set; }
     /// <summary>
     /// Gets or Sets DisconnectType
     /// </summary>
-    [DataMember(Name = "disconnectType", EmitDefaultValue = false)]
+    [JsonPropertyName("disconnectType")]
     public DisconnectTypeEnum? DisconnectType { get; set; }
     /// <summary>
     /// Gets or Sets FlaggedReason
     /// </summary>
-    [DataMember(Name = "flaggedReason", EmitDefaultValue = false)]
+    [JsonPropertyName("flaggedReason")]
     public FlaggedReasonEnum? FlaggedReason { get; set; }
     /// <summary>
     /// Gets or Sets Type
     /// </summary>
-    [DataMember(Name = "type", EmitDefaultValue = false)]
+    [JsonPropertyName("type")]
     public TypeEnum? Type { get; set; }
     /// <summary>
     /// Initializes a new instance of the <see cref="QueueConversationMessageEventTopicMessageMediaParticipant" /> class.
@@ -595,7 +595,7 @@ public partial class QueueConversationMessageEventTopicMessageMediaParticipant :
     /// <summary>
     /// Gets or Sets Id
     /// </summary>
-    [DataMember(Name = "id", EmitDefaultValue = false)]
+    [JsonPropertyName("id")]
     public string Id { get; set; }
 
 
@@ -603,7 +603,7 @@ public partial class QueueConversationMessageEventTopicMessageMediaParticipant :
     /// <summary>
     /// Gets or Sets Name
     /// </summary>
-    [DataMember(Name = "name", EmitDefaultValue = false)]
+    [JsonPropertyName("name")]
     public string Name { get; set; }
 
 
@@ -611,7 +611,7 @@ public partial class QueueConversationMessageEventTopicMessageMediaParticipant :
     /// <summary>
     /// Gets or Sets Address
     /// </summary>
-    [DataMember(Name = "address", EmitDefaultValue = false)]
+    [JsonPropertyName("address")]
     public string Address { get; set; }
 
 
@@ -619,7 +619,7 @@ public partial class QueueConversationMessageEventTopicMessageMediaParticipant :
     /// <summary>
     /// Gets or Sets StartTime
     /// </summary>
-    [DataMember(Name = "startTime", EmitDefaultValue = false)]
+    [JsonPropertyName("startTime")]
     public DateTime? StartTime { get; set; }
 
 
@@ -627,7 +627,7 @@ public partial class QueueConversationMessageEventTopicMessageMediaParticipant :
     /// <summary>
     /// Gets or Sets ConnectedTime
     /// </summary>
-    [DataMember(Name = "connectedTime", EmitDefaultValue = false)]
+    [JsonPropertyName("connectedTime")]
     public DateTime? ConnectedTime { get; set; }
 
 
@@ -635,7 +635,7 @@ public partial class QueueConversationMessageEventTopicMessageMediaParticipant :
     /// <summary>
     /// Gets or Sets EndTime
     /// </summary>
-    [DataMember(Name = "endTime", EmitDefaultValue = false)]
+    [JsonPropertyName("endTime")]
     public DateTime? EndTime { get; set; }
 
 
@@ -643,7 +643,7 @@ public partial class QueueConversationMessageEventTopicMessageMediaParticipant :
     /// <summary>
     /// Gets or Sets StartHoldTime
     /// </summary>
-    [DataMember(Name = "startHoldTime", EmitDefaultValue = false)]
+    [JsonPropertyName("startHoldTime")]
     public DateTime? StartHoldTime { get; set; }
 
 
@@ -651,7 +651,7 @@ public partial class QueueConversationMessageEventTopicMessageMediaParticipant :
     /// <summary>
     /// Gets or Sets Purpose
     /// </summary>
-    [DataMember(Name = "purpose", EmitDefaultValue = false)]
+    [JsonPropertyName("purpose")]
     public string Purpose { get; set; }
 
 
@@ -667,7 +667,7 @@ public partial class QueueConversationMessageEventTopicMessageMediaParticipant :
     /// <summary>
     /// Gets or Sets Held
     /// </summary>
-    [DataMember(Name = "held", EmitDefaultValue = false)]
+    [JsonPropertyName("held")]
     public bool? Held { get; set; }
 
 
@@ -675,7 +675,7 @@ public partial class QueueConversationMessageEventTopicMessageMediaParticipant :
     /// <summary>
     /// Gets or Sets WrapupRequired
     /// </summary>
-    [DataMember(Name = "wrapupRequired", EmitDefaultValue = false)]
+    [JsonPropertyName("wrapupRequired")]
     public bool? WrapupRequired { get; set; }
 
 
@@ -683,7 +683,7 @@ public partial class QueueConversationMessageEventTopicMessageMediaParticipant :
     /// <summary>
     /// Gets or Sets WrapupPrompt
     /// </summary>
-    [DataMember(Name = "wrapupPrompt", EmitDefaultValue = false)]
+    [JsonPropertyName("wrapupPrompt")]
     public string WrapupPrompt { get; set; }
 
 
@@ -691,7 +691,7 @@ public partial class QueueConversationMessageEventTopicMessageMediaParticipant :
     /// <summary>
     /// Gets or Sets User
     /// </summary>
-    [DataMember(Name = "user", EmitDefaultValue = false)]
+    [JsonPropertyName("user")]
     public QueueConversationMessageEventTopicUriReference User { get; set; }
 
 
@@ -699,7 +699,7 @@ public partial class QueueConversationMessageEventTopicMessageMediaParticipant :
     /// <summary>
     /// Gets or Sets Queue
     /// </summary>
-    [DataMember(Name = "queue", EmitDefaultValue = false)]
+    [JsonPropertyName("queue")]
     public QueueConversationMessageEventTopicUriReference Queue { get; set; }
 
 
@@ -707,7 +707,7 @@ public partial class QueueConversationMessageEventTopicMessageMediaParticipant :
     /// <summary>
     /// Gets or Sets Team
     /// </summary>
-    [DataMember(Name = "team", EmitDefaultValue = false)]
+    [JsonPropertyName("team")]
     public QueueConversationMessageEventTopicUriReference Team { get; set; }
 
 
@@ -715,7 +715,7 @@ public partial class QueueConversationMessageEventTopicMessageMediaParticipant :
     /// <summary>
     /// Gets or Sets Attributes
     /// </summary>
-    [DataMember(Name = "attributes", EmitDefaultValue = false)]
+    [JsonPropertyName("attributes")]
     public Dictionary<string, string> Attributes { get; set; }
 
 
@@ -723,7 +723,7 @@ public partial class QueueConversationMessageEventTopicMessageMediaParticipant :
     /// <summary>
     /// Gets or Sets ErrorInfo
     /// </summary>
-    [DataMember(Name = "errorInfo", EmitDefaultValue = false)]
+    [JsonPropertyName("errorInfo")]
     public QueueConversationMessageEventTopicErrorBody ErrorInfo { get; set; }
 
 
@@ -731,7 +731,7 @@ public partial class QueueConversationMessageEventTopicMessageMediaParticipant :
     /// <summary>
     /// Gets or Sets Script
     /// </summary>
-    [DataMember(Name = "script", EmitDefaultValue = false)]
+    [JsonPropertyName("script")]
     public QueueConversationMessageEventTopicUriReference Script { get; set; }
 
 
@@ -739,7 +739,7 @@ public partial class QueueConversationMessageEventTopicMessageMediaParticipant :
     /// <summary>
     /// Gets or Sets WrapupTimeoutMs
     /// </summary>
-    [DataMember(Name = "wrapupTimeoutMs", EmitDefaultValue = false)]
+    [JsonPropertyName("wrapupTimeoutMs")]
     public long? WrapupTimeoutMs { get; set; }
 
 
@@ -747,7 +747,7 @@ public partial class QueueConversationMessageEventTopicMessageMediaParticipant :
     /// <summary>
     /// Gets or Sets WrapupSkipped
     /// </summary>
-    [DataMember(Name = "wrapupSkipped", EmitDefaultValue = false)]
+    [JsonPropertyName("wrapupSkipped")]
     public bool? WrapupSkipped { get; set; }
 
 
@@ -755,7 +755,7 @@ public partial class QueueConversationMessageEventTopicMessageMediaParticipant :
     /// <summary>
     /// Gets or Sets AlertingTimeoutMs
     /// </summary>
-    [DataMember(Name = "alertingTimeoutMs", EmitDefaultValue = false)]
+    [JsonPropertyName("alertingTimeoutMs")]
     public long? AlertingTimeoutMs { get; set; }
 
 
@@ -763,7 +763,7 @@ public partial class QueueConversationMessageEventTopicMessageMediaParticipant :
     /// <summary>
     /// Gets or Sets Provider
     /// </summary>
-    [DataMember(Name = "provider", EmitDefaultValue = false)]
+    [JsonPropertyName("provider")]
     public string Provider { get; set; }
 
 
@@ -771,7 +771,7 @@ public partial class QueueConversationMessageEventTopicMessageMediaParticipant :
     /// <summary>
     /// Gets or Sets ExternalContact
     /// </summary>
-    [DataMember(Name = "externalContact", EmitDefaultValue = false)]
+    [JsonPropertyName("externalContact")]
     public QueueConversationMessageEventTopicUriReference ExternalContact { get; set; }
 
 
@@ -779,7 +779,7 @@ public partial class QueueConversationMessageEventTopicMessageMediaParticipant :
     /// <summary>
     /// Gets or Sets ExternalContactInitialDivisionId
     /// </summary>
-    [DataMember(Name = "externalContactInitialDivisionId", EmitDefaultValue = false)]
+    [JsonPropertyName("externalContactInitialDivisionId")]
     public string ExternalContactInitialDivisionId { get; set; }
 
 
@@ -787,7 +787,7 @@ public partial class QueueConversationMessageEventTopicMessageMediaParticipant :
     /// <summary>
     /// Gets or Sets ExternalOrganization
     /// </summary>
-    [DataMember(Name = "externalOrganization", EmitDefaultValue = false)]
+    [JsonPropertyName("externalOrganization")]
     public QueueConversationMessageEventTopicUriReference ExternalOrganization { get; set; }
 
 
@@ -795,7 +795,7 @@ public partial class QueueConversationMessageEventTopicMessageMediaParticipant :
     /// <summary>
     /// Gets or Sets Wrapup
     /// </summary>
-    [DataMember(Name = "wrapup", EmitDefaultValue = false)]
+    [JsonPropertyName("wrapup")]
     public QueueConversationMessageEventTopicWrapup Wrapup { get; set; }
 
 
@@ -803,7 +803,7 @@ public partial class QueueConversationMessageEventTopicMessageMediaParticipant :
     /// <summary>
     /// Gets or Sets ConversationRoutingData
     /// </summary>
-    [DataMember(Name = "conversationRoutingData", EmitDefaultValue = false)]
+    [JsonPropertyName("conversationRoutingData")]
     public QueueConversationMessageEventTopicConversationRoutingData ConversationRoutingData { get; set; }
 
 
@@ -811,7 +811,7 @@ public partial class QueueConversationMessageEventTopicMessageMediaParticipant :
     /// <summary>
     /// Gets or Sets Peer
     /// </summary>
-    [DataMember(Name = "peer", EmitDefaultValue = false)]
+    [JsonPropertyName("peer")]
     public string Peer { get; set; }
 
 
@@ -819,7 +819,7 @@ public partial class QueueConversationMessageEventTopicMessageMediaParticipant :
     /// <summary>
     /// Gets or Sets ScreenRecordingState
     /// </summary>
-    [DataMember(Name = "screenRecordingState", EmitDefaultValue = false)]
+    [JsonPropertyName("screenRecordingState")]
     public string ScreenRecordingState { get; set; }
 
 
@@ -829,7 +829,7 @@ public partial class QueueConversationMessageEventTopicMessageMediaParticipant :
     /// <summary>
     /// Gets or Sets JourneyContext
     /// </summary>
-    [DataMember(Name = "journeyContext", EmitDefaultValue = false)]
+    [JsonPropertyName("journeyContext")]
     public QueueConversationMessageEventTopicJourneyContext JourneyContext { get; set; }
 
 
@@ -837,7 +837,7 @@ public partial class QueueConversationMessageEventTopicMessageMediaParticipant :
     /// <summary>
     /// Gets or Sets StartAcwTime
     /// </summary>
-    [DataMember(Name = "startAcwTime", EmitDefaultValue = false)]
+    [JsonPropertyName("startAcwTime")]
     public DateTime? StartAcwTime { get; set; }
 
 
@@ -845,7 +845,7 @@ public partial class QueueConversationMessageEventTopicMessageMediaParticipant :
     /// <summary>
     /// Gets or Sets EndAcwTime
     /// </summary>
-    [DataMember(Name = "endAcwTime", EmitDefaultValue = false)]
+    [JsonPropertyName("endAcwTime")]
     public DateTime? EndAcwTime { get; set; }
 
 
@@ -853,7 +853,7 @@ public partial class QueueConversationMessageEventTopicMessageMediaParticipant :
     /// <summary>
     /// Gets or Sets ResumeTime
     /// </summary>
-    [DataMember(Name = "resumeTime", EmitDefaultValue = false)]
+    [JsonPropertyName("resumeTime")]
     public DateTime? ResumeTime { get; set; }
 
 
@@ -861,7 +861,7 @@ public partial class QueueConversationMessageEventTopicMessageMediaParticipant :
     /// <summary>
     /// Gets or Sets ParkTime
     /// </summary>
-    [DataMember(Name = "parkTime", EmitDefaultValue = false)]
+    [JsonPropertyName("parkTime")]
     public DateTime? ParkTime { get; set; }
 
 
@@ -869,7 +869,7 @@ public partial class QueueConversationMessageEventTopicMessageMediaParticipant :
     /// <summary>
     /// Gets or Sets MediaRoles
     /// </summary>
-    [DataMember(Name = "mediaRoles", EmitDefaultValue = false)]
+    [JsonPropertyName("mediaRoles")]
     public List<string> MediaRoles { get; set; }
 
 
@@ -877,7 +877,7 @@ public partial class QueueConversationMessageEventTopicMessageMediaParticipant :
     /// <summary>
     /// Gets or Sets QueueMediaSettings
     /// </summary>
-    [DataMember(Name = "queueMediaSettings", EmitDefaultValue = false)]
+    [JsonPropertyName("queueMediaSettings")]
     public QueueConversationMessageEventTopicQueueMediaSettings QueueMediaSettings { get; set; }
 
 
@@ -885,7 +885,7 @@ public partial class QueueConversationMessageEventTopicMessageMediaParticipant :
     /// <summary>
     /// Gets or Sets Messages
     /// </summary>
-    [DataMember(Name = "messages", EmitDefaultValue = false)]
+    [JsonPropertyName("messages")]
     public List<QueueConversationMessageEventTopicMessageDetails> Messages { get; set; }
 
 
@@ -895,7 +895,7 @@ public partial class QueueConversationMessageEventTopicMessageMediaParticipant :
     /// <summary>
     /// Gets or Sets RecipientCountry
     /// </summary>
-    [DataMember(Name = "recipientCountry", EmitDefaultValue = false)]
+    [JsonPropertyName("recipientCountry")]
     public string RecipientCountry { get; set; }
 
 
@@ -903,7 +903,7 @@ public partial class QueueConversationMessageEventTopicMessageMediaParticipant :
     /// <summary>
     /// Gets or Sets RecipientType
     /// </summary>
-    [DataMember(Name = "recipientType", EmitDefaultValue = false)]
+    [JsonPropertyName("recipientType")]
     public string RecipientType { get; set; }
 
 
@@ -911,7 +911,7 @@ public partial class QueueConversationMessageEventTopicMessageMediaParticipant :
     /// <summary>
     /// Gets or Sets ByoSmsIntegrationId
     /// </summary>
-    [DataMember(Name = "byoSmsIntegrationId", EmitDefaultValue = false)]
+    [JsonPropertyName("byoSmsIntegrationId")]
     public string ByoSmsIntegrationId { get; set; }
 
 
@@ -919,7 +919,7 @@ public partial class QueueConversationMessageEventTopicMessageMediaParticipant :
     /// <summary>
     /// Gets or Sets MonitoredParticipantId
     /// </summary>
-    [DataMember(Name = "monitoredParticipantId", EmitDefaultValue = false)]
+    [JsonPropertyName("monitoredParticipantId")]
     public string MonitoredParticipantId { get; set; }
 
 

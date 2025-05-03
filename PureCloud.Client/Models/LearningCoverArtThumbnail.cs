@@ -1,12 +1,12 @@
-using System.Runtime.Serialization;
 using System.Text;
+using System.Text.Json.Serialization;
 
 namespace PureCloud.Client.Models;
 
 /// <summary>
 /// LearningCoverArtThumbnail
 /// </summary>
-[DataContract]
+
 public partial class LearningCoverArtThumbnail : IEquatable<LearningCoverArtThumbnail>
 {
     /// <summary>
@@ -27,7 +27,7 @@ public partial class LearningCoverArtThumbnail : IEquatable<LearningCoverArtThum
     /// Resolution of thumbnail
     /// </summary>
     /// <value>Resolution of thumbnail</value>
-    [DataMember(Name = "resolution", EmitDefaultValue = false)]
+    [JsonPropertyName("resolution")]
     public string Resolution { get; set; }
 
 
@@ -36,7 +36,7 @@ public partial class LearningCoverArtThumbnail : IEquatable<LearningCoverArtThum
     /// The URL for the thumbnail
     /// </summary>
     /// <value>The URL for the thumbnail</value>
-    [DataMember(Name = "url", EmitDefaultValue = false)]
+    [JsonPropertyName("url")]
     public string Url { get; set; }
 
 

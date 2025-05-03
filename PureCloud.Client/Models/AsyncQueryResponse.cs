@@ -1,12 +1,12 @@
-using System.Runtime.Serialization;
 using System.Text;
+using System.Text.Json.Serialization;
 
 namespace PureCloud.Client.Models;
 
 /// <summary>
 /// AsyncQueryResponse
 /// </summary>
-[DataContract]
+
 public partial class AsyncQueryResponse : IEquatable<AsyncQueryResponse>
 {
     /// <summary>
@@ -25,7 +25,7 @@ public partial class AsyncQueryResponse : IEquatable<AsyncQueryResponse>
     /// Unique identifier for the async query execution. Can be used to check the status of the query and retrieve results.
     /// </summary>
     /// <value>Unique identifier for the async query execution. Can be used to check the status of the query and retrieve results.</value>
-    [DataMember(Name = "jobId", EmitDefaultValue = false)]
+    [JsonPropertyName("jobId")]
     public string JobId { get; set; }
 
 

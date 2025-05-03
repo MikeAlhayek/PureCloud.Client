@@ -1,12 +1,12 @@
-using System.Runtime.Serialization;
 using System.Text;
+using System.Text.Json.Serialization;
 
 namespace PureCloud.Client.Models;
 
 /// <summary>
 /// WorkPlanBidGroupResponse
 /// </summary>
-[DataContract]
+
 public partial class WorkPlanBidGroupResponse : IEquatable<WorkPlanBidGroupResponse>
 {
     /// <summary>
@@ -27,7 +27,7 @@ public partial class WorkPlanBidGroupResponse : IEquatable<WorkPlanBidGroupRespo
     /// The globally unique identifier for the object.
     /// </summary>
     /// <value>The globally unique identifier for the object.</value>
-    [DataMember(Name = "id", EmitDefaultValue = false)]
+    [JsonPropertyName("id")]
     public string Id { get; private set; }
 
 
@@ -36,7 +36,7 @@ public partial class WorkPlanBidGroupResponse : IEquatable<WorkPlanBidGroupRespo
     /// The work plan bid group
     /// </summary>
     /// <value>The work plan bid group</value>
-    [DataMember(Name = "workPlanBidGroup", EmitDefaultValue = false)]
+    [JsonPropertyName("workPlanBidGroup")]
     public WorkPlanBidGroup WorkPlanBidGroup { get; set; }
 
 
@@ -45,7 +45,7 @@ public partial class WorkPlanBidGroupResponse : IEquatable<WorkPlanBidGroupRespo
     /// The meta data of the bid group
     /// </summary>
     /// <value>The meta data of the bid group</value>
-    [DataMember(Name = "metadata", EmitDefaultValue = false)]
+    [JsonPropertyName("metadata")]
     public WorkPlanBidMetadata Metadata { get; set; }
 
 
@@ -54,7 +54,7 @@ public partial class WorkPlanBidGroupResponse : IEquatable<WorkPlanBidGroupRespo
     /// The URI for this object
     /// </summary>
     /// <value>The URI for this object</value>
-    [DataMember(Name = "selfUri", EmitDefaultValue = false)]
+    [JsonPropertyName("selfUri")]
     public string SelfUri { get; private set; }
 
 

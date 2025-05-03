@@ -1,4 +1,3 @@
-using System.Runtime.Serialization;
 using System.Text;
 using System.Text.Json.Serialization;
 
@@ -7,7 +6,7 @@ namespace PureCloud.Client.Models;
 /// <summary>
 /// ChatFavorite
 /// </summary>
-[DataContract]
+
 public partial class ChatFavorite : IEquatable<ChatFavorite>
 {
 
@@ -34,7 +33,7 @@ public partial class ChatFavorite : IEquatable<ChatFavorite>
     /// The guid id of the favorite
     /// </summary>
     /// <value>The guid id of the favorite</value>
-    [DataMember(Name = "id", EmitDefaultValue = false)]
+    [JsonPropertyName("id")]
     public string Id { get; set; }
 
 
@@ -43,7 +42,7 @@ public partial class ChatFavorite : IEquatable<ChatFavorite>
     /// The external id of the favorite
     /// </summary>
     /// <value>The external id of the favorite</value>
-    [DataMember(Name = "externalId", EmitDefaultValue = false)]
+    [JsonPropertyName("externalId")]
     public string ExternalId { get; set; }
 
 

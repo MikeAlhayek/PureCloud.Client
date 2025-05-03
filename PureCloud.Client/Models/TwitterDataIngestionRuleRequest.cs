@@ -1,4 +1,3 @@
-using System.Runtime.Serialization;
 using System.Text;
 using System.Text.Json.Serialization;
 
@@ -7,7 +6,7 @@ namespace PureCloud.Client.Models;
 /// <summary>
 /// TwitterDataIngestionRuleRequest
 /// </summary>
-[DataContract]
+
 public partial class TwitterDataIngestionRuleRequest : IEquatable<TwitterDataIngestionRuleRequest>
 {
 
@@ -38,7 +37,7 @@ public partial class TwitterDataIngestionRuleRequest : IEquatable<TwitterDataIng
     /// The name of the data ingestion rule.
     /// </summary>
     /// <value>The name of the data ingestion rule.</value>
-    [DataMember(Name = "name", EmitDefaultValue = false)]
+    [JsonPropertyName("name")]
     public string Name { get; set; }
 
 
@@ -47,7 +46,7 @@ public partial class TwitterDataIngestionRuleRequest : IEquatable<TwitterDataIng
     /// A description of the data ingestion rule.
     /// </summary>
     /// <value>A description of the data ingestion rule.</value>
-    [DataMember(Name = "description", EmitDefaultValue = false)]
+    [JsonPropertyName("description")]
     public string Description { get; set; }
 
 
@@ -56,7 +55,7 @@ public partial class TwitterDataIngestionRuleRequest : IEquatable<TwitterDataIng
     /// Search terms for X (formally Twitter).
     /// </summary>
     /// <value>Search terms for X (formally Twitter).</value>
-    [DataMember(Name = "searchTerms", EmitDefaultValue = false)]
+    [JsonPropertyName("searchTerms")]
     public string SearchTerms { get; set; }
 
 
@@ -65,7 +64,7 @@ public partial class TwitterDataIngestionRuleRequest : IEquatable<TwitterDataIng
     /// ISO 3166-1 alpha-2 country codes. Ingestion of matching tweets will be restricted to tweets posted in the countries specified here. Defaults to worldwide.
     /// </summary>
     /// <value>ISO 3166-1 alpha-2 country codes. Ingestion of matching tweets will be restricted to tweets posted in the countries specified here. Defaults to worldwide.</value>
-    [DataMember(Name = "countries", EmitDefaultValue = false)]
+    [JsonPropertyName("countries")]
     public List<string> Countries { get; set; }
 
 

@@ -1,12 +1,12 @@
-using System.Runtime.Serialization;
 using System.Text;
+using System.Text.Json.Serialization;
 
 namespace PureCloud.Client.Models;
 
 /// <summary>
 /// AvailableTranslations
 /// </summary>
-[DataContract]
+
 public partial class AvailableTranslations : IEquatable<AvailableTranslations>
 {
     /// <summary>
@@ -26,7 +26,7 @@ public partial class AvailableTranslations : IEquatable<AvailableTranslations>
     /// <summary>
     /// Gets or Sets OrgSpecific
     /// </summary>
-    [DataMember(Name = "orgSpecific", EmitDefaultValue = false)]
+    [JsonPropertyName("orgSpecific")]
     public List<string> OrgSpecific { get; set; }
 
 
@@ -34,7 +34,7 @@ public partial class AvailableTranslations : IEquatable<AvailableTranslations>
     /// <summary>
     /// Gets or Sets Builtin
     /// </summary>
-    [DataMember(Name = "builtin", EmitDefaultValue = false)]
+    [JsonPropertyName("builtin")]
     public List<string> Builtin { get; set; }
 
 

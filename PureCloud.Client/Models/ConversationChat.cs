@@ -7,14 +7,14 @@ namespace PureCloud.Client.Models;
 /// <summary>
 /// ConversationChat
 /// </summary>
-[DataContract]
+
 public partial class ConversationChat : IEquatable<ConversationChat>
 {
     /// <summary>
     /// The connection state of this communication.
     /// </summary>
     /// <value>The connection state of this communication.</value>
-    [JsonConverter(typeof(JsonStringEnumConverter))]
+    
     public enum StateEnum
     {
         /// <summary>
@@ -77,7 +77,7 @@ public partial class ConversationChat : IEquatable<ConversationChat>
     /// The initial connection state of this communication.
     /// </summary>
     /// <value>The initial connection state of this communication.</value>
-    [JsonConverter(typeof(JsonStringEnumConverter))]
+    
     public enum InitialStateEnum
     {
         /// <summary>
@@ -140,7 +140,7 @@ public partial class ConversationChat : IEquatable<ConversationChat>
     /// The direction of the chat
     /// </summary>
     /// <value>The direction of the chat</value>
-    [JsonConverter(typeof(JsonStringEnumConverter))]
+    
     public enum DirectionEnum
     {
         /// <summary>
@@ -167,7 +167,7 @@ public partial class ConversationChat : IEquatable<ConversationChat>
     /// System defined string indicating what caused the communication to disconnect. Will be null until the communication disconnects.
     /// </summary>
     /// <value>System defined string indicating what caused the communication to disconnect. Will be null until the communication disconnects.</value>
-    [JsonConverter(typeof(JsonStringEnumConverter))]
+    
     public enum DisconnectTypeEnum
     {
         /// <summary>
@@ -254,25 +254,25 @@ public partial class ConversationChat : IEquatable<ConversationChat>
     /// The connection state of this communication.
     /// </summary>
     /// <value>The connection state of this communication.</value>
-    [DataMember(Name = "state", EmitDefaultValue = false)]
+    [JsonPropertyName("state")]
     public StateEnum? State { get; set; }
     /// <summary>
     /// The initial connection state of this communication.
     /// </summary>
     /// <value>The initial connection state of this communication.</value>
-    [DataMember(Name = "initialState", EmitDefaultValue = false)]
+    [JsonPropertyName("initialState")]
     public InitialStateEnum? InitialState { get; set; }
     /// <summary>
     /// The direction of the chat
     /// </summary>
     /// <value>The direction of the chat</value>
-    [DataMember(Name = "direction", EmitDefaultValue = false)]
+    [JsonPropertyName("direction")]
     public DirectionEnum? Direction { get; set; }
     /// <summary>
     /// System defined string indicating what caused the communication to disconnect. Will be null until the communication disconnects.
     /// </summary>
     /// <value>System defined string indicating what caused the communication to disconnect. Will be null until the communication disconnects.</value>
-    [DataMember(Name = "disconnectType", EmitDefaultValue = false)]
+    [JsonPropertyName("disconnectType")]
     public DisconnectTypeEnum? DisconnectType { get; set; }
     /// <summary>
     /// Initializes a new instance of the <see cref="ConversationChat" /> class.
@@ -336,7 +336,7 @@ public partial class ConversationChat : IEquatable<ConversationChat>
     /// A globally unique identifier for this communication.
     /// </summary>
     /// <value>A globally unique identifier for this communication.</value>
-    [DataMember(Name = "id", EmitDefaultValue = false)]
+    [JsonPropertyName("id")]
     public string Id { get; set; }
 
 
@@ -345,7 +345,7 @@ public partial class ConversationChat : IEquatable<ConversationChat>
     /// The room id for the chat.
     /// </summary>
     /// <value>The room id for the chat.</value>
-    [DataMember(Name = "roomId", EmitDefaultValue = false)]
+    [JsonPropertyName("roomId")]
     public string RoomId { get; set; }
 
 
@@ -354,7 +354,7 @@ public partial class ConversationChat : IEquatable<ConversationChat>
     /// A globally unique identifier for the recording associated with this chat.
     /// </summary>
     /// <value>A globally unique identifier for the recording associated with this chat.</value>
-    [DataMember(Name = "recordingId", EmitDefaultValue = false)]
+    [JsonPropertyName("recordingId")]
     public string RecordingId { get; set; }
 
 
@@ -363,7 +363,7 @@ public partial class ConversationChat : IEquatable<ConversationChat>
     /// The time line of the participant&#39;s chat, divided into activity segments.
     /// </summary>
     /// <value>The time line of the participant&#39;s chat, divided into activity segments.</value>
-    [DataMember(Name = "segments", EmitDefaultValue = false)]
+    [JsonPropertyName("segments")]
     public List<Segment> Segments { get; set; }
 
 
@@ -372,7 +372,7 @@ public partial class ConversationChat : IEquatable<ConversationChat>
     /// True if this call is held and the person on this side hears silence.
     /// </summary>
     /// <value>True if this call is held and the person on this side hears silence.</value>
-    [DataMember(Name = "held", EmitDefaultValue = false)]
+    [JsonPropertyName("held")]
     public bool? Held { get; set; }
 
 
@@ -385,7 +385,7 @@ public partial class ConversationChat : IEquatable<ConversationChat>
     /// The timestamp the chat was placed on hold in the cloud clock if the chat is currently on hold. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z
     /// </summary>
     /// <value>The timestamp the chat was placed on hold in the cloud clock if the chat is currently on hold. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z</value>
-    [DataMember(Name = "startHoldTime", EmitDefaultValue = false)]
+    [JsonPropertyName("startHoldTime")]
     public DateTime? StartHoldTime { get; set; }
 
 
@@ -394,7 +394,7 @@ public partial class ConversationChat : IEquatable<ConversationChat>
     /// The timestamp the communication has when it is first put into an alerting state. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z
     /// </summary>
     /// <value>The timestamp the communication has when it is first put into an alerting state. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z</value>
-    [DataMember(Name = "startAlertingTime", EmitDefaultValue = false)]
+    [JsonPropertyName("startAlertingTime")]
     public DateTime? StartAlertingTime { get; set; }
 
 
@@ -403,7 +403,7 @@ public partial class ConversationChat : IEquatable<ConversationChat>
     /// The timestamp when this communication was connected in the cloud clock. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z
     /// </summary>
     /// <value>The timestamp when this communication was connected in the cloud clock. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z</value>
-    [DataMember(Name = "connectedTime", EmitDefaultValue = false)]
+    [JsonPropertyName("connectedTime")]
     public DateTime? ConnectedTime { get; set; }
 
 
@@ -412,7 +412,7 @@ public partial class ConversationChat : IEquatable<ConversationChat>
     /// The timestamp when this communication disconnected from the conversation in the provider clock. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z
     /// </summary>
     /// <value>The timestamp when this communication disconnected from the conversation in the provider clock. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z</value>
-    [DataMember(Name = "disconnectedTime", EmitDefaultValue = false)]
+    [JsonPropertyName("disconnectedTime")]
     public DateTime? DisconnectedTime { get; set; }
 
 
@@ -421,7 +421,7 @@ public partial class ConversationChat : IEquatable<ConversationChat>
     /// The source provider for the email.
     /// </summary>
     /// <value>The source provider for the email.</value>
-    [DataMember(Name = "provider", EmitDefaultValue = false)]
+    [JsonPropertyName("provider")]
     public string Provider { get; set; }
 
 
@@ -430,7 +430,7 @@ public partial class ConversationChat : IEquatable<ConversationChat>
     /// The UUID of the script to use.
     /// </summary>
     /// <value>The UUID of the script to use.</value>
-    [DataMember(Name = "scriptId", EmitDefaultValue = false)]
+    [JsonPropertyName("scriptId")]
     public string ScriptId { get; set; }
 
 
@@ -439,7 +439,7 @@ public partial class ConversationChat : IEquatable<ConversationChat>
     /// The id of the peer communication corresponding to a matching leg for this communication.
     /// </summary>
     /// <value>The id of the peer communication corresponding to a matching leg for this communication.</value>
-    [DataMember(Name = "peerId", EmitDefaultValue = false)]
+    [JsonPropertyName("peerId")]
     public string PeerId { get; set; }
 
 
@@ -448,7 +448,7 @@ public partial class ConversationChat : IEquatable<ConversationChat>
     /// If available, the URI to the avatar image of this communication.
     /// </summary>
     /// <value>If available, the URI to the avatar image of this communication.</value>
-    [DataMember(Name = "avatarImageUrl", EmitDefaultValue = false)]
+    [JsonPropertyName("avatarImageUrl")]
     public string AvatarImageUrl { get; set; }
 
 
@@ -457,7 +457,7 @@ public partial class ConversationChat : IEquatable<ConversationChat>
     /// A subset of the Journey System&#39;s data relevant to a part of a conversation (for external linkage and internal usage/context).
     /// </summary>
     /// <value>A subset of the Journey System&#39;s data relevant to a part of a conversation (for external linkage and internal usage/context).</value>
-    [DataMember(Name = "journeyContext", EmitDefaultValue = false)]
+    [JsonPropertyName("journeyContext")]
     public JourneyContext JourneyContext { get; set; }
 
 
@@ -466,7 +466,7 @@ public partial class ConversationChat : IEquatable<ConversationChat>
     /// Call wrap up or disposition data.
     /// </summary>
     /// <value>Call wrap up or disposition data.</value>
-    [DataMember(Name = "wrapup", EmitDefaultValue = false)]
+    [JsonPropertyName("wrapup")]
     public Wrapup Wrapup { get; set; }
 
 
@@ -475,7 +475,7 @@ public partial class ConversationChat : IEquatable<ConversationChat>
     /// After-call work for the communication.
     /// </summary>
     /// <value>After-call work for the communication.</value>
-    [DataMember(Name = "afterCallWork", EmitDefaultValue = false)]
+    [JsonPropertyName("afterCallWork")]
     public AfterCallWork AfterCallWork { get; set; }
 
 
@@ -484,7 +484,7 @@ public partial class ConversationChat : IEquatable<ConversationChat>
     /// Indicates if after-call work is required for a communication. Only used when the ACW Setting is Agent Requested.
     /// </summary>
     /// <value>Indicates if after-call work is required for a communication. Only used when the ACW Setting is Agent Requested.</value>
-    [DataMember(Name = "afterCallWorkRequired", EmitDefaultValue = false)]
+    [JsonPropertyName("afterCallWorkRequired")]
     public bool? AfterCallWorkRequired { get; set; }
 
 
@@ -493,7 +493,7 @@ public partial class ConversationChat : IEquatable<ConversationChat>
     /// Represents the queue settings for this media type.
     /// </summary>
     /// <value>Represents the queue settings for this media type.</value>
-    [DataMember(Name = "queueMediaSettings", EmitDefaultValue = false)]
+    [JsonPropertyName("queueMediaSettings")]
     public ConversationQueueMediaSettings QueueMediaSettings { get; set; }
 
 
