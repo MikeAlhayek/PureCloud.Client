@@ -284,55 +284,53 @@ public partial class UserMe
     /// The first 50 superiors of this user.
     /// </summary>
     /// <value>The first 50 superiors of this user.</value>
-    public IEnumerable<User> Superiors { get; private set; }
+    public IEnumerable<User> Superiors { get; set; }
 
     /// <summary>
     /// The first 50 direct reports to this user.
     /// </summary>
     /// <value>The first 50 direct reports to this user.</value>
-    public IEnumerable<User> DirectReports { get; private set; }
+    public IEnumerable<User> DirectReports { get; set; }
 
     /// <summary>
     /// The first 50 superiors, direct reports, and siblings of this user. Mutually exclusive with superiors and direct reports expands.
     /// </summary>
     /// <value>The first 50 superiors, direct reports, and siblings of this user. Mutually exclusive with superiors and direct reports expands.</value>
-    public Adjacents Adjacents { get; private set; }
+    public Adjacents Adjacents { get; set; }
 
     /// <summary>
     /// The first 50 routing skills for user&#39;s organizations
     /// </summary>
     /// <value>The first 50 routing skills for user&#39;s organizations</value>
-    public IEnumerable<RoutingSkill> RoutingSkills { get; private set; }
+    public IEnumerable<RoutingSkill> RoutingSkills { get; set; }
 
     /// <summary>
     /// The field config for all entities types of user&#39;s organization
     /// </summary>
     /// <value>The field config for all entities types of user&#39;s organization</value>
-    public FieldConfigs FieldConfigs { get; private set; }
+    public FieldConfigs FieldConfigs { get; set; }
 
     /// <summary>
     /// Information about the current token
     /// </summary>
     /// <value>Information about the current token</value>
-    public TokenInfo Token { get; private set; }
+    public TokenInfo Token { get; set; }
 
     /// <summary>
     /// Organizations having this user as a trustee
     /// </summary>
     /// <value>Organizations having this user as a trustee</value>
-    [JsonPropertyName("trustors")]
-    public IEnumerable<Trustor> Trustors { get; private set; }
+    public IEnumerable<Trustor> Trustors { get; set; }
 
     /// <summary>
     /// Products enabled in this organization
     /// </summary>
     /// <value>Products enabled in this organization</value>
-    [JsonPropertyName("orgProducts")]
-    public IEnumerable<DomainOrganizationProduct> OrgProducts { get; private set; }
+    public IEnumerable<DomainOrganizationProduct> OrgProducts { get; set; }
 
     /// <summary>
     /// The URI for this object
     /// </summary>
     /// <value>The URI for this object</value>
-    public string SelfUri { get; private set; }
+    public string SelfUri { get; set; }
 }

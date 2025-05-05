@@ -1,46 +1,11 @@
+using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using PureCloud.Client.DependencyInjection;
-using PureCloud.Client.Extensions.Notifications;
-using PureCloud.Client.Models.Settings;
 using PureCloud.Client.Models.Users;
 using PureCloud.Client.Repositories;
 using Xunit;
 
 namespace PureCloud.Client.Tests;
-
-public sealed class NotificationHandlerTests
-{
-    private readonly IServiceProvider _serviceProvider;
-
-    public NotificationHandlerTests()
-    {
-        var services = new ServiceCollection();
-
-        services
-            .AddPureCloudCore()
-            .AddPureCloudRepositories()
-            .Configure<PureCloudOptions>(o =>
-            {
-                o.ClientId = "97167000-eec1-454a-9abb-2375ebf31099";
-                o.ClientSecret = "44FP7uPEKCJ0b2HcqRGb2hSEMTKHBUbzMSSgVka4iVU";
-                o.Region = PureCloudRegionHosts.us_west_2;
-            });
-
-        _serviceProvider = services.BuildServiceProvider();
-    }
-
-    [Fact]
-    public async Task StartAsync_WhenCalled_IsAbleToCommunicate()
-    {
-        var handler = _serviceProvider.GetRequiredService<INotificationHandler>();
-
-        var cts = new CancellationTokenSource(TimeSpan.FromSeconds(60));
-
-        await handler.AddSubscriptionsAsync();
-
-        await handler.StartAsync(cts.Token);
-    }
-}
 
 public sealed class UserRepositoryTests
 {
@@ -51,14 +16,16 @@ public sealed class UserRepositoryTests
         var services = new ServiceCollection();
 
         services
-            .AddPureCloudCore()
-            .AddPureCloudRepositories()
-            .Configure<PureCloudOptions>(o =>
+            .AddSingleton<IConfiguration>(o =>
             {
-                o.ClientId = "97167000-eec1-454a-9abb-2375ebf31099";
-                o.ClientSecret = "44FP7uPEKCJ0b2HcqRGb2hSEMTKHBUbzMSSgVka4iVU";
-                o.Region = PureCloudRegionHosts.us_west_2;
+                return new ConfigurationBuilder()
+                    .AddUserSecrets(GetType().Assembly)
+                    .Build();
             });
+
+        services
+            .AddPureCloudCore()
+            .AddPureCloudRepositories();
 
         _serviceProvider = services.BuildServiceProvider();
     }

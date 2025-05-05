@@ -1,6 +1,6 @@
 using System.Runtime.Serialization;
 
-namespace PureCloud.Client.Models;
+namespace PureCloud.Client.Models.Users;
 
 public enum UserRoutingSkillState
 {

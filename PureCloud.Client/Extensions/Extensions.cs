@@ -18,6 +18,8 @@ public static class Extensions
             .AddLogging()
             .AddOptions<PureCloudJsonSerializerOptions>();
 
+        services.AddTransient<IConfigureOptions<PureCloudOptions>, PureCloudOptionsConfigurations>();
+
         services
             .AddScoped<ITokenService, TokenService>()
             .AddScoped<ITokenStore, MemoryTokenStore>();

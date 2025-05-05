@@ -107,4 +107,32 @@ public class UserRepository : IUserRepository
 
         return await response.Content.ReadFromJsonAsync<SearchResult<User>>(_options.JsonSerializerOptions, cancellationToken);
     }
+
+    public async Task<User> GetMeAsync(IEnumerable<string> expands = null, string integrationPresenceSource = null, CancellationToken cancellationToken = default)
+    {
+        var client = _httpClientFactory.CreateClient(PureCloudConstants.PureCloudClientName);
+
+        var uri = "api/v2/users/me";
+
+        var queryParameters = new List<KeyValuePair<string, string>>();
+
+        if (expands is not null)
+        {
+            foreach (var expand in expands)
+            {
+                queryParameters.Add(new KeyValuePair<string, string>("expand", UriHelper.ParameterToString(expand)));
+            }
+        }
+
+        if (!string.IsNullOrEmpty(integrationPresenceSource))
+        {
+            queryParameters.Add(new KeyValuePair<string, string>("integrationPresenceSource", UriHelper.ParameterToString(integrationPresenceSource)));
+        }
+
+        var response = await client.GetAsync(uri, cancellationToken);
+
+        response.EnsureSuccessStatusCode();
+
+        return await response.Content.ReadFromJsonAsync<User>(_options.JsonSerializerOptions, cancellationToken);
+    }
 }

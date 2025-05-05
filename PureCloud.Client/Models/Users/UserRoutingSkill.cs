@@ -1,4 +1,4 @@
-namespace PureCloud.Client.Models;
+namespace PureCloud.Client.Models.Users;
 
 public sealed class UserRoutingSkill
 {
