@@ -7,6 +7,7 @@ using PureCloud.Client.Json;
 using PureCloud.Client.Models.Settings;
 using PureCloud.Client.Repositories;
 using PureCloud.Client.Services;
+using PureCloud.Client.Tokens;
 
 namespace PureCloud.Client.DependencyInjection;
 

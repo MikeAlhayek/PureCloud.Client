@@ -112,8 +112,6 @@ public class UserRepository : IUserRepository
     {
         var client = _httpClientFactory.CreateClient(PureCloudConstants.PureCloudClientName);
 
-        var uri = "api/v2/users/me";
-
         var queryParameters = new List<KeyValuePair<string, string>>();
 
         if (expands is not null)
@@ -129,7 +127,7 @@ public class UserRepository : IUserRepository
             queryParameters.Add(new KeyValuePair<string, string>("integrationPresenceSource", UriHelper.ParameterToString(integrationPresenceSource)));
         }
 
-        var response = await client.GetAsync(uri, cancellationToken);
+        var response = await client.GetAsync("api/v2/users/me", cancellationToken);
 
         response.EnsureSuccessStatusCode();
 

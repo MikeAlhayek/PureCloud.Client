@@ -1,7 +1,7 @@
 using System.Net;
 using System.Net.Http.Headers;
 using Microsoft.Extensions.Logging;
-using PureCloud.Client.Services;
+using PureCloud.Client.Tokens;
 
 namespace PureCloud.Client.Http;
 

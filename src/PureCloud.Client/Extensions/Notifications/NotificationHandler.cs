@@ -56,14 +56,14 @@ public class NotificationHandler : INotificationHandler
         _logger = logger;
     }
 
-    public async Task StartAsync(CancellationToken cancellationToken = default)
+    public async Task StartAsync(Channel channel = null, CancellationToken cancellationToken = default)
     {
         _webSocket?.Dispose();
         _cancellationToken = cancellationToken;
 
         _webSocket = new ClientWebSocket();
 
-        _channel = await _channelRepository.CreateAsync(_cancellationToken);
+        _channel = channel ?? await _channelRepository.CreateAsync(_cancellationToken);
 
         await ConnectAsync();
     }

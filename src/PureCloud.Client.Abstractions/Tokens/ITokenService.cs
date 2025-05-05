@@ -1,4 +1,4 @@
-namespace PureCloud.Client.Services;
+namespace PureCloud.Client.Tokens;
 
 public interface ITokenService
 {

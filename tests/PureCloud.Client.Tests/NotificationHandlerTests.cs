@@ -47,6 +47,6 @@ public sealed class NotificationHandlerTests
             { $"v2.analytics.conversation.{user.Id}.metrics", typeof(ConversationMetricsTopicConversationMetricRecord) },
         });
 
-        await handler.StartAsync(cts.Token);
+        await handler.StartAsync(null, cts.Token);
     }
 }

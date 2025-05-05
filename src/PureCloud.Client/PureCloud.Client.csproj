@@ -60,6 +60,7 @@
     <Compile Include="Models\ConditionalGroupRoutingRule.cs" />
     <Compile Include="Models\ConditionalGroupRoutingRuleMetric.cs" />
     <Compile Include="Models\ConditionalGroupRoutingRuleOperator.cs" />
+    <Compile Include="Models\ConversationDetailsDatalakeAvailabilityTopicDataAvailabilityChangeNotification.cs" />
     <Compile Include="Models\ConversationEventTopicAddress.cs" />
     <Compile Include="Models\ConversationEventTopicAfterCallWork.cs" />
     <Compile Include="Models\ConversationEventTopicAfterCallWorkState.cs" />
@@ -167,6 +168,26 @@
     <Compile Include="Models\FieldConfig.cs" />
     <Compile Include="Models\FieldConfigs.cs" />
     <Compile Include="Models\FieldList.cs" />
+    <Compile Include="Models\FlowMetricsTopicFlowMetricRecord.cs" />
+    <Compile Include="Models\FlowMetricsTopicFlowMetricRecordActiveRouting.cs" />
+    <Compile Include="Models\FlowMetricsTopicFlowMetricRecordConversationInitiator.cs" />
+    <Compile Include="Models\FlowMetricsTopicFlowMetricRecordDeliveryStatus.cs" />
+    <Compile Include="Models\FlowMetricsTopicFlowMetricRecordDirection.cs" />
+    <Compile Include="Models\FlowMetricsTopicFlowMetricRecordDisconnectType.cs" />
+    <Compile Include="Models\FlowMetricsTopicFlowMetricRecordEntryType.cs" />
+    <Compile Include="Models\FlowMetricsTopicFlowMetricRecordFlaggedReason.cs" />
+    <Compile Include="Models\FlowMetricsTopicFlowMetricRecordFlowSubType.cs" />
+    <Compile Include="Models\FlowMetricsTopicFlowMetricRecordFlowType.cs" />
+    <Compile Include="Models\FlowMetricsTopicFlowMetricRecordMediaType.cs" />
+    <Compile Include="Models\FlowMetricsTopicFlowMetricRecordMetric.cs" />
+    <Compile Include="Models\FlowMetricsTopicFlowMetricRecordOriginatingDirection.cs" />
+    <Compile Include="Models\FlowMetricsTopicFlowMetricRecordPurpose.cs" />
+    <Compile Include="Models\FlowMetricsTopicFlowMetricRecordRequestedRoutings.cs" />
+    <Compile Include="Models\FlowMetricsTopicFlowMetricRecordRoutingRuleType.cs" />
+    <Compile Include="Models\FlowMetricsTopicFlowMetricRecordUsedRouting.cs" />
+    <Compile Include="Models\FlowMetricsTopicFlowOutcome.cs" />
+    <Compile Include="Models\FlowMetricsTopicFlowProposedAgent.cs" />
+    <Compile Include="Models\FlowMetricsTopicFlowScoredAgent.cs" />
     <Compile Include="Models\GeolocationSettings.cs" />
     <Compile Include="Models\HistoryInclusionEnum.cs" />
     <Compile Include="Models\InboundRoute.cs" />
@@ -215,6 +236,9 @@
     <Compile Include="Models\ServiceLevel.cs" />
     <Compile Include="Models\Signature.cs" />
     <Compile Include="Models\SkillsToRemove.cs" />
+    <Compile Include="Models\StatEventFlowTopicIntervalMetrics.cs" />
+    <Compile Include="Models\StatEventFlowTopicMetricStats.cs" />
+    <Compile Include="Models\StatEventFlowTopicStatsNotification.cs" />
     <Compile Include="Models\SystemMessage.cs" />
     <Compile Include="Models\SystemTopicType.cs" />
     <Compile Include="Models\TokenInfo.cs" />
@@ -256,6 +280,13 @@
     <Compile Include="Models\Teams\Team.cs" />
     <Compile Include="Models\Topics\ConversationMetricsTopicConversationProposedAgent.cs" />
     <Compile Include="Models\Topics\ConversationMetricsTopicConversationScoredAgent.cs" />
+    <Compile Include="Models\TranscriptionTopicTranscriptAlternative.cs" />
+    <Compile Include="Models\TranscriptionTopicTranscriptionMessage.cs" />
+    <Compile Include="Models\TranscriptionTopicTranscriptionRequestStatus.cs" />
+    <Compile Include="Models\TranscriptionTopicTranscriptionRequestStatusStatus.cs" />
+    <Compile Include="Models\TranscriptionTopicTranscriptResult.cs" />
+    <Compile Include="Models\TranscriptionTopicTranscriptResultChannel.cs" />
+    <Compile Include="Models\TranscriptionTopicTranscriptWord.cs" />
     <Compile Include="Models\TrusteeAuthorization.cs" />
     <Compile Include="Models\Trustor.cs" />
     <Compile Include="Models\UserRoutingLanguage.cs" />
@@ -309,6 +340,10 @@
 
   <ItemGroup>
     <Folder Include="Apis\" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\PureCloud.Client.Abstractions\PureCloud.Client.Abstractions.csproj" />
   </ItemGroup>
 
 </Project>

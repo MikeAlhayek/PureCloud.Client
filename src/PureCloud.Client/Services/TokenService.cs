@@ -2,8 +2,8 @@ using System.Net.Http.Headers;
 using System.Net.Http.Json;
 using System.Text;
 using Microsoft.Extensions.Options;
-using PureCloud.Client.Extensions;
 using PureCloud.Client.Models.Settings;
+using PureCloud.Client.Tokens;
 
 namespace PureCloud.Client.Services;
 
@@ -26,9 +26,9 @@ public class TokenService : ITokenService
 
     public async ValueTask<string> GetAccessTokenAsync()
     {
-        var token = await _tokenStore.GetAsync();
+        var accessToken = await _tokenStore.GetAsync(TokenType.AccessToken);
 
-        if (string.IsNullOrEmpty(token?.AccessToken))
+        if (string.IsNullOrEmpty(accessToken))
         {
             // get a new token;
             var client = _httpClientFactory.CreateClient(PureCloudConstants.PureCloudAuthClientName);
@@ -70,22 +70,22 @@ public class TokenService : ITokenService
 
             var responseContent = await response.Content.ReadFromJsonAsync<AuthTokenInfo>();
 
-            token = responseContent;
+            accessToken = responseContent?.AccessToken;
 
-            await _tokenStore.SetAsync(token);
+            await _tokenStore.SetAsync(TokenType.AccessToken, accessToken);
         }
 
-        return token?.AccessToken;
+        return accessToken;
     }
 
     public async ValueTask<string> GetRefreshTokenAsync()
-        => (await _tokenStore.GetAsync()).AccessToken;
+        => (await _tokenStore.GetAsync(TokenType.RefreshToken));
 
     public async ValueTask<string> RefreshTokenAsync()
     {
-        var accessToken = await GetRefreshTokenAsync();
+        var refreshToken = await GetRefreshTokenAsync();
 
-        if (!string.IsNullOrEmpty(accessToken))
+        if (!string.IsNullOrEmpty(refreshToken))
         {
             // get a new token;
             // get a new token;
@@ -126,14 +126,19 @@ public class TokenService : ITokenService
 
             var responseContent = await response.Content.ReadFromJsonAsync<AuthTokenInfo>();
 
-            if (responseContent is not null)
+            if (!string.IsNullOrEmpty(responseContent?.AccessToken))
             {
-                accessToken = responseContent.AccessToken;
+                await _tokenStore.SetAsync(TokenType.AccessToken, responseContent.AccessToken);
 
-                await _tokenStore.SetAsync(responseContent);
+                if (!string.IsNullOrEmpty(responseContent?.RefreshToken))
+                {
+                    await _tokenStore.SetAsync(TokenType.RefreshToken, responseContent.RefreshToken);
+                }
+
+                return responseContent.AccessToken;
             }
         }
 
-        return accessToken;
+        return null;
     }
 }

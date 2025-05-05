@@ -1,29 +1,42 @@
-using PureCloud.Client.Extensions;
+using System.Collections.Concurrent;
+using PureCloud.Client.Tokens;
 
 namespace PureCloud.Client.Services;
 
 public class MemoryTokenStore : ITokenStore
 {
-    private AuthTokenInfo _tokens;
+    private readonly ConcurrentDictionary<TokenType, string> _tokens = [];
 
-    public ValueTask<AuthTokenInfo> GetAsync()
+    public ValueTask<string> GetAsync(TokenType type)
     {
-        return ValueTask.FromResult(_tokens);
+        if (_tokens.TryGetValue(type, out var token))
+        {
+            return ValueTask.FromResult(token);
+        }
+
+        return default;
     }
 
-    public ValueTask<bool> SetAsync(AuthTokenInfo info)
+    public ValueTask<bool> SetAsync(TokenType type, string value)
     {
-        ArgumentNullException.ThrowIfNull(info);
+        ArgumentException.ThrowIfNullOrEmpty(value);
 
-        _tokens = info;
+        _tokens.AddOrUpdate(type, value, (k, existingValue) => existingValue = value);
 
         return ValueTask.FromResult(true);
     }
 
-    public ValueTask<bool> RemoveAsync()
+    public ValueTask<bool> RemoveAsync(TokenType type)
     {
-        _tokens = null;
+        return ValueTask.FromResult(_tokens.TryRemove(type, out _));
+    }
 
-        return ValueTask.FromResult(true);
+    public ValueTask<bool> RemoveAllAsync()
+    {
+        var hasValues = !_tokens.IsEmpty;
+
+        _tokens.Clear();
+
+        return ValueTask.FromResult(hasValues);
     }
 }

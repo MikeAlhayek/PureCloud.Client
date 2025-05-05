@@ -1,4 +1,6 @@
 
+using PureCloud.Client.Models;
+
 namespace PureCloud.Client.Extensions.Notifications;
 
 /// <summary>
@@ -32,5 +34,11 @@ public interface INotificationHandler : IAsyncDisposable
     /// Sends the ping message to the notification service. Must be subscribed using topic "channel.metadata" and handle with type ChannelMetadataNotification.
     /// </summary>
     Task PingAsync();
-    Task StartAsync(CancellationToken cancellationToken = default);
+
+    /// <summary>
+    /// Starts the connection to the service.
+    /// </summary>
+    /// <param name="cancellationToken"></param>
+    /// <returns></returns>
+    Task StartAsync(Channel channel = null, CancellationToken cancellationToken = default);
 }

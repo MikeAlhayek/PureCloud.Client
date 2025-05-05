@@ -8,6 +8,10 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Tests", "Tests", "{02EA681E
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PureCloud.Client.Tests", "tests\PureCloud.Client.Tests\PureCloud.Client.Tests.csproj", "{53C2B4BE-A22E-DD94-5F65-FB2AB535324C}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PureCloud.Client.AspNetCore.Http", "src\PureCloud.Client.AspNetCore.Http\PureCloud.Client.AspNetCore.Http.csproj", "{756B7831-760A-4600-AD9F-619969B7B340}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PureCloud.Client.Abstractions", "src\PureCloud.Client.Abstractions\PureCloud.Client.Abstractions.csproj", "{65457AF8-F97A-4360-9B57-05A8684CC5BA}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -22,6 +26,14 @@ Global
 		{53C2B4BE-A22E-DD94-5F65-FB2AB535324C}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{53C2B4BE-A22E-DD94-5F65-FB2AB535324C}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{53C2B4BE-A22E-DD94-5F65-FB2AB535324C}.Release|Any CPU.Build.0 = Release|Any CPU
+		{756B7831-760A-4600-AD9F-619969B7B340}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{756B7831-760A-4600-AD9F-619969B7B340}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{756B7831-760A-4600-AD9F-619969B7B340}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{756B7831-760A-4600-AD9F-619969B7B340}.Release|Any CPU.Build.0 = Release|Any CPU
+		{65457AF8-F97A-4360-9B57-05A8684CC5BA}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{65457AF8-F97A-4360-9B57-05A8684CC5BA}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{65457AF8-F97A-4360-9B57-05A8684CC5BA}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{65457AF8-F97A-4360-9B57-05A8684CC5BA}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
