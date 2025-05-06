@@ -99,7 +99,7 @@ public static class PureCloudConstants
         // {"v2.quality.evaluations", typeof(EvaluationQualityV2TopicEvaluationV2)},
         // {"v2.routing.queues.{0}.conversations", typeof(QueueConversationEventTopicConversation)},
         // {"v2.routing.queues.{0}.conversations.callbacks", typeof(QueueConversationCallbackEventTopicCallbackConversation)},
-        // {"v2.routing.queues.{0}.conversations.calls", typeof(QueueConversationCallEventTopicCallConversation)},
+           {"v2.routing.queues.{0}.conversations.calls", typeof(QueueConversationCallEventTopicCallConversation)},
         // {"v2.routing.queues.{0}.conversations.chats", typeof(QueueConversationChatEventTopicChatConversation)},
         // {"v2.routing.queues.{0}.conversations.cobrowseSessions", typeof(QueueConversationCobrowseEventTopicCobrowseConversation)},
         // {"v2.routing.queues.{0}.conversations.emails", typeof(QueueConversationEmailEventTopicEmailConversation)},

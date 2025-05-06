@@ -201,8 +201,10 @@
     <Compile Include="Models\ConversationEventTopicVoicemailUploadStatus.cs" />
     <Compile Include="Models\ConversationEventTopicWorkflow.cs" />
     <Compile Include="Models\ConversationEventTopicWrapup.cs" />
+    <Compile Include="Models\QueueConversationCallEventTopicCallMediaParticipant.Direction.cs" />
     <Compile Include="Models\DirectRouting.cs" />
     <Compile Include="Models\DirectRoutingMediaSettings.cs" />
+    <Compile Include="Models\QueueConversationCallEventTopicCallMediaParticipant.DisconnectType.cs" />
     <Compile Include="Models\DomainEntityRef.cs" />
     <Compile Include="Models\DomainOrganizationProduct.cs" />
     <Compile Include="Models\DomainPermissionPolicy.cs" />
@@ -219,6 +221,7 @@
     <Compile Include="Models\FieldConfig.cs" />
     <Compile Include="Models\FieldConfigs.cs" />
     <Compile Include="Models\FieldList.cs" />
+    <Compile Include="Models\QueueConversationCallEventTopicCallMediaParticipant.FlaggedReason.cs" />
     <Compile Include="Models\FlowMetricsTopicFlowMetricRecord.cs" />
     <Compile Include="Models\FlowMetricsTopicFlowMetricRecordActiveRouting.cs" />
     <Compile Include="Models\FlowMetricsTopicFlowMetricRecordConversationInitiator.cs" />
@@ -243,6 +246,7 @@
     <Compile Include="Models\HistoryInclusionEnum.cs" />
     <Compile Include="Models\InboundRoute.cs" />
     <Compile Include="Models\InclusionType.cs" />
+    <Compile Include="Models\QueueConversationCallEventTopicCallMediaParticipant.InitialState.cs" />
     <Compile Include="Models\IPagedResource.cs" />
     <Compile Include="Models\LiveVoiceReactionType.cs" />
     <Compile Include="Models\MediaSettings.cs" />
@@ -250,6 +254,17 @@
     <Compile Include="Models\MemberGroupType.cs" />
     <Compile Include="Models\MessageMediaSettings.cs" />
     <Compile Include="Models\NamedEntity.cs" />
+    <Compile Include="Models\QueueConversationCallEventTopicConversationDivisionMembership.cs" />
+    <Compile Include="Models\QueueConversationCallEventTopicConversationRoutingData.cs" />
+    <Compile Include="Models\QueueConversationCallEventTopicDivisionEntityRef.cs" />
+    <Compile Include="Models\QueueConversationCallEventTopicDomainEntityRef.cs" />
+    <Compile Include="Models\QueueConversationCallEventTopicFaxStatus.cs" />
+    <Compile Include="Models\QueueConversationCallEventTopicJourneyAction.cs" />
+    <Compile Include="Models\QueueConversationCallEventTopicJourneyActionMap.cs" />
+    <Compile Include="Models\QueueConversationCallEventTopicJourneyContext.cs" />
+    <Compile Include="Models\QueueConversationCallEventTopicJourneyCustomer.cs" />
+    <Compile Include="Models\QueueConversationCallEventTopicJourneyCustomerSession.cs" />
+    <Compile Include="Models\QueueConversationCallEventTopicLimit.Namespace.cs" />
     <Compile Include="Models\Organizations\DomainOrganizationRole.cs" />
     <Compile Include="Models\Organizations\Organization.cs" />
     <Compile Include="Models\Organizations\OrganizationPresence.cs" />
@@ -265,6 +280,15 @@
     <Compile Include="Models\PermissionDetails.cs" />
     <Compile Include="Models\PermissionDetailsType.cs" />
     <Compile Include="Models\PresenceEventUserPresence.cs" />
+    <Compile Include="Models\QueueConversationCallEventTopicCallConversation.cs" />
+    <Compile Include="Models\QueueConversationCallEventTopicCallMediaParticipant.cs" />
+    <Compile Include="Models\QueueConversationCallEventTopicDetail.cs" />
+    <Compile Include="Models\QueueConversationCallEventTopicErrorBody.cs" />
+    <Compile Include="Models\QueueConversationCallEventTopicLimit.cs" />
+    <Compile Include="Models\QueueConversationCallEventTopicQueueMediaSettings.cs" />
+    <Compile Include="Models\QueueConversationCallEventTopicScoredAgent.cs" />
+    <Compile Include="Models\QueueConversationCallEventTopicUriReference.cs" />
+    <Compile Include="Models\QueueConversationCallEventTopicWrapup.cs" />
     <Compile Include="Models\Queues\LastAgentRoutingModeEnum.cs" />
     <Compile Include="Models\Queues\Queue.cs" />
     <Compile Include="Models\Queues\QueueEmailAddress.cs" />
@@ -274,6 +298,7 @@
     <Compile Include="Models\Queues\SkillEvaluationMethodEnum.cs" />
     <Compile Include="Models\Queues\UserQueue.cs" />
     <Compile Include="Models\Queues\UserQueueEntityListing.cs" />
+    <Compile Include="Models\QueueConversationCallEventTopicCallMediaParticipant.RecordingState.cs" />
     <Compile Include="Models\Ring.cs" />
     <Compile Include="Models\RoleDivision.cs" />
     <Compile Include="Models\RoutingRule.cs" />
@@ -287,6 +312,7 @@
     <Compile Include="Models\ServiceLevel.cs" />
     <Compile Include="Models\Signature.cs" />
     <Compile Include="Models\SkillsToRemove.cs" />
+    <Compile Include="Models\QueueConversationCallEventTopicCallMediaParticipant.State.cs" />
     <Compile Include="Models\StatEventFlowOutcomeTopicIntervalMetrics.cs" />
     <Compile Include="Models\StatEventFlowOutcomeTopicMetricStats.cs" />
     <Compile Include="Models\StatEventFlowOutcomeTopicStatsNotification.cs" />
