@@ -85,7 +85,7 @@
     <Compile Include="Models\ConditionalGroupRoutingRuleMetric.cs" />
     <Compile Include="Models\ConditionalGroupRoutingRuleOperator.cs" />
     <Compile Include="Models\ConversationCallEventTopicCallConversation.cs" />
-    <Compile Include="Models\ConversationCallEventTopicCallConversation.RecordingStateEnum.cs" />
+    <Compile Include="Models\ConversationCallEventTopicCallConversationRecordingState.cs" />
     <Compile Include="Models\ConversationCallEventTopicCallMediaParticipant.cs" />
     <Compile Include="Models\ConversationCallEventTopicCallMediaParticipant.DirectionEnum.cs" />
     <Compile Include="Models\ConversationCallEventTopicCallMediaParticipant.DisconnectTypeEnum.cs" />
