@@ -97,7 +97,7 @@ public static class PureCloudConstants
         // {"v2.outbound.whatsappcampaigns.{0}.progress", typeof(OutboundMessagingWhatsappCampaignProgressEventCampaignProgress)},
         // {"v2.outbound.wrapupcodemappings.{0}", typeof(DialerWrapupcodemappingConfigChangeWrapUpCodeMapping)},
         // {"v2.quality.evaluations", typeof(EvaluationQualityV2TopicEvaluationV2)},
-        // {"v2.routing.queues.{0}.conversations", typeof(QueueConversationEventTopicConversation)},
+           {"v2.routing.queues.{0}.conversations", typeof(QueueConversationEventTopicConversation)},
         // {"v2.routing.queues.{0}.conversations.callbacks", typeof(QueueConversationCallbackEventTopicCallbackConversation)},
            {"v2.routing.queues.{0}.conversations.calls", typeof(QueueConversationCallEventTopicCallConversation)},
         // {"v2.routing.queues.{0}.conversations.chats", typeof(QueueConversationChatEventTopicChatConversation)},

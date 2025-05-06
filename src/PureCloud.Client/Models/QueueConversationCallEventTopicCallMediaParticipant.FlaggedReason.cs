@@ -6,7 +6,7 @@ namespace PureCloud.Client.Models;
 /// Gets or Sets FlaggedReason
 /// </summary>
 
-public enum FlaggedReasonEnum
+public enum QueueConversationCallEventTopicFlaggedReasonEnum
 {
     /// <summary>
     /// Your SDK version is out of date and an unknown enum value was encountered. 

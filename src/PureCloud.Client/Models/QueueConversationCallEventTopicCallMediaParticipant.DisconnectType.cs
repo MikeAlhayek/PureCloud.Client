@@ -6,7 +6,7 @@ namespace PureCloud.Client.Models;
 /// Gets or Sets DisconnectType
 /// </summary>
 
-public enum DisconnectTypeEnum
+public enum QueueConversationCallEventTopicCallMediaParticipantDisconnectTypeEnum
 {
     /// <summary>
     /// Your SDK version is out of date and an unknown enum value was encountered. 

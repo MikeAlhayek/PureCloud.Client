@@ -1,6 +1,7 @@
 using System.Runtime.Serialization;
 using System.Text;
 using System.Text.Json.Serialization;
+using static PureCloud.Client.Models.ConversationCallEventTopicCallMediaParticipant;
 
 namespace PureCloud.Client.Models;
 
@@ -9,7 +10,7 @@ public sealed class QueueConversationCallEventTopicCallConversation
     /// <summary>
     /// Gets or Sets RecordingState
     /// </summary>
-    public RecordingStateEnum? RecordingState { get; set; }
+    public QueueConversationCallEventTopicRecordingStateEnum? RecordingState { get; set; }
 
     /// <summary>
     /// Gets or Sets Id

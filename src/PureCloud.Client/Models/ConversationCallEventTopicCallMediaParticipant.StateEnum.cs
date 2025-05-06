@@ -8,7 +8,7 @@ public partial class ConversationCallEventTopicCallMediaParticipant
     /// Gets or Sets State
     /// </summary>
 
-    public enum StateEnum
+    public enum ConversationCallEventTopicCallMediaParticipantStateEnum
     {
         /// <summary>
         /// Your SDK version is out of date and an unknown enum value was encountered. 

@@ -8,7 +8,7 @@ public partial class ConversationCallEventTopicCallMediaParticipant
     /// Gets or Sets FlaggedReason
     /// </summary>
 
-    public enum FlaggedReasonEnum
+    public enum ConversationCallEventTopicCallMediaParticipantFlaggedReasonEnum
     {
         /// <summary>
         /// Your SDK version is out of date and an unknown enum value was encountered. 

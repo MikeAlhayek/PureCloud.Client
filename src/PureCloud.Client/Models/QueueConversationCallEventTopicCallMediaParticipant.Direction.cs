@@ -2,7 +2,7 @@ using System.Runtime.Serialization;
 
 namespace PureCloud.Client.Models;
 
-public enum DirectionEnum
+public enum CallMediaParticipantDirectionEnum
 {
     /// <summary>
     /// Your SDK version is out of date and an unknown enum value was encountered. 

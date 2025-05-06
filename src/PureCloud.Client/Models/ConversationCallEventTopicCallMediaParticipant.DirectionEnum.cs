@@ -8,7 +8,7 @@ public partial class ConversationCallEventTopicCallMediaParticipant
     /// Gets or Sets Direction
     /// </summary>
 
-    public enum DirectionEnum
+    public enum ConversationCallEventTopicCallMediaParticipantDirectionEnum
     {
         /// <summary>
         /// Your SDK version is out of date and an unknown enum value was encountered. 

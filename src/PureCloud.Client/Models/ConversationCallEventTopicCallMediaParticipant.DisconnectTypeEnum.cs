@@ -8,7 +8,7 @@ public partial class ConversationCallEventTopicCallMediaParticipant
     /// Gets or Sets DisconnectType
     /// </summary>
 
-    public enum DisconnectTypeEnum
+    public enum ConversationCallEventTopicCallMediaParticipantDisconnectTypeEnum
     {
         /// <summary>
         /// Your SDK version is out of date and an unknown enum value was encountered. 

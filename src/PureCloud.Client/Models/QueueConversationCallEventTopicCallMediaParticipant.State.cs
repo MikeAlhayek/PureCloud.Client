@@ -2,7 +2,7 @@ using System.Runtime.Serialization;
 
 namespace PureCloud.Client.Models;
 
-public enum StateEnum
+public enum QueueConversationEventTopicEmailStateEnum
 {
     /// <summary>
     /// Your SDK version is out of date and an unknown enum value was encountered. 

@@ -8,32 +8,32 @@ public sealed class QueueConversationCallEventTopicCallMediaParticipant
     /// <summary>
     /// Gets or Sets State
     /// </summary>
-    public StateEnum? State { get; set; }
+    public QueueConversationEventTopicEmailStateEnum? State { get; set; }
 
     /// <summary>
     /// Gets or Sets InitialState
     /// </summary>
-    public InitialStateEnum? InitialState { get; set; }
+    public QueueConversationEventInitialStateEnum? InitialState { get; set; }
 
     /// <summary>
     /// Gets or Sets Direction
     /// </summary>
-    public DirectionEnum? Direction { get; set; }
+    public CallMediaParticipantDirectionEnum? Direction { get; set; }
 
     /// <summary>
     /// Gets or Sets DisconnectType
     /// </summary>
-    public DisconnectTypeEnum? DisconnectType { get; set; }
+    public QueueConversationCallEventTopicCallMediaParticipantDisconnectTypeEnum? DisconnectType { get; set; }
 
     /// <summary>
     /// Gets or Sets FlaggedReason
     /// </summary>
-    public FlaggedReasonEnum? FlaggedReason { get; set; }
+    public QueueConversationCallEventTopicFlaggedReasonEnum? FlaggedReason { get; set; }
 
     /// <summary>
     /// Gets or Sets RecordingState
     /// </summary>
-    public RecordingStateEnum? RecordingState { get; set; }
+    public QueueConversationEventRecordingStateEnum? RecordingState { get; set; }
 
     /// <summary>
     /// Gets or Sets Id
