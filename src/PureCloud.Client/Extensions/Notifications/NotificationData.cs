@@ -3,7 +3,15 @@ namespace PureCloud.Client.Extensions.Notifications;
 ///<Summary>
 /// Notification (i.e. topic) Data received on the Notification Channel (WebSocket)
 ///</Summary>
-public sealed class NotificationData<T> : INotificationData
+public sealed class NotificationData<T> : NotificationData, INotificationData
+{
+    ///<Summary>
+    /// Body of the event
+    ///</Summary>
+    public T EventBody { get; set; }
+}
+
+public class NotificationData : INotificationData
 {
     ///<Summary>
     /// Name of the topic
@@ -14,11 +22,6 @@ public sealed class NotificationData<T> : INotificationData
     /// Version
     ///</Summary>
     public string Version { get; set; }
-
-    ///<Summary>
-    /// Body of the event
-    ///</Summary>
-    public T EventBody { get; set; }
 
     ///<Summary>
     /// Metadata

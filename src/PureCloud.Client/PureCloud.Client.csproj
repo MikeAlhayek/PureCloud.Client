@@ -33,6 +33,7 @@
     <Compile Include="Extensions\Notifications\Metadata.cs" />
     <Compile Include="Extensions\Notifications\NotificationData.cs" />
     <Compile Include="Extensions\Notifications\NotificationHandler.cs" />
+    <Compile Include="Extensions\Notifications\SubscriptionBuilder.cs" />
     <Compile Include="Models\Actions.cs" />
     <Compile Include="Models\AcwSettings.cs" />
     <Compile Include="Models\Adjacents.cs" />

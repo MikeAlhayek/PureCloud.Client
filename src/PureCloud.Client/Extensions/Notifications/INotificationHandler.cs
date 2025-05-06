@@ -17,7 +17,7 @@ public interface INotificationHandler : IAsyncDisposable
     /// Adds a list of subscription to the specified topic. Events received on this topic will be cast to the given type.
     /// </summary>
     /// <param name="subscriptions">A List of Tuples where the first value is the notification topic to add and the second is the Type that should be used when deserializing the notification</param>
-    Task AddSubscriptionsAsync(Dictionary<string, Type> subscriptions);
+    Task AddSubscriptionsAsync(IEnumerable<KeyValuePair<string, Type>> subscriptions);
 
     /// <summary>
     /// Removes the subscribed topic
