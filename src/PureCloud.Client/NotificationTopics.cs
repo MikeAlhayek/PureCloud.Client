@@ -22,13 +22,12 @@ public static class NotificationTopics
           {"v2.analytics.users.details.jobs.availability", typeof(UserDetailsDatalakeAvailabilityTopicDataAvailabilityChangeNotification)},
           {"v2.analytics.users.{id}.aggregates", typeof(StatEventUserTopicStatsNotification)},
           {"v2.analytics.wrapup.{id}.aggregates", typeof(StatEventWrapUpCodeTopicStatsNotification)},
-          /*
           {"v2.architect.dependencytracking.build", typeof(ArchitectDependencyTrackingBuildNotificationDependencyTrackingBuildNotification)},
-
           {"v2.architect.prompts.{id}", typeof(ArchitectPromptNotificationPromptNotification)},
           {"v2.architect.prompts.{id}.resources.{id}", typeof(ArchitectPromptResourceNotificationPromptResourceNotification)},
           {"v2.architect.systemprompts.{id}.resources.{id}", typeof(ArchitectSystemPromptResourceNotificationSystemPromptResourceNotification)},
           {"v2.audits.entitytype.{id}.entityid.{id}", typeof(AuditTopicAuditLogMessage)},
+          /*
           {"v2.bot.conversation.{id}.conversations.summaries", typeof(ConversationSummaryTopicVirtualAgentsConversationSummaryEvent)},
           {"v2.businessunits.{id}.workforcemanagement.intraday", typeof(WfmBuIntradayDataUpdateTopicBuIntradayNotification)},
           {"v2.contentmanagement.documents.{id}", typeof(ContentManagementSingleDocumentTopicDocumentDataV2)},
@@ -142,7 +141,9 @@ public static class NotificationTopics
           {"v2.users.{id}.callforwarding", typeof(CallForwardingEventCallForwarding)},
           {"v2.users.{id}.conversations", typeof(ConversationEventTopicConversation)},
           {"v2.users.{id}.conversations.callbacks", typeof(ConversationCallbackEventTopicCallbackConversation)},
+          */
           {"v2.users.{id}.conversations.calls", typeof(ConversationCallEventTopicCallConversation)},
+          /*
           {"v2.users.{id}.conversations.chats", typeof(ConversationChatEventTopicChatConversation)},
           {"v2.users.{id}.conversations.cobrowseSessions", typeof(ConversationCobrowseEventTopicCobrowseConversation)},
           {"v2.users.{id}.conversations.emails", typeof(ConversationEmailEventTopicEmailConversation)},
