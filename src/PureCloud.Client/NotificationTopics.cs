@@ -17,13 +17,14 @@ public static class NotificationTopics
           {"v2.analytics.conversations.details.jobs.availability", typeof(ConversationDetailsDatalakeAvailabilityTopicDataAvailabilityChangeNotification)},
           {"v2.analytics.flow.{id}.aggregates", typeof(StatEventFlowTopicStatsNotification)},
           {"v2.analytics.flow.{id}.metrics", typeof(FlowMetricsTopicFlowMetricRecord)},
-          /*
           {"v2.analytics.flowoutcome.{id}.aggregates", typeof(StatEventFlowOutcomeTopicStatsNotification)},
           {"v2.analytics.queues.{id}.observations", typeof(StatEventQueueTopicStatsNotification)},
           {"v2.analytics.users.details.jobs.availability", typeof(UserDetailsDatalakeAvailabilityTopicDataAvailabilityChangeNotification)},
           {"v2.analytics.users.{id}.aggregates", typeof(StatEventUserTopicStatsNotification)},
           {"v2.analytics.wrapup.{id}.aggregates", typeof(StatEventWrapUpCodeTopicStatsNotification)},
+          /*
           {"v2.architect.dependencytracking.build", typeof(ArchitectDependencyTrackingBuildNotificationDependencyTrackingBuildNotification)},
+
           {"v2.architect.prompts.{id}", typeof(ArchitectPromptNotificationPromptNotification)},
           {"v2.architect.prompts.{id}.resources.{id}", typeof(ArchitectPromptResourceNotificationPromptResourceNotification)},
           {"v2.architect.systemprompts.{id}.resources.{id}", typeof(ArchitectSystemPromptResourceNotificationSystemPromptResourceNotification)},

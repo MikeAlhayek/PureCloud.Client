@@ -21,7 +21,7 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\..\PureCloud.Client\PureCloud.Client.csproj" />
+    <!--<ProjectReference Include="..\..\PureCloud.Client\PureCloud.Client.csproj" />-->
     <ProjectReference Include="..\..\src\PureCloud.Client\PureCloud.Client.csproj" />
   </ItemGroup>
 
