@@ -3,9 +3,10 @@ using System.Net.WebSockets;
 using System.Text;
 using System.Text.Json;
 using Microsoft.Extensions.Logging;
-using PureCloud.Client.Extensions.Notifications;
 using PureCloud.Client.Models;
 using PureCloud.Client.Repositories;
+
+namespace PureCloud.Client.Extensions.Notifications;
 
 public class NotificationHandler : INotificationHandler, IAsyncDisposable
 {
@@ -81,7 +82,6 @@ public class NotificationHandler : INotificationHandler, IAsyncDisposable
                 _reconnectAttempts = 0;
 
                 _ = Task.Run(ReceiveLoopAsync, _cancellationToken);
-                return;
             }
             catch (Exception ex)
             {
@@ -101,6 +101,7 @@ public class NotificationHandler : INotificationHandler, IAsyncDisposable
 
     private async Task ReceiveLoopAsync()
     {
+        _logger.LogInformation("ReceiveLoopAsync started");
         var buffer = new byte[4096];
 
         while (!_cancellationToken.IsCancellationRequested && _webSocket?.State == WebSocketState.Open)
@@ -111,12 +112,13 @@ public class NotificationHandler : INotificationHandler, IAsyncDisposable
 
                 if (result.MessageType == WebSocketMessageType.Close)
                 {
-                    _logger.LogInformation("WebSocket closed. Attempting reconnect.");
+                    _logger.LogWarning("WebSocket closed by server.");
                     await ConnectAsync();
                     break;
                 }
 
                 var message = Encoding.UTF8.GetString(buffer, 0, result.Count);
+                _logger.LogDebug("Received message: {Message}", message);
                 await _messageChannel.Writer.WriteAsync(message, _cancellationToken);
             }
             catch (Exception ex)
@@ -130,8 +132,11 @@ public class NotificationHandler : INotificationHandler, IAsyncDisposable
 
     private async Task ProcessMessagesAsync()
     {
+        _logger.LogInformation("ProcessMessagesAsync started");
+
         await foreach (var message in _messageChannel.Reader.ReadAllAsync(_cancellationToken))
         {
+            _logger.LogDebug("Processing message from channel");
             _ = Task.Run(() => HandleMessageAsync(message), _cancellationToken);
         }
     }
@@ -140,29 +145,40 @@ public class NotificationHandler : INotificationHandler, IAsyncDisposable
     {
         try
         {
-            var baseData = JsonSerializer.Deserialize<NotificationData>(message);
+            _logger.LogDebug("Handling message: {Message}", message);
 
+            var baseData = JsonSerializer.Deserialize<NotificationData>(message);
             if (string.IsNullOrWhiteSpace(baseData?.TopicName))
             {
-                return default;
+                _logger.LogWarning("Message missing TopicName");
+                return Task.CompletedTask;
             }
 
             if (!_typeMap.TryGetValue(baseData.TopicName, out var targetType))
             {
-                return default;
+                _logger.LogWarning("Unknown TopicName: {TopicName}", baseData.TopicName);
+                return Task.CompletedTask;
             }
 
             var typedNotificationType = typeof(NotificationData<>).MakeGenericType(targetType);
             var data = (INotificationData)JsonSerializer.Deserialize(message, typedNotificationType);
 
-            NotificationReceived?.Invoke(data);
+            if (data != null)
+            {
+                _logger.LogInformation("Raising NotificationReceived for topic {Topic}", baseData.TopicName);
+                NotificationReceived?.Invoke(data);
+            }
+            else
+            {
+                _logger.LogWarning("Deserialized data is null");
+            }
         }
         catch (Exception ex)
         {
             _logger.LogError(ex, "Failed to process message.");
         }
 
-        return default;
+        return Task.CompletedTask;
     }
 
     public async Task AddSubscriptionsAsync(IEnumerable<KeyValuePair<string, Type>> subscriptions)

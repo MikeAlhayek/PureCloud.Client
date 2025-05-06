@@ -28,14 +28,16 @@ public sealed class SubscriptionBuilder
             throw new InvalidOperationException($"The topic template '{topicTemplate}' is invalid. Valid templates can be found in {nameof(PureCloudConstants)}.{nameof(PureCloudConstants.TopicTemplates)}");
         }
 
-        var topic = topicTemplate;
-
         if (ids is not null && ids.Length > 0)
         {
-            topic = string.Format(topicTemplate, ids);
-        }
+            var topic = string.Format(topicTemplate, ids);
 
-        _map[topic] = topicType;
+            _map[topic] = topicType;
+        }
+        else
+        {
+            _map[topicTemplate] = topicType;
+        }
 
         return this;
     }
