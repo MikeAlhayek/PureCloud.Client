@@ -1,441 +1,73 @@
-using System.Runtime.Serialization;
 using System.Text;
 using System.Text.Json.Serialization;
 
 namespace PureCloud.Client.Models;
 
-/// <summary>
-/// Describes an operation being performed on an Architect object
-/// </summary>
-
-public partial class ArchitectPromptNotificationArchitectOperation : IEquatable<ArchitectPromptNotificationArchitectOperation>
+public sealed partial class ArchitectPromptNotificationArchitectOperation
 {
     /// <summary>
     /// The action being performed
     /// </summary>
     /// <value>The action being performed</value>
-    
-    public enum ActionNameEnum
-    {
-        /// <summary>
-        /// Your SDK version is out of date and an unknown enum value was encountered. 
-        /// Please upgrade the SDK using the command "Upgrade-Package PureCloudApiSdk" 
-        /// in the Package Manager Console
-        /// </summary>
-        [EnumMember(Value = "OUTDATED_SDK_VERSION")]
-        OutdatedSdkVersion,
-
-        /// <summary>
-        /// Enum Create for "CREATE"
-        /// </summary>
-        [EnumMember(Value = "CREATE")]
-        Create,
-
-        /// <summary>
-        /// Enum Checkin for "CHECKIN"
-        /// </summary>
-        [EnumMember(Value = "CHECKIN")]
-        Checkin,
-
-        /// <summary>
-        /// Enum Checkout for "CHECKOUT"
-        /// </summary>
-        [EnumMember(Value = "CHECKOUT")]
-        Checkout,
-
-        /// <summary>
-        /// Enum Deactivate for "DEACTIVATE"
-        /// </summary>
-        [EnumMember(Value = "DEACTIVATE")]
-        Deactivate,
-
-        /// <summary>
-        /// Enum Debug for "DEBUG"
-        /// </summary>
-        [EnumMember(Value = "DEBUG")]
-        Debug,
-
-        /// <summary>
-        /// Enum Delete for "DELETE"
-        /// </summary>
-        [EnumMember(Value = "DELETE")]
-        Delete,
-
-        /// <summary>
-        /// Enum History for "HISTORY"
-        /// </summary>
-        [EnumMember(Value = "HISTORY")]
-        History,
-
-        /// <summary>
-        /// Enum Publish for "PUBLISH"
-        /// </summary>
-        [EnumMember(Value = "PUBLISH")]
-        Publish,
-
-        /// <summary>
-        /// Enum Revert for "REVERT"
-        /// </summary>
-        [EnumMember(Value = "REVERT")]
-        Revert,
-
-        /// <summary>
-        /// Enum Save for "SAVE"
-        /// </summary>
-        [EnumMember(Value = "SAVE")]
-        Save,
-
-        /// <summary>
-        /// Enum StateChange for "STATE_CHANGE"
-        /// </summary>
-        [EnumMember(Value = "STATE_CHANGE")]
-        StateChange,
-
-        /// <summary>
-        /// Enum Update for "UPDATE"
-        /// </summary>
-        [EnumMember(Value = "UPDATE")]
-        Update,
-
-        /// <summary>
-        /// Enum Validate for "VALIDATE"
-        /// </summary>
-        [EnumMember(Value = "VALIDATE")]
-        Validate
-    }
-    /// <summary>
-    /// The action status
-    /// </summary>
-    /// <value>The action status</value>
-    
-    public enum ActionStatusEnum
-    {
-        /// <summary>
-        /// Your SDK version is out of date and an unknown enum value was encountered. 
-        /// Please upgrade the SDK using the command "Upgrade-Package PureCloudApiSdk" 
-        /// in the Package Manager Console
-        /// </summary>
-        [EnumMember(Value = "OUTDATED_SDK_VERSION")]
-        OutdatedSdkVersion,
-
-        /// <summary>
-        /// Enum Locked for "LOCKED"
-        /// </summary>
-        [EnumMember(Value = "LOCKED")]
-        Locked,
-
-        /// <summary>
-        /// Enum Unlocked for "UNLOCKED"
-        /// </summary>
-        [EnumMember(Value = "UNLOCKED")]
-        Unlocked,
-
-        /// <summary>
-        /// Enum Started for "STARTED"
-        /// </summary>
-        [EnumMember(Value = "STARTED")]
-        Started,
-
-        /// <summary>
-        /// Enum PendingGeneration for "PENDING_GENERATION"
-        /// </summary>
-        [EnumMember(Value = "PENDING_GENERATION")]
-        PendingGeneration,
-
-        /// <summary>
-        /// Enum PendingBackendNotification for "PENDING_BACKEND_NOTIFICATION"
-        /// </summary>
-        [EnumMember(Value = "PENDING_BACKEND_NOTIFICATION")]
-        PendingBackendNotification,
-
-        /// <summary>
-        /// Enum Success for "SUCCESS"
-        /// </summary>
-        [EnumMember(Value = "SUCCESS")]
-        Success,
-
-        /// <summary>
-        /// Enum Failure for "FAILURE"
-        /// </summary>
-        [EnumMember(Value = "FAILURE")]
-        Failure
-    }
-    /// <summary>
-    /// The action being performed
-    /// </summary>
-    /// <value>The action being performed</value>
-    [JsonPropertyName("actionName")]
     public ActionNameEnum? ActionName { get; set; }
+
+
     /// <summary>
     /// The action status
     /// </summary>
     /// <value>The action status</value>
-    [JsonPropertyName("actionStatus")]
     public ActionStatusEnum? ActionStatus { get; set; }
-    /// <summary>
-    /// Initializes a new instance of the <see cref="ArchitectPromptNotificationArchitectOperation" /> class.
-    /// </summary>
-    /// <param name="Id">A unique identifier for this operation, as generated by the initiating client.</param>
-    /// <param name="Complete">Indicates if the operation is complete.</param>
-    /// <param name="User">User.</param>
-    /// <param name="Client">Client.</param>
-    /// <param name="ActionName">The action being performed.</param>
-    /// <param name="ActionStatus">The action status.</param>
-    /// <param name="ErrorMessage">The error message, if the action failed.</param>
-    /// <param name="ErrorCode">The error code, if the action failed.</param>
-    /// <param name="ErrorMessageParams">ErrorMessageParams.</param>
-    /// <param name="ErrorDetails">The error details, if the action failed.</param>
-    public ArchitectPromptNotificationArchitectOperation(string Id = null, bool? Complete = null, ArchitectPromptNotificationUser User = null, ArchitectPromptNotificationClient Client = null, ActionNameEnum? ActionName = null, ActionStatusEnum? ActionStatus = null, string ErrorMessage = null, string ErrorCode = null, ArchitectPromptNotificationErrorMessageParams ErrorMessageParams = null, List<ArchitectPromptNotificationErrorDetail> ErrorDetails = null)
-    {
-        this.Id = Id;
-        this.Complete = Complete;
-        this.User = User;
-        this.Client = Client;
-        this.ActionName = ActionName;
-        this.ActionStatus = ActionStatus;
-        this.ErrorMessage = ErrorMessage;
-        this.ErrorCode = ErrorCode;
-        this.ErrorMessageParams = ErrorMessageParams;
-        this.ErrorDetails = ErrorDetails;
-
-    }
-
 
 
     /// <summary>
     /// A unique identifier for this operation, as generated by the initiating client
     /// </summary>
     /// <value>A unique identifier for this operation, as generated by the initiating client</value>
-    [JsonPropertyName("id")]
     public string Id { get; set; }
-
 
 
     /// <summary>
     /// Indicates if the operation is complete
     /// </summary>
     /// <value>Indicates if the operation is complete</value>
-    [JsonPropertyName("complete")]
     public bool? Complete { get; set; }
-
 
 
     /// <summary>
     /// Gets or Sets User
     /// </summary>
-    [JsonPropertyName("user")]
     public ArchitectPromptNotificationUser User { get; set; }
-
 
 
     /// <summary>
     /// Gets or Sets Client
     /// </summary>
-    [JsonPropertyName("client")]
     public ArchitectPromptNotificationClient Client { get; set; }
-
-
-
-
-
 
 
     /// <summary>
     /// The error message, if the action failed
     /// </summary>
     /// <value>The error message, if the action failed</value>
-    [JsonPropertyName("errorMessage")]
     public string ErrorMessage { get; set; }
-
 
 
     /// <summary>
     /// The error code, if the action failed
     /// </summary>
     /// <value>The error code, if the action failed</value>
-    [JsonPropertyName("errorCode")]
     public string ErrorCode { get; set; }
-
 
 
     /// <summary>
     /// Gets or Sets ErrorMessageParams
     /// </summary>
-    [JsonPropertyName("errorMessageParams")]
     public ArchitectPromptNotificationErrorMessageParams ErrorMessageParams { get; set; }
-
 
 
     /// <summary>
     /// The error details, if the action failed
     /// </summary>
     /// <value>The error details, if the action failed</value>
-    [JsonPropertyName("errorDetails")]
-    public List<ArchitectPromptNotificationErrorDetail> ErrorDetails { get; set; }
-
-
-    /// <summary>
-    /// Returns the string presentation of the object
-    /// </summary>
-    /// <returns>String presentation of the object</returns>
-    public override string ToString()
-    {
-        var sb = new StringBuilder();
-        sb.Append("class ArchitectPromptNotificationArchitectOperation {\n");
-
-        sb.Append("  Id: ").Append(Id).Append("\n");
-        sb.Append("  Complete: ").Append(Complete).Append("\n");
-        sb.Append("  User: ").Append(User).Append("\n");
-        sb.Append("  Client: ").Append(Client).Append("\n");
-        sb.Append("  ActionName: ").Append(ActionName).Append("\n");
-        sb.Append("  ActionStatus: ").Append(ActionStatus).Append("\n");
-        sb.Append("  ErrorMessage: ").Append(ErrorMessage).Append("\n");
-        sb.Append("  ErrorCode: ").Append(ErrorCode).Append("\n");
-        sb.Append("  ErrorMessageParams: ").Append(ErrorMessageParams).Append("\n");
-        sb.Append("  ErrorDetails: ").Append(ErrorDetails).Append("\n");
-        sb.Append("}\n");
-        return sb.ToString();
-    }
-
-    /// <summary>
-    /// Returns true if objects are equal
-    /// </summary>
-    /// <param name="obj">Object to be compared</param>
-    /// <returns>Boolean</returns>
-    public override bool Equals(object obj)
-    {
-        // credit: http://stackoverflow.com/a/10454552/677735
-        return Equals(obj as ArchitectPromptNotificationArchitectOperation);
-    }
-
-    /// <summary>
-    /// Returns true if ArchitectPromptNotificationArchitectOperation instances are equal
-    /// </summary>
-    /// <param name="other">Instance of ArchitectPromptNotificationArchitectOperation to be compared</param>
-    /// <returns>Boolean</returns>
-    public bool Equals(ArchitectPromptNotificationArchitectOperation other)
-    {
-        // credit: http://stackoverflow.com/a/10454552/677735
-        if (other == null)
-        {
-            return false;
-        }
-
-        return true &&
-            (
-                Id == other.Id ||
-                Id != null &&
-                Id.Equals(other.Id)
-            ) &&
-            (
-                Complete == other.Complete ||
-                Complete != null &&
-                Complete.Equals(other.Complete)
-            ) &&
-            (
-                User == other.User ||
-                User != null &&
-                User.Equals(other.User)
-            ) &&
-            (
-                Client == other.Client ||
-                Client != null &&
-                Client.Equals(other.Client)
-            ) &&
-            (
-                ActionName == other.ActionName ||
-                ActionName != null &&
-                ActionName.Equals(other.ActionName)
-            ) &&
-            (
-                ActionStatus == other.ActionStatus ||
-                ActionStatus != null &&
-                ActionStatus.Equals(other.ActionStatus)
-            ) &&
-            (
-                ErrorMessage == other.ErrorMessage ||
-                ErrorMessage != null &&
-                ErrorMessage.Equals(other.ErrorMessage)
-            ) &&
-            (
-                ErrorCode == other.ErrorCode ||
-                ErrorCode != null &&
-                ErrorCode.Equals(other.ErrorCode)
-            ) &&
-            (
-                ErrorMessageParams == other.ErrorMessageParams ||
-                ErrorMessageParams != null &&
-                ErrorMessageParams.Equals(other.ErrorMessageParams)
-            ) &&
-            (
-                ErrorDetails == other.ErrorDetails ||
-                ErrorDetails != null &&
-                ErrorDetails.SequenceEqual(other.ErrorDetails)
-            );
-    }
-
-    /// <summary>
-    /// Gets the hash code
-    /// </summary>
-    /// <returns>Hash code</returns>
-    public override int GetHashCode()
-    {
-        // credit: http://stackoverflow.com/a/263416/677735
-        unchecked // Overflow is fine, just wrap
-        {
-            int hash = 41;
-            // Suitable nullity checks etc, of course :)
-            if (Id != null)
-            {
-                hash = hash * 59 + Id.GetHashCode();
-            }
-
-            if (Complete != null)
-            {
-                hash = hash * 59 + Complete.GetHashCode();
-            }
-
-            if (User != null)
-            {
-                hash = hash * 59 + User.GetHashCode();
-            }
-
-            if (Client != null)
-            {
-                hash = hash * 59 + Client.GetHashCode();
-            }
-
-            if (ActionName != null)
-            {
-                hash = hash * 59 + ActionName.GetHashCode();
-            }
-
-            if (ActionStatus != null)
-            {
-                hash = hash * 59 + ActionStatus.GetHashCode();
-            }
-
-            if (ErrorMessage != null)
-            {
-                hash = hash * 59 + ErrorMessage.GetHashCode();
-            }
-
-            if (ErrorCode != null)
-            {
-                hash = hash * 59 + ErrorCode.GetHashCode();
-            }
-
-            if (ErrorMessageParams != null)
-            {
-                hash = hash * 59 + ErrorMessageParams.GetHashCode();
-            }
-
-            if (ErrorDetails != null)
-            {
-                hash = hash * 59 + ErrorDetails.GetHashCode();
-            }
-
-            return hash;
-        }
-    }
+    public IEnumerable<ArchitectPromptNotificationErrorDetail> ErrorDetails { get; set; }
 }
