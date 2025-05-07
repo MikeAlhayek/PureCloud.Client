@@ -24,7 +24,7 @@ public partial class AllTimePoints : IEquatable<AllTimePoints>
     /// </summary>
     /// <value>Queried user</value>
     [JsonPropertyName("user")]
-    public UserReference User { get; private set; }
+    public UserReference User { get; set; }
 
 
 
@@ -33,7 +33,7 @@ public partial class AllTimePoints : IEquatable<AllTimePoints>
     /// </summary>
     /// <value>Queried end workday for all time points to be collected. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd</value>
     [JsonPropertyName("dateEndWorkday")]
-    public string DateEndWorkday { get; private set; }
+    public string DateEndWorkday { get; set; }
 
 
 
@@ -42,7 +42,7 @@ public partial class AllTimePoints : IEquatable<AllTimePoints>
     /// </summary>
     /// <value>All time point collected bt the user</value>
     [JsonPropertyName("allTimePoints")]
-    public long? _AllTimePoints { get; private set; }
+    public long? _AllTimePoints { get; set; }
 
 
     /// <summary>

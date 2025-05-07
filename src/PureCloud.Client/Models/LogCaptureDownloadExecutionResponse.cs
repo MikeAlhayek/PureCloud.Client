@@ -48,7 +48,7 @@ public partial class LogCaptureDownloadExecutionResponse : IEquatable<LogCapture
     /// </summary>
     /// <value>Execution state of the download.</value>
     [JsonPropertyName("state")]
-    public StateEnum? State { get; private set; }
+    public StateEnum? State { get; set; }
 
     /// <summary>
     /// Initializes a new instance of the <see cref="LogCaptureDownloadExecutionResponse" /> class.
@@ -83,7 +83,7 @@ public partial class LogCaptureDownloadExecutionResponse : IEquatable<LogCapture
     /// </summary>
     /// <value>Start date of file download execution. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z</value>
     [JsonPropertyName("dateStart")]
-    public DateTime? DateStart { get; private set; }
+    public DateTime? DateStart { get; set; }
 
 
 
@@ -92,7 +92,7 @@ public partial class LogCaptureDownloadExecutionResponse : IEquatable<LogCapture
     /// </summary>
     /// <value>Url of a file with query result.</value>
     [JsonPropertyName("fileUrl")]
-    public string FileUrl { get; private set; }
+    public string FileUrl { get; set; }
 
 
 
@@ -101,7 +101,7 @@ public partial class LogCaptureDownloadExecutionResponse : IEquatable<LogCapture
     /// </summary>
     /// <value>The URI for this object</value>
     [JsonPropertyName("selfUri")]
-    public string SelfUri { get; private set; }
+    public string SelfUri { get; set; }
 
 
 
@@ -110,7 +110,7 @@ public partial class LogCaptureDownloadExecutionResponse : IEquatable<LogCapture
     /// </summary>
     /// <value>Details of the user that created the job</value>
     [JsonPropertyName("user")]
-    public AddressableEntityRef User { get; private set; }
+    public AddressableEntityRef User { get; set; }
 
 
     /// <summary>

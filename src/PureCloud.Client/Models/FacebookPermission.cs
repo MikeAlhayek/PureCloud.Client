@@ -60,7 +60,7 @@ public partial class FacebookPermission : IEquatable<FacebookPermission>
     /// </summary>
     /// <value>Facebook permission type</value>
     [JsonPropertyName("type")]
-    public TypeEnum? Type { get; private set; }
+    public TypeEnum? Type { get; set; }
     /// <summary>
     /// Initializes a new instance of the <see cref="FacebookPermission" /> class.
     /// </summary>
@@ -76,7 +76,7 @@ public partial class FacebookPermission : IEquatable<FacebookPermission>
     /// </summary>
     /// <value>Facebook permission name</value>
     [JsonPropertyName("name")]
-    public string Name { get; private set; }
+    public string Name { get; set; }
 
 
 

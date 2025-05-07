@@ -46,7 +46,7 @@ public partial class ConversationSummaryFollowup : IEquatable<ConversationSummar
     /// </summary>
     /// <value>The AI confidence value.</value>
     [JsonPropertyName("confidence")]
-    public float? Confidence { get; private set; }
+    public float? Confidence { get; set; }
 
 
     /// <summary>

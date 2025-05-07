@@ -24,7 +24,7 @@ public partial class SuggestionScript : IEquatable<SuggestionScript>
     /// </summary>
     /// <value>The suggested script.</value>
     [JsonPropertyName("script")]
-    public AddressableEntityRef Script { get; private set; }
+    public AddressableEntityRef Script { get; set; }
 
 
 
@@ -33,7 +33,7 @@ public partial class SuggestionScript : IEquatable<SuggestionScript>
     /// </summary>
     /// <value>The page of the script.</value>
     [JsonPropertyName("page")]
-    public AddressableEntityRef Page { get; private set; }
+    public AddressableEntityRef Page { get; set; }
 
 
 
@@ -42,7 +42,7 @@ public partial class SuggestionScript : IEquatable<SuggestionScript>
     /// </summary>
     /// <value>The payload for the script.</value>
     [JsonPropertyName("data")]
-    public Dictionary<string, string> Data { get; private set; }
+    public Dictionary<string, string> Data { get; set; }
 
 
     /// <summary>

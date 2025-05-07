@@ -24,7 +24,7 @@ public partial class UserAvailableTimes : IEquatable<UserAvailableTimes>
     /// </summary>
     /// <value>User reference</value>
     [JsonPropertyName("user")]
-    public UserReference User { get; private set; }
+    public UserReference User { get; set; }
 
 
 
@@ -33,7 +33,7 @@ public partial class UserAvailableTimes : IEquatable<UserAvailableTimes>
     /// </summary>
     /// <value>Periods of availability to schedule coaching appointment for an user</value>
     [JsonPropertyName("availableTimes")]
-    public List<AvailableTime> AvailableTimes { get; private set; }
+    public List<AvailableTime> AvailableTimes { get; set; }
 
 
     /// <summary>

@@ -279,7 +279,7 @@ public partial class UserQueue : IEquatable<UserQueue>
     /// </summary>
     /// <value>The total number of members in the queue.</value>
     [JsonPropertyName("memberCount")]
-    public int? MemberCount { get; private set; }
+    public int? MemberCount { get; set; }
 
 
 
@@ -288,7 +288,7 @@ public partial class UserQueue : IEquatable<UserQueue>
     /// </summary>
     /// <value>The number of user members (i.e., non-group members) in the queue.</value>
     [JsonPropertyName("userMemberCount")]
-    public int? UserMemberCount { get; private set; }
+    public int? UserMemberCount { get; set; }
 
 
 
@@ -297,7 +297,7 @@ public partial class UserQueue : IEquatable<UserQueue>
     /// </summary>
     /// <value>The number of joined members in the queue.</value>
     [JsonPropertyName("joinedMemberCount")]
-    public int? JoinedMemberCount { get; private set; }
+    public int? JoinedMemberCount { get; set; }
 
 
 
@@ -536,7 +536,7 @@ public partial class UserQueue : IEquatable<UserQueue>
     /// </summary>
     /// <value>The URI for this object</value>
     [JsonPropertyName("selfUri")]
-    public string SelfUri { get; private set; }
+    public string SelfUri { get; set; }
 
 
     /// <summary>

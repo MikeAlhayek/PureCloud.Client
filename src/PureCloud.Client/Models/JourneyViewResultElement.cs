@@ -24,7 +24,7 @@ public partial class JourneyViewResultElement : IEquatable<JourneyViewResultElem
     /// </summary>
     /// <value>The globally unique identifier for the object.</value>
     [JsonPropertyName("id")]
-    public string Id { get; private set; }
+    public string Id { get; set; }
 
 
 
@@ -33,7 +33,7 @@ public partial class JourneyViewResultElement : IEquatable<JourneyViewResultElem
     /// </summary>
     /// <value>the metrics of the current element</value>
     [JsonPropertyName("metrics")]
-    public JourneyViewResultMetrics Metrics { get; private set; }
+    public JourneyViewResultMetrics Metrics { get; set; }
 
 
 
@@ -42,7 +42,7 @@ public partial class JourneyViewResultElement : IEquatable<JourneyViewResultElem
     /// </summary>
     /// <value>the list of links following the current element in the journey</value>
     [JsonPropertyName("followedBy")]
-    public List<JourneyViewResultLink> FollowedBy { get; private set; }
+    public List<JourneyViewResultLink> FollowedBy { get; set; }
 
 
 
@@ -51,7 +51,7 @@ public partial class JourneyViewResultElement : IEquatable<JourneyViewResultElem
     /// </summary>
     /// <value>The URI for this object</value>
     [JsonPropertyName("selfUri")]
-    public string SelfUri { get; private set; }
+    public string SelfUri { get; set; }
 
 
     /// <summary>

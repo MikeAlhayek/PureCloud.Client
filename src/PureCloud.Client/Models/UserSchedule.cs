@@ -74,7 +74,7 @@ public partial class UserSchedule : IEquatable<UserSchedule>
     /// </summary>
     /// <value>ID of the work plan associated with the user during schedule creation</value>
     [JsonPropertyName("workPlanId")]
-    public string WorkPlanId { get; private set; }
+    public string WorkPlanId { get; set; }
 
 
     /// <summary>

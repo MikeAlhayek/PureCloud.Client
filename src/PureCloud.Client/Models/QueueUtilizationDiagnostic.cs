@@ -24,7 +24,7 @@ public partial class QueueUtilizationDiagnostic : IEquatable<QueueUtilizationDia
     /// </summary>
     /// <value>Identifier of the queue</value>
     [JsonPropertyName("queue")]
-    public DomainEntityRef Queue { get; private set; }
+    public DomainEntityRef Queue { get; set; }
 
 
 
@@ -33,7 +33,7 @@ public partial class QueueUtilizationDiagnostic : IEquatable<QueueUtilizationDia
     /// </summary>
     /// <value>The number of users joined to the queue</value>
     [JsonPropertyName("usersInQueue")]
-    public int? UsersInQueue { get; private set; }
+    public int? UsersInQueue { get; set; }
 
 
 
@@ -42,7 +42,7 @@ public partial class QueueUtilizationDiagnostic : IEquatable<QueueUtilizationDia
     /// </summary>
     /// <value>The number of users active on the queue</value>
     [JsonPropertyName("activeUsersInQueue")]
-    public int? ActiveUsersInQueue { get; private set; }
+    public int? ActiveUsersInQueue { get; set; }
 
 
 
@@ -51,7 +51,7 @@ public partial class QueueUtilizationDiagnostic : IEquatable<QueueUtilizationDia
     /// </summary>
     /// <value>The number of users with a status of on-queue</value>
     [JsonPropertyName("usersOnQueue")]
-    public int? UsersOnQueue { get; private set; }
+    public int? UsersOnQueue { get; set; }
 
 
 
@@ -60,7 +60,7 @@ public partial class QueueUtilizationDiagnostic : IEquatable<QueueUtilizationDia
     /// </summary>
     /// <value>The number of users in the queue currently not engaged</value>
     [JsonPropertyName("usersNotUtilized")]
-    public int? UsersNotUtilized { get; private set; }
+    public int? UsersNotUtilized { get; set; }
 
 
 
@@ -69,7 +69,7 @@ public partial class QueueUtilizationDiagnostic : IEquatable<QueueUtilizationDia
     /// </summary>
     /// <value>The number of users in the queue with a station</value>
     [JsonPropertyName("usersOnQueueWithStation")]
-    public int? UsersOnQueueWithStation { get; private set; }
+    public int? UsersOnQueueWithStation { get; set; }
 
 
 
@@ -78,7 +78,7 @@ public partial class QueueUtilizationDiagnostic : IEquatable<QueueUtilizationDia
     /// </summary>
     /// <value>The number of users currently engaged in a campaign call</value>
     [JsonPropertyName("usersOnACampaignCall")]
-    public int? UsersOnACampaignCall { get; private set; }
+    public int? UsersOnACampaignCall { get; set; }
 
 
 
@@ -87,7 +87,7 @@ public partial class QueueUtilizationDiagnostic : IEquatable<QueueUtilizationDia
     /// </summary>
     /// <value>The number of users whose station is homed to an edge different from the campaign</value>
     [JsonPropertyName("usersOnDifferentEdgeGroup")]
-    public int? UsersOnDifferentEdgeGroup { get; private set; }
+    public int? UsersOnDifferentEdgeGroup { get; set; }
 
 
 
@@ -96,7 +96,7 @@ public partial class QueueUtilizationDiagnostic : IEquatable<QueueUtilizationDia
     /// </summary>
     /// <value>The number of users currently engaged in a communication that is not part of the campaign</value>
     [JsonPropertyName("usersOnANonCampaignCall")]
-    public int? UsersOnANonCampaignCall { get; private set; }
+    public int? UsersOnANonCampaignCall { get; set; }
 
 
     /// <summary>

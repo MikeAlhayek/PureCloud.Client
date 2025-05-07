@@ -52,7 +52,7 @@ public partial class ConversationUserDisposition : IEquatable<ConversationUserDi
     /// </summary>
     /// <value>The user that wrapped up the conversation.</value>
     [JsonPropertyName("user")]
-    public AddressableEntityRef User { get; private set; }
+    public AddressableEntityRef User { get; set; }
 
 
     /// <summary>

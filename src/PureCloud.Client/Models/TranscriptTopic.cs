@@ -26,7 +26,7 @@ public partial class TranscriptTopic : IEquatable<TranscriptTopic>
     /// </summary>
     /// <value>The globally unique identifier for the object.</value>
     [JsonPropertyName("id")]
-    public string Id { get; private set; }
+    public string Id { get; set; }
 
 
 
@@ -35,7 +35,7 @@ public partial class TranscriptTopic : IEquatable<TranscriptTopic>
     /// </summary>
     /// <value>The name of the object.</value>
     [JsonPropertyName("name")]
-    public string Name { get; private set; }
+    public string Name { get; set; }
 
 
 
@@ -44,7 +44,7 @@ public partial class TranscriptTopic : IEquatable<TranscriptTopic>
     /// </summary>
     /// <value>The phrase which detected the topic. </value>
     [JsonPropertyName("topicPhrase")]
-    public string TopicPhrase { get; private set; }
+    public string TopicPhrase { get; set; }
 
 
 
@@ -53,7 +53,7 @@ public partial class TranscriptTopic : IEquatable<TranscriptTopic>
     /// </summary>
     /// <value>The transcript phrase which detected the topic.</value>
     [JsonPropertyName("transcriptPhrase")]
-    public string TranscriptPhrase { get; private set; }
+    public string TranscriptPhrase { get; set; }
 
 
 
@@ -62,7 +62,7 @@ public partial class TranscriptTopic : IEquatable<TranscriptTopic>
     /// </summary>
     /// <value>The detection confidence of the topic.</value>
     [JsonPropertyName("confidence")]
-    public int? Confidence { get; private set; }
+    public int? Confidence { get; set; }
 
 
 
@@ -71,7 +71,7 @@ public partial class TranscriptTopic : IEquatable<TranscriptTopic>
     /// </summary>
     /// <value>The start time of the topic phrase.</value>
     [JsonPropertyName("startTimeMilliseconds")]
-    public long? StartTimeMilliseconds { get; private set; }
+    public long? StartTimeMilliseconds { get; set; }
 
 
 
@@ -88,7 +88,7 @@ public partial class TranscriptTopic : IEquatable<TranscriptTopic>
     /// </summary>
     /// <value>Location of the phrase</value>
     [JsonPropertyName("offset")]
-    public TopicOffset Offset { get; private set; }
+    public TopicOffset Offset { get; set; }
 
 
 
@@ -97,7 +97,7 @@ public partial class TranscriptTopic : IEquatable<TranscriptTopic>
     /// </summary>
     /// <value>Location of the phrase in the recording in milliseconds</value>
     [JsonPropertyName("recordingLocation")]
-    public long? RecordingLocation { get; private set; }
+    public long? RecordingLocation { get; set; }
 
 
     /// <summary>

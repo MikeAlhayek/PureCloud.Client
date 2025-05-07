@@ -28,7 +28,7 @@ public partial class AuthorizationSettings : IEquatable<AuthorizationSettings>
     /// </summary>
     /// <value>The globally unique identifier for the object.</value>
     [JsonPropertyName("id")]
-    public string Id { get; private set; }
+    public string Id { get; set; }
 
 
 
@@ -55,7 +55,7 @@ public partial class AuthorizationSettings : IEquatable<AuthorizationSettings>
     /// </summary>
     /// <value>The date and time of the most recent unused role calculation. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z</value>
     [JsonPropertyName("dateLastCalculated")]
-    public DateTime? DateLastCalculated { get; private set; }
+    public DateTime? DateLastCalculated { get; set; }
 
 
 
@@ -64,7 +64,7 @@ public partial class AuthorizationSettings : IEquatable<AuthorizationSettings>
     /// </summary>
     /// <value>The date of the most recent org activity used for analysis. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd</value>
     [JsonPropertyName("dateLastActive")]
-    public string DateLastActive { get; private set; }
+    public string DateLastActive { get; set; }
 
 
 
@@ -73,7 +73,7 @@ public partial class AuthorizationSettings : IEquatable<AuthorizationSettings>
     /// </summary>
     /// <value>The URI for this object</value>
     [JsonPropertyName("selfUri")]
-    public string SelfUri { get; private set; }
+    public string SelfUri { get; set; }
 
 
     /// <summary>

@@ -24,7 +24,7 @@ public partial class WhatsAppAvailablePhoneNumberDetails : IEquatable<WhatsAppAv
     /// </summary>
     /// <value>The verified name associated with this phone number.</value>
     [JsonPropertyName("name")]
-    public string Name { get; private set; }
+    public string Name { get; set; }
 
 
 
@@ -33,7 +33,7 @@ public partial class WhatsAppAvailablePhoneNumberDetails : IEquatable<WhatsAppAv
     /// </summary>
     /// <value>The display name associated with this phone number. It&#39;s typically the E.164 representation of the number.</value>
     [JsonPropertyName("phoneNumber")]
-    public string PhoneNumber { get; private set; }
+    public string PhoneNumber { get; set; }
 
 
 
@@ -42,7 +42,7 @@ public partial class WhatsAppAvailablePhoneNumberDetails : IEquatable<WhatsAppAv
     /// </summary>
     /// <value>The status of this phone number.</value>
     [JsonPropertyName("status")]
-    public string Status { get; private set; }
+    public string Status { get; set; }
 
 
     /// <summary>

@@ -24,7 +24,7 @@ public partial class WorkdayValuesTrend : IEquatable<WorkdayValuesTrend>
     /// </summary>
     /// <value>The start workday for the query range for the metric value trend. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd</value>
     [JsonPropertyName("dateStartWorkday")]
-    public string DateStartWorkday { get; private set; }
+    public string DateStartWorkday { get; set; }
 
 
 
@@ -33,7 +33,7 @@ public partial class WorkdayValuesTrend : IEquatable<WorkdayValuesTrend>
     /// </summary>
     /// <value>The end workday for the query range for the metric value trend. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd</value>
     [JsonPropertyName("dateEndWorkday")]
-    public string DateEndWorkday { get; private set; }
+    public string DateEndWorkday { get; set; }
 
 
 
@@ -42,7 +42,7 @@ public partial class WorkdayValuesTrend : IEquatable<WorkdayValuesTrend>
     /// </summary>
     /// <value>The reference workday used to determine the metric definition. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd</value>
     [JsonPropertyName("dateReferenceWorkday")]
-    public string DateReferenceWorkday { get; private set; }
+    public string DateReferenceWorkday { get; set; }
 
 
 
@@ -51,7 +51,7 @@ public partial class WorkdayValuesTrend : IEquatable<WorkdayValuesTrend>
     /// </summary>
     /// <value>The targeted division for the query</value>
     [JsonPropertyName("division")]
-    public Division Division { get; private set; }
+    public Division Division { get; set; }
 
 
 
@@ -60,7 +60,7 @@ public partial class WorkdayValuesTrend : IEquatable<WorkdayValuesTrend>
     /// </summary>
     /// <value>The targeted user for the query</value>
     [JsonPropertyName("user")]
-    public UserReference User { get; private set; }
+    public UserReference User { get; set; }
 
 
 
@@ -69,7 +69,7 @@ public partial class WorkdayValuesTrend : IEquatable<WorkdayValuesTrend>
     /// </summary>
     /// <value>The time zone used for aggregating metric values</value>
     [JsonPropertyName("timezone")]
-    public string Timezone { get; private set; }
+    public string Timezone { get; set; }
 
 
 
@@ -78,7 +78,7 @@ public partial class WorkdayValuesTrend : IEquatable<WorkdayValuesTrend>
     /// </summary>
     /// <value>The metric value trends</value>
     [JsonPropertyName("results")]
-    public List<WorkdayValuesMetricItem> Results { get; private set; }
+    public List<WorkdayValuesMetricItem> Results { get; set; }
 
 
 
@@ -87,7 +87,7 @@ public partial class WorkdayValuesTrend : IEquatable<WorkdayValuesTrend>
     /// </summary>
     /// <value>The targeted performance profile for the average points</value>
     [JsonPropertyName("performanceProfile")]
-    public AddressableEntityRef PerformanceProfile { get; private set; }
+    public AddressableEntityRef PerformanceProfile { get; set; }
 
 
 
@@ -96,7 +96,7 @@ public partial class WorkdayValuesTrend : IEquatable<WorkdayValuesTrend>
     /// </summary>
     /// <value>The targeted metric for the average points</value>
     [JsonPropertyName("metric")]
-    public AddressableEntityRef Metric { get; private set; }
+    public AddressableEntityRef Metric { get; set; }
 
 
     /// <summary>

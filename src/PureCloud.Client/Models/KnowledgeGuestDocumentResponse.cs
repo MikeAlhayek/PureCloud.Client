@@ -86,7 +86,7 @@ public partial class KnowledgeGuestDocumentResponse : IEquatable<KnowledgeGuestD
     /// </summary>
     /// <value>The globally unique identifier for the object.</value>
     [JsonPropertyName("id")]
-    public string Id { get; private set; }
+    public string Id { get; set; }
 
 
 
@@ -169,7 +169,7 @@ public partial class KnowledgeGuestDocumentResponse : IEquatable<KnowledgeGuestD
     /// </summary>
     /// <value>The user who created the document.</value>
     [JsonPropertyName("createdBy")]
-    public UserReference CreatedBy { get; private set; }
+    public UserReference CreatedBy { get; set; }
 
 
 
@@ -178,7 +178,7 @@ public partial class KnowledgeGuestDocumentResponse : IEquatable<KnowledgeGuestD
     /// </summary>
     /// <value>The user who modified the document.</value>
     [JsonPropertyName("modifiedBy")]
-    public UserReference ModifiedBy { get; private set; }
+    public UserReference ModifiedBy { get; set; }
 
 
 
@@ -196,7 +196,7 @@ public partial class KnowledgeGuestDocumentResponse : IEquatable<KnowledgeGuestD
     /// </summary>
     /// <value>ID of the guest session.</value>
     [JsonPropertyName("sessionId")]
-    public string SessionId { get; private set; }
+    public string SessionId { get; set; }
 
 
 
@@ -205,7 +205,7 @@ public partial class KnowledgeGuestDocumentResponse : IEquatable<KnowledgeGuestD
     /// </summary>
     /// <value>The reference to category associated with the document.</value>
     [JsonPropertyName("category")]
-    public GuestCategoryReference Category { get; private set; }
+    public GuestCategoryReference Category { get; set; }
 
 
 
@@ -223,7 +223,7 @@ public partial class KnowledgeGuestDocumentResponse : IEquatable<KnowledgeGuestD
     /// </summary>
     /// <value>The URI for this object</value>
     [JsonPropertyName("selfUri")]
-    public string SelfUri { get; private set; }
+    public string SelfUri { get; set; }
 
 
     /// <summary>

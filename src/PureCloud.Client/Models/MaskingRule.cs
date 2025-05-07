@@ -84,7 +84,7 @@ public partial class MaskingRule : IEquatable<MaskingRule>
     /// </summary>
     /// <value>The globally unique identifier for the object.</value>
     [JsonPropertyName("id")]
-    public string Id { get; private set; }
+    public string Id { get; set; }
 
 
 
@@ -149,7 +149,7 @@ public partial class MaskingRule : IEquatable<MaskingRule>
     /// </summary>
     /// <value>Date when the rule was created. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z</value>
     [JsonPropertyName("dateCreated")]
-    public DateTime? DateCreated { get; private set; }
+    public DateTime? DateCreated { get; set; }
 
 
 
@@ -158,7 +158,7 @@ public partial class MaskingRule : IEquatable<MaskingRule>
     /// </summary>
     /// <value>Date when the rule was modified. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z</value>
     [JsonPropertyName("dateModified")]
-    public DateTime? DateModified { get; private set; }
+    public DateTime? DateModified { get; set; }
 
 
     /// <summary>

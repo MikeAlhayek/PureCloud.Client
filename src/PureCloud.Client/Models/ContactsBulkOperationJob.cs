@@ -75,13 +75,13 @@ public partial class ContactsBulkOperationJob : IEquatable<ContactsBulkOperation
     /// </summary>
     /// <value>The job state.</value>
     [JsonPropertyName("state")]
-    public StateEnum? State { get; private set; }
+    public StateEnum? State { get; set; }
     /// <summary>
     /// The job type.
     /// </summary>
     /// <value>The job type.</value>
     [JsonPropertyName("type")]
-    public TypeEnum? Type { get; private set; }
+    public TypeEnum? Type { get; set; }
     /// <summary>
     /// Initializes a new instance of the <see cref="ContactsBulkOperationJob" /> class.
     /// </summary>
@@ -97,7 +97,7 @@ public partial class ContactsBulkOperationJob : IEquatable<ContactsBulkOperation
     /// </summary>
     /// <value>The globally unique job identifier.</value>
     [JsonPropertyName("id")]
-    public string Id { get; private set; }
+    public string Id { get; set; }
 
 
 
@@ -110,7 +110,7 @@ public partial class ContactsBulkOperationJob : IEquatable<ContactsBulkOperation
     /// </summary>
     /// <value>Total records that will be impacted by the bulk operation.</value>
     [JsonPropertyName("totalRecords")]
-    public long? TotalRecords { get; private set; }
+    public long? TotalRecords { get; set; }
 
 
 
@@ -119,7 +119,7 @@ public partial class ContactsBulkOperationJob : IEquatable<ContactsBulkOperation
     /// </summary>
     /// <value>Amount of records that have been impacted by the bulk operation.</value>
     [JsonPropertyName("completedRecords")]
-    public long? CompletedRecords { get; private set; }
+    public long? CompletedRecords { get; set; }
 
 
 
@@ -128,7 +128,7 @@ public partial class ContactsBulkOperationJob : IEquatable<ContactsBulkOperation
     /// </summary>
     /// <value>Percentage of records that have been impacted by the bulk operation.</value>
     [JsonPropertyName("percentComplete")]
-    public int? PercentComplete { get; private set; }
+    public int? PercentComplete { get; set; }
 
 
 
@@ -137,7 +137,7 @@ public partial class ContactsBulkOperationJob : IEquatable<ContactsBulkOperation
     /// </summary>
     /// <value>Information on failure reason.</value>
     [JsonPropertyName("failureReason")]
-    public ErrorInfo FailureReason { get; private set; }
+    public ErrorInfo FailureReason { get; set; }
 
 
 
@@ -146,7 +146,7 @@ public partial class ContactsBulkOperationJob : IEquatable<ContactsBulkOperation
     /// </summary>
     /// <value>URI to download the original backup contacts.</value>
     [JsonPropertyName("downloadURI")]
-    public string DownloadURI { get; private set; }
+    public string DownloadURI { get; set; }
 
 
 
@@ -155,7 +155,7 @@ public partial class ContactsBulkOperationJob : IEquatable<ContactsBulkOperation
     /// </summary>
     /// <value>The URI for this object</value>
     [JsonPropertyName("selfUri")]
-    public string SelfUri { get; private set; }
+    public string SelfUri { get; set; }
 
 
     /// <summary>

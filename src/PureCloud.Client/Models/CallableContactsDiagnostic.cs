@@ -24,7 +24,7 @@ public partial class CallableContactsDiagnostic : IEquatable<CallableContactsDia
     /// </summary>
     /// <value>Attempt limits for the campaign&#39;s contact list</value>
     [JsonPropertyName("attemptLimits")]
-    public DomainEntityRef AttemptLimits { get; private set; }
+    public DomainEntityRef AttemptLimits { get; set; }
 
 
 
@@ -33,7 +33,7 @@ public partial class CallableContactsDiagnostic : IEquatable<CallableContactsDia
     /// </summary>
     /// <value>Do not call lists for the campaign</value>
     [JsonPropertyName("dncLists")]
-    public List<DomainEntityRef> DncLists { get; private set; }
+    public List<DomainEntityRef> DncLists { get; set; }
 
 
 
@@ -42,7 +42,7 @@ public partial class CallableContactsDiagnostic : IEquatable<CallableContactsDia
     /// </summary>
     /// <value>Callable time sets for the campaign</value>
     [JsonPropertyName("callableTimeSet")]
-    public DomainEntityRef CallableTimeSet { get; private set; }
+    public DomainEntityRef CallableTimeSet { get; set; }
 
 
 
@@ -51,7 +51,7 @@ public partial class CallableContactsDiagnostic : IEquatable<CallableContactsDia
     /// </summary>
     /// <value>Rule sets for the campaign</value>
     [JsonPropertyName("ruleSets")]
-    public List<DomainEntityRef> RuleSets { get; private set; }
+    public List<DomainEntityRef> RuleSets { get; set; }
 
 
     /// <summary>

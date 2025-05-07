@@ -24,7 +24,7 @@ public partial class MetadataProperty : IEquatable<MetadataProperty>
     /// </summary>
     /// <value>the data type of the input property</value>
     [JsonPropertyName("type")]
-    public string Type { get; private set; }
+    public string Type { get; set; }
 
 
 
@@ -33,7 +33,7 @@ public partial class MetadataProperty : IEquatable<MetadataProperty>
     /// </summary>
     /// <value>user-friendly name of the input property</value>
     [JsonPropertyName("displayname")]
-    public string Displayname { get; private set; }
+    public string Displayname { get; set; }
 
 
 
@@ -42,7 +42,7 @@ public partial class MetadataProperty : IEquatable<MetadataProperty>
     /// </summary>
     /// <value>brief description of the input property</value>
     [JsonPropertyName("description")]
-    public string Description { get; private set; }
+    public string Description { get; set; }
 
 
 
@@ -51,7 +51,7 @@ public partial class MetadataProperty : IEquatable<MetadataProperty>
     /// </summary>
     /// <value>whether the property&#39;s value should be hidden from display</value>
     [JsonPropertyName("sensitive")]
-    public string Sensitive { get; private set; }
+    public string Sensitive { get; set; }
 
 
 
@@ -60,7 +60,7 @@ public partial class MetadataProperty : IEquatable<MetadataProperty>
     /// </summary>
     /// <value>optional URL with addition information about the input property</value>
     [JsonPropertyName("help")]
-    public string Help { get; private set; }
+    public string Help { get; set; }
 
 
 
@@ -69,7 +69,7 @@ public partial class MetadataProperty : IEquatable<MetadataProperty>
     /// </summary>
     /// <value>optional default value of the input property</value>
     [JsonPropertyName("default")]
-    public string Default { get; private set; }
+    public string Default { get; set; }
 
 
 
@@ -78,7 +78,7 @@ public partial class MetadataProperty : IEquatable<MetadataProperty>
     /// </summary>
     /// <value>set of possible values if the input property is an enumeration</value>
     [JsonPropertyName("enum")]
-    public List<string> Enum { get; private set; }
+    public List<string> Enum { get; set; }
 
 
     /// <summary>

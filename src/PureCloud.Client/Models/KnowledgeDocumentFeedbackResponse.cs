@@ -260,7 +260,7 @@ public partial class KnowledgeDocumentFeedbackResponse : IEquatable<KnowledgeDoc
     /// </summary>
     /// <value>The globally unique identifier for the object.</value>
     [JsonPropertyName("id")]
-    public string Id { get; private set; }
+    public string Id { get; set; }
 
 
 
@@ -300,7 +300,7 @@ public partial class KnowledgeDocumentFeedbackResponse : IEquatable<KnowledgeDoc
     /// </summary>
     /// <value>Knowledge guest session ID.</value>
     [JsonPropertyName("sessionId")]
-    public string SessionId { get; private set; }
+    public string SessionId { get; set; }
 
 
 
@@ -309,7 +309,7 @@ public partial class KnowledgeDocumentFeedbackResponse : IEquatable<KnowledgeDoc
     /// </summary>
     /// <value>The date and time of the feedback. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z</value>
     [JsonPropertyName("dateCreated")]
-    public DateTime? DateCreated { get; private set; }
+    public DateTime? DateCreated { get; set; }
 
 
 
@@ -351,7 +351,7 @@ public partial class KnowledgeDocumentFeedbackResponse : IEquatable<KnowledgeDoc
     /// </summary>
     /// <value>The user who created the feedback.</value>
     [JsonPropertyName("user")]
-    public AddressableEntityRef User { get; private set; }
+    public AddressableEntityRef User { get; set; }
 
 
 
@@ -360,7 +360,7 @@ public partial class KnowledgeDocumentFeedbackResponse : IEquatable<KnowledgeDoc
     /// </summary>
     /// <value>The URI for this object</value>
     [JsonPropertyName("selfUri")]
-    public string SelfUri { get; private set; }
+    public string SelfUri { get; set; }
 
 
     /// <summary>

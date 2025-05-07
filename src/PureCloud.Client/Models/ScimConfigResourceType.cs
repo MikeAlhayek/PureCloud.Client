@@ -24,7 +24,7 @@ public partial class ScimConfigResourceType : IEquatable<ScimConfigResourceType>
     /// </summary>
     /// <value>The ID of the SCIM resource. Set by the service provider. \&quot;caseExact\&quot; is set to \&quot;true\&quot;. \&quot;mutability\&quot; is set to \&quot;readOnly\&quot;. \&quot;returned\&quot; is set to \&quot;always\&quot;.</value>
     [JsonPropertyName("id")]
-    public string Id { get; private set; }
+    public string Id { get; set; }
 
 
 
@@ -33,7 +33,7 @@ public partial class ScimConfigResourceType : IEquatable<ScimConfigResourceType>
     /// </summary>
     /// <value>The list of supported schemas.</value>
     [JsonPropertyName("schemas")]
-    public List<string> Schemas { get; private set; }
+    public List<string> Schemas { get; set; }
 
 
 
@@ -42,7 +42,7 @@ public partial class ScimConfigResourceType : IEquatable<ScimConfigResourceType>
     /// </summary>
     /// <value>The name of the resource type.</value>
     [JsonPropertyName("name")]
-    public string Name { get; private set; }
+    public string Name { get; set; }
 
 
 
@@ -51,7 +51,7 @@ public partial class ScimConfigResourceType : IEquatable<ScimConfigResourceType>
     /// </summary>
     /// <value>The description of the resource type.</value>
     [JsonPropertyName("description")]
-    public string Description { get; private set; }
+    public string Description { get; set; }
 
 
 
@@ -60,7 +60,7 @@ public partial class ScimConfigResourceType : IEquatable<ScimConfigResourceType>
     /// </summary>
     /// <value>The URI of the primary or base schema for the resource type.</value>
     [JsonPropertyName("schema")]
-    public string Schema { get; private set; }
+    public string Schema { get; set; }
 
 
 
@@ -69,7 +69,7 @@ public partial class ScimConfigResourceType : IEquatable<ScimConfigResourceType>
     /// </summary>
     /// <value>The list of schema extensions for the resource type.</value>
     [JsonPropertyName("schemaExtensions")]
-    public List<ScimConfigResourceTypeSchemaExtension> SchemaExtensions { get; private set; }
+    public List<ScimConfigResourceTypeSchemaExtension> SchemaExtensions { get; set; }
 
 
 
@@ -78,7 +78,7 @@ public partial class ScimConfigResourceType : IEquatable<ScimConfigResourceType>
     /// </summary>
     /// <value>The HTTP-addressable endpoint of the resource type. Appears after the base URL.</value>
     [JsonPropertyName("endpoint")]
-    public string Endpoint { get; private set; }
+    public string Endpoint { get; set; }
 
 
 
@@ -87,7 +87,7 @@ public partial class ScimConfigResourceType : IEquatable<ScimConfigResourceType>
     /// </summary>
     /// <value>The metadata of the SCIM resource. Only \&quot;location\&quot; and \&quot;resourceType\&quot; are set for \&quot;ResourceType\&quot; resources.</value>
     [JsonPropertyName("meta")]
-    public ScimMetadata Meta { get; private set; }
+    public ScimMetadata Meta { get; set; }
 
 
     /// <summary>

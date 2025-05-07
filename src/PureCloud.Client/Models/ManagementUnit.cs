@@ -102,7 +102,7 @@ public partial class ManagementUnit : IEquatable<ManagementUnit>
     /// </summary>
     /// <value>The globally unique identifier for the object.</value>
     [JsonPropertyName("id")]
-    public string Id { get; private set; }
+    public string Id { get; set; }
 
 
 
@@ -166,7 +166,7 @@ public partial class ManagementUnit : IEquatable<ManagementUnit>
     /// </summary>
     /// <value>The version of the underlying entity.  Deprecated, use field from settings.metadata instead</value>
     [JsonPropertyName("version")]
-    public int? Version { get; private set; }
+    public int? Version { get; set; }
 
 
 
@@ -175,7 +175,7 @@ public partial class ManagementUnit : IEquatable<ManagementUnit>
     /// </summary>
     /// <value>The date and time at which this entity was last modified.  Deprecated, use field from settings.metadata instead. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z</value>
     [JsonPropertyName("dateModified")]
-    public DateTime? DateModified { get; private set; }
+    public DateTime? DateModified { get; set; }
 
 
 
@@ -184,7 +184,7 @@ public partial class ManagementUnit : IEquatable<ManagementUnit>
     /// </summary>
     /// <value>The user who last modified this entity.  Deprecated, use field from settings.metadata instead</value>
     [JsonPropertyName("modifiedBy")]
-    public UserReference ModifiedBy { get; private set; }
+    public UserReference ModifiedBy { get; set; }
 
 
 
@@ -193,7 +193,7 @@ public partial class ManagementUnit : IEquatable<ManagementUnit>
     /// </summary>
     /// <value>The URI for this object</value>
     [JsonPropertyName("selfUri")]
-    public string SelfUri { get; private set; }
+    public string SelfUri { get; set; }
 
 
     /// <summary>

@@ -111,7 +111,7 @@ public partial class GDPRRequest : IEquatable<GDPRRequest>
     /// </summary>
     /// <value>The status of the request</value>
     [JsonPropertyName("status")]
-    public StatusEnum? Status { get; private set; }
+    public StatusEnum? Status { get; set; }
 
     /// <summary>
     /// Initializes a new instance of the <see cref="GDPRRequest" /> class.
@@ -141,7 +141,7 @@ public partial class GDPRRequest : IEquatable<GDPRRequest>
     /// </summary>
     /// <value>The globally unique identifier for the object.</value>
     [JsonPropertyName("id")]
-    public string Id { get; private set; }
+    public string Id { get; set; }
 
 
 
@@ -158,7 +158,7 @@ public partial class GDPRRequest : IEquatable<GDPRRequest>
     /// </summary>
     /// <value>The user that created this request</value>
     [JsonPropertyName("createdBy")]
-    public DomainEntityRef CreatedBy { get; private set; }
+    public DomainEntityRef CreatedBy { get; set; }
 
 
 
@@ -178,7 +178,7 @@ public partial class GDPRRequest : IEquatable<GDPRRequest>
     /// </summary>
     /// <value>When the request was submitted. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z</value>
     [JsonPropertyName("createdDate")]
-    public DateTime? CreatedDate { get; private set; }
+    public DateTime? CreatedDate { get; set; }
 
 
 
@@ -198,7 +198,7 @@ public partial class GDPRRequest : IEquatable<GDPRRequest>
     /// </summary>
     /// <value>The location where the results of the request can be retrieved</value>
     [JsonPropertyName("resultsUrl")]
-    public string ResultsUrl { get; private set; }
+    public string ResultsUrl { get; set; }
 
 
 
@@ -207,7 +207,7 @@ public partial class GDPRRequest : IEquatable<GDPRRequest>
     /// </summary>
     /// <value>The URI for this object</value>
     [JsonPropertyName("selfUri")]
-    public string SelfUri { get; private set; }
+    public string SelfUri { get; set; }
 
 
     /// <summary>

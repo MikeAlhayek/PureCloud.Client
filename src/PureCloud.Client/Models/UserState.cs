@@ -140,7 +140,7 @@ public partial class UserState : IEquatable<UserState>
     /// </summary>
     /// <value>Date that the state was last changed. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z</value>
     [JsonPropertyName("stateChangeDate")]
-    public DateTime? StateChangeDate { get; private set; }
+    public DateTime? StateChangeDate { get; set; }
 
 
     /// <summary>

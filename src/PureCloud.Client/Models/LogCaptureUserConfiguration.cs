@@ -42,7 +42,7 @@ public partial class LogCaptureUserConfiguration : IEquatable<LogCaptureUserConf
     /// </summary>
     /// <value>Indicates the method by which the logs were captured.</value>
     [JsonPropertyName("captureMethod")]
-    public CaptureMethodEnum? CaptureMethod { get; private set; }
+    public CaptureMethodEnum? CaptureMethod { get; set; }
 
     /// <summary>
     /// Initializes a new instance of the <see cref="LogCaptureUserConfiguration" /> class.
@@ -66,7 +66,7 @@ public partial class LogCaptureUserConfiguration : IEquatable<LogCaptureUserConf
     /// </summary>
     /// <value>The globally unique identifier for the object.</value>
     [JsonPropertyName("id")]
-    public string Id { get; private set; }
+    public string Id { get; set; }
 
 
 
@@ -75,7 +75,7 @@ public partial class LogCaptureUserConfiguration : IEquatable<LogCaptureUserConf
     /// </summary>
     /// <value>Indicates when log capture was enabled for the user. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z</value>
     [JsonPropertyName("dateStarted")]
-    public DateTime? DateStarted { get; private set; }
+    public DateTime? DateStarted { get; set; }
 
 
 
@@ -95,7 +95,7 @@ public partial class LogCaptureUserConfiguration : IEquatable<LogCaptureUserConf
     /// </summary>
     /// <value>The URI for this object</value>
     [JsonPropertyName("selfUri")]
-    public string SelfUri { get; private set; }
+    public string SelfUri { get; set; }
 
 
     /// <summary>

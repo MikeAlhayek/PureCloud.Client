@@ -51,7 +51,7 @@ public partial class IntegrationType : IEquatable<IntegrationType>
     /// </summary>
     /// <value>Description of the integration type.</value>
     [JsonPropertyName("description")]
-    public string Description { get; private set; }
+    public string Description { get; set; }
 
 
 
@@ -60,7 +60,7 @@ public partial class IntegrationType : IEquatable<IntegrationType>
     /// </summary>
     /// <value>PureCloudEnvironment provider of the integration type.</value>
     [JsonPropertyName("provider")]
-    public string Provider { get; private set; }
+    public string Provider { get; set; }
 
 
 
@@ -69,7 +69,7 @@ public partial class IntegrationType : IEquatable<IntegrationType>
     /// </summary>
     /// <value>Category describing the integration type.</value>
     [JsonPropertyName("category")]
-    public string Category { get; private set; }
+    public string Category { get; set; }
 
 
 
@@ -78,7 +78,7 @@ public partial class IntegrationType : IEquatable<IntegrationType>
     /// </summary>
     /// <value>Collection of logos.</value>
     [JsonPropertyName("images")]
-    public List<Image> Images { get; private set; }
+    public List<Image> Images { get; set; }
 
 
 
@@ -87,7 +87,7 @@ public partial class IntegrationType : IEquatable<IntegrationType>
     /// </summary>
     /// <value>URI of the schema describing the key-value properties needed to configure an integration of this type.</value>
     [JsonPropertyName("configPropertiesSchemaUri")]
-    public string ConfigPropertiesSchemaUri { get; private set; }
+    public string ConfigPropertiesSchemaUri { get; set; }
 
 
 
@@ -96,7 +96,7 @@ public partial class IntegrationType : IEquatable<IntegrationType>
     /// </summary>
     /// <value>URI of the schema describing the advanced JSON document needed to configure an integration of this type.</value>
     [JsonPropertyName("configAdvancedSchemaUri")]
-    public string ConfigAdvancedSchemaUri { get; private set; }
+    public string ConfigAdvancedSchemaUri { get; set; }
 
 
 
@@ -105,7 +105,7 @@ public partial class IntegrationType : IEquatable<IntegrationType>
     /// </summary>
     /// <value>URI of a page with more information about the integration type</value>
     [JsonPropertyName("helpUri")]
-    public string HelpUri { get; private set; }
+    public string HelpUri { get; set; }
 
 
 
@@ -114,7 +114,7 @@ public partial class IntegrationType : IEquatable<IntegrationType>
     /// </summary>
     /// <value>URI of a page with terms and conditions for the integration type</value>
     [JsonPropertyName("termsOfServiceUri")]
-    public string TermsOfServiceUri { get; private set; }
+    public string TermsOfServiceUri { get; set; }
 
 
 
@@ -123,7 +123,7 @@ public partial class IntegrationType : IEquatable<IntegrationType>
     /// </summary>
     /// <value>Name of the vendor of this integration type</value>
     [JsonPropertyName("vendorName")]
-    public string VendorName { get; private set; }
+    public string VendorName { get; set; }
 
 
 
@@ -132,7 +132,7 @@ public partial class IntegrationType : IEquatable<IntegrationType>
     /// </summary>
     /// <value>URI of the vendor&#39;s website</value>
     [JsonPropertyName("vendorWebsiteUri")]
-    public string VendorWebsiteUri { get; private set; }
+    public string VendorWebsiteUri { get; set; }
 
 
 
@@ -141,7 +141,7 @@ public partial class IntegrationType : IEquatable<IntegrationType>
     /// </summary>
     /// <value>URI of the marketplace listing for this integration type</value>
     [JsonPropertyName("marketplaceUri")]
-    public string MarketplaceUri { get; private set; }
+    public string MarketplaceUri { get; set; }
 
 
 
@@ -150,7 +150,7 @@ public partial class IntegrationType : IEquatable<IntegrationType>
     /// </summary>
     /// <value>URI of frequently asked questions about the integration type</value>
     [JsonPropertyName("faqUri")]
-    public string FaqUri { get; private set; }
+    public string FaqUri { get; set; }
 
 
 
@@ -159,7 +159,7 @@ public partial class IntegrationType : IEquatable<IntegrationType>
     /// </summary>
     /// <value>URI of a privacy policy for users of the integration type</value>
     [JsonPropertyName("privacyPolicyUri")]
-    public string PrivacyPolicyUri { get; private set; }
+    public string PrivacyPolicyUri { get; set; }
 
 
 
@@ -168,7 +168,7 @@ public partial class IntegrationType : IEquatable<IntegrationType>
     /// </summary>
     /// <value>URI for vendor support</value>
     [JsonPropertyName("supportContactUri")]
-    public string SupportContactUri { get; private set; }
+    public string SupportContactUri { get; set; }
 
 
 
@@ -177,7 +177,7 @@ public partial class IntegrationType : IEquatable<IntegrationType>
     /// </summary>
     /// <value>URI for vendor sales information</value>
     [JsonPropertyName("salesContactUri")]
-    public string SalesContactUri { get; private set; }
+    public string SalesContactUri { get; set; }
 
 
 
@@ -186,7 +186,7 @@ public partial class IntegrationType : IEquatable<IntegrationType>
     /// </summary>
     /// <value>List of links to additional help resources</value>
     [JsonPropertyName("helpLinks")]
-    public List<HelpLink> HelpLinks { get; private set; }
+    public List<HelpLink> HelpLinks { get; set; }
 
 
 
@@ -195,7 +195,7 @@ public partial class IntegrationType : IEquatable<IntegrationType>
     /// </summary>
     /// <value>Map of credentials for integrations of this type. The key is the name of a credential that can be provided in the credentials property of the integration configuration.</value>
     [JsonPropertyName("credentials")]
-    public Dictionary<string, CredentialSpecification> Credentials { get; private set; }
+    public Dictionary<string, CredentialSpecification> Credentials { get; set; }
 
 
 
@@ -204,7 +204,7 @@ public partial class IntegrationType : IEquatable<IntegrationType>
     /// </summary>
     /// <value>Indicates if the integration type is installable or not.</value>
     [JsonPropertyName("nonInstallable")]
-    public bool? NonInstallable { get; private set; }
+    public bool? NonInstallable { get; set; }
 
 
 
@@ -213,7 +213,7 @@ public partial class IntegrationType : IEquatable<IntegrationType>
     /// </summary>
     /// <value>The maximum number of integration instances allowable for this integration type</value>
     [JsonPropertyName("maxInstances")]
-    public int? MaxInstances { get; private set; }
+    public int? MaxInstances { get; set; }
 
 
 
@@ -222,7 +222,7 @@ public partial class IntegrationType : IEquatable<IntegrationType>
     /// </summary>
     /// <value>List of permissions required to permit user access to the integration type.</value>
     [JsonPropertyName("userPermissions")]
-    public List<string> UserPermissions { get; private set; }
+    public List<string> UserPermissions { get; set; }
 
 
 
@@ -231,7 +231,7 @@ public partial class IntegrationType : IEquatable<IntegrationType>
     /// </summary>
     /// <value>List of OAuth Client IDs that must be authorized when the integration is created.</value>
     [JsonPropertyName("vendorOAuthClientIds")]
-    public List<string> VendorOAuthClientIds { get; private set; }
+    public List<string> VendorOAuthClientIds { get; set; }
 
 
 
@@ -240,7 +240,7 @@ public partial class IntegrationType : IEquatable<IntegrationType>
     /// </summary>
     /// <value>The URI for this object</value>
     [JsonPropertyName("selfUri")]
-    public string SelfUri { get; private set; }
+    public string SelfUri { get; set; }
 
 
     /// <summary>

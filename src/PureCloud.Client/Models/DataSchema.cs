@@ -117,7 +117,7 @@ public partial class DataSchema : IEquatable<DataSchema>
     /// </summary>
     /// <value>Indicates the built-in entity type to which this schema applies.</value>
     [JsonPropertyName("appliesTo")]
-    public List<AppliesToEnum> AppliesTo { get; private set; }
+    public List<AppliesToEnum> AppliesTo { get; set; }
 
 
 
@@ -135,7 +135,7 @@ public partial class DataSchema : IEquatable<DataSchema>
     /// </summary>
     /// <value>The URI of the user that created this schema.</value>
     [JsonPropertyName("createdBy")]
-    public DomainEntityRef CreatedBy { get; private set; }
+    public DomainEntityRef CreatedBy { get; set; }
 
 
 
@@ -144,7 +144,7 @@ public partial class DataSchema : IEquatable<DataSchema>
     /// </summary>
     /// <value>The date and time this schema was created. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z</value>
     [JsonPropertyName("dateCreated")]
-    public DateTime? DateCreated { get; private set; }
+    public DateTime? DateCreated { get; set; }
 
 
 
@@ -162,7 +162,7 @@ public partial class DataSchema : IEquatable<DataSchema>
     /// </summary>
     /// <value>The URI for this object</value>
     [JsonPropertyName("selfUri")]
-    public string SelfUri { get; private set; }
+    public string SelfUri { get; set; }
 
 
     /// <summary>

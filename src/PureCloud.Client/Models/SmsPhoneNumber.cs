@@ -191,7 +191,7 @@ public partial class SmsPhoneNumber : IEquatable<SmsPhoneNumber>
     /// </summary>
     /// <value>Type of the phone number provisioned.</value>
     [JsonPropertyName("phoneNumberType")]
-    public PhoneNumberTypeEnum? PhoneNumberType { get; private set; }
+    public PhoneNumberTypeEnum? PhoneNumberType { get; set; }
     /// <summary>
     /// Status of the provisioned phone number.
     /// </summary>
@@ -277,7 +277,7 @@ public partial class SmsPhoneNumber : IEquatable<SmsPhoneNumber>
     /// </summary>
     /// <value>The globally unique identifier for the object.</value>
     [JsonPropertyName("id")]
-    public string Id { get; private set; }
+    public string Id { get; set; }
 
 
 
@@ -316,7 +316,7 @@ public partial class SmsPhoneNumber : IEquatable<SmsPhoneNumber>
     /// </summary>
     /// <value>The capabilities of the phone number available for provisioning.</value>
     [JsonPropertyName("capabilities")]
-    public List<CapabilitiesEnum> Capabilities { get; private set; }
+    public List<CapabilitiesEnum> Capabilities { get; set; }
 
 
 
@@ -482,7 +482,7 @@ public partial class SmsPhoneNumber : IEquatable<SmsPhoneNumber>
     /// </summary>
     /// <value>The URI for this object</value>
     [JsonPropertyName("selfUri")]
-    public string SelfUri { get; private set; }
+    public string SelfUri { get; set; }
 
 
     /// <summary>

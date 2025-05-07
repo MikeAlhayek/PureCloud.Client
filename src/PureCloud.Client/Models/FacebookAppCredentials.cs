@@ -24,7 +24,7 @@ public partial class FacebookAppCredentials : IEquatable<FacebookAppCredentials>
     /// </summary>
     /// <value>Genesys Cloud Facebook App Id</value>
     [JsonPropertyName("id")]
-    public string Id { get; private set; }
+    public string Id { get; set; }
 
 
     /// <summary>

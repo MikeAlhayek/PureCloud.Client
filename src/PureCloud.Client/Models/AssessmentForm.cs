@@ -34,7 +34,7 @@ public partial class AssessmentForm : IEquatable<AssessmentForm>
     /// </summary>
     /// <value>The globally unique identifier for the object.</value>
     [JsonPropertyName("id")]
-    public string Id { get; private set; }
+    public string Id { get; set; }
 
 
 
@@ -43,7 +43,7 @@ public partial class AssessmentForm : IEquatable<AssessmentForm>
     /// </summary>
     /// <value>Last modified date of the assessment form. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z</value>
     [JsonPropertyName("dateModified")]
-    public DateTime? DateModified { get; private set; }
+    public DateTime? DateModified { get; set; }
 
 
 
@@ -52,7 +52,7 @@ public partial class AssessmentForm : IEquatable<AssessmentForm>
     /// </summary>
     /// <value>The unique Id for all versions of this assessment form</value>
     [JsonPropertyName("contextId")]
-    public string ContextId { get; private set; }
+    public string ContextId { get; set; }
 
 
 
@@ -61,7 +61,7 @@ public partial class AssessmentForm : IEquatable<AssessmentForm>
     /// </summary>
     /// <value>The URI for this object</value>
     [JsonPropertyName("selfUri")]
-    public string SelfUri { get; private set; }
+    public string SelfUri { get; set; }
 
 
 
@@ -70,7 +70,7 @@ public partial class AssessmentForm : IEquatable<AssessmentForm>
     /// </summary>
     /// <value>If true, assessment form is published</value>
     [JsonPropertyName("published")]
-    public bool? Published { get; private set; }
+    public bool? Published { get; set; }
 
 
 

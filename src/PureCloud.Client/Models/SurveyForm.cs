@@ -44,7 +44,7 @@ public partial class SurveyForm : IEquatable<SurveyForm>
     /// </summary>
     /// <value>The globally unique identifier for the object.</value>
     [JsonPropertyName("id")]
-    public string Id { get; private set; }
+    public string Id { get; set; }
 
 
 
@@ -62,7 +62,7 @@ public partial class SurveyForm : IEquatable<SurveyForm>
     /// </summary>
     /// <value>Last modified date. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z</value>
     [JsonPropertyName("modifiedDate")]
-    public DateTime? ModifiedDate { get; private set; }
+    public DateTime? ModifiedDate { get; set; }
 
 
 
@@ -89,7 +89,7 @@ public partial class SurveyForm : IEquatable<SurveyForm>
     /// </summary>
     /// <value>Unique Id for all versions of this form</value>
     [JsonPropertyName("contextId")]
-    public string ContextId { get; private set; }
+    public string ContextId { get; set; }
 
 
 
@@ -134,7 +134,7 @@ public partial class SurveyForm : IEquatable<SurveyForm>
     /// </summary>
     /// <value>List of published version of this form</value>
     [JsonPropertyName("publishedVersions")]
-    public DomainEntityListingSurveyForm PublishedVersions { get; private set; }
+    public DomainEntityListingSurveyForm PublishedVersions { get; set; }
 
 
 
@@ -143,7 +143,7 @@ public partial class SurveyForm : IEquatable<SurveyForm>
     /// </summary>
     /// <value>The URI for this object</value>
     [JsonPropertyName("selfUri")]
-    public string SelfUri { get; private set; }
+    public string SelfUri { get; set; }
 
 
     /// <summary>

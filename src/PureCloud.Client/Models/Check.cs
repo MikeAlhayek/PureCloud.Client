@@ -141,13 +141,13 @@ public partial class Check : IEquatable<Check>
     /// </summary>
     /// <value>The result of a check executed. This indicates if the check was successful or not.</value>
     [JsonPropertyName("result")]
-    public ResultEnum? Result { get; private set; }
+    public ResultEnum? Result { get; set; }
     /// <summary>
     /// The type of check executed.
     /// </summary>
     /// <value>The type of check executed.</value>
     [JsonPropertyName("type")]
-    public TypeEnum? Type { get; private set; }
+    public TypeEnum? Type { get; set; }
     /// <summary>
     /// Initializes a new instance of the <see cref="Check" /> class.
     /// </summary>

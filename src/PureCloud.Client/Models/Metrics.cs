@@ -155,7 +155,7 @@ public partial class Metrics : IEquatable<Metrics>
     /// </summary>
     /// <value>The globally unique identifier for the object.</value>
     [JsonPropertyName("id")]
-    public string Id { get; private set; }
+    public string Id { get; set; }
 
 
 
@@ -246,7 +246,7 @@ public partial class Metrics : IEquatable<Metrics>
     /// </summary>
     /// <value>The linked metric entity reference</value>
     [JsonPropertyName("linkedMetric")]
-    public AddressableEntityRef LinkedMetric { get; private set; }
+    public AddressableEntityRef LinkedMetric { get; set; }
 
 
 
@@ -255,7 +255,7 @@ public partial class Metrics : IEquatable<Metrics>
     /// </summary>
     /// <value>The created date of this metric. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z</value>
     [JsonPropertyName("dateCreated")]
-    public DateTime? DateCreated { get; private set; }
+    public DateTime? DateCreated { get; set; }
 
 
 
@@ -264,7 +264,7 @@ public partial class Metrics : IEquatable<Metrics>
     /// </summary>
     /// <value>The unlinked workday for this metric if this metric was ever unlinked. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd</value>
     [JsonPropertyName("dateUnlinked")]
-    public string DateUnlinked { get; private set; }
+    public string DateUnlinked { get; set; }
 
 
 
@@ -273,7 +273,7 @@ public partial class Metrics : IEquatable<Metrics>
     /// </summary>
     /// <value>The source performance profile when this metric is linked</value>
     [JsonPropertyName("sourcePerformanceProfile")]
-    public PerformanceProfile SourcePerformanceProfile { get; private set; }
+    public PerformanceProfile SourcePerformanceProfile { get; set; }
 
 
 
@@ -282,7 +282,7 @@ public partial class Metrics : IEquatable<Metrics>
     /// </summary>
     /// <value>Unit definition of linked external metric</value>
     [JsonPropertyName("unitDefinition")]
-    public string UnitDefinition { get; private set; }
+    public string UnitDefinition { get; set; }
 
 
 
@@ -291,7 +291,7 @@ public partial class Metrics : IEquatable<Metrics>
     /// </summary>
     /// <value>Precision of linked external metric</value>
     [JsonPropertyName("precision")]
-    public int? Precision { get; private set; }
+    public int? Precision { get; set; }
 
 
 
@@ -302,7 +302,7 @@ public partial class Metrics : IEquatable<Metrics>
     /// </summary>
     /// <value>The URI for this object</value>
     [JsonPropertyName("selfUri")]
-    public string SelfUri { get; private set; }
+    public string SelfUri { get; set; }
 
 
     /// <summary>

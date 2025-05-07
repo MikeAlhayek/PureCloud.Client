@@ -132,7 +132,7 @@ public partial class FacebookDataIngestionRuleResponse : IEquatable<FacebookData
     /// </summary>
     /// <value>Timestamp indicating when the data ingestion rule was created. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z</value>
     [JsonPropertyName("dateCreated")]
-    public DateTime? DateCreated { get; private set; }
+    public DateTime? DateCreated { get; set; }
 
 
 
@@ -141,7 +141,7 @@ public partial class FacebookDataIngestionRuleResponse : IEquatable<FacebookData
     /// </summary>
     /// <value>Timestamp indicating when the data ingestion rule was last updated. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z</value>
     [JsonPropertyName("dateModified")]
-    public DateTime? DateModified { get; private set; }
+    public DateTime? DateModified { get; set; }
 
 
 
@@ -150,7 +150,7 @@ public partial class FacebookDataIngestionRuleResponse : IEquatable<FacebookData
     /// </summary>
     /// <value>The platform of the data ingestion rule.</value>
     [JsonPropertyName("platform")]
-    public string Platform { get; private set; }
+    public string Platform { get; set; }
 
 
 
@@ -168,7 +168,7 @@ public partial class FacebookDataIngestionRuleResponse : IEquatable<FacebookData
     /// </summary>
     /// <value>The URI for this object</value>
     [JsonPropertyName("selfUri")]
-    public string SelfUri { get; private set; }
+    public string SelfUri { get; set; }
 
 
     /// <summary>

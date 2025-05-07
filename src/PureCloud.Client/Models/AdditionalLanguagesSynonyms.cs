@@ -24,7 +24,7 @@ public partial class AdditionalLanguagesSynonyms : IEquatable<AdditionalLanguage
     /// </summary>
     /// <value>Synonyms for additional language</value>
     [JsonPropertyName("synonyms")]
-    public List<string> Synonyms { get; private set; }
+    public List<string> Synonyms { get; set; }
 
 
     /// <summary>

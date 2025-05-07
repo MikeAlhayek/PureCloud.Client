@@ -66,7 +66,7 @@ public partial class FlowLogLevelCharacteristicsDefinition : IEquatable<FlowLogL
     /// </summary>
     /// <value>The minimum level required for this characteristic to be enabled.</value>
     [JsonPropertyName("minimumLevel")]
-    public MinimumLevelEnum? MinimumLevel { get; private set; }
+    public MinimumLevelEnum? MinimumLevel { get; set; }
     /// <summary>
     /// Initializes a new instance of the <see cref="FlowLogLevelCharacteristicsDefinition" /> class.
     /// </summary>
@@ -82,7 +82,7 @@ public partial class FlowLogLevelCharacteristicsDefinition : IEquatable<FlowLogL
     /// </summary>
     /// <value>The globally unique identifier for the object.</value>
     [JsonPropertyName("id")]
-    public string Id { get; private set; }
+    public string Id { get; set; }
 
 
 
@@ -93,7 +93,7 @@ public partial class FlowLogLevelCharacteristicsDefinition : IEquatable<FlowLogL
     /// </summary>
     /// <value>If set, this is the id of the characteristic that this one depends on and it must be enabled for this to be enabled.</value>
     [JsonPropertyName("dependsOn")]
-    public FlowCharacteristics DependsOn { get; private set; }
+    public FlowCharacteristics DependsOn { get; set; }
 
 
     /// <summary>

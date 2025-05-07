@@ -34,7 +34,7 @@ public partial class GuestResponseCategory : IEquatable<GuestResponseCategory>
     /// </summary>
     /// <value>The globally unique identifier for the object.</value>
     [JsonPropertyName("id")]
-    public string Id { get; private set; }
+    public string Id { get; set; }
 
 
 
@@ -85,7 +85,7 @@ public partial class GuestResponseCategory : IEquatable<GuestResponseCategory>
     /// </summary>
     /// <value>The reference to category to which this category belongs.</value>
     [JsonPropertyName("parentCategory")]
-    public GuestCategoryReference ParentCategory { get; private set; }
+    public GuestCategoryReference ParentCategory { get; set; }
 
 
 
@@ -94,7 +94,7 @@ public partial class GuestResponseCategory : IEquatable<GuestResponseCategory>
     /// </summary>
     /// <value>The URI for this object</value>
     [JsonPropertyName("selfUri")]
-    public string SelfUri { get; private set; }
+    public string SelfUri { get; set; }
 
 
     /// <summary>

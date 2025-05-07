@@ -60,7 +60,7 @@ public partial class ScimServiceProviderConfigAuthenticationScheme : IEquatable<
     /// </summary>
     /// <value>The type of authentication scheme.</value>
     [JsonPropertyName("type")]
-    public TypeEnum? Type { get; private set; }
+    public TypeEnum? Type { get; set; }
     /// <summary>
     /// Initializes a new instance of the <see cref="ScimServiceProviderConfigAuthenticationScheme" /> class.
     /// </summary>
@@ -76,7 +76,7 @@ public partial class ScimServiceProviderConfigAuthenticationScheme : IEquatable<
     /// </summary>
     /// <value>The name of the authentication scheme, for example, HTTP Basic.</value>
     [JsonPropertyName("name")]
-    public string Name { get; private set; }
+    public string Name { get; set; }
 
 
 
@@ -85,7 +85,7 @@ public partial class ScimServiceProviderConfigAuthenticationScheme : IEquatable<
     /// </summary>
     /// <value>The description of the authentication scheme.</value>
     [JsonPropertyName("description")]
-    public string Description { get; private set; }
+    public string Description { get; set; }
 
 
 
@@ -94,7 +94,7 @@ public partial class ScimServiceProviderConfigAuthenticationScheme : IEquatable<
     /// </summary>
     /// <value>The HTTP-addressable URL that points to the authentication scheme&#39;s specification.</value>
     [JsonPropertyName("specUri")]
-    public string SpecUri { get; private set; }
+    public string SpecUri { get; set; }
 
 
 
@@ -103,7 +103,7 @@ public partial class ScimServiceProviderConfigAuthenticationScheme : IEquatable<
     /// </summary>
     /// <value>The HTTP-addressable URL that points to the authentication scheme&#39;s usage documentation.</value>
     [JsonPropertyName("documentationUri")]
-    public string DocumentationUri { get; private set; }
+    public string DocumentationUri { get; set; }
 
 
 
@@ -114,7 +114,7 @@ public partial class ScimServiceProviderConfigAuthenticationScheme : IEquatable<
     /// </summary>
     /// <value>Indicates whether this authentication scheme is the primary method of authentication.</value>
     [JsonPropertyName("primary")]
-    public bool? Primary { get; private set; }
+    public bool? Primary { get; set; }
 
 
     /// <summary>

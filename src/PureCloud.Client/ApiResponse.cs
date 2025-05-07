@@ -9,29 +9,29 @@ public class ApiResponse<T>
     /// Gets or sets the status code (HTTP status code)
     /// </summary>
     /// <value>The status code.</value>
-    public int StatusCode { get; private set; }
+    public int StatusCode { get; set; }
 
     /// <summary>
     /// Gets or sets the response HTTP headers
     /// </summary>
     /// <value>HTTP headers</value>
-    public IDictionary<string, string> Headers { get; private set; }
+    public IDictionary<string, string> Headers { get; set; }
 
     /// <summary>
     /// Gets or sets the data (parsed HTTP body)
     /// </summary>
     /// <value>The data.</value>
-    public T Data { get; private set; }
+    public T Data { get; set; }
 
     /// <summary>
     /// Gets or sets the raw data (un-parsed HTTP body)
     /// </summary>
-    public string RawData { get; private set; }
+    public string RawData { get; set; }
 
     /// <summary>
     /// Gets or sets the status description (HTTP status description)
     /// </summary>
-    public string StatusDescription { get; private set; }
+    public string StatusDescription { get; set; }
 
     /// <summary>
     /// Gets the inin-correlation-id header's value

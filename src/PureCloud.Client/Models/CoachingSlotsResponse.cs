@@ -24,7 +24,7 @@ public partial class CoachingSlotsResponse : IEquatable<CoachingSlotsResponse>
     /// </summary>
     /// <value>List of slots where coaching appointment can be scheduled</value>
     [JsonPropertyName("suggestedSlots")]
-    public List<CoachingSlot> SuggestedSlots { get; private set; }
+    public List<CoachingSlot> SuggestedSlots { get; set; }
 
 
 
@@ -33,7 +33,7 @@ public partial class CoachingSlotsResponse : IEquatable<CoachingSlotsResponse>
     /// </summary>
     /// <value>Periods of availability for attendees to schedule coaching appointment</value>
     [JsonPropertyName("attendeeSchedules")]
-    public List<UserAvailableTimes> AttendeeSchedules { get; private set; }
+    public List<UserAvailableTimes> AttendeeSchedules { get; set; }
 
 
 
@@ -42,7 +42,7 @@ public partial class CoachingSlotsResponse : IEquatable<CoachingSlotsResponse>
     /// </summary>
     /// <value>Periods of availability for facilitators to schedule coaching appointment</value>
     [JsonPropertyName("facilitatorSchedules")]
-    public List<UserAvailableTimes> FacilitatorSchedules { get; private set; }
+    public List<UserAvailableTimes> FacilitatorSchedules { get; set; }
 
 
 
@@ -51,7 +51,7 @@ public partial class CoachingSlotsResponse : IEquatable<CoachingSlotsResponse>
     /// </summary>
     /// <value>Detailed data for WFM scheduled activities</value>
     [JsonPropertyName("wfmScheduleActivities")]
-    public List<WfmScheduleActivity> WfmScheduleActivities { get; private set; }
+    public List<WfmScheduleActivity> WfmScheduleActivities { get; set; }
 
 
     /// <summary>

@@ -60,7 +60,7 @@ public partial class IntegrationStatusInfo : IEquatable<IntegrationStatusInfo>
     /// </summary>
     /// <value>Machine-readable status as reported by the integration.</value>
     [JsonPropertyName("code")]
-    public CodeEnum? Code { get; private set; }
+    public CodeEnum? Code { get; set; }
     /// <summary>
     /// Initializes a new instance of the <see cref="IntegrationStatusInfo" /> class.
     /// </summary>
@@ -78,7 +78,7 @@ public partial class IntegrationStatusInfo : IEquatable<IntegrationStatusInfo>
     /// </summary>
     /// <value>Localized, human-readable, effective status of the integration.</value>
     [JsonPropertyName("effective")]
-    public string Effective { get; private set; }
+    public string Effective { get; set; }
 
 
 
@@ -87,7 +87,7 @@ public partial class IntegrationStatusInfo : IEquatable<IntegrationStatusInfo>
     /// </summary>
     /// <value>Localizable status details for the integration.</value>
     [JsonPropertyName("detail")]
-    public MessageInfo Detail { get; private set; }
+    public MessageInfo Detail { get; set; }
 
 
 
@@ -96,7 +96,7 @@ public partial class IntegrationStatusInfo : IEquatable<IntegrationStatusInfo>
     /// </summary>
     /// <value>Date and time (in UTC) when the integration status (i.e. the code field) was last updated. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z</value>
     [JsonPropertyName("lastUpdated")]
-    public DateTime? LastUpdated { get; private set; }
+    public DateTime? LastUpdated { get; set; }
 
 
     /// <summary>

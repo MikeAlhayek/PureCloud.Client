@@ -42,7 +42,7 @@ public partial class VoicemailOrganizationPolicy : IEquatable<VoicemailOrganizat
     /// </summary>
     /// <value>Whether voicemail is enabled for this organization</value>
     [JsonPropertyName("enabled")]
-    public bool? Enabled { get; private set; }
+    public bool? Enabled { get; set; }
 
 
 
@@ -132,7 +132,7 @@ public partial class VoicemailOrganizationPolicy : IEquatable<VoicemailOrganizat
     /// </summary>
     /// <value>The date the policy was last modified. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z</value>
     [JsonPropertyName("modifiedDate")]
-    public DateTime? ModifiedDate { get; private set; }
+    public DateTime? ModifiedDate { get; set; }
 
 
     /// <summary>

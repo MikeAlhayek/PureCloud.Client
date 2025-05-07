@@ -52,7 +52,7 @@ public partial class Label : IEquatable<Label>
     /// </summary>
     /// <value>Whether the label is encoded or not</value>
     [JsonPropertyName("encoded")]
-    public bool? Encoded { get; private set; }
+    public bool? Encoded { get; set; }
 
 
     /// <summary>

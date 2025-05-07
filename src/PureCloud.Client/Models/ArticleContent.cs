@@ -24,7 +24,7 @@ public partial class ArticleContent : IEquatable<ArticleContent>
     /// </summary>
     /// <value>Body of the article content.</value>
     [JsonPropertyName("body")]
-    public ArticleContentBody Body { get; private set; }
+    public ArticleContentBody Body { get; set; }
 
 
     /// <summary>

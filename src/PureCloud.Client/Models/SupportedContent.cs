@@ -34,7 +34,7 @@ public partial class SupportedContent : IEquatable<SupportedContent>
     /// </summary>
     /// <value>A unique supported content Id.</value>
     [JsonPropertyName("id")]
-    public string Id { get; private set; }
+    public string Id { get; set; }
 
 
 
@@ -52,7 +52,7 @@ public partial class SupportedContent : IEquatable<SupportedContent>
     /// </summary>
     /// <value>Date this supported content profile was created. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z</value>
     [JsonPropertyName("dateCreated")]
-    public DateTime? DateCreated { get; private set; }
+    public DateTime? DateCreated { get; set; }
 
 
 
@@ -61,7 +61,7 @@ public partial class SupportedContent : IEquatable<SupportedContent>
     /// </summary>
     /// <value>Date this supported content profile was modified. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z</value>
     [JsonPropertyName("dateModified")]
-    public DateTime? DateModified { get; private set; }
+    public DateTime? DateModified { get; set; }
 
 
 
@@ -70,7 +70,7 @@ public partial class SupportedContent : IEquatable<SupportedContent>
     /// </summary>
     /// <value>User reference that created this supported content profile</value>
     [JsonPropertyName("createdBy")]
-    public DomainEntityRef CreatedBy { get; private set; }
+    public DomainEntityRef CreatedBy { get; set; }
 
 
 
@@ -79,7 +79,7 @@ public partial class SupportedContent : IEquatable<SupportedContent>
     /// </summary>
     /// <value>User reference that modified this supported content profile</value>
     [JsonPropertyName("modifiedBy")]
-    public DomainEntityRef ModifiedBy { get; private set; }
+    public DomainEntityRef ModifiedBy { get; set; }
 
 
 
@@ -88,7 +88,7 @@ public partial class SupportedContent : IEquatable<SupportedContent>
     /// </summary>
     /// <value>Version number</value>
     [JsonPropertyName("version")]
-    public int? Version { get; private set; }
+    public int? Version { get; set; }
 
 
 
@@ -106,7 +106,7 @@ public partial class SupportedContent : IEquatable<SupportedContent>
     /// </summary>
     /// <value>The URI for this object</value>
     [JsonPropertyName("selfUri")]
-    public string SelfUri { get; private set; }
+    public string SelfUri { get; set; }
 
 
     /// <summary>

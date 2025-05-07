@@ -54,7 +54,7 @@ public partial class WfmUserNotification : IEquatable<WfmUserNotification>
     /// </summary>
     /// <value>The type of this notification</value>
     [JsonPropertyName("type")]
-    public TypeEnum? Type { get; private set; }
+    public TypeEnum? Type { get; set; }
 
     /// <summary>
     /// Initializes a new instance of the <see cref="WfmUserNotification" /> class.
@@ -100,7 +100,7 @@ public partial class WfmUserNotification : IEquatable<WfmUserNotification>
     /// </summary>
     /// <value>The timestamp for this notification. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z</value>
     [JsonPropertyName("timestamp")]
-    public DateTime? Timestamp { get; private set; }
+    public DateTime? Timestamp { get; set; }
 
 
 
@@ -111,7 +111,7 @@ public partial class WfmUserNotification : IEquatable<WfmUserNotification>
     /// </summary>
     /// <value>A shift trade notification.  Only set if type &#x3D;&#x3D; ShiftTrade</value>
     [JsonPropertyName("shiftTrade")]
-    public ShiftTradeNotification ShiftTrade { get; private set; }
+    public ShiftTradeNotification ShiftTrade { get; set; }
 
 
 
@@ -120,7 +120,7 @@ public partial class WfmUserNotification : IEquatable<WfmUserNotification>
     /// </summary>
     /// <value>A time off request notification.  Only set if type &#x3D;&#x3D; TimeOffRequest</value>
     [JsonPropertyName("timeOffRequest")]
-    public TimeOffRequestNotification TimeOffRequest { get; private set; }
+    public TimeOffRequestNotification TimeOffRequest { get; set; }
 
 
 
@@ -129,7 +129,7 @@ public partial class WfmUserNotification : IEquatable<WfmUserNotification>
     /// </summary>
     /// <value>An adherence explanation notification.  Only set if type &#x3D;&#x3D; AdherenceExplanation</value>
     [JsonPropertyName("adherenceExplanation")]
-    public AdherenceExplanationNotification AdherenceExplanation { get; private set; }
+    public AdherenceExplanationNotification AdherenceExplanation { get; set; }
 
 
 
@@ -138,7 +138,7 @@ public partial class WfmUserNotification : IEquatable<WfmUserNotification>
     /// </summary>
     /// <value>An alternative shift trade notification.  Only set if type &#x3D;&#x3D; AlternativeShift</value>
     [JsonPropertyName("alternativeShift")]
-    public AlternativeShiftNotification AlternativeShift { get; private set; }
+    public AlternativeShiftNotification AlternativeShift { get; set; }
 
 
 
@@ -156,7 +156,7 @@ public partial class WfmUserNotification : IEquatable<WfmUserNotification>
     /// </summary>
     /// <value>Whether this notification is for an agent</value>
     [JsonPropertyName("agentNotification")]
-    public bool? AgentNotification { get; private set; }
+    public bool? AgentNotification { get; set; }
 
 
 
@@ -165,7 +165,7 @@ public partial class WfmUserNotification : IEquatable<WfmUserNotification>
     /// </summary>
     /// <value>Other notification IDs in group.  This field is only populated in real-time notifications</value>
     [JsonPropertyName("otherNotificationIdsInGroup")]
-    public List<string> OtherNotificationIdsInGroup { get; private set; }
+    public List<string> OtherNotificationIdsInGroup { get; set; }
 
 
     /// <summary>

@@ -137,7 +137,7 @@ public partial class Response : IEquatable<Response>
     /// </summary>
     /// <value>The globally unique identifier for the object.</value>
     [JsonPropertyName("id")]
-    public string Id { get; private set; }
+    public string Id { get; set; }
 
 
 
@@ -181,7 +181,7 @@ public partial class Response : IEquatable<Response>
     /// </summary>
     /// <value>User that created the response</value>
     [JsonPropertyName("createdBy")]
-    public User CreatedBy { get; private set; }
+    public User CreatedBy { get; set; }
 
 
 
@@ -190,7 +190,7 @@ public partial class Response : IEquatable<Response>
     /// </summary>
     /// <value>The date and time the response was created. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z</value>
     [JsonPropertyName("dateCreated")]
-    public DateTime? DateCreated { get; private set; }
+    public DateTime? DateCreated { get; set; }
 
 
 
@@ -248,7 +248,7 @@ public partial class Response : IEquatable<Response>
     /// </summary>
     /// <value>The URI for this object</value>
     [JsonPropertyName("selfUri")]
-    public string SelfUri { get; private set; }
+    public string SelfUri { get; set; }
 
 
     /// <summary>

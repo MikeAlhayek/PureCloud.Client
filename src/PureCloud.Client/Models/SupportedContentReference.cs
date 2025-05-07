@@ -41,7 +41,7 @@ public partial class SupportedContentReference : IEquatable<SupportedContentRefe
     /// </summary>
     /// <value>The SupportedContent profile name</value>
     [JsonPropertyName("name")]
-    public string Name { get; private set; }
+    public string Name { get; set; }
 
 
 
@@ -50,7 +50,7 @@ public partial class SupportedContentReference : IEquatable<SupportedContentRefe
     /// </summary>
     /// <value>The SupportedContent profile URI</value>
     [JsonPropertyName("selfUri")]
-    public string SelfUri { get; private set; }
+    public string SelfUri { get; set; }
 
 
 
@@ -59,7 +59,7 @@ public partial class SupportedContentReference : IEquatable<SupportedContentRefe
     /// </summary>
     /// <value>Media types definition for the supported content</value>
     [JsonPropertyName("mediaTypes")]
-    public MediaTypes MediaTypes { get; private set; }
+    public MediaTypes MediaTypes { get; set; }
 
 
     /// <summary>

@@ -19,6 +19,7 @@ public class NotificationHandler : INotificationHandler, IAsyncDisposable
     private readonly IChannelRepository _channelRepository;
     private readonly ILogger<NotificationHandler> _logger;
 
+    private readonly object _webSocketLock = new();
     private ClientWebSocket _webSocket;
     private Channel _channel;
     private CancellationToken _cancellationToken;
@@ -40,6 +41,8 @@ public class NotificationHandler : INotificationHandler, IAsyncDisposable
 
     public async Task StartAsync(Channel channel = null, CancellationToken cancellationToken = default)
     {
+        _logger.LogInformation("StartAsync was called.");
+
         _cancellationToken = cancellationToken;
         _webSocket?.Dispose();
 
@@ -50,7 +53,12 @@ public class NotificationHandler : INotificationHandler, IAsyncDisposable
             throw new InvalidOperationException("Unable to create a communication channel. Perhaps the user is not authenticated.");
         }
 
-        await _channelRepository.AddSubscriptionTopicsAsync(_channel.Id, _typeMap.Keys.Select(topic => new ChannelTopic { Id = topic }), true, cancellationToken);
+        if (_typeMap.Count > 0)
+        {
+            _logger.LogInformation("There are initial events sending them to the server.");
+
+            await _channelRepository.AddSubscriptionTopicsAsync(_channel.Id, _typeMap.Keys.Select(topic => new ChannelTopic { Id = topic }), true, cancellationToken);
+        }
 
         _processingTask = Task.Run(ProcessMessagesAsync, _cancellationToken);
 
@@ -59,7 +67,20 @@ public class NotificationHandler : INotificationHandler, IAsyncDisposable
 
     private async Task ConnectAsync()
     {
-        _webSocket ??= new ClientWebSocket();
+        _logger.LogInformation("ConnectAsync was called.");
+
+        lock (_webSocketLock)
+        {
+            if (_webSocket != null && _webSocket.State == WebSocketState.Open)
+            {
+                // Don't connect if already connected.
+                _logger.LogInformation("WebSocket is already connected. No need to connect again.");
+                return;
+            }
+
+            _webSocket?.Dispose();
+            _webSocket = new ClientWebSocket();
+        }
 
         while (!_cancellationToken.IsCancellationRequested &&
                _reconnectAttempts < _maxReconnectAttempts &&
@@ -67,21 +88,24 @@ public class NotificationHandler : INotificationHandler, IAsyncDisposable
         {
             try
             {
+                _logger.LogInformation("Trying to connect to the WebSocket. The current state is {0}", _webSocket.State.ToString());
+
+                if (_webSocket.State != WebSocketState.None)
+                {
+                    _logger.LogInformation("WebSocket is new and can be connected to.");
+
+                    await _webSocket.ConnectAsync(new Uri(_channel.ConnectUri), _cancellationToken);
+                    _reconnectAttempts = 0;
+
+                    _logger.LogInformation("WebSocket is now connected.");
+                }
+
                 if (_webSocket.State == WebSocketState.Open)
                 {
-                    return;
+                    _logger.LogInformation("WebSocket state is open and can receive communication.");
+
+                    _ = Task.Run(() => ReceiveEventsAsync(_webSocket), _cancellationToken);
                 }
-
-                if (_webSocket.State is WebSocketState.Closed or WebSocketState.Aborted)
-                {
-                    _webSocket.Dispose();
-                    _webSocket = new ClientWebSocket();
-                }
-
-                await _webSocket.ConnectAsync(new Uri(_channel.ConnectUri), _cancellationToken);
-                _reconnectAttempts = 0;
-
-                _ = Task.Run(ReceiveLoopAsync, _cancellationToken);
             }
             catch (Exception ex)
             {
@@ -99,32 +123,54 @@ public class NotificationHandler : INotificationHandler, IAsyncDisposable
         }
     }
 
-    private async Task ReceiveLoopAsync()
+    private async Task ReceiveEventsAsync(ClientWebSocket webSocket)
     {
-        _logger.LogInformation("ReceiveLoopAsync started");
+        _logger.LogInformation("ReceiveEventsAsync was called on a WebSocket with a status {State}", webSocket.State.ToString());
+
+        if (webSocket == null)
+        {
+            _logger.LogInformation("WebSocket is null!");
+
+            return;
+        }
+
         var buffer = new byte[4096];
 
-        while (!_cancellationToken.IsCancellationRequested && _webSocket?.State == WebSocketState.Open)
+        while (!_cancellationToken.IsCancellationRequested)
         {
+            if (webSocket.State != WebSocketState.Open)
+            {
+                _logger.LogInformation("While Receiving events, the WebSocket with a status {State} and can no longer be used. No longer can listen to events.", webSocket.State.ToString());
+
+                break;
+            }
+
             try
             {
-                var result = await _webSocket.ReceiveAsync(new ArraySegment<byte>(buffer), _cancellationToken);
+                WebSocketReceiveResult result;
+                using var messageBuffer = new MemoryStream();
+
+                do
+                {
+                    result = await webSocket.ReceiveAsync(new ArraySegment<byte>(buffer), _cancellationToken);
+                    messageBuffer.Write(buffer, 0, result.Count);
+                } while (!result.EndOfMessage);
 
                 if (result.MessageType == WebSocketMessageType.Close)
                 {
-                    _logger.LogWarning("WebSocket closed by server.");
-                    await ConnectAsync();
+                    _logger.LogWarning("WebSocket closed: {Status} - {Description}", result.CloseStatus, result.CloseStatusDescription);
+                    await ConnectAsync(); // try to reconnect
                     break;
                 }
 
-                var message = Encoding.UTF8.GetString(buffer, 0, result.Count);
-                _logger.LogDebug("Received message: {Message}", message);
+                var message = Encoding.UTF8.GetString(messageBuffer.ToArray());
+                _logger.LogInformation("Received message: {Message}", message);
                 await _messageChannel.Writer.WriteAsync(message, _cancellationToken);
             }
             catch (Exception ex)
             {
                 _logger.LogError(ex, "Error while receiving from WebSocket.");
-                await ConnectAsync();
+                await ConnectAsync(); // reconnect on error
                 break;
             }
         }
@@ -189,15 +235,18 @@ public class NotificationHandler : INotificationHandler, IAsyncDisposable
             .Where(entry => !entry.Key.Equals("channel.metadata", StringComparison.OrdinalIgnoreCase) &&
                             !entry.Key.StartsWith("v2.system", StringComparison.OrdinalIgnoreCase));
 
-        if (_channel is not null)
-        {
-            await _channelRepository.AddSubscriptionTopicsAsync(_channel.Id,
-                filtered.Select(entry => new ChannelTopic { Id = entry.Key }));
-        }
-
         foreach (var topic in filtered)
         {
             _typeMap.TryAdd(topic.Key, topic.Value);
+        }
+
+        _logger.LogInformation("Subscribing to events. Current events are {0}", _typeMap.Count);
+
+        if (_channel is not null)
+        {
+            _logger.LogInformation("Channel already exists, sending the topics tp the server.");
+
+            await _channelRepository.AddSubscriptionTopicsAsync(_channel.Id, filtered.Select(entry => new ChannelTopic { Id = entry.Key }));
         }
     }
 
@@ -252,9 +301,15 @@ public class NotificationHandler : INotificationHandler, IAsyncDisposable
 
     public async ValueTask DisposeAsync()
     {
-        if (_webSocket?.State == WebSocketState.Open)
+        lock (_webSocketLock)
         {
-            await _webSocket.CloseAsync(WebSocketCloseStatus.NormalClosure, "disposing", _cancellationToken);
+            if (_webSocket?.State == WebSocketState.Open)
+            {
+                _webSocket.CloseAsync(WebSocketCloseStatus.NormalClosure, "disposing", _cancellationToken).Wait();
+            }
+
+            _webSocket?.Dispose();
+            _webSocket = null;
         }
 
         _messageChannel.Writer.TryComplete();
@@ -267,8 +322,5 @@ public class NotificationHandler : INotificationHandler, IAsyncDisposable
             }
             catch (OperationCanceledException) { }
         }
-
-        _webSocket?.Dispose();
-        _webSocket = null;
     }
 }

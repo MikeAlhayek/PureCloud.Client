@@ -24,7 +24,7 @@ public partial class TopicOffset : IEquatable<TopicOffset>
     /// </summary>
     /// <value>Count of words before the topic </value>
     [JsonPropertyName("wordCount")]
-    public long? WordCount { get; private set; }
+    public long? WordCount { get; set; }
 
 
 
@@ -33,7 +33,7 @@ public partial class TopicOffset : IEquatable<TopicOffset>
     /// </summary>
     /// <value>Count of characters before the topic </value>
     [JsonPropertyName("characterCount")]
-    public long? CharacterCount { get; private set; }
+    public long? CharacterCount { get; set; }
 
 
     /// <summary>

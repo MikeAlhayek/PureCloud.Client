@@ -24,7 +24,7 @@ public partial class CampaignDiagnostics : IEquatable<CampaignDiagnostics>
     /// </summary>
     /// <value>Campaign properties that can impact which contacts are callable</value>
     [JsonPropertyName("callableContacts")]
-    public CallableContactsDiagnostic CallableContacts { get; private set; }
+    public CallableContactsDiagnostic CallableContacts { get; set; }
 
 
 
@@ -33,7 +33,7 @@ public partial class CampaignDiagnostics : IEquatable<CampaignDiagnostics>
     /// </summary>
     /// <value>Information regarding the campaign&#39;s queue</value>
     [JsonPropertyName("queueUtilizationDiagnostic")]
-    public QueueUtilizationDiagnostic QueueUtilizationDiagnostic { get; private set; }
+    public QueueUtilizationDiagnostic QueueUtilizationDiagnostic { get; set; }
 
 
 
@@ -42,7 +42,7 @@ public partial class CampaignDiagnostics : IEquatable<CampaignDiagnostics>
     /// </summary>
     /// <value>Information regarding the campaign&#39;s rule sets</value>
     [JsonPropertyName("ruleSetDiagnostics")]
-    public List<RuleSetDiagnostic> RuleSetDiagnostics { get; private set; }
+    public List<RuleSetDiagnostic> RuleSetDiagnostics { get; set; }
 
 
 
@@ -51,7 +51,7 @@ public partial class CampaignDiagnostics : IEquatable<CampaignDiagnostics>
     /// </summary>
     /// <value>Current number of outstanding interactions on the campaign</value>
     [JsonPropertyName("outstandingInteractionsCount")]
-    public int? OutstandingInteractionsCount { get; private set; }
+    public int? OutstandingInteractionsCount { get; set; }
 
 
 
@@ -60,7 +60,7 @@ public partial class CampaignDiagnostics : IEquatable<CampaignDiagnostics>
     /// </summary>
     /// <value>Current number of scheduled interactions on the campaign</value>
     [JsonPropertyName("scheduledInteractionsCount")]
-    public int? ScheduledInteractionsCount { get; private set; }
+    public int? ScheduledInteractionsCount { get; set; }
 
 
 
@@ -69,7 +69,7 @@ public partial class CampaignDiagnostics : IEquatable<CampaignDiagnostics>
     /// </summary>
     /// <value>Current number of time zone rescheduled calls on the campaign</value>
     [JsonPropertyName("timeZoneRescheduledCallsCount")]
-    public int? TimeZoneRescheduledCallsCount { get; private set; }
+    public int? TimeZoneRescheduledCallsCount { get; set; }
 
 
 
@@ -78,7 +78,7 @@ public partial class CampaignDiagnostics : IEquatable<CampaignDiagnostics>
     /// </summary>
     /// <value>Number of contacts that don&#39;t match filter. This is currently supported only for Campaigns with dynamic filter on.</value>
     [JsonPropertyName("filteredOutContactsCount")]
-    public int? FilteredOutContactsCount { get; private set; }
+    public int? FilteredOutContactsCount { get; set; }
 
 
 
@@ -87,7 +87,7 @@ public partial class CampaignDiagnostics : IEquatable<CampaignDiagnostics>
     /// </summary>
     /// <value>Information regarding the campaign&#39;s skills</value>
     [JsonPropertyName("campaignSkillStatistics")]
-    public CampaignSkillStatistics CampaignSkillStatistics { get; private set; }
+    public CampaignSkillStatistics CampaignSkillStatistics { get; set; }
 
 
     /// <summary>

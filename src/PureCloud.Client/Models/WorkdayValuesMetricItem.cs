@@ -72,7 +72,7 @@ public partial class WorkdayValuesMetricItem : IEquatable<WorkdayValuesMetricIte
     /// </summary>
     /// <value>The unit type of the metric value</value>
     [JsonPropertyName("unitType")]
-    public UnitTypeEnum? UnitType { get; private set; }
+    public UnitTypeEnum? UnitType { get; set; }
     /// <summary>
     /// Initializes a new instance of the <see cref="WorkdayValuesMetricItem" /> class.
     /// </summary>
@@ -88,7 +88,7 @@ public partial class WorkdayValuesMetricItem : IEquatable<WorkdayValuesMetricIte
     /// </summary>
     /// <value>Gamification metric for the average and the trend</value>
     [JsonPropertyName("metric")]
-    public AddressableEntityRef Metric { get; private set; }
+    public AddressableEntityRef Metric { get; set; }
 
 
 
@@ -97,7 +97,7 @@ public partial class WorkdayValuesMetricItem : IEquatable<WorkdayValuesMetricIte
     /// </summary>
     /// <value>Gamification metric definition for the average and the trend</value>
     [JsonPropertyName("metricDefinition")]
-    public DomainEntityRef MetricDefinition { get; private set; }
+    public DomainEntityRef MetricDefinition { get; set; }
 
 
 
@@ -106,7 +106,7 @@ public partial class WorkdayValuesMetricItem : IEquatable<WorkdayValuesMetricIte
     /// </summary>
     /// <value>The average value of the metric</value>
     [JsonPropertyName("average")]
-    public double? Average { get; private set; }
+    public double? Average { get; set; }
 
 
 
@@ -117,7 +117,7 @@ public partial class WorkdayValuesMetricItem : IEquatable<WorkdayValuesMetricIte
     /// </summary>
     /// <value>The metric value trend</value>
     [JsonPropertyName("trend")]
-    public List<WorkdayValuesTrendItem> Trend { get; private set; }
+    public List<WorkdayValuesTrendItem> Trend { get; set; }
 
 
     /// <summary>

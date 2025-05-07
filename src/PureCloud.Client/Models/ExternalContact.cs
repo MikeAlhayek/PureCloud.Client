@@ -48,7 +48,7 @@ public partial class ExternalContact : IEquatable<ExternalContact>
     /// </summary>
     /// <value>The type of contact</value>
     [JsonPropertyName("type")]
-    public TypeEnum? Type { get; private set; }
+    public TypeEnum? Type { get; set; }
     /// <summary>
     /// Initializes a new instance of the <see cref="ExternalContact" /> class.
     /// </summary>
@@ -355,7 +355,7 @@ public partial class ExternalContact : IEquatable<ExternalContact>
     /// </summary>
     /// <value>Links to the sources of data (e.g. one source might be a CRM) that contributed data to this record.  Read-only, and only populated when requested via expand param.</value>
     [JsonPropertyName("externalDataSources")]
-    public List<ExternalDataSource> ExternalDataSources { get; private set; }
+    public List<ExternalDataSource> ExternalDataSources { get; set; }
 
 
 
@@ -366,7 +366,7 @@ public partial class ExternalContact : IEquatable<ExternalContact>
     /// </summary>
     /// <value>The contact at the head of the merge tree. If null, this contact is not a part of any merge.</value>
     [JsonPropertyName("canonicalContact")]
-    public ContactAddressableEntityRef CanonicalContact { get; private set; }
+    public ContactAddressableEntityRef CanonicalContact { get; set; }
 
 
 
@@ -375,7 +375,7 @@ public partial class ExternalContact : IEquatable<ExternalContact>
     /// </summary>
     /// <value>The set of all contacts that are a part of the merge tree. If null, this contact is not a part of any merge.</value>
     [JsonPropertyName("mergeSet")]
-    public List<ContactAddressableEntityRef> MergeSet { get; private set; }
+    public List<ContactAddressableEntityRef> MergeSet { get; set; }
 
 
 
@@ -384,7 +384,7 @@ public partial class ExternalContact : IEquatable<ExternalContact>
     /// </summary>
     /// <value>Information about the merge history of this contact. If null, this contact is not a part of any merge.</value>
     [JsonPropertyName("mergeOperation")]
-    public MergeOperation MergeOperation { get; private set; }
+    public MergeOperation MergeOperation { get; set; }
 
 
 
@@ -393,7 +393,7 @@ public partial class ExternalContact : IEquatable<ExternalContact>
     /// </summary>
     /// <value>The URI for this object</value>
     [JsonPropertyName("selfUri")]
-    public string SelfUri { get; private set; }
+    public string SelfUri { get; set; }
 
 
     /// <summary>

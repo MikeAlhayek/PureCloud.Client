@@ -12,7 +12,7 @@ public sealed class LocationDefinition
     /// The globally unique identifier for the object.
     /// </summary>
     /// <value>The globally unique identifier for the object.</value>
-    public string Id { get; private set; }
+    public string Id { get; set; }
 
     /// <summary>
     /// Gets or Sets Name
@@ -64,25 +64,25 @@ public sealed class LocationDefinition
     /// Floorplan images of the location entity, retrieved with ?expand&#x3D;images query parameter
     /// </summary>
     /// <value>Floorplan images of the location entity, retrieved with ?expand&#x3D;images query parameter</value>
-    public List<LocationImage> FloorplanImage { get; private set; }
+    public List<LocationImage> FloorplanImage { get; set; }
 
     /// <summary>
     /// Address verification information, retrieve dwith the ?expand&#x3D;addressVerificationDetails query parameter
     /// </summary>
     /// <value>Address verification information, retrieve dwith the ?expand&#x3D;addressVerificationDetails query parameter</value>
-    public LocationAddressVerificationDetails AddressVerificationDetails { get; private set; }
+    public LocationAddressVerificationDetails AddressVerificationDetails { get; set; }
 
     /// <summary>
     /// Boolean field which states if the address has been verified as an actual address
     /// </summary>
     /// <value>Boolean field which states if the address has been verified as an actual address</value>
-    public bool? AddressVerified { get; private set; }
+    public bool? AddressVerified { get; set; }
 
     /// <summary>
     /// Boolean field which states if the address has been stored for E911
     /// </summary>
     /// <value>Boolean field which states if the address has been stored for E911</value>
-    public bool? AddressStored { get; private set; }
+    public bool? AddressStored { get; set; }
 
     /// <summary>
     /// Gets or Sets Images
@@ -93,5 +93,5 @@ public sealed class LocationDefinition
     /// The URI for this object
     /// </summary>
     /// <value>The URI for this object</value>
-    public string SelfUri { get; private set; }
+    public string SelfUri { get; set; }
 }

@@ -48,7 +48,7 @@ public partial class TrustUser : IEquatable<TrustUser>
     /// </summary>
     /// <value>The current state for this user.</value>
     [JsonPropertyName("state")]
-    public StateEnum? State { get; private set; }
+    public StateEnum? State { get; set; }
 
     /// <summary>
     /// Initializes a new instance of the <see cref="TrustUser" /> class.
@@ -106,7 +106,7 @@ public partial class TrustUser : IEquatable<TrustUser>
     /// </summary>
     /// <value>The globally unique identifier for the object.</value>
     [JsonPropertyName("id")]
-    public string Id { get; private set; }
+    public string Id { get; set; }
 
 
 
@@ -156,7 +156,7 @@ public partial class TrustUser : IEquatable<TrustUser>
     /// </summary>
     /// <value>Auto populated from addresses.</value>
     [JsonPropertyName("primaryContactInfo")]
-    public List<Contact> PrimaryContactInfo { get; private set; }
+    public List<Contact> PrimaryContactInfo { get; set; }
 
 
 
@@ -250,7 +250,7 @@ public partial class TrustUser : IEquatable<TrustUser>
     /// </summary>
     /// <value>ACD routing status</value>
     [JsonPropertyName("routingStatus")]
-    public RoutingStatus RoutingStatus { get; private set; }
+    public RoutingStatus RoutingStatus { get; set; }
 
 
 
@@ -259,7 +259,7 @@ public partial class TrustUser : IEquatable<TrustUser>
     /// </summary>
     /// <value>Active presence</value>
     [JsonPropertyName("presence")]
-    public UserPresence Presence { get; private set; }
+    public UserPresence Presence { get; set; }
 
 
 
@@ -268,7 +268,7 @@ public partial class TrustUser : IEquatable<TrustUser>
     /// </summary>
     /// <value>Integration presence</value>
     [JsonPropertyName("integrationPresence")]
-    public UserPresence IntegrationPresence { get; private set; }
+    public UserPresence IntegrationPresence { get; set; }
 
 
 
@@ -277,7 +277,7 @@ public partial class TrustUser : IEquatable<TrustUser>
     /// </summary>
     /// <value>Summary of conversion statistics for conversation types.</value>
     [JsonPropertyName("conversationSummary")]
-    public UserConversationSummary ConversationSummary { get; private set; }
+    public UserConversationSummary ConversationSummary { get; set; }
 
 
 
@@ -286,7 +286,7 @@ public partial class TrustUser : IEquatable<TrustUser>
     /// </summary>
     /// <value>Determine if out of office is enabled</value>
     [JsonPropertyName("outOfOffice")]
-    public OutOfOffice OutOfOffice { get; private set; }
+    public OutOfOffice OutOfOffice { get; set; }
 
 
 
@@ -295,7 +295,7 @@ public partial class TrustUser : IEquatable<TrustUser>
     /// </summary>
     /// <value>Current geolocation position</value>
     [JsonPropertyName("geolocation")]
-    public Geolocation Geolocation { get; private set; }
+    public Geolocation Geolocation { get; set; }
 
 
 
@@ -304,7 +304,7 @@ public partial class TrustUser : IEquatable<TrustUser>
     /// </summary>
     /// <value>Effective, default, and last station information</value>
     [JsonPropertyName("station")]
-    public UserStations Station { get; private set; }
+    public UserStations Station { get; set; }
 
 
 
@@ -313,7 +313,7 @@ public partial class TrustUser : IEquatable<TrustUser>
     /// </summary>
     /// <value>Roles and permissions assigned to the user</value>
     [JsonPropertyName("authorization")]
-    public UserAuthorization Authorization { get; private set; }
+    public UserAuthorization Authorization { get; set; }
 
 
 
@@ -322,7 +322,7 @@ public partial class TrustUser : IEquatable<TrustUser>
     /// </summary>
     /// <value>Profile skills possessed by the user</value>
     [JsonPropertyName("profileSkills")]
-    public List<string> ProfileSkills { get; private set; }
+    public List<string> ProfileSkills { get; set; }
 
 
 
@@ -331,7 +331,7 @@ public partial class TrustUser : IEquatable<TrustUser>
     /// </summary>
     /// <value>The user placement at each site location.</value>
     [JsonPropertyName("locations")]
-    public List<Location> Locations { get; private set; }
+    public List<Location> Locations { get; set; }
 
 
 
@@ -340,7 +340,7 @@ public partial class TrustUser : IEquatable<TrustUser>
     /// </summary>
     /// <value>The groups the user is a member of</value>
     [JsonPropertyName("groups")]
-    public List<Group> Groups { get; private set; }
+    public List<Group> Groups { get; set; }
 
 
 
@@ -349,7 +349,7 @@ public partial class TrustUser : IEquatable<TrustUser>
     /// </summary>
     /// <value>The team the user is a member of</value>
     [JsonPropertyName("team")]
-    public Team Team { get; private set; }
+    public Team Team { get; set; }
 
 
 
@@ -358,7 +358,7 @@ public partial class TrustUser : IEquatable<TrustUser>
     /// </summary>
     /// <value>The WFM work plan bid rank settings for the user</value>
     [JsonPropertyName("workPlanBidRanks")]
-    public WorkPlanBidRanks WorkPlanBidRanks { get; private set; }
+    public WorkPlanBidRanks WorkPlanBidRanks { get; set; }
 
 
 
@@ -367,7 +367,7 @@ public partial class TrustUser : IEquatable<TrustUser>
     /// </summary>
     /// <value>Routing (ACD) skills possessed by the user</value>
     [JsonPropertyName("skills")]
-    public List<UserRoutingSkill> Skills { get; private set; }
+    public List<UserRoutingSkill> Skills { get; set; }
 
 
 
@@ -376,7 +376,7 @@ public partial class TrustUser : IEquatable<TrustUser>
     /// </summary>
     /// <value>Routing (ACD) languages possessed by the user</value>
     [JsonPropertyName("languages")]
-    public List<UserRoutingLanguage> Languages { get; private set; }
+    public List<UserRoutingLanguage> Languages { get; set; }
 
 
 
@@ -394,7 +394,7 @@ public partial class TrustUser : IEquatable<TrustUser>
     /// </summary>
     /// <value>preferred language by the user</value>
     [JsonPropertyName("languagePreference")]
-    public string LanguagePreference { get; private set; }
+    public string LanguagePreference { get; set; }
 
 
 
@@ -411,7 +411,7 @@ public partial class TrustUser : IEquatable<TrustUser>
     /// </summary>
     /// <value>The last time the user logged in using username and password. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z</value>
     [JsonPropertyName("dateLastLogin")]
-    public DateTime? DateLastLogin { get; private set; }
+    public DateTime? DateLastLogin { get; set; }
 
 
 
@@ -420,7 +420,7 @@ public partial class TrustUser : IEquatable<TrustUser>
     /// </summary>
     /// <value>The date &amp; time the user was sent their welcome email. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z</value>
     [JsonPropertyName("dateWelcomeSent")]
-    public DateTime? DateWelcomeSent { get; private set; }
+    public DateTime? DateWelcomeSent { get; set; }
 
 
 

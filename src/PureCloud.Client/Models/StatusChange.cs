@@ -711,25 +711,25 @@ public partial class StatusChange : IEquatable<StatusChange>
     /// </summary>
     /// <value>The status the change request transitioned to</value>
     [JsonPropertyName("status")]
-    public StatusEnum? Status { get; private set; }
+    public StatusEnum? Status { get; set; }
     /// <summary>
     /// The status the change request transitioned from
     /// </summary>
     /// <value>The status the change request transitioned from</value>
     [JsonPropertyName("previousStatus")]
-    public PreviousStatusEnum? PreviousStatus { get; private set; }
+    public PreviousStatusEnum? PreviousStatus { get; set; }
     /// <summary>
     /// The namespace for the status change
     /// </summary>
     /// <value>The namespace for the status change</value>
     [JsonPropertyName("namespace")]
-    public NamespaceEnum? Namespace { get; private set; }
+    public NamespaceEnum? Namespace { get; set; }
     /// <summary>
     /// The reason for rejecting the limit override request
     /// </summary>
     /// <value>The reason for rejecting the limit override request</value>
     [JsonPropertyName("rejectReason")]
-    public RejectReasonEnum? RejectReason { get; private set; }
+    public RejectReasonEnum? RejectReason { get; set; }
     /// <summary>
     /// Initializes a new instance of the <see cref="StatusChange" /> class.
     /// </summary>
@@ -745,7 +745,7 @@ public partial class StatusChange : IEquatable<StatusChange>
     /// </summary>
     /// <value>The date of this status change. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z</value>
     [JsonPropertyName("dateStatusChanged")]
-    public DateTime? DateStatusChanged { get; private set; }
+    public DateTime? DateStatusChanged { get; set; }
 
 
 
@@ -760,7 +760,7 @@ public partial class StatusChange : IEquatable<StatusChange>
     /// </summary>
     /// <value>A short message describing the status change</value>
     [JsonPropertyName("message")]
-    public string Message { get; private set; }
+    public string Message { get; set; }
 
 
 

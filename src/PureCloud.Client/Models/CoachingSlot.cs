@@ -48,7 +48,7 @@ public partial class CoachingSlot : IEquatable<CoachingSlot>
     /// </summary>
     /// <value>Rating based on the staffing difference for scheduled slot</value>
     [JsonPropertyName("differenceRating")]
-    public DifferenceRatingEnum? DifferenceRating { get; private set; }
+    public DifferenceRatingEnum? DifferenceRating { get; set; }
     /// <summary>
     /// Initializes a new instance of the <see cref="CoachingSlot" /> class.
     /// </summary>
@@ -64,7 +64,7 @@ public partial class CoachingSlot : IEquatable<CoachingSlot>
     /// </summary>
     /// <value>Start date and time of scheduled coaching appointment slot. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z</value>
     [JsonPropertyName("dateStart")]
-    public DateTime? DateStart { get; private set; }
+    public DateTime? DateStart { get; set; }
 
 
 
@@ -73,7 +73,7 @@ public partial class CoachingSlot : IEquatable<CoachingSlot>
     /// </summary>
     /// <value>Length of coaching appointment slot in minutes</value>
     [JsonPropertyName("lengthInMinutes")]
-    public int? LengthInMinutes { get; private set; }
+    public int? LengthInMinutes { get; set; }
 
 
 
@@ -82,7 +82,7 @@ public partial class CoachingSlot : IEquatable<CoachingSlot>
     /// </summary>
     /// <value>Difference between scheduled and forecast headcount for this slot after scheduling the coaching appointment</value>
     [JsonPropertyName("staffingDifference")]
-    public double? StaffingDifference { get; private set; }
+    public double? StaffingDifference { get; set; }
 
 
 
@@ -93,7 +93,7 @@ public partial class CoachingSlot : IEquatable<CoachingSlot>
     /// </summary>
     /// <value>Workforce Management schedule information associated with the slot</value>
     [JsonPropertyName("wfmSchedule")]
-    public WfmScheduleReference WfmSchedule { get; private set; }
+    public WfmScheduleReference WfmSchedule { get; set; }
 
 
     /// <summary>

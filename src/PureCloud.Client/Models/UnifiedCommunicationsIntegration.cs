@@ -48,7 +48,7 @@ public partial class UnifiedCommunicationsIntegration : IEquatable<UnifiedCommun
     /// </summary>
     /// <value>integrationPresenceType</value>
     [JsonPropertyName("integrationPresenceSource")]
-    public IntegrationPresenceSourceEnum? IntegrationPresenceSource { get; private set; }
+    public IntegrationPresenceSourceEnum? IntegrationPresenceSource { get; set; }
     /// <summary>
     /// Initializes a new instance of the <see cref="UnifiedCommunicationsIntegration" /> class.
     /// </summary>
@@ -68,7 +68,7 @@ public partial class UnifiedCommunicationsIntegration : IEquatable<UnifiedCommun
     /// </summary>
     /// <value>The globally unique identifier for the object.</value>
     [JsonPropertyName("id")]
-    public string Id { get; private set; }
+    public string Id { get; set; }
 
 
 
@@ -85,7 +85,7 @@ public partial class UnifiedCommunicationsIntegration : IEquatable<UnifiedCommun
     /// </summary>
     /// <value>ucIntegrationKey</value>
     [JsonPropertyName("ucIntegrationKey")]
-    public AddressableEntityRef UcIntegrationKey { get; private set; }
+    public AddressableEntityRef UcIntegrationKey { get; set; }
 
 
 
@@ -96,7 +96,7 @@ public partial class UnifiedCommunicationsIntegration : IEquatable<UnifiedCommun
     /// </summary>
     /// <value>pbxPermission</value>
     [JsonPropertyName("pbxPermission")]
-    public string PbxPermission { get; private set; }
+    public string PbxPermission { get; set; }
 
 
 
@@ -105,7 +105,7 @@ public partial class UnifiedCommunicationsIntegration : IEquatable<UnifiedCommun
     /// </summary>
     /// <value>icon</value>
     [JsonPropertyName("icon")]
-    public UCIcon Icon { get; private set; }
+    public UCIcon Icon { get; set; }
 
 
 
@@ -114,7 +114,7 @@ public partial class UnifiedCommunicationsIntegration : IEquatable<UnifiedCommun
     /// </summary>
     /// <value>badgeIcon</value>
     [JsonPropertyName("badgeIcons")]
-    public Dictionary<string, UCIcon> BadgeIcons { get; private set; }
+    public Dictionary<string, UCIcon> BadgeIcons { get; set; }
 
 
 
@@ -123,7 +123,7 @@ public partial class UnifiedCommunicationsIntegration : IEquatable<UnifiedCommun
     /// </summary>
     /// <value>i10n</value>
     [JsonPropertyName("i10n")]
-    public Dictionary<string, UCI10n> I10n { get; private set; }
+    public Dictionary<string, UCI10n> I10n { get; set; }
 
 
 
@@ -132,7 +132,7 @@ public partial class UnifiedCommunicationsIntegration : IEquatable<UnifiedCommun
     /// </summary>
     /// <value>polledPresence</value>
     [JsonPropertyName("polledPresence")]
-    public bool? PolledPresence { get; private set; }
+    public bool? PolledPresence { get; set; }
 
 
 
@@ -141,7 +141,7 @@ public partial class UnifiedCommunicationsIntegration : IEquatable<UnifiedCommun
     /// </summary>
     /// <value>pollIntervalSec</value>
     [JsonPropertyName("pollIntervalSec")]
-    public int? PollIntervalSec { get; private set; }
+    public int? PollIntervalSec { get; set; }
 
 
 
@@ -150,7 +150,7 @@ public partial class UnifiedCommunicationsIntegration : IEquatable<UnifiedCommun
     /// </summary>
     /// <value>includeBadge</value>
     [JsonPropertyName("includeBadge")]
-    public bool? IncludeBadge { get; private set; }
+    public bool? IncludeBadge { get; set; }
 
 
 
@@ -159,7 +159,7 @@ public partial class UnifiedCommunicationsIntegration : IEquatable<UnifiedCommun
     /// </summary>
     /// <value>userPermissions</value>
     [JsonPropertyName("userPermissions")]
-    public List<string> UserPermissions { get; private set; }
+    public List<string> UserPermissions { get; set; }
 
 
 
@@ -176,7 +176,7 @@ public partial class UnifiedCommunicationsIntegration : IEquatable<UnifiedCommun
     /// </summary>
     /// <value>The URI for this object</value>
     [JsonPropertyName("selfUri")]
-    public string SelfUri { get; private set; }
+    public string SelfUri { get; set; }
 
 
     /// <summary>

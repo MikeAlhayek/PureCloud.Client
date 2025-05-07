@@ -52,7 +52,7 @@ public partial class ScimV2CreateUser : IEquatable<ScimV2CreateUser>
     /// </summary>
     /// <value>The list of supported schemas.</value>
     [JsonPropertyName("schemas")]
-    public List<string> Schemas { get; private set; }
+    public List<string> Schemas { get; set; }
 
 
 
@@ -133,7 +133,7 @@ public partial class ScimV2CreateUser : IEquatable<ScimV2CreateUser>
     /// </summary>
     /// <value>The list of groups that the user is a member of. This list is immutable per SCIM RFC and may only be updated using the GROUPS resource endpoint.</value>
     [JsonPropertyName("groups")]
-    public List<ScimV2GroupReference> Groups { get; private set; }
+    public List<ScimV2GroupReference> Groups { get; set; }
 
 
 

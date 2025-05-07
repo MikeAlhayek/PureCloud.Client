@@ -26,7 +26,7 @@ public partial class NluDomainVersionTrainingResponse : IEquatable<NluDomainVers
     /// </summary>
     /// <value>A message indicating result of the action.</value>
     [JsonPropertyName("message")]
-    public string Message { get; private set; }
+    public string Message { get; set; }
 
 
 

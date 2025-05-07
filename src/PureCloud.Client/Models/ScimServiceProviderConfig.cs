@@ -24,7 +24,7 @@ public partial class ScimServiceProviderConfig : IEquatable<ScimServiceProviderC
     /// </summary>
     /// <value>The list of supported schemas.</value>
     [JsonPropertyName("schemas")]
-    public List<string> Schemas { get; private set; }
+    public List<string> Schemas { get; set; }
 
 
 
@@ -33,7 +33,7 @@ public partial class ScimServiceProviderConfig : IEquatable<ScimServiceProviderC
     /// </summary>
     /// <value>The HTTP-addressable URL that points to the service provider&#39;s documentation.</value>
     [JsonPropertyName("documentationUri")]
-    public string DocumentationUri { get; private set; }
+    public string DocumentationUri { get; set; }
 
 
 
@@ -42,7 +42,7 @@ public partial class ScimServiceProviderConfig : IEquatable<ScimServiceProviderC
     /// </summary>
     /// <value>The \&quot;patch\&quot; configuration options.</value>
     [JsonPropertyName("patch")]
-    public ScimServiceProviderConfigSimpleFeature Patch { get; private set; }
+    public ScimServiceProviderConfigSimpleFeature Patch { get; set; }
 
 
 
@@ -51,7 +51,7 @@ public partial class ScimServiceProviderConfig : IEquatable<ScimServiceProviderC
     /// </summary>
     /// <value>The \&quot;filter\&quot; configuration options.</value>
     [JsonPropertyName("filter")]
-    public ScimServiceProviderConfigFilterFeature Filter { get; private set; }
+    public ScimServiceProviderConfigFilterFeature Filter { get; set; }
 
 
 
@@ -60,7 +60,7 @@ public partial class ScimServiceProviderConfig : IEquatable<ScimServiceProviderC
     /// </summary>
     /// <value>The \&quot;etag\&quot; configuration options.</value>
     [JsonPropertyName("etag")]
-    public ScimServiceProviderConfigSimpleFeature Etag { get; private set; }
+    public ScimServiceProviderConfigSimpleFeature Etag { get; set; }
 
 
 
@@ -69,7 +69,7 @@ public partial class ScimServiceProviderConfig : IEquatable<ScimServiceProviderC
     /// </summary>
     /// <value>The \&quot;sort\&quot; configuration options.</value>
     [JsonPropertyName("sort")]
-    public ScimServiceProviderConfigSimpleFeature Sort { get; private set; }
+    public ScimServiceProviderConfigSimpleFeature Sort { get; set; }
 
 
 
@@ -78,7 +78,7 @@ public partial class ScimServiceProviderConfig : IEquatable<ScimServiceProviderC
     /// </summary>
     /// <value>The \&quot;bulk\&quot; configuration options.</value>
     [JsonPropertyName("bulk")]
-    public ScimServiceProviderConfigBulkFeature Bulk { get; private set; }
+    public ScimServiceProviderConfigBulkFeature Bulk { get; set; }
 
 
 
@@ -87,7 +87,7 @@ public partial class ScimServiceProviderConfig : IEquatable<ScimServiceProviderC
     /// </summary>
     /// <value>The \&quot;changePassword\&quot; configuration options.</value>
     [JsonPropertyName("changePassword")]
-    public ScimServiceProviderConfigSimpleFeature ChangePassword { get; private set; }
+    public ScimServiceProviderConfigSimpleFeature ChangePassword { get; set; }
 
 
 
@@ -96,7 +96,7 @@ public partial class ScimServiceProviderConfig : IEquatable<ScimServiceProviderC
     /// </summary>
     /// <value>The list of supported authentication schemes.</value>
     [JsonPropertyName("authenticationSchemes")]
-    public List<ScimServiceProviderConfigAuthenticationScheme> AuthenticationSchemes { get; private set; }
+    public List<ScimServiceProviderConfigAuthenticationScheme> AuthenticationSchemes { get; set; }
 
 
 
@@ -105,7 +105,7 @@ public partial class ScimServiceProviderConfig : IEquatable<ScimServiceProviderC
     /// </summary>
     /// <value>The metadata of the SCIM resource. Metadata is defined as immutable per SCIM RFC.</value>
     [JsonPropertyName("meta")]
-    public ScimMetadata Meta { get; private set; }
+    public ScimMetadata Meta { get; set; }
 
 
     /// <summary>

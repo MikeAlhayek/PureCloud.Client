@@ -135,7 +135,7 @@ public partial class EmailMessagePreview : IEquatable<EmailMessagePreview>
     /// </summary>
     /// <value>The globally unique identifier for the object.</value>
     [JsonPropertyName("id")]
-    public string Id { get; private set; }
+    public string Id { get; set; }
 
 
 
@@ -246,7 +246,7 @@ public partial class EmailMessagePreview : IEquatable<EmailMessagePreview>
     /// </summary>
     /// <value>Indicates an estimation of the size of the current email as a whole, in its final, ready to be sent form.</value>
     [JsonPropertyName("emailSizeBytes")]
-    public int? EmailSizeBytes { get; private set; }
+    public int? EmailSizeBytes { get; set; }
 
 
 
@@ -255,7 +255,7 @@ public partial class EmailMessagePreview : IEquatable<EmailMessagePreview>
     /// </summary>
     /// <value>Indicates the maximum allowed size for an email to be send via SMTP server, based on the email domain configuration</value>
     [JsonPropertyName("maxEmailSizeBytes")]
-    public int? MaxEmailSizeBytes { get; private set; }
+    public int? MaxEmailSizeBytes { get; set; }
 
 
 
@@ -264,7 +264,7 @@ public partial class EmailMessagePreview : IEquatable<EmailMessagePreview>
     /// </summary>
     /// <value>The URI for this object</value>
     [JsonPropertyName("selfUri")]
-    public string SelfUri { get; private set; }
+    public string SelfUri { get; set; }
 
 
     /// <summary>

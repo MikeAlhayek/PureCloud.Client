@@ -32,7 +32,7 @@ public partial class GrammarLanguage : IEquatable<GrammarLanguage>
     /// </summary>
     /// <value>The globally unique identifier for the object.</value>
     [JsonPropertyName("id")]
-    public string Id { get; private set; }
+    public string Id { get; set; }
 
 
 
@@ -58,7 +58,7 @@ public partial class GrammarLanguage : IEquatable<GrammarLanguage>
     /// </summary>
     /// <value>The URL to the voice mode file associated with this grammar language</value>
     [JsonPropertyName("voiceFileUrl")]
-    public string VoiceFileUrl { get; private set; }
+    public string VoiceFileUrl { get; set; }
 
 
 
@@ -67,7 +67,7 @@ public partial class GrammarLanguage : IEquatable<GrammarLanguage>
     /// </summary>
     /// <value>The URL to the DTMF mode file associated with this grammar language</value>
     [JsonPropertyName("dtmfFileUrl")]
-    public string DtmfFileUrl { get; private set; }
+    public string DtmfFileUrl { get; set; }
 
 
 
@@ -94,7 +94,7 @@ public partial class GrammarLanguage : IEquatable<GrammarLanguage>
     /// </summary>
     /// <value>The URI for this object</value>
     [JsonPropertyName("selfUri")]
-    public string SelfUri { get; private set; }
+    public string SelfUri { get; set; }
 
 
     /// <summary>

@@ -92,7 +92,7 @@ public partial class DomainOrganizationRoleUpdate : IEquatable<DomainOrganizatio
     /// </summary>
     /// <value>A collection of the permissions the role is not using</value>
     [JsonPropertyName("unusedPermissions")]
-    public List<string> UnusedPermissions { get; private set; }
+    public List<string> UnusedPermissions { get; set; }
 
 
 
@@ -142,7 +142,7 @@ public partial class DomainOrganizationRoleUpdate : IEquatable<DomainOrganizatio
     /// </summary>
     /// <value>The URI for this object</value>
     [JsonPropertyName("selfUri")]
-    public string SelfUri { get; private set; }
+    public string SelfUri { get; set; }
 
 
     /// <summary>

@@ -24,7 +24,7 @@ public partial class IntegrationConfigurationInfo : IEquatable<IntegrationConfig
     /// </summary>
     /// <value>The current, active configuration for the integration.</value>
     [JsonPropertyName("current")]
-    public IntegrationConfiguration Current { get; private set; }
+    public IntegrationConfiguration Current { get; set; }
 
 
     /// <summary>

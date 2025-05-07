@@ -24,7 +24,7 @@ public partial class FlowLogLevelCharacteristicsDefinitions : IEquatable<FlowLog
     /// </summary>
     /// <value>A list of flow log levels available to the organization.</value>
     [JsonPropertyName("logLevels")]
-    public List<FlowLogLevel> LogLevels { get; private set; }
+    public List<FlowLogLevel> LogLevels { get; set; }
 
 
 
@@ -33,7 +33,7 @@ public partial class FlowLogLevelCharacteristicsDefinitions : IEquatable<FlowLog
     /// </summary>
     /// <value>A list of characteristics that the loglevels will have that are available to the organization..</value>
     [JsonPropertyName("characteristics")]
-    public List<FlowLogLevelCharacteristicsDefinition> Characteristics { get; private set; }
+    public List<FlowLogLevelCharacteristicsDefinition> Characteristics { get; set; }
 
 
     /// <summary>

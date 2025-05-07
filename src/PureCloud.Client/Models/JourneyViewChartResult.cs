@@ -24,7 +24,7 @@ public partial class JourneyViewChartResult : IEquatable<JourneyViewChartResult>
     /// </summary>
     /// <value>The globally unique identifier for the object.</value>
     [JsonPropertyName("id")]
-    public string Id { get; private set; }
+    public string Id { get; set; }
 
 
 
@@ -33,7 +33,7 @@ public partial class JourneyViewChartResult : IEquatable<JourneyViewChartResult>
     /// </summary>
     /// <value>Version of the chart</value>
     [JsonPropertyName("version")]
-    public int? Version { get; private set; }
+    public int? Version { get; set; }
 
 
 
@@ -42,7 +42,7 @@ public partial class JourneyViewChartResult : IEquatable<JourneyViewChartResult>
     /// </summary>
     /// <value>Metric results for this chart</value>
     [JsonPropertyName("metrics")]
-    public List<JourneyViewChartMetricResult> Metrics { get; private set; }
+    public List<JourneyViewChartMetricResult> Metrics { get; set; }
 
 
 
@@ -51,7 +51,7 @@ public partial class JourneyViewChartResult : IEquatable<JourneyViewChartResult>
     /// </summary>
     /// <value>The URI for this object</value>
     [JsonPropertyName("selfUri")]
-    public string SelfUri { get; private set; }
+    public string SelfUri { get; set; }
 
 
     /// <summary>

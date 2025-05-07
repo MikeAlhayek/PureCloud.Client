@@ -24,7 +24,7 @@ public partial class CampaignSkillStatistics : IEquatable<CampaignSkillStatistic
     /// </summary>
     /// <value>Number of available skill combinations for the campaign</value>
     [JsonPropertyName("skillCombinations")]
-    public int? SkillCombinations { get; private set; }
+    public int? SkillCombinations { get; set; }
 
 
 
@@ -33,7 +33,7 @@ public partial class CampaignSkillStatistics : IEquatable<CampaignSkillStatistic
     /// </summary>
     /// <value>Number of eligible agents with skills for campaign</value>
     [JsonPropertyName("eligibleSkilledAgents")]
-    public int? EligibleSkilledAgents { get; private set; }
+    public int? EligibleSkilledAgents { get; set; }
 
 
     /// <summary>

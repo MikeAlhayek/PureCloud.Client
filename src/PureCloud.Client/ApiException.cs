@@ -15,13 +15,13 @@ public class ApiException : Exception
     /// Gets or sets the error content (body json object)
     /// </summary>
     /// <value>The error content (HTTP response body).</value>
-    public dynamic ErrorContent { get; private set; }
+    public dynamic ErrorContent { get; set; }
 
     /// <summary>
     /// Gets or sets the HTTP headers
     /// </summary>
     /// <value>HTTP headers</value>
-    public IDictionary<string, string> Headers { get; private set; }
+    public IDictionary<string, string> Headers { get; set; }
 
     /// <summary>
     /// Initializes a new instance of the <see cref="ApiException"/> class.

@@ -48,7 +48,7 @@ public partial class PredictorModelFeature : IEquatable<PredictorModelFeature>
     /// </summary>
     /// <value>The type of feature.</value>
     [JsonPropertyName("type")]
-    public TypeEnum? Type { get; private set; }
+    public TypeEnum? Type { get; set; }
     /// <summary>
     /// Initializes a new instance of the <see cref="PredictorModelFeature" /> class.
     /// </summary>
@@ -64,7 +64,7 @@ public partial class PredictorModelFeature : IEquatable<PredictorModelFeature>
     /// </summary>
     /// <value>The globally unique identifier for the object.</value>
     [JsonPropertyName("id")]
-    public string Id { get; private set; }
+    public string Id { get; set; }
 
 
 
@@ -75,7 +75,7 @@ public partial class PredictorModelFeature : IEquatable<PredictorModelFeature>
     /// </summary>
     /// <value>The percentage of how important a feature is in the model.</value>
     [JsonPropertyName("percentageImportance")]
-    public double? PercentageImportance { get; private set; }
+    public double? PercentageImportance { get; set; }
 
 
     /// <summary>

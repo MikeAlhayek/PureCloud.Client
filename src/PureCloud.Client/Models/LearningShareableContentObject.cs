@@ -210,19 +210,19 @@ public partial class LearningShareableContentObject : IEquatable<LearningShareab
     /// </summary>
     /// <value>Whether completing this course counts towards the overall assignment. Maps to the SCORM 1.2 cmi.core.credit property.</value>
     [JsonPropertyName("credit")]
-    public CreditEnum? Credit { get; private set; }
+    public CreditEnum? Credit { get; set; }
     /// <summary>
     /// Whether the learner has previously accessed this SCO. Maps to the SCORM 1.2 cmi.core.entry property.
     /// </summary>
     /// <value>Whether the learner has previously accessed this SCO. Maps to the SCORM 1.2 cmi.core.entry property.</value>
     [JsonPropertyName("entry")]
-    public EntryEnum? Entry { get; private set; }
+    public EntryEnum? Entry { get; set; }
     /// <summary>
     /// Identifies the mode in which the SCO should be presented to the learner. Maps to the SCORM 1.2 cmi.core.lesson_mode property.
     /// </summary>
     /// <value>Identifies the mode in which the SCO should be presented to the learner. Maps to the SCORM 1.2 cmi.core.lesson_mode property.</value>
     [JsonPropertyName("mode")]
-    public ModeEnum? Mode { get; private set; }
+    public ModeEnum? Mode { get; set; }
 
     /// <summary>
     /// Initializes a new instance of the <see cref="LearningShareableContentObject" /> class.
@@ -326,7 +326,7 @@ public partial class LearningShareableContentObject : IEquatable<LearningShareab
     /// </summary>
     /// <value>The total amount of time the learner has spent in the SCO expressed as an ISO 8601 Duration, for example PT2H10M3.5S. Maps to the SCORM 1.2 cmi.core.total_time property.</value>
     [JsonPropertyName("totalTime")]
-    public string TotalTime { get; private set; }
+    public string TotalTime { get; set; }
 
 
 
@@ -344,7 +344,7 @@ public partial class LearningShareableContentObject : IEquatable<LearningShareab
     /// </summary>
     /// <value>The href from the course manifest for this SCO.</value>
     [JsonPropertyName("href")]
-    public string Href { get; private set; }
+    public string Href { get; set; }
 
 
 
@@ -353,7 +353,7 @@ public partial class LearningShareableContentObject : IEquatable<LearningShareab
     /// </summary>
     /// <value>The parameters from the course manifest for this SCO.</value>
     [JsonPropertyName("parameters")]
-    public string Parameters { get; private set; }
+    public string Parameters { get; set; }
 
 
 
@@ -362,7 +362,7 @@ public partial class LearningShareableContentObject : IEquatable<LearningShareab
     /// </summary>
     /// <value>The launch data from the course manifest for this SCO.</value>
     [JsonPropertyName("launchData")]
-    public string LaunchData { get; private set; }
+    public string LaunchData { get; set; }
 
 
     /// <summary>

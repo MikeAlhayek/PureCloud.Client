@@ -363,37 +363,37 @@ public partial class UserScheduleAdherence : IEquatable<UserScheduleAdherence>
     /// </summary>
     /// <value>Activity for which the user is scheduled</value>
     [JsonPropertyName("scheduledActivityCategory")]
-    public ScheduledActivityCategoryEnum? ScheduledActivityCategory { get; private set; }
+    public ScheduledActivityCategoryEnum? ScheduledActivityCategory { get; set; }
     /// <summary>
     /// Actual underlying system presence value
     /// </summary>
     /// <value>Actual underlying system presence value</value>
     [JsonPropertyName("systemPresence")]
-    public SystemPresenceEnum? SystemPresence { get; private set; }
+    public SystemPresenceEnum? SystemPresence { get; set; }
     /// <summary>
     /// Actual underlying routing status, used to determine whether a user is actually in adherence when OnQueue
     /// </summary>
     /// <value>Actual underlying routing status, used to determine whether a user is actually in adherence when OnQueue</value>
     [JsonPropertyName("routingStatus")]
-    public RoutingStatusEnum? RoutingStatus { get; private set; }
+    public RoutingStatusEnum? RoutingStatus { get; set; }
     /// <summary>
     /// Activity in which the user is actually engaged
     /// </summary>
     /// <value>Activity in which the user is actually engaged</value>
     [JsonPropertyName("actualActivityCategory")]
-    public ActualActivityCategoryEnum? ActualActivityCategory { get; private set; }
+    public ActualActivityCategoryEnum? ActualActivityCategory { get; set; }
     /// <summary>
     /// The user's current adherence state
     /// </summary>
     /// <value>The user's current adherence state</value>
     [JsonPropertyName("adherenceState")]
-    public AdherenceStateEnum? AdherenceState { get; private set; }
+    public AdherenceStateEnum? AdherenceState { get; set; }
     /// <summary>
     /// The impact of the user's current adherenceState
     /// </summary>
     /// <value>The impact of the user's current adherenceState</value>
     [JsonPropertyName("impact")]
-    public ImpactEnum? Impact { get; private set; }
+    public ImpactEnum? Impact { get; set; }
     /// <summary>
     /// Initializes a new instance of the <see cref="UserScheduleAdherence" /> class.
     /// </summary>
@@ -411,7 +411,7 @@ public partial class UserScheduleAdherence : IEquatable<UserScheduleAdherence>
     /// </summary>
     /// <value>The globally unique identifier for the object.</value>
     [JsonPropertyName("id")]
-    public string Id { get; private set; }
+    public string Id { get; set; }
 
 
 
@@ -428,7 +428,7 @@ public partial class UserScheduleAdherence : IEquatable<UserScheduleAdherence>
     /// </summary>
     /// <value>The user for whom this status applies</value>
     [JsonPropertyName("user")]
-    public UserReference User { get; private set; }
+    public UserReference User { get; set; }
 
 
 
@@ -437,7 +437,7 @@ public partial class UserScheduleAdherence : IEquatable<UserScheduleAdherence>
     /// </summary>
     /// <value>The business unit to which this user belongs</value>
     [JsonPropertyName("businessUnit")]
-    public BusinessUnitReference BusinessUnit { get; private set; }
+    public BusinessUnitReference BusinessUnit { get; set; }
 
 
 
@@ -446,7 +446,7 @@ public partial class UserScheduleAdherence : IEquatable<UserScheduleAdherence>
     /// </summary>
     /// <value>The management unit to which this user belongs</value>
     [JsonPropertyName("managementUnit")]
-    public ManagementUnitReference ManagementUnit { get; private set; }
+    public ManagementUnitReference ManagementUnit { get; set; }
 
 
 
@@ -455,7 +455,7 @@ public partial class UserScheduleAdherence : IEquatable<UserScheduleAdherence>
     /// </summary>
     /// <value>The team to which this user belongs</value>
     [JsonPropertyName("team")]
-    public TeamReference Team { get; private set; }
+    public TeamReference Team { get; set; }
 
 
 
@@ -466,7 +466,7 @@ public partial class UserScheduleAdherence : IEquatable<UserScheduleAdherence>
     /// </summary>
     /// <value>Activity code for which the user is currently scheduled</value>
     [JsonPropertyName("scheduledActivityCode")]
-    public ActivityCodeSummary ScheduledActivityCode { get; private set; }
+    public ActivityCodeSummary ScheduledActivityCode { get; set; }
 
 
 
@@ -477,7 +477,7 @@ public partial class UserScheduleAdherence : IEquatable<UserScheduleAdherence>
     /// </summary>
     /// <value>Organization Secondary Presence Id.</value>
     [JsonPropertyName("organizationSecondaryPresenceId")]
-    public string OrganizationSecondaryPresenceId { get; private set; }
+    public string OrganizationSecondaryPresenceId { get; set; }
 
 
 
@@ -490,7 +490,7 @@ public partial class UserScheduleAdherence : IEquatable<UserScheduleAdherence>
     /// </summary>
     /// <value>Whether the user is marked OutOfOffice</value>
     [JsonPropertyName("isOutOfOffice")]
-    public bool? IsOutOfOffice { get; private set; }
+    public bool? IsOutOfOffice { get; set; }
 
 
 
@@ -503,7 +503,7 @@ public partial class UserScheduleAdherence : IEquatable<UserScheduleAdherence>
     /// </summary>
     /// <value>Currently applicable explanation for the adherence state</value>
     [JsonPropertyName("adherenceExplanation")]
-    public RealTimeAdherenceExplanation AdherenceExplanation { get; private set; }
+    public RealTimeAdherenceExplanation AdherenceExplanation { get; set; }
 
 
 
@@ -512,7 +512,7 @@ public partial class UserScheduleAdherence : IEquatable<UserScheduleAdherence>
     /// </summary>
     /// <value>Time when the user entered the current adherenceState in ISO-8601 format</value>
     [JsonPropertyName("timeOfAdherenceChange")]
-    public DateTime? TimeOfAdherenceChange { get; private set; }
+    public DateTime? TimeOfAdherenceChange { get; set; }
 
 
 
@@ -521,7 +521,7 @@ public partial class UserScheduleAdherence : IEquatable<UserScheduleAdherence>
     /// </summary>
     /// <value>Time when presence was last updated. Used to calculate time in current status. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z</value>
     [JsonPropertyName("presenceUpdateTime")]
-    public DateTime? PresenceUpdateTime { get; private set; }
+    public DateTime? PresenceUpdateTime { get; set; }
 
 
 
@@ -530,7 +530,7 @@ public partial class UserScheduleAdherence : IEquatable<UserScheduleAdherence>
     /// </summary>
     /// <value>The list of queues to which this user is joined</value>
     [JsonPropertyName("activeQueues")]
-    public List<QueueReference> ActiveQueues { get; private set; }
+    public List<QueueReference> ActiveQueues { get; set; }
 
 
 
@@ -539,7 +539,7 @@ public partial class UserScheduleAdherence : IEquatable<UserScheduleAdherence>
     /// </summary>
     /// <value>Time when the list of active queues for this user was last updated. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z</value>
     [JsonPropertyName("activeQueuesModifiedTime")]
-    public DateTime? ActiveQueuesModifiedTime { get; private set; }
+    public DateTime? ActiveQueuesModifiedTime { get; set; }
 
 
 
@@ -548,7 +548,7 @@ public partial class UserScheduleAdherence : IEquatable<UserScheduleAdherence>
     /// </summary>
     /// <value>For notification purposes. Used to indicate that a user was removed from the management unit</value>
     [JsonPropertyName("removedFromManagementUnit")]
-    public bool? RemovedFromManagementUnit { get; private set; }
+    public bool? RemovedFromManagementUnit { get; set; }
 
 
 
@@ -557,7 +557,7 @@ public partial class UserScheduleAdherence : IEquatable<UserScheduleAdherence>
     /// </summary>
     /// <value>A list of upcoming activities for which the user is scheduled</value>
     [JsonPropertyName("nextActivityReminders")]
-    public List<UserNextActivityReminder> NextActivityReminders { get; private set; }
+    public List<UserNextActivityReminder> NextActivityReminders { get; set; }
 
 
 
@@ -566,7 +566,7 @@ public partial class UserScheduleAdherence : IEquatable<UserScheduleAdherence>
     /// </summary>
     /// <value>Indicates whether the on-time adherence notification should be suppressed for the user</value>
     [JsonPropertyName("suppressOnTimeReminder")]
-    public bool? SuppressOnTimeReminder { get; private set; }
+    public bool? SuppressOnTimeReminder { get; set; }
 
 
 
@@ -575,7 +575,7 @@ public partial class UserScheduleAdherence : IEquatable<UserScheduleAdherence>
     /// </summary>
     /// <value>The URI for this object</value>
     [JsonPropertyName("selfUri")]
-    public string SelfUri { get; private set; }
+    public string SelfUri { get; set; }
 
 
     /// <summary>

@@ -98,7 +98,7 @@ public partial class LearningAssignment : IEquatable<LearningAssignment>
     /// </summary>
     /// <value>The globally unique identifier for the object.</value>
     [JsonPropertyName("id")]
-    public string Id { get; private set; }
+    public string Id { get; set; }
 
 
 
@@ -116,7 +116,7 @@ public partial class LearningAssignment : IEquatable<LearningAssignment>
     /// </summary>
     /// <value>The user who created the assignment</value>
     [JsonPropertyName("createdBy")]
-    public UserReference CreatedBy { get; private set; }
+    public UserReference CreatedBy { get; set; }
 
 
 
@@ -125,7 +125,7 @@ public partial class LearningAssignment : IEquatable<LearningAssignment>
     /// </summary>
     /// <value>The date when the assignment was created. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z</value>
     [JsonPropertyName("dateCreated")]
-    public DateTime? DateCreated { get; private set; }
+    public DateTime? DateCreated { get; set; }
 
 
 
@@ -134,7 +134,7 @@ public partial class LearningAssignment : IEquatable<LearningAssignment>
     /// </summary>
     /// <value>The user who modified the assignment</value>
     [JsonPropertyName("modifiedBy")]
-    public UserReference ModifiedBy { get; private set; }
+    public UserReference ModifiedBy { get; set; }
 
 
 
@@ -143,7 +143,7 @@ public partial class LearningAssignment : IEquatable<LearningAssignment>
     /// </summary>
     /// <value>The date when the assignment was last modified. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z</value>
     [JsonPropertyName("dateModified")]
-    public DateTime? DateModified { get; private set; }
+    public DateTime? DateModified { get; set; }
 
 
 
@@ -152,7 +152,7 @@ public partial class LearningAssignment : IEquatable<LearningAssignment>
     /// </summary>
     /// <value>True if the assignment is overdue</value>
     [JsonPropertyName("isOverdue")]
-    public bool? IsOverdue { get; private set; }
+    public bool? IsOverdue { get; set; }
 
 
 
@@ -161,7 +161,7 @@ public partial class LearningAssignment : IEquatable<LearningAssignment>
     /// </summary>
     /// <value>The user&#39;s percentage score for this assignment</value>
     [JsonPropertyName("percentageScore")]
-    public float? PercentageScore { get; private set; }
+    public float? PercentageScore { get; set; }
 
 
 
@@ -170,7 +170,7 @@ public partial class LearningAssignment : IEquatable<LearningAssignment>
     /// </summary>
     /// <value>The user&#39;s percentage score for this assignment&#39;s assessment</value>
     [JsonPropertyName("assessmentPercentageScore")]
-    public float? AssessmentPercentageScore { get; private set; }
+    public float? AssessmentPercentageScore { get; set; }
 
 
 
@@ -179,7 +179,7 @@ public partial class LearningAssignment : IEquatable<LearningAssignment>
     /// </summary>
     /// <value>True if this assignment was created by a Rule</value>
     [JsonPropertyName("isRule")]
-    public bool? IsRule { get; private set; }
+    public bool? IsRule { get; set; }
 
 
 
@@ -188,7 +188,7 @@ public partial class LearningAssignment : IEquatable<LearningAssignment>
     /// </summary>
     /// <value>True if this assignment was created manually</value>
     [JsonPropertyName("isManual")]
-    public bool? IsManual { get; private set; }
+    public bool? IsManual { get; set; }
 
 
 
@@ -197,7 +197,7 @@ public partial class LearningAssignment : IEquatable<LearningAssignment>
     /// </summary>
     /// <value>True if the assessment was passed</value>
     [JsonPropertyName("isPassed")]
-    public bool? IsPassed { get; private set; }
+    public bool? IsPassed { get; set; }
 
 
 
@@ -206,7 +206,7 @@ public partial class LearningAssignment : IEquatable<LearningAssignment>
     /// </summary>
     /// <value>True if the assignment is based on latest module</value>
     [JsonPropertyName("isLatest")]
-    public bool? IsLatest { get; private set; }
+    public bool? IsLatest { get; set; }
 
 
 
@@ -215,7 +215,7 @@ public partial class LearningAssignment : IEquatable<LearningAssignment>
     /// </summary>
     /// <value>The assessment completion percentage of assignment</value>
     [JsonPropertyName("assessmentCompletionPercentage")]
-    public float? AssessmentCompletionPercentage { get; private set; }
+    public float? AssessmentCompletionPercentage { get; set; }
 
 
 
@@ -224,7 +224,7 @@ public partial class LearningAssignment : IEquatable<LearningAssignment>
     /// </summary>
     /// <value>The overall completion percentage of assignment</value>
     [JsonPropertyName("completionPercentage")]
-    public float? CompletionPercentage { get; private set; }
+    public float? CompletionPercentage { get; set; }
 
 
 
@@ -233,7 +233,7 @@ public partial class LearningAssignment : IEquatable<LearningAssignment>
     /// </summary>
     /// <value>List of assignment steps</value>
     [JsonPropertyName("steps")]
-    public List<LearningAssignmentStep> Steps { get; private set; }
+    public List<LearningAssignmentStep> Steps { get; set; }
 
 
 
@@ -242,7 +242,7 @@ public partial class LearningAssignment : IEquatable<LearningAssignment>
     /// </summary>
     /// <value>The next assignment step</value>
     [JsonPropertyName("nextStep")]
-    public LearningAssignmentStep NextStep { get; private set; }
+    public LearningAssignmentStep NextStep { get; set; }
 
 
 
@@ -251,7 +251,7 @@ public partial class LearningAssignment : IEquatable<LearningAssignment>
     /// </summary>
     /// <value>The URI for this object</value>
     [JsonPropertyName("selfUri")]
-    public string SelfUri { get; private set; }
+    public string SelfUri { get; set; }
 
 
 

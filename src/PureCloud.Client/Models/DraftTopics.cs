@@ -54,7 +54,7 @@ public partial class DraftTopics : IEquatable<DraftTopics>
     /// </summary>
     /// <value>The miner to which the topic belongs.</value>
     [JsonPropertyName("miner")]
-    public Miner Miner { get; private set; }
+    public Miner Miner { get; set; }
 
 
 
@@ -63,7 +63,7 @@ public partial class DraftTopics : IEquatable<DraftTopics>
     /// </summary>
     /// <value>Number of conversations where a topic has occurred.</value>
     [JsonPropertyName("conversationCount")]
-    public int? ConversationCount { get; private set; }
+    public int? ConversationCount { get; set; }
 
 
 
@@ -72,7 +72,7 @@ public partial class DraftTopics : IEquatable<DraftTopics>
     /// </summary>
     /// <value>Percentage of conversations where a topic has occurred.</value>
     [JsonPropertyName("conversationPercent")]
-    public float? ConversationPercent { get; private set; }
+    public float? ConversationPercent { get; set; }
 
 
 
@@ -81,7 +81,7 @@ public partial class DraftTopics : IEquatable<DraftTopics>
     /// </summary>
     /// <value>Number of unique utterances where a topic has occurred.</value>
     [JsonPropertyName("utteranceCount")]
-    public int? UtteranceCount { get; private set; }
+    public int? UtteranceCount { get; set; }
 
 
 
@@ -90,7 +90,7 @@ public partial class DraftTopics : IEquatable<DraftTopics>
     /// </summary>
     /// <value>Number of unique phrases (sub-utterances) where a topic has occurred.</value>
     [JsonPropertyName("phraseCount")]
-    public int? PhraseCount { get; private set; }
+    public int? PhraseCount { get; set; }
 
 
 
@@ -108,7 +108,7 @@ public partial class DraftTopics : IEquatable<DraftTopics>
     /// </summary>
     /// <value>The URI for this object</value>
     [JsonPropertyName("selfUri")]
-    public string SelfUri { get; private set; }
+    public string SelfUri { get; set; }
 
 
     /// <summary>

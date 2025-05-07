@@ -54,7 +54,7 @@ public partial class BuShortTermForecastWeekReference : IEquatable<BuShortTermFo
     /// </summary>
     /// <value>The description of the short term forecast</value>
     [JsonPropertyName("description")]
-    public string Description { get; private set; }
+    public string Description { get; set; }
 
 
 
@@ -72,7 +72,7 @@ public partial class BuShortTermForecastWeekReference : IEquatable<BuShortTermFo
     /// </summary>
     /// <value>The URI for this object</value>
     [JsonPropertyName("selfUri")]
-    public string SelfUri { get; private set; }
+    public string SelfUri { get; set; }
 
 
     /// <summary>

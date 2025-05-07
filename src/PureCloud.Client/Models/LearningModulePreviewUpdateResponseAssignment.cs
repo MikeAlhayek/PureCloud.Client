@@ -86,7 +86,7 @@ public partial class LearningModulePreviewUpdateResponseAssignment : IEquatable<
     /// </summary>
     /// <value>The user&#39;s percentage score for this assignment</value>
     [JsonPropertyName("percentageScore")]
-    public float? PercentageScore { get; private set; }
+    public float? PercentageScore { get; set; }
 
 
 
@@ -95,7 +95,7 @@ public partial class LearningModulePreviewUpdateResponseAssignment : IEquatable<
     /// </summary>
     /// <value>The overall completion percentage of assignment</value>
     [JsonPropertyName("completionPercentage")]
-    public float? CompletionPercentage { get; private set; }
+    public float? CompletionPercentage { get; set; }
 
 
 
@@ -104,7 +104,7 @@ public partial class LearningModulePreviewUpdateResponseAssignment : IEquatable<
     /// </summary>
     /// <value>The user&#39;s percentage score for this assignment&#39;s assessment</value>
     [JsonPropertyName("assessmentPercentageScore")]
-    public float? AssessmentPercentageScore { get; private set; }
+    public float? AssessmentPercentageScore { get; set; }
 
 
 
@@ -113,7 +113,7 @@ public partial class LearningModulePreviewUpdateResponseAssignment : IEquatable<
     /// </summary>
     /// <value>The assessment completion percentage of assignment</value>
     [JsonPropertyName("assessmentCompletionPercentage")]
-    public float? AssessmentCompletionPercentage { get; private set; }
+    public float? AssessmentCompletionPercentage { get; set; }
 
 
 
@@ -122,7 +122,7 @@ public partial class LearningModulePreviewUpdateResponseAssignment : IEquatable<
     /// </summary>
     /// <value>True if the assessment was passed</value>
     [JsonPropertyName("isPassed")]
-    public bool? IsPassed { get; private set; }
+    public bool? IsPassed { get; set; }
 
 
 
@@ -131,7 +131,7 @@ public partial class LearningModulePreviewUpdateResponseAssignment : IEquatable<
     /// </summary>
     /// <value>The next assignment step</value>
     [JsonPropertyName("currentStep")]
-    public LearningModulePreviewUpdateResponseCurrentStep CurrentStep { get; private set; }
+    public LearningModulePreviewUpdateResponseCurrentStep CurrentStep { get; set; }
 
 
 
@@ -140,7 +140,7 @@ public partial class LearningModulePreviewUpdateResponseAssignment : IEquatable<
     /// </summary>
     /// <value>List of assignment steps</value>
     [JsonPropertyName("steps")]
-    public List<LearningModulePreviewUpdateStep> Steps { get; private set; }
+    public List<LearningModulePreviewUpdateStep> Steps { get; set; }
 
 
     /// <summary>

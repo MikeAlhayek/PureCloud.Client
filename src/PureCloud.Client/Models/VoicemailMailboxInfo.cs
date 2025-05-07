@@ -24,7 +24,7 @@ public partial class VoicemailMailboxInfo : IEquatable<VoicemailMailboxInfo>
     /// </summary>
     /// <value>The total number of bytes for all voicemail message audio recordings</value>
     [JsonPropertyName("usageSizeBytes")]
-    public long? UsageSizeBytes { get; private set; }
+    public long? UsageSizeBytes { get; set; }
 
 
 
@@ -33,7 +33,7 @@ public partial class VoicemailMailboxInfo : IEquatable<VoicemailMailboxInfo>
     /// </summary>
     /// <value>The total number of voicemail messages</value>
     [JsonPropertyName("totalCount")]
-    public int? TotalCount { get; private set; }
+    public int? TotalCount { get; set; }
 
 
 
@@ -42,7 +42,7 @@ public partial class VoicemailMailboxInfo : IEquatable<VoicemailMailboxInfo>
     /// </summary>
     /// <value>The total number of voicemail messages marked as unread</value>
     [JsonPropertyName("unreadCount")]
-    public int? UnreadCount { get; private set; }
+    public int? UnreadCount { get; set; }
 
 
 
@@ -51,7 +51,7 @@ public partial class VoicemailMailboxInfo : IEquatable<VoicemailMailboxInfo>
     /// </summary>
     /// <value>The total number of voicemail messages marked as deleted</value>
     [JsonPropertyName("deletedCount")]
-    public int? DeletedCount { get; private set; }
+    public int? DeletedCount { get; set; }
 
 
 
@@ -60,7 +60,7 @@ public partial class VoicemailMailboxInfo : IEquatable<VoicemailMailboxInfo>
     /// </summary>
     /// <value>The date of the oldest voicemail message. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z</value>
     [JsonPropertyName("createdDate")]
-    public DateTime? CreatedDate { get; private set; }
+    public DateTime? CreatedDate { get; set; }
 
 
 
@@ -69,7 +69,7 @@ public partial class VoicemailMailboxInfo : IEquatable<VoicemailMailboxInfo>
     /// </summary>
     /// <value>The date of the most recent voicemail message. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z</value>
     [JsonPropertyName("modifiedDate")]
-    public DateTime? ModifiedDate { get; private set; }
+    public DateTime? ModifiedDate { get; set; }
 
 
 
@@ -78,7 +78,7 @@ public partial class VoicemailMailboxInfo : IEquatable<VoicemailMailboxInfo>
     /// </summary>
     /// <value>The date of the most recent unread voicemail message. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z</value>
     [JsonPropertyName("newestUnreadDate")]
-    public DateTime? NewestUnreadDate { get; private set; }
+    public DateTime? NewestUnreadDate { get; set; }
 
 
 
@@ -87,7 +87,7 @@ public partial class VoicemailMailboxInfo : IEquatable<VoicemailMailboxInfo>
     /// </summary>
     /// <value>The date of the most oldest unread voicemail message. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z</value>
     [JsonPropertyName("oldestUnreadDate")]
-    public DateTime? OldestUnreadDate { get; private set; }
+    public DateTime? OldestUnreadDate { get; set; }
 
 
 
@@ -96,7 +96,7 @@ public partial class VoicemailMailboxInfo : IEquatable<VoicemailMailboxInfo>
     /// </summary>
     /// <value>The date of the most recent read voicemail message. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z</value>
     [JsonPropertyName("newestReadDate")]
-    public DateTime? NewestReadDate { get; private set; }
+    public DateTime? NewestReadDate { get; set; }
 
 
 
@@ -105,7 +105,7 @@ public partial class VoicemailMailboxInfo : IEquatable<VoicemailMailboxInfo>
     /// </summary>
     /// <value>The date of the most oldest read voicemail message. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z</value>
     [JsonPropertyName("oldestReadDate")]
-    public DateTime? OldestReadDate { get; private set; }
+    public DateTime? OldestReadDate { get; set; }
 
 
     /// <summary>

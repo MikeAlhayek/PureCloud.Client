@@ -87,13 +87,13 @@ public partial class LearningModulePreviewGetResponseStep : IEquatable<LearningM
     /// </summary>
     /// <value>The success status of this step</value>
     [JsonPropertyName("successStatus")]
-    public SuccessStatusEnum? SuccessStatus { get; private set; }
+    public SuccessStatusEnum? SuccessStatus { get; set; }
     /// <summary>
     /// The completion status of the assignment step
     /// </summary>
     /// <value>The completion status of the assignment step</value>
     [JsonPropertyName("completionStatus")]
-    public CompletionStatusEnum? CompletionStatus { get; private set; }
+    public CompletionStatusEnum? CompletionStatus { get; set; }
     /// <summary>
     /// Initializes a new instance of the <see cref="LearningModulePreviewGetResponseStep" /> class.
     /// </summary>
@@ -111,7 +111,7 @@ public partial class LearningModulePreviewGetResponseStep : IEquatable<LearningM
     /// </summary>
     /// <value>The id of the step</value>
     [JsonPropertyName("id")]
-    public string Id { get; private set; }
+    public string Id { get; set; }
 
 
 
@@ -120,7 +120,7 @@ public partial class LearningModulePreviewGetResponseStep : IEquatable<LearningM
     /// </summary>
     /// <value>The module step data for this step</value>
     [JsonPropertyName("moduleStep")]
-    public LearningModuleInformStep ModuleStep { get; private set; }
+    public LearningModuleInformStep ModuleStep { get; set; }
 
 
 
@@ -129,7 +129,7 @@ public partial class LearningModulePreviewGetResponseStep : IEquatable<LearningM
     /// </summary>
     /// <value>The structure for any SCO associated with this step</value>
     [JsonPropertyName("structure")]
-    public List<LearningModulePreviewGetScoStructure> Structure { get; private set; }
+    public List<LearningModulePreviewGetScoStructure> Structure { get; set; }
 
 
 
@@ -151,7 +151,7 @@ public partial class LearningModulePreviewGetResponseStep : IEquatable<LearningM
     /// </summary>
     /// <value>The percentage score for this step</value>
     [JsonPropertyName("percentageScore")]
-    public float? PercentageScore { get; private set; }
+    public float? PercentageScore { get; set; }
 
 
 
@@ -160,7 +160,7 @@ public partial class LearningModulePreviewGetResponseStep : IEquatable<LearningM
     /// </summary>
     /// <value>The signed cookie information needed to access the content of this step (if required)</value>
     [JsonPropertyName("signedCookie")]
-    public LearningAssignmentStepSignedCookie SignedCookie { get; private set; }
+    public LearningAssignmentStepSignedCookie SignedCookie { get; set; }
 
 
     /// <summary>

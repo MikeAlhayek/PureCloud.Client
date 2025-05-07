@@ -24,7 +24,7 @@ public partial class MaskingRuleValidateResponse : IEquatable<MaskingRuleValidat
     /// </summary>
     /// <value>is masking rule definition valid?</value>
     [JsonPropertyName("valid")]
-    public bool? Valid { get; private set; }
+    public bool? Valid { get; set; }
 
 
 
@@ -33,7 +33,7 @@ public partial class MaskingRuleValidateResponse : IEquatable<MaskingRuleValidat
     /// </summary>
     /// <value>Validation message.</value>
     [JsonPropertyName("validationMessage")]
-    public string ValidationMessage { get; private set; }
+    public string ValidationMessage { get; set; }
 
 
 
@@ -42,7 +42,7 @@ public partial class MaskingRuleValidateResponse : IEquatable<MaskingRuleValidat
     /// </summary>
     /// <value>Masked text.</value>
     [JsonPropertyName("maskedText")]
-    public string MaskedText { get; private set; }
+    public string MaskedText { get; set; }
 
 
     /// <summary>

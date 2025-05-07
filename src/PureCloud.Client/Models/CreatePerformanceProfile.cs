@@ -42,7 +42,7 @@ public partial class CreatePerformanceProfile : IEquatable<CreatePerformanceProf
     /// </summary>
     /// <value>The globally unique identifier for the object.</value>
     [JsonPropertyName("id")]
-    public string Id { get; private set; }
+    public string Id { get; set; }
 
 
 
@@ -78,7 +78,7 @@ public partial class CreatePerformanceProfile : IEquatable<CreatePerformanceProf
     /// </summary>
     /// <value>Order of the associated metrics. The list should contain valid ids for metrics</value>
     [JsonPropertyName("metricOrders")]
-    public List<string> MetricOrders { get; private set; }
+    public List<string> MetricOrders { get; set; }
 
 
 
@@ -87,7 +87,7 @@ public partial class CreatePerformanceProfile : IEquatable<CreatePerformanceProf
     /// </summary>
     /// <value>Creation date for this performance profile. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z</value>
     [JsonPropertyName("dateCreated")]
-    public DateTime? DateCreated { get; private set; }
+    public DateTime? DateCreated { get; set; }
 
 
 
@@ -114,7 +114,7 @@ public partial class CreatePerformanceProfile : IEquatable<CreatePerformanceProf
     /// </summary>
     /// <value>The number of members in this performance profile</value>
     [JsonPropertyName("memberCount")]
-    public int? MemberCount { get; private set; }
+    public int? MemberCount { get; set; }
 
 
 
@@ -132,7 +132,7 @@ public partial class CreatePerformanceProfile : IEquatable<CreatePerformanceProf
     /// </summary>
     /// <value>The URI for this object</value>
     [JsonPropertyName("selfUri")]
-    public string SelfUri { get; private set; }
+    public string SelfUri { get; set; }
 
 
     /// <summary>

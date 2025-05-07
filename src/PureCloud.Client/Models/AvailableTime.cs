@@ -78,7 +78,7 @@ public partial class AvailableTime : IEquatable<AvailableTime>
     /// </summary>
     /// <value>Workforce Management activity category for this availability period</value>
     [JsonPropertyName("activityCategory")]
-    public ActivityCategoryEnum? ActivityCategory { get; private set; }
+    public ActivityCategoryEnum? ActivityCategory { get; set; }
     /// <summary>
     /// Initializes a new instance of the <see cref="AvailableTime" /> class.
     /// </summary>
@@ -94,7 +94,7 @@ public partial class AvailableTime : IEquatable<AvailableTime>
     /// </summary>
     /// <value>Start of the availability period. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z</value>
     [JsonPropertyName("dateStart")]
-    public DateTime? DateStart { get; private set; }
+    public DateTime? DateStart { get; set; }
 
 
 
@@ -103,7 +103,7 @@ public partial class AvailableTime : IEquatable<AvailableTime>
     /// </summary>
     /// <value>Length of availability period in minutes</value>
     [JsonPropertyName("lengthInMinutes")]
-    public int? LengthInMinutes { get; private set; }
+    public int? LengthInMinutes { get; set; }
 
 
 
@@ -112,7 +112,7 @@ public partial class AvailableTime : IEquatable<AvailableTime>
     /// </summary>
     /// <value>Indicates if this availability period is paid in Workforce Management schedule</value>
     [JsonPropertyName("isPaid")]
-    public bool? IsPaid { get; private set; }
+    public bool? IsPaid { get; set; }
 
 
 
@@ -123,7 +123,7 @@ public partial class AvailableTime : IEquatable<AvailableTime>
     /// </summary>
     /// <value>Workforce Management schedule information associated with the available time</value>
     [JsonPropertyName("wfmSchedule")]
-    public WfmScheduleReference WfmSchedule { get; private set; }
+    public WfmScheduleReference WfmSchedule { get; set; }
 
 
     /// <summary>

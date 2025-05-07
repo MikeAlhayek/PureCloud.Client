@@ -24,7 +24,7 @@ public partial class AgentOwnedMappingPreview : IEquatable<AgentOwnedMappingPrev
     /// </summary>
     /// <value>The raw value of the agent-owned column</value>
     [JsonPropertyName("agentOwnedColumn")]
-    public string AgentOwnedColumn { get; private set; }
+    public string AgentOwnedColumn { get; set; }
 
 
 
@@ -33,7 +33,7 @@ public partial class AgentOwnedMappingPreview : IEquatable<AgentOwnedMappingPrev
     /// </summary>
     /// <value>The email address of the user, if it exists</value>
     [JsonPropertyName("email")]
-    public string Email { get; private set; }
+    public string Email { get; set; }
 
 
 
@@ -42,7 +42,7 @@ public partial class AgentOwnedMappingPreview : IEquatable<AgentOwnedMappingPrev
     /// </summary>
     /// <value>The id of the user, if it exists</value>
     [JsonPropertyName("userId")]
-    public string UserId { get; private set; }
+    public string UserId { get; set; }
 
 
 
@@ -51,7 +51,7 @@ public partial class AgentOwnedMappingPreview : IEquatable<AgentOwnedMappingPrev
     /// </summary>
     /// <value>Whether the user exists</value>
     [JsonPropertyName("exists")]
-    public bool? Exists { get; private set; }
+    public bool? Exists { get; set; }
 
 
 
@@ -60,7 +60,7 @@ public partial class AgentOwnedMappingPreview : IEquatable<AgentOwnedMappingPrev
     /// </summary>
     /// <value>Whether the user is a member of the campaign&#39;s queue</value>
     [JsonPropertyName("isQueueMember")]
-    public bool? IsQueueMember { get; private set; }
+    public bool? IsQueueMember { get; set; }
 
 
 
@@ -69,7 +69,7 @@ public partial class AgentOwnedMappingPreview : IEquatable<AgentOwnedMappingPrev
     /// </summary>
     /// <value>The number of contact records whose agent-owned column matches the raw value</value>
     [JsonPropertyName("recordCount")]
-    public int? RecordCount { get; private set; }
+    public int? RecordCount { get; set; }
 
 
     /// <summary>

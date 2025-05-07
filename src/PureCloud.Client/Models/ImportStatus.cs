@@ -42,7 +42,7 @@ public partial class ImportStatus : IEquatable<ImportStatus>
     /// </summary>
     /// <value>current status of the import</value>
     [JsonPropertyName("state")]
-    public StateEnum? State { get; private set; }
+    public StateEnum? State { get; set; }
     /// <summary>
     /// Initializes a new instance of the <see cref="ImportStatus" /> class.
     /// </summary>
@@ -60,7 +60,7 @@ public partial class ImportStatus : IEquatable<ImportStatus>
     /// </summary>
     /// <value>total number of records to be imported</value>
     [JsonPropertyName("totalRecords")]
-    public long? TotalRecords { get; private set; }
+    public long? TotalRecords { get; set; }
 
 
 
@@ -69,7 +69,7 @@ public partial class ImportStatus : IEquatable<ImportStatus>
     /// </summary>
     /// <value>number of records finished importing</value>
     [JsonPropertyName("completedRecords")]
-    public long? CompletedRecords { get; private set; }
+    public long? CompletedRecords { get; set; }
 
 
 
@@ -78,7 +78,7 @@ public partial class ImportStatus : IEquatable<ImportStatus>
     /// </summary>
     /// <value>percentage of records finished importing</value>
     [JsonPropertyName("percentComplete")]
-    public int? PercentComplete { get; private set; }
+    public int? PercentComplete { get; set; }
 
 
 
@@ -87,7 +87,7 @@ public partial class ImportStatus : IEquatable<ImportStatus>
     /// </summary>
     /// <value>if the import has failed, the reason for the failure</value>
     [JsonPropertyName("failureReason")]
-    public string FailureReason { get; private set; }
+    public string FailureReason { get; set; }
 
 
 
@@ -96,7 +96,7 @@ public partial class ImportStatus : IEquatable<ImportStatus>
     /// </summary>
     /// <value>The contact list Ids for target contact lists.</value>
     [JsonPropertyName("targetContactListIds")]
-    public List<string> TargetContactListIds { get; private set; }
+    public List<string> TargetContactListIds { get; set; }
 
 
 
@@ -105,7 +105,7 @@ public partial class ImportStatus : IEquatable<ImportStatus>
     /// </summary>
     /// <value>The prefix for the contact list name</value>
     [JsonPropertyName("listNamePrefix")]
-    public string ListNamePrefix { get; private set; }
+    public string ListNamePrefix { get; set; }
 
 
     /// <summary>

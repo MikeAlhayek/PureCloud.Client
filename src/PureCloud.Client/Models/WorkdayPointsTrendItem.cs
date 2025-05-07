@@ -24,7 +24,7 @@ public partial class WorkdayPointsTrendItem : IEquatable<WorkdayPointsTrendItem>
     /// </summary>
     /// <value>workday date for the points trend. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd</value>
     [JsonPropertyName("dateWorkday")]
-    public string DateWorkday { get; private set; }
+    public string DateWorkday { get; set; }
 
 
 
@@ -33,7 +33,7 @@ public partial class WorkdayPointsTrendItem : IEquatable<WorkdayPointsTrendItem>
     /// </summary>
     /// <value>workday points for the date</value>
     [JsonPropertyName("points")]
-    public double? Points { get; private set; }
+    public double? Points { get; set; }
 
 
     /// <summary>

@@ -110,7 +110,7 @@ public partial class WebDeploymentConfigurationVersion : IEquatable<WebDeploymen
     /// </summary>
     /// <value>The configuration version ID</value>
     [JsonPropertyName("id")]
-    public string Id { get; private set; }
+    public string Id { get; set; }
 
 
 
@@ -128,7 +128,7 @@ public partial class WebDeploymentConfigurationVersion : IEquatable<WebDeploymen
     /// </summary>
     /// <value>The version of the configuration</value>
     [JsonPropertyName("version")]
-    public string Version { get; private set; }
+    public string Version { get; set; }
 
 
 
@@ -245,7 +245,7 @@ public partial class WebDeploymentConfigurationVersion : IEquatable<WebDeploymen
     /// </summary>
     /// <value>The date the configuration version was created. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z</value>
     [JsonPropertyName("dateCreated")]
-    public DateTime? DateCreated { get; private set; }
+    public DateTime? DateCreated { get; set; }
 
 
 
@@ -254,7 +254,7 @@ public partial class WebDeploymentConfigurationVersion : IEquatable<WebDeploymen
     /// </summary>
     /// <value>The date the configuration version was most recently modified. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z</value>
     [JsonPropertyName("dateModified")]
-    public DateTime? DateModified { get; private set; }
+    public DateTime? DateModified { get; set; }
 
 
 
@@ -263,7 +263,7 @@ public partial class WebDeploymentConfigurationVersion : IEquatable<WebDeploymen
     /// </summary>
     /// <value>The date the configuration version was most recently published. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z</value>
     [JsonPropertyName("datePublished")]
-    public DateTime? DatePublished { get; private set; }
+    public DateTime? DatePublished { get; set; }
 
 
 
@@ -272,7 +272,7 @@ public partial class WebDeploymentConfigurationVersion : IEquatable<WebDeploymen
     /// </summary>
     /// <value>A reference to the user who most recently modified the configuration version</value>
     [JsonPropertyName("lastModifiedUser")]
-    public AddressableEntityRef LastModifiedUser { get; private set; }
+    public AddressableEntityRef LastModifiedUser { get; set; }
 
 
 
@@ -281,7 +281,7 @@ public partial class WebDeploymentConfigurationVersion : IEquatable<WebDeploymen
     /// </summary>
     /// <value>A reference to the user who created the configuration version</value>
     [JsonPropertyName("createdUser")]
-    public AddressableEntityRef CreatedUser { get; private set; }
+    public AddressableEntityRef CreatedUser { get; set; }
 
 
 
@@ -290,7 +290,7 @@ public partial class WebDeploymentConfigurationVersion : IEquatable<WebDeploymen
     /// </summary>
     /// <value>A reference to the user who published the configuration version</value>
     [JsonPropertyName("publishedUser")]
-    public AddressableEntityRef PublishedUser { get; private set; }
+    public AddressableEntityRef PublishedUser { get; set; }
 
 
 
@@ -301,7 +301,7 @@ public partial class WebDeploymentConfigurationVersion : IEquatable<WebDeploymen
     /// </summary>
     /// <value>The URI for this object</value>
     [JsonPropertyName("selfUri")]
-    public string SelfUri { get; private set; }
+    public string SelfUri { get; set; }
 
 
     /// <summary>

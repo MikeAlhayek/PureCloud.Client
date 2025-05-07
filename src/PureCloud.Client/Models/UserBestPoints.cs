@@ -24,7 +24,7 @@ public partial class UserBestPoints : IEquatable<UserBestPoints>
     /// </summary>
     /// <value>The requested user for the best points</value>
     [JsonPropertyName("user")]
-    public UserReference User { get; private set; }
+    public UserReference User { get; set; }
 
 
 
@@ -33,7 +33,7 @@ public partial class UserBestPoints : IEquatable<UserBestPoints>
     /// </summary>
     /// <value>List of best point for the requested user</value>
     [JsonPropertyName("bestPoints")]
-    public List<UserBestPointsItem> BestPoints { get; private set; }
+    public List<UserBestPointsItem> BestPoints { get; set; }
 
 
     /// <summary>

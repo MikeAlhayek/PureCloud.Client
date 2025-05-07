@@ -74,7 +74,7 @@ public partial class Station : IEquatable<Station>
     /// </summary>
     /// <value>The globally unique identifier for the object.</value>
     [JsonPropertyName("id")]
-    public string Id { get; private set; }
+    public string Id { get; set; }
 
 
 
@@ -151,7 +151,7 @@ public partial class Station : IEquatable<Station>
     /// </summary>
     /// <value>The default or configured value of media dscp for the station. Empty if station type is not inin_webrtc_softphone.</value>
     [JsonPropertyName("webRtcMediaDscp")]
-    public int? WebRtcMediaDscp { get; private set; }
+    public int? WebRtcMediaDscp { get; set; }
 
 
 
@@ -160,7 +160,7 @@ public partial class Station : IEquatable<Station>
     /// </summary>
     /// <value>The default or configured value of persistent connection setting for the station. Empty if station type is not inin_webrtc_softphone.</value>
     [JsonPropertyName("webRtcPersistentEnabled")]
-    public bool? WebRtcPersistentEnabled { get; private set; }
+    public bool? WebRtcPersistentEnabled { get; set; }
 
 
 
@@ -169,7 +169,7 @@ public partial class Station : IEquatable<Station>
     /// </summary>
     /// <value>Whether the station is configured to require TURN for routing WebRTC calls. Empty if station type is not inin_webrtc_softphone.</value>
     [JsonPropertyName("webRtcForceTurn")]
-    public bool? WebRtcForceTurn { get; private set; }
+    public bool? WebRtcForceTurn { get; set; }
 
 
 
@@ -178,7 +178,7 @@ public partial class Station : IEquatable<Station>
     /// </summary>
     /// <value>The number of call appearances on the station.</value>
     [JsonPropertyName("webRtcCallAppearances")]
-    public int? WebRtcCallAppearances { get; private set; }
+    public int? WebRtcCallAppearances { get; set; }
 
 
 
@@ -187,7 +187,7 @@ public partial class Station : IEquatable<Station>
     /// </summary>
     /// <value>True when the media helper required.</value>
     [JsonPropertyName("webRtcRequireMediaHelper")]
-    public bool? WebRtcRequireMediaHelper { get; private set; }
+    public bool? WebRtcRequireMediaHelper { get; set; }
 
 
 
@@ -196,7 +196,7 @@ public partial class Station : IEquatable<Station>
     /// </summary>
     /// <value>The URI for this object</value>
     [JsonPropertyName("selfUri")]
-    public string SelfUri { get; private set; }
+    public string SelfUri { get; set; }
 
 
     /// <summary>

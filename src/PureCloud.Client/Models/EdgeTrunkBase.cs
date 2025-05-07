@@ -81,7 +81,7 @@ public partial class EdgeTrunkBase : IEquatable<EdgeTrunkBase>
     /// </summary>
     /// <value>Indicates if the resource is active, inactive, or deleted.</value>
     [JsonPropertyName("state")]
-    public StateEnum? State { get; private set; }
+    public StateEnum? State { get; set; }
     /// <summary>
     /// The type of this trunk base.
     /// </summary>
@@ -127,7 +127,7 @@ public partial class EdgeTrunkBase : IEquatable<EdgeTrunkBase>
     /// </summary>
     /// <value>The globally unique identifier for the object.</value>
     [JsonPropertyName("id")]
-    public string Id { get; private set; }
+    public string Id { get; set; }
 
 
 
@@ -172,7 +172,7 @@ public partial class EdgeTrunkBase : IEquatable<EdgeTrunkBase>
     /// </summary>
     /// <value>The date the resource was created. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z</value>
     [JsonPropertyName("dateCreated")]
-    public DateTime? DateCreated { get; private set; }
+    public DateTime? DateCreated { get; set; }
 
 
 
@@ -181,7 +181,7 @@ public partial class EdgeTrunkBase : IEquatable<EdgeTrunkBase>
     /// </summary>
     /// <value>The date of the last modification to the resource. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z</value>
     [JsonPropertyName("dateModified")]
-    public DateTime? DateModified { get; private set; }
+    public DateTime? DateModified { get; set; }
 
 
 
@@ -190,7 +190,7 @@ public partial class EdgeTrunkBase : IEquatable<EdgeTrunkBase>
     /// </summary>
     /// <value>The ID of the user that last modified the resource.</value>
     [JsonPropertyName("modifiedBy")]
-    public string ModifiedBy { get; private set; }
+    public string ModifiedBy { get; set; }
 
 
 
@@ -199,7 +199,7 @@ public partial class EdgeTrunkBase : IEquatable<EdgeTrunkBase>
     /// </summary>
     /// <value>The ID of the user that created the resource.</value>
     [JsonPropertyName("createdBy")]
-    public string CreatedBy { get; private set; }
+    public string CreatedBy { get; set; }
 
 
 
@@ -210,7 +210,7 @@ public partial class EdgeTrunkBase : IEquatable<EdgeTrunkBase>
     /// </summary>
     /// <value>The application that last modified the resource.</value>
     [JsonPropertyName("modifiedByApp")]
-    public string ModifiedByApp { get; private set; }
+    public string ModifiedByApp { get; set; }
 
 
 
@@ -219,7 +219,7 @@ public partial class EdgeTrunkBase : IEquatable<EdgeTrunkBase>
     /// </summary>
     /// <value>The application that created the resource.</value>
     [JsonPropertyName("createdByApp")]
-    public string CreatedByApp { get; private set; }
+    public string CreatedByApp { get; set; }
 
 
 
@@ -265,7 +265,7 @@ public partial class EdgeTrunkBase : IEquatable<EdgeTrunkBase>
     /// </summary>
     /// <value>The URI for this object</value>
     [JsonPropertyName("selfUri")]
-    public string SelfUri { get; private set; }
+    public string SelfUri { get; set; }
 
 
     /// <summary>

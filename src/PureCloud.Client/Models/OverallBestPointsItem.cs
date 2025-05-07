@@ -48,7 +48,7 @@ public partial class OverallBestPointsItem : IEquatable<OverallBestPointsItem>
     /// </summary>
     /// <value>Best points aggregation interval granularity</value>
     [JsonPropertyName("granularityType")]
-    public GranularityTypeEnum? GranularityType { get; private set; }
+    public GranularityTypeEnum? GranularityType { get; set; }
     /// <summary>
     /// Initializes a new instance of the <see cref="OverallBestPointsItem" /> class.
     /// </summary>
@@ -66,7 +66,7 @@ public partial class OverallBestPointsItem : IEquatable<OverallBestPointsItem>
     /// </summary>
     /// <value>List of associated users with the equal points.</value>
     [JsonPropertyName("users")]
-    public List<UserReference> Users { get; private set; }
+    public List<UserReference> Users { get; set; }
 
 
 
@@ -75,7 +75,7 @@ public partial class OverallBestPointsItem : IEquatable<OverallBestPointsItem>
     /// </summary>
     /// <value>The count of the user IDs in the list</value>
     [JsonPropertyName("count")]
-    public int? Count { get; private set; }
+    public int? Count { get; set; }
 
 
 
@@ -84,7 +84,7 @@ public partial class OverallBestPointsItem : IEquatable<OverallBestPointsItem>
     /// </summary>
     /// <value>Gamification points</value>
     [JsonPropertyName("points")]
-    public int? Points { get; private set; }
+    public int? Points { get; set; }
 
 
 
@@ -93,7 +93,7 @@ public partial class OverallBestPointsItem : IEquatable<OverallBestPointsItem>
     /// </summary>
     /// <value>Start workday of the best points aggregation interval. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd</value>
     [JsonPropertyName("dateStartWorkday")]
-    public string DateStartWorkday { get; private set; }
+    public string DateStartWorkday { get; set; }
 
 
 
@@ -102,7 +102,7 @@ public partial class OverallBestPointsItem : IEquatable<OverallBestPointsItem>
     /// </summary>
     /// <value>End workday of the best points aggregation interval. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd</value>
     [JsonPropertyName("dateEndWorkday")]
-    public string DateEndWorkday { get; private set; }
+    public string DateEndWorkday { get; set; }
 
 
     /// <summary>

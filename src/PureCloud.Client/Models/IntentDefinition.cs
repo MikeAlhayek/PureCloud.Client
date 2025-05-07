@@ -40,7 +40,7 @@ public partial class IntentDefinition : IEquatable<IntentDefinition>
     /// </summary>
     /// <value>ID of the intent.</value>
     [JsonPropertyName("id")]
-    public string Id { get; private set; }
+    public string Id { get; set; }
 
 
 
@@ -76,7 +76,7 @@ public partial class IntentDefinition : IEquatable<IntentDefinition>
     /// </summary>
     /// <value>The references for the named entity used in this intent.This field is mutually exclusive with entityTypeBindings</value>
     [JsonPropertyName("entityNameReferences")]
-    public List<string> EntityNameReferences { get; private set; }
+    public List<string> EntityNameReferences { get; set; }
 
 
 

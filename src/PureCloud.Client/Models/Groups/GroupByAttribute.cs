@@ -24,7 +24,7 @@ public partial class GroupByAttribute : IEquatable<GroupByAttribute>
     /// </summary>
     /// <value>Group by attribute</value>
     [JsonPropertyName("attribute")]
-    public string Attribute { get; private set; }
+    public string Attribute { get; set; }
 
 
 
@@ -33,7 +33,7 @@ public partial class GroupByAttribute : IEquatable<GroupByAttribute>
     /// </summary>
     /// <value>Value of this group by attribute</value>
     [JsonPropertyName("value")]
-    public string Value { get; private set; }
+    public string Value { get; set; }
 
 
     /// <summary>

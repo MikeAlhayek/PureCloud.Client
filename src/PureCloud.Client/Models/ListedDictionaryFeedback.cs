@@ -36,7 +36,7 @@ public partial class ListedDictionaryFeedback : IEquatable<ListedDictionaryFeedb
     /// </summary>
     /// <value>The source of the given dictionary feedback</value>
     [JsonPropertyName("source")]
-    public SourceEnum? Source { get; private set; }
+    public SourceEnum? Source { get; set; }
 
     /// <summary>
     /// Initializes a new instance of the <see cref="ListedDictionaryFeedback" /> class.
@@ -64,7 +64,7 @@ public partial class ListedDictionaryFeedback : IEquatable<ListedDictionaryFeedb
     /// </summary>
     /// <value>The globally unique identifier for the object.</value>
     [JsonPropertyName("id")]
-    public string Id { get; private set; }
+    public string Id { get; set; }
 
 
 
@@ -102,7 +102,7 @@ public partial class ListedDictionaryFeedback : IEquatable<ListedDictionaryFeedb
     /// </summary>
     /// <value>The Timestamp when dictionary feedback created. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z</value>
     [JsonPropertyName("dateCreated")]
-    public DateTime? DateCreated { get; private set; }
+    public DateTime? DateCreated { get; set; }
 
 
 
@@ -111,7 +111,7 @@ public partial class ListedDictionaryFeedback : IEquatable<ListedDictionaryFeedb
     /// </summary>
     /// <value>The Id of the user who created the dictionary feedback</value>
     [JsonPropertyName("createdBy")]
-    public UserReference CreatedBy { get; private set; }
+    public UserReference CreatedBy { get; set; }
 
 
 
@@ -120,7 +120,7 @@ public partial class ListedDictionaryFeedback : IEquatable<ListedDictionaryFeedb
     /// </summary>
     /// <value>The Timestamp when dictionary feedback modified. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z</value>
     [JsonPropertyName("dateModified")]
-    public DateTime? DateModified { get; private set; }
+    public DateTime? DateModified { get; set; }
 
 
 
@@ -129,7 +129,7 @@ public partial class ListedDictionaryFeedback : IEquatable<ListedDictionaryFeedb
     /// </summary>
     /// <value>The Id of the user who modified the dictionary feedback</value>
     [JsonPropertyName("modifiedBy")]
-    public UserReference ModifiedBy { get; private set; }
+    public UserReference ModifiedBy { get; set; }
 
 
 
@@ -138,7 +138,7 @@ public partial class ListedDictionaryFeedback : IEquatable<ListedDictionaryFeedb
     /// </summary>
     /// <value>The URI for this object</value>
     [JsonPropertyName("selfUri")]
-    public string SelfUri { get; private set; }
+    public string SelfUri { get; set; }
 
 
     /// <summary>

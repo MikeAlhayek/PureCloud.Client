@@ -32,7 +32,7 @@ public partial class ConversationThreadingWindow : IEquatable<ConversationThread
     /// </summary>
     /// <value>The globally unique identifier for the object.</value>
     [JsonPropertyName("id")]
-    public string Id { get; private set; }
+    public string Id { get; set; }
 
 
 
@@ -50,7 +50,7 @@ public partial class ConversationThreadingWindow : IEquatable<ConversationThread
     /// </summary>
     /// <value>The default conversation threading window timeout (Minutes)</value>
     [JsonPropertyName("defaultTimeoutMinutes")]
-    public long? DefaultTimeoutMinutes { get; private set; }
+    public long? DefaultTimeoutMinutes { get; set; }
 
 
     /// <summary>

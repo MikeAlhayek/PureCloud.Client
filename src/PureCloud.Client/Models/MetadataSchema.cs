@@ -24,7 +24,7 @@ public partial class MetadataSchema : IEquatable<MetadataSchema>
     /// </summary>
     /// <value>title for the data gathering page</value>
     [JsonPropertyName("title")]
-    public string Title { get; private set; }
+    public string Title { get; set; }
 
 
 
@@ -33,7 +33,7 @@ public partial class MetadataSchema : IEquatable<MetadataSchema>
     /// </summary>
     /// <value>description of the data being gathered on this page</value>
     [JsonPropertyName("description")]
-    public string Description { get; private set; }
+    public string Description { get; set; }
 
 
 
@@ -42,7 +42,7 @@ public partial class MetadataSchema : IEquatable<MetadataSchema>
     /// </summary>
     /// <value>type of data being gathered</value>
     [JsonPropertyName("type")]
-    public string Type { get; private set; }
+    public string Type { get; set; }
 
 
 
@@ -51,7 +51,7 @@ public partial class MetadataSchema : IEquatable<MetadataSchema>
     /// </summary>
     /// <value>list of properties for which input is to be gathered, bother required and optional</value>
     [JsonPropertyName("properties")]
-    public List<Dictionary<string, MetadataProperty>> Properties { get; private set; }
+    public List<Dictionary<string, MetadataProperty>> Properties { get; set; }
 
 
 
@@ -60,7 +60,7 @@ public partial class MetadataSchema : IEquatable<MetadataSchema>
     /// </summary>
     /// <value>list of required properties</value>
     [JsonPropertyName("required")]
-    public List<string> Required { get; private set; }
+    public List<string> Required { get; set; }
 
 
     /// <summary>

@@ -48,7 +48,7 @@ public partial class FunctionRuntime : IEquatable<FunctionRuntime>
     /// </summary>
     /// <value>Availability status of runtime</value>
     [JsonPropertyName("status")]
-    public StatusEnum? Status { get; private set; }
+    public StatusEnum? Status { get; set; }
     /// <summary>
     /// Initializes a new instance of the <see cref="FunctionRuntime" /> class.
     /// </summary>
@@ -64,7 +64,7 @@ public partial class FunctionRuntime : IEquatable<FunctionRuntime>
     /// </summary>
     /// <value>Name of the function runtime.</value>
     [JsonPropertyName("name")]
-    public string Name { get; private set; }
+    public string Name { get; set; }
 
 
 
@@ -73,7 +73,7 @@ public partial class FunctionRuntime : IEquatable<FunctionRuntime>
     /// </summary>
     /// <value>Description of function runtime.</value>
     [JsonPropertyName("description")]
-    public string Description { get; private set; }
+    public string Description { get; set; }
 
 
 
@@ -84,7 +84,7 @@ public partial class FunctionRuntime : IEquatable<FunctionRuntime>
     /// </summary>
     /// <value>Optional end of life date. Present if the status is Deprecated. Date represents when support for runtime can no longer be guaranteed. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd</value>
     [JsonPropertyName("dateEndOfLife")]
-    public string DateEndOfLife { get; private set; }
+    public string DateEndOfLife { get; set; }
 
 
     /// <summary>

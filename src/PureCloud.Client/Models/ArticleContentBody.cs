@@ -24,7 +24,7 @@ public partial class ArticleContentBody : IEquatable<ArticleContentBody>
     /// </summary>
     /// <value>Presigned URL to retrieve the document content.</value>
     [JsonPropertyName("locationUrl")]
-    public string LocationUrl { get; private set; }
+    public string LocationUrl { get; set; }
 
 
     /// <summary>

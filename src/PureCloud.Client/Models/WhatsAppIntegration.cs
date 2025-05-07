@@ -168,13 +168,13 @@ public partial class WhatsAppIntegration : IEquatable<WhatsAppIntegration>
     /// </summary>
     /// <value>The status code of WhatsApp Integration activation process</value>
     [JsonPropertyName("activationStatusCode")]
-    public ActivationStatusCodeEnum? ActivationStatusCode { get; private set; }
+    public ActivationStatusCodeEnum? ActivationStatusCode { get; set; }
     /// <summary>
     /// Status of asynchronous create operation
     /// </summary>
     /// <value>Status of asynchronous create operation</value>
     [JsonPropertyName("createStatus")]
-    public CreateStatusEnum? CreateStatus { get; private set; }
+    public CreateStatusEnum? CreateStatus { get; set; }
 
     /// <summary>
     /// Initializes a new instance of the <see cref="WhatsAppIntegration" /> class.
@@ -216,7 +216,7 @@ public partial class WhatsAppIntegration : IEquatable<WhatsAppIntegration>
     /// </summary>
     /// <value>A unique Integration Id.</value>
     [JsonPropertyName("id")]
-    public string Id { get; private set; }
+    public string Id { get; set; }
 
 
 
@@ -260,7 +260,7 @@ public partial class WhatsAppIntegration : IEquatable<WhatsAppIntegration>
     /// </summary>
     /// <value>The list of available WhatsApp phone numbers for this account. Please select one phone number from this list to use with the created integration.</value>
     [JsonPropertyName("availablePhoneNumbers")]
-    public WhatsAppAvailablePhoneNumberDetailsListing AvailablePhoneNumbers { get; private set; }
+    public WhatsAppAvailablePhoneNumberDetailsListing AvailablePhoneNumbers { get; set; }
 
 
 
@@ -271,7 +271,7 @@ public partial class WhatsAppIntegration : IEquatable<WhatsAppIntegration>
     /// </summary>
     /// <value>The recipient associated to the WhatsApp Integration. This recipient is used to associate a flow to an integration</value>
     [JsonPropertyName("recipient")]
-    public DomainEntityRef Recipient { get; private set; }
+    public DomainEntityRef Recipient { get; set; }
 
 
 
@@ -327,7 +327,7 @@ public partial class WhatsAppIntegration : IEquatable<WhatsAppIntegration>
     /// </summary>
     /// <value>The error information of WhatsApp Integration activation process</value>
     [JsonPropertyName("activationErrorInfo")]
-    public ErrorBody ActivationErrorInfo { get; private set; }
+    public ErrorBody ActivationErrorInfo { get; set; }
 
 
 
@@ -338,7 +338,7 @@ public partial class WhatsAppIntegration : IEquatable<WhatsAppIntegration>
     /// </summary>
     /// <value>Error information returned, if createStatus is set to Error</value>
     [JsonPropertyName("createError")]
-    public ErrorBody CreateError { get; private set; }
+    public ErrorBody CreateError { get; set; }
 
 
 
@@ -347,7 +347,7 @@ public partial class WhatsAppIntegration : IEquatable<WhatsAppIntegration>
     /// </summary>
     /// <value>The URI for this object</value>
     [JsonPropertyName("selfUri")]
-    public string SelfUri { get; private set; }
+    public string SelfUri { get; set; }
 
 
     /// <summary>

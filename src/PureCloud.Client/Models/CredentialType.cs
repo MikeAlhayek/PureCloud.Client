@@ -26,7 +26,7 @@ public partial class CredentialType : IEquatable<CredentialType>
     /// </summary>
     /// <value>The globally unique identifier for the object.</value>
     [JsonPropertyName("id")]
-    public string Id { get; private set; }
+    public string Id { get; set; }
 
 
 
@@ -43,7 +43,7 @@ public partial class CredentialType : IEquatable<CredentialType>
     /// </summary>
     /// <value>Properties describing credentials of this type.</value>
     [JsonPropertyName("properties")]
-    public object Properties { get; private set; }
+    public object Properties { get; set; }
 
 
 
@@ -52,7 +52,7 @@ public partial class CredentialType : IEquatable<CredentialType>
     /// </summary>
     /// <value>Order in which properties should be displayed in the UI.</value>
     [JsonPropertyName("displayOrder")]
-    public List<string> DisplayOrder { get; private set; }
+    public List<string> DisplayOrder { get; set; }
 
 
 
@@ -61,7 +61,7 @@ public partial class CredentialType : IEquatable<CredentialType>
     /// </summary>
     /// <value>Properties that are required fields.</value>
     [JsonPropertyName("required")]
-    public List<string> Required { get; private set; }
+    public List<string> Required { get; set; }
 
 
     /// <summary>

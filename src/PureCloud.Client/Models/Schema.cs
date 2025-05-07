@@ -24,7 +24,7 @@ public partial class Schema : IEquatable<Schema>
     /// </summary>
     /// <value>A core type&#39;s title</value>
     [JsonPropertyName("title")]
-    public string Title { get; private set; }
+    public string Title { get; set; }
 
 
 
@@ -33,7 +33,7 @@ public partial class Schema : IEquatable<Schema>
     /// </summary>
     /// <value>A core type&#39;s description</value>
     [JsonPropertyName("description")]
-    public string Description { get; private set; }
+    public string Description { get; set; }
 
 
 
@@ -42,7 +42,7 @@ public partial class Schema : IEquatable<Schema>
     /// </summary>
     /// <value>An array of fundamental JSON Schema primitive types on which the core type is based</value>
     [JsonPropertyName("type")]
-    public List<string> Type { get; private set; }
+    public List<string> Type { get; set; }
 
 
 
@@ -51,7 +51,7 @@ public partial class Schema : IEquatable<Schema>
     /// </summary>
     /// <value>Denotes the type and pattern of the items in an enum core type</value>
     [JsonPropertyName("items")]
-    public Items Items { get; private set; }
+    public Items Items { get; set; }
 
 
 
@@ -60,7 +60,7 @@ public partial class Schema : IEquatable<Schema>
     /// </summary>
     /// <value>For the \&quot;date\&quot; and \&quot;datetime\&quot; core types, denotes the regex prescribing the allowable date/datetime format</value>
     [JsonPropertyName("pattern")]
-    public string Pattern { get; private set; }
+    public string Pattern { get; set; }
 
 
     /// <summary>

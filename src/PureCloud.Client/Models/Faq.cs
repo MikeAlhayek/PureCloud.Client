@@ -24,7 +24,7 @@ public partial class Faq : IEquatable<Faq>
     /// </summary>
     /// <value>Question from the knowledge base that was matched to user request.</value>
     [JsonPropertyName("question")]
-    public string Question { get; private set; }
+    public string Question { get; set; }
 
 
 
@@ -33,7 +33,7 @@ public partial class Faq : IEquatable<Faq>
     /// </summary>
     /// <value>Answer from the knowledge base corresponding to the identified question.</value>
     [JsonPropertyName("answer")]
-    public string Answer { get; private set; }
+    public string Answer { get; set; }
 
 
 
@@ -42,7 +42,7 @@ public partial class Faq : IEquatable<Faq>
     /// </summary>
     /// <value>A URI uniquely identifying the document, e.g. projects/acme-inc/knowledgeBases/MTAyNjgxNDU1Nzc3NTM1NzU0MjQ/documents/MTI5ODc3NzQzOTQ5MTc5NzgxMTI.</value>
     [JsonPropertyName("sourceUri")]
-    public string SourceUri { get; private set; }
+    public string SourceUri { get; set; }
 
 
 
@@ -51,7 +51,7 @@ public partial class Faq : IEquatable<Faq>
     /// </summary>
     /// <value>URL pointing to a web page if document was sourced from a URL.</value>
     [JsonPropertyName("documentUrl")]
-    public string DocumentUrl { get; private set; }
+    public string DocumentUrl { get; set; }
 
 
 
@@ -60,7 +60,7 @@ public partial class Faq : IEquatable<Faq>
     /// </summary>
     /// <value>A human-readable description of the document, e.g. &#39;Sample store FAQ&#39;</value>
     [JsonPropertyName("documentDisplayName")]
-    public string DocumentDisplayName { get; private set; }
+    public string DocumentDisplayName { get; set; }
 
 
 
@@ -69,7 +69,7 @@ public partial class Faq : IEquatable<Faq>
     /// </summary>
     /// <value>Value between 0 and 1. 1 corresponds to very confident, 0 to not confident at all</value>
     [JsonPropertyName("confidence")]
-    public float? Confidence { get; private set; }
+    public float? Confidence { get; set; }
 
 
     /// <summary>

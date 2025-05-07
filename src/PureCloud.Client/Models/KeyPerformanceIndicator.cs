@@ -207,37 +207,37 @@ public partial class KeyPerformanceIndicator : IEquatable<KeyPerformanceIndicato
     /// </summary>
     /// <value>The optimization type of the Key Performance Indicator.</value>
     [JsonPropertyName("optimizationType")]
-    public OptimizationTypeEnum? OptimizationType { get; private set; }
+    public OptimizationTypeEnum? OptimizationType { get; set; }
     /// <summary>
     /// The problem type of the Key Performance Indicator.
     /// </summary>
     /// <value>The problem type of the Key Performance Indicator.</value>
     [JsonPropertyName("problemType")]
-    public ProblemTypeEnum? ProblemType { get; private set; }
+    public ProblemTypeEnum? ProblemType { get; set; }
     /// <summary>
     /// The type of Key Performance Indicator.
     /// </summary>
     /// <value>The type of Key Performance Indicator.</value>
     [JsonPropertyName("kpiType")]
-    public KpiTypeEnum? KpiType { get; private set; }
+    public KpiTypeEnum? KpiType { get; set; }
     /// <summary>
     /// Source of values for Key Performance Indicator.
     /// </summary>
     /// <value>Source of values for Key Performance Indicator.</value>
     [JsonPropertyName("source")]
-    public SourceEnum? Source { get; private set; }
+    public SourceEnum? Source { get; set; }
     /// <summary>
     /// The status of the Key Performance Indicator.
     /// </summary>
     /// <value>The status of the Key Performance Indicator.</value>
     [JsonPropertyName("status")]
-    public StatusEnum? Status { get; private set; }
+    public StatusEnum? Status { get; set; }
     /// <summary>
     /// The group the Key Performance Indicator belongs to.
     /// </summary>
     /// <value>The group the Key Performance Indicator belongs to.</value>
     [JsonPropertyName("kpiGroup")]
-    public KpiGroupEnum? KpiGroup { get; private set; }
+    public KpiGroupEnum? KpiGroup { get; set; }
     /// <summary>
     /// Initializes a new instance of the <see cref="KeyPerformanceIndicator" /> class.
     /// </summary>
@@ -253,7 +253,7 @@ public partial class KeyPerformanceIndicator : IEquatable<KeyPerformanceIndicato
     /// </summary>
     /// <value>The globally unique identifier for the object.</value>
     [JsonPropertyName("id")]
-    public string Id { get; private set; }
+    public string Id { get; set; }
 
 
 
@@ -262,7 +262,7 @@ public partial class KeyPerformanceIndicator : IEquatable<KeyPerformanceIndicato
     /// </summary>
     /// <value>The name of the Key Performance Indicator.</value>
     [JsonPropertyName("name")]
-    public string Name { get; private set; }
+    public string Name { get; set; }
 
 
 
@@ -275,7 +275,7 @@ public partial class KeyPerformanceIndicator : IEquatable<KeyPerformanceIndicato
     /// </summary>
     /// <value>DateTime indicating when the Key Performance Indicator was created. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z</value>
     [JsonPropertyName("dateCreated")]
-    public DateTime? DateCreated { get; private set; }
+    public DateTime? DateCreated { get; set; }
 
 
 
@@ -284,7 +284,7 @@ public partial class KeyPerformanceIndicator : IEquatable<KeyPerformanceIndicato
     /// </summary>
     /// <value>DateTime indicating when the Key Performance Indicator was modified. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z</value>
     [JsonPropertyName("dateModified")]
-    public DateTime? DateModified { get; private set; }
+    public DateTime? DateModified { get; set; }
 
 
 
@@ -293,7 +293,7 @@ public partial class KeyPerformanceIndicator : IEquatable<KeyPerformanceIndicato
     /// </summary>
     /// <value>The description of the Key Performance Indicator.</value>
     [JsonPropertyName("description")]
-    public string Description { get; private set; }
+    public string Description { get; set; }
 
 
 
@@ -306,7 +306,7 @@ public partial class KeyPerformanceIndicator : IEquatable<KeyPerformanceIndicato
     /// </summary>
     /// <value>Defines what wrap up codes are mapped to Key Performance Indicator.</value>
     [JsonPropertyName("wrapUpCodeConfig")]
-    public WrapUpCodeConfig WrapUpCodeConfig { get; private set; }
+    public WrapUpCodeConfig WrapUpCodeConfig { get; set; }
 
 
 
@@ -315,7 +315,7 @@ public partial class KeyPerformanceIndicator : IEquatable<KeyPerformanceIndicato
     /// </summary>
     /// <value>Defines what outcome ids are mapped to Key Performance Indicator.</value>
     [JsonPropertyName("outcomeConfig")]
-    public OutcomeConfig OutcomeConfig { get; private set; }
+    public OutcomeConfig OutcomeConfig { get; set; }
 
 
 
@@ -328,7 +328,7 @@ public partial class KeyPerformanceIndicator : IEquatable<KeyPerformanceIndicato
     /// </summary>
     /// <value>Queue IDs on which KPI specification is used.</value>
     [JsonPropertyName("queues")]
-    public List<string> Queues { get; private set; }
+    public List<string> Queues { get; set; }
 
 
 
@@ -337,7 +337,7 @@ public partial class KeyPerformanceIndicator : IEquatable<KeyPerformanceIndicato
     /// </summary>
     /// <value>The URI for this object</value>
     [JsonPropertyName("selfUri")]
-    public string SelfUri { get; private set; }
+    public string SelfUri { get; set; }
 
 
     /// <summary>

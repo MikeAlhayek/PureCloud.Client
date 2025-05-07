@@ -35,7 +35,7 @@ public partial class RoutingSkillReference : IEquatable<RoutingSkillReference>
     /// </summary>
     /// <value>The URI for this object</value>
     [JsonPropertyName("selfUri")]
-    public string SelfUri { get; private set; }
+    public string SelfUri { get; set; }
 
 
     /// <summary>

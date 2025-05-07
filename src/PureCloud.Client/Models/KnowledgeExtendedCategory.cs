@@ -306,7 +306,7 @@ public partial class KnowledgeExtendedCategory : IEquatable<KnowledgeExtendedCat
     /// </summary>
     /// <value>Actual language of the category</value>
     [JsonPropertyName("languageCode")]
-    public LanguageCodeEnum? LanguageCode { get; private set; }
+    public LanguageCodeEnum? LanguageCode { get; set; }
 
     /// <summary>
     /// Initializes a new instance of the <see cref="KnowledgeExtendedCategory" /> class.
@@ -332,7 +332,7 @@ public partial class KnowledgeExtendedCategory : IEquatable<KnowledgeExtendedCat
     /// </summary>
     /// <value>The globally unique identifier for the object.</value>
     [JsonPropertyName("id")]
-    public string Id { get; private set; }
+    public string Id { get; set; }
 
 
 
@@ -359,7 +359,7 @@ public partial class KnowledgeExtendedCategory : IEquatable<KnowledgeExtendedCat
     /// </summary>
     /// <value>Knowledge base which category does belong to</value>
     [JsonPropertyName("knowledgeBase")]
-    public KnowledgeBase KnowledgeBase { get; private set; }
+    public KnowledgeBase KnowledgeBase { get; set; }
 
 
 
@@ -370,7 +370,7 @@ public partial class KnowledgeExtendedCategory : IEquatable<KnowledgeExtendedCat
     /// </summary>
     /// <value>Category creation date-time. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z</value>
     [JsonPropertyName("dateCreated")]
-    public DateTime? DateCreated { get; private set; }
+    public DateTime? DateCreated { get; set; }
 
 
 
@@ -379,7 +379,7 @@ public partial class KnowledgeExtendedCategory : IEquatable<KnowledgeExtendedCat
     /// </summary>
     /// <value>Category last modification date-time. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z</value>
     [JsonPropertyName("dateModified")]
-    public DateTime? DateModified { get; private set; }
+    public DateTime? DateModified { get; set; }
 
 
 
@@ -388,7 +388,7 @@ public partial class KnowledgeExtendedCategory : IEquatable<KnowledgeExtendedCat
     /// </summary>
     /// <value>Category parent</value>
     [JsonPropertyName("parent")]
-    public KnowledgeCategory Parent { get; private set; }
+    public KnowledgeCategory Parent { get; set; }
 
 
 
@@ -397,7 +397,7 @@ public partial class KnowledgeExtendedCategory : IEquatable<KnowledgeExtendedCat
     /// </summary>
     /// <value>Category children</value>
     [JsonPropertyName("children")]
-    public List<KnowledgeCategory> Children { get; private set; }
+    public List<KnowledgeCategory> Children { get; set; }
 
 
 
@@ -406,7 +406,7 @@ public partial class KnowledgeExtendedCategory : IEquatable<KnowledgeExtendedCat
     /// </summary>
     /// <value>The URI for this object</value>
     [JsonPropertyName("selfUri")]
-    public string SelfUri { get; private set; }
+    public string SelfUri { get; set; }
 
 
     /// <summary>

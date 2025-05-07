@@ -81,7 +81,7 @@ public partial class KnowledgeDocumentContentUpload : IEquatable<KnowledgeDocume
     /// </summary>
     /// <value>Status of the upload operation</value>
     [JsonPropertyName("status")]
-    public StatusEnum? Status { get; private set; }
+    public StatusEnum? Status { get; set; }
 
     /// <summary>
     /// Initializes a new instance of the <see cref="KnowledgeDocumentContentUpload" /> class.
@@ -107,7 +107,7 @@ public partial class KnowledgeDocumentContentUpload : IEquatable<KnowledgeDocume
     /// </summary>
     /// <value>The globally unique identifier for the object.</value>
     [JsonPropertyName("id")]
-    public string Id { get; private set; }
+    public string Id { get; set; }
 
 
 
@@ -129,7 +129,7 @@ public partial class KnowledgeDocumentContentUpload : IEquatable<KnowledgeDocume
     /// </summary>
     /// <value>Key that identifies the file in the storage including the file name</value>
     [JsonPropertyName("uploadKey")]
-    public string UploadKey { get; private set; }
+    public string UploadKey { get; set; }
 
 
 
@@ -138,7 +138,7 @@ public partial class KnowledgeDocumentContentUpload : IEquatable<KnowledgeDocume
     /// </summary>
     /// <value>Presigned URL to PUT the file to</value>
     [JsonPropertyName("url")]
-    public string Url { get; private set; }
+    public string Url { get; set; }
 
 
 
@@ -147,7 +147,7 @@ public partial class KnowledgeDocumentContentUpload : IEquatable<KnowledgeDocume
     /// </summary>
     /// <value>Required headers when uploading a file through PUT request to the URL</value>
     [JsonPropertyName("headers")]
-    public Dictionary<string, string> Headers { get; private set; }
+    public Dictionary<string, string> Headers { get; set; }
 
 
 
@@ -156,7 +156,7 @@ public partial class KnowledgeDocumentContentUpload : IEquatable<KnowledgeDocume
     /// </summary>
     /// <value>ID of the document for which article content is to be uploaded</value>
     [JsonPropertyName("document")]
-    public AddressableEntityRef Document { get; private set; }
+    public AddressableEntityRef Document { get; set; }
 
 
 
@@ -165,7 +165,7 @@ public partial class KnowledgeDocumentContentUpload : IEquatable<KnowledgeDocume
     /// </summary>
     /// <value>Error message when upload fails</value>
     [JsonPropertyName("errorMessage")]
-    public string ErrorMessage { get; private set; }
+    public string ErrorMessage { get; set; }
 
 
 
@@ -174,7 +174,7 @@ public partial class KnowledgeDocumentContentUpload : IEquatable<KnowledgeDocume
     /// </summary>
     /// <value>The URI for this object</value>
     [JsonPropertyName("selfUri")]
-    public string SelfUri { get; private set; }
+    public string SelfUri { get; set; }
 
 
     /// <summary>

@@ -88,7 +88,7 @@ public partial class DashboardConfiguration : IEquatable<DashboardConfiguration>
     /// </summary>
     /// <value>The globally unique identifier for the object.</value>
     [JsonPropertyName("id")]
-    public string Id { get; private set; }
+    public string Id { get; set; }
 
 
 
@@ -151,7 +151,7 @@ public partial class DashboardConfiguration : IEquatable<DashboardConfiguration>
     /// </summary>
     /// <value>The flag to indicate if the dashboard has any restricted data for that user</value>
     [JsonPropertyName("restricted")]
-    public bool? Restricted { get; private set; }
+    public bool? Restricted { get; set; }
 
 
 
@@ -189,7 +189,7 @@ public partial class DashboardConfiguration : IEquatable<DashboardConfiguration>
     /// </summary>
     /// <value>The id of user who created the dashboard</value>
     [JsonPropertyName("createdBy")]
-    public AddressableEntityRef CreatedBy { get; private set; }
+    public AddressableEntityRef CreatedBy { get; set; }
 
 
 
@@ -216,7 +216,7 @@ public partial class DashboardConfiguration : IEquatable<DashboardConfiguration>
     /// </summary>
     /// <value>The URI for this object</value>
     [JsonPropertyName("selfUri")]
-    public string SelfUri { get; private set; }
+    public string SelfUri { get; set; }
 
 
     /// <summary>

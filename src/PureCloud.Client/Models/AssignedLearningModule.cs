@@ -114,7 +114,7 @@ public partial class AssignedLearningModule : IEquatable<AssignedLearningModule>
     /// </summary>
     /// <value>The source of the learning module</value>
     [JsonPropertyName("source")]
-    public SourceEnum? Source { get; private set; }
+    public SourceEnum? Source { get; set; }
     /// <summary>
     /// The type for the learning module
     /// </summary>
@@ -178,7 +178,7 @@ public partial class AssignedLearningModule : IEquatable<AssignedLearningModule>
     /// </summary>
     /// <value>The globally unique identifier for the object.</value>
     [JsonPropertyName("id")]
-    public string Id { get; private set; }
+    public string Id { get; set; }
 
 
 
@@ -205,7 +205,7 @@ public partial class AssignedLearningModule : IEquatable<AssignedLearningModule>
     /// </summary>
     /// <value>The user who created learning module</value>
     [JsonPropertyName("createdBy")]
-    public UserReference CreatedBy { get; private set; }
+    public UserReference CreatedBy { get; set; }
 
 
 
@@ -214,7 +214,7 @@ public partial class AssignedLearningModule : IEquatable<AssignedLearningModule>
     /// </summary>
     /// <value>The date/time learning module was created. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z</value>
     [JsonPropertyName("dateCreated")]
-    public DateTime? DateCreated { get; private set; }
+    public DateTime? DateCreated { get; set; }
 
 
 
@@ -223,7 +223,7 @@ public partial class AssignedLearningModule : IEquatable<AssignedLearningModule>
     /// </summary>
     /// <value>The user who modified learning module</value>
     [JsonPropertyName("modifiedBy")]
-    public UserReference ModifiedBy { get; private set; }
+    public UserReference ModifiedBy { get; set; }
 
 
 
@@ -232,7 +232,7 @@ public partial class AssignedLearningModule : IEquatable<AssignedLearningModule>
     /// </summary>
     /// <value>The date/time learning module was modified. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z</value>
     [JsonPropertyName("dateModified")]
-    public DateTime? DateModified { get; private set; }
+    public DateTime? DateModified { get; set; }
 
 
 
@@ -241,7 +241,7 @@ public partial class AssignedLearningModule : IEquatable<AssignedLearningModule>
     /// </summary>
     /// <value>The version of published learning module</value>
     [JsonPropertyName("version")]
-    public int? Version { get; private set; }
+    public int? Version { get; set; }
 
 
 
@@ -250,7 +250,7 @@ public partial class AssignedLearningModule : IEquatable<AssignedLearningModule>
     /// </summary>
     /// <value>The external ID of the learning module</value>
     [JsonPropertyName("externalId")]
-    public string ExternalId { get; private set; }
+    public string ExternalId { get; set; }
 
 
 
@@ -261,7 +261,7 @@ public partial class AssignedLearningModule : IEquatable<AssignedLearningModule>
     /// </summary>
     /// <value>The rule for learning module; read-only, and only populated when requested via expand param.</value>
     [JsonPropertyName("rule")]
-    public LearningModuleRule Rule { get; private set; }
+    public LearningModuleRule Rule { get; set; }
 
 
 
@@ -297,7 +297,7 @@ public partial class AssignedLearningModule : IEquatable<AssignedLearningModule>
     /// </summary>
     /// <value>The URI for this object</value>
     [JsonPropertyName("selfUri")]
-    public string SelfUri { get; private set; }
+    public string SelfUri { get; set; }
 
 
 
@@ -306,7 +306,7 @@ public partial class AssignedLearningModule : IEquatable<AssignedLearningModule>
     /// </summary>
     /// <value>If true, learning module is archived</value>
     [JsonPropertyName("isArchived")]
-    public bool? IsArchived { get; private set; }
+    public bool? IsArchived { get; set; }
 
 
 
@@ -315,7 +315,7 @@ public partial class AssignedLearningModule : IEquatable<AssignedLearningModule>
     /// </summary>
     /// <value>If true, learning module is published</value>
     [JsonPropertyName("isPublished")]
-    public bool? IsPublished { get; private set; }
+    public bool? IsPublished { get; set; }
 
 
 

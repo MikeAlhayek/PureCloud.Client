@@ -24,7 +24,7 @@ public partial class SuggestionCannedResponse : IEquatable<SuggestionCannedRespo
     /// </summary>
     /// <value>The suggested response.</value>
     [JsonPropertyName("response")]
-    public AddressableEntityRef Response { get; private set; }
+    public AddressableEntityRef Response { get; set; }
 
 
 
@@ -33,7 +33,7 @@ public partial class SuggestionCannedResponse : IEquatable<SuggestionCannedRespo
     /// </summary>
     /// <value>The library from which the canned response is suggested</value>
     [JsonPropertyName("library")]
-    public AddressableEntityRef Library { get; private set; }
+    public AddressableEntityRef Library { get; set; }
 
 
     /// <summary>

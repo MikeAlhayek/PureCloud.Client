@@ -12,7 +12,7 @@ public sealed class UserRoutingSkill
     /// The globally unique identifier for the object.
     /// </summary>
     /// <value>The globally unique identifier for the object.</value>
-    public string Id { get; private set; }
+    public string Id { get; set; }
 
     /// <summary>
     /// Gets or Sets Name
@@ -29,11 +29,11 @@ public sealed class UserRoutingSkill
     /// URI to the organization skill used by this user skill.
     /// </summary>
     /// <value>URI to the organization skill used by this user skill.</value>
-    public string SkillUri { get; private set; }
+    public string SkillUri { get; set; }
 
     /// <summary>
     /// The URI for this object
     /// </summary>
     /// <value>The URI for this object</value>
-    public string SelfUri { get; private set; }
+    public string SelfUri { get; set; }
 }

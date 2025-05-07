@@ -42,7 +42,7 @@ public partial class Assistant : IEquatable<Assistant>
     /// </summary>
     /// <value>State of the assistant.</value>
     [JsonPropertyName("state")]
-    public StateEnum? State { get; private set; }
+    public StateEnum? State { get; set; }
 
     /// <summary>
     /// Initializes a new instance of the <see cref="Assistant" /> class.
@@ -72,7 +72,7 @@ public partial class Assistant : IEquatable<Assistant>
     /// </summary>
     /// <value>The globally unique identifier for the object.</value>
     [JsonPropertyName("id")]
-    public string Id { get; private set; }
+    public string Id { get; set; }
 
 
 
@@ -90,7 +90,7 @@ public partial class Assistant : IEquatable<Assistant>
     /// </summary>
     /// <value>Date when the assistant was created. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z</value>
     [JsonPropertyName("dateCreated")]
-    public DateTime? DateCreated { get; private set; }
+    public DateTime? DateCreated { get; set; }
 
 
 
@@ -99,7 +99,7 @@ public partial class Assistant : IEquatable<Assistant>
     /// </summary>
     /// <value>Date when the assistant was last modified. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z</value>
     [JsonPropertyName("dateModified")]
-    public DateTime? DateModified { get; private set; }
+    public DateTime? DateModified { get; set; }
 
 
 
@@ -108,7 +108,7 @@ public partial class Assistant : IEquatable<Assistant>
     /// </summary>
     /// <value>The user who created the assistant.</value>
     [JsonPropertyName("createdBy")]
-    public UserReference CreatedBy { get; private set; }
+    public UserReference CreatedBy { get; set; }
 
 
 
@@ -117,7 +117,7 @@ public partial class Assistant : IEquatable<Assistant>
     /// </summary>
     /// <value>The user who last modified the assistant.</value>
     [JsonPropertyName("modifiedBy")]
-    public UserReference ModifiedBy { get; private set; }
+    public UserReference ModifiedBy { get; set; }
 
 
 
@@ -155,7 +155,7 @@ public partial class Assistant : IEquatable<Assistant>
     /// </summary>
     /// <value>Agent copilot configuration.</value>
     [JsonPropertyName("copilot")]
-    public Copilot Copilot { get; private set; }
+    public Copilot Copilot { get; set; }
 
 
 
@@ -164,7 +164,7 @@ public partial class Assistant : IEquatable<Assistant>
     /// </summary>
     /// <value>The URI for this object</value>
     [JsonPropertyName("selfUri")]
-    public string SelfUri { get; private set; }
+    public string SelfUri { get; set; }
 
 
     /// <summary>

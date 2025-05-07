@@ -24,7 +24,7 @@ public partial class MessagingCampaignDiagnostics : IEquatable<MessagingCampaign
     /// </summary>
     /// <value>Current number of time zone rescheduled messages on the campaign</value>
     [JsonPropertyName("timeZoneRescheduledContactsCount")]
-    public int? TimeZoneRescheduledContactsCount { get; private set; }
+    public int? TimeZoneRescheduledContactsCount { get; set; }
 
 
 
@@ -33,7 +33,7 @@ public partial class MessagingCampaignDiagnostics : IEquatable<MessagingCampaign
     /// </summary>
     /// <value>Number of contacts that don&#39;t match filter. This is currently supported only for Campaigns with dynamic filter on.</value>
     [JsonPropertyName("filteredOutContactsCount")]
-    public int? FilteredOutContactsCount { get; private set; }
+    public int? FilteredOutContactsCount { get; set; }
 
 
     /// <summary>

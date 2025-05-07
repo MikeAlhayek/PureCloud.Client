@@ -85,5 +85,5 @@ public sealed class Script
     /// <summary>
     /// The URI for this object
     /// </summary>
-    public string SelfUri { get; private set; }
+    public string SelfUri { get; set; }
 }

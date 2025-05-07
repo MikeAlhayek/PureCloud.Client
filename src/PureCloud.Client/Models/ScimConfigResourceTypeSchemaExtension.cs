@@ -24,7 +24,7 @@ public partial class ScimConfigResourceTypeSchemaExtension : IEquatable<ScimConf
     /// </summary>
     /// <value>The URI of an extended schema, for example, \&quot;urn:edu:2.0:Staff\&quot;. Must be equal to the \&quot;id\&quot; attribute of a schema.</value>
     [JsonPropertyName("schema")]
-    public string Schema { get; private set; }
+    public string Schema { get; set; }
 
 
 
@@ -33,7 +33,7 @@ public partial class ScimConfigResourceTypeSchemaExtension : IEquatable<ScimConf
     /// </summary>
     /// <value>Indicates whether a schema extension is required.</value>
     [JsonPropertyName("required")]
-    public bool? Required { get; private set; }
+    public bool? Required { get; set; }
 
 
     /// <summary>

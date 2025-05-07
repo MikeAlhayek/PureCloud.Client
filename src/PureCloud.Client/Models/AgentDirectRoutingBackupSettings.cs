@@ -68,7 +68,7 @@ public partial class AgentDirectRoutingBackupSettings : IEquatable<AgentDirectRo
     /// </summary>
     /// <value>Set of users that this user is a backup for.</value>
     [JsonPropertyName("backedUpUsers")]
-    public List<string> BackedUpUsers { get; private set; }
+    public List<string> BackedUpUsers { get; set; }
 
 
     /// <summary>

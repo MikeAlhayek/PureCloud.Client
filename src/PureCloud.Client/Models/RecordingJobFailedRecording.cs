@@ -24,7 +24,7 @@ public partial class RecordingJobFailedRecording : IEquatable<RecordingJobFailed
     /// </summary>
     /// <value>Conversation</value>
     [JsonPropertyName("conversation")]
-    public AddressableEntityRef Conversation { get; private set; }
+    public AddressableEntityRef Conversation { get; set; }
 
 
 
@@ -33,7 +33,7 @@ public partial class RecordingJobFailedRecording : IEquatable<RecordingJobFailed
     /// </summary>
     /// <value>Recording</value>
     [JsonPropertyName("recording")]
-    public AddressableEntityRef Recording { get; private set; }
+    public AddressableEntityRef Recording { get; set; }
 
 
     /// <summary>

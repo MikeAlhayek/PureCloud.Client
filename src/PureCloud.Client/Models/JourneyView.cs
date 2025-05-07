@@ -42,7 +42,7 @@ public partial class JourneyView : IEquatable<JourneyView>
     /// </summary>
     /// <value>The globally unique identifier for the object.</value>
     [JsonPropertyName("id")]
-    public string Id { get; private set; }
+    public string Id { get; set; }
 
 
 
@@ -68,7 +68,7 @@ public partial class JourneyView : IEquatable<JourneyView>
     /// </summary>
     /// <value>The version of the journey view</value>
     [JsonPropertyName("version")]
-    public int? Version { get; private set; }
+    public int? Version { get; set; }
 
 
 
@@ -77,7 +77,7 @@ public partial class JourneyView : IEquatable<JourneyView>
     /// </summary>
     /// <value>User that has created the view.</value>
     [JsonPropertyName("createdBy")]
-    public JourneyViewUser CreatedBy { get; private set; }
+    public JourneyViewUser CreatedBy { get; set; }
 
 
 
@@ -86,7 +86,7 @@ public partial class JourneyView : IEquatable<JourneyView>
     /// </summary>
     /// <value>User that has modified the view.</value>
     [JsonPropertyName("modifiedBy")]
-    public JourneyViewUser ModifiedBy { get; private set; }
+    public JourneyViewUser ModifiedBy { get; set; }
 
 
 
@@ -131,7 +131,7 @@ public partial class JourneyView : IEquatable<JourneyView>
     /// </summary>
     /// <value>The date when the journey view was created. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z</value>
     [JsonPropertyName("dateCreated")]
-    public DateTime? DateCreated { get; private set; }
+    public DateTime? DateCreated { get; set; }
 
 
 
@@ -140,7 +140,7 @@ public partial class JourneyView : IEquatable<JourneyView>
     /// </summary>
     /// <value>The date when this version of the journey view was modified. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z</value>
     [JsonPropertyName("dateModified")]
-    public DateTime? DateModified { get; private set; }
+    public DateTime? DateModified { get; set; }
 
 
 
@@ -149,7 +149,7 @@ public partial class JourneyView : IEquatable<JourneyView>
     /// </summary>
     /// <value>The URI for this object</value>
     [JsonPropertyName("selfUri")]
-    public string SelfUri { get; private set; }
+    public string SelfUri { get; set; }
 
 
     /// <summary>

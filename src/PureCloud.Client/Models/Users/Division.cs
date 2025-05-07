@@ -6,7 +6,7 @@ public class Division
     /// The globally unique identifier for the object.
     /// </summary>
     /// <value>The globally unique identifier for the object.</value>
-    public string Id { get; private set; }
+    public string Id { get; set; }
 
     /// <summary>
     /// Gets or Sets Name
@@ -17,5 +17,5 @@ public class Division
     /// The URI for this object
     /// </summary>
     /// <value>The URI for this object</value>
-    public string SelfUri { get; private set; }
+    public string SelfUri { get; set; }
 }

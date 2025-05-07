@@ -36,7 +36,7 @@ public partial class SmsAddress : IEquatable<SmsAddress>
     /// </summary>
     /// <value>The id of this address.</value>
     [JsonPropertyName("id")]
-    public string Id { get; private set; }
+    public string Id { get; set; }
 
 
 
@@ -98,7 +98,7 @@ public partial class SmsAddress : IEquatable<SmsAddress>
     /// </summary>
     /// <value>In some countries, addresses are validated to comply with local regulation. In those countries, if the address you provide does not pass validation, it will not be accepted as an Address. This value will be true if the Address has been validated, or false for countries that don&#39;t require validation or if the Address is non-compliant.</value>
     [JsonPropertyName("validated")]
-    public bool? Validated { get; private set; }
+    public bool? Validated { get; set; }
 
 
 
@@ -107,7 +107,7 @@ public partial class SmsAddress : IEquatable<SmsAddress>
     /// </summary>
     /// <value>The URI for this object</value>
     [JsonPropertyName("selfUri")]
-    public string SelfUri { get; private set; }
+    public string SelfUri { get; set; }
 
 
     /// <summary>

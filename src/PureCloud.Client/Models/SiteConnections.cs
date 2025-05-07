@@ -26,7 +26,7 @@ public partial class SiteConnections : IEquatable<SiteConnections>
     /// </summary>
     /// <value>The globally unique identifier for the object.</value>
     [JsonPropertyName("id")]
-    public string Id { get; private set; }
+    public string Id { get; set; }
 
 
 
@@ -43,7 +43,7 @@ public partial class SiteConnections : IEquatable<SiteConnections>
     /// </summary>
     /// <value>List of site connections</value>
     [JsonPropertyName("siteConnections")]
-    public List<SiteConnection> _SiteConnections { get; private set; }
+    public List<SiteConnection> _SiteConnections { get; set; }
 
 
 
@@ -52,7 +52,7 @@ public partial class SiteConnections : IEquatable<SiteConnections>
     /// </summary>
     /// <value>The URI for this object</value>
     [JsonPropertyName("selfUri")]
-    public string SelfUri { get; private set; }
+    public string SelfUri { get; set; }
 
 
     /// <summary>

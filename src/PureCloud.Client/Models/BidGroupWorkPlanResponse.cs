@@ -28,7 +28,7 @@ public partial class BidGroupWorkPlanResponse : IEquatable<BidGroupWorkPlanRespo
     /// </summary>
     /// <value>The globally unique identifier for the object.</value>
     [JsonPropertyName("id")]
-    public string Id { get; private set; }
+    public string Id { get; set; }
 
 
 
@@ -55,7 +55,7 @@ public partial class BidGroupWorkPlanResponse : IEquatable<BidGroupWorkPlanRespo
     /// </summary>
     /// <value>The number of agents needed for this work plan to produce the optimal schedule</value>
     [JsonPropertyName("suggestedAgentCount")]
-    public int? SuggestedAgentCount { get; private set; }
+    public int? SuggestedAgentCount { get; set; }
 
 
 
@@ -64,7 +64,7 @@ public partial class BidGroupWorkPlanResponse : IEquatable<BidGroupWorkPlanRespo
     /// </summary>
     /// <value>The range of agent slot count per work plan. The suggested slot count must be in agent count range</value>
     [JsonPropertyName("agentCountRange")]
-    public AgentCountRange AgentCountRange { get; private set; }
+    public AgentCountRange AgentCountRange { get; set; }
 
 
 
@@ -73,7 +73,7 @@ public partial class BidGroupWorkPlanResponse : IEquatable<BidGroupWorkPlanRespo
     /// </summary>
     /// <value>The URI for this object</value>
     [JsonPropertyName("selfUri")]
-    public string SelfUri { get; private set; }
+    public string SelfUri { get; set; }
 
 
     /// <summary>

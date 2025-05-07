@@ -84,7 +84,7 @@ public partial class UserNextActivityReminder : IEquatable<UserNextActivityRemin
     /// </summary>
     /// <value>Upcoming activity for which the user is scheduled</value>
     [JsonPropertyName("activityCategory")]
-    public ActivityCategoryEnum? ActivityCategory { get; private set; }
+    public ActivityCategoryEnum? ActivityCategory { get; set; }
     /// <summary>
     /// Initializes a new instance of the <see cref="UserNextActivityReminder" /> class.
     /// </summary>
@@ -102,7 +102,7 @@ public partial class UserNextActivityReminder : IEquatable<UserNextActivityRemin
     /// </summary>
     /// <value>The start timestamp of the scheduled activity in ISO-8601 format</value>
     [JsonPropertyName("startDate")]
-    public DateTime? StartDate { get; private set; }
+    public DateTime? StartDate { get; set; }
 
 
     /// <summary>

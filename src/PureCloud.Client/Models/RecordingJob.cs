@@ -90,7 +90,7 @@ public partial class RecordingJob : IEquatable<RecordingJob>
     /// </summary>
     /// <value>The globally unique identifier for the object.</value>
     [JsonPropertyName("id")]
-    public string Id { get; private set; }
+    public string Id { get; set; }
 
 
 
@@ -101,7 +101,7 @@ public partial class RecordingJob : IEquatable<RecordingJob>
     /// </summary>
     /// <value>Original query of the job.</value>
     [JsonPropertyName("recordingJobsQuery")]
-    public RecordingJobsQuery RecordingJobsQuery { get; private set; }
+    public RecordingJobsQuery RecordingJobsQuery { get; set; }
 
 
 
@@ -110,7 +110,7 @@ public partial class RecordingJob : IEquatable<RecordingJob>
     /// </summary>
     /// <value>Date when the job was created. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z</value>
     [JsonPropertyName("dateCreated")]
-    public DateTime? DateCreated { get; private set; }
+    public DateTime? DateCreated { get; set; }
 
 
 
@@ -119,7 +119,7 @@ public partial class RecordingJob : IEquatable<RecordingJob>
     /// </summary>
     /// <value>Total number of conversations affected.</value>
     [JsonPropertyName("totalConversations")]
-    public int? TotalConversations { get; private set; }
+    public int? TotalConversations { get; set; }
 
 
 
@@ -128,7 +128,7 @@ public partial class RecordingJob : IEquatable<RecordingJob>
     /// </summary>
     /// <value>Total number of recordings affected.</value>
     [JsonPropertyName("totalRecordings")]
-    public int? TotalRecordings { get; private set; }
+    public int? TotalRecordings { get; set; }
 
 
 
@@ -137,7 +137,7 @@ public partial class RecordingJob : IEquatable<RecordingJob>
     /// </summary>
     /// <value>Total number of recordings that have been skipped.</value>
     [JsonPropertyName("totalSkippedRecordings")]
-    public int? TotalSkippedRecordings { get; private set; }
+    public int? TotalSkippedRecordings { get; set; }
 
 
 
@@ -146,7 +146,7 @@ public partial class RecordingJob : IEquatable<RecordingJob>
     /// </summary>
     /// <value>Total number of recordings that the bulk job failed to process.</value>
     [JsonPropertyName("totalFailedRecordings")]
-    public int? TotalFailedRecordings { get; private set; }
+    public int? TotalFailedRecordings { get; set; }
 
 
 
@@ -155,7 +155,7 @@ public partial class RecordingJob : IEquatable<RecordingJob>
     /// </summary>
     /// <value>Total number of recordings have been processed.</value>
     [JsonPropertyName("totalProcessedRecordings")]
-    public int? TotalProcessedRecordings { get; private set; }
+    public int? TotalProcessedRecordings { get; set; }
 
 
 
@@ -164,7 +164,7 @@ public partial class RecordingJob : IEquatable<RecordingJob>
     /// </summary>
     /// <value>Progress in percentage based on the number of recordings</value>
     [JsonPropertyName("percentProgress")]
-    public int? PercentProgress { get; private set; }
+    public int? PercentProgress { get; set; }
 
 
 
@@ -173,7 +173,7 @@ public partial class RecordingJob : IEquatable<RecordingJob>
     /// </summary>
     /// <value>Error occurred during the job execution</value>
     [JsonPropertyName("errorMessage")]
-    public string ErrorMessage { get; private set; }
+    public string ErrorMessage { get; set; }
 
 
 
@@ -182,7 +182,7 @@ public partial class RecordingJob : IEquatable<RecordingJob>
     /// </summary>
     /// <value>Get IDs of recordings that the bulk job failed for</value>
     [JsonPropertyName("failedRecordings")]
-    public string FailedRecordings { get; private set; }
+    public string FailedRecordings { get; set; }
 
 
 
@@ -191,7 +191,7 @@ public partial class RecordingJob : IEquatable<RecordingJob>
     /// </summary>
     /// <value>The URI for this object</value>
     [JsonPropertyName("selfUri")]
-    public string SelfUri { get; private set; }
+    public string SelfUri { get; set; }
 
 
 
@@ -200,7 +200,7 @@ public partial class RecordingJob : IEquatable<RecordingJob>
     /// </summary>
     /// <value>Details of the user created the job</value>
     [JsonPropertyName("user")]
-    public AddressableEntityRef User { get; private set; }
+    public AddressableEntityRef User { get; set; }
 
 
     /// <summary>

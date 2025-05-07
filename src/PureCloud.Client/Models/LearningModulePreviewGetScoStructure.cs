@@ -87,13 +87,13 @@ public partial class LearningModulePreviewGetScoStructure : IEquatable<LearningM
     /// </summary>
     /// <value>The success status of this SCO</value>
     [JsonPropertyName("successStatus")]
-    public SuccessStatusEnum? SuccessStatus { get; private set; }
+    public SuccessStatusEnum? SuccessStatus { get; set; }
     /// <summary>
     /// The completion status of this SCO
     /// </summary>
     /// <value>The completion status of this SCO</value>
     [JsonPropertyName("completionStatus")]
-    public CompletionStatusEnum? CompletionStatus { get; private set; }
+    public CompletionStatusEnum? CompletionStatus { get; set; }
     /// <summary>
     /// Initializes a new instance of the <see cref="LearningModulePreviewGetScoStructure" /> class.
     /// </summary>
@@ -111,7 +111,7 @@ public partial class LearningModulePreviewGetScoStructure : IEquatable<LearningM
     /// </summary>
     /// <value>The id of this SCO in the course manifest</value>
     [JsonPropertyName("id")]
-    public string Id { get; private set; }
+    public string Id { get; set; }
 
 
 
@@ -120,7 +120,7 @@ public partial class LearningModulePreviewGetScoStructure : IEquatable<LearningM
     /// </summary>
     /// <value>The name of this SCO in the course manifest</value>
     [JsonPropertyName("name")]
-    public string Name { get; private set; }
+    public string Name { get; set; }
 
 
 
@@ -133,7 +133,7 @@ public partial class LearningModulePreviewGetScoStructure : IEquatable<LearningM
     /// </summary>
     /// <value>Percentage Score</value>
     [JsonPropertyName("percentageScore")]
-    public float? PercentageScore { get; private set; }
+    public float? PercentageScore { get; set; }
 
 
 
@@ -151,7 +151,7 @@ public partial class LearningModulePreviewGetScoStructure : IEquatable<LearningM
     /// </summary>
     /// <value>Child items belonging to this SCO in the course manifest</value>
     [JsonPropertyName("children")]
-    public List<LearningModulePreviewGetScoStructure> Children { get; private set; }
+    public List<LearningModulePreviewGetScoStructure> Children { get; set; }
 
 
     /// <summary>

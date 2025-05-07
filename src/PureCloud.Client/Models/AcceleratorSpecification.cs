@@ -81,13 +81,13 @@ public partial class AcceleratorSpecification : IEquatable<AcceleratorSpecificat
     /// </summary>
     /// <value>where the accelerator originated</value>
     [JsonPropertyName("origin")]
-    public OriginEnum? Origin { get; private set; }
+    public OriginEnum? Origin { get; set; }
     /// <summary>
     /// type of the artifact
     /// </summary>
     /// <value>type of the artifact</value>
     [JsonPropertyName("type")]
-    public TypeEnum? Type { get; private set; }
+    public TypeEnum? Type { get; set; }
     /// <summary>
     /// Initializes a new instance of the <see cref="AcceleratorSpecification" /> class.
     /// </summary>
@@ -103,7 +103,7 @@ public partial class AcceleratorSpecification : IEquatable<AcceleratorSpecificat
     /// </summary>
     /// <value>The globally unique identifier for the object.</value>
     [JsonPropertyName("id")]
-    public string Id { get; private set; }
+    public string Id { get; set; }
 
 
 
@@ -112,7 +112,7 @@ public partial class AcceleratorSpecification : IEquatable<AcceleratorSpecificat
     /// </summary>
     /// <value>name of this accelerator</value>
     [JsonPropertyName("name")]
-    public string Name { get; private set; }
+    public string Name { get; set; }
 
 
 
@@ -121,7 +121,7 @@ public partial class AcceleratorSpecification : IEquatable<AcceleratorSpecificat
     /// </summary>
     /// <value>a description of the general purpose of this accelerator</value>
     [JsonPropertyName("description")]
-    public string Description { get; private set; }
+    public string Description { get; set; }
 
 
 
@@ -134,7 +134,7 @@ public partial class AcceleratorSpecification : IEquatable<AcceleratorSpecificat
     /// </summary>
     /// <value>architectural classification into which the accelerator belongs</value>
     [JsonPropertyName("classification")]
-    public string Classification { get; private set; }
+    public string Classification { get; set; }
 
 
 
@@ -143,7 +143,7 @@ public partial class AcceleratorSpecification : IEquatable<AcceleratorSpecificat
     /// </summary>
     /// <value>tags</value>
     [JsonPropertyName("tags")]
-    public List<string> Tags { get; private set; }
+    public List<string> Tags { get; set; }
 
 
 
@@ -152,7 +152,7 @@ public partial class AcceleratorSpecification : IEquatable<AcceleratorSpecificat
     /// </summary>
     /// <value>Genesys Cloud permissions required to install the accelerator</value>
     [JsonPropertyName("permissions")]
-    public List<string> Permissions { get; private set; }
+    public List<string> Permissions { get; set; }
 
 
 
@@ -161,7 +161,7 @@ public partial class AcceleratorSpecification : IEquatable<AcceleratorSpecificat
     /// </summary>
     /// <value>Genesys Cloud products required to install the accelerator</value>
     [JsonPropertyName("products")]
-    public List<string> Products { get; private set; }
+    public List<string> Products { get; set; }
 
 
 
@@ -170,7 +170,7 @@ public partial class AcceleratorSpecification : IEquatable<AcceleratorSpecificat
     /// </summary>
     /// <value>additional documentation about the artifact</value>
     [JsonPropertyName("documentation")]
-    public List<MetadataDocumentation> Documentation { get; private set; }
+    public List<MetadataDocumentation> Documentation { get; set; }
 
 
 
@@ -179,7 +179,7 @@ public partial class AcceleratorSpecification : IEquatable<AcceleratorSpecificat
     /// </summary>
     /// <value>presentation of data fields to be gathered for the accelerator</value>
     [JsonPropertyName("presentation")]
-    public List<MetadataPresentation> Presentation { get; private set; }
+    public List<MetadataPresentation> Presentation { get; set; }
 
 
 
@@ -188,7 +188,7 @@ public partial class AcceleratorSpecification : IEquatable<AcceleratorSpecificat
     /// </summary>
     /// <value>resources created or modified as a result of running the accelerator</value>
     [JsonPropertyName("results")]
-    public MetadataResults Results { get; private set; }
+    public MetadataResults Results { get; set; }
 
 
 
@@ -197,7 +197,7 @@ public partial class AcceleratorSpecification : IEquatable<AcceleratorSpecificat
     /// </summary>
     /// <value>The URI for this object</value>
     [JsonPropertyName("selfUri")]
-    public string SelfUri { get; private set; }
+    public string SelfUri { get; set; }
 
 
     /// <summary>

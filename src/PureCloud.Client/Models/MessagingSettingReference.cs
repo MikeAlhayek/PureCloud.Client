@@ -47,7 +47,7 @@ public partial class MessagingSettingReference : IEquatable<MessagingSettingRefe
     /// </summary>
     /// <value>The messaging Setting profile name</value>
     [JsonPropertyName("name")]
-    public string Name { get; private set; }
+    public string Name { get; set; }
 
 
 
@@ -56,7 +56,7 @@ public partial class MessagingSettingReference : IEquatable<MessagingSettingRefe
     /// </summary>
     /// <value>The messaging Setting profile URI</value>
     [JsonPropertyName("selfUri")]
-    public string SelfUri { get; private set; }
+    public string SelfUri { get; set; }
 
 
 
@@ -65,7 +65,7 @@ public partial class MessagingSettingReference : IEquatable<MessagingSettingRefe
     /// </summary>
     /// <value>Date this messaging Setting was created. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z</value>
     [JsonPropertyName("dateCreated")]
-    public DateTime? DateCreated { get; private set; }
+    public DateTime? DateCreated { get; set; }
 
 
 
@@ -74,7 +74,7 @@ public partial class MessagingSettingReference : IEquatable<MessagingSettingRefe
     /// </summary>
     /// <value>Date this messaging Setting was modified. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z</value>
     [JsonPropertyName("dateModified")]
-    public DateTime? DateModified { get; private set; }
+    public DateTime? DateModified { get; set; }
 
 
 
@@ -92,7 +92,7 @@ public partial class MessagingSettingReference : IEquatable<MessagingSettingRefe
     /// </summary>
     /// <value>User reference that created this Setting</value>
     [JsonPropertyName("createdBy")]
-    public DomainEntityRef CreatedBy { get; private set; }
+    public DomainEntityRef CreatedBy { get; set; }
 
 
 
@@ -101,7 +101,7 @@ public partial class MessagingSettingReference : IEquatable<MessagingSettingRefe
     /// </summary>
     /// <value>User reference that modified this Setting</value>
     [JsonPropertyName("updatedBy")]
-    public DomainEntityRef UpdatedBy { get; private set; }
+    public DomainEntityRef UpdatedBy { get; set; }
 
 
 

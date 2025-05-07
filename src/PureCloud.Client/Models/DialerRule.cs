@@ -74,7 +74,7 @@ public partial class DialerRule : IEquatable<DialerRule>
     /// </summary>
     /// <value>The identifier of the rule.</value>
     [JsonPropertyName("id")]
-    public string Id { get; private set; }
+    public string Id { get; set; }
 
 
 

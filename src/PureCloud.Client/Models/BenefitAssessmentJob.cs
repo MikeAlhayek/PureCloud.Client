@@ -42,7 +42,7 @@ public partial class BenefitAssessmentJob : IEquatable<BenefitAssessmentJob>
     /// </summary>
     /// <value>State of the benefit assessment job.</value>
     [JsonPropertyName("state")]
-    public StateEnum? State { get; private set; }
+    public StateEnum? State { get; set; }
     /// <summary>
     /// Initializes a new instance of the <see cref="BenefitAssessmentJob" /> class.
     /// </summary>
@@ -58,7 +58,7 @@ public partial class BenefitAssessmentJob : IEquatable<BenefitAssessmentJob>
     /// </summary>
     /// <value>The globally unique identifier for the object.</value>
     [JsonPropertyName("id")]
-    public string Id { get; private set; }
+    public string Id { get; set; }
 
 
 
@@ -69,7 +69,7 @@ public partial class BenefitAssessmentJob : IEquatable<BenefitAssessmentJob>
     /// </summary>
     /// <value>Creation Date of the benefit assessment job. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z</value>
     [JsonPropertyName("dateCreated")]
-    public DateTime? DateCreated { get; private set; }
+    public DateTime? DateCreated { get; set; }
 
 
 
@@ -78,7 +78,7 @@ public partial class BenefitAssessmentJob : IEquatable<BenefitAssessmentJob>
     /// </summary>
     /// <value>Modified Date of the benefit assessment job. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z</value>
     [JsonPropertyName("dateModified")]
-    public DateTime? DateModified { get; private set; }
+    public DateTime? DateModified { get; set; }
 
 
 
@@ -87,7 +87,7 @@ public partial class BenefitAssessmentJob : IEquatable<BenefitAssessmentJob>
     /// </summary>
     /// <value>The URI for this object</value>
     [JsonPropertyName("selfUri")]
-    public string SelfUri { get; private set; }
+    public string SelfUri { get; set; }
 
 
     /// <summary>

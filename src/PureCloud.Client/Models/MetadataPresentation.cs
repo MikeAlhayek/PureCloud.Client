@@ -24,7 +24,7 @@ public partial class MetadataPresentation : IEquatable<MetadataPresentation>
     /// </summary>
     /// <value>title for a set of data to be gathered</value>
     [JsonPropertyName("title")]
-    public string Title { get; private set; }
+    public string Title { get; set; }
 
 
 
@@ -33,7 +33,7 @@ public partial class MetadataPresentation : IEquatable<MetadataPresentation>
     /// </summary>
     /// <value>description of the contents of the data gathering interface</value>
     [JsonPropertyName("schema")]
-    public MetadataSchema Schema { get; private set; }
+    public MetadataSchema Schema { get; set; }
 
 
     /// <summary>

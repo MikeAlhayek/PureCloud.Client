@@ -13,13 +13,13 @@ public sealed class Organization
     /// Organizations Originating Platform.
     /// </summary>
     /// <value>Organizations Originating Platform.</value>
-    public ProductPlatform? ProductPlatform { get; private set; }
+    public ProductPlatform? ProductPlatform { get; set; }
 
     /// <summary>
     /// The globally unique identifier for the object.
     /// </summary>
     /// <value>The globally unique identifier for the object.</value>
-    public string Id { get; private set; }
+    public string Id { get; set; }
 
     /// <summary>
     /// Gets or Sets Name

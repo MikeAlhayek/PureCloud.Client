@@ -52,7 +52,7 @@ public partial class BidGroupWorkPlanRequest : IEquatable<BidGroupWorkPlanReques
     /// </summary>
     /// <value>The number of agents needed for this work plan to produce the optimal schedule</value>
     [JsonPropertyName("suggestedAgentCount")]
-    public int? SuggestedAgentCount { get; private set; }
+    public int? SuggestedAgentCount { get; set; }
 
 
 
@@ -61,7 +61,7 @@ public partial class BidGroupWorkPlanRequest : IEquatable<BidGroupWorkPlanReques
     /// </summary>
     /// <value>The range of agent slot count per work plan. The suggested slot count must be in agent count range</value>
     [JsonPropertyName("agentCountRange")]
-    public AgentCountRange AgentCountRange { get; private set; }
+    public AgentCountRange AgentCountRange { get; set; }
 
 
     /// <summary>

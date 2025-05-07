@@ -82,7 +82,7 @@ public partial class SendAgentlessOutboundMessageResponse : IEquatable<SendAgent
     /// </summary>
     /// <value>The globally unique identifier for the object.</value>
     [JsonPropertyName("id")]
-    public string Id { get; private set; }
+    public string Id { get; set; }
 
 
 
@@ -165,7 +165,7 @@ public partial class SendAgentlessOutboundMessageResponse : IEquatable<SendAgent
     /// </summary>
     /// <value>The URI for this object</value>
     [JsonPropertyName("selfUri")]
-    public string SelfUri { get; private set; }
+    public string SelfUri { get; set; }
 
 
 
@@ -174,7 +174,7 @@ public partial class SendAgentlessOutboundMessageResponse : IEquatable<SendAgent
     /// </summary>
     /// <value>Details of the user created the job</value>
     [JsonPropertyName("user")]
-    public AddressableEntityRef User { get; private set; }
+    public AddressableEntityRef User { get; set; }
 
 
     /// <summary>

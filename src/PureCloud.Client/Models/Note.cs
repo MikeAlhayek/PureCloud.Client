@@ -78,7 +78,7 @@ public partial class Note : IEquatable<Note>
     /// </summary>
     /// <value>The globally unique identifier for the object.</value>
     [JsonPropertyName("id")]
-    public string Id { get; private set; }
+    public string Id { get; set; }
 
 
 
@@ -142,7 +142,7 @@ public partial class Note : IEquatable<Note>
     /// </summary>
     /// <value>Links to the sources of data (e.g. one source might be a CRM) that contributed data to this record.  Read-only, and only populated when requested via expand param.</value>
     [JsonPropertyName("externalDataSources")]
-    public List<ExternalDataSource> ExternalDataSources { get; private set; }
+    public List<ExternalDataSource> ExternalDataSources { get; set; }
 
 
 
@@ -151,7 +151,7 @@ public partial class Note : IEquatable<Note>
     /// </summary>
     /// <value>The URI for this object</value>
     [JsonPropertyName("selfUri")]
-    public string SelfUri { get; private set; }
+    public string SelfUri { get; set; }
 
 
     /// <summary>

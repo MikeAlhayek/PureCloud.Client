@@ -41,7 +41,7 @@ public partial class CategoryEntity : IEquatable<CategoryEntity>
     /// </summary>
     /// <value>The selfUri of the category.</value>
     [JsonPropertyName("selfUri")]
-    public string SelfUri { get; private set; }
+    public string SelfUri { get; set; }
 
 
     /// <summary>

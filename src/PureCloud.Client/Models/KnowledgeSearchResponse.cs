@@ -24,7 +24,7 @@ public partial class KnowledgeSearchResponse : IEquatable<KnowledgeSearchRespons
     /// </summary>
     /// <value>Search Id</value>
     [JsonPropertyName("searchId")]
-    public string SearchId { get; private set; }
+    public string SearchId { get; set; }
 
 
 
@@ -33,7 +33,7 @@ public partial class KnowledgeSearchResponse : IEquatable<KnowledgeSearchRespons
     /// </summary>
     /// <value>Total number of records returned</value>
     [JsonPropertyName("total")]
-    public int? Total { get; private set; }
+    public int? Total { get; set; }
 
 
 
@@ -42,7 +42,7 @@ public partial class KnowledgeSearchResponse : IEquatable<KnowledgeSearchRespons
     /// </summary>
     /// <value>Number of pages returned in the result calculated according to the pageSize and the total</value>
     [JsonPropertyName("pageCount")]
-    public int? PageCount { get; private set; }
+    public int? PageCount { get; set; }
 
 
 
@@ -51,7 +51,7 @@ public partial class KnowledgeSearchResponse : IEquatable<KnowledgeSearchRespons
     /// </summary>
     /// <value>Number of records according to the page size</value>
     [JsonPropertyName("pageSize")]
-    public int? PageSize { get; private set; }
+    public int? PageSize { get; set; }
 
 
 
@@ -60,7 +60,7 @@ public partial class KnowledgeSearchResponse : IEquatable<KnowledgeSearchRespons
     /// </summary>
     /// <value>Current page number for the returned records</value>
     [JsonPropertyName("pageNumber")]
-    public int? PageNumber { get; private set; }
+    public int? PageNumber { get; set; }
 
 
 
@@ -69,7 +69,7 @@ public partial class KnowledgeSearchResponse : IEquatable<KnowledgeSearchRespons
     /// </summary>
     /// <value>Results associated to the search response</value>
     [JsonPropertyName("results")]
-    public List<KnowledgeSearchDocumentV1> Results { get; private set; }
+    public List<KnowledgeSearchDocumentV1> Results { get; set; }
 
 
     /// <summary>

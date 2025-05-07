@@ -24,7 +24,7 @@ public partial class DetectedDialogAct : IEquatable<DetectedDialogAct>
     /// </summary>
     /// <value>The name of the detected dialog act.</value>
     [JsonPropertyName("name")]
-    public string Name { get; private set; }
+    public string Name { get; set; }
 
 
 
@@ -33,7 +33,7 @@ public partial class DetectedDialogAct : IEquatable<DetectedDialogAct>
     /// </summary>
     /// <value>The probability of the detected dialog act.</value>
     [JsonPropertyName("probability")]
-    public double? Probability { get; private set; }
+    public double? Probability { get; set; }
 
 
     /// <summary>

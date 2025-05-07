@@ -71,7 +71,7 @@ public partial class WritableDialerContact : IEquatable<WritableDialerContact>
     /// </summary>
     /// <value>A map of SMS records for the contact phone columns.</value>
     [JsonPropertyName("latestSmsEvaluations")]
-    public Dictionary<string, MessageEvaluation> LatestSmsEvaluations { get; private set; }
+    public Dictionary<string, MessageEvaluation> LatestSmsEvaluations { get; set; }
 
 
 
@@ -80,7 +80,7 @@ public partial class WritableDialerContact : IEquatable<WritableDialerContact>
     /// </summary>
     /// <value>A map of email records for the contact email columns.</value>
     [JsonPropertyName("latestEmailEvaluations")]
-    public Dictionary<string, MessageEvaluation> LatestEmailEvaluations { get; private set; }
+    public Dictionary<string, MessageEvaluation> LatestEmailEvaluations { get; set; }
 
 
 
@@ -125,7 +125,7 @@ public partial class WritableDialerContact : IEquatable<WritableDialerContact>
     /// </summary>
     /// <value>Timestamp for when the contact was added. Contacts added prior to 2023 September 1 may be missing this value. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z</value>
     [JsonPropertyName("dateCreated")]
-    public DateTime? DateCreated { get; private set; }
+    public DateTime? DateCreated { get; set; }
 
 
     /// <summary>

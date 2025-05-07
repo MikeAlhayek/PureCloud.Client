@@ -24,7 +24,7 @@ public partial class NluDetectionOutput : IEquatable<NluDetectionOutput>
     /// </summary>
     /// <value>The detected intents.</value>
     [JsonPropertyName("intents")]
-    public List<DetectedIntent> Intents { get; private set; }
+    public List<DetectedIntent> Intents { get; set; }
 
 
 
@@ -33,7 +33,7 @@ public partial class NluDetectionOutput : IEquatable<NluDetectionOutput>
     /// </summary>
     /// <value>The detected dialog acts.</value>
     [JsonPropertyName("dialogActs")]
-    public List<DetectedDialogAct> DialogActs { get; private set; }
+    public List<DetectedDialogAct> DialogActs { get; set; }
 
 
     /// <summary>

@@ -48,7 +48,7 @@ public partial class OpenIntegration : IEquatable<OpenIntegration>
     /// </summary>
     /// <value>Status of asynchronous create operation</value>
     [JsonPropertyName("createStatus")]
-    public CreateStatusEnum? CreateStatus { get; private set; }
+    public CreateStatusEnum? CreateStatus { get; set; }
 
     /// <summary>
     /// Initializes a new instance of the <see cref="OpenIntegration" /> class.
@@ -92,7 +92,7 @@ public partial class OpenIntegration : IEquatable<OpenIntegration>
     /// </summary>
     /// <value>A unique Integration Id.</value>
     [JsonPropertyName("id")]
-    public string Id { get; private set; }
+    public string Id { get; set; }
 
 
 
@@ -163,7 +163,7 @@ public partial class OpenIntegration : IEquatable<OpenIntegration>
     /// </summary>
     /// <value>The recipient associated to the Open messaging Integration. This recipient is used to associate a flow to an integration</value>
     [JsonPropertyName("recipient")]
-    public DomainEntityRef Recipient { get; private set; }
+    public DomainEntityRef Recipient { get; set; }
 
 
 
@@ -210,7 +210,7 @@ public partial class OpenIntegration : IEquatable<OpenIntegration>
     /// </summary>
     /// <value>Error information returned, if createStatus is set to Error</value>
     [JsonPropertyName("createError")]
-    public ErrorBody CreateError { get; private set; }
+    public ErrorBody CreateError { get; set; }
 
 
 
@@ -219,7 +219,7 @@ public partial class OpenIntegration : IEquatable<OpenIntegration>
     /// </summary>
     /// <value>The URI for this object</value>
     [JsonPropertyName("selfUri")]
-    public string SelfUri { get; private set; }
+    public string SelfUri { get; set; }
 
 
     /// <summary>

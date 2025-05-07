@@ -43,7 +43,7 @@ public partial class DocumentArticle : IEquatable<DocumentArticle>
     /// </summary>
     /// <value>The content of the Article.</value>
     [JsonPropertyName("content")]
-    public ArticleContent Content { get; private set; }
+    public ArticleContent Content { get; set; }
 
 
 

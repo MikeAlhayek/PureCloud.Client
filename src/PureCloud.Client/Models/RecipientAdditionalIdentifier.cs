@@ -60,7 +60,7 @@ public partial class RecipientAdditionalIdentifier : IEquatable<RecipientAdditio
     /// </summary>
     /// <value>Type of the Identifier</value>
     [JsonPropertyName("type")]
-    public TypeEnum? Type { get; private set; }
+    public TypeEnum? Type { get; set; }
     /// <summary>
     /// Initializes a new instance of the <see cref="RecipientAdditionalIdentifier" /> class.
     /// </summary>
@@ -78,7 +78,7 @@ public partial class RecipientAdditionalIdentifier : IEquatable<RecipientAdditio
     /// </summary>
     /// <value>The Identifier value.</value>
     [JsonPropertyName("value")]
-    public string Value { get; private set; }
+    public string Value { get; set; }
 
 
     /// <summary>

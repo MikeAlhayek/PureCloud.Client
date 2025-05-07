@@ -94,7 +94,7 @@ public partial class Room : IEquatable<Room>
     /// </summary>
     /// <value>The jid of the room if adhoc, the id of the group for group rooms</value>
     [JsonPropertyName("id")]
-    public string Id { get; private set; }
+    public string Id { get; set; }
 
 
 
@@ -176,7 +176,7 @@ public partial class Room : IEquatable<Room>
     /// </summary>
     /// <value>The URI for this object</value>
     [JsonPropertyName("selfUri")]
-    public string SelfUri { get; private set; }
+    public string SelfUri { get; set; }
 
 
     /// <summary>

@@ -677,7 +677,7 @@ public partial class Session : IEquatable<Session>
     /// </summary>
     /// <value>The URI for this object</value>
     [JsonPropertyName("selfUri")]
-    public string SelfUri { get; private set; }
+    public string SelfUri { get; set; }
 
 
 
@@ -704,7 +704,7 @@ public partial class Session : IEquatable<Session>
     /// </summary>
     /// <value>The external contact associated with this session.</value>
     [JsonPropertyName("externalContact")]
-    public AddressableEntityRef ExternalContact { get; private set; }
+    public AddressableEntityRef ExternalContact { get; set; }
 
 
 
@@ -731,7 +731,7 @@ public partial class Session : IEquatable<Session>
     /// </summary>
     /// <value>The conversation for this session.</value>
     [JsonPropertyName("conversation")]
-    public AddressableEntityRef Conversation { get; private set; }
+    public AddressableEntityRef Conversation { get; set; }
 
 
     /// <summary>

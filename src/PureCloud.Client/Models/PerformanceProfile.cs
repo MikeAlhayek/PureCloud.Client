@@ -40,7 +40,7 @@ public partial class PerformanceProfile : IEquatable<PerformanceProfile>
     /// </summary>
     /// <value>The globally unique identifier for the object.</value>
     [JsonPropertyName("id")]
-    public string Id { get; private set; }
+    public string Id { get; set; }
 
 
 
@@ -58,7 +58,7 @@ public partial class PerformanceProfile : IEquatable<PerformanceProfile>
     /// </summary>
     /// <value>The division for this performance profile associate to</value>
     [JsonPropertyName("division")]
-    public Division Division { get; private set; }
+    public Division Division { get; set; }
 
 
 
@@ -85,7 +85,7 @@ public partial class PerformanceProfile : IEquatable<PerformanceProfile>
     /// </summary>
     /// <value>Creation date for this performance profile. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z</value>
     [JsonPropertyName("dateCreated")]
-    public DateTime? DateCreated { get; private set; }
+    public DateTime? DateCreated { get; set; }
 
 
 
@@ -103,7 +103,7 @@ public partial class PerformanceProfile : IEquatable<PerformanceProfile>
     /// </summary>
     /// <value>The flag for active profiles</value>
     [JsonPropertyName("active")]
-    public bool? Active { get; private set; }
+    public bool? Active { get; set; }
 
 
 
@@ -112,7 +112,7 @@ public partial class PerformanceProfile : IEquatable<PerformanceProfile>
     /// </summary>
     /// <value>The number of members in this performance profile</value>
     [JsonPropertyName("memberCount")]
-    public int? MemberCount { get; private set; }
+    public int? MemberCount { get; set; }
 
 
 
@@ -130,7 +130,7 @@ public partial class PerformanceProfile : IEquatable<PerformanceProfile>
     /// </summary>
     /// <value>The URI for this object</value>
     [JsonPropertyName("selfUri")]
-    public string SelfUri { get; private set; }
+    public string SelfUri { get; set; }
 
 
     /// <summary>

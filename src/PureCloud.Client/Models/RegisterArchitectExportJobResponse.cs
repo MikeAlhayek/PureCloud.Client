@@ -74,7 +74,7 @@ public partial class RegisterArchitectExportJobResponse : IEquatable<RegisterArc
     /// </summary>
     /// <value>The globally unique identifier for the object.</value>
     [JsonPropertyName("id")]
-    public string Id { get; private set; }
+    public string Id { get; set; }
 
 
 
@@ -94,7 +94,7 @@ public partial class RegisterArchitectExportJobResponse : IEquatable<RegisterArc
     /// </summary>
     /// <value>The URI for this object</value>
     [JsonPropertyName("selfUri")]
-    public string SelfUri { get; private set; }
+    public string SelfUri { get; set; }
 
 
     /// <summary>

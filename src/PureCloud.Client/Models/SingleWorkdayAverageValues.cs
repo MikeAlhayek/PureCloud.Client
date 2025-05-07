@@ -24,7 +24,7 @@ public partial class SingleWorkdayAverageValues : IEquatable<SingleWorkdayAverag
     /// </summary>
     /// <value>The targeted workday for average value query. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd</value>
     [JsonPropertyName("dateWorkday")]
-    public string DateWorkday { get; private set; }
+    public string DateWorkday { get; set; }
 
 
 
@@ -33,7 +33,7 @@ public partial class SingleWorkdayAverageValues : IEquatable<SingleWorkdayAverag
     /// </summary>
     /// <value>The targeted division for the metrics</value>
     [JsonPropertyName("division")]
-    public Division Division { get; private set; }
+    public Division Division { get; set; }
 
 
 
@@ -42,7 +42,7 @@ public partial class SingleWorkdayAverageValues : IEquatable<SingleWorkdayAverag
     /// </summary>
     /// <value>The targeted user for the metrics</value>
     [JsonPropertyName("user")]
-    public UserReference User { get; private set; }
+    public UserReference User { get; set; }
 
 
 
@@ -51,7 +51,7 @@ public partial class SingleWorkdayAverageValues : IEquatable<SingleWorkdayAverag
     /// </summary>
     /// <value>The time zone used for aggregating metric values</value>
     [JsonPropertyName("timezone")]
-    public string Timezone { get; private set; }
+    public string Timezone { get; set; }
 
 
 
@@ -60,7 +60,7 @@ public partial class SingleWorkdayAverageValues : IEquatable<SingleWorkdayAverag
     /// </summary>
     /// <value>The metric value averages</value>
     [JsonPropertyName("results")]
-    public List<WorkdayValuesMetricItem> Results { get; private set; }
+    public List<WorkdayValuesMetricItem> Results { get; set; }
 
 
 
@@ -69,7 +69,7 @@ public partial class SingleWorkdayAverageValues : IEquatable<SingleWorkdayAverag
     /// </summary>
     /// <value>The targeted performance profile for the average points</value>
     [JsonPropertyName("performanceProfile")]
-    public AddressableEntityRef PerformanceProfile { get; private set; }
+    public AddressableEntityRef PerformanceProfile { get; set; }
 
 
     /// <summary>

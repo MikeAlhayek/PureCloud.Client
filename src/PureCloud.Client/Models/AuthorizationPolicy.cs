@@ -78,7 +78,7 @@ public partial class AuthorizationPolicy : IEquatable<AuthorizationPolicy>
     /// </summary>
     /// <value>The globally unique identifier for the object.</value>
     [JsonPropertyName("id")]
-    public string Id { get; private set; }
+    public string Id { get; set; }
 
 
 
@@ -95,7 +95,7 @@ public partial class AuthorizationPolicy : IEquatable<AuthorizationPolicy>
     /// </summary>
     /// <value>The targeted resource to which the policy should apply, in the form of domain:entity:action</value>
     [JsonPropertyName("targetResource")]
-    public string TargetResource { get; private set; }
+    public string TargetResource { get; set; }
 
 
 
@@ -132,7 +132,7 @@ public partial class AuthorizationPolicy : IEquatable<AuthorizationPolicy>
     /// </summary>
     /// <value>Date this policy was last modified. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z</value>
     [JsonPropertyName("dateModified")]
-    public DateTime? DateModified { get; private set; }
+    public DateTime? DateModified { get; set; }
 
 
 
@@ -159,7 +159,7 @@ public partial class AuthorizationPolicy : IEquatable<AuthorizationPolicy>
     /// </summary>
     /// <value>The URI for this object</value>
     [JsonPropertyName("selfUri")]
-    public string SelfUri { get; private set; }
+    public string SelfUri { get; set; }
 
 
     /// <summary>

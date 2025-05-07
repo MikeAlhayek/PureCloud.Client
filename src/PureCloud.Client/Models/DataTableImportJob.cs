@@ -131,7 +131,7 @@ public partial class DataTableImportJob : IEquatable<DataTableImportJob>
     /// </summary>
     /// <value>The globally unique identifier for the object.</value>
     [JsonPropertyName("id")]
-    public string Id { get; private set; }
+    public string Id { get; set; }
 
 
 
@@ -224,7 +224,7 @@ public partial class DataTableImportJob : IEquatable<DataTableImportJob>
     /// </summary>
     /// <value>Required headers when uploading a file through PUT request to the URL in the &#39;uploadURI&#39; field</value>
     [JsonPropertyName("uploadHeaders")]
-    public Dictionary<string, string> UploadHeaders { get; private set; }
+    public Dictionary<string, string> UploadHeaders { get; set; }
 
 
 
@@ -233,7 +233,7 @@ public partial class DataTableImportJob : IEquatable<DataTableImportJob>
     /// </summary>
     /// <value>The URI for this object</value>
     [JsonPropertyName("selfUri")]
-    public string SelfUri { get; private set; }
+    public string SelfUri { get; set; }
 
 
     /// <summary>

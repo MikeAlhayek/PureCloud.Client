@@ -34,7 +34,7 @@ public partial class UserScheduleAdherenceListing : IEquatable<UserScheduleAdher
     /// </summary>
     /// <value>The downloadUrl if the response is too large to send directly via http response</value>
     [JsonPropertyName("downloadUrl")]
-    public string DownloadUrl { get; private set; }
+    public string DownloadUrl { get; set; }
 
 
     /// <summary>

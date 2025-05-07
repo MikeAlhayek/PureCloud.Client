@@ -84,7 +84,7 @@ public partial class ConversationMessagingChannel : IEquatable<ConversationMessa
     /// </summary>
     /// <value>The provider type.</value>
     [JsonPropertyName("platform")]
-    public PlatformEnum? Platform { get; private set; }
+    public PlatformEnum? Platform { get; set; }
     /// <summary>
     /// Initializes a new instance of the <see cref="ConversationMessagingChannel" /> class.
     /// </summary>
@@ -100,7 +100,7 @@ public partial class ConversationMessagingChannel : IEquatable<ConversationMessa
     /// </summary>
     /// <value>The integration ID.</value>
     [JsonPropertyName("id")]
-    public string Id { get; private set; }
+    public string Id { get; set; }
 
 
 
@@ -111,7 +111,7 @@ public partial class ConversationMessagingChannel : IEquatable<ConversationMessa
     /// </summary>
     /// <value>Unique provider ID of the message such as a Facebook message ID.</value>
     [JsonPropertyName("messageId")]
-    public string MessageId { get; private set; }
+    public string MessageId { get; set; }
 
 
 
@@ -120,7 +120,7 @@ public partial class ConversationMessagingChannel : IEquatable<ConversationMessa
     /// </summary>
     /// <value>Information about the recipient the message is sent to.</value>
     [JsonPropertyName("to")]
-    public ConversationMessagingToRecipient To { get; private set; }
+    public ConversationMessagingToRecipient To { get; set; }
 
 
 
@@ -129,7 +129,7 @@ public partial class ConversationMessagingChannel : IEquatable<ConversationMessa
     /// </summary>
     /// <value>Information about the recipient the message is received from.</value>
     [JsonPropertyName("from")]
-    public ConversationMessagingFromRecipient From { get; private set; }
+    public ConversationMessagingFromRecipient From { get; set; }
 
 
 
@@ -138,7 +138,7 @@ public partial class ConversationMessagingChannel : IEquatable<ConversationMessa
     /// </summary>
     /// <value>Original time of the event. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z</value>
     [JsonPropertyName("time")]
-    public DateTime? Time { get; private set; }
+    public DateTime? Time { get; set; }
 
 
 
@@ -147,7 +147,7 @@ public partial class ConversationMessagingChannel : IEquatable<ConversationMessa
     /// </summary>
     /// <value>Time the message was edited. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z</value>
     [JsonPropertyName("dateModified")]
-    public DateTime? DateModified { get; private set; }
+    public DateTime? DateModified { get; set; }
 
 
 
@@ -156,7 +156,7 @@ public partial class ConversationMessagingChannel : IEquatable<ConversationMessa
     /// </summary>
     /// <value>Time the message was deleted. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z</value>
     [JsonPropertyName("dateDeleted")]
-    public DateTime? DateDeleted { get; private set; }
+    public DateTime? DateDeleted { get; set; }
 
 
     /// <summary>

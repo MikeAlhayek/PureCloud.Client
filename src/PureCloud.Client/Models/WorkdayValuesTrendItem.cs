@@ -24,7 +24,7 @@ public partial class WorkdayValuesTrendItem : IEquatable<WorkdayValuesTrendItem>
     /// </summary>
     /// <value>The workday for the metric value. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd</value>
     [JsonPropertyName("dateWorkday")]
-    public string DateWorkday { get; private set; }
+    public string DateWorkday { get; set; }
 
 
 
@@ -33,7 +33,7 @@ public partial class WorkdayValuesTrendItem : IEquatable<WorkdayValuesTrendItem>
     /// </summary>
     /// <value>The metric value</value>
     [JsonPropertyName("value")]
-    public double? Value { get; private set; }
+    public double? Value { get; set; }
 
 
     /// <summary>

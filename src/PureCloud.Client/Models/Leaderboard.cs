@@ -24,7 +24,7 @@ public partial class Leaderboard : IEquatable<Leaderboard>
     /// </summary>
     /// <value>The targeted division for this leaderboard</value>
     [JsonPropertyName("division")]
-    public Division Division { get; private set; }
+    public Division Division { get; set; }
 
 
 
@@ -33,7 +33,7 @@ public partial class Leaderboard : IEquatable<Leaderboard>
     /// </summary>
     /// <value>The metric id if the leaderboard is about a specific metric</value>
     [JsonPropertyName("metric")]
-    public AddressableEntityRef Metric { get; private set; }
+    public AddressableEntityRef Metric { get; set; }
 
 
 
@@ -42,7 +42,7 @@ public partial class Leaderboard : IEquatable<Leaderboard>
     /// </summary>
     /// <value>Start workday used as the date range. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd</value>
     [JsonPropertyName("dateStartWorkday")]
-    public string DateStartWorkday { get; private set; }
+    public string DateStartWorkday { get; set; }
 
 
 
@@ -51,7 +51,7 @@ public partial class Leaderboard : IEquatable<Leaderboard>
     /// </summary>
     /// <value>End workday used as the date range. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd</value>
     [JsonPropertyName("dateEndWorkday")]
-    public string DateEndWorkday { get; private set; }
+    public string DateEndWorkday { get; set; }
 
 
 
@@ -60,7 +60,7 @@ public partial class Leaderboard : IEquatable<Leaderboard>
     /// </summary>
     /// <value>The list of leaders generated.</value>
     [JsonPropertyName("leaders")]
-    public List<LeaderboardItem> Leaders { get; private set; }
+    public List<LeaderboardItem> Leaders { get; set; }
 
 
 
@@ -69,7 +69,7 @@ public partial class Leaderboard : IEquatable<Leaderboard>
     /// </summary>
     /// <value>The requesting user&#39;s rank</value>
     [JsonPropertyName("userRank")]
-    public LeaderboardItem UserRank { get; private set; }
+    public LeaderboardItem UserRank { get; set; }
 
 
 
@@ -78,7 +78,7 @@ public partial class Leaderboard : IEquatable<Leaderboard>
     /// </summary>
     /// <value>The targeted performance profile for the average points</value>
     [JsonPropertyName("performanceProfile")]
-    public AddressableEntityRef PerformanceProfile { get; private set; }
+    public AddressableEntityRef PerformanceProfile { get; set; }
 
 
     /// <summary>

@@ -30,7 +30,7 @@ public partial class NluFeedbackResponse : IEquatable<NluFeedbackResponse>
     /// </summary>
     /// <value>The globally unique identifier for the object.</value>
     [JsonPropertyName("id")]
-    public string Id { get; private set; }
+    public string Id { get; set; }
 
 
 
@@ -57,7 +57,7 @@ public partial class NluFeedbackResponse : IEquatable<NluFeedbackResponse>
     /// </summary>
     /// <value>The domain version of the feedback.</value>
     [JsonPropertyName("version")]
-    public NluDomainVersion Version { get; private set; }
+    public NluDomainVersion Version { get; set; }
 
 
 
@@ -66,7 +66,7 @@ public partial class NluFeedbackResponse : IEquatable<NluFeedbackResponse>
     /// </summary>
     /// <value>The date when the feedback was created. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z</value>
     [JsonPropertyName("dateCreated")]
-    public DateTime? DateCreated { get; private set; }
+    public DateTime? DateCreated { get; set; }
 
 
 
@@ -84,7 +84,7 @@ public partial class NluFeedbackResponse : IEquatable<NluFeedbackResponse>
     /// </summary>
     /// <value>The URI for this object</value>
     [JsonPropertyName("selfUri")]
-    public string SelfUri { get; private set; }
+    public string SelfUri { get; set; }
 
 
     /// <summary>

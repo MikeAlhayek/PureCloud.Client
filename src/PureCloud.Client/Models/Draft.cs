@@ -32,7 +32,7 @@ public partial class Draft : IEquatable<Draft>
     /// </summary>
     /// <value>The globally unique identifier for the object.</value>
     [JsonPropertyName("id")]
-    public string Id { get; private set; }
+    public string Id { get; set; }
 
 
 
@@ -50,7 +50,7 @@ public partial class Draft : IEquatable<Draft>
     /// </summary>
     /// <value>Miner to which the draft belongs.</value>
     [JsonPropertyName("miner")]
-    public Miner Miner { get; private set; }
+    public Miner Miner { get; set; }
 
 
 
@@ -59,7 +59,7 @@ public partial class Draft : IEquatable<Draft>
     /// </summary>
     /// <value>Draft intent object.</value>
     [JsonPropertyName("intents")]
-    public List<DraftIntents> Intents { get; private set; }
+    public List<DraftIntents> Intents { get; set; }
 
 
 
@@ -68,7 +68,7 @@ public partial class Draft : IEquatable<Draft>
     /// </summary>
     /// <value>Draft topic object.</value>
     [JsonPropertyName("topics")]
-    public List<DraftTopics> Topics { get; private set; }
+    public List<DraftTopics> Topics { get; set; }
 
 
 
@@ -77,7 +77,7 @@ public partial class Draft : IEquatable<Draft>
     /// </summary>
     /// <value>Date when the draft was created. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z</value>
     [JsonPropertyName("dateCreated")]
-    public DateTime? DateCreated { get; private set; }
+    public DateTime? DateCreated { get; set; }
 
 
 
@@ -86,7 +86,7 @@ public partial class Draft : IEquatable<Draft>
     /// </summary>
     /// <value>Date when the draft was updated. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z</value>
     [JsonPropertyName("dateModified")]
-    public DateTime? DateModified { get; private set; }
+    public DateTime? DateModified { get; set; }
 
 
 
@@ -95,7 +95,7 @@ public partial class Draft : IEquatable<Draft>
     /// </summary>
     /// <value>The URI for this object</value>
     [JsonPropertyName("selfUri")]
-    public string SelfUri { get; private set; }
+    public string SelfUri { get; set; }
 
 
     /// <summary>

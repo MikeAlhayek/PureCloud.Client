@@ -50,7 +50,7 @@ public partial class UserMe
     /// Auto populated from addresses.
     /// </summary>
     /// <value>Auto populated from addresses.</value>
-    public IEnumerable<Contact> PrimaryContactInfo { get; private set; }
+    public IEnumerable<Contact> PrimaryContactInfo { get; set; }
 
     /// <summary>
     /// Email addresses and phone numbers for this user
@@ -236,7 +236,7 @@ public partial class UserMe
     /// The PureCloudEnvironment system date time.
     /// </summary>
     /// <value>The PureCloudEnvironment system date time.</value>
-    public ServerDate Date { get; private set; }
+    public ServerDate Date { get; set; }
 
     /// <summary>
     /// Geolocation settings for user&#39;s organization.

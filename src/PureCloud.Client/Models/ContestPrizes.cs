@@ -76,7 +76,7 @@ public partial class ContestPrizes : IEquatable<ContestPrizes>
     /// </summary>
     /// <value>The Contest Prize image url</value>
     [JsonPropertyName("imageUrl")]
-    public string ImageUrl { get; private set; }
+    public string ImageUrl { get; set; }
 
 
 

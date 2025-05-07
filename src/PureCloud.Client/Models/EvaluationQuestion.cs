@@ -96,7 +96,7 @@ public partial class EvaluationQuestion : IEquatable<EvaluationQuestion>
     /// </summary>
     /// <value>An identifier for this question that stays the same across versions of the form.</value>
     [JsonPropertyName("contextId")]
-    public string ContextId { get; private set; }
+    public string ContextId { get; set; }
 
 
 

@@ -237,7 +237,7 @@ public partial class ConversationSummary : IEquatable<ConversationSummary>
     /// </summary>
     /// <value>The id of the summary.</value>
     [JsonPropertyName("id")]
-    public string Id { get; private set; }
+    public string Id { get; set; }
 
 
 
@@ -246,7 +246,7 @@ public partial class ConversationSummary : IEquatable<ConversationSummary>
     /// </summary>
     /// <value>The AI confidence value.</value>
     [JsonPropertyName("confidence")]
-    public float? Confidence { get; private set; }
+    public float? Confidence { get; set; }
 
 
 

@@ -22,7 +22,7 @@ public sealed class Contact
     /// Formatted version of the address property
     /// </summary>
     /// <value>Formatted version of the address property</value>
-    public string Display { get; private set; }
+    public string Display { get; set; }
 
     /// <summary>
     /// Use internal extension instead of address. Mutually exclusive with the address field.

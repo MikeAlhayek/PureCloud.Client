@@ -24,7 +24,7 @@ public partial class JourneyViewChartMetricResult : IEquatable<JourneyViewChartM
     /// </summary>
     /// <value>Id of the metric</value>
     [JsonPropertyName("id")]
-    public string Id { get; private set; }
+    public string Id { get; set; }
 
 
 
@@ -33,7 +33,7 @@ public partial class JourneyViewChartMetricResult : IEquatable<JourneyViewChartM
     /// </summary>
     /// <value>Metric result values</value>
     [JsonPropertyName("values")]
-    public List<JourneyViewChartMetricResultValue> Values { get; private set; }
+    public List<JourneyViewChartMetricResultValue> Values { get; set; }
 
 
     /// <summary>

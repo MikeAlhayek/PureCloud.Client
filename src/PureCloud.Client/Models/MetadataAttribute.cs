@@ -24,7 +24,7 @@ public partial class MetadataAttribute : IEquatable<MetadataAttribute>
     /// </summary>
     /// <value>The value of the metadata attribute.</value>
     [JsonPropertyName("value")]
-    public string Value { get; private set; }
+    public string Value { get; set; }
 
 
     /// <summary>

@@ -24,7 +24,7 @@ public partial class SuggestionKnowledgeSearch : IEquatable<SuggestionKnowledgeS
     /// </summary>
     /// <value>The article title.</value>
     [JsonPropertyName("title")]
-    public string Title { get; private set; }
+    public string Title { get; set; }
 
 
 
@@ -33,7 +33,7 @@ public partial class SuggestionKnowledgeSearch : IEquatable<SuggestionKnowledgeS
     /// </summary>
     /// <value>Snippets of text from the article matching the query.</value>
     [JsonPropertyName("snippets")]
-    public List<string> Snippets { get; private set; }
+    public List<string> Snippets { get; set; }
 
 
 
@@ -42,7 +42,7 @@ public partial class SuggestionKnowledgeSearch : IEquatable<SuggestionKnowledgeS
     /// </summary>
     /// <value>Value between 0 and 1. 1 corresponds to very confident, 0 to not confident at all.</value>
     [JsonPropertyName("confidence")]
-    public float? Confidence { get; private set; }
+    public float? Confidence { get; set; }
 
 
 
@@ -51,7 +51,7 @@ public partial class SuggestionKnowledgeSearch : IEquatable<SuggestionKnowledgeS
     /// </summary>
     /// <value>The search id.</value>
     [JsonPropertyName("searchId")]
-    public string SearchId { get; private set; }
+    public string SearchId { get; set; }
 
 
 
@@ -60,7 +60,7 @@ public partial class SuggestionKnowledgeSearch : IEquatable<SuggestionKnowledgeS
     /// </summary>
     /// <value>The article matching the query.</value>
     [JsonPropertyName("document")]
-    public AddressableEntityRef Document { get; private set; }
+    public AddressableEntityRef Document { get; set; }
 
 
 
@@ -69,7 +69,7 @@ public partial class SuggestionKnowledgeSearch : IEquatable<SuggestionKnowledgeS
     /// </summary>
     /// <value>The version of the article.</value>
     [JsonPropertyName("version")]
-    public AddressableEntityRef Version { get; private set; }
+    public AddressableEntityRef Version { get; set; }
 
 
 
@@ -78,7 +78,7 @@ public partial class SuggestionKnowledgeSearch : IEquatable<SuggestionKnowledgeS
     /// </summary>
     /// <value>The most relevant answer within a searched article for the searched query</value>
     [JsonPropertyName("knowledgeAnswer")]
-    public SuggestionKnowledgeAnswer KnowledgeAnswer { get; private set; }
+    public SuggestionKnowledgeAnswer KnowledgeAnswer { get; set; }
 
 
 
@@ -87,7 +87,7 @@ public partial class SuggestionKnowledgeSearch : IEquatable<SuggestionKnowledgeS
     /// </summary>
     /// <value>Variations of the article.</value>
     [JsonPropertyName("variations")]
-    public List<AddressableEntityRef> Variations { get; private set; }
+    public List<AddressableEntityRef> Variations { get; set; }
 
 
     /// <summary>

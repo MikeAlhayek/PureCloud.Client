@@ -30,7 +30,7 @@ public partial class MessagingSetting : IEquatable<MessagingSetting>
     /// </summary>
     /// <value>The messaging Setting unique identifier associated with this integration</value>
     [JsonPropertyName("id")]
-    public string Id { get; private set; }
+    public string Id { get; set; }
 
 
 
@@ -48,7 +48,7 @@ public partial class MessagingSetting : IEquatable<MessagingSetting>
     /// </summary>
     /// <value>Date this messaging setting was created. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z</value>
     [JsonPropertyName("dateCreated")]
-    public DateTime? DateCreated { get; private set; }
+    public DateTime? DateCreated { get; set; }
 
 
 
@@ -57,7 +57,7 @@ public partial class MessagingSetting : IEquatable<MessagingSetting>
     /// </summary>
     /// <value>Date this messaging setting was modified. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z</value>
     [JsonPropertyName("dateModified")]
-    public DateTime? DateModified { get; private set; }
+    public DateTime? DateModified { get; set; }
 
 
 
@@ -66,7 +66,7 @@ public partial class MessagingSetting : IEquatable<MessagingSetting>
     /// </summary>
     /// <value>Version number</value>
     [JsonPropertyName("version")]
-    public string Version { get; private set; }
+    public string Version { get; set; }
 
 
 
@@ -75,7 +75,7 @@ public partial class MessagingSetting : IEquatable<MessagingSetting>
     /// </summary>
     /// <value>User reference that created this Setting</value>
     [JsonPropertyName("createdBy")]
-    public DomainEntityRef CreatedBy { get; private set; }
+    public DomainEntityRef CreatedBy { get; set; }
 
 
 
@@ -84,7 +84,7 @@ public partial class MessagingSetting : IEquatable<MessagingSetting>
     /// </summary>
     /// <value>User reference that modified this Setting</value>
     [JsonPropertyName("updatedBy")]
-    public DomainEntityRef UpdatedBy { get; private set; }
+    public DomainEntityRef UpdatedBy { get; set; }
 
 
 
@@ -111,7 +111,7 @@ public partial class MessagingSetting : IEquatable<MessagingSetting>
     /// </summary>
     /// <value>The URI for this object</value>
     [JsonPropertyName("selfUri")]
-    public string SelfUri { get; private set; }
+    public string SelfUri { get; set; }
 
 
     /// <summary>

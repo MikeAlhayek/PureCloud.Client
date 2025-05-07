@@ -110,7 +110,7 @@ public partial class EvaluationQuestionScore : IEquatable<EvaluationQuestionScor
     /// </summary>
     /// <value>Suggested AI answer</value>
     [JsonPropertyName("aiAnswer")]
-    public AiAnswer AiAnswer { get; private set; }
+    public AiAnswer AiAnswer { get; set; }
 
 
     /// <summary>

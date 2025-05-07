@@ -60,7 +60,7 @@ public partial class WebMessagingAttachment : IEquatable<WebMessagingAttachment>
     /// </summary>
     /// <value>The type of attachment this instance represents.</value>
     [JsonPropertyName("mediaType")]
-    public MediaTypeEnum? MediaType { get; private set; }
+    public MediaTypeEnum? MediaType { get; set; }
     /// <summary>
     /// Initializes a new instance of the <see cref="WebMessagingAttachment" /> class.
     /// </summary>
@@ -76,7 +76,7 @@ public partial class WebMessagingAttachment : IEquatable<WebMessagingAttachment>
     /// </summary>
     /// <value>The globally unique identifier for the object.</value>
     [JsonPropertyName("id")]
-    public string Id { get; private set; }
+    public string Id { get; set; }
 
 
 
@@ -87,7 +87,7 @@ public partial class WebMessagingAttachment : IEquatable<WebMessagingAttachment>
     /// </summary>
     /// <value>URL of the attachment.</value>
     [JsonPropertyName("url")]
-    public string Url { get; private set; }
+    public string Url { get; set; }
 
 
 
@@ -96,7 +96,7 @@ public partial class WebMessagingAttachment : IEquatable<WebMessagingAttachment>
     /// </summary>
     /// <value>Attachment mime type (https://www.iana.org/assignments/media-types/media-types.xhtml).</value>
     [JsonPropertyName("mime")]
-    public string Mime { get; private set; }
+    public string Mime { get; set; }
 
 
 
@@ -105,7 +105,7 @@ public partial class WebMessagingAttachment : IEquatable<WebMessagingAttachment>
     /// </summary>
     /// <value>Text associated with attachment such as an image caption.</value>
     [JsonPropertyName("text")]
-    public string Text { get; private set; }
+    public string Text { get; set; }
 
 
 
@@ -114,7 +114,7 @@ public partial class WebMessagingAttachment : IEquatable<WebMessagingAttachment>
     /// </summary>
     /// <value>Secure hash of the attachment content.</value>
     [JsonPropertyName("sha256")]
-    public string Sha256 { get; private set; }
+    public string Sha256 { get; set; }
 
 
 
@@ -123,7 +123,7 @@ public partial class WebMessagingAttachment : IEquatable<WebMessagingAttachment>
     /// </summary>
     /// <value>Suggested file name for attachment.</value>
     [JsonPropertyName("filename")]
-    public string Filename { get; private set; }
+    public string Filename { get; set; }
 
 
 
@@ -132,7 +132,7 @@ public partial class WebMessagingAttachment : IEquatable<WebMessagingAttachment>
     /// </summary>
     /// <value>The file size associated with the file</value>
     [JsonPropertyName("fileSize")]
-    public int? FileSize { get; private set; }
+    public int? FileSize { get; set; }
 
 
     /// <summary>

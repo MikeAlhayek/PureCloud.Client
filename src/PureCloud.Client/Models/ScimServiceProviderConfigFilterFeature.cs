@@ -24,7 +24,7 @@ public partial class ScimServiceProviderConfigFilterFeature : IEquatable<ScimSer
     /// </summary>
     /// <value>Indicates whether configuration options are supported.</value>
     [JsonPropertyName("supported")]
-    public bool? Supported { get; private set; }
+    public bool? Supported { get; set; }
 
 
 
@@ -33,7 +33,7 @@ public partial class ScimServiceProviderConfigFilterFeature : IEquatable<ScimSer
     /// </summary>
     /// <value>The maximum number of results returned from a filtered query.</value>
     [JsonPropertyName("maxResults")]
-    public int? MaxResults { get; private set; }
+    public int? MaxResults { get; set; }
 
 
     /// <summary>

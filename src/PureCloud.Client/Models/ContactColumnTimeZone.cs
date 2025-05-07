@@ -42,7 +42,7 @@ public partial class ContactColumnTimeZone : IEquatable<ContactColumnTimeZone>
     /// </summary>
     /// <value>Column Type will be either PHONE or ZIP</value>
     [JsonPropertyName("columnType")]
-    public ColumnTypeEnum? ColumnType { get; private set; }
+    public ColumnTypeEnum? ColumnType { get; set; }
     /// <summary>
     /// Initializes a new instance of the <see cref="ContactColumnTimeZone" /> class.
     /// </summary>

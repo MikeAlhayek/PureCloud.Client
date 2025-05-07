@@ -65,7 +65,7 @@ public partial class BotVersionSummary : IEquatable<BotVersionSummary>
     /// </summary>
     /// <value>A system-generated string that contains metadata about this bot.</value>
     [JsonPropertyName("botCompositeTag")]
-    public string BotCompositeTag { get; private set; }
+    public string BotCompositeTag { get; set; }
 
 
 

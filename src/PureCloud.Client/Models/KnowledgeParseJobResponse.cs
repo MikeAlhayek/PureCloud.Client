@@ -78,7 +78,7 @@ public partial class KnowledgeParseJobResponse : IEquatable<KnowledgeParseJobRes
     /// </summary>
     /// <value>Status of the parse job</value>
     [JsonPropertyName("status")]
-    public StatusEnum? Status { get; private set; }
+    public StatusEnum? Status { get; set; }
     /// <summary>
     /// Initializes a new instance of the <see cref="KnowledgeParseJobResponse" /> class.
     /// </summary>
@@ -100,7 +100,7 @@ public partial class KnowledgeParseJobResponse : IEquatable<KnowledgeParseJobRes
     /// </summary>
     /// <value>Id of the parse job</value>
     [JsonPropertyName("id")]
-    public string Id { get; private set; }
+    public string Id { get; set; }
 
 
 
@@ -129,7 +129,7 @@ public partial class KnowledgeParseJobResponse : IEquatable<KnowledgeParseJobRes
     /// </summary>
     /// <value>Results of the parse</value>
     [JsonPropertyName("parseResults")]
-    public List<KnowledgeParseRecord> ParseResults { get; private set; }
+    public List<KnowledgeParseRecord> ParseResults { get; set; }
 
 
 
@@ -138,7 +138,7 @@ public partial class KnowledgeParseJobResponse : IEquatable<KnowledgeParseJobRes
     /// </summary>
     /// <value>Result of the import phase</value>
     [JsonPropertyName("importResult")]
-    public KnowledgeParseImportResult ImportResult { get; private set; }
+    public KnowledgeParseImportResult ImportResult { get; set; }
 
 
 
@@ -156,7 +156,7 @@ public partial class KnowledgeParseJobResponse : IEquatable<KnowledgeParseJobRes
     /// </summary>
     /// <value>Created date. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z</value>
     [JsonPropertyName("dateCreated")]
-    public DateTime? DateCreated { get; private set; }
+    public DateTime? DateCreated { get; set; }
 
 
 
@@ -165,7 +165,7 @@ public partial class KnowledgeParseJobResponse : IEquatable<KnowledgeParseJobRes
     /// </summary>
     /// <value>Last modified date. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z</value>
     [JsonPropertyName("dateModified")]
-    public DateTime? DateModified { get; private set; }
+    public DateTime? DateModified { get; set; }
 
 
 
@@ -174,7 +174,7 @@ public partial class KnowledgeParseJobResponse : IEquatable<KnowledgeParseJobRes
     /// </summary>
     /// <value>The URI for this object</value>
     [JsonPropertyName("selfUri")]
-    public string SelfUri { get; private set; }
+    public string SelfUri { get; set; }
 
 
     /// <summary>

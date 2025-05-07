@@ -28,7 +28,7 @@ public partial class ScimV2Group : IEquatable<ScimV2Group>
     /// </summary>
     /// <value>The ID of the SCIM resource. Set by the service provider. \&quot;caseExact\&quot; is set to \&quot;true\&quot;. \&quot;mutability\&quot; is set to \&quot;readOnly\&quot;. \&quot;returned\&quot; is set to \&quot;always\&quot;.</value>
     [JsonPropertyName("id")]
-    public string Id { get; private set; }
+    public string Id { get; set; }
 
 
 
@@ -37,7 +37,7 @@ public partial class ScimV2Group : IEquatable<ScimV2Group>
     /// </summary>
     /// <value>The list of supported schemas.</value>
     [JsonPropertyName("schemas")]
-    public List<string> Schemas { get; private set; }
+    public List<string> Schemas { get; set; }
 
 
 
@@ -46,7 +46,7 @@ public partial class ScimV2Group : IEquatable<ScimV2Group>
     /// </summary>
     /// <value>The display name of the group.</value>
     [JsonPropertyName("displayName")]
-    public string DisplayName { get; private set; }
+    public string DisplayName { get; set; }
 
 
 
@@ -73,7 +73,7 @@ public partial class ScimV2Group : IEquatable<ScimV2Group>
     /// </summary>
     /// <value>The metadata of the SCIM resource. Metadata is defined as immutable per SCIM RFC.</value>
     [JsonPropertyName("meta")]
-    public ScimMetadata Meta { get; private set; }
+    public ScimMetadata Meta { get; set; }
 
 
     /// <summary>

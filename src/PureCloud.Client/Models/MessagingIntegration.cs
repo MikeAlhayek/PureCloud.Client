@@ -141,13 +141,13 @@ public partial class MessagingIntegration : IEquatable<MessagingIntegration>
     /// </summary>
     /// <value>The status of the Integration</value>
     [JsonPropertyName("status")]
-    public StatusEnum? Status { get; private set; }
+    public StatusEnum? Status { get; set; }
     /// <summary>
     /// The type of Messaging Integration
     /// </summary>
     /// <value>The type of Messaging Integration</value>
     [JsonPropertyName("messengerType")]
-    public MessengerTypeEnum? MessengerType { get; private set; }
+    public MessengerTypeEnum? MessengerType { get; set; }
     /// <summary>
     /// Initializes a new instance of the <see cref="MessagingIntegration" /> class.
     /// </summary>
@@ -167,7 +167,7 @@ public partial class MessagingIntegration : IEquatable<MessagingIntegration>
     /// </summary>
     /// <value>A unique Integration Id</value>
     [JsonPropertyName("id")]
-    public string Id { get; private set; }
+    public string Id { get; set; }
 
 
 
@@ -176,7 +176,7 @@ public partial class MessagingIntegration : IEquatable<MessagingIntegration>
     /// </summary>
     /// <value>The name of the Integration</value>
     [JsonPropertyName("name")]
-    public string Name { get; private set; }
+    public string Name { get; set; }
 
 
 
@@ -206,7 +206,7 @@ public partial class MessagingIntegration : IEquatable<MessagingIntegration>
     /// </summary>
     /// <value>The recipient associated to the Integration. This recipient is used to associate a flow to an integration</value>
     [JsonPropertyName("recipient")]
-    public DomainEntityRef Recipient { get; private set; }
+    public DomainEntityRef Recipient { get; set; }
 
 
 
@@ -215,7 +215,7 @@ public partial class MessagingIntegration : IEquatable<MessagingIntegration>
     /// </summary>
     /// <value>Date this Integration was created. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z</value>
     [JsonPropertyName("dateCreated")]
-    public DateTime? DateCreated { get; private set; }
+    public DateTime? DateCreated { get; set; }
 
 
 
@@ -224,7 +224,7 @@ public partial class MessagingIntegration : IEquatable<MessagingIntegration>
     /// </summary>
     /// <value>Date this Integration was modified. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z</value>
     [JsonPropertyName("dateModified")]
-    public DateTime? DateModified { get; private set; }
+    public DateTime? DateModified { get; set; }
 
 
 
@@ -233,7 +233,7 @@ public partial class MessagingIntegration : IEquatable<MessagingIntegration>
     /// </summary>
     /// <value>User reference that created this Integration</value>
     [JsonPropertyName("createdBy")]
-    public DomainEntityRef CreatedBy { get; private set; }
+    public DomainEntityRef CreatedBy { get; set; }
 
 
 
@@ -242,7 +242,7 @@ public partial class MessagingIntegration : IEquatable<MessagingIntegration>
     /// </summary>
     /// <value>User reference that last modified this Integration</value>
     [JsonPropertyName("modifiedBy")]
-    public DomainEntityRef ModifiedBy { get; private set; }
+    public DomainEntityRef ModifiedBy { get; set; }
 
 
 
@@ -251,7 +251,7 @@ public partial class MessagingIntegration : IEquatable<MessagingIntegration>
     /// </summary>
     /// <value>Version number required for updates.</value>
     [JsonPropertyName("version")]
-    public int? Version { get; private set; }
+    public int? Version { get; set; }
 
 
 
@@ -260,7 +260,7 @@ public partial class MessagingIntegration : IEquatable<MessagingIntegration>
     /// </summary>
     /// <value>The URI for this object</value>
     [JsonPropertyName("selfUri")]
-    public string SelfUri { get; private set; }
+    public string SelfUri { get; set; }
 
 
     /// <summary>

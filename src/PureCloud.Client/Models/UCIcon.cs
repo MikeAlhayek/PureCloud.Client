@@ -24,7 +24,7 @@ public partial class UCIcon : IEquatable<UCIcon>
     /// </summary>
     /// <value>vector</value>
     [JsonPropertyName("vector")]
-    public string Vector { get; private set; }
+    public string Vector { get; set; }
 
 
     /// <summary>

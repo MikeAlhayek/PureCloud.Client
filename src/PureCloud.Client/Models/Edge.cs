@@ -289,7 +289,7 @@ public partial class Edge : IEquatable<Edge>
     /// </summary>
     /// <value>Indicates if the resource is active, inactive, or deleted.</value>
     [JsonPropertyName("state")]
-    public StateEnum? State { get; private set; }
+    public StateEnum? State { get; set; }
     /// <summary>
     /// The current status of the Edge.
     /// </summary>
@@ -317,7 +317,7 @@ public partial class Edge : IEquatable<Edge>
     /// </summary>
     /// <value>The current state of the Edge's call draining process before it can be safely rebooted or updated.</value>
     [JsonPropertyName("callDrainingState")]
-    public CallDrainingStateEnum? CallDrainingState { get; private set; }
+    public CallDrainingStateEnum? CallDrainingState { get; set; }
 
     /// <summary>
     /// Initializes a new instance of the <see cref="Edge" /> class.
@@ -399,7 +399,7 @@ public partial class Edge : IEquatable<Edge>
     /// </summary>
     /// <value>The globally unique identifier for the object.</value>
     [JsonPropertyName("id")]
-    public string Id { get; private set; }
+    public string Id { get; set; }
 
 
 
@@ -444,7 +444,7 @@ public partial class Edge : IEquatable<Edge>
     /// </summary>
     /// <value>The date the resource was created. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z</value>
     [JsonPropertyName("dateCreated")]
-    public DateTime? DateCreated { get; private set; }
+    public DateTime? DateCreated { get; set; }
 
 
 
@@ -453,7 +453,7 @@ public partial class Edge : IEquatable<Edge>
     /// </summary>
     /// <value>The date of the last modification to the resource. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z</value>
     [JsonPropertyName("dateModified")]
-    public DateTime? DateModified { get; private set; }
+    public DateTime? DateModified { get; set; }
 
 
 
@@ -462,7 +462,7 @@ public partial class Edge : IEquatable<Edge>
     /// </summary>
     /// <value>The ID of the user that last modified the resource.</value>
     [JsonPropertyName("modifiedBy")]
-    public string ModifiedBy { get; private set; }
+    public string ModifiedBy { get; set; }
 
 
 
@@ -471,7 +471,7 @@ public partial class Edge : IEquatable<Edge>
     /// </summary>
     /// <value>The ID of the user that created the resource.</value>
     [JsonPropertyName("createdBy")]
-    public string CreatedBy { get; private set; }
+    public string CreatedBy { get; set; }
 
 
 
@@ -482,7 +482,7 @@ public partial class Edge : IEquatable<Edge>
     /// </summary>
     /// <value>The application that last modified the resource.</value>
     [JsonPropertyName("modifiedByApp")]
-    public string ModifiedByApp { get; private set; }
+    public string ModifiedByApp { get; set; }
 
 
 
@@ -491,7 +491,7 @@ public partial class Edge : IEquatable<Edge>
     /// </summary>
     /// <value>The application that created the resource.</value>
     [JsonPropertyName("createdByApp")]
-    public string CreatedByApp { get; private set; }
+    public string CreatedByApp { get; set; }
 
 
 
@@ -682,7 +682,7 @@ public partial class Edge : IEquatable<Edge>
     /// </summary>
     /// <value>The remaining number of conversations the Edge has to drain before it can be safely rebooted or updated. When an Edge is not draining conversations, this will be NULL or 0.</value>
     [JsonPropertyName("conversationCount")]
-    public int? ConversationCount { get; private set; }
+    public int? ConversationCount { get; set; }
 
 
 
@@ -700,7 +700,7 @@ public partial class Edge : IEquatable<Edge>
     /// </summary>
     /// <value>True if the offline edge configuration endpoint has been called for this edge.</value>
     [JsonPropertyName("offlineConfigCalled")]
-    public bool? OfflineConfigCalled { get; private set; }
+    public bool? OfflineConfigCalled { get; set; }
 
 
 
@@ -709,7 +709,7 @@ public partial class Edge : IEquatable<Edge>
     /// </summary>
     /// <value>The name provided by the operating system of the Edge.</value>
     [JsonPropertyName("osName")]
-    public string OsName { get; private set; }
+    public string OsName { get; set; }
 
 
 
@@ -718,7 +718,7 @@ public partial class Edge : IEquatable<Edge>
     /// </summary>
     /// <value>The URI for this object</value>
     [JsonPropertyName("selfUri")]
-    public string SelfUri { get; private set; }
+    public string SelfUri { get; set; }
 
 
     /// <summary>

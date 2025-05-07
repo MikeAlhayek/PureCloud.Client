@@ -48,7 +48,7 @@ public partial class SuggestionContext : IEquatable<SuggestionContext>
     /// </summary>
     /// <value>The media type of the conversation in which the suggestion event was raised.</value>
     [JsonPropertyName("mediaType")]
-    public MediaTypeEnum? MediaType { get; private set; }
+    public MediaTypeEnum? MediaType { get; set; }
     /// <summary>
     /// Initializes a new instance of the <see cref="SuggestionContext" /> class.
     /// </summary>
@@ -64,7 +64,7 @@ public partial class SuggestionContext : IEquatable<SuggestionContext>
     /// </summary>
     /// <value>The queue used to assign the interaction to the user, if any.</value>
     [JsonPropertyName("queue")]
-    public AddressableEntityRef Queue { get; private set; }
+    public AddressableEntityRef Queue { get; set; }
 
 
 
@@ -75,7 +75,7 @@ public partial class SuggestionContext : IEquatable<SuggestionContext>
     /// </summary>
     /// <value>The agent participant who received the raised suggestion, if any.</value>
     [JsonPropertyName("user")]
-    public UserReference User { get; private set; }
+    public UserReference User { get; set; }
 
 
 
@@ -84,7 +84,7 @@ public partial class SuggestionContext : IEquatable<SuggestionContext>
     /// </summary>
     /// <value>The external contact of the end-user participant, if any.</value>
     [JsonPropertyName("externalContact")]
-    public AddressableEntityRef ExternalContact { get; private set; }
+    public AddressableEntityRef ExternalContact { get; set; }
 
 
 
@@ -93,7 +93,7 @@ public partial class SuggestionContext : IEquatable<SuggestionContext>
     /// </summary>
     /// <value>The utterance in the voice conversation, after which the suggestion was raised, if any.</value>
     [JsonPropertyName("utterance")]
-    public Entity Utterance { get; private set; }
+    public Entity Utterance { get; set; }
 
 
 
@@ -102,7 +102,7 @@ public partial class SuggestionContext : IEquatable<SuggestionContext>
     /// </summary>
     /// <value>The message in the digital conversation, after which the suggestion was raised, if any.</value>
     [JsonPropertyName("message")]
-    public AddressableEntityRef Message { get; private set; }
+    public AddressableEntityRef Message { get; set; }
 
 
 
@@ -111,7 +111,7 @@ public partial class SuggestionContext : IEquatable<SuggestionContext>
     /// </summary>
     /// <value>The query statement used when generating the suggestion, if any.</value>
     [JsonPropertyName("queryStatement")]
-    public string QueryStatement { get; private set; }
+    public string QueryStatement { get; set; }
 
 
     /// <summary>

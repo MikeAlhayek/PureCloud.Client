@@ -24,7 +24,7 @@ public partial class ScimV2SchemaDefinition : IEquatable<ScimV2SchemaDefinition>
     /// </summary>
     /// <value>The ID of the SCIM resource. Set by the service provider. \&quot;caseExact\&quot; is set to \&quot;true\&quot;. \&quot;mutability\&quot; is set to \&quot;readOnly\&quot;. \&quot;returned\&quot; is set to \&quot;always\&quot;.</value>
     [JsonPropertyName("id")]
-    public string Id { get; private set; }
+    public string Id { get; set; }
 
 
 
@@ -33,7 +33,7 @@ public partial class ScimV2SchemaDefinition : IEquatable<ScimV2SchemaDefinition>
     /// </summary>
     /// <value>The name of the schema.</value>
     [JsonPropertyName("name")]
-    public string Name { get; private set; }
+    public string Name { get; set; }
 
 
 
@@ -42,7 +42,7 @@ public partial class ScimV2SchemaDefinition : IEquatable<ScimV2SchemaDefinition>
     /// </summary>
     /// <value>The description of the schema.</value>
     [JsonPropertyName("description")]
-    public string Description { get; private set; }
+    public string Description { get; set; }
 
 
 
@@ -51,7 +51,7 @@ public partial class ScimV2SchemaDefinition : IEquatable<ScimV2SchemaDefinition>
     /// </summary>
     /// <value>The list of service provider attributes.</value>
     [JsonPropertyName("attributes")]
-    public List<ScimV2SchemaAttribute> Attributes { get; private set; }
+    public List<ScimV2SchemaAttribute> Attributes { get; set; }
 
 
 
@@ -60,7 +60,7 @@ public partial class ScimV2SchemaDefinition : IEquatable<ScimV2SchemaDefinition>
     /// </summary>
     /// <value>The metadata of the SCIM resource. Only \&quot;location\&quot; and \&quot;resourceType\&quot; are set for \&quot;Schema\&quot; resources.</value>
     [JsonPropertyName("meta")]
-    public ScimMetadata Meta { get; private set; }
+    public ScimMetadata Meta { get; set; }
 
 
     /// <summary>

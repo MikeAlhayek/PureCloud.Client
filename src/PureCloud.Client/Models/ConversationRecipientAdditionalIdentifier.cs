@@ -66,7 +66,7 @@ public partial class ConversationRecipientAdditionalIdentifier : IEquatable<Conv
     /// </summary>
     /// <value>Type of the Identifier</value>
     [JsonPropertyName("type")]
-    public TypeEnum? Type { get; private set; }
+    public TypeEnum? Type { get; set; }
     /// <summary>
     /// Initializes a new instance of the <see cref="ConversationRecipientAdditionalIdentifier" /> class.
     /// </summary>
@@ -84,7 +84,7 @@ public partial class ConversationRecipientAdditionalIdentifier : IEquatable<Conv
     /// </summary>
     /// <value>The Identifier value.</value>
     [JsonPropertyName("value")]
-    public string Value { get; private set; }
+    public string Value { get; set; }
 
 
     /// <summary>

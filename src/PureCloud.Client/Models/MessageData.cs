@@ -234,7 +234,7 @@ public partial class MessageData : IEquatable<MessageData>
     /// </summary>
     /// <value>The globally unique identifier for the object.</value>
     [JsonPropertyName("id")]
-    public string Id { get; private set; }
+    public string Id { get; set; }
 
 
 
@@ -320,7 +320,7 @@ public partial class MessageData : IEquatable<MessageData>
     /// </summary>
     /// <value>The message into normalized format</value>
     [JsonPropertyName("normalizedMessage")]
-    public ConversationNormalizedMessage NormalizedMessage { get; private set; }
+    public ConversationNormalizedMessage NormalizedMessage { get; set; }
 
 
 
@@ -329,7 +329,7 @@ public partial class MessageData : IEquatable<MessageData>
     /// </summary>
     /// <value>The delivery event associated with this message in normalized format, if the message direction was outbound</value>
     [JsonPropertyName("normalizedReceipts")]
-    public List<ConversationNormalizedMessage> NormalizedReceipts { get; private set; }
+    public List<ConversationNormalizedMessage> NormalizedReceipts { get; set; }
 
 
 
@@ -356,7 +356,7 @@ public partial class MessageData : IEquatable<MessageData>
     /// </summary>
     /// <value>The URI for this object</value>
     [JsonPropertyName("selfUri")]
-    public string SelfUri { get; private set; }
+    public string SelfUri { get; set; }
 
 
     /// <summary>

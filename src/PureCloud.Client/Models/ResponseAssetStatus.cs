@@ -48,7 +48,7 @@ public partial class ResponseAssetStatus : IEquatable<ResponseAssetStatus>
     /// </summary>
     /// <value>Upload status of the asset</value>
     [JsonPropertyName("status")]
-    public StatusEnum? Status { get; private set; }
+    public StatusEnum? Status { get; set; }
     /// <summary>
     /// Initializes a new instance of the <see cref="ResponseAssetStatus" /> class.
     /// </summary>
@@ -64,7 +64,7 @@ public partial class ResponseAssetStatus : IEquatable<ResponseAssetStatus>
     /// </summary>
     /// <value>The globally unique identifier for the object.</value>
     [JsonPropertyName("id")]
-    public string Id { get; private set; }
+    public string Id { get; set; }
 
 
 
@@ -75,7 +75,7 @@ public partial class ResponseAssetStatus : IEquatable<ResponseAssetStatus>
     /// </summary>
     /// <value>Error code. Used for localization</value>
     [JsonPropertyName("errorCode")]
-    public string ErrorCode { get; private set; }
+    public string ErrorCode { get; set; }
 
 
 
@@ -84,7 +84,7 @@ public partial class ResponseAssetStatus : IEquatable<ResponseAssetStatus>
     /// </summary>
     /// <value>Error message that explains upload failure status </value>
     [JsonPropertyName("errorMessage")]
-    public string ErrorMessage { get; private set; }
+    public string ErrorMessage { get; set; }
 
 
     /// <summary>

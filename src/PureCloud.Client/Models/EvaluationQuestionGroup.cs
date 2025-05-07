@@ -52,7 +52,7 @@ public partial class EvaluationQuestionGroup : IEquatable<EvaluationQuestionGrou
     /// </summary>
     /// <value>An identifier for this question group that stays the same across versions of the form.</value>
     [JsonPropertyName("contextId")]
-    public string ContextId { get; private set; }
+    public string ContextId { get; set; }
 
 
 

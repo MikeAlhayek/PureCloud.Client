@@ -28,7 +28,7 @@ public partial class ConfusionUtterance : IEquatable<ConfusionUtterance>
     /// </summary>
     /// <value>The globally unique identifier for the object.</value>
     [JsonPropertyName("id")]
-    public string Id { get; private set; }
+    public string Id { get; set; }
 
 
 

@@ -26,7 +26,7 @@ public partial class ConfusionIntentInfo : IEquatable<ConfusionIntentInfo>
     /// </summary>
     /// <value>The globally unique identifier for the object.</value>
     [JsonPropertyName("id")]
-    public string Id { get; private set; }
+    public string Id { get; set; }
 
 
 
@@ -35,7 +35,7 @@ public partial class ConfusionIntentInfo : IEquatable<ConfusionIntentInfo>
     /// </summary>
     /// <value>The name of the object.</value>
     [JsonPropertyName("name")]
-    public string Name { get; private set; }
+    public string Name { get; set; }
 
 
 

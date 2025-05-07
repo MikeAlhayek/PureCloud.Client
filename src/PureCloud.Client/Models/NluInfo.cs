@@ -29,7 +29,7 @@ public partial class NluInfo : IEquatable<NluInfo>
     /// Gets or Sets Domain
     /// </summary>
     [JsonPropertyName("domain")]
-    public AddressableEntityRef Domain { get; private set; }
+    public AddressableEntityRef Domain { get; set; }
 
 
 
@@ -37,7 +37,7 @@ public partial class NluInfo : IEquatable<NluInfo>
     /// Gets or Sets Version
     /// </summary>
     [JsonPropertyName("version")]
-    public NluDomainVersion Version { get; private set; }
+    public NluDomainVersion Version { get; set; }
 
 
 

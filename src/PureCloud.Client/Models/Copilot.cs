@@ -76,7 +76,7 @@ public partial class Copilot : IEquatable<Copilot>
     /// </summary>
     /// <value>Copilot is enabled.</value>
     [JsonPropertyName("enabled")]
-    public bool? Enabled { get; private set; }
+    public bool? Enabled { get; set; }
 
 
 
@@ -159,7 +159,7 @@ public partial class Copilot : IEquatable<Copilot>
     /// </summary>
     /// <value>The URI for this object</value>
     [JsonPropertyName("selfUri")]
-    public string SelfUri { get; private set; }
+    public string SelfUri { get; set; }
 
 
     /// <summary>

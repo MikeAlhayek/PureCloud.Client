@@ -24,7 +24,7 @@ public partial class SuggestionKnowledgeArticle : IEquatable<SuggestionKnowledge
     /// </summary>
     /// <value>The article title.</value>
     [JsonPropertyName("title")]
-    public string Title { get; private set; }
+    public string Title { get; set; }
 
 
 
@@ -33,7 +33,7 @@ public partial class SuggestionKnowledgeArticle : IEquatable<SuggestionKnowledge
     /// </summary>
     /// <value>Snippets of text from the article matching the query.</value>
     [JsonPropertyName("snippets")]
-    public List<string> Snippets { get; private set; }
+    public List<string> Snippets { get; set; }
 
 
 
@@ -42,7 +42,7 @@ public partial class SuggestionKnowledgeArticle : IEquatable<SuggestionKnowledge
     /// </summary>
     /// <value>The article.</value>
     [JsonPropertyName("document")]
-    public AddressableEntityRef Document { get; private set; }
+    public AddressableEntityRef Document { get; set; }
 
 
 
@@ -51,7 +51,7 @@ public partial class SuggestionKnowledgeArticle : IEquatable<SuggestionKnowledge
     /// </summary>
     /// <value>The version of the article.</value>
     [JsonPropertyName("version")]
-    public AddressableEntityRef Version { get; private set; }
+    public AddressableEntityRef Version { get; set; }
 
 
 
@@ -60,7 +60,7 @@ public partial class SuggestionKnowledgeArticle : IEquatable<SuggestionKnowledge
     /// </summary>
     /// <value>The most relevant answer within the suggested article.</value>
     [JsonPropertyName("knowledgeAnswer")]
-    public SuggestionKnowledgeAnswer KnowledgeAnswer { get; private set; }
+    public SuggestionKnowledgeAnswer KnowledgeAnswer { get; set; }
 
 
 
@@ -69,7 +69,7 @@ public partial class SuggestionKnowledgeArticle : IEquatable<SuggestionKnowledge
     /// </summary>
     /// <value>The variations of the article.</value>
     [JsonPropertyName("variations")]
-    public List<AddressableEntityRef> Variations { get; private set; }
+    public List<AddressableEntityRef> Variations { get; set; }
 
 
     /// <summary>

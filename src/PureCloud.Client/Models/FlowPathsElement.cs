@@ -246,7 +246,7 @@ public partial class FlowPathsElement : IEquatable<FlowPathsElement>
     /// </summary>
     /// <value>The flow milestone, set if the element type is Milestone.</value>
     [JsonPropertyName("flowMilestone")]
-    public AddressableEntityRef FlowMilestone { get; private set; }
+    public AddressableEntityRef FlowMilestone { get; set; }
 
 
 
@@ -255,7 +255,7 @@ public partial class FlowPathsElement : IEquatable<FlowPathsElement>
     /// </summary>
     /// <value>The flow outcome, set if the element type is Outcome or Milestone.</value>
     [JsonPropertyName("flowOutcome")]
-    public AddressableEntityRef FlowOutcome { get; private set; }
+    public AddressableEntityRef FlowOutcome { get; set; }
 
 
     /// <summary>

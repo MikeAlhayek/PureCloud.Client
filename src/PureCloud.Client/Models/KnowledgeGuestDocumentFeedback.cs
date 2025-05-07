@@ -256,7 +256,7 @@ public partial class KnowledgeGuestDocumentFeedback : IEquatable<KnowledgeGuestD
     /// </summary>
     /// <value>The globally unique identifier for the object.</value>
     [JsonPropertyName("id")]
-    public string Id { get; private set; }
+    public string Id { get; set; }
 
 
 
@@ -296,7 +296,7 @@ public partial class KnowledgeGuestDocumentFeedback : IEquatable<KnowledgeGuestD
     /// </summary>
     /// <value>Knowledge guest session ID.</value>
     [JsonPropertyName("sessionId")]
-    public string SessionId { get; private set; }
+    public string SessionId { get; set; }
 
 
 
@@ -305,7 +305,7 @@ public partial class KnowledgeGuestDocumentFeedback : IEquatable<KnowledgeGuestD
     /// </summary>
     /// <value>The date and time of the feedback. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z</value>
     [JsonPropertyName("dateCreated")]
-    public DateTime? DateCreated { get; private set; }
+    public DateTime? DateCreated { get; set; }
 
 
 
@@ -329,7 +329,7 @@ public partial class KnowledgeGuestDocumentFeedback : IEquatable<KnowledgeGuestD
     /// </summary>
     /// <value>The client application from which feedback was given.</value>
     [JsonPropertyName("application")]
-    public KnowledgeGuestSearchClientApplication Application { get; private set; }
+    public KnowledgeGuestSearchClientApplication Application { get; set; }
 
 
     /// <summary>

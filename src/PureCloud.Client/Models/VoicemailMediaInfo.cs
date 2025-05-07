@@ -30,7 +30,7 @@ public partial class VoicemailMediaInfo : IEquatable<VoicemailMediaInfo>
     /// </summary>
     /// <value>The globally unique identifier for the object.</value>
     [JsonPropertyName("id")]
-    public string Id { get; private set; }
+    public string Id { get; set; }
 
 
 

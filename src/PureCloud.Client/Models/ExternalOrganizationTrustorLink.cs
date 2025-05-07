@@ -32,7 +32,7 @@ public partial class ExternalOrganizationTrustorLink : IEquatable<ExternalOrgani
     /// </summary>
     /// <value>The globally unique identifier for the object.</value>
     [JsonPropertyName("id")]
-    public string Id { get; private set; }
+    public string Id { get; set; }
 
 
 
@@ -77,7 +77,7 @@ public partial class ExternalOrganizationTrustorLink : IEquatable<ExternalOrgani
     /// </summary>
     /// <value>The URI for the External Organization that is linked to the trustor org</value>
     [JsonPropertyName("externalOrganizationUri")]
-    public string ExternalOrganizationUri { get; private set; }
+    public string ExternalOrganizationUri { get; set; }
 
 
 
@@ -86,7 +86,7 @@ public partial class ExternalOrganizationTrustorLink : IEquatable<ExternalOrgani
     /// </summary>
     /// <value>The URI for this object</value>
     [JsonPropertyName("selfUri")]
-    public string SelfUri { get; private set; }
+    public string SelfUri { get; set; }
 
 
     /// <summary>

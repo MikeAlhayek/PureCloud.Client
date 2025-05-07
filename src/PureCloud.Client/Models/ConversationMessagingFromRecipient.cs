@@ -48,7 +48,7 @@ public partial class ConversationMessagingFromRecipient : IEquatable<Conversatio
     /// </summary>
     /// <value>The recipient ID type. This is used to indicate the format used for the ID.</value>
     [JsonPropertyName("idType")]
-    public IdTypeEnum? IdType { get; private set; }
+    public IdTypeEnum? IdType { get; set; }
 
     /// <summary>
     /// Initializes a new instance of the <see cref="ConversationMessagingFromRecipient" /> class.
@@ -80,7 +80,7 @@ public partial class ConversationMessagingFromRecipient : IEquatable<Conversatio
     /// </summary>
     /// <value>Nickname or display name of the recipient.</value>
     [JsonPropertyName("nickname")]
-    public string Nickname { get; private set; }
+    public string Nickname { get; set; }
 
 
 
@@ -127,7 +127,7 @@ public partial class ConversationMessagingFromRecipient : IEquatable<Conversatio
     /// </summary>
     /// <value>E-mail address of the recipient.</value>
     [JsonPropertyName("email")]
-    public string Email { get; private set; }
+    public string Email { get; set; }
 
 
 
@@ -145,7 +145,7 @@ public partial class ConversationMessagingFromRecipient : IEquatable<Conversatio
     /// </summary>
     /// <value>List of recipient additional identifiers</value>
     [JsonPropertyName("additionalIds")]
-    public List<ConversationRecipientAdditionalIdentifier> AdditionalIds { get; private set; }
+    public List<ConversationRecipientAdditionalIdentifier> AdditionalIds { get; set; }
 
 
     /// <summary>

@@ -47,7 +47,7 @@ public partial class AssessmentQuestionGroupScore : IEquatable<AssessmentQuestio
     /// </summary>
     /// <value>The total score for the questions</value>
     [JsonPropertyName("totalScore")]
-    public float? TotalScore { get; private set; }
+    public float? TotalScore { get; set; }
 
 
 
@@ -56,7 +56,7 @@ public partial class AssessmentQuestionGroupScore : IEquatable<AssessmentQuestio
     /// </summary>
     /// <value>The maximum total score for the questions</value>
     [JsonPropertyName("maxTotalScore")]
-    public float? MaxTotalScore { get; private set; }
+    public float? MaxTotalScore { get; set; }
 
 
 
@@ -83,7 +83,7 @@ public partial class AssessmentQuestionGroupScore : IEquatable<AssessmentQuestio
     /// </summary>
     /// <value>The total score for the critical questions</value>
     [JsonPropertyName("totalCriticalScore")]
-    public float? TotalCriticalScore { get; private set; }
+    public float? TotalCriticalScore { get; set; }
 
 
 
@@ -92,7 +92,7 @@ public partial class AssessmentQuestionGroupScore : IEquatable<AssessmentQuestio
     /// </summary>
     /// <value>The maximum total score for the critical questions</value>
     [JsonPropertyName("maxTotalCriticalScore")]
-    public float? MaxTotalCriticalScore { get; private set; }
+    public float? MaxTotalCriticalScore { get; set; }
 
 
 
@@ -101,7 +101,7 @@ public partial class AssessmentQuestionGroupScore : IEquatable<AssessmentQuestio
     /// </summary>
     /// <value>The total score for the non-critical questions</value>
     [JsonPropertyName("totalNonCriticalScore")]
-    public float? TotalNonCriticalScore { get; private set; }
+    public float? TotalNonCriticalScore { get; set; }
 
 
 
@@ -110,7 +110,7 @@ public partial class AssessmentQuestionGroupScore : IEquatable<AssessmentQuestio
     /// </summary>
     /// <value>The maximum total score for the non-critical questions</value>
     [JsonPropertyName("maxTotalNonCriticalScore")]
-    public float? MaxTotalNonCriticalScore { get; private set; }
+    public float? MaxTotalNonCriticalScore { get; set; }
 
 
 
@@ -119,7 +119,7 @@ public partial class AssessmentQuestionGroupScore : IEquatable<AssessmentQuestio
     /// </summary>
     /// <value>The unweighted total score for this question group</value>
     [JsonPropertyName("totalScoreUnweighted")]
-    public float? TotalScoreUnweighted { get; private set; }
+    public float? TotalScoreUnweighted { get; set; }
 
 
 
@@ -128,7 +128,7 @@ public partial class AssessmentQuestionGroupScore : IEquatable<AssessmentQuestio
     /// </summary>
     /// <value>The maximum unweighted total score for this question group</value>
     [JsonPropertyName("maxTotalScoreUnweighted")]
-    public float? MaxTotalScoreUnweighted { get; private set; }
+    public float? MaxTotalScoreUnweighted { get; set; }
 
 
 
@@ -137,7 +137,7 @@ public partial class AssessmentQuestionGroupScore : IEquatable<AssessmentQuestio
     /// </summary>
     /// <value>The unweighted total score for the critical questions</value>
     [JsonPropertyName("totalCriticalScoreUnweighted")]
-    public float? TotalCriticalScoreUnweighted { get; private set; }
+    public float? TotalCriticalScoreUnweighted { get; set; }
 
 
 
@@ -146,7 +146,7 @@ public partial class AssessmentQuestionGroupScore : IEquatable<AssessmentQuestio
     /// </summary>
     /// <value>The maximum unweighted total score for the critical questions</value>
     [JsonPropertyName("maxTotalCriticalScoreUnweighted")]
-    public float? MaxTotalCriticalScoreUnweighted { get; private set; }
+    public float? MaxTotalCriticalScoreUnweighted { get; set; }
 
 
 
@@ -155,7 +155,7 @@ public partial class AssessmentQuestionGroupScore : IEquatable<AssessmentQuestio
     /// </summary>
     /// <value>The total unweighted score for the non-critical questions</value>
     [JsonPropertyName("totalNonCriticalScoreUnweighted")]
-    public float? TotalNonCriticalScoreUnweighted { get; private set; }
+    public float? TotalNonCriticalScoreUnweighted { get; set; }
 
 
 
@@ -164,7 +164,7 @@ public partial class AssessmentQuestionGroupScore : IEquatable<AssessmentQuestio
     /// </summary>
     /// <value>The maximum unweighted total score for the non-critical questions</value>
     [JsonPropertyName("maxTotalNonCriticalScoreUnweighted")]
-    public float? MaxTotalNonCriticalScoreUnweighted { get; private set; }
+    public float? MaxTotalNonCriticalScoreUnweighted { get; set; }
 
 
 

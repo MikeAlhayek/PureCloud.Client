@@ -80,7 +80,7 @@ public partial class CampaignSequence : IEquatable<CampaignSequence>
     /// </summary>
     /// <value>The globally unique identifier for the object.</value>
     [JsonPropertyName("id")]
-    public string Id { get; private set; }
+    public string Id { get; set; }
 
 
 
@@ -97,7 +97,7 @@ public partial class CampaignSequence : IEquatable<CampaignSequence>
     /// </summary>
     /// <value>Creation time of the entity. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z</value>
     [JsonPropertyName("dateCreated")]
-    public DateTime? DateCreated { get; private set; }
+    public DateTime? DateCreated { get; set; }
 
 
 
@@ -106,7 +106,7 @@ public partial class CampaignSequence : IEquatable<CampaignSequence>
     /// </summary>
     /// <value>Last modified time of the entity. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z</value>
     [JsonPropertyName("dateModified")]
-    public DateTime? DateModified { get; private set; }
+    public DateTime? DateModified { get; set; }
 
 
 
@@ -133,7 +133,7 @@ public partial class CampaignSequence : IEquatable<CampaignSequence>
     /// </summary>
     /// <value>A zero-based index indicating which Campaign this CampaignSequence is currently on.</value>
     [JsonPropertyName("currentCampaign")]
-    public int? CurrentCampaign { get; private set; }
+    public int? CurrentCampaign { get; set; }
 
 
 
@@ -144,7 +144,7 @@ public partial class CampaignSequence : IEquatable<CampaignSequence>
     /// </summary>
     /// <value>A message indicating if and why a CampaignSequence has stopped unexpectedly.</value>
     [JsonPropertyName("stopMessage")]
-    public string StopMessage { get; private set; }
+    public string StopMessage { get; set; }
 
 
 
@@ -162,7 +162,7 @@ public partial class CampaignSequence : IEquatable<CampaignSequence>
     /// </summary>
     /// <value>The URI for this object</value>
     [JsonPropertyName("selfUri")]
-    public string SelfUri { get; private set; }
+    public string SelfUri { get; set; }
 
 
     /// <summary>

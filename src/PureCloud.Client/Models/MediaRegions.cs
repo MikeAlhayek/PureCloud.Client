@@ -24,7 +24,7 @@ public partial class MediaRegions : IEquatable<MediaRegions>
     /// </summary>
     /// <value>The AWS region your organization is in.</value>
     [JsonPropertyName("awsHomeRegion")]
-    public string AwsHomeRegion { get; private set; }
+    public string AwsHomeRegion { get; set; }
 
 
 
@@ -33,7 +33,7 @@ public partial class MediaRegions : IEquatable<MediaRegions>
     /// </summary>
     /// <value>The list of AWS regions to which Genesys Cloud is deployed with full functionality including media streaming.</value>
     [JsonPropertyName("awsCoreRegions")]
-    public List<string> AwsCoreRegions { get; private set; }
+    public List<string> AwsCoreRegions { get; set; }
 
 
 
@@ -42,7 +42,7 @@ public partial class MediaRegions : IEquatable<MediaRegions>
     /// </summary>
     /// <value>The list of AWS regions that Genesys Cloud uses only for media streaming.</value>
     [JsonPropertyName("awsSatelliteRegions")]
-    public List<string> AwsSatelliteRegions { get; private set; }
+    public List<string> AwsSatelliteRegions { get; set; }
 
 
     /// <summary>

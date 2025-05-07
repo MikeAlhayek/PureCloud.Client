@@ -24,7 +24,7 @@ public partial class MetadataResults : IEquatable<MetadataResults>
     /// </summary>
     /// <value>list of resources</value>
     [JsonPropertyName("entities")]
-    public List<MetadataResultEntity> Entities { get; private set; }
+    public List<MetadataResultEntity> Entities { get; set; }
 
 
     /// <summary>

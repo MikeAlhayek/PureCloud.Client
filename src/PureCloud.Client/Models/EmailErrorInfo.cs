@@ -24,7 +24,7 @@ public partial class EmailErrorInfo : IEquatable<EmailErrorInfo>
     /// </summary>
     /// <value>Error Message</value>
     [JsonPropertyName("message")]
-    public string Message { get; private set; }
+    public string Message { get; set; }
 
 
 
@@ -33,7 +33,7 @@ public partial class EmailErrorInfo : IEquatable<EmailErrorInfo>
     /// </summary>
     /// <value>Error Code</value>
     [JsonPropertyName("code")]
-    public string Code { get; private set; }
+    public string Code { get; set; }
 
 
     /// <summary>

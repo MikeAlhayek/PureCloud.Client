@@ -29,11 +29,11 @@ public sealed class MemberGroup
     /// The number of members in this group
     /// </summary>
     /// <value>The number of members in this group</value>
-    public int? MemberCount { get; private set; }
+    public int? MemberCount { get; set; }
 
     /// <summary>
     /// The URI for this object
     /// </summary>
     /// <value>The URI for this object</value>
-    public string SelfUri { get; private set; }
+    public string SelfUri { get; set; }
 }

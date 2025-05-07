@@ -24,7 +24,7 @@ public partial class JourneyViewChartMetricResultValue : IEquatable<JourneyViewC
     /// </summary>
     /// <value>Value for this metric</value>
     [JsonPropertyName("value")]
-    public int? Value { get; private set; }
+    public int? Value { get; set; }
 
 
 
@@ -33,7 +33,7 @@ public partial class JourneyViewChartMetricResultValue : IEquatable<JourneyViewC
     /// </summary>
     /// <value>Group by attributes for this metric</value>
     [JsonPropertyName("groupByAttributes")]
-    public List<GroupByAttribute> GroupByAttributes { get; private set; }
+    public List<GroupByAttribute> GroupByAttributes { get; set; }
 
 
     /// <summary>

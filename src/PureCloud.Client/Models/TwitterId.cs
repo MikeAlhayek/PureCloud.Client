@@ -57,7 +57,7 @@ public partial class TwitterId : IEquatable<TwitterId>
     /// </summary>
     /// <value>whether this data has been verified using the twitter API</value>
     [JsonPropertyName("verified")]
-    public bool? Verified { get; private set; }
+    public bool? Verified { get; set; }
 
 
 
@@ -66,7 +66,7 @@ public partial class TwitterId : IEquatable<TwitterId>
     /// </summary>
     /// <value>url of user&#39;s twitter profile</value>
     [JsonPropertyName("profileUrl")]
-    public string ProfileUrl { get; private set; }
+    public string ProfileUrl { get; set; }
 
 
     /// <summary>

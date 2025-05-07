@@ -120,7 +120,7 @@ public partial class FlowPathsFlowDetails : IEquatable<FlowPathsFlowDetails>
     /// </summary>
     /// <value>The identifier of the flow.</value>
     [JsonPropertyName("flow")]
-    public AddressableEntityRef Flow { get; private set; }
+    public AddressableEntityRef Flow { get; set; }
 
 
     /// <summary>

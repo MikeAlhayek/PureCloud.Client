@@ -39,7 +39,7 @@ public partial class BuAgentScheduleShiftRequest : IEquatable<BuAgentScheduleShi
     /// </summary>
     /// <value>The start date of this shift. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z</value>
     [JsonPropertyName("startDate")]
-    public DateTime? StartDate { get; private set; }
+    public DateTime? StartDate { get; set; }
 
 
 
@@ -48,7 +48,7 @@ public partial class BuAgentScheduleShiftRequest : IEquatable<BuAgentScheduleShi
     /// </summary>
     /// <value>The length of this shift in minutes</value>
     [JsonPropertyName("lengthMinutes")]
-    public int? LengthMinutes { get; private set; }
+    public int? LengthMinutes { get; set; }
 
 
 
@@ -75,7 +75,7 @@ public partial class BuAgentScheduleShiftRequest : IEquatable<BuAgentScheduleShi
     /// </summary>
     /// <value>The schedule to which this shift belongs</value>
     [JsonPropertyName("schedule")]
-    public BuScheduleReference Schedule { get; private set; }
+    public BuScheduleReference Schedule { get; set; }
 
 
     /// <summary>

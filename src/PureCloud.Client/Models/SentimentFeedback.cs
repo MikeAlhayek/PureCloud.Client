@@ -76,7 +76,7 @@ public partial class SentimentFeedback : IEquatable<SentimentFeedback>
     /// </summary>
     /// <value>The globally unique identifier for the object.</value>
     [JsonPropertyName("id")]
-    public string Id { get; private set; }
+    public string Id { get; set; }
 
 
 
@@ -105,7 +105,7 @@ public partial class SentimentFeedback : IEquatable<SentimentFeedback>
     /// </summary>
     /// <value>The Timestamp when sentiment feedback created. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z</value>
     [JsonPropertyName("dateCreated")]
-    public DateTime? DateCreated { get; private set; }
+    public DateTime? DateCreated { get; set; }
 
 
 
@@ -114,7 +114,7 @@ public partial class SentimentFeedback : IEquatable<SentimentFeedback>
     /// </summary>
     /// <value>The Id of user who created the sentiment feedback</value>
     [JsonPropertyName("createdBy")]
-    public AddressableEntityRef CreatedBy { get; private set; }
+    public AddressableEntityRef CreatedBy { get; set; }
 
 
     /// <summary>

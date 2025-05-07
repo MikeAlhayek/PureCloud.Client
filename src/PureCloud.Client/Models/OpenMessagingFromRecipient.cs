@@ -120,7 +120,7 @@ public partial class OpenMessagingFromRecipient : IEquatable<OpenMessagingFromRe
     /// </summary>
     /// <value>URL of an image that represents the recipient.</value>
     [JsonPropertyName("image")]
-    public string Image { get; private set; }
+    public string Image { get; set; }
 
 
 

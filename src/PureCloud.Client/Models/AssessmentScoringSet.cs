@@ -69,7 +69,7 @@ public partial class AssessmentScoringSet : IEquatable<AssessmentScoringSet>
     /// </summary>
     /// <value>The total score of the answers</value>
     [JsonPropertyName("totalScore")]
-    public float? TotalScore { get; private set; }
+    public float? TotalScore { get; set; }
 
 
 
@@ -78,7 +78,7 @@ public partial class AssessmentScoringSet : IEquatable<AssessmentScoringSet>
     /// </summary>
     /// <value>The total score for the critical questions</value>
     [JsonPropertyName("totalCriticalScore")]
-    public float? TotalCriticalScore { get; private set; }
+    public float? TotalCriticalScore { get; set; }
 
 
 
@@ -87,7 +87,7 @@ public partial class AssessmentScoringSet : IEquatable<AssessmentScoringSet>
     /// </summary>
     /// <value>The total score for the non-critical questions</value>
     [JsonPropertyName("totalNonCriticalScore")]
-    public float? TotalNonCriticalScore { get; private set; }
+    public float? TotalNonCriticalScore { get; set; }
 
 
 
@@ -105,7 +105,7 @@ public partial class AssessmentScoringSet : IEquatable<AssessmentScoringSet>
     /// </summary>
     /// <value>If the assessment was not passed, the reasons for failure.</value>
     [JsonPropertyName("failureReasons")]
-    public List<FailureReasonsEnum> FailureReasons { get; private set; }
+    public List<FailureReasonsEnum> FailureReasons { get; set; }
 
 
 
@@ -132,7 +132,7 @@ public partial class AssessmentScoringSet : IEquatable<AssessmentScoringSet>
     /// </summary>
     /// <value>True if the assessment was passed</value>
     [JsonPropertyName("isPassed")]
-    public bool? IsPassed { get; private set; }
+    public bool? IsPassed { get; set; }
 
 
     /// <summary>

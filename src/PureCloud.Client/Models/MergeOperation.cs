@@ -24,7 +24,7 @@ public partial class MergeOperation : IEquatable<MergeOperation>
     /// </summary>
     /// <value>The source contact for the merge operation</value>
     [JsonPropertyName("sourceContact")]
-    public AddressableEntityRef SourceContact { get; private set; }
+    public AddressableEntityRef SourceContact { get; set; }
 
 
 
@@ -33,7 +33,7 @@ public partial class MergeOperation : IEquatable<MergeOperation>
     /// </summary>
     /// <value>The target contact for the merge operation</value>
     [JsonPropertyName("targetContact")]
-    public AddressableEntityRef TargetContact { get; private set; }
+    public AddressableEntityRef TargetContact { get; set; }
 
 
 
@@ -42,7 +42,7 @@ public partial class MergeOperation : IEquatable<MergeOperation>
     /// </summary>
     /// <value>The contact created as a result of the merge operation</value>
     [JsonPropertyName("resultingContact")]
-    public AddressableEntityRef ResultingContact { get; private set; }
+    public AddressableEntityRef ResultingContact { get; set; }
 
 
     /// <summary>

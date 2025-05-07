@@ -28,7 +28,7 @@ public partial class NluDetectionResponse : IEquatable<NluDetectionResponse>
     /// </summary>
     /// <value>The NLU domain version which performed the detection.</value>
     [JsonPropertyName("version")]
-    public NluDomainVersion Version { get; private set; }
+    public NluDomainVersion Version { get; set; }
 
 
 

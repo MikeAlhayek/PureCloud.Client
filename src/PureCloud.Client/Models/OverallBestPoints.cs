@@ -24,7 +24,7 @@ public partial class OverallBestPoints : IEquatable<OverallBestPoints>
     /// </summary>
     /// <value>The requested division</value>
     [JsonPropertyName("division")]
-    public Division Division { get; private set; }
+    public Division Division { get; set; }
 
 
 
@@ -33,7 +33,7 @@ public partial class OverallBestPoints : IEquatable<OverallBestPoints>
     /// </summary>
     /// <value>List of gamification best point items</value>
     [JsonPropertyName("bestPoints")]
-    public List<OverallBestPointsItem> BestPoints { get; private set; }
+    public List<OverallBestPointsItem> BestPoints { get; set; }
 
 
 
@@ -42,7 +42,7 @@ public partial class OverallBestPoints : IEquatable<OverallBestPoints>
     /// </summary>
     /// <value>The targeted performance profile for the average points</value>
     [JsonPropertyName("performanceProfile")]
-    public AddressableEntityRef PerformanceProfile { get; private set; }
+    public AddressableEntityRef PerformanceProfile { get; set; }
 
 
     /// <summary>

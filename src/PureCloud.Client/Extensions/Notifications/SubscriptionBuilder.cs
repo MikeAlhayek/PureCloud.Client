@@ -21,7 +21,7 @@ public sealed class SubscriptionBuilder
     /// <param name="ids"></param>
     /// <returns></returns>
     /// <exception cref="InvalidOperationException"></exception>
-    public SubscriptionBuilder Add(string topicTemplate, params string[] ids)
+    public SubscriptionBuilder Add(string topicTemplate, params object[] ids)
     {
         if (!PureCloudConstants.TopicTemplates.TryGetValue(topicTemplate, out var topicType))
         {

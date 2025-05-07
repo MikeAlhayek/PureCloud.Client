@@ -24,7 +24,7 @@ public partial class ValidationServiceAsyncResponse : IEquatable<ValidationServi
     /// </summary>
     /// <value>Property denoting the job id of the import job</value>
     [JsonPropertyName("id")]
-    public string Id { get; private set; }
+    public string Id { get; set; }
 
 
 
@@ -33,7 +33,7 @@ public partial class ValidationServiceAsyncResponse : IEquatable<ValidationServi
     /// </summary>
     /// <value>The URI for this object</value>
     [JsonPropertyName("selfUri")]
-    public string SelfUri { get; private set; }
+    public string SelfUri { get; set; }
 
 
     /// <summary>

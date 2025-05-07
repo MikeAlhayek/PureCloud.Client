@@ -52,7 +52,7 @@ public partial class UserRoutingLanguagePost : IEquatable<UserRoutingLanguagePos
     /// </summary>
     /// <value>URI to the organization language used by this user language.</value>
     [JsonPropertyName("languageUri")]
-    public string LanguageUri { get; private set; }
+    public string LanguageUri { get; set; }
 
 
 
@@ -61,7 +61,7 @@ public partial class UserRoutingLanguagePost : IEquatable<UserRoutingLanguagePos
     /// </summary>
     /// <value>The URI for this object</value>
     [JsonPropertyName("selfUri")]
-    public string SelfUri { get; private set; }
+    public string SelfUri { get; set; }
 
 
     /// <summary>

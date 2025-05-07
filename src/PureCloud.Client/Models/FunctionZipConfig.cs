@@ -72,7 +72,7 @@ public partial class FunctionZipConfig : IEquatable<FunctionZipConfig>
     /// </summary>
     /// <value>Status of zip upload.</value>
     [JsonPropertyName("status")]
-    public StatusEnum? Status { get; private set; }
+    public StatusEnum? Status { get; set; }
     /// <summary>
     /// Initializes a new instance of the <see cref="FunctionZipConfig" /> class.
     /// </summary>
@@ -90,7 +90,7 @@ public partial class FunctionZipConfig : IEquatable<FunctionZipConfig>
     /// </summary>
     /// <value>Zip file Identifier</value>
     [JsonPropertyName("id")]
-    public string Id { get; private set; }
+    public string Id { get; set; }
 
 
 
@@ -99,7 +99,7 @@ public partial class FunctionZipConfig : IEquatable<FunctionZipConfig>
     /// </summary>
     /// <value>Zip file name</value>
     [JsonPropertyName("name")]
-    public string Name { get; private set; }
+    public string Name { get; set; }
 
 
 
@@ -108,7 +108,7 @@ public partial class FunctionZipConfig : IEquatable<FunctionZipConfig>
     /// </summary>
     /// <value>Date and time zip record was created. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z</value>
     [JsonPropertyName("dateCreated")]
-    public DateTime? DateCreated { get; private set; }
+    public DateTime? DateCreated { get; set; }
 
 
 
@@ -117,7 +117,7 @@ public partial class FunctionZipConfig : IEquatable<FunctionZipConfig>
     /// </summary>
     /// <value>Error message if upload failed.</value>
     [JsonPropertyName("errorMessage")]
-    public string ErrorMessage { get; private set; }
+    public string ErrorMessage { get; set; }
 
 
 
@@ -126,7 +126,7 @@ public partial class FunctionZipConfig : IEquatable<FunctionZipConfig>
     /// </summary>
     /// <value>Upload request id used for zip upload</value>
     [JsonPropertyName("requestId")]
-    public string RequestId { get; private set; }
+    public string RequestId { get; set; }
 
 
     /// <summary>

@@ -52,7 +52,7 @@ public partial class KnowledgeGuestDocumentSuggestion : IEquatable<KnowledgeGues
     /// </summary>
     /// <value>Session ID of the guest suggestions.</value>
     [JsonPropertyName("sessionId")]
-    public string SessionId { get; private set; }
+    public string SessionId { get; set; }
 
 
 
@@ -61,7 +61,7 @@ public partial class KnowledgeGuestDocumentSuggestion : IEquatable<KnowledgeGues
     /// </summary>
     /// <value>Suggestions matching the query.</value>
     [JsonPropertyName("results")]
-    public List<KnowledgeGuestDocumentSuggestionResult> Results { get; private set; }
+    public List<KnowledgeGuestDocumentSuggestionResult> Results { get; set; }
 
 
     /// <summary>

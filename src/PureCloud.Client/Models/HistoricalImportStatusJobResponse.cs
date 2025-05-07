@@ -26,7 +26,7 @@ public partial class HistoricalImportStatusJobResponse : IEquatable<HistoricalIm
     /// </summary>
     /// <value>The job id for the import request</value>
     [JsonPropertyName("id")]
-    public string Id { get; private set; }
+    public string Id { get; set; }
 
 
 
@@ -44,7 +44,7 @@ public partial class HistoricalImportStatusJobResponse : IEquatable<HistoricalIm
     /// </summary>
     /// <value>The URI for this object</value>
     [JsonPropertyName("selfUri")]
-    public string SelfUri { get; private set; }
+    public string SelfUri { get; set; }
 
 
     /// <summary>

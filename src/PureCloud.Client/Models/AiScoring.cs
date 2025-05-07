@@ -66,7 +66,7 @@ public partial class AiScoring : IEquatable<AiScoring>
     /// </summary>
     /// <value>The type of error that occurred while processing AI scores. It is null where there is no error.</value>
     [JsonPropertyName("failureType")]
-    public FailureTypeEnum? FailureType { get; private set; }
+    public FailureTypeEnum? FailureType { get; set; }
     /// <summary>
     /// Initializes a new instance of the <see cref="AiScoring" /> class.
     /// </summary>
@@ -84,7 +84,7 @@ public partial class AiScoring : IEquatable<AiScoring>
     /// </summary>
     /// <value>Indicates whether AI scoring is currently processing the evaluation.</value>
     [JsonPropertyName("pending")]
-    public bool? Pending { get; private set; }
+    public bool? Pending { get; set; }
 
 
 
@@ -93,7 +93,7 @@ public partial class AiScoring : IEquatable<AiScoring>
     /// </summary>
     /// <value>The date when the AI scores were last updated. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z</value>
     [JsonPropertyName("dateLastChanged")]
-    public DateTime? DateLastChanged { get; private set; }
+    public DateTime? DateLastChanged { get; set; }
 
 
     /// <summary>

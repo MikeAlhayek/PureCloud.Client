@@ -24,7 +24,7 @@ public partial class ConnectRate : IEquatable<ConnectRate>
     /// </summary>
     /// <value>Number of call attempts made</value>
     [JsonPropertyName("attempts")]
-    public long? Attempts { get; private set; }
+    public long? Attempts { get; set; }
 
 
 
@@ -33,7 +33,7 @@ public partial class ConnectRate : IEquatable<ConnectRate>
     /// </summary>
     /// <value>Number of calls with a live voice detected</value>
     [JsonPropertyName("connects")]
-    public long? Connects { get; private set; }
+    public long? Connects { get; set; }
 
 
 
@@ -42,7 +42,7 @@ public partial class ConnectRate : IEquatable<ConnectRate>
     /// </summary>
     /// <value>Ratio of connects to attempts</value>
     [JsonPropertyName("connectRatio")]
-    public double? ConnectRatio { get; private set; }
+    public double? ConnectRatio { get; set; }
 
 
     /// <summary>

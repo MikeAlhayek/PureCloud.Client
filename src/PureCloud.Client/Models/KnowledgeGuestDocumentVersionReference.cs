@@ -32,7 +32,7 @@ public partial class KnowledgeGuestDocumentVersionReference : IEquatable<Knowled
     /// </summary>
     /// <value>The globally unique identifier for the document.</value>
     [JsonPropertyName("id")]
-    public string Id { get; private set; }
+    public string Id { get; set; }
 
 
 

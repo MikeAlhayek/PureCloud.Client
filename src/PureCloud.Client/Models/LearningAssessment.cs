@@ -48,7 +48,7 @@ public partial class LearningAssessment : IEquatable<LearningAssessment>
     /// </summary>
     /// <value>Status of the assessment</value>
     [JsonPropertyName("status")]
-    public StatusEnum? Status { get; private set; }
+    public StatusEnum? Status { get; set; }
     /// <summary>
     /// Initializes a new instance of the <see cref="LearningAssessment" /> class.
     /// </summary>
@@ -66,7 +66,7 @@ public partial class LearningAssessment : IEquatable<LearningAssessment>
     /// </summary>
     /// <value>The Id of the assessment</value>
     [JsonPropertyName("assessmentId")]
-    public string AssessmentId { get; private set; }
+    public string AssessmentId { get; set; }
 
 
 
@@ -75,7 +75,7 @@ public partial class LearningAssessment : IEquatable<LearningAssessment>
     /// </summary>
     /// <value>The context Id of the related assessment form</value>
     [JsonPropertyName("contextId")]
-    public string ContextId { get; private set; }
+    public string ContextId { get; set; }
 
 
 
@@ -84,7 +84,7 @@ public partial class LearningAssessment : IEquatable<LearningAssessment>
     /// </summary>
     /// <value>The Id of the related assessment form</value>
     [JsonPropertyName("assessmentFormId")]
-    public string AssessmentFormId { get; private set; }
+    public string AssessmentFormId { get; set; }
 
 
 
@@ -104,7 +104,7 @@ public partial class LearningAssessment : IEquatable<LearningAssessment>
     /// </summary>
     /// <value>Date the assessment was created. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z</value>
     [JsonPropertyName("dateCreated")]
-    public DateTime? DateCreated { get; private set; }
+    public DateTime? DateCreated { get; set; }
 
 
 
@@ -113,7 +113,7 @@ public partial class LearningAssessment : IEquatable<LearningAssessment>
     /// </summary>
     /// <value>Date the assessment was last updated. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z</value>
     [JsonPropertyName("dateModified")]
-    public DateTime? DateModified { get; private set; }
+    public DateTime? DateModified { get; set; }
 
 
 
@@ -122,7 +122,7 @@ public partial class LearningAssessment : IEquatable<LearningAssessment>
     /// </summary>
     /// <value>Date the assessment was submitted. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z</value>
     [JsonPropertyName("dateSubmitted")]
-    public DateTime? DateSubmitted { get; private set; }
+    public DateTime? DateSubmitted { get; set; }
 
 
     /// <summary>

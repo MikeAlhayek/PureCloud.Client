@@ -233,7 +233,7 @@ public partial class EvaluationResponse : IEquatable<EvaluationResponse>
     /// </summary>
     /// <value>The globally unique identifier for the object.</value>
     [JsonPropertyName("id")]
-    public string Id { get; private set; }
+    public string Id { get; set; }
 
 
 
@@ -479,7 +479,7 @@ public partial class EvaluationResponse : IEquatable<EvaluationResponse>
     /// </summary>
     /// <value>The source that created the evaluation.</value>
     [JsonPropertyName("evaluationSource")]
-    public EvaluationSource EvaluationSource { get; private set; }
+    public EvaluationSource EvaluationSource { get; set; }
 
 
 
@@ -488,7 +488,7 @@ public partial class EvaluationResponse : IEquatable<EvaluationResponse>
     /// </summary>
     /// <value>AI scoring details for the evaluation.</value>
     [JsonPropertyName("aiScoring")]
-    public AiScoring AiScoring { get; private set; }
+    public AiScoring AiScoring { get; set; }
 
 
 
@@ -497,7 +497,7 @@ public partial class EvaluationResponse : IEquatable<EvaluationResponse>
     /// </summary>
     /// <value>The URI for this object</value>
     [JsonPropertyName("selfUri")]
-    public string SelfUri { get; private set; }
+    public string SelfUri { get; set; }
 
 
     /// <summary>

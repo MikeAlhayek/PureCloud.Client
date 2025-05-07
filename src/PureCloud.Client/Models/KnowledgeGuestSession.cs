@@ -40,7 +40,7 @@ public partial class KnowledgeGuestSession : IEquatable<KnowledgeGuestSession>
     /// </summary>
     /// <value>Session ID.</value>
     [JsonPropertyName("id")]
-    public string Id { get; private set; }
+    public string Id { get; set; }
 
 
 

@@ -9,13 +9,13 @@ public sealed class User
     /// The current state for this user.
     /// </summary>
     /// <value>The current state for this user.</value>
-    public UserState? State { get; private set; }
+    public UserState? State { get; set; }
 
     /// <summary>
     /// The globally unique identifier for the object.
     /// </summary>
     /// <value>The globally unique identifier for the object.</value>
-    public string Id { get; private set; }
+    public string Id { get; set; }
 
     /// <summary>
     /// Gets or Sets Name
@@ -47,7 +47,7 @@ public sealed class User
     /// Auto populated from addresses.
     /// </summary>
     /// <value>Auto populated from addresses.</value>
-    public List<Contact> PrimaryContactInfo { get; private set; }
+    public List<Contact> PrimaryContactInfo { get; set; }
 
     /// <summary>
     /// Email addresses and phone numbers for this user
@@ -106,91 +106,91 @@ public sealed class User
     /// ACD routing status
     /// </summary>
     /// <value>ACD routing status</value>
-    public RoutingStatus RoutingStatus { get; private set; }
+    public RoutingStatus RoutingStatus { get; set; }
 
     /// <summary>
     /// Active presence
     /// </summary>
     /// <value>Active presence</value>
-    public UserPresence Presence { get; private set; }
+    public UserPresence Presence { get; set; }
 
     /// <summary>
     /// Integration presence
     /// </summary>
     /// <value>Integration presence</value>
-    public UserPresence IntegrationPresence { get; private set; }
+    public UserPresence IntegrationPresence { get; set; }
 
     /// <summary>
     /// Summary of conversion statistics for conversation types.
     /// </summary>
     /// <value>Summary of conversion statistics for conversation types.</value>
-    public UserConversationSummary ConversationSummary { get; private set; }
+    public UserConversationSummary ConversationSummary { get; set; }
 
     /// <summary>
     /// Determine if out of office is enabled
     /// </summary>
     /// <value>Determine if out of office is enabled</value>
-    public OutOfOffice OutOfOffice { get; private set; }
+    public OutOfOffice OutOfOffice { get; set; }
 
     /// <summary>
     /// Current geolocation position
     /// </summary>
     /// <value>Current geolocation position</value>
-    public Geolocation Geolocation { get; private set; }
+    public Geolocation Geolocation { get; set; }
 
     /// <summary>
     /// Effective, default, and last station information
     /// </summary>
     /// <value>Effective, default, and last station information</value>
-    public UserStations Station { get; private set; }
+    public UserStations Station { get; set; }
 
     /// <summary>
     /// Roles and permissions assigned to the user
     /// </summary>
     /// <value>Roles and permissions assigned to the user</value>
-    public UserAuthorization Authorization { get; private set; }
+    public UserAuthorization Authorization { get; set; }
 
     /// <summary>
     /// Profile skills possessed by the user
     /// </summary>
     /// <value>Profile skills possessed by the user</value>
-    public List<string> ProfileSkills { get; private set; }
+    public List<string> ProfileSkills { get; set; }
 
     /// <summary>
     /// The user placement at each site location.
     /// </summary>
     /// <value>The user placement at each site location.</value>
-    public List<Location> Locations { get; private set; }
+    public List<Location> Locations { get; set; }
 
     /// <summary>
     /// The groups the user is a member of
     /// </summary>
     /// <value>The groups the user is a member of</value>
-    public List<Group> Groups { get; private set; }
+    public List<Group> Groups { get; set; }
 
     /// <summary>
     /// The team the user is a member of
     /// </summary>
     /// <value>The team the user is a member of</value>
-    public Team Team { get; private set; }
+    public Team Team { get; set; }
 
     /// <summary>
     /// The WFM work plan bid rank settings for the user
     /// </summary>
     /// <value>The WFM work plan bid rank settings for the user</value>
-    public WorkPlanBidRanks WorkPlanBidRanks { get; private set; }
+    public WorkPlanBidRanks WorkPlanBidRanks { get; set; }
 
     /// <summary>
     /// Routing (ACD) skills possessed by the user
     /// </summary>
     /// <value>Routing (ACD) skills possessed by the user</value>
-    public List<UserRoutingSkill> Skills { get; private set; }
+    public List<UserRoutingSkill> Skills { get; set; }
 
     /// <summary>
     /// Routing (ACD) languages possessed by the user
     /// </summary>
     /// <value>Routing (ACD) languages possessed by the user</value>
-    public List<UserRoutingLanguage> Languages { get; private set; }
+    public List<UserRoutingLanguage> Languages { get; set; }
 
     /// <summary>
     /// acd auto answer
@@ -202,7 +202,7 @@ public sealed class User
     /// preferred language by the user
     /// </summary>
     /// <value>preferred language by the user</value>
-    public string LanguagePreference { get; private set; }
+    public string LanguagePreference { get; set; }
 
     /// <summary>
     /// Gets or Sets LastTokenIssued
@@ -213,17 +213,17 @@ public sealed class User
     /// The last time the user logged in using username and password. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z
     /// </summary>
     /// <value>The last time the user logged in using username and password. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z</value>
-    public DateTime? DateLastLogin { get; private set; }
+    public DateTime? DateLastLogin { get; set; }
 
     /// <summary>
     /// The date &amp; time the user was sent their welcome email. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z
     /// </summary>
     /// <value>The date &amp; time the user was sent their welcome email. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z</value>
-    public DateTime? DateWelcomeSent { get; private set; }
+    public DateTime? DateWelcomeSent { get; set; }
 
     /// <summary>
     /// The URI for this object
     /// </summary>
     /// <value>The URI for this object</value>
-    public string SelfUri { get; private set; }
+    public string SelfUri { get; set; }
 }

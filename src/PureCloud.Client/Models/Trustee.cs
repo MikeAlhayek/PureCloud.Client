@@ -40,7 +40,7 @@ public partial class Trustee : IEquatable<Trustee>
     /// </summary>
     /// <value>Organization Id for this trust.</value>
     [JsonPropertyName("id")]
-    public string Id { get; private set; }
+    public string Id { get; set; }
 
 
 
@@ -85,7 +85,7 @@ public partial class Trustee : IEquatable<Trustee>
     /// </summary>
     /// <value>Date Trust was created. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z</value>
     [JsonPropertyName("dateCreated")]
-    public DateTime? DateCreated { get; private set; }
+    public DateTime? DateCreated { get; set; }
 
 
 
@@ -103,7 +103,7 @@ public partial class Trustee : IEquatable<Trustee>
     /// </summary>
     /// <value>User that created trust.</value>
     [JsonPropertyName("createdBy")]
-    public OrgUser CreatedBy { get; private set; }
+    public OrgUser CreatedBy { get; set; }
 
 
 
@@ -112,7 +112,7 @@ public partial class Trustee : IEquatable<Trustee>
     /// </summary>
     /// <value>Organization associated with this trust.</value>
     [JsonPropertyName("organization")]
-    public Organization Organization { get; private set; }
+    public Organization Organization { get; set; }
 
 
 
@@ -121,7 +121,7 @@ public partial class Trustee : IEquatable<Trustee>
     /// </summary>
     /// <value>The URI for this object</value>
     [JsonPropertyName("selfUri")]
-    public string SelfUri { get; private set; }
+    public string SelfUri { get; set; }
 
 
     /// <summary>

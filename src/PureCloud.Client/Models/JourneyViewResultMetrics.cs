@@ -24,7 +24,7 @@ public partial class JourneyViewResultMetrics : IEquatable<JourneyViewResultMetr
     /// </summary>
     /// <value>number of external contacts who participated at the element</value>
     [JsonPropertyName("participantCount")]
-    public int? ParticipantCount { get; private set; }
+    public int? ParticipantCount { get; set; }
 
 
 
@@ -33,7 +33,7 @@ public partial class JourneyViewResultMetrics : IEquatable<JourneyViewResultMetr
     /// </summary>
     /// <value>number of external contacts who could still complete the journey</value>
     [JsonPropertyName("activeCount")]
-    public int? ActiveCount { get; private set; }
+    public int? ActiveCount { get; set; }
 
 
 
@@ -42,7 +42,7 @@ public partial class JourneyViewResultMetrics : IEquatable<JourneyViewResultMetr
     /// </summary>
     /// <value>number of external contacts who completed the journey forward</value>
     [JsonPropertyName("completedCount")]
-    public int? CompletedCount { get; private set; }
+    public int? CompletedCount { get; set; }
 
 
 
@@ -51,7 +51,7 @@ public partial class JourneyViewResultMetrics : IEquatable<JourneyViewResultMetr
     /// </summary>
     /// <value>number of external contacts who did not make it to the next element</value>
     [JsonPropertyName("dropoutCount")]
-    public int? DropoutCount { get; private set; }
+    public int? DropoutCount { get; set; }
 
 
 
@@ -60,7 +60,7 @@ public partial class JourneyViewResultMetrics : IEquatable<JourneyViewResultMetr
     /// </summary>
     /// <value>number of external contacts who moved from one element to next element but did not complete the journey</value>
     [JsonPropertyName("flowCount")]
-    public int? FlowCount { get; private set; }
+    public int? FlowCount { get; set; }
 
 
     /// <summary>

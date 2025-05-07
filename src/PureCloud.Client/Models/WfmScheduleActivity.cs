@@ -24,7 +24,7 @@ public partial class WfmScheduleActivity : IEquatable<WfmScheduleActivity>
     /// </summary>
     /// <value>ID of user that the schedule is for</value>
     [JsonPropertyName("userReference")]
-    public UserReference UserReference { get; private set; }
+    public UserReference UserReference { get; set; }
 
 
 
@@ -33,7 +33,7 @@ public partial class WfmScheduleActivity : IEquatable<WfmScheduleActivity>
     /// </summary>
     /// <value>List of user&#39;s scheduled activities</value>
     [JsonPropertyName("activities")]
-    public List<ScheduleActivity> Activities { get; private set; }
+    public List<ScheduleActivity> Activities { get; set; }
 
 
 
@@ -42,7 +42,7 @@ public partial class WfmScheduleActivity : IEquatable<WfmScheduleActivity>
     /// </summary>
     /// <value>List of user&#39;s days off</value>
     [JsonPropertyName("fullDayTimeOffMarkers")]
-    public List<FullDayTimeOffMarker> FullDayTimeOffMarkers { get; private set; }
+    public List<FullDayTimeOffMarker> FullDayTimeOffMarkers { get; set; }
 
 
     /// <summary>

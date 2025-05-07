@@ -68,7 +68,7 @@ public partial class NluUtterance : IEquatable<NluUtterance>
     /// </summary>
     /// <value>ID of the utterance.</value>
     [JsonPropertyName("id")]
-    public string Id { get; private set; }
+    public string Id { get; set; }
 
 
 

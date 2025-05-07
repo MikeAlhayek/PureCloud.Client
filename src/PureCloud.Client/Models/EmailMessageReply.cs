@@ -151,7 +151,7 @@ public partial class EmailMessageReply : IEquatable<EmailMessageReply>
     /// </summary>
     /// <value>Indicates an estimation of the size of the current email as a whole, in its final, ready to be sent form.</value>
     [JsonPropertyName("emailSizeBytes")]
-    public int? EmailSizeBytes { get; private set; }
+    public int? EmailSizeBytes { get; set; }
 
 
 
@@ -160,7 +160,7 @@ public partial class EmailMessageReply : IEquatable<EmailMessageReply>
     /// </summary>
     /// <value>Indicates the maximum allowed size for an email to be send via SMTP server, based on the email domain configuration</value>
     [JsonPropertyName("maxEmailSizeBytes")]
-    public int? MaxEmailSizeBytes { get; private set; }
+    public int? MaxEmailSizeBytes { get; set; }
 
 
     /// <summary>

@@ -24,7 +24,7 @@ public partial class UpdateUser
     /// The globally unique identifier for the object.
     /// </summary>
     /// <value>The globally unique identifier for the object.</value>
-    public string Id { get; private set; }
+    public string Id { get; set; }
 
     /// <summary>
     /// Gets or Sets Name
@@ -50,7 +50,7 @@ public partial class UpdateUser
     /// The address(s) used for primary contact. Updates to the corresponding address in the addresses list will be reflected here.
     /// </summary>
     /// <value>The address(s) used for primary contact. Updates to the corresponding address in the addresses list will be reflected here.</value>
-    public List<Contact> PrimaryContactInfo { get; private set; }
+    public List<Contact> PrimaryContactInfo { get; set; }
 
     /// <summary>
     /// Email address, phone number, and/or extension for this user. One entry is allowed per media type
@@ -136,5 +136,5 @@ public partial class UpdateUser
     /// The URI for this object
     /// </summary>
     /// <value>The URI for this object</value>
-    public string SelfUri { get; private set; }
+    public string SelfUri { get; set; }
 }

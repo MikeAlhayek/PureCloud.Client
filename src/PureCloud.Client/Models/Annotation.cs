@@ -54,7 +54,7 @@ public partial class Annotation : IEquatable<Annotation>
     /// </summary>
     /// <value>Reason for a pause annotation. Valid values: Hold,SecurePause,FlowOrQueue,Pause</value>
     [JsonPropertyName("reason")]
-    public ReasonEnum? Reason { get; private set; }
+    public ReasonEnum? Reason { get; set; }
     /// <summary>
     /// Initializes a new instance of the <see cref="Annotation" /> class.
     /// </summary>
@@ -191,7 +191,7 @@ public partial class Annotation : IEquatable<Annotation>
     /// </summary>
     /// <value>List of annotations</value>
     [JsonPropertyName("annotations")]
-    public List<Annotation> Annotations { get; private set; }
+    public List<Annotation> Annotations { get; set; }
 
 
 
@@ -200,7 +200,7 @@ public partial class Annotation : IEquatable<Annotation>
     /// </summary>
     /// <value>Offset of annotation (milliseconds) from start of the recording before removing the cumulative duration of all pauses before this annotation</value>
     [JsonPropertyName("realtimeLocation")]
-    public long? RealtimeLocation { get; private set; }
+    public long? RealtimeLocation { get; set; }
 
 
 
@@ -209,7 +209,7 @@ public partial class Annotation : IEquatable<Annotation>
     /// </summary>
     /// <value>The URI for this object</value>
     [JsonPropertyName("selfUri")]
-    public string SelfUri { get; private set; }
+    public string SelfUri { get; set; }
 
 
     /// <summary>

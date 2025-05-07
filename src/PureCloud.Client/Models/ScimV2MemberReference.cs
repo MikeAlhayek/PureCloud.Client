@@ -60,7 +60,7 @@ public partial class ScimV2MemberReference : IEquatable<ScimV2MemberReference>
     /// </summary>
     /// <value>The type of SCIM resource.</value>
     [JsonPropertyName("type")]
-    public TypeEnum? Type { get; private set; }
+    public TypeEnum? Type { get; set; }
     /// <summary>
     /// Initializes a new instance of the <see cref="ScimV2MemberReference" /> class.
     /// </summary>
@@ -89,7 +89,7 @@ public partial class ScimV2MemberReference : IEquatable<ScimV2MemberReference>
     /// </summary>
     /// <value>The reference URI of the SCIM resource.</value>
     [JsonPropertyName("$ref")]
-    public string Ref { get; private set; }
+    public string Ref { get; set; }
 
 
     /// <summary>

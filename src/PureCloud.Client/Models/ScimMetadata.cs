@@ -60,7 +60,7 @@ public partial class ScimMetadata : IEquatable<ScimMetadata>
     /// </summary>
     /// <value>The type of SCIM resource.</value>
     [JsonPropertyName("resourceType")]
-    public ResourceTypeEnum? ResourceType { get; private set; }
+    public ResourceTypeEnum? ResourceType { get; set; }
     /// <summary>
     /// Initializes a new instance of the <see cref="ScimMetadata" /> class.
     /// </summary>
@@ -78,7 +78,7 @@ public partial class ScimMetadata : IEquatable<ScimMetadata>
     /// </summary>
     /// <value>The last time that the resource was modified. Date time is represented as an \&quot;ISO-8601 string\&quot;, for example, yyyy-MM-ddTHH:mm:ss.SSSZ. Not included with \&quot;Schema\&quot; and \&quot;ResourceType\&quot; resources.</value>
     [JsonPropertyName("lastModified")]
-    public DateTime? LastModified { get; private set; }
+    public DateTime? LastModified { get; set; }
 
 
 
@@ -87,7 +87,7 @@ public partial class ScimMetadata : IEquatable<ScimMetadata>
     /// </summary>
     /// <value>The URI of the resource.</value>
     [JsonPropertyName("location")]
-    public string Location { get; private set; }
+    public string Location { get; set; }
 
 
 
@@ -96,7 +96,7 @@ public partial class ScimMetadata : IEquatable<ScimMetadata>
     /// </summary>
     /// <value>The version of the resource. Matches the ETag HTTP response header. Not included with \&quot;Schema\&quot; and \&quot;ResourceType\&quot; resources.</value>
     [JsonPropertyName("version")]
-    public string Version { get; private set; }
+    public string Version { get; set; }
 
 
     /// <summary>

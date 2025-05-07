@@ -24,7 +24,7 @@ public partial class ScimServiceProviderConfigBulkFeature : IEquatable<ScimServi
     /// </summary>
     /// <value>Indicates whether configuration options are supported.</value>
     [JsonPropertyName("supported")]
-    public bool? Supported { get; private set; }
+    public bool? Supported { get; set; }
 
 
 
@@ -33,7 +33,7 @@ public partial class ScimServiceProviderConfigBulkFeature : IEquatable<ScimServi
     /// </summary>
     /// <value>The maximum number of operations for each bulk request.</value>
     [JsonPropertyName("maxOperations")]
-    public int? MaxOperations { get; private set; }
+    public int? MaxOperations { get; set; }
 
 
 
@@ -42,7 +42,7 @@ public partial class ScimServiceProviderConfigBulkFeature : IEquatable<ScimServi
     /// </summary>
     /// <value>The maximum payload size.</value>
     [JsonPropertyName("maxPayloadSize")]
-    public int? MaxPayloadSize { get; private set; }
+    public int? MaxPayloadSize { get; set; }
 
 
     /// <summary>

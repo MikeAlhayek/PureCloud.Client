@@ -62,7 +62,7 @@ public partial class Prompt : IEquatable<Prompt>
     /// </summary>
     /// <value>List of resources associated with this prompt</value>
     [JsonPropertyName("resources")]
-    public List<PromptAsset> Resources { get; private set; }
+    public List<PromptAsset> Resources { get; set; }
 
 
 
@@ -71,7 +71,7 @@ public partial class Prompt : IEquatable<Prompt>
     /// </summary>
     /// <value>Current prompt operation status</value>
     [JsonPropertyName("currentOperation")]
-    public Operation CurrentOperation { get; private set; }
+    public Operation CurrentOperation { get; set; }
 
 
 
@@ -80,7 +80,7 @@ public partial class Prompt : IEquatable<Prompt>
     /// </summary>
     /// <value>The URI for this object</value>
     [JsonPropertyName("selfUri")]
-    public string SelfUri { get; private set; }
+    public string SelfUri { get; set; }
 
 
     /// <summary>

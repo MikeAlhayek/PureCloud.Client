@@ -34,7 +34,7 @@ public partial class SearchUpdateRequest : IEquatable<SearchUpdateRequest>
     /// </summary>
     /// <value>The unique identifier of this session</value>
     [JsonPropertyName("sessionId")]
-    public string SessionId { get; private set; }
+    public string SessionId { get; set; }
 
 
 

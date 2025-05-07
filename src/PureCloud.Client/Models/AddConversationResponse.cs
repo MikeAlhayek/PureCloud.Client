@@ -24,7 +24,7 @@ public partial class AddConversationResponse : IEquatable<AddConversationRespons
     /// </summary>
     /// <value>The conversation reference</value>
     [JsonPropertyName("conversation")]
-    public ConversationReference Conversation { get; private set; }
+    public ConversationReference Conversation { get; set; }
 
 
 
@@ -33,7 +33,7 @@ public partial class AddConversationResponse : IEquatable<AddConversationRespons
     /// </summary>
     /// <value>The appointment reference</value>
     [JsonPropertyName("appointment")]
-    public CoachingAppointmentReference Appointment { get; private set; }
+    public CoachingAppointmentReference Appointment { get; set; }
 
 
     /// <summary>

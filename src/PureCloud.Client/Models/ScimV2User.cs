@@ -46,7 +46,7 @@ public partial class ScimV2User : IEquatable<ScimV2User>
     /// </summary>
     /// <value>The ID of the SCIM resource. Set by the service provider. \&quot;caseExact\&quot; is set to \&quot;true\&quot;. \&quot;mutability\&quot; is set to \&quot;readOnly\&quot;. \&quot;returned\&quot; is set to \&quot;always\&quot;.</value>
     [JsonPropertyName("id")]
-    public string Id { get; private set; }
+    public string Id { get; set; }
 
 
 
@@ -55,7 +55,7 @@ public partial class ScimV2User : IEquatable<ScimV2User>
     /// </summary>
     /// <value>The list of supported schemas.</value>
     [JsonPropertyName("schemas")]
-    public List<string> Schemas { get; private set; }
+    public List<string> Schemas { get; set; }
 
 
 
@@ -136,7 +136,7 @@ public partial class ScimV2User : IEquatable<ScimV2User>
     /// </summary>
     /// <value>The list of groups that the user is a member of. This list is immutable per SCIM RFC and may only be updated using the GROUPS resource endpoint.</value>
     [JsonPropertyName("groups")]
-    public List<ScimV2GroupReference> Groups { get; private set; }
+    public List<ScimV2GroupReference> Groups { get; set; }
 
 
 
@@ -172,7 +172,7 @@ public partial class ScimV2User : IEquatable<ScimV2User>
     /// </summary>
     /// <value>The metadata of the SCIM resource. Metadata is defined as immutable per SCIM RFC.</value>
     [JsonPropertyName("meta")]
-    public ScimMetadata Meta { get; private set; }
+    public ScimMetadata Meta { get; set; }
 
 
     /// <summary>

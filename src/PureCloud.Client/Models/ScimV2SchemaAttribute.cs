@@ -221,25 +221,25 @@ public partial class ScimV2SchemaAttribute : IEquatable<ScimV2SchemaAttribute>
     /// </summary>
     /// <value>The data type of the attribute.</value>
     [JsonPropertyName("type")]
-    public TypeEnum? Type { get; private set; }
+    public TypeEnum? Type { get; set; }
     /// <summary>
     /// The circumstances under which an attribute can be defined or redefined. The default is \"readWrite\".
     /// </summary>
     /// <value>The circumstances under which an attribute can be defined or redefined. The default is \"readWrite\".</value>
     [JsonPropertyName("mutability")]
-    public MutabilityEnum? Mutability { get; private set; }
+    public MutabilityEnum? Mutability { get; set; }
     /// <summary>
     /// The circumstances under which an attribute and its values are returned in response to a GET, PUT, POST, or PATCH request.
     /// </summary>
     /// <value>The circumstances under which an attribute and its values are returned in response to a GET, PUT, POST, or PATCH request.</value>
     [JsonPropertyName("returned")]
-    public ReturnedEnum? Returned { get; private set; }
+    public ReturnedEnum? Returned { get; set; }
     /// <summary>
     /// The method by which the service provider enforces the uniqueness of an attribute value. A server can reject a value by returning the HTTP response code 400 (Bad Request). A client can enforce uniqueness to a greater degree than the server provider enforces. For example, a client could make a value unique even though the server has \"uniqueness\" set to \"none\".
     /// </summary>
     /// <value>The method by which the service provider enforces the uniqueness of an attribute value. A server can reject a value by returning the HTTP response code 400 (Bad Request). A client can enforce uniqueness to a greater degree than the server provider enforces. For example, a client could make a value unique even though the server has \"uniqueness\" set to \"none\".</value>
     [JsonPropertyName("uniqueness")]
-    public UniquenessEnum? Uniqueness { get; private set; }
+    public UniquenessEnum? Uniqueness { get; set; }
     /// <summary>
     /// Initializes a new instance of the <see cref="ScimV2SchemaAttribute" /> class.
     /// </summary>
@@ -255,7 +255,7 @@ public partial class ScimV2SchemaAttribute : IEquatable<ScimV2SchemaAttribute>
     /// </summary>
     /// <value>The name of the attribute.</value>
     [JsonPropertyName("name")]
-    public string Name { get; private set; }
+    public string Name { get; set; }
 
 
 
@@ -266,7 +266,7 @@ public partial class ScimV2SchemaAttribute : IEquatable<ScimV2SchemaAttribute>
     /// </summary>
     /// <value>The list of subattributes for an attribute of the type \&quot;complex\&quot;. Uses the same schema as \&quot;attributes\&quot;.</value>
     [JsonPropertyName("subAttributes")]
-    public List<ScimV2SchemaAttribute> SubAttributes { get; private set; }
+    public List<ScimV2SchemaAttribute> SubAttributes { get; set; }
 
 
 
@@ -275,7 +275,7 @@ public partial class ScimV2SchemaAttribute : IEquatable<ScimV2SchemaAttribute>
     /// </summary>
     /// <value>Indicates whether an attribute contains multiple values.</value>
     [JsonPropertyName("multiValued")]
-    public bool? MultiValued { get; private set; }
+    public bool? MultiValued { get; set; }
 
 
 
@@ -284,7 +284,7 @@ public partial class ScimV2SchemaAttribute : IEquatable<ScimV2SchemaAttribute>
     /// </summary>
     /// <value>The description of the attribute.</value>
     [JsonPropertyName("description")]
-    public string Description { get; private set; }
+    public string Description { get; set; }
 
 
 
@@ -293,7 +293,7 @@ public partial class ScimV2SchemaAttribute : IEquatable<ScimV2SchemaAttribute>
     /// </summary>
     /// <value>Indicates whether an attribute is required.</value>
     [JsonPropertyName("required")]
-    public bool? Required { get; private set; }
+    public bool? Required { get; set; }
 
 
 
@@ -302,7 +302,7 @@ public partial class ScimV2SchemaAttribute : IEquatable<ScimV2SchemaAttribute>
     /// </summary>
     /// <value>The list of standard values that service providers may use. Service providers may ignore unsupported values.</value>
     [JsonPropertyName("canonicalValues")]
-    public List<string> CanonicalValues { get; private set; }
+    public List<string> CanonicalValues { get; set; }
 
 
 
@@ -311,7 +311,7 @@ public partial class ScimV2SchemaAttribute : IEquatable<ScimV2SchemaAttribute>
     /// </summary>
     /// <value>Indicates whether a string attribute is case-sensitive. If set to \&quot;true\&quot;, the server preserves case sensitivity. If set to \&quot;false\&quot;, the server may change the case. The server also uses case sensitivity when evaluating filters. See section 3.4.2.2 \&quot;Filtering\&quot; in RFC 7644 for details.</value>
     [JsonPropertyName("caseExact")]
-    public bool? CaseExact { get; private set; }
+    public bool? CaseExact { get; set; }
 
 
 
@@ -326,7 +326,7 @@ public partial class ScimV2SchemaAttribute : IEquatable<ScimV2SchemaAttribute>
     /// </summary>
     /// <value>The list of SCIM resource types that may be referenced. Only applies when \&quot;type\&quot; is set to \&quot;reference\&quot;.</value>
     [JsonPropertyName("referenceTypes")]
-    public List<ReferenceTypesEnum> ReferenceTypes { get; private set; }
+    public List<ReferenceTypesEnum> ReferenceTypes { get; set; }
 
 
     /// <summary>

@@ -60,7 +60,7 @@ public partial class AlertRuleProperties : IEquatable<AlertRuleProperties>
     /// </summary>
     /// <value>The type of rule being alerted.</value>
     [JsonPropertyName("type")]
-    public TypeEnum? Type { get; private set; }
+    public TypeEnum? Type { get; set; }
     /// <summary>
     /// Initializes a new instance of the <see cref="AlertRuleProperties" /> class.
     /// </summary>
@@ -76,7 +76,7 @@ public partial class AlertRuleProperties : IEquatable<AlertRuleProperties>
     /// </summary>
     /// <value>The globally unique identifier for the object.</value>
     [JsonPropertyName("id")]
-    public string Id { get; private set; }
+    public string Id { get; set; }
 
 
 
@@ -85,7 +85,7 @@ public partial class AlertRuleProperties : IEquatable<AlertRuleProperties>
     /// </summary>
     /// <value>The name of the object.</value>
     [JsonPropertyName("name")]
-    public string Name { get; private set; }
+    public string Name { get; set; }
 
 
 

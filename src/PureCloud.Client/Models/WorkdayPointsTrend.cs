@@ -72,7 +72,7 @@ public partial class WorkdayPointsTrend : IEquatable<WorkdayPointsTrend>
     /// </summary>
     /// <value>Aggregated for same day comparison</value>
     [JsonPropertyName("dayOfWeek")]
-    public DayOfWeekEnum? DayOfWeek { get; private set; }
+    public DayOfWeekEnum? DayOfWeek { get; set; }
     /// <summary>
     /// Initializes a new instance of the <see cref="WorkdayPointsTrend" /> class.
     /// </summary>
@@ -88,7 +88,7 @@ public partial class WorkdayPointsTrend : IEquatable<WorkdayPointsTrend>
     /// </summary>
     /// <value>The start workday for the query range for the gamification points trend. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd</value>
     [JsonPropertyName("dateStartWorkday")]
-    public string DateStartWorkday { get; private set; }
+    public string DateStartWorkday { get; set; }
 
 
 
@@ -97,7 +97,7 @@ public partial class WorkdayPointsTrend : IEquatable<WorkdayPointsTrend>
     /// </summary>
     /// <value>The end workday for the query range for the gamification points trend. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd</value>
     [JsonPropertyName("dateEndWorkday")]
-    public string DateEndWorkday { get; private set; }
+    public string DateEndWorkday { get; set; }
 
 
 
@@ -106,7 +106,7 @@ public partial class WorkdayPointsTrend : IEquatable<WorkdayPointsTrend>
     /// </summary>
     /// <value>The targeted user for the query</value>
     [JsonPropertyName("user")]
-    public UserReference User { get; private set; }
+    public UserReference User { get; set; }
 
 
 
@@ -117,7 +117,7 @@ public partial class WorkdayPointsTrend : IEquatable<WorkdayPointsTrend>
     /// </summary>
     /// <value>The total average points</value>
     [JsonPropertyName("averagePoints")]
-    public double? AveragePoints { get; private set; }
+    public double? AveragePoints { get; set; }
 
 
 
@@ -126,7 +126,7 @@ public partial class WorkdayPointsTrend : IEquatable<WorkdayPointsTrend>
     /// </summary>
     /// <value>Daily points trends</value>
     [JsonPropertyName("trend")]
-    public List<WorkdayPointsTrendItem> Trend { get; private set; }
+    public List<WorkdayPointsTrendItem> Trend { get; set; }
 
 
     /// <summary>

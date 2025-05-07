@@ -24,7 +24,7 @@ public sealed class Queue
     /// The globally unique identifier for the object.
     /// </summary>
     /// <value>The globally unique identifier for the object.</value>
-    public string Id { get; private set; }
+    public string Id { get; set; }
 
     /// <summary>
     /// Gets or Sets Name
@@ -71,19 +71,19 @@ public sealed class Queue
     /// The total number of members in the queue.
     /// </summary>
     /// <value>The total number of members in the queue.</value>
-    public int? MemberCount { get; private set; }
+    public int? MemberCount { get; set; }
 
     /// <summary>
     /// The number of user members (i.e., non-group members) in the queue.
     /// </summary>
     /// <value>The number of user members (i.e., non-group members) in the queue.</value>
-    public int? UserMemberCount { get; private set; }
+    public int? UserMemberCount { get; set; }
 
     /// <summary>
     /// The number of joined members in the queue.
     /// </summary>
     /// <value>The number of joined members in the queue.</value>
-    public int? JoinedMemberCount { get; private set; }
+    public int? JoinedMemberCount { get; set; }
 
     /// <summary>
     /// The media settings for the queue.
@@ -239,5 +239,5 @@ public sealed class Queue
     /// The URI for this object
     /// </summary>
     /// <value>The URI for this object</value>
-    public string SelfUri { get; private set; }
+    public string SelfUri { get; set; }
 }

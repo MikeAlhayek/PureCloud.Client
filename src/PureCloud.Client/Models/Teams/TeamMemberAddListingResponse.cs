@@ -34,7 +34,7 @@ public partial class TeamMemberAddListingResponse : IEquatable<TeamMemberAddList
     /// </summary>
     /// <value>List of any user ids that were not added.</value>
     [JsonPropertyName("failures")]
-    public List<TeamAddMemberFailure> Failures { get; private set; }
+    public List<TeamAddMemberFailure> Failures { get; set; }
 
 
     /// <summary>

@@ -35,7 +35,7 @@ public partial class OutcomeScoresResult : IEquatable<OutcomeScoresResult>
     /// </summary>
     /// <value>Timestamp indicating the last time that the event was scored. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z</value>
     [JsonPropertyName("modifiedDate")]
-    public DateTime? ModifiedDate { get; private set; }
+    public DateTime? ModifiedDate { get; set; }
 
 
     /// <summary>

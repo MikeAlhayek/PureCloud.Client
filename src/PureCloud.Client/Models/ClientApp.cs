@@ -78,7 +78,7 @@ public partial class ClientApp : IEquatable<ClientApp>
     /// </summary>
     /// <value>The globally unique identifier for the object.</value>
     [JsonPropertyName("id")]
-    public string Id { get; private set; }
+    public string Id { get; set; }
 
 
 
@@ -87,7 +87,7 @@ public partial class ClientApp : IEquatable<ClientApp>
     /// </summary>
     /// <value>The name of the integration, used to distinguish this integration from others of the same type.</value>
     [JsonPropertyName("name")]
-    public string Name { get; private set; }
+    public string Name { get; set; }
 
 
 
@@ -96,7 +96,7 @@ public partial class ClientApp : IEquatable<ClientApp>
     /// </summary>
     /// <value>Type of the integration</value>
     [JsonPropertyName("integrationType")]
-    public IntegrationType IntegrationType { get; private set; }
+    public IntegrationType IntegrationType { get; set; }
 
 
 
@@ -105,7 +105,7 @@ public partial class ClientApp : IEquatable<ClientApp>
     /// </summary>
     /// <value>Notes about the integration.</value>
     [JsonPropertyName("notes")]
-    public string Notes { get; private set; }
+    public string Notes { get; set; }
 
 
 
@@ -116,7 +116,7 @@ public partial class ClientApp : IEquatable<ClientApp>
     /// </summary>
     /// <value>Configuration information for the integration.</value>
     [JsonPropertyName("config")]
-    public ClientAppConfigurationInfo Config { get; private set; }
+    public ClientAppConfigurationInfo Config { get; set; }
 
 
 
@@ -125,7 +125,7 @@ public partial class ClientApp : IEquatable<ClientApp>
     /// </summary>
     /// <value>Last reported status of the integration.</value>
     [JsonPropertyName("reportedState")]
-    public IntegrationStatusInfo ReportedState { get; private set; }
+    public IntegrationStatusInfo ReportedState { get; set; }
 
 
 
@@ -134,7 +134,7 @@ public partial class ClientApp : IEquatable<ClientApp>
     /// </summary>
     /// <value>Read-only attributes for the integration.</value>
     [JsonPropertyName("attributes")]
-    public Dictionary<string, string> Attributes { get; private set; }
+    public Dictionary<string, string> Attributes { get; set; }
 
 
 
@@ -143,7 +143,7 @@ public partial class ClientApp : IEquatable<ClientApp>
     /// </summary>
     /// <value>The URI for this object</value>
     [JsonPropertyName("selfUri")]
-    public string SelfUri { get; private set; }
+    public string SelfUri { get; set; }
 
 
     /// <summary>

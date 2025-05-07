@@ -66,7 +66,7 @@ public partial class ImapSettings : IEquatable<ImapSettings>
     /// </summary>
     /// <value>Imap Server Status</value>
     [JsonPropertyName("status")]
-    public StatusEnum? Status { get; private set; }
+    public StatusEnum? Status { get; set; }
     /// <summary>
     /// Initializes a new instance of the <see cref="ImapSettings" /> class.
     /// </summary>
@@ -95,7 +95,7 @@ public partial class ImapSettings : IEquatable<ImapSettings>
     /// </summary>
     /// <value>Additional Imap Server error information</value>
     [JsonPropertyName("errorInfo")]
-    public EmailErrorInfo ErrorInfo { get; private set; }
+    public EmailErrorInfo ErrorInfo { get; set; }
 
 
     /// <summary>

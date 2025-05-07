@@ -24,7 +24,7 @@ public partial class TopicDuration : IEquatable<TopicDuration>
     /// </summary>
     /// <value>The total duration of the topic phrase within the conversation</value>
     [JsonPropertyName("totalMilliseconds")]
-    public long? TotalMilliseconds { get; private set; }
+    public long? TotalMilliseconds { get; set; }
 
 
     /// <summary>

@@ -24,7 +24,7 @@ public partial class LearningAssignmentStepSignedCookie : IEquatable<LearningAss
     /// </summary>
     /// <value>The base URL for the signed cookie</value>
     [JsonPropertyName("url")]
-    public string Url { get; private set; }
+    public string Url { get; set; }
 
 
 
@@ -33,7 +33,7 @@ public partial class LearningAssignmentStepSignedCookie : IEquatable<LearningAss
     /// </summary>
     /// <value>The cookie values required to access content from the base URL</value>
     [JsonPropertyName("cookieValues")]
-    public Dictionary<string, string> CookieValues { get; private set; }
+    public Dictionary<string, string> CookieValues { get; set; }
 
 
     /// <summary>

@@ -98,7 +98,7 @@ public partial class VoicemailGroupPolicy : IEquatable<VoicemailGroupPolicy>
     /// </summary>
     /// <value>The group associated with the policy</value>
     [JsonPropertyName("group")]
-    public Group Group { get; private set; }
+    public Group Group { get; set; }
 
 
 

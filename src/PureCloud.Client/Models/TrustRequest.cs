@@ -24,7 +24,7 @@ public partial class TrustRequest : IEquatable<TrustRequest>
     /// </summary>
     /// <value>The globally unique identifier for the object.</value>
     [JsonPropertyName("id")]
-    public string Id { get; private set; }
+    public string Id { get; set; }
 
 
 
@@ -33,7 +33,7 @@ public partial class TrustRequest : IEquatable<TrustRequest>
     /// </summary>
     /// <value>User who created this request.</value>
     [JsonPropertyName("createdBy")]
-    public OrgUser CreatedBy { get; private set; }
+    public OrgUser CreatedBy { get; set; }
 
 
 
@@ -42,7 +42,7 @@ public partial class TrustRequest : IEquatable<TrustRequest>
     /// </summary>
     /// <value>Date request was created. There is a 48 hour expiration on all requests. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z</value>
     [JsonPropertyName("dateCreated")]
-    public DateTime? DateCreated { get; private set; }
+    public DateTime? DateCreated { get; set; }
 
 
 
@@ -51,7 +51,7 @@ public partial class TrustRequest : IEquatable<TrustRequest>
     /// </summary>
     /// <value>Trustee organization who generated this request.</value>
     [JsonPropertyName("trustee")]
-    public Organization Trustee { get; private set; }
+    public Organization Trustee { get; set; }
 
 
 
@@ -60,7 +60,7 @@ public partial class TrustRequest : IEquatable<TrustRequest>
     /// </summary>
     /// <value>The list of trustee users that are requesting access.</value>
     [JsonPropertyName("users")]
-    public List<OrgUser> Users { get; private set; }
+    public List<OrgUser> Users { get; set; }
 
 
 
@@ -69,7 +69,7 @@ public partial class TrustRequest : IEquatable<TrustRequest>
     /// </summary>
     /// <value>The list of trustee groups that are requesting access.</value>
     [JsonPropertyName("groups")]
-    public List<TrustGroup> Groups { get; private set; }
+    public List<TrustGroup> Groups { get; set; }
 
 
 
@@ -78,7 +78,7 @@ public partial class TrustRequest : IEquatable<TrustRequest>
     /// </summary>
     /// <value>The URI for this object</value>
     [JsonPropertyName("selfUri")]
-    public string SelfUri { get; private set; }
+    public string SelfUri { get; set; }
 
 
     /// <summary>

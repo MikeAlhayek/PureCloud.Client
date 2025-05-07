@@ -42,7 +42,7 @@ public partial class TestMessage : IEquatable<TestMessage>
     /// </summary>
     /// <value>After the message has been sent, this is the value of the Message-ID email header.</value>
     [JsonPropertyName("id")]
-    public string Id { get; private set; }
+    public string Id { get; set; }
 
 
 

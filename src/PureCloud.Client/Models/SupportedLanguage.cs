@@ -24,7 +24,7 @@ public partial class SupportedLanguage : IEquatable<SupportedLanguage>
     /// </summary>
     /// <value>Architect supported language tag, e.g. en-us, es-us</value>
     [JsonPropertyName("language")]
-    public string Language { get; private set; }
+    public string Language { get; set; }
 
 
 
@@ -33,7 +33,7 @@ public partial class SupportedLanguage : IEquatable<SupportedLanguage>
     /// </summary>
     /// <value>Whether or not this language is the default language</value>
     [JsonPropertyName("isDefault")]
-    public bool? IsDefault { get; private set; }
+    public bool? IsDefault { get; set; }
 
 
     /// <summary>

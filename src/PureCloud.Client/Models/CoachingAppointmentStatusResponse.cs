@@ -54,7 +54,7 @@ public partial class CoachingAppointmentStatusResponse : IEquatable<CoachingAppo
     /// </summary>
     /// <value>The status of the coaching appointment</value>
     [JsonPropertyName("status")]
-    public StatusEnum? Status { get; private set; }
+    public StatusEnum? Status { get; set; }
     /// <summary>
     /// Initializes a new instance of the <see cref="CoachingAppointmentStatusResponse" /> class.
     /// </summary>
@@ -70,7 +70,7 @@ public partial class CoachingAppointmentStatusResponse : IEquatable<CoachingAppo
     /// </summary>
     /// <value>The coaching appointment this status belongs to</value>
     [JsonPropertyName("appointment")]
-    public CoachingAppointmentReference Appointment { get; private set; }
+    public CoachingAppointmentReference Appointment { get; set; }
 
 
 
@@ -79,7 +79,7 @@ public partial class CoachingAppointmentStatusResponse : IEquatable<CoachingAppo
     /// </summary>
     /// <value>User who updated the status</value>
     [JsonPropertyName("createdBy")]
-    public UserReference CreatedBy { get; private set; }
+    public UserReference CreatedBy { get; set; }
 
 
 
@@ -88,7 +88,7 @@ public partial class CoachingAppointmentStatusResponse : IEquatable<CoachingAppo
     /// </summary>
     /// <value>Creation time of the status. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z</value>
     [JsonPropertyName("dateCreated")]
-    public DateTime? DateCreated { get; private set; }
+    public DateTime? DateCreated { get; set; }
 
 
 

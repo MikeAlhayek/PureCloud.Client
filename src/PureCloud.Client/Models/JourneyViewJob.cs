@@ -86,7 +86,7 @@ public partial class JourneyViewJob : IEquatable<JourneyViewJob>
     /// </summary>
     /// <value>The globally unique identifier for the object.</value>
     [JsonPropertyName("id")]
-    public string Id { get; private set; }
+    public string Id { get; set; }
 
 
 
@@ -95,7 +95,7 @@ public partial class JourneyViewJob : IEquatable<JourneyViewJob>
     /// </summary>
     /// <value>Timestamp of execution. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z</value>
     [JsonPropertyName("dateCreated")]
-    public DateTime? DateCreated { get; private set; }
+    public DateTime? DateCreated { get; set; }
 
 
 
@@ -104,7 +104,7 @@ public partial class JourneyViewJob : IEquatable<JourneyViewJob>
     /// </summary>
     /// <value>Timestamp of completion. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z</value>
     [JsonPropertyName("dateCompleted")]
-    public DateTime? DateCompleted { get; private set; }
+    public DateTime? DateCompleted { get; set; }
 
 
 
@@ -124,7 +124,7 @@ public partial class JourneyViewJob : IEquatable<JourneyViewJob>
     /// </summary>
     /// <value>Timestamp for the estimated time of completion. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z</value>
     [JsonPropertyName("dateCompletionEstimated")]
-    public DateTime? DateCompletionEstimated { get; private set; }
+    public DateTime? DateCompletionEstimated { get; set; }
 
 
 
@@ -133,7 +133,7 @@ public partial class JourneyViewJob : IEquatable<JourneyViewJob>
     /// </summary>
     /// <value>The URI for this object</value>
     [JsonPropertyName("selfUri")]
-    public string SelfUri { get; private set; }
+    public string SelfUri { get; set; }
 
 
     /// <summary>

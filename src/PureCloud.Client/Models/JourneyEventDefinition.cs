@@ -42,7 +42,7 @@ public partial class JourneyEventDefinition : IEquatable<JourneyEventDefinition>
     /// </summary>
     /// <value>The source of the event definition</value>
     [JsonPropertyName("source")]
-    public SourceEnum? Source { get; private set; }
+    public SourceEnum? Source { get; set; }
     /// <summary>
     /// Initializes a new instance of the <see cref="JourneyEventDefinition" /> class.
     /// </summary>
@@ -58,7 +58,7 @@ public partial class JourneyEventDefinition : IEquatable<JourneyEventDefinition>
     /// </summary>
     /// <value>The globally unique identifier for the object.</value>
     [JsonPropertyName("id")]
-    public string Id { get; private set; }
+    public string Id { get; set; }
 
 
 
@@ -67,7 +67,7 @@ public partial class JourneyEventDefinition : IEquatable<JourneyEventDefinition>
     /// </summary>
     /// <value>The name of the event definition</value>
     [JsonPropertyName("name")]
-    public string Name { get; private set; }
+    public string Name { get; set; }
 
 
 
@@ -78,7 +78,7 @@ public partial class JourneyEventDefinition : IEquatable<JourneyEventDefinition>
     /// </summary>
     /// <value>The description of this event definition</value>
     [JsonPropertyName("description")]
-    public string Description { get; private set; }
+    public string Description { get; set; }
 
 
 
@@ -87,7 +87,7 @@ public partial class JourneyEventDefinition : IEquatable<JourneyEventDefinition>
     /// </summary>
     /// <value>The JSON schema of this event definition</value>
     [JsonPropertyName("jsonSchema")]
-    public JsonSchemaDocument JsonSchema { get; private set; }
+    public JsonSchemaDocument JsonSchema { get; set; }
 
 
 
@@ -96,7 +96,7 @@ public partial class JourneyEventDefinition : IEquatable<JourneyEventDefinition>
     /// </summary>
     /// <value>The URI for this object</value>
     [JsonPropertyName("selfUri")]
-    public string SelfUri { get; private set; }
+    public string SelfUri { get; set; }
 
 
     /// <summary>

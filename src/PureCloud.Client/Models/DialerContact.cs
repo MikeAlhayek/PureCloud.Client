@@ -44,7 +44,7 @@ public partial class DialerContact : IEquatable<DialerContact>
     /// </summary>
     /// <value>The globally unique identifier for the object.</value>
     [JsonPropertyName("id")]
-    public string Id { get; private set; }
+    public string Id { get; set; }
 
 
 
@@ -79,7 +79,7 @@ public partial class DialerContact : IEquatable<DialerContact>
     /// </summary>
     /// <value>A map of call records for the contact phone columns.</value>
     [JsonPropertyName("callRecords")]
-    public Dictionary<string, CallRecord> CallRecords { get; private set; }
+    public Dictionary<string, CallRecord> CallRecords { get; set; }
 
 
 
@@ -88,7 +88,7 @@ public partial class DialerContact : IEquatable<DialerContact>
     /// </summary>
     /// <value>A map of SMS records for the contact phone columns.</value>
     [JsonPropertyName("latestSmsEvaluations")]
-    public Dictionary<string, MessageEvaluation> LatestSmsEvaluations { get; private set; }
+    public Dictionary<string, MessageEvaluation> LatestSmsEvaluations { get; set; }
 
 
 
@@ -97,7 +97,7 @@ public partial class DialerContact : IEquatable<DialerContact>
     /// </summary>
     /// <value>A map of email records for the contact email columns.</value>
     [JsonPropertyName("latestEmailEvaluations")]
-    public Dictionary<string, MessageEvaluation> LatestEmailEvaluations { get; private set; }
+    public Dictionary<string, MessageEvaluation> LatestEmailEvaluations { get; set; }
 
 
 
@@ -142,7 +142,7 @@ public partial class DialerContact : IEquatable<DialerContact>
     /// </summary>
     /// <value>Map containing data about the timezone the contact is mapped to. This will only be populated if the contact list has automatic timezone mapping turned on. The key is the column name. The value is the timezone it mapped to and the type of column: Phone or Zip</value>
     [JsonPropertyName("contactColumnTimeZones")]
-    public Dictionary<string, ContactColumnTimeZone> ContactColumnTimeZones { get; private set; }
+    public Dictionary<string, ContactColumnTimeZone> ContactColumnTimeZones { get; set; }
 
 
 
@@ -151,7 +151,7 @@ public partial class DialerContact : IEquatable<DialerContact>
     /// </summary>
     /// <value>the priority property within ConfigurationOverides indicates whether or not the contact to be placed in front of the queue or at the end of the queue</value>
     [JsonPropertyName("configurationOverrides")]
-    public ConfigurationOverrides ConfigurationOverrides { get; private set; }
+    public ConfigurationOverrides ConfigurationOverrides { get; set; }
 
 
 
@@ -160,7 +160,7 @@ public partial class DialerContact : IEquatable<DialerContact>
     /// </summary>
     /// <value>Timestamp for when the contact was added. Contacts added prior to 2023 September 1 may be missing this value. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z</value>
     [JsonPropertyName("dateCreated")]
-    public DateTime? DateCreated { get; private set; }
+    public DateTime? DateCreated { get; set; }
 
 
 
@@ -169,7 +169,7 @@ public partial class DialerContact : IEquatable<DialerContact>
     /// </summary>
     /// <value>The URI for this object</value>
     [JsonPropertyName("selfUri")]
-    public string SelfUri { get; private set; }
+    public string SelfUri { get; set; }
 
 
     /// <summary>

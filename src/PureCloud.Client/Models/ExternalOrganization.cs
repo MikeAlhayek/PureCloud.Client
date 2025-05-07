@@ -238,7 +238,7 @@ public partial class ExternalOrganization : IEquatable<ExternalOrganization>
     /// </summary>
     /// <value>Links to the sources of data (e.g. one source might be a CRM) that contributed data to this record.  Read-only, and only populated when requested via expand param.</value>
     [JsonPropertyName("externalDataSources")]
-    public List<ExternalDataSource> ExternalDataSources { get; private set; }
+    public List<ExternalDataSource> ExternalDataSources { get; set; }
 
 
 
@@ -247,7 +247,7 @@ public partial class ExternalOrganization : IEquatable<ExternalOrganization>
     /// </summary>
     /// <value>The URI for this object</value>
     [JsonPropertyName("selfUri")]
-    public string SelfUri { get; private set; }
+    public string SelfUri { get; set; }
 
 
     /// <summary>

@@ -26,7 +26,7 @@ public partial class PunctualityEvent : IEquatable<PunctualityEvent>
     /// </summary>
     /// <value>The scheduled activity start time. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z</value>
     [JsonPropertyName("dateScheduleStart")]
-    public DateTime? DateScheduleStart { get; private set; }
+    public DateTime? DateScheduleStart { get; set; }
 
 
 
@@ -35,7 +35,7 @@ public partial class PunctualityEvent : IEquatable<PunctualityEvent>
     /// </summary>
     /// <value>The time the user started the activity. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z</value>
     [JsonPropertyName("dateStart")]
-    public DateTime? DateStart { get; private set; }
+    public DateTime? DateStart { get; set; }
 
 
 
@@ -44,7 +44,7 @@ public partial class PunctualityEvent : IEquatable<PunctualityEvent>
     /// </summary>
     /// <value>The length of the activity in minutes</value>
     [JsonPropertyName("lengthMinutes")]
-    public int? LengthMinutes { get; private set; }
+    public int? LengthMinutes { get; set; }
 
 
 
@@ -53,7 +53,7 @@ public partial class PunctualityEvent : IEquatable<PunctualityEvent>
     /// </summary>
     /// <value>The description of the activity</value>
     [JsonPropertyName("description")]
-    public string Description { get; private set; }
+    public string Description { get; set; }
 
 
 
@@ -62,7 +62,7 @@ public partial class PunctualityEvent : IEquatable<PunctualityEvent>
     /// </summary>
     /// <value>The ID of the activity code associated with this activity</value>
     [JsonPropertyName("activityCodeId")]
-    public string ActivityCodeId { get; private set; }
+    public string ActivityCodeId { get; set; }
 
 
 
@@ -71,7 +71,7 @@ public partial class PunctualityEvent : IEquatable<PunctualityEvent>
     /// </summary>
     /// <value>The activity code</value>
     [JsonPropertyName("activityCode")]
-    public string ActivityCode { get; private set; }
+    public string ActivityCode { get; set; }
 
 
 
@@ -80,7 +80,7 @@ public partial class PunctualityEvent : IEquatable<PunctualityEvent>
     /// </summary>
     /// <value>The activity name</value>
     [JsonPropertyName("activityName")]
-    public string ActivityName { get; private set; }
+    public string ActivityName { get; set; }
 
 
 
@@ -89,7 +89,7 @@ public partial class PunctualityEvent : IEquatable<PunctualityEvent>
     /// </summary>
     /// <value>The category for the activity</value>
     [JsonPropertyName("category")]
-    public string Category { get; private set; }
+    public string Category { get; set; }
 
 
 
@@ -98,7 +98,7 @@ public partial class PunctualityEvent : IEquatable<PunctualityEvent>
     /// </summary>
     /// <value>The points earned for this activity</value>
     [JsonPropertyName("points")]
-    public int? Points { get; private set; }
+    public int? Points { get; set; }
 
 
 
@@ -107,7 +107,7 @@ public partial class PunctualityEvent : IEquatable<PunctualityEvent>
     /// </summary>
     /// <value>Difference between this activity and the last activity in seconds</value>
     [JsonPropertyName("delta")]
-    public double? Delta { get; private set; }
+    public double? Delta { get; set; }
 
 
 

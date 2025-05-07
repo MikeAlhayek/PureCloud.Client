@@ -28,7 +28,7 @@ public partial class Grammar : IEquatable<Grammar>
     /// </summary>
     /// <value>The globally unique identifier for the object.</value>
     [JsonPropertyName("id")]
-    public string Id { get; private set; }
+    public string Id { get; set; }
 
 
 
@@ -53,7 +53,7 @@ public partial class Grammar : IEquatable<Grammar>
     /// </summary>
     /// <value>List of languages configured for this grammar</value>
     [JsonPropertyName("languages")]
-    public List<GrammarLanguage> Languages { get; private set; }
+    public List<GrammarLanguage> Languages { get; set; }
 
 
 
@@ -62,7 +62,7 @@ public partial class Grammar : IEquatable<Grammar>
     /// </summary>
     /// <value>The URI for this object</value>
     [JsonPropertyName("selfUri")]
-    public string SelfUri { get; private set; }
+    public string SelfUri { get; set; }
 
 
     /// <summary>

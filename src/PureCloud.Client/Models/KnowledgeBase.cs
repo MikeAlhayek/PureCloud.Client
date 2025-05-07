@@ -334,7 +334,7 @@ public partial class KnowledgeBase : IEquatable<KnowledgeBase>
     /// </summary>
     /// <value>The globally unique identifier for the object.</value>
     [JsonPropertyName("id")]
-    public string Id { get; private set; }
+    public string Id { get; set; }
 
 
 
@@ -362,7 +362,7 @@ public partial class KnowledgeBase : IEquatable<KnowledgeBase>
     /// </summary>
     /// <value>Knowledge base creation date-time. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z</value>
     [JsonPropertyName("dateCreated")]
-    public DateTime? DateCreated { get; private set; }
+    public DateTime? DateCreated { get; set; }
 
 
 
@@ -371,7 +371,7 @@ public partial class KnowledgeBase : IEquatable<KnowledgeBase>
     /// </summary>
     /// <value>Knowledge base last modification date-time. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z</value>
     [JsonPropertyName("dateModified")]
-    public DateTime? DateModified { get; private set; }
+    public DateTime? DateModified { get; set; }
 
 
 
@@ -380,7 +380,7 @@ public partial class KnowledgeBase : IEquatable<KnowledgeBase>
     /// </summary>
     /// <value>The count representing the number of documents of type FAQ in the KnowledgeBase</value>
     [JsonPropertyName("faqCount")]
-    public int? FaqCount { get; private set; }
+    public int? FaqCount { get; set; }
 
 
 
@@ -389,7 +389,7 @@ public partial class KnowledgeBase : IEquatable<KnowledgeBase>
     /// </summary>
     /// <value>The date representing when the last document is modified. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z</value>
     [JsonPropertyName("dateDocumentLastModified")]
-    public DateTime? DateDocumentLastModified { get; private set; }
+    public DateTime? DateDocumentLastModified { get; set; }
 
 
 
@@ -398,7 +398,7 @@ public partial class KnowledgeBase : IEquatable<KnowledgeBase>
     /// </summary>
     /// <value>The count representing the number of documents of type Article in the KnowledgeBase</value>
     [JsonPropertyName("articleCount")]
-    public int? ArticleCount { get; private set; }
+    public int? ArticleCount { get; set; }
 
 
 
@@ -407,7 +407,7 @@ public partial class KnowledgeBase : IEquatable<KnowledgeBase>
     /// </summary>
     /// <value>Flag that indicates the knowledge base is published</value>
     [JsonPropertyName("published")]
-    public bool? Published { get; private set; }
+    public bool? Published { get; set; }
 
 
 
@@ -416,7 +416,7 @@ public partial class KnowledgeBase : IEquatable<KnowledgeBase>
     /// </summary>
     /// <value>The URI for this object</value>
     [JsonPropertyName("selfUri")]
-    public string SelfUri { get; private set; }
+    public string SelfUri { get; set; }
 
 
     /// <summary>

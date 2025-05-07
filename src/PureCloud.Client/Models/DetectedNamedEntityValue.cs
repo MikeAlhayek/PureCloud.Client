@@ -24,7 +24,7 @@ public partial class DetectedNamedEntityValue : IEquatable<DetectedNamedEntityVa
     /// </summary>
     /// <value>The raw value of the detected named entity.</value>
     [JsonPropertyName("raw")]
-    public string Raw { get; private set; }
+    public string Raw { get; set; }
 
 
 
@@ -33,7 +33,7 @@ public partial class DetectedNamedEntityValue : IEquatable<DetectedNamedEntityVa
     /// </summary>
     /// <value>The resolved value of the detected named entity.</value>
     [JsonPropertyName("resolved")]
-    public string Resolved { get; private set; }
+    public string Resolved { get; set; }
 
 
 
@@ -42,7 +42,7 @@ public partial class DetectedNamedEntityValue : IEquatable<DetectedNamedEntityVa
     /// </summary>
     /// <value>The unit of the detected amount of money entity, e.g. EUR, USD.</value>
     [JsonPropertyName("unit")]
-    public string Unit { get; private set; }
+    public string Unit { get; set; }
 
 
     /// <summary>

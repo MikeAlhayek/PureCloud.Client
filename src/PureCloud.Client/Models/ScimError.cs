@@ -90,7 +90,7 @@ public partial class ScimError : IEquatable<ScimError>
     /// </summary>
     /// <value>The type of SCIM error when httpStatus is a \"400\" error.</value>
     [JsonPropertyName("scimType")]
-    public ScimTypeEnum? ScimType { get; private set; }
+    public ScimTypeEnum? ScimType { get; set; }
     /// <summary>
     /// Initializes a new instance of the <see cref="ScimError" /> class.
     /// </summary>
@@ -106,7 +106,7 @@ public partial class ScimError : IEquatable<ScimError>
     /// </summary>
     /// <value>The list of schemas for the SCIM error.</value>
     [JsonPropertyName("schemas")]
-    public List<string> Schemas { get; private set; }
+    public List<string> Schemas { get; set; }
 
 
 
@@ -115,7 +115,7 @@ public partial class ScimError : IEquatable<ScimError>
     /// </summary>
     /// <value>The HTTP status code returned for the SCIM error.</value>
     [JsonPropertyName("status")]
-    public string Status { get; private set; }
+    public string Status { get; set; }
 
 
 
@@ -126,7 +126,7 @@ public partial class ScimError : IEquatable<ScimError>
     /// </summary>
     /// <value>The detailed description of the SCIM error.</value>
     [JsonPropertyName("detail")]
-    public string Detail { get; private set; }
+    public string Detail { get; set; }
 
 
     /// <summary>

@@ -74,7 +74,7 @@ public partial class OutboundRoute : IEquatable<OutboundRoute>
     /// </summary>
     /// <value>Indicates if the resource is active, inactive, or deleted.</value>
     [JsonPropertyName("state")]
-    public StateEnum? State { get; private set; }
+    public StateEnum? State { get; set; }
     /// <summary>
     /// Gets or Sets Distribution
     /// </summary>
@@ -117,7 +117,7 @@ public partial class OutboundRoute : IEquatable<OutboundRoute>
     /// </summary>
     /// <value>The globally unique identifier for the object.</value>
     [JsonPropertyName("id")]
-    public string Id { get; private set; }
+    public string Id { get; set; }
 
 
 
@@ -162,7 +162,7 @@ public partial class OutboundRoute : IEquatable<OutboundRoute>
     /// </summary>
     /// <value>The date the resource was created. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z</value>
     [JsonPropertyName("dateCreated")]
-    public DateTime? DateCreated { get; private set; }
+    public DateTime? DateCreated { get; set; }
 
 
 
@@ -171,7 +171,7 @@ public partial class OutboundRoute : IEquatable<OutboundRoute>
     /// </summary>
     /// <value>The date of the last modification to the resource. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z</value>
     [JsonPropertyName("dateModified")]
-    public DateTime? DateModified { get; private set; }
+    public DateTime? DateModified { get; set; }
 
 
 
@@ -180,7 +180,7 @@ public partial class OutboundRoute : IEquatable<OutboundRoute>
     /// </summary>
     /// <value>The ID of the user that last modified the resource.</value>
     [JsonPropertyName("modifiedBy")]
-    public string ModifiedBy { get; private set; }
+    public string ModifiedBy { get; set; }
 
 
 
@@ -189,7 +189,7 @@ public partial class OutboundRoute : IEquatable<OutboundRoute>
     /// </summary>
     /// <value>The ID of the user that created the resource.</value>
     [JsonPropertyName("createdBy")]
-    public string CreatedBy { get; private set; }
+    public string CreatedBy { get; set; }
 
 
 
@@ -200,7 +200,7 @@ public partial class OutboundRoute : IEquatable<OutboundRoute>
     /// </summary>
     /// <value>The application that last modified the resource.</value>
     [JsonPropertyName("modifiedByApp")]
-    public string ModifiedByApp { get; private set; }
+    public string ModifiedByApp { get; set; }
 
 
 
@@ -209,7 +209,7 @@ public partial class OutboundRoute : IEquatable<OutboundRoute>
     /// </summary>
     /// <value>The application that created the resource.</value>
     [JsonPropertyName("createdByApp")]
-    public string CreatedByApp { get; private set; }
+    public string CreatedByApp { get; set; }
 
 
 
@@ -246,7 +246,7 @@ public partial class OutboundRoute : IEquatable<OutboundRoute>
     /// </summary>
     /// <value>The site associated to the outbound route.</value>
     [JsonPropertyName("site")]
-    public Site Site { get; private set; }
+    public Site Site { get; set; }
 
 
 
@@ -255,7 +255,7 @@ public partial class OutboundRoute : IEquatable<OutboundRoute>
     /// </summary>
     /// <value>Is this outbound route being managed remotely.</value>
     [JsonPropertyName("managed")]
-    public bool? Managed { get; private set; }
+    public bool? Managed { get; set; }
 
 
 
@@ -264,7 +264,7 @@ public partial class OutboundRoute : IEquatable<OutboundRoute>
     /// </summary>
     /// <value>The URI for this object</value>
     [JsonPropertyName("selfUri")]
-    public string SelfUri { get; private set; }
+    public string SelfUri { get; set; }
 
 
     /// <summary>

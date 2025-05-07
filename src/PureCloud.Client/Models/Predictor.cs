@@ -48,7 +48,7 @@ public partial class Predictor : IEquatable<Predictor>
     /// </summary>
     /// <value>The predictor state.</value>
     [JsonPropertyName("state")]
-    public StateEnum? State { get; private set; }
+    public StateEnum? State { get; set; }
 
     /// <summary>
     /// Initializes a new instance of the <see cref="Predictor" /> class.
@@ -80,7 +80,7 @@ public partial class Predictor : IEquatable<Predictor>
     /// </summary>
     /// <value>The globally unique identifier for the object.</value>
     [JsonPropertyName("id")]
-    public string Id { get; private set; }
+    public string Id { get; set; }
 
 
 
@@ -127,7 +127,7 @@ public partial class Predictor : IEquatable<Predictor>
     /// </summary>
     /// <value>DateTime indicating when the predictor was created. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z</value>
     [JsonPropertyName("dateCreated")]
-    public DateTime? DateCreated { get; private set; }
+    public DateTime? DateCreated { get; set; }
 
 
 
@@ -136,7 +136,7 @@ public partial class Predictor : IEquatable<Predictor>
     /// </summary>
     /// <value>DateTime indicating when the predictor was last updated. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z</value>
     [JsonPropertyName("dateModified")]
-    public DateTime? DateModified { get; private set; }
+    public DateTime? DateModified { get; set; }
 
 
 
@@ -154,7 +154,7 @@ public partial class Predictor : IEquatable<Predictor>
     /// </summary>
     /// <value>Predictor error code - optional details on why the predictor went into error state.</value>
     [JsonPropertyName("errorCode")]
-    public string ErrorCode { get; private set; }
+    public string ErrorCode { get; set; }
 
 
 
@@ -163,7 +163,7 @@ public partial class Predictor : IEquatable<Predictor>
     /// </summary>
     /// <value>Predictor&#39;s models</value>
     [JsonPropertyName("models")]
-    public List<PredictorModelBrief> Models { get; private set; }
+    public List<PredictorModelBrief> Models { get; set; }
 
 
 
@@ -172,7 +172,7 @@ public partial class Predictor : IEquatable<Predictor>
     /// </summary>
     /// <value>The URI for this object</value>
     [JsonPropertyName("selfUri")]
-    public string SelfUri { get; private set; }
+    public string SelfUri { get; set; }
 
 
     /// <summary>

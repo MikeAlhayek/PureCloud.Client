@@ -24,7 +24,7 @@ public partial class RestErrorDetail : IEquatable<RestErrorDetail>
     /// </summary>
     /// <value>name of the error</value>
     [JsonPropertyName("error")]
-    public string Error { get; private set; }
+    public string Error { get; set; }
 
 
 
@@ -33,7 +33,7 @@ public partial class RestErrorDetail : IEquatable<RestErrorDetail>
     /// </summary>
     /// <value>additional information regarding the error</value>
     [JsonPropertyName("details")]
-    public string Details { get; private set; }
+    public string Details { get; set; }
 
 
     /// <summary>

@@ -135,7 +135,7 @@ public partial class KnowledgeImportJobResponse : IEquatable<KnowledgeImportJobR
     /// </summary>
     /// <value>Status of the import job</value>
     [JsonPropertyName("status")]
-    public StatusEnum? Status { get; private set; }
+    public StatusEnum? Status { get; set; }
 
     /// <summary>
     /// Initializes a new instance of the <see cref="KnowledgeImportJobResponse" /> class.
@@ -169,7 +169,7 @@ public partial class KnowledgeImportJobResponse : IEquatable<KnowledgeImportJobR
     /// </summary>
     /// <value>Id of the import job</value>
     [JsonPropertyName("id")]
-    public string Id { get; private set; }
+    public string Id { get; set; }
 
 
 
@@ -218,7 +218,7 @@ public partial class KnowledgeImportJobResponse : IEquatable<KnowledgeImportJobR
     /// </summary>
     /// <value>Report of the import job</value>
     [JsonPropertyName("report")]
-    public KnowledgeImportJobReport Report { get; private set; }
+    public KnowledgeImportJobReport Report { get; set; }
 
 
 
@@ -227,7 +227,7 @@ public partial class KnowledgeImportJobResponse : IEquatable<KnowledgeImportJobR
     /// </summary>
     /// <value>Knowledge base which document import does belong to</value>
     [JsonPropertyName("knowledgeBase")]
-    public KnowledgeBase KnowledgeBase { get; private set; }
+    public KnowledgeBase KnowledgeBase { get; set; }
 
 
 
@@ -236,7 +236,7 @@ public partial class KnowledgeImportJobResponse : IEquatable<KnowledgeImportJobR
     /// </summary>
     /// <value>The user who created the operation</value>
     [JsonPropertyName("createdBy")]
-    public UserReference CreatedBy { get; private set; }
+    public UserReference CreatedBy { get; set; }
 
 
 
@@ -245,7 +245,7 @@ public partial class KnowledgeImportJobResponse : IEquatable<KnowledgeImportJobR
     /// </summary>
     /// <value>Created date. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z</value>
     [JsonPropertyName("dateCreated")]
-    public DateTime? DateCreated { get; private set; }
+    public DateTime? DateCreated { get; set; }
 
 
 
@@ -254,7 +254,7 @@ public partial class KnowledgeImportJobResponse : IEquatable<KnowledgeImportJobR
     /// </summary>
     /// <value>Last modified date. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z</value>
     [JsonPropertyName("dateModified")]
-    public DateTime? DateModified { get; private set; }
+    public DateTime? DateModified { get; set; }
 
 
 
@@ -272,7 +272,7 @@ public partial class KnowledgeImportJobResponse : IEquatable<KnowledgeImportJobR
     /// </summary>
     /// <value>The URI for this object</value>
     [JsonPropertyName("selfUri")]
-    public string SelfUri { get; private set; }
+    public string SelfUri { get; set; }
 
 
     /// <summary>

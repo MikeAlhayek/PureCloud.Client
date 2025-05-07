@@ -46,7 +46,7 @@ public partial class ConversationSummaryWrapupCode : IEquatable<ConversationSumm
     /// </summary>
     /// <value>The URI for this object</value>
     [JsonPropertyName("selfUri")]
-    public string SelfUri { get; private set; }
+    public string SelfUri { get; set; }
 
 
 
@@ -55,7 +55,7 @@ public partial class ConversationSummaryWrapupCode : IEquatable<ConversationSumm
     /// </summary>
     /// <value>The id of the wrapup code.</value>
     [JsonPropertyName("id")]
-    public string Id { get; private set; }
+    public string Id { get; set; }
 
 
 
@@ -64,7 +64,7 @@ public partial class ConversationSummaryWrapupCode : IEquatable<ConversationSumm
     /// </summary>
     /// <value>The AI confidence value.</value>
     [JsonPropertyName("confidence")]
-    public float? Confidence { get; private set; }
+    public float? Confidence { get; set; }
 
 
     /// <summary>

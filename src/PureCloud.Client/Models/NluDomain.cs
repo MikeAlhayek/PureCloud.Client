@@ -36,7 +36,7 @@ public partial class NluDomain : IEquatable<NluDomain>
     /// </summary>
     /// <value>The globally unique identifier for the object.</value>
     [JsonPropertyName("id")]
-    public string Id { get; private set; }
+    public string Id { get; set; }
 
 
 
@@ -63,7 +63,7 @@ public partial class NluDomain : IEquatable<NluDomain>
     /// </summary>
     /// <value>The draft version of that NLU domain.</value>
     [JsonPropertyName("draftVersion")]
-    public NluDomainVersion DraftVersion { get; private set; }
+    public NluDomainVersion DraftVersion { get; set; }
 
 
 
@@ -72,7 +72,7 @@ public partial class NluDomain : IEquatable<NluDomain>
     /// </summary>
     /// <value>The last published version of that NLU domain.</value>
     [JsonPropertyName("lastPublishedVersion")]
-    public NluDomainVersion LastPublishedVersion { get; private set; }
+    public NluDomainVersion LastPublishedVersion { get; set; }
 
 
 
@@ -81,7 +81,7 @@ public partial class NluDomain : IEquatable<NluDomain>
     /// </summary>
     /// <value>The date when the NLU domain was created. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z</value>
     [JsonPropertyName("dateCreated")]
-    public DateTime? DateCreated { get; private set; }
+    public DateTime? DateCreated { get; set; }
 
 
 
@@ -90,7 +90,7 @@ public partial class NluDomain : IEquatable<NluDomain>
     /// </summary>
     /// <value>The date when the NLU domain was updated. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z</value>
     [JsonPropertyName("dateModified")]
-    public DateTime? DateModified { get; private set; }
+    public DateTime? DateModified { get; set; }
 
 
 
@@ -108,7 +108,7 @@ public partial class NluDomain : IEquatable<NluDomain>
     /// </summary>
     /// <value>The URI for this object</value>
     [JsonPropertyName("selfUri")]
-    public string SelfUri { get; private set; }
+    public string SelfUri { get; set; }
 
 
     /// <summary>

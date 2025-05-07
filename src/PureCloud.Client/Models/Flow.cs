@@ -477,7 +477,7 @@ public partial class Flow : IEquatable<Flow>
     /// </summary>
     /// <value>Information about the natural language understanding configuration for the published version of the flow</value>
     [JsonPropertyName("nluInfo")]
-    public NluInfo NluInfo { get; private set; }
+    public NluInfo NluInfo { get; set; }
 
 
 
@@ -486,7 +486,7 @@ public partial class Flow : IEquatable<Flow>
     /// </summary>
     /// <value>List of supported languages for the published version of the flow.</value>
     [JsonPropertyName("supportedLanguages")]
-    public List<SupportedLanguage> SupportedLanguages { get; private set; }
+    public List<SupportedLanguage> SupportedLanguages { get; set; }
 
 
 
@@ -495,7 +495,7 @@ public partial class Flow : IEquatable<Flow>
     /// </summary>
     /// <value>Compatible flow types designate which flow types are allowed to embed a flow’s configuration within their own flow configuration.  Currently the only flows that can be embedded are Common Module flows and the embedding flow can invoke them using the Call Common Module action.</value>
     [JsonPropertyName("compatibleFlowTypes")]
-    public List<CompatibleFlowTypesEnum> CompatibleFlowTypes { get; private set; }
+    public List<CompatibleFlowTypesEnum> CompatibleFlowTypes { get; set; }
 
 
 
@@ -520,7 +520,7 @@ public partial class Flow : IEquatable<Flow>
     /// </summary>
     /// <value>The URI for this object</value>
     [JsonPropertyName("selfUri")]
-    public string SelfUri { get; private set; }
+    public string SelfUri { get; set; }
 
 
     /// <summary>

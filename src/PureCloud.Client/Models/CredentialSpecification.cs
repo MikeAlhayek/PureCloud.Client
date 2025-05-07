@@ -24,7 +24,7 @@ public partial class CredentialSpecification : IEquatable<CredentialSpecificatio
     /// </summary>
     /// <value>Indicates if the credential must be provided in order for the integration configuration to be valid.</value>
     [JsonPropertyName("required")]
-    public bool? Required { get; private set; }
+    public bool? Required { get; set; }
 
 
 
@@ -33,7 +33,7 @@ public partial class CredentialSpecification : IEquatable<CredentialSpecificatio
     /// </summary>
     /// <value>Title describing the usage for this credential.</value>
     [JsonPropertyName("title")]
-    public string Title { get; private set; }
+    public string Title { get; set; }
 
 
 
@@ -42,7 +42,7 @@ public partial class CredentialSpecification : IEquatable<CredentialSpecificatio
     /// </summary>
     /// <value>List of acceptable credential types that can be provided for this credential.</value>
     [JsonPropertyName("credentialTypes")]
-    public List<string> CredentialTypes { get; private set; }
+    public List<string> CredentialTypes { get; set; }
 
 
     /// <summary>

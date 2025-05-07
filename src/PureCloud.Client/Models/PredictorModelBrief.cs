@@ -87,13 +87,13 @@ public partial class PredictorModelBrief : IEquatable<PredictorModelBrief>
     /// </summary>
     /// <value>The media type of the model.</value>
     [JsonPropertyName("mediaType")]
-    public MediaTypeEnum? MediaType { get; private set; }
+    public MediaTypeEnum? MediaType { get; set; }
     /// <summary>
     /// The state of the model
     /// </summary>
     /// <value>The state of the model</value>
     [JsonPropertyName("state")]
-    public StateEnum? State { get; private set; }
+    public StateEnum? State { get; set; }
     /// <summary>
     /// Initializes a new instance of the <see cref="PredictorModelBrief" /> class.
     /// </summary>
@@ -111,7 +111,7 @@ public partial class PredictorModelBrief : IEquatable<PredictorModelBrief>
     /// </summary>
     /// <value>The date the model was modified. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z</value>
     [JsonPropertyName("dateModified")]
-    public DateTime? DateModified { get; private set; }
+    public DateTime? DateModified { get; set; }
 
 
 
@@ -120,7 +120,7 @@ public partial class PredictorModelBrief : IEquatable<PredictorModelBrief>
     /// </summary>
     /// <value>The model&#39;s retraining errors.</value>
     [JsonPropertyName("retrainingErrors")]
-    public List<PredictorModelRetrainingError> RetrainingErrors { get; private set; }
+    public List<PredictorModelRetrainingError> RetrainingErrors { get; set; }
 
 
 

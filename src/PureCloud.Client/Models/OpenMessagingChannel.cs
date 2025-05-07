@@ -57,7 +57,7 @@ public partial class OpenMessagingChannel : IEquatable<OpenMessagingChannel>
     /// </summary>
     /// <value>The provider type.</value>
     [JsonPropertyName("platform")]
-    public PlatformEnum? Platform { get; private set; }
+    public PlatformEnum? Platform { get; set; }
     /// <summary>
     /// Specifies if this message is part of a private or public conversation.
     /// </summary>
@@ -97,7 +97,7 @@ public partial class OpenMessagingChannel : IEquatable<OpenMessagingChannel>
     /// </summary>
     /// <value>The Messaging Platform integration ID.</value>
     [JsonPropertyName("id")]
-    public string Id { get; private set; }
+    public string Id { get; set; }
 
 
 

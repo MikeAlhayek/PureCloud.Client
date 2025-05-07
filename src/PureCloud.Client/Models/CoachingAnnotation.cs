@@ -42,7 +42,7 @@ public partial class CoachingAnnotation : IEquatable<CoachingAnnotation>
     /// </summary>
     /// <value>Determines the permissions required to view this item.</value>
     [JsonPropertyName("accessType")]
-    public AccessTypeEnum? AccessType { get; private set; }
+    public AccessTypeEnum? AccessType { get; set; }
 
     /// <summary>
     /// Initializes a new instance of the <see cref="CoachingAnnotation" /> class.
@@ -66,7 +66,7 @@ public partial class CoachingAnnotation : IEquatable<CoachingAnnotation>
     /// </summary>
     /// <value>The globally unique identifier for the object.</value>
     [JsonPropertyName("id")]
-    public string Id { get; private set; }
+    public string Id { get; set; }
 
 
 
@@ -75,7 +75,7 @@ public partial class CoachingAnnotation : IEquatable<CoachingAnnotation>
     /// </summary>
     /// <value>The user who created the annotation.</value>
     [JsonPropertyName("createdBy")]
-    public UserReference CreatedBy { get; private set; }
+    public UserReference CreatedBy { get; set; }
 
 
 
@@ -84,7 +84,7 @@ public partial class CoachingAnnotation : IEquatable<CoachingAnnotation>
     /// </summary>
     /// <value>The date/time the annotation was created. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z</value>
     [JsonPropertyName("dateCreated")]
-    public DateTime? DateCreated { get; private set; }
+    public DateTime? DateCreated { get; set; }
 
 
 
@@ -93,7 +93,7 @@ public partial class CoachingAnnotation : IEquatable<CoachingAnnotation>
     /// </summary>
     /// <value>The last user to modify the annotation.</value>
     [JsonPropertyName("modifiedBy")]
-    public UserReference ModifiedBy { get; private set; }
+    public UserReference ModifiedBy { get; set; }
 
 
 
@@ -102,7 +102,7 @@ public partial class CoachingAnnotation : IEquatable<CoachingAnnotation>
     /// </summary>
     /// <value>The date/time the annotation was last modified. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z</value>
     [JsonPropertyName("dateModified")]
-    public DateTime? DateModified { get; private set; }
+    public DateTime? DateModified { get; set; }
 
 
 
@@ -120,7 +120,7 @@ public partial class CoachingAnnotation : IEquatable<CoachingAnnotation>
     /// </summary>
     /// <value>Flag indicating whether the annotation is deleted.</value>
     [JsonPropertyName("isDeleted")]
-    public bool? IsDeleted { get; private set; }
+    public bool? IsDeleted { get; set; }
 
 
 
@@ -131,7 +131,7 @@ public partial class CoachingAnnotation : IEquatable<CoachingAnnotation>
     /// </summary>
     /// <value>The URI for this object</value>
     [JsonPropertyName("selfUri")]
-    public string SelfUri { get; private set; }
+    public string SelfUri { get; set; }
 
 
     /// <summary>

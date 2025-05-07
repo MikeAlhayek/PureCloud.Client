@@ -24,7 +24,7 @@ public partial class LeaderboardItem : IEquatable<LeaderboardItem>
     /// </summary>
     /// <value>The user object for this leaderboard rank</value>
     [JsonPropertyName("user")]
-    public UserReference User { get; private set; }
+    public UserReference User { get; set; }
 
 
 
@@ -33,7 +33,7 @@ public partial class LeaderboardItem : IEquatable<LeaderboardItem>
     /// </summary>
     /// <value>The rank of the user</value>
     [JsonPropertyName("rank")]
-    public int? Rank { get; private set; }
+    public int? Rank { get; set; }
 
 
 
@@ -42,7 +42,7 @@ public partial class LeaderboardItem : IEquatable<LeaderboardItem>
     /// </summary>
     /// <value>The points collected by the user</value>
     [JsonPropertyName("points")]
-    public long? Points { get; private set; }
+    public long? Points { get; set; }
 
 
     /// <summary>

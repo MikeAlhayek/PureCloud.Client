@@ -606,19 +606,19 @@ public partial class ApprovalNamespace : IEquatable<ApprovalNamespace>
     /// </summary>
     /// <value>The namespace of the associated approvers.</value>
     [JsonPropertyName("namespace")]
-    public NamespaceEnum? Namespace { get; private set; }
+    public NamespaceEnum? Namespace { get; set; }
     /// <summary>
     /// The current namespace approval status.
     /// </summary>
     /// <value>The current namespace approval status.</value>
     [JsonPropertyName("status")]
-    public StatusEnum? Status { get; private set; }
+    public StatusEnum? Status { get; set; }
     /// <summary>
     /// The type of namespace approval.
     /// </summary>
     /// <value>The type of namespace approval.</value>
     [JsonPropertyName("type")]
-    public TypeEnum? Type { get; private set; }
+    public TypeEnum? Type { get; set; }
     /// <summary>
     /// Initializes a new instance of the <see cref="ApprovalNamespace" /> class.
     /// </summary>

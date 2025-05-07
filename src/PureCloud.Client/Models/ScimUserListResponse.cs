@@ -35,7 +35,7 @@ public partial class ScimUserListResponse : IEquatable<ScimUserListResponse>
     /// </summary>
     /// <value>The total number of results.</value>
     [JsonPropertyName("totalResults")]
-    public long? TotalResults { get; private set; }
+    public long? TotalResults { get; set; }
 
 
 
@@ -44,7 +44,7 @@ public partial class ScimUserListResponse : IEquatable<ScimUserListResponse>
     /// </summary>
     /// <value>The 1-based index of the first result returned by this request. Add this to \&quot;itemsPerPage\&quot; when requesting the next page of results.</value>
     [JsonPropertyName("startIndex")]
-    public long? StartIndex { get; private set; }
+    public long? StartIndex { get; set; }
 
 
 
@@ -53,7 +53,7 @@ public partial class ScimUserListResponse : IEquatable<ScimUserListResponse>
     /// </summary>
     /// <value>The number of resources returned per page.</value>
     [JsonPropertyName("itemsPerPage")]
-    public long? ItemsPerPage { get; private set; }
+    public long? ItemsPerPage { get; set; }
 
 
 
@@ -62,7 +62,7 @@ public partial class ScimUserListResponse : IEquatable<ScimUserListResponse>
     /// </summary>
     /// <value>The list of requested resources. If \&quot;count\&quot; is 0, then the list will be empty.</value>
     [JsonPropertyName("Resources")]
-    public List<ScimV2User> Resources { get; private set; }
+    public List<ScimV2User> Resources { get; set; }
 
 
     /// <summary>

@@ -24,7 +24,7 @@ public partial class UserAppConfigurationInfo : IEquatable<UserAppConfigurationI
     /// </summary>
     /// <value>The current, active configuration for the integration.</value>
     [JsonPropertyName("current")]
-    public IntegrationConfiguration Current { get; private set; }
+    public IntegrationConfiguration Current { get; set; }
 
 
 
@@ -33,7 +33,7 @@ public partial class UserAppConfigurationInfo : IEquatable<UserAppConfigurationI
     /// </summary>
     /// <value>The effective configuration for the app, containing the integration specific configuration along with overrides specified in the integration type.</value>
     [JsonPropertyName("effective")]
-    public EffectiveConfiguration Effective { get; private set; }
+    public EffectiveConfiguration Effective { get; set; }
 
 
     /// <summary>

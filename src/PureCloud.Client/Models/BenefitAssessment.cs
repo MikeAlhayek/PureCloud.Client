@@ -48,7 +48,7 @@ public partial class BenefitAssessment : IEquatable<BenefitAssessment>
     /// </summary>
     /// <value>State of the benefit assessment.</value>
     [JsonPropertyName("state")]
-    public StateEnum? State { get; private set; }
+    public StateEnum? State { get; set; }
     /// <summary>
     /// Initializes a new instance of the <see cref="BenefitAssessment" /> class.
     /// </summary>
@@ -64,7 +64,7 @@ public partial class BenefitAssessment : IEquatable<BenefitAssessment>
     /// </summary>
     /// <value>The globally unique identifier for the object.</value>
     [JsonPropertyName("id")]
-    public string Id { get; private set; }
+    public string Id { get; set; }
 
 
 
@@ -73,7 +73,7 @@ public partial class BenefitAssessment : IEquatable<BenefitAssessment>
     /// </summary>
     /// <value>The list of queues that are assessed for Predictive Routing benefit.</value>
     [JsonPropertyName("queues")]
-    public List<AddressableEntityRef> Queues { get; private set; }
+    public List<AddressableEntityRef> Queues { get; set; }
 
 
 
@@ -82,7 +82,7 @@ public partial class BenefitAssessment : IEquatable<BenefitAssessment>
     /// </summary>
     /// <value>A set of key performance indicators applied on the queue to determine suitability of Predictive Routing.</value>
     [JsonPropertyName("kpiAssessments")]
-    public List<KeyPerformanceIndicatorAssessment> KpiAssessments { get; private set; }
+    public List<KeyPerformanceIndicatorAssessment> KpiAssessments { get; set; }
 
 
 
@@ -93,7 +93,7 @@ public partial class BenefitAssessment : IEquatable<BenefitAssessment>
     /// </summary>
     /// <value>The unique identifier of job that created this benefit assessment.</value>
     [JsonPropertyName("jobId")]
-    public string JobId { get; private set; }
+    public string JobId { get; set; }
 
 
 
@@ -102,7 +102,7 @@ public partial class BenefitAssessment : IEquatable<BenefitAssessment>
     /// </summary>
     /// <value>Creation Date of the benefit assessment. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z</value>
     [JsonPropertyName("dateCreated")]
-    public DateTime? DateCreated { get; private set; }
+    public DateTime? DateCreated { get; set; }
 
 
 
@@ -111,7 +111,7 @@ public partial class BenefitAssessment : IEquatable<BenefitAssessment>
     /// </summary>
     /// <value>Modified Date of the benefit assessment. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z</value>
     [JsonPropertyName("dateModified")]
-    public DateTime? DateModified { get; private set; }
+    public DateTime? DateModified { get; set; }
 
 
 
@@ -120,7 +120,7 @@ public partial class BenefitAssessment : IEquatable<BenefitAssessment>
     /// </summary>
     /// <value>The URI for this object</value>
     [JsonPropertyName("selfUri")]
-    public string SelfUri { get; private set; }
+    public string SelfUri { get; set; }
 
 
     /// <summary>

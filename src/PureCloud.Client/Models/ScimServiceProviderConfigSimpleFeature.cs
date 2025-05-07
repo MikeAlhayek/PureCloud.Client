@@ -24,7 +24,7 @@ public partial class ScimServiceProviderConfigSimpleFeature : IEquatable<ScimSer
     /// </summary>
     /// <value>Indicates whether configuration options are supported.</value>
     [JsonPropertyName("supported")]
-    public bool? Supported { get; private set; }
+    public bool? Supported { get; set; }
 
 
     /// <summary>

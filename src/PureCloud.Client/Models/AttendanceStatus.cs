@@ -87,13 +87,13 @@ public partial class AttendanceStatus : IEquatable<AttendanceStatus>
     /// </summary>
     /// <value>the attendance status</value>
     [JsonPropertyName("attendanceStatusType")]
-    public AttendanceStatusTypeEnum? AttendanceStatusType { get; private set; }
+    public AttendanceStatusTypeEnum? AttendanceStatusType { get; set; }
     /// <summary>
     /// the quality evaluation score status
     /// </summary>
     /// <value>the quality evaluation score status</value>
     [JsonPropertyName("hasEvaluation")]
-    public HasEvaluationEnum? HasEvaluation { get; private set; }
+    public HasEvaluationEnum? HasEvaluation { get; set; }
     /// <summary>
     /// Initializes a new instance of the <see cref="AttendanceStatus" /> class.
     /// </summary>
@@ -109,7 +109,7 @@ public partial class AttendanceStatus : IEquatable<AttendanceStatus>
     /// </summary>
     /// <value>the workday date of this attendance status. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd</value>
     [JsonPropertyName("dateWorkday")]
-    public string DateWorkday { get; private set; }
+    public string DateWorkday { get; set; }
 
 
 

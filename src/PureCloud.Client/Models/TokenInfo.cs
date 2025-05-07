@@ -6,25 +6,25 @@ public sealed class TokenInfo
     /// The current organization
     /// </summary>
     /// <value>The current organization</value>
-    public NamedEntity Organization { get; private set; }
+    public NamedEntity Organization { get; set; }
 
     /// <summary>
     /// The token&#39;s home organization
     /// </summary>
     /// <value>The token&#39;s home organization</value>
-    public NamedEntity HomeOrganization { get; private set; }
+    public NamedEntity HomeOrganization { get; set; }
 
     /// <summary>
     /// The list of scopes authorized for the OAuth client
     /// </summary>
     /// <value>The list of scopes authorized for the OAuth client</value>
-    public IEnumerable<string> AuthorizedScope { get; private set; }
+    public IEnumerable<string> AuthorizedScope { get; set; }
 
     /// <summary>
     /// Only present when a user is a clone of trustee user in the trustor org.
     /// </summary>
     /// <value>Only present when a user is a clone of trustee user in the trustor org.</value>
-    public TokenInfoClonedUser ClonedUser { get; private set; }
+    public TokenInfoClonedUser ClonedUser { get; set; }
 
     /// <summary>
     /// Gets or Sets OAuthClient

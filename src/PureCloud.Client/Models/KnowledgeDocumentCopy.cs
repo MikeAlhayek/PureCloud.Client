@@ -184,7 +184,7 @@ public partial class KnowledgeDocumentCopy : IEquatable<KnowledgeDocumentCopy>
     /// </summary>
     /// <value>Knowledge session ID.</value>
     [JsonPropertyName("sessionId")]
-    public string SessionId { get; private set; }
+    public string SessionId { get; set; }
 
 
 

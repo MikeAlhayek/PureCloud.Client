@@ -113,7 +113,7 @@ public partial class KnowledgeDocumentSearch : IEquatable<KnowledgeDocumentSearc
     /// </summary>
     /// <value>The globally unique identifier for the search.</value>
     [JsonPropertyName("searchId")]
-    public string SearchId { get; private set; }
+    public string SearchId { get; set; }
 
 
 
@@ -122,7 +122,7 @@ public partial class KnowledgeDocumentSearch : IEquatable<KnowledgeDocumentSearc
     /// </summary>
     /// <value>The total number of documents matching the query.</value>
     [JsonPropertyName("total")]
-    public int? Total { get; private set; }
+    public int? Total { get; set; }
 
 
 
@@ -131,7 +131,7 @@ public partial class KnowledgeDocumentSearch : IEquatable<KnowledgeDocumentSearc
     /// </summary>
     /// <value>Number of pages returned in the result calculated according to the pageSize and the total</value>
     [JsonPropertyName("pageCount")]
-    public int? PageCount { get; private set; }
+    public int? PageCount { get; set; }
 
 
 
@@ -142,7 +142,7 @@ public partial class KnowledgeDocumentSearch : IEquatable<KnowledgeDocumentSearc
     /// </summary>
     /// <value>Documents matching the search query.</value>
     [JsonPropertyName("results")]
-    public List<KnowledgeDocumentSearchResult> Results { get; private set; }
+    public List<KnowledgeDocumentSearchResult> Results { get; set; }
 
 
 

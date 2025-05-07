@@ -38,7 +38,7 @@ public partial class Function : IEquatable<Function>
     /// </summary>
     /// <value>Function identifier.</value>
     [JsonPropertyName("id")]
-    public string Id { get; private set; }
+    public string Id { get; set; }
 
 
 
@@ -47,7 +47,7 @@ public partial class Function : IEquatable<Function>
     /// </summary>
     /// <value>Function name. This is automatically created based on the Action Id.</value>
     [JsonPropertyName("name")]
-    public string Name { get; private set; }
+    public string Name { get; set; }
 
 
 
@@ -65,7 +65,7 @@ public partial class Function : IEquatable<Function>
     /// </summary>
     /// <value>Date and time function was created. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z</value>
     [JsonPropertyName("dateCreated")]
-    public DateTime? DateCreated { get; private set; }
+    public DateTime? DateCreated { get; set; }
 
 
 
@@ -74,7 +74,7 @@ public partial class Function : IEquatable<Function>
     /// </summary>
     /// <value>Zip file identifier.</value>
     [JsonPropertyName("zipId")]
-    public string ZipId { get; private set; }
+    public string ZipId { get; set; }
 
 
 

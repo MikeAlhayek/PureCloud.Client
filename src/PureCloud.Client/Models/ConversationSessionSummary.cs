@@ -237,7 +237,7 @@ public partial class ConversationSessionSummary : IEquatable<ConversationSession
     /// </summary>
     /// <value>The id of the summary.</value>
     [JsonPropertyName("id")]
-    public string Id { get; private set; }
+    public string Id { get; set; }
 
 
 
@@ -246,7 +246,7 @@ public partial class ConversationSessionSummary : IEquatable<ConversationSession
     /// </summary>
     /// <value>The AI confidence value.</value>
     [JsonPropertyName("confidence")]
-    public float? Confidence { get; private set; }
+    public float? Confidence { get; set; }
 
 
 
@@ -264,7 +264,7 @@ public partial class ConversationSessionSummary : IEquatable<ConversationSession
     /// </summary>
     /// <value>The communication object of the summary.</value>
     [JsonPropertyName("communication")]
-    public Entity Communication { get; private set; }
+    public Entity Communication { get; set; }
 
 
     /// <summary>

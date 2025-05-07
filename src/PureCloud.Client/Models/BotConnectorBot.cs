@@ -73,7 +73,7 @@ public partial class BotConnectorBot : IEquatable<BotConnectorBot>
     /// </summary>
     /// <value>A system-generated string that contains metadata about this bot.</value>
     [JsonPropertyName("botCompositeTag")]
-    public string BotCompositeTag { get; private set; }
+    public string BotCompositeTag { get; set; }
 
 
 
@@ -82,7 +82,7 @@ public partial class BotConnectorBot : IEquatable<BotConnectorBot>
     /// </summary>
     /// <value>The URI for this object</value>
     [JsonPropertyName("selfUri")]
-    public string SelfUri { get; private set; }
+    public string SelfUri { get; set; }
 
 
     /// <summary>

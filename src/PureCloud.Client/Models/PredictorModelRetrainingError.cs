@@ -48,7 +48,7 @@ public partial class PredictorModelRetrainingError : IEquatable<PredictorModelRe
     /// </summary>
     /// <value>Error code describing model training failure.</value>
     [JsonPropertyName("errorCode")]
-    public ErrorCodeEnum? ErrorCode { get; private set; }
+    public ErrorCodeEnum? ErrorCode { get; set; }
     /// <summary>
     /// Initializes a new instance of the <see cref="PredictorModelRetrainingError" /> class.
     /// </summary>
@@ -64,7 +64,7 @@ public partial class PredictorModelRetrainingError : IEquatable<PredictorModelRe
     /// </summary>
     /// <value>The globally unique identifier for the object.</value>
     [JsonPropertyName("id")]
-    public string Id { get; private set; }
+    public string Id { get; set; }
 
 
 
@@ -75,7 +75,7 @@ public partial class PredictorModelRetrainingError : IEquatable<PredictorModelRe
     /// </summary>
     /// <value>Date when the first retraining failure happened. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z</value>
     [JsonPropertyName("dateOfFirstOccurrence")]
-    public DateTime? DateOfFirstOccurrence { get; private set; }
+    public DateTime? DateOfFirstOccurrence { get; set; }
 
 
     /// <summary>

@@ -126,19 +126,19 @@ public partial class CoachingNotification : IEquatable<CoachingNotification>
     /// </summary>
     /// <value>Action causing the notification.</value>
     [JsonPropertyName("actionType")]
-    public ActionTypeEnum? ActionType { get; private set; }
+    public ActionTypeEnum? ActionType { get; set; }
     /// <summary>
     /// The relationship of this user to this notification's appointment
     /// </summary>
     /// <value>The relationship of this user to this notification's appointment</value>
     [JsonPropertyName("relationship")]
-    public RelationshipEnum? Relationship { get; private set; }
+    public RelationshipEnum? Relationship { get; set; }
     /// <summary>
     /// The status of the appointment for this notification
     /// </summary>
     /// <value>The status of the appointment for this notification</value>
     [JsonPropertyName("status")]
-    public StatusEnum? Status { get; private set; }
+    public StatusEnum? Status { get; set; }
     /// <summary>
     /// Initializes a new instance of the <see cref="CoachingNotification" /> class.
     /// </summary>
@@ -156,7 +156,7 @@ public partial class CoachingNotification : IEquatable<CoachingNotification>
     /// </summary>
     /// <value>The globally unique identifier for the object.</value>
     [JsonPropertyName("id")]
-    public string Id { get; private set; }
+    public string Id { get; set; }
 
 
 
@@ -165,7 +165,7 @@ public partial class CoachingNotification : IEquatable<CoachingNotification>
     /// </summary>
     /// <value>The name of the appointment for this notification.</value>
     [JsonPropertyName("name")]
-    public string Name { get; private set; }
+    public string Name { get; set; }
 
 
 
@@ -187,7 +187,7 @@ public partial class CoachingNotification : IEquatable<CoachingNotification>
     /// </summary>
     /// <value>The start time of the appointment relating to this notification. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z</value>
     [JsonPropertyName("dateStart")]
-    public DateTime? DateStart { get; private set; }
+    public DateTime? DateStart { get; set; }
 
 
 
@@ -196,7 +196,7 @@ public partial class CoachingNotification : IEquatable<CoachingNotification>
     /// </summary>
     /// <value>The duration of the appointment on this notification</value>
     [JsonPropertyName("lengthInMinutes")]
-    public int? LengthInMinutes { get; private set; }
+    public int? LengthInMinutes { get; set; }
 
 
 
@@ -207,7 +207,7 @@ public partial class CoachingNotification : IEquatable<CoachingNotification>
     /// </summary>
     /// <value>The user of this notification</value>
     [JsonPropertyName("user")]
-    public UserReference User { get; private set; }
+    public UserReference User { get; set; }
 
 
 
@@ -216,7 +216,7 @@ public partial class CoachingNotification : IEquatable<CoachingNotification>
     /// </summary>
     /// <value>The appointment</value>
     [JsonPropertyName("appointment")]
-    public CoachingAppointmentResponse Appointment { get; private set; }
+    public CoachingAppointmentResponse Appointment { get; set; }
 
 
 
@@ -225,7 +225,7 @@ public partial class CoachingNotification : IEquatable<CoachingNotification>
     /// </summary>
     /// <value>The URI for this object</value>
     [JsonPropertyName("selfUri")]
-    public string SelfUri { get; private set; }
+    public string SelfUri { get; set; }
 
 
     /// <summary>

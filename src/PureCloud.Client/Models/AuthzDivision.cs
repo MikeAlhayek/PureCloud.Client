@@ -34,7 +34,7 @@ public partial class AuthzDivision : IEquatable<AuthzDivision>
     /// </summary>
     /// <value>The globally unique identifier for the object.</value>
     [JsonPropertyName("id")]
-    public string Id { get; private set; }
+    public string Id { get; set; }
 
 
 
@@ -60,7 +60,7 @@ public partial class AuthzDivision : IEquatable<AuthzDivision>
     /// </summary>
     /// <value>A flag indicating whether this division is the \&quot;Home\&quot; (default) division. Cannot be modified and any supplied value will be ignored on create or update.</value>
     [JsonPropertyName("homeDivision")]
-    public bool? HomeDivision { get; private set; }
+    public bool? HomeDivision { get; set; }
 
 
 
@@ -69,7 +69,7 @@ public partial class AuthzDivision : IEquatable<AuthzDivision>
     /// </summary>
     /// <value>A count of objects in this division, grouped by type.</value>
     [JsonPropertyName("objectCounts")]
-    public Dictionary<string, long?> ObjectCounts { get; private set; }
+    public Dictionary<string, long?> ObjectCounts { get; set; }
 
 
 
@@ -78,7 +78,7 @@ public partial class AuthzDivision : IEquatable<AuthzDivision>
     /// </summary>
     /// <value>The URI for this object</value>
     [JsonPropertyName("selfUri")]
-    public string SelfUri { get; private set; }
+    public string SelfUri { get; set; }
 
 
     /// <summary>

@@ -24,7 +24,7 @@ public partial class HelpLink : IEquatable<HelpLink>
     /// </summary>
     /// <value>URI of the help resource</value>
     [JsonPropertyName("uri")]
-    public string Uri { get; private set; }
+    public string Uri { get; set; }
 
 
 
@@ -33,7 +33,7 @@ public partial class HelpLink : IEquatable<HelpLink>
     /// </summary>
     /// <value>Link text of the resource</value>
     [JsonPropertyName("title")]
-    public string Title { get; private set; }
+    public string Title { get; set; }
 
 
 
@@ -42,7 +42,7 @@ public partial class HelpLink : IEquatable<HelpLink>
     /// </summary>
     /// <value>Description of the document or resource</value>
     [JsonPropertyName("description")]
-    public string Description { get; private set; }
+    public string Description { get; set; }
 
 
     /// <summary>

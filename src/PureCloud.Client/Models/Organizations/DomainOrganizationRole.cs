@@ -32,7 +32,7 @@ public partial class DomainOrganizationRole
     /// A collection of the permissions the role is not using
     /// </summary>
     /// <value>A collection of the permissions the role is not using</value>
-    public IEnumerable<string> UnusedPermissions { get; private set; }
+    public IEnumerable<string> UnusedPermissions { get; set; }
 
     /// <summary>
     /// Gets or Sets PermissionPolicies

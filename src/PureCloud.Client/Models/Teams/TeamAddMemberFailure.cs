@@ -48,7 +48,7 @@ public partial class TeamAddMemberFailure : IEquatable<TeamAddMemberFailure>
     /// </summary>
     /// <value>Specific reason the member could not be added.</value>
     [JsonPropertyName("reason")]
-    public ReasonEnum? Reason { get; private set; }
+    public ReasonEnum? Reason { get; set; }
     /// <summary>
     /// Initializes a new instance of the <see cref="TeamAddMemberFailure" /> class.
     /// </summary>

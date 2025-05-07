@@ -365,7 +365,7 @@ public partial class FlowVersion : IEquatable<FlowVersion>
     /// </summary>
     /// <value>The date this version became the published version of the flow. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z</value>
     [JsonPropertyName("datePublished")]
-    public DateTime? DatePublished { get; private set; }
+    public DateTime? DatePublished { get; set; }
 
 
 
@@ -374,7 +374,7 @@ public partial class FlowVersion : IEquatable<FlowVersion>
     /// </summary>
     /// <value>The date this version was no longer the published version of the flow. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z</value>
     [JsonPropertyName("datePublishedEnd")]
-    public DateTime? DatePublishedEnd { get; private set; }
+    public DateTime? DatePublishedEnd { get; set; }
 
 
 
@@ -383,7 +383,7 @@ public partial class FlowVersion : IEquatable<FlowVersion>
     /// </summary>
     /// <value>Information about the natural language understanding configuration for the flow version</value>
     [JsonPropertyName("nluInfo")]
-    public NluInfo NluInfo { get; private set; }
+    public NluInfo NluInfo { get; set; }
 
 
 
@@ -392,7 +392,7 @@ public partial class FlowVersion : IEquatable<FlowVersion>
     /// </summary>
     /// <value>List of supported languages for this version of the flow</value>
     [JsonPropertyName("supportedLanguages")]
-    public List<SupportedLanguage> SupportedLanguages { get; private set; }
+    public List<SupportedLanguage> SupportedLanguages { get; set; }
 
 
 
@@ -401,7 +401,7 @@ public partial class FlowVersion : IEquatable<FlowVersion>
     /// </summary>
     /// <value>Compatible flow types designate which flow types are allowed to embed a flow’s configuration within their own flow configuration.  Currently the only flows that can be embedded are Common Module flows and the embedding flow can invoke them using the Call Common Module action.</value>
     [JsonPropertyName("compatibleFlowTypes")]
-    public List<CompatibleFlowTypesEnum> CompatibleFlowTypes { get; private set; }
+    public List<CompatibleFlowTypesEnum> CompatibleFlowTypes { get; set; }
 
 
 
@@ -410,7 +410,7 @@ public partial class FlowVersion : IEquatable<FlowVersion>
     /// </summary>
     /// <value>The URI for this object</value>
     [JsonPropertyName("selfUri")]
-    public string SelfUri { get; private set; }
+    public string SelfUri { get; set; }
 
 
     /// <summary>

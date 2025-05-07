@@ -84,7 +84,7 @@ public partial class InfrastructureascodeJob : IEquatable<InfrastructureascodeJo
     /// </summary>
     /// <value>Job status</value>
     [JsonPropertyName("status")]
-    public StatusEnum? Status { get; private set; }
+    public StatusEnum? Status { get; set; }
 
     /// <summary>
     /// Initializes a new instance of the <see cref="InfrastructureascodeJob" /> class.
@@ -108,7 +108,7 @@ public partial class InfrastructureascodeJob : IEquatable<InfrastructureascodeJo
     /// </summary>
     /// <value>The globally unique identifier for the object.</value>
     [JsonPropertyName("id")]
-    public string Id { get; private set; }
+    public string Id { get; set; }
 
 
 
@@ -126,7 +126,7 @@ public partial class InfrastructureascodeJob : IEquatable<InfrastructureascodeJo
     /// </summary>
     /// <value>Accelerator associated with the job</value>
     [JsonPropertyName("acceleratorId")]
-    public string AcceleratorId { get; private set; }
+    public string AcceleratorId { get; set; }
 
 
 
@@ -135,7 +135,7 @@ public partial class InfrastructureascodeJob : IEquatable<InfrastructureascodeJo
     /// </summary>
     /// <value>Date and time on which job was submitted. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z</value>
     [JsonPropertyName("dateSubmitted")]
-    public DateTime? DateSubmitted { get; private set; }
+    public DateTime? DateSubmitted { get; set; }
 
 
 
@@ -144,7 +144,7 @@ public partial class InfrastructureascodeJob : IEquatable<InfrastructureascodeJo
     /// </summary>
     /// <value>User who submitted the job</value>
     [JsonPropertyName("submittedBy")]
-    public UserReference SubmittedBy { get; private set; }
+    public UserReference SubmittedBy { get; set; }
 
 
 
@@ -155,7 +155,7 @@ public partial class InfrastructureascodeJob : IEquatable<InfrastructureascodeJo
     /// </summary>
     /// <value>Information about errors, if any</value>
     [JsonPropertyName("errorInfo")]
-    public ErrorInfo ErrorInfo { get; private set; }
+    public ErrorInfo ErrorInfo { get; set; }
 
 
 
@@ -164,7 +164,7 @@ public partial class InfrastructureascodeJob : IEquatable<InfrastructureascodeJo
     /// </summary>
     /// <value>The output results of the terraform job</value>
     [JsonPropertyName("results")]
-    public string Results { get; private set; }
+    public string Results { get; set; }
 
 
 
@@ -173,7 +173,7 @@ public partial class InfrastructureascodeJob : IEquatable<InfrastructureascodeJo
     /// </summary>
     /// <value>The results of rolling back the job if there were errors.  Not returned if job was successful.</value>
     [JsonPropertyName("rollbackResults")]
-    public string RollbackResults { get; private set; }
+    public string RollbackResults { get; set; }
 
 
 
@@ -182,7 +182,7 @@ public partial class InfrastructureascodeJob : IEquatable<InfrastructureascodeJo
     /// </summary>
     /// <value>The URI for this object</value>
     [JsonPropertyName("selfUri")]
-    public string SelfUri { get; private set; }
+    public string SelfUri { get; set; }
 
 
     /// <summary>

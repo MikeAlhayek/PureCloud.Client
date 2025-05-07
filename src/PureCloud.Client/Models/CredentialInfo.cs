@@ -28,7 +28,7 @@ public partial class CredentialInfo : IEquatable<CredentialInfo>
     /// </summary>
     /// <value>The globally unique identifier for the object.</value>
     [JsonPropertyName("id")]
-    public string Id { get; private set; }
+    public string Id { get; set; }
 
 
 
@@ -45,7 +45,7 @@ public partial class CredentialInfo : IEquatable<CredentialInfo>
     /// </summary>
     /// <value>Date the credentials were created. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z</value>
     [JsonPropertyName("createdDate")]
-    public DateTime? CreatedDate { get; private set; }
+    public DateTime? CreatedDate { get; set; }
 
 
 
@@ -54,7 +54,7 @@ public partial class CredentialInfo : IEquatable<CredentialInfo>
     /// </summary>
     /// <value>Date credentials were last modified. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z</value>
     [JsonPropertyName("modifiedDate")]
-    public DateTime? ModifiedDate { get; private set; }
+    public DateTime? ModifiedDate { get; set; }
 
 
 
@@ -72,7 +72,7 @@ public partial class CredentialInfo : IEquatable<CredentialInfo>
     /// </summary>
     /// <value>The URI for this object</value>
     [JsonPropertyName("selfUri")]
-    public string SelfUri { get; private set; }
+    public string SelfUri { get; set; }
 
 
     /// <summary>

@@ -24,7 +24,7 @@ public partial class DetectedNamedEntity : IEquatable<DetectedNamedEntity>
     /// </summary>
     /// <value>The name of the detected named entity.</value>
     [JsonPropertyName("name")]
-    public string Name { get; private set; }
+    public string Name { get; set; }
 
 
 
@@ -33,7 +33,7 @@ public partial class DetectedNamedEntity : IEquatable<DetectedNamedEntity>
     /// </summary>
     /// <value>The type of the detected named entity.</value>
     [JsonPropertyName("entityType")]
-    public string EntityType { get; private set; }
+    public string EntityType { get; set; }
 
 
 
@@ -42,7 +42,7 @@ public partial class DetectedNamedEntity : IEquatable<DetectedNamedEntity>
     /// </summary>
     /// <value>The probability of the detected named entity.</value>
     [JsonPropertyName("probability")]
-    public double? Probability { get; private set; }
+    public double? Probability { get; set; }
 
 
 
@@ -51,7 +51,7 @@ public partial class DetectedNamedEntity : IEquatable<DetectedNamedEntity>
     /// </summary>
     /// <value>The value of the detected named entity.</value>
     [JsonPropertyName("value")]
-    public DetectedNamedEntityValue Value { get; private set; }
+    public DetectedNamedEntityValue Value { get; set; }
 
 
     /// <summary>

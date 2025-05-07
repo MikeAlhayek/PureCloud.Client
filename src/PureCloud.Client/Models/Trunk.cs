@@ -147,7 +147,7 @@ public partial class Trunk : IEquatable<Trunk>
     /// </summary>
     /// <value>Indicates if the resource is active, inactive, or deleted.</value>
     [JsonPropertyName("state")]
-    public StateEnum? State { get; private set; }
+    public StateEnum? State { get; set; }
     /// <summary>
     /// The type of this trunk.
     /// </summary>
@@ -159,13 +159,13 @@ public partial class Trunk : IEquatable<Trunk>
     /// </summary>
     /// <value>Returns Enabled when the trunk base supports the availability interval and it has a value greater than 0.</value>
     [JsonPropertyName("optionsEnabledStatus")]
-    public OptionsEnabledStatusEnum? OptionsEnabledStatus { get; private set; }
+    public OptionsEnabledStatusEnum? OptionsEnabledStatus { get; set; }
     /// <summary>
     /// Returns Enabled when the trunk base supports the registration interval and it has a value greater than 0.
     /// </summary>
     /// <value>Returns Enabled when the trunk base supports the registration interval and it has a value greater than 0.</value>
     [JsonPropertyName("registersEnabledStatus")]
-    public RegistersEnabledStatusEnum? RegistersEnabledStatus { get; private set; }
+    public RegistersEnabledStatusEnum? RegistersEnabledStatus { get; set; }
 
     /// <summary>
     /// Initializes a new instance of the <see cref="Trunk" /> class.
@@ -207,7 +207,7 @@ public partial class Trunk : IEquatable<Trunk>
     /// </summary>
     /// <value>The globally unique identifier for the object.</value>
     [JsonPropertyName("id")]
-    public string Id { get; private set; }
+    public string Id { get; set; }
 
 
 
@@ -252,7 +252,7 @@ public partial class Trunk : IEquatable<Trunk>
     /// </summary>
     /// <value>The date the resource was created. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z</value>
     [JsonPropertyName("dateCreated")]
-    public DateTime? DateCreated { get; private set; }
+    public DateTime? DateCreated { get; set; }
 
 
 
@@ -261,7 +261,7 @@ public partial class Trunk : IEquatable<Trunk>
     /// </summary>
     /// <value>The date of the last modification to the resource. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z</value>
     [JsonPropertyName("dateModified")]
-    public DateTime? DateModified { get; private set; }
+    public DateTime? DateModified { get; set; }
 
 
 
@@ -270,7 +270,7 @@ public partial class Trunk : IEquatable<Trunk>
     /// </summary>
     /// <value>The ID of the user that last modified the resource.</value>
     [JsonPropertyName("modifiedBy")]
-    public string ModifiedBy { get; private set; }
+    public string ModifiedBy { get; set; }
 
 
 
@@ -279,7 +279,7 @@ public partial class Trunk : IEquatable<Trunk>
     /// </summary>
     /// <value>The ID of the user that created the resource.</value>
     [JsonPropertyName("createdBy")]
-    public string CreatedBy { get; private set; }
+    public string CreatedBy { get; set; }
 
 
 
@@ -290,7 +290,7 @@ public partial class Trunk : IEquatable<Trunk>
     /// </summary>
     /// <value>The application that last modified the resource.</value>
     [JsonPropertyName("modifiedByApp")]
-    public string ModifiedByApp { get; private set; }
+    public string ModifiedByApp { get; set; }
 
 
 
@@ -299,7 +299,7 @@ public partial class Trunk : IEquatable<Trunk>
     /// </summary>
     /// <value>The application that created the resource.</value>
     [JsonPropertyName("createdByApp")]
-    public string CreatedByApp { get; private set; }
+    public string CreatedByApp { get; set; }
 
 
 
@@ -346,7 +346,7 @@ public partial class Trunk : IEquatable<Trunk>
     /// </summary>
     /// <value>True if this trunk is in-service.  This comes from the trunk_enabled property of the referenced trunk base.</value>
     [JsonPropertyName("inService")]
-    public bool? InService { get; private set; }
+    public bool? InService { get; set; }
 
 
 
@@ -364,7 +364,7 @@ public partial class Trunk : IEquatable<Trunk>
     /// </summary>
     /// <value>The Logical Interface on the Edge to which the trunk is assigned.</value>
     [JsonPropertyName("logicalInterface")]
-    public DomainEntityRef LogicalInterface { get; private set; }
+    public DomainEntityRef LogicalInterface { get; set; }
 
 
 
@@ -373,7 +373,7 @@ public partial class Trunk : IEquatable<Trunk>
     /// </summary>
     /// <value>The connected status of the trunk</value>
     [JsonPropertyName("connectedStatus")]
-    public TrunkConnectedStatus ConnectedStatus { get; private set; }
+    public TrunkConnectedStatus ConnectedStatus { get; set; }
 
 
 
@@ -382,7 +382,7 @@ public partial class Trunk : IEquatable<Trunk>
     /// </summary>
     /// <value>The trunk optionsStatus</value>
     [JsonPropertyName("optionsStatus")]
-    public List<TrunkMetricsOptions> OptionsStatus { get; private set; }
+    public List<TrunkMetricsOptions> OptionsStatus { get; set; }
 
 
 
@@ -391,7 +391,7 @@ public partial class Trunk : IEquatable<Trunk>
     /// </summary>
     /// <value>The trunk registersStatus</value>
     [JsonPropertyName("registersStatus")]
-    public List<TrunkMetricsRegisters> RegistersStatus { get; private set; }
+    public List<TrunkMetricsRegisters> RegistersStatus { get; set; }
 
 
 
@@ -400,7 +400,7 @@ public partial class Trunk : IEquatable<Trunk>
     /// </summary>
     /// <value>The trunk ipStatus</value>
     [JsonPropertyName("ipStatus")]
-    public TrunkMetricsNetworkTypeIp IpStatus { get; private set; }
+    public TrunkMetricsNetworkTypeIp IpStatus { get; set; }
 
 
 
@@ -413,7 +413,7 @@ public partial class Trunk : IEquatable<Trunk>
     /// </summary>
     /// <value>The IP Network Family of the trunk</value>
     [JsonPropertyName("family")]
-    public int? Family { get; private set; }
+    public int? Family { get; set; }
 
 
 
@@ -422,7 +422,7 @@ public partial class Trunk : IEquatable<Trunk>
     /// </summary>
     /// <value>The list of proxy addresses (ports if provided) for the trunk</value>
     [JsonPropertyName("proxyAddressList")]
-    public List<string> ProxyAddressList { get; private set; }
+    public List<string> ProxyAddressList { get; set; }
 
 
 
@@ -431,7 +431,7 @@ public partial class Trunk : IEquatable<Trunk>
     /// </summary>
     /// <value>The URI for this object</value>
     [JsonPropertyName("selfUri")]
-    public string SelfUri { get; private set; }
+    public string SelfUri { get; set; }
 
 
     /// <summary>

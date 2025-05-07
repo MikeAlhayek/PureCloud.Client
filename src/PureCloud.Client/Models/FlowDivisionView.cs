@@ -238,7 +238,7 @@ public partial class FlowDivisionView : IEquatable<FlowDivisionView>
     /// </summary>
     /// <value>List of supported languages for the published version of the flow.</value>
     [JsonPropertyName("supportedLanguages")]
-    public List<SupportedLanguage> SupportedLanguages { get; private set; }
+    public List<SupportedLanguage> SupportedLanguages { get; set; }
 
 
 
@@ -265,7 +265,7 @@ public partial class FlowDivisionView : IEquatable<FlowDivisionView>
     /// </summary>
     /// <value>The URI for this object</value>
     [JsonPropertyName("selfUri")]
-    public string SelfUri { get; private set; }
+    public string SelfUri { get; set; }
 
 
     /// <summary>

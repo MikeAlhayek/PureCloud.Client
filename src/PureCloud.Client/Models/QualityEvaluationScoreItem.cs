@@ -101,7 +101,7 @@ public partial class QualityEvaluationScoreItem : IEquatable<QualityEvaluationSc
     /// </summary>
     /// <value>The id of evaluation</value>
     [JsonPropertyName("evaluationId")]
-    public string EvaluationId { get; private set; }
+    public string EvaluationId { get; set; }
 
 
 
@@ -110,7 +110,7 @@ public partial class QualityEvaluationScoreItem : IEquatable<QualityEvaluationSc
     /// </summary>
     /// <value>The id of conversation</value>
     [JsonPropertyName("conversationId")]
-    public string ConversationId { get; private set; }
+    public string ConversationId { get; set; }
 
 
 
@@ -119,7 +119,7 @@ public partial class QualityEvaluationScoreItem : IEquatable<QualityEvaluationSc
     /// </summary>
     /// <value>The date of conversation. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z</value>
     [JsonPropertyName("conversationDate")]
-    public DateTime? ConversationDate { get; private set; }
+    public DateTime? ConversationDate { get; set; }
 
 
 
@@ -128,7 +128,7 @@ public partial class QualityEvaluationScoreItem : IEquatable<QualityEvaluationSc
     /// </summary>
     /// <value>The end date of conversation. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z</value>
     [JsonPropertyName("conversationEndDate")]
-    public DateTime? ConversationEndDate { get; private set; }
+    public DateTime? ConversationEndDate { get; set; }
 
 
 
@@ -137,7 +137,7 @@ public partial class QualityEvaluationScoreItem : IEquatable<QualityEvaluationSc
     /// </summary>
     /// <value>The name of form</value>
     [JsonPropertyName("formName")]
-    public string FormName { get; private set; }
+    public string FormName { get; set; }
 
 
 
@@ -146,7 +146,7 @@ public partial class QualityEvaluationScoreItem : IEquatable<QualityEvaluationSc
     /// </summary>
     /// <value>Gamification points earned for this metric</value>
     [JsonPropertyName("points")]
-    public int? Points { get; private set; }
+    public int? Points { get; set; }
 
 
 
@@ -155,7 +155,7 @@ public partial class QualityEvaluationScoreItem : IEquatable<QualityEvaluationSc
     /// </summary>
     /// <value>The quality score of evaluation as a percentage</value>
     [JsonPropertyName("evaluationScore")]
-    public double? EvaluationScore { get; private set; }
+    public double? EvaluationScore { get; set; }
 
 
 
@@ -164,7 +164,7 @@ public partial class QualityEvaluationScoreItem : IEquatable<QualityEvaluationSc
     /// </summary>
     /// <value>The maximum Gamification points a user may earn for this metric</value>
     [JsonPropertyName("maxPoints")]
-    public int? MaxPoints { get; private set; }
+    public int? MaxPoints { get; set; }
 
 
 

@@ -105,13 +105,13 @@ public partial class HistoricalImportStatus : IEquatable<HistoricalImportStatus>
     /// </summary>
     /// <value>Status of the historical import in the organization.</value>
     [JsonPropertyName("status")]
-    public StatusEnum? Status { get; private set; }
+    public StatusEnum? Status { get; set; }
     /// <summary>
     /// Whether this historical import is of type csv or json
     /// </summary>
     /// <value>Whether this historical import is of type csv or json</value>
     [JsonPropertyName("type")]
-    public TypeEnum? Type { get; private set; }
+    public TypeEnum? Type { get; set; }
     /// <summary>
     /// Initializes a new instance of the <see cref="HistoricalImportStatus" /> class.
     /// </summary>
@@ -127,7 +127,7 @@ public partial class HistoricalImportStatus : IEquatable<HistoricalImportStatus>
     /// </summary>
     /// <value>Request id of the historical import in the organization</value>
     [JsonPropertyName("requestId")]
-    public string RequestId { get; private set; }
+    public string RequestId { get; set; }
 
 
 
@@ -136,7 +136,7 @@ public partial class HistoricalImportStatus : IEquatable<HistoricalImportStatus>
     /// </summary>
     /// <value>The last day of the data you are importing. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z</value>
     [JsonPropertyName("dateImportEnded")]
-    public DateTime? DateImportEnded { get; private set; }
+    public DateTime? DateImportEnded { get; set; }
 
 
 
@@ -145,7 +145,7 @@ public partial class HistoricalImportStatus : IEquatable<HistoricalImportStatus>
     /// </summary>
     /// <value>The first day of the data you are importing. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z</value>
     [JsonPropertyName("dateImportStarted")]
-    public DateTime? DateImportStarted { get; private set; }
+    public DateTime? DateImportStarted { get; set; }
 
 
 
@@ -156,7 +156,7 @@ public partial class HistoricalImportStatus : IEquatable<HistoricalImportStatus>
     /// </summary>
     /// <value>Error occured if the status of the import is failed</value>
     [JsonPropertyName("error")]
-    public string Error { get; private set; }
+    public string Error { get; set; }
 
 
 
@@ -165,7 +165,7 @@ public partial class HistoricalImportStatus : IEquatable<HistoricalImportStatus>
     /// </summary>
     /// <value>Date in which the historical import is initiated. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z</value>
     [JsonPropertyName("dateCreated")]
-    public DateTime? DateCreated { get; private set; }
+    public DateTime? DateCreated { get; set; }
 
 
 
@@ -174,7 +174,7 @@ public partial class HistoricalImportStatus : IEquatable<HistoricalImportStatus>
     /// </summary>
     /// <value>Date in which the historical import is modified. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z</value>
     [JsonPropertyName("dateModified")]
-    public DateTime? DateModified { get; private set; }
+    public DateTime? DateModified { get; set; }
 
 
 
@@ -183,7 +183,7 @@ public partial class HistoricalImportStatus : IEquatable<HistoricalImportStatus>
     /// </summary>
     /// <value>Whether this historical import is active or not</value>
     [JsonPropertyName("active")]
-    public bool? Active { get; private set; }
+    public bool? Active { get; set; }
 
 
 
@@ -194,7 +194,7 @@ public partial class HistoricalImportStatus : IEquatable<HistoricalImportStatus>
     /// </summary>
     /// <value>Name of the file that you are importing.</value>
     [JsonPropertyName("fileName")]
-    public string FileName { get; private set; }
+    public string FileName { get; set; }
 
 
 
@@ -203,7 +203,7 @@ public partial class HistoricalImportStatus : IEquatable<HistoricalImportStatus>
     /// </summary>
     /// <value>Size of the file that you are importing.</value>
     [JsonPropertyName("fileSize")]
-    public long? FileSize { get; private set; }
+    public long? FileSize { get; set; }
 
 
     /// <summary>

@@ -48,7 +48,7 @@ public partial class PredictorModel : IEquatable<PredictorModel>
     /// </summary>
     /// <value>The media type of the model.</value>
     [JsonPropertyName("mediaType")]
-    public MediaTypeEnum? MediaType { get; private set; }
+    public MediaTypeEnum? MediaType { get; set; }
     /// <summary>
     /// Initializes a new instance of the <see cref="PredictorModel" /> class.
     /// </summary>
@@ -66,7 +66,7 @@ public partial class PredictorModel : IEquatable<PredictorModel>
     /// </summary>
     /// <value>The globally unique identifier for the object.</value>
     [JsonPropertyName("id")]
-    public string Id { get; private set; }
+    public string Id { get; set; }
 
 
 
@@ -75,7 +75,7 @@ public partial class PredictorModel : IEquatable<PredictorModel>
     /// </summary>
     /// <value>The key performance indicator used in the model.</value>
     [JsonPropertyName("kpi")]
-    public string Kpi { get; private set; }
+    public string Kpi { get; set; }
 
 
 
@@ -84,7 +84,7 @@ public partial class PredictorModel : IEquatable<PredictorModel>
     /// </summary>
     /// <value>The List of Queues that are assessed for Predictive Routing.</value>
     [JsonPropertyName("queues")]
-    public List<AddressableEntityRef> Queues { get; private set; }
+    public List<AddressableEntityRef> Queues { get; set; }
 
 
 
@@ -93,7 +93,7 @@ public partial class PredictorModel : IEquatable<PredictorModel>
     /// </summary>
     /// <value>DateTime indicating when the model was created. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z</value>
     [JsonPropertyName("dateCreated")]
-    public DateTime? DateCreated { get; private set; }
+    public DateTime? DateCreated { get; set; }
 
 
 
@@ -102,7 +102,7 @@ public partial class PredictorModel : IEquatable<PredictorModel>
     /// </summary>
     /// <value>DateTime indicating when the model was last trained. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z</value>
     [JsonPropertyName("dateTrained")]
-    public DateTime? DateTrained { get; private set; }
+    public DateTime? DateTrained { get; set; }
 
 
 

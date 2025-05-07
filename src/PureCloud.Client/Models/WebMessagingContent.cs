@@ -66,7 +66,7 @@ public partial class WebMessagingContent : IEquatable<WebMessagingContent>
     /// </summary>
     /// <value>Type of this content element. If contentType = \"Attachment\" only one item is allowed.</value>
     [JsonPropertyName("contentType")]
-    public ContentTypeEnum? ContentType { get; private set; }
+    public ContentTypeEnum? ContentType { get; set; }
     /// <summary>
     /// Initializes a new instance of the <see cref="WebMessagingContent" /> class.
     /// </summary>
@@ -94,7 +94,7 @@ public partial class WebMessagingContent : IEquatable<WebMessagingContent>
     /// </summary>
     /// <value>Attachment content.</value>
     [JsonPropertyName("attachment")]
-    public WebMessagingAttachment Attachment { get; private set; }
+    public WebMessagingAttachment Attachment { get; set; }
 
 
 

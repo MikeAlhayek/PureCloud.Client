@@ -27,7 +27,7 @@ public sealed class Group
     /// The globally unique identifier for the object.
     /// </summary>
     /// <value>The globally unique identifier for the object.</value>
-    public string Id { get; private set; }
+    public string Id { get; set; }
 
     /// <summary>
     /// The group name.
@@ -44,19 +44,19 @@ public sealed class Group
     /// Last modified date/time. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z
     /// </summary>
     /// <value>Last modified date/time. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z</value>
-    public DateTime? DateModified { get; private set; }
+    public DateTime? DateModified { get; set; }
 
     /// <summary>
     /// Number of members.
     /// </summary>
     /// <value>Number of members.</value>
-    public long? MemberCount { get; private set; }
+    public long? MemberCount { get; set; }
 
     /// <summary>
     /// Current version for this resource.
     /// </summary>
     /// <value>Current version for this resource.</value>
-    public int? Version { get; private set; }
+    public int? Version { get; set; }
 
     /// <summary>
     /// Gets or Sets Images
@@ -102,5 +102,5 @@ public sealed class Group
     /// The URI for this object
     /// </summary>
     /// <value>The URI for this object</value>
-    public string SelfUri { get; private set; }
+    public string SelfUri { get; set; }
 }

@@ -60,7 +60,7 @@ public partial class SchedulingStatusResponse : IEquatable<SchedulingStatusRespo
     /// </summary>
     /// <value>The status of the scheduling job.</value>
     [JsonPropertyName("status")]
-    public StatusEnum? Status { get; private set; }
+    public StatusEnum? Status { get; set; }
     /// <summary>
     /// Initializes a new instance of the <see cref="SchedulingStatusResponse" /> class.
     /// </summary>
@@ -76,7 +76,7 @@ public partial class SchedulingStatusResponse : IEquatable<SchedulingStatusRespo
     /// </summary>
     /// <value>The ID generated for the scheduling job.  Use to GET result when job is completed.</value>
     [JsonPropertyName("id")]
-    public string Id { get; private set; }
+    public string Id { get; set; }
 
 
 
@@ -87,7 +87,7 @@ public partial class SchedulingStatusResponse : IEquatable<SchedulingStatusRespo
     /// </summary>
     /// <value>If the request could not be properly processed, error details will be given here.</value>
     [JsonPropertyName("errorDetails")]
-    public List<SchedulingProcessingError> ErrorDetails { get; private set; }
+    public List<SchedulingProcessingError> ErrorDetails { get; set; }
 
 
 
@@ -96,7 +96,7 @@ public partial class SchedulingStatusResponse : IEquatable<SchedulingStatusRespo
     /// </summary>
     /// <value>The uri of the scheduling result. It has a value if the status is &#39;Success&#39;.</value>
     [JsonPropertyName("schedulingResultUri")]
-    public string SchedulingResultUri { get; private set; }
+    public string SchedulingResultUri { get; set; }
 
 
 
@@ -105,7 +105,7 @@ public partial class SchedulingStatusResponse : IEquatable<SchedulingStatusRespo
     /// </summary>
     /// <value>The percentage of the job that is complete.</value>
     [JsonPropertyName("percentComplete")]
-    public int? PercentComplete { get; private set; }
+    public int? PercentComplete { get; set; }
 
 
     /// <summary>

@@ -180,7 +180,7 @@ public partial class KnowledgeGuestDocumentCopy : IEquatable<KnowledgeGuestDocum
     /// </summary>
     /// <value>Knowledge session ID.</value>
     [JsonPropertyName("sessionId")]
-    public string SessionId { get; private set; }
+    public string SessionId { get; set; }
 
 
 
@@ -189,7 +189,7 @@ public partial class KnowledgeGuestDocumentCopy : IEquatable<KnowledgeGuestDocum
     /// </summary>
     /// <value>The client application in which the document content was copied.</value>
     [JsonPropertyName("application")]
-    public KnowledgeGuestSearchClientApplication Application { get; private set; }
+    public KnowledgeGuestSearchClientApplication Application { get; set; }
 
 
     /// <summary>

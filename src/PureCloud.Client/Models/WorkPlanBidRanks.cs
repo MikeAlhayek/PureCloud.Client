@@ -24,5 +24,5 @@ public sealed class WorkPlanBidRanks
     /// The URI for this object
     /// </summary>
     /// <value>The URI for this object</value>
-    public string SelfUri { get; private set; }
+    public string SelfUri { get; set; }
 }

@@ -268,7 +268,7 @@ public partial class ReportingTurn : IEquatable<ReportingTurn>
     /// </summary>
     /// <value>The conversation details, across potentially multiple Bot Flow sessions.</value>
     [JsonPropertyName("conversation")]
-    public AddressableEntityRef Conversation { get; private set; }
+    public AddressableEntityRef Conversation { get; set; }
 
 
     /// <summary>

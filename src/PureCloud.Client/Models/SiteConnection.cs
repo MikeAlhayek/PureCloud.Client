@@ -81,7 +81,7 @@ public partial class SiteConnection : IEquatable<SiteConnection>
     /// </summary>
     /// <value>Media model for the current site.</value>
     [JsonPropertyName("mediaModel")]
-    public MediaModelEnum? MediaModel { get; private set; }
+    public MediaModelEnum? MediaModel { get; set; }
     /// <summary>
     /// Initializes a new instance of the <see cref="SiteConnection" /> class.
     /// </summary>
@@ -154,7 +154,7 @@ public partial class SiteConnection : IEquatable<SiteConnection>
     /// </summary>
     /// <value>All of the edges to which the site connects</value>
     [JsonPropertyName("edgeList")]
-    public List<ConnectedEdge> EdgeList { get; private set; }
+    public List<ConnectedEdge> EdgeList { get; set; }
 
 
 
@@ -163,7 +163,7 @@ public partial class SiteConnection : IEquatable<SiteConnection>
     /// </summary>
     /// <value>The core site</value>
     [JsonPropertyName("coreSite")]
-    public bool? CoreSite { get; private set; }
+    public bool? CoreSite { get; set; }
 
 
 
@@ -172,7 +172,7 @@ public partial class SiteConnection : IEquatable<SiteConnection>
     /// </summary>
     /// <value>List of site ids names and selfUris for the primary core sites</value>
     [JsonPropertyName("primaryCoreSites")]
-    public List<DomainEntityRef> PrimaryCoreSites { get; private set; }
+    public List<DomainEntityRef> PrimaryCoreSites { get; set; }
 
 
 
@@ -181,7 +181,7 @@ public partial class SiteConnection : IEquatable<SiteConnection>
     /// </summary>
     /// <value>List of site ids names and selfUris for the secondary core sites</value>
     [JsonPropertyName("secondaryCoreSites")]
-    public List<DomainEntityRef> SecondaryCoreSites { get; private set; }
+    public List<DomainEntityRef> SecondaryCoreSites { get; set; }
 
 
     /// <summary>

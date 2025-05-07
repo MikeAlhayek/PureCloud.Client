@@ -98,7 +98,7 @@ public partial class WebDeployment : IEquatable<WebDeployment>
     /// </summary>
     /// <value>The deployment ID</value>
     [JsonPropertyName("id")]
-    public string Id { get; private set; }
+    public string Id { get; set; }
 
 
 
@@ -152,7 +152,7 @@ public partial class WebDeployment : IEquatable<WebDeployment>
     /// </summary>
     /// <value>Javascript snippet used to load the config</value>
     [JsonPropertyName("snippet")]
-    public string Snippet { get; private set; }
+    public string Snippet { get; set; }
 
 
 
@@ -161,7 +161,7 @@ public partial class WebDeployment : IEquatable<WebDeployment>
     /// </summary>
     /// <value>The date the deployment was created. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z</value>
     [JsonPropertyName("dateCreated")]
-    public DateTime? DateCreated { get; private set; }
+    public DateTime? DateCreated { get; set; }
 
 
 
@@ -170,7 +170,7 @@ public partial class WebDeployment : IEquatable<WebDeployment>
     /// </summary>
     /// <value>The date the deployment was most recently modified. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z</value>
     [JsonPropertyName("dateModified")]
-    public DateTime? DateModified { get; private set; }
+    public DateTime? DateModified { get; set; }
 
 
 
@@ -179,7 +179,7 @@ public partial class WebDeployment : IEquatable<WebDeployment>
     /// </summary>
     /// <value>A reference to the user who most recently modified the deployment</value>
     [JsonPropertyName("lastModifiedUser")]
-    public AddressableEntityRef LastModifiedUser { get; private set; }
+    public AddressableEntityRef LastModifiedUser { get; set; }
 
 
 
@@ -208,7 +208,7 @@ public partial class WebDeployment : IEquatable<WebDeployment>
     /// </summary>
     /// <value>The URI for this object</value>
     [JsonPropertyName("selfUri")]
-    public string SelfUri { get; private set; }
+    public string SelfUri { get; set; }
 
 
     /// <summary>

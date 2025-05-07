@@ -32,7 +32,7 @@ public partial class KnowledgeDocumentVersionReference : IEquatable<KnowledgeDoc
     /// </summary>
     /// <value>The globally unique identifier for the document.</value>
     [JsonPropertyName("id")]
-    public string Id { get; private set; }
+    public string Id { get; set; }
 
 
 
@@ -41,7 +41,7 @@ public partial class KnowledgeDocumentVersionReference : IEquatable<KnowledgeDoc
     /// </summary>
     /// <value>The knowledge base that the document belongs to.</value>
     [JsonPropertyName("knowledgeBase")]
-    public KnowledgeBaseReference KnowledgeBase { get; private set; }
+    public KnowledgeBaseReference KnowledgeBase { get; set; }
 
 
 
@@ -59,7 +59,7 @@ public partial class KnowledgeDocumentVersionReference : IEquatable<KnowledgeDoc
     /// </summary>
     /// <value>The URI for this object</value>
     [JsonPropertyName("selfUri")]
-    public string SelfUri { get; private set; }
+    public string SelfUri { get; set; }
 
 
     /// <summary>

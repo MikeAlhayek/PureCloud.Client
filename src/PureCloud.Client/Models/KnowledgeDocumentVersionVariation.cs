@@ -38,7 +38,7 @@ public partial class KnowledgeDocumentVersionVariation : IEquatable<KnowledgeDoc
     /// </summary>
     /// <value>The globally unique identifier for the variation.</value>
     [JsonPropertyName("id")]
-    public string Id { get; private set; }
+    public string Id { get; set; }
 
 
 
@@ -47,7 +47,7 @@ public partial class KnowledgeDocumentVersionVariation : IEquatable<KnowledgeDoc
     /// </summary>
     /// <value>The creation date-time for the document variation. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z</value>
     [JsonPropertyName("dateCreated")]
-    public DateTime? DateCreated { get; private set; }
+    public DateTime? DateCreated { get; set; }
 
 
 
@@ -56,7 +56,7 @@ public partial class KnowledgeDocumentVersionVariation : IEquatable<KnowledgeDoc
     /// </summary>
     /// <value>The last modification date-time for the document variation. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z</value>
     [JsonPropertyName("dateModified")]
-    public DateTime? DateModified { get; private set; }
+    public DateTime? DateModified { get; set; }
 
 
 
@@ -101,7 +101,7 @@ public partial class KnowledgeDocumentVersionVariation : IEquatable<KnowledgeDoc
     /// </summary>
     /// <value>The URI for this object</value>
     [JsonPropertyName("selfUri")]
-    public string SelfUri { get; private set; }
+    public string SelfUri { get; set; }
 
 
 
@@ -110,7 +110,7 @@ public partial class KnowledgeDocumentVersionVariation : IEquatable<KnowledgeDoc
     /// </summary>
     /// <value>Reference to the document version to which the variation is associated with.</value>
     [JsonPropertyName("documentVersion")]
-    public AddressableEntityRef DocumentVersion { get; private set; }
+    public AddressableEntityRef DocumentVersion { get; set; }
 
 
     /// <summary>

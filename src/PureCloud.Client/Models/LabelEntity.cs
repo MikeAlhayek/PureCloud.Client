@@ -41,7 +41,7 @@ public partial class LabelEntity : IEquatable<LabelEntity>
     /// </summary>
     /// <value>The selfUri of the label.</value>
     [JsonPropertyName("selfUri")]
-    public string SelfUri { get; private set; }
+    public string SelfUri { get; set; }
 
 
     /// <summary>

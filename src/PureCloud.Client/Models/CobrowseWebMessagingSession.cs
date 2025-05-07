@@ -48,7 +48,7 @@ public partial class CobrowseWebMessagingSession : IEquatable<CobrowseWebMessagi
     /// </summary>
     /// <value>CommunicationType for Cobrowse Session</value>
     [JsonPropertyName("communicationType")]
-    public CommunicationTypeEnum? CommunicationType { get; private set; }
+    public CommunicationTypeEnum? CommunicationType { get; set; }
     /// <summary>
     /// Initializes a new instance of the <see cref="CobrowseWebMessagingSession" /> class.
     /// </summary>
@@ -66,7 +66,7 @@ public partial class CobrowseWebMessagingSession : IEquatable<CobrowseWebMessagi
     /// </summary>
     /// <value>The globally unique identifier for the object.</value>
     [JsonPropertyName("id")]
-    public string Id { get; private set; }
+    public string Id { get; set; }
 
 
 
@@ -83,7 +83,7 @@ public partial class CobrowseWebMessagingSession : IEquatable<CobrowseWebMessagi
     /// </summary>
     /// <value>Cobrowse session join code</value>
     [JsonPropertyName("joinCode")]
-    public string JoinCode { get; private set; }
+    public string JoinCode { get; set; }
 
 
 
@@ -92,7 +92,7 @@ public partial class CobrowseWebMessagingSession : IEquatable<CobrowseWebMessagi
     /// </summary>
     /// <value>WebSocket URL for the JS client</value>
     [JsonPropertyName("websocketUrl")]
-    public string WebsocketUrl { get; private set; }
+    public string WebsocketUrl { get; set; }
 
 
 
@@ -101,7 +101,7 @@ public partial class CobrowseWebMessagingSession : IEquatable<CobrowseWebMessagi
     /// </summary>
     /// <value>Date when Cobrowse Offer Expires. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z</value>
     [JsonPropertyName("dateOfferEnds")]
-    public DateTime? DateOfferEnds { get; private set; }
+    public DateTime? DateOfferEnds { get; set; }
 
 
 
@@ -112,7 +112,7 @@ public partial class CobrowseWebMessagingSession : IEquatable<CobrowseWebMessagi
     /// </summary>
     /// <value>The URI for this object</value>
     [JsonPropertyName("selfUri")]
-    public string SelfUri { get; private set; }
+    public string SelfUri { get; set; }
 
 
     /// <summary>

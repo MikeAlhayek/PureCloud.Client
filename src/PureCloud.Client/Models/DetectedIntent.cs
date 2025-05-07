@@ -24,7 +24,7 @@ public partial class DetectedIntent : IEquatable<DetectedIntent>
     /// </summary>
     /// <value>The name of the detected intent.</value>
     [JsonPropertyName("name")]
-    public string Name { get; private set; }
+    public string Name { get; set; }
 
 
 
@@ -33,7 +33,7 @@ public partial class DetectedIntent : IEquatable<DetectedIntent>
     /// </summary>
     /// <value>The probability of the detected intent.</value>
     [JsonPropertyName("probability")]
-    public double? Probability { get; private set; }
+    public double? Probability { get; set; }
 
 
 
@@ -42,7 +42,7 @@ public partial class DetectedIntent : IEquatable<DetectedIntent>
     /// </summary>
     /// <value>The collection of named entities detected.</value>
     [JsonPropertyName("entities")]
-    public List<DetectedNamedEntity> Entities { get; private set; }
+    public List<DetectedNamedEntity> Entities { get; set; }
 
 
     /// <summary>

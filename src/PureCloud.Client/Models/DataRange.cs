@@ -24,7 +24,7 @@ public partial class DataRange : IEquatable<DataRange>
     /// </summary>
     /// <value>The first event timestamp found. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z</value>
     [JsonPropertyName("dateMin")]
-    public DateTime? DateMin { get; private set; }
+    public DateTime? DateMin { get; set; }
 
 
 
@@ -33,7 +33,7 @@ public partial class DataRange : IEquatable<DataRange>
     /// </summary>
     /// <value>The last event timestamp found. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z</value>
     [JsonPropertyName("dateMax")]
-    public DateTime? DateMax { get; private set; }
+    public DateTime? DateMax { get; set; }
 
 
     /// <summary>

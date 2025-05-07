@@ -109,7 +109,7 @@ public partial class KnowledgeDocumentGuestSearchRequest : IEquatable<KnowledgeD
     /// </summary>
     /// <value>The globally unique identifier for the search.</value>
     [JsonPropertyName("searchId")]
-    public string SearchId { get; private set; }
+    public string SearchId { get; set; }
 
 
 
@@ -118,7 +118,7 @@ public partial class KnowledgeDocumentGuestSearchRequest : IEquatable<KnowledgeD
     /// </summary>
     /// <value>The total number of documents matching the query.</value>
     [JsonPropertyName("total")]
-    public int? Total { get; private set; }
+    public int? Total { get; set; }
 
 
 
@@ -127,7 +127,7 @@ public partial class KnowledgeDocumentGuestSearchRequest : IEquatable<KnowledgeD
     /// </summary>
     /// <value>Number of pages returned in the result calculated according to the pageSize and the total</value>
     [JsonPropertyName("pageCount")]
-    public int? PageCount { get; private set; }
+    public int? PageCount { get; set; }
 
 
 
@@ -138,7 +138,7 @@ public partial class KnowledgeDocumentGuestSearchRequest : IEquatable<KnowledgeD
     /// </summary>
     /// <value>Session ID of the search.</value>
     [JsonPropertyName("sessionId")]
-    public string SessionId { get; private set; }
+    public string SessionId { get; set; }
 
 
 

@@ -32,7 +32,7 @@ public partial class VoicemailMessage : IEquatable<VoicemailMessage>
     /// </summary>
     /// <value>The globally unique identifier for the object.</value>
     [JsonPropertyName("id")]
-    public string Id { get; private set; }
+    public string Id { get; set; }
 
 
 
@@ -41,7 +41,7 @@ public partial class VoicemailMessage : IEquatable<VoicemailMessage>
     /// </summary>
     /// <value>The conversation that the voicemail message is associated with</value>
     [JsonPropertyName("conversation")]
-    public Conversation Conversation { get; private set; }
+    public Conversation Conversation { get; set; }
 
 
 
@@ -59,7 +59,7 @@ public partial class VoicemailMessage : IEquatable<VoicemailMessage>
     /// </summary>
     /// <value>The voicemail message&#39;s audio recording duration in seconds</value>
     [JsonPropertyName("audioRecordingDurationSeconds")]
-    public int? AudioRecordingDurationSeconds { get; private set; }
+    public int? AudioRecordingDurationSeconds { get; set; }
 
 
 
@@ -68,7 +68,7 @@ public partial class VoicemailMessage : IEquatable<VoicemailMessage>
     /// </summary>
     /// <value>The voicemail message&#39;s audio recording size in bytes</value>
     [JsonPropertyName("audioRecordingSizeBytes")]
-    public long? AudioRecordingSizeBytes { get; private set; }
+    public long? AudioRecordingSizeBytes { get; set; }
 
 
 
@@ -77,7 +77,7 @@ public partial class VoicemailMessage : IEquatable<VoicemailMessage>
     /// </summary>
     /// <value>The transcription of the voicemail&#39;s audio</value>
     [JsonPropertyName("transcription")]
-    public string Transcription { get; private set; }
+    public string Transcription { get; set; }
 
 
 
@@ -86,7 +86,7 @@ public partial class VoicemailMessage : IEquatable<VoicemailMessage>
     /// </summary>
     /// <value>The date the voicemail message was created. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z</value>
     [JsonPropertyName("createdDate")]
-    public DateTime? CreatedDate { get; private set; }
+    public DateTime? CreatedDate { get; set; }
 
 
 
@@ -95,7 +95,7 @@ public partial class VoicemailMessage : IEquatable<VoicemailMessage>
     /// </summary>
     /// <value>The date the voicemail message was last modified. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z</value>
     [JsonPropertyName("modifiedDate")]
-    public DateTime? ModifiedDate { get; private set; }
+    public DateTime? ModifiedDate { get; set; }
 
 
 
@@ -104,7 +104,7 @@ public partial class VoicemailMessage : IEquatable<VoicemailMessage>
     /// </summary>
     /// <value>The date the voicemail message deleted property was set to true. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z</value>
     [JsonPropertyName("deletedDate")]
-    public DateTime? DeletedDate { get; private set; }
+    public DateTime? DeletedDate { get; set; }
 
 
 
@@ -113,7 +113,7 @@ public partial class VoicemailMessage : IEquatable<VoicemailMessage>
     /// </summary>
     /// <value>The caller address</value>
     [JsonPropertyName("callerAddress")]
-    public string CallerAddress { get; private set; }
+    public string CallerAddress { get; set; }
 
 
 
@@ -122,7 +122,7 @@ public partial class VoicemailMessage : IEquatable<VoicemailMessage>
     /// </summary>
     /// <value>Optionally the name of the caller that left the voicemail message if the caller was a known user</value>
     [JsonPropertyName("callerName")]
-    public string CallerName { get; private set; }
+    public string CallerName { get; set; }
 
 
 
@@ -131,7 +131,7 @@ public partial class VoicemailMessage : IEquatable<VoicemailMessage>
     /// </summary>
     /// <value>Optionally the user that left the voicemail message if the caller was a known user</value>
     [JsonPropertyName("callerUser")]
-    public User CallerUser { get; private set; }
+    public User CallerUser { get; set; }
 
 
 
@@ -158,7 +158,7 @@ public partial class VoicemailMessage : IEquatable<VoicemailMessage>
     /// </summary>
     /// <value>The user that the voicemail message belongs to or null which means the voicemail message belongs to a group or queue</value>
     [JsonPropertyName("user")]
-    public User User { get; private set; }
+    public User User { get; set; }
 
 
 
@@ -167,7 +167,7 @@ public partial class VoicemailMessage : IEquatable<VoicemailMessage>
     /// </summary>
     /// <value>The group that the voicemail message belongs to or null which means the voicemail message belongs to a user or queue</value>
     [JsonPropertyName("group")]
-    public Group Group { get; private set; }
+    public Group Group { get; set; }
 
 
 
@@ -176,7 +176,7 @@ public partial class VoicemailMessage : IEquatable<VoicemailMessage>
     /// </summary>
     /// <value>The queue that the voicemail message belongs to or null which means the voicemail message belongs to a user or group</value>
     [JsonPropertyName("queue")]
-    public Queue Queue { get; private set; }
+    public Queue Queue { get; set; }
 
 
 
@@ -185,7 +185,7 @@ public partial class VoicemailMessage : IEquatable<VoicemailMessage>
     /// </summary>
     /// <value>Represents where this voicemail message was copied from</value>
     [JsonPropertyName("copiedFrom")]
-    public VoicemailCopyRecord CopiedFrom { get; private set; }
+    public VoicemailCopyRecord CopiedFrom { get; set; }
 
 
 
@@ -194,7 +194,7 @@ public partial class VoicemailMessage : IEquatable<VoicemailMessage>
     /// </summary>
     /// <value>Represents where this voicemail has been copied to</value>
     [JsonPropertyName("copiedTo")]
-    public List<VoicemailCopyRecord> CopiedTo { get; private set; }
+    public List<VoicemailCopyRecord> CopiedTo { get; set; }
 
 
 
@@ -212,7 +212,7 @@ public partial class VoicemailMessage : IEquatable<VoicemailMessage>
     /// </summary>
     /// <value>The URI for this object</value>
     [JsonPropertyName("selfUri")]
-    public string SelfUri { get; private set; }
+    public string SelfUri { get; set; }
 
 
     /// <summary>

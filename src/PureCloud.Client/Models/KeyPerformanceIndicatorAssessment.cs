@@ -60,7 +60,7 @@ public partial class KeyPerformanceIndicatorAssessment : IEquatable<KeyPerforman
     /// </summary>
     /// <value>The overall result of the assessment for a key performance indicator.</value>
     [JsonPropertyName("assessmentResult")]
-    public AssessmentResultEnum? AssessmentResult { get; private set; }
+    public AssessmentResultEnum? AssessmentResult { get; set; }
     /// <summary>
     /// Initializes a new instance of the <see cref="KeyPerformanceIndicatorAssessment" /> class.
     /// </summary>
@@ -76,7 +76,7 @@ public partial class KeyPerformanceIndicatorAssessment : IEquatable<KeyPerforman
     /// </summary>
     /// <value>Name of the key performance indicator assessed.</value>
     [JsonPropertyName("kpi")]
-    public string Kpi { get; private set; }
+    public string Kpi { get; set; }
 
 
 
@@ -87,7 +87,7 @@ public partial class KeyPerformanceIndicatorAssessment : IEquatable<KeyPerforman
     /// </summary>
     /// <value>Set of checks executed as part of an assessment.</value>
     [JsonPropertyName("checks")]
-    public List<Check> Checks { get; private set; }
+    public List<Check> Checks { get; set; }
 
 
     /// <summary>

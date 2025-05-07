@@ -177,7 +177,7 @@ public partial class ConversationNormalizedMessage : IEquatable<ConversationNorm
     /// </summary>
     /// <value>Message receipt status, only used with type Receipt.</value>
     [JsonPropertyName("status")]
-    public StatusEnum? Status { get; private set; }
+    public StatusEnum? Status { get; set; }
     /// <summary>
     /// Specifies if this message was sent by a human agent or bot. The platform may use this to apply appropriate provider policies.
     /// </summary>
@@ -189,7 +189,7 @@ public partial class ConversationNormalizedMessage : IEquatable<ConversationNorm
     /// </summary>
     /// <value>The direction of the message.</value>
     [JsonPropertyName("direction")]
-    public DirectionEnum? Direction { get; private set; }
+    public DirectionEnum? Direction { get; set; }
 
     /// <summary>
     /// Initializes a new instance of the <see cref="ConversationNormalizedMessage" /> class.
@@ -225,7 +225,7 @@ public partial class ConversationNormalizedMessage : IEquatable<ConversationNorm
     /// </summary>
     /// <value>Unique ID of the message. Message receipts will have the same ID as the message they reference.</value>
     [JsonPropertyName("id")]
-    public string Id { get; private set; }
+    public string Id { get; set; }
 
 
 
@@ -234,7 +234,7 @@ public partial class ConversationNormalizedMessage : IEquatable<ConversationNorm
     /// </summary>
     /// <value>Channel-specific information that describes the message and the message channel/provider.</value>
     [JsonPropertyName("channel")]
-    public ConversationMessagingChannel Channel { get; private set; }
+    public ConversationMessagingChannel Channel { get; set; }
 
 
 
@@ -274,7 +274,7 @@ public partial class ConversationNormalizedMessage : IEquatable<ConversationNorm
     /// </summary>
     /// <value>List of reasons for a message receipt that indicates the message has failed. Only used with Failed status.</value>
     [JsonPropertyName("reasons")]
-    public List<ConversationReason> Reasons { get; private set; }
+    public List<ConversationReason> Reasons { get; set; }
 
 
 
@@ -285,7 +285,7 @@ public partial class ConversationNormalizedMessage : IEquatable<ConversationNorm
     /// </summary>
     /// <value>Indicates if this is the last message receipt for this message, or if another message receipt can be expected.</value>
     [JsonPropertyName("isFinalReceipt")]
-    public bool? IsFinalReceipt { get; private set; }
+    public bool? IsFinalReceipt { get; set; }
 
 
 

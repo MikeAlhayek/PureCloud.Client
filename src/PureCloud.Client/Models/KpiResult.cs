@@ -48,7 +48,7 @@ public partial class KpiResult : IEquatable<KpiResult>
     /// </summary>
     /// <value>Media type used for the KPI</value>
     [JsonPropertyName("mediaType")]
-    public MediaTypeEnum? MediaType { get; private set; }
+    public MediaTypeEnum? MediaType { get; set; }
     /// <summary>
     /// Initializes a new instance of the <see cref="KpiResult" /> class.
     /// </summary>
@@ -64,7 +64,7 @@ public partial class KpiResult : IEquatable<KpiResult>
     /// </summary>
     /// <value>Absolute metric (in which the KPI is based) total for the interactions handled by predictive routing (GPR was on)</value>
     [JsonPropertyName("kpiTotalOn")]
-    public long? KpiTotalOn { get; private set; }
+    public long? KpiTotalOn { get; set; }
 
 
 
@@ -73,7 +73,7 @@ public partial class KpiResult : IEquatable<KpiResult>
     /// </summary>
     /// <value>Absolute metric (in which the KPI is based) total for the interactions not routed by predictive routing (GPR was off)</value>
     [JsonPropertyName("kpiTotalOff")]
-    public long? KpiTotalOff { get; private set; }
+    public long? KpiTotalOff { get; set; }
 
 
 
@@ -82,7 +82,7 @@ public partial class KpiResult : IEquatable<KpiResult>
     /// </summary>
     /// <value>Total interactions handled by predictive routing (GPR was on)</value>
     [JsonPropertyName("interactionCountOn")]
-    public long? InteractionCountOn { get; private set; }
+    public long? InteractionCountOn { get; set; }
 
 
 
@@ -91,7 +91,7 @@ public partial class KpiResult : IEquatable<KpiResult>
     /// </summary>
     /// <value>Total interactions not routed by predictive routing (GPR was off)</value>
     [JsonPropertyName("interactionCountOff")]
-    public long? InteractionCountOff { get; private set; }
+    public long? InteractionCountOff { get; set; }
 
 
 
@@ -102,7 +102,7 @@ public partial class KpiResult : IEquatable<KpiResult>
     /// </summary>
     /// <value>The percentage benefit for this media type for the duration of the comparison period</value>
     [JsonPropertyName("percentageBenefit")]
-    public double? PercentageBenefit { get; private set; }
+    public double? PercentageBenefit { get; set; }
 
 
     /// <summary>

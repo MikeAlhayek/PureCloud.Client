@@ -165,7 +165,7 @@ public partial class WebMessagingMessage : IEquatable<WebMessagingMessage>
     /// </summary>
     /// <value>Message receipt status, only used with type Receipt.</value>
     [JsonPropertyName("status")]
-    public StatusEnum? Status { get; private set; }
+    public StatusEnum? Status { get; set; }
     /// <summary>
     /// The direction of the message.  Direction is always from the perspective of the Genesys Cloud platform.  An Inbound message is one sent from a guest to the Genesys Cloud Platform.  An Outbound message is one sent from the Genesys Cloud Platform to a guest.
     /// </summary>
@@ -251,7 +251,7 @@ public partial class WebMessagingMessage : IEquatable<WebMessagingMessage>
     /// </summary>
     /// <value>List of reasons for a message receipt that indicates the message has failed. Only used with Failed status.</value>
     [JsonPropertyName("reasons")]
-    public List<Reason> Reasons { get; private set; }
+    public List<Reason> Reasons { get; set; }
 
 
 

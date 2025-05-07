@@ -84,7 +84,7 @@ public partial class MessagingRecipient : IEquatable<MessagingRecipient>
     /// </summary>
     /// <value>Nickname or display name of the recipient.</value>
     [JsonPropertyName("nickname")]
-    public string Nickname { get; private set; }
+    public string Nickname { get; set; }
 
 
 
@@ -104,7 +104,7 @@ public partial class MessagingRecipient : IEquatable<MessagingRecipient>
     /// </summary>
     /// <value>URL of an image that represents the recipient.</value>
     [JsonPropertyName("image")]
-    public string Image { get; private set; }
+    public string Image { get; set; }
 
 
 
@@ -113,7 +113,7 @@ public partial class MessagingRecipient : IEquatable<MessagingRecipient>
     /// </summary>
     /// <value>First name of the recipient.</value>
     [JsonPropertyName("firstName")]
-    public string FirstName { get; private set; }
+    public string FirstName { get; set; }
 
 
 
@@ -122,7 +122,7 @@ public partial class MessagingRecipient : IEquatable<MessagingRecipient>
     /// </summary>
     /// <value>Last name of the recipient.</value>
     [JsonPropertyName("lastName")]
-    public string LastName { get; private set; }
+    public string LastName { get; set; }
 
 
 
@@ -131,7 +131,7 @@ public partial class MessagingRecipient : IEquatable<MessagingRecipient>
     /// </summary>
     /// <value>E-mail address of the recipient.</value>
     [JsonPropertyName("email")]
-    public string Email { get; private set; }
+    public string Email { get; set; }
 
 
 

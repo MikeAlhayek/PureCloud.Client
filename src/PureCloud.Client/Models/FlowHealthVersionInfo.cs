@@ -24,7 +24,7 @@ public partial class FlowHealthVersionInfo : IEquatable<FlowHealthVersionInfo>
     /// </summary>
     /// <value>Given flow&#39;s Version Info.</value>
     [JsonPropertyName("flowVersion")]
-    public AddressableEntityRef FlowVersion { get; private set; }
+    public AddressableEntityRef FlowVersion { get; set; }
 
 
 
@@ -33,7 +33,7 @@ public partial class FlowHealthVersionInfo : IEquatable<FlowHealthVersionInfo>
     /// </summary>
     /// <value>NLU Domain Info for this flow version.</value>
     [JsonPropertyName("nluDomain")]
-    public AddressableEntityRef NluDomain { get; private set; }
+    public AddressableEntityRef NluDomain { get; set; }
 
 
     /// <summary>

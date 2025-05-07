@@ -44,7 +44,7 @@ public partial class ConversationBasic : IEquatable<ConversationBasic>
     /// </summary>
     /// <value>The globally unique identifier for the object.</value>
     [JsonPropertyName("id")]
-    public string Id { get; private set; }
+    public string Id { get; set; }
 
 
 
@@ -115,7 +115,7 @@ public partial class ConversationBasic : IEquatable<ConversationBasic>
     /// </summary>
     /// <value>The URI for this object</value>
     [JsonPropertyName("selfUri")]
-    public string SelfUri { get; private set; }
+    public string SelfUri { get; set; }
 
 
 
@@ -123,7 +123,7 @@ public partial class ConversationBasic : IEquatable<ConversationBasic>
     /// Gets or Sets Participants
     /// </summary>
     [JsonPropertyName("participants")]
-    public List<ParticipantBasic> Participants { get; private set; }
+    public List<ParticipantBasic> Participants { get; set; }
 
 
     /// <summary>

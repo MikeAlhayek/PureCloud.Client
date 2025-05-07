@@ -24,7 +24,7 @@ public partial class SingleWorkdayAveragePoints : IEquatable<SingleWorkdayAverag
     /// </summary>
     /// <value>Queried target workday. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd</value>
     [JsonPropertyName("dateWorkday")]
-    public string DateWorkday { get; private set; }
+    public string DateWorkday { get; set; }
 
 
 
@@ -33,7 +33,7 @@ public partial class SingleWorkdayAveragePoints : IEquatable<SingleWorkdayAverag
     /// </summary>
     /// <value>The targeted division for the average points</value>
     [JsonPropertyName("division")]
-    public Division Division { get; private set; }
+    public Division Division { get; set; }
 
 
 
@@ -42,7 +42,7 @@ public partial class SingleWorkdayAveragePoints : IEquatable<SingleWorkdayAverag
     /// </summary>
     /// <value>The average points per agent earned within the division</value>
     [JsonPropertyName("averagePoints")]
-    public double? AveragePoints { get; private set; }
+    public double? AveragePoints { get; set; }
 
 
 
@@ -51,7 +51,7 @@ public partial class SingleWorkdayAveragePoints : IEquatable<SingleWorkdayAverag
     /// </summary>
     /// <value>The targeted performance profile for the average points</value>
     [JsonPropertyName("performanceProfile")]
-    public AddressableEntityRef PerformanceProfile { get; private set; }
+    public AddressableEntityRef PerformanceProfile { get; set; }
 
 
     /// <summary>

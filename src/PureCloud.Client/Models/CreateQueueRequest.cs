@@ -214,7 +214,7 @@ public partial class CreateQueueRequest : IEquatable<CreateQueueRequest>
     /// </summary>
     /// <value>The globally unique identifier for the object.</value>
     [JsonPropertyName("id")]
-    public string Id { get; private set; }
+    public string Id { get; set; }
 
 
 
@@ -286,7 +286,7 @@ public partial class CreateQueueRequest : IEquatable<CreateQueueRequest>
     /// </summary>
     /// <value>The total number of members in the queue.</value>
     [JsonPropertyName("memberCount")]
-    public int? MemberCount { get; private set; }
+    public int? MemberCount { get; set; }
 
 
 
@@ -295,7 +295,7 @@ public partial class CreateQueueRequest : IEquatable<CreateQueueRequest>
     /// </summary>
     /// <value>The number of user members (i.e., non-group members) in the queue.</value>
     [JsonPropertyName("userMemberCount")]
-    public int? UserMemberCount { get; private set; }
+    public int? UserMemberCount { get; set; }
 
 
 
@@ -304,7 +304,7 @@ public partial class CreateQueueRequest : IEquatable<CreateQueueRequest>
     /// </summary>
     /// <value>The number of joined members in the queue.</value>
     [JsonPropertyName("joinedMemberCount")]
-    public int? JoinedMemberCount { get; private set; }
+    public int? JoinedMemberCount { get; set; }
 
 
 
@@ -553,7 +553,7 @@ public partial class CreateQueueRequest : IEquatable<CreateQueueRequest>
     /// </summary>
     /// <value>The URI for this object</value>
     [JsonPropertyName("selfUri")]
-    public string SelfUri { get; private set; }
+    public string SelfUri { get; set; }
 
 
     /// <summary>

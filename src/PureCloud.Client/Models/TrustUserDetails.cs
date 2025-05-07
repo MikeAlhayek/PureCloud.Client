@@ -24,7 +24,7 @@ public partial class TrustUserDetails : IEquatable<TrustUserDetails>
     /// </summary>
     /// <value>Date Trust User was added. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z</value>
     [JsonPropertyName("dateCreated")]
-    public DateTime? DateCreated { get; private set; }
+    public DateTime? DateCreated { get; set; }
 
 
 
@@ -33,7 +33,7 @@ public partial class TrustUserDetails : IEquatable<TrustUserDetails>
     /// </summary>
     /// <value>User that added trusted user.</value>
     [JsonPropertyName("createdBy")]
-    public OrgUser CreatedBy { get; private set; }
+    public OrgUser CreatedBy { get; set; }
 
 
     /// <summary>

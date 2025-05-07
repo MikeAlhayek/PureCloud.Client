@@ -24,7 +24,7 @@ public partial class ComparisonPeriod : IEquatable<ComparisonPeriod>
     /// </summary>
     /// <value>The globally unique identifier for the object.</value>
     [JsonPropertyName("id")]
-    public string Id { get; private set; }
+    public string Id { get; set; }
 
 
 
@@ -33,7 +33,7 @@ public partial class ComparisonPeriod : IEquatable<ComparisonPeriod>
     /// </summary>
     /// <value>Key Performance Indicator optimised during the comparison period.</value>
     [JsonPropertyName("kpi")]
-    public string Kpi { get; private set; }
+    public string Kpi { get; set; }
 
 
 
@@ -42,7 +42,7 @@ public partial class ComparisonPeriod : IEquatable<ComparisonPeriod>
     /// </summary>
     /// <value>Start date of the comparison period. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z</value>
     [JsonPropertyName("dateStarted")]
-    public DateTime? DateStarted { get; private set; }
+    public DateTime? DateStarted { get; set; }
 
 
 
@@ -51,7 +51,7 @@ public partial class ComparisonPeriod : IEquatable<ComparisonPeriod>
     /// </summary>
     /// <value>End date of the comparison period. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z</value>
     [JsonPropertyName("dateEnded")]
-    public DateTime? DateEnded { get; private set; }
+    public DateTime? DateEnded { get; set; }
 
 
 
@@ -60,7 +60,7 @@ public partial class ComparisonPeriod : IEquatable<ComparisonPeriod>
     /// </summary>
     /// <value>The percentage benefit on this queue for the duration of the comparison period</value>
     [JsonPropertyName("percentageBenefit")]
-    public double? PercentageBenefit { get; private set; }
+    public double? PercentageBenefit { get; set; }
 
 
 
@@ -69,7 +69,7 @@ public partial class ComparisonPeriod : IEquatable<ComparisonPeriod>
     /// </summary>
     /// <value>KPI results for each metric</value>
     [JsonPropertyName("kpiResults")]
-    public List<KpiResult> KpiResults { get; private set; }
+    public List<KpiResult> KpiResults { get; set; }
 
 
 
@@ -78,7 +78,7 @@ public partial class ComparisonPeriod : IEquatable<ComparisonPeriod>
     /// </summary>
     /// <value>The URI for this object</value>
     [JsonPropertyName("selfUri")]
-    public string SelfUri { get; private set; }
+    public string SelfUri { get; set; }
 
 
     /// <summary>

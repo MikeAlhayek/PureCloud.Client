@@ -24,7 +24,7 @@ public partial class UserExpands : IEquatable<UserExpands>
     /// </summary>
     /// <value>ACD routing status</value>
     [JsonPropertyName("routingStatus")]
-    public RoutingStatus RoutingStatus { get; private set; }
+    public RoutingStatus RoutingStatus { get; set; }
 
 
 
@@ -33,7 +33,7 @@ public partial class UserExpands : IEquatable<UserExpands>
     /// </summary>
     /// <value>Active presence</value>
     [JsonPropertyName("presence")]
-    public UserPresence Presence { get; private set; }
+    public UserPresence Presence { get; set; }
 
 
 
@@ -42,7 +42,7 @@ public partial class UserExpands : IEquatable<UserExpands>
     /// </summary>
     /// <value>Active 3rd party presence</value>
     [JsonPropertyName("integrationPresence")]
-    public UserPresence IntegrationPresence { get; private set; }
+    public UserPresence IntegrationPresence { get; set; }
 
 
 
@@ -51,7 +51,7 @@ public partial class UserExpands : IEquatable<UserExpands>
     /// </summary>
     /// <value>Summary of conversion statistics for conversation types.</value>
     [JsonPropertyName("conversationSummary")]
-    public UserConversationSummary ConversationSummary { get; private set; }
+    public UserConversationSummary ConversationSummary { get; set; }
 
 
 
@@ -60,7 +60,7 @@ public partial class UserExpands : IEquatable<UserExpands>
     /// </summary>
     /// <value>Determine if out of office is enabled</value>
     [JsonPropertyName("outOfOffice")]
-    public OutOfOffice OutOfOffice { get; private set; }
+    public OutOfOffice OutOfOffice { get; set; }
 
 
 
@@ -69,7 +69,7 @@ public partial class UserExpands : IEquatable<UserExpands>
     /// </summary>
     /// <value>Current geolocation position</value>
     [JsonPropertyName("geolocation")]
-    public Geolocation Geolocation { get; private set; }
+    public Geolocation Geolocation { get; set; }
 
 
 
@@ -78,7 +78,7 @@ public partial class UserExpands : IEquatable<UserExpands>
     /// </summary>
     /// <value>Effective, default, and last station information</value>
     [JsonPropertyName("station")]
-    public UserStations Station { get; private set; }
+    public UserStations Station { get; set; }
 
 
 
@@ -87,7 +87,7 @@ public partial class UserExpands : IEquatable<UserExpands>
     /// </summary>
     /// <value>Roles and permissions assigned to the user</value>
     [JsonPropertyName("authorization")]
-    public UserAuthorization Authorization { get; private set; }
+    public UserAuthorization Authorization { get; set; }
 
 
     /// <summary>

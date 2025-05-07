@@ -62,7 +62,7 @@ public partial class EventTyping : IEquatable<EventTyping>
     /// </summary>
     /// <value>The duration of the Typing event in milliseconds.</value>
     [JsonPropertyName("duration")]
-    public long? Duration { get; private set; }
+    public long? Duration { get; set; }
 
 
     /// <summary>

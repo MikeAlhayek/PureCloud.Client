@@ -137,7 +137,7 @@ public partial class ActionTemplate : IEquatable<ActionTemplate>
     /// </summary>
     /// <value>The globally unique identifier for the object.</value>
     [JsonPropertyName("id")]
-    public string Id { get; private set; }
+    public string Id { get; set; }
 
 
 
@@ -164,7 +164,7 @@ public partial class ActionTemplate : IEquatable<ActionTemplate>
     /// </summary>
     /// <value>The version of the action template.</value>
     [JsonPropertyName("version")]
-    public int? Version { get; private set; }
+    public int? Version { get; set; }
 
 
 
@@ -186,7 +186,7 @@ public partial class ActionTemplate : IEquatable<ActionTemplate>
     /// </summary>
     /// <value>The URI for this object</value>
     [JsonPropertyName("selfUri")]
-    public string SelfUri { get; private set; }
+    public string SelfUri { get; set; }
 
 
 
@@ -195,7 +195,7 @@ public partial class ActionTemplate : IEquatable<ActionTemplate>
     /// </summary>
     /// <value>Date when action template was created in ISO-8601 format.</value>
     [JsonPropertyName("createdDate")]
-    public DateTime? CreatedDate { get; private set; }
+    public DateTime? CreatedDate { get; set; }
 
 
 
@@ -204,7 +204,7 @@ public partial class ActionTemplate : IEquatable<ActionTemplate>
     /// </summary>
     /// <value>Date when action template was last modified in ISO-8601 format.</value>
     [JsonPropertyName("modifiedDate")]
-    public DateTime? ModifiedDate { get; private set; }
+    public DateTime? ModifiedDate { get; set; }
 
 
     /// <summary>

@@ -106,7 +106,7 @@ public partial class Reoccurrence : IEquatable<Reoccurrence>
     /// </summary>
     /// <value>The next occurrence details for the next start and end occurrences for the recurrence</value>
     [JsonPropertyName("nextOccurrenceDetails")]
-    public NextOccurrenceDetails NextOccurrenceDetails { get; private set; }
+    public NextOccurrenceDetails NextOccurrenceDetails { get; set; }
 
 
     /// <summary>

@@ -32,7 +32,7 @@ public partial class KnowledgeDocumentVersion : IEquatable<KnowledgeDocumentVers
     /// </summary>
     /// <value>Globally unique identifier for the document version.</value>
     [JsonPropertyName("id")]
-    public string Id { get; private set; }
+    public string Id { get; set; }
 
 
 
@@ -41,7 +41,7 @@ public partial class KnowledgeDocumentVersion : IEquatable<KnowledgeDocumentVers
     /// </summary>
     /// <value>Published date of document version. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z</value>
     [JsonPropertyName("datePublished")]
-    public DateTime? DatePublished { get; private set; }
+    public DateTime? DatePublished { get; set; }
 
 
 
@@ -50,7 +50,7 @@ public partial class KnowledgeDocumentVersion : IEquatable<KnowledgeDocumentVers
     /// </summary>
     /// <value>The document which is versioned.</value>
     [JsonPropertyName("document")]
-    public KnowledgeDocumentResponse Document { get; private set; }
+    public KnowledgeDocumentResponse Document { get; set; }
 
 
 
@@ -68,7 +68,7 @@ public partial class KnowledgeDocumentVersion : IEquatable<KnowledgeDocumentVers
     /// </summary>
     /// <value>Version Number of the document.</value>
     [JsonPropertyName("versionNumber")]
-    public int? VersionNumber { get; private set; }
+    public int? VersionNumber { get; set; }
 
 
 
@@ -77,7 +77,7 @@ public partial class KnowledgeDocumentVersion : IEquatable<KnowledgeDocumentVers
     /// </summary>
     /// <value>Expiry date of document version, applicable only to the &#39;Archived&#39; version of the document. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z</value>
     [JsonPropertyName("dateExpires")]
-    public DateTime? DateExpires { get; private set; }
+    public DateTime? DateExpires { get; set; }
 
 
 
@@ -86,7 +86,7 @@ public partial class KnowledgeDocumentVersion : IEquatable<KnowledgeDocumentVers
     /// </summary>
     /// <value>The URI for this object</value>
     [JsonPropertyName("selfUri")]
-    public string SelfUri { get; private set; }
+    public string SelfUri { get; set; }
 
 
     /// <summary>

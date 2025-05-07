@@ -24,7 +24,7 @@ public partial class CallRecord : IEquatable<CallRecord>
     /// </summary>
     /// <value>Timestamp of the last attempt to reach this number. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z</value>
     [JsonPropertyName("lastAttempt")]
-    public DateTime? LastAttempt { get; private set; }
+    public DateTime? LastAttempt { get; set; }
 
 
 
@@ -33,7 +33,7 @@ public partial class CallRecord : IEquatable<CallRecord>
     /// </summary>
     /// <value>Result of the last attempt to reach this number</value>
     [JsonPropertyName("lastResult")]
-    public string LastResult { get; private set; }
+    public string LastResult { get; set; }
 
 
     /// <summary>

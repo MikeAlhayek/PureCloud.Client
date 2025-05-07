@@ -70,7 +70,7 @@ public partial class DomainCapabilities : IEquatable<DomainCapabilities>
     /// </summary>
     /// <value>True if metric configuration is supported.</value>
     [JsonPropertyName("supportsMetric")]
-    public bool? SupportsMetric { get; private set; }
+    public bool? SupportsMetric { get; set; }
 
 
 

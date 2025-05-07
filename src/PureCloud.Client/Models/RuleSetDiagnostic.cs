@@ -63,7 +63,7 @@ public partial class RuleSetDiagnostic : IEquatable<RuleSetDiagnostic>
     /// </summary>
     /// <value>A campaign rule set</value>
     [JsonPropertyName("ruleSet")]
-    public DomainEntityRef RuleSet { get; private set; }
+    public DomainEntityRef RuleSet { get; set; }
 
 
 
@@ -72,7 +72,7 @@ public partial class RuleSetDiagnostic : IEquatable<RuleSetDiagnostic>
     /// </summary>
     /// <value>Diagnostic warnings for the rule set</value>
     [JsonPropertyName("warnings")]
-    public List<WarningsEnum> Warnings { get; private set; }
+    public List<WarningsEnum> Warnings { get; set; }
 
 
     /// <summary>

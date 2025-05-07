@@ -54,7 +54,7 @@ public partial class CoachingAppointmentResponse : IEquatable<CoachingAppointmen
     /// </summary>
     /// <value>The status of coaching appointment</value>
     [JsonPropertyName("status")]
-    public StatusEnum? Status { get; private set; }
+    public StatusEnum? Status { get; set; }
     /// <summary>
     /// Initializes a new instance of the <see cref="CoachingAppointmentResponse" /> class.
     /// </summary>
@@ -70,7 +70,7 @@ public partial class CoachingAppointmentResponse : IEquatable<CoachingAppointmen
     /// </summary>
     /// <value>The globally unique identifier for the object.</value>
     [JsonPropertyName("id")]
-    public string Id { get; private set; }
+    public string Id { get; set; }
 
 
 
@@ -79,7 +79,7 @@ public partial class CoachingAppointmentResponse : IEquatable<CoachingAppointmen
     /// </summary>
     /// <value>The name of coaching appointment</value>
     [JsonPropertyName("name")]
-    public string Name { get; private set; }
+    public string Name { get; set; }
 
 
 
@@ -88,7 +88,7 @@ public partial class CoachingAppointmentResponse : IEquatable<CoachingAppointmen
     /// </summary>
     /// <value>The description of coaching appointment</value>
     [JsonPropertyName("description")]
-    public string Description { get; private set; }
+    public string Description { get; set; }
 
 
 
@@ -97,7 +97,7 @@ public partial class CoachingAppointmentResponse : IEquatable<CoachingAppointmen
     /// </summary>
     /// <value>The date/time the coaching appointment starts. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z</value>
     [JsonPropertyName("dateStart")]
-    public DateTime? DateStart { get; private set; }
+    public DateTime? DateStart { get; set; }
 
 
 
@@ -106,7 +106,7 @@ public partial class CoachingAppointmentResponse : IEquatable<CoachingAppointmen
     /// </summary>
     /// <value>The duration of coaching appointment in minutes</value>
     [JsonPropertyName("lengthInMinutes")]
-    public int? LengthInMinutes { get; private set; }
+    public int? LengthInMinutes { get; set; }
 
 
 
@@ -117,7 +117,7 @@ public partial class CoachingAppointmentResponse : IEquatable<CoachingAppointmen
     /// </summary>
     /// <value>The facilitator of coaching appointment</value>
     [JsonPropertyName("facilitator")]
-    public UserReference Facilitator { get; private set; }
+    public UserReference Facilitator { get; set; }
 
 
 
@@ -126,7 +126,7 @@ public partial class CoachingAppointmentResponse : IEquatable<CoachingAppointmen
     /// </summary>
     /// <value>The list of attendees attending the coaching</value>
     [JsonPropertyName("attendees")]
-    public List<UserReference> Attendees { get; private set; }
+    public List<UserReference> Attendees { get; set; }
 
 
 
@@ -135,7 +135,7 @@ public partial class CoachingAppointmentResponse : IEquatable<CoachingAppointmen
     /// </summary>
     /// <value>The user who created the coaching appointment</value>
     [JsonPropertyName("createdBy")]
-    public UserReference CreatedBy { get; private set; }
+    public UserReference CreatedBy { get; set; }
 
 
 
@@ -144,7 +144,7 @@ public partial class CoachingAppointmentResponse : IEquatable<CoachingAppointmen
     /// </summary>
     /// <value>The date/time the coaching appointment was created. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z</value>
     [JsonPropertyName("dateCreated")]
-    public DateTime? DateCreated { get; private set; }
+    public DateTime? DateCreated { get; set; }
 
 
 
@@ -153,7 +153,7 @@ public partial class CoachingAppointmentResponse : IEquatable<CoachingAppointmen
     /// </summary>
     /// <value>The last user to modify the coaching appointment</value>
     [JsonPropertyName("modifiedBy")]
-    public UserReference ModifiedBy { get; private set; }
+    public UserReference ModifiedBy { get; set; }
 
 
 
@@ -162,7 +162,7 @@ public partial class CoachingAppointmentResponse : IEquatable<CoachingAppointmen
     /// </summary>
     /// <value>The date/time the coaching appointment was last modified. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z</value>
     [JsonPropertyName("dateModified")]
-    public DateTime? DateModified { get; private set; }
+    public DateTime? DateModified { get; set; }
 
 
 
@@ -171,7 +171,7 @@ public partial class CoachingAppointmentResponse : IEquatable<CoachingAppointmen
     /// </summary>
     /// <value>The list of conversations associated with coaching appointment.</value>
     [JsonPropertyName("conversations")]
-    public List<ConversationReference> Conversations { get; private set; }
+    public List<ConversationReference> Conversations { get; set; }
 
 
 
@@ -180,7 +180,7 @@ public partial class CoachingAppointmentResponse : IEquatable<CoachingAppointmen
     /// </summary>
     /// <value>The list of documents associated with coaching appointment.</value>
     [JsonPropertyName("documents")]
-    public List<DocumentReference> Documents { get; private set; }
+    public List<DocumentReference> Documents { get; set; }
 
 
 
@@ -189,7 +189,7 @@ public partial class CoachingAppointmentResponse : IEquatable<CoachingAppointmen
     /// </summary>
     /// <value>Whether the appointment is overdue.</value>
     [JsonPropertyName("isOverdue")]
-    public bool? IsOverdue { get; private set; }
+    public bool? IsOverdue { get; set; }
 
 
 
@@ -198,7 +198,7 @@ public partial class CoachingAppointmentResponse : IEquatable<CoachingAppointmen
     /// </summary>
     /// <value>The Workforce Management schedule the appointment is associated with.</value>
     [JsonPropertyName("wfmSchedule")]
-    public WfmScheduleReference WfmSchedule { get; private set; }
+    public WfmScheduleReference WfmSchedule { get; set; }
 
 
 
@@ -207,7 +207,7 @@ public partial class CoachingAppointmentResponse : IEquatable<CoachingAppointmen
     /// </summary>
     /// <value>The date/time the coaching appointment was set to completed status. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z</value>
     [JsonPropertyName("dateCompleted")]
-    public DateTime? DateCompleted { get; private set; }
+    public DateTime? DateCompleted { get; set; }
 
 
 
@@ -216,7 +216,7 @@ public partial class CoachingAppointmentResponse : IEquatable<CoachingAppointmen
     /// </summary>
     /// <value>The list of external links related to the appointment</value>
     [JsonPropertyName("externalLinks")]
-    public List<string> ExternalLinks { get; private set; }
+    public List<string> ExternalLinks { get; set; }
 
 
 
@@ -225,7 +225,7 @@ public partial class CoachingAppointmentResponse : IEquatable<CoachingAppointmen
     /// </summary>
     /// <value>The location of the appointment</value>
     [JsonPropertyName("location")]
-    public string Location { get; private set; }
+    public string Location { get; set; }
 
 
 
@@ -234,7 +234,7 @@ public partial class CoachingAppointmentResponse : IEquatable<CoachingAppointmen
     /// </summary>
     /// <value>Whether to share the insight data</value>
     [JsonPropertyName("shareInsightsData")]
-    public bool? ShareInsightsData { get; private set; }
+    public bool? ShareInsightsData { get; set; }
 
 
 
@@ -243,7 +243,7 @@ public partial class CoachingAppointmentResponse : IEquatable<CoachingAppointmen
     /// </summary>
     /// <value>The URI for this object</value>
     [JsonPropertyName("selfUri")]
-    public string SelfUri { get; private set; }
+    public string SelfUri { get; set; }
 
 
     /// <summary>

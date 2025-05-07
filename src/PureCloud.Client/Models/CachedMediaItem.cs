@@ -24,7 +24,7 @@ public partial class CachedMediaItem : IEquatable<CachedMediaItem>
     /// </summary>
     /// <value>The unique identifier for the cached media.</value>
     [JsonPropertyName("id")]
-    public string Id { get; private set; }
+    public string Id { get; set; }
 
 
 
@@ -33,7 +33,7 @@ public partial class CachedMediaItem : IEquatable<CachedMediaItem>
     /// </summary>
     /// <value>The URL that represents the external media that has been cached</value>
     [JsonPropertyName("url")]
-    public string Url { get; private set; }
+    public string Url { get; set; }
 
 
 
@@ -42,7 +42,7 @@ public partial class CachedMediaItem : IEquatable<CachedMediaItem>
     /// </summary>
     /// <value>A URL to fetch the cached media</value>
     [JsonPropertyName("downloadUrl")]
-    public string DownloadUrl { get; private set; }
+    public string DownloadUrl { get; set; }
 
 
 
@@ -51,7 +51,7 @@ public partial class CachedMediaItem : IEquatable<CachedMediaItem>
     /// </summary>
     /// <value>The media type for the URL</value>
     [JsonPropertyName("mediaType")]
-    public string MediaType { get; private set; }
+    public string MediaType { get; set; }
 
 
 
@@ -60,7 +60,7 @@ public partial class CachedMediaItem : IEquatable<CachedMediaItem>
     /// </summary>
     /// <value>The content length of the media represented by the URL, in bytes.</value>
     [JsonPropertyName("contentLengthBytes")]
-    public int? ContentLengthBytes { get; private set; }
+    public int? ContentLengthBytes { get; set; }
 
 
 
@@ -69,7 +69,7 @@ public partial class CachedMediaItem : IEquatable<CachedMediaItem>
     /// </summary>
     /// <value>The date the cached item was created. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z</value>
     [JsonPropertyName("dateCreated")]
-    public DateTime? DateCreated { get; private set; }
+    public DateTime? DateCreated { get; set; }
 
 
 
@@ -78,7 +78,7 @@ public partial class CachedMediaItem : IEquatable<CachedMediaItem>
     /// </summary>
     /// <value>The date the cached item expires and will be removed from the cache. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z</value>
     [JsonPropertyName("dateExpires")]
-    public DateTime? DateExpires { get; private set; }
+    public DateTime? DateExpires { get; set; }
 
 
 
@@ -87,7 +87,7 @@ public partial class CachedMediaItem : IEquatable<CachedMediaItem>
     /// </summary>
     /// <value>The URI for this object</value>
     [JsonPropertyName("selfUri")]
-    public string SelfUri { get; private set; }
+    public string SelfUri { get; set; }
 
 
     /// <summary>

@@ -32,7 +32,7 @@ public partial class UserScheduleShift : IEquatable<UserScheduleShift>
     /// </summary>
     /// <value>The schedule to which this shift belongs</value>
     [JsonPropertyName("weekSchedule")]
-    public WeekScheduleReference WeekSchedule { get; private set; }
+    public WeekScheduleReference WeekSchedule { get; set; }
 
 
 
@@ -50,7 +50,7 @@ public partial class UserScheduleShift : IEquatable<UserScheduleShift>
     /// </summary>
     /// <value>Start time in UTC for this shift. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z</value>
     [JsonPropertyName("startDate")]
-    public DateTime? StartDate { get; private set; }
+    public DateTime? StartDate { get; set; }
 
 
 
@@ -59,7 +59,7 @@ public partial class UserScheduleShift : IEquatable<UserScheduleShift>
     /// </summary>
     /// <value>Length of this shift in minutes</value>
     [JsonPropertyName("lengthInMinutes")]
-    public int? LengthInMinutes { get; private set; }
+    public int? LengthInMinutes { get; set; }
 
 
 

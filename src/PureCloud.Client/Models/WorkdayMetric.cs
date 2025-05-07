@@ -24,7 +24,7 @@ public partial class WorkdayMetric : IEquatable<WorkdayMetric>
     /// </summary>
     /// <value>Gamification metric</value>
     [JsonPropertyName("metric")]
-    public Metric Metric { get; private set; }
+    public Metric Metric { get; set; }
 
 
 
@@ -33,7 +33,7 @@ public partial class WorkdayMetric : IEquatable<WorkdayMetric>
     /// </summary>
     /// <value>Current objective for this metric</value>
     [JsonPropertyName("objective")]
-    public Objective Objective { get; private set; }
+    public Objective Objective { get; set; }
 
 
 
@@ -42,7 +42,7 @@ public partial class WorkdayMetric : IEquatable<WorkdayMetric>
     /// </summary>
     /// <value>Gamification points earned for this metric</value>
     [JsonPropertyName("points")]
-    public int? Points { get; private set; }
+    public int? Points { get; set; }
 
 
 
@@ -51,7 +51,7 @@ public partial class WorkdayMetric : IEquatable<WorkdayMetric>
     /// </summary>
     /// <value>The maximum Gamification points a user may earn for this metric</value>
     [JsonPropertyName("maxPoints")]
-    public int? MaxPoints { get; private set; }
+    public int? MaxPoints { get; set; }
 
 
 
@@ -60,7 +60,7 @@ public partial class WorkdayMetric : IEquatable<WorkdayMetric>
     /// </summary>
     /// <value>Value of this metric</value>
     [JsonPropertyName("value")]
-    public double? Value { get; private set; }
+    public double? Value { get; set; }
 
 
 
@@ -69,7 +69,7 @@ public partial class WorkdayMetric : IEquatable<WorkdayMetric>
     /// </summary>
     /// <value>List of schedule activity events for punctuality metrics</value>
     [JsonPropertyName("punctualityEvents")]
-    public List<PunctualityEvent> PunctualityEvents { get; private set; }
+    public List<PunctualityEvent> PunctualityEvents { get; set; }
 
 
 
@@ -78,7 +78,7 @@ public partial class WorkdayMetric : IEquatable<WorkdayMetric>
     /// </summary>
     /// <value>List of evaluations for quality evaluation score metrics</value>
     [JsonPropertyName("evaluationDetails")]
-    public List<QualityEvaluationScoreItem> EvaluationDetails { get; private set; }
+    public List<QualityEvaluationScoreItem> EvaluationDetails { get; set; }
 
 
     /// <summary>

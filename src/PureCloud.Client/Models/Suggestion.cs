@@ -162,19 +162,19 @@ public partial class Suggestion : IEquatable<Suggestion>
     /// </summary>
     /// <value>The type of the documents for which the suggestion is.</value>
     [JsonPropertyName("type")]
-    public TypeEnum? Type { get; private set; }
+    public TypeEnum? Type { get; set; }
     /// <summary>
     /// The trigger type of the suggestion.
     /// </summary>
     /// <value>The trigger type of the suggestion.</value>
     [JsonPropertyName("triggerType")]
-    public TriggerTypeEnum? TriggerType { get; private set; }
+    public TriggerTypeEnum? TriggerType { get; set; }
     /// <summary>
     /// The state of the suggestion.
     /// </summary>
     /// <value>The state of the suggestion.</value>
     [JsonPropertyName("state")]
-    public StateEnum? State { get; private set; }
+    public StateEnum? State { get; set; }
     /// <summary>
     /// Initializes a new instance of the <see cref="Suggestion" /> class.
     /// </summary>
@@ -190,7 +190,7 @@ public partial class Suggestion : IEquatable<Suggestion>
     /// </summary>
     /// <value>The globally unique identifier for the object.</value>
     [JsonPropertyName("id")]
-    public string Id { get; private set; }
+    public string Id { get; set; }
 
 
 
@@ -201,7 +201,7 @@ public partial class Suggestion : IEquatable<Suggestion>
     /// </summary>
     /// <value>The Faq from the knowledgebase that was provided as the suggestion.</value>
     [JsonPropertyName("faq")]
-    public Faq Faq { get; private set; }
+    public Faq Faq { get; set; }
 
 
 
@@ -210,7 +210,7 @@ public partial class Suggestion : IEquatable<Suggestion>
     /// </summary>
     /// <value>The article from the knowledgebase that was provided as the suggestion.</value>
     [JsonPropertyName("article")]
-    public Article Article { get; private set; }
+    public Article Article { get; set; }
 
 
 
@@ -219,7 +219,7 @@ public partial class Suggestion : IEquatable<Suggestion>
     /// </summary>
     /// <value>Date when the suggestion was created. For example: yyyy-MM-ddTHH:mm:ss.SSZ. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z</value>
     [JsonPropertyName("dateCreated")]
-    public DateTime? DateCreated { get; private set; }
+    public DateTime? DateCreated { get; set; }
 
 
 
@@ -228,7 +228,7 @@ public partial class Suggestion : IEquatable<Suggestion>
     /// </summary>
     /// <value>The ID of the knowledge search that provided the suggestion.</value>
     [JsonPropertyName("answerRecordId")]
-    public string AnswerRecordId { get; private set; }
+    public string AnswerRecordId { get; set; }
 
 
 
@@ -239,7 +239,7 @@ public partial class Suggestion : IEquatable<Suggestion>
     /// </summary>
     /// <value>The conversation context in which the suggestion was raised.</value>
     [JsonPropertyName("context")]
-    public SuggestionContext Context { get; private set; }
+    public SuggestionContext Context { get; set; }
 
 
 
@@ -250,7 +250,7 @@ public partial class Suggestion : IEquatable<Suggestion>
     /// </summary>
     /// <value>The suggested knowledge search result that was provided as the suggestion.</value>
     [JsonPropertyName("knowledgeSearch")]
-    public SuggestionKnowledgeSearch KnowledgeSearch { get; private set; }
+    public SuggestionKnowledgeSearch KnowledgeSearch { get; set; }
 
 
 
@@ -259,7 +259,7 @@ public partial class Suggestion : IEquatable<Suggestion>
     /// </summary>
     /// <value>The suggested knowledge article that was provided as the suggestion.</value>
     [JsonPropertyName("knowledgeArticle")]
-    public SuggestionKnowledgeArticle KnowledgeArticle { get; private set; }
+    public SuggestionKnowledgeArticle KnowledgeArticle { get; set; }
 
 
 
@@ -268,7 +268,7 @@ public partial class Suggestion : IEquatable<Suggestion>
     /// </summary>
     /// <value>The suggested canned response that was provided as the suggestion.</value>
     [JsonPropertyName("cannedResponse")]
-    public SuggestionCannedResponse CannedResponse { get; private set; }
+    public SuggestionCannedResponse CannedResponse { get; set; }
 
 
 
@@ -277,7 +277,7 @@ public partial class Suggestion : IEquatable<Suggestion>
     /// </summary>
     /// <value>The suggested script that was provided as the suggestion.</value>
     [JsonPropertyName("script")]
-    public SuggestionScript Script { get; private set; }
+    public SuggestionScript Script { get; set; }
 
 
 
@@ -286,7 +286,7 @@ public partial class Suggestion : IEquatable<Suggestion>
     /// </summary>
     /// <value>The URI for this object</value>
     [JsonPropertyName("selfUri")]
-    public string SelfUri { get; private set; }
+    public string SelfUri { get; set; }
 
 
 
@@ -295,7 +295,7 @@ public partial class Suggestion : IEquatable<Suggestion>
     /// </summary>
     /// <value>The conversation that the suggestions correspond to.</value>
     [JsonPropertyName("conversation")]
-    public AddressableEntityRef Conversation { get; private set; }
+    public AddressableEntityRef Conversation { get; set; }
 
 
 
@@ -304,7 +304,7 @@ public partial class Suggestion : IEquatable<Suggestion>
     /// </summary>
     /// <value>The assistant that was used to provide the suggestions.</value>
     [JsonPropertyName("assistant")]
-    public AddressableEntityRef Assistant { get; private set; }
+    public AddressableEntityRef Assistant { get; set; }
 
 
     /// <summary>

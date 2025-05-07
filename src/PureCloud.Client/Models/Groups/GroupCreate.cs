@@ -108,7 +108,7 @@ public partial class GroupCreate : IEquatable<GroupCreate>
     /// </summary>
     /// <value>Active, inactive, or deleted state.</value>
     [JsonPropertyName("state")]
-    public StateEnum? State { get; private set; }
+    public StateEnum? State { get; set; }
     /// <summary>
     /// Type of group.
     /// </summary>
@@ -164,7 +164,7 @@ public partial class GroupCreate : IEquatable<GroupCreate>
     /// </summary>
     /// <value>The globally unique identifier for the object.</value>
     [JsonPropertyName("id")]
-    public string Id { get; private set; }
+    public string Id { get; set; }
 
 
 
@@ -190,7 +190,7 @@ public partial class GroupCreate : IEquatable<GroupCreate>
     /// </summary>
     /// <value>Last modified date/time. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z</value>
     [JsonPropertyName("dateModified")]
-    public DateTime? DateModified { get; private set; }
+    public DateTime? DateModified { get; set; }
 
 
 
@@ -199,7 +199,7 @@ public partial class GroupCreate : IEquatable<GroupCreate>
     /// </summary>
     /// <value>Number of members.</value>
     [JsonPropertyName("memberCount")]
-    public long? MemberCount { get; private set; }
+    public long? MemberCount { get; set; }
 
 
 
@@ -210,7 +210,7 @@ public partial class GroupCreate : IEquatable<GroupCreate>
     /// </summary>
     /// <value>Current version for this resource.</value>
     [JsonPropertyName("version")]
-    public int? Version { get; private set; }
+    public int? Version { get; set; }
 
 
 
@@ -284,7 +284,7 @@ public partial class GroupCreate : IEquatable<GroupCreate>
     /// </summary>
     /// <value>The URI for this object</value>
     [JsonPropertyName("selfUri")]
-    public string SelfUri { get; private set; }
+    public string SelfUri { get; set; }
 
 
     /// <summary>

@@ -42,7 +42,7 @@ public partial class MetadataResultEntity : IEquatable<MetadataResultEntity>
     /// </summary>
     /// <value>whether the modified resource is visible or hidden</value>
     [JsonPropertyName("visibility")]
-    public VisibilityEnum? Visibility { get; private set; }
+    public VisibilityEnum? Visibility { get; set; }
     /// <summary>
     /// Initializes a new instance of the <see cref="MetadataResultEntity" /> class.
     /// </summary>
@@ -58,7 +58,7 @@ public partial class MetadataResultEntity : IEquatable<MetadataResultEntity>
     /// </summary>
     /// <value>object type of the modified resource</value>
     [JsonPropertyName("type")]
-    public string Type { get; private set; }
+    public string Type { get; set; }
 
 
 
@@ -67,7 +67,7 @@ public partial class MetadataResultEntity : IEquatable<MetadataResultEntity>
     /// </summary>
     /// <value>description of the modified resource</value>
     [JsonPropertyName("description")]
-    public string Description { get; private set; }
+    public string Description { get; set; }
 
 
 

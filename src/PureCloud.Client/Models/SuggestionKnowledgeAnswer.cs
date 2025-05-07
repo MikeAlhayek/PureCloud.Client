@@ -24,7 +24,7 @@ public partial class SuggestionKnowledgeAnswer : IEquatable<SuggestionKnowledgeA
     /// </summary>
     /// <value>The most relevant answer</value>
     [JsonPropertyName("answer")]
-    public string Answer { get; private set; }
+    public string Answer { get; set; }
 
 
 
@@ -33,7 +33,7 @@ public partial class SuggestionKnowledgeAnswer : IEquatable<SuggestionKnowledgeA
     /// </summary>
     /// <value>The start index of the answer</value>
     [JsonPropertyName("startIndex")]
-    public int? StartIndex { get; private set; }
+    public int? StartIndex { get; set; }
 
 
 
@@ -42,7 +42,7 @@ public partial class SuggestionKnowledgeAnswer : IEquatable<SuggestionKnowledgeA
     /// </summary>
     /// <value>The end index of the answer</value>
     [JsonPropertyName("endIndex")]
-    public int? EndIndex { get; private set; }
+    public int? EndIndex { get; set; }
 
 
     /// <summary>

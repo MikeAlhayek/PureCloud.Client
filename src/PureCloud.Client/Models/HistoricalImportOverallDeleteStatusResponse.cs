@@ -42,7 +42,7 @@ public partial class HistoricalImportOverallDeleteStatusResponse : IEquatable<Hi
     /// </summary>
     /// <value>Property denoting overall status of the service.</value>
     [JsonPropertyName("status")]
-    public StatusEnum? Status { get; private set; }
+    public StatusEnum? Status { get; set; }
     /// <summary>
     /// Initializes a new instance of the <see cref="HistoricalImportOverallDeleteStatusResponse" /> class.
     /// </summary>

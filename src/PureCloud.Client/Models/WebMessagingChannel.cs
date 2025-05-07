@@ -24,7 +24,7 @@ public partial class WebMessagingChannel : IEquatable<WebMessagingChannel>
     /// </summary>
     /// <value>Information about the recipient the message is received from.</value>
     [JsonPropertyName("from")]
-    public WebMessagingRecipient From { get; private set; }
+    public WebMessagingRecipient From { get; set; }
 
 
 
@@ -33,7 +33,7 @@ public partial class WebMessagingChannel : IEquatable<WebMessagingChannel>
     /// </summary>
     /// <value>Information about the recipient the message is sent to.</value>
     [JsonPropertyName("to")]
-    public WebMessagingRecipient To { get; private set; }
+    public WebMessagingRecipient To { get; set; }
 
 
 
@@ -42,7 +42,7 @@ public partial class WebMessagingChannel : IEquatable<WebMessagingChannel>
     /// </summary>
     /// <value>When the message was processed by Genesys Cloud. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z</value>
     [JsonPropertyName("time")]
-    public DateTime? Time { get; private set; }
+    public DateTime? Time { get; set; }
 
 
 
@@ -51,7 +51,7 @@ public partial class WebMessagingChannel : IEquatable<WebMessagingChannel>
     /// </summary>
     /// <value>Unique provider ID of the message.</value>
     [JsonPropertyName("messageId")]
-    public string MessageId { get; private set; }
+    public string MessageId { get; set; }
 
 
     /// <summary>

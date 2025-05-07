@@ -46,7 +46,7 @@ public partial class KnowledgeDocumentQueryResponse : IEquatable<KnowledgeDocume
     /// </summary>
     /// <value>The total number of documents matching the query.</value>
     [JsonPropertyName("total")]
-    public long? Total { get; private set; }
+    public long? Total { get; set; }
 
 
 
@@ -55,7 +55,7 @@ public partial class KnowledgeDocumentQueryResponse : IEquatable<KnowledgeDocume
     /// </summary>
     /// <value>The total number of pages of results, calculated according to the pageSize and the total matching documents.</value>
     [JsonPropertyName("pageCount")]
-    public int? PageCount { get; private set; }
+    public int? PageCount { get; set; }
 
 
 
@@ -64,7 +64,7 @@ public partial class KnowledgeDocumentQueryResponse : IEquatable<KnowledgeDocume
     /// </summary>
     /// <value>Documents matching the query.</value>
     [JsonPropertyName("results")]
-    public List<KnowledgeDocumentResponse> Results { get; private set; }
+    public List<KnowledgeDocumentResponse> Results { get; set; }
 
 
     /// <summary>

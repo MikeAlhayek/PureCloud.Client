@@ -24,7 +24,7 @@ public partial class RegisterArchitectJobResponse : IEquatable<RegisterArchitect
     /// </summary>
     /// <value>The globally unique identifier for the object.</value>
     [JsonPropertyName("id")]
-    public string Id { get; private set; }
+    public string Id { get; set; }
 
 
 
@@ -33,7 +33,7 @@ public partial class RegisterArchitectJobResponse : IEquatable<RegisterArchitect
     /// </summary>
     /// <value>Presigned URL to upload the file in S3</value>
     [JsonPropertyName("presignedUrl")]
-    public string PresignedUrl { get; private set; }
+    public string PresignedUrl { get; set; }
 
 
 
@@ -42,7 +42,7 @@ public partial class RegisterArchitectJobResponse : IEquatable<RegisterArchitect
     /// </summary>
     /// <value>Required headers when uploading a file through PUT request to the URL</value>
     [JsonPropertyName("headers")]
-    public Dictionary<string, string> Headers { get; private set; }
+    public Dictionary<string, string> Headers { get; set; }
 
 
 
@@ -51,7 +51,7 @@ public partial class RegisterArchitectJobResponse : IEquatable<RegisterArchitect
     /// </summary>
     /// <value>The URI for this object</value>
     [JsonPropertyName("selfUri")]
-    public string SelfUri { get; private set; }
+    public string SelfUri { get; set; }
 
 
     /// <summary>

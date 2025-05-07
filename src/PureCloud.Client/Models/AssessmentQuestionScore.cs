@@ -42,7 +42,7 @@ public partial class AssessmentQuestionScore : IEquatable<AssessmentQuestionScor
     /// </summary>
     /// <value>True if this was a failed Kill question</value>
     [JsonPropertyName("failedKillQuestion")]
-    public bool? FailedKillQuestion { get; private set; }
+    public bool? FailedKillQuestion { get; set; }
 
 
 
@@ -78,7 +78,7 @@ public partial class AssessmentQuestionScore : IEquatable<AssessmentQuestionScor
     /// </summary>
     /// <value>The score received for this question</value>
     [JsonPropertyName("score")]
-    public int? Score { get; private set; }
+    public int? Score { get; set; }
 
 
 

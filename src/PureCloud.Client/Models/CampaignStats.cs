@@ -24,7 +24,7 @@ public partial class CampaignStats : IEquatable<CampaignStats>
     /// </summary>
     /// <value>Information regarding the campaign&#39;s connect rate</value>
     [JsonPropertyName("contactRate")]
-    public ConnectRate ContactRate { get; private set; }
+    public ConnectRate ContactRate { get; set; }
 
 
 
@@ -33,7 +33,7 @@ public partial class CampaignStats : IEquatable<CampaignStats>
     /// </summary>
     /// <value>Number of available agents not currently being utilized</value>
     [JsonPropertyName("idleAgents")]
-    public int? IdleAgents { get; private set; }
+    public int? IdleAgents { get; set; }
 
 
 
@@ -42,7 +42,7 @@ public partial class CampaignStats : IEquatable<CampaignStats>
     /// </summary>
     /// <value>Number of effective available agents not currently being utilized</value>
     [JsonPropertyName("effectiveIdleAgents")]
-    public double? EffectiveIdleAgents { get; private set; }
+    public double? EffectiveIdleAgents { get; set; }
 
 
 
@@ -51,7 +51,7 @@ public partial class CampaignStats : IEquatable<CampaignStats>
     /// </summary>
     /// <value>Calls per agent adjusted by pace</value>
     [JsonPropertyName("adjustedCallsPerAgent")]
-    public double? AdjustedCallsPerAgent { get; private set; }
+    public double? AdjustedCallsPerAgent { get; set; }
 
 
 
@@ -60,7 +60,7 @@ public partial class CampaignStats : IEquatable<CampaignStats>
     /// </summary>
     /// <value>Number of campaign calls currently ongoing</value>
     [JsonPropertyName("outstandingCalls")]
-    public int? OutstandingCalls { get; private set; }
+    public int? OutstandingCalls { get; set; }
 
 
 
@@ -69,7 +69,7 @@ public partial class CampaignStats : IEquatable<CampaignStats>
     /// </summary>
     /// <value>Number of campaign calls currently scheduled</value>
     [JsonPropertyName("scheduledCalls")]
-    public int? ScheduledCalls { get; private set; }
+    public int? ScheduledCalls { get; set; }
 
 
 
@@ -78,7 +78,7 @@ public partial class CampaignStats : IEquatable<CampaignStats>
     /// </summary>
     /// <value>Number of campaign calls currently timezone rescheduled</value>
     [JsonPropertyName("timeZoneRescheduledCalls")]
-    public int? TimeZoneRescheduledCalls { get; private set; }
+    public int? TimeZoneRescheduledCalls { get; set; }
 
 
 
@@ -87,7 +87,7 @@ public partial class CampaignStats : IEquatable<CampaignStats>
     /// </summary>
     /// <value>Number of contacts that don&#39;t match filter. This is currently supported only for Campaigns with dynamic filter on.</value>
     [JsonPropertyName("filteredOutContactsCount")]
-    public int? FilteredOutContactsCount { get; private set; }
+    public int? FilteredOutContactsCount { get; set; }
 
 
 
@@ -96,7 +96,7 @@ public partial class CampaignStats : IEquatable<CampaignStats>
     /// </summary>
     /// <value>Information on the campaign&#39;s number of Right Party Contacts</value>
     [JsonPropertyName("rightPartyContactsCount")]
-    public int? RightPartyContactsCount { get; private set; }
+    public int? RightPartyContactsCount { get; set; }
 
 
 
@@ -105,7 +105,7 @@ public partial class CampaignStats : IEquatable<CampaignStats>
     /// </summary>
     /// <value>Information on the campaign&#39;s valid attempts</value>
     [JsonPropertyName("validAttempts")]
-    public int? ValidAttempts { get; private set; }
+    public int? ValidAttempts { get; set; }
 
 
 
@@ -114,7 +114,7 @@ public partial class CampaignStats : IEquatable<CampaignStats>
     /// </summary>
     /// <value>Information on the campaign&#39;s lines utilization</value>
     [JsonPropertyName("linesUtilization")]
-    public CampaignLinesUtilization LinesUtilization { get; private set; }
+    public CampaignLinesUtilization LinesUtilization { get; set; }
 
 
 
@@ -123,7 +123,7 @@ public partial class CampaignStats : IEquatable<CampaignStats>
     /// </summary>
     /// <value>Information on the campaign&#39;s business category metrics</value>
     [JsonPropertyName("businessCategoryMetrics")]
-    public CampaignBusinessCategoryMetrics BusinessCategoryMetrics { get; private set; }
+    public CampaignBusinessCategoryMetrics BusinessCategoryMetrics { get; set; }
 
 
     /// <summary>

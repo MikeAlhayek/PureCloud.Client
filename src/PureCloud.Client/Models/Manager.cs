@@ -35,7 +35,7 @@ public partial class Manager : IEquatable<Manager>
     /// </summary>
     /// <value>The reference URI of the manager&#39;s user record.</value>
     [JsonPropertyName("$ref")]
-    public string Ref { get; private set; }
+    public string Ref { get; set; }
 
 
     /// <summary>

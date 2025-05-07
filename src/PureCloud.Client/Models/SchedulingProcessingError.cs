@@ -48,7 +48,7 @@ public partial class SchedulingProcessingError : IEquatable<SchedulingProcessing
     /// </summary>
     /// <value>An internal code representing the type of error. BadJson for 'Unable to parse json.' NotFound for 'Resource not found.' Fail for 'An unexpected server error occured.'</value>
     [JsonPropertyName("internalErrorCode")]
-    public InternalErrorCodeEnum? InternalErrorCode { get; private set; }
+    public InternalErrorCodeEnum? InternalErrorCode { get; set; }
     /// <summary>
     /// Initializes a new instance of the <see cref="SchedulingProcessingError" /> class.
     /// </summary>
@@ -66,7 +66,7 @@ public partial class SchedulingProcessingError : IEquatable<SchedulingProcessing
     /// </summary>
     /// <value>A text description of the error</value>
     [JsonPropertyName("description")]
-    public string Description { get; private set; }
+    public string Description { get; set; }
 
 
     /// <summary>

@@ -28,7 +28,7 @@ public partial class EdgeConnectionInfo : IEquatable<EdgeConnectionInfo>
     /// </summary>
     /// <value>The globally unique identifier for the object.</value>
     [JsonPropertyName("id")]
-    public string Id { get; private set; }
+    public string Id { get; set; }
 
 
 
@@ -45,7 +45,7 @@ public partial class EdgeConnectionInfo : IEquatable<EdgeConnectionInfo>
     /// </summary>
     /// <value>Interface used for the connection on the edge</value>
     [JsonPropertyName("interfaceName")]
-    public string InterfaceName { get; private set; }
+    public string InterfaceName { get; set; }
 
 
 
@@ -54,7 +54,7 @@ public partial class EdgeConnectionInfo : IEquatable<EdgeConnectionInfo>
     /// </summary>
     /// <value>IP address of the interface</value>
     [JsonPropertyName("interfaceIpAddress")]
-    public string InterfaceIpAddress { get; private set; }
+    public string InterfaceIpAddress { get; set; }
 
 
 
@@ -63,7 +63,7 @@ public partial class EdgeConnectionInfo : IEquatable<EdgeConnectionInfo>
     /// </summary>
     /// <value>Connection errors</value>
     [JsonPropertyName("connectionErrors")]
-    public List<string> ConnectionErrors { get; private set; }
+    public List<string> ConnectionErrors { get; set; }
 
 
 
@@ -80,7 +80,7 @@ public partial class EdgeConnectionInfo : IEquatable<EdgeConnectionInfo>
     /// </summary>
     /// <value>The URI for this object</value>
     [JsonPropertyName("selfUri")]
-    public string SelfUri { get; private set; }
+    public string SelfUri { get; set; }
 
 
     /// <summary>

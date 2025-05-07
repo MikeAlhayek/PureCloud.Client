@@ -8,7 +8,7 @@ public sealed class UserStation
     /// A globally unique identifier for this station
     /// </summary>
     /// <value>A globally unique identifier for this station</value>
-    public string Id { get; private set; }
+    public string Id { get; set; }
 
     /// <summary>
     /// Gets or Sets Name
@@ -46,5 +46,5 @@ public sealed class UserStation
     /// The number of call appearances on the station.
     /// </summary>
     /// <value>The number of call appearances on the station.</value>
-    public int? WebRtcCallAppearances { get; private set; }
+    public int? WebRtcCallAppearances { get; set; }
 }

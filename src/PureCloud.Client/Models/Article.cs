@@ -24,7 +24,7 @@ public partial class Article : IEquatable<Article>
     /// </summary>
     /// <value>The article title.</value>
     [JsonPropertyName("title")]
-    public string Title { get; private set; }
+    public string Title { get; set; }
 
 
 
@@ -33,7 +33,7 @@ public partial class Article : IEquatable<Article>
     /// </summary>
     /// <value>The URI for the article.</value>
     [JsonPropertyName("uri")]
-    public string Uri { get; private set; }
+    public string Uri { get; set; }
 
 
 
@@ -42,7 +42,7 @@ public partial class Article : IEquatable<Article>
     /// </summary>
     /// <value>This contains snippets of text from the article matching the query.</value>
     [JsonPropertyName("snippets")]
-    public List<string> Snippets { get; private set; }
+    public List<string> Snippets { get; set; }
 
 
 
@@ -51,7 +51,7 @@ public partial class Article : IEquatable<Article>
     /// </summary>
     /// <value>Value between 0 and 1. 1 corresponds to very confident, 0 to not confident at all.</value>
     [JsonPropertyName("confidence")]
-    public float? Confidence { get; private set; }
+    public float? Confidence { get; set; }
 
 
 
@@ -60,7 +60,7 @@ public partial class Article : IEquatable<Article>
     /// </summary>
     /// <value>A map that contains custom metadata about the article answer.</value>
     [JsonPropertyName("metadata")]
-    public Dictionary<string, MetadataAttribute> Metadata { get; private set; }
+    public Dictionary<string, MetadataAttribute> Metadata { get; set; }
 
 
 
@@ -69,7 +69,7 @@ public partial class Article : IEquatable<Article>
     /// </summary>
     /// <value>The version of the Article.</value>
     [JsonPropertyName("version")]
-    public AddressableEntityRef Version { get; private set; }
+    public AddressableEntityRef Version { get; set; }
 
 
 
@@ -78,7 +78,7 @@ public partial class Article : IEquatable<Article>
     /// </summary>
     /// <value>Variations of the Article.</value>
     [JsonPropertyName("variations")]
-    public List<AddressableEntityRef> Variations { get; private set; }
+    public List<AddressableEntityRef> Variations { get; set; }
 
 
     /// <summary>

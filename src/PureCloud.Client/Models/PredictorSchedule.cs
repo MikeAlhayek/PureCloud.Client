@@ -68,7 +68,7 @@ public partial class PredictorSchedule : IEquatable<PredictorSchedule>
     /// </summary>
     /// <value>DateTime indicating when the predictor schedule was started. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z</value>
     [JsonPropertyName("dateStarted")]
-    public DateTime? DateStarted { get; private set; }
+    public DateTime? DateStarted { get; set; }
 
 
     /// <summary>

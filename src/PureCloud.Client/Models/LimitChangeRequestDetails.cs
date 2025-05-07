@@ -624,13 +624,13 @@ public partial class LimitChangeRequestDetails : IEquatable<LimitChangeRequestDe
     /// </summary>
     /// <value>Current status of the limit change request</value>
     [JsonPropertyName("status")]
-    public StatusEnum? Status { get; private set; }
+    public StatusEnum? Status { get; set; }
     /// <summary>
     /// The reason for rejecting the limit override request
     /// </summary>
     /// <value>The reason for rejecting the limit override request</value>
     [JsonPropertyName("rejectReason")]
-    public RejectReasonEnum? RejectReason { get; private set; }
+    public RejectReasonEnum? RejectReason { get; set; }
 
     /// <summary>
     /// Initializes a new instance of the <see cref="LimitChangeRequestDetails" /> class.
@@ -662,7 +662,7 @@ public partial class LimitChangeRequestDetails : IEquatable<LimitChangeRequestDe
     /// </summary>
     /// <value>The globally unique identifier for the object.</value>
     [JsonPropertyName("id")]
-    public string Id { get; private set; }
+    public string Id { get; set; }
 
 
 
@@ -711,7 +711,7 @@ public partial class LimitChangeRequestDetails : IEquatable<LimitChangeRequestDe
     /// </summary>
     /// <value>Current limit value for a given key</value>
     [JsonPropertyName("currentValue")]
-    public double? CurrentValue { get; private set; }
+    public double? CurrentValue { get; set; }
 
 
 
@@ -720,7 +720,7 @@ public partial class LimitChangeRequestDetails : IEquatable<LimitChangeRequestDe
     /// </summary>
     /// <value>The date of the limit change request creation. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z</value>
     [JsonPropertyName("dateCreated")]
-    public DateTime? DateCreated { get; private set; }
+    public DateTime? DateCreated { get; set; }
 
 
 
@@ -729,7 +729,7 @@ public partial class LimitChangeRequestDetails : IEquatable<LimitChangeRequestDe
     /// </summary>
     /// <value>List of statuses that a limit change request has gone through</value>
     [JsonPropertyName("statusHistory")]
-    public List<StatusChange> StatusHistory { get; private set; }
+    public List<StatusChange> StatusHistory { get; set; }
 
 
 
@@ -738,7 +738,7 @@ public partial class LimitChangeRequestDetails : IEquatable<LimitChangeRequestDe
     /// </summary>
     /// <value>The date of the limit change request completion (ChangeImplemented, Rejected, or RollbackImplemented. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z</value>
     [JsonPropertyName("dateCompleted")]
-    public DateTime? DateCompleted { get; private set; }
+    public DateTime? DateCompleted { get; set; }
 
 
 
@@ -749,7 +749,7 @@ public partial class LimitChangeRequestDetails : IEquatable<LimitChangeRequestDe
     /// </summary>
     /// <value>The approval breakdown for this override request.</value>
     [JsonPropertyName("approvalNamespaces")]
-    public List<ApprovalNamespace> ApprovalNamespaces { get; private set; }
+    public List<ApprovalNamespace> ApprovalNamespaces { get; set; }
 
 
 
@@ -758,7 +758,7 @@ public partial class LimitChangeRequestDetails : IEquatable<LimitChangeRequestDe
     /// </summary>
     /// <value>The URI for this object</value>
     [JsonPropertyName("selfUri")]
-    public string SelfUri { get; private set; }
+    public string SelfUri { get; set; }
 
 
     /// <summary>

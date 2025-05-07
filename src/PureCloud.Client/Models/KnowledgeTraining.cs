@@ -93,13 +93,13 @@ public partial class KnowledgeTraining : IEquatable<KnowledgeTraining>
     /// </summary>
     /// <value>Training status.</value>
     [JsonPropertyName("status")]
-    public StatusEnum? Status { get; private set; }
+    public StatusEnum? Status { get; set; }
     /// <summary>
     /// State of the Trained Documents, which can be one of these Draft, Active, Discarded, Archived.
     /// </summary>
     /// <value>State of the Trained Documents, which can be one of these Draft, Active, Discarded, Archived.</value>
     [JsonPropertyName("knowledgeDocumentsState")]
-    public KnowledgeDocumentsStateEnum? KnowledgeDocumentsState { get; private set; }
+    public KnowledgeDocumentsStateEnum? KnowledgeDocumentsState { get; set; }
     /// <summary>
     /// Initializes a new instance of the <see cref="KnowledgeTraining" /> class.
     /// </summary>
@@ -115,7 +115,7 @@ public partial class KnowledgeTraining : IEquatable<KnowledgeTraining>
     /// </summary>
     /// <value>The globally unique identifier for the object.</value>
     [JsonPropertyName("id")]
-    public string Id { get; private set; }
+    public string Id { get; set; }
 
 
 
@@ -124,7 +124,7 @@ public partial class KnowledgeTraining : IEquatable<KnowledgeTraining>
     /// </summary>
     /// <value>Trigger date-time. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z</value>
     [JsonPropertyName("dateTriggered")]
-    public DateTime? DateTriggered { get; private set; }
+    public DateTime? DateTriggered { get; set; }
 
 
 
@@ -133,7 +133,7 @@ public partial class KnowledgeTraining : IEquatable<KnowledgeTraining>
     /// </summary>
     /// <value>Training completed date-time. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z</value>
     [JsonPropertyName("dateCompleted")]
-    public DateTime? DateCompleted { get; private set; }
+    public DateTime? DateCompleted { get; set; }
 
 
 
@@ -144,7 +144,7 @@ public partial class KnowledgeTraining : IEquatable<KnowledgeTraining>
     /// </summary>
     /// <value>Language of the documents that are trained.</value>
     [JsonPropertyName("languageCode")]
-    public string LanguageCode { get; private set; }
+    public string LanguageCode { get; set; }
 
 
 
@@ -153,7 +153,7 @@ public partial class KnowledgeTraining : IEquatable<KnowledgeTraining>
     /// </summary>
     /// <value>Knowledge Base that the training belongs to.</value>
     [JsonPropertyName("knowledgeBase")]
-    public KnowledgeBase KnowledgeBase { get; private set; }
+    public KnowledgeBase KnowledgeBase { get; set; }
 
 
 
@@ -162,7 +162,7 @@ public partial class KnowledgeTraining : IEquatable<KnowledgeTraining>
     /// </summary>
     /// <value>Any error message during the Training or Promote action.</value>
     [JsonPropertyName("errorMessage")]
-    public string ErrorMessage { get; private set; }
+    public string ErrorMessage { get; set; }
 
 
 
@@ -173,7 +173,7 @@ public partial class KnowledgeTraining : IEquatable<KnowledgeTraining>
     /// </summary>
     /// <value>Trained Documents Promoted date-time. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z</value>
     [JsonPropertyName("datePromoted")]
-    public DateTime? DatePromoted { get; private set; }
+    public DateTime? DatePromoted { get; set; }
 
 
 
@@ -182,7 +182,7 @@ public partial class KnowledgeTraining : IEquatable<KnowledgeTraining>
     /// </summary>
     /// <value>The URI for this object</value>
     [JsonPropertyName("selfUri")]
-    public string SelfUri { get; private set; }
+    public string SelfUri { get; set; }
 
 
     /// <summary>

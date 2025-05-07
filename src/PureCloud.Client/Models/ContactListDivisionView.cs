@@ -42,7 +42,7 @@ public partial class ContactListDivisionView : IEquatable<ContactListDivisionVie
     /// </summary>
     /// <value>The globally unique identifier for the object.</value>
     [JsonPropertyName("id")]
-    public string Id { get; private set; }
+    public string Id { get; set; }
 
 
 
@@ -104,7 +104,7 @@ public partial class ContactListDivisionView : IEquatable<ContactListDivisionVie
     /// </summary>
     /// <value>The status of the import process.</value>
     [JsonPropertyName("importStatus")]
-    public ImportStatus ImportStatus { get; private set; }
+    public ImportStatus ImportStatus { get; set; }
 
 
 
@@ -113,7 +113,7 @@ public partial class ContactListDivisionView : IEquatable<ContactListDivisionVie
     /// </summary>
     /// <value>The number of contacts in the ContactList.</value>
     [JsonPropertyName("size")]
-    public long? Size { get; private set; }
+    public long? Size { get; set; }
 
 
 
@@ -122,7 +122,7 @@ public partial class ContactListDivisionView : IEquatable<ContactListDivisionVie
     /// </summary>
     /// <value>The URI for this object</value>
     [JsonPropertyName("selfUri")]
-    public string SelfUri { get; private set; }
+    public string SelfUri { get; set; }
 
 
     /// <summary>

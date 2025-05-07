@@ -24,7 +24,7 @@ public partial class PromptAssetUpload : IEquatable<PromptAssetUpload>
     /// </summary>
     /// <value>Pre-signed URL to PUT the file to</value>
     [JsonPropertyName("url")]
-    public string Url { get; private set; }
+    public string Url { get; set; }
 
 
 
@@ -33,7 +33,7 @@ public partial class PromptAssetUpload : IEquatable<PromptAssetUpload>
     /// </summary>
     /// <value>Required headers when uploading a file through PUT request to the URL</value>
     [JsonPropertyName("headers")]
-    public Dictionary<string, string> Headers { get; private set; }
+    public Dictionary<string, string> Headers { get; set; }
 
 
     /// <summary>

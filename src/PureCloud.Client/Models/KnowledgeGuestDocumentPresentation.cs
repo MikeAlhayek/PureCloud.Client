@@ -169,7 +169,7 @@ public partial class KnowledgeGuestDocumentPresentation : IEquatable<KnowledgeGu
     /// </summary>
     /// <value>Knowledge session ID.</value>
     [JsonPropertyName("sessionId")]
-    public string SessionId { get; private set; }
+    public string SessionId { get; set; }
 
 
 
@@ -178,7 +178,7 @@ public partial class KnowledgeGuestDocumentPresentation : IEquatable<KnowledgeGu
     /// </summary>
     /// <value>The client application in which the documents were presented.</value>
     [JsonPropertyName("application")]
-    public KnowledgeGuestSearchClientApplication Application { get; private set; }
+    public KnowledgeGuestSearchClientApplication Application { get; set; }
 
 
     /// <summary>

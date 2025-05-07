@@ -186,7 +186,7 @@ public partial class DevelopmentActivity : IEquatable<DevelopmentActivity>
     /// </summary>
     /// <value>The globally unique identifier for the object.</value>
     [JsonPropertyName("id")]
-    public string Id { get; private set; }
+    public string Id { get; set; }
 
 
 
@@ -195,7 +195,7 @@ public partial class DevelopmentActivity : IEquatable<DevelopmentActivity>
     /// </summary>
     /// <value>Date that activity was completed. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z</value>
     [JsonPropertyName("dateCompleted")]
-    public DateTime? DateCompleted { get; private set; }
+    public DateTime? DateCompleted { get; set; }
 
 
 
@@ -204,7 +204,7 @@ public partial class DevelopmentActivity : IEquatable<DevelopmentActivity>
     /// </summary>
     /// <value>User that created activity</value>
     [JsonPropertyName("createdBy")]
-    public UserReference CreatedBy { get; private set; }
+    public UserReference CreatedBy { get; set; }
 
 
 
@@ -213,7 +213,7 @@ public partial class DevelopmentActivity : IEquatable<DevelopmentActivity>
     /// </summary>
     /// <value>Date activity was created. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z</value>
     [JsonPropertyName("dateCreated")]
-    public DateTime? DateCreated { get; private set; }
+    public DateTime? DateCreated { get; set; }
 
 
 
@@ -222,7 +222,7 @@ public partial class DevelopmentActivity : IEquatable<DevelopmentActivity>
     /// </summary>
     /// <value>The user&#39;s percentage score for this activity</value>
     [JsonPropertyName("percentageScore")]
-    public float? PercentageScore { get; private set; }
+    public float? PercentageScore { get; set; }
 
 
 
@@ -231,7 +231,7 @@ public partial class DevelopmentActivity : IEquatable<DevelopmentActivity>
     /// </summary>
     /// <value>True if the activity was passed</value>
     [JsonPropertyName("isPassed")]
-    public bool? IsPassed { get; private set; }
+    public bool? IsPassed { get; set; }
 
 
 
@@ -260,7 +260,7 @@ public partial class DevelopmentActivity : IEquatable<DevelopmentActivity>
     /// </summary>
     /// <value>The URI for this object</value>
     [JsonPropertyName("selfUri")]
-    public string SelfUri { get; private set; }
+    public string SelfUri { get; set; }
 
 
 

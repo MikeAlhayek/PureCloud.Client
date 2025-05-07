@@ -81,13 +81,13 @@ public partial class AcceleratorMetadata : IEquatable<AcceleratorMetadata>
     /// </summary>
     /// <value>where the accelerator originated</value>
     [JsonPropertyName("origin")]
-    public OriginEnum? Origin { get; private set; }
+    public OriginEnum? Origin { get; set; }
     /// <summary>
     /// type of the artifact
     /// </summary>
     /// <value>type of the artifact</value>
     [JsonPropertyName("type")]
-    public TypeEnum? Type { get; private set; }
+    public TypeEnum? Type { get; set; }
     /// <summary>
     /// Initializes a new instance of the <see cref="AcceleratorMetadata" /> class.
     /// </summary>
@@ -103,7 +103,7 @@ public partial class AcceleratorMetadata : IEquatable<AcceleratorMetadata>
     /// </summary>
     /// <value>The globally unique identifier for the object.</value>
     [JsonPropertyName("id")]
-    public string Id { get; private set; }
+    public string Id { get; set; }
 
 
 
@@ -112,7 +112,7 @@ public partial class AcceleratorMetadata : IEquatable<AcceleratorMetadata>
     /// </summary>
     /// <value>name of this accelerator</value>
     [JsonPropertyName("name")]
-    public string Name { get; private set; }
+    public string Name { get; set; }
 
 
 
@@ -121,7 +121,7 @@ public partial class AcceleratorMetadata : IEquatable<AcceleratorMetadata>
     /// </summary>
     /// <value>a description of the general purpose of this accelerator</value>
     [JsonPropertyName("description")]
-    public string Description { get; private set; }
+    public string Description { get; set; }
 
 
 
@@ -134,7 +134,7 @@ public partial class AcceleratorMetadata : IEquatable<AcceleratorMetadata>
     /// </summary>
     /// <value>architectural classification into which the accelerator belongs</value>
     [JsonPropertyName("classification")]
-    public string Classification { get; private set; }
+    public string Classification { get; set; }
 
 
 
@@ -143,7 +143,7 @@ public partial class AcceleratorMetadata : IEquatable<AcceleratorMetadata>
     /// </summary>
     /// <value>tags</value>
     [JsonPropertyName("tags")]
-    public List<string> Tags { get; private set; }
+    public List<string> Tags { get; set; }
 
 
 
@@ -152,7 +152,7 @@ public partial class AcceleratorMetadata : IEquatable<AcceleratorMetadata>
     /// </summary>
     /// <value>The URI for this object</value>
     [JsonPropertyName("selfUri")]
-    public string SelfUri { get; private set; }
+    public string SelfUri { get; set; }
 
 
     /// <summary>

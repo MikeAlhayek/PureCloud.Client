@@ -72,7 +72,7 @@ public partial class UpdateBusinessUnitSettingsRequest : IEquatable<UpdateBusine
     /// </summary>
     /// <value>The start day of week for this business unit</value>
     [JsonPropertyName("startDayOfWeek")]
-    public StartDayOfWeekEnum? StartDayOfWeek { get; private set; }
+    public StartDayOfWeekEnum? StartDayOfWeek { get; set; }
 
     /// <summary>
     /// Initializes a new instance of the <see cref="UpdateBusinessUnitSettingsRequest" /> class.
@@ -104,7 +104,7 @@ public partial class UpdateBusinessUnitSettingsRequest : IEquatable<UpdateBusine
     /// </summary>
     /// <value>The time zone for this business unit, using the Olsen tz database format</value>
     [JsonPropertyName("timeZone")]
-    public string TimeZone { get; private set; }
+    public string TimeZone { get; set; }
 
 
 

@@ -28,7 +28,7 @@ public partial class BusinessUnitListItem : IEquatable<BusinessUnitListItem>
     /// </summary>
     /// <value>The globally unique identifier for the object.</value>
     [JsonPropertyName("id")]
-    public string Id { get; private set; }
+    public string Id { get; set; }
 
 
 
@@ -45,7 +45,7 @@ public partial class BusinessUnitListItem : IEquatable<BusinessUnitListItem>
     /// </summary>
     /// <value>Whether the user has authorization to interact with this business unit</value>
     [JsonPropertyName("authorized")]
-    public bool? Authorized { get; private set; }
+    public bool? Authorized { get; set; }
 
 
 
@@ -63,7 +63,7 @@ public partial class BusinessUnitListItem : IEquatable<BusinessUnitListItem>
     /// </summary>
     /// <value>The URI for this object</value>
     [JsonPropertyName("selfUri")]
-    public string SelfUri { get; private set; }
+    public string SelfUri { get; set; }
 
 
     /// <summary>

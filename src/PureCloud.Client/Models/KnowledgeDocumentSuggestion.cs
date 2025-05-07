@@ -52,7 +52,7 @@ public partial class KnowledgeDocumentSuggestion : IEquatable<KnowledgeDocumentS
     /// </summary>
     /// <value>Documents matching to the autocomplete suggestions query.</value>
     [JsonPropertyName("results")]
-    public List<KnowledgeDocumentSuggestionResult> Results { get; private set; }
+    public List<KnowledgeDocumentSuggestionResult> Results { get; set; }
 
 
     /// <summary>

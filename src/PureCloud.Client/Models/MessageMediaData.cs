@@ -48,7 +48,7 @@ public partial class MessageMediaData : IEquatable<MessageMediaData>
     /// </summary>
     /// <value>The status of the media, indicates if the media is in the process of uploading. If the upload fails, the media becomes invalid</value>
     [JsonPropertyName("status")]
-    public StatusEnum? Status { get; private set; }
+    public StatusEnum? Status { get; set; }
     /// <summary>
     /// Initializes a new instance of the <see cref="MessageMediaData" /> class.
     /// </summary>
@@ -74,7 +74,7 @@ public partial class MessageMediaData : IEquatable<MessageMediaData>
     /// </summary>
     /// <value>The globally unique identifier for the object.</value>
     [JsonPropertyName("id")]
-    public string Id { get; private set; }
+    public string Id { get; set; }
 
 
 
@@ -129,7 +129,7 @@ public partial class MessageMediaData : IEquatable<MessageMediaData>
     /// </summary>
     /// <value>The URI for this object</value>
     [JsonPropertyName("selfUri")]
-    public string SelfUri { get; private set; }
+    public string SelfUri { get; set; }
 
 
     /// <summary>

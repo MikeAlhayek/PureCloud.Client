@@ -24,7 +24,7 @@ public partial class JourneyViewResult : IEquatable<JourneyViewResult>
     /// </summary>
     /// <value>The elements within the journey view result</value>
     [JsonPropertyName("elements")]
-    public List<JourneyViewResultElement> Elements { get; private set; }
+    public List<JourneyViewResultElement> Elements { get; set; }
 
 
     /// <summary>

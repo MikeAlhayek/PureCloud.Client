@@ -52,7 +52,7 @@ public partial class CampaignProgress : IEquatable<CampaignProgress>
     /// </summary>
     /// <value>Number of contacts called during the campaign</value>
     [JsonPropertyName("numberOfContactsCalled")]
-    public long? NumberOfContactsCalled { get; private set; }
+    public long? NumberOfContactsCalled { get; set; }
 
 
 
@@ -61,7 +61,7 @@ public partial class CampaignProgress : IEquatable<CampaignProgress>
     /// </summary>
     /// <value>Number of contacts messaged during the campaign</value>
     [JsonPropertyName("numberOfContactsMessaged")]
-    public long? NumberOfContactsMessaged { get; private set; }
+    public long? NumberOfContactsMessaged { get; set; }
 
 
 
@@ -70,7 +70,7 @@ public partial class CampaignProgress : IEquatable<CampaignProgress>
     /// </summary>
     /// <value>Total number of contacts in the campaign</value>
     [JsonPropertyName("totalNumberOfContacts")]
-    public long? TotalNumberOfContacts { get; private set; }
+    public long? TotalNumberOfContacts { get; set; }
 
 
 
@@ -79,7 +79,7 @@ public partial class CampaignProgress : IEquatable<CampaignProgress>
     /// </summary>
     /// <value>Percentage of contacts processed during the campaign</value>
     [JsonPropertyName("percentage")]
-    public long? Percentage { get; private set; }
+    public long? Percentage { get; set; }
 
 
 
@@ -88,7 +88,7 @@ public partial class CampaignProgress : IEquatable<CampaignProgress>
     /// </summary>
     /// <value>Number of contacts skipped during the campaign</value>
     [JsonPropertyName("numberOfContactsSkipped")]
-    public Dictionary<string, int?> NumberOfContactsSkipped { get; private set; }
+    public Dictionary<string, int?> NumberOfContactsSkipped { get; set; }
 
 
     /// <summary>

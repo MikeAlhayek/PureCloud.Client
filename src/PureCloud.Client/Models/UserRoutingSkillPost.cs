@@ -52,7 +52,7 @@ public partial class UserRoutingSkillPost : IEquatable<UserRoutingSkillPost>
     /// </summary>
     /// <value>URI to the organization skill used by this user skill.</value>
     [JsonPropertyName("skillUri")]
-    public string SkillUri { get; private set; }
+    public string SkillUri { get; set; }
 
 
 
@@ -61,7 +61,7 @@ public partial class UserRoutingSkillPost : IEquatable<UserRoutingSkillPost>
     /// </summary>
     /// <value>The URI for this object</value>
     [JsonPropertyName("selfUri")]
-    public string SelfUri { get; private set; }
+    public string SelfUri { get; set; }
 
 
     /// <summary>

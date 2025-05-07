@@ -24,7 +24,7 @@ public partial class FunctionConfig : IEquatable<FunctionConfig>
     /// </summary>
     /// <value>Action identifier.</value>
     [JsonPropertyName("id")]
-    public string Id { get; private set; }
+    public string Id { get; set; }
 
 
 
@@ -33,7 +33,7 @@ public partial class FunctionConfig : IEquatable<FunctionConfig>
     /// </summary>
     /// <value>Function configuration.</value>
     [JsonPropertyName("function")]
-    public Function Function { get; private set; }
+    public Function Function { get; set; }
 
 
 
@@ -42,7 +42,7 @@ public partial class FunctionConfig : IEquatable<FunctionConfig>
     /// </summary>
     /// <value>Zip file configuration and state.</value>
     [JsonPropertyName("zip")]
-    public FunctionZipConfig Zip { get; private set; }
+    public FunctionZipConfig Zip { get; set; }
 
 
 
@@ -51,7 +51,7 @@ public partial class FunctionConfig : IEquatable<FunctionConfig>
     /// </summary>
     /// <value>History of failed zip upload file configuration including their state and error messages. Contains no more than last ten failures.</value>
     [JsonPropertyName("uploadExceptionHistory")]
-    public List<FunctionZipConfig> UploadExceptionHistory { get; private set; }
+    public List<FunctionZipConfig> UploadExceptionHistory { get; set; }
 
 
 
@@ -60,7 +60,7 @@ public partial class FunctionConfig : IEquatable<FunctionConfig>
     /// </summary>
     /// <value>The URI for this object</value>
     [JsonPropertyName("selfUri")]
-    public string SelfUri { get; private set; }
+    public string SelfUri { get; set; }
 
 
     /// <summary>

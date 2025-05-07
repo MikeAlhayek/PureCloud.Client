@@ -41,7 +41,7 @@ public partial class WfmVersionedEntityMetadata : IEquatable<WfmVersionedEntityM
     /// </summary>
     /// <value>The user who last modified the associated entity. The id may be &#39;System&#39; if it was an automated process</value>
     [JsonPropertyName("modifiedBy")]
-    public UserReference ModifiedBy { get; private set; }
+    public UserReference ModifiedBy { get; set; }
 
 
 
@@ -50,7 +50,7 @@ public partial class WfmVersionedEntityMetadata : IEquatable<WfmVersionedEntityM
     /// </summary>
     /// <value>The date the associated entity was last modified. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z</value>
     [JsonPropertyName("dateModified")]
-    public DateTime? DateModified { get; private set; }
+    public DateTime? DateModified { get; set; }
 
 
 
@@ -59,7 +59,7 @@ public partial class WfmVersionedEntityMetadata : IEquatable<WfmVersionedEntityM
     /// </summary>
     /// <value>The user who created the associated entity, if available. The id may be &#39;System&#39; if it was an automated process</value>
     [JsonPropertyName("createdBy")]
-    public UserReference CreatedBy { get; private set; }
+    public UserReference CreatedBy { get; set; }
 
 
 
@@ -68,7 +68,7 @@ public partial class WfmVersionedEntityMetadata : IEquatable<WfmVersionedEntityM
     /// </summary>
     /// <value>The date the associated entity was created, if available. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z</value>
     [JsonPropertyName("dateCreated")]
-    public DateTime? DateCreated { get; private set; }
+    public DateTime? DateCreated { get; set; }
 
 
     /// <summary>

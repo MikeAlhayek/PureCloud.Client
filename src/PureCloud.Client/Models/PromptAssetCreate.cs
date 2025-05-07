@@ -54,7 +54,7 @@ public partial class PromptAssetCreate : IEquatable<PromptAssetCreate>
     /// </summary>
     /// <value>Audio upload status</value>
     [JsonPropertyName("uploadStatus")]
-    public UploadStatusEnum? UploadStatus { get; private set; }
+    public UploadStatusEnum? UploadStatus { get; set; }
 
     /// <summary>
     /// Initializes a new instance of the <see cref="PromptAssetCreate" /> class.
@@ -88,7 +88,7 @@ public partial class PromptAssetCreate : IEquatable<PromptAssetCreate>
     /// </summary>
     /// <value>The globally unique identifier for the object.</value>
     [JsonPropertyName("id")]
-    public string Id { get; private set; }
+    public string Id { get; set; }
 
 
 
@@ -105,7 +105,7 @@ public partial class PromptAssetCreate : IEquatable<PromptAssetCreate>
     /// </summary>
     /// <value>Associated prompt ID</value>
     [JsonPropertyName("promptId")]
-    public string PromptId { get; private set; }
+    public string PromptId { get; set; }
 
 
 
@@ -123,7 +123,7 @@ public partial class PromptAssetCreate : IEquatable<PromptAssetCreate>
     /// </summary>
     /// <value>URI of the resource audio</value>
     [JsonPropertyName("mediaUri")]
-    public string MediaUri { get; private set; }
+    public string MediaUri { get; set; }
 
 
 
@@ -152,7 +152,7 @@ public partial class PromptAssetCreate : IEquatable<PromptAssetCreate>
     /// </summary>
     /// <value>Upload URI for the resource audio</value>
     [JsonPropertyName("uploadUri")]
-    public string UploadUri { get; private set; }
+    public string UploadUri { get; set; }
 
 
 
@@ -161,7 +161,7 @@ public partial class PromptAssetCreate : IEquatable<PromptAssetCreate>
     /// </summary>
     /// <value>Whether or not this resource locale is the default for the language</value>
     [JsonPropertyName("languageDefault")]
-    public bool? LanguageDefault { get; private set; }
+    public bool? LanguageDefault { get; set; }
 
 
 
@@ -186,7 +186,7 @@ public partial class PromptAssetCreate : IEquatable<PromptAssetCreate>
     /// </summary>
     /// <value>The URI for this object</value>
     [JsonPropertyName("selfUri")]
-    public string SelfUri { get; private set; }
+    public string SelfUri { get; set; }
 
 
     /// <summary>

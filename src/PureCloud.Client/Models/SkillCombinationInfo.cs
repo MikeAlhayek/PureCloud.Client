@@ -35,7 +35,7 @@ public partial class SkillCombinationInfo : IEquatable<SkillCombinationInfo>
     /// </summary>
     /// <value>Number of total contacts in the contact queue for this skill combination</value>
     [JsonPropertyName("totalCount")]
-    public long? TotalCount { get; private set; }
+    public long? TotalCount { get; set; }
 
 
 
@@ -44,7 +44,7 @@ public partial class SkillCombinationInfo : IEquatable<SkillCombinationInfo>
     /// </summary>
     /// <value>Number of remaining contacts in the contact queue for this skill combination</value>
     [JsonPropertyName("remainingCount")]
-    public long? RemainingCount { get; private set; }
+    public long? RemainingCount { get; set; }
 
 
     /// <summary>
