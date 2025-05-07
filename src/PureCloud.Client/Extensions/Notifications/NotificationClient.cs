@@ -3,12 +3,14 @@ using System.Net.WebSockets;
 using System.Text;
 using System.Text.Json;
 using Microsoft.Extensions.Logging;
+using Microsoft.Extensions.Options;
+using PureCloud.Client.Json;
 using PureCloud.Client.Models;
 using PureCloud.Client.Repositories;
 
 namespace PureCloud.Client.Extensions.Notifications;
 
-public class NotificationHandler : INotificationHandler, IAsyncDisposable
+public class NotificationClient : IAsyncDisposable
 {
     private readonly ConcurrentDictionary<string, Type> _typeMap = new(StringComparer.OrdinalIgnoreCase);
     private readonly System.Threading.Channels.Channel<string> _messageChannel = System.Threading.Channels.Channel.CreateUnbounded<string>();
@@ -17,7 +19,8 @@ public class NotificationHandler : INotificationHandler, IAsyncDisposable
     private readonly int _maxReconnectAttempts = 10;
 
     private readonly IChannelRepository _channelRepository;
-    private readonly ILogger<NotificationHandler> _logger;
+    private readonly PureCloudJsonSerializerOptions _options;
+    private readonly ILogger _logger;
 
     private readonly object _webSocketLock = new();
     private ClientWebSocket _webSocket;
@@ -31,22 +34,35 @@ public class NotificationHandler : INotificationHandler, IAsyncDisposable
 
     public event NotificationReceivedHandler NotificationReceived;
 
-    public NotificationHandler(
-        IChannelRepository channelRepository,
-        ILogger<NotificationHandler> logger)
+    internal NotificationClient(IChannelRepository channelRepository, PureCloudJsonSerializerOptions options, ILogger logger)
     {
+        ArgumentNullException.ThrowIfNull(channelRepository);
+        ArgumentNullException.ThrowIfNull(options);
+        ArgumentNullException.ThrowIfNull(logger);
+
         _channelRepository = channelRepository;
+        _options = options;
         _logger = logger;
     }
 
-    public async Task StartAsync(Channel channel = null, CancellationToken cancellationToken = default)
+    public NotificationClient(
+        IChannelRepository channelRepository,
+        IOptions<PureCloudJsonSerializerOptions> options,
+        ILogger<NotificationClient> logger)
+    {
+        _channelRepository = channelRepository;
+        _options = options.Value;
+        _logger = logger;
+    }
+
+    public async Task StartAsync(CancellationToken cancellationToken = default)
     {
         _logger.LogInformation("StartAsync was called.");
 
         _cancellationToken = cancellationToken;
         _webSocket?.Dispose();
 
-        _channel = channel ?? await _channelRepository.CreateAsync(_cancellationToken);
+        _channel ??= await _channelRepository?.CreateAsync(_cancellationToken);
 
         if (_channel is null)
         {
@@ -88,9 +104,9 @@ public class NotificationHandler : INotificationHandler, IAsyncDisposable
         {
             try
             {
-                _logger.LogInformation("Trying to connect to the WebSocket. The current state is {0}", _webSocket.State.ToString());
+                _logger.LogInformation("Trying to connect to the WebSocket. The current state is {State}", _webSocket.State.ToString());
 
-                if (_webSocket.State != WebSocketState.None)
+                if (_webSocket.State == WebSocketState.None)
                 {
                     _logger.LogInformation("WebSocket is new and can be connected to.");
 
@@ -105,6 +121,18 @@ public class NotificationHandler : INotificationHandler, IAsyncDisposable
                     _logger.LogInformation("WebSocket state is open and can receive communication.");
 
                     _ = Task.Run(() => ReceiveEventsAsync(_webSocket), _cancellationToken);
+
+                    break;
+                }
+                else
+                {
+                    _logger.LogInformation("WebSocket was not established. Trying to reconnect.");
+                    _reconnectAttempts++;
+
+                    if (_reconnectAttempts < _maxReconnectAttempts)
+                    {
+                        await ConnectAsync();
+                    }
                 }
             }
             catch (Exception ex)
@@ -193,7 +221,8 @@ public class NotificationHandler : INotificationHandler, IAsyncDisposable
         {
             _logger.LogDebug("Handling message: {Message}", message);
 
-            var baseData = JsonSerializer.Deserialize<NotificationData>(message);
+            var baseData = JsonSerializer.Deserialize<NotificationData>(message, _options.JsonSerializerOptions);
+
             if (string.IsNullOrWhiteSpace(baseData?.TopicName))
             {
                 _logger.LogWarning("Message missing TopicName");
@@ -203,11 +232,12 @@ public class NotificationHandler : INotificationHandler, IAsyncDisposable
             if (!_typeMap.TryGetValue(baseData.TopicName, out var targetType))
             {
                 _logger.LogWarning("Unknown TopicName: {TopicName}", baseData.TopicName);
+
                 return Task.CompletedTask;
             }
 
             var typedNotificationType = typeof(NotificationData<>).MakeGenericType(targetType);
-            var data = (INotificationData)JsonSerializer.Deserialize(message, typedNotificationType);
+            var data = (INotificationData)JsonSerializer.Deserialize(message, typedNotificationType, _options.JsonSerializerOptions);
 
             if (data != null)
             {

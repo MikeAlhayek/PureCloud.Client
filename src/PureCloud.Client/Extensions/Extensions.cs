@@ -56,7 +56,9 @@ public static class Extensions
 
     public static IServiceCollection AddPureCloudRepositories(this IServiceCollection services)
     {
-        services.AddTransient<INotificationHandler, NotificationHandler>();
+        services.AddScoped<INotificationClientFactory, NotificationClientFactory>();
+
+        services.AddTransient<NotificationClient>();
 
         services
             .AddScoped<IUserRepository, UserRepository>()
