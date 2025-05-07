@@ -28,11 +28,12 @@
 
   <ItemGroup>
     <Compile Include="Extensions\Notifications\ChannelMetadataNotification.cs" />
+    <Compile Include="Extensions\Notifications\INotificationClientFactory.cs" />
     <Compile Include="Extensions\Notifications\INotificationData.cs" />
-    <Compile Include="Extensions\Notifications\INotificationHandler.cs" />
     <Compile Include="Extensions\Notifications\Metadata.cs" />
+    <Compile Include="Extensions\Notifications\NotificationClientFactory.cs" />
     <Compile Include="Extensions\Notifications\NotificationData.cs" />
-    <Compile Include="Extensions\Notifications\NotificationHandler.cs" />
+    <Compile Include="Extensions\Notifications\NotificationClient.cs" />
     <Compile Include="Extensions\Notifications\SubscriptionBuilder.cs" />
     <Compile Include="Models\AcdEndDetailEventTopicAcdEndEvent.cs" />
     <Compile Include="Models\AcdEndDetailEventTopicAcdEndEvent.DisconnectType.cs" />
