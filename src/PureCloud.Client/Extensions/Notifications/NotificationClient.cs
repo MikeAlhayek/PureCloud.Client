@@ -57,7 +57,7 @@ public class NotificationClient : IAsyncDisposable
 
     public async Task StartAsync(CancellationToken cancellationToken = default)
     {
-        _logger.LogInformation("StartAsync was called.");
+        _logger.LogDebug("StartAsync was called.");
 
         _cancellationToken = cancellationToken;
         _webSocket?.Dispose();
@@ -71,7 +71,7 @@ public class NotificationClient : IAsyncDisposable
 
         if (_typeMap.Count > 0)
         {
-            _logger.LogInformation("There are initial events sending them to the server.");
+            _logger.LogDebug("There are initial events sending them to the server.");
 
             await _channelRepository.AddSubscriptionTopicsAsync(_channel.Id, _typeMap.Keys.Select(topic => new ChannelTopic { Id = topic }), true, cancellationToken);
         }
@@ -83,14 +83,14 @@ public class NotificationClient : IAsyncDisposable
 
     private async Task ConnectAsync()
     {
-        _logger.LogInformation("ConnectAsync was called.");
+        _logger.LogDebug("ConnectAsync was called.");
 
         lock (_webSocketLock)
         {
             if (_webSocket != null && _webSocket.State == WebSocketState.Open)
             {
                 // Don't connect if already connected.
-                _logger.LogInformation("WebSocket is already connected. No need to connect again.");
+                _logger.LogDebug("WebSocket is already connected. No need to connect again.");
                 return;
             }
 
@@ -104,21 +104,21 @@ public class NotificationClient : IAsyncDisposable
         {
             try
             {
-                _logger.LogInformation("Trying to connect to the WebSocket. The current state is {State}", _webSocket.State.ToString());
+                _logger.LogDebug("Trying to connect to the WebSocket. The current state is {State}", _webSocket.State.ToString());
 
                 if (_webSocket.State == WebSocketState.None)
                 {
-                    _logger.LogInformation("WebSocket is new and can be connected to.");
+                    _logger.LogDebug("WebSocket is new and can be connected to.");
 
                     await _webSocket.ConnectAsync(new Uri(_channel.ConnectUri), _cancellationToken);
                     _reconnectAttempts = 0;
 
-                    _logger.LogInformation("WebSocket is now connected.");
+                    _logger.LogDebug("WebSocket is now connected.");
                 }
 
                 if (_webSocket.State == WebSocketState.Open)
                 {
-                    _logger.LogInformation("WebSocket state is open and can receive communication.");
+                    _logger.LogDebug("WebSocket state is open and can receive communication.");
 
                     _ = Task.Run(() => ReceiveEventsAsync(_webSocket), _cancellationToken);
 
@@ -126,7 +126,7 @@ public class NotificationClient : IAsyncDisposable
                 }
                 else
                 {
-                    _logger.LogInformation("WebSocket was not established. Trying to reconnect.");
+                    _logger.LogDebug("WebSocket was not established. Trying to reconnect.");
                     _reconnectAttempts++;
 
                     if (_reconnectAttempts < _maxReconnectAttempts)
@@ -153,11 +153,11 @@ public class NotificationClient : IAsyncDisposable
 
     private async Task ReceiveEventsAsync(ClientWebSocket webSocket)
     {
-        _logger.LogInformation("ReceiveEventsAsync was called on a WebSocket with a status {State}", webSocket.State.ToString());
+        _logger.LogDebug("ReceiveEventsAsync was called on a WebSocket with a status {State}", webSocket.State.ToString());
 
         if (webSocket == null)
         {
-            _logger.LogInformation("WebSocket is null!");
+            _logger.LogDebug("WebSocket is null!");
 
             return;
         }
@@ -168,7 +168,7 @@ public class NotificationClient : IAsyncDisposable
         {
             if (webSocket.State != WebSocketState.Open)
             {
-                _logger.LogInformation("While Receiving events, the WebSocket with a status {State} and can no longer be used. No longer can listen to events.", webSocket.State.ToString());
+                _logger.LogDebug("While Receiving events, the WebSocket with a status {State} and can no longer be used. No longer can listen to events.", webSocket.State.ToString());
 
                 break;
             }
@@ -192,7 +192,7 @@ public class NotificationClient : IAsyncDisposable
                 }
 
                 var message = Encoding.UTF8.GetString(messageBuffer.ToArray());
-                _logger.LogInformation("Received message: {Message}", message);
+                _logger.LogDebug("Received message: {Message}", message);
                 await _messageChannel.Writer.WriteAsync(message, _cancellationToken);
             }
             catch (Exception ex)
@@ -206,7 +206,7 @@ public class NotificationClient : IAsyncDisposable
 
     private async Task ProcessMessagesAsync()
     {
-        _logger.LogInformation("ProcessMessagesAsync started");
+        _logger.LogDebug("ProcessMessagesAsync started");
 
         await foreach (var message in _messageChannel.Reader.ReadAllAsync(_cancellationToken))
         {
@@ -241,7 +241,7 @@ public class NotificationClient : IAsyncDisposable
 
             if (data != null)
             {
-                _logger.LogInformation("Raising NotificationReceived for topic {Topic}", baseData.TopicName);
+                _logger.LogDebug("Raising NotificationReceived for topic {Topic}", baseData.TopicName);
                 NotificationReceived?.Invoke(data);
             }
             else
@@ -270,11 +270,11 @@ public class NotificationClient : IAsyncDisposable
             _typeMap.TryAdd(topic.Key, topic.Value);
         }
 
-        _logger.LogInformation("Subscribing to events. Current events are {0}", _typeMap.Count);
+        _logger.LogDebug("Subscribing to events. Current events are {Count}", _typeMap.Count);
 
         if (_channel is not null)
         {
-            _logger.LogInformation("Channel already exists, sending the topics tp the server.");
+            _logger.LogDebug("Channel already exists, sending the topics tp the server.");
 
             await _channelRepository.AddSubscriptionTopicsAsync(_channel.Id, filtered.Select(entry => new ChannelTopic { Id = entry.Key }));
         }
