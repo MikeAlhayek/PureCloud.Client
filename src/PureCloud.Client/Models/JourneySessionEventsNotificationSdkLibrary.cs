@@ -3,116 +3,15 @@ using System.Text.Json.Serialization;
 
 namespace PureCloud.Client.Models;
 
-/// <summary>
-/// JourneySessionEventsNotificationSdkLibrary
-/// </summary>
-
-public partial class JourneySessionEventsNotificationSdkLibrary : IEquatable<JourneySessionEventsNotificationSdkLibrary>
+public sealed class JourneySessionEventsNotificationSdkLibrary
 {
-    /// <summary>
-    /// Initializes a new instance of the <see cref="JourneySessionEventsNotificationSdkLibrary" /> class.
-    /// </summary>
-    /// <param name="Name">Name.</param>
-    /// <param name="Version">Version.</param>
-    public JourneySessionEventsNotificationSdkLibrary(string Name = null, string Version = null)
-    {
-        this.Name = Name;
-        this.Version = Version;
-
-    }
-
-
-
     /// <summary>
     /// Gets or Sets Name
     /// </summary>
-    [JsonPropertyName("name")]
     public string Name { get; set; }
-
-
 
     /// <summary>
     /// Gets or Sets Version
     /// </summary>
-    [JsonPropertyName("version")]
     public string Version { get; set; }
-
-
-    /// <summary>
-    /// Returns the string presentation of the object
-    /// </summary>
-    /// <returns>String presentation of the object</returns>
-    public override string ToString()
-    {
-        var sb = new StringBuilder();
-        sb.Append("class JourneySessionEventsNotificationSdkLibrary {\n");
-
-        sb.Append("  Name: ").Append(Name).Append("\n");
-        sb.Append("  Version: ").Append(Version).Append("\n");
-        sb.Append("}\n");
-        return sb.ToString();
-    }
-
-
-    /// <summary>
-    /// Returns true if objects are equal
-    /// </summary>
-    /// <param name="obj">Object to be compared</param>
-    /// <returns>Boolean</returns>
-    public override bool Equals(object obj)
-    {
-        // credit: http://stackoverflow.com/a/10454552/677735
-        return Equals(obj as JourneySessionEventsNotificationSdkLibrary);
-    }
-
-    /// <summary>
-    /// Returns true if JourneySessionEventsNotificationSdkLibrary instances are equal
-    /// </summary>
-    /// <param name="other">Instance of JourneySessionEventsNotificationSdkLibrary to be compared</param>
-    /// <returns>Boolean</returns>
-    public bool Equals(JourneySessionEventsNotificationSdkLibrary other)
-    {
-        // credit: http://stackoverflow.com/a/10454552/677735
-        if (other == null)
-        {
-            return false;
-        }
-
-        return true &&
-            (
-                Name == other.Name ||
-                Name != null &&
-                Name.Equals(other.Name)
-            ) &&
-            (
-                Version == other.Version ||
-                Version != null &&
-                Version.Equals(other.Version)
-            );
-    }
-
-    /// <summary>
-    /// Gets the hash code
-    /// </summary>
-    /// <returns>Hash code</returns>
-    public override int GetHashCode()
-    {
-        // credit: http://stackoverflow.com/a/263416/677735
-        unchecked // Overflow is fine, just wrap
-        {
-            int hash = 41;
-            // Suitable nullity checks etc, of course :)
-            if (Name != null)
-            {
-                hash = hash * 59 + Name.GetHashCode();
-            }
-
-            if (Version != null)
-            {
-                hash = hash * 59 + Version.GetHashCode();
-            }
-
-            return hash;
-        }
-    }
 }
