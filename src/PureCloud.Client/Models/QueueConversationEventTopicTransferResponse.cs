@@ -14,7 +14,7 @@ public sealed class QueueConversationEventTopicTransferResponse
     /// The type of transfer to perform.
     /// </summary>
     /// <value>The type of transfer to perform.</value>
-    public TransferTypeEnum? TransferType { get; set; }
+    public FlowEndDetailEventTopicFlowEndEventTransferTypeEnum? TransferType { get; set; }
 
     /// <summary>
     /// The id of the command.
