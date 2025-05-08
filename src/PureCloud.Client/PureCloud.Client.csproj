@@ -563,6 +563,10 @@
     <Compile Include="Models\UserEndDetailEventTopicUserEndEvent.MessageType.cs" />
     <Compile Include="Models\UserRoutingLanguage.cs" />
     <Compile Include="Models\UserRoutingLanguageState.cs" />
+    <Compile Include="Models\UserStartDetailEventTopicUserStartEvent.cs" />
+    <Compile Include="Models\UserStartDetailEventTopicUserStartEvent.MediaType.cs" />
+    <Compile Include="Models\UserStartDetailEventTopicUserStartEvent.Direction.cs" />
+    <Compile Include="Models\UserStartDetailEventTopicUserStartEvent.MessageType.cs" />
     <Compile Include="Models\Users\UserRoutingSkill.cs" />
     <Compile Include="Models\Users\UserRoutingSkillState.cs" />
     <Compile Include="Models\Users\Address.cs" />
@@ -598,6 +602,10 @@
     <Compile Include="Models\Users\UserStationChangeTopicUserStation.cs" />
     <Compile Include="Models\Users\UserStationChangeTopicUserStations.cs" />
     <Compile Include="Models\Users\UserStations.cs" />
+    <Compile Include="Models\VoicemailEndDetailEventTopicVoicemailEndEvent.cs" />
+    <Compile Include="Models\VoicemailEndDetailEventTopicVoicemailEndEvent.DisconnectType.cs" />
+    <Compile Include="Models\VoicemailEndDetailEventTopicVoicemailEndEvent.MediaType.cs" />
+    <Compile Include="Models\VoicemailEndDetailEventTopicVoicemailEndEvent.Direction.cs" />
     <Compile Include="Models\WfmBuIntradayDataUpdateTopicBuIntradayDataGroup.cs" />
     <Compile Include="Models\WfmBuIntradayDataUpdateTopicBuIntradayDataGroup.MediaType.cs" />
     <Compile Include="Models\WfmBuIntradayDataUpdateTopicBuIntradayForecastData.cs" />
