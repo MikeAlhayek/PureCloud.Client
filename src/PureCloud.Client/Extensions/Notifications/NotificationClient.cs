@@ -32,7 +32,7 @@ public class NotificationClient : IAsyncDisposable
 
     public delegate void NotificationReceivedHandler(INotificationData notificationData);
 
-    public event NotificationReceivedHandler NotificationReceived;
+    public IList<Func<INotificationData, Task>> NotificationHandlers = [];
 
     internal NotificationClient(IChannelRepository channelRepository, PureCloudJsonSerializerOptions options, ILogger logger)
     {
@@ -215,7 +215,7 @@ public class NotificationClient : IAsyncDisposable
         }
     }
 
-    private Task HandleMessageAsync(string message)
+    private async Task HandleMessageAsync(string message)
     {
         try
         {
@@ -226,14 +226,14 @@ public class NotificationClient : IAsyncDisposable
             if (string.IsNullOrWhiteSpace(baseData?.TopicName))
             {
                 _logger.LogWarning("Message missing TopicName");
-                return Task.CompletedTask;
+                return;
             }
 
             if (!_typeMap.TryGetValue(baseData.TopicName, out var targetType))
             {
                 _logger.LogWarning("Unknown TopicName: {TopicName}", baseData.TopicName);
 
-                return Task.CompletedTask;
+                return;
             }
 
             var typedNotificationType = typeof(NotificationData<>).MakeGenericType(targetType);
@@ -242,7 +242,8 @@ public class NotificationClient : IAsyncDisposable
             if (data != null)
             {
                 _logger.LogDebug("Raising NotificationReceived for topic {Topic}", baseData.TopicName);
-                NotificationReceived?.Invoke(data);
+
+                await Task.WhenAll(NotificationHandlers.Select(handler => handler(data)));
             }
             else
             {
@@ -253,8 +254,6 @@ public class NotificationClient : IAsyncDisposable
         {
             _logger.LogError(ex, "Failed to process message.");
         }
-
-        return Task.CompletedTask;
     }
 
     public async Task AddSubscriptionsAsync(IEnumerable<KeyValuePair<string, Type>> subscriptions)
@@ -280,8 +279,64 @@ public class NotificationClient : IAsyncDisposable
         }
     }
 
+    public Task<bool> AddSubscriptionAsync<T>(string topic)
+    {
+        ArgumentNullException.ThrowIfNull(topic);
+
+        return AddSubscriptionAsync(topic, typeof(T));
+    }
+
+    public Task<bool> AddSubscriptionAsync(string topicTemplate, params object[] ids)
+    {
+        ArgumentNullException.ThrowIfNull(topicTemplate);
+
+        if (!PureCloudConstants.TopicTemplates.TryGetValue(topicTemplate, out var topicType))
+        {
+            throw new InvalidOperationException($"The topic template '{topicTemplate}' is invalid. Valid templates can be found in {nameof(PureCloudConstants)}.{nameof(PureCloudConstants.TopicTemplates)}");
+        }
+
+        string topic;
+
+        if (ids is not null && ids.Length > 0)
+        {
+            topic = string.Format(topicTemplate, ids);
+        }
+        else
+        {
+            topic = topicTemplate;
+        }
+
+        return AddSubscriptionAsync(topic, topicType);
+    }
+
+    private async Task<bool> AddSubscriptionAsync(string topic, Type type)
+    {
+        ArgumentNullException.ThrowIfNull(topic);
+
+        if (topic.Equals("channel.metadata", StringComparison.OrdinalIgnoreCase) || topic.StartsWith("v2.system", StringComparison.OrdinalIgnoreCase))
+        {
+            return false;
+        }
+
+        if (_typeMap.TryAdd(topic, type))
+        {
+            if (_channel is not null)
+            {
+                _logger.LogDebug("Channel already exists, sending the topics tp the server.");
+
+                await _channelRepository.AddSubscriptionTopicsAsync(_channel.Id, [new ChannelTopic { Id = topic }]);
+            }
+
+            return true;
+        }
+
+        return false;
+    }
+
     public async Task RemoveSubscriptionAsync(string topic)
     {
+        ArgumentNullException.ThrowIfNull(topic);
+
         var subscriptions = await _channelRepository.GetSubscriptionsAsync(_channel.Id);
         var entry = subscriptions.Entities.FirstOrDefault(e => e.Id.Equals(topic, StringComparison.OrdinalIgnoreCase));
         if (entry is null)
@@ -343,7 +398,7 @@ public class NotificationClient : IAsyncDisposable
         }
 
         _messageChannel.Writer.TryComplete();
-
+        NotificationHandlers.Clear();
         if (_processingTask != null)
         {
             try

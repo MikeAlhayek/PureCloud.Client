@@ -7,6 +7,8 @@ namespace PureCloud.Client.Http;
 
 public sealed class BearerTokenHandler : DelegatingHandler
 {
+    private static readonly MediaTypeWithQualityHeaderValue _jsonHeader = new("application/json");
+
     private readonly ITokenService _tokenService;
     private readonly ILogger _logger;
 
@@ -20,8 +22,7 @@ public sealed class BearerTokenHandler : DelegatingHandler
 
     protected override async Task<HttpResponseMessage> SendAsync(HttpRequestMessage request, CancellationToken cancellationToken)
     {
-        request.Headers.TryAddWithoutValidation("purecloud-sdk", "231.1.0");
-        request.Headers.Accept.Add(new MediaTypeWithQualityHeaderValue("application/json"));
+        request.Headers.Accept.Add(_jsonHeader);
 
         var accessToken = await _tokenService.GetAccessTokenAsync();
 
@@ -39,13 +40,17 @@ public sealed class BearerTokenHandler : DelegatingHandler
 
             if (!string.IsNullOrEmpty(newToken))
             {
-                // Clone the request (HttpRequestMessage can’t be reused directly)
+                // Clone the request (HttpRequestMessage can't be reused directly)
                 var newRequest = await CloneHttpRequestMessageAsync(request);
 
                 newRequest.Headers.Authorization = new AuthenticationHeaderValue("Bearer", newToken);
 
                 // Retry the request once
                 response = await base.SendAsync(newRequest, cancellationToken);
+            }
+            else
+            {
+                throw new UnauthorizedAccessException("Access token refresh failed. User re-authentication may be required.");
             }
         }
         else if ((int)response.StatusCode >= 400)

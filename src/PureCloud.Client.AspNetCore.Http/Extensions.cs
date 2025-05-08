@@ -6,10 +6,10 @@ namespace PureCloud.Client.AspNetCore.Http;
 
 public static class Extensions
 {
-    public static IServiceCollection AddIdentityTokenStore<TUser>(this IServiceCollection services)
-        where TUser : class
+    public static IServiceCollection AddInMemoryTokenStore(this IServiceCollection services)
     {
-        services.Replace(ServiceDescriptor.Scoped<ITokenStore, IdentityTokenStore<TUser>>());
+        services.RemoveAll<ITokenStore>();
+        services.AddSingleton<ITokenStore, InMemoryTokenStore>();
 
         return services;
     }

@@ -1,5 +1,6 @@
 using System.Text.RegularExpressions;
 using Microsoft.Extensions.DependencyInjection;
+using Microsoft.Extensions.DependencyInjection.Extensions;
 using Microsoft.Extensions.Options;
 using PureCloud.Client.Extensions.Notifications;
 using PureCloud.Client.Http;
@@ -21,13 +22,12 @@ public static class Extensions
 
         services.AddTransient<IConfigureOptions<PureCloudOptions>, PureCloudOptionsConfigurations>();
 
-        services
-            .AddScoped<ITokenService, TokenService>()
-            .AddScoped<ITokenStore, MemoryTokenStore>();
+        services.TryAddScoped<ITokenService, TokenService>();
+
+        services.TryAddScoped<ITokenStore, MemoryTokenStore>();
 
         // Add PureCloudAuth client;
         services
-            .AddScoped<BearerTokenHandler>()
             .AddHttpClient(PureCloudConstants.PureCloudAuthClientName, (sp, client) =>
             {
                 var options = sp.GetRequiredService<IOptions<PureCloudOptions>>().Value;
@@ -56,13 +56,13 @@ public static class Extensions
 
     public static IServiceCollection AddPureCloudRepositories(this IServiceCollection services)
     {
-        services.AddScoped<INotificationClientFactory, NotificationClientFactory>();
+        services.TryAddScoped<INotificationClientFactory, NotificationClientFactory>();
 
         services.AddTransient<NotificationClient>();
 
         services
             .AddScoped<IUserRepository, UserRepository>()
-            .AddScoped<IChannelRepository, ChannelRepository>();
+            .TryAddScoped<IChannelRepository, ChannelRepository>();
 
         return services;
     }

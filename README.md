@@ -27,14 +27,16 @@ services
 
 ### ASP.NET Core Integration
 
-If you're using **ASP.NET Core**, you can add identity token support by installing the `PureCloud.Client.AspNetCore.Http` package:
+If you're using **ASP.NET Core**, you can add in-memory token store by installing the `PureCloud.Client.AspNetCore.Http` package:
 
 ```csharp
 services
     .AddPureCloudCore()
     .AddPureCloudRepositories()
-    .AddIdentityTokenStore<IUser>();
+    .AddInMemoryTokenStore();
 ```
+
+Please note: `AddInMemoryTokenStore` is not recommended for production. It is recommended to implement your own store.
 
 ---
 
@@ -54,25 +56,27 @@ public class Example
 
     public async Task HandleNotificationsAsync(CancellationToken cancellationToken)
     {
-        var user = await _userRepository.GetMeAsync(null, null, cancellationToken);
-
+        // Get a new instance ot the notification client from the 'INotificationClientFactory'
         await using var notificationClient = _notificationClientFactory.Create();
 
+        // Get the current user
+        var user = await _userRepository.GetMeAsync(null, null, cancellationToken);
+
+        // You can use the builder or use other AddSubscription methods to add subscriptions.
         await notificationClient.AddSubscriptionsAsync(builder => builder
             .Add("v2.users.{0}.presence", user.Id)
             .Add("v2.users.{0}.conversations", user.Id)
             .Add("v2.users.{0}.conversations.calls", user.Id)
         );
 
-        notificationClient.NotificationReceived += HandleNotification;
+        // Register a functions to call when a notification is received from the server.
+        _notificationClient.NotificationHandlers.Add(EventsHandlerAsync);
 
         // Process notifications for 60 seconds
         await Task.Delay(TimeSpan.FromSeconds(60), cancellationToken);
-
-        notificationClient.NotificationReceived -= HandleNotification;
     }
 
-    private void HandleNotification(INotificationData data)
+    private Task EventsHandlerAsync(INotificationData data)
     {
         switch (data)
         {
@@ -88,6 +92,8 @@ public class Example
                 // Handle call conversation event
                 break;
         }
+
+        return Task.CompletedTask;
     }
 }
 ```

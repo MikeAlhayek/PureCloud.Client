@@ -2,10 +2,6 @@ using System.Runtime.Serialization;
 
 namespace PureCloud.Client.Models;
 
-/// <summary>
-/// Gets or Sets FlaggedReason
-/// </summary>
-
 public enum QueueConversationCallEventTopicFlaggedReasonEnum
 {
     /// <summary>

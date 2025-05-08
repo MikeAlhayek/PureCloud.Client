@@ -1,7 +1,9 @@
 using System.Net.Http.Headers;
 using System.Net.Http.Json;
 using System.Text;
+using System.Text.Json;
 using Microsoft.Extensions.Options;
+using PureCloud.Client.Exceptions;
 using PureCloud.Client.Models.Settings;
 using PureCloud.Client.Tokens;
 
@@ -9,6 +11,11 @@ namespace PureCloud.Client.Services;
 
 public class TokenService : ITokenService
 {
+    private readonly static JsonSerializerOptions _serializerOptions = new()
+    {
+        PropertyNamingPolicy = JsonNamingPolicy.SnakeCaseLower,
+    };
+
     private readonly IHttpClientFactory _httpClientFactory;
     private readonly PureCloudOptions _options;
     private readonly ITokenStore _tokenStore;
@@ -30,6 +37,11 @@ public class TokenService : ITokenService
 
         if (string.IsNullOrEmpty(accessToken))
         {
+            if (string.IsNullOrWhiteSpace(_options.ClientId) || string.IsNullOrWhiteSpace(_options.ClientSecret))
+            {
+                throw new OAuthConfigurationException();
+            }
+
             // get a new token;
             var client = _httpClientFactory.CreateClient(PureCloudConstants.PureCloudAuthClientName);
 
@@ -44,31 +56,40 @@ public class TokenService : ITokenService
             client.DefaultRequestHeaders.Accept.Clear();
             client.DefaultRequestHeaders.Accept.Add(new MediaTypeWithQualityHeaderValue("application/json"));
 
-            var data = new List<KeyValuePair<string, string>>();
+            var data = new Dictionary<string, string>();
 
             if (_options.Scopes is not null && _options.Scopes.Count > 0)
             {
-                data.Add(new KeyValuePair<string, string>("scope", string.Join(' ', _options.Scopes)));
+                data.Add("scope", string.Join(' ', _options.Scopes));
             }
 
             if (!string.IsNullOrEmpty(_options.AuthorizationCode))
             {
-                data.Add(new KeyValuePair<string, string>("grant_type", "authorization_code"));
-                data.Add(new KeyValuePair<string, string>("code", _options.AuthorizationCode));
+                data.Add("grant_type", "authorization_code");
+                data.Add("code", _options.AuthorizationCode);
             }
             else
             {
-                data.Add(new KeyValuePair<string, string>("grant_type", "client_credentials"));
+                data.Add("grant_type", "client_credentials");
             }
 
             if (!string.IsNullOrEmpty(_options.RedirectUri))
             {
-                data.Add(new KeyValuePair<string, string>("redirect_uri", _options.RedirectUri));
+                data.Add("redirect_uri", _options.RedirectUri);
             }
 
             var response = await client.PostAsync("/oauth/token", new FormUrlEncodedContent(data));
 
-            var responseContent = await response.Content.ReadFromJsonAsync<AuthTokenInfo>();
+            if (!response.IsSuccessStatusCode)
+            {
+                await _tokenStore.RemoveAsync(TokenType.AccessToken);
+
+                var errorContent = await response.Content.ReadAsStringAsync();
+
+                throw new OAuthException($"Token request failed with status code {response.StatusCode}. Response: {errorContent}");
+            }
+
+            var responseContent = await response.Content.ReadFromJsonAsync<AuthTokenInfo>(_serializerOptions);
 
             accessToken = responseContent?.AccessToken;
 
@@ -102,29 +123,39 @@ public class TokenService : ITokenService
             client.DefaultRequestHeaders.Accept.Clear();
             client.DefaultRequestHeaders.Accept.Add(new MediaTypeWithQualityHeaderValue("application/json"));
 
-            var data = new List<KeyValuePair<string, string>>()
+            var data = new Dictionary<string, string>()
             {
-                new KeyValuePair<string, string>("grant_type", "refresh_token"),
+                {"grant_type", "refresh_token" },
+                {"refresh_token", refreshToken },
             };
 
             if (_options.Scopes is not null && _options.Scopes.Count > 0)
             {
-                data.Add(new KeyValuePair<string, string>("scope", string.Join(' ', _options.Scopes)));
+                data.Add("scope", string.Join(' ', _options.Scopes));
             }
 
             if (!string.IsNullOrEmpty(_options.AuthorizationCode))
             {
-                data.Add(new KeyValuePair<string, string>("code", _options.AuthorizationCode));
+                data.Add("code", _options.AuthorizationCode);
             }
 
             if (!string.IsNullOrEmpty(_options.RedirectUri))
             {
-                data.Add(new KeyValuePair<string, string>("redirect_uri", _options.RedirectUri));
+                data.Add("redirect_uri", _options.RedirectUri);
             }
 
             var response = await client.PostAsync("/oauth/token", new FormUrlEncodedContent(data));
 
-            var responseContent = await response.Content.ReadFromJsonAsync<AuthTokenInfo>();
+            if (!response.IsSuccessStatusCode)
+            {
+                await _tokenStore.RemoveAsync(TokenType.RefreshToken);
+
+                var errorContent = await response.Content.ReadAsStringAsync();
+
+                throw new OAuthException($"Refresh token request failed with status code {response.StatusCode}. Response: {errorContent}");
+            }
+
+            var responseContent = await response.Content.ReadFromJsonAsync<AuthTokenInfo>(_serializerOptions);
 
             if (!string.IsNullOrEmpty(responseContent?.AccessToken))
             {

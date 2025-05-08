@@ -1,9 +1,6 @@
-using System.Text;
-using System.Text.Json.Serialization;
-
 namespace PureCloud.Client.Models;
 
-public partial class ConversationCallEventTopicCallMediaParticipant
+public sealed class ConversationCallEventTopicCallMediaParticipant
 {
     /// <summary>
     /// Gets or Sets State

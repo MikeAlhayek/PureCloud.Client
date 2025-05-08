@@ -23,6 +23,8 @@ public sealed class SubscriptionBuilder
     /// <exception cref="InvalidOperationException"></exception>
     public SubscriptionBuilder Add(string topicTemplate, params object[] ids)
     {
+        ArgumentNullException.ThrowIfNull(topicTemplate);
+
         if (!PureCloudConstants.TopicTemplates.TryGetValue(topicTemplate, out var topicType))
         {
             throw new InvalidOperationException($"The topic template '{topicTemplate}' is invalid. Valid templates can be found in {nameof(PureCloudConstants)}.{nameof(PureCloudConstants.TopicTemplates)}");

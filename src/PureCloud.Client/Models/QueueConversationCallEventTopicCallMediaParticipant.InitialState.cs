@@ -88,5 +88,5 @@ public enum QueueConversationEventInitialStateEnum
     /// Enum None for "none"
     /// </summary>
     [EnumMember(Value = "none")]
-    None
+    None,
 }

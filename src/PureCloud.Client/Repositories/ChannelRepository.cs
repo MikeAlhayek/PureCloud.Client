@@ -33,15 +33,9 @@ public class ChannelRepository : IChannelRepository
 
     public async Task<ChannelEntityListing> ListAsync(bool? includeChannels = null, CancellationToken cancellationToken = default)
     {
-
         var client = _httpClientFactory.CreateClient(PureCloudConstants.PureCloudClientName);
 
-        var uri = "api/v2/notifications/channels";
-
-        if (includeChannels.HasValue)
-        {
-            uri += "?includeChannels=" + UriHelper.ParameterToString(includeChannels.Value);
-        }
+        var uri = GetNotificationChannelsUri(includeChannels);
 
         var response = await client.GetAsync(uri, cancellationToken);
 
@@ -92,6 +86,16 @@ public class ChannelRepository : IChannelRepository
         response.EnsureSuccessStatusCode();
 
         return await response.Content.ReadFromJsonAsync<AvailableTopicEntityListing>(_options.JsonSerializerOptions, cancellationToken);
+    }
+
+    private static string GetNotificationChannelsUri(bool? includeChannels)
+    {
+        if (includeChannels.HasValue)
+        {
+            return "api/v2/notifications/channels?includeChannels=" + UriHelper.ParameterToString(includeChannels.Value);
+        }
+
+        return "api/v2/notifications/channels";
     }
 
     #region Subscriptions
