@@ -3,7 +3,7 @@ using Microsoft.Extensions.Options;
 using PureCloud.Client.Json;
 using PureCloud.Client.Repositories;
 
-namespace PureCloud.Client.Extensions.Notifications;
+namespace PureCloud.Client.Notifications;
 
 public class NotificationClientFactory : INotificationClientFactory
 {

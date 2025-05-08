@@ -1,4 +1,4 @@
-namespace PureCloud.Client.Extensions.Notifications;
+namespace PureCloud.Client.Notifications;
 
 public sealed class ChannelMetadataNotification
 {

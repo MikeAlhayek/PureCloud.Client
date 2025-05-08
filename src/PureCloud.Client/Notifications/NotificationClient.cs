@@ -8,7 +8,7 @@ using PureCloud.Client.Json;
 using PureCloud.Client.Models;
 using PureCloud.Client.Repositories;
 
-namespace PureCloud.Client.Extensions.Notifications;
+namespace PureCloud.Client.Notifications;
 
 public class NotificationClient : IAsyncDisposable
 {

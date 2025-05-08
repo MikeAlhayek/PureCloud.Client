@@ -7,13 +7,13 @@
 
   <ItemGroup>
     <Compile Remove="Apis\**" />
-    <Compile Remove="Extensions\Notifications\**" />
+    <Compile Remove="Notifications\**" />
     <Compile Remove="Models\**" />
     <EmbeddedResource Remove="Apis\**" />
-    <EmbeddedResource Remove="Extensions\Notifications\**" />
+    <EmbeddedResource Remove="Notifications\**" />
     <EmbeddedResource Remove="Models\**" />
     <None Remove="Apis\**" />
-    <None Remove="Extensions\Notifications\**" />
+    <None Remove="Notifications\**" />
     <None Remove="Models\**" />
   </ItemGroup>
 
@@ -27,14 +27,6 @@
   </ItemGroup>
 
   <ItemGroup>
-    <Compile Include="Extensions\Notifications\ChannelMetadataNotification.cs" />
-    <Compile Include="Extensions\Notifications\INotificationClientFactory.cs" />
-    <Compile Include="Extensions\Notifications\INotificationData.cs" />
-    <Compile Include="Extensions\Notifications\Metadata.cs" />
-    <Compile Include="Extensions\Notifications\NotificationClientFactory.cs" />
-    <Compile Include="Extensions\Notifications\NotificationData.cs" />
-    <Compile Include="Extensions\Notifications\NotificationClient.cs" />
-    <Compile Include="Extensions\Notifications\SubscriptionBuilder.cs" />
     <Compile Include="Models\AcdEndDetailEventTopicAcdEndEvent.cs" />
     <Compile Include="Models\AcdEndDetailEventTopicAcdEndEvent.DisconnectType.cs" />
     <Compile Include="Models\AcdEndDetailEventTopicAcdEndEvent.UsedRouting.cs" />
@@ -619,6 +611,14 @@
     <Compile Include="Models\WorkPlanBidRanks.cs" />
     <Compile Include="Models\WrapupPromptEnum.cs" />
     <Compile Include="Models\WritableDivision.cs" />
+    <Compile Include="Notifications\ChannelMetadataNotification.cs" />
+    <Compile Include="Notifications\INotificationClientFactory.cs" />
+    <Compile Include="Notifications\INotificationData.cs" />
+    <Compile Include="Notifications\Metadata.cs" />
+    <Compile Include="Notifications\NotificationClient.cs" />
+    <Compile Include="Notifications\NotificationClientFactory.cs" />
+    <Compile Include="Notifications\NotificationData.cs" />
+    <Compile Include="Notifications\SubscriptionBuilder.cs" />
   </ItemGroup>
 
   <ItemGroup>

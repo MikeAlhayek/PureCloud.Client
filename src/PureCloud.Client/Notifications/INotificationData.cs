@@ -1,4 +1,4 @@
-namespace PureCloud.Client.Extensions.Notifications;
+namespace PureCloud.Client.Notifications;
 
 ///<Summary>
 /// Interface for the Notification (i.e. topic) Data received on the Notification Channel (WebSocket)

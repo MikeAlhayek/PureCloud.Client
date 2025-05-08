@@ -1,3 +1,5 @@
+using PureCloud.Client.Notifications;
+
 namespace PureCloud.Client.Extensions.Notifications;
 
 public static class NotificationHandlerExtensions
