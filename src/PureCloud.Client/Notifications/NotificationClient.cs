@@ -176,29 +176,46 @@ public class NotificationClient : IAsyncDisposable
             try
             {
                 WebSocketReceiveResult result;
-                using var messageBuffer = new MemoryStream();
+                using var messageStream = new MemoryStream();
 
                 do
                 {
                     result = await webSocket.ReceiveAsync(new ArraySegment<byte>(buffer), _cancellationToken);
-                    messageBuffer.Write(buffer, 0, result.Count);
+                    messageStream.Write(buffer, 0, result.Count);
                 } while (!result.EndOfMessage);
 
                 if (result.MessageType == WebSocketMessageType.Close)
                 {
                     _logger.LogWarning("WebSocket closed: {Status} - {Description}", result.CloseStatus, result.CloseStatusDescription);
-                    await ConnectAsync(); // try to reconnect
+
+                    // Try to reconnect
+                    await ConnectAsync();
+
                     break;
                 }
 
-                var message = Encoding.UTF8.GetString(messageBuffer.ToArray());
+                string message;
+
+                if (messageStream.TryGetBuffer(out var messageBuffer))
+                {
+                    message = Encoding.UTF8.GetString(messageBuffer);
+                }
+                else
+                {
+                    message = Encoding.UTF8.GetString(messageStream.ToArray());
+                }
+
                 _logger.LogDebug("Received message: {Message}", message);
+
                 await _messageChannel.Writer.WriteAsync(message, _cancellationToken);
             }
             catch (Exception ex)
             {
                 _logger.LogError(ex, "Error while receiving from WebSocket.");
-                await ConnectAsync(); // reconnect on error
+
+                // Try to reconnect
+                await ConnectAsync();
+
                 break;
             }
         }
@@ -235,6 +252,8 @@ public class NotificationClient : IAsyncDisposable
 
                 return;
             }
+
+            _logger.LogDebug("Received notification for topic: {TopicName}", baseData.TopicName);
 
             var typedNotificationType = typeof(NotificationData<>).MakeGenericType(targetType);
             var data = (INotificationData)JsonSerializer.Deserialize(message, typedNotificationType, _options.JsonSerializerOptions);
@@ -322,7 +341,7 @@ public class NotificationClient : IAsyncDisposable
         {
             if (_channel is not null)
             {
-                _logger.LogDebug("Channel already exists, sending the topics tp the server.");
+                _logger.LogDebug("Channel already exists, sending the '{TopicId}' topic to the server.", topic);
 
                 await _channelRepository.AddSubscriptionTopicsAsync(_channel.Id, [new ChannelTopic { Id = topic }]);
             }
@@ -348,6 +367,8 @@ public class NotificationClient : IAsyncDisposable
 
         if (_channel is not null)
         {
+            _logger.LogDebug("Channel already exists, removing the '{TopicId}' topic from the server.", topic);
+
             await _channelRepository.UpdateSubscriptionTopicsAsync(_channel.Id, subscriptions.Entities);
         }
 
@@ -356,7 +377,12 @@ public class NotificationClient : IAsyncDisposable
 
     public async Task RemoveAllSubscriptionsAsync()
     {
-        await _channelRepository.DeleteAsync(_channel.Id);
+        if (_channel is not null)
+        {
+            _logger.LogDebug("Channel already exists, removing all topics from the server.");
+
+            await _channelRepository.DeleteAsync(_channel.Id);
+        }
 
         _typeMap.Clear();
     }

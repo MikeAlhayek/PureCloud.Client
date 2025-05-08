@@ -45,7 +45,6 @@ public class TokenService : ITokenService
             // get a new token;
             var client = _httpClientFactory.CreateClient(PureCloudConstants.PureCloudAuthClientName);
 
-            client.DefaultRequestHeaders.TryAddWithoutValidation("purecloud-sdk", "231.1.0");
             client.DefaultRequestHeaders.Accept.Add(new MediaTypeWithQualityHeaderValue("application/json"));
 
             // Encoding.GetEncoding("ISO-8859-1")
@@ -109,10 +108,8 @@ public class TokenService : ITokenService
         if (!string.IsNullOrEmpty(refreshToken))
         {
             // get a new token;
-            // get a new token;
             var client = _httpClientFactory.CreateClient(PureCloudConstants.PureCloudAuthClientName);
 
-            client.DefaultRequestHeaders.TryAddWithoutValidation("purecloud-sdk", "231.1.0");
             client.DefaultRequestHeaders.Accept.Add(new MediaTypeWithQualityHeaderValue("application/json"));
 
             // Encoding.GetEncoding("ISO-8859-1")

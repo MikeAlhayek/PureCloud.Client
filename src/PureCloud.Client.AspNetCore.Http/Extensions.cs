@@ -13,4 +13,13 @@ public static class Extensions
 
         return services;
     }
+
+    public static IServiceCollection AddIdentityTokenStore<TUser>(this IServiceCollection services)
+        where TUser : class
+    {
+        services.RemoveAll<ITokenStore>();
+        services.AddScoped<ITokenStore, IdentityTokenStore<TUser>>();
+
+        return services;
+    }
 }

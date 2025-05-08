@@ -1,11 +1,5 @@
 namespace PureCloud.Client.Tokens;
 
-public enum TokenType
-{
-    AccessToken,
-    RefreshToken,
-}
-
 public interface ITokenStore
 {
     ValueTask<string> GetAsync(TokenType type);

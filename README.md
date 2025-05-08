@@ -27,7 +27,22 @@ services
 
 ### ASP.NET Core Integration
 
-If you're using **ASP.NET Core**, you can add in-memory token store by installing the `PureCloud.Client.AspNetCore.Http` package:
+If you're working with **ASP.NET Core**, you can integrate an identity token store or a simple in-memory token store by installing the `PureCloud.Client.AspNetCore.Http` package.
+
+#### Option 1: Identity Token Store (Recommended for Production)
+
+Use the identity-based token store when you want to persist tokens securely using your existing identity system:
+
+```csharp
+services
+    .AddPureCloudCore()
+    .AddPureCloudRepositories()
+    .AddIdentityTokenStore<IUser>();
+```
+
+#### Option 2: In-Memory Token Store (For Development Only)
+
+For development or debugging purposes, you can use an in-memory token store:
 
 ```csharp
 services
@@ -36,7 +51,7 @@ services
     .AddInMemoryTokenStore();
 ```
 
-Please note: `AddInMemoryTokenStore` is not recommended for production. It is recommended to implement your own store.
+> **Note:** `AddInMemoryTokenStore` is not suitable for production environments. For production use, it is strongly recommended to implement a custom token store tailored to your application's needs.
 
 ---
 

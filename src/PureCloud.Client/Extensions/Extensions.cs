@@ -2,6 +2,7 @@ using System.Text.RegularExpressions;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.DependencyInjection.Extensions;
 using Microsoft.Extensions.Options;
+using PureCloud.Client.Extensions;
 using PureCloud.Client.Http;
 using PureCloud.Client.Json;
 using PureCloud.Client.Models.Settings;
@@ -34,7 +35,7 @@ public static class Extensions
 
                 var host = options.Region.GetDescription();
                 if (!string.IsNullOrEmpty(host))
-                {
+                { 
                     var regex = new Regex(@"://(api)\.");
                     var authUrl = regex.Replace(host, "://login.");
                     client.BaseAddress = new Uri(authUrl);

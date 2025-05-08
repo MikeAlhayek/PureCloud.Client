@@ -1,5 +1,4 @@
 using System.ComponentModel;
-using System.Reflection;
 
 namespace PureCloud.Client;
 
@@ -97,30 +96,5 @@ public enum PureCloudRegionHosts
     ///</Summary>
     [Description("https://api.euc2.pure.cloud")]
     eu_central_2,
-
-}
-
-///<Summary>
-/// Extension Methods for Enumerations provided through a static class (singleton)
-///</Summary>
-public static class EnumExtensionMethods
-{
-    ///<Summary>
-    /// Extension for GetDescription
-    ///</Summary>
-    public static string GetDescription(this Enum GenericEnum)
-    {
-        Type genericEnumType = GenericEnum.GetType();
-        MemberInfo[] memberInfo = genericEnumType.GetMember(GenericEnum.ToString());
-        if ((memberInfo != null && memberInfo.Length > 0))
-        {
-            var _Attribs = memberInfo[0].GetCustomAttributes(typeof(System.ComponentModel.DescriptionAttribute), false);
-            if ((_Attribs != null && _Attribs.Count() > 0))
-            {
-                return ((System.ComponentModel.DescriptionAttribute)_Attribs.ElementAt(0)).Description;
-            }
-        }
-        return GenericEnum.ToString();
-    }
 
 }
