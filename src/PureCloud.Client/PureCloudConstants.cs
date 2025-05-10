@@ -1,5 +1,7 @@
 using PureCloud.Client.Models;
+using PureCloud.Client.Models.Conversations;
 using PureCloud.Client.Models.Topics;
+using PureCloud.Client.Models.Users;
 
 namespace PureCloud.Client;
 

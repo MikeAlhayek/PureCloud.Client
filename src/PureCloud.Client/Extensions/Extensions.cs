@@ -2,16 +2,16 @@ using System.Text.RegularExpressions;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.DependencyInjection.Extensions;
 using Microsoft.Extensions.Options;
-using PureCloud.Client.Extensions;
+using PureCloud.Client.Apis;
+using PureCloud.Client.Contracts;
 using PureCloud.Client.Http;
 using PureCloud.Client.Json;
 using PureCloud.Client.Models.Settings;
 using PureCloud.Client.Notifications;
-using PureCloud.Client.Repositories;
 using PureCloud.Client.Services;
 using PureCloud.Client.Tokens;
 
-namespace PureCloud.Client.DependencyInjection;
+namespace PureCloud.Client.Extensions;
 
 public static class Extensions
 {
@@ -20,6 +20,8 @@ public static class Extensions
         services
             .AddLogging()
             .AddOptions<PureCloudJsonSerializerOptions>();
+
+        services.AddOptions<NotificationClientResilienceOptions>();
 
         services.AddTransient<IConfigureOptions<PureCloudOptions>, PureCloudOptionsConfigurations>();
 
@@ -35,7 +37,7 @@ public static class Extensions
 
                 var host = options.Region.GetDescription();
                 if (!string.IsNullOrEmpty(host))
-                { 
+                {
                     var regex = new Regex(@"://(api)\.");
                     var authUrl = regex.Replace(host, "://login.");
                     client.BaseAddress = new Uri(authUrl);
@@ -55,15 +57,17 @@ public static class Extensions
         return services;
     }
 
-    public static IServiceCollection AddPureCloudRepositories(this IServiceCollection services)
+    public static IServiceCollection AddPureCloudApis(this IServiceCollection services)
     {
         services.TryAddScoped<INotificationClientFactory, NotificationClientFactory>();
 
-        services.AddTransient<NotificationClient>();
+        services.TryAddTransient<NotificationClient>();
 
-        services
-            .AddScoped<IUserRepository, UserRepository>()
-            .TryAddScoped<IChannelRepository, ChannelRepository>();
+        services.TryAddScoped<IUserApi, UserApi>();
+
+        services.TryAddScoped<IChannelsApi, ChannelsApi>();
+
+        services.TryAddScoped<IConversationsApi, ConversationsApi>();
 
         return services;
     }

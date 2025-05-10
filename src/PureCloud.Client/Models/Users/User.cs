@@ -1,5 +1,6 @@
 using PureCloud.Client.Models.Groups;
 using PureCloud.Client.Models.Locations;
+using PureCloud.Client.Models.Teams;
 
 namespace PureCloud.Client.Models.Users;
 

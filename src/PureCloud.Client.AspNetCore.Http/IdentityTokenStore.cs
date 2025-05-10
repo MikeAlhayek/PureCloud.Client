@@ -1,3 +1,4 @@
+using System.Security.Claims;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Identity;
 using PureCloud.Client.Extensions;
@@ -10,6 +11,11 @@ public class IdentityTokenStore<TUser> : ITokenStore
 {
     private readonly IHttpContextAccessor _httpContextAccessor;
     private readonly UserManager<TUser> _userManager;
+
+    private SemaphoreSlim _semaphore = new SemaphoreSlim(1);
+
+    private TUser _user;
+
 
     public IdentityTokenStore(
         IHttpContextAccessor httpContextAccessor,
@@ -28,14 +34,14 @@ public class IdentityTokenStore<TUser> : ITokenStore
             return null;
         }
 
-        var user = await _userManager.GetUserAsync(principal);
+        await EnsureUserLoadedAsync(principal);
 
-        if (user is null)
+        if (_user is null)
         {
             return null;
         }
 
-        return await _userManager.GetAuthenticationTokenAsync(user, GenesysConstants.ProviderName, tokenType.GetDescription());
+        return await _userManager.GetAuthenticationTokenAsync(_user, GenesysConstants.ProviderName, tokenType.GetDescription());
     }
 
     public async ValueTask<bool> RemoveAllAsync()
@@ -47,9 +53,9 @@ public class IdentityTokenStore<TUser> : ITokenStore
             return false;
         }
 
-        var user = await _userManager.GetUserAsync(principal);
+        await EnsureUserLoadedAsync(principal);
 
-        if (user is null)
+        if (_user is null)
         {
             return false;
         }
@@ -60,7 +66,7 @@ public class IdentityTokenStore<TUser> : ITokenStore
         {
             var tokenName = tokenType.GetDescription();
 
-            var result = await _userManager.RemoveAuthenticationTokenAsync(user, GenesysConstants.ProviderName, tokenName);
+            var result = await _userManager.RemoveAuthenticationTokenAsync(_user, GenesysConstants.ProviderName, tokenName);
 
             if (result.Succeeded)
             {
@@ -80,14 +86,14 @@ public class IdentityTokenStore<TUser> : ITokenStore
             return false;
         }
 
-        var user = await _userManager.GetUserAsync(principal);
+        await EnsureUserLoadedAsync(principal);
 
-        if (user is null)
+        if (_user is null)
         {
             return false;
         }
 
-        var result = await _userManager.RemoveAuthenticationTokenAsync(user, GenesysConstants.ProviderName, tokenType.GetDescription());
+        var result = await _userManager.RemoveAuthenticationTokenAsync(_user, GenesysConstants.ProviderName, tokenType.GetDescription());
 
         return result.Succeeded;
     }
@@ -103,15 +109,32 @@ public class IdentityTokenStore<TUser> : ITokenStore
             return false;
         }
 
-        var user = await _userManager.GetUserAsync(principal);
+        await EnsureUserLoadedAsync(principal);
 
-        if (user is null)
+        if (_user is null)
         {
             return false;
         }
 
-        var result = await _userManager.SetAuthenticationTokenAsync(user, GenesysConstants.ProviderName, tokenType.GetDescription(), value);
+        var result = await _userManager.SetAuthenticationTokenAsync(_user, GenesysConstants.ProviderName, tokenType.GetDescription(), value);
 
         return result.Succeeded;
+    }
+
+    private async Task EnsureUserLoadedAsync(ClaimsPrincipal principal)
+    {
+        if (_user is null)
+        {
+            await _semaphore.WaitAsync();
+
+            try
+            {
+                _user ??= await _userManager.GetUserAsync(principal);
+            }
+            finally
+            {
+                _semaphore.Release();
+            }
+        }
     }
 }

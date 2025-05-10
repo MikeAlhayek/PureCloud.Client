@@ -1,6 +1,6 @@
 using PureCloud.Client.Notifications;
 
-namespace PureCloud.Client.Extensions.Notifications;
+namespace PureCloud.Client.Extensions;
 
 public static class NotificationHandlerExtensions
 {

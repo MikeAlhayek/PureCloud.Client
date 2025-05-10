@@ -1,7 +1,8 @@
 using System.Runtime.Serialization;
 using System.Text;
 using System.Text.Json.Serialization;
-using static PureCloud.Client.Models.ConversationCallEventTopicCallMediaParticipant;
+using PureCloud.Client.Models.Conversations;
+using static PureCloud.Client.Models.Conversations.ConversationCallEventTopicCallMediaParticipant;
 
 namespace PureCloud.Client.Models;
 

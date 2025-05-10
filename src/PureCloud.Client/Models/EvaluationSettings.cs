@@ -1,164 +1,29 @@
-using System.Text;
-using System.Text.Json.Serialization;
-
 namespace PureCloud.Client.Models;
 
-/// <summary>
-/// EvaluationSettings
-/// </summary>
 
-public partial class EvaluationSettings : IEquatable<EvaluationSettings>
+public sealed class EvaluationSettings
 {
-    /// <summary>
-    /// Initializes a new instance of the <see cref="EvaluationSettings" /> class.
-    /// </summary>
-    /// <param name="RevisionsEnabled">Whether revisions are allowed for evaluations. When enabled, rescoring creates a new version of the evaluation and retracts the existing evaluation version. Does not apply for calibration evaluations..</param>
-    /// <param name="DisputesEnabled">Whether disputes are allowed for evaluations. Does not apply for calibration evaluations..</param>
-    /// <param name="DisputesAllowedPerEvaluation">The maximum number of disputes allowed for an evaluation..</param>
-    /// <param name="DisputesAssignees">A list of assignees responsible for handling each dispute. This list size needs to be equal to disputesAllowedPerEvaluation..</param>
-    public EvaluationSettings(bool? RevisionsEnabled = null, bool? DisputesEnabled = null, int? DisputesAllowedPerEvaluation = null, List<EvaluationSettingsAssignee> DisputesAssignees = null)
-    {
-        this.RevisionsEnabled = RevisionsEnabled;
-        this.DisputesEnabled = DisputesEnabled;
-        this.DisputesAllowedPerEvaluation = DisputesAllowedPerEvaluation;
-        this.DisputesAssignees = DisputesAssignees;
-
-    }
-
-
-
     /// <summary>
     /// Whether revisions are allowed for evaluations. When enabled, rescoring creates a new version of the evaluation and retracts the existing evaluation version. Does not apply for calibration evaluations.
     /// </summary>
     /// <value>Whether revisions are allowed for evaluations. When enabled, rescoring creates a new version of the evaluation and retracts the existing evaluation version. Does not apply for calibration evaluations.</value>
-    [JsonPropertyName("revisionsEnabled")]
     public bool? RevisionsEnabled { get; set; }
-
-
 
     /// <summary>
     /// Whether disputes are allowed for evaluations. Does not apply for calibration evaluations.
     /// </summary>
     /// <value>Whether disputes are allowed for evaluations. Does not apply for calibration evaluations.</value>
-    [JsonPropertyName("disputesEnabled")]
     public bool? DisputesEnabled { get; set; }
-
-
 
     /// <summary>
     /// The maximum number of disputes allowed for an evaluation.
     /// </summary>
     /// <value>The maximum number of disputes allowed for an evaluation.</value>
-    [JsonPropertyName("disputesAllowedPerEvaluation")]
     public int? DisputesAllowedPerEvaluation { get; set; }
-
-
 
     /// <summary>
     /// A list of assignees responsible for handling each dispute. This list size needs to be equal to disputesAllowedPerEvaluation.
     /// </summary>
     /// <value>A list of assignees responsible for handling each dispute. This list size needs to be equal to disputesAllowedPerEvaluation.</value>
-    [JsonPropertyName("disputesAssignees")]
-    public List<EvaluationSettingsAssignee> DisputesAssignees { get; set; }
-
-
-    /// <summary>
-    /// Returns the string presentation of the object
-    /// </summary>
-    /// <returns>String presentation of the object</returns>
-    public override string ToString()
-    {
-        var sb = new StringBuilder();
-        sb.Append("class EvaluationSettings {\n");
-
-        sb.Append("  RevisionsEnabled: ").Append(RevisionsEnabled).Append("\n");
-        sb.Append("  DisputesEnabled: ").Append(DisputesEnabled).Append("\n");
-        sb.Append("  DisputesAllowedPerEvaluation: ").Append(DisputesAllowedPerEvaluation).Append("\n");
-        sb.Append("  DisputesAssignees: ").Append(DisputesAssignees).Append("\n");
-        sb.Append("}\n");
-        return sb.ToString();
-    }
-
-
-    /// <summary>
-    /// Returns true if objects are equal
-    /// </summary>
-    /// <param name="obj">Object to be compared</param>
-    /// <returns>Boolean</returns>
-    public override bool Equals(object obj)
-    {
-        // credit: http://stackoverflow.com/a/10454552/677735
-        return Equals(obj as EvaluationSettings);
-    }
-
-    /// <summary>
-    /// Returns true if EvaluationSettings instances are equal
-    /// </summary>
-    /// <param name="other">Instance of EvaluationSettings to be compared</param>
-    /// <returns>Boolean</returns>
-    public bool Equals(EvaluationSettings other)
-    {
-        // credit: http://stackoverflow.com/a/10454552/677735
-        if (other == null)
-        {
-            return false;
-        }
-
-        return true &&
-            (
-                RevisionsEnabled == other.RevisionsEnabled ||
-                RevisionsEnabled != null &&
-                RevisionsEnabled.Equals(other.RevisionsEnabled)
-            ) &&
-            (
-                DisputesEnabled == other.DisputesEnabled ||
-                DisputesEnabled != null &&
-                DisputesEnabled.Equals(other.DisputesEnabled)
-            ) &&
-            (
-                DisputesAllowedPerEvaluation == other.DisputesAllowedPerEvaluation ||
-                DisputesAllowedPerEvaluation != null &&
-                DisputesAllowedPerEvaluation.Equals(other.DisputesAllowedPerEvaluation)
-            ) &&
-            (
-                DisputesAssignees == other.DisputesAssignees ||
-                DisputesAssignees != null &&
-                DisputesAssignees.SequenceEqual(other.DisputesAssignees)
-            );
-    }
-
-    /// <summary>
-    /// Gets the hash code
-    /// </summary>
-    /// <returns>Hash code</returns>
-    public override int GetHashCode()
-    {
-        // credit: http://stackoverflow.com/a/263416/677735
-        unchecked // Overflow is fine, just wrap
-        {
-            int hash = 41;
-            // Suitable nullity checks etc, of course :)
-            if (RevisionsEnabled != null)
-            {
-                hash = hash * 59 + RevisionsEnabled.GetHashCode();
-            }
-
-            if (DisputesEnabled != null)
-            {
-                hash = hash * 59 + DisputesEnabled.GetHashCode();
-            }
-
-            if (DisputesAllowedPerEvaluation != null)
-            {
-                hash = hash * 59 + DisputesAllowedPerEvaluation.GetHashCode();
-            }
-
-            if (DisputesAssignees != null)
-            {
-                hash = hash * 59 + DisputesAssignees.GetHashCode();
-            }
-
-            return hash;
-        }
-    }
+    public IEnumerable<EvaluationSettingsAssignee> DisputesAssignees { get; set; }
 }

@@ -1,6 +1,4 @@
-using PureCloud.Client.Models.Users;
-
-namespace PureCloud.Client.Models;
+namespace PureCloud.Client.Models.Users;
 
 public sealed class UserStation
 {

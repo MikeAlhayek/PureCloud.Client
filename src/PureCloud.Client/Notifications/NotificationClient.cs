@@ -4,28 +4,27 @@ using System.Text;
 using System.Text.Json;
 using Microsoft.Extensions.Logging;
 using Microsoft.Extensions.Options;
+using PureCloud.Client.Contracts;
 using PureCloud.Client.Json;
-using PureCloud.Client.Models;
-using PureCloud.Client.Repositories;
+using PureCloud.Client.Models.Channels;
 
 namespace PureCloud.Client.Notifications;
 
-public class NotificationClient : IAsyncDisposable
+public sealed class NotificationClient : IAsyncDisposable
 {
     private readonly ConcurrentDictionary<string, Type> _typeMap = new(StringComparer.OrdinalIgnoreCase);
-    private readonly System.Threading.Channels.Channel<string> _messageChannel = System.Threading.Channels.Channel.CreateUnbounded<string>();
 
-    private readonly int _reconnectDelaySeconds = 5;
-    private readonly int _maxReconnectAttempts = 10;
-
-    private readonly IChannelRepository _channelRepository;
+    private readonly IChannelsApi _channelRepository;
+    private readonly NotificationClientResilienceOptions _resilienceOptions;
     private readonly PureCloudJsonSerializerOptions _options;
     private readonly ILogger _logger;
-
     private readonly object _webSocketLock = new();
+
     private ClientWebSocket _webSocket;
     private Channel _channel;
     private CancellationToken _cancellationToken;
+    private System.Threading.Channels.Channel<string> _messageChannel;
+
     private int _reconnectAttempts;
 
     private Task _processingTask;
@@ -34,23 +33,31 @@ public class NotificationClient : IAsyncDisposable
 
     public IList<Func<INotificationData, Task>> NotificationHandlers = [];
 
-    internal NotificationClient(IChannelRepository channelRepository, PureCloudJsonSerializerOptions options, ILogger logger)
+    internal NotificationClient(
+        IChannelsApi channelRepository,
+        PureCloudJsonSerializerOptions options,
+        NotificationClientResilienceOptions resilienceOptions,
+        ILogger logger)
     {
         ArgumentNullException.ThrowIfNull(channelRepository);
         ArgumentNullException.ThrowIfNull(options);
+        ArgumentNullException.ThrowIfNull(resilienceOptions);
         ArgumentNullException.ThrowIfNull(logger);
 
         _channelRepository = channelRepository;
         _options = options;
+        _resilienceOptions = resilienceOptions;
         _logger = logger;
     }
 
     public NotificationClient(
-        IChannelRepository channelRepository,
+        IChannelsApi channelRepository,
         IOptions<PureCloudJsonSerializerOptions> options,
+        IOptions<NotificationClientResilienceOptions> resilienceOptions,
         ILogger<NotificationClient> logger)
     {
         _channelRepository = channelRepository;
+        _resilienceOptions = resilienceOptions.Value;
         _options = options.Value;
         _logger = logger;
     }
@@ -69,7 +76,14 @@ public class NotificationClient : IAsyncDisposable
             throw new InvalidOperationException("Unable to create a communication channel. Perhaps the user is not authenticated.");
         }
 
-        if (_typeMap.Count > 0)
+        if (_messageChannel?.Writer is not null)
+        {
+            _messageChannel.Writer.TryComplete();
+        }
+
+        _messageChannel = System.Threading.Channels.Channel.CreateUnbounded<string>();
+
+        if (!_typeMap.IsEmpty)
         {
             _logger.LogDebug("There are initial events sending them to the server.");
 
@@ -99,7 +113,7 @@ public class NotificationClient : IAsyncDisposable
         }
 
         while (!_cancellationToken.IsCancellationRequested &&
-               _reconnectAttempts < _maxReconnectAttempts &&
+               _reconnectAttempts < _resilienceOptions.MaxReconnectAttempts &&
                _webSocket is not null)
         {
             try
@@ -129,7 +143,7 @@ public class NotificationClient : IAsyncDisposable
                     _logger.LogDebug("WebSocket was not established. Trying to reconnect.");
                     _reconnectAttempts++;
 
-                    if (_reconnectAttempts < _maxReconnectAttempts)
+                    if (_reconnectAttempts < _resilienceOptions.MaxReconnectAttempts)
                     {
                         await ConnectAsync();
                     }
@@ -140,13 +154,13 @@ public class NotificationClient : IAsyncDisposable
                 _logger.LogWarning(ex, "WebSocket connection attempt {AttemptNumber} failed.", _reconnectAttempts);
                 _reconnectAttempts++;
 
-                if (_reconnectAttempts >= _maxReconnectAttempts)
+                if (_reconnectAttempts >= _resilienceOptions.MaxReconnectAttempts)
                 {
                     _logger.LogError("Max reconnect attempts reached. Giving up.");
                     break;
                 }
 
-                await Task.Delay(TimeSpan.FromSeconds(_reconnectDelaySeconds), _cancellationToken);
+                await Task.Delay(TimeSpan.FromSeconds(_resilienceOptions.ReconnectDelaySeconds), _cancellationToken);
             }
         }
     }
@@ -243,12 +257,13 @@ public class NotificationClient : IAsyncDisposable
             if (string.IsNullOrWhiteSpace(baseData?.TopicName))
             {
                 _logger.LogWarning("Message missing TopicName");
+
                 return;
             }
 
             if (!_typeMap.TryGetValue(baseData.TopicName, out var targetType))
             {
-                _logger.LogWarning("Unknown TopicName: {TopicName}", baseData.TopicName);
+                _logger.LogWarning("Unsubscribed event was received by the server TopicName: {TopicName}", baseData.TopicName);
 
                 return;
             }
@@ -256,17 +271,17 @@ public class NotificationClient : IAsyncDisposable
             _logger.LogDebug("Received notification for topic: {TopicName}", baseData.TopicName);
 
             var typedNotificationType = typeof(NotificationData<>).MakeGenericType(targetType);
-            var data = (INotificationData)JsonSerializer.Deserialize(message, typedNotificationType, _options.JsonSerializerOptions);
+            var notificationData = JsonSerializer.Deserialize(message, typedNotificationType, _options.JsonSerializerOptions) as INotificationData;
 
-            if (data != null)
+            if (notificationData is not null)
             {
                 _logger.LogDebug("Raising NotificationReceived for topic {Topic}", baseData.TopicName);
 
-                await Task.WhenAll(NotificationHandlers.Select(handler => handler(data)));
+                await Task.WhenAll(NotificationHandlers.Select(handler => handler(notificationData)));
             }
             else
             {
-                _logger.LogWarning("Deserialized data is null");
+                _logger.LogWarning("Failed to deserialized data coming from the Genesys server.");
             }
         }
         catch (Exception ex)
@@ -280,8 +295,7 @@ public class NotificationClient : IAsyncDisposable
         ArgumentNullException.ThrowIfNull(subscriptions);
 
         var filtered = subscriptions
-            .Where(entry => !entry.Key.Equals("channel.metadata", StringComparison.OrdinalIgnoreCase) &&
-                            !entry.Key.StartsWith("v2.system", StringComparison.OrdinalIgnoreCase));
+            .Where(entry => !entry.Key.StartsWith("v2.system", StringComparison.OrdinalIgnoreCase));
 
         foreach (var topic in filtered)
         {
@@ -293,11 +307,23 @@ public class NotificationClient : IAsyncDisposable
         if (_channel is not null)
         {
             _logger.LogDebug("Channel already exists, sending the topics tp the server.");
-
-            await _channelRepository.AddSubscriptionTopicsAsync(_channel.Id, filtered.Select(entry => new ChannelTopic { Id = entry.Key }));
+            try
+            {
+                await _channelRepository.AddSubscriptionTopicsAsync(_channel.Id, filtered.Select(entry => new ChannelTopic { Id = entry.Key }), false, _cancellationToken);
+            }
+            catch (Exception ex)
+            {
+                _logger.LogError(ex, "Unable to add event subscriptions.");
+            }
         }
     }
 
+    /// <summary>
+    /// Add subscription using topic and deserialized type.
+    /// </summary>
+    /// <typeparam name="T">The topic handler type.</typeparam>
+    /// <param name="topic"></param>
+    /// <returns></returns>
     public Task<bool> AddSubscriptionAsync<T>(string topic)
     {
         ArgumentNullException.ThrowIfNull(topic);
@@ -305,6 +331,13 @@ public class NotificationClient : IAsyncDisposable
         return AddSubscriptionAsync(topic, typeof(T));
     }
 
+    /// <summary>
+    /// Adds subscription using topic-template.
+    /// </summary>
+    /// <param name="topicTemplate">Topic templates can be found in PureCloudConstants.TopicTemplates. They are not topic.</param>
+    /// <param name="ids"></param>
+    /// <returns></returns>
+    /// <exception cref="InvalidOperationException"></exception>
     public Task<bool> AddSubscriptionAsync(string topicTemplate, params object[] ids)
     {
         ArgumentNullException.ThrowIfNull(topicTemplate);
@@ -328,30 +361,6 @@ public class NotificationClient : IAsyncDisposable
         return AddSubscriptionAsync(topic, topicType);
     }
 
-    private async Task<bool> AddSubscriptionAsync(string topic, Type type)
-    {
-        ArgumentNullException.ThrowIfNull(topic);
-
-        if (topic.Equals("channel.metadata", StringComparison.OrdinalIgnoreCase) || topic.StartsWith("v2.system", StringComparison.OrdinalIgnoreCase))
-        {
-            return false;
-        }
-
-        if (_typeMap.TryAdd(topic, type))
-        {
-            if (_channel is not null)
-            {
-                _logger.LogDebug("Channel already exists, sending the '{TopicId}' topic to the server.", topic);
-
-                await _channelRepository.AddSubscriptionTopicsAsync(_channel.Id, [new ChannelTopic { Id = topic }]);
-            }
-
-            return true;
-        }
-
-        return false;
-    }
-
     public async Task RemoveSubscriptionAsync(string topic)
     {
         ArgumentNullException.ThrowIfNull(topic);
@@ -368,8 +377,14 @@ public class NotificationClient : IAsyncDisposable
         if (_channel is not null)
         {
             _logger.LogDebug("Channel already exists, removing the '{TopicId}' topic from the server.", topic);
-
-            await _channelRepository.UpdateSubscriptionTopicsAsync(_channel.Id, subscriptions.Entities);
+            try
+            {
+                await _channelRepository.UpdateSubscriptionTopicsAsync(_channel.Id, subscriptions.Entities, false, _cancellationToken);
+            }
+            catch (Exception ex)
+            {
+                _logger.LogError(ex, "Unable to remove subscriptions.");
+            }
         }
 
         _typeMap.TryRemove(topic, out _);
@@ -381,7 +396,7 @@ public class NotificationClient : IAsyncDisposable
         {
             _logger.LogDebug("Channel already exists, removing all topics from the server.");
 
-            await _channelRepository.DeleteAsync(_channel.Id);
+            await _channelRepository.DeleteAsync(_channel.Id, _cancellationToken);
         }
 
         _typeMap.Clear();
@@ -389,7 +404,10 @@ public class NotificationClient : IAsyncDisposable
 
     public Task PingAsync()
     {
-        EnsureStarted();
+        if (_webSocket == null)
+        {
+            throw new InvalidOperationException($"You must first invoke {nameof(StartAsync)} before making requests.");
+        }
 
         var jsonMessage =
             """
@@ -400,14 +418,6 @@ public class NotificationClient : IAsyncDisposable
         var segment = new ArraySegment<byte>(messageBuffer);
 
         return _webSocket.SendAsync(segment, WebSocketMessageType.Text, true, _cancellationToken);
-    }
-
-    private void EnsureStarted()
-    {
-        if (_webSocket == null)
-        {
-            throw new InvalidOperationException($"You must first invoke {nameof(StartAsync)} before making requests.");
-        }
     }
 
     public async ValueTask DisposeAsync()
@@ -433,5 +443,33 @@ public class NotificationClient : IAsyncDisposable
             }
             catch (OperationCanceledException) { }
         }
+    }
+
+    private async Task<bool> AddSubscriptionAsync(string topic, Type type)
+    {
+        ArgumentNullException.ThrowIfNull(topic);
+
+        if (topic.Equals("channel.metadata", StringComparison.OrdinalIgnoreCase) || topic.StartsWith("v2.system", StringComparison.OrdinalIgnoreCase))
+        {
+            return false;
+        }
+
+        if (_typeMap.TryAdd(topic, type) && _channel is not null)
+        {
+            _logger.LogDebug("Channel already exists, sending the '{TopicId}' topic to the server.", topic);
+
+            try
+            {
+                await _channelRepository.AddSubscriptionTopicsAsync(_channel.Id, [new ChannelTopic { Id = topic }], false, _cancellationToken);
+
+                return true;
+            }
+            catch (Exception ex)
+            {
+                _logger.LogError(ex, "Failed to add subscription.");
+            }
+        }
+
+        return false;
     }
 }

@@ -1,6 +1,6 @@
 using System.Runtime.Serialization;
 
-namespace PureCloud.Client.Models;
+namespace PureCloud.Client.Models.Queues;
 
 /// <summary>
 /// The Last Agent Routing Mode for the queue.

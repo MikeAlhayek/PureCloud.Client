@@ -1,6 +1,6 @@
 using System.Runtime.Serialization;
 
-namespace PureCloud.Client.Models;
+namespace PureCloud.Client.Models.Channels;
 
 /// <summary>
 /// Gets or Sets Transports

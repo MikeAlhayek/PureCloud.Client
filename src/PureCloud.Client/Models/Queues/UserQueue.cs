@@ -1,8 +1,9 @@
 using System.Runtime.Serialization;
 using System.Text;
 using System.Text.Json.Serialization;
+using PureCloud.Client.Models.Users;
 
-namespace PureCloud.Client.Models;
+namespace PureCloud.Client.Models.Queues;
 
 /// <summary>
 /// UserQueue
@@ -829,7 +830,7 @@ public partial class UserQueue : IEquatable<UserQueue>
         // credit: http://stackoverflow.com/a/263416/677735
         unchecked // Overflow is fine, just wrap
         {
-            int hash = 41;
+            var hash = 41;
             // Suitable nullity checks etc, of course :)
             if (Id != null)
             {

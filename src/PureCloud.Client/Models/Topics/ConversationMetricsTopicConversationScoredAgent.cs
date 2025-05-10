@@ -1,4 +1,4 @@
-namespace PureCloud.Client.Models;
+namespace PureCloud.Client.Models.Topics;
 
 public sealed class ConversationMetricsTopicConversationScoredAgent
 {

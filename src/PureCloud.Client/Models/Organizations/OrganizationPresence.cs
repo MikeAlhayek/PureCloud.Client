@@ -1,6 +1,6 @@
 using PureCloud.Client.Models.Users;
 
-namespace PureCloud.Client.Models;
+namespace PureCloud.Client.Models.Organizations;
 
 /// <summary>
 /// OrganizationPresence

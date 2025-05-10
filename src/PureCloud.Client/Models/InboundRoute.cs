@@ -1,3 +1,5 @@
+using PureCloud.Client.Models.Queues;
+
 namespace PureCloud.Client.Models;
 
 public sealed class InboundRoute

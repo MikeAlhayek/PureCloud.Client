@@ -1,6 +1,6 @@
 using System.Runtime.Serialization;
 
-namespace PureCloud.Client.Models;
+namespace PureCloud.Client.Models.Organizations;
 
 public enum OrganizationState
 {

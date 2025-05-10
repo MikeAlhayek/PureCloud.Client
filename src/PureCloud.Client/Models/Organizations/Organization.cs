@@ -1,4 +1,4 @@
-namespace PureCloud.Client.Models;
+namespace PureCloud.Client.Models.Organizations;
 
 public sealed class Organization
 {

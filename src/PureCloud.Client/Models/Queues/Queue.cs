@@ -1,4 +1,6 @@
-namespace PureCloud.Client.Models;
+using PureCloud.Client.Models.Users;
+
+namespace PureCloud.Client.Models.Queues;
 
 public sealed class Queue
 {

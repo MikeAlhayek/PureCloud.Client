@@ -1,6 +1,6 @@
 namespace PureCloud.Client.Notifications;
 
-public class Metadata
+public sealed class Metadata
 {
     ///<Summary>
     /// CorrelationId

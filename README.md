@@ -22,7 +22,7 @@ Then, register the required services in your DI container:
 ```csharp
 services
     .AddPureCloudCore()
-    .AddPureCloudRepositories();
+    .AddPureCloudApis();
 ```
 
 ### ASP.NET Core Integration
@@ -36,7 +36,7 @@ Use the identity-based token store when you want to persist tokens securely usin
 ```csharp
 services
     .AddPureCloudCore()
-    .AddPureCloudRepositories()
+    .AddPureCloudApis()
     .AddIdentityTokenStore<IUser>();
 ```
 
@@ -47,7 +47,7 @@ For development or debugging purposes, you can use an in-memory token store:
 ```csharp
 services
     .AddPureCloudCore()
-    .AddPureCloudRepositories()
+    .AddPureCloudApis()
     .AddInMemoryTokenStore();
 ```
 
@@ -58,15 +58,15 @@ services
 ## Example Usage
 
 ```csharp
-public class Example
+public sealed class Example
 {
-    private readonly IUserRepository _userRepository;
     private readonly INotificationClientFactory _notificationClientFactory;
+    private readonly IUserApis _userApis;
 
-    public Example(INotificationClientFactory notificationClientFactory, IUserRepository userRepository)
+    public Example(INotificationClientFactory notificationClientFactory, IUserApis userApis)
     {
         _notificationClientFactory = notificationClientFactory;
-        _userRepository = userRepository;
+        _userApis = userApis;
     }
 
     public async Task HandleNotificationsAsync(CancellationToken cancellationToken)
@@ -75,7 +75,7 @@ public class Example
         await using var notificationClient = _notificationClientFactory.Create();
 
         // Get the current user
-        var user = await _userRepository.GetMeAsync(null, null, cancellationToken);
+        var user = await _userApis.GetCurrentUserAsync(null, null, cancellationToken);
 
         // You can use the builder or use other AddSubscription methods to add subscriptions.
         await notificationClient.AddSubscriptionsAsync(builder => builder

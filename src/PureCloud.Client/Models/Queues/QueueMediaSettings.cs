@@ -1,4 +1,4 @@
-namespace PureCloud.Client.Models;
+namespace PureCloud.Client.Models.Queues;
 
 public sealed class QueueMediaSettings
 {

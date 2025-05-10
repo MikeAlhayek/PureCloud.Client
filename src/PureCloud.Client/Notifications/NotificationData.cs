@@ -1,15 +1,6 @@
-namespace PureCloud.Client.Notifications;
+using PureCloud.Client.Contracts;
 
-///<Summary>
-/// Notification (i.e. topic) Data received on the Notification Channel (WebSocket)
-///</Summary>
-public sealed class NotificationData<T> : NotificationData, INotificationData
-{
-    ///<Summary>
-    /// Body of the event
-    ///</Summary>
-    public T EventBody { get; set; }
-}
+namespace PureCloud.Client.Notifications;
 
 public class NotificationData : INotificationData
 {
@@ -27,4 +18,15 @@ public class NotificationData : INotificationData
     /// Metadata
     ///</Summary>
     public Metadata Metadata { get; set; }
+}
+
+///<Summary>
+/// Notification (i.e. topic) Data received on the Notification Channel (WebSocket)
+///</Summary>
+public sealed class NotificationData<T> : NotificationData
+{
+    ///<Summary>
+    /// Body of the event
+    ///</Summary>
+    public T EventBody { get; set; }
 }

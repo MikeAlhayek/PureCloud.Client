@@ -3,6 +3,8 @@ namespace PureCloud.Client.Models;
 ///<Summary>
 /// Interface for Paged Resource
 ///</Summary>
+///
+[Obsolete("This interface should not be used instead use PagedResource<T>.")]
 public interface IPagedResource<T>
 {
     ///<Summary>

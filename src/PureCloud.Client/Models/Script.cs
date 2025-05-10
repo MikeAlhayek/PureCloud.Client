@@ -1,3 +1,5 @@
+using PureCloud.Client.Models.Users;
+
 namespace PureCloud.Client.Models;
 
 /// <summary>
