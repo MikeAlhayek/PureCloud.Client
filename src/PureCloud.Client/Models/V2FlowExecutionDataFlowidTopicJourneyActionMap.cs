@@ -3,118 +3,17 @@ using System.Text.Json.Serialization;
 
 namespace PureCloud.Client.Models;
 
-/// <summary>
-/// This contains contextual information about an invoking entity.
-/// </summary>
-
-public partial class V2FlowExecutionDataFlowidTopicJourneyActionMap : IEquatable<V2FlowExecutionDataFlowidTopicJourneyActionMap>
+public sealed class V2FlowExecutionDataFlowidTopicJourneyActionMap
 {
-    /// <summary>
-    /// Initializes a new instance of the <see cref="V2FlowExecutionDataFlowidTopicJourneyActionMap" /> class.
-    /// </summary>
-    /// <param name="ActionMapId">The identifier of the journey action map that invoked this flow..</param>
-    /// <param name="ActionId">The identifier of the specific action map instance that invoked this flow..</param>
-    public V2FlowExecutionDataFlowidTopicJourneyActionMap(string ActionMapId = null, string ActionId = null)
-    {
-        this.ActionMapId = ActionMapId;
-        this.ActionId = ActionId;
-
-    }
-
-
-
     /// <summary>
     /// The identifier of the journey action map that invoked this flow.
     /// </summary>
     /// <value>The identifier of the journey action map that invoked this flow.</value>
-    [JsonPropertyName("actionMapId")]
     public string ActionMapId { get; set; }
-
-
 
     /// <summary>
     /// The identifier of the specific action map instance that invoked this flow.
     /// </summary>
     /// <value>The identifier of the specific action map instance that invoked this flow.</value>
-    [JsonPropertyName("actionId")]
     public string ActionId { get; set; }
-
-
-    /// <summary>
-    /// Returns the string presentation of the object
-    /// </summary>
-    /// <returns>String presentation of the object</returns>
-    public override string ToString()
-    {
-        var sb = new StringBuilder();
-        sb.Append("class V2FlowExecutionDataFlowidTopicJourneyActionMap {\n");
-
-        sb.Append("  ActionMapId: ").Append(ActionMapId).Append("\n");
-        sb.Append("  ActionId: ").Append(ActionId).Append("\n");
-        sb.Append("}\n");
-        return sb.ToString();
-    }
-
-
-    /// <summary>
-    /// Returns true if objects are equal
-    /// </summary>
-    /// <param name="obj">Object to be compared</param>
-    /// <returns>Boolean</returns>
-    public override bool Equals(object obj)
-    {
-        // credit: http://stackoverflow.com/a/10454552/677735
-        return Equals(obj as V2FlowExecutionDataFlowidTopicJourneyActionMap);
-    }
-
-    /// <summary>
-    /// Returns true if V2FlowExecutionDataFlowidTopicJourneyActionMap instances are equal
-    /// </summary>
-    /// <param name="other">Instance of V2FlowExecutionDataFlowidTopicJourneyActionMap to be compared</param>
-    /// <returns>Boolean</returns>
-    public bool Equals(V2FlowExecutionDataFlowidTopicJourneyActionMap other)
-    {
-        // credit: http://stackoverflow.com/a/10454552/677735
-        if (other == null)
-        {
-            return false;
-        }
-
-        return true &&
-            (
-                ActionMapId == other.ActionMapId ||
-                ActionMapId != null &&
-                ActionMapId.Equals(other.ActionMapId)
-            ) &&
-            (
-                ActionId == other.ActionId ||
-                ActionId != null &&
-                ActionId.Equals(other.ActionId)
-            );
-    }
-
-    /// <summary>
-    /// Gets the hash code
-    /// </summary>
-    /// <returns>Hash code</returns>
-    public override int GetHashCode()
-    {
-        // credit: http://stackoverflow.com/a/263416/677735
-        unchecked // Overflow is fine, just wrap
-        {
-            int hash = 41;
-            // Suitable nullity checks etc, of course :)
-            if (ActionMapId != null)
-            {
-                hash = hash * 59 + ActionMapId.GetHashCode();
-            }
-
-            if (ActionId != null)
-            {
-                hash = hash * 59 + ActionId.GetHashCode();
-            }
-
-            return hash;
-        }
-    }
 }
