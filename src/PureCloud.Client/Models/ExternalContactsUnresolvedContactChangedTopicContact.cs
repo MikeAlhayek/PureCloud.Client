@@ -4,157 +4,60 @@ using System.Text.Json.Serialization;
 
 namespace PureCloud.Client.Models;
 
-/// <summary>
-/// ExternalContactsUnresolvedContactChangedTopicContact
-/// </summary>
+public enum TypeEnum
+{
+    /// <summary>
+    /// Your SDK version is out of date and an unknown enum value was encountered. 
+    /// Please upgrade the SDK using the command "Upgrade-Package PureCloudApiSdk" 
+    /// in the Package Manager Console
+    /// </summary>
+    [EnumMember(Value = "OUTDATED_SDK_VERSION")]
+    OutdatedSdkVersion,
 
-public partial class ExternalContactsUnresolvedContactChangedTopicContact : IEquatable<ExternalContactsUnresolvedContactChangedTopicContact>
+    /// <summary>
+    /// Enum Ephemeral for "Ephemeral"
+    /// </summary>
+    [EnumMember(Value = "Ephemeral")]
+    Ephemeral,
+
+    /// <summary>
+    /// Enum Identified for "Identified"
+    /// </summary>
+    [EnumMember(Value = "Identified")]
+    Identified,
+
+    /// <summary>
+    /// Enum Curated for "Curated"
+    /// </summary>
+    [EnumMember(Value = "Curated")]
+    Curated
+}
+
+public sealed class ExternalContactsUnresolvedContactChangedTopicContact
 {
     /// <summary>
     /// Gets or Sets Type
     /// </summary>
-    
-    public enum TypeEnum
-    {
-        /// <summary>
-        /// Your SDK version is out of date and an unknown enum value was encountered. 
-        /// Please upgrade the SDK using the command "Upgrade-Package PureCloudApiSdk" 
-        /// in the Package Manager Console
-        /// </summary>
-        [EnumMember(Value = "OUTDATED_SDK_VERSION")]
-        OutdatedSdkVersion,
-
-        /// <summary>
-        /// Enum Ephemeral for "Ephemeral"
-        /// </summary>
-        [EnumMember(Value = "Ephemeral")]
-        Ephemeral,
-
-        /// <summary>
-        /// Enum Identified for "Identified"
-        /// </summary>
-        [EnumMember(Value = "Identified")]
-        Identified,
-
-        /// <summary>
-        /// Enum Curated for "Curated"
-        /// </summary>
-        [EnumMember(Value = "Curated")]
-        Curated
-    }
-    /// <summary>
-    /// Gets or Sets Type
-    /// </summary>
-    [JsonPropertyName("type")]
     public TypeEnum? Type { get; set; }
-    /// <summary>
-    /// Initializes a new instance of the <see cref="ExternalContactsUnresolvedContactChangedTopicContact" /> class.
-    /// </summary>
-    /// <param name="Id">Id.</param>
-    /// <param name="Division">Division.</param>
-    /// <param name="ExternalOrganization">ExternalOrganization.</param>
-    /// <param name="Type">Type.</param>
-    /// <param name="FirstName">FirstName.</param>
-    /// <param name="MiddleName">MiddleName.</param>
-    /// <param name="LastName">LastName.</param>
-    /// <param name="Salutation">Salutation.</param>
-    /// <param name="Title">Title.</param>
-    /// <param name="WorkPhone">WorkPhone.</param>
-    /// <param name="CellPhone">CellPhone.</param>
-    /// <param name="HomePhone">HomePhone.</param>
-    /// <param name="OtherPhone">OtherPhone.</param>
-    /// <param name="WorkEmail">WorkEmail.</param>
-    /// <param name="PersonalEmail">PersonalEmail.</param>
-    /// <param name="OtherEmail">OtherEmail.</param>
-    /// <param name="Address">Address.</param>
-    /// <param name="SurveyOptOut">SurveyOptOut.</param>
-    /// <param name="ExternalSystemUrl">ExternalSystemUrl.</param>
-    /// <param name="TwitterId">TwitterId.</param>
-    /// <param name="LineId">LineId.</param>
-    /// <param name="WhatsAppId">WhatsAppId.</param>
-    /// <param name="FacebookId">FacebookId.</param>
-    /// <param name="InstagramId">InstagramId.</param>
-    /// <param name="ExternalIds">ExternalIds.</param>
-    /// <param name="CanonicalContactId">CanonicalContactId.</param>
-    /// <param name="Schema">Schema.</param>
-    /// <param name="CustomFields">CustomFields.</param>
-    /// <param name="MergeSet">MergeSet.</param>
-    /// <param name="MergedFrom">MergedFrom.</param>
-    /// <param name="MergedTo">MergedTo.</param>
-    /// <param name="MergeOperation">MergeOperation.</param>
-    /// <param name="CreateDate">CreateDate.</param>
-    /// <param name="ModifyDate">ModifyDate.</param>
-    public ExternalContactsUnresolvedContactChangedTopicContact(string Id = null, ExternalContactsUnresolvedContactChangedTopicDivision Division = null, ExternalContactsUnresolvedContactChangedTopicExternalOrganization ExternalOrganization = null, TypeEnum? Type = null, string FirstName = null, string MiddleName = null, string LastName = null, string Salutation = null, string Title = null, ExternalContactsUnresolvedContactChangedTopicPhoneNumber WorkPhone = null, ExternalContactsUnresolvedContactChangedTopicPhoneNumber CellPhone = null, ExternalContactsUnresolvedContactChangedTopicPhoneNumber HomePhone = null, ExternalContactsUnresolvedContactChangedTopicPhoneNumber OtherPhone = null, string WorkEmail = null, string PersonalEmail = null, string OtherEmail = null, ExternalContactsUnresolvedContactChangedTopicContactAddress Address = null, bool? SurveyOptOut = null, string ExternalSystemUrl = null, ExternalContactsUnresolvedContactChangedTopicTwitterId TwitterId = null, ExternalContactsUnresolvedContactChangedTopicLineId LineId = null, ExternalContactsUnresolvedContactChangedTopicWhatsAppId WhatsAppId = null, ExternalContactsUnresolvedContactChangedTopicFacebookId FacebookId = null, ExternalContactsUnresolvedContactChangedTopicInstagramId InstagramId = null, List<ExternalContactsUnresolvedContactChangedTopicExternalId> ExternalIds = null, string CanonicalContactId = null, ExternalContactsUnresolvedContactChangedTopicDataSchema Schema = null, Dictionary<string, object> CustomFields = null, List<string> MergeSet = null, List<string> MergedFrom = null, string MergedTo = null, ExternalContactsUnresolvedContactChangedTopicMergeOperation MergeOperation = null, DateTime? CreateDate = null, DateTime? ModifyDate = null)
-    {
-        this.Id = Id;
-        this.Division = Division;
-        this.ExternalOrganization = ExternalOrganization;
-        this.Type = Type;
-        this.FirstName = FirstName;
-        this.MiddleName = MiddleName;
-        this.LastName = LastName;
-        this.Salutation = Salutation;
-        this.Title = Title;
-        this.WorkPhone = WorkPhone;
-        this.CellPhone = CellPhone;
-        this.HomePhone = HomePhone;
-        this.OtherPhone = OtherPhone;
-        this.WorkEmail = WorkEmail;
-        this.PersonalEmail = PersonalEmail;
-        this.OtherEmail = OtherEmail;
-        this.Address = Address;
-        this.SurveyOptOut = SurveyOptOut;
-        this.ExternalSystemUrl = ExternalSystemUrl;
-        this.TwitterId = TwitterId;
-        this.LineId = LineId;
-        this.WhatsAppId = WhatsAppId;
-        this.FacebookId = FacebookId;
-        this.InstagramId = InstagramId;
-        this.ExternalIds = ExternalIds;
-        this.CanonicalContactId = CanonicalContactId;
-        this.Schema = Schema;
-        this.CustomFields = CustomFields;
-        this.MergeSet = MergeSet;
-        this.MergedFrom = MergedFrom;
-        this.MergedTo = MergedTo;
-        this.MergeOperation = MergeOperation;
-        this.CreateDate = CreateDate;
-        this.ModifyDate = ModifyDate;
-
-    }
-
-
 
     /// <summary>
     /// Gets or Sets Id
     /// </summary>
-    [JsonPropertyName("id")]
     public string Id { get; set; }
-
-
 
     /// <summary>
     /// Gets or Sets Division
     /// </summary>
-    [JsonPropertyName("division")]
     public ExternalContactsUnresolvedContactChangedTopicDivision Division { get; set; }
-
-
 
     /// <summary>
     /// Gets or Sets ExternalOrganization
     /// </summary>
-    [JsonPropertyName("externalOrganization")]
     public ExternalContactsUnresolvedContactChangedTopicExternalOrganization ExternalOrganization { get; set; }
-
-
-
-
 
     /// <summary>
     /// Gets or Sets FirstName
     /// </summary>
-    [JsonPropertyName("firstName")]
     public string FirstName { get; set; }
 
 
