@@ -1,198 +1,27 @@
-using System.Runtime.Serialization;
 using System.Text;
 using System.Text.Json.Serialization;
 
 namespace PureCloud.Client.Models;
 
-/// <summary>
-/// DialerResponsesetConfigChangeReaction
-/// </summary>
-
-public partial class DialerResponsesetConfigChangeReaction : IEquatable<DialerResponsesetConfigChangeReaction>
+public sealed class DialerResponsesetConfigChangeReaction
 {
     /// <summary>
     /// Gets or Sets ReactionType
     /// </summary>
-    
-    public enum ReactionTypeEnum
-    {
-        /// <summary>
-        /// Your SDK version is out of date and an unknown enum value was encountered. 
-        /// Please upgrade the SDK using the command "Upgrade-Package PureCloudApiSdk" 
-        /// in the Package Manager Console
-        /// </summary>
-        [EnumMember(Value = "OUTDATED_SDK_VERSION")]
-        OutdatedSdkVersion,
-
-        /// <summary>
-        /// Enum Hangup for "hangup"
-        /// </summary>
-        [EnumMember(Value = "hangup")]
-        Hangup,
-
-        /// <summary>
-        /// Enum Transfer for "transfer"
-        /// </summary>
-        [EnumMember(Value = "transfer")]
-        Transfer,
-
-        /// <summary>
-        /// Enum TransferFlow for "transfer_flow"
-        /// </summary>
-        [EnumMember(Value = "transfer_flow")]
-        TransferFlow,
-
-        /// <summary>
-        /// Enum PlayFile for "play_file"
-        /// </summary>
-        [EnumMember(Value = "play_file")]
-        PlayFile
-    }
-    /// <summary>
-    /// Gets or Sets ReactionType
-    /// </summary>
-    [JsonPropertyName("reactionType")]
-    public ReactionTypeEnum? ReactionType { get; set; }
-    /// <summary>
-    /// Initializes a new instance of the <see cref="DialerResponsesetConfigChangeReaction" /> class.
-    /// </summary>
-    /// <param name="Data">Data.</param>
-    /// <param name="Name">Name.</param>
-    /// <param name="ReactionType">ReactionType.</param>
-    /// <param name="AdditionalProperties">AdditionalProperties.</param>
-    public DialerResponsesetConfigChangeReaction(string Data = null, string Name = null, ReactionTypeEnum? ReactionType = null, Dictionary<string, object> AdditionalProperties = null)
-    {
-        this.Data = Data;
-        this.Name = Name;
-        this.ReactionType = ReactionType;
-        this.AdditionalProperties = AdditionalProperties;
-
-    }
-
-
+    public DialerResponsesetConfigChangeReactionReactionTypeEnum? ReactionType { get; set; }
 
     /// <summary>
     /// Gets or Sets Data
     /// </summary>
-    [JsonPropertyName("data")]
     public string Data { get; set; }
-
-
 
     /// <summary>
     /// Gets or Sets Name
     /// </summary>
-    [JsonPropertyName("name")]
     public string Name { get; set; }
-
-
-
-
 
     /// <summary>
     /// Gets or Sets AdditionalProperties
     /// </summary>
-    [JsonPropertyName("additionalProperties")]
     public Dictionary<string, object> AdditionalProperties { get; set; }
-
-
-    /// <summary>
-    /// Returns the string presentation of the object
-    /// </summary>
-    /// <returns>String presentation of the object</returns>
-    public override string ToString()
-    {
-        var sb = new StringBuilder();
-        sb.Append("class DialerResponsesetConfigChangeReaction {\n");
-
-        sb.Append("  Data: ").Append(Data).Append("\n");
-        sb.Append("  Name: ").Append(Name).Append("\n");
-        sb.Append("  ReactionType: ").Append(ReactionType).Append("\n");
-        sb.Append("  AdditionalProperties: ").Append(AdditionalProperties).Append("\n");
-        sb.Append("}\n");
-        return sb.ToString();
-    }
-
-
-    /// <summary>
-    /// Returns true if objects are equal
-    /// </summary>
-    /// <param name="obj">Object to be compared</param>
-    /// <returns>Boolean</returns>
-    public override bool Equals(object obj)
-    {
-        // credit: http://stackoverflow.com/a/10454552/677735
-        return Equals(obj as DialerResponsesetConfigChangeReaction);
-    }
-
-    /// <summary>
-    /// Returns true if DialerResponsesetConfigChangeReaction instances are equal
-    /// </summary>
-    /// <param name="other">Instance of DialerResponsesetConfigChangeReaction to be compared</param>
-    /// <returns>Boolean</returns>
-    public bool Equals(DialerResponsesetConfigChangeReaction other)
-    {
-        // credit: http://stackoverflow.com/a/10454552/677735
-        if (other == null)
-        {
-            return false;
-        }
-
-        return true &&
-            (
-                Data == other.Data ||
-                Data != null &&
-                Data.Equals(other.Data)
-            ) &&
-            (
-                Name == other.Name ||
-                Name != null &&
-                Name.Equals(other.Name)
-            ) &&
-            (
-                ReactionType == other.ReactionType ||
-                ReactionType != null &&
-                ReactionType.Equals(other.ReactionType)
-            ) &&
-            (
-                AdditionalProperties == other.AdditionalProperties ||
-                AdditionalProperties != null &&
-                AdditionalProperties.SequenceEqual(other.AdditionalProperties)
-            );
-    }
-
-    /// <summary>
-    /// Gets the hash code
-    /// </summary>
-    /// <returns>Hash code</returns>
-    public override int GetHashCode()
-    {
-        // credit: http://stackoverflow.com/a/263416/677735
-        unchecked // Overflow is fine, just wrap
-        {
-            int hash = 41;
-            // Suitable nullity checks etc, of course :)
-            if (Data != null)
-            {
-                hash = hash * 59 + Data.GetHashCode();
-            }
-
-            if (Name != null)
-            {
-                hash = hash * 59 + Name.GetHashCode();
-            }
-
-            if (ReactionType != null)
-            {
-                hash = hash * 59 + ReactionType.GetHashCode();
-            }
-
-            if (AdditionalProperties != null)
-            {
-                hash = hash * 59 + AdditionalProperties.GetHashCode();
-            }
-
-            return hash;
-        }
-    }
 }

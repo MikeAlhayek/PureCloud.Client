@@ -3,139 +3,22 @@ using System.Text.Json.Serialization;
 
 namespace PureCloud.Client.Models;
 
-/// <summary>
-/// An outbound-messaging messaging campaign WhatsApp Config
-/// </summary>
-
-public partial class OutboundMessagingMessagingCampaignConfigChangeWhatsAppConfig : IEquatable<OutboundMessagingMessagingCampaignConfigChangeWhatsAppConfig>
+public sealed class OutboundMessagingMessagingCampaignConfigChangeWhatsAppConfig
 {
-    /// <summary>
-    /// Initializes a new instance of the <see cref="OutboundMessagingMessagingCampaignConfigChangeWhatsAppConfig" /> class.
-    /// </summary>
-    /// <param name="WhatsAppColumns">The Contact List columns specifying the phone number to send a message to..</param>
-    /// <param name="Integration">Integration.</param>
-    /// <param name="ContentTemplate">A reference for a Response.</param>
-    public OutboundMessagingMessagingCampaignConfigChangeWhatsAppConfig(List<string> WhatsAppColumns = null, OutboundMessagingMessagingCampaignConfigChangeIntegrationRef Integration = null, OutboundMessagingMessagingCampaignConfigChangeResponseRef ContentTemplate = null)
-    {
-        this.WhatsAppColumns = WhatsAppColumns;
-        this.Integration = Integration;
-        this.ContentTemplate = ContentTemplate;
-
-    }
-
-
-
     /// <summary>
     /// The Contact List columns specifying the phone number to send a message to.
     /// </summary>
     /// <value>The Contact List columns specifying the phone number to send a message to.</value>
-    [JsonPropertyName("whatsAppColumns")]
-    public List<string> WhatsAppColumns { get; set; }
-
-
+    public IEnumerable<string> WhatsAppColumns { get; set; }
 
     /// <summary>
     /// Gets or Sets Integration
     /// </summary>
-    [JsonPropertyName("integration")]
     public OutboundMessagingMessagingCampaignConfigChangeIntegrationRef Integration { get; set; }
-
-
 
     /// <summary>
     /// A reference for a Response
     /// </summary>
     /// <value>A reference for a Response</value>
-    [JsonPropertyName("contentTemplate")]
     public OutboundMessagingMessagingCampaignConfigChangeResponseRef ContentTemplate { get; set; }
-
-
-    /// <summary>
-    /// Returns the string presentation of the object
-    /// </summary>
-    /// <returns>String presentation of the object</returns>
-    public override string ToString()
-    {
-        var sb = new StringBuilder();
-        sb.Append("class OutboundMessagingMessagingCampaignConfigChangeWhatsAppConfig {\n");
-
-        sb.Append("  WhatsAppColumns: ").Append(WhatsAppColumns).Append("\n");
-        sb.Append("  Integration: ").Append(Integration).Append("\n");
-        sb.Append("  ContentTemplate: ").Append(ContentTemplate).Append("\n");
-        sb.Append("}\n");
-        return sb.ToString();
-    }
-
-
-    /// <summary>
-    /// Returns true if objects are equal
-    /// </summary>
-    /// <param name="obj">Object to be compared</param>
-    /// <returns>Boolean</returns>
-    public override bool Equals(object obj)
-    {
-        // credit: http://stackoverflow.com/a/10454552/677735
-        return Equals(obj as OutboundMessagingMessagingCampaignConfigChangeWhatsAppConfig);
-    }
-
-    /// <summary>
-    /// Returns true if OutboundMessagingMessagingCampaignConfigChangeWhatsAppConfig instances are equal
-    /// </summary>
-    /// <param name="other">Instance of OutboundMessagingMessagingCampaignConfigChangeWhatsAppConfig to be compared</param>
-    /// <returns>Boolean</returns>
-    public bool Equals(OutboundMessagingMessagingCampaignConfigChangeWhatsAppConfig other)
-    {
-        // credit: http://stackoverflow.com/a/10454552/677735
-        if (other == null)
-        {
-            return false;
-        }
-
-        return true &&
-            (
-                WhatsAppColumns == other.WhatsAppColumns ||
-                WhatsAppColumns != null &&
-                WhatsAppColumns.SequenceEqual(other.WhatsAppColumns)
-            ) &&
-            (
-                Integration == other.Integration ||
-                Integration != null &&
-                Integration.Equals(other.Integration)
-            ) &&
-            (
-                ContentTemplate == other.ContentTemplate ||
-                ContentTemplate != null &&
-                ContentTemplate.Equals(other.ContentTemplate)
-            );
-    }
-
-    /// <summary>
-    /// Gets the hash code
-    /// </summary>
-    /// <returns>Hash code</returns>
-    public override int GetHashCode()
-    {
-        // credit: http://stackoverflow.com/a/263416/677735
-        unchecked // Overflow is fine, just wrap
-        {
-            int hash = 41;
-            // Suitable nullity checks etc, of course :)
-            if (WhatsAppColumns != null)
-            {
-                hash = hash * 59 + WhatsAppColumns.GetHashCode();
-            }
-
-            if (Integration != null)
-            {
-                hash = hash * 59 + Integration.GetHashCode();
-            }
-
-            if (ContentTemplate != null)
-            {
-                hash = hash * 59 + ContentTemplate.GetHashCode();
-            }
-
-            return hash;
-        }
-    }
 }
