@@ -3,161 +3,28 @@ using System.Text.Json.Serialization;
 
 namespace PureCloud.Client.Models;
 
-/// <summary>
-/// the campaign/sequence entities that this action acts on
-/// </summary>
-
-public partial class DialerCampaignRuleConfigChangeCampaignRuleActionEntities : IEquatable<DialerCampaignRuleConfigChangeCampaignRuleActionEntities>
+public sealed class DialerCampaignRuleConfigChangeCampaignRuleActionEntities
 {
-    /// <summary>
-    /// Initializes a new instance of the <see cref="DialerCampaignRuleConfigChangeCampaignRuleActionEntities" /> class.
-    /// </summary>
-    /// <param name="UseTriggeringEntity">Whether this action should act on the entity that triggered it.</param>
-    /// <param name="AdditionalProperties">AdditionalProperties.</param>
-    /// <param name="Campaigns">A list of campaignIds to act on.</param>
-    /// <param name="Sequences">A list of sequenceIds to act on.</param>
-    public DialerCampaignRuleConfigChangeCampaignRuleActionEntities(bool? UseTriggeringEntity = null, Dictionary<string, object> AdditionalProperties = null, List<DialerCampaignRuleConfigChangeUriReference> Campaigns = null, List<DialerCampaignRuleConfigChangeUriReference> Sequences = null)
-    {
-        this.UseTriggeringEntity = UseTriggeringEntity;
-        this.AdditionalProperties = AdditionalProperties;
-        this.Campaigns = Campaigns;
-        this.Sequences = Sequences;
-
-    }
-
-
-
     /// <summary>
     /// Whether this action should act on the entity that triggered it
     /// </summary>
     /// <value>Whether this action should act on the entity that triggered it</value>
-    [JsonPropertyName("useTriggeringEntity")]
     public bool? UseTriggeringEntity { get; set; }
-
-
 
     /// <summary>
     /// Gets or Sets AdditionalProperties
     /// </summary>
-    [JsonPropertyName("additionalProperties")]
     public Dictionary<string, object> AdditionalProperties { get; set; }
-
-
 
     /// <summary>
     /// A list of campaignIds to act on
     /// </summary>
     /// <value>A list of campaignIds to act on</value>
-    [JsonPropertyName("campaigns")]
-    public List<DialerCampaignRuleConfigChangeUriReference> Campaigns { get; set; }
-
-
+    public IEnumerable<DialerCampaignRuleConfigChangeUriReference> Campaigns { get; set; }
 
     /// <summary>
     /// A list of sequenceIds to act on
     /// </summary>
     /// <value>A list of sequenceIds to act on</value>
-    [JsonPropertyName("sequences")]
-    public List<DialerCampaignRuleConfigChangeUriReference> Sequences { get; set; }
-
-
-    /// <summary>
-    /// Returns the string presentation of the object
-    /// </summary>
-    /// <returns>String presentation of the object</returns>
-    public override string ToString()
-    {
-        var sb = new StringBuilder();
-        sb.Append("class DialerCampaignRuleConfigChangeCampaignRuleActionEntities {\n");
-
-        sb.Append("  UseTriggeringEntity: ").Append(UseTriggeringEntity).Append("\n");
-        sb.Append("  AdditionalProperties: ").Append(AdditionalProperties).Append("\n");
-        sb.Append("  Campaigns: ").Append(Campaigns).Append("\n");
-        sb.Append("  Sequences: ").Append(Sequences).Append("\n");
-        sb.Append("}\n");
-        return sb.ToString();
-    }
-
-
-    /// <summary>
-    /// Returns true if objects are equal
-    /// </summary>
-    /// <param name="obj">Object to be compared</param>
-    /// <returns>Boolean</returns>
-    public override bool Equals(object obj)
-    {
-        // credit: http://stackoverflow.com/a/10454552/677735
-        return Equals(obj as DialerCampaignRuleConfigChangeCampaignRuleActionEntities);
-    }
-
-    /// <summary>
-    /// Returns true if DialerCampaignRuleConfigChangeCampaignRuleActionEntities instances are equal
-    /// </summary>
-    /// <param name="other">Instance of DialerCampaignRuleConfigChangeCampaignRuleActionEntities to be compared</param>
-    /// <returns>Boolean</returns>
-    public bool Equals(DialerCampaignRuleConfigChangeCampaignRuleActionEntities other)
-    {
-        // credit: http://stackoverflow.com/a/10454552/677735
-        if (other == null)
-        {
-            return false;
-        }
-
-        return true &&
-            (
-                UseTriggeringEntity == other.UseTriggeringEntity ||
-                UseTriggeringEntity != null &&
-                UseTriggeringEntity.Equals(other.UseTriggeringEntity)
-            ) &&
-            (
-                AdditionalProperties == other.AdditionalProperties ||
-                AdditionalProperties != null &&
-                AdditionalProperties.SequenceEqual(other.AdditionalProperties)
-            ) &&
-            (
-                Campaigns == other.Campaigns ||
-                Campaigns != null &&
-                Campaigns.SequenceEqual(other.Campaigns)
-            ) &&
-            (
-                Sequences == other.Sequences ||
-                Sequences != null &&
-                Sequences.SequenceEqual(other.Sequences)
-            );
-    }
-
-    /// <summary>
-    /// Gets the hash code
-    /// </summary>
-    /// <returns>Hash code</returns>
-    public override int GetHashCode()
-    {
-        // credit: http://stackoverflow.com/a/263416/677735
-        unchecked // Overflow is fine, just wrap
-        {
-            int hash = 41;
-            // Suitable nullity checks etc, of course :)
-            if (UseTriggeringEntity != null)
-            {
-                hash = hash * 59 + UseTriggeringEntity.GetHashCode();
-            }
-
-            if (AdditionalProperties != null)
-            {
-                hash = hash * 59 + AdditionalProperties.GetHashCode();
-            }
-
-            if (Campaigns != null)
-            {
-                hash = hash * 59 + Campaigns.GetHashCode();
-            }
-
-            if (Sequences != null)
-            {
-                hash = hash * 59 + Sequences.GetHashCode();
-            }
-
-            return hash;
-        }
-    }
+    public IEnumerable<DialerCampaignRuleConfigChangeUriReference> Sequences { get; set; }
 }

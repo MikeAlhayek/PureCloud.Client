@@ -1,348 +1,71 @@
-using System.Runtime.Serialization;
 using System.Text;
 using System.Text.Json.Serialization;
 
 namespace PureCloud.Client.Models;
 
-/// <summary>
-/// DialerSequenceConfigChangeCampaignSequence
-/// </summary>
-
-public partial class DialerSequenceConfigChangeCampaignSequence : IEquatable<DialerSequenceConfigChangeCampaignSequence>
+public sealed class DialerSequenceConfigChangeCampaignSequence
 {
     /// <summary>
     /// Gets or Sets Status
     /// </summary>
-    
-    public enum StatusEnum
-    {
-        /// <summary>
-        /// Your SDK version is out of date and an unknown enum value was encountered. 
-        /// Please upgrade the SDK using the command "Upgrade-Package PureCloudApiSdk" 
-        /// in the Package Manager Console
-        /// </summary>
-        [EnumMember(Value = "OUTDATED_SDK_VERSION")]
-        OutdatedSdkVersion,
-
-        /// <summary>
-        /// Enum On for "on"
-        /// </summary>
-        [EnumMember(Value = "on")]
-        On,
-
-        /// <summary>
-        /// Enum Off for "off"
-        /// </summary>
-        [EnumMember(Value = "off")]
-        Off,
-
-        /// <summary>
-        /// Enum Complete for "complete"
-        /// </summary>
-        [EnumMember(Value = "complete")]
-        Complete
-    }
-    /// <summary>
-    /// Gets or Sets Status
-    /// </summary>
-    [JsonPropertyName("status")]
-    public StatusEnum? Status { get; set; }
-    /// <summary>
-    /// Initializes a new instance of the <see cref="DialerSequenceConfigChangeCampaignSequence" /> class.
-    /// </summary>
-    /// <param name="Campaigns">the ordered list of campaign identifiers.</param>
-    /// <param name="CurrentCampaign">the zero-based index of the current campaign in the campaigns list.</param>
-    /// <param name="Status">Status.</param>
-    /// <param name="StopMessage">if a sequence has unexpectedly stopped, this message provides the reason.</param>
-    /// <param name="Repeat">indicates if a sequence is to repeat from the beginning after the last campaign completes; default is false.</param>
-    /// <param name="AdditionalProperties">AdditionalProperties.</param>
-    /// <param name="Id">The globally unique identifier for the object..</param>
-    /// <param name="Name">The UI-visible name of the object.</param>
-    /// <param name="DateCreated">Creation time of the entity.</param>
-    /// <param name="DateModified">Last modified time of the entity.</param>
-    /// <param name="Version">Required for updates, must match the version number of the most recent update.</param>
-    public DialerSequenceConfigChangeCampaignSequence(List<DialerSequenceConfigChangeUriReference> Campaigns = null, long? CurrentCampaign = null, StatusEnum? Status = null, string StopMessage = null, bool? Repeat = null, Dictionary<string, object> AdditionalProperties = null, string Id = null, string Name = null, DateTime? DateCreated = null, DateTime? DateModified = null, long? Version = null)
-    {
-        this.Campaigns = Campaigns;
-        this.CurrentCampaign = CurrentCampaign;
-        this.Status = Status;
-        this.StopMessage = StopMessage;
-        this.Repeat = Repeat;
-        this.AdditionalProperties = AdditionalProperties;
-        this.Id = Id;
-        this.Name = Name;
-        this.DateCreated = DateCreated;
-        this.DateModified = DateModified;
-        this.Version = Version;
-
-    }
-
-
+    public DialerSequenceConfigChangeCampaignSequenceStatusEnum? Status { get; set; }
 
     /// <summary>
     /// the ordered list of campaign identifiers
     /// </summary>
     /// <value>the ordered list of campaign identifiers</value>
-    [JsonPropertyName("campaigns")]
-    public List<DialerSequenceConfigChangeUriReference> Campaigns { get; set; }
-
-
+    public IEnumerable<DialerSequenceConfigChangeUriReference> Campaigns { get; set; }
 
     /// <summary>
     /// the zero-based index of the current campaign in the campaigns list
     /// </summary>
     /// <value>the zero-based index of the current campaign in the campaigns list</value>
-    [JsonPropertyName("currentCampaign")]
     public long? CurrentCampaign { get; set; }
-
-
-
-
 
     /// <summary>
     /// if a sequence has unexpectedly stopped, this message provides the reason
     /// </summary>
     /// <value>if a sequence has unexpectedly stopped, this message provides the reason</value>
-    [JsonPropertyName("stopMessage")]
     public string StopMessage { get; set; }
-
-
 
     /// <summary>
     /// indicates if a sequence is to repeat from the beginning after the last campaign completes; default is false
     /// </summary>
     /// <value>indicates if a sequence is to repeat from the beginning after the last campaign completes; default is false</value>
-    [JsonPropertyName("repeat")]
     public bool? Repeat { get; set; }
-
-
 
     /// <summary>
     /// Gets or Sets AdditionalProperties
     /// </summary>
-    [JsonPropertyName("additionalProperties")]
     public Dictionary<string, object> AdditionalProperties { get; set; }
-
-
 
     /// <summary>
     /// The globally unique identifier for the object.
     /// </summary>
     /// <value>The globally unique identifier for the object.</value>
-    [JsonPropertyName("id")]
     public string Id { get; set; }
-
-
 
     /// <summary>
     /// The UI-visible name of the object
     /// </summary>
     /// <value>The UI-visible name of the object</value>
-    [JsonPropertyName("name")]
     public string Name { get; set; }
-
-
 
     /// <summary>
     /// Creation time of the entity
     /// </summary>
     /// <value>Creation time of the entity</value>
-    [JsonPropertyName("dateCreated")]
     public DateTime? DateCreated { get; set; }
-
-
 
     /// <summary>
     /// Last modified time of the entity
     /// </summary>
     /// <value>Last modified time of the entity</value>
-    [JsonPropertyName("dateModified")]
     public DateTime? DateModified { get; set; }
-
-
 
     /// <summary>
     /// Required for updates, must match the version number of the most recent update
     /// </summary>
     /// <value>Required for updates, must match the version number of the most recent update</value>
-    [JsonPropertyName("version")]
     public long? Version { get; set; }
-
-
-    /// <summary>
-    /// Returns the string presentation of the object
-    /// </summary>
-    /// <returns>String presentation of the object</returns>
-    public override string ToString()
-    {
-        var sb = new StringBuilder();
-        sb.Append("class DialerSequenceConfigChangeCampaignSequence {\n");
-
-        sb.Append("  Campaigns: ").Append(Campaigns).Append("\n");
-        sb.Append("  CurrentCampaign: ").Append(CurrentCampaign).Append("\n");
-        sb.Append("  Status: ").Append(Status).Append("\n");
-        sb.Append("  StopMessage: ").Append(StopMessage).Append("\n");
-        sb.Append("  Repeat: ").Append(Repeat).Append("\n");
-        sb.Append("  AdditionalProperties: ").Append(AdditionalProperties).Append("\n");
-        sb.Append("  Id: ").Append(Id).Append("\n");
-        sb.Append("  Name: ").Append(Name).Append("\n");
-        sb.Append("  DateCreated: ").Append(DateCreated).Append("\n");
-        sb.Append("  DateModified: ").Append(DateModified).Append("\n");
-        sb.Append("  Version: ").Append(Version).Append("\n");
-        sb.Append("}\n");
-        return sb.ToString();
-    }
-
-
-    /// <summary>
-    /// Returns true if objects are equal
-    /// </summary>
-    /// <param name="obj">Object to be compared</param>
-    /// <returns>Boolean</returns>
-    public override bool Equals(object obj)
-    {
-        // credit: http://stackoverflow.com/a/10454552/677735
-        return Equals(obj as DialerSequenceConfigChangeCampaignSequence);
-    }
-
-    /// <summary>
-    /// Returns true if DialerSequenceConfigChangeCampaignSequence instances are equal
-    /// </summary>
-    /// <param name="other">Instance of DialerSequenceConfigChangeCampaignSequence to be compared</param>
-    /// <returns>Boolean</returns>
-    public bool Equals(DialerSequenceConfigChangeCampaignSequence other)
-    {
-        // credit: http://stackoverflow.com/a/10454552/677735
-        if (other == null)
-        {
-            return false;
-        }
-
-        return true &&
-            (
-                Campaigns == other.Campaigns ||
-                Campaigns != null &&
-                Campaigns.SequenceEqual(other.Campaigns)
-            ) &&
-            (
-                CurrentCampaign == other.CurrentCampaign ||
-                CurrentCampaign != null &&
-                CurrentCampaign.Equals(other.CurrentCampaign)
-            ) &&
-            (
-                Status == other.Status ||
-                Status != null &&
-                Status.Equals(other.Status)
-            ) &&
-            (
-                StopMessage == other.StopMessage ||
-                StopMessage != null &&
-                StopMessage.Equals(other.StopMessage)
-            ) &&
-            (
-                Repeat == other.Repeat ||
-                Repeat != null &&
-                Repeat.Equals(other.Repeat)
-            ) &&
-            (
-                AdditionalProperties == other.AdditionalProperties ||
-                AdditionalProperties != null &&
-                AdditionalProperties.SequenceEqual(other.AdditionalProperties)
-            ) &&
-            (
-                Id == other.Id ||
-                Id != null &&
-                Id.Equals(other.Id)
-            ) &&
-            (
-                Name == other.Name ||
-                Name != null &&
-                Name.Equals(other.Name)
-            ) &&
-            (
-                DateCreated == other.DateCreated ||
-                DateCreated != null &&
-                DateCreated.Equals(other.DateCreated)
-            ) &&
-            (
-                DateModified == other.DateModified ||
-                DateModified != null &&
-                DateModified.Equals(other.DateModified)
-            ) &&
-            (
-                Version == other.Version ||
-                Version != null &&
-                Version.Equals(other.Version)
-            );
-    }
-
-    /// <summary>
-    /// Gets the hash code
-    /// </summary>
-    /// <returns>Hash code</returns>
-    public override int GetHashCode()
-    {
-        // credit: http://stackoverflow.com/a/263416/677735
-        unchecked // Overflow is fine, just wrap
-        {
-            int hash = 41;
-            // Suitable nullity checks etc, of course :)
-            if (Campaigns != null)
-            {
-                hash = hash * 59 + Campaigns.GetHashCode();
-            }
-
-            if (CurrentCampaign != null)
-            {
-                hash = hash * 59 + CurrentCampaign.GetHashCode();
-            }
-
-            if (Status != null)
-            {
-                hash = hash * 59 + Status.GetHashCode();
-            }
-
-            if (StopMessage != null)
-            {
-                hash = hash * 59 + StopMessage.GetHashCode();
-            }
-
-            if (Repeat != null)
-            {
-                hash = hash * 59 + Repeat.GetHashCode();
-            }
-
-            if (AdditionalProperties != null)
-            {
-                hash = hash * 59 + AdditionalProperties.GetHashCode();
-            }
-
-            if (Id != null)
-            {
-                hash = hash * 59 + Id.GetHashCode();
-            }
-
-            if (Name != null)
-            {
-                hash = hash * 59 + Name.GetHashCode();
-            }
-
-            if (DateCreated != null)
-            {
-                hash = hash * 59 + DateCreated.GetHashCode();
-            }
-
-            if (DateModified != null)
-            {
-                hash = hash * 59 + DateModified.GetHashCode();
-            }
-
-            if (Version != null)
-            {
-                hash = hash * 59 + Version.GetHashCode();
-            }
-
-            return hash;
-        }
-    }
 }
