@@ -472,6 +472,14 @@
     <Compile Include="Models\Evaluation.cs" />
     <Compile Include="Models\EvaluationForm.cs" />
     <Compile Include="Models\EvaluationMediaType.cs" />
+    <Compile Include="Models\EvaluationQualityV2TopicCalibration.cs" />
+    <Compile Include="Models\EvaluationQualityV2TopicEvaluationReference.cs" />
+    <Compile Include="Models\EvaluationQualityV2TopicEvaluationScoringSet.cs" />
+    <Compile Include="Models\EvaluationQualityV2TopicEvaluationSource.cs" />
+    <Compile Include="Models\EvaluationQualityV2TopicEvaluationV2.cs" />
+    <Compile Include="Models\EvaluationQualityV2TopicEvaluationV2.Status.cs" />
+    <Compile Include="Models\EvaluationQualityV2TopicEvaluationV2.PreviousStatus.cs" />
+    <Compile Include="Models\EvaluationQualityV2TopicUser.cs" />
     <Compile Include="Models\EvaluationQuestion.cs" />
     <Compile Include="Models\EvaluationQuestionGroup.cs" />
     <Compile Include="Models\EvaluationQuestionGroupScore.cs" />
