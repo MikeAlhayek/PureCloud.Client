@@ -12,7 +12,7 @@ public class IdentityTokenStore<TUser> : ITokenStore
     private readonly IHttpContextAccessor _httpContextAccessor;
     private readonly UserManager<TUser> _userManager;
 
-    private SemaphoreSlim _semaphore = new SemaphoreSlim(1);
+    private readonly SemaphoreSlim _semaphore = new SemaphoreSlim(1);
 
     private TUser _user;
 
@@ -116,25 +116,32 @@ public class IdentityTokenStore<TUser> : ITokenStore
             return false;
         }
 
-        var result = await _userManager.SetAuthenticationTokenAsync(_user, GenesysConstants.ProviderName, tokenType.GetDescription(), value);
+        var tokenName = tokenType.GetDescription();
+
+        await _userManager.RemoveAuthenticationTokenAsync(_user, GenesysConstants.ProviderName, tokenName);
+
+        var result = await _userManager.SetAuthenticationTokenAsync(_user, GenesysConstants.ProviderName, tokenName, value);
 
         return result.Succeeded;
     }
 
     private async Task EnsureUserLoadedAsync(ClaimsPrincipal principal)
     {
-        if (_user is null)
+        if (_user is not null)
         {
-            await _semaphore.WaitAsync();
-
-            try
-            {
-                _user ??= await _userManager.GetUserAsync(principal);
-            }
-            finally
-            {
-                _semaphore.Release();
-            }
+            return;
         }
+
+        await _semaphore.WaitAsync();
+
+        try
+        {
+            _user ??= await _userManager.GetUserAsync(principal);
+        }
+        finally
+        {
+            _semaphore.Release();
+        }
+
     }
 }

@@ -277,7 +277,10 @@ public sealed class NotificationClient : IAsyncDisposable
             {
                 _logger.LogDebug("Raising NotificationReceived for topic {Topic}", baseData.TopicName);
 
-                await Task.WhenAll(NotificationHandlers.Select(handler => handler(notificationData)));
+                foreach (var handler in NotificationHandlers)
+                {
+                    await handler.Invoke(notificationData);
+                }
             }
             else
             {

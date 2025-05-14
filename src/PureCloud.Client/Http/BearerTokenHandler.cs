@@ -50,7 +50,7 @@ public sealed class BearerTokenHandler : DelegatingHandler
             }
             else
             {
-                throw new UnauthorizedAccessException("Access token refresh failed. User re-authentication may be required.");
+                throw new UnauthorizedAccessException("Refresh access token failed. User re-authentication may be required.");
             }
         }
         else if ((int)response.StatusCode >= 400)
