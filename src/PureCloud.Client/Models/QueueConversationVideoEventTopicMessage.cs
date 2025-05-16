@@ -1,976 +1,164 @@
-using System.Runtime.Serialization;
 using System.Text;
 using System.Text.Json.Serialization;
 
 namespace PureCloud.Client.Models;
 
-/// <summary>
-/// QueueConversationVideoEventTopicMessage
-/// </summary>
-
-public partial class QueueConversationVideoEventTopicMessage : IEquatable<QueueConversationVideoEventTopicMessage>
+public sealed class QueueConversationVideoEventTopicMessage
 {
     /// <summary>
     /// Gets or Sets State
     /// </summary>
-    
-    public enum StateEnum
-    {
-        /// <summary>
-        /// Your SDK version is out of date and an unknown enum value was encountered. 
-        /// Please upgrade the SDK using the command "Upgrade-Package PureCloudApiSdk" 
-        /// in the Package Manager Console
-        /// </summary>
-        [EnumMember(Value = "OUTDATED_SDK_VERSION")]
-        OutdatedSdkVersion,
+    public QueueConversationVideoEventTopicMessageStateEnum? State { get; set; }
 
-        /// <summary>
-        /// Enum Alerting for "alerting"
-        /// </summary>
-        [EnumMember(Value = "alerting")]
-        Alerting,
-
-        /// <summary>
-        /// Enum Connected for "connected"
-        /// </summary>
-        [EnumMember(Value = "connected")]
-        Connected,
-
-        /// <summary>
-        /// Enum Disconnected for "disconnected"
-        /// </summary>
-        [EnumMember(Value = "disconnected")]
-        Disconnected
-    }
     /// <summary>
     /// Gets or Sets InitialState
     /// </summary>
-    
-    public enum InitialStateEnum
-    {
-        /// <summary>
-        /// Your SDK version is out of date and an unknown enum value was encountered. 
-        /// Please upgrade the SDK using the command "Upgrade-Package PureCloudApiSdk" 
-        /// in the Package Manager Console
-        /// </summary>
-        [EnumMember(Value = "OUTDATED_SDK_VERSION")]
-        OutdatedSdkVersion,
+    public QueueConversationVideoEventTopicMessageInitialStateEnum? InitialState { get; set; }
 
-        /// <summary>
-        /// Enum Alerting for "alerting"
-        /// </summary>
-        [EnumMember(Value = "alerting")]
-        Alerting,
-
-        /// <summary>
-        /// Enum Connected for "connected"
-        /// </summary>
-        [EnumMember(Value = "connected")]
-        Connected,
-
-        /// <summary>
-        /// Enum Disconnected for "disconnected"
-        /// </summary>
-        [EnumMember(Value = "disconnected")]
-        Disconnected
-    }
     /// <summary>
     /// Whether a message is inbound or outbound.
     /// </summary>
     /// <value>Whether a message is inbound or outbound.</value>
-    
-    public enum DirectionEnum
-    {
-        /// <summary>
-        /// Your SDK version is out of date and an unknown enum value was encountered. 
-        /// Please upgrade the SDK using the command "Upgrade-Package PureCloudApiSdk" 
-        /// in the Package Manager Console
-        /// </summary>
-        [EnumMember(Value = "OUTDATED_SDK_VERSION")]
-        OutdatedSdkVersion,
+    public QueueConversationVideoEventTopicMessageDirectionEnum? Direction { get; set; }
 
-        /// <summary>
-        /// Enum Outbound for "outbound"
-        /// </summary>
-        [EnumMember(Value = "outbound")]
-        Outbound,
-
-        /// <summary>
-        /// Enum Inbound for "inbound"
-        /// </summary>
-        [EnumMember(Value = "inbound")]
-        Inbound
-    }
     /// <summary>
     /// System defined string indicating what caused the communication to disconnect. Will be null until the communication disconnects.
     /// </summary>
     /// <value>System defined string indicating what caused the communication to disconnect. Will be null until the communication disconnects.</value>
-    
-    public enum DisconnectTypeEnum
-    {
-        /// <summary>
-        /// Your SDK version is out of date and an unknown enum value was encountered. 
-        /// Please upgrade the SDK using the command "Upgrade-Package PureCloudApiSdk" 
-        /// in the Package Manager Console
-        /// </summary>
-        [EnumMember(Value = "OUTDATED_SDK_VERSION")]
-        OutdatedSdkVersion,
+    public QueueConversationVideoEventTopicMessageDisconnectTypeEnum? DisconnectType { get; set; }
 
-        /// <summary>
-        /// Enum Endpoint for "endpoint"
-        /// </summary>
-        [EnumMember(Value = "endpoint")]
-        Endpoint,
-
-        /// <summary>
-        /// Enum Endpointdnd for "endpoint.dnd"
-        /// </summary>
-        [EnumMember(Value = "endpoint.dnd")]
-        Endpointdnd,
-
-        /// <summary>
-        /// Enum Client for "client"
-        /// </summary>
-        [EnumMember(Value = "client")]
-        Client,
-
-        /// <summary>
-        /// Enum System for "system"
-        /// </summary>
-        [EnumMember(Value = "system")]
-        System,
-
-        /// <summary>
-        /// Enum Timeout for "timeout"
-        /// </summary>
-        [EnumMember(Value = "timeout")]
-        Timeout,
-
-        /// <summary>
-        /// Enum Transfer for "transfer"
-        /// </summary>
-        [EnumMember(Value = "transfer")]
-        Transfer,
-
-        /// <summary>
-        /// Enum Transferconference for "transfer.conference"
-        /// </summary>
-        [EnumMember(Value = "transfer.conference")]
-        Transferconference,
-
-        /// <summary>
-        /// Enum Transferconsult for "transfer.consult"
-        /// </summary>
-        [EnumMember(Value = "transfer.consult")]
-        Transferconsult,
-
-        /// <summary>
-        /// Enum Transferforward for "transfer.forward"
-        /// </summary>
-        [EnumMember(Value = "transfer.forward")]
-        Transferforward,
-
-        /// <summary>
-        /// Enum Transfernoanswer for "transfer.noanswer"
-        /// </summary>
-        [EnumMember(Value = "transfer.noanswer")]
-        Transfernoanswer,
-
-        /// <summary>
-        /// Enum Transfernotavailable for "transfer.notavailable"
-        /// </summary>
-        [EnumMember(Value = "transfer.notavailable")]
-        Transfernotavailable,
-
-        /// <summary>
-        /// Enum Transferdnd for "transfer.dnd"
-        /// </summary>
-        [EnumMember(Value = "transfer.dnd")]
-        Transferdnd,
-
-        /// <summary>
-        /// Enum Transportfailure for "transport.failure"
-        /// </summary>
-        [EnumMember(Value = "transport.failure")]
-        Transportfailure,
-
-        /// <summary>
-        /// Enum Error for "error"
-        /// </summary>
-        [EnumMember(Value = "error")]
-        Error,
-
-        /// <summary>
-        /// Enum Peer for "peer"
-        /// </summary>
-        [EnumMember(Value = "peer")]
-        Peer,
-
-        /// <summary>
-        /// Enum Other for "other"
-        /// </summary>
-        [EnumMember(Value = "other")]
-        Other,
-
-        /// <summary>
-        /// Enum Spam for "spam"
-        /// </summary>
-        [EnumMember(Value = "spam")]
-        Spam,
-
-        /// <summary>
-        /// Enum Uncallable for "uncallable"
-        /// </summary>
-        [EnumMember(Value = "uncallable")]
-        Uncallable
-    }
     /// <summary>
     /// Indicates the type of message platform from which the message originated.
     /// </summary>
     /// <value>Indicates the type of message platform from which the message originated.</value>
-    
-    public enum TypeEnum
-    {
-        /// <summary>
-        /// Your SDK version is out of date and an unknown enum value was encountered. 
-        /// Please upgrade the SDK using the command "Upgrade-Package PureCloudApiSdk" 
-        /// in the Package Manager Console
-        /// </summary>
-        [EnumMember(Value = "OUTDATED_SDK_VERSION")]
-        OutdatedSdkVersion,
-
-        /// <summary>
-        /// Enum Unknown for "unknown"
-        /// </summary>
-        [EnumMember(Value = "unknown")]
-        Unknown,
-
-        /// <summary>
-        /// Enum Sms for "sms"
-        /// </summary>
-        [EnumMember(Value = "sms")]
-        Sms,
-
-        /// <summary>
-        /// Enum Twitter for "twitter"
-        /// </summary>
-        [EnumMember(Value = "twitter")]
-        Twitter,
-
-        /// <summary>
-        /// Enum Facebook for "facebook"
-        /// </summary>
-        [EnumMember(Value = "facebook")]
-        Facebook,
-
-        /// <summary>
-        /// Enum Line for "line"
-        /// </summary>
-        [EnumMember(Value = "line")]
-        Line,
-
-        /// <summary>
-        /// Enum Viber for "viber"
-        /// </summary>
-        [EnumMember(Value = "viber")]
-        Viber,
-
-        /// <summary>
-        /// Enum Wechat for "wechat"
-        /// </summary>
-        [EnumMember(Value = "wechat")]
-        Wechat,
-
-        /// <summary>
-        /// Enum Whatsapp for "whatsapp"
-        /// </summary>
-        [EnumMember(Value = "whatsapp")]
-        Whatsapp,
-
-        /// <summary>
-        /// Enum Telegram for "telegram"
-        /// </summary>
-        [EnumMember(Value = "telegram")]
-        Telegram,
-
-        /// <summary>
-        /// Enum Kakao for "kakao"
-        /// </summary>
-        [EnumMember(Value = "kakao")]
-        Kakao,
-
-        /// <summary>
-        /// Enum Webmessaging for "webmessaging"
-        /// </summary>
-        [EnumMember(Value = "webmessaging")]
-        Webmessaging,
-
-        /// <summary>
-        /// Enum Open for "open"
-        /// </summary>
-        [EnumMember(Value = "open")]
-        Open,
-
-        /// <summary>
-        /// Enum Instagram for "instagram"
-        /// </summary>
-        [EnumMember(Value = "instagram")]
-        Instagram,
-
-        /// <summary>
-        /// Enum Apple for "apple"
-        /// </summary>
-        [EnumMember(Value = "apple")]
-        Apple
-    }
-    /// <summary>
-    /// Gets or Sets State
-    /// </summary>
-    [JsonPropertyName("state")]
-    public StateEnum? State { get; set; }
-    /// <summary>
-    /// Gets or Sets InitialState
-    /// </summary>
-    [JsonPropertyName("initialState")]
-    public InitialStateEnum? InitialState { get; set; }
-    /// <summary>
-    /// Whether a message is inbound or outbound.
-    /// </summary>
-    /// <value>Whether a message is inbound or outbound.</value>
-    [JsonPropertyName("direction")]
-    public DirectionEnum? Direction { get; set; }
-    /// <summary>
-    /// System defined string indicating what caused the communication to disconnect. Will be null until the communication disconnects.
-    /// </summary>
-    /// <value>System defined string indicating what caused the communication to disconnect. Will be null until the communication disconnects.</value>
-    [JsonPropertyName("disconnectType")]
-    public DisconnectTypeEnum? DisconnectType { get; set; }
-    /// <summary>
-    /// Indicates the type of message platform from which the message originated.
-    /// </summary>
-    /// <value>Indicates the type of message platform from which the message originated.</value>
-    [JsonPropertyName("type")]
-    public TypeEnum? Type { get; set; }
-    /// <summary>
-    /// Initializes a new instance of the <see cref="QueueConversationVideoEventTopicMessage" /> class.
-    /// </summary>
-    /// <param name="Id">A globally unique identifier for this communication..</param>
-    /// <param name="State">State.</param>
-    /// <param name="InitialState">InitialState.</param>
-    /// <param name="Direction">Whether a message is inbound or outbound..</param>
-    /// <param name="Held">True if this call is held and the person on this side hears silence..</param>
-    /// <param name="ErrorInfo">Detailed information about an error response..</param>
-    /// <param name="Provider">The source provider of the email..</param>
-    /// <param name="ScriptId">The UUID of the script to use..</param>
-    /// <param name="PeerId">The id of the peer communication corresponding to a matching leg for this communication..</param>
-    /// <param name="DisconnectType">System defined string indicating what caused the communication to disconnect. Will be null until the communication disconnects..</param>
-    /// <param name="StartHoldTime">The timestamp the email was placed on hold in the cloud clock if the email is currently on hold..</param>
-    /// <param name="ConnectedTime">The timestamp when this communication was connected in the cloud clock..</param>
-    /// <param name="DisconnectedTime">The timestamp when this communication disconnected from the conversation in the provider clock..</param>
-    /// <param name="ToAddress">Address and name data for a call endpoint..</param>
-    /// <param name="FromAddress">Address and name data for a call endpoint..</param>
-    /// <param name="Messages">The messages sent on this communication channel..</param>
-    /// <param name="MessagesTranscriptUri">the messages transcript file uri..</param>
-    /// <param name="Type">Indicates the type of message platform from which the message originated..</param>
-    /// <param name="RecipientCountry">Indicates the country where the recipient is associated in ISO 3166-1 alpha-2 format..</param>
-    /// <param name="RecipientType">The type of the recipient. Eg: Provisioned phoneNumber is the recipient for sms message type..</param>
-    /// <param name="JourneyContext">A subset of the Journey System&#39;s data relevant to a part of a conversation (for external linkage and internal usage/context)..</param>
-    /// <param name="Wrapup">Call wrap up or disposition data..</param>
-    /// <param name="AfterCallWork">A communication&#39;s after-call work data..</param>
-    /// <param name="AfterCallWorkRequired">Indicates if after-call is required for a communication. Only used when the ACW Setting is Agent Requested..</param>
-    /// <param name="AgentAssistantId">UUID of virtual agent assistant that provide suggestions to the agent participant during the conversation..</param>
-    /// <param name="ByoSmsIntegrationId">ByoSmsIntegrationId.</param>
-    /// <param name="QueueMediaSettings">Represents the queue setting for this media..</param>
-    public QueueConversationVideoEventTopicMessage(string Id = null, StateEnum? State = null, InitialStateEnum? InitialState = null, DirectionEnum? Direction = null, bool? Held = null, QueueConversationVideoEventTopicErrorDetails ErrorInfo = null, string Provider = null, string ScriptId = null, string PeerId = null, DisconnectTypeEnum? DisconnectType = null, DateTime? StartHoldTime = null, DateTime? ConnectedTime = null, DateTime? DisconnectedTime = null, QueueConversationVideoEventTopicAddress ToAddress = null, QueueConversationVideoEventTopicAddress FromAddress = null, List<QueueConversationVideoEventTopicMessageDetails> Messages = null, string MessagesTranscriptUri = null, TypeEnum? Type = null, string RecipientCountry = null, string RecipientType = null, QueueConversationVideoEventTopicJourneyContext JourneyContext = null, QueueConversationVideoEventTopicWrapup Wrapup = null, QueueConversationVideoEventTopicAfterCallWork AfterCallWork = null, bool? AfterCallWorkRequired = null, string AgentAssistantId = null, string ByoSmsIntegrationId = null, QueueConversationVideoEventTopicQueueMediaSettings QueueMediaSettings = null)
-    {
-        this.Id = Id;
-        this.State = State;
-        this.InitialState = InitialState;
-        this.Direction = Direction;
-        this.Held = Held;
-        this.ErrorInfo = ErrorInfo;
-        this.Provider = Provider;
-        this.ScriptId = ScriptId;
-        this.PeerId = PeerId;
-        this.DisconnectType = DisconnectType;
-        this.StartHoldTime = StartHoldTime;
-        this.ConnectedTime = ConnectedTime;
-        this.DisconnectedTime = DisconnectedTime;
-        this.ToAddress = ToAddress;
-        this.FromAddress = FromAddress;
-        this.Messages = Messages;
-        this.MessagesTranscriptUri = MessagesTranscriptUri;
-        this.Type = Type;
-        this.RecipientCountry = RecipientCountry;
-        this.RecipientType = RecipientType;
-        this.JourneyContext = JourneyContext;
-        this.Wrapup = Wrapup;
-        this.AfterCallWork = AfterCallWork;
-        this.AfterCallWorkRequired = AfterCallWorkRequired;
-        this.AgentAssistantId = AgentAssistantId;
-        this.ByoSmsIntegrationId = ByoSmsIntegrationId;
-        this.QueueMediaSettings = QueueMediaSettings;
-
-    }
-
-
+    public QueueConversationVideoEventTopicMessageTypeEnum? Type { get; set; }
 
     /// <summary>
     /// A globally unique identifier for this communication.
     /// </summary>
     /// <value>A globally unique identifier for this communication.</value>
-    [JsonPropertyName("id")]
     public string Id { get; set; }
-
-
-
-
-
-
-
-
 
     /// <summary>
     /// True if this call is held and the person on this side hears silence.
     /// </summary>
     /// <value>True if this call is held and the person on this side hears silence.</value>
-    [JsonPropertyName("held")]
     public bool? Held { get; set; }
-
-
 
     /// <summary>
     /// Detailed information about an error response.
     /// </summary>
     /// <value>Detailed information about an error response.</value>
-    [JsonPropertyName("errorInfo")]
     public QueueConversationVideoEventTopicErrorDetails ErrorInfo { get; set; }
-
-
 
     /// <summary>
     /// The source provider of the email.
     /// </summary>
     /// <value>The source provider of the email.</value>
-    [JsonPropertyName("provider")]
     public string Provider { get; set; }
-
-
 
     /// <summary>
     /// The UUID of the script to use.
     /// </summary>
     /// <value>The UUID of the script to use.</value>
-    [JsonPropertyName("scriptId")]
     public string ScriptId { get; set; }
-
-
 
     /// <summary>
     /// The id of the peer communication corresponding to a matching leg for this communication.
     /// </summary>
     /// <value>The id of the peer communication corresponding to a matching leg for this communication.</value>
-    [JsonPropertyName("peerId")]
     public string PeerId { get; set; }
-
-
-
-
 
     /// <summary>
     /// The timestamp the email was placed on hold in the cloud clock if the email is currently on hold.
     /// </summary>
     /// <value>The timestamp the email was placed on hold in the cloud clock if the email is currently on hold.</value>
-    [JsonPropertyName("startHoldTime")]
     public DateTime? StartHoldTime { get; set; }
-
-
 
     /// <summary>
     /// The timestamp when this communication was connected in the cloud clock.
     /// </summary>
     /// <value>The timestamp when this communication was connected in the cloud clock.</value>
-    [JsonPropertyName("connectedTime")]
     public DateTime? ConnectedTime { get; set; }
-
-
 
     /// <summary>
     /// The timestamp when this communication disconnected from the conversation in the provider clock.
     /// </summary>
     /// <value>The timestamp when this communication disconnected from the conversation in the provider clock.</value>
-    [JsonPropertyName("disconnectedTime")]
     public DateTime? DisconnectedTime { get; set; }
 
-
-
     /// <summary>
     /// Address and name data for a call endpoint.
     /// </summary>
     /// <value>Address and name data for a call endpoint.</value>
-    [JsonPropertyName("toAddress")]
     public QueueConversationVideoEventTopicAddress ToAddress { get; set; }
 
-
-
     /// <summary>
     /// Address and name data for a call endpoint.
     /// </summary>
     /// <value>Address and name data for a call endpoint.</value>
-    [JsonPropertyName("fromAddress")]
     public QueueConversationVideoEventTopicAddress FromAddress { get; set; }
-
-
 
     /// <summary>
     /// The messages sent on this communication channel.
     /// </summary>
     /// <value>The messages sent on this communication channel.</value>
-    [JsonPropertyName("messages")]
-    public List<QueueConversationVideoEventTopicMessageDetails> Messages { get; set; }
-
-
+    public IEnumerable<QueueConversationVideoEventTopicMessageDetails> Messages { get; set; }
 
     /// <summary>
     /// the messages transcript file uri.
     /// </summary>
     /// <value>the messages transcript file uri.</value>
-    [JsonPropertyName("messagesTranscriptUri")]
     public string MessagesTranscriptUri { get; set; }
-
-
-
-
 
     /// <summary>
     /// Indicates the country where the recipient is associated in ISO 3166-1 alpha-2 format.
     /// </summary>
     /// <value>Indicates the country where the recipient is associated in ISO 3166-1 alpha-2 format.</value>
-    [JsonPropertyName("recipientCountry")]
     public string RecipientCountry { get; set; }
-
-
 
     /// <summary>
     /// The type of the recipient. Eg: Provisioned phoneNumber is the recipient for sms message type.
     /// </summary>
-    /// <value>The type of the recipient. Eg: Provisioned phoneNumber is the recipient for sms message type.</value>
-    [JsonPropertyName("recipientType")]
     public string RecipientType { get; set; }
-
-
 
     /// <summary>
     /// A subset of the Journey System&#39;s data relevant to a part of a conversation (for external linkage and internal usage/context).
     /// </summary>
-    /// <value>A subset of the Journey System&#39;s data relevant to a part of a conversation (for external linkage and internal usage/context).</value>
-    [JsonPropertyName("journeyContext")]
     public QueueConversationVideoEventTopicJourneyContext JourneyContext { get; set; }
-
-
 
     /// <summary>
     /// Call wrap up or disposition data.
     /// </summary>
     /// <value>Call wrap up or disposition data.</value>
-    [JsonPropertyName("wrapup")]
     public QueueConversationVideoEventTopicWrapup Wrapup { get; set; }
-
-
 
     /// <summary>
     /// A communication&#39;s after-call work data.
     /// </summary>
     /// <value>A communication&#39;s after-call work data.</value>
-    [JsonPropertyName("afterCallWork")]
     public QueueConversationVideoEventTopicAfterCallWork AfterCallWork { get; set; }
-
-
 
     /// <summary>
     /// Indicates if after-call is required for a communication. Only used when the ACW Setting is Agent Requested.
     /// </summary>
     /// <value>Indicates if after-call is required for a communication. Only used when the ACW Setting is Agent Requested.</value>
-    [JsonPropertyName("afterCallWorkRequired")]
     public bool? AfterCallWorkRequired { get; set; }
-
-
 
     /// <summary>
     /// UUID of virtual agent assistant that provide suggestions to the agent participant during the conversation.
     /// </summary>
     /// <value>UUID of virtual agent assistant that provide suggestions to the agent participant during the conversation.</value>
-    [JsonPropertyName("agentAssistantId")]
     public string AgentAssistantId { get; set; }
-
-
 
     /// <summary>
     /// Gets or Sets ByoSmsIntegrationId
     /// </summary>
-    [JsonPropertyName("byoSmsIntegrationId")]
     public string ByoSmsIntegrationId { get; set; }
-
-
 
     /// <summary>
     /// Represents the queue setting for this media.
     /// </summary>
     /// <value>Represents the queue setting for this media.</value>
-    [JsonPropertyName("queueMediaSettings")]
     public QueueConversationVideoEventTopicQueueMediaSettings QueueMediaSettings { get; set; }
-
-
-    /// <summary>
-    /// Returns the string presentation of the object
-    /// </summary>
-    /// <returns>String presentation of the object</returns>
-    public override string ToString()
-    {
-        var sb = new StringBuilder();
-        sb.Append("class QueueConversationVideoEventTopicMessage {\n");
-
-        sb.Append("  Id: ").Append(Id).Append("\n");
-        sb.Append("  State: ").Append(State).Append("\n");
-        sb.Append("  InitialState: ").Append(InitialState).Append("\n");
-        sb.Append("  Direction: ").Append(Direction).Append("\n");
-        sb.Append("  Held: ").Append(Held).Append("\n");
-        sb.Append("  ErrorInfo: ").Append(ErrorInfo).Append("\n");
-        sb.Append("  Provider: ").Append(Provider).Append("\n");
-        sb.Append("  ScriptId: ").Append(ScriptId).Append("\n");
-        sb.Append("  PeerId: ").Append(PeerId).Append("\n");
-        sb.Append("  DisconnectType: ").Append(DisconnectType).Append("\n");
-        sb.Append("  StartHoldTime: ").Append(StartHoldTime).Append("\n");
-        sb.Append("  ConnectedTime: ").Append(ConnectedTime).Append("\n");
-        sb.Append("  DisconnectedTime: ").Append(DisconnectedTime).Append("\n");
-        sb.Append("  ToAddress: ").Append(ToAddress).Append("\n");
-        sb.Append("  FromAddress: ").Append(FromAddress).Append("\n");
-        sb.Append("  Messages: ").Append(Messages).Append("\n");
-        sb.Append("  MessagesTranscriptUri: ").Append(MessagesTranscriptUri).Append("\n");
-        sb.Append("  Type: ").Append(Type).Append("\n");
-        sb.Append("  RecipientCountry: ").Append(RecipientCountry).Append("\n");
-        sb.Append("  RecipientType: ").Append(RecipientType).Append("\n");
-        sb.Append("  JourneyContext: ").Append(JourneyContext).Append("\n");
-        sb.Append("  Wrapup: ").Append(Wrapup).Append("\n");
-        sb.Append("  AfterCallWork: ").Append(AfterCallWork).Append("\n");
-        sb.Append("  AfterCallWorkRequired: ").Append(AfterCallWorkRequired).Append("\n");
-        sb.Append("  AgentAssistantId: ").Append(AgentAssistantId).Append("\n");
-        sb.Append("  ByoSmsIntegrationId: ").Append(ByoSmsIntegrationId).Append("\n");
-        sb.Append("  QueueMediaSettings: ").Append(QueueMediaSettings).Append("\n");
-        sb.Append("}\n");
-        return sb.ToString();
-    }
-
-
-    /// <summary>
-    /// Returns true if objects are equal
-    /// </summary>
-    /// <param name="obj">Object to be compared</param>
-    /// <returns>Boolean</returns>
-    public override bool Equals(object obj)
-    {
-        // credit: http://stackoverflow.com/a/10454552/677735
-        return Equals(obj as QueueConversationVideoEventTopicMessage);
-    }
-
-    /// <summary>
-    /// Returns true if QueueConversationVideoEventTopicMessage instances are equal
-    /// </summary>
-    /// <param name="other">Instance of QueueConversationVideoEventTopicMessage to be compared</param>
-    /// <returns>Boolean</returns>
-    public bool Equals(QueueConversationVideoEventTopicMessage other)
-    {
-        // credit: http://stackoverflow.com/a/10454552/677735
-        if (other == null)
-        {
-            return false;
-        }
-
-        return true &&
-            (
-                Id == other.Id ||
-                Id != null &&
-                Id.Equals(other.Id)
-            ) &&
-            (
-                State == other.State ||
-                State != null &&
-                State.Equals(other.State)
-            ) &&
-            (
-                InitialState == other.InitialState ||
-                InitialState != null &&
-                InitialState.Equals(other.InitialState)
-            ) &&
-            (
-                Direction == other.Direction ||
-                Direction != null &&
-                Direction.Equals(other.Direction)
-            ) &&
-            (
-                Held == other.Held ||
-                Held != null &&
-                Held.Equals(other.Held)
-            ) &&
-            (
-                ErrorInfo == other.ErrorInfo ||
-                ErrorInfo != null &&
-                ErrorInfo.Equals(other.ErrorInfo)
-            ) &&
-            (
-                Provider == other.Provider ||
-                Provider != null &&
-                Provider.Equals(other.Provider)
-            ) &&
-            (
-                ScriptId == other.ScriptId ||
-                ScriptId != null &&
-                ScriptId.Equals(other.ScriptId)
-            ) &&
-            (
-                PeerId == other.PeerId ||
-                PeerId != null &&
-                PeerId.Equals(other.PeerId)
-            ) &&
-            (
-                DisconnectType == other.DisconnectType ||
-                DisconnectType != null &&
-                DisconnectType.Equals(other.DisconnectType)
-            ) &&
-            (
-                StartHoldTime == other.StartHoldTime ||
-                StartHoldTime != null &&
-                StartHoldTime.Equals(other.StartHoldTime)
-            ) &&
-            (
-                ConnectedTime == other.ConnectedTime ||
-                ConnectedTime != null &&
-                ConnectedTime.Equals(other.ConnectedTime)
-            ) &&
-            (
-                DisconnectedTime == other.DisconnectedTime ||
-                DisconnectedTime != null &&
-                DisconnectedTime.Equals(other.DisconnectedTime)
-            ) &&
-            (
-                ToAddress == other.ToAddress ||
-                ToAddress != null &&
-                ToAddress.Equals(other.ToAddress)
-            ) &&
-            (
-                FromAddress == other.FromAddress ||
-                FromAddress != null &&
-                FromAddress.Equals(other.FromAddress)
-            ) &&
-            (
-                Messages == other.Messages ||
-                Messages != null &&
-                Messages.SequenceEqual(other.Messages)
-            ) &&
-            (
-                MessagesTranscriptUri == other.MessagesTranscriptUri ||
-                MessagesTranscriptUri != null &&
-                MessagesTranscriptUri.Equals(other.MessagesTranscriptUri)
-            ) &&
-            (
-                Type == other.Type ||
-                Type != null &&
-                Type.Equals(other.Type)
-            ) &&
-            (
-                RecipientCountry == other.RecipientCountry ||
-                RecipientCountry != null &&
-                RecipientCountry.Equals(other.RecipientCountry)
-            ) &&
-            (
-                RecipientType == other.RecipientType ||
-                RecipientType != null &&
-                RecipientType.Equals(other.RecipientType)
-            ) &&
-            (
-                JourneyContext == other.JourneyContext ||
-                JourneyContext != null &&
-                JourneyContext.Equals(other.JourneyContext)
-            ) &&
-            (
-                Wrapup == other.Wrapup ||
-                Wrapup != null &&
-                Wrapup.Equals(other.Wrapup)
-            ) &&
-            (
-                AfterCallWork == other.AfterCallWork ||
-                AfterCallWork != null &&
-                AfterCallWork.Equals(other.AfterCallWork)
-            ) &&
-            (
-                AfterCallWorkRequired == other.AfterCallWorkRequired ||
-                AfterCallWorkRequired != null &&
-                AfterCallWorkRequired.Equals(other.AfterCallWorkRequired)
-            ) &&
-            (
-                AgentAssistantId == other.AgentAssistantId ||
-                AgentAssistantId != null &&
-                AgentAssistantId.Equals(other.AgentAssistantId)
-            ) &&
-            (
-                ByoSmsIntegrationId == other.ByoSmsIntegrationId ||
-                ByoSmsIntegrationId != null &&
-                ByoSmsIntegrationId.Equals(other.ByoSmsIntegrationId)
-            ) &&
-            (
-                QueueMediaSettings == other.QueueMediaSettings ||
-                QueueMediaSettings != null &&
-                QueueMediaSettings.Equals(other.QueueMediaSettings)
-            );
-    }
-
-    /// <summary>
-    /// Gets the hash code
-    /// </summary>
-    /// <returns>Hash code</returns>
-    public override int GetHashCode()
-    {
-        // credit: http://stackoverflow.com/a/263416/677735
-        unchecked // Overflow is fine, just wrap
-        {
-            int hash = 41;
-            // Suitable nullity checks etc, of course :)
-            if (Id != null)
-            {
-                hash = hash * 59 + Id.GetHashCode();
-            }
-
-            if (State != null)
-            {
-                hash = hash * 59 + State.GetHashCode();
-            }
-
-            if (InitialState != null)
-            {
-                hash = hash * 59 + InitialState.GetHashCode();
-            }
-
-            if (Direction != null)
-            {
-                hash = hash * 59 + Direction.GetHashCode();
-            }
-
-            if (Held != null)
-            {
-                hash = hash * 59 + Held.GetHashCode();
-            }
-
-            if (ErrorInfo != null)
-            {
-                hash = hash * 59 + ErrorInfo.GetHashCode();
-            }
-
-            if (Provider != null)
-            {
-                hash = hash * 59 + Provider.GetHashCode();
-            }
-
-            if (ScriptId != null)
-            {
-                hash = hash * 59 + ScriptId.GetHashCode();
-            }
-
-            if (PeerId != null)
-            {
-                hash = hash * 59 + PeerId.GetHashCode();
-            }
-
-            if (DisconnectType != null)
-            {
-                hash = hash * 59 + DisconnectType.GetHashCode();
-            }
-
-            if (StartHoldTime != null)
-            {
-                hash = hash * 59 + StartHoldTime.GetHashCode();
-            }
-
-            if (ConnectedTime != null)
-            {
-                hash = hash * 59 + ConnectedTime.GetHashCode();
-            }
-
-            if (DisconnectedTime != null)
-            {
-                hash = hash * 59 + DisconnectedTime.GetHashCode();
-            }
-
-            if (ToAddress != null)
-            {
-                hash = hash * 59 + ToAddress.GetHashCode();
-            }
-
-            if (FromAddress != null)
-            {
-                hash = hash * 59 + FromAddress.GetHashCode();
-            }
-
-            if (Messages != null)
-            {
-                hash = hash * 59 + Messages.GetHashCode();
-            }
-
-            if (MessagesTranscriptUri != null)
-            {
-                hash = hash * 59 + MessagesTranscriptUri.GetHashCode();
-            }
-
-            if (Type != null)
-            {
-                hash = hash * 59 + Type.GetHashCode();
-            }
-
-            if (RecipientCountry != null)
-            {
-                hash = hash * 59 + RecipientCountry.GetHashCode();
-            }
-
-            if (RecipientType != null)
-            {
-                hash = hash * 59 + RecipientType.GetHashCode();
-            }
-
-            if (JourneyContext != null)
-            {
-                hash = hash * 59 + JourneyContext.GetHashCode();
-            }
-
-            if (Wrapup != null)
-            {
-                hash = hash * 59 + Wrapup.GetHashCode();
-            }
-
-            if (AfterCallWork != null)
-            {
-                hash = hash * 59 + AfterCallWork.GetHashCode();
-            }
-
-            if (AfterCallWorkRequired != null)
-            {
-                hash = hash * 59 + AfterCallWorkRequired.GetHashCode();
-            }
-
-            if (AgentAssistantId != null)
-            {
-                hash = hash * 59 + AgentAssistantId.GetHashCode();
-            }
-
-            if (ByoSmsIntegrationId != null)
-            {
-                hash = hash * 59 + ByoSmsIntegrationId.GetHashCode();
-            }
-
-            if (QueueMediaSettings != null)
-            {
-                hash = hash * 59 + QueueMediaSettings.GetHashCode();
-            }
-
-            return hash;
-        }
-    }
 }

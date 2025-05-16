@@ -1,358 +1,52 @@
-using System.Runtime.Serialization;
 using System.Text;
 using System.Text.Json.Serialization;
 
 namespace PureCloud.Client.Models;
 
-/// <summary>
-/// QueueConversationMessageEventTopicMessageDetails
-/// </summary>
-
-public partial class QueueConversationMessageEventTopicMessageDetails : IEquatable<QueueConversationMessageEventTopicMessageDetails>
+public sealed class QueueConversationMessageEventTopicMessageDetails
 {
     /// <summary>
     /// Gets or Sets MessageStatus
     /// </summary>
-    
-    public enum MessageStatusEnum
-    {
-        /// <summary>
-        /// Your SDK version is out of date and an unknown enum value was encountered. 
-        /// Please upgrade the SDK using the command "Upgrade-Package PureCloudApiSdk" 
-        /// in the Package Manager Console
-        /// </summary>
-        [EnumMember(Value = "OUTDATED_SDK_VERSION")]
-        OutdatedSdkVersion,
+    public QueueConversationMessageEventTopicMessageDetailsMessageStatusEnum? MessageStatus { get; set; }
 
-        /// <summary>
-        /// Enum Queued for "queued"
-        /// </summary>
-        [EnumMember(Value = "queued")]
-        Queued,
-
-        /// <summary>
-        /// Enum Sent for "sent"
-        /// </summary>
-        [EnumMember(Value = "sent")]
-        Sent,
-
-        /// <summary>
-        /// Enum Failed for "failed"
-        /// </summary>
-        [EnumMember(Value = "failed")]
-        Failed,
-
-        /// <summary>
-        /// Enum Received for "received"
-        /// </summary>
-        [EnumMember(Value = "received")]
-        Received,
-
-        /// <summary>
-        /// Enum Deliverysuccess for "delivery-success"
-        /// </summary>
-        [EnumMember(Value = "delivery-success")]
-        Deliverysuccess,
-
-        /// <summary>
-        /// Enum Deliveryfailed for "delivery-failed"
-        /// </summary>
-        [EnumMember(Value = "delivery-failed")]
-        Deliveryfailed,
-
-        /// <summary>
-        /// Enum Read for "read"
-        /// </summary>
-        [EnumMember(Value = "read")]
-        Read,
-
-        /// <summary>
-        /// Enum Removed for "removed"
-        /// </summary>
-        [EnumMember(Value = "removed")]
-        Removed,
-
-        /// <summary>
-        /// Enum Published for "published"
-        /// </summary>
-        [EnumMember(Value = "published")]
-        Published
-    }
     /// <summary>
     /// Gets or Sets SocialVisibility
     /// </summary>
-    
-    public enum SocialVisibilityEnum
-    {
-        /// <summary>
-        /// Your SDK version is out of date and an unknown enum value was encountered. 
-        /// Please upgrade the SDK using the command "Upgrade-Package PureCloudApiSdk" 
-        /// in the Package Manager Console
-        /// </summary>
-        [EnumMember(Value = "OUTDATED_SDK_VERSION")]
-        OutdatedSdkVersion,
-
-        /// <summary>
-        /// Enum Private for "private"
-        /// </summary>
-        [EnumMember(Value = "private")]
-        Private,
-
-        /// <summary>
-        /// Enum Public for "public"
-        /// </summary>
-        [EnumMember(Value = "public")]
-        Public
-    }
-    /// <summary>
-    /// Gets or Sets MessageStatus
-    /// </summary>
-    [JsonPropertyName("messageStatus")]
-    public MessageStatusEnum? MessageStatus { get; set; }
-    /// <summary>
-    /// Gets or Sets SocialVisibility
-    /// </summary>
-    [JsonPropertyName("socialVisibility")]
-    public SocialVisibilityEnum? SocialVisibility { get; set; }
-    /// <summary>
-    /// Initializes a new instance of the <see cref="QueueConversationMessageEventTopicMessageDetails" /> class.
-    /// </summary>
-    /// <param name="Message">Message.</param>
-    /// <param name="MessageTime">MessageTime.</param>
-    /// <param name="MessageSegmentCount">MessageSegmentCount.</param>
-    /// <param name="MessageStatus">MessageStatus.</param>
-    /// <param name="Media">Media.</param>
-    /// <param name="Stickers">Stickers.</param>
-    /// <param name="ErrorInfo">ErrorInfo.</param>
-    /// <param name="MessageMetadata">MessageMetadata.</param>
-    /// <param name="SocialVisibility">SocialVisibility.</param>
-    public QueueConversationMessageEventTopicMessageDetails(QueueConversationMessageEventTopicUriReference Message = null, DateTime? MessageTime = null, long? MessageSegmentCount = null, MessageStatusEnum? MessageStatus = null, List<QueueConversationMessageEventTopicMessageMedia> Media = null, List<QueueConversationMessageEventTopicMessageSticker> Stickers = null, QueueConversationMessageEventTopicErrorDetails ErrorInfo = null, QueueConversationMessageEventTopicMessageMetadata MessageMetadata = null, SocialVisibilityEnum? SocialVisibility = null)
-    {
-        this.Message = Message;
-        this.MessageTime = MessageTime;
-        this.MessageSegmentCount = MessageSegmentCount;
-        this.MessageStatus = MessageStatus;
-        this.Media = Media;
-        this.Stickers = Stickers;
-        this.ErrorInfo = ErrorInfo;
-        this.MessageMetadata = MessageMetadata;
-        this.SocialVisibility = SocialVisibility;
-
-    }
-
-
+    public QueueConversationMessageEventTopicMessageDetailsSocialVisibilityEnum? SocialVisibility { get; set; }
 
     /// <summary>
     /// Gets or Sets Message
     /// </summary>
-    [JsonPropertyName("message")]
     public QueueConversationMessageEventTopicUriReference Message { get; set; }
-
-
 
     /// <summary>
     /// Gets or Sets MessageTime
     /// </summary>
-    [JsonPropertyName("messageTime")]
     public DateTime? MessageTime { get; set; }
-
-
 
     /// <summary>
     /// Gets or Sets MessageSegmentCount
     /// </summary>
-    [JsonPropertyName("messageSegmentCount")]
     public long? MessageSegmentCount { get; set; }
-
-
-
-
 
     /// <summary>
     /// Gets or Sets Media
     /// </summary>
-    [JsonPropertyName("media")]
-    public List<QueueConversationMessageEventTopicMessageMedia> Media { get; set; }
-
-
+    public IEnumerable<QueueConversationMessageEventTopicMessageMedia> Media { get; set; }
 
     /// <summary>
     /// Gets or Sets Stickers
     /// </summary>
-    [JsonPropertyName("stickers")]
-    public List<QueueConversationMessageEventTopicMessageSticker> Stickers { get; set; }
-
-
+    public IEnumerable<QueueConversationMessageEventTopicMessageSticker> Stickers { get; set; }
 
     /// <summary>
     /// Gets or Sets ErrorInfo
     /// </summary>
-    [JsonPropertyName("errorInfo")]
     public QueueConversationMessageEventTopicErrorDetails ErrorInfo { get; set; }
-
-
 
     /// <summary>
     /// Gets or Sets MessageMetadata
     /// </summary>
-    [JsonPropertyName("messageMetadata")]
     public QueueConversationMessageEventTopicMessageMetadata MessageMetadata { get; set; }
-
-
-
-
-    /// <summary>
-    /// Returns the string presentation of the object
-    /// </summary>
-    /// <returns>String presentation of the object</returns>
-    public override string ToString()
-    {
-        var sb = new StringBuilder();
-        sb.Append("class QueueConversationMessageEventTopicMessageDetails {\n");
-
-        sb.Append("  Message: ").Append(Message).Append("\n");
-        sb.Append("  MessageTime: ").Append(MessageTime).Append("\n");
-        sb.Append("  MessageSegmentCount: ").Append(MessageSegmentCount).Append("\n");
-        sb.Append("  MessageStatus: ").Append(MessageStatus).Append("\n");
-        sb.Append("  Media: ").Append(Media).Append("\n");
-        sb.Append("  Stickers: ").Append(Stickers).Append("\n");
-        sb.Append("  ErrorInfo: ").Append(ErrorInfo).Append("\n");
-        sb.Append("  MessageMetadata: ").Append(MessageMetadata).Append("\n");
-        sb.Append("  SocialVisibility: ").Append(SocialVisibility).Append("\n");
-        sb.Append("}\n");
-        return sb.ToString();
-    }
-
-
-    /// <summary>
-    /// Returns true if objects are equal
-    /// </summary>
-    /// <param name="obj">Object to be compared</param>
-    /// <returns>Boolean</returns>
-    public override bool Equals(object obj)
-    {
-        // credit: http://stackoverflow.com/a/10454552/677735
-        return Equals(obj as QueueConversationMessageEventTopicMessageDetails);
-    }
-
-    /// <summary>
-    /// Returns true if QueueConversationMessageEventTopicMessageDetails instances are equal
-    /// </summary>
-    /// <param name="other">Instance of QueueConversationMessageEventTopicMessageDetails to be compared</param>
-    /// <returns>Boolean</returns>
-    public bool Equals(QueueConversationMessageEventTopicMessageDetails other)
-    {
-        // credit: http://stackoverflow.com/a/10454552/677735
-        if (other == null)
-        {
-            return false;
-        }
-
-        return true &&
-            (
-                Message == other.Message ||
-                Message != null &&
-                Message.Equals(other.Message)
-            ) &&
-            (
-                MessageTime == other.MessageTime ||
-                MessageTime != null &&
-                MessageTime.Equals(other.MessageTime)
-            ) &&
-            (
-                MessageSegmentCount == other.MessageSegmentCount ||
-                MessageSegmentCount != null &&
-                MessageSegmentCount.Equals(other.MessageSegmentCount)
-            ) &&
-            (
-                MessageStatus == other.MessageStatus ||
-                MessageStatus != null &&
-                MessageStatus.Equals(other.MessageStatus)
-            ) &&
-            (
-                Media == other.Media ||
-                Media != null &&
-                Media.SequenceEqual(other.Media)
-            ) &&
-            (
-                Stickers == other.Stickers ||
-                Stickers != null &&
-                Stickers.SequenceEqual(other.Stickers)
-            ) &&
-            (
-                ErrorInfo == other.ErrorInfo ||
-                ErrorInfo != null &&
-                ErrorInfo.Equals(other.ErrorInfo)
-            ) &&
-            (
-                MessageMetadata == other.MessageMetadata ||
-                MessageMetadata != null &&
-                MessageMetadata.Equals(other.MessageMetadata)
-            ) &&
-            (
-                SocialVisibility == other.SocialVisibility ||
-                SocialVisibility != null &&
-                SocialVisibility.Equals(other.SocialVisibility)
-            );
-    }
-
-    /// <summary>
-    /// Gets the hash code
-    /// </summary>
-    /// <returns>Hash code</returns>
-    public override int GetHashCode()
-    {
-        // credit: http://stackoverflow.com/a/263416/677735
-        unchecked // Overflow is fine, just wrap
-        {
-            int hash = 41;
-            // Suitable nullity checks etc, of course :)
-            if (Message != null)
-            {
-                hash = hash * 59 + Message.GetHashCode();
-            }
-
-            if (MessageTime != null)
-            {
-                hash = hash * 59 + MessageTime.GetHashCode();
-            }
-
-            if (MessageSegmentCount != null)
-            {
-                hash = hash * 59 + MessageSegmentCount.GetHashCode();
-            }
-
-            if (MessageStatus != null)
-            {
-                hash = hash * 59 + MessageStatus.GetHashCode();
-            }
-
-            if (Media != null)
-            {
-                hash = hash * 59 + Media.GetHashCode();
-            }
-
-            if (Stickers != null)
-            {
-                hash = hash * 59 + Stickers.GetHashCode();
-            }
-
-            if (ErrorInfo != null)
-            {
-                hash = hash * 59 + ErrorInfo.GetHashCode();
-            }
-
-            if (MessageMetadata != null)
-            {
-                hash = hash * 59 + MessageMetadata.GetHashCode();
-            }
-
-            if (SocialVisibility != null)
-            {
-                hash = hash * 59 + SocialVisibility.GetHashCode();
-            }
-
-            return hash;
-        }
-    }
 }
