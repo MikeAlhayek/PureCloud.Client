@@ -118,7 +118,7 @@ public static class PureCloudConstants
         // {"v2.system.socket_closing", typeof(SystemMessageSystemMessage)},
         // {"v2.system.token_revoked.{0}", typeof(SystemMessageSystemMessage)},
         // {"v2.system.{0}.{1}", typeof(SystemMessageSystemMessage)},
-        // {"v2.taskmanagement.workitems.queues.{0}", typeof(WorkitemsQueueEventsNotificationWorkitem)},
+        {"v2.taskmanagement.workitems.queues.{0}", typeof(WorkitemsQueueEventsNotificationWorkitem)},
         // {"v2.taskmanagement.workitems.users.{0}", typeof(WorkitemsUserEventsNotificationWorkitem)},
         // {"v2.taskmanagement.workitems.{0}", typeof(WorkitemsEventsNotificationWorkitem)},
         // {"v2.telephony.providers.edges.phones.{0}", typeof(PhoneChangeTopicPhone)},
