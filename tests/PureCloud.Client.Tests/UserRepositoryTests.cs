@@ -1,8 +1,8 @@
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
-using PureCloud.Client.DependencyInjection;
+using PureCloud.Client.Contracts;
+using PureCloud.Client.Extensions;
 using PureCloud.Client.Models.Users;
-using PureCloud.Client.Repositories;
 using Xunit;
 
 namespace PureCloud.Client.Tests;
@@ -25,7 +25,7 @@ public sealed class UserRepositoryTests
 
         services
             .AddPureCloudCore()
-            .AddPureCloudRepositories();
+            .AddPureCloudApis();
 
         _serviceProvider = services.BuildServiceProvider();
     }
@@ -33,12 +33,12 @@ public sealed class UserRepositoryTests
     [Fact]
     public async Task CreateUser_WhenCalled_ReturnValidResponse()
     {
-        var repository = _serviceProvider.GetRequiredService<IUserRepository>();
+        var repository = _serviceProvider.GetRequiredService<IUserApi>();
 
         var name = "John Doe";
         var email = "johndoe@crestapps.com";
 
-        var result = await repository.SearchAsync(new UserSearchRequest()
+        var result = await repository.SearchUsersAsync(new UserSearchRequest()
         {
             Query = new List<SearchCriteria>
             {
@@ -56,7 +56,7 @@ public sealed class UserRepositoryTests
 
         if (existingUser is not null)
         {
-            await repository.DeleteAsync(existingUser.Id, TestContext.Current.CancellationToken);
+            await repository.DeleteUserAsync(existingUser.Id, TestContext.Current.CancellationToken);
         }
 
         var newUser = new CreateUser()
@@ -66,7 +66,7 @@ public sealed class UserRepositoryTests
             Password = Guid.NewGuid() + "!@#$1234asdfASDF"
         };
 
-        var user = await repository.CreateAsync(newUser, TestContext.Current.CancellationToken);
+        var user = await repository.CreateUserAsync(newUser, TestContext.Current.CancellationToken);
 
         Assert.NotNull(user);
         Assert.NotEmpty(user.Id);

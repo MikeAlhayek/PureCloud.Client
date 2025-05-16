@@ -1,10 +1,6 @@
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
-using PureCloud.Client.DependencyInjection;
-using PureCloud.Client.Extensions.Notifications;
-using PureCloud.Client.Models.Topics;
-using PureCloud.Client.Repositories;
-using Xunit;
+using PureCloud.Client.Extensions;
 
 namespace PureCloud.Client.Tests;
 
@@ -26,7 +22,7 @@ public sealed class NotificationHandlerTests
 
         services
             .AddPureCloudCore()
-            .AddPureCloudRepositories();
+            .AddPureCloudApis();
 
         //  _serviceProvider = services.BuildServiceProvider();
     }

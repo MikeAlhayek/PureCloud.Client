@@ -13,7 +13,7 @@ using PureCloud.Client.Tokens;
 
 namespace PureCloud.Client.Extensions;
 
-public static class Extensions
+public static class ServiceCollectionExtensions
 {
     public static IServiceCollection AddPureCloudCore(this IServiceCollection services)
     {
