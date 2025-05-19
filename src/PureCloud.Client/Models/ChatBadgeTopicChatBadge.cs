@@ -3,137 +3,20 @@ using System.Text.Json.Serialization;
 
 namespace PureCloud.Client.Models;
 
-/// <summary>
-/// ChatBadgeTopicChatBadge
-/// </summary>
-
-public partial class ChatBadgeTopicChatBadge : IEquatable<ChatBadgeTopicChatBadge>
+public sealed class ChatBadgeTopicChatBadge
 {
-    /// <summary>
-    /// Initializes a new instance of the <see cref="ChatBadgeTopicChatBadge" /> class.
-    /// </summary>
-    /// <param name="Entity">Entity.</param>
-    /// <param name="UnreadCount">UnreadCount.</param>
-    /// <param name="LastUnreadNotificationDate">LastUnreadNotificationDate.</param>
-    public ChatBadgeTopicChatBadge(ChatBadgeTopicBadgeEntity Entity = null, long? UnreadCount = null, DateTime? LastUnreadNotificationDate = null)
-    {
-        this.Entity = Entity;
-        this.UnreadCount = UnreadCount;
-        this.LastUnreadNotificationDate = LastUnreadNotificationDate;
-
-    }
-
-
-
     /// <summary>
     /// Gets or Sets Entity
     /// </summary>
-    [JsonPropertyName("entity")]
     public ChatBadgeTopicBadgeEntity Entity { get; set; }
-
-
 
     /// <summary>
     /// Gets or Sets UnreadCount
     /// </summary>
-    [JsonPropertyName("unreadCount")]
     public long? UnreadCount { get; set; }
-
-
 
     /// <summary>
     /// Gets or Sets LastUnreadNotificationDate
     /// </summary>
-    [JsonPropertyName("lastUnreadNotificationDate")]
     public DateTime? LastUnreadNotificationDate { get; set; }
-
-
-    /// <summary>
-    /// Returns the string presentation of the object
-    /// </summary>
-    /// <returns>String presentation of the object</returns>
-    public override string ToString()
-    {
-        var sb = new StringBuilder();
-        sb.Append("class ChatBadgeTopicChatBadge {\n");
-
-        sb.Append("  Entity: ").Append(Entity).Append("\n");
-        sb.Append("  UnreadCount: ").Append(UnreadCount).Append("\n");
-        sb.Append("  LastUnreadNotificationDate: ").Append(LastUnreadNotificationDate).Append("\n");
-        sb.Append("}\n");
-        return sb.ToString();
-    }
-
-
-    /// <summary>
-    /// Returns true if objects are equal
-    /// </summary>
-    /// <param name="obj">Object to be compared</param>
-    /// <returns>Boolean</returns>
-    public override bool Equals(object obj)
-    {
-        // credit: http://stackoverflow.com/a/10454552/677735
-        return Equals(obj as ChatBadgeTopicChatBadge);
-    }
-
-    /// <summary>
-    /// Returns true if ChatBadgeTopicChatBadge instances are equal
-    /// </summary>
-    /// <param name="other">Instance of ChatBadgeTopicChatBadge to be compared</param>
-    /// <returns>Boolean</returns>
-    public bool Equals(ChatBadgeTopicChatBadge other)
-    {
-        // credit: http://stackoverflow.com/a/10454552/677735
-        if (other == null)
-        {
-            return false;
-        }
-
-        return true &&
-            (
-                Entity == other.Entity ||
-                Entity != null &&
-                Entity.Equals(other.Entity)
-            ) &&
-            (
-                UnreadCount == other.UnreadCount ||
-                UnreadCount != null &&
-                UnreadCount.Equals(other.UnreadCount)
-            ) &&
-            (
-                LastUnreadNotificationDate == other.LastUnreadNotificationDate ||
-                LastUnreadNotificationDate != null &&
-                LastUnreadNotificationDate.Equals(other.LastUnreadNotificationDate)
-            );
-    }
-
-    /// <summary>
-    /// Gets the hash code
-    /// </summary>
-    /// <returns>Hash code</returns>
-    public override int GetHashCode()
-    {
-        // credit: http://stackoverflow.com/a/263416/677735
-        unchecked // Overflow is fine, just wrap
-        {
-            int hash = 41;
-            // Suitable nullity checks etc, of course :)
-            if (Entity != null)
-            {
-                hash = hash * 59 + Entity.GetHashCode();
-            }
-
-            if (UnreadCount != null)
-            {
-                hash = hash * 59 + UnreadCount.GetHashCode();
-            }
-
-            if (LastUnreadNotificationDate != null)
-            {
-                hash = hash * 59 + LastUnreadNotificationDate.GetHashCode();
-            }
-
-            return hash;
-        }
-    }
 }
