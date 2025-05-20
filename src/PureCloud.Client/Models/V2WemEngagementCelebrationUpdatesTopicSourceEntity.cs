@@ -1,207 +1,22 @@
-using System.Runtime.Serialization;
 using System.Text;
 using System.Text.Json.Serialization;
 
 namespace PureCloud.Client.Models;
 
-/// <summary>
-/// V2WemEngagementCelebrationUpdatesTopicSourceEntity
-/// </summary>
-
-public partial class V2WemEngagementCelebrationUpdatesTopicSourceEntity : IEquatable<V2WemEngagementCelebrationUpdatesTopicSourceEntity>
+public sealed class V2WemEngagementCelebrationUpdatesTopicSourceEntity
 {
     /// <summary>
     /// Gets or Sets Type
     /// </summary>
-    
-    public enum TypeEnum
-    {
-        /// <summary>
-        /// Your SDK version is out of date and an unknown enum value was encountered. 
-        /// Please upgrade the SDK using the command "Upgrade-Package PureCloudApiSdk" 
-        /// in the Package Manager Console
-        /// </summary>
-        [EnumMember(Value = "OUTDATED_SDK_VERSION")]
-        OutdatedSdkVersion,
-
-        /// <summary>
-        /// Enum Unknown for "UNKNOWN"
-        /// </summary>
-        [EnumMember(Value = "UNKNOWN")]
-        Unknown,
-
-        /// <summary>
-        /// Enum ThankYou for "THANK_YOU"
-        /// </summary>
-        [EnumMember(Value = "THANK_YOU")]
-        ThankYou,
-
-        /// <summary>
-        /// Enum Congratulations for "CONGRATULATIONS"
-        /// </summary>
-        [EnumMember(Value = "CONGRATULATIONS")]
-        Congratulations,
-
-        /// <summary>
-        /// Enum HighPerformance for "HIGH_PERFORMANCE"
-        /// </summary>
-        [EnumMember(Value = "HIGH_PERFORMANCE")]
-        HighPerformance,
-
-        /// <summary>
-        /// Enum CompanyValues for "COMPANY_VALUES"
-        /// </summary>
-        [EnumMember(Value = "COMPANY_VALUES")]
-        CompanyValues,
-
-        /// <summary>
-        /// Enum Competition for "COMPETITION"
-        /// </summary>
-        [EnumMember(Value = "COMPETITION")]
-        Competition,
-
-        /// <summary>
-        /// Enum Race for "RACE"
-        /// </summary>
-        [EnumMember(Value = "RACE")]
-        Race,
-
-        /// <summary>
-        /// Enum Raffle for "RAFFLE"
-        /// </summary>
-        [EnumMember(Value = "RAFFLE")]
-        Raffle,
-
-        /// <summary>
-        /// Enum TeamGoal for "TEAM_GOAL"
-        /// </summary>
-        [EnumMember(Value = "TEAM_GOAL")]
-        TeamGoal
-    }
-    /// <summary>
-    /// Gets or Sets Type
-    /// </summary>
-    [JsonPropertyName("type")]
-    public TypeEnum? Type { get; set; }
-    /// <summary>
-    /// Initializes a new instance of the <see cref="V2WemEngagementCelebrationUpdatesTopicSourceEntity" /> class.
-    /// </summary>
-    /// <param name="Id">Id.</param>
-    /// <param name="Type">Type.</param>
-    /// <param name="ContestCompleteData">ContestCompleteData.</param>
-    public V2WemEngagementCelebrationUpdatesTopicSourceEntity(Guid? Id = null, TypeEnum? Type = null, V2WemEngagementCelebrationUpdatesTopicContestCompleteData ContestCompleteData = null)
-    {
-        this.Id = Id;
-        this.Type = Type;
-        this.ContestCompleteData = ContestCompleteData;
-
-    }
-
-
+    public V2WemEngagementCelebrationUpdatesTopicSourceEntityTypeEnum? Type { get; set; }
 
     /// <summary>
     /// Gets or Sets Id
     /// </summary>
-    [JsonPropertyName("id")]
     public Guid? Id { get; set; }
-
-
-
-
 
     /// <summary>
     /// Gets or Sets ContestCompleteData
     /// </summary>
-    [JsonPropertyName("contestCompleteData")]
     public V2WemEngagementCelebrationUpdatesTopicContestCompleteData ContestCompleteData { get; set; }
-
-
-    /// <summary>
-    /// Returns the string presentation of the object
-    /// </summary>
-    /// <returns>String presentation of the object</returns>
-    public override string ToString()
-    {
-        var sb = new StringBuilder();
-        sb.Append("class V2WemEngagementCelebrationUpdatesTopicSourceEntity {\n");
-
-        sb.Append("  Id: ").Append(Id).Append("\n");
-        sb.Append("  Type: ").Append(Type).Append("\n");
-        sb.Append("  ContestCompleteData: ").Append(ContestCompleteData).Append("\n");
-        sb.Append("}\n");
-        return sb.ToString();
-    }
-
-
-    /// <summary>
-    /// Returns true if objects are equal
-    /// </summary>
-    /// <param name="obj">Object to be compared</param>
-    /// <returns>Boolean</returns>
-    public override bool Equals(object obj)
-    {
-        // credit: http://stackoverflow.com/a/10454552/677735
-        return Equals(obj as V2WemEngagementCelebrationUpdatesTopicSourceEntity);
-    }
-
-    /// <summary>
-    /// Returns true if V2WemEngagementCelebrationUpdatesTopicSourceEntity instances are equal
-    /// </summary>
-    /// <param name="other">Instance of V2WemEngagementCelebrationUpdatesTopicSourceEntity to be compared</param>
-    /// <returns>Boolean</returns>
-    public bool Equals(V2WemEngagementCelebrationUpdatesTopicSourceEntity other)
-    {
-        // credit: http://stackoverflow.com/a/10454552/677735
-        if (other == null)
-        {
-            return false;
-        }
-
-        return true &&
-            (
-                Id == other.Id ||
-                Id != null &&
-                Id.Equals(other.Id)
-            ) &&
-            (
-                Type == other.Type ||
-                Type != null &&
-                Type.Equals(other.Type)
-            ) &&
-            (
-                ContestCompleteData == other.ContestCompleteData ||
-                ContestCompleteData != null &&
-                ContestCompleteData.Equals(other.ContestCompleteData)
-            );
-    }
-
-    /// <summary>
-    /// Gets the hash code
-    /// </summary>
-    /// <returns>Hash code</returns>
-    public override int GetHashCode()
-    {
-        // credit: http://stackoverflow.com/a/263416/677735
-        unchecked // Overflow is fine, just wrap
-        {
-            int hash = 41;
-            // Suitable nullity checks etc, of course :)
-            if (Id != null)
-            {
-                hash = hash * 59 + Id.GetHashCode();
-            }
-
-            if (Type != null)
-            {
-                hash = hash * 59 + Type.GetHashCode();
-            }
-
-            if (ContestCompleteData != null)
-            {
-                hash = hash * 59 + ContestCompleteData.GetHashCode();
-            }
-
-            return hash;
-        }
-    }
 }

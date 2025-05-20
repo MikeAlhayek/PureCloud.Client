@@ -3,179 +3,30 @@ using System.Text.Json.Serialization;
 
 namespace PureCloud.Client.Models;
 
-/// <summary>
-/// PersistentConnectionChangeTopicErrorInfo
-/// </summary>
-
-public partial class PersistentConnectionChangeTopicErrorInfo : IEquatable<PersistentConnectionChangeTopicErrorInfo>
+public sealed class PersistentConnectionChangeTopicErrorInfo
 {
-    /// <summary>
-    /// Initializes a new instance of the <see cref="PersistentConnectionChangeTopicErrorInfo" /> class.
-    /// </summary>
-    /// <param name="Text">Text.</param>
-    /// <param name="Code">Code.</param>
-    /// <param name="UserMessage">UserMessage.</param>
-    /// <param name="UserParams">UserParams.</param>
-    /// <param name="NestedErrorDetails">NestedErrorDetails.</param>
-    public PersistentConnectionChangeTopicErrorInfo(string Text = null, string Code = null, string UserMessage = null, Dictionary<string, string> UserParams = null, List<PersistentConnectionChangeTopicErrorInfoDetails> NestedErrorDetails = null)
-    {
-        this.Text = Text;
-        this.Code = Code;
-        this.UserMessage = UserMessage;
-        this.UserParams = UserParams;
-        this.NestedErrorDetails = NestedErrorDetails;
-
-    }
-
-
-
     /// <summary>
     /// Gets or Sets Text
     /// </summary>
-    [JsonPropertyName("text")]
     public string Text { get; set; }
-
-
 
     /// <summary>
     /// Gets or Sets Code
     /// </summary>
-    [JsonPropertyName("code")]
     public string Code { get; set; }
-
-
 
     /// <summary>
     /// Gets or Sets UserMessage
     /// </summary>
-    [JsonPropertyName("userMessage")]
     public string UserMessage { get; set; }
-
-
 
     /// <summary>
     /// Gets or Sets UserParams
     /// </summary>
-    [JsonPropertyName("userParams")]
     public Dictionary<string, string> UserParams { get; set; }
-
-
 
     /// <summary>
     /// Gets or Sets NestedErrorDetails
     /// </summary>
-    [JsonPropertyName("nestedErrorDetails")]
-    public List<PersistentConnectionChangeTopicErrorInfoDetails> NestedErrorDetails { get; set; }
-
-
-    /// <summary>
-    /// Returns the string presentation of the object
-    /// </summary>
-    /// <returns>String presentation of the object</returns>
-    public override string ToString()
-    {
-        var sb = new StringBuilder();
-        sb.Append("class PersistentConnectionChangeTopicErrorInfo {\n");
-
-        sb.Append("  Text: ").Append(Text).Append("\n");
-        sb.Append("  Code: ").Append(Code).Append("\n");
-        sb.Append("  UserMessage: ").Append(UserMessage).Append("\n");
-        sb.Append("  UserParams: ").Append(UserParams).Append("\n");
-        sb.Append("  NestedErrorDetails: ").Append(NestedErrorDetails).Append("\n");
-        sb.Append("}\n");
-        return sb.ToString();
-    }
-
-
-    /// <summary>
-    /// Returns true if objects are equal
-    /// </summary>
-    /// <param name="obj">Object to be compared</param>
-    /// <returns>Boolean</returns>
-    public override bool Equals(object obj)
-    {
-        // credit: http://stackoverflow.com/a/10454552/677735
-        return Equals(obj as PersistentConnectionChangeTopicErrorInfo);
-    }
-
-    /// <summary>
-    /// Returns true if PersistentConnectionChangeTopicErrorInfo instances are equal
-    /// </summary>
-    /// <param name="other">Instance of PersistentConnectionChangeTopicErrorInfo to be compared</param>
-    /// <returns>Boolean</returns>
-    public bool Equals(PersistentConnectionChangeTopicErrorInfo other)
-    {
-        // credit: http://stackoverflow.com/a/10454552/677735
-        if (other == null)
-        {
-            return false;
-        }
-
-        return true &&
-            (
-                Text == other.Text ||
-                Text != null &&
-                Text.Equals(other.Text)
-            ) &&
-            (
-                Code == other.Code ||
-                Code != null &&
-                Code.Equals(other.Code)
-            ) &&
-            (
-                UserMessage == other.UserMessage ||
-                UserMessage != null &&
-                UserMessage.Equals(other.UserMessage)
-            ) &&
-            (
-                UserParams == other.UserParams ||
-                UserParams != null &&
-                UserParams.SequenceEqual(other.UserParams)
-            ) &&
-            (
-                NestedErrorDetails == other.NestedErrorDetails ||
-                NestedErrorDetails != null &&
-                NestedErrorDetails.SequenceEqual(other.NestedErrorDetails)
-            );
-    }
-
-    /// <summary>
-    /// Gets the hash code
-    /// </summary>
-    /// <returns>Hash code</returns>
-    public override int GetHashCode()
-    {
-        // credit: http://stackoverflow.com/a/263416/677735
-        unchecked // Overflow is fine, just wrap
-        {
-            int hash = 41;
-            // Suitable nullity checks etc, of course :)
-            if (Text != null)
-            {
-                hash = hash * 59 + Text.GetHashCode();
-            }
-
-            if (Code != null)
-            {
-                hash = hash * 59 + Code.GetHashCode();
-            }
-
-            if (UserMessage != null)
-            {
-                hash = hash * 59 + UserMessage.GetHashCode();
-            }
-
-            if (UserParams != null)
-            {
-                hash = hash * 59 + UserParams.GetHashCode();
-            }
-
-            if (NestedErrorDetails != null)
-            {
-                hash = hash * 59 + NestedErrorDetails.GetHashCode();
-            }
-
-            return hash;
-        }
-    }
+    public IEnumerable<PersistentConnectionChangeTopicErrorInfoDetails> NestedErrorDetails { get; set; }
 }

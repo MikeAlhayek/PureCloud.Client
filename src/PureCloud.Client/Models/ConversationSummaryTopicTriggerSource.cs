@@ -1,162 +1,17 @@
-using System.Runtime.Serialization;
 using System.Text;
 using System.Text.Json.Serialization;
 
 namespace PureCloud.Client.Models;
 
-/// <summary>
-/// ConversationSummaryTopicTriggerSource
-/// </summary>
-
-public partial class ConversationSummaryTopicTriggerSource : IEquatable<ConversationSummaryTopicTriggerSource>
+public sealed class ConversationSummaryTopicTriggerSource
 {
     /// <summary>
     /// Gets or Sets SourceType
     /// </summary>
-    
-    public enum SourceTypeEnum
-    {
-        /// <summary>
-        /// Your SDK version is out of date and an unknown enum value was encountered. 
-        /// Please upgrade the SDK using the command "Upgrade-Package PureCloudApiSdk" 
-        /// in the Package Manager Console
-        /// </summary>
-        [EnumMember(Value = "OUTDATED_SDK_VERSION")]
-        OutdatedSdkVersion,
-
-        /// <summary>
-        /// Enum Unknown for "UNKNOWN"
-        /// </summary>
-        [EnumMember(Value = "UNKNOWN")]
-        Unknown,
-
-        /// <summary>
-        /// Enum AgentAssistant for "AGENT_ASSISTANT"
-        /// </summary>
-        [EnumMember(Value = "AGENT_ASSISTANT")]
-        AgentAssistant,
-
-        /// <summary>
-        /// Enum Program for "PROGRAM"
-        /// </summary>
-        [EnumMember(Value = "PROGRAM")]
-        Program,
-
-        /// <summary>
-        /// Enum Flow for "FLOW"
-        /// </summary>
-        [EnumMember(Value = "FLOW")]
-        Flow,
-
-        /// <summary>
-        /// Enum Copilot for "COPILOT"
-        /// </summary>
-        [EnumMember(Value = "COPILOT")]
-        Copilot
-    }
-    /// <summary>
-    /// Gets or Sets SourceType
-    /// </summary>
-    [JsonPropertyName("sourceType")]
-    public SourceTypeEnum? SourceType { get; set; }
-    /// <summary>
-    /// Initializes a new instance of the <see cref="ConversationSummaryTopicTriggerSource" /> class.
-    /// </summary>
-    /// <param name="SourceType">SourceType.</param>
-    /// <param name="SourceId">SourceId.</param>
-    public ConversationSummaryTopicTriggerSource(SourceTypeEnum? SourceType = null, string SourceId = null)
-    {
-        this.SourceType = SourceType;
-        this.SourceId = SourceId;
-
-    }
-
-
-
-
+    public ConversationSummaryTopicTriggerSourceSourceTypeEnum? SourceType { get; set; }
 
     /// <summary>
     /// Gets or Sets SourceId
     /// </summary>
-    [JsonPropertyName("sourceId")]
     public string SourceId { get; set; }
-
-
-    /// <summary>
-    /// Returns the string presentation of the object
-    /// </summary>
-    /// <returns>String presentation of the object</returns>
-    public override string ToString()
-    {
-        var sb = new StringBuilder();
-        sb.Append("class ConversationSummaryTopicTriggerSource {\n");
-
-        sb.Append("  SourceType: ").Append(SourceType).Append("\n");
-        sb.Append("  SourceId: ").Append(SourceId).Append("\n");
-        sb.Append("}\n");
-        return sb.ToString();
-    }
-
-
-    /// <summary>
-    /// Returns true if objects are equal
-    /// </summary>
-    /// <param name="obj">Object to be compared</param>
-    /// <returns>Boolean</returns>
-    public override bool Equals(object obj)
-    {
-        // credit: http://stackoverflow.com/a/10454552/677735
-        return Equals(obj as ConversationSummaryTopicTriggerSource);
-    }
-
-    /// <summary>
-    /// Returns true if ConversationSummaryTopicTriggerSource instances are equal
-    /// </summary>
-    /// <param name="other">Instance of ConversationSummaryTopicTriggerSource to be compared</param>
-    /// <returns>Boolean</returns>
-    public bool Equals(ConversationSummaryTopicTriggerSource other)
-    {
-        // credit: http://stackoverflow.com/a/10454552/677735
-        if (other == null)
-        {
-            return false;
-        }
-
-        return true &&
-            (
-                SourceType == other.SourceType ||
-                SourceType != null &&
-                SourceType.Equals(other.SourceType)
-            ) &&
-            (
-                SourceId == other.SourceId ||
-                SourceId != null &&
-                SourceId.Equals(other.SourceId)
-            );
-    }
-
-    /// <summary>
-    /// Gets the hash code
-    /// </summary>
-    /// <returns>Hash code</returns>
-    public override int GetHashCode()
-    {
-        // credit: http://stackoverflow.com/a/263416/677735
-        unchecked // Overflow is fine, just wrap
-        {
-            int hash = 41;
-            // Suitable nullity checks etc, of course :)
-            if (SourceType != null)
-            {
-                hash = hash * 59 + SourceType.GetHashCode();
-            }
-
-            if (SourceId != null)
-            {
-                hash = hash * 59 + SourceId.GetHashCode();
-            }
-
-            return hash;
-        }
-    }
 }

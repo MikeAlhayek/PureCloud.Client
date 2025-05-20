@@ -1,165 +1,19 @@
-using System.Runtime.Serialization;
 using System.Text;
 using System.Text.Json.Serialization;
 
 namespace PureCloud.Client.Models;
 
-/// <summary>
-/// UserRoutingStatusRoutingStatus
-/// </summary>
-
-public partial class UserRoutingStatusRoutingStatus : IEquatable<UserRoutingStatusRoutingStatus>
+public sealed class UserRoutingStatusRoutingStatus
 {
     /// <summary>
     /// Indicates the Routing State of the agent.
     /// </summary>
     /// <value>Indicates the Routing State of the agent.</value>
-    
-    public enum StatusEnum
-    {
-        /// <summary>
-        /// Your SDK version is out of date and an unknown enum value was encountered. 
-        /// Please upgrade the SDK using the command "Upgrade-Package PureCloudApiSdk" 
-        /// in the Package Manager Console
-        /// </summary>
-        [EnumMember(Value = "OUTDATED_SDK_VERSION")]
-        OutdatedSdkVersion,
-
-        /// <summary>
-        /// Enum OffQueue for "OFF_QUEUE"
-        /// </summary>
-        [EnumMember(Value = "OFF_QUEUE")]
-        OffQueue,
-
-        /// <summary>
-        /// Enum Idle for "IDLE"
-        /// </summary>
-        [EnumMember(Value = "IDLE")]
-        Idle,
-
-        /// <summary>
-        /// Enum Interacting for "INTERACTING"
-        /// </summary>
-        [EnumMember(Value = "INTERACTING")]
-        Interacting,
-
-        /// <summary>
-        /// Enum NotResponding for "NOT_RESPONDING"
-        /// </summary>
-        [EnumMember(Value = "NOT_RESPONDING")]
-        NotResponding,
-
-        /// <summary>
-        /// Enum Communicating for "COMMUNICATING"
-        /// </summary>
-        [EnumMember(Value = "COMMUNICATING")]
-        Communicating
-    }
-    /// <summary>
-    /// Indicates the Routing State of the agent.
-    /// </summary>
-    /// <value>Indicates the Routing State of the agent.</value>
-    [JsonPropertyName("status")]
-    public StatusEnum? Status { get; set; }
-    /// <summary>
-    /// Initializes a new instance of the <see cref="UserRoutingStatusRoutingStatus" /> class.
-    /// </summary>
-    /// <param name="Status">Indicates the Routing State of the agent..</param>
-    /// <param name="StartTime">The timestamp when the agent went into this state..</param>
-    public UserRoutingStatusRoutingStatus(StatusEnum? Status = null, DateTime? StartTime = null)
-    {
-        this.Status = Status;
-        this.StartTime = StartTime;
-
-    }
-
-
-
-
+    public UserRoutingStatusRoutingStatusStatusEnum? Status { get; set; }
 
     /// <summary>
     /// The timestamp when the agent went into this state.
     /// </summary>
     /// <value>The timestamp when the agent went into this state.</value>
-    [JsonPropertyName("startTime")]
     public DateTime? StartTime { get; set; }
-
-
-    /// <summary>
-    /// Returns the string presentation of the object
-    /// </summary>
-    /// <returns>String presentation of the object</returns>
-    public override string ToString()
-    {
-        var sb = new StringBuilder();
-        sb.Append("class UserRoutingStatusRoutingStatus {\n");
-
-        sb.Append("  Status: ").Append(Status).Append("\n");
-        sb.Append("  StartTime: ").Append(StartTime).Append("\n");
-        sb.Append("}\n");
-        return sb.ToString();
-    }
-
-
-    /// <summary>
-    /// Returns true if objects are equal
-    /// </summary>
-    /// <param name="obj">Object to be compared</param>
-    /// <returns>Boolean</returns>
-    public override bool Equals(object obj)
-    {
-        // credit: http://stackoverflow.com/a/10454552/677735
-        return Equals(obj as UserRoutingStatusRoutingStatus);
-    }
-
-    /// <summary>
-    /// Returns true if UserRoutingStatusRoutingStatus instances are equal
-    /// </summary>
-    /// <param name="other">Instance of UserRoutingStatusRoutingStatus to be compared</param>
-    /// <returns>Boolean</returns>
-    public bool Equals(UserRoutingStatusRoutingStatus other)
-    {
-        // credit: http://stackoverflow.com/a/10454552/677735
-        if (other == null)
-        {
-            return false;
-        }
-
-        return true &&
-            (
-                Status == other.Status ||
-                Status != null &&
-                Status.Equals(other.Status)
-            ) &&
-            (
-                StartTime == other.StartTime ||
-                StartTime != null &&
-                StartTime.Equals(other.StartTime)
-            );
-    }
-
-    /// <summary>
-    /// Gets the hash code
-    /// </summary>
-    /// <returns>Hash code</returns>
-    public override int GetHashCode()
-    {
-        // credit: http://stackoverflow.com/a/263416/677735
-        unchecked // Overflow is fine, just wrap
-        {
-            int hash = 41;
-            // Suitable nullity checks etc, of course :)
-            if (Status != null)
-            {
-                hash = hash * 59 + Status.GetHashCode();
-            }
-
-            if (StartTime != null)
-            {
-                hash = hash * 59 + StartTime.GetHashCode();
-            }
-
-            return hash;
-        }
-    }
 }
