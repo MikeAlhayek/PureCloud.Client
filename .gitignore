@@ -217,3 +217,4 @@ src/Templates/**/content/**/.template.config/
 
 # BenchmarkDotNet artifacts
 BenchmarkDotNet.Artifacts
+/src/PureCloud.Client/Models/WfmAgentAdherenceExplanationChangedAgentTopicAdherenceExplanationChangedNotification.Type.cs
