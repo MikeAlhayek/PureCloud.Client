@@ -1008,6 +1008,9 @@
     <Compile Include="Models\KlaxonInteractionStatsRulesTopicInteractionStatRule.NumericRange.cs" />
     <Compile Include="Models\KlaxonInteractionStatsRulesTopicInteractionStatRule.Statistic.cs" />
     <Compile Include="Models\KlaxonInteractionStatsRulesTopicNotificationUser.cs" />
+    <Compile Include="Models\LearningAssignmentRuleRunTopicLearningAssignmentRuleRunNotification.cs" />
+    <Compile Include="Models\LearningAssignmentRuleRunTopicLearningAssignmentsCreated.cs" />
+    <Compile Include="Models\LearningAssignmentRuleRunTopicLearningModuleReference.cs" />
     <Compile Include="Models\LearningAssignmentTopicLearningAssignmentNotification.cs" />
     <Compile Include="Models\LearningAssignmentTopicLearningAssignmentNotification.State.cs" />
     <Compile Include="Models\LearningAssignmentTopicLearningAssignmentNotification.Type.cs" />
@@ -1923,6 +1926,8 @@
     <Compile Include="Models\V2MobiusRulesTopicRule.cs" />
     <Compile Include="Models\V2MobiusRulesTopicRule.Type.cs" />
     <Compile Include="Models\V2MobiusRulesTopicRule.Action.cs" />
+    <Compile Include="Models\V2WebMessagingUndeliveredMessageTopicMessage.cs" />
+    <Compile Include="Models\V2WebMessagingUndeliveredMessageTopicWebMessagingUndeliveredMessageEventBody.cs" />
     <Compile Include="Models\V2WemEngagementCelebrationUpdatesTopicContestCompleteData.cs" />
     <Compile Include="Models\V2WemEngagementCelebrationUpdatesTopicContestCompleteData.Anonymization.cs" />
     <Compile Include="Models\V2WemEngagementCelebrationUpdatesTopicContestMetrics.cs" />
@@ -1936,6 +1941,8 @@
     <Compile Include="Models\V2WemEngagementCelebrationUpdatesTopicSourceEntity.Type.cs" />
     <Compile Include="Models\V2WemEngagementCelebrationUpdatesTopicUserId.cs" />
     <Compile Include="Models\Video.cs" />
+    <Compile Include="Models\VideoConferenceUpdateTopicParticipantInfo.cs" />
+    <Compile Include="Models\VideoConferenceUpdateTopicVideoConference.cs" />
     <Compile Include="Models\VideoDisconnectType.cs" />
     <Compile Include="Models\VideoInitialState.cs" />
     <Compile Include="Models\VideoState.cs" />
@@ -1953,6 +1960,12 @@
     <Compile Include="Models\VoicemailStartDetailEventTopicVoicemailStartEvent.MediaType.cs" />
     <Compile Include="Models\VoicemailStartDetailEventTopicVoicemailStartEvent.Direction.cs" />
     <Compile Include="Models\VoicemailUploadStatus.cs" />
+    <Compile Include="Models\WebDeploymentsConfigTopicWebMessagingConfigChangeEventBody.cs" />
+    <Compile Include="Models\WebDeploymentsConfigTopicWebMessagingConfigChangeEventBody.Status.cs" />
+    <Compile Include="Models\WebDeploymentsDeploymentTopicWebMessagingConfigChangeEventBody.cs" />
+    <Compile Include="Models\WebDeploymentsDeploymentTopicWebMessagingConfigChangeEventBody.Status.cs" />
+    <Compile Include="Models\WebDeploymentsDeploymentTopicWebMessagingDeploymentChangeEventBody.cs" />
+    <Compile Include="Models\WebDeploymentsDeploymentTopicWebMessagingDeploymentChangeEventBody.Status.cs" />
     <Compile Include="Models\WemCoachingUserNotificationTopicCoachingAppointmentReference.cs" />
     <Compile Include="Models\WemCoachingUserNotificationTopicCoachingUserNotification.cs" />
     <Compile Include="Models\WemCoachingUserNotificationTopicCoachingUserNotification.Status.cs" />
