@@ -9,7 +9,7 @@ public sealed class QueueConversationEventTopicDisconnectReason
     /// Disconnect reason protocol type.
     /// </summary>
     /// <value>Disconnect reason protocol type.</value>
-    public TypeEnum? Type { get; set; }
+    public Type Type { get; set; }
 
     /// <summary>
     /// Protocol specific reason code. See the Q.850 and SIP specs.
