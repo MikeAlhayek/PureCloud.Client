@@ -1,192 +1,27 @@
-using System.Runtime.Serialization;
 using System.Text;
 using System.Text.Json.Serialization;
 
 namespace PureCloud.Client.Models;
 
-/// <summary>
-/// WfmUserScheduleAdherenceUpdatedTeamTopicRealTimeAdherenceExplanation
-/// </summary>
-
-public partial class WfmUserScheduleAdherenceUpdatedTeamTopicRealTimeAdherenceExplanation : IEquatable<WfmUserScheduleAdherenceUpdatedTeamTopicRealTimeAdherenceExplanation>
+public sealed class WfmUserScheduleAdherenceUpdatedTeamTopicRealTimeAdherenceExplanation
 {
     /// <summary>
     /// Gets or Sets Status
     /// </summary>
-    
-    public enum StatusEnum
-    {
-        /// <summary>
-        /// Your SDK version is out of date and an unknown enum value was encountered. 
-        /// Please upgrade the SDK using the command "Upgrade-Package PureCloudApiSdk" 
-        /// in the Package Manager Console
-        /// </summary>
-        [EnumMember(Value = "OUTDATED_SDK_VERSION")]
-        OutdatedSdkVersion,
-
-        /// <summary>
-        /// Enum Pending for "Pending"
-        /// </summary>
-        [EnumMember(Value = "Pending")]
-        Pending,
-
-        /// <summary>
-        /// Enum Approved for "Approved"
-        /// </summary>
-        [EnumMember(Value = "Approved")]
-        Approved,
-
-        /// <summary>
-        /// Enum Denied for "Denied"
-        /// </summary>
-        [EnumMember(Value = "Denied")]
-        Denied
-    }
-    /// <summary>
-    /// Gets or Sets Status
-    /// </summary>
-    [JsonPropertyName("status")]
-    public StatusEnum? Status { get; set; }
-    /// <summary>
-    /// Initializes a new instance of the <see cref="WfmUserScheduleAdherenceUpdatedTeamTopicRealTimeAdherenceExplanation" /> class.
-    /// </summary>
-    /// <param name="Id">Id.</param>
-    /// <param name="StartDate">StartDate.</param>
-    /// <param name="LengthMinutes">LengthMinutes.</param>
-    /// <param name="Status">Status.</param>
-    public WfmUserScheduleAdherenceUpdatedTeamTopicRealTimeAdherenceExplanation(string Id = null, DateTime? StartDate = null, long? LengthMinutes = null, StatusEnum? Status = null)
-    {
-        this.Id = Id;
-        this.StartDate = StartDate;
-        this.LengthMinutes = LengthMinutes;
-        this.Status = Status;
-
-    }
-
-
+    public WfmUserScheduleAdherenceUpdatedTeamTopicRealTimeAdherenceExplanationStatusEnum? Status { get; set; }
 
     /// <summary>
     /// Gets or Sets Id
     /// </summary>
-    [JsonPropertyName("id")]
     public string Id { get; set; }
-
-
 
     /// <summary>
     /// Gets or Sets StartDate
     /// </summary>
-    [JsonPropertyName("startDate")]
     public DateTime? StartDate { get; set; }
-
-
 
     /// <summary>
     /// Gets or Sets LengthMinutes
     /// </summary>
-    [JsonPropertyName("lengthMinutes")]
     public long? LengthMinutes { get; set; }
-
-
-
-
-    /// <summary>
-    /// Returns the string presentation of the object
-    /// </summary>
-    /// <returns>String presentation of the object</returns>
-    public override string ToString()
-    {
-        var sb = new StringBuilder();
-        sb.Append("class WfmUserScheduleAdherenceUpdatedTeamTopicRealTimeAdherenceExplanation {\n");
-
-        sb.Append("  Id: ").Append(Id).Append("\n");
-        sb.Append("  StartDate: ").Append(StartDate).Append("\n");
-        sb.Append("  LengthMinutes: ").Append(LengthMinutes).Append("\n");
-        sb.Append("  Status: ").Append(Status).Append("\n");
-        sb.Append("}\n");
-        return sb.ToString();
-    }
-
-
-    /// <summary>
-    /// Returns true if objects are equal
-    /// </summary>
-    /// <param name="obj">Object to be compared</param>
-    /// <returns>Boolean</returns>
-    public override bool Equals(object obj)
-    {
-        // credit: http://stackoverflow.com/a/10454552/677735
-        return Equals(obj as WfmUserScheduleAdherenceUpdatedTeamTopicRealTimeAdherenceExplanation);
-    }
-
-    /// <summary>
-    /// Returns true if WfmUserScheduleAdherenceUpdatedTeamTopicRealTimeAdherenceExplanation instances are equal
-    /// </summary>
-    /// <param name="other">Instance of WfmUserScheduleAdherenceUpdatedTeamTopicRealTimeAdherenceExplanation to be compared</param>
-    /// <returns>Boolean</returns>
-    public bool Equals(WfmUserScheduleAdherenceUpdatedTeamTopicRealTimeAdherenceExplanation other)
-    {
-        // credit: http://stackoverflow.com/a/10454552/677735
-        if (other == null)
-        {
-            return false;
-        }
-
-        return true &&
-            (
-                Id == other.Id ||
-                Id != null &&
-                Id.Equals(other.Id)
-            ) &&
-            (
-                StartDate == other.StartDate ||
-                StartDate != null &&
-                StartDate.Equals(other.StartDate)
-            ) &&
-            (
-                LengthMinutes == other.LengthMinutes ||
-                LengthMinutes != null &&
-                LengthMinutes.Equals(other.LengthMinutes)
-            ) &&
-            (
-                Status == other.Status ||
-                Status != null &&
-                Status.Equals(other.Status)
-            );
-    }
-
-    /// <summary>
-    /// Gets the hash code
-    /// </summary>
-    /// <returns>Hash code</returns>
-    public override int GetHashCode()
-    {
-        // credit: http://stackoverflow.com/a/263416/677735
-        unchecked // Overflow is fine, just wrap
-        {
-            int hash = 41;
-            // Suitable nullity checks etc, of course :)
-            if (Id != null)
-            {
-                hash = hash * 59 + Id.GetHashCode();
-            }
-
-            if (StartDate != null)
-            {
-                hash = hash * 59 + StartDate.GetHashCode();
-            }
-
-            if (LengthMinutes != null)
-            {
-                hash = hash * 59 + LengthMinutes.GetHashCode();
-            }
-
-            if (Status != null)
-            {
-                hash = hash * 59 + Status.GetHashCode();
-            }
-
-            return hash;
-        }
-    }
 }
