@@ -3,102 +3,11 @@ using System.Text.Json.Serialization;
 
 namespace PureCloud.Client.Models;
 
-/// <summary>
-/// ChangePasswordRequest
-/// </summary>
-
-public partial class ChangePasswordRequest : IEquatable<ChangePasswordRequest>
+public sealed class ChangePasswordRequest
 {
-
-    /// <summary>
-    /// Initializes a new instance of the <see cref="ChangePasswordRequest" /> class.
-    /// </summary>
-    [JsonConstructorAttribute]
-    protected ChangePasswordRequest() { }
-    /// <summary>
-    /// Initializes a new instance of the <see cref="ChangePasswordRequest" /> class.
-    /// </summary>
-    /// <param name="NewPassword">The new password (required).</param>
-    public ChangePasswordRequest(string NewPassword = null)
-    {
-        this.NewPassword = NewPassword;
-
-    }
-
-
-
     /// <summary>
     /// The new password
     /// </summary>
     /// <value>The new password</value>
-    [JsonPropertyName("newPassword")]
     public string NewPassword { get; set; }
-
-
-    /// <summary>
-    /// Returns the string presentation of the object
-    /// </summary>
-    /// <returns>String presentation of the object</returns>
-    public override string ToString()
-    {
-        var sb = new StringBuilder();
-        sb.Append("class ChangePasswordRequest {\n");
-
-        sb.Append("  NewPassword: ").Append(NewPassword).Append("\n");
-        sb.Append("}\n");
-        return sb.ToString();
-    }
-
-
-    /// <summary>
-    /// Returns true if objects are equal
-    /// </summary>
-    /// <param name="obj">Object to be compared</param>
-    /// <returns>Boolean</returns>
-    public override bool Equals(object obj)
-    {
-        // credit: http://stackoverflow.com/a/10454552/677735
-        return Equals(obj as ChangePasswordRequest);
-    }
-
-    /// <summary>
-    /// Returns true if ChangePasswordRequest instances are equal
-    /// </summary>
-    /// <param name="other">Instance of ChangePasswordRequest to be compared</param>
-    /// <returns>Boolean</returns>
-    public bool Equals(ChangePasswordRequest other)
-    {
-        // credit: http://stackoverflow.com/a/10454552/677735
-        if (other == null)
-        {
-            return false;
-        }
-
-        return true &&
-            (
-                NewPassword == other.NewPassword ||
-                NewPassword != null &&
-                NewPassword.Equals(other.NewPassword)
-            );
-    }
-
-    /// <summary>
-    /// Gets the hash code
-    /// </summary>
-    /// <returns>Hash code</returns>
-    public override int GetHashCode()
-    {
-        // credit: http://stackoverflow.com/a/263416/677735
-        unchecked // Overflow is fine, just wrap
-        {
-            int hash = 41;
-            // Suitable nullity checks etc, of course :)
-            if (NewPassword != null)
-            {
-                hash = hash * 59 + NewPassword.GetHashCode();
-            }
-
-            return hash;
-        }
-    }
 }
