@@ -2500,6 +2500,8 @@ public class UserApi : IUserApi
 
         var response = await client.DeleteAsync($"api/v2/analytics/users/details/jobs/{jobId}", cancellationToken);
 
+        response.EnsureSuccessStatusCode();
+
         return response.IsSuccessStatusCode;
     }
 

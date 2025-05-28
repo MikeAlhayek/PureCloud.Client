@@ -119,6 +119,7 @@
     <Compile Include="Models\Analytics\AnalyticsUserDetailsQueryResponse.cs" />
     <Compile Include="Models\Analytics\AnalyticsUserPresenceRecord.cs" />
     <Compile Include="Models\Analytics\AnalyticsUserPresenceRecord.SystemPresence.cs" />
+    <Compile Include="Models\AnswerGenerationConfig.cs" />
     <Compile Include="Models\AnsweringMachineReactionType.cs" />
     <Compile Include="Models\AnswerOption.cs" />
     <Compile Include="Models\ArchitectDependencyTrackingBuildNotificationClient.cs" />
@@ -157,6 +158,12 @@
     <Compile Include="Models\ArchitectSystemPromptResourceNotificationSystemPromptResourceNotification.cs" />
     <Compile Include="Models\AssistanceCondition.cs" />
     <Compile Include="Models\AssistanceConditionOperator.cs" />
+    <Compile Include="Models\Assistant.cs" />
+    <Compile Include="Models\Assistant.State.cs" />
+    <Compile Include="Models\AssistantListing.cs" />
+    <Compile Include="Models\AssistantQueue.cs" />
+    <Compile Include="Models\AssistantQueue.MediaTypes.cs" />
+    <Compile Include="Models\AssistantQueueListing.cs" />
     <Compile Include="Models\AsyncQueryResponse.cs" />
     <Compile Include="Models\AsyncQueryStatus.cs" />
     <Compile Include="Models\AsyncQueryStatus.State.cs" />
@@ -552,6 +559,8 @@
     <Compile Include="Models\Conversations\ConversationMessageMetadataEventSubType.cs" />
     <Compile Include="Models\Conversations\ConversationMessageMetadataEventType.cs" />
     <Compile Include="Models\Conversations\ConversationMessageMetadataType.cs" />
+    <Compile Include="Models\Conversations\ConversationProfile.cs" />
+    <Compile Include="Models\Conversations\ConversationProfile.LanguageCode.cs" />
     <Compile Include="Models\Conversations\ConversationQueueMediaSettings.cs" />
     <Compile Include="Models\Conversations\ConversationRecordingState.cs" />
     <Compile Include="Models\Conversations\ConversationReference.cs" />
@@ -629,6 +638,17 @@
     <Compile Include="Models\ConversationVideoEventTopicVideoMediaParticipant.InitialState.cs" />
     <Compile Include="Models\ConversationVideoEventTopicVideoMediaParticipant.State.cs" />
     <Compile Include="Models\ConversationVideoEventTopicWrapup.cs" />
+    <Compile Include="Models\Copilot.cs" />
+    <Compile Include="Models\Copilot.NluEngineType.cs" />
+    <Compile Include="Models\CopilotAction.cs" />
+    <Compile Include="Models\CopilotAction.ActionType.cs" />
+    <Compile Include="Models\CopilotCondition.cs" />
+    <Compile Include="Models\CopilotCondition.ConditionType.cs" />
+    <Compile Include="Models\CopilotFallbackAction.cs" />
+    <Compile Include="Models\CopilotFallbackAction.ActionType.cs" />
+    <Compile Include="Models\CopilotNluDomain.cs" />
+    <Compile Include="Models\CopilotNluDomainVersion.cs" />
+    <Compile Include="Models\CopilotRule.cs" />
     <Compile Include="Models\CreateGeneralProgramTestPhraseDetectedPhrase.cs" />
     <Compile Include="Models\CreateGeneralProgramTestPhraseMatchedTranscript.cs" />
     <Compile Include="Models\CreateGeneralProgramTestPhraseMatchedTranscript.MediaType.cs" />
@@ -876,6 +896,7 @@
     <Compile Include="Models\ExternalContactsUnresolvedContactChangedTopicTicker.cs" />
     <Compile Include="Models\ExternalContactsUnresolvedContactChangedTopicTwitterId.cs" />
     <Compile Include="Models\ExternalContactsUnresolvedContactChangedTopicWhatsAppId.cs" />
+    <Compile Include="Models\Fallback.cs" />
     <Compile Include="Models\FaxStatus.cs" />
     <Compile Include="Models\FaxTopicFaxDataV2.cs" />
     <Compile Include="Models\FaxTopicLockData.cs" />
@@ -906,6 +927,7 @@
     <Compile Include="Models\GamificationScorecardChangeTopicPunctualityEvent.cs" />
     <Compile Include="Models\GamificationScorecardChangeTopicScorecardChange.cs" />
     <Compile Include="Models\GeolocationEventGeolocation.cs" />
+    <Compile Include="Models\GoogleDialogflowConfig.cs" />
     <Compile Include="Models\Groups\GroupGreetingEventGreeting.cs" />
     <Compile Include="Models\Groups\GroupGreetingEventGreetingAudioFile.cs" />
     <Compile Include="Models\Groups\GroupGreetingEventGreetingOwner.cs" />
@@ -1072,6 +1094,13 @@
     <Compile Include="Models\KlaxonInteractionStatsRulesTopicInteractionStatRule.NumericRange.cs" />
     <Compile Include="Models\KlaxonInteractionStatsRulesTopicInteractionStatRule.Statistic.cs" />
     <Compile Include="Models\KlaxonInteractionStatsRulesTopicNotificationUser.cs" />
+    <Compile Include="Models\KnowledgeAnswerConfig.cs" />
+    <Compile Include="Models\KnowledgeBaseReference.cs" />
+    <Compile Include="Models\KnowledgeBaseReference.LanguageCode.cs" />
+    <Compile Include="Models\KnowledgeBaseWithDialectReference.cs" />
+    <Compile Include="Models\KnowledgeBaseWithDialectReference.LanguageCode.cs" />
+    <Compile Include="Models\KnowledgeSuggestionConfig.cs" />
+    <Compile Include="Models\KnowledgeSuggestionConfig.VendorName.cs" />
     <Compile Include="Models\LabelUtilizationRequest.cs" />
     <Compile Include="Models\LabelUtilizationResponse.cs" />
     <Compile Include="Models\LearningAssignmentRuleRunTopicLearningAssignmentRuleRunNotification.cs" />
@@ -1096,6 +1125,7 @@
     <Compile Include="Models\MessageState.cs" />
     <Compile Include="Models\MessageSticker.cs" />
     <Compile Include="Models\MessageType.cs" />
+    <Compile Include="Models\NluConfig.cs" />
     <Compile Include="Models\NumericRange.cs" />
     <Compile Include="Models\ObservationMetricData.cs" />
     <Compile Include="Models\ObservationValue.cs" />
@@ -1773,6 +1803,8 @@
     <Compile Include="Models\RoutingStatusDetailQueryPredicate.Type.cs" />
     <Compile Include="Models\RoutingStatusDetailQueryPredicate.Dimension.cs" />
     <Compile Include="Models\RoutingStatusDetailQueryPredicate.Operator.cs" />
+    <Compile Include="Models\RuleConfig.cs" />
+    <Compile Include="Models\RuleEngineConfig.cs" />
     <Compile Include="Models\ScoredAgent.cs" />
     <Compile Include="Models\ScreenRecordingState.cs" />
     <Compile Include="Models\QueueConversationEventTopicParticipant.ScreenRecordingState.cs" />
@@ -1836,6 +1868,7 @@
     <Compile Include="Models\StatEventWrapUpCodeTopicStatsNotification.cs" />
     <Compile Include="Models\StatisticalResponse.cs" />
     <Compile Include="Models\StatisticalSummary.cs" />
+    <Compile Include="Models\SummaryGenerationConfig.cs" />
     <Compile Include="Models\SystemMessage.cs" />
     <Compile Include="Models\SystemMessage.Reason.cs" />
     <Compile Include="Models\SystemTopicType.cs" />
@@ -1880,6 +1913,8 @@
     <Compile Include="Models\Teams\Team.cs" />
     <Compile Include="Models\Topics\ConversationMetricsTopicConversationProposedAgent.cs" />
     <Compile Include="Models\Topics\ConversationMetricsTopicConversationScoredAgent.cs" />
+    <Compile Include="Models\TranscriptionConfig.cs" />
+    <Compile Include="Models\TranscriptionConfig.VendorName.cs" />
     <Compile Include="Models\TranscriptionTopicTranscriptAlternative.cs" />
     <Compile Include="Models\TranscriptionTopicTranscriptionMessage.cs" />
     <Compile Include="Models\TranscriptionTopicTranscriptionRequestStatus.cs" />
@@ -2481,6 +2516,7 @@
     <Compile Include="Models\WorkPlanBiddingAdminNotificationTopicWorkPlanBiddingNotification.WorkPlanFieldsVisibleToAgents.cs" />
     <Compile Include="Models\WorkPlanBidRanks.cs" />
     <Compile Include="Models\Wrapup.cs" />
+    <Compile Include="Models\WrapupCodePredictionConfig.cs" />
     <Compile Include="Models\WrapupDetailEventTopicWrapupEvent.cs" />
     <Compile Include="Models\WrapupDetailEventTopicWrapupEvent.MediaType.cs" />
     <Compile Include="Models\WrapupDetailEventTopicWrapupEvent.Direction.cs" />
