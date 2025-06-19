@@ -137,7 +137,7 @@ public interface IUserApi
     Task<List<string>> GetUserProfileskillsAsync(string userId, CancellationToken cancellationToken = default);
 
     // User Queues
-    Task<UserQueueEntityListing> GetUserQueuesAsync(string userId, int? pageSize = null, int? pageNumber = null, bool? joined = null, List<string> divisionId = null, CancellationToken cancellationToken = default);
+    // Task<UserQueueEntityListing> GetUserQueuesAsync(string userId, int? pageSize = null, int? pageNumber = null, bool? joined = null, List<string> divisionId = null, CancellationToken cancellationToken = default);
 
     Task<UserQueue> PatchUserQueueAsync(string queueId, string userId, UserQueue body, CancellationToken cancellationToken = default);
 

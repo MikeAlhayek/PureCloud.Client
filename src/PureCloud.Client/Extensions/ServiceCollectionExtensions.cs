@@ -73,6 +73,10 @@ public static class ServiceCollectionExtensions
 
         services.TryAddScoped<IAgentCopilotApi, AgentCopilotApi>();
 
+        services.TryAddScoped<IAgentUIApi, AgentUIApi>();
+
+        services.TryAddScoped<IAlertingApi, AlertingApi>();
+
         return services;
     }
 }

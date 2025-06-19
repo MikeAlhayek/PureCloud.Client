@@ -1,9 +1,5 @@
-using System;
 using System.Net.Http.Json;
-using System.Text.Json;
-using System.Threading;
 using Microsoft.AspNetCore.WebUtilities;
-using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.Options;
 using PureCloud.Client.Contracts;
 using PureCloud.Client.Http;
@@ -744,47 +740,47 @@ public class UserApi : IUserApi
         return await response.Content.ReadFromJsonAsync<List<string>>(_options.JsonSerializerOptions, cancellationToken);
     }
 
-    public async Task<UserQueueEntityListing> GetUserQueuesAsync(string userId, int? pageSize = null, int? pageNumber = null, bool? joined = null, List<string> divisionId = null, CancellationToken cancellationToken = default)
-    {
-        if (string.IsNullOrWhiteSpace(userId))
-        {
-            throw new ArgumentException("userId is required", nameof(userId));
-        }
+    //public async Task<UserQueueEntityListing> GetUserQueuesAsync(string userId, int? pageSize = null, int? pageNumber = null, bool? joined = null, List<string> divisionId = null, CancellationToken cancellationToken = default)
+    //{
+    //    if (string.IsNullOrWhiteSpace(userId))
+    //    {
+    //        throw new ArgumentException("userId is required", nameof(userId));
+    //    }
 
-        var client = _httpClientFactory.CreateClient(PureCloudConstants.PureCloudClientName);
+    //    var client = _httpClientFactory.CreateClient(PureCloudConstants.PureCloudClientName);
 
-        var query = new List<KeyValuePair<string, string>>();
-        if (pageSize.HasValue)
-        {
-            query.Add(new("pageSize", pageSize.Value.ToString()));
-        }
+    //    var query = new List<KeyValuePair<string, string>>();
+    //    if (pageSize.HasValue)
+    //    {
+    //        query.Add(new("pageSize", pageSize.Value.ToString()));
+    //    }
 
-        if (pageNumber.HasValue)
-        {
-            query.Add(new("pageNumber", pageNumber.Value.ToString()));
-        }
+    //    if (pageNumber.HasValue)
+    //    {
+    //        query.Add(new("pageNumber", pageNumber.Value.ToString()));
+    //    }
 
-        if (joined.HasValue)
-        {
-            query.Add(new("joined", joined.Value.ToString().ToLowerInvariant()));
-        }
+    //    if (joined.HasValue)
+    //    {
+    //        query.Add(new("joined", joined.Value.ToString().ToLowerInvariant()));
+    //    }
 
-        if (divisionId != null)
-        {
-            foreach (var id in divisionId)
-            {
-                query.Add(new("divisionId", id));
-            }
-        }
+    //    if (divisionId != null)
+    //    {
+    //        foreach (var id in divisionId)
+    //        {
+    //            query.Add(new("divisionId", id));
+    //        }
+    //    }
 
-        var uri = QueryHelpers.AddQueryString($"/api/v2/users/{userId}/queues", query);
+    //    var uri = QueryHelpers.AddQueryString($"/api/v2/users/{userId}/queues", query);
 
-        var response = await client.GetAsync(uri, cancellationToken);
+    //    var response = await client.GetAsync(uri, cancellationToken);
 
-        response.EnsureSuccessStatusCode();
+    //    response.EnsureSuccessStatusCode();
 
-        return await response.Content.ReadFromJsonAsync<UserQueueEntityListing>(_options.JsonSerializerOptions, cancellationToken);
-    }
+    //    return await response.Content.ReadFromJsonAsync<UserQueueEntityListing>(_options.JsonSerializerOptions, cancellationToken);
+    //}
 
     public async Task<UserAuthorization> GetUserRolesAsync(string subjectId, CancellationToken cancellationToken = default)
     {
