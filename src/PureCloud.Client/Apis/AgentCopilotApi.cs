@@ -33,7 +33,7 @@ public class AgentCopilotApi : IAgentCopilotApi
     // get methods above
 
     // put methods below
-    public async Task<Copilot> PutAssistantCopilotAsync(string assistantId, Copilot body, CancellationToken cancellationToken = default)
+    public async Task<Copilot> UpdateAssistantCopilotAsync(string assistantId, Copilot body, CancellationToken cancellationToken = default)
     {
         var client = _httpClientFactory.CreateClient(PureCloudConstants.PureCloudClientName);
 

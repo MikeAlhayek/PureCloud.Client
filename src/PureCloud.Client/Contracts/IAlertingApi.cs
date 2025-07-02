@@ -16,17 +16,17 @@ public interface IAlertingApi
 
     Task<BulkResponse> PatchAlertingRulesBulkAsync(CommonRuleBulkUpdateNotificationsRequest body, CancellationToken cancellationToken = default);
 
-    Task<AlertingUnreadStatus> PutAlertingAlertAsync(string alertId, AlertingUnreadStatus body = null, CancellationToken cancellationToken = default);
+    Task<AlertingUnreadStatus> UpdateAlertingAlertAsync(string alertId, AlertingUnreadStatus body = null, CancellationToken cancellationToken = default);
 
-    Task<CommonRule> PutAlertingRuleAsync(string ruleId, ModifiableRuleProperties body, CancellationToken cancellationToken = default);
+    Task<CommonRule> UpdateAlertingRuleAsync(string ruleId, ModifiableRuleProperties body, CancellationToken cancellationToken = default);
 
-    Task<AlertListing> PostAlertingAlertsQueryAsync(GetAlertQuery body = null, CancellationToken cancellationToken = default);
+    Task<AlertListing> CreateAlertingAlertsQueryAsync(GetAlertQuery body = null, CancellationToken cancellationToken = default);
 
-    Task<CommonRule> PostAlertingRulesAsync(CommonRule body, CancellationToken cancellationToken = default);
+    Task<CommonRule> CreateAlertingRulesAsync(CommonRule body, CancellationToken cancellationToken = default);
 
-    Task<BulkResponse> PostAlertingRulesBulkRemoveAsync(CommonRuleBulkDeleteRequest body, CancellationToken cancellationToken = default);
+    Task<BulkResponse> CreateAlertingRulesBulkRemoveAsync(CommonRuleBulkDeleteRequest body, CancellationToken cancellationToken = default);
 
-    Task<CommonRuleContainer> PostAlertingRulesQueryAsync(GetRulesQuery body = null, CancellationToken cancellationToken = default);
+    Task<CommonRuleContainer> CreateAlertingRulesQueryAsync(GetRulesQuery body = null, CancellationToken cancellationToken = default);
 
     Task<bool> DeleteAlertingAlertAsync(string alertId, CancellationToken cancellationToken = default);
 

@@ -1,4 +1,5 @@
 namespace PureCloud.Client.Models.Analytics;
+
 public sealed class AnalyticsConversationWithoutAttributes
 {
     /// <summary>

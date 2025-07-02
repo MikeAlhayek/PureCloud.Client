@@ -77,6 +77,8 @@ public static class ServiceCollectionExtensions
 
         services.TryAddScoped<IAlertingApi, AlertingApi>();
 
+        services.TryAddScoped<IAnalyticsApi, AnalyticsApi>();
+
         return services;
     }
 }

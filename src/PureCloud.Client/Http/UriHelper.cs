@@ -62,7 +62,7 @@ public static class UriHelper
 
         if (obj is bool)
         {
-            return Convert.ToString(obj).ToLower();
+            return Convert.ToString(obj).ToLowerInvariant();
         }
 
         return Convert.ToString(obj);

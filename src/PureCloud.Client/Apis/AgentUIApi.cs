@@ -19,9 +19,10 @@ public class AgentUIApi : IAgentUIApi
         _options = options.Value;
     }
 
-    // get methods below
     public async Task<AutoAnswerSettings> GetUsersAgentuiAgentsAutoanswerAgentIdSettingsAsync(string agentId, CancellationToken cancellationToken = default)
     {
+        ArgumentException.ThrowIfNullOrEmpty(agentId);
+
         var client = _httpClientFactory.CreateClient(PureCloudConstants.PureCloudClientName);
 
         var response = await client.GetAsync($"api/v2/users/agentui/agents/autoanswer/{agentId}/settings", cancellationToken);
@@ -30,11 +31,11 @@ public class AgentUIApi : IAgentUIApi
 
         return await response.Content.ReadFromJsonAsync<AutoAnswerSettings>(_options.JsonSerializerOptions, cancellationToken);
     }
-    // get methods above
 
-    // put methods below
     public async Task<AutoAnswerSettings> PatchUsersAgentuiAgentsAutoanswerAgentIdSettingsAsync(string agentId, AutoAnswerSettings body, CancellationToken cancellationToken = default)
     {
+        ArgumentException.ThrowIfNullOrEmpty(agentId);
+
         var client = _httpClientFactory.CreateClient(PureCloudConstants.PureCloudClientName);
 
         var response = await client.PatchAsJsonAsync($"api/v2/users/agentui/agents/autoanswer/{agentId}/settings", body, _options.JsonSerializerOptions, cancellationToken);
@@ -44,7 +45,7 @@ public class AgentUIApi : IAgentUIApi
         return await response.Content.ReadFromJsonAsync<AutoAnswerSettings>(_options.JsonSerializerOptions, cancellationToken);
     }
 
-    public async Task<AutoAnswerSettings> PutUsersAgentuiAgentsAutoanswerAgentIdSettingsAsync(string agentId, AutoAnswerSettings body, CancellationToken cancellationToken = default)
+    public async Task<AutoAnswerSettings> UpdateUsersAgentuiAgentsAutoanswerAgentIdSettingsAsync(string agentId, AutoAnswerSettings body, CancellationToken cancellationToken = default)
     {
         var client = _httpClientFactory.CreateClient(PureCloudConstants.PureCloudClientName);
 

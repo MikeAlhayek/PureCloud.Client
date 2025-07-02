@@ -92,7 +92,7 @@ public class AlertingApi : IAlertingApi
         return await response.Content.ReadFromJsonAsync<BulkResponse>(_options.JsonSerializerOptions, cancellationToken);
     }
 
-    public async Task<AlertingUnreadStatus> PutAlertingAlertAsync(string alertId, AlertingUnreadStatus body = null, CancellationToken cancellationToken = default)
+    public async Task<AlertingUnreadStatus> UpdateAlertingAlertAsync(string alertId, AlertingUnreadStatus body = null, CancellationToken cancellationToken = default)
     {
         var client = _httpClientFactory.CreateClient(PureCloudConstants.PureCloudClientName);
 
@@ -103,7 +103,7 @@ public class AlertingApi : IAlertingApi
         return await response.Content.ReadFromJsonAsync<AlertingUnreadStatus>(_options.JsonSerializerOptions, cancellationToken);
     }
 
-    public async Task<CommonRule> PutAlertingRuleAsync(string ruleId, ModifiableRuleProperties body, CancellationToken cancellationToken = default)
+    public async Task<CommonRule> UpdateAlertingRuleAsync(string ruleId, ModifiableRuleProperties body, CancellationToken cancellationToken = default)
     {
         var client = _httpClientFactory.CreateClient(PureCloudConstants.PureCloudClientName);
 
@@ -118,7 +118,7 @@ public class AlertingApi : IAlertingApi
 
     // post methods
 
-    public async Task<AlertListing> PostAlertingAlertsQueryAsync(GetAlertQuery body = null, CancellationToken cancellationToken = default)
+    public async Task<AlertListing> CreateAlertingAlertsQueryAsync(GetAlertQuery body = null, CancellationToken cancellationToken = default)
     {
         var client = _httpClientFactory.CreateClient(PureCloudConstants.PureCloudClientName);
 
@@ -129,7 +129,7 @@ public class AlertingApi : IAlertingApi
         return await response.Content.ReadFromJsonAsync<AlertListing>(_options.JsonSerializerOptions, cancellationToken);
     }
 
-    public async Task<CommonRule> PostAlertingRulesAsync(CommonRule body, CancellationToken cancellationToken = default)
+    public async Task<CommonRule> CreateAlertingRulesAsync(CommonRule body, CancellationToken cancellationToken = default)
     {
         var client = _httpClientFactory.CreateClient(PureCloudConstants.PureCloudClientName);
 
@@ -140,7 +140,7 @@ public class AlertingApi : IAlertingApi
         return await response.Content.ReadFromJsonAsync<CommonRule>(_options.JsonSerializerOptions, cancellationToken);
     }
 
-    public async Task<BulkResponse> PostAlertingRulesBulkRemoveAsync(CommonRuleBulkDeleteRequest body, CancellationToken cancellationToken = default)
+    public async Task<BulkResponse> CreateAlertingRulesBulkRemoveAsync(CommonRuleBulkDeleteRequest body, CancellationToken cancellationToken = default)
     {
         var client = _httpClientFactory.CreateClient(PureCloudConstants.PureCloudClientName);
 
@@ -151,7 +151,7 @@ public class AlertingApi : IAlertingApi
         return await response.Content.ReadFromJsonAsync<BulkResponse>(_options.JsonSerializerOptions, cancellationToken);
     }
 
-    public async Task<CommonRuleContainer> PostAlertingRulesQueryAsync(GetRulesQuery body = null, CancellationToken cancellationToken = default)
+    public async Task<CommonRuleContainer> CreateAlertingRulesQueryAsync(GetRulesQuery body = null, CancellationToken cancellationToken = default)
     {
         var client = _httpClientFactory.CreateClient(PureCloudConstants.PureCloudClientName);
 

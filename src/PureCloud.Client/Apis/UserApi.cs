@@ -345,14 +345,14 @@ public class UserApi : IUserApi
     }
 
     public async Task<UserProfileEntityListing> GetProfilesUsersAsync(
-    int? pageSize = null,
-    int? pageNumber = null,
-    List<string> id = null,
-    List<string> jid = null,
-    string sortOrder = null,
-    List<string> expand = null,
-    string integrationPresenceSource = null,
-    CancellationToken cancellationToken = default)
+        int? pageSize = null,
+        int? pageNumber = null,
+        List<string> id = null,
+        List<string> jid = null,
+        string sortOrder = null,
+        List<string> expand = null,
+        string integrationPresenceSource = null,
+        CancellationToken cancellationToken = default)
     {
         var client = _httpClientFactory.CreateClient(PureCloudConstants.PureCloudClientName);
 
@@ -1463,7 +1463,7 @@ public class UserApi : IUserApi
         return await response.Content.ReadFromJsonAsync<User>(_options.JsonSerializerOptions, cancellationToken);
     }
 
-    public async Task<CallForwarding> PatchUserCallforwardingAsync(string userId, CallForwarding body, CancellationToken cancellationToken = default)
+    public async Task<CallForwarding> UpdateUserCallforwardingAsync(string userId, CallForwarding body, CancellationToken cancellationToken = default)
     {
         if (string.IsNullOrWhiteSpace(userId))
         {
@@ -1491,7 +1491,7 @@ public class UserApi : IUserApi
         return await response.Content.ReadFromJsonAsync<CallForwarding>(_options.JsonSerializerOptions, cancellationToken);
     }
 
-    public async Task<Geolocation> PatchUserGeolocationAsync(string userId, string clientId, Geolocation body, CancellationToken cancellationToken = default)
+    public async Task<Geolocation> UpdateUserGeolocationAsync(string userId, string clientId, Geolocation body, CancellationToken cancellationToken = default)
     {
         if (string.IsNullOrWhiteSpace(userId))
         {
@@ -1524,7 +1524,7 @@ public class UserApi : IUserApi
         return await response.Content.ReadFromJsonAsync<Geolocation>(_options.JsonSerializerOptions, cancellationToken);
     }
 
-    public async Task<UserQueue> PatchUserQueueAsync(string queueId, string userId, UserQueue body, CancellationToken cancellationToken = default)
+    public async Task<UserQueue> UpdateUserQueueAsync(string queueId, string userId, UserQueue body, CancellationToken cancellationToken = default)
     {
         if (string.IsNullOrWhiteSpace(queueId))
         {
@@ -1599,7 +1599,7 @@ public class UserApi : IUserApi
         return await response.Content.ReadFromJsonAsync<UserRoutingLanguage>(_options.JsonSerializerOptions, cancellationToken);
     }
 
-    public async Task<UserLanguageEntityListing> PatchUserRoutinglanguagesBulkAsync(string userId, List<UserRoutingLanguagePost> body, CancellationToken cancellationToken = default)
+    public async Task<UserLanguageEntityListing> UpdateUserRoutinglanguagesBulkAsync(string userId, List<UserRoutingLanguagePost> body, CancellationToken cancellationToken = default)
     {
         if (string.IsNullOrWhiteSpace(userId))
         {
@@ -1645,7 +1645,7 @@ public class UserApi : IUserApi
         return await response.Content.ReadFromJsonAsync<UserSkillEntityListing>(_options.JsonSerializerOptions, cancellationToken);
     }
 
-    public async Task<UserEntityListing> PatchUsersBulkAsync(List<PatchUser> body, CancellationToken cancellationToken = default)
+    public async Task<UserEntityListing> UpdateUsersBulkAsync(List<PatchUser> body, CancellationToken cancellationToken = default)
     {
         if (body == null)
         {
@@ -1690,7 +1690,7 @@ public class UserApi : IUserApi
         return await response.Content.ReadFromJsonAsync<SearchResult<User>>(_options.JsonSerializerOptions, cancellationToken);
     }
 
-    public async Task<UserActivityResponse> PostAnalyticsUsersActivityQueryAsync(UserActivityQuery body, int? pageSize = null, int? pageNumber = null, CancellationToken cancellationToken = default)
+    public async Task<UserActivityResponse> CreateAnalyticsUsersActivityQueryAsync(UserActivityQuery body, int? pageSize = null, int? pageNumber = null, CancellationToken cancellationToken = default)
     {
         if (body == null)
         {
@@ -1720,7 +1720,7 @@ public class UserApi : IUserApi
         return await response.Content.ReadFromJsonAsync<UserActivityResponse>(_options.JsonSerializerOptions, cancellationToken);
     }
 
-    public async Task<AsyncQueryResponse> PostAnalyticsUsersAggregatesJobsAsync(UserAsyncAggregationQuery body, CancellationToken cancellationToken = default)
+    public async Task<AsyncQueryResponse> CreateAnalyticsUsersAggregatesJobsAsync(UserAsyncAggregationQuery body, CancellationToken cancellationToken = default)
     {
         if (body == null)
         {
@@ -1738,7 +1738,7 @@ public class UserApi : IUserApi
         return await response.Content.ReadFromJsonAsync<AsyncQueryResponse>(_options.JsonSerializerOptions, cancellationToken);
     }
 
-    public async Task<UserAggregateQueryResponse> PostAnalyticsUsersAggregatesQueryAsync(UserAggregationQuery body, CancellationToken cancellationToken = default)
+    public async Task<UserAggregateQueryResponse> CreateAnalyticsUsersAggregatesQueryAsync(UserAggregationQuery body, CancellationToken cancellationToken = default)
     {
         if (body == null)
         {
@@ -1756,7 +1756,7 @@ public class UserApi : IUserApi
         return await response.Content.ReadFromJsonAsync<UserAggregateQueryResponse>(_options.JsonSerializerOptions, cancellationToken);
     }
 
-    public async Task<AsyncQueryResponse> PostAnalyticsUsersDetailsJobsAsync(AsyncUserDetailsQuery body, CancellationToken cancellationToken = default)
+    public async Task<AsyncQueryResponse> CreateAnalyticsUsersDetailsJobsAsync(AsyncUserDetailsQuery body, CancellationToken cancellationToken = default)
     {
         if (body == null)
         {
@@ -1774,7 +1774,7 @@ public class UserApi : IUserApi
         return await response.Content.ReadFromJsonAsync<AsyncQueryResponse>(_options.JsonSerializerOptions, cancellationToken);
     }
 
-    public async Task<AnalyticsUserDetailsQueryResponse> PostAnalyticsUsersDetailsQueryAsync(UserDetailsQuery body, CancellationToken cancellationToken = default)
+    public async Task<AnalyticsUserDetailsQueryResponse> CreateAnalyticsUsersDetailsQueryAsync(UserDetailsQuery body, CancellationToken cancellationToken = default)
     {
         if (body == null)
         {
@@ -1792,7 +1792,7 @@ public class UserApi : IUserApi
         return await response.Content.ReadFromJsonAsync<AnalyticsUserDetailsQueryResponse>(_options.JsonSerializerOptions, cancellationToken);
     }
 
-    public async Task<UserObservationQueryResponse> PostAnalyticsUsersObservationsQueryAsync(UserObservationQuery body, CancellationToken cancellationToken = default)
+    public async Task<UserObservationQueryResponse> CreateAnalyticsUsersObservationsQueryAsync(UserObservationQuery body, CancellationToken cancellationToken = default)
     {
         if (body == null)
         {
@@ -1810,7 +1810,7 @@ public class UserApi : IUserApi
         return await response.Content.ReadFromJsonAsync<UserObservationQueryResponse>(_options.JsonSerializerOptions, cancellationToken);
     }
 
-    public async Task PostAuthorizationSubjectBulkaddAsync(string subjectId, RoleDivisionGrants body, string subjectType = null, CancellationToken cancellationToken = default)
+    public async Task CreateAuthorizationSubjectBulkaddAsync(string subjectId, RoleDivisionGrants body, string subjectType = null, CancellationToken cancellationToken = default)
     {
         if (string.IsNullOrWhiteSpace(subjectId))
         {
@@ -1841,7 +1841,7 @@ public class UserApi : IUserApi
         response.EnsureSuccessStatusCode();
     }
 
-    public async Task PostAuthorizationSubjectBulkremoveAsync(string subjectId, RoleDivisionGrants body, CancellationToken cancellationToken = default)
+    public async Task CreateAuthorizationSubjectBulkremoveAsync(string subjectId, RoleDivisionGrants body, CancellationToken cancellationToken = default)
     {
         if (string.IsNullOrWhiteSpace(subjectId))
         {
@@ -1862,7 +1862,7 @@ public class UserApi : IUserApi
         response.EnsureSuccessStatusCode();
     }
 
-    public async Task PostAuthorizationSubjectBulkreplaceAsync(string subjectId, RoleDivisionGrants body, string subjectType = null, CancellationToken cancellationToken = default)
+    public async Task CreateAuthorizationSubjectBulkreplaceAsync(string subjectId, RoleDivisionGrants body, string subjectType = null, CancellationToken cancellationToken = default)
     {
         if (string.IsNullOrWhiteSpace(subjectId))
         {
@@ -1893,7 +1893,7 @@ public class UserApi : IUserApi
         response.EnsureSuccessStatusCode();
     }
 
-    public async Task PostAuthorizationSubjectDivisionRoleAsync(string subjectId, string divisionId, string roleId, string subjectType = null, CancellationToken cancellationToken = default)
+    public async Task CreateAuthorizationSubjectDivisionRoleAsync(string subjectId, string divisionId, string roleId, string subjectType = null, CancellationToken cancellationToken = default)
     {
         if (string.IsNullOrWhiteSpace(subjectId))
         {
@@ -1952,7 +1952,7 @@ public class UserApi : IUserApi
         return await response.Content.ReadFromJsonAsync<List<UserExternalIdentifier>>(_options.JsonSerializerOptions, cancellationToken);
     }
 
-    public async Task PostUserInviteAsync(string userId, bool? force = null, CancellationToken cancellationToken = default)
+    public async Task CreateUserInviteAsync(string userId, bool? force = null, CancellationToken cancellationToken = default)
     {
         if (string.IsNullOrWhiteSpace(userId))
         {
@@ -1978,7 +1978,7 @@ public class UserApi : IUserApi
         response.EnsureSuccessStatusCode();
     }
 
-    public async Task PostUserPasswordAsync(string userId, ChangePasswordRequest body, CancellationToken cancellationToken = default)
+    public async Task CreateUserPasswordAsync(string userId, ChangePasswordRequest body, CancellationToken cancellationToken = default)
     {
         if (string.IsNullOrWhiteSpace(userId))
         {
@@ -1999,7 +1999,7 @@ public class UserApi : IUserApi
         response.EnsureSuccessStatusCode();
     }
 
-    public async Task<UserRoutingLanguage> PostUserRoutinglanguagesAsync(string userId, UserRoutingLanguagePost body, CancellationToken cancellationToken = default)
+    public async Task<UserRoutingLanguage> CreateUserRoutinglanguagesAsync(string userId, UserRoutingLanguagePost body, CancellationToken cancellationToken = default)
     {
         if (string.IsNullOrWhiteSpace(userId))
         {
@@ -2022,7 +2022,7 @@ public class UserApi : IUserApi
         return await response.Content.ReadFromJsonAsync<UserRoutingLanguage>(_options.JsonSerializerOptions, cancellationToken);
     }
 
-    public async Task<UserRoutingSkill> PostUserRoutingskillsAsync(string userId, UserRoutingSkillPost body, CancellationToken cancellationToken = default)
+    public async Task<UserRoutingSkill> CreateUserRoutingskillsAsync(string userId, UserRoutingSkillPost body, CancellationToken cancellationToken = default)
     {
         if (string.IsNullOrWhiteSpace(userId))
         {
@@ -2063,7 +2063,7 @@ public class UserApi : IUserApi
         return await response.Content.ReadFromJsonAsync<User>(_options.JsonSerializerOptions, cancellationToken);
     }
 
-    public async Task<DevelopmentActivityAggregateResponse> PostUsersDevelopmentActivitiesAggregatesQueryAsync(DevelopmentActivityAggregateParam body, CancellationToken cancellationToken = default)
+    public async Task<DevelopmentActivityAggregateResponse> CreateUsersDevelopmentActivitiesAggregatesQueryAsync(DevelopmentActivityAggregateParam body, CancellationToken cancellationToken = default)
     {
         if (body == null)
         {
@@ -2081,7 +2081,7 @@ public class UserApi : IUserApi
         return await response.Content.ReadFromJsonAsync<DevelopmentActivityAggregateResponse>(_options.JsonSerializerOptions, cancellationToken);
     }
 
-    public async Task PostUsersMePasswordAsync(ChangeMyPasswordRequest body, CancellationToken cancellationToken = default)
+    public async Task CreateUsersMePasswordAsync(ChangeMyPasswordRequest body, CancellationToken cancellationToken = default)
     {
         if (body == null)
         {
@@ -2097,7 +2097,7 @@ public class UserApi : IUserApi
         response.EnsureSuccessStatusCode();
     }
 
-    public async Task<UsersSearchResponse> PostUsersSearchAsync(UserSearchRequest body, CancellationToken cancellationToken = default)
+    public async Task<UsersSearchResponse> CreateUsersSearchAsync(UserSearchRequest body, CancellationToken cancellationToken = default)
     {
         if (body == null)
         {
@@ -2115,7 +2115,7 @@ public class UserApi : IUserApi
         return await response.Content.ReadFromJsonAsync<UsersSearchResponse>(_options.JsonSerializerOptions, cancellationToken);
     }
 
-    public async Task<UsersSearchResponse> PostUsersSearchConversationTargetAsync(
+    public async Task<UsersSearchResponse> CreateUsersSearchConversationTargetAsync(
     UserSearchRequest body,
     CancellationToken cancellationToken = default)
     {
@@ -2135,7 +2135,7 @@ public class UserApi : IUserApi
         return await response.Content.ReadFromJsonAsync<UsersSearchResponse>(_options.JsonSerializerOptions, cancellationToken);
     }
 
-    public async Task<UsersSearchResponse> PostUsersSearchQueuemembersManageAsync(UserSearchRequest body, CancellationToken cancellationToken = default)
+    public async Task<UsersSearchResponse> CreateUsersSearchQueuemembersManageAsync(UserSearchRequest body, CancellationToken cancellationToken = default)
     {
         if (body == null)
         {
@@ -2153,7 +2153,7 @@ public class UserApi : IUserApi
         return await response.Content.ReadFromJsonAsync<UsersSearchResponse>(_options.JsonSerializerOptions, cancellationToken);
     }
 
-    public async Task<UsersSearchResponse> PostUsersSearchTeamsAssignAsync(UserSearchRequest body, CancellationToken cancellationToken = default)
+    public async Task<UsersSearchResponse> CreateUsersSearchTeamsAssignAsync(UserSearchRequest body, CancellationToken cancellationToken = default)
     {
         if (body == null)
         {
@@ -2174,7 +2174,7 @@ public class UserApi : IUserApi
     // post methods
 
     // Put methods
-    public async Task<AgentDirectRoutingBackupSettings> PutRoutingDirectroutingbackupSettingsMeAsync(AgentDirectRoutingBackupSettings settings, CancellationToken cancellationToken = default)
+    public async Task<AgentDirectRoutingBackupSettings> UpdateRoutingDirectroutingbackupSettingsMeAsync(AgentDirectRoutingBackupSettings settings, CancellationToken cancellationToken = default)
     {
         ArgumentNullException.ThrowIfNull(settings);
 
@@ -2187,7 +2187,7 @@ public class UserApi : IUserApi
         return await response.Content.ReadFromJsonAsync<AgentDirectRoutingBackupSettings>(_options.JsonSerializerOptions, cancellationToken);
     }
 
-    public async Task<AgentDirectRoutingBackupSettings> PutRoutingUserDirectroutingbackupSettingsAsync(string userId, AgentDirectRoutingBackupSettings body, CancellationToken cancellationToken = default)
+    public async Task<AgentDirectRoutingBackupSettings> UpdateRoutingUserDirectroutingbackupSettingsAsync(string userId, AgentDirectRoutingBackupSettings body, CancellationToken cancellationToken = default)
     {
         if (string.IsNullOrWhiteSpace(userId))
         {
@@ -2210,7 +2210,7 @@ public class UserApi : IUserApi
         return await response.Content.ReadFromJsonAsync<AgentDirectRoutingBackupSettings>(_options.JsonSerializerOptions, cancellationToken);
     }
 
-    public async Task<AgentMaxUtilizationResponse> PutRoutingUserUtilizationAsync(string userId, UtilizationRequest body, CancellationToken cancellationToken = default)
+    public async Task<AgentMaxUtilizationResponse> UpdateRoutingUserUtilizationAsync(string userId, UtilizationRequest body, CancellationToken cancellationToken = default)
     {
         if (string.IsNullOrWhiteSpace(userId))
         {
@@ -2256,7 +2256,7 @@ public class UserApi : IUserApi
         return await response.Content.ReadFromJsonAsync<CallForwarding>(_options.JsonSerializerOptions, cancellationToken);
     }
 
-    public async Task<OutOfOffice> PutUserOutofofficeAsync(string userId, OutOfOffice body, CancellationToken cancellationToken = default)
+    public async Task<OutOfOffice> UpdateUserOutofofficeAsync(string userId, OutOfOffice body, CancellationToken cancellationToken = default)
     {
         if (string.IsNullOrWhiteSpace(userId))
         {
@@ -2279,17 +2279,10 @@ public class UserApi : IUserApi
         return await response.Content.ReadFromJsonAsync<OutOfOffice>(_options.JsonSerializerOptions, cancellationToken);
     }
 
-    public async Task<List<string>> PutUserProfileskillsAsync(string userId, List<string> body, CancellationToken cancellationToken = default)
+    public async Task<string[]> UpdateUserProfileskillsAsync(string userId, IEnumerable<string> body, CancellationToken cancellationToken = default)
     {
-        if (string.IsNullOrWhiteSpace(userId))
-        {
-            throw new ArgumentException("userId is required", nameof(userId));
-        }
-
-        if (body == null)
-        {
-            throw new ArgumentException("body is required", nameof(body));
-        }
+        ArgumentException.ThrowIfNullOrEmpty(userId);
+        ArgumentNullException.ThrowIfNull(body);
 
         var client = _httpClientFactory.CreateClient(PureCloudConstants.PureCloudClientName);
 
@@ -2299,20 +2292,13 @@ public class UserApi : IUserApi
 
         response.EnsureSuccessStatusCode();
 
-        return await response.Content.ReadFromJsonAsync<List<string>>(_options.JsonSerializerOptions, cancellationToken);
+        return await response.Content.ReadFromJsonAsync<string[]>(_options.JsonSerializerOptions, cancellationToken);
     }
 
-    public async Task<UserAuthorization> PutUserRolesAsync(string subjectId, List<string> body, CancellationToken cancellationToken = default)
+    public async Task<UserAuthorization> PutUserRolesAsync(string subjectId, IEnumerable<string> body, CancellationToken cancellationToken = default)
     {
-        if (string.IsNullOrWhiteSpace(subjectId))
-        {
-            throw new ArgumentException("subjectId is required", nameof(subjectId));
-        }
-
-        if (body == null)
-        {
-            throw new ArgumentException("body is required", nameof(body));
-        }
+        ArgumentException.ThrowIfNullOrEmpty(subjectId);
+        ArgumentNullException.ThrowIfNull(body);
 
         var client = _httpClientFactory.CreateClient(PureCloudConstants.PureCloudClientName);
 
@@ -2325,7 +2311,7 @@ public class UserApi : IUserApi
         return await response.Content.ReadFromJsonAsync<UserAuthorization>(_options.JsonSerializerOptions, cancellationToken);
     }
 
-    public async Task<UserRoutingSkill> PutUserRoutingskillAsync(string userId, string skillId, UserRoutingSkill body, CancellationToken cancellationToken = default)
+    public async Task<UserRoutingSkill> UpdateUserRoutingskillAsync(string userId, string skillId, UserRoutingSkill body, CancellationToken cancellationToken = default)
     {
         if (string.IsNullOrWhiteSpace(userId))
         {
@@ -2353,7 +2339,7 @@ public class UserApi : IUserApi
         return await response.Content.ReadFromJsonAsync<UserRoutingSkill>(_options.JsonSerializerOptions, cancellationToken);
     }
 
-    public async Task<UserSkillEntityListing> PutUserRoutingskillsBulkAsync(string userId, List<UserRoutingSkillPost> body, CancellationToken cancellationToken = default)
+    public async Task<UserSkillEntityListing> UpdateUserRoutingskillsBulkAsync(string userId, List<UserRoutingSkillPost> body, CancellationToken cancellationToken = default)
     {
         if (string.IsNullOrWhiteSpace(userId))
         {
@@ -2376,7 +2362,7 @@ public class UserApi : IUserApi
         return await response.Content.ReadFromJsonAsync<UserSkillEntityListing>(_options.JsonSerializerOptions, cancellationToken);
     }
 
-    public async Task<RoutingStatus> PutUserRoutingstatusAsync(string userId, RoutingStatus body, CancellationToken cancellationToken = default)
+    public async Task<RoutingStatus> UpdateUserRoutingstatusAsync(string userId, RoutingStatus body, CancellationToken cancellationToken = default)
     {
         if (string.IsNullOrWhiteSpace(userId))
         {
@@ -2399,7 +2385,7 @@ public class UserApi : IUserApi
         return await response.Content.ReadFromJsonAsync<RoutingStatus>(_options.JsonSerializerOptions, cancellationToken);
     }
 
-    public async Task<UserState> PutUserStateAsync(string userId, UserState body, CancellationToken cancellationToken = default)
+    public async Task<UserState> UpdateUserStateAsync(string userId, UserState body, CancellationToken cancellationToken = default)
     {
         if (string.IsNullOrWhiteSpace(userId))
         {
@@ -2417,7 +2403,7 @@ public class UserApi : IUserApi
         return await response.Content.ReadFromJsonAsync<UserState>(_options.JsonSerializerOptions, cancellationToken);
     }
 
-    public async Task PutUserStationAssociatedstationAsync(string userId, string stationId, CancellationToken cancellationToken = default)
+    public async Task CreateUserStationAssociatedstationAsync(string userId, string stationId, CancellationToken cancellationToken = default)
     {
         if (string.IsNullOrWhiteSpace(userId))
         {
@@ -2438,7 +2424,7 @@ public class UserApi : IUserApi
         response.EnsureSuccessStatusCode();
     }
 
-    public async Task PutUserStationDefaultstationAsync(string userId, string stationId, CancellationToken cancellationToken = default)
+    public async Task CreateUserStationDefaultstationAsync(string userId, string stationId, CancellationToken cancellationToken = default)
     {
         if (string.IsNullOrWhiteSpace(userId))
         {
@@ -2459,7 +2445,7 @@ public class UserApi : IUserApi
         response.EnsureSuccessStatusCode();
     }
 
-    public async Task<Verifier> PutUserVerifierAsync(string userId, string verifierId, UpdateVerifierRequest body, CancellationToken cancellationToken = default)
+    public async Task<Verifier> UpdateUserVerifierAsync(string userId, string verifierId, UpdateVerifierRequest body, CancellationToken cancellationToken = default)
     {
         if (string.IsNullOrWhiteSpace(userId))
         {
@@ -2487,9 +2473,7 @@ public class UserApi : IUserApi
         return await response.Content.ReadFromJsonAsync<Verifier>(_options.JsonSerializerOptions, cancellationToken);
     }
 
-    // put methods
 
-    // Below are the delete methods
     public async Task<bool> DeleteAnalyticsUsersDetailsJobAsync(string jobId, CancellationToken cancellationToken = default)
     {
         var client = _httpClientFactory.CreateClient(PureCloudConstants.PureCloudClientName);

@@ -5,5 +5,5 @@ public interface IAgentCopilotApi
 {
     Task<Copilot> GetAssistantCopilotAsync(string assistantId, CancellationToken cancellationToken = default);
 
-    Task<Copilot> PutAssistantCopilotAsync(string assistantId, Copilot body, CancellationToken cancellationToken = default);
+    Task<Copilot> UpdateAssistantCopilotAsync(string assistantId, Copilot body, CancellationToken cancellationToken = default);
 }

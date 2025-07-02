@@ -10,5 +10,5 @@ public interface IAgentUIApi
 
     Task<AutoAnswerSettings> PatchUsersAgentuiAgentsAutoanswerAgentIdSettingsAsync(string agentId, AutoAnswerSettings body, CancellationToken cancellationToken = default);
 
-    Task<AutoAnswerSettings> PutUsersAgentuiAgentsAutoanswerAgentIdSettingsAsync(string agentId, AutoAnswerSettings body, CancellationToken cancellationToken = default);
+    Task<AutoAnswerSettings> UpdateUsersAgentuiAgentsAutoanswerAgentIdSettingsAsync(string agentId, AutoAnswerSettings body, CancellationToken cancellationToken = default);
 }

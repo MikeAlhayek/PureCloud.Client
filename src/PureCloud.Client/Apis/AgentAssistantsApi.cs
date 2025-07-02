@@ -20,7 +20,6 @@ public class AgentAssistantsApi : IAgentAssistantsApi
         _options = options.Value;
     }
 
-    // get methods below
     public async Task<Assistant> GetAssistantAsync(string assistantId, string expand = null, CancellationToken cancellationToken = default)
     {
         var client = _httpClientFactory.CreateClient(PureCloudConstants.PureCloudClientName);
@@ -180,10 +179,8 @@ public class AgentAssistantsApi : IAgentAssistantsApi
 
         return await response.Content.ReadFromJsonAsync<AssistantQueueListing>(_options.JsonSerializerOptions, cancellationToken);
     }
-    // get methods above
 
-    // put methods below
-    public async Task<Assistant> PatchAssistantAsync(string assistantId, Assistant body, CancellationToken cancellationToken = default)
+    public async Task<Assistant> UpdateAssistantAsync(string assistantId, Assistant body, CancellationToken cancellationToken = default)
     {
         var client = _httpClientFactory.CreateClient(PureCloudConstants.PureCloudClientName);
 
@@ -194,7 +191,7 @@ public class AgentAssistantsApi : IAgentAssistantsApi
         return await response.Content.ReadFromJsonAsync<Assistant>(_options.JsonSerializerOptions, cancellationToken);
     }
 
-    public async Task<AssistantQueueListing> PatchAssistantQueuesAsync(string assistantId, List<AssistantQueue> body, CancellationToken cancellationToken = default)
+    public async Task<AssistantQueueListing> UpdateAssistantQueuesAsync(string assistantId, List<AssistantQueue> body, CancellationToken cancellationToken = default)
     {
         var client = _httpClientFactory.CreateClient(PureCloudConstants.PureCloudClientName);
 
@@ -205,7 +202,7 @@ public class AgentAssistantsApi : IAgentAssistantsApi
         return await response.Content.ReadFromJsonAsync<AssistantQueueListing>(_options.JsonSerializerOptions, cancellationToken);
     }
 
-    public async Task<AssistantQueue> PutAssistantQueueAsync(string assistantId, string queueId, AssistantQueue body, CancellationToken cancellationToken = default)
+    public async Task<AssistantQueue> UpdateAssistantQueueAsync(string assistantId, string queueId, AssistantQueue body, CancellationToken cancellationToken = default)
     {
         var client = _httpClientFactory.CreateClient(PureCloudConstants.PureCloudClientName);
 
@@ -215,10 +212,8 @@ public class AgentAssistantsApi : IAgentAssistantsApi
 
         return await response.Content.ReadFromJsonAsync<AssistantQueue>(_options.JsonSerializerOptions, cancellationToken);
     }
-    // put methods above
 
-    // post methods below
-    public async Task<Assistant> PostAssistantsAsync(Assistant body, CancellationToken cancellationToken = default)
+    public async Task<Assistant> CreateAssistantsAsync(Assistant body, CancellationToken cancellationToken = default)
     {
         var client = _httpClientFactory.CreateClient(PureCloudConstants.PureCloudClientName);
 
@@ -228,9 +223,7 @@ public class AgentAssistantsApi : IAgentAssistantsApi
 
         return await response.Content.ReadFromJsonAsync<Assistant>(_options.JsonSerializerOptions, cancellationToken);
     }
-    // post methods above
 
-    // delete methods below
     public async Task<bool> DeleteAssistantAsync(string assistantId, CancellationToken cancellationToken = default)
     {
         var client = _httpClientFactory.CreateClient(PureCloudConstants.PureCloudClientName);
@@ -270,5 +263,5 @@ public class AgentAssistantsApi : IAgentAssistantsApi
 
         return response.IsSuccessStatusCode;
     }
-    // delete methods above
+
 }
