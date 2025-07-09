@@ -79,6 +79,10 @@ public static class ServiceCollectionExtensions
 
         services.TryAddScoped<IAnalyticsApi, AnalyticsApi>();
 
+        services.TryAddScoped<IArchitectApi, ArchitectApi>();
+
+        services.TryAddScoped<IAuditApi, AuditApi>();
+
         return services;
     }
 }
