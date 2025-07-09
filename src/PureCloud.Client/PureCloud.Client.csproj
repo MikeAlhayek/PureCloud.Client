@@ -284,6 +284,25 @@
     <Compile Include="Models\AttributeDetailEventTopicAttributeUpdateEvent.cs" />
     <Compile Include="Models\AttributeDetailEventTopicCommunication.cs" />
     <Compile Include="Models\AttributeDetailEventTopicCommunication.MediaType.cs" />
+    <Compile Include="Models\AuditLogMessage.cs" />
+    <Compile Include="Models\AuditLogMessage.Level.cs" />
+    <Compile Include="Models\AuditLogMessage.Status.cs" />
+    <Compile Include="Models\AuditQueryEntity.cs" />
+    <Compile Include="Models\AuditQueryExecutionResultsResponse.cs" />
+    <Compile Include="Models\AuditQueryExecutionStatusResponse.cs" />
+    <Compile Include="Models\AuditQueryExecutionStatusResponse.State.cs" />
+    <Compile Include="Models\AuditQueryFilter.cs" />
+    <Compile Include="Models\AuditQueryFilter.Property.cs" />
+    <Compile Include="Models\AuditQueryRequest.cs" />
+    <Compile Include="Models\AuditQueryService.cs" />
+    <Compile Include="Models\AuditQueryServiceMapping.cs" />
+    <Compile Include="Models\AuditQuerySort.cs" />
+    <Compile Include="Models\AuditQuerySort.Name.cs" />
+    <Compile Include="Models\AuditQuerySort.SortOrder.cs" />
+    <Compile Include="Models\AuditRealtimeQueryRequest.cs" />
+    <Compile Include="Models\AuditRealtimeQueryResultsResponse.cs" />
+    <Compile Include="Models\AuditRealtimeRelatedRequest.cs" />
+    <Compile Include="Models\AuditRealtimeRelatedResultsResponse.cs" />
     <Compile Include="Models\AuditTopicAddressableEntityRef.cs" />
     <Compile Include="Models\AuditTopicAuditLogMessage.ActionEnum.cs" />
     <Compile Include="Models\AuditTopicAuditLogMessage.cs" />
@@ -1083,6 +1102,7 @@
     <Compile Include="Models\EmployeePerformanceExternalMetricsDefinitionExternalMetricsDefinition.cs" />
     <Compile Include="Models\EmployeePerformanceExternalMetricsDefinitionExternalMetricsDefinition.Unit.cs" />
     <Compile Include="Models\EmployeePerformanceExternalMetricsDefinitionExternalMetricsDefinitionDefault.ObjectiveType.cs" />
+    <Compile Include="Models\EntityChange.cs" />
     <Compile Include="Models\ErrorBody.cs" />
     <Compile Include="Models\ErrorInfo.cs" />
     <Compile Include="Models\Evaluation.cs" />
@@ -1412,6 +1432,7 @@
     <Compile Include="Models\IdentityResolutionConfig.cs" />
     <Compile Include="Models\ImportTemplateImportStatusImportStatus.cs" />
     <Compile Include="Models\ImportTemplateImportStatusImportStatus.ImportState.cs" />
+    <Compile Include="Models\InitiatingAction.cs" />
     <Compile Include="Models\Intent.cs" />
     <Compile Include="Models\IntentDefinition.cs" />
     <Compile Include="Models\InternalMessage.cs" />
@@ -1658,6 +1679,7 @@
     <Compile Include="Models\MessageDetailsStatus.cs" />
     <Compile Include="Models\MessageDirection.cs" />
     <Compile Include="Models\MessageDisconnectType.cs" />
+    <Compile Include="Models\MessageInfo.cs" />
     <Compile Include="Models\MessageInitialState.cs" />
     <Compile Include="Models\MessageMedia.cs" />
     <Compile Include="Models\MessageState.cs" />
@@ -1814,6 +1836,7 @@
     <Compile Include="Models\PromptAssetEntityListing.cs" />
     <Compile Include="Models\PromptAssetUpload.cs" />
     <Compile Include="Models\PromptEntityListing.cs" />
+    <Compile Include="Models\PropertyChange.cs" />
     <Compile Include="Models\PropertyIndexRequest.cs" />
     <Compile Include="Models\PublishProgramTestPhraseDetectedPhrase.cs" />
     <Compile Include="Models\PublishProgramTestPhraseMatchedTranscript.cs" />
