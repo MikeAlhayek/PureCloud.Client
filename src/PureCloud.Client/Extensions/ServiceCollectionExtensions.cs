@@ -83,6 +83,8 @@ public static class ServiceCollectionExtensions
 
         services.TryAddScoped<IAuditApi, AuditApi>();
 
+        services.TryAddScoped<IAuthorizationApi, AuthorizationApi>();
+
         return services;
     }
 }
