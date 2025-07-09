@@ -19,7 +19,6 @@ public class AgentCopilotApi : IAgentCopilotApi
         _options = options.Value;
     }
 
-    // get methods below
     public async Task<Copilot> GetAssistantCopilotAsync(string assistantId, CancellationToken cancellationToken = default)
     {
         var client = _httpClientFactory.CreateClient(PureCloudConstants.PureCloudClientName);
@@ -30,9 +29,7 @@ public class AgentCopilotApi : IAgentCopilotApi
 
         return await response.Content.ReadFromJsonAsync<Copilot>(_options.JsonSerializerOptions, cancellationToken);
     }
-    // get methods above
 
-    // put methods below
     public async Task<Copilot> UpdateAssistantCopilotAsync(string assistantId, Copilot body, CancellationToken cancellationToken = default)
     {
         var client = _httpClientFactory.CreateClient(PureCloudConstants.PureCloudClientName);
@@ -43,5 +40,5 @@ public class AgentCopilotApi : IAgentCopilotApi
 
         return await response.Content.ReadFromJsonAsync<Copilot>(_options.JsonSerializerOptions, cancellationToken);
     }
-    // put methods above
+
 }

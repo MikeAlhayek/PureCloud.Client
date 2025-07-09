@@ -55,9 +55,7 @@ public class AgentUIApi : IAgentUIApi
 
         return await response.Content.ReadFromJsonAsync<AutoAnswerSettings>(_options.JsonSerializerOptions, cancellationToken);
     }
-    // put methods above
 
-    // delete methods below
     public async Task<bool> DeleteUsersAgentuiAgentsAutoanswerAgentIdSettingsAsync(string agentId, CancellationToken cancellationToken = default)
     {
         var client = _httpClientFactory.CreateClient(PureCloudConstants.PureCloudClientName);
@@ -68,5 +66,5 @@ public class AgentUIApi : IAgentUIApi
 
         return response.IsSuccessStatusCode;
     }
-    // delete methods above
+
 }

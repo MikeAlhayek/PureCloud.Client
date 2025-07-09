@@ -1,390 +1,82 @@
-using System.Runtime.Serialization;
 using System.Text;
 using System.Text.Json.Serialization;
 
 namespace PureCloud.Client.Models;
 
-/// <summary>
-/// PromptAssetCreate
-/// </summary>
-
-public partial class PromptAssetCreate : IEquatable<PromptAssetCreate>
+public sealed class PromptAssetCreate
 {
     /// <summary>
     /// Audio upload status
     /// </summary>
     /// <value>Audio upload status</value>
-    
-    public enum UploadStatusEnum
-    {
-        /// <summary>
-        /// Your SDK version is out of date and an unknown enum value was encountered. 
-        /// Please upgrade the SDK using the command "Upgrade-Package PureCloudApiSdk" 
-        /// in the Package Manager Console
-        /// </summary>
-        [EnumMember(Value = "OUTDATED_SDK_VERSION")]
-        OutdatedSdkVersion,
-
-        /// <summary>
-        /// Enum Created for "created"
-        /// </summary>
-        [EnumMember(Value = "created")]
-        Created,
-
-        /// <summary>
-        /// Enum Uploaded for "uploaded"
-        /// </summary>
-        [EnumMember(Value = "uploaded")]
-        Uploaded,
-
-        /// <summary>
-        /// Enum Transcoded for "transcoded"
-        /// </summary>
-        [EnumMember(Value = "transcoded")]
-        Transcoded,
-
-        /// <summary>
-        /// Enum Transcodefailed for "transcodeFailed"
-        /// </summary>
-        [EnumMember(Value = "transcodeFailed")]
-        Transcodefailed
-    }
-    /// <summary>
-    /// Audio upload status
-    /// </summary>
-    /// <value>Audio upload status</value>
-    [JsonPropertyName("uploadStatus")]
-    public UploadStatusEnum? UploadStatus { get; set; }
-
-    /// <summary>
-    /// Initializes a new instance of the <see cref="PromptAssetCreate" /> class.
-    /// </summary>
-    [JsonConstructorAttribute]
-    protected PromptAssetCreate() { }
-    /// <summary>
-    /// Initializes a new instance of the <see cref="PromptAssetCreate" /> class.
-    /// </summary>
-    /// <param name="Name">Name.</param>
-    /// <param name="Language">The prompt language. (required).</param>
-    /// <param name="TtsString">Text to speech of the resource.</param>
-    /// <param name="Text">Text of the resource.</param>
-    /// <param name="Tags">Tags.</param>
-    /// <param name="DurationSeconds">DurationSeconds.</param>
-    public PromptAssetCreate(string Name = null, string Language = null, string TtsString = null, string Text = null, Dictionary<string, List<string>> Tags = null, double? DurationSeconds = null)
-    {
-        this.Name = Name;
-        this.Language = Language;
-        this.TtsString = TtsString;
-        this.Text = Text;
-        this.Tags = Tags;
-        this.DurationSeconds = DurationSeconds;
-
-    }
-
-
+    public PromptAssetCreateUploadStatusEnum? UploadStatus { get; set; }
 
     /// <summary>
     /// The globally unique identifier for the object.
     /// </summary>
     /// <value>The globally unique identifier for the object.</value>
-    [JsonPropertyName("id")]
     public string Id { get; set; }
-
-
 
     /// <summary>
     /// Gets or Sets Name
     /// </summary>
-    [JsonPropertyName("name")]
     public string Name { get; set; }
-
-
 
     /// <summary>
     /// Associated prompt ID
     /// </summary>
     /// <value>Associated prompt ID</value>
-    [JsonPropertyName("promptId")]
     public string PromptId { get; set; }
-
-
 
     /// <summary>
     /// The prompt language.
     /// </summary>
     /// <value>The prompt language.</value>
-    [JsonPropertyName("language")]
     public string Language { get; set; }
-
-
 
     /// <summary>
     /// URI of the resource audio
     /// </summary>
     /// <value>URI of the resource audio</value>
-    [JsonPropertyName("mediaUri")]
     public string MediaUri { get; set; }
-
-
 
     /// <summary>
     /// Text to speech of the resource
     /// </summary>
     /// <value>Text to speech of the resource</value>
-    [JsonPropertyName("ttsString")]
     public string TtsString { get; set; }
-
-
 
     /// <summary>
     /// Text of the resource
     /// </summary>
     /// <value>Text of the resource</value>
-    [JsonPropertyName("text")]
     public string Text { get; set; }
-
-
-
-
 
     /// <summary>
     /// Upload URI for the resource audio
     /// </summary>
     /// <value>Upload URI for the resource audio</value>
-    [JsonPropertyName("uploadUri")]
     public string UploadUri { get; set; }
-
-
 
     /// <summary>
     /// Whether or not this resource locale is the default for the language
     /// </summary>
     /// <value>Whether or not this resource locale is the default for the language</value>
-    [JsonPropertyName("languageDefault")]
     public bool? LanguageDefault { get; set; }
-
-
 
     /// <summary>
     /// Gets or Sets Tags
     /// </summary>
-    [JsonPropertyName("tags")]
     public Dictionary<string, List<string>> Tags { get; set; }
-
-
 
     /// <summary>
     /// Gets or Sets DurationSeconds
     /// </summary>
-    [JsonPropertyName("durationSeconds")]
     public double? DurationSeconds { get; set; }
-
-
 
     /// <summary>
     /// The URI for this object
     /// </summary>
     /// <value>The URI for this object</value>
-    [JsonPropertyName("selfUri")]
     public string SelfUri { get; set; }
-
-
-    /// <summary>
-    /// Returns the string presentation of the object
-    /// </summary>
-    /// <returns>String presentation of the object</returns>
-    public override string ToString()
-    {
-        var sb = new StringBuilder();
-        sb.Append("class PromptAssetCreate {\n");
-
-        sb.Append("  Id: ").Append(Id).Append("\n");
-        sb.Append("  Name: ").Append(Name).Append("\n");
-        sb.Append("  PromptId: ").Append(PromptId).Append("\n");
-        sb.Append("  Language: ").Append(Language).Append("\n");
-        sb.Append("  MediaUri: ").Append(MediaUri).Append("\n");
-        sb.Append("  TtsString: ").Append(TtsString).Append("\n");
-        sb.Append("  Text: ").Append(Text).Append("\n");
-        sb.Append("  UploadStatus: ").Append(UploadStatus).Append("\n");
-        sb.Append("  UploadUri: ").Append(UploadUri).Append("\n");
-        sb.Append("  LanguageDefault: ").Append(LanguageDefault).Append("\n");
-        sb.Append("  Tags: ").Append(Tags).Append("\n");
-        sb.Append("  DurationSeconds: ").Append(DurationSeconds).Append("\n");
-        sb.Append("  SelfUri: ").Append(SelfUri).Append("\n");
-        sb.Append("}\n");
-        return sb.ToString();
-    }
-
-
-    /// <summary>
-    /// Returns true if objects are equal
-    /// </summary>
-    /// <param name="obj">Object to be compared</param>
-    /// <returns>Boolean</returns>
-    public override bool Equals(object obj)
-    {
-        // credit: http://stackoverflow.com/a/10454552/677735
-        return Equals(obj as PromptAssetCreate);
-    }
-
-    /// <summary>
-    /// Returns true if PromptAssetCreate instances are equal
-    /// </summary>
-    /// <param name="other">Instance of PromptAssetCreate to be compared</param>
-    /// <returns>Boolean</returns>
-    public bool Equals(PromptAssetCreate other)
-    {
-        // credit: http://stackoverflow.com/a/10454552/677735
-        if (other == null)
-        {
-            return false;
-        }
-
-        return true &&
-            (
-                Id == other.Id ||
-                Id != null &&
-                Id.Equals(other.Id)
-            ) &&
-            (
-                Name == other.Name ||
-                Name != null &&
-                Name.Equals(other.Name)
-            ) &&
-            (
-                PromptId == other.PromptId ||
-                PromptId != null &&
-                PromptId.Equals(other.PromptId)
-            ) &&
-            (
-                Language == other.Language ||
-                Language != null &&
-                Language.Equals(other.Language)
-            ) &&
-            (
-                MediaUri == other.MediaUri ||
-                MediaUri != null &&
-                MediaUri.Equals(other.MediaUri)
-            ) &&
-            (
-                TtsString == other.TtsString ||
-                TtsString != null &&
-                TtsString.Equals(other.TtsString)
-            ) &&
-            (
-                Text == other.Text ||
-                Text != null &&
-                Text.Equals(other.Text)
-            ) &&
-            (
-                UploadStatus == other.UploadStatus ||
-                UploadStatus != null &&
-                UploadStatus.Equals(other.UploadStatus)
-            ) &&
-            (
-                UploadUri == other.UploadUri ||
-                UploadUri != null &&
-                UploadUri.Equals(other.UploadUri)
-            ) &&
-            (
-                LanguageDefault == other.LanguageDefault ||
-                LanguageDefault != null &&
-                LanguageDefault.Equals(other.LanguageDefault)
-            ) &&
-            (
-                Tags == other.Tags ||
-                Tags != null &&
-                Tags.SequenceEqual(other.Tags)
-            ) &&
-            (
-                DurationSeconds == other.DurationSeconds ||
-                DurationSeconds != null &&
-                DurationSeconds.Equals(other.DurationSeconds)
-            ) &&
-            (
-                SelfUri == other.SelfUri ||
-                SelfUri != null &&
-                SelfUri.Equals(other.SelfUri)
-            );
-    }
-
-    /// <summary>
-    /// Gets the hash code
-    /// </summary>
-    /// <returns>Hash code</returns>
-    public override int GetHashCode()
-    {
-        // credit: http://stackoverflow.com/a/263416/677735
-        unchecked // Overflow is fine, just wrap
-        {
-            int hash = 41;
-            // Suitable nullity checks etc, of course :)
-            if (Id != null)
-            {
-                hash = hash * 59 + Id.GetHashCode();
-            }
-
-            if (Name != null)
-            {
-                hash = hash * 59 + Name.GetHashCode();
-            }
-
-            if (PromptId != null)
-            {
-                hash = hash * 59 + PromptId.GetHashCode();
-            }
-
-            if (Language != null)
-            {
-                hash = hash * 59 + Language.GetHashCode();
-            }
-
-            if (MediaUri != null)
-            {
-                hash = hash * 59 + MediaUri.GetHashCode();
-            }
-
-            if (TtsString != null)
-            {
-                hash = hash * 59 + TtsString.GetHashCode();
-            }
-
-            if (Text != null)
-            {
-                hash = hash * 59 + Text.GetHashCode();
-            }
-
-            if (UploadStatus != null)
-            {
-                hash = hash * 59 + UploadStatus.GetHashCode();
-            }
-
-            if (UploadUri != null)
-            {
-                hash = hash * 59 + UploadUri.GetHashCode();
-            }
-
-            if (LanguageDefault != null)
-            {
-                hash = hash * 59 + LanguageDefault.GetHashCode();
-            }
-
-            if (Tags != null)
-            {
-                hash = hash * 59 + Tags.GetHashCode();
-            }
-
-            if (DurationSeconds != null)
-            {
-                hash = hash * 59 + DurationSeconds.GetHashCode();
-            }
-
-            if (SelfUri != null)
-            {
-                hash = hash * 59 + SelfUri.GetHashCode();
-            }
-
-            return hash;
-        }
-    }
 }
