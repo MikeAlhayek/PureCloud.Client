@@ -311,8 +311,15 @@
     <Compile Include="Models\AuditTopicDomainEntityRef.cs" />
     <Compile Include="Models\AuditTopicMessageInfo.cs" />
     <Compile Include="Models\AuditTopicPropertyChange.cs" />
+    <Compile Include="Models\AuthorizationPolicy.cs" />
+    <Compile Include="Models\AuthorizationPolicy.Effect.cs" />
+    <Compile Include="Models\AuthorizationPolicyEntityListing.cs" />
+    <Compile Include="Models\AuthorizationSettings.cs" />
     <Compile Include="Models\AuthorizedGrantType.cs" />
     <Compile Include="Models\AuthzDivision.cs" />
+    <Compile Include="Models\AuthzDivisionCursorListing.cs" />
+    <Compile Include="Models\AuthzDivisionEntityListing.cs" />
+    <Compile Include="Models\AuthzDivisionGrantEntityListing.cs" />
     <Compile Include="Models\AuthzGrant.cs" />
     <Compile Include="Models\AuthzGrantPolicy.cs" />
     <Compile Include="Models\AuthzGrantRole.cs" />
@@ -1074,6 +1081,9 @@
     <Compile Include="Models\DnclistDownloadReadyExportUri.cs" />
     <Compile Include="Models\DnclistImportStatusImportStatus.cs" />
     <Compile Include="Models\DnclistImportStatusImportStatus.ImportState.cs" />
+    <Compile Include="Models\DomainOrgRoleDifference.cs" />
+    <Compile Include="Models\DomainPermission.cs" />
+    <Compile Include="Models\DomainPermissionCollection.cs" />
     <Compile Include="Models\EdgeChangeTopicEdge.cs" />
     <Compile Include="Models\EdgeChangeTopicEdgeOnline.Status.cs" />
     <Compile Include="Models\EdgeLogicalInterfacesChangeTopicDomainLogicalInterfaceChange.cs" />
@@ -1716,6 +1726,10 @@
     <Compile Include="Models\Operation.ActionStatus.cs" />
     <Compile Include="Models\OperationalEventNotificationTopicEventEntity.cs" />
     <Compile Include="Models\OperationalEventNotificationTopicOperationalEventNotification.cs" />
+    <Compile Include="Models\Organizations\DomainOrganizationRoleCreate.cs" />
+    <Compile Include="Models\Organizations\DomainOrganizationRoleUpdate.cs" />
+    <Compile Include="Models\Organizations\OrganizationProductEntityListing.cs" />
+    <Compile Include="Models\Organizations\OrganizationRoleEntityListing.cs" />
     <Compile Include="Models\Organizations\V2IntegrationPresenceEventOrganizationPresence.cs" />
     <Compile Include="Models\OutboundDetailEventTopicOutboundInitEvent.cs" />
     <Compile Include="Models\OutboundDetailEventTopicOutboundInitEvent.MediaType.cs" />
@@ -1801,6 +1815,7 @@
     <Compile Include="Models\PerformancePredictionRecalculationCompleteEventTopicErrorBody.cs" />
     <Compile Include="Models\PerformancePredictionRecalculationCompleteEventTopicPerformancePredictionUserRecalculationNotification.cs" />
     <Compile Include="Models\PerformancePredictionRecalculationCompleteEventTopicPerformancePredictionUserRecalculationNotification.State.cs" />
+    <Compile Include="Models\PermissionCollectionEntityListing.cs" />
     <Compile Include="Models\PersistentConnectionChangeTopicErrorInfo.cs" />
     <Compile Include="Models\PersistentConnectionChangeTopicErrorInfoDetails.cs" />
     <Compile Include="Models\PersistentConnectionChangeTopicErrorLocation.cs" />
@@ -1814,6 +1829,12 @@
     <Compile Include="Models\PhoneChangeTopicProvisionInfo.cs" />
     <Compile Include="Models\PhoneChangeTopicUserAgentInfo.cs" />
     <Compile Include="Models\PhoneNumberColumn.cs" />
+    <Compile Include="Models\PolicyAttribute.cs" />
+    <Compile Include="Models\PolicyAttribute.Type.cs" />
+    <Compile Include="Models\PolicyAttributeSet.cs" />
+    <Compile Include="Models\PolicyConditionResult.cs" />
+    <Compile Include="Models\PolicyTestPayload.cs" />
+    <Compile Include="Models\PolicyTestResult.cs" />
     <Compile Include="Models\PresenceDetailQueryClause.cs" />
     <Compile Include="Models\PresenceDetailQueryClause.Type.cs" />
     <Compile Include="Models\PresenceDetailQueryFilter.cs" />
@@ -2480,6 +2501,7 @@
     <Compile Include="Models\RoleDivision.cs" />
     <Compile Include="Models\RoleDivisionGrants.cs" />
     <Compile Include="Models\RoleDivisionPair.cs" />
+    <Compile Include="Models\RoleSettings.cs" />
     <Compile Include="Models\Room.cs" />
     <Compile Include="Models\Room.RoomType.cs" />
     <Compile Include="Models\RoutingActivityData.cs" />
@@ -2603,6 +2625,12 @@
     <Compile Include="Models\StatEventWrapUpCodeTopicStatsNotification.cs" />
     <Compile Include="Models\StatisticalResponse.cs" />
     <Compile Include="Models\StatisticalSummary.cs" />
+    <Compile Include="Models\Subject.cs" />
+    <Compile Include="Models\Subject.Type.cs" />
+    <Compile Include="Models\SubjectDivisionGrants.cs" />
+    <Compile Include="Models\SubjectDivisionGrantsEntityListing.cs" />
+    <Compile Include="Models\SubjectDivisionGrants.Type.cs" />
+    <Compile Include="Models\SubjectDivisions.cs" />
     <Compile Include="Models\SummaryAggregateDataContainer.cs" />
     <Compile Include="Models\SummaryAggregateQueryClause.cs" />
     <Compile Include="Models\SummaryAggregateQueryClause.Type.cs" />
@@ -2668,6 +2696,8 @@
     <Compile Include="Models\SystemPromptAssetEntityListing.cs" />
     <Compile Include="Models\SystemPromptEntityListing.cs" />
     <Compile Include="Models\SystemTopicType.cs" />
+    <Compile Include="Models\TargetAttributes.cs" />
+    <Compile Include="Models\TargetAttributeValue.cs" />
     <Compile Include="Models\TaskManagementAggregateDataContainer.cs" />
     <Compile Include="Models\TaskManagementAggregateQueryClause.cs" />
     <Compile Include="Models\TaskManagementAggregateQueryClause.Type.cs" />
@@ -2815,6 +2845,7 @@
     <Compile Include="Models\QueueConversationEventTopicVoicemail.UploadStatus.cs" />
     <Compile Include="Models\QueueConversationEventTopicMessageType.cs" />
     <Compile Include="Models\TrustorEntityListing.cs" />
+    <Compile Include="Models\TypedAttribute.cs" />
     <Compile Include="Models\UnreadFields.cs" />
     <Compile Include="Models\UpdateAnalyticsDataRetentionRequest.cs" />
     <Compile Include="Models\UpdateVerifierRequest.cs" />
@@ -2903,6 +2934,7 @@
     <Compile Include="Models\UserProfileEntityListing.cs" />
     <Compile Include="Models\UserProfile.State.cs" />
     <Compile Include="Models\UserReference.cs" />
+    <Compile Include="Models\UserReferenceEntityListing.cs" />
     <Compile Include="Models\UserReferenceWithName.cs" />
     <Compile Include="Models\UserRoutingLanguage.cs" />
     <Compile Include="Models\UserRoutingLanguagePost.cs" />
@@ -3053,6 +3085,8 @@
     <Compile Include="Models\V2WemEngagementCelebrationUpdatesTopicSourceEntity.cs" />
     <Compile Include="Models\V2WemEngagementCelebrationUpdatesTopicSourceEntity.Type.cs" />
     <Compile Include="Models\V2WemEngagementCelebrationUpdatesTopicUserId.cs" />
+    <Compile Include="Models\ValidationErrorListing.cs" />
+    <Compile Include="Models\ValidationErrorResponse.cs" />
     <Compile Include="Models\Verifier.cs" />
     <Compile Include="Models\VerifierEntityListing.cs" />
     <Compile Include="Models\Video.cs" />
