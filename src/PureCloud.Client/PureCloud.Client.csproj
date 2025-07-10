@@ -327,6 +327,10 @@
     <Compile Include="Models\AutoAnswerSetting.cs" />
     <Compile Include="Models\AutoAnswerSettings.cs" />
     <Compile Include="Models\BaseMediaSettings.cs" />
+    <Compile Include="Models\BillingUsage.cs" />
+    <Compile Include="Models\BillingUsageReport.cs" />
+    <Compile Include="Models\BillingUsageReport.Status.cs" />
+    <Compile Include="Models\BillingUsageResource.cs" />
     <Compile Include="Models\BotAggregateDataContainer.cs" />
     <Compile Include="Models\BotAggregateQueryClause.cs" />
     <Compile Include="Models\BotAggregateQueryClause.Type.cs" />
@@ -2631,6 +2635,7 @@
     <Compile Include="Models\SubjectDivisionGrantsEntityListing.cs" />
     <Compile Include="Models\SubjectDivisionGrants.Type.cs" />
     <Compile Include="Models\SubjectDivisions.cs" />
+    <Compile Include="Models\SubscriptionOverviewUsage.cs" />
     <Compile Include="Models\SummaryAggregateDataContainer.cs" />
     <Compile Include="Models\SummaryAggregateQueryClause.cs" />
     <Compile Include="Models\SummaryAggregateQueryClause.Type.cs" />
@@ -2840,6 +2845,8 @@
     <Compile Include="Models\TrunkMetricsTopicTrunkMetricsQoS.cs" />
     <Compile Include="Models\TrunkMetricsTopicUriReference.cs" />
     <Compile Include="Models\TrusteeAuthorization.cs" />
+    <Compile Include="Models\TrusteeBillingOverview.cs" />
+    <Compile Include="Models\TrusteeBillingOverview.SubscriptionType.cs" />
     <Compile Include="Models\Trustor.cs" />
     <Compile Include="Models\QueueConversationEventTopicDisconnectReason.Type.cs" />
     <Compile Include="Models\QueueConversationEventTopicVoicemail.UploadStatus.cs" />
