@@ -87,6 +87,8 @@ public static class ServiceCollectionExtensions
 
         services.TryAddScoped<IBillingApi, BillingApi>();
 
+        services.TryAddScoped<ICarrierServicesApi, CarrierServicesApi>();
+
         return services;
     }
 }

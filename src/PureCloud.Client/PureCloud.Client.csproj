@@ -1113,6 +1113,8 @@
     <Compile Include="Models\EmergencyGroupDivisionView.cs" />
     <Compile Include="Models\EmergencyGroupDivisionViewEntityListing.cs" />
     <Compile Include="Models\EmergencyGroupListing.cs" />
+    <Compile Include="Models\EmergencyLocation.cs" />
+    <Compile Include="Models\EmergencyLocation.Source.cs" />
     <Compile Include="Models\EmployeePerformanceExternalMetricsDefinitionExternalMetricsDefinition.cs" />
     <Compile Include="Models\EmployeePerformanceExternalMetricsDefinitionExternalMetricsDefinition.Unit.cs" />
     <Compile Include="Models\EmployeePerformanceExternalMetricsDefinitionExternalMetricsDefinitionDefault.ObjectiveType.cs" />
