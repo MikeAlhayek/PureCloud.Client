@@ -67,8 +67,6 @@ public static class ServiceCollectionExtensions
 
         services.TryAddScoped<IChannelsApi, ChannelsApi>();
 
-        services.TryAddScoped<IConversationsApi, ConversationsApi>();
-
         services.TryAddScoped<IAgentAssistantsApi, AgentAssistantsApi>();
 
         services.TryAddScoped<IAgentCopilotApi, AgentCopilotApi>();
@@ -88,6 +86,10 @@ public static class ServiceCollectionExtensions
         services.TryAddScoped<IBillingApi, BillingApi>();
 
         services.TryAddScoped<ICarrierServicesApi, CarrierServicesApi>();
+
+        services.TryAddScoped<IChatApi, ChatApi>();
+
+        services.TryAddScoped<IConversationsApi, ConversationsApi>();
 
         return services;
     }

@@ -406,9 +406,16 @@
     <Compile Include="Models\ChatItem.cs" />
     <Compile Include="Models\ChatItem.ChatType.cs" />
     <Compile Include="Models\ChatItemCursorListing.cs" />
+    <Compile Include="Models\ChatMessageEntityListing.cs" />
+    <Compile Include="Models\ChatMessageResponse.cs" />
     <Compile Include="Models\ChatPresence.cs" />
     <Compile Include="Models\ChatPresence.SystemPresence.cs" />
+    <Compile Include="Models\ChatReaction.cs" />
+    <Compile Include="Models\ChatReactionUpdate.cs" />
+    <Compile Include="Models\ChatSendMessageResponse.cs" />
+    <Compile Include="Models\ChatSettings.cs" />
     <Compile Include="Models\ChatUserRef.cs" />
+    <Compile Include="Models\ChatUserSettings.cs" />
     <Compile Include="Models\CobrowseSession.cs" />
     <Compile Include="Models\CobrowsesessionDisconnectType.cs" />
     <Compile Include="Models\CobrowsesessionInitialState.cs" />
@@ -919,6 +926,8 @@
     <Compile Include="Models\CreateGeneralProgramTestTopicPhraseResults.cs" />
     <Compile Include="Models\CreateGeneralProgramTopicsDefinitionsJob.cs" />
     <Compile Include="Models\CreateGeneralProgramTopicsDefinitionsJob.State.cs" />
+    <Compile Include="Models\CreateRoomRequest.cs" />
+    <Compile Include="Models\CreateRoomResponse.cs" />
     <Compile Include="Models\CriteriaCategoryInfo.cs" />
     <Compile Include="Models\CriteriaGroup.cs" />
     <Compile Include="Models\CriteriaItem.cs" />
@@ -1701,6 +1710,9 @@
     <Compile Include="Models\MessageState.cs" />
     <Compile Include="Models\MessageSticker.cs" />
     <Compile Include="Models\MessageType.cs" />
+    <Compile Include="Models\MobileNotificationSettings.cs" />
+    <Compile Include="Models\MobileNotificationSettings.When.cs" />
+    <Compile Include="Models\MobileSettings.cs" />
     <Compile Include="Models\ModifiableRuleProperties.cs" />
     <Compile Include="Models\MuteSnoozeFields.cs" />
     <Compile Include="Models\NamedEntityAnnotation.cs" />
@@ -1727,6 +1739,7 @@
     <Compile Include="Models\ObservationValue.Direction.cs" />
     <Compile Include="Models\ObservationValueRequested.Routings.cs" />
     <Compile Include="Models\ObservationValue.UsedRouting.cs" />
+    <Compile Include="Models\OneOnOne.cs" />
     <Compile Include="Models\Operation.cs" />
     <Compile Include="Models\Operation.ActionName.cs" />
     <Compile Include="Models\Operation.ActionStatus.cs" />
@@ -1835,6 +1848,7 @@
     <Compile Include="Models\PhoneChangeTopicProvisionInfo.cs" />
     <Compile Include="Models\PhoneChangeTopicUserAgentInfo.cs" />
     <Compile Include="Models\PhoneNumberColumn.cs" />
+    <Compile Include="Models\PinnedMessageRequest.cs" />
     <Compile Include="Models\PolicyAttribute.cs" />
     <Compile Include="Models\PolicyAttribute.Type.cs" />
     <Compile Include="Models\PolicyAttributeSet.cs" />
@@ -2510,6 +2524,10 @@
     <Compile Include="Models\RoleSettings.cs" />
     <Compile Include="Models\Room.cs" />
     <Compile Include="Models\Room.RoomType.cs" />
+    <Compile Include="Models\RoomParticipant.cs" />
+    <Compile Include="Models\RoomParticipantResponse.cs" />
+    <Compile Include="Models\RoomParticipantsResponse.cs" />
+    <Compile Include="Models\RoomUpdateRequest.cs" />
     <Compile Include="Models\RoutingActivityData.cs" />
     <Compile Include="Models\RoutingActivityEntityData.cs" />
     <Compile Include="Models\RoutingActivityMetricValue.cs" />
@@ -2574,6 +2592,7 @@
     <Compile Include="Models\SegmentDetailQueryPredicate.PropertyType.cs" />
     <Compile Include="Models\SegmentDetailQueryPredicate.Metric.cs" />
     <Compile Include="Models\SelectedColumns.cs" />
+    <Compile Include="Models\SendMessageBody.cs" />
     <Compile Include="Models\ServerDate.cs" />
     <Compile Include="Models\ServiceLevel.cs" />
     <Compile Include="Models\SessionEndDetails.cs" />
