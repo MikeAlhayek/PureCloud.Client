@@ -89,6 +89,8 @@ public static class ServiceCollectionExtensions
 
         services.TryAddScoped<IChatApi, ChatApi>();
 
+        services.TryAddScoped<ICoachingApi, CoachingApi>();
+
         services.TryAddScoped<IConversationsApi, ConversationsApi>();
 
         return services;
