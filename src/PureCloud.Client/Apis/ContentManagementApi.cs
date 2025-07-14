@@ -721,7 +721,7 @@ public class ContentManagementApi : IContentManagementApi
         return await response.Content.ReadFromJsonAsync<WorkspaceEntityListing>(_options.JsonSerializerOptions, cancellationToken);
     }
 
-    public async Task<Document> PostContentmanagementDocumentAsync(string documentId, DocumentUpdate body, string expand = null, bool? _override = null, CancellationToken cancellationToken = default)
+    public async Task<Document> CreateContentmanagementDocumentAsync(string documentId, DocumentUpdate body, string expand = null, bool? _override = null, CancellationToken cancellationToken = default)
     {
         ArgumentException.ThrowIfNullOrEmpty(documentId, nameof(documentId));
 
@@ -751,7 +751,7 @@ public class ContentManagementApi : IContentManagementApi
     }
 
 
-    public async Task<ReplaceResponse> PostContentmanagementDocumentContentAsync(string documentId, ReplaceRequest body, bool? _override = null, CancellationToken cancellationToken = default)
+    public async Task<ReplaceResponse> CreateContentmanagementDocumentContentAsync(string documentId, ReplaceRequest body, bool? _override = null, CancellationToken cancellationToken = default)
     {
         ArgumentException.ThrowIfNullOrEmpty(documentId, nameof(documentId));
 
@@ -775,7 +775,7 @@ public class ContentManagementApi : IContentManagementApi
         return await response.Content.ReadFromJsonAsync<ReplaceResponse>(_options.JsonSerializerOptions, cancellationToken);
     }
 
-    public async Task<QueryResults> PostContentmanagementQueryAsync(QueryRequest body, string expand = null, CancellationToken cancellationToken = default)
+    public async Task<QueryResults> CreateContentmanagementQueryAsync(QueryRequest body, string expand = null, CancellationToken cancellationToken = default)
     {
         var client = _httpClientFactory.CreateClient(PureCloudConstants.PureCloudClientName);
 
@@ -797,7 +797,7 @@ public class ContentManagementApi : IContentManagementApi
         return await response.Content.ReadFromJsonAsync<QueryResults>(_options.JsonSerializerOptions, cancellationToken);
     }
 
-    public async Task<CreateShareResponse> PostContentmanagementSharesAsync(CreateShareRequest body, CancellationToken cancellationToken = default)
+    public async Task<CreateShareResponse> CreateContentmanagementSharesAsync(CreateShareRequest body, CancellationToken cancellationToken = default)
     {
         var client = _httpClientFactory.CreateClient(PureCloudConstants.PureCloudClientName);
 
@@ -810,7 +810,7 @@ public class ContentManagementApi : IContentManagementApi
         return await response.Content.ReadFromJsonAsync<CreateShareResponse>(_options.JsonSerializerOptions, cancellationToken);
     }
 
-    public async Task<TagValue> PostContentmanagementWorkspaceTagvaluesAsync(string workspaceId, TagValue body, CancellationToken cancellationToken = default)
+    public async Task<TagValue> CreateContentmanagementWorkspaceTagvaluesAsync(string workspaceId, TagValue body, CancellationToken cancellationToken = default)
     {
         ArgumentException.ThrowIfNullOrWhiteSpace(workspaceId, nameof(workspaceId));
 
@@ -825,7 +825,7 @@ public class ContentManagementApi : IContentManagementApi
         return await response.Content.ReadFromJsonAsync<TagValue>(_options.JsonSerializerOptions, cancellationToken);
     }
 
-    public async Task<Workspace> PostContentmanagementWorkspacesAsync(WorkspaceCreate body, CancellationToken cancellationToken = default)
+    public async Task<Workspace> CreateContentmanagementWorkspacesAsync(WorkspaceCreate body, CancellationToken cancellationToken = default)
     {
         var client = _httpClientFactory.CreateClient(PureCloudConstants.PureCloudClientName);
 
@@ -838,7 +838,7 @@ public class ContentManagementApi : IContentManagementApi
         return await response.Content.ReadFromJsonAsync<Workspace>(_options.JsonSerializerOptions, cancellationToken);
     }
 
-    public async Task<Workspace> PutContentmanagementWorkspaceAsync(string workspaceId, Workspace body, CancellationToken cancellationToken = default)
+    public async Task<Workspace> UpdateContentmanagementWorkspaceAsync(string workspaceId, Workspace body, CancellationToken cancellationToken = default)
     {
         ArgumentException.ThrowIfNullOrWhiteSpace(workspaceId);
 
@@ -853,7 +853,7 @@ public class ContentManagementApi : IContentManagementApi
         return await response.Content.ReadFromJsonAsync<Workspace>(_options.JsonSerializerOptions, cancellationToken);
     }
 
-    public async Task<WorkspaceMember> PutContentmanagementWorkspaceMemberAsync(string workspaceId, string memberId, WorkspaceMember body, CancellationToken cancellationToken = default)
+    public async Task<WorkspaceMember> UpdateContentmanagementWorkspaceMemberAsync(string workspaceId, string memberId, WorkspaceMember body, CancellationToken cancellationToken = default)
     {
         ArgumentException.ThrowIfNullOrEmpty(workspaceId);
 
@@ -870,7 +870,7 @@ public class ContentManagementApi : IContentManagementApi
         return await response.Content.ReadFromJsonAsync<WorkspaceMember>(_options.JsonSerializerOptions, cancellationToken);
     }
 
-    public async Task<TagValue> PutContentmanagementWorkspaceTagvalueAsync(string workspaceId, string tagId, TagValue body, CancellationToken cancellationToken = default)
+    public async Task<TagValue> UpdateContentmanagementWorkspaceTagvalueAsync(string workspaceId, string tagId, TagValue body, CancellationToken cancellationToken = default)
     {
         ArgumentException.ThrowIfNullOrEmpty(workspaceId);
 
