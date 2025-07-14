@@ -54,21 +54,19 @@ public interface IContentManagementApi
 
     Task<WorkspaceEntityListing> GetContentmanagementWorkspacesAsync(int? pageSize = null, int? pageNumber = null, List<string> access = null, List<string> expand = null, CancellationToken cancellationToken = default);
 
-    Task<Document> PostContentmanagementDocumentAsync(string documentId, DocumentUpdate body, string expand = null, bool? _override = null, CancellationToken cancellationToken = default);
+    Task<Document> CreateContentmanagementDocumentAsync(string documentId, DocumentUpdate body, string expand = null, bool? _override = null, CancellationToken cancellationToken = default);
 
-    Task<ReplaceResponse> PostContentmanagementDocumentContentAsync(string documentId, ReplaceRequest body, bool? _override = null, CancellationToken cancellationToken = default);
+    Task<ReplaceResponse> CreateContentmanagementDocumentContentAsync(string documentId, ReplaceRequest body, bool? _override = null, CancellationToken cancellationToken = default);
 
-    Task<QueryResults> PostContentmanagementQueryAsync(QueryRequest body, string expand = null, CancellationToken cancellationToken = default);
+    Task<QueryResults> CreateContentmanagementQueryAsync(QueryRequest body, string expand = null, CancellationToken cancellationToken = default);
 
-    Task<CreateShareResponse> PostContentmanagementSharesAsync(CreateShareRequest body, CancellationToken cancellationToken = default);
+    Task<CreateShareResponse> CreateContentmanagementSharesAsync(CreateShareRequest body, CancellationToken cancellationToken = default);
 
-    Task<TagValue> PostContentmanagementWorkspaceTagvaluesAsync(string workspaceId, TagValue body, CancellationToken cancellationToken = default);
+    Task<TagValue> CreateContentmanagementWorkspaceTagvaluesAsync(string workspaceId, TagValue body, CancellationToken cancellationToken = default);
 
-    Task<Workspace> PostContentmanagementWorkspacesAsync(WorkspaceCreate body, CancellationToken cancellationToken = default);
+    Task<Workspace> CreateContentmanagementWorkspacesAsync(WorkspaceCreate body, CancellationToken cancellationToken = default);
 
-    Task<Workspace> PutContentmanagementWorkspaceAsync(string workspaceId, Workspace body, CancellationToken cancellationToken = default);
+    Task<TagValue> UpdateContentmanagementWorkspaceTagvalueAsync(string workspaceId, string tagId, TagValue body, CancellationToken cancellationToken = default);
 
-    Task<WorkspaceMember> PutContentmanagementWorkspaceMemberAsync(string workspaceId, string memberId, WorkspaceMember body, CancellationToken cancellationToken = default);
-
-    Task<TagValue> PutContentmanagementWorkspaceTagvalueAsync(string workspaceId, string tagId, TagValue body, CancellationToken cancellationToken = default);
+    Task<Workspace> UpdateContentmanagementWorkspaceAsync(string workspaceId, Workspace body, CancellationToken cancellationToken = default);
 }
