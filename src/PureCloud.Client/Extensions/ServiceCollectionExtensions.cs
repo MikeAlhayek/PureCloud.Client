@@ -93,6 +93,8 @@ public static class ServiceCollectionExtensions
 
         services.TryAddScoped<IConversationsApi, ConversationsApi>();
 
+        services.TryAddScoped<IContentManagementApi, ContentManagementApi>();
+
         return services;
     }
 }

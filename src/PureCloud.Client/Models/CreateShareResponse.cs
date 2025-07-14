@@ -1,356 +1,57 @@
-using System.Runtime.Serialization;
 using System.Text;
 using System.Text.Json.Serialization;
 
 namespace PureCloud.Client.Models;
 
-/// <summary>
-/// CreateShareResponse
-/// </summary>
-
-public partial class CreateShareResponse : IEquatable<CreateShareResponse>
+public sealed class CreateShareResponse
 {
     /// <summary>
     /// Gets or Sets SharedEntityType
     /// </summary>
-    
-    public enum SharedEntityTypeEnum
-    {
-        /// <summary>
-        /// Your SDK version is out of date and an unknown enum value was encountered. 
-        /// Please upgrade the SDK using the command "Upgrade-Package PureCloudApiSdk" 
-        /// in the Package Manager Console
-        /// </summary>
-        [EnumMember(Value = "OUTDATED_SDK_VERSION")]
-        OutdatedSdkVersion,
+    public CreateShareResponseSharedEntityTypeEnum? SharedEntityType { get; set; }
 
-        /// <summary>
-        /// Enum Document for "DOCUMENT"
-        /// </summary>
-        [EnumMember(Value = "DOCUMENT")]
-        Document
-    }
     /// <summary>
     /// Gets or Sets MemberType
     /// </summary>
-    
-    public enum MemberTypeEnum
-    {
-        /// <summary>
-        /// Your SDK version is out of date and an unknown enum value was encountered. 
-        /// Please upgrade the SDK using the command "Upgrade-Package PureCloudApiSdk" 
-        /// in the Package Manager Console
-        /// </summary>
-        [EnumMember(Value = "OUTDATED_SDK_VERSION")]
-        OutdatedSdkVersion,
-
-        /// <summary>
-        /// Enum User for "USER"
-        /// </summary>
-        [EnumMember(Value = "USER")]
-        User,
-
-        /// <summary>
-        /// Enum Group for "GROUP"
-        /// </summary>
-        [EnumMember(Value = "GROUP")]
-        Group,
-
-        /// <summary>
-        /// Enum Public for "PUBLIC"
-        /// </summary>
-        [EnumMember(Value = "PUBLIC")]
-        Public
-    }
-    /// <summary>
-    /// Gets or Sets SharedEntityType
-    /// </summary>
-    [JsonPropertyName("sharedEntityType")]
-    public SharedEntityTypeEnum? SharedEntityType { get; set; }
-    /// <summary>
-    /// Gets or Sets MemberType
-    /// </summary>
-    [JsonPropertyName("memberType")]
-    public MemberTypeEnum? MemberType { get; set; }
-    /// <summary>
-    /// Initializes a new instance of the <see cref="CreateShareResponse" /> class.
-    /// </summary>
-    /// <param name="Name">Name.</param>
-    /// <param name="SharedEntityType">SharedEntityType.</param>
-    /// <param name="SharedEntity">SharedEntity.</param>
-    /// <param name="MemberType">MemberType.</param>
-    /// <param name="Member">Member.</param>
-    /// <param name="SharedBy">SharedBy.</param>
-    /// <param name="Workspace">Workspace.</param>
-    /// <param name="Succeeded">Succeeded.</param>
-    /// <param name="Failed">Failed.</param>
-    public CreateShareResponse(string Name = null, SharedEntityTypeEnum? SharedEntityType = null, DomainEntityRef SharedEntity = null, MemberTypeEnum? MemberType = null, DomainEntityRef Member = null, DomainEntityRef SharedBy = null, DomainEntityRef Workspace = null, List<Share> Succeeded = null, List<Share> Failed = null)
-    {
-        this.Name = Name;
-        this.SharedEntityType = SharedEntityType;
-        this.SharedEntity = SharedEntity;
-        this.MemberType = MemberType;
-        this.Member = Member;
-        this.SharedBy = SharedBy;
-        this.Workspace = Workspace;
-        this.Succeeded = Succeeded;
-        this.Failed = Failed;
-
-    }
-
-
+    public CreateShareResponseMemberTypeEnum? MemberType { get; set; }
 
     /// <summary>
     /// The globally unique identifier for the object.
     /// </summary>
     /// <value>The globally unique identifier for the object.</value>
-    [JsonPropertyName("id")]
     public string Id { get; set; }
-
-
 
     /// <summary>
     /// Gets or Sets Name
     /// </summary>
-    [JsonPropertyName("name")]
     public string Name { get; set; }
-
-
-
-
 
     /// <summary>
     /// Gets or Sets SharedEntity
     /// </summary>
-    [JsonPropertyName("sharedEntity")]
     public DomainEntityRef SharedEntity { get; set; }
-
-
-
-
 
     /// <summary>
     /// Gets or Sets Member
-    /// </summary>
-    [JsonPropertyName("member")]
     public DomainEntityRef Member { get; set; }
-
-
 
     /// <summary>
     /// Gets or Sets SharedBy
     /// </summary>
-    [JsonPropertyName("sharedBy")]
     public DomainEntityRef SharedBy { get; set; }
-
-
 
     /// <summary>
     /// Gets or Sets Workspace
     /// </summary>
-    [JsonPropertyName("workspace")]
     public DomainEntityRef Workspace { get; set; }
-
-
 
     /// <summary>
     /// Gets or Sets Succeeded
     /// </summary>
-    [JsonPropertyName("succeeded")]
-    public List<Share> Succeeded { get; set; }
-
-
+    public IEnumerable<Share> Succeeded { get; set; }
 
     /// <summary>
     /// Gets or Sets Failed
     /// </summary>
-    [JsonPropertyName("failed")]
-    public List<Share> Failed { get; set; }
-
-
-
-    /// <summary>
-    /// The URI for this object
-    /// </summary>
-    /// <value>The URI for this object</value>
-    [JsonPropertyName("selfUri")]
-    public string SelfUri { get; set; }
-
-
-    /// <summary>
-    /// Returns the string presentation of the object
-    /// </summary>
-    /// <returns>String presentation of the object</returns>
-    public override string ToString()
-    {
-        var sb = new StringBuilder();
-        sb.Append("class CreateShareResponse {\n");
-
-        sb.Append("  Id: ").Append(Id).Append("\n");
-        sb.Append("  Name: ").Append(Name).Append("\n");
-        sb.Append("  SharedEntityType: ").Append(SharedEntityType).Append("\n");
-        sb.Append("  SharedEntity: ").Append(SharedEntity).Append("\n");
-        sb.Append("  MemberType: ").Append(MemberType).Append("\n");
-        sb.Append("  Member: ").Append(Member).Append("\n");
-        sb.Append("  SharedBy: ").Append(SharedBy).Append("\n");
-        sb.Append("  Workspace: ").Append(Workspace).Append("\n");
-        sb.Append("  Succeeded: ").Append(Succeeded).Append("\n");
-        sb.Append("  Failed: ").Append(Failed).Append("\n");
-        sb.Append("  SelfUri: ").Append(SelfUri).Append("\n");
-        sb.Append("}\n");
-        return sb.ToString();
-    }
-
-
-    /// <summary>
-    /// Returns true if objects are equal
-    /// </summary>
-    /// <param name="obj">Object to be compared</param>
-    /// <returns>Boolean</returns>
-    public override bool Equals(object obj)
-    {
-        // credit: http://stackoverflow.com/a/10454552/677735
-        return Equals(obj as CreateShareResponse);
-    }
-
-    /// <summary>
-    /// Returns true if CreateShareResponse instances are equal
-    /// </summary>
-    /// <param name="other">Instance of CreateShareResponse to be compared</param>
-    /// <returns>Boolean</returns>
-    public bool Equals(CreateShareResponse other)
-    {
-        // credit: http://stackoverflow.com/a/10454552/677735
-        if (other == null)
-        {
-            return false;
-        }
-
-        return true &&
-            (
-                Id == other.Id ||
-                Id != null &&
-                Id.Equals(other.Id)
-            ) &&
-            (
-                Name == other.Name ||
-                Name != null &&
-                Name.Equals(other.Name)
-            ) &&
-            (
-                SharedEntityType == other.SharedEntityType ||
-                SharedEntityType != null &&
-                SharedEntityType.Equals(other.SharedEntityType)
-            ) &&
-            (
-                SharedEntity == other.SharedEntity ||
-                SharedEntity != null &&
-                SharedEntity.Equals(other.SharedEntity)
-            ) &&
-            (
-                MemberType == other.MemberType ||
-                MemberType != null &&
-                MemberType.Equals(other.MemberType)
-            ) &&
-            (
-                Member == other.Member ||
-                Member != null &&
-                Member.Equals(other.Member)
-            ) &&
-            (
-                SharedBy == other.SharedBy ||
-                SharedBy != null &&
-                SharedBy.Equals(other.SharedBy)
-            ) &&
-            (
-                Workspace == other.Workspace ||
-                Workspace != null &&
-                Workspace.Equals(other.Workspace)
-            ) &&
-            (
-                Succeeded == other.Succeeded ||
-                Succeeded != null &&
-                Succeeded.SequenceEqual(other.Succeeded)
-            ) &&
-            (
-                Failed == other.Failed ||
-                Failed != null &&
-                Failed.SequenceEqual(other.Failed)
-            ) &&
-            (
-                SelfUri == other.SelfUri ||
-                SelfUri != null &&
-                SelfUri.Equals(other.SelfUri)
-            );
-    }
-
-    /// <summary>
-    /// Gets the hash code
-    /// </summary>
-    /// <returns>Hash code</returns>
-    public override int GetHashCode()
-    {
-        // credit: http://stackoverflow.com/a/263416/677735
-        unchecked // Overflow is fine, just wrap
-        {
-            int hash = 41;
-            // Suitable nullity checks etc, of course :)
-            if (Id != null)
-            {
-                hash = hash * 59 + Id.GetHashCode();
-            }
-
-            if (Name != null)
-            {
-                hash = hash * 59 + Name.GetHashCode();
-            }
-
-            if (SharedEntityType != null)
-            {
-                hash = hash * 59 + SharedEntityType.GetHashCode();
-            }
-
-            if (SharedEntity != null)
-            {
-                hash = hash * 59 + SharedEntity.GetHashCode();
-            }
-
-            if (MemberType != null)
-            {
-                hash = hash * 59 + MemberType.GetHashCode();
-            }
-
-            if (Member != null)
-            {
-                hash = hash * 59 + Member.GetHashCode();
-            }
-
-            if (SharedBy != null)
-            {
-                hash = hash * 59 + SharedBy.GetHashCode();
-            }
-
-            if (Workspace != null)
-            {
-                hash = hash * 59 + Workspace.GetHashCode();
-            }
-
-            if (Succeeded != null)
-            {
-                hash = hash * 59 + Succeeded.GetHashCode();
-            }
-
-            if (Failed != null)
-            {
-                hash = hash * 59 + Failed.GetHashCode();
-            }
-
-            if (SelfUri != null)
-            {
-                hash = hash * 59 + SelfUri.GetHashCode();
-            }
-
-            return hash;
-        }
-    }
+    public IEnumerable<Share> Failed { get; set; }
 }
