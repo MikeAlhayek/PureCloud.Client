@@ -97,6 +97,8 @@ public static class ServiceCollectionExtensions
 
         services.TryAddScoped<IDataExtensionsApi, DataExtensionsApi>();
 
+        services.TryAddScoped<IDataPrivacyApi, DataPrivacyApi>();
+
         return services;
     }
 }
