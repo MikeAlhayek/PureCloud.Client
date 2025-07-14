@@ -288,6 +288,8 @@
     <Compile Include="Models\AttributeDetailEventTopicCommunication.MediaType.cs" />
     <Compile Include="Models\AttributeFilterItem.cs" />
     <Compile Include="Models\AttributeFilterItem.Operator.cs" />
+    <Compile Include="Models\AudioState.cs" />
+    <Compile Include="Models\AudioUpdatedEvent.cs" />
     <Compile Include="Models\AuditLogMessage.cs" />
     <Compile Include="Models\AuditLogMessage.Level.cs" />
     <Compile Include="Models\AuditLogMessage.Status.cs" />
@@ -333,6 +335,10 @@
     <Compile Include="Models\AvailableTime.cs" />
     <Compile Include="Models\AvailableTime.ActivityCategory.cs" />
     <Compile Include="Models\BaseMediaSettings.cs" />
+    <Compile Include="Models\BatchConversationEventRequest.cs" />
+    <Compile Include="Models\BatchEventResponse.cs" />
+    <Compile Include="Models\BatchUserPresenceEventRequest.cs" />
+    <Compile Include="Models\BatchUserRoutingStatusEventRequest.cs" />
     <Compile Include="Models\BillingUsage.cs" />
     <Compile Include="Models\BillingUsageReport.cs" />
     <Compile Include="Models\BillingUsageReport.Status.cs" />
@@ -490,6 +496,10 @@
     <Compile Include="Models\CommonRulePredicateEntity.cs" />
     <Compile Include="Models\CommonRulePredicateEntity.EntityType.cs" />
     <Compile Include="Models\CommonRule.Type.cs" />
+    <Compile Include="Models\CommunicationAnsweredEvent.cs" />
+    <Compile Include="Models\CommunicationDispositionAppliedEvent.cs" />
+    <Compile Include="Models\CommunicationEndedEvent.cs" />
+    <Compile Include="Models\CommunicationEndedEvent.DisconnectType.cs" />
     <Compile Include="Models\ConditionalGroupRouting.cs" />
     <Compile Include="Models\ConditionalGroupRoutingRule.cs" />
     <Compile Include="Models\ConditionalGroupRoutingRuleMetric.cs" />
@@ -499,6 +509,7 @@
     <Compile Include="Models\ConfusionIntentDetails.cs" />
     <Compile Include="Models\ConfusionIntentInfo.cs" />
     <Compile Include="Models\ConfusionUtterance.cs" />
+    <Compile Include="Models\ConsultTransferEvent.cs" />
     <Compile Include="Models\ConsumedResourcesEntityListing.cs" />
     <Compile Include="Models\ConsumingResourcesEntityListing.cs" />
     <Compile Include="Models\ContactDetailEventTopicContactUpdateEvent.cs" />
@@ -1189,12 +1200,31 @@
     <Compile Include="Models\EdgeSoftwareUpdateTopicDomainEdgeSoftwareUpdate.cs" />
     <Compile Include="Models\EdgeSoftwareUpdateTopicDomainEdgeSoftwareUpdate.Status.cs" />
     <Compile Include="Models\Email.cs" />
+    <Compile Include="Models\EmailBeginTransmittingEvent.cs" />
+    <Compile Include="Models\EmailCommunicationAnsweredEvent.cs" />
+    <Compile Include="Models\EmailCommunicationDispositionAppliedEvent.cs" />
+    <Compile Include="Models\EmailCommunicationEndedEvent.cs" />
+    <Compile Include="Models\EmailCommunicationEndedEvent.DisconnectType.cs" />
+    <Compile Include="Models\EmailCommunicationSentMessageEvent.cs" />
     <Compile Include="Models\EmailDirection.cs" />
     <Compile Include="Models\EmailDisconnectType.cs" />
+    <Compile Include="Models\EmailEndTransferEvent.cs" />
+    <Compile Include="Models\EmailEndTransferEvent.FinalState.cs" />
+    <Compile Include="Models\EmailExternalEstablishedEvent.cs" />
+    <Compile Include="Models\EmailFlowEstablishedEvent.cs" />
+    <Compile Include="Models\EmailHoldUpdatedEvent.cs" />
+    <Compile Include="Models\EmailInitialConfiguration.cs" />
     <Compile Include="Models\EmailInitialState.cs" />
+    <Compile Include="Models\EmailProgressTransferEvent.cs" />
+    <Compile Include="Models\EmailRoutingEstablishedEvent.cs" />
+    <Compile Include="Models\EmailRoutingTransferEvent.cs" />
+    <Compile Include="Models\EmailRoutingTransferEvent.TransferType.cs" />
     <Compile Include="Models\EmailSettings.cs" />
     <Compile Include="Models\EmailState.cs" />
     <Compile Include="Models\EmailThreadingSettings.cs" />
+    <Compile Include="Models\EmailUserEstablishedEvent.cs" />
+    <Compile Include="Models\EmailUserTransferEvent.cs" />
+    <Compile Include="Models\EmailUserTransferEvent.TransferType.cs" />
     <Compile Include="Models\EmergencyCallFlow.cs" />
     <Compile Include="Models\EmergencyGroup.cs" />
     <Compile Include="Models\EmergencyGroup.State.cs" />
@@ -1206,6 +1236,9 @@
     <Compile Include="Models\EmployeePerformanceExternalMetricsDefinitionExternalMetricsDefinition.cs" />
     <Compile Include="Models\EmployeePerformanceExternalMetricsDefinitionExternalMetricsDefinition.Unit.cs" />
     <Compile Include="Models\EmployeePerformanceExternalMetricsDefinitionExternalMetricsDefinitionDefault.ObjectiveType.cs" />
+    <Compile Include="Models\EndConsultTransferEvent.cs" />
+    <Compile Include="Models\EndTransferEvent.cs" />
+    <Compile Include="Models\EndTransferEvent.FinalState.cs" />
     <Compile Include="Models\EntityChange.cs" />
     <Compile Include="Models\ErrorBody.cs" />
     <Compile Include="Models\ErrorInfo.cs" />
@@ -1264,6 +1297,7 @@
     <Compile Include="Models\EvaluationSource.cs" />
     <Compile Include="Models\EvaluationSourceType.cs" />
     <Compile Include="Models\EvaluationStatus.cs" />
+    <Compile Include="Models\EventError.cs" />
     <Compile Include="Models\ExecutionDataEntity.cs" />
     <Compile Include="Models\ExecutionDataFlowSettingsResponse.cs" />
     <Compile Include="Models\ExecutionDataRequest.cs" />
@@ -1330,6 +1364,7 @@
     <Compile Include="Models\ExternalContactsUnresolvedContactChangedTopicTicker.cs" />
     <Compile Include="Models\ExternalContactsUnresolvedContactChangedTopicTwitterId.cs" />
     <Compile Include="Models\ExternalContactsUnresolvedContactChangedTopicWhatsAppId.cs" />
+    <Compile Include="Models\ExternalEstablishedEvent.cs" />
     <Compile Include="Models\FacetEntry.cs" />
     <Compile Include="Models\FacetEntry.TermType.cs" />
     <Compile Include="Models\FacetKeyAttribute.cs" />
@@ -1540,9 +1575,11 @@
     <Compile Include="Models\HistoryListing.cs" />
     <Compile Include="Models\HistoryListing.ActionStatus.cs" />
     <Compile Include="Models\HistoryListing.ActionName.cs" />
+    <Compile Include="Models\HoldUpdatedEvent.cs" />
     <Compile Include="Models\IdentityResolutionConfig.cs" />
     <Compile Include="Models\ImportTemplateImportStatusImportStatus.cs" />
     <Compile Include="Models\ImportTemplateImportStatusImportStatus.ImportState.cs" />
+    <Compile Include="Models\InitialConfiguration.cs" />
     <Compile Include="Models\InitiatingAction.cs" />
     <Compile Include="Models\Intent.cs" />
     <Compile Include="Models\IntentDefinition.cs" />
@@ -1558,6 +1595,7 @@
     <Compile Include="Models\IVRDivisionView.cs" />
     <Compile Include="Models\IVRDivisionViewEntityListing.cs" />
     <Compile Include="Models\IVREntityListing.cs" />
+    <Compile Include="Models\IvrEstablishedEvent.cs" />
     <Compile Include="Models\JourneyAction.cs" />
     <Compile Include="Models\JourneyActionMap.cs" />
     <Compile Include="Models\JourneyAggregateDataContainer.cs" />
@@ -1945,7 +1983,10 @@
     <Compile Include="Models\PhoneChangeTopicPhoneStatus.OperationalStatus.cs" />
     <Compile Include="Models\PhoneChangeTopicProvisionInfo.cs" />
     <Compile Include="Models\PhoneChangeTopicUserAgentInfo.cs" />
+    <Compile Include="Models\PhoneEstablishedEvent.cs" />
     <Compile Include="Models\PhoneNumberColumn.cs" />
+    <Compile Include="Models\PhoneTransferEvent.cs" />
+    <Compile Include="Models\PhoneTransferEvent.TransferType.cs" />
     <Compile Include="Models\PinnedMessageRequest.cs" />
     <Compile Include="Models\PolicyAttribute.cs" />
     <Compile Include="Models\PolicyAttribute.Type.cs" />
@@ -1967,6 +2008,8 @@
     <Compile Include="Models\ProgramTopicLinksTestTopicPhraseResults.cs" />
     <Compile Include="Models\ProgramTopicLinksTopicsDefinitionsJob.cs" />
     <Compile Include="Models\ProgramTopicLinksTopicsDefinitionsJob.State.cs" />
+    <Compile Include="Models\ProgressConsultTransferEvent.cs" />
+    <Compile Include="Models\ProgressTransferEvent.cs" />
     <Compile Include="Models\Prompt.cs" />
     <Compile Include="Models\PromptAsset.cs" />
     <Compile Include="Models\PromptAsset.UploadStatus.cs" />
@@ -2669,6 +2712,7 @@
     <Compile Include="Models\RoutingActivityQueryPredicate.Operator.cs" />
     <Compile Include="Models\RoutingActivityResponse.cs" />
     <Compile Include="Models\RoutingActivityResponse.EntityIdDimension.cs" />
+    <Compile Include="Models\RoutingEstablishedEvent.cs" />
     <Compile Include="Models\RoutingRule.cs" />
     <Compile Include="Models\RoutingRuleOperator.cs" />
     <Compile Include="Models\RoutingSkill.cs" />
@@ -2681,6 +2725,8 @@
     <Compile Include="Models\RoutingStatusDetailQueryPredicate.Type.cs" />
     <Compile Include="Models\RoutingStatusDetailQueryPredicate.Dimension.cs" />
     <Compile Include="Models\RoutingStatusDetailQueryPredicate.Operator.cs" />
+    <Compile Include="Models\RoutingTransferEvent.cs" />
+    <Compile Include="Models\RoutingTransferEvent.TransferType.cs" />
     <Compile Include="Models\RuleConfig.cs" />
     <Compile Include="Models\RuleEngineConfig.cs" />
     <Compile Include="Models\Schedule.cs" />
@@ -2765,6 +2811,7 @@
     <Compile Include="Models\SocialMediaStatisticalResponse.cs" />
     <Compile Include="Models\SocialMediaStatisticalSummary.cs" />
     <Compile Include="Models\SortItem.cs" />
+    <Compile Include="Models\SourceConfiguration.cs" />
     <Compile Include="Models\SourceEntity.cs" />
     <Compile Include="Models\SourceEntity.Type.cs" />
     <Compile Include="Models\StatEventCampaignTopicIntervalMetrics.cs" />
@@ -3087,6 +3134,7 @@
     <Compile Include="Models\UserEndDetailEventTopicUserEndEvent.Direction.cs" />
     <Compile Include="Models\UserEndDetailEventTopicUserEndEvent.MessageType.cs" />
     <Compile Include="Models\UserEntityListing.cs" />
+    <Compile Include="Models\UserEstablishedEvent.cs" />
     <Compile Include="Models\UserExpands.cs" />
     <Compile Include="Models\UserExternalIdentifier.cs" />
     <Compile Include="Models\UserGreetingEventGreeting.cs" />
@@ -3106,6 +3154,7 @@
     <Compile Include="Models\UserObservationQueryPredicate.Dimension.cs" />
     <Compile Include="Models\UserObservationQueryPredicate.Operator.cs" />
     <Compile Include="Models\UserObservationQueryResponse.cs" />
+    <Compile Include="Models\UserPresenceEvent.cs" />
     <Compile Include="Models\UserProfile.cs" />
     <Compile Include="Models\UserProfileEntityListing.cs" />
     <Compile Include="Models\UserProfile.State.cs" />
@@ -3117,6 +3166,8 @@
     <Compile Include="Models\UserRoutingLanguageState.cs" />
     <Compile Include="Models\UserRoutingSkillPost.cs" />
     <Compile Include="Models\UserRoutingStatusErrorInfo.cs" />
+    <Compile Include="Models\UserRoutingStatusEvent.cs" />
+    <Compile Include="Models\UserRoutingStatusEvent.Status.cs" />
     <Compile Include="Models\UserRoutingStatusRoutingStatus.cs" />
     <Compile Include="Models\UserRoutingStatusRoutingStatus.Status.cs" />
     <Compile Include="Models\UserRoutingStatusUserParam.cs" />
@@ -3164,6 +3215,8 @@
     <Compile Include="Models\Users\UserStations.cs" />
     <Compile Include="Models\UserTokensTopicTokenNotification.cs" />
     <Compile Include="Models\UserTokensTopicUriReference.cs" />
+    <Compile Include="Models\UserTransferEvent.cs" />
+    <Compile Include="Models\UserTransferEvent.TransferType.cs" />
     <Compile Include="Models\UtilizationRequest.cs" />
     <Compile Include="Models\V2ConversationMessageTypingEventForUserTopicConversationEventTyping.cs" />
     <Compile Include="Models\V2ConversationMessageTypingEventForUserTopicConversationEventTyping.Type.cs" />

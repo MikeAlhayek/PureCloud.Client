@@ -105,6 +105,8 @@ public static class ServiceCollectionExtensions
 
         services.TryAddScoped<IEmployeeEngagementApi, EmployeeEngagementApi>();
 
+        services.TryAddScoped<IEventsApi, EventsApi>();
+
         return services;
     }
 }
