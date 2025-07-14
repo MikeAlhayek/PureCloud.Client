@@ -2996,6 +2996,7 @@
     <Compile Include="Models\UpdateCoachingAppointmentRequest.Status.cs" />
     <Compile Include="Models\UpdateVerifierRequest.cs" />
     <Compile Include="Models\UploadUrlResponse.cs" />
+    <Compile Include="Models\UrlResponse.cs" />
     <Compile Include="Models\Usage.cs" />
     <Compile Include="Models\UsageItem.cs" />
     <Compile Include="Models\UsageItem.Type.cs" />
