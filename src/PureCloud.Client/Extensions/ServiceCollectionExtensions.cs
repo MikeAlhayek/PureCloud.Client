@@ -103,6 +103,8 @@ public static class ServiceCollectionExtensions
 
         services.TryAddScoped<IEmailsApi, EmailsApi>();
 
+        services.TryAddScoped<IEmployeeEngagementApi, EmployeeEngagementApi>();
+
         return services;
     }
 }

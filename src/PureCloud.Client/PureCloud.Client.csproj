@@ -395,6 +395,10 @@
     <Compile Include="Models\CallTarget.Type.cs" />
     <Compile Include="Models\CannedResponseLibraries.cs" />
     <Compile Include="Models\CannedResponseLibrariesMode.cs" />
+    <Compile Include="Models\Celebration.cs" />
+    <Compile Include="Models\CelebrationStateParam.cs" />
+    <Compile Include="Models\CelebrationStateParam.State.cs" />
+    <Compile Include="Models\Celebration.Type.cs" />
     <Compile Include="Models\ChangeMyPasswordRequest.cs" />
     <Compile Include="Models\ChangePasswordRequest.cs" />
     <Compile Include="Models\Channels\AvailableTopic.cs" />
@@ -515,6 +519,13 @@
     <Compile Include="Models\ContentManagementWorkspaceDocumentsTopicLockData.cs" />
     <Compile Include="Models\ContentManagementWorkspaceDocumentsTopicUserData.cs" />
     <Compile Include="Models\ContentManagementWorkspaceDocumentsTopicWorkspaceData.cs" />
+    <Compile Include="Models\ContestCompleteData.cs" />
+    <Compile Include="Models\ContestCompleteData.Anonymization.cs" />
+    <Compile Include="Models\ContestCompleteDataScore.cs" />
+    <Compile Include="Models\ContestDataMetrics.cs" />
+    <Compile Include="Models\ContestDataPrizes.cs" />
+    <Compile Include="Models\ContestDataWinners.cs" />
+    <Compile Include="Models\ContestDataWinnersUsers.cs" />
     <Compile Include="Models\ConversationSummaryTopicConversationHeadline.cs" />
     <Compile Include="Models\ConversationSummaryTopicConversationReason.cs" />
     <Compile Include="Models\ConversationSummaryTopicConversationResolution.cs" />
@@ -968,6 +979,9 @@
     <Compile Include="Models\CreateGeneralProgramTestTopicPhraseResults.cs" />
     <Compile Include="Models\CreateGeneralProgramTopicsDefinitionsJob.cs" />
     <Compile Include="Models\CreateGeneralProgramTopicsDefinitionsJob.State.cs" />
+    <Compile Include="Models\CreateRecognition.cs" />
+    <Compile Include="Models\CreateRecognition.Type.cs" />
+    <Compile Include="Models\CreateRecognition.ContextType.cs" />
     <Compile Include="Models\CreateRoomRequest.cs" />
     <Compile Include="Models\CreateRoomResponse.cs" />
     <Compile Include="Models\CreateShareRequest.cs" />
@@ -1496,6 +1510,7 @@
     <Compile Include="Models\GetAlertQuery.AlertStatus.cs" />
     <Compile Include="Models\GetAlertQuery.ViewedStatus.cs" />
     <Compile Include="Models\GetAlertQuery.SortBy.cs" />
+    <Compile Include="Models\GetCelebrationListing.cs" />
     <Compile Include="Models\GetFlowExecutionDataJobResult.cs" />
     <Compile Include="Models\GetFlowExecutionDataJobResult.JobState.cs" />
     <Compile Include="Models\GetRulesQuery.cs" />
@@ -2536,6 +2551,12 @@
     <Compile Include="Models\RateLimitAggregationView.cs" />
     <Compile Include="Models\RateLimitAggregationView.Target.cs" />
     <Compile Include="Models\RateLimitAggregationView.Function.cs" />
+    <Compile Include="Models\Recognition.cs" />
+    <Compile Include="Models\RecognitionBase.cs" />
+    <Compile Include="Models\RecognitionBase.Type.cs" />
+    <Compile Include="Models\RecognitionBase.ContextType.cs" />
+    <Compile Include="Models\Recognition.ContextType.cs" />
+    <Compile Include="Models\Recognition.Type.cs" />
     <Compile Include="Models\RecordersState.cs" />
     <Compile Include="Models\RecordersStateAdhocState.cs" />
     <Compile Include="Models\RecordersStateAgentExperienceState.cs" />
@@ -2744,6 +2765,8 @@
     <Compile Include="Models\SocialMediaStatisticalResponse.cs" />
     <Compile Include="Models\SocialMediaStatisticalSummary.cs" />
     <Compile Include="Models\SortItem.cs" />
+    <Compile Include="Models\SourceEntity.cs" />
+    <Compile Include="Models\SourceEntity.Type.cs" />
     <Compile Include="Models\StatEventCampaignTopicIntervalMetrics.cs" />
     <Compile Include="Models\StatEventCampaignTopicMetricStats.cs" />
     <Compile Include="Models\StatEventCampaignTopicStatsNotification.cs" />
