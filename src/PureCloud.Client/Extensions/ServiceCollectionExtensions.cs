@@ -91,9 +91,11 @@ public static class ServiceCollectionExtensions
 
         services.TryAddScoped<ICoachingApi, CoachingApi>();
 
+        services.TryAddScoped<IContentManagementApi, ContentManagementApi>();
+
         services.TryAddScoped<IConversationsApi, ConversationsApi>();
 
-        services.TryAddScoped<IContentManagementApi, ContentManagementApi>();
+        services.TryAddScoped<IDataExtensionsApi, DataExtensionsApi>();
 
         return services;
     }
