@@ -101,6 +101,8 @@ public static class ServiceCollectionExtensions
 
         services.TryAddScoped<IDownloadsApi, DownloadsApi>();
 
+        services.TryAddScoped<IEmailsApi, EmailsApi>();
+
         return services;
     }
 }

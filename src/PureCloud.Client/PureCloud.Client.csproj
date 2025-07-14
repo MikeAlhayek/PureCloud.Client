@@ -1178,7 +1178,9 @@
     <Compile Include="Models\EmailDirection.cs" />
     <Compile Include="Models\EmailDisconnectType.cs" />
     <Compile Include="Models\EmailInitialState.cs" />
+    <Compile Include="Models\EmailSettings.cs" />
     <Compile Include="Models\EmailState.cs" />
+    <Compile Include="Models\EmailThreadingSettings.cs" />
     <Compile Include="Models\EmergencyCallFlow.cs" />
     <Compile Include="Models\EmergencyGroup.cs" />
     <Compile Include="Models\EmergencyGroup.State.cs" />
