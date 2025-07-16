@@ -109,6 +109,8 @@ public static class ServiceCollectionExtensions
 
         services.TryAddScoped<IExternalContactsApi, ExternalContactsApi>();
 
+        services.TryAddScoped<IFaxApi, FaxApi>();
+
         return services;
     }
 

@@ -1496,7 +1496,11 @@
     <Compile Include="Models\FacetTerm.cs" />
     <Compile Include="Models\FailedObject.cs" />
     <Compile Include="Models\Fallback.cs" />
+    <Compile Include="Models\FaxConfig.cs" />
+    <Compile Include="Models\FaxDocument.cs" />
+    <Compile Include="Models\FaxDocumentEntityListing.cs" />
     <Compile Include="Models\FaxStatus.cs" />
+    <Compile Include="Models\FaxSummary.cs" />
     <Compile Include="Models\FaxTopicFaxDataV2.cs" />
     <Compile Include="Models\FaxTopicLockData.cs" />
     <Compile Include="Models\FaxTopicUserData.cs" />
