@@ -107,6 +107,9 @@ public static class ServiceCollectionExtensions
 
         services.TryAddScoped<IEventsApi, EventsApi>();
 
+        services.TryAddScoped<IExternalContactsApi, ExternalContactsApi>();
+
         return services;
     }
+
 }

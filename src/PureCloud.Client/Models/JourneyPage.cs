@@ -3,300 +3,65 @@ using System.Text.Json.Serialization;
 
 namespace PureCloud.Client.Models;
 
-/// <summary>
-/// JourneyPage
-/// </summary>
-
-public partial class JourneyPage : IEquatable<JourneyPage>
+public sealed class JourneyPage
 {
-
-    /// <summary>
-    /// Initializes a new instance of the <see cref="JourneyPage" /> class.
-    /// </summary>
-    [JsonConstructorAttribute]
-    protected JourneyPage() { }
-    /// <summary>
-    /// Initializes a new instance of the <see cref="JourneyPage" /> class.
-    /// </summary>
-    /// <param name="Url">The page URL. (required).</param>
-    /// <param name="Title">Title of the page..</param>
-    /// <param name="Domain">Domain of the page&#39;s URL. (required).</param>
-    /// <param name="Fragment">Fragment or hash of the page&#39;s URL..</param>
-    /// <param name="Hostname">Hostname of the page&#39;s URL. (required).</param>
-    /// <param name="Keywords">Keywords from the HTML {@code &lt;meta&gt;} tag of the page..</param>
-    /// <param name="Lang">ISO 639-1 language code for the page as defined in the {@code &lt;html&gt;} tag..</param>
-    /// <param name="Pathname">Path name of the page for the event. (required).</param>
-    /// <param name="QueryString">Query string that is passed to the page in the current event..</param>
-    /// <param name="Breadcrumb">Hierarchy of the current page in relation to the website&#39;s structure. (required).</param>
-    public JourneyPage(string Url = null, string Title = null, string Domain = null, string Fragment = null, string Hostname = null, string Keywords = null, string Lang = null, string Pathname = null, string QueryString = null, List<string> Breadcrumb = null)
-    {
-        this.Url = Url;
-        this.Title = Title;
-        this.Domain = Domain;
-        this.Fragment = Fragment;
-        this.Hostname = Hostname;
-        this.Keywords = Keywords;
-        this.Lang = Lang;
-        this.Pathname = Pathname;
-        this.QueryString = QueryString;
-        this.Breadcrumb = Breadcrumb;
-
-    }
-
-
-
     /// <summary>
     /// The page URL.
     /// </summary>
     /// <value>The page URL.</value>
-    [JsonPropertyName("url")]
     public string Url { get; set; }
-
-
 
     /// <summary>
     /// Title of the page.
     /// </summary>
     /// <value>Title of the page.</value>
-    [JsonPropertyName("title")]
     public string Title { get; set; }
-
-
 
     /// <summary>
     /// Domain of the page&#39;s URL.
     /// </summary>
     /// <value>Domain of the page&#39;s URL.</value>
-    [JsonPropertyName("domain")]
     public string Domain { get; set; }
-
-
 
     /// <summary>
     /// Fragment or hash of the page&#39;s URL.
     /// </summary>
     /// <value>Fragment or hash of the page&#39;s URL.</value>
-    [JsonPropertyName("fragment")]
     public string Fragment { get; set; }
-
-
 
     /// <summary>
     /// Hostname of the page&#39;s URL.
     /// </summary>
     /// <value>Hostname of the page&#39;s URL.</value>
-    [JsonPropertyName("hostname")]
     public string Hostname { get; set; }
-
-
 
     /// <summary>
     /// Keywords from the HTML {@code &lt;meta&gt;} tag of the page.
     /// </summary>
     /// <value>Keywords from the HTML {@code &lt;meta&gt;} tag of the page.</value>
-    [JsonPropertyName("keywords")]
     public string Keywords { get; set; }
-
-
 
     /// <summary>
     /// ISO 639-1 language code for the page as defined in the {@code &lt;html&gt;} tag.
     /// </summary>
     /// <value>ISO 639-1 language code for the page as defined in the {@code &lt;html&gt;} tag.</value>
-    [JsonPropertyName("lang")]
     public string Lang { get; set; }
-
-
 
     /// <summary>
     /// Path name of the page for the event.
     /// </summary>
     /// <value>Path name of the page for the event.</value>
-    [JsonPropertyName("pathname")]
     public string Pathname { get; set; }
-
-
 
     /// <summary>
     /// Query string that is passed to the page in the current event.
     /// </summary>
     /// <value>Query string that is passed to the page in the current event.</value>
-    [JsonPropertyName("queryString")]
     public string QueryString { get; set; }
-
-
 
     /// <summary>
     /// Hierarchy of the current page in relation to the website&#39;s structure.
     /// </summary>
     /// <value>Hierarchy of the current page in relation to the website&#39;s structure.</value>
-    [JsonPropertyName("breadcrumb")]
-    public List<string> Breadcrumb { get; set; }
-
-
-    /// <summary>
-    /// Returns the string presentation of the object
-    /// </summary>
-    /// <returns>String presentation of the object</returns>
-    public override string ToString()
-    {
-        var sb = new StringBuilder();
-        sb.Append("class JourneyPage {\n");
-
-        sb.Append("  Url: ").Append(Url).Append("\n");
-        sb.Append("  Title: ").Append(Title).Append("\n");
-        sb.Append("  Domain: ").Append(Domain).Append("\n");
-        sb.Append("  Fragment: ").Append(Fragment).Append("\n");
-        sb.Append("  Hostname: ").Append(Hostname).Append("\n");
-        sb.Append("  Keywords: ").Append(Keywords).Append("\n");
-        sb.Append("  Lang: ").Append(Lang).Append("\n");
-        sb.Append("  Pathname: ").Append(Pathname).Append("\n");
-        sb.Append("  QueryString: ").Append(QueryString).Append("\n");
-        sb.Append("  Breadcrumb: ").Append(Breadcrumb).Append("\n");
-        sb.Append("}\n");
-        return sb.ToString();
-    }
-
-
-    /// <summary>
-    /// Returns true if objects are equal
-    /// </summary>
-    /// <param name="obj">Object to be compared</param>
-    /// <returns>Boolean</returns>
-    public override bool Equals(object obj)
-    {
-        // credit: http://stackoverflow.com/a/10454552/677735
-        return Equals(obj as JourneyPage);
-    }
-
-    /// <summary>
-    /// Returns true if JourneyPage instances are equal
-    /// </summary>
-    /// <param name="other">Instance of JourneyPage to be compared</param>
-    /// <returns>Boolean</returns>
-    public bool Equals(JourneyPage other)
-    {
-        // credit: http://stackoverflow.com/a/10454552/677735
-        if (other == null)
-        {
-            return false;
-        }
-
-        return true &&
-            (
-                Url == other.Url ||
-                Url != null &&
-                Url.Equals(other.Url)
-            ) &&
-            (
-                Title == other.Title ||
-                Title != null &&
-                Title.Equals(other.Title)
-            ) &&
-            (
-                Domain == other.Domain ||
-                Domain != null &&
-                Domain.Equals(other.Domain)
-            ) &&
-            (
-                Fragment == other.Fragment ||
-                Fragment != null &&
-                Fragment.Equals(other.Fragment)
-            ) &&
-            (
-                Hostname == other.Hostname ||
-                Hostname != null &&
-                Hostname.Equals(other.Hostname)
-            ) &&
-            (
-                Keywords == other.Keywords ||
-                Keywords != null &&
-                Keywords.Equals(other.Keywords)
-            ) &&
-            (
-                Lang == other.Lang ||
-                Lang != null &&
-                Lang.Equals(other.Lang)
-            ) &&
-            (
-                Pathname == other.Pathname ||
-                Pathname != null &&
-                Pathname.Equals(other.Pathname)
-            ) &&
-            (
-                QueryString == other.QueryString ||
-                QueryString != null &&
-                QueryString.Equals(other.QueryString)
-            ) &&
-            (
-                Breadcrumb == other.Breadcrumb ||
-                Breadcrumb != null &&
-                Breadcrumb.SequenceEqual(other.Breadcrumb)
-            );
-    }
-
-    /// <summary>
-    /// Gets the hash code
-    /// </summary>
-    /// <returns>Hash code</returns>
-    public override int GetHashCode()
-    {
-        // credit: http://stackoverflow.com/a/263416/677735
-        unchecked // Overflow is fine, just wrap
-        {
-            int hash = 41;
-            // Suitable nullity checks etc, of course :)
-            if (Url != null)
-            {
-                hash = hash * 59 + Url.GetHashCode();
-            }
-
-            if (Title != null)
-            {
-                hash = hash * 59 + Title.GetHashCode();
-            }
-
-            if (Domain != null)
-            {
-                hash = hash * 59 + Domain.GetHashCode();
-            }
-
-            if (Fragment != null)
-            {
-                hash = hash * 59 + Fragment.GetHashCode();
-            }
-
-            if (Hostname != null)
-            {
-                hash = hash * 59 + Hostname.GetHashCode();
-            }
-
-            if (Keywords != null)
-            {
-                hash = hash * 59 + Keywords.GetHashCode();
-            }
-
-            if (Lang != null)
-            {
-                hash = hash * 59 + Lang.GetHashCode();
-            }
-
-            if (Pathname != null)
-            {
-                hash = hash * 59 + Pathname.GetHashCode();
-            }
-
-            if (QueryString != null)
-            {
-                hash = hash * 59 + QueryString.GetHashCode();
-            }
-
-            if (Breadcrumb != null)
-            {
-                hash = hash * 59 + Breadcrumb.GetHashCode();
-            }
-
-            return hash;
-        }
-    }
+    public IEnumerable<string> Breadcrumb { get; set; }
 }
