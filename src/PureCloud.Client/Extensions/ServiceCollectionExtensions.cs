@@ -111,6 +111,8 @@ public static class ServiceCollectionExtensions
 
         services.TryAddScoped<IFaxApi, FaxApi>();
 
+        services.TryAddScoped<IFlowsApi, FlowsApi>();
+
         return services;
     }
 
