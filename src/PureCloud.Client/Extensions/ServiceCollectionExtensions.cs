@@ -117,6 +117,8 @@ public static class ServiceCollectionExtensions
 
         services.TryAddScoped<IGeneralDataProtectionRegulationApi, GeneralDataProtectionRegulationApi>();
 
+        services.TryAddScoped<IGeolocationApi, GeolocationApi>();
+
         return services;
     }
 
