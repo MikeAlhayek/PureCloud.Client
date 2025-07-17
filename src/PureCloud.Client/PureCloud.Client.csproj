@@ -1251,6 +1251,7 @@
     <Compile Include="Models\DialerCampaignScheduleConfigChangeScheduleInterval.cs" />
     <Compile Include="Models\DialerCampaignScheduleConfigChangeScheduleRecurrence.cs" />
     <Compile Include="Models\DialerCampaignScheduleConfigChangeUriReference.cs" />
+    <Compile Include="Models\DialerContactId.cs" />
     <Compile Include="Models\DialerContactlistConfigChangeContactList.cs" />
     <Compile Include="Models\DialerContactlistConfigChangeContactPhoneNumberColumn.cs" />
     <Compile Include="Models\DialerContactlistConfigChangeEmailColumn.cs" />
@@ -1736,6 +1737,13 @@
     <Compile Include="Models\GamificationScorecardChangeTopicPunctualityEvent.cs" />
     <Compile Include="Models\GamificationScorecardChangeTopicScorecardChange.cs" />
     <Compile Include="Models\GamificationStatus.cs" />
+    <Compile Include="Models\GDPRJourneyCustomer.cs" />
+    <Compile Include="Models\GDPRRequest.cs" />
+    <Compile Include="Models\GDPRRequest.Status.cs" />
+    <Compile Include="Models\GDPRRequest.RequestType.cs" />
+    <Compile Include="Models\GDPRRequestEntityListing.cs" />
+    <Compile Include="Models\GDPRSubject.cs" />
+    <Compile Include="Models\GDPRSubjectEntityListing.cs" />
     <Compile Include="Models\GeolocationEventGeolocation.cs" />
     <Compile Include="Models\GetAlertQuery.cs" />
     <Compile Include="Models\GetAlertQuery.SortOrder.cs" />
@@ -2897,6 +2905,8 @@
     <Compile Include="Models\RegisterArchitectJobResponse.cs" />
     <Compile Include="Models\Relationship.cs" />
     <Compile Include="Models\RelationshipListing.cs" />
+    <Compile Include="Models\ReplacementTerm.cs" />
+    <Compile Include="Models\ReplacementTerm.Type.cs" />
     <Compile Include="Models\ReplaceRequest.cs" />
     <Compile Include="Models\ReplaceResponse.cs" />
     <Compile Include="Models\ReplaceResponse.UploadMethod.cs" />
@@ -3102,6 +3112,8 @@
     <Compile Include="Models\SocialExpression.cs" />
     <Compile Include="Models\SocialExpressionDisconnectType.cs" />
     <Compile Include="Models\SocialExpressionState.cs" />
+    <Compile Include="Models\SocialHandle.cs" />
+    <Compile Include="Models\SocialHandle.Type.cs" />
     <Compile Include="Models\SocialKeyword.cs" />
     <Compile Include="Models\SocialMediaAggregateMetricData.cs" />
     <Compile Include="Models\SocialMediaStatisticalResponse.cs" />

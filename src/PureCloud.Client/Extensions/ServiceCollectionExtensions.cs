@@ -115,6 +115,8 @@ public static class ServiceCollectionExtensions
 
         services.TryAddScoped<IGamificationApi, GamificationApi>();
 
+        services.TryAddScoped<IGeneralDataProtectionRegulationApi, GeneralDataProtectionRegulationApi>();
+
         return services;
     }
 
