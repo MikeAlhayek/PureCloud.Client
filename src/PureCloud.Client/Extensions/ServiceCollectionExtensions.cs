@@ -113,6 +113,8 @@ public static class ServiceCollectionExtensions
 
         services.TryAddScoped<IFlowsApi, FlowsApi>();
 
+        services.TryAddScoped<IGamificationApi, GamificationApi>();
+
         return services;
     }
 

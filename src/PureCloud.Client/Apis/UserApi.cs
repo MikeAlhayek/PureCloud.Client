@@ -23,7 +23,6 @@ public class UserApi : IUserApi
         _options = options.Value;
     }
 
-    // get methods
     public async Task<User> GetUserAsync(string userId, UserSearchContext context = null, CancellationToken cancellationToken = default)
     {
         ArgumentException.ThrowIfNullOrEmpty(userId);
