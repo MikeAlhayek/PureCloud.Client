@@ -1181,6 +1181,8 @@
     <Compile Include="Models\DataTableImportJob.ImportMode.cs" />
     <Compile Include="Models\DataTableRowEntityListing.cs" />
     <Compile Include="Models\DataTablesDomainEntityListing.cs" />
+    <Compile Include="Models\DefaultGreetingList.cs" />
+    <Compile Include="Models\DefaultGreetingList.OwnerType.cs" />
     <Compile Include="Models\DefaultObjective.cs" />
     <Compile Include="Models\DefaultObjective.MediaTypes.cs" />
     <Compile Include="Models\DefaultObjective.TopicIdsFilterType.cs" />
@@ -1330,6 +1332,7 @@
     <Compile Include="Models\DocumentUpdate.cs" />
     <Compile Include="Models\Document.UploadMethod.cs" />
     <Compile Include="Models\DomainEntity.cs" />
+    <Compile Include="Models\DomainEntityListing.cs" />
     <Compile Include="Models\DomainEntityListingQueryResult.cs" />
     <Compile Include="Models\DomainOrgRoleDifference.cs" />
     <Compile Include="Models\DomainPermission.cs" />
@@ -1777,6 +1780,13 @@
     <Compile Include="Models\GrammarLanguageFileMetadata.FileType.cs" />
     <Compile Include="Models\GrammarLanguageUpdate.cs" />
     <Compile Include="Models\GrammarListing.cs" />
+    <Compile Include="Models\Greeting.cs" />
+    <Compile Include="Models\Greeting.OwnerType.cs" />
+    <Compile Include="Models\Greeting.Type.cs" />
+    <Compile Include="Models\GreetingAudioFile.cs" />
+    <Compile Include="Models\GreetingListing.cs" />
+    <Compile Include="Models\GreetingMediaInfo.cs" />
+    <Compile Include="Models\GreetingOwner.cs" />
     <Compile Include="Models\Groups\GroupGreetingEventGreeting.cs" />
     <Compile Include="Models\Groups\GroupGreetingEventGreetingAudioFile.cs" />
     <Compile Include="Models\Groups\GroupGreetingEventGreetingOwner.cs" />

@@ -119,6 +119,8 @@ public static class ServiceCollectionExtensions
 
         services.TryAddScoped<IGeolocationApi, GeolocationApi>();
 
+        services.TryAddScoped<IGreetingsApi, GreetingsApi>();
+
         return services;
     }
 
