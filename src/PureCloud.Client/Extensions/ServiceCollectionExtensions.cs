@@ -121,6 +121,8 @@ public static class ServiceCollectionExtensions
 
         services.TryAddScoped<IGreetingsApi, GreetingsApi>();
 
+        services.TryAddScoped<IGroupsApi, GroupsApi>();
+
         return services;
     }
 
