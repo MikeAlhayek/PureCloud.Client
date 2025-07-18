@@ -27,6 +27,15 @@
   </ItemGroup>
 
   <ItemGroup>
+    <Compile Include="Models\AcceleratorInput.cs" />
+    <Compile Include="Models\AcceleratorList.cs" />
+    <Compile Include="Models\AcceleratorMetadata.cs" />
+    <Compile Include="Models\AcceleratorMetadata.Type.cs" />
+    <Compile Include="Models\AcceleratorMetadata.Origin.cs" />
+    <Compile Include="Models\AcceleratorParameter.cs" />
+    <Compile Include="Models\AcceleratorSpecification.cs" />
+    <Compile Include="Models\AcceleratorSpecification.Type.cs" />
+    <Compile Include="Models\AcceleratorSpecification.Origin.cs" />
     <Compile Include="Models\AcdEndDetailEventTopicAcdEndEvent.cs" />
     <Compile Include="Models\AcdEndDetailEventTopicAcdEndEvent.DisconnectType.cs" />
     <Compile Include="Models\AcdEndDetailEventTopicAcdEndEvent.UsedRouting.cs" />
@@ -1852,6 +1861,8 @@
     <Compile Include="Models\IdentityResolutionConfig.cs" />
     <Compile Include="Models\ImportTemplateImportStatusImportStatus.cs" />
     <Compile Include="Models\ImportTemplateImportStatusImportStatus.ImportState.cs" />
+    <Compile Include="Models\InfrastructureascodeJob.cs" />
+    <Compile Include="Models\InfrastructureascodeJob.Status.cs" />
     <Compile Include="Models\InitialConfiguration.cs" />
     <Compile Include="Models\InitiatingAction.cs" />
     <Compile Include="Models\InsightsAgentItem.cs" />
@@ -2157,6 +2168,13 @@
     <Compile Include="Models\MessageState.cs" />
     <Compile Include="Models\MessageSticker.cs" />
     <Compile Include="Models\MessageType.cs" />
+    <Compile Include="Models\MetadataDocumentation.cs" />
+    <Compile Include="Models\MetadataPresentation.cs" />
+    <Compile Include="Models\MetadataProperty.cs" />
+    <Compile Include="Models\MetadataResultEntity.cs" />
+    <Compile Include="Models\MetadataResultEntity.Visibility.cs" />
+    <Compile Include="Models\MetadataResults.cs" />
+    <Compile Include="Models\MetadataSchema.cs" />
     <Compile Include="Models\Metric.cs" />
     <Compile Include="Models\MetricDefinition.cs" />
     <Compile Include="Models\MetricDefinition.UnitType.cs" />
