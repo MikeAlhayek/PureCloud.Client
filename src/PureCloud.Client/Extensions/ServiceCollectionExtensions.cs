@@ -123,6 +123,8 @@ public static class ServiceCollectionExtensions
 
         services.TryAddScoped<IGroupsApi, GroupsApi>();
 
+        services.TryAddScoped<IIdentityProviderApi, IdentityProviderApi>();
+
         return services;
     }
 
