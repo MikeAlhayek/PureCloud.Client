@@ -98,20 +98,17 @@ public class InfrastructureAsCodeApi : IInfrastructureAsCodeApi
         }
 
         var client = _httpClientFactory.CreateClient(PureCloudConstants.PureCloudClientName);
+
         var uri = UriHelper.GetUri("api/v2/infrastructureascode/accelerators", parameters);
 
         var response = await client.GetAsync(uri, cancellationToken);
+
         response.EnsureSuccessStatusCode();
 
-        return await response.Content.ReadFromJsonAsync<AcceleratorList>(
-            _options.JsonSerializerOptions,
-            cancellationToken);
+        return await response.Content.ReadFromJsonAsync<AcceleratorList>(_options.JsonSerializerOptions, cancellationToken);
     }
 
-    public async Task<InfrastructureascodeJob> GetInfrastructureAsCodeJobAsync(
-        string jobId,
-        bool? details = null,
-        CancellationToken cancellationToken = default)
+    public async Task<InfrastructureascodeJob> GetInfrastructureAsCodeJobAsync(string jobId, bool? details = null, CancellationToken cancellationToken = default)
     {
         ArgumentException.ThrowIfNullOrEmpty(jobId);
 
@@ -123,14 +120,14 @@ public class InfrastructureAsCodeApi : IInfrastructureAsCodeApi
         }
 
         var client = _httpClientFactory.CreateClient(PureCloudConstants.PureCloudClientName);
+
         var uri = UriHelper.GetUri($"api/v2/infrastructureascode/jobs/{jobId}", parameters);
 
         var response = await client.GetAsync(uri, cancellationToken);
+
         response.EnsureSuccessStatusCode();
 
-        return await response.Content.ReadFromJsonAsync<InfrastructureascodeJob>(
-            _options.JsonSerializerOptions,
-            cancellationToken);
+        return await response.Content.ReadFromJsonAsync<InfrastructureascodeJob>(_options.JsonSerializerOptions, cancellationToken);
     }
 
     public async Task<InfrastructureascodeJob> GetInfrastructureAsCodeJobsAsync(int? maxResults = null, bool? includeErrors = null, string sortBy = null, string sortOrder = null, string acceleratorId = null, string submittedBy = null, string status = null, CancellationToken cancellationToken = default)
