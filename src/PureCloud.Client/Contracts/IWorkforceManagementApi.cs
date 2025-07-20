@@ -504,31 +504,230 @@ public interface IWorkforceManagementApi
     /// <returns>True if the deletion was successful</returns>
     Task<bool> DeleteBusinessUnitWorkplanbidGroupAsync(string businessUnitId, string bidId, string bidGroupId, CancellationToken cancellationToken = default);
 
+    /// <summary>
+    /// Get a business unit
+    /// </summary>
+    /// <param name="businessUnitId">The ID of the business unit</param>
+    /// <param name="cancellationToken">Cancellation token</param>
+    /// <returns>The business unit information</returns>
     Task<BusinessUnit> GetBusinessUnitAsync(string businessUnitId, CancellationToken cancellationToken = default);
+
+    /// <summary>
+    /// Get an activity code from a business unit
+    /// </summary>
+    /// <param name="businessUnitId">The ID of the business unit</param>
+    /// <param name="activityCodeId">The ID of the activity code</param>
+    /// <param name="cancellationToken">Cancellation token</param>
+    /// <returns>The activity code information</returns>
     Task<BusinessUnitActivityCode> GetBusinessUnitActivitycodeAsync(string businessUnitId, string activityCodeId, CancellationToken cancellationToken = default);
+
+    /// <summary>
+    /// Get activity codes for a business unit
+    /// </summary>
+    /// <param name="businessUnitId">The ID of the business unit</param>
+    /// <param name="cancellationToken">Cancellation token</param>
+    /// <returns>A listing of activity codes</returns>
     Task<BusinessUnitActivityCodeListing> GetBusinessUnitActivitycodesAsync(string businessUnitId, CancellationToken cancellationToken = default);
+
+    /// <summary>
+    /// Get an activity plan from a business unit
+    /// </summary>
+    /// <param name="businessUnitId">The ID of the business unit</param>
+    /// <param name="activityPlanId">The ID of the activity plan</param>
+    /// <param name="cancellationToken">Cancellation token</param>
+    /// <returns>The activity plan information</returns>
     Task<ActivityPlanResponse> GetBusinessUnitActivityplanAsync(string businessUnitId, string activityPlanId, CancellationToken cancellationToken = default);
+
+    /// <summary>
+    /// Get a specific job for an activity plan run
+    /// </summary>
+    /// <param name="businessUnitId">The ID of the business unit</param>
+    /// <param name="activityPlanId">The ID of the activity plan</param>
+    /// <param name="jobId">The ID of the job</param>
+    /// <param name="cancellationToken">Cancellation token</param>
+    /// <returns>The activity plan run job response</returns>
     Task<ActivityPlanRunJobResponse> GetBusinessUnitActivityplanRunsJobAsync(string businessUnitId, string activityPlanId, string jobId, CancellationToken cancellationToken = default);
+
+    /// <summary>
+    /// Get activity plans for a business unit
+    /// </summary>
+    /// <param name="businessUnitId">The ID of the business unit</param>
+    /// <param name="state">Optionally filter by state</param>
+    /// <param name="cancellationToken">Cancellation token</param>
+    /// <returns>A listing of activity plans</returns>
     Task<ActivityPlanListing> GetBusinessUnitActivityplansAsync(string businessUnitId, string state = null, CancellationToken cancellationToken = default);
+
+    /// <summary>
+    /// Get jobs for activity plans in a business unit
+    /// </summary>
+    /// <param name="businessUnitId">The ID of the business unit</param>
+    /// <param name="cancellationToken">Cancellation token</param>
+    /// <returns>A listing of activity plan jobs</returns>
     Task<ActivityPlanJobListing> GetBusinessUnitActivityplansJobsAsync(string businessUnitId, CancellationToken cancellationToken = default);
+
+    /// <summary>
+    /// Get alternative shift settings for a business unit
+    /// </summary>
+    /// <param name="businessUnitId">The ID of the business unit</param>
+    /// <param name="cancellationToken">Cancellation token</param>
+    /// <returns>The alternative shift settings</returns>
     Task<AlternativeShiftSettingsResponse> GetBusinessUnitAlternativeshiftsSettingsAsync(string businessUnitId, CancellationToken cancellationToken = default);
+
+    /// <summary>
+    /// Get an alternative shift trade for a business unit
+    /// </summary>
+    /// <param name="businessUnitId">The ID of the business unit</param>
+    /// <param name="tradeId">The ID of the trade</param>
+    /// <param name="cancellationToken">Cancellation token</param>
+    /// <returns>The alternative shift trade information</returns>
     Task<AlternativeShiftTradeResponse> GetBusinessUnitAlternativeshiftsTradeAsync(string businessUnitId, string tradeId, CancellationToken cancellationToken = default);
+
+    /// <summary>
+    /// Get search job results for alternative shift trades
+    /// </summary>
+    /// <param name="businessUnitId">The ID of the business unit</param>
+    /// <param name="jobId">The ID of the search job</param>
+    /// <param name="cancellationToken">Cancellation token</param>
+    /// <returns>The alternative shift trade search response</returns>
     Task<BuAsyncAlternativeShiftTradeSearchResponse> GetBusinessUnitAlternativeshiftsTradesSearchJobAsync(string businessUnitId, string jobId, CancellationToken cancellationToken = default);
+
+    /// <summary>
+    /// Get intraday planning groups for a business unit
+    /// </summary>
+    /// <param name="businessUnitId">The ID of the business unit</param>
+    /// <param name="cancellationToken">Cancellation token</param>
+    /// <returns>The intraday planning group listing</returns>
     Task<WfmIntradayPlanningGroupListing> GetBusinessUnitIntradayPlanninggroupsAsync(string businessUnitId, CancellationToken cancellationToken = default);
+
+    /// <summary>
+    /// Get a planning group from a business unit
+    /// </summary>
+    /// <param name="businessUnitId">The ID of the business unit</param>
+    /// <param name="planningGroupId">The ID of the planning group</param>
+    /// <param name="cancellationToken">Cancellation token</param>
+    /// <returns>The planning group information</returns>
     Task<PlanningGroup> GetBusinessUnitPlanninggroupAsync(string businessUnitId, string planningGroupId, CancellationToken cancellationToken = default);
+
+    /// <summary>
+    /// Get planning groups for a business unit
+    /// </summary>
+    /// <param name="businessUnitId">The ID of the business unit</param>
+    /// <param name="cancellationToken">Cancellation token</param>
+    /// <returns>A list of planning groups</returns>
     Task<PlanningGroupList> GetBusinessUnitPlanninggroupsAsync(string businessUnitId, CancellationToken cancellationToken = default);
+    
+    /// <summary>
+    /// Get a scheduling run for a business unit
+    /// </summary>
+    /// <param name="businessUnitId">The ID of the business unit</param>
+    /// <param name="runId">The ID of the run</param>
+    /// <param name="cancellationToken">Cancellation token</param>
+    /// <returns>The schedule run response</returns>
     Task<BuAsyncScheduleRunResponse> GetBusinessUnitSchedulingRunAsync(string businessUnitId, string runId, CancellationToken cancellationToken = default);
+
+    /// <summary>
+    /// Get scheduling run result for a business unit
+    /// </summary>
+    /// <param name="businessUnitId">The ID of the business unit</param>
+    /// <param name="runId">The ID of the run</param>
+    /// <param name="cancellationToken">Cancellation token</param>
+    /// <returns>The schedule generation result</returns>
     Task<ScheduleGenerationResult> GetBusinessUnitSchedulingRunResultAsync(string businessUnitId, string runId, CancellationToken cancellationToken = default);
+
+    /// <summary>
+    /// Get scheduling runs for a business unit
+    /// </summary>
+    /// <param name="businessUnitId">The ID of the business unit</param>
+    /// <param name="cancellationToken">Cancellation token</param>
+    /// <returns>A listing of schedule runs</returns>
     Task<BuScheduleRunListing> GetBusinessUnitSchedulingRunsAsync(string businessUnitId, CancellationToken cancellationToken = default);
+
+    /// <summary>
+    /// Get a service goal template from a business unit
+    /// </summary>
+    /// <param name="businessUnitId">The ID of the business unit</param>
+    /// <param name="serviceGoalTemplateId">The ID of the service goal template</param>
+    /// <param name="cancellationToken">Cancellation token</param>
+    /// <returns>The service goal template</returns>
     Task<ServiceGoalTemplate> GetBusinessUnitServicegoaltemplateAsync(string businessUnitId, string serviceGoalTemplateId, CancellationToken cancellationToken = default);
+
+    /// <summary>
+    /// Get service goal templates for a business unit
+    /// </summary>
+    /// <param name="businessUnitId">The ID of the business unit</param>
+    /// <param name="cancellationToken">Cancellation token</param>
+    /// <returns>A list of service goal templates</returns>
     Task<ServiceGoalTemplateList> GetBusinessUnitServicegoaltemplatesAsync(string businessUnitId, CancellationToken cancellationToken = default);
+
+    /// <summary>
+    /// Get a staffing group from a business unit
+    /// </summary>
+    /// <param name="businessUnitId">The ID of the business unit</param>
+    /// <param name="staffingGroupId">The ID of the staffing group</param>
+    /// <param name="cancellationToken">Cancellation token</param>
+    /// <returns>The staffing group response</returns>
     Task<StaffingGroupResponse> GetBusinessUnitStaffinggroupAsync(string businessUnitId, string staffingGroupId, CancellationToken cancellationToken = default);
+
+    /// <summary>
+    /// Get staffing groups for a business unit
+    /// </summary>
+    /// <param name="businessUnitId">The ID of the business unit</param>
+    /// <param name="cancellationToken">Cancellation token</param>
+    /// <returns>A listing of staffing groups</returns>
     Task<StaffingGroupListing> GetBusinessUnitStaffinggroupsAsync(string businessUnitId, CancellationToken cancellationToken = default);
+
+    /// <summary>
+    /// Get a time off limit from a business unit
+    /// </summary>
+    /// <param name="businessUnitId">The ID of the business unit</param>
+    /// <param name="timeOffLimitId">The ID of the time off limit</param>
+    /// <param name="cancellationToken">Cancellation token</param>
+    /// <returns>The time off limit response</returns>
     Task<BuTimeOffLimitResponse> GetBusinessUnitTimeofflimitAsync(string businessUnitId, string timeOffLimitId, CancellationToken cancellationToken = default);
+
+    /// <summary>
+    /// Get time off limits for a business unit
+    /// </summary>
+    /// <param name="businessUnitId">The ID of the business unit</param>
+    /// <param name="cancellationToken">Cancellation token</param>
+    /// <returns>A listing of time off limits</returns>
     Task<BuTimeOffLimitListing> GetBusinessUnitTimeofflimitsAsync(string businessUnitId, CancellationToken cancellationToken = default);
+
+    /// <summary>
+    /// Get a time off plan from a business unit
+    /// </summary>
+    /// <param name="businessUnitId">The ID of the business unit</param>
+    /// <param name="timeOffPlanId">The ID of the time off plan</param>
+    /// <param name="cancellationToken">Cancellation token</param>
+    /// <returns>The time off plan response</returns>
     Task<BuTimeOffPlanResponse> GetBusinessUnitTimeoffplanAsync(string businessUnitId, string timeOffPlanId, CancellationToken cancellationToken = default);
+
+    /// <summary>
+    /// Get time off plans for a business unit
+    /// </summary>
+    /// <param name="businessUnitId">The ID of the business unit</param>
+    /// <param name="cancellationToken">Cancellation token</param>
+    /// <returns>A listing of time off plans</returns>
     Task<BuTimeOffPlanListing> GetBusinessUnitTimeoffplansAsync(string businessUnitId, CancellationToken cancellationToken = default);
+
+    /// <summary>
+    /// Get a schedule for a specific week in a business unit
+    /// </summary>
+    /// <param name="businessUnitId">The ID of the business unit</param>
+    /// <param name="weekId">The ID of the week</param>
+    /// <param name="scheduleId">The ID of the schedule</param>
+    /// <param name="cancellationToken">Cancellation token</param>
+    /// <returns>The schedule metadata</returns>
     Task<BuScheduleMetadata> GetBusinessUnitWeekScheduleAsync(string businessUnitId, string weekId, string scheduleId, CancellationToken cancellationToken = default);
+
+    /// <summary>
+    /// Get generation results for a schedule in a business unit week
+    /// </summary>
+    /// <param name="businessUnitId">The ID of the business unit</param>
+    /// <param name="weekId">The ID of the week</param>
+    /// <param name="scheduleId">The ID of the schedule</param>
+    /// <param name="cancellationToken">Cancellation token</param>
+    /// <returns>The schedule generation result summary</returns>
     Task<BuScheduleGenerationResultSummary> GetBusinessUnitWeekScheduleGenerationresultsAsync(string businessUnitId, string weekId, string scheduleId, CancellationToken cancellationToken = default);
     Task<BuHeadcountForecast> GetBusinessUnitWeekScheduleHeadcountforecastAsync(string businessUnitId, string weekId, string scheduleId, CancellationToken cancellationToken = default);
     Task<BuScheduleHistoryResponse> GetBusinessUnitWeekScheduleHistoryAgentAsync(string businessUnitId, string weekId, string scheduleId, string agentId, CancellationToken cancellationToken = default);

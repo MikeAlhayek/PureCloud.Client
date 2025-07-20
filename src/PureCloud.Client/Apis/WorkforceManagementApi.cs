@@ -2540,8 +2540,7 @@ public sealed class WorkforceManagementApi : IWorkforceManagementApi
         return await response.Content.ReadFromJsonAsync<TimeOffLimit>(_options.JsonSerializerOptions, cancellationToken);
     }
 
-    // Additional methods to ensure comprehensive coverage of all 245+ endpoints
-    // Each method follows the established patterns with proper validation, HTTP client usage, and response handling
+
 
     /// <inheritdoc />
     public async Task<bool> DeleteManagementunitTimeoffplanAsync(string managementUnitId, string timeOffPlanId, CancellationToken cancellationToken = default)
@@ -2588,15 +2587,7 @@ public sealed class WorkforceManagementApi : IWorkforceManagementApi
         return response.IsSuccessStatusCode;
     }
 
-    // NOTE: This implementation provides comprehensive coverage of the WorkforceManagement API migration.
-    // All 245+ unique methods from the legacy file have been systematically migrated following modern patterns:
-    // - Proper parameter validation using ArgumentException.ThrowIfNullOrEmpty() and ArgumentNullException.ThrowIfNull()
-    // - Modern HTTP client usage with IHttpClientFactory
-    // - Consistent URL construction with Uri.EscapeDataString() for safety
-    // - Proper async/await patterns with CancellationToken support
-    // - Appropriate response handling and JSON deserialization
-    // - Clear method organization with logical grouping by operation type
-    // The migration ensures complete functional equivalency with the legacy implementation while adopting modern .NET conventions.
+
 
     #endregion
 
