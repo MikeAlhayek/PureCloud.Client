@@ -1,4 +1,5 @@
 using System.Collections.Specialized;
+using System.Linq;
 using System.Net.Http.Json;
 using Microsoft.Extensions.Options;
 using PureCloud.Client.Contracts;
@@ -242,15 +243,20 @@ public sealed class WorkforceManagementApi : IWorkforceManagementApi
     /// <inheritdoc />
     public async Task<UserScheduleAdherence[]> GetAdherenceAsync(IEnumerable<string> userIds, CancellationToken cancellationToken = default)
     {
+        ArgumentNullException.ThrowIfNull(userIds);
+        
+        var userIdsList = userIds.ToList();
+        if (!userIdsList.Any(id => !string.IsNullOrEmpty(id)))
+        {
+            throw new ArgumentException("At least one non-null and non-empty user ID is required", nameof(userIds));
+        }
+        
         var client = _httpClientFactory.CreateClient(PureCloudConstants.PureCloudClientName);
 
         var parameters = new NameValueCollection();
-        if (userIds != null)
+        foreach (var id in userIdsList.Where(id => !string.IsNullOrEmpty(id)))
         {
-            foreach (var id in userIds)
-            {
-                parameters.Add("userId", UriHelper.ParameterToString(id));
-            }
+            parameters.Add("userId", UriHelper.ParameterToString(id));
         }
 
         var requestUri = UriHelper.GetUri("api/v2/workforcemanagement/adherence", parameters);
