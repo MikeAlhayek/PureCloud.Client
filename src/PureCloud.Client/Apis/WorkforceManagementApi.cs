@@ -58,11 +58,8 @@ public sealed class WorkforceManagementApi : IWorkforceManagementApi
     /// <inheritdoc />
     public async Task<BusinessUnitActivityCode> PatchBusinessUnitActivityCodeAsync(string businessUnitId, string activityCodeId, UpdateActivityCodeRequest body = null, CancellationToken cancellationToken = default)
     {
-        if (string.IsNullOrEmpty(businessUnitId))
-            throw new ArgumentException("Business unit ID cannot be null or empty", nameof(businessUnitId));
-        
-        if (string.IsNullOrEmpty(activityCodeId))
-            throw new ArgumentException("Activity code ID cannot be null or empty", nameof(activityCodeId));
+        ArgumentException.ThrowIfNullOrEmpty(businessUnitId);
+        ArgumentException.ThrowIfNullOrEmpty(activityCodeId);
 
         var client = _httpClientFactory.CreateClient(PureCloudConstants.PureCloudClientName);
 
@@ -76,8 +73,7 @@ public sealed class WorkforceManagementApi : IWorkforceManagementApi
     /// <inheritdoc />
     public async Task<bool> DeleteBusinessUnitAsync(string businessUnitId, CancellationToken cancellationToken = default)
     {
-        if (string.IsNullOrEmpty(businessUnitId))
-            throw new ArgumentException("Business unit ID cannot be null or empty", nameof(businessUnitId));
+        ArgumentException.ThrowIfNullOrEmpty(businessUnitId);
 
         var client = _httpClientFactory.CreateClient(PureCloudConstants.PureCloudClientName);
 
