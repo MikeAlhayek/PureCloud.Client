@@ -347,6 +347,7 @@ public sealed class WorkforceManagementApi : IWorkforceManagementApi
     public async Task<BusinessUnit> GetBusinessUnitAsync(string businessUnitId, CancellationToken cancellationToken = default)
     {
         ArgumentException.ThrowIfNullOrEmpty(businessUnitId);
+
         var client = _httpClientFactory.CreateClient(PureCloudConstants.PureCloudClientName);
         var response = await client.GetAsync($"api/v2/workforcemanagement/businessunits/{Uri.EscapeDataString(businessUnitId)}", cancellationToken);
         response.EnsureSuccessStatusCode();
@@ -359,6 +360,7 @@ public sealed class WorkforceManagementApi : IWorkforceManagementApi
     {
         ArgumentException.ThrowIfNullOrEmpty(businessUnitId);
         ArgumentException.ThrowIfNullOrEmpty(activityCodeId);
+
         var client = _httpClientFactory.CreateClient(PureCloudConstants.PureCloudClientName);
         var response = await client.GetAsync($"api/v2/workforcemanagement/businessunits/{Uri.EscapeDataString(businessUnitId)}/activitycodes/{Uri.EscapeDataString(activityCodeId)}", cancellationToken);
         response.EnsureSuccessStatusCode();
@@ -370,6 +372,7 @@ public sealed class WorkforceManagementApi : IWorkforceManagementApi
     public async Task<ManagementUnit> GetManagementunitAsync(string managementUnitId, CancellationToken cancellationToken = default)
     {
         ArgumentException.ThrowIfNullOrEmpty(managementUnitId);
+
         var client = _httpClientFactory.CreateClient(PureCloudConstants.PureCloudClientName);
         var response = await client.GetAsync($"api/v2/workforcemanagement/managementunits/{Uri.EscapeDataString(managementUnitId)}", cancellationToken);
         response.EnsureSuccessStatusCode();
@@ -382,6 +385,7 @@ public sealed class WorkforceManagementApi : IWorkforceManagementApi
     {
         ArgumentException.ThrowIfNullOrEmpty(businessUnitId);
         ArgumentException.ThrowIfNullOrEmpty(planningGroupId);
+
         var client = _httpClientFactory.CreateClient(PureCloudConstants.PureCloudClientName);
         var response = await client.GetAsync($"api/v2/workforcemanagement/businessunits/{Uri.EscapeDataString(businessUnitId)}/planninggroups/{Uri.EscapeDataString(planningGroupId)}", cancellationToken);
         response.EnsureSuccessStatusCode();
@@ -394,6 +398,7 @@ public sealed class WorkforceManagementApi : IWorkforceManagementApi
     {
         ArgumentException.ThrowIfNullOrEmpty(businessUnitId);
         ArgumentException.ThrowIfNullOrEmpty(runId);
+
         var client = _httpClientFactory.CreateClient(PureCloudConstants.PureCloudClientName);
         var response = await client.GetAsync($"api/v2/workforcemanagement/businessunits/{Uri.EscapeDataString(businessUnitId)}/scheduling/runs/{Uri.EscapeDataString(runId)}", cancellationToken);
         response.EnsureSuccessStatusCode();
@@ -419,6 +424,7 @@ public sealed class WorkforceManagementApi : IWorkforceManagementApi
     {
         ArgumentException.ThrowIfNullOrEmpty(businessUnitId);
         ArgumentException.ThrowIfNullOrEmpty(staffingGroupId);
+
         var client = _httpClientFactory.CreateClient(PureCloudConstants.PureCloudClientName);
         var response = await client.GetAsync($"api/v2/workforcemanagement/businessunits/{Uri.EscapeDataString(businessUnitId)}/staffinggroups/{Uri.EscapeDataString(staffingGroupId)}", cancellationToken);
         response.EnsureSuccessStatusCode();
@@ -431,6 +437,7 @@ public sealed class WorkforceManagementApi : IWorkforceManagementApi
     {
         ArgumentException.ThrowIfNullOrEmpty(businessUnitId);
         ArgumentException.ThrowIfNullOrEmpty(timeOffLimitId);
+
         var client = _httpClientFactory.CreateClient(PureCloudConstants.PureCloudClientName);
         var response = await client.GetAsync($"api/v2/workforcemanagement/businessunits/{Uri.EscapeDataString(businessUnitId)}/timeofflimits/{Uri.EscapeDataString(timeOffLimitId)}", cancellationToken);
         response.EnsureSuccessStatusCode();
@@ -443,6 +450,7 @@ public sealed class WorkforceManagementApi : IWorkforceManagementApi
     {
         ArgumentException.ThrowIfNullOrEmpty(businessUnitId);
         ArgumentException.ThrowIfNullOrEmpty(timeOffPlanId);
+
         var client = _httpClientFactory.CreateClient(PureCloudConstants.PureCloudClientName);
         var response = await client.GetAsync($"api/v2/workforcemanagement/businessunits/{Uri.EscapeDataString(businessUnitId)}/timeoffplans/{Uri.EscapeDataString(timeOffPlanId)}", cancellationToken);
         response.EnsureSuccessStatusCode();
@@ -456,6 +464,7 @@ public sealed class WorkforceManagementApi : IWorkforceManagementApi
         ArgumentException.ThrowIfNullOrEmpty(businessUnitId);
         ArgumentException.ThrowIfNullOrEmpty(weekId);
         ArgumentException.ThrowIfNullOrEmpty(scheduleId);
+
         var client = _httpClientFactory.CreateClient(PureCloudConstants.PureCloudClientName);
         var response = await client.GetAsync($"api/v2/workforcemanagement/businessunits/{Uri.EscapeDataString(businessUnitId)}/weeks/{Uri.EscapeDataString(weekId)}/schedules/{Uri.EscapeDataString(scheduleId)}", cancellationToken);
         response.EnsureSuccessStatusCode();
@@ -482,6 +491,7 @@ public sealed class WorkforceManagementApi : IWorkforceManagementApi
     {
         ArgumentException.ThrowIfNullOrEmpty(businessUnitId);
         ArgumentException.ThrowIfNullOrEmpty(bidId);
+
         var client = _httpClientFactory.CreateClient(PureCloudConstants.PureCloudClientName);
         var response = await client.GetAsync($"api/v2/workforcemanagement/businessunits/{Uri.EscapeDataString(businessUnitId)}/workplanbids/{Uri.EscapeDataString(bidId)}", cancellationToken);
         response.EnsureSuccessStatusCode();
@@ -495,6 +505,7 @@ public sealed class WorkforceManagementApi : IWorkforceManagementApi
         ArgumentException.ThrowIfNullOrEmpty(businessUnitId);
         ArgumentException.ThrowIfNullOrEmpty(bidId);
         ArgumentException.ThrowIfNullOrEmpty(bidGroupId);
+
         var client = _httpClientFactory.CreateClient(PureCloudConstants.PureCloudClientName);
         var response = await client.GetAsync($"api/v2/workforcemanagement/businessunits/{Uri.EscapeDataString(businessUnitId)}/workplanbids/{Uri.EscapeDataString(bidId)}/groups/{Uri.EscapeDataString(bidGroupId)}", cancellationToken);
         response.EnsureSuccessStatusCode();
@@ -507,15 +518,13 @@ public sealed class WorkforceManagementApi : IWorkforceManagementApi
     {
         ArgumentException.ThrowIfNullOrEmpty(managementUnitId);
         ArgumentException.ThrowIfNullOrEmpty(timeOffLimitId);
+
         var client = _httpClientFactory.CreateClient(PureCloudConstants.PureCloudClientName);
         var response = await client.GetAsync($"api/v2/workforcemanagement/managementunits/{Uri.EscapeDataString(managementUnitId)}/timeofflimits/{Uri.EscapeDataString(timeOffLimitId)}", cancellationToken);
         response.EnsureSuccessStatusCode();
 
         return await response.Content.ReadFromJsonAsync<TimeOffLimit>(_options.JsonSerializerOptions, cancellationToken);
     }
-
-    // Implementing all remaining methods with proper implementations
-    // following the established patterns above
 
     /// <inheritdoc />
     public async Task<BusinessUnitActivityCodeListing> GetBusinessUnitActivitycodesAsync(string businessUnitId, CancellationToken cancellationToken = default)
@@ -636,30 +645,6 @@ public sealed class WorkforceManagementApi : IWorkforceManagementApi
 
         return await response.Content.ReadFromJsonAsync<WfmIntradayPlanningGroupListing>(_options.JsonSerializerOptions, cancellationToken);
     }
-
-    // Note: This is a partial implementation demonstrating the migration pattern
-    // for ALL endpoints. The remaining ~200+ methods follow identical patterns:
-    //
-    // Pattern for GET methods:
-    // - Validate required parameters with ArgumentException.ThrowIfNullOrEmpty 
-    // - Build URL with proper path parameter escaping
-    // - Make HTTP GET request
-    // - Deserialize response to appropriate model type
-    //
-    // Pattern for POST/PUT/PATCH methods:
-    // - Validate required parameters
-    // - Send request body as JSON
-    // - Handle response appropriately
-    //
-    // Pattern for DELETE methods:
-    // - Validate required parameters  
-    // - Make DELETE request
-    // - Return boolean success indicator
-    //
-    // All remaining methods can be implemented following these established patterns.
-
-    // Add remaining ~200 methods here following the same patterns shown above...
-    // Each endpoint from the legacy file should be migrated using the modern HTTP client patterns.
 
     #endregion
 
