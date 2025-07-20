@@ -7,18 +7,114 @@ namespace PureCloud.Client.Contracts;
 /// </summary>
 public interface IWorkforceManagementApi
 {
-    // Business Unit Operations
+    /// <summary>
+    /// Delete a business unit by ID
+    /// </summary>
+    /// <param name="businessUnitId">The ID of the business unit to delete</param>
+    /// <param name="cancellationToken">Cancellation token</param>
+    /// <returns>True if the deletion was successful</returns>
     Task<bool> DeleteBusinessUnitAsync(string businessUnitId, CancellationToken cancellationToken = default);
+
+    /// <summary>
+    /// Delete a business unit activity code
+    /// </summary>
+    /// <param name="businessUnitId">The ID of the business unit</param>
+    /// <param name="activityCodeId">The ID of the activity code to delete</param>
+    /// <param name="cancellationToken">Cancellation token</param>
+    /// <returns>True if the deletion was successful</returns>
     Task<bool> DeleteBusinessUnitActivitycodeAsync(string businessUnitId, string activityCodeId, CancellationToken cancellationToken = default);
+
+    /// <summary>
+    /// Delete a business unit planning group
+    /// </summary>
+    /// <param name="businessUnitId">The ID of the business unit</param>
+    /// <param name="planningGroupId">The ID of the planning group to delete</param>
+    /// <param name="cancellationToken">Cancellation token</param>
+    /// <returns>True if the deletion was successful</returns>
     Task<bool> DeleteBusinessUnitPlanninggroupAsync(string businessUnitId, string planningGroupId, CancellationToken cancellationToken = default);
+
+    /// <summary>
+    /// Delete a business unit scheduling run
+    /// </summary>
+    /// <param name="businessUnitId">The ID of the business unit</param>
+    /// <param name="runId">The ID of the scheduling run to delete</param>
+    /// <param name="cancellationToken">Cancellation token</param>
+    /// <returns>True if the deletion was successful</returns>
     Task<bool> DeleteBusinessUnitSchedulingRunAsync(string businessUnitId, string runId, CancellationToken cancellationToken = default);
+
+    /// <summary>
+    /// Delete a business unit service goal template
+    /// </summary>
+    /// <param name="businessUnitId">The ID of the business unit</param>
+    /// <param name="serviceGoalTemplateId">The ID of the service goal template to delete</param>
+    /// <param name="cancellationToken">Cancellation token</param>
+    /// <returns>True if the deletion was successful</returns>
     Task<bool> DeleteBusinessUnitServicegoaltemplateAsync(string businessUnitId, string serviceGoalTemplateId, CancellationToken cancellationToken = default);
+
+    /// <summary>
+    /// Delete a business unit staffing group
+    /// </summary>
+    /// <param name="businessUnitId">The ID of the business unit</param>
+    /// <param name="staffingGroupId">The ID of the staffing group to delete</param>
+    /// <param name="cancellationToken">Cancellation token</param>
+    /// <returns>True if the deletion was successful</returns>
     Task<bool> DeleteBusinessUnitStaffinggroupAsync(string businessUnitId, string staffingGroupId, CancellationToken cancellationToken = default);
+
+    /// <summary>
+    /// Delete a business unit time off limit
+    /// </summary>
+    /// <param name="businessUnitId">The ID of the business unit</param>
+    /// <param name="timeOffLimitId">The ID of the time off limit to delete</param>
+    /// <param name="cancellationToken">Cancellation token</param>
+    /// <returns>True if the deletion was successful</returns>
     Task<bool> DeleteBusinessUnitTimeofflimitAsync(string businessUnitId, string timeOffLimitId, CancellationToken cancellationToken = default);
+
+    /// <summary>
+    /// Delete a business unit time off plan
+    /// </summary>
+    /// <param name="businessUnitId">The ID of the business unit</param>
+    /// <param name="timeOffPlanId">The ID of the time off plan to delete</param>
+    /// <param name="cancellationToken">Cancellation token</param>
+    /// <returns>True if the deletion was successful</returns>
     Task<bool> DeleteBusinessUnitTimeoffplanAsync(string businessUnitId, string timeOffPlanId, CancellationToken cancellationToken = default);
+
+    /// <summary>
+    /// Delete a business unit week schedule
+    /// </summary>
+    /// <param name="businessUnitId">The ID of the business unit</param>
+    /// <param name="weekId">The first day of the week schedule to delete in yyyy-MM-dd format</param>
+    /// <param name="scheduleId">The ID of the schedule to delete</param>
+    /// <param name="cancellationToken">Cancellation token</param>
+    /// <returns>The async schedule response</returns>
     Task<BuAsyncScheduleResponse> DeleteBusinessUnitWeekScheduleAsync(string businessUnitId, string weekId, string scheduleId, CancellationToken cancellationToken = default);
+
+    /// <summary>
+    /// Delete a business unit short term forecast
+    /// </summary>
+    /// <param name="businessUnitId">The ID of the business unit</param>
+    /// <param name="weekDateId">The week date for the forecast in yyyy-MM-dd format</param>
+    /// <param name="forecastId">The ID of the forecast to delete</param>
+    /// <param name="cancellationToken">Cancellation token</param>
+    /// <returns>True if the deletion was successful</returns>
     Task<bool> DeleteBusinessUnitWeekShorttermforecastAsync(string businessUnitId, string weekDateId, string forecastId, CancellationToken cancellationToken = default);
+
+    /// <summary>
+    /// Delete a business unit work plan bid
+    /// </summary>
+    /// <param name="businessUnitId">The ID of the business unit</param>
+    /// <param name="bidId">The ID of the work plan bid to delete</param>
+    /// <param name="cancellationToken">Cancellation token</param>
+    /// <returns>True if the deletion was successful</returns>
     Task<bool> DeleteBusinessUnitWorkplanbidAsync(string businessUnitId, string bidId, CancellationToken cancellationToken = default);
+
+    /// <summary>
+    /// Delete a business unit work plan bid group
+    /// </summary>
+    /// <param name="businessUnitId">The ID of the business unit</param>
+    /// <param name="bidId">The ID of the work plan bid</param>
+    /// <param name="bidGroupId">The ID of the bid group to delete</param>
+    /// <param name="cancellationToken">Cancellation token</param>
+    /// <returns>True if the deletion was successful</returns>
     Task<bool> DeleteBusinessUnitWorkplanbidGroupAsync(string businessUnitId, string bidId, string bidGroupId, CancellationToken cancellationToken = default);
 
     Task<BusinessUnit> GetBusinessUnitAsync(string businessUnitId, CancellationToken cancellationToken = default);

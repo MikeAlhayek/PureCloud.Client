@@ -34,7 +34,7 @@ public sealed class WorkforceManagementApi : IWorkforceManagementApi
 
         var client = _httpClientFactory.CreateClient(PureCloudConstants.PureCloudClientName);
         var response = await client.DeleteAsync($"api/v2/workforcemanagement/businessunits/{Uri.EscapeDataString(businessUnitId)}", cancellationToken);
-        response.EnsureSuccessStatusCode();
+
         return response.IsSuccessStatusCode;
     }
 
@@ -46,7 +46,7 @@ public sealed class WorkforceManagementApi : IWorkforceManagementApi
 
         var client = _httpClientFactory.CreateClient(PureCloudConstants.PureCloudClientName);
         var response = await client.DeleteAsync($"api/v2/workforcemanagement/businessunits/{Uri.EscapeDataString(businessUnitId)}/activitycodes/{Uri.EscapeDataString(activityCodeId)}", cancellationToken);
-        response.EnsureSuccessStatusCode();
+
         return response.IsSuccessStatusCode;
     }
 
@@ -58,7 +58,7 @@ public sealed class WorkforceManagementApi : IWorkforceManagementApi
 
         var client = _httpClientFactory.CreateClient(PureCloudConstants.PureCloudClientName);
         var response = await client.DeleteAsync($"api/v2/workforcemanagement/businessunits/{Uri.EscapeDataString(businessUnitId)}/planninggroups/{Uri.EscapeDataString(planningGroupId)}", cancellationToken);
-        response.EnsureSuccessStatusCode();
+
         return response.IsSuccessStatusCode;
     }
 
@@ -70,7 +70,7 @@ public sealed class WorkforceManagementApi : IWorkforceManagementApi
 
         var client = _httpClientFactory.CreateClient(PureCloudConstants.PureCloudClientName);
         var response = await client.DeleteAsync($"api/v2/workforcemanagement/businessunits/{Uri.EscapeDataString(businessUnitId)}/scheduling/runs/{Uri.EscapeDataString(runId)}", cancellationToken);
-        response.EnsureSuccessStatusCode();
+
         return response.IsSuccessStatusCode;
     }
 
@@ -82,7 +82,7 @@ public sealed class WorkforceManagementApi : IWorkforceManagementApi
 
         var client = _httpClientFactory.CreateClient(PureCloudConstants.PureCloudClientName);
         var response = await client.DeleteAsync($"api/v2/workforcemanagement/businessunits/{Uri.EscapeDataString(businessUnitId)}/servicegoaltemplates/{Uri.EscapeDataString(serviceGoalTemplateId)}", cancellationToken);
-        response.EnsureSuccessStatusCode();
+
         return response.IsSuccessStatusCode;
     }
 
@@ -94,7 +94,7 @@ public sealed class WorkforceManagementApi : IWorkforceManagementApi
 
         var client = _httpClientFactory.CreateClient(PureCloudConstants.PureCloudClientName);
         var response = await client.DeleteAsync($"api/v2/workforcemanagement/businessunits/{Uri.EscapeDataString(businessUnitId)}/staffinggroups/{Uri.EscapeDataString(staffingGroupId)}", cancellationToken);
-        response.EnsureSuccessStatusCode();
+
         return response.IsSuccessStatusCode;
     }
 
@@ -106,7 +106,7 @@ public sealed class WorkforceManagementApi : IWorkforceManagementApi
 
         var client = _httpClientFactory.CreateClient(PureCloudConstants.PureCloudClientName);
         var response = await client.DeleteAsync($"api/v2/workforcemanagement/businessunits/{Uri.EscapeDataString(businessUnitId)}/timeofflimits/{Uri.EscapeDataString(timeOffLimitId)}", cancellationToken);
-        response.EnsureSuccessStatusCode();
+
         return response.IsSuccessStatusCode;
     }
 
@@ -118,7 +118,7 @@ public sealed class WorkforceManagementApi : IWorkforceManagementApi
 
         var client = _httpClientFactory.CreateClient(PureCloudConstants.PureCloudClientName);
         var response = await client.DeleteAsync($"api/v2/workforcemanagement/businessunits/{Uri.EscapeDataString(businessUnitId)}/timeoffplans/{Uri.EscapeDataString(timeOffPlanId)}", cancellationToken);
-        response.EnsureSuccessStatusCode();
+
         return response.IsSuccessStatusCode;
     }
 
@@ -144,7 +144,7 @@ public sealed class WorkforceManagementApi : IWorkforceManagementApi
 
         var client = _httpClientFactory.CreateClient(PureCloudConstants.PureCloudClientName);
         var response = await client.DeleteAsync($"api/v2/workforcemanagement/businessunits/{Uri.EscapeDataString(businessUnitId)}/weeks/{Uri.EscapeDataString(weekDateId)}/shorttermforecasts/{Uri.EscapeDataString(forecastId)}", cancellationToken);
-        response.EnsureSuccessStatusCode();
+
         return response.IsSuccessStatusCode;
     }
 
@@ -156,7 +156,7 @@ public sealed class WorkforceManagementApi : IWorkforceManagementApi
 
         var client = _httpClientFactory.CreateClient(PureCloudConstants.PureCloudClientName);
         var response = await client.DeleteAsync($"api/v2/workforcemanagement/businessunits/{Uri.EscapeDataString(businessUnitId)}/workplanbids/{Uri.EscapeDataString(bidId)}", cancellationToken);
-        response.EnsureSuccessStatusCode();
+
         return response.IsSuccessStatusCode;
     }
 
@@ -169,7 +169,7 @@ public sealed class WorkforceManagementApi : IWorkforceManagementApi
 
         var client = _httpClientFactory.CreateClient(PureCloudConstants.PureCloudClientName);
         var response = await client.DeleteAsync($"api/v2/workforcemanagement/businessunits/{Uri.EscapeDataString(businessUnitId)}/workplanbids/{Uri.EscapeDataString(bidId)}/groups/{Uri.EscapeDataString(bidGroupId)}", cancellationToken);
-        response.EnsureSuccessStatusCode();
+
         return response.IsSuccessStatusCode;
     }
 
@@ -184,7 +184,7 @@ public sealed class WorkforceManagementApi : IWorkforceManagementApi
 
         var client = _httpClientFactory.CreateClient(PureCloudConstants.PureCloudClientName);
         var response = await client.DeleteAsync($"api/v2/workforcemanagement/managementunits/{Uri.EscapeDataString(managementUnitId)}", cancellationToken);
-        response.EnsureSuccessStatusCode();
+
         return response.IsSuccessStatusCode;
     }
 
@@ -196,7 +196,7 @@ public sealed class WorkforceManagementApi : IWorkforceManagementApi
 
         var client = _httpClientFactory.CreateClient(PureCloudConstants.PureCloudClientName);
         var response = await client.DeleteAsync($"api/v2/workforcemanagement/managementunits/{Uri.EscapeDataString(managementUnitId)}/timeofflimits/{Uri.EscapeDataString(timeOffLimitId)}", cancellationToken);
-        response.EnsureSuccessStatusCode();
+
         return response.IsSuccessStatusCode;
     }
 
@@ -208,7 +208,7 @@ public sealed class WorkforceManagementApi : IWorkforceManagementApi
 
         var client = _httpClientFactory.CreateClient(PureCloudConstants.PureCloudClientName);
         var response = await client.DeleteAsync($"api/v2/workforcemanagement/managementunits/{Uri.EscapeDataString(managementUnitId)}/timeoffplans/{Uri.EscapeDataString(timeOffPlanId)}", cancellationToken);
-        response.EnsureSuccessStatusCode();
+
         return response.IsSuccessStatusCode;
     }
 
@@ -220,7 +220,7 @@ public sealed class WorkforceManagementApi : IWorkforceManagementApi
 
         var client = _httpClientFactory.CreateClient(PureCloudConstants.PureCloudClientName);
         var response = await client.DeleteAsync($"api/v2/workforcemanagement/managementunits/{Uri.EscapeDataString(managementUnitId)}/workplans/{Uri.EscapeDataString(workPlanId)}", cancellationToken);
-        response.EnsureSuccessStatusCode();
+
         return response.IsSuccessStatusCode;
     }
 
@@ -232,7 +232,7 @@ public sealed class WorkforceManagementApi : IWorkforceManagementApi
 
         var client = _httpClientFactory.CreateClient(PureCloudConstants.PureCloudClientName);
         var response = await client.DeleteAsync($"api/v2/workforcemanagement/managementunits/{Uri.EscapeDataString(managementUnitId)}/workplanrotations/{Uri.EscapeDataString(workPlanRotationId)}", cancellationToken);
-        response.EnsureSuccessStatusCode();
+
         return response.IsSuccessStatusCode;
     }
 
@@ -244,24 +244,23 @@ public sealed class WorkforceManagementApi : IWorkforceManagementApi
     public async Task<UserScheduleAdherence[]> GetAdherenceAsync(IEnumerable<string> userIds, CancellationToken cancellationToken = default)
     {
         ArgumentNullException.ThrowIfNull(userIds);
-        
-        var userIdsList = userIds.ToList();
-        if (!userIdsList.Any(id => !string.IsNullOrEmpty(id)))
-        {
-            throw new ArgumentException("At least one non-null and non-empty user ID is required", nameof(userIds));
-        }
-        
-        var client = _httpClientFactory.CreateClient(PureCloudConstants.PureCloudClientName);
 
+        var client = _httpClientFactory.CreateClient(PureCloudConstants.PureCloudClientName);
         var parameters = new NameValueCollection();
-        foreach (var id in userIdsList.Where(id => !string.IsNullOrEmpty(id)))
+        foreach (var id in userIds.Where(id => !string.IsNullOrEmpty(id)))
         {
             parameters.Add("userId", UriHelper.ParameterToString(id));
+        }
+
+        if (parameters.Count == 0)
+        {
+            throw new ArgumentException("At least one non-null and non-empty user ID is required", nameof(userIds));
         }
 
         var requestUri = UriHelper.GetUri("api/v2/workforcemanagement/adherence", parameters);
         var response = await client.GetAsync(requestUri, cancellationToken);
         response.EnsureSuccessStatusCode();
+
         return await response.Content.ReadFromJsonAsync<UserScheduleAdherence[]>(_options.JsonSerializerOptions, cancellationToken);
     }
 
@@ -317,7 +316,7 @@ public sealed class WorkforceManagementApi : IWorkforceManagementApi
     {
         var client = _httpClientFactory.CreateClient(PureCloudConstants.PureCloudClientName);
         var response = await client.DeleteAsync("api/v2/workforcemanagement/calendar/url/ics", cancellationToken);
-        response.EnsureSuccessStatusCode();
+
         return response.IsSuccessStatusCode;
     }
 
@@ -410,6 +409,7 @@ public sealed class WorkforceManagementApi : IWorkforceManagementApi
     {
         ArgumentException.ThrowIfNullOrEmpty(businessUnitId);
         ArgumentException.ThrowIfNullOrEmpty(serviceGoalTemplateId);
+
         var client = _httpClientFactory.CreateClient(PureCloudConstants.PureCloudClientName);
         var response = await client.GetAsync($"api/v2/workforcemanagement/businessunits/{Uri.EscapeDataString(businessUnitId)}/servicegoaltemplates/{Uri.EscapeDataString(serviceGoalTemplateId)}", cancellationToken);
         response.EnsureSuccessStatusCode();
