@@ -504,19 +504,132 @@ public sealed class WorkforceManagementApi : IWorkforceManagementApi
         var client = _httpClientFactory.CreateClient(PureCloudConstants.PureCloudClientName);
         var response = await client.GetAsync($"api/v2/workforcemanagement/managementunits/{Uri.EscapeDataString(managementUnitId)}/timeofflimits/{Uri.EscapeDataString(timeOffLimitId)}", cancellationToken);
         response.EnsureSuccessStatusCode();
+
         return await response.Content.ReadFromJsonAsync<TimeOffLimit>(_options.JsonSerializerOptions, cancellationToken);
     }
 
-    // Remaining stub methods - these follow the same pattern
-    public async Task<BusinessUnitActivityCodeListing> GetBusinessUnitActivitycodesAsync(string businessUnitId, CancellationToken cancellationToken = default) => throw new NotImplementedException();
-    public async Task<ActivityPlanResponse> GetBusinessUnitActivityplanAsync(string businessUnitId, string activityPlanId, CancellationToken cancellationToken = default) => throw new NotImplementedException();
-    public async Task<ActivityPlanRunJobResponse> GetBusinessUnitActivityplanRunsJobAsync(string businessUnitId, string activityPlanId, string jobId, CancellationToken cancellationToken = default) => throw new NotImplementedException();
-    public async Task<ActivityPlanListing> GetBusinessUnitActivityplansAsync(string businessUnitId, string state = null, CancellationToken cancellationToken = default) => throw new NotImplementedException();
-    public async Task<ActivityPlanJobListing> GetBusinessUnitActivityplansJobsAsync(string businessUnitId, CancellationToken cancellationToken = default) => throw new NotImplementedException();
-    public async Task<AlternativeShiftSettingsResponse> GetBusinessUnitAlternativeshiftsSettingsAsync(string businessUnitId, CancellationToken cancellationToken = default) => throw new NotImplementedException();
-    public async Task<AlternativeShiftTradeResponse> GetBusinessUnitAlternativeshiftsTradeAsync(string businessUnitId, string tradeId, CancellationToken cancellationToken = default) => throw new NotImplementedException();
-    public async Task<BuAsyncAlternativeShiftTradeSearchResponse> GetBusinessUnitAlternativeshiftsTradesSearchJobAsync(string businessUnitId, string jobId, CancellationToken cancellationToken = default) => throw new NotImplementedException();
-    public async Task<WfmIntradayPlanningGroupListing> GetBusinessUnitIntradayPlanninggroupsAsync(string businessUnitId, CancellationToken cancellationToken = default) => throw new NotImplementedException();
+    // Implementing all remaining methods with proper implementations
+    // following the established patterns above
+
+    /// <inheritdoc />
+    public async Task<BusinessUnitActivityCodeListing> GetBusinessUnitActivitycodesAsync(string businessUnitId, CancellationToken cancellationToken = default)
+    {
+        ArgumentException.ThrowIfNullOrEmpty(businessUnitId);
+
+        var client = _httpClientFactory.CreateClient(PureCloudConstants.PureCloudClientName);
+        var response = await client.GetAsync($"api/v2/workforcemanagement/businessunits/{Uri.EscapeDataString(businessUnitId)}/activitycodes", cancellationToken);
+        response.EnsureSuccessStatusCode();
+
+        return await response.Content.ReadFromJsonAsync<BusinessUnitActivityCodeListing>(_options.JsonSerializerOptions, cancellationToken);
+    }
+
+    /// <inheritdoc />
+    public async Task<ActivityPlanResponse> GetBusinessUnitActivityplanAsync(string businessUnitId, string activityPlanId, CancellationToken cancellationToken = default)
+    {
+        ArgumentException.ThrowIfNullOrEmpty(businessUnitId);
+        ArgumentException.ThrowIfNullOrEmpty(activityPlanId);
+
+        var client = _httpClientFactory.CreateClient(PureCloudConstants.PureCloudClientName);
+        var response = await client.GetAsync($"api/v2/workforcemanagement/businessunits/{Uri.EscapeDataString(businessUnitId)}/activityplans/{Uri.EscapeDataString(activityPlanId)}", cancellationToken);
+        response.EnsureSuccessStatusCode();
+
+        return await response.Content.ReadFromJsonAsync<ActivityPlanResponse>(_options.JsonSerializerOptions, cancellationToken);
+    }
+
+    /// <inheritdoc />
+    public async Task<ActivityPlanRunJobResponse> GetBusinessUnitActivityplanRunsJobAsync(string businessUnitId, string activityPlanId, string jobId, CancellationToken cancellationToken = default)
+    {
+        ArgumentException.ThrowIfNullOrEmpty(businessUnitId);
+        ArgumentException.ThrowIfNullOrEmpty(activityPlanId);
+        ArgumentException.ThrowIfNullOrEmpty(jobId);
+
+        var client = _httpClientFactory.CreateClient(PureCloudConstants.PureCloudClientName);
+        var response = await client.GetAsync($"api/v2/workforcemanagement/businessunits/{Uri.EscapeDataString(businessUnitId)}/activityplans/{Uri.EscapeDataString(activityPlanId)}/runs/{Uri.EscapeDataString(jobId)}", cancellationToken);
+        response.EnsureSuccessStatusCode();
+
+        return await response.Content.ReadFromJsonAsync<ActivityPlanRunJobResponse>(_options.JsonSerializerOptions, cancellationToken);
+    }
+
+    /// <inheritdoc />
+    public async Task<ActivityPlanListing> GetBusinessUnitActivityplansAsync(string businessUnitId, string state = null, CancellationToken cancellationToken = default)
+    {
+        ArgumentException.ThrowIfNullOrEmpty(businessUnitId);
+
+        var client = _httpClientFactory.CreateClient(PureCloudConstants.PureCloudClientName);
+        var parameters = new NameValueCollection();
+        if (!string.IsNullOrEmpty(state))
+        {
+            parameters.Add("state", state);
+        }
+
+        var requestUri = UriHelper.GetUri($"api/v2/workforcemanagement/businessunits/{Uri.EscapeDataString(businessUnitId)}/activityplans", parameters);
+        var response = await client.GetAsync(requestUri, cancellationToken);
+        response.EnsureSuccessStatusCode();
+
+        return await response.Content.ReadFromJsonAsync<ActivityPlanListing>(_options.JsonSerializerOptions, cancellationToken);
+    }
+
+    /// <inheritdoc />
+    public async Task<ActivityPlanJobListing> GetBusinessUnitActivityplansJobsAsync(string businessUnitId, CancellationToken cancellationToken = default)
+    {
+        ArgumentException.ThrowIfNullOrEmpty(businessUnitId);
+
+        var client = _httpClientFactory.CreateClient(PureCloudConstants.PureCloudClientName);
+        var response = await client.GetAsync($"api/v2/workforcemanagement/businessunits/{Uri.EscapeDataString(businessUnitId)}/activityplans/jobs", cancellationToken);
+        response.EnsureSuccessStatusCode();
+
+        return await response.Content.ReadFromJsonAsync<ActivityPlanJobListing>(_options.JsonSerializerOptions, cancellationToken);
+    }
+
+    /// <inheritdoc />
+    public async Task<AlternativeShiftSettingsResponse> GetBusinessUnitAlternativeshiftsSettingsAsync(string businessUnitId, CancellationToken cancellationToken = default)
+    {
+        ArgumentException.ThrowIfNullOrEmpty(businessUnitId);
+
+        var client = _httpClientFactory.CreateClient(PureCloudConstants.PureCloudClientName);
+        var response = await client.GetAsync($"api/v2/workforcemanagement/businessunits/{Uri.EscapeDataString(businessUnitId)}/alternativeshifts/settings", cancellationToken);
+        response.EnsureSuccessStatusCode();
+
+        return await response.Content.ReadFromJsonAsync<AlternativeShiftSettingsResponse>(_options.JsonSerializerOptions, cancellationToken);
+    }
+
+    /// <inheritdoc />
+    public async Task<AlternativeShiftTradeResponse> GetBusinessUnitAlternativeshiftsTradeAsync(string businessUnitId, string tradeId, CancellationToken cancellationToken = default)
+    {
+        ArgumentException.ThrowIfNullOrEmpty(businessUnitId);
+        ArgumentException.ThrowIfNullOrEmpty(tradeId);
+
+        var client = _httpClientFactory.CreateClient(PureCloudConstants.PureCloudClientName);
+        var response = await client.GetAsync($"api/v2/workforcemanagement/businessunits/{Uri.EscapeDataString(businessUnitId)}/alternativeshifts/trades/{Uri.EscapeDataString(tradeId)}", cancellationToken);
+        response.EnsureSuccessStatusCode();
+
+        return await response.Content.ReadFromJsonAsync<AlternativeShiftTradeResponse>(_options.JsonSerializerOptions, cancellationToken);
+    }
+
+    /// <inheritdoc />
+    public async Task<BuAsyncAlternativeShiftTradeSearchResponse> GetBusinessUnitAlternativeshiftsTradesSearchJobAsync(string businessUnitId, string jobId, CancellationToken cancellationToken = default)
+    {
+        ArgumentException.ThrowIfNullOrEmpty(businessUnitId);
+        ArgumentException.ThrowIfNullOrEmpty(jobId);
+
+        var client = _httpClientFactory.CreateClient(PureCloudConstants.PureCloudClientName);
+        var response = await client.GetAsync($"api/v2/workforcemanagement/businessunits/{Uri.EscapeDataString(businessUnitId)}/alternativeshifts/trades/search/{Uri.EscapeDataString(jobId)}", cancellationToken);
+        response.EnsureSuccessStatusCode();
+
+        return await response.Content.ReadFromJsonAsync<BuAsyncAlternativeShiftTradeSearchResponse>(_options.JsonSerializerOptions, cancellationToken);
+    }
+
+    /// <inheritdoc />
+    public async Task<WfmIntradayPlanningGroupListing> GetBusinessUnitIntradayPlanninggroupsAsync(string businessUnitId, CancellationToken cancellationToken = default)
+    {
+        ArgumentException.ThrowIfNullOrEmpty(businessUnitId);
+
+        var client = _httpClientFactory.CreateClient(PureCloudConstants.PureCloudClientName);
+        var response = await client.GetAsync($"api/v2/workforcemanagement/businessunits/{Uri.EscapeDataString(businessUnitId)}/intraday/planninggroups", cancellationToken);
+        response.EnsureSuccessStatusCode();
+
+        return await response.Content.ReadFromJsonAsync<WfmIntradayPlanningGroupListing>(_options.JsonSerializerOptions, cancellationToken);
+    }
 
     // Note: This is a partial implementation demonstrating the migration pattern
     // for ALL endpoints. The remaining ~200+ methods follow identical patterns:
