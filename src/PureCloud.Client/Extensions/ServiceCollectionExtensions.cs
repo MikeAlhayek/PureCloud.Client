@@ -127,6 +127,8 @@ public static class ServiceCollectionExtensions
 
         services.TryAddScoped<IInfrastructureAsCodeApi, InfrastructureAsCodeApi>();
 
+        services.TryAddScoped<IWidgetsApi, WidgetsApi>();
+
         return services;
     }
 

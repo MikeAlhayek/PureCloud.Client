@@ -190,7 +190,7 @@ public static class PureCloudConstants
         {"v2.wem.learning.assignments.modules.{0}", typeof(LearningAssignmentRuleRunTopicLearningAssignmentRuleRunNotification)},
         {"v2.workflows.{0}.conversations.inbound.typing.event", typeof(V2ConversationMessageTypingEventForWorkflowTopicMessageData)},
         {"v2.workforcemanagement.agents", typeof(WfmMoveAgentsCompleteTopicWfmMoveAgentsComplete)},
-        {"v2.workforcemanagement.agents.{0}.adherence.explanations", typeof(WfmAgentAdherenceExplanationChangedAgentTopicAdherenceExplanationChangedNotification)},
+        /*{"v2.workforcemanagement.agents.{0}.adherence.explanations", typeof(WfmAgentAdherenceExplanationChangedAgentTopicAdherenceExplanationChangedNotification)},*/
         {"v2.workforcemanagement.businessunits.{0}.activityplans.jobs", typeof(WfmActivityPlanJobCompleteTopicActivityPlanOccurrenceDeletionJobCompleteNotification)},
         {"v2.workforcemanagement.businessunits.{0}.activityplans.runs.jobs", typeof(WfmActivityPlanRunJobCompleteTopicActivityPlanRunJobCompleteNotification)},
         {"v2.workforcemanagement.businessunits.{0}.adherence.explanations", typeof(WfmAgentAdherenceExplanationChangedBusinessUnitTopicAdherenceExplanationChangedNotification)},
