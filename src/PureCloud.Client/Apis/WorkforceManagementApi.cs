@@ -2140,7 +2140,6 @@ public sealed class WorkforceManagementApi : IWorkforceManagementApi
         return await response.Content.ReadFromJsonAsync<TimeOffIntegrationStatusResponseListing>(_options.JsonSerializerOptions, cancellationToken);
     }
 
-    // PATCH Operations for Updates
     /// <inheritdoc />
     public async Task<BusinessUnit> PatchBusinessUnitAsync(string businessUnitId, UpdateBusinessUnitRequest body, CancellationToken cancellationToken = default)
     {
@@ -2498,7 +2497,6 @@ public sealed class WorkforceManagementApi : IWorkforceManagementApi
         return await response.Content.ReadFromJsonAsync<AgentWorkPlanBiddingPreferenceResponse>(_options.JsonSerializerOptions, cancellationToken);
     }
 
-    // PUT Operations for Updates
     /// <inheritdoc />
     public async Task<HrisIntegrationResponse> UpdateAgentIntegrationsHrisAsync(string agentId, AgentIntegrationsRequest body, CancellationToken cancellationToken = default)
     {
@@ -2539,8 +2537,6 @@ public sealed class WorkforceManagementApi : IWorkforceManagementApi
 
         return await response.Content.ReadFromJsonAsync<TimeOffLimit>(_options.JsonSerializerOptions, cancellationToken);
     }
-
-
 
     /// <inheritdoc />
     public async Task<bool> DeleteManagementunitTimeoffplanAsync(string managementUnitId, string timeOffPlanId, CancellationToken cancellationToken = default)
