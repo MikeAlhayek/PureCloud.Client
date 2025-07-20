@@ -7,10 +7,10 @@ public interface IWorkforceManagementApi
     /// <summary>
     /// Get a list of UserScheduleAdherence records for the requested users
     /// </summary>
-    /// <param name="userId">User Id(s) for which to fetch current schedule adherence information. Min 1, Max of 100 userIds per request</param>
+    /// <param name="userIds">User Id(s) for which to fetch current schedule adherence information. Min 1, Max of 100 userIds per request</param>
     /// <param name="cancellationToken">Cancellation token</param>
-    /// <returns>List of UserScheduleAdherence records</returns>
-    Task<List<UserScheduleAdherence>> GetAdherenceAsync(List<string> userId, CancellationToken cancellationToken = default);
+    /// <returns>Array of UserScheduleAdherence records</returns>
+    Task<UserScheduleAdherence[]> GetAdherenceAsync(IEnumerable<string> userIds, CancellationToken cancellationToken = default);
 
     /// <summary>
     /// Delete business unit
