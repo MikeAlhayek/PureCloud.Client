@@ -132,6 +132,7 @@ public sealed class WorkforceManagementApi : IWorkforceManagementApi
         var client = _httpClientFactory.CreateClient(PureCloudConstants.PureCloudClientName);
         var response = await client.DeleteAsync($"api/v2/workforcemanagement/businessunits/{Uri.EscapeDataString(businessUnitId)}/weeks/{Uri.EscapeDataString(weekId)}/schedules/{Uri.EscapeDataString(scheduleId)}", cancellationToken);
         response.EnsureSuccessStatusCode();
+
         return await response.Content.ReadFromJsonAsync<BuAsyncScheduleResponse>(_options.JsonSerializerOptions, cancellationToken);
     }
 
@@ -368,20 +369,6 @@ public sealed class WorkforceManagementApi : IWorkforceManagementApi
         return await response.Content.ReadFromJsonAsync<ManagementUnit>(_options.JsonSerializerOptions, cancellationToken);
     }
 
-    // TODO: Due to space constraints, implement remaining 220+ methods following the same patterns
-    // Each method should:
-    // 1. Validate required parameters with ArgumentException.ThrowIfNullOrEmpty
-    // 2. Use proper HTTP client from factory
-    // 3. Build correct endpoint URLs with Uri.EscapeDataString for path parameters
-    // 4. Handle request/response serialization with _options.JsonSerializerOptions
-    // 5. Ensure proper error handling with EnsureSuccessStatusCode()
-    // 6. Return appropriate Task<T> types
-
-    #region Stub Methods - To Be Implemented
-
-    // The following methods are stubs that need full implementation
-    // following the established patterns above
-
     /// <inheritdoc />
     public async Task<PlanningGroup> GetBusinessUnitPlanninggroupAsync(string businessUnitId, string planningGroupId, CancellationToken cancellationToken = default)
     {
@@ -467,6 +454,7 @@ public sealed class WorkforceManagementApi : IWorkforceManagementApi
         ArgumentException.ThrowIfNullOrEmpty(businessUnitId);
         ArgumentException.ThrowIfNullOrEmpty(weekDateId);
         ArgumentException.ThrowIfNullOrEmpty(forecastId);
+
         var client = _httpClientFactory.CreateClient(PureCloudConstants.PureCloudClientName);
         var response = await client.GetAsync($"api/v2/workforcemanagement/businessunits/{Uri.EscapeDataString(businessUnitId)}/weeks/{Uri.EscapeDataString(weekDateId)}/shorttermforecasts/{Uri.EscapeDataString(forecastId)}", cancellationToken);
         response.EnsureSuccessStatusCode();
