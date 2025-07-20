@@ -21,12 +21,7 @@ public class WorkforceManagementApi : IWorkforceManagementApi
         _options = options.Value;
     }
 
-    /// <summary>
-    /// Get a list of UserScheduleAdherence records for the requested users
-    /// </summary>
-    /// <param name="userIds">User Id(s) for which to fetch current schedule adherence information. Min 1, Max of 100 userIds per request</param>
-    /// <param name="cancellationToken">Cancellation token</param>
-    /// <returns>Array of UserScheduleAdherence records</returns>
+    /// <inheritdoc />
     public async Task<UserScheduleAdherence[]> GetAdherenceAsync(IEnumerable<string> userIds, CancellationToken cancellationToken = default)
     {
         var client = _httpClientFactory.CreateClient(PureCloudConstants.PureCloudClientName);
@@ -49,12 +44,7 @@ public class WorkforceManagementApi : IWorkforceManagementApi
         return result?.ToArray() ?? Array.Empty<UserScheduleAdherence>();
     }
 
-    /// <summary>
-    /// Create adherence explanations query
-    /// </summary>
-    /// <param name="body">The query request body</param>
-    /// <param name="cancellationToken">Cancellation token</param>
-    /// <returns>Query adherence explanations response</returns>
+    /// <inheritdoc />
     public async Task<QueryAdherenceExplanationsResponse> CreateAdherenceExplanationsQueryAsync(AgentQueryAdherenceExplanationsRequest body, CancellationToken cancellationToken = default)
     {
         var client = _httpClientFactory.CreateClient(PureCloudConstants.PureCloudClientName);
@@ -66,14 +56,7 @@ public class WorkforceManagementApi : IWorkforceManagementApi
         return await response.Content.ReadFromJsonAsync<QueryAdherenceExplanationsResponse>(_options.JsonSerializerOptions, cancellationToken);
     }
 
-    /// <summary>
-    /// Update business unit activity code
-    /// </summary>
-    /// <param name="businessUnitId">The ID of the business unit</param>
-    /// <param name="activityCodeId">The ID of the activity code</param>
-    /// <param name="body">The updated activity code</param>
-    /// <param name="cancellationToken">Cancellation token</param>
-    /// <returns>Updated business unit activity code</returns>
+    /// <inheritdoc />
     public async Task<BusinessUnitActivityCode> PatchBusinessUnitActivityCodeAsync(string businessUnitId, string activityCodeId, UpdateActivityCodeRequest body = null, CancellationToken cancellationToken = default)
     {
         var client = _httpClientFactory.CreateClient(PureCloudConstants.PureCloudClientName);
@@ -85,12 +68,7 @@ public class WorkforceManagementApi : IWorkforceManagementApi
         return await response.Content.ReadFromJsonAsync<BusinessUnitActivityCode>(_options.JsonSerializerOptions, cancellationToken);
     }
 
-    /// <summary>
-    /// Delete business unit
-    /// </summary>
-    /// <param name="businessUnitId">The ID of the business unit, or 'mine' for the business unit of the logged-in user</param>
-    /// <param name="cancellationToken">Cancellation token</param>
-    /// <returns>True if successful</returns>
+    /// <inheritdoc />
     public async Task<bool> DeleteBusinessUnitAsync(string businessUnitId, CancellationToken cancellationToken = default)
     {
         var client = _httpClientFactory.CreateClient(PureCloudConstants.PureCloudClientName);
