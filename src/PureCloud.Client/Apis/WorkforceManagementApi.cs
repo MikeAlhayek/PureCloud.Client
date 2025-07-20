@@ -8,7 +8,7 @@ using PureCloud.Client.Models;
 
 namespace PureCloud.Client.Apis;
 
-public class WorkforceManagementApi : IWorkforceManagementApi
+public sealed class WorkforceManagementApi : IWorkforceManagementApi
 {
     private readonly IHttpClientFactory _httpClientFactory;
     private readonly PureCloudJsonSerializerOptions _options;
@@ -40,8 +40,7 @@ public class WorkforceManagementApi : IWorkforceManagementApi
 
         response.EnsureSuccessStatusCode();
 
-        var result = await response.Content.ReadFromJsonAsync<List<UserScheduleAdherence>>(_options.JsonSerializerOptions, cancellationToken);
-        return result?.ToArray() ?? Array.Empty<UserScheduleAdherence>();
+        return await response.Content.ReadFromJsonAsync<UserScheduleAdherence[]>(_options.JsonSerializerOptions, cancellationToken);
     }
 
     /// <inheritdoc />
@@ -59,9 +58,15 @@ public class WorkforceManagementApi : IWorkforceManagementApi
     /// <inheritdoc />
     public async Task<BusinessUnitActivityCode> PatchBusinessUnitActivityCodeAsync(string businessUnitId, string activityCodeId, UpdateActivityCodeRequest body = null, CancellationToken cancellationToken = default)
     {
+        if (string.IsNullOrEmpty(businessUnitId))
+            throw new ArgumentException("Business unit ID cannot be null or empty", nameof(businessUnitId));
+        
+        if (string.IsNullOrEmpty(activityCodeId))
+            throw new ArgumentException("Activity code ID cannot be null or empty", nameof(activityCodeId));
+
         var client = _httpClientFactory.CreateClient(PureCloudConstants.PureCloudClientName);
 
-        var response = await client.PatchAsJsonAsync($"api/v2/workforcemanagement/businessunits/{businessUnitId}/activitycodes/{activityCodeId}", body ?? new UpdateActivityCodeRequest(), _options.JsonSerializerOptions, cancellationToken);
+        var response = await client.PatchAsJsonAsync($"api/v2/workforcemanagement/businessunits/{Uri.EscapeDataString(businessUnitId)}/activitycodes/{Uri.EscapeDataString(activityCodeId)}", body ?? new UpdateActivityCodeRequest(), _options.JsonSerializerOptions, cancellationToken);
 
         response.EnsureSuccessStatusCode();
 
@@ -71,9 +76,12 @@ public class WorkforceManagementApi : IWorkforceManagementApi
     /// <inheritdoc />
     public async Task<bool> DeleteBusinessUnitAsync(string businessUnitId, CancellationToken cancellationToken = default)
     {
+        if (string.IsNullOrEmpty(businessUnitId))
+            throw new ArgumentException("Business unit ID cannot be null or empty", nameof(businessUnitId));
+
         var client = _httpClientFactory.CreateClient(PureCloudConstants.PureCloudClientName);
 
-        var response = await client.DeleteAsync($"api/v2/workforcemanagement/businessunits/{businessUnitId}", cancellationToken);
+        var response = await client.DeleteAsync($"api/v2/workforcemanagement/businessunits/{Uri.EscapeDataString(businessUnitId)}", cancellationToken);
 
         response.EnsureSuccessStatusCode();
 
