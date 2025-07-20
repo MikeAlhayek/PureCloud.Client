@@ -519,7 +519,6 @@
     <Compile Include="Models\CoachingSlot.DifferenceRating.cs" />
     <Compile Include="Models\CoachingSlotsRequest.cs" />
     <Compile Include="Models\CoachingSlotsResponse.cs" />
-    <Compile Include="Models\CobrowseSession.cs" />
     <Compile Include="Models\CobrowsesessionDisconnectType.cs" />
     <Compile Include="Models\CobrowsesessionInitialState.cs" />
     <Compile Include="Models\CobrowsesessionState.cs" />
@@ -3839,7 +3838,7 @@
     <Compile Include="Models\WfmAdherenceExplanationJobCompleteTopicErrorBody.cs" />
     <Compile Include="Models\WfmAdherenceExplanationJobCompleteTopicManagementUnit.cs" />
     <Compile Include="Models\WfmAdherenceExplanationJobCompleteTopicUserReference.cs" />
-    <!--<Compile Include="Models\WfmAgentAdherenceExplanationChangedAgentTopicAdherenceExplanationChangedNotification.cs" />-->
+    <Compile Include="Models\WfmAgentAdherenceExplanationChangedAgentTopicAdherenceExplanationChangedNotification.cs" />
     <!--<Compile Include="Models\WfmAgentAdherenceExplanationChangedAgentTopicAdherenceExplanationChangedNotification.Type.cs" />-->
     <Compile Include="Models\WfmAgentAdherenceExplanationChangedAgentTopicAdherenceExplanationChangedNotification.Status.cs" />
     <Compile Include="Models\WfmAgentAdherenceExplanationChangedAgentTopicBusinessUnit.cs" />
@@ -4073,8 +4072,6 @@
     <Compile Include="Models\WidgetClientConfig.cs" />
     <Compile Include="Models\WidgetClientConfigV1.cs" />
     <Compile Include="Models\WidgetClientConfigV1Http.cs" />
-    <Compile Include="Models\WidgetClientConfigV2.cs" />
-    <Compile Include="Models\WidgetClientConfigThirdParty.cs" />
     <Compile Include="Models\WidgetDeployment.cs" />
     <Compile Include="Models\WidgetDeploymentEntityListing.cs" />
     <Compile Include="Models\WorkdayMetric.cs" />

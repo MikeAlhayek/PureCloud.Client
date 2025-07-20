@@ -230,7 +230,7 @@ public sealed class Participant
     /// <summary>
     /// Gets or Sets CobrowseSessions
     /// </summary>
-    public IEnumerable<CobrowseSession> CobrowseSessions { get; set; }
+    // public IEnumerable<CobrowseSession> CobrowseSessions { get; set; }
 
     /// <summary>
     /// Gets or Sets Emails

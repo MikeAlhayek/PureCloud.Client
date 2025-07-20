@@ -8,7 +8,7 @@ public sealed class WfmAgentAdherenceExplanationChangedAgentTopicAdherenceExplan
     /// <summary>
     /// Gets or Sets Type
     /// </summary>
-    public WfmAgentAdherenceExplanationChangedAgentTopicAdherenceExplanationChangedNotificationTypeEnum? Type { get; set; }
+    // public WfmAgentAdherenceExplanationChangedAgentTopicAdherenceExplanationChangedNotificationTypeEnum? Type { get; set; }
 
     /// <summary>
     /// Gets or Sets Status

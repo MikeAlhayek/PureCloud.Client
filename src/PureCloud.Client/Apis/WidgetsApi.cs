@@ -6,7 +6,7 @@ using PureCloud.Client.Models;
 
 namespace PureCloud.Client.Apis;
 
-public class WidgetsApi : IWidgetsApi
+public sealed class WidgetsApi : IWidgetsApi
 {
     private readonly IHttpClientFactory _httpClientFactory;
     private readonly PureCloudJsonSerializerOptions _options;
@@ -19,14 +19,7 @@ public class WidgetsApi : IWidgetsApi
         _options = options.Value;
     }
 
-    /// <summary>
-    /// List Widget deployments
-    /// </summary>
-    /// <remarks>
-    /// This endpoint is deprecated. Please see the article https://help.mypurecloud.com/articles/deprecation-removal-of-acd-web-chat-version-2/. 
-    /// </remarks>
-    /// <param name="cancellationToken">Cancellation token</param>
-    /// <returns>WidgetDeploymentEntityListing</returns>
+    /// <inheritdoc />
     [Obsolete]
     public async Task<WidgetDeploymentEntityListing> GetWidgetDeploymentsAsync(CancellationToken cancellationToken = default)
     {
@@ -39,15 +32,7 @@ public class WidgetsApi : IWidgetsApi
         return await response.Content.ReadFromJsonAsync<WidgetDeploymentEntityListing>(_options.JsonSerializerOptions, cancellationToken);
     }
 
-    /// <summary>
-    /// Get a Widget deployment
-    /// </summary>
-    /// <remarks>
-    /// This endpoint is deprecated. Please see the article https://help.mypurecloud.com/articles/deprecation-removal-of-acd-web-chat-version-2/. 
-    /// </remarks>
-    /// <param name="deploymentId">Widget Config Id</param>
-    /// <param name="cancellationToken">Cancellation token</param>
-    /// <returns>WidgetDeployment</returns>
+    /// <inheritdoc />
     [Obsolete]
     public async Task<WidgetDeployment> GetWidgetDeploymentAsync(string deploymentId, CancellationToken cancellationToken = default)
     {
@@ -60,15 +45,7 @@ public class WidgetsApi : IWidgetsApi
         return await response.Content.ReadFromJsonAsync<WidgetDeployment>(_options.JsonSerializerOptions, cancellationToken);
     }
 
-    /// <summary>
-    /// Create Widget deployment
-    /// </summary>
-    /// <remarks>
-    /// This endpoint is deprecated. Please see the article https://help.mypurecloud.com/articles/deprecation-removal-of-acd-web-chat-version-2/. 
-    /// </remarks>
-    /// <param name="deployment">Deployment</param>
-    /// <param name="cancellationToken">Cancellation token</param>
-    /// <returns>WidgetDeployment</returns>
+    /// <inheritdoc />
     [Obsolete]
     public async Task<WidgetDeployment> CreateWidgetDeploymentAsync(WidgetDeployment deployment, CancellationToken cancellationToken = default)
     {
@@ -81,16 +58,7 @@ public class WidgetsApi : IWidgetsApi
         return await response.Content.ReadFromJsonAsync<WidgetDeployment>(_options.JsonSerializerOptions, cancellationToken);
     }
 
-    /// <summary>
-    /// Update a Widget deployment
-    /// </summary>
-    /// <remarks>
-    /// This endpoint is deprecated. Please see the article https://help.mypurecloud.com/articles/deprecation-removal-of-acd-web-chat-version-2/. 
-    /// </remarks>
-    /// <param name="deploymentId">Widget Config Id</param>
-    /// <param name="deployment">Deployment</param>
-    /// <param name="cancellationToken">Cancellation token</param>
-    /// <returns>WidgetDeployment</returns>
+    /// <inheritdoc />
     [Obsolete]
     public async Task<WidgetDeployment> UpdateWidgetDeploymentAsync(string deploymentId, WidgetDeployment deployment, CancellationToken cancellationToken = default)
     {
@@ -103,15 +71,7 @@ public class WidgetsApi : IWidgetsApi
         return await response.Content.ReadFromJsonAsync<WidgetDeployment>(_options.JsonSerializerOptions, cancellationToken);
     }
 
-    /// <summary>
-    /// Delete a Widget deployment
-    /// </summary>
-    /// <remarks>
-    /// This endpoint is deprecated. Please see the article https://help.mypurecloud.com/articles/deprecation-removal-of-acd-web-chat-version-2/. 
-    /// </remarks>
-    /// <param name="deploymentId">Widget Config Id</param>
-    /// <param name="cancellationToken">Cancellation token</param>
-    /// <returns>Task</returns>
+    /// <inheritdoc />
     [Obsolete]
     public async Task DeleteWidgetDeploymentAsync(string deploymentId, CancellationToken cancellationToken = default)
     {
