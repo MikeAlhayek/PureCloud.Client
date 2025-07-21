@@ -510,7 +510,7 @@ public interface IWorkforceManagementApi
     /// <param name="businessUnitId">The ID of the business unit</param>
     /// <param name="cancellationToken">Cancellation token</param>
     /// <returns>The business unit information</returns>
-    Task<BusinessUnit> GetBusinessUnitAsync(string businessUnitId, CancellationToken cancellationToken = default);
+    Task<BusinessUnitResponse> GetBusinessUnitAsync(string businessUnitId, CancellationToken cancellationToken = default);
 
     /// <summary>
     /// Get an activity code from a business unit
@@ -896,7 +896,7 @@ public interface IWorkforceManagementApi
     Task<WorkPlanBidGroupResponse> CreateBusinessUnitWorkplanbidGroupsAsync(string businessUnitId, string bidId, WorkPlanBidGroupCreate body, CancellationToken cancellationToken = default);
     Task<WorkPlanBid> CreateBusinessUnitWorkplanbidsAsync(string businessUnitId, CreateWorkPlanBid body, CancellationToken cancellationToken = default);
 
-    Task<BusinessUnit> PatchBusinessUnitAsync(string businessUnitId, UpdateBusinessUnitRequest body, CancellationToken cancellationToken = default);
+    Task<BusinessUnitResponse> PatchBusinessUnitAsync(string businessUnitId, UpdateBusinessUnitRequest body, CancellationToken cancellationToken = default);
     Task<BusinessUnitActivityCode> PatchBusinessUnitActivitycodeAsync(string businessUnitId, string activityCodeId, UpdateActivityCodeRequest body, CancellationToken cancellationToken = default);
     Task<ActivityPlanResponse> PatchBusinessUnitActivityplanAsync(string businessUnitId, string activityPlanId, UpdateActivityPlanRequest body, CancellationToken cancellationToken = default);
     Task<AlternativeShiftSettingsResponse> PatchBusinessUnitAlternativeshiftsSettingsAsync(string businessUnitId, UpdateAlternativeShiftSettingsRequest body, CancellationToken cancellationToken = default);
@@ -1570,7 +1570,7 @@ public interface IWorkforceManagementApi
     /// <param name="body">The business unit creation request</param>
     /// <param name="cancellationToken">Cancellation token</param>
     /// <returns>The created business unit</returns>
-    Task<BusinessUnit> CreateBusinessunitsAsync(CreateBusinessUnitRequest body, CancellationToken cancellationToken = default);
+    Task<BusinessUnitResponse> CreateBusinessunitsAsync(CreateBusinessUnitRequest body, CancellationToken cancellationToken = default);
 
     // Management Units Listing  
     /// <summary>

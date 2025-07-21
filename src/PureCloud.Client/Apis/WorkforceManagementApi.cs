@@ -344,7 +344,7 @@ public sealed class WorkforceManagementApi : IWorkforceManagementApi
     // The remaining methods follow the same patterns and would be implemented similarly.
 
     /// <inheritdoc />
-    public async Task<BusinessUnit> GetBusinessUnitAsync(string businessUnitId, CancellationToken cancellationToken = default)
+    public async Task<BusinessUnitResponse> GetBusinessUnitAsync(string businessUnitId, CancellationToken cancellationToken = default)
     {
         ArgumentException.ThrowIfNullOrEmpty(businessUnitId);
 
@@ -352,7 +352,7 @@ public sealed class WorkforceManagementApi : IWorkforceManagementApi
         var response = await client.GetAsync($"api/v2/workforcemanagement/businessunits/{Uri.EscapeDataString(businessUnitId)}", cancellationToken);
         response.EnsureSuccessStatusCode();
 
-        return await response.Content.ReadFromJsonAsync<BusinessUnit>(_options.JsonSerializerOptions, cancellationToken);
+        return await response.Content.ReadFromJsonAsync<BusinessUnitResponse>(_options.JsonSerializerOptions, cancellationToken);
     }
 
     /// <inheritdoc />
@@ -1656,7 +1656,7 @@ public sealed class WorkforceManagementApi : IWorkforceManagementApi
     }
 
     /// <inheritdoc />
-    public async Task<BusinessUnit> CreateBusinessunitsAsync(CreateBusinessUnitRequest body, CancellationToken cancellationToken = default)
+    public async Task<BusinessUnitResponse> CreateBusinessunitsAsync(CreateBusinessUnitRequest body, CancellationToken cancellationToken = default)
     {
         ArgumentNullException.ThrowIfNull(body);
 
@@ -1664,7 +1664,7 @@ public sealed class WorkforceManagementApi : IWorkforceManagementApi
         var response = await client.PostAsJsonAsync("api/v2/workforcemanagement/businessunits", body, _options.JsonSerializerOptions, cancellationToken);
         response.EnsureSuccessStatusCode();
 
-        return await response.Content.ReadFromJsonAsync<BusinessUnit>(_options.JsonSerializerOptions, cancellationToken);
+        return await response.Content.ReadFromJsonAsync<BusinessUnitResponse>(_options.JsonSerializerOptions, cancellationToken);
     }
 
     /// <inheritdoc />
@@ -2141,7 +2141,7 @@ public sealed class WorkforceManagementApi : IWorkforceManagementApi
     }
 
     /// <inheritdoc />
-    public async Task<BusinessUnit> PatchBusinessUnitAsync(string businessUnitId, UpdateBusinessUnitRequest body, CancellationToken cancellationToken = default)
+    public async Task<BusinessUnitResponse> PatchBusinessUnitAsync(string businessUnitId, UpdateBusinessUnitRequest body, CancellationToken cancellationToken = default)
     {
         ArgumentException.ThrowIfNullOrEmpty(businessUnitId);
         ArgumentNullException.ThrowIfNull(body);
@@ -2150,7 +2150,7 @@ public sealed class WorkforceManagementApi : IWorkforceManagementApi
         var response = await client.PatchAsJsonAsync($"api/v2/workforcemanagement/businessunits/{Uri.EscapeDataString(businessUnitId)}", body, _options.JsonSerializerOptions, cancellationToken);
         response.EnsureSuccessStatusCode();
 
-        return await response.Content.ReadFromJsonAsync<BusinessUnit>(_options.JsonSerializerOptions, cancellationToken);
+        return await response.Content.ReadFromJsonAsync<BusinessUnitResponse>(_options.JsonSerializerOptions, cancellationToken);
     }
 
     /// <inheritdoc />
