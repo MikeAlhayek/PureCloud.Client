@@ -1,12 +1,14 @@
+using System.Collections.Specialized;
 using System.Net.Http.Json;
 using Microsoft.Extensions.Options;
 using PureCloud.Client.Contracts;
+using PureCloud.Client.Http;
 using PureCloud.Client.Json;
 using PureCloud.Client.Models;
 
 namespace PureCloud.Client.Apis;
 
-public class WebMessagingApi : IWebMessagingApi
+public sealed class WebMessagingApi : IWebMessagingApi
 {
     private readonly IHttpClientFactory _httpClientFactory;
     private readonly PureCloudJsonSerializerOptions _options;
@@ -25,22 +27,21 @@ public class WebMessagingApi : IWebMessagingApi
     {
         var client = _httpClientFactory.CreateClient(PureCloudConstants.PureCloudClientName);
 
-        var queryParams = new List<string>();
+        var parameters = new NameValueCollection();
         
         if (pageSize.HasValue)
         {
-            queryParams.Add($"pageSize={pageSize.Value}");
+            parameters.Add("pageSize", pageSize.Value.ToString());
         }
         
         if (pageNumber.HasValue)
         {
-            queryParams.Add($"pageNumber={pageNumber.Value}");
+            parameters.Add("pageNumber", pageNumber.Value.ToString());
         }
 
-        var queryString = queryParams.Count > 0 ? "?" + string.Join("&", queryParams) : string.Empty;
-        var endpoint = $"api/v2/webmessaging/messages{queryString}";
+        var url = UriHelper.GetUri("api/v2/webmessaging/messages", parameters);
 
-        var response = await client.GetAsync(endpoint, cancellationToken);
+        var response = await client.GetAsync(url, cancellationToken);
 
         response.EnsureSuccessStatusCode();
 
