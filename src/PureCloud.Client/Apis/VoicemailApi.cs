@@ -1,3 +1,4 @@
+using System.Collections.Specialized;
 using System.Net.Http.Json;
 using Microsoft.Extensions.Options;
 using PureCloud.Client.Contracts;
@@ -27,12 +28,13 @@ public sealed class VoicemailApi : IVoicemailApi
 
         var client = _httpClientFactory.CreateClient(PureCloudConstants.PureCloudClientName);
 
-        var uri = $"api/v2/voicemail/messages/{messageId}";
+        var parameters = new NameValueCollection();
         if (expand != null)
         {
-            var expandParam = UriHelper.ParameterToString(expand);
-            uri += $"?expand={expandParam}";
+            parameters.Add("expand", UriHelper.ParameterToString(expand));
         }
+
+        var uri = UriHelper.GetUri($"api/v2/voicemail/messages/{Uri.EscapeDataString(messageId)}", parameters);
 
         var response = await client.GetAsync(uri, cancellationToken);
 
@@ -48,7 +50,7 @@ public sealed class VoicemailApi : IVoicemailApi
 
         var client = _httpClientFactory.CreateClient(PureCloudConstants.PureCloudClientName);
 
-        var response = await client.DeleteAsync($"api/v2/voicemail/messages/{messageId}", cancellationToken);
+        var response = await client.DeleteAsync($"api/v2/voicemail/messages/{Uri.EscapeDataString(messageId)}", cancellationToken);
 
         response.EnsureSuccessStatusCode();
 
