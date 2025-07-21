@@ -21,7 +21,7 @@ public sealed class VoicemailApi : IVoicemailApi
     }
 
     /// <inheritdoc />
-    public async Task<VoicemailMessageClean> GetVoicemailMessageAsync(string messageId, IEnumerable<string> expand = null, CancellationToken cancellationToken = default)
+    public async Task<VoicemailMessage> GetVoicemailMessageAsync(string messageId, IEnumerable<string> expand = null, CancellationToken cancellationToken = default)
     {
         ArgumentException.ThrowIfNullOrEmpty(messageId);
 
@@ -38,7 +38,7 @@ public sealed class VoicemailApi : IVoicemailApi
 
         response.EnsureSuccessStatusCode();
 
-        return await response.Content.ReadFromJsonAsync<VoicemailMessageClean>(_options.JsonSerializerOptions, cancellationToken);
+        return await response.Content.ReadFromJsonAsync<VoicemailMessage>(_options.JsonSerializerOptions, cancellationToken);
     }
 
     /// <inheritdoc />
@@ -56,7 +56,7 @@ public sealed class VoicemailApi : IVoicemailApi
     }
 
     /// <inheritdoc />
-    public async Task<VoicemailMailboxInfoClean> GetVoicemailMailboxAsync(CancellationToken cancellationToken = default)
+    public async Task<VoicemailMailboxInfo> GetVoicemailMailboxAsync(CancellationToken cancellationToken = default)
     {
         var client = _httpClientFactory.CreateClient(PureCloudConstants.PureCloudClientName);
 
@@ -64,11 +64,11 @@ public sealed class VoicemailApi : IVoicemailApi
 
         response.EnsureSuccessStatusCode();
 
-        return await response.Content.ReadFromJsonAsync<VoicemailMailboxInfoClean>(_options.JsonSerializerOptions, cancellationToken);
+        return await response.Content.ReadFromJsonAsync<VoicemailMailboxInfo>(_options.JsonSerializerOptions, cancellationToken);
     }
 
     /// <inheritdoc />
-    public async Task<VoicemailUserPolicyClean> PatchVoicemailMePolicyAsync(VoicemailUserPolicyClean body, CancellationToken cancellationToken = default)
+    public async Task<VoicemailUserPolicy> PatchVoicemailMePolicyAsync(VoicemailUserPolicy body, CancellationToken cancellationToken = default)
     {
         ArgumentNullException.ThrowIfNull(body);
 
@@ -78,11 +78,11 @@ public sealed class VoicemailApi : IVoicemailApi
 
         response.EnsureSuccessStatusCode();
 
-        return await response.Content.ReadFromJsonAsync<VoicemailUserPolicyClean>(_options.JsonSerializerOptions, cancellationToken);
+        return await response.Content.ReadFromJsonAsync<VoicemailUserPolicy>(_options.JsonSerializerOptions, cancellationToken);
     }
 
     /// <inheritdoc />
-    public async Task<VoicemailsSearchResponseClean> SearchVoicemailsAsync(VoicemailSearchRequestClean body, CancellationToken cancellationToken = default)
+    public async Task<VoicemailsSearchResponse> SearchVoicemailsAsync(VoicemailSearchRequest body, CancellationToken cancellationToken = default)
     {
         ArgumentNullException.ThrowIfNull(body);
 
@@ -92,6 +92,6 @@ public sealed class VoicemailApi : IVoicemailApi
 
         response.EnsureSuccessStatusCode();
 
-        return await response.Content.ReadFromJsonAsync<VoicemailsSearchResponseClean>(_options.JsonSerializerOptions, cancellationToken);
+        return await response.Content.ReadFromJsonAsync<VoicemailsSearchResponse>(_options.JsonSerializerOptions, cancellationToken);
     }
 }
