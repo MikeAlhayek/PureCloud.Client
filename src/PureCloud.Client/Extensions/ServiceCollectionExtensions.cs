@@ -129,6 +129,8 @@ public static class ServiceCollectionExtensions
 
         services.TryAddScoped<ILearningApi, LearningApi>();
 
+        services.TryAddScoped<ILicenseApi, LicenseApi>();
+
         services.TryAddScoped<INotificationClientFactory, NotificationClientFactory>();
 
         services.TryAddTransient<NotificationClient>();
