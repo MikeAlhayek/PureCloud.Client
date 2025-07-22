@@ -123,6 +123,8 @@ public static class ServiceCollectionExtensions
 
         services.TryAddScoped<IIntegrationsApi, IntegrationsApi>();
 
+        services.TryAddScoped<ILanguageUnderstandingApi, LanguageUnderstandingApi>();
+
         services.TryAddScoped<INotificationClientFactory, NotificationClientFactory>();
 
         services.TryAddTransient<NotificationClient>();

@@ -2310,6 +2310,7 @@
     <Compile Include="Models\Utterance.cs" />
     <Compile Include="Models\TopicPhrase.cs" />
     <Compile Include="Models\DetectedNamedEntity.cs" />
+    <Compile Include="Models\DetectedNamedEntityValue.cs" />
     <Compile Include="Models\DraftIntents.cs" />
     <Compile Include="Models\DraftTopics.cs" />
     <Compile Include="Models\NluInfo.cs" />
