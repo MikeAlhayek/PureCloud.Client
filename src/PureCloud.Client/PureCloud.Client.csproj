@@ -547,7 +547,6 @@
     <Compile Include="Models\CoachingSlot.DifferenceRating.cs" />
     <Compile Include="Models\CoachingSlotsRequest.cs" />
     <Compile Include="Models\CoachingSlotsResponse.cs" />
-    <Compile Include="Models\CobrowseSession.cs" />
     <Compile Include="Models\CobrowsesessionDisconnectType.cs" />
     <Compile Include="Models\CobrowsesessionInitialState.cs" />
     <Compile Include="Models\CobrowsesessionState.cs" />
@@ -3968,7 +3967,6 @@
     <Compile Include="Models\WfmAdherenceExplanationJobCompleteTopicManagementUnit.cs" />
     <Compile Include="Models\WfmAdherenceExplanationJobCompleteTopicUserReference.cs" />
     <Compile Include="Models\WfmAgentAdherenceExplanationChangedAgentTopicAdherenceExplanationChangedNotification.cs" />
-    <Compile Include="Models\WfmAgentAdherenceExplanationChangedAgentTopicAdherenceExplanationChangedNotification.Type.cs" />
     <Compile Include="Models\WfmAgentAdherenceExplanationChangedAgentTopicAdherenceExplanationChangedNotification.Status.cs" />
     <Compile Include="Models\WfmAgentAdherenceExplanationChangedAgentTopicBusinessUnit.cs" />
     <Compile Include="Models\WfmAgentAdherenceExplanationChangedAgentTopicManagementUnit.cs" />
