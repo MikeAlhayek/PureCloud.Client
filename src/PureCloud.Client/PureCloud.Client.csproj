@@ -4322,6 +4322,13 @@
     <Compile Include="Notifications\NotificationClientResilienceOptions.cs" />
     <Compile Include="Notifications\NotificationData.cs" />
     <Compile Include="Notifications\SubscriptionBuilder.cs" />
+    <Compile Include="Models\AddressableEntity.cs" />
+    <Compile Include="Models\LogEntry.cs" />
+    <Compile Include="Models\LogCaptureDownloadExecutionResponse.cs" />
+    <Compile Include="Models\LogCaptureQueryRequest.cs" />
+    <Compile Include="Models\LogCaptureQueryResponse.cs" />
+    <Compile Include="Models\LogCaptureUserConfiguration.cs" />
+    <Compile Include="Models\PagelessEntityListing.cs" />
   </ItemGroup>
 
   <ItemGroup>
