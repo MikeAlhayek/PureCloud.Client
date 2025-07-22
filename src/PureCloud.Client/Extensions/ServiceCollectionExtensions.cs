@@ -128,7 +128,9 @@ public static class ServiceCollectionExtensions
         services.TryAddScoped<IInfrastructureAsCodeApi, InfrastructureAsCodeApi>();
 
         services.TryAddScoped<IIntegrationsApi, IntegrationsApi>();
-
+      
+      services.TryAddScoped<IWorkforceManagementApi, WorkforceManagementApi>();
+      
         return services;
     }
 
