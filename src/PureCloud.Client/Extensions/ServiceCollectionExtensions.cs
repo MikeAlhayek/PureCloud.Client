@@ -127,8 +127,12 @@ public static class ServiceCollectionExtensions
 
         services.TryAddScoped<IInfrastructureAsCodeApi, InfrastructureAsCodeApi>();
 
+        services.TryAddScoped<IIntegrationsApi, IntegrationsApi>();
+      
+        services.TryAddScoped<IWebChatApi, WebChatApi>();
+      
         services.TryAddScoped<IWebMessagingApi, WebMessagingApi>();
-
+      
         return services;
     }
 
