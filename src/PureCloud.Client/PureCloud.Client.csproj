@@ -369,6 +369,7 @@
     <Compile Include="Models\AutoAnswerSettings.cs" />
     <Compile Include="Models\AvailableTime.cs" />
     <Compile Include="Models\AvailableTime.ActivityCategory.cs" />
+    <Compile Include="Models\AvailableTranslations.cs" />
     <Compile Include="Models\BaseMediaSettings.cs" />
     <Compile Include="Models\BatchConversationEventRequest.cs" />
     <Compile Include="Models\BatchEventResponse.cs" />
