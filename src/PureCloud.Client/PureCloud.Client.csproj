@@ -2204,6 +2204,16 @@
     <Compile Include="Models\LearningAssignmentTopicUserReference.cs" />
     <Compile Include="Models\LearningAssignment.cs" />
     <Compile Include="Models\LearningAssignmentCreate.cs" />
+    <Compile Include="Models\LearningAssignmentStepScoStructure.cs" />
+    <Compile Include="Models\LearningAssignmentStepSignedCookie.cs" />
+    <Compile Include="Models\LearningCoverArtThumbnail.cs" />
+    <Compile Include="Models\LearningModuleRuleParts.cs" />
+    <Compile Include="Models\LearningShareableContentObject.cs" />
+    <Compile Include="Models\AssessmentFormQuestion.cs" />
+    <Compile Include="Models\AssessmentFormQuestionGroup.cs" />
+    <Compile Include="Models\AssessmentScoringSet.cs" />
+    <Compile Include="Models\AssessmentQuestionGroupScore.cs" />
+    <Compile Include="Models\AssessmentQuestionScore.cs" />
     <Compile Include="Models\LearningAssignmentStep.cs" />
     <Compile Include="Models\LearningAssessment.cs" />
     <Compile Include="Models\LearningModule.cs" />
