@@ -1,9 +1,9 @@
-using System.Text;
-using System.Text.Json.Serialization;
-
 namespace PureCloud.Client.Models;
 
-public sealed class WebChatMemberInfoEntityList
+/// <summary>
+/// WebChatMemberInfoEntityList
+/// </summary>
+public sealed class WebChatMemberInfoEntityList : IPagedResource<WebChatMemberInfo>
 {
     /// <summary>
     /// Gets or Sets Entities
@@ -32,6 +32,7 @@ public sealed class WebChatMemberInfoEntityList
 
     /// <summary>
     /// Gets or Sets LastUri
+    /// </summary>
     public string LastUri { get; set; }
 
     /// <summary>
