@@ -2092,6 +2092,7 @@
     <Compile Include="Models\JourneyOutcomeEventsNotificationReferrer.Medium.cs" />
     <Compile Include="Models\JourneyOutcomeEventsNotificationSegment.cs" />
     <Compile Include="Models\JourneyOutcomeEventsNotificationSession.cs" />
+    <Compile Include="Models\MissingStubs.cs" />
     <Compile Include="Models\Outcome.cs" />
     <Compile Include="Models\OutcomeAttributionJobStateResponse.cs" />
     <Compile Include="Models\OutcomeAttributionAsyncResponse.cs" />

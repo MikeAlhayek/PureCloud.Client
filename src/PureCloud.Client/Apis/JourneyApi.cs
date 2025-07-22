@@ -1252,7 +1252,7 @@ public sealed class JourneyApi : IJourneyApi
 
         var client = _httpClientFactory.CreateClient(PureCloudConstants.PureCloudClientName);
 
-        var response = await client.PostAsJsonAsync($"api/v2/journey/views/{viewId}/versions/{journeyVersionId}/jobs", null, _options.JsonSerializerOptions, cancellationToken);
+        var response = await client.PostAsJsonAsync($"api/v2/journey/views/{viewId}/versions/{journeyVersionId}/jobs", _options.JsonSerializerOptions, cancellationToken);
 
         response.EnsureSuccessStatusCode();
 

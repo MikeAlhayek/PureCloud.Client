@@ -125,6 +125,8 @@ public static class ServiceCollectionExtensions
 
         services.TryAddScoped<ILanguagesApi, LanguagesApi>();
 
+        services.TryAddScoped<IJourneyApi, JourneyApi>();
+
         services.TryAddScoped<INotificationClientFactory, NotificationClientFactory>();
 
         services.TryAddTransient<NotificationClient>();
