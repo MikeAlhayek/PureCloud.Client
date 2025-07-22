@@ -4,13 +4,13 @@ using Microsoft.Extensions.Options;
 using PureCloud.Client.Contracts;
 using PureCloud.Client.Http;
 using PureCloud.Client.Json;
-using PureCloud.Client.Models;
 
 namespace PureCloud.Client.Apis;
 
 public sealed class WebMessagingApi : IWebMessagingApi
 {
     private readonly IHttpClientFactory _httpClientFactory;
+
     private readonly PureCloudJsonSerializerOptions _options;
 
     public WebMessagingApi(
@@ -21,19 +21,18 @@ public sealed class WebMessagingApi : IWebMessagingApi
         _options = options.Value;
     }
 
-    // get methods
 
     public async Task<string> GetMessagesAsync(int? pageSize = null, int? pageNumber = null, CancellationToken cancellationToken = default)
     {
         var client = _httpClientFactory.CreateClient(PureCloudConstants.PureCloudClientName);
 
         var parameters = new NameValueCollection();
-        
+
         if (pageSize.HasValue)
         {
             parameters.Add("pageSize", pageSize.Value.ToString());
         }
-        
+
         if (pageNumber.HasValue)
         {
             parameters.Add("pageNumber", pageNumber.Value.ToString());
@@ -45,8 +44,7 @@ public sealed class WebMessagingApi : IWebMessagingApi
 
         response.EnsureSuccessStatusCode();
 
-        return await response.Content.ReadAsStringAsync(cancellationToken);
+        return await response.Content.ReadFromJsonAsync<string>(_options.JsonSerializerOptions, cancellationToken: cancellationToken);
     }
 
-    // get methods
 }
