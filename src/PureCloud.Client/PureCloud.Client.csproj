@@ -3926,6 +3926,7 @@
     <Compile Include="Models\VoicemailStartDetailEventTopicVoicemailStartEvent.MediaType.cs" />
     <Compile Include="Models\VoicemailStartDetailEventTopicVoicemailStartEvent.Direction.cs" />
     <Compile Include="Models\VoicemailUploadStatus.cs" />
+    <Compile Include="Models\VoicemailSearchRequestSortOrder.cs" />
     <Compile Include="Models\Warning.cs" />
     <Compile Include="Models\Warning.RangeType.cs" />
     <Compile Include="Models\WebDeploymentsConfigTopicWebMessagingConfigChangeEventBody.cs" />
