@@ -53,7 +53,6 @@ public sealed class WidgetsApi : IWidgetsApi
     }
 
     /// <inheritdoc />
-    [Obsolete]
     public async Task<WidgetDeployment> CreateWidgetDeploymentAsync(WidgetDeployment deployment, CancellationToken cancellationToken = default)
     {
         ArgumentNullException.ThrowIfNull(deployment);
