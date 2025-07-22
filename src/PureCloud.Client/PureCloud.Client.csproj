@@ -3326,6 +3326,7 @@
     <Compile Include="Models\SocialMediaStatisticalResponse.cs" />
     <Compile Include="Models\SocialMediaStatisticalSummary.cs" />
     <Compile Include="Models\SortItem.cs" />
+    <Compile Include="Models\Source.cs" />
     <Compile Include="Models\SourceConfiguration.cs" />
     <Compile Include="Models\SourceEntity.cs" />
     <Compile Include="Models\SourceEntity.Type.cs" />
@@ -3333,6 +3334,7 @@
     <Compile Include="Models\SourceLastSync.cs" />
     <Compile Include="Models\SourcePlanningGroupRequest.cs" />
     <Compile Include="Models\SourceSyncResponse.cs" />
+    <Compile Include="Models\WfmVersionedEntityMetadata.cs" />
     <Compile Include="Models\StatEventCampaignTopicIntervalMetrics.cs" />
     <Compile Include="Models\StatEventCampaignTopicMetricStats.cs" />
     <Compile Include="Models\StatEventCampaignTopicStatsNotification.cs" />
