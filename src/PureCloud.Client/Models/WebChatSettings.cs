@@ -3,95 +3,10 @@ using System.Text.Json.Serialization;
 
 namespace PureCloud.Client.Models;
 
-/// <summary>
-/// WebChatSettings
-/// </summary>
-
-public partial class WebChatSettings : IEquatable<WebChatSettings>
+public sealed class WebChatSettings
 {
-    /// <summary>
-    /// Initializes a new instance of the <see cref="WebChatSettings" /> class.
-    /// </summary>
-    /// <param name="RequireDeployment">RequireDeployment.</param>
-    public WebChatSettings(bool? RequireDeployment = null)
-    {
-        this.RequireDeployment = RequireDeployment;
-
-    }
-
-
-
     /// <summary>
     /// Gets or Sets RequireDeployment
     /// </summary>
-    [JsonPropertyName("requireDeployment")]
     public bool? RequireDeployment { get; set; }
-
-
-    /// <summary>
-    /// Returns the string presentation of the object
-    /// </summary>
-    /// <returns>String presentation of the object</returns>
-    public override string ToString()
-    {
-        var sb = new StringBuilder();
-        sb.Append("class WebChatSettings {\n");
-
-        sb.Append("  RequireDeployment: ").Append(RequireDeployment).Append("\n");
-        sb.Append("}\n");
-        return sb.ToString();
-    }
-
-
-    /// <summary>
-    /// Returns true if objects are equal
-    /// </summary>
-    /// <param name="obj">Object to be compared</param>
-    /// <returns>Boolean</returns>
-    public override bool Equals(object obj)
-    {
-        // credit: http://stackoverflow.com/a/10454552/677735
-        return Equals(obj as WebChatSettings);
-    }
-
-    /// <summary>
-    /// Returns true if WebChatSettings instances are equal
-    /// </summary>
-    /// <param name="other">Instance of WebChatSettings to be compared</param>
-    /// <returns>Boolean</returns>
-    public bool Equals(WebChatSettings other)
-    {
-        // credit: http://stackoverflow.com/a/10454552/677735
-        if (other == null)
-        {
-            return false;
-        }
-
-        return true &&
-            (
-                RequireDeployment == other.RequireDeployment ||
-                RequireDeployment != null &&
-                RequireDeployment.Equals(other.RequireDeployment)
-            );
-    }
-
-    /// <summary>
-    /// Gets the hash code
-    /// </summary>
-    /// <returns>Hash code</returns>
-    public override int GetHashCode()
-    {
-        // credit: http://stackoverflow.com/a/263416/677735
-        unchecked // Overflow is fine, just wrap
-        {
-            int hash = 41;
-            // Suitable nullity checks etc, of course :)
-            if (RequireDeployment != null)
-            {
-                hash = hash * 59 + RequireDeployment.GetHashCode();
-            }
-
-            return hash;
-        }
-    }
 }
