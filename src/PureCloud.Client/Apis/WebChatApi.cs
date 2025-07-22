@@ -26,7 +26,7 @@ public sealed class WebChatApi : IWebChatApi
     {
         var client = _httpClientFactory.CreateClient(PureCloudConstants.PureCloudClientName);
 
-        var uri = UriHelper.GetUri("api/v2/webchat/settings");
+        var uri = UriHelper.GetUri("api/v2/webchat/settings", null);
 
         var response = await client.GetAsync(uri, cancellationToken);
 
@@ -42,7 +42,7 @@ public sealed class WebChatApi : IWebChatApi
 
         var client = _httpClientFactory.CreateClient(PureCloudConstants.PureCloudClientName);
 
-        var uri = UriHelper.GetUri($"api/v2/webchat/deployments/{deploymentId}");
+        var uri = UriHelper.GetUri($"api/v2/webchat/deployments/{deploymentId}", null);
 
         var response = await client.GetAsync(uri, cancellationToken);
 
@@ -56,7 +56,7 @@ public sealed class WebChatApi : IWebChatApi
     {
         var client = _httpClientFactory.CreateClient(PureCloudConstants.PureCloudClientName);
 
-        var uri = UriHelper.GetUri("api/v2/webchat/deployments");
+        var uri = UriHelper.GetUri("api/v2/webchat/deployments", null);
 
         var response = await client.GetAsync(uri, cancellationToken);
 
@@ -73,7 +73,7 @@ public sealed class WebChatApi : IWebChatApi
 
         var client = _httpClientFactory.CreateClient(PureCloudConstants.PureCloudClientName);
 
-        var uri = UriHelper.GetUri($"api/v2/webchat/guest/conversations/{conversationId}/members/{memberId}");
+        var uri = UriHelper.GetUri($"api/v2/webchat/guest/conversations/{conversationId}/members/{memberId}", null);
 
         var response = await client.GetAsync(uri, cancellationToken);
 
@@ -119,11 +119,12 @@ public sealed class WebChatApi : IWebChatApi
     public async Task<WebChatMessage> GetWebchatGuestConversationMessageAsync(string conversationId, string messageId, CancellationToken cancellationToken = default)
     {
         ArgumentException.ThrowIfNullOrEmpty(conversationId);
+
         ArgumentException.ThrowIfNullOrEmpty(messageId);
 
         var client = _httpClientFactory.CreateClient(PureCloudConstants.PureCloudClientName);
 
-        var uri = UriHelper.GetUri($"api/v2/webchat/guest/conversations/{conversationId}/messages/{messageId}");
+        var uri = UriHelper.GetUri($"api/v2/webchat/guest/conversations/{conversationId}/messages/{messageId}", null);
 
         var response = await client.GetAsync(uri, cancellationToken);
 
@@ -177,7 +178,7 @@ public sealed class WebChatApi : IWebChatApi
 
         var client = _httpClientFactory.CreateClient(PureCloudConstants.PureCloudClientName);
 
-        var uri = UriHelper.GetUri("api/v2/webchat/deployments");
+        var uri = UriHelper.GetUri("api/v2/webchat/deployments", null);
 
         var response = await client.PostAsJsonAsync(uri, body, _options.JsonSerializerOptions, cancellationToken);
 
@@ -193,7 +194,7 @@ public sealed class WebChatApi : IWebChatApi
 
         var client = _httpClientFactory.CreateClient(PureCloudConstants.PureCloudClientName);
 
-        var uri = UriHelper.GetUri("api/v2/webchat/guest/conversations");
+        var uri = UriHelper.GetUri("api/v2/webchat/guest/conversations", null);
 
         var response = await client.PostAsJsonAsync(uri, body, _options.JsonSerializerOptions, cancellationToken);
 
@@ -206,12 +207,14 @@ public sealed class WebChatApi : IWebChatApi
     public async Task<WebChatMessage> CreateWebchatGuestConversationMemberMessageAsync(string conversationId, string memberId, CreateWebChatMessageRequest body, CancellationToken cancellationToken = default)
     {
         ArgumentException.ThrowIfNullOrEmpty(conversationId);
+
         ArgumentException.ThrowIfNullOrEmpty(memberId);
+
         ArgumentNullException.ThrowIfNull(body);
 
         var client = _httpClientFactory.CreateClient(PureCloudConstants.PureCloudClientName);
 
-        var uri = UriHelper.GetUri($"api/v2/webchat/guest/conversations/{conversationId}/members/{memberId}/messages");
+        var uri = UriHelper.GetUri($"api/v2/webchat/guest/conversations/{conversationId}/members/{memberId}/messages", null);
 
         var response = await client.PostAsJsonAsync(uri, body, _options.JsonSerializerOptions, cancellationToken);
 
@@ -224,11 +227,12 @@ public sealed class WebChatApi : IWebChatApi
     public async Task<WebChatTyping> CreateWebchatGuestConversationMemberTypingAsync(string conversationId, string memberId, CancellationToken cancellationToken = default)
     {
         ArgumentException.ThrowIfNullOrEmpty(conversationId);
+
         ArgumentException.ThrowIfNullOrEmpty(memberId);
 
         var client = _httpClientFactory.CreateClient(PureCloudConstants.PureCloudClientName);
 
-        var uri = UriHelper.GetUri($"api/v2/webchat/guest/conversations/{conversationId}/members/{memberId}/typing");
+        var uri = UriHelper.GetUri($"api/v2/webchat/guest/conversations/{conversationId}/members/{memberId}/typing", null);
 
         var response = await client.PostAsync(uri, null, cancellationToken);
 
@@ -244,7 +248,7 @@ public sealed class WebChatApi : IWebChatApi
 
         var client = _httpClientFactory.CreateClient(PureCloudConstants.PureCloudClientName);
 
-        var uri = UriHelper.GetUri("api/v2/webchat/settings");
+        var uri = UriHelper.GetUri("api/v2/webchat/settings", null);
 
         var response = await client.PutAsJsonAsync(uri, body, _options.JsonSerializerOptions, cancellationToken);
 
@@ -261,7 +265,7 @@ public sealed class WebChatApi : IWebChatApi
 
         var client = _httpClientFactory.CreateClient(PureCloudConstants.PureCloudClientName);
 
-        var uri = UriHelper.GetUri($"api/v2/webchat/deployments/{deploymentId}");
+        var uri = UriHelper.GetUri($"api/v2/webchat/deployments/{deploymentId}", null);
 
         var response = await client.PutAsJsonAsync(uri, body, _options.JsonSerializerOptions, cancellationToken);
 
@@ -277,7 +281,7 @@ public sealed class WebChatApi : IWebChatApi
 
         var client = _httpClientFactory.CreateClient(PureCloudConstants.PureCloudClientName);
 
-        var uri = UriHelper.GetUri($"api/v2/webchat/deployments/{deploymentId}");
+        var uri = UriHelper.GetUri($"api/v2/webchat/deployments/{deploymentId}", null);
 
         var response = await client.DeleteAsync(uri, cancellationToken);
 
@@ -292,7 +296,7 @@ public sealed class WebChatApi : IWebChatApi
 
         var client = _httpClientFactory.CreateClient(PureCloudConstants.PureCloudClientName);
 
-        var uri = UriHelper.GetUri($"api/v2/webchat/guest/conversations/{conversationId}/members/{memberId}");
+        var uri = UriHelper.GetUri($"api/v2/webchat/guest/conversations/{conversationId}/members/{memberId}", null);
 
         var response = await client.DeleteAsync(uri, cancellationToken);
 
@@ -304,7 +308,7 @@ public sealed class WebChatApi : IWebChatApi
     {
         var client = _httpClientFactory.CreateClient(PureCloudConstants.PureCloudClientName);
 
-        var uri = UriHelper.GetUri("api/v2/webchat/settings");
+        var uri = UriHelper.GetUri("api/v2/webchat/settings", null);
 
         var response = await client.DeleteAsync(uri, cancellationToken);
 

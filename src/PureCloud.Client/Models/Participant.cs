@@ -1,3 +1,5 @@
+using PureCloud.Client.Models;
+
 namespace PureCloud.Client.Models;
 
 public sealed class Participant
@@ -230,7 +232,7 @@ public sealed class Participant
     /// <summary>
     /// Gets or Sets CobrowseSessions
     /// </summary>
-    public IEnumerable<CobrowseSession> CobrowseSessions { get; set; }
+   // public IEnumerable<CobrowseSession> CobrowseSessions { get; set; }
 
     /// <summary>
     /// Gets or Sets Emails
