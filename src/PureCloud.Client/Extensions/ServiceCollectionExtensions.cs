@@ -129,7 +129,7 @@ public static class ServiceCollectionExtensions
 
         services.TryAddScoped<IIntegrationsApi, IntegrationsApi>();
 
-        services.TryAddScoped<IVoicemailApi, VoicemailApi>();
+        services.TryAddScoped<IWebChatApi, WebChatApi>();
 
         return services;
     }
