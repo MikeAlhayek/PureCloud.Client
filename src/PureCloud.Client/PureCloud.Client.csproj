@@ -2202,6 +2202,15 @@
     <Compile Include="Models\LearningAssignmentTopicLearningAssignmentNotification.Type.cs" />
     <Compile Include="Models\LearningAssignmentTopicLearningModuleReference.cs" />
     <Compile Include="Models\LearningAssignmentTopicUserReference.cs" />
+    <Compile Include="Models\AddressableLicenseDefinition.cs" />
+    <Compile Include="Models\LicenseAssignmentRequest.cs" />
+    <Compile Include="Models\LicenseBatchAssignmentRequest.cs" />
+    <Compile Include="Models\LicenseDefinition.cs" />
+    <Compile Include="Models\LicenseOrgToggle.cs" />
+    <Compile Include="Models\LicenseUpdateStatus.cs" />
+    <Compile Include="Models\LicenseUser.cs" />
+    <Compile Include="Models\UserLicenses.cs" />
+    <Compile Include="Models\UserLicensesEntityListing.cs" />
     <Compile Include="Models\LexBot.cs" />
     <Compile Include="Models\LexBotAlias.cs" />
     <Compile Include="Models\LexBotAlias.Language.cs" />
@@ -2746,6 +2755,7 @@
     <Compile Include="Models\Page.cs" />
     <Compile Include="Models\PermissionDetails.cs" />
     <Compile Include="Models\PermissionDetailsType.cs" />
+    <Compile Include="Models\Permissions.cs" />
     <Compile Include="Models\PresenceEventUserPresence.cs" />
     <Compile Include="Models\QueueConversationCallEventTopicCallConversation.cs" />
     <Compile Include="Models\QueueConversationCallEventTopicCallMediaParticipant.cs" />
