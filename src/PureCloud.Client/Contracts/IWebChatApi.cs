@@ -142,4 +142,31 @@ public interface IWebChatApi
     /// <param name="cancellationToken">Cancellation token</param>
     /// <returns>Task</returns>
     Task DeleteWebchatSettingsAsync(CancellationToken cancellationToken = default);
+
+    /// <summary>
+    /// Get a media request in the conversation
+    /// </summary>
+    /// <param name="conversationId">Conversation Id</param>
+    /// <param name="mediaRequestId">Media request Id</param>
+    /// <param name="cancellationToken">Cancellation token</param>
+    /// <returns>WebChat guest media request</returns>
+    Task<WebChatGuestMediaRequest> GetWebchatGuestConversationMediarequestAsync(string conversationId, string mediaRequestId, CancellationToken cancellationToken = default);
+
+    /// <summary>
+    /// Get all media requests to the guest in the conversation
+    /// </summary>
+    /// <param name="conversationId">Conversation Id</param>
+    /// <param name="cancellationToken">Cancellation token</param>
+    /// <returns>WebChat guest media request entity list</returns>
+    Task<WebChatGuestMediaRequestEntityList> GetWebchatGuestConversationMediarequestsAsync(string conversationId, CancellationToken cancellationToken = default);
+
+    /// <summary>
+    /// Update a media request in the conversation, setting the state to ACCEPTED/DECLINED/ERRORED
+    /// </summary>
+    /// <param name="conversationId">Conversation Id</param>
+    /// <param name="mediaRequestId">Media request Id</param>
+    /// <param name="body">Request</param>
+    /// <param name="cancellationToken">Cancellation token</param>
+    /// <returns>WebChat guest media request</returns>
+    Task<WebChatGuestMediaRequest> UpdateWebchatGuestConversationMediarequestAsync(string conversationId, string mediaRequestId, WebChatGuestMediaRequest body, CancellationToken cancellationToken = default);
 }

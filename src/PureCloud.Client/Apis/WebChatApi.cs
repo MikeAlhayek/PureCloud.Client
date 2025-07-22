@@ -172,6 +172,39 @@ public sealed class WebChatApi : IWebChatApi
     }
 
     /// <inheritdoc />
+    public async Task<WebChatGuestMediaRequest> GetWebchatGuestConversationMediarequestAsync(string conversationId, string mediaRequestId, CancellationToken cancellationToken = default)
+    {
+        ArgumentException.ThrowIfNullOrEmpty(conversationId);
+        ArgumentException.ThrowIfNullOrEmpty(mediaRequestId);
+
+        var client = _httpClientFactory.CreateClient(PureCloudConstants.PureCloudClientName);
+
+        var uri = UriHelper.GetUri($"api/v2/webchat/guest/conversations/{conversationId}/mediarequests/{mediaRequestId}");
+
+        var response = await client.GetAsync(uri, cancellationToken);
+
+        response.EnsureSuccessStatusCode();
+
+        return await response.Content.ReadFromJsonAsync<WebChatGuestMediaRequest>(_options.JsonSerializerOptions, cancellationToken);
+    }
+
+    /// <inheritdoc />
+    public async Task<WebChatGuestMediaRequestEntityList> GetWebchatGuestConversationMediarequestsAsync(string conversationId, CancellationToken cancellationToken = default)
+    {
+        ArgumentException.ThrowIfNullOrEmpty(conversationId);
+
+        var client = _httpClientFactory.CreateClient(PureCloudConstants.PureCloudClientName);
+
+        var uri = UriHelper.GetUri($"api/v2/webchat/guest/conversations/{conversationId}/mediarequests");
+
+        var response = await client.GetAsync(uri, cancellationToken);
+
+        response.EnsureSuccessStatusCode();
+
+        return await response.Content.ReadFromJsonAsync<WebChatGuestMediaRequestEntityList>(_options.JsonSerializerOptions, cancellationToken);
+    }
+
+    /// <inheritdoc />
     public async Task<WebChatDeployment> CreateWebchatDeploymentAsync(WebChatDeployment body, CancellationToken cancellationToken = default)
     {
         ArgumentNullException.ThrowIfNull(body);
@@ -272,6 +305,24 @@ public sealed class WebChatApi : IWebChatApi
         response.EnsureSuccessStatusCode();
 
         return await response.Content.ReadFromJsonAsync<WebChatDeployment>(_options.JsonSerializerOptions, cancellationToken);
+    }
+
+    /// <inheritdoc />
+    public async Task<WebChatGuestMediaRequest> UpdateWebchatGuestConversationMediarequestAsync(string conversationId, string mediaRequestId, WebChatGuestMediaRequest body, CancellationToken cancellationToken = default)
+    {
+        ArgumentException.ThrowIfNullOrEmpty(conversationId);
+        ArgumentException.ThrowIfNullOrEmpty(mediaRequestId);
+        ArgumentNullException.ThrowIfNull(body);
+
+        var client = _httpClientFactory.CreateClient(PureCloudConstants.PureCloudClientName);
+
+        var uri = UriHelper.GetUri($"api/v2/webchat/guest/conversations/{conversationId}/mediarequests/{mediaRequestId}");
+
+        var response = await client.PatchAsJsonAsync(uri, body, _options.JsonSerializerOptions, cancellationToken);
+
+        response.EnsureSuccessStatusCode();
+
+        return await response.Content.ReadFromJsonAsync<WebChatGuestMediaRequest>(_options.JsonSerializerOptions, cancellationToken);
     }
 
     /// <inheritdoc />
