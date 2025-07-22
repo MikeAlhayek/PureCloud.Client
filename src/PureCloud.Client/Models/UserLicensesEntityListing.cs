@@ -1,4 +1,3 @@
-using System.Text;
 using System.Text.Json.Serialization;
 
 namespace PureCloud.Client.Models;
@@ -6,26 +5,8 @@ namespace PureCloud.Client.Models;
 /// <summary>
 /// UserLicensesEntityListing
 /// </summary>
-
-public partial class UserLicensesEntityListing : IEquatable<UserLicensesEntityListing>
+public sealed class UserLicensesEntityListing
 {
-    /// <summary>
-    /// Initializes a new instance of the <see cref="UserLicensesEntityListing" /> class.
-    /// </summary>
-    /// <param name="Entities">Entities.</param>
-    /// <param name="PageSize">PageSize.</param>
-    /// <param name="PageNumber">PageNumber.</param>
-    /// <param name="Total">Total.</param>
-    /// <param name="PageCount">PageCount.</param>
-    public UserLicensesEntityListing(List<UserLicenses> Entities = null, int? PageSize = null, int? PageNumber = null, long? Total = null, int? PageCount = null)
-    {
-        this.Entities = Entities;
-        this.PageSize = PageSize;
-        this.PageNumber = PageNumber;
-        this.Total = Total;
-        this.PageCount = PageCount;
-
-    }
 
 
 
@@ -33,7 +14,7 @@ public partial class UserLicensesEntityListing : IEquatable<UserLicensesEntityLi
     /// Gets or Sets Entities
     /// </summary>
     [JsonPropertyName("entities")]
-    public List<UserLicenses> Entities { get; set; }
+    public IEnumerable<UserLicenses> Entities { get; set; }
 
 
 
