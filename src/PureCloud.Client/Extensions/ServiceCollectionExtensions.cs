@@ -59,12 +59,6 @@ public static class ServiceCollectionExtensions
 
     public static IServiceCollection AddPureCloudApis(this IServiceCollection services)
     {
-        services.TryAddScoped<INotificationClientFactory, NotificationClientFactory>();
-
-        services.TryAddTransient<NotificationClient>();
-
-        services.TryAddScoped<IUserApi, UserApi>();
-
         services.TryAddScoped<IChannelsApi, ChannelsApi>();
 
         services.TryAddScoped<IAgentAssistantsApi, AgentAssistantsApi>();
@@ -127,6 +121,20 @@ public static class ServiceCollectionExtensions
 
         services.TryAddScoped<IInfrastructureAsCodeApi, InfrastructureAsCodeApi>();
 
+        services.TryAddScoped<IIntegrationsApi, IntegrationsApi>();
+
+        services.TryAddScoped<INotificationClientFactory, NotificationClientFactory>();
+
+        services.TryAddTransient<NotificationClient>();
+
+        services.TryAddScoped<IUserApi, UserApi>();
+
+        services.TryAddScoped<IVoicemailApi, VoicemailApi>();
+
+        services.TryAddScoped<IWebChatApi, WebChatApi>();
+
+        services.TryAddScoped<IWebMessagingApi, WebMessagingApi>();
+      
         services.TryAddScoped<IWidgetsApi, WidgetsApi>();
 
         return services;

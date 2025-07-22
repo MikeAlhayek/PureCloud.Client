@@ -1,3 +1,5 @@
+using PureCloud.Client.Models;
+
 namespace PureCloud.Client.Models;
 
 public sealed class Participant
