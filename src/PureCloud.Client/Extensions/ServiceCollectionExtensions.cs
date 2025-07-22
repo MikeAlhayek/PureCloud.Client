@@ -123,9 +123,11 @@ public static class ServiceCollectionExtensions
 
         services.TryAddScoped<IIntegrationsApi, IntegrationsApi>();
 
+        services.TryAddScoped<IJourneyApi, JourneyApi>();
+
         services.TryAddScoped<ILanguagesApi, LanguagesApi>();
 
-        services.TryAddScoped<IJourneyApi, JourneyApi>();
+        services.TryAddScoped<ILearningApi, LearningApi>();
 
         services.TryAddScoped<INotificationClientFactory, NotificationClientFactory>();
 
