@@ -7,8 +7,7 @@ namespace PureCloud.Client.Models;
 /// <summary>
 /// Learning module request
 /// </summary>
-
-public partial class LearningModuleRequest : IEquatable<LearningModuleRequest>
+public sealed class LearningModuleRequest
 {
     /// <summary>
     /// The type for the learning module. Informational, AssessedContent and Assessment are deprecated
@@ -65,8 +64,7 @@ public partial class LearningModuleRequest : IEquatable<LearningModuleRequest>
     /// <summary>
     /// Initializes a new instance of the <see cref="LearningModuleRequest" /> class.
     /// </summary>
-    [JsonConstructorAttribute]
-    protected LearningModuleRequest() { }
+    private LearningModuleRequest() { }
     /// <summary>
     /// Initializes a new instance of the <see cref="LearningModuleRequest" /> class.
     /// </summary>
@@ -224,168 +222,5 @@ public partial class LearningModuleRequest : IEquatable<LearningModuleRequest>
         sb.Append("  ReviewAssessmentResults: ").Append(ReviewAssessmentResults).Append("\n");
         sb.Append("}\n");
         return sb.ToString();
-    }
-
-
-    /// <summary>
-    /// Returns true if objects are equal
-    /// </summary>
-    /// <param name="obj">Object to be compared</param>
-    /// <returns>Boolean</returns>
-    public override bool Equals(object obj)
-    {
-        // credit: http://stackoverflow.com/a/10454552/677735
-        return Equals(obj as LearningModuleRequest);
-    }
-
-    /// <summary>
-    /// Returns true if LearningModuleRequest instances are equal
-    /// </summary>
-    /// <param name="other">Instance of LearningModuleRequest to be compared</param>
-    /// <returns>Boolean</returns>
-    public bool Equals(LearningModuleRequest other)
-    {
-        // credit: http://stackoverflow.com/a/10454552/677735
-        if (other == null)
-        {
-            return false;
-        }
-
-        return true &&
-            (
-                Name == other.Name ||
-                Name != null &&
-                Name.Equals(other.Name)
-            ) &&
-            (
-                Description == other.Description ||
-                Description != null &&
-                Description.Equals(other.Description)
-            ) &&
-            (
-                CompletionTimeInDays == other.CompletionTimeInDays ||
-                CompletionTimeInDays != null &&
-                CompletionTimeInDays.Equals(other.CompletionTimeInDays)
-            ) &&
-            (
-                InformSteps == other.InformSteps ||
-                InformSteps != null &&
-                InformSteps.SequenceEqual(other.InformSteps)
-            ) &&
-            (
-                Type == other.Type ||
-                Type != null &&
-                Type.Equals(other.Type)
-            ) &&
-            (
-                AssessmentForm == other.AssessmentForm ||
-                AssessmentForm != null &&
-                AssessmentForm.Equals(other.AssessmentForm)
-            ) &&
-            (
-                CoverArt == other.CoverArt ||
-                CoverArt != null &&
-                CoverArt.Equals(other.CoverArt)
-            ) &&
-            (
-                LengthInMinutes == other.LengthInMinutes ||
-                LengthInMinutes != null &&
-                LengthInMinutes.Equals(other.LengthInMinutes)
-            ) &&
-            (
-                ExcludedFromCatalog == other.ExcludedFromCatalog ||
-                ExcludedFromCatalog != null &&
-                ExcludedFromCatalog.Equals(other.ExcludedFromCatalog)
-            ) &&
-            (
-                ExternalId == other.ExternalId ||
-                ExternalId != null &&
-                ExternalId.Equals(other.ExternalId)
-            ) &&
-            (
-                EnforceContentOrder == other.EnforceContentOrder ||
-                EnforceContentOrder != null &&
-                EnforceContentOrder.Equals(other.EnforceContentOrder)
-            ) &&
-            (
-                ReviewAssessmentResults == other.ReviewAssessmentResults ||
-                ReviewAssessmentResults != null &&
-                ReviewAssessmentResults.Equals(other.ReviewAssessmentResults)
-            );
-    }
-
-    /// <summary>
-    /// Gets the hash code
-    /// </summary>
-    /// <returns>Hash code</returns>
-    public override int GetHashCode()
-    {
-        // credit: http://stackoverflow.com/a/263416/677735
-        unchecked // Overflow is fine, just wrap
-        {
-            int hash = 41;
-            // Suitable nullity checks etc, of course :)
-            if (Name != null)
-            {
-                hash = hash * 59 + Name.GetHashCode();
-            }
-
-            if (Description != null)
-            {
-                hash = hash * 59 + Description.GetHashCode();
-            }
-
-            if (CompletionTimeInDays != null)
-            {
-                hash = hash * 59 + CompletionTimeInDays.GetHashCode();
-            }
-
-            if (InformSteps != null)
-            {
-                hash = hash * 59 + InformSteps.GetHashCode();
-            }
-
-            if (Type != null)
-            {
-                hash = hash * 59 + Type.GetHashCode();
-            }
-
-            if (AssessmentForm != null)
-            {
-                hash = hash * 59 + AssessmentForm.GetHashCode();
-            }
-
-            if (CoverArt != null)
-            {
-                hash = hash * 59 + CoverArt.GetHashCode();
-            }
-
-            if (LengthInMinutes != null)
-            {
-                hash = hash * 59 + LengthInMinutes.GetHashCode();
-            }
-
-            if (ExcludedFromCatalog != null)
-            {
-                hash = hash * 59 + ExcludedFromCatalog.GetHashCode();
-            }
-
-            if (ExternalId != null)
-            {
-                hash = hash * 59 + ExternalId.GetHashCode();
-            }
-
-            if (EnforceContentOrder != null)
-            {
-                hash = hash * 59 + EnforceContentOrder.GetHashCode();
-            }
-
-            if (ReviewAssessmentResults != null)
-            {
-                hash = hash * 59 + ReviewAssessmentResults.GetHashCode();
-            }
-
-            return hash;
-        }
     }
 }
