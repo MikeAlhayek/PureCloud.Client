@@ -129,6 +129,8 @@ public static class ServiceCollectionExtensions
 
         services.TryAddScoped<IIntegrationsApi, IntegrationsApi>();
 
+        services.TryAddScoped<IVoicemailApi, VoicemailApi>();
+
         return services;
     }
 
