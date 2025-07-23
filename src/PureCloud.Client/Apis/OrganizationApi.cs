@@ -89,7 +89,7 @@ public sealed class OrganizationApi : IOrganizationApi
     }
 
     /// <inheritdoc />
-    public async Task<LimitChangeRequestsEntityListing> GetOrganizationLimitsChangeRequestsAsync(long? after, long? before, string status, int? pageSize, IEnumerable<string> expand, CancellationToken cancellationToken)
+    public async Task<LimitChangeRequestsEntityListing> GetOrganizationLimitsChangeRequestsAsync(long? after, long? before, string status, int? pageSize, List<string> expand, CancellationToken cancellationToken)
     {
         var parameters = new NameValueCollection();
 

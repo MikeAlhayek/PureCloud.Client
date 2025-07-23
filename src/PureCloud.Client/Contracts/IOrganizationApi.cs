@@ -53,5 +53,5 @@ public interface IOrganizationApi
     /// <param name="expand">Which fields, if any, to expand</param>
     /// <param name="cancellationToken">Cancellation token</param>
     /// <returns>LimitChangeRequestsEntityListing</returns>
-    Task<LimitChangeRequestsEntityListing> GetOrganizationLimitsChangeRequestsAsync(long? after = null, long? before = null, string status = null, int? pageSize = null, IEnumerable<string> expand = null, CancellationToken cancellationToken = default);
+    Task<LimitChangeRequestsEntityListing> GetOrganizationLimitsChangeRequestsAsync(long? after = null, long? before = null, string status = null, int? pageSize = null, List<string> expand = null, CancellationToken cancellationToken = default);
 }
