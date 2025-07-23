@@ -16,7 +16,7 @@ public interface IQualityApi
 
     Task<Calibration> CreateQualityCalibrationAsync(string calibratorId, CalibrationCreate body, CancellationToken cancellationToken = default);
 
-    Task<EvaluationResponse> CreateQualityConversationEvaluationAsync(string conversationId, EvaluationCreateRequest body, string expand = null, CancellationToken cancellationToken = default);
+    Task<EvaluationResponse> CreateQualityConversationEvaluationAsync(string conversationId, EvaluationCreateBody body, string expand = null, CancellationToken cancellationToken = default);
 
     Task<EvaluationFormResponse> CreateQualityFormsEvaluationAsync(EvaluationForm body, CancellationToken cancellationToken = default);
 

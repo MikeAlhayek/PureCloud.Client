@@ -129,12 +129,14 @@
     <Compile Include="Models\AdjustableLiveSpeakerDetectionMode.cs" />
     <Compile Include="Models\AfterCallWork.cs" />
     <Compile Include="Models\AfterCallWorkState.cs" />
+    <Compile Include="Models\AgentActivity.cs" />
     <Compile Include="Models\AgentActivityChangedTopicAgentActivity.cs" />
     <Compile Include="Models\AgentActivityChangedTopicOrganizationPresence.cs" />
     <Compile Include="Models\AgentActivityChangedTopicOutOfOffice.cs" />
     <Compile Include="Models\AgentActivityChangedTopicPresence.cs" />
     <Compile Include="Models\AgentActivityChangedTopicRoutingStatus.cs" />
     <Compile Include="Models\AgentActivityChangedTopicRoutingStatus.Status.cs" />
+    <Compile Include="Models\AgentActivityEntityListing.cs" />
     <Compile Include="Models\AgentCopilotAggregateDataContainer.cs" />
     <Compile Include="Models\AgentCopilotAggregateQueryClause.cs" />
     <Compile Include="Models\AgentCopilotAggregateQueryClause.Type.cs" />
@@ -488,6 +490,7 @@
     <Compile Include="Models\BulkResult.cs" />
     <Compile Include="Models\Bullseye.cs" />
     <Compile Include="Models\Calibration.cs" />
+    <Compile Include="Models\CalibrationCreate.cs" />
     <Compile Include="Models\Call.cs" />
     <Compile Include="Models\Callback.cs" />
     <Compile Include="Models\CallbackDirection.cs" />
@@ -1434,6 +1437,7 @@
     <Compile Include="Models\DomainEntity.cs" />
     <Compile Include="Models\DomainEntityListing.cs" />
     <Compile Include="Models\DomainEntityListingQueryResult.cs" />
+    <Compile Include="Models\DomainEntityListingSurveyForm.cs" />
     <Compile Include="Models\DomainOrgRoleDifference.cs" />
     <Compile Include="Models\DomainPermission.cs" />
     <Compile Include="Models\DomainPermissionCollection.cs" />
@@ -1545,7 +1549,15 @@
     <Compile Include="Models\EvaluationDetailQueryPredicate.Dimension.cs" />
     <Compile Include="Models\EvaluationDetailQueryPredicate.Metric.cs" />
     <Compile Include="Models\EvaluationDetailQueryPredicate.Operator.cs" />
+    <Compile Include="Models\EvaluationCreateBody.cs" />
+    <Compile Include="Models\EvaluationCreateCalibration.cs" />
+    <Compile Include="Models\EvaluationCreateConversation.cs" />
+    <Compile Include="Models\EvaluationCreateEvalForm.cs" />
+    <Compile Include="Models\EvaluationCreateQueue.cs" />
+    <Compile Include="Models\EvaluationCreateUser.cs" />
     <Compile Include="Models\EvaluationForm.cs" />
+    <Compile Include="Models\EvaluationFormResponse.cs" />
+    <Compile Include="Models\EvaluationResponse.cs" />
     <Compile Include="Models\EvaluationMediaType.cs" />
     <Compile Include="Models\EvaluationQualityV2TopicCalibration.cs" />
     <Compile Include="Models\EvaluationQualityV2TopicEvaluationReference.cs" />
@@ -3174,6 +3186,7 @@
     <Compile Include="Models\QueueObservationQueryPredicate.Dimension.cs" />
     <Compile Include="Models\QueueObservationQueryPredicate.Type.cs" />
     <Compile Include="Models\QueueObservationQueryResponse.cs" />
+    <Compile Include="Models\QueueReference.cs" />
     <Compile Include="Models\Queues\LastAgentRoutingModeEnum.cs" />
     <Compile Include="Models\Queues\Queue.cs" />
     <Compile Include="Models\Queues\QueueEmailAddress.cs" />
@@ -3552,6 +3565,11 @@
     <Compile Include="Models\SurveyDetailQueryPredicate.Dimension.cs" />
     <Compile Include="Models\SurveyDetailQueryPredicate.Metric.cs" />
     <Compile Include="Models\SurveyDetailQueryPredicate.Operator.cs" />
+    <Compile Include="Models\Survey.cs" />
+    <Compile Include="Models\SurveyErrorDetails.cs" />
+    <Compile Include="Models\SurveyForm.cs" />
+    <Compile Include="Models\SurveyQuestionGroup.cs" />
+    <Compile Include="Models\SurveyScoringSet.cs" />
     <Compile Include="Models\SystemMessage.cs" />
     <Compile Include="Models\SystemMessage.Reason.cs" />
     <Compile Include="Models\SystemPrompt.cs" />
