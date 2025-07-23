@@ -3,7 +3,7 @@ namespace PureCloud.Client.Models;
 /// <summary>
 /// ScriptEntityListing
 /// </summary>
-public sealed class ScriptEntityListing : IPagedResource<Script>
+public sealed class ScriptEntityListing
 {
 
 
