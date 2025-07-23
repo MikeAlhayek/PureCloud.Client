@@ -154,10 +154,12 @@ public static class ServiceCollectionExtensions
         services.TryAddScoped<IObjectsApi, ObjectsApi>();
 
         services.TryAddScoped<IOperationalEventsApi, OperationalEventsApi>();
-      
+
         services.TryAddScoped<IOAuthApi, OAuthApi>();
 
         services.TryAddScoped<IPresenceApi, PresenceApi>();
+
+        services.TryAddScoped<IProcessAutomationApi, ProcessAutomationApi>();
 
         services.TryAddScoped<IUserApi, UserApi>();
 
