@@ -2187,6 +2187,9 @@
     <Compile Include="Models\KnowledgeBaseReference.LanguageCode.cs" />
     <Compile Include="Models\KnowledgeBaseWithDialectReference.cs" />
     <Compile Include="Models\KnowledgeBaseWithDialectReference.LanguageCode.cs" />
+    <Compile Include="Models\KnowledgeBase.cs" />
+    <Compile Include="Models\KnowledgeBaseCreateRequest.cs" />
+    <Compile Include="Models\KnowledgeIntegrationReference.cs" />
     <Compile Include="Models\KnowledgeSuggestionConfig.cs" />
     <Compile Include="Models\KnowledgeSuggestionConfig.VendorName.cs" />
     <Compile Include="Models\LabelUtilizationRequest.cs" />
@@ -3243,6 +3246,9 @@
     <Compile Include="Models\Salesforce.cs" />
     <Compile Include="Models\Salesforce.SsoBinding.cs" />
     <Compile Include="Models\Salesforce.NameIdentifierFormat.cs" />
+    <Compile Include="Models\SalesforceSourceRequest.cs" />
+    <Compile Include="Models\SalesforceSourceResponse.cs" />
+    <Compile Include="Models\SalesforceSettings.cs" />
     <Compile Include="Models\SAMLProvider.cs" />
     <Compile Include="Models\SAMLProvider.SsoBinding.cs" />
     <Compile Include="Models\SAMLProvider.NameIdentifierFormat.cs" />
@@ -3343,6 +3349,7 @@
     <Compile Include="Models\SourceConfiguration.cs" />
     <Compile Include="Models\SourceEntity.cs" />
     <Compile Include="Models\SourceEntity.Type.cs" />
+    <Compile Include="Models\SourceLastSync.cs" />
     <Compile Include="Models\StatEventCampaignTopicIntervalMetrics.cs" />
     <Compile Include="Models\StatEventCampaignTopicMetricStats.cs" />
     <Compile Include="Models\StatEventCampaignTopicStatsNotification.cs" />
