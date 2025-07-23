@@ -24,7 +24,7 @@ public partial class TrustEntityListing : IEquatable<TrustEntityListing>, IPaged
     /// <param name="PageCount">PageCount.</param>
     public TrustEntityListing(List<Trustee> Entities = null, int? PageSize = null, int? PageNumber = null, long? Total = null, string FirstUri = null, string LastUri = null, string SelfUri = null, string NextUri = null, string PreviousUri = null, int? PageCount = null)
     {
-        this.Entities = Entities;
+        this.EntitiesList = Entities;
         this.PageSize = PageSize;
         this.PageNumber = PageNumber;
         this.Total = Total;
@@ -43,7 +43,16 @@ public partial class TrustEntityListing : IEquatable<TrustEntityListing>, IPaged
     /// Gets or Sets Entities
     /// </summary>
     [JsonPropertyName("entities")]
-    public List<Trustee> Entities { get; set; }
+    public List<Trustee> EntitiesList { get; set; }
+
+    /// <summary>
+    /// Gets or Sets Entities (Interface implementation)
+    /// </summary>
+    public IEnumerable<Trustee> Entities
+    {
+        get => EntitiesList;
+        set => EntitiesList = value?.ToList();
+    }
 
 
 
@@ -127,7 +136,7 @@ public partial class TrustEntityListing : IEquatable<TrustEntityListing>, IPaged
         var sb = new StringBuilder();
         sb.Append("class TrustEntityListing {\n");
 
-        sb.Append("  Entities: ").Append(Entities).Append("\n");
+        sb.Append("  Entities: ").Append(EntitiesList).Append("\n");
         sb.Append("  PageSize: ").Append(PageSize).Append("\n");
         sb.Append("  PageNumber: ").Append(PageNumber).Append("\n");
         sb.Append("  Total: ").Append(Total).Append("\n");
@@ -168,9 +177,9 @@ public partial class TrustEntityListing : IEquatable<TrustEntityListing>, IPaged
 
         return true &&
             (
-                Entities == other.Entities ||
-                Entities != null &&
-                Entities.SequenceEqual(other.Entities)
+                EntitiesList == other.EntitiesList ||
+                EntitiesList != null &&
+                EntitiesList.SequenceEqual(other.EntitiesList)
             ) &&
             (
                 PageSize == other.PageSize ||
@@ -230,9 +239,9 @@ public partial class TrustEntityListing : IEquatable<TrustEntityListing>, IPaged
         {
             int hash = 41;
             // Suitable nullity checks etc, of course :)
-            if (Entities != null)
+            if (EntitiesList != null)
             {
-                hash = hash * 59 + Entities.GetHashCode();
+                hash = hash * 59 + EntitiesList.GetHashCode();
             }
 
             if (PageSize != null)

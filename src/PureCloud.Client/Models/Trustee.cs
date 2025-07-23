@@ -1,5 +1,6 @@
 using System.Text;
 using System.Text.Json.Serialization;
+using PureCloud.Client.Models.Organizations;
 
 namespace PureCloud.Client.Models;
 

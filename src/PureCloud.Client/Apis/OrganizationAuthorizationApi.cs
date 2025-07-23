@@ -1,10 +1,12 @@
 using System.Collections.Specialized;
 using System.Net.Http.Json;
+using System.Text.Json;
 using Microsoft.Extensions.Options;
 using PureCloud.Client.Contracts;
 using PureCloud.Client.Http;
 using PureCloud.Client.Json;
 using PureCloud.Client.Models;
+using PureCloud.Client.Models.Organizations;
 
 namespace PureCloud.Client.Apis;
 
