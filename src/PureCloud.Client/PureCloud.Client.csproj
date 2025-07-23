@@ -4465,6 +4465,12 @@
     <Compile Include="Models\WrapupPromptEnum.cs" />
     <Compile Include="Models\WritableDivision.cs" />
     <Compile Include="Models\WritableStarrableDivision.cs" />
+    <Compile Include="Models\OrgAuthSettings.cs" />
+    <Compile Include="Models\PasswordRequirements.cs" />
+    <Compile Include="Models\LimitChangeRequestDetails.cs" />
+    <Compile Include="Models\StatusChange.cs" />
+    <Compile Include="Models\ApprovalNamespace.cs" />
+    <Compile Include="Models\LimitChangeRequestsEntityListing.cs" />
     <Compile Include="Notifications\ChannelMetadataNotification.cs" />
     <Compile Include="Notifications\Metadata.cs" />
     <Compile Include="Notifications\NotificationClient.cs" />
