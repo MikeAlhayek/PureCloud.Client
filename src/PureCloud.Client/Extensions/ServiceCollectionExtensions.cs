@@ -160,10 +160,10 @@ public static class ServiceCollectionExtensions
         services.TryAddScoped<IQualityApi, QualityApi>();
 
         services.TryAddScoped<IOutboundApi, OutboundApi>();
-
-        services.TryAddScoped<IOAuthApi, OAuthApi>();
-
+      
         services.TryAddScoped<IPresenceApi, PresenceApi>();
+
+        services.TryAddScoped<IRoutingApi, RoutingApi>();
 
         services.TryAddScoped<IProcessAutomationApi, ProcessAutomationApi>();
 

@@ -408,6 +408,8 @@
     <Compile Include="Models\BatchEventResponse.cs" />
     <Compile Include="Models\BatchUserPresenceEventRequest.cs" />
     <Compile Include="Models\BatchUserRoutingStatusEventRequest.cs" />
+    <Compile Include="Models\BenefitAssessment.cs" />
+    <Compile Include="Models\BenefitAssessment.State.cs" />
     <Compile Include="Models\BillingUsage.cs" />
     <Compile Include="Models\BillingUsageReport.cs" />
     <Compile Include="Models\BillingUsageReport.Status.cs" />
@@ -1177,6 +1179,7 @@
     <Compile Include="Models\CopilotRule.cs" />
     <Compile Include="Models\Coretype.cs" />
     <Compile Include="Models\CoretypeListing.cs" />
+    <Compile Include="Models\CreateBenefitAssessmentRequest.cs" />
     <Compile Include="Models\CreateCoachingAppointmentRequest.cs" />
     <Compile Include="Models\CreateGeneralProgramTestPhraseDetectedPhrase.cs" />
     <Compile Include="Models\CreateGeneralProgramTestPhraseMatchedTranscript.cs" />
@@ -2865,6 +2868,7 @@
     <Compile Include="Models\GeolocationSettings.cs" />
     <Compile Include="Models\HistoryInclusionEnum.cs" />
     <Compile Include="Models\InboundRoute.cs" />
+    <Compile Include="Models\InboundDomain.cs" />
     <Compile Include="Models\InclusionType.cs" />
     <Compile Include="Models\QueueConversationCallEventTopicCallMediaParticipant.InitialState.cs" />
     <Compile Include="Models\IPagedResource.cs" />
@@ -4529,17 +4533,6 @@
     <Compile Include="Models\StatusChange.cs" />
     <Compile Include="Models\ApprovalNamespace.cs" />
     <Compile Include="Models\LimitChangeRequestsEntityListing.cs" />
-    <Compile Include="Models\TrustEntityListing.cs" />
-    <Compile Include="Models\Trustee.cs" />
-    <Compile Include="Models\TrustCreate.cs" />
-    <Compile Include="Models\TrustGroup.cs" />
-    <Compile Include="Models\TrustGroup.State.cs" />
-    <Compile Include="Models\TrustGroup.Type.cs" />
-    <Compile Include="Models\TrustGroup.Visibility.cs" />
-    <Compile Include="Models\TrustMemberCreate.cs" />
-    <Compile Include="Models\TrustRequest.cs" />
-    <Compile Include="Models\TrustRequestCreate.cs" />
-    <Compile Include="Models\TrustUpdate.cs" />
     <Compile Include="Models\CreateTriggerRequest.cs" />
     <Compile Include="Models\MatchCriteria.cs" />
     <Compile Include="Models\MatchCriteriaTestResult.cs" />
