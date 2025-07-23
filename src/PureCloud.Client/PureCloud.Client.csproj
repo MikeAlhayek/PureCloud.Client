@@ -413,6 +413,8 @@
     <Compile Include="Models\BatchEventResponse.cs" />
     <Compile Include="Models\BatchUserPresenceEventRequest.cs" />
     <Compile Include="Models\BatchUserRoutingStatusEventRequest.cs" />
+    <Compile Include="Models\BenefitAssessment.cs" />
+    <Compile Include="Models\BenefitAssessment.State.cs" />
     <Compile Include="Models\BillingUsage.cs" />
     <Compile Include="Models\BillingUsageReport.cs" />
     <Compile Include="Models\BillingUsageReport.Status.cs" />
@@ -1185,6 +1187,7 @@
     <Compile Include="Models\CopilotRule.cs" />
     <Compile Include="Models\Coretype.cs" />
     <Compile Include="Models\CoretypeListing.cs" />
+    <Compile Include="Models\CreateBenefitAssessmentRequest.cs" />
     <Compile Include="Models\CreateCoachingAppointmentRequest.cs" />
     <Compile Include="Models\CreateGeneralProgramTestPhraseDetectedPhrase.cs" />
     <Compile Include="Models\CreateGeneralProgramTestPhraseMatchedTranscript.cs" />
@@ -2861,6 +2864,7 @@
     <Compile Include="Models\GeolocationSettings.cs" />
     <Compile Include="Models\HistoryInclusionEnum.cs" />
     <Compile Include="Models\InboundRoute.cs" />
+    <Compile Include="Models\InboundDomain.cs" />
     <Compile Include="Models\InclusionType.cs" />
     <Compile Include="Models\QueueConversationCallEventTopicCallMediaParticipant.InitialState.cs" />
     <Compile Include="Models\IPagedResource.cs" />
