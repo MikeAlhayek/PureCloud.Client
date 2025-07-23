@@ -548,6 +548,7 @@
     <Compile Include="Models\ChatReaction.cs" />
     <Compile Include="Models\ChatReactionUpdate.cs" />
     <Compile Include="Models\ChatSendMessageResponse.cs" />
+    <Compile Include="Models\ChatMessage.cs" />
     <Compile Include="Models\ChatSettings.cs" />
     <Compile Include="Models\ChatUserRef.cs" />
     <Compile Include="Models\ChatUserSettings.cs" />
@@ -3660,6 +3661,7 @@
     <Compile Include="Models\Locations\LocationEmergencyNumberType.cs" />
     <Compile Include="Models\MediaSummary.cs" />
     <Compile Include="Models\MediaSummaryDetail.cs" />
+    <Compile Include="Models\MediaResult.cs" />
     <Compile Include="Models\OAuthAuthorization.cs" />
     <Compile Include="Models\OAuthAuthorizationListing.cs" />
     <Compile Include="Models\OAuthClient.cs" />
@@ -3671,6 +3673,8 @@
     <Compile Include="Models\OAuthScopeListing.cs" />
     <Compile Include="Models\OutOfOffice.cs" />
     <Compile Include="Models\Recording.cs" />
+    <Compile Include="Models\RecordingEmailMessage.cs" />
+    <Compile Include="Models\RecordingMessagingMessage.cs" />
     <Compile Include="Models\ResourceConditionNode.cs" />
     <Compile Include="Models\ResourceConditionOperator.cs" />
     <Compile Include="Models\ResourceConditionType.cs" />

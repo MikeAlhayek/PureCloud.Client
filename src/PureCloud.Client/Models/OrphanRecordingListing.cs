@@ -6,8 +6,63 @@ namespace PureCloud.Client.Models;
 /// <summary>
 /// OrphanRecordingListing
 /// </summary>
+public sealed class OrphanRecordingListing
+{
+    /// <summary>
+    /// Initializes a new instance of the <see cref="OrphanRecordingListing" /> class.
+    /// </summary>
+    public OrphanRecordingListing()
+    {
+    }
 
-public partial class OrphanRecordingListing : IEquatable<OrphanRecordingListing>, IPagedResource<OrphanRecording>
+    /// <summary>
+    /// Gets or Sets Entities
+    /// </summary>
+    [JsonPropertyName("entities")]
+    public IEnumerable<OrphanRecording> Entities { get; set; }
+
+    /// <summary>
+    /// Gets or Sets PageSize
+    /// </summary>
+    [JsonPropertyName("pageSize")]
+    public int? PageSize { get; set; }
+
+    /// <summary>
+    /// Gets or Sets PageNumber
+    /// </summary>
+    [JsonPropertyName("pageNumber")]
+    public int? PageNumber { get; set; }
+
+    /// <summary>
+    /// Gets or Sets Total
+    /// </summary>
+    [JsonPropertyName("total")]
+    public long? Total { get; set; }
+
+    /// <summary>
+    /// Gets or Sets PreviousUri
+    /// </summary>
+    [JsonPropertyName("previousUri")]
+    public string PreviousUri { get; set; }
+
+    /// <summary>
+    /// Gets or Sets SelfUri
+    /// </summary>
+    [JsonPropertyName("selfUri")]
+    public string SelfUri { get; set; }
+
+    /// <summary>
+    /// Gets or Sets NextUri
+    /// </summary>
+    [JsonPropertyName("nextUri")]
+    public string NextUri { get; set; }
+
+    /// <summary>
+    /// Gets or Sets PageCount
+    /// </summary>
+    [JsonPropertyName("pageCount")]
+    public int? PageCount { get; set; }
+}
 {
     /// <summary>
     /// Initializes a new instance of the <see cref="OrphanRecordingListing" /> class.
