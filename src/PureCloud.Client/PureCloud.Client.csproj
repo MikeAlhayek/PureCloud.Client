@@ -1952,6 +1952,7 @@
     <Compile Include="Models\InfrastructureascodeJob.cs" />
     <Compile Include="Models\InfrastructureascodeJob.Status.cs" />
     <Compile Include="Models\InitialConfiguration.cs" />
+    <Compile Include="Models\InboundOnlySetting.cs" />
     <Compile Include="Models\InitiatingAction.cs" />
     <Compile Include="Models\InsightsAgentItem.cs" />
     <Compile Include="Models\InsightsAgents.cs" />
@@ -2332,6 +2333,7 @@
     <Compile Include="Models\MediaUtilization.cs" />
     <Compile Include="Models\MediaTypes.cs" />
     <Compile Include="Models\MediaTypeAccess.cs" />
+    <Compile Include="Models\MediaType.cs" />
     <Compile Include="Models\Member.cs" />
     <Compile Include="Models\MemberEntity.cs" />
     <Compile Include="Models\MemberListing.cs" />
@@ -3446,6 +3448,7 @@
     <Compile Include="Models\StatEventWrapUpCodeTopicMetricStats.cs" />
     <Compile Include="Models\StatEventWrapUpCodeTopicStatsNotification.cs" />
     <Compile Include="Models\StatisticalResponse.cs" />
+    <Compile Include="Models\SettingDirection.cs" />
     <Compile Include="Models\StatisticalSummary.cs" />
     <Compile Include="Models\StorySetting.cs" />
     <Compile Include="Models\SttEngineEntity.cs" />
