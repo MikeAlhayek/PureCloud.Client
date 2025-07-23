@@ -25,9 +25,7 @@ public sealed class KnowledgeApi : IKnowledgeApi
         ArgumentException.ThrowIfNullOrEmpty(knowledgeBaseId);
 
         var client = _httpClientFactory.CreateClient(PureCloudConstants.PureCloudClientName);
-
         var uri = UriHelper.GetUri($"api/v2/knowledge/knowledgebases/{knowledgeBaseId}", null);
-
         var response = await client.GetAsync(uri, cancellationToken);
 
         response.EnsureSuccessStatusCode();
@@ -41,9 +39,7 @@ public sealed class KnowledgeApi : IKnowledgeApi
         ArgumentNullException.ThrowIfNull(body);
 
         var client = _httpClientFactory.CreateClient(PureCloudConstants.PureCloudClientName);
-
         var uri = UriHelper.GetUri("api/v2/knowledge/knowledgebases", null);
-
         var response = await client.PostAsJsonAsync(uri, body, _options.JsonSerializerOptions, cancellationToken);
 
         response.EnsureSuccessStatusCode();
@@ -59,9 +55,7 @@ public sealed class KnowledgeApi : IKnowledgeApi
         ArgumentNullException.ThrowIfNull(body);
 
         var client = _httpClientFactory.CreateClient(PureCloudConstants.PureCloudClientName);
-
         var uri = UriHelper.GetUri($"api/v2/knowledge/knowledgebases/{knowledgeBaseId}/sources/salesforce/{sourceId}", null);
-
         var response = await client.PutAsJsonAsync(uri, body, _options.JsonSerializerOptions, cancellationToken);
 
         response.EnsureSuccessStatusCode();
@@ -75,9 +69,7 @@ public sealed class KnowledgeApi : IKnowledgeApi
         ArgumentException.ThrowIfNullOrEmpty(knowledgeBaseId);
 
         var client = _httpClientFactory.CreateClient(PureCloudConstants.PureCloudClientName);
-
         var uri = UriHelper.GetUri($"api/v2/knowledge/knowledgebases/{knowledgeBaseId}", null);
-
         var response = await client.DeleteAsync(uri, cancellationToken);
 
         response.EnsureSuccessStatusCode();
