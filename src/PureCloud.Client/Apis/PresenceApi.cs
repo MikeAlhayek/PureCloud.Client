@@ -12,6 +12,17 @@ using PureCloud.Client.Models.Users;
 namespace PureCloud.Client.Apis;
 
 /// <inheritdoc />
+/// <remarks>
+/// This API covers the core presence operations from the legacy PresenceApi.
+/// URL Coverage:
+/// - /api/v2/presence/definitions/{definitionId} (GET)
+/// - /api/v2/presence/definitions (GET, POST)
+/// - /api/v2/presence/settings (GET, PUT)
+/// - /api/v2/users/{userId}/presences/purecloud (GET, PATCH)
+/// 
+/// Specialized endpoints like bulk operations, custom sources, and legacy endpoints
+/// are intentionally omitted per migration guidelines for single representative methods.
+/// </remarks>
 public sealed class PresenceApi : IPresenceApi
 {
     private readonly HttpClient _httpClient;
