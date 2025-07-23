@@ -340,6 +340,9 @@
     <Compile Include="Models\AsyncQueryStatus.State.cs" />
     <Compile Include="Models\AsyncUserDetailsQuery.cs" />
     <Compile Include="Models\AsyncUserDetailsQuery.Order.cs" />
+    <Compile Include="Models\AttemptLimits.cs" />
+    <Compile Include="Models\AttemptLimits.ResetPeriod.cs" />
+    <Compile Include="Models\AttemptLimitsEntityListing.cs" />
     <Compile Include="Models\Attachment.cs" />
     <Compile Include="Models\AttendanceStatus.cs" />
     <Compile Include="Models\AttendanceStatus.HasEvaluation.cs" />
@@ -3224,6 +3227,7 @@
     <Compile Include="Models\RateLimitAggregationView.cs" />
     <Compile Include="Models\RateLimitAggregationView.Target.cs" />
     <Compile Include="Models\RateLimitAggregationView.Function.cs" />
+    <Compile Include="Models\RecallEntry.cs" />
     <Compile Include="Models\Recognition.cs" />
     <Compile Include="Models\RecognitionBase.cs" />
     <Compile Include="Models\RecognitionBase.Type.cs" />
@@ -4523,6 +4527,17 @@
     <Compile Include="Models\StatusChange.cs" />
     <Compile Include="Models\ApprovalNamespace.cs" />
     <Compile Include="Models\LimitChangeRequestsEntityListing.cs" />
+    <Compile Include="Models\TrustEntityListing.cs" />
+    <Compile Include="Models\Trustee.cs" />
+    <Compile Include="Models\TrustCreate.cs" />
+    <Compile Include="Models\TrustGroup.cs" />
+    <Compile Include="Models\TrustGroup.State.cs" />
+    <Compile Include="Models\TrustGroup.Type.cs" />
+    <Compile Include="Models\TrustGroup.Visibility.cs" />
+    <Compile Include="Models\TrustMemberCreate.cs" />
+    <Compile Include="Models\TrustRequest.cs" />
+    <Compile Include="Models\TrustRequestCreate.cs" />
+    <Compile Include="Models\TrustUpdate.cs" />
     <Compile Include="Models\CreateTriggerRequest.cs" />
     <Compile Include="Models\MatchCriteria.cs" />
     <Compile Include="Models\MatchCriteriaTestResult.cs" />
