@@ -101,7 +101,7 @@ public sealed class AgentActivity
     /// Gets or Sets AgentEvaluatorActivityList
     /// </summary>
     [JsonPropertyName("agentEvaluatorActivityList")]
-    public List<AgentEvaluatorActivity> AgentEvaluatorActivityList { get; set; }
+    public IEnumerable<AgentEvaluatorActivity> AgentEvaluatorActivityList { get; set; }
 
 
 

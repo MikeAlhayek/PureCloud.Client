@@ -6,44 +6,12 @@ namespace PureCloud.Client.Models;
 /// <summary>
 /// DomainEntityListingSurveyForm
 /// </summary>
-
-public partial class DomainEntityListingSurveyForm : IEquatable<DomainEntityListingSurveyForm>, IPagedResource<SurveyForm>
+public sealed class DomainEntityListingSurveyForm
 {
-    /// <summary>
-    /// Initializes a new instance of the <see cref="DomainEntityListingSurveyForm" /> class.
-    /// </summary>
-    /// <param name="Entities">Entities.</param>
-    /// <param name="PageSize">PageSize.</param>
-    /// <param name="PageNumber">PageNumber.</param>
-    /// <param name="Total">Total.</param>
-    /// <param name="FirstUri">FirstUri.</param>
-    /// <param name="LastUri">LastUri.</param>
-    /// <param name="SelfUri">SelfUri.</param>
-    /// <param name="NextUri">NextUri.</param>
-    /// <param name="PreviousUri">PreviousUri.</param>
-    /// <param name="PageCount">PageCount.</param>
-    public DomainEntityListingSurveyForm(List<SurveyForm> Entities = null, int? PageSize = null, int? PageNumber = null, long? Total = null, string FirstUri = null, string LastUri = null, string SelfUri = null, string NextUri = null, string PreviousUri = null, int? PageCount = null)
-    {
-        this.Entities = Entities;
-        this.PageSize = PageSize;
-        this.PageNumber = PageNumber;
-        this.Total = Total;
-        this.FirstUri = FirstUri;
-        this.LastUri = LastUri;
-        this.SelfUri = SelfUri;
-        this.NextUri = NextUri;
-        this.PreviousUri = PreviousUri;
-        this.PageCount = PageCount;
-
-    }
-
-
-
     /// <summary>
     /// Gets or Sets Entities
     /// </summary>
-    [JsonPropertyName("entities")]
-    public List<SurveyForm> Entities { get; set; }
+    public IEnumerable<SurveyForm> Entities { get; set; }
 
 
 

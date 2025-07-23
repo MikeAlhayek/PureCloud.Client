@@ -1,13 +1,13 @@
 using System.Text;
 using System.Text.Json.Serialization;
+using PureCloud.Client.Models.Users;
 
 namespace PureCloud.Client.Models;
 
 /// <summary>
 /// CalibrationCreate
 /// </summary>
-
-public partial class CalibrationCreate : IEquatable<CalibrationCreate>
+public sealed class CalibrationCreate
 {
 
     /// <summary>
