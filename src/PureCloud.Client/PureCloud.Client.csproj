@@ -341,6 +341,9 @@
     <Compile Include="Models\AsyncQueryStatus.State.cs" />
     <Compile Include="Models\AsyncUserDetailsQuery.cs" />
     <Compile Include="Models\AsyncUserDetailsQuery.Order.cs" />
+    <Compile Include="Models\AttemptLimits.cs" />
+    <Compile Include="Models\AttemptLimits.ResetPeriod.cs" />
+    <Compile Include="Models\AttemptLimitsEntityListing.cs" />
     <Compile Include="Models\Attachment.cs" />
     <Compile Include="Models\AttendanceStatus.cs" />
     <Compile Include="Models\AttendanceStatus.HasEvaluation.cs" />
@@ -3221,6 +3224,7 @@
     <Compile Include="Models\RateLimitAggregationView.cs" />
     <Compile Include="Models\RateLimitAggregationView.Target.cs" />
     <Compile Include="Models\RateLimitAggregationView.Function.cs" />
+    <Compile Include="Models\RecallEntry.cs" />
     <Compile Include="Models\Recognition.cs" />
     <Compile Include="Models\RecognitionBase.cs" />
     <Compile Include="Models\RecognitionBase.Type.cs" />
