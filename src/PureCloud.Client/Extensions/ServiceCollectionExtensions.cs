@@ -121,6 +121,8 @@ public static class ServiceCollectionExtensions
 
         services.TryAddScoped<IInfrastructureAsCodeApi, InfrastructureAsCodeApi>();
 
+        services.TryAddScoped<IKnowledgeApi, KnowledgeApi>();
+      
         services.TryAddScoped<IIntegrationsApi, IntegrationsApi>();
 
         services.TryAddScoped<IJourneyApi, JourneyApi>();

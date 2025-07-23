@@ -15,7 +15,7 @@ public sealed class LearningModule
     public DateTime? DateModified { get; set; }
     public int? Version { get; set; }
     public string ExternalId { get; set; }
-    public Source Source { get; set; }
+    public LearningModuleSource Source { get; set; }
     public LearningModuleRule Rule { get; set; }
     public bool? EnforceContentOrder { get; set; }
     public ReviewAssessmentResults ReviewAssessmentResults { get; set; }
