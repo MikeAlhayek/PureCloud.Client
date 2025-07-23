@@ -3597,7 +3597,13 @@
     <Compile Include="Models\Locations\LocationAddress.cs" />
     <Compile Include="Models\Locations\LocationAddressVerificationDetails.cs" />
     <Compile Include="Models\Locations\LocationAddressVerificationDetailsStatus.cs" />
+    <Compile Include="Models\Locations\LocationCreateDefinition.cs" />
+    <Compile Include="Models\Locations\LocationEntityListing.cs" />
     <Compile Include="Models\Locations\LocationImage.cs" />
+    <Compile Include="Models\Locations\LocationSearchCriteria.cs" />
+    <Compile Include="Models\Locations\LocationSearchRequest.cs" />
+    <Compile Include="Models\Locations\LocationUpdateDefinition.cs" />
+    <Compile Include="Models\Locations\LocationsSearchResponse.cs" />
     <Compile Include="Models\Settings\PureCloudOptions.cs" />
     <Compile Include="Models\AddressableEntityRef.cs" />
     <Compile Include="Models\ConjunctionEnum.cs" />
