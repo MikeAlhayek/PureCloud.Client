@@ -1,7 +1,6 @@
 using System.Collections.Specialized;
 using System.Net.Http.Json;
 using System.Text.Json;
-using Microsoft.AspNetCore.WebUtilities;
 using Microsoft.Extensions.Options;
 using PureCloud.Client.Contracts;
 using PureCloud.Client.Http;
@@ -27,7 +26,7 @@ public sealed class LocationsApi : ILocationsApi
     {
         ArgumentException.ThrowIfNullOrEmpty(locationId);
 
-        var response = await _httpClient.DeleteAsync($"api/v2/locations/{locationId}", cancellationToken);
+        var response = await _httpClient.DeleteAsync($"api/v2/locations/{Uri.EscapeDataString(locationId)}", cancellationToken);
 
         response.EnsureSuccessStatusCode();
     }
@@ -37,16 +36,20 @@ public sealed class LocationsApi : ILocationsApi
     {
         ArgumentException.ThrowIfNullOrEmpty(locationId);
 
-        var uri = $"api/v2/locations/{locationId}";
+        var parameters = new NameValueCollection();
+        var uri = $"api/v2/locations/{Uri.EscapeDataString(locationId)}";
 
         if (expand != null)
         {
-            var queryParameters = new List<KeyValuePair<string, string>>();
             foreach (var item in expand)
             {
-                queryParameters.Add(new KeyValuePair<string, string>("expand", UriHelper.ParameterToString(item)));
+                parameters.Add("expand", UriHelper.ParameterToString(item));
             }
-            uri = QueryHelpers.AddQueryString(uri, queryParameters);
+        }
+
+        if (parameters.Count > 0)
+        {
+            uri = UriHelper.GetUri(uri, parameters);
         }
 
         var response = await _httpClient.GetAsync(uri, cancellationToken);
@@ -61,7 +64,7 @@ public sealed class LocationsApi : ILocationsApi
     {
         ArgumentException.ThrowIfNullOrEmpty(locationId);
 
-        var response = await _httpClient.GetAsync($"api/v2/locations/{locationId}/sublocations", cancellationToken);
+        var response = await _httpClient.GetAsync($"api/v2/locations/{Uri.EscapeDataString(locationId)}/sublocations", cancellationToken);
 
         response.EnsureSuccessStatusCode();
 
@@ -71,35 +74,35 @@ public sealed class LocationsApi : ILocationsApi
     /// <inheritdoc />
     public async Task<LocationEntityListing> GetLocationsAsync(int? pageSize = null, int? pageNumber = null, IEnumerable<string> id = null, string sortOrder = null, CancellationToken cancellationToken = default)
     {
+        var parameters = new NameValueCollection();
         var uri = "api/v2/locations";
-        var queryParameters = new List<KeyValuePair<string, string>>();
 
         if (pageSize.HasValue)
         {
-            queryParameters.Add(new KeyValuePair<string, string>("pageSize", UriHelper.ParameterToString(pageSize.Value)));
+            parameters.Add("pageSize", UriHelper.ParameterToString(pageSize.Value));
         }
 
         if (pageNumber.HasValue)
         {
-            queryParameters.Add(new KeyValuePair<string, string>("pageNumber", UriHelper.ParameterToString(pageNumber.Value)));
+            parameters.Add("pageNumber", UriHelper.ParameterToString(pageNumber.Value));
         }
 
         if (id != null)
         {
             foreach (var item in id)
             {
-                queryParameters.Add(new KeyValuePair<string, string>("id", UriHelper.ParameterToString(item)));
+                parameters.Add("id", UriHelper.ParameterToString(item));
             }
         }
 
         if (!string.IsNullOrEmpty(sortOrder))
         {
-            queryParameters.Add(new KeyValuePair<string, string>("sortOrder", UriHelper.ParameterToString(sortOrder)));
+            parameters.Add("sortOrder", UriHelper.ParameterToString(sortOrder));
         }
 
-        if (queryParameters.Count > 0)
+        if (parameters.Count > 0)
         {
-            uri = QueryHelpers.AddQueryString(uri, queryParameters);
+            uri = UriHelper.GetUri(uri, parameters);
         }
 
         var response = await _httpClient.GetAsync(uri, cancellationToken);
@@ -114,21 +117,20 @@ public sealed class LocationsApi : ILocationsApi
     {
         ArgumentException.ThrowIfNullOrEmpty(q64);
 
-        var uri = "api/v2/locations/search";
-        var queryParameters = new List<KeyValuePair<string, string>>
+        var parameters = new NameValueCollection
         {
-            new("q64", q64)
+            { "q64", UriHelper.ParameterToString(q64) }
         };
 
         if (expand != null)
         {
             foreach (var item in expand)
             {
-                queryParameters.Add(new KeyValuePair<string, string>("expand", UriHelper.ParameterToString(item)));
+                parameters.Add("expand", UriHelper.ParameterToString(item));
             }
         }
 
-        uri = QueryHelpers.AddQueryString(uri, queryParameters);
+        var uri = UriHelper.GetUri("api/v2/locations/search", parameters);
 
         var response = await _httpClient.GetAsync(uri, cancellationToken);
 
@@ -143,7 +145,7 @@ public sealed class LocationsApi : ILocationsApi
         ArgumentException.ThrowIfNullOrEmpty(locationId);
         ArgumentNullException.ThrowIfNull(body);
 
-        var response = await _httpClient.PatchAsJsonAsync($"api/v2/locations/{locationId}", body, _options, cancellationToken);
+        var response = await _httpClient.PatchAsJsonAsync($"api/v2/locations/{Uri.EscapeDataString(locationId)}", body, _options, cancellationToken);
 
         response.EnsureSuccessStatusCode();
 
