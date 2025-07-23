@@ -1,53 +1,18 @@
 using System.Text;
 using System.Text.Json.Serialization;
+using PureCloud.Client.Models.Users;
 
 namespace PureCloud.Client.Models;
 
 /// <summary>
 /// AgentActivity
 /// </summary>
-
-public partial class AgentActivity : IEquatable<AgentActivity>
+public sealed class AgentActivity
 {
-    /// <summary>
-    /// Initializes a new instance of the <see cref="AgentActivity" /> class.
-    /// </summary>
-    /// <param name="Name">Name.</param>
-    /// <param name="Agent">Agent.</param>
-    /// <param name="NumEvaluations">NumEvaluations.</param>
-    /// <param name="AverageEvaluationScore">AverageEvaluationScore.</param>
-    /// <param name="NumCriticalEvaluations">NumCriticalEvaluations.</param>
-    /// <param name="AverageCriticalScore">AverageCriticalScore.</param>
-    /// <param name="HighestEvaluationScore">HighestEvaluationScore.</param>
-    /// <param name="LowestEvaluationScore">LowestEvaluationScore.</param>
-    /// <param name="HighestCriticalScore">HighestCriticalScore.</param>
-    /// <param name="LowestCriticalScore">LowestCriticalScore.</param>
-    /// <param name="AgentEvaluatorActivityList">AgentEvaluatorActivityList.</param>
-    /// <param name="NumEvaluationsWithoutViewPermission">NumEvaluationsWithoutViewPermission.</param>
-    public AgentActivity(string Name = null, User Agent = null, int? NumEvaluations = null, int? AverageEvaluationScore = null, int? NumCriticalEvaluations = null, float? AverageCriticalScore = null, float? HighestEvaluationScore = null, float? LowestEvaluationScore = null, float? HighestCriticalScore = null, float? LowestCriticalScore = null, List<AgentEvaluatorActivity> AgentEvaluatorActivityList = null, int? NumEvaluationsWithoutViewPermission = null)
-    {
-        this.Name = Name;
-        this.Agent = Agent;
-        this.NumEvaluations = NumEvaluations;
-        this.AverageEvaluationScore = AverageEvaluationScore;
-        this.NumCriticalEvaluations = NumCriticalEvaluations;
-        this.AverageCriticalScore = AverageCriticalScore;
-        this.HighestEvaluationScore = HighestEvaluationScore;
-        this.LowestEvaluationScore = LowestEvaluationScore;
-        this.HighestCriticalScore = HighestCriticalScore;
-        this.LowestCriticalScore = LowestCriticalScore;
-        this.AgentEvaluatorActivityList = AgentEvaluatorActivityList;
-        this.NumEvaluationsWithoutViewPermission = NumEvaluationsWithoutViewPermission;
-
-    }
-
-
-
     /// <summary>
     /// The globally unique identifier for the object.
     /// </summary>
     /// <value>The globally unique identifier for the object.</value>
-    [JsonPropertyName("id")]
     public string Id { get; set; }
 
 
@@ -136,7 +101,7 @@ public partial class AgentActivity : IEquatable<AgentActivity>
     /// Gets or Sets AgentEvaluatorActivityList
     /// </summary>
     [JsonPropertyName("agentEvaluatorActivityList")]
-    public List<AgentEvaluatorActivity> AgentEvaluatorActivityList { get; set; }
+    public IEnumerable<AgentEvaluatorActivity> AgentEvaluatorActivityList { get; set; }
 
 
 

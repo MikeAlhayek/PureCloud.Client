@@ -151,9 +151,13 @@ public static class ServiceCollectionExtensions
 
         services.TryAddScoped<IOrganizationApi, OrganizationApi>();
 
+        services.TryAddScoped<IOrganizationAuthorizationApi, OrganizationAuthorizationApi>();
+
         services.TryAddScoped<IObjectsApi, ObjectsApi>();
 
         services.TryAddScoped<IOperationalEventsApi, OperationalEventsApi>();
+
+        services.TryAddScoped<IQualityApi, QualityApi>();
 
         services.TryAddScoped<IOutboundApi, OutboundApi>();
       

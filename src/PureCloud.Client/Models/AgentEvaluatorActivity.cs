@@ -1,13 +1,13 @@
 using System.Text;
 using System.Text.Json.Serialization;
+using PureCloud.Client.Models.Users;
 
 namespace PureCloud.Client.Models;
 
 /// <summary>
 /// AgentEvaluatorActivity
 /// </summary>
-
-public partial class AgentEvaluatorActivity : IEquatable<AgentEvaluatorActivity>
+public sealed class AgentEvaluatorActivity
 {
     /// <summary>
     /// Initializes a new instance of the <see cref="AgentEvaluatorActivity" /> class.
