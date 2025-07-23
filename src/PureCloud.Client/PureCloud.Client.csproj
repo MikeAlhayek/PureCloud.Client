@@ -4530,9 +4530,13 @@
     <Compile Include="Models\CreateResponseAssetRequest.cs" />
     <Compile Include="Models\CreateResponseAssetResponse.cs" />
     <Compile Include="Models\ResponseSubstitution.cs" />
-    <Compile Include="Models\ResponseFilter.cs" />
-    <Compile Include="Models\ResponseAssetFilter.cs" />
     <Compile Include="Models\ResponseText.cs" />
+    <Compile Include="Models\ResponseText.ContentType.cs" />
+    <Compile Include="Models\ResponseText.Type.cs" />
+    <Compile Include="Models\Response.InteractionType.cs" />
+    <Compile Include="Models\Response.ResponseType.cs" />
+    <Compile Include="Models\Library.ResponseType.cs" />
+    <Compile Include="Models\ResponseFilter.cs" />
     <Compile Include="Notifications\ChannelMetadataNotification.cs" />
     <Compile Include="Notifications\Metadata.cs" />
     <Compile Include="Notifications\NotificationClient.cs" />
