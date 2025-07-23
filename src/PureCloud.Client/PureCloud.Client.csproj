@@ -4500,6 +4500,9 @@
     <Compile Include="Models\Trustee.cs" />
     <Compile Include="Models\TrustCreate.cs" />
     <Compile Include="Models\TrustGroup.cs" />
+    <Compile Include="Models\TrustGroup.State.cs" />
+    <Compile Include="Models\TrustGroup.Type.cs" />
+    <Compile Include="Models\TrustGroup.Visibility.cs" />
     <Compile Include="Models\TrustMemberCreate.cs" />
     <Compile Include="Models\TrustRequest.cs" />
     <Compile Include="Models\TrustRequestCreate.cs" />
