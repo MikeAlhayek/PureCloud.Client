@@ -1440,6 +1440,7 @@
     <Compile Include="Models\Document.UploadMethod.cs" />
     <Compile Include="Models\DomainEntity.cs" />
     <Compile Include="Models\DomainEntityListing.cs" />
+    <Compile Include="Models\DomainEntityListingEvaluationForm.cs" />
     <Compile Include="Models\DomainEntityListingQueryResult.cs" />
     <Compile Include="Models\DomainEntityListingSurveyForm.cs" />
     <Compile Include="Models\DomainOrgRoleDifference.cs" />
@@ -3585,6 +3586,7 @@
     <Compile Include="Models\SurveyQuestion.cs" />
     <Compile Include="Models\SurveyQuestionGroup.cs" />
     <Compile Include="Models\SurveyQuestionGroupScore.cs" />
+    <Compile Include="Models\SurveyQuestionScore.cs" />
     <Compile Include="Models\SurveyScoringSet.cs" />
     <Compile Include="Models\SystemMessage.cs" />
     <Compile Include="Models\SystemMessage.Reason.cs" />
