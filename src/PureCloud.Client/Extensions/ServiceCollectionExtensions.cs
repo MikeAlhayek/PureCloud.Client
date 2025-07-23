@@ -145,10 +145,12 @@ public static class ServiceCollectionExtensions
 
         services.TryAddTransient<NotificationClient>();
 
+        services.TryAddScoped<IObjectsApi, ObjectsApi>();
+
         services.TryAddScoped<IOperationalEventsApi, OperationalEventsApi>();
 
         services.TryAddScoped<IUserApi, UserApi>();
-
+      
         services.TryAddScoped<IVoicemailApi, VoicemailApi>();
 
         services.TryAddScoped<IWebChatApi, WebChatApi>();
