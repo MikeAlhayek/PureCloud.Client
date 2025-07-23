@@ -7,8 +7,7 @@ namespace PureCloud.Client.Models;
 /// <summary>
 /// LearningAssessment
 /// </summary>
-
-public partial class LearningAssessment : IEquatable<LearningAssessment>
+public sealed class LearningAssessment
 {
     /// <summary>
     /// Status of the assessment

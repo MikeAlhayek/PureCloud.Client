@@ -121,9 +121,17 @@ public static class ServiceCollectionExtensions
 
         services.TryAddScoped<IInfrastructureAsCodeApi, InfrastructureAsCodeApi>();
 
+        services.TryAddScoped<IKnowledgeApi, KnowledgeApi>();
+      
         services.TryAddScoped<IIntegrationsApi, IntegrationsApi>();
 
-        services.TryAddScoped<IKnowledgeApi, KnowledgeApi>();
+        services.TryAddScoped<IJourneyApi, JourneyApi>();
+
+        services.TryAddScoped<ILanguagesApi, LanguagesApi>();
+
+        services.TryAddScoped<ILearningApi, LearningApi>();
+
+        services.TryAddScoped<ILicenseApi, LicenseApi>();
 
         services.TryAddScoped<INotificationClientFactory, NotificationClientFactory>();
 
@@ -136,7 +144,7 @@ public static class ServiceCollectionExtensions
         services.TryAddScoped<IWebChatApi, WebChatApi>();
 
         services.TryAddScoped<IWebMessagingApi, WebMessagingApi>();
-      
+
         services.TryAddScoped<IWidgetsApi, WidgetsApi>();
 
         return services;
