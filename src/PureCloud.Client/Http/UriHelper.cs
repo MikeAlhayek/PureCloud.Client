@@ -22,9 +22,7 @@ public static class UriHelper
             }
         }
 
-        builder.Query = query.ToString();
-
-        return builder.Uri.PathAndQuery;
+        return query.ToString();
     }
 
     public static string ParameterToString(object obj)
