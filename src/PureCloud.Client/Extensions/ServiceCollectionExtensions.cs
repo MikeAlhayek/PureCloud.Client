@@ -121,6 +121,8 @@ public static class ServiceCollectionExtensions
 
         services.TryAddScoped<IInfrastructureAsCodeApi, InfrastructureAsCodeApi>();
 
+        services.TryAddScoped<IKnowledgeApi, KnowledgeApi>();
+      
         services.TryAddScoped<IIntegrationsApi, IntegrationsApi>();
 
         services.TryAddScoped<IJourneyApi, JourneyApi>();
@@ -132,6 +134,8 @@ public static class ServiceCollectionExtensions
         services.TryAddScoped<ILicenseApi, LicenseApi>();
 
         services.TryAddScoped<ILocationsApi, LocationsApi>();
+
+        services.TryAddScoped<ILogCaptureApi, LogCaptureApi>();
 
         services.TryAddScoped<INotificationClientFactory, NotificationClientFactory>();
 
