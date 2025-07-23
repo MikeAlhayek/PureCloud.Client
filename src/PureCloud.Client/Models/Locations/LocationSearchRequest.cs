@@ -2,7 +2,7 @@ using System.Runtime.Serialization;
 using System.Text;
 using System.Text.Json.Serialization;
 
-namespace PureCloud.Client.Models;
+namespace PureCloud.Client.Models.Locations;
 
 /// <summary>
 /// LocationSearchRequest

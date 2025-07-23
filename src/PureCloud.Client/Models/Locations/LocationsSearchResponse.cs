@@ -1,20 +1,21 @@
 using System.Text;
 using System.Text.Json.Serialization;
+using PureCloud.Client.Models.Locations;
 
-namespace PureCloud.Client.Models;
+namespace PureCloud.Client.Models.Locations;
 
 /// <summary>
 /// LocationsSearchResponse
 /// </summary>
 
-public partial class LocationsSearchResponse : IEquatable<LocationsSearchResponse>
+public sealed class LocationsSearchResponse
 {
 
     /// <summary>
     /// Initializes a new instance of the <see cref="LocationsSearchResponse" /> class.
     /// </summary>
     [JsonConstructorAttribute]
-    protected LocationsSearchResponse() { }
+    public LocationsSearchResponse() { }
     /// <summary>
     /// Initializes a new instance of the <see cref="LocationsSearchResponse" /> class.
     /// </summary>
