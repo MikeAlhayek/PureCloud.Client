@@ -138,6 +138,8 @@ public static class ServiceCollectionExtensions
         services.TryAddScoped<IMobileDevicesApi, MobileDevicesApi>();
 
         services.TryAddScoped<IMessagingApi, MessagingApi>();
+      
+        services.TryAddScoped<INotificationsApi, NotificationsApi>();
 
         services.TryAddScoped<INotificationClientFactory, NotificationClientFactory>();
 

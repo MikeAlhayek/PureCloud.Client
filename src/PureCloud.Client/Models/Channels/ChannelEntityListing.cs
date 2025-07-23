@@ -5,5 +5,5 @@ public sealed class ChannelEntityListing
     /// <summary>
     /// Gets or Sets Entities
     /// </summary>
-    public List<Channel> Entities { get; set; }
+    public IEnumerable<Channel> Entities { get; set; }
 }
