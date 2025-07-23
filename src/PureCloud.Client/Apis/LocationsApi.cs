@@ -1,3 +1,4 @@
+using System.Collections.Specialized;
 using System.Net.Http.Json;
 using System.Text.Json;
 using Microsoft.AspNetCore.WebUtilities;
@@ -40,8 +41,12 @@ public sealed class LocationsApi : ILocationsApi
 
         if (expand != null)
         {
-            var queryParams = expand.Select(item => new KeyValuePair<string, string>("expand", UriHelper.ParameterToString(item)));
-            uri = QueryHelpers.AddQueryString(uri, queryParams);
+            var parameters = new NameValueCollection();
+            foreach (var item in expand)
+            {
+                parameters.Add("expand", UriHelper.ParameterToString(item));
+            }
+            uri = UriHelper.GetUri(uri, parameters);
         }
 
         var response = await _httpClient.GetAsync(uri, cancellationToken);
@@ -66,38 +71,35 @@ public sealed class LocationsApi : ILocationsApi
     /// <inheritdoc />
     public async Task<LocationEntityListing> GetLocationsAsync(int? pageSize = null, int? pageNumber = null, IEnumerable<string> locationIds = null, string sortOrder = null, CancellationToken cancellationToken = default)
     {
-        var queryParams = new List<KeyValuePair<string, string>>();
+        var parameters = new NameValueCollection();
         var uri = "api/v2/locations";
 
         if (pageSize.HasValue)
         {
-            queryParams.Add(new KeyValuePair<string, string>("pageSize", UriHelper.ParameterToString(pageSize.Value)));
+            parameters.Add("pageSize", UriHelper.ParameterToString(pageSize.Value));
         }
 
         if (pageNumber.HasValue)
         {
-            queryParams.Add(new KeyValuePair<string, string>("pageNumber", UriHelper.ParameterToString(pageNumber.Value)));
+            parameters.Add("pageNumber", UriHelper.ParameterToString(pageNumber.Value));
         }
 
         if (locationIds != null)
         {
-            foreach (var item in locationIds)
+            foreach (var locationId in locationIds)
             {
-                queryParams.Add(new KeyValuePair<string, string>("id", UriHelper.ParameterToString(item)));
+                parameters.Add("id", UriHelper.ParameterToString(locationId));
             }
         }
 
         if (!string.IsNullOrEmpty(sortOrder))
         {
-            queryParams.Add(new KeyValuePair<string, string>("sortOrder", UriHelper.ParameterToString(sortOrder)));
+            parameters.Add("sortOrder", UriHelper.ParameterToString(sortOrder));
         }
 
-        if (queryParams.Count > 0)
-        {
-            uri = QueryHelpers.AddQueryString(uri, queryParams);
-        }
+        var requestUri = UriHelper.GetUri(uri, parameters);
 
-        var response = await _httpClient.GetAsync(uri, cancellationToken);
+        var response = await _httpClient.GetAsync(requestUri, cancellationToken);
 
         response.EnsureSuccessStatusCode();
 
@@ -109,22 +111,20 @@ public sealed class LocationsApi : ILocationsApi
     {
         ArgumentException.ThrowIfNullOrEmpty(q64);
 
-        var queryParams = new List<KeyValuePair<string, string>>
-        {
-            new("q64", UriHelper.ParameterToString(q64))
-        };
+        var parameters = new NameValueCollection();
+        parameters.Add("q64", UriHelper.ParameterToString(q64));
 
         if (expand != null)
         {
             foreach (var item in expand)
             {
-                queryParams.Add(new KeyValuePair<string, string>("expand", UriHelper.ParameterToString(item)));
+                parameters.Add("expand", UriHelper.ParameterToString(item));
             }
         }
 
-        var uri = QueryHelpers.AddQueryString("api/v2/locations/search", queryParams);
+        var requestUri = UriHelper.GetUri("api/v2/locations/search", parameters);
 
-        var response = await _httpClient.GetAsync(uri, cancellationToken);
+        var response = await _httpClient.GetAsync(requestUri, cancellationToken);
 
         response.EnsureSuccessStatusCode();
 
