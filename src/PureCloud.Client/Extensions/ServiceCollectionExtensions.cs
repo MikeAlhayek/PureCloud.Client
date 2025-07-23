@@ -121,6 +121,8 @@ public static class ServiceCollectionExtensions
 
         services.TryAddScoped<IInfrastructureAsCodeApi, InfrastructureAsCodeApi>();
 
+        services.TryAddScoped<IKnowledgeApi, KnowledgeApi>();
+      
         services.TryAddScoped<IIntegrationsApi, IntegrationsApi>();
 
         services.TryAddScoped<IJourneyApi, JourneyApi>();
@@ -131,11 +133,21 @@ public static class ServiceCollectionExtensions
 
         services.TryAddScoped<ILicenseApi, LicenseApi>();
 
+        services.TryAddScoped<ILocationsApi, LocationsApi>();
+
+        services.TryAddScoped<ILogCaptureApi, LogCaptureApi>();
+      
+        services.TryAddScoped<IMessagingApi, MessagingApi>();
+
+        services.TryAddScoped<IMobileDevicesApi, MobileDevicesApi>();
+
+        services.TryAddScoped<IMessagingApi, MessagingApi>();
+      
+        services.TryAddScoped<INotificationsApi, NotificationsApi>();
+
         services.TryAddScoped<INotificationClientFactory, NotificationClientFactory>();
 
         services.TryAddTransient<NotificationClient>();
-
-        services.TryAddScoped<INotificationsApi, NotificationsApi>();
 
         services.TryAddScoped<IUserApi, UserApi>();
 
