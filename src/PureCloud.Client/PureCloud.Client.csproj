@@ -37,6 +37,7 @@
     <Compile Include="Models\AcceleratorSpecification.Type.cs" />
     <Compile Include="Models\AcceleratorSpecification.Origin.cs" />
     <Compile Include="Models\AddressableEntity.cs" />
+    <Compile Include="Models\Annotation.cs" />
     <Compile Include="Models\ActionEventRequest.cs" />
     <Compile Include="Models\ActionMap.cs" />
     <Compile Include="Models\ActionMapAction.cs" />
@@ -399,6 +400,11 @@
     <Compile Include="Models\AvailableTranslations.cs" />
     <Compile Include="Models\BaseMediaSettings.cs" />
     <Compile Include="Models\BatchConversationEventRequest.cs" />
+    <Compile Include="Models\BatchDownloadJobResult.cs" />
+    <Compile Include="Models\BatchDownloadJobStatusResult.cs" />
+    <Compile Include="Models\BatchDownloadJobSubmission.cs" />
+    <Compile Include="Models\BatchDownloadJobSubmissionResult.cs" />
+    <Compile Include="Models\BatchDownloadRequest.cs" />
     <Compile Include="Models\BatchEventResponse.cs" />
     <Compile Include="Models\BatchUserPresenceEventRequest.cs" />
     <Compile Include="Models\BatchUserRoutingStatusEventRequest.cs" />
@@ -1498,6 +1504,7 @@
     <Compile Include="Models\EmergencyGroupListing.cs" />
     <Compile Include="Models\EmergencyLocation.cs" />
     <Compile Include="Models\EmergencyLocation.Source.cs" />
+    <Compile Include="Models\Endpoint.cs" />
     <Compile Include="Models\EmployeePerformanceExternalMetricsDefinitionExternalMetricsDefinition.cs" />
     <Compile Include="Models\EmployeePerformanceExternalMetricsDefinitionExternalMetricsDefinition.Unit.cs" />
     <Compile Include="Models\EmployeePerformanceExternalMetricsDefinitionExternalMetricsDefinitionDefault.ObjectiveType.cs" />
@@ -2874,6 +2881,8 @@
     <Compile Include="Models\Organizations\PresenceEventOrganizationPresence.cs" />
     <Compile Include="Models\Organizations\ProductPlatform.cs" />
     <Compile Include="Models\Organizations\SystemPresence.cs" />
+    <Compile Include="Models\OrphanRecording.cs" />
+    <Compile Include="Models\OrphanRecordingListing.cs" />
     <Compile Include="Models\OrgOAuthClient.cs" />
     <Compile Include="Models\OrgUser.cs" />
     <Compile Include="Models\Page.cs" />
@@ -3661,6 +3670,7 @@
     <Compile Include="Models\OAuthScope.cs" />
     <Compile Include="Models\OAuthScopeListing.cs" />
     <Compile Include="Models\OutOfOffice.cs" />
+    <Compile Include="Models\Recording.cs" />
     <Compile Include="Models\ResourceConditionNode.cs" />
     <Compile Include="Models\ResourceConditionOperator.cs" />
     <Compile Include="Models\ResourceConditionType.cs" />
