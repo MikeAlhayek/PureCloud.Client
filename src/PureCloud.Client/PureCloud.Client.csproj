@@ -38,6 +38,7 @@
     <Compile Include="Models\AcceleratorSpecification.Origin.cs" />
     <Compile Include="Models\AddressableEntity.cs" />
     <Compile Include="Models\Annotation.cs" />
+    <Compile Include="Models\Annotation.Reason.cs" />
     <Compile Include="Models\ActionEventRequest.cs" />
     <Compile Include="Models\ActionMap.cs" />
     <Compile Include="Models\ActionMapAction.cs" />
@@ -402,6 +403,7 @@
     <Compile Include="Models\BatchConversationEventRequest.cs" />
     <Compile Include="Models\BatchDownloadJobResult.cs" />
     <Compile Include="Models\BatchDownloadJobStatusResult.cs" />
+    <Compile Include="Models\BatchDownloadJobStatusResult.Status.cs" />
     <Compile Include="Models\BatchDownloadJobSubmission.cs" />
     <Compile Include="Models\BatchDownloadJobSubmissionResult.cs" />
     <Compile Include="Models\BatchDownloadRequest.cs" />
@@ -2887,6 +2889,8 @@
     <Compile Include="Models\Organizations\ProductPlatform.cs" />
     <Compile Include="Models\Organizations\SystemPresence.cs" />
     <Compile Include="Models\OrphanRecording.cs" />
+    <Compile Include="Models\OrphanRecording.ProviderType.cs" />
+    <Compile Include="Models\OrphanRecording.MediaType.cs" />
     <Compile Include="Models\OrphanRecordingListing.cs" />
     <Compile Include="Models\OrgOAuthClient.cs" />
     <Compile Include="Models\OrgUser.cs" />
@@ -3677,6 +3681,11 @@
     <Compile Include="Models\OAuthScopeListing.cs" />
     <Compile Include="Models\OutOfOffice.cs" />
     <Compile Include="Models\Recording.cs" />
+    <Compile Include="Models\Recording.MediaSubtype.cs" />
+    <Compile Include="Models\Recording.FileState.cs" />
+    <Compile Include="Models\Recording.ArchiveMedium.cs" />
+    <Compile Include="Models\Recording.FileRole.cs" />
+    <Compile Include="Models\Recording.ErrorStatus.cs" />
     <Compile Include="Models\RecordingEmailMessage.cs" />
     <Compile Include="Models\RecordingMessagingMessage.cs" />
     <Compile Include="Models\ResourceConditionNode.cs" />
