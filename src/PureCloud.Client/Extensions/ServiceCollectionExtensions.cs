@@ -163,6 +163,8 @@ public static class ServiceCollectionExtensions
 
         services.TryAddScoped<IProcessAutomationApi, ProcessAutomationApi>();
 
+        services.TryAddScoped<IResponseManagementApiV2, ResponseManagementApi>();
+
         services.TryAddScoped<IUserApi, UserApi>();
 
         services.TryAddScoped<IVoicemailApi, VoicemailApi>();
