@@ -131,13 +131,15 @@ public static class ServiceCollectionExtensions
 
         services.TryAddScoped<ILearningApi, LearningApi>();
 
-        services.TryAddScoped<IMessagingApi, MessagingApi>();
-
         services.TryAddScoped<ILicenseApi, LicenseApi>();
 
         services.TryAddScoped<ILocationsApi, LocationsApi>();
 
         services.TryAddScoped<ILogCaptureApi, LogCaptureApi>();
+      
+        services.TryAddScoped<IMessagingApi, MessagingApi>();
+
+        services.TryAddScoped<IMobileDevicesApi, MobileDevicesApi>();
 
         services.TryAddScoped<INotificationClientFactory, NotificationClientFactory>();
 
