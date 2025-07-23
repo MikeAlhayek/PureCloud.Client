@@ -1,5 +1,3 @@
-using System.Runtime.Serialization;
-
 namespace PureCloud.Client.Models;
 
 /// <summary>
@@ -12,30 +10,25 @@ public enum RecordingMediaSubtype
     /// Please upgrade the SDK using the command "Upgrade-Package PureCloudApiSdk" 
     /// in the Package Manager Console
     /// </summary>
-    [EnumMember(Value = "OUTDATED_SDK_VERSION")]
     OutdatedSdkVersion,
 
     /// <summary>
     /// Enum Trunk for "Trunk"
     /// </summary>
-    [EnumMember(Value = "Trunk")]
     Trunk,
 
     /// <summary>
     /// Enum Station for "Station"
     /// </summary>
-    [EnumMember(Value = "Station")]
     Station,
 
     /// <summary>
     /// Enum Consult for "Consult"
     /// </summary>
-    [EnumMember(Value = "Consult")]
     Consult,
 
     /// <summary>
     /// Enum Screen for "Screen"
     /// </summary>
-    [EnumMember(Value = "Screen")]
     Screen
 }

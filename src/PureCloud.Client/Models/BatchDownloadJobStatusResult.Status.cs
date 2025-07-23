@@ -1,5 +1,3 @@
-using System.Runtime.Serialization;
-
 namespace PureCloud.Client.Models;
 
 /// <summary>
@@ -12,18 +10,15 @@ public enum BatchDownloadJobStatus
     /// Please upgrade the SDK using the command "Upgrade-Package PureCloudApiSdk" 
     /// in the Package Manager Console
     /// </summary>
-    [EnumMember(Value = "OUTDATED_SDK_VERSION")]
     OutdatedSdkVersion,
 
     /// <summary>
     /// Enum Inprogress for "InProgress"
     /// </summary>
-    [EnumMember(Value = "InProgress")]
     Inprogress,
 
     /// <summary>
     /// Enum Completed for "Completed"
     /// </summary>
-    [EnumMember(Value = "Completed")]
     Completed
 }

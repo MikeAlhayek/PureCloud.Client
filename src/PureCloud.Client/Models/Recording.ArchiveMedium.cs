@@ -1,5 +1,3 @@
-using System.Runtime.Serialization;
-
 namespace PureCloud.Client.Models;
 
 /// <summary>
@@ -12,12 +10,10 @@ public enum RecordingArchiveMedium
     /// Please upgrade the SDK using the command "Upgrade-Package PureCloudApiSdk" 
     /// in the Package Manager Console
     /// </summary>
-    [EnumMember(Value = "OUTDATED_SDK_VERSION")]
     OutdatedSdkVersion,
 
     /// <summary>
     /// Enum Cloudarchive for "CLOUDARCHIVE"
     /// </summary>
-    [EnumMember(Value = "CLOUDARCHIVE")]
     Cloudarchive
 }
