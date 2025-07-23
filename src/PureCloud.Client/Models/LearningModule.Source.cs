@@ -1,6 +1,6 @@
 namespace PureCloud.Client.Models;
 
-public enum Source
+public enum LearningModuleSource
 {
     OutdatedSdkVersion,
     Usercreated,
