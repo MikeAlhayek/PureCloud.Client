@@ -466,6 +466,7 @@
     <Compile Include="Models\BulkEntityErrorRelationship.cs" />
     <Compile Include="Models\BulkError.cs" />
     <Compile Include="Models\BulkErrorDetail.cs" />
+    <Compile Include="Models\ButtonResponse.cs" />
     <Compile Include="Models\BulkFetchContactsResponse.cs" />
     <Compile Include="Models\BulkFetchNotesResponse.cs" />
     <Compile Include="Models\BulkFetchOrganizationsResponse.cs" />
@@ -516,6 +517,7 @@
     <Compile Include="Models\CallState.cs" />
     <Compile Include="Models\CallTarget.cs" />
     <Compile Include="Models\CallTarget.Type.cs" />
+    <Compile Include="Models\Card.cs" />
     <Compile Include="Models\CannedResponseLibraries.cs" />
     <Compile Include="Models\CannedResponseLibrariesMode.cs" />
     <Compile Include="Models\Category.cs" />
@@ -549,6 +551,7 @@
     <Compile Include="Models\ChatReactionUpdate.cs" />
     <Compile Include="Models\ChatSendMessageResponse.cs" />
     <Compile Include="Models\ChatMessage.cs" />
+    <Compile Include="Models\ChatMessageUser.cs" />
     <Compile Include="Models\ChatSettings.cs" />
     <Compile Include="Models\ChatUserRef.cs" />
     <Compile Include="Models\ChatUserSettings.cs" />
@@ -1472,6 +1475,7 @@
     <Compile Include="Models\EdgeSoftwareUpdateTopicDomainEdgeSoftwareUpdate.Status.cs" />
     <Compile Include="Models\EffectiveConfiguration.cs" />
     <Compile Include="Models\Email.cs" />
+    <Compile Include="Models\EmailAttachment.cs" />
     <Compile Include="Models\EmailBeginTransmittingEvent.cs" />
     <Compile Include="Models\EmailCommunicationAnsweredEvent.cs" />
     <Compile Include="Models\EmailCommunicationDispositionAppliedEvent.cs" />
