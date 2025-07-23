@@ -2103,6 +2103,8 @@
     <Compile Include="Models\LogCaptureDownloadExecutionResponse.State.cs" />
     <Compile Include="Models\LogCaptureUserConfiguration.CaptureMethod.cs" />
     <Compile Include="Models\MissingStubs.cs" />
+    <Compile Include="Models\MobileDevices\DirectoryUserDevicesListing.cs" />
+    <Compile Include="Models\MobileDevices\UserDevice.cs" />
     <Compile Include="Models\Outcome.cs" />
     <Compile Include="Models\OutcomeAttributionJobStateResponse.cs" />
     <Compile Include="Models\OutcomeAttributionAsyncResponse.cs" />
