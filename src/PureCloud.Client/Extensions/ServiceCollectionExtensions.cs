@@ -138,14 +138,12 @@ public static class ServiceCollectionExtensions
         services.TryAddScoped<IMobileDevicesApi, MobileDevicesApi>();
 
         services.TryAddScoped<IMessagingApi, MessagingApi>();
-      
+
         services.TryAddScoped<INotificationsApi, NotificationsApi>();
 
         services.TryAddScoped<INotificationClientFactory, NotificationClientFactory>();
 
         services.TryAddTransient<NotificationClient>();
-
-        services.TryAddScoped<IOAuthApi, OAuthApi>();
 
         services.TryAddScoped<INotificationClientFactory, NotificationClientFactory>();
 
@@ -156,11 +154,13 @@ public static class ServiceCollectionExtensions
         services.TryAddScoped<IObjectsApi, ObjectsApi>();
 
         services.TryAddScoped<IOperationalEventsApi, OperationalEventsApi>();
+      
+        services.TryAddScoped<IOAuthApi, OAuthApi>();
 
         services.TryAddScoped<IPresenceApi, PresenceApi>();
 
         services.TryAddScoped<IUserApi, UserApi>();
-      
+
         services.TryAddScoped<IVoicemailApi, VoicemailApi>();
 
         services.TryAddScoped<IWebChatApi, WebChatApi>();
