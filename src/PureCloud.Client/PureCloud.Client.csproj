@@ -2600,6 +2600,8 @@
     <Compile Include="Models\PresenceDetailQueryPredicate.Type.cs" />
     <Compile Include="Models\PresenceDetailQueryPredicate.Dimension.cs" />
     <Compile Include="Models\PresenceDetailQueryPredicate.Operator.cs" />
+    <Compile Include="Models\PresenceSettings.cs" />
+    <Compile Include="Models\RestorePresenceSettings.cs" />
     <Compile Include="Models\PrizeImages.cs" />
     <Compile Include="Models\ProfileWithDateRange.cs" />
     <Compile Include="Models\ProgramTopicLinksTestPhraseDetectedPhrase.cs" />
@@ -2866,6 +2868,7 @@
     <Compile Include="Models\Organizations\Organization.cs" />
     <Compile Include="Models\Organizations\OrganizationPresence.cs" />
     <Compile Include="Models\Organizations\OrganizationPresenceDefinition.cs" />
+    <Compile Include="Models\Organizations\OrganizationPresenceDefinitionEntityListing.cs" />
     <Compile Include="Models\Organizations\OrganizationPresenceDefinitionType.cs" />
     <Compile Include="Models\Organizations\OrganizationState.cs" />
     <Compile Include="Models\Organizations\PresenceEventOrganizationPresence.cs" />
