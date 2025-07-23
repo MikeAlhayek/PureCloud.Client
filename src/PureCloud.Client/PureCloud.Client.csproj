@@ -4521,7 +4521,9 @@
     <Compile Include="Models\LibraryBatchRequest.cs" />
     <Compile Include="Models\Library.cs" />
     <Compile Include="Models\Response.cs" />
-    <Compile Include="Models\ResponseEntityListing.cs" />
+    <Compile Include="Models\SimpleLibraryEntityListing.cs" />
+    <Compile Include="Models\SimpleResponseEntityListing.cs" />
+    <Compile Include="Models\SimpleResponseQueryResults.cs" />
     <Compile Include="Models\ResponseQueryRequest.cs" />
     <Compile Include="Models\ResponseAsset.cs" />
     <Compile Include="Models\ResponseAssetSearchRequest.cs" />
@@ -4529,11 +4531,8 @@
     <Compile Include="Models\CreateResponseAssetResponse.cs" />
     <Compile Include="Models\ResponseSubstitution.cs" />
     <Compile Include="Models\ResponseFilter.cs" />
-    <Compile Include="Models\ResponseEntityList.cs" />
     <Compile Include="Models\ResponseAssetFilter.cs" />
     <Compile Include="Models\ResponseText.cs" />
-    <Compile Include="Models\MessagingTemplate.cs" />
-    <Compile Include="Models\FooterTemplate.cs" />
     <Compile Include="Notifications\ChannelMetadataNotification.cs" />
     <Compile Include="Notifications\Metadata.cs" />
     <Compile Include="Notifications\NotificationClient.cs" />

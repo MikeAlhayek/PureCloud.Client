@@ -22,7 +22,7 @@ public class ResponseManagementApi : IResponseManagementApiV2
     }
 
     // Libraries
-    public async Task<LibraryEntityListing> GetResponseManagementLibrariesAsync(int? pageNumber = null, int? pageSize = null, string messagingTemplateFilter = null, string libraryPrefix = null, CancellationToken cancellationToken = default)
+    public async Task<SimpleLibraryEntityListing> GetResponseManagementLibrariesAsync(int? pageNumber = null, int? pageSize = null, string messagingTemplateFilter = null, string libraryPrefix = null, CancellationToken cancellationToken = default)
     {
         var parameters = new NameValueCollection();
 
@@ -54,7 +54,7 @@ public class ResponseManagementApi : IResponseManagementApiV2
 
         response.EnsureSuccessStatusCode();
 
-        return await response.Content.ReadFromJsonAsync<LibraryEntityListing>(_options.JsonSerializerOptions, cancellationToken);
+        return await response.Content.ReadFromJsonAsync<SimpleLibraryEntityListing>(_options.JsonSerializerOptions, cancellationToken);
     }
 
     public async Task<Library> GetResponseManagementLibraryAsync(string libraryId, CancellationToken cancellationToken = default)
@@ -108,7 +108,7 @@ public class ResponseManagementApi : IResponseManagementApiV2
         response.EnsureSuccessStatusCode();
     }
 
-    public async Task<LibraryEntityListing> CreateResponseManagementLibrariesBulkAsync(LibraryBatchRequest body, CancellationToken cancellationToken = default)
+    public async Task<SimpleLibraryEntityListing> CreateResponseManagementLibrariesBulkAsync(LibraryBatchRequest body, CancellationToken cancellationToken = default)
     {
         ArgumentNullException.ThrowIfNull(body);
 
@@ -118,11 +118,11 @@ public class ResponseManagementApi : IResponseManagementApiV2
 
         response.EnsureSuccessStatusCode();
 
-        return await response.Content.ReadFromJsonAsync<LibraryEntityListing>(_options.JsonSerializerOptions, cancellationToken);
+        return await response.Content.ReadFromJsonAsync<SimpleLibraryEntityListing>(_options.JsonSerializerOptions, cancellationToken);
     }
 
     // Responses
-    public async Task<ResponseEntityListing> GetResponseManagementResponsesAsync(string libraryId, int? pageNumber = null, int? pageSize = null, string expand = null, CancellationToken cancellationToken = default)
+    public async Task<SimpleResponseEntityListing> GetResponseManagementResponsesAsync(string libraryId, int? pageNumber = null, int? pageSize = null, string expand = null, CancellationToken cancellationToken = default)
     {
         ArgumentException.ThrowIfNullOrEmpty(libraryId);
 
@@ -153,7 +153,7 @@ public class ResponseManagementApi : IResponseManagementApiV2
 
         response.EnsureSuccessStatusCode();
 
-        return await response.Content.ReadFromJsonAsync<ResponseEntityListing>(_options.JsonSerializerOptions, cancellationToken);
+        return await response.Content.ReadFromJsonAsync<SimpleResponseEntityListing>(_options.JsonSerializerOptions, cancellationToken);
     }
 
     public async Task<Response> GetResponseManagementResponseAsync(string responseId, string expand = null, CancellationToken cancellationToken = default)
@@ -234,7 +234,7 @@ public class ResponseManagementApi : IResponseManagementApiV2
         response.EnsureSuccessStatusCode();
     }
 
-    public async Task<ResponseQueryResults> QueryResponseManagementResponsesAsync(ResponseQueryRequest body, CancellationToken cancellationToken = default)
+    public async Task<SimpleResponseQueryResults> QueryResponseManagementResponsesAsync(ResponseQueryRequest body, CancellationToken cancellationToken = default)
     {
         ArgumentNullException.ThrowIfNull(body);
 
@@ -244,7 +244,7 @@ public class ResponseManagementApi : IResponseManagementApiV2
 
         response.EnsureSuccessStatusCode();
 
-        return await response.Content.ReadFromJsonAsync<ResponseQueryResults>(_options.JsonSerializerOptions, cancellationToken);
+        return await response.Content.ReadFromJsonAsync<SimpleResponseQueryResults>(_options.JsonSerializerOptions, cancellationToken);
     }
 
     // Response Assets

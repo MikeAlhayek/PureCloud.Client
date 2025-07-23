@@ -5,7 +5,7 @@ namespace PureCloud.Client.Contracts;
 public interface IResponseManagementApiV2
 {
     // Libraries
-    Task<LibraryEntityListing> GetResponseManagementLibrariesAsync(int? pageNumber = null, int? pageSize = null, string messagingTemplateFilter = null, string libraryPrefix = null, CancellationToken cancellationToken = default);
+    Task<SimpleLibraryEntityListing> GetResponseManagementLibrariesAsync(int? pageNumber = null, int? pageSize = null, string messagingTemplateFilter = null, string libraryPrefix = null, CancellationToken cancellationToken = default);
     
     Task<Library> GetResponseManagementLibraryAsync(string libraryId, CancellationToken cancellationToken = default);
     
@@ -15,10 +15,10 @@ public interface IResponseManagementApiV2
     
     Task DeleteResponseManagementLibraryAsync(string libraryId, CancellationToken cancellationToken = default);
     
-    Task<LibraryEntityListing> CreateResponseManagementLibrariesBulkAsync(LibraryBatchRequest body, CancellationToken cancellationToken = default);
+    Task<SimpleLibraryEntityListing> CreateResponseManagementLibrariesBulkAsync(LibraryBatchRequest body, CancellationToken cancellationToken = default);
 
     // Responses
-    Task<ResponseEntityListing> GetResponseManagementResponsesAsync(string libraryId, int? pageNumber = null, int? pageSize = null, string expand = null, CancellationToken cancellationToken = default);
+    Task<SimpleResponseEntityListing> GetResponseManagementResponsesAsync(string libraryId, int? pageNumber = null, int? pageSize = null, string expand = null, CancellationToken cancellationToken = default);
     
     Task<Response> GetResponseManagementResponseAsync(string responseId, string expand = null, CancellationToken cancellationToken = default);
     
@@ -28,7 +28,7 @@ public interface IResponseManagementApiV2
     
     Task DeleteResponseManagementResponseAsync(string responseId, CancellationToken cancellationToken = default);
     
-    Task<ResponseQueryResults> QueryResponseManagementResponsesAsync(ResponseQueryRequest body, CancellationToken cancellationToken = default);
+    Task<SimpleResponseQueryResults> QueryResponseManagementResponsesAsync(ResponseQueryRequest body, CancellationToken cancellationToken = default);
 
     // Response Assets
     Task<ResponseAsset> GetResponseManagementResponseAssetAsync(string responseAssetId, CancellationToken cancellationToken = default);
