@@ -136,6 +136,10 @@ public static class ServiceCollectionExtensions
         services.TryAddScoped<ILocationsApi, LocationsApi>();
 
         services.TryAddScoped<ILogCaptureApi, LogCaptureApi>();
+      
+        services.TryAddScoped<IMessagingApi, MessagingApi>();
+
+        services.TryAddScoped<IMobileDevicesApi, MobileDevicesApi>();
 
         services.TryAddScoped<IMessagingApi, MessagingApi>();
 

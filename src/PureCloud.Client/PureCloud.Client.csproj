@@ -3767,6 +3767,9 @@
     <Compile Include="Models\UserActivityQueryPredicate.Operator.cs" />
     <Compile Include="Models\UserActivityResponse.cs" />
     <Compile Include="Models\UserActivityResponse.EntityIdDimension.cs" />
+    <Compile Include="Models\UserDevice.cs" />
+    <Compile Include="Models\UserDevice.Type.cs" />
+    <Compile Include="Models\DirectoryUserDevicesListing.cs" />
     <Compile Include="Models\UserAggregateDataContainer.cs" />
     <Compile Include="Models\UserAggregateQueryClause.cs" />
     <Compile Include="Models\UserAggregateQueryClause.Type.cs" />
