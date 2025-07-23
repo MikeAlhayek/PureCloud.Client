@@ -97,6 +97,7 @@
     <Compile Include="Models\EstimateJobAsyncResponse.cs" />
     <Compile Include="Models\EventListing.cs" />
     <Compile Include="Models\EventCondition.cs" />
+    <Compile Include="Models\EventSetting.cs" />
     <Compile Include="Models\Actions.cs" />
     <Compile Include="Models\AcwDetailEventTopicAfterCallWorkEvent.cs" />
     <Compile Include="Models\AcwDetailEventTopicAfterCallWorkEvent.MediaType.cs" />
@@ -664,6 +665,7 @@
     <Compile Include="Models\ContentFilterItem.Type.cs" />
     <Compile Include="Models\ContentFilterItem.Operator.cs" />
     <Compile Include="Models\ContentOffer.cs" />
+    <Compile Include="Models\ContentSetting.cs" />
     <Compile Include="Models\ContentManagementSingleDocumentTopicDocumentDataV2.cs" />
     <Compile Include="Models\ContentManagementSingleDocumentTopicLockData.cs" />
     <Compile Include="Models\ContentManagementSingleDocumentTopicUserData.cs" />
@@ -2328,6 +2330,8 @@
     <Compile Include="Models\MaskingRuleValidateResponse.cs" />
     <Compile Include="Models\MaxLength.cs" />
     <Compile Include="Models\MediaUtilization.cs" />
+    <Compile Include="Models\MediaTypes.cs" />
+    <Compile Include="Models\MediaTypeAccess.cs" />
     <Compile Include="Models\Member.cs" />
     <Compile Include="Models\MemberEntity.cs" />
     <Compile Include="Models\MemberListing.cs" />
@@ -2346,6 +2350,10 @@
     <Compile Include="Models\MessageState.cs" />
     <Compile Include="Models\MessageSticker.cs" />
     <Compile Include="Models\MessageType.cs" />
+    <Compile Include="Models\MessagingConfigListing.cs" />
+    <Compile Include="Models\MessagingSetting.cs" />
+    <Compile Include="Models\MessagingSettingRequest.cs" />
+    <Compile Include="Models\MessagingSettingDefaultRequest.cs" />
     <Compile Include="Models\MetadataDocumentation.cs" />
     <Compile Include="Models\MetadataPresentation.cs" />
     <Compile Include="Models\MetadataProperty.cs" />
@@ -3439,6 +3447,7 @@
     <Compile Include="Models\StatEventWrapUpCodeTopicStatsNotification.cs" />
     <Compile Include="Models\StatisticalResponse.cs" />
     <Compile Include="Models\StatisticalSummary.cs" />
+    <Compile Include="Models\StorySetting.cs" />
     <Compile Include="Models\SttEngineEntity.cs" />
     <Compile Include="Models\SttEngineEntityListing.cs" />
     <Compile Include="Models\Subject.cs" />
@@ -3474,6 +3483,8 @@
     <Compile Include="Models\SummaryAsyncAggregationQuery.GroupBy.cs" />
     <Compile Include="Models\SummaryGenerationConfig.cs" />
     <Compile Include="Models\SupportedLanguage.cs" />
+    <Compile Include="Models\SupportedContent.cs" />
+    <Compile Include="Models\SupportedContentListing.cs" />
     <Compile Include="Models\SurveyAggregateDataContainer.cs" />
     <Compile Include="Models\SurveyAggregateQueryClause.cs" />
     <Compile Include="Models\SurveyAggregateQueryClause.Type.cs" />
@@ -3570,6 +3581,7 @@
     <Compile Include="Models\TokenInfoClonedUser.cs" />
     <Compile Include="Models\TopicDuration.cs" />
     <Compile Include="Models\TopicOffset.cs" />
+    <Compile Include="Models\TypingSetting.cs" />
     <Compile Include="Models\Topics\ConversationMetricsTopicConversationMetricRecord.cs" />
     <Compile Include="Models\Locations\LocationAddress.cs" />
     <Compile Include="Models\Locations\LocationAddressVerificationDetails.cs" />
