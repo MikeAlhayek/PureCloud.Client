@@ -7,7 +7,7 @@ namespace PureCloud.Client.Models;
 /// AttemptLimitsEntityListing
 /// </summary>
 
-public partial class AttemptLimitsEntityListing : IEquatable<AttemptLimitsEntityListing>, IPagedResource<AttemptLimits>
+public partial class AttemptLimitsEntityListing : IEquatable<AttemptLimitsEntityListing>
 {
     /// <summary>
     /// Initializes a new instance of the <see cref="AttemptLimitsEntityListing" /> class.
