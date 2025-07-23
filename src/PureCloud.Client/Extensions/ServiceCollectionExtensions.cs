@@ -157,6 +157,8 @@ public static class ServiceCollectionExtensions
 
         services.TryAddScoped<IOperationalEventsApi, OperationalEventsApi>();
 
+        services.TryAddScoped<IProcessAutomationApi, ProcessAutomationApi>();
+
         services.TryAddScoped<IUserApi, UserApi>();
       
         services.TryAddScoped<IVoicemailApi, VoicemailApi>();
