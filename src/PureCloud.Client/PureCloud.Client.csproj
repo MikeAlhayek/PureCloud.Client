@@ -1562,6 +1562,9 @@
     <Compile Include="Models\EvaluationForm.cs" />
     <Compile Include="Models\EvaluationFormResponse.cs" />
     <Compile Include="Models\EvaluationResponse.cs" />
+    <Compile Include="Models\EvaluationResponse.MediaType.cs" />
+    <Compile Include="Models\EvaluationResponse.ResourceType.cs" />
+    <Compile Include="Models\EvaluationResponse.Status.cs" />
     <Compile Include="Models\EvaluationMediaType.cs" />
     <Compile Include="Models\EvaluationQualityV2TopicCalibration.cs" />
     <Compile Include="Models\EvaluationQualityV2TopicEvaluationReference.cs" />
@@ -3575,6 +3578,8 @@
     <Compile Include="Models\SurveyDetailQueryPredicate.Metric.cs" />
     <Compile Include="Models\SurveyDetailQueryPredicate.Operator.cs" />
     <Compile Include="Models\Survey.cs" />
+    <Compile Include="Models\Survey.Status.cs" />
+    <Compile Include="Models\Survey.SurveyType.cs" />
     <Compile Include="Models\SurveyErrorDetails.cs" />
     <Compile Include="Models\SurveyForm.cs" />
     <Compile Include="Models\SurveyQuestion.cs" />
