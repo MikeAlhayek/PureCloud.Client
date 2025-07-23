@@ -37,6 +37,8 @@
     <Compile Include="Models\AcceleratorSpecification.Type.cs" />
     <Compile Include="Models\AcceleratorSpecification.Origin.cs" />
     <Compile Include="Models\AddressableEntity.cs" />
+    <Compile Include="Models\Annotation.cs" />
+    <Compile Include="Models\Annotation.Reason.cs" />
     <Compile Include="Models\ActionEventRequest.cs" />
     <Compile Include="Models\ActionMap.cs" />
     <Compile Include="Models\ActionMapAction.cs" />
@@ -402,6 +404,12 @@
     <Compile Include="Models\AvailableTranslations.cs" />
     <Compile Include="Models\BaseMediaSettings.cs" />
     <Compile Include="Models\BatchConversationEventRequest.cs" />
+    <Compile Include="Models\BatchDownloadJobResult.cs" />
+    <Compile Include="Models\BatchDownloadJobStatusResult.cs" />
+    <Compile Include="Models\BatchDownloadJobStatusResult.Status.cs" />
+    <Compile Include="Models\BatchDownloadJobSubmission.cs" />
+    <Compile Include="Models\BatchDownloadJobSubmissionResult.cs" />
+    <Compile Include="Models\BatchDownloadRequest.cs" />
     <Compile Include="Models\BatchEventResponse.cs" />
     <Compile Include="Models\BatchUserPresenceEventRequest.cs" />
     <Compile Include="Models\BatchUserRoutingStatusEventRequest.cs" />
@@ -465,6 +473,7 @@
     <Compile Include="Models\BulkEntityErrorRelationship.cs" />
     <Compile Include="Models\BulkError.cs" />
     <Compile Include="Models\BulkErrorDetail.cs" />
+    <Compile Include="Models\ButtonResponse.cs" />
     <Compile Include="Models\BulkFetchContactsResponse.cs" />
     <Compile Include="Models\BulkFetchNotesResponse.cs" />
     <Compile Include="Models\BulkFetchOrganizationsResponse.cs" />
@@ -515,6 +524,7 @@
     <Compile Include="Models\CallState.cs" />
     <Compile Include="Models\CallTarget.cs" />
     <Compile Include="Models\CallTarget.Type.cs" />
+    <Compile Include="Models\Card.cs" />
     <Compile Include="Models\CannedResponseLibraries.cs" />
     <Compile Include="Models\CannedResponseLibrariesMode.cs" />
     <Compile Include="Models\Category.cs" />
@@ -547,6 +557,8 @@
     <Compile Include="Models\ChatReaction.cs" />
     <Compile Include="Models\ChatReactionUpdate.cs" />
     <Compile Include="Models\ChatSendMessageResponse.cs" />
+    <Compile Include="Models\ChatMessage.cs" />
+    <Compile Include="Models\ChatMessageUser.cs" />
     <Compile Include="Models\ChatSettings.cs" />
     <Compile Include="Models\ChatUserRef.cs" />
     <Compile Include="Models\ChatUserSettings.cs" />
@@ -1471,6 +1483,7 @@
     <Compile Include="Models\EdgeSoftwareUpdateTopicDomainEdgeSoftwareUpdate.Status.cs" />
     <Compile Include="Models\EffectiveConfiguration.cs" />
     <Compile Include="Models\Email.cs" />
+    <Compile Include="Models\EmailAttachment.cs" />
     <Compile Include="Models\EmailBeginTransmittingEvent.cs" />
     <Compile Include="Models\EmailCommunicationAnsweredEvent.cs" />
     <Compile Include="Models\EmailCommunicationDispositionAppliedEvent.cs" />
@@ -1504,6 +1517,7 @@
     <Compile Include="Models\EmergencyGroupListing.cs" />
     <Compile Include="Models\EmergencyLocation.cs" />
     <Compile Include="Models\EmergencyLocation.Source.cs" />
+    <Compile Include="Models\Endpoint.cs" />
     <Compile Include="Models\EmployeePerformanceExternalMetricsDefinitionExternalMetricsDefinition.cs" />
     <Compile Include="Models\EmployeePerformanceExternalMetricsDefinitionExternalMetricsDefinition.Unit.cs" />
     <Compile Include="Models\EmployeePerformanceExternalMetricsDefinitionExternalMetricsDefinitionDefault.ObjectiveType.cs" />
@@ -2881,6 +2895,10 @@
     <Compile Include="Models\Organizations\PresenceEventOrganizationPresence.cs" />
     <Compile Include="Models\Organizations\ProductPlatform.cs" />
     <Compile Include="Models\Organizations\SystemPresence.cs" />
+    <Compile Include="Models\OrphanRecording.cs" />
+    <Compile Include="Models\OrphanRecording.ProviderType.cs" />
+    <Compile Include="Models\OrphanRecording.MediaType.cs" />
+    <Compile Include="Models\OrphanRecordingListing.cs" />
     <Compile Include="Models\OrgOAuthClient.cs" />
     <Compile Include="Models\OrgUser.cs" />
     <Compile Include="Models\Page.cs" />
@@ -3659,6 +3677,7 @@
     <Compile Include="Models\Locations\LocationEmergencyNumberType.cs" />
     <Compile Include="Models\MediaSummary.cs" />
     <Compile Include="Models\MediaSummaryDetail.cs" />
+    <Compile Include="Models\MediaResult.cs" />
     <Compile Include="Models\OAuthAuthorization.cs" />
     <Compile Include="Models\OAuthAuthorizationListing.cs" />
     <Compile Include="Models\OAuthClient.cs" />
@@ -3669,6 +3688,14 @@
     <Compile Include="Models\OAuthScope.cs" />
     <Compile Include="Models\OAuthScopeListing.cs" />
     <Compile Include="Models\OutOfOffice.cs" />
+    <Compile Include="Models\Recording.cs" />
+    <Compile Include="Models\Recording.MediaSubtype.cs" />
+    <Compile Include="Models\Recording.FileState.cs" />
+    <Compile Include="Models\Recording.ArchiveMedium.cs" />
+    <Compile Include="Models\Recording.FileRole.cs" />
+    <Compile Include="Models\Recording.ErrorStatus.cs" />
+    <Compile Include="Models\RecordingEmailMessage.cs" />
+    <Compile Include="Models\RecordingMessagingMessage.cs" />
     <Compile Include="Models\ResourceConditionNode.cs" />
     <Compile Include="Models\ResourceConditionOperator.cs" />
     <Compile Include="Models\ResourceConditionType.cs" />
@@ -4504,6 +4531,19 @@
     <Compile Include="Models\StatusChange.cs" />
     <Compile Include="Models\ApprovalNamespace.cs" />
     <Compile Include="Models\LimitChangeRequestsEntityListing.cs" />
+
+    <Compile Include="Models\TrustEntityListing.cs" />
+    <Compile Include="Models\Trustee.cs" />
+    <Compile Include="Models\TrustCreate.cs" />
+    <Compile Include="Models\TrustGroup.cs" />
+    <Compile Include="Models\TrustGroup.State.cs" />
+    <Compile Include="Models\TrustGroup.Type.cs" />
+    <Compile Include="Models\TrustGroup.Visibility.cs" />
+    <Compile Include="Models\TrustMemberCreate.cs" />
+    <Compile Include="Models\TrustRequest.cs" />
+    <Compile Include="Models\TrustRequestCreate.cs" />
+    <Compile Include="Models\TrustUpdate.cs" />
+
     <Compile Include="Models\CreateTriggerRequest.cs" />
     <Compile Include="Models\MatchCriteria.cs" />
     <Compile Include="Models\MatchCriteriaTestResult.cs" />

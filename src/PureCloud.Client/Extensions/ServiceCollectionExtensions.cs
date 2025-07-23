@@ -161,6 +161,10 @@ public static class ServiceCollectionExtensions
 
         services.TryAddScoped<IRoutingApi, RoutingApi>();
 
+        services.TryAddScoped<IPresenceApi, PresenceApi>();
+
+        services.TryAddScoped<IRecordingApi, RecordingApi>();
+
         services.TryAddScoped<IProcessAutomationApi, ProcessAutomationApi>();
 
         services.TryAddScoped<IUserApi, UserApi>();
