@@ -96,8 +96,15 @@
     <Compile Include="Models\ActionEntityListing.cs" />
     <Compile Include="Models\EntityListing.cs" />
     <Compile Include="Models\EstimateJobAsyncResponse.cs" />
+    <Compile Include="Models\EventAggregatesQueryRequest.cs" />
+    <Compile Include="Models\EventAggregatesResponse.cs" />
+    <Compile Include="Models\EventDefinition.cs" />
+    <Compile Include="Models\EventDefinitionAggregates.cs" />
+    <Compile Include="Models\EventDefinitionListing.cs" />
     <Compile Include="Models\EventListing.cs" />
     <Compile Include="Models\EventCondition.cs" />
+    <Compile Include="Models\EventQueryRequest.cs" />
+    <Compile Include="Models\EventQueryResponse.cs" />
     <Compile Include="Models\EventSetting.cs" />
     <Compile Include="Models\Actions.cs" />
     <Compile Include="Models\AcwDetailEventTopicAfterCallWorkEvent.cs" />
@@ -2450,6 +2457,7 @@
     <Compile Include="Models\Operation.cs" />
     <Compile Include="Models\Operation.ActionName.cs" />
     <Compile Include="Models\Operation.ActionStatus.cs" />
+    <Compile Include="Models\OperationalEvent.cs" />
     <Compile Include="Models\OperationalEventNotificationTopicEventEntity.cs" />
     <Compile Include="Models\OperationalEventNotificationTopicOperationalEventNotification.cs" />
     <Compile Include="Models\Organizations\DomainOrganizationRoleCreate.cs" />
