@@ -133,6 +133,8 @@ public static class ServiceCollectionExtensions
 
         services.TryAddScoped<ILicenseApi, LicenseApi>();
 
+        services.TryAddScoped<ILogCaptureApi, LogCaptureApi>();
+
         services.TryAddScoped<INotificationClientFactory, NotificationClientFactory>();
 
         services.TryAddTransient<NotificationClient>();
