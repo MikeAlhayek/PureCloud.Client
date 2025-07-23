@@ -3,7 +3,7 @@ namespace PureCloud.Client.Models;
 /// <summary>
 /// TrustEntityListing
 /// </summary>
-public sealed class TrustEntityListing : IPagedResource<Trustee>
+public sealed class TrustEntityListing
 {
     /// <summary>
     /// Gets or Sets Entities (Interface implementation)
