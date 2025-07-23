@@ -135,6 +135,8 @@ public static class ServiceCollectionExtensions
 
         services.TryAddTransient<NotificationClient>();
 
+        services.TryAddScoped<INotificationsApi, NotificationsApi>();
+
         services.TryAddScoped<IUserApi, UserApi>();
 
         services.TryAddScoped<IVoicemailApi, VoicemailApi>();
