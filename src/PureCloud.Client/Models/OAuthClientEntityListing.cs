@@ -22,7 +22,7 @@ public partial class OAuthClientEntityListing : IEquatable<OAuthClientEntityList
     /// <param name="NextUri">NextUri.</param>
     /// <param name="PreviousUri">PreviousUri.</param>
     /// <param name="PageCount">PageCount.</param>
-    public OAuthClientEntityListing(List<OAuthClientListing> Entities = null, int? PageSize = null, int? PageNumber = null, long? Total = null, string FirstUri = null, string LastUri = null, string SelfUri = null, string NextUri = null, string PreviousUri = null, int? PageCount = null)
+    public OAuthClientEntityListing(IEnumerable<OAuthClientListing> Entities = null, int? PageSize = null, int? PageNumber = null, long? Total = null, string FirstUri = null, string LastUri = null, string SelfUri = null, string NextUri = null, string PreviousUri = null, int? PageCount = null)
     {
         this.Entities = Entities;
         this.PageSize = PageSize;
@@ -43,7 +43,7 @@ public partial class OAuthClientEntityListing : IEquatable<OAuthClientEntityList
     /// Gets or Sets Entities
     /// </summary>
     [JsonPropertyName("entities")]
-    public List<OAuthClientListing> Entities { get; set; }
+    public IEnumerable<OAuthClientListing> Entities { get; set; }
 
 
 

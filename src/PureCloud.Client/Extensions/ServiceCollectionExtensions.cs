@@ -145,10 +145,20 @@ public static class ServiceCollectionExtensions
 
         services.TryAddTransient<NotificationClient>();
 
+        services.TryAddScoped<IOAuthApi, OAuthApi>();
+
+        services.TryAddScoped<INotificationClientFactory, NotificationClientFactory>();
+
+        services.TryAddTransient<NotificationClient>();
+
         services.TryAddScoped<IOrganizationApi, OrganizationApi>();
 
-        services.TryAddScoped<IUserApi, UserApi>();
+        services.TryAddScoped<IObjectsApi, ObjectsApi>();
 
+        services.TryAddScoped<IOperationalEventsApi, OperationalEventsApi>();
+
+        services.TryAddScoped<IUserApi, UserApi>();
+      
         services.TryAddScoped<IVoicemailApi, VoicemailApi>();
 
         services.TryAddScoped<IWebChatApi, WebChatApi>();
