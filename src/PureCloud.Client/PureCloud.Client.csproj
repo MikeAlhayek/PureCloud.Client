@@ -103,6 +103,11 @@
     <Compile Include="Models\CreateResponseAssetResponse.cs" />
     <Compile Include="Models\Endpoint.State.cs" />
     <Compile Include="Models\EntityListing.cs" />
+    <Compile Include="Models\SocialMediaAsyncAggregationQuery.cs" />
+    <Compile Include="Models\SocialMediaAsyncDetailQuery.cs" />
+    <Compile Include="Models\SocialMediaQueryClause.cs" />
+    <Compile Include="Models\SocialMediaQueryFilter.cs" />
+    <Compile Include="Models\SocialMediaQueryPredicate.cs" />
     <Compile Include="Models\EstimateJobAsyncResponse.cs" />
     <Compile Include="Models\EventAggregatesQueryRequest.cs" />
     <Compile Include="Models\EventAggregatesResponse.cs" />
