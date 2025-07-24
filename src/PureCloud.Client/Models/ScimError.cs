@@ -1,6 +1,5 @@
 using System.Runtime.Serialization;
 using System.Text;
-using System.Text.Json.Serialization;
 
 namespace PureCloud.Client.Models;
 
@@ -8,7 +7,7 @@ namespace PureCloud.Client.Models;
 /// Defines a SCIM error.
 /// </summary>
 
-public partial class ScimError : IEquatable<ScimError>
+public sealed class ScimError
 {
     /// <summary>
     /// The type of SCIM error when httpStatus is a \"400\" error.
@@ -89,15 +88,10 @@ public partial class ScimError : IEquatable<ScimError>
     /// The type of SCIM error when httpStatus is a \"400\" error.
     /// </summary>
     /// <value>The type of SCIM error when httpStatus is a \"400\" error.</value>
-    [JsonPropertyName("scimType")]
     public ScimTypeEnum? ScimType { get; set; }
     /// <summary>
     /// Initializes a new instance of the <see cref="ScimError" /> class.
     /// </summary>
-    public ScimError()
-    {
-
-    }
 
 
 
@@ -105,8 +99,7 @@ public partial class ScimError : IEquatable<ScimError>
     /// The list of schemas for the SCIM error.
     /// </summary>
     /// <value>The list of schemas for the SCIM error.</value>
-    [JsonPropertyName("schemas")]
-    public List<string> Schemas { get; set; }
+    public IEnumerable<string> Schemas { get; set; }
 
 
 
@@ -114,7 +107,6 @@ public partial class ScimError : IEquatable<ScimError>
     /// The HTTP status code returned for the SCIM error.
     /// </summary>
     /// <value>The HTTP status code returned for the SCIM error.</value>
-    [JsonPropertyName("status")]
     public string Status { get; set; }
 
 
@@ -125,7 +117,6 @@ public partial class ScimError : IEquatable<ScimError>
     /// The detailed description of the SCIM error.
     /// </summary>
     /// <value>The detailed description of the SCIM error.</value>
-    [JsonPropertyName("detail")]
     public string Detail { get; set; }
 
 
@@ -133,18 +124,6 @@ public partial class ScimError : IEquatable<ScimError>
     /// Returns the string presentation of the object
     /// </summary>
     /// <returns>String presentation of the object</returns>
-    public override string ToString()
-    {
-        var sb = new StringBuilder();
-        sb.Append("class ScimError {\n");
-
-        sb.Append("  Schemas: ").Append(Schemas).Append("\n");
-        sb.Append("  Status: ").Append(Status).Append("\n");
-        sb.Append("  ScimType: ").Append(ScimType).Append("\n");
-        sb.Append("  Detail: ").Append(Detail).Append("\n");
-        sb.Append("}\n");
-        return sb.ToString();
-    }
 
 
     /// <summary>
@@ -152,80 +131,15 @@ public partial class ScimError : IEquatable<ScimError>
     /// </summary>
     /// <param name="obj">Object to be compared</param>
     /// <returns>Boolean</returns>
-    public override bool Equals(object obj)
-    {
-        // credit: http://stackoverflow.com/a/10454552/677735
-        return Equals(obj as ScimError);
-    }
 
     /// <summary>
     /// Returns true if ScimError instances are equal
     /// </summary>
     /// <param name="other">Instance of ScimError to be compared</param>
     /// <returns>Boolean</returns>
-    public bool Equals(ScimError other)
-    {
-        // credit: http://stackoverflow.com/a/10454552/677735
-        if (other == null)
-        {
-            return false;
-        }
-
-        return true &&
-            (
-                Schemas == other.Schemas ||
-                Schemas != null &&
-                Schemas.SequenceEqual(other.Schemas)
-            ) &&
-            (
-                Status == other.Status ||
-                Status != null &&
-                Status.Equals(other.Status)
-            ) &&
-            (
-                ScimType == other.ScimType ||
-                ScimType != null &&
-                ScimType.Equals(other.ScimType)
-            ) &&
-            (
-                Detail == other.Detail ||
-                Detail != null &&
-                Detail.Equals(other.Detail)
-            );
-    }
 
     /// <summary>
     /// Gets the hash code
     /// </summary>
     /// <returns>Hash code</returns>
-    public override int GetHashCode()
-    {
-        // credit: http://stackoverflow.com/a/263416/677735
-        unchecked // Overflow is fine, just wrap
-        {
-            int hash = 41;
-            // Suitable nullity checks etc, of course :)
-            if (Schemas != null)
-            {
-                hash = hash * 59 + Schemas.GetHashCode();
-            }
-
-            if (Status != null)
-            {
-                hash = hash * 59 + Status.GetHashCode();
-            }
-
-            if (ScimType != null)
-            {
-                hash = hash * 59 + ScimType.GetHashCode();
-            }
-
-            if (Detail != null)
-            {
-                hash = hash * 59 + Detail.GetHashCode();
-            }
-
-            return hash;
-        }
-    }
 }

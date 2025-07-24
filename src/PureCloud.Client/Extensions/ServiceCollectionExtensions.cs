@@ -171,9 +171,7 @@ public static class ServiceCollectionExtensions
 
         services.TryAddScoped<IProcessAutomationApi, ProcessAutomationApi>();
 
-        services.TryAddScoped<IScriptsApi, ScriptsApi>();
-
-        services.TryAddScoped<ISettingsApi, SettingsApi>();
+        services.TryAddScoped<ISCIMApi, SCIMApi>();
 
         services.TryAddScoped<IUserApi, UserApi>();
 
