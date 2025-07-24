@@ -14,7 +14,7 @@ using PureCloud.Client.Models.Users;
 
 namespace PureCloud.Client.Apis;
 
-public class CompleteSearchApi : ICompleteSearchApi
+public sealed class CompleteSearchApi : ICompleteSearchApi
 {
     private readonly IHttpClientFactory _httpClientFactory;
     private readonly PureCloudJsonSerializerOptions _options;
@@ -26,6 +26,8 @@ public class CompleteSearchApi : ICompleteSearchApi
         _httpClientFactory = httpClientFactory;
         _options = options.Value;
     }
+
+    /// <inheritdoc />
 
     public async Task<DocumentationSearchResponse> PostDocumentationSearchAsync(DocumentationSearchRequest body, CancellationToken cancellationToken = default)
     {
@@ -40,6 +42,8 @@ public class CompleteSearchApi : ICompleteSearchApi
         return await response.Content.ReadFromJsonAsync<DocumentationSearchResponse>(_options.JsonSerializerOptions, cancellationToken);
     }
 
+    /// <inheritdoc />
+
     public async Task<GKNDocumentationSearchResponse> PostDocumentationGknSearchAsync(GKNDocumentationSearchRequest body, CancellationToken cancellationToken = default)
     {
         ArgumentNullException.ThrowIfNull(body);
@@ -52,6 +56,8 @@ public class CompleteSearchApi : ICompleteSearchApi
 
         return await response.Content.ReadFromJsonAsync<GKNDocumentationSearchResponse>(_options.JsonSerializerOptions, cancellationToken);
     }
+
+    /// <inheritdoc />
 
     public async Task<UsersSearchResponse> PostUsersSearchAsync(UserSearchRequest body, CancellationToken cancellationToken = default)
     {
@@ -66,6 +72,8 @@ public class CompleteSearchApi : ICompleteSearchApi
         return await response.Content.ReadFromJsonAsync<UsersSearchResponse>(_options.JsonSerializerOptions, cancellationToken);
     }
 
+    /// <inheritdoc />
+
     public async Task<GroupsSearchResponse> PostGroupsSearchAsync(GroupSearchRequest body, CancellationToken cancellationToken = default)
     {
         ArgumentNullException.ThrowIfNull(body);
@@ -79,6 +87,8 @@ public class CompleteSearchApi : ICompleteSearchApi
         return await response.Content.ReadFromJsonAsync<GroupsSearchResponse>(_options.JsonSerializerOptions, cancellationToken);
     }
 
+    /// <inheritdoc />
+
     public async Task<LocationsSearchResponse> PostLocationsSearchAsync(LocationSearchRequest body, CancellationToken cancellationToken = default)
     {
         ArgumentNullException.ThrowIfNull(body);
@@ -91,6 +101,8 @@ public class CompleteSearchApi : ICompleteSearchApi
 
         return await response.Content.ReadFromJsonAsync<LocationsSearchResponse>(_options.JsonSerializerOptions, cancellationToken);
     }
+
+    /// <inheritdoc />
 
     public async Task<JsonNodeSearchResponse> PostSearchAsync(SearchRequest body, bool? profile = null, CancellationToken cancellationToken = default)
     {
@@ -114,6 +126,8 @@ public class CompleteSearchApi : ICompleteSearchApi
         return await response.Content.ReadFromJsonAsync<JsonNodeSearchResponse>(_options.JsonSerializerOptions, cancellationToken);
     }
 
+    /// <inheritdoc />
+
     public async Task<JsonNodeSearchResponse> PostSearchSuggestAsync(SuggestSearchRequest body, bool? profile = null, CancellationToken cancellationToken = default)
     {
         ArgumentNullException.ThrowIfNull(body);
@@ -135,6 +149,8 @@ public class CompleteSearchApi : ICompleteSearchApi
 
         return await response.Content.ReadFromJsonAsync<JsonNodeSearchResponse>(_options.JsonSerializerOptions, cancellationToken);
     }
+
+    /// <inheritdoc />
 
     public async Task<SitesSearchResponse> PostTelephonyProvidersEdgesSitesSearchAsync(SiteSearchRequest body, CancellationToken cancellationToken = default)
     {
