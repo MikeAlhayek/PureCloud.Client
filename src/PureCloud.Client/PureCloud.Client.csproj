@@ -121,6 +121,9 @@
     <Compile Include="Models\EdgeInterface.cs" />
     <Compile Include="Models\TrunkBase.cs" />
     <Compile Include="Models\TrunkBaseAssignment.cs" />
+    <Compile Include="Models\DomainCertificateAuthority.cs" />
+    <Compile Include="Models\CertificateDetails.cs" />
+    <Compile Include="Models\ExtensionPool.cs" />
     <Compile Include="Models\Conversations\ConversationContentButtonResponse.cs" />
     <Compile Include="Models\Conversations\ConversationContentButtonResponse.Type.cs" />
     <Compile Include="Models\Conversations\ConversationContentCard.cs" />

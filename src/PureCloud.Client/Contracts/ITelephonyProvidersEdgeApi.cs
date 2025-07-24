@@ -29,4 +29,22 @@ public interface ITelephonyProvidersEdgeApi
     Task<Site> UpdateSiteAsync(string siteId, Site body, CancellationToken cancellationToken = default);
 
     Task DeleteSiteAsync(string siteId, CancellationToken cancellationToken = default);
+
+    // Certificate Authority operations
+    Task<DomainCertificateAuthority> GetCertificateAuthorityAsync(string certificateId, CancellationToken cancellationToken = default);
+
+    Task<DomainCertificateAuthority> CreateCertificateAuthorityAsync(DomainCertificateAuthority body, CancellationToken cancellationToken = default);
+
+    Task<DomainCertificateAuthority> UpdateCertificateAuthorityAsync(string certificateId, DomainCertificateAuthority body, CancellationToken cancellationToken = default);
+
+    Task DeleteCertificateAuthorityAsync(string certificateId, CancellationToken cancellationToken = default);
+
+    // Extension Pool operations
+    Task<ExtensionPool> GetExtensionPoolAsync(string extensionPoolId, CancellationToken cancellationToken = default);
+
+    Task<ExtensionPool> CreateExtensionPoolAsync(ExtensionPool body, CancellationToken cancellationToken = default);
+
+    Task<ExtensionPool> UpdateExtensionPoolAsync(string extensionPoolId, ExtensionPool body, CancellationToken cancellationToken = default);
+
+    Task DeleteExtensionPoolAsync(string extensionPoolId, CancellationToken cancellationToken = default);
 }
