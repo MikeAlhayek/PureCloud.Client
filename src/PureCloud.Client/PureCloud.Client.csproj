@@ -3,21 +3,16 @@
   <PropertyGroup>
     <TargetFramework>net8.0</TargetFramework>
     <ImplicitUsings>enable</ImplicitUsings>
+    <EnableDefaultCompileItems>false</EnableDefaultCompileItems>
   </PropertyGroup>
 
   <ItemGroup>
     <Compile Remove="OldApis\**" />
     <Compile Remove="Notifications\**" />
-    <Compile Remove="Models\**" />
-    <Compile Remove="Models\Teams\**" />
     <EmbeddedResource Remove="OldApis\**" />
     <EmbeddedResource Remove="Notifications\**" />
-    <EmbeddedResource Remove="Models\**" />
-    <EmbeddedResource Remove="Models\Teams\**" />
     <None Remove="OldApis\**" />
     <None Remove="Notifications\**" />
-    <None Remove="Models\**" />
-    <None Remove="Models\Teams\**" />
   </ItemGroup>
 
   <ItemGroup>
@@ -4793,6 +4788,15 @@
     <Compile Include="Models\TriggerTarget.cs" />
     <Compile Include="Models\UpdateTriggerRequest.cs" />
     <Compile Include="Models\WorkflowTargetSettings.cs" />
+    <Compile Include="Address.cs" />
+    <Compile Include="PureCloudRegionHosts.cs" />
+    <Compile Include="PureCloudConstants.cs" />
+    <Compile Include="Json\PureCloudJsonSerializerOptions.cs" />
+    <Compile Include="Json\JsonStringEnumMemberConverter.cs" />
+    <Compile Include="Json\JsonStringEnumMemberConverterFactory.cs" />
+    <Compile Include="Contracts\INotificationData.cs" />
+    <Compile Include="Contracts\INotificationClientFactory.cs" />
+    <Compile Include="Contracts\IChannelsApi.cs" />
     <Compile Include="Notifications\ChannelMetadataNotification.cs" />
     <Compile Include="Notifications\Metadata.cs" />
     <Compile Include="Notifications\NotificationClient.cs" />
