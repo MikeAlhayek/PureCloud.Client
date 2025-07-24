@@ -12,16 +12,17 @@ namespace PureCloud.Client.Apis;
 /// <inheritdoc />
 public sealed class SCIMApi : ISCIMApi
 {
-    private readonly HttpClient _httpClient;
-    private readonly JsonSerializerOptions _options;
+    private readonly IHttpClientFactory _httpClientFactory;
+    private readonly PureCloudJsonSerializerOptions _options;
 
     public SCIMApi(IHttpClientFactory httpClientFactory, IOptions<PureCloudJsonSerializerOptions> options)
     {
-        _httpClient = httpClientFactory.CreateClient(PureCloudConstants.PureCloudClientName);
-        _options = options.Value.JsonSerializerOptions;
+        _httpClientFactory = httpClientFactory;
+        _options = options.Value;
     }
 
     /// <inheritdoc />
+    
     public async Task<ScimUserListResponse> GetScimUsersAsync(int? startIndex = null, int? count = null, IEnumerable<string> attributes = null, IEnumerable<string> excludedAttributes = null, string filter = null, CancellationToken cancellationToken = default)
     {
         var parameters = new NameValueCollection();
@@ -51,16 +52,19 @@ public sealed class SCIMApi : ISCIMApi
             parameters.Add("filter", filter);
         }
 
+        var client = _httpClientFactory.CreateClient(PureCloudConstants.PureCloudClientName);
+
         var uri = UriHelper.GetUri("/api/v2/scim/users", parameters);
 
-        var response = await _httpClient.GetAsync(uri, cancellationToken);
+        var response = await client.GetAsync(uri, cancellationToken);
 
         response.EnsureSuccessStatusCode();
 
-        return await response.Content.ReadFromJsonAsync<ScimUserListResponse>(_options, cancellationToken);
+        return await response.Content.ReadFromJsonAsync<ScimUserListResponse>(_options.JsonSerializerOptions, cancellationToken);
     }
 
     /// <inheritdoc />
+    
     public async Task<ScimV2User> GetScimUserAsync(string userId, IEnumerable<string> attributes = null, IEnumerable<string> excludedAttributes = null, string ifNoneMatch = null, CancellationToken cancellationToken = default)
     {
         ArgumentException.ThrowIfNullOrEmpty(userId);
@@ -77,6 +81,8 @@ public sealed class SCIMApi : ISCIMApi
             parameters.Add("excludedAttributes", string.Join(",", excludedAttributes));
         }
 
+        var client = _httpClientFactory.CreateClient(PureCloudConstants.PureCloudClientName);
+
         var uri = UriHelper.GetUri($"/api/v2/scim/users/{userId}", parameters);
 
         var request = new HttpRequestMessage(HttpMethod.Get, uri);
@@ -86,34 +92,41 @@ public sealed class SCIMApi : ISCIMApi
             request.Headers.Add("If-None-Match", ifNoneMatch);
         }
 
-        var response = await _httpClient.SendAsync(request, cancellationToken);
+        var response = await client.SendAsync(request, cancellationToken);
 
         response.EnsureSuccessStatusCode();
 
-        return await response.Content.ReadFromJsonAsync<ScimV2User>(_options, cancellationToken);
+        return await response.Content.ReadFromJsonAsync<ScimV2User>(_options.JsonSerializerOptions, cancellationToken);
     }
 
     /// <inheritdoc />
+    
     public async Task<ScimV2User> CreateScimUserAsync(ScimV2CreateUser body, CancellationToken cancellationToken = default)
     {
         ArgumentNullException.ThrowIfNull(body);
 
-        var response = await _httpClient.PostAsJsonAsync("/api/v2/scim/users", body, _options, cancellationToken);
+        var client = _httpClientFactory.CreateClient(PureCloudConstants.PureCloudClientName);
+
+        var response = await client.PostAsJsonAsync("/api/v2/scim/users", body, _options.JsonSerializerOptions, cancellationToken);
 
         response.EnsureSuccessStatusCode();
 
-        return await response.Content.ReadFromJsonAsync<ScimV2User>(_options, cancellationToken);
+        return await response.Content.ReadFromJsonAsync<ScimV2User>(_options.JsonSerializerOptions, cancellationToken);
     }
 
     /// <inheritdoc />
+    
     public async Task<ScimV2User> UpdateScimUserAsync(string userId, ScimV2User body, string ifMatch = null, CancellationToken cancellationToken = default)
     {
         ArgumentException.ThrowIfNullOrEmpty(userId);
+
         ArgumentNullException.ThrowIfNull(body);
+
+        var client = _httpClientFactory.CreateClient(PureCloudConstants.PureCloudClientName);
 
         var request = new HttpRequestMessage(HttpMethod.Put, $"/api/v2/scim/users/{userId}")
         {
-            Content = JsonContent.Create(body, options: _options)
+            Content = JsonContent.Create(body, options: _options.JsonSerializerOptions)
         };
 
         if (!string.IsNullOrEmpty(ifMatch))
@@ -121,17 +134,20 @@ public sealed class SCIMApi : ISCIMApi
             request.Headers.Add("If-Match", ifMatch);
         }
 
-        var response = await _httpClient.SendAsync(request, cancellationToken);
+        var response = await client.SendAsync(request, cancellationToken);
 
         response.EnsureSuccessStatusCode();
 
-        return await response.Content.ReadFromJsonAsync<ScimV2User>(_options, cancellationToken);
+        return await response.Content.ReadFromJsonAsync<ScimV2User>(_options.JsonSerializerOptions, cancellationToken);
     }
 
     /// <inheritdoc />
+    
     public async Task DeleteScimUserAsync(string userId, string ifMatch = null, CancellationToken cancellationToken = default)
     {
         ArgumentException.ThrowIfNullOrEmpty(userId);
+
+        var client = _httpClientFactory.CreateClient(PureCloudConstants.PureCloudClientName);
 
         var request = new HttpRequestMessage(HttpMethod.Delete, $"/api/v2/scim/users/{userId}");
 
@@ -140,7 +156,7 @@ public sealed class SCIMApi : ISCIMApi
             request.Headers.Add("If-Match", ifMatch);
         }
 
-        var response = await _httpClient.SendAsync(request, cancellationToken);
+        var response = await client.SendAsync(request, cancellationToken);
 
         response.EnsureSuccessStatusCode();
     }

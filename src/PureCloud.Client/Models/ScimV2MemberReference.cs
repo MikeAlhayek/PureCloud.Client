@@ -1,6 +1,5 @@
 using System.Runtime.Serialization;
 using System.Text;
-using System.Text.Json.Serialization;
 
 namespace PureCloud.Client.Models;
 
@@ -8,7 +7,7 @@ namespace PureCloud.Client.Models;
 /// Defines a reference to SCIM group members.
 /// </summary>
 
-public partial class ScimV2MemberReference : IEquatable<ScimV2MemberReference>
+public sealed class ScimV2MemberReference
 {
     /// <summary>
     /// The type of SCIM resource.
@@ -59,17 +58,11 @@ public partial class ScimV2MemberReference : IEquatable<ScimV2MemberReference>
     /// The type of SCIM resource.
     /// </summary>
     /// <value>The type of SCIM resource.</value>
-    [JsonPropertyName("type")]
     public TypeEnum? Type { get; set; }
     /// <summary>
     /// Initializes a new instance of the <see cref="ScimV2MemberReference" /> class.
     /// </summary>
     /// <param name="Value">The ID of the group member. Can be \&quot;userId\&quot; or \&quot;groupId\&quot;..</param>
-    public ScimV2MemberReference(string Value = null)
-    {
-        this.Value = Value;
-
-    }
 
 
 
@@ -79,7 +72,6 @@ public partial class ScimV2MemberReference : IEquatable<ScimV2MemberReference>
     /// The ID of the group member. Can be \&quot;userId\&quot; or \&quot;groupId\&quot;.
     /// </summary>
     /// <value>The ID of the group member. Can be \&quot;userId\&quot; or \&quot;groupId\&quot;.</value>
-    [JsonPropertyName("value")]
     public string Value { get; set; }
 
 
@@ -88,7 +80,6 @@ public partial class ScimV2MemberReference : IEquatable<ScimV2MemberReference>
     /// The reference URI of the SCIM resource.
     /// </summary>
     /// <value>The reference URI of the SCIM resource.</value>
-    [JsonPropertyName("$ref")]
     public string Ref { get; set; }
 
 
@@ -96,17 +87,6 @@ public partial class ScimV2MemberReference : IEquatable<ScimV2MemberReference>
     /// Returns the string presentation of the object
     /// </summary>
     /// <returns>String presentation of the object</returns>
-    public override string ToString()
-    {
-        var sb = new StringBuilder();
-        sb.Append("class ScimV2MemberReference {\n");
-
-        sb.Append("  Type: ").Append(Type).Append("\n");
-        sb.Append("  Value: ").Append(Value).Append("\n");
-        sb.Append("  Ref: ").Append(Ref).Append("\n");
-        sb.Append("}\n");
-        return sb.ToString();
-    }
 
 
     /// <summary>
@@ -114,70 +94,15 @@ public partial class ScimV2MemberReference : IEquatable<ScimV2MemberReference>
     /// </summary>
     /// <param name="obj">Object to be compared</param>
     /// <returns>Boolean</returns>
-    public override bool Equals(object obj)
-    {
-        // credit: http://stackoverflow.com/a/10454552/677735
-        return Equals(obj as ScimV2MemberReference);
-    }
 
     /// <summary>
     /// Returns true if ScimV2MemberReference instances are equal
     /// </summary>
     /// <param name="other">Instance of ScimV2MemberReference to be compared</param>
     /// <returns>Boolean</returns>
-    public bool Equals(ScimV2MemberReference other)
-    {
-        // credit: http://stackoverflow.com/a/10454552/677735
-        if (other == null)
-        {
-            return false;
-        }
-
-        return true &&
-            (
-                Type == other.Type ||
-                Type != null &&
-                Type.Equals(other.Type)
-            ) &&
-            (
-                Value == other.Value ||
-                Value != null &&
-                Value.Equals(other.Value)
-            ) &&
-            (
-                Ref == other.Ref ||
-                Ref != null &&
-                Ref.Equals(other.Ref)
-            );
-    }
 
     /// <summary>
     /// Gets the hash code
     /// </summary>
     /// <returns>Hash code</returns>
-    public override int GetHashCode()
-    {
-        // credit: http://stackoverflow.com/a/263416/677735
-        unchecked // Overflow is fine, just wrap
-        {
-            int hash = 41;
-            // Suitable nullity checks etc, of course :)
-            if (Type != null)
-            {
-                hash = hash * 59 + Type.GetHashCode();
-            }
-
-            if (Value != null)
-            {
-                hash = hash * 59 + Value.GetHashCode();
-            }
-
-            if (Ref != null)
-            {
-                hash = hash * 59 + Ref.GetHashCode();
-            }
-
-            return hash;
-        }
-    }
 }

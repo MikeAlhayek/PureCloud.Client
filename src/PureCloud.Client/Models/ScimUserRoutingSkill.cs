@@ -1,5 +1,4 @@
 using System.Text;
-using System.Text.Json.Serialization;
 
 namespace PureCloud.Client.Models;
 
@@ -7,7 +6,7 @@ namespace PureCloud.Client.Models;
 /// The routing skill assigned to a user.
 /// </summary>
 
-public partial class ScimUserRoutingSkill : IEquatable<ScimUserRoutingSkill>
+public sealed class ScimUserRoutingSkill
 {
 
     /// <summary>
@@ -20,12 +19,6 @@ public partial class ScimUserRoutingSkill : IEquatable<ScimUserRoutingSkill>
     /// </summary>
     /// <param name="Name">The case-sensitive name of a routing skill configured in Genesys Cloud. (required).</param>
     /// <param name="Proficiency">A rating from 0.0 to 5.0 that indicates how adept an agent is at a particular skill. When \&quot;Best available skills\&quot; is enabled for a queue in Genesys Cloud, ACD interactions in that queue are routed to agents with higher proficiency ratings..</param>
-    public ScimUserRoutingSkill(string Name = null, double? Proficiency = null)
-    {
-        this.Name = Name;
-        this.Proficiency = Proficiency;
-
-    }
 
 
 
@@ -33,7 +26,6 @@ public partial class ScimUserRoutingSkill : IEquatable<ScimUserRoutingSkill>
     /// The case-sensitive name of a routing skill configured in Genesys Cloud.
     /// </summary>
     /// <value>The case-sensitive name of a routing skill configured in Genesys Cloud.</value>
-    [JsonPropertyName("name")]
     public string Name { get; set; }
 
 
@@ -42,7 +34,6 @@ public partial class ScimUserRoutingSkill : IEquatable<ScimUserRoutingSkill>
     /// A rating from 0.0 to 5.0 that indicates how adept an agent is at a particular skill. When \&quot;Best available skills\&quot; is enabled for a queue in Genesys Cloud, ACD interactions in that queue are routed to agents with higher proficiency ratings.
     /// </summary>
     /// <value>A rating from 0.0 to 5.0 that indicates how adept an agent is at a particular skill. When \&quot;Best available skills\&quot; is enabled for a queue in Genesys Cloud, ACD interactions in that queue are routed to agents with higher proficiency ratings.</value>
-    [JsonPropertyName("proficiency")]
     public double? Proficiency { get; set; }
 
 
@@ -50,16 +41,6 @@ public partial class ScimUserRoutingSkill : IEquatable<ScimUserRoutingSkill>
     /// Returns the string presentation of the object
     /// </summary>
     /// <returns>String presentation of the object</returns>
-    public override string ToString()
-    {
-        var sb = new StringBuilder();
-        sb.Append("class ScimUserRoutingSkill {\n");
-
-        sb.Append("  Name: ").Append(Name).Append("\n");
-        sb.Append("  Proficiency: ").Append(Proficiency).Append("\n");
-        sb.Append("}\n");
-        return sb.ToString();
-    }
 
 
     /// <summary>
@@ -67,60 +48,15 @@ public partial class ScimUserRoutingSkill : IEquatable<ScimUserRoutingSkill>
     /// </summary>
     /// <param name="obj">Object to be compared</param>
     /// <returns>Boolean</returns>
-    public override bool Equals(object obj)
-    {
-        // credit: http://stackoverflow.com/a/10454552/677735
-        return Equals(obj as ScimUserRoutingSkill);
-    }
 
     /// <summary>
     /// Returns true if ScimUserRoutingSkill instances are equal
     /// </summary>
     /// <param name="other">Instance of ScimUserRoutingSkill to be compared</param>
     /// <returns>Boolean</returns>
-    public bool Equals(ScimUserRoutingSkill other)
-    {
-        // credit: http://stackoverflow.com/a/10454552/677735
-        if (other == null)
-        {
-            return false;
-        }
-
-        return true &&
-            (
-                Name == other.Name ||
-                Name != null &&
-                Name.Equals(other.Name)
-            ) &&
-            (
-                Proficiency == other.Proficiency ||
-                Proficiency != null &&
-                Proficiency.Equals(other.Proficiency)
-            );
-    }
 
     /// <summary>
     /// Gets the hash code
     /// </summary>
     /// <returns>Hash code</returns>
-    public override int GetHashCode()
-    {
-        // credit: http://stackoverflow.com/a/263416/677735
-        unchecked // Overflow is fine, just wrap
-        {
-            int hash = 41;
-            // Suitable nullity checks etc, of course :)
-            if (Name != null)
-            {
-                hash = hash * 59 + Name.GetHashCode();
-            }
-
-            if (Proficiency != null)
-            {
-                hash = hash * 59 + Proficiency.GetHashCode();
-            }
-
-            return hash;
-        }
-    }
 }
