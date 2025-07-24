@@ -2,7 +2,7 @@ using System.Runtime.Serialization;
 
 namespace PureCloud.Client.Models;
 
-public enum StateEnum
+public enum ExtensionPoolState
 {
     [EnumMember(Value = "OUTDATED_SDK_VERSION")]
     OutdatedSdkVersion,

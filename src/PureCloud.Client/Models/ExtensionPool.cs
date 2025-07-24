@@ -2,7 +2,7 @@ namespace PureCloud.Client.Models;
 
 public sealed class ExtensionPool
 {
-    public StateEnum? State { get; set; }
+    public ExtensionPoolState? State { get; set; }
     public string Id { get; set; }
     public string Name { get; set; }
     public Division Division { get; set; }
