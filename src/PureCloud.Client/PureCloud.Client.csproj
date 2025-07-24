@@ -4641,6 +4641,9 @@
     <Compile Include="Models\StatusChange.cs" />
     <Compile Include="Models\ApprovalNamespace.cs" />
     <Compile Include="Models\LimitChangeRequestsEntityListing.cs" />
+    <Compile Include="Models\Station.cs" />
+    <Compile Include="Models\Station.Status.cs" />
+    <Compile Include="Models\StationEntityListing.cs" />
 
     <Compile Include="Models\TrustEntityListing.cs" />
     <Compile Include="Models\Trustee.cs" />

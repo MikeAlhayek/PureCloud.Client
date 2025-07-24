@@ -187,6 +187,8 @@ public static class ServiceCollectionExtensions
 
         services.TryAddScoped<ISettingsApi, SettingsApi>();
 
+        services.TryAddScoped<IStationsApi, StationsApi>();
+
         services.TryAddScoped<IUserApi, UserApi>();
 
         services.TryAddScoped<IVoicemailApi, VoicemailApi>();
