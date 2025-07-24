@@ -8,7 +8,7 @@ using PureCloud.Client.Models.Users;
 
 namespace PureCloud.Client.Contracts;
 
-public interface ICompleteSearchApi
+public interface ISearchApi
 {
     /// <summary>
     /// Search documentation

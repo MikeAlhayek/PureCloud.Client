@@ -179,7 +179,7 @@ public static class ServiceCollectionExtensions
 
         services.TryAddScoped<IScriptsApi, ScriptsApi>();
 
-        services.TryAddScoped<ICompleteSearchApi, CompleteSearchApi>();
+        services.TryAddScoped<ISearchApi, SearchApi>();
 
         services.TryAddScoped<IScreenRecordingApi, ScreenRecordingApi>();
 

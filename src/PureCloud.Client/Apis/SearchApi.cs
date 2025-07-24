@@ -10,12 +10,12 @@ using PureCloud.Client.Models.Users;
 
 namespace PureCloud.Client.Apis;
 
-public sealed class CompleteSearchApi : ICompleteSearchApi
+public sealed class SearchApi : ISearchApi
 {
     private readonly IHttpClientFactory _httpClientFactory;
     private readonly PureCloudJsonSerializerOptions _options;
 
-    public CompleteSearchApi(
+    public SearchApi(
         IHttpClientFactory httpClientFactory,
         IOptions<PureCloudJsonSerializerOptions> options)
     {
