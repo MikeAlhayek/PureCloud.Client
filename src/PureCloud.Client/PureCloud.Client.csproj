@@ -110,6 +110,12 @@
     <Compile Include="Models\DocumentationSearchResponse.cs" />
     <Compile Include="Models\Endpoint.State.cs" />
     <Compile Include="Models\EntityListing.cs" />
+    <Compile Include="Models\InfixOperator.cs" />
+    <Compile Include="Models\InfixOperator.OperatorType.cs" />
+    <Compile Include="Models\OperandPosition.cs" />
+    <Compile Include="Models\OperandPosition.StartingPositionDirection.cs" />
+    <Compile Include="Models\OperandPosition.EndingPositionDirection.cs" />
+    <Compile Include="Models\OperatorPosition.cs" />
     <Compile Include="Models\SocialMediaAsyncAggregationQuery.cs" />
     <Compile Include="Models\SocialMediaAsyncAggregationQuery.GroupBy.cs" />
     <Compile Include="Models\SocialMediaAsyncAggregationQuery.Metrics.cs" />
@@ -2421,6 +2427,8 @@
     <Compile Include="Models\SuggestSearchCriteria.cs" />
     <Compile Include="Models\SuggestSearchCriteria.Operator.cs" />
     <Compile Include="Models\SuggestSearchRequest.cs" />
+    <Compile Include="Models\Term.cs" />
+    <Compile Include="Models\Term.ParticipantType.cs" />
     <Compile Include="Models\UserLicenses.cs" />
     <Compile Include="Models\UserLicensesEntityListing.cs" />
     <Compile Include="Models\LearningAssignment.cs" />

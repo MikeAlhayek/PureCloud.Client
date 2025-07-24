@@ -189,6 +189,8 @@ public static class ServiceCollectionExtensions
 
         services.TryAddScoped<ISocialMediaApi, SocialMediaApi>();
 
+        services.TryAddScoped<ISpeechTextAnalyticsApi, SpeechTextAnalyticsApi>();
+
         services.TryAddScoped<IUserApi, UserApi>();
 
         services.TryAddScoped<IVoicemailApi, VoicemailApi>();
@@ -198,8 +200,6 @@ public static class ServiceCollectionExtensions
         services.TryAddScoped<IWebMessagingApi, WebMessagingApi>();
 
         services.TryAddScoped<IWidgetsApi, WidgetsApi>();
-
-        services.TryAddScoped<ISpeechTextAnalyticsApi, SpeechTextAnalyticsApi>();
 
         return services;
     }
