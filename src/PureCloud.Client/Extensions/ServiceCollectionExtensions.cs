@@ -177,7 +177,9 @@ public static class ServiceCollectionExtensions
 
         services.TryAddScoped<IResponseManagementApiV2, ResponseManagementApi>();
 
-        services.TryAddScoped<ISCIMApi, SCIMApi>();
+        services.TryAddScoped<IScriptsApi, ScriptsApi>();
+
+        services.TryAddScoped<ICompleteSearchApi, CompleteSearchApi>();
 
         services.TryAddScoped<IScreenRecordingApi, ScreenRecordingApi>();
 
