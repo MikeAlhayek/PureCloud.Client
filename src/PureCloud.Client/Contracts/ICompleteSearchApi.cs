@@ -16,7 +16,7 @@ public interface ICompleteSearchApi
     /// <param name="body">Search request options</param>
     /// <param name="cancellationToken">Cancellation token</param>
     /// <returns>DocumentationSearchResponse</returns>
-    Task<DocumentationSearchResponse> PostDocumentationSearchAsync(DocumentationSearchRequest body, CancellationToken cancellationToken = default);
+    Task<DocumentationSearchResponse> CreateDocumentationSearchAsync(DocumentationSearchRequest body, CancellationToken cancellationToken = default);
 
     /// <summary>
     /// Search gkn documentation
@@ -24,7 +24,7 @@ public interface ICompleteSearchApi
     /// <param name="body">Search request options</param>
     /// <param name="cancellationToken">Cancellation token</param>
     /// <returns>GKNDocumentationSearchResponse</returns>
-    Task<GKNDocumentationSearchResponse> PostDocumentationGknSearchAsync(GKNDocumentationSearchRequest body, CancellationToken cancellationToken = default);
+    Task<GKNDocumentationSearchResponse> CreateDocumentationGknSearchAsync(GKNDocumentationSearchRequest body, CancellationToken cancellationToken = default);
 
     /// <summary>
     /// Search users
@@ -32,7 +32,7 @@ public interface ICompleteSearchApi
     /// <param name="body">Search request options</param>
     /// <param name="cancellationToken">Cancellation token</param>
     /// <returns>UsersSearchResponse</returns>
-    Task<UsersSearchResponse> PostUsersSearchAsync(UserSearchRequest body, CancellationToken cancellationToken = default);
+    Task<UsersSearchResponse> CreateUsersSearchAsync(UserSearchRequest body, CancellationToken cancellationToken = default);
 
     /// <summary>
     /// Search groups
@@ -40,7 +40,7 @@ public interface ICompleteSearchApi
     /// <param name="body">Search request options</param>
     /// <param name="cancellationToken">Cancellation token</param>
     /// <returns>GroupsSearchResponse</returns>
-    Task<GroupsSearchResponse> PostGroupsSearchAsync(GroupSearchRequest body, CancellationToken cancellationToken = default);
+    Task<GroupsSearchResponse> CreateGroupsSearchAsync(GroupSearchRequest body, CancellationToken cancellationToken = default);
 
     /// <summary>
     /// Search locations
@@ -48,7 +48,7 @@ public interface ICompleteSearchApi
     /// <param name="body">Search request options</param>
     /// <param name="cancellationToken">Cancellation token</param>
     /// <returns>LocationsSearchResponse</returns>
-    Task<LocationsSearchResponse> PostLocationsSearchAsync(LocationSearchRequest body, CancellationToken cancellationToken = default);
+    Task<LocationsSearchResponse> CreateLocationsSearchAsync(LocationSearchRequest body, CancellationToken cancellationToken = default);
 
     /// <summary>
     /// Search resources
@@ -57,7 +57,7 @@ public interface ICompleteSearchApi
     /// <param name="profile">profile (optional, default to true)</param>
     /// <param name="cancellationToken">Cancellation token</param>
     /// <returns>JsonNodeSearchResponse</returns>
-    Task<JsonNodeSearchResponse> PostSearchAsync(SearchRequest body, bool? profile = null, CancellationToken cancellationToken = default);
+    Task<JsonNodeSearchResponse> CreateSearchAsync(SearchRequest body, bool? profile = null, CancellationToken cancellationToken = default);
 
     /// <summary>
     /// Suggest resources
@@ -66,7 +66,7 @@ public interface ICompleteSearchApi
     /// <param name="profile">profile (optional, default to true)</param>
     /// <param name="cancellationToken">Cancellation token</param>
     /// <returns>JsonNodeSearchResponse</returns>
-    Task<JsonNodeSearchResponse> PostSearchSuggestAsync(SuggestSearchRequest body, bool? profile = null, CancellationToken cancellationToken = default);
+    Task<JsonNodeSearchResponse> CreateSearchSuggestAsync(SuggestSearchRequest body, bool? profile = null, CancellationToken cancellationToken = default);
 
     /// <summary>
     /// Search sites
@@ -74,5 +74,5 @@ public interface ICompleteSearchApi
     /// <param name="body">Search request options</param>
     /// <param name="cancellationToken">Cancellation token</param>
     /// <returns>SitesSearchResponse</returns>
-    Task<SitesSearchResponse> PostTelephonyProvidersEdgesSitesSearchAsync(SiteSearchRequest body, CancellationToken cancellationToken = default);
+    Task<SitesSearchResponse> CreateTelephonyProvidersEdgesSitesSearchAsync(SiteSearchRequest body, CancellationToken cancellationToken = default);
 }

@@ -2,10 +2,7 @@ using System.Runtime.Serialization;
 
 namespace PureCloud.Client.Models;
 
-/// <summary>
-/// The sort order for results
-/// </summary>
-public enum DocumentationSearchRequestSortOrderEnum
+public enum DocumentationSearchCriteriaOperatorEnum
 {
     /// <summary>
     /// Your SDK version is out of date and an unknown enum value was encountered. 
@@ -16,20 +13,20 @@ public enum DocumentationSearchRequestSortOrderEnum
     OutdatedSdkVersion,
 
     /// <summary>
-    /// Enum Asc for "ASC"
+    /// Enum And for "AND"
     /// </summary>
-    [EnumMember(Value = "ASC")]
-    Asc,
+    [EnumMember(Value = "AND")]
+    And,
 
     /// <summary>
-    /// Enum Desc for "DESC"
+    /// Enum Or for "OR"
     /// </summary>
-    [EnumMember(Value = "DESC")]
-    Desc,
+    [EnumMember(Value = "OR")]
+    Or,
 
     /// <summary>
-    /// Enum Score for "SCORE"
+    /// Enum Not for "NOT"
     /// </summary>
-    [EnumMember(Value = "SCORE")]
-    Score
+    [EnumMember(Value = "NOT")]
+    Not
 }

@@ -2,10 +2,7 @@ using System.Runtime.Serialization;
 
 namespace PureCloud.Client.Models;
 
-/// <summary>
-/// The sort order for results
-/// </summary>
-public enum DocumentationSearchRequestSortOrderEnum
+public enum SiteSearchRequestSortOrderEnum
 {
     /// <summary>
     /// Your SDK version is out of date and an unknown enum value was encountered. 

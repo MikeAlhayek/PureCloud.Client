@@ -5,7 +5,8 @@ namespace PureCloud.Client.Models;
 /// <summary>
 /// The sort order for results
 /// </summary>
-public enum DocumentationSearchRequestSortOrderEnum
+/// <value>The sort order for results</value>
+public enum SortOrderEnum
 {
     /// <summary>
     /// Your SDK version is out of date and an unknown enum value was encountered. 
