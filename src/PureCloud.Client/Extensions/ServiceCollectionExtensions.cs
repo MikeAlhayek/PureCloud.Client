@@ -135,6 +135,8 @@ public static class ServiceCollectionExtensions
 
         services.TryAddScoped<ILocationsApi, LocationsApi>();
 
+        services.TryAddScoped<ILogCaptureApi, LogCaptureApi>();
+
         services.TryAddScoped<IMobileDevicesApi, MobileDevicesApi>();
 
         services.TryAddScoped<IMessagingApi, MessagingApi>();
@@ -149,6 +151,8 @@ public static class ServiceCollectionExtensions
 
         services.TryAddTransient<NotificationClient>();
 
+        services.TryAddScoped<IOAuthApi, OAuthApi>();
+
         services.TryAddScoped<IOrganizationApi, OrganizationApi>();
 
         services.TryAddScoped<IOrganizationAuthorizationApi, OrganizationAuthorizationApi>();
@@ -160,8 +164,10 @@ public static class ServiceCollectionExtensions
         services.TryAddScoped<IQualityApi, QualityApi>();
 
         services.TryAddScoped<IOutboundApi, OutboundApi>();
-      
+
         services.TryAddScoped<IPresenceApi, PresenceApi>();
+
+        services.TryAddScoped<IProcessAutomationApi, ProcessAutomationApi>();
 
         services.TryAddScoped<IRoutingApi, RoutingApi>();
 
@@ -169,9 +175,15 @@ public static class ServiceCollectionExtensions
 
         services.TryAddScoped<IRecordingApi, RecordingApi>();
 
-        services.TryAddScoped<IProcessAutomationApi, ProcessAutomationApi>();
+        services.TryAddScoped<IResponseManagementApiV2, ResponseManagementApi>();
 
         services.TryAddScoped<ISCIMApi, SCIMApi>();
+
+        services.TryAddScoped<IScreenRecordingApi, ScreenRecordingApi>();
+
+        services.TryAddScoped<IScriptsApi, ScriptsApi>();
+
+        services.TryAddScoped<ISettingsApi, SettingsApi>();
 
         services.TryAddScoped<IUserApi, UserApi>();
 

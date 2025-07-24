@@ -1,3 +1,6 @@
+using System;
+using System.Collections.Generic;
+using System.Linq;
 using System.Text;
 using System.Text.Json.Serialization;
 
@@ -6,181 +9,50 @@ namespace PureCloud.Client.Models;
 /// <summary>
 /// ResponseAssetSearchResults
 /// </summary>
-
-public partial class ResponseAssetSearchResults : IEquatable<ResponseAssetSearchResults>
+public sealed class ResponseAssetSearchResults
 {
     /// <summary>
-    /// Initializes a new instance of the <see cref="ResponseAssetSearchResults" /> class.
+    /// Gets or Sets Total
     /// </summary>
-    /// <param name="Total">The total number of results found.</param>
-    /// <param name="PageCount">The total number of pages.</param>
-    /// <param name="PageSize">The current page size.</param>
-    /// <param name="PageNumber">The current page number.</param>
-    /// <param name="Results">Search results.</param>
-    public ResponseAssetSearchResults(long? Total = null, int? PageCount = null, int? PageSize = null, int? PageNumber = null, List<ResponseAsset> Results = null)
-    {
-        this.Total = Total;
-        this.PageCount = PageCount;
-        this.PageSize = PageSize;
-        this.PageNumber = PageNumber;
-        this.Results = Results;
-
-    }
-
-
-
-    /// <summary>
-    /// The total number of results found
-    /// </summary>
-    /// <value>The total number of results found</value>
-    [JsonPropertyName("total")]
     public long? Total { get; set; }
 
-
-
     /// <summary>
-    /// The total number of pages
+    /// Gets or Sets PageCount
     /// </summary>
-    /// <value>The total number of pages</value>
-    [JsonPropertyName("pageCount")]
     public int? PageCount { get; set; }
 
-
-
     /// <summary>
-    /// The current page size
+    /// Gets or Sets PageSize
     /// </summary>
-    /// <value>The current page size</value>
-    [JsonPropertyName("pageSize")]
     public int? PageSize { get; set; }
 
-
-
     /// <summary>
-    /// The current page number
+    /// Gets or Sets PageNumber
     /// </summary>
-    /// <value>The current page number</value>
-    [JsonPropertyName("pageNumber")]
     public int? PageNumber { get; set; }
 
-
+    /// <summary>
+    /// Gets or Sets PreviousPage
+    /// </summary>
+    public string PreviousPage { get; set; }
 
     /// <summary>
-    /// Search results
+    /// Gets or Sets CurrentPage
     /// </summary>
-    /// <value>Search results</value>
-    [JsonPropertyName("results")]
-    public List<ResponseAsset> Results { get; set; }
-
+    public string CurrentPage { get; set; }
 
     /// <summary>
-    /// Returns the string presentation of the object
+    /// Gets or Sets NextPage
     /// </summary>
-    /// <returns>String presentation of the object</returns>
-    public override string ToString()
-    {
-        var sb = new StringBuilder();
-        sb.Append("class ResponseAssetSearchResults {\n");
-
-        sb.Append("  Total: ").Append(Total).Append("\n");
-        sb.Append("  PageCount: ").Append(PageCount).Append("\n");
-        sb.Append("  PageSize: ").Append(PageSize).Append("\n");
-        sb.Append("  PageNumber: ").Append(PageNumber).Append("\n");
-        sb.Append("  Results: ").Append(Results).Append("\n");
-        sb.Append("}\n");
-        return sb.ToString();
-    }
-
+    public string NextPage { get; set; }
 
     /// <summary>
-    /// Returns true if objects are equal
+    /// Gets or Sets Types
     /// </summary>
-    /// <param name="obj">Object to be compared</param>
-    /// <returns>Boolean</returns>
-    public override bool Equals(object obj)
-    {
-        // credit: http://stackoverflow.com/a/10454552/677735
-        return Equals(obj as ResponseAssetSearchResults);
-    }
+    public IEnumerable<string> Types { get; set; }
 
     /// <summary>
-    /// Returns true if ResponseAssetSearchResults instances are equal
+    /// Gets or Sets Results
     /// </summary>
-    /// <param name="other">Instance of ResponseAssetSearchResults to be compared</param>
-    /// <returns>Boolean</returns>
-    public bool Equals(ResponseAssetSearchResults other)
-    {
-        // credit: http://stackoverflow.com/a/10454552/677735
-        if (other == null)
-        {
-            return false;
-        }
-
-        return true &&
-            (
-                Total == other.Total ||
-                Total != null &&
-                Total.Equals(other.Total)
-            ) &&
-            (
-                PageCount == other.PageCount ||
-                PageCount != null &&
-                PageCount.Equals(other.PageCount)
-            ) &&
-            (
-                PageSize == other.PageSize ||
-                PageSize != null &&
-                PageSize.Equals(other.PageSize)
-            ) &&
-            (
-                PageNumber == other.PageNumber ||
-                PageNumber != null &&
-                PageNumber.Equals(other.PageNumber)
-            ) &&
-            (
-                Results == other.Results ||
-                Results != null &&
-                Results.SequenceEqual(other.Results)
-            );
-    }
-
-    /// <summary>
-    /// Gets the hash code
-    /// </summary>
-    /// <returns>Hash code</returns>
-    public override int GetHashCode()
-    {
-        // credit: http://stackoverflow.com/a/263416/677735
-        unchecked // Overflow is fine, just wrap
-        {
-            int hash = 41;
-            // Suitable nullity checks etc, of course :)
-            if (Total != null)
-            {
-                hash = hash * 59 + Total.GetHashCode();
-            }
-
-            if (PageCount != null)
-            {
-                hash = hash * 59 + PageCount.GetHashCode();
-            }
-
-            if (PageSize != null)
-            {
-                hash = hash * 59 + PageSize.GetHashCode();
-            }
-
-            if (PageNumber != null)
-            {
-                hash = hash * 59 + PageNumber.GetHashCode();
-            }
-
-            if (Results != null)
-            {
-                hash = hash * 59 + Results.GetHashCode();
-            }
-
-            return hash;
-        }
-    }
+    public IEnumerable<ResponseAsset> Results { get; set; }
 }
