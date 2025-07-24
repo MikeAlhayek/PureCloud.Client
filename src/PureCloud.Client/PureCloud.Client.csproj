@@ -3465,6 +3465,8 @@
     <Compile Include="Models\SharedResponse.cs" />
     <Compile Include="Models\ShareEntityListing.cs" />
     <Compile Include="Models\Signature.cs" />
+    <Compile Include="Models\SignedData.cs" />
+    <Compile Include="Models\ScreenRecordingUserAuthenticatedInfo.cs" />
     <Compile Include="Models\SingleWorkdayAveragePoints.cs" />
     <Compile Include="Models\SingleWorkdayAverageValues.cs" />
     <Compile Include="Models\SkillGroup.cs" />
