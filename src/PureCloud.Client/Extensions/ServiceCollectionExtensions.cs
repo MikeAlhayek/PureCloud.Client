@@ -187,13 +187,11 @@ public static class ServiceCollectionExtensions
 
         services.TryAddScoped<ISettingsApi, SettingsApi>();
 
-
         services.TryAddScoped<IStationsApi, StationsApi>();
 
         services.TryAddScoped<ISocialMediaApi, SocialMediaApi>();
 
         services.TryAddScoped<ISpeechTextAnalyticsApi, SpeechTextAnalyticsApi>();
-
 
         services.TryAddScoped<IUserApi, UserApi>();
 
