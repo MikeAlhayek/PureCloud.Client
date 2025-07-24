@@ -9,12 +9,15 @@
     <Compile Remove="OldApis\**" />
     <Compile Remove="Notifications\**" />
     <Compile Remove="Models\**" />
+    <Compile Remove="Models\Teams\**" />
     <EmbeddedResource Remove="OldApis\**" />
     <EmbeddedResource Remove="Notifications\**" />
     <EmbeddedResource Remove="Models\**" />
+    <EmbeddedResource Remove="Models\Teams\**" />
     <None Remove="OldApis\**" />
     <None Remove="Notifications\**" />
     <None Remove="Models\**" />
+    <None Remove="Models\Teams\**" />
   </ItemGroup>
 
   <ItemGroup>
