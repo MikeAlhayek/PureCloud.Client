@@ -1,5 +1,6 @@
 using System.Collections.Specialized;
 using System.Net.Http.Json;
+using System.Text.Json;
 using Microsoft.Extensions.Options;
 using PureCloud.Client.Contracts;
 using PureCloud.Client.Http;
@@ -21,6 +22,7 @@ public sealed class SettingsApi : ISettingsApi
     }
 
     /// <inheritdoc />
+
     public async Task<EmailSettings> GetEmailsSettingsAsync(CancellationToken cancellationToken = default)
     {
         var uri = UriHelper.GetUri("api/v2/emails/settings", null);
@@ -33,6 +35,7 @@ public sealed class SettingsApi : ISettingsApi
     }
 
     /// <inheritdoc />
+
     public async Task<EmailSettings> UpdateEmailsSettingsAsync(EmailSettings body, CancellationToken cancellationToken = default)
     {
         ArgumentNullException.ThrowIfNull(body);
@@ -47,6 +50,7 @@ public sealed class SettingsApi : ISettingsApi
     }
 
     /// <inheritdoc />
+
     public async Task<EmailThreadingSettings> GetEmailsSettingsThreadingAsync(CancellationToken cancellationToken = default)
     {
         var uri = UriHelper.GetUri("api/v2/emails/settings/threading", null);
@@ -59,6 +63,7 @@ public sealed class SettingsApi : ISettingsApi
     }
 
     /// <inheritdoc />
+
     public async Task<EmailThreadingSettings> UpdateEmailsSettingsThreadingAsync(EmailThreadingSettings body, CancellationToken cancellationToken = default)
     {
         ArgumentNullException.ThrowIfNull(body);
@@ -73,6 +78,7 @@ public sealed class SettingsApi : ISettingsApi
     }
 
     /// <inheritdoc />
+
     public async Task DeleteEmailsSettingsThreadingAsync(CancellationToken cancellationToken = default)
     {
         var uri = UriHelper.GetUri("api/v2/emails/settings/threading", null);
@@ -83,6 +89,7 @@ public sealed class SettingsApi : ISettingsApi
     }
 
     /// <inheritdoc />
+
     public async Task<ExecutionDataGlobalSettingsResponse> GetSettingsExecutiondataAsync(CancellationToken cancellationToken = default)
     {
         var uri = UriHelper.GetUri("api/v2/settings/executiondata", null);
@@ -95,6 +102,7 @@ public sealed class SettingsApi : ISettingsApi
     }
 
     /// <inheritdoc />
+
     public async Task<ExecutionDataGlobalSettingsResponse> UpdateSettingsExecutiondataAsync(ExecutionDataSettingsRequest body, CancellationToken cancellationToken = default)
     {
         ArgumentNullException.ThrowIfNull(body);
@@ -109,6 +117,7 @@ public sealed class SettingsApi : ISettingsApi
     }
 
     /// <inheritdoc />
+
     public async Task<AutoAnswerSettings> GetUsersAgentuiAgentsAutoanswerSettingsAsync(string agentId, CancellationToken cancellationToken = default)
     {
         ArgumentException.ThrowIfNullOrEmpty(agentId);
@@ -123,9 +132,11 @@ public sealed class SettingsApi : ISettingsApi
     }
 
     /// <inheritdoc />
+
     public async Task<AutoAnswerSettings> UpdateUsersAgentuiAgentsAutoanswerSettingsAsync(string agentId, AutoAnswerSettings body, CancellationToken cancellationToken = default)
     {
         ArgumentException.ThrowIfNullOrEmpty(agentId);
+
         ArgumentNullException.ThrowIfNull(body);
 
         var uri = UriHelper.GetUri($"api/v2/users/agentui/agents/autoanswer/{agentId}/settings", null);
@@ -138,6 +149,7 @@ public sealed class SettingsApi : ISettingsApi
     }
 
     /// <inheritdoc />
+
     public async Task DeleteUsersAgentuiAgentsAutoanswerSettingsAsync(string agentId, CancellationToken cancellationToken = default)
     {
         ArgumentException.ThrowIfNullOrEmpty(agentId);
