@@ -1,20 +1,25 @@
+using System;
 using System.Collections.Specialized;
 using System.Net.Http.Json;
+using System.Threading;
+using System.Threading.Tasks;
 using Microsoft.Extensions.Options;
 using PureCloud.Client.Contracts;
 using PureCloud.Client.Http;
 using PureCloud.Client.Json;
 using PureCloud.Client.Models;
+using PureCloud.Client.Models.Groups;
 using PureCloud.Client.Models.Locations;
+using PureCloud.Client.Models.Users;
 
 namespace PureCloud.Client.Apis;
 
-public class SearchApi : ISearchApi
+public class CompleteSearchApi : ICompleteSearchApi
 {
     private readonly IHttpClientFactory _httpClientFactory;
     private readonly PureCloudJsonSerializerOptions _options;
 
-    public SearchApi(
+    public CompleteSearchApi(
         IHttpClientFactory httpClientFactory,
         IOptions<PureCloudJsonSerializerOptions> options)
     {

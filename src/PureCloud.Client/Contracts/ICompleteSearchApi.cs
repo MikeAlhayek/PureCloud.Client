@@ -1,9 +1,14 @@
+using System;
+using System.Threading;
+using System.Threading.Tasks;
 using PureCloud.Client.Models;
+using PureCloud.Client.Models.Groups;
 using PureCloud.Client.Models.Locations;
+using PureCloud.Client.Models.Users;
 
 namespace PureCloud.Client.Contracts;
 
-public interface ISearchApi
+public interface ICompleteSearchApi
 {
     /// <summary>
     /// Search documentation
