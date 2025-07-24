@@ -3428,6 +3428,9 @@
     <Compile Include="Models\ScreenshareInitialState.cs" />
     <Compile Include="Models\ScreenshareState.cs" />
     <Compile Include="Models\Script.cs" />
+    <Compile Include="Models\ScriptEntityListing.cs" />
+    <Compile Include="Models\ExportScriptRequest.cs" />
+    <Compile Include="Models\ExportScriptResponse.cs" />
     <Compile Include="Models\SdkLibrary.cs" />
     <Compile Include="Models\Section.cs" />
     <Compile Include="Models\SecurityProfile.cs" />
