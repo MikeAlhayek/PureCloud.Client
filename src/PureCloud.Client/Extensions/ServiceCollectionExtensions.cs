@@ -197,6 +197,8 @@ public static class ServiceCollectionExtensions
 
         services.TryAddScoped<IWidgetsApi, WidgetsApi>();
 
+        services.TryAddScoped<ISpeechTextAnalyticsApi, SpeechTextAnalyticsApi>();
+
         return services;
     }
 
