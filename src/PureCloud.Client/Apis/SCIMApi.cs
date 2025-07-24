@@ -63,7 +63,7 @@ public sealed class SCIMApi : ISCIMApi
     /// <inheritdoc />
     public async Task<ScimV2User> GetScimUserAsync(string userId, IEnumerable<string> attributes = null, IEnumerable<string> excludedAttributes = null, string ifNoneMatch = null, CancellationToken cancellationToken = default)
     {
-        ArgumentException.ThrowIfNullOrEmpty(nameof(userId), userId);
+        ArgumentException.ThrowIfNullOrEmpty(userId);
 
         var parameters = new NameValueCollection();
 
@@ -79,14 +79,7 @@ public sealed class SCIMApi : ISCIMApi
 
         var uri = UriHelper.GetUri($"/api/v2/scim/users/{userId}", parameters);
 
-        var request = new HttpRequestMessage(HttpMethod.Get, uri);
-
-        if (!string.IsNullOrEmpty(ifNoneMatch))
-        {
-            request.Headers.Add("If-None-Match", ifNoneMatch);
-        }
-
-        var response = await _httpClient.SendAsync(request, cancellationToken);
+        var response = await _httpClient.GetAsync(uri, cancellationToken);
 
         response.EnsureSuccessStatusCode();
 
@@ -110,57 +103,28 @@ public sealed class SCIMApi : ISCIMApi
     /// <inheritdoc />
     public async Task<ScimV2User> UpdateScimUserAsync(string userId, ScimV2User body, string ifMatch = null, CancellationToken cancellationToken = default)
     {
-        ArgumentException.ThrowIfNullOrEmpty(nameof(userId), userId);
+        ArgumentException.ThrowIfNullOrEmpty(userId);
 
         ArgumentNullException.ThrowIfNull(body);
 
         var uri = UriHelper.GetUri($"/api/v2/scim/users/{userId}", null);
 
-        if (!string.IsNullOrEmpty(ifMatch))
-        {
-            var request = new HttpRequestMessage(HttpMethod.Put, uri)
-            {
-                Content = JsonContent.Create(body, options: _options)
-            };
-            request.Headers.Add("If-Match", ifMatch);
+        var response = await _httpClient.PutAsJsonAsync(uri, body, _options, cancellationToken);
 
-            var response = await _httpClient.SendAsync(request, cancellationToken);
+        response.EnsureSuccessStatusCode();
 
-            response.EnsureSuccessStatusCode();
-
-            return await response.Content.ReadFromJsonAsync<ScimV2User>(_options, cancellationToken);
-        }
-        else
-        {
-            var response = await _httpClient.PutAsJsonAsync(uri, body, _options, cancellationToken);
-
-            response.EnsureSuccessStatusCode();
-
-            return await response.Content.ReadFromJsonAsync<ScimV2User>(_options, cancellationToken);
-        }
+        return await response.Content.ReadFromJsonAsync<ScimV2User>(_options, cancellationToken);
     }
 
     /// <inheritdoc />
     public async Task DeleteScimUserAsync(string userId, string ifMatch = null, CancellationToken cancellationToken = default)
     {
-        ArgumentException.ThrowIfNullOrEmpty(nameof(userId), userId);
+        ArgumentException.ThrowIfNullOrEmpty(userId);
 
         var uri = UriHelper.GetUri($"/api/v2/scim/users/{userId}", null);
 
-        if (!string.IsNullOrEmpty(ifMatch))
-        {
-            var request = new HttpRequestMessage(HttpMethod.Delete, uri);
-            request.Headers.Add("If-Match", ifMatch);
+        var response = await _httpClient.DeleteAsync(uri, cancellationToken);
 
-            var response = await _httpClient.SendAsync(request, cancellationToken);
-
-            response.EnsureSuccessStatusCode();
-        }
-        else
-        {
-            var response = await _httpClient.DeleteAsync(uri, cancellationToken);
-
-            response.EnsureSuccessStatusCode();
-        }
+        response.EnsureSuccessStatusCode();
     }
 }
