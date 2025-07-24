@@ -116,6 +116,7 @@
     <Compile Include="Models\SocialMediaQueryPredicate.Dimension.cs" />
     <Compile Include="Models\SocialMediaQueryPredicate.Operator.cs" />
     <Compile Include="Models\SocialMediaQueryPredicate.Type.cs" />
+    <Compile Include="Models\SocialMediaMessageEscalationInfo.EscalationStatus.cs" />
     <Compile Include="Models\EstimateJobAsyncResponse.cs" />
     <Compile Include="Models\EventAggregatesQueryRequest.cs" />
     <Compile Include="Models\EventAggregatesResponse.cs" />
