@@ -6,7 +6,7 @@ public sealed class ReportingExportJobResponse
     /// The current status of the export request
     /// </summary>
     /// <value>The current status of the export request</value>
-    public ReportingExportJobResponseStatusEnum? Status { get; set; }
+    public ReportingExportJobResponseStatus? Status { get; set; }
 
     /// <summary>
     /// The requested format of the exported data

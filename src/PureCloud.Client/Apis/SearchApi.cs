@@ -1,25 +1,21 @@
-using System;
 using System.Collections.Specialized;
 using System.Net.Http.Json;
-using System.Threading;
-using System.Threading.Tasks;
 using Microsoft.Extensions.Options;
 using PureCloud.Client.Contracts;
 using PureCloud.Client.Http;
 using PureCloud.Client.Json;
 using PureCloud.Client.Models;
-using PureCloud.Client.Models.Groups;
 using PureCloud.Client.Models.Locations;
 using PureCloud.Client.Models.Users;
 
 namespace PureCloud.Client.Apis;
 
-public sealed class CompleteSearchApi : ICompleteSearchApi
+public sealed class SearchApi : ISearchApi
 {
     private readonly IHttpClientFactory _httpClientFactory;
     private readonly PureCloudJsonSerializerOptions _options;
 
-    public CompleteSearchApi(
+    public SearchApi(
         IHttpClientFactory httpClientFactory,
         IOptions<PureCloudJsonSerializerOptions> options)
     {
@@ -29,7 +25,7 @@ public sealed class CompleteSearchApi : ICompleteSearchApi
 
     /// <inheritdoc />
 
-    public async Task<DocumentationSearchResponse> PostDocumentationSearchAsync(DocumentationSearchRequest body, CancellationToken cancellationToken = default)
+    public async Task<DocumentationSearchResponse> CreateDocumentationSearchAsync(DocumentationSearchRequest body, CancellationToken cancellationToken = default)
     {
         ArgumentNullException.ThrowIfNull(body);
 
@@ -44,7 +40,7 @@ public sealed class CompleteSearchApi : ICompleteSearchApi
 
     /// <inheritdoc />
 
-    public async Task<GKNDocumentationSearchResponse> PostDocumentationGknSearchAsync(GKNDocumentationSearchRequest body, CancellationToken cancellationToken = default)
+    public async Task<GKNDocumentationSearchResponse> CreateDocumentationGknSearchAsync(GKNDocumentationSearchRequest body, CancellationToken cancellationToken = default)
     {
         ArgumentNullException.ThrowIfNull(body);
 
@@ -59,7 +55,7 @@ public sealed class CompleteSearchApi : ICompleteSearchApi
 
     /// <inheritdoc />
 
-    public async Task<UsersSearchResponse> PostUsersSearchAsync(UserSearchRequest body, CancellationToken cancellationToken = default)
+    public async Task<UsersSearchResponse> CreateUsersSearchAsync(UserSearchRequest body, CancellationToken cancellationToken = default)
     {
         ArgumentNullException.ThrowIfNull(body);
 
@@ -74,7 +70,7 @@ public sealed class CompleteSearchApi : ICompleteSearchApi
 
     /// <inheritdoc />
 
-    public async Task<GroupsSearchResponse> PostGroupsSearchAsync(GroupSearchRequest body, CancellationToken cancellationToken = default)
+    public async Task<GroupsSearchResponse> CreateGroupsSearchAsync(GroupSearchRequest body, CancellationToken cancellationToken = default)
     {
         ArgumentNullException.ThrowIfNull(body);
 
@@ -89,7 +85,7 @@ public sealed class CompleteSearchApi : ICompleteSearchApi
 
     /// <inheritdoc />
 
-    public async Task<LocationsSearchResponse> PostLocationsSearchAsync(LocationSearchRequest body, CancellationToken cancellationToken = default)
+    public async Task<LocationsSearchResponse> CreateLocationsSearchAsync(LocationSearchRequest body, CancellationToken cancellationToken = default)
     {
         ArgumentNullException.ThrowIfNull(body);
 
@@ -104,7 +100,7 @@ public sealed class CompleteSearchApi : ICompleteSearchApi
 
     /// <inheritdoc />
 
-    public async Task<JsonNodeSearchResponse> PostSearchAsync(SearchRequest body, bool? profile = null, CancellationToken cancellationToken = default)
+    public async Task<JsonNodeSearchResponse> CreateSearchAsync(SearchRequest body, bool? profile = null, CancellationToken cancellationToken = default)
     {
         ArgumentNullException.ThrowIfNull(body);
 
@@ -128,7 +124,7 @@ public sealed class CompleteSearchApi : ICompleteSearchApi
 
     /// <inheritdoc />
 
-    public async Task<JsonNodeSearchResponse> PostSearchSuggestAsync(SuggestSearchRequest body, bool? profile = null, CancellationToken cancellationToken = default)
+    public async Task<JsonNodeSearchResponse> CreateSearchSuggestAsync(SuggestSearchRequest body, bool? profile = null, CancellationToken cancellationToken = default)
     {
         ArgumentNullException.ThrowIfNull(body);
 
@@ -152,7 +148,7 @@ public sealed class CompleteSearchApi : ICompleteSearchApi
 
     /// <inheritdoc />
 
-    public async Task<SitesSearchResponse> PostTelephonyProvidersEdgesSitesSearchAsync(SiteSearchRequest body, CancellationToken cancellationToken = default)
+    public async Task<SitesSearchResponse> CreateTelephonyProvidersEdgesSitesSearchAsync(SiteSearchRequest body, CancellationToken cancellationToken = default)
     {
         ArgumentNullException.ThrowIfNull(body);
 

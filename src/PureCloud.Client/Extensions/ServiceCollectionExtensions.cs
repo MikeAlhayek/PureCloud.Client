@@ -179,7 +179,7 @@ public static class ServiceCollectionExtensions
 
         services.TryAddScoped<IScriptsApi, ScriptsApi>();
 
-        services.TryAddScoped<ICompleteSearchApi, CompleteSearchApi>();
+        services.TryAddScoped<ISearchApi, SearchApi>();
 
         services.TryAddScoped<IScreenRecordingApi, ScreenRecordingApi>();
 
@@ -187,7 +187,13 @@ public static class ServiceCollectionExtensions
 
         services.TryAddScoped<ISettingsApi, SettingsApi>();
 
+
         services.TryAddScoped<IStationsApi, StationsApi>();
+
+        services.TryAddScoped<ISocialMediaApi, SocialMediaApi>();
+
+        services.TryAddScoped<ISpeechTextAnalyticsApi, SpeechTextAnalyticsApi>();
+
 
         services.TryAddScoped<IUserApi, UserApi>();
 
