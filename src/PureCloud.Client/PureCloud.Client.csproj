@@ -1608,6 +1608,7 @@
     <Compile Include="Models\EventError.cs" />
     <Compile Include="Models\ExecutionDataEntity.cs" />
     <Compile Include="Models\ExecutionDataFlowSettingsResponse.cs" />
+    <Compile Include="Models\ExecutionDataGlobalSettingsResponse.cs" />
     <Compile Include="Models\ExecutionDataRequest.cs" />
     <Compile Include="Models\ExecutionDataSettingsRequest.cs" />
     <Compile Include="Models\ExportDetails.cs" />
