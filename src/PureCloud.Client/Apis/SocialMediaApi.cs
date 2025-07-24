@@ -76,4 +76,16 @@ public sealed class SocialMediaApi : ISocialMediaApi
 
         return await response.Content.ReadFromJsonAsync<AsyncQueryResponse>(_options, cancellationToken);
     }
+
+    /// <inheritdoc />
+    public async Task DeleteTopicAsync(string topicId, CancellationToken cancellationToken = default)
+    {
+        ArgumentException.ThrowIfNullOrEmpty(topicId);
+
+        var uri = UriHelper.GetUri($"/api/v2/socialmedia/topics/{topicId}", null);
+
+        var response = await _httpClient.DeleteAsync(uri, cancellationToken);
+
+        response.EnsureSuccessStatusCode();
+    }
 }

@@ -23,4 +23,9 @@ public interface ISocialMediaApi
     /// Query for social media messages asynchronously
     /// </summary>
     Task<AsyncQueryResponse> CreateAnalyticsMessagesJobAsync(SocialMediaAsyncDetailQuery body, CancellationToken cancellationToken = default);
+
+    /// <summary>
+    /// Delete a social topic.
+    /// </summary>
+    Task DeleteTopicAsync(string topicId, CancellationToken cancellationToken = default);
 }
