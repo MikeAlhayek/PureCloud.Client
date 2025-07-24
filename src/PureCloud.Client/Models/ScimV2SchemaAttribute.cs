@@ -1,6 +1,5 @@
 using System.Runtime.Serialization;
 using System.Text;
-using System.Text.Json.Serialization;
 
 namespace PureCloud.Client.Models;
 
@@ -8,7 +7,7 @@ namespace PureCloud.Client.Models;
 /// A complex type that defines service provider attributes or subattributes and their qualities.
 /// </summary>
 
-public partial class ScimV2SchemaAttribute : IEquatable<ScimV2SchemaAttribute>
+public sealed class ScimV2SchemaAttribute
 {
     /// <summary>
     /// The data type of the attribute.
@@ -220,33 +219,25 @@ public partial class ScimV2SchemaAttribute : IEquatable<ScimV2SchemaAttribute>
     /// The data type of the attribute.
     /// </summary>
     /// <value>The data type of the attribute.</value>
-    [JsonPropertyName("type")]
     public TypeEnum? Type { get; set; }
     /// <summary>
     /// The circumstances under which an attribute can be defined or redefined. The default is \"readWrite\".
     /// </summary>
     /// <value>The circumstances under which an attribute can be defined or redefined. The default is \"readWrite\".</value>
-    [JsonPropertyName("mutability")]
     public MutabilityEnum? Mutability { get; set; }
     /// <summary>
     /// The circumstances under which an attribute and its values are returned in response to a GET, PUT, POST, or PATCH request.
     /// </summary>
     /// <value>The circumstances under which an attribute and its values are returned in response to a GET, PUT, POST, or PATCH request.</value>
-    [JsonPropertyName("returned")]
     public ReturnedEnum? Returned { get; set; }
     /// <summary>
     /// The method by which the service provider enforces the uniqueness of an attribute value. A server can reject a value by returning the HTTP response code 400 (Bad Request). A client can enforce uniqueness to a greater degree than the server provider enforces. For example, a client could make a value unique even though the server has \"uniqueness\" set to \"none\".
     /// </summary>
     /// <value>The method by which the service provider enforces the uniqueness of an attribute value. A server can reject a value by returning the HTTP response code 400 (Bad Request). A client can enforce uniqueness to a greater degree than the server provider enforces. For example, a client could make a value unique even though the server has \"uniqueness\" set to \"none\".</value>
-    [JsonPropertyName("uniqueness")]
     public UniquenessEnum? Uniqueness { get; set; }
     /// <summary>
     /// Initializes a new instance of the <see cref="ScimV2SchemaAttribute" /> class.
     /// </summary>
-    public ScimV2SchemaAttribute()
-    {
-
-    }
 
 
 
@@ -254,7 +245,6 @@ public partial class ScimV2SchemaAttribute : IEquatable<ScimV2SchemaAttribute>
     /// The name of the attribute.
     /// </summary>
     /// <value>The name of the attribute.</value>
-    [JsonPropertyName("name")]
     public string Name { get; set; }
 
 
@@ -265,8 +255,7 @@ public partial class ScimV2SchemaAttribute : IEquatable<ScimV2SchemaAttribute>
     /// The list of subattributes for an attribute of the type \&quot;complex\&quot;. Uses the same schema as \&quot;attributes\&quot;.
     /// </summary>
     /// <value>The list of subattributes for an attribute of the type \&quot;complex\&quot;. Uses the same schema as \&quot;attributes\&quot;.</value>
-    [JsonPropertyName("subAttributes")]
-    public List<ScimV2SchemaAttribute> SubAttributes { get; set; }
+    public IEnumerable<ScimV2SchemaAttribute> SubAttributes { get; set; }
 
 
 
@@ -274,7 +263,6 @@ public partial class ScimV2SchemaAttribute : IEquatable<ScimV2SchemaAttribute>
     /// Indicates whether an attribute contains multiple values.
     /// </summary>
     /// <value>Indicates whether an attribute contains multiple values.</value>
-    [JsonPropertyName("multiValued")]
     public bool? MultiValued { get; set; }
 
 
@@ -283,7 +271,6 @@ public partial class ScimV2SchemaAttribute : IEquatable<ScimV2SchemaAttribute>
     /// The description of the attribute.
     /// </summary>
     /// <value>The description of the attribute.</value>
-    [JsonPropertyName("description")]
     public string Description { get; set; }
 
 
@@ -292,7 +279,6 @@ public partial class ScimV2SchemaAttribute : IEquatable<ScimV2SchemaAttribute>
     /// Indicates whether an attribute is required.
     /// </summary>
     /// <value>Indicates whether an attribute is required.</value>
-    [JsonPropertyName("required")]
     public bool? Required { get; set; }
 
 
@@ -301,8 +287,7 @@ public partial class ScimV2SchemaAttribute : IEquatable<ScimV2SchemaAttribute>
     /// The list of standard values that service providers may use. Service providers may ignore unsupported values.
     /// </summary>
     /// <value>The list of standard values that service providers may use. Service providers may ignore unsupported values.</value>
-    [JsonPropertyName("canonicalValues")]
-    public List<string> CanonicalValues { get; set; }
+    public IEnumerable<string> CanonicalValues { get; set; }
 
 
 
@@ -310,7 +295,6 @@ public partial class ScimV2SchemaAttribute : IEquatable<ScimV2SchemaAttribute>
     /// Indicates whether a string attribute is case-sensitive. If set to \&quot;true\&quot;, the server preserves case sensitivity. If set to \&quot;false\&quot;, the server may change the case. The server also uses case sensitivity when evaluating filters. See section 3.4.2.2 \&quot;Filtering\&quot; in RFC 7644 for details.
     /// </summary>
     /// <value>Indicates whether a string attribute is case-sensitive. If set to \&quot;true\&quot;, the server preserves case sensitivity. If set to \&quot;false\&quot;, the server may change the case. The server also uses case sensitivity when evaluating filters. See section 3.4.2.2 \&quot;Filtering\&quot; in RFC 7644 for details.</value>
-    [JsonPropertyName("caseExact")]
     public bool? CaseExact { get; set; }
 
 
@@ -325,34 +309,13 @@ public partial class ScimV2SchemaAttribute : IEquatable<ScimV2SchemaAttribute>
     /// The list of SCIM resource types that may be referenced. Only applies when \&quot;type\&quot; is set to \&quot;reference\&quot;.
     /// </summary>
     /// <value>The list of SCIM resource types that may be referenced. Only applies when \&quot;type\&quot; is set to \&quot;reference\&quot;.</value>
-    [JsonPropertyName("referenceTypes")]
-    public List<ReferenceTypesEnum> ReferenceTypes { get; set; }
+    public IEnumerable<ReferenceTypesEnum> ReferenceTypes { get; set; }
 
 
     /// <summary>
     /// Returns the string presentation of the object
     /// </summary>
     /// <returns>String presentation of the object</returns>
-    public override string ToString()
-    {
-        var sb = new StringBuilder();
-        sb.Append("class ScimV2SchemaAttribute {\n");
-
-        sb.Append("  Name: ").Append(Name).Append("\n");
-        sb.Append("  Type: ").Append(Type).Append("\n");
-        sb.Append("  SubAttributes: ").Append(SubAttributes).Append("\n");
-        sb.Append("  MultiValued: ").Append(MultiValued).Append("\n");
-        sb.Append("  Description: ").Append(Description).Append("\n");
-        sb.Append("  Required: ").Append(Required).Append("\n");
-        sb.Append("  CanonicalValues: ").Append(CanonicalValues).Append("\n");
-        sb.Append("  CaseExact: ").Append(CaseExact).Append("\n");
-        sb.Append("  Mutability: ").Append(Mutability).Append("\n");
-        sb.Append("  Returned: ").Append(Returned).Append("\n");
-        sb.Append("  Uniqueness: ").Append(Uniqueness).Append("\n");
-        sb.Append("  ReferenceTypes: ").Append(ReferenceTypes).Append("\n");
-        sb.Append("}\n");
-        return sb.ToString();
-    }
 
 
     /// <summary>
@@ -360,160 +323,15 @@ public partial class ScimV2SchemaAttribute : IEquatable<ScimV2SchemaAttribute>
     /// </summary>
     /// <param name="obj">Object to be compared</param>
     /// <returns>Boolean</returns>
-    public override bool Equals(object obj)
-    {
-        // credit: http://stackoverflow.com/a/10454552/677735
-        return Equals(obj as ScimV2SchemaAttribute);
-    }
 
     /// <summary>
     /// Returns true if ScimV2SchemaAttribute instances are equal
     /// </summary>
     /// <param name="other">Instance of ScimV2SchemaAttribute to be compared</param>
     /// <returns>Boolean</returns>
-    public bool Equals(ScimV2SchemaAttribute other)
-    {
-        // credit: http://stackoverflow.com/a/10454552/677735
-        if (other == null)
-        {
-            return false;
-        }
-
-        return true &&
-            (
-                Name == other.Name ||
-                Name != null &&
-                Name.Equals(other.Name)
-            ) &&
-            (
-                Type == other.Type ||
-                Type != null &&
-                Type.Equals(other.Type)
-            ) &&
-            (
-                SubAttributes == other.SubAttributes ||
-                SubAttributes != null &&
-                SubAttributes.SequenceEqual(other.SubAttributes)
-            ) &&
-            (
-                MultiValued == other.MultiValued ||
-                MultiValued != null &&
-                MultiValued.Equals(other.MultiValued)
-            ) &&
-            (
-                Description == other.Description ||
-                Description != null &&
-                Description.Equals(other.Description)
-            ) &&
-            (
-                Required == other.Required ||
-                Required != null &&
-                Required.Equals(other.Required)
-            ) &&
-            (
-                CanonicalValues == other.CanonicalValues ||
-                CanonicalValues != null &&
-                CanonicalValues.SequenceEqual(other.CanonicalValues)
-            ) &&
-            (
-                CaseExact == other.CaseExact ||
-                CaseExact != null &&
-                CaseExact.Equals(other.CaseExact)
-            ) &&
-            (
-                Mutability == other.Mutability ||
-                Mutability != null &&
-                Mutability.Equals(other.Mutability)
-            ) &&
-            (
-                Returned == other.Returned ||
-                Returned != null &&
-                Returned.Equals(other.Returned)
-            ) &&
-            (
-                Uniqueness == other.Uniqueness ||
-                Uniqueness != null &&
-                Uniqueness.Equals(other.Uniqueness)
-            ) &&
-            (
-                ReferenceTypes == other.ReferenceTypes ||
-                ReferenceTypes != null &&
-                ReferenceTypes.SequenceEqual(other.ReferenceTypes)
-            );
-    }
 
     /// <summary>
     /// Gets the hash code
     /// </summary>
     /// <returns>Hash code</returns>
-    public override int GetHashCode()
-    {
-        // credit: http://stackoverflow.com/a/263416/677735
-        unchecked // Overflow is fine, just wrap
-        {
-            int hash = 41;
-            // Suitable nullity checks etc, of course :)
-            if (Name != null)
-            {
-                hash = hash * 59 + Name.GetHashCode();
-            }
-
-            if (Type != null)
-            {
-                hash = hash * 59 + Type.GetHashCode();
-            }
-
-            if (SubAttributes != null)
-            {
-                hash = hash * 59 + SubAttributes.GetHashCode();
-            }
-
-            if (MultiValued != null)
-            {
-                hash = hash * 59 + MultiValued.GetHashCode();
-            }
-
-            if (Description != null)
-            {
-                hash = hash * 59 + Description.GetHashCode();
-            }
-
-            if (Required != null)
-            {
-                hash = hash * 59 + Required.GetHashCode();
-            }
-
-            if (CanonicalValues != null)
-            {
-                hash = hash * 59 + CanonicalValues.GetHashCode();
-            }
-
-            if (CaseExact != null)
-            {
-                hash = hash * 59 + CaseExact.GetHashCode();
-            }
-
-            if (Mutability != null)
-            {
-                hash = hash * 59 + Mutability.GetHashCode();
-            }
-
-            if (Returned != null)
-            {
-                hash = hash * 59 + Returned.GetHashCode();
-            }
-
-            if (Uniqueness != null)
-            {
-                hash = hash * 59 + Uniqueness.GetHashCode();
-            }
-
-            if (ReferenceTypes != null)
-            {
-                hash = hash * 59 + ReferenceTypes.GetHashCode();
-            }
-
-            return hash;
-        }
-    }
 }
