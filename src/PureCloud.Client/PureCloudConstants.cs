@@ -2,6 +2,7 @@ using PureCloud.Client.Models;
 using PureCloud.Client.Models.Conversations;
 using PureCloud.Client.Models.Topics;
 using PureCloud.Client.Models.Users;
+using System;
 
 namespace PureCloud.Client;
 
@@ -11,7 +12,7 @@ public static class PureCloudConstants
 
     public const string PureCloudClientName = "PureCloud";
 
-    public readonly static IReadOnlyDictionary<string, Type> TopicTemplates = new Dictionary<string, Type>()
+    public readonly static IReadOnlyDictionary<string, System.Type> TopicTemplates = new Dictionary<string, System.Type>()
     {
         {"v2.analytics.conversation.{0}.metrics", typeof(ConversationMetricsTopicConversationMetricRecord)},
         {"v2.analytics.conversations.details.jobs.availability", typeof(ConversationDetailsDatalakeAvailabilityTopicDataAvailabilityChangeNotification)},

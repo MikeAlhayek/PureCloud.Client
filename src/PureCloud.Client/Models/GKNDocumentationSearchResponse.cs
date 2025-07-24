@@ -3,7 +3,7 @@ using System.Text.Json.Serialization;
 
 namespace PureCloud.Client.Models;
 
-public partial class GKNDocumentationSearchResponse
+public sealed class GKNDocumentationSearchResponse
 {
     /// <summary>
     /// The total number of results found

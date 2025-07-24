@@ -6,6 +6,7 @@ using PureCloud.Client.Http;
 using PureCloud.Client.Json;
 using PureCloud.Client.Models;
 using Function = PureCloud.Client.Models.Function;
+using ActionModel = PureCloud.Client.Models.Action;
 
 namespace PureCloud.Client.Apis;
 
@@ -1772,7 +1773,7 @@ public sealed class IntegrationsApi : IIntegrationsApi
         return await response.Content.ReadFromJsonAsync<Integration>(_options.JsonSerializerOptions, cancellationToken);
     }
 
-    public async Task<Action> PatchIntegrationsActionAsync(string actionId, UpdateActionInput body, CancellationToken cancellationToken = default)
+    public async Task<ActionModel> PatchIntegrationsActionAsync(string actionId, UpdateActionInput body, CancellationToken cancellationToken = default)
     {
         ArgumentException.ThrowIfNullOrEmpty(actionId);
 
@@ -1788,10 +1789,10 @@ public sealed class IntegrationsApi : IIntegrationsApi
 
         response.EnsureSuccessStatusCode();
 
-        return await response.Content.ReadFromJsonAsync<Action>(_options.JsonSerializerOptions, cancellationToken);
+        return await response.Content.ReadFromJsonAsync<ActionModel>(_options.JsonSerializerOptions, cancellationToken);
     }
 
-    public async Task<Action> PatchIntegrationsActionDraftAsync(string actionId, UpdateDraftInput body, CancellationToken cancellationToken = default)
+    public async Task<ActionModel> PatchIntegrationsActionDraftAsync(string actionId, UpdateDraftInput body, CancellationToken cancellationToken = default)
     {
         ArgumentException.ThrowIfNullOrEmpty(actionId);
 
@@ -1807,7 +1808,7 @@ public sealed class IntegrationsApi : IIntegrationsApi
 
         response.EnsureSuccessStatusCode();
 
-        return await response.Content.ReadFromJsonAsync<Action>(_options.JsonSerializerOptions, cancellationToken);
+        return await response.Content.ReadFromJsonAsync<ActionModel>(_options.JsonSerializerOptions, cancellationToken);
     }
 
     public async Task<Integration> CreateIntegrationAsync(CreateIntegrationRequest body, CancellationToken cancellationToken = default)
@@ -1823,7 +1824,7 @@ public sealed class IntegrationsApi : IIntegrationsApi
         return await response.Content.ReadFromJsonAsync<Integration>(_options.JsonSerializerOptions, cancellationToken);
     }
 
-    public async Task<Action> PostIntegrationsActionDraftAsync(string actionId, CancellationToken cancellationToken = default)
+    public async Task<ActionModel> PostIntegrationsActionDraftAsync(string actionId, CancellationToken cancellationToken = default)
     {
         ArgumentException.ThrowIfNullOrEmpty(actionId);
 
@@ -1836,7 +1837,7 @@ public sealed class IntegrationsApi : IIntegrationsApi
         var response = await client.PostAsync(uri, null, cancellationToken);
         response.EnsureSuccessStatusCode();
 
-        return await response.Content.ReadFromJsonAsync<Action>(_options.JsonSerializerOptions, cancellationToken);
+        return await response.Content.ReadFromJsonAsync<ActionModel>(_options.JsonSerializerOptions, cancellationToken);
     }
 
     public async Task<FunctionUploadResponse> PostIntegrationsActionDraftFunctionUploadAsync(string actionId, FunctionUploadRequest body, CancellationToken cancellationToken = default)
@@ -1857,7 +1858,7 @@ public sealed class IntegrationsApi : IIntegrationsApi
         return await response.Content.ReadFromJsonAsync<FunctionUploadResponse>(_options.JsonSerializerOptions, cancellationToken);
     }
 
-    public async Task<Action> PostIntegrationsActionDraftPublishAsync(string actionId, PublishDraftInput body, CancellationToken cancellationToken = default)
+    public async Task<ActionModel> PostIntegrationsActionDraftPublishAsync(string actionId, PublishDraftInput body, CancellationToken cancellationToken = default)
     {
         ArgumentException.ThrowIfNullOrEmpty(actionId);
 
@@ -1873,7 +1874,7 @@ public sealed class IntegrationsApi : IIntegrationsApi
 
         response.EnsureSuccessStatusCode();
 
-        return await response.Content.ReadFromJsonAsync<Action>(_options.JsonSerializerOptions, cancellationToken);
+        return await response.Content.ReadFromJsonAsync<ActionModel>(_options.JsonSerializerOptions, cancellationToken);
     }
 
     public async Task<TestExecutionResult> PostIntegrationsActionDraftTestAsync(string actionId, object body, bool? flatten = null, CancellationToken cancellationToken = default)
@@ -1950,7 +1951,7 @@ public sealed class IntegrationsApi : IIntegrationsApi
         return await response.Content.ReadFromJsonAsync<TestExecutionResult>(_options.JsonSerializerOptions, cancellationToken);
     }
 
-    public async Task<Action> CreateIntegrationsActionAsync(PostActionInput body, CancellationToken cancellationToken = default)
+    public async Task<ActionModel> CreateIntegrationsActionAsync(PostActionInput body, CancellationToken cancellationToken = default)
     {
         ArgumentNullException.ThrowIfNull(body);
 
@@ -1960,10 +1961,10 @@ public sealed class IntegrationsApi : IIntegrationsApi
 
         response.EnsureSuccessStatusCode();
 
-        return await response.Content.ReadFromJsonAsync<Action>(_options.JsonSerializerOptions, cancellationToken);
+        return await response.Content.ReadFromJsonAsync<ActionModel>(_options.JsonSerializerOptions, cancellationToken);
     }
 
-    public async Task<Action> CreateIntegrationsActionsDraftsAsync(PostActionInput body, CancellationToken cancellationToken = default)
+    public async Task<ActionModel> CreateIntegrationsActionsDraftsAsync(PostActionInput body, CancellationToken cancellationToken = default)
     {
         ArgumentNullException.ThrowIfNull(body);
 
@@ -1973,7 +1974,7 @@ public sealed class IntegrationsApi : IIntegrationsApi
 
         response.EnsureSuccessStatusCode();
 
-        return await response.Content.ReadFromJsonAsync<Action>(_options.JsonSerializerOptions, cancellationToken);
+        return await response.Content.ReadFromJsonAsync<ActionModel>(_options.JsonSerializerOptions, cancellationToken);
     }
 
     public async Task<CredentialInfo> CreateIntegrationsCredentialsAsync(Credential body = null, CancellationToken cancellationToken = default)

@@ -3,7 +3,7 @@ namespace PureCloud.Client.Models;
 /// <summary>
 /// StationEntityListing
 /// </summary>
-public sealed class StationEntityListing : IPagedResource<Station>
+public sealed class StationEntityListing
 {
     /// <summary>
     /// Gets or Sets Entities

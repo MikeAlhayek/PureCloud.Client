@@ -1,4 +1,5 @@
 using PureCloud.Client.Models;
+using ActionModel = PureCloud.Client.Models.Action;
 
 namespace PureCloud.Client.Contracts;
 
@@ -130,17 +131,17 @@ public interface IIntegrationsApi
 
     Task<Integration> UpdateIntegrationAsync(string integrationId, Integration body, int? pageSize = null, int? pageNumber = null, string sortBy = null, IList<string> expand = null, string nextPage = null, string previousPage = null, CancellationToken cancellationToken = default);
 
-    Task<Action> PatchIntegrationsActionAsync(string actionId, UpdateActionInput body, CancellationToken cancellationToken = default);
+    Task<ActionModel> PatchIntegrationsActionAsync(string actionId, UpdateActionInput body, CancellationToken cancellationToken = default);
 
-    Task<Action> PatchIntegrationsActionDraftAsync(string actionId, UpdateDraftInput body, CancellationToken cancellationToken = default);
+    Task<ActionModel> PatchIntegrationsActionDraftAsync(string actionId, UpdateDraftInput body, CancellationToken cancellationToken = default);
 
     Task<Integration> CreateIntegrationAsync(CreateIntegrationRequest body, CancellationToken cancellationToken = default);
 
-    Task<Action> PostIntegrationsActionDraftAsync(string actionId, CancellationToken cancellationToken = default);
+    Task<ActionModel> PostIntegrationsActionDraftAsync(string actionId, CancellationToken cancellationToken = default);
 
     Task<FunctionUploadResponse> PostIntegrationsActionDraftFunctionUploadAsync(string actionId, FunctionUploadRequest body, CancellationToken cancellationToken = default);
 
-    Task<Action> PostIntegrationsActionDraftPublishAsync(string actionId, PublishDraftInput body, CancellationToken cancellationToken = default);
+    Task<ActionModel> PostIntegrationsActionDraftPublishAsync(string actionId, PublishDraftInput body, CancellationToken cancellationToken = default);
 
     Task<TestExecutionResult> PostIntegrationsActionDraftTestAsync(string actionId, object body, bool? flatten = null, CancellationToken cancellationToken = default);
 
@@ -148,9 +149,9 @@ public interface IIntegrationsApi
 
     Task<TestExecutionResult> PostIntegrationsActionTestAsync(string actionId, object body, bool? flatten = null, CancellationToken cancellationToken = default);
 
-    Task<Action> CreateIntegrationsActionAsync(PostActionInput body, CancellationToken cancellationToken = default);
+    Task<ActionModel> CreateIntegrationsActionAsync(PostActionInput body, CancellationToken cancellationToken = default);
 
-    Task<Action> CreateIntegrationsActionsDraftsAsync(PostActionInput body, CancellationToken cancellationToken = default);
+    Task<ActionModel> CreateIntegrationsActionsDraftsAsync(PostActionInput body, CancellationToken cancellationToken = default);
 
     Task<CredentialInfo> CreateIntegrationsCredentialsAsync(Credential body = null, CancellationToken cancellationToken = default);
 
