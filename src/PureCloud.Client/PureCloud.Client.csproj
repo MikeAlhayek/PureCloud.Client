@@ -105,6 +105,7 @@
     <Compile Include="Models\CardAction.Type.cs" />
     <Compile Include="Models\CategoryRequest.cs" />
     <Compile Include="Models\CategoryRequest.InteractionType.cs" />
+    <Compile Include="Models\ConnectedEdge.cs" />
     <Compile Include="Models\ConversationMessageEvent.cs" />
     <Compile Include="Models\ConversationMetrics.cs" />
     <Compile Include="Models\ConversationMetrics.SentimentTrendClass.cs" />
@@ -158,6 +159,7 @@
     <Compile Include="Models\DocumentationSearchRequest.SortOrder.cs" />
     <Compile Include="Models\DocumentationSearchResponse.cs" />
     <Compile Include="Models\DocumentCategoryInput.cs" />
+    <Compile Include="Models\EdgeConnectionInfo.cs" />
     <Compile Include="Models\EmpathyScore.cs" />
     <Compile Include="Models\Endpoint.State.cs" />
     <Compile Include="Models\EntityListing.cs" />
@@ -2449,7 +2451,9 @@
     <Compile Include="Models\SimpleResponseQueryResults.cs" />
     <Compile Include="Models\Site.cs" />
     <Compile Include="Models\SiteConnection.cs" />
+    <Compile Include="Models\SiteConnection.MediaModel.cs" />
     <Compile Include="Models\SiteConnections.cs" />
+    <Compile Include="Models\SiteConnection.Type.cs" />
     <Compile Include="Models\SiteEntityListing.cs" />
     <Compile Include="Models\SiteSearchCriteria.cs" />
     <Compile Include="Models\SiteSearchCriteria.Operator.cs" />
