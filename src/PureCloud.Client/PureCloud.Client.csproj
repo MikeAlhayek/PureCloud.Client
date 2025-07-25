@@ -85,6 +85,7 @@
     <Compile Include="Apis\TeamsApi.cs" />
     <Compile Include="Apis\TelephonyApi.cs" />
     <Compile Include="Apis\TelephonyProvidersEdgeApi.cs" />
+    <Compile Include="Apis\UsageApi.cs" />
     <Compile Include="Apis\UploadsApi.cs" />
     <Compile Include="Apis\TextbotsApi.cs" />
     <Compile Include="Apis\TokensApi.cs" />
@@ -164,6 +165,7 @@
     <Compile Include="Contracts\ITeamsApi.cs" />
     <Compile Include="Contracts\ITelephonyApi.cs" />
     <Compile Include="Contracts\ITelephonyProvidersEdgeApi.cs" />
+    <Compile Include="Contracts\IUsageApi.cs" />
     <Compile Include="Contracts\IUploadsApi.cs" />
     <Compile Include="Contracts\ITextbotsApi.cs" />
     <Compile Include="Contracts\ITokensApi.cs" />
@@ -4282,10 +4284,18 @@
     <Compile Include="Models\LearningCoverArtUploadUrlRequest.ServerSideEncryption.cs" />
     <Compile Include="Models\UrlResponse.cs" />
     <Compile Include="Models\ApiUsageClientQuery.cs" />
+    <Compile Include="Models\ApiUsageClientQuery.Granularity.cs" />
+    <Compile Include="Models\ApiUsageClientQuery.Metrics.cs" />
+    <Compile Include="Models\ApiUsageClientQuery.GroupBy.cs" />
     <Compile Include="Models\ApiUsageOrganizationQuery.cs" />
+    <Compile Include="Models\ApiUsageOrganizationQuery.Granularity.cs" />
+    <Compile Include="Models\ApiUsageOrganizationQuery.Metrics.cs" />
+    <Compile Include="Models\ApiUsageOrganizationQuery.GroupBy.cs" />
     <Compile Include="Models\ApiUsageQueryResult.cs" />
     <Compile Include="Models\ApiUsageRow.cs" />
     <Compile Include="Models\ApiUsageSimpleSearch.cs" />
+    <Compile Include="Models\ApiUsageSimpleSearch.Metrics.cs" />
+    <Compile Include="Models\ApiUsageSimpleSearch.HttpMethods.cs" />
     <Compile Include="Models\Usage.cs" />
     <Compile Include="Models\UsageExecutionResult.cs" />
     <Compile Include="Models\UsageItem.cs" />

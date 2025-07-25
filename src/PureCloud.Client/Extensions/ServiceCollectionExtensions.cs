@@ -197,6 +197,8 @@ public static class ServiceCollectionExtensions
 
         services.TryAddScoped<ITextbotsApi, TextbotsApi>();
 
+        services.TryAddScoped<IUsageApi, UsageApi>();
+
         services.TryAddScoped<IUserRecordingsApi, UserRecordingsApi>();
 
         services.TryAddScoped<IUtilitiesApi, UtilitiesApi>();
