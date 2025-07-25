@@ -22,7 +22,7 @@ public partial class UserRecordingEntityListing : IEquatable<UserRecordingEntity
     /// <param name="NextUri">NextUri.</param>
     /// <param name="PreviousUri">PreviousUri.</param>
     /// <param name="PageCount">PageCount.</param>
-    public UserRecordingEntityListing(List<UserRecording> Entities = null, int? PageSize = null, int? PageNumber = null, long? Total = null, string FirstUri = null, string LastUri = null, string SelfUri = null, string NextUri = null, string PreviousUri = null, int? PageCount = null)
+    public UserRecordingEntityListing(IEnumerable<UserRecording> Entities = null, int? PageSize = null, int? PageNumber = null, long? Total = null, string FirstUri = null, string LastUri = null, string SelfUri = null, string NextUri = null, string PreviousUri = null, int? PageCount = null)
     {
         this.Entities = Entities;
         this.PageSize = PageSize;
@@ -43,7 +43,7 @@ public partial class UserRecordingEntityListing : IEquatable<UserRecordingEntity
     /// Gets or Sets Entities
     /// </summary>
     [JsonPropertyName("entities")]
-    public List<UserRecording> Entities { get; set; }
+    public IEnumerable<UserRecording> Entities { get; set; }
 
 
 

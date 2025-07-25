@@ -4327,6 +4327,8 @@
     <Compile Include="Models\UserReference.cs" />
     <Compile Include="Models\UserReferenceEntityListing.cs" />
     <Compile Include="Models\UserReferenceWithName.cs" />
+    <Compile Include="Models\UserRecording.cs" />
+    <Compile Include="Models\UserRecordingEntityListing.cs" />
     <Compile Include="Models\UserRoutingLanguage.cs" />
     <Compile Include="Models\UserRoutingLanguagePost.cs" />
     <Compile Include="Models\UserRoutingLanguageState.cs" />
