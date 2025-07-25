@@ -96,6 +96,7 @@
     <Compile Include="Apis\WebChatApi.cs" />
     <Compile Include="Apis\WebMessagingApi.cs" />
     <Compile Include="Apis\WidgetsApi.cs" />
+    <Compile Include="Apis\WorkforceManagementApi.cs" />
     <Compile Include="Configuration.cs" />
     <Compile Include="Contracts\IAgentAssistantsApi.cs" />
     <Compile Include="Contracts\IAgentCopilotApi.cs" />
@@ -176,6 +177,7 @@
     <Compile Include="Contracts\IWebChatApi.cs" />
     <Compile Include="Contracts\IWebMessagingApi.cs" />
     <Compile Include="Contracts\IWidgetsApi.cs" />
+    <Compile Include="Contracts\IWorkforceManagementApi.cs" />
     <Compile Include="Extensions\AuthExtensions.cs" />
     <Compile Include="Extensions\NotificationHandlerExtensions.cs" />
     <Compile Include="Extensions\ServiceCollectionExtensions.cs" />
@@ -197,6 +199,13 @@
     <Compile Include="Models\ActionInput.cs" />
     <Compile Include="Models\ActionOutput.cs" />
     <Compile Include="Models\AddressableEntity.cs" />
+    <Compile Include="Models\AddAdherenceExplanationAgentRequest.cs" />
+    <Compile Include="Models\AdherenceExplanationAsyncResponse.cs" />
+    <Compile Include="Models\AdherenceExplanationJobReference.cs" />
+    <Compile Include="Models\AgentIntegrationsRequest.cs" />
+    <Compile Include="Models\AgentIntegrationsResponse.cs" />
+    <Compile Include="Models\AgentIntegrationAssociationRequest.cs" />
+    <Compile Include="Models\AgentIntegrationAssociationResponse.cs" />
     <Compile Include="Models\Annotation.cs" />
     <Compile Include="Models\Annotation.Reason.cs" />
     <Compile Include="Models\ActionEventRequest.cs" />
@@ -210,6 +219,7 @@
     <Compile Include="Models\ActionTargetListing.cs" />
     <Compile Include="Models\ActionTemplate.cs" />
     <Compile Include="Models\ActionTemplateListing.cs" />
+    <Compile Include="Models\ActivityCodeSummary.cs" />
     <Compile Include="Models\AppEventResponse.cs" />
     <Compile Include="Models\AppEventRequest.cs" />
     <Compile Include="Models\AcdEndDetailEventTopicAcdEndEvent.cs" />
@@ -803,6 +813,7 @@
     <Compile Include="Models\BulkResponseResultVoidEntityBulkEntityErrorEntity.cs" />
     <Compile Include="Models\BulkResult.cs" />
     <Compile Include="Models\Bullseye.cs" />
+    <Compile Include="Models\BusinessUnitReference.cs" />
     <Compile Include="Models\Calibration.cs" />
     <Compile Include="Models\CalibrationCreate.cs" />
     <Compile Include="Models\Call.cs" />
@@ -3666,6 +3677,7 @@
     <Compile Include="Models\Recognition.ContextType.cs" />
     <Compile Include="Models\Recognition.Type.cs" />
     <Compile Include="Models\RecordersState.cs" />
+    <Compile Include="Models\RealTimeAdherenceExplanation.cs" />
     <Compile Include="Models\RecordersStateAdhocState.cs" />
     <Compile Include="Models\RecordersStateAgentExperienceState.cs" />
     <Compile Include="Models\RecordersStateCustomerExperienceState.cs" />
@@ -3835,6 +3847,7 @@
     <Compile Include="Models\ScreenshareDisconnectType.cs" />
     <Compile Include="Models\ScreenshareInitialState.cs" />
     <Compile Include="Models\ScreenshareState.cs" />
+    <Compile Include="Models\SecondaryPresence.cs" />
     <Compile Include="Models\Script.cs" />
     <Compile Include="Models\ScriptEntityListing.cs" />
     <Compile Include="Models\ExportScriptRequest.cs" />
@@ -4446,6 +4459,7 @@
     <Compile Include="Models\Users\SearchRequest.cs" />
     <Compile Include="Models\Users\SearchResult.cs" />
     <Compile Include="Models\Manager.cs" />
+    <Compile Include="Models\ManagementUnitReference.cs" />
     <Compile Include="Models\ScimConfigResourceType.cs" />
     <Compile Include="Models\ScimConfigResourceTypeSchemaExtension.cs" />
     <Compile Include="Models\ScimConfigResourceTypesListResponse.cs" />
@@ -4490,6 +4504,8 @@
     <Compile Include="Models\Users\UserStationChangeTopicUserStation.cs" />
     <Compile Include="Models\Users\UserStationChangeTopicUserStations.cs" />
     <Compile Include="Models\Users\UserStations.cs" />
+    <Compile Include="Models\UserScheduleAdherence.cs" />
+    <Compile Include="Models\UserNextActivityReminder.cs" />
     <Compile Include="Models\UserTokensTopicTokenNotification.cs" />
     <Compile Include="Models\UserTokensTopicUriReference.cs" />
     <Compile Include="Models\UserTransferEvent.cs" />
@@ -4862,6 +4878,7 @@
     <Compile Include="Models\WfmIntegrationsHrisTimeOffTypesJobTopicHrisTimeOffType.cs" />
     <Compile Include="Models\WfmIntegrationsHrisTimeOffTypesJobTopicHrisTimeOffTypesJobNotification.cs" />
     <Compile Include="Models\WfmIntegrationsHrisTimeOffTypesJobTopicHrisTimeOffTypesJobNotification.Status.cs" />
+    <Compile Include="Models\WfmIntegrationReference.cs" />
     <Compile Include="Models\WfmIntradayDataUpdateTopicIntradayDataGroup.cs" />
     <Compile Include="Models\WfmIntradayDataUpdateTopicIntradayDataGroup.MediaType.cs" />
     <Compile Include="Models\WfmIntradayDataUpdateTopicIntradayDataUpdate.cs" />
