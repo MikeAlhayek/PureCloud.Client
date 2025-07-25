@@ -86,6 +86,7 @@
     <Compile Include="Apis\TelephonyApi.cs" />
     <Compile Include="Apis\TelephonyProvidersEdgeApi.cs" />
     <Compile Include="Apis\TokensApi.cs" />
+    <Compile Include="Apis\UploadsApi.cs" />
     <Compile Include="Apis\UserApi.cs" />
     <Compile Include="Apis\VoicemailApi.cs" />
     <Compile Include="Apis\WebChatApi.cs" />
@@ -161,6 +162,7 @@
     <Compile Include="Contracts\ITelephonyApi.cs" />
     <Compile Include="Contracts\ITelephonyProvidersEdgeApi.cs" />
     <Compile Include="Contracts\ITokensApi.cs" />
+    <Compile Include="Contracts\IUploadsApi.cs" />
     <Compile Include="Contracts\IUserApi.cs" />
     <Compile Include="Contracts\IVoicemailApi.cs" />
     <Compile Include="Contracts\IWebChatApi.cs" />
