@@ -8,7 +8,7 @@ namespace PureCloud.Client.Models;
 /// Details about a Web Deployment
 /// </summary>
 
-public partial class WebDeployment : IEquatable<WebDeployment>
+public sealed class WebDeployment
 {
     /// <summary>
     /// The current status of the deployment
@@ -142,7 +142,6 @@ public partial class WebDeployment : IEquatable<WebDeployment>
     /// The supported content profile for a deployment
     /// </summary>
     /// <value>The supported content profile for a deployment</value>
-    [JsonPropertyName("supportedContent")]
     public SupportedContentReference SupportedContent { get; set; }
 
 

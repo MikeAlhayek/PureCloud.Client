@@ -94,6 +94,7 @@
     <Compile Include="Apis\UtilitiesApi.cs" />
     <Compile Include="Apis\VoicemailApi.cs" />
     <Compile Include="Apis\WebChatApi.cs" />
+    <Compile Include="Apis\WebDeploymentsApi.cs" />
     <Compile Include="Apis\WebMessagingApi.cs" />
     <Compile Include="Apis\WidgetsApi.cs" />
     <Compile Include="Configuration.cs" />
@@ -174,6 +175,7 @@
     <Compile Include="Contracts\IUtilitiesApi.cs" />
     <Compile Include="Contracts\IVoicemailApi.cs" />
     <Compile Include="Contracts\IWebChatApi.cs" />
+    <Compile Include="Contracts\IWebDeploymentsApi.cs" />
     <Compile Include="Contracts\IWebMessagingApi.cs" />
     <Compile Include="Contracts\IWidgetsApi.cs" />
     <Compile Include="Extensions\AuthExtensions.cs" />
@@ -314,12 +316,17 @@
     <Compile Include="Models\EdgeInterface.cs" />
     <Compile Include="Models\IdleTokenTimeout.cs" />
     <Compile Include="Models\LanguageReference.cs" />
+    <Compile Include="Models\LauncherButtonSettings.cs" />
     <Compile Include="Models\ListItemComponent.cs" />
     <Compile Include="Models\MessageContent.cs" />
     <Compile Include="Models\MessageContent.ContentType.cs" />
     <Compile Include="Models\MessagingRecipient.cs" />
     <Compile Include="Models\MessagingRecipient.IdType.cs" />
     <Compile Include="Models\MessagingRecipientId.Type.cs" />
+    <Compile Include="Models\MessengerSettings.cs" />
+    <Compile Include="Models\MessengerStyles.cs" />
+    <Compile Include="Models\MessengerApps.cs" />
+    <Compile Include="Models\MessengerHomeScreen.cs" />
     <Compile Include="Models\NotificationTemplateBody.cs" />
     <Compile Include="Models\NotificationTemplateButton.cs" />
     <Compile Include="Models\NotificationTemplateButton.Type.cs" />
@@ -436,6 +443,7 @@
     <Compile Include="Models\AgentActivityChangedTopicRoutingStatus.cs" />
     <Compile Include="Models\AgentActivityChangedTopicRoutingStatus.Status.cs" />
     <Compile Include="Models\AgentActivityEntityListing.cs" />
+    <Compile Include="Models\AgentVideoSettings.cs" />
     <Compile Include="Models\AgentCopilotAggregateDataContainer.cs" />
     <Compile Include="Models\AgentCopilotAggregateQueryClause.cs" />
     <Compile Include="Models\AgentCopilotAggregateQueryClause.Type.cs" />
@@ -688,6 +696,7 @@
     <Compile Include="Models\AuthorizationPolicy.Effect.cs" />
     <Compile Include="Models\AuthorizationPolicyEntityListing.cs" />
     <Compile Include="Models\AuthorizationSettings.cs" />
+    <Compile Include="Models\AuthenticationSettings.cs" />
     <Compile Include="Models\AuthorizedGrantType.cs" />
     <Compile Include="Models\AuthzDivision.cs" />
     <Compile Include="Models\AuthzDivisionCursorListing.cs" />
@@ -853,6 +862,7 @@
     <Compile Include="Models\ChatItem.cs" />
     <Compile Include="Models\ChatItem.ChatType.cs" />
     <Compile Include="Models\ChatItemCursorListing.cs" />
+    <Compile Include="Models\CustomI18nLabels.cs" />
     <Compile Include="Models\ChatMessageEntityListing.cs" />
     <Compile Include="Models\ChatMessageResponse.cs" />
     <Compile Include="Models\ChatPresence.cs" />
@@ -869,6 +879,8 @@
     <Compile Include="Models\ClientAppConfigurationInfo.cs" />
     <Compile Include="Models\ClientAppEntityListing.cs" />
     <Compile Include="Models\ClientApp.IntendedState.cs" />
+    <Compile Include="Models\CobrowseWebMessagingSession.cs" />
+    <Compile Include="Models\CobrowseSettings.cs" />
     <Compile Include="Models\CoachingAnnotation.cs" />
     <Compile Include="Models\CoachingAnnotation.AccessType.cs" />
     <Compile Include="Models\CoachingAnnotationCreateRequest.cs" />
@@ -2249,6 +2261,7 @@
     <Compile Include="Models\Grammar.cs" />
     <Compile Include="Models\GrammarFileUploadRequest.cs" />
     <Compile Include="Models\GrammarFileUploadRequest.FileType.cs" />
+    <Compile Include="Models\FileUploadSettings.cs" />
     <Compile Include="Models\GrammarLanguage.cs" />
     <Compile Include="Models\GrammarLanguageFileMetadata.cs" />
     <Compile Include="Models\GrammarLanguageFileMetadata.FileType.cs" />
@@ -2480,6 +2493,7 @@
     <Compile Include="Models\OperandPosition.EndingPositionDirection.cs" />
     <Compile Include="Models\OperandPosition.StartingPositionDirection.cs" />
     <Compile Include="Models\OperatorPosition.cs" />
+    <Compile Include="Models\PositionSettings.cs" />
     <Compile Include="Models\Outcome.cs" />
     <Compile Include="Models\OutcomeAttributionJobStateResponse.cs" />
     <Compile Include="Models\OutcomeAttributionAsyncResponse.cs" />
@@ -2572,6 +2586,7 @@
     <Compile Include="Models\JourneyWebEventsNotificationWebEventsNotification.cs" />
     <Compile Include="Models\JourneyWebEventsNotificationWebEventsNotification.EventType.cs" />
     <Compile Include="Models\JourneyWebEventsNotificationWebMessage.cs" />
+    <Compile Include="Models\JourneyEventsSettings.cs" />
     <Compile Include="Models\JsonSchemaDocument.cs" />
     <Compile Include="Models\KlaxonHeartBeatAlertsTopicHeartBeatAlert.cs" />
     <Compile Include="Models\KlaxonHeartBeatAlertsTopicHeartBeatAlert.RuleType.cs" />
@@ -3982,6 +3997,13 @@
     <Compile Include="Models\SupportedLanguage.cs" />
     <Compile Include="Models\SupportedContent.cs" />
     <Compile Include="Models\SupportedContentListing.cs" />
+    <Compile Include="Models\SupportedContentReference.cs" />
+    <Compile Include="Models\SupportCenterSettings.cs" />
+    <Compile Include="Models\SupportCenterCustomMessage.cs" />
+    <Compile Include="Models\SupportCenterFeedbackSettings.cs" />
+    <Compile Include="Models\SupportCenterLabelFilter.cs" />
+    <Compile Include="Models\SupportCenterScreen.cs" />
+    <Compile Include="Models\SupportCenterStyleSetting.cs" />
     <Compile Include="Models\SurveyAggregateDataContainer.cs" />
     <Compile Include="Models\SurveyAggregateQueryClause.cs" />
     <Compile Include="Models\SurveyAggregateQueryClause.Type.cs" />
@@ -4421,6 +4443,7 @@
     <Compile Include="Models\UserSkillEntityListing.cs" />
     <Compile Include="Models\UserSkillGroupEntityListing.cs" />
     <Compile Include="Models\UsersSearchResponse.cs" />
+    <Compile Include="Models\UserVideoSettings.cs" />
     <Compile Include="Models\UserStartDetailEventTopicUserStartEvent.cs" />
     <Compile Include="Models\UserStartDetailEventTopicUserStartEvent.MediaType.cs" />
     <Compile Include="Models\UserStartDetailEventTopicUserStartEvent.Direction.cs" />
@@ -4647,6 +4670,7 @@
     <Compile Include="Models\ViewFilter.FlowOutcomeValues.cs" />
     <Compile Include="Models\ViewFilter.MessageTypes.cs" />
     <Compile Include="Models\ViewFilter.FlowTypes.cs" />
+    <Compile Include="Models\VideoSettings.cs" />
     <Compile Include="Models\VisibilityCondition.cs" />
     <Compile Include="Models\VisibilityConditionCombiningOperation.cs" />
     <Compile Include="Models\Voicemail.cs" />
@@ -4687,6 +4711,21 @@
     <Compile Include="Models\WebChatRoutingTarget.TargetType.cs" />
     <Compile Include="Models\WebChatSettings.cs" />
     <Compile Include="Models\WebChatTyping.cs" />
+    <Compile Include="Models\WebDeployment.cs" />
+    <Compile Include="Models\WebDeploymentActiveConfigurationOnDeployment.cs" />
+    <Compile Include="Models\WebDeploymentConfigurationVersion.cs" />
+    <Compile Include="Models\WebDeploymentConfigurationVersionEntityListing.cs" />
+    <Compile Include="Models\WebDeploymentConfigurationVersionEntityRef.cs" />
+    <Compile Include="Models\WebDeploymentConfigurationVersionResponse.cs" />
+    <Compile Include="Models\WebDeploymentFlowEntityRef.cs" />
+    <Compile Include="Models\WebDeploymentHeadlessMode.cs" />
+    <Compile Include="Models\WebDeploymentsAuthorizationResponse.cs" />
+    <Compile Include="Models\WebDeploymentsJourneyContext.cs" />
+    <Compile Include="Models\WebDeploymentsOAuthRequestParameters.cs" />
+    <Compile Include="Models\WebDeploymentsOAuthExchangeRequest.cs" />
+    <Compile Include="Models\WebDeploymentsRefreshJWTRequest.cs" />
+    <Compile Include="Models\ExpandableWebDeployment.cs" />
+    <Compile Include="Models\ExpandableWebDeploymentEntityListing.cs" />
     <Compile Include="Models\WebDeploymentsConfigTopicWebMessagingConfigChangeEventBody.cs" />
     <Compile Include="Models\WebDeploymentsConfigTopicWebMessagingConfigChangeEventBody.Status.cs" />
     <Compile Include="Models\WebDeploymentsDeploymentTopicWebMessagingConfigChangeEventBody.cs" />
