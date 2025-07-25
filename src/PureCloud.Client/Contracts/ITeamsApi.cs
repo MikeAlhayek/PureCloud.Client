@@ -1,3 +1,4 @@
+using PureCloud.Client.Models;
 using PureCloud.Client.Models.Teams;
 
 namespace PureCloud.Client.Contracts;

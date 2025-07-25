@@ -4,6 +4,7 @@ using Microsoft.Extensions.Options;
 using PureCloud.Client.Contracts;
 using PureCloud.Client.Http;
 using PureCloud.Client.Json;
+using PureCloud.Client.Models;
 using PureCloud.Client.Models.Teams;
 
 namespace PureCloud.Client.Apis;
