@@ -190,8 +190,10 @@ public static class ServiceCollectionExtensions
         services.TryAddScoped<IStationsApi, StationsApi>();
 
         services.TryAddScoped<ISocialMediaApi, SocialMediaApi>();
-
+      
         services.TryAddScoped<ISpeechTextAnalyticsApi, SpeechTextAnalyticsApi>();
+
+        services.TryAddScoped<ITelephonyApi, TelephonyApi>();
 
         services.TryAddScoped<IUserApi, UserApi>();
 
