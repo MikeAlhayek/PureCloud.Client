@@ -8,5 +8,5 @@ public sealed class ParsedCertificate
     /// <summary>
     /// The details of the certificates that were parsed correctly.
     /// </summary>
-    public IEnumerable<CertificateDetails>? CertificateDetails { get; set; }
+    public IEnumerable<CertificateDetails> CertificateDetails { get; set; }
 }

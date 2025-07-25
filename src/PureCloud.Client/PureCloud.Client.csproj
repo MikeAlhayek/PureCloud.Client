@@ -1633,6 +1633,7 @@
     <Compile Include="Models\DialerOutboundSettingsConfigChangeAtzmTimeSlot.cs" />
     <Compile Include="Models\DialerOutboundSettingsConfigChangeAtzmTimeSlotWithTimeZone.cs" />
     <Compile Include="Models\DialerOutboundSettingsConfigChangeAutomaticTimeZoneMappingSettings.cs" />
+    <Compile Include="Models\RegionTimeZone.cs" />
     <Compile Include="Models\TimeZoneEntityListing.cs" />
     <Compile Include="Models\DialerOutboundSettingsConfigChangeCallableWindow.cs" />
     <Compile Include="Models\DialerOutboundSettingsConfigChangeOutboundSettings.cs" />
@@ -2301,6 +2302,7 @@
     <Compile Include="Models\InvalidAssignment.cs" />
     <Compile Include="Models\Items.cs" />
     <Compile Include="Models\ItemValidationLimits.cs" />
+    <Compile Include="Models\IpAddressRange.cs" />
     <Compile Include="Models\IpAddressRangeListing.cs" />
     <Compile Include="Models\IVR.cs" />
     <Compile Include="Models\IVR.State.cs" />

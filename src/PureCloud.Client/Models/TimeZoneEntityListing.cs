@@ -8,7 +8,7 @@ public sealed class TimeZoneEntityListing
     /// <summary>
     /// Gets or Sets Entities
     /// </summary>
-    public IEnumerable<RegionTimeZone>? Entities { get; set; }
+    public IEnumerable<RegionTimeZone> Entities { get; set; }
 
     /// <summary>
     /// Gets or Sets PageSize
@@ -28,27 +28,27 @@ public sealed class TimeZoneEntityListing
     /// <summary>
     /// Gets or Sets FirstUri
     /// </summary>
-    public string? FirstUri { get; set; }
+    public string FirstUri { get; set; }
 
     /// <summary>
     /// Gets or Sets LastUri
     /// </summary>
-    public string? LastUri { get; set; }
+    public string LastUri { get; set; }
 
     /// <summary>
     /// Gets or Sets SelfUri
     /// </summary>
-    public string? SelfUri { get; set; }
+    public string SelfUri { get; set; }
 
     /// <summary>
     /// Gets or Sets NextUri
     /// </summary>
-    public string? NextUri { get; set; }
+    public string NextUri { get; set; }
 
     /// <summary>
     /// Gets or Sets PreviousUri
     /// </summary>
-    public string? PreviousUri { get; set; }
+    public string PreviousUri { get; set; }
 
     /// <summary>
     /// Gets or Sets PageCount

@@ -8,5 +8,5 @@ public sealed class IpAddressRangeListing
     /// <summary>
     /// Gets or Sets Entities
     /// </summary>
-    public IEnumerable<IpAddressRange>? Entities { get; set; }
+    public IEnumerable<IpAddressRange> Entities { get; set; }
 }

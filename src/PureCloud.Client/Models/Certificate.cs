@@ -8,5 +8,5 @@ public sealed class Certificate
     /// <summary>
     /// The certificate to parse.
     /// </summary>
-    public string? CertificateData { get; set; }
+    public string CertificateData { get; set; }
 }
