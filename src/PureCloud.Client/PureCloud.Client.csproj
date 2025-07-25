@@ -689,7 +689,6 @@
     <Compile Include="Models\AuthorizationPolicy.cs" />
     <Compile Include="Models\AuthorizationPolicy.Effect.cs" />
     <Compile Include="Models\AuthorizationPolicyEntityListing.cs" />
-    <Compile Include="Models\AuthenticationSettings.cs" />
     <Compile Include="Models\AuthorizationSettings.cs" />
     <Compile Include="Models\AuthorizedGrantType.cs" />
     <Compile Include="Models\AuthzDivision.cs" />
@@ -873,7 +872,6 @@
     <Compile Include="Models\ClientAppEntityListing.cs" />
     <Compile Include="Models\ClientApp.IntendedState.cs" />
     <Compile Include="Models\CobrowseWebMessagingSession.cs" />
-    <Compile Include="Models\CobrowseSettings.cs" />
     <Compile Include="Models\CoachingAnnotation.cs" />
     <Compile Include="Models\CoachingAnnotation.AccessType.cs" />
     <Compile Include="Models\CoachingAnnotationCreateRequest.cs" />
@@ -1567,7 +1565,6 @@
     <Compile Include="Models\CustomerStartDetailEventTopicCustomerStartEvent.Direction.cs" />
     <Compile Include="Models\CustomerStartDetailEventTopicCustomerStartEvent.MessageType.cs" />
     <Compile Include="Models\CustomerStartDetailEventTopicJourneyContext.cs" />
-    <Compile Include="Models\CustomI18nLabels.cs" />
     <Compile Include="Models\CustomEventAttribute.cs" />
     <Compile Include="Models\CustomEventAttributeList.cs" />
     <Compile Include="Models\CustomProvider.cs" />
@@ -4693,21 +4690,10 @@
     <Compile Include="Models\WebChatRoutingTarget.TargetType.cs" />
     <Compile Include="Models\WebChatSettings.cs" />
     <Compile Include="Models\WebChatTyping.cs" />
-    <Compile Include="Models\WebDeployment.cs" />
     <Compile Include="Models\WebDeploymentActiveConfigurationOnDeployment.cs" />
-    <Compile Include="Models\WebDeploymentConfigurationVersion.cs" />
-    <Compile Include="Models\WebDeploymentConfigurationVersionEntityListing.cs" />
-    <Compile Include="Models\WebDeploymentConfigurationVersionEntityRef.cs" />
-    <Compile Include="Models\WebDeploymentConfigurationVersionResponse.cs" />
-    <Compile Include="Models\WebDeploymentFlowEntityRef.cs" />
-    <Compile Include="Models\WebDeploymentHeadlessMode.cs" />
     <Compile Include="Models\WebDeploymentsAuthorizationResponse.cs" />
-    <Compile Include="Models\WebDeploymentsJourneyContext.cs" />
     <Compile Include="Models\WebDeploymentsOAuthExchangeRequest.cs" />
-    <Compile Include="Models\WebDeploymentsOAuthRequestParameters.cs" />
     <Compile Include="Models\WebDeploymentsRefreshJWTRequest.cs" />
-    <Compile Include="Models\ExpandableWebDeployment.cs" />
-    <Compile Include="Models\ExpandableWebDeploymentEntityListing.cs" />
     <Compile Include="Models\WebDeploymentsConfigTopicWebMessagingConfigChangeEventBody.cs" />
     <Compile Include="Models\WebDeploymentsConfigTopicWebMessagingConfigChangeEventBody.Status.cs" />
     <Compile Include="Models\WebDeploymentsDeploymentTopicWebMessagingConfigChangeEventBody.cs" />
@@ -5129,12 +5115,6 @@
     <Compile Include="Models\SIPSearchPublicRequest.cs" />
     <Compile Include="Models\SipDownloadResponse.cs" />
     <Compile Include="Models\SignedUrlResponse.cs" />
-    <Compile Include="Models\JourneyEventsSettings.cs" />
-    <Compile Include="Models\MessengerSettings.cs" />
-    <Compile Include="Models\PositionSettings.cs" />
-    <Compile Include="Models\SupportCenterSettings.cs" />
-    <Compile Include="Models\SupportedContentReference.cs" />
-    <Compile Include="Models\VideoSettings.cs" />
     <Compile Include="Address.cs" />
     <Compile Include="obj\Debug\net8.0\.NETCoreApp,Version=v8.0.AssemblyAttributes.cs" />
     <Compile Include="obj\Debug\net8.0\PureCloud.Client.AssemblyInfo.cs" />
