@@ -200,6 +200,7 @@
     <Compile Include="Models\ActionOutput.cs" />
     <Compile Include="Models\AddressableEntity.cs" />
     <Compile Include="Models\AddAdherenceExplanationAgentRequest.cs" />
+    <Compile Include="Models\AddAdherenceExplanationAgentRequest.AdherenceExplanationType.cs" />
     <Compile Include="Models\AdherenceExplanationAsyncResponse.cs" />
     <Compile Include="Models\AdherenceExplanationJobReference.cs" />
     <Compile Include="Models\AgentIntegrationsRequest.cs" />
@@ -4505,6 +4506,12 @@
     <Compile Include="Models\Users\UserStationChangeTopicUserStations.cs" />
     <Compile Include="Models\Users\UserStations.cs" />
     <Compile Include="Models\UserScheduleAdherence.cs" />
+    <Compile Include="Models\UserScheduleAdherence.ScheduledActivityCategory.cs" />
+    <Compile Include="Models\UserScheduleAdherence.SystemPresence.cs" />
+    <Compile Include="Models\UserScheduleAdherence.UserScheduleRoutingStatus.cs" />
+    <Compile Include="Models\UserScheduleAdherence.ActualActivityCategory.cs" />
+    <Compile Include="Models\UserScheduleAdherence.AdherenceState.cs" />
+    <Compile Include="Models\UserScheduleAdherence.Impact.cs" />
     <Compile Include="Models\UserNextActivityReminder.cs" />
     <Compile Include="Models\UserTokensTopicTokenNotification.cs" />
     <Compile Include="Models\UserTokensTopicUriReference.cs" />
