@@ -571,8 +571,6 @@
     <Compile Include="Models\Calibration.cs" />
     <Compile Include="Models\CalibrationCreate.cs" />
     <Compile Include="Models\Call.cs" />
-    <Compile Include="Models\Callheader.cs" />
-    <Compile Include="Models\Callmessage.cs" />
     <Compile Include="Models\Callback.cs" />
     <Compile Include="Models\CallbackDirection.cs" />
     <Compile Include="Models\CallbackDisconnectType.cs" />
@@ -2059,6 +2057,7 @@
     <Compile Include="Models\HistoryListing.ActionStatus.cs" />
     <Compile Include="Models\HistoryListing.ActionName.cs" />
     <Compile Include="Models\HoldUpdatedEvent.cs" />
+    <Compile Include="Models\HomerRecord.cs" />
     <Compile Include="Models\IdentifierClaimRequest.cs" />
     <Compile Include="Models\IdentifierClaimRequest.Operation.cs" />
     <Compile Include="Models\IdentityNow.cs" />
@@ -3811,6 +3810,7 @@
     <Compile Include="Models\TaskManagementAsyncAggregationQuery.Metrics.cs" />
     <Compile Include="Models\TaskManagementAsyncAggregationQuery.AlternateTimeDimension.cs" />
     <Compile Include="Models\TaskManagementAsyncAggregationQuery.GroupBy.cs" />
+    <Compile Include="Models\Teams\Team.cs" />
     <Compile Include="Models\Teams\TeamActivityData.cs" />
     <Compile Include="Models\Teams\TeamActivityEntityData.cs" />
     <Compile Include="Models\Teams\TeamActivityMetricValue.cs" />
@@ -3830,6 +3830,15 @@
     <Compile Include="Models\Teams\TeamActivityQueryPredicate.Operator.cs" />
     <Compile Include="Models\Teams\TeamActivityResponse.cs" />
     <Compile Include="Models\Teams\TeamActivityResponse.EntityIdDimension.cs" />
+    <Compile Include="Models\Teams\TeamAddMemberFailure.cs" />
+    <Compile Include="Models\Teams\TeamEntityListing.cs" />
+    <Compile Include="Models\Teams\TeamMemberAddListingResponse.cs" />
+    <Compile Include="Models\Teams\TeamMemberEntityListing.cs" />
+    <Compile Include="Models\Teams\TeamMembers.cs" />
+    <Compile Include="Models\Teams\TeamReference.cs" />
+    <Compile Include="Models\Teams\TeamSearchCriteria.cs" />
+    <Compile Include="Models\Teams\TeamSearchRequest.cs" />
+    <Compile Include="Models\Teams\TeamsSearchResponse.cs" />
     <Compile Include="Models\TermAttribute.cs" />
     <Compile Include="Models\TermAttribute.Type.cs" />
     <Compile Include="Models\TestExecutionOperationResult.cs" />
@@ -3899,7 +3908,6 @@
     <Compile Include="Models\RoutingStatus.cs" />
     <Compile Include="Models\RoutingStatusEnum.cs" />
     <Compile Include="Models\SearchSort.cs" />
-    <Compile Include="Models\Teams\Team.cs" />
     <Compile Include="Models\Topics\ConversationMetricsTopicConversationProposedAgent.cs" />
     <Compile Include="Models\Topics\ConversationMetricsTopicConversationScoredAgent.cs" />
     <Compile Include="Models\TranscriptAggregateDataContainer.cs" />
@@ -4148,9 +4156,7 @@
     <Compile Include="Models\Users\SearchCriteria.cs" />
     <Compile Include="Models\Users\SearchRequest.cs" />
     <Compile Include="Models\Users\SearchResult.cs" />
-    <Compile Include="Models\HomerRecord.cs" />
     <Compile Include="Models\Manager.cs" />
-    <Compile Include="Models\MediaRegions.cs" />
     <Compile Include="Models\ScimConfigResourceType.cs" />
     <Compile Include="Models\ScimConfigResourceTypeSchemaExtension.cs" />
     <Compile Include="Models\ScimConfigResourceTypesListResponse.cs" />
@@ -4181,10 +4187,6 @@
     <Compile Include="Models\ScimV2SchemaDefinition.cs" />
     <Compile Include="Models\ScimV2SchemaListResponse.cs" />
     <Compile Include="Models\ScimV2User.cs" />
-    <Compile Include="Models\SipDownloadResponse.cs" />
-    <Compile Include="Models\SipSearchResult.cs" />
-    <Compile Include="Models\SIPSearchPublicRequest.cs" />
-    <Compile Include="Models\SignedUrlResponse.cs" />
     <Compile Include="Models\SortOrderType.cs" />
     <Compile Include="Models\Users\UserState.cs" />
     <Compile Include="Models\Users\UpdateUser.cs" />
@@ -4796,6 +4798,13 @@
     <Compile Include="Models\TriggerTarget.cs" />
     <Compile Include="Models\UpdateTriggerRequest.cs" />
     <Compile Include="Models\WorkflowTargetSettings.cs" />
+    <Compile Include="Models\MediaRegions.cs" />
+    <Compile Include="Models\Callmessage.cs" />
+    <Compile Include="Models\Callheader.cs" />
+    <Compile Include="Models\SipSearchResult.cs" />
+    <Compile Include="Models\SIPSearchPublicRequest.cs" />
+    <Compile Include="Models\SipDownloadResponse.cs" />
+    <Compile Include="Models\SignedUrlResponse.cs" />
     <Compile Include="Address.cs" />
     <Compile Include="PureCloudRegionHosts.cs" />
     <Compile Include="PureCloudConstants.cs" />
