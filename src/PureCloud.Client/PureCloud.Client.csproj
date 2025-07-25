@@ -88,6 +88,7 @@
     <Compile Include="Apis\TextbotsApi.cs" />
     <Compile Include="Apis\TokensApi.cs" />
     <Compile Include="Apis\UserApi.cs" />
+    <Compile Include="Apis\UserRecordingsApi.cs" />
     <Compile Include="Apis\UtilitiesApi.cs" />
     <Compile Include="Apis\VoicemailApi.cs" />
     <Compile Include="Apis\WebChatApi.cs" />
@@ -165,6 +166,7 @@
     <Compile Include="Contracts\ITextbotsApi.cs" />
     <Compile Include="Contracts\ITokensApi.cs" />
     <Compile Include="Contracts\IUserApi.cs" />
+    <Compile Include="Contracts\IUserRecordingsApi.cs" />
     <Compile Include="Contracts\IUtilitiesApi.cs" />
     <Compile Include="Contracts\IVoicemailApi.cs" />
     <Compile Include="Contracts\IWebChatApi.cs" />
@@ -4382,6 +4384,8 @@
     <Compile Include="Models\UserReference.cs" />
     <Compile Include="Models\UserReferenceEntityListing.cs" />
     <Compile Include="Models\UserReferenceWithName.cs" />
+    <Compile Include="Models\UserRecording.cs" />
+    <Compile Include="Models\UserRecordingEntityListing.cs" />
     <Compile Include="Models\UserRoutingLanguage.cs" />
     <Compile Include="Models\UserRoutingLanguagePost.cs" />
     <Compile Include="Models\UserRoutingLanguageState.cs" />
