@@ -10,14 +10,12 @@ namespace PureCloud.Client.Apis;
 
 public sealed class VoicemailApi : IVoicemailApi
 {
-    private readonly IHttpClientFactory _httpClientFactory;
+    private readonly HttpClient _httpClient;
     private readonly PureCloudJsonSerializerOptions _options;
 
-    public VoicemailApi(
-        IHttpClientFactory httpClientFactory,
-        IOptions<PureCloudJsonSerializerOptions> options)
+    public VoicemailApi(IHttpClientFactory httpClientFactory, IOptions<PureCloudJsonSerializerOptions> options)
     {
-        _httpClientFactory = httpClientFactory;
+        _httpClient = httpClientFactory.CreateClient(PureCloudConstants.PureCloudClientName);
         _options = options.Value;
     }
 
@@ -26,17 +24,19 @@ public sealed class VoicemailApi : IVoicemailApi
     {
         ArgumentException.ThrowIfNullOrEmpty(messageId);
 
-        var client = _httpClientFactory.CreateClient(PureCloudConstants.PureCloudClientName);
-
         var parameters = new NameValueCollection();
+
         if (expand != null)
         {
-            parameters.Add("expand", UriHelper.ParameterToString(expand));
+            foreach (var item in expand)
+            {
+                parameters.Add("expand", UriHelper.ParameterToString(item));
+            }
         }
 
-        var uri = UriHelper.GetUri($"api/v2/voicemail/messages/{Uri.EscapeDataString(messageId)}", parameters);
+        var uri = UriHelper.GetUri($"api/v2/voicemail/messages/{messageId}", parameters);
 
-        var response = await client.GetAsync(uri, cancellationToken);
+        var response = await _httpClient.GetAsync(uri, cancellationToken);
 
         response.EnsureSuccessStatusCode();
 
@@ -48,21 +48,21 @@ public sealed class VoicemailApi : IVoicemailApi
     {
         ArgumentException.ThrowIfNullOrEmpty(messageId);
 
-        var client = _httpClientFactory.CreateClient(PureCloudConstants.PureCloudClientName);
+        var uri = UriHelper.GetUri($"api/v2/voicemail/messages/{messageId}", null);
 
-        var response = await client.DeleteAsync($"api/v2/voicemail/messages/{Uri.EscapeDataString(messageId)}", cancellationToken);
+        var response = await _httpClient.DeleteAsync(uri, cancellationToken);
 
         response.EnsureSuccessStatusCode();
 
-        return response.IsSuccessStatusCode;
+        return true;
     }
 
     /// <inheritdoc />
     public async Task<VoicemailMailboxInfo> GetVoicemailMailboxAsync(CancellationToken cancellationToken = default)
     {
-        var client = _httpClientFactory.CreateClient(PureCloudConstants.PureCloudClientName);
+        var uri = UriHelper.GetUri("api/v2/voicemail/mailbox", null);
 
-        var response = await client.GetAsync("api/v2/voicemail/mailbox", cancellationToken);
+        var response = await _httpClient.GetAsync(uri, cancellationToken);
 
         response.EnsureSuccessStatusCode();
 
@@ -74,9 +74,9 @@ public sealed class VoicemailApi : IVoicemailApi
     {
         ArgumentNullException.ThrowIfNull(body);
 
-        var client = _httpClientFactory.CreateClient(PureCloudConstants.PureCloudClientName);
+        var uri = UriHelper.GetUri("api/v2/voicemail/me/policy", null);
 
-        var response = await client.PatchAsJsonAsync("api/v2/voicemail/me/policy", body, _options.JsonSerializerOptions, cancellationToken);
+        var response = await _httpClient.PatchAsJsonAsync(uri, body, _options.JsonSerializerOptions, cancellationToken);
 
         response.EnsureSuccessStatusCode();
 
@@ -88,9 +88,9 @@ public sealed class VoicemailApi : IVoicemailApi
     {
         ArgumentNullException.ThrowIfNull(body);
 
-        var client = _httpClientFactory.CreateClient(PureCloudConstants.PureCloudClientName);
+        var uri = UriHelper.GetUri("api/v2/voicemail/search", null);
 
-        var response = await client.PostAsJsonAsync("api/v2/voicemail/search", body, _options.JsonSerializerOptions, cancellationToken);
+        var response = await _httpClient.PostAsJsonAsync(uri, body, _options.JsonSerializerOptions, cancellationToken);
 
         response.EnsureSuccessStatusCode();
 
