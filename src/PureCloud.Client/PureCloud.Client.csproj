@@ -4270,7 +4270,16 @@
     <Compile Include="Models\UpdateCoachingAppointmentRequest.Status.cs" />
     <Compile Include="Models\UpdateDraftInput.cs" />
     <Compile Include="Models\UpdateVerifierRequest.cs" />
+    <Compile Include="Models\UploadUrlRequest.cs" />
+    <Compile Include="Models\UploadUrlRequest.ServerSideEncryption.cs" />
     <Compile Include="Models\UploadUrlResponse.cs" />
+    <Compile Include="Models\GetUploadSourceUrlJobStatusResponse.cs" />
+    <Compile Include="Models\GetUploadSourceUrlJobStatusResponse.Status.cs" />
+    <Compile Include="Models\CreateUploadSourceUrlJobRequest.cs" />
+    <Compile Include="Models\CreateUploadSourceUrlJobResponse.cs" />
+    <Compile Include="Models\LearningCoverArtUploadUrlRequest.cs" />
+    <Compile Include="Models\LearningCoverArtUploadUrlRequest.ContentType.cs" />
+    <Compile Include="Models\LearningCoverArtUploadUrlRequest.ServerSideEncryption.cs" />
     <Compile Include="Models\UrlResponse.cs" />
     <Compile Include="Models\ApiUsageClientQuery.cs" />
     <Compile Include="Models\ApiUsageOrganizationQuery.cs" />
