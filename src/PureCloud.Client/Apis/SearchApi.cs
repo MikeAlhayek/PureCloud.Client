@@ -24,6 +24,68 @@ public sealed class SearchApi : ISearchApi
     }
 
     /// <inheritdoc />
+    public async Task<JsonNodeSearchResponse> GetSearchAsync(string q64, IEnumerable<string> expand = null, bool? profile = null, CancellationToken cancellationToken = default)
+    {
+        ArgumentException.ThrowIfNullOrEmpty(q64);
+
+        var parameters = new NameValueCollection { { "q64", q64 } };
+
+        if (expand != null)
+        {
+            foreach (var item in expand)
+            {
+                parameters.Add("expand", item);
+            }
+        }
+
+        if (profile.HasValue)
+        {
+            parameters.Add("profile", UriHelper.ParameterToString(profile.Value));
+        }
+
+        var client = _httpClientFactory.CreateClient(PureCloudConstants.PureCloudClientName);
+
+        var uri = UriHelper.GetUri("api/v2/search", parameters);
+
+        var response = await client.GetAsync(uri, cancellationToken);
+
+        response.EnsureSuccessStatusCode();
+
+        return await response.Content.ReadFromJsonAsync<JsonNodeSearchResponse>(_options.JsonSerializerOptions, cancellationToken);
+    }
+
+    /// <inheritdoc />
+    public async Task<JsonNodeSearchResponse> GetSearchSuggestAsync(string q64, IEnumerable<string> expand = null, bool? profile = null, CancellationToken cancellationToken = default)
+    {
+        ArgumentException.ThrowIfNullOrEmpty(q64);
+
+        var parameters = new NameValueCollection { { "q64", q64 } };
+
+        if (expand != null)
+        {
+            foreach (var item in expand)
+            {
+                parameters.Add("expand", item);
+            }
+        }
+
+        if (profile.HasValue)
+        {
+            parameters.Add("profile", UriHelper.ParameterToString(profile.Value));
+        }
+
+        var client = _httpClientFactory.CreateClient(PureCloudConstants.PureCloudClientName);
+
+        var uri = UriHelper.GetUri("api/v2/search/suggest", parameters);
+
+        var response = await client.GetAsync(uri, cancellationToken);
+
+        response.EnsureSuccessStatusCode();
+
+        return await response.Content.ReadFromJsonAsync<JsonNodeSearchResponse>(_options.JsonSerializerOptions, cancellationToken);
+    }
+
+    /// <inheritdoc />
 
     public async Task<DocumentationSearchResponse> CreateDocumentationSearchAsync(DocumentationSearchRequest body, CancellationToken cancellationToken = default)
     {

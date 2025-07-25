@@ -51,6 +51,26 @@ public interface ISearchApi
     Task<LocationsSearchResponse> CreateLocationsSearchAsync(LocationSearchRequest body, CancellationToken cancellationToken = default);
 
     /// <summary>
+    /// Search using the q64 value returned from a previous search
+    /// </summary>
+    /// <param name="q64">q64</param>
+    /// <param name="expand">Which fields, if any, to expand</param>
+    /// <param name="profile">profile (optional, default to true)</param>
+    /// <param name="cancellationToken">Cancellation token</param>
+    /// <returns>JsonNodeSearchResponse</returns>
+    Task<JsonNodeSearchResponse> GetSearchAsync(string q64, IEnumerable<string> expand = null, bool? profile = null, CancellationToken cancellationToken = default);
+
+    /// <summary>
+    /// Suggest resources using the q64 value returned from a previous suggest query
+    /// </summary>
+    /// <param name="q64">q64</param>
+    /// <param name="expand">Which fields, if any, to expand</param>
+    /// <param name="profile">profile (optional, default to true)</param>
+    /// <param name="cancellationToken">Cancellation token</param>
+    /// <returns>JsonNodeSearchResponse</returns>
+    Task<JsonNodeSearchResponse> GetSearchSuggestAsync(string q64, IEnumerable<string> expand = null, bool? profile = null, CancellationToken cancellationToken = default);
+
+    /// <summary>
     /// Search resources
     /// </summary>
     /// <param name="body">Search request options</param>
