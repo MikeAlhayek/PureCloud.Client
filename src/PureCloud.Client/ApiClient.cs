@@ -6,6 +6,7 @@ using System.Text.Json;
 using System.Text.Json.Serialization;
 using System.Text.RegularExpressions;
 using Microsoft.Extensions.Logging;
+using PureCloud.Client.Extensions;
 using RestSharp;
 
 namespace PureCloud.Client;

@@ -8,7 +8,7 @@ public sealed class WorkitemUpdate
     /// <summary>
     /// The name of the Workitem. Valid length between 3 and 256 characters.
     /// </summary>
-    public string? Name { get; set; }
+    public string Name { get; set; }
 
     /// <summary>
     /// The priority of the Workitem. The valid range is between -25,000,000 and 25,000,000.
@@ -18,12 +18,12 @@ public sealed class WorkitemUpdate
     /// <summary>
     /// The description of the Workitem. Maximum length of 512 characters.
     /// </summary>
-    public string? Description { get; set; }
+    public string Description { get; set; }
 
     /// <summary>
     /// The ID of the Status of the Workitem.
     /// </summary>
-    public string? StatusId { get; set; }
+    public string StatusId { get; set; }
 
     /// <summary>
     /// The due date of the Workitem. Date time is represented as an ISO-8601 string.

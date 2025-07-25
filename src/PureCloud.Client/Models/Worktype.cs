@@ -8,17 +8,17 @@ public sealed class Worktype
     /// <summary>
     /// The globally unique identifier for the object.
     /// </summary>
-    public string? Id { get; init; }
+    public string Id { get; init; }
 
     /// <summary>
     /// The name of the Worktype.
     /// </summary>
-    public string? Name { get; init; }
+    public string Name { get; init; }
 
     /// <summary>
     /// The description of the Worktype.
     /// </summary>
-    public string? Description { get; init; }
+    public string Description { get; init; }
 
     /// <summary>
     /// The creation date of the Worktype. Date time is represented as an ISO-8601 string.
@@ -58,5 +58,5 @@ public sealed class Worktype
     /// <summary>
     /// The URI for this object
     /// </summary>
-    public string? SelfUri { get; init; }
+    public string SelfUri { get; init; }
 }

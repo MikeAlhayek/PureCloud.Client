@@ -1,6 +1,7 @@
 using System.Security.Cryptography;
 using System.Text;
 using Microsoft.Extensions.Logging;
+using PureCloud.Client.Tokens;
 using RestSharp;
 
 namespace PureCloud.Client.Extensions;

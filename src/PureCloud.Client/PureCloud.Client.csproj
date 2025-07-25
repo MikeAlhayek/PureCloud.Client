@@ -16,15 +16,162 @@
   </ItemGroup>
 
   <ItemGroup>
-    <Compile Remove="ApiClient.cs" />
-    <Compile Remove="ApiException.cs" />
-    <Compile Remove="ApiResponse.cs" />
-    <Compile Remove="Configuration.cs" />
-    <Compile Remove="Extensions\AuthExtensions.cs" />
-    <Compile Remove="IApiAccessor.cs" />
-  </ItemGroup>
-
-  <ItemGroup>
+    <Compile Include="ApiClient.cs" />
+    <Compile Include="ApiException.cs" />
+    <Compile Include="ApiResponse.cs" />
+    <Compile Include="Apis\AgentAssistantsApi.cs" />
+    <Compile Include="Apis\AgentCopilotApi.cs" />
+    <Compile Include="Apis\AgentUIApi.cs" />
+    <Compile Include="Apis\AlertingApi.cs" />
+    <Compile Include="Apis\AnalyticsApi.cs" />
+    <Compile Include="Apis\ArchitectApi.cs" />
+    <Compile Include="Apis\AuditApi.cs" />
+    <Compile Include="Apis\AuthorizationApi.cs" />
+    <Compile Include="Apis\BillingApi.cs" />
+    <Compile Include="Apis\CarrierServicesApi.cs" />
+    <Compile Include="Apis\ChannelsApi.cs" />
+    <Compile Include="Apis\ChatApi.cs" />
+    <Compile Include="Apis\CoachingApi.cs" />
+    <Compile Include="Apis\ContentManagementApi.cs" />
+    <Compile Include="Apis\ConversationsApi.cs" />
+    <Compile Include="Apis\DataExtensionsApi.cs" />
+    <Compile Include="Apis\DataPrivacyApi.cs" />
+    <Compile Include="Apis\DownloadsApi.cs" />
+    <Compile Include="Apis\EmailsApi.cs" />
+    <Compile Include="Apis\EmployeeEngagementApi.cs" />
+    <Compile Include="Apis\EventsApi.cs" />
+    <Compile Include="Apis\ExternalContactsApi.cs" />
+    <Compile Include="Apis\FaxApi.cs" />
+    <Compile Include="Apis\FlowsApi.cs" />
+    <Compile Include="Apis\GamificationApi.cs" />
+    <Compile Include="Apis\GeneralDataProtectionRegulationApi.cs" />
+    <Compile Include="Apis\GeolocationApi.cs" />
+    <Compile Include="Apis\GreetingsApi.cs" />
+    <Compile Include="Apis\GroupsApi.cs" />
+    <Compile Include="Apis\IdentityProviderApi.cs" />
+    <Compile Include="Apis\InfrastructureAsCodeApi.cs" />
+    <Compile Include="Apis\IntegrationsApi.cs" />
+    <Compile Include="Apis\JourneyApi.cs" />
+    <Compile Include="Apis\KnowledgeApi.cs" />
+    <Compile Include="Apis\LanguagesApi.cs" />
+    <Compile Include="Apis\LearningApi.cs" />
+    <Compile Include="Apis\LicenseApi.cs" />
+    <Compile Include="Apis\LocationsApi.cs" />
+    <Compile Include="Apis\LogCaptureApi.cs" />
+    <Compile Include="Apis\MessagingApi.cs" />
+    <Compile Include="Apis\MobileDevicesApi.cs" />
+    <Compile Include="Apis\NotificationsApi.cs" />
+    <Compile Include="Apis\OAuthApi.cs" />
+    <Compile Include="Apis\ObjectsApi.cs" />
+    <Compile Include="Apis\OperationalEventsApi.cs" />
+    <Compile Include="Apis\OrganizationApi.cs" />
+    <Compile Include="Apis\OrganizationAuthorizationApi.cs" />
+    <Compile Include="Apis\OutboundApi.cs" />
+    <Compile Include="Apis\PresenceApi.cs" />
+    <Compile Include="Apis\ProcessAutomationApi.cs" />
+    <Compile Include="Apis\QualityApi.cs" />
+    <Compile Include="Apis\RecordingApi.cs" />
+    <Compile Include="Apis\ResponseManagementApi.cs" />
+    <Compile Include="Apis\RoutingApi.cs" />
+    <Compile Include="Apis\SCIMApi.cs" />
+    <Compile Include="Apis\ScreenRecordingApi.cs" />
+    <Compile Include="Apis\ScriptsApi.cs" />
+    <Compile Include="Apis\SearchApi.cs" />
+    <Compile Include="Apis\SettingsApi.cs" />
+    <Compile Include="Apis\SocialMediaApi.cs" />
+    <Compile Include="Apis\SpeechTextAnalyticsApi.cs" />
+    <Compile Include="Apis\StationsApi.cs" />
+    <Compile Include="Apis\TaskManagementApi.cs" />
+    <Compile Include="Apis\TeamsApi.cs" />
+    <Compile Include="Apis\TelephonyApi.cs" />
+    <Compile Include="Apis\TelephonyProvidersEdgeApi.cs" />
+    <Compile Include="Apis\TokensApi.cs" />
+    <Compile Include="Apis\UserApi.cs" />
+    <Compile Include="Apis\VoicemailApi.cs" />
+    <Compile Include="Apis\WebChatApi.cs" />
+    <Compile Include="Apis\WebMessagingApi.cs" />
+    <Compile Include="Apis\WidgetsApi.cs" />
+    <Compile Include="Configuration.cs" />
+    <Compile Include="Contracts\IAgentAssistantsApi.cs" />
+    <Compile Include="Contracts\IAgentCopilotApi.cs" />
+    <Compile Include="Contracts\IAgentUIApi.cs" />
+    <Compile Include="Contracts\IAlertingApi.cs" />
+    <Compile Include="Contracts\IAnalyticsApi.cs" />
+    <Compile Include="Contracts\IArchitectApi.cs" />
+    <Compile Include="Contracts\IAuditApi.cs" />
+    <Compile Include="Contracts\IAuthorizationApi.cs" />
+    <Compile Include="Contracts\IBillingApi.cs" />
+    <Compile Include="Contracts\ICarrierServicesApi.cs" />
+    <Compile Include="Contracts\IChannelsApi.cs" />
+    <Compile Include="Contracts\IChatApi.cs" />
+    <Compile Include="Contracts\ICoachingApi.cs" />
+    <Compile Include="Contracts\IContentManagementApi.cs" />
+    <Compile Include="Contracts\IConversationsApi.cs" />
+    <Compile Include="Contracts\IDataExtensionsApi.cs" />
+    <Compile Include="Contracts\IDataPrivacyApi.cs" />
+    <Compile Include="Contracts\IDownloadsApi.cs" />
+    <Compile Include="Contracts\IEmailsApi.cs" />
+    <Compile Include="Contracts\IEmployeeEngagementApi.cs" />
+    <Compile Include="Contracts\IEventsApi.cs" />
+    <Compile Include="Contracts\IExternalContactsApi.cs" />
+    <Compile Include="Contracts\IFaxApi.cs" />
+    <Compile Include="Contracts\IFlowsApi.cs" />
+    <Compile Include="Contracts\IGamificationApi.cs" />
+    <Compile Include="Contracts\IGeneralDataProtectionRegulationApi.cs" />
+    <Compile Include="Contracts\IGeolocationApi.cs" />
+    <Compile Include="Contracts\IGreetingsApi.cs" />
+    <Compile Include="Contracts\IGroupsApi.cs" />
+    <Compile Include="Contracts\IIdentityProviderApi.cs" />
+    <Compile Include="Contracts\IInfrastructureAsCodeApi.cs" />
+    <Compile Include="Contracts\IIntegrationsApi.cs" />
+    <Compile Include="Contracts\IJourneyApi.cs" />
+    <Compile Include="Contracts\IKnowledgeApi.cs" />
+    <Compile Include="Contracts\ILanguagesApi.cs" />
+    <Compile Include="Contracts\ILearningApi.cs" />
+    <Compile Include="Contracts\ILicenseApi.cs" />
+    <Compile Include="Contracts\ILocationsApi.cs" />
+    <Compile Include="Contracts\ILogCaptureApi.cs" />
+    <Compile Include="Contracts\IMessagingApi.cs" />
+    <Compile Include="Contracts\IMobileDevicesApi.cs" />
+    <Compile Include="Contracts\INotificationClientFactory.cs" />
+    <Compile Include="Contracts\INotificationData.cs" />
+    <Compile Include="Contracts\INotificationsApi.cs" />
+    <Compile Include="Contracts\IOAuthApi.cs" />
+    <Compile Include="Contracts\IObjectsApi.cs" />
+    <Compile Include="Contracts\IOperationalEventsApi.cs" />
+    <Compile Include="Contracts\IOrganizationApi.cs" />
+    <Compile Include="Contracts\IOrganizationAuthorizationApi.cs" />
+    <Compile Include="Contracts\IOutboundApi.cs" />
+    <Compile Include="Contracts\IPresenceApi.cs" />
+    <Compile Include="Contracts\IProcessAutomationApi.cs" />
+    <Compile Include="Contracts\IQualityApi.cs" />
+    <Compile Include="Contracts\IRecordingApi.cs" />
+    <Compile Include="Contracts\IResponseManagementApi.cs" />
+    <Compile Include="Contracts\IRoutingApi.cs" />
+    <Compile Include="Contracts\ISCIMApi.cs" />
+    <Compile Include="Contracts\IScreenRecordingApi.cs" />
+    <Compile Include="Contracts\IScriptsApi.cs" />
+    <Compile Include="Contracts\ISearchApi.cs" />
+    <Compile Include="Contracts\ISettingsApi.cs" />
+    <Compile Include="Contracts\ISocialMediaApi.cs" />
+    <Compile Include="Contracts\ISpeechTextAnalyticsApi.cs" />
+    <Compile Include="Contracts\IStationsApi.cs" />
+    <Compile Include="Contracts\ITaskManagementApi.cs" />
+    <Compile Include="Contracts\ITeamsApi.cs" />
+    <Compile Include="Contracts\ITelephonyApi.cs" />
+    <Compile Include="Contracts\ITelephonyProvidersEdgeApi.cs" />
+    <Compile Include="Contracts\ITokensApi.cs" />
+    <Compile Include="Contracts\IUserApi.cs" />
+    <Compile Include="Contracts\IVoicemailApi.cs" />
+    <Compile Include="Contracts\IWebChatApi.cs" />
+    <Compile Include="Contracts\IWebMessagingApi.cs" />
+    <Compile Include="Contracts\IWidgetsApi.cs" />
+    <Compile Include="Extensions\AuthExtensions.cs" />
+    <Compile Include="Extensions\NotificationHandlerExtensions.cs" />
+    <Compile Include="Extensions\ServiceCollectionExtensions.cs" />
+    <Compile Include="Http\BearerTokenHandler.cs" />
+    <Compile Include="Http\UriHelper.cs" />
+    <Compile Include="IApiAccessor.cs" />
     <Compile Include="Models\AcceleratorInput.cs" />
     <Compile Include="Models\AcceleratorList.cs" />
     <Compile Include="Models\AcceleratorMetadata.cs" />
@@ -125,6 +272,7 @@
     <Compile Include="Models\EdgeEntityListing.cs" />
     <Compile Include="Models\EdgeGroup.cs" />
     <Compile Include="Models\EdgeInterface.cs" />
+    <Compile Include="Models\LanguageReference.cs" />
     <Compile Include="Models\Teams\TeamEntityListing.cs" />
     <Compile Include="Models\TrunkBase.cs" />
     <Compile Include="Models\TrunkBaseAssignment.cs" />
@@ -4700,6 +4848,9 @@
     <Compile Include="Models\WidgetDeployment.ClientType.cs" />
     <Compile Include="Models\WidgetDeploymentEntityListing.cs" />
     <Compile Include="Models\WidgetSelected.SegmentTypes.cs" />
+    <Compile Include="Models\Workbin.cs" />
+    <Compile Include="Models\WorkbinCreate.cs" />
+    <Compile Include="Models\WorkbinUpdate.cs" />
     <Compile Include="Models\WorkdayMetric.cs" />
     <Compile Include="Models\WorkdayMetricListing.cs" />
     <Compile Include="Models\WorkdayPeriod.cs" />
@@ -4710,6 +4861,12 @@
     <Compile Include="Models\WorkdayValuesMetricItem.UnitType.cs" />
     <Compile Include="Models\WorkdayValuesTrend.cs" />
     <Compile Include="Models\WorkdayValuesTrendItem.cs" />
+    <Compile Include="Models\Workitem.AssignmentState.cs" />
+    <Compile Include="Models\Workitem.cs" />
+    <Compile Include="Models\WorkitemCreate.cs" />
+    <Compile Include="Models\WorkitemsAttributeChangeWorkitemStatusCategory.cs" />
+    <Compile Include="Models\WorkitemsAttributeChangeWorkitemStatusCategory.OldValue.cs" />
+    <Compile Include="Models\WorkitemsAttributeChangeWorkitemStatusCategory.NewValue.cs" />
     <Compile Include="Models\WorkitemsEventsNotificationAssignmentSegment.cs" />
     <Compile Include="Models\WorkitemsEventsNotificationAssignmentSegment.StartState.cs" />
     <Compile Include="Models\WorkitemsEventsNotificationAssignmentSegment.EndState.cs" />
@@ -4762,6 +4919,7 @@
     <Compile Include="Models\WorkitemsUserEventsNotificationWrapup.cs" />
     <Compile Include="Models\WorkitemsUserEventsNotificationWrapup.Action.cs" />
     <Compile Include="Models\WorkitemsUserEventsNotificationWrapup.Op.cs" />
+    <Compile Include="Models\WorkitemUpdate.cs" />
     <Compile Include="Models\WorkPlanBiddingAdminNotificationTopicWorkPlanBiddingNotification.cs" />
     <Compile Include="Models\WorkPlanBiddingAdminNotificationTopicWorkPlanBiddingNotification.Status.cs" />
     <Compile Include="Models\WorkPlanBiddingAdminNotificationTopicWorkPlanBiddingNotification.AgentRankingType.cs" />
@@ -4776,6 +4934,10 @@
     <Compile Include="Models\Workspace.Type.cs" />
     <Compile Include="Models\WorkspaceMemberEntityListing.cs" />
     <Compile Include="Models\WorkspaceSummary.cs" />
+    <Compile Include="Models\Worktype.cs" />
+    <Compile Include="Models\WorktypeCreate.cs" />
+    <Compile Include="Models\WorktypeReference.cs" />
+    <Compile Include="Models\WorktypeUpdate.cs" />
     <Compile Include="Models\Wrapup.cs" />
     <Compile Include="Models\WrapupCodePredictionConfig.cs" />
     <Compile Include="Models\WrapupDetailEventTopicWrapupEvent.cs" />
@@ -4832,14 +4994,14 @@
     <Compile Include="Models\SipDownloadResponse.cs" />
     <Compile Include="Models\SignedUrlResponse.cs" />
     <Compile Include="Address.cs" />
+    <Compile Include="obj\Debug\net8.0\.NETCoreApp,Version=v8.0.AssemblyAttributes.cs" />
+    <Compile Include="obj\Debug\net8.0\PureCloud.Client.AssemblyInfo.cs" />
+    <Compile Include="obj\Debug\net8.0\PureCloud.Client.GlobalUsings.g.cs" />
     <Compile Include="PureCloudRegionHosts.cs" />
     <Compile Include="PureCloudConstants.cs" />
     <Compile Include="Json\PureCloudJsonSerializerOptions.cs" />
     <Compile Include="Json\JsonStringEnumMemberConverter.cs" />
     <Compile Include="Json\JsonStringEnumMemberConverterFactory.cs" />
-    <Compile Include="Contracts\INotificationData.cs" />
-    <Compile Include="Contracts\INotificationClientFactory.cs" />
-    <Compile Include="Contracts\IChannelsApi.cs" />
     <Compile Include="Notifications\ChannelMetadataNotification.cs" />
     <Compile Include="Notifications\Metadata.cs" />
     <Compile Include="Notifications\NotificationClient.cs" />
@@ -4847,6 +5009,16 @@
     <Compile Include="Notifications\NotificationClientResilienceOptions.cs" />
     <Compile Include="Notifications\NotificationData.cs" />
     <Compile Include="Notifications\SubscriptionBuilder.cs" />
+    <Compile Include="Services\MemoryTokenStore.cs" />
+    <Compile Include="Services\PureCloudOptionsConfigurations.cs" />
+    <Compile Include="Services\TokenService.cs" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Content Include="obj\Debug\net8.0\PureCloud.Client.csproj.FileListAbsolute.txt" />
+    <Content Include="obj\Debug\net8.0\PureCloud.Client.sourcelink.json" />
+    <Content Include="obj\project.assets.json" />
+    <Content Include="obj\PureCloud.Client.csproj.nuget.dgspec.json" />
   </ItemGroup>
 
   <ItemGroup>
@@ -4854,11 +5026,26 @@
     <PackageReference Include="Microsoft.Extensions.Http" Version="9.0.4" />
     <PackageReference Include="Microsoft.Extensions.Logging.Abstractions" Version="9.0.4" />
     <PackageReference Include="Microsoft.Extensions.Options" Version="9.0.4" />
+    <PackageReference Include="RestSharp" Version="112.1.0" />
   </ItemGroup>
 
   <ItemGroup>
+    <Folder Include="obj\Debug\net8.0\refint\" />
+    <Folder Include="obj\Debug\net8.0\ref\" />
     <Folder Include="OldApis\" />
     <Folder Include="Repositories\" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Include="obj\Debug\net8.0\PureCloud.Client.AssemblyInfoInputs.cache" />
+    <None Include="obj\Debug\net8.0\PureCloud.Client.assets.cache" />
+    <None Include="obj\Debug\net8.0\PureCloud.Client.csproj.AssemblyReference.cache" />
+    <None Include="obj\Debug\net8.0\PureCloud.Client.csproj.BuildWithSkipAnalyzers" />
+    <None Include="obj\Debug\net8.0\PureCloud.Client.csproj.CoreCompileInputs.cache" />
+    <None Include="obj\Debug\net8.0\PureCloud.Client.GeneratedMSBuildEditorConfig.editorconfig" />
+    <None Include="obj\project.nuget.cache" />
+    <None Include="obj\PureCloud.Client.csproj.nuget.g.props" />
+    <None Include="obj\PureCloud.Client.csproj.nuget.g.targets" />
   </ItemGroup>
 
   <ItemGroup>

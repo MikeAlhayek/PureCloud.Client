@@ -15,12 +15,12 @@ public interface ITaskManagementApi
     /// <summary>
     /// Get a workitem
     /// </summary>
-    Task<Workitem> GetWorkitemAsync(string workitemId, string? expands = null, CancellationToken cancellationToken = default);
+    Task<Workitem> GetWorkitemAsync(string workitemId, string expands = null, CancellationToken cancellationToken = default);
 
     /// <summary>
     /// Get a worktype
     /// </summary>
-    Task<Worktype> GetWorktypeAsync(string worktypeId, IEnumerable<string>? expands = null, CancellationToken cancellationToken = default);
+    Task<Worktype> GetWorktypeAsync(string worktypeId, IEnumerable<string> expands = null, CancellationToken cancellationToken = default);
 
     /// <summary>
     /// Create a workbin  

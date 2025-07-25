@@ -38,12 +38,12 @@ public sealed class Workitem
     /// <summary>
     /// The Category of the current Status of the Workitem.
     /// </summary>
-    public WorkitemStatusCategory? StatusCategory { get; set; }
+    public WorkitemsAttributeChangeWorkitemStatusCategory StatusCategory { get; set; }
 
     /// <summary>
     /// The assignment state of the workitem.
     /// </summary>
-    public WorkitemAssignmentState? AssignmentState { get; set; }
+    public WorkitemAssignmentState AssignmentState { get; set; }
 
     /// <summary>
     /// The URI for this object

@@ -1,5 +1,6 @@
 using Microsoft.Extensions.Logging;
 using PureCloud.Client.Extensions;
+using PureCloud.Client.Tokens;
 
 namespace PureCloud.Client;
 

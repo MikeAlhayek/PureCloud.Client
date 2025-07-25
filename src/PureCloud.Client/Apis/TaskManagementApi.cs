@@ -37,7 +37,7 @@ public sealed class TaskManagementApi : ITaskManagementApi
     }
 
     /// <inheritdoc />
-    public async Task<Workitem> GetWorkitemAsync(string workitemId, string? expands = null, CancellationToken cancellationToken = default)
+    public async Task<Workitem> GetWorkitemAsync(string workitemId, string expands = null, CancellationToken cancellationToken = default)
     {
         ArgumentException.ThrowIfNullOrEmpty(workitemId);
 
@@ -60,7 +60,7 @@ public sealed class TaskManagementApi : ITaskManagementApi
     }
 
     /// <inheritdoc />
-    public async Task<Worktype> GetWorktypeAsync(string worktypeId, IEnumerable<string>? expands = null, CancellationToken cancellationToken = default)
+    public async Task<Worktype> GetWorktypeAsync(string worktypeId, IEnumerable<string> expands = null, CancellationToken cancellationToken = default)
     {
         ArgumentException.ThrowIfNullOrEmpty(worktypeId);
 

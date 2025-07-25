@@ -8,12 +8,12 @@ public sealed class WorktypeUpdate
     /// <summary>
     /// The name of the Worktype.
     /// </summary>
-    public string? Name { get; set; }
+    public string Name { get; set; }
 
     /// <summary>
     /// The description of the Worktype.
     /// </summary>
-    public string? Description { get; set; }
+    public string Description { get; set; }
 
     /// <summary>
     /// The default duration in seconds for Workitems created from the Worktype.
