@@ -88,6 +88,7 @@
     <Compile Include="Apis\TextbotsApi.cs" />
     <Compile Include="Apis\TokensApi.cs" />
     <Compile Include="Apis\UserApi.cs" />
+    <Compile Include="Apis\UtilitiesApi.cs" />
     <Compile Include="Apis\VoicemailApi.cs" />
     <Compile Include="Apis\WebChatApi.cs" />
     <Compile Include="Apis\WebMessagingApi.cs" />
@@ -164,6 +165,7 @@
     <Compile Include="Contracts\ITextbotsApi.cs" />
     <Compile Include="Contracts\ITokensApi.cs" />
     <Compile Include="Contracts\IUserApi.cs" />
+    <Compile Include="Contracts\IUtilitiesApi.cs" />
     <Compile Include="Contracts\IVoicemailApi.cs" />
     <Compile Include="Contracts\IWebChatApi.cs" />
     <Compile Include="Contracts\IWebMessagingApi.cs" />
@@ -245,6 +247,7 @@
     <Compile Include="Models\ActionCertificate.Type.cs" />
     <Compile Include="Models\ActionCertificate.Status.cs" />
     <Compile Include="Models\ActionCertificate.SigningAuthority.cs" />
+    <Compile Include="Models\Certificate.cs" />
     <Compile Include="Models\ActionConfig.cs" />
     <Compile Include="Models\ActionContractInput.cs" />
     <Compile Include="Models\ActionEntityListing.cs" />
@@ -1679,6 +1682,8 @@
     <Compile Include="Models\DialerOutboundSettingsConfigChangeAtzmTimeSlot.cs" />
     <Compile Include="Models\DialerOutboundSettingsConfigChangeAtzmTimeSlotWithTimeZone.cs" />
     <Compile Include="Models\DialerOutboundSettingsConfigChangeAutomaticTimeZoneMappingSettings.cs" />
+    <Compile Include="Models\RegionTimeZone.cs" />
+    <Compile Include="Models\TimeZoneEntityListing.cs" />
     <Compile Include="Models\DialerOutboundSettingsConfigChangeCallableWindow.cs" />
     <Compile Include="Models\DialerOutboundSettingsConfigChangeOutboundSettings.cs" />
     <Compile Include="Models\DialerOutboundSettingsConfigChangeOutboundSettings.ComplianceAbandonRateDenominator.cs" />
@@ -2346,6 +2351,8 @@
     <Compile Include="Models\InvalidAssignment.cs" />
     <Compile Include="Models\Items.cs" />
     <Compile Include="Models\ItemValidationLimits.cs" />
+    <Compile Include="Models\IpAddressRange.cs" />
+    <Compile Include="Models\IpAddressRangeListing.cs" />
     <Compile Include="Models\IVR.cs" />
     <Compile Include="Models\IVR.State.cs" />
     <Compile Include="Models\IVRDivisionView.cs" />
@@ -2641,6 +2648,7 @@
     <Compile Include="Models\LicenseOrgToggle.cs" />
     <Compile Include="Models\LicenseUpdateStatus.cs" />
     <Compile Include="Models\LicenseUser.cs" />
+    <Compile Include="Models\ParsedCertificate.cs" />
     <Compile Include="Models\ParticipantMetrics.cs" />
     <Compile Include="Models\Program.cs" />
     <Compile Include="Models\ProgramRequest.cs" />

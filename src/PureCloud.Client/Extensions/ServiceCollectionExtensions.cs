@@ -195,6 +195,8 @@ public static class ServiceCollectionExtensions
 
         services.TryAddScoped<ITextbotsApi, TextbotsApi>();
 
+        services.TryAddScoped<IUtilitiesApi, UtilitiesApi>();
+
         services.TryAddScoped<ITokensApi, TokensApi>();
 
         services.TryAddScoped<ITelephonyApi, TelephonyApi>();
@@ -206,8 +208,6 @@ public static class ServiceCollectionExtensions
         services.TryAddScoped<ITaskManagementApi, TaskManagementApi>();
 
         services.TryAddScoped<ITokensApi, TokensApi>();
-
-
 
         services.TryAddScoped<IUserApi, UserApi>();
 
