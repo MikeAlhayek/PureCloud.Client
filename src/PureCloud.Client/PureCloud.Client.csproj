@@ -3839,6 +3839,7 @@
     <Compile Include="Models\Ticker.cs" />
     <Compile Include="Models\TokenInfo.cs" />
     <Compile Include="Models\TokenInfoClonedUser.cs" />
+    <Compile Include="Models\IdleTokenTimeout.cs" />
     <Compile Include="Models\TopicDuration.cs" />
     <Compile Include="Models\TopicOffset.cs" />
     <Compile Include="Models\TypingSetting.cs" />
