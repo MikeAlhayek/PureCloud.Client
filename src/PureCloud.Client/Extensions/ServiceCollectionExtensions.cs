@@ -193,9 +193,7 @@ public static class ServiceCollectionExtensions
 
         services.TryAddScoped<ISpeechTextAnalyticsApi, SpeechTextAnalyticsApi>();
 
-        services.TryAddScoped<ITelephonyProvidersEdgeApi, TelephonyProvidersEdgeApi>();
-
-        services.TryAddScoped<ITeamsApi, TeamsApi>();
+        services.TryAddScoped<ITokensApi, TokensApi>();
 
         services.TryAddScoped<IUserApi, UserApi>();
 
