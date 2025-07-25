@@ -1,147 +1,19 @@
-using System.Runtime.Serialization;
-using System.Text;
-using System.Text.Json.Serialization;
-
 namespace PureCloud.Client.Models;
 
 /// <summary>
 /// Message content element containing text only.
 /// </summary>
-
-public partial class ContentText : IEquatable<ContentText>
+public sealed class ContentText
 {
     /// <summary>
     /// Type of text content.
     /// </summary>
     /// <value>Type of text content.</value>
-    
-    public enum TypeEnum
-    {
-        /// <summary>
-        /// Your SDK version is out of date and an unknown enum value was encountered. 
-        /// Please upgrade the SDK using the command "Upgrade-Package PureCloudApiSdk" 
-        /// in the Package Manager Console
-        /// </summary>
-        [EnumMember(Value = "OUTDATED_SDK_VERSION")]
-        OutdatedSdkVersion,
-
-        /// <summary>
-        /// Enum Text for "Text"
-        /// </summary>
-        [EnumMember(Value = "Text")]
-        Text
-    }
-    /// <summary>
-    /// Type of text content.
-    /// </summary>
-    /// <value>Type of text content.</value>
-    [JsonPropertyName("type")]
-    public TypeEnum? Type { get; set; }
-
-    /// <summary>
-    /// Initializes a new instance of the <see cref="ContentText" /> class.
-    /// </summary>
-    [JsonConstructorAttribute]
-    protected ContentText() { }
-    /// <summary>
-    /// Initializes a new instance of the <see cref="ContentText" /> class.
-    /// </summary>
-    /// <param name="Type">Type of text content..</param>
-    /// <param name="Body">Text to be shown for this content element. (required).</param>
-    public ContentText(TypeEnum? Type = null, string Body = null)
-    {
-        this.Type = Type;
-        this.Body = Body;
-
-    }
-
-
-
-
+    public ContentTextType? Type { get; set; }
 
     /// <summary>
     /// Text to be shown for this content element.
     /// </summary>
     /// <value>Text to be shown for this content element.</value>
-    [JsonPropertyName("body")]
     public string Body { get; set; }
-
-
-    /// <summary>
-    /// Returns the string presentation of the object
-    /// </summary>
-    /// <returns>String presentation of the object</returns>
-    public override string ToString()
-    {
-        var sb = new StringBuilder();
-        sb.Append("class ContentText {\n");
-
-        sb.Append("  Type: ").Append(Type).Append("\n");
-        sb.Append("  Body: ").Append(Body).Append("\n");
-        sb.Append("}\n");
-        return sb.ToString();
-    }
-
-
-    /// <summary>
-    /// Returns true if objects are equal
-    /// </summary>
-    /// <param name="obj">Object to be compared</param>
-    /// <returns>Boolean</returns>
-    public override bool Equals(object obj)
-    {
-        // credit: http://stackoverflow.com/a/10454552/677735
-        return Equals(obj as ContentText);
-    }
-
-    /// <summary>
-    /// Returns true if ContentText instances are equal
-    /// </summary>
-    /// <param name="other">Instance of ContentText to be compared</param>
-    /// <returns>Boolean</returns>
-    public bool Equals(ContentText other)
-    {
-        // credit: http://stackoverflow.com/a/10454552/677735
-        if (other == null)
-        {
-            return false;
-        }
-
-        return true &&
-            (
-                Type == other.Type ||
-                Type != null &&
-                Type.Equals(other.Type)
-            ) &&
-            (
-                Body == other.Body ||
-                Body != null &&
-                Body.Equals(other.Body)
-            );
-    }
-
-    /// <summary>
-    /// Gets the hash code
-    /// </summary>
-    /// <returns>Hash code</returns>
-    public override int GetHashCode()
-    {
-        // credit: http://stackoverflow.com/a/263416/677735
-        unchecked // Overflow is fine, just wrap
-        {
-            int hash = 41;
-            // Suitable nullity checks etc, of course :)
-            if (Type != null)
-            {
-                hash = hash * 59 + Type.GetHashCode();
-            }
-
-            if (Body != null)
-            {
-                hash = hash * 59 + Body.GetHashCode();
-            }
-
-            return hash;
-        }
-    }
 }
