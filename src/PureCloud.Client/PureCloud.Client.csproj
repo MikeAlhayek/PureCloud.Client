@@ -86,6 +86,7 @@
     <Compile Include="Apis\TelephonyApi.cs" />
     <Compile Include="Apis\TelephonyProvidersEdgeApi.cs" />
     <Compile Include="Apis\UsageApi.cs" />
+    <Compile Include="Apis\UploadsApi.cs" />
     <Compile Include="Apis\TextbotsApi.cs" />
     <Compile Include="Apis\TokensApi.cs" />
     <Compile Include="Apis\UserApi.cs" />
@@ -165,6 +166,7 @@
     <Compile Include="Contracts\ITelephonyApi.cs" />
     <Compile Include="Contracts\ITelephonyProvidersEdgeApi.cs" />
     <Compile Include="Contracts\IUsageApi.cs" />
+    <Compile Include="Contracts\IUploadsApi.cs" />
     <Compile Include="Contracts\ITextbotsApi.cs" />
     <Compile Include="Contracts\ITokensApi.cs" />
     <Compile Include="Contracts\IUserApi.cs" />
@@ -4270,7 +4272,16 @@
     <Compile Include="Models\UpdateCoachingAppointmentRequest.Status.cs" />
     <Compile Include="Models\UpdateDraftInput.cs" />
     <Compile Include="Models\UpdateVerifierRequest.cs" />
+    <Compile Include="Models\UploadUrlRequest.cs" />
+    <Compile Include="Models\UploadUrlRequest.ServerSideEncryption.cs" />
     <Compile Include="Models\UploadUrlResponse.cs" />
+    <Compile Include="Models\GetUploadSourceUrlJobStatusResponse.cs" />
+    <Compile Include="Models\GetUploadSourceUrlJobStatusResponse.Status.cs" />
+    <Compile Include="Models\CreateUploadSourceUrlJobRequest.cs" />
+    <Compile Include="Models\CreateUploadSourceUrlJobResponse.cs" />
+    <Compile Include="Models\LearningCoverArtUploadUrlRequest.cs" />
+    <Compile Include="Models\LearningCoverArtUploadUrlRequest.ContentType.cs" />
+    <Compile Include="Models\LearningCoverArtUploadUrlRequest.ServerSideEncryption.cs" />
     <Compile Include="Models\UrlResponse.cs" />
     <Compile Include="Models\ApiUsageClientQuery.cs" />
     <Compile Include="Models\ApiUsageClientQuery.Granularity.cs" />
