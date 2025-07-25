@@ -598,6 +598,8 @@
     <Compile Include="Models\Calibration.cs" />
     <Compile Include="Models\CalibrationCreate.cs" />
     <Compile Include="Models\Call.cs" />
+    <Compile Include="Models\Callheader.cs" />
+    <Compile Include="Models\Callmessage.cs" />
     <Compile Include="Models\Callback.cs" />
     <Compile Include="Models\CallbackDirection.cs" />
     <Compile Include="Models\CallbackDisconnectType.cs" />
@@ -4173,7 +4175,9 @@
     <Compile Include="Models\Users\SearchCriteria.cs" />
     <Compile Include="Models\Users\SearchRequest.cs" />
     <Compile Include="Models\Users\SearchResult.cs" />
+    <Compile Include="Models\HomerRecord.cs" />
     <Compile Include="Models\Manager.cs" />
+    <Compile Include="Models\MediaRegions.cs" />
     <Compile Include="Models\ScimConfigResourceType.cs" />
     <Compile Include="Models\ScimConfigResourceTypeSchemaExtension.cs" />
     <Compile Include="Models\ScimConfigResourceTypesListResponse.cs" />
@@ -4204,6 +4208,10 @@
     <Compile Include="Models\ScimV2SchemaDefinition.cs" />
     <Compile Include="Models\ScimV2SchemaListResponse.cs" />
     <Compile Include="Models\ScimV2User.cs" />
+    <Compile Include="Models\SipDownloadResponse.cs" />
+    <Compile Include="Models\SipSearchResult.cs" />
+    <Compile Include="Models\SIPSearchPublicRequest.cs" />
+    <Compile Include="Models\SignedUrlResponse.cs" />
     <Compile Include="Models\SortOrderType.cs" />
     <Compile Include="Models\Users\UserState.cs" />
     <Compile Include="Models\Users\UpdateUser.cs" />
