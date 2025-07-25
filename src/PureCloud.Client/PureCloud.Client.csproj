@@ -125,6 +125,7 @@
     <Compile Include="Models\EdgeEntityListing.cs" />
     <Compile Include="Models\EdgeGroup.cs" />
     <Compile Include="Models\EdgeInterface.cs" />
+    <Compile Include="Models\Teams\TeamEntityListing.cs" />
     <Compile Include="Models\TrunkBase.cs" />
     <Compile Include="Models\TrunkBaseAssignment.cs" />
     <Compile Include="Models\DomainCertificateAuthority.cs" />
@@ -3856,7 +3857,6 @@
     <Compile Include="Models\Teams\TeamActivityResponse.cs" />
     <Compile Include="Models\Teams\TeamActivityResponse.EntityIdDimension.cs" />
     <Compile Include="Models\Teams\TeamAddMemberFailure.cs" />
-    <Compile Include="Models\Teams\TeamEntityListing.cs" />
     <Compile Include="Models\Teams\TeamMemberAddListingResponse.cs" />
     <Compile Include="Models\Teams\TeamMemberEntityListing.cs" />
     <Compile Include="Models\Teams\TeamMembers.cs" />
