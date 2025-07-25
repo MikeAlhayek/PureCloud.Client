@@ -88,6 +88,7 @@
     <Compile Include="Apis\TokensApi.cs" />
     <Compile Include="Apis\UserApi.cs" />
     <Compile Include="Apis\VoicemailApi.cs" />
+    <Compile Include="Apis\TextbotsApi.cs" />
     <Compile Include="Apis\WebChatApi.cs" />
     <Compile Include="Apis\WebMessagingApi.cs" />
     <Compile Include="Apis\WidgetsApi.cs" />
@@ -161,6 +162,7 @@
     <Compile Include="Contracts\ITelephonyApi.cs" />
     <Compile Include="Contracts\ITelephonyProvidersEdgeApi.cs" />
     <Compile Include="Contracts\ITokensApi.cs" />
+    <Compile Include="Contracts\ITextbotsApi.cs" />
     <Compile Include="Contracts\IUserApi.cs" />
     <Compile Include="Contracts\IVoicemailApi.cs" />
     <Compile Include="Contracts\IWebChatApi.cs" />
@@ -698,6 +700,7 @@
     <Compile Include="Models\BotIntent.cs" />
     <Compile Include="Models\BotList.cs" />
     <Compile Include="Models\BotSearchResponse.cs" />
+    <Compile Include="Models\BotSearchResponseBotType.cs" />
     <Compile Include="Models\BotSearchResponseEntityListing.cs" />
     <Compile Include="Models\BotSlot.cs" />
     <Compile Include="Models\BotSummary.cs" />
@@ -2973,6 +2976,8 @@
     <Compile Include="Models\PostOutputContract.cs" />
     <Compile Include="Models\PostTextMessage.cs" />
     <Compile Include="Models\PostTextRequest.cs" />
+    <Compile Include="Models\PostTextRequestBotChannels.cs" />
+    <Compile Include="Models\PostTextRequestMessagingPlatformType.cs" />
     <Compile Include="Models\PostTextResponse.cs" />
     <Compile Include="Models\PostTextResponse.BotState.cs" />
     <Compile Include="Models\PresenceDetailQueryClause.cs" />
@@ -4038,7 +4043,9 @@
     <Compile Include="Models\TextBotFlowMilestone.cs" />
     <Compile Include="Models\TextBotFlowOutcome.cs" />
     <Compile Include="Models\TextBotFlowTurnRequest.cs" />
+    <Compile Include="Models\TextBotFlowTurnRequestInputEventType.cs" />
     <Compile Include="Models\TextBotFlowTurnResponse.cs" />
+    <Compile Include="Models\TextBotFlowTurnResponseNextActionType.cs" />
     <Compile Include="Models\TextBotInputOutputData.cs" />
     <Compile Include="Models\TextBotModeConstraints.cs" />
     <Compile Include="Models\TextBotModeOutputPrompts.cs" />
