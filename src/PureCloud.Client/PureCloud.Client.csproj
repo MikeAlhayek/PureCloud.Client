@@ -212,6 +212,12 @@
     <Compile Include="Models\ActionTargetListing.cs" />
     <Compile Include="Models\ActionTemplate.cs" />
     <Compile Include="Models\ActionTemplateListing.cs" />
+    <Compile Include="Models\ActivityCode.cs" />
+    <Compile Include="Models\ActivityCodeContainer.cs" />
+    <Compile Include="Models\AddAdherenceExplanationAdminRequest.cs" />
+    <Compile Include="Models\AdherenceExplanationAsyncResponse.cs" />
+    <Compile Include="Models\AdherenceExplanationResponse.cs" />
+    <Compile Include="Models\AsyncForecastOperationResult.cs" />
     <Compile Include="Models\AppEventResponse.cs" />
     <Compile Include="Models\AppEventRequest.cs" />
     <Compile Include="Models\AcdEndDetailEventTopicAcdEndEvent.cs" />
@@ -322,6 +328,8 @@
     <Compile Include="Models\MessagingRecipient.cs" />
     <Compile Include="Models\MessagingRecipient.IdType.cs" />
     <Compile Include="Models\MessagingRecipientId.Type.cs" />
+    <Compile Include="Models\ManagementUnit.cs" />
+    <Compile Include="Models\ManagementUnitListing.cs" />
     <Compile Include="Models\NotificationTemplateBody.cs" />
     <Compile Include="Models\NotificationTemplateButton.cs" />
     <Compile Include="Models\NotificationTemplateButton.Type.cs" />
@@ -763,6 +771,13 @@
     <Compile Include="Models\BotSummary.cs" />
     <Compile Include="Models\BotVersionSummary.cs" />
     <Compile Include="Models\Browser.cs" />
+    <Compile Include="Models\BuAsyncScheduleResponse.cs" />
+    <Compile Include="Models\BuScheduleListing.cs" />
+    <Compile Include="Models\BuScheduleMetadata.cs" />
+    <Compile Include="Models\BuShortTermForecast.cs" />
+    <Compile Include="Models\BuShortTermForecastListing.cs" />
+    <Compile Include="Models\BusinessUnitListing.cs" />
+    <Compile Include="Models\BusinessUnitResponse.cs" />
     <Compile Include="Models\BulkContactsEnrichRequest.cs" />
     <Compile Include="Models\BulkContactsEnrichResponse.cs" />
     <Compile Include="Models\BulkContactsRequest.cs" />
@@ -1492,6 +1507,8 @@
     <Compile Include="Models\CopilotRule.cs" />
     <Compile Include="Models\Coretype.cs" />
     <Compile Include="Models\CoretypeListing.cs" />
+    <Compile Include="Models\CreateActivityCodeRequest.cs" />
+    <Compile Include="Models\CreateAdminTimeOffRequest.cs" />
     <Compile Include="Models\CreateBenefitAssessmentRequest.cs" />
     <Compile Include="Models\CreateCoachingAppointmentRequest.cs" />
     <Compile Include="Models\CreateGeneralProgramTestPhraseDetectedPhrase.cs" />
@@ -2204,6 +2221,7 @@
     <Compile Include="Models\GamificationScorecardChangeTopicPunctualityEvent.cs" />
     <Compile Include="Models\GamificationScorecardChangeTopicScorecardChange.cs" />
     <Compile Include="Models\GamificationStatus.cs" />
+    <Compile Include="Models\GenerateBuForecastRequest.cs" />
     <Compile Include="Models\GDPRJourneyCustomer.cs" />
     <Compile Include="Models\GDPRRequest.cs" />
     <Compile Include="Models\GDPRRequest.Status.cs" />
@@ -4321,6 +4339,7 @@
     <Compile Include="Models\UserActivityQueryPredicate.Operator.cs" />
     <Compile Include="Models\UserActivityResponse.cs" />
     <Compile Include="Models\UserActivityResponse.EntityIdDimension.cs" />
+    <Compile Include="Models\UserScheduleAdherence.cs" />
     <Compile Include="Models\UserDevice.cs" />
     <Compile Include="Models\UserDevice.Type.cs" />
     <Compile Include="Models\DirectoryUserDevicesListing.cs" />
@@ -4968,6 +4987,9 @@
     <Compile Include="Models\Workbin.cs" />
     <Compile Include="Models\WorkbinCreate.cs" />
     <Compile Include="Models\WorkbinUpdate.cs" />
+    <Compile Include="Models\WorkPlan.cs" />
+    <Compile Include="Models\WorkPlanListResponse.cs" />
+    <Compile Include="Models\CreateWorkPlan.cs" />
     <Compile Include="Models\WorkdayMetric.cs" />
     <Compile Include="Models\WorkdayMetricListing.cs" />
     <Compile Include="Models\WorkdayPeriod.cs" />
@@ -5073,6 +5095,9 @@
     <Compile Include="Models\Station.cs" />
     <Compile Include="Models\Station.Status.cs" />
     <Compile Include="Models\StationEntityListing.cs" />
+    <Compile Include="Models\TimeOffRequestList.cs" />
+    <Compile Include="Models\TimeOffRequestQueryBody.cs" />
+    <Compile Include="Models\TimeOffRequestResponse.cs" />
 
     <Compile Include="Models\TrustEntityListing.cs" />
     <Compile Include="Models\Trustee.cs" />
