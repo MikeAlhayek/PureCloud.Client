@@ -133,7 +133,7 @@ public sealed class WorkforceManagementApi : IWorkforceManagementApi
     }
 
     /// <inheritdoc />
-    public async Task<BuScheduleListing> GetSchedulesAsync(string businessUnitId, string weekId, bool? includeOnlyPublished = null, string expand = null, CancellationToken cancellationToken = default)
+    public async Task<string> GetSchedulesAsync(string businessUnitId, string weekId, bool? includeOnlyPublished = null, string expand = null, CancellationToken cancellationToken = default)
     {
         ArgumentException.ThrowIfNullOrEmpty(businessUnitId);
         ArgumentException.ThrowIfNullOrEmpty(weekId);
@@ -156,11 +156,11 @@ public sealed class WorkforceManagementApi : IWorkforceManagementApi
 
         response.EnsureSuccessStatusCode();
 
-        return await response.Content.ReadFromJsonAsync<BuScheduleListing>(_options, cancellationToken);
+        return await response.Content.ReadAsStringAsync(cancellationToken);
     }
 
     /// <inheritdoc />
-    public async Task<BuScheduleMetadata> GetScheduleAsync(string businessUnitId, string weekId, string scheduleId, string expand = null, CancellationToken cancellationToken = default)
+    public async Task<string> GetScheduleAsync(string businessUnitId, string weekId, string scheduleId, string expand = null, CancellationToken cancellationToken = default)
     {
         ArgumentException.ThrowIfNullOrEmpty(businessUnitId);
         ArgumentException.ThrowIfNullOrEmpty(weekId);
@@ -179,11 +179,11 @@ public sealed class WorkforceManagementApi : IWorkforceManagementApi
 
         response.EnsureSuccessStatusCode();
 
-        return await response.Content.ReadFromJsonAsync<BuScheduleMetadata>(_options, cancellationToken);
+        return await response.Content.ReadAsStringAsync(cancellationToken);
     }
 
     /// <inheritdoc />
-    public async Task<BuAsyncScheduleResponse> DeleteScheduleAsync(string businessUnitId, string weekId, string scheduleId, CancellationToken cancellationToken = default)
+    public async Task DeleteScheduleAsync(string businessUnitId, string weekId, string scheduleId, CancellationToken cancellationToken = default)
     {
         ArgumentException.ThrowIfNullOrEmpty(businessUnitId);
         ArgumentException.ThrowIfNullOrEmpty(weekId);
@@ -194,12 +194,10 @@ public sealed class WorkforceManagementApi : IWorkforceManagementApi
         var response = await _httpClient.DeleteAsync(uri, cancellationToken);
 
         response.EnsureSuccessStatusCode();
-
-        return await response.Content.ReadFromJsonAsync<BuAsyncScheduleResponse>(_options, cancellationToken);
     }
 
     /// <inheritdoc />
-    public async Task<BuShortTermForecastListing> GetForecastsAsync(string businessUnitId, string weekDateId, CancellationToken cancellationToken = default)
+    public async Task<string> GetForecastsAsync(string businessUnitId, string weekDateId, CancellationToken cancellationToken = default)
     {
         ArgumentException.ThrowIfNullOrEmpty(businessUnitId);
         ArgumentException.ThrowIfNullOrEmpty(weekDateId);
@@ -210,7 +208,7 @@ public sealed class WorkforceManagementApi : IWorkforceManagementApi
 
         response.EnsureSuccessStatusCode();
 
-        return await response.Content.ReadFromJsonAsync<BuShortTermForecastListing>(_options, cancellationToken);
+        return await response.Content.ReadAsStringAsync(cancellationToken);
     }
 
     /// <inheritdoc />

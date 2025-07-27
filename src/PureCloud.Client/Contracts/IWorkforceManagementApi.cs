@@ -43,24 +43,24 @@ public interface IWorkforceManagementApi
     Task DeleteActivityCodeAsync(string businessUnitId, string activityCodeId, CancellationToken cancellationToken = default);
 
     /// <summary>
-    /// Get schedules for a week
+    /// Get schedules for a week - simplified return type
     /// </summary>
-    Task<BuScheduleListing> GetSchedulesAsync(string businessUnitId, string weekId, bool? includeOnlyPublished = null, string expand = null, CancellationToken cancellationToken = default);
+    Task<string> GetSchedulesAsync(string businessUnitId, string weekId, bool? includeOnlyPublished = null, string expand = null, CancellationToken cancellationToken = default);
 
     /// <summary>
-    /// Get a schedule
+    /// Get a schedule - simplified return type
     /// </summary>
-    Task<BuScheduleMetadata> GetScheduleAsync(string businessUnitId, string weekId, string scheduleId, string expand = null, CancellationToken cancellationToken = default);
+    Task<string> GetScheduleAsync(string businessUnitId, string weekId, string scheduleId, string expand = null, CancellationToken cancellationToken = default);
 
     /// <summary>
     /// Delete a schedule
     /// </summary>
-    Task<BuAsyncScheduleResponse> DeleteScheduleAsync(string businessUnitId, string weekId, string scheduleId, CancellationToken cancellationToken = default);
+    Task DeleteScheduleAsync(string businessUnitId, string weekId, string scheduleId, CancellationToken cancellationToken = default);
 
     /// <summary>
-    /// Get short term forecasts
+    /// Get short term forecasts - simplified return type
     /// </summary>
-    Task<BuShortTermForecastListing> GetForecastsAsync(string businessUnitId, string weekDateId, CancellationToken cancellationToken = default);
+    Task<string> GetForecastsAsync(string businessUnitId, string weekDateId, CancellationToken cancellationToken = default);
 
     /// <summary>
     /// Delete a short term forecast
