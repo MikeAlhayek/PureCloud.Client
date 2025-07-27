@@ -23,59 +23,24 @@ public interface IWorkforceManagementApi
     Task DeleteBusinessUnitAsync(string businessUnitId, CancellationToken cancellationToken = default);
 
     /// <summary>
-    /// Get management units
-    /// </summary>
-    Task<ManagementUnitListing> GetManagementUnitsAsync(int? pageSize = null, int? pageNumber = null, string expand = null, string feature = null, string divisionId = null, CancellationToken cancellationToken = default);
-
-    /// <summary>
-    /// Get a management unit
-    /// </summary>
-    Task<ManagementUnit> GetManagementUnitAsync(string managementUnitId, List<string> expand = null, CancellationToken cancellationToken = default);
-
-    /// <summary>
     /// Delete a management unit
     /// </summary>
     Task DeleteManagementUnitAsync(string managementUnitId, CancellationToken cancellationToken = default);
 
     /// <summary>
-    /// Get adherence data for users
+    /// Get activity codes
     /// </summary>
-    Task<List<UserScheduleAdherence>> GetAdherenceAsync(List<string> userId, CancellationToken cancellationToken = default);
+    Task<ActivityCodeContainer> GetActivityCodesAsync(string businessUnitId, CancellationToken cancellationToken = default);
 
     /// <summary>
-    /// Get adherence explanation
+    /// Create an activity code
     /// </summary>
-    Task<AdherenceExplanationResponse> GetAdherenceExplanationAsync(string explanationId, CancellationToken cancellationToken = default);
+    Task<ActivityCode> CreateActivityCodeAsync(string businessUnitId, CreateActivityCodeRequest body, CancellationToken cancellationToken = default);
 
     /// <summary>
-    /// Create adherence explanation
+    /// Delete an activity code
     /// </summary>
-    Task<AdherenceExplanationAsyncResponse> CreateAdherenceExplanationAsync(string agentId, AddAdherenceExplanationAdminRequest body, CancellationToken cancellationToken = default);
-
-    /// <summary>
-    /// Get work plans
-    /// </summary>
-    Task<WorkPlanListResponse> GetWorkPlansAsync(string managementUnitId, List<string> expand = null, List<string> exclude = null, CancellationToken cancellationToken = default);
-
-    /// <summary>
-    /// Get a work plan
-    /// </summary>
-    Task<WorkPlan> GetWorkPlanAsync(string managementUnitId, string workPlanId, List<string> expand = null, CancellationToken cancellationToken = default);
-
-    /// <summary>
-    /// Create a work plan
-    /// </summary>
-    Task<WorkPlan> CreateWorkPlanAsync(string managementUnitId, CreateWorkPlan body, string validationMode = null, CancellationToken cancellationToken = default);
-
-    /// <summary>
-    /// Update a work plan
-    /// </summary>
-    Task<WorkPlan> UpdateWorkPlanAsync(string managementUnitId, string workPlanId, WorkPlan body, string validationMode = null, CancellationToken cancellationToken = default);
-
-    /// <summary>
-    /// Delete a work plan
-    /// </summary>
-    Task DeleteWorkPlanAsync(string managementUnitId, string workPlanId, CancellationToken cancellationToken = default);
+    Task DeleteActivityCodeAsync(string businessUnitId, string activityCodeId, CancellationToken cancellationToken = default);
 
     /// <summary>
     /// Get schedules for a week
@@ -98,42 +63,12 @@ public interface IWorkforceManagementApi
     Task<BuShortTermForecastListing> GetForecastsAsync(string businessUnitId, string weekDateId, CancellationToken cancellationToken = default);
 
     /// <summary>
-    /// Get a short term forecast
-    /// </summary>
-    Task<BuShortTermForecast> GetForecastAsync(string businessUnitId, string weekDateId, string forecastId, List<string> expand = null, CancellationToken cancellationToken = default);
-
-    /// <summary>
     /// Delete a short term forecast
     /// </summary>
     Task DeleteForecastAsync(string businessUnitId, string weekDateId, string forecastId, CancellationToken cancellationToken = default);
 
     /// <summary>
-    /// Create a short term forecast
-    /// </summary>
-    Task<AsyncForecastOperationResult> CreateForecastAsync(string businessUnitId, string weekDateId, GenerateBuForecastRequest body, bool? forceAsync = null, CancellationToken cancellationToken = default);
-
-    /// <summary>
-    /// Get time off requests
-    /// </summary>
-    Task<TimeOffRequestList> GetTimeOffRequestsAsync(string managementUnitId, bool? forceDownloadService = null, TimeOffRequestQueryBody body = null, CancellationToken cancellationToken = default);
-
-    /// <summary>
     /// Create a time off request
     /// </summary>
-    Task<TimeOffRequestResponse> CreateTimeOffRequestAsync(string managementUnitId, CreateAdminTimeOffRequest body, CancellationToken cancellationToken = default);
-
-    /// <summary>
-    /// Get activity codes
-    /// </summary>
-    Task<ActivityCodeContainer> GetActivityCodesAsync(string businessUnitId, CancellationToken cancellationToken = default);
-
-    /// <summary>
-    /// Create an activity code
-    /// </summary>
-    Task<ActivityCode> CreateActivityCodeAsync(string businessUnitId, CreateActivityCodeRequest body, CancellationToken cancellationToken = default);
-
-    /// <summary>
-    /// Delete an activity code
-    /// </summary>
-    Task DeleteActivityCodeAsync(string businessUnitId, string activityCodeId, CancellationToken cancellationToken = default);
+    Task<string> CreateTimeOffRequestAsync(string managementUnitId, CreateAdminTimeOffRequest body, CancellationToken cancellationToken = default);
 }
