@@ -84,7 +84,7 @@ public partial class BuSchedulingSettingsResponse : IEquatable<BuSchedulingSetti
     /// <param name="AllowWorkPlanPerMinuteGranularity">Indicates whether or not per minute granularity for scheduling will be enabled for this business unit. Defaults to false..</param>
     /// <param name="ActivitySmoothingType">The activity smoothing type for schedule generation in this business unit (required).</param>
     /// <param name="InduceScheduleVariability">Indicates whether to provide variability in schedule generation (required).</param>
-    public BuSchedulingSettingsResponse(List<SchedulerMessageTypeSeverity> MessageSeverities = null, List<SyncTimeOffPropertiesEnum> SyncTimeOffProperties = null, WfmServiceGoalImpactSettings ServiceGoalImpact = null, bool? AllowWorkPlanPerMinuteGranularity = null, ActivitySmoothingTypeEnum? ActivitySmoothingType = null, bool? InduceScheduleVariability = null)
+    public BuSchedulingSettingsResponse(List<SchedulerMessageTypeSeverity> MessageSeverities = null, List<SyncTimeOffPropertiesEnum> SyncTimeOffProperties = null, object ServiceGoalImpact = null, bool? AllowWorkPlanPerMinuteGranularity = null, ActivitySmoothingTypeEnum? ActivitySmoothingType = null, bool? InduceScheduleVariability = null)
     {
         this.MessageSeverities = MessageSeverities;
         this.SyncTimeOffProperties = SyncTimeOffProperties;
@@ -116,11 +116,11 @@ public partial class BuSchedulingSettingsResponse : IEquatable<BuSchedulingSetti
 
 
     /// <summary>
-    /// Configures the max percent increase and decrease of service goals for this business unit
+    /// Configures the max percent increase and decrease of service goals for this business unit (simplified)
     /// </summary>
-    /// <value>Configures the max percent increase and decrease of service goals for this business unit</value>
+    /// <value>Configures the max percent increase and decrease of service goals for this business unit (simplified)</value>
     [JsonPropertyName("serviceGoalImpact")]
-    public WfmServiceGoalImpactSettings ServiceGoalImpact { get; set; }
+    public object ServiceGoalImpact { get; set; }
 
 
 

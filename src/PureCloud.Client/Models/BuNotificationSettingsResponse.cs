@@ -12,8 +12,8 @@ public partial class BuNotificationSettingsResponse : IEquatable<BuNotificationS
     /// <summary>
     /// Initializes a new instance of the <see cref="BuNotificationSettingsResponse" /> class.
     /// </summary>
-    /// <param name="Scheduling">Schedule notification settings.</param>
-    public BuNotificationSettingsResponse(BuScheduleNotificationsSettingsResponse Scheduling = null)
+    /// <param name="Scheduling">Schedule notification settings (simplified).</param>
+    public BuNotificationSettingsResponse(object Scheduling = null)
     {
         this.Scheduling = Scheduling;
 
@@ -22,11 +22,11 @@ public partial class BuNotificationSettingsResponse : IEquatable<BuNotificationS
 
 
     /// <summary>
-    /// Schedule notification settings
+    /// Schedule notification settings (simplified)
     /// </summary>
-    /// <value>Schedule notification settings</value>
+    /// <value>Schedule notification settings (simplified)</value>
     [JsonPropertyName("scheduling")]
-    public BuScheduleNotificationsSettingsResponse Scheduling { get; set; }
+    public object Scheduling { get; set; }
 
 
     /// <summary>

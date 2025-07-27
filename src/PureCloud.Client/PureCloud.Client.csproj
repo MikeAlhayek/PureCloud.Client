@@ -777,6 +777,9 @@
     <Compile Include="Models\BuShortTermForecastReference.cs" />
     <Compile Include="Models\ScheduleGenerationResultSummary.cs" />
     <Compile Include="Models\BuManagementUnitScheduleSummary.cs" />
+    <Compile Include="Models\ManagementUnitReference.cs" />
+    <Compile Include="Models\SchedulerMessageTypeSeverity.cs" />
+    <Compile Include="Models\SchedulerMessageSeverityCount.cs" />
     <Compile Include="Models\BuAsyncScheduleResponseStatus.cs" />
     <Compile Include="Models\BulkContactsEnrichRequest.cs" />
     <Compile Include="Models\BulkContactsEnrichResponse.cs" />
