@@ -96,6 +96,7 @@
     <Compile Include="Apis\WebChatApi.cs" />
     <Compile Include="Apis\WebMessagingApi.cs" />
     <Compile Include="Apis\WidgetsApi.cs" />
+    <Compile Include="Apis\WorkforceManagementApi.cs" />
     <Compile Include="Configuration.cs" />
     <Compile Include="Contracts\IAgentAssistantsApi.cs" />
     <Compile Include="Contracts\IAgentCopilotApi.cs" />
@@ -176,6 +177,7 @@
     <Compile Include="Contracts\IWebChatApi.cs" />
     <Compile Include="Contracts\IWebMessagingApi.cs" />
     <Compile Include="Contracts\IWidgetsApi.cs" />
+    <Compile Include="Contracts\IWorkforceManagementApi.cs" />
     <Compile Include="Extensions\AuthExtensions.cs" />
     <Compile Include="Extensions\NotificationHandlerExtensions.cs" />
     <Compile Include="Extensions\ServiceCollectionExtensions.cs" />

@@ -225,6 +225,8 @@ public static class ServiceCollectionExtensions
 
         services.TryAddScoped<IWidgetsApi, WidgetsApi>();
 
+        services.TryAddScoped<IWorkforceManagementApi, WorkforceManagementApi>();
+
         return services;
     }
 
