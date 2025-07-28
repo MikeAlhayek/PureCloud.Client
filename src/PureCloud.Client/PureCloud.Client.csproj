@@ -771,6 +771,8 @@
     <Compile Include="Models\BusinessUnitResponse.cs" />
     <Compile Include="Models\BusinessUnitSettingsResponse.cs" />
     <Compile Include="Models\BuScheduleMetadata.cs" />
+    <Compile Include="Models\BuScheduleListItem.cs" />
+    <Compile Include="Models\BuScheduleListing.cs" />
     <Compile Include="Models\BuShortTermForecastingSettings.cs" />
     <Compile Include="Models\BuSchedulingSettingsResponse.cs" />
     <Compile Include="Models\BuNotificationSettingsResponse.cs" />

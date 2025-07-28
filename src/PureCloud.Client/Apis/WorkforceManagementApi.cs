@@ -52,7 +52,7 @@ public sealed class WorkforceManagementApi : IWorkforceManagementApi
 
         var parameters = new NameValueCollection();
 
-        if (expand != null && expand.Any())
+        if (expand != null)
         {
             foreach (var item in expand)
             {
@@ -136,7 +136,7 @@ public sealed class WorkforceManagementApi : IWorkforceManagementApi
     }
 
     /// <inheritdoc />
-    public async Task<string> GetSchedulesAsync(string businessUnitId, string weekId, bool? includeOnlyPublished = null, string expand = null, CancellationToken cancellationToken = default)
+    public async Task<BuScheduleListing> GetSchedulesAsync(string businessUnitId, string weekId, bool? includeOnlyPublished = null, string expand = null, CancellationToken cancellationToken = default)
     {
         ArgumentException.ThrowIfNullOrEmpty(businessUnitId);
         ArgumentException.ThrowIfNullOrEmpty(weekId);
@@ -159,7 +159,7 @@ public sealed class WorkforceManagementApi : IWorkforceManagementApi
 
         response.EnsureSuccessStatusCode();
 
-        return await response.Content.ReadAsStringAsync(cancellationToken);
+        return await response.Content.ReadFromJsonAsync<BuScheduleListing>(_options, cancellationToken) ?? throw new JsonException("Failed to deserialize response.");
     }
 
     /// <inheritdoc />

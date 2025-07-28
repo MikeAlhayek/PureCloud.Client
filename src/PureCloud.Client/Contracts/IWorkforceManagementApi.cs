@@ -68,15 +68,15 @@ public interface IWorkforceManagementApi
     Task<bool> DeleteActivityCodeAsync(string businessUnitId, string activityCodeId, CancellationToken cancellationToken = default);
 
     /// <summary>
-    /// Get schedules for a week - simplified return type
+    /// Get schedules for a week
     /// </summary>
     /// <param name="businessUnitId">The ID of the business unit</param>
     /// <param name="weekId">The week ID</param>
     /// <param name="includeOnlyPublished">Include only published schedules</param>
     /// <param name="expand">Expand parameter</param>
     /// <param name="cancellationToken">Cancellation token</param>
-    /// <returns>Schedules as JSON string</returns>
-    Task<string> GetSchedulesAsync(string businessUnitId, string weekId, bool? includeOnlyPublished = null, string expand = null, CancellationToken cancellationToken = default);
+    /// <returns>Schedule listing</returns>
+    Task<BuScheduleListing> GetSchedulesAsync(string businessUnitId, string weekId, bool? includeOnlyPublished = null, string expand = null, CancellationToken cancellationToken = default);
 
     /// <summary>
     /// Get a schedule - simplified return type
