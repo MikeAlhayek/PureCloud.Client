@@ -178,6 +178,73 @@ public sealed class WorkforceManagementApi : IWorkforceManagementApi
     }
 
     /// <inheritdoc />
+    public async Task<string> GetWorkPlansAsync(string managementUnitId, List<string> expand = null, List<string> exclude = null, CancellationToken cancellationToken = default)
+    {
+        ArgumentException.ThrowIfNullOrEmpty(managementUnitId);
+
+        var parameters = new NameValueCollection();
+
+        if (expand != null)
+        {
+            foreach (var item in expand)
+            {
+                parameters.Add("expand", item);
+            }
+        }
+
+        if (exclude != null)
+        {
+            foreach (var item in exclude)
+            {
+                parameters.Add("exclude", item);
+            }
+        }
+
+        var uri = UriHelper.GetUri($"api/v2/workforcemanagement/managementunits/{Uri.EscapeDataString(managementUnitId)}/workplans", parameters);
+
+        var response = await _httpClient.GetAsync(uri, cancellationToken);
+
+        response.EnsureSuccessStatusCode();
+
+        return await response.Content.ReadAsStringAsync(cancellationToken);
+    }
+
+    /// <inheritdoc />
+    public async Task<string> CreateWorkPlanAsync(string managementUnitId, string body, string validationMode = null, CancellationToken cancellationToken = default)
+    {
+        ArgumentException.ThrowIfNullOrEmpty(managementUnitId);
+        ArgumentNullException.ThrowIfNull(body);
+
+        var parameters = new NameValueCollection();
+
+        if (validationMode != null)
+        {
+            parameters.Add("validationMode", UriHelper.ParameterToString(validationMode));
+        }
+
+        var uri = UriHelper.GetUri($"api/v2/workforcemanagement/managementunits/{Uri.EscapeDataString(managementUnitId)}/workplans", parameters);
+
+        var content = new StringContent(body, System.Text.Encoding.UTF8, "application/json");
+        var response = await _httpClient.PostAsync(uri, content, cancellationToken);
+
+        response.EnsureSuccessStatusCode();
+
+        return await response.Content.ReadAsStringAsync(cancellationToken);
+    }
+
+    /// <inheritdoc />
+    public async Task<string> GetMyManagementUnitAsync(CancellationToken cancellationToken = default)
+    {
+        var uri = "api/v2/workforcemanagement/agents/me/managementunit";
+
+        var response = await _httpClient.GetAsync(uri, cancellationToken);
+
+        response.EnsureSuccessStatusCode();
+
+        return await response.Content.ReadAsStringAsync(cancellationToken);
+    }
+
+    /// <inheritdoc />
     public async Task<ActivityCodeContainer> GetActivityCodesAsync(string businessUnitId, CancellationToken cancellationToken = default)
     {
         ArgumentException.ThrowIfNullOrEmpty(businessUnitId);

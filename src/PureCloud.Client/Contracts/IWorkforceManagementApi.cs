@@ -71,6 +71,33 @@ public interface IWorkforceManagementApi
     Task<string> GetAdherenceAsync(List<string> userId, CancellationToken cancellationToken = default);
 
     /// <summary>
+    /// Get work plans for a management unit
+    /// </summary>
+    /// <param name="managementUnitId">The ID of the management unit</param>
+    /// <param name="expand">Include to access additional data on the work plans</param>
+    /// <param name="exclude">Exclude specific data from the work plans</param>
+    /// <param name="cancellationToken">Cancellation token</param>
+    /// <returns>Work plan list as JSON string (simplified for now)</returns>
+    Task<string> GetWorkPlansAsync(string managementUnitId, List<string> expand = null, List<string> exclude = null, CancellationToken cancellationToken = default);
+
+    /// <summary>
+    /// Create a new work plan
+    /// </summary>
+    /// <param name="managementUnitId">The ID of the management unit</param>
+    /// <param name="body">The work plan creation request as JSON string</param>
+    /// <param name="validationMode">Validation mode</param>
+    /// <param name="cancellationToken">Cancellation token</param>
+    /// <returns>Created work plan as JSON string (simplified for now)</returns>
+    Task<string> CreateWorkPlanAsync(string managementUnitId, string body, string validationMode = null, CancellationToken cancellationToken = default);
+
+    /// <summary>
+    /// Get the management unit to which the currently logged in agent belongs
+    /// </summary>
+    /// <param name="cancellationToken">Cancellation token</param>
+    /// <returns>Agent management unit reference as JSON string (simplified for now)</returns>
+    Task<string> GetMyManagementUnitAsync(CancellationToken cancellationToken = default);
+
+    /// <summary>
     /// Get activity codes
     /// </summary>
     /// <param name="businessUnitId">The ID of the business unit</param>
