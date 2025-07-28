@@ -7,7 +7,7 @@ namespace PureCloud.Client.Models;
 /// WebDeploymentHeadlessMode
 /// </summary>
 
-public partial class WebDeploymentHeadlessMode : IEquatable<WebDeploymentHeadlessMode>
+public sealed class WebDeploymentHeadlessMode : IEquatable<WebDeploymentHeadlessMode>
 {
     /// <summary>
     /// Initializes a new instance of the <see cref="WebDeploymentHeadlessMode" /> class.

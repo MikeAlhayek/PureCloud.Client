@@ -7,7 +7,7 @@ namespace PureCloud.Client.Models;
 /// WebDeploymentFlowEntityRef
 /// </summary>
 
-public partial class WebDeploymentFlowEntityRef : IEquatable<WebDeploymentFlowEntityRef>
+public sealed class WebDeploymentFlowEntityRef : IEquatable<WebDeploymentFlowEntityRef>
 {
 
     /// <summary>

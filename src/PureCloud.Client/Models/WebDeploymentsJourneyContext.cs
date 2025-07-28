@@ -7,7 +7,7 @@ namespace PureCloud.Client.Models;
 /// WebDeploymentsJourneyContext
 /// </summary>
 
-public partial class WebDeploymentsJourneyContext : IEquatable<WebDeploymentsJourneyContext>
+public sealed class WebDeploymentsJourneyContext : IEquatable<WebDeploymentsJourneyContext>
 {
     /// <summary>
     /// Initializes a new instance of the <see cref="WebDeploymentsJourneyContext" /> class.

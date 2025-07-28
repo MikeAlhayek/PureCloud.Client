@@ -7,7 +7,7 @@ namespace PureCloud.Client.Models;
 /// Details about the active configuration on a deployment
 /// </summary>
 
-public partial class WebDeploymentActiveConfigurationOnDeployment : IEquatable<WebDeploymentActiveConfigurationOnDeployment>
+public sealed class WebDeploymentActiveConfigurationOnDeployment : IEquatable<WebDeploymentActiveConfigurationOnDeployment>
 {
     /// <summary>
     /// Initializes a new instance of the <see cref="WebDeploymentActiveConfigurationOnDeployment" /> class.

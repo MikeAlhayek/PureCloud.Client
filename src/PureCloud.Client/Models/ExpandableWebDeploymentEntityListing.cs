@@ -7,7 +7,7 @@ namespace PureCloud.Client.Models;
 /// ExpandableWebDeploymentEntityListing
 /// </summary>
 
-public partial class ExpandableWebDeploymentEntityListing : IEquatable<ExpandableWebDeploymentEntityListing>
+public sealed class ExpandableWebDeploymentEntityListing : IEquatable<ExpandableWebDeploymentEntityListing>
 {
     /// <summary>
     /// Initializes a new instance of the <see cref="ExpandableWebDeploymentEntityListing" /> class.

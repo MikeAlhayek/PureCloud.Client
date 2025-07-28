@@ -7,7 +7,7 @@ namespace PureCloud.Client.Models;
 /// WebDeploymentConfigurationVersionEntityRef
 /// </summary>
 
-public partial class WebDeploymentConfigurationVersionEntityRef : IEquatable<WebDeploymentConfigurationVersionEntityRef>
+public sealed class WebDeploymentConfigurationVersionEntityRef : IEquatable<WebDeploymentConfigurationVersionEntityRef>
 {
 
     /// <summary>

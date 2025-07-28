@@ -7,7 +7,7 @@ namespace PureCloud.Client.Models;
 /// WebDeploymentConfigurationVersionEntityListing
 /// </summary>
 
-public partial class WebDeploymentConfigurationVersionEntityListing : IEquatable<WebDeploymentConfigurationVersionEntityListing>
+public sealed class WebDeploymentConfigurationVersionEntityListing : IEquatable<WebDeploymentConfigurationVersionEntityListing>
 {
     /// <summary>
     /// Initializes a new instance of the <see cref="WebDeploymentConfigurationVersionEntityListing" /> class.

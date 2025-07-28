@@ -7,7 +7,7 @@ namespace PureCloud.Client.Models;
 /// WebDeploymentsOAuthRequestParameters
 /// </summary>
 
-public partial class WebDeploymentsOAuthRequestParameters : IEquatable<WebDeploymentsOAuthRequestParameters>
+public sealed class WebDeploymentsOAuthRequestParameters : IEquatable<WebDeploymentsOAuthRequestParameters>
 {
 
     /// <summary>

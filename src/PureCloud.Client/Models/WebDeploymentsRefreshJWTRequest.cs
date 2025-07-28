@@ -7,7 +7,7 @@ namespace PureCloud.Client.Models;
 /// WebDeploymentsRefreshJWTRequest
 /// </summary>
 
-public partial class WebDeploymentsRefreshJWTRequest : IEquatable<WebDeploymentsRefreshJWTRequest>
+public sealed class WebDeploymentsRefreshJWTRequest : IEquatable<WebDeploymentsRefreshJWTRequest>
 {
 
     /// <summary>

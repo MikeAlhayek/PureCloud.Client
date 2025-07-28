@@ -8,7 +8,7 @@ namespace PureCloud.Client.Models;
 /// Details about the configuration version of a Web Deployment
 /// </summary>
 
-public partial class WebDeploymentConfigurationVersion : IEquatable<WebDeploymentConfigurationVersion>
+public sealed class WebDeploymentConfigurationVersion : IEquatable<WebDeploymentConfigurationVersion>
 {
     /// <summary>
     /// The current status of the configuration version

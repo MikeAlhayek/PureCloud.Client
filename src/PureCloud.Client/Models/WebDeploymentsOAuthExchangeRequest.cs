@@ -7,7 +7,7 @@ namespace PureCloud.Client.Models;
 /// WebDeploymentsOAuthExchangeRequest
 /// </summary>
 
-public partial class WebDeploymentsOAuthExchangeRequest : IEquatable<WebDeploymentsOAuthExchangeRequest>
+public sealed class WebDeploymentsOAuthExchangeRequest : IEquatable<WebDeploymentsOAuthExchangeRequest>
 {
 
     /// <summary>

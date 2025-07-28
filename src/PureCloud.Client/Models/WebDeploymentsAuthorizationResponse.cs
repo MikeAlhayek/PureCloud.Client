@@ -7,7 +7,7 @@ namespace PureCloud.Client.Models;
 /// WebDeploymentsAuthorizationResponse
 /// </summary>
 
-public partial class WebDeploymentsAuthorizationResponse : IEquatable<WebDeploymentsAuthorizationResponse>
+public sealed class WebDeploymentsAuthorizationResponse : IEquatable<WebDeploymentsAuthorizationResponse>
 {
     /// <summary>
     /// Initializes a new instance of the <see cref="WebDeploymentsAuthorizationResponse" /> class.

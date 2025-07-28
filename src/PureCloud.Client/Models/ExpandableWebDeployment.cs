@@ -8,7 +8,7 @@ namespace PureCloud.Client.Models;
 /// Details about a Web Deployment
 /// </summary>
 
-public partial class ExpandableWebDeployment : IEquatable<ExpandableWebDeployment>
+public sealed class ExpandableWebDeployment : IEquatable<ExpandableWebDeployment>
 {
     /// <summary>
     /// The current status of the deployment
