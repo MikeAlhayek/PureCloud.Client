@@ -22,9 +22,9 @@ public partial class BuNotificationSettingsResponse : IEquatable<BuNotificationS
 
 
     /// <summary>
-    /// Schedule notification settings (simplified)
+    /// Schedule notification settings (temporarily simplified)
     /// </summary>
-    /// <value>Schedule notification settings (simplified)</value>
+    /// <value>Schedule notification settings (temporarily simplified)</value>
     [JsonPropertyName("scheduling")]
     public object Scheduling { get; set; }
 

@@ -54,10 +54,13 @@ public sealed class WorkforceManagementApi : IWorkforceManagementApi
 
         if (expand != null && expand.Any())
         {
-            parameters.Add("expand", string.Join(",", expand));
+            foreach (var item in expand)
+            {
+                parameters.Add("expand", item);
+            }
         }
 
-        var uri = UriHelper.GetUri($"api/v2/workforcemanagement/businessunits/{businessUnitId}", parameters);
+        var uri = UriHelper.GetUri($"api/v2/workforcemanagement/businessunits/{Uri.EscapeDataString(businessUnitId)}", parameters);
 
         var response = await _httpClient.GetAsync(uri, cancellationToken);
 
@@ -67,27 +70,27 @@ public sealed class WorkforceManagementApi : IWorkforceManagementApi
     }
 
     /// <inheritdoc />
-    public async Task DeleteBusinessUnitAsync(string businessUnitId, CancellationToken cancellationToken = default)
+    public async Task<bool> DeleteBusinessUnitAsync(string businessUnitId, CancellationToken cancellationToken = default)
     {
         ArgumentException.ThrowIfNullOrEmpty(businessUnitId);
 
-        var uri = UriHelper.GetUri($"api/v2/workforcemanagement/businessunits/{businessUnitId}", null);
+        var uri = $"api/v2/workforcemanagement/businessunits/{Uri.EscapeDataString(businessUnitId)}";
 
         var response = await _httpClient.DeleteAsync(uri, cancellationToken);
 
-        response.EnsureSuccessStatusCode();
+        return response.IsSuccessStatusCode;
     }
 
     /// <inheritdoc />
-    public async Task DeleteManagementUnitAsync(string managementUnitId, CancellationToken cancellationToken = default)
+    public async Task<bool> DeleteManagementUnitAsync(string managementUnitId, CancellationToken cancellationToken = default)
     {
         ArgumentException.ThrowIfNullOrEmpty(managementUnitId);
 
-        var uri = UriHelper.GetUri($"api/v2/workforcemanagement/managementunits/{managementUnitId}", null);
+        var uri = $"api/v2/workforcemanagement/managementunits/{Uri.EscapeDataString(managementUnitId)}";
 
         var response = await _httpClient.DeleteAsync(uri, cancellationToken);
 
-        response.EnsureSuccessStatusCode();
+        return response.IsSuccessStatusCode;
     }
 
     /// <inheritdoc />
@@ -95,7 +98,7 @@ public sealed class WorkforceManagementApi : IWorkforceManagementApi
     {
         ArgumentException.ThrowIfNullOrEmpty(businessUnitId);
 
-        var uri = UriHelper.GetUri($"api/v2/workforcemanagement/businessunits/{businessUnitId}/activitycodes", null);
+        var uri = $"api/v2/workforcemanagement/businessunits/{Uri.EscapeDataString(businessUnitId)}/activitycodes";
 
         var response = await _httpClient.GetAsync(uri, cancellationToken);
 
@@ -110,7 +113,7 @@ public sealed class WorkforceManagementApi : IWorkforceManagementApi
         ArgumentException.ThrowIfNullOrEmpty(businessUnitId);
         ArgumentNullException.ThrowIfNull(body);
 
-        var uri = UriHelper.GetUri($"api/v2/workforcemanagement/businessunits/{businessUnitId}/activitycodes", null);
+        var uri = $"api/v2/workforcemanagement/businessunits/{Uri.EscapeDataString(businessUnitId)}/activitycodes";
 
         var response = await _httpClient.PostAsJsonAsync(uri, body, _options, cancellationToken);
 
@@ -120,16 +123,16 @@ public sealed class WorkforceManagementApi : IWorkforceManagementApi
     }
 
     /// <inheritdoc />
-    public async Task DeleteActivityCodeAsync(string businessUnitId, string activityCodeId, CancellationToken cancellationToken = default)
+    public async Task<bool> DeleteActivityCodeAsync(string businessUnitId, string activityCodeId, CancellationToken cancellationToken = default)
     {
         ArgumentException.ThrowIfNullOrEmpty(businessUnitId);
         ArgumentException.ThrowIfNullOrEmpty(activityCodeId);
 
-        var uri = UriHelper.GetUri($"api/v2/workforcemanagement/businessunits/{businessUnitId}/activitycodes/{activityCodeId}", null);
+        var uri = $"api/v2/workforcemanagement/businessunits/{Uri.EscapeDataString(businessUnitId)}/activitycodes/{Uri.EscapeDataString(activityCodeId)}";
 
         var response = await _httpClient.DeleteAsync(uri, cancellationToken);
 
-        response.EnsureSuccessStatusCode();
+        return response.IsSuccessStatusCode;
     }
 
     /// <inheritdoc />
@@ -150,7 +153,7 @@ public sealed class WorkforceManagementApi : IWorkforceManagementApi
             parameters.Add("expand", UriHelper.ParameterToString(expand));
         }
 
-        var uri = UriHelper.GetUri($"api/v2/workforcemanagement/businessunits/{businessUnitId}/weeks/{weekId}/schedules", parameters);
+        var uri = UriHelper.GetUri($"api/v2/workforcemanagement/businessunits/{Uri.EscapeDataString(businessUnitId)}/weeks/{Uri.EscapeDataString(weekId)}/schedules", parameters);
 
         var response = await _httpClient.GetAsync(uri, cancellationToken);
 
@@ -173,7 +176,7 @@ public sealed class WorkforceManagementApi : IWorkforceManagementApi
             parameters.Add("expand", UriHelper.ParameterToString(expand));
         }
 
-        var uri = UriHelper.GetUri($"api/v2/workforcemanagement/businessunits/{businessUnitId}/weeks/{weekId}/schedules/{scheduleId}", parameters);
+        var uri = UriHelper.GetUri($"api/v2/workforcemanagement/businessunits/{Uri.EscapeDataString(businessUnitId)}/weeks/{Uri.EscapeDataString(weekId)}/schedules/{Uri.EscapeDataString(scheduleId)}", parameters);
 
         var response = await _httpClient.GetAsync(uri, cancellationToken);
 
@@ -183,17 +186,17 @@ public sealed class WorkforceManagementApi : IWorkforceManagementApi
     }
 
     /// <inheritdoc />
-    public async Task DeleteScheduleAsync(string businessUnitId, string weekId, string scheduleId, CancellationToken cancellationToken = default)
+    public async Task<bool> DeleteScheduleAsync(string businessUnitId, string weekId, string scheduleId, CancellationToken cancellationToken = default)
     {
         ArgumentException.ThrowIfNullOrEmpty(businessUnitId);
         ArgumentException.ThrowIfNullOrEmpty(weekId);
         ArgumentException.ThrowIfNullOrEmpty(scheduleId);
 
-        var uri = UriHelper.GetUri($"api/v2/workforcemanagement/businessunits/{businessUnitId}/weeks/{weekId}/schedules/{scheduleId}", null);
+        var uri = $"api/v2/workforcemanagement/businessunits/{Uri.EscapeDataString(businessUnitId)}/weeks/{Uri.EscapeDataString(weekId)}/schedules/{Uri.EscapeDataString(scheduleId)}";
 
         var response = await _httpClient.DeleteAsync(uri, cancellationToken);
 
-        response.EnsureSuccessStatusCode();
+        return response.IsSuccessStatusCode;
     }
 
     /// <inheritdoc />
@@ -202,7 +205,7 @@ public sealed class WorkforceManagementApi : IWorkforceManagementApi
         ArgumentException.ThrowIfNullOrEmpty(businessUnitId);
         ArgumentException.ThrowIfNullOrEmpty(weekDateId);
 
-        var uri = UriHelper.GetUri($"api/v2/workforcemanagement/businessunits/{businessUnitId}/weeks/{weekDateId}/shorttermforecasts", null);
+        var uri = $"api/v2/workforcemanagement/businessunits/{Uri.EscapeDataString(businessUnitId)}/weeks/{Uri.EscapeDataString(weekDateId)}/shorttermforecasts";
 
         var response = await _httpClient.GetAsync(uri, cancellationToken);
 
@@ -212,17 +215,17 @@ public sealed class WorkforceManagementApi : IWorkforceManagementApi
     }
 
     /// <inheritdoc />
-    public async Task DeleteForecastAsync(string businessUnitId, string weekDateId, string forecastId, CancellationToken cancellationToken = default)
+    public async Task<bool> DeleteForecastAsync(string businessUnitId, string weekDateId, string forecastId, CancellationToken cancellationToken = default)
     {
         ArgumentException.ThrowIfNullOrEmpty(businessUnitId);
         ArgumentException.ThrowIfNullOrEmpty(weekDateId);
         ArgumentException.ThrowIfNullOrEmpty(forecastId);
 
-        var uri = UriHelper.GetUri($"api/v2/workforcemanagement/businessunits/{businessUnitId}/weeks/{weekDateId}/shorttermforecasts/{forecastId}", null);
+        var uri = $"api/v2/workforcemanagement/businessunits/{Uri.EscapeDataString(businessUnitId)}/weeks/{Uri.EscapeDataString(weekDateId)}/shorttermforecasts/{Uri.EscapeDataString(forecastId)}";
 
         var response = await _httpClient.DeleteAsync(uri, cancellationToken);
 
-        response.EnsureSuccessStatusCode();
+        return response.IsSuccessStatusCode;
     }
 
     /// <inheritdoc />
@@ -231,14 +234,12 @@ public sealed class WorkforceManagementApi : IWorkforceManagementApi
         ArgumentException.ThrowIfNullOrEmpty(managementUnitId);
         ArgumentNullException.ThrowIfNull(body);
 
-        var uri = UriHelper.GetUri($"api/v2/workforcemanagement/managementunits/{managementUnitId}/timeoffrequests", null);
+        var uri = $"api/v2/workforcemanagement/managementunits/{Uri.EscapeDataString(managementUnitId)}/timeoffrequests";
 
         var response = await _httpClient.PostAsJsonAsync(uri, body, _options, cancellationToken);
 
         response.EnsureSuccessStatusCode();
 
-        var responseText = await response.Content.ReadAsStringAsync(cancellationToken);
-
-        return responseText;
+        return await response.Content.ReadAsStringAsync(cancellationToken);
     }
 }

@@ -116,9 +116,9 @@ public partial class BuSchedulingSettingsResponse : IEquatable<BuSchedulingSetti
 
 
     /// <summary>
-    /// Configures the max percent increase and decrease of service goals for this business unit (simplified)
+    /// Configures the max percent increase and decrease of service goals for this business unit (temporarily simplified)
     /// </summary>
-    /// <value>Configures the max percent increase and decrease of service goals for this business unit (simplified)</value>
+    /// <value>Configures the max percent increase and decrease of service goals for this business unit (temporarily simplified)</value>
     [JsonPropertyName("serviceGoalImpact")]
     public object ServiceGoalImpact { get; set; }
 
