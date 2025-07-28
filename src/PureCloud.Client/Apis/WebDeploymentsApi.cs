@@ -21,48 +21,46 @@ public sealed class WebDeploymentsApi : IWebDeploymentsApi
     }
 
     /// <inheritdoc />
-    public async Task DeleteWebdeploymentsConfigurationAsync(string configurationId, CancellationToken cancellationToken = default)
+    public async Task<bool> DeleteWebdeploymentsConfigurationAsync(string configurationId, CancellationToken cancellationToken = default)
     {
         ArgumentException.ThrowIfNullOrEmpty(configurationId);
 
-        var uri = UriHelper.GetUri($"/api/v2/webdeployments/configurations/{configurationId}", null);
+        var uri = $"/api/v2/webdeployments/configurations/{Uri.EscapeDataString(configurationId)}";
 
         var response = await _httpClient.DeleteAsync(uri, cancellationToken);
 
-        response.EnsureSuccessStatusCode();
+        return response.IsSuccessStatusCode;
     }
 
     /// <inheritdoc />
-    public async Task DeleteWebdeploymentsDeploymentAsync(string deploymentId, CancellationToken cancellationToken = default)
+    public async Task<bool> DeleteWebdeploymentsDeploymentAsync(string deploymentId, CancellationToken cancellationToken = default)
     {
         ArgumentException.ThrowIfNullOrEmpty(deploymentId);
 
-        var uri = UriHelper.GetUri($"/api/v2/webdeployments/deployments/{deploymentId}", null);
+        var uri = $"/api/v2/webdeployments/deployments/{Uri.EscapeDataString(deploymentId)}";
 
         var response = await _httpClient.DeleteAsync(uri, cancellationToken);
 
-        response.EnsureSuccessStatusCode();
+        return response.IsSuccessStatusCode;
     }
 
     /// <inheritdoc />
-    public async Task<object> DeleteWebdeploymentsDeploymentCobrowseSessionIdAsync(string deploymentId, string sessionId, CancellationToken cancellationToken = default)
+    public async Task<bool> DeleteWebdeploymentsDeploymentCobrowseSessionIdAsync(string deploymentId, string sessionId, CancellationToken cancellationToken = default)
     {
         ArgumentException.ThrowIfNullOrEmpty(deploymentId);
         ArgumentException.ThrowIfNullOrEmpty(sessionId);
 
-        var uri = UriHelper.GetUri($"/api/v2/webdeployments/deployments/{deploymentId}/cobrowse/{sessionId}", null);
+        var uri = $"/api/v2/webdeployments/deployments/{Uri.EscapeDataString(deploymentId)}/cobrowse/{Uri.EscapeDataString(sessionId)}";
 
         var response = await _httpClient.DeleteAsync(uri, cancellationToken);
 
-        response.EnsureSuccessStatusCode();
-
-        return await response.Content.ReadFromJsonAsync<object>(_options.JsonSerializerOptions, cancellationToken);
+        return response.IsSuccessStatusCode;
     }
 
     /// <inheritdoc />
-    public async Task DeleteWebdeploymentsTokenRevokeAsync(string xJourneySessionId = null, string xJourneySessionType = null, CancellationToken cancellationToken = default)
+    public async Task<bool> DeleteWebdeploymentsTokenRevokeAsync(string xJourneySessionId = null, string xJourneySessionType = null, CancellationToken cancellationToken = default)
     {
-        var uri = UriHelper.GetUri("/api/v2/webdeployments/token/revoke", null);
+        var uri = "/api/v2/webdeployments/token/revoke";
 
         using var request = new HttpRequestMessage(HttpMethod.Delete, uri);
 
@@ -78,54 +76,54 @@ public sealed class WebDeploymentsApi : IWebDeploymentsApi
 
         var response = await _httpClient.SendAsync(request, cancellationToken);
 
-        response.EnsureSuccessStatusCode();
+        return response.IsSuccessStatusCode;
     }
 
     /// <inheritdoc />
-    public async Task<object> GetWebdeploymentsConfigurationVersionAsync(string configurationId, string versionId, CancellationToken cancellationToken = default)
+    public async Task<WebDeploymentConfigurationVersion> GetWebdeploymentsConfigurationVersionAsync(string configurationId, string versionId, CancellationToken cancellationToken = default)
     {
         ArgumentException.ThrowIfNullOrEmpty(configurationId);
         ArgumentException.ThrowIfNullOrEmpty(versionId);
 
-        var uri = UriHelper.GetUri($"/api/v2/webdeployments/configurations/{configurationId}/versions/{versionId}", null);
+        var uri = $"/api/v2/webdeployments/configurations/{Uri.EscapeDataString(configurationId)}/versions/{Uri.EscapeDataString(versionId)}";
 
         var response = await _httpClient.GetAsync(uri, cancellationToken);
 
         response.EnsureSuccessStatusCode();
 
-        return await response.Content.ReadFromJsonAsync<object>(_options.JsonSerializerOptions, cancellationToken);
+        return await response.Content.ReadFromJsonAsync<WebDeploymentConfigurationVersion>(_options.JsonSerializerOptions, cancellationToken);
     }
 
     /// <inheritdoc />
-    public async Task<object> GetWebdeploymentsConfigurationVersionsAsync(string configurationId, CancellationToken cancellationToken = default)
+    public async Task<WebDeploymentConfigurationVersionEntityListing> GetWebdeploymentsConfigurationVersionsAsync(string configurationId, CancellationToken cancellationToken = default)
     {
         ArgumentException.ThrowIfNullOrEmpty(configurationId);
 
-        var uri = UriHelper.GetUri($"/api/v2/webdeployments/configurations/{configurationId}/versions", null);
+        var uri = $"/api/v2/webdeployments/configurations/{Uri.EscapeDataString(configurationId)}/versions";
 
         var response = await _httpClient.GetAsync(uri, cancellationToken);
 
         response.EnsureSuccessStatusCode();
 
-        return await response.Content.ReadFromJsonAsync<object>(_options.JsonSerializerOptions, cancellationToken);
+        return await response.Content.ReadFromJsonAsync<WebDeploymentConfigurationVersionEntityListing>(_options.JsonSerializerOptions, cancellationToken);
     }
 
     /// <inheritdoc />
-    public async Task<object> GetWebdeploymentsConfigurationVersionsDraftAsync(string configurationId, CancellationToken cancellationToken = default)
+    public async Task<WebDeploymentConfigurationVersion> GetWebdeploymentsConfigurationVersionsDraftAsync(string configurationId, CancellationToken cancellationToken = default)
     {
         ArgumentException.ThrowIfNullOrEmpty(configurationId);
 
-        var uri = UriHelper.GetUri($"/api/v2/webdeployments/configurations/{configurationId}/versions/draft", null);
+        var uri = $"/api/v2/webdeployments/configurations/{Uri.EscapeDataString(configurationId)}/versions/draft";
 
         var response = await _httpClient.GetAsync(uri, cancellationToken);
 
         response.EnsureSuccessStatusCode();
 
-        return await response.Content.ReadFromJsonAsync<object>(_options.JsonSerializerOptions, cancellationToken);
+        return await response.Content.ReadFromJsonAsync<WebDeploymentConfigurationVersion>(_options.JsonSerializerOptions, cancellationToken);
     }
 
     /// <inheritdoc />
-    public async Task<object> GetWebdeploymentsConfigurationsAsync(bool? showOnlyPublished = null, CancellationToken cancellationToken = default)
+    public async Task<WebDeploymentConfigurationVersionEntityListing> GetWebdeploymentsConfigurationsAsync(bool? showOnlyPublished = null, CancellationToken cancellationToken = default)
     {
         var parameters = new NameValueCollection();
 
@@ -140,11 +138,11 @@ public sealed class WebDeploymentsApi : IWebDeploymentsApi
 
         response.EnsureSuccessStatusCode();
 
-        return await response.Content.ReadFromJsonAsync<object>(_options.JsonSerializerOptions, cancellationToken);
+        return await response.Content.ReadFromJsonAsync<WebDeploymentConfigurationVersionEntityListing>(_options.JsonSerializerOptions, cancellationToken);
     }
 
     /// <inheritdoc />
-    public async Task<object> GetWebdeploymentsDeploymentAsync(string deploymentId, IEnumerable<string> expand = null, CancellationToken cancellationToken = default)
+    public async Task<WebDeployment> GetWebdeploymentsDeploymentAsync(string deploymentId, IEnumerable<string> expand = null, CancellationToken cancellationToken = default)
     {
         ArgumentException.ThrowIfNullOrEmpty(deploymentId);
 
@@ -155,13 +153,13 @@ public sealed class WebDeploymentsApi : IWebDeploymentsApi
             parameters.Add("expand", string.Join(",", expand));
         }
 
-        var uri = UriHelper.GetUri($"/api/v2/webdeployments/deployments/{deploymentId}", parameters);
+        var uri = UriHelper.GetUri($"/api/v2/webdeployments/deployments/{Uri.EscapeDataString(deploymentId)}", parameters);
 
         var response = await _httpClient.GetAsync(uri, cancellationToken);
 
         response.EnsureSuccessStatusCode();
 
-        return await response.Content.ReadFromJsonAsync<object>(_options.JsonSerializerOptions, cancellationToken);
+        return await response.Content.ReadFromJsonAsync<WebDeployment>(_options.JsonSerializerOptions, cancellationToken);
     }
 
     /// <inheritdoc />
@@ -170,7 +168,7 @@ public sealed class WebDeploymentsApi : IWebDeploymentsApi
         ArgumentException.ThrowIfNullOrEmpty(deploymentId);
         ArgumentException.ThrowIfNullOrEmpty(sessionId);
 
-        var uri = UriHelper.GetUri($"/api/v2/webdeployments/deployments/{deploymentId}/cobrowse/{sessionId}", null);
+        var uri = $"/api/v2/webdeployments/deployments/{Uri.EscapeDataString(deploymentId)}/cobrowse/{Uri.EscapeDataString(sessionId)}";
 
         var response = await _httpClient.GetAsync(uri, cancellationToken);
 
@@ -180,7 +178,7 @@ public sealed class WebDeploymentsApi : IWebDeploymentsApi
     }
 
     /// <inheritdoc />
-    public async Task<object> GetWebdeploymentsDeploymentConfigurationsAsync(string deploymentId, string type = null, IEnumerable<string> expand = null, CancellationToken cancellationToken = default)
+    public async Task<WebDeploymentActiveConfigurationOnDeployment> GetWebdeploymentsDeploymentConfigurationsAsync(string deploymentId, string type = null, IEnumerable<string> expand = null, CancellationToken cancellationToken = default)
     {
         ArgumentException.ThrowIfNullOrEmpty(deploymentId);
 
@@ -196,13 +194,13 @@ public sealed class WebDeploymentsApi : IWebDeploymentsApi
             parameters.Add("expand", string.Join(",", expand));
         }
 
-        var uri = UriHelper.GetUri($"/api/v2/webdeployments/deployments/{deploymentId}/configurations", parameters);
+        var uri = UriHelper.GetUri($"/api/v2/webdeployments/deployments/{Uri.EscapeDataString(deploymentId)}/configurations", parameters);
 
         var response = await _httpClient.GetAsync(uri, cancellationToken);
 
         response.EnsureSuccessStatusCode();
 
-        return await response.Content.ReadFromJsonAsync<object>(_options.JsonSerializerOptions, cancellationToken);
+        return await response.Content.ReadFromJsonAsync<WebDeploymentActiveConfigurationOnDeployment>(_options.JsonSerializerOptions, cancellationToken);
     }
 
     /// <inheritdoc />
@@ -210,7 +208,7 @@ public sealed class WebDeploymentsApi : IWebDeploymentsApi
     {
         ArgumentException.ThrowIfNullOrEmpty(deploymentId);
 
-        var uri = UriHelper.GetUri($"/api/v2/webdeployments/deployments/{deploymentId}/identityresolution", null);
+        var uri = $"/api/v2/webdeployments/deployments/{Uri.EscapeDataString(deploymentId)}/identityresolution";
 
         var response = await _httpClient.GetAsync(uri, cancellationToken);
 
@@ -220,7 +218,7 @@ public sealed class WebDeploymentsApi : IWebDeploymentsApi
     }
 
     /// <inheritdoc />
-    public async Task<object> GetWebdeploymentsDeploymentsAsync(IEnumerable<string> expand = null, CancellationToken cancellationToken = default)
+    public async Task<ExpandableWebDeploymentEntityListing> GetWebdeploymentsDeploymentsAsync(IEnumerable<string> expand = null, CancellationToken cancellationToken = default)
     {
         var parameters = new NameValueCollection();
 
@@ -235,49 +233,49 @@ public sealed class WebDeploymentsApi : IWebDeploymentsApi
 
         response.EnsureSuccessStatusCode();
 
-        return await response.Content.ReadFromJsonAsync<object>(_options.JsonSerializerOptions, cancellationToken);
+        return await response.Content.ReadFromJsonAsync<ExpandableWebDeploymentEntityListing>(_options.JsonSerializerOptions, cancellationToken);
     }
 
     /// <inheritdoc />
-    public async Task<object> CreateWebdeploymentsConfigurationVersionsDraftPublishAsync(string configurationId, CancellationToken cancellationToken = default)
+    public async Task<WebDeploymentConfigurationVersion> CreateWebdeploymentsConfigurationVersionsDraftPublishAsync(string configurationId, CancellationToken cancellationToken = default)
     {
         ArgumentException.ThrowIfNullOrEmpty(configurationId);
 
-        var uri = UriHelper.GetUri($"/api/v2/webdeployments/configurations/{configurationId}/versions/draft/publish", null);
+        var uri = $"/api/v2/webdeployments/configurations/{Uri.EscapeDataString(configurationId)}/versions/draft/publish";
 
         var response = await _httpClient.PostAsync(uri, null, cancellationToken);
 
         response.EnsureSuccessStatusCode();
 
-        return await response.Content.ReadFromJsonAsync<object>(_options.JsonSerializerOptions, cancellationToken);
+        return await response.Content.ReadFromJsonAsync<WebDeploymentConfigurationVersion>(_options.JsonSerializerOptions, cancellationToken);
     }
 
     /// <inheritdoc />
-    public async Task<object> CreateWebdeploymentsConfigurationsAsync(object configurationVersion, CancellationToken cancellationToken = default)
+    public async Task<WebDeploymentConfigurationVersion> CreateWebdeploymentsConfigurationsAsync(WebDeploymentConfigurationVersion configurationVersion, CancellationToken cancellationToken = default)
     {
         ArgumentNullException.ThrowIfNull(configurationVersion);
 
-        var uri = UriHelper.GetUri("/api/v2/webdeployments/configurations", null);
+        var uri = "/api/v2/webdeployments/configurations";
 
         var response = await _httpClient.PostAsJsonAsync(uri, configurationVersion, _options.JsonSerializerOptions, cancellationToken);
 
         response.EnsureSuccessStatusCode();
 
-        return await response.Content.ReadFromJsonAsync<object>(_options.JsonSerializerOptions, cancellationToken);
+        return await response.Content.ReadFromJsonAsync<WebDeploymentConfigurationVersion>(_options.JsonSerializerOptions, cancellationToken);
     }
 
     /// <inheritdoc />
-    public async Task<object> CreateWebdeploymentsDeploymentsAsync(object deployment, CancellationToken cancellationToken = default)
+    public async Task<WebDeployment> CreateWebdeploymentsDeploymentsAsync(WebDeployment deployment, CancellationToken cancellationToken = default)
     {
         ArgumentNullException.ThrowIfNull(deployment);
 
-        var uri = UriHelper.GetUri("/api/v2/webdeployments/deployments", null);
+        var uri = "/api/v2/webdeployments/deployments";
 
         var response = await _httpClient.PostAsJsonAsync(uri, deployment, _options.JsonSerializerOptions, cancellationToken);
 
         response.EnsureSuccessStatusCode();
 
-        return await response.Content.ReadFromJsonAsync<object>(_options.JsonSerializerOptions, cancellationToken);
+        return await response.Content.ReadFromJsonAsync<WebDeployment>(_options.JsonSerializerOptions, cancellationToken);
     }
 
     /// <inheritdoc />
@@ -285,7 +283,7 @@ public sealed class WebDeploymentsApi : IWebDeploymentsApi
     {
         ArgumentNullException.ThrowIfNull(body);
 
-        var uri = UriHelper.GetUri("/api/v2/webdeployments/token/oauthcodegrantjwtexchange", null);
+        var uri = "/api/v2/webdeployments/token/oauthcodegrantjwtexchange";
 
         var response = await _httpClient.PostAsJsonAsync(uri, body, _options.JsonSerializerOptions, cancellationToken);
 
@@ -297,7 +295,7 @@ public sealed class WebDeploymentsApi : IWebDeploymentsApi
     /// <inheritdoc />
     public async Task<SignedData> CreateWebdeploymentsTokenRefreshAsync(WebDeploymentsRefreshJWTRequest body = null, CancellationToken cancellationToken = default)
     {
-        var uri = UriHelper.GetUri("/api/v2/webdeployments/token/refresh", null);
+        var uri = "/api/v2/webdeployments/token/refresh";
 
         var response = await _httpClient.PostAsJsonAsync(uri, body, _options.JsonSerializerOptions, cancellationToken);
 
@@ -307,33 +305,33 @@ public sealed class WebDeploymentsApi : IWebDeploymentsApi
     }
 
     /// <inheritdoc />
-    public async Task<object> UpdateWebdeploymentsConfigurationVersionsDraftAsync(string configurationId, object configurationVersion, CancellationToken cancellationToken = default)
+    public async Task<WebDeploymentConfigurationVersion> UpdateWebdeploymentsConfigurationVersionsDraftAsync(string configurationId, WebDeploymentConfigurationVersion configurationVersion, CancellationToken cancellationToken = default)
     {
         ArgumentException.ThrowIfNullOrEmpty(configurationId);
         ArgumentNullException.ThrowIfNull(configurationVersion);
 
-        var uri = UriHelper.GetUri($"/api/v2/webdeployments/configurations/{configurationId}/versions/draft", null);
+        var uri = $"/api/v2/webdeployments/configurations/{Uri.EscapeDataString(configurationId)}/versions/draft";
 
         var response = await _httpClient.PutAsJsonAsync(uri, configurationVersion, _options.JsonSerializerOptions, cancellationToken);
 
         response.EnsureSuccessStatusCode();
 
-        return await response.Content.ReadFromJsonAsync<object>(_options.JsonSerializerOptions, cancellationToken);
+        return await response.Content.ReadFromJsonAsync<WebDeploymentConfigurationVersion>(_options.JsonSerializerOptions, cancellationToken);
     }
 
     /// <inheritdoc />
-    public async Task<object> UpdateWebdeploymentsDeploymentAsync(string deploymentId, object deployment, CancellationToken cancellationToken = default)
+    public async Task<WebDeployment> UpdateWebdeploymentsDeploymentAsync(string deploymentId, WebDeployment deployment, CancellationToken cancellationToken = default)
     {
         ArgumentException.ThrowIfNullOrEmpty(deploymentId);
         ArgumentNullException.ThrowIfNull(deployment);
 
-        var uri = UriHelper.GetUri($"/api/v2/webdeployments/deployments/{deploymentId}", null);
+        var uri = $"/api/v2/webdeployments/deployments/{Uri.EscapeDataString(deploymentId)}";
 
         var response = await _httpClient.PutAsJsonAsync(uri, deployment, _options.JsonSerializerOptions, cancellationToken);
 
         response.EnsureSuccessStatusCode();
 
-        return await response.Content.ReadFromJsonAsync<object>(_options.JsonSerializerOptions, cancellationToken);
+        return await response.Content.ReadFromJsonAsync<WebDeployment>(_options.JsonSerializerOptions, cancellationToken);
     }
 
     /// <inheritdoc />
@@ -342,7 +340,7 @@ public sealed class WebDeploymentsApi : IWebDeploymentsApi
         ArgumentException.ThrowIfNullOrEmpty(deploymentId);
         ArgumentNullException.ThrowIfNull(body);
 
-        var uri = UriHelper.GetUri($"/api/v2/webdeployments/deployments/{deploymentId}/identityresolution", null);
+        var uri = $"/api/v2/webdeployments/deployments/{Uri.EscapeDataString(deploymentId)}/identityresolution";
 
         var response = await _httpClient.PutAsJsonAsync(uri, body, _options.JsonSerializerOptions, cancellationToken);
 
