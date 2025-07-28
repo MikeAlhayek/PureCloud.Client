@@ -21,6 +21,40 @@ public sealed class KnowledgeApi : IKnowledgeApi
         _options = options.Value;
     }
 
+    #region Helper Methods
+
+    private static string BuildQueryString(params (string name, object value)[] parameters)
+    {
+        var query = HttpUtility.ParseQueryString(string.Empty);
+        
+        foreach (var (name, value) in parameters)
+        {
+            if (value != null)
+            {
+                switch (value)
+                {
+                    case IEnumerable<string> list:
+                        foreach (var item in list)
+                            query.Add(name, item);
+                        break;
+                    case IEnumerable<object> enumList:
+                        foreach (var item in enumList)
+                            query.Add(name, item.ToString());
+                        break;
+                    default:
+                        query.Add(name, value.ToString());
+                        break;
+                }
+            }
+        }
+        
+        return query.ToString();
+    }
+
+    #endregion
+
+    #region Core Knowledge Base Operations
+
     /// <inheritdoc />
     public async Task<KnowledgeBase> GetKnowledgeKnowledgebaseAsync(string knowledgeBaseId, CancellationToken cancellationToken = default)
     {
@@ -53,9 +87,7 @@ public sealed class KnowledgeApi : IKnowledgeApi
     public async Task<SalesforceSourceResponse> UpdateKnowledgeKnowledgebaseSourcesSalesforceSourceAsync(string knowledgeBaseId, string sourceId, SalesforceSourceRequest body, CancellationToken cancellationToken = default)
     {
         ArgumentException.ThrowIfNullOrEmpty(knowledgeBaseId);
-
         ArgumentException.ThrowIfNullOrEmpty(sourceId);
-
         ArgumentNullException.ThrowIfNull(body);
 
         var client = _httpClientFactory.CreateClient(PureCloudConstants.PureCloudClientName);
@@ -81,340 +113,36 @@ public sealed class KnowledgeApi : IKnowledgeApi
         return await response.Content.ReadFromJsonAsync<KnowledgeBase>(_options.JsonSerializerOptions, cancellationToken);
     }
 
-    #region Delete Operations
-
     /// <inheritdoc />
-    public async Task<CategoryResponse> DeleteKnowledgeKnowledgebaseCategoryAsync(string knowledgeBaseId, string categoryId, CancellationToken cancellationToken = default)
+    public async Task<KnowledgeBaseListing> GetKnowledgeKnowledgebasesAsync(string before = null, string after = null, string limit = null, string pageSize = null, string name = null, string coreLanguage = null, bool? published = null, string sortBy = null, string sortOrder = null, CancellationToken cancellationToken = default)
     {
-        ArgumentException.ThrowIfNullOrEmpty(knowledgeBaseId);
-        ArgumentException.ThrowIfNullOrEmpty(categoryId);
-
-        var client = _httpClientFactory.CreateClient(PureCloudConstants.PureCloudClientName);
-
-        var response = await client.DeleteAsync($"api/v2/knowledge/knowledgebases/{knowledgeBaseId}/categories/{categoryId}", cancellationToken);
-
-        response.EnsureSuccessStatusCode();
-
-        return await response.Content.ReadFromJsonAsync<CategoryResponse>(_options.JsonSerializerOptions, cancellationToken);
-    }
-
-    /// <inheritdoc />
-    public async Task DeleteKnowledgeKnowledgebaseDocumentAsync(string knowledgeBaseId, string documentId, CancellationToken cancellationToken = default)
-    {
-        ArgumentException.ThrowIfNullOrEmpty(knowledgeBaseId);
-        ArgumentException.ThrowIfNullOrEmpty(documentId);
-
-        var client = _httpClientFactory.CreateClient(PureCloudConstants.PureCloudClientName);
-
-        var response = await client.DeleteAsync($"api/v2/knowledge/knowledgebases/{knowledgeBaseId}/documents/{documentId}", cancellationToken);
-
-        response.EnsureSuccessStatusCode();
-    }
-
-    /// <inheritdoc />
-    public async Task DeleteKnowledgeKnowledgebaseDocumentVariationAsync(string documentVariationId, string documentId, string knowledgeBaseId, CancellationToken cancellationToken = default)
-    {
-        ArgumentException.ThrowIfNullOrEmpty(documentVariationId);
-        ArgumentException.ThrowIfNullOrEmpty(documentId);
-        ArgumentException.ThrowIfNullOrEmpty(knowledgeBaseId);
-
-        var client = _httpClientFactory.CreateClient(PureCloudConstants.PureCloudClientName);
-
-        var response = await client.DeleteAsync($"api/v2/knowledge/knowledgebases/{knowledgeBaseId}/documents/{documentId}/variations/{documentVariationId}", cancellationToken);
-
-        response.EnsureSuccessStatusCode();
-    }
-
-    /// <inheritdoc />
-    public async Task DeleteKnowledgeKnowledgebaseExportJobAsync(string knowledgeBaseId, string exportJobId, CancellationToken cancellationToken = default)
-    {
-        ArgumentException.ThrowIfNullOrEmpty(knowledgeBaseId);
-        ArgumentException.ThrowIfNullOrEmpty(exportJobId);
-
-        var client = _httpClientFactory.CreateClient(PureCloudConstants.PureCloudClientName);
-
-        var response = await client.DeleteAsync($"api/v2/knowledge/knowledgebases/{knowledgeBaseId}/export/jobs/{exportJobId}", cancellationToken);
-
-        response.EnsureSuccessStatusCode();
-    }
-
-    /// <inheritdoc />
-    public async Task DeleteKnowledgeKnowledgebaseImportJobAsync(string knowledgeBaseId, string importJobId, CancellationToken cancellationToken = default)
-    {
-        ArgumentException.ThrowIfNullOrEmpty(knowledgeBaseId);
-        ArgumentException.ThrowIfNullOrEmpty(importJobId);
-
-        var client = _httpClientFactory.CreateClient(PureCloudConstants.PureCloudClientName);
-
-        var response = await client.DeleteAsync($"api/v2/knowledge/knowledgebases/{knowledgeBaseId}/import/jobs/{importJobId}", cancellationToken);
-
-        response.EnsureSuccessStatusCode();
-    }
-
-    /// <inheritdoc />
-    public async Task<LabelResponse> DeleteKnowledgeKnowledgebaseLabelAsync(string knowledgeBaseId, string labelId, CancellationToken cancellationToken = default)
-    {
-        ArgumentException.ThrowIfNullOrEmpty(knowledgeBaseId);
-        ArgumentException.ThrowIfNullOrEmpty(labelId);
-
-        var client = _httpClientFactory.CreateClient(PureCloudConstants.PureCloudClientName);
-
-        var response = await client.DeleteAsync($"api/v2/knowledge/knowledgebases/{knowledgeBaseId}/labels/{labelId}", cancellationToken);
-
-        response.EnsureSuccessStatusCode();
-
-        return await response.Content.ReadFromJsonAsync<LabelResponse>(_options.JsonSerializerOptions, cancellationToken);
-    }
-
-    /// <inheritdoc />
-    public async Task<KnowledgeCategory> DeleteKnowledgeKnowledgebaseLanguageCategoryAsync(string categoryId, string knowledgeBaseId, string languageCode, CancellationToken cancellationToken = default)
-    {
-        ArgumentException.ThrowIfNullOrEmpty(categoryId);
-        ArgumentException.ThrowIfNullOrEmpty(knowledgeBaseId);
-        ArgumentException.ThrowIfNullOrEmpty(languageCode);
-
-        var client = _httpClientFactory.CreateClient(PureCloudConstants.PureCloudClientName);
-
-        var response = await client.DeleteAsync($"api/v2/knowledge/knowledgebases/{knowledgeBaseId}/languages/{languageCode}/categories/{categoryId}", cancellationToken);
-
-        response.EnsureSuccessStatusCode();
-
-        return await response.Content.ReadFromJsonAsync<KnowledgeCategory>(_options.JsonSerializerOptions, cancellationToken);
-    }
-
-    /// <inheritdoc />
-    public async Task<KnowledgeDocument> DeleteKnowledgeKnowledgebaseLanguageDocumentAsync(string documentId, string knowledgeBaseId, string languageCode, CancellationToken cancellationToken = default)
-    {
-        ArgumentException.ThrowIfNullOrEmpty(documentId);
-        ArgumentException.ThrowIfNullOrEmpty(knowledgeBaseId);
-        ArgumentException.ThrowIfNullOrEmpty(languageCode);
-
-        var client = _httpClientFactory.CreateClient(PureCloudConstants.PureCloudClientName);
-
-        var response = await client.DeleteAsync($"api/v2/knowledge/knowledgebases/{knowledgeBaseId}/languages/{languageCode}/documents/{documentId}", cancellationToken);
-
-        response.EnsureSuccessStatusCode();
-
-        return await response.Content.ReadFromJsonAsync<KnowledgeDocument>(_options.JsonSerializerOptions, cancellationToken);
-    }
-
-    /// <inheritdoc />
-    public async Task DeleteKnowledgeKnowledgebaseLanguageDocumentsImportAsync(string knowledgeBaseId, string languageCode, string importId, CancellationToken cancellationToken = default)
-    {
-        ArgumentException.ThrowIfNullOrEmpty(knowledgeBaseId);
-        ArgumentException.ThrowIfNullOrEmpty(languageCode);
-        ArgumentException.ThrowIfNullOrEmpty(importId);
-
-        var client = _httpClientFactory.CreateClient(PureCloudConstants.PureCloudClientName);
-
-        var response = await client.DeleteAsync($"api/v2/knowledge/knowledgebases/{knowledgeBaseId}/languages/{languageCode}/documents/imports/{importId}", cancellationToken);
-
-        response.EnsureSuccessStatusCode();
-    }
-
-    /// <inheritdoc />
-    public async Task DeleteKnowledgeKnowledgebaseSourcesSalesforceSourceIdAsync(string knowledgeBaseId, string sourceId, CancellationToken cancellationToken = default)
-    {
-        ArgumentException.ThrowIfNullOrEmpty(knowledgeBaseId);
-        ArgumentException.ThrowIfNullOrEmpty(sourceId);
-
-        var client = _httpClientFactory.CreateClient(PureCloudConstants.PureCloudClientName);
-
-        var response = await client.DeleteAsync($"api/v2/knowledge/knowledgebases/{knowledgeBaseId}/sources/salesforce/{sourceId}", cancellationToken);
-
-        response.EnsureSuccessStatusCode();
-    }
-
-    /// <inheritdoc />
-    public async Task DeleteKnowledgeKnowledgebaseSourcesServicenowSourceIdAsync(string knowledgeBaseId, string sourceId, CancellationToken cancellationToken = default)
-    {
-        ArgumentException.ThrowIfNullOrEmpty(knowledgeBaseId);
-        ArgumentException.ThrowIfNullOrEmpty(sourceId);
-
-        var client = _httpClientFactory.CreateClient(PureCloudConstants.PureCloudClientName);
-
-        var response = await client.DeleteAsync($"api/v2/knowledge/knowledgebases/{knowledgeBaseId}/sources/servicenow/{sourceId}", cancellationToken);
-
-        response.EnsureSuccessStatusCode();
-    }
-
-    /// <inheritdoc />
-    public async Task DeleteKnowledgeKnowledgebaseSynchronizeJobAsync(string knowledgeBaseId, string syncJobId, CancellationToken cancellationToken = default)
-    {
-        ArgumentException.ThrowIfNullOrEmpty(knowledgeBaseId);
-        ArgumentException.ThrowIfNullOrEmpty(syncJobId);
-
-        var client = _httpClientFactory.CreateClient(PureCloudConstants.PureCloudClientName);
-
-        var response = await client.DeleteAsync($"api/v2/knowledge/knowledgebases/{knowledgeBaseId}/synchronize/jobs/{syncJobId}", cancellationToken);
-
-        response.EnsureSuccessStatusCode();
-    }
-
-    #endregion
-
-    #region Get Operations - Helper Method
-
-    private static string BuildQueryString(params (string name, object value)[] parameters)
-    {
-        var query = HttpUtility.ParseQueryString(string.Empty);
-        
-        foreach (var (name, value) in parameters)
-        {
-            if (value != null)
-            {
-                switch (value)
-                {
-                    case IEnumerable<string> list:
-                        foreach (var item in list)
-                            query.Add(name, item);
-                        break;
-                    case IEnumerable<object> enumList:
-                        foreach (var item in enumList)
-                            query.Add(name, item.ToString());
-                        break;
-                    default:
-                        query.Add(name, value.ToString());
-                        break;
-                }
-            }
-        }
-        
-        return query.ToString();
-    }
-
-    #endregion
-
-    #region Get Operations
-
-    /// <inheritdoc />
-    public async Task<GuestCategoryResponseListing> GetKnowledgeGuestSessionCategoriesAsync(string sessionId, string before = null, string after = null, string pageSize = null, string parentId = null, bool? isRoot = null, string name = null, string sortBy = null, string expand = null, bool? includeDocumentCount = null, CancellationToken cancellationToken = default)
-    {
-        ArgumentException.ThrowIfNullOrEmpty(sessionId);
-
         var client = _httpClientFactory.CreateClient(PureCloudConstants.PureCloudClientName);
 
         var queryString = BuildQueryString(
             ("before", before),
             ("after", after),
+            ("limit", limit),
             ("pageSize", pageSize),
-            ("parentId", parentId),
-            ("isRoot", isRoot),
             ("name", name),
+            ("coreLanguage", coreLanguage),
+            ("published", published),
             ("sortBy", sortBy),
-            ("expand", expand),
-            ("includeDocumentCount", includeDocumentCount)
+            ("sortOrder", sortOrder)
         );
 
-        var uri = $"api/v2/knowledge/guest/sessions/{sessionId}/categories";
+        var uri = "api/v2/knowledge/knowledgebases";
         if (!string.IsNullOrEmpty(queryString))
             uri += $"?{queryString}";
 
         var response = await client.GetAsync(uri, cancellationToken);
         response.EnsureSuccessStatusCode();
 
-        return await response.Content.ReadFromJsonAsync<GuestCategoryResponseListing>(_options.JsonSerializerOptions, cancellationToken);
+        return await response.Content.ReadFromJsonAsync<KnowledgeBaseListing>(_options.JsonSerializerOptions, cancellationToken);
     }
 
-    /// <inheritdoc />
-    public async Task<KnowledgeGuestDocumentResponse> GetKnowledgeGuestSessionDocumentAsync(string sessionId, string documentId, CancellationToken cancellationToken = default)
-    {
-        ArgumentException.ThrowIfNullOrEmpty(sessionId);
-        ArgumentException.ThrowIfNullOrEmpty(documentId);
+    #endregion
 
-        var client = _httpClientFactory.CreateClient(PureCloudConstants.PureCloudClientName);
-
-        var response = await client.GetAsync($"api/v2/knowledge/guest/sessions/{sessionId}/documents/{documentId}", cancellationToken);
-        response.EnsureSuccessStatusCode();
-
-        return await response.Content.ReadFromJsonAsync<KnowledgeGuestDocumentResponse>(_options.JsonSerializerOptions, cancellationToken);
-    }
-
-    /// <inheritdoc />
-    public async Task<KnowledgeGuestDocumentResponseListing> GetKnowledgeGuestSessionDocumentsAsync(string sessionId, List<string> categoryId = null, int? pageSize = null, CancellationToken cancellationToken = default)
-    {
-        ArgumentException.ThrowIfNullOrEmpty(sessionId);
-
-        var client = _httpClientFactory.CreateClient(PureCloudConstants.PureCloudClientName);
-
-        var queryString = BuildQueryString(
-            ("categoryId", categoryId),
-            ("pageSize", pageSize)
-        );
-
-        var uri = $"api/v2/knowledge/guest/sessions/{sessionId}/documents";
-        if (!string.IsNullOrEmpty(queryString))
-            uri += $"?{queryString}";
-
-        var response = await client.GetAsync(uri, cancellationToken);
-        response.EnsureSuccessStatusCode();
-
-        return await response.Content.ReadFromJsonAsync<KnowledgeGuestDocumentResponseListing>(_options.JsonSerializerOptions, cancellationToken);
-    }
-
-    /// <inheritdoc />
-    public async Task<KnowledgeIntegrationOptionsResponse> GetKnowledgeIntegrationOptionsAsync(string integrationId, List<string> knowledgeBaseIds = null, CancellationToken cancellationToken = default)
-    {
-        ArgumentException.ThrowIfNullOrEmpty(integrationId);
-
-        var client = _httpClientFactory.CreateClient(PureCloudConstants.PureCloudClientName);
-
-        var queryString = BuildQueryString(
-            ("knowledgeBaseIds", knowledgeBaseIds)
-        );
-
-        var uri = $"api/v2/knowledge/integrations/{integrationId}/options";
-        if (!string.IsNullOrEmpty(queryString))
-            uri += $"?{queryString}";
-
-        var response = await client.GetAsync(uri, cancellationToken);
-        response.EnsureSuccessStatusCode();
-
-        return await response.Content.ReadFromJsonAsync<KnowledgeIntegrationOptionsResponse>(_options.JsonSerializerOptions, cancellationToken);
-    }
-
-    /// <inheritdoc />
-    public async Task<CategoryResponseListing> GetKnowledgeKnowledgebaseCategoriesAsync(string knowledgeBaseId, string before = null, string after = null, string pageSize = null, string parentId = null, bool? isRoot = null, string name = null, string sortBy = null, string expand = null, bool? includeDocumentCount = null, CancellationToken cancellationToken = default)
-    {
-        ArgumentException.ThrowIfNullOrEmpty(knowledgeBaseId);
-
-        var client = _httpClientFactory.CreateClient(PureCloudConstants.PureCloudClientName);
-
-        var queryString = BuildQueryString(
-            ("before", before),
-            ("after", after),
-            ("pageSize", pageSize),
-            ("parentId", parentId),
-            ("isRoot", isRoot),
-            ("name", name),
-            ("sortBy", sortBy),
-            ("expand", expand),
-            ("includeDocumentCount", includeDocumentCount)
-        );
-
-        var uri = $"api/v2/knowledge/knowledgebases/{knowledgeBaseId}/categories";
-        if (!string.IsNullOrEmpty(queryString))
-            uri += $"?{queryString}";
-
-        var response = await client.GetAsync(uri, cancellationToken);
-        response.EnsureSuccessStatusCode();
-
-        return await response.Content.ReadFromJsonAsync<CategoryResponseListing>(_options.JsonSerializerOptions, cancellationToken);
-    }
-
-    /// <inheritdoc />
-    public async Task<CategoryResponse> GetKnowledgeKnowledgebaseCategoryAsync(string knowledgeBaseId, string categoryId, CancellationToken cancellationToken = default)
-    {
-        ArgumentException.ThrowIfNullOrEmpty(knowledgeBaseId);
-        ArgumentException.ThrowIfNullOrEmpty(categoryId);
-
-        var client = _httpClientFactory.CreateClient(PureCloudConstants.PureCloudClientName);
-
-        var response = await client.GetAsync($"api/v2/knowledge/knowledgebases/{knowledgeBaseId}/categories/{categoryId}", cancellationToken);
-        response.EnsureSuccessStatusCode();
-
-        return await response.Content.ReadFromJsonAsync<CategoryResponse>(_options.JsonSerializerOptions, cancellationToken);
-    }
+    #region Document Operations
 
     /// <inheritdoc />
     public async Task<KnowledgeDocumentResponse> GetKnowledgeKnowledgebaseDocumentAsync(string knowledgeBaseId, string documentId, List<string> expand = null, string state = null, CancellationToken cancellationToken = default)
@@ -437,192 +165,6 @@ public sealed class KnowledgeApi : IKnowledgeApi
         response.EnsureSuccessStatusCode();
 
         return await response.Content.ReadFromJsonAsync<KnowledgeDocumentResponse>(_options.JsonSerializerOptions, cancellationToken);
-    }
-
-    /// <inheritdoc />
-    public async Task<KnowledgeDocumentFeedbackResponseListing> GetKnowledgeKnowledgebaseDocumentFeedbackAsync(string knowledgeBaseId, string documentId, string before = null, string after = null, string pageSize = null, bool? onlyCommented = null, string documentVersionId = null, string documentVariationId = null, string appType = null, string queryType = null, string userId = null, string queueId = null, string state = null, CancellationToken cancellationToken = default)
-    {
-        ArgumentException.ThrowIfNullOrEmpty(knowledgeBaseId);
-        ArgumentException.ThrowIfNullOrEmpty(documentId);
-
-        var client = _httpClientFactory.CreateClient(PureCloudConstants.PureCloudClientName);
-
-        var queryString = BuildQueryString(
-            ("before", before),
-            ("after", after),
-            ("pageSize", pageSize),
-            ("onlyCommented", onlyCommented),
-            ("documentVersionId", documentVersionId),
-            ("documentVariationId", documentVariationId),
-            ("appType", appType),
-            ("queryType", queryType),
-            ("userId", userId),
-            ("queueId", queueId),
-            ("state", state)
-        );
-
-        var uri = $"api/v2/knowledge/knowledgebases/{knowledgeBaseId}/documents/{documentId}/feedback";
-        if (!string.IsNullOrEmpty(queryString))
-            uri += $"?{queryString}";
-
-        var response = await client.GetAsync(uri, cancellationToken);
-        response.EnsureSuccessStatusCode();
-
-        return await response.Content.ReadFromJsonAsync<KnowledgeDocumentFeedbackResponseListing>(_options.JsonSerializerOptions, cancellationToken);
-    }
-
-    /// <inheritdoc />
-    public async Task<KnowledgeDocumentFeedbackResponse> GetKnowledgeKnowledgebaseDocumentFeedbackFeedbackIdAsync(string knowledgeBaseId, string documentId, string feedbackId, CancellationToken cancellationToken = default)
-    {
-        ArgumentException.ThrowIfNullOrEmpty(knowledgeBaseId);
-        ArgumentException.ThrowIfNullOrEmpty(documentId);
-        ArgumentException.ThrowIfNullOrEmpty(feedbackId);
-
-        var client = _httpClientFactory.CreateClient(PureCloudConstants.PureCloudClientName);
-
-        var response = await client.GetAsync($"api/v2/knowledge/knowledgebases/{knowledgeBaseId}/documents/{documentId}/feedback/{feedbackId}", cancellationToken);
-        response.EnsureSuccessStatusCode();
-
-        return await response.Content.ReadFromJsonAsync<KnowledgeDocumentFeedbackResponse>(_options.JsonSerializerOptions, cancellationToken);
-    }
-
-    /// <inheritdoc />
-    public async Task<DocumentVariationResponse> GetKnowledgeKnowledgebaseDocumentVariationAsync(string documentVariationId, string documentId, string knowledgeBaseId, string documentState = null, List<string> expand = null, CancellationToken cancellationToken = default)
-    {
-        ArgumentException.ThrowIfNullOrEmpty(documentVariationId);
-        ArgumentException.ThrowIfNullOrEmpty(documentId);
-        ArgumentException.ThrowIfNullOrEmpty(knowledgeBaseId);
-
-        var client = _httpClientFactory.CreateClient(PureCloudConstants.PureCloudClientName);
-
-        var queryString = BuildQueryString(
-            ("documentState", documentState),
-            ("expand", expand)
-        );
-
-        var uri = $"api/v2/knowledge/knowledgebases/{knowledgeBaseId}/documents/{documentId}/variations/{documentVariationId}";
-        if (!string.IsNullOrEmpty(queryString))
-            uri += $"?{queryString}";
-
-        var response = await client.GetAsync(uri, cancellationToken);
-        response.EnsureSuccessStatusCode();
-
-        return await response.Content.ReadFromJsonAsync<DocumentVariationResponse>(_options.JsonSerializerOptions, cancellationToken);
-    }
-
-    /// <inheritdoc />
-    public async Task<DocumentVariationResponseListing> GetKnowledgeKnowledgebaseDocumentVariationsAsync(string knowledgeBaseId, string documentId, string before = null, string after = null, string pageSize = null, string documentState = null, List<string> expand = null, CancellationToken cancellationToken = default)
-    {
-        ArgumentException.ThrowIfNullOrEmpty(knowledgeBaseId);
-        ArgumentException.ThrowIfNullOrEmpty(documentId);
-
-        var client = _httpClientFactory.CreateClient(PureCloudConstants.PureCloudClientName);
-
-        var queryString = BuildQueryString(
-            ("before", before),
-            ("after", after),
-            ("pageSize", pageSize),
-            ("documentState", documentState),
-            ("expand", expand)
-        );
-
-        var uri = $"api/v2/knowledge/knowledgebases/{knowledgeBaseId}/documents/{documentId}/variations";
-        if (!string.IsNullOrEmpty(queryString))
-            uri += $"?{queryString}";
-
-        var response = await client.GetAsync(uri, cancellationToken);
-        response.EnsureSuccessStatusCode();
-
-        return await response.Content.ReadFromJsonAsync<DocumentVariationResponseListing>(_options.JsonSerializerOptions, cancellationToken);
-    }
-
-    /// <inheritdoc />
-    public async Task<KnowledgeDocumentVersion> GetKnowledgeKnowledgebaseDocumentVersionAsync(string knowledgeBaseId, string documentId, string versionId, List<string> expand = null, CancellationToken cancellationToken = default)
-    {
-        ArgumentException.ThrowIfNullOrEmpty(knowledgeBaseId);
-        ArgumentException.ThrowIfNullOrEmpty(documentId);
-        ArgumentException.ThrowIfNullOrEmpty(versionId);
-
-        var client = _httpClientFactory.CreateClient(PureCloudConstants.PureCloudClientName);
-
-        var queryString = BuildQueryString(
-            ("expand", expand)
-        );
-
-        var uri = $"api/v2/knowledge/knowledgebases/{knowledgeBaseId}/documents/{documentId}/versions/{versionId}";
-        if (!string.IsNullOrEmpty(queryString))
-            uri += $"?{queryString}";
-
-        var response = await client.GetAsync(uri, cancellationToken);
-        response.EnsureSuccessStatusCode();
-
-        return await response.Content.ReadFromJsonAsync<KnowledgeDocumentVersion>(_options.JsonSerializerOptions, cancellationToken);
-    }
-
-    /// <inheritdoc />
-    public async Task<KnowledgeDocumentVersionVariation> GetKnowledgeKnowledgebaseDocumentVersionVariationAsync(string knowledgeBaseId, string documentId, string versionId, string variationId, CancellationToken cancellationToken = default)
-    {
-        ArgumentException.ThrowIfNullOrEmpty(knowledgeBaseId);
-        ArgumentException.ThrowIfNullOrEmpty(documentId);
-        ArgumentException.ThrowIfNullOrEmpty(versionId);
-        ArgumentException.ThrowIfNullOrEmpty(variationId);
-
-        var client = _httpClientFactory.CreateClient(PureCloudConstants.PureCloudClientName);
-
-        var response = await client.GetAsync($"api/v2/knowledge/knowledgebases/{knowledgeBaseId}/documents/{documentId}/versions/{versionId}/variations/{variationId}", cancellationToken);
-        response.EnsureSuccessStatusCode();
-
-        return await response.Content.ReadFromJsonAsync<KnowledgeDocumentVersionVariation>(_options.JsonSerializerOptions, cancellationToken);
-    }
-
-    /// <inheritdoc />
-    public async Task<KnowledgeDocumentVersionVariationListing> GetKnowledgeKnowledgebaseDocumentVersionVariationsAsync(string knowledgeBaseId, string documentId, string versionId, string before = null, string after = null, string pageSize = null, CancellationToken cancellationToken = default)
-    {
-        ArgumentException.ThrowIfNullOrEmpty(knowledgeBaseId);
-        ArgumentException.ThrowIfNullOrEmpty(documentId);
-        ArgumentException.ThrowIfNullOrEmpty(versionId);
-
-        var client = _httpClientFactory.CreateClient(PureCloudConstants.PureCloudClientName);
-
-        var queryString = BuildQueryString(
-            ("before", before),
-            ("after", after),
-            ("pageSize", pageSize)
-        );
-
-        var uri = $"api/v2/knowledge/knowledgebases/{knowledgeBaseId}/documents/{documentId}/versions/{versionId}/variations";
-        if (!string.IsNullOrEmpty(queryString))
-            uri += $"?{queryString}";
-
-        var response = await client.GetAsync(uri, cancellationToken);
-        response.EnsureSuccessStatusCode();
-
-        return await response.Content.ReadFromJsonAsync<KnowledgeDocumentVersionVariationListing>(_options.JsonSerializerOptions, cancellationToken);
-    }
-
-    /// <inheritdoc />
-    public async Task<KnowledgeDocumentVersionListing> GetKnowledgeKnowledgebaseDocumentVersionsAsync(string knowledgeBaseId, string documentId, string before = null, string after = null, string pageSize = null, List<string> expand = null, CancellationToken cancellationToken = default)
-    {
-        ArgumentException.ThrowIfNullOrEmpty(knowledgeBaseId);
-        ArgumentException.ThrowIfNullOrEmpty(documentId);
-
-        var client = _httpClientFactory.CreateClient(PureCloudConstants.PureCloudClientName);
-
-        var queryString = BuildQueryString(
-            ("before", before),
-            ("after", after),
-            ("pageSize", pageSize),
-            ("expand", expand)
-        );
-
-        var uri = $"api/v2/knowledge/knowledgebases/{knowledgeBaseId}/documents/{documentId}/versions";
-        if (!string.IsNullOrEmpty(queryString))
-            uri += $"?{queryString}";
-
-        var response = await client.GetAsync(uri, cancellationToken);
-        response.EnsureSuccessStatusCode();
-
-        return await response.Content.ReadFromJsonAsync<KnowledgeDocumentVersionListing>(_options.JsonSerializerOptions, cancellationToken);
     }
 
     /// <inheritdoc />
@@ -655,6 +197,38 @@ public sealed class KnowledgeApi : IKnowledgeApi
     }
 
     /// <inheritdoc />
+    public async Task<KnowledgeDocumentResponse> PostKnowledgeKnowledgebaseDocumentsAsync(string knowledgeBaseId, KnowledgeDocumentCreateRequest body, CancellationToken cancellationToken = default)
+    {
+        ArgumentException.ThrowIfNullOrEmpty(knowledgeBaseId);
+        ArgumentNullException.ThrowIfNull(body);
+
+        var client = _httpClientFactory.CreateClient(PureCloudConstants.PureCloudClientName);
+
+        var response = await client.PostAsJsonAsync($"api/v2/knowledge/knowledgebases/{knowledgeBaseId}/documents", body, _options.JsonSerializerOptions, cancellationToken);
+
+        response.EnsureSuccessStatusCode();
+
+        return await response.Content.ReadFromJsonAsync<KnowledgeDocumentResponse>(_options.JsonSerializerOptions, cancellationToken);
+    }
+
+    /// <inheritdoc />
+    public async Task DeleteKnowledgeKnowledgebaseDocumentAsync(string knowledgeBaseId, string documentId, CancellationToken cancellationToken = default)
+    {
+        ArgumentException.ThrowIfNullOrEmpty(knowledgeBaseId);
+        ArgumentException.ThrowIfNullOrEmpty(documentId);
+
+        var client = _httpClientFactory.CreateClient(PureCloudConstants.PureCloudClientName);
+
+        var response = await client.DeleteAsync($"api/v2/knowledge/knowledgebases/{knowledgeBaseId}/documents/{documentId}", cancellationToken);
+
+        response.EnsureSuccessStatusCode();
+    }
+
+    #endregion
+
+    #region Export Operations
+
+    /// <inheritdoc />
     public async Task<KnowledgeExportJobResponse> GetKnowledgeKnowledgebaseExportJobAsync(string knowledgeBaseId, string exportJobId, CancellationToken cancellationToken = default)
     {
         ArgumentException.ThrowIfNullOrEmpty(knowledgeBaseId);
@@ -667,6 +241,38 @@ public sealed class KnowledgeApi : IKnowledgeApi
 
         return await response.Content.ReadFromJsonAsync<KnowledgeExportJobResponse>(_options.JsonSerializerOptions, cancellationToken);
     }
+
+    /// <inheritdoc />
+    public async Task<KnowledgeExportJobResponse> PostKnowledgeKnowledgebaseExportJobsAsync(string knowledgeBaseId, KnowledgeExportJobRequest body, CancellationToken cancellationToken = default)
+    {
+        ArgumentException.ThrowIfNullOrEmpty(knowledgeBaseId);
+        ArgumentNullException.ThrowIfNull(body);
+
+        var client = _httpClientFactory.CreateClient(PureCloudConstants.PureCloudClientName);
+
+        var response = await client.PostAsJsonAsync($"api/v2/knowledge/knowledgebases/{knowledgeBaseId}/export/jobs", body, _options.JsonSerializerOptions, cancellationToken);
+
+        response.EnsureSuccessStatusCode();
+
+        return await response.Content.ReadFromJsonAsync<KnowledgeExportJobResponse>(_options.JsonSerializerOptions, cancellationToken);
+    }
+
+    /// <inheritdoc />
+    public async Task DeleteKnowledgeKnowledgebaseExportJobAsync(string knowledgeBaseId, string exportJobId, CancellationToken cancellationToken = default)
+    {
+        ArgumentException.ThrowIfNullOrEmpty(knowledgeBaseId);
+        ArgumentException.ThrowIfNullOrEmpty(exportJobId);
+
+        var client = _httpClientFactory.CreateClient(PureCloudConstants.PureCloudClientName);
+
+        var response = await client.DeleteAsync($"api/v2/knowledge/knowledgebases/{knowledgeBaseId}/export/jobs/{exportJobId}", cancellationToken);
+
+        response.EnsureSuccessStatusCode();
+    }
+
+    #endregion
+
+    #region Import Operations
 
     /// <inheritdoc />
     public async Task<KnowledgeImportJobResponse> GetKnowledgeKnowledgebaseImportJobAsync(string knowledgeBaseId, string importJobId, CancellationToken cancellationToken = default)
@@ -683,45 +289,54 @@ public sealed class KnowledgeApi : IKnowledgeApi
     }
 
     /// <inheritdoc />
-    public async Task<LabelResponse> GetKnowledgeKnowledgebaseLabelAsync(string knowledgeBaseId, string labelId, CancellationToken cancellationToken = default)
+    public async Task<KnowledgeImportJobResponse> PostKnowledgeKnowledgebaseImportJobsAsync(string knowledgeBaseId, KnowledgeImportJobRequest body, CancellationToken cancellationToken = default)
     {
         ArgumentException.ThrowIfNullOrEmpty(knowledgeBaseId);
-        ArgumentException.ThrowIfNullOrEmpty(labelId);
+        ArgumentNullException.ThrowIfNull(body);
 
         var client = _httpClientFactory.CreateClient(PureCloudConstants.PureCloudClientName);
 
-        var response = await client.GetAsync($"api/v2/knowledge/knowledgebases/{knowledgeBaseId}/labels/{labelId}", cancellationToken);
+        var response = await client.PostAsJsonAsync($"api/v2/knowledge/knowledgebases/{knowledgeBaseId}/import/jobs", body, _options.JsonSerializerOptions, cancellationToken);
+
         response.EnsureSuccessStatusCode();
 
-        return await response.Content.ReadFromJsonAsync<LabelResponse>(_options.JsonSerializerOptions, cancellationToken);
+        return await response.Content.ReadFromJsonAsync<KnowledgeImportJobResponse>(_options.JsonSerializerOptions, cancellationToken);
     }
 
     /// <inheritdoc />
-    public async Task<LabelListing> GetKnowledgeKnowledgebaseLabelsAsync(string knowledgeBaseId, string before = null, string after = null, string pageSize = null, bool? includeDocumentCount = null, CancellationToken cancellationToken = default)
+    public async Task DeleteKnowledgeKnowledgebaseImportJobAsync(string knowledgeBaseId, string importJobId, CancellationToken cancellationToken = default)
     {
         ArgumentException.ThrowIfNullOrEmpty(knowledgeBaseId);
+        ArgumentException.ThrowIfNullOrEmpty(importJobId);
 
         var client = _httpClientFactory.CreateClient(PureCloudConstants.PureCloudClientName);
 
-        var queryString = BuildQueryString(
-            ("before", before),
-            ("after", after),
-            ("pageSize", pageSize),
-            ("includeDocumentCount", includeDocumentCount)
-        );
+        var response = await client.DeleteAsync($"api/v2/knowledge/knowledgebases/{knowledgeBaseId}/import/jobs/{importJobId}", cancellationToken);
 
-        var uri = $"api/v2/knowledge/knowledgebases/{knowledgeBaseId}/labels";
-        if (!string.IsNullOrEmpty(queryString))
-            uri += $"?{queryString}";
+        response.EnsureSuccessStatusCode();
+    }
 
-        var response = await client.GetAsync(uri, cancellationToken);
+    #endregion
+
+    #region Training Operations
+
+    /// <inheritdoc />
+    public async Task<KnowledgeTraining> GetKnowledgeKnowledgebaseLanguageTrainingAsync(string knowledgeBaseId, string languageCode, string trainingId, CancellationToken cancellationToken = default)
+    {
+        ArgumentException.ThrowIfNullOrEmpty(knowledgeBaseId);
+        ArgumentException.ThrowIfNullOrEmpty(languageCode);
+        ArgumentException.ThrowIfNullOrEmpty(trainingId);
+
+        var client = _httpClientFactory.CreateClient(PureCloudConstants.PureCloudClientName);
+
+        var response = await client.GetAsync($"api/v2/knowledge/knowledgebases/{knowledgeBaseId}/languages/{languageCode}/trainings/{trainingId}", cancellationToken);
         response.EnsureSuccessStatusCode();
 
-        return await response.Content.ReadFromJsonAsync<LabelListing>(_options.JsonSerializerOptions, cancellationToken);
+        return await response.Content.ReadFromJsonAsync<KnowledgeTraining>(_options.JsonSerializerOptions, cancellationToken);
     }
 
     /// <inheritdoc />
-    public async Task<CategoryListing> GetKnowledgeKnowledgebaseLanguageCategoriesAsync(string knowledgeBaseId, string languageCode, string before = null, string after = null, string limit = null, string pageSize = null, string name = null, CancellationToken cancellationToken = default)
+    public async Task<TrainingListing> GetKnowledgeKnowledgebaseLanguageTrainingsAsync(string knowledgeBaseId, string languageCode, string before = null, string after = null, string limit = null, string pageSize = null, KnowledgeTraining.StatusEnum? knowledgeTrainingState = null, CancellationToken cancellationToken = default)
     {
         ArgumentException.ThrowIfNullOrEmpty(knowledgeBaseId);
         ArgumentException.ThrowIfNullOrEmpty(languageCode);
@@ -733,33 +348,85 @@ public sealed class KnowledgeApi : IKnowledgeApi
             ("after", after),
             ("limit", limit),
             ("pageSize", pageSize),
-            ("name", name)
+            ("knowledgeTrainingState", knowledgeTrainingState)
         );
 
-        var uri = $"api/v2/knowledge/knowledgebases/{knowledgeBaseId}/languages/{languageCode}/categories";
+        var uri = $"api/v2/knowledge/knowledgebases/{knowledgeBaseId}/languages/{languageCode}/trainings";
         if (!string.IsNullOrEmpty(queryString))
             uri += $"?{queryString}";
 
         var response = await client.GetAsync(uri, cancellationToken);
         response.EnsureSuccessStatusCode();
 
-        return await response.Content.ReadFromJsonAsync<CategoryListing>(_options.JsonSerializerOptions, cancellationToken);
+        return await response.Content.ReadFromJsonAsync<TrainingListing>(_options.JsonSerializerOptions, cancellationToken);
     }
 
     /// <inheritdoc />
-    public async Task<KnowledgeCategory> GetKnowledgeKnowledgebaseLanguageCategoryAsync(string categoryId, string knowledgeBaseId, string languageCode, CancellationToken cancellationToken = default)
+    public async Task<KnowledgeTraining> PostKnowledgeKnowledgebaseLanguageTrainingsAsync(string knowledgeBaseId, string languageCode, CancellationToken cancellationToken = default)
     {
-        ArgumentException.ThrowIfNullOrEmpty(categoryId);
         ArgumentException.ThrowIfNullOrEmpty(knowledgeBaseId);
         ArgumentException.ThrowIfNullOrEmpty(languageCode);
 
         var client = _httpClientFactory.CreateClient(PureCloudConstants.PureCloudClientName);
 
-        var response = await client.GetAsync($"api/v2/knowledge/knowledgebases/{knowledgeBaseId}/languages/{languageCode}/categories/{categoryId}", cancellationToken);
+        var response = await client.PostAsJsonAsync($"api/v2/knowledge/knowledgebases/{knowledgeBaseId}/languages/{languageCode}/trainings", new object(), _options.JsonSerializerOptions, cancellationToken);
+
         response.EnsureSuccessStatusCode();
 
-        return await response.Content.ReadFromJsonAsync<KnowledgeCategory>(_options.JsonSerializerOptions, cancellationToken);
+        return await response.Content.ReadFromJsonAsync<KnowledgeTraining>(_options.JsonSerializerOptions, cancellationToken);
     }
+
+    /// <inheritdoc />
+    public async Task<KnowledgeTraining> PostKnowledgeKnowledgebaseLanguageTrainingPromoteAsync(string knowledgeBaseId, string languageCode, string trainingId, CancellationToken cancellationToken = default)
+    {
+        ArgumentException.ThrowIfNullOrEmpty(knowledgeBaseId);
+        ArgumentException.ThrowIfNullOrEmpty(languageCode);
+        ArgumentException.ThrowIfNullOrEmpty(trainingId);
+
+        var client = _httpClientFactory.CreateClient(PureCloudConstants.PureCloudClientName);
+
+        var response = await client.PostAsJsonAsync($"api/v2/knowledge/knowledgebases/{knowledgeBaseId}/languages/{languageCode}/trainings/{trainingId}/promote", new object(), _options.JsonSerializerOptions, cancellationToken);
+
+        response.EnsureSuccessStatusCode();
+
+        return await response.Content.ReadFromJsonAsync<KnowledgeTraining>(_options.JsonSerializerOptions, cancellationToken);
+    }
+
+    #endregion
+
+    #region Search Operations
+
+    /// <inheritdoc />
+    public async Task<KnowledgeSearchResponse> PostKnowledgeKnowledgebaseSearchAsync(string knowledgeBaseId, KnowledgeSearchRequest body = null, CancellationToken cancellationToken = default)
+    {
+        ArgumentException.ThrowIfNullOrEmpty(knowledgeBaseId);
+
+        var client = _httpClientFactory.CreateClient(PureCloudConstants.PureCloudClientName);
+
+        var response = await client.PostAsJsonAsync($"api/v2/knowledge/knowledgebases/{knowledgeBaseId}/search", body ?? new KnowledgeSearchRequest(), _options.JsonSerializerOptions, cancellationToken);
+
+        response.EnsureSuccessStatusCode();
+
+        return await response.Content.ReadFromJsonAsync<KnowledgeSearchResponse>(_options.JsonSerializerOptions, cancellationToken);
+    }
+
+    /// <inheritdoc />
+    public async Task<KnowledgeDocumentSearch> PostKnowledgeKnowledgebaseDocumentsSearchAsync(string knowledgeBaseId, KnowledgeDocumentSearchRequest body = null, CancellationToken cancellationToken = default)
+    {
+        ArgumentException.ThrowIfNullOrEmpty(knowledgeBaseId);
+
+        var client = _httpClientFactory.CreateClient(PureCloudConstants.PureCloudClientName);
+
+        var response = await client.PostAsJsonAsync($"api/v2/knowledge/knowledgebases/{knowledgeBaseId}/documents/search", body ?? new KnowledgeDocumentSearchRequest(), _options.JsonSerializerOptions, cancellationToken);
+
+        response.EnsureSuccessStatusCode();
+
+        return await response.Content.ReadFromJsonAsync<KnowledgeDocumentSearch>(_options.JsonSerializerOptions, cancellationToken);
+    }
+
+    #endregion
+
+    #region Language Document Operations
 
     /// <inheritdoc />
     public async Task<KnowledgeDocument> GetKnowledgeKnowledgebaseLanguageDocumentAsync(string documentId, string knowledgeBaseId, string languageCode, CancellationToken cancellationToken = default)
@@ -774,22 +441,6 @@ public sealed class KnowledgeApi : IKnowledgeApi
         response.EnsureSuccessStatusCode();
 
         return await response.Content.ReadFromJsonAsync<KnowledgeDocument>(_options.JsonSerializerOptions, cancellationToken);
-    }
-
-    /// <inheritdoc />
-    public async Task<KnowledgeDocumentContentUpload> GetKnowledgeKnowledgebaseLanguageDocumentUploadAsync(string documentId, string knowledgeBaseId, string languageCode, string uploadId, CancellationToken cancellationToken = default)
-    {
-        ArgumentException.ThrowIfNullOrEmpty(documentId);
-        ArgumentException.ThrowIfNullOrEmpty(knowledgeBaseId);
-        ArgumentException.ThrowIfNullOrEmpty(languageCode);
-        ArgumentException.ThrowIfNullOrEmpty(uploadId);
-
-        var client = _httpClientFactory.CreateClient(PureCloudConstants.PureCloudClientName);
-
-        var response = await client.GetAsync($"api/v2/knowledge/knowledgebases/{knowledgeBaseId}/languages/{languageCode}/documents/{documentId}/uploads/{uploadId}", cancellationToken);
-        response.EnsureSuccessStatusCode();
-
-        return await response.Content.ReadFromJsonAsync<KnowledgeDocumentContentUpload>(_options.JsonSerializerOptions, cancellationToken);
     }
 
     /// <inheritdoc />
@@ -822,7 +473,37 @@ public sealed class KnowledgeApi : IKnowledgeApi
         return await response.Content.ReadFromJsonAsync<DocumentListing>(_options.JsonSerializerOptions, cancellationToken);
     }
 
-    #endregion
+    /// <inheritdoc />
+    public async Task<KnowledgeDocument> PostKnowledgeKnowledgebaseLanguageDocumentsAsync(string knowledgeBaseId, string languageCode, KnowledgeDocumentRequest body, CancellationToken cancellationToken = default)
+    {
+        ArgumentException.ThrowIfNullOrEmpty(knowledgeBaseId);
+        ArgumentException.ThrowIfNullOrEmpty(languageCode);
+        ArgumentNullException.ThrowIfNull(body);
 
-    // Continue with remaining Get operations and implement Patch/Post/Put operations...
+        var client = _httpClientFactory.CreateClient(PureCloudConstants.PureCloudClientName);
+
+        var response = await client.PostAsJsonAsync($"api/v2/knowledge/knowledgebases/{knowledgeBaseId}/languages/{languageCode}/documents", body, _options.JsonSerializerOptions, cancellationToken);
+
+        response.EnsureSuccessStatusCode();
+
+        return await response.Content.ReadFromJsonAsync<KnowledgeDocument>(_options.JsonSerializerOptions, cancellationToken);
+    }
+
+    /// <inheritdoc />
+    public async Task<KnowledgeDocument> DeleteKnowledgeKnowledgebaseLanguageDocumentAsync(string documentId, string knowledgeBaseId, string languageCode, CancellationToken cancellationToken = default)
+    {
+        ArgumentException.ThrowIfNullOrEmpty(documentId);
+        ArgumentException.ThrowIfNullOrEmpty(knowledgeBaseId);
+        ArgumentException.ThrowIfNullOrEmpty(languageCode);
+
+        var client = _httpClientFactory.CreateClient(PureCloudConstants.PureCloudClientName);
+
+        var response = await client.DeleteAsync($"api/v2/knowledge/knowledgebases/{knowledgeBaseId}/languages/{languageCode}/documents/{documentId}", cancellationToken);
+
+        response.EnsureSuccessStatusCode();
+
+        return await response.Content.ReadFromJsonAsync<KnowledgeDocument>(_options.JsonSerializerOptions, cancellationToken);
+    }
+
+    #endregion
 }
