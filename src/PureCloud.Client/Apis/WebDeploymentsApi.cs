@@ -129,7 +129,7 @@ public sealed class WebDeploymentsApi : IWebDeploymentsApi
 
         if (showOnlyPublished.HasValue)
         {
-            parameters.Add("showOnlyPublished", showOnlyPublished.Value.ToString().ToLowerInvariant());
+            parameters.Add("showOnlyPublished", UriHelper.ParameterToString(showOnlyPublished.Value));
         }
 
         var uri = UriHelper.GetUri("/api/v2/webdeployments/configurations", parameters);
