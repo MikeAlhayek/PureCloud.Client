@@ -20,10 +20,10 @@ public interface IWorkforceManagementApi
     /// Get a business unit
     /// </summary>
     /// <param name="businessUnitId">The ID of the business unit</param>
-    /// <param name="expand">Include to access additional data on the business unit</param>
+    /// <param name="expands">Include to access additional data on the business unit</param>
     /// <param name="cancellationToken">Cancellation token</param>
     /// <returns>Business unit response</returns>
-    Task<BusinessUnitResponse> GetBusinessUnitAsync(string businessUnitId, List<string> expand = null, CancellationToken cancellationToken = default);
+    Task<BusinessUnitResponse> GetBusinessUnitAsync(string businessUnitId, IEnumerable<string> expands = null, CancellationToken cancellationToken = default);
 
     /// <summary>
     /// Delete a business unit
@@ -45,10 +45,10 @@ public interface IWorkforceManagementApi
     /// Get a management unit
     /// </summary>
     /// <param name="managementUnitId">The ID of the management unit</param>
-    /// <param name="expand">Include to access additional data on the management unit</param>
+    /// <param name="expands">Include to access additional data on the management unit</param>
     /// <param name="cancellationToken">Cancellation token</param>
     /// <returns>Management unit as JSON string (simplified for now)</returns>
-    Task<string> GetManagementUnitAsync(string managementUnitId, List<string> expand = null, CancellationToken cancellationToken = default);
+    Task<string> GetManagementUnitAsync(string managementUnitId, IEnumerable<string> expands = null, CancellationToken cancellationToken = default);
 
     /// <summary>
     /// Get management units
@@ -74,11 +74,11 @@ public interface IWorkforceManagementApi
     /// Get work plans for a management unit
     /// </summary>
     /// <param name="managementUnitId">The ID of the management unit</param>
-    /// <param name="expand">Include to access additional data on the work plans</param>
+    /// <param name="expands">Include to access additional data on the work plans</param>
     /// <param name="exclude">Exclude specific data from the work plans</param>
     /// <param name="cancellationToken">Cancellation token</param>
     /// <returns>Work plan list as JSON string (simplified for now)</returns>
-    Task<string> GetWorkPlansAsync(string managementUnitId, List<string> expand = null, List<string> exclude = null, CancellationToken cancellationToken = default);
+    Task<string> GetWorkPlansAsync(string managementUnitId, IEnumerable<string> expands = null, List<string> exclude = null, CancellationToken cancellationToken = default);
 
     /// <summary>
     /// Create a new work plan

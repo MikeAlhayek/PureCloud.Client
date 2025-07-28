@@ -46,17 +46,17 @@ public sealed class WorkforceManagementApi : IWorkforceManagementApi
     }
 
     /// <inheritdoc />
-    public async Task<BusinessUnitResponse> GetBusinessUnitAsync(string businessUnitId, List<string> expand = null, CancellationToken cancellationToken = default)
+    public async Task<BusinessUnitResponse> GetBusinessUnitAsync(string businessUnitId, IEnumerable<string> expands = null, CancellationToken cancellationToken = default)
     {
         ArgumentException.ThrowIfNullOrEmpty(businessUnitId);
 
         var parameters = new NameValueCollection();
 
-        if (expand != null)
+        if (expands != null)
         {
-            foreach (var item in expand)
+            foreach (var expand in expands)
             {
-                parameters.Add("expand", item);
+                parameters.Add("expand", expand);
             }
         }
 
@@ -94,17 +94,17 @@ public sealed class WorkforceManagementApi : IWorkforceManagementApi
     }
 
     /// <inheritdoc />
-    public async Task<string> GetManagementUnitAsync(string managementUnitId, List<string> expand = null, CancellationToken cancellationToken = default)
+    public async Task<string> GetManagementUnitAsync(string managementUnitId, IEnumerable<string> expands = null, CancellationToken cancellationToken = default)
     {
         ArgumentException.ThrowIfNullOrEmpty(managementUnitId);
 
         var parameters = new NameValueCollection();
 
-        if (expand != null)
+        if (expands != null)
         {
-            foreach (var item in expand)
+            foreach (var expand in expands)
             {
-                parameters.Add("expand", item);
+                parameters.Add("expand", expand);
             }
         }
 
@@ -178,17 +178,17 @@ public sealed class WorkforceManagementApi : IWorkforceManagementApi
     }
 
     /// <inheritdoc />
-    public async Task<string> GetWorkPlansAsync(string managementUnitId, List<string> expand = null, List<string> exclude = null, CancellationToken cancellationToken = default)
+    public async Task<string> GetWorkPlansAsync(string managementUnitId, IEnumerable<string> expands = null, List<string> exclude = null, CancellationToken cancellationToken = default)
     {
         ArgumentException.ThrowIfNullOrEmpty(managementUnitId);
 
         var parameters = new NameValueCollection();
 
-        if (expand != null)
+        if (expands != null)
         {
-            foreach (var item in expand)
+            foreach (var expand in expands)
             {
-                parameters.Add("expand", item);
+                parameters.Add("expand", expand);
             }
         }
 
