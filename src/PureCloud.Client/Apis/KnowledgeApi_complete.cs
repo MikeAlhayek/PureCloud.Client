@@ -21,37 +21,7 @@ public sealed class KnowledgeApiComplete : IKnowledgeApi
         _options = options.Value;
     }
 
-    #region Helper Methods
 
-    private static string BuildQueryString(params (string name, object value)[] parameters)
-    {
-        var query = HttpUtility.ParseQueryString(string.Empty);
-        
-        foreach (var (name, value) in parameters)
-        {
-            if (value != null)
-            {
-                switch (value)
-                {
-                    case IEnumerable<string> list:
-                        foreach (var item in list)
-                            query.Add(name, item);
-                        break;
-                    case IEnumerable<object> enumList:
-                        foreach (var item in enumList)
-                            query.Add(name, item.ToString());
-                        break;
-                    default:
-                        query.Add(name, value.ToString());
-                        break;
-                }
-            }
-        }
-        
-        return query.ToString();
-    }
-
-    #endregion
 
     #region Core Knowledge Base Operations
 
@@ -116,23 +86,56 @@ public sealed class KnowledgeApiComplete : IKnowledgeApi
     /// <inheritdoc />
     public async Task<KnowledgeBaseListing> GetKnowledgeKnowledgebasesAsync(string before = null, string after = null, string limit = null, string pageSize = null, string name = null, string coreLanguage = null, bool? published = null, string sortBy = null, string sortOrder = null, CancellationToken cancellationToken = default)
     {
+        var parameters = new NameValueCollection();
+
+        if (!string.IsNullOrEmpty(before))
+        {
+            parameters.Add("before", UriHelper.ParameterToString(before));
+        }
+
+        if (!string.IsNullOrEmpty(after))
+        {
+            parameters.Add("after", UriHelper.ParameterToString(after));
+        }
+
+        if (!string.IsNullOrEmpty(limit))
+        {
+            parameters.Add("limit", UriHelper.ParameterToString(limit));
+        }
+
+        if (!string.IsNullOrEmpty(pageSize))
+        {
+            parameters.Add("pageSize", UriHelper.ParameterToString(pageSize));
+        }
+
+        if (!string.IsNullOrEmpty(name))
+        {
+            parameters.Add("name", UriHelper.ParameterToString(name));
+        }
+
+        if (!string.IsNullOrEmpty(coreLanguage))
+        {
+            parameters.Add("coreLanguage", UriHelper.ParameterToString(coreLanguage));
+        }
+
+        if (published.HasValue)
+        {
+            parameters.Add("published", UriHelper.ParameterToString(published.Value));
+        }
+
+        if (!string.IsNullOrEmpty(sortBy))
+        {
+            parameters.Add("sortBy", UriHelper.ParameterToString(sortBy));
+        }
+
+        if (!string.IsNullOrEmpty(sortOrder))
+        {
+            parameters.Add("sortOrder", UriHelper.ParameterToString(sortOrder));
+        }
+
         var client = _httpClientFactory.CreateClient(PureCloudConstants.PureCloudClientName);
 
-        var queryString = BuildQueryString(
-            ("before", before),
-            ("after", after),
-            ("limit", limit),
-            ("pageSize", pageSize),
-            ("name", name),
-            ("coreLanguage", coreLanguage),
-            ("published", published),
-            ("sortBy", sortBy),
-            ("sortOrder", sortOrder)
-        );
-
-        var uri = "api/v2/knowledge/knowledgebases";
-        if (!string.IsNullOrEmpty(queryString))
-            uri += $"?{queryString}";
+        var uri = UriHelper.GetUri("api/v2/knowledge/knowledgebases", parameters);
 
         var response = await client.GetAsync(uri, cancellationToken);
         response.EnsureSuccessStatusCode();
@@ -150,16 +153,24 @@ public sealed class KnowledgeApiComplete : IKnowledgeApi
         ArgumentException.ThrowIfNullOrEmpty(knowledgeBaseId);
         ArgumentException.ThrowIfNullOrEmpty(documentId);
 
+        var parameters = new NameValueCollection();
+
+        if (expand != null && expand.Any())
+        {
+            foreach (var item in expand)
+            {
+                parameters.Add("expand", UriHelper.ParameterToString(item));
+            }
+        }
+
+        if (!string.IsNullOrEmpty(state))
+        {
+            parameters.Add("state", UriHelper.ParameterToString(state));
+        }
+
         var client = _httpClientFactory.CreateClient(PureCloudConstants.PureCloudClientName);
 
-        var queryString = BuildQueryString(
-            ("expand", expand),
-            ("state", state)
-        );
-
-        var uri = $"api/v2/knowledge/knowledgebases/{knowledgeBaseId}/documents/{documentId}";
-        if (!string.IsNullOrEmpty(queryString))
-            uri += $"?{queryString}";
+        var uri = UriHelper.GetUri($"api/v2/knowledge/knowledgebases/{knowledgeBaseId}/documents/{documentId}", parameters);
 
         var response = await client.GetAsync(uri, cancellationToken);
         response.EnsureSuccessStatusCode();
@@ -172,23 +183,59 @@ public sealed class KnowledgeApiComplete : IKnowledgeApi
     {
         ArgumentException.ThrowIfNullOrEmpty(knowledgeBaseId);
 
+        var parameters = new NameValueCollection();
+
+        if (!string.IsNullOrEmpty(before))
+        {
+            parameters.Add("before", UriHelper.ParameterToString(before));
+        }
+
+        if (!string.IsNullOrEmpty(after))
+        {
+            parameters.Add("after", UriHelper.ParameterToString(after));
+        }
+
+        if (!string.IsNullOrEmpty(pageSize))
+        {
+            parameters.Add("pageSize", UriHelper.ParameterToString(pageSize));
+        }
+
+        if (includeSubcategories.HasValue)
+        {
+            parameters.Add("includeSubcategories", UriHelper.ParameterToString(includeSubcategories.Value));
+        }
+
+        if (includeDrafts.HasValue)
+        {
+            parameters.Add("includeDrafts", UriHelper.ParameterToString(includeDrafts.Value));
+        }
+
+        if (categories != null && categories.Any())
+        {
+            foreach (var item in categories)
+            {
+                parameters.Add("categories", UriHelper.ParameterToString(item));
+            }
+        }
+
+        if (!string.IsNullOrEmpty(title))
+        {
+            parameters.Add("title", UriHelper.ParameterToString(title));
+        }
+
+        if (!string.IsNullOrEmpty(sortBy))
+        {
+            parameters.Add("sortBy", UriHelper.ParameterToString(sortBy));
+        }
+
+        if (!string.IsNullOrEmpty(sortOrder))
+        {
+            parameters.Add("sortOrder", UriHelper.ParameterToString(sortOrder));
+        }
+
         var client = _httpClientFactory.CreateClient(PureCloudConstants.PureCloudClientName);
 
-        var queryString = BuildQueryString(
-            ("before", before),
-            ("after", after),
-            ("pageSize", pageSize),
-            ("includeSubcategories", includeSubcategories),
-            ("includeDrafts", includeDrafts),
-            ("categories", categories),
-            ("title", title),
-            ("sortBy", sortBy),
-            ("sortOrder", sortOrder)
-        );
-
-        var uri = $"api/v2/knowledge/knowledgebases/{knowledgeBaseId}/documents";
-        if (!string.IsNullOrEmpty(queryString))
-            uri += $"?{queryString}";
+        var uri = UriHelper.GetUri($"api/v2/knowledge/knowledgebases/{knowledgeBaseId}/documents", parameters);
 
         var response = await client.GetAsync(uri, cancellationToken);
         response.EnsureSuccessStatusCode();
@@ -341,19 +388,36 @@ public sealed class KnowledgeApiComplete : IKnowledgeApi
         ArgumentException.ThrowIfNullOrEmpty(knowledgeBaseId);
         ArgumentException.ThrowIfNullOrEmpty(languageCode);
 
+        var parameters = new NameValueCollection();
+
+        if (!string.IsNullOrEmpty(before))
+        {
+            parameters.Add("before", UriHelper.ParameterToString(before));
+        }
+
+        if (!string.IsNullOrEmpty(after))
+        {
+            parameters.Add("after", UriHelper.ParameterToString(after));
+        }
+
+        if (!string.IsNullOrEmpty(limit))
+        {
+            parameters.Add("limit", UriHelper.ParameterToString(limit));
+        }
+
+        if (!string.IsNullOrEmpty(pageSize))
+        {
+            parameters.Add("pageSize", UriHelper.ParameterToString(pageSize));
+        }
+
+        if (knowledgeTrainingState.HasValue)
+        {
+            parameters.Add("knowledgeTrainingState", UriHelper.ParameterToString(knowledgeTrainingState.Value));
+        }
+
         var client = _httpClientFactory.CreateClient(PureCloudConstants.PureCloudClientName);
 
-        var queryString = BuildQueryString(
-            ("before", before),
-            ("after", after),
-            ("limit", limit),
-            ("pageSize", pageSize),
-            ("knowledgeTrainingState", knowledgeTrainingState)
-        );
-
-        var uri = $"api/v2/knowledge/knowledgebases/{knowledgeBaseId}/languages/{languageCode}/trainings";
-        if (!string.IsNullOrEmpty(queryString))
-            uri += $"?{queryString}";
+        var uri = UriHelper.GetUri($"api/v2/knowledge/knowledgebases/{knowledgeBaseId}/languages/{languageCode}/trainings", parameters);
 
         var response = await client.GetAsync(uri, cancellationToken);
         response.EnsureSuccessStatusCode();
@@ -449,23 +513,59 @@ public sealed class KnowledgeApiComplete : IKnowledgeApi
         ArgumentException.ThrowIfNullOrEmpty(knowledgeBaseId);
         ArgumentException.ThrowIfNullOrEmpty(languageCode);
 
+        var parameters = new NameValueCollection();
+
+        if (!string.IsNullOrEmpty(before))
+        {
+            parameters.Add("before", UriHelper.ParameterToString(before));
+        }
+
+        if (!string.IsNullOrEmpty(after))
+        {
+            parameters.Add("after", UriHelper.ParameterToString(after));
+        }
+
+        if (!string.IsNullOrEmpty(limit))
+        {
+            parameters.Add("limit", UriHelper.ParameterToString(limit));
+        }
+
+        if (!string.IsNullOrEmpty(pageSize))
+        {
+            parameters.Add("pageSize", UriHelper.ParameterToString(pageSize));
+        }
+
+        if (!string.IsNullOrEmpty(categories))
+        {
+            parameters.Add("categories", UriHelper.ParameterToString(categories));
+        }
+
+        if (!string.IsNullOrEmpty(title))
+        {
+            parameters.Add("title", UriHelper.ParameterToString(title));
+        }
+
+        if (!string.IsNullOrEmpty(sortBy))
+        {
+            parameters.Add("sortBy", UriHelper.ParameterToString(sortBy));
+        }
+
+        if (!string.IsNullOrEmpty(sortOrder))
+        {
+            parameters.Add("sortOrder", UriHelper.ParameterToString(sortOrder));
+        }
+
+        if (documentIds != null && documentIds.Any())
+        {
+            foreach (var item in documentIds)
+            {
+                parameters.Add("documentIds", UriHelper.ParameterToString(item));
+            }
+        }
+
         var client = _httpClientFactory.CreateClient(PureCloudConstants.PureCloudClientName);
 
-        var queryString = BuildQueryString(
-            ("before", before),
-            ("after", after),
-            ("limit", limit),
-            ("pageSize", pageSize),
-            ("categories", categories),
-            ("title", title),
-            ("sortBy", sortBy),
-            ("sortOrder", sortOrder),
-            ("documentIds", documentIds)
-        );
-
-        var uri = $"api/v2/knowledge/knowledgebases/{knowledgeBaseId}/languages/{languageCode}/documents";
-        if (!string.IsNullOrEmpty(queryString))
-            uri += $"?{queryString}";
+        var uri = UriHelper.GetUri($"api/v2/knowledge/knowledgebases/{knowledgeBaseId}/languages/{languageCode}/documents", parameters);
 
         var response = await client.GetAsync(uri, cancellationToken);
         response.EnsureSuccessStatusCode();
