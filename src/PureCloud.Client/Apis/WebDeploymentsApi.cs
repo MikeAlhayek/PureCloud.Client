@@ -150,7 +150,10 @@ public sealed class WebDeploymentsApi : IWebDeploymentsApi
 
         if (expand != null)
         {
-            parameters.Add("expand", string.Join(",", expand));
+            foreach (var expandValue in expand)
+            {
+                parameters.Add("expand", expandValue);
+            }
         }
 
         var uri = UriHelper.GetUri($"/api/v2/webdeployments/deployments/{Uri.EscapeDataString(deploymentId)}", parameters);
@@ -191,7 +194,10 @@ public sealed class WebDeploymentsApi : IWebDeploymentsApi
 
         if (expand != null)
         {
-            parameters.Add("expand", string.Join(",", expand));
+            foreach (var expandValue in expand)
+            {
+                parameters.Add("expand", expandValue);
+            }
         }
 
         var uri = UriHelper.GetUri($"/api/v2/webdeployments/deployments/{Uri.EscapeDataString(deploymentId)}/configurations", parameters);
@@ -218,13 +224,16 @@ public sealed class WebDeploymentsApi : IWebDeploymentsApi
     }
 
     /// <inheritdoc />
-    public async Task<ExpandableWebDeploymentEntityListing> GetWebdeploymentsDeploymentsAsync(IEnumerable<string> expand = null, CancellationToken cancellationToken = default)
+    public async Task<ExpandableWebDeploymentEntityListing> GetWebdeploymentsDeploymentsAsync(IEnumerable<string> expands = null, CancellationToken cancellationToken = default)
     {
         var parameters = new NameValueCollection();
 
-        if (expand != null)
+        if (expands != null)
         {
-            parameters.Add("expand", string.Join(",", expand));
+            foreach (var expandValue in expands)
+            {
+                parameters.Add("expand", expandValue);
+            }
         }
 
         var uri = UriHelper.GetUri("/api/v2/webdeployments/deployments", parameters);

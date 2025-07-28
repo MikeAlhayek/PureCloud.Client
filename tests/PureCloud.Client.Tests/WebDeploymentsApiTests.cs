@@ -6,7 +6,7 @@ using Xunit;
 
 namespace PureCloud.Client.Tests;
 
-public class WebDeploymentsApiTests
+public sealed class WebDeploymentsApiTests
 {
     private readonly IServiceProvider _serviceProvider;
 

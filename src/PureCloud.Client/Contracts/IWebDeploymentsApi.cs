@@ -113,10 +113,10 @@ public interface IWebDeploymentsApi
     /// <summary>
     /// Get deployments
     /// </summary>
-    /// <param name="expand">The specified entity attributes will be filled. Comma separated values expected. (optional)</param>
+    /// <param name="expands">The specified entity attributes will be filled. Comma separated values expected. (optional)</param>
     /// <param name="cancellationToken">Cancellation token</param>
     /// <returns>ExpandableWebDeploymentEntityListing</returns>
-    Task<ExpandableWebDeploymentEntityListing> GetWebdeploymentsDeploymentsAsync(IEnumerable<string> expand = null, CancellationToken cancellationToken = default);
+    Task<ExpandableWebDeploymentEntityListing> GetWebdeploymentsDeploymentsAsync(IEnumerable<string> expands = null, CancellationToken cancellationToken = default);
 
     /// <summary>
     /// Publish the configuration draft and create a new version
