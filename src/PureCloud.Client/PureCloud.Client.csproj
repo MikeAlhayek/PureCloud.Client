@@ -266,6 +266,8 @@
     <Compile Include="Models\CategoryRequest.cs" />
     <Compile Include="Models\CategoryRequest.InteractionType.cs" />
     <Compile Include="Models\ConnectedEdge.cs" />
+    <Compile Include="Models\ContextEntity.cs" />
+    <Compile Include="Models\ContextIntent.cs" />
     <Compile Include="Models\ContentActions.cs" />
     <Compile Include="Models\ContentAttachment.cs" />
     <Compile Include="Models\ContentAttachment.MediaType.cs" />
@@ -335,6 +337,7 @@
     <Compile Include="Models\RecipientAdditionalIdentifier.Type.cs" />
     <Compile Include="Models\Teams\TeamEntityListing.cs" />
     <Compile Include="Models\TextBotPromptSegment.Type.cs" />
+    <Compile Include="Models\TopicPhrase.cs" />
     <Compile Include="Models\TrunkBase.cs" />
     <Compile Include="Models\TrunkBaseAssignment.cs" />
     <Compile Include="Models\DomainCertificateAuthority.cs" />
@@ -392,6 +395,8 @@
     <Compile Include="Models\DocumentationSearchRequest.SortOrder.cs" />
     <Compile Include="Models\DocumentationSearchResponse.cs" />
     <Compile Include="Models\DocumentCategoryInput.cs" />
+    <Compile Include="Models\DetectedDialogAct.cs" />
+    <Compile Include="Models\DetectedIntent.cs" />
     <Compile Include="Models\Draft.cs" />
     <Compile Include="Models\DraftIntents.cs" />
     <Compile Include="Models\DraftListing.cs" />
@@ -2305,6 +2310,7 @@
     <Compile Include="Models\HistoryListing.cs" />
     <Compile Include="Models\HistoryListing.ActionStatus.cs" />
     <Compile Include="Models\HistoryListing.ActionName.cs" />
+    <Compile Include="Models\HistoryHeadersTranslation.cs" />
     <Compile Include="Models\HoldUpdatedEvent.cs" />
     <Compile Include="Models\HomerRecord.cs" />
     <Compile Include="Models\IdentifierClaimRequest.cs" />
@@ -2358,6 +2364,7 @@
     <Compile Include="Models\IntegrationTypeEntityListing.cs" />
     <Compile Include="Models\Intent.cs" />
     <Compile Include="Models\IntentDefinition.cs" />
+    <Compile Include="Models\IntentFeedback.cs" />
     <Compile Include="Models\InternalMessage.cs" />
     <Compile Include="Models\InternalMessageDetails.cs" />
     <Compile Include="Models\InternalMessageDisconnectType.cs" />
@@ -4318,6 +4325,7 @@
     <Compile Include="Models\LearningCoverArtUploadUrlRequest.ContentType.cs" />
     <Compile Include="Models\LearningCoverArtUploadUrlRequest.ServerSideEncryption.cs" />
     <Compile Include="Models\UrlResponse.cs" />
+    <Compile Include="Models\Utterance.cs" />
     <Compile Include="Models\ApiUsageClientQuery.cs" />
     <Compile Include="Models\ApiUsageClientQuery.Granularity.cs" />
     <Compile Include="Models\ApiUsageClientQuery.Metrics.cs" />
