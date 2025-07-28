@@ -2752,6 +2752,9 @@
     <Compile Include="Models\LearningAssessment.cs" />
     <Compile Include="Models\LearningModule.cs" />
     <Compile Include="Models\LearningModuleRequest.cs" />
+    <Compile Include="Models\Language.cs" />
+    <Compile Include="Models\Language.State.cs" />
+    <Compile Include="Models\LanguageEntityListing.cs" />
     <Compile Include="Models\LearningModuleRule.cs" />
     <Compile Include="Models\LearningModuleInformStep.cs" />
     <Compile Include="Models\LearningModuleInformStepRequest.cs" />
