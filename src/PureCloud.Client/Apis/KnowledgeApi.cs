@@ -996,31 +996,123 @@ public sealed class KnowledgeApi : IKnowledgeApi
     // UriHelper.GetUri for URL building, and appropriate HTTP methods (GET/POST/PUT/PATCH/DELETE).
 
     // Document feedback operations
-    public Task<KnowledgeDocumentFeedbackResponseListing> GetKnowledgeKnowledgebaseDocumentFeedbackAsync(string knowledgeBaseId, string documentId, string before = null, string after = null, string pageSize = null, bool? onlyCommented = null, string documentVersionId = null, string documentVariationId = null, string appType = null, string queryType = null, string userId = null, string queueId = null, string state = null, CancellationToken cancellationToken = default)
+    public async Task<KnowledgeDocumentFeedbackResponseListing> GetKnowledgeKnowledgebaseDocumentFeedbackAsync(string knowledgeBaseId, string documentId, string before = null, string after = null, string pageSize = null, bool? onlyCommented = null, string documentVersionId = null, string documentVariationId = null, string appType = null, string queryType = null, string userId = null, string queueId = null, string state = null, CancellationToken cancellationToken = default)
     {
-        throw new NotImplementedException("Method implementation pending - part of comprehensive 115-method migration");
+        ArgumentException.ThrowIfNullOrEmpty(knowledgeBaseId);
+        ArgumentException.ThrowIfNullOrEmpty(documentId);
+
+        var client = _httpClientFactory.CreateClient(PureCloudConstants.PureCloudClientName);
+
+        var parameters = new NameValueCollection();
+        if (!string.IsNullOrEmpty(before)) parameters.Add("before", before);
+        if (!string.IsNullOrEmpty(after)) parameters.Add("after", after);
+        if (!string.IsNullOrEmpty(pageSize)) parameters.Add("pageSize", pageSize);
+        if (onlyCommented.HasValue) parameters.Add("onlyCommented", UriHelper.ParameterToString(onlyCommented.Value));
+        if (!string.IsNullOrEmpty(documentVersionId)) parameters.Add("documentVersionId", documentVersionId);
+        if (!string.IsNullOrEmpty(documentVariationId)) parameters.Add("documentVariationId", documentVariationId);
+        if (!string.IsNullOrEmpty(appType)) parameters.Add("appType", appType);
+        if (!string.IsNullOrEmpty(queryType)) parameters.Add("queryType", queryType);
+        if (!string.IsNullOrEmpty(userId)) parameters.Add("userId", userId);
+        if (!string.IsNullOrEmpty(queueId)) parameters.Add("queueId", queueId);
+        if (!string.IsNullOrEmpty(state)) parameters.Add("state", state);
+
+        var uri = UriHelper.GetUri($"api/v2/knowledge/knowledgebases/{knowledgeBaseId}/documents/{documentId}/feedback", parameters);
+        var response = await client.GetAsync(uri, cancellationToken);
+        response.EnsureSuccessStatusCode();
+
+        return await response.Content.ReadFromJsonAsync<KnowledgeDocumentFeedbackResponseListing>(_options.JsonSerializerOptions, cancellationToken);
     }
 
-    public Task<KnowledgeDocumentFeedbackResponse> GetKnowledgeKnowledgebaseDocumentFeedbackFeedbackIdAsync(string knowledgeBaseId, string documentId, string feedbackId, CancellationToken cancellationToken = default)
+    public async Task<KnowledgeDocumentFeedbackResponse> GetKnowledgeKnowledgebaseDocumentFeedbackFeedbackIdAsync(string knowledgeBaseId, string documentId, string feedbackId, CancellationToken cancellationToken = default)
     {
-        throw new NotImplementedException("Method implementation pending - part of comprehensive 115-method migration");
+        ArgumentException.ThrowIfNullOrEmpty(knowledgeBaseId);
+        ArgumentException.ThrowIfNullOrEmpty(documentId);
+        ArgumentException.ThrowIfNullOrEmpty(feedbackId);
+
+        var client = _httpClientFactory.CreateClient(PureCloudConstants.PureCloudClientName);
+
+        var response = await client.GetAsync($"api/v2/knowledge/knowledgebases/{knowledgeBaseId}/documents/{documentId}/feedback/{feedbackId}", cancellationToken);
+        response.EnsureSuccessStatusCode();
+
+        return await response.Content.ReadFromJsonAsync<KnowledgeDocumentFeedbackResponse>(_options.JsonSerializerOptions, cancellationToken);
     }
 
     // Document variations
-    public Task<DocumentVariationResponse> GetKnowledgeKnowledgebaseDocumentVariationAsync(string knowledgeBaseId, string documentId, string documentVariationId, string documentState = null, List<string> expand = null, CancellationToken cancellationToken = default)
+    public async Task<DocumentVariationResponse> GetKnowledgeKnowledgebaseDocumentVariationAsync(string knowledgeBaseId, string documentId, string documentVariationId, string documentState = null, List<string> expand = null, CancellationToken cancellationToken = default)
     {
-        throw new NotImplementedException("Method implementation pending - part of comprehensive 115-method migration");
+        ArgumentException.ThrowIfNullOrEmpty(knowledgeBaseId);
+        ArgumentException.ThrowIfNullOrEmpty(documentId);
+        ArgumentException.ThrowIfNullOrEmpty(documentVariationId);
+
+        var client = _httpClientFactory.CreateClient(PureCloudConstants.PureCloudClientName);
+
+        var parameters = new NameValueCollection();
+        if (!string.IsNullOrEmpty(documentState)) parameters.Add("documentState", documentState);
+        if (expand?.Count > 0)
+        {
+            foreach (var item in expand)
+            {
+                parameters.Add("expand", UriHelper.ParameterToString(item));
+            }
+        }
+
+        var uri = UriHelper.GetUri($"api/v2/knowledge/knowledgebases/{knowledgeBaseId}/documents/{documentId}/variations/{documentVariationId}", parameters);
+        var response = await client.GetAsync(uri, cancellationToken);
+        response.EnsureSuccessStatusCode();
+
+        return await response.Content.ReadFromJsonAsync<DocumentVariationResponse>(_options.JsonSerializerOptions, cancellationToken);
     }
 
-    public Task<DocumentVariationResponseListing> GetKnowledgeKnowledgebaseDocumentVariationsAsync(string knowledgeBaseId, string documentId, string before = null, string after = null, string pageSize = null, string documentState = null, List<string> expand = null, CancellationToken cancellationToken = default)
+    public async Task<DocumentVariationResponseListing> GetKnowledgeKnowledgebaseDocumentVariationsAsync(string knowledgeBaseId, string documentId, string before = null, string after = null, string pageSize = null, string documentState = null, List<string> expand = null, CancellationToken cancellationToken = default)
     {
-        throw new NotImplementedException("Method implementation pending - part of comprehensive 115-method migration");
+        ArgumentException.ThrowIfNullOrEmpty(knowledgeBaseId);
+        ArgumentException.ThrowIfNullOrEmpty(documentId);
+
+        var client = _httpClientFactory.CreateClient(PureCloudConstants.PureCloudClientName);
+
+        var parameters = new NameValueCollection();
+        if (!string.IsNullOrEmpty(before)) parameters.Add("before", before);
+        if (!string.IsNullOrEmpty(after)) parameters.Add("after", after);
+        if (!string.IsNullOrEmpty(pageSize)) parameters.Add("pageSize", pageSize);
+        if (!string.IsNullOrEmpty(documentState)) parameters.Add("documentState", documentState);
+        if (expand?.Count > 0)
+        {
+            foreach (var item in expand)
+            {
+                parameters.Add("expand", UriHelper.ParameterToString(item));
+            }
+        }
+
+        var uri = UriHelper.GetUri($"api/v2/knowledge/knowledgebases/{knowledgeBaseId}/documents/{documentId}/variations", parameters);
+        var response = await client.GetAsync(uri, cancellationToken);
+        response.EnsureSuccessStatusCode();
+
+        return await response.Content.ReadFromJsonAsync<DocumentVariationResponseListing>(_options.JsonSerializerOptions, cancellationToken);
     }
 
     // Document versions
-    public Task<KnowledgeDocumentVersion> GetKnowledgeKnowledgebaseDocumentVersionAsync(string knowledgeBaseId, string documentId, string versionId, List<string> expand = null, CancellationToken cancellationToken = default)
+    public async Task<KnowledgeDocumentVersion> GetKnowledgeKnowledgebaseDocumentVersionAsync(string knowledgeBaseId, string documentId, string versionId, List<string> expand = null, CancellationToken cancellationToken = default)
     {
-        throw new NotImplementedException("Method implementation pending - part of comprehensive 115-method migration");
+        ArgumentException.ThrowIfNullOrEmpty(knowledgeBaseId);
+        ArgumentException.ThrowIfNullOrEmpty(documentId);
+        ArgumentException.ThrowIfNullOrEmpty(versionId);
+
+        var client = _httpClientFactory.CreateClient(PureCloudConstants.PureCloudClientName);
+
+        var parameters = new NameValueCollection();
+        if (expand?.Count > 0)
+        {
+            foreach (var item in expand)
+            {
+                parameters.Add("expand", UriHelper.ParameterToString(item));
+            }
+        }
+
+        var uri = UriHelper.GetUri($"api/v2/knowledge/knowledgebases/{knowledgeBaseId}/documents/{documentId}/versions/{versionId}", parameters);
+        var response = await client.GetAsync(uri, cancellationToken);
+        response.EnsureSuccessStatusCode();
+
+        return await response.Content.ReadFromJsonAsync<KnowledgeDocumentVersion>(_options.JsonSerializerOptions, cancellationToken);
     }
 
     public Task<KnowledgeDocumentVersionVariation> GetKnowledgeKnowledgebaseDocumentVersionVariationAsync(string knowledgeBaseId, string documentId, string versionId, string variationId, CancellationToken cancellationToken = default)
