@@ -142,17 +142,17 @@ public sealed class WebDeploymentsApi : IWebDeploymentsApi
     }
 
     /// <inheritdoc />
-    public async Task<WebDeployment> GetWebdeploymentsDeploymentAsync(string deploymentId, IEnumerable<string> expand = null, CancellationToken cancellationToken = default)
+    public async Task<WebDeployment> GetWebdeploymentsDeploymentAsync(string deploymentId, IEnumerable<string> expands = null, CancellationToken cancellationToken = default)
     {
         ArgumentException.ThrowIfNullOrEmpty(deploymentId);
 
         var parameters = new NameValueCollection();
 
-        if (expand != null)
+        if (expands != null)
         {
-            foreach (var expandValue in expand)
+            foreach (var expand in expands)
             {
-                parameters.Add("expand", expandValue);
+                parameters.Add("expand", expand);
             }
         }
 
@@ -181,7 +181,7 @@ public sealed class WebDeploymentsApi : IWebDeploymentsApi
     }
 
     /// <inheritdoc />
-    public async Task<WebDeploymentActiveConfigurationOnDeployment> GetWebdeploymentsDeploymentConfigurationsAsync(string deploymentId, string type = null, IEnumerable<string> expand = null, CancellationToken cancellationToken = default)
+    public async Task<WebDeploymentActiveConfigurationOnDeployment> GetWebdeploymentsDeploymentConfigurationsAsync(string deploymentId, string type = null, IEnumerable<string> expands = null, CancellationToken cancellationToken = default)
     {
         ArgumentException.ThrowIfNullOrEmpty(deploymentId);
 
@@ -192,11 +192,11 @@ public sealed class WebDeploymentsApi : IWebDeploymentsApi
             parameters.Add("type", type);
         }
 
-        if (expand != null)
+        if (expands != null)
         {
-            foreach (var expandValue in expand)
+            foreach (var expand in expands)
             {
-                parameters.Add("expand", expandValue);
+                parameters.Add("expand", expand);
             }
         }
 
@@ -230,9 +230,9 @@ public sealed class WebDeploymentsApi : IWebDeploymentsApi
 
         if (expands != null)
         {
-            foreach (var expandValue in expands)
+            foreach (var expand in expands)
             {
-                parameters.Add("expand", expandValue);
+                parameters.Add("expand", expand);
             }
         }
 

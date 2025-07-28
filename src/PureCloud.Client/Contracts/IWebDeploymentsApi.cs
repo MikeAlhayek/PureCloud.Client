@@ -78,10 +78,10 @@ public interface IWebDeploymentsApi
     /// Get a deployment
     /// </summary>
     /// <param name="deploymentId">The deployment ID</param>
-    /// <param name="expand">The specified entity attributes will be filled. Comma separated values expected. (optional)</param>
+    /// <param name="expands">The specified entity attributes will be filled. Comma separated values expected. (optional)</param>
     /// <param name="cancellationToken">Cancellation token</param>
     /// <returns>WebDeployment</returns>
-    Task<WebDeployment> GetWebdeploymentsDeploymentAsync(string deploymentId, IEnumerable<string> expand = null, CancellationToken cancellationToken = default);
+    Task<WebDeployment> GetWebdeploymentsDeploymentAsync(string deploymentId, IEnumerable<string> expands = null, CancellationToken cancellationToken = default);
 
     /// <summary>
     /// Retrieves a cobrowse session
@@ -97,10 +97,10 @@ public interface IWebDeploymentsApi
     /// </summary>
     /// <param name="deploymentId">The deployment ID</param>
     /// <param name="type">Get active configuration on a deployment (optional)</param>
-    /// <param name="expand">Expand instructions for the return value (optional)</param>
+    /// <param name="expands">Expand instructions for the return value (optional)</param>
     /// <param name="cancellationToken">Cancellation token</param>
     /// <returns>WebDeploymentActiveConfigurationOnDeployment</returns>
-    Task<WebDeploymentActiveConfigurationOnDeployment> GetWebdeploymentsDeploymentConfigurationsAsync(string deploymentId, string type = null, IEnumerable<string> expand = null, CancellationToken cancellationToken = default);
+    Task<WebDeploymentActiveConfigurationOnDeployment> GetWebdeploymentsDeploymentConfigurationsAsync(string deploymentId, string type = null, IEnumerable<string> expands = null, CancellationToken cancellationToken = default);
 
     /// <summary>
     /// Get a deployment identity resolution setting.
