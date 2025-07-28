@@ -4712,11 +4712,14 @@
     <Compile Include="Models\WebChatSettings.cs" />
     <Compile Include="Models\WebChatTyping.cs" />
     <Compile Include="Models\WebDeployment.cs" />
+    <Compile Include="Models\WebDeployment.Status.cs" />
     <Compile Include="Models\WebDeploymentActiveConfigurationOnDeployment.cs" />
     <Compile Include="Models\WebDeploymentConfigurationVersion.cs" />
+    <Compile Include="Models\WebDeploymentConfigurationVersion.Status.cs" />
     <Compile Include="Models\WebDeploymentConfigurationVersionEntityListing.cs" />
     <Compile Include="Models\WebDeploymentConfigurationVersionEntityRef.cs" />
     <Compile Include="Models\WebDeploymentConfigurationVersionResponse.cs" />
+    <Compile Include="Models\WebDeploymentConfigurationVersionResponse.Status.cs" />
     <Compile Include="Models\WebDeploymentFlowEntityRef.cs" />
     <Compile Include="Models\WebDeploymentHeadlessMode.cs" />
     <Compile Include="Models\WebDeploymentsAuthorizationResponse.cs" />
