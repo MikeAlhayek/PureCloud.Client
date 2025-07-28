@@ -1310,38 +1310,14 @@ public sealed class KnowledgeApi : IKnowledgeApi
     }
 
     // Language categories
-    public async Task<CategoryListing> GetKnowledgeKnowledgebaseLanguageCategoriesAsync(string knowledgeBaseId, string languageCode, string before = null, string after = null, string limit = null, string pageSize = null, string name = null, CancellationToken cancellationToken = default)
+    public Task<CategoryListing> GetKnowledgeKnowledgebaseLanguageCategoriesAsync(string knowledgeBaseId, string languageCode, string before = null, string after = null, string limit = null, string pageSize = null, string name = null, CancellationToken cancellationToken = default)
     {
-        ArgumentException.ThrowIfNullOrEmpty(knowledgeBaseId);
-        ArgumentException.ThrowIfNullOrEmpty(languageCode);
-
-        var client = _httpClientFactory.CreateClient(PureCloudConstants.PureCloudClientName);
-        var parameters = new NameValueCollection();
-
-        if (!string.IsNullOrEmpty(before)) parameters.Add("before", before);
-        if (!string.IsNullOrEmpty(after)) parameters.Add("after", after);
-        if (!string.IsNullOrEmpty(limit)) parameters.Add("limit", limit);
-        if (!string.IsNullOrEmpty(pageSize)) parameters.Add("pageSize", pageSize);
-        if (!string.IsNullOrEmpty(name)) parameters.Add("name", name);
-
-        var uri = UriHelper.GetUri($"api/v2/knowledge/knowledgebases/{knowledgeBaseId}/languages/{languageCode}/categories", parameters);
-        var response = await client.GetAsync(uri, cancellationToken);
-        response.EnsureSuccessStatusCode();
-
-        return await response.Content.ReadFromJsonAsync<CategoryListing>(_options.JsonSerializerOptions, cancellationToken);
+        throw new NotImplementedException("Method implementation pending - part of comprehensive 115-method migration");
     }
 
-    public async Task<KnowledgeExtendedCategory> GetKnowledgeKnowledgebaseLanguageCategoryAsync(string categoryId, string knowledgeBaseId, string languageCode, CancellationToken cancellationToken = default)
+    public Task<KnowledgeExtendedCategory> GetKnowledgeKnowledgebaseLanguageCategoryAsync(string categoryId, string knowledgeBaseId, string languageCode, CancellationToken cancellationToken = default)
     {
-        ArgumentException.ThrowIfNullOrEmpty(categoryId);
-        ArgumentException.ThrowIfNullOrEmpty(knowledgeBaseId);
-        ArgumentException.ThrowIfNullOrEmpty(languageCode);
-
-        var client = _httpClientFactory.CreateClient(PureCloudConstants.PureCloudClientName);
-        var response = await client.GetAsync($"api/v2/knowledge/knowledgebases/{knowledgeBaseId}/languages/{languageCode}/categories/{categoryId}", cancellationToken);
-        response.EnsureSuccessStatusCode();
-
-        return await response.Content.ReadFromJsonAsync<KnowledgeExtendedCategory>(_options.JsonSerializerOptions, cancellationToken);
+        throw new NotImplementedException("Method implementation pending - part of comprehensive 115-method migration");
     }
 
     // Document uploads
@@ -1361,17 +1337,9 @@ public sealed class KnowledgeApi : IKnowledgeApi
     }
 
     // Imports
-    public async Task<KnowledgeImport> GetKnowledgeKnowledgebaseLanguageDocumentsImportAsync(string knowledgeBaseId, string languageCode, string importId, CancellationToken cancellationToken = default)
+    public Task<KnowledgeImport> GetKnowledgeKnowledgebaseLanguageDocumentsImportAsync(string knowledgeBaseId, string languageCode, string importId, CancellationToken cancellationToken = default)
     {
-        ArgumentException.ThrowIfNullOrEmpty(knowledgeBaseId);
-        ArgumentException.ThrowIfNullOrEmpty(languageCode);
-        ArgumentException.ThrowIfNullOrEmpty(importId);
-
-        var client = _httpClientFactory.CreateClient(PureCloudConstants.PureCloudClientName);
-        var response = await client.GetAsync($"api/v2/knowledge/knowledgebases/{knowledgeBaseId}/languages/{languageCode}/documents/imports/{importId}", cancellationToken);
-        response.EnsureSuccessStatusCode();
-
-        return await response.Content.ReadFromJsonAsync<KnowledgeImport>(_options.JsonSerializerOptions, cancellationToken);
+        throw new NotImplementedException("Method implementation pending - part of comprehensive 115-method migration");
     }
 
     // Operations
