@@ -26,12 +26,12 @@ public sealed class WorkforceManagementApi : IWorkforceManagementApi
     {
         var parameters = new NameValueCollection();
 
-        if (!string.IsNullOrEmpty(feature))
+        if (feature != null)
         {
             parameters.Add("feature", UriHelper.ParameterToString(feature));
         }
 
-        if (!string.IsNullOrEmpty(divisionId))
+        if (divisionId != null)
         {
             parameters.Add("divisionId", UriHelper.ParameterToString(divisionId));
         }
@@ -94,6 +94,90 @@ public sealed class WorkforceManagementApi : IWorkforceManagementApi
     }
 
     /// <inheritdoc />
+    public async Task<string> GetManagementUnitAsync(string managementUnitId, List<string> expand = null, CancellationToken cancellationToken = default)
+    {
+        ArgumentException.ThrowIfNullOrEmpty(managementUnitId);
+
+        var parameters = new NameValueCollection();
+
+        if (expand != null)
+        {
+            foreach (var item in expand)
+            {
+                parameters.Add("expand", item);
+            }
+        }
+
+        var uri = UriHelper.GetUri($"api/v2/workforcemanagement/managementunits/{Uri.EscapeDataString(managementUnitId)}", parameters);
+
+        var response = await _httpClient.GetAsync(uri, cancellationToken);
+
+        response.EnsureSuccessStatusCode();
+
+        return await response.Content.ReadAsStringAsync(cancellationToken);
+    }
+
+    /// <inheritdoc />
+    public async Task<string> GetManagementUnitsAsync(int? pageSize = null, int? pageNumber = null, string expand = null, string feature = null, string divisionId = null, CancellationToken cancellationToken = default)
+    {
+        var parameters = new NameValueCollection();
+
+        if (pageSize.HasValue)
+        {
+            parameters.Add("pageSize", UriHelper.ParameterToString(pageSize.Value));
+        }
+
+        if (pageNumber.HasValue)
+        {
+            parameters.Add("pageNumber", UriHelper.ParameterToString(pageNumber.Value));
+        }
+
+        if (expand != null)
+        {
+            parameters.Add("expand", UriHelper.ParameterToString(expand));
+        }
+
+        if (feature != null)
+        {
+            parameters.Add("feature", UriHelper.ParameterToString(feature));
+        }
+
+        if (divisionId != null)
+        {
+            parameters.Add("divisionId", UriHelper.ParameterToString(divisionId));
+        }
+
+        var uri = UriHelper.GetUri("api/v2/workforcemanagement/managementunits", parameters);
+
+        var response = await _httpClient.GetAsync(uri, cancellationToken);
+
+        response.EnsureSuccessStatusCode();
+
+        return await response.Content.ReadAsStringAsync(cancellationToken);
+    }
+
+    /// <inheritdoc />
+    public async Task<string> GetAdherenceAsync(List<string> userId, CancellationToken cancellationToken = default)
+    {
+        ArgumentNullException.ThrowIfNull(userId);
+
+        var parameters = new NameValueCollection();
+
+        foreach (var id in userId)
+        {
+            parameters.Add("userId", id);
+        }
+
+        var uri = UriHelper.GetUri("api/v2/workforcemanagement/adherence", parameters);
+
+        var response = await _httpClient.GetAsync(uri, cancellationToken);
+
+        response.EnsureSuccessStatusCode();
+
+        return await response.Content.ReadAsStringAsync(cancellationToken);
+    }
+
+    /// <inheritdoc />
     public async Task<ActivityCodeContainer> GetActivityCodesAsync(string businessUnitId, CancellationToken cancellationToken = default)
     {
         ArgumentException.ThrowIfNullOrEmpty(businessUnitId);
@@ -148,7 +232,7 @@ public sealed class WorkforceManagementApi : IWorkforceManagementApi
             parameters.Add("includeOnlyPublished", UriHelper.ParameterToString(includeOnlyPublished.Value));
         }
 
-        if (!string.IsNullOrEmpty(expand))
+        if (expand != null)
         {
             parameters.Add("expand", UriHelper.ParameterToString(expand));
         }
@@ -159,7 +243,7 @@ public sealed class WorkforceManagementApi : IWorkforceManagementApi
 
         response.EnsureSuccessStatusCode();
 
-        return await response.Content.ReadFromJsonAsync<BuScheduleListing>(_options, cancellationToken) ?? throw new JsonException("Failed to deserialize response.");
+        return await response.Content.ReadFromJsonAsync<BuScheduleListing>(_options, cancellationToken);
     }
 
     /// <inheritdoc />
@@ -171,7 +255,7 @@ public sealed class WorkforceManagementApi : IWorkforceManagementApi
 
         var parameters = new NameValueCollection();
 
-        if (!string.IsNullOrEmpty(expand))
+        if (expand != null)
         {
             parameters.Add("expand", UriHelper.ParameterToString(expand));
         }

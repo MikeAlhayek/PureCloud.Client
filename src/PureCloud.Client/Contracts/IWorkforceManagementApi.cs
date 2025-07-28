@@ -42,6 +42,35 @@ public interface IWorkforceManagementApi
     Task<bool> DeleteManagementUnitAsync(string managementUnitId, CancellationToken cancellationToken = default);
 
     /// <summary>
+    /// Get a management unit
+    /// </summary>
+    /// <param name="managementUnitId">The ID of the management unit</param>
+    /// <param name="expand">Include to access additional data on the management unit</param>
+    /// <param name="cancellationToken">Cancellation token</param>
+    /// <returns>Management unit as JSON string (simplified for now)</returns>
+    Task<string> GetManagementUnitAsync(string managementUnitId, List<string> expand = null, CancellationToken cancellationToken = default);
+
+    /// <summary>
+    /// Get management units
+    /// </summary>
+    /// <param name="pageSize">Page size for pagination</param>
+    /// <param name="pageNumber">Page number for pagination</param>
+    /// <param name="expand">Include to access additional data on the management units</param>
+    /// <param name="feature">The feature to filter by</param>
+    /// <param name="divisionId">The division ID to filter by</param>
+    /// <param name="cancellationToken">Cancellation token</param>
+    /// <returns>Management unit listing as JSON string (simplified for now)</returns>
+    Task<string> GetManagementUnitsAsync(int? pageSize = null, int? pageNumber = null, string expand = null, string feature = null, string divisionId = null, CancellationToken cancellationToken = default);
+
+    /// <summary>
+    /// Get user schedule adherence records
+    /// </summary>
+    /// <param name="userId">List of user IDs</param>
+    /// <param name="cancellationToken">Cancellation token</param>
+    /// <returns>List of user schedule adherence records as JSON string (simplified for now)</returns>
+    Task<string> GetAdherenceAsync(List<string> userId, CancellationToken cancellationToken = default);
+
+    /// <summary>
     /// Get activity codes
     /// </summary>
     /// <param name="businessUnitId">The ID of the business unit</param>
