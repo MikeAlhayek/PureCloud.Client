@@ -54,6 +54,7 @@
     <Compile Include="Apis\JourneyApi.cs" />
     <Compile Include="Apis\KnowledgeApi.cs" />
     <Compile Include="Apis\LanguagesApi.cs" />
+    <Compile Include="Apis\LanguageUnderstandingApi.cs" />
     <Compile Include="Apis\LearningApi.cs" />
     <Compile Include="Apis\LicenseApi.cs" />
     <Compile Include="Apis\LocationsApi.cs" />
@@ -132,6 +133,7 @@
     <Compile Include="Contracts\IJourneyApi.cs" />
     <Compile Include="Contracts\IKnowledgeApi.cs" />
     <Compile Include="Contracts\ILanguagesApi.cs" />
+    <Compile Include="Contracts\ILanguageUnderstandingApi.cs" />
     <Compile Include="Contracts\ILearningApi.cs" />
     <Compile Include="Contracts\ILicenseApi.cs" />
     <Compile Include="Contracts\ILocationsApi.cs" />
