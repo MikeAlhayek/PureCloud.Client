@@ -12,23 +12,29 @@ namespace PureCloud.Client.Apis;
 /// <inheritdoc />
 public sealed class LanguagesApi : ILanguagesApi
 {
-    private readonly HttpClient _httpClient;
-    private readonly JsonSerializerOptions _options;
+    private readonly IHttpClientFactory _httpClientFactory;
+    private readonly PureCloudJsonSerializerOptions _options;
 
-    public LanguagesApi(IHttpClientFactory httpClientFactory, IOptions<PureCloudJsonSerializerOptions> options)
+    public LanguagesApi(
+        IHttpClientFactory httpClientFactory,
+        IOptions<PureCloudJsonSerializerOptions> options)
     {
-        _httpClient = httpClientFactory.CreateClient(PureCloudConstants.PureCloudClientName);
-        _options = options.Value.JsonSerializerOptions;
+        _httpClientFactory = httpClientFactory;
+        _options = options.Value;
     }
 
     /// <inheritdoc />
     public async Task<AvailableTranslations> GetLanguagesTranslationsAsync(CancellationToken cancellationToken = default)
     {
-        var response = await _httpClient.GetAsync("api/v2/languages/translations", cancellationToken);
+        var client = _httpClientFactory.CreateClient(PureCloudConstants.PureCloudClientName);
+
+        var uri = UriHelper.GetUri("api/v2/languages/translations", null);
+
+        var response = await client.GetAsync(uri, cancellationToken);
 
         response.EnsureSuccessStatusCode();
 
-        return await response.Content.ReadFromJsonAsync<AvailableTranslations>(_options, cancellationToken);
+        return await response.Content.ReadFromJsonAsync<AvailableTranslations>(_options.JsonSerializerOptions, cancellationToken);
     }
 
     /// <inheritdoc />
@@ -36,15 +42,17 @@ public sealed class LanguagesApi : ILanguagesApi
     {
         ArgumentException.ThrowIfNullOrEmpty(language, nameof(language));
 
+        var client = _httpClientFactory.CreateClient(PureCloudConstants.PureCloudClientName);
+
         var parameters = new NameValueCollection { { "language", language } };
 
         var uri = UriHelper.GetUri("api/v2/languages/translations/builtin", parameters);
 
-        var response = await _httpClient.GetAsync(uri, cancellationToken);
+        var response = await client.GetAsync(uri, cancellationToken);
 
         response.EnsureSuccessStatusCode();
 
-        return await response.Content.ReadFromJsonAsync<Dictionary<string, object>>(_options, cancellationToken);
+        return await response.Content.ReadFromJsonAsync<Dictionary<string, object>>(_options.JsonSerializerOptions, cancellationToken);
     }
 
     /// <inheritdoc />
@@ -52,15 +60,17 @@ public sealed class LanguagesApi : ILanguagesApi
     {
         ArgumentException.ThrowIfNullOrEmpty(language, nameof(language));
 
+        var client = _httpClientFactory.CreateClient(PureCloudConstants.PureCloudClientName);
+
         var parameters = new NameValueCollection { { "language", language } };
 
         var uri = UriHelper.GetUri("api/v2/languages/translations/organization", parameters);
 
-        var response = await _httpClient.GetAsync(uri, cancellationToken);
+        var response = await client.GetAsync(uri, cancellationToken);
 
         response.EnsureSuccessStatusCode();
 
-        return await response.Content.ReadFromJsonAsync<Dictionary<string, object>>(_options, cancellationToken);
+        return await response.Content.ReadFromJsonAsync<Dictionary<string, object>>(_options.JsonSerializerOptions, cancellationToken);
     }
 
     /// <inheritdoc />
@@ -68,10 +78,12 @@ public sealed class LanguagesApi : ILanguagesApi
     {
         ArgumentException.ThrowIfNullOrEmpty(userId, nameof(userId));
 
-        var response = await _httpClient.GetAsync($"api/v2/languages/translations/users/{userId}", cancellationToken);
+        var client = _httpClientFactory.CreateClient(PureCloudConstants.PureCloudClientName);
+
+        var response = await client.GetAsync($"api/v2/languages/translations/users/{userId}", cancellationToken);
 
         response.EnsureSuccessStatusCode();
 
-        return await response.Content.ReadFromJsonAsync<Dictionary<string, object>>(_options, cancellationToken);
+        return await response.Content.ReadFromJsonAsync<Dictionary<string, object>>(_options.JsonSerializerOptions, cancellationToken);
     }
 }
