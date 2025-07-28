@@ -24,6 +24,63 @@ public sealed class LanguagesApi : ILanguagesApi
     }
 
     /// <inheritdoc />
+    [Obsolete("This endpoint is deprecated. Please see the Routing API (DELETE /api/v2/routing/languages/{languageId})")]
+    public async Task DeleteLanguageAsync(string languageId, CancellationToken cancellationToken = default)
+    {
+        ArgumentException.ThrowIfNullOrEmpty(languageId, nameof(languageId));
+
+        var client = _httpClientFactory.CreateClient(PureCloudConstants.PureCloudClientName);
+
+        var response = await client.DeleteAsync($"api/v2/languages/{languageId}", cancellationToken);
+
+        response.EnsureSuccessStatusCode();
+    }
+
+    /// <inheritdoc />
+    [Obsolete("This endpoint is deprecated. Please see the Routing API (GET /api/v2/routing/languages/{languageId})")]
+    public async Task<Language> GetLanguageAsync(string languageId, CancellationToken cancellationToken = default)
+    {
+        ArgumentException.ThrowIfNullOrEmpty(languageId, nameof(languageId));
+
+        var client = _httpClientFactory.CreateClient(PureCloudConstants.PureCloudClientName);
+
+        var response = await client.GetAsync($"api/v2/languages/{languageId}", cancellationToken);
+
+        response.EnsureSuccessStatusCode();
+
+        return await response.Content.ReadFromJsonAsync<Language>(_options.JsonSerializerOptions, cancellationToken);
+    }
+
+    /// <inheritdoc />
+    [Obsolete("This endpoint is deprecated. Please see the Routing API (GET /api/v2/routing/languages)")]
+    public async Task<LanguageEntityListing> GetLanguagesAsync(int? pageSize = null, int? pageNumber = null, string sortOrder = null, string name = null, CancellationToken cancellationToken = default)
+    {
+        var client = _httpClientFactory.CreateClient(PureCloudConstants.PureCloudClientName);
+
+        var parameters = new NameValueCollection();
+        
+        if (pageSize.HasValue)
+            parameters.Add("pageSize", pageSize.Value.ToString());
+        
+        if (pageNumber.HasValue)
+            parameters.Add("pageNumber", pageNumber.Value.ToString());
+        
+        if (!string.IsNullOrEmpty(sortOrder))
+            parameters.Add("sortOrder", sortOrder);
+        
+        if (!string.IsNullOrEmpty(name))
+            parameters.Add("name", name);
+
+        var uri = UriHelper.GetUri("api/v2/languages", parameters);
+
+        var response = await client.GetAsync(uri, cancellationToken);
+
+        response.EnsureSuccessStatusCode();
+
+        return await response.Content.ReadFromJsonAsync<LanguageEntityListing>(_options.JsonSerializerOptions, cancellationToken);
+    }
+
+    /// <inheritdoc />
     public async Task<AvailableTranslations> GetLanguagesTranslationsAsync(CancellationToken cancellationToken = default)
     {
         var client = _httpClientFactory.CreateClient(PureCloudConstants.PureCloudClientName);
@@ -85,5 +142,20 @@ public sealed class LanguagesApi : ILanguagesApi
         response.EnsureSuccessStatusCode();
 
         return await response.Content.ReadFromJsonAsync<Dictionary<string, object>>(_options.JsonSerializerOptions, cancellationToken);
+    }
+
+    /// <inheritdoc />
+    [Obsolete("This endpoint is deprecated. Please see the Routing API. (POST /api/v2/routing/languages)")]
+    public async Task<Language> PostLanguagesAsync(Language body, CancellationToken cancellationToken = default)
+    {
+        ArgumentNullException.ThrowIfNull(body, nameof(body));
+
+        var client = _httpClientFactory.CreateClient(PureCloudConstants.PureCloudClientName);
+
+        var response = await client.PostAsJsonAsync("api/v2/languages", body, _options.JsonSerializerOptions, cancellationToken);
+
+        response.EnsureSuccessStatusCode();
+
+        return await response.Content.ReadFromJsonAsync<Language>(_options.JsonSerializerOptions, cancellationToken);
     }
 }
