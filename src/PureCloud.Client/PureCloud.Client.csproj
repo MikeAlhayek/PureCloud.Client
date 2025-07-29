@@ -5109,9 +5109,7 @@
     <Compile Include="Models\SipDownloadResponse.cs" />
     <Compile Include="Models\SignedUrlResponse.cs" />
     <Compile Include="Address.cs" />
-    <Compile Include="obj\Debug\net8.0\.NETCoreApp,Version=v8.0.AssemblyAttributes.cs" />
-    <Compile Include="obj\Debug\net8.0\PureCloud.Client.AssemblyInfo.cs" />
-    <Compile Include="obj\Debug\net8.0\PureCloud.Client.GlobalUsings.g.cs" />
+
     <Compile Include="PureCloudRegionHosts.cs" />
     <Compile Include="PureCloudConstants.cs" />
     <Compile Include="Json\PureCloudJsonSerializerOptions.cs" />
