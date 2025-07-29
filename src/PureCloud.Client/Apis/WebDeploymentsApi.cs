@@ -60,7 +60,9 @@ public sealed class WebDeploymentsApi : IWebDeploymentsApi
     /// <inheritdoc />
     public async Task<bool> DeleteWebdeploymentsTokenRevokeAsync(string xJourneySessionId = null, string xJourneySessionType = null, CancellationToken cancellationToken = default)
     {
-        var uri = "/api/v2/webdeployments/token/revoke";
+        var parameters = new NameValueCollection();
+
+        var uri = UriHelper.GetUri("/api/v2/webdeployments/token/revoke", parameters);
 
         using var request = new HttpRequestMessage(HttpMethod.Delete, uri);
 
