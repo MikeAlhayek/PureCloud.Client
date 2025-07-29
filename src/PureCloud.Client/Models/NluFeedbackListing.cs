@@ -5,7 +5,7 @@ namespace PureCloud.Client.Models;
 /// <summary>
 /// NluFeedbackListing
 /// </summary>
-public sealed class NluFeedbackListing : IPagedResource<NluFeedbackResponse>
+public sealed class NluFeedbackListing
 {
     /// <summary>
     /// Gets or Sets Entities
