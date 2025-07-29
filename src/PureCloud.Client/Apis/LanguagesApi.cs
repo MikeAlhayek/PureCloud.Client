@@ -103,7 +103,10 @@ public sealed class LanguagesApi : ILanguagesApi
 
         var client = _httpClientFactory.CreateClient(PureCloudConstants.PureCloudClientName);
 
-        var parameters = new NameValueCollection { { "language", language } };
+        if (!string.IsNullOrEmpty(language))
+        {
+            parameters.Add("language", language);
+        }
 
         var uri = UriHelper.GetUri("api/v2/languages/translations/builtin", parameters);
 
@@ -121,7 +124,10 @@ public sealed class LanguagesApi : ILanguagesApi
 
         var client = _httpClientFactory.CreateClient(PureCloudConstants.PureCloudClientName);
 
-        var parameters = new NameValueCollection { { "language", language } };
+        if (!string.IsNullOrEmpty(language))
+        {
+            parameters.Add("language", language);
+        }
 
         var uri = UriHelper.GetUri("api/v2/languages/translations/organization", parameters);
 
