@@ -5,7 +5,7 @@ namespace PureCloud.Client.Contracts;
 public interface ILanguagesApi
 {
     [Obsolete("This endpoint is deprecated. Please see the Routing API (DELETE /api/v2/routing/languages/{languageId})")]
-    Task DeleteLanguageAsync(string languageId, CancellationToken cancellationToken = default);
+    Task<bool> DeleteLanguageAsync(string languageId, CancellationToken cancellationToken = default);
 
     [Obsolete("This endpoint is deprecated. Please see the Routing API (GET /api/v2/routing/languages/{languageId})")]
     Task<Language> GetLanguageAsync(string languageId, CancellationToken cancellationToken = default);
