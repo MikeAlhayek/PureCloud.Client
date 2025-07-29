@@ -6,7 +6,7 @@ namespace PureCloud.Client.Models;
 /// NluDomainVersionListing
 /// </summary>
 
-public sealed class NluDomainVersionListing : IPagedResource<NluDomainVersion>
+public sealed class NluDomainVersionListing
 {
 
     /// <summary>
