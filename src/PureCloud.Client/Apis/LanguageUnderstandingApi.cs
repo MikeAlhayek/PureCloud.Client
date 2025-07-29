@@ -96,50 +96,65 @@ public sealed class LanguageUnderstandingApi : ILanguageUnderstandingApi
         {
             parameters.Add("intentName", UriHelper.ParameterToString(intentName));
         }
+
+
         if (!string.IsNullOrEmpty(assessment))
         {
             parameters.Add("assessment", UriHelper.ParameterToString(assessment));
         }
+
+
         if (!string.IsNullOrEmpty(dateStart))
         {
             parameters.Add("dateStart", UriHelper.ParameterToString(dateStart));
         }
+
+
         if (!string.IsNullOrEmpty(dateEnd))
         {
             parameters.Add("dateEnd", UriHelper.ParameterToString(dateEnd));
         }
+
         if (includeDeleted.HasValue)
         {
             parameters.Add("includeDeleted", UriHelper.ParameterToString(includeDeleted.Value));
         }
+
         if (!string.IsNullOrEmpty(language))
         {
             parameters.Add("language", UriHelper.ParameterToString(language));
         }
+
         if (pageNumber.HasValue)
         {
             parameters.Add("pageNumber", UriHelper.ParameterToString(pageNumber.Value));
         }
+
         if (pageSize.HasValue)
         {
             parameters.Add("pageSize", UriHelper.ParameterToString(pageSize.Value));
         }
+
         if (enableCursorPagination.HasValue)
         {
             parameters.Add("enableCursorPagination", UriHelper.ParameterToString(enableCursorPagination.Value));
         }
+
         if (includeTrainingUtterances.HasValue)
         {
             parameters.Add("includeTrainingUtterances", UriHelper.ParameterToString(includeTrainingUtterances.Value));
         }
+
         if (!string.IsNullOrEmpty(after))
         {
             parameters.Add("after", UriHelper.ParameterToString(after));
         }
+
         if (fields != null)
         {
             parameters.Add("fields", UriHelper.ParameterToString(fields));
         }
+
 
         var uri = UriHelper.GetUri($"/api/v2/languageunderstanding/domains/{Uri.EscapeDataString(domainId)}/feedback", parameters);
         var response = await _httpClient.GetAsync(uri, cancellationToken);
@@ -161,6 +176,7 @@ public sealed class LanguageUnderstandingApi : ILanguageUnderstandingApi
             parameters.Add("fields", UriHelper.ParameterToString(fields));
         }
 
+
         var uri = UriHelper.GetUri($"/api/v2/languageunderstanding/domains/{Uri.EscapeDataString(domainId)}/feedback/{Uri.EscapeDataString(feedbackId)}", parameters);
         var response = await _httpClient.GetAsync(uri, cancellationToken);
         
@@ -180,6 +196,7 @@ public sealed class LanguageUnderstandingApi : ILanguageUnderstandingApi
         {
             parameters.Add("includeUtterances", UriHelper.ParameterToString(includeUtterances.Value));
         }
+
 
         var uri = UriHelper.GetUri($"/api/v2/languageunderstanding/domains/{Uri.EscapeDataString(domainId)}/versions/{Uri.EscapeDataString(domainVersionId)}", parameters);
         var response = await _httpClient.GetAsync(uri, cancellationToken);
@@ -212,14 +229,17 @@ public sealed class LanguageUnderstandingApi : ILanguageUnderstandingApi
         {
             parameters.Add("includeUtterances", UriHelper.ParameterToString(includeUtterances.Value));
         }
+
         if (pageNumber.HasValue)
         {
             parameters.Add("pageNumber", UriHelper.ParameterToString(pageNumber.Value));
         }
+
         if (pageSize.HasValue)
         {
             parameters.Add("pageSize", UriHelper.ParameterToString(pageSize.Value));
         }
+
 
         var uri = UriHelper.GetUri($"/api/v2/languageunderstanding/domains/{Uri.EscapeDataString(domainId)}/versions", parameters);
         var response = await _httpClient.GetAsync(uri, cancellationToken);
@@ -237,10 +257,12 @@ public sealed class LanguageUnderstandingApi : ILanguageUnderstandingApi
         {
             parameters.Add("pageNumber", UriHelper.ParameterToString(pageNumber.Value));
         }
+
         if (pageSize.HasValue)
         {
             parameters.Add("pageSize", UriHelper.ParameterToString(pageSize.Value));
         }
+
 
         var uri = UriHelper.GetUri("/api/v2/languageunderstanding/domains", parameters);
         var response = await _httpClient.GetAsync(uri, cancellationToken);
@@ -273,10 +295,12 @@ public sealed class LanguageUnderstandingApi : ILanguageUnderstandingApi
         {
             parameters.Add("draftIntentId", UriHelper.ParameterToString(draftIntentId));
         }
+
         if (!string.IsNullOrEmpty(draftTopicId))
         {
             parameters.Add("draftTopicId", UriHelper.ParameterToString(draftTopicId));
         }
+
 
         var uri = UriHelper.GetUri($"/api/v2/languageunderstanding/miners/{Uri.EscapeDataString(minerId)}/drafts/{Uri.EscapeDataString(draftId)}", parameters);
         var response = await _httpClient.GetAsync(uri, cancellationToken);
@@ -310,6 +334,7 @@ public sealed class LanguageUnderstandingApi : ILanguageUnderstandingApi
             parameters.Add("expand", UriHelper.ParameterToString(expand));
         }
 
+
         var uri = UriHelper.GetUri($"/api/v2/languageunderstanding/miners/{Uri.EscapeDataString(minerId)}/intents/{Uri.EscapeDataString(intentId)}", parameters);
         var response = await _httpClient.GetAsync(uri, cancellationToken);
         
@@ -328,6 +353,7 @@ public sealed class LanguageUnderstandingApi : ILanguageUnderstandingApi
         {
             parameters.Add("expand", UriHelper.ParameterToString(expand));
         }
+
 
         var uri = UriHelper.GetUri($"/api/v2/languageunderstanding/miners/{Uri.EscapeDataString(minerId)}/intents", parameters);
         var response = await _httpClient.GetAsync(uri, cancellationToken);
@@ -348,6 +374,7 @@ public sealed class LanguageUnderstandingApi : ILanguageUnderstandingApi
         {
             parameters.Add("expand", UriHelper.ParameterToString(expand));
         }
+
 
         var uri = UriHelper.GetUri($"/api/v2/languageunderstanding/miners/{Uri.EscapeDataString(minerId)}/topics/{Uri.EscapeDataString(topicId)}", parameters);
         var response = await _httpClient.GetAsync(uri, cancellationToken);
@@ -391,6 +418,7 @@ public sealed class LanguageUnderstandingApi : ILanguageUnderstandingApi
         {
             parameters.Add("minerType", UriHelper.ParameterToString(minerType));
         }
+
 
         var uri = UriHelper.GetUri("/api/v2/languageunderstanding/miners", parameters);
         var response = await _httpClient.GetAsync(uri, cancellationToken);
@@ -500,6 +528,7 @@ public sealed class LanguageUnderstandingApi : ILanguageUnderstandingApi
         {
             parameters.Add("includeUtterances", UriHelper.ParameterToString(includeUtterances.Value));
         }
+
 
         var uri = UriHelper.GetUri($"/api/v2/languageunderstanding/domains/{Uri.EscapeDataString(domainId)}/versions", parameters);
         var response = await _httpClient.PostAsJsonAsync(uri, body, _options.JsonSerializerOptions, cancellationToken);
