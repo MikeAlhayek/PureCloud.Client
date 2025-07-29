@@ -12,14 +12,16 @@ namespace PureCloud.Client.Apis;
 /// <inheritdoc />
 public sealed class LearningApi : ILearningApi
 {
-    private readonly HttpClient _httpClient;
-    private readonly JsonSerializerOptions _options;
-
-    public LearningApi(IHttpClientFactory httpClientFactory, IOptions<PureCloudJsonSerializerOptions> options)
-    {
-        _httpClient = httpClientFactory.CreateClient(PureCloudConstants.PureCloudClientName);
-        _options = options.Value.JsonSerializerOptions;
-    }
+     private readonly IHttpClientFactory _httpClientFactory;
+     private readonly PureCloudJsonSerializerOptions _options;
+    
+     public LearningApi(
+         IHttpClientFactory httpClientFactory,
+         IOptions<PureCloudJsonSerializerOptions> options)
+     {
+         _httpClientFactory = httpClientFactory;
+         _options = options.Value;
+     }
 
     /// <inheritdoc />
     public async Task<bool> DeleteLearningAssignmentAsync(string assignmentId, CancellationToken cancellationToken = default)
