@@ -214,4 +214,62 @@ public sealed class ObjectsApi : IObjectsApi
 
         response.EnsureSuccessStatusCode();
     }
+
+    /// <inheritdoc />
+    public async Task<AuthzDivisionCursorListing> GetAuthorizationDivisionsQueryAsync(string before = null, string after = null, string pageSize = null, IEnumerable<string> id = null, string name = null, CancellationToken cancellationToken = default)
+    {
+        var parameters = new NameValueCollection();
+
+        if (!string.IsNullOrEmpty(before))
+        {
+            parameters.Add("before", UriHelper.ParameterToString(before));
+        }
+
+        if (!string.IsNullOrEmpty(after))
+        {
+            parameters.Add("after", UriHelper.ParameterToString(after));
+        }
+
+        if (!string.IsNullOrEmpty(pageSize))
+        {
+            parameters.Add("pageSize", UriHelper.ParameterToString(pageSize));
+        }
+
+        if (id != null)
+        {
+            foreach (var item in id)
+            {
+                parameters.Add("id", UriHelper.ParameterToString(item));
+            }
+        }
+
+        if (!string.IsNullOrEmpty(name))
+        {
+            parameters.Add("name", UriHelper.ParameterToString(name));
+        }
+
+        var uri = UriHelper.GetUri("api/v2/authorization/divisions/query", parameters);
+
+        var response = await _httpClient.GetAsync(uri, cancellationToken);
+
+        response.EnsureSuccessStatusCode();
+
+        return await response.Content.ReadFromJsonAsync<AuthzDivisionCursorListing>(_options.JsonSerializerOptions, cancellationToken);
+    }
+
+    /// <inheritdoc />
+    public async Task<AuthzDivision> PostAuthorizationDivisionRestoreAsync(string divisionId, AuthzDivision body, CancellationToken cancellationToken = default)
+    {
+        ArgumentException.ThrowIfNullOrEmpty(divisionId);
+
+        ArgumentNullException.ThrowIfNull(body);
+
+        var uri = UriHelper.GetUri($"api/v2/authorization/divisions/{Uri.EscapeDataString(divisionId)}/restore", null);
+
+        var response = await _httpClient.PostAsJsonAsync(uri, body, _options.JsonSerializerOptions, cancellationToken);
+
+        response.EnsureSuccessStatusCode();
+
+        return await response.Content.ReadFromJsonAsync<AuthzDivision>(_options.JsonSerializerOptions, cancellationToken);
+    }
 }

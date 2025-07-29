@@ -48,4 +48,14 @@ public interface IObjectsApi
     /// Assign a list of objects to a division.
     /// </summary>
     Task CreateAuthorizationDivisionObjectsAsync(string divisionId, string objectType, IEnumerable<string> body, CancellationToken cancellationToken = default);
+
+    /// <summary>
+    /// Retrieve a list of all divisions defined for the organization with cursor-based pagination.
+    /// </summary>
+    Task<AuthzDivisionCursorListing> GetAuthorizationDivisionsQueryAsync(string before = null, string after = null, string pageSize = null, IEnumerable<string> id = null, string name = null, CancellationToken cancellationToken = default);
+
+    /// <summary>
+    /// Recreate a previously deleted division.
+    /// </summary>
+    Task<AuthzDivision> PostAuthorizationDivisionRestoreAsync(string divisionId, AuthzDivision body, CancellationToken cancellationToken = default);
 }
