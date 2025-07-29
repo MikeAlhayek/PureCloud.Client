@@ -5,7 +5,7 @@ namespace PureCloud.Client.Models;
 /// <summary>
 /// NluDomainListing
 /// </summary>
-public sealed class NluDomainListing : IPagedResource<NluDomain>
+public sealed class NluDomainListing
 {
     /// <summary>
     /// Gets or Sets Entities
