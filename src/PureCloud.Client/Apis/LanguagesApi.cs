@@ -62,16 +62,24 @@ public sealed class LanguagesApi : ILanguagesApi
         var parameters = new NameValueCollection();
         
         if (pageSize.HasValue)
+        {
             parameters.Add("pageSize", pageSize.Value.ToString());
-            
+        }
+        
         if (pageNumber.HasValue)
+        {
             parameters.Add("pageNumber", pageNumber.Value.ToString());
+        }
             
         if (!string.IsNullOrEmpty(sortOrder))
+        {
             parameters.Add("sortOrder", sortOrder);
+        }
             
         if (!string.IsNullOrEmpty(name))
+        {
             parameters.Add("name", name);
+        }
 
         var uri = UriHelper.GetUri("api/v2/languages", parameters);
 
