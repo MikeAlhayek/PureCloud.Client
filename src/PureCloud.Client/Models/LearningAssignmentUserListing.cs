@@ -3,7 +3,7 @@ namespace PureCloud.Client.Models;
 /// <summary>
 /// List of users matching the learning module rule
 /// </summary>
-public sealed class LearningAssignmentUserListing : IPagedResource<LearningAssignmentUser>
+public sealed class LearningAssignmentUserListing
 {
     /// <summary>
     /// Gets or Sets Entities

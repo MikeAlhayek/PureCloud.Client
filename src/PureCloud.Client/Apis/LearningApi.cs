@@ -12,16 +12,14 @@ namespace PureCloud.Client.Apis;
 /// <inheritdoc />
 public sealed class LearningApi : ILearningApi
 {
-     private readonly IHttpClientFactory _httpClientFactory;
-     private readonly PureCloudJsonSerializerOptions _options;
-    
-     public LearningApi(
-         IHttpClientFactory httpClientFactory,
-         IOptions<PureCloudJsonSerializerOptions> options)
-     {
-         _httpClientFactory = httpClientFactory;
-         _options = options.Value;
-     }
+    private readonly HttpClient _httpClient;
+    private readonly JsonSerializerOptions _options;
+
+    public LearningApi(IHttpClientFactory httpClientFactory, IOptions<PureCloudJsonSerializerOptions> options)
+    {
+        _httpClient = httpClientFactory.CreateClient(PureCloudConstants.PureCloudClientName);
+        _options = options.Value.JsonSerializerOptions;
+    }
 
     /// <inheritdoc />
     public async Task<bool> DeleteLearningAssignmentAsync(string assignmentId, CancellationToken cancellationToken = default)
@@ -56,7 +54,7 @@ public sealed class LearningApi : ILearningApi
 
         if (expand?.Any() == true)
         {
-            parameters.Add("expand", string.Join(",", expand));
+            parameters.Add("expand", string.Join(",", expand.Select(UriHelper.ParameterToString)));
         }
 
         var uri = UriHelper.GetUri($"api/v2/learning/assignments/{Uri.EscapeDataString(assignmentId)}", parameters);
@@ -89,7 +87,7 @@ public sealed class LearningApi : ILearningApi
 
         if (expand?.Any() == true)
         {
-            parameters.Add("expand", string.Join(",", expand));
+            parameters.Add("expand", string.Join(",", expand.Select(UriHelper.ParameterToString)));
         }
 
         var uri = UriHelper.GetUri($"api/v2/learning/assignments/{Uri.EscapeDataString(assignmentId)}/steps/{Uri.EscapeDataString(stepId)}", parameters);
@@ -187,7 +185,7 @@ public sealed class LearningApi : ILearningApi
 
         if (expand?.Any() == true)
         {
-            parameters.Add("expand", string.Join(",", expand));
+            parameters.Add("expand", string.Join(",", expand.Select(UriHelper.ParameterToString)));
         }
 
         var uri = UriHelper.GetUri("api/v2/learning/assignments", parameters);
@@ -277,7 +275,7 @@ public sealed class LearningApi : ILearningApi
 
         if (expand?.Any() == true)
         {
-            parameters.Add("expand", string.Join(",", expand));
+            parameters.Add("expand", string.Join(",", expand.Select(UriHelper.ParameterToString)));
         }
 
         var uri = UriHelper.GetUri("api/v2/learning/assignments/me", parameters);
@@ -298,7 +296,7 @@ public sealed class LearningApi : ILearningApi
 
         if (expand?.Any() == true)
         {
-            parameters.Add("expand", string.Join(",", expand));
+            parameters.Add("expand", string.Join(",", expand.Select(UriHelper.ParameterToString)));
         }
 
         var uri = UriHelper.GetUri($"api/v2/learning/modules/{Uri.EscapeDataString(moduleId)}", parameters);
@@ -359,7 +357,7 @@ public sealed class LearningApi : ILearningApi
 
         if (expand?.Any() == true)
         {
-            parameters.Add("expand", string.Join(",", expand));
+            parameters.Add("expand", string.Join(",", expand.Select(UriHelper.ParameterToString)));
         }
 
         var uri = UriHelper.GetUri($"api/v2/learning/modules/{Uri.EscapeDataString(moduleId)}/versions/{Uri.EscapeDataString(versionId)}", parameters);
@@ -416,7 +414,7 @@ public sealed class LearningApi : ILearningApi
 
         if (expand?.Any() == true)
         {
-            parameters.Add("expand", string.Join(",", expand));
+            parameters.Add("expand", string.Join(",", expand.Select(UriHelper.ParameterToString)));
         }
 
         if (!string.IsNullOrEmpty(isPublished))
@@ -491,7 +489,7 @@ public sealed class LearningApi : ILearningApi
 
         if (expand?.Any() == true)
         {
-            parameters.Add("expand", string.Join(",", expand));
+            parameters.Add("expand", string.Join(",", expand.Select(UriHelper.ParameterToString)));
         }
 
         var uri = UriHelper.GetUri("api/v2/learning/modules/assignments", parameters);

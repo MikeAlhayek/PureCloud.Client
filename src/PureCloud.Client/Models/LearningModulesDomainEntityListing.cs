@@ -3,7 +3,7 @@ namespace PureCloud.Client.Models;
 /// <summary>
 /// LearningModulesDomainEntityListing
 /// </summary>
-public sealed class LearningModulesDomainEntityListing : IPagedResource<LearningModule>
+public sealed class LearningModulesDomainEntityListing
 {
     /// <summary>
     /// Gets or Sets Entities
