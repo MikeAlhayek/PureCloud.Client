@@ -61,24 +61,25 @@ public sealed class WebDeploymentsApi : IWebDeploymentsApi
     public async Task<bool> DeleteWebdeploymentsTokenRevokeAsync(string xJourneySessionId = null, string xJourneySessionType = null, CancellationToken cancellationToken = default)
     {
         var parameters = new NameValueCollection();
-
-        var uri = UriHelper.GetUri("/api/v2/webdeployments/token/revoke", parameters);
-
-        using var request = new HttpRequestMessage(HttpMethod.Delete, uri);
-
+        
         if (!string.IsNullOrEmpty(xJourneySessionId))
         {
-            request.Headers.Add("X-Journey-Session-Id", xJourneySessionId);
+            parameters.Add("X-Journey-Session-Id", Uri.EscapeDataString(xJourneySessionId));
         }
-
+        
         if (!string.IsNullOrEmpty(xJourneySessionType))
         {
-            request.Headers.Add("X-Journey-Session-Type", xJourneySessionType);
+            parameters.Add("X-Journey-Session-Type", Uri.EscapeDataString(xJourneySessionType));
         }
+        
+        var uri = UriHelper.GetUri("/api/v2/webdeployments/token/revoke", parameters);
+        
+        var response = await _httpClient.DeleteAsync(uri, cancellationToken);
+        
+        response.EnsureSuccessStatusCode();
+        
+        return true;
 
-        var response = await _httpClient.SendAsync(request, cancellationToken);
-
-        return response.IsSuccessStatusCode;
     }
 
     /// <inheritdoc />
