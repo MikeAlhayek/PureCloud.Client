@@ -7,35 +7,8 @@ namespace PureCloud.Client.Models;
 /// NluDomainListing
 /// </summary>
 
-public partial class NluDomainListing : IEquatable<NluDomainListing>, IPagedResource<NluDomain>
+public sealed partial class NluDomainListing : IEquatable<NluDomainListing>, IPagedResource<NluDomain>
 {
-    /// <summary>
-    /// Initializes a new instance of the <see cref="NluDomainListing" /> class.
-    /// </summary>
-    /// <param name="Entities">Entities.</param>
-    /// <param name="PageSize">PageSize.</param>
-    /// <param name="PageNumber">PageNumber.</param>
-    /// <param name="Total">Total.</param>
-    /// <param name="FirstUri">FirstUri.</param>
-    /// <param name="LastUri">LastUri.</param>
-    /// <param name="SelfUri">SelfUri.</param>
-    /// <param name="NextUri">NextUri.</param>
-    /// <param name="PreviousUri">PreviousUri.</param>
-    /// <param name="PageCount">PageCount.</param>
-    public NluDomainListing(IEnumerable<NluDomain> Entities = null, int? PageSize = null, int? PageNumber = null, long? Total = null, string FirstUri = null, string LastUri = null, string SelfUri = null, string NextUri = null, string PreviousUri = null, int? PageCount = null)
-    {
-        this.Entities = Entities;
-        this.PageSize = PageSize;
-        this.PageNumber = PageNumber;
-        this.Total = Total;
-        this.FirstUri = FirstUri;
-        this.LastUri = LastUri;
-        this.SelfUri = SelfUri;
-        this.NextUri = NextUri;
-        this.PreviousUri = PreviousUri;
-        this.PageCount = PageCount;
-
-    }
 
 
 
