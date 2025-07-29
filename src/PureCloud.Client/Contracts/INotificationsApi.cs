@@ -38,4 +38,9 @@ public interface INotificationsApi
     /// Remove all subscriptions
     /// </summary>
     Task DeleteNotificationsChannelSubscriptionsAsync(string channelId, CancellationToken cancellationToken = default);
+
+    /// <summary>
+    /// Verify a channel still exists and is valid
+    /// </summary>
+    Task<bool> VerifyNotificationsChannelAsync(string channelId, CancellationToken cancellationToken = default);
 }

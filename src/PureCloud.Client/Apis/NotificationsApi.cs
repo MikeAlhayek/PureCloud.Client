@@ -155,4 +155,18 @@ public sealed class NotificationsApi : INotificationsApi
 
         response.EnsureSuccessStatusCode();
     }
+
+    /// <inheritdoc />
+    public async Task<bool> VerifyNotificationsChannelAsync(string channelId, CancellationToken cancellationToken = default)
+    {
+        ArgumentException.ThrowIfNullOrEmpty(channelId);
+
+        var client = _httpClientFactory.CreateClient(PureCloudConstants.PureCloudClientName);
+
+        var request = new HttpRequestMessage(HttpMethod.Head, $"api/v2/notifications/channels/{Uri.EscapeDataString(channelId)}");
+
+        var response = await client.SendAsync(request, cancellationToken);
+
+        return response.IsSuccessStatusCode;
+    }
 }
