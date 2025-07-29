@@ -32,7 +32,7 @@ public sealed class ObjectsApi : IObjectsApi
             parameters.Add("objectCount", UriHelper.ParameterToString(objectCount.Value));
         }
 
-        var uri = UriHelper.GetUri($"api/v2/authorization/divisions/{divisionId}", parameters);
+        var uri = UriHelper.GetUri($"api/v2/authorization/divisions/{Uri.EscapeDataString(divisionId)}", parameters);
 
         var response = await _httpClient.GetAsync(uri, cancellationToken);
 
@@ -127,7 +127,7 @@ public sealed class ObjectsApi : IObjectsApi
 
         ArgumentNullException.ThrowIfNull(body);
 
-        var uri = UriHelper.GetUri($"api/v2/authorization/divisions/{divisionId}", null);
+        var uri = UriHelper.GetUri($"api/v2/authorization/divisions/{Uri.EscapeDataString(divisionId)}", null);
 
         var response = await _httpClient.PutAsJsonAsync(uri, body, _options.JsonSerializerOptions, cancellationToken);
 
@@ -148,9 +148,69 @@ public sealed class ObjectsApi : IObjectsApi
             parameters.Add("force", UriHelper.ParameterToString(force.Value));
         }
 
-        var uri = UriHelper.GetUri($"api/v2/authorization/divisions/{divisionId}", parameters);
+        var uri = UriHelper.GetUri($"api/v2/authorization/divisions/{Uri.EscapeDataString(divisionId)}", parameters);
 
         var response = await _httpClient.DeleteAsync(uri, cancellationToken);
+
+        response.EnsureSuccessStatusCode();
+    }
+
+    /// <inheritdoc />
+    public async Task<AuthzDivisionEntityListing> GetAuthorizationDivisionsDeletedAsync(int? pageNumber = null, int? pageSize = null, CancellationToken cancellationToken = default)
+    {
+        var parameters = new NameValueCollection();
+
+        if (pageNumber.HasValue)
+        {
+            parameters.Add("pageNumber", UriHelper.ParameterToString(pageNumber.Value));
+        }
+
+        if (pageSize.HasValue)
+        {
+            parameters.Add("pageSize", UriHelper.ParameterToString(pageSize.Value));
+        }
+
+        var uri = UriHelper.GetUri("api/v2/authorization/divisions/deleted", parameters);
+
+        var response = await _httpClient.GetAsync(uri, cancellationToken);
+
+        response.EnsureSuccessStatusCode();
+
+        return await response.Content.ReadFromJsonAsync<AuthzDivisionEntityListing>(_options.JsonSerializerOptions, cancellationToken);
+    }
+
+    /// <inheritdoc />
+    public async Task<AuthzDivision> GetAuthorizationDivisionsHomeAsync(CancellationToken cancellationToken = default)
+    {
+        var response = await _httpClient.GetAsync("api/v2/authorization/divisions/home", cancellationToken);
+
+        response.EnsureSuccessStatusCode();
+
+        return await response.Content.ReadFromJsonAsync<AuthzDivision>(_options.JsonSerializerOptions, cancellationToken);
+    }
+
+    /// <inheritdoc />
+    public async Task<int?> GetAuthorizationDivisionsLimitAsync(CancellationToken cancellationToken = default)
+    {
+        var response = await _httpClient.GetAsync("api/v2/authorization/divisions/limit", cancellationToken);
+
+        response.EnsureSuccessStatusCode();
+
+        return await response.Content.ReadFromJsonAsync<int?>(_options.JsonSerializerOptions, cancellationToken);
+    }
+
+    /// <inheritdoc />
+    public async Task CreateAuthorizationDivisionObjectsAsync(string divisionId, string objectType, IEnumerable<string> body, CancellationToken cancellationToken = default)
+    {
+        ArgumentException.ThrowIfNullOrEmpty(divisionId);
+
+        ArgumentException.ThrowIfNullOrEmpty(objectType);
+
+        ArgumentNullException.ThrowIfNull(body);
+
+        var uri = UriHelper.GetUri($"api/v2/authorization/divisions/{Uri.EscapeDataString(divisionId)}/objects/{Uri.EscapeDataString(objectType)}", null);
+
+        var response = await _httpClient.PostAsJsonAsync(uri, body, _options.JsonSerializerOptions, cancellationToken);
 
         response.EnsureSuccessStatusCode();
     }

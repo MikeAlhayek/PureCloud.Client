@@ -28,4 +28,24 @@ public interface IObjectsApi
     /// Delete an authorization division.
     /// </summary>
     Task DeleteAuthorizationDivisionAsync(string divisionId, bool? force = null, CancellationToken cancellationToken = default);
+
+    /// <summary>
+    /// Get a list of soft deleted divisions for the org.
+    /// </summary>
+    Task<AuthzDivisionEntityListing> GetAuthorizationDivisionsDeletedAsync(int? pageNumber = null, int? pageSize = null, CancellationToken cancellationToken = default);
+
+    /// <summary>
+    /// Retrieve the home division for the organization.
+    /// </summary>
+    Task<AuthzDivision> GetAuthorizationDivisionsHomeAsync(CancellationToken cancellationToken = default);
+
+    /// <summary>
+    /// Returns the maximum allowed number of divisions.
+    /// </summary>
+    Task<int?> GetAuthorizationDivisionsLimitAsync(CancellationToken cancellationToken = default);
+
+    /// <summary>
+    /// Assign a list of objects to a division.
+    /// </summary>
+    Task CreateAuthorizationDivisionObjectsAsync(string divisionId, string objectType, IEnumerable<string> body, CancellationToken cancellationToken = default);
 }
