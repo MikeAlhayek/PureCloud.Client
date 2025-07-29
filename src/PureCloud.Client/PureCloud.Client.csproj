@@ -397,6 +397,8 @@
     <Compile Include="Models\DocumentCategoryInput.cs" />
     <Compile Include="Models\DetectedDialogAct.cs" />
     <Compile Include="Models\DetectedIntent.cs" />
+    <Compile Include="Models\DetectedNamedEntity.cs" />
+    <Compile Include="Models\DetectedNamedEntityValue.cs" />
     <Compile Include="Models\Draft.cs" />
     <Compile Include="Models\DraftIntents.cs" />
     <Compile Include="Models\DraftListing.cs" />
@@ -1845,6 +1847,7 @@
     <Compile Include="Models\EndConsultTransferEvent.cs" />
     <Compile Include="Models\EndTransferEvent.cs" />
     <Compile Include="Models\EndTransferEvent.FinalState.cs" />
+    <Compile Include="Models\EngineIntegration.cs" />
     <Compile Include="Models\EnrichFieldRule.cs" />
     <Compile Include="Models\EnrichFieldRule.ArrayAction.cs" />
     <Compile Include="Models\EnrichFieldRule.Action.cs" />
@@ -4022,8 +4025,13 @@
     <Compile Include="Models\SummaryAsyncAggregationQuery.GroupBy.cs" />
     <Compile Include="Models\SummaryGenerationConfig.cs" />
     <Compile Include="Models\SupportedLanguage.cs" />
+    <Compile Include="Models\SupportedLanguagesInfoDefinition.cs" />
     <Compile Include="Models\SupportedContent.cs" />
     <Compile Include="Models\SupportedContentListing.cs" />
+    <Compile Include="Models\SupportedContentReference.cs" />
+    <Compile Include="Models\SupportedDialectsEntityListing.cs" />
+    <Compile Include="Models\SupportedDialectsTranscriptionEngine.cs" />
+    <Compile Include="Models\SupportedEntityTypeStatus.cs" />
     <Compile Include="Models\SurveyAggregateDataContainer.cs" />
     <Compile Include="Models\SurveyAggregateQueryClause.cs" />
     <Compile Include="Models\SurveyAggregateQueryClause.Type.cs" />
