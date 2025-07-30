@@ -1108,7 +1108,6 @@
     <Compile Include="Models\Conversations\ConversationCallbackEventTopicCallbackMediaParticipant.InitialState.cs" />
     <Compile Include="Models\Conversations\ConversationCallbackEventTopicCallbackMediaParticipant.Direction.cs" />
     <Compile Include="Models\Conversations\ConversationCallbackEventTopicCallbackMediaParticipant.DisconnectType.cs" />
-    <Compile Include="Models\Conversations\ConversationCallbackEventTopicCallbackMediaParticipant.DisconnectType.cs" />
     <Compile Include="Models\Conversations\ConversationCallbackEventTopicCallbackMediaParticipant.State.cs" />
     <Compile Include="Models\Conversations\ConversationCallbackEventTopicConversationDivisionMembership.cs" />
     <Compile Include="Models\Conversations\ConversationCallbackEventTopicConversationRoutingData.cs" />
