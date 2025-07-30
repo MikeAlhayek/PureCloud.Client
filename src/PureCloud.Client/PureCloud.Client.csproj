@@ -5113,6 +5113,10 @@
     <Compile Include="Models\DynamicContactQueueingSettings.cs" />
     <Compile Include="Models\DynamicLineBalancingSettings.cs" />
     <Compile Include="Models\RestErrorDetail.cs" />
+    <Compile Include="Models\CallableTimeSet.cs" />
+    <Compile Include="Models\CallableTimeSetEntityListing.cs" />
+    <Compile Include="Models\CallableTime.cs" />
+    <Compile Include="Models\CampaignTimeSlot.cs" />
     <Compile Include="Address.cs" />
     <Compile Include="obj\Debug\net8.0\.NETCoreApp,Version=v8.0.AssemblyAttributes.cs" />
     <Compile Include="obj\Debug\net8.0\PureCloud.Client.AssemblyInfo.cs" />
