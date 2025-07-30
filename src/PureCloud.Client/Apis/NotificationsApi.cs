@@ -22,13 +22,13 @@ public sealed class NotificationsApi : INotificationsApi
     }
 
     /// <inheritdoc />
-    public async Task<AvailableTopicEntityListing> GetNotificationsAvailableTopicsAsync(IEnumerable<string> expand = null, bool? includePreview = null, CancellationToken cancellationToken = default)
+    public async Task<AvailableTopicEntityListing> GetNotificationsAvailableTopicsAsync(IEnumerable<string> expands = null, bool? includePreview = null, CancellationToken cancellationToken = default)
     {
         var parameters = new NameValueCollection();
 
-        if (expand?.Any() == true)
+        if (expands != null)
         {
-            foreach (var item in expand)
+            foreach (var item in expands)
             {
                 parameters.Add("expand", UriHelper.ParameterToString(item));
             }

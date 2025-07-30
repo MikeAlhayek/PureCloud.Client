@@ -7,10 +7,10 @@ public interface INotificationsApi
     /// <summary>
     /// Get available notification topics.
     /// </summary>
-    /// <param name="expand">Which fields, if any, to expand</param>
+    /// <param name="expands">Which fields, if any, to expand</param>
     /// <param name="includePreview">Whether or not to include Preview topics</param>
     /// <param name="cancellationToken">Cancellation token</param>
-    Task<AvailableTopicEntityListing> GetNotificationsAvailableTopicsAsync(IEnumerable<string> expand = null, bool? includePreview = null, CancellationToken cancellationToken = default);
+    Task<AvailableTopicEntityListing> GetNotificationsAvailableTopicsAsync(IEnumerable<string> expands = null, bool? includePreview = null, CancellationToken cancellationToken = default);
 
     /// <summary>
     /// The list of existing channels
