@@ -3089,8 +3089,13 @@
     <Compile Include="Models\QualityEvaluationScoreItem.MediaTypes.cs" />
     <Compile Include="Models\CalibrationEntityListing.cs" />
     <Compile Include="Models\EvaluationEntityListing.cs" />
+    <Compile Include="Models\EvaluationFormEntityListing.cs" />
+    <Compile Include="Models\EvaluationFormResponseEntityListing.cs" />
+    <Compile Include="Models\SurveyFormEntityListing.cs" />
     <Compile Include="Models\QualityAuditQueryExecutionStatusResponse.cs" />
     <Compile Include="Models\QualityAuditQueryExecutionResultsResponse.cs" />
+    <Compile Include="Models\QualityAuditQueryFilter.cs" />
+    <Compile Include="Models\QualityAuditLogMessage.cs" />
     <Compile Include="Models\QueryCriteria.cs" />
     <Compile Include="Models\QueryCriteria.CriteriaKey.cs" />
     <Compile Include="Models\QueryCriteria.DataType.cs" />

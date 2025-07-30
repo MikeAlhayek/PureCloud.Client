@@ -1,8 +1,8 @@
 namespace PureCloud.Client.Models;
 
-public sealed class EvaluationFormResponseEntityListing
+public sealed class EvaluationFormEntityListing
 {
-    public IEnumerable<EvaluationFormResponse> Entities { get; set; }
+    public IEnumerable<EvaluationForm> Entities { get; set; }
     public int? PageSize { get; set; }
     public int? PageNumber { get; set; }
     public long? Total { get; set; }

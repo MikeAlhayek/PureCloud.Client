@@ -655,4 +655,335 @@ public sealed class QualityApi : IQualityApi
 
         return response.IsSuccessStatusCode;
     }
+
+    public async Task<AgentActivityEntityListing> GetQualityEvaluatorsActivityAsync(int? pageSize = null, int? pageNumber = null, string sortBy = null, IEnumerable<string> expand = null, string nextPage = null, string previousPage = null, DateTime? startTime = null, DateTime? endTime = null, string name = null, IEnumerable<string> permission = null, string group = null, string agentTeamId = null, CancellationToken cancellationToken = default)
+    {
+        var parameters = new NameValueCollection();
+
+        if (pageSize.HasValue)
+        {
+            parameters.Add("pageSize", UriHelper.ParameterToString(pageSize.Value));
+        }
+
+        if (pageNumber.HasValue)
+        {
+            parameters.Add("pageNumber", UriHelper.ParameterToString(pageNumber.Value));
+        }
+
+        if (!string.IsNullOrEmpty(sortBy))
+        {
+            parameters.Add("sortBy", UriHelper.ParameterToString(sortBy));
+        }
+
+        if (expand != null)
+        {
+            foreach (var expandItem in expand)
+            {
+                parameters.Add("expand", UriHelper.ParameterToString(expandItem));
+            }
+        }
+
+        if (!string.IsNullOrEmpty(nextPage))
+        {
+            parameters.Add("nextPage", UriHelper.ParameterToString(nextPage));
+        }
+
+        if (!string.IsNullOrEmpty(previousPage))
+        {
+            parameters.Add("previousPage", UriHelper.ParameterToString(previousPage));
+        }
+
+        if (startTime.HasValue)
+        {
+            parameters.Add("startTime", UriHelper.ParameterToString(startTime.Value));
+        }
+
+        if (endTime.HasValue)
+        {
+            parameters.Add("endTime", UriHelper.ParameterToString(endTime.Value));
+        }
+
+        if (!string.IsNullOrEmpty(name))
+        {
+            parameters.Add("name", UriHelper.ParameterToString(name));
+        }
+
+        if (permission != null)
+        {
+            foreach (var permissionItem in permission)
+            {
+                parameters.Add("permission", UriHelper.ParameterToString(permissionItem));
+            }
+        }
+
+        if (!string.IsNullOrEmpty(group))
+        {
+            parameters.Add("group", UriHelper.ParameterToString(group));
+        }
+
+        if (!string.IsNullOrEmpty(agentTeamId))
+        {
+            parameters.Add("agentTeamId", UriHelper.ParameterToString(agentTeamId));
+        }
+
+        var client = _httpClientFactory.CreateClient(PureCloudConstants.PureCloudClientName);
+
+        var uri = UriHelper.GetUri($"api/v2/quality/evaluators/activity", parameters);
+
+        var response = await client.GetAsync(uri, cancellationToken);
+
+        response.EnsureSuccessStatusCode();
+
+        return await response.Content.ReadFromJsonAsync<AgentActivityEntityListing>(_options.JsonSerializerOptions, cancellationToken);
+    }
+
+    public async Task<EvaluationForm> GetQualityFormAsync(string formId, CancellationToken cancellationToken = default)
+    {
+        ArgumentException.ThrowIfNullOrEmpty(formId);
+
+        var client = _httpClientFactory.CreateClient(PureCloudConstants.PureCloudClientName);
+
+        var response = await client.GetAsync($"api/v2/quality/forms/{formId}", cancellationToken);
+
+        response.EnsureSuccessStatusCode();
+
+        return await response.Content.ReadFromJsonAsync<EvaluationForm>(_options.JsonSerializerOptions, cancellationToken);
+    }
+
+    public async Task<EvaluationFormResponseEntityListing> GetQualityFormVersionsAsync(string formId, int? pageSize = null, int? pageNumber = null, CancellationToken cancellationToken = default)
+    {
+        ArgumentException.ThrowIfNullOrEmpty(formId);
+
+        var parameters = new NameValueCollection();
+
+        if (pageSize.HasValue)
+        {
+            parameters.Add("pageSize", UriHelper.ParameterToString(pageSize.Value));
+        }
+
+        if (pageNumber.HasValue)
+        {
+            parameters.Add("pageNumber", UriHelper.ParameterToString(pageNumber.Value));
+        }
+
+        var client = _httpClientFactory.CreateClient(PureCloudConstants.PureCloudClientName);
+
+        var uri = UriHelper.GetUri($"api/v2/quality/forms/{formId}/versions", parameters);
+
+        var response = await client.GetAsync(uri, cancellationToken);
+
+        response.EnsureSuccessStatusCode();
+
+        return await response.Content.ReadFromJsonAsync<EvaluationFormResponseEntityListing>(_options.JsonSerializerOptions, cancellationToken);
+    }
+
+    public async Task<EvaluationFormEntityListing> GetQualityFormsAsync(int? pageSize = null, int? pageNumber = null, string sortBy = null, string nextPage = null, string previousPage = null, string expand = null, string name = null, string sortOrder = null, CancellationToken cancellationToken = default)
+    {
+        var parameters = new NameValueCollection();
+
+        if (pageSize.HasValue)
+        {
+            parameters.Add("pageSize", UriHelper.ParameterToString(pageSize.Value));
+        }
+
+        if (pageNumber.HasValue)
+        {
+            parameters.Add("pageNumber", UriHelper.ParameterToString(pageNumber.Value));
+        }
+
+        if (!string.IsNullOrEmpty(sortBy))
+        {
+            parameters.Add("sortBy", UriHelper.ParameterToString(sortBy));
+        }
+
+        if (!string.IsNullOrEmpty(nextPage))
+        {
+            parameters.Add("nextPage", UriHelper.ParameterToString(nextPage));
+        }
+
+        if (!string.IsNullOrEmpty(previousPage))
+        {
+            parameters.Add("previousPage", UriHelper.ParameterToString(previousPage));
+        }
+
+        if (!string.IsNullOrEmpty(expand))
+        {
+            parameters.Add("expand", UriHelper.ParameterToString(expand));
+        }
+
+        if (!string.IsNullOrEmpty(name))
+        {
+            parameters.Add("name", UriHelper.ParameterToString(name));
+        }
+
+        if (!string.IsNullOrEmpty(sortOrder))
+        {
+            parameters.Add("sortOrder", UriHelper.ParameterToString(sortOrder));
+        }
+
+        var client = _httpClientFactory.CreateClient(PureCloudConstants.PureCloudClientName);
+
+        var uri = UriHelper.GetUri($"api/v2/quality/forms", parameters);
+
+        var response = await client.GetAsync(uri, cancellationToken);
+
+        response.EnsureSuccessStatusCode();
+
+        return await response.Content.ReadFromJsonAsync<EvaluationFormEntityListing>(_options.JsonSerializerOptions, cancellationToken);
+    }
+
+    public async Task<EvaluationFormResponseEntityListing> GetQualityFormsEvaluationVersionsAsync(string formId, int? pageSize = null, int? pageNumber = null, string sortOrder = null, CancellationToken cancellationToken = default)
+    {
+        ArgumentException.ThrowIfNullOrEmpty(formId);
+
+        var parameters = new NameValueCollection();
+
+        if (pageSize.HasValue)
+        {
+            parameters.Add("pageSize", UriHelper.ParameterToString(pageSize.Value));
+        }
+
+        if (pageNumber.HasValue)
+        {
+            parameters.Add("pageNumber", UriHelper.ParameterToString(pageNumber.Value));
+        }
+
+        if (!string.IsNullOrEmpty(sortOrder))
+        {
+            parameters.Add("sortOrder", UriHelper.ParameterToString(sortOrder));
+        }
+
+        var client = _httpClientFactory.CreateClient(PureCloudConstants.PureCloudClientName);
+
+        var uri = UriHelper.GetUri($"api/v2/quality/forms/evaluations/{formId}/versions", parameters);
+
+        var response = await client.GetAsync(uri, cancellationToken);
+
+        response.EnsureSuccessStatusCode();
+
+        return await response.Content.ReadFromJsonAsync<EvaluationFormResponseEntityListing>(_options.JsonSerializerOptions, cancellationToken);
+    }
+
+    public async Task<EvaluationFormEntityListing> GetQualityFormsEvaluationsAsync(int? pageSize = null, int? pageNumber = null, string sortBy = null, string nextPage = null, string previousPage = null, string expand = null, string name = null, string sortOrder = null, CancellationToken cancellationToken = default)
+    {
+        var parameters = new NameValueCollection();
+
+        if (pageSize.HasValue)
+        {
+            parameters.Add("pageSize", UriHelper.ParameterToString(pageSize.Value));
+        }
+
+        if (pageNumber.HasValue)
+        {
+            parameters.Add("pageNumber", UriHelper.ParameterToString(pageNumber.Value));
+        }
+
+        if (!string.IsNullOrEmpty(sortBy))
+        {
+            parameters.Add("sortBy", UriHelper.ParameterToString(sortBy));
+        }
+
+        if (!string.IsNullOrEmpty(nextPage))
+        {
+            parameters.Add("nextPage", UriHelper.ParameterToString(nextPage));
+        }
+
+        if (!string.IsNullOrEmpty(previousPage))
+        {
+            parameters.Add("previousPage", UriHelper.ParameterToString(previousPage));
+        }
+
+        if (!string.IsNullOrEmpty(expand))
+        {
+            parameters.Add("expand", UriHelper.ParameterToString(expand));
+        }
+
+        if (!string.IsNullOrEmpty(name))
+        {
+            parameters.Add("name", UriHelper.ParameterToString(name));
+        }
+
+        if (!string.IsNullOrEmpty(sortOrder))
+        {
+            parameters.Add("sortOrder", UriHelper.ParameterToString(sortOrder));
+        }
+
+        var client = _httpClientFactory.CreateClient(PureCloudConstants.PureCloudClientName);
+
+        var uri = UriHelper.GetUri($"api/v2/quality/forms/evaluations", parameters);
+
+        var response = await client.GetAsync(uri, cancellationToken);
+
+        response.EnsureSuccessStatusCode();
+
+        return await response.Content.ReadFromJsonAsync<EvaluationFormEntityListing>(_options.JsonSerializerOptions, cancellationToken);
+    }
+
+    public async Task<SurveyForm> GetQualityFormsSurveyAsync(string formId, CancellationToken cancellationToken = default)
+    {
+        ArgumentException.ThrowIfNullOrEmpty(formId);
+
+        var client = _httpClientFactory.CreateClient(PureCloudConstants.PureCloudClientName);
+
+        var response = await client.GetAsync($"api/v2/quality/forms/surveys/{formId}", cancellationToken);
+
+        response.EnsureSuccessStatusCode();
+
+        return await response.Content.ReadFromJsonAsync<SurveyForm>(_options.JsonSerializerOptions, cancellationToken);
+    }
+
+    public async Task<SurveyFormEntityListing> GetQualityFormsSurveysAsync(int? pageSize = null, int? pageNumber = null, string sortBy = null, string nextPage = null, string previousPage = null, string expand = null, string name = null, string sortOrder = null, CancellationToken cancellationToken = default)
+    {
+        var parameters = new NameValueCollection();
+
+        if (pageSize.HasValue)
+        {
+            parameters.Add("pageSize", UriHelper.ParameterToString(pageSize.Value));
+        }
+
+        if (pageNumber.HasValue)
+        {
+            parameters.Add("pageNumber", UriHelper.ParameterToString(pageNumber.Value));
+        }
+
+        if (!string.IsNullOrEmpty(sortBy))
+        {
+            parameters.Add("sortBy", UriHelper.ParameterToString(sortBy));
+        }
+
+        if (!string.IsNullOrEmpty(nextPage))
+        {
+            parameters.Add("nextPage", UriHelper.ParameterToString(nextPage));
+        }
+
+        if (!string.IsNullOrEmpty(previousPage))
+        {
+            parameters.Add("previousPage", UriHelper.ParameterToString(previousPage));
+        }
+
+        if (!string.IsNullOrEmpty(expand))
+        {
+            parameters.Add("expand", UriHelper.ParameterToString(expand));
+        }
+
+        if (!string.IsNullOrEmpty(name))
+        {
+            parameters.Add("name", UriHelper.ParameterToString(name));
+        }
+
+        if (!string.IsNullOrEmpty(sortOrder))
+        {
+            parameters.Add("sortOrder", UriHelper.ParameterToString(sortOrder));
+        }
+
+        var client = _httpClientFactory.CreateClient(PureCloudConstants.PureCloudClientName);
+
+        var uri = UriHelper.GetUri($"api/v2/quality/forms/surveys", parameters);
+
+        var response = await client.GetAsync(uri, cancellationToken);
+
+        response.EnsureSuccessStatusCode();
+
+        return await response.Content.ReadFromJsonAsync<SurveyFormEntityListing>(_options.JsonSerializerOptions, cancellationToken);
+    }
 }

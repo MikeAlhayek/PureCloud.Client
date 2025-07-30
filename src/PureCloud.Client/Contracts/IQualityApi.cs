@@ -49,4 +49,20 @@ public interface IQualityApi
     Task<bool> DeleteQualityFormsEvaluationAsync(string formId, CancellationToken cancellationToken = default);
 
     Task<bool> DeleteQualityFormsSurveyAsync(string formId, CancellationToken cancellationToken = default);
+
+    Task<AgentActivityEntityListing> GetQualityEvaluatorsActivityAsync(int? pageSize = null, int? pageNumber = null, string sortBy = null, IEnumerable<string> expand = null, string nextPage = null, string previousPage = null, DateTime? startTime = null, DateTime? endTime = null, string name = null, IEnumerable<string> permission = null, string group = null, string agentTeamId = null, CancellationToken cancellationToken = default);
+
+    Task<EvaluationForm> GetQualityFormAsync(string formId, CancellationToken cancellationToken = default);
+
+    Task<EvaluationFormResponseEntityListing> GetQualityFormVersionsAsync(string formId, int? pageSize = null, int? pageNumber = null, CancellationToken cancellationToken = default);
+
+    Task<EvaluationFormEntityListing> GetQualityFormsAsync(int? pageSize = null, int? pageNumber = null, string sortBy = null, string nextPage = null, string previousPage = null, string expand = null, string name = null, string sortOrder = null, CancellationToken cancellationToken = default);
+
+    Task<EvaluationFormResponseEntityListing> GetQualityFormsEvaluationVersionsAsync(string formId, int? pageSize = null, int? pageNumber = null, string sortOrder = null, CancellationToken cancellationToken = default);
+
+    Task<EvaluationFormEntityListing> GetQualityFormsEvaluationsAsync(int? pageSize = null, int? pageNumber = null, string sortBy = null, string nextPage = null, string previousPage = null, string expand = null, string name = null, string sortOrder = null, CancellationToken cancellationToken = default);
+
+    Task<SurveyForm> GetQualityFormsSurveyAsync(string formId, CancellationToken cancellationToken = default);
+
+    Task<SurveyFormEntityListing> GetQualityFormsSurveysAsync(int? pageSize = null, int? pageNumber = null, string sortBy = null, string nextPage = null, string previousPage = null, string expand = null, string name = null, string sortOrder = null, CancellationToken cancellationToken = default);
 }
