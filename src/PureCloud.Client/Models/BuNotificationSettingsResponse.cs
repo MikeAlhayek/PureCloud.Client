@@ -9,5 +9,5 @@ public sealed class BuNotificationSettingsResponse
     /// Schedule notification settings
     /// </summary>
     /// <value>Schedule notification settings</value>
-    public object Scheduling { get; set; }
+    public BuScheduleNotificationsSettingsResponse Scheduling { get; set; }
 }

@@ -213,6 +213,7 @@
     <Compile Include="Models\ActionTemplate.cs" />
     <Compile Include="Models\ActionTemplateListing.cs" />
     <Compile Include="Models\ActivityCode.cs" />
+    <Compile Include="Models\ActivityCode.Category.cs" />
     <Compile Include="Models\ActivityCodeContainer.cs" />
     <Compile Include="Models\AppEventResponse.cs" />
     <Compile Include="Models\AppEventRequest.cs" />
@@ -775,7 +776,9 @@
     <Compile Include="Models\BuScheduleListing.cs" />
     <Compile Include="Models\BuShortTermForecastingSettings.cs" />
     <Compile Include="Models\BuSchedulingSettingsResponse.cs" />
+    <Compile Include="Models\BuSchedulingSettingsRequest.ActivitySmoothingType.cs" />
     <Compile Include="Models\BuNotificationSettingsResponse.cs" />
+    <Compile Include="Models\BuScheduleNotificationsSettingsResponse.cs" />
     <Compile Include="Models\BuShortTermForecastReference.cs" />
     <Compile Include="Models\ScheduleGenerationResultSummary.cs" />
     <Compile Include="Models\BuManagementUnitScheduleSummary.cs" />
@@ -5153,6 +5156,10 @@
     <Compile Include="Services\MemoryTokenStore.cs" />
     <Compile Include="Services\PureCloudOptionsConfigurations.cs" />
     <Compile Include="Services\TokenService.cs" />
+    <Compile Include="Models\SetWrapperSyncTimeOffProperty.cs" />
+    <Compile Include="Models\WfmServiceGoalImpactSettings.cs" />
+    <Compile Include="Models\WfmServiceGoalImpact.cs" />
+    <Compile Include="Models\BuScheduleNotificationsCategorySettings.cs" />
   </ItemGroup>
 
   <ItemGroup>
