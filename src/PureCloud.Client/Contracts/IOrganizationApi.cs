@@ -1,4 +1,5 @@
 using System;
+using System.Collections.Generic;
 using PureCloud.Client.Models;
 using PureCloud.Client.Models.Organizations;
 
@@ -54,7 +55,7 @@ public interface IOrganizationApi
     /// <param name="expands">Which fields, if any, to expand</param>
     /// <param name="cancellationToken">Cancellation token</param>
     /// <returns>LimitChangeRequestsEntityListing</returns>
-    Task<LimitChangeRequestsEntityListing> GetOrganizationLimitsChangeRequestsAsync(long? after = null, long? before = null, string status = null, int? pageSize = null, List<string> expands = null, CancellationToken cancellationToken = default);
+    Task<LimitChangeRequestsEntityListing> GetOrganizationLimitsChangeRequestsAsync(long? after = null, long? before = null, string status = null, int? pageSize = null, IEnumerable<string> expands = null, CancellationToken cancellationToken = default);
 
     /// <summary>
     /// Get field config for an entity type

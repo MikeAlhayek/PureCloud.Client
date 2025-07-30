@@ -79,7 +79,7 @@ public sealed class OrganizationApi : IOrganizationApi
     }
 
     /// <inheritdoc />
-    public async Task<LimitChangeRequestsEntityListing> GetOrganizationLimitsChangeRequestsAsync(long? after, long? before, string status, int? pageSize, List<string> expands, CancellationToken cancellationToken)
+    public async Task<LimitChangeRequestsEntityListing> GetOrganizationLimitsChangeRequestsAsync(long? after, long? before, string status, int? pageSize, IEnumerable<string> expands, CancellationToken cancellationToken)
     {
         var parameters = new NameValueCollection();
 
@@ -95,7 +95,7 @@ public sealed class OrganizationApi : IOrganizationApi
 
         if (!string.IsNullOrEmpty(status))
         {
-            parameters.Add("status", status);
+            parameters.Add("status", UriHelper.ParameterToString(status));
         }
 
         if (pageSize.HasValue)
@@ -103,11 +103,11 @@ public sealed class OrganizationApi : IOrganizationApi
             parameters.Add("pageSize", UriHelper.ParameterToString(pageSize.Value));
         }
 
-        if (expands?.Count > 0)
+        if (expands != null)
         {
             foreach (var item in expands)
             {
-                parameters.Add("expands", item);
+                parameters.Add("expand", item);
             }
         }
 
