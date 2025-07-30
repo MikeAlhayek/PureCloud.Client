@@ -12,7 +12,7 @@ public interface IObjectsApi
     /// <summary>
     /// Get a list of authorization divisions.
     /// </summary>
-    Task<AuthzDivisionEntityListing> GetAuthorizationDivisionsAsync(int? pageSize = null, int? pageNumber = null, string sortBy = null, IEnumerable<string> expand = null, string nextPage = null, string previousPage = null, bool? objectCount = null, IEnumerable<string> id = null, string name = null, CancellationToken cancellationToken = default);
+    Task<AuthzDivisionEntityListing> GetAuthorizationDivisionsAsync(int? pageSize = null, int? pageNumber = null, string sortBy = null, IEnumerable<string> expands = null, string nextPage = null, string previousPage = null, bool? objectCount = null, IEnumerable<string> ids = null, string name = null, CancellationToken cancellationToken = default);
 
     /// <summary>
     /// Create a new authorization division.
@@ -52,7 +52,7 @@ public interface IObjectsApi
     /// <summary>
     /// Retrieve a list of all divisions defined for the organization with cursor-based pagination.
     /// </summary>
-    Task<AuthzDivisionCursorListing> GetAuthorizationDivisionsQueryAsync(string before = null, string after = null, string pageSize = null, IEnumerable<string> id = null, string name = null, CancellationToken cancellationToken = default);
+    Task<AuthzDivisionCursorListing> GetAuthorizationDivisionsQueryAsync(string before = null, string after = null, string pageSize = null, IEnumerable<string> ids = null, string name = null, CancellationToken cancellationToken = default);
 
     /// <summary>
     /// Recreate a previously deleted division.
