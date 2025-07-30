@@ -55,7 +55,7 @@ public interface INotificationsApi
     /// </summary>
     /// <param name="channelId">Channel ID</param>
     /// <param name="cancellationToken">Cancellation token</param>
-    Task DeleteNotificationsChannelSubscriptionsAsync(string channelId, CancellationToken cancellationToken = default);
+    Task<bool> DeleteNotificationsChannelSubscriptionsAsync(string channelId, CancellationToken cancellationToken = default);
 
     /// <summary>
     /// Verify a channel still exists and is valid

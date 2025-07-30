@@ -146,7 +146,7 @@ public sealed class NotificationsApi : INotificationsApi
     }
 
     /// <inheritdoc />
-    public async Task DeleteNotificationsChannelSubscriptionsAsync(string channelId, CancellationToken cancellationToken = default)
+    public async Task<bool> DeleteNotificationsChannelSubscriptionsAsync(string channelId, CancellationToken cancellationToken = default)
     {
         ArgumentException.ThrowIfNullOrEmpty(channelId);
 
@@ -155,6 +155,8 @@ public sealed class NotificationsApi : INotificationsApi
         var response = await client.DeleteAsync($"api/v2/notifications/channels/{Uri.EscapeDataString(channelId)}/subscriptions", cancellationToken);
 
         response.EnsureSuccessStatusCode();
+
+        return response.IsSuccessStatusCode;
     }
 
     /// <inheritdoc />
