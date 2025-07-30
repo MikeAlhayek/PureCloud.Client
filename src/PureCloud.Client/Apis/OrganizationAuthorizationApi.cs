@@ -91,9 +91,7 @@ public sealed class OrganizationAuthorizationApi : IOrganizationAuthorizationApi
 
         var response = await _httpClient.DeleteAsync($"api/v2/orgauthorization/trustees/{Uri.EscapeDataString(trusteeOrgId)}", cancellationToken);
 
-        response.EnsureSuccessStatusCode();
-
-        return true;
+        return response.IsSuccessStatusCode;
     }
 
     /// <inheritdoc />
@@ -104,9 +102,7 @@ public sealed class OrganizationAuthorizationApi : IOrganizationAuthorizationApi
 
         var response = await _httpClient.DeleteAsync($"api/v2/orgauthorization/trustees/{Uri.EscapeDataString(trusteeOrgId)}/clonedusers/{Uri.EscapeDataString(trusteeUserId)}", cancellationToken);
 
-        response.EnsureSuccessStatusCode();
-
-        return true;
+        return response.IsSuccessStatusCode;
     }
 
     /// <inheritdoc />
@@ -117,9 +113,7 @@ public sealed class OrganizationAuthorizationApi : IOrganizationAuthorizationApi
 
         var response = await _httpClient.DeleteAsync($"api/v2/orgauthorization/trustees/{Uri.EscapeDataString(trusteeOrgId)}/groups/{Uri.EscapeDataString(trusteeGroupId)}", cancellationToken);
 
-        response.EnsureSuccessStatusCode();
-
-        return true;
+        return response.IsSuccessStatusCode;
     }
 
     /// <inheritdoc />
@@ -130,9 +124,7 @@ public sealed class OrganizationAuthorizationApi : IOrganizationAuthorizationApi
 
         var response = await _httpClient.DeleteAsync($"api/v2/orgauthorization/trustees/{Uri.EscapeDataString(trusteeOrgId)}/groups/{Uri.EscapeDataString(trusteeGroupId)}/roles", cancellationToken);
 
-        response.EnsureSuccessStatusCode();
-
-        return true;
+        return response.IsSuccessStatusCode;
     }
 
     /// <inheritdoc />
@@ -143,9 +135,7 @@ public sealed class OrganizationAuthorizationApi : IOrganizationAuthorizationApi
 
         var response = await _httpClient.DeleteAsync($"api/v2/orgauthorization/trustees/{Uri.EscapeDataString(trusteeOrgId)}/users/{Uri.EscapeDataString(trusteeUserId)}", cancellationToken);
 
-        response.EnsureSuccessStatusCode();
-
-        return true;
+        return response.IsSuccessStatusCode;
     }
 
     /// <inheritdoc />
@@ -156,9 +146,7 @@ public sealed class OrganizationAuthorizationApi : IOrganizationAuthorizationApi
 
         var response = await _httpClient.DeleteAsync($"api/v2/orgauthorization/trustees/{Uri.EscapeDataString(trusteeOrgId)}/users/{Uri.EscapeDataString(trusteeUserId)}/roles", cancellationToken);
 
-        response.EnsureSuccessStatusCode();
-
-        return true;
+        return response.IsSuccessStatusCode;
     }
 
     /// <inheritdoc />
@@ -177,9 +165,7 @@ public sealed class OrganizationAuthorizationApi : IOrganizationAuthorizationApi
 
         var response = await _httpClient.DeleteAsync(uri, cancellationToken);
 
-        response.EnsureSuccessStatusCode();
-
-        return true;
+        return response.IsSuccessStatusCode;
     }
 
     /// <inheritdoc />
@@ -189,9 +175,7 @@ public sealed class OrganizationAuthorizationApi : IOrganizationAuthorizationApi
 
         var response = await _httpClient.DeleteAsync($"api/v2/orgauthorization/trustors/{Uri.EscapeDataString(trustorOrgId)}", cancellationToken);
 
-        response.EnsureSuccessStatusCode();
-
-        return true;
+        return response.IsSuccessStatusCode;
     }
 
     /// <inheritdoc />
@@ -202,9 +186,7 @@ public sealed class OrganizationAuthorizationApi : IOrganizationAuthorizationApi
 
         var response = await _httpClient.DeleteAsync($"api/v2/orgauthorization/trustors/{Uri.EscapeDataString(trustorOrgId)}/clonedusers/{Uri.EscapeDataString(trusteeUserId)}", cancellationToken);
 
-        response.EnsureSuccessStatusCode();
-
-        return true;
+        return response.IsSuccessStatusCode;
     }
 
     /// <inheritdoc />
@@ -215,9 +197,7 @@ public sealed class OrganizationAuthorizationApi : IOrganizationAuthorizationApi
 
         var response = await _httpClient.DeleteAsync($"api/v2/orgauthorization/trustors/{Uri.EscapeDataString(trustorOrgId)}/groups/{Uri.EscapeDataString(trustorGroupId)}", cancellationToken);
 
-        response.EnsureSuccessStatusCode();
-
-        return true;
+        return response.IsSuccessStatusCode;
     }
 
     /// <inheritdoc />
@@ -228,9 +208,7 @@ public sealed class OrganizationAuthorizationApi : IOrganizationAuthorizationApi
 
         var response = await _httpClient.DeleteAsync($"api/v2/orgauthorization/trustors/{Uri.EscapeDataString(trustorOrgId)}/users/{Uri.EscapeDataString(trusteeUserId)}", cancellationToken);
 
-        response.EnsureSuccessStatusCode();
-
-        return true;
+        return response.IsSuccessStatusCode;
     }
 
     /// <inheritdoc />
@@ -249,9 +227,7 @@ public sealed class OrganizationAuthorizationApi : IOrganizationAuthorizationApi
 
         var response = await _httpClient.DeleteAsync(uri, cancellationToken);
 
-        response.EnsureSuccessStatusCode();
-
-        return true;
+        return response.IsSuccessStatusCode;
     }
 
     /// <inheritdoc />
