@@ -13,19 +13,20 @@ namespace PureCloud.Client.Apis;
 /// <inheritdoc />
 public sealed class OrganizationApi : IOrganizationApi
 {
-    private readonly HttpClient _httpClient;
+    private readonly IHttpClientFactory _httpClientFactory;
     private readonly JsonSerializerOptions _options;
 
     public OrganizationApi(IHttpClientFactory httpClientFactory, IOptions<PureCloudJsonSerializerOptions> options)
     {
-        _httpClient = httpClientFactory.CreateClient(PureCloudConstants.PureCloudClientName);
+        _httpClientFactory = httpClientFactory;
         _options = options.Value.JsonSerializerOptions;
     }
 
     /// <inheritdoc />
     public async Task<Organization> GetOrganizationAsync(CancellationToken cancellationToken)
     {
-        var response = await _httpClient.GetAsync("/api/v2/organizations/me", cancellationToken);
+        var client = _httpClientFactory.CreateClient(PureCloudConstants.PureCloudClientName);
+        var response = await client.GetAsync("/api/v2/organizations/me", cancellationToken);
 
         response.EnsureSuccessStatusCode();
 
@@ -35,7 +36,8 @@ public sealed class OrganizationApi : IOrganizationApi
     /// <inheritdoc />
     public async Task<OrgAuthSettings> GetOrganizationAuthenticationSettingsAsync(CancellationToken cancellationToken)
     {
-        var response = await _httpClient.GetAsync("/api/v2/organizations/authentication/settings", cancellationToken);
+        var client = _httpClientFactory.CreateClient(PureCloudConstants.PureCloudClientName);
+        var response = await client.GetAsync("/api/v2/organizations/authentication/settings", cancellationToken);
 
         response.EnsureSuccessStatusCode();
 
@@ -47,7 +49,8 @@ public sealed class OrganizationApi : IOrganizationApi
     {
         ArgumentNullException.ThrowIfNull(body);
 
-        var response = await _httpClient.PatchAsJsonAsync("/api/v2/organizations/authentication/settings", body, _options, cancellationToken);
+        var client = _httpClientFactory.CreateClient(PureCloudConstants.PureCloudClientName);
+        var response = await client.PatchAsJsonAsync("/api/v2/organizations/authentication/settings", body, _options, cancellationToken);
 
         response.EnsureSuccessStatusCode();
 
@@ -59,7 +62,8 @@ public sealed class OrganizationApi : IOrganizationApi
     {
         ArgumentNullException.ThrowIfNull(body);
 
-        var response = await _httpClient.PutAsJsonAsync("/api/v2/organizations/me", body, _options, cancellationToken);
+        var client = _httpClientFactory.CreateClient(PureCloudConstants.PureCloudClientName);
+        var response = await client.PutAsJsonAsync("/api/v2/organizations/me", body, _options, cancellationToken);
 
         response.EnsureSuccessStatusCode();
 
@@ -71,7 +75,8 @@ public sealed class OrganizationApi : IOrganizationApi
     {
         ArgumentException.ThrowIfNullOrEmpty(requestId);
 
-        var response = await _httpClient.GetAsync($"/api/v2/organizations/limits/changerequests/{Uri.EscapeDataString(requestId)}", cancellationToken);
+        var client = _httpClientFactory.CreateClient(PureCloudConstants.PureCloudClientName);
+        var response = await client.GetAsync($"/api/v2/organizations/limits/changerequests/{Uri.EscapeDataString(requestId)}", cancellationToken);
 
         response.EnsureSuccessStatusCode();
 
@@ -105,15 +110,16 @@ public sealed class OrganizationApi : IOrganizationApi
 
         if (expands != null)
         {
-            foreach (var item in expands)
+            foreach (var expand in expands)
             {
-                parameters.Add("expand", item);
+                parameters.Add("expand", expand);
             }
         }
 
         var uri = UriHelper.GetUri("/api/v2/organizations/limits/changerequests", parameters);
 
-        var response = await _httpClient.GetAsync(uri, cancellationToken);
+        var client = _httpClientFactory.CreateClient(PureCloudConstants.PureCloudClientName);
+        var response = await client.GetAsync(uri, cancellationToken);
 
         response.EnsureSuccessStatusCode();
 
@@ -129,7 +135,8 @@ public sealed class OrganizationApi : IOrganizationApi
 
         var uri = UriHelper.GetUri("/api/v2/fieldconfig", parameters);
 
-        var response = await _httpClient.GetAsync(uri, cancellationToken);
+        var client = _httpClientFactory.CreateClient(PureCloudConstants.PureCloudClientName);
+        var response = await client.GetAsync(uri, cancellationToken);
 
         response.EnsureSuccessStatusCode();
 
@@ -139,7 +146,8 @@ public sealed class OrganizationApi : IOrganizationApi
     /// <inheritdoc />
     public async Task<EmbeddedIntegration> GetOrganizationEmbeddedIntegrationAsync(CancellationToken cancellationToken)
     {
-        var response = await _httpClient.GetAsync("/api/v2/organizations/embeddedintegration", cancellationToken);
+        var client = _httpClientFactory.CreateClient(PureCloudConstants.PureCloudClientName);
+        var response = await client.GetAsync("/api/v2/organizations/embeddedintegration", cancellationToken);
 
         response.EnsureSuccessStatusCode();
 
@@ -149,7 +157,8 @@ public sealed class OrganizationApi : IOrganizationApi
     /// <inheritdoc />
     public async Task<IpAddressAuthentication> GetOrganizationIpAddressAuthenticationAsync(CancellationToken cancellationToken)
     {
-        var response = await _httpClient.GetAsync("/api/v2/organizations/ipaddressauthentication", cancellationToken);
+        var client = _httpClientFactory.CreateClient(PureCloudConstants.PureCloudClientName);
+        var response = await client.GetAsync("/api/v2/organizations/ipaddressauthentication", cancellationToken);
 
         response.EnsureSuccessStatusCode();
 
@@ -159,7 +168,8 @@ public sealed class OrganizationApi : IOrganizationApi
     /// <inheritdoc />
     public async Task<LimitDocumentation> GetOrganizationLimitsDocsAsync(CancellationToken cancellationToken)
     {
-        var response = await _httpClient.GetAsync("/api/v2/organizations/limits/docs", cancellationToken);
+        var client = _httpClientFactory.CreateClient(PureCloudConstants.PureCloudClientName);
+        var response = await client.GetAsync("/api/v2/organizations/limits/docs", cancellationToken);
 
         response.EnsureSuccessStatusCode();
 
@@ -169,7 +179,8 @@ public sealed class OrganizationApi : IOrganizationApi
     /// <inheritdoc />
     public async Task<FreeTrialLimitDocs> GetOrganizationLimitsDocsFreeTrialAsync(CancellationToken cancellationToken)
     {
-        var response = await _httpClient.GetAsync("/api/v2/organizations/limits/docs/freetrial", cancellationToken);
+        var client = _httpClientFactory.CreateClient(PureCloudConstants.PureCloudClientName);
+        var response = await client.GetAsync("/api/v2/organizations/limits/docs/freetrial", cancellationToken);
 
         response.EnsureSuccessStatusCode();
 
@@ -181,7 +192,8 @@ public sealed class OrganizationApi : IOrganizationApi
     {
         ArgumentException.ThrowIfNullOrEmpty(namespaceName);
 
-        var response = await _httpClient.GetAsync($"/api/v2/organizations/limits/namespaces/{Uri.EscapeDataString(namespaceName)}", cancellationToken);
+        var client = _httpClientFactory.CreateClient(PureCloudConstants.PureCloudClientName);
+        var response = await client.GetAsync($"/api/v2/organizations/limits/namespaces/{Uri.EscapeDataString(namespaceName)}", cancellationToken);
 
         response.EnsureSuccessStatusCode();
 
@@ -193,7 +205,8 @@ public sealed class OrganizationApi : IOrganizationApi
     {
         ArgumentException.ThrowIfNullOrEmpty(namespaceName);
 
-        var response = await _httpClient.GetAsync($"/api/v2/organizations/limits/namespaces/{Uri.EscapeDataString(namespaceName)}/defaults", cancellationToken);
+        var client = _httpClientFactory.CreateClient(PureCloudConstants.PureCloudClientName);
+        var response = await client.GetAsync($"/api/v2/organizations/limits/namespaces/{Uri.EscapeDataString(namespaceName)}/defaults", cancellationToken);
 
         response.EnsureSuccessStatusCode();
 
@@ -217,7 +230,8 @@ public sealed class OrganizationApi : IOrganizationApi
 
         var uri = UriHelper.GetUri("/api/v2/organizations/limits/namespaces", parameters);
 
-        var response = await _httpClient.GetAsync(uri, cancellationToken);
+        var client = _httpClientFactory.CreateClient(PureCloudConstants.PureCloudClientName);
+        var response = await client.GetAsync(uri, cancellationToken);
 
         response.EnsureSuccessStatusCode();
 
@@ -227,7 +241,8 @@ public sealed class OrganizationApi : IOrganizationApi
     /// <inheritdoc />
     public async Task<OrgWhitelistSettings> GetOrganizationWhitelistAsync(CancellationToken cancellationToken)
     {
-        var response = await _httpClient.GetAsync("/api/v2/organizations/whitelist", cancellationToken);
+        var client = _httpClientFactory.CreateClient(PureCloudConstants.PureCloudClientName);
+        var response = await client.GetAsync("/api/v2/organizations/whitelist", cancellationToken);
 
         response.EnsureSuccessStatusCode();
 
@@ -240,7 +255,8 @@ public sealed class OrganizationApi : IOrganizationApi
         ArgumentException.ThrowIfNullOrEmpty(featureName);
         ArgumentNullException.ThrowIfNull(enabled);
 
-        var response = await _httpClient.PatchAsJsonAsync($"/api/v2/organizations/features/{Uri.EscapeDataString(featureName)}", enabled, _options, cancellationToken);
+        var client = _httpClientFactory.CreateClient(PureCloudConstants.PureCloudClientName);
+        var response = await client.PatchAsJsonAsync($"/api/v2/organizations/features/{Uri.EscapeDataString(featureName)}", enabled, _options, cancellationToken);
 
         response.EnsureSuccessStatusCode();
 
@@ -252,7 +268,8 @@ public sealed class OrganizationApi : IOrganizationApi
     {
         ArgumentNullException.ThrowIfNull(body);
 
-        var response = await _httpClient.PutAsJsonAsync("/api/v2/organizations/embeddedintegration", body, _options, cancellationToken);
+        var client = _httpClientFactory.CreateClient(PureCloudConstants.PureCloudClientName);
+        var response = await client.PutAsJsonAsync("/api/v2/organizations/embeddedintegration", body, _options, cancellationToken);
 
         response.EnsureSuccessStatusCode();
 
@@ -264,7 +281,8 @@ public sealed class OrganizationApi : IOrganizationApi
     {
         ArgumentNullException.ThrowIfNull(body);
 
-        var response = await _httpClient.PutAsJsonAsync("/api/v2/organizations/ipaddressauthentication", body, _options, cancellationToken);
+        var client = _httpClientFactory.CreateClient(PureCloudConstants.PureCloudClientName);
+        var response = await client.PutAsJsonAsync("/api/v2/organizations/ipaddressauthentication", body, _options, cancellationToken);
 
         response.EnsureSuccessStatusCode();
 
@@ -276,7 +294,8 @@ public sealed class OrganizationApi : IOrganizationApi
     {
         ArgumentNullException.ThrowIfNull(body);
 
-        var response = await _httpClient.PutAsJsonAsync("/api/v2/organizations/whitelist", body, _options, cancellationToken);
+        var client = _httpClientFactory.CreateClient(PureCloudConstants.PureCloudClientName);
+        var response = await client.PutAsJsonAsync("/api/v2/organizations/whitelist", body, _options, cancellationToken);
 
         response.EnsureSuccessStatusCode();
 
