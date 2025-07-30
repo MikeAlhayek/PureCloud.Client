@@ -35,7 +35,7 @@ public sealed class LicenseApi : ILicenseApi
     }
 
     /// <inheritdoc />
-    public async Task<List<LicenseDefinition>> GetLicenseDefinitionsAsync(CancellationToken cancellationToken = default)
+    public async Task<LicenseDefinition[]> GetLicenseDefinitionsAsync(CancellationToken cancellationToken = default)
     {
         var client = _httpClientFactory.CreateClient(PureCloudConstants.PureCloudClientName);
 
@@ -43,8 +43,7 @@ public sealed class LicenseApi : ILicenseApi
 
         response.EnsureSuccessStatusCode();
 
-        var result = await response.Content.ReadFromJsonAsync<LicenseDefinition[]>(_options.JsonSerializerOptions, cancellationToken);
-        return result?.ToList() ?? new List<LicenseDefinition>();
+        return await response.Content.ReadFromJsonAsync<LicenseDefinition[]>(_options.JsonSerializerOptions, cancellationToken);
     }
 
     /// <inheritdoc />
@@ -88,7 +87,7 @@ public sealed class LicenseApi : ILicenseApi
     }
 
     /// <inheritdoc />
-    public async Task<List<string>> CreateLicenseInferAsync(IEnumerable<string> body = null, CancellationToken cancellationToken = default)
+    public async Task<string[]> CreateLicenseInferAsync(IEnumerable<string> body = null, CancellationToken cancellationToken = default)
     {
         var client = _httpClientFactory.CreateClient(PureCloudConstants.PureCloudClientName);
 
@@ -96,12 +95,11 @@ public sealed class LicenseApi : ILicenseApi
 
         response.EnsureSuccessStatusCode();
 
-        var result = await response.Content.ReadFromJsonAsync<string[]>(_options.JsonSerializerOptions, cancellationToken);
-        return result?.ToList() ?? new List<string>();
+        return await response.Content.ReadFromJsonAsync<string[]>(_options.JsonSerializerOptions, cancellationToken);
     }
 
     /// <inheritdoc />
-    public async Task<List<LicenseUpdateStatus>> UpdateLicenseOrganizationAsync(LicenseBatchAssignmentRequest body = null, CancellationToken cancellationToken = default)
+    public async Task<LicenseUpdateStatus[]> UpdateLicenseOrganizationAsync(LicenseBatchAssignmentRequest body = null, CancellationToken cancellationToken = default)
     {
         var client = _httpClientFactory.CreateClient(PureCloudConstants.PureCloudClientName);
 
@@ -109,8 +107,7 @@ public sealed class LicenseApi : ILicenseApi
 
         response.EnsureSuccessStatusCode();
 
-        var result = await response.Content.ReadFromJsonAsync<LicenseUpdateStatus[]>(_options.JsonSerializerOptions, cancellationToken);
-        return result?.ToList() ?? new List<LicenseUpdateStatus>();
+        return await response.Content.ReadFromJsonAsync<LicenseUpdateStatus[]>(_options.JsonSerializerOptions, cancellationToken);
     }
 
     /// <inheritdoc />
