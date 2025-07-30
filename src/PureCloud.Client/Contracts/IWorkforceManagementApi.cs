@@ -47,8 +47,8 @@ public interface IWorkforceManagementApi
     /// <param name="managementUnitId">The ID of the management unit</param>
     /// <param name="expands">Include to access additional data on the management unit</param>
     /// <param name="cancellationToken">Cancellation token</param>
-    /// <returns>Management unit as JSON string (simplified for now)</returns>
-    Task<string> GetManagementUnitAsync(string managementUnitId, IEnumerable<string> expands = null, CancellationToken cancellationToken = default);
+    /// <returns>Management unit</returns>
+    Task<ManagementUnit> GetManagementUnitAsync(string managementUnitId, IEnumerable<string> expands = null, CancellationToken cancellationToken = default);
 
     /// <summary>
     /// Get management units
