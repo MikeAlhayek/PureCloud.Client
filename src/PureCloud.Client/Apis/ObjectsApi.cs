@@ -11,12 +11,12 @@ namespace PureCloud.Client.Apis;
 /// <inheritdoc />
 public sealed class ObjectsApi : IObjectsApi
 {
-    private readonly HttpClient _httpClient;
+    private readonly IHttpClientFactory _httpClientFactory;
     private readonly PureCloudJsonSerializerOptions _options;
 
     public ObjectsApi(IHttpClientFactory httpClientFactory, IOptions<PureCloudJsonSerializerOptions> options)
     {
-        _httpClient = httpClientFactory.CreateClient(PureCloudConstants.PureCloudClientName);
+        _httpClientFactory = httpClientFactory;
         _options = options.Value;
     }
 
@@ -34,7 +34,9 @@ public sealed class ObjectsApi : IObjectsApi
 
         var uri = UriHelper.GetUri($"api/v2/authorization/divisions/{Uri.EscapeDataString(divisionId)}", parameters);
 
-        var response = await _httpClient.GetAsync(uri, cancellationToken);
+        var client = _httpClientFactory.CreateClient(PureCloudConstants.PureCloudClientName);
+
+        var response = await client.GetAsync(uri, cancellationToken);
 
         response.EnsureSuccessStatusCode();
 
@@ -99,7 +101,9 @@ public sealed class ObjectsApi : IObjectsApi
 
         var uri = UriHelper.GetUri("api/v2/authorization/divisions", parameters);
 
-        var response = await _httpClient.GetAsync(uri, cancellationToken);
+        var client = _httpClientFactory.CreateClient(PureCloudConstants.PureCloudClientName);
+
+        var response = await client.GetAsync(uri, cancellationToken);
 
         response.EnsureSuccessStatusCode();
 
@@ -113,7 +117,9 @@ public sealed class ObjectsApi : IObjectsApi
 
         var uri = "api/v2/authorization/divisions";
 
-        var response = await _httpClient.PostAsJsonAsync(uri, body, _options.JsonSerializerOptions, cancellationToken);
+        var client = _httpClientFactory.CreateClient(PureCloudConstants.PureCloudClientName);
+
+        var response = await client.PostAsJsonAsync(uri, body, _options.JsonSerializerOptions, cancellationToken);
 
         response.EnsureSuccessStatusCode();
 
@@ -129,7 +135,9 @@ public sealed class ObjectsApi : IObjectsApi
 
         var uri = $"api/v2/authorization/divisions/{Uri.EscapeDataString(divisionId)}";
 
-        var response = await _httpClient.PutAsJsonAsync(uri, body, _options.JsonSerializerOptions, cancellationToken);
+        var client = _httpClientFactory.CreateClient(PureCloudConstants.PureCloudClientName);
+
+        var response = await client.PutAsJsonAsync(uri, body, _options.JsonSerializerOptions, cancellationToken);
 
         response.EnsureSuccessStatusCode();
 
@@ -150,7 +158,9 @@ public sealed class ObjectsApi : IObjectsApi
 
         var uri = UriHelper.GetUri($"api/v2/authorization/divisions/{Uri.EscapeDataString(divisionId)}", parameters);
 
-        var response = await _httpClient.DeleteAsync(uri, cancellationToken);
+        var client = _httpClientFactory.CreateClient(PureCloudConstants.PureCloudClientName);
+
+        var response = await client.DeleteAsync(uri, cancellationToken);
 
         response.EnsureSuccessStatusCode();
     }
@@ -172,7 +182,9 @@ public sealed class ObjectsApi : IObjectsApi
 
         var uri = UriHelper.GetUri("api/v2/authorization/divisions/deleted", parameters);
 
-        var response = await _httpClient.GetAsync(uri, cancellationToken);
+        var client = _httpClientFactory.CreateClient(PureCloudConstants.PureCloudClientName);
+
+        var response = await client.GetAsync(uri, cancellationToken);
 
         response.EnsureSuccessStatusCode();
 
@@ -182,7 +194,9 @@ public sealed class ObjectsApi : IObjectsApi
     /// <inheritdoc />
     public async Task<AuthzDivision> GetAuthorizationDivisionsHomeAsync(CancellationToken cancellationToken = default)
     {
-        var response = await _httpClient.GetAsync("api/v2/authorization/divisions/home", cancellationToken);
+        var client = _httpClientFactory.CreateClient(PureCloudConstants.PureCloudClientName);
+
+        var response = await client.GetAsync("api/v2/authorization/divisions/home", cancellationToken);
 
         response.EnsureSuccessStatusCode();
 
@@ -192,7 +206,9 @@ public sealed class ObjectsApi : IObjectsApi
     /// <inheritdoc />
     public async Task<int?> GetAuthorizationDivisionsLimitAsync(CancellationToken cancellationToken = default)
     {
-        var response = await _httpClient.GetAsync("api/v2/authorization/divisions/limit", cancellationToken);
+        var client = _httpClientFactory.CreateClient(PureCloudConstants.PureCloudClientName);
+
+        var response = await client.GetAsync("api/v2/authorization/divisions/limit", cancellationToken);
 
         response.EnsureSuccessStatusCode();
 
@@ -208,7 +224,9 @@ public sealed class ObjectsApi : IObjectsApi
 
         var uri = $"api/v2/authorization/divisions/{Uri.EscapeDataString(divisionId)}/objects/{Uri.EscapeDataString(objectType)}";
 
-        var response = await _httpClient.PostAsJsonAsync(uri, body, _options.JsonSerializerOptions, cancellationToken);
+        var client = _httpClientFactory.CreateClient(PureCloudConstants.PureCloudClientName);
+
+        var response = await client.PostAsJsonAsync(uri, body, _options.JsonSerializerOptions, cancellationToken);
 
         response.EnsureSuccessStatusCode();
     }
@@ -248,7 +266,9 @@ public sealed class ObjectsApi : IObjectsApi
 
         var uri = UriHelper.GetUri("api/v2/authorization/divisions/query", parameters);
 
-        var response = await _httpClient.GetAsync(uri, cancellationToken);
+        var client = _httpClientFactory.CreateClient(PureCloudConstants.PureCloudClientName);
+
+        var response = await client.GetAsync(uri, cancellationToken);
 
         response.EnsureSuccessStatusCode();
 
@@ -264,7 +284,9 @@ public sealed class ObjectsApi : IObjectsApi
 
         var uri = $"api/v2/authorization/divisions/{Uri.EscapeDataString(divisionId)}/restore";
 
-        var response = await _httpClient.PostAsJsonAsync(uri, body, _options.JsonSerializerOptions, cancellationToken);
+        var client = _httpClientFactory.CreateClient(PureCloudConstants.PureCloudClientName);
+
+        var response = await client.PostAsJsonAsync(uri, body, _options.JsonSerializerOptions, cancellationToken);
 
         response.EnsureSuccessStatusCode();
 
