@@ -2351,4 +2351,712 @@ public sealed class OutboundApi : IOutboundApi
 
         return await response.Content.ReadFromJsonAsync<CampaignSchedule>(_options.JsonSerializerOptions, cancellationToken);
     }
+
+    public async Task<CampaignDivisionView> GetOutboundCampaignsDivisionviewAsync(string campaignId, CancellationToken cancellationToken = default)
+    {
+        ArgumentException.ThrowIfNullOrEmpty(campaignId);
+
+        var client = _httpClientFactory.CreateClient(PureCloudConstants.PureCloudClientName);
+
+        var response = await client.GetAsync($"api/v2/outbound/campaigns/divisionviews/{campaignId}", cancellationToken);
+
+        response.EnsureSuccessStatusCode();
+
+        return await response.Content.ReadFromJsonAsync<CampaignDivisionView>(_options.JsonSerializerOptions, cancellationToken);
+    }
+
+    public async Task<CampaignDivisionViewListing> GetOutboundCampaignsDivisionviewsAsync(int? pageSize = null, int? pageNumber = null, string filterType = null, string name = null, List<string> id = null, string sortBy = null, string sortOrder = null, CancellationToken cancellationToken = default)
+    {
+        var parameters = new NameValueCollection();
+
+        if (pageSize.HasValue)
+        {
+            parameters.Add("pageSize", UriHelper.ParameterToString(pageSize.Value));
+        }
+
+        if (pageNumber.HasValue)
+        {
+            parameters.Add("pageNumber", UriHelper.ParameterToString(pageNumber.Value));
+        }
+
+        if (!string.IsNullOrEmpty(filterType))
+        {
+            parameters.Add("filterType", UriHelper.ParameterToString(filterType));
+        }
+
+        if (!string.IsNullOrEmpty(name))
+        {
+            parameters.Add("name", UriHelper.ParameterToString(name));
+        }
+
+        if (id != null)
+        {
+            foreach (var item in id)
+            {
+                parameters.Add("id", UriHelper.ParameterToString(item));
+            }
+        }
+
+        if (!string.IsNullOrEmpty(sortBy))
+        {
+            parameters.Add("sortBy", UriHelper.ParameterToString(sortBy));
+        }
+
+        if (!string.IsNullOrEmpty(sortOrder))
+        {
+            parameters.Add("sortOrder", UriHelper.ParameterToString(sortOrder));
+        }
+
+        var client = _httpClientFactory.CreateClient(PureCloudConstants.PureCloudClientName);
+
+        var uri = UriHelper.GetUri("api/v2/outbound/campaigns/divisionviews", parameters);
+        var response = await client.GetAsync(uri, cancellationToken);
+
+        response.EnsureSuccessStatusCode();
+
+        return await response.Content.ReadFromJsonAsync<CampaignDivisionViewListing>(_options.JsonSerializerOptions, cancellationToken);
+    }
+
+    public async Task<ContactList> GetOutboundContactlistAsync(string contactListId, bool? includeImportStatus = null, bool? includeSize = null, CancellationToken cancellationToken = default)
+    {
+        ArgumentException.ThrowIfNullOrEmpty(contactListId);
+
+        var parameters = new NameValueCollection();
+
+        if (includeImportStatus.HasValue)
+        {
+            parameters.Add("includeImportStatus", UriHelper.ParameterToString(includeImportStatus.Value));
+        }
+
+        if (includeSize.HasValue)
+        {
+            parameters.Add("includeSize", UriHelper.ParameterToString(includeSize.Value));
+        }
+
+        var client = _httpClientFactory.CreateClient(PureCloudConstants.PureCloudClientName);
+
+        var uri = UriHelper.GetUri($"api/v2/outbound/contactlists/{contactListId}", parameters);
+        var response = await client.GetAsync(uri, cancellationToken);
+
+        response.EnsureSuccessStatusCode();
+
+        return await response.Content.ReadFromJsonAsync<ContactList>(_options.JsonSerializerOptions, cancellationToken);
+    }
+
+    public async Task<DialerContact> GetOutboundContactlistContactAsync(string contactListId, string contactId, CancellationToken cancellationToken = default)
+    {
+        ArgumentException.ThrowIfNullOrEmpty(contactListId);
+        ArgumentException.ThrowIfNullOrEmpty(contactId);
+
+        var client = _httpClientFactory.CreateClient(PureCloudConstants.PureCloudClientName);
+
+        var response = await client.GetAsync($"api/v2/outbound/contactlists/{contactListId}/contacts/{contactId}", cancellationToken);
+
+        response.EnsureSuccessStatusCode();
+
+        return await response.Content.ReadFromJsonAsync<DialerContact>(_options.JsonSerializerOptions, cancellationToken);
+    }
+
+    public async Task<ContactsBulkOperationJob> GetOutboundContactlistContactsBulkJobAsync(string contactListId, string jobId, CancellationToken cancellationToken = default)
+    {
+        ArgumentException.ThrowIfNullOrEmpty(contactListId);
+        ArgumentException.ThrowIfNullOrEmpty(jobId);
+
+        var client = _httpClientFactory.CreateClient(PureCloudConstants.PureCloudClientName);
+
+        var response = await client.GetAsync($"api/v2/outbound/contactlists/{contactListId}/contacts/bulk/{jobId}", cancellationToken);
+
+        response.EnsureSuccessStatusCode();
+
+        return await response.Content.ReadFromJsonAsync<ContactsBulkOperationJob>(_options.JsonSerializerOptions, cancellationToken);
+    }
+
+    public async Task<ContactsBulkOperationJobListing> GetOutboundContactlistContactsBulkJobsAsync(string contactListId, CancellationToken cancellationToken = default)
+    {
+        ArgumentException.ThrowIfNullOrEmpty(contactListId);
+
+        var client = _httpClientFactory.CreateClient(PureCloudConstants.PureCloudClientName);
+
+        var response = await client.GetAsync($"api/v2/outbound/contactlists/{contactListId}/contacts/bulk", cancellationToken);
+
+        response.EnsureSuccessStatusCode();
+
+        return await response.Content.ReadFromJsonAsync<ContactsBulkOperationJobListing>(_options.JsonSerializerOptions, cancellationToken);
+    }
+
+    public async Task<TimeZoneMappingPreview> GetOutboundContactlistTimezonemappingpreviewAsync(string contactListId, CancellationToken cancellationToken = default)
+    {
+        ArgumentException.ThrowIfNullOrEmpty(contactListId);
+
+        var client = _httpClientFactory.CreateClient(PureCloudConstants.PureCloudClientName);
+
+        var response = await client.GetAsync($"api/v2/outbound/contactlists/{contactListId}/timezonemappingpreview", cancellationToken);
+
+        response.EnsureSuccessStatusCode();
+
+        return await response.Content.ReadFromJsonAsync<TimeZoneMappingPreview>(_options.JsonSerializerOptions, cancellationToken);
+    }
+
+    public async Task<ContactListDivisionView> GetOutboundContactlistsDivisionviewAsync(string contactListId, bool? includeImportStatus = null, bool? includeSize = null, CancellationToken cancellationToken = default)
+    {
+        ArgumentException.ThrowIfNullOrEmpty(contactListId);
+
+        var parameters = new NameValueCollection();
+
+        if (includeImportStatus.HasValue)
+        {
+            parameters.Add("includeImportStatus", UriHelper.ParameterToString(includeImportStatus.Value));
+        }
+
+        if (includeSize.HasValue)
+        {
+            parameters.Add("includeSize", UriHelper.ParameterToString(includeSize.Value));
+        }
+
+        var client = _httpClientFactory.CreateClient(PureCloudConstants.PureCloudClientName);
+
+        var uri = UriHelper.GetUri($"api/v2/outbound/contactlists/divisionviews/{contactListId}", parameters);
+        var response = await client.GetAsync(uri, cancellationToken);
+
+        response.EnsureSuccessStatusCode();
+
+        return await response.Content.ReadFromJsonAsync<ContactListDivisionView>(_options.JsonSerializerOptions, cancellationToken);
+    }
+
+    public async Task<ContactListDivisionViewListing> GetOutboundContactlistsDivisionviewsAsync(int? pageSize = null, int? pageNumber = null, string filterType = null, string name = null, List<string> id = null, string sortBy = null, string sortOrder = null, bool? includeImportStatus = null, bool? includeSize = null, CancellationToken cancellationToken = default)
+    {
+        var parameters = new NameValueCollection();
+
+        if (pageSize.HasValue)
+        {
+            parameters.Add("pageSize", UriHelper.ParameterToString(pageSize.Value));
+        }
+
+        if (pageNumber.HasValue)
+        {
+            parameters.Add("pageNumber", UriHelper.ParameterToString(pageNumber.Value));
+        }
+
+        if (!string.IsNullOrEmpty(filterType))
+        {
+            parameters.Add("filterType", UriHelper.ParameterToString(filterType));
+        }
+
+        if (!string.IsNullOrEmpty(name))
+        {
+            parameters.Add("name", UriHelper.ParameterToString(name));
+        }
+
+        if (id != null)
+        {
+            foreach (var item in id)
+            {
+                parameters.Add("id", UriHelper.ParameterToString(item));
+            }
+        }
+
+        if (!string.IsNullOrEmpty(sortBy))
+        {
+            parameters.Add("sortBy", UriHelper.ParameterToString(sortBy));
+        }
+
+        if (!string.IsNullOrEmpty(sortOrder))
+        {
+            parameters.Add("sortOrder", UriHelper.ParameterToString(sortOrder));
+        }
+
+        if (includeImportStatus.HasValue)
+        {
+            parameters.Add("includeImportStatus", UriHelper.ParameterToString(includeImportStatus.Value));
+        }
+
+        if (includeSize.HasValue)
+        {
+            parameters.Add("includeSize", UriHelper.ParameterToString(includeSize.Value));
+        }
+
+        var client = _httpClientFactory.CreateClient(PureCloudConstants.PureCloudClientName);
+
+        var uri = UriHelper.GetUri("api/v2/outbound/contactlists/divisionviews", parameters);
+        var response = await client.GetAsync(uri, cancellationToken);
+
+        response.EnsureSuccessStatusCode();
+
+        return await response.Content.ReadFromJsonAsync<ContactListDivisionViewListing>(_options.JsonSerializerOptions, cancellationToken);
+    }
+
+    public async Task<DncListDivisionView> GetOutboundDnclistsDivisionviewAsync(string dncListId, bool? includeImportStatus = null, bool? includeSize = null, CancellationToken cancellationToken = default)
+    {
+        ArgumentException.ThrowIfNullOrEmpty(dncListId);
+
+        var parameters = new NameValueCollection();
+
+        if (includeImportStatus.HasValue)
+        {
+            parameters.Add("includeImportStatus", UriHelper.ParameterToString(includeImportStatus.Value));
+        }
+
+        if (includeSize.HasValue)
+        {
+            parameters.Add("includeSize", UriHelper.ParameterToString(includeSize.Value));
+        }
+
+        var client = _httpClientFactory.CreateClient(PureCloudConstants.PureCloudClientName);
+
+        var uri = UriHelper.GetUri($"api/v2/outbound/dnclists/divisionviews/{dncListId}", parameters);
+        var response = await client.GetAsync(uri, cancellationToken);
+
+        response.EnsureSuccessStatusCode();
+
+        return await response.Content.ReadFromJsonAsync<DncListDivisionView>(_options.JsonSerializerOptions, cancellationToken);
+    }
+
+    public async Task<DncListDivisionViewListing> GetOutboundDnclistsDivisionviewsAsync(int? pageSize = null, int? pageNumber = null, string filterType = null, string name = null, List<string> id = null, string sortBy = null, string sortOrder = null, bool? includeImportStatus = null, bool? includeSize = null, CancellationToken cancellationToken = default)
+    {
+        var parameters = new NameValueCollection();
+
+        if (pageSize.HasValue)
+        {
+            parameters.Add("pageSize", UriHelper.ParameterToString(pageSize.Value));
+        }
+
+        if (pageNumber.HasValue)
+        {
+            parameters.Add("pageNumber", UriHelper.ParameterToString(pageNumber.Value));
+        }
+
+        if (!string.IsNullOrEmpty(filterType))
+        {
+            parameters.Add("filterType", UriHelper.ParameterToString(filterType));
+        }
+
+        if (!string.IsNullOrEmpty(name))
+        {
+            parameters.Add("name", UriHelper.ParameterToString(name));
+        }
+
+        if (id != null)
+        {
+            foreach (var item in id)
+            {
+                parameters.Add("id", UriHelper.ParameterToString(item));
+            }
+        }
+
+        if (!string.IsNullOrEmpty(sortBy))
+        {
+            parameters.Add("sortBy", UriHelper.ParameterToString(sortBy));
+        }
+
+        if (!string.IsNullOrEmpty(sortOrder))
+        {
+            parameters.Add("sortOrder", UriHelper.ParameterToString(sortOrder));
+        }
+
+        if (includeImportStatus.HasValue)
+        {
+            parameters.Add("includeImportStatus", UriHelper.ParameterToString(includeImportStatus.Value));
+        }
+
+        if (includeSize.HasValue)
+        {
+            parameters.Add("includeSize", UriHelper.ParameterToString(includeSize.Value));
+        }
+
+        var client = _httpClientFactory.CreateClient(PureCloudConstants.PureCloudClientName);
+
+        var uri = UriHelper.GetUri("api/v2/outbound/dnclists/divisionviews", parameters);
+        var response = await client.GetAsync(uri, cancellationToken);
+
+        response.EnsureSuccessStatusCode();
+
+        return await response.Content.ReadFromJsonAsync<DncListDivisionViewListing>(_options.JsonSerializerOptions, cancellationToken);
+    }
+
+    public async Task<MessagingCampaign> GetOutboundMessagingcampaignAsync(string messagingCampaignId, CancellationToken cancellationToken = default)
+    {
+        ArgumentException.ThrowIfNullOrEmpty(messagingCampaignId);
+
+        var client = _httpClientFactory.CreateClient(PureCloudConstants.PureCloudClientName);
+
+        var response = await client.GetAsync($"api/v2/outbound/messagingcampaigns/{messagingCampaignId}", cancellationToken);
+
+        response.EnsureSuccessStatusCode();
+
+        return await response.Content.ReadFromJsonAsync<MessagingCampaign>(_options.JsonSerializerOptions, cancellationToken);
+    }
+
+    public async Task<MessagingCampaignDiagnostics> GetOutboundMessagingcampaignDiagnosticsAsync(string messagingCampaignId, CancellationToken cancellationToken = default)
+    {
+        ArgumentException.ThrowIfNullOrEmpty(messagingCampaignId);
+
+        var client = _httpClientFactory.CreateClient(PureCloudConstants.PureCloudClientName);
+
+        var response = await client.GetAsync($"api/v2/outbound/messagingcampaigns/{messagingCampaignId}/diagnostics", cancellationToken);
+
+        response.EnsureSuccessStatusCode();
+
+        return await response.Content.ReadFromJsonAsync<MessagingCampaignDiagnostics>(_options.JsonSerializerOptions, cancellationToken);
+    }
+
+    public async Task<CampaignProgress> GetOutboundMessagingcampaignProgressAsync(string messagingCampaignId, CancellationToken cancellationToken = default)
+    {
+        ArgumentException.ThrowIfNullOrEmpty(messagingCampaignId);
+
+        var client = _httpClientFactory.CreateClient(PureCloudConstants.PureCloudClientName);
+
+        var response = await client.GetAsync($"api/v2/outbound/messagingcampaigns/{messagingCampaignId}/progress", cancellationToken);
+
+        response.EnsureSuccessStatusCode();
+
+        return await response.Content.ReadFromJsonAsync<CampaignProgress>(_options.JsonSerializerOptions, cancellationToken);
+    }
+
+    public async Task<MessagingCampaignEntityListing> GetOutboundMessagingcampaignsAsync(int? pageSize = null, int? pageNumber = null, string filterType = null, string name = null, List<string> id = null, string contactListId = null, string dncListId = null, string distributionQueueId = null, string edgeGroupId = null, List<string> divisionId = null, string sortBy = null, string sortOrder = null, CancellationToken cancellationToken = default)
+    {
+        var parameters = new NameValueCollection();
+
+        if (pageSize.HasValue)
+        {
+            parameters.Add("pageSize", UriHelper.ParameterToString(pageSize.Value));
+        }
+
+        if (pageNumber.HasValue)
+        {
+            parameters.Add("pageNumber", UriHelper.ParameterToString(pageNumber.Value));
+        }
+
+        if (!string.IsNullOrEmpty(filterType))
+        {
+            parameters.Add("filterType", UriHelper.ParameterToString(filterType));
+        }
+
+        if (!string.IsNullOrEmpty(name))
+        {
+            parameters.Add("name", UriHelper.ParameterToString(name));
+        }
+
+        if (id != null)
+        {
+            foreach (var item in id)
+            {
+                parameters.Add("id", UriHelper.ParameterToString(item));
+            }
+        }
+
+        if (!string.IsNullOrEmpty(contactListId))
+        {
+            parameters.Add("contactListId", UriHelper.ParameterToString(contactListId));
+        }
+
+        if (!string.IsNullOrEmpty(dncListId))
+        {
+            parameters.Add("dncListId", UriHelper.ParameterToString(dncListId));
+        }
+
+        if (!string.IsNullOrEmpty(distributionQueueId))
+        {
+            parameters.Add("distributionQueueId", UriHelper.ParameterToString(distributionQueueId));
+        }
+
+        if (!string.IsNullOrEmpty(edgeGroupId))
+        {
+            parameters.Add("edgeGroupId", UriHelper.ParameterToString(edgeGroupId));
+        }
+
+        if (divisionId != null)
+        {
+            foreach (var item in divisionId)
+            {
+                parameters.Add("divisionId", UriHelper.ParameterToString(item));
+            }
+        }
+
+        if (!string.IsNullOrEmpty(sortBy))
+        {
+            parameters.Add("sortBy", UriHelper.ParameterToString(sortBy));
+        }
+
+        if (!string.IsNullOrEmpty(sortOrder))
+        {
+            parameters.Add("sortOrder", UriHelper.ParameterToString(sortOrder));
+        }
+
+        var client = _httpClientFactory.CreateClient(PureCloudConstants.PureCloudClientName);
+
+        var uri = UriHelper.GetUri("api/v2/outbound/messagingcampaigns", parameters);
+        var response = await client.GetAsync(uri, cancellationToken);
+
+        response.EnsureSuccessStatusCode();
+
+        return await response.Content.ReadFromJsonAsync<MessagingCampaignEntityListing>(_options.JsonSerializerOptions, cancellationToken);
+    }
+
+    public async Task<MessagingCampaignDivisionView> GetOutboundMessagingcampaignsDivisionviewAsync(string messagingCampaignId, CancellationToken cancellationToken = default)
+    {
+        ArgumentException.ThrowIfNullOrEmpty(messagingCampaignId);
+
+        var client = _httpClientFactory.CreateClient(PureCloudConstants.PureCloudClientName);
+
+        var response = await client.GetAsync($"api/v2/outbound/messagingcampaigns/divisionviews/{messagingCampaignId}", cancellationToken);
+
+        response.EnsureSuccessStatusCode();
+
+        return await response.Content.ReadFromJsonAsync<MessagingCampaignDivisionView>(_options.JsonSerializerOptions, cancellationToken);
+    }
+
+    public async Task<MessagingCampaignDivisionViewEntityListing> GetOutboundMessagingcampaignsDivisionviewsAsync(int? pageSize = null, int? pageNumber = null, string filterType = null, string name = null, List<string> id = null, string sortBy = null, string sortOrder = null, CancellationToken cancellationToken = default)
+    {
+        var parameters = new NameValueCollection();
+
+        if (pageSize.HasValue)
+        {
+            parameters.Add("pageSize", UriHelper.ParameterToString(pageSize.Value));
+        }
+
+        if (pageNumber.HasValue)
+        {
+            parameters.Add("pageNumber", UriHelper.ParameterToString(pageNumber.Value));
+        }
+
+        if (!string.IsNullOrEmpty(filterType))
+        {
+            parameters.Add("filterType", UriHelper.ParameterToString(filterType));
+        }
+
+        if (!string.IsNullOrEmpty(name))
+        {
+            parameters.Add("name", UriHelper.ParameterToString(name));
+        }
+
+        if (id != null)
+        {
+            foreach (var item in id)
+            {
+                parameters.Add("id", UriHelper.ParameterToString(item));
+            }
+        }
+
+        if (!string.IsNullOrEmpty(sortBy))
+        {
+            parameters.Add("sortBy", UriHelper.ParameterToString(sortBy));
+        }
+
+        if (!string.IsNullOrEmpty(sortOrder))
+        {
+            parameters.Add("sortOrder", UriHelper.ParameterToString(sortOrder));
+        }
+
+        var client = _httpClientFactory.CreateClient(PureCloudConstants.PureCloudClientName);
+
+        var uri = UriHelper.GetUri("api/v2/outbound/messagingcampaigns/divisionviews", parameters);
+        var response = await client.GetAsync(uri, cancellationToken);
+
+        response.EnsureSuccessStatusCode();
+
+        return await response.Content.ReadFromJsonAsync<MessagingCampaignDivisionViewEntityListing>(_options.JsonSerializerOptions, cancellationToken);
+    }
+
+    public async Task<CampaignSchedule> GetOutboundSchedulesCampaignAsync(string campaignId, CancellationToken cancellationToken = default)
+    {
+        ArgumentException.ThrowIfNullOrEmpty(campaignId);
+
+        var client = _httpClientFactory.CreateClient(PureCloudConstants.PureCloudClientName);
+
+        var response = await client.GetAsync($"api/v2/outbound/schedules/campaigns/{campaignId}", cancellationToken);
+
+        response.EnsureSuccessStatusCode();
+
+        return await response.Content.ReadFromJsonAsync<CampaignSchedule>(_options.JsonSerializerOptions, cancellationToken);
+    }
+
+    public async Task<List<CampaignSchedule>> GetOutboundSchedulesCampaignsAsync(CancellationToken cancellationToken = default)
+    {
+        var client = _httpClientFactory.CreateClient(PureCloudConstants.PureCloudClientName);
+
+        var response = await client.GetAsync("api/v2/outbound/schedules/campaigns", cancellationToken);
+
+        response.EnsureSuccessStatusCode();
+
+        return await response.Content.ReadFromJsonAsync<List<CampaignSchedule>>(_options.JsonSerializerOptions, cancellationToken);
+    }
+
+    public async Task<EmailCampaignSchedule> GetOutboundSchedulesEmailcampaignAsync(string emailCampaignId, CancellationToken cancellationToken = default)
+    {
+        ArgumentException.ThrowIfNullOrEmpty(emailCampaignId);
+
+        var client = _httpClientFactory.CreateClient(PureCloudConstants.PureCloudClientName);
+
+        var response = await client.GetAsync($"api/v2/outbound/schedules/emailcampaigns/{emailCampaignId}", cancellationToken);
+
+        response.EnsureSuccessStatusCode();
+
+        return await response.Content.ReadFromJsonAsync<EmailCampaignSchedule>(_options.JsonSerializerOptions, cancellationToken);
+    }
+
+    public async Task<List<EmailCampaignSchedule>> GetOutboundSchedulesEmailcampaignsAsync(CancellationToken cancellationToken = default)
+    {
+        var client = _httpClientFactory.CreateClient(PureCloudConstants.PureCloudClientName);
+
+        var response = await client.GetAsync("api/v2/outbound/schedules/emailcampaigns", cancellationToken);
+
+        response.EnsureSuccessStatusCode();
+
+        return await response.Content.ReadFromJsonAsync<List<EmailCampaignSchedule>>(_options.JsonSerializerOptions, cancellationToken);
+    }
+
+    public async Task<MessagingCampaignSchedule> GetOutboundSchedulesMessagingcampaignAsync(string messagingCampaignId, CancellationToken cancellationToken = default)
+    {
+        ArgumentException.ThrowIfNullOrEmpty(messagingCampaignId);
+
+        var client = _httpClientFactory.CreateClient(PureCloudConstants.PureCloudClientName);
+
+        var response = await client.GetAsync($"api/v2/outbound/schedules/messagingcampaigns/{messagingCampaignId}", cancellationToken);
+
+        response.EnsureSuccessStatusCode();
+
+        return await response.Content.ReadFromJsonAsync<MessagingCampaignSchedule>(_options.JsonSerializerOptions, cancellationToken);
+    }
+
+    public async Task<List<MessagingCampaignSchedule>> GetOutboundSchedulesMessagingcampaignsAsync(CancellationToken cancellationToken = default)
+    {
+        var client = _httpClientFactory.CreateClient(PureCloudConstants.PureCloudClientName);
+
+        var response = await client.GetAsync("api/v2/outbound/schedules/messagingcampaigns", cancellationToken);
+
+        response.EnsureSuccessStatusCode();
+
+        return await response.Content.ReadFromJsonAsync<List<MessagingCampaignSchedule>>(_options.JsonSerializerOptions, cancellationToken);
+    }
+
+    public async Task<CampaignSchedule> GetOutboundSchedulesSequenceAsync(string sequenceId, CancellationToken cancellationToken = default)
+    {
+        ArgumentException.ThrowIfNullOrEmpty(sequenceId);
+
+        var client = _httpClientFactory.CreateClient(PureCloudConstants.PureCloudClientName);
+
+        var response = await client.GetAsync($"api/v2/outbound/schedules/sequences/{sequenceId}", cancellationToken);
+
+        response.EnsureSuccessStatusCode();
+
+        return await response.Content.ReadFromJsonAsync<CampaignSchedule>(_options.JsonSerializerOptions, cancellationToken);
+    }
+
+    public async Task<List<CampaignSchedule>> GetOutboundSchedulesSequencesAsync(CancellationToken cancellationToken = default)
+    {
+        var client = _httpClientFactory.CreateClient(PureCloudConstants.PureCloudClientName);
+
+        var response = await client.GetAsync("api/v2/outbound/schedules/sequences", cancellationToken);
+
+        response.EnsureSuccessStatusCode();
+
+        return await response.Content.ReadFromJsonAsync<List<CampaignSchedule>>(_options.JsonSerializerOptions, cancellationToken);
+    }
+
+    public async Task<Campaign> PatchOutboundCampaignAsync(string campaignId, Campaign body, CancellationToken cancellationToken = default)
+    {
+        ArgumentException.ThrowIfNullOrEmpty(campaignId);
+        ArgumentNullException.ThrowIfNull(body);
+
+        var client = _httpClientFactory.CreateClient(PureCloudConstants.PureCloudClientName);
+
+        var response = await client.PatchAsJsonAsync($"api/v2/outbound/campaigns/{campaignId}", body, _options.JsonSerializerOptions, cancellationToken);
+
+        response.EnsureSuccessStatusCode();
+
+        return await response.Content.ReadFromJsonAsync<Campaign>(_options.JsonSerializerOptions, cancellationToken);
+    }
+
+    public async Task PatchOutboundDnclistCustomexclusioncolumnsAsync(string dncListId, DncPatchCustomExclusionColumnsRequest body, bool? expiredOnly = null, CancellationToken cancellationToken = default)
+    {
+        ArgumentException.ThrowIfNullOrEmpty(dncListId);
+        ArgumentNullException.ThrowIfNull(body);
+
+        var parameters = new NameValueCollection();
+
+        if (expiredOnly.HasValue)
+        {
+            parameters.Add("expiredOnly", UriHelper.ParameterToString(expiredOnly.Value));
+        }
+
+        var client = _httpClientFactory.CreateClient(PureCloudConstants.PureCloudClientName);
+
+        var uri = UriHelper.GetUri($"api/v2/outbound/dnclists/{dncListId}/customexclusioncolumns", parameters);
+        var response = await client.PatchAsJsonAsync(uri, body, _options.JsonSerializerOptions, cancellationToken);
+
+        response.EnsureSuccessStatusCode();
+    }
+
+    public async Task PatchOutboundDnclistEmailaddressesAsync(string dncListId, DncPatchEmailsRequest body, bool? expiredOnly = null, CancellationToken cancellationToken = default)
+    {
+        ArgumentException.ThrowIfNullOrEmpty(dncListId);
+        ArgumentNullException.ThrowIfNull(body);
+
+        var parameters = new NameValueCollection();
+
+        if (expiredOnly.HasValue)
+        {
+            parameters.Add("expiredOnly", UriHelper.ParameterToString(expiredOnly.Value));
+        }
+
+        var client = _httpClientFactory.CreateClient(PureCloudConstants.PureCloudClientName);
+
+        var uri = UriHelper.GetUri($"api/v2/outbound/dnclists/{dncListId}/emailaddresses", parameters);
+        var response = await client.PatchAsJsonAsync(uri, body, _options.JsonSerializerOptions, cancellationToken);
+
+        response.EnsureSuccessStatusCode();
+    }
+
+    public async Task PatchOutboundDnclistPhonenumbersAsync(string dncListId, DncPatchPhoneNumbersRequest body, bool? expiredOnly = null, CancellationToken cancellationToken = default)
+    {
+        ArgumentException.ThrowIfNullOrEmpty(dncListId);
+        ArgumentNullException.ThrowIfNull(body);
+
+        var parameters = new NameValueCollection();
+
+        if (expiredOnly.HasValue)
+        {
+            parameters.Add("expiredOnly", UriHelper.ParameterToString(expiredOnly.Value));
+        }
+
+        var client = _httpClientFactory.CreateClient(PureCloudConstants.PureCloudClientName);
+
+        var uri = UriHelper.GetUri($"api/v2/outbound/dnclists/{dncListId}/phonenumbers", parameters);
+        var response = await client.PatchAsJsonAsync(uri, body, _options.JsonSerializerOptions, cancellationToken);
+
+        response.EnsureSuccessStatusCode();
+    }
+
+    public async Task PatchOutboundDnclistWhatsappnumbersAsync(string dncListId, DncPatchEmailsRequest body, bool? expiredOnly = null, CancellationToken cancellationToken = default)
+    {
+        ArgumentException.ThrowIfNullOrEmpty(dncListId);
+        ArgumentNullException.ThrowIfNull(body);
+
+        var parameters = new NameValueCollection();
+
+        if (expiredOnly.HasValue)
+        {
+            parameters.Add("expiredOnly", UriHelper.ParameterToString(expiredOnly.Value));
+        }
+
+        var client = _httpClientFactory.CreateClient(PureCloudConstants.PureCloudClientName);
+
+        var uri = UriHelper.GetUri($"api/v2/outbound/dnclists/{dncListId}/whatsappnumbers", parameters);
+        var response = await client.PatchAsJsonAsync(uri, body, _options.JsonSerializerOptions, cancellationToken);
+
+        response.EnsureSuccessStatusCode();
+    }
+
+    public async Task<OutboundSettings> PatchOutboundSettingsAsync(OutboundSettings body, CancellationToken cancellationToken = default)
+    {
+        ArgumentNullException.ThrowIfNull(body);
+
+        var client = _httpClientFactory.CreateClient(PureCloudConstants.PureCloudClientName);
+
+        var response = await client.PatchAsJsonAsync("api/v2/outbound/settings", body, _options.JsonSerializerOptions, cancellationToken);
+
+        response.EnsureSuccessStatusCode();
+
+        return await response.Content.ReadFromJsonAsync<OutboundSettings>(_options.JsonSerializerOptions, cancellationToken);
+    }
 }
