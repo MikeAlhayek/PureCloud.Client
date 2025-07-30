@@ -3087,6 +3087,10 @@
     <Compile Include="Models\PureEngage.NameIdentifierFormat.cs" />
     <Compile Include="Models\QualityEvaluationScoreItem.cs" />
     <Compile Include="Models\QualityEvaluationScoreItem.MediaTypes.cs" />
+    <Compile Include="Models\CalibrationEntityListing.cs" />
+    <Compile Include="Models\EvaluationEntityListing.cs" />
+    <Compile Include="Models\QualityAuditQueryExecutionStatusResponse.cs" />
+    <Compile Include="Models\QualityAuditQueryExecutionResultsResponse.cs" />
     <Compile Include="Models\QueryCriteria.cs" />
     <Compile Include="Models\QueryCriteria.CriteriaKey.cs" />
     <Compile Include="Models\QueryCriteria.DataType.cs" />

@@ -317,4 +317,342 @@ public sealed class QualityApi : IQualityApi
 
         return await response.Content.ReadFromJsonAsync<EvaluationResponse>(_options.JsonSerializerOptions, cancellationToken);
     }
+
+    public async Task<AsyncQueryStatus> GetAnalyticsEvaluationsAggregatesJobAsync(string jobId, CancellationToken cancellationToken = default)
+    {
+        ArgumentException.ThrowIfNullOrEmpty(jobId);
+
+        var client = _httpClientFactory.CreateClient(PureCloudConstants.PureCloudClientName);
+
+        var response = await client.GetAsync($"api/v2/analytics/evaluations/aggregates/jobs/{jobId}", cancellationToken);
+
+        response.EnsureSuccessStatusCode();
+
+        return await response.Content.ReadFromJsonAsync<AsyncQueryStatus>(_options.JsonSerializerOptions, cancellationToken);
+    }
+
+    public async Task<EvaluationAsyncAggregateQueryResponse> GetAnalyticsEvaluationsAggregatesJobResultsAsync(string jobId, string cursor = null, CancellationToken cancellationToken = default)
+    {
+        ArgumentException.ThrowIfNullOrEmpty(jobId);
+
+        var parameters = new NameValueCollection();
+
+        if (!string.IsNullOrEmpty(cursor))
+        {
+            parameters.Add("cursor", UriHelper.ParameterToString(cursor));
+        }
+
+        var client = _httpClientFactory.CreateClient(PureCloudConstants.PureCloudClientName);
+
+        var uri = UriHelper.GetUri($"api/v2/analytics/evaluations/aggregates/jobs/{jobId}/results", parameters);
+
+        var response = await client.GetAsync(uri, cancellationToken);
+
+        response.EnsureSuccessStatusCode();
+
+        return await response.Content.ReadFromJsonAsync<EvaluationAsyncAggregateQueryResponse>(_options.JsonSerializerOptions, cancellationToken);
+    }
+
+    public async Task<AsyncQueryStatus> GetAnalyticsSurveysAggregatesJobAsync(string jobId, CancellationToken cancellationToken = default)
+    {
+        ArgumentException.ThrowIfNullOrEmpty(jobId);
+
+        var client = _httpClientFactory.CreateClient(PureCloudConstants.PureCloudClientName);
+
+        var response = await client.GetAsync($"api/v2/analytics/surveys/aggregates/jobs/{jobId}", cancellationToken);
+
+        response.EnsureSuccessStatusCode();
+
+        return await response.Content.ReadFromJsonAsync<AsyncQueryStatus>(_options.JsonSerializerOptions, cancellationToken);
+    }
+
+    public async Task<SurveyAsyncAggregateQueryResponse> GetAnalyticsSurveysAggregatesJobResultsAsync(string jobId, string cursor = null, CancellationToken cancellationToken = default)
+    {
+        ArgumentException.ThrowIfNullOrEmpty(jobId);
+
+        var parameters = new NameValueCollection();
+
+        if (!string.IsNullOrEmpty(cursor))
+        {
+            parameters.Add("cursor", UriHelper.ParameterToString(cursor));
+        }
+
+        var client = _httpClientFactory.CreateClient(PureCloudConstants.PureCloudClientName);
+
+        var uri = UriHelper.GetUri($"api/v2/analytics/surveys/aggregates/jobs/{jobId}/results", parameters);
+
+        var response = await client.GetAsync(uri, cancellationToken);
+
+        response.EnsureSuccessStatusCode();
+
+        return await response.Content.ReadFromJsonAsync<SurveyAsyncAggregateQueryResponse>(_options.JsonSerializerOptions, cancellationToken);
+    }
+
+    public async Task<CalibrationEntityListing> GetQualityCalibrationsAsync(string calibratorId, int? pageSize = null, int? pageNumber = null, string sortBy = null, IEnumerable<string> expand = null, string nextPage = null, string previousPage = null, string conversationId = null, DateTime? startTime = null, DateTime? endTime = null, CancellationToken cancellationToken = default)
+    {
+        ArgumentException.ThrowIfNullOrEmpty(calibratorId);
+
+        var parameters = new NameValueCollection();
+        parameters.Add("calibratorId", UriHelper.ParameterToString(calibratorId));
+
+        if (pageSize.HasValue)
+        {
+            parameters.Add("pageSize", UriHelper.ParameterToString(pageSize.Value));
+        }
+
+        if (pageNumber.HasValue)
+        {
+            parameters.Add("pageNumber", UriHelper.ParameterToString(pageNumber.Value));
+        }
+
+        if (!string.IsNullOrEmpty(sortBy))
+        {
+            parameters.Add("sortBy", UriHelper.ParameterToString(sortBy));
+        }
+
+        if (expand != null)
+        {
+            foreach (var expandItem in expand)
+            {
+                parameters.Add("expand", UriHelper.ParameterToString(expandItem));
+            }
+        }
+
+        if (!string.IsNullOrEmpty(nextPage))
+        {
+            parameters.Add("nextPage", UriHelper.ParameterToString(nextPage));
+        }
+
+        if (!string.IsNullOrEmpty(previousPage))
+        {
+            parameters.Add("previousPage", UriHelper.ParameterToString(previousPage));
+        }
+
+        if (!string.IsNullOrEmpty(conversationId))
+        {
+            parameters.Add("conversationId", UriHelper.ParameterToString(conversationId));
+        }
+
+        if (startTime.HasValue)
+        {
+            parameters.Add("startTime", UriHelper.ParameterToString(startTime.Value));
+        }
+
+        if (endTime.HasValue)
+        {
+            parameters.Add("endTime", UriHelper.ParameterToString(endTime.Value));
+        }
+
+        var client = _httpClientFactory.CreateClient(PureCloudConstants.PureCloudClientName);
+
+        var uri = UriHelper.GetUri($"api/v2/quality/calibrations", parameters);
+
+        var response = await client.GetAsync(uri, cancellationToken);
+
+        response.EnsureSuccessStatusCode();
+
+        return await response.Content.ReadFromJsonAsync<CalibrationEntityListing>(_options.JsonSerializerOptions, cancellationToken);
+    }
+
+    public async Task<QualityAuditQueryExecutionStatusResponse> GetQualityConversationsAuditsQueryTransactionIdAsync(string transactionId, CancellationToken cancellationToken = default)
+    {
+        ArgumentException.ThrowIfNullOrEmpty(transactionId);
+
+        var client = _httpClientFactory.CreateClient(PureCloudConstants.PureCloudClientName);
+
+        var response = await client.GetAsync($"api/v2/quality/conversations/audits/query/{Uri.EscapeDataString(transactionId)}", cancellationToken);
+
+        response.EnsureSuccessStatusCode();
+
+        return await response.Content.ReadFromJsonAsync<QualityAuditQueryExecutionStatusResponse>(_options.JsonSerializerOptions, cancellationToken);
+    }
+
+    public async Task<QualityAuditQueryExecutionResultsResponse> GetQualityConversationsAuditsQueryTransactionIdResultsAsync(string transactionId, string cursor = null, int? pageSize = null, IEnumerable<string> expand = null, CancellationToken cancellationToken = default)
+    {
+        ArgumentException.ThrowIfNullOrEmpty(transactionId);
+
+        var parameters = new NameValueCollection();
+
+        if (!string.IsNullOrEmpty(cursor))
+        {
+            parameters.Add("cursor", UriHelper.ParameterToString(cursor));
+        }
+
+        if (pageSize.HasValue)
+        {
+            parameters.Add("pageSize", UriHelper.ParameterToString(pageSize.Value));
+        }
+
+        if (expand != null)
+        {
+            foreach (var expandItem in expand)
+            {
+                parameters.Add("expand", UriHelper.ParameterToString(expandItem));
+            }
+        }
+
+        var client = _httpClientFactory.CreateClient(PureCloudConstants.PureCloudClientName);
+
+        var uri = UriHelper.GetUri($"api/v2/quality/conversations/audits/query/{Uri.EscapeDataString(transactionId)}/results", parameters);
+
+        var response = await client.GetAsync(uri, cancellationToken);
+
+        response.EnsureSuccessStatusCode();
+
+        return await response.Content.ReadFromJsonAsync<QualityAuditQueryExecutionResultsResponse>(_options.JsonSerializerOptions, cancellationToken);
+    }
+
+    public async Task<EvaluationEntityListing> GetQualityEvaluationsQueryAsync(int? pageSize = null, int? pageNumber = null, IEnumerable<string> expand = null, string previousPage = null, string conversationId = null, string agentUserId = null, string agentTeamId = null, string evaluatorUserId = null, string assigneeUserId = null, string queueId = null, string startTime = null, string endTime = null, string formContextId = null, IEnumerable<string> evaluationState = null, bool? isReleased = null, bool? agentHasRead = null, bool? expandAnswerTotalScores = null, int? maximum = null, string sortOrder = null, bool? includeDeletedUsers = null, CancellationToken cancellationToken = default)
+    {
+        var parameters = new NameValueCollection();
+
+        if (pageSize.HasValue)
+        {
+            parameters.Add("pageSize", UriHelper.ParameterToString(pageSize.Value));
+        }
+
+        if (pageNumber.HasValue)
+        {
+            parameters.Add("pageNumber", UriHelper.ParameterToString(pageNumber.Value));
+        }
+
+        if (expand != null)
+        {
+            foreach (var expandItem in expand)
+            {
+                parameters.Add("expand", UriHelper.ParameterToString(expandItem));
+            }
+        }
+
+        if (!string.IsNullOrEmpty(previousPage))
+        {
+            parameters.Add("previousPage", UriHelper.ParameterToString(previousPage));
+        }
+
+        if (!string.IsNullOrEmpty(conversationId))
+        {
+            parameters.Add("conversationId", UriHelper.ParameterToString(conversationId));
+        }
+
+        if (!string.IsNullOrEmpty(agentUserId))
+        {
+            parameters.Add("agentUserId", UriHelper.ParameterToString(agentUserId));
+        }
+
+        if (!string.IsNullOrEmpty(agentTeamId))
+        {
+            parameters.Add("agentTeamId", UriHelper.ParameterToString(agentTeamId));
+        }
+
+        if (!string.IsNullOrEmpty(evaluatorUserId))
+        {
+            parameters.Add("evaluatorUserId", UriHelper.ParameterToString(evaluatorUserId));
+        }
+
+        if (!string.IsNullOrEmpty(assigneeUserId))
+        {
+            parameters.Add("assigneeUserId", UriHelper.ParameterToString(assigneeUserId));
+        }
+
+        if (!string.IsNullOrEmpty(queueId))
+        {
+            parameters.Add("queueId", UriHelper.ParameterToString(queueId));
+        }
+
+        if (!string.IsNullOrEmpty(startTime))
+        {
+            parameters.Add("startTime", UriHelper.ParameterToString(startTime));
+        }
+
+        if (!string.IsNullOrEmpty(endTime))
+        {
+            parameters.Add("endTime", UriHelper.ParameterToString(endTime));
+        }
+
+        if (!string.IsNullOrEmpty(formContextId))
+        {
+            parameters.Add("formContextId", UriHelper.ParameterToString(formContextId));
+        }
+
+        if (evaluationState != null)
+        {
+            foreach (var state in evaluationState)
+            {
+                parameters.Add("evaluationState", UriHelper.ParameterToString(state));
+            }
+        }
+
+        if (isReleased.HasValue)
+        {
+            parameters.Add("isReleased", UriHelper.ParameterToString(isReleased.Value));
+        }
+
+        if (agentHasRead.HasValue)
+        {
+            parameters.Add("agentHasRead", UriHelper.ParameterToString(agentHasRead.Value));
+        }
+
+        if (expandAnswerTotalScores.HasValue)
+        {
+            parameters.Add("expandAnswerTotalScores", UriHelper.ParameterToString(expandAnswerTotalScores.Value));
+        }
+
+        if (maximum.HasValue)
+        {
+            parameters.Add("maximum", UriHelper.ParameterToString(maximum.Value));
+        }
+
+        if (!string.IsNullOrEmpty(sortOrder))
+        {
+            parameters.Add("sortOrder", UriHelper.ParameterToString(sortOrder));
+        }
+
+        if (includeDeletedUsers.HasValue)
+        {
+            parameters.Add("includeDeletedUsers", UriHelper.ParameterToString(includeDeletedUsers.Value));
+        }
+
+        var client = _httpClientFactory.CreateClient(PureCloudConstants.PureCloudClientName);
+
+        var uri = UriHelper.GetUri($"api/v2/quality/evaluations/query", parameters);
+
+        var response = await client.GetAsync(uri, cancellationToken);
+
+        response.EnsureSuccessStatusCode();
+
+        return await response.Content.ReadFromJsonAsync<EvaluationEntityListing>(_options.JsonSerializerOptions, cancellationToken);
+    }
+
+    public async Task<bool> DeleteQualityFormAsync(string formId, CancellationToken cancellationToken = default)
+    {
+        ArgumentException.ThrowIfNullOrEmpty(formId);
+
+        var client = _httpClientFactory.CreateClient(PureCloudConstants.PureCloudClientName);
+
+        var response = await client.DeleteAsync($"api/v2/quality/forms/{formId}", cancellationToken);
+
+        return response.IsSuccessStatusCode;
+    }
+
+    public async Task<bool> DeleteQualityFormsEvaluationAsync(string formId, CancellationToken cancellationToken = default)
+    {
+        ArgumentException.ThrowIfNullOrEmpty(formId);
+
+        var client = _httpClientFactory.CreateClient(PureCloudConstants.PureCloudClientName);
+
+        var response = await client.DeleteAsync($"api/v2/quality/forms/evaluations/{formId}", cancellationToken);
+
+        return response.IsSuccessStatusCode;
+    }
+
+    public async Task<bool> DeleteQualityFormsSurveyAsync(string formId, CancellationToken cancellationToken = default)
+    {
+        ArgumentException.ThrowIfNullOrEmpty(formId);
+
+        var client = _httpClientFactory.CreateClient(PureCloudConstants.PureCloudClientName);
+
+        var response = await client.DeleteAsync($"api/v2/quality/forms/surveys/{formId}", cancellationToken);
+
+        return response.IsSuccessStatusCode;
+    }
 }

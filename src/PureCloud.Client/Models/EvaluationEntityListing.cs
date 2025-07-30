@@ -3,11 +3,19 @@ using System.Text.Json.Serialization;
 
 namespace PureCloud.Client.Models;
 
-/// <summary>
-/// EvaluationEntityListing
-/// </summary>
-
-public partial class EvaluationEntityListing : IEquatable<EvaluationEntityListing>, IPagedResource<Evaluation>
+public sealed class EvaluationEntityListing
+{
+    public IEnumerable<Evaluation> Entities { get; set; }
+    public int? PageSize { get; set; }
+    public int? PageNumber { get; set; }
+    public long? Total { get; set; }
+    public string FirstUri { get; set; }
+    public string LastUri { get; set; }
+    public string SelfUri { get; set; }
+    public string NextUri { get; set; }
+    public string PreviousUri { get; set; }
+    public int? PageCount { get; set; }
+}
 {
     /// <summary>
     /// Initializes a new instance of the <see cref="EvaluationEntityListing" /> class.
