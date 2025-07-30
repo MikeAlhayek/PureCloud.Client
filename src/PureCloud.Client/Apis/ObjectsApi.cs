@@ -42,7 +42,7 @@ public sealed class ObjectsApi : IObjectsApi
     }
 
     /// <inheritdoc />
-    public async Task<AuthzDivisionEntityListing> GetAuthorizationDivisionsAsync(int? pageSize = null, int? pageNumber = null, string sortBy = null, IEnumerable<string> expand = null, string nextPage = null, string previousPage = null, bool? objectCount = null, IEnumerable<string> id = null, string name = null, CancellationToken cancellationToken = default)
+    public async Task<AuthzDivisionEntityListing> GetAuthorizationDivisionsAsync(int? pageSize = null, int? pageNumber = null, string sortBy = null, IEnumerable<string> expands = null, string nextPage = null, string previousPage = null, bool? objectCount = null, IEnumerable<string> ids = null, string name = null, CancellationToken cancellationToken = default)
     {
         var parameters = new NameValueCollection();
 
@@ -61,11 +61,11 @@ public sealed class ObjectsApi : IObjectsApi
             parameters.Add("sortBy", UriHelper.ParameterToString(sortBy));
         }
 
-        if (expand != null)
+        if (expands != null)
         {
-            foreach (var item in expand)
+            foreach (var expand in expands)
             {
-                parameters.Add("expand", UriHelper.ParameterToString(item));
+                parameters.Add("expand", UriHelper.ParameterToString(expand));
             }
         }
 
@@ -84,11 +84,11 @@ public sealed class ObjectsApi : IObjectsApi
             parameters.Add("objectCount", UriHelper.ParameterToString(objectCount.Value));
         }
 
-        if (id != null)
+        if (ids != null)
         {
-            foreach (var item in id)
+            foreach (var id in ids)
             {
-                parameters.Add("id", UriHelper.ParameterToString(item));
+                parameters.Add("id", UriHelper.ParameterToString(id));
             }
         }
 
@@ -111,7 +111,7 @@ public sealed class ObjectsApi : IObjectsApi
     {
         ArgumentNullException.ThrowIfNull(body);
 
-        var uri = UriHelper.GetUri("api/v2/authorization/divisions", null);
+        var uri = "api/v2/authorization/divisions";
 
         var response = await _httpClient.PostAsJsonAsync(uri, body, _options.JsonSerializerOptions, cancellationToken);
 
@@ -127,7 +127,7 @@ public sealed class ObjectsApi : IObjectsApi
 
         ArgumentNullException.ThrowIfNull(body);
 
-        var uri = UriHelper.GetUri($"api/v2/authorization/divisions/{Uri.EscapeDataString(divisionId)}", null);
+        var uri = $"api/v2/authorization/divisions/{Uri.EscapeDataString(divisionId)}";
 
         var response = await _httpClient.PutAsJsonAsync(uri, body, _options.JsonSerializerOptions, cancellationToken);
 
@@ -203,12 +203,11 @@ public sealed class ObjectsApi : IObjectsApi
     public async Task CreateAuthorizationDivisionObjectsAsync(string divisionId, string objectType, IEnumerable<string> body, CancellationToken cancellationToken = default)
     {
         ArgumentException.ThrowIfNullOrEmpty(divisionId);
-
         ArgumentException.ThrowIfNullOrEmpty(objectType);
 
         ArgumentNullException.ThrowIfNull(body);
 
-        var uri = UriHelper.GetUri($"api/v2/authorization/divisions/{Uri.EscapeDataString(divisionId)}/objects/{Uri.EscapeDataString(objectType)}", null);
+        var uri = $"api/v2/authorization/divisions/{Uri.EscapeDataString(divisionId)}/objects/{Uri.EscapeDataString(objectType)}";
 
         var response = await _httpClient.PostAsJsonAsync(uri, body, _options.JsonSerializerOptions, cancellationToken);
 
@@ -216,7 +215,7 @@ public sealed class ObjectsApi : IObjectsApi
     }
 
     /// <inheritdoc />
-    public async Task<AuthzDivisionCursorListing> GetAuthorizationDivisionsQueryAsync(string before = null, string after = null, string pageSize = null, IEnumerable<string> id = null, string name = null, CancellationToken cancellationToken = default)
+    public async Task<AuthzDivisionCursorListing> GetAuthorizationDivisionsQueryAsync(string before = null, string after = null, string pageSize = null, IEnumerable<string> ids = null, string name = null, CancellationToken cancellationToken = default)
     {
         var parameters = new NameValueCollection();
 
@@ -235,11 +234,11 @@ public sealed class ObjectsApi : IObjectsApi
             parameters.Add("pageSize", UriHelper.ParameterToString(pageSize));
         }
 
-        if (id != null)
+        if (ids != null)
         {
-            foreach (var item in id)
+            foreach (var id in ids)
             {
-                parameters.Add("id", UriHelper.ParameterToString(item));
+                parameters.Add("id", UriHelper.ParameterToString(id));
             }
         }
 
@@ -264,7 +263,7 @@ public sealed class ObjectsApi : IObjectsApi
 
         ArgumentNullException.ThrowIfNull(body);
 
-        var uri = UriHelper.GetUri($"api/v2/authorization/divisions/{Uri.EscapeDataString(divisionId)}/restore", null);
+        var uri = $"api/v2/authorization/divisions/{Uri.EscapeDataString(divisionId)}/restore";
 
         var response = await _httpClient.PostAsJsonAsync(uri, body, _options.JsonSerializerOptions, cancellationToken);
 
