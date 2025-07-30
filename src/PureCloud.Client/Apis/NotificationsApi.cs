@@ -89,7 +89,7 @@ public sealed class NotificationsApi : INotificationsApi
 
         var client = _httpClientFactory.CreateClient(PureCloudConstants.PureCloudClientName);
 
-        var response = await client.GetAsync($"api/v2/notifications/channels/{channelId}/subscriptions", cancellationToken);
+        var response = await client.GetAsync($"api/v2/notifications/channels/{Uri.EscapeDataString(channelId)}/subscriptions", cancellationToken);
 
         response.EnsureSuccessStatusCode();
 
@@ -111,7 +111,7 @@ public sealed class NotificationsApi : INotificationsApi
 
         var client = _httpClientFactory.CreateClient(PureCloudConstants.PureCloudClientName);
 
-        var uri = UriHelper.GetUri($"api/v2/notifications/channels/{channelId}/subscriptions", parameters);
+        var uri = UriHelper.GetUri($"api/v2/notifications/channels/{Uri.EscapeDataString(channelId)}/subscriptions", parameters);
 
         var response = await client.PostAsJsonAsync(uri, body, _options.JsonSerializerOptions, cancellationToken);
 
@@ -135,7 +135,7 @@ public sealed class NotificationsApi : INotificationsApi
 
         var client = _httpClientFactory.CreateClient(PureCloudConstants.PureCloudClientName);
 
-        var uri = UriHelper.GetUri($"api/v2/notifications/channels/{channelId}/subscriptions", parameters);
+        var uri = UriHelper.GetUri($"api/v2/notifications/channels/{Uri.EscapeDataString(channelId)}/subscriptions", parameters);
 
         var response = await client.PutAsJsonAsync(uri, body, _options.JsonSerializerOptions, cancellationToken);
 
@@ -151,7 +151,7 @@ public sealed class NotificationsApi : INotificationsApi
 
         var client = _httpClientFactory.CreateClient(PureCloudConstants.PureCloudClientName);
 
-        var response = await client.DeleteAsync($"api/v2/notifications/channels/{channelId}/subscriptions", cancellationToken);
+        var response = await client.DeleteAsync($"api/v2/notifications/channels/{Uri.EscapeDataString(channelId)}/subscriptions", cancellationToken);
 
         response.EnsureSuccessStatusCode();
     }
