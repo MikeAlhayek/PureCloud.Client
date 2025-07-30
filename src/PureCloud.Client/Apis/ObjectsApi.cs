@@ -204,7 +204,6 @@ public sealed class ObjectsApi : IObjectsApi
     {
         ArgumentException.ThrowIfNullOrEmpty(divisionId);
         ArgumentException.ThrowIfNullOrEmpty(objectType);
-
         ArgumentNullException.ThrowIfNull(body);
 
         var uri = $"api/v2/authorization/divisions/{Uri.EscapeDataString(divisionId)}/objects/{Uri.EscapeDataString(objectType)}";
