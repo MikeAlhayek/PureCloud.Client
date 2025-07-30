@@ -703,6 +703,8 @@ public sealed class OutboundApi : IOutboundApi
         response.EnsureSuccessStatusCode();
     }
 
+    // TODO: Fix MessagingCampaign model reference
+    /*
     public async Task<MessagingCampaign> DeleteOutboundMessagingcampaignAsync(string messagingCampaignId, CancellationToken cancellationToken = default)
     {
         ArgumentException.ThrowIfNullOrEmpty(messagingCampaignId);
@@ -715,6 +717,7 @@ public sealed class OutboundApi : IOutboundApi
 
         return await response.Content.ReadFromJsonAsync<MessagingCampaign>(_options.JsonSerializerOptions, cancellationToken);
     }
+    */
 
     public async Task DeleteOutboundMessagingcampaignProgressAsync(string messagingCampaignId, CancellationToken cancellationToken = default)
     {
@@ -793,6 +796,10 @@ public sealed class OutboundApi : IOutboundApi
         response.EnsureSuccessStatusCode();
     }
 
+    // TODO: Add remaining GET methods - some model types need to be resolved first
+    // Temporarily commenting out methods with missing model references
+    
+    /*
     public async Task<AgentOwnedMappingPreviewListing> GetOutboundCampaignAgentownedmappingpreviewResultsAsync(string campaignId, CancellationToken cancellationToken = default)
     {
         ArgumentException.ThrowIfNullOrEmpty(campaignId);
@@ -1107,4 +1114,5 @@ public sealed class OutboundApi : IOutboundApi
 
         return await response.Content.ReadFromJsonAsync<CommonCampaignDivisionViewEntityListing>(_options.JsonSerializerOptions, cancellationToken);
     }
+    */
 }
