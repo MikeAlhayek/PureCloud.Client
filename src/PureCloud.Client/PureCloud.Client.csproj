@@ -5117,6 +5117,10 @@
     <Compile Include="Models\CallableTimeSetEntityListing.cs" />
     <Compile Include="Models\CallableTime.cs" />
     <Compile Include="Models\CampaignTimeSlot.cs" />
+    <Compile Include="Models\CampaignEntityListing.cs" />
+    <Compile Include="Models\ResponseSet.cs" />
+    <Compile Include="Models\ResponseSetEntityListing.cs" />
+    <Compile Include="Models\Reaction.cs" />
     <Compile Include="Address.cs" />
     <Compile Include="obj\Debug\net8.0\.NETCoreApp,Version=v8.0.AssemblyAttributes.cs" />
     <Compile Include="obj\Debug\net8.0\PureCloud.Client.AssemblyInfo.cs" />
