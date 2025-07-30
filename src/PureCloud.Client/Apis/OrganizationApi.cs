@@ -107,7 +107,7 @@ public sealed class OrganizationApi : IOrganizationApi
         {
             foreach (var item in expands)
             {
-                parameters.Add("expand", item);
+                parameters.Add("expands", item);
             }
         }
 
