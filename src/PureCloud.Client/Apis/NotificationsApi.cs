@@ -154,13 +154,11 @@ public sealed class NotificationsApi : INotificationsApi
 
         var response = await client.DeleteAsync($"api/v2/notifications/channels/{Uri.EscapeDataString(channelId)}/subscriptions", cancellationToken);
 
-        response.EnsureSuccessStatusCode();
-
         return response.IsSuccessStatusCode;
     }
 
     /// <inheritdoc />
-    public async Task<ApiResponse<object>> VerifyNotificationsChannelAsync(string channelId, CancellationToken cancellationToken = default)
+    public async Task<bool> VerifyNotificationsChannelAsync(string channelId, CancellationToken cancellationToken = default)
     {
         ArgumentException.ThrowIfNullOrEmpty(channelId);
 
@@ -170,15 +168,6 @@ public sealed class NotificationsApi : INotificationsApi
 
         var response = await client.SendAsync(request, cancellationToken);
 
-        var headers = response.Headers
-            .Concat(response.Content.Headers)
-            .ToDictionary(h => h.Key, h => string.Join(", ", h.Value));
-
-        return new ApiResponse<object>(
-            (int)response.StatusCode,
-            headers,
-            null, // HEAD requests don't return content
-            string.Empty,
-            response.ReasonPhrase ?? string.Empty);
+        return response.IsSuccessStatusCode;
     }
 }

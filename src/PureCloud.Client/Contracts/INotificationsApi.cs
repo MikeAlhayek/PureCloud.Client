@@ -62,5 +62,5 @@ public interface INotificationsApi
     /// </summary>
     /// <param name="channelId">Channel ID</param>
     /// <param name="cancellationToken">Cancellation token</param>
-    Task<ApiResponse<object>> VerifyNotificationsChannelAsync(string channelId, CancellationToken cancellationToken = default);
+    Task<bool> VerifyNotificationsChannelAsync(string channelId, CancellationToken cancellationToken = default);
 }
