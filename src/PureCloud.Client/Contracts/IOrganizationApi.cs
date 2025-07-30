@@ -51,10 +51,10 @@ public interface IOrganizationApi
     /// <param name="before">Timestamp indicating the date to end before when searching for requests</param>
     /// <param name="status">Status of the request to be filtered by</param>
     /// <param name="pageSize">Page Size</param>
-    /// <param name="expand">Which fields, if any, to expand</param>
+    /// <param name="expands">Which fields, if any, to expand</param>
     /// <param name="cancellationToken">Cancellation token</param>
     /// <returns>LimitChangeRequestsEntityListing</returns>
-    Task<LimitChangeRequestsEntityListing> GetOrganizationLimitsChangeRequestsAsync(long? after = null, long? before = null, string status = null, int? pageSize = null, List<string> expand = null, CancellationToken cancellationToken = default);
+    Task<LimitChangeRequestsEntityListing> GetOrganizationLimitsChangeRequestsAsync(long? after = null, long? before = null, string status = null, int? pageSize = null, List<string> expands = null, CancellationToken cancellationToken = default);
 
     /// <summary>
     /// Get field config for an entity type

@@ -79,18 +79,18 @@ public sealed class OrganizationApi : IOrganizationApi
     }
 
     /// <inheritdoc />
-    public async Task<LimitChangeRequestsEntityListing> GetOrganizationLimitsChangeRequestsAsync(long? after, long? before, string status, int? pageSize, List<string> expand, CancellationToken cancellationToken)
+    public async Task<LimitChangeRequestsEntityListing> GetOrganizationLimitsChangeRequestsAsync(long? after, long? before, string status, int? pageSize, List<string> expands, CancellationToken cancellationToken)
     {
         var parameters = new NameValueCollection();
 
         if (after.HasValue)
         {
-            parameters.Add("after", after.Value.ToString());
+            parameters.Add("after", UriHelper.ParameterToString(after.Value));
         }
 
         if (before.HasValue)
         {
-            parameters.Add("before", before.Value.ToString());
+            parameters.Add("before", UriHelper.ParameterToString(before.Value));
         }
 
         if (!string.IsNullOrEmpty(status))
@@ -100,12 +100,12 @@ public sealed class OrganizationApi : IOrganizationApi
 
         if (pageSize.HasValue)
         {
-            parameters.Add("pageSize", pageSize.Value.ToString());
+            parameters.Add("pageSize", UriHelper.ParameterToString(pageSize.Value));
         }
 
-        if (expand?.Count > 0)
+        if (expands?.Count > 0)
         {
-            foreach (var item in expand)
+            foreach (var item in expands)
             {
                 parameters.Add("expand", item);
             }
@@ -207,12 +207,12 @@ public sealed class OrganizationApi : IOrganizationApi
 
         if (pageSize.HasValue)
         {
-            parameters.Add("pageSize", pageSize.Value.ToString());
+            parameters.Add("pageSize", UriHelper.ParameterToString(pageSize.Value));
         }
 
         if (pageNumber.HasValue)
         {
-            parameters.Add("pageNumber", pageNumber.Value.ToString());
+            parameters.Add("pageNumber", UriHelper.ParameterToString(pageNumber.Value));
         }
 
         var uri = UriHelper.GetUri("/api/v2/organizations/limits/namespaces", parameters);
