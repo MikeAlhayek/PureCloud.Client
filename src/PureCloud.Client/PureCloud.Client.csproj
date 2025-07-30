@@ -5107,6 +5107,12 @@
     <Compile Include="Models\SIPSearchPublicRequest.cs" />
     <Compile Include="Models\SipDownloadResponse.cs" />
     <Compile Include="Models\SignedUrlResponse.cs" />
+    <Compile Include="Models\Campaign.cs" />
+    <Compile Include="Models\PhoneColumn.cs" />
+    <Compile Include="Models\ContactSort.cs" />
+    <Compile Include="Models\DynamicContactQueueingSettings.cs" />
+    <Compile Include="Models\DynamicLineBalancingSettings.cs" />
+    <Compile Include="Models\RestErrorDetail.cs" />
     <Compile Include="Address.cs" />
     <Compile Include="obj\Debug\net8.0\.NETCoreApp,Version=v8.0.AssemblyAttributes.cs" />
     <Compile Include="obj\Debug\net8.0\PureCloud.Client.AssemblyInfo.cs" />
