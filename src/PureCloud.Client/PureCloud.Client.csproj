@@ -5108,6 +5108,9 @@
     <Compile Include="Models\SipDownloadResponse.cs" />
     <Compile Include="Models\SignedUrlResponse.cs" />
     <Compile Include="Models\Campaign.cs" />
+    <Compile Include="Models\EventLog.cs" />
+    <Compile Include="Models\DialerEventEntityListing.cs" />
+    <Compile Include="Models\OutboundSettings.cs" />
     <Compile Include="Models\PhoneColumn.cs" />
     <Compile Include="Models\ContactSort.cs" />
     <Compile Include="Models\DynamicContactQueueingSettings.cs" />
