@@ -1202,6 +1202,11 @@ public sealed class OutboundApi : IOutboundApi
         return await response.Content.ReadFromJsonAsync<ResponseSet>(_options.JsonSerializerOptions, cancellationToken);
     }
 
+    // TODO: Add remaining GET methods when models are available
+    // Missing models: ContactsBulkOperationJob, ContactsBulkOperationJobListing, ContactsExport, 
+    // ContactlistImportStatusImportStatus, TimeZoneMappingPreview, CampaignDivisionView, etc.
+
+    // TODO: Uncomment when CampaignDivisionView model is available
     /*
     public async Task<CampaignDivisionView> GetOutboundCampaignsDivisionviewAsync(string campaignId, CancellationToken cancellationToken = default)
     {
