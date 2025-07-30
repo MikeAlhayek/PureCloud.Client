@@ -19,4 +19,10 @@ public interface IOutboundApi
     Task<CallableTimeSet> CreateOutboundCallabletimesetAsync(CallableTimeSet body, CancellationToken cancellationToken = default);
     Task<CallableTimeSet> UpdateOutboundCallabletimesetAsync(string callableTimeSetId, CallableTimeSet body, CancellationToken cancellationToken = default);
     Task DeleteOutboundCallabletimesetAsync(string callableTimeSetId, CancellationToken cancellationToken = default);
+
+    // Campaign methods (basic operations)
+    Task<Campaign> GetOutboundCampaignAsync(string campaignId, CancellationToken cancellationToken = default);
+    Task<Campaign> CreateOutboundCampaignAsync(Campaign body, CancellationToken cancellationToken = default);
+    Task<Campaign> UpdateOutboundCampaignAsync(string campaignId, Campaign body, CancellationToken cancellationToken = default);
+    Task DeleteOutboundCampaignAsync(string campaignId, CancellationToken cancellationToken = default);
 }
