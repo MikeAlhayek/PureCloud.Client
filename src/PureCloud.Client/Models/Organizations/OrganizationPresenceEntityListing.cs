@@ -1,5 +1,3 @@
-using PureCloud.Client.Models.Organizations;
-
 namespace PureCloud.Client.Models.Organizations;
 
 /// <summary>
