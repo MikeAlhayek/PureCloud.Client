@@ -28,9 +28,9 @@ public sealed class NotificationsApi : INotificationsApi
 
         if (expands != null)
         {
-            foreach (var item in expands)
+            foreach (var expand in expands)
             {
-                parameters.Add("expand", UriHelper.ParameterToString(item));
+                parameters.Add("expand", UriHelper.ParameterToString(expand));
             }
         }
 
