@@ -1,6 +1,3 @@
-using PureCloud.Client.Models.Groups;
-using PureCloud.Client.Models.Locations;
-using PureCloud.Client.Models.Teams;
 using PureCloud.Client.Models.Users;
 
 namespace PureCloud.Client.Models;
@@ -11,7 +8,7 @@ public sealed class TrustUser
     /// The current state for this user.
     /// </summary>
     /// <value>The current state for this user.</value>
-    public StateEnum? State { get; set; }
+    public string State { get; set; }
 
     /// <summary>
     /// The globally unique identifier for the object.
@@ -28,7 +25,7 @@ public sealed class TrustUser
     /// The division to which this entity belongs.
     /// </summary>
     /// <value>The division to which this entity belongs.</value>
-    public Division Division { get; set; }
+    public object Division { get; set; }
 
     /// <summary>
     /// Gets or Sets Chat
@@ -107,7 +104,7 @@ public sealed class TrustUser
     /// <summary>
     /// Gets or Sets LastTokenIssued
     /// </summary>
-    public OAuthLastTokenIssued LastTokenIssued { get; set; }
+    public object LastTokenIssued { get; set; }
 
     /// <summary>
     /// Gets or Sets TrustUserDetails

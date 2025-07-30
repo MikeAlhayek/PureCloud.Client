@@ -36,12 +36,12 @@ public sealed class TrustorAuditQueryRequest
     /// Facet information to be returned with the query results.
     /// </summary>
     /// <value>Facet information to be returned with the query results.</value>
-    public IEnumerable<Facet> Facets { get; set; }
+    public IEnumerable<object> Facets { get; set; }
 
     /// <summary>
     /// Additional custom filters to be applied to the query.
     /// </summary>
     /// <value>Additional custom filters to be applied to the query.</value>
-    public IEnumerable<Filter> Filters { get; set; }
+    public IEnumerable<object> Filters { get; set; }
 }
 
