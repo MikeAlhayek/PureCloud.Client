@@ -22,9 +22,9 @@ public interface ILearningApi
     /// Get Learning Assignment
     /// </summary>
     /// <param name="assignmentId">Learning Assignment ID</param>
-    /// <param name="expand">Fields to expand in response</param>
+    /// <param name="expands">Fields to expand in response</param>
     /// <param name="cancellationToken">A cancellation token that can be used by other objects or threads to receive notice of cancellation.</param>
-    Task<LearningAssignment> GetLearningAssignmentAsync(string assignmentId, IEnumerable<string> expand = null, CancellationToken cancellationToken = default);
+    Task<LearningAssignment> GetLearningAssignmentAsync(string assignmentId, IEnumerable<string> expands = null, CancellationToken cancellationToken = default);
 
     /// <summary>
     /// Get Learning Assignment Step
@@ -33,9 +33,9 @@ public interface ILearningApi
     /// <param name="stepId">Learning Assignment Step ID</param>
     /// <param name="shareableContentObjectId">Shareable Content Object ID</param>
     /// <param name="defaultShareableContentObject">Default Shareable Content Object</param>
-    /// <param name="expand">Fields to expand in response</param>
+    /// <param name="expands">Fields to expand in response</param>
     /// <param name="cancellationToken">A cancellation token that can be used by other objects or threads to receive notice of cancellation.</param>
-    Task<LearningAssignmentStep> GetLearningAssignmentStepAsync(string assignmentId, string stepId, string shareableContentObjectId = null, string defaultShareableContentObject = null, IEnumerable<string> expand = null, CancellationToken cancellationToken = default);
+    Task<LearningAssignmentStep> GetLearningAssignmentStepAsync(string assignmentId, string stepId, string shareableContentObjectId = null, string defaultShareableContentObject = null, IEnumerable<string> expands = null, CancellationToken cancellationToken = default);
 
     /// <summary>
     /// List Learning Assignments
@@ -54,9 +54,9 @@ public interface ILearningApi
     /// <param name="userId">Specifies the list of user IDs to be queried, up to 100 user IDs.</param>
     /// <param name="types">Specifies the assignment types.</param>
     /// <param name="states">Specifies the assignment states</param>
-    /// <param name="expand">Specifies the expand option for returning additional information</param>
+    /// <param name="expands">Specifies the expand option for returning additional information</param>
     /// <param name="cancellationToken">A cancellation token that can be used by other objects or threads to receive notice of cancellation.</param>
-    Task<LearningAssignmentsDomainEntity> GetLearningAssignmentsAsync(string moduleId = null, string interval = null, string completionInterval = null, string overdue = null, int? pageSize = null, int? pageNumber = null, string pass = null, float? minPercentageScore = null, float? maxPercentageScore = null, string sortOrder = null, string sortBy = null, IEnumerable<string> userId = null, IEnumerable<string> types = null, IEnumerable<string> states = null, IEnumerable<string> expand = null, CancellationToken cancellationToken = default);
+    Task<LearningAssignmentsDomainEntity> GetLearningAssignmentsAsync(string moduleId = null, string interval = null, string completionInterval = null, string overdue = null, int? pageSize = null, int? pageNumber = null, string pass = null, float? minPercentageScore = null, float? maxPercentageScore = null, string sortOrder = null, string sortBy = null, IEnumerable<string> userId = null, IEnumerable<string> types = null, IEnumerable<string> states = null, IEnumerable<string> expands = null, CancellationToken cancellationToken = default);
 
     /// <summary>
     /// Get current user Learning Assignments
@@ -74,17 +74,17 @@ public interface ILearningApi
     /// <param name="sortBy">Specifies which field to sort the results by, default sort is by recommendedCompletionDate</param>
     /// <param name="types">Specifies the assignment types.</param>
     /// <param name="states">Specifies the assignment states</param>
-    /// <param name="expand">Specifies the expand option for returning additional information</param>
+    /// <param name="expands">Specifies the expand option for returning additional information</param>
     /// <param name="cancellationToken">A cancellation token that can be used by other objects or threads to receive notice of cancellation.</param>
-    Task<LearningAssignmentsDomainEntity> GetLearningAssignmentsMeAsync(string moduleId = null, string interval = null, string completionInterval = null, string overdue = null, int? pageSize = null, int? pageNumber = null, string pass = null, float? minPercentageScore = null, float? maxPercentageScore = null, string sortOrder = null, string sortBy = null, IEnumerable<string> types = null, IEnumerable<string> states = null, IEnumerable<string> expand = null, CancellationToken cancellationToken = default);
+    Task<LearningAssignmentsDomainEntity> GetLearningAssignmentsMeAsync(string moduleId = null, string interval = null, string completionInterval = null, string overdue = null, int? pageSize = null, int? pageNumber = null, string pass = null, float? minPercentageScore = null, float? maxPercentageScore = null, string sortOrder = null, string sortBy = null, IEnumerable<string> types = null, IEnumerable<string> states = null, IEnumerable<string> expands = null, CancellationToken cancellationToken = default);
 
     /// <summary>
     /// Get a learning module
     /// </summary>
     /// <param name="moduleId">The ID of the learning module</param>
-    /// <param name="expand">Fields to expand in response</param>
+    /// <param name="expands">Fields to expand in response</param>
     /// <param name="cancellationToken">A cancellation token that can be used by other objects or threads to receive notice of cancellation.</param>
-    Task<LearningModule> GetLearningModuleAsync(string moduleId, IEnumerable<string> expand = null, CancellationToken cancellationToken = default);
+    Task<LearningModule> GetLearningModuleAsync(string moduleId, IEnumerable<string> expands = null, CancellationToken cancellationToken = default);
 
     /// <summary>
     /// Get a specific Learning Module job status
@@ -113,9 +113,9 @@ public interface ILearningApi
     /// </summary>
     /// <param name="moduleId">The ID of the learning module</param>
     /// <param name="versionId">The version of learning module</param>
-    /// <param name="expand">Fields to expand in response</param>
+    /// <param name="expands">Fields to expand in response</param>
     /// <param name="cancellationToken">A cancellation token that can be used by other objects or threads to receive notice of cancellation.</param>
-    Task<LearningModule> GetLearningModuleVersionAsync(string moduleId, string versionId, IEnumerable<string> expand = null, CancellationToken cancellationToken = default);
+    Task<LearningModule> GetLearningModuleVersionAsync(string moduleId, string versionId, IEnumerable<string> expands = null, CancellationToken cancellationToken = default);
 
     /// <summary>
     /// Get all learning modules of an organization
@@ -127,12 +127,12 @@ public interface ILearningApi
     /// <param name="sortOrder">Sort order</param>
     /// <param name="sortBy">Sort by</param>
     /// <param name="searchTerm">Search Term</param>
-    /// <param name="expand">Fields to expand in response</param>
+    /// <param name="expands">Fields to expand in response</param>
     /// <param name="isPublished">Specifies if only the Published (isPublished is \"True\") or Unpublished (isPublished is \"False\") modules are returned. If isPublished is \"Any\" or omitted, both published and unpublished modules are returned</param>
     /// <param name="statuses">Specifies the module statuses to filter by</param>
     /// <param name="externalIds">Specifies the module external IDs to filter by. Only one ID is allowed</param>
     /// <param name="cancellationToken">A cancellation token that can be used by other objects or threads to receive notice of cancellation.</param>
-    Task<LearningModulesDomainEntityListing> GetLearningModulesAsync(bool? isArchived = null, IEnumerable<string> types = null, int? pageSize = null, int? pageNumber = null, string sortOrder = null, string sortBy = null, string searchTerm = null, IEnumerable<string> expand = null, string isPublished = null, IEnumerable<string> statuses = null, IEnumerable<string> externalIds = null, CancellationToken cancellationToken = default);
+    Task<LearningModulesDomainEntityListing> GetLearningModulesAsync(bool? isArchived = null, IEnumerable<string> types = null, int? pageSize = null, int? pageNumber = null, string sortOrder = null, string sortBy = null, string searchTerm = null, IEnumerable<string> expands = null, string isPublished = null, IEnumerable<string> statuses = null, IEnumerable<string> externalIds = null, CancellationToken cancellationToken = default);
 
     /// <summary>
     /// Get learning modules assigned to a user
@@ -143,9 +143,9 @@ public interface ILearningApi
     /// <param name="searchTerm">Search Term</param>
     /// <param name="overdue">Specifies if only modules with overdue/not overdue (overdue is \"True\" or \"False\") assignments are returned. If overdue is \"Any\" or if the overdue parameter is not supplied, all assigned modules are returned</param>
     /// <param name="assignmentStates">Specifies the assignment states to filter by</param>
-    /// <param name="expand">Fields to expand in response</param>
+    /// <param name="expands">Fields to expand in response</param>
     /// <param name="cancellationToken">A cancellation token that can be used by other objects or threads to receive notice of cancellation.</param>
-    Task<AssignedLearningModuleDomainEntityListing> GetLearningModulesAssignmentsAsync(IEnumerable<string> userIds, int? pageSize = null, int? pageNumber = null, string searchTerm = null, string overdue = null, IEnumerable<string> assignmentStates = null, IEnumerable<string> expand = null, CancellationToken cancellationToken = default);
+    Task<AssignedLearningModuleDomainEntityListing> GetLearningModulesAssignmentsAsync(IEnumerable<string> userIds, int? pageSize = null, int? pageNumber = null, string searchTerm = null, string overdue = null, IEnumerable<string> assignmentStates = null, IEnumerable<string> expands = null, CancellationToken cancellationToken = default);
 
     /// <summary>
     /// Get a learning module cover art

@@ -46,15 +46,15 @@ public sealed class LearningApi : ILearningApi
     }
 
     /// <inheritdoc />
-    public async Task<LearningAssignment> GetLearningAssignmentAsync(string assignmentId, IEnumerable<string> expand = null, CancellationToken cancellationToken = default)
+    public async Task<LearningAssignment> GetLearningAssignmentAsync(string assignmentId, IEnumerable<string> expands = null, CancellationToken cancellationToken = default)
     {
         ArgumentException.ThrowIfNullOrEmpty(assignmentId);
 
         var parameters = new NameValueCollection();
 
-        if (expand != null)
+        if (expands != null)
         {
-            foreach (var item in expand)
+            foreach (var item in expands)
             {
                 parameters.Add("expand", UriHelper.ParameterToString(item));
             }
@@ -72,7 +72,7 @@ public sealed class LearningApi : ILearningApi
     }
 
     /// <inheritdoc />
-    public async Task<LearningAssignmentStep> GetLearningAssignmentStepAsync(string assignmentId, string stepId, string shareableContentObjectId = null, string defaultShareableContentObject = null, IEnumerable<string> expand = null, CancellationToken cancellationToken = default)
+    public async Task<LearningAssignmentStep> GetLearningAssignmentStepAsync(string assignmentId, string stepId, string shareableContentObjectId = null, string defaultShareableContentObject = null, IEnumerable<string> expands = null, CancellationToken cancellationToken = default)
     {
         ArgumentException.ThrowIfNullOrEmpty(assignmentId);
         ArgumentException.ThrowIfNullOrEmpty(stepId);
@@ -89,9 +89,9 @@ public sealed class LearningApi : ILearningApi
             parameters.Add("defaultShareableContentObject", defaultShareableContentObject);
         }
 
-        if (expand != null)
+        if (expands != null)
         {
-            foreach (var item in expand)
+            foreach (var item in expands)
             {
                 parameters.Add("expand", UriHelper.ParameterToString(item));
             }
@@ -109,7 +109,7 @@ public sealed class LearningApi : ILearningApi
     }
 
     /// <inheritdoc />
-    public async Task<LearningAssignmentsDomainEntity> GetLearningAssignmentsAsync(string moduleId = null, string interval = null, string completionInterval = null, string overdue = null, int? pageSize = null, int? pageNumber = null, string pass = null, float? minPercentageScore = null, float? maxPercentageScore = null, string sortOrder = null, string sortBy = null, IEnumerable<string> userId = null, IEnumerable<string> types = null, IEnumerable<string> states = null, IEnumerable<string> expand = null, CancellationToken cancellationToken = default)
+    public async Task<LearningAssignmentsDomainEntity> GetLearningAssignmentsAsync(string moduleId = null, string interval = null, string completionInterval = null, string overdue = null, int? pageSize = null, int? pageNumber = null, string pass = null, float? minPercentageScore = null, float? maxPercentageScore = null, string sortOrder = null, string sortBy = null, IEnumerable<string> userId = null, IEnumerable<string> types = null, IEnumerable<string> states = null, IEnumerable<string> expands = null, CancellationToken cancellationToken = default)
     {
         var parameters = new NameValueCollection();
 
@@ -192,9 +192,9 @@ public sealed class LearningApi : ILearningApi
             }
         }
 
-        if (expand != null)
+        if (expands != null)
         {
-            foreach (var item in expand)
+            foreach (var item in expands)
             {
                 parameters.Add("expand", UriHelper.ParameterToString(item));
             }
@@ -212,7 +212,7 @@ public sealed class LearningApi : ILearningApi
     }
 
     /// <inheritdoc />
-    public async Task<LearningAssignmentsDomainEntity> GetLearningAssignmentsMeAsync(string moduleId = null, string interval = null, string completionInterval = null, string overdue = null, int? pageSize = null, int? pageNumber = null, string pass = null, float? minPercentageScore = null, float? maxPercentageScore = null, string sortOrder = null, string sortBy = null, IEnumerable<string> types = null, IEnumerable<string> states = null, IEnumerable<string> expand = null, CancellationToken cancellationToken = default)
+    public async Task<LearningAssignmentsDomainEntity> GetLearningAssignmentsMeAsync(string moduleId = null, string interval = null, string completionInterval = null, string overdue = null, int? pageSize = null, int? pageNumber = null, string pass = null, float? minPercentageScore = null, float? maxPercentageScore = null, string sortOrder = null, string sortBy = null, IEnumerable<string> types = null, IEnumerable<string> states = null, IEnumerable<string> expands = null, CancellationToken cancellationToken = default)
     {
         var parameters = new NameValueCollection();
 
@@ -287,9 +287,9 @@ public sealed class LearningApi : ILearningApi
             }
         }
 
-        if (expand != null)
+        if (expands != null)
         {
-            foreach (var item in expand)
+            foreach (var item in expands)
             {
                 parameters.Add("expand", UriHelper.ParameterToString(item));
             }
@@ -307,15 +307,15 @@ public sealed class LearningApi : ILearningApi
     }
 
     /// <inheritdoc />
-    public async Task<LearningModule> GetLearningModuleAsync(string moduleId, IEnumerable<string> expand = null, CancellationToken cancellationToken = default)
+    public async Task<LearningModule> GetLearningModuleAsync(string moduleId, IEnumerable<string> expands = null, CancellationToken cancellationToken = default)
     {
         ArgumentException.ThrowIfNullOrEmpty(moduleId);
 
         var parameters = new NameValueCollection();
 
-        if (expand != null)
+        if (expands != null)
         {
-            foreach (var item in expand)
+            foreach (var item in expands)
             {
                 parameters.Add("expand", UriHelper.ParameterToString(item));
             }
@@ -376,16 +376,16 @@ public sealed class LearningApi : ILearningApi
     }
 
     /// <inheritdoc />
-    public async Task<LearningModule> GetLearningModuleVersionAsync(string moduleId, string versionId, IEnumerable<string> expand = null, CancellationToken cancellationToken = default)
+    public async Task<LearningModule> GetLearningModuleVersionAsync(string moduleId, string versionId, IEnumerable<string> expands = null, CancellationToken cancellationToken = default)
     {
         ArgumentException.ThrowIfNullOrEmpty(moduleId);
         ArgumentException.ThrowIfNullOrEmpty(versionId);
 
         var parameters = new NameValueCollection();
 
-        if (expand != null)
+        if (expands != null)
         {
-            foreach (var item in expand)
+            foreach (var item in expands)
             {
                 parameters.Add("expand", UriHelper.ParameterToString(item));
             }
@@ -403,7 +403,7 @@ public sealed class LearningApi : ILearningApi
     }
 
     /// <inheritdoc />
-    public async Task<LearningModulesDomainEntityListing> GetLearningModulesAsync(bool? isArchived = null, IEnumerable<string> types = null, int? pageSize = null, int? pageNumber = null, string sortOrder = null, string sortBy = null, string searchTerm = null, IEnumerable<string> expand = null, string isPublished = null, IEnumerable<string> statuses = null, IEnumerable<string> externalIds = null, CancellationToken cancellationToken = default)
+    public async Task<LearningModulesDomainEntityListing> GetLearningModulesAsync(bool? isArchived = null, IEnumerable<string> types = null, int? pageSize = null, int? pageNumber = null, string sortOrder = null, string sortBy = null, string searchTerm = null, IEnumerable<string> expands = null, string isPublished = null, IEnumerable<string> statuses = null, IEnumerable<string> externalIds = null, CancellationToken cancellationToken = default)
     {
         var parameters = new NameValueCollection();
 
@@ -445,9 +445,9 @@ public sealed class LearningApi : ILearningApi
             parameters.Add("searchTerm", searchTerm);
         }
 
-        if (expand != null)
+        if (expands != null)
         {
-            foreach (var item in expand)
+            foreach (var item in expands)
             {
                 parameters.Add("expand", UriHelper.ParameterToString(item));
             }
@@ -486,7 +486,7 @@ public sealed class LearningApi : ILearningApi
     }
 
     /// <inheritdoc />
-    public async Task<AssignedLearningModuleDomainEntityListing> GetLearningModulesAssignmentsAsync(IEnumerable<string> userIds, int? pageSize = null, int? pageNumber = null, string searchTerm = null, string overdue = null, IEnumerable<string> assignmentStates = null, IEnumerable<string> expand = null, CancellationToken cancellationToken = default)
+    public async Task<AssignedLearningModuleDomainEntityListing> GetLearningModulesAssignmentsAsync(IEnumerable<string> userIds, int? pageSize = null, int? pageNumber = null, string searchTerm = null, string overdue = null, IEnumerable<string> assignmentStates = null, IEnumerable<string> expands = null, CancellationToken cancellationToken = default)
     {
         ArgumentNullException.ThrowIfNull(userIds);
 
@@ -525,9 +525,9 @@ public sealed class LearningApi : ILearningApi
             }
         }
 
-        if (expand != null)
+        if (expands != null)
         {
-            foreach (var item in expand)
+            foreach (var item in expands)
             {
                 parameters.Add("expand", UriHelper.ParameterToString(item));
             }
