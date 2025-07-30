@@ -1406,4 +1406,762 @@ public sealed class OutboundApi : IOutboundApi
 
         return await response.Content.ReadFromJsonAsync<ContactListTemplateEntityListing>(_options.JsonSerializerOptions, cancellationToken);
     }
+
+    // GET methods for DigitalRuleset operations  
+    public async Task<DigitalRuleSet> GetOutboundDigitalrulesetAsync(string digitalRuleSetId, CancellationToken cancellationToken = default)
+    {
+        ArgumentException.ThrowIfNullOrEmpty(digitalRuleSetId);
+
+        var client = _httpClientFactory.CreateClient(PureCloudConstants.PureCloudClientName);
+
+        var response = await client.GetAsync($"api/v2/outbound/digitalrulesets/{Uri.EscapeDataString(digitalRuleSetId)}", cancellationToken);
+
+        response.EnsureSuccessStatusCode();
+
+        return await response.Content.ReadFromJsonAsync<DigitalRuleSet>(_options.JsonSerializerOptions, cancellationToken);
+    }
+
+    public async Task<DigitalRuleSetEntityListing> GetOutboundDigitalrulesetsAsync(int? pageSize = null, int? pageNumber = null, bool? allowEmptyResult = null, string filterType = null, string name = null, string sortBy = null, string sortOrder = null, CancellationToken cancellationToken = default)
+    {
+        var parameters = new NameValueCollection();
+
+        if (pageSize.HasValue)
+        {
+            parameters.Add("pageSize", UriHelper.ParameterToString(pageSize.Value));
+        }
+
+        if (pageNumber.HasValue)
+        {
+            parameters.Add("pageNumber", UriHelper.ParameterToString(pageNumber.Value));
+        }
+
+        if (allowEmptyResult.HasValue)
+        {
+            parameters.Add("allowEmptyResult", UriHelper.ParameterToString(allowEmptyResult.Value));
+        }
+
+        if (!string.IsNullOrEmpty(filterType))
+        {
+            parameters.Add("filterType", UriHelper.ParameterToString(filterType));
+        }
+
+        if (!string.IsNullOrEmpty(name))
+        {
+            parameters.Add("name", UriHelper.ParameterToString(name));
+        }
+
+        if (!string.IsNullOrEmpty(sortBy))
+        {
+            parameters.Add("sortBy", UriHelper.ParameterToString(sortBy));
+        }
+
+        if (!string.IsNullOrEmpty(sortOrder))
+        {
+            parameters.Add("sortOrder", UriHelper.ParameterToString(sortOrder));
+        }
+
+        var client = _httpClientFactory.CreateClient(PureCloudConstants.PureCloudClientName);
+
+        var uri = UriHelper.GetUri("api/v2/outbound/digitalrulesets", parameters);
+        var response = await client.GetAsync(uri, cancellationToken);
+
+        response.EnsureSuccessStatusCode();
+
+        return await response.Content.ReadFromJsonAsync<DigitalRuleSetEntityListing>(_options.JsonSerializerOptions, cancellationToken);
+    }
+
+    // GET methods for DncList operations
+    public async Task<DncList> GetOutboundDnclistAsync(string dncListId, bool? includeImportStatus = null, bool? includeSize = null, CancellationToken cancellationToken = default)
+    {
+        ArgumentException.ThrowIfNullOrEmpty(dncListId);
+
+        var parameters = new NameValueCollection();
+
+        if (includeImportStatus.HasValue)
+        {
+            parameters.Add("includeImportStatus", UriHelper.ParameterToString(includeImportStatus.Value));
+        }
+
+        if (includeSize.HasValue)
+        {
+            parameters.Add("includeSize", UriHelper.ParameterToString(includeSize.Value));
+        }
+
+        var client = _httpClientFactory.CreateClient(PureCloudConstants.PureCloudClientName);
+
+        var uri = UriHelper.GetUri($"api/v2/outbound/dnclists/{Uri.EscapeDataString(dncListId)}", parameters);
+        var response = await client.GetAsync(uri, cancellationToken);
+
+        response.EnsureSuccessStatusCode();
+
+        return await response.Content.ReadFromJsonAsync<DncList>(_options.JsonSerializerOptions, cancellationToken);
+    }
+
+    public async Task<DncListEntityListing> GetOutboundDnclistsAsync(bool? includeImportStatus = null, bool? includeSize = null, int? pageSize = null, int? pageNumber = null, bool? allowEmptyResult = null, string filterType = null, string name = null, string dncSourceType = null, List<string> divisionId = null, string sortBy = null, string sortOrder = null, CancellationToken cancellationToken = default)
+    {
+        var parameters = new NameValueCollection();
+
+        if (includeImportStatus.HasValue)
+        {
+            parameters.Add("includeImportStatus", UriHelper.ParameterToString(includeImportStatus.Value));
+        }
+
+        if (includeSize.HasValue)
+        {
+            parameters.Add("includeSize", UriHelper.ParameterToString(includeSize.Value));
+        }
+
+        if (pageSize.HasValue)
+        {
+            parameters.Add("pageSize", UriHelper.ParameterToString(pageSize.Value));
+        }
+
+        if (pageNumber.HasValue)
+        {
+            parameters.Add("pageNumber", UriHelper.ParameterToString(pageNumber.Value));
+        }
+
+        if (allowEmptyResult.HasValue)
+        {
+            parameters.Add("allowEmptyResult", UriHelper.ParameterToString(allowEmptyResult.Value));
+        }
+
+        if (!string.IsNullOrEmpty(filterType))
+        {
+            parameters.Add("filterType", UriHelper.ParameterToString(filterType));
+        }
+
+        if (!string.IsNullOrEmpty(name))
+        {
+            parameters.Add("name", UriHelper.ParameterToString(name));
+        }
+
+        if (!string.IsNullOrEmpty(dncSourceType))
+        {
+            parameters.Add("dncSourceType", UriHelper.ParameterToString(dncSourceType));
+        }
+
+        if (divisionId != null && divisionId.Count > 0)
+        {
+            foreach (var item in divisionId)
+            {
+                parameters.Add("divisionId", UriHelper.ParameterToString(item));
+            }
+        }
+
+        if (!string.IsNullOrEmpty(sortBy))
+        {
+            parameters.Add("sortBy", UriHelper.ParameterToString(sortBy));
+        }
+
+        if (!string.IsNullOrEmpty(sortOrder))
+        {
+            parameters.Add("sortOrder", UriHelper.ParameterToString(sortOrder));
+        }
+
+        var client = _httpClientFactory.CreateClient(PureCloudConstants.PureCloudClientName);
+
+        var uri = UriHelper.GetUri("api/v2/outbound/dnclists", parameters);
+        var response = await client.GetAsync(uri, cancellationToken);
+
+        response.EnsureSuccessStatusCode();
+
+        return await response.Content.ReadFromJsonAsync<DncListEntityListing>(_options.JsonSerializerOptions, cancellationToken);
+    }
+
+    // GET methods for Event operations
+    public async Task<EventLog> GetOutboundEventAsync(string eventId, CancellationToken cancellationToken = default)
+    {
+        ArgumentException.ThrowIfNullOrEmpty(eventId);
+
+        var client = _httpClientFactory.CreateClient(PureCloudConstants.PureCloudClientName);
+
+        var response = await client.GetAsync($"api/v2/outbound/events/{Uri.EscapeDataString(eventId)}", cancellationToken);
+
+        response.EnsureSuccessStatusCode();
+
+        return await response.Content.ReadFromJsonAsync<EventLog>(_options.JsonSerializerOptions, cancellationToken);
+    }
+
+    public async Task<DialerEventEntityListing> GetOutboundEventsAsync(int? pageSize = null, int? pageNumber = null, string filterType = null, string category = null, string level = null, string sortBy = null, string sortOrder = null, CancellationToken cancellationToken = default)
+    {
+        var parameters = new NameValueCollection();
+
+        if (pageSize.HasValue)
+        {
+            parameters.Add("pageSize", UriHelper.ParameterToString(pageSize.Value));
+        }
+
+        if (pageNumber.HasValue)
+        {
+            parameters.Add("pageNumber", UriHelper.ParameterToString(pageNumber.Value));
+        }
+
+        if (!string.IsNullOrEmpty(filterType))
+        {
+            parameters.Add("filterType", UriHelper.ParameterToString(filterType));
+        }
+
+        if (!string.IsNullOrEmpty(category))
+        {
+            parameters.Add("category", UriHelper.ParameterToString(category));
+        }
+
+        if (!string.IsNullOrEmpty(level))
+        {
+            parameters.Add("level", UriHelper.ParameterToString(level));
+        }
+
+        if (!string.IsNullOrEmpty(sortBy))
+        {
+            parameters.Add("sortBy", UriHelper.ParameterToString(sortBy));
+        }
+
+        if (!string.IsNullOrEmpty(sortOrder))
+        {
+            parameters.Add("sortOrder", UriHelper.ParameterToString(sortOrder));
+        }
+
+        var client = _httpClientFactory.CreateClient(PureCloudConstants.PureCloudClientName);
+
+        var uri = UriHelper.GetUri("api/v2/outbound/events", parameters);
+        var response = await client.GetAsync(uri, cancellationToken);
+
+        response.EnsureSuccessStatusCode();
+
+        return await response.Content.ReadFromJsonAsync<DialerEventEntityListing>(_options.JsonSerializerOptions, cancellationToken);
+    }
+
+    // GET methods for FileSpecificationTemplate operations
+    public async Task<FileSpecificationTemplate> GetOutboundFilespecificationtemplateAsync(string fileSpecificationTemplateId, CancellationToken cancellationToken = default)
+    {
+        ArgumentException.ThrowIfNullOrEmpty(fileSpecificationTemplateId);
+
+        var client = _httpClientFactory.CreateClient(PureCloudConstants.PureCloudClientName);
+
+        var response = await client.GetAsync($"api/v2/outbound/filespecificationtemplates/{Uri.EscapeDataString(fileSpecificationTemplateId)}", cancellationToken);
+
+        response.EnsureSuccessStatusCode();
+
+        return await response.Content.ReadFromJsonAsync<FileSpecificationTemplate>(_options.JsonSerializerOptions, cancellationToken);
+    }
+
+    public async Task<FileSpecificationTemplateEntityListing> GetOutboundFilespecificationtemplatesAsync(int? pageSize = null, int? pageNumber = null, bool? allowEmptyResult = null, string filterType = null, string name = null, string sortBy = null, string sortOrder = null, CancellationToken cancellationToken = default)
+    {
+        var parameters = new NameValueCollection();
+
+        if (pageSize.HasValue)
+        {
+            parameters.Add("pageSize", UriHelper.ParameterToString(pageSize.Value));
+        }
+
+        if (pageNumber.HasValue)
+        {
+            parameters.Add("pageNumber", UriHelper.ParameterToString(pageNumber.Value));
+        }
+
+        if (allowEmptyResult.HasValue)
+        {
+            parameters.Add("allowEmptyResult", UriHelper.ParameterToString(allowEmptyResult.Value));
+        }
+
+        if (!string.IsNullOrEmpty(filterType))
+        {
+            parameters.Add("filterType", UriHelper.ParameterToString(filterType));
+        }
+
+        if (!string.IsNullOrEmpty(name))
+        {
+            parameters.Add("name", UriHelper.ParameterToString(name));
+        }
+
+        if (!string.IsNullOrEmpty(sortBy))
+        {
+            parameters.Add("sortBy", UriHelper.ParameterToString(sortBy));
+        }
+
+        if (!string.IsNullOrEmpty(sortOrder))
+        {
+            parameters.Add("sortOrder", UriHelper.ParameterToString(sortOrder));
+        }
+
+        var client = _httpClientFactory.CreateClient(PureCloudConstants.PureCloudClientName);
+
+        var uri = UriHelper.GetUri("api/v2/outbound/filespecificationtemplates", parameters);
+        var response = await client.GetAsync(uri, cancellationToken);
+
+        response.EnsureSuccessStatusCode();
+
+        return await response.Content.ReadFromJsonAsync<FileSpecificationTemplateEntityListing>(_options.JsonSerializerOptions, cancellationToken);
+    }
+
+    // GET methods for ImportTemplate operations
+    public async Task<ImportTemplate> GetOutboundImporttemplateAsync(string importTemplateId, bool? includeImportStatus = null, CancellationToken cancellationToken = default)
+    {
+        ArgumentException.ThrowIfNullOrEmpty(importTemplateId);
+
+        var parameters = new NameValueCollection();
+
+        if (includeImportStatus.HasValue)
+        {
+            parameters.Add("includeImportStatus", UriHelper.ParameterToString(includeImportStatus.Value));
+        }
+
+        var client = _httpClientFactory.CreateClient(PureCloudConstants.PureCloudClientName);
+
+        var uri = UriHelper.GetUri($"api/v2/outbound/importtemplates/{Uri.EscapeDataString(importTemplateId)}", parameters);
+        var response = await client.GetAsync(uri, cancellationToken);
+
+        response.EnsureSuccessStatusCode();
+
+        return await response.Content.ReadFromJsonAsync<ImportTemplate>(_options.JsonSerializerOptions, cancellationToken);
+    }
+
+    public async Task<ImportTemplateEntityListing> GetOutboundImporttemplatesAsync(bool? includeImportStatus = null, int? pageSize = null, int? pageNumber = null, bool? allowEmptyResult = null, string filterType = null, string name = null, string sortBy = null, string sortOrder = null, string contactListTemplateId = null, CancellationToken cancellationToken = default)
+    {
+        var parameters = new NameValueCollection();
+
+        if (includeImportStatus.HasValue)
+        {
+            parameters.Add("includeImportStatus", UriHelper.ParameterToString(includeImportStatus.Value));
+        }
+
+        if (pageSize.HasValue)
+        {
+            parameters.Add("pageSize", UriHelper.ParameterToString(pageSize.Value));
+        }
+
+        if (pageNumber.HasValue)
+        {
+            parameters.Add("pageNumber", UriHelper.ParameterToString(pageNumber.Value));
+        }
+
+        if (allowEmptyResult.HasValue)
+        {
+            parameters.Add("allowEmptyResult", UriHelper.ParameterToString(allowEmptyResult.Value));
+        }
+
+        if (!string.IsNullOrEmpty(filterType))
+        {
+            parameters.Add("filterType", UriHelper.ParameterToString(filterType));
+        }
+
+        if (!string.IsNullOrEmpty(name))
+        {
+            parameters.Add("name", UriHelper.ParameterToString(name));
+        }
+
+        if (!string.IsNullOrEmpty(sortBy))
+        {
+            parameters.Add("sortBy", UriHelper.ParameterToString(sortBy));
+        }
+
+        if (!string.IsNullOrEmpty(sortOrder))
+        {
+            parameters.Add("sortOrder", UriHelper.ParameterToString(sortOrder));
+        }
+
+        if (!string.IsNullOrEmpty(contactListTemplateId))
+        {
+            parameters.Add("contactListTemplateId", UriHelper.ParameterToString(contactListTemplateId));
+        }
+
+        var client = _httpClientFactory.CreateClient(PureCloudConstants.PureCloudClientName);
+
+        var uri = UriHelper.GetUri("api/v2/outbound/importtemplates", parameters);
+        var response = await client.GetAsync(uri, cancellationToken);
+
+        response.EnsureSuccessStatusCode();
+
+        return await response.Content.ReadFromJsonAsync<ImportTemplateEntityListing>(_options.JsonSerializerOptions, cancellationToken);
+    }
+
+    // GET methods for RuleSet operations
+    public async Task<RuleSet> GetOutboundRulesetAsync(string ruleSetId, CancellationToken cancellationToken = default)
+    {
+        ArgumentException.ThrowIfNullOrEmpty(ruleSetId);
+
+        var client = _httpClientFactory.CreateClient(PureCloudConstants.PureCloudClientName);
+
+        var response = await client.GetAsync($"api/v2/outbound/rulesets/{Uri.EscapeDataString(ruleSetId)}", cancellationToken);
+
+        response.EnsureSuccessStatusCode();
+
+        return await response.Content.ReadFromJsonAsync<RuleSet>(_options.JsonSerializerOptions, cancellationToken);
+    }
+
+    public async Task<RuleSetEntityListing> GetOutboundRulesetsAsync(int? pageSize = null, int? pageNumber = null, bool? allowEmptyResult = null, string filterType = null, string name = null, string sortBy = null, string sortOrder = null, CancellationToken cancellationToken = default)
+    {
+        var parameters = new NameValueCollection();
+
+        if (pageSize.HasValue)
+        {
+            parameters.Add("pageSize", UriHelper.ParameterToString(pageSize.Value));
+        }
+
+        if (pageNumber.HasValue)
+        {
+            parameters.Add("pageNumber", UriHelper.ParameterToString(pageNumber.Value));
+        }
+
+        if (allowEmptyResult.HasValue)
+        {
+            parameters.Add("allowEmptyResult", UriHelper.ParameterToString(allowEmptyResult.Value));
+        }
+
+        if (!string.IsNullOrEmpty(filterType))
+        {
+            parameters.Add("filterType", UriHelper.ParameterToString(filterType));
+        }
+
+        if (!string.IsNullOrEmpty(name))
+        {
+            parameters.Add("name", UriHelper.ParameterToString(name));
+        }
+
+        if (!string.IsNullOrEmpty(sortBy))
+        {
+            parameters.Add("sortBy", UriHelper.ParameterToString(sortBy));
+        }
+
+        if (!string.IsNullOrEmpty(sortOrder))
+        {
+            parameters.Add("sortOrder", UriHelper.ParameterToString(sortOrder));
+        }
+
+        var client = _httpClientFactory.CreateClient(PureCloudConstants.PureCloudClientName);
+
+        var uri = UriHelper.GetUri("api/v2/outbound/rulesets", parameters);
+        var response = await client.GetAsync(uri, cancellationToken);
+
+        response.EnsureSuccessStatusCode();
+
+        return await response.Content.ReadFromJsonAsync<RuleSetEntityListing>(_options.JsonSerializerOptions, cancellationToken);
+    }
+
+    // GET methods for Sequence operations
+    public async Task<CampaignSequence> GetOutboundSequenceAsync(string sequenceId, CancellationToken cancellationToken = default)
+    {
+        ArgumentException.ThrowIfNullOrEmpty(sequenceId);
+
+        var client = _httpClientFactory.CreateClient(PureCloudConstants.PureCloudClientName);
+
+        var response = await client.GetAsync($"api/v2/outbound/sequences/{Uri.EscapeDataString(sequenceId)}", cancellationToken);
+
+        response.EnsureSuccessStatusCode();
+
+        return await response.Content.ReadFromJsonAsync<CampaignSequence>(_options.JsonSerializerOptions, cancellationToken);
+    }
+
+    public async Task<CampaignSequenceEntityListing> GetOutboundSequencesAsync(int? pageSize = null, int? pageNumber = null, bool? allowEmptyResult = null, string filterType = null, string name = null, string sortBy = null, string sortOrder = null, CancellationToken cancellationToken = default)
+    {
+        var parameters = new NameValueCollection();
+
+        if (pageSize.HasValue)
+        {
+            parameters.Add("pageSize", UriHelper.ParameterToString(pageSize.Value));
+        }
+
+        if (pageNumber.HasValue)
+        {
+            parameters.Add("pageNumber", UriHelper.ParameterToString(pageNumber.Value));
+        }
+
+        if (allowEmptyResult.HasValue)
+        {
+            parameters.Add("allowEmptyResult", UriHelper.ParameterToString(allowEmptyResult.Value));
+        }
+
+        if (!string.IsNullOrEmpty(filterType))
+        {
+            parameters.Add("filterType", UriHelper.ParameterToString(filterType));
+        }
+
+        if (!string.IsNullOrEmpty(name))
+        {
+            parameters.Add("name", UriHelper.ParameterToString(name));
+        }
+
+        if (!string.IsNullOrEmpty(sortBy))
+        {
+            parameters.Add("sortBy", UriHelper.ParameterToString(sortBy));
+        }
+
+        if (!string.IsNullOrEmpty(sortOrder))
+        {
+            parameters.Add("sortOrder", UriHelper.ParameterToString(sortOrder));
+        }
+
+        var client = _httpClientFactory.CreateClient(PureCloudConstants.PureCloudClientName);
+
+        var uri = UriHelper.GetUri("api/v2/outbound/sequences", parameters);
+        var response = await client.GetAsync(uri, cancellationToken);
+
+        response.EnsureSuccessStatusCode();
+
+        return await response.Content.ReadFromJsonAsync<CampaignSequenceEntityListing>(_options.JsonSerializerOptions, cancellationToken);
+    }
+
+    // GET methods for Settings operations
+    public async Task<OutboundSettings> GetOutboundSettingsAsync(CancellationToken cancellationToken = default)
+    {
+        var client = _httpClientFactory.CreateClient(PureCloudConstants.PureCloudClientName);
+
+        var response = await client.GetAsync("api/v2/outbound/settings", cancellationToken);
+
+        response.EnsureSuccessStatusCode();
+
+        return await response.Content.ReadFromJsonAsync<OutboundSettings>(_options.JsonSerializerOptions, cancellationToken);
+    }
+
+    // GET methods for WrapUpCodeMapping operations
+    public async Task<WrapUpCodeMapping> GetOutboundWrapupcodemappingsAsync(CancellationToken cancellationToken = default)
+    {
+        var client = _httpClientFactory.CreateClient(PureCloudConstants.PureCloudClientName);
+
+        var response = await client.GetAsync("api/v2/outbound/wrapupcodemappings", cancellationToken);
+
+        response.EnsureSuccessStatusCode();
+
+        return await response.Content.ReadFromJsonAsync<WrapUpCodeMapping>(_options.JsonSerializerOptions, cancellationToken);
+    }
+
+    // POST methods for creating entities
+    public async Task<DigitalRuleSet> PostOutboundDigitalrulesetAsync(DigitalRuleSet body, CancellationToken cancellationToken = default)
+    {
+        ArgumentNullException.ThrowIfNull(body);
+
+        var client = _httpClientFactory.CreateClient(PureCloudConstants.PureCloudClientName);
+
+        var response = await client.PostAsJsonAsync("api/v2/outbound/digitalrulesets", body, _options.JsonSerializerOptions, cancellationToken);
+
+        response.EnsureSuccessStatusCode();
+
+        return await response.Content.ReadFromJsonAsync<DigitalRuleSet>(_options.JsonSerializerOptions, cancellationToken);
+    }
+
+    public async Task<DncList> PostOutboundDnclistAsync(DncListCreate body, CancellationToken cancellationToken = default)
+    {
+        ArgumentNullException.ThrowIfNull(body);
+
+        var client = _httpClientFactory.CreateClient(PureCloudConstants.PureCloudClientName);
+
+        var response = await client.PostAsJsonAsync("api/v2/outbound/dnclists", body, _options.JsonSerializerOptions, cancellationToken);
+
+        response.EnsureSuccessStatusCode();
+
+        return await response.Content.ReadFromJsonAsync<DncList>(_options.JsonSerializerOptions, cancellationToken);
+    }
+
+    public async Task<FileSpecificationTemplate> PostOutboundFilespecificationtemplatesAsync(FileSpecificationTemplate body, CancellationToken cancellationToken = default)
+    {
+        ArgumentNullException.ThrowIfNull(body);
+
+        var client = _httpClientFactory.CreateClient(PureCloudConstants.PureCloudClientName);
+
+        var response = await client.PostAsJsonAsync("api/v2/outbound/filespecificationtemplates", body, _options.JsonSerializerOptions, cancellationToken);
+
+        response.EnsureSuccessStatusCode();
+
+        return await response.Content.ReadFromJsonAsync<FileSpecificationTemplate>(_options.JsonSerializerOptions, cancellationToken);
+    }
+
+    public async Task<ImportTemplate> PostOutboundImporttemplatesAsync(ImportTemplate body, CancellationToken cancellationToken = default)
+    {
+        ArgumentNullException.ThrowIfNull(body);
+
+        var client = _httpClientFactory.CreateClient(PureCloudConstants.PureCloudClientName);
+
+        var response = await client.PostAsJsonAsync("api/v2/outbound/importtemplates", body, _options.JsonSerializerOptions, cancellationToken);
+
+        response.EnsureSuccessStatusCode();
+
+        return await response.Content.ReadFromJsonAsync<ImportTemplate>(_options.JsonSerializerOptions, cancellationToken);
+    }
+
+    public async Task<RuleSet> PostOutboundRulesetAsync(RuleSet body, CancellationToken cancellationToken = default)
+    {
+        ArgumentNullException.ThrowIfNull(body);
+
+        var client = _httpClientFactory.CreateClient(PureCloudConstants.PureCloudClientName);
+
+        var response = await client.PostAsJsonAsync("api/v2/outbound/rulesets", body, _options.JsonSerializerOptions, cancellationToken);
+
+        response.EnsureSuccessStatusCode();
+
+        return await response.Content.ReadFromJsonAsync<RuleSet>(_options.JsonSerializerOptions, cancellationToken);
+    }
+
+    public async Task<CampaignSequence> PostOutboundSequenceAsync(CampaignSequence body, CancellationToken cancellationToken = default)
+    {
+        ArgumentNullException.ThrowIfNull(body);
+
+        var client = _httpClientFactory.CreateClient(PureCloudConstants.PureCloudClientName);
+
+        var response = await client.PostAsJsonAsync("api/v2/outbound/sequences", body, _options.JsonSerializerOptions, cancellationToken);
+
+        response.EnsureSuccessStatusCode();
+
+        return await response.Content.ReadFromJsonAsync<CampaignSequence>(_options.JsonSerializerOptions, cancellationToken);
+    }
+
+    // PUT methods for updating entities
+    public async Task<DigitalRuleSet> PutOutboundDigitalrulesetAsync(string digitalRuleSetId, DigitalRuleSet body, CancellationToken cancellationToken = default)
+    {
+        ArgumentException.ThrowIfNullOrEmpty(digitalRuleSetId);
+        ArgumentNullException.ThrowIfNull(body);
+
+        var client = _httpClientFactory.CreateClient(PureCloudConstants.PureCloudClientName);
+
+        var response = await client.PutAsJsonAsync($"api/v2/outbound/digitalrulesets/{Uri.EscapeDataString(digitalRuleSetId)}", body, _options.JsonSerializerOptions, cancellationToken);
+
+        response.EnsureSuccessStatusCode();
+
+        return await response.Content.ReadFromJsonAsync<DigitalRuleSet>(_options.JsonSerializerOptions, cancellationToken);
+    }
+
+    public async Task<DncList> PutOutboundDnclistAsync(string dncListId, DncList body, CancellationToken cancellationToken = default)
+    {
+        ArgumentException.ThrowIfNullOrEmpty(dncListId);
+        ArgumentNullException.ThrowIfNull(body);
+
+        var client = _httpClientFactory.CreateClient(PureCloudConstants.PureCloudClientName);
+
+        var response = await client.PutAsJsonAsync($"api/v2/outbound/dnclists/{Uri.EscapeDataString(dncListId)}", body, _options.JsonSerializerOptions, cancellationToken);
+
+        response.EnsureSuccessStatusCode();
+
+        return await response.Content.ReadFromJsonAsync<DncList>(_options.JsonSerializerOptions, cancellationToken);
+    }
+
+    public async Task<FileSpecificationTemplate> PutOutboundFilespecificationtemplateAsync(string fileSpecificationTemplateId, FileSpecificationTemplate body, CancellationToken cancellationToken = default)
+    {
+        ArgumentException.ThrowIfNullOrEmpty(fileSpecificationTemplateId);
+        ArgumentNullException.ThrowIfNull(body);
+
+        var client = _httpClientFactory.CreateClient(PureCloudConstants.PureCloudClientName);
+
+        var response = await client.PutAsJsonAsync($"api/v2/outbound/filespecificationtemplates/{Uri.EscapeDataString(fileSpecificationTemplateId)}", body, _options.JsonSerializerOptions, cancellationToken);
+
+        response.EnsureSuccessStatusCode();
+
+        return await response.Content.ReadFromJsonAsync<FileSpecificationTemplate>(_options.JsonSerializerOptions, cancellationToken);
+    }
+
+    public async Task<ImportTemplate> PutOutboundImporttemplateAsync(string importTemplateId, ImportTemplate body, CancellationToken cancellationToken = default)
+    {
+        ArgumentException.ThrowIfNullOrEmpty(importTemplateId);
+        ArgumentNullException.ThrowIfNull(body);
+
+        var client = _httpClientFactory.CreateClient(PureCloudConstants.PureCloudClientName);
+
+        var response = await client.PutAsJsonAsync($"api/v2/outbound/importtemplates/{Uri.EscapeDataString(importTemplateId)}", body, _options.JsonSerializerOptions, cancellationToken);
+
+        response.EnsureSuccessStatusCode();
+
+        return await response.Content.ReadFromJsonAsync<ImportTemplate>(_options.JsonSerializerOptions, cancellationToken);
+    }
+
+    public async Task<RuleSet> PutOutboundRulesetAsync(string ruleSetId, RuleSet body, CancellationToken cancellationToken = default)
+    {
+        ArgumentException.ThrowIfNullOrEmpty(ruleSetId);
+        ArgumentNullException.ThrowIfNull(body);
+
+        var client = _httpClientFactory.CreateClient(PureCloudConstants.PureCloudClientName);
+
+        var response = await client.PutAsJsonAsync($"api/v2/outbound/rulesets/{Uri.EscapeDataString(ruleSetId)}", body, _options.JsonSerializerOptions, cancellationToken);
+
+        response.EnsureSuccessStatusCode();
+
+        return await response.Content.ReadFromJsonAsync<RuleSet>(_options.JsonSerializerOptions, cancellationToken);
+    }
+
+    public async Task<CampaignSequence> PutOutboundSequenceAsync(string sequenceId, CampaignSequence body, CancellationToken cancellationToken = default)
+    {
+        ArgumentException.ThrowIfNullOrEmpty(sequenceId);
+        ArgumentNullException.ThrowIfNull(body);
+
+        var client = _httpClientFactory.CreateClient(PureCloudConstants.PureCloudClientName);
+
+        var response = await client.PutAsJsonAsync($"api/v2/outbound/sequences/{Uri.EscapeDataString(sequenceId)}", body, _options.JsonSerializerOptions, cancellationToken);
+
+        response.EnsureSuccessStatusCode();
+
+        return await response.Content.ReadFromJsonAsync<CampaignSequence>(_options.JsonSerializerOptions, cancellationToken);
+    }
+
+    public async Task<OutboundSettings> PutOutboundSettingsAsync(OutboundSettings body, CancellationToken cancellationToken = default)
+    {
+        ArgumentNullException.ThrowIfNull(body);
+
+        var client = _httpClientFactory.CreateClient(PureCloudConstants.PureCloudClientName);
+
+        var response = await client.PutAsJsonAsync("api/v2/outbound/settings", body, _options.JsonSerializerOptions, cancellationToken);
+
+        response.EnsureSuccessStatusCode();
+
+        return await response.Content.ReadFromJsonAsync<OutboundSettings>(_options.JsonSerializerOptions, cancellationToken);
+    }
+
+    public async Task<WrapUpCodeMapping> PutOutboundWrapupcodemappingsAsync(WrapUpCodeMapping body, CancellationToken cancellationToken = default)
+    {
+        ArgumentNullException.ThrowIfNull(body);
+
+        var client = _httpClientFactory.CreateClient(PureCloudConstants.PureCloudClientName);
+
+        var response = await client.PutAsJsonAsync("api/v2/outbound/wrapupcodemappings", body, _options.JsonSerializerOptions, cancellationToken);
+
+        response.EnsureSuccessStatusCode();
+
+        return await response.Content.ReadFromJsonAsync<WrapUpCodeMapping>(_options.JsonSerializerOptions, cancellationToken);
+    }
+
+    public async Task<ContactListTemplateEntityListing> GetOutboundContactlisttemplatesAsync(int? pageSize = null, int? pageNumber = null, bool? allowEmptyResult = null, string filterType = null, string name = null, string sortBy = null, string sortOrder = null, CancellationToken cancellationToken = default)
+    {
+        var parameters = new NameValueCollection();
+
+        if (pageSize.HasValue)
+        {
+            parameters.Add("pageSize", UriHelper.ParameterToString(pageSize.Value));
+        }
+
+        if (pageNumber.HasValue)
+        {
+            parameters.Add("pageNumber", UriHelper.ParameterToString(pageNumber.Value));
+        }
+
+        if (allowEmptyResult.HasValue)
+        {
+            parameters.Add("allowEmptyResult", UriHelper.ParameterToString(allowEmptyResult.Value));
+        }
+
+        if (!string.IsNullOrEmpty(filterType))
+        {
+            parameters.Add("filterType", UriHelper.ParameterToString(filterType));
+        }
+
+        if (!string.IsNullOrEmpty(name))
+        {
+            parameters.Add("name", UriHelper.ParameterToString(name));
+        }
+
+        if (!string.IsNullOrEmpty(sortBy))
+        {
+            parameters.Add("sortBy", UriHelper.ParameterToString(sortBy));
+        }
+
+        if (!string.IsNullOrEmpty(sortOrder))
+        {
+            parameters.Add("sortOrder", UriHelper.ParameterToString(sortOrder));
+        }
+
+        var client = _httpClientFactory.CreateClient(PureCloudConstants.PureCloudClientName);
+
+        var uri = UriHelper.GetUri("api/v2/outbound/contactlisttemplates", parameters);
+        var response = await client.GetAsync(uri, cancellationToken);
+
+        response.EnsureSuccessStatusCode();
+
+        return await response.Content.ReadFromJsonAsync<ContactListTemplateEntityListing>(_options.JsonSerializerOptions, cancellationToken);
+    }
 }
