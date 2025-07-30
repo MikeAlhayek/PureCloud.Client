@@ -94,7 +94,7 @@ public sealed class WorkforceManagementApi : IWorkforceManagementApi
     }
 
     /// <inheritdoc />
-    public async Task<ManagementUnit> GetManagementUnitAsync(string managementUnitId, IEnumerable<string> expands = null, CancellationToken cancellationToken = default)
+    public async Task<string> GetManagementUnitAsync(string managementUnitId, IEnumerable<string> expands = null, CancellationToken cancellationToken = default)
     {
         ArgumentException.ThrowIfNullOrEmpty(managementUnitId);
 
@@ -114,7 +114,7 @@ public sealed class WorkforceManagementApi : IWorkforceManagementApi
 
         response.EnsureSuccessStatusCode();
 
-        return await response.Content.ReadFromJsonAsync<ManagementUnit>(cancellationToken);
+        return await response.Content.ReadAsStringAsync(cancellationToken);
     }
 
     /// <inheritdoc />

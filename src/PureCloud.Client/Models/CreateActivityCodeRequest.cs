@@ -9,7 +9,7 @@ public sealed class CreateActivityCodeRequest
     /// The activity code's category
     /// </summary>
     /// <value>The activity code's category</value>
-    public CreateActivityCodeRequestCategoryEnum? Category { get; set; }
+    public object Category { get; set; }
 
     /// <summary>
     /// The name of the activity code
@@ -63,5 +63,5 @@ public sealed class CreateActivityCodeRequest
     /// List of secondary presences allowed to be set for this activity code
     /// </summary>
     /// <value>List of secondary presences allowed to be set for this activity code</value>
-    public IEnumerable<SecondaryPresence> SecondaryPresences { get; set; }
+    public IEnumerable<object> SecondaryPresences { get; set; }
 }
