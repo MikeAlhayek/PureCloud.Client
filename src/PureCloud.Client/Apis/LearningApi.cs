@@ -12,13 +12,13 @@ namespace PureCloud.Client.Apis;
 /// <inheritdoc />
 public sealed class LearningApi : ILearningApi
 {
-    private readonly HttpClient _httpClient;
-    private readonly JsonSerializerOptions _options;
+    private readonly IHttpClientFactory _httpClientFactory;
+    private readonly PureCloudJsonSerializerOptions _options;
 
     public LearningApi(IHttpClientFactory httpClientFactory, IOptions<PureCloudJsonSerializerOptions> options)
     {
-        _httpClient = httpClientFactory.CreateClient(PureCloudConstants.PureCloudClientName);
-        _options = options.Value.JsonSerializerOptions;
+        _httpClientFactory = httpClientFactory;
+        _options = options.Value;
     }
 
     /// <inheritdoc />
@@ -26,11 +26,11 @@ public sealed class LearningApi : ILearningApi
     {
         ArgumentException.ThrowIfNullOrEmpty(assignmentId);
 
-        var response = await _httpClient.DeleteAsync($"api/v2/learning/assignments/{Uri.EscapeDataString(assignmentId)}", cancellationToken);
+        var client = _httpClientFactory.CreateClient(PureCloudConstants.PureCloudClientName);
 
-        response.EnsureSuccessStatusCode();
+        var response = await client.DeleteAsync($"api/v2/learning/assignments/{Uri.EscapeDataString(assignmentId)}", cancellationToken);
 
-        return true;
+        return response.IsSuccessStatusCode;
     }
 
     /// <inheritdoc />
@@ -38,11 +38,11 @@ public sealed class LearningApi : ILearningApi
     {
         ArgumentException.ThrowIfNullOrEmpty(moduleId);
 
-        var response = await _httpClient.DeleteAsync($"api/v2/learning/modules/{Uri.EscapeDataString(moduleId)}", cancellationToken);
+        var client = _httpClientFactory.CreateClient(PureCloudConstants.PureCloudClientName);
 
-        response.EnsureSuccessStatusCode();
+        var response = await client.DeleteAsync($"api/v2/learning/modules/{Uri.EscapeDataString(moduleId)}", cancellationToken);
 
-        return true;
+        return response.IsSuccessStatusCode;
     }
 
     /// <inheritdoc />
@@ -52,25 +52,29 @@ public sealed class LearningApi : ILearningApi
 
         var parameters = new NameValueCollection();
 
-        if (expand?.Any() == true)
+        if (expand != null)
         {
-            parameters.Add("expand", string.Join(",", expand.Select(UriHelper.ParameterToString)));
+            foreach (var item in expand)
+            {
+                parameters.Add("expand", UriHelper.ParameterToString(item));
+            }
         }
+
+        var client = _httpClientFactory.CreateClient(PureCloudConstants.PureCloudClientName);
 
         var uri = UriHelper.GetUri($"api/v2/learning/assignments/{Uri.EscapeDataString(assignmentId)}", parameters);
 
-        var response = await _httpClient.GetAsync(uri, cancellationToken);
+        var response = await client.GetAsync(uri, cancellationToken);
 
         response.EnsureSuccessStatusCode();
 
-        return await response.Content.ReadFromJsonAsync<LearningAssignment>(_options, cancellationToken);
+        return await response.Content.ReadFromJsonAsync<LearningAssignment>(_options.JsonSerializerOptions, cancellationToken);
     }
 
     /// <inheritdoc />
     public async Task<LearningAssignmentStep> GetLearningAssignmentStepAsync(string assignmentId, string stepId, string shareableContentObjectId = null, string defaultShareableContentObject = null, IEnumerable<string> expand = null, CancellationToken cancellationToken = default)
     {
         ArgumentException.ThrowIfNullOrEmpty(assignmentId);
-
         ArgumentException.ThrowIfNullOrEmpty(stepId);
 
         var parameters = new NameValueCollection();
@@ -85,18 +89,23 @@ public sealed class LearningApi : ILearningApi
             parameters.Add("defaultShareableContentObject", defaultShareableContentObject);
         }
 
-        if (expand?.Any() == true)
+        if (expand != null)
         {
-            parameters.Add("expand", string.Join(",", expand.Select(UriHelper.ParameterToString)));
+            foreach (var item in expand)
+            {
+                parameters.Add("expand", UriHelper.ParameterToString(item));
+            }
         }
+
+        var client = _httpClientFactory.CreateClient(PureCloudConstants.PureCloudClientName);
 
         var uri = UriHelper.GetUri($"api/v2/learning/assignments/{Uri.EscapeDataString(assignmentId)}/steps/{Uri.EscapeDataString(stepId)}", parameters);
 
-        var response = await _httpClient.GetAsync(uri, cancellationToken);
+        var response = await client.GetAsync(uri, cancellationToken);
 
         response.EnsureSuccessStatusCode();
 
-        return await response.Content.ReadFromJsonAsync<LearningAssignmentStep>(_options, cancellationToken);
+        return await response.Content.ReadFromJsonAsync<LearningAssignmentStep>(_options.JsonSerializerOptions, cancellationToken);
     }
 
     /// <inheritdoc />
@@ -159,42 +168,47 @@ public sealed class LearningApi : ILearningApi
             parameters.Add("sortBy", sortBy);
         }
 
-        if (userId?.Any() == true)
+        if (userId != null)
         {
             foreach (var id in userId)
             {
-                parameters.Add("userId", id);
+                parameters.Add("userId", UriHelper.ParameterToString(id));
             }
         }
 
-        if (types?.Any() == true)
+        if (types != null)
         {
             foreach (var type in types)
             {
-                parameters.Add("types", type);
+                parameters.Add("types", UriHelper.ParameterToString(type));
             }
         }
 
-        if (states?.Any() == true)
+        if (states != null)
         {
             foreach (var state in states)
             {
-                parameters.Add("states", state);
+                parameters.Add("states", UriHelper.ParameterToString(state));
             }
         }
 
-        if (expand?.Any() == true)
+        if (expand != null)
         {
-            parameters.Add("expand", string.Join(",", expand.Select(UriHelper.ParameterToString)));
+            foreach (var item in expand)
+            {
+                parameters.Add("expand", UriHelper.ParameterToString(item));
+            }
         }
+
+        var client = _httpClientFactory.CreateClient(PureCloudConstants.PureCloudClientName);
 
         var uri = UriHelper.GetUri("api/v2/learning/assignments", parameters);
 
-        var response = await _httpClient.GetAsync(uri, cancellationToken);
+        var response = await client.GetAsync(uri, cancellationToken);
 
         response.EnsureSuccessStatusCode();
 
-        return await response.Content.ReadFromJsonAsync<LearningAssignmentsDomainEntity>(_options, cancellationToken);
+        return await response.Content.ReadFromJsonAsync<LearningAssignmentsDomainEntity>(_options.JsonSerializerOptions, cancellationToken);
     }
 
     /// <inheritdoc />
@@ -257,34 +271,39 @@ public sealed class LearningApi : ILearningApi
             parameters.Add("sortBy", sortBy);
         }
 
-        if (types?.Any() == true)
+        if (types != null)
         {
             foreach (var type in types)
             {
-                parameters.Add("types", type);
+                parameters.Add("types", UriHelper.ParameterToString(type));
             }
         }
 
-        if (states?.Any() == true)
+        if (states != null)
         {
             foreach (var state in states)
             {
-                parameters.Add("states", state);
+                parameters.Add("states", UriHelper.ParameterToString(state));
             }
         }
 
-        if (expand?.Any() == true)
+        if (expand != null)
         {
-            parameters.Add("expand", string.Join(",", expand.Select(UriHelper.ParameterToString)));
+            foreach (var item in expand)
+            {
+                parameters.Add("expand", UriHelper.ParameterToString(item));
+            }
         }
+
+        var client = _httpClientFactory.CreateClient(PureCloudConstants.PureCloudClientName);
 
         var uri = UriHelper.GetUri("api/v2/learning/assignments/me", parameters);
 
-        var response = await _httpClient.GetAsync(uri, cancellationToken);
+        var response = await client.GetAsync(uri, cancellationToken);
 
         response.EnsureSuccessStatusCode();
 
-        return await response.Content.ReadFromJsonAsync<LearningAssignmentsDomainEntity>(_options, cancellationToken);
+        return await response.Content.ReadFromJsonAsync<LearningAssignmentsDomainEntity>(_options.JsonSerializerOptions, cancellationToken);
     }
 
     /// <inheritdoc />
@@ -294,32 +313,38 @@ public sealed class LearningApi : ILearningApi
 
         var parameters = new NameValueCollection();
 
-        if (expand?.Any() == true)
+        if (expand != null)
         {
-            parameters.Add("expand", string.Join(",", expand.Select(UriHelper.ParameterToString)));
+            foreach (var item in expand)
+            {
+                parameters.Add("expand", UriHelper.ParameterToString(item));
+            }
         }
+
+        var client = _httpClientFactory.CreateClient(PureCloudConstants.PureCloudClientName);
 
         var uri = UriHelper.GetUri($"api/v2/learning/modules/{Uri.EscapeDataString(moduleId)}", parameters);
 
-        var response = await _httpClient.GetAsync(uri, cancellationToken);
+        var response = await client.GetAsync(uri, cancellationToken);
 
         response.EnsureSuccessStatusCode();
 
-        return await response.Content.ReadFromJsonAsync<LearningModule>(_options, cancellationToken);
+        return await response.Content.ReadFromJsonAsync<LearningModule>(_options.JsonSerializerOptions, cancellationToken);
     }
 
     /// <inheritdoc />
     public async Task<LearningModuleJobResponse> GetLearningModuleJobAsync(string moduleId, string jobId, CancellationToken cancellationToken = default)
     {
         ArgumentException.ThrowIfNullOrEmpty(moduleId);
-
         ArgumentException.ThrowIfNullOrEmpty(jobId);
 
-        var response = await _httpClient.GetAsync($"api/v2/learning/modules/{Uri.EscapeDataString(moduleId)}/jobs/{Uri.EscapeDataString(jobId)}", cancellationToken);
+        var client = _httpClientFactory.CreateClient(PureCloudConstants.PureCloudClientName);
+
+        var response = await client.GetAsync($"api/v2/learning/modules/{Uri.EscapeDataString(moduleId)}/jobs/{Uri.EscapeDataString(jobId)}", cancellationToken);
 
         response.EnsureSuccessStatusCode();
 
-        return await response.Content.ReadFromJsonAsync<LearningModuleJobResponse>(_options, cancellationToken);
+        return await response.Content.ReadFromJsonAsync<LearningModuleJobResponse>(_options.JsonSerializerOptions, cancellationToken);
     }
 
     /// <inheritdoc />
@@ -327,11 +352,13 @@ public sealed class LearningApi : ILearningApi
     {
         ArgumentException.ThrowIfNullOrEmpty(moduleId);
 
-        var response = await _httpClient.GetAsync($"api/v2/learning/modules/{Uri.EscapeDataString(moduleId)}/preview", cancellationToken);
+        var client = _httpClientFactory.CreateClient(PureCloudConstants.PureCloudClientName);
+
+        var response = await client.GetAsync($"api/v2/learning/modules/{Uri.EscapeDataString(moduleId)}/preview", cancellationToken);
 
         response.EnsureSuccessStatusCode();
 
-        return await response.Content.ReadFromJsonAsync<LearningModulePreviewGetResponse>(_options, cancellationToken);
+        return await response.Content.ReadFromJsonAsync<LearningModulePreviewGetResponse>(_options.JsonSerializerOptions, cancellationToken);
     }
 
     /// <inheritdoc />
@@ -339,34 +366,40 @@ public sealed class LearningApi : ILearningApi
     {
         ArgumentException.ThrowIfNullOrEmpty(moduleId);
 
-        var response = await _httpClient.GetAsync($"api/v2/learning/modules/{Uri.EscapeDataString(moduleId)}/rule", cancellationToken);
+        var client = _httpClientFactory.CreateClient(PureCloudConstants.PureCloudClientName);
+
+        var response = await client.GetAsync($"api/v2/learning/modules/{Uri.EscapeDataString(moduleId)}/rule", cancellationToken);
 
         response.EnsureSuccessStatusCode();
 
-        return await response.Content.ReadFromJsonAsync<LearningModuleRule>(_options, cancellationToken);
+        return await response.Content.ReadFromJsonAsync<LearningModuleRule>(_options.JsonSerializerOptions, cancellationToken);
     }
 
     /// <inheritdoc />
     public async Task<LearningModule> GetLearningModuleVersionAsync(string moduleId, string versionId, IEnumerable<string> expand = null, CancellationToken cancellationToken = default)
     {
         ArgumentException.ThrowIfNullOrEmpty(moduleId);
-
         ArgumentException.ThrowIfNullOrEmpty(versionId);
 
         var parameters = new NameValueCollection();
 
-        if (expand?.Any() == true)
+        if (expand != null)
         {
-            parameters.Add("expand", string.Join(",", expand.Select(UriHelper.ParameterToString)));
+            foreach (var item in expand)
+            {
+                parameters.Add("expand", UriHelper.ParameterToString(item));
+            }
         }
+
+        var client = _httpClientFactory.CreateClient(PureCloudConstants.PureCloudClientName);
 
         var uri = UriHelper.GetUri($"api/v2/learning/modules/{Uri.EscapeDataString(moduleId)}/versions/{Uri.EscapeDataString(versionId)}", parameters);
 
-        var response = await _httpClient.GetAsync(uri, cancellationToken);
+        var response = await client.GetAsync(uri, cancellationToken);
 
         response.EnsureSuccessStatusCode();
 
-        return await response.Content.ReadFromJsonAsync<LearningModule>(_options, cancellationToken);
+        return await response.Content.ReadFromJsonAsync<LearningModule>(_options.JsonSerializerOptions, cancellationToken);
     }
 
     /// <inheritdoc />
@@ -379,11 +412,11 @@ public sealed class LearningApi : ILearningApi
             parameters.Add("isArchived", isArchived.Value.ToString().ToLower());
         }
 
-        if (types?.Any() == true)
+        if (types != null)
         {
             foreach (var type in types)
             {
-                parameters.Add("types", type);
+                parameters.Add("types", UriHelper.ParameterToString(type));
             }
         }
 
@@ -412,9 +445,12 @@ public sealed class LearningApi : ILearningApi
             parameters.Add("searchTerm", searchTerm);
         }
 
-        if (expand?.Any() == true)
+        if (expand != null)
         {
-            parameters.Add("expand", string.Join(",", expand.Select(UriHelper.ParameterToString)));
+            foreach (var item in expand)
+            {
+                parameters.Add("expand", UriHelper.ParameterToString(item));
+            }
         }
 
         if (!string.IsNullOrEmpty(isPublished))
@@ -422,29 +458,31 @@ public sealed class LearningApi : ILearningApi
             parameters.Add("isPublished", isPublished);
         }
 
-        if (statuses?.Any() == true)
+        if (statuses != null)
         {
             foreach (var status in statuses)
             {
-                parameters.Add("statuses", status);
+                parameters.Add("statuses", UriHelper.ParameterToString(status));
             }
         }
 
-        if (externalIds?.Any() == true)
+        if (externalIds != null)
         {
             foreach (var externalId in externalIds)
             {
-                parameters.Add("externalIds", externalId);
+                parameters.Add("externalIds", UriHelper.ParameterToString(externalId));
             }
         }
 
+        var client = _httpClientFactory.CreateClient(PureCloudConstants.PureCloudClientName);
+
         var uri = UriHelper.GetUri("api/v2/learning/modules", parameters);
 
-        var response = await _httpClient.GetAsync(uri, cancellationToken);
+        var response = await client.GetAsync(uri, cancellationToken);
 
         response.EnsureSuccessStatusCode();
 
-        return await response.Content.ReadFromJsonAsync<LearningModulesDomainEntityListing>(_options, cancellationToken);
+        return await response.Content.ReadFromJsonAsync<LearningModulesDomainEntityListing>(_options.JsonSerializerOptions, cancellationToken);
     }
 
     /// <inheritdoc />
@@ -456,7 +494,7 @@ public sealed class LearningApi : ILearningApi
 
         foreach (var userId in userIds)
         {
-            parameters.Add("userIds", userId);
+            parameters.Add("userIds", UriHelper.ParameterToString(userId));
         }
 
         if (pageSize.HasValue)
@@ -479,26 +517,31 @@ public sealed class LearningApi : ILearningApi
             parameters.Add("overdue", overdue);
         }
 
-        if (assignmentStates?.Any() == true)
+        if (assignmentStates != null)
         {
             foreach (var state in assignmentStates)
             {
-                parameters.Add("assignmentStates", state);
+                parameters.Add("assignmentStates", UriHelper.ParameterToString(state));
             }
         }
 
-        if (expand?.Any() == true)
+        if (expand != null)
         {
-            parameters.Add("expand", string.Join(",", expand.Select(UriHelper.ParameterToString)));
+            foreach (var item in expand)
+            {
+                parameters.Add("expand", UriHelper.ParameterToString(item));
+            }
         }
+
+        var client = _httpClientFactory.CreateClient(PureCloudConstants.PureCloudClientName);
 
         var uri = UriHelper.GetUri("api/v2/learning/modules/assignments", parameters);
 
-        var response = await _httpClient.GetAsync(uri, cancellationToken);
+        var response = await client.GetAsync(uri, cancellationToken);
 
         response.EnsureSuccessStatusCode();
 
-        return await response.Content.ReadFromJsonAsync<AssignedLearningModuleDomainEntityListing>(_options, cancellationToken);
+        return await response.Content.ReadFromJsonAsync<AssignedLearningModuleDomainEntityListing>(_options.JsonSerializerOptions, cancellationToken);
     }
 
     /// <inheritdoc />
@@ -506,11 +549,13 @@ public sealed class LearningApi : ILearningApi
     {
         ArgumentException.ThrowIfNullOrEmpty(coverArtId);
 
-        var response = await _httpClient.GetAsync($"api/v2/learning/modules/coverart/{Uri.EscapeDataString(coverArtId)}", cancellationToken);
+        var client = _httpClientFactory.CreateClient(PureCloudConstants.PureCloudClientName);
+
+        var response = await client.GetAsync($"api/v2/learning/modules/coverart/{Uri.EscapeDataString(coverArtId)}", cancellationToken);
 
         response.EnsureSuccessStatusCode();
 
-        return await response.Content.ReadFromJsonAsync<LearningModuleCoverArtResponse>(_options, cancellationToken);
+        return await response.Content.ReadFromJsonAsync<LearningModuleCoverArtResponse>(_options.JsonSerializerOptions, cancellationToken);
     }
 
     /// <inheritdoc />
@@ -518,11 +563,13 @@ public sealed class LearningApi : ILearningApi
     {
         ArgumentException.ThrowIfNullOrEmpty(scormId);
 
-        var response = await _httpClient.GetAsync($"api/v2/learning/scorm/{Uri.EscapeDataString(scormId)}", cancellationToken);
+        var client = _httpClientFactory.CreateClient(PureCloudConstants.PureCloudClientName);
+
+        var response = await client.GetAsync($"api/v2/learning/scorm/{Uri.EscapeDataString(scormId)}", cancellationToken);
 
         response.EnsureSuccessStatusCode();
 
-        return await response.Content.ReadFromJsonAsync<LearningScormResponse>(_options, cancellationToken);
+        return await response.Content.ReadFromJsonAsync<LearningScormResponse>(_options.JsonSerializerOptions, cancellationToken);
     }
 
     /// <inheritdoc />
@@ -530,11 +577,13 @@ public sealed class LearningApi : ILearningApi
     {
         ArgumentException.ThrowIfNullOrEmpty(assignmentId);
 
-        var response = await _httpClient.PatchAsJsonAsync($"api/v2/learning/assignments/{Uri.EscapeDataString(assignmentId)}", body, _options, cancellationToken);
+        var client = _httpClientFactory.CreateClient(PureCloudConstants.PureCloudClientName);
+
+        var response = await client.PatchAsJsonAsync($"api/v2/learning/assignments/{Uri.EscapeDataString(assignmentId)}", body, _options.JsonSerializerOptions, cancellationToken);
 
         response.EnsureSuccessStatusCode();
 
-        return await response.Content.ReadFromJsonAsync<LearningAssignment>(_options, cancellationToken);
+        return await response.Content.ReadFromJsonAsync<LearningAssignment>(_options.JsonSerializerOptions, cancellationToken);
     }
 
     /// <inheritdoc />
@@ -542,41 +591,44 @@ public sealed class LearningApi : ILearningApi
     {
         ArgumentException.ThrowIfNullOrEmpty(assignmentId);
 
-        var response = await _httpClient.PatchAsJsonAsync($"api/v2/learning/assignments/{Uri.EscapeDataString(assignmentId)}/reschedule", body, _options, cancellationToken);
+        var client = _httpClientFactory.CreateClient(PureCloudConstants.PureCloudClientName);
+
+        var response = await client.PatchAsJsonAsync($"api/v2/learning/assignments/{Uri.EscapeDataString(assignmentId)}/reschedule", body, _options.JsonSerializerOptions, cancellationToken);
 
         response.EnsureSuccessStatusCode();
 
-        return await response.Content.ReadFromJsonAsync<LearningAssignment>(_options, cancellationToken);
+        return await response.Content.ReadFromJsonAsync<LearningAssignment>(_options.JsonSerializerOptions, cancellationToken);
     }
 
     /// <inheritdoc />
     public async Task<LearningAssignmentStep> UpdateLearningAssignmentStepAsync(string assignmentId, string stepId, LearningAssignmentStep body = null, CancellationToken cancellationToken = default)
     {
         ArgumentException.ThrowIfNullOrEmpty(assignmentId);
-
         ArgumentException.ThrowIfNullOrEmpty(stepId);
 
-        var response = await _httpClient.PatchAsJsonAsync($"api/v2/learning/assignments/{Uri.EscapeDataString(assignmentId)}/steps/{Uri.EscapeDataString(stepId)}", body, _options, cancellationToken);
+        var client = _httpClientFactory.CreateClient(PureCloudConstants.PureCloudClientName);
+
+        var response = await client.PatchAsJsonAsync($"api/v2/learning/assignments/{Uri.EscapeDataString(assignmentId)}/steps/{Uri.EscapeDataString(stepId)}", body, _options.JsonSerializerOptions, cancellationToken);
 
         response.EnsureSuccessStatusCode();
 
-        return await response.Content.ReadFromJsonAsync<LearningAssignmentStep>(_options, cancellationToken);
+        return await response.Content.ReadFromJsonAsync<LearningAssignmentStep>(_options.JsonSerializerOptions, cancellationToken);
     }
 
     /// <inheritdoc />
     public async Task<LearningAssignment> UpdateLearningModuleUserAssignmentsAsync(string moduleId, string userId, LearningAssignmentExternalUpdate body, CancellationToken cancellationToken = default)
     {
         ArgumentException.ThrowIfNullOrEmpty(moduleId);
-
         ArgumentException.ThrowIfNullOrEmpty(userId);
-
         ArgumentNullException.ThrowIfNull(body);
 
-        var response = await _httpClient.PatchAsJsonAsync($"api/v2/learning/modules/{Uri.EscapeDataString(moduleId)}/users/{Uri.EscapeDataString(userId)}/assignments", body, _options, cancellationToken);
+        var client = _httpClientFactory.CreateClient(PureCloudConstants.PureCloudClientName);
+
+        var response = await client.PatchAsJsonAsync($"api/v2/learning/modules/{Uri.EscapeDataString(moduleId)}/users/{Uri.EscapeDataString(userId)}/assignments", body, _options.JsonSerializerOptions, cancellationToken);
 
         response.EnsureSuccessStatusCode();
 
-        return await response.Content.ReadFromJsonAsync<LearningAssignment>(_options, cancellationToken);
+        return await response.Content.ReadFromJsonAsync<LearningAssignment>(_options.JsonSerializerOptions, cancellationToken);
     }
 
     /// <inheritdoc />
@@ -584,11 +636,13 @@ public sealed class LearningApi : ILearningApi
     {
         ArgumentNullException.ThrowIfNull(body);
 
-        var response = await _httpClient.PostAsJsonAsync("api/v2/learning/assessments/scoring", body, _options, cancellationToken);
+        var client = _httpClientFactory.CreateClient(PureCloudConstants.PureCloudClientName);
+
+        var response = await client.PostAsJsonAsync("api/v2/learning/assessments/scoring", body, _options.JsonSerializerOptions, cancellationToken);
 
         response.EnsureSuccessStatusCode();
 
-        return await response.Content.ReadFromJsonAsync<AssessmentScoringSet>(_options, cancellationToken);
+        return await response.Content.ReadFromJsonAsync<AssessmentScoringSet>(_options.JsonSerializerOptions, cancellationToken);
     }
 
     /// <inheritdoc />
@@ -596,11 +650,13 @@ public sealed class LearningApi : ILearningApi
     {
         ArgumentException.ThrowIfNullOrEmpty(assignmentId);
 
-        var response = await _httpClient.PostAsync($"api/v2/learning/assignments/{Uri.EscapeDataString(assignmentId)}/reassign", null, cancellationToken);
+        var client = _httpClientFactory.CreateClient(PureCloudConstants.PureCloudClientName);
+
+        var response = await client.PostAsync($"api/v2/learning/assignments/{Uri.EscapeDataString(assignmentId)}/reassign", null, cancellationToken);
 
         response.EnsureSuccessStatusCode();
 
-        return await response.Content.ReadFromJsonAsync<LearningAssignment>(_options, cancellationToken);
+        return await response.Content.ReadFromJsonAsync<LearningAssignment>(_options.JsonSerializerOptions, cancellationToken);
     }
 
     /// <inheritdoc />
@@ -608,21 +664,25 @@ public sealed class LearningApi : ILearningApi
     {
         ArgumentException.ThrowIfNullOrEmpty(assignmentId);
 
-        var response = await _httpClient.PostAsync($"api/v2/learning/assignments/{Uri.EscapeDataString(assignmentId)}/reset", null, cancellationToken);
+        var client = _httpClientFactory.CreateClient(PureCloudConstants.PureCloudClientName);
+
+        var response = await client.PostAsync($"api/v2/learning/assignments/{Uri.EscapeDataString(assignmentId)}/reset", null, cancellationToken);
 
         response.EnsureSuccessStatusCode();
 
-        return await response.Content.ReadFromJsonAsync<LearningAssignment>(_options, cancellationToken);
+        return await response.Content.ReadFromJsonAsync<LearningAssignment>(_options.JsonSerializerOptions, cancellationToken);
     }
 
     /// <inheritdoc />
     public async Task<LearningAssignment> CreateLearningAssignmentAsync(LearningAssignmentCreate body = null, CancellationToken cancellationToken = default)
     {
-        var response = await _httpClient.PostAsJsonAsync("api/v2/learning/assignments", body, _options, cancellationToken);
+        var client = _httpClientFactory.CreateClient(PureCloudConstants.PureCloudClientName);
+
+        var response = await client.PostAsJsonAsync("api/v2/learning/assignments", body, _options.JsonSerializerOptions, cancellationToken);
 
         response.EnsureSuccessStatusCode();
 
-        return await response.Content.ReadFromJsonAsync<LearningAssignment>(_options, cancellationToken);
+        return await response.Content.ReadFromJsonAsync<LearningAssignment>(_options.JsonSerializerOptions, cancellationToken);
     }
 
     /// <inheritdoc />
@@ -630,45 +690,52 @@ public sealed class LearningApi : ILearningApi
     {
         ArgumentNullException.ThrowIfNull(body);
 
-        var response = await _httpClient.PostAsJsonAsync("api/v2/learning/assignments/aggregates/query", body, _options, cancellationToken);
+        var client = _httpClientFactory.CreateClient(PureCloudConstants.PureCloudClientName);
+
+        var response = await client.PostAsJsonAsync("api/v2/learning/assignments/aggregates/query", body, _options.JsonSerializerOptions, cancellationToken);
 
         response.EnsureSuccessStatusCode();
 
-        return await response.Content.ReadFromJsonAsync<LearningAssignmentAggregateResponse>(_options, cancellationToken);
+        return await response.Content.ReadFromJsonAsync<LearningAssignmentAggregateResponse>(_options.JsonSerializerOptions, cancellationToken);
     }
 
     /// <inheritdoc />
     public async Task<LearningAssignmentBulkAddResponse> CreateLearningAssignmentsBulkaddAsync(IEnumerable<LearningAssignmentItem> body = null, CancellationToken cancellationToken = default)
     {
-        var response = await _httpClient.PostAsJsonAsync("api/v2/learning/assignments/bulkadd", body?.ToArray(), _options, cancellationToken);
+        var client = _httpClientFactory.CreateClient(PureCloudConstants.PureCloudClientName);
+
+        var response = await client.PostAsJsonAsync("api/v2/learning/assignments/bulkadd", body?.ToArray(), _options.JsonSerializerOptions, cancellationToken);
 
         response.EnsureSuccessStatusCode();
 
-        return await response.Content.ReadFromJsonAsync<LearningAssignmentBulkAddResponse>(_options, cancellationToken);
+        return await response.Content.ReadFromJsonAsync<LearningAssignmentBulkAddResponse>(_options.JsonSerializerOptions, cancellationToken);
     }
 
     /// <inheritdoc />
     public async Task<LearningAssignmentBulkRemoveResponse> CreateLearningAssignmentsBulkremoveAsync(IEnumerable<string> body = null, CancellationToken cancellationToken = default)
     {
-        var response = await _httpClient.PostAsJsonAsync("api/v2/learning/assignments/bulkremove", body?.ToArray(), _options, cancellationToken);
+        var client = _httpClientFactory.CreateClient(PureCloudConstants.PureCloudClientName);
+
+        var response = await client.PostAsJsonAsync("api/v2/learning/assignments/bulkremove", body?.ToArray(), _options.JsonSerializerOptions, cancellationToken);
 
         response.EnsureSuccessStatusCode();
 
-        return await response.Content.ReadFromJsonAsync<LearningAssignmentBulkRemoveResponse>(_options, cancellationToken);
+        return await response.Content.ReadFromJsonAsync<LearningAssignmentBulkRemoveResponse>(_options.JsonSerializerOptions, cancellationToken);
     }
 
     /// <inheritdoc />
     public async Task<LearningModuleJobResponse> CreateLearningModuleJobsAsync(string moduleId, LearningModuleJobRequest body, CancellationToken cancellationToken = default)
     {
         ArgumentException.ThrowIfNullOrEmpty(moduleId);
-
         ArgumentNullException.ThrowIfNull(body);
 
-        var response = await _httpClient.PostAsJsonAsync($"api/v2/learning/modules/{Uri.EscapeDataString(moduleId)}/jobs", body, _options, cancellationToken);
+        var client = _httpClientFactory.CreateClient(PureCloudConstants.PureCloudClientName);
+
+        var response = await client.PostAsJsonAsync($"api/v2/learning/modules/{Uri.EscapeDataString(moduleId)}/jobs", body, _options.JsonSerializerOptions, cancellationToken);
 
         response.EnsureSuccessStatusCode();
 
-        return await response.Content.ReadFromJsonAsync<LearningModuleJobResponse>(_options, cancellationToken);
+        return await response.Content.ReadFromJsonAsync<LearningModuleJobResponse>(_options.JsonSerializerOptions, cancellationToken);
     }
 
     /// <inheritdoc />
@@ -676,11 +743,13 @@ public sealed class LearningApi : ILearningApi
     {
         ArgumentException.ThrowIfNullOrEmpty(moduleId);
 
-        var response = await _httpClient.PostAsJsonAsync($"api/v2/learning/modules/{Uri.EscapeDataString(moduleId)}/publish", body, _options, cancellationToken);
+        var client = _httpClientFactory.CreateClient(PureCloudConstants.PureCloudClientName);
+
+        var response = await client.PostAsJsonAsync($"api/v2/learning/modules/{Uri.EscapeDataString(moduleId)}/publish", body, _options.JsonSerializerOptions, cancellationToken);
 
         response.EnsureSuccessStatusCode();
 
-        return await response.Content.ReadFromJsonAsync<LearningModulePublishResponse>(_options, cancellationToken);
+        return await response.Content.ReadFromJsonAsync<LearningModulePublishResponse>(_options.JsonSerializerOptions, cancellationToken);
     }
 
     /// <inheritdoc />
@@ -688,11 +757,13 @@ public sealed class LearningApi : ILearningApi
     {
         ArgumentNullException.ThrowIfNull(body);
 
-        var response = await _httpClient.PostAsJsonAsync("api/v2/learning/modules", body, _options, cancellationToken);
+        var client = _httpClientFactory.CreateClient(PureCloudConstants.PureCloudClientName);
+
+        var response = await client.PostAsJsonAsync("api/v2/learning/modules", body, _options.JsonSerializerOptions, cancellationToken);
 
         response.EnsureSuccessStatusCode();
 
-        return await response.Content.ReadFromJsonAsync<LearningModule>(_options, cancellationToken);
+        return await response.Content.ReadFromJsonAsync<LearningModule>(_options.JsonSerializerOptions, cancellationToken);
     }
 
     /// <inheritdoc />
@@ -712,13 +783,15 @@ public sealed class LearningApi : ILearningApi
             parameters.Add("pageNumber", pageNumber.Value.ToString());
         }
 
+        var client = _httpClientFactory.CreateClient(PureCloudConstants.PureCloudClientName);
+
         var uri = UriHelper.GetUri("api/v2/learning/rules/query", parameters);
 
-        var response = await _httpClient.PostAsJsonAsync(uri, body, _options, cancellationToken);
+        var response = await client.PostAsJsonAsync(uri, body, _options.JsonSerializerOptions, cancellationToken);
 
         response.EnsureSuccessStatusCode();
 
-        return await response.Content.ReadFromJsonAsync<LearningAssignmentUserListing>(_options, cancellationToken);
+        return await response.Content.ReadFromJsonAsync<LearningAssignmentUserListing>(_options.JsonSerializerOptions, cancellationToken);
     }
 
     /// <inheritdoc />
@@ -726,62 +799,69 @@ public sealed class LearningApi : ILearningApi
     {
         ArgumentNullException.ThrowIfNull(body);
 
-        var response = await _httpClient.PostAsJsonAsync("api/v2/learning/scheduleslots/query", body, _options, cancellationToken);
+        var client = _httpClientFactory.CreateClient(PureCloudConstants.PureCloudClientName);
+
+        var response = await client.PostAsJsonAsync("api/v2/learning/scheduleslots/query", body, _options.JsonSerializerOptions, cancellationToken);
 
         response.EnsureSuccessStatusCode();
 
-        return await response.Content.ReadFromJsonAsync<LearningScheduleSlotsQueryResponse>(_options, cancellationToken);
+        return await response.Content.ReadFromJsonAsync<LearningScheduleSlotsQueryResponse>(_options.JsonSerializerOptions, cancellationToken);
     }
 
     /// <inheritdoc />
     public async Task<LearningScormUploadResponse> CreateLearningScormAsync(LearningScormUploadRequest body = null, CancellationToken cancellationToken = default)
     {
-        var response = await _httpClient.PostAsJsonAsync("api/v2/learning/scorm", body, _options, cancellationToken);
+        var client = _httpClientFactory.CreateClient(PureCloudConstants.PureCloudClientName);
+
+        var response = await client.PostAsJsonAsync("api/v2/learning/scorm", body, _options.JsonSerializerOptions, cancellationToken);
 
         response.EnsureSuccessStatusCode();
 
-        return await response.Content.ReadFromJsonAsync<LearningScormUploadResponse>(_options, cancellationToken);
+        return await response.Content.ReadFromJsonAsync<LearningScormUploadResponse>(_options.JsonSerializerOptions, cancellationToken);
     }
 
     /// <inheritdoc />
     public async Task<LearningModule> UpdateLearningModuleAsync(string moduleId, LearningModuleRequest body, CancellationToken cancellationToken = default)
     {
         ArgumentException.ThrowIfNullOrEmpty(moduleId);
-
         ArgumentNullException.ThrowIfNull(body);
 
-        var response = await _httpClient.PutAsJsonAsync($"api/v2/learning/modules/{Uri.EscapeDataString(moduleId)}", body, _options, cancellationToken);
+        var client = _httpClientFactory.CreateClient(PureCloudConstants.PureCloudClientName);
+
+        var response = await client.PutAsJsonAsync($"api/v2/learning/modules/{Uri.EscapeDataString(moduleId)}", body, _options.JsonSerializerOptions, cancellationToken);
 
         response.EnsureSuccessStatusCode();
 
-        return await response.Content.ReadFromJsonAsync<LearningModule>(_options, cancellationToken);
+        return await response.Content.ReadFromJsonAsync<LearningModule>(_options.JsonSerializerOptions, cancellationToken);
     }
 
     /// <inheritdoc />
     public async Task<LearningModulePreviewUpdateResponse> UpdateLearningModulePreviewAsync(string moduleId, LearningModulePreviewUpdateRequest body, CancellationToken cancellationToken = default)
     {
         ArgumentException.ThrowIfNullOrEmpty(moduleId);
-
         ArgumentNullException.ThrowIfNull(body);
 
-        var response = await _httpClient.PutAsJsonAsync($"api/v2/learning/modules/{Uri.EscapeDataString(moduleId)}/preview", body, _options, cancellationToken);
+        var client = _httpClientFactory.CreateClient(PureCloudConstants.PureCloudClientName);
+
+        var response = await client.PutAsJsonAsync($"api/v2/learning/modules/{Uri.EscapeDataString(moduleId)}/preview", body, _options.JsonSerializerOptions, cancellationToken);
 
         response.EnsureSuccessStatusCode();
 
-        return await response.Content.ReadFromJsonAsync<LearningModulePreviewUpdateResponse>(_options, cancellationToken);
+        return await response.Content.ReadFromJsonAsync<LearningModulePreviewUpdateResponse>(_options.JsonSerializerOptions, cancellationToken);
     }
 
     /// <inheritdoc />
     public async Task<LearningModuleRule> UpdateLearningModuleRuleAsync(string moduleId, LearningModuleRule body, CancellationToken cancellationToken = default)
     {
         ArgumentException.ThrowIfNullOrEmpty(moduleId);
-
         ArgumentNullException.ThrowIfNull(body);
 
-        var response = await _httpClient.PutAsJsonAsync($"api/v2/learning/modules/{Uri.EscapeDataString(moduleId)}/rule", body, _options, cancellationToken);
+        var client = _httpClientFactory.CreateClient(PureCloudConstants.PureCloudClientName);
+
+        var response = await client.PutAsJsonAsync($"api/v2/learning/modules/{Uri.EscapeDataString(moduleId)}/rule", body, _options.JsonSerializerOptions, cancellationToken);
 
         response.EnsureSuccessStatusCode();
 
-        return await response.Content.ReadFromJsonAsync<LearningModuleRule>(_options, cancellationToken);
+        return await response.Content.ReadFromJsonAsync<LearningModuleRule>(_options.JsonSerializerOptions, cancellationToken);
     }
 }
