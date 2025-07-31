@@ -69,14 +69,20 @@ public sealed class SCIMApi : ISCIMApi
 
         var parameters = new NameValueCollection();
 
-        if (attributes?.Any() == true)
+        if (attributes != null)
         {
-            parameters.Add("attributes", string.Join(",", attributes));
+            foreach (var value in attributes)
+            {
+                parameters.Add("attributes", UriHelper.ParameterToString(value));
+            }
         }
 
-        if (excludedAttributes?.Any() == true)
+        if (excludedAttributes != null)
         {
-            parameters.Add("excludedAttributes", string.Join(",", excludedAttributes));
+            foreach (var value in excludedAttributes)
+            {
+                parameters.Add("excludedAttributes", UriHelper.ParameterToString(value));
+            }
         }
 
         var client = _httpClientFactory.CreateClient(PureCloudConstants.PureCloudClientName);
@@ -112,14 +118,20 @@ public sealed class SCIMApi : ISCIMApi
             parameters.Add("count", UriHelper.ParameterToString(count.Value));
         }
 
-        if (attributes?.Any() == true)
+        if (attributes != null)
         {
-            parameters.Add("attributes", string.Join(",", attributes));
+            foreach (var value in attributes)
+            {
+                parameters.Add("attributes", UriHelper.ParameterToString(value));
+            }
         }
 
-        if (excludedAttributes?.Any() == true)
+        if (excludedAttributes != null)
         {
-            parameters.Add("excludedAttributes", string.Join(",", excludedAttributes));
+            foreach (var value in excludedAttributes)
+            {
+                parameters.Add("excludedAttributes", UriHelper.ParameterToString(value));
+            }
         }
 
         if (!string.IsNullOrEmpty(filter))
@@ -225,14 +237,20 @@ public sealed class SCIMApi : ISCIMApi
 
         var parameters = new NameValueCollection();
 
-        if (attributes?.Any() == true)
+        if (attributes != null)
         {
-            parameters.Add("attributes", string.Join(",", attributes));
+            foreach (var value in attributes)
+            {
+                parameters.Add("attributes", UriHelper.ParameterToString(value));
+            }
         }
 
-        if (excludedAttributes?.Any() == true)
+        if (excludedAttributes != null)
         {
-            parameters.Add("excludedAttributes", string.Join(",", excludedAttributes));
+            foreach (var value in excludedAttributes)
+            {
+                parameters.Add("excludedAttributes", UriHelper.ParameterToString(value));
+            }
         }
 
         var client = _httpClientFactory.CreateClient(PureCloudConstants.PureCloudClientName);
@@ -268,14 +286,20 @@ public sealed class SCIMApi : ISCIMApi
             parameters.Add("count", UriHelper.ParameterToString(count.Value));
         }
 
-        if (attributes?.Any() == true)
+        if (attributes != null)
         {
-            parameters.Add("attributes", string.Join(",", attributes));
+            foreach (var value in attributes)
+            {
+                parameters.Add("attributes", UriHelper.ParameterToString(value));
+            }
         }
 
-        if (excludedAttributes?.Any() == true)
+        if (excludedAttributes != null)
         {
-            parameters.Add("excludedAttributes", string.Join(",", excludedAttributes));
+            foreach (var value in excludedAttributes)
+            {
+                parameters.Add("excludedAttributes", UriHelper.ParameterToString(value));
+            }
         }
 
         if (!string.IsNullOrEmpty(filter))
@@ -301,14 +325,20 @@ public sealed class SCIMApi : ISCIMApi
 
         var parameters = new NameValueCollection();
 
-        if (attributes?.Any() == true)
+        if (attributes != null)
         {
-            parameters.Add("attributes", string.Join(",", attributes));
+            foreach (var value in attributes)
+            {
+                parameters.Add("attributes", UriHelper.ParameterToString(value));
+            }
         }
 
-        if (excludedAttributes?.Any() == true)
+        if (excludedAttributes != null)
         {
-            parameters.Add("excludedAttributes", string.Join(",", excludedAttributes));
+            foreach (var value in excludedAttributes)
+            {
+                parameters.Add("excludedAttributes", UriHelper.ParameterToString(value));
+            }
         }
 
         var client = _httpClientFactory.CreateClient(PureCloudConstants.PureCloudClientName);
@@ -348,14 +378,20 @@ public sealed class SCIMApi : ISCIMApi
             parameters.Add("count", UriHelper.ParameterToString(count.Value));
         }
 
-        if (attributes?.Any() == true)
+        if (attributes != null)
         {
-            parameters.Add("attributes", string.Join(",", attributes));
+            foreach (var value in attributes)
+            {
+                parameters.Add("attributes", UriHelper.ParameterToString(value));
+            }
         }
 
-        if (excludedAttributes?.Any() == true)
+        if (excludedAttributes != null)
         {
-            parameters.Add("excludedAttributes", string.Join(",", excludedAttributes));
+            foreach (var value in excludedAttributes)
+            {
+                parameters.Add("excludedAttributes", UriHelper.ParameterToString(value));
+            }
         }
 
         var client = _httpClientFactory.CreateClient(PureCloudConstants.PureCloudClientName);
@@ -456,14 +492,20 @@ public sealed class SCIMApi : ISCIMApi
 
         var parameters = new NameValueCollection();
 
-        if (attributes?.Any() == true)
+        if (attributes != null)
         {
-            parameters.Add("attributes", string.Join(",", attributes));
+            foreach (var value in attributes)
+            {
+                parameters.Add("attributes", UriHelper.ParameterToString(value));
+            }
         }
 
-        if (excludedAttributes?.Any() == true)
+        if (excludedAttributes != null)
         {
-            parameters.Add("excludedAttributes", string.Join(",", excludedAttributes));
+            foreach (var value in excludedAttributes)
+            {
+                parameters.Add("excludedAttributes", UriHelper.ParameterToString(value));
+            }
         }
 
         var client = _httpClientFactory.CreateClient(PureCloudConstants.PureCloudClientName);
@@ -499,14 +541,20 @@ public sealed class SCIMApi : ISCIMApi
             parameters.Add("count", UriHelper.ParameterToString(count.Value));
         }
 
-        if (attributes?.Any() == true)
+        if (attributes != null)
         {
-            parameters.Add("attributes", string.Join(",", attributes));
+            foreach (var value in attributes)
+            {
+                parameters.Add("attributes", UriHelper.ParameterToString(value));
+            }
         }
 
-        if (excludedAttributes?.Any() == true)
+        if (excludedAttributes != null)
         {
-            parameters.Add("excludedAttributes", string.Join(",", excludedAttributes));
+            foreach (var value in excludedAttributes)
+            {
+                parameters.Add("excludedAttributes", UriHelper.ParameterToString(value));
+            }
         }
 
         if (!string.IsNullOrEmpty(filter))
