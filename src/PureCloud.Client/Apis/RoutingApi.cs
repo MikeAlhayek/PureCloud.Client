@@ -22,7 +22,7 @@ public sealed class RoutingApi : IRoutingApi
     }
 
     /// <inheritdoc />
-    public async Task DeleteRoutingAssessmentAsync(string assessmentId, CancellationToken cancellationToken = default)
+    public async Task<bool> DeleteRoutingAssessmentAsync(string assessmentId, CancellationToken cancellationToken = default)
     {
         ArgumentException.ThrowIfNullOrEmpty(assessmentId);
 
@@ -31,6 +31,8 @@ public sealed class RoutingApi : IRoutingApi
         var response = await client.DeleteAsync($"api/v2/routing/assessments/{assessmentId}", cancellationToken);
 
         response.EnsureSuccessStatusCode();
+
+        return response.IsSuccessStatusCode;
     }
 
     /// <inheritdoc />
@@ -44,7 +46,7 @@ public sealed class RoutingApi : IRoutingApi
 
         response.EnsureSuccessStatusCode();
 
-        return await response.Content.ReadFromJsonAsync<BenefitAssessment>(_options.JsonSerializerOptions, cancellationToken);
+        return await response.Content.ReadFromJsonAsync<BenefitAssessment>(_options, cancellationToken);
     }
 
     /// <inheritdoc />
@@ -58,7 +60,7 @@ public sealed class RoutingApi : IRoutingApi
 
         response.EnsureSuccessStatusCode();
 
-        return await response.Content.ReadFromJsonAsync<InboundDomain>(_options.JsonSerializerOptions, cancellationToken);
+        return await response.Content.ReadFromJsonAsync<InboundDomain>(_options, cancellationToken);
     }
 
     /// <inheritdoc />
@@ -66,10 +68,10 @@ public sealed class RoutingApi : IRoutingApi
     {
         var client = _httpClientFactory.CreateClient(PureCloudConstants.PureCloudClientName);
 
-        var response = await client.PostAsJsonAsync($"api/v2/routing/assessments", body, _options.JsonSerializerOptions, cancellationToken);
+        var response = await client.PostAsJsonAsync($"api/v2/routing/assessments", body, _options, cancellationToken);
 
         response.EnsureSuccessStatusCode();
 
-        return await response.Content.ReadFromJsonAsync<BenefitAssessment>(_options.JsonSerializerOptions, cancellationToken);
+        return await response.Content.ReadFromJsonAsync<BenefitAssessment>(_options, cancellationToken);
     }
 }
