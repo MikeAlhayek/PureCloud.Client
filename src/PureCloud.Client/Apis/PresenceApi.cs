@@ -13,13 +13,13 @@ namespace PureCloud.Client.Apis;
 
 public sealed class PresenceApi : IPresenceApi
 {
-    private readonly HttpClient _httpClient;
-    private readonly JsonSerializerOptions _options;
+    private readonly IHttpClientFactory _httpClientFactory;
+    private readonly PureCloudJsonSerializerOptions _options;
 
     public PresenceApi(IHttpClientFactory httpClientFactory, IOptions<PureCloudJsonSerializerOptions> options)
     {
-        _httpClient = httpClientFactory.CreateClient(PureCloudConstants.PureCloudClientName);
-        _options = options.Value.JsonSerializerOptions;
+        _httpClientFactory = httpClientFactory;
+        _options = options.Value;
     }
 
     /// <inheritdoc />
@@ -27,9 +27,9 @@ public sealed class PresenceApi : IPresenceApi
     {
         ArgumentException.ThrowIfNullOrEmpty(definitionId);
 
-        var uri = UriHelper.GetUri($"api/v2/presence/definitions/{Uri.EscapeDataString(definitionId)}", null);
+        var client = _httpClientFactory.CreateClient(PureCloudConstants.PureCloudClientName);
 
-        var response = await _httpClient.DeleteAsync(uri, cancellationToken);
+        var response = await client.DeleteAsync($"api/v2/presence/definitions/{Uri.EscapeDataString(definitionId)}", cancellationToken);
 
         return response.IsSuccessStatusCode;
     }
@@ -39,9 +39,9 @@ public sealed class PresenceApi : IPresenceApi
     {
         ArgumentException.ThrowIfNullOrEmpty(sourceId);
 
-        var uri = UriHelper.GetUri($"api/v2/presence/sources/{Uri.EscapeDataString(sourceId)}", null);
+        var client = _httpClientFactory.CreateClient(PureCloudConstants.PureCloudClientName);
 
-        var response = await _httpClient.DeleteAsync(uri, cancellationToken);
+        var response = await client.DeleteAsync($"api/v2/presence/sources/{Uri.EscapeDataString(sourceId)}", cancellationToken);
 
         return response.IsSuccessStatusCode;
     }
@@ -52,9 +52,9 @@ public sealed class PresenceApi : IPresenceApi
     {
         ArgumentException.ThrowIfNullOrEmpty(presenceId);
 
-        var uri = UriHelper.GetUri($"api/v2/presencedefinitions/{Uri.EscapeDataString(presenceId)}", null);
+        var client = _httpClientFactory.CreateClient(PureCloudConstants.PureCloudClientName);
 
-        var response = await _httpClient.DeleteAsync(uri, cancellationToken);
+        var response = await client.DeleteAsync($"api/v2/presencedefinitions/{Uri.EscapeDataString(presenceId)}", cancellationToken);
 
         return response.IsSuccessStatusCode;
     }
@@ -72,11 +72,13 @@ public sealed class PresenceApi : IPresenceApi
 
         var uri = UriHelper.GetUri($"api/v2/presence/definitions/{Uri.EscapeDataString(definitionId)}", parameters);
 
-        var response = await _httpClient.GetAsync(uri, cancellationToken);
+        var client = _httpClientFactory.CreateClient(PureCloudConstants.PureCloudClientName);
+
+        var response = await client.GetAsync(uri, cancellationToken);
 
         response.EnsureSuccessStatusCode();
 
-        return await response.Content.ReadFromJsonAsync<OrganizationPresenceDefinition>(_options, cancellationToken);
+        return await response.Content.ReadFromJsonAsync<OrganizationPresenceDefinition>(_options.JsonSerializerOptions, cancellationToken);
     }
 
     /// <inheritdoc />
@@ -101,23 +103,25 @@ public sealed class PresenceApi : IPresenceApi
 
         var uri = UriHelper.GetUri("api/v2/presence/definitions", parameters);
 
-        var response = await _httpClient.GetAsync(uri, cancellationToken);
+        var client = _httpClientFactory.CreateClient(PureCloudConstants.PureCloudClientName);
+
+        var response = await client.GetAsync(uri, cancellationToken);
 
         response.EnsureSuccessStatusCode();
 
-        return await response.Content.ReadFromJsonAsync<OrganizationPresenceDefinitionEntityListing>(_options, cancellationToken);
+        return await response.Content.ReadFromJsonAsync<OrganizationPresenceDefinitionEntityListing>(_options.JsonSerializerOptions, cancellationToken);
     }
 
     /// <inheritdoc />
     public async Task<PresenceSettings> GetPresenceSettingsAsync(CancellationToken cancellationToken = default)
     {
-        var uri = UriHelper.GetUri("api/v2/presence/settings", null);
+        var client = _httpClientFactory.CreateClient(PureCloudConstants.PureCloudClientName);
 
-        var response = await _httpClient.GetAsync(uri, cancellationToken);
+        var response = await client.GetAsync("api/v2/presence/settings", cancellationToken);
 
         response.EnsureSuccessStatusCode();
 
-        return await response.Content.ReadFromJsonAsync<PresenceSettings>(_options, cancellationToken);
+        return await response.Content.ReadFromJsonAsync<PresenceSettings>(_options.JsonSerializerOptions, cancellationToken);
     }
 
     /// <inheritdoc />
@@ -125,13 +129,13 @@ public sealed class PresenceApi : IPresenceApi
     {
         ArgumentException.ThrowIfNullOrEmpty(sourceId);
 
-        var uri = UriHelper.GetUri($"api/v2/presence/sources/{Uri.EscapeDataString(sourceId)}", null);
+        var client = _httpClientFactory.CreateClient(PureCloudConstants.PureCloudClientName);
 
-        var response = await _httpClient.GetAsync(uri, cancellationToken);
+        var response = await client.GetAsync($"api/v2/presence/sources/{Uri.EscapeDataString(sourceId)}", cancellationToken);
 
         response.EnsureSuccessStatusCode();
 
-        return await response.Content.ReadFromJsonAsync<Source>(_options, cancellationToken);
+        return await response.Content.ReadFromJsonAsync<Source>(_options.JsonSerializerOptions, cancellationToken);
     }
 
     /// <inheritdoc />
@@ -145,11 +149,13 @@ public sealed class PresenceApi : IPresenceApi
 
         var uri = UriHelper.GetUri("api/v2/presence/sources", parameters);
 
-        var response = await _httpClient.GetAsync(uri, cancellationToken);
+        var client = _httpClientFactory.CreateClient(PureCloudConstants.PureCloudClientName);
+
+        var response = await client.GetAsync(uri, cancellationToken);
 
         response.EnsureSuccessStatusCode();
 
-        return await response.Content.ReadFromJsonAsync<SourceEntityListing>(_options, cancellationToken);
+        return await response.Content.ReadFromJsonAsync<SourceEntityListing>(_options.JsonSerializerOptions, cancellationToken);
     }
 
     /// <inheritdoc />
@@ -157,13 +163,13 @@ public sealed class PresenceApi : IPresenceApi
     {
         ArgumentException.ThrowIfNullOrEmpty(userId);
 
-        var uri = UriHelper.GetUri($"api/v2/presence/users/{Uri.EscapeDataString(userId)}/primarysource", null);
+        var client = _httpClientFactory.CreateClient(PureCloudConstants.PureCloudClientName);
 
-        var response = await _httpClient.GetAsync(uri, cancellationToken);
+        var response = await client.GetAsync($"api/v2/presence/users/{Uri.EscapeDataString(userId)}/primarysource", cancellationToken);
 
         response.EnsureSuccessStatusCode();
 
-        return await response.Content.ReadFromJsonAsync<UserPrimarySource>(_options, cancellationToken);
+        return await response.Content.ReadFromJsonAsync<UserPrimarySource>(_options.JsonSerializerOptions, cancellationToken);
     }
 
     /// <inheritdoc />
@@ -180,11 +186,13 @@ public sealed class PresenceApi : IPresenceApi
 
         var uri = UriHelper.GetUri($"api/v2/presencedefinitions/{Uri.EscapeDataString(presenceId)}", parameters);
 
-        var response = await _httpClient.GetAsync(uri, cancellationToken);
+        var client = _httpClientFactory.CreateClient(PureCloudConstants.PureCloudClientName);
+
+        var response = await client.GetAsync(uri, cancellationToken);
 
         response.EnsureSuccessStatusCode();
 
-        return await response.Content.ReadFromJsonAsync<OrganizationPresence>(_options, cancellationToken);
+        return await response.Content.ReadFromJsonAsync<OrganizationPresence>(_options.JsonSerializerOptions, cancellationToken);
     }
 
     /// <inheritdoc />
@@ -211,21 +219,25 @@ public sealed class PresenceApi : IPresenceApi
 
         var uri = UriHelper.GetUri("api/v2/presencedefinitions", parameters);
 
-        var response = await _httpClient.GetAsync(uri, cancellationToken);
+        var client = _httpClientFactory.CreateClient(PureCloudConstants.PureCloudClientName);
+
+        var response = await client.GetAsync(uri, cancellationToken);
 
         response.EnsureSuccessStatusCode();
 
-        return await response.Content.ReadFromJsonAsync<OrganizationPresenceEntityListing>(_options, cancellationToken);
+        return await response.Content.ReadFromJsonAsync<OrganizationPresenceEntityListing>(_options.JsonSerializerOptions, cancellationToken);
     }
 
     /// <inheritdoc />
     public async Task<IEnumerable<SystemPresence>> GetSystemPresencesAsync(CancellationToken cancellationToken = default)
     {
-        var response = await _httpClient.GetAsync("api/v2/systempresences", cancellationToken);
+        var client = _httpClientFactory.CreateClient(PureCloudConstants.PureCloudClientName);
+
+        var response = await client.GetAsync("api/v2/systempresences", cancellationToken);
 
         response.EnsureSuccessStatusCode();
 
-        return await response.Content.ReadFromJsonAsync<IEnumerable<SystemPresence>>(_options, cancellationToken);
+        return await response.Content.ReadFromJsonAsync<IEnumerable<SystemPresence>>(_options.JsonSerializerOptions, cancellationToken);
     }
 
     /// <inheritdoc />
@@ -234,13 +246,13 @@ public sealed class PresenceApi : IPresenceApi
         ArgumentException.ThrowIfNullOrEmpty(userId);
         ArgumentException.ThrowIfNullOrEmpty(sourceId);
 
-        var uri = UriHelper.GetUri($"api/v2/users/{Uri.EscapeDataString(userId)}/presences/{Uri.EscapeDataString(sourceId)}", null);
+        var client = _httpClientFactory.CreateClient(PureCloudConstants.PureCloudClientName);
 
-        var response = await _httpClient.GetAsync(uri, cancellationToken);
+        var response = await client.GetAsync($"api/v2/users/{Uri.EscapeDataString(userId)}/presences/{Uri.EscapeDataString(sourceId)}", cancellationToken);
 
         response.EnsureSuccessStatusCode();
 
-        return await response.Content.ReadFromJsonAsync<UserPresence>(_options, cancellationToken);
+        return await response.Content.ReadFromJsonAsync<UserPresence>(_options.JsonSerializerOptions, cancellationToken);
     }
 
     /// <inheritdoc />
@@ -248,13 +260,13 @@ public sealed class PresenceApi : IPresenceApi
     {
         ArgumentException.ThrowIfNullOrEmpty(userId);
 
-        var uri = UriHelper.GetUri($"api/v2/users/{Uri.EscapeDataString(userId)}/presences/purecloud", null);
+        var client = _httpClientFactory.CreateClient(PureCloudConstants.PureCloudClientName);
 
-        var response = await _httpClient.GetAsync(uri, cancellationToken);
+        var response = await client.GetAsync($"api/v2/users/{Uri.EscapeDataString(userId)}/presences/purecloud", cancellationToken);
 
         response.EnsureSuccessStatusCode();
 
-        return await response.Content.ReadFromJsonAsync<UserPresence>(_options, cancellationToken);
+        return await response.Content.ReadFromJsonAsync<UserPresence>(_options.JsonSerializerOptions, cancellationToken);
     }
 
     /// <inheritdoc />
@@ -273,11 +285,13 @@ public sealed class PresenceApi : IPresenceApi
 
         var uri = UriHelper.GetUri($"api/v2/users/presences/{Uri.EscapeDataString(sourceId)}/bulk", parameters);
 
-        var response = await _httpClient.GetAsync(uri, cancellationToken);
+        var client = _httpClientFactory.CreateClient(PureCloudConstants.PureCloudClientName);
+
+        var response = await client.GetAsync(uri, cancellationToken);
 
         response.EnsureSuccessStatusCode();
 
-        return await response.Content.ReadFromJsonAsync<IEnumerable<UcUserPresence>>(_options, cancellationToken);
+        return await response.Content.ReadFromJsonAsync<IEnumerable<UcUserPresence>>(_options.JsonSerializerOptions, cancellationToken);
     }
 
     /// <inheritdoc />
@@ -294,11 +308,13 @@ public sealed class PresenceApi : IPresenceApi
 
         var uri = UriHelper.GetUri("api/v2/users/presences/purecloud/bulk", parameters);
 
-        var response = await _httpClient.GetAsync(uri, cancellationToken);
+        var client = _httpClientFactory.CreateClient(PureCloudConstants.PureCloudClientName);
+
+        var response = await client.GetAsync(uri, cancellationToken);
 
         response.EnsureSuccessStatusCode();
 
-        return await response.Content.ReadFromJsonAsync<IEnumerable<UcUserPresence>>(_options, cancellationToken);
+        return await response.Content.ReadFromJsonAsync<IEnumerable<UcUserPresence>>(_options.JsonSerializerOptions, cancellationToken);
     }
 
     /// <inheritdoc />
@@ -308,13 +324,13 @@ public sealed class PresenceApi : IPresenceApi
         ArgumentException.ThrowIfNullOrEmpty(sourceId);
         ArgumentNullException.ThrowIfNull(body);
 
-        var uri = UriHelper.GetUri($"api/v2/users/{Uri.EscapeDataString(userId)}/presences/{Uri.EscapeDataString(sourceId)}", null);
+        var client = _httpClientFactory.CreateClient(PureCloudConstants.PureCloudClientName);
 
-        var response = await _httpClient.PatchAsJsonAsync(uri, body, _options, cancellationToken);
+        var response = await client.PatchAsJsonAsync($"api/v2/users/{Uri.EscapeDataString(userId)}/presences/{Uri.EscapeDataString(sourceId)}", body, _options.JsonSerializerOptions, cancellationToken);
 
         response.EnsureSuccessStatusCode();
 
-        return await response.Content.ReadFromJsonAsync<UserPresence>(_options, cancellationToken);
+        return await response.Content.ReadFromJsonAsync<UserPresence>(_options.JsonSerializerOptions, cancellationToken);
     }
 
     /// <inheritdoc />
@@ -323,13 +339,13 @@ public sealed class PresenceApi : IPresenceApi
         ArgumentException.ThrowIfNullOrEmpty(userId);
         ArgumentNullException.ThrowIfNull(body);
 
-        var uri = UriHelper.GetUri($"api/v2/users/{Uri.EscapeDataString(userId)}/presences/purecloud", null);
+        var client = _httpClientFactory.CreateClient(PureCloudConstants.PureCloudClientName);
 
-        var response = await _httpClient.PatchAsJsonAsync(uri, body, _options, cancellationToken);
+        var response = await client.PatchAsJsonAsync($"api/v2/users/{Uri.EscapeDataString(userId)}/presences/purecloud", body, _options.JsonSerializerOptions, cancellationToken);
 
         response.EnsureSuccessStatusCode();
 
-        return await response.Content.ReadFromJsonAsync<UserPresence>(_options, cancellationToken);
+        return await response.Content.ReadFromJsonAsync<UserPresence>(_options.JsonSerializerOptions, cancellationToken);
     }
 
     /// <inheritdoc />
@@ -337,13 +353,13 @@ public sealed class PresenceApi : IPresenceApi
     {
         ArgumentNullException.ThrowIfNull(body);
 
-        var uri = UriHelper.GetUri("api/v2/presence/definitions", null);
+        var client = _httpClientFactory.CreateClient(PureCloudConstants.PureCloudClientName);
 
-        var response = await _httpClient.PostAsJsonAsync(uri, body, _options, cancellationToken);
+        var response = await client.PostAsJsonAsync("api/v2/presence/definitions", body, _options.JsonSerializerOptions, cancellationToken);
 
         response.EnsureSuccessStatusCode();
 
-        return await response.Content.ReadFromJsonAsync<OrganizationPresenceDefinition>(_options, cancellationToken);
+        return await response.Content.ReadFromJsonAsync<OrganizationPresenceDefinition>(_options.JsonSerializerOptions, cancellationToken);
     }
 
     /// <inheritdoc />
@@ -351,13 +367,13 @@ public sealed class PresenceApi : IPresenceApi
     {
         ArgumentNullException.ThrowIfNull(body);
 
-        var uri = UriHelper.GetUri("api/v2/presence/sources", null);
+        var client = _httpClientFactory.CreateClient(PureCloudConstants.PureCloudClientName);
 
-        var response = await _httpClient.PostAsJsonAsync(uri, body, _options, cancellationToken);
+        var response = await client.PostAsJsonAsync("api/v2/presence/sources", body, _options.JsonSerializerOptions, cancellationToken);
 
         response.EnsureSuccessStatusCode();
 
-        return await response.Content.ReadFromJsonAsync<Source>(_options, cancellationToken);
+        return await response.Content.ReadFromJsonAsync<Source>(_options.JsonSerializerOptions, cancellationToken);
     }
 
     /// <inheritdoc />
@@ -366,13 +382,13 @@ public sealed class PresenceApi : IPresenceApi
     {
         ArgumentNullException.ThrowIfNull(body);
 
-        var uri = UriHelper.GetUri("api/v2/presencedefinitions", null);
+        var client = _httpClientFactory.CreateClient(PureCloudConstants.PureCloudClientName);
 
-        var response = await _httpClient.PostAsJsonAsync(uri, body, _options, cancellationToken);
+        var response = await client.PostAsJsonAsync("api/v2/presencedefinitions", body, _options.JsonSerializerOptions, cancellationToken);
 
         response.EnsureSuccessStatusCode();
 
-        return await response.Content.ReadFromJsonAsync<OrganizationPresence>(_options, cancellationToken);
+        return await response.Content.ReadFromJsonAsync<OrganizationPresence>(_options.JsonSerializerOptions, cancellationToken);
     }
 
     /// <inheritdoc />
@@ -381,13 +397,13 @@ public sealed class PresenceApi : IPresenceApi
         ArgumentException.ThrowIfNullOrEmpty(definitionId);
         ArgumentNullException.ThrowIfNull(body);
 
-        var uri = UriHelper.GetUri($"api/v2/presence/definitions/{Uri.EscapeDataString(definitionId)}", null);
+        var client = _httpClientFactory.CreateClient(PureCloudConstants.PureCloudClientName);
 
-        var response = await _httpClient.PutAsJsonAsync(uri, body, _options, cancellationToken);
+        var response = await client.PutAsJsonAsync($"api/v2/presence/definitions/{Uri.EscapeDataString(definitionId)}", body, _options.JsonSerializerOptions, cancellationToken);
 
         response.EnsureSuccessStatusCode();
 
-        return await response.Content.ReadFromJsonAsync<OrganizationPresenceDefinition>(_options, cancellationToken);
+        return await response.Content.ReadFromJsonAsync<OrganizationPresenceDefinition>(_options.JsonSerializerOptions, cancellationToken);
     }
 
     /// <inheritdoc />
@@ -395,13 +411,13 @@ public sealed class PresenceApi : IPresenceApi
     {
         ArgumentNullException.ThrowIfNull(body);
 
-        var uri = UriHelper.GetUri("api/v2/presence/settings", null);
+        var client = _httpClientFactory.CreateClient(PureCloudConstants.PureCloudClientName);
 
-        var response = await _httpClient.PutAsJsonAsync(uri, body, _options, cancellationToken);
+        var response = await client.PutAsJsonAsync("api/v2/presence/settings", body, _options.JsonSerializerOptions, cancellationToken);
 
         response.EnsureSuccessStatusCode();
 
-        return await response.Content.ReadFromJsonAsync<PresenceSettings>(_options, cancellationToken);
+        return await response.Content.ReadFromJsonAsync<PresenceSettings>(_options.JsonSerializerOptions, cancellationToken);
     }
 
     /// <inheritdoc />
@@ -410,13 +426,13 @@ public sealed class PresenceApi : IPresenceApi
         ArgumentException.ThrowIfNullOrEmpty(sourceId);
         ArgumentNullException.ThrowIfNull(body);
 
-        var uri = UriHelper.GetUri($"api/v2/presence/sources/{Uri.EscapeDataString(sourceId)}", null);
+        var client = _httpClientFactory.CreateClient(PureCloudConstants.PureCloudClientName);
 
-        var response = await _httpClient.PutAsJsonAsync(uri, body, _options, cancellationToken);
+        var response = await client.PutAsJsonAsync($"api/v2/presence/sources/{Uri.EscapeDataString(sourceId)}", body, _options.JsonSerializerOptions, cancellationToken);
 
         response.EnsureSuccessStatusCode();
 
-        return await response.Content.ReadFromJsonAsync<Source>(_options, cancellationToken);
+        return await response.Content.ReadFromJsonAsync<Source>(_options.JsonSerializerOptions, cancellationToken);
     }
 
     /// <inheritdoc />
@@ -425,13 +441,13 @@ public sealed class PresenceApi : IPresenceApi
         ArgumentException.ThrowIfNullOrEmpty(userId);
         ArgumentNullException.ThrowIfNull(body);
 
-        var uri = UriHelper.GetUri($"api/v2/presence/users/{Uri.EscapeDataString(userId)}/primarysource", null);
+        var client = _httpClientFactory.CreateClient(PureCloudConstants.PureCloudClientName);
 
-        var response = await _httpClient.PutAsJsonAsync(uri, body, _options, cancellationToken);
+        var response = await client.PutAsJsonAsync($"api/v2/presence/users/{Uri.EscapeDataString(userId)}/primarysource", body, _options.JsonSerializerOptions, cancellationToken);
 
         response.EnsureSuccessStatusCode();
 
-        return await response.Content.ReadFromJsonAsync<UserPrimarySource>(_options, cancellationToken);
+        return await response.Content.ReadFromJsonAsync<UserPrimarySource>(_options.JsonSerializerOptions, cancellationToken);
     }
 
     /// <inheritdoc />
@@ -441,13 +457,13 @@ public sealed class PresenceApi : IPresenceApi
         ArgumentException.ThrowIfNullOrEmpty(presenceId);
         ArgumentNullException.ThrowIfNull(body);
 
-        var uri = UriHelper.GetUri($"api/v2/presencedefinitions/{Uri.EscapeDataString(presenceId)}", null);
+        var client = _httpClientFactory.CreateClient(PureCloudConstants.PureCloudClientName);
 
-        var response = await _httpClient.PutAsJsonAsync(uri, body, _options, cancellationToken);
+        var response = await client.PutAsJsonAsync($"api/v2/presencedefinitions/{Uri.EscapeDataString(presenceId)}", body, _options.JsonSerializerOptions, cancellationToken);
 
         response.EnsureSuccessStatusCode();
 
-        return await response.Content.ReadFromJsonAsync<OrganizationPresence>(_options, cancellationToken);
+        return await response.Content.ReadFromJsonAsync<OrganizationPresence>(_options.JsonSerializerOptions, cancellationToken);
     }
 
     /// <inheritdoc />
@@ -455,12 +471,12 @@ public sealed class PresenceApi : IPresenceApi
     {
         ArgumentNullException.ThrowIfNull(body);
 
-        var uri = UriHelper.GetUri("api/v2/users/presences/bulk", null);
+        var client = _httpClientFactory.CreateClient(PureCloudConstants.PureCloudClientName);
 
-        var response = await _httpClient.PutAsJsonAsync(uri, body, _options, cancellationToken);
+        var response = await client.PutAsJsonAsync("api/v2/users/presences/bulk", body, _options.JsonSerializerOptions, cancellationToken);
 
         response.EnsureSuccessStatusCode();
 
-        return await response.Content.ReadFromJsonAsync<IEnumerable<UserPresence>>(_options, cancellationToken);
+        return await response.Content.ReadFromJsonAsync<IEnumerable<UserPresence>>(_options.JsonSerializerOptions, cancellationToken);
     }
 }
