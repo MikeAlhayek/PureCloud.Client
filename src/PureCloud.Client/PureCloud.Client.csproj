@@ -3893,6 +3893,9 @@
     <Compile Include="Models\ScriptEntityListing.cs" />
     <Compile Include="Models\ExportScriptRequest.cs" />
     <Compile Include="Models\ExportScriptResponse.cs" />
+    <Compile Include="Models\ScriptVariablesResponse.cs" />
+    <Compile Include="Models\ImportScriptStatusResponse.cs" />
+    <Compile Include="Models\PublishScriptRequestData.cs" />
     <Compile Include="Models\SdkLibrary.cs" />
     <Compile Include="Models\Section.cs" />
     <Compile Include="Models\SecurityProfile.cs" />
