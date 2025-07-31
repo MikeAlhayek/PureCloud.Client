@@ -254,6 +254,8 @@
     <Compile Include="Models\ActionCertificate.Status.cs" />
     <Compile Include="Models\ActionCertificate.SigningAuthority.cs" />
     <Compile Include="Models\Certificate.cs" />
+    <Compile Include="Models\ClonedUser.cs" />
+    <Compile Include="Models\ClonedUserEntityListing.cs" />
     <Compile Include="Models\ActionConfig.cs" />
     <Compile Include="Models\ActionContractInput.cs" />
     <Compile Include="Models\ActionEntityListing.cs" />
@@ -4240,13 +4242,16 @@
     <Compile Include="Models\TrustedCertificateInfo.cs" />
     <Compile Include="Models\TrustedCertificates.cs" />
     <Compile Include="Models\TrusteeAuthorization.cs" />
+    <Compile Include="Models\TrusteeAuditQueryRequest.cs" />
     <Compile Include="Models\TrusteeBillingOverview.cs" />
     <Compile Include="Models\TrusteeBillingOverview.SubscriptionType.cs" />
+    <Compile Include="Models\TrusteeReferenceList.cs" />
     <Compile Include="Models\Trustor.cs" />
     <Compile Include="Models\QueueConversationEventTopicDisconnectReason.Type.cs" />
     <Compile Include="Models\QueueConversationEventTopicVoicemail.UploadStatus.cs" />
     <Compile Include="Models\QueueConversationEventTopicMessageType.cs" />
     <Compile Include="Models\TrustorEntityListing.cs" />
+    <Compile Include="Models\TrustorAuditQueryRequest.cs" />
     <Compile Include="Models\TtsEngineEntity.cs" />
     <Compile Include="Models\TtsEngineEntityListing.cs" />
     <Compile Include="Models\TtsSettings.cs" />
@@ -5078,10 +5083,14 @@
     <Compile Include="Models\TrustGroup.State.cs" />
     <Compile Include="Models\TrustGroup.Type.cs" />
     <Compile Include="Models\TrustGroup.Visibility.cs" />
+    <Compile Include="Models\TrustGroupEntityListing.cs" />
     <Compile Include="Models\TrustMemberCreate.cs" />
     <Compile Include="Models\TrustRequest.cs" />
     <Compile Include="Models\TrustRequestCreate.cs" />
     <Compile Include="Models\TrustUpdate.cs" />
+    <Compile Include="Models\TrustUser.cs" />
+    <Compile Include="Models\TrustUserDetails.cs" />
+    <Compile Include="Models\TrustUserEntityListing.cs" />
 
     <Compile Include="Models\CreateTriggerRequest.cs" />
     <Compile Include="Models\MatchCriteria.cs" />
