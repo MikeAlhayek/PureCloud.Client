@@ -129,15 +129,47 @@ public interface IRoutingApi
     /// <returns>The updated inbound route</returns>
     Task<InboundRoute> UpdateRoutingEmailDomainRouteAsync(string domainName, string routeId, InboundRoute body, CancellationToken cancellationToken = default);
 
-    // TODO: Add remaining ~295 methods after creating required models:
-    // - Delete methods: ~18 more (DeleteRoutingLanguage, DeleteRoutingQueue, DeleteRoutingSkill, etc.)
-    // - Get methods: ~80 more (GetRoutingLanguage, GetRoutingLanguages, GetRoutingQueues, GetRoutingSkills, etc.) 
+    // Additional queue operations - requiring Queue and QueueEntityListing models
+    // TODO: Implement after creating required models:
+    // Task<Queue> GetRoutingQueueAsync(string queueId, CancellationToken cancellationToken = default);
+    // Task<QueueEntityListing> GetRoutingQueuesAsync(...);
+
+    /// <summary>
+    /// Delete a queue member.
+    /// </summary>
+    /// <param name="queueId">Queue ID</param>
+    /// <param name="memberId">Member ID</param>
+    /// <param name="cancellationToken">Cancellation token</param>
+    /// <returns>True if the operation was successful</returns>
+    Task<bool> DeleteRoutingQueueMemberAsync(string queueId, string memberId, CancellationToken cancellationToken = default);
+
+    /// <summary>
+    /// Delete a queue user.
+    /// </summary>
+    /// <param name="queueId">Queue ID</param>
+    /// <param name="memberId">Member ID</param>
+    /// <param name="cancellationToken">Cancellation token</param>
+    /// <returns>True if the operation was successful</returns>
+    Task<bool> DeleteRoutingQueueUserAsync(string queueId, string memberId, CancellationToken cancellationToken = default);
+
+    /// <summary>
+    /// Delete a queue wrapup code.
+    /// </summary>
+    /// <param name="queueId">Queue ID</param>
+    /// <param name="codeId">Code ID</param>
+    /// <param name="cancellationToken">Cancellation token</param>
+    /// <returns>True if the operation was successful</returns>
+    Task<bool> DeleteRoutingQueueWrapupcodeAsync(string queueId, string codeId, CancellationToken cancellationToken = default);
+
+    // TODO: Add remaining ~290 methods after creating required models:
+    // - Delete methods: ~15 more (DeleteRoutingPredictor, DeleteRoutingSettings, etc.)
+    // - Get methods: ~75 more (GetRoutingLanguage, GetRoutingLanguages, GetRoutingSkills, etc.) 
     // - Create methods: ~20 more (CreateRoutingLanguage, CreateRoutingQueue, CreateRoutingSkill, etc.)
     // - Update methods: ~21 more (UpdateRoutingLanguage, UpdateRoutingQueue, UpdateRoutingSkill, etc.)
     // 
     // Required models to create or fix:
     // - Language, LanguageEntityListing (exists but not building correctly)
-    // - Queue, QueueEntityListing, QueueRequest, CreateQueueRequest
+    // - QueueRequest, CreateQueueRequest
     // - RoutingSkill, SkillEntityListing
     // - SkillGroup, SkillGroupEntityListing  
     // - WrapupCode, WrapupCodeEntityListing
