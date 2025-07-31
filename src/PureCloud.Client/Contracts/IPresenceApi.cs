@@ -108,7 +108,7 @@ public interface IPresenceApi
     /// </summary>
     /// <param name="cancellationToken">Cancellation token</param>
     /// <returns>List of system presences</returns>
-    Task<IEnumerable<SystemPresence>> GetSystemPresencesAsync(CancellationToken cancellationToken = default);
+    Task<SystemPresence[]> GetSystemPresencesAsync(CancellationToken cancellationToken = default);
 
     /// <summary>
     /// Get a user's presence
@@ -134,7 +134,7 @@ public interface IPresenceApi
     /// <param name="ids">A comma separated list of user IDs to fetch their presence status in bulk. Limit 50.</param>
     /// <param name="cancellationToken">Cancellation token</param>
     /// <returns>List of user presences</returns>
-    Task<IEnumerable<UcUserPresence>> GetUsersPresenceBulkAsync(string sourceId, IEnumerable<string> ids = null, CancellationToken cancellationToken = default);
+    Task<UcUserPresence[]> GetUsersPresenceBulkAsync(string sourceId, IEnumerable<string> ids = null, CancellationToken cancellationToken = default);
 
     /// <summary>
     /// Get bulk user presences for Genesys Cloud
@@ -142,7 +142,7 @@ public interface IPresenceApi
     /// <param name="ids">A comma separated list of user IDs to fetch their presence status in bulk. Limit 50.</param>
     /// <param name="cancellationToken">Cancellation token</param>
     /// <returns>List of user presences</returns>
-    Task<IEnumerable<UcUserPresence>> GetUsersPresencesPurecloudBulkAsync(IEnumerable<string> ids = null, CancellationToken cancellationToken = default);
+    Task<UcUserPresence[]> GetUsersPresencesPurecloudBulkAsync(IEnumerable<string> ids = null, CancellationToken cancellationToken = default);
 
     /// <summary>
     /// Update a user's presence
@@ -239,5 +239,5 @@ public interface IPresenceApi
     /// <param name="body">List of User presences</param>
     /// <param name="cancellationToken">Cancellation token</param>
     /// <returns>Updated user presences</returns>
-    Task<IEnumerable<UserPresence>> UpdateUsersPresencesBulkAsync(IEnumerable<MutableUserPresence> body, CancellationToken cancellationToken = default);
+    Task<UserPresence[]> UpdateUsersPresencesBulkAsync(IEnumerable<MutableUserPresence> body, CancellationToken cancellationToken = default);
 }

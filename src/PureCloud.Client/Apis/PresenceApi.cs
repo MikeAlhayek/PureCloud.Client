@@ -234,7 +234,7 @@ public sealed class PresenceApi : IPresenceApi
     }
 
     /// <inheritdoc />
-    public async Task<IEnumerable<SystemPresence>> GetSystemPresencesAsync(CancellationToken cancellationToken = default)
+    public async Task<SystemPresence[]> GetSystemPresencesAsync(CancellationToken cancellationToken = default)
     {
         var client = _httpClientFactory.CreateClient(PureCloudConstants.PureCloudClientName);
 
@@ -242,7 +242,7 @@ public sealed class PresenceApi : IPresenceApi
 
         response.EnsureSuccessStatusCode();
 
-        return await response.Content.ReadFromJsonAsync<IEnumerable<SystemPresence>>(_options.JsonSerializerOptions, cancellationToken);
+        return await response.Content.ReadFromJsonAsync<SystemPresence[]>(_options.JsonSerializerOptions, cancellationToken);
     }
 
     /// <inheritdoc />
@@ -275,7 +275,7 @@ public sealed class PresenceApi : IPresenceApi
     }
 
     /// <inheritdoc />
-    public async Task<IEnumerable<UcUserPresence>> GetUsersPresenceBulkAsync(string sourceId, IEnumerable<string> ids = null, CancellationToken cancellationToken = default)
+    public async Task<UcUserPresence[]> GetUsersPresenceBulkAsync(string sourceId, IEnumerable<string> ids = null, CancellationToken cancellationToken = default)
     {
         ArgumentException.ThrowIfNullOrEmpty(sourceId);
 
@@ -296,11 +296,11 @@ public sealed class PresenceApi : IPresenceApi
 
         response.EnsureSuccessStatusCode();
 
-        return await response.Content.ReadFromJsonAsync<IEnumerable<UcUserPresence>>(_options.JsonSerializerOptions, cancellationToken);
+        return await response.Content.ReadFromJsonAsync<UcUserPresence[]>(_options.JsonSerializerOptions, cancellationToken);
     }
 
     /// <inheritdoc />
-    public async Task<IEnumerable<UcUserPresence>> GetUsersPresencesPurecloudBulkAsync(IEnumerable<string> ids = null, CancellationToken cancellationToken = default)
+    public async Task<UcUserPresence[]> GetUsersPresencesPurecloudBulkAsync(IEnumerable<string> ids = null, CancellationToken cancellationToken = default)
     {
         var parameters = new NameValueCollection();
         if (ids != null)
@@ -319,7 +319,7 @@ public sealed class PresenceApi : IPresenceApi
 
         response.EnsureSuccessStatusCode();
 
-        return await response.Content.ReadFromJsonAsync<IEnumerable<UcUserPresence>>(_options.JsonSerializerOptions, cancellationToken);
+        return await response.Content.ReadFromJsonAsync<UcUserPresence[]>(_options.JsonSerializerOptions, cancellationToken);
     }
 
     /// <inheritdoc />
@@ -472,7 +472,7 @@ public sealed class PresenceApi : IPresenceApi
     }
 
     /// <inheritdoc />
-    public async Task<IEnumerable<UserPresence>> UpdateUsersPresencesBulkAsync(IEnumerable<MutableUserPresence> body, CancellationToken cancellationToken = default)
+    public async Task<UserPresence[]> UpdateUsersPresencesBulkAsync(IEnumerable<MutableUserPresence> body, CancellationToken cancellationToken = default)
     {
         ArgumentNullException.ThrowIfNull(body);
 
@@ -482,6 +482,6 @@ public sealed class PresenceApi : IPresenceApi
 
         response.EnsureSuccessStatusCode();
 
-        return await response.Content.ReadFromJsonAsync<IEnumerable<UserPresence>>(_options.JsonSerializerOptions, cancellationToken);
+        return await response.Content.ReadFromJsonAsync<UserPresence[]>(_options.JsonSerializerOptions, cancellationToken);
     }
 }
