@@ -1451,4 +1451,68 @@ public sealed class QualityApi : IQualityApi
 
         return await response.Content.ReadFromJsonAsync<ScorableSurvey>(_options.JsonSerializerOptions, cancellationToken);
     }
+
+    public async Task<List<Survey>> GetQualityConversationSurveysAsync(string conversationId, CancellationToken cancellationToken = default)
+    {
+        ArgumentException.ThrowIfNullOrEmpty(conversationId);
+
+        var client = _httpClientFactory.CreateClient(PureCloudConstants.PureCloudClientName);
+
+        var uri = UriHelper.GetUri($"api/v2/quality/conversations/{Uri.EscapeDataString(conversationId)}/surveys", new NameValueCollection());
+
+        var response = await client.GetAsync(uri, cancellationToken);
+
+        response.EnsureSuccessStatusCode();
+
+        return await response.Content.ReadFromJsonAsync<List<Survey>>(_options.JsonSerializerOptions, cancellationToken);
+    }
+
+    public async Task<List<EvaluationFormResponse>> GetQualityFormsEvaluationsBulkContextsAsync(IEnumerable<string> contextId, CancellationToken cancellationToken = default)
+    {
+        ArgumentNullException.ThrowIfNull(contextId);
+
+        var parameters = new NameValueCollection();
+
+        foreach (var item in contextId)
+        {
+            parameters.Add("contextId", UriHelper.ParameterToString(item));
+        }
+
+        var client = _httpClientFactory.CreateClient(PureCloudConstants.PureCloudClientName);
+
+        var uri = UriHelper.GetUri($"api/v2/quality/forms/evaluations/bulk/contexts", parameters);
+
+        var response = await client.GetAsync(uri, cancellationToken);
+
+        response.EnsureSuccessStatusCode();
+
+        return await response.Content.ReadFromJsonAsync<List<EvaluationFormResponse>>(_options.JsonSerializerOptions, cancellationToken);
+    }
+
+    public async Task<List<SurveyForm>> GetQualityFormsSurveysBulkContextsAsync(IEnumerable<string> contextId, bool? published = null, CancellationToken cancellationToken = default)
+    {
+        ArgumentNullException.ThrowIfNull(contextId);
+
+        var parameters = new NameValueCollection();
+
+        foreach (var item in contextId)
+        {
+            parameters.Add("contextId", UriHelper.ParameterToString(item));
+        }
+
+        if (published.HasValue)
+        {
+            parameters.Add("published", UriHelper.ParameterToString(published.Value));
+        }
+
+        var client = _httpClientFactory.CreateClient(PureCloudConstants.PureCloudClientName);
+
+        var uri = UriHelper.GetUri($"api/v2/quality/forms/surveys/bulk/contexts", parameters);
+
+        var response = await client.GetAsync(uri, cancellationToken);
+
+        response.EnsureSuccessStatusCode();
+
+        return await response.Content.ReadFromJsonAsync<List<SurveyForm>>(_options.JsonSerializerOptions, cancellationToken);
+    }
 }
