@@ -2108,55 +2108,6 @@ public sealed class OutboundApi : IOutboundApi
         return await response.Content.ReadFromJsonAsync<WrapUpCodeMapping>(_options.JsonSerializerOptions, cancellationToken);
     }
 
-    public async Task<ContactListTemplateEntityListing> GetOutboundContactlisttemplatesAsync(int? pageSize = null, int? pageNumber = null, bool? allowEmptyResult = null, string filterType = null, string name = null, string sortBy = null, string sortOrder = null, CancellationToken cancellationToken = default)
-    {
-        var parameters = new NameValueCollection();
-
-        if (pageSize.HasValue)
-        {
-            parameters.Add("pageSize", UriHelper.ParameterToString(pageSize.Value));
-        }
-
-        if (pageNumber.HasValue)
-        {
-            parameters.Add("pageNumber", UriHelper.ParameterToString(pageNumber.Value));
-        }
-
-        if (allowEmptyResult.HasValue)
-        {
-            parameters.Add("allowEmptyResult", UriHelper.ParameterToString(allowEmptyResult.Value));
-        }
-
-        if (!string.IsNullOrEmpty(filterType))
-        {
-            parameters.Add("filterType", UriHelper.ParameterToString(filterType));
-        }
-
-        if (!string.IsNullOrEmpty(name))
-        {
-            parameters.Add("name", UriHelper.ParameterToString(name));
-        }
-
-        if (!string.IsNullOrEmpty(sortBy))
-        {
-            parameters.Add("sortBy", UriHelper.ParameterToString(sortBy));
-        }
-
-        if (!string.IsNullOrEmpty(sortOrder))
-        {
-            parameters.Add("sortOrder", UriHelper.ParameterToString(sortOrder));
-        }
-
-        var client = _httpClientFactory.CreateClient(PureCloudConstants.PureCloudClientName);
-
-        var uri = UriHelper.GetUri("api/v2/outbound/contactlisttemplates", parameters);
-        var response = await client.GetAsync(uri, cancellationToken);
-
-        return response.IsSuccessStatusCode;
-
-        return await response.Content.ReadFromJsonAsync<ContactListTemplateEntityListing>(_options.JsonSerializerOptions, cancellationToken);
-    }
-
     // Specialized GET methods that return basic types
     public async Task<string> GetOutboundContactlistExportAsync(string contactListId, string download = null, CancellationToken cancellationToken = default)
     {
