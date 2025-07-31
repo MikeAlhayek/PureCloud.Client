@@ -236,7 +236,7 @@ public sealed class OutboundApi : IOutboundApi
         return await response.Content.ReadFromJsonAsync<Campaign>(_options.JsonSerializerOptions, cancellationToken);
     }
 
-    public async Task<CampaignEntityListing> GetOutboundCampaignsAsync(int? pageSize = null, int? pageNumber = null, string filterType = null, string name = null, IEnumerable<string> ids = null, string contactListId = null, string dncListIds = null, string distributionQueueId = null, string edgeGroupId = null, string callAnalysisResponseSetId = null, IEnumerable<string> divisionId = null, string sortBy = null, string sortOrder = null, CancellationToken cancellationToken = default)
+    public async Task<CampaignEntityListing> GetOutboundCampaignsAsync(int? pageSize = null, int? pageNumber = null, string filterType = null, string name = null, IEnumerable<string> ids = null, string contactListId = null, string dncListIds = null, string distributionQueueId = null, string edgeGroupId = null, string callAnalysisResponseSetId = null, IEnumerable<string> divisionIds = null, string sortBy = null, string sortOrder = null, CancellationToken cancellationToken = default)
     {
         var parameters = new NameValueCollection();
 
@@ -262,9 +262,9 @@ public sealed class OutboundApi : IOutboundApi
 
         if (ids != null)
         {
-            foreach (var item in ids)
+            foreach (var id in ids)
             {
-                parameters.Add("id", item);
+                parameters.Add("id", id);
             }
         }
 
@@ -293,11 +293,11 @@ public sealed class OutboundApi : IOutboundApi
             parameters.Add("callAnalysisResponseSetId", callAnalysisResponseSetId);
         }
 
-        if (divisionId != null && divisionId.Any())
+        if (divisionIds != null)
         {
-            foreach (var item in divisionId)
+            foreach (var divisionId in divisionIds)
             {
-                parameters.Add("divisionId", item);
+                parameters.Add("divisionId", divisionId);
             }
         }
 
@@ -994,7 +994,7 @@ public sealed class OutboundApi : IOutboundApi
         return await response.Content.ReadFromJsonAsync<CampaignRuleEntityListing>(_options.JsonSerializerOptions, cancellationToken);
     }
 
-    public async Task<CommonCampaignEntityListing> GetOutboundCampaignsAllAsync(int? pageSize = null, int? pageNumber = null, IEnumerable<string> id = null, string name = null, IEnumerable<string> divisionId = null, IEnumerable<string> mediaType = null, string sortOrder = null, CancellationToken cancellationToken = default)
+    public async Task<CommonCampaignEntityListing> GetOutboundCampaignsAllAsync(int? pageSize = null, int? pageNumber = null, IEnumerable<string> ids = null, string name = null, IEnumerable<string> divisionIds = null, IEnumerable<string> mediaTypes = null, string sortOrder = null, CancellationToken cancellationToken = default)
     {
         var parameters = new NameValueCollection();
 
@@ -1008,11 +1008,11 @@ public sealed class OutboundApi : IOutboundApi
             parameters.Add("pageNumber", UriHelper.ParameterToString(pageNumber.Value));
         }
 
-        if (id != null && id.Any())
+        if (ids != null)
         {
-            foreach (var item in id)
+            foreach (var id in ids)
             {
-                parameters.Add("id", UriHelper.ParameterToString(item));
+                parameters.Add("id", UriHelper.ParameterToString(id));
             }
         }
 
@@ -1021,19 +1021,19 @@ public sealed class OutboundApi : IOutboundApi
             parameters.Add("name", UriHelper.ParameterToString(name));
         }
 
-        if (divisionId != null && divisionId.Any())
+        if (divisionIds != null)
         {
-            foreach (var item in divisionId)
+            foreach (var divisionId in divisionIds)
             {
-                parameters.Add("divisionId", UriHelper.ParameterToString(item));
+                parameters.Add("divisionId", UriHelper.ParameterToString(divisionId));
             }
         }
 
-        if (mediaType != null && mediaType.Any())
+        if (mediaTypes != null)
         {
-            foreach (var item in mediaType)
+            foreach (var mediaType in mediaTypes)
             {
-                parameters.Add("mediaType", UriHelper.ParameterToString(item));
+                parameters.Add("mediaType", UriHelper.ParameterToString(mediaType));
             }
         }
 
@@ -1052,7 +1052,7 @@ public sealed class OutboundApi : IOutboundApi
         return await response.Content.ReadFromJsonAsync<CommonCampaignEntityListing>(_options.JsonSerializerOptions, cancellationToken);
     }
 
-    public async Task<CommonCampaignDivisionViewEntityListing> GetOutboundCampaignsAllDivisionviewsAsync(int? pageSize = null, int? pageNumber = null, IEnumerable<string> id = null, string name = null, IEnumerable<string> divisionId = null, IEnumerable<string> mediaType = null, string sortOrder = null, CancellationToken cancellationToken = default)
+    public async Task<CommonCampaignDivisionViewEntityListing> GetOutboundCampaignsAllDivisionviewsAsync(int? pageSize = null, int? pageNumber = null, IEnumerable<string> ids = null, string name = null, IEnumerable<string> divisionIds = null, IEnumerable<string> mediaTypes = null, string sortOrder = null, CancellationToken cancellationToken = default)
     {
         var parameters = new NameValueCollection();
 
@@ -1066,11 +1066,11 @@ public sealed class OutboundApi : IOutboundApi
             parameters.Add("pageNumber", UriHelper.ParameterToString(pageNumber.Value));
         }
 
-        if (id != null && id.Any())
+        if (ids != null)
         {
-            foreach (var item in id)
+            foreach (var id in ids)
             {
-                parameters.Add("id", UriHelper.ParameterToString(item));
+                parameters.Add("id", UriHelper.ParameterToString(id));
             }
         }
 
@@ -1079,19 +1079,19 @@ public sealed class OutboundApi : IOutboundApi
             parameters.Add("name", UriHelper.ParameterToString(name));
         }
 
-        if (divisionId != null && divisionId.Any())
+        if (divisionIds != null)
         {
-            foreach (var item in divisionId)
+            foreach (var divisionId in divisionIds)
             {
-                parameters.Add("divisionId", UriHelper.ParameterToString(item));
+                parameters.Add("divisionId", UriHelper.ParameterToString(divisionId));
             }
         }
 
-        if (mediaType != null && mediaType.Any())
+        if (mediaTypes != null)
         {
-            foreach (var item in mediaType)
+            foreach (var mediaType in mediaTypes)
             {
-                parameters.Add("mediaType", UriHelper.ParameterToString(item));
+                parameters.Add("mediaType", UriHelper.ParameterToString(mediaType));
             }
         }
 
@@ -1196,7 +1196,7 @@ public sealed class OutboundApi : IOutboundApi
     }
 
     // GET methods for ContactLists operations
-    public async Task<ContactListEntityListing> GetOutboundContactlistsAsync(bool? includeImportStatus = null, bool? includeSize = null, int? pageSize = null, int? pageNumber = null, bool? allowEmptyResult = null, string filterType = null, string name = null, IEnumerable<string> id = null, IEnumerable<string> divisionId = null, string sortBy = null, string sortOrder = null, CancellationToken cancellationToken = default)
+    public async Task<ContactListEntityListing> GetOutboundContactlistsAsync(bool? includeImportStatus = null, bool? includeSize = null, int? pageSize = null, int? pageNumber = null, bool? allowEmptyResult = null, string filterType = null, string name = null, IEnumerable<string> ids = null, IEnumerable<string> divisionIds = null, string sortBy = null, string sortOrder = null, CancellationToken cancellationToken = default)
     {
         var parameters = new NameValueCollection();
 
@@ -1235,19 +1235,19 @@ public sealed class OutboundApi : IOutboundApi
             parameters.Add("name", UriHelper.ParameterToString(name));
         }
 
-        if (id != null && id.Any())
+        if (ids != null)
         {
-            foreach (var item in id)
+            foreach (var id in ids)
             {
-                parameters.Add("id", UriHelper.ParameterToString(item));
+                parameters.Add("id", UriHelper.ParameterToString(id));
             }
         }
 
-        if (divisionId != null && divisionId.Any())
+        if (divisionIds != null)
         {
-            foreach (var item in divisionId)
+            foreach (var divisionId in divisionIds)
             {
-                parameters.Add("divisionId", UriHelper.ParameterToString(item));
+                parameters.Add("divisionId", UriHelper.ParameterToString(divisionId));
             }
         }
 
@@ -1490,7 +1490,7 @@ public sealed class OutboundApi : IOutboundApi
         return await response.Content.ReadFromJsonAsync<DncList>(_options.JsonSerializerOptions, cancellationToken);
     }
 
-    public async Task<DncListEntityListing> GetOutboundDnclistsAsync(bool? includeImportStatus = null, bool? includeSize = null, int? pageSize = null, int? pageNumber = null, bool? allowEmptyResult = null, string filterType = null, string name = null, string dncSourceType = null, IEnumerable<string> divisionId = null, string sortBy = null, string sortOrder = null, CancellationToken cancellationToken = default)
+    public async Task<DncListEntityListing> GetOutboundDnclistsAsync(bool? includeImportStatus = null, bool? includeSize = null, int? pageSize = null, int? pageNumber = null, bool? allowEmptyResult = null, string filterType = null, string name = null, string dncSourceType = null, IEnumerable<string> divisionIds = null, string sortBy = null, string sortOrder = null, CancellationToken cancellationToken = default)
     {
         var parameters = new NameValueCollection();
 
@@ -1534,11 +1534,11 @@ public sealed class OutboundApi : IOutboundApi
             parameters.Add("dncSourceType", UriHelper.ParameterToString(dncSourceType));
         }
 
-        if (divisionId != null && divisionId.Any())
+        if (divisionIds != null)
         {
-            foreach (var item in divisionId)
+            foreach (var divisionId in divisionIds)
             {
-                parameters.Add("divisionId", UriHelper.ParameterToString(item));
+                parameters.Add("divisionId", UriHelper.ParameterToString(divisionId));
             }
         }
 
@@ -2178,17 +2178,17 @@ public sealed class OutboundApi : IOutboundApi
         return await response.Content.ReadFromJsonAsync<ImportStatus>(_options.JsonSerializerOptions, cancellationToken);
     }
 
-    public async Task<ImportStatus> GetOutboundImporttemplateImportstatusAsync(string importTemplateId, IEnumerable<string> listNamePrefix = null, CancellationToken cancellationToken = default)
+    public async Task<ImportStatus> GetOutboundImporttemplateImportstatusAsync(string importTemplateId, IEnumerable<string> listNamePrefixes = null, CancellationToken cancellationToken = default)
     {
         ArgumentException.ThrowIfNullOrEmpty(importTemplateId);
 
         var parameters = new NameValueCollection();
 
-        if (listNamePrefix != null && listNamePrefix.Any())
+        if (listNamePrefixes != null)
         {
-            foreach (var item in listNamePrefix)
+            foreach (var listNamePrefix in listNamePrefixes)
             {
-                parameters.Add("listNamePrefix", UriHelper.ParameterToString(item));
+                parameters.Add("listNamePrefix", UriHelper.ParameterToString(listNamePrefix));
             }
         }
 
@@ -2309,7 +2309,7 @@ public sealed class OutboundApi : IOutboundApi
         return await response.Content.ReadFromJsonAsync<CampaignDivisionView>(_options.JsonSerializerOptions, cancellationToken);
     }
 
-    public async Task<CampaignDivisionViewListing> GetOutboundCampaignsDivisionviewsAsync(int? pageSize = null, int? pageNumber = null, string filterType = null, string name = null, IEnumerable<string> id = null, string sortBy = null, string sortOrder = null, CancellationToken cancellationToken = default)
+    public async Task<CampaignDivisionViewListing> GetOutboundCampaignsDivisionviewsAsync(int? pageSize = null, int? pageNumber = null, string filterType = null, string name = null, IEnumerable<string> ids = null, string sortBy = null, string sortOrder = null, CancellationToken cancellationToken = default)
     {
         var parameters = new NameValueCollection();
 
@@ -2333,11 +2333,11 @@ public sealed class OutboundApi : IOutboundApi
             parameters.Add("name", UriHelper.ParameterToString(name));
         }
 
-        if (id != null)
+        if (ids != null)
         {
-            foreach (var item in id)
+            foreach (var id in ids)
             {
-                parameters.Add("id", UriHelper.ParameterToString(item));
+                parameters.Add("id", UriHelper.ParameterToString(id));
             }
         }
 
@@ -2467,7 +2467,7 @@ public sealed class OutboundApi : IOutboundApi
         return await response.Content.ReadFromJsonAsync<ContactListDivisionView>(_options.JsonSerializerOptions, cancellationToken);
     }
 
-    public async Task<ContactListDivisionViewListing> GetOutboundContactlistsDivisionviewsAsync(int? pageSize = null, int? pageNumber = null, string filterType = null, string name = null, IEnumerable<string> id = null, string sortBy = null, string sortOrder = null, bool? includeImportStatus = null, bool? includeSize = null, CancellationToken cancellationToken = default)
+    public async Task<ContactListDivisionViewListing> GetOutboundContactlistsDivisionviewsAsync(int? pageSize = null, int? pageNumber = null, string filterType = null, string name = null, IEnumerable<string> ids = null, string sortBy = null, string sortOrder = null, bool? includeImportStatus = null, bool? includeSize = null, CancellationToken cancellationToken = default)
     {
         var parameters = new NameValueCollection();
 
@@ -2491,11 +2491,11 @@ public sealed class OutboundApi : IOutboundApi
             parameters.Add("name", UriHelper.ParameterToString(name));
         }
 
-        if (id != null)
+        if (ids != null)
         {
-            foreach (var item in id)
+            foreach (var id in ids)
             {
-                parameters.Add("id", UriHelper.ParameterToString(item));
+                parameters.Add("id", UriHelper.ParameterToString(id));
             }
         }
 
@@ -2555,7 +2555,7 @@ public sealed class OutboundApi : IOutboundApi
         return await response.Content.ReadFromJsonAsync<DncListDivisionView>(_options.JsonSerializerOptions, cancellationToken);
     }
 
-    public async Task<DncListDivisionViewListing> GetOutboundDnclistsDivisionviewsAsync(int? pageSize = null, int? pageNumber = null, string filterType = null, string name = null, IEnumerable<string> id = null, string sortBy = null, string sortOrder = null, bool? includeImportStatus = null, bool? includeSize = null, CancellationToken cancellationToken = default)
+    public async Task<DncListDivisionViewListing> GetOutboundDnclistsDivisionviewsAsync(int? pageSize = null, int? pageNumber = null, string filterType = null, string name = null, IEnumerable<string> ids = null, string sortBy = null, string sortOrder = null, bool? includeImportStatus = null, bool? includeSize = null, CancellationToken cancellationToken = default)
     {
         var parameters = new NameValueCollection();
 
@@ -2579,11 +2579,11 @@ public sealed class OutboundApi : IOutboundApi
             parameters.Add("name", UriHelper.ParameterToString(name));
         }
 
-        if (id != null)
+        if (ids != null)
         {
-            foreach (var item in id)
+            foreach (var id in ids)
             {
-                parameters.Add("id", UriHelper.ParameterToString(item));
+                parameters.Add("id", UriHelper.ParameterToString(id));
             }
         }
 
@@ -2656,7 +2656,7 @@ public sealed class OutboundApi : IOutboundApi
         return await response.Content.ReadFromJsonAsync<CampaignProgress>(_options.JsonSerializerOptions, cancellationToken);
     }
 
-    public async Task<MessagingCampaignEntityListing> GetOutboundMessagingcampaignsAsync(int? pageSize = null, int? pageNumber = null, string filterType = null, string name = null, IEnumerable<string> id = null, string contactListId = null, string dncListId = null, string distributionQueueId = null, string edgeGroupId = null, IEnumerable<string> divisionId = null, string sortBy = null, string sortOrder = null, CancellationToken cancellationToken = default)
+    public async Task<MessagingCampaignEntityListing> GetOutboundMessagingcampaignsAsync(int? pageSize = null, int? pageNumber = null, string filterType = null, string name = null, IEnumerable<string> ids = null, string contactListId = null, string dncListId = null, string distributionQueueId = null, string edgeGroupId = null, IEnumerable<string> divisionIds = null, string sortBy = null, string sortOrder = null, CancellationToken cancellationToken = default)
     {
         var parameters = new NameValueCollection();
 
@@ -2680,11 +2680,11 @@ public sealed class OutboundApi : IOutboundApi
             parameters.Add("name", UriHelper.ParameterToString(name));
         }
 
-        if (id != null)
+        if (ids != null)
         {
-            foreach (var item in id)
+            foreach (var id in ids)
             {
-                parameters.Add("id", UriHelper.ParameterToString(item));
+                parameters.Add("id", UriHelper.ParameterToString(id));
             }
         }
 
@@ -2708,11 +2708,11 @@ public sealed class OutboundApi : IOutboundApi
             parameters.Add("edgeGroupId", UriHelper.ParameterToString(edgeGroupId));
         }
 
-        if (divisionId != null)
+        if (divisionIds != null)
         {
-            foreach (var item in divisionId)
+            foreach (var divisionId in divisionIds)
             {
-                parameters.Add("divisionId", UriHelper.ParameterToString(item));
+                parameters.Add("divisionId", UriHelper.ParameterToString(divisionId));
             }
         }
 
@@ -2749,7 +2749,7 @@ public sealed class OutboundApi : IOutboundApi
         return await response.Content.ReadFromJsonAsync<MessagingCampaignDivisionView>(_options.JsonSerializerOptions, cancellationToken);
     }
 
-    public async Task<MessagingCampaignDivisionViewEntityListing> GetOutboundMessagingcampaignsDivisionviewsAsync(int? pageSize = null, int? pageNumber = null, string filterType = null, string name = null, IEnumerable<string> id = null, string sortBy = null, string sortOrder = null, CancellationToken cancellationToken = default)
+    public async Task<MessagingCampaignDivisionViewEntityListing> GetOutboundMessagingcampaignsDivisionviewsAsync(int? pageSize = null, int? pageNumber = null, string filterType = null, string name = null, IEnumerable<string> ids = null, string sortBy = null, string sortOrder = null, CancellationToken cancellationToken = default)
     {
         var parameters = new NameValueCollection();
 
@@ -2773,11 +2773,11 @@ public sealed class OutboundApi : IOutboundApi
             parameters.Add("name", UriHelper.ParameterToString(name));
         }
 
-        if (id != null)
+        if (ids != null)
         {
-            foreach (var item in id)
+            foreach (var id in ids)
             {
-                parameters.Add("id", UriHelper.ParameterToString(item));
+                parameters.Add("id", UriHelper.ParameterToString(id));
             }
         }
 
