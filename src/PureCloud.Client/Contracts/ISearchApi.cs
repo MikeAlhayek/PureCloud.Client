@@ -183,15 +183,6 @@ public interface ISearchApi
     Task<JsonNodeSearchResponse> CreateDocumentationAllSearchAsync(DocumentationV2SearchRequest body, CancellationToken cancellationToken = default);
 
     /// <summary>
-    /// Search Documents
-    /// </summary>
-    /// <param name="knowledgeBaseId">Knowledge base ID</param>
-    /// <param name="body">Search request options</param>
-    /// <param name="cancellationToken">Cancellation token</param>
-    /// <returns>KnowledgeSearchResponse</returns>
-    Task<KnowledgeSearchResponse> CreateKnowledgeKnowledgebaseSearchAsync(string knowledgeBaseId, KnowledgeSearchRequest body = null, CancellationToken cancellationToken = default);
-
-    /// <summary>
     /// Search resources
     /// </summary>
     /// <param name="body">Search request options</param>

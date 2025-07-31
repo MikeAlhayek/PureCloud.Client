@@ -2468,12 +2468,6 @@
     <Compile Include="Models\JsonCursorSearchResponse.cs" />
     <Compile Include="Models\JsonSearchResponse.cs" />
     <Compile Include="Models\KnowledgeCategoryRequest.cs" />
-    <Compile Include="Models\KnowledgeSearchRequest.cs" />
-    <Compile Include="Models\KnowledgeSearchResponse.cs" />
-    <Compile Include="Models\KnowledgeSearchDocumentV1.cs" />
-    <Compile Include="Models\KnowledgeCategory.cs" />
-    <Compile Include="Models\DocumentFaq.cs" />
-    <Compile Include="Models\DocumentArticle.cs" />
     <Compile Include="Models\LearningAssignment.State.cs" />
     <Compile Include="Models\LearningModule.ArchivalMode.cs" />
     <Compile Include="Models\LearningModule.Source.cs" />
