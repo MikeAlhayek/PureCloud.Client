@@ -21,7 +21,7 @@ public sealed class QualityApi : IQualityApi
         _options = options.Value;
     }
 
-    public async Task<AgentActivityEntityListing> GetQualityAgentsActivityAsync(int? pageSize = null, int? pageNumber = null, string sortBy = null, IEnumerable<string> expand = null, string nextPage = null, string previousPage = null, DateTime? startTime = null, DateTime? endTime = null, IEnumerable<string> agentUserId = null, string evaluatorUserId = null, string name = null, string group = null, string agentTeamId = null, string formContextId = null, string userState = null, CancellationToken cancellationToken = default)
+    public async Task<AgentActivityEntityListing> GetQualityAgentsActivityAsync(int? pageSize = null, int? pageNumber = null, string sortBy = null, IEnumerable<string> expands = null, string nextPage = null, string previousPage = null, DateTime? startTime = null, DateTime? endTime = null, IEnumerable<string> agentUserIds = null, string evaluatorUserId = null, string name = null, string group = null, string agentTeamId = null, string formContextId = null, string userState = null, CancellationToken cancellationToken = default)
     {
         var parameters = new NameValueCollection();
 
@@ -40,11 +40,11 @@ public sealed class QualityApi : IQualityApi
             parameters.Add("sortBy", UriHelper.ParameterToString(sortBy));
         }
 
-        if (expand?.Any() == true)
+        if (expands?.Any() == true)
         {
-            foreach (var item in expand)
+            foreach (var expand in expands)
             {
-                parameters.Add("expand", UriHelper.ParameterToString(item));
+                parameters.Add("expand", UriHelper.ParameterToString(expand));
             }
         }
 
@@ -68,11 +68,11 @@ public sealed class QualityApi : IQualityApi
             parameters.Add("endTime", UriHelper.ParameterToString(endTime.Value));
         }
 
-        if (agentUserId?.Any() == true)
+        if (agentUserIds?.Any() == true)
         {
-            foreach (var item in agentUserId)
+            foreach (var agentUserId in agentUserIds)
             {
-                parameters.Add("agentUserId", UriHelper.ParameterToString(item));
+                parameters.Add("agentUserId", UriHelper.ParameterToString(agentUserId));
             }
         }
 
@@ -388,7 +388,7 @@ public sealed class QualityApi : IQualityApi
         return await response.Content.ReadFromJsonAsync<SurveyAsyncAggregateQueryResponse>(_options.JsonSerializerOptions, cancellationToken);
     }
 
-    public async Task<CalibrationEntityListing> GetQualityCalibrationsAsync(string calibratorId, int? pageSize = null, int? pageNumber = null, string sortBy = null, IEnumerable<string> expand = null, string nextPage = null, string previousPage = null, string conversationId = null, DateTime? startTime = null, DateTime? endTime = null, CancellationToken cancellationToken = default)
+    public async Task<CalibrationEntityListing> GetQualityCalibrationsAsync(string calibratorId, int? pageSize = null, int? pageNumber = null, string sortBy = null, IEnumerable<string> expands = null, string nextPage = null, string previousPage = null, string conversationId = null, DateTime? startTime = null, DateTime? endTime = null, CancellationToken cancellationToken = default)
     {
         ArgumentException.ThrowIfNullOrEmpty(calibratorId);
 
@@ -410,11 +410,11 @@ public sealed class QualityApi : IQualityApi
             parameters.Add("sortBy", UriHelper.ParameterToString(sortBy));
         }
 
-        if (expand != null)
+        if (expands != null)
         {
-            foreach (var expandItem in expand)
+            foreach (var expand in expands)
             {
-                parameters.Add("expand", UriHelper.ParameterToString(expandItem));
+                parameters.Add("expand", UriHelper.ParameterToString(expand));
             }
         }
 
@@ -467,7 +467,7 @@ public sealed class QualityApi : IQualityApi
         return await response.Content.ReadFromJsonAsync<QualityAuditQueryExecutionStatusResponse>(_options.JsonSerializerOptions, cancellationToken);
     }
 
-    public async Task<QualityAuditQueryExecutionResultsResponse> GetQualityConversationsAuditsQueryTransactionIdResultsAsync(string transactionId, string cursor = null, int? pageSize = null, IEnumerable<string> expand = null, CancellationToken cancellationToken = default)
+    public async Task<QualityAuditQueryExecutionResultsResponse> GetQualityConversationsAuditsQueryTransactionIdResultsAsync(string transactionId, string cursor = null, int? pageSize = null, IEnumerable<string> expands = null, CancellationToken cancellationToken = default)
     {
         ArgumentException.ThrowIfNullOrEmpty(transactionId);
 
@@ -483,11 +483,11 @@ public sealed class QualityApi : IQualityApi
             parameters.Add("pageSize", UriHelper.ParameterToString(pageSize.Value));
         }
 
-        if (expand != null)
+        if (expands != null)
         {
-            foreach (var expandItem in expand)
+            foreach (var expand in expands)
             {
-                parameters.Add("expand", UriHelper.ParameterToString(expandItem));
+                parameters.Add("expand", UriHelper.ParameterToString(expand));
             }
         }
 
@@ -502,7 +502,7 @@ public sealed class QualityApi : IQualityApi
         return await response.Content.ReadFromJsonAsync<QualityAuditQueryExecutionResultsResponse>(_options.JsonSerializerOptions, cancellationToken);
     }
 
-    public async Task<EvaluationEntityListing> GetQualityEvaluationsQueryAsync(int? pageSize = null, int? pageNumber = null, IEnumerable<string> expand = null, string previousPage = null, string conversationId = null, string agentUserId = null, string agentTeamId = null, string evaluatorUserId = null, string assigneeUserId = null, string queueId = null, string startTime = null, string endTime = null, string formContextId = null, IEnumerable<string> evaluationState = null, bool? isReleased = null, bool? agentHasRead = null, bool? expandAnswerTotalScores = null, int? maximum = null, string sortOrder = null, bool? includeDeletedUsers = null, CancellationToken cancellationToken = default)
+    public async Task<EvaluationEntityListing> GetQualityEvaluationsQueryAsync(int? pageSize = null, int? pageNumber = null, IEnumerable<string> expands = null, string previousPage = null, string conversationId = null, string agentUserId = null, string agentTeamId = null, string evaluatorUserId = null, string assigneeUserId = null, string queueId = null, string startTime = null, string endTime = null, string formContextId = null, IEnumerable<string> evaluationStates = null, bool? isReleased = null, bool? agentHasRead = null, bool? expandAnswerTotalScores = null, int? maximum = null, string sortOrder = null, bool? includeDeletedUsers = null, CancellationToken cancellationToken = default)
     {
         var parameters = new NameValueCollection();
 
@@ -516,11 +516,11 @@ public sealed class QualityApi : IQualityApi
             parameters.Add("pageNumber", UriHelper.ParameterToString(pageNumber.Value));
         }
 
-        if (expand != null)
+        if (expands != null)
         {
-            foreach (var expandItem in expand)
+            foreach (var expand in expands)
             {
-                parameters.Add("expand", UriHelper.ParameterToString(expandItem));
+                parameters.Add("expand", UriHelper.ParameterToString(expand));
             }
         }
 
@@ -574,11 +574,11 @@ public sealed class QualityApi : IQualityApi
             parameters.Add("formContextId", UriHelper.ParameterToString(formContextId));
         }
 
-        if (evaluationState != null)
+        if (evaluationStates != null)
         {
-            foreach (var state in evaluationState)
+            foreach (var evaluationState in evaluationStates)
             {
-                parameters.Add("evaluationState", UriHelper.ParameterToString(state));
+                parameters.Add("evaluationState", UriHelper.ParameterToString(evaluationState));
             }
         }
 
@@ -656,7 +656,7 @@ public sealed class QualityApi : IQualityApi
         return response.IsSuccessStatusCode;
     }
 
-    public async Task<AgentActivityEntityListing> GetQualityEvaluatorsActivityAsync(int? pageSize = null, int? pageNumber = null, string sortBy = null, IEnumerable<string> expand = null, string nextPage = null, string previousPage = null, DateTime? startTime = null, DateTime? endTime = null, string name = null, IEnumerable<string> permission = null, string group = null, string agentTeamId = null, CancellationToken cancellationToken = default)
+    public async Task<AgentActivityEntityListing> GetQualityEvaluatorsActivityAsync(int? pageSize = null, int? pageNumber = null, string sortBy = null, IEnumerable<string> expands = null, string nextPage = null, string previousPage = null, DateTime? startTime = null, DateTime? endTime = null, string name = null, IEnumerable<string> permissions = null, string group = null, string agentTeamId = null, CancellationToken cancellationToken = default)
     {
         var parameters = new NameValueCollection();
 
@@ -675,11 +675,11 @@ public sealed class QualityApi : IQualityApi
             parameters.Add("sortBy", UriHelper.ParameterToString(sortBy));
         }
 
-        if (expand != null)
+        if (expands != null)
         {
-            foreach (var expandItem in expand)
+            foreach (var expand in expands)
             {
-                parameters.Add("expand", UriHelper.ParameterToString(expandItem));
+                parameters.Add("expand", UriHelper.ParameterToString(expand));
             }
         }
 
@@ -708,11 +708,11 @@ public sealed class QualityApi : IQualityApi
             parameters.Add("name", UriHelper.ParameterToString(name));
         }
 
-        if (permission != null)
+        if (permissions != null)
         {
-            foreach (var permissionItem in permission)
+            foreach (var permission in permissions)
             {
-                parameters.Add("permission", UriHelper.ParameterToString(permissionItem));
+                parameters.Add("permission", UriHelper.ParameterToString(permission));
             }
         }
 
