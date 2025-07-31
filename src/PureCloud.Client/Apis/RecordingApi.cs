@@ -22,7 +22,7 @@ public sealed class RecordingApi : IRecordingApi
         _options = options.Value;
     }
 
-    public async Task<Recording> GetConversationRecordingAsync(string conversationId, string recordingId, string formatId = null, string emailFormatId = null, string chatFormatId = null, string messageFormatId = null, bool? download = null, string fileName = null, string locale = null, IEnumerable<string> mediaFormats = null, CancellationToken cancellationToken = default)
+    public async Task<Recording> GetConversationRecordingAsync(string conversationId, string recordingId, string formatId = null, string emailFormatId = null, string chatFormatId = null, string messageFormatId = null, bool? download = null, string fileName = null, string locale = null, string[] mediaFormats = null, CancellationToken cancellationToken = default)
     {
         ArgumentException.ThrowIfNullOrEmpty(conversationId);
         ArgumentException.ThrowIfNullOrEmpty(recordingId);
@@ -83,7 +83,7 @@ public sealed class RecordingApi : IRecordingApi
         return await response.Content.ReadFromJsonAsync<Recording>(_options.JsonSerializerOptions, cancellationToken);
     }
 
-    public async Task<IEnumerable<Annotation>> GetConversationRecordingAnnotationsAsync(string conversationId, string recordingId, CancellationToken cancellationToken = default)
+    public async Task<Annotation[]> GetConversationRecordingAnnotationsAsync(string conversationId, string recordingId, CancellationToken cancellationToken = default)
     {
         ArgumentException.ThrowIfNullOrEmpty(conversationId);
         ArgumentException.ThrowIfNullOrEmpty(recordingId);
@@ -94,7 +94,7 @@ public sealed class RecordingApi : IRecordingApi
 
         response.EnsureSuccessStatusCode();
 
-        return await response.Content.ReadFromJsonAsync<IEnumerable<Annotation>>(_options.JsonSerializerOptions, cancellationToken);
+        return await response.Content.ReadFromJsonAsync<Annotation[]>(_options.JsonSerializerOptions, cancellationToken);
     }
 
     public async Task DeleteConversationRecordingAnnotationAsync(string conversationId, string recordingId, string annotationId, CancellationToken cancellationToken = default)
@@ -110,7 +110,7 @@ public sealed class RecordingApi : IRecordingApi
         response.EnsureSuccessStatusCode();
     }
 
-    public async Task<IEnumerable<Recording>> GetConversationRecordingsAsync(string conversationId, int? maxWaitMs = null, string formatId = null, IEnumerable<string> mediaFormats = null, string locale = null, bool? includePauseAnnotationsForScreenRecordings = null, CancellationToken cancellationToken = default)
+    public async Task<Recording[]> GetConversationRecordingsAsync(string conversationId, int? maxWaitMs = null, string formatId = null, string[] mediaFormats = null, string locale = null, bool? includePauseAnnotationsForScreenRecordings = null, CancellationToken cancellationToken = default)
     {
         ArgumentException.ThrowIfNullOrEmpty(conversationId);
 
@@ -152,10 +152,10 @@ public sealed class RecordingApi : IRecordingApi
 
         response.EnsureSuccessStatusCode();
 
-        return await response.Content.ReadFromJsonAsync<IEnumerable<Recording>>(_options.JsonSerializerOptions, cancellationToken);
+        return await response.Content.ReadFromJsonAsync<Recording[]>(_options.JsonSerializerOptions, cancellationToken);
     }
 
-    public async Task<OrphanRecordingListing> GetOrphanrecordingsAsync(int? pageSize = null, int? pageNumber = null, string sortBy = null, IEnumerable<string> expand = null, string nextPage = null, string previousPage = null, bool? hasConversation = null, string media = null, CancellationToken cancellationToken = default)
+    public async Task<OrphanRecordingListing> GetOrphanrecordingsAsync(int? pageSize = null, int? pageNumber = null, string sortBy = null, string[] expands = null, string nextPage = null, string previousPage = null, bool? hasConversation = null, string media = null, CancellationToken cancellationToken = default)
     {
         var parameters = new NameValueCollection();
 
@@ -174,11 +174,11 @@ public sealed class RecordingApi : IRecordingApi
             parameters.Add("sortBy", UriHelper.ParameterToString(sortBy));
         }
 
-        if (expand != null)
+        if (expands != null)
         {
-            foreach (var expandItem in expand)
+            foreach (var expand in expands)
             {
-                parameters.Add("expand", UriHelper.ParameterToString(expandItem));
+                parameters.Add("expand", UriHelper.ParameterToString(expand));
             }
         }
 
@@ -396,7 +396,7 @@ public sealed class RecordingApi : IRecordingApi
     }
 
     /// <inheritdoc>
-    public async Task<Recording> GetOrphanrecordingMediaAsync(string orphanId, string formatId = null, string emailFormatId = null, string chatFormatId = null, string messageFormatId = null, bool? download = null, string fileName = null, string locale = null, IEnumerable<string> mediaFormats = null, CancellationToken cancellationToken = default)
+    public async Task<Recording> GetOrphanrecordingMediaAsync(string orphanId, string formatId = null, string emailFormatId = null, string chatFormatId = null, string messageFormatId = null, bool? download = null, string fileName = null, string locale = null, string[] mediaFormats = null, CancellationToken cancellationToken = default)
     {
         ArgumentException.ThrowIfNullOrEmpty(orphanId);
 
@@ -457,7 +457,7 @@ public sealed class RecordingApi : IRecordingApi
     }
 
     /// <inheritdoc>
-    public async Task<PolicyEntityListing> GetRecordingCrossplatformMediaretentionpoliciesAsync(int? pageSize = null, int? pageNumber = null, string sortBy = null, IEnumerable<string> expand = null, string nextPage = null, string previousPage = null, string name = null, bool? enabled = null, bool? summary = null, bool? hasErrors = null, int? deleteDaysThreshold = null, CancellationToken cancellationToken = default)
+    public async Task<PolicyEntityListing> GetRecordingCrossplatformMediaretentionpoliciesAsync(int? pageSize = null, int? pageNumber = null, string sortBy = null, string[] expands = null, string nextPage = null, string previousPage = null, string name = null, bool? enabled = null, bool? summary = null, bool? hasErrors = null, int? deleteDaysThreshold = null, CancellationToken cancellationToken = default)
     {
         var parameters = new NameValueCollection();
 
@@ -476,11 +476,11 @@ public sealed class RecordingApi : IRecordingApi
             parameters.Add("sortBy", UriHelper.ParameterToString(sortBy));
         }
 
-        if (expand != null)
+        if (expands != null)
         {
-            foreach (var expandItem in expand)
+            foreach (var expand in expands)
             {
-                parameters.Add("expand", UriHelper.ParameterToString(expandItem));
+                parameters.Add("expand", UriHelper.ParameterToString(expand));
             }
         }
 
@@ -679,7 +679,7 @@ public sealed class RecordingApi : IRecordingApi
     }
 
     /// <inheritdoc>
-    public async Task<PolicyEntityListing> GetRecordingMediaretentionpoliciesAsync(int? pageSize = null, int? pageNumber = null, string sortBy = null, IEnumerable<string> expand = null, string nextPage = null, string previousPage = null, string name = null, bool? enabled = null, bool? summary = null, bool? hasErrors = null, int? deleteDaysThreshold = null, CancellationToken cancellationToken = default)
+    public async Task<PolicyEntityListing> GetRecordingMediaretentionpoliciesAsync(int? pageSize = null, int? pageNumber = null, string sortBy = null, string[] expands = null, string nextPage = null, string previousPage = null, string name = null, bool? enabled = null, bool? summary = null, bool? hasErrors = null, int? deleteDaysThreshold = null, CancellationToken cancellationToken = default)
     {
         var parameters = new NameValueCollection();
 
@@ -698,11 +698,11 @@ public sealed class RecordingApi : IRecordingApi
             parameters.Add("sortBy", UriHelper.ParameterToString(sortBy));
         }
 
-        if (expand != null)
+        if (expands != null)
         {
-            foreach (var expandItem in expand)
+            foreach (var expand in expands)
             {
-                parameters.Add("expand", UriHelper.ParameterToString(expandItem));
+                parameters.Add("expand", UriHelper.ParameterToString(expand));
             }
         }
 
@@ -995,7 +995,7 @@ public sealed class RecordingApi : IRecordingApi
     }
 
     /// <inheritdoc>
-    public async Task<IEnumerable<RecordingMetadata>> GetConversationRecordingmetadataAsync(string conversationId, CancellationToken cancellationToken = default)
+    public async Task<RecordingMetadata[]> GetConversationRecordingmetadataAsync(string conversationId, CancellationToken cancellationToken = default)
     {
         ArgumentException.ThrowIfNullOrEmpty(conversationId);
 
@@ -1005,7 +1005,7 @@ public sealed class RecordingApi : IRecordingApi
 
         response.EnsureSuccessStatusCode();
 
-        return await response.Content.ReadFromJsonAsync<IEnumerable<RecordingMetadata>>(_options.JsonSerializerOptions, cancellationToken);
+        return await response.Content.ReadFromJsonAsync<RecordingMetadata[]>(_options.JsonSerializerOptions, cancellationToken);
     }
 
     /// <inheritdoc>
@@ -1023,7 +1023,7 @@ public sealed class RecordingApi : IRecordingApi
     }
 
     /// <inheritdoc>
-    public async Task<IEnumerable<AddressableEntityRef>> CreateRecordingsDeletionprotectionAsync(string conversationIds, CancellationToken cancellationToken = default)
+    public async Task<AddressableEntityRef[]> CreateRecordingsDeletionprotectionAsync(string conversationIds, CancellationToken cancellationToken = default)
     {
         ArgumentException.ThrowIfNullOrEmpty(conversationIds);
 
@@ -1035,11 +1035,11 @@ public sealed class RecordingApi : IRecordingApi
 
         response.EnsureSuccessStatusCode();
 
-        return await response.Content.ReadFromJsonAsync<IEnumerable<AddressableEntityRef>>(_options.JsonSerializerOptions, cancellationToken);
+        return await response.Content.ReadFromJsonAsync<AddressableEntityRef[]>(_options.JsonSerializerOptions, cancellationToken);
     }
 
     /// <inheritdoc>
-    public async Task<IEnumerable<AddressableEntityRef>> UpdateRecordingsDeletionprotectionAsync(bool? protect = null, string conversationIds = null, CancellationToken cancellationToken = default)
+    public async Task<AddressableEntityRef[]> UpdateRecordingsDeletionprotectionAsync(bool? protect = null, string conversationIds = null, CancellationToken cancellationToken = default)
     {
         var parameters = new NameValueCollection();
 
@@ -1056,7 +1056,7 @@ public sealed class RecordingApi : IRecordingApi
 
         response.EnsureSuccessStatusCode();
 
-        return await response.Content.ReadFromJsonAsync<IEnumerable<AddressableEntityRef>>(_options.JsonSerializerOptions, cancellationToken);
+        return await response.Content.ReadFromJsonAsync<AddressableEntityRef[]>(_options.JsonSerializerOptions, cancellationToken);
     }
 
     /// <inheritdoc>
