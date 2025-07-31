@@ -27,7 +27,7 @@ public interface ISettingsApi
     /// <summary>
     /// Reset email threading settings to default
     /// </summary>
-    Task DeleteEmailsSettingsThreadingAsync(CancellationToken cancellationToken = default);
+    Task<bool> DeleteEmailsSettingsThreadingAsync(CancellationToken cancellationToken = default);
 
     /// <summary>
     /// Get the execution history enabled setting
@@ -52,5 +52,10 @@ public interface ISettingsApi
     /// <summary>
     /// Delete agent auto answer settings
     /// </summary>
-    Task DeleteUsersAgentuiAgentsAutoanswerSettingsAsync(string agentId, CancellationToken cancellationToken = default);
+    Task<bool> DeleteUsersAgentuiAgentsAutoanswerSettingsAsync(string agentId, CancellationToken cancellationToken = default);
+
+    /// <summary>
+    /// Create agent auto answer settings
+    /// </summary>
+    Task<AutoAnswerSettings> CreateUsersAgentuiAgentsAutoanswerSettingsAsync(string agentId, AutoAnswerSettings body, CancellationToken cancellationToken = default);
 }
