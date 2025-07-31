@@ -4,37 +4,96 @@ namespace PureCloud.Client.Contracts;
 
 public interface IRoutingApi
 {
-    /// <inheritdoc />
+    /// <summary>
+    /// Delete single benefit assessment.
+    /// </summary>
+    /// <param name="assessmentId">Benefit Assessment ID</param>
+    /// <param name="cancellationToken">Cancellation token</param>
+    /// <returns>True if the operation was successful</returns>
     Task<bool> DeleteRoutingAssessmentAsync(string assessmentId, CancellationToken cancellationToken = default);
 
-    /// <inheritdoc />
+    /// <summary>
+    /// Delete the user's Direct Routing Backup settings and revert to the Direct Routing Queue default.
+    /// </summary>
+    /// <param name="cancellationToken">Cancellation token</param>
+    /// <returns>True if the operation was successful</returns>
     Task<bool> DeleteRoutingDirectroutingbackupSettingsMeAsync(CancellationToken cancellationToken = default);
 
-    /// <inheritdoc />
+    /// <summary>
+    /// Delete a domain.
+    /// </summary>
+    /// <param name="domainId">domain ID</param>
+    /// <param name="cancellationToken">Cancellation token</param>
+    /// <returns>True if the operation was successful</returns>
     Task<bool> DeleteRoutingEmailDomainAsync(string domainId, CancellationToken cancellationToken = default);
 
-    /// <inheritdoc />
+    /// <summary>
+    /// Delete a route.
+    /// </summary>
+    /// <param name="domainName">email domain</param>
+    /// <param name="routeId">route ID</param>
+    /// <param name="cancellationToken">Cancellation token</param>
+    /// <returns>True if the operation was successful</returns>
     Task<bool> DeleteRoutingEmailDomainRouteAsync(string domainName, string routeId, CancellationToken cancellationToken = default);
 
-    /// <inheritdoc />
+    /// <summary>
+    /// Retrieve a single benefit assessment.
+    /// </summary>
+    /// <param name="assessmentId">Benefit Assessment ID</param>
+    /// <param name="cancellationToken">Cancellation token</param>
+    /// <returns>The benefit assessment</returns>
     Task<BenefitAssessment> GetRoutingAssessmentAsync(string assessmentId, CancellationToken cancellationToken = default);
 
-    /// <inheritdoc />
+    /// <summary>
+    /// Get domain.
+    /// </summary>
+    /// <param name="domainId">domain ID</param>
+    /// <param name="cancellationToken">Cancellation token</param>
+    /// <returns>The inbound domain</returns>
     Task<InboundDomain> GetRoutingEmailDomainAsync(string domainId, CancellationToken cancellationToken = default);
 
-    /// <inheritdoc />
+    /// <summary>
+    /// Get a route.
+    /// </summary>
+    /// <param name="domainName">email domain</param>
+    /// <param name="routeId">route ID</param>
+    /// <param name="cancellationToken">Cancellation token</param>
+    /// <returns>The inbound route</returns>
     Task<InboundRoute> GetRoutingEmailDomainRouteAsync(string domainName, string routeId, CancellationToken cancellationToken = default);
 
-    /// <inheritdoc />
+    /// <summary>
+    /// Create a benefit assessment.
+    /// </summary>
+    /// <param name="body">The benefit assessment request (optional)</param>
+    /// <param name="cancellationToken">Cancellation token</param>
+    /// <returns>The created benefit assessment</returns>
     Task<BenefitAssessment> CreateRoutingAssessmentAsync(CreateBenefitAssessmentRequest body = null, CancellationToken cancellationToken = default);
 
-    /// <inheritdoc />
+    /// <summary>
+    /// Create a domain.
+    /// </summary>
+    /// <param name="body">Domain</param>
+    /// <param name="cancellationToken">Cancellation token</param>
+    /// <returns>The created inbound domain</returns>
     Task<InboundDomain> CreateRoutingEmailDomainAsync(InboundDomain body, CancellationToken cancellationToken = default);
 
-    /// <inheritdoc />
+    /// <summary>
+    /// Create a route.
+    /// </summary>
+    /// <param name="domainName">email domain</param>
+    /// <param name="body">Route</param>
+    /// <param name="cancellationToken">Cancellation token</param>
+    /// <returns>The created inbound route</returns>
     Task<InboundRoute> CreateRoutingEmailDomainRouteAsync(string domainName, InboundRoute body, CancellationToken cancellationToken = default);
 
-    /// <inheritdoc />
+    /// <summary>
+    /// Update a route.
+    /// </summary>
+    /// <param name="domainName">email domain</param>
+    /// <param name="routeId">route ID</param>
+    /// <param name="body">Route</param>
+    /// <param name="cancellationToken">Cancellation token</param>
+    /// <returns>The updated inbound route</returns>
     Task<InboundRoute> UpdateRoutingEmailDomainRouteAsync(string domainName, string routeId, InboundRoute body, CancellationToken cancellationToken = default);
 
     // TODO: Add remaining 139 methods after creating required models:
