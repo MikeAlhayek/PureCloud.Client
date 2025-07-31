@@ -296,6 +296,8 @@
     <Compile Include="Models\ConversationMetrics.cs" />
     <Compile Include="Models\ConversationMetrics.SentimentTrendClass.cs" />
     <Compile Include="Models\Conversations\ConversationActivityScoredAgent.cs" />
+    <Compile Include="Models\Conversations\ConversationParticipantSearchCriteria.cs" />
+    <Compile Include="Models\Conversations\ConversationParticipantSearchRequest.cs" />
     <Compile Include="Models\Conversations\ConversationContentAttachment.cs" />
     <Compile Include="Models\Conversations\ConversationContentAttachment.MediaType.cs" />
     <Compile Include="Models\DIDPool.cs" />
@@ -391,6 +393,9 @@
     <Compile Include="Models\DocumentationSearchRequest.cs" />
     <Compile Include="Models\DocumentationSearchRequest.SortOrder.cs" />
     <Compile Include="Models\DocumentationSearchResponse.cs" />
+    <Compile Include="Models\DocumentationV2SearchRequest.cs" />
+    <Compile Include="Models\DocumentationV2SearchCriteria.cs" />
+    <Compile Include="Models\DocumentationV2SearchAggregation.cs" />
     <Compile Include="Models\DocumentCategoryInput.cs" />
     <Compile Include="Models\EdgeConnectionInfo.cs" />
     <Compile Include="Models\EmpathyScore.cs" />
@@ -2460,7 +2465,15 @@
     <Compile Include="Models\JourneyOutcomeEventsNotificationSegment.cs" />
     <Compile Include="Models\JourneyOutcomeEventsNotificationSession.cs" />
     <Compile Include="Models\JsonNodeSearchResponse.cs" />
+    <Compile Include="Models\JsonCursorSearchResponse.cs" />
+    <Compile Include="Models\JsonSearchResponse.cs" />
     <Compile Include="Models\KnowledgeCategoryRequest.cs" />
+    <Compile Include="Models\KnowledgeSearchRequest.cs" />
+    <Compile Include="Models\KnowledgeSearchResponse.cs" />
+    <Compile Include="Models\KnowledgeSearchDocumentV1.cs" />
+    <Compile Include="Models\KnowledgeCategory.cs" />
+    <Compile Include="Models\DocumentFaq.cs" />
+    <Compile Include="Models\DocumentArticle.cs" />
     <Compile Include="Models\LearningAssignment.State.cs" />
     <Compile Include="Models\LearningModule.ArchivalMode.cs" />
     <Compile Include="Models\LearningModule.Source.cs" />
@@ -4261,6 +4274,8 @@
     <Compile Include="Models\TranscriptConversationDetailSearchCriteria.Operator.cs" />
     <Compile Include="Models\TranscriptConversationDetailSearchRequest.cs" />
     <Compile Include="Models\TranscriptConversationDetailSearchRequest.SortOrder.cs" />
+    <Compile Include="Models\TranscriptSearchRequest.cs" />
+    <Compile Include="Models\TranscriptSearchCriteria.cs" />
     <Compile Include="Models\TranscriptionConfig.cs" />
     <Compile Include="Models\TranscriptionConfig.VendorName.cs" />
     <Compile Include="Models\TranscriptionTopicTranscriptAlternative.cs" />
