@@ -1,4 +1,5 @@
 using PureCloud.Client.Models;
+using PureCloud.Client.Models.Queues;
 
 namespace PureCloud.Client.Contracts;
 
@@ -265,7 +266,7 @@ public interface IRoutingApi
     /// <returns>True if the operation was successful</returns>
     Task<bool> DeleteUserRoutingskillAsync(string userId, string skillId, CancellationToken cancellationToken = default);
 
-    // TODO: Add remaining ~270 methods after creating required models:
+    // TODO: Add remaining ~200 methods after creating required models:
     // - Delete methods: ~15 more (DeleteRoutingPredictor, DeleteRoutingSettings, etc.)
     // - Get methods: ~75 more (GetRoutingLanguage, GetRoutingLanguages, GetRoutingSkills, etc.) 
     // - Create methods: ~20 more (CreateRoutingLanguage, CreateRoutingQueue, CreateRoutingSkill, etc.)
