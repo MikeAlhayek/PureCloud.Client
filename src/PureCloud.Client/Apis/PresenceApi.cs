@@ -89,6 +89,7 @@ public sealed class PresenceApi : IPresenceApi
         {
             parameters.Add("deactivated", UriHelper.ParameterToString(deactivated));
         }
+
         if (divisionIds != null)
         {
             foreach (var divisionId in divisionIds)
@@ -96,6 +97,7 @@ public sealed class PresenceApi : IPresenceApi
                 parameters.Add("divisionId", UriHelper.ParameterToString(divisionId));
             }
         }
+
         if (!string.IsNullOrEmpty(localeCode))
         {
             parameters.Add("localeCode", UriHelper.ParameterToString(localeCode));
@@ -204,14 +206,17 @@ public sealed class PresenceApi : IPresenceApi
         {
             parameters.Add("pageNumber", UriHelper.ParameterToString(pageNumber.Value));
         }
+
         if (pageSize.HasValue)
         {
             parameters.Add("pageSize", UriHelper.ParameterToString(pageSize.Value));
         }
+
         if (!string.IsNullOrEmpty(deleted))
         {
             parameters.Add("deleted", UriHelper.ParameterToString(deleted));
         }
+
         if (!string.IsNullOrEmpty(localeCode))
         {
             parameters.Add("localeCode", UriHelper.ParameterToString(localeCode));
