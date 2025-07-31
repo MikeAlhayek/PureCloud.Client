@@ -31,9 +31,7 @@ public sealed class PresenceApi : IPresenceApi
 
         var response = await _httpClient.DeleteAsync(uri, cancellationToken);
 
-        response.EnsureSuccessStatusCode();
-
-        return true;
+        return response.IsSuccessStatusCode;
     }
 
     /// <inheritdoc />
@@ -45,9 +43,7 @@ public sealed class PresenceApi : IPresenceApi
 
         var response = await _httpClient.DeleteAsync(uri, cancellationToken);
 
-        response.EnsureSuccessStatusCode();
-
-        return true;
+        return response.IsSuccessStatusCode;
     }
 
     /// <inheritdoc />
@@ -60,9 +56,7 @@ public sealed class PresenceApi : IPresenceApi
 
         var response = await _httpClient.DeleteAsync(uri, cancellationToken);
 
-        response.EnsureSuccessStatusCode();
-
-        return true;
+        return response.IsSuccessStatusCode;
     }
 
     /// <inheritdoc />
