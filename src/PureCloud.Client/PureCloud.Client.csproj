@@ -3096,6 +3096,13 @@
     <Compile Include="Models\QualityAuditQueryExecutionResultsResponse.cs" />
     <Compile Include="Models\QualityAuditQueryFilter.cs" />
     <Compile Include="Models\QualityAuditLogMessage.cs" />
+    <Compile Include="Models\ScorableSurvey.cs" />
+    <Compile Include="Models\QMAuditQueryRequest.cs" />
+    <Compile Include="Models\EvaluationAggregationQueryMe.cs" />
+    <Compile Include="Models\EvaluationFormAndScoringSet.cs" />
+    <Compile Include="Models\PublishForm.cs" />
+    <Compile Include="Models\SurveyFormAndScoringSet.cs" />
+    <Compile Include="Models\SurveyScore.cs" />
     <Compile Include="Models\QueryCriteria.cs" />
     <Compile Include="Models\QueryCriteria.CriteriaKey.cs" />
     <Compile Include="Models\QueryCriteria.DataType.cs" />

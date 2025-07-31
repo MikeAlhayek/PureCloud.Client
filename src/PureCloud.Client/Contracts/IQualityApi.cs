@@ -65,4 +65,58 @@ public interface IQualityApi
     Task<SurveyForm> GetQualityFormsSurveyAsync(string formId, CancellationToken cancellationToken = default);
 
     Task<SurveyFormEntityListing> GetQualityFormsSurveysAsync(int? pageSize = null, int? pageNumber = null, string sortBy = null, string nextPage = null, string previousPage = null, string expand = null, string name = null, string sortOrder = null, CancellationToken cancellationToken = default);
+
+    Task<SurveyFormEntityListing> GetQualityFormsSurveysBulkAsync(IEnumerable<string> ids, CancellationToken cancellationToken = default);
+
+    Task<SurveyFormEntityListing> GetQualityFormsSurveyVersionsAsync(string formId, int? pageSize = null, int? pageNumber = null, CancellationToken cancellationToken = default);
+
+    Task<EvaluationForm> GetQualityPublishedformAsync(string formId, CancellationToken cancellationToken = default);
+
+    Task<EvaluationFormEntityListing> GetQualityPublishedformsAsync(int? pageSize = null, int? pageNumber = null, string name = null, bool? onlyLatestPerContext = null, CancellationToken cancellationToken = default);
+
+    Task<EvaluationFormResponse> GetQualityPublishedformsEvaluationAsync(string formId, CancellationToken cancellationToken = default);
+
+    Task<EvaluationFormEntityListing> GetQualityPublishedformsEvaluationsAsync(int? pageSize = null, int? pageNumber = null, string name = null, bool? onlyLatestPerContext = null, CancellationToken cancellationToken = default);
+
+    Task<SurveyForm> GetQualityPublishedformsSurveyAsync(string formId, CancellationToken cancellationToken = default);
+
+    Task<SurveyFormEntityListing> GetQualityPublishedformsSurveysAsync(int? pageSize = null, int? pageNumber = null, string name = null, bool? onlyLatestEnabledPerContext = null, CancellationToken cancellationToken = default);
+
+    Task<ScorableSurvey> GetQualitySurveysScorableAsync(string customerSurveyUrl, CancellationToken cancellationToken = default);
+
+    Task<AsyncQueryStatus> CreateAnalyticsEvaluationsAggregatesJobAsync(EvaluationAsyncAggregationQuery body, CancellationToken cancellationToken = default);
+
+    Task<EvaluationAggregateQueryResponse> CreateAnalyticsEvaluationsAggregatesQueryAsync(EvaluationAggregationQuery body, CancellationToken cancellationToken = default);
+
+    Task<AsyncQueryStatus> CreateAnalyticsSurveysAggregatesJobAsync(SurveyAsyncAggregationQuery body, CancellationToken cancellationToken = default);
+
+    Task<SurveyAggregateQueryResponse> CreateAnalyticsSurveysAggregatesQueryAsync(SurveyAggregationQuery body, CancellationToken cancellationToken = default);
+
+    Task<QualityAuditQueryExecutionStatusResponse> CreateQualityConversationsAuditsQueryAsync(QMAuditQueryRequest body, CancellationToken cancellationToken = default);
+
+    Task<EvaluationAggregateQueryResponse> CreateQualityEvaluationsAggregatesQueryMeAsync(EvaluationAggregationQueryMe body, CancellationToken cancellationToken = default);
+
+    Task<EvaluationScoringSet> CreateQualityEvaluationsScoringAsync(EvaluationFormAndScoringSet body, CancellationToken cancellationToken = default);
+
+    Task<EvaluationFormResponse> CreateQualityFormsAsync(EvaluationForm body, CancellationToken cancellationToken = default);
+
+    Task<SurveyForm> CreateQualityFormsSurveysAsync(SurveyForm body, CancellationToken cancellationToken = default);
+
+    Task<EvaluationFormResponse> CreateQualityPublishedformsAsync(PublishForm body, CancellationToken cancellationToken = default);
+
+    Task<EvaluationFormResponse> CreateQualityPublishedformsEvaluationsAsync(PublishForm body, CancellationToken cancellationToken = default);
+
+    Task<SurveyForm> CreateQualityPublishedformsSurveysAsync(PublishForm body, CancellationToken cancellationToken = default);
+
+    Task<SurveyScore> CreateQualitySurveysScoringAsync(SurveyFormAndScoringSet body, CancellationToken cancellationToken = default);
+
+    Task<Calibration> UpdateQualityCalibrationAsync(string calibrationId, Calibration body, CancellationToken cancellationToken = default);
+
+    Task<EvaluationResponse> UpdateQualityConversationEvaluationAsync(string conversationId, string evaluationId, Evaluation body, string expand = null, CancellationToken cancellationToken = default);
+
+    Task<EvaluationFormResponse> UpdateQualityFormAsync(string formId, EvaluationForm body, CancellationToken cancellationToken = default);
+
+    Task<AiScoringSettings> UpdateQualityFormsEvaluationAiscoringSettingsAsync(string formId, AiScoringSettings body, CancellationToken cancellationToken = default);
+
+    Task<ScorableSurvey> UpdateQualitySurveysScorableAsync(string customerSurveyUrl, ScorableSurvey body, CancellationToken cancellationToken = default);
 }

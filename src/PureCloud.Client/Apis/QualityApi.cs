@@ -986,4 +986,469 @@ public sealed class QualityApi : IQualityApi
 
         return await response.Content.ReadFromJsonAsync<SurveyFormEntityListing>(_options.JsonSerializerOptions, cancellationToken);
     }
+
+    public async Task<SurveyFormEntityListing> GetQualityFormsSurveysBulkAsync(IEnumerable<string> ids, CancellationToken cancellationToken = default)
+    {
+        ArgumentNullException.ThrowIfNull(ids);
+
+        var parameters = new NameValueCollection();
+
+        foreach (var id in ids)
+        {
+            parameters.Add("id", UriHelper.ParameterToString(id));
+        }
+
+        var client = _httpClientFactory.CreateClient(PureCloudConstants.PureCloudClientName);
+
+        var uri = UriHelper.GetUri($"api/v2/quality/forms/surveys/bulk", parameters);
+
+        var response = await client.GetAsync(uri, cancellationToken);
+
+        response.EnsureSuccessStatusCode();
+
+        return await response.Content.ReadFromJsonAsync<SurveyFormEntityListing>(_options.JsonSerializerOptions, cancellationToken);
+    }
+
+    public async Task<SurveyFormEntityListing> GetQualityFormsSurveyVersionsAsync(string formId, int? pageSize = null, int? pageNumber = null, CancellationToken cancellationToken = default)
+    {
+        ArgumentException.ThrowIfNullOrEmpty(formId);
+
+        var parameters = new NameValueCollection();
+
+        if (pageSize.HasValue)
+        {
+            parameters.Add("pageSize", UriHelper.ParameterToString(pageSize.Value));
+        }
+
+        if (pageNumber.HasValue)
+        {
+            parameters.Add("pageNumber", UriHelper.ParameterToString(pageNumber.Value));
+        }
+
+        var client = _httpClientFactory.CreateClient(PureCloudConstants.PureCloudClientName);
+
+        var uri = UriHelper.GetUri($"api/v2/quality/forms/surveys/{formId}/versions", parameters);
+
+        var response = await client.GetAsync(uri, cancellationToken);
+
+        response.EnsureSuccessStatusCode();
+
+        return await response.Content.ReadFromJsonAsync<SurveyFormEntityListing>(_options.JsonSerializerOptions, cancellationToken);
+    }
+
+    public async Task<EvaluationForm> GetQualityPublishedformAsync(string formId, CancellationToken cancellationToken = default)
+    {
+        ArgumentException.ThrowIfNullOrEmpty(formId);
+
+        var client = _httpClientFactory.CreateClient(PureCloudConstants.PureCloudClientName);
+
+        var response = await client.GetAsync($"api/v2/quality/publishedforms/{formId}", cancellationToken);
+
+        response.EnsureSuccessStatusCode();
+
+        return await response.Content.ReadFromJsonAsync<EvaluationForm>(_options.JsonSerializerOptions, cancellationToken);
+    }
+
+    public async Task<EvaluationFormEntityListing> GetQualityPublishedformsAsync(int? pageSize = null, int? pageNumber = null, string name = null, bool? onlyLatestPerContext = null, CancellationToken cancellationToken = default)
+    {
+        var parameters = new NameValueCollection();
+
+        if (pageSize.HasValue)
+        {
+            parameters.Add("pageSize", UriHelper.ParameterToString(pageSize.Value));
+        }
+
+        if (pageNumber.HasValue)
+        {
+            parameters.Add("pageNumber", UriHelper.ParameterToString(pageNumber.Value));
+        }
+
+        if (!string.IsNullOrEmpty(name))
+        {
+            parameters.Add("name", UriHelper.ParameterToString(name));
+        }
+
+        if (onlyLatestPerContext.HasValue)
+        {
+            parameters.Add("onlyLatestPerContext", UriHelper.ParameterToString(onlyLatestPerContext.Value));
+        }
+
+        var client = _httpClientFactory.CreateClient(PureCloudConstants.PureCloudClientName);
+
+        var uri = UriHelper.GetUri($"api/v2/quality/publishedforms", parameters);
+
+        var response = await client.GetAsync(uri, cancellationToken);
+
+        response.EnsureSuccessStatusCode();
+
+        return await response.Content.ReadFromJsonAsync<EvaluationFormEntityListing>(_options.JsonSerializerOptions, cancellationToken);
+    }
+
+    public async Task<EvaluationFormResponse> GetQualityPublishedformsEvaluationAsync(string formId, CancellationToken cancellationToken = default)
+    {
+        ArgumentException.ThrowIfNullOrEmpty(formId);
+
+        var client = _httpClientFactory.CreateClient(PureCloudConstants.PureCloudClientName);
+
+        var response = await client.GetAsync($"api/v2/quality/publishedforms/evaluations/{formId}", cancellationToken);
+
+        response.EnsureSuccessStatusCode();
+
+        return await response.Content.ReadFromJsonAsync<EvaluationFormResponse>(_options.JsonSerializerOptions, cancellationToken);
+    }
+
+    public async Task<EvaluationFormEntityListing> GetQualityPublishedformsEvaluationsAsync(int? pageSize = null, int? pageNumber = null, string name = null, bool? onlyLatestPerContext = null, CancellationToken cancellationToken = default)
+    {
+        var parameters = new NameValueCollection();
+
+        if (pageSize.HasValue)
+        {
+            parameters.Add("pageSize", UriHelper.ParameterToString(pageSize.Value));
+        }
+
+        if (pageNumber.HasValue)
+        {
+            parameters.Add("pageNumber", UriHelper.ParameterToString(pageNumber.Value));
+        }
+
+        if (!string.IsNullOrEmpty(name))
+        {
+            parameters.Add("name", UriHelper.ParameterToString(name));
+        }
+
+        if (onlyLatestPerContext.HasValue)
+        {
+            parameters.Add("onlyLatestPerContext", UriHelper.ParameterToString(onlyLatestPerContext.Value));
+        }
+
+        var client = _httpClientFactory.CreateClient(PureCloudConstants.PureCloudClientName);
+
+        var uri = UriHelper.GetUri($"api/v2/quality/publishedforms/evaluations", parameters);
+
+        var response = await client.GetAsync(uri, cancellationToken);
+
+        response.EnsureSuccessStatusCode();
+
+        return await response.Content.ReadFromJsonAsync<EvaluationFormEntityListing>(_options.JsonSerializerOptions, cancellationToken);
+    }
+
+    public async Task<SurveyForm> GetQualityPublishedformsSurveyAsync(string formId, CancellationToken cancellationToken = default)
+    {
+        ArgumentException.ThrowIfNullOrEmpty(formId);
+
+        var client = _httpClientFactory.CreateClient(PureCloudConstants.PureCloudClientName);
+
+        var response = await client.GetAsync($"api/v2/quality/publishedforms/surveys/{formId}", cancellationToken);
+
+        response.EnsureSuccessStatusCode();
+
+        return await response.Content.ReadFromJsonAsync<SurveyForm>(_options.JsonSerializerOptions, cancellationToken);
+    }
+
+    public async Task<SurveyFormEntityListing> GetQualityPublishedformsSurveysAsync(int? pageSize = null, int? pageNumber = null, string name = null, bool? onlyLatestEnabledPerContext = null, CancellationToken cancellationToken = default)
+    {
+        var parameters = new NameValueCollection();
+
+        if (pageSize.HasValue)
+        {
+            parameters.Add("pageSize", UriHelper.ParameterToString(pageSize.Value));
+        }
+
+        if (pageNumber.HasValue)
+        {
+            parameters.Add("pageNumber", UriHelper.ParameterToString(pageNumber.Value));
+        }
+
+        if (!string.IsNullOrEmpty(name))
+        {
+            parameters.Add("name", UriHelper.ParameterToString(name));
+        }
+
+        if (onlyLatestEnabledPerContext.HasValue)
+        {
+            parameters.Add("onlyLatestEnabledPerContext", UriHelper.ParameterToString(onlyLatestEnabledPerContext.Value));
+        }
+
+        var client = _httpClientFactory.CreateClient(PureCloudConstants.PureCloudClientName);
+
+        var uri = UriHelper.GetUri($"api/v2/quality/publishedforms/surveys", parameters);
+
+        var response = await client.GetAsync(uri, cancellationToken);
+
+        response.EnsureSuccessStatusCode();
+
+        return await response.Content.ReadFromJsonAsync<SurveyFormEntityListing>(_options.JsonSerializerOptions, cancellationToken);
+    }
+
+    public async Task<ScorableSurvey> GetQualitySurveysScorableAsync(string customerSurveyUrl, CancellationToken cancellationToken = default)
+    {
+        ArgumentException.ThrowIfNullOrEmpty(customerSurveyUrl);
+
+        var parameters = new NameValueCollection();
+        parameters.Add("customerSurveyUrl", UriHelper.ParameterToString(customerSurveyUrl));
+
+        var client = _httpClientFactory.CreateClient(PureCloudConstants.PureCloudClientName);
+
+        var uri = UriHelper.GetUri($"api/v2/quality/surveys/scorable", parameters);
+
+        var response = await client.GetAsync(uri, cancellationToken);
+
+        response.EnsureSuccessStatusCode();
+
+        return await response.Content.ReadFromJsonAsync<ScorableSurvey>(_options.JsonSerializerOptions, cancellationToken);
+    }
+
+    public async Task<AsyncQueryStatus> CreateAnalyticsEvaluationsAggregatesJobAsync(EvaluationAsyncAggregationQuery body, CancellationToken cancellationToken = default)
+    {
+        ArgumentNullException.ThrowIfNull(body);
+
+        var client = _httpClientFactory.CreateClient(PureCloudConstants.PureCloudClientName);
+
+        var response = await client.PostAsJsonAsync($"api/v2/analytics/evaluations/aggregates/jobs", body, _options.JsonSerializerOptions, cancellationToken);
+
+        response.EnsureSuccessStatusCode();
+
+        return await response.Content.ReadFromJsonAsync<AsyncQueryStatus>(_options.JsonSerializerOptions, cancellationToken);
+    }
+
+    public async Task<EvaluationAggregateQueryResponse> CreateAnalyticsEvaluationsAggregatesQueryAsync(EvaluationAggregationQuery body, CancellationToken cancellationToken = default)
+    {
+        ArgumentNullException.ThrowIfNull(body);
+
+        var client = _httpClientFactory.CreateClient(PureCloudConstants.PureCloudClientName);
+
+        var response = await client.PostAsJsonAsync($"api/v2/analytics/evaluations/aggregates/query", body, _options.JsonSerializerOptions, cancellationToken);
+
+        response.EnsureSuccessStatusCode();
+
+        return await response.Content.ReadFromJsonAsync<EvaluationAggregateQueryResponse>(_options.JsonSerializerOptions, cancellationToken);
+    }
+
+    public async Task<AsyncQueryStatus> CreateAnalyticsSurveysAggregatesJobAsync(SurveyAsyncAggregationQuery body, CancellationToken cancellationToken = default)
+    {
+        ArgumentNullException.ThrowIfNull(body);
+
+        var client = _httpClientFactory.CreateClient(PureCloudConstants.PureCloudClientName);
+
+        var response = await client.PostAsJsonAsync($"api/v2/analytics/surveys/aggregates/jobs", body, _options.JsonSerializerOptions, cancellationToken);
+
+        response.EnsureSuccessStatusCode();
+
+        return await response.Content.ReadFromJsonAsync<AsyncQueryStatus>(_options.JsonSerializerOptions, cancellationToken);
+    }
+
+    public async Task<SurveyAggregateQueryResponse> CreateAnalyticsSurveysAggregatesQueryAsync(SurveyAggregationQuery body, CancellationToken cancellationToken = default)
+    {
+        ArgumentNullException.ThrowIfNull(body);
+
+        var client = _httpClientFactory.CreateClient(PureCloudConstants.PureCloudClientName);
+
+        var response = await client.PostAsJsonAsync($"api/v2/analytics/surveys/aggregates/query", body, _options.JsonSerializerOptions, cancellationToken);
+
+        response.EnsureSuccessStatusCode();
+
+        return await response.Content.ReadFromJsonAsync<SurveyAggregateQueryResponse>(_options.JsonSerializerOptions, cancellationToken);
+    }
+
+    public async Task<QualityAuditQueryExecutionStatusResponse> CreateQualityConversationsAuditsQueryAsync(QMAuditQueryRequest body, CancellationToken cancellationToken = default)
+    {
+        ArgumentNullException.ThrowIfNull(body);
+
+        var client = _httpClientFactory.CreateClient(PureCloudConstants.PureCloudClientName);
+
+        var response = await client.PostAsJsonAsync($"api/v2/quality/conversations/audits/query", body, _options.JsonSerializerOptions, cancellationToken);
+
+        response.EnsureSuccessStatusCode();
+
+        return await response.Content.ReadFromJsonAsync<QualityAuditQueryExecutionStatusResponse>(_options.JsonSerializerOptions, cancellationToken);
+    }
+
+    public async Task<EvaluationAggregateQueryResponse> CreateQualityEvaluationsAggregatesQueryMeAsync(EvaluationAggregationQueryMe body, CancellationToken cancellationToken = default)
+    {
+        ArgumentNullException.ThrowIfNull(body);
+
+        var client = _httpClientFactory.CreateClient(PureCloudConstants.PureCloudClientName);
+
+        var response = await client.PostAsJsonAsync($"api/v2/quality/evaluations/aggregates/query/me", body, _options.JsonSerializerOptions, cancellationToken);
+
+        response.EnsureSuccessStatusCode();
+
+        return await response.Content.ReadFromJsonAsync<EvaluationAggregateQueryResponse>(_options.JsonSerializerOptions, cancellationToken);
+    }
+
+    public async Task<EvaluationScoringSet> CreateQualityEvaluationsScoringAsync(EvaluationFormAndScoringSet body, CancellationToken cancellationToken = default)
+    {
+        ArgumentNullException.ThrowIfNull(body);
+
+        var client = _httpClientFactory.CreateClient(PureCloudConstants.PureCloudClientName);
+
+        var response = await client.PostAsJsonAsync($"api/v2/quality/evaluations/scoring", body, _options.JsonSerializerOptions, cancellationToken);
+
+        response.EnsureSuccessStatusCode();
+
+        return await response.Content.ReadFromJsonAsync<EvaluationScoringSet>(_options.JsonSerializerOptions, cancellationToken);
+    }
+
+    public async Task<EvaluationFormResponse> CreateQualityFormsAsync(EvaluationForm body, CancellationToken cancellationToken = default)
+    {
+        ArgumentNullException.ThrowIfNull(body);
+
+        var client = _httpClientFactory.CreateClient(PureCloudConstants.PureCloudClientName);
+
+        var response = await client.PostAsJsonAsync($"api/v2/quality/forms", body, _options.JsonSerializerOptions, cancellationToken);
+
+        response.EnsureSuccessStatusCode();
+
+        return await response.Content.ReadFromJsonAsync<EvaluationFormResponse>(_options.JsonSerializerOptions, cancellationToken);
+    }
+
+    public async Task<SurveyForm> CreateQualityFormsSurveysAsync(SurveyForm body, CancellationToken cancellationToken = default)
+    {
+        ArgumentNullException.ThrowIfNull(body);
+
+        var client = _httpClientFactory.CreateClient(PureCloudConstants.PureCloudClientName);
+
+        var response = await client.PostAsJsonAsync($"api/v2/quality/forms/surveys", body, _options.JsonSerializerOptions, cancellationToken);
+
+        response.EnsureSuccessStatusCode();
+
+        return await response.Content.ReadFromJsonAsync<SurveyForm>(_options.JsonSerializerOptions, cancellationToken);
+    }
+
+    public async Task<EvaluationFormResponse> CreateQualityPublishedformsAsync(PublishForm body, CancellationToken cancellationToken = default)
+    {
+        ArgumentNullException.ThrowIfNull(body);
+
+        var client = _httpClientFactory.CreateClient(PureCloudConstants.PureCloudClientName);
+
+        var response = await client.PostAsJsonAsync($"api/v2/quality/publishedforms", body, _options.JsonSerializerOptions, cancellationToken);
+
+        response.EnsureSuccessStatusCode();
+
+        return await response.Content.ReadFromJsonAsync<EvaluationFormResponse>(_options.JsonSerializerOptions, cancellationToken);
+    }
+
+    public async Task<EvaluationFormResponse> CreateQualityPublishedformsEvaluationsAsync(PublishForm body, CancellationToken cancellationToken = default)
+    {
+        ArgumentNullException.ThrowIfNull(body);
+
+        var client = _httpClientFactory.CreateClient(PureCloudConstants.PureCloudClientName);
+
+        var response = await client.PostAsJsonAsync($"api/v2/quality/publishedforms/evaluations", body, _options.JsonSerializerOptions, cancellationToken);
+
+        response.EnsureSuccessStatusCode();
+
+        return await response.Content.ReadFromJsonAsync<EvaluationFormResponse>(_options.JsonSerializerOptions, cancellationToken);
+    }
+
+    public async Task<SurveyForm> CreateQualityPublishedformsSurveysAsync(PublishForm body, CancellationToken cancellationToken = default)
+    {
+        ArgumentNullException.ThrowIfNull(body);
+
+        var client = _httpClientFactory.CreateClient(PureCloudConstants.PureCloudClientName);
+
+        var response = await client.PostAsJsonAsync($"api/v2/quality/publishedforms/surveys", body, _options.JsonSerializerOptions, cancellationToken);
+
+        response.EnsureSuccessStatusCode();
+
+        return await response.Content.ReadFromJsonAsync<SurveyForm>(_options.JsonSerializerOptions, cancellationToken);
+    }
+
+    public async Task<SurveyScore> CreateQualitySurveysScoringAsync(SurveyFormAndScoringSet body, CancellationToken cancellationToken = default)
+    {
+        ArgumentNullException.ThrowIfNull(body);
+
+        var client = _httpClientFactory.CreateClient(PureCloudConstants.PureCloudClientName);
+
+        var response = await client.PostAsJsonAsync($"api/v2/quality/surveys/scoring", body, _options.JsonSerializerOptions, cancellationToken);
+
+        response.EnsureSuccessStatusCode();
+
+        return await response.Content.ReadFromJsonAsync<SurveyScore>(_options.JsonSerializerOptions, cancellationToken);
+    }
+
+    public async Task<Calibration> UpdateQualityCalibrationAsync(string calibrationId, Calibration body, CancellationToken cancellationToken = default)
+    {
+        ArgumentException.ThrowIfNullOrEmpty(calibrationId);
+        ArgumentNullException.ThrowIfNull(body);
+
+        var client = _httpClientFactory.CreateClient(PureCloudConstants.PureCloudClientName);
+
+        var response = await client.PutAsJsonAsync($"api/v2/quality/calibrations/{calibrationId}", body, _options.JsonSerializerOptions, cancellationToken);
+
+        response.EnsureSuccessStatusCode();
+
+        return await response.Content.ReadFromJsonAsync<Calibration>(_options.JsonSerializerOptions, cancellationToken);
+    }
+
+    public async Task<EvaluationResponse> UpdateQualityConversationEvaluationAsync(string conversationId, string evaluationId, Evaluation body, string expand = null, CancellationToken cancellationToken = default)
+    {
+        ArgumentException.ThrowIfNullOrEmpty(conversationId);
+        ArgumentException.ThrowIfNullOrEmpty(evaluationId);
+        ArgumentNullException.ThrowIfNull(body);
+
+        var parameters = new NameValueCollection();
+
+        if (!string.IsNullOrEmpty(expand))
+        {
+            parameters.Add("expand", UriHelper.ParameterToString(expand));
+        }
+
+        var client = _httpClientFactory.CreateClient(PureCloudConstants.PureCloudClientName);
+
+        var uri = UriHelper.GetUri($"api/v2/quality/conversations/{conversationId}/evaluations/{evaluationId}", parameters);
+
+        var response = await client.PutAsJsonAsync(uri, body, _options.JsonSerializerOptions, cancellationToken);
+
+        response.EnsureSuccessStatusCode();
+
+        return await response.Content.ReadFromJsonAsync<EvaluationResponse>(_options.JsonSerializerOptions, cancellationToken);
+    }
+
+    public async Task<EvaluationFormResponse> UpdateQualityFormAsync(string formId, EvaluationForm body, CancellationToken cancellationToken = default)
+    {
+        ArgumentException.ThrowIfNullOrEmpty(formId);
+        ArgumentNullException.ThrowIfNull(body);
+
+        var client = _httpClientFactory.CreateClient(PureCloudConstants.PureCloudClientName);
+
+        var response = await client.PutAsJsonAsync($"api/v2/quality/forms/{formId}", body, _options.JsonSerializerOptions, cancellationToken);
+
+        response.EnsureSuccessStatusCode();
+
+        return await response.Content.ReadFromJsonAsync<EvaluationFormResponse>(_options.JsonSerializerOptions, cancellationToken);
+    }
+
+    public async Task<AiScoringSettings> UpdateQualityFormsEvaluationAiscoringSettingsAsync(string formId, AiScoringSettings body, CancellationToken cancellationToken = default)
+    {
+        ArgumentException.ThrowIfNullOrEmpty(formId);
+        ArgumentNullException.ThrowIfNull(body);
+
+        var client = _httpClientFactory.CreateClient(PureCloudConstants.PureCloudClientName);
+
+        var response = await client.PutAsJsonAsync($"api/v2/quality/forms/evaluations/{formId}/aiscoringsettings", body, _options.JsonSerializerOptions, cancellationToken);
+
+        response.EnsureSuccessStatusCode();
+
+        return await response.Content.ReadFromJsonAsync<AiScoringSettings>(_options.JsonSerializerOptions, cancellationToken);
+    }
+
+    public async Task<ScorableSurvey> UpdateQualitySurveysScorableAsync(string customerSurveyUrl, ScorableSurvey body, CancellationToken cancellationToken = default)
+    {
+        ArgumentException.ThrowIfNullOrEmpty(customerSurveyUrl);
+        ArgumentNullException.ThrowIfNull(body);
+
+        var parameters = new NameValueCollection();
+        parameters.Add("customerSurveyUrl", UriHelper.ParameterToString(customerSurveyUrl));
+
+        var client = _httpClientFactory.CreateClient(PureCloudConstants.PureCloudClientName);
+
+        var uri = UriHelper.GetUri($"api/v2/quality/surveys/scorable", parameters);
+
+        var response = await client.PutAsJsonAsync(uri, body, _options.JsonSerializerOptions, cancellationToken);
+
+        response.EnsureSuccessStatusCode();
+
+        return await response.Content.ReadFromJsonAsync<ScorableSurvey>(_options.JsonSerializerOptions, cancellationToken);
+    }
 }
