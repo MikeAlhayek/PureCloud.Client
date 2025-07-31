@@ -29,7 +29,7 @@ public sealed class OutboundApi : IOutboundApi
 
         var response = await client.GetAsync($"api/v2/outbound/attemptlimits/{attemptLimitsId}", cancellationToken);
 
-        return response.IsSuccessStatusCode;
+        response.EnsureSuccessStatusCode();
 
         return await response.Content.ReadFromJsonAsync<AttemptLimits>(_options.JsonSerializerOptions, cancellationToken);
     }
@@ -78,7 +78,7 @@ public sealed class OutboundApi : IOutboundApi
         var uri = UriHelper.GetUri("api/v2/outbound/attemptlimits", parameters);
         var response = await client.GetAsync(uri, cancellationToken);
 
-        return response.IsSuccessStatusCode;
+        response.EnsureSuccessStatusCode();
 
         return await response.Content.ReadFromJsonAsync<AttemptLimitsEntityListing>(_options.JsonSerializerOptions, cancellationToken);
     }
@@ -91,7 +91,7 @@ public sealed class OutboundApi : IOutboundApi
 
         var response = await client.PostAsJsonAsync("api/v2/outbound/attemptlimits", body, _options.JsonSerializerOptions, cancellationToken);
 
-        return response.IsSuccessStatusCode;
+        response.EnsureSuccessStatusCode();
 
         return await response.Content.ReadFromJsonAsync<AttemptLimits>(_options.JsonSerializerOptions, cancellationToken);
     }
@@ -105,7 +105,7 @@ public sealed class OutboundApi : IOutboundApi
 
         var response = await client.PutAsJsonAsync($"api/v2/outbound/attemptlimits/{attemptLimitsId}", body, _options.JsonSerializerOptions, cancellationToken);
 
-        return response.IsSuccessStatusCode;
+        response.EnsureSuccessStatusCode();
 
         return await response.Content.ReadFromJsonAsync<AttemptLimits>(_options.JsonSerializerOptions, cancellationToken);
     }
@@ -129,7 +129,7 @@ public sealed class OutboundApi : IOutboundApi
 
         var response = await client.GetAsync($"api/v2/outbound/callabletimesets/{Uri.EscapeDataString(callableTimeSetId)}", cancellationToken);
 
-        return response.IsSuccessStatusCode;
+        response.EnsureSuccessStatusCode();
 
         return await response.Content.ReadFromJsonAsync<CallableTimeSet>(_options.JsonSerializerOptions, cancellationToken);
     }
@@ -179,7 +179,7 @@ public sealed class OutboundApi : IOutboundApi
 
         var response = await client.GetAsync(uri, cancellationToken);
 
-        return response.IsSuccessStatusCode;
+        response.EnsureSuccessStatusCode();
 
         return await response.Content.ReadFromJsonAsync<CallableTimeSetEntityListing>(_options.JsonSerializerOptions, cancellationToken);
     }
@@ -192,7 +192,7 @@ public sealed class OutboundApi : IOutboundApi
 
         var response = await client.PostAsJsonAsync("api/v2/outbound/callabletimesets", body, _options.JsonSerializerOptions, cancellationToken);
 
-        return response.IsSuccessStatusCode;
+        response.EnsureSuccessStatusCode();
 
         return await response.Content.ReadFromJsonAsync<CallableTimeSet>(_options.JsonSerializerOptions, cancellationToken);
     }
@@ -206,7 +206,7 @@ public sealed class OutboundApi : IOutboundApi
 
         var response = await client.PutAsJsonAsync($"api/v2/outbound/callabletimesets/{Uri.EscapeDataString(callableTimeSetId)}", body, _options.JsonSerializerOptions, cancellationToken);
 
-        return response.IsSuccessStatusCode;
+        response.EnsureSuccessStatusCode();
 
         return await response.Content.ReadFromJsonAsync<CallableTimeSet>(_options.JsonSerializerOptions, cancellationToken);
     }
@@ -230,7 +230,7 @@ public sealed class OutboundApi : IOutboundApi
 
         var response = await client.GetAsync($"api/v2/outbound/campaigns/{Uri.EscapeDataString(campaignId)}", cancellationToken);
 
-        return response.IsSuccessStatusCode;
+        response.EnsureSuccessStatusCode();
 
         return await response.Content.ReadFromJsonAsync<Campaign>(_options.JsonSerializerOptions, cancellationToken);
     }
@@ -316,7 +316,7 @@ public sealed class OutboundApi : IOutboundApi
 
         var response = await client.GetAsync(uri, cancellationToken);
 
-        return response.IsSuccessStatusCode;
+        response.EnsureSuccessStatusCode();
 
         return await response.Content.ReadFromJsonAsync<CampaignEntityListing>(_options.JsonSerializerOptions, cancellationToken);
     }
@@ -329,7 +329,7 @@ public sealed class OutboundApi : IOutboundApi
 
         var response = await client.PostAsJsonAsync("api/v2/outbound/campaigns", body, _options.JsonSerializerOptions, cancellationToken);
 
-        return response.IsSuccessStatusCode;
+        response.EnsureSuccessStatusCode();
 
         return await response.Content.ReadFromJsonAsync<Campaign>(_options.JsonSerializerOptions, cancellationToken);
     }
@@ -343,7 +343,7 @@ public sealed class OutboundApi : IOutboundApi
 
         var response = await client.PutAsJsonAsync($"api/v2/outbound/campaigns/{Uri.EscapeDataString(campaignId)}", body, _options.JsonSerializerOptions, cancellationToken);
 
-        return response.IsSuccessStatusCode;
+        response.EnsureSuccessStatusCode();
 
         return await response.Content.ReadFromJsonAsync<Campaign>(_options.JsonSerializerOptions, cancellationToken);
     }
@@ -367,7 +367,7 @@ public sealed class OutboundApi : IOutboundApi
 
         var response = await client.GetAsync($"api/v2/outbound/callanalysisresponsesets/{Uri.EscapeDataString(callAnalysisSetId)}", cancellationToken);
 
-        return response.IsSuccessStatusCode;
+        response.EnsureSuccessStatusCode();
 
         return await response.Content.ReadFromJsonAsync<ResponseSet>(_options.JsonSerializerOptions, cancellationToken);
     }
@@ -417,7 +417,7 @@ public sealed class OutboundApi : IOutboundApi
 
         var response = await client.GetAsync(uri, cancellationToken);
 
-        return response.IsSuccessStatusCode;
+        response.EnsureSuccessStatusCode();
 
         return await response.Content.ReadFromJsonAsync<ResponseSetEntityListing>(_options.JsonSerializerOptions, cancellationToken);
     }
@@ -430,7 +430,7 @@ public sealed class OutboundApi : IOutboundApi
 
         var response = await client.PostAsJsonAsync("api/v2/outbound/callanalysisresponsesets", body, _options.JsonSerializerOptions, cancellationToken);
 
-        return response.IsSuccessStatusCode;
+        response.EnsureSuccessStatusCode();
 
         return await response.Content.ReadFromJsonAsync<ResponseSet>(_options.JsonSerializerOptions, cancellationToken);
     }
@@ -444,7 +444,7 @@ public sealed class OutboundApi : IOutboundApi
 
         var response = await client.PutAsJsonAsync($"api/v2/outbound/callanalysisresponsesets/{Uri.EscapeDataString(callAnalysisSetId)}", body, _options.JsonSerializerOptions, cancellationToken);
 
-        return response.IsSuccessStatusCode;
+        response.EnsureSuccessStatusCode();
 
         return await response.Content.ReadFromJsonAsync<ResponseSet>(_options.JsonSerializerOptions, cancellationToken);
     }
@@ -1120,7 +1120,7 @@ public sealed class OutboundApi : IOutboundApi
 
         var response = await client.PostAsJsonAsync("api/v2/outbound/attemptlimits", body, _options.JsonSerializerOptions, cancellationToken);
 
-        return response.IsSuccessStatusCode;
+        response.EnsureSuccessStatusCode();
 
         return await response.Content.ReadFromJsonAsync<AttemptLimits>(_options.JsonSerializerOptions, cancellationToken);
     }
@@ -1133,7 +1133,7 @@ public sealed class OutboundApi : IOutboundApi
 
         var response = await client.PostAsJsonAsync("api/v2/outbound/callabletimesets", body, _options.JsonSerializerOptions, cancellationToken);
 
-        return response.IsSuccessStatusCode;
+        response.EnsureSuccessStatusCode();
 
         return await response.Content.ReadFromJsonAsync<CallableTimeSet>(_options.JsonSerializerOptions, cancellationToken);
     }
@@ -1146,7 +1146,7 @@ public sealed class OutboundApi : IOutboundApi
 
         var response = await client.PostAsJsonAsync("api/v2/outbound/callanalysisresponsesets", body, _options.JsonSerializerOptions, cancellationToken);
 
-        return response.IsSuccessStatusCode;
+        response.EnsureSuccessStatusCode();
 
         return await response.Content.ReadFromJsonAsync<ResponseSet>(_options.JsonSerializerOptions, cancellationToken);
     }
@@ -1161,7 +1161,7 @@ public sealed class OutboundApi : IOutboundApi
 
         var response = await client.PutAsJsonAsync($"api/v2/outbound/attemptlimits/{Uri.EscapeDataString(attemptLimitsId)}", body, _options.JsonSerializerOptions, cancellationToken);
 
-        return response.IsSuccessStatusCode;
+        response.EnsureSuccessStatusCode();
 
         return await response.Content.ReadFromJsonAsync<AttemptLimits>(_options.JsonSerializerOptions, cancellationToken);
     }
@@ -1175,7 +1175,7 @@ public sealed class OutboundApi : IOutboundApi
 
         var response = await client.PutAsJsonAsync($"api/v2/outbound/callabletimesets/{Uri.EscapeDataString(callableTimeSetId)}", body, _options.JsonSerializerOptions, cancellationToken);
 
-        return response.IsSuccessStatusCode;
+        response.EnsureSuccessStatusCode();
 
         return await response.Content.ReadFromJsonAsync<CallableTimeSet>(_options.JsonSerializerOptions, cancellationToken);
     }
@@ -1189,7 +1189,7 @@ public sealed class OutboundApi : IOutboundApi
 
         var response = await client.PutAsJsonAsync($"api/v2/outbound/callanalysisresponsesets/{Uri.EscapeDataString(callAnalysisSetId)}", body, _options.JsonSerializerOptions, cancellationToken);
 
-        return response.IsSuccessStatusCode;
+        response.EnsureSuccessStatusCode();
 
         return await response.Content.ReadFromJsonAsync<ResponseSet>(_options.JsonSerializerOptions, cancellationToken);
     }
@@ -1265,7 +1265,7 @@ public sealed class OutboundApi : IOutboundApi
         var uri = UriHelper.GetUri("api/v2/outbound/contactlists", parameters);
         var response = await client.GetAsync(uri, cancellationToken);
 
-        return response.IsSuccessStatusCode;
+        response.EnsureSuccessStatusCode();
 
         return await response.Content.ReadFromJsonAsync<ContactListEntityListing>(_options.JsonSerializerOptions, cancellationToken);
     }
@@ -1278,7 +1278,7 @@ public sealed class OutboundApi : IOutboundApi
 
         var response = await client.GetAsync($"api/v2/outbound/contactlistfilters/{Uri.EscapeDataString(contactListFilterId)}", cancellationToken);
 
-        return response.IsSuccessStatusCode;
+        response.EnsureSuccessStatusCode();
 
         return await response.Content.ReadFromJsonAsync<ContactListFilter>(_options.JsonSerializerOptions, cancellationToken);
     }
@@ -1332,7 +1332,7 @@ public sealed class OutboundApi : IOutboundApi
         var uri = UriHelper.GetUri("api/v2/outbound/contactlistfilters", parameters);
         var response = await client.GetAsync(uri, cancellationToken);
 
-        return response.IsSuccessStatusCode;
+        response.EnsureSuccessStatusCode();
 
         return await response.Content.ReadFromJsonAsync<ContactListFilterEntityListing>(_options.JsonSerializerOptions, cancellationToken);
     }
@@ -1345,7 +1345,7 @@ public sealed class OutboundApi : IOutboundApi
 
         var response = await client.GetAsync($"api/v2/outbound/contactlisttemplates/{Uri.EscapeDataString(contactListTemplateId)}", cancellationToken);
 
-        return response.IsSuccessStatusCode;
+        response.EnsureSuccessStatusCode();
 
         return await response.Content.ReadFromJsonAsync<ContactListTemplate>(_options.JsonSerializerOptions, cancellationToken);
     }
@@ -1394,7 +1394,7 @@ public sealed class OutboundApi : IOutboundApi
         var uri = UriHelper.GetUri("api/v2/outbound/contactlisttemplates", parameters);
         var response = await client.GetAsync(uri, cancellationToken);
 
-        return response.IsSuccessStatusCode;
+        response.EnsureSuccessStatusCode();
 
         return await response.Content.ReadFromJsonAsync<ContactListTemplateEntityListing>(_options.JsonSerializerOptions, cancellationToken);
     }
@@ -1408,7 +1408,7 @@ public sealed class OutboundApi : IOutboundApi
 
         var response = await client.GetAsync($"api/v2/outbound/digitalrulesets/{Uri.EscapeDataString(digitalRuleSetId)}", cancellationToken);
 
-        return response.IsSuccessStatusCode;
+        response.EnsureSuccessStatusCode();
 
         return await response.Content.ReadFromJsonAsync<DigitalRuleSet>(_options.JsonSerializerOptions, cancellationToken);
     }
@@ -1457,7 +1457,7 @@ public sealed class OutboundApi : IOutboundApi
         var uri = UriHelper.GetUri("api/v2/outbound/digitalrulesets", parameters);
         var response = await client.GetAsync(uri, cancellationToken);
 
-        return response.IsSuccessStatusCode;
+        response.EnsureSuccessStatusCode();
 
         return await response.Content.ReadFromJsonAsync<DigitalRuleSetEntityListing>(_options.JsonSerializerOptions, cancellationToken);
     }
@@ -1484,7 +1484,7 @@ public sealed class OutboundApi : IOutboundApi
         var uri = UriHelper.GetUri($"api/v2/outbound/dnclists/{Uri.EscapeDataString(dncListId)}", parameters);
         var response = await client.GetAsync(uri, cancellationToken);
 
-        return response.IsSuccessStatusCode;
+        response.EnsureSuccessStatusCode();
 
         return await response.Content.ReadFromJsonAsync<DncList>(_options.JsonSerializerOptions, cancellationToken);
     }
@@ -1556,7 +1556,7 @@ public sealed class OutboundApi : IOutboundApi
         var uri = UriHelper.GetUri("api/v2/outbound/dnclists", parameters);
         var response = await client.GetAsync(uri, cancellationToken);
 
-        return response.IsSuccessStatusCode;
+        response.EnsureSuccessStatusCode();
 
         return await response.Content.ReadFromJsonAsync<DncListEntityListing>(_options.JsonSerializerOptions, cancellationToken);
     }
@@ -1570,7 +1570,7 @@ public sealed class OutboundApi : IOutboundApi
 
         var response = await client.GetAsync($"api/v2/outbound/events/{Uri.EscapeDataString(eventId)}", cancellationToken);
 
-        return response.IsSuccessStatusCode;
+        response.EnsureSuccessStatusCode();
 
         return await response.Content.ReadFromJsonAsync<EventLog>(_options.JsonSerializerOptions, cancellationToken);
     }
@@ -1619,7 +1619,7 @@ public sealed class OutboundApi : IOutboundApi
         var uri = UriHelper.GetUri("api/v2/outbound/events", parameters);
         var response = await client.GetAsync(uri, cancellationToken);
 
-        return response.IsSuccessStatusCode;
+        response.EnsureSuccessStatusCode();
 
         return await response.Content.ReadFromJsonAsync<DialerEventEntityListing>(_options.JsonSerializerOptions, cancellationToken);
     }
@@ -1633,7 +1633,7 @@ public sealed class OutboundApi : IOutboundApi
 
         var response = await client.GetAsync($"api/v2/outbound/filespecificationtemplates/{Uri.EscapeDataString(fileSpecificationTemplateId)}", cancellationToken);
 
-        return response.IsSuccessStatusCode;
+        response.EnsureSuccessStatusCode();
 
         return await response.Content.ReadFromJsonAsync<FileSpecificationTemplate>(_options.JsonSerializerOptions, cancellationToken);
     }
@@ -1682,7 +1682,7 @@ public sealed class OutboundApi : IOutboundApi
         var uri = UriHelper.GetUri("api/v2/outbound/filespecificationtemplates", parameters);
         var response = await client.GetAsync(uri, cancellationToken);
 
-        return response.IsSuccessStatusCode;
+        response.EnsureSuccessStatusCode();
 
         return await response.Content.ReadFromJsonAsync<FileSpecificationTemplateEntityListing>(_options.JsonSerializerOptions, cancellationToken);
     }
@@ -1704,7 +1704,7 @@ public sealed class OutboundApi : IOutboundApi
         var uri = UriHelper.GetUri($"api/v2/outbound/importtemplates/{Uri.EscapeDataString(importTemplateId)}", parameters);
         var response = await client.GetAsync(uri, cancellationToken);
 
-        return response.IsSuccessStatusCode;
+        response.EnsureSuccessStatusCode();
 
         return await response.Content.ReadFromJsonAsync<ImportTemplate>(_options.JsonSerializerOptions, cancellationToken);
     }
@@ -1763,7 +1763,7 @@ public sealed class OutboundApi : IOutboundApi
         var uri = UriHelper.GetUri("api/v2/outbound/importtemplates", parameters);
         var response = await client.GetAsync(uri, cancellationToken);
 
-        return response.IsSuccessStatusCode;
+        response.EnsureSuccessStatusCode();
 
         return await response.Content.ReadFromJsonAsync<ImportTemplateEntityListing>(_options.JsonSerializerOptions, cancellationToken);
     }
@@ -1777,7 +1777,7 @@ public sealed class OutboundApi : IOutboundApi
 
         var response = await client.GetAsync($"api/v2/outbound/rulesets/{Uri.EscapeDataString(ruleSetId)}", cancellationToken);
 
-        return response.IsSuccessStatusCode;
+        response.EnsureSuccessStatusCode();
 
         return await response.Content.ReadFromJsonAsync<RuleSet>(_options.JsonSerializerOptions, cancellationToken);
     }
@@ -1826,7 +1826,7 @@ public sealed class OutboundApi : IOutboundApi
         var uri = UriHelper.GetUri("api/v2/outbound/rulesets", parameters);
         var response = await client.GetAsync(uri, cancellationToken);
 
-        return response.IsSuccessStatusCode;
+        response.EnsureSuccessStatusCode();
 
         return await response.Content.ReadFromJsonAsync<RuleSetEntityListing>(_options.JsonSerializerOptions, cancellationToken);
     }
@@ -1840,7 +1840,7 @@ public sealed class OutboundApi : IOutboundApi
 
         var response = await client.GetAsync($"api/v2/outbound/sequences/{Uri.EscapeDataString(sequenceId)}", cancellationToken);
 
-        return response.IsSuccessStatusCode;
+        response.EnsureSuccessStatusCode();
 
         return await response.Content.ReadFromJsonAsync<CampaignSequence>(_options.JsonSerializerOptions, cancellationToken);
     }
@@ -1889,7 +1889,7 @@ public sealed class OutboundApi : IOutboundApi
         var uri = UriHelper.GetUri("api/v2/outbound/sequences", parameters);
         var response = await client.GetAsync(uri, cancellationToken);
 
-        return response.IsSuccessStatusCode;
+        response.EnsureSuccessStatusCode();
 
         return await response.Content.ReadFromJsonAsync<CampaignSequenceEntityListing>(_options.JsonSerializerOptions, cancellationToken);
     }
@@ -1901,7 +1901,7 @@ public sealed class OutboundApi : IOutboundApi
 
         var response = await client.GetAsync("api/v2/outbound/settings", cancellationToken);
 
-        return response.IsSuccessStatusCode;
+        response.EnsureSuccessStatusCode();
 
         return await response.Content.ReadFromJsonAsync<OutboundSettings>(_options.JsonSerializerOptions, cancellationToken);
     }
@@ -1913,7 +1913,7 @@ public sealed class OutboundApi : IOutboundApi
 
         var response = await client.GetAsync("api/v2/outbound/wrapupcodemappings", cancellationToken);
 
-        return response.IsSuccessStatusCode;
+        response.EnsureSuccessStatusCode();
 
         return await response.Content.ReadFromJsonAsync<WrapUpCodeMapping>(_options.JsonSerializerOptions, cancellationToken);
     }
@@ -1927,7 +1927,7 @@ public sealed class OutboundApi : IOutboundApi
 
         var response = await client.PostAsJsonAsync("api/v2/outbound/digitalrulesets", body, _options.JsonSerializerOptions, cancellationToken);
 
-        return response.IsSuccessStatusCode;
+        response.EnsureSuccessStatusCode();
 
         return await response.Content.ReadFromJsonAsync<DigitalRuleSet>(_options.JsonSerializerOptions, cancellationToken);
     }
@@ -1940,7 +1940,7 @@ public sealed class OutboundApi : IOutboundApi
 
         var response = await client.PostAsJsonAsync("api/v2/outbound/dnclists", body, _options.JsonSerializerOptions, cancellationToken);
 
-        return response.IsSuccessStatusCode;
+        response.EnsureSuccessStatusCode();
 
         return await response.Content.ReadFromJsonAsync<DncList>(_options.JsonSerializerOptions, cancellationToken);
     }
@@ -1953,7 +1953,7 @@ public sealed class OutboundApi : IOutboundApi
 
         var response = await client.PostAsJsonAsync("api/v2/outbound/filespecificationtemplates", body, _options.JsonSerializerOptions, cancellationToken);
 
-        return response.IsSuccessStatusCode;
+        response.EnsureSuccessStatusCode();
 
         return await response.Content.ReadFromJsonAsync<FileSpecificationTemplate>(_options.JsonSerializerOptions, cancellationToken);
     }
@@ -1966,7 +1966,7 @@ public sealed class OutboundApi : IOutboundApi
 
         var response = await client.PostAsJsonAsync("api/v2/outbound/importtemplates", body, _options.JsonSerializerOptions, cancellationToken);
 
-        return response.IsSuccessStatusCode;
+        response.EnsureSuccessStatusCode();
 
         return await response.Content.ReadFromJsonAsync<ImportTemplate>(_options.JsonSerializerOptions, cancellationToken);
     }
@@ -1979,7 +1979,7 @@ public sealed class OutboundApi : IOutboundApi
 
         var response = await client.PostAsJsonAsync("api/v2/outbound/rulesets", body, _options.JsonSerializerOptions, cancellationToken);
 
-        return response.IsSuccessStatusCode;
+        response.EnsureSuccessStatusCode();
 
         return await response.Content.ReadFromJsonAsync<RuleSet>(_options.JsonSerializerOptions, cancellationToken);
     }
@@ -1992,7 +1992,7 @@ public sealed class OutboundApi : IOutboundApi
 
         var response = await client.PostAsJsonAsync("api/v2/outbound/sequences", body, _options.JsonSerializerOptions, cancellationToken);
 
-        return response.IsSuccessStatusCode;
+        response.EnsureSuccessStatusCode();
 
         return await response.Content.ReadFromJsonAsync<CampaignSequence>(_options.JsonSerializerOptions, cancellationToken);
     }
@@ -2007,7 +2007,7 @@ public sealed class OutboundApi : IOutboundApi
 
         var response = await client.PutAsJsonAsync($"api/v2/outbound/digitalrulesets/{Uri.EscapeDataString(digitalRuleSetId)}", body, _options.JsonSerializerOptions, cancellationToken);
 
-        return response.IsSuccessStatusCode;
+        response.EnsureSuccessStatusCode();
 
         return await response.Content.ReadFromJsonAsync<DigitalRuleSet>(_options.JsonSerializerOptions, cancellationToken);
     }
@@ -2021,7 +2021,7 @@ public sealed class OutboundApi : IOutboundApi
 
         var response = await client.PutAsJsonAsync($"api/v2/outbound/dnclists/{Uri.EscapeDataString(dncListId)}", body, _options.JsonSerializerOptions, cancellationToken);
 
-        return response.IsSuccessStatusCode;
+        response.EnsureSuccessStatusCode();
 
         return await response.Content.ReadFromJsonAsync<DncList>(_options.JsonSerializerOptions, cancellationToken);
     }
@@ -2035,7 +2035,7 @@ public sealed class OutboundApi : IOutboundApi
 
         var response = await client.PutAsJsonAsync($"api/v2/outbound/filespecificationtemplates/{Uri.EscapeDataString(fileSpecificationTemplateId)}", body, _options.JsonSerializerOptions, cancellationToken);
 
-        return response.IsSuccessStatusCode;
+        response.EnsureSuccessStatusCode();
 
         return await response.Content.ReadFromJsonAsync<FileSpecificationTemplate>(_options.JsonSerializerOptions, cancellationToken);
     }
@@ -2049,7 +2049,7 @@ public sealed class OutboundApi : IOutboundApi
 
         var response = await client.PutAsJsonAsync($"api/v2/outbound/importtemplates/{Uri.EscapeDataString(importTemplateId)}", body, _options.JsonSerializerOptions, cancellationToken);
 
-        return response.IsSuccessStatusCode;
+        response.EnsureSuccessStatusCode();
 
         return await response.Content.ReadFromJsonAsync<ImportTemplate>(_options.JsonSerializerOptions, cancellationToken);
     }
@@ -2063,7 +2063,7 @@ public sealed class OutboundApi : IOutboundApi
 
         var response = await client.PutAsJsonAsync($"api/v2/outbound/rulesets/{Uri.EscapeDataString(ruleSetId)}", body, _options.JsonSerializerOptions, cancellationToken);
 
-        return response.IsSuccessStatusCode;
+        response.EnsureSuccessStatusCode();
 
         return await response.Content.ReadFromJsonAsync<RuleSet>(_options.JsonSerializerOptions, cancellationToken);
     }
@@ -2077,7 +2077,7 @@ public sealed class OutboundApi : IOutboundApi
 
         var response = await client.PutAsJsonAsync($"api/v2/outbound/sequences/{Uri.EscapeDataString(sequenceId)}", body, _options.JsonSerializerOptions, cancellationToken);
 
-        return response.IsSuccessStatusCode;
+        response.EnsureSuccessStatusCode();
 
         return await response.Content.ReadFromJsonAsync<CampaignSequence>(_options.JsonSerializerOptions, cancellationToken);
     }
@@ -2090,7 +2090,7 @@ public sealed class OutboundApi : IOutboundApi
 
         var response = await client.PutAsJsonAsync("api/v2/outbound/settings", body, _options.JsonSerializerOptions, cancellationToken);
 
-        return response.IsSuccessStatusCode;
+        response.EnsureSuccessStatusCode();
 
         return await response.Content.ReadFromJsonAsync<OutboundSettings>(_options.JsonSerializerOptions, cancellationToken);
     }
@@ -2103,7 +2103,7 @@ public sealed class OutboundApi : IOutboundApi
 
         var response = await client.PutAsJsonAsync("api/v2/outbound/wrapupcodemappings", body, _options.JsonSerializerOptions, cancellationToken);
 
-        return response.IsSuccessStatusCode;
+        response.EnsureSuccessStatusCode();
 
         return await response.Content.ReadFromJsonAsync<WrapUpCodeMapping>(_options.JsonSerializerOptions, cancellationToken);
     }
@@ -2125,7 +2125,7 @@ public sealed class OutboundApi : IOutboundApi
         var uri = UriHelper.GetUri($"api/v2/outbound/contactlists/{Uri.EscapeDataString(contactListId)}/export", parameters);
         var response = await client.GetAsync(uri, cancellationToken);
 
-        return response.IsSuccessStatusCode;
+        response.EnsureSuccessStatusCode();
 
         return await response.Content.ReadAsStringAsync(cancellationToken);
     }
@@ -2138,7 +2138,7 @@ public sealed class OutboundApi : IOutboundApi
 
         var response = await client.GetAsync($"api/v2/outbound/contactlists/{Uri.EscapeDataString(contactListId)}/importstatus", cancellationToken);
 
-        return response.IsSuccessStatusCode;
+        response.EnsureSuccessStatusCode();
 
         return await response.Content.ReadFromJsonAsync<ImportStatus>(_options.JsonSerializerOptions, cancellationToken);
     }
@@ -2159,7 +2159,7 @@ public sealed class OutboundApi : IOutboundApi
         var uri = UriHelper.GetUri($"api/v2/outbound/dnclists/{Uri.EscapeDataString(dncListId)}/export", parameters);
         var response = await client.GetAsync(uri, cancellationToken);
 
-        return response.IsSuccessStatusCode;
+        response.EnsureSuccessStatusCode();
 
         return await response.Content.ReadAsStringAsync(cancellationToken);
     }
@@ -2172,7 +2172,7 @@ public sealed class OutboundApi : IOutboundApi
 
         var response = await client.GetAsync($"api/v2/outbound/dnclists/{Uri.EscapeDataString(dncListId)}/importstatus", cancellationToken);
 
-        return response.IsSuccessStatusCode;
+        response.EnsureSuccessStatusCode();
 
         return await response.Content.ReadFromJsonAsync<ImportStatus>(_options.JsonSerializerOptions, cancellationToken);
     }
@@ -2196,7 +2196,7 @@ public sealed class OutboundApi : IOutboundApi
         var uri = UriHelper.GetUri($"api/v2/outbound/importtemplates/{Uri.EscapeDataString(importTemplateId)}/importstatus", parameters);
         var response = await client.GetAsync(uri, cancellationToken);
 
-        return response.IsSuccessStatusCode;
+        response.EnsureSuccessStatusCode();
 
         return await response.Content.ReadFromJsonAsync<ImportStatus>(_options.JsonSerializerOptions, cancellationToken);
     }
@@ -2210,7 +2210,7 @@ public sealed class OutboundApi : IOutboundApi
 
         var response = await client.PostAsync($"api/v2/outbound/contactlists/{Uri.EscapeDataString(contactListId)}/clear", null, cancellationToken);
 
-        return response.IsSuccessStatusCode;
+        response.EnsureSuccessStatusCode();
 
         return await response.Content.ReadAsStringAsync(cancellationToken);
     }
@@ -2223,7 +2223,7 @@ public sealed class OutboundApi : IOutboundApi
 
         var response = await client.PostAsync($"api/v2/outbound/contactlists/{Uri.EscapeDataString(contactListId)}/export", null, cancellationToken);
 
-        return response.IsSuccessStatusCode;
+        response.EnsureSuccessStatusCode();
 
         return await response.Content.ReadAsStringAsync(cancellationToken);
     }
@@ -2236,7 +2236,7 @@ public sealed class OutboundApi : IOutboundApi
 
         var response = await client.PostAsync($"api/v2/outbound/dnclists/{Uri.EscapeDataString(dncListId)}/export", null, cancellationToken);
 
-        return response.IsSuccessStatusCode;
+        response.EnsureSuccessStatusCode();
 
         return await response.Content.ReadFromJsonAsync<DncList>(_options.JsonSerializerOptions, cancellationToken);
     }
@@ -2250,7 +2250,7 @@ public sealed class OutboundApi : IOutboundApi
 
         var response = await client.PostAsJsonAsync($"api/v2/outbound/dnclists/{Uri.EscapeDataString(dncListId)}/emailaddresses", body, _options.JsonSerializerOptions, cancellationToken);
 
-        return response.IsSuccessStatusCode;
+        response.EnsureSuccessStatusCode();
 
         return await response.Content.ReadAsStringAsync(cancellationToken);
     }
@@ -2264,7 +2264,7 @@ public sealed class OutboundApi : IOutboundApi
 
         var response = await client.PostAsJsonAsync($"api/v2/outbound/dnclists/{Uri.EscapeDataString(dncListId)}/phonenumbers", body, _options.JsonSerializerOptions, cancellationToken);
 
-        return response.IsSuccessStatusCode;
+        response.EnsureSuccessStatusCode();
 
         return await response.Content.ReadAsStringAsync(cancellationToken);
     }
@@ -2277,7 +2277,7 @@ public sealed class OutboundApi : IOutboundApi
 
         var response = await client.PostAsJsonAsync("api/v2/outbound/schedules/campaigns", body, _options.JsonSerializerOptions, cancellationToken);
 
-        return response.IsSuccessStatusCode;
+        response.EnsureSuccessStatusCode();
 
         return await response.Content.ReadFromJsonAsync<CampaignSchedule>(_options.JsonSerializerOptions, cancellationToken);
     }
@@ -2290,7 +2290,7 @@ public sealed class OutboundApi : IOutboundApi
 
         var response = await client.PostAsJsonAsync("api/v2/outbound/schedules/sequences", body, _options.JsonSerializerOptions, cancellationToken);
 
-        return response.IsSuccessStatusCode;
+        response.EnsureSuccessStatusCode();
 
         return await response.Content.ReadFromJsonAsync<CampaignSchedule>(_options.JsonSerializerOptions, cancellationToken);
     }
@@ -2303,7 +2303,7 @@ public sealed class OutboundApi : IOutboundApi
 
         var response = await client.GetAsync($"api/v2/outbound/campaigns/divisionviews/{campaignId}", cancellationToken);
 
-        return response.IsSuccessStatusCode;
+        response.EnsureSuccessStatusCode();
 
         return await response.Content.ReadFromJsonAsync<CampaignDivisionView>(_options.JsonSerializerOptions, cancellationToken);
     }
@@ -2355,7 +2355,7 @@ public sealed class OutboundApi : IOutboundApi
         var uri = UriHelper.GetUri("api/v2/outbound/campaigns/divisionviews", parameters);
         var response = await client.GetAsync(uri, cancellationToken);
 
-        return response.IsSuccessStatusCode;
+        response.EnsureSuccessStatusCode();
 
         return await response.Content.ReadFromJsonAsync<CampaignDivisionViewListing>(_options.JsonSerializerOptions, cancellationToken);
     }
@@ -2381,7 +2381,7 @@ public sealed class OutboundApi : IOutboundApi
         var uri = UriHelper.GetUri($"api/v2/outbound/contactlists/{contactListId}", parameters);
         var response = await client.GetAsync(uri, cancellationToken);
 
-        return response.IsSuccessStatusCode;
+        response.EnsureSuccessStatusCode();
 
         return await response.Content.ReadFromJsonAsync<ContactList>(_options.JsonSerializerOptions, cancellationToken);
     }
@@ -2395,7 +2395,7 @@ public sealed class OutboundApi : IOutboundApi
 
         var response = await client.GetAsync($"api/v2/outbound/contactlists/{contactListId}/contacts/{contactId}", cancellationToken);
 
-        return response.IsSuccessStatusCode;
+        response.EnsureSuccessStatusCode();
 
         return await response.Content.ReadFromJsonAsync<DialerContact>(_options.JsonSerializerOptions, cancellationToken);
     }
@@ -2409,7 +2409,7 @@ public sealed class OutboundApi : IOutboundApi
 
         var response = await client.GetAsync($"api/v2/outbound/contactlists/{contactListId}/contacts/bulk/{jobId}", cancellationToken);
 
-        return response.IsSuccessStatusCode;
+        response.EnsureSuccessStatusCode();
 
         return await response.Content.ReadFromJsonAsync<ContactsBulkOperationJob>(_options.JsonSerializerOptions, cancellationToken);
     }
@@ -2422,7 +2422,7 @@ public sealed class OutboundApi : IOutboundApi
 
         var response = await client.GetAsync($"api/v2/outbound/contactlists/{contactListId}/contacts/bulk", cancellationToken);
 
-        return response.IsSuccessStatusCode;
+        response.EnsureSuccessStatusCode();
 
         return await response.Content.ReadFromJsonAsync<ContactsBulkOperationJobListing>(_options.JsonSerializerOptions, cancellationToken);
     }
@@ -2435,7 +2435,7 @@ public sealed class OutboundApi : IOutboundApi
 
         var response = await client.GetAsync($"api/v2/outbound/contactlists/{contactListId}/timezonemappingpreview", cancellationToken);
 
-        return response.IsSuccessStatusCode;
+        response.EnsureSuccessStatusCode();
 
         return await response.Content.ReadFromJsonAsync<TimeZoneMappingPreview>(_options.JsonSerializerOptions, cancellationToken);
     }
@@ -2461,7 +2461,7 @@ public sealed class OutboundApi : IOutboundApi
         var uri = UriHelper.GetUri($"api/v2/outbound/contactlists/divisionviews/{contactListId}", parameters);
         var response = await client.GetAsync(uri, cancellationToken);
 
-        return response.IsSuccessStatusCode;
+        response.EnsureSuccessStatusCode();
 
         return await response.Content.ReadFromJsonAsync<ContactListDivisionView>(_options.JsonSerializerOptions, cancellationToken);
     }
@@ -2523,7 +2523,7 @@ public sealed class OutboundApi : IOutboundApi
         var uri = UriHelper.GetUri("api/v2/outbound/contactlists/divisionviews", parameters);
         var response = await client.GetAsync(uri, cancellationToken);
 
-        return response.IsSuccessStatusCode;
+        response.EnsureSuccessStatusCode();
 
         return await response.Content.ReadFromJsonAsync<ContactListDivisionViewListing>(_options.JsonSerializerOptions, cancellationToken);
     }
@@ -2549,7 +2549,7 @@ public sealed class OutboundApi : IOutboundApi
         var uri = UriHelper.GetUri($"api/v2/outbound/dnclists/divisionviews/{dncListId}", parameters);
         var response = await client.GetAsync(uri, cancellationToken);
 
-        return response.IsSuccessStatusCode;
+        response.EnsureSuccessStatusCode();
 
         return await response.Content.ReadFromJsonAsync<DncListDivisionView>(_options.JsonSerializerOptions, cancellationToken);
     }
@@ -2611,7 +2611,7 @@ public sealed class OutboundApi : IOutboundApi
         var uri = UriHelper.GetUri("api/v2/outbound/dnclists/divisionviews", parameters);
         var response = await client.GetAsync(uri, cancellationToken);
 
-        return response.IsSuccessStatusCode;
+        response.EnsureSuccessStatusCode();
 
         return await response.Content.ReadFromJsonAsync<DncListDivisionViewListing>(_options.JsonSerializerOptions, cancellationToken);
     }
@@ -2624,7 +2624,7 @@ public sealed class OutboundApi : IOutboundApi
 
         var response = await client.GetAsync($"api/v2/outbound/messagingcampaigns/{messagingCampaignId}", cancellationToken);
 
-        return response.IsSuccessStatusCode;
+        response.EnsureSuccessStatusCode();
 
         return await response.Content.ReadFromJsonAsync<MessagingCampaign>(_options.JsonSerializerOptions, cancellationToken);
     }
@@ -2637,7 +2637,7 @@ public sealed class OutboundApi : IOutboundApi
 
         var response = await client.GetAsync($"api/v2/outbound/messagingcampaigns/{messagingCampaignId}/diagnostics", cancellationToken);
 
-        return response.IsSuccessStatusCode;
+        response.EnsureSuccessStatusCode();
 
         return await response.Content.ReadFromJsonAsync<MessagingCampaignDiagnostics>(_options.JsonSerializerOptions, cancellationToken);
     }
@@ -2650,7 +2650,7 @@ public sealed class OutboundApi : IOutboundApi
 
         var response = await client.GetAsync($"api/v2/outbound/messagingcampaigns/{messagingCampaignId}/progress", cancellationToken);
 
-        return response.IsSuccessStatusCode;
+        response.EnsureSuccessStatusCode();
 
         return await response.Content.ReadFromJsonAsync<CampaignProgress>(_options.JsonSerializerOptions, cancellationToken);
     }
@@ -2730,7 +2730,7 @@ public sealed class OutboundApi : IOutboundApi
         var uri = UriHelper.GetUri("api/v2/outbound/messagingcampaigns", parameters);
         var response = await client.GetAsync(uri, cancellationToken);
 
-        return response.IsSuccessStatusCode;
+        response.EnsureSuccessStatusCode();
 
         return await response.Content.ReadFromJsonAsync<MessagingCampaignEntityListing>(_options.JsonSerializerOptions, cancellationToken);
     }
@@ -2743,7 +2743,7 @@ public sealed class OutboundApi : IOutboundApi
 
         var response = await client.GetAsync($"api/v2/outbound/messagingcampaigns/divisionviews/{messagingCampaignId}", cancellationToken);
 
-        return response.IsSuccessStatusCode;
+        response.EnsureSuccessStatusCode();
 
         return await response.Content.ReadFromJsonAsync<MessagingCampaignDivisionView>(_options.JsonSerializerOptions, cancellationToken);
     }
@@ -2795,7 +2795,7 @@ public sealed class OutboundApi : IOutboundApi
         var uri = UriHelper.GetUri("api/v2/outbound/messagingcampaigns/divisionviews", parameters);
         var response = await client.GetAsync(uri, cancellationToken);
 
-        return response.IsSuccessStatusCode;
+        response.EnsureSuccessStatusCode();
 
         return await response.Content.ReadFromJsonAsync<MessagingCampaignDivisionViewEntityListing>(_options.JsonSerializerOptions, cancellationToken);
     }
@@ -2808,7 +2808,7 @@ public sealed class OutboundApi : IOutboundApi
 
         var response = await client.GetAsync($"api/v2/outbound/schedules/campaigns/{campaignId}", cancellationToken);
 
-        return response.IsSuccessStatusCode;
+        response.EnsureSuccessStatusCode();
 
         return await response.Content.ReadFromJsonAsync<CampaignSchedule>(_options.JsonSerializerOptions, cancellationToken);
     }
@@ -2819,7 +2819,7 @@ public sealed class OutboundApi : IOutboundApi
 
         var response = await client.GetAsync("api/v2/outbound/schedules/campaigns", cancellationToken);
 
-        return response.IsSuccessStatusCode;
+        response.EnsureSuccessStatusCode();
 
         return await response.Content.ReadFromJsonAsync<List<CampaignSchedule>>(_options.JsonSerializerOptions, cancellationToken);
     }
@@ -2832,7 +2832,7 @@ public sealed class OutboundApi : IOutboundApi
 
         var response = await client.GetAsync($"api/v2/outbound/schedules/emailcampaigns/{emailCampaignId}", cancellationToken);
 
-        return response.IsSuccessStatusCode;
+        response.EnsureSuccessStatusCode();
 
         return await response.Content.ReadFromJsonAsync<EmailCampaignSchedule>(_options.JsonSerializerOptions, cancellationToken);
     }
@@ -2843,7 +2843,7 @@ public sealed class OutboundApi : IOutboundApi
 
         var response = await client.GetAsync("api/v2/outbound/schedules/emailcampaigns", cancellationToken);
 
-        return response.IsSuccessStatusCode;
+        response.EnsureSuccessStatusCode();
 
         return await response.Content.ReadFromJsonAsync<List<EmailCampaignSchedule>>(_options.JsonSerializerOptions, cancellationToken);
     }
@@ -2856,7 +2856,7 @@ public sealed class OutboundApi : IOutboundApi
 
         var response = await client.GetAsync($"api/v2/outbound/schedules/messagingcampaigns/{messagingCampaignId}", cancellationToken);
 
-        return response.IsSuccessStatusCode;
+        response.EnsureSuccessStatusCode();
 
         return await response.Content.ReadFromJsonAsync<MessagingCampaignSchedule>(_options.JsonSerializerOptions, cancellationToken);
     }
@@ -2867,7 +2867,7 @@ public sealed class OutboundApi : IOutboundApi
 
         var response = await client.GetAsync("api/v2/outbound/schedules/messagingcampaigns", cancellationToken);
 
-        return response.IsSuccessStatusCode;
+        response.EnsureSuccessStatusCode();
 
         return await response.Content.ReadFromJsonAsync<List<MessagingCampaignSchedule>>(_options.JsonSerializerOptions, cancellationToken);
     }
@@ -2880,7 +2880,7 @@ public sealed class OutboundApi : IOutboundApi
 
         var response = await client.GetAsync($"api/v2/outbound/schedules/sequences/{sequenceId}", cancellationToken);
 
-        return response.IsSuccessStatusCode;
+        response.EnsureSuccessStatusCode();
 
         return await response.Content.ReadFromJsonAsync<CampaignSchedule>(_options.JsonSerializerOptions, cancellationToken);
     }
@@ -2891,7 +2891,7 @@ public sealed class OutboundApi : IOutboundApi
 
         var response = await client.GetAsync("api/v2/outbound/schedules/sequences", cancellationToken);
 
-        return response.IsSuccessStatusCode;
+        response.EnsureSuccessStatusCode();
 
         return await response.Content.ReadFromJsonAsync<List<CampaignSchedule>>(_options.JsonSerializerOptions, cancellationToken);
     }
@@ -2905,7 +2905,7 @@ public sealed class OutboundApi : IOutboundApi
 
         var response = await client.PatchAsJsonAsync($"api/v2/outbound/campaigns/{campaignId}", body, _options.JsonSerializerOptions, cancellationToken);
 
-        return response.IsSuccessStatusCode;
+        response.EnsureSuccessStatusCode();
 
         return await response.Content.ReadFromJsonAsync<Campaign>(_options.JsonSerializerOptions, cancellationToken);
     }
@@ -2998,7 +2998,7 @@ public sealed class OutboundApi : IOutboundApi
 
         var response = await client.PatchAsJsonAsync("api/v2/outbound/settings", body, _options.JsonSerializerOptions, cancellationToken);
 
-        return response.IsSuccessStatusCode;
+        response.EnsureSuccessStatusCode();
 
         return await response.Content.ReadFromJsonAsync<OutboundSettings>(_options.JsonSerializerOptions, cancellationToken);
     }
@@ -3011,7 +3011,7 @@ public sealed class OutboundApi : IOutboundApi
 
         var response = await client.PostAsync($"api/v2/outbound/campaigns/{campaignId}/agentownedmappingpreview", null, cancellationToken);
 
-        return response.IsSuccessStatusCode;
+        response.EnsureSuccessStatusCode();
 
         return await response.Content.ReadFromJsonAsync<AgentOwnedMappingPreviewListing>(_options.JsonSerializerOptions, cancellationToken);
     }
@@ -3036,7 +3036,7 @@ public sealed class OutboundApi : IOutboundApi
 
         var response = await client.PostAsync($"api/v2/outbound/campaigns/{campaignId}/start", null, cancellationToken);
 
-        return response.IsSuccessStatusCode;
+        response.EnsureSuccessStatusCode();
 
         return await response.Content.ReadFromJsonAsync<Campaign>(_options.JsonSerializerOptions, cancellationToken);
     }
@@ -3049,7 +3049,7 @@ public sealed class OutboundApi : IOutboundApi
 
         var response = await client.PostAsync($"api/v2/outbound/campaigns/{campaignId}/stop", null, cancellationToken);
 
-        return response.IsSuccessStatusCode;
+        response.EnsureSuccessStatusCode();
 
         return await response.Content.ReadFromJsonAsync<Campaign>(_options.JsonSerializerOptions, cancellationToken);
     }
@@ -3062,7 +3062,7 @@ public sealed class OutboundApi : IOutboundApi
 
         var response = await client.PostAsJsonAsync("api/v2/outbound/campaignrules", body, _options.JsonSerializerOptions, cancellationToken);
 
-        return response.IsSuccessStatusCode;
+        response.EnsureSuccessStatusCode();
 
         return await response.Content.ReadFromJsonAsync<CampaignRule>(_options.JsonSerializerOptions, cancellationToken);
     }
@@ -3075,7 +3075,7 @@ public sealed class OutboundApi : IOutboundApi
 
         var response = await client.PostAsJsonAsync("api/v2/outbound/campaigns", body, _options.JsonSerializerOptions, cancellationToken);
 
-        return response.IsSuccessStatusCode;
+        response.EnsureSuccessStatusCode();
 
         return await response.Content.ReadFromJsonAsync<Campaign>(_options.JsonSerializerOptions, cancellationToken);
     }
@@ -3088,7 +3088,7 @@ public sealed class OutboundApi : IOutboundApi
 
         var response = await client.PostAsJsonAsync("api/v2/outbound/campaigns/progress", body, _options.JsonSerializerOptions, cancellationToken);
 
-        return response.IsSuccessStatusCode;
+        response.EnsureSuccessStatusCode();
 
         return await response.Content.ReadFromJsonAsync<List<CampaignProgress>>(_options.JsonSerializerOptions, cancellationToken);
     }
@@ -3120,7 +3120,7 @@ public sealed class OutboundApi : IOutboundApi
         var uri = UriHelper.GetUri($"api/v2/outbound/contactlists/{contactListId}/contacts", parameters);
         var response = await client.PostAsJsonAsync(uri, body, _options.JsonSerializerOptions, cancellationToken);
 
-        return response.IsSuccessStatusCode;
+        response.EnsureSuccessStatusCode();
 
         return await response.Content.ReadFromJsonAsync<DialerContact>(_options.JsonSerializerOptions, cancellationToken);
     }
@@ -3134,7 +3134,7 @@ public sealed class OutboundApi : IOutboundApi
 
         var response = await client.PostAsJsonAsync($"api/v2/outbound/contactlists/{contactListId}/contacts/bulk", body, _options.JsonSerializerOptions, cancellationToken);
 
-        return response.IsSuccessStatusCode;
+        response.EnsureSuccessStatusCode();
 
         return await response.Content.ReadFromJsonAsync<ContactsBulkOperationJob>(_options.JsonSerializerOptions, cancellationToken);
     }
@@ -3148,7 +3148,7 @@ public sealed class OutboundApi : IOutboundApi
 
         var response = await client.PostAsJsonAsync($"api/v2/outbound/contactlists/{contactListId}/contacts/bulk/remove", body, _options.JsonSerializerOptions, cancellationToken);
 
-        return response.IsSuccessStatusCode;
+        response.EnsureSuccessStatusCode();
 
         return await response.Content.ReadFromJsonAsync<ContactsBulkOperationJob>(_options.JsonSerializerOptions, cancellationToken);
     }
@@ -3162,7 +3162,7 @@ public sealed class OutboundApi : IOutboundApi
 
         var response = await client.PostAsJsonAsync($"api/v2/outbound/contactlists/{contactListId}/contacts/bulk/update", body, _options.JsonSerializerOptions, cancellationToken);
 
-        return response.IsSuccessStatusCode;
+        response.EnsureSuccessStatusCode();
 
         return await response.Content.ReadFromJsonAsync<ContactsBulkOperationJob>(_options.JsonSerializerOptions, cancellationToken);
     }
@@ -3176,7 +3176,7 @@ public sealed class OutboundApi : IOutboundApi
 
         var response = await client.PostAsJsonAsync($"api/v2/outbound/contactlists/{contactListId}/contacts/search", body, _options.JsonSerializerOptions, cancellationToken);
 
-        return response.IsSuccessStatusCode;
+        response.EnsureSuccessStatusCode();
 
         return await response.Content.ReadFromJsonAsync<ContactListingResponse>(_options.JsonSerializerOptions, cancellationToken);
     }
@@ -3189,7 +3189,7 @@ public sealed class OutboundApi : IOutboundApi
 
         var response = await client.PostAsJsonAsync("api/v2/outbound/contactlistfilters", body, _options.JsonSerializerOptions, cancellationToken);
 
-        return response.IsSuccessStatusCode;
+        response.EnsureSuccessStatusCode();
 
         return await response.Content.ReadFromJsonAsync<ContactListFilter>(_options.JsonSerializerOptions, cancellationToken);
     }
@@ -3202,7 +3202,7 @@ public sealed class OutboundApi : IOutboundApi
 
         var response = await client.PostAsJsonAsync("api/v2/outbound/contactlistfilters/bulk/retrieve", body, _options.JsonSerializerOptions, cancellationToken);
 
-        return response.IsSuccessStatusCode;
+        response.EnsureSuccessStatusCode();
 
         return await response.Content.ReadFromJsonAsync<ContactListFilterEntityListing>(_options.JsonSerializerOptions, cancellationToken);
     }
@@ -3215,7 +3215,7 @@ public sealed class OutboundApi : IOutboundApi
 
         var response = await client.PostAsJsonAsync("api/v2/outbound/contactlistfilters/preview", body, _options.JsonSerializerOptions, cancellationToken);
 
-        return response.IsSuccessStatusCode;
+        response.EnsureSuccessStatusCode();
 
         return await response.Content.ReadFromJsonAsync<FilterPreviewResponse>(_options.JsonSerializerOptions, cancellationToken);
     }
@@ -3228,7 +3228,7 @@ public sealed class OutboundApi : IOutboundApi
 
         var response = await client.PostAsJsonAsync("api/v2/outbound/contactlists", body, _options.JsonSerializerOptions, cancellationToken);
 
-        return response.IsSuccessStatusCode;
+        response.EnsureSuccessStatusCode();
 
         return await response.Content.ReadFromJsonAsync<ContactList>(_options.JsonSerializerOptions, cancellationToken);
     }
@@ -3241,7 +3241,7 @@ public sealed class OutboundApi : IOutboundApi
 
         var response = await client.PostAsJsonAsync("api/v2/outbound/contactlisttemplates", body, _options.JsonSerializerOptions, cancellationToken);
 
-        return response.IsSuccessStatusCode;
+        response.EnsureSuccessStatusCode();
 
         return await response.Content.ReadFromJsonAsync<ContactListTemplate>(_options.JsonSerializerOptions, cancellationToken);
     }
@@ -3254,7 +3254,7 @@ public sealed class OutboundApi : IOutboundApi
 
         var response = await client.PostAsJsonAsync("api/v2/outbound/contactlisttemplates/bulk/add", body, _options.JsonSerializerOptions, cancellationToken);
 
-        return response.IsSuccessStatusCode;
+        response.EnsureSuccessStatusCode();
 
         return await response.Content.ReadFromJsonAsync<ContactListTemplateEntityListing>(_options.JsonSerializerOptions, cancellationToken);
     }
@@ -3267,7 +3267,7 @@ public sealed class OutboundApi : IOutboundApi
 
         var response = await client.PostAsJsonAsync("api/v2/outbound/contactlisttemplates/bulk/retrieve", body, _options.JsonSerializerOptions, cancellationToken);
 
-        return response.IsSuccessStatusCode;
+        response.EnsureSuccessStatusCode();
 
         return await response.Content.ReadFromJsonAsync<ContactListTemplateEntityListing>(_options.JsonSerializerOptions, cancellationToken);
     }
@@ -3291,7 +3291,7 @@ public sealed class OutboundApi : IOutboundApi
 
         var response = await client.PostAsJsonAsync("api/v2/outbound/digitalrulesets", body, _options.JsonSerializerOptions, cancellationToken);
 
-        return response.IsSuccessStatusCode;
+        response.EnsureSuccessStatusCode();
 
         return await response.Content.ReadFromJsonAsync<DigitalRuleSet>(_options.JsonSerializerOptions, cancellationToken);
     }
@@ -3304,7 +3304,7 @@ public sealed class OutboundApi : IOutboundApi
 
         var response = await client.PostAsJsonAsync("api/v2/outbound/dnclists", body, _options.JsonSerializerOptions, cancellationToken);
 
-        return response.IsSuccessStatusCode;
+        response.EnsureSuccessStatusCode();
 
         return await response.Content.ReadFromJsonAsync<DncList>(_options.JsonSerializerOptions, cancellationToken);
     }
@@ -3317,7 +3317,7 @@ public sealed class OutboundApi : IOutboundApi
 
         var response = await client.PostAsJsonAsync("api/v2/outbound/importtemplates/bulk/add", body, _options.JsonSerializerOptions, cancellationToken);
 
-        return response.IsSuccessStatusCode;
+        response.EnsureSuccessStatusCode();
 
         return await response.Content.ReadFromJsonAsync<ImportTemplate>(_options.JsonSerializerOptions, cancellationToken);
     }
@@ -3330,7 +3330,7 @@ public sealed class OutboundApi : IOutboundApi
 
         var response = await client.PostAsync($"api/v2/outbound/messagingcampaigns/{messagingCampaignId}/start", null, cancellationToken);
 
-        return response.IsSuccessStatusCode;
+        response.EnsureSuccessStatusCode();
 
         return await response.Content.ReadFromJsonAsync<MessagingCampaign>(_options.JsonSerializerOptions, cancellationToken);
     }
@@ -3343,7 +3343,7 @@ public sealed class OutboundApi : IOutboundApi
 
         var response = await client.PostAsync($"api/v2/outbound/messagingcampaigns/{messagingCampaignId}/stop", null, cancellationToken);
 
-        return response.IsSuccessStatusCode;
+        response.EnsureSuccessStatusCode();
 
         return await response.Content.ReadFromJsonAsync<MessagingCampaign>(_options.JsonSerializerOptions, cancellationToken);
     }
@@ -3356,7 +3356,7 @@ public sealed class OutboundApi : IOutboundApi
 
         var response = await client.PostAsJsonAsync("api/v2/outbound/messagingcampaigns", body, _options.JsonSerializerOptions, cancellationToken);
 
-        return response.IsSuccessStatusCode;
+        response.EnsureSuccessStatusCode();
 
         return await response.Content.ReadFromJsonAsync<MessagingCampaign>(_options.JsonSerializerOptions, cancellationToken);
     }
@@ -3369,7 +3369,7 @@ public sealed class OutboundApi : IOutboundApi
 
         var response = await client.PostAsJsonAsync("api/v2/outbound/messagingcampaigns/progress", body, _options.JsonSerializerOptions, cancellationToken);
 
-        return response.IsSuccessStatusCode;
+        response.EnsureSuccessStatusCode();
 
         return await response.Content.ReadFromJsonAsync<List<CampaignProgress>>(_options.JsonSerializerOptions, cancellationToken);
     }
@@ -3382,7 +3382,7 @@ public sealed class OutboundApi : IOutboundApi
 
         var response = await client.PostAsJsonAsync("api/v2/outbound/rulesets", body, _options.JsonSerializerOptions, cancellationToken);
 
-        return response.IsSuccessStatusCode;
+        response.EnsureSuccessStatusCode();
 
         return await response.Content.ReadFromJsonAsync<RuleSet>(_options.JsonSerializerOptions, cancellationToken);
     }
@@ -3395,7 +3395,7 @@ public sealed class OutboundApi : IOutboundApi
 
         var response = await client.PostAsJsonAsync("api/v2/outbound/sequences", body, _options.JsonSerializerOptions, cancellationToken);
 
-        return response.IsSuccessStatusCode;
+        response.EnsureSuccessStatusCode();
 
         return await response.Content.ReadFromJsonAsync<CampaignSequence>(_options.JsonSerializerOptions, cancellationToken);
     }
@@ -3422,7 +3422,7 @@ public sealed class OutboundApi : IOutboundApi
 
         var response = await client.PutAsJsonAsync($"api/v2/outbound/campaigns/{campaignId}", body, _options.JsonSerializerOptions, cancellationToken);
 
-        return response.IsSuccessStatusCode;
+        response.EnsureSuccessStatusCode();
 
         return await response.Content.ReadFromJsonAsync<Campaign>(_options.JsonSerializerOptions, cancellationToken);
     }
@@ -3436,7 +3436,7 @@ public sealed class OutboundApi : IOutboundApi
 
         var response = await client.PutAsJsonAsync($"api/v2/outbound/campaignrules/{campaignRuleId}", body, _options.JsonSerializerOptions, cancellationToken);
 
-        return response.IsSuccessStatusCode;
+        response.EnsureSuccessStatusCode();
 
         return await response.Content.ReadFromJsonAsync<CampaignRule>(_options.JsonSerializerOptions, cancellationToken);
     }
@@ -3450,7 +3450,7 @@ public sealed class OutboundApi : IOutboundApi
 
         var response = await client.PutAsJsonAsync($"api/v2/outbound/contactlists/{contactListId}", body, _options.JsonSerializerOptions, cancellationToken);
 
-        return response.IsSuccessStatusCode;
+        response.EnsureSuccessStatusCode();
 
         return await response.Content.ReadFromJsonAsync<ContactList>(_options.JsonSerializerOptions, cancellationToken);
     }
@@ -3465,7 +3465,7 @@ public sealed class OutboundApi : IOutboundApi
 
         var response = await client.PutAsJsonAsync($"api/v2/outbound/contactlists/{contactListId}/contacts/{contactId}", body, _options.JsonSerializerOptions, cancellationToken);
 
-        return response.IsSuccessStatusCode;
+        response.EnsureSuccessStatusCode();
 
         return await response.Content.ReadFromJsonAsync<DialerContact>(_options.JsonSerializerOptions, cancellationToken);
     }
@@ -3479,7 +3479,7 @@ public sealed class OutboundApi : IOutboundApi
 
         var response = await client.PutAsJsonAsync($"api/v2/outbound/contactlistfilters/{contactListFilterId}", body, _options.JsonSerializerOptions, cancellationToken);
 
-        return response.IsSuccessStatusCode;
+        response.EnsureSuccessStatusCode();
 
         return await response.Content.ReadFromJsonAsync<ContactListFilter>(_options.JsonSerializerOptions, cancellationToken);
     }
@@ -3493,7 +3493,7 @@ public sealed class OutboundApi : IOutboundApi
 
         var response = await client.PutAsJsonAsync($"api/v2/outbound/contactlisttemplates/{contactListTemplateId}", body, _options.JsonSerializerOptions, cancellationToken);
 
-        return response.IsSuccessStatusCode;
+        response.EnsureSuccessStatusCode();
 
         return await response.Content.ReadFromJsonAsync<ContactListTemplate>(_options.JsonSerializerOptions, cancellationToken);
     }
@@ -3507,7 +3507,7 @@ public sealed class OutboundApi : IOutboundApi
 
         var response = await client.PutAsJsonAsync($"api/v2/outbound/messagingcampaigns/{messagingCampaignId}", body, _options.JsonSerializerOptions, cancellationToken);
 
-        return response.IsSuccessStatusCode;
+        response.EnsureSuccessStatusCode();
 
         return await response.Content.ReadFromJsonAsync<MessagingCampaign>(_options.JsonSerializerOptions, cancellationToken);
     }
@@ -3521,7 +3521,7 @@ public sealed class OutboundApi : IOutboundApi
 
         var response = await client.PutAsJsonAsync($"api/v2/outbound/schedules/campaigns/{campaignId}", body, _options.JsonSerializerOptions, cancellationToken);
 
-        return response.IsSuccessStatusCode;
+        response.EnsureSuccessStatusCode();
 
         return await response.Content.ReadFromJsonAsync<CampaignSchedule>(_options.JsonSerializerOptions, cancellationToken);
     }
@@ -3535,7 +3535,7 @@ public sealed class OutboundApi : IOutboundApi
 
         var response = await client.PutAsJsonAsync($"api/v2/outbound/schedules/emailcampaigns/{emailCampaignId}", body, _options.JsonSerializerOptions, cancellationToken);
 
-        return response.IsSuccessStatusCode;
+        response.EnsureSuccessStatusCode();
 
         return await response.Content.ReadFromJsonAsync<EmailCampaignSchedule>(_options.JsonSerializerOptions, cancellationToken);
     }
@@ -3549,7 +3549,7 @@ public sealed class OutboundApi : IOutboundApi
 
         var response = await client.PutAsJsonAsync($"api/v2/outbound/schedules/messagingcampaigns/{messagingCampaignId}", body, _options.JsonSerializerOptions, cancellationToken);
 
-        return response.IsSuccessStatusCode;
+        response.EnsureSuccessStatusCode();
 
         return await response.Content.ReadFromJsonAsync<MessagingCampaignSchedule>(_options.JsonSerializerOptions, cancellationToken);
     }
@@ -3563,7 +3563,7 @@ public sealed class OutboundApi : IOutboundApi
 
         var response = await client.PutAsJsonAsync($"api/v2/outbound/schedules/sequences/{sequenceId}", body, _options.JsonSerializerOptions, cancellationToken);
 
-        return response.IsSuccessStatusCode;
+        response.EnsureSuccessStatusCode();
 
         return await response.Content.ReadFromJsonAsync<CampaignSchedule>(_options.JsonSerializerOptions, cancellationToken);
     }
