@@ -1,4 +1,5 @@
 using System.Collections.Specialized;
+using System.Linq;
 using System.Net.Http.Json;
 using Microsoft.Extensions.Options;
 using PureCloud.Client.Contracts;
@@ -235,7 +236,7 @@ public sealed class OutboundApi : IOutboundApi
         return await response.Content.ReadFromJsonAsync<Campaign>(_options.JsonSerializerOptions, cancellationToken);
     }
 
-    public async Task<CampaignEntityListing> GetOutboundCampaignsAsync(int? pageSize = null, int? pageNumber = null, string filterType = null, string name = null, IEnumerable<string> ids = null, string contactListId = null, string dncListIds = null, string distributionQueueId = null, string edgeGroupId = null, string callAnalysisResponseSetId = null, List<string> divisionId = null, string sortBy = null, string sortOrder = null, CancellationToken cancellationToken = default)
+    public async Task<CampaignEntityListing> GetOutboundCampaignsAsync(int? pageSize = null, int? pageNumber = null, string filterType = null, string name = null, IEnumerable<string> ids = null, string contactListId = null, string dncListIds = null, string distributionQueueId = null, string edgeGroupId = null, string callAnalysisResponseSetId = null, IEnumerable<string> divisionId = null, string sortBy = null, string sortOrder = null, CancellationToken cancellationToken = default)
     {
         var parameters = new NameValueCollection();
 
@@ -292,7 +293,7 @@ public sealed class OutboundApi : IOutboundApi
             parameters.Add("callAnalysisResponseSetId", callAnalysisResponseSetId);
         }
 
-        if (divisionId != null && divisionId.Count > 0)
+        if (divisionId != null && divisionId.Any())
         {
             foreach (var item in divisionId)
             {
@@ -505,7 +506,7 @@ public sealed class OutboundApi : IOutboundApi
         return response.IsSuccessStatusCode;
     }
 
-    public async Task<bool> DeleteOutboundContactlistContactsAsync(string contactListId, List<string> contactIds, CancellationToken cancellationToken = default)
+    public async Task<bool> DeleteOutboundContactlistContactsAsync(string contactListId, IEnumerable<string> contactIds, CancellationToken cancellationToken = default)
     {
         ArgumentException.ThrowIfNullOrEmpty(contactListId);
         ArgumentNullException.ThrowIfNull(contactIds);
@@ -528,7 +529,7 @@ public sealed class OutboundApi : IOutboundApi
         return response.IsSuccessStatusCode;
     }
 
-    public async Task<bool> DeleteOutboundContactlistsAsync(List<string> id, CancellationToken cancellationToken = default)
+    public async Task<bool> DeleteOutboundContactlistsAsync(IEnumerable<string> id, CancellationToken cancellationToken = default)
     {
         ArgumentNullException.ThrowIfNull(id);
 
@@ -550,7 +551,7 @@ public sealed class OutboundApi : IOutboundApi
         return response.IsSuccessStatusCode;
     }
 
-    public async Task<bool> DeleteOutboundContactlisttemplatesAsync(List<string> id, CancellationToken cancellationToken = default)
+    public async Task<bool> DeleteOutboundContactlisttemplatesAsync(IEnumerable<string> id, CancellationToken cancellationToken = default)
     {
         ArgumentNullException.ThrowIfNull(id);
 
@@ -670,7 +671,7 @@ public sealed class OutboundApi : IOutboundApi
         return response.IsSuccessStatusCode;
     }
 
-    public async Task<bool> DeleteOutboundFilespecificationtemplatesBulkAsync(List<string> id, CancellationToken cancellationToken = default)
+    public async Task<bool> DeleteOutboundFilespecificationtemplatesBulkAsync(IEnumerable<string> id, CancellationToken cancellationToken = default)
     {
         ArgumentNullException.ThrowIfNull(id);
 
@@ -692,7 +693,7 @@ public sealed class OutboundApi : IOutboundApi
         return response.IsSuccessStatusCode;
     }
 
-    public async Task<bool> DeleteOutboundImporttemplatesAsync(List<string> id, CancellationToken cancellationToken = default)
+    public async Task<bool> DeleteOutboundImporttemplatesAsync(IEnumerable<string> id, CancellationToken cancellationToken = default)
     {
         ArgumentNullException.ThrowIfNull(id);
 
@@ -993,7 +994,7 @@ public sealed class OutboundApi : IOutboundApi
         return await response.Content.ReadFromJsonAsync<CampaignRuleEntityListing>(_options.JsonSerializerOptions, cancellationToken);
     }
 
-    public async Task<CommonCampaignEntityListing> GetOutboundCampaignsAllAsync(int? pageSize = null, int? pageNumber = null, List<string> id = null, string name = null, List<string> divisionId = null, List<string> mediaType = null, string sortOrder = null, CancellationToken cancellationToken = default)
+    public async Task<CommonCampaignEntityListing> GetOutboundCampaignsAllAsync(int? pageSize = null, int? pageNumber = null, IEnumerable<string> id = null, string name = null, IEnumerable<string> divisionId = null, IEnumerable<string> mediaType = null, string sortOrder = null, CancellationToken cancellationToken = default)
     {
         var parameters = new NameValueCollection();
 
@@ -1007,7 +1008,7 @@ public sealed class OutboundApi : IOutboundApi
             parameters.Add("pageNumber", UriHelper.ParameterToString(pageNumber.Value));
         }
 
-        if (id != null && id.Count > 0)
+        if (id != null && id.Any())
         {
             foreach (var item in id)
             {
@@ -1020,7 +1021,7 @@ public sealed class OutboundApi : IOutboundApi
             parameters.Add("name", UriHelper.ParameterToString(name));
         }
 
-        if (divisionId != null && divisionId.Count > 0)
+        if (divisionId != null && divisionId.Any())
         {
             foreach (var item in divisionId)
             {
@@ -1028,7 +1029,7 @@ public sealed class OutboundApi : IOutboundApi
             }
         }
 
-        if (mediaType != null && mediaType.Count > 0)
+        if (mediaType != null && mediaType.Any())
         {
             foreach (var item in mediaType)
             {
@@ -1051,7 +1052,7 @@ public sealed class OutboundApi : IOutboundApi
         return await response.Content.ReadFromJsonAsync<CommonCampaignEntityListing>(_options.JsonSerializerOptions, cancellationToken);
     }
 
-    public async Task<CommonCampaignDivisionViewEntityListing> GetOutboundCampaignsAllDivisionviewsAsync(int? pageSize = null, int? pageNumber = null, List<string> id = null, string name = null, List<string> divisionId = null, List<string> mediaType = null, string sortOrder = null, CancellationToken cancellationToken = default)
+    public async Task<CommonCampaignDivisionViewEntityListing> GetOutboundCampaignsAllDivisionviewsAsync(int? pageSize = null, int? pageNumber = null, IEnumerable<string> id = null, string name = null, IEnumerable<string> divisionId = null, IEnumerable<string> mediaType = null, string sortOrder = null, CancellationToken cancellationToken = default)
     {
         var parameters = new NameValueCollection();
 
@@ -1065,7 +1066,7 @@ public sealed class OutboundApi : IOutboundApi
             parameters.Add("pageNumber", UriHelper.ParameterToString(pageNumber.Value));
         }
 
-        if (id != null && id.Count > 0)
+        if (id != null && id.Any())
         {
             foreach (var item in id)
             {
@@ -1078,7 +1079,7 @@ public sealed class OutboundApi : IOutboundApi
             parameters.Add("name", UriHelper.ParameterToString(name));
         }
 
-        if (divisionId != null && divisionId.Count > 0)
+        if (divisionId != null && divisionId.Any())
         {
             foreach (var item in divisionId)
             {
@@ -1086,7 +1087,7 @@ public sealed class OutboundApi : IOutboundApi
             }
         }
 
-        if (mediaType != null && mediaType.Count > 0)
+        if (mediaType != null && mediaType.Any())
         {
             foreach (var item in mediaType)
             {
@@ -1195,7 +1196,7 @@ public sealed class OutboundApi : IOutboundApi
     }
 
     // GET methods for ContactLists operations
-    public async Task<ContactListEntityListing> GetOutboundContactlistsAsync(bool? includeImportStatus = null, bool? includeSize = null, int? pageSize = null, int? pageNumber = null, bool? allowEmptyResult = null, string filterType = null, string name = null, List<string> id = null, List<string> divisionId = null, string sortBy = null, string sortOrder = null, CancellationToken cancellationToken = default)
+    public async Task<ContactListEntityListing> GetOutboundContactlistsAsync(bool? includeImportStatus = null, bool? includeSize = null, int? pageSize = null, int? pageNumber = null, bool? allowEmptyResult = null, string filterType = null, string name = null, IEnumerable<string> id = null, IEnumerable<string> divisionId = null, string sortBy = null, string sortOrder = null, CancellationToken cancellationToken = default)
     {
         var parameters = new NameValueCollection();
 
@@ -1234,7 +1235,7 @@ public sealed class OutboundApi : IOutboundApi
             parameters.Add("name", UriHelper.ParameterToString(name));
         }
 
-        if (id != null && id.Count > 0)
+        if (id != null && id.Any())
         {
             foreach (var item in id)
             {
@@ -1242,7 +1243,7 @@ public sealed class OutboundApi : IOutboundApi
             }
         }
 
-        if (divisionId != null && divisionId.Count > 0)
+        if (divisionId != null && divisionId.Any())
         {
             foreach (var item in divisionId)
             {
@@ -1489,7 +1490,7 @@ public sealed class OutboundApi : IOutboundApi
         return await response.Content.ReadFromJsonAsync<DncList>(_options.JsonSerializerOptions, cancellationToken);
     }
 
-    public async Task<DncListEntityListing> GetOutboundDnclistsAsync(bool? includeImportStatus = null, bool? includeSize = null, int? pageSize = null, int? pageNumber = null, bool? allowEmptyResult = null, string filterType = null, string name = null, string dncSourceType = null, List<string> divisionId = null, string sortBy = null, string sortOrder = null, CancellationToken cancellationToken = default)
+    public async Task<DncListEntityListing> GetOutboundDnclistsAsync(bool? includeImportStatus = null, bool? includeSize = null, int? pageSize = null, int? pageNumber = null, bool? allowEmptyResult = null, string filterType = null, string name = null, string dncSourceType = null, IEnumerable<string> divisionId = null, string sortBy = null, string sortOrder = null, CancellationToken cancellationToken = default)
     {
         var parameters = new NameValueCollection();
 
@@ -1533,7 +1534,7 @@ public sealed class OutboundApi : IOutboundApi
             parameters.Add("dncSourceType", UriHelper.ParameterToString(dncSourceType));
         }
 
-        if (divisionId != null && divisionId.Count > 0)
+        if (divisionId != null && divisionId.Any())
         {
             foreach (var item in divisionId)
             {
@@ -2177,13 +2178,13 @@ public sealed class OutboundApi : IOutboundApi
         return await response.Content.ReadFromJsonAsync<ImportStatus>(_options.JsonSerializerOptions, cancellationToken);
     }
 
-    public async Task<ImportStatus> GetOutboundImporttemplateImportstatusAsync(string importTemplateId, List<string> listNamePrefix = null, CancellationToken cancellationToken = default)
+    public async Task<ImportStatus> GetOutboundImporttemplateImportstatusAsync(string importTemplateId, IEnumerable<string> listNamePrefix = null, CancellationToken cancellationToken = default)
     {
         ArgumentException.ThrowIfNullOrEmpty(importTemplateId);
 
         var parameters = new NameValueCollection();
 
-        if (listNamePrefix != null && listNamePrefix.Count > 0)
+        if (listNamePrefix != null && listNamePrefix.Any())
         {
             foreach (var item in listNamePrefix)
             {
@@ -2241,7 +2242,7 @@ public sealed class OutboundApi : IOutboundApi
         return await response.Content.ReadFromJsonAsync<DncList>(_options.JsonSerializerOptions, cancellationToken);
     }
 
-    public async Task<string> PostOutboundDnclistEmailaddressesAsync(string dncListId, List<string> body, CancellationToken cancellationToken = default)
+    public async Task<string> PostOutboundDnclistEmailaddressesAsync(string dncListId, IEnumerable<string> body, CancellationToken cancellationToken = default)
     {
         ArgumentException.ThrowIfNullOrEmpty(dncListId);
         ArgumentNullException.ThrowIfNull(body);
@@ -2255,7 +2256,7 @@ public sealed class OutboundApi : IOutboundApi
         return await response.Content.ReadAsStringAsync(cancellationToken);
     }
 
-    public async Task<string> PostOutboundDnclistPhonenumbersAsync(string dncListId, List<string> body, CancellationToken cancellationToken = default)
+    public async Task<string> PostOutboundDnclistPhonenumbersAsync(string dncListId, IEnumerable<string> body, CancellationToken cancellationToken = default)
     {
         ArgumentException.ThrowIfNullOrEmpty(dncListId);
         ArgumentNullException.ThrowIfNull(body);
@@ -2308,7 +2309,7 @@ public sealed class OutboundApi : IOutboundApi
         return await response.Content.ReadFromJsonAsync<CampaignDivisionView>(_options.JsonSerializerOptions, cancellationToken);
     }
 
-    public async Task<CampaignDivisionViewListing> GetOutboundCampaignsDivisionviewsAsync(int? pageSize = null, int? pageNumber = null, string filterType = null, string name = null, List<string> id = null, string sortBy = null, string sortOrder = null, CancellationToken cancellationToken = default)
+    public async Task<CampaignDivisionViewListing> GetOutboundCampaignsDivisionviewsAsync(int? pageSize = null, int? pageNumber = null, string filterType = null, string name = null, IEnumerable<string> id = null, string sortBy = null, string sortOrder = null, CancellationToken cancellationToken = default)
     {
         var parameters = new NameValueCollection();
 
@@ -2466,7 +2467,7 @@ public sealed class OutboundApi : IOutboundApi
         return await response.Content.ReadFromJsonAsync<ContactListDivisionView>(_options.JsonSerializerOptions, cancellationToken);
     }
 
-    public async Task<ContactListDivisionViewListing> GetOutboundContactlistsDivisionviewsAsync(int? pageSize = null, int? pageNumber = null, string filterType = null, string name = null, List<string> id = null, string sortBy = null, string sortOrder = null, bool? includeImportStatus = null, bool? includeSize = null, CancellationToken cancellationToken = default)
+    public async Task<ContactListDivisionViewListing> GetOutboundContactlistsDivisionviewsAsync(int? pageSize = null, int? pageNumber = null, string filterType = null, string name = null, IEnumerable<string> id = null, string sortBy = null, string sortOrder = null, bool? includeImportStatus = null, bool? includeSize = null, CancellationToken cancellationToken = default)
     {
         var parameters = new NameValueCollection();
 
@@ -2554,7 +2555,7 @@ public sealed class OutboundApi : IOutboundApi
         return await response.Content.ReadFromJsonAsync<DncListDivisionView>(_options.JsonSerializerOptions, cancellationToken);
     }
 
-    public async Task<DncListDivisionViewListing> GetOutboundDnclistsDivisionviewsAsync(int? pageSize = null, int? pageNumber = null, string filterType = null, string name = null, List<string> id = null, string sortBy = null, string sortOrder = null, bool? includeImportStatus = null, bool? includeSize = null, CancellationToken cancellationToken = default)
+    public async Task<DncListDivisionViewListing> GetOutboundDnclistsDivisionviewsAsync(int? pageSize = null, int? pageNumber = null, string filterType = null, string name = null, IEnumerable<string> id = null, string sortBy = null, string sortOrder = null, bool? includeImportStatus = null, bool? includeSize = null, CancellationToken cancellationToken = default)
     {
         var parameters = new NameValueCollection();
 
@@ -2655,7 +2656,7 @@ public sealed class OutboundApi : IOutboundApi
         return await response.Content.ReadFromJsonAsync<CampaignProgress>(_options.JsonSerializerOptions, cancellationToken);
     }
 
-    public async Task<MessagingCampaignEntityListing> GetOutboundMessagingcampaignsAsync(int? pageSize = null, int? pageNumber = null, string filterType = null, string name = null, List<string> id = null, string contactListId = null, string dncListId = null, string distributionQueueId = null, string edgeGroupId = null, List<string> divisionId = null, string sortBy = null, string sortOrder = null, CancellationToken cancellationToken = default)
+    public async Task<MessagingCampaignEntityListing> GetOutboundMessagingcampaignsAsync(int? pageSize = null, int? pageNumber = null, string filterType = null, string name = null, IEnumerable<string> id = null, string contactListId = null, string dncListId = null, string distributionQueueId = null, string edgeGroupId = null, IEnumerable<string> divisionId = null, string sortBy = null, string sortOrder = null, CancellationToken cancellationToken = default)
     {
         var parameters = new NameValueCollection();
 
@@ -2748,7 +2749,7 @@ public sealed class OutboundApi : IOutboundApi
         return await response.Content.ReadFromJsonAsync<MessagingCampaignDivisionView>(_options.JsonSerializerOptions, cancellationToken);
     }
 
-    public async Task<MessagingCampaignDivisionViewEntityListing> GetOutboundMessagingcampaignsDivisionviewsAsync(int? pageSize = null, int? pageNumber = null, string filterType = null, string name = null, List<string> id = null, string sortBy = null, string sortOrder = null, CancellationToken cancellationToken = default)
+    public async Task<MessagingCampaignDivisionViewEntityListing> GetOutboundMessagingcampaignsDivisionviewsAsync(int? pageSize = null, int? pageNumber = null, string filterType = null, string name = null, IEnumerable<string> id = null, string sortBy = null, string sortOrder = null, CancellationToken cancellationToken = default)
     {
         var parameters = new NameValueCollection();
 
@@ -2813,7 +2814,7 @@ public sealed class OutboundApi : IOutboundApi
         return await response.Content.ReadFromJsonAsync<CampaignSchedule>(_options.JsonSerializerOptions, cancellationToken);
     }
 
-    public async Task<List<CampaignSchedule>> GetOutboundSchedulesCampaignsAsync(CancellationToken cancellationToken = default)
+    public async Task<IEnumerable<CampaignSchedule>> GetOutboundSchedulesCampaignsAsync(CancellationToken cancellationToken = default)
     {
         var client = _httpClientFactory.CreateClient(PureCloudConstants.PureCloudClientName);
 
@@ -2837,7 +2838,7 @@ public sealed class OutboundApi : IOutboundApi
         return await response.Content.ReadFromJsonAsync<EmailCampaignSchedule>(_options.JsonSerializerOptions, cancellationToken);
     }
 
-    public async Task<List<EmailCampaignSchedule>> GetOutboundSchedulesEmailcampaignsAsync(CancellationToken cancellationToken = default)
+    public async Task<IEnumerable<EmailCampaignSchedule>> GetOutboundSchedulesEmailcampaignsAsync(CancellationToken cancellationToken = default)
     {
         var client = _httpClientFactory.CreateClient(PureCloudConstants.PureCloudClientName);
 
@@ -2861,7 +2862,7 @@ public sealed class OutboundApi : IOutboundApi
         return await response.Content.ReadFromJsonAsync<MessagingCampaignSchedule>(_options.JsonSerializerOptions, cancellationToken);
     }
 
-    public async Task<List<MessagingCampaignSchedule>> GetOutboundSchedulesMessagingcampaignsAsync(CancellationToken cancellationToken = default)
+    public async Task<IEnumerable<MessagingCampaignSchedule>> GetOutboundSchedulesMessagingcampaignsAsync(CancellationToken cancellationToken = default)
     {
         var client = _httpClientFactory.CreateClient(PureCloudConstants.PureCloudClientName);
 
@@ -2885,7 +2886,7 @@ public sealed class OutboundApi : IOutboundApi
         return await response.Content.ReadFromJsonAsync<CampaignSchedule>(_options.JsonSerializerOptions, cancellationToken);
     }
 
-    public async Task<List<CampaignSchedule>> GetOutboundSchedulesSequencesAsync(CancellationToken cancellationToken = default)
+    public async Task<IEnumerable<CampaignSchedule>> GetOutboundSchedulesSequencesAsync(CancellationToken cancellationToken = default)
     {
         var client = _httpClientFactory.CreateClient(PureCloudConstants.PureCloudClientName);
 
@@ -3080,7 +3081,7 @@ public sealed class OutboundApi : IOutboundApi
         return await response.Content.ReadFromJsonAsync<Campaign>(_options.JsonSerializerOptions, cancellationToken);
     }
 
-    public async Task<List<CampaignProgress>> PostOutboundCampaignsProgressAsync(List<string> body, CancellationToken cancellationToken = default)
+    public async Task<IEnumerable<CampaignProgress>> PostOutboundCampaignsProgressAsync(IEnumerable<string> body, CancellationToken cancellationToken = default)
     {
         ArgumentNullException.ThrowIfNull(body);
 
@@ -3093,7 +3094,7 @@ public sealed class OutboundApi : IOutboundApi
         return await response.Content.ReadFromJsonAsync<List<CampaignProgress>>(_options.JsonSerializerOptions, cancellationToken);
     }
 
-    public async Task<DialerContact> PostOutboundContactlistContactsAsync(string contactListId, List<DialerContact> body, int? priority = null, bool? clearSystemData = null, bool? doNotQueue = null, CancellationToken cancellationToken = default)
+    public async Task<DialerContact> PostOutboundContactlistContactsAsync(string contactListId, IEnumerable<DialerContact> body, int? priority = null, bool? clearSystemData = null, bool? doNotQueue = null, CancellationToken cancellationToken = default)
     {
         ArgumentException.ThrowIfNullOrEmpty(contactListId);
         ArgumentNullException.ThrowIfNull(body);
@@ -3125,7 +3126,7 @@ public sealed class OutboundApi : IOutboundApi
         return await response.Content.ReadFromJsonAsync<DialerContact>(_options.JsonSerializerOptions, cancellationToken);
     }
 
-    public async Task<ContactsBulkOperationJob> PostOutboundContactlistContactsBulkAsync(string contactListId, List<string> body, CancellationToken cancellationToken = default)
+    public async Task<ContactsBulkOperationJob> PostOutboundContactlistContactsBulkAsync(string contactListId, IEnumerable<string> body, CancellationToken cancellationToken = default)
     {
         ArgumentException.ThrowIfNullOrEmpty(contactListId);
         ArgumentNullException.ThrowIfNull(body);
@@ -3246,7 +3247,7 @@ public sealed class OutboundApi : IOutboundApi
         return await response.Content.ReadFromJsonAsync<ContactListTemplate>(_options.JsonSerializerOptions, cancellationToken);
     }
 
-    public async Task<ContactListTemplateEntityListing> PostOutboundContactlisttemplatesBulkAddAsync(List<ContactListTemplate> body, CancellationToken cancellationToken = default)
+    public async Task<ContactListTemplateEntityListing> PostOutboundContactlisttemplatesBulkAddAsync(IEnumerable<ContactListTemplate> body, CancellationToken cancellationToken = default)
     {
         ArgumentNullException.ThrowIfNull(body);
 
@@ -3309,7 +3310,7 @@ public sealed class OutboundApi : IOutboundApi
         return await response.Content.ReadFromJsonAsync<DncList>(_options.JsonSerializerOptions, cancellationToken);
     }
 
-    public async Task<ImportTemplate> PostOutboundImporttemplatesBulkAddAsync(List<ImportTemplate> body, CancellationToken cancellationToken = default)
+    public async Task<ImportTemplate> PostOutboundImporttemplatesBulkAddAsync(IEnumerable<ImportTemplate> body, CancellationToken cancellationToken = default)
     {
         ArgumentNullException.ThrowIfNull(body);
 
@@ -3361,7 +3362,7 @@ public sealed class OutboundApi : IOutboundApi
         return await response.Content.ReadFromJsonAsync<MessagingCampaign>(_options.JsonSerializerOptions, cancellationToken);
     }
 
-    public async Task<List<CampaignProgress>> PostOutboundMessagingcampaignsProgressAsync(List<string> body, CancellationToken cancellationToken = default)
+    public async Task<IEnumerable<CampaignProgress>> PostOutboundMessagingcampaignsProgressAsync(IEnumerable<string> body, CancellationToken cancellationToken = default)
     {
         ArgumentNullException.ThrowIfNull(body);
 

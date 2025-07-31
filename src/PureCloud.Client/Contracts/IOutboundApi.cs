@@ -124,7 +124,7 @@ public interface IOutboundApi
     /// <param name="sortOrder">The sortOrder</param>
     /// <param name="cancellationToken">Cancellation token</param>
     /// <returns>Task result</returns>
-    Task<CampaignEntityListing> GetOutboundCampaignsAsync(int? pageSize = null, int? pageNumber = null, string filterType = null, string name = null, IEnumerable<string> ids = null, string contactListId = null, string dncListIds = null, string distributionQueueId = null, string edgeGroupId = null, string callAnalysisResponseSetId = null, List<string> divisionId = null, string sortBy = null, string sortOrder = null, CancellationToken cancellationToken = default);
+    Task<CampaignEntityListing> GetOutboundCampaignsAsync(int? pageSize = null, int? pageNumber = null, string filterType = null, string name = null, IEnumerable<string> ids = null, string contactListId = null, string dncListIds = null, string distributionQueueId = null, string edgeGroupId = null, string callAnalysisResponseSetId = null, IEnumerable<string> divisionId = null, string sortBy = null, string sortOrder = null, CancellationToken cancellationToken = default);
 
     /// <summary>
     /// Create campaign
@@ -238,7 +238,7 @@ public interface IOutboundApi
     /// <param name="contactIds">The contactIds</param>
     /// <param name="cancellationToken">Cancellation token</param>
     /// <returns>True if successful</returns>
-    Task<bool> DeleteOutboundContactlistContactsAsync(string contactListId, List<string> contactIds, CancellationToken cancellationToken = default);
+    Task<bool> DeleteOutboundContactlistContactsAsync(string contactListId, IEnumerable<string> contactIds, CancellationToken cancellationToken = default);
 
     /// <summary>
     /// Delete contactlistfilter
@@ -254,7 +254,7 @@ public interface IOutboundApi
     /// <param name="id">The id</param>
     /// <param name="cancellationToken">Cancellation token</param>
     /// <returns>True if successful</returns>
-    Task<bool> DeleteOutboundContactlistsAsync(List<string> id, CancellationToken cancellationToken = default);
+    Task<bool> DeleteOutboundContactlistsAsync(IEnumerable<string> id, CancellationToken cancellationToken = default);
 
     /// <summary>
     /// Delete contactlisttemplate
@@ -270,7 +270,7 @@ public interface IOutboundApi
     /// <param name="id">The id</param>
     /// <param name="cancellationToken">Cancellation token</param>
     /// <returns>True if successful</returns>
-    Task<bool> DeleteOutboundContactlisttemplatesAsync(List<string> id, CancellationToken cancellationToken = default);
+    Task<bool> DeleteOutboundContactlisttemplatesAsync(IEnumerable<string> id, CancellationToken cancellationToken = default);
 
     /// <summary>
     /// Delete digitalruleset
@@ -338,7 +338,7 @@ public interface IOutboundApi
     /// <param name="id">The id</param>
     /// <param name="cancellationToken">Cancellation token</param>
     /// <returns>True if successful</returns>
-    Task<bool> DeleteOutboundFilespecificationtemplatesBulkAsync(List<string> id, CancellationToken cancellationToken = default);
+    Task<bool> DeleteOutboundFilespecificationtemplatesBulkAsync(IEnumerable<string> id, CancellationToken cancellationToken = default);
 
     /// <summary>
     /// Delete importtemplate
@@ -354,7 +354,7 @@ public interface IOutboundApi
     /// <param name="id">The id</param>
     /// <param name="cancellationToken">Cancellation token</param>
     /// <returns>True if successful</returns>
-    Task<bool> DeleteOutboundImporttemplatesAsync(List<string> id, CancellationToken cancellationToken = default);
+    Task<bool> DeleteOutboundImporttemplatesAsync(IEnumerable<string> id, CancellationToken cancellationToken = default);
 
     /// <summary>
     /// Delete messagingcampaign
@@ -518,7 +518,7 @@ public interface IOutboundApi
     /// <param name="sortOrder">The sortOrder</param>
     /// <param name="cancellationToken">Cancellation token</param>
     /// <returns>Task result</returns>
-    Task<CommonCampaignEntityListing> GetOutboundCampaignsAllAsync(int? pageSize = null, int? pageNumber = null, List<string> id = null, string name = null, List<string> divisionId = null, List<string> mediaType = null, string sortOrder = null, CancellationToken cancellationToken = default);
+    Task<CommonCampaignEntityListing> GetOutboundCampaignsAllAsync(int? pageSize = null, int? pageNumber = null, IEnumerable<string> id = null, string name = null, IEnumerable<string> divisionId = null, IEnumerable<string> mediaType = null, string sortOrder = null, CancellationToken cancellationToken = default);
 
     /// <summary>
     /// Get campaignsalldivisionviews
@@ -532,7 +532,7 @@ public interface IOutboundApi
     /// <param name="sortOrder">The sortOrder</param>
     /// <param name="cancellationToken">Cancellation token</param>
     /// <returns>Task result</returns>
-    Task<CommonCampaignDivisionViewEntityListing> GetOutboundCampaignsAllDivisionviewsAsync(int? pageSize = null, int? pageNumber = null, List<string> id = null, string name = null, List<string> divisionId = null, List<string> mediaType = null, string sortOrder = null, CancellationToken cancellationToken = default);
+    Task<CommonCampaignDivisionViewEntityListing> GetOutboundCampaignsAllDivisionviewsAsync(int? pageSize = null, int? pageNumber = null, IEnumerable<string> id = null, string name = null, IEnumerable<string> divisionId = null, IEnumerable<string> mediaType = null, string sortOrder = null, CancellationToken cancellationToken = default);
 
     /// <summary>
     /// Create attemptlimits
@@ -601,7 +601,7 @@ public interface IOutboundApi
     /// <param name="sortOrder">The sortOrder</param>
     /// <param name="cancellationToken">Cancellation token</param>
     /// <returns>Task result</returns>
-    Task<ContactListEntityListing> GetOutboundContactlistsAsync(bool? includeImportStatus = null, bool? includeSize = null, int? pageSize = null, int? pageNumber = null, bool? allowEmptyResult = null, string filterType = null, string name = null, List<string> id = null, List<string> divisionId = null, string sortBy = null, string sortOrder = null, CancellationToken cancellationToken = default);
+    Task<ContactListEntityListing> GetOutboundContactlistsAsync(bool? includeImportStatus = null, bool? includeSize = null, int? pageSize = null, int? pageNumber = null, bool? allowEmptyResult = null, string filterType = null, string name = null, IEnumerable<string> id = null, IEnumerable<string> divisionId = null, string sortBy = null, string sortOrder = null, CancellationToken cancellationToken = default);
 
     /// <summary>
     /// Get contactlistfilter
@@ -696,7 +696,7 @@ public interface IOutboundApi
     /// <param name="sortOrder">The sortOrder</param>
     /// <param name="cancellationToken">Cancellation token</param>
     /// <returns>Task result</returns>
-    Task<DncListEntityListing> GetOutboundDnclistsAsync(bool? includeImportStatus = null, bool? includeSize = null, int? pageSize = null, int? pageNumber = null, bool? allowEmptyResult = null, string filterType = null, string name = null, string dncSourceType = null, List<string> divisionId = null, string sortBy = null, string sortOrder = null, CancellationToken cancellationToken = default);
+    Task<DncListEntityListing> GetOutboundDnclistsAsync(bool? includeImportStatus = null, bool? includeSize = null, int? pageSize = null, int? pageNumber = null, bool? allowEmptyResult = null, string filterType = null, string name = null, string dncSourceType = null, IEnumerable<string> divisionId = null, string sortBy = null, string sortOrder = null, CancellationToken cancellationToken = default);
 
     /// <summary>
     /// Get event
@@ -984,7 +984,7 @@ public interface IOutboundApi
     /// <param name="listNamePrefix">The listNamePrefix</param>
     /// <param name="cancellationToken">Cancellation token</param>
     /// <returns>Task result</returns>
-    Task<ImportStatus> GetOutboundImporttemplateImportstatusAsync(string importTemplateId, List<string> listNamePrefix = null, CancellationToken cancellationToken = default);
+    Task<ImportStatus> GetOutboundImporttemplateImportstatusAsync(string importTemplateId, IEnumerable<string> listNamePrefix = null, CancellationToken cancellationToken = default);
 
     /// <summary>
     /// Create contactlistclear
@@ -1017,7 +1017,7 @@ public interface IOutboundApi
     /// <param name="body">The body</param>
     /// <param name="cancellationToken">Cancellation token</param>
     /// <returns>String result</returns>
-    Task<string> PostOutboundDnclistEmailaddressesAsync(string dncListId, List<string> body, CancellationToken cancellationToken = default);
+    Task<string> PostOutboundDnclistEmailaddressesAsync(string dncListId, IEnumerable<string> body, CancellationToken cancellationToken = default);
 
     /// <summary>
     /// Create dnclistphonenumbers
@@ -1026,7 +1026,7 @@ public interface IOutboundApi
     /// <param name="body">The body</param>
     /// <param name="cancellationToken">Cancellation token</param>
     /// <returns>String result</returns>
-    Task<string> PostOutboundDnclistPhonenumbersAsync(string dncListId, List<string> body, CancellationToken cancellationToken = default);
+    Task<string> PostOutboundDnclistPhonenumbersAsync(string dncListId, IEnumerable<string> body, CancellationToken cancellationToken = default);
 
     /// <summary>
     /// Create schedulescampaign
@@ -1064,7 +1064,7 @@ public interface IOutboundApi
     /// <param name="sortOrder">The sortOrder</param>
     /// <param name="cancellationToken">Cancellation token</param>
     /// <returns>Task result</returns>
-    Task<CampaignDivisionViewListing> GetOutboundCampaignsDivisionviewsAsync(int? pageSize = null, int? pageNumber = null, string filterType = null, string name = null, List<string> id = null, string sortBy = null, string sortOrder = null, CancellationToken cancellationToken = default);
+    Task<CampaignDivisionViewListing> GetOutboundCampaignsDivisionviewsAsync(int? pageSize = null, int? pageNumber = null, string filterType = null, string name = null, IEnumerable<string> id = null, string sortBy = null, string sortOrder = null, CancellationToken cancellationToken = default);
 
     /// <summary>
     /// Get contactlist
@@ -1134,7 +1134,7 @@ public interface IOutboundApi
     /// <param name="includeSize">The includeSize</param>
     /// <param name="cancellationToken">Cancellation token</param>
     /// <returns>Task result</returns>
-    Task<ContactListDivisionViewListing> GetOutboundContactlistsDivisionviewsAsync(int? pageSize = null, int? pageNumber = null, string filterType = null, string name = null, List<string> id = null, string sortBy = null, string sortOrder = null, bool? includeImportStatus = null, bool? includeSize = null, CancellationToken cancellationToken = default);
+    Task<ContactListDivisionViewListing> GetOutboundContactlistsDivisionviewsAsync(int? pageSize = null, int? pageNumber = null, string filterType = null, string name = null, IEnumerable<string> id = null, string sortBy = null, string sortOrder = null, bool? includeImportStatus = null, bool? includeSize = null, CancellationToken cancellationToken = default);
 
     /// <summary>
     /// Get dnclistsdivisionview
@@ -1160,7 +1160,7 @@ public interface IOutboundApi
     /// <param name="includeSize">The includeSize</param>
     /// <param name="cancellationToken">Cancellation token</param>
     /// <returns>Task result</returns>
-    Task<DncListDivisionViewListing> GetOutboundDnclistsDivisionviewsAsync(int? pageSize = null, int? pageNumber = null, string filterType = null, string name = null, List<string> id = null, string sortBy = null, string sortOrder = null, bool? includeImportStatus = null, bool? includeSize = null, CancellationToken cancellationToken = default);
+    Task<DncListDivisionViewListing> GetOutboundDnclistsDivisionviewsAsync(int? pageSize = null, int? pageNumber = null, string filterType = null, string name = null, IEnumerable<string> id = null, string sortBy = null, string sortOrder = null, bool? includeImportStatus = null, bool? includeSize = null, CancellationToken cancellationToken = default);
 
     /// <summary>
     /// Get messagingcampaign
@@ -1203,7 +1203,7 @@ public interface IOutboundApi
     /// <param name="sortOrder">The sortOrder</param>
     /// <param name="cancellationToken">Cancellation token</param>
     /// <returns>Task result</returns>
-    Task<MessagingCampaignEntityListing> GetOutboundMessagingcampaignsAsync(int? pageSize = null, int? pageNumber = null, string filterType = null, string name = null, List<string> id = null, string contactListId = null, string dncListId = null, string distributionQueueId = null, string edgeGroupId = null, List<string> divisionId = null, string sortBy = null, string sortOrder = null, CancellationToken cancellationToken = default);
+    Task<MessagingCampaignEntityListing> GetOutboundMessagingcampaignsAsync(int? pageSize = null, int? pageNumber = null, string filterType = null, string name = null, IEnumerable<string> id = null, string contactListId = null, string dncListId = null, string distributionQueueId = null, string edgeGroupId = null, IEnumerable<string> divisionId = null, string sortBy = null, string sortOrder = null, CancellationToken cancellationToken = default);
 
     /// <summary>
     /// Get messagingcampaignsdivisionview
@@ -1225,7 +1225,7 @@ public interface IOutboundApi
     /// <param name="sortOrder">The sortOrder</param>
     /// <param name="cancellationToken">Cancellation token</param>
     /// <returns>Task result</returns>
-    Task<MessagingCampaignDivisionViewEntityListing> GetOutboundMessagingcampaignsDivisionviewsAsync(int? pageSize = null, int? pageNumber = null, string filterType = null, string name = null, List<string> id = null, string sortBy = null, string sortOrder = null, CancellationToken cancellationToken = default);
+    Task<MessagingCampaignDivisionViewEntityListing> GetOutboundMessagingcampaignsDivisionviewsAsync(int? pageSize = null, int? pageNumber = null, string filterType = null, string name = null, IEnumerable<string> id = null, string sortBy = null, string sortOrder = null, CancellationToken cancellationToken = default);
 
     /// <summary>
     /// Get schedulescampaign
@@ -1375,7 +1375,7 @@ public interface IOutboundApi
     /// <param name="doNotQueue">The doNotQueue</param>
     /// <param name="cancellationToken">Cancellation token</param>
     /// <returns>Task result</returns>
-    Task<DialerContact> PostOutboundContactlistContactsAsync(string contactListId, List<DialerContact> body, int? priority = null, bool? clearSystemData = null, bool? doNotQueue = null, CancellationToken cancellationToken = default);
+    Task<DialerContact> PostOutboundContactlistContactsAsync(string contactListId, IEnumerable<DialerContact> body, int? priority = null, bool? clearSystemData = null, bool? doNotQueue = null, CancellationToken cancellationToken = default);
 
     /// <summary>
     /// Create contactlistcontactsbulk
@@ -1384,7 +1384,7 @@ public interface IOutboundApi
     /// <param name="body">The body</param>
     /// <param name="cancellationToken">Cancellation token</param>
     /// <returns>Task result</returns>
-    Task<ContactsBulkOperationJob> PostOutboundContactlistContactsBulkAsync(string contactListId, List<string> body, CancellationToken cancellationToken = default);
+    Task<ContactsBulkOperationJob> PostOutboundContactlistContactsBulkAsync(string contactListId, IEnumerable<string> body, CancellationToken cancellationToken = default);
 
     /// <summary>
     /// Create contactlistcontactsbulkremove
@@ -1459,7 +1459,7 @@ public interface IOutboundApi
     /// <param name="body">The body</param>
     /// <param name="cancellationToken">Cancellation token</param>
     /// <returns>Task result</returns>
-    Task<ContactListTemplateEntityListing> PostOutboundContactlisttemplatesBulkAddAsync(List<ContactListTemplate> body, CancellationToken cancellationToken = default);
+    Task<ContactListTemplateEntityListing> PostOutboundContactlisttemplatesBulkAddAsync(IEnumerable<ContactListTemplate> body, CancellationToken cancellationToken = default);
 
     /// <summary>
     /// Create contactlisttemplatesbulkretrieve
@@ -1499,7 +1499,7 @@ public interface IOutboundApi
     /// <param name="body">The body</param>
     /// <param name="cancellationToken">Cancellation token</param>
     /// <returns>Task result</returns>
-    Task<ImportTemplate> PostOutboundImporttemplatesBulkAddAsync(List<ImportTemplate> body, CancellationToken cancellationToken = default);
+    Task<ImportTemplate> PostOutboundImporttemplatesBulkAddAsync(IEnumerable<ImportTemplate> body, CancellationToken cancellationToken = default);
 
     /// <summary>
     /// Create messagingcampaignstart
