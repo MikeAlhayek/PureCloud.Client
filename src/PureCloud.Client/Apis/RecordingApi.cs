@@ -315,8 +315,6 @@ public sealed class RecordingApi : IRecordingApi
 
         var response = await client.DeleteAsync(uri, cancellationToken);
 
-        response.EnsureSuccessStatusCode();
-
         return response.IsSuccessStatusCode;
     }
 
@@ -329,8 +327,6 @@ public sealed class RecordingApi : IRecordingApi
 
         var response = await client.DeleteAsync($"api/v2/recording/crossplatform/mediaretentionpolicies/{Uri.EscapeDataString(policyId)}", cancellationToken);
 
-        response.EnsureSuccessStatusCode();
-
         return response.IsSuccessStatusCode;
     }
 
@@ -342,8 +338,6 @@ public sealed class RecordingApi : IRecordingApi
         var client = _httpClientFactory.CreateClient(PureCloudConstants.PureCloudClientName);
 
         var response = await client.DeleteAsync($"api/v2/recording/jobs/{Uri.EscapeDataString(jobId)}", cancellationToken);
-
-        response.EnsureSuccessStatusCode();
 
         return response.IsSuccessStatusCode;
     }
@@ -362,8 +356,6 @@ public sealed class RecordingApi : IRecordingApi
 
         var response = await client.DeleteAsync(uri, cancellationToken);
 
-        response.EnsureSuccessStatusCode();
-
         return response.IsSuccessStatusCode;
     }
 
@@ -375,8 +367,6 @@ public sealed class RecordingApi : IRecordingApi
         var client = _httpClientFactory.CreateClient(PureCloudConstants.PureCloudClientName);
 
         var response = await client.DeleteAsync($"api/v2/recording/mediaretentionpolicies/{Uri.EscapeDataString(policyId)}", cancellationToken);
-
-        response.EnsureSuccessStatusCode();
 
         return response.IsSuccessStatusCode;
     }
@@ -1210,9 +1200,7 @@ public sealed class RecordingApi : IRecordingApi
 
         var response = await client.PostAsJsonAsync("api/v2/recordings/screensessions/acknowledge", body, _options.JsonSerializerOptions, cancellationToken);
 
-        response.EnsureSuccessStatusCode();
-
-        return true;
+        return response.IsSuccessStatusCode;
     }
 
     /// <inheritdoc />
@@ -1224,9 +1212,7 @@ public sealed class RecordingApi : IRecordingApi
 
         var response = await client.PostAsJsonAsync("api/v2/recordings/screensessions/metadata", body, _options.JsonSerializerOptions, cancellationToken);
 
-        response.EnsureSuccessStatusCode();
-
-        return true;
+        return response.IsSuccessStatusCode;
     }
 
     /// <inheritdoc />
