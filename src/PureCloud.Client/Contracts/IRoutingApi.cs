@@ -37,6 +37,39 @@ public interface IRoutingApi
     Task<bool> DeleteRoutingEmailDomainRouteAsync(string domainName, string routeId, CancellationToken cancellationToken = default);
 
     /// <summary>
+    /// Delete an outbound domain.
+    /// </summary>
+    /// <param name="domainId">domain ID</param>
+    /// <param name="cancellationToken">Cancellation token</param>
+    /// <returns>True if the operation was successful</returns>
+    Task<bool> DeleteRoutingEmailOutboundDomainAsync(string domainId, CancellationToken cancellationToken = default);
+
+    /// <summary>
+    /// Delete a routing language.
+    /// </summary>
+    /// <param name="languageId">Language ID</param>
+    /// <param name="cancellationToken">Cancellation token</param>
+    /// <returns>True if the operation was successful</returns>
+    Task<bool> DeleteRoutingLanguageAsync(string languageId, CancellationToken cancellationToken = default);
+
+    /// <summary>
+    /// Delete a queue.
+    /// </summary>
+    /// <param name="queueId">Queue ID</param>
+    /// <param name="forceDelete">Force delete (optional)</param>
+    /// <param name="cancellationToken">Cancellation token</param>
+    /// <returns>True if the operation was successful</returns>
+    Task<bool> DeleteRoutingQueueAsync(string queueId, bool? forceDelete = null, CancellationToken cancellationToken = default);
+
+    /// <summary>
+    /// Delete a routing skill.
+    /// </summary>
+    /// <param name="skillId">Skill ID</param>
+    /// <param name="cancellationToken">Cancellation token</param>
+    /// <returns>True if the operation was successful</returns>
+    Task<bool> DeleteRoutingSkillAsync(string skillId, CancellationToken cancellationToken = default);
+
+    /// <summary>
     /// Retrieve a single benefit assessment.
     /// </summary>
     /// <param name="assessmentId">Benefit Assessment ID</param>
@@ -96,7 +129,7 @@ public interface IRoutingApi
     /// <returns>The updated inbound route</returns>
     Task<InboundRoute> UpdateRoutingEmailDomainRouteAsync(string domainName, string routeId, InboundRoute body, CancellationToken cancellationToken = default);
 
-    // TODO: Add remaining 139 methods after creating required models:
+    // TODO: Add remaining ~295 methods after creating required models:
     // - Delete methods: ~18 more (DeleteRoutingLanguage, DeleteRoutingQueue, DeleteRoutingSkill, etc.)
     // - Get methods: ~80 more (GetRoutingLanguage, GetRoutingLanguages, GetRoutingQueues, GetRoutingSkills, etc.) 
     // - Create methods: ~20 more (CreateRoutingLanguage, CreateRoutingQueue, CreateRoutingSkill, etc.)
