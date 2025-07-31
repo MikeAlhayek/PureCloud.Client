@@ -40,7 +40,7 @@ public sealed class QualityApi : IQualityApi
             parameters.Add("sortBy", UriHelper.ParameterToString(sortBy));
         }
 
-        if (expands?.Any() == true)
+        if (expands is not null)
         {
             foreach (var expand in expands)
             {
@@ -68,7 +68,7 @@ public sealed class QualityApi : IQualityApi
             parameters.Add("endTime", UriHelper.ParameterToString(endTime.Value));
         }
 
-        if (agentUserIds?.Any() == true)
+        if (agentUserIds is not null)
         {
             foreach (var agentUserId in agentUserIds)
             {
@@ -1452,7 +1452,7 @@ public sealed class QualityApi : IQualityApi
         return await response.Content.ReadFromJsonAsync<ScorableSurvey>(_options.JsonSerializerOptions, cancellationToken);
     }
 
-    public async Task<List<Survey>> GetQualityConversationSurveysAsync(string conversationId, CancellationToken cancellationToken = default)
+    public async Task<Survey[]> GetQualityConversationSurveysAsync(string conversationId, CancellationToken cancellationToken = default)
     {
         ArgumentException.ThrowIfNullOrEmpty(conversationId);
 
@@ -1464,10 +1464,10 @@ public sealed class QualityApi : IQualityApi
 
         response.EnsureSuccessStatusCode();
 
-        return await response.Content.ReadFromJsonAsync<List<Survey>>(_options.JsonSerializerOptions, cancellationToken);
+        return await response.Content.ReadFromJsonAsync<Survey[]>(_options.JsonSerializerOptions, cancellationToken);
     }
 
-    public async Task<List<EvaluationFormResponse>> GetQualityFormsEvaluationsBulkContextsAsync(IEnumerable<string> contextId, CancellationToken cancellationToken = default)
+    public async Task<EvaluationFormResponse[]> GetQualityFormsEvaluationsBulkContextsAsync(IEnumerable<string> contextId, CancellationToken cancellationToken = default)
     {
         ArgumentNullException.ThrowIfNull(contextId);
 
@@ -1486,10 +1486,10 @@ public sealed class QualityApi : IQualityApi
 
         response.EnsureSuccessStatusCode();
 
-        return await response.Content.ReadFromJsonAsync<List<EvaluationFormResponse>>(_options.JsonSerializerOptions, cancellationToken);
+        return await response.Content.ReadFromJsonAsync<EvaluationFormResponse[]>(_options.JsonSerializerOptions, cancellationToken);
     }
 
-    public async Task<List<SurveyForm>> GetQualityFormsSurveysBulkContextsAsync(IEnumerable<string> contextId, bool? published = null, CancellationToken cancellationToken = default)
+    public async Task<SurveyForm[]> GetQualityFormsSurveysBulkContextsAsync(IEnumerable<string> contextId, bool? published = null, CancellationToken cancellationToken = default)
     {
         ArgumentNullException.ThrowIfNull(contextId);
 
@@ -1513,6 +1513,6 @@ public sealed class QualityApi : IQualityApi
 
         response.EnsureSuccessStatusCode();
 
-        return await response.Content.ReadFromJsonAsync<List<SurveyForm>>(_options.JsonSerializerOptions, cancellationToken);
+        return await response.Content.ReadFromJsonAsync<SurveyForm[]>(_options.JsonSerializerOptions, cancellationToken);
     }
 }

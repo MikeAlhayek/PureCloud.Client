@@ -497,16 +497,16 @@ public interface IQualityApi
     /// </summary>
     /// <param name="conversationId">conversationId</param>
     /// <param name="cancellationToken">Cancellation token</param>
-    /// <returns>List of Survey</returns>
-    Task<List<Survey>> GetQualityConversationSurveysAsync(string conversationId, CancellationToken cancellationToken = default);
+    /// <returns>Array of Survey</returns>
+    Task<Survey[]> GetQualityConversationSurveysAsync(string conversationId, CancellationToken cancellationToken = default);
 
     /// <summary>
     /// Retrieve evaluation forms by their context ids
     /// </summary>
     /// <param name="contextId">A comma-delimited list of valid evaluation form context ids</param>
     /// <param name="cancellationToken">Cancellation token</param>
-    /// <returns>List of EvaluationFormResponse</returns>
-    Task<List<EvaluationFormResponse>> GetQualityFormsEvaluationsBulkContextsAsync(IEnumerable<string> contextId, CancellationToken cancellationToken = default);
+    /// <returns>Array of EvaluationFormResponse</returns>
+    Task<EvaluationFormResponse[]> GetQualityFormsEvaluationsBulkContextsAsync(IEnumerable<string> contextId, CancellationToken cancellationToken = default);
 
     /// <summary>
     /// Retrieve survey forms by their context ids
@@ -514,6 +514,6 @@ public interface IQualityApi
     /// <param name="contextId">A comma-delimited list of valid survey form context ids</param>
     /// <param name="published">If true, the latest published version will be included. If false, only the unpublished version will be included.</param>
     /// <param name="cancellationToken">Cancellation token</param>
-    /// <returns>List of SurveyForm</returns>
-    Task<List<SurveyForm>> GetQualityFormsSurveysBulkContextsAsync(IEnumerable<string> contextId, bool? published = null, CancellationToken cancellationToken = default);
+    /// <returns>Array of SurveyForm</returns>
+    Task<SurveyForm[]> GetQualityFormsSurveysBulkContextsAsync(IEnumerable<string> contextId, bool? published = null, CancellationToken cancellationToken = default);
 }
