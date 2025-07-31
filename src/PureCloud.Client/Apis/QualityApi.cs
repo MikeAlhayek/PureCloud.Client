@@ -21,6 +21,7 @@ public sealed class QualityApi : IQualityApi
         _options = options.Value;
     }
 
+    /// <inheritdoc />
     public async Task<AgentActivityEntityListing> GetQualityAgentsActivityAsync(int? pageSize = null, int? pageNumber = null, string sortBy = null, IEnumerable<string> expands = null, string nextPage = null, string previousPage = null, DateTime? startTime = null, DateTime? endTime = null, IEnumerable<string> agentUserIds = null, string evaluatorUserId = null, string name = null, string group = null, string agentTeamId = null, string formContextId = null, string userState = null, CancellationToken cancellationToken = default)
     {
         var parameters = new NameValueCollection();
@@ -117,6 +118,7 @@ public sealed class QualityApi : IQualityApi
         return await response.Content.ReadFromJsonAsync<AgentActivityEntityListing>(_options.JsonSerializerOptions, cancellationToken);
     }
 
+    /// <inheritdoc />
     public async Task<Calibration> GetQualityCalibrationAsync(string calibrationId, string calibratorId = null, string conversationId = null, CancellationToken cancellationToken = default)
     {
         ArgumentException.ThrowIfNullOrEmpty(calibrationId);
@@ -144,6 +146,7 @@ public sealed class QualityApi : IQualityApi
         return await response.Content.ReadFromJsonAsync<Calibration>(_options.JsonSerializerOptions, cancellationToken);
     }
 
+    /// <inheritdoc />
     public async Task<EvaluationResponse> GetQualityConversationEvaluationAsync(string conversationId, string evaluationId, string expand = null, CancellationToken cancellationToken = default)
     {
         ArgumentException.ThrowIfNullOrEmpty(conversationId);
@@ -167,6 +170,7 @@ public sealed class QualityApi : IQualityApi
         return await response.Content.ReadFromJsonAsync<EvaluationResponse>(_options.JsonSerializerOptions, cancellationToken);
     }
 
+    /// <inheritdoc />
     public async Task<EvaluationFormResponse> GetQualityFormsEvaluationAsync(string formId, CancellationToken cancellationToken = default)
     {
         ArgumentException.ThrowIfNullOrEmpty(formId);
@@ -180,6 +184,7 @@ public sealed class QualityApi : IQualityApi
         return await response.Content.ReadFromJsonAsync<EvaluationFormResponse>(_options.JsonSerializerOptions, cancellationToken);
     }
 
+    /// <inheritdoc />
     public async Task<Survey> GetQualitySurveyAsync(string surveyId, CancellationToken cancellationToken = default)
     {
         ArgumentException.ThrowIfNullOrEmpty(surveyId);
@@ -193,6 +198,7 @@ public sealed class QualityApi : IQualityApi
         return await response.Content.ReadFromJsonAsync<Survey>(_options.JsonSerializerOptions, cancellationToken);
     }
 
+    /// <inheritdoc />
     public async Task<Calibration> CreateQualityCalibrationAsync(string calibratorId, CalibrationCreate body, CancellationToken cancellationToken = default)
     {
         ArgumentException.ThrowIfNullOrEmpty(calibratorId);
@@ -212,6 +218,7 @@ public sealed class QualityApi : IQualityApi
         return await response.Content.ReadFromJsonAsync<Calibration>(_options.JsonSerializerOptions, cancellationToken);
     }
 
+    /// <inheritdoc />
     public async Task<EvaluationResponse> CreateQualityConversationEvaluationAsync(string conversationId, EvaluationCreateBody body, string expand = null, CancellationToken cancellationToken = default)
     {
         ArgumentException.ThrowIfNullOrEmpty(conversationId);
@@ -235,6 +242,7 @@ public sealed class QualityApi : IQualityApi
         return await response.Content.ReadFromJsonAsync<EvaluationResponse>(_options.JsonSerializerOptions, cancellationToken);
     }
 
+    /// <inheritdoc />
     public async Task<EvaluationFormResponse> CreateQualityFormsEvaluationAsync(EvaluationForm body, CancellationToken cancellationToken = default)
     {
         ArgumentNullException.ThrowIfNull(body);
@@ -248,6 +256,7 @@ public sealed class QualityApi : IQualityApi
         return await response.Content.ReadFromJsonAsync<EvaluationFormResponse>(_options.JsonSerializerOptions, cancellationToken);
     }
 
+    /// <inheritdoc />
     public async Task<EvaluationFormResponse> UpdateQualityFormsEvaluationAsync(string formId, EvaluationForm body, CancellationToken cancellationToken = default)
     {
         ArgumentException.ThrowIfNullOrEmpty(formId);
@@ -262,6 +271,7 @@ public sealed class QualityApi : IQualityApi
         return await response.Content.ReadFromJsonAsync<EvaluationFormResponse>(_options.JsonSerializerOptions, cancellationToken);
     }
 
+    /// <inheritdoc />
     public async Task<SurveyForm> UpdateQualityFormsSurveyAsync(string formId, SurveyForm body, CancellationToken cancellationToken = default)
     {
         ArgumentException.ThrowIfNullOrEmpty(formId);
@@ -276,6 +286,7 @@ public sealed class QualityApi : IQualityApi
         return await response.Content.ReadFromJsonAsync<SurveyForm>(_options.JsonSerializerOptions, cancellationToken);
     }
 
+    /// <inheritdoc />
     public async Task<Calibration> DeleteQualityCalibrationAsync(string calibrationId, string calibratorId, CancellationToken cancellationToken = default)
     {
         ArgumentException.ThrowIfNullOrEmpty(calibrationId);
@@ -295,6 +306,7 @@ public sealed class QualityApi : IQualityApi
         return await response.Content.ReadFromJsonAsync<Calibration>(_options.JsonSerializerOptions, cancellationToken);
     }
 
+    /// <inheritdoc />
     public async Task<EvaluationResponse> DeleteQualityConversationEvaluationAsync(string conversationId, string evaluationId, string expand = null, CancellationToken cancellationToken = default)
     {
         ArgumentException.ThrowIfNullOrEmpty(conversationId);
@@ -318,6 +330,7 @@ public sealed class QualityApi : IQualityApi
         return await response.Content.ReadFromJsonAsync<EvaluationResponse>(_options.JsonSerializerOptions, cancellationToken);
     }
 
+    /// <inheritdoc />
     public async Task<AsyncQueryStatus> GetAnalyticsEvaluationsAggregatesJobAsync(string jobId, CancellationToken cancellationToken = default)
     {
         ArgumentException.ThrowIfNullOrEmpty(jobId);
@@ -331,6 +344,7 @@ public sealed class QualityApi : IQualityApi
         return await response.Content.ReadFromJsonAsync<AsyncQueryStatus>(_options.JsonSerializerOptions, cancellationToken);
     }
 
+    /// <inheritdoc />
     public async Task<EvaluationAsyncAggregateQueryResponse> GetAnalyticsEvaluationsAggregatesJobResultsAsync(string jobId, string cursor = null, CancellationToken cancellationToken = default)
     {
         ArgumentException.ThrowIfNullOrEmpty(jobId);
@@ -353,6 +367,7 @@ public sealed class QualityApi : IQualityApi
         return await response.Content.ReadFromJsonAsync<EvaluationAsyncAggregateQueryResponse>(_options.JsonSerializerOptions, cancellationToken);
     }
 
+    /// <inheritdoc />
     public async Task<AsyncQueryStatus> GetAnalyticsSurveysAggregatesJobAsync(string jobId, CancellationToken cancellationToken = default)
     {
         ArgumentException.ThrowIfNullOrEmpty(jobId);
@@ -366,6 +381,7 @@ public sealed class QualityApi : IQualityApi
         return await response.Content.ReadFromJsonAsync<AsyncQueryStatus>(_options.JsonSerializerOptions, cancellationToken);
     }
 
+    /// <inheritdoc />
     public async Task<SurveyAsyncAggregateQueryResponse> GetAnalyticsSurveysAggregatesJobResultsAsync(string jobId, string cursor = null, CancellationToken cancellationToken = default)
     {
         ArgumentException.ThrowIfNullOrEmpty(jobId);
@@ -388,6 +404,7 @@ public sealed class QualityApi : IQualityApi
         return await response.Content.ReadFromJsonAsync<SurveyAsyncAggregateQueryResponse>(_options.JsonSerializerOptions, cancellationToken);
     }
 
+    /// <inheritdoc />
     public async Task<CalibrationEntityListing> GetQualityCalibrationsAsync(string calibratorId, int? pageSize = null, int? pageNumber = null, string sortBy = null, IEnumerable<string> expands = null, string nextPage = null, string previousPage = null, string conversationId = null, DateTime? startTime = null, DateTime? endTime = null, CancellationToken cancellationToken = default)
     {
         ArgumentException.ThrowIfNullOrEmpty(calibratorId);
@@ -454,6 +471,7 @@ public sealed class QualityApi : IQualityApi
         return await response.Content.ReadFromJsonAsync<CalibrationEntityListing>(_options.JsonSerializerOptions, cancellationToken);
     }
 
+    /// <inheritdoc />
     public async Task<QualityAuditQueryExecutionStatusResponse> GetQualityConversationsAuditsQueryTransactionIdAsync(string transactionId, CancellationToken cancellationToken = default)
     {
         ArgumentException.ThrowIfNullOrEmpty(transactionId);
@@ -467,6 +485,7 @@ public sealed class QualityApi : IQualityApi
         return await response.Content.ReadFromJsonAsync<QualityAuditQueryExecutionStatusResponse>(_options.JsonSerializerOptions, cancellationToken);
     }
 
+    /// <inheritdoc />
     public async Task<QualityAuditQueryExecutionResultsResponse> GetQualityConversationsAuditsQueryTransactionIdResultsAsync(string transactionId, string cursor = null, int? pageSize = null, IEnumerable<string> expands = null, CancellationToken cancellationToken = default)
     {
         ArgumentException.ThrowIfNullOrEmpty(transactionId);
@@ -502,6 +521,7 @@ public sealed class QualityApi : IQualityApi
         return await response.Content.ReadFromJsonAsync<QualityAuditQueryExecutionResultsResponse>(_options.JsonSerializerOptions, cancellationToken);
     }
 
+    /// <inheritdoc />
     public async Task<EvaluationEntityListing> GetQualityEvaluationsQueryAsync(int? pageSize = null, int? pageNumber = null, IEnumerable<string> expands = null, string previousPage = null, string conversationId = null, string agentUserId = null, string agentTeamId = null, string evaluatorUserId = null, string assigneeUserId = null, string queueId = null, string startTime = null, string endTime = null, string formContextId = null, IEnumerable<string> evaluationStates = null, bool? isReleased = null, bool? agentHasRead = null, bool? expandAnswerTotalScores = null, int? maximum = null, string sortOrder = null, bool? includeDeletedUsers = null, CancellationToken cancellationToken = default)
     {
         var parameters = new NameValueCollection();
@@ -623,6 +643,7 @@ public sealed class QualityApi : IQualityApi
         return await response.Content.ReadFromJsonAsync<EvaluationEntityListing>(_options.JsonSerializerOptions, cancellationToken);
     }
 
+    /// <inheritdoc />
     public async Task<bool> DeleteQualityFormAsync(string formId, CancellationToken cancellationToken = default)
     {
         ArgumentException.ThrowIfNullOrEmpty(formId);
@@ -634,6 +655,7 @@ public sealed class QualityApi : IQualityApi
         return response.IsSuccessStatusCode;
     }
 
+    /// <inheritdoc />
     public async Task<bool> DeleteQualityFormsEvaluationAsync(string formId, CancellationToken cancellationToken = default)
     {
         ArgumentException.ThrowIfNullOrEmpty(formId);
@@ -645,6 +667,7 @@ public sealed class QualityApi : IQualityApi
         return response.IsSuccessStatusCode;
     }
 
+    /// <inheritdoc />
     public async Task<bool> DeleteQualityFormsSurveyAsync(string formId, CancellationToken cancellationToken = default)
     {
         ArgumentException.ThrowIfNullOrEmpty(formId);
@@ -656,6 +679,7 @@ public sealed class QualityApi : IQualityApi
         return response.IsSuccessStatusCode;
     }
 
+    /// <inheritdoc />
     public async Task<AgentActivityEntityListing> GetQualityEvaluatorsActivityAsync(int? pageSize = null, int? pageNumber = null, string sortBy = null, IEnumerable<string> expands = null, string nextPage = null, string previousPage = null, DateTime? startTime = null, DateTime? endTime = null, string name = null, IEnumerable<string> permissions = null, string group = null, string agentTeamId = null, CancellationToken cancellationToken = default)
     {
         var parameters = new NameValueCollection();
@@ -737,6 +761,7 @@ public sealed class QualityApi : IQualityApi
         return await response.Content.ReadFromJsonAsync<AgentActivityEntityListing>(_options.JsonSerializerOptions, cancellationToken);
     }
 
+    /// <inheritdoc />
     public async Task<EvaluationForm> GetQualityFormAsync(string formId, CancellationToken cancellationToken = default)
     {
         ArgumentException.ThrowIfNullOrEmpty(formId);
@@ -750,6 +775,7 @@ public sealed class QualityApi : IQualityApi
         return await response.Content.ReadFromJsonAsync<EvaluationForm>(_options.JsonSerializerOptions, cancellationToken);
     }
 
+    /// <inheritdoc />
     public async Task<EvaluationFormResponseEntityListing> GetQualityFormVersionsAsync(string formId, int? pageSize = null, int? pageNumber = null, CancellationToken cancellationToken = default)
     {
         ArgumentException.ThrowIfNullOrEmpty(formId);
@@ -777,6 +803,7 @@ public sealed class QualityApi : IQualityApi
         return await response.Content.ReadFromJsonAsync<EvaluationFormResponseEntityListing>(_options.JsonSerializerOptions, cancellationToken);
     }
 
+    /// <inheritdoc />
     public async Task<EvaluationFormResponseEntityListing> GetQualityFormsAsync(int? pageSize = null, int? pageNumber = null, string sortBy = null, string nextPage = null, string previousPage = null, string expand = null, string name = null, string sortOrder = null, CancellationToken cancellationToken = default)
     {
         var parameters = new NameValueCollection();
@@ -832,6 +859,7 @@ public sealed class QualityApi : IQualityApi
         return await response.Content.ReadFromJsonAsync<EvaluationFormResponseEntityListing>(_options.JsonSerializerOptions, cancellationToken);
     }
 
+    /// <inheritdoc />
     public async Task<EvaluationFormResponseEntityListing> GetQualityFormsEvaluationVersionsAsync(string formId, int? pageSize = null, int? pageNumber = null, string sortOrder = null, CancellationToken cancellationToken = default)
     {
         ArgumentException.ThrowIfNullOrEmpty(formId);
@@ -864,6 +892,7 @@ public sealed class QualityApi : IQualityApi
         return await response.Content.ReadFromJsonAsync<EvaluationFormResponseEntityListing>(_options.JsonSerializerOptions, cancellationToken);
     }
 
+    /// <inheritdoc />
     public async Task<EvaluationFormResponseEntityListing> GetQualityFormsEvaluationsAsync(int? pageSize = null, int? pageNumber = null, string sortBy = null, string nextPage = null, string previousPage = null, string expand = null, string name = null, string sortOrder = null, CancellationToken cancellationToken = default)
     {
         var parameters = new NameValueCollection();
@@ -919,6 +948,7 @@ public sealed class QualityApi : IQualityApi
         return await response.Content.ReadFromJsonAsync<EvaluationFormResponseEntityListing>(_options.JsonSerializerOptions, cancellationToken);
     }
 
+    /// <inheritdoc />
     public async Task<SurveyForm> GetQualityFormsSurveyAsync(string formId, CancellationToken cancellationToken = default)
     {
         ArgumentException.ThrowIfNullOrEmpty(formId);
@@ -932,6 +962,7 @@ public sealed class QualityApi : IQualityApi
         return await response.Content.ReadFromJsonAsync<SurveyForm>(_options.JsonSerializerOptions, cancellationToken);
     }
 
+    /// <inheritdoc />
     public async Task<SurveyFormEntityListing> GetQualityFormsSurveysAsync(int? pageSize = null, int? pageNumber = null, string sortBy = null, string nextPage = null, string previousPage = null, string expand = null, string name = null, string sortOrder = null, CancellationToken cancellationToken = default)
     {
         var parameters = new NameValueCollection();
@@ -987,6 +1018,7 @@ public sealed class QualityApi : IQualityApi
         return await response.Content.ReadFromJsonAsync<SurveyFormEntityListing>(_options.JsonSerializerOptions, cancellationToken);
     }
 
+    /// <inheritdoc />
     public async Task<SurveyFormEntityListing> GetQualityFormsSurveysBulkAsync(IEnumerable<string> ids, CancellationToken cancellationToken = default)
     {
         ArgumentNullException.ThrowIfNull(ids);
@@ -1009,6 +1041,7 @@ public sealed class QualityApi : IQualityApi
         return await response.Content.ReadFromJsonAsync<SurveyFormEntityListing>(_options.JsonSerializerOptions, cancellationToken);
     }
 
+    /// <inheritdoc />
     public async Task<SurveyFormEntityListing> GetQualityFormsSurveyVersionsAsync(string formId, int? pageSize = null, int? pageNumber = null, CancellationToken cancellationToken = default)
     {
         ArgumentException.ThrowIfNullOrEmpty(formId);
@@ -1036,6 +1069,7 @@ public sealed class QualityApi : IQualityApi
         return await response.Content.ReadFromJsonAsync<SurveyFormEntityListing>(_options.JsonSerializerOptions, cancellationToken);
     }
 
+    /// <inheritdoc />
     public async Task<EvaluationForm> GetQualityPublishedformAsync(string formId, CancellationToken cancellationToken = default)
     {
         ArgumentException.ThrowIfNullOrEmpty(formId);
@@ -1049,6 +1083,7 @@ public sealed class QualityApi : IQualityApi
         return await response.Content.ReadFromJsonAsync<EvaluationForm>(_options.JsonSerializerOptions, cancellationToken);
     }
 
+    /// <inheritdoc />
     public async Task<EvaluationFormResponseEntityListing> GetQualityPublishedformsAsync(int? pageSize = null, int? pageNumber = null, string name = null, bool? onlyLatestPerContext = null, CancellationToken cancellationToken = default)
     {
         var parameters = new NameValueCollection();
@@ -1084,6 +1119,7 @@ public sealed class QualityApi : IQualityApi
         return await response.Content.ReadFromJsonAsync<EvaluationFormResponseEntityListing>(_options.JsonSerializerOptions, cancellationToken);
     }
 
+    /// <inheritdoc />
     public async Task<EvaluationFormResponse> GetQualityPublishedformsEvaluationAsync(string formId, CancellationToken cancellationToken = default)
     {
         ArgumentException.ThrowIfNullOrEmpty(formId);
@@ -1097,6 +1133,7 @@ public sealed class QualityApi : IQualityApi
         return await response.Content.ReadFromJsonAsync<EvaluationFormResponse>(_options.JsonSerializerOptions, cancellationToken);
     }
 
+    /// <inheritdoc />
     public async Task<EvaluationFormResponseEntityListing> GetQualityPublishedformsEvaluationsAsync(int? pageSize = null, int? pageNumber = null, string name = null, bool? onlyLatestPerContext = null, CancellationToken cancellationToken = default)
     {
         var parameters = new NameValueCollection();
@@ -1132,6 +1169,7 @@ public sealed class QualityApi : IQualityApi
         return await response.Content.ReadFromJsonAsync<EvaluationFormResponseEntityListing>(_options.JsonSerializerOptions, cancellationToken);
     }
 
+    /// <inheritdoc />
     public async Task<SurveyForm> GetQualityPublishedformsSurveyAsync(string formId, CancellationToken cancellationToken = default)
     {
         ArgumentException.ThrowIfNullOrEmpty(formId);
@@ -1145,6 +1183,7 @@ public sealed class QualityApi : IQualityApi
         return await response.Content.ReadFromJsonAsync<SurveyForm>(_options.JsonSerializerOptions, cancellationToken);
     }
 
+    /// <inheritdoc />
     public async Task<SurveyFormEntityListing> GetQualityPublishedformsSurveysAsync(int? pageSize = null, int? pageNumber = null, string name = null, bool? onlyLatestEnabledPerContext = null, CancellationToken cancellationToken = default)
     {
         var parameters = new NameValueCollection();
@@ -1180,6 +1219,7 @@ public sealed class QualityApi : IQualityApi
         return await response.Content.ReadFromJsonAsync<SurveyFormEntityListing>(_options.JsonSerializerOptions, cancellationToken);
     }
 
+    /// <inheritdoc />
     public async Task<ScorableSurvey> GetQualitySurveysScorableAsync(string customerSurveyUrl, CancellationToken cancellationToken = default)
     {
         ArgumentException.ThrowIfNullOrEmpty(customerSurveyUrl);
@@ -1198,6 +1238,7 @@ public sealed class QualityApi : IQualityApi
         return await response.Content.ReadFromJsonAsync<ScorableSurvey>(_options.JsonSerializerOptions, cancellationToken);
     }
 
+    /// <inheritdoc />
     public async Task<AsyncQueryStatus> CreateAnalyticsEvaluationsAggregatesJobAsync(EvaluationAsyncAggregationQuery body, CancellationToken cancellationToken = default)
     {
         ArgumentNullException.ThrowIfNull(body);
@@ -1211,6 +1252,7 @@ public sealed class QualityApi : IQualityApi
         return await response.Content.ReadFromJsonAsync<AsyncQueryStatus>(_options.JsonSerializerOptions, cancellationToken);
     }
 
+    /// <inheritdoc />
     public async Task<EvaluationAggregateQueryResponse> CreateAnalyticsEvaluationsAggregatesQueryAsync(EvaluationAggregationQuery body, CancellationToken cancellationToken = default)
     {
         ArgumentNullException.ThrowIfNull(body);
@@ -1224,6 +1266,7 @@ public sealed class QualityApi : IQualityApi
         return await response.Content.ReadFromJsonAsync<EvaluationAggregateQueryResponse>(_options.JsonSerializerOptions, cancellationToken);
     }
 
+    /// <inheritdoc />
     public async Task<AsyncQueryStatus> CreateAnalyticsSurveysAggregatesJobAsync(SurveyAsyncAggregationQuery body, CancellationToken cancellationToken = default)
     {
         ArgumentNullException.ThrowIfNull(body);
@@ -1237,6 +1280,7 @@ public sealed class QualityApi : IQualityApi
         return await response.Content.ReadFromJsonAsync<AsyncQueryStatus>(_options.JsonSerializerOptions, cancellationToken);
     }
 
+    /// <inheritdoc />
     public async Task<SurveyAggregateQueryResponse> CreateAnalyticsSurveysAggregatesQueryAsync(SurveyAggregationQuery body, CancellationToken cancellationToken = default)
     {
         ArgumentNullException.ThrowIfNull(body);
@@ -1250,6 +1294,7 @@ public sealed class QualityApi : IQualityApi
         return await response.Content.ReadFromJsonAsync<SurveyAggregateQueryResponse>(_options.JsonSerializerOptions, cancellationToken);
     }
 
+    /// <inheritdoc />
     public async Task<QualityAuditQueryExecutionStatusResponse> CreateQualityConversationsAuditsQueryAsync(QMAuditQueryRequest body, CancellationToken cancellationToken = default)
     {
         ArgumentNullException.ThrowIfNull(body);
@@ -1263,6 +1308,7 @@ public sealed class QualityApi : IQualityApi
         return await response.Content.ReadFromJsonAsync<QualityAuditQueryExecutionStatusResponse>(_options.JsonSerializerOptions, cancellationToken);
     }
 
+    /// <inheritdoc />
     public async Task<EvaluationAggregateQueryResponse> CreateQualityEvaluationsAggregatesQueryMeAsync(EvaluationAggregationQueryMe body, CancellationToken cancellationToken = default)
     {
         ArgumentNullException.ThrowIfNull(body);
@@ -1276,6 +1322,7 @@ public sealed class QualityApi : IQualityApi
         return await response.Content.ReadFromJsonAsync<EvaluationAggregateQueryResponse>(_options.JsonSerializerOptions, cancellationToken);
     }
 
+    /// <inheritdoc />
     public async Task<EvaluationScoringSet> CreateQualityEvaluationsScoringAsync(EvaluationFormAndScoringSet body, CancellationToken cancellationToken = default)
     {
         ArgumentNullException.ThrowIfNull(body);
@@ -1289,6 +1336,7 @@ public sealed class QualityApi : IQualityApi
         return await response.Content.ReadFromJsonAsync<EvaluationScoringSet>(_options.JsonSerializerOptions, cancellationToken);
     }
 
+    /// <inheritdoc />
     public async Task<EvaluationFormResponse> CreateQualityFormsAsync(EvaluationForm body, CancellationToken cancellationToken = default)
     {
         ArgumentNullException.ThrowIfNull(body);
@@ -1302,6 +1350,7 @@ public sealed class QualityApi : IQualityApi
         return await response.Content.ReadFromJsonAsync<EvaluationFormResponse>(_options.JsonSerializerOptions, cancellationToken);
     }
 
+    /// <inheritdoc />
     public async Task<SurveyForm> CreateQualityFormsSurveysAsync(SurveyForm body, CancellationToken cancellationToken = default)
     {
         ArgumentNullException.ThrowIfNull(body);
@@ -1315,6 +1364,7 @@ public sealed class QualityApi : IQualityApi
         return await response.Content.ReadFromJsonAsync<SurveyForm>(_options.JsonSerializerOptions, cancellationToken);
     }
 
+    /// <inheritdoc />
     public async Task<EvaluationFormResponse> CreateQualityPublishedformsAsync(PublishForm body, CancellationToken cancellationToken = default)
     {
         ArgumentNullException.ThrowIfNull(body);
@@ -1328,6 +1378,7 @@ public sealed class QualityApi : IQualityApi
         return await response.Content.ReadFromJsonAsync<EvaluationFormResponse>(_options.JsonSerializerOptions, cancellationToken);
     }
 
+    /// <inheritdoc />
     public async Task<EvaluationFormResponse> CreateQualityPublishedformsEvaluationsAsync(PublishForm body, CancellationToken cancellationToken = default)
     {
         ArgumentNullException.ThrowIfNull(body);
@@ -1341,6 +1392,7 @@ public sealed class QualityApi : IQualityApi
         return await response.Content.ReadFromJsonAsync<EvaluationFormResponse>(_options.JsonSerializerOptions, cancellationToken);
     }
 
+    /// <inheritdoc />
     public async Task<SurveyForm> CreateQualityPublishedformsSurveysAsync(PublishForm body, CancellationToken cancellationToken = default)
     {
         ArgumentNullException.ThrowIfNull(body);
@@ -1354,6 +1406,7 @@ public sealed class QualityApi : IQualityApi
         return await response.Content.ReadFromJsonAsync<SurveyForm>(_options.JsonSerializerOptions, cancellationToken);
     }
 
+    /// <inheritdoc />
     public async Task<SurveyScoringSet> CreateQualitySurveysScoringAsync(SurveyFormAndScoringSet body, CancellationToken cancellationToken = default)
     {
         ArgumentNullException.ThrowIfNull(body);
@@ -1367,6 +1420,7 @@ public sealed class QualityApi : IQualityApi
         return await response.Content.ReadFromJsonAsync<SurveyScoringSet>(_options.JsonSerializerOptions, cancellationToken);
     }
 
+    /// <inheritdoc />
     public async Task<Calibration> UpdateQualityCalibrationAsync(string calibrationId, Calibration body, CancellationToken cancellationToken = default)
     {
         ArgumentException.ThrowIfNullOrEmpty(calibrationId);
@@ -1381,6 +1435,7 @@ public sealed class QualityApi : IQualityApi
         return await response.Content.ReadFromJsonAsync<Calibration>(_options.JsonSerializerOptions, cancellationToken);
     }
 
+    /// <inheritdoc />
     public async Task<EvaluationResponse> UpdateQualityConversationEvaluationAsync(string conversationId, string evaluationId, Evaluation body, string expand = null, CancellationToken cancellationToken = default)
     {
         ArgumentException.ThrowIfNullOrEmpty(conversationId);
@@ -1405,6 +1460,7 @@ public sealed class QualityApi : IQualityApi
         return await response.Content.ReadFromJsonAsync<EvaluationResponse>(_options.JsonSerializerOptions, cancellationToken);
     }
 
+    /// <inheritdoc />
     public async Task<EvaluationFormResponse> UpdateQualityFormAsync(string formId, EvaluationForm body, CancellationToken cancellationToken = default)
     {
         ArgumentException.ThrowIfNullOrEmpty(formId);
@@ -1419,6 +1475,7 @@ public sealed class QualityApi : IQualityApi
         return await response.Content.ReadFromJsonAsync<EvaluationFormResponse>(_options.JsonSerializerOptions, cancellationToken);
     }
 
+    /// <inheritdoc />
     public async Task<AiScoringSettings> UpdateQualityFormsEvaluationAiscoringSettingsAsync(string formId, AiScoringSettings body, CancellationToken cancellationToken = default)
     {
         ArgumentException.ThrowIfNullOrEmpty(formId);
@@ -1433,6 +1490,7 @@ public sealed class QualityApi : IQualityApi
         return await response.Content.ReadFromJsonAsync<AiScoringSettings>(_options.JsonSerializerOptions, cancellationToken);
     }
 
+    /// <inheritdoc />
     public async Task<ScorableSurvey> UpdateQualitySurveysScorableAsync(string customerSurveyUrl, ScorableSurvey body, CancellationToken cancellationToken = default)
     {
         ArgumentException.ThrowIfNullOrEmpty(customerSurveyUrl);
@@ -1452,6 +1510,7 @@ public sealed class QualityApi : IQualityApi
         return await response.Content.ReadFromJsonAsync<ScorableSurvey>(_options.JsonSerializerOptions, cancellationToken);
     }
 
+    /// <inheritdoc />
     public async Task<Survey[]> GetQualityConversationSurveysAsync(string conversationId, CancellationToken cancellationToken = default)
     {
         ArgumentException.ThrowIfNullOrEmpty(conversationId);
@@ -1467,6 +1526,7 @@ public sealed class QualityApi : IQualityApi
         return await response.Content.ReadFromJsonAsync<Survey[]>(_options.JsonSerializerOptions, cancellationToken);
     }
 
+    /// <inheritdoc />
     public async Task<EvaluationFormResponse[]> GetQualityFormsEvaluationsBulkContextsAsync(IEnumerable<string> contextId, CancellationToken cancellationToken = default)
     {
         ArgumentNullException.ThrowIfNull(contextId);
@@ -1489,6 +1549,7 @@ public sealed class QualityApi : IQualityApi
         return await response.Content.ReadFromJsonAsync<EvaluationFormResponse[]>(_options.JsonSerializerOptions, cancellationToken);
     }
 
+    /// <inheritdoc />
     public async Task<SurveyForm[]> GetQualityFormsSurveysBulkContextsAsync(IEnumerable<string> contextId, bool? published = null, CancellationToken cancellationToken = default)
     {
         ArgumentNullException.ThrowIfNull(contextId);
