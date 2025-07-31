@@ -1,4 +1,5 @@
 using System.Collections.Specialized;
+using System.Linq;
 using System.Net.Http.Json;
 using Microsoft.Extensions.Options;
 using PureCloud.Client.Contracts;
@@ -438,9 +439,9 @@ public sealed class RecordingApi : IRecordingApi
 
         if (mediaFormats != null)
         {
-            foreach (var item in mediaFormats)
+            foreach (var mediaFormat in mediaFormats)
             {
-                parameters.Add("mediaFormats", UriHelper.ParameterToString(item));
+                parameters.Add("mediaFormats", UriHelper.ParameterToString(mediaFormat));
             }
         }
 
@@ -477,9 +478,9 @@ public sealed class RecordingApi : IRecordingApi
 
         if (expand != null)
         {
-            foreach (var item in expand)
+            foreach (var expandItem in expand)
             {
-                parameters.Add("expand", UriHelper.ParameterToString(item));
+                parameters.Add("expand", UriHelper.ParameterToString(expandItem));
             }
         }
 
@@ -699,9 +700,9 @@ public sealed class RecordingApi : IRecordingApi
 
         if (expand != null)
         {
-            foreach (var item in expand)
+            foreach (var expandItem in expand)
             {
-                parameters.Add("expand", UriHelper.ParameterToString(item));
+                parameters.Add("expand", UriHelper.ParameterToString(expandItem));
             }
         }
 
@@ -1028,7 +1029,7 @@ public sealed class RecordingApi : IRecordingApi
 
         var client = _httpClientFactory.CreateClient(PureCloudConstants.PureCloudClientName);
 
-        var body = new { conversationIds = conversationIds.Split(',') };
+        var body = new { conversationIds = conversationIds.Split(',', StringSplitOptions.RemoveEmptyEntries).Select(id => id.Trim()).ToArray() };
 
         var response = await client.PostAsJsonAsync("api/v2/recordings/deletionprotection", body, _options.JsonSerializerOptions, cancellationToken);
 
