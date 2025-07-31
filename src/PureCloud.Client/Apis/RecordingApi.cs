@@ -1158,7 +1158,7 @@ public sealed class RecordingApi : IRecordingApi
         return await response.Content.ReadFromJsonAsync<KeyRotationSchedule>(_options.JsonSerializerOptions, cancellationToken);
     }
 
-    /// <inheritdoc>
+    /// <inheritdoc />
     public async Task<RecordingSettings> UpdateRecordingSettingsAsync(RecordingSettings body, CancellationToken cancellationToken = default)
     {
         ArgumentNullException.ThrowIfNull(body);
@@ -1170,5 +1170,76 @@ public sealed class RecordingApi : IRecordingApi
         response.EnsureSuccessStatusCode();
 
         return await response.Content.ReadFromJsonAsync<RecordingSettings>(_options.JsonSerializerOptions, cancellationToken);
+    }
+
+    /// <inheritdoc />
+    public async Task<RecordingMetadata> GetConversationRecordingmetadataRecordingIdAsync(string conversationId, string recordingId, CancellationToken cancellationToken = default)
+    {
+        ArgumentException.ThrowIfNullOrEmpty(conversationId);
+        ArgumentException.ThrowIfNullOrEmpty(recordingId);
+
+        var client = _httpClientFactory.CreateClient(PureCloudConstants.PureCloudClientName);
+
+        var response = await client.GetAsync($"api/v2/conversations/{Uri.EscapeDataString(conversationId)}/recordingmetadata/{Uri.EscapeDataString(recordingId)}", cancellationToken);
+
+        response.EnsureSuccessStatusCode();
+
+        return await response.Content.ReadFromJsonAsync<RecordingMetadata>(_options.JsonSerializerOptions, cancellationToken);
+    }
+
+    /// <inheritdoc />
+    public async Task<EncryptionKey> CreateRecordingLocalkeysAsync(LocalEncryptionKeyRequest body, CancellationToken cancellationToken = default)
+    {
+        ArgumentNullException.ThrowIfNull(body);
+
+        var client = _httpClientFactory.CreateClient(PureCloudConstants.PureCloudClientName);
+
+        var response = await client.PostAsJsonAsync("api/v2/recording/localkeys", body, _options.JsonSerializerOptions, cancellationToken);
+
+        response.EnsureSuccessStatusCode();
+
+        return await response.Content.ReadFromJsonAsync<EncryptionKey>(_options.JsonSerializerOptions, cancellationToken);
+    }
+
+    /// <inheritdoc />
+    public async Task<bool> CreateRecordingsScreensessionsAcknowledgeAsync(AcknowledgeScreenRecordingRequest body, CancellationToken cancellationToken = default)
+    {
+        ArgumentNullException.ThrowIfNull(body);
+
+        var client = _httpClientFactory.CreateClient(PureCloudConstants.PureCloudClientName);
+
+        var response = await client.PostAsJsonAsync("api/v2/recordings/screensessions/acknowledge", body, _options.JsonSerializerOptions, cancellationToken);
+
+        response.EnsureSuccessStatusCode();
+
+        return true;
+    }
+
+    /// <inheritdoc />
+    public async Task<bool> CreateRecordingsScreensessionsMetadataAsync(ScreenRecordingMetaDataRequest body, CancellationToken cancellationToken = default)
+    {
+        ArgumentNullException.ThrowIfNull(body);
+
+        var client = _httpClientFactory.CreateClient(PureCloudConstants.PureCloudClientName);
+
+        var response = await client.PostAsJsonAsync("api/v2/recordings/screensessions/metadata", body, _options.JsonSerializerOptions, cancellationToken);
+
+        response.EnsureSuccessStatusCode();
+
+        return true;
+    }
+
+    /// <inheritdoc />
+    public async Task<Recording> UpdateOrphanrecordingAsync(string orphanId, OrphanUpdateRequest body = null, CancellationToken cancellationToken = default)
+    {
+        ArgumentException.ThrowIfNullOrEmpty(orphanId);
+
+        var client = _httpClientFactory.CreateClient(PureCloudConstants.PureCloudClientName);
+
+        var response = await client.PutAsJsonAsync($"api/v2/orphanrecordings/{Uri.EscapeDataString(orphanId)}", body, _options.JsonSerializerOptions, cancellationToken);
+
+        response.EnsureSuccessStatusCode();
+
+        return await response.Content.ReadFromJsonAsync<Recording>(_options.JsonSerializerOptions, cancellationToken);
     }
 }

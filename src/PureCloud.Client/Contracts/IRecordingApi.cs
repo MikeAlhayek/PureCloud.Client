@@ -107,4 +107,14 @@ public interface IRecordingApi
     Task<KeyRotationSchedule> UpdateRecordingRecordingkeysRotationscheduleAsync(KeyRotationSchedule body, CancellationToken cancellationToken = default);
 
     Task<RecordingSettings> UpdateRecordingSettingsAsync(RecordingSettings body, CancellationToken cancellationToken = default);
+
+    Task<RecordingMetadata> GetConversationRecordingmetadataRecordingIdAsync(string conversationId, string recordingId, CancellationToken cancellationToken = default);
+
+    Task<EncryptionKey> CreateRecordingLocalkeysAsync(LocalEncryptionKeyRequest body, CancellationToken cancellationToken = default);
+
+    Task<bool> CreateRecordingsScreensessionsAcknowledgeAsync(AcknowledgeScreenRecordingRequest body, CancellationToken cancellationToken = default);
+
+    Task<bool> CreateRecordingsScreensessionsMetadataAsync(ScreenRecordingMetaDataRequest body, CancellationToken cancellationToken = default);
+
+    Task<Recording> UpdateOrphanrecordingAsync(string orphanId, OrphanUpdateRequest body = null, CancellationToken cancellationToken = default);
 }
