@@ -287,4 +287,186 @@ public sealed class RoutingApi : IRoutingApi
 
         return response.IsSuccessStatusCode;
     }
+
+    /// <inheritdoc />
+    public async Task<bool> DeleteRoutingPredictorAsync(string predictorId, CancellationToken cancellationToken = default)
+    {
+        ArgumentException.ThrowIfNullOrEmpty(predictorId);
+
+        var client = _httpClientFactory.CreateClient(PureCloudConstants.PureCloudClientName);
+
+        var response = await client.DeleteAsync($"api/v2/routing/predictors/{Uri.EscapeDataString(predictorId)}", cancellationToken);
+
+        response.EnsureSuccessStatusCode();
+
+        return response.IsSuccessStatusCode;
+    }
+
+    /// <inheritdoc />
+    public async Task<bool> DeleteRoutingSettingsAsync(CancellationToken cancellationToken = default)
+    {
+        var client = _httpClientFactory.CreateClient(PureCloudConstants.PureCloudClientName);
+
+        var response = await client.DeleteAsync("api/v2/routing/settings", cancellationToken);
+
+        response.EnsureSuccessStatusCode();
+
+        return response.IsSuccessStatusCode;
+    }
+
+    /// <inheritdoc />
+    public async Task<bool> DeleteRoutingSkillgroupAsync(string skillGroupId, CancellationToken cancellationToken = default)
+    {
+        ArgumentException.ThrowIfNullOrEmpty(skillGroupId);
+
+        var client = _httpClientFactory.CreateClient(PureCloudConstants.PureCloudClientName);
+
+        var response = await client.DeleteAsync($"api/v2/routing/skillgroups/{Uri.EscapeDataString(skillGroupId)}", cancellationToken);
+
+        response.EnsureSuccessStatusCode();
+
+        return response.IsSuccessStatusCode;
+    }
+
+    /// <inheritdoc />
+    public async Task<bool> DeleteRoutingSmsAddressAsync(string addressId, CancellationToken cancellationToken = default)
+    {
+        ArgumentException.ThrowIfNullOrEmpty(addressId);
+
+        var client = _httpClientFactory.CreateClient(PureCloudConstants.PureCloudClientName);
+
+        var response = await client.DeleteAsync($"api/v2/routing/sms/addresses/{Uri.EscapeDataString(addressId)}", cancellationToken);
+
+        response.EnsureSuccessStatusCode();
+
+        return response.IsSuccessStatusCode;
+    }
+
+    /// <inheritdoc />
+    public async Task<bool> DeleteRoutingSmsPhonenumberAsync(string phoneNumberId, CancellationToken cancellationToken = default)
+    {
+        ArgumentException.ThrowIfNullOrEmpty(phoneNumberId);
+
+        var client = _httpClientFactory.CreateClient(PureCloudConstants.PureCloudClientName);
+
+        var response = await client.DeleteAsync($"api/v2/routing/sms/phonenumbers/{Uri.EscapeDataString(phoneNumberId)}", cancellationToken);
+
+        response.EnsureSuccessStatusCode();
+
+        return response.IsSuccessStatusCode;
+    }
+
+    /// <inheritdoc />
+    public async Task<bool> DeleteRoutingUserDirectroutingbackupSettingsAsync(string userId, CancellationToken cancellationToken = default)
+    {
+        ArgumentException.ThrowIfNullOrEmpty(userId);
+
+        var client = _httpClientFactory.CreateClient(PureCloudConstants.PureCloudClientName);
+
+        var response = await client.DeleteAsync($"api/v2/routing/users/{Uri.EscapeDataString(userId)}/directroutingbackup/settings", cancellationToken);
+
+        response.EnsureSuccessStatusCode();
+
+        return response.IsSuccessStatusCode;
+    }
+
+    /// <inheritdoc />
+    public async Task<bool> DeleteRoutingUserUtilizationAsync(string userId, CancellationToken cancellationToken = default)
+    {
+        ArgumentException.ThrowIfNullOrEmpty(userId);
+
+        var client = _httpClientFactory.CreateClient(PureCloudConstants.PureCloudClientName);
+
+        var response = await client.DeleteAsync($"api/v2/routing/users/{Uri.EscapeDataString(userId)}/utilization", cancellationToken);
+
+        response.EnsureSuccessStatusCode();
+
+        return response.IsSuccessStatusCode;
+    }
+
+    /// <inheritdoc />
+    public async Task<bool> DeleteRoutingUtilizationAsync(CancellationToken cancellationToken = default)
+    {
+        var client = _httpClientFactory.CreateClient(PureCloudConstants.PureCloudClientName);
+
+        var response = await client.DeleteAsync("api/v2/routing/utilization", cancellationToken);
+
+        response.EnsureSuccessStatusCode();
+
+        return response.IsSuccessStatusCode;
+    }
+
+    /// <inheritdoc />
+    public async Task<bool> DeleteRoutingUtilizationLabelAsync(string labelId, CancellationToken cancellationToken = default)
+    {
+        ArgumentException.ThrowIfNullOrEmpty(labelId);
+
+        var client = _httpClientFactory.CreateClient(PureCloudConstants.PureCloudClientName);
+
+        var response = await client.DeleteAsync($"api/v2/routing/utilization/labels/{Uri.EscapeDataString(labelId)}", cancellationToken);
+
+        response.EnsureSuccessStatusCode();
+
+        return response.IsSuccessStatusCode;
+    }
+
+    /// <inheritdoc />
+    public async Task<bool> DeleteRoutingUtilizationTagAsync(string tagId, CancellationToken cancellationToken = default)
+    {
+        ArgumentException.ThrowIfNullOrEmpty(tagId);
+
+        var client = _httpClientFactory.CreateClient(PureCloudConstants.PureCloudClientName);
+
+        var response = await client.DeleteAsync($"api/v2/routing/utilization/tags/{Uri.EscapeDataString(tagId)}", cancellationToken);
+
+        response.EnsureSuccessStatusCode();
+
+        return response.IsSuccessStatusCode;
+    }
+
+    /// <inheritdoc />
+    public async Task<bool> DeleteRoutingWrapupcodeAsync(string codeId, CancellationToken cancellationToken = default)
+    {
+        ArgumentException.ThrowIfNullOrEmpty(codeId);
+
+        var client = _httpClientFactory.CreateClient(PureCloudConstants.PureCloudClientName);
+
+        var response = await client.DeleteAsync($"api/v2/routing/wrapupcodes/{Uri.EscapeDataString(codeId)}", cancellationToken);
+
+        response.EnsureSuccessStatusCode();
+
+        return response.IsSuccessStatusCode;
+    }
+
+    /// <inheritdoc />
+    public async Task<bool> DeleteUserRoutinglanguageAsync(string userId, string languageId, CancellationToken cancellationToken = default)
+    {
+        ArgumentException.ThrowIfNullOrEmpty(userId);
+
+        ArgumentException.ThrowIfNullOrEmpty(languageId);
+
+        var client = _httpClientFactory.CreateClient(PureCloudConstants.PureCloudClientName);
+
+        var response = await client.DeleteAsync($"api/v2/users/{Uri.EscapeDataString(userId)}/routinglanguages/{Uri.EscapeDataString(languageId)}", cancellationToken);
+
+        response.EnsureSuccessStatusCode();
+
+        return response.IsSuccessStatusCode;
+    }
+
+    /// <inheritdoc />
+    public async Task<bool> DeleteUserRoutingskillAsync(string userId, string skillId, CancellationToken cancellationToken = default)
+    {
+        ArgumentException.ThrowIfNullOrEmpty(userId);
+
+        ArgumentException.ThrowIfNullOrEmpty(skillId);
+
+        var client = _httpClientFactory.CreateClient(PureCloudConstants.PureCloudClientName);
+
+        var response = await client.DeleteAsync($"api/v2/users/{Uri.EscapeDataString(userId)}/routingskills/{Uri.EscapeDataString(skillId)}", cancellationToken);
+
+        response.EnsureSuccessStatusCode();
+
+        return response.IsSuccessStatusCode;
+    }
 }

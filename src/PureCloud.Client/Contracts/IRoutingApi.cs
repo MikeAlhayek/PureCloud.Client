@@ -161,7 +161,111 @@ public interface IRoutingApi
     /// <returns>True if the operation was successful</returns>
     Task<bool> DeleteRoutingQueueWrapupcodeAsync(string queueId, string codeId, CancellationToken cancellationToken = default);
 
-    // TODO: Add remaining ~290 methods after creating required models:
+    /// <summary>
+    /// Delete single predictor.
+    /// </summary>
+    /// <param name="predictorId">Predictor ID</param>
+    /// <param name="cancellationToken">Cancellation token</param>
+    /// <returns>True if the operation was successful</returns>
+    Task<bool> DeleteRoutingPredictorAsync(string predictorId, CancellationToken cancellationToken = default);
+
+    /// <summary>
+    /// Delete routing settings.
+    /// </summary>
+    /// <param name="cancellationToken">Cancellation token</param>
+    /// <returns>True if the operation was successful</returns>
+    Task<bool> DeleteRoutingSettingsAsync(CancellationToken cancellationToken = default);
+
+    /// <summary>
+    /// Delete a skill group.
+    /// </summary>
+    /// <param name="skillGroupId">Skill group ID</param>
+    /// <param name="cancellationToken">Cancellation token</param>
+    /// <returns>True if the operation was successful</returns>
+    Task<bool> DeleteRoutingSkillgroupAsync(string skillGroupId, CancellationToken cancellationToken = default);
+
+    /// <summary>
+    /// Delete an SMS address.
+    /// </summary>
+    /// <param name="addressId">Address ID</param>
+    /// <param name="cancellationToken">Cancellation token</param>
+    /// <returns>True if the operation was successful</returns>
+    Task<bool> DeleteRoutingSmsAddressAsync(string addressId, CancellationToken cancellationToken = default);
+
+    /// <summary>
+    /// Delete an SMS phone number.
+    /// </summary>
+    /// <param name="phoneNumberId">Phone number ID</param>
+    /// <param name="cancellationToken">Cancellation token</param>
+    /// <returns>True if the operation was successful</returns>
+    Task<bool> DeleteRoutingSmsPhonenumberAsync(string phoneNumberId, CancellationToken cancellationToken = default);
+
+    /// <summary>
+    /// Delete the user's Direct Routing Backup settings.
+    /// </summary>
+    /// <param name="userId">User ID</param>
+    /// <param name="cancellationToken">Cancellation token</param>
+    /// <returns>True if the operation was successful</returns>
+    Task<bool> DeleteRoutingUserDirectroutingbackupSettingsAsync(string userId, CancellationToken cancellationToken = default);
+
+    /// <summary>
+    /// Delete the user's utilization settings.
+    /// </summary>
+    /// <param name="userId">User ID</param>
+    /// <param name="cancellationToken">Cancellation token</param>
+    /// <returns>True if the operation was successful</returns>
+    Task<bool> DeleteRoutingUserUtilizationAsync(string userId, CancellationToken cancellationToken = default);
+
+    /// <summary>
+    /// Delete utilization settings.
+    /// </summary>
+    /// <param name="cancellationToken">Cancellation token</param>
+    /// <returns>True if the operation was successful</returns>
+    Task<bool> DeleteRoutingUtilizationAsync(CancellationToken cancellationToken = default);
+
+    /// <summary>
+    /// Delete a utilization label.
+    /// </summary>
+    /// <param name="labelId">Label ID</param>
+    /// <param name="cancellationToken">Cancellation token</param>
+    /// <returns>True if the operation was successful</returns>
+    Task<bool> DeleteRoutingUtilizationLabelAsync(string labelId, CancellationToken cancellationToken = default);
+
+    /// <summary>
+    /// Delete a utilization tag.
+    /// </summary>
+    /// <param name="tagId">Tag ID</param>
+    /// <param name="cancellationToken">Cancellation token</param>
+    /// <returns>True if the operation was successful</returns>
+    Task<bool> DeleteRoutingUtilizationTagAsync(string tagId, CancellationToken cancellationToken = default);
+
+    /// <summary>
+    /// Delete a wrap-up code.
+    /// </summary>
+    /// <param name="codeId">Code ID</param>
+    /// <param name="cancellationToken">Cancellation token</param>
+    /// <returns>True if the operation was successful</returns>
+    Task<bool> DeleteRoutingWrapupcodeAsync(string codeId, CancellationToken cancellationToken = default);
+
+    /// <summary>
+    /// Delete a routing language for a user.
+    /// </summary>
+    /// <param name="userId">User ID</param>
+    /// <param name="languageId">Language ID</param>
+    /// <param name="cancellationToken">Cancellation token</param>
+    /// <returns>True if the operation was successful</returns>
+    Task<bool> DeleteUserRoutinglanguageAsync(string userId, string languageId, CancellationToken cancellationToken = default);
+
+    /// <summary>
+    /// Delete a routing skill for a user.
+    /// </summary>
+    /// <param name="userId">User ID</param>
+    /// <param name="skillId">Skill ID</param>
+    /// <param name="cancellationToken">Cancellation token</param>
+    /// <returns>True if the operation was successful</returns>
+    Task<bool> DeleteUserRoutingskillAsync(string userId, string skillId, CancellationToken cancellationToken = default);
+
+    // TODO: Add remaining ~270 methods after creating required models:
     // - Delete methods: ~15 more (DeleteRoutingPredictor, DeleteRoutingSettings, etc.)
     // - Get methods: ~75 more (GetRoutingLanguage, GetRoutingLanguages, GetRoutingSkills, etc.) 
     // - Create methods: ~20 more (CreateRoutingLanguage, CreateRoutingQueue, CreateRoutingSkill, etc.)
