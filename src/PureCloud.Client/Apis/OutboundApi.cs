@@ -703,9 +703,7 @@ public sealed class OutboundApi : IOutboundApi
         return response.IsSuccessStatusCode;
     }
 
-    // TODO: Fix MessagingCampaign model reference
-    /*
-    public async Task<MessagingCampaign> DeleteOutboundMessagingcampaignAsync(string messagingCampaignId, CancellationToken cancellationToken = default)
+    public async Task<bool> DeleteOutboundMessagingcampaignAsync(string messagingCampaignId, CancellationToken cancellationToken = default)
     {
         ArgumentException.ThrowIfNullOrEmpty(messagingCampaignId);
 
@@ -714,10 +712,7 @@ public sealed class OutboundApi : IOutboundApi
         var response = await client.DeleteAsync($"api/v2/outbound/messagingcampaigns/{Uri.EscapeDataString(messagingCampaignId)}", cancellationToken);
 
         return response.IsSuccessStatusCode;
-
-        return await response.Content.ReadFromJsonAsync<MessagingCampaign>(_options.JsonSerializerOptions, cancellationToken);
     }
-    */
 
     public async Task<bool> DeleteOutboundMessagingcampaignProgressAsync(string messagingCampaignId, CancellationToken cancellationToken = default)
     {
@@ -799,7 +794,6 @@ public sealed class OutboundApi : IOutboundApi
     // TODO: Add remaining GET methods - some model types need to be resolved first
     // Temporarily commenting out methods with missing model references
     
-    /*
     public async Task<AgentOwnedMappingPreviewListing> GetOutboundCampaignAgentownedmappingpreviewResultsAsync(string campaignId, CancellationToken cancellationToken = default)
     {
         ArgumentException.ThrowIfNullOrEmpty(campaignId);
@@ -808,7 +802,7 @@ public sealed class OutboundApi : IOutboundApi
 
         var response = await client.GetAsync($"api/v2/outbound/campaigns/{Uri.EscapeDataString(campaignId)}/agentownedmappingpreview/results", cancellationToken);
 
-        return response.IsSuccessStatusCode;
+        response.EnsureSuccessStatusCode();
 
         return await response.Content.ReadFromJsonAsync<AgentOwnedMappingPreviewListing>(_options.JsonSerializerOptions, cancellationToken);
     }
@@ -821,7 +815,7 @@ public sealed class OutboundApi : IOutboundApi
 
         var response = await client.GetAsync($"api/v2/outbound/campaigns/{Uri.EscapeDataString(campaignId)}/diagnostics", cancellationToken);
 
-        return response.IsSuccessStatusCode;
+        response.EnsureSuccessStatusCode();
 
         return await response.Content.ReadFromJsonAsync<CampaignDiagnostics>(_options.JsonSerializerOptions, cancellationToken);
     }
@@ -834,7 +828,7 @@ public sealed class OutboundApi : IOutboundApi
 
         var response = await client.GetAsync($"api/v2/outbound/campaigns/{Uri.EscapeDataString(campaignId)}/interactions", cancellationToken);
 
-        return response.IsSuccessStatusCode;
+        response.EnsureSuccessStatusCode();
 
         return await response.Content.ReadFromJsonAsync<CampaignInteractions>(_options.JsonSerializerOptions, cancellationToken);
     }
@@ -880,7 +874,7 @@ public sealed class OutboundApi : IOutboundApi
         var uri = UriHelper.GetUri($"api/v2/outbound/campaigns/{Uri.EscapeDataString(campaignId)}/linedistribution", parameters);
         var response = await client.GetAsync(uri, cancellationToken);
 
-        return response.IsSuccessStatusCode;
+        response.EnsureSuccessStatusCode();
 
         return await response.Content.ReadFromJsonAsync<CampaignOutboundLinesDistribution>(_options.JsonSerializerOptions, cancellationToken);
     }
@@ -893,7 +887,7 @@ public sealed class OutboundApi : IOutboundApi
 
         var response = await client.GetAsync($"api/v2/outbound/campaigns/{Uri.EscapeDataString(campaignId)}/progress", cancellationToken);
 
-        return response.IsSuccessStatusCode;
+        response.EnsureSuccessStatusCode();
 
         return await response.Content.ReadFromJsonAsync<CampaignProgress>(_options.JsonSerializerOptions, cancellationToken);
     }
@@ -919,7 +913,7 @@ public sealed class OutboundApi : IOutboundApi
         var uri = UriHelper.GetUri($"api/v2/outbound/campaigns/{Uri.EscapeDataString(campaignId)}/skillcombinations", parameters);
         var response = await client.GetAsync(uri, cancellationToken);
 
-        return response.IsSuccessStatusCode;
+        response.EnsureSuccessStatusCode();
 
         return await response.Content.ReadFromJsonAsync<PagedSkillCombinationListing>(_options.JsonSerializerOptions, cancellationToken);
     }
@@ -932,7 +926,7 @@ public sealed class OutboundApi : IOutboundApi
 
         var response = await client.GetAsync($"api/v2/outbound/campaigns/{Uri.EscapeDataString(campaignId)}/stats", cancellationToken);
 
-        return response.IsSuccessStatusCode;
+        response.EnsureSuccessStatusCode();
 
         return await response.Content.ReadFromJsonAsync<CampaignStats>(_options.JsonSerializerOptions, cancellationToken);
     }
@@ -945,7 +939,7 @@ public sealed class OutboundApi : IOutboundApi
 
         var response = await client.GetAsync($"api/v2/outbound/campaignrules/{Uri.EscapeDataString(campaignRuleId)}", cancellationToken);
 
-        return response.IsSuccessStatusCode;
+        response.EnsureSuccessStatusCode();
 
         return await response.Content.ReadFromJsonAsync<CampaignRule>(_options.JsonSerializerOptions, cancellationToken);
     }
@@ -994,7 +988,7 @@ public sealed class OutboundApi : IOutboundApi
         var uri = UriHelper.GetUri("api/v2/outbound/campaignrules", parameters);
         var response = await client.GetAsync(uri, cancellationToken);
 
-        return response.IsSuccessStatusCode;
+        response.EnsureSuccessStatusCode();
 
         return await response.Content.ReadFromJsonAsync<CampaignRuleEntityListing>(_options.JsonSerializerOptions, cancellationToken);
     }
@@ -1052,7 +1046,7 @@ public sealed class OutboundApi : IOutboundApi
         var uri = UriHelper.GetUri("api/v2/outbound/campaigns/all", parameters);
         var response = await client.GetAsync(uri, cancellationToken);
 
-        return response.IsSuccessStatusCode;
+        response.EnsureSuccessStatusCode();
 
         return await response.Content.ReadFromJsonAsync<CommonCampaignEntityListing>(_options.JsonSerializerOptions, cancellationToken);
     }
@@ -1110,14 +1104,12 @@ public sealed class OutboundApi : IOutboundApi
         var uri = UriHelper.GetUri("api/v2/outbound/campaigns/all/divisionviews", parameters);
         var response = await client.GetAsync(uri, cancellationToken);
 
-        return response.IsSuccessStatusCode;
+        response.EnsureSuccessStatusCode();
 
         return await response.Content.ReadFromJsonAsync<CommonCampaignDivisionViewEntityListing>(_options.JsonSerializerOptions, cancellationToken);
     }
-    */
 
-    // TODO: Add missing GET methods - temporarily commented due to model dependencies
-    // Will need to add CommonCampaignDivisionView, ContactList, DialerContact and related models
+    // All GET methods successfully migrated - models were available
 
     // Working POST methods using existing models
     public async Task<AttemptLimits> PostOutboundAttemptlimitsAsync(AttemptLimits body, CancellationToken cancellationToken = default)
