@@ -36,8 +36,6 @@ public sealed class SCIMApi : ISCIMApi
 
         var response = await client.SendAsync(request, cancellationToken);
 
-        response.EnsureSuccessStatusCode();
-
         return response.IsSuccessStatusCode;
     }
 
@@ -57,8 +55,6 @@ public sealed class SCIMApi : ISCIMApi
 
         var response = await client.SendAsync(request, cancellationToken);
 
-        response.EnsureSuccessStatusCode();
-
         return response.IsSuccessStatusCode;
     }
 
@@ -71,17 +67,17 @@ public sealed class SCIMApi : ISCIMApi
 
         if (attributes != null)
         {
-            foreach (var value in attributes)
+            foreach (var attribute in attributes)
             {
-                parameters.Add("attributes", UriHelper.ParameterToString(value));
+                parameters.Add("attributes", UriHelper.ParameterToString(attribute));
             }
         }
 
         if (excludedAttributes != null)
         {
-            foreach (var value in excludedAttributes)
+            foreach (var excludedAttribute in excludedAttributes)
             {
-                parameters.Add("excludedAttributes", UriHelper.ParameterToString(value));
+                parameters.Add("excludedAttributes", UriHelper.ParameterToString(excludedAttribute));
             }
         }
 
@@ -120,17 +116,17 @@ public sealed class SCIMApi : ISCIMApi
 
         if (attributes != null)
         {
-            foreach (var value in attributes)
+            foreach (var attribute in attributes)
             {
-                parameters.Add("attributes", UriHelper.ParameterToString(value));
+                parameters.Add("attributes", UriHelper.ParameterToString(attribute));
             }
         }
 
         if (excludedAttributes != null)
         {
-            foreach (var value in excludedAttributes)
+            foreach (var excludedAttribute in excludedAttributes)
             {
-                parameters.Add("excludedAttributes", UriHelper.ParameterToString(value));
+                parameters.Add("excludedAttributes", UriHelper.ParameterToString(excludedAttribute));
             }
         }
 
@@ -239,17 +235,17 @@ public sealed class SCIMApi : ISCIMApi
 
         if (attributes != null)
         {
-            foreach (var value in attributes)
+            foreach (var attribute in attributes)
             {
-                parameters.Add("attributes", UriHelper.ParameterToString(value));
+                parameters.Add("attributes", UriHelper.ParameterToString(attribute));
             }
         }
 
         if (excludedAttributes != null)
         {
-            foreach (var value in excludedAttributes)
+            foreach (var excludedAttribute in excludedAttributes)
             {
-                parameters.Add("excludedAttributes", UriHelper.ParameterToString(value));
+                parameters.Add("excludedAttributes", UriHelper.ParameterToString(excludedAttribute));
             }
         }
 
@@ -288,17 +284,17 @@ public sealed class SCIMApi : ISCIMApi
 
         if (attributes != null)
         {
-            foreach (var value in attributes)
+            foreach (var attribute in attributes)
             {
-                parameters.Add("attributes", UriHelper.ParameterToString(value));
+                parameters.Add("attributes", UriHelper.ParameterToString(attribute));
             }
         }
 
         if (excludedAttributes != null)
         {
-            foreach (var value in excludedAttributes)
+            foreach (var excludedAttribute in excludedAttributes)
             {
-                parameters.Add("excludedAttributes", UriHelper.ParameterToString(value));
+                parameters.Add("excludedAttributes", UriHelper.ParameterToString(excludedAttribute));
             }
         }
 
@@ -327,17 +323,17 @@ public sealed class SCIMApi : ISCIMApi
 
         if (attributes != null)
         {
-            foreach (var value in attributes)
+            foreach (var attribute in attributes)
             {
-                parameters.Add("attributes", UriHelper.ParameterToString(value));
+                parameters.Add("attributes", UriHelper.ParameterToString(attribute));
             }
         }
 
         if (excludedAttributes != null)
         {
-            foreach (var value in excludedAttributes)
+            foreach (var excludedAttribute in excludedAttributes)
             {
-                parameters.Add("excludedAttributes", UriHelper.ParameterToString(value));
+                parameters.Add("excludedAttributes", UriHelper.ParameterToString(excludedAttribute));
             }
         }
 
@@ -380,17 +376,17 @@ public sealed class SCIMApi : ISCIMApi
 
         if (attributes != null)
         {
-            foreach (var value in attributes)
+            foreach (var attribute in attributes)
             {
-                parameters.Add("attributes", UriHelper.ParameterToString(value));
+                parameters.Add("attributes", UriHelper.ParameterToString(attribute));
             }
         }
 
         if (excludedAttributes != null)
         {
-            foreach (var value in excludedAttributes)
+            foreach (var excludedAttribute in excludedAttributes)
             {
-                parameters.Add("excludedAttributes", UriHelper.ParameterToString(value));
+                parameters.Add("excludedAttributes", UriHelper.ParameterToString(excludedAttribute));
             }
         }
 
@@ -494,17 +490,17 @@ public sealed class SCIMApi : ISCIMApi
 
         if (attributes != null)
         {
-            foreach (var value in attributes)
+            foreach (var attribute in attributes)
             {
-                parameters.Add("attributes", UriHelper.ParameterToString(value));
+                parameters.Add("attributes", UriHelper.ParameterToString(attribute));
             }
         }
 
         if (excludedAttributes != null)
         {
-            foreach (var value in excludedAttributes)
+            foreach (var excludedAttribute in excludedAttributes)
             {
-                parameters.Add("excludedAttributes", UriHelper.ParameterToString(value));
+                parameters.Add("excludedAttributes", UriHelper.ParameterToString(excludedAttribute));
             }
         }
 
@@ -543,17 +539,17 @@ public sealed class SCIMApi : ISCIMApi
 
         if (attributes != null)
         {
-            foreach (var value in attributes)
+            foreach (var attribute in attributes)
             {
-                parameters.Add("attributes", UriHelper.ParameterToString(value));
+                parameters.Add("attributes", UriHelper.ParameterToString(attribute));
             }
         }
 
         if (excludedAttributes != null)
         {
-            foreach (var value in excludedAttributes)
+            foreach (var excludedAttribute in excludedAttributes)
             {
-                parameters.Add("excludedAttributes", UriHelper.ParameterToString(value));
+                parameters.Add("excludedAttributes", UriHelper.ParameterToString(excludedAttribute));
             }
         }
 
