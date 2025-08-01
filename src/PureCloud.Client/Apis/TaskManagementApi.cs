@@ -239,7 +239,7 @@ public sealed class TaskManagementApi : ITaskManagementApi
     }
 
     /// <inheritdoc />
-    public async Task DeleteWorkbinAsync(string workbinId, CancellationToken cancellationToken = default)
+    public async Task<bool> DeleteWorkbinAsync(string workbinId, CancellationToken cancellationToken = default)
     {
         ArgumentException.ThrowIfNullOrEmpty(workbinId);
 
@@ -247,11 +247,11 @@ public sealed class TaskManagementApi : ITaskManagementApi
 
         var response = await client.DeleteAsync($"api/v2/taskmanagement/workbins/{Uri.EscapeDataString(workbinId)}", cancellationToken);
 
-        response.EnsureSuccessStatusCode();
+        return response.IsSuccessStatusCode;
     }
 
     /// <inheritdoc />
-    public async Task DeleteWorkitemAsync(string workitemId, CancellationToken cancellationToken = default)
+    public async Task<bool> DeleteWorkitemAsync(string workitemId, CancellationToken cancellationToken = default)
     {
         ArgumentException.ThrowIfNullOrEmpty(workitemId);
 
@@ -259,11 +259,11 @@ public sealed class TaskManagementApi : ITaskManagementApi
 
         var response = await client.DeleteAsync($"api/v2/taskmanagement/workitems/{Uri.EscapeDataString(workitemId)}", cancellationToken);
 
-        response.EnsureSuccessStatusCode();
+        return response.IsSuccessStatusCode;
     }
 
     /// <inheritdoc />
-    public async Task DeleteWorktypeAsync(string worktypeId, CancellationToken cancellationToken = default)
+    public async Task<bool> DeleteWorktypeAsync(string worktypeId, CancellationToken cancellationToken = default)
     {
         ArgumentException.ThrowIfNullOrEmpty(worktypeId);
 
@@ -271,11 +271,11 @@ public sealed class TaskManagementApi : ITaskManagementApi
 
         var response = await client.DeleteAsync($"api/v2/taskmanagement/worktypes/{Uri.EscapeDataString(worktypeId)}", cancellationToken);
 
-        response.EnsureSuccessStatusCode();
+        return response.IsSuccessStatusCode;
     }
 
     /// <inheritdoc />
-    public async Task DeleteWorkitemsSchemaAsync(string schemaId, CancellationToken cancellationToken = default)
+    public async Task<bool> DeleteWorkitemsSchemaAsync(string schemaId, CancellationToken cancellationToken = default)
     {
         ArgumentException.ThrowIfNullOrEmpty(schemaId);
 
@@ -283,6 +283,6 @@ public sealed class TaskManagementApi : ITaskManagementApi
 
         var response = await client.DeleteAsync($"api/v2/taskmanagement/workitems/schemas/{Uri.EscapeDataString(schemaId)}", cancellationToken);
 
-        response.EnsureSuccessStatusCode();
+        return response.IsSuccessStatusCode;
     }
 }

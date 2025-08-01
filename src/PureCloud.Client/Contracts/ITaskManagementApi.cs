@@ -80,20 +80,20 @@ public interface ITaskManagementApi
     /// <summary>
     /// Delete a workbin
     /// </summary>
-    Task DeleteWorkbinAsync(string workbinId, CancellationToken cancellationToken = default);
+    Task<bool> DeleteWorkbinAsync(string workbinId, CancellationToken cancellationToken = default);
 
     /// <summary>
     /// Delete a workitem
     /// </summary>
-    Task DeleteWorkitemAsync(string workitemId, CancellationToken cancellationToken = default);
+    Task<bool> DeleteWorkitemAsync(string workitemId, CancellationToken cancellationToken = default);
 
     /// <summary>
     /// Delete a worktype
     /// </summary>
-    Task DeleteWorktypeAsync(string worktypeId, CancellationToken cancellationToken = default);
+    Task<bool> DeleteWorktypeAsync(string worktypeId, CancellationToken cancellationToken = default);
 
     /// <summary>
     /// Delete workitems schema
     /// </summary>
-    Task DeleteWorkitemsSchemaAsync(string schemaId, CancellationToken cancellationToken = default);
+    Task<bool> DeleteWorkitemsSchemaAsync(string schemaId, CancellationToken cancellationToken = default);
 }
