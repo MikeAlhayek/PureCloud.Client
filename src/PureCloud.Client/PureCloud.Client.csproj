@@ -260,6 +260,7 @@
     <Compile Include="Models\ActionContractInput.cs" />
     <Compile Include="Models\ActionEntityListing.cs" />
     <Compile Include="Models\BaseTopicEntitiy.cs" />
+    <Compile Include="Models\BaseProgramEntity.cs" />
     <Compile Include="Models\ButtonComponent.cs" />
     <Compile Include="Models\CardAction.cs" />
     <Compile Include="Models\CardAction.Type.cs" />
@@ -299,6 +300,7 @@
     <Compile Include="Models\DeleteProgramResponse.cs" />
     <Compile Include="Models\DictionaryFeedback.cs" />
     <Compile Include="Models\DictionaryFeedbackEntityListing.cs" />
+    <Compile Include="Models\DictionaryFeedbackExamplePhrase.cs" />
     <Compile Include="Models\Conversations\ConversationActivityScoredAgent.cs" />
     <Compile Include="Models\Conversations\ConversationContentAttachment.cs" />
     <Compile Include="Models\Conversations\ConversationContentAttachment.MediaType.cs" />
@@ -318,9 +320,12 @@
     <Compile Include="Models\EdgeEntityListing.cs" />
     <Compile Include="Models\EdgeGroup.cs" />
     <Compile Include="Models\EdgeInterface.cs" />
+    <Compile Include="Models\EngineIntegration.cs" />
     <Compile Include="Models\IdleTokenTimeout.cs" />
     <Compile Include="Models\LanguageReference.cs" />
     <Compile Include="Models\ListItemComponent.cs" />
+    <Compile Include="Models\ListedDictionaryFeedback.cs" />
+    <Compile Include="Models\ListedTopic.cs" />
     <Compile Include="Models\MessageContent.cs" />
     <Compile Include="Models\MessageContent.ContentType.cs" />
     <Compile Include="Models\MessagingRecipient.cs" />
@@ -943,6 +948,7 @@
     <Compile Include="Models\CommunicationEndedEvent.cs" />
     <Compile Include="Models\CommunicationEndedEvent.DisconnectType.cs" />
     <Compile Include="Models\CommunicationTranslationList.cs" />
+    <Compile Include="Models\CommunicationTranslation.cs" />
     <Compile Include="Models\ComplexVariableInfo.cs" />
     <Compile Include="Models\ConditionalGroupRouting.cs" />
     <Compile Include="Models\ConditionalGroupRoutingRule.cs" />
@@ -1508,6 +1514,7 @@
     <Compile Include="Models\CreateGeneralProgramTopicsDefinitionsJob.State.cs" />
     <Compile Include="Models\GeneralProgramJob.cs" />
     <Compile Include="Models\GeneralProgramJobRequest.cs" />
+    <Compile Include="Models\GeneralTopicsEntityListing.cs" />
     <Compile Include="Models\CreateIntegrationRequest.cs" />
     <Compile Include="Models\CreateMetric.cs" />
     <Compile Include="Models\CreateMetric.TimeDisplayUnit.cs" />
@@ -2668,6 +2675,7 @@
     <Compile Include="Models\LicenseUser.cs" />
     <Compile Include="Models\ParsedCertificate.cs" />
     <Compile Include="Models\ParticipantMetrics.cs" />
+    <Compile Include="Models\Phrase.cs" />
     <Compile Include="Models\Program.cs" />
     <Compile Include="Models\ProgramRequest.cs" />
     <Compile Include="Models\ProgramInsightsSettings.cs" />
@@ -2749,6 +2757,7 @@
     <Compile Include="Models\SpeechTextAnalyticsSettingsRequest.cs" />
     <Compile Include="Models\SpeechTextAnalyticsSettingsResponse.cs" />
     <Compile Include="Models\SupportedDialectsEntityListing.cs" />
+    <Compile Include="Models\SupportedDialectsTranscriptionEngine.cs" />
     <Compile Include="Models\StaCategory.cs" />
     <Compile Include="Models\StaCategory.InteractionType.cs" />
     <Compile Include="Models\SuggestSearchCriteria.cs" />
@@ -4205,6 +4214,7 @@
     <Compile Include="Models\TopicJob.cs" />
     <Compile Include="Models\TopicRequest.cs" />
     <Compile Include="Models\TopicsEntityListing.cs" />
+    <Compile Include="Models\TopicJobRequest.cs" />
     <Compile Include="Models\TypingSetting.cs" />
     <Compile Include="Models\Topics\ConversationMetricsTopicConversationMetricRecord.cs" />
     <Compile Include="Models\Locations\LocationAddress.cs" />
