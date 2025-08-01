@@ -363,7 +363,110 @@ public interface IRoutingApi
     /// <returns>Queue</returns>
     Task<Queue> GetRoutingQueueAsync(string queueId, CancellationToken cancellationToken = default);
 
-    // TODO: Add remaining ~200 methods after creating required models:
+    /// <summary>
+    /// Create a queue.
+    /// </summary>
+    /// <param name="body">Queue</param>
+    /// <param name="cancellationToken">Cancellation token</param>
+    /// <returns>Queue</returns>
+    Task<Queue> CreateRoutingQueueAsync(QueueRequest body, CancellationToken cancellationToken = default);
+
+    /// <summary>
+    /// Update a queue.
+    /// </summary>
+    /// <param name="queueId">Queue ID</param>
+    /// <param name="body">Queue</param>
+    /// <param name="cancellationToken">Cancellation token</param>
+    /// <returns>Queue</returns>
+    Task<Queue> UpdateRoutingQueueAsync(string queueId, QueueRequest body, CancellationToken cancellationToken = default);
+
+    /// <summary>
+    /// Create a language.
+    /// </summary>
+    /// <param name="body">Language</param>
+    /// <param name="cancellationToken">Cancellation token</param>
+    /// <returns>Language</returns>
+    Task<Language> CreateRoutingLanguageAsync(Language body, CancellationToken cancellationToken = default);
+
+    /// <summary>
+    /// Create a skill.
+    /// </summary>
+    /// <param name="body">Skill</param>
+    /// <param name="cancellationToken">Cancellation token</param>
+    /// <returns>Routing skill</returns>
+    Task<RoutingSkill> CreateRoutingSkillAsync(RoutingSkill body, CancellationToken cancellationToken = default);
+
+    /// <summary>
+    /// Create a wrap-up code.
+    /// </summary>
+    /// <param name="body">WrapupCode</param>
+    /// <param name="cancellationToken">Cancellation token</param>
+    /// <returns>Wrap-up code</returns>
+    Task<WrapupCode> CreateRoutingWrapupcodeAsync(WrapupCodeRequest body, CancellationToken cancellationToken = default);
+
+    /// <summary>
+    /// Get details about this skill.
+    /// </summary>
+    /// <param name="skillId">Skill ID</param>
+    /// <param name="cancellationToken">Cancellation token</param>
+    /// <returns>Routing skill</returns>
+    Task<RoutingSkill> GetRoutingSkillAsync(string skillId, CancellationToken cancellationToken = default);
+
+    /// <summary>
+    /// Get details about this wrap-up code.
+    /// </summary>
+    /// <param name="codeId">Wrapup Code ID</param>
+    /// <param name="cancellationToken">Cancellation token</param>
+    /// <returns>Wrap-up code</returns>
+    Task<WrapupCode> GetRoutingWrapupcodeAsync(string codeId, CancellationToken cancellationToken = default);
+
+    /// <summary>
+    /// Get routing settings.
+    /// </summary>
+    /// <param name="cancellationToken">Cancellation token</param>
+    /// <returns>Routing settings</returns>
+    Task<RoutingSettings> GetRoutingSettingsAsync(CancellationToken cancellationToken = default);
+
+    /// <summary>
+    /// Get the organization-wide max utilization settings.
+    /// </summary>
+    /// <param name="cancellationToken">Cancellation token</param>
+    /// <returns>Utilization response</returns>
+    Task<UtilizationResponse> GetRoutingUtilizationAsync(CancellationToken cancellationToken = default);
+
+    /// <summary>
+    /// Get details about this utilization label.
+    /// </summary>
+    /// <param name="labelId">Utilization Label ID</param>
+    /// <param name="cancellationToken">Cancellation token</param>
+    /// <returns>Utilization label</returns>
+    Task<UtilizationLabel> GetRoutingUtilizationLabelAsync(string labelId, CancellationToken cancellationToken = default);
+
+    /// <summary>
+    /// Get details about this utilization tag.
+    /// </summary>
+    /// <param name="tagId">Utilization Tag ID</param>
+    /// <param name="cancellationToken">Cancellation token</param>
+    /// <returns>Utilization tag</returns>
+    Task<UtilizationTag> GetRoutingUtilizationTagAsync(string tagId, CancellationToken cancellationToken = default);
+
+    /// <summary>
+    /// Get the user's Direct Routing Backup settings.
+    /// </summary>
+    /// <param name="userId">User ID</param>
+    /// <param name="cancellationToken">Cancellation token</param>
+    /// <returns>Agent direct routing backup settings</returns>
+    Task<AgentDirectRoutingBackupSettings> GetRoutingUserDirectroutingbackupSettingsAsync(string userId, CancellationToken cancellationToken = default);
+
+    /// <summary>
+    /// Get the user's max utilization settings.
+    /// </summary>
+    /// <param name="userId">User ID</param>
+    /// <param name="cancellationToken">Cancellation token</param>
+    /// <returns>Agent max utilization response</returns>
+    Task<AgentMaxUtilizationResponse> GetRoutingUserUtilizationAsync(string userId, CancellationToken cancellationToken = default);
+
+    // TODO: Add remaining ~120 methods after migrating required models:
     // - Delete methods: ~15 more (DeleteRoutingPredictor, DeleteRoutingSettings, etc.)
     // - Get methods: ~75 more (GetRoutingLanguage, GetRoutingLanguages, GetRoutingSkills, etc.) 
     // - Create methods: ~20 more (CreateRoutingLanguage, CreateRoutingQueue, CreateRoutingSkill, etc.)
