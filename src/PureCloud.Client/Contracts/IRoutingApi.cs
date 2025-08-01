@@ -266,6 +266,103 @@ public interface IRoutingApi
     /// <returns>True if the operation was successful</returns>
     Task<bool> DeleteUserRoutingskillAsync(string userId, string skillId, CancellationToken cancellationToken = default);
 
+    /// <summary>
+    /// Retrieve all benefit assessments.
+    /// </summary>
+    /// <param name="before">The cursor that points to the start of the set of entities</param>
+    /// <param name="after">The cursor that points to the end of the set of entities</param>
+    /// <param name="limit">Number of entities to return. Maximum of 200</param>
+    /// <param name="pageSize">Number of entities to return. Maximum of 200</param>
+    /// <param name="queueId">Queue ID(s) to filter assessments by</param>
+    /// <param name="cancellationToken">Cancellation token</param>
+    /// <returns>Assessment listing</returns>
+    Task<AssessmentListing> GetRoutingAssessmentsAsync(string before = null, string after = null, string limit = null, string pageSize = null, IEnumerable<string> queueId = null, CancellationToken cancellationToken = default);
+
+    /// <summary>
+    /// Retrieve a single benefit assessments job.
+    /// </summary>
+    /// <param name="jobId">Benefit Assessment Job ID</param>
+    /// <param name="cancellationToken">Cancellation token</param>
+    /// <returns>Benefit assessment job</returns>
+    Task<BenefitAssessmentJob> GetRoutingAssessmentsJobAsync(string jobId, CancellationToken cancellationToken = default);
+
+    /// <summary>
+    /// Retrieve all benefit assessment jobs.
+    /// </summary>
+    /// <param name="divisionId">Division ID</param>
+    /// <param name="cancellationToken">Cancellation token</param>
+    /// <returns>Assessment job listing</returns>
+    Task<AssessmentJobListing> GetRoutingAssessmentsJobsAsync(string divisionId = null, CancellationToken cancellationToken = default);
+
+    /// <summary>
+    /// Get available media types.
+    /// </summary>
+    /// <param name="cancellationToken">Cancellation token</param>
+    /// <returns>Available media type listing</returns>
+    Task<AvailableMediaTypeEntityListing> GetRoutingAvailablemediatypesAsync(CancellationToken cancellationToken = default);
+
+    /// <summary>
+    /// Get the user's Direct Routing Backup settings.
+    /// </summary>
+    /// <param name="cancellationToken">Cancellation token</param>
+    /// <returns>Agent direct routing backup settings</returns>
+    Task<AgentDirectRoutingBackupSettings> GetRoutingDirectroutingbackupSettingsMeAsync(CancellationToken cancellationToken = default);
+
+    /// <summary>
+    /// Get domains.
+    /// </summary>
+    /// <param name="cancellationToken">Cancellation token</param>
+    /// <returns>Inbound domain entity listing</returns>
+    Task<InboundDomainEntityListing> GetRoutingEmailDomainsAsync(CancellationToken cancellationToken = default);
+
+    /// <summary>
+    /// Get routes.
+    /// </summary>
+    /// <param name="domainName">Email domain</param>
+    /// <param name="cancellationToken">Cancellation token</param>
+    /// <returns>Inbound route entity listing</returns>
+    Task<InboundRouteEntityListing> GetRoutingEmailDomainRoutesAsync(string domainName, CancellationToken cancellationToken = default);
+
+    /// <summary>
+    /// Get the list of supported languages.
+    /// </summary>
+    /// <param name="pageSize">Page size</param>
+    /// <param name="pageNumber">Page number</param>
+    /// <param name="sortOrder">Sort order</param>
+    /// <param name="name">Name filter</param>
+    /// <param name="cancellationToken">Cancellation token</param>
+    /// <returns>Language entity listing</returns>
+    Task<LanguageEntityListing> GetRoutingLanguagesAsync(int? pageSize = null, int? pageNumber = null, string sortOrder = null, string name = null, CancellationToken cancellationToken = default);
+
+    /// <summary>
+    /// Get a routing language.
+    /// </summary>
+    /// <param name="languageId">Language ID</param>
+    /// <param name="cancellationToken">Cancellation token</param>
+    /// <returns>Language</returns>
+    Task<Language> GetRoutingLanguageAsync(string languageId, CancellationToken cancellationToken = default);
+
+    /// <summary>
+    /// Get list of queues.
+    /// </summary>
+    /// <param name="pageSize">Page size</param>
+    /// <param name="pageNumber">Page number</param>
+    /// <param name="sortOrder">Sort order</param>
+    /// <param name="name">Name filter</param>
+    /// <param name="active">Active filter</param>
+    /// <param name="divisionId">Division ID filter</param>
+    /// <param name="cancellationToken">Cancellation token</param>
+    /// <returns>Queue entity listing</returns>
+    Task<QueueEntityListing> GetRoutingQueuesAsync(int? pageSize = null, int? pageNumber = null, string sortOrder = null, string name = null, bool? active = null, string divisionId = null, CancellationToken cancellationToken = default);
+
+    /// <summary>
+    /// Get details about this queue.
+    /// </summary>
+    /// <param name="queueId">Queue ID</param>
+    /// <param name="cancellationToken">Cancellation token</param>
+    /// <returns>Queue</returns>
+    Task<Queue> GetRoutingQueueAsync(string queueId, CancellationToken cancellationToken = default);
+
     // TODO: Add remaining ~200 methods after creating required models:
     // - Delete methods: ~15 more (DeleteRoutingPredictor, DeleteRoutingSettings, etc.)
     // - Get methods: ~75 more (GetRoutingLanguage, GetRoutingLanguages, GetRoutingSkills, etc.) 
