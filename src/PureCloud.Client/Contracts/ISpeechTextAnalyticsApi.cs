@@ -7,7 +7,6 @@ namespace PureCloud.Client.Contracts;
 /// </summary>
 public interface ISpeechTextAnalyticsApi
 {
-    // DELETE methods
     /// <summary>
     /// Deletes a speech and text analytics category
     /// </summary>
@@ -56,7 +55,6 @@ public interface ISpeechTextAnalyticsApi
     /// <returns>True if the topic was successfully deleted</returns>
     Task<bool> DeleteSpeechTextAnalyticsTopicAsync(string topicId, CancellationToken cancellationToken = default);
 
-    // GET methods
     /// <summary>
     /// Gets a list of speech and text analytics categories
     /// </summary>
@@ -327,7 +325,6 @@ public interface ISpeechTextAnalyticsApi
     /// <returns>A list of supported languages for translation</returns>
     Task<TranslateSupportedLanguageList> GetSpeechTextAnalyticsTranslationsLanguagesAsync(CancellationToken cancellationToken = default);
 
-    // UPDATE methods (PATCH)
     /// <summary>
     /// Updates speech and text analytics settings using partial update
     /// </summary>
@@ -336,7 +333,6 @@ public interface ISpeechTextAnalyticsApi
     /// <returns>The updated speech and text analytics settings</returns>
     Task<SpeechTextAnalyticsSettingsResponse> UpdateSpeechTextAnalyticsSettingsAsync(SpeechTextAnalyticsSettingsRequest body, CancellationToken cancellationToken = default);
 
-    // CREATE methods (POST)
     /// <summary>
     /// Creates a new speech and text analytics category
     /// </summary>
@@ -409,7 +405,6 @@ public interface ISpeechTextAnalyticsApi
     /// <returns>The search response with transcript results</returns>
     Task<JsonSearchResponse> CreateSpeechTextAnalyticsTranscriptsSearchAsync(TranscriptSearchRequest body, CancellationToken cancellationToken = default);
 
-    // UPDATE methods (PUT)
     /// <summary>
     /// Updates a speech and text analytics category
     /// </summary>
