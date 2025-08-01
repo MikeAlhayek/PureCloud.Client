@@ -6,8 +6,7 @@ namespace PureCloud.Client.Models;
 /// <summary>
 /// EncryptionKeyEntityListing
 /// </summary>
-
-public partial class EncryptionKeyEntityListing : IEquatable<EncryptionKeyEntityListing>, IPagedResource<EncryptionKey>
+public sealed class EncryptionKeyEntityListing
 {
     /// <summary>
     /// Initializes a new instance of the <see cref="EncryptionKeyEntityListing" /> class.
@@ -22,7 +21,7 @@ public partial class EncryptionKeyEntityListing : IEquatable<EncryptionKeyEntity
     /// <param name="NextUri">NextUri.</param>
     /// <param name="PreviousUri">PreviousUri.</param>
     /// <param name="PageCount">PageCount.</param>
-    public EncryptionKeyEntityListing(List<EncryptionKey> Entities = null, int? PageSize = null, int? PageNumber = null, long? Total = null, string FirstUri = null, string LastUri = null, string SelfUri = null, string NextUri = null, string PreviousUri = null, int? PageCount = null)
+    public EncryptionKeyEntityListing(IEnumerable<EncryptionKey> Entities = null, int? PageSize = null, int? PageNumber = null, long? Total = null, string FirstUri = null, string LastUri = null, string SelfUri = null, string NextUri = null, string PreviousUri = null, int? PageCount = null)
     {
         this.Entities = Entities;
         this.PageSize = PageSize;
@@ -43,7 +42,7 @@ public partial class EncryptionKeyEntityListing : IEquatable<EncryptionKeyEntity
     /// Gets or Sets Entities
     /// </summary>
     [JsonPropertyName("entities")]
-    public List<EncryptionKey> Entities { get; set; }
+    public IEnumerable<EncryptionKey> Entities { get; set; }
 
 
 

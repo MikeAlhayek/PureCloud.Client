@@ -1,6 +1,7 @@
 using System.Runtime.Serialization;
 using System.Text;
 using System.Text.Json.Serialization;
+using PureCloud.Client.Models.Users;
 
 namespace PureCloud.Client.Models;
 
