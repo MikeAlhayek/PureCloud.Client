@@ -80,8 +80,6 @@ public sealed class SettingsApi : ISettingsApi
 
         var response = await client.DeleteAsync("api/v2/emails/settings/threading", cancellationToken);
 
-        response.EnsureSuccessStatusCode();
-
         return response.IsSuccessStatusCode;
     }
 
@@ -149,8 +147,6 @@ public sealed class SettingsApi : ISettingsApi
         var client = _httpClientFactory.CreateClient(PureCloudConstants.PureCloudClientName);
 
         var response = await client.DeleteAsync($"api/v2/users/agentui/agents/autoanswer/{Uri.EscapeDataString(agentId)}/settings", cancellationToken);
-
-        response.EnsureSuccessStatusCode();
 
         return response.IsSuccessStatusCode;
     }
