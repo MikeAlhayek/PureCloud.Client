@@ -87,7 +87,9 @@ public sealed class SettingsApi : ISettingsApi
     {
         var client = _httpClientFactory.CreateClient(PureCloudConstants.PureCloudClientName);
 
-        var response = await client.DeleteAsync("api/v2/emails/settings/threading", cancellationToken);
+        var uri = UriHelper.GetUri("api/v2/emails/settings/threading", null);
+
+        var response = await client.DeleteAsync(uri, cancellationToken);
 
         response.EnsureSuccessStatusCode();
 
@@ -131,7 +133,9 @@ public sealed class SettingsApi : ISettingsApi
 
         var client = _httpClientFactory.CreateClient(PureCloudConstants.PureCloudClientName);
 
-        var response = await client.GetAsync($"api/v2/users/agentui/agents/autoanswer/{Uri.EscapeDataString(agentId)}/settings", cancellationToken);
+        var uri = UriHelper.GetUri($"api/v2/users/agentui/agents/autoanswer/{Uri.EscapeDataString(agentId)}/settings", null);
+
+        var response = await client.GetAsync(uri, cancellationToken);
 
         response.EnsureSuccessStatusCode();
 
@@ -147,7 +151,9 @@ public sealed class SettingsApi : ISettingsApi
 
         var client = _httpClientFactory.CreateClient(PureCloudConstants.PureCloudClientName);
 
-        var response = await client.PatchAsJsonAsync($"api/v2/users/agentui/agents/autoanswer/{Uri.EscapeDataString(agentId)}/settings", body, _options.JsonSerializerOptions, cancellationToken);
+        var uri = UriHelper.GetUri($"api/v2/users/agentui/agents/autoanswer/{Uri.EscapeDataString(agentId)}/settings", null);
+
+        var response = await client.PatchAsJsonAsync(uri, body, _options.JsonSerializerOptions, cancellationToken);
 
         response.EnsureSuccessStatusCode();
 
@@ -161,7 +167,9 @@ public sealed class SettingsApi : ISettingsApi
 
         var client = _httpClientFactory.CreateClient(PureCloudConstants.PureCloudClientName);
 
-        var response = await client.DeleteAsync($"api/v2/users/agentui/agents/autoanswer/{Uri.EscapeDataString(agentId)}/settings", cancellationToken);
+        var uri = UriHelper.GetUri($"api/v2/users/agentui/agents/autoanswer/{Uri.EscapeDataString(agentId)}/settings", null);
+
+        var response = await client.DeleteAsync(uri, cancellationToken);
 
         response.EnsureSuccessStatusCode();
 
@@ -177,7 +185,9 @@ public sealed class SettingsApi : ISettingsApi
 
         var client = _httpClientFactory.CreateClient(PureCloudConstants.PureCloudClientName);
 
-        var response = await client.PutAsJsonAsync($"api/v2/users/agentui/agents/autoanswer/{Uri.EscapeDataString(agentId)}/settings", body, _options.JsonSerializerOptions, cancellationToken);
+        var uri = UriHelper.GetUri($"api/v2/users/agentui/agents/autoanswer/{Uri.EscapeDataString(agentId)}/settings", null);
+
+        var response = await client.PutAsJsonAsync(uri, body, _options.JsonSerializerOptions, cancellationToken);
 
         response.EnsureSuccessStatusCode();
 
