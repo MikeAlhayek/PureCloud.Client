@@ -1159,6 +1159,8 @@
     <Compile Include="Models\Conversations\ConversationCallEventTopicScoredAgent.cs" />
     <Compile Include="Models\Conversations\ConversationCallEventTopicUriReference.cs" />
     <Compile Include="Models\Conversations\ConversationCallEventTopicWrapup.cs" />
+    <Compile Include="Models\Conversations\ConversationCategoriesEntityListing.cs" />
+    <Compile Include="Models\Conversations\ConversationCategory.cs" />
     <Compile Include="Models\Conversations\ConversationChannel.cs" />
     <Compile Include="Models\Conversations\ConversationChannel.Type.cs" />
     <Compile Include="Models\Conversations\ConversationChannel.MessageType.cs" />
