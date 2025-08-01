@@ -2,7 +2,6 @@ using System.Collections.Specialized;
 using System.Net.Http.Json;
 using Microsoft.Extensions.Options;
 using PureCloud.Client.Contracts;
-using PureCloud.Client.Http;
 using PureCloud.Client.Json;
 using PureCloud.Client.Models;
 
@@ -27,9 +26,7 @@ public sealed class SettingsApi : ISettingsApi
     {
         var client = _httpClientFactory.CreateClient(PureCloudConstants.PureCloudClientName);
 
-        var uri = UriHelper.GetUri("api/v2/emails/settings", null);
-
-        var response = await client.GetAsync(uri, cancellationToken);
+        var response = await client.GetAsync("api/v2/emails/settings", cancellationToken);
 
         response.EnsureSuccessStatusCode();
 
@@ -43,9 +40,7 @@ public sealed class SettingsApi : ISettingsApi
 
         var client = _httpClientFactory.CreateClient(PureCloudConstants.PureCloudClientName);
 
-        var uri = UriHelper.GetUri("api/v2/emails/settings", null);
-
-        var response = await client.PatchAsJsonAsync(uri, body, _options.JsonSerializerOptions, cancellationToken);
+        var response = await client.PatchAsJsonAsync("api/v2/emails/settings", body, _options.JsonSerializerOptions, cancellationToken);
 
         response.EnsureSuccessStatusCode();
 
@@ -57,9 +52,7 @@ public sealed class SettingsApi : ISettingsApi
     {
         var client = _httpClientFactory.CreateClient(PureCloudConstants.PureCloudClientName);
 
-        var uri = UriHelper.GetUri("api/v2/emails/settings/threading", null);
-
-        var response = await client.GetAsync(uri, cancellationToken);
+        var response = await client.GetAsync("api/v2/emails/settings/threading", cancellationToken);
 
         response.EnsureSuccessStatusCode();
 
@@ -73,9 +66,7 @@ public sealed class SettingsApi : ISettingsApi
 
         var client = _httpClientFactory.CreateClient(PureCloudConstants.PureCloudClientName);
 
-        var uri = UriHelper.GetUri("api/v2/emails/settings/threading", null);
-
-        var response = await client.PatchAsJsonAsync(uri, body, _options.JsonSerializerOptions, cancellationToken);
+        var response = await client.PatchAsJsonAsync("api/v2/emails/settings/threading", body, _options.JsonSerializerOptions, cancellationToken);
 
         response.EnsureSuccessStatusCode();
 
@@ -87,9 +78,7 @@ public sealed class SettingsApi : ISettingsApi
     {
         var client = _httpClientFactory.CreateClient(PureCloudConstants.PureCloudClientName);
 
-        var uri = UriHelper.GetUri("api/v2/emails/settings/threading", null);
-
-        var response = await client.DeleteAsync(uri, cancellationToken);
+        var response = await client.DeleteAsync("api/v2/emails/settings/threading", cancellationToken);
 
         response.EnsureSuccessStatusCode();
 
@@ -101,9 +90,7 @@ public sealed class SettingsApi : ISettingsApi
     {
         var client = _httpClientFactory.CreateClient(PureCloudConstants.PureCloudClientName);
 
-        var uri = UriHelper.GetUri("api/v2/settings/executiondata", null);
-
-        var response = await client.GetAsync(uri, cancellationToken);
+        var response = await client.GetAsync("api/v2/settings/executiondata", cancellationToken);
 
         response.EnsureSuccessStatusCode();
 
@@ -117,9 +104,7 @@ public sealed class SettingsApi : ISettingsApi
 
         var client = _httpClientFactory.CreateClient(PureCloudConstants.PureCloudClientName);
 
-        var uri = UriHelper.GetUri("api/v2/settings/executiondata", null);
-
-        var response = await client.PatchAsJsonAsync(uri, body, _options.JsonSerializerOptions, cancellationToken);
+        var response = await client.PatchAsJsonAsync("api/v2/settings/executiondata", body, _options.JsonSerializerOptions, cancellationToken);
 
         response.EnsureSuccessStatusCode();
 
@@ -133,9 +118,7 @@ public sealed class SettingsApi : ISettingsApi
 
         var client = _httpClientFactory.CreateClient(PureCloudConstants.PureCloudClientName);
 
-        var uri = UriHelper.GetUri($"api/v2/users/agentui/agents/autoanswer/{Uri.EscapeDataString(agentId)}/settings", null);
-
-        var response = await client.GetAsync(uri, cancellationToken);
+        var response = await client.GetAsync($"api/v2/users/agentui/agents/autoanswer/{Uri.EscapeDataString(agentId)}/settings", cancellationToken);
 
         response.EnsureSuccessStatusCode();
 
@@ -151,9 +134,7 @@ public sealed class SettingsApi : ISettingsApi
 
         var client = _httpClientFactory.CreateClient(PureCloudConstants.PureCloudClientName);
 
-        var uri = UriHelper.GetUri($"api/v2/users/agentui/agents/autoanswer/{Uri.EscapeDataString(agentId)}/settings", null);
-
-        var response = await client.PatchAsJsonAsync(uri, body, _options.JsonSerializerOptions, cancellationToken);
+        var response = await client.PatchAsJsonAsync($"api/v2/users/agentui/agents/autoanswer/{Uri.EscapeDataString(agentId)}/settings", body, _options.JsonSerializerOptions, cancellationToken);
 
         response.EnsureSuccessStatusCode();
 
@@ -167,9 +148,7 @@ public sealed class SettingsApi : ISettingsApi
 
         var client = _httpClientFactory.CreateClient(PureCloudConstants.PureCloudClientName);
 
-        var uri = UriHelper.GetUri($"api/v2/users/agentui/agents/autoanswer/{Uri.EscapeDataString(agentId)}/settings", null);
-
-        var response = await client.DeleteAsync(uri, cancellationToken);
+        var response = await client.DeleteAsync($"api/v2/users/agentui/agents/autoanswer/{Uri.EscapeDataString(agentId)}/settings", cancellationToken);
 
         response.EnsureSuccessStatusCode();
 
@@ -185,9 +164,7 @@ public sealed class SettingsApi : ISettingsApi
 
         var client = _httpClientFactory.CreateClient(PureCloudConstants.PureCloudClientName);
 
-        var uri = UriHelper.GetUri($"api/v2/users/agentui/agents/autoanswer/{Uri.EscapeDataString(agentId)}/settings", null);
-
-        var response = await client.PutAsJsonAsync(uri, body, _options.JsonSerializerOptions, cancellationToken);
+        var response = await client.PutAsJsonAsync($"api/v2/users/agentui/agents/autoanswer/{Uri.EscapeDataString(agentId)}/settings", body, _options.JsonSerializerOptions, cancellationToken);
 
         response.EnsureSuccessStatusCode();
 
