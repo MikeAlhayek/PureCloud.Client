@@ -15,4 +15,10 @@ public interface ILicenseApi
     Task<string[]> CreateLicenseInferAsync(IEnumerable<string> body = null, CancellationToken cancellationToken = default);
 
     Task<LicenseUpdateStatus[]> UpdateLicenseOrganizationAsync(LicenseBatchAssignmentRequest body = null, CancellationToken cancellationToken = default);
+
+    Task<LicenseOrgToggle> GetLicenseToggleAsync(string featureName, CancellationToken cancellationToken = default);
+
+    Task<LicenseOrgToggle> CreateLicenseToggleAsync(string featureName, CancellationToken cancellationToken = default);
+
+    Task<Dictionary<string, object>> CreateLicenseUsersAsync(IEnumerable<string> body = null, CancellationToken cancellationToken = default);
 }
