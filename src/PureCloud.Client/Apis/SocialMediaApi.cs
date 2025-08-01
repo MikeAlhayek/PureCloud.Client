@@ -118,7 +118,7 @@ public sealed class SocialMediaApi : ISocialMediaApi
 
         response.EnsureSuccessStatusCode();
 
-        return response.IsSuccessStatusCode;
+        return true;
     }
 
     /// <inheritdoc />
@@ -132,7 +132,7 @@ public sealed class SocialMediaApi : ISocialMediaApi
 
         response.EnsureSuccessStatusCode();
 
-        return response.IsSuccessStatusCode;
+        return true;
     }
 
     /// <inheritdoc />
@@ -155,7 +155,7 @@ public sealed class SocialMediaApi : ISocialMediaApi
 
         response.EnsureSuccessStatusCode();
 
-        return response.IsSuccessStatusCode;
+        return true;
     }
 
     /// <inheritdoc />
@@ -179,7 +179,7 @@ public sealed class SocialMediaApi : ISocialMediaApi
 
         response.EnsureSuccessStatusCode();
 
-        return response.IsSuccessStatusCode;
+        return true;
     }
 
     /// <inheritdoc />
@@ -203,7 +203,7 @@ public sealed class SocialMediaApi : ISocialMediaApi
 
         response.EnsureSuccessStatusCode();
 
-        return response.IsSuccessStatusCode;
+        return true;
     }
 
     /// <inheritdoc />
@@ -227,7 +227,7 @@ public sealed class SocialMediaApi : ISocialMediaApi
 
         response.EnsureSuccessStatusCode();
 
-        return response.IsSuccessStatusCode;
+        return true;
     }
 
     /// <inheritdoc />
