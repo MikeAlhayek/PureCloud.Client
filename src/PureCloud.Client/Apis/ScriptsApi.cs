@@ -128,7 +128,7 @@ public sealed class ScriptsApi : IScriptsApi
     }
 
     /// <inheritdoc />
-    public async Task<IEnumerable<Page>> GetScriptPagesAsync(string scriptId, string scriptDataVersion = null, CancellationToken cancellationToken = default)
+    public async Task<Page[]> GetScriptPagesAsync(string scriptId, string scriptDataVersion = null, CancellationToken cancellationToken = default)
     {
         ArgumentException.ThrowIfNullOrEmpty(scriptId);
 
@@ -376,7 +376,7 @@ public sealed class ScriptsApi : IScriptsApi
     }
 
     /// <inheritdoc />
-    public async Task<IEnumerable<Page>> GetScriptsPublishedScriptPagesAsync(string scriptId, string scriptDataVersion = null, CancellationToken cancellationToken = default)
+    public async Task<Page[]> GetScriptsPublishedScriptPagesAsync(string scriptId, string scriptDataVersion = null, CancellationToken cancellationToken = default)
     {
         ArgumentException.ThrowIfNullOrEmpty(scriptId);
 
@@ -399,7 +399,7 @@ public sealed class ScriptsApi : IScriptsApi
     }
 
     /// <inheritdoc />
-    public async Task<ScriptVariablesResponse> GetScriptsPublishedScriptVariablesAsync(string scriptId, string input = null, string output = null, string type = null, string scriptDataVersion = null, CancellationToken cancellationToken = default)
+    public async Task<object> GetScriptsPublishedScriptVariablesAsync(string scriptId, string input = null, string output = null, string type = null, string scriptDataVersion = null, CancellationToken cancellationToken = default)
     {
         ArgumentException.ThrowIfNullOrEmpty(scriptId);
 
@@ -433,9 +433,7 @@ public sealed class ScriptsApi : IScriptsApi
 
         response.EnsureSuccessStatusCode();
 
-        var variables = await response.Content.ReadFromJsonAsync<object>(_options.JsonSerializerOptions, cancellationToken);
-
-        return new ScriptVariablesResponse { Variables = variables };
+        return await response.Content.ReadFromJsonAsync<object>(_options.JsonSerializerOptions, cancellationToken);
     }
 
     /// <inheritdoc />

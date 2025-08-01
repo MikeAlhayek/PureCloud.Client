@@ -29,7 +29,7 @@ public interface IScriptsApi
     /// <param name="scriptDataVersion">Advanced usage - controls the data version of the script</param>
     /// <param name="cancellationToken">Cancellation token</param>
     /// <returns>List of pages</returns>
-    Task<IEnumerable<Page>> GetScriptPagesAsync(string scriptId, string scriptDataVersion = null, CancellationToken cancellationToken = default);
+    Task<Page[]> GetScriptPagesAsync(string scriptId, string scriptDataVersion = null, CancellationToken cancellationToken = default);
 
     /// <summary>
     /// Get the list of scripts
@@ -121,7 +121,7 @@ public interface IScriptsApi
     /// <param name="scriptDataVersion">Advanced usage - controls the data version of the script</param>
     /// <param name="cancellationToken">Cancellation token</param>
     /// <returns>List of pages</returns>
-    Task<IEnumerable<Page>> GetScriptsPublishedScriptPagesAsync(string scriptId, string scriptDataVersion = null, CancellationToken cancellationToken = default);
+    Task<Page[]> GetScriptsPublishedScriptPagesAsync(string scriptId, string scriptDataVersion = null, CancellationToken cancellationToken = default);
 
     /// <summary>
     /// Get the published variables
@@ -133,7 +133,7 @@ public interface IScriptsApi
     /// <param name="scriptDataVersion">Advanced usage - controls the data version of the script</param>
     /// <param name="cancellationToken">Cancellation token</param>
     /// <returns>Published variables object</returns>
-    Task<ScriptVariablesResponse> GetScriptsPublishedScriptVariablesAsync(string scriptId, string input = null, string output = null, string type = null, string scriptDataVersion = null, CancellationToken cancellationToken = default);
+    Task<object> GetScriptsPublishedScriptVariablesAsync(string scriptId, string input = null, string output = null, string type = null, string scriptDataVersion = null, CancellationToken cancellationToken = default);
 
     /// <summary>
     /// Get the upload status of an imported script
