@@ -506,7 +506,40 @@ public interface IRoutingApi
     /// <returns>Search results</returns>
     Task<string> GetRoutingEmailOutboundDomainSearchAsync(string domainId, CancellationToken cancellationToken = default);
 
-    // TODO: Add remaining ~115 methods after migrating required models:
+    /// <summary>
+    /// Update the user's Direct Routing Backup settings
+    /// </summary>
+    /// <param name="body">Agent direct routing backup settings</param>
+    /// <param name="cancellationToken">Cancellation token</param>
+    /// <returns>Updated settings</returns>
+    Task<AgentDirectRoutingBackupSettings> UpdateRoutingDirectroutingbackupSettingsMeAsync(AgentDirectRoutingBackupSettings body, CancellationToken cancellationToken = default);
+
+    /// <summary>
+    /// Request an activation status of a domain
+    /// </summary>
+    /// <param name="domainId">domain ID</param>
+    /// <param name="body">Activation request body</param>
+    /// <param name="cancellationToken">Cancellation token</param>
+    /// <returns>Activation response</returns>
+    Task<string> UpdateRoutingEmailOutboundDomainActivationAsync(string domainId, object body = null, CancellationToken cancellationToken = default);
+
+    /// <summary>
+    /// Tests the connection settings for a domain
+    /// </summary>
+    /// <param name="domainId">domain ID</param>
+    /// <param name="cancellationToken">Cancellation token</param>
+    /// <returns>Test results</returns>
+    Task<string> TestRoutingEmailDomainConnectionAsync(string domainId, CancellationToken cancellationToken = default);
+
+    /// <summary>
+    /// Create a domain
+    /// </summary>
+    /// <param name="body">Domain</param>
+    /// <param name="cancellationToken">Cancellation token</param>
+    /// <returns>Created domain</returns>
+    Task<InboundDomain> CreateRoutingEmailOutboundDomainAsync(InboundDomain body, CancellationToken cancellationToken = default);
+
+    // TODO: Add remaining ~110 methods after migrating required models:
     // - Delete methods: ~15 more (DeleteRoutingPredictor, DeleteRoutingSettings, etc.)
     // - Get methods: ~75 more (GetRoutingLanguage, GetRoutingLanguages, GetRoutingSkills, etc.) 
     // - Create methods: ~20 more (CreateRoutingLanguage, CreateRoutingQueue, CreateRoutingSkill, etc.)

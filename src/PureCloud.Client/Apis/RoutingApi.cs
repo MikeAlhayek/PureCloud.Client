@@ -948,4 +948,60 @@ public sealed class RoutingApi : IRoutingApi
 
         return await response.Content.ReadAsStringAsync(cancellationToken);
     }
+
+    /// <inheritdoc />
+    public async Task<AgentDirectRoutingBackupSettings> UpdateRoutingDirectroutingbackupSettingsMeAsync(AgentDirectRoutingBackupSettings body, CancellationToken cancellationToken = default)
+    {
+        ArgumentNullException.ThrowIfNull(body);
+
+        var client = _httpClientFactory.CreateClient(PureCloudConstants.PureCloudClientName);
+
+        var response = await client.PutAsJsonAsync("api/v2/routing/directroutingbackup/settings/me", body, cancellationToken);
+
+        response.EnsureSuccessStatusCode();
+
+        return await response.Content.ReadFromJsonAsync<AgentDirectRoutingBackupSettings>(_options.JsonSerializerOptions, cancellationToken);
+    }
+
+    /// <inheritdoc />
+    public async Task<string> UpdateRoutingEmailOutboundDomainActivationAsync(string domainId, object body = null, CancellationToken cancellationToken = default)
+    {
+        ArgumentException.ThrowIfNullOrEmpty(domainId);
+
+        var client = _httpClientFactory.CreateClient(PureCloudConstants.PureCloudClientName);
+
+        var response = await client.PutAsJsonAsync($"api/v2/routing/email/outbound/domains/{Uri.EscapeDataString(domainId)}/activation", body, cancellationToken);
+
+        response.EnsureSuccessStatusCode();
+
+        return await response.Content.ReadAsStringAsync(cancellationToken);
+    }
+
+    /// <inheritdoc />
+    public async Task<string> TestRoutingEmailDomainConnectionAsync(string domainId, CancellationToken cancellationToken = default)
+    {
+        ArgumentException.ThrowIfNullOrEmpty(domainId);
+
+        var client = _httpClientFactory.CreateClient(PureCloudConstants.PureCloudClientName);
+
+        var response = await client.PostAsync($"api/v2/routing/email/domains/{Uri.EscapeDataString(domainId)}/testconnection", null, cancellationToken);
+
+        response.EnsureSuccessStatusCode();
+
+        return await response.Content.ReadAsStringAsync(cancellationToken);
+    }
+
+    /// <inheritdoc />
+    public async Task<InboundDomain> CreateRoutingEmailOutboundDomainAsync(InboundDomain body, CancellationToken cancellationToken = default)
+    {
+        ArgumentNullException.ThrowIfNull(body);
+
+        var client = _httpClientFactory.CreateClient(PureCloudConstants.PureCloudClientName);
+
+        var response = await client.PostAsJsonAsync("api/v2/routing/email/outbound/domains", body, cancellationToken);
+
+        response.EnsureSuccessStatusCode();
+
+        return await response.Content.ReadFromJsonAsync<InboundDomain>(_options.JsonSerializerOptions, cancellationToken);
+    }
 }
