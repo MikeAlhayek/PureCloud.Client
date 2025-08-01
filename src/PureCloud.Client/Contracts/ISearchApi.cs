@@ -54,21 +54,21 @@ public interface ISearchApi
     /// Search using the q64 value returned from a previous search
     /// </summary>
     /// <param name="q64">q64</param>
-    /// <param name="expand">Which fields, if any, to expand</param>
+    /// <param name="expands">Which fields, if any, to expand</param>
     /// <param name="profile">profile (optional, default to true)</param>
     /// <param name="cancellationToken">Cancellation token</param>
     /// <returns>JsonNodeSearchResponse</returns>
-    Task<JsonNodeSearchResponse> GetSearchAsync(string q64, IEnumerable<string> expand = null, bool? profile = null, CancellationToken cancellationToken = default);
+    Task<JsonNodeSearchResponse> GetSearchAsync(string q64, IEnumerable<string> expands = null, bool? profile = null, CancellationToken cancellationToken = default);
 
     /// <summary>
     /// Suggest resources using the q64 value returned from a previous suggest query
     /// </summary>
     /// <param name="q64">q64</param>
-    /// <param name="expand">Which fields, if any, to expand</param>
+    /// <param name="expands">Which fields, if any, to expand</param>
     /// <param name="profile">profile (optional, default to true)</param>
     /// <param name="cancellationToken">Cancellation token</param>
     /// <returns>JsonNodeSearchResponse</returns>
-    Task<JsonNodeSearchResponse> GetSearchSuggestAsync(string q64, IEnumerable<string> expand = null, bool? profile = null, CancellationToken cancellationToken = default);
+    Task<JsonNodeSearchResponse> GetSearchSuggestAsync(string q64, IEnumerable<string> expands = null, bool? profile = null, CancellationToken cancellationToken = default);
 
     /// <summary>
     /// Search resources
@@ -116,47 +116,47 @@ public interface ISearchApi
     /// Search groups using the q64 value returned from a previous search
     /// </summary>
     /// <param name="q64">q64</param>
-    /// <param name="expand">expand</param>
+    /// <param name="expands">expand</param>
     /// <param name="cancellationToken">Cancellation token</param>
     /// <returns>GroupsSearchResponse</returns>
-    Task<GroupsSearchResponse> GetGroupsSearchAsync(string q64, IEnumerable<string> expand = null, CancellationToken cancellationToken = default);
+    Task<GroupsSearchResponse> GetGroupsSearchAsync(string q64, IEnumerable<string> expands = null, CancellationToken cancellationToken = default);
 
     /// <summary>
     /// Search locations using the q64 value returned from a previous search
     /// </summary>
     /// <param name="q64">q64</param>
-    /// <param name="expand">Provides more details about a specified resource</param>
+    /// <param name="expands">Provides more details about a specified resource</param>
     /// <param name="cancellationToken">Cancellation token</param>
     /// <returns>LocationsSearchResponse</returns>
-    Task<LocationsSearchResponse> GetLocationsSearchAsync(string q64, IEnumerable<string> expand = null, CancellationToken cancellationToken = default);
+    Task<LocationsSearchResponse> GetLocationsSearchAsync(string q64, IEnumerable<string> expands = null, CancellationToken cancellationToken = default);
 
     /// <summary>
     /// Search sites using the q64 value returned from a previous search
     /// </summary>
     /// <param name="q64">q64</param>
-    /// <param name="expand">expand</param>
+    /// <param name="expands">expand</param>
     /// <param name="cancellationToken">Cancellation token</param>
     /// <returns>SitesSearchResponse</returns>
-    Task<SitesSearchResponse> GetTelephonyProvidersEdgesSitesSearchAsync(string q64, IEnumerable<string> expand = null, CancellationToken cancellationToken = default);
+    Task<SitesSearchResponse> GetTelephonyProvidersEdgesSitesSearchAsync(string q64, IEnumerable<string> expands = null, CancellationToken cancellationToken = default);
 
     /// <summary>
     /// Search users using the q64 value returned from a previous search
     /// </summary>
     /// <param name="q64">q64</param>
-    /// <param name="expand">expand</param>
+    /// <param name="expands">expand</param>
     /// <param name="integrationPresenceSource">integrationPresenceSource</param>
     /// <param name="cancellationToken">Cancellation token</param>
     /// <returns>UsersSearchResponse</returns>
-    Task<UsersSearchResponse> GetUsersSearchAsync(string q64, IEnumerable<string> expand = null, string integrationPresenceSource = null, CancellationToken cancellationToken = default);
+    Task<UsersSearchResponse> GetUsersSearchAsync(string q64, IEnumerable<string> expands = null, string integrationPresenceSource = null, CancellationToken cancellationToken = default);
 
     /// <summary>
     /// Search voicemails using the q64 value returned from a previous search
     /// </summary>
     /// <param name="q64">q64</param>
-    /// <param name="expand">expand</param>
+    /// <param name="expands">expand</param>
     /// <param name="cancellationToken">Cancellation token</param>
     /// <returns>VoicemailsSearchResponse</returns>
-    Task<VoicemailsSearchResponse> GetVoicemailSearchAsync(string q64, IEnumerable<string> expand = null, CancellationToken cancellationToken = default);
+    Task<VoicemailsSearchResponse> GetVoicemailSearchAsync(string q64, IEnumerable<string> expands = null, CancellationToken cancellationToken = default);
 
     /// <summary>
     /// Search resources

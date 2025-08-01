@@ -24,17 +24,17 @@ public sealed class SearchApi : ISearchApi
     }
 
     /// <inheritdoc />
-    public async Task<JsonNodeSearchResponse> GetSearchAsync(string q64, IEnumerable<string> expand = null, bool? profile = null, CancellationToken cancellationToken = default)
+    public async Task<JsonNodeSearchResponse> GetSearchAsync(string q64, IEnumerable<string> expands = null, bool? profile = null, CancellationToken cancellationToken = default)
     {
         ArgumentException.ThrowIfNullOrEmpty(q64);
 
         var parameters = new NameValueCollection { { "q64", q64 } };
 
-        if (expand != null)
+        if (expands != null)
         {
-            foreach (var item in expand)
+            foreach (var expand in expands)
             {
-                parameters.Add("expand", item);
+                parameters.Add("expand", expand);
             }
         }
 
@@ -55,17 +55,17 @@ public sealed class SearchApi : ISearchApi
     }
 
     /// <inheritdoc />
-    public async Task<JsonNodeSearchResponse> GetSearchSuggestAsync(string q64, IEnumerable<string> expand = null, bool? profile = null, CancellationToken cancellationToken = default)
+    public async Task<JsonNodeSearchResponse> GetSearchSuggestAsync(string q64, IEnumerable<string> expands = null, bool? profile = null, CancellationToken cancellationToken = default)
     {
         ArgumentException.ThrowIfNullOrEmpty(q64);
 
         var parameters = new NameValueCollection { { "q64", q64 } };
 
-        if (expand != null)
+        if (expands != null)
         {
-            foreach (var item in expand)
+            foreach (var expand in expands)
             {
-                parameters.Add("expand", item);
+                parameters.Add("expand", expand);
             }
         }
 
@@ -86,7 +86,6 @@ public sealed class SearchApi : ISearchApi
     }
 
     /// <inheritdoc />
-
     public async Task<DocumentationSearchResponse> CreateDocumentationSearchAsync(DocumentationSearchRequest body, CancellationToken cancellationToken = default)
     {
         ArgumentNullException.ThrowIfNull(body);
@@ -101,7 +100,6 @@ public sealed class SearchApi : ISearchApi
     }
 
     /// <inheritdoc />
-
     public async Task<GKNDocumentationSearchResponse> CreateDocumentationGknSearchAsync(GKNDocumentationSearchRequest body, CancellationToken cancellationToken = default)
     {
         ArgumentNullException.ThrowIfNull(body);
@@ -116,7 +114,6 @@ public sealed class SearchApi : ISearchApi
     }
 
     /// <inheritdoc />
-
     public async Task<UsersSearchResponse> CreateUsersSearchAsync(UserSearchRequest body, CancellationToken cancellationToken = default)
     {
         ArgumentNullException.ThrowIfNull(body);
@@ -131,7 +128,6 @@ public sealed class SearchApi : ISearchApi
     }
 
     /// <inheritdoc />
-
     public async Task<GroupsSearchResponse> CreateGroupsSearchAsync(GroupSearchRequest body, CancellationToken cancellationToken = default)
     {
         ArgumentNullException.ThrowIfNull(body);
@@ -146,7 +142,6 @@ public sealed class SearchApi : ISearchApi
     }
 
     /// <inheritdoc />
-
     public async Task<LocationsSearchResponse> CreateLocationsSearchAsync(LocationSearchRequest body, CancellationToken cancellationToken = default)
     {
         ArgumentNullException.ThrowIfNull(body);
@@ -161,7 +156,6 @@ public sealed class SearchApi : ISearchApi
     }
 
     /// <inheritdoc />
-
     public async Task<JsonNodeSearchResponse> CreateSearchAsync(SearchRequest body, bool? profile = null, CancellationToken cancellationToken = default)
     {
         ArgumentNullException.ThrowIfNull(body);
@@ -185,7 +179,6 @@ public sealed class SearchApi : ISearchApi
     }
 
     /// <inheritdoc />
-
     public async Task<JsonNodeSearchResponse> CreateSearchSuggestAsync(SuggestSearchRequest body, bool? profile = null, CancellationToken cancellationToken = default)
     {
         ArgumentNullException.ThrowIfNull(body);
@@ -209,7 +202,6 @@ public sealed class SearchApi : ISearchApi
     }
 
     /// <inheritdoc />
-
     public async Task<SitesSearchResponse> CreateTelephonyProvidersEdgesSitesSearchAsync(SiteSearchRequest body, CancellationToken cancellationToken = default)
     {
         ArgumentNullException.ThrowIfNull(body);
@@ -224,7 +216,6 @@ public sealed class SearchApi : ISearchApi
     }
 
     /// <inheritdoc />
-
     public async Task<GKNDocumentationSearchResponse> GetDocumentationGknSearchAsync(string q64, CancellationToken cancellationToken = default)
     {
         ArgumentException.ThrowIfNullOrEmpty(q64);
@@ -243,7 +234,6 @@ public sealed class SearchApi : ISearchApi
     }
 
     /// <inheritdoc />
-
     public async Task<DocumentationSearchResponse> GetDocumentationSearchAsync(string q64, CancellationToken cancellationToken = default)
     {
         ArgumentException.ThrowIfNullOrEmpty(q64);
@@ -262,18 +252,17 @@ public sealed class SearchApi : ISearchApi
     }
 
     /// <inheritdoc />
-
-    public async Task<GroupsSearchResponse> GetGroupsSearchAsync(string q64, IEnumerable<string> expand = null, CancellationToken cancellationToken = default)
+    public async Task<GroupsSearchResponse> GetGroupsSearchAsync(string q64, IEnumerable<string> expands = null, CancellationToken cancellationToken = default)
     {
         ArgumentException.ThrowIfNullOrEmpty(q64);
 
         var parameters = new NameValueCollection { { "q64", q64 } };
 
-        if (expand != null)
+        if (expands != null)
         {
-            foreach (var item in expand)
+            foreach (var expand in expands)
             {
-                parameters.Add("expand", item);
+                parameters.Add("expand", expand);
             }
         }
 
@@ -289,18 +278,17 @@ public sealed class SearchApi : ISearchApi
     }
 
     /// <inheritdoc />
-
-    public async Task<LocationsSearchResponse> GetLocationsSearchAsync(string q64, IEnumerable<string> expand = null, CancellationToken cancellationToken = default)
+    public async Task<LocationsSearchResponse> GetLocationsSearchAsync(string q64, IEnumerable<string> expands = null, CancellationToken cancellationToken = default)
     {
         ArgumentException.ThrowIfNullOrEmpty(q64);
 
         var parameters = new NameValueCollection { { "q64", q64 } };
 
-        if (expand != null)
+        if (expands != null)
         {
-            foreach (var item in expand)
+            foreach (var expand in expands)
             {
-                parameters.Add("expand", item);
+                parameters.Add("expand", expand);
             }
         }
 
@@ -316,18 +304,17 @@ public sealed class SearchApi : ISearchApi
     }
 
     /// <inheritdoc />
-
-    public async Task<SitesSearchResponse> GetTelephonyProvidersEdgesSitesSearchAsync(string q64, IEnumerable<string> expand = null, CancellationToken cancellationToken = default)
+    public async Task<SitesSearchResponse> GetTelephonyProvidersEdgesSitesSearchAsync(string q64, IEnumerable<string> expands = null, CancellationToken cancellationToken = default)
     {
         ArgumentException.ThrowIfNullOrEmpty(q64);
 
         var parameters = new NameValueCollection { { "q64", q64 } };
 
-        if (expand != null)
+        if (expands != null)
         {
-            foreach (var item in expand)
+            foreach (var expand in expands)
             {
-                parameters.Add("expand", item);
+                parameters.Add("expand", expand);
             }
         }
 
@@ -343,18 +330,17 @@ public sealed class SearchApi : ISearchApi
     }
 
     /// <inheritdoc />
-
-    public async Task<UsersSearchResponse> GetUsersSearchAsync(string q64, IEnumerable<string> expand = null, string integrationPresenceSource = null, CancellationToken cancellationToken = default)
+    public async Task<UsersSearchResponse> GetUsersSearchAsync(string q64, IEnumerable<string> expands = null, string integrationPresenceSource = null, CancellationToken cancellationToken = default)
     {
         ArgumentException.ThrowIfNullOrEmpty(q64);
 
         var parameters = new NameValueCollection { { "q64", q64 } };
 
-        if (expand != null)
+        if (expands != null)
         {
-            foreach (var item in expand)
+            foreach (var expand in expands)
             {
-                parameters.Add("expand", item);
+                parameters.Add("expand", expand);
             }
         }
 
@@ -375,18 +361,17 @@ public sealed class SearchApi : ISearchApi
     }
 
     /// <inheritdoc />
-
-    public async Task<VoicemailsSearchResponse> GetVoicemailSearchAsync(string q64, IEnumerable<string> expand = null, CancellationToken cancellationToken = default)
+    public async Task<VoicemailsSearchResponse> GetVoicemailSearchAsync(string q64, IEnumerable<string> expands = null, CancellationToken cancellationToken = default)
     {
         ArgumentException.ThrowIfNullOrEmpty(q64);
 
         var parameters = new NameValueCollection { { "q64", q64 } };
 
-        if (expand != null)
+        if (expands != null)
         {
-            foreach (var item in expand)
+            foreach (var expand in expands)
             {
-                parameters.Add("expand", item);
+                parameters.Add("expand", expand);
             }
         }
 
@@ -402,7 +387,6 @@ public sealed class SearchApi : ISearchApi
     }
 
     /// <inheritdoc />
-
     public async Task<AnalyticsConversationWithoutAttributesMultiGetResponse> CreateAnalyticsConversationsTranscriptsQueryAsync(TranscriptConversationDetailSearchRequest body, CancellationToken cancellationToken = default)
     {
         ArgumentNullException.ThrowIfNull(body);
@@ -417,7 +401,6 @@ public sealed class SearchApi : ISearchApi
     }
 
     /// <inheritdoc />
-
     public async Task<JsonCursorSearchResponse> CreateConversationsParticipantsAttributesSearchAsync(ConversationParticipantSearchRequest body, CancellationToken cancellationToken = default)
     {
         ArgumentNullException.ThrowIfNull(body);
@@ -432,7 +415,6 @@ public sealed class SearchApi : ISearchApi
     }
 
     /// <inheritdoc />
-
     public async Task<JsonNodeSearchResponse> CreateDocumentationAllSearchAsync(DocumentationV2SearchRequest body, CancellationToken cancellationToken = default)
     {
         ArgumentNullException.ThrowIfNull(body);
@@ -447,7 +429,6 @@ public sealed class SearchApi : ISearchApi
     }
 
     /// <inheritdoc />
-
     public async Task<JsonSearchResponse> CreateSpeechandtextanalyticsTranscriptsSearchAsync(TranscriptSearchRequest body, CancellationToken cancellationToken = default)
     {
         ArgumentNullException.ThrowIfNull(body);
@@ -462,7 +443,6 @@ public sealed class SearchApi : ISearchApi
     }
 
     /// <inheritdoc />
-
     public async Task<TeamsSearchResponse> CreateTeamsSearchAsync(TeamSearchRequest body, CancellationToken cancellationToken = default)
     {
         ArgumentNullException.ThrowIfNull(body);
@@ -477,7 +457,6 @@ public sealed class SearchApi : ISearchApi
     }
 
     /// <inheritdoc />
-
     public async Task<UsersSearchResponse> CreateUsersSearchConversationTargetAsync(UserSearchRequest body, CancellationToken cancellationToken = default)
     {
         ArgumentNullException.ThrowIfNull(body);
@@ -492,7 +471,6 @@ public sealed class SearchApi : ISearchApi
     }
 
     /// <inheritdoc />
-
     public async Task<UsersSearchResponse> CreateUsersSearchQueuemembersManageAsync(UserSearchRequest body, CancellationToken cancellationToken = default)
     {
         ArgumentNullException.ThrowIfNull(body);
@@ -507,7 +485,6 @@ public sealed class SearchApi : ISearchApi
     }
 
     /// <inheritdoc />
-
     public async Task<UsersSearchResponse> CreateUsersSearchTeamsAssignAsync(UserSearchRequest body, CancellationToken cancellationToken = default)
     {
         ArgumentNullException.ThrowIfNull(body);
@@ -522,7 +499,6 @@ public sealed class SearchApi : ISearchApi
     }
 
     /// <inheritdoc />
-
     public async Task<VoicemailsSearchResponse> CreateVoicemailSearchAsync(VoicemailSearchRequest body, CancellationToken cancellationToken = default)
     {
         ArgumentNullException.ThrowIfNull(body);
