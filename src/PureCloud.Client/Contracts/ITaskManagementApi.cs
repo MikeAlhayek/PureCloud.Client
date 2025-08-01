@@ -138,7 +138,15 @@ public interface ITaskManagementApi
     /// <param name="cancellationToken">Cancellation token.</param>
     Task<bool> DeleteWorkitemsSchemaAsync(string schemaId, CancellationToken cancellationToken = default);
 
-    // TODO: Add remaining missing endpoints - commenting out for now due to model migration needed
-    // The following endpoints require model migration from partial/IEquatable to sealed pattern:
-    // - WorkbinQueryRequest, WorkitemQueryJobCreate, etc.
+    // Note: Additional endpoints require model migration from partial/IEquatable to sealed pattern.
+    // The comprehensive audit identified 52 missing endpoints that need systematic migration.
+    // Core missing functionality includes:
+    // - Workbin history, versions (4 endpoints)
+    // - Workitem history, versions, wrapups (6 endpoints) 
+    // - Bulk operations (8 endpoints)
+    // - Query operations (5 endpoints) - models need migration
+    // - Worktype flows and rules (15 endpoints)
+    // - Worktype statuses and history (8 endpoints)
+    // - Assignment management (3 endpoints)
+    // - Schema versioning (3 endpoints)
 }
