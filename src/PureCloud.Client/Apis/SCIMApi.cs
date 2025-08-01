@@ -25,14 +25,18 @@ public sealed class SCIMApi : ISCIMApi
     {
         ArgumentException.ThrowIfNullOrEmpty(userId);
 
-        var client = _httpClientFactory.CreateClient(PureCloudConstants.PureCloudClientName);
-
-        var request = new HttpRequestMessage(HttpMethod.Delete, $"api/v2/scim/users/{Uri.EscapeDataString(userId)}");
+        var parameters = new NameValueCollection();
 
         if (!string.IsNullOrEmpty(ifMatch))
         {
-            request.Headers.Add("If-Match", ifMatch);
+            parameters.Add("If-Match", UriHelper.ParameterToString(ifMatch));
         }
+
+        var client = _httpClientFactory.CreateClient(PureCloudConstants.PureCloudClientName);
+
+        var uri = UriHelper.GetUri($"api/v2/scim/users/{Uri.EscapeDataString(userId)}", parameters);
+
+        var request = new HttpRequestMessage(HttpMethod.Delete, uri);
 
         var response = await client.SendAsync(request, cancellationToken);
 
@@ -44,14 +48,18 @@ public sealed class SCIMApi : ISCIMApi
     {
         ArgumentException.ThrowIfNullOrEmpty(userId);
 
-        var client = _httpClientFactory.CreateClient(PureCloudConstants.PureCloudClientName);
-
-        var request = new HttpRequestMessage(HttpMethod.Delete, $"api/v2/scim/v2/users/{Uri.EscapeDataString(userId)}");
+        var parameters = new NameValueCollection();
 
         if (!string.IsNullOrEmpty(ifMatch))
         {
-            request.Headers.Add("If-Match", ifMatch);
+            parameters.Add("If-Match", UriHelper.ParameterToString(ifMatch));
         }
+
+        var client = _httpClientFactory.CreateClient(PureCloudConstants.PureCloudClientName);
+
+        var uri = UriHelper.GetUri($"api/v2/scim/v2/users/{Uri.EscapeDataString(userId)}", parameters);
+
+        var request = new HttpRequestMessage(HttpMethod.Delete, uri);
 
         var response = await client.SendAsync(request, cancellationToken);
 
@@ -81,16 +89,16 @@ public sealed class SCIMApi : ISCIMApi
             }
         }
 
+        if (!string.IsNullOrEmpty(ifNoneMatch))
+        {
+            parameters.Add("If-None-Match", UriHelper.ParameterToString(ifNoneMatch));
+        }
+
         var client = _httpClientFactory.CreateClient(PureCloudConstants.PureCloudClientName);
 
         var uri = UriHelper.GetUri($"api/v2/scim/groups/{Uri.EscapeDataString(groupId)}", parameters);
 
         var request = new HttpRequestMessage(HttpMethod.Get, uri);
-
-        if (!string.IsNullOrEmpty(ifNoneMatch))
-        {
-            request.Headers.Add("If-None-Match", ifNoneMatch);
-        }
 
         var response = await client.SendAsync(request, cancellationToken);
 
@@ -210,14 +218,18 @@ public sealed class SCIMApi : ISCIMApi
     /// <inheritdoc />
     public async Task<ScimServiceProviderConfig> GetScimServiceproviderconfigAsync(string ifNoneMatch = null, CancellationToken cancellationToken = default)
     {
-        var client = _httpClientFactory.CreateClient(PureCloudConstants.PureCloudClientName);
-
-        var request = new HttpRequestMessage(HttpMethod.Get, "api/v2/scim/serviceproviderconfig");
+        var parameters = new NameValueCollection();
 
         if (!string.IsNullOrEmpty(ifNoneMatch))
         {
-            request.Headers.Add("If-None-Match", ifNoneMatch);
+            parameters.Add("If-None-Match", UriHelper.ParameterToString(ifNoneMatch));
         }
+
+        var client = _httpClientFactory.CreateClient(PureCloudConstants.PureCloudClientName);
+
+        var uri = UriHelper.GetUri("api/v2/scim/serviceproviderconfig", parameters);
+
+        var request = new HttpRequestMessage(HttpMethod.Get, uri);
 
         var response = await client.SendAsync(request, cancellationToken);
 
@@ -249,16 +261,16 @@ public sealed class SCIMApi : ISCIMApi
             }
         }
 
+        if (!string.IsNullOrEmpty(ifNoneMatch))
+        {
+            parameters.Add("If-None-Match", UriHelper.ParameterToString(ifNoneMatch));
+        }
+
         var client = _httpClientFactory.CreateClient(PureCloudConstants.PureCloudClientName);
 
         var uri = UriHelper.GetUri($"api/v2/scim/users/{Uri.EscapeDataString(userId)}", parameters);
 
         var request = new HttpRequestMessage(HttpMethod.Get, uri);
-
-        if (!string.IsNullOrEmpty(ifNoneMatch))
-        {
-            request.Headers.Add("If-None-Match", ifNoneMatch);
-        }
 
         var response = await client.SendAsync(request, cancellationToken);
 
@@ -337,16 +349,16 @@ public sealed class SCIMApi : ISCIMApi
             }
         }
 
+        if (!string.IsNullOrEmpty(ifNoneMatch))
+        {
+            parameters.Add("If-None-Match", UriHelper.ParameterToString(ifNoneMatch));
+        }
+
         var client = _httpClientFactory.CreateClient(PureCloudConstants.PureCloudClientName);
 
         var uri = UriHelper.GetUri($"api/v2/scim/v2/groups/{Uri.EscapeDataString(groupId)}", parameters);
 
         var request = new HttpRequestMessage(HttpMethod.Get, uri);
-
-        if (!string.IsNullOrEmpty(ifNoneMatch))
-        {
-            request.Headers.Add("If-None-Match", ifNoneMatch);
-        }
 
         var response = await client.SendAsync(request, cancellationToken);
 
@@ -465,14 +477,18 @@ public sealed class SCIMApi : ISCIMApi
     /// <inheritdoc />
     public async Task<ScimServiceProviderConfig> GetScimV2ServiceproviderconfigAsync(string ifNoneMatch = null, CancellationToken cancellationToken = default)
     {
-        var client = _httpClientFactory.CreateClient(PureCloudConstants.PureCloudClientName);
-
-        var request = new HttpRequestMessage(HttpMethod.Get, "api/v2/scim/v2/serviceproviderconfig");
+        var parameters = new NameValueCollection();
 
         if (!string.IsNullOrEmpty(ifNoneMatch))
         {
-            request.Headers.Add("If-None-Match", ifNoneMatch);
+            parameters.Add("If-None-Match", UriHelper.ParameterToString(ifNoneMatch));
         }
+
+        var client = _httpClientFactory.CreateClient(PureCloudConstants.PureCloudClientName);
+
+        var uri = UriHelper.GetUri("api/v2/scim/v2/serviceproviderconfig", parameters);
+
+        var request = new HttpRequestMessage(HttpMethod.Get, uri);
 
         var response = await client.SendAsync(request, cancellationToken);
 
@@ -504,16 +520,16 @@ public sealed class SCIMApi : ISCIMApi
             }
         }
 
+        if (!string.IsNullOrEmpty(ifNoneMatch))
+        {
+            parameters.Add("If-None-Match", UriHelper.ParameterToString(ifNoneMatch));
+        }
+
         var client = _httpClientFactory.CreateClient(PureCloudConstants.PureCloudClientName);
 
         var uri = UriHelper.GetUri($"api/v2/scim/v2/users/{Uri.EscapeDataString(userId)}", parameters);
 
         var request = new HttpRequestMessage(HttpMethod.Get, uri);
-
-        if (!string.IsNullOrEmpty(ifNoneMatch))
-        {
-            request.Headers.Add("If-None-Match", ifNoneMatch);
-        }
 
         var response = await client.SendAsync(request, cancellationToken);
 
@@ -576,17 +592,21 @@ public sealed class SCIMApi : ISCIMApi
 
         ArgumentNullException.ThrowIfNull(body);
 
-        var client = _httpClientFactory.CreateClient(PureCloudConstants.PureCloudClientName);
-
-        var request = new HttpRequestMessage(HttpMethod.Patch, $"api/v2/scim/groups/{Uri.EscapeDataString(groupId)}")
-        {
-            Content = JsonContent.Create(body, options: _options.JsonSerializerOptions)
-        };
+        var parameters = new NameValueCollection();
 
         if (!string.IsNullOrEmpty(ifMatch))
         {
-            request.Headers.Add("If-Match", ifMatch);
+            parameters.Add("If-Match", UriHelper.ParameterToString(ifMatch));
         }
+
+        var client = _httpClientFactory.CreateClient(PureCloudConstants.PureCloudClientName);
+
+        var uri = UriHelper.GetUri($"api/v2/scim/groups/{Uri.EscapeDataString(groupId)}", parameters);
+
+        var request = new HttpRequestMessage(HttpMethod.Patch, uri)
+        {
+            Content = JsonContent.Create(body, options: _options.JsonSerializerOptions)
+        };
 
         var response = await client.SendAsync(request, cancellationToken);
 
@@ -602,17 +622,21 @@ public sealed class SCIMApi : ISCIMApi
 
         ArgumentNullException.ThrowIfNull(body);
 
-        var client = _httpClientFactory.CreateClient(PureCloudConstants.PureCloudClientName);
-
-        var request = new HttpRequestMessage(HttpMethod.Patch, $"api/v2/scim/users/{Uri.EscapeDataString(userId)}")
-        {
-            Content = JsonContent.Create(body, options: _options.JsonSerializerOptions)
-        };
+        var parameters = new NameValueCollection();
 
         if (!string.IsNullOrEmpty(ifMatch))
         {
-            request.Headers.Add("If-Match", ifMatch);
+            parameters.Add("If-Match", UriHelper.ParameterToString(ifMatch));
         }
+
+        var client = _httpClientFactory.CreateClient(PureCloudConstants.PureCloudClientName);
+
+        var uri = UriHelper.GetUri($"api/v2/scim/users/{Uri.EscapeDataString(userId)}", parameters);
+
+        var request = new HttpRequestMessage(HttpMethod.Patch, uri)
+        {
+            Content = JsonContent.Create(body, options: _options.JsonSerializerOptions)
+        };
 
         var response = await client.SendAsync(request, cancellationToken);
 
@@ -628,17 +652,21 @@ public sealed class SCIMApi : ISCIMApi
 
         ArgumentNullException.ThrowIfNull(body);
 
-        var client = _httpClientFactory.CreateClient(PureCloudConstants.PureCloudClientName);
-
-        var request = new HttpRequestMessage(HttpMethod.Patch, $"api/v2/scim/v2/groups/{Uri.EscapeDataString(groupId)}")
-        {
-            Content = JsonContent.Create(body, options: _options.JsonSerializerOptions)
-        };
+        var parameters = new NameValueCollection();
 
         if (!string.IsNullOrEmpty(ifMatch))
         {
-            request.Headers.Add("If-Match", ifMatch);
+            parameters.Add("If-Match", UriHelper.ParameterToString(ifMatch));
         }
+
+        var client = _httpClientFactory.CreateClient(PureCloudConstants.PureCloudClientName);
+
+        var uri = UriHelper.GetUri($"api/v2/scim/v2/groups/{Uri.EscapeDataString(groupId)}", parameters);
+
+        var request = new HttpRequestMessage(HttpMethod.Patch, uri)
+        {
+            Content = JsonContent.Create(body, options: _options.JsonSerializerOptions)
+        };
 
         var response = await client.SendAsync(request, cancellationToken);
 
@@ -654,17 +682,21 @@ public sealed class SCIMApi : ISCIMApi
 
         ArgumentNullException.ThrowIfNull(body);
 
-        var client = _httpClientFactory.CreateClient(PureCloudConstants.PureCloudClientName);
-
-        var request = new HttpRequestMessage(HttpMethod.Patch, $"api/v2/scim/v2/users/{Uri.EscapeDataString(userId)}")
-        {
-            Content = JsonContent.Create(body, options: _options.JsonSerializerOptions)
-        };
+        var parameters = new NameValueCollection();
 
         if (!string.IsNullOrEmpty(ifMatch))
         {
-            request.Headers.Add("If-Match", ifMatch);
+            parameters.Add("If-Match", UriHelper.ParameterToString(ifMatch));
         }
+
+        var client = _httpClientFactory.CreateClient(PureCloudConstants.PureCloudClientName);
+
+        var uri = UriHelper.GetUri($"api/v2/scim/v2/users/{Uri.EscapeDataString(userId)}", parameters);
+
+        var request = new HttpRequestMessage(HttpMethod.Patch, uri)
+        {
+            Content = JsonContent.Create(body, options: _options.JsonSerializerOptions)
+        };
 
         var response = await client.SendAsync(request, cancellationToken);
 
@@ -708,17 +740,21 @@ public sealed class SCIMApi : ISCIMApi
 
         ArgumentNullException.ThrowIfNull(body);
 
-        var client = _httpClientFactory.CreateClient(PureCloudConstants.PureCloudClientName);
-
-        var request = new HttpRequestMessage(HttpMethod.Put, $"api/v2/scim/groups/{Uri.EscapeDataString(groupId)}")
-        {
-            Content = JsonContent.Create(body, options: _options.JsonSerializerOptions)
-        };
+        var parameters = new NameValueCollection();
 
         if (!string.IsNullOrEmpty(ifMatch))
         {
-            request.Headers.Add("If-Match", ifMatch);
+            parameters.Add("If-Match", UriHelper.ParameterToString(ifMatch));
         }
+
+        var client = _httpClientFactory.CreateClient(PureCloudConstants.PureCloudClientName);
+
+        var uri = UriHelper.GetUri($"api/v2/scim/groups/{Uri.EscapeDataString(groupId)}", parameters);
+
+        var request = new HttpRequestMessage(HttpMethod.Put, uri)
+        {
+            Content = JsonContent.Create(body, options: _options.JsonSerializerOptions)
+        };
 
         var response = await client.SendAsync(request, cancellationToken);
 
@@ -734,17 +770,21 @@ public sealed class SCIMApi : ISCIMApi
 
         ArgumentNullException.ThrowIfNull(body);
 
-        var client = _httpClientFactory.CreateClient(PureCloudConstants.PureCloudClientName);
-
-        var request = new HttpRequestMessage(HttpMethod.Put, $"api/v2/scim/users/{Uri.EscapeDataString(userId)}")
-        {
-            Content = JsonContent.Create(body, options: _options.JsonSerializerOptions)
-        };
+        var parameters = new NameValueCollection();
 
         if (!string.IsNullOrEmpty(ifMatch))
         {
-            request.Headers.Add("If-Match", ifMatch);
+            parameters.Add("If-Match", UriHelper.ParameterToString(ifMatch));
         }
+
+        var client = _httpClientFactory.CreateClient(PureCloudConstants.PureCloudClientName);
+
+        var uri = UriHelper.GetUri($"api/v2/scim/users/{Uri.EscapeDataString(userId)}", parameters);
+
+        var request = new HttpRequestMessage(HttpMethod.Put, uri)
+        {
+            Content = JsonContent.Create(body, options: _options.JsonSerializerOptions)
+        };
 
         var response = await client.SendAsync(request, cancellationToken);
 
@@ -760,17 +800,21 @@ public sealed class SCIMApi : ISCIMApi
 
         ArgumentNullException.ThrowIfNull(body);
 
-        var client = _httpClientFactory.CreateClient(PureCloudConstants.PureCloudClientName);
-
-        var request = new HttpRequestMessage(HttpMethod.Put, $"api/v2/scim/v2/groups/{Uri.EscapeDataString(groupId)}")
-        {
-            Content = JsonContent.Create(body, options: _options.JsonSerializerOptions)
-        };
+        var parameters = new NameValueCollection();
 
         if (!string.IsNullOrEmpty(ifMatch))
         {
-            request.Headers.Add("If-Match", ifMatch);
+            parameters.Add("If-Match", UriHelper.ParameterToString(ifMatch));
         }
+
+        var client = _httpClientFactory.CreateClient(PureCloudConstants.PureCloudClientName);
+
+        var uri = UriHelper.GetUri($"api/v2/scim/v2/groups/{Uri.EscapeDataString(groupId)}", parameters);
+
+        var request = new HttpRequestMessage(HttpMethod.Put, uri)
+        {
+            Content = JsonContent.Create(body, options: _options.JsonSerializerOptions)
+        };
 
         var response = await client.SendAsync(request, cancellationToken);
 
@@ -786,17 +830,21 @@ public sealed class SCIMApi : ISCIMApi
 
         ArgumentNullException.ThrowIfNull(body);
 
-        var client = _httpClientFactory.CreateClient(PureCloudConstants.PureCloudClientName);
-
-        var request = new HttpRequestMessage(HttpMethod.Put, $"api/v2/scim/v2/users/{Uri.EscapeDataString(userId)}")
-        {
-            Content = JsonContent.Create(body, options: _options.JsonSerializerOptions)
-        };
+        var parameters = new NameValueCollection();
 
         if (!string.IsNullOrEmpty(ifMatch))
         {
-            request.Headers.Add("If-Match", ifMatch);
+            parameters.Add("If-Match", UriHelper.ParameterToString(ifMatch));
         }
+
+        var client = _httpClientFactory.CreateClient(PureCloudConstants.PureCloudClientName);
+
+        var uri = UriHelper.GetUri($"api/v2/scim/v2/users/{Uri.EscapeDataString(userId)}", parameters);
+
+        var request = new HttpRequestMessage(HttpMethod.Put, uri)
+        {
+            Content = JsonContent.Create(body, options: _options.JsonSerializerOptions)
+        };
 
         var response = await client.SendAsync(request, cancellationToken);
 
