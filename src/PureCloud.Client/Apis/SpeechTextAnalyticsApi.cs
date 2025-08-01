@@ -31,8 +31,6 @@ public sealed class SpeechTextAnalyticsApi : ISpeechTextAnalyticsApi
 
         var response = await client.DeleteAsync($"api/v2/speechandtextanalytics/categories/{Uri.EscapeDataString(categoryId)}", cancellationToken);
 
-        response.EnsureSuccessStatusCode();
-
         return response.IsSuccessStatusCode;
     }
 
@@ -44,8 +42,6 @@ public sealed class SpeechTextAnalyticsApi : ISpeechTextAnalyticsApi
         var client = _httpClientFactory.CreateClient(PureCloudConstants.PureCloudClientName);
 
         var response = await client.DeleteAsync($"api/v2/speechandtextanalytics/dictionaryfeedback/{Uri.EscapeDataString(dictionaryFeedbackId)}", cancellationToken);
-
-        response.EnsureSuccessStatusCode();
 
         return response.IsSuccessStatusCode;
     }
@@ -80,8 +76,6 @@ public sealed class SpeechTextAnalyticsApi : ISpeechTextAnalyticsApi
 
         var response = await client.DeleteAsync("api/v2/speechandtextanalytics/sentimentfeedback", cancellationToken);
 
-        response.EnsureSuccessStatusCode();
-
         return response.IsSuccessStatusCode;
     }
 
@@ -94,8 +88,6 @@ public sealed class SpeechTextAnalyticsApi : ISpeechTextAnalyticsApi
 
         var response = await client.DeleteAsync($"api/v2/speechandtextanalytics/sentimentfeedback/{Uri.EscapeDataString(sentimentFeedbackId)}", cancellationToken);
 
-        response.EnsureSuccessStatusCode();
-
         return response.IsSuccessStatusCode;
     }
 
@@ -107,8 +99,6 @@ public sealed class SpeechTextAnalyticsApi : ISpeechTextAnalyticsApi
         var client = _httpClientFactory.CreateClient(PureCloudConstants.PureCloudClientName);
 
         var response = await client.DeleteAsync($"api/v2/speechandtextanalytics/topics/{Uri.EscapeDataString(topicId)}", cancellationToken);
-
-        response.EnsureSuccessStatusCode();
 
         return response.IsSuccessStatusCode;
     }
