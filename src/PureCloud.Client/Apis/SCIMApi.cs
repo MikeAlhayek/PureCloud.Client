@@ -36,9 +36,7 @@ public sealed class SCIMApi : ISCIMApi
 
         var uri = UriHelper.GetUri($"api/v2/scim/users/{Uri.EscapeDataString(userId)}", parameters);
 
-        var request = new HttpRequestMessage(HttpMethod.Delete, uri);
-
-        var response = await client.SendAsync(request, cancellationToken);
+        var response = await client.DeleteAsync(uri, cancellationToken);
 
         return response.IsSuccessStatusCode;
     }
@@ -59,9 +57,7 @@ public sealed class SCIMApi : ISCIMApi
 
         var uri = UriHelper.GetUri($"api/v2/scim/v2/users/{Uri.EscapeDataString(userId)}", parameters);
 
-        var request = new HttpRequestMessage(HttpMethod.Delete, uri);
-
-        var response = await client.SendAsync(request, cancellationToken);
+        var response = await client.DeleteAsync(uri, cancellationToken);
 
         return response.IsSuccessStatusCode;
     }
@@ -98,9 +94,7 @@ public sealed class SCIMApi : ISCIMApi
 
         var uri = UriHelper.GetUri($"api/v2/scim/groups/{Uri.EscapeDataString(groupId)}", parameters);
 
-        var request = new HttpRequestMessage(HttpMethod.Get, uri);
-
-        var response = await client.SendAsync(request, cancellationToken);
+        var response = await client.GetAsync(uri, cancellationToken);
 
         response.EnsureSuccessStatusCode();
 
@@ -229,9 +223,7 @@ public sealed class SCIMApi : ISCIMApi
 
         var uri = UriHelper.GetUri("api/v2/scim/serviceproviderconfig", parameters);
 
-        var request = new HttpRequestMessage(HttpMethod.Get, uri);
-
-        var response = await client.SendAsync(request, cancellationToken);
+        var response = await client.GetAsync(uri, cancellationToken);
 
         response.EnsureSuccessStatusCode();
 
@@ -270,9 +262,7 @@ public sealed class SCIMApi : ISCIMApi
 
         var uri = UriHelper.GetUri($"api/v2/scim/users/{Uri.EscapeDataString(userId)}", parameters);
 
-        var request = new HttpRequestMessage(HttpMethod.Get, uri);
-
-        var response = await client.SendAsync(request, cancellationToken);
+        var response = await client.GetAsync(uri, cancellationToken);
 
         response.EnsureSuccessStatusCode();
 
@@ -358,9 +348,7 @@ public sealed class SCIMApi : ISCIMApi
 
         var uri = UriHelper.GetUri($"api/v2/scim/v2/groups/{Uri.EscapeDataString(groupId)}", parameters);
 
-        var request = new HttpRequestMessage(HttpMethod.Get, uri);
-
-        var response = await client.SendAsync(request, cancellationToken);
+        var response = await client.GetAsync(uri, cancellationToken);
 
         response.EnsureSuccessStatusCode();
 
@@ -488,9 +476,7 @@ public sealed class SCIMApi : ISCIMApi
 
         var uri = UriHelper.GetUri("api/v2/scim/v2/serviceproviderconfig", parameters);
 
-        var request = new HttpRequestMessage(HttpMethod.Get, uri);
-
-        var response = await client.SendAsync(request, cancellationToken);
+        var response = await client.GetAsync(uri, cancellationToken);
 
         response.EnsureSuccessStatusCode();
 
@@ -529,9 +515,7 @@ public sealed class SCIMApi : ISCIMApi
 
         var uri = UriHelper.GetUri($"api/v2/scim/v2/users/{Uri.EscapeDataString(userId)}", parameters);
 
-        var request = new HttpRequestMessage(HttpMethod.Get, uri);
-
-        var response = await client.SendAsync(request, cancellationToken);
+        var response = await client.GetAsync(uri, cancellationToken);
 
         response.EnsureSuccessStatusCode();
 
@@ -603,12 +587,7 @@ public sealed class SCIMApi : ISCIMApi
 
         var uri = UriHelper.GetUri($"api/v2/scim/groups/{Uri.EscapeDataString(groupId)}", parameters);
 
-        var request = new HttpRequestMessage(HttpMethod.Patch, uri)
-        {
-            Content = JsonContent.Create(body, options: _options.JsonSerializerOptions)
-        };
-
-        var response = await client.SendAsync(request, cancellationToken);
+        var response = await client.PatchAsJsonAsync(uri, body, _options.JsonSerializerOptions, cancellationToken);
 
         response.EnsureSuccessStatusCode();
 
@@ -633,12 +612,7 @@ public sealed class SCIMApi : ISCIMApi
 
         var uri = UriHelper.GetUri($"api/v2/scim/users/{Uri.EscapeDataString(userId)}", parameters);
 
-        var request = new HttpRequestMessage(HttpMethod.Patch, uri)
-        {
-            Content = JsonContent.Create(body, options: _options.JsonSerializerOptions)
-        };
-
-        var response = await client.SendAsync(request, cancellationToken);
+        var response = await client.PatchAsJsonAsync(uri, body, _options.JsonSerializerOptions, cancellationToken);
 
         response.EnsureSuccessStatusCode();
 
@@ -663,12 +637,7 @@ public sealed class SCIMApi : ISCIMApi
 
         var uri = UriHelper.GetUri($"api/v2/scim/v2/groups/{Uri.EscapeDataString(groupId)}", parameters);
 
-        var request = new HttpRequestMessage(HttpMethod.Patch, uri)
-        {
-            Content = JsonContent.Create(body, options: _options.JsonSerializerOptions)
-        };
-
-        var response = await client.SendAsync(request, cancellationToken);
+        var response = await client.PatchAsJsonAsync(uri, body, _options.JsonSerializerOptions, cancellationToken);
 
         response.EnsureSuccessStatusCode();
 
@@ -693,12 +662,7 @@ public sealed class SCIMApi : ISCIMApi
 
         var uri = UriHelper.GetUri($"api/v2/scim/v2/users/{Uri.EscapeDataString(userId)}", parameters);
 
-        var request = new HttpRequestMessage(HttpMethod.Patch, uri)
-        {
-            Content = JsonContent.Create(body, options: _options.JsonSerializerOptions)
-        };
-
-        var response = await client.SendAsync(request, cancellationToken);
+        var response = await client.PatchAsJsonAsync(uri, body, _options.JsonSerializerOptions, cancellationToken);
 
         response.EnsureSuccessStatusCode();
 
@@ -751,12 +715,7 @@ public sealed class SCIMApi : ISCIMApi
 
         var uri = UriHelper.GetUri($"api/v2/scim/groups/{Uri.EscapeDataString(groupId)}", parameters);
 
-        var request = new HttpRequestMessage(HttpMethod.Put, uri)
-        {
-            Content = JsonContent.Create(body, options: _options.JsonSerializerOptions)
-        };
-
-        var response = await client.SendAsync(request, cancellationToken);
+        var response = await client.PutAsJsonAsync(uri, body, _options.JsonSerializerOptions, cancellationToken);
 
         response.EnsureSuccessStatusCode();
 
@@ -781,12 +740,7 @@ public sealed class SCIMApi : ISCIMApi
 
         var uri = UriHelper.GetUri($"api/v2/scim/users/{Uri.EscapeDataString(userId)}", parameters);
 
-        var request = new HttpRequestMessage(HttpMethod.Put, uri)
-        {
-            Content = JsonContent.Create(body, options: _options.JsonSerializerOptions)
-        };
-
-        var response = await client.SendAsync(request, cancellationToken);
+        var response = await client.PutAsJsonAsync(uri, body, _options.JsonSerializerOptions, cancellationToken);
 
         response.EnsureSuccessStatusCode();
 
@@ -811,12 +765,7 @@ public sealed class SCIMApi : ISCIMApi
 
         var uri = UriHelper.GetUri($"api/v2/scim/v2/groups/{Uri.EscapeDataString(groupId)}", parameters);
 
-        var request = new HttpRequestMessage(HttpMethod.Put, uri)
-        {
-            Content = JsonContent.Create(body, options: _options.JsonSerializerOptions)
-        };
-
-        var response = await client.SendAsync(request, cancellationToken);
+        var response = await client.PutAsJsonAsync(uri, body, _options.JsonSerializerOptions, cancellationToken);
 
         response.EnsureSuccessStatusCode();
 
@@ -841,12 +790,7 @@ public sealed class SCIMApi : ISCIMApi
 
         var uri = UriHelper.GetUri($"api/v2/scim/v2/users/{Uri.EscapeDataString(userId)}", parameters);
 
-        var request = new HttpRequestMessage(HttpMethod.Put, uri)
-        {
-            Content = JsonContent.Create(body, options: _options.JsonSerializerOptions)
-        };
-
-        var response = await client.SendAsync(request, cancellationToken);
+        var response = await client.PutAsJsonAsync(uri, body, _options.JsonSerializerOptions, cancellationToken);
 
         response.EnsureSuccessStatusCode();
 
