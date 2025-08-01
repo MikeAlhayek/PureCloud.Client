@@ -116,9 +116,7 @@ public sealed class SocialMediaApi : ISocialMediaApi
 
         var response = await client.DeleteAsync($"api/v2/socialmedia/escalationrules/{Uri.EscapeDataString(escalationRuleId)}", cancellationToken);
 
-        response.EnsureSuccessStatusCode();
-
-        return true;
+        return response.IsSuccessStatusCode;
     }
 
     /// <inheritdoc />
@@ -130,9 +128,7 @@ public sealed class SocialMediaApi : ISocialMediaApi
 
         var response = await client.DeleteAsync($"api/v2/socialmedia/messages/{Uri.EscapeDataString(messageId)}", cancellationToken);
 
-        response.EnsureSuccessStatusCode();
-
-        return true;
+        return response.IsSuccessStatusCode;
     }
 
     /// <inheritdoc />
@@ -153,9 +149,7 @@ public sealed class SocialMediaApi : ISocialMediaApi
 
         var response = await client.DeleteAsync(uri, cancellationToken);
 
-        response.EnsureSuccessStatusCode();
-
-        return true;
+        return response.IsSuccessStatusCode;
     }
 
     /// <inheritdoc />
@@ -177,9 +171,7 @@ public sealed class SocialMediaApi : ISocialMediaApi
 
         var response = await client.DeleteAsync(uri, cancellationToken);
 
-        response.EnsureSuccessStatusCode();
-
-        return true;
+        return response.IsSuccessStatusCode;
     }
 
     /// <inheritdoc />
@@ -201,9 +193,7 @@ public sealed class SocialMediaApi : ISocialMediaApi
 
         var response = await client.DeleteAsync(uri, cancellationToken);
 
-        response.EnsureSuccessStatusCode();
-
-        return true;
+        return response.IsSuccessStatusCode;
     }
 
     /// <inheritdoc />
@@ -225,9 +215,7 @@ public sealed class SocialMediaApi : ISocialMediaApi
 
         var response = await client.DeleteAsync(uri, cancellationToken);
 
-        response.EnsureSuccessStatusCode();
-
-        return true;
+        return response.IsSuccessStatusCode;
     }
 
     /// <inheritdoc />
