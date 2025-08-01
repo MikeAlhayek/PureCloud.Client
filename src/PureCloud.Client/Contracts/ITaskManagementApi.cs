@@ -137,4 +137,8 @@ public interface ITaskManagementApi
     /// <param name="schemaId">The ID of the schema to delete.</param>
     /// <param name="cancellationToken">Cancellation token.</param>
     Task<bool> DeleteWorkitemsSchemaAsync(string schemaId, CancellationToken cancellationToken = default);
+
+    // TODO: Add remaining missing endpoints - commenting out for now due to model migration needed
+    // The following endpoints require model migration from partial/IEquatable to sealed pattern:
+    // - WorkbinQueryRequest, WorkitemQueryJobCreate, etc.
 }
