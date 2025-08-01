@@ -88,4 +88,34 @@ public interface ISocialMediaApi
     /// Get a list of data ingestion rules for a social topic
     /// </summary>
     Task<DataIngestionRuleResponseEntityListing> GetTopicDataIngestionRulesAsync(string topicId, int? pageNumber = null, int? pageSize = null, bool? includeDeleted = null, CancellationToken cancellationToken = default);
+
+    /// <summary>
+    /// Get a Facebook data ingestion rule
+    /// </summary>
+    Task<FacebookDataIngestionRuleResponse> GetTopicDataIngestionRuleFacebookAsync(string topicId, string facebookIngestionRuleId, bool? includeDeleted = null, CancellationToken cancellationToken = default);
+
+    /// <summary>
+    /// Get an open data ingestion rule
+    /// </summary>
+    Task<OpenDataIngestionRuleResponse> GetTopicDataIngestionRuleOpenAsync(string topicId, string openId, bool? includeDeleted = null, CancellationToken cancellationToken = default);
+
+    /// <summary>
+    /// Get a Twitter data ingestion rule
+    /// </summary>
+    Task<TwitterDataIngestionRuleResponse> GetTopicDataIngestionRuleTwitterAsync(string topicId, string twitterIngestionRuleId, bool? includeDeleted = null, CancellationToken cancellationToken = default);
+
+    /// <summary>
+    /// Get Facebook data ingestion rule versions
+    /// </summary>
+    Task<FacebookDataIngestionRuleVersionResponseEntityListing> GetTopicDataIngestionRuleFacebookVersionsAsync(string topicId, string facebookIngestionRuleId, int? pageNumber = null, int? pageSize = null, bool? includeDeleted = null, CancellationToken cancellationToken = default);
+
+    /// <summary>
+    /// Get open data ingestion rule versions
+    /// </summary>
+    Task<OpenDataIngestionRuleVersionResponseEntityListing> GetTopicDataIngestionRuleOpenVersionsAsync(string topicId, string openId, int? pageNumber = null, int? pageSize = null, bool? includeDeleted = null, CancellationToken cancellationToken = default);
+
+    /// <summary>
+    /// Get Twitter data ingestion rule versions
+    /// </summary>
+    Task<TwitterDataIngestionRuleVersionResponseEntityListing> GetTopicDataIngestionRuleTwitterVersionsAsync(string topicId, string twitterIngestionRuleId, int? pageNumber = null, int? pageSize = null, bool? includeDeleted = null, CancellationToken cancellationToken = default);
 }
