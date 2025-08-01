@@ -23,6 +23,21 @@ public interface ITaskManagementApi
     Task<Worktype> GetWorktypeAsync(string worktypeId, IEnumerable<string> expands = null, CancellationToken cancellationToken = default);
 
     /// <summary>
+    /// Get workitems schema
+    /// </summary>
+    Task<DataSchema> GetWorkitemsSchemaAsync(string schemaId, CancellationToken cancellationToken = default);
+
+    /// <summary>
+    /// Get workitems schemas
+    /// </summary>
+    Task<DataSchemaListing> GetWorkitemsSchemasAsync(CancellationToken cancellationToken = default);
+
+    /// <summary>
+    /// Get workitems core type
+    /// </summary>
+    Task<Coretype> GetWorkitemsSchemasCoretypeAsync(string coreTypeName, CancellationToken cancellationToken = default);
+
+    /// <summary>
     /// Create a workbin  
     /// </summary>
     Task<Workbin> CreateWorkbinAsync(WorkbinCreate body, CancellationToken cancellationToken = default);
@@ -36,6 +51,11 @@ public interface ITaskManagementApi
     /// Create a worktype
     /// </summary>
     Task<Worktype> CreateWorktypeAsync(WorktypeCreate body, CancellationToken cancellationToken = default);
+
+    /// <summary>
+    /// Create workitems schema
+    /// </summary>
+    Task<DataSchema> CreateWorkitemsSchemaAsync(DataSchema body, CancellationToken cancellationToken = default);
 
     /// <summary>
     /// Update a workbin
@@ -53,6 +73,11 @@ public interface ITaskManagementApi
     Task<Worktype> UpdateWorktypeAsync(string worktypeId, WorktypeUpdate body, CancellationToken cancellationToken = default);
 
     /// <summary>
+    /// Update workitems schema
+    /// </summary>
+    Task<DataSchema> UpdateWorkitemsSchemaAsync(string schemaId, DataSchema body, CancellationToken cancellationToken = default);
+
+    /// <summary>
     /// Delete a workbin
     /// </summary>
     Task DeleteWorkbinAsync(string workbinId, CancellationToken cancellationToken = default);
@@ -66,4 +91,9 @@ public interface ITaskManagementApi
     /// Delete a worktype
     /// </summary>
     Task DeleteWorktypeAsync(string worktypeId, CancellationToken cancellationToken = default);
+
+    /// <summary>
+    /// Delete workitems schema
+    /// </summary>
+    Task DeleteWorkitemsSchemaAsync(string schemaId, CancellationToken cancellationToken = default);
 }
