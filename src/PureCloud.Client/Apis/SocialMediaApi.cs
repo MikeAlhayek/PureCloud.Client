@@ -229,4 +229,168 @@ public sealed class SocialMediaApi : ISocialMediaApi
 
         return response.IsSuccessStatusCode;
     }
+
+    /// <inheritdoc />
+    public async Task<SocialMediaAsyncAggregateQueryResponse> GetAnalyticsAggregatesJobResultsAsync(string jobId, string cursor = null, CancellationToken cancellationToken = default)
+    {
+        ArgumentException.ThrowIfNullOrEmpty(jobId);
+
+        var parameters = new NameValueCollection();
+
+        if (!string.IsNullOrEmpty(cursor))
+        {
+            parameters.Add("cursor", UriHelper.ParameterToString(cursor));
+        }
+
+        var client = _httpClientFactory.CreateClient(PureCloudConstants.PureCloudClientName);
+
+        var uri = UriHelper.GetUri($"api/v2/socialmedia/analytics/aggregates/jobs/{Uri.EscapeDataString(jobId)}/results", parameters);
+
+        var response = await client.GetAsync(uri, cancellationToken);
+
+        response.EnsureSuccessStatusCode();
+
+        return await response.Content.ReadFromJsonAsync<SocialMediaAsyncAggregateQueryResponse>(_options.JsonSerializerOptions, cancellationToken);
+    }
+
+    /// <inheritdoc />
+    public async Task<EscalationRuleResponse> GetEscalationRuleAsync(string escalationRuleId, CancellationToken cancellationToken = default)
+    {
+        ArgumentException.ThrowIfNullOrEmpty(escalationRuleId);
+
+        var client = _httpClientFactory.CreateClient(PureCloudConstants.PureCloudClientName);
+
+        var uri = UriHelper.GetUri($"api/v2/socialmedia/escalationrules/{Uri.EscapeDataString(escalationRuleId)}", null);
+
+        var response = await client.GetAsync(uri, cancellationToken);
+
+        response.EnsureSuccessStatusCode();
+
+        return await response.Content.ReadFromJsonAsync<EscalationRuleResponse>(_options.JsonSerializerOptions, cancellationToken);
+    }
+
+    /// <inheritdoc />
+    public async Task<SocialEscalationResponseEntityListing> GetEscalationRulesAsync(string divisionId, int? pageNumber = null, int? pageSize = null, CancellationToken cancellationToken = default)
+    {
+        ArgumentException.ThrowIfNullOrEmpty(divisionId);
+
+        var parameters = new NameValueCollection();
+
+        parameters.Add("divisionId", UriHelper.ParameterToString(divisionId));
+
+        if (pageNumber.HasValue)
+        {
+            parameters.Add("pageNumber", UriHelper.ParameterToString(pageNumber.Value));
+        }
+
+        if (pageSize.HasValue)
+        {
+            parameters.Add("pageSize", UriHelper.ParameterToString(pageSize.Value));
+        }
+
+        var client = _httpClientFactory.CreateClient(PureCloudConstants.PureCloudClientName);
+
+        var uri = UriHelper.GetUri("api/v2/socialmedia/escalationrules", parameters);
+
+        var response = await client.GetAsync(uri, cancellationToken);
+
+        response.EnsureSuccessStatusCode();
+
+        return await response.Content.ReadFromJsonAsync<SocialEscalationResponseEntityListing>(_options.JsonSerializerOptions, cancellationToken);
+    }
+
+    /// <inheritdoc />
+    public async Task<SocialTopicResponse> GetTopicAsync(string topicId, bool? includeDeleted = null, CancellationToken cancellationToken = default)
+    {
+        ArgumentException.ThrowIfNullOrEmpty(topicId);
+
+        var parameters = new NameValueCollection();
+
+        if (includeDeleted.HasValue)
+        {
+            parameters.Add("includeDeleted", UriHelper.ParameterToString(includeDeleted.Value));
+        }
+
+        var client = _httpClientFactory.CreateClient(PureCloudConstants.PureCloudClientName);
+
+        var uri = UriHelper.GetUri($"api/v2/socialmedia/topics/{Uri.EscapeDataString(topicId)}", parameters);
+
+        var response = await client.GetAsync(uri, cancellationToken);
+
+        response.EnsureSuccessStatusCode();
+
+        return await response.Content.ReadFromJsonAsync<SocialTopicResponse>(_options.JsonSerializerOptions, cancellationToken);
+    }
+
+    /// <inheritdoc />
+    public async Task<SocialTopicResponseEntityListing> GetTopicsAsync(int? pageNumber = null, int? pageSize = null, IEnumerable<string> divisionIds = null, bool? includeDeleted = null, CancellationToken cancellationToken = default)
+    {
+        var parameters = new NameValueCollection();
+
+        if (pageNumber.HasValue)
+        {
+            parameters.Add("pageNumber", UriHelper.ParameterToString(pageNumber.Value));
+        }
+
+        if (pageSize.HasValue)
+        {
+            parameters.Add("pageSize", UriHelper.ParameterToString(pageSize.Value));
+        }
+
+        if (divisionIds != null)
+        {
+            foreach (var divisionId in divisionIds)
+            {
+                parameters.Add("divisionIds", UriHelper.ParameterToString(divisionId));
+            }
+        }
+
+        if (includeDeleted.HasValue)
+        {
+            parameters.Add("includeDeleted", UriHelper.ParameterToString(includeDeleted.Value));
+        }
+
+        var client = _httpClientFactory.CreateClient(PureCloudConstants.PureCloudClientName);
+
+        var uri = UriHelper.GetUri("api/v2/socialmedia/topics", parameters);
+
+        var response = await client.GetAsync(uri, cancellationToken);
+
+        response.EnsureSuccessStatusCode();
+
+        return await response.Content.ReadFromJsonAsync<SocialTopicResponseEntityListing>(_options.JsonSerializerOptions, cancellationToken);
+    }
+
+    /// <inheritdoc />
+    public async Task<DataIngestionRuleResponseEntityListing> GetTopicDataIngestionRulesAsync(string topicId, int? pageNumber = null, int? pageSize = null, bool? includeDeleted = null, CancellationToken cancellationToken = default)
+    {
+        ArgumentException.ThrowIfNullOrEmpty(topicId);
+
+        var parameters = new NameValueCollection();
+
+        if (pageNumber.HasValue)
+        {
+            parameters.Add("pageNumber", UriHelper.ParameterToString(pageNumber.Value));
+        }
+
+        if (pageSize.HasValue)
+        {
+            parameters.Add("pageSize", UriHelper.ParameterToString(pageSize.Value));
+        }
+
+        if (includeDeleted.HasValue)
+        {
+            parameters.Add("includeDeleted", UriHelper.ParameterToString(includeDeleted.Value));
+        }
+
+        var client = _httpClientFactory.CreateClient(PureCloudConstants.PureCloudClientName);
+
+        var uri = UriHelper.GetUri($"api/v2/socialmedia/topics/{Uri.EscapeDataString(topicId)}/dataingestionrules", parameters);
+
+        var response = await client.GetAsync(uri, cancellationToken);
+
+        response.EnsureSuccessStatusCode();
+
+        return await response.Content.ReadFromJsonAsync<DataIngestionRuleResponseEntityListing>(_options.JsonSerializerOptions, cancellationToken);
+    }
 }

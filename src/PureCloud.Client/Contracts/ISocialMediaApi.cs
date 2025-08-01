@@ -58,4 +58,34 @@ public interface ISocialMediaApi
     /// Delete a X (formally Twitter) data ingestion rule.
     /// </summary>
     Task<bool> DeleteTopicDataIngestionRuleTwitterAsync(string topicId, string twitterIngestionRuleId, bool? hardDelete = null, CancellationToken cancellationToken = default);
+
+    /// <summary>
+    /// Fetch a page of results for an async social media aggregates query
+    /// </summary>
+    Task<SocialMediaAsyncAggregateQueryResponse> GetAnalyticsAggregatesJobResultsAsync(string jobId, string cursor = null, CancellationToken cancellationToken = default);
+
+    /// <summary>
+    /// Get an escalation rule
+    /// </summary>
+    Task<EscalationRuleResponse> GetEscalationRuleAsync(string escalationRuleId, CancellationToken cancellationToken = default);
+
+    /// <summary>
+    /// Get a list of escalation rules
+    /// </summary>
+    Task<SocialEscalationResponseEntityListing> GetEscalationRulesAsync(string divisionId, int? pageNumber = null, int? pageSize = null, CancellationToken cancellationToken = default);
+
+    /// <summary>
+    /// Get a social topic
+    /// </summary>
+    Task<SocialTopicResponse> GetTopicAsync(string topicId, bool? includeDeleted = null, CancellationToken cancellationToken = default);
+
+    /// <summary>
+    /// Get a list of social topics
+    /// </summary>
+    Task<SocialTopicResponseEntityListing> GetTopicsAsync(int? pageNumber = null, int? pageSize = null, IEnumerable<string> divisionIds = null, bool? includeDeleted = null, CancellationToken cancellationToken = default);
+
+    /// <summary>
+    /// Get a list of data ingestion rules for a social topic
+    /// </summary>
+    Task<DataIngestionRuleResponseEntityListing> GetTopicDataIngestionRulesAsync(string topicId, int? pageNumber = null, int? pageSize = null, bool? includeDeleted = null, CancellationToken cancellationToken = default);
 }
