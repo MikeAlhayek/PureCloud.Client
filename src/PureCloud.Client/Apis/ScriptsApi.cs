@@ -147,9 +147,7 @@ public sealed class ScriptsApi : IScriptsApi
 
         response.EnsureSuccessStatusCode();
 
-        var pages = await response.Content.ReadFromJsonAsync<Page[]>(_options.JsonSerializerOptions, cancellationToken);
-
-        return pages;
+        return await response.Content.ReadFromJsonAsync<Page[]>(_options.JsonSerializerOptions, cancellationToken);
     }
 
     /// <inheritdoc />
@@ -397,9 +395,7 @@ public sealed class ScriptsApi : IScriptsApi
 
         response.EnsureSuccessStatusCode();
 
-        var pages = await response.Content.ReadFromJsonAsync<Page[]>(_options.JsonSerializerOptions, cancellationToken);
-
-        return pages;
+        return await response.Content.ReadFromJsonAsync<Page[]>(_options.JsonSerializerOptions, cancellationToken);
     }
 
     /// <inheritdoc />
