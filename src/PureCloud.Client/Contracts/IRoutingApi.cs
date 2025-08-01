@@ -466,7 +466,47 @@ public interface IRoutingApi
     /// <returns>Agent max utilization response</returns>
     Task<AgentMaxUtilizationResponse> GetRoutingUserUtilizationAsync(string userId, CancellationToken cancellationToken = default);
 
-    // TODO: Add remaining ~120 methods after migrating required models:
+    /// <summary>
+    /// Get the User Identity Resolution for domain route
+    /// </summary>
+    /// <param name="domainName">email domain</param>
+    /// <param name="routeId">route ID</param>
+    /// <param name="cancellationToken">Cancellation token</param>
+    /// <returns>Route details</returns>
+    Task<InboundRoute> GetRoutingEmailDomainRouteIdentityresolutionAsync(string domainName, string routeId, CancellationToken cancellationToken = default);
+
+    /// <summary>
+    /// Get domain
+    /// </summary>
+    /// <param name="domainId">domain ID</param>
+    /// <param name="cancellationToken">Cancellation token</param>
+    /// <returns>Outbound domain</returns>
+    Task<InboundDomain> GetRoutingEmailOutboundDomainAsync(string domainId, CancellationToken cancellationToken = default);
+
+    /// <summary>
+    /// Get email setup information
+    /// </summary>
+    /// <param name="cancellationToken">Cancellation token</param>
+    /// <returns>Email setup configuration</returns>
+    Task<string> GetRoutingEmailSetupAsync(CancellationToken cancellationToken = default);
+
+    /// <summary>
+    /// Get activation status of a domain
+    /// </summary>
+    /// <param name="domainId">domain ID</param>
+    /// <param name="cancellationToken">Cancellation token</param>
+    /// <returns>Activation status</returns>
+    Task<string> GetRoutingEmailOutboundDomainActivationAsync(string domainId, CancellationToken cancellationToken = default);
+
+    /// <summary>
+    /// Search a domain across organizations
+    /// </summary>
+    /// <param name="domainId">domain ID</param>
+    /// <param name="cancellationToken">Cancellation token</param>
+    /// <returns>Search results</returns>
+    Task<string> GetRoutingEmailOutboundDomainSearchAsync(string domainId, CancellationToken cancellationToken = default);
+
+    // TODO: Add remaining ~115 methods after migrating required models:
     // - Delete methods: ~15 more (DeleteRoutingPredictor, DeleteRoutingSettings, etc.)
     // - Get methods: ~75 more (GetRoutingLanguage, GetRoutingLanguages, GetRoutingSkills, etc.) 
     // - Create methods: ~20 more (CreateRoutingLanguage, CreateRoutingQueue, CreateRoutingSkill, etc.)
