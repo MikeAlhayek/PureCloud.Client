@@ -144,20 +144,164 @@ public interface ITaskManagementApi
     /// <param name="cancellationToken">Cancellation token.</param>
     Task<SchemaQuantityLimits> GetWorkitemsSchemasLimitsAsync(CancellationToken cancellationToken = default);
 
-    // Note: Additional 48+ endpoints require model migration from partial/IEquatable to sealed pattern.
-    // Current models using legacy patterns that need migration before implementation:
-    // - WorkbinChangeListing, WorkbinVersion, WorkbinVersionListing (history/versioning)
-    // - WorkitemChangeListing, WorkitemVersion, WorkitemVersionListing (history/versioning)
-    // - WorkitemWrapup, WorkitemWrapupEntityListing, WorkitemWrapupUpdate (wrapup management)
-    // - WorkitemTerminate, WorkitemManualAssign (workflow operations)
-    // - WorktypeChangeListing, WorktypeVersion, WorktypeVersionListing (worktype management)
-    // - BulkJob, BulkJobsListing, BulkJobAddRequest, etc. (bulk operations)
-    // - Query operation models for advanced search functionality
-    // - Worktype flow and rule models for workflow management
-    // - Worktype status models for status management
-    // 
-    // These models follow the legacy pattern:
-    // - public partial class ModelName : IEquatable<ModelName> 
-    // And need migration to the modern pattern:
-    // - public sealed class ModelName
+    /// <summary>
+    /// Get workbin history
+    /// </summary>
+    /// <param name="workbinId">The ID of the workbin.</param>
+    /// <param name="after">The cursor for the next page of results.</param>
+    /// <param name="pageSize">The page size.</param>
+    /// <param name="sortOrder">The sort order.</param>
+    /// <param name="cancellationToken">Cancellation token.</param>
+    Task<WorkbinChangeListing> GetWorkbinHistoryAsync(string workbinId, string after = null, int? pageSize = null, string sortOrder = null, CancellationToken cancellationToken = default);
+
+    /// <summary>
+    /// Get workbin version
+    /// </summary>
+    /// <param name="workbinId">The ID of the workbin.</param>
+    /// <param name="entityVersion">The entity version.</param>
+    /// <param name="cancellationToken">Cancellation token.</param>
+    Task<WorkbinVersion> GetWorkbinVersionAsync(string workbinId, int? entityVersion, CancellationToken cancellationToken = default);
+
+    /// <summary>
+    /// Get workbin versions
+    /// </summary>
+    /// <param name="workbinId">The ID of the workbin.</param>
+    /// <param name="after">The cursor for the next page of results.</param>
+    /// <param name="pageSize">The page size.</param>
+    /// <param name="sortOrder">The sort order.</param>
+    /// <param name="cancellationToken">Cancellation token.</param>
+    Task<WorkbinVersionListing> GetWorkbinVersionsAsync(string workbinId, string after = null, int? pageSize = null, string sortOrder = null, CancellationToken cancellationToken = default);
+
+    /// <summary>
+    /// Get workitem history
+    /// </summary>
+    /// <param name="workitemId">The ID of the workitem.</param>
+    /// <param name="after">The cursor for the next page of results.</param>
+    /// <param name="pageSize">The page size.</param>
+    /// <param name="sortOrder">The sort order.</param>
+    /// <param name="cancellationToken">Cancellation token.</param>
+    Task<WorkitemChangeListing> GetWorkitemHistoryAsync(string workitemId, string after = null, int? pageSize = null, string sortOrder = null, CancellationToken cancellationToken = default);
+
+    /// <summary>
+    /// Get workitem version
+    /// </summary>
+    /// <param name="workitemId">The ID of the workitem.</param>
+    /// <param name="entityVersion">The entity version.</param>
+    /// <param name="cancellationToken">Cancellation token.</param>
+    Task<WorkitemVersion> GetWorkitemVersionAsync(string workitemId, int? entityVersion, CancellationToken cancellationToken = default);
+
+    /// <summary>
+    /// Get workitem versions
+    /// </summary>
+    /// <param name="workitemId">The ID of the workitem.</param>
+    /// <param name="after">The cursor for the next page of results.</param>
+    /// <param name="pageSize">The page size.</param>
+    /// <param name="sortOrder">The sort order.</param>
+    /// <param name="cancellationToken">Cancellation token.</param>
+    Task<WorkitemVersionListing> GetWorkitemVersionsAsync(string workitemId, string after = null, int? pageSize = null, string sortOrder = null, CancellationToken cancellationToken = default);
+
+    /// <summary>
+    /// Get workitem user wrapups
+    /// </summary>
+    /// <param name="workitemId">The ID of the workitem.</param>
+    /// <param name="userId">The ID of the user.</param>
+    /// <param name="expands">Optional fields to expand.</param>
+    /// <param name="after">The cursor for the next page of results.</param>
+    /// <param name="pageSize">The page size.</param>
+    /// <param name="sortOrder">The sort order.</param>
+    /// <param name="cancellationToken">Cancellation token.</param>
+    Task<WorkitemWrapup> GetWorkitemUserWrapupsAsync(string workitemId, string userId, string expands = null, string after = null, int? pageSize = null, string sortOrder = null, CancellationToken cancellationToken = default);
+
+    /// <summary>
+    /// Get workitem wrapups
+    /// </summary>
+    /// <param name="workitemId">The ID of the workitem.</param>
+    /// <param name="expands">Optional fields to expand.</param>
+    /// <param name="after">The cursor for the next page of results.</param>
+    /// <param name="pageSize">The page size.</param>
+    /// <param name="sortOrder">The sort order.</param>
+    /// <param name="cancellationToken">Cancellation token.</param>
+    Task<WorkitemWrapupEntityListing> GetWorkitemWrapupsAsync(string workitemId, string expands = null, string after = null, int? pageSize = null, string sortOrder = null, CancellationToken cancellationToken = default);
+
+    /// <summary>
+    /// Get bulk add job
+    /// </summary>
+    /// <param name="bulkJobId">The ID of the bulk job.</param>
+    /// <param name="cancellationToken">Cancellation token.</param>
+    Task<BulkJob> GetWorkitemsBulkAddJobAsync(string bulkJobId, CancellationToken cancellationToken = default);
+
+    /// <summary>
+    /// Get bulk add job results
+    /// </summary>
+    /// <param name="bulkJobId">The ID of the bulk job.</param>
+    /// <param name="cancellationToken">Cancellation token.</param>
+    Task<BulkJobAddResponse> GetWorkitemsBulkAddJobResultsAsync(string bulkJobId, CancellationToken cancellationToken = default);
+
+    /// <summary>
+    /// Get bulk jobs for current user
+    /// </summary>
+    /// <param name="after">The cursor for the next page of results.</param>
+    /// <param name="pageSize">The page size.</param>
+    /// <param name="sortOrder">The sort order.</param>
+    /// <param name="action">The action filter.</param>
+    /// <param name="cancellationToken">Cancellation token.</param>
+    Task<BulkJobsListing> GetWorkitemsBulkJobsUsersMeAsync(string after = null, int? pageSize = null, string sortOrder = null, string action = null, CancellationToken cancellationToken = default);
+
+    /// <summary>
+    /// Get bulk terminate job
+    /// </summary>
+    /// <param name="bulkJobId">The ID of the bulk job.</param>
+    /// <param name="cancellationToken">Cancellation token.</param>
+    Task<BulkJob> GetWorkitemsBulkTerminateJobAsync(string bulkJobId, CancellationToken cancellationToken = default);
+
+    /// <summary>
+    /// Get bulk terminate job results
+    /// </summary>
+    /// <param name="bulkJobId">The ID of the bulk job.</param>
+    /// <param name="cancellationToken">Cancellation token.</param>
+    Task<BulkJobTerminateResultsResponse> GetWorkitemsBulkTerminateJobResultsAsync(string bulkJobId, CancellationToken cancellationToken = default);
+
+    /// <summary>
+    /// Delete bulk add job
+    /// </summary>
+    /// <param name="bulkJobId">The ID of the bulk job.</param>
+    /// <param name="cancellationToken">Cancellation token.</param>
+    Task<bool> DeleteWorkitemsBulkAddJobAsync(string bulkJobId, CancellationToken cancellationToken = default);
+
+    /// <summary>
+    /// Delete bulk terminate job
+    /// </summary>
+    /// <param name="bulkJobId">The ID of the bulk job.</param>
+    /// <param name="cancellationToken">Cancellation token.</param>
+    Task<bool> DeleteWorkitemsBulkTerminateJobAsync(string bulkJobId, CancellationToken cancellationToken = default);
+
+    /// <summary>
+    /// Create bulk add job
+    /// </summary>
+    /// <param name="body">The bulk job request.</param>
+    /// <param name="cancellationToken">Cancellation token.</param>
+    Task<BulkJob> CreateWorkitemsBulkAddJobAsync(BulkJobAddRequest body, CancellationToken cancellationToken = default);
+
+    /// <summary>
+    /// Create bulk terminate job
+    /// </summary>
+    /// <param name="body">The bulk job request.</param>
+    /// <param name="cancellationToken">Cancellation token.</param>
+    Task<BulkJob> CreateWorkitemsBulkTerminateJobAsync(BulkJobTerminateRequest body, CancellationToken cancellationToken = default);
+
+    /// <summary>
+    /// Update bulk add job
+    /// </summary>
+    /// <param name="bulkJobId">The ID of the bulk job.</param>
+    /// <param name="body">The bulk job update.</param>
+    /// <param name="cancellationToken">Cancellation token.</param>
+    Task<BulkJob> UpdateWorkitemsBulkAddJobAsync(string bulkJobId, BulkJobUpdate body, CancellationToken cancellationToken = default);
+
+    /// <summary>
+    /// Update bulk terminate job
+    /// </summary>
+    /// <param name="bulkJobId">The ID of the bulk job.</param>
+    /// <param name="body">The bulk job update.</param>
+    /// <param name="cancellationToken">Cancellation token.</param>
+    Task<BulkJob> UpdateWorkitemsBulkTerminateJobAsync(string bulkJobId, BulkJobUpdate body, CancellationToken cancellationToken = default);
 }
