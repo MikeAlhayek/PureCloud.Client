@@ -2659,4 +2659,252 @@ public sealed class RoutingApi : IRoutingApi
 
         return await response.Content.ReadFromJsonAsync<EstimatedWaitTimePredictions>(_options.JsonSerializerOptions, cancellationToken);
     }
+
+    /// <inheritdoc />
+    public async Task<SkillGroupMemberEntityListing> GetRoutingSkillgroupMembersAsync(string skillGroupId, int? pageSize = null, string after = null, string before = null, string expand = null, CancellationToken cancellationToken = default)
+    {
+        ArgumentException.ThrowIfNullOrEmpty(skillGroupId);
+
+        var parameters = new NameValueCollection();
+
+        if (pageSize.HasValue)
+        {
+            parameters.Add("pageSize", pageSize.Value.ToString());
+        }
+
+        if (!string.IsNullOrEmpty(after))
+        {
+            parameters.Add("after", after);
+        }
+
+        if (!string.IsNullOrEmpty(before))
+        {
+            parameters.Add("before", before);
+        }
+
+        if (!string.IsNullOrEmpty(expand))
+        {
+            parameters.Add("expand", expand);
+        }
+
+        var client = _httpClientFactory.CreateClient(PureCloudConstants.PureCloudClientName);
+
+        var response = await client.GetAsync(UriHelper.GetUri($"api/v2/routing/skillgroups/{skillGroupId}/members", parameters), cancellationToken);
+
+        response.EnsureSuccessStatusCode();
+
+        return await response.Content.ReadFromJsonAsync<SkillGroupMemberEntityListing>(_options.JsonSerializerOptions, cancellationToken);
+    }
+
+    /// <inheritdoc />
+    public async Task<SmsPhoneNumber> GetRoutingSmsPhonenumberAsync(string phoneNumberId, CancellationToken cancellationToken = default)
+    {
+        ArgumentException.ThrowIfNullOrEmpty(phoneNumberId);
+
+        var client = _httpClientFactory.CreateClient(PureCloudConstants.PureCloudClientName);
+
+        var response = await client.GetAsync($"api/v2/routing/sms/phonenumbers/{phoneNumberId}", cancellationToken);
+
+        response.EnsureSuccessStatusCode();
+
+        return await response.Content.ReadFromJsonAsync<SmsPhoneNumber>(_options.JsonSerializerOptions, cancellationToken);
+    }
+
+    /// <inheritdoc />
+    public async Task<WrapupCodeEntityListing> GetRoutingWrapupcodesAsync(int? pageSize = null, int? pageNumber = null, string sortBy = null, string sortOrder = null, string name = null, IEnumerable<string> ids = null, IEnumerable<string> divisionIds = null, CancellationToken cancellationToken = default)
+    {
+        var parameters = new NameValueCollection();
+
+        if (pageSize.HasValue)
+        {
+            parameters.Add("pageSize", pageSize.Value.ToString());
+        }
+
+        if (pageNumber.HasValue)
+        {
+            parameters.Add("pageNumber", pageNumber.Value.ToString());
+        }
+
+        if (!string.IsNullOrEmpty(sortBy))
+        {
+            parameters.Add("sortBy", sortBy);
+        }
+
+        if (!string.IsNullOrEmpty(sortOrder))
+        {
+            parameters.Add("sortOrder", sortOrder);
+        }
+
+        if (!string.IsNullOrEmpty(name))
+        {
+            parameters.Add("name", name);
+        }
+
+        if (ids != null)
+        {
+            foreach (var id in ids)
+            {
+                parameters.Add("id", id);
+            }
+        }
+
+        if (divisionIds != null)
+        {
+            foreach (var divisionId in divisionIds)
+            {
+                parameters.Add("divisionId", divisionId);
+            }
+        }
+
+        var client = _httpClientFactory.CreateClient(PureCloudConstants.PureCloudClientName);
+
+        var response = await client.GetAsync(UriHelper.GetUri("api/v2/routing/wrapupcodes", parameters), cancellationToken);
+
+        response.EnsureSuccessStatusCode();
+
+        return await response.Content.ReadFromJsonAsync<WrapupCodeEntityListing>(_options.JsonSerializerOptions, cancellationToken);
+    }
+
+    /// <inheritdoc />
+    public async Task<WrapupCodeDivisionViewEntityListing> GetRoutingWrapupcodesDivisionviewAsync(int? pageSize = null, int? pageNumber = null, string name = null, IEnumerable<string> ids = null, IEnumerable<string> divisionIds = null, bool? includeState = null, CancellationToken cancellationToken = default)
+    {
+        var parameters = new NameValueCollection();
+
+        if (pageSize.HasValue)
+        {
+            parameters.Add("pageSize", pageSize.Value.ToString());
+        }
+
+        if (pageNumber.HasValue)
+        {
+            parameters.Add("pageNumber", pageNumber.Value.ToString());
+        }
+
+        if (!string.IsNullOrEmpty(name))
+        {
+            parameters.Add("name", name);
+        }
+
+        if (ids != null)
+        {
+            foreach (var id in ids)
+            {
+                parameters.Add("id", id);
+            }
+        }
+
+        if (divisionIds != null)
+        {
+            foreach (var divisionId in divisionIds)
+            {
+                parameters.Add("divisionId", divisionId);
+            }
+        }
+
+        if (includeState.HasValue)
+        {
+            parameters.Add("includeState", includeState.Value.ToString().ToLower());
+        }
+
+        var client = _httpClientFactory.CreateClient(PureCloudConstants.PureCloudClientName);
+
+        var response = await client.GetAsync(UriHelper.GetUri("api/v2/routing/wrapupcodes/divisionviews", parameters), cancellationToken);
+
+        response.EnsureSuccessStatusCode();
+
+        return await response.Content.ReadFromJsonAsync<WrapupCodeDivisionViewEntityListing>(_options.JsonSerializerOptions, cancellationToken);
+    }
+
+    /// <inheritdoc />
+    public async Task<UserRoutingLanguageEntityListing> GetUserRoutinglanguagesAsync(string userId, int? pageSize = null, int? pageNumber = null, string sortOrder = null, CancellationToken cancellationToken = default)
+    {
+        ArgumentException.ThrowIfNullOrEmpty(userId);
+
+        var parameters = new NameValueCollection();
+
+        if (pageSize.HasValue)
+        {
+            parameters.Add("pageSize", pageSize.Value.ToString());
+        }
+
+        if (pageNumber.HasValue)
+        {
+            parameters.Add("pageNumber", pageNumber.Value.ToString());
+        }
+
+        if (!string.IsNullOrEmpty(sortOrder))
+        {
+            parameters.Add("sortOrder", sortOrder);
+        }
+
+        var client = _httpClientFactory.CreateClient(PureCloudConstants.PureCloudClientName);
+
+        var response = await client.GetAsync(UriHelper.GetUri($"api/v2/users/{userId}/routinglanguages", parameters), cancellationToken);
+
+        response.EnsureSuccessStatusCode();
+
+        return await response.Content.ReadFromJsonAsync<UserRoutingLanguageEntityListing>(_options.JsonSerializerOptions, cancellationToken);
+    }
+
+    /// <inheritdoc />
+    public async Task<UserSkillEntityListing> GetUserRoutingskillsAsync(string userId, int? pageSize = null, int? pageNumber = null, string sortOrder = null, CancellationToken cancellationToken = default)
+    {
+        ArgumentException.ThrowIfNullOrEmpty(userId);
+
+        var parameters = new NameValueCollection();
+
+        if (pageSize.HasValue)
+        {
+            parameters.Add("pageSize", pageSize.Value.ToString());
+        }
+
+        if (pageNumber.HasValue)
+        {
+            parameters.Add("pageNumber", pageNumber.Value.ToString());
+        }
+
+        if (!string.IsNullOrEmpty(sortOrder))
+        {
+            parameters.Add("sortOrder", sortOrder);
+        }
+
+        var client = _httpClientFactory.CreateClient(PureCloudConstants.PureCloudClientName);
+
+        var response = await client.GetAsync(UriHelper.GetUri($"api/v2/users/{userId}/routingskills", parameters), cancellationToken);
+
+        response.EnsureSuccessStatusCode();
+
+        return await response.Content.ReadFromJsonAsync<UserSkillEntityListing>(_options.JsonSerializerOptions, cancellationToken);
+    }
+
+    /// <inheritdoc />
+    public async Task<UserSkillGroupEntityListing> GetUserSkillgroupsAsync(string userId, int? pageSize = null, int? pageNumber = null, string sortOrder = null, CancellationToken cancellationToken = default)
+    {
+        ArgumentException.ThrowIfNullOrEmpty(userId);
+
+        var parameters = new NameValueCollection();
+
+        if (pageSize.HasValue)
+        {
+            parameters.Add("pageSize", pageSize.Value.ToString());
+        }
+
+        if (pageNumber.HasValue)
+        {
+            parameters.Add("pageNumber", pageNumber.Value.ToString());
+        }
+
+        if (!string.IsNullOrEmpty(sortOrder))
+        {
+            parameters.Add("sortOrder", sortOrder);
+        }
+
+        var client = _httpClientFactory.CreateClient(PureCloudConstants.PureCloudClientName);
+
+        var response = await client.GetAsync(UriHelper.GetUri($"api/v2/users/{userId}/skillgroups", parameters), cancellationToken);
+
+        response.EnsureSuccessStatusCode();
+
+        return await response.Content.ReadFromJsonAsync<UserSkillGroupEntityListing>(_options.JsonSerializerOptions, cancellationToken);
+    }
 }
