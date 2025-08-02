@@ -726,20 +726,6 @@ public interface IRoutingApi
     Task<SkillGroupMemberEntityListing> GetRoutingSkillgroupMembersAsync(string skillGroupId, int? pageSize = null, string after = null, string before = null, IEnumerable<string> expands = null, CancellationToken cancellationToken = default);
 
     /// <summary>
-    /// Get the organization-wide max utilization settings
-    /// </summary>
-    /// <param name="cancellationToken">Cancellation token</param>
-    /// <returns>Utilization settings</returns>
-    Task<UtilizationResponse> GetRoutingUtilizationAsync(CancellationToken cancellationToken = default);
-
-    /// <summary>
-    /// Get an organization's routing settings
-    /// </summary>
-    /// <param name="cancellationToken">Cancellation token</param>
-    /// <returns>Routing settings</returns>
-    Task<RoutingSettings> GetRoutingSettingsAsync(CancellationToken cancellationToken = default);
-
-    /// <summary>
     /// Get Contact Center Settings
     /// </summary>
     /// <param name="cancellationToken">Cancellation token</param>
@@ -785,22 +771,6 @@ public interface IRoutingApi
     Task<Language> GetRoutingLanguageAsync(string languageId, CancellationToken cancellationToken = default);
 
     /// <summary>
-    /// Create Language
-    /// </summary>
-    /// <param name="body">Language</param>
-    /// <param name="cancellationToken">Cancellation token</param>
-    /// <returns>Created language</returns>
-    Task<Language> CreateRoutingLanguageAsync(Language body, CancellationToken cancellationToken = default);
-
-    /// <summary>
-    /// Create Skill
-    /// </summary>
-    /// <param name="body">Skill</param>
-    /// <param name="cancellationToken">Cancellation token</param>
-    /// <returns>Created skill</returns>
-    Task<RoutingSkill> CreateRoutingSkillAsync(RoutingSkill body, CancellationToken cancellationToken = default);
-
-    /// <summary>
     /// Create a skill group
     /// </summary>
     /// <param name="body">Create skill group</param>
@@ -827,12 +797,6 @@ public interface IRoutingApi
     /// <summary>
     /// Update a queue
     /// </summary>
-    /// <param name="queueId">Queue ID</param>
-    /// <param name="body">Queue</param>
-    /// <param name="cancellationToken">Cancellation token</param>
-    /// <returns>Updated queue</returns>
-    Task<Queue> UpdateRoutingQueueAsync(string queueId, QueueRequest body, CancellationToken cancellationToken = default);
-
     /// <summary>
     /// Update a skill group
     /// </summary>
@@ -863,10 +827,6 @@ public interface IRoutingApi
     /// Get the user's max utilization settings
     /// </summary>
     /// <param name="userId">User ID</param>
-    /// <param name="cancellationToken">Cancellation token</param>
-    /// <returns>User utilization settings</returns>
-    Task<UserUtilization> GetRoutingUserUtilizationAsync(string userId, CancellationToken cancellationToken = default);
-
     /// <summary>
     /// Update the user's max utilization settings
     /// </summary>
@@ -880,10 +840,6 @@ public interface IRoutingApi
     /// Get the user's Direct Routing Backup settings
     /// </summary>
     /// <param name="userId">User ID</param>
-    /// <param name="cancellationToken">Cancellation token</param>
-    /// <returns>Direct routing backup settings</returns>
-    Task<AgentDirectRoutingBackupSettings> GetRoutingUserDirectroutingbackupSettingsAsync(string userId, CancellationToken cancellationToken = default);
-
     /// <summary>
     /// Update the user's Direct Routing Backup settings
     /// </summary>
