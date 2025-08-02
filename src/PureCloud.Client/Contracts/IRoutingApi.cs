@@ -724,4 +724,190 @@ public interface IRoutingApi
     /// <param name="cancellationToken">Cancellation token</param>
     /// <returns>Skill group member listings</returns>
     Task<SkillGroupMemberEntityListing> GetRoutingSkillgroupMembersAsync(string skillGroupId, int? pageSize = null, string after = null, string before = null, IEnumerable<string> expand = null, CancellationToken cancellationToken = default);
+
+    /// <summary>
+    /// Get the organization-wide max utilization settings
+    /// </summary>
+    /// <param name="cancellationToken">Cancellation token</param>
+    /// <returns>Utilization settings</returns>
+    Task<UtilizationResponse> GetRoutingUtilizationAsync(CancellationToken cancellationToken = default);
+
+    /// <summary>
+    /// Get an organization's routing settings
+    /// </summary>
+    /// <param name="cancellationToken">Cancellation token</param>
+    /// <returns>Routing settings</returns>
+    Task<RoutingSettings> GetRoutingSettingsAsync(CancellationToken cancellationToken = default);
+
+    /// <summary>
+    /// Get Contact Center Settings
+    /// </summary>
+    /// <param name="cancellationToken">Cancellation token</param>
+    /// <returns>Contact center settings</returns>
+    Task<ContactCenterSettings> GetRoutingSettingsContactcenterAsync(CancellationToken cancellationToken = default);
+
+    /// <summary>
+    /// Get Transcription Settings
+    /// </summary>
+    /// <param name="cancellationToken">Cancellation token</param>
+    /// <returns>Transcription settings</returns>
+    Task<TranscriptionSettings> GetRoutingSettingsTranscriptionAsync(CancellationToken cancellationToken = default);
+
+    /// <summary>
+    /// Get the list of routing skills
+    /// </summary>
+    /// <param name="pageSize">Page size</param>
+    /// <param name="pageNumber">Page number</param>
+    /// <param name="name">Filter for results that start with this value</param>
+    /// <param name="ids">ID(s) to filter by</param>
+    /// <param name="cancellationToken">Cancellation token</param>
+    /// <returns>Skill listings</returns>
+    Task<SkillEntityListing> GetRoutingSkillsAsync(int? pageSize = null, int? pageNumber = null, string name = null, IEnumerable<string> ids = null, CancellationToken cancellationToken = default);
+
+    /// <summary>
+    /// Get the list of supported languages
+    /// </summary>
+    /// <param name="pageSize">Page size</param>
+    /// <param name="pageNumber">Page number</param>
+    /// <param name="sortOrder">Ascending or descending sort order</param>
+    /// <param name="name">Name</param>
+    /// <param name="ids">IDs to filter by</param>
+    /// <param name="cancellationToken">Cancellation token</param>
+    /// <returns>Language listings</returns>
+    Task<LanguageEntityListing> GetRoutingLanguagesAsync(int? pageSize = null, int? pageNumber = null, string sortOrder = null, string name = null, IEnumerable<string> ids = null, CancellationToken cancellationToken = default);
+
+    /// <summary>
+    /// Get routing language
+    /// </summary>
+    /// <param name="languageId">Language ID</param>
+    /// <param name="cancellationToken">Cancellation token</param>
+    /// <returns>Language details</returns>
+    Task<Language> GetRoutingLanguageAsync(string languageId, CancellationToken cancellationToken = default);
+
+    /// <summary>
+    /// Create Language
+    /// </summary>
+    /// <param name="body">Language</param>
+    /// <param name="cancellationToken">Cancellation token</param>
+    /// <returns>Created language</returns>
+    Task<Language> CreateRoutingLanguageAsync(Language body, CancellationToken cancellationToken = default);
+
+    /// <summary>
+    /// Create Skill
+    /// </summary>
+    /// <param name="body">Skill</param>
+    /// <param name="cancellationToken">Cancellation token</param>
+    /// <returns>Created skill</returns>
+    Task<RoutingSkill> CreateRoutingSkillAsync(RoutingSkill body, CancellationToken cancellationToken = default);
+
+    /// <summary>
+    /// Create a skill group
+    /// </summary>
+    /// <param name="body">Create skill group</param>
+    /// <param name="cancellationToken">Cancellation token</param>
+    /// <returns>Created skill group</returns>
+    Task<SkillGroup> CreateRoutingSkillgroupAsync(SkillGroup body, CancellationToken cancellationToken = default);
+
+    /// <summary>
+    /// Create a wrap-up code
+    /// </summary>
+    /// <param name="body">WrapupCode</param>
+    /// <param name="cancellationToken">Cancellation token</param>
+    /// <returns>Created wrap-up code</returns>
+    Task<WrapupCode> CreateRoutingWrapupcodeAsync(WrapupCode body, CancellationToken cancellationToken = default);
+
+    /// <summary>
+    /// Create a queue
+    /// </summary>
+    /// <param name="body">Queue</param>
+    /// <param name="cancellationToken">Cancellation token</param>
+    /// <returns>Created queue</returns>
+    Task<Queue> CreateRoutingQueueAsync(QueueRequest body, CancellationToken cancellationToken = default);
+
+    /// <summary>
+    /// Update a queue
+    /// </summary>
+    /// <param name="queueId">Queue ID</param>
+    /// <param name="body">Queue</param>
+    /// <param name="cancellationToken">Cancellation token</param>
+    /// <returns>Updated queue</returns>
+    Task<Queue> UpdateRoutingQueueAsync(string queueId, QueueRequest body, CancellationToken cancellationToken = default);
+
+    /// <summary>
+    /// Update a skill group
+    /// </summary>
+    /// <param name="skillGroupId">Skill Group ID</param>
+    /// <param name="body">Update skill group</param>
+    /// <param name="cancellationToken">Cancellation token</param>
+    /// <returns>Updated skill group</returns>
+    Task<SkillGroup> UpdateRoutingSkillgroupAsync(string skillGroupId, SkillGroup body, CancellationToken cancellationToken = default);
+
+    /// <summary>
+    /// Update wrap-up code
+    /// </summary>
+    /// <param name="codeId">The wrap-up code ID</param>
+    /// <param name="body">WrapupCode</param>
+    /// <param name="cancellationToken">Cancellation token</param>
+    /// <returns>Updated wrap-up code</returns>
+    Task<WrapupCode> UpdateRoutingWrapupcodeAsync(string codeId, WrapupCode body, CancellationToken cancellationToken = default);
+
+    /// <summary>
+    /// Update the organization-wide max utilization settings
+    /// </summary>
+    /// <param name="body">utilization</param>
+    /// <param name="cancellationToken">Cancellation token</param>
+    /// <returns>Updated utilization settings</returns>
+    Task<UtilizationResponse> UpdateRoutingUtilizationAsync(UtilizationRequest body, CancellationToken cancellationToken = default);
+
+    /// <summary>
+    /// Get the user's max utilization settings
+    /// </summary>
+    /// <param name="userId">User ID</param>
+    /// <param name="cancellationToken">Cancellation token</param>
+    /// <returns>User utilization settings</returns>
+    Task<UserUtilization> GetRoutingUserUtilizationAsync(string userId, CancellationToken cancellationToken = default);
+
+    /// <summary>
+    /// Update the user's max utilization settings
+    /// </summary>
+    /// <param name="userId">User ID</param>
+    /// <param name="body">utilization</param>
+    /// <param name="cancellationToken">Cancellation token</param>
+    /// <returns>Updated user utilization settings</returns>
+    Task<UserUtilization> UpdateRoutingUserUtilizationAsync(string userId, UserUtilization body, CancellationToken cancellationToken = default);
+
+    /// <summary>
+    /// Get the user's Direct Routing Backup settings
+    /// </summary>
+    /// <param name="userId">User ID</param>
+    /// <param name="cancellationToken">Cancellation token</param>
+    /// <returns>Direct routing backup settings</returns>
+    Task<AgentDirectRoutingBackupSettings> GetRoutingUserDirectroutingbackupSettingsAsync(string userId, CancellationToken cancellationToken = default);
+
+    /// <summary>
+    /// Update the user's Direct Routing Backup settings
+    /// </summary>
+    /// <param name="userId">User ID</param>
+    /// <param name="body">directRoutingBackup</param>
+    /// <param name="cancellationToken">Cancellation token</param>
+    /// <returns>Updated direct routing backup settings</returns>
+    Task<AgentDirectRoutingBackupSettings> UpdateRoutingUserDirectroutingbackupSettingsAsync(string userId, AgentDirectRoutingBackupSettings body, CancellationToken cancellationToken = default);
+
+    /// <summary>
+    /// Create a route
+    /// </summary>
+    /// <param name="domainName">email domain</param>
+    /// <param name="body">Route</param>
+    /// <param name="cancellationToken">Cancellation token</param>
+    /// <returns>Created route</returns>
+    Task<InboundRoute> CreateRoutingEmailDomainRouteAsync(string domainName, InboundRoute body, CancellationToken cancellationToken = default);
+
+    /// <summary>
+    /// Validate domain settings
+    /// </summary>
+    /// <param name="domainId">domain ID</param>
+    /// <param name="body">Domain</param>
+    /// <param name="cancellationToken">Cancellation token</param>
+    /// <returns>Validated domain</returns>
+    Task<InboundDomain> ValidateRoutingEmailDomainAsync(string domainId, InboundDomainPatchRequest body, CancellationToken cancellationToken = default);
 }
