@@ -539,18 +539,189 @@ public interface IRoutingApi
     /// <returns>Created domain</returns>
     Task<InboundDomain> CreateRoutingEmailOutboundDomainAsync(InboundDomain body, CancellationToken cancellationToken = default);
 
-    // TODO: Add remaining ~110 methods after migrating required models:
-    // - Delete methods: ~15 more (DeleteRoutingPredictor, DeleteRoutingSettings, etc.)
-    // - Get methods: ~75 more (GetRoutingLanguage, GetRoutingLanguages, GetRoutingSkills, etc.) 
-    // - Create methods: ~20 more (CreateRoutingLanguage, CreateRoutingQueue, CreateRoutingSkill, etc.)
-    // - Update methods: ~21 more (UpdateRoutingLanguage, UpdateRoutingQueue, UpdateRoutingSkill, etc.)
-    // 
-    // Required models to create or fix:
-    // - Language, LanguageEntityListing (exists but not building correctly)
-    // - QueueRequest, CreateQueueRequest
-    // - RoutingSkill, SkillEntityListing
-    // - SkillGroup, SkillGroupEntityListing  
-    // - WrapupCode, WrapupCodeEntityListing
-    // - OutboundDomain, OutboundDomainEntityListing
-    // - And ~50 more model classes
+    /// <summary>
+    /// Get recipients
+    /// </summary>
+    /// <param name="messengerType">Messenger Type</param>
+    /// <param name="name">Recipient Name</param>
+    /// <param name="pageSize">Page size</param>
+    /// <param name="pageNumber">Page number</param>
+    /// <param name="cancellationToken">Cancellation token</param>
+    /// <returns>Recipient listings</returns>
+    Task<RecipientListing> GetRoutingMessageRecipientsAsync(string messengerType = null, string name = null, int? pageSize = null, int? pageNumber = null, CancellationToken cancellationToken = default);
+
+    /// <summary>
+    /// Get a recipient
+    /// </summary>
+    /// <param name="recipientId">Recipient ID</param>
+    /// <param name="cancellationToken">Cancellation token</param>
+    /// <returns>Recipient details</returns>
+    Task<Recipient> GetRoutingMessageRecipientAsync(string recipientId, CancellationToken cancellationToken = default);
+
+    /// <summary>
+    /// Retrieve a list of predictors
+    /// </summary>
+    /// <param name="before">Cursor for previous page</param>
+    /// <param name="after">Cursor for next page</param>
+    /// <param name="limit">Number of entities to return</param>
+    /// <param name="queueIds">Queue IDs to filter by</param>
+    /// <param name="cancellationToken">Cancellation token</param>
+    /// <returns>Predictor listings</returns>
+    Task<PredictorListing> GetRoutingPredictorsAsync(string before = null, string after = null, int? limit = null, IEnumerable<string> queueIds = null, CancellationToken cancellationToken = default);
+
+    /// <summary>
+    /// Retrieve a single predictor
+    /// </summary>
+    /// <param name="predictorId">Predictor ID</param>
+    /// <param name="cancellationToken">Cancellation token</param>
+    /// <returns>Predictor details</returns>
+    Task<Predictor> GetRoutingPredictorAsync(string predictorId, CancellationToken cancellationToken = default);
+
+    /// <summary>
+    /// Retrieve Predictor Models
+    /// </summary>
+    /// <param name="predictorId">Predictor ID</param>
+    /// <param name="cancellationToken">Cancellation token</param>
+    /// <returns>Predictor model listings</returns>
+    Task<PredictorModelListing> GetRoutingPredictorModelsAsync(string predictorId, CancellationToken cancellationToken = default);
+
+    /// <summary>
+    /// Retrieve Predictor Model Features
+    /// </summary>
+    /// <param name="predictorId">Predictor ID</param>
+    /// <param name="modelId">Model ID</param>
+    /// <param name="cancellationToken">Cancellation token</param>
+    /// <returns>Model feature listings</returns>
+    Task<PredictorModelFeatureListing> GetRoutingPredictorModelFeaturesAsync(string predictorId, string modelId, CancellationToken cancellationToken = default);
+
+    /// <summary>
+    /// Get a list of Key Performance Indicators
+    /// </summary>
+    /// <param name="kpiIds">Key Performance Indicator IDs</param>
+    /// <param name="expand">Fields to expand</param>
+    /// <param name="cancellationToken">Cancellation token</param>
+    /// <returns>Key performance indicator listings</returns>
+    Task<KeyPerformanceIndicatorListing> GetRoutingPredictorsKeyperformanceindicatorsAsync(IEnumerable<string> kpiIds = null, IEnumerable<string> expand = null, CancellationToken cancellationToken = default);
+
+    /// <summary>
+    /// Get the list of routing queues
+    /// </summary>
+    /// <param name="pageNumber">Page number</param>
+    /// <param name="pageSize">Page size</param>
+    /// <param name="sortOrder">Sort order</param>
+    /// <param name="name">Queue name</param>
+    /// <param name="ids">Queue IDs</param>
+    /// <param name="divisionIds">Division IDs</param>
+    /// <param name="hasMember">Has member</param>
+    /// <param name="cancellationToken">Cancellation token</param>
+    /// <returns>Queue listings</returns>
+    Task<QueueEntityListing> GetRoutingQueuesAsync(int? pageNumber = null, int? pageSize = null, string sortOrder = null, string name = null, IEnumerable<string> ids = null, IEnumerable<string> divisionIds = null, bool? hasMember = null, CancellationToken cancellationToken = default);
+
+    /// <summary>
+    /// Get the members of this queue
+    /// </summary>
+    /// <param name="queueId">Queue ID</param>
+    /// <param name="pageNumber">Page number</param>
+    /// <param name="pageSize">Page size</param>
+    /// <param name="sortOrder">Sort order</param>
+    /// <param name="expand">Fields to expand</param>
+    /// <param name="joined">Filter by joined status</param>
+    /// <param name="name">Member name</param>
+    /// <param name="profileSkills">Profile skills</param>
+    /// <param name="skills">Skills</param>
+    /// <param name="languages">Languages</param>
+    /// <param name="routingStatus">Routing status</param>
+    /// <param name="presence">Presence</param>
+    /// <param name="cancellationToken">Cancellation token</param>
+    /// <returns>Queue member listings</returns>
+    Task<QueueMemberEntityListing> GetRoutingQueueMembersAsync(string queueId, int? pageNumber = null, int? pageSize = null, string sortOrder = null, IEnumerable<string> expand = null, bool? joined = null, string name = null, IEnumerable<string> profileSkills = null, IEnumerable<string> skills = null, IEnumerable<string> languages = null, IEnumerable<string> routingStatus = null, IEnumerable<string> presence = null, CancellationToken cancellationToken = default);
+
+    /// <summary>
+    /// Get the members of this queue as a user listing
+    /// </summary>
+    /// <param name="queueId">Queue ID</param>
+    /// <param name="pageNumber">Page number</param>
+    /// <param name="pageSize">Page size</param>
+    /// <param name="sortOrder">Sort order</param>
+    /// <param name="expand">Fields to expand</param>
+    /// <param name="joined">Filter by joined status</param>
+    /// <param name="name">Member name</param>
+    /// <param name="profileSkills">Profile skills</param>
+    /// <param name="skills">Skills</param>
+    /// <param name="languages">Languages</param>
+    /// <param name="routingStatus">Routing status</param>
+    /// <param name="presence">Presence</param>
+    /// <param name="cancellationToken">Cancellation token</param>
+    /// <returns>Queue member listings</returns>
+    Task<QueueMemberEntityListingV1> GetRoutingQueueUsersAsync(string queueId, int? pageNumber = null, int? pageSize = null, string sortOrder = null, IEnumerable<string> expand = null, bool? joined = null, string name = null, IEnumerable<string> profileSkills = null, IEnumerable<string> skills = null, IEnumerable<string> languages = null, IEnumerable<string> routingStatus = null, IEnumerable<string> presence = null, CancellationToken cancellationToken = default);
+
+    /// <summary>
+    /// Get the wrap-up codes for a queue
+    /// </summary>
+    /// <param name="queueId">Queue ID</param>
+    /// <param name="pageSize">Page size</param>
+    /// <param name="pageNumber">Page number</param>
+    /// <param name="cancellationToken">Cancellation token</param>
+    /// <returns>Wrap-up code listings</returns>
+    Task<WrapupCodeEntityListing> GetRoutingQueueWrapupcodesAsync(string queueId, int? pageSize = null, int? pageNumber = null, CancellationToken cancellationToken = default);
+
+    /// <summary>
+    /// Get a list of Addresses
+    /// </summary>
+    /// <param name="pageSize">Page size</param>
+    /// <param name="pageNumber">Page number</param>
+    /// <param name="cancellationToken">Cancellation token</param>
+    /// <returns>SMS address listings</returns>
+    Task<SmsAddressEntityListing> GetRoutingSmsAddressesAsync(int? pageSize = null, int? pageNumber = null, CancellationToken cancellationToken = default);
+
+    /// <summary>
+    /// Get a list of available phone numbers for SMS provisioning
+    /// </summary>
+    /// <param name="countryCode">The two-character country code</param>
+    /// <param name="phoneNumberType">Type of phone number</param>
+    /// <param name="region">Region/province/state for the phone number</param>
+    /// <param name="city">City for the phone number</param>
+    /// <param name="areaCode">Area code for the phone number</param>
+    /// <param name="pattern">A pattern to match phone numbers</param>
+    /// <param name="addressRequirement">This indicates whether the phone number requires to have an Address registered</param>
+    /// <param name="cancellationToken">Cancellation token</param>
+    /// <returns>Available phone number listings</returns>
+    Task<SmsAvailablePhoneNumberEntityListing> GetRoutingSmsAvailablephonenumbersAsync(string countryCode, string phoneNumberType, string region = null, string city = null, string areaCode = null, string pattern = null, string addressRequirement = null, CancellationToken cancellationToken = default);
+
+    /// <summary>
+    /// Get a list of provisioned phone numbers
+    /// </summary>
+    /// <param name="phoneNumber">Filter on phone number address. Allowable characters are the digits '0-9' and the wild card character '*'</param>
+    /// <param name="phoneNumberType">Filter on phone number type</param>
+    /// <param name="phoneNumberStatus">Filter on phone number status</param>
+    /// <param name="pageSize">Page size</param>
+    /// <param name="pageNumber">Page number</param>
+    /// <param name="sortBy">Optional field to sort by</param>
+    /// <param name="sortOrder">Sort order</param>
+    /// <param name="language">A language specified as an ISO 639-1 language code</param>
+    /// <param name="cancellationToken">Cancellation token</param>
+    /// <returns>SMS phone number listings</returns>
+    Task<SmsPhoneNumberEntityListing> GetRoutingSmsPhoneNumbersAsync(string phoneNumber = null, string phoneNumberType = null, string phoneNumberStatus = null, int? pageSize = null, int? pageNumber = null, string sortBy = null, string sortOrder = null, string language = null, CancellationToken cancellationToken = default);
+
+    /// <summary>
+    /// Get skill groups
+    /// </summary>
+    /// <param name="pageSize">Page size</param>
+    /// <param name="after">The cursor that points to the next item</param>
+    /// <param name="before">The cursor that points to the previous item</param>
+    /// <param name="cancellationToken">Cancellation token</param>
+    /// <returns>Skill group listings</returns>
+    Task<SkillGroupEntityListing> GetRoutingSkillgroupsAsync(int? pageSize = null, string after = null, string before = null, CancellationToken cancellationToken = default);
+
+    /// <summary>
+    /// Get skill group members
+    /// </summary>
+    /// <param name="skillGroupId">Skill Group ID</param>
+    /// <param name="pageSize">Page size</param>
+    /// <param name="after">The cursor that points to the next item</param>
+    /// <param name="before">The cursor that points to the previous item</param>
+    /// <param name="expand">Fields to expand</param>
+    /// <param name="cancellationToken">Cancellation token</param>
+    /// <returns>Skill group member listings</returns>
+    Task<SkillGroupMemberEntityListing> GetRoutingSkillgroupMembersAsync(string skillGroupId, int? pageSize = null, string after = null, string before = null, IEnumerable<string> expand = null, CancellationToken cancellationToken = default);
 }
