@@ -1110,4 +1110,57 @@ public interface IRoutingApi
     /// <param name="cancellationToken">Cancellation token</param>
     /// <returns>Utilization tag entity listing</returns>
     Task<UtilizationTagEntityListing> GetRoutingUtilizationTagsAsync(int? pageSize = null, int? pageNumber = null, string sortOrder = null, string name = null, CancellationToken cancellationToken = default);
+
+    /// <summary>
+    /// Get an assistant associated with a queue
+    /// </summary>
+    /// <param name="queueId">Queue ID</param>
+    /// <param name="expand">Which fields, if any, to expand</param>
+    /// <param name="cancellationToken">Cancellation token</param>
+    /// <returns>Assistant queue</returns>
+    Task<AssistantQueue> GetRoutingQueueAssistantAsync(string queueId, string expand = null, CancellationToken cancellationToken = default);
+
+    /// <summary>
+    /// Get a comparison period
+    /// </summary>
+    /// <param name="queueId">Queue id</param>
+    /// <param name="comparisonPeriodId">ComparisonPeriod id</param>
+    /// <param name="cancellationToken">Cancellation token</param>
+    /// <returns>Comparison period</returns>
+    Task<ComparisonPeriod> GetRoutingQueueComparisonperiodAsync(string queueId, string comparisonPeriodId, CancellationToken cancellationToken = default);
+
+    /// <summary>
+    /// Get list of comparison periods
+    /// </summary>
+    /// <param name="queueId">Queue id</param>
+    /// <param name="cancellationToken">Cancellation token</param>
+    /// <returns>Comparison period listing</returns>
+    Task<ComparisonPeriodListing> GetRoutingQueueComparisonperiodsAsync(string queueId, CancellationToken cancellationToken = default);
+
+    /// <summary>
+    /// Get estimated wait time
+    /// </summary>
+    /// <param name="queueId">Queue ID</param>
+    /// <param name="conversationId">Conversation ID</param>
+    /// <param name="cancellationToken">Cancellation token</param>
+    /// <returns>Estimated wait time predictions</returns>
+    Task<EstimatedWaitTimePredictions> GetRoutingQueueEstimatedwaittimeAsync(string queueId, string conversationId = null, CancellationToken cancellationToken = default);
+
+    /// <summary>
+    /// Get queue identity resolution settings
+    /// </summary>
+    /// <param name="queueId">Queue ID</param>
+    /// <param name="cancellationToken">Cancellation token</param>
+    /// <returns>Identity resolution queue config</returns>
+    Task<IdentityResolutionQueueConfig> GetRoutingQueueIdentityresolutionAsync(string queueId, CancellationToken cancellationToken = default);
+
+    /// <summary>
+    /// Get estimated wait time for media type
+    /// </summary>
+    /// <param name="queueId">Queue ID</param>
+    /// <param name="mediaType">Media type</param>
+    /// <param name="labelId">Unique id that represents the interaction label used with media type for EWT calculation</param>
+    /// <param name="cancellationToken">Cancellation token</param>
+    /// <returns>Estimated wait time predictions</returns>
+    Task<EstimatedWaitTimePredictions> GetRoutingQueueMediatypeEstimatedwaittimeAsync(string queueId, string mediaType, string labelId = null, CancellationToken cancellationToken = default);
 }
