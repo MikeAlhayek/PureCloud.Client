@@ -910,4 +910,126 @@ public interface IRoutingApi
     /// <param name="cancellationToken">Cancellation token</param>
     /// <returns>Validated domain</returns>
     Task<InboundDomain> ValidateRoutingEmailDomainAsync(string domainId, InboundDomainPatchRequest body, CancellationToken cancellationToken = default);
+
+    /// <summary>
+    /// Delete a queue
+    /// </summary>
+    /// <param name="queueId">Queue ID</param>
+    /// <param name="forceDelete">forceDelete</param>
+    /// <param name="cancellationToken">Cancellation token</param>
+    /// <returns>Success status</returns>
+    Task<bool> DeleteRoutingQueueAsync(string queueId, bool? forceDelete = null, CancellationToken cancellationToken = default);
+
+    /// <summary>
+    /// Delete an organization's routing settings
+    /// </summary>
+    /// <param name="cancellationToken">Cancellation token</param>
+    /// <returns>Success status</returns>
+    Task<bool> DeleteRoutingSettingsAsync(CancellationToken cancellationToken = default);
+
+    /// <summary>
+    /// Delete the organization-wide max utilization settings and revert to the system default
+    /// </summary>
+    /// <param name="cancellationToken">Cancellation token</param>
+    /// <returns>Success status</returns>
+    Task<bool> DeleteRoutingUtilizationAsync(CancellationToken cancellationToken = default);
+
+    /// <summary>
+    /// Delete the user's max utilization settings and revert to the organization-wide default
+    /// </summary>
+    /// <param name="userId">User ID</param>
+    /// <param name="cancellationToken">Cancellation token</param>
+    /// <returns>Success status</returns>
+    Task<bool> DeleteRoutingUserUtilizationAsync(string userId, CancellationToken cancellationToken = default);
+
+    /// <summary>
+    /// Update domain settings
+    /// </summary>
+    /// <param name="domainId">domain ID</param>
+    /// <param name="body">Domain</param>
+    /// <param name="cancellationToken">Cancellation token</param>
+    /// <returns>Updated domain</returns>
+    Task<InboundDomain> UpdateRoutingEmailDomainAsync(string domainId, InboundDomainPatchRequest body, CancellationToken cancellationToken = default);
+
+    /// <summary>
+    /// Update a route
+    /// </summary>
+    /// <param name="domainName">email domain</param>
+    /// <param name="routeId">route ID</param>
+    /// <param name="body">Route</param>
+    /// <param name="cancellationToken">Cancellation token</param>
+    /// <returns>Updated route</returns>
+    Task<InboundRoute> UpdateRoutingEmailDomainRouteAsync(string domainName, string routeId, InboundRoute body, CancellationToken cancellationToken = default);
+
+    /// <summary>
+    /// Get a route
+    /// </summary>
+    /// <param name="domainName">email domain</param>
+    /// <param name="routeId">route ID</param>
+    /// <param name="cancellationToken">Cancellation token</param>
+    /// <returns>Route details</returns>
+    Task<InboundRoute> GetRoutingEmailDomainRouteAsync(string domainName, string routeId, CancellationToken cancellationToken = default);
+
+    /// <summary>
+    /// Get routes
+    /// </summary>
+    /// <param name="domainName">email domain</param>
+    /// <param name="pageSize">Page size</param>
+    /// <param name="pageNumber">Page number</param>
+    /// <param name="pattern">Filter routes by the route's pattern property</param>
+    /// <param name="cancellationToken">Cancellation token</param>
+    /// <returns>Route listings</returns>
+    Task<InboundRouteEntityListing> GetRoutingEmailDomainRoutesAsync(string domainName, int? pageSize = null, int? pageNumber = null, string pattern = null, CancellationToken cancellationToken = default);
+
+    /// <summary>
+    /// Get domains
+    /// </summary>
+    /// <param name="pageSize">Page size</param>
+    /// <param name="pageNumber">Page number</param>
+    /// <param name="excludeStatus">Exclude MX record data</param>
+    /// <param name="filter">Optional search filter</param>
+    /// <param name="cancellationToken">Cancellation token</param>
+    /// <returns>Domain listings</returns>
+    Task<InboundDomainEntityListing> GetRoutingEmailDomainsAsync(int? pageSize = null, int? pageNumber = null, bool? excludeStatus = null, string filter = null, CancellationToken cancellationToken = default);
+
+    /// <summary>
+    /// Create a domain
+    /// </summary>
+    /// <param name="body">Domain</param>
+    /// <param name="cancellationToken">Cancellation token</param>
+    /// <returns>Created domain</returns>
+    Task<InboundDomain> CreateRoutingEmailDomainAsync(InboundDomain body, CancellationToken cancellationToken = default);
+
+    /// <summary>
+    /// Delete a domain
+    /// </summary>
+    /// <param name="domainId">domain ID</param>
+    /// <param name="cancellationToken">Cancellation token</param>
+    /// <returns>Success status</returns>
+    Task<bool> DeleteRoutingEmailDomainAsync(string domainId, CancellationToken cancellationToken = default);
+
+    /// <summary>
+    /// Delete a route
+    /// </summary>
+    /// <param name="domainName">email domain</param>
+    /// <param name="routeId">route ID</param>
+    /// <param name="cancellationToken">Cancellation token</param>
+    /// <returns>Success status</returns>
+    Task<bool> DeleteRoutingEmailDomainRouteAsync(string domainName, string routeId, CancellationToken cancellationToken = default);
+
+    /// <summary>
+    /// Provision an Address for SMS
+    /// </summary>
+    /// <param name="body">SmsAddress</param>
+    /// <param name="cancellationToken">Cancellation token</param>
+    /// <returns>Created SMS address</returns>
+    Task<SmsAddress> CreateRoutingSmsAddressAsync(SmsAddressProvision body, CancellationToken cancellationToken = default);
+
+    /// <summary>
+    /// Provision a phone number for SMS
+    /// </summary>
+    /// <param name="body">SmsPhoneNumber</param>
+    /// <param name="cancellationToken">Cancellation token</param>
+    /// <returns>Created SMS phone number</returns>
+    Task<SmsPhoneNumber> CreateRoutingSmsPhoneNumberAsync(SmsPhoneNumberProvision body, CancellationToken cancellationToken = default);
 }

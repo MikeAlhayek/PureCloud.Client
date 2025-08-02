@@ -1950,4 +1950,239 @@ public sealed class RoutingApi : IRoutingApi
 
         return await response.Content.ReadFromJsonAsync<InboundDomain>(_options.JsonSerializerOptions, cancellationToken);
     }
+
+    /// <inheritdoc />
+    public async Task<bool> DeleteRoutingQueueAsync(string queueId, bool? forceDelete = null, CancellationToken cancellationToken = default)
+    {
+        ArgumentException.ThrowIfNullOrEmpty(queueId);
+
+        var client = _httpClientFactory.CreateClient(PureCloudConstants.PureCloudClientName);
+
+        var parameters = new NameValueCollection();
+
+        if (forceDelete.HasValue)
+        {
+            parameters.Add("forceDelete", forceDelete.Value.ToString().ToLower());
+        }
+
+        var uri = UriHelper.GetUri($"api/v2/routing/queues/{Uri.EscapeDataString(queueId)}", parameters);
+
+        var response = await client.DeleteAsync(uri, cancellationToken);
+
+        return response.IsSuccessStatusCode;
+    }
+
+    /// <inheritdoc />
+    public async Task<bool> DeleteRoutingSettingsAsync(CancellationToken cancellationToken = default)
+    {
+        var client = _httpClientFactory.CreateClient(PureCloudConstants.PureCloudClientName);
+
+        var response = await client.DeleteAsync("api/v2/routing/settings", cancellationToken);
+
+        return response.IsSuccessStatusCode;
+    }
+
+    /// <inheritdoc />
+    public async Task<bool> DeleteRoutingUtilizationAsync(CancellationToken cancellationToken = default)
+    {
+        var client = _httpClientFactory.CreateClient(PureCloudConstants.PureCloudClientName);
+
+        var response = await client.DeleteAsync("api/v2/routing/utilization", cancellationToken);
+
+        return response.IsSuccessStatusCode;
+    }
+
+    /// <inheritdoc />
+    public async Task<bool> DeleteRoutingUserUtilizationAsync(string userId, CancellationToken cancellationToken = default)
+    {
+        ArgumentException.ThrowIfNullOrEmpty(userId);
+
+        var client = _httpClientFactory.CreateClient(PureCloudConstants.PureCloudClientName);
+
+        var response = await client.DeleteAsync($"api/v2/routing/users/{Uri.EscapeDataString(userId)}/utilization", cancellationToken);
+
+        return response.IsSuccessStatusCode;
+    }
+
+    /// <inheritdoc />
+    public async Task<InboundDomain> UpdateRoutingEmailDomainAsync(string domainId, InboundDomainPatchRequest body, CancellationToken cancellationToken = default)
+    {
+        ArgumentException.ThrowIfNullOrEmpty(domainId);
+        ArgumentNullException.ThrowIfNull(body);
+
+        var client = _httpClientFactory.CreateClient(PureCloudConstants.PureCloudClientName);
+
+        var response = await client.PatchAsJsonAsync($"api/v2/routing/email/domains/{Uri.EscapeDataString(domainId)}", body, cancellationToken);
+
+        response.EnsureSuccessStatusCode();
+
+        return await response.Content.ReadFromJsonAsync<InboundDomain>(_options.JsonSerializerOptions, cancellationToken);
+    }
+
+    /// <inheritdoc />
+    public async Task<InboundRoute> UpdateRoutingEmailDomainRouteAsync(string domainName, string routeId, InboundRoute body, CancellationToken cancellationToken = default)
+    {
+        ArgumentException.ThrowIfNullOrEmpty(domainName);
+        ArgumentException.ThrowIfNullOrEmpty(routeId);
+        ArgumentNullException.ThrowIfNull(body);
+
+        var client = _httpClientFactory.CreateClient(PureCloudConstants.PureCloudClientName);
+
+        var response = await client.PutAsJsonAsync($"api/v2/routing/email/domains/{Uri.EscapeDataString(domainName)}/routes/{Uri.EscapeDataString(routeId)}", body, cancellationToken);
+
+        response.EnsureSuccessStatusCode();
+
+        return await response.Content.ReadFromJsonAsync<InboundRoute>(_options.JsonSerializerOptions, cancellationToken);
+    }
+
+    /// <inheritdoc />
+    public async Task<InboundRoute> GetRoutingEmailDomainRouteAsync(string domainName, string routeId, CancellationToken cancellationToken = default)
+    {
+        ArgumentException.ThrowIfNullOrEmpty(domainName);
+        ArgumentException.ThrowIfNullOrEmpty(routeId);
+
+        var client = _httpClientFactory.CreateClient(PureCloudConstants.PureCloudClientName);
+
+        var response = await client.GetAsync($"api/v2/routing/email/domains/{Uri.EscapeDataString(domainName)}/routes/{Uri.EscapeDataString(routeId)}", cancellationToken);
+
+        response.EnsureSuccessStatusCode();
+
+        return await response.Content.ReadFromJsonAsync<InboundRoute>(_options.JsonSerializerOptions, cancellationToken);
+    }
+
+    /// <inheritdoc />
+    public async Task<InboundRouteEntityListing> GetRoutingEmailDomainRoutesAsync(string domainName, int? pageSize = null, int? pageNumber = null, string pattern = null, CancellationToken cancellationToken = default)
+    {
+        ArgumentException.ThrowIfNullOrEmpty(domainName);
+
+        var client = _httpClientFactory.CreateClient(PureCloudConstants.PureCloudClientName);
+
+        var parameters = new NameValueCollection();
+
+        if (pageSize.HasValue)
+        {
+            parameters.Add("pageSize", pageSize.Value.ToString());
+        }
+
+        if (pageNumber.HasValue)
+        {
+            parameters.Add("pageNumber", pageNumber.Value.ToString());
+        }
+
+        if (!string.IsNullOrEmpty(pattern))
+        {
+            parameters.Add("pattern", pattern);
+        }
+
+        var uri = UriHelper.GetUri($"api/v2/routing/email/domains/{Uri.EscapeDataString(domainName)}/routes", parameters);
+
+        var response = await client.GetAsync(uri, cancellationToken);
+
+        response.EnsureSuccessStatusCode();
+
+        return await response.Content.ReadFromJsonAsync<InboundRouteEntityListing>(_options.JsonSerializerOptions, cancellationToken);
+    }
+
+    /// <inheritdoc />
+    public async Task<InboundDomainEntityListing> GetRoutingEmailDomainsAsync(int? pageSize = null, int? pageNumber = null, bool? excludeStatus = null, string filter = null, CancellationToken cancellationToken = default)
+    {
+        var client = _httpClientFactory.CreateClient(PureCloudConstants.PureCloudClientName);
+
+        var parameters = new NameValueCollection();
+
+        if (pageSize.HasValue)
+        {
+            parameters.Add("pageSize", pageSize.Value.ToString());
+        }
+
+        if (pageNumber.HasValue)
+        {
+            parameters.Add("pageNumber", pageNumber.Value.ToString());
+        }
+
+        if (excludeStatus.HasValue)
+        {
+            parameters.Add("excludeStatus", excludeStatus.Value.ToString().ToLower());
+        }
+
+        if (!string.IsNullOrEmpty(filter))
+        {
+            parameters.Add("filter", filter);
+        }
+
+        var uri = UriHelper.GetUri("api/v2/routing/email/domains", parameters);
+
+        var response = await client.GetAsync(uri, cancellationToken);
+
+        response.EnsureSuccessStatusCode();
+
+        return await response.Content.ReadFromJsonAsync<InboundDomainEntityListing>(_options.JsonSerializerOptions, cancellationToken);
+    }
+
+    /// <inheritdoc />
+    public async Task<InboundDomain> CreateRoutingEmailDomainAsync(InboundDomain body, CancellationToken cancellationToken = default)
+    {
+        ArgumentNullException.ThrowIfNull(body);
+
+        var client = _httpClientFactory.CreateClient(PureCloudConstants.PureCloudClientName);
+
+        var response = await client.PostAsJsonAsync("api/v2/routing/email/domains", body, cancellationToken);
+
+        response.EnsureSuccessStatusCode();
+
+        return await response.Content.ReadFromJsonAsync<InboundDomain>(_options.JsonSerializerOptions, cancellationToken);
+    }
+
+    /// <inheritdoc />
+    public async Task<bool> DeleteRoutingEmailDomainAsync(string domainId, CancellationToken cancellationToken = default)
+    {
+        ArgumentException.ThrowIfNullOrEmpty(domainId);
+
+        var client = _httpClientFactory.CreateClient(PureCloudConstants.PureCloudClientName);
+
+        var response = await client.DeleteAsync($"api/v2/routing/email/domains/{Uri.EscapeDataString(domainId)}", cancellationToken);
+
+        return response.IsSuccessStatusCode;
+    }
+
+    /// <inheritdoc />
+    public async Task<bool> DeleteRoutingEmailDomainRouteAsync(string domainName, string routeId, CancellationToken cancellationToken = default)
+    {
+        ArgumentException.ThrowIfNullOrEmpty(domainName);
+        ArgumentException.ThrowIfNullOrEmpty(routeId);
+
+        var client = _httpClientFactory.CreateClient(PureCloudConstants.PureCloudClientName);
+
+        var response = await client.DeleteAsync($"api/v2/routing/email/domains/{Uri.EscapeDataString(domainName)}/routes/{Uri.EscapeDataString(routeId)}", cancellationToken);
+
+        return response.IsSuccessStatusCode;
+    }
+
+    /// <inheritdoc />
+    public async Task<SmsAddress> CreateRoutingSmsAddressAsync(SmsAddressProvision body, CancellationToken cancellationToken = default)
+    {
+        ArgumentNullException.ThrowIfNull(body);
+
+        var client = _httpClientFactory.CreateClient(PureCloudConstants.PureCloudClientName);
+
+        var response = await client.PostAsJsonAsync("api/v2/routing/sms/addresses", body, cancellationToken);
+
+        response.EnsureSuccessStatusCode();
+
+        return await response.Content.ReadFromJsonAsync<SmsAddress>(_options.JsonSerializerOptions, cancellationToken);
+    }
+
+    /// <inheritdoc />
+    public async Task<SmsPhoneNumber> CreateRoutingSmsPhoneNumberAsync(SmsPhoneNumberProvision body, CancellationToken cancellationToken = default)
+    {
+        ArgumentNullException.ThrowIfNull(body);
+
+        var client = _httpClientFactory.CreateClient(PureCloudConstants.PureCloudClientName);
+
+        var response = await client.PostAsJsonAsync("api/v2/routing/sms/phonenumbers", body, cancellationToken);
+
+        response.EnsureSuccessStatusCode();
+
+        return await response.Content.ReadFromJsonAsync<SmsPhoneNumber>(_options.JsonSerializerOptions, cancellationToken);
+    }
 }
