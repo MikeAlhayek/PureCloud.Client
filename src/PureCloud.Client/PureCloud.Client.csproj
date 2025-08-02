@@ -301,6 +301,7 @@
     <Compile Include="Models\DIDPool.cs" />
     <Compile Include="Models\DIDPool.State.cs" />
     <Compile Include="Models\DIDPool.Provider.cs" />
+    <Compile Include="Models\DnsRecordEntry.cs" />
     <Compile Include="Models\Division.cs" />
     <Compile Include="Models\DomainEdgeSoftwareUpdateDto.cs" />
     <Compile Include="Models\DomainEdgeSoftwareVersionDto.cs" />
@@ -720,6 +721,7 @@
     <Compile Include="Models\BatchUserRoutingStatusEventRequest.cs" />
     <Compile Include="Models\AssessmentJobListing.cs" />
     <Compile Include="Models\AssessmentListing.cs" />
+    <Compile Include="Models\AvailableMediaType.cs" />
     <Compile Include="Models\AvailableMediaTypeEntityListing.cs" />
     <Compile Include="Models\BenefitAssessment.cs" />
     <Compile Include="Models\BenefitAssessment.State.cs" />
@@ -1814,10 +1816,12 @@
     <Compile Include="Models\EmailHoldUpdatedEvent.cs" />
     <Compile Include="Models\EmailInitialConfiguration.cs" />
     <Compile Include="Models\EmailInitialState.cs" />
+    <Compile Include="Models\EmailOutboundDomainResult.cs" />
     <Compile Include="Models\EmailProgressTransferEvent.cs" />
     <Compile Include="Models\EmailRoutingEstablishedEvent.cs" />
     <Compile Include="Models\EmailRoutingTransferEvent.cs" />
     <Compile Include="Models\EmailRoutingTransferEvent.TransferType.cs" />
+    <Compile Include="Models\EmailSetup.cs" />
     <Compile Include="Models\EmailSettings.cs" />
     <Compile Include="Models\EmailState.cs" />
     <Compile Include="Models\EmailThreadingSettings.cs" />
@@ -2489,6 +2493,7 @@
     <Compile Include="Models\OperandPosition.StartingPositionDirection.cs" />
     <Compile Include="Models\OperatorPosition.cs" />
     <Compile Include="Models\Outcome.cs" />
+    <Compile Include="Models\OutboundDomain.cs" />
     <Compile Include="Models\OutcomeAttributionJobStateResponse.cs" />
     <Compile Include="Models\OutcomeAttributionAsyncResponse.cs" />
     <Compile Include="Models\OutcomeAttributionListing.cs" />
@@ -2678,6 +2683,7 @@
     <Compile Include="Models\RecordingTemplateFooter.cs" />
     <Compile Include="Models\RecordingTemplateHeader.cs" />
     <Compile Include="Models\RecordingTemplateHeader.Type.cs" />
+    <Compile Include="Models\Record.cs" />
     <Compile Include="Models\Response.cs" />
     <Compile Include="Models\Response.InteractionType.cs" />
     <Compile Include="Models\Response.ResponseType.cs" />
@@ -2731,6 +2737,7 @@
     <Compile Include="Models\SocialMediaQueryPredicate.Type.cs" />
     <Compile Include="Models\StaCategory.cs" />
     <Compile Include="Models\StaCategory.InteractionType.cs" />
+    <Compile Include="Models\StarrableDivision.cs" />
     <Compile Include="Models\SuggestSearchCriteria.cs" />
     <Compile Include="Models\SuggestSearchCriteria.Operator.cs" />
     <Compile Include="Models\SuggestSearchRequest.cs" />
@@ -4156,6 +4163,7 @@
     <Compile Include="Models\TermAttribute.Type.cs" />
     <Compile Include="Models\TestExecutionOperationResult.cs" />
     <Compile Include="Models\TestExecutionResult.cs" />
+    <Compile Include="Models\TestMessage.cs" />
     <Compile Include="Models\TextBotChannel.cs" />
     <Compile Include="Models\TextBotDisconnectAction.cs" />
     <Compile Include="Models\TextBotErrorInputEvent.cs" />
@@ -4669,6 +4677,7 @@
     <Compile Include="Models\ValidationErrorResponse.cs" />
     <Compile Include="Models\ValidationLimits.cs" />
     <Compile Include="Models\ValidationResult.cs" />
+    <Compile Include="Models\VerificationResult.cs" />
     <Compile Include="Models\Verifier.cs" />
     <Compile Include="Models\VerifierEntityListing.cs" />
     <Compile Include="Models\Video.cs" />

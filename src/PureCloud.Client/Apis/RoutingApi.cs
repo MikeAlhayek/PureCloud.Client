@@ -31,8 +31,6 @@ public sealed class RoutingApi : IRoutingApi
 
         var response = await client.DeleteAsync($"api/v2/routing/assessments/{assessmentId}", cancellationToken);
 
-        response.EnsureSuccessStatusCode();
-
         return response.IsSuccessStatusCode;
     }
 
@@ -83,8 +81,6 @@ public sealed class RoutingApi : IRoutingApi
 
         var response = await client.DeleteAsync("api/v2/routing/directroutingbackup/settings/me", cancellationToken);
 
-        response.EnsureSuccessStatusCode();
-
         return response.IsSuccessStatusCode;
     }
 
@@ -96,8 +92,6 @@ public sealed class RoutingApi : IRoutingApi
         var client = _httpClientFactory.CreateClient(PureCloudConstants.PureCloudClientName);
 
         var response = await client.DeleteAsync($"api/v2/routing/email/domains/{Uri.EscapeDataString(domainId)}", cancellationToken);
-
-        response.EnsureSuccessStatusCode();
 
         return response.IsSuccessStatusCode;
     }
@@ -113,8 +107,6 @@ public sealed class RoutingApi : IRoutingApi
 
         var response = await client.DeleteAsync($"api/v2/routing/email/domains/{Uri.EscapeDataString(domainName)}/routes/{Uri.EscapeDataString(routeId)}", cancellationToken);
 
-        response.EnsureSuccessStatusCode();
-
         return response.IsSuccessStatusCode;
     }
 
@@ -127,8 +119,6 @@ public sealed class RoutingApi : IRoutingApi
 
         var response = await client.DeleteAsync($"api/v2/routing/email/outbound/domains/{Uri.EscapeDataString(domainId)}", cancellationToken);
 
-        response.EnsureSuccessStatusCode();
-
         return response.IsSuccessStatusCode;
     }
 
@@ -140,8 +130,6 @@ public sealed class RoutingApi : IRoutingApi
         var client = _httpClientFactory.CreateClient(PureCloudConstants.PureCloudClientName);
 
         var response = await client.DeleteAsync($"api/v2/routing/languages/{Uri.EscapeDataString(languageId)}", cancellationToken);
-
-        response.EnsureSuccessStatusCode();
 
         return response.IsSuccessStatusCode;
     }
@@ -164,8 +152,6 @@ public sealed class RoutingApi : IRoutingApi
 
         var response = await client.DeleteAsync(uri, cancellationToken);
 
-        response.EnsureSuccessStatusCode();
-
         return response.IsSuccessStatusCode;
     }
 
@@ -177,8 +163,6 @@ public sealed class RoutingApi : IRoutingApi
         var client = _httpClientFactory.CreateClient(PureCloudConstants.PureCloudClientName);
 
         var response = await client.DeleteAsync($"api/v2/routing/skills/{Uri.EscapeDataString(skillId)}", cancellationToken);
-
-        response.EnsureSuccessStatusCode();
 
         return response.IsSuccessStatusCode;
     }
@@ -252,8 +236,6 @@ public sealed class RoutingApi : IRoutingApi
 
         var response = await client.DeleteAsync($"api/v2/routing/queues/{Uri.EscapeDataString(queueId)}/members/{Uri.EscapeDataString(memberId)}", cancellationToken);
 
-        response.EnsureSuccessStatusCode();
-
         return response.IsSuccessStatusCode;
     }
 
@@ -267,8 +249,6 @@ public sealed class RoutingApi : IRoutingApi
         var client = _httpClientFactory.CreateClient(PureCloudConstants.PureCloudClientName);
 
         var response = await client.DeleteAsync($"api/v2/routing/queues/{Uri.EscapeDataString(queueId)}/users/{Uri.EscapeDataString(memberId)}", cancellationToken);
-
-        response.EnsureSuccessStatusCode();
 
         return response.IsSuccessStatusCode;
     }
@@ -284,8 +264,6 @@ public sealed class RoutingApi : IRoutingApi
 
         var response = await client.DeleteAsync($"api/v2/routing/queues/{Uri.EscapeDataString(queueId)}/wrapupcodes/{Uri.EscapeDataString(codeId)}", cancellationToken);
 
-        response.EnsureSuccessStatusCode();
-
         return response.IsSuccessStatusCode;
     }
 
@@ -298,8 +276,6 @@ public sealed class RoutingApi : IRoutingApi
 
         var response = await client.DeleteAsync($"api/v2/routing/predictors/{Uri.EscapeDataString(predictorId)}", cancellationToken);
 
-        response.EnsureSuccessStatusCode();
-
         return response.IsSuccessStatusCode;
     }
 
@@ -309,8 +285,6 @@ public sealed class RoutingApi : IRoutingApi
         var client = _httpClientFactory.CreateClient(PureCloudConstants.PureCloudClientName);
 
         var response = await client.DeleteAsync("api/v2/routing/settings", cancellationToken);
-
-        response.EnsureSuccessStatusCode();
 
         return response.IsSuccessStatusCode;
     }
@@ -324,8 +298,6 @@ public sealed class RoutingApi : IRoutingApi
 
         var response = await client.DeleteAsync($"api/v2/routing/skillgroups/{Uri.EscapeDataString(skillGroupId)}", cancellationToken);
 
-        response.EnsureSuccessStatusCode();
-
         return response.IsSuccessStatusCode;
     }
 
@@ -337,8 +309,6 @@ public sealed class RoutingApi : IRoutingApi
         var client = _httpClientFactory.CreateClient(PureCloudConstants.PureCloudClientName);
 
         var response = await client.DeleteAsync($"api/v2/routing/sms/addresses/{Uri.EscapeDataString(addressId)}", cancellationToken);
-
-        response.EnsureSuccessStatusCode();
 
         return response.IsSuccessStatusCode;
     }
@@ -352,8 +322,6 @@ public sealed class RoutingApi : IRoutingApi
 
         var response = await client.DeleteAsync($"api/v2/routing/sms/phonenumbers/{Uri.EscapeDataString(phoneNumberId)}", cancellationToken);
 
-        response.EnsureSuccessStatusCode();
-
         return response.IsSuccessStatusCode;
     }
 
@@ -365,8 +333,6 @@ public sealed class RoutingApi : IRoutingApi
         var client = _httpClientFactory.CreateClient(PureCloudConstants.PureCloudClientName);
 
         var response = await client.DeleteAsync($"api/v2/routing/users/{Uri.EscapeDataString(userId)}/directroutingbackup/settings", cancellationToken);
-
-        response.EnsureSuccessStatusCode();
 
         return response.IsSuccessStatusCode;
     }
@@ -380,8 +346,6 @@ public sealed class RoutingApi : IRoutingApi
 
         var response = await client.DeleteAsync($"api/v2/routing/users/{Uri.EscapeDataString(userId)}/utilization", cancellationToken);
 
-        response.EnsureSuccessStatusCode();
-
         return response.IsSuccessStatusCode;
     }
 
@@ -391,8 +355,6 @@ public sealed class RoutingApi : IRoutingApi
         var client = _httpClientFactory.CreateClient(PureCloudConstants.PureCloudClientName);
 
         var response = await client.DeleteAsync("api/v2/routing/utilization", cancellationToken);
-
-        response.EnsureSuccessStatusCode();
 
         return response.IsSuccessStatusCode;
     }
@@ -406,8 +368,6 @@ public sealed class RoutingApi : IRoutingApi
 
         var response = await client.DeleteAsync($"api/v2/routing/utilization/labels/{Uri.EscapeDataString(labelId)}", cancellationToken);
 
-        response.EnsureSuccessStatusCode();
-
         return response.IsSuccessStatusCode;
     }
 
@@ -420,8 +380,6 @@ public sealed class RoutingApi : IRoutingApi
 
         var response = await client.DeleteAsync($"api/v2/routing/utilization/tags/{Uri.EscapeDataString(tagId)}", cancellationToken);
 
-        response.EnsureSuccessStatusCode();
-
         return response.IsSuccessStatusCode;
     }
 
@@ -433,8 +391,6 @@ public sealed class RoutingApi : IRoutingApi
         var client = _httpClientFactory.CreateClient(PureCloudConstants.PureCloudClientName);
 
         var response = await client.DeleteAsync($"api/v2/routing/wrapupcodes/{Uri.EscapeDataString(codeId)}", cancellationToken);
-
-        response.EnsureSuccessStatusCode();
 
         return response.IsSuccessStatusCode;
     }
@@ -450,8 +406,6 @@ public sealed class RoutingApi : IRoutingApi
 
         var response = await client.DeleteAsync($"api/v2/users/{Uri.EscapeDataString(userId)}/routinglanguages/{Uri.EscapeDataString(languageId)}", cancellationToken);
 
-        response.EnsureSuccessStatusCode();
-
         return response.IsSuccessStatusCode;
     }
 
@@ -466,13 +420,11 @@ public sealed class RoutingApi : IRoutingApi
 
         var response = await client.DeleteAsync($"api/v2/users/{Uri.EscapeDataString(userId)}/routingskills/{Uri.EscapeDataString(skillId)}", cancellationToken);
 
-        response.EnsureSuccessStatusCode();
-
         return response.IsSuccessStatusCode;
     }
 
     /// <inheritdoc />
-    public async Task<AssessmentListing> GetRoutingAssessmentsAsync(string before = null, string after = null, string limit = null, string pageSize = null, IEnumerable<string> queueId = null, CancellationToken cancellationToken = default)
+    public async Task<AssessmentListing> GetRoutingAssessmentsAsync(string before = null, string after = null, string limit = null, string pageSize = null, IEnumerable<string> queueIds = null, CancellationToken cancellationToken = default)
     {
         var parameters = new NameValueCollection();
 
@@ -496,11 +448,11 @@ public sealed class RoutingApi : IRoutingApi
             parameters.Add("pageSize", pageSize);
         }
 
-        if (queueId != null)
+        if (queueIds != null)
         {
-            foreach (var id in queueId)
+            foreach (var queueId in queueIds)
             {
-                parameters.Add("queueId", id);
+                parameters.Add("queueId", queueId);
             }
         }
 
@@ -910,7 +862,7 @@ public sealed class RoutingApi : IRoutingApi
     }
 
     /// <inheritdoc />
-    public async Task<string> GetRoutingEmailSetupAsync(CancellationToken cancellationToken = default)
+    public async Task<EmailSetup> GetRoutingEmailSetupAsync(CancellationToken cancellationToken = default)
     {
         var client = _httpClientFactory.CreateClient(PureCloudConstants.PureCloudClientName);
 
@@ -918,11 +870,11 @@ public sealed class RoutingApi : IRoutingApi
 
         response.EnsureSuccessStatusCode();
 
-        return await response.Content.ReadAsStringAsync(cancellationToken);
+        return await response.Content.ReadFromJsonAsync<EmailSetup>(_options.JsonSerializerOptions, cancellationToken);
     }
 
     /// <inheritdoc />
-    public async Task<string> GetRoutingEmailOutboundDomainActivationAsync(string domainId, CancellationToken cancellationToken = default)
+    public async Task<EmailOutboundDomainResult> GetRoutingEmailOutboundDomainActivationAsync(string domainId, CancellationToken cancellationToken = default)
     {
         ArgumentException.ThrowIfNullOrEmpty(domainId);
 
@@ -932,11 +884,11 @@ public sealed class RoutingApi : IRoutingApi
 
         response.EnsureSuccessStatusCode();
 
-        return await response.Content.ReadAsStringAsync(cancellationToken);
+        return await response.Content.ReadFromJsonAsync<EmailOutboundDomainResult>(_options.JsonSerializerOptions, cancellationToken);
     }
 
     /// <inheritdoc />
-    public async Task<string> GetRoutingEmailOutboundDomainSearchAsync(string domainId, CancellationToken cancellationToken = default)
+    public async Task<OutboundDomain> GetRoutingEmailOutboundDomainSearchAsync(string domainId, CancellationToken cancellationToken = default)
     {
         ArgumentException.ThrowIfNullOrEmpty(domainId);
 
@@ -946,7 +898,7 @@ public sealed class RoutingApi : IRoutingApi
 
         response.EnsureSuccessStatusCode();
 
-        return await response.Content.ReadAsStringAsync(cancellationToken);
+        return await response.Content.ReadFromJsonAsync<OutboundDomain>(_options.JsonSerializerOptions, cancellationToken);
     }
 
     /// <inheritdoc />
@@ -964,7 +916,7 @@ public sealed class RoutingApi : IRoutingApi
     }
 
     /// <inheritdoc />
-    public async Task<string> UpdateRoutingEmailOutboundDomainActivationAsync(string domainId, object body = null, CancellationToken cancellationToken = default)
+    public async Task<EmailOutboundDomainResult> UpdateRoutingEmailOutboundDomainActivationAsync(string domainId, object body = null, CancellationToken cancellationToken = default)
     {
         ArgumentException.ThrowIfNullOrEmpty(domainId);
 
@@ -974,11 +926,11 @@ public sealed class RoutingApi : IRoutingApi
 
         response.EnsureSuccessStatusCode();
 
-        return await response.Content.ReadAsStringAsync(cancellationToken);
+        return await response.Content.ReadFromJsonAsync<EmailOutboundDomainResult>(_options.JsonSerializerOptions, cancellationToken);
     }
 
     /// <inheritdoc />
-    public async Task<string> TestRoutingEmailDomainConnectionAsync(string domainId, CancellationToken cancellationToken = default)
+    public async Task<TestMessage> TestRoutingEmailDomainConnectionAsync(string domainId, CancellationToken cancellationToken = default)
     {
         ArgumentException.ThrowIfNullOrEmpty(domainId);
 
@@ -988,7 +940,7 @@ public sealed class RoutingApi : IRoutingApi
 
         response.EnsureSuccessStatusCode();
 
-        return await response.Content.ReadAsStringAsync(cancellationToken);
+        return await response.Content.ReadFromJsonAsync<TestMessage>(_options.JsonSerializerOptions, cancellationToken);
     }
 
     /// <inheritdoc />

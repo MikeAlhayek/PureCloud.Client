@@ -273,10 +273,10 @@ public interface IRoutingApi
     /// <param name="after">The cursor that points to the end of the set of entities</param>
     /// <param name="limit">Number of entities to return. Maximum of 200</param>
     /// <param name="pageSize">Number of entities to return. Maximum of 200</param>
-    /// <param name="queueId">Queue ID(s) to filter assessments by</param>
+    /// <param name="queueIds">Queue ID(s) to filter assessments by</param>
     /// <param name="cancellationToken">Cancellation token</param>
     /// <returns>Assessment listing</returns>
-    Task<AssessmentListing> GetRoutingAssessmentsAsync(string before = null, string after = null, string limit = null, string pageSize = null, IEnumerable<string> queueId = null, CancellationToken cancellationToken = default);
+    Task<AssessmentListing> GetRoutingAssessmentsAsync(string before = null, string after = null, string limit = null, string pageSize = null, IEnumerable<string> queueIds = null, CancellationToken cancellationToken = default);
 
     /// <summary>
     /// Retrieve a single benefit assessments job.
@@ -488,7 +488,7 @@ public interface IRoutingApi
     /// </summary>
     /// <param name="cancellationToken">Cancellation token</param>
     /// <returns>Email setup configuration</returns>
-    Task<string> GetRoutingEmailSetupAsync(CancellationToken cancellationToken = default);
+    Task<EmailSetup> GetRoutingEmailSetupAsync(CancellationToken cancellationToken = default);
 
     /// <summary>
     /// Get activation status of a domain
@@ -496,7 +496,7 @@ public interface IRoutingApi
     /// <param name="domainId">domain ID</param>
     /// <param name="cancellationToken">Cancellation token</param>
     /// <returns>Activation status</returns>
-    Task<string> GetRoutingEmailOutboundDomainActivationAsync(string domainId, CancellationToken cancellationToken = default);
+    Task<EmailOutboundDomainResult> GetRoutingEmailOutboundDomainActivationAsync(string domainId, CancellationToken cancellationToken = default);
 
     /// <summary>
     /// Search a domain across organizations
@@ -504,7 +504,7 @@ public interface IRoutingApi
     /// <param name="domainId">domain ID</param>
     /// <param name="cancellationToken">Cancellation token</param>
     /// <returns>Search results</returns>
-    Task<string> GetRoutingEmailOutboundDomainSearchAsync(string domainId, CancellationToken cancellationToken = default);
+    Task<OutboundDomain> GetRoutingEmailOutboundDomainSearchAsync(string domainId, CancellationToken cancellationToken = default);
 
     /// <summary>
     /// Update the user's Direct Routing Backup settings
@@ -521,7 +521,7 @@ public interface IRoutingApi
     /// <param name="body">Activation request body</param>
     /// <param name="cancellationToken">Cancellation token</param>
     /// <returns>Activation response</returns>
-    Task<string> UpdateRoutingEmailOutboundDomainActivationAsync(string domainId, object body = null, CancellationToken cancellationToken = default);
+    Task<EmailOutboundDomainResult> UpdateRoutingEmailOutboundDomainActivationAsync(string domainId, object body = null, CancellationToken cancellationToken = default);
 
     /// <summary>
     /// Tests the connection settings for a domain
@@ -529,7 +529,7 @@ public interface IRoutingApi
     /// <param name="domainId">domain ID</param>
     /// <param name="cancellationToken">Cancellation token</param>
     /// <returns>Test results</returns>
-    Task<string> TestRoutingEmailDomainConnectionAsync(string domainId, CancellationToken cancellationToken = default);
+    Task<TestMessage> TestRoutingEmailDomainConnectionAsync(string domainId, CancellationToken cancellationToken = default);
 
     /// <summary>
     /// Create a domain
