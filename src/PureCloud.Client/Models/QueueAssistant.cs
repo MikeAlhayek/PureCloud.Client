@@ -1,6 +1,6 @@
 namespace PureCloud.Client.Models;
 
-public sealed class Recipient
+public sealed class QueueAssistant
 {
     // TODO: Add properties based on legacy API requirements
 }

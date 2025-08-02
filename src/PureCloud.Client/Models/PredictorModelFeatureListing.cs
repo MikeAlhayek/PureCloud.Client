@@ -1,97 +1,54 @@
-using System.Text;
-using System.Text.Json.Serialization;
-
 namespace PureCloud.Client.Models;
 
-/// <summary>
-/// PredictorModelFeatureListing
-/// </summary>
-
-public partial class PredictorModelFeatureListing : IEquatable<PredictorModelFeatureListing>
+public sealed class PredictorModelFeatureListing
 {
-    /// <summary>
-    /// Initializes a new instance of the <see cref="PredictorModelFeatureListing" /> class.
-    /// </summary>
-    /// <param name="Entities">Entities.</param>
-    public PredictorModelFeatureListing(List<PredictorModelFeature> Entities = null)
-    {
-        this.Entities = Entities;
-
-    }
-
-
-
     /// <summary>
     /// Gets or Sets Entities
     /// </summary>
-    [JsonPropertyName("entities")]
-    public List<PredictorModelFeature> Entities { get; set; }
-
+    public IEnumerable<PredictorModelFeature> Entities { get; set; }
 
     /// <summary>
-    /// Returns the string presentation of the object
+    /// Gets or Sets PageSize
     /// </summary>
-    /// <returns>String presentation of the object</returns>
-    public override string ToString()
-    {
-        var sb = new StringBuilder();
-        sb.Append("class PredictorModelFeatureListing {\n");
-
-        sb.Append("  Entities: ").Append(Entities).Append("\n");
-        sb.Append("}\n");
-        return sb.ToString();
-    }
-
+    public int? PageSize { get; set; }
 
     /// <summary>
-    /// Returns true if objects are equal
+    /// Gets or Sets PageNumber
     /// </summary>
-    /// <param name="obj">Object to be compared</param>
-    /// <returns>Boolean</returns>
-    public override bool Equals(object obj)
-    {
-        // credit: http://stackoverflow.com/a/10454552/677735
-        return Equals(obj as PredictorModelFeatureListing);
-    }
+    public int? PageNumber { get; set; }
 
     /// <summary>
-    /// Returns true if PredictorModelFeatureListing instances are equal
+    /// Gets or Sets Total
     /// </summary>
-    /// <param name="other">Instance of PredictorModelFeatureListing to be compared</param>
-    /// <returns>Boolean</returns>
-    public bool Equals(PredictorModelFeatureListing other)
-    {
-        // credit: http://stackoverflow.com/a/10454552/677735
-        if (other == null)
-        {
-            return false;
-        }
-
-        return true &&
-            (
-                Entities == other.Entities ||
-                Entities != null &&
-                Entities.SequenceEqual(other.Entities)
-            );
-    }
+    public long? Total { get; set; }
 
     /// <summary>
-    /// Gets the hash code
+    /// Gets or Sets FirstUri
     /// </summary>
-    /// <returns>Hash code</returns>
-    public override int GetHashCode()
-    {
-        // credit: http://stackoverflow.com/a/263416/677735
-        unchecked // Overflow is fine, just wrap
-        {
-            int hash = 41;
-            // Suitable nullity checks etc, of course :)
-            if (Entities != null)
-            {
-                hash = hash * 59 + Entities.GetHashCode();
-            }
+    public string FirstUri { get; set; }
 
-            return hash;
-        }
-    }
+    /// <summary>
+    /// Gets or Sets LastUri
+    /// </summary>
+    public string LastUri { get; set; }
+
+    /// <summary>
+    /// Gets or Sets SelfUri
+    /// </summary>
+    public string SelfUri { get; set; }
+
+    /// <summary>
+    /// Gets or Sets NextUri
+    /// </summary>
+    public string NextUri { get; set; }
+
+    /// <summary>
+    /// Gets or Sets PreviousUri
+    /// </summary>
+    public string PreviousUri { get; set; }
+
+    /// <summary>
+    /// Gets or Sets PageCount
+    /// </summary>
+    public int? PageCount { get; set; }
 }

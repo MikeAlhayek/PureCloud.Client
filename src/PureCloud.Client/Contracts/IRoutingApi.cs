@@ -993,47 +993,6 @@ public interface IRoutingApi
     Task<InboundDomainEntityListing> GetRoutingEmailDomainsAsync(int? pageSize = null, int? pageNumber = null, bool? excludeStatus = null, string filter = null, CancellationToken cancellationToken = default);
 
     /// <summary>
-    /// Create a domain
-    /// </summary>
-    /// <param name="body">Domain</param>
-    /// <param name="cancellationToken">Cancellation token</param>
-    /// <returns>Created domain</returns>
-    Task<InboundDomain> CreateRoutingEmailDomainAsync(InboundDomain body, CancellationToken cancellationToken = default);
-
-    /// <summary>
-    /// Delete a domain
-    /// </summary>
-    /// <param name="domainId">domain ID</param>
-    /// <param name="cancellationToken">Cancellation token</param>
-    /// <returns>Success status</returns>
-    Task<bool> DeleteRoutingEmailDomainAsync(string domainId, CancellationToken cancellationToken = default);
-
-    /// <summary>
-    /// Delete a route
-    /// </summary>
-    /// <param name="domainName">email domain</param>
-    /// <param name="routeId">route ID</param>
-    /// <param name="cancellationToken">Cancellation token</param>
-    /// <returns>Success status</returns>
-    Task<bool> DeleteRoutingEmailDomainRouteAsync(string domainName, string routeId, CancellationToken cancellationToken = default);
-
-    /// <summary>
-    /// Provision an Address for SMS
-    /// </summary>
-    /// <param name="body">SmsAddress</param>
-    /// <param name="cancellationToken">Cancellation token</param>
-    /// <returns>Created SMS address</returns>
-    Task<SmsAddress> CreateRoutingSmsAddressAsync(SmsAddressProvision body, CancellationToken cancellationToken = default);
-
-    /// <summary>
-    /// Provision a phone number for SMS
-    /// </summary>
-    /// <param name="body">SmsPhoneNumber</param>
-    /// <param name="cancellationToken">Cancellation token</param>
-    /// <returns>Created SMS phone number</returns>
-    Task<SmsPhoneNumber> CreateRoutingSmsPhoneNumberAsync(SmsPhoneNumberProvision body, CancellationToken cancellationToken = default);
-
-    /// <summary>
     /// Get the list of supported Email Outbound Domains
     /// </summary>
     /// <param name="pageSize">Page size</param>
