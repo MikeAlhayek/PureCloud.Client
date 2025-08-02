@@ -138,15 +138,26 @@ public interface ITaskManagementApi
     /// <param name="cancellationToken">Cancellation token.</param>
     Task<bool> DeleteWorkitemsSchemaAsync(string schemaId, CancellationToken cancellationToken = default);
 
-    // Note: Additional endpoints require model migration from partial/IEquatable to sealed pattern.
-    // The comprehensive audit identified 52 missing endpoints that need systematic migration.
-    // Core missing functionality includes:
-    // - Workbin history, versions (4 endpoints)
-    // - Workitem history, versions, wrapups (6 endpoints) 
-    // - Bulk operations (8 endpoints)
-    // - Query operations (5 endpoints) - models need migration
-    // - Worktype flows and rules (15 endpoints)
-    // - Worktype statuses and history (8 endpoints)
-    // - Assignment management (3 endpoints)
-    // - Schema versioning (3 endpoints)
+    /// <summary>
+    /// Get workitems schemas limits
+    /// </summary>
+    /// <param name="cancellationToken">Cancellation token.</param>
+    Task<SchemaQuantityLimits> GetWorkitemsSchemasLimitsAsync(CancellationToken cancellationToken = default);
+
+    // Note: Additional 48+ endpoints require model migration from partial/IEquatable to sealed pattern.
+    // Current models using legacy patterns that need migration before implementation:
+    // - WorkbinChangeListing, WorkbinVersion, WorkbinVersionListing (history/versioning)
+    // - WorkitemChangeListing, WorkitemVersion, WorkitemVersionListing (history/versioning)
+    // - WorkitemWrapup, WorkitemWrapupEntityListing, WorkitemWrapupUpdate (wrapup management)
+    // - WorkitemTerminate, WorkitemManualAssign (workflow operations)
+    // - WorktypeChangeListing, WorktypeVersion, WorktypeVersionListing (worktype management)
+    // - BulkJob, BulkJobsListing, BulkJobAddRequest, etc. (bulk operations)
+    // - Query operation models for advanced search functionality
+    // - Worktype flow and rule models for workflow management
+    // - Worktype status models for status management
+    // 
+    // These models follow the legacy pattern:
+    // - public partial class ModelName : IEquatable<ModelName> 
+    // And need migration to the modern pattern:
+    // - public sealed class ModelName
 }

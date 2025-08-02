@@ -285,4 +285,16 @@ public sealed class TaskManagementApi : ITaskManagementApi
 
         return response.IsSuccessStatusCode;
     }
+
+    /// <inheritdoc />
+    public async Task<SchemaQuantityLimits> GetWorkitemsSchemasLimitsAsync(CancellationToken cancellationToken = default)
+    {
+        var client = _httpClientFactory.CreateClient(PureCloudConstants.PureCloudClientName);
+
+        var response = await client.GetAsync("api/v2/taskmanagement/workitems/schemas/limits", cancellationToken);
+
+        response.EnsureSuccessStatusCode();
+
+        return await response.Content.ReadFromJsonAsync<SchemaQuantityLimits>(_options.JsonSerializerOptions, cancellationToken);
+    }
 }
