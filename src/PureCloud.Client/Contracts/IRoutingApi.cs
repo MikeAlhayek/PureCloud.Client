@@ -601,7 +601,7 @@ public interface IRoutingApi
     /// <param name="expand">Fields to expand</param>
     /// <param name="cancellationToken">Cancellation token</param>
     /// <returns>Key performance indicator listings</returns>
-    Task<KeyPerformanceIndicatorListing> GetRoutingPredictorsKeyperformanceindicatorsAsync(IEnumerable<string> kpiIds = null, IEnumerable<string> expand = null, CancellationToken cancellationToken = default);
+    Task<KeyPerformanceIndicatorListing> GetRoutingPredictorsKeyperformanceindicatorsAsync(IEnumerable<string> kpiIds = null, IEnumerable<string> expands = null, CancellationToken cancellationToken = default);
 
     /// <summary>
     /// Get the list of routing queues
@@ -634,7 +634,7 @@ public interface IRoutingApi
     /// <param name="presence">Presence</param>
     /// <param name="cancellationToken">Cancellation token</param>
     /// <returns>Queue member listings</returns>
-    Task<QueueMemberEntityListing> GetRoutingQueueMembersAsync(string queueId, int? pageNumber = null, int? pageSize = null, string sortOrder = null, IEnumerable<string> expand = null, bool? joined = null, string name = null, IEnumerable<string> profileSkills = null, IEnumerable<string> skills = null, IEnumerable<string> languages = null, IEnumerable<string> routingStatus = null, IEnumerable<string> presence = null, CancellationToken cancellationToken = default);
+    Task<QueueMemberEntityListing> GetRoutingQueueMembersAsync(string queueId, int? pageNumber = null, int? pageSize = null, string sortOrder = null, IEnumerable<string> expands = null, bool? joined = null, string name = null, IEnumerable<string> profileSkills = null, IEnumerable<string> skills = null, IEnumerable<string> languages = null, IEnumerable<string> routingStatus = null, IEnumerable<string> presence = null, CancellationToken cancellationToken = default);
 
     /// <summary>
     /// Get the members of this queue as a user listing
@@ -653,7 +653,7 @@ public interface IRoutingApi
     /// <param name="presence">Presence</param>
     /// <param name="cancellationToken">Cancellation token</param>
     /// <returns>Queue member listings</returns>
-    Task<QueueMemberEntityListingV1> GetRoutingQueueUsersAsync(string queueId, int? pageNumber = null, int? pageSize = null, string sortOrder = null, IEnumerable<string> expand = null, bool? joined = null, string name = null, IEnumerable<string> profileSkills = null, IEnumerable<string> skills = null, IEnumerable<string> languages = null, IEnumerable<string> routingStatus = null, IEnumerable<string> presence = null, CancellationToken cancellationToken = default);
+    Task<QueueMemberEntityListingV1> GetRoutingQueueUsersAsync(string queueId, int? pageNumber = null, int? pageSize = null, string sortOrder = null, IEnumerable<string> expands = null, bool? joined = null, string name = null, IEnumerable<string> profileSkills = null, IEnumerable<string> skills = null, IEnumerable<string> languages = null, IEnumerable<string> routingStatus = null, IEnumerable<string> presence = null, CancellationToken cancellationToken = default);
 
     /// <summary>
     /// Get the wrap-up codes for a queue
@@ -723,7 +723,7 @@ public interface IRoutingApi
     /// <param name="expand">Fields to expand</param>
     /// <param name="cancellationToken">Cancellation token</param>
     /// <returns>Skill group member listings</returns>
-    Task<SkillGroupMemberEntityListing> GetRoutingSkillgroupMembersAsync(string skillGroupId, int? pageSize = null, string after = null, string before = null, IEnumerable<string> expand = null, CancellationToken cancellationToken = default);
+    Task<SkillGroupMemberEntityListing> GetRoutingSkillgroupMembersAsync(string skillGroupId, int? pageSize = null, string after = null, string before = null, IEnumerable<string> expands = null, CancellationToken cancellationToken = default);
 
     /// <summary>
     /// Get the organization-wide max utilization settings

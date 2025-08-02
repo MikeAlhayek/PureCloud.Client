@@ -1090,7 +1090,7 @@ public sealed class RoutingApi : IRoutingApi
     }
 
     /// <inheritdoc />
-    public async Task<KeyPerformanceIndicatorListing> GetRoutingPredictorsKeyperformanceindicatorsAsync(IEnumerable<string> kpiIds = null, IEnumerable<string> expand = null, CancellationToken cancellationToken = default)
+    public async Task<KeyPerformanceIndicatorListing> GetRoutingPredictorsKeyperformanceindicatorsAsync(IEnumerable<string> kpiIds = null, IEnumerable<string> expands = null, CancellationToken cancellationToken = default)
     {
         var client = _httpClientFactory.CreateClient(PureCloudConstants.PureCloudClientName);
 
@@ -1104,11 +1104,11 @@ public sealed class RoutingApi : IRoutingApi
             }
         }
 
-        if (expand != null)
+        if (expands != null)
         {
-            foreach (var expandItem in expand)
+            foreach (var expand in expands)
             {
-                parameters.Add("expand", expandItem);
+                parameters.Add("expand", expand);
             }
         }
 
@@ -1179,7 +1179,7 @@ public sealed class RoutingApi : IRoutingApi
     }
 
     /// <inheritdoc />
-    public async Task<QueueMemberEntityListing> GetRoutingQueueMembersAsync(string queueId, int? pageNumber = null, int? pageSize = null, string sortOrder = null, IEnumerable<string> expand = null, bool? joined = null, string name = null, IEnumerable<string> profileSkills = null, IEnumerable<string> skills = null, IEnumerable<string> languages = null, IEnumerable<string> routingStatus = null, IEnumerable<string> presence = null, CancellationToken cancellationToken = default)
+    public async Task<QueueMemberEntityListing> GetRoutingQueueMembersAsync(string queueId, int? pageNumber = null, int? pageSize = null, string sortOrder = null, IEnumerable<string> expands = null, bool? joined = null, string name = null, IEnumerable<string> profileSkills = null, IEnumerable<string> skills = null, IEnumerable<string> languages = null, IEnumerable<string> routingStatus = null, IEnumerable<string> presence = null, CancellationToken cancellationToken = default)
     {
         ArgumentException.ThrowIfNullOrEmpty(queueId);
 
@@ -1202,11 +1202,11 @@ public sealed class RoutingApi : IRoutingApi
             parameters.Add("sortOrder", sortOrder);
         }
 
-        if (expand != null)
+        if (expands != null)
         {
-            foreach (var expandItem in expand)
+            foreach (var expand in expands)
             {
-                parameters.Add("expand", expandItem);
+                parameters.Add("expand", expand);
             }
         }
 
@@ -1254,9 +1254,9 @@ public sealed class RoutingApi : IRoutingApi
 
         if (presence != null)
         {
-            foreach (var presenceItem in presence)
+            foreach (var presenceValue in presence)
             {
-                parameters.Add("presence", presenceItem);
+                parameters.Add("presence", presenceValue);
             }
         }
 
@@ -1270,7 +1270,7 @@ public sealed class RoutingApi : IRoutingApi
     }
 
     /// <inheritdoc />
-    public async Task<QueueMemberEntityListingV1> GetRoutingQueueUsersAsync(string queueId, int? pageNumber = null, int? pageSize = null, string sortOrder = null, IEnumerable<string> expand = null, bool? joined = null, string name = null, IEnumerable<string> profileSkills = null, IEnumerable<string> skills = null, IEnumerable<string> languages = null, IEnumerable<string> routingStatus = null, IEnumerable<string> presence = null, CancellationToken cancellationToken = default)
+    public async Task<QueueMemberEntityListingV1> GetRoutingQueueUsersAsync(string queueId, int? pageNumber = null, int? pageSize = null, string sortOrder = null, IEnumerable<string> expands = null, bool? joined = null, string name = null, IEnumerable<string> profileSkills = null, IEnumerable<string> skills = null, IEnumerable<string> languages = null, IEnumerable<string> routingStatus = null, IEnumerable<string> presence = null, CancellationToken cancellationToken = default)
     {
         ArgumentException.ThrowIfNullOrEmpty(queueId);
 
@@ -1293,11 +1293,11 @@ public sealed class RoutingApi : IRoutingApi
             parameters.Add("sortOrder", sortOrder);
         }
 
-        if (expand != null)
+        if (expands != null)
         {
-            foreach (var expandItem in expand)
+            foreach (var expand in expands)
             {
-                parameters.Add("expand", expandItem);
+                parameters.Add("expand", expand);
             }
         }
 
@@ -1345,9 +1345,9 @@ public sealed class RoutingApi : IRoutingApi
 
         if (presence != null)
         {
-            foreach (var presenceItem in presence)
+            foreach (var presenceValue in presence)
             {
-                parameters.Add("presence", presenceItem);
+                parameters.Add("presence", presenceValue);
             }
         }
 
@@ -1549,7 +1549,7 @@ public sealed class RoutingApi : IRoutingApi
     }
 
     /// <inheritdoc />
-    public async Task<SkillGroupMemberEntityListing> GetRoutingSkillgroupMembersAsync(string skillGroupId, int? pageSize = null, string after = null, string before = null, IEnumerable<string> expand = null, CancellationToken cancellationToken = default)
+    public async Task<SkillGroupMemberEntityListing> GetRoutingSkillgroupMembersAsync(string skillGroupId, int? pageSize = null, string after = null, string before = null, IEnumerable<string> expands = null, CancellationToken cancellationToken = default)
     {
         ArgumentException.ThrowIfNullOrEmpty(skillGroupId);
 
@@ -1572,11 +1572,11 @@ public sealed class RoutingApi : IRoutingApi
             parameters.Add("before", before);
         }
 
-        if (expand != null)
+        if (expands != null)
         {
-            foreach (var expandItem in expand)
+            foreach (var expand in expands)
             {
-                parameters.Add("expand", expandItem);
+                parameters.Add("expand", expand);
             }
         }
 
