@@ -1,9 +1,9 @@
 namespace PureCloud.Client.Models;
 
 /// <summary>
-/// The status of the escalation rule.
+/// The status of the social topic.
 /// </summary>
-public enum EscalationRuleResponseStatus
+public enum SocialTopicResponseStatus
 {
     /// <summary>
     /// Active
@@ -11,7 +11,12 @@ public enum EscalationRuleResponseStatus
     Active,
 
     /// <summary>
-    /// Paused
+    /// Pending
     /// </summary>
-    Paused
+    Pending,
+
+    /// <summary>
+    /// Deleted
+    /// </summary>
+    Deleted
 }
