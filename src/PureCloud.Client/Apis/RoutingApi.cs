@@ -2192,13 +2192,19 @@ public sealed class RoutingApi : IRoutingApi
         var parameters = new NameValueCollection();
 
         if (pageSize.HasValue)
+        {
             parameters.Add("pageSize", pageSize.Value.ToString());
+        }
 
         if (pageNumber.HasValue)
+        {
             parameters.Add("pageNumber", pageNumber.Value.ToString());
+        }
 
         if (!string.IsNullOrEmpty(filter))
+        {
             parameters.Add("filter", filter);
+        }
 
         var client = _httpClientFactory.CreateClient(PureCloudConstants.PureCloudClientName);
 
@@ -2215,30 +2221,44 @@ public sealed class RoutingApi : IRoutingApi
         var parameters = new NameValueCollection();
 
         if (pageSize.HasValue)
+        {
             parameters.Add("pageSize", pageSize.Value.ToString());
+        }
 
         if (pageNumber.HasValue)
+        {
             parameters.Add("pageNumber", pageNumber.Value.ToString());
+        }
 
         if (!string.IsNullOrEmpty(sortBy))
+        {
             parameters.Add("sortBy", sortBy);
+        }
 
         if (!string.IsNullOrEmpty(sortOrder))
+        {
             parameters.Add("sortOrder", sortOrder);
+        }
 
         if (!string.IsNullOrEmpty(name))
+        {
             parameters.Add("name", name);
+        }
 
         if (ids != null)
         {
             foreach (var id in ids)
+            {
                 parameters.Add("id", id);
+            }
         }
 
         if (divisionIds != null)
         {
             foreach (var divisionId in divisionIds)
+            {
                 parameters.Add("divisionId", divisionId);
+            }
         }
 
         var client = _httpClientFactory.CreateClient(PureCloudConstants.PureCloudClientName);
@@ -2256,16 +2276,24 @@ public sealed class RoutingApi : IRoutingApi
         var parameters = new NameValueCollection();
 
         if (pageSize.HasValue)
+        {
             parameters.Add("pageSize", pageSize.Value.ToString());
+        }
 
         if (pageNumber.HasValue)
+        {
             parameters.Add("pageNumber", pageNumber.Value.ToString());
+        }
 
         if (!string.IsNullOrEmpty(sortBy))
+        {
             parameters.Add("sortBy", sortBy);
+        }
 
         if (!string.IsNullOrEmpty(sortOrder))
+        {
             parameters.Add("sortOrder", sortOrder);
+        }
 
         var client = _httpClientFactory.CreateClient(PureCloudConstants.PureCloudClientName);
 
@@ -2282,18 +2310,26 @@ public sealed class RoutingApi : IRoutingApi
         var parameters = new NameValueCollection();
 
         if (pageSize.HasValue)
+        {
             parameters.Add("pageSize", pageSize.Value.ToString());
+        }
 
         if (pageNumber.HasValue)
+        {
             parameters.Add("pageNumber", pageNumber.Value.ToString());
+        }
 
         if (joined.HasValue)
+        {
             parameters.Add("joined", joined.Value.ToString().ToLower());
+        }
 
         if (divisionIds != null)
         {
             foreach (var divisionId in divisionIds)
+            {
                 parameters.Add("divisionId", divisionId);
+            }
         }
 
         var client = _httpClientFactory.CreateClient(PureCloudConstants.PureCloudClientName);
@@ -2329,7 +2365,9 @@ public sealed class RoutingApi : IRoutingApi
         if (expands != null)
         {
             foreach (var expand in expands)
+            {
                 parameters.Add("expand", expand);
+            }
         }
 
         var client = _httpClientFactory.CreateClient(PureCloudConstants.PureCloudClientName);
@@ -2375,46 +2413,68 @@ public sealed class RoutingApi : IRoutingApi
         var parameters = new NameValueCollection();
 
         if (!string.IsNullOrEmpty(phoneNumber))
+        {
             parameters.Add("phoneNumber", phoneNumber);
+        }
 
         if (phoneNumberTypes != null)
         {
             foreach (var phoneNumberType in phoneNumberTypes)
+            {
                 parameters.Add("phoneNumberType", phoneNumberType);
+            }
         }
 
         if (phoneNumberStatuses != null)
         {
             foreach (var phoneNumberStatus in phoneNumberStatuses)
+            {
                 parameters.Add("phoneNumberStatus", phoneNumberStatus);
+            }
         }
 
         if (countryCodes != null)
         {
             foreach (var countryCode in countryCodes)
+            {
                 parameters.Add("countryCode", countryCode);
+            }
         }
 
         if (pageSize.HasValue)
+        {
             parameters.Add("pageSize", pageSize.Value.ToString());
+        }
 
         if (pageNumber.HasValue)
+        {
             parameters.Add("pageNumber", pageNumber.Value.ToString());
+        }
 
         if (!string.IsNullOrEmpty(sortBy))
+        {
             parameters.Add("sortBy", sortBy);
+        }
 
         if (!string.IsNullOrEmpty(sortOrder))
+        {
             parameters.Add("sortOrder", sortOrder);
+        }
 
         if (!string.IsNullOrEmpty(language))
+        {
             parameters.Add("language", language);
+        }
 
         if (!string.IsNullOrEmpty(integrationId))
+        {
             parameters.Add("integrationId", integrationId);
+        }
 
         if (!string.IsNullOrEmpty(supportedContentId))
+        {
             parameters.Add("supportedContentId", supportedContentId);
+        }
 
         var client = _httpClientFactory.CreateClient(PureCloudConstants.PureCloudClientName);
 
@@ -2431,16 +2491,24 @@ public sealed class RoutingApi : IRoutingApi
         var parameters = new NameValueCollection();
 
         if (pageSize.HasValue)
+        {
             parameters.Add("pageSize", pageSize.Value.ToString());
+        }
 
         if (pageNumber.HasValue)
+        {
             parameters.Add("pageNumber", pageNumber.Value.ToString());
+        }
 
         if (!string.IsNullOrEmpty(sortOrder))
+        {
             parameters.Add("sortOrder", sortOrder);
+        }
 
         if (!string.IsNullOrEmpty(name))
+        {
             parameters.Add("name", name);
+        }
 
         var client = _httpClientFactory.CreateClient(PureCloudConstants.PureCloudClientName);
 
@@ -2457,16 +2525,24 @@ public sealed class RoutingApi : IRoutingApi
         var parameters = new NameValueCollection();
 
         if (pageSize.HasValue)
+        {
             parameters.Add("pageSize", pageSize.Value.ToString());
+        }
 
         if (pageNumber.HasValue)
+        {
             parameters.Add("pageNumber", pageNumber.Value.ToString());
+        }
 
         if (!string.IsNullOrEmpty(sortOrder))
+        {
             parameters.Add("sortOrder", sortOrder);
+        }
 
         if (!string.IsNullOrEmpty(name))
+        {
             parameters.Add("name", name);
+        }
 
         var client = _httpClientFactory.CreateClient(PureCloudConstants.PureCloudClientName);
 
