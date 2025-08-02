@@ -4566,10 +4566,12 @@
     <Compile Include="Models\ScimConfigResourceTypeSchemaExtension.cs" />
     <Compile Include="Models\ScimConfigResourceTypesListResponse.cs" />
     <Compile Include="Models\ScimEmail.cs" />
+    <Compile Include="Models\ScimEmail.Type.cs" />
     <Compile Include="Models\ScimError.cs" />
     <Compile Include="Models\ScimGenesysUserExternalId.cs" />
     <Compile Include="Models\ScimGroupListResponse.cs" />
     <Compile Include="Models\ScimMetadata.cs" />
+    <Compile Include="Models\ScimMetadata.ResourceType.cs" />
     <Compile Include="Models\ScimPhoneNumber.cs" />
     <Compile Include="Models\ScimServiceProviderConfig.cs" />
     <Compile Include="Models\ScimServiceProviderConfigAuthenticationScheme.cs" />
