@@ -117,4 +117,88 @@ public interface ITelephonyProvidersEdgeApi
 
     /// <inheritdoc />
     Task<LineEntityListing> GetEdgeLinesAsync(string edgeId, int? pageSize = null, int? pageNumber = null, CancellationToken cancellationToken = default);
+
+    /// <inheritdoc />
+    Task DeleteEdgeAlertablepresencesAsync(CancellationToken cancellationToken = default);
+
+    /// <inheritdoc />
+    Task<VmPairingInfo> GetEdgeSetuppackageAsync(string edgeId, CancellationToken cancellationToken = default);
+
+    /// <inheritdoc />
+    Task<TrunkEntityListing> GetEdgeTrunksAsync(string edgeId, int? pageNumber = null, int? pageSize = null, string sortBy = null, string sortOrder = null, string trunkBaseId = null, string trunkType = null, CancellationToken cancellationToken = default);
+
+    /// <inheritdoc />
+    Task<AlertablePresences> GetEdgeAlertablepresencesAsync(string type = null, CancellationToken cancellationToken = default);
+
+    /// <inheritdoc />
+    Task<CertificateAuthorityEntityListing> GetEdgeCertificateauthoritiesAsync(CancellationToken cancellationToken = default);
+
+    /// <inheritdoc />
+    Task<DID> GetEdgeDidAsync(string didId, CancellationToken cancellationToken = default);
+
+    /// <inheritdoc />
+    Task<DIDEntityListing> GetEdgeDidAsync(CancellationToken cancellationToken = default);
+
+    /// <inheritdoc />
+    Task<DIDPoolEntityListing> GetEdgeDidpoolsAsync(CancellationToken cancellationToken = default);
+
+    /// <inheritdoc />
+    Task<EdgeGroup> GetEdgeEdgegroupAsync(string edgeGroupId, IEnumerable<string> expand = null, CancellationToken cancellationToken = default);
+
+    /// <inheritdoc />
+    Task<EdgeGroupEntityListing> GetEdgeEdgegroupsAsync(int? pageSize = null, int? pageNumber = null, string name = null, string sortBy = null, bool? managed = null, CancellationToken cancellationToken = default);
+
+    /// <inheritdoc />
+    Task<ExtensionPoolEntityListing> GetEdgeExtensionpoolsAsync(int? pageSize = null, int? pageNumber = null, string sortBy = null, string sortOrder = null, CancellationToken cancellationToken = default);
+
+    /// <inheritdoc />
+    Task<LineBase> GetEdgeLinebasesettingAsync(string lineBaseId, CancellationToken cancellationToken = default);
+
+    /// <inheritdoc />
+    Task<LineBaseEntityListing> GetEdgeLinebasesettingsAsync(int? pageNumber = null, int? pageSize = null, string sortBy = null, string sortOrder = null, CancellationToken cancellationToken = default);
+
+    /// <inheritdoc />
+    Task<Phone> GetEdgePhoneAsync(string phoneId, CancellationToken cancellationToken = default);
+
+    /// <inheritdoc />
+    Task<PhoneBase> GetEdgePhonebasesettingAsync(string phoneBaseId, CancellationToken cancellationToken = default);
+
+    /// <inheritdoc />
+    Task<PhoneBaseEntityListing> GetEdgePhonebasesettingsAsync(int? pageSize = null, int? pageNumber = null, string sortBy = null, string sortOrder = null, string name = null, CancellationToken cancellationToken = default);
+
+    /// <inheritdoc />
+    Task<PhoneEntityListing> GetEdgePhonesAsync(int? pageNumber = null, int? pageSize = null, string sortBy = null, string sortOrder = null, string siteId = null, string webRtcUserId = null, string phoneBaseSettingsId = null, string linesLoggedInUserId = null, string linesDefaultForUserId = null, string phoneHardwareId = null, string linesId = null, string linesName = null, string name = null, string statusOperationalStatus = null, string secondaryStatusOperationalStatus = null, IEnumerable<string> expand = null, IEnumerable<string> fields = null, CancellationToken cancellationToken = default);
+
+    /// <inheritdoc />
+    Task<PhoneMetaBaseEntityListing> GetEdgePhonesTemplateAsync(string phoneMetabaseId, CancellationToken cancellationToken = default);
+
+    /// <inheritdoc />
+    Task<SiteEntityListing> GetEdgeSitesAsync(int? pageSize = null, int? pageNumber = null, string sortBy = null, string sortOrder = null, string name = null, string locationId = null, bool? managed = null, IEnumerable<string> expand = null, CancellationToken cancellationToken = default);
+
+    /// <inheritdoc />
+    Task<OutboundRouteBase> GetEdgeSiteOutboundrouteAsync(string siteId, string outboundRouteId, CancellationToken cancellationToken = default);
+
+    /// <inheritdoc />
+    Task<OutboundRouteBaseEntityListing> GetEdgeSiteOutboundroutesAsync(string siteId, int? pageSize = null, int? pageNumber = null, string name = null, string externalTrunkBaseIds = null, string sortBy = null, CancellationToken cancellationToken = default);
+
+    /// <inheritdoc />
+    Task<TimeZoneEntityListing> GetEdgeTimezonesAsync(int? pageSize = null, int? pageNumber = null, CancellationToken cancellationToken = default);
+
+    /// <inheritdoc />
+    Task<Trunk> GetEdgeTrunkAsync(string trunkId, CancellationToken cancellationToken = default);
+
+    /// <inheritdoc />
+    Task<TrunkBase> GetEdgeTrunkbasesettingAsync(string trunkBaseSettingsId, bool? ignoreHidden = null, CancellationToken cancellationToken = default);
+
+    /// <inheritdoc />
+    Task<TrunkBaseEntityListing> GetEdgeTrunkbasesettingsAsync(int? pageNumber = null, int? pageSize = null, string sortBy = null, string sortOrder = null, bool? recordingEnabled = null, bool? ignoreHidden = null, bool? managed = null, IEnumerable<string> expand = null, string name = null, CancellationToken cancellationToken = default);
+
+    /// <inheritdoc />
+    Task<TrunkMetabaseEntityListing> GetEdgeTrunkbasesettingsAvailablemetabasesAsync(string type = null, int? pageSize = null, int? pageNumber = null, CancellationToken cancellationToken = default);
+
+    /// <inheritdoc />
+    Task<TrunkMetrics> GetEdgeTrunkbasesettingsTemplateAsync(string trunkMetabaseId, CancellationToken cancellationToken = default);
+
+    /// <inheritdoc />
+    Task<TrunkRecordingEnabledCount> GetEdgeTrunksMetricsAsync(string trunkIds, CancellationToken cancellationToken = default);
 }
