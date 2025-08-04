@@ -1199,4 +1199,48 @@ public interface IRoutingApi
     /// <param name="cancellationToken">Cancellation token</param>
     /// <returns>User skill group entity listing</returns>
     Task<UserSkillGroupEntityListing> GetUserSkillgroupsAsync(string userId, int? pageSize = null, int? pageNumber = null, string sortOrder = null, CancellationToken cancellationToken = default);
+
+    /// <summary>
+    /// Get SMS identity resolution settings
+    /// </summary>
+    /// <param name="addressId">Address ID</param>
+    /// <param name="cancellationToken">Cancellation token</param>
+    /// <returns>Identity resolution configuration</returns>
+    Task<IdentityResolutionConfig> GetRoutingSmsIdentityresolutionPhonenumberAsync(string addressId, CancellationToken cancellationToken = default);
+
+    /// <summary>
+    /// Get phone numbers provisioned for SMS
+    /// </summary>
+    /// <param name="phoneNumber">Phone number</param>
+    /// <param name="phoneNumberType">Phone number type</param>
+    /// <param name="phoneNumberStatus">Phone number status</param>
+    /// <param name="region">Region</param>
+    /// <param name="pageSize">Page size</param>
+    /// <param name="pageNumber">Page number</param>
+    /// <param name="cancellationToken">Cancellation token</param>
+    /// <returns>SMS phone number entity listing</returns>
+    Task<SmsPhoneNumberEntityListing> GetRoutingSmsPhonenumbersAsync(string phoneNumber = null, string phoneNumberType = null, string phoneNumberStatus = null, string region = null, int? pageSize = null, int? pageNumber = null, CancellationToken cancellationToken = default);
+
+    /// <summary>
+    /// Get wrap-up codes division views
+    /// </summary>
+    /// <param name="pageSize">Page size</param>
+    /// <param name="pageNumber">Page number</param>
+    /// <param name="sortBy">Sort by</param>
+    /// <param name="sortOrder">Sort order</param>
+    /// <param name="cancellationToken">Cancellation token</param>
+    /// <returns>Wrap-up code entity listing</returns>
+    Task<WrapupCodeEntityListing> GetRoutingWrapupcodesDivisionviewsAsync(int? pageSize = null, int? pageNumber = null, string sortBy = null, string sortOrder = null, CancellationToken cancellationToken = default);
+
+    /// <summary>
+    /// Get queues for user
+    /// </summary>
+    /// <param name="userId">User ID</param>
+    /// <param name="pageSize">Page size</param>
+    /// <param name="pageNumber">Page number</param>
+    /// <param name="joined">Joined</param>
+    /// <param name="divisionIds">Division IDs</param>
+    /// <param name="cancellationToken">Cancellation token</param>
+    /// <returns>User queue entity listing</returns>
+    Task<UserQueueEntityListing> GetUserQueuesAsync(string userId, int? pageSize = null, int? pageNumber = null, bool? joined = null, IEnumerable<string> divisionIds = null, CancellationToken cancellationToken = default);
 }

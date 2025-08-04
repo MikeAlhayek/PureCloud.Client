@@ -3700,6 +3700,8 @@
     <Compile Include="Models\QueueObservationQueryResponse.cs" />
     <Compile Include="Models\QueueReference.cs" />
     <Compile Include="Models\QueueEntityListing.cs" />
+    <Compile Include="Models\QueueMemberEntityListing.cs" />
+    <Compile Include="Models\QueueMemberEntityListingV1.cs" />
     <Compile Include="Models\QueueRequest.cs" />
     <Compile Include="Models\Queues\LastAgentRoutingModeEnum.cs" />
     <Compile Include="Models\Queues\Queue.cs" />
@@ -3950,6 +3952,15 @@
     <Compile Include="Models\ShareEntityListing.cs" />
     <Compile Include="Models\Signature.cs" />
     <Compile Include="Models\SignedData.cs" />
+    <Compile Include="Models\SmsAddress.cs" />
+    <Compile Include="Models\SmsAddressEntityListing.cs" />
+    <Compile Include="Models\SmsAddressProvision.cs" />
+    <Compile Include="Models\SmsAvailablePhoneNumber.cs" />
+    <Compile Include="Models\SmsAvailablePhoneNumberEntityListing.cs" />
+    <Compile Include="Models\SmsPhoneNumber.cs" />
+    <Compile Include="Models\SmsPhoneNumberEntityListing.cs" />
+    <Compile Include="Models\SmsPhoneNumberImport.cs" />
+    <Compile Include="Models\SmsPhoneNumberProvision.cs" />
     <Compile Include="Models\ScreenRecordingUserAuthenticatedInfo.cs" />
     <Compile Include="Models\SingleWorkdayAveragePoints.cs" />
     <Compile Include="Models\SingleWorkdayAverageValues.cs" />
@@ -5135,6 +5146,7 @@
     <Compile Include="Models\WorktypeUpdate.cs" />
     <Compile Include="Models\Wrapup.cs" />
     <Compile Include="Models\WrapupCode.cs" />
+    <Compile Include="Models\WrapupCodeEntityListing.cs" />
     <Compile Include="Models\WrapupCodeRequest.cs" />
     <Compile Include="Models\WrapupCodePredictionConfig.cs" />
     <Compile Include="Models\WrapupDetailEventTopicWrapupEvent.cs" />
