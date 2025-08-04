@@ -1,14 +1,6 @@
-using System.Runtime.Serialization;
-using System.Text;
-using System.Text.Json.Serialization;
-
 namespace PureCloud.Client.Models;
 
-/// <summary>
-/// KeyPerformanceIndicator
-/// </summary>
-
-public partial class KeyPerformanceIndicator : IEquatable<KeyPerformanceIndicator>
+public sealed class KeyPerformanceIndicator
 {
     /// <summary>
     /// The optimization type of the Key Performance Indicator.

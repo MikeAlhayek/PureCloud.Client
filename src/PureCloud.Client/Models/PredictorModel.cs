@@ -1,14 +1,6 @@
-using System.Runtime.Serialization;
-using System.Text;
-using System.Text.Json.Serialization;
-
 namespace PureCloud.Client.Models;
 
-/// <summary>
-/// PredictorModel
-/// </summary>
-
-public partial class PredictorModel : IEquatable<PredictorModel>
+public sealed class PredictorModel
 {
     /// <summary>
     /// The media type of the model.

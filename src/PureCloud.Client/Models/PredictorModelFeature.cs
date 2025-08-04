@@ -1,14 +1,6 @@
-using System.Runtime.Serialization;
-using System.Text;
-using System.Text.Json.Serialization;
-
 namespace PureCloud.Client.Models;
 
-/// <summary>
-/// PredictorModelFeature
-/// </summary>
-
-public partial class PredictorModelFeature : IEquatable<PredictorModelFeature>
+public sealed class PredictorModelFeature
 {
     /// <summary>
     /// The type of feature.

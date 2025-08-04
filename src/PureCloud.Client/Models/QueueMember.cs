@@ -1,13 +1,8 @@
-using System.Text;
-using System.Text.Json.Serialization;
+using PureCloud.Client.Models.Users;
 
 namespace PureCloud.Client.Models;
 
-/// <summary>
-/// QueueMember
-/// </summary>
-
-public partial class QueueMember : IEquatable<QueueMember>
+public sealed class QueueMember
 {
     /// <summary>
     /// Initializes a new instance of the <see cref="QueueMember" /> class.

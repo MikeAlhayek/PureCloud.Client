@@ -1,5 +1,6 @@
 using PureCloud.Client.Models;
 using PureCloud.Client.Models.Queues;
+using PureCloud.Client.Models.Users;
 
 namespace PureCloud.Client.Contracts;
 

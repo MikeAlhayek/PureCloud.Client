@@ -6,6 +6,7 @@ using PureCloud.Client.Http;
 using PureCloud.Client.Json;
 using PureCloud.Client.Models;
 using PureCloud.Client.Models.Queues;
+using PureCloud.Client.Models.Users;
 
 namespace PureCloud.Client.Apis;
 

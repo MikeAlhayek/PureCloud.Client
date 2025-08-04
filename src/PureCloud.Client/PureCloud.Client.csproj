@@ -354,7 +354,6 @@
     <Compile Include="Models\UserRoutingLanguageEntityListing.cs" />
     <Compile Include="Models\UserSkillEntityListing.cs" />
     <Compile Include="Models\UserSkillGroupEntityListing.cs" />
-    <Compile Include="Models\SkillGroupMemberEntityListing.cs" />
     <Compile Include="Models\AgentManagementUnitReference.cs" />
     <Compile Include="Models\Conversation.cs" />
     <Compile Include="Models\InboundDomainPatchRequest.cs" />
@@ -372,7 +371,6 @@
     <Compile Include="Models\IdentityResolutionConfig.cs" />
     <Compile Include="Models\IdentityResolutionQueueConfig.cs" />
     <Compile Include="Models\UpdateUtilizationLabelRequest.cs" />
-    <Compile Include="Models\UserRoutingSkill.cs" />
     <Compile Include="Models\UserRoutingSkillPost.cs" />
     <Compile Include="Models\AnalyticsQueryResponse.cs" />
     <Compile Include="Models\QueueObservationQuery.cs" />
@@ -1108,7 +1106,6 @@
     <Compile Include="Models\ConversationSummaryTopicTriggerSource.cs" />
     <Compile Include="Models\ConversationSummaryTopicTriggerSource.SourceType.cs" />
     <Compile Include="Models\Conversations\AlternateTimeDimensionEnum.cs" />
-    <Compile Include="Models\Conversations\Conversation.cs" />
     <Compile Include="Models\Conversations\ConversationActivityData.cs" />
     <Compile Include="Models\Conversations\ConversationActivityEntityData.cs" />
     <Compile Include="Models\Conversations\ConversationActivityEntityData.UsedRouting.cs" />
@@ -2363,7 +2360,6 @@
     <Compile Include="Models\IdentityNow.NameIdentifierFormat.cs" />
     <Compile Include="Models\IdentityProvider.cs" />
     <Compile Include="Models\IdentityProviderEntityListing.cs" />
-    <Compile Include="Models\IdentityResolutionConfig.cs" />
     <Compile Include="Models\ImportTemplateImportStatusImportStatus.cs" />
     <Compile Include="Models\ImportTemplateImportStatusImportStatus.ImportState.cs" />
     <Compile Include="Models\InfixOperator.cs" />
@@ -2863,7 +2859,6 @@
     <Compile Include="Models\AssessmentQuestionGroupScore.cs" />
     <Compile Include="Models\AssessmentQuestionScore.cs" />
     <Compile Include="Models\LearningAssignmentStep.cs" />
-    <Compile Include="Models\LearningAssessment.cs" />
     <Compile Include="Models\LearningModule.cs" />
     <Compile Include="Models\LearningModuleRequest.cs" />
     <Compile Include="Models\LearningModuleRule.cs" />
@@ -3732,7 +3727,6 @@
     <Compile Include="Models\QueueConversationVideoEventTopicWorkflow.cs" />
     <Compile Include="Models\QueueConversationVideoEventTopicWrapup.cs" />
     <Compile Include="Models\QueueObservationDataContainer.cs" />
-    <Compile Include="Models\QueueObservationQuery.cs" />
     <Compile Include="Models\QueueObservationQuery.DetailMetrics.cs" />
     <Compile Include="Models\QueueObservationQuery.Metrics.cs" />
     <Compile Include="Models\QueueObservationQueryClause.cs" />
@@ -3746,8 +3740,6 @@
     <Compile Include="Models\QueueObservationQueryResponse.cs" />
     <Compile Include="Models\QueueReference.cs" />
     <Compile Include="Models\QueueEntityListing.cs" />
-    <Compile Include="Models\QueueMemberEntityListing.cs" />
-    <Compile Include="Models\QueueMemberEntityListingV1.cs" />
     <Compile Include="Models\QueueRequest.cs" />
     <Compile Include="Models\Queues\LastAgentRoutingModeEnum.cs" />
     <Compile Include="Models\Queues\Queue.cs" />
@@ -3893,7 +3885,6 @@
     <Compile Include="Models\RoutingActivityEntityData.cs" />
     <Compile Include="Models\RoutingActivityMetricValue.cs" />
     <Compile Include="Models\RoutingActivityMetricValue.Metric.cs" />
-    <Compile Include="Models\RoutingActivityQuery.cs" />
     <Compile Include="Models\RoutingActivityQuery.GroupBy.cs" />
     <Compile Include="Models\RoutingActivityQuery.Order.cs" />
     <Compile Include="Models\RoutingActivityQueryClause.cs" />
@@ -3906,7 +3897,6 @@
     <Compile Include="Models\RoutingActivityQueryPredicate.Type.cs" />
     <Compile Include="Models\RoutingActivityQueryPredicate.Dimension.cs" />
     <Compile Include="Models\RoutingActivityQueryPredicate.Operator.cs" />
-    <Compile Include="Models\RoutingActivityResponse.cs" />
     <Compile Include="Models\RoutingActivityResponse.EntityIdDimension.cs" />
     <Compile Include="Models\RoutingEstablishedEvent.cs" />
     <Compile Include="Models\RoutingRule.cs" />
@@ -4546,7 +4536,6 @@
     <Compile Include="Models\UserRoutingLanguage.cs" />
     <Compile Include="Models\UserRoutingLanguagePost.cs" />
     <Compile Include="Models\UserRoutingLanguageState.cs" />
-    <Compile Include="Models\UserRoutingSkillPost.cs" />
     <Compile Include="Models\UserRoutingStatusErrorInfo.cs" />
     <Compile Include="Models\UserRoutingStatusEvent.cs" />
     <Compile Include="Models\UserRoutingStatusEvent.Status.cs" />
@@ -4554,8 +4543,6 @@
     <Compile Include="Models\UserRoutingStatusRoutingStatus.Status.cs" />
     <Compile Include="Models\UserRoutingStatusUserParam.cs" />
     <Compile Include="Models\UserRoutingStatusUserRoutingStatus.cs" />
-    <Compile Include="Models\UserSkillEntityListing.cs" />
-    <Compile Include="Models\UserSkillGroupEntityListing.cs" />
     <Compile Include="Models\UsersSearchResponse.cs" />
     <Compile Include="Models\UserStartDetailEventTopicUserStartEvent.cs" />
     <Compile Include="Models\UserStartDetailEventTopicUserStartEvent.MediaType.cs" />
@@ -4631,7 +4618,6 @@
     <Compile Include="Models\UserTransferEvent.cs" />
     <Compile Include="Models\UserTransferEvent.TransferType.cs" />
     <Compile Include="Models\UserTrendData.cs" />
-    <Compile Include="Models\UtilizationRequest.cs" />
     <Compile Include="Models\V2ConversationMessageTypingEventForUserTopicConversationEventTyping.cs" />
     <Compile Include="Models\V2ConversationMessageTypingEventForUserTopicConversationEventTyping.Type.cs" />
     <Compile Include="Models\V2ConversationMessageTypingEventForUserTopicConversationMessageEvent.cs" />
