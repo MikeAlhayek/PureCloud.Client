@@ -1336,4 +1336,84 @@ public interface IRoutingApi
     /// <param name="cancellationToken">Cancellation token</param>
     /// <returns>Language</returns>
     Task<Language> PostRoutingLanguagesAsync(Language body, CancellationToken cancellationToken = default);
+
+    /// <summary>
+    /// Join or unjoin a queue for a user
+    /// </summary>
+    /// <param name="queueId">Queue ID</param>
+    /// <param name="userId">User ID</param>
+    /// <param name="body">User Queue</param>
+    /// <param name="cancellationToken">Cancellation token</param>
+    /// <returns>User queue</returns>
+    Task<UserQueue> PatchUserQueueAsync(string queueId, string userId, UserQueue body, CancellationToken cancellationToken = default);
+
+    /// <summary>
+    /// Join or unjoin a set of queues for a user
+    /// </summary>
+    /// <param name="userId">User ID</param>
+    /// <param name="body">User Queues</param>
+    /// <param name="cancellationToken">Cancellation token</param>
+    /// <returns>User queue entity listing</returns>
+    Task<UserQueueEntityListing> PatchUserQueuesAsync(string userId, IEnumerable<UserQueue> body, CancellationToken cancellationToken = default);
+
+    /// <summary>
+    /// Update routing language for user
+    /// </summary>
+    /// <param name="userId">User ID</param>
+    /// <param name="languageId">Language ID</param>
+    /// <param name="body">Language</param>
+    /// <param name="cancellationToken">Cancellation token</param>
+    /// <returns>User routing language</returns>
+    Task<UserRoutingLanguage> PatchUserRoutinglanguageAsync(string userId, string languageId, UserRoutingLanguage body, CancellationToken cancellationToken = default);
+
+    /// <summary>
+    /// Add routing language to user
+    /// </summary>
+    /// <param name="userId">User ID</param>
+    /// <param name="body">Language</param>
+    /// <param name="cancellationToken">Cancellation token</param>
+    /// <returns>User language entity listing</returns>
+    Task<UserLanguageEntityListing> PostUserRoutinglanguagesAsync(string userId, UserRoutingLanguagePost body, CancellationToken cancellationToken = default);
+
+    /// <summary>
+    /// Add routing skill to user
+    /// </summary>
+    /// <param name="userId">User ID</param>
+    /// <param name="body">Skill</param>
+    /// <param name="cancellationToken">Cancellation token</param>
+    /// <returns>User skill entity listing</returns>
+    Task<UserSkillEntityListing> PostUserRoutingskillsAsync(string userId, UserRoutingSkillPost body, CancellationToken cancellationToken = default);
+
+    /// <summary>
+    /// Create an email domain
+    /// </summary>
+    /// <param name="body">Domain</param>
+    /// <param name="cancellationToken">Cancellation token</param>
+    /// <returns>Inbound domain</returns>
+    Task<InboundDomain> PostRoutingEmailDomainsAsync(InboundDomain body, CancellationToken cancellationToken = default);
+
+    /// <summary>
+    /// Create an outbound email domain
+    /// </summary>
+    /// <param name="body">Domain</param>
+    /// <param name="cancellationToken">Cancellation token</param>
+    /// <returns>Email outbound domain result</returns>
+    Task<EmailOutboundDomainResult> PostRoutingEmailOutboundDomainsAsync(OutboundDomain body, CancellationToken cancellationToken = default);
+
+    /// <summary>
+    /// Update domain settings
+    /// </summary>
+    /// <param name="domainId">Domain ID</param>
+    /// <param name="body">Domain</param>
+    /// <param name="cancellationToken">Cancellation token</param>
+    /// <returns>Inbound domain</returns>
+    Task<InboundDomain> PatchRoutingEmailDomainAsync(string domainId, InboundDomainPatchRequest body, CancellationToken cancellationToken = default);
+
+    /// <summary>
+    /// Create a benefit assessment
+    /// </summary>
+    /// <param name="body">Assessment</param>
+    /// <param name="cancellationToken">Cancellation token</param>
+    /// <returns>Benefit assessment</returns>
+    Task<BenefitAssessment> PostRoutingAssessmentsAsync(CreateBenefitAssessmentRequest body, CancellationToken cancellationToken = default);
 }
