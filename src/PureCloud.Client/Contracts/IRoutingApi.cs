@@ -616,7 +616,6 @@ public interface IRoutingApi
     /// <param name="hasMember">Has member</param>
     /// <param name="cancellationToken">Cancellation token</param>
     /// <returns>Queue listings</returns>
-    Task<QueueEntityListing> GetRoutingQueuesAsync(int? pageNumber = null, int? pageSize = null, string sortOrder = null, string name = null, IEnumerable<string> ids = null, IEnumerable<string> divisionIds = null, bool? hasMember = null, CancellationToken cancellationToken = default);
 
     /// <summary>
     /// Get the members of this queue
@@ -761,7 +760,6 @@ public interface IRoutingApi
     /// <param name="ids">IDs to filter by</param>
     /// <param name="cancellationToken">Cancellation token</param>
     /// <returns>Language listings</returns>
-    Task<LanguageEntityListing> GetRoutingLanguagesAsync(int? pageSize = null, int? pageNumber = null, string sortOrder = null, string name = null, IEnumerable<string> ids = null, CancellationToken cancellationToken = default);
 
     /// <summary>
     /// Get routing language
@@ -769,7 +767,6 @@ public interface IRoutingApi
     /// <param name="languageId">Language ID</param>
     /// <param name="cancellationToken">Cancellation token</param>
     /// <returns>Language details</returns>
-    Task<Language> GetRoutingLanguageAsync(string languageId, CancellationToken cancellationToken = default);
 
     /// <summary>
     /// Create a skill group
@@ -785,7 +782,6 @@ public interface IRoutingApi
     /// <param name="body">WrapupCode</param>
     /// <param name="cancellationToken">Cancellation token</param>
     /// <returns>Created wrap-up code</returns>
-    Task<WrapupCode> CreateRoutingWrapupcodeAsync(WrapupCode body, CancellationToken cancellationToken = default);
 
     /// <summary>
     /// Create a queue
@@ -793,7 +789,6 @@ public interface IRoutingApi
     /// <param name="body">Queue</param>
     /// <param name="cancellationToken">Cancellation token</param>
     /// <returns>Created queue</returns>
-    Task<Queue> CreateRoutingQueueAsync(QueueRequest body, CancellationToken cancellationToken = default);
 
     /// <summary>
     /// Update a queue
@@ -857,7 +852,6 @@ public interface IRoutingApi
     /// <param name="body">Route</param>
     /// <param name="cancellationToken">Cancellation token</param>
     /// <returns>Created route</returns>
-    Task<InboundRoute> CreateRoutingEmailDomainRouteAsync(string domainName, InboundRoute body, CancellationToken cancellationToken = default);
 
     /// <summary>
     /// Validate domain settings
@@ -875,21 +869,18 @@ public interface IRoutingApi
     /// <param name="forceDelete">forceDelete</param>
     /// <param name="cancellationToken">Cancellation token</param>
     /// <returns>Success status</returns>
-    Task<bool> DeleteRoutingQueueAsync(string queueId, bool? forceDelete = null, CancellationToken cancellationToken = default);
 
     /// <summary>
     /// Delete an organization's routing settings
     /// </summary>
     /// <param name="cancellationToken">Cancellation token</param>
     /// <returns>Success status</returns>
-    Task<bool> DeleteRoutingSettingsAsync(CancellationToken cancellationToken = default);
 
     /// <summary>
     /// Delete the organization-wide max utilization settings and revert to the system default
     /// </summary>
     /// <param name="cancellationToken">Cancellation token</param>
     /// <returns>Success status</returns>
-    Task<bool> DeleteRoutingUtilizationAsync(CancellationToken cancellationToken = default);
 
     /// <summary>
     /// Delete the user's max utilization settings and revert to the organization-wide default
@@ -897,7 +888,6 @@ public interface IRoutingApi
     /// <param name="userId">User ID</param>
     /// <param name="cancellationToken">Cancellation token</param>
     /// <returns>Success status</returns>
-    Task<bool> DeleteRoutingUserUtilizationAsync(string userId, CancellationToken cancellationToken = default);
 
     /// <summary>
     /// Update domain settings
@@ -916,7 +906,6 @@ public interface IRoutingApi
     /// <param name="body">Route</param>
     /// <param name="cancellationToken">Cancellation token</param>
     /// <returns>Updated route</returns>
-    Task<InboundRoute> UpdateRoutingEmailDomainRouteAsync(string domainName, string routeId, InboundRoute body, CancellationToken cancellationToken = default);
 
     /// <summary>
     /// Get a route
@@ -925,7 +914,6 @@ public interface IRoutingApi
     /// <param name="routeId">route ID</param>
     /// <param name="cancellationToken">Cancellation token</param>
     /// <returns>Route details</returns>
-    Task<InboundRoute> GetRoutingEmailDomainRouteAsync(string domainName, string routeId, CancellationToken cancellationToken = default);
 
     /// <summary>
     /// Get routes
@@ -936,7 +924,6 @@ public interface IRoutingApi
     /// <param name="pattern">Filter routes by the route's pattern property</param>
     /// <param name="cancellationToken">Cancellation token</param>
     /// <returns>Route listings</returns>
-    Task<InboundRouteEntityListing> GetRoutingEmailDomainRoutesAsync(string domainName, int? pageSize = null, int? pageNumber = null, string pattern = null, CancellationToken cancellationToken = default);
 
     /// <summary>
     /// Get domains
@@ -947,7 +934,6 @@ public interface IRoutingApi
     /// <param name="filter">Optional search filter</param>
     /// <param name="cancellationToken">Cancellation token</param>
     /// <returns>Domain listings</returns>
-    Task<InboundDomainEntityListing> GetRoutingEmailDomainsAsync(int? pageSize = null, int? pageNumber = null, bool? excludeStatus = null, string filter = null, CancellationToken cancellationToken = default);
 
     /// <summary>
     /// Get the list of supported Email Outbound Domains
@@ -1044,7 +1030,6 @@ public interface IRoutingApi
     /// <param name="supportedContentId">Supported content ID</param>
     /// <param name="cancellationToken">Cancellation token</param>
     /// <returns>SMS phone number entity listing</returns>
-    Task<SmsPhoneNumberEntityListing> GetRoutingSmsPhoneNumbersAsync(string phoneNumber = null, IEnumerable<string> phoneNumberTypes = null, IEnumerable<string> phoneNumberStatuses = null, IEnumerable<string> countryCodes = null, int? pageSize = null, int? pageNumber = null, string sortBy = null, string sortOrder = null, string language = null, string integrationId = null, string supportedContentId = null, CancellationToken cancellationToken = default);
 
     /// <summary>
     /// Get utilization labels
@@ -1131,7 +1116,6 @@ public interface IRoutingApi
     /// <param name="expand">Which fields, if any, to expand</param>
     /// <param name="cancellationToken">Cancellation token</param>
     /// <returns>Skill group member entity listing</returns>
-    Task<SkillGroupMemberEntityListing> GetRoutingSkillgroupMembersAsync(string skillGroupId, int? pageSize = null, string after = null, string before = null, string expand = null, CancellationToken cancellationToken = default);
 
     /// <summary>
     /// Get SMS phone number
