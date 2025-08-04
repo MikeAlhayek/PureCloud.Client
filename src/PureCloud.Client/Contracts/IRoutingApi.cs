@@ -1243,4 +1243,97 @@ public interface IRoutingApi
     /// <param name="cancellationToken">Cancellation token</param>
     /// <returns>User queue entity listing</returns>
     Task<UserQueueEntityListing> GetUserQueuesAsync(string userId, int? pageSize = null, int? pageNumber = null, bool? joined = null, IEnumerable<string> divisionIds = null, CancellationToken cancellationToken = default);
+
+    /// <summary>
+    /// Update the ring number or joined status for a queue member
+    /// </summary>
+    /// <param name="queueId">Queue ID</param>
+    /// <param name="memberId">Member ID</param>
+    /// <param name="body">Queue Member</param>
+    /// <param name="cancellationToken">Cancellation token</param>
+    /// <returns>Success status</returns>
+    Task<bool> PatchRoutingQueueMemberAsync(string queueId, string memberId, QueueMember body, CancellationToken cancellationToken = default);
+
+    /// <summary>
+    /// Join or unjoin a set of users for a queue
+    /// </summary>
+    /// <param name="queueId">Queue ID</param>
+    /// <param name="body">Queue Members</param>
+    /// <param name="cancellationToken">Cancellation token</param>
+    /// <returns>Queue member entity listing</returns>
+    Task<QueueMemberEntityListing> PatchRoutingQueueMembersAsync(string queueId, IEnumerable<QueueMember> body, CancellationToken cancellationToken = default);
+
+    /// <summary>
+    /// Create a queue
+    /// </summary>
+    /// <param name="body">Queue</param>
+    /// <param name="cancellationToken">Cancellation token</param>
+    /// <returns>Queue</returns>
+    Task<Queue> PostRoutingQueuesAsync(CreateQueueRequest body, CancellationToken cancellationToken = default);
+
+    /// <summary>
+    /// Create a routing skill
+    /// </summary>
+    /// <param name="body">Skill</param>
+    /// <param name="cancellationToken">Cancellation token</param>
+    /// <returns>Routing skill</returns>
+    Task<RoutingSkill> PostRoutingSkillsAsync(RoutingSkill body, CancellationToken cancellationToken = default);
+
+    /// <summary>
+    /// Create a wrap-up code
+    /// </summary>
+    /// <param name="body">Wrap-up Code</param>
+    /// <param name="cancellationToken">Cancellation token</param>
+    /// <returns>Wrap-up code</returns>
+    Task<WrapupCode> PostRoutingWrapupcodesAsync(WrapupCode body, CancellationToken cancellationToken = default);
+
+    /// <summary>
+    /// Update a queue
+    /// </summary>
+    /// <param name="queueId">Queue ID</param>
+    /// <param name="body">Queue</param>
+    /// <param name="cancellationToken">Cancellation token</param>
+    /// <returns>Queue</returns>
+    Task<Queue> PutRoutingQueueAsync(string queueId, QueueRequest body, CancellationToken cancellationToken = default);
+
+    /// <summary>
+    /// Update routing settings
+    /// </summary>
+    /// <param name="body">Routing Settings</param>
+    /// <param name="cancellationToken">Cancellation token</param>
+    /// <returns>Routing settings</returns>
+    Task<RoutingSettings> PutRoutingSettingsAsync(RoutingSettings body, CancellationToken cancellationToken = default);
+
+    /// <summary>
+    /// Update a wrap-up code
+    /// </summary>
+    /// <param name="codeId">Code ID</param>
+    /// <param name="body">Wrap-up Code</param>
+    /// <param name="cancellationToken">Cancellation token</param>
+    /// <returns>Wrap-up code</returns>
+    Task<WrapupCode> PutRoutingWrapupcodeAsync(string codeId, WrapupCode body, CancellationToken cancellationToken = default);
+
+    /// <summary>
+    /// Provision an SMS phone number
+    /// </summary>
+    /// <param name="body">SMS phone number provision</param>
+    /// <param name="cancellationToken">Cancellation token</param>
+    /// <returns>SMS phone number</returns>
+    Task<SmsPhoneNumber> PostRoutingSmsPhonenumbersAsync(SmsPhoneNumberProvision body, CancellationToken cancellationToken = default);
+
+    /// <summary>
+    /// Provision an SMS address
+    /// </summary>
+    /// <param name="body">SMS address provision</param>
+    /// <param name="cancellationToken">Cancellation token</param>
+    /// <returns>SMS address</returns>
+    Task<SmsAddress> PostRoutingSmsAddressesAsync(SmsAddressProvision body, CancellationToken cancellationToken = default);
+
+    /// <summary>
+    /// Create a language
+    /// </summary>
+    /// <param name="body">Language</param>
+    /// <param name="cancellationToken">Cancellation token</param>
+    /// <returns>Language</returns>
+    Task<Language> PostRoutingLanguagesAsync(Language body, CancellationToken cancellationToken = default);
 }

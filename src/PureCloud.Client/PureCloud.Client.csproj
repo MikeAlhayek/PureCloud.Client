@@ -1515,6 +1515,7 @@
     <Compile Include="Models\CreateObjective.MediaTypes.cs" />
     <Compile Include="Models\CreateObjective.TopicIdsFilterType.cs" />
     <Compile Include="Models\CreateObjective.InitialDirection.cs" />
+    <Compile Include="Models\CreateQueueRequest.cs" />
     <Compile Include="Models\CreatePerformanceProfile.cs" />
     <Compile Include="Models\CreateRecognition.cs" />
     <Compile Include="Models\CreateRecognition.Type.cs" />
