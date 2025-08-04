@@ -1765,4 +1765,84 @@ public interface IRoutingApi
     /// <param name="cancellationToken">Cancellation token</param>
     /// <returns>User skill entity listing</returns>
     Task<UserSkillEntityListing> PutUserRoutingskillsBulkAsync(string userId, IEnumerable<UserRoutingSkillPost> body, CancellationToken cancellationToken = default);
+
+    /// <summary>
+    /// Delete a queue
+    /// </summary>
+    /// <param name="queueId">Queue ID</param>
+    /// <param name="forceDelete">Force delete queue</param>
+    /// <param name="cancellationToken">Cancellation token</param>
+    /// <returns>Success status</returns>
+    Task<bool> DeleteRoutingQueueAsync(string queueId, bool? forceDelete = null, CancellationToken cancellationToken = default);
+
+    /// <summary>
+    /// Retrieve assessments for queueIds
+    /// </summary>
+    /// <param name="before">Before cursor</param>
+    /// <param name="after">After cursor</param>
+    /// <param name="limit">Limit</param>
+    /// <param name="pageSize">Page size</param>
+    /// <param name="queueIds">Queue IDs</param>
+    /// <param name="cancellationToken">Cancellation token</param>
+    /// <returns>Assessment listing</returns>
+    Task<AssessmentListing> GetRoutingAssessmentsAsync(string before = null, string after = null, string limit = null, string pageSize = null, IEnumerable<string> queueIds = null, CancellationToken cancellationToken = default);
+
+    /// <summary>
+    /// Retrieve the latest assessment jobs for all queues in the organization
+    /// </summary>
+    /// <param name="divisionIds">Division IDs</param>
+    /// <param name="cancellationToken">Cancellation token</param>
+    /// <returns>Assessment job listing</returns>
+    Task<AssessmentJobListing> GetRoutingAssessmentsJobsAsync(IEnumerable<string> divisionIds = null, CancellationToken cancellationToken = default);
+
+    /// <summary>
+    /// Get outbound email domains
+    /// </summary>
+    /// <param name="filter">Filter</param>
+    /// <param name="cancellationToken">Cancellation token</param>
+    /// <returns>Outbound domain entity listing</returns>
+    Task<OutboundDomainEntityListing> GetRoutingEmailOutboundDomainsAsync(string filter = null, CancellationToken cancellationToken = default);
+
+    /// <summary>
+    /// Get the list of supported languages
+    /// </summary>
+    /// <param name="pageSize">Page size</param>
+    /// <param name="pageNumber">Page number</param>
+    /// <param name="sortOrder">Sort order</param>
+    /// <param name="name">Language name</param>
+    /// <param name="ids">Language IDs</param>
+    /// <param name="cancellationToken">Cancellation token</param>
+    /// <returns>Language entity listing</returns>
+    Task<LanguageEntityListing> GetRoutingLanguagesAsync(int? pageSize = null, int? pageNumber = null, string sortOrder = null, string name = null, IEnumerable<string> ids = null, CancellationToken cancellationToken = default);
+
+    /// <summary>
+    /// Get a recipient
+    /// </summary>
+    /// <param name="messengerType">Messenger type</param>
+    /// <param name="pageSize">Page size</param>
+    /// <param name="pageNumber">Page number</param>
+    /// <param name="cancellationToken">Cancellation token</param>
+    /// <returns>Recipient listing</returns>
+    Task<RecipientListing> GetRoutingMessageRecipientsAsync(string messengerType = null, int? pageSize = null, int? pageNumber = null, CancellationToken cancellationToken = default);
+
+    /// <summary>
+    /// Retrieve all Predictors
+    /// </summary>
+    /// <param name="before">Before cursor</param>
+    /// <param name="after">After cursor</param>
+    /// <param name="limit">Limit</param>
+    /// <param name="pageSize">Page size</param>
+    /// <param name="queueIds">Queue IDs</param>
+    /// <param name="cancellationToken">Cancellation token</param>
+    /// <returns>Predictor listing</returns>
+    Task<PredictorListing> GetRoutingPredictorsAsync(string before = null, string after = null, string limit = null, string pageSize = null, IEnumerable<string> queueIds = null, CancellationToken cancellationToken = default);
+
+    /// <summary>
+    /// Get a list of Key Performance Indicators
+    /// </summary>
+    /// <param name="kpiIds">Key Performance Indicator IDs</param>
+    /// <param name="expands">Fields to expand</param>
+    /// <param name="cancellationToken">Cancellation token</param>
+    /// <returns>Key performance indicator listing</returns>
+    Task<KeyPerformanceIndicatorListing> GetRoutingPredictorsKeyperformanceindicatorsAsync(IEnumerable<string> kpiIds = null, IEnumerable<string> expands = null, CancellationToken cancellationToken = default);
 }
