@@ -2,5 +2,8 @@ namespace PureCloud.Client.Models;
 
 public sealed class Recipient
 {
-    // TODO: Add properties based on legacy API requirements
+    public string? Id { get; set; }
+    public string? Name { get; set; }
+    public string? MessengerType { get; set; }
+    public Dictionary<string, object>? AdditionalProperties { get; set; }
 }
