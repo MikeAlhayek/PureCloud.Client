@@ -214,7 +214,7 @@ public sealed class OrganizationApi : IOrganizationApi
     }
 
     /// <inheritdoc />
-    public async Task<object> GetOrganizationLimitsNamespacesAsync(int? pageSize, int? pageNumber, CancellationToken cancellationToken)
+    public async Task<PagedNamespaceListing> GetOrganizationLimitsNamespacesAsync(int? pageSize, int? pageNumber, CancellationToken cancellationToken)
     {
         var parameters = new NameValueCollection();
 
@@ -235,7 +235,7 @@ public sealed class OrganizationApi : IOrganizationApi
 
         response.EnsureSuccessStatusCode();
 
-        return await response.Content.ReadFromJsonAsync<object>(_options, cancellationToken);
+        return await response.Content.ReadFromJsonAsync<PagedNamespaceListing>(_options, cancellationToken);
     }
 
     /// <inheritdoc />

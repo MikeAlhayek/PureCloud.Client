@@ -117,8 +117,8 @@ public interface IOrganizationApi
     /// <param name="pageSize">Page size</param>
     /// <param name="pageNumber">Page number</param>
     /// <param name="cancellationToken">Cancellation token</param>
-    /// <returns>Object</returns>
-    Task<object> GetOrganizationLimitsNamespacesAsync(int? pageSize = null, int? pageNumber = null, CancellationToken cancellationToken = default);
+    /// <returns>PagedNamespaceListing</returns>
+    Task<PagedNamespaceListing> GetOrganizationLimitsNamespacesAsync(int? pageSize = null, int? pageNumber = null, CancellationToken cancellationToken = default);
 
     /// <summary>
     /// Get organization whitelist settings

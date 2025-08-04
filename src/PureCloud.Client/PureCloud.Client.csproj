@@ -655,6 +655,7 @@
     <Compile Include="Models\LimitsEntityListing.cs" />
     <Compile Include="Models\NamespaceDocs.cs" />
     <Compile Include="Models\OrgWhitelistSettings.cs" />
+    <Compile Include="Models\PagedNamespaceListing.cs" />
     <Compile Include="Models\Attachment.cs" />
     <Compile Include="Models\AttendanceStatus.cs" />
     <Compile Include="Models\AttendanceStatus.HasEvaluation.cs" />
