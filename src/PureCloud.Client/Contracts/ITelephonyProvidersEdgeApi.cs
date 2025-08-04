@@ -66,4 +66,55 @@ public interface ITelephonyProvidersEdgeApi
 
     /// <inheritdoc />
     Task DeleteExtensionPoolAsync(string extensionPoolId, CancellationToken cancellationToken = default);
+
+    /// <inheritdoc />
+    Task<EdgeEntityListing> GetEdgesAsync(int? pageSize = null, int? pageNumber = null, string name = null, string siteId = null, string edgeGroupId = null, string sortBy = null, bool? managed = null, CancellationToken cancellationToken = default);
+
+    /// <inheritdoc />
+    Task<EdgeNetworkDiagnosticResponse> GetEdgeDiagnosticNslookupAsync(string edgeId, CancellationToken cancellationToken = default);
+
+    /// <inheritdoc />
+    Task<EdgeNetworkDiagnosticResponse> GetEdgeDiagnosticPingAsync(string edgeId, CancellationToken cancellationToken = default);
+
+    /// <inheritdoc />
+    Task<EdgeNetworkDiagnosticResponse> GetEdgeDiagnosticRouteAsync(string edgeId, CancellationToken cancellationToken = default);
+
+    /// <inheritdoc />
+    Task<EdgeNetworkDiagnosticResponse> GetEdgeDiagnosticTracepathAsync(string edgeId, CancellationToken cancellationToken = default);
+
+    /// <inheritdoc />
+    Task<DomainLogicalInterface> GetEdgeLogicalinterfaceAsync(string edgeId, string interfaceId, IEnumerable<string> expand = null, CancellationToken cancellationToken = default);
+
+    /// <inheritdoc />
+    Task<LogicalInterfaceEntityListing> GetEdgeLogicalinterfacesAsync(string edgeId, IEnumerable<string> expand = null, CancellationToken cancellationToken = default);
+
+    /// <inheritdoc />
+    Task DeleteEdgeLogicalinterfaceAsync(string edgeId, string interfaceId, CancellationToken cancellationToken = default);
+
+    /// <inheritdoc />
+    Task<EdgeLogsJob> GetEdgeLogsJobAsync(string edgeId, string jobId, CancellationToken cancellationToken = default);
+
+    /// <inheritdoc />
+    Task<EdgeMetrics> GetEdgeMetricsAsync(string edgeId, CancellationToken cancellationToken = default);
+
+    /// <inheritdoc />
+    Task<DomainPhysicalInterface> GetEdgePhysicalinterfaceAsync(string edgeId, string interfaceId, CancellationToken cancellationToken = default);
+
+    /// <inheritdoc />
+    Task<PhysicalInterfaceEntityListing> GetEdgePhysicalinterfacesAsync(string edgeId, CancellationToken cancellationToken = default);
+
+    /// <inheritdoc />
+    Task DeleteEdgeSoftwareupdateAsync(string edgeId, CancellationToken cancellationToken = default);
+
+    /// <inheritdoc />
+    Task<DomainEdgeSoftwareUpdateDto> GetEdgeSoftwareupdateAsync(string edgeId, CancellationToken cancellationToken = default);
+
+    /// <inheritdoc />
+    Task<DomainEdgeSoftwareVersionDtoEntityListing> GetEdgeSoftwareversionsAsync(string edgeId, CancellationToken cancellationToken = default);
+
+    /// <inheritdoc />
+    Task<Line> GetEdgeLineAsync(string edgeId, string lineId, CancellationToken cancellationToken = default);
+
+    /// <inheritdoc />
+    Task<LineEntityListing> GetEdgeLinesAsync(string edgeId, int? pageSize = null, int? pageNumber = null, CancellationToken cancellationToken = default);
 }
