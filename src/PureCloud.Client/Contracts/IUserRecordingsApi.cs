@@ -7,12 +7,17 @@ public interface IUserRecordingsApi
     /// <summary>
     /// Delete a user recording
     /// </summary>
-    Task DeleteUserRecordingAsync(string recordingId, CancellationToken cancellationToken = default);
+    Task<bool> DeleteUserRecordingAsync(string recordingId, CancellationToken cancellationToken = default);
 
     /// <summary>
     /// Get a user recording
     /// </summary>
     Task<UserRecording> GetUserRecordingAsync(string recordingId, IEnumerable<string> expand = null, CancellationToken cancellationToken = default);
+
+    /// <summary>
+    /// Download a user recording
+    /// </summary>
+    Task<DownloadResponse> GetUserRecordingTranscodingAsync(string recordingId, string formatId = null, CancellationToken cancellationToken = default);
 
     /// <summary>
     /// Get a list of user recordings
