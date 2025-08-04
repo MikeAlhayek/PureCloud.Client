@@ -137,7 +137,7 @@ public interface ITelephonyProvidersEdgeApi
     Task<DID> GetEdgeDidAsync(string didId, CancellationToken cancellationToken = default);
 
     /// <inheritdoc />
-    Task<DIDEntityListing> GetEdgeDidAsync(CancellationToken cancellationToken = default);
+    Task<DIDEntityListing> GetEdgeDidsAsync(CancellationToken cancellationToken = default);
 
     /// <inheritdoc />
     Task<DIDPoolEntityListing> GetEdgeDidpoolsAsync(CancellationToken cancellationToken = default);
